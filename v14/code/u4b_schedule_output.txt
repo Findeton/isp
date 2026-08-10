@@ -1,0 +1,328 @@
+==============================================================================
+v14 U4b -- THE SCHEDULE CENSUS (paper-17)
+==============================================================================
+==============================================================================
+SEC 1   PROVENANCE -- ten pinned sources, sha256-12, products gated
+==============================================================================
+  [PASS] G-PROV[A-PIN]
+         the pinned source v14/note-u4b-pin.md is present and its sha256-12 is d2cff9a274a8 (measured d2cff9a274a8) -- THIS UNIT'S PIN (ledger #126): the family, the columns, the pre-registered outcome names.
+         evidence: {'path': 'v14/note-u4b-pin.md', 'want': 'd2cff9a274a8', 'got': 'd2cff9a274a8'}
+  [PASS] G-PROV[A-ADJ]
+         the pinned source v14/note-u4-adjudication.md is present and its sha256-12 is fa991e19ae54 (measured fa991e19ae54) -- the U4 adjudication (#125): the affine mechanism, the diagonal unification, the successor ruling that pinned this unit.
+         evidence: {'path': 'v14/note-u4-adjudication.md', 'want': 'fa991e19ae54', 'got': 'fa991e19ae54'}
+  [PASS] G-PROV[A-EFF]
+         the pinned source v14/review-u4-effectus.md is present and its sha256-12 is 61fb7d9e8471 (measured 61fb7d9e8471) -- the U4 effectus review (#122): the I7-coordinate evaluation route and the committed CONFLICT-GRID(3,2) I7 row this unit reproduces.
+         evidence: {'path': 'v14/review-u4-effectus.md', 'want': '61fb7d9e8471', 'got': '61fb7d9e8471'}
+  [PASS] G-PROV[A-HA]
+         the pinned source v13/paper-ha-successor.md is present and its sha256-12 is f286ba10d2d9 (measured f286ba10d2d9) -- HA 3.2: the declared readout -- interval cardinality as squared separation -- that turns link counts into a metric candidate.
+         evidence: {'path': 'v13/paper-ha-successor.md', 'want': 'f286ba10d2d9', 'got': 'f286ba10d2d9'}
+  [PASS] G-PROV[A-D42B1]
+         the pinned source v10/code/d42b1_transport_exact.py is present and its sha256-12 is 576275d55ecf (measured 576275d55ecf) -- THE COMMITTED TRANSPORT GRAMMAR, driven directly: this unit's only source of admissibility.
+         evidence: {'path': 'v10/code/d42b1_transport_exact.py', 'want': '576275d55ecf', 'got': '576275d55ecf'}
+  [PASS] G-PROV[A-D60]
+         the pinned source v10/code/d60_crystal_exact.py is present and its sha256-12 is 684cdb76552b (measured 684cdb76552b) -- D60: the Builder `B` and the delivery helper `dl`, AST-extracted.
+         evidence: {'path': 'v10/code/d60_crystal_exact.py', 'want': '684cdb76552b', 'got': '684cdb76552b'}
+  [PASS] G-PROV[A-D66]
+         the pinned source v10/code/d66_arbitration_crystal_exact.py is present and its sha256-12 is 3d0516ab106e (measured 3d0516ab106e) -- D66: CONFLICT-GRID(g, R) -- the committed constructor whose schedule this unit turns into a variable, AST-extracted and re-run.
+         evidence: {'path': 'v10/code/d66_arbitration_crystal_exact.py', 'want': '3d0516ab106e', 'got': '3d0516ab106e'}
+  [PASS] G-PROV[A-D66OUT]
+         the pinned source v10/data/d66_arbitration_crystal_exact.out is present and its sha256-12 is e252529d2586 (measured e252529d2586) -- D66's COMMITTED OUTPUT: the GRID(g=3,*) rows are READ from this file at run time and reproduced, never re-typed.
+         evidence: {'path': 'v10/data/d66_arbitration_crystal_exact.out', 'want': 'e252529d2586', 'got': 'e252529d2586'}
+  [PASS] G-PROV[A-L1]
+         the pinned source v11/note-L1-lorentz-no-go-lemma.md is present and its sha256-12 is 93ea24591c3c (measured 93ea24591c3c) -- L-1: the fourth-form clause this unit argues before any test, and the sentence retracted on 2026-07-28 that no paper may reproduce.
+         evidence: {'path': 'v11/note-L1-lorentz-no-go-lemma.md', 'want': '93ea24591c3c', 'got': '93ea24591c3c'}
+  [PASS] G-PROV[A-CAT]
+         the pinned source v11/note-v11p0a-reproduction-catalog.md is present and its sha256-12 is 0cebe543e814 (measured 0cebe543e814) -- the reproduction catalog 1.6/1.7: the BHS block and the Kleitman-Rothschild height-control warning.
+         evidence: {'path': 'v11/note-v11p0a-reproduction-catalog.md', 'want': '0cebe543e814', 'got': '0cebe543e814'}
+  [PASS] G-PROV-ALL
+         ALL 10 declared sources resolve under the repository root derived from this file's own location, every one reproduces its pinned sha256-12, and the set of hash-pinned runtime reads is EXACTLY the declared set -- nothing else in the repository is read except this file itself (for the exactness AST scan) and the paper under test (which cannot be hash-pinned because it is the object being verified).  No `git` subprocess is invoked anywhere in this program, so the run is correct off-tree and in a directory with no version control (#91)
+         evidence: {'sources': 10, 'reads': ['v10/code/d42b1_transport_exact.py', 'v10/code/d60_crystal_exact.py', 'v10/code/d66_arbitration_crystal_exact.py', 'v10/data/d66_arbitration_crystal_exact.out', 'v11/note-L1-lorentz-no-go-lemma.md', 'v11/note-v11p0a-reproduction-catalog.md', 'v13/paper-ha-successor.md', 'v14/note-u4-adjudication.md', 'v14/note-u4b-pin.md', 'v14/review-u4-effectus.md'], 'unpinned_reads': ['<self>', 'v14/paper-17-schedule-census.md'], 'subprocesses': 0}
+
+==============================================================================
+SEC 2   THE COMMITTED GRAMMAR, DRIVEN DIRECTLY (no menu law re-typed)
+==============================================================================
+  d42b1 text-slice: 16129 of 40838 chars, cut at the layer's own banner print
+  AST-extracted bodies: {'d60_crystal_exact.py': 10, 'd66_arbitration_crystal_exact.py': 26}
+  [PASS] G-SLICE-EXIT-FREE
+         the committed transport grammar enters this process as a SINGLE SOURCE -- a text slice of d42b1 cut at its own banner print, plus AST-extracted def/class bodies of d60 and d66 -- and the strip is GATED, not asserted: no reference to `exit`, `quit` or `_exit`, in CALL or bare NAME/ATTRIBUTE form, survives the slice (checked textually AND by AST) or any extracted body
+         evidence: {'slice_chars': (16129, 40838), 'slice_exit_free': True, 'bodies_exit_free': True, 'bodies': {'d60_crystal_exact.py': 10, 'd66_arbitration_crystal_exact.py': 26}}
+  [PASS] G-GRAMMAR-LIVE
+         the object deciding admissibility here is d42b1's own `candidates_for`, exercised in BOTH directions on the empty record: the genesis proposal ('p', G00, v0, 0) IS offered, no arbitration is offered (nothing is live) and no delivery of a non-genesis version is offered (nothing is held)
+         evidence: {'menu_size': 3, 'kinds': ['n', 'p']}
+  [PASS] G-COMMITTED-RECORD
+         THE GENERALIZED SCHEDULE DRIVER REPRODUCES THE COMMITTED CONSTRUCTOR EVENT FOR EVENT.  d66's own `conflict_grid(3, 2)` function object, AST-extracted from the pinned source and re-run in this process, and this unit's schedule driver at the committed schedule (ROW class then COL class, diagonal seeds) emit IDENTICAL event lists of 30 events with 6 division events; so the family below is a generalization of the committed object and not a re-implementation of it
+         evidence: {'d66_events': 30, 'driver_events': 30, 'identical': True, 'maxhits': 1, 'refusal': None}
+  [ANCH] A-D66-GRID34  read (66, 12, 18)  recomputed (66, 12, 18)
+  [ANCH] A-D66-GRID36  read (102, 18, 30)  recomputed (102, 18, 30)
+  [ANCH] A-EFF-I7  read [1, 1, 0, 1, 1, 1, 0]  recomputed [1, 1, 0, 1, 1, 1, 0]
+  [PASS] G-ANCHORS-READ
+         the committed numbers this unit reproduces are READ from their committed files at run time and never re-typed: d66's own output rows for GRID(g=3,R=4) and GRID(g=3,R=6) (events, arbitrations, deliveries) are parsed out of `d66_arbitration_crystal_exact.out` and reproduced by the extracted constructor, and the U4 effectus review's CONFLICT-GRID(3,2) I7 row (n_(1,0), n_(0,1), n_(1,1), q_11, q_22, |q_12|, det) is parsed out of the review and reproduced by this unit's own readout -- 3 of 3
+         evidence: {'anchors': [{'id': 'A-D66-GRID34', 'read': (66, 12, 18), 'recomputed': (66, 12, 18), 'ok': True, 'source': 'v10/data/d66_arbitration_crystal_exact.out'}, {'id': 'A-D66-GRID36', 'read': (102, 18, 30), 'recomputed': (102, 18, 30), 'ok': True, 'source': 'v10/data/d66_arbitration_crystal_exact.out'}, {'id': 'A-EFF-I7', 'read': [1, 1, 0, 1, 1, 1, 0], 'recomputed': [1, 1, 0, 1, 1, 1, 0], 'ok': True, 'source': 'v14/review-u4-effectus.md'}]}
+  [VERB] V01  v14/note-u4b-pin.md -> G-FAMILY-COUNT  (95 chars)
+  [VERB] V02  v14/note-u4b-pin.md -> G-DET-NONZERO-EXISTS  (111 chars)
+  [VERB] V03  v14/note-u4-adjudication.md -> G-AFFINE-LAW  (118 chars)
+  [VERB] V04  v14/review-u4-effectus.md -> G-I7-READOUT  (69 chars)
+  [VERB] V05  v13/paper-ha-successor.md -> G-I7-READOUT  (98 chars)
+  [VERB] V06  v10/code/d66_arbitration_crystal_exact.py -> G-COMMITTED-RECORD  (127 chars)
+  [VERB] V07  v11/note-L1-lorentz-no-go-lemma.md -> G-WALL-L1  (92 chars)
+  [VERB] V08  v11/note-v11p0a-reproduction-catalog.md -> G-WALL-BHS  (79 chars)
+  [VERB] V09  v11/note-v11p0a-reproduction-catalog.md -> G-WALL-KR  (57 chars)
+  [VERB] V10  v14/note-u4b-pin.md -> G-WALL-DIAGONAL  (116 chars)
+  [PASS] G-VERBATIM
+         every one of the 10 verbatim source anchors (#62) is found in its pinned source after ASCII folding and whitespace normalisation, every needle clears the 40-character length floor, and every anchor names the gate that CONSUMES it -- no anchor is decorative
+         evidence: {'anchors': 10, 'min_chars': 57, 'missing': []}
+  [PASS] G-I7-READOUT
+         the determinant column is computed through HA 3.2's DECLARED readout in the U4 effectus review's own I7 coordinates -- q_11 = n_(1,0), q_22 = n_(0,1), q_12 = (n_(1,1) - n_(1,0) - n_(0,1))/2 -- applied to the co-division adjacency (the number of division events whose footprint contains both x and x + l); both source statements are verbatim anchors V04 and V05, and the route is validated by reproducing the effectus's committed CONFLICT-GRID(3,2) row exactly
+         evidence: {'committed_row': [1, 1, 0, 1, 1, 1, 0], 'recomputed': [1, 1, 0, 1, 1, 1, 0]}
+
+==============================================================================
+SEC 3   THE FAMILY (pin R1), declared as data and COUNTED
+==============================================================================
+  partitions of the nine sites into three triples : 280
+  seed assignments per partition                   : 27
+  schedules per round                              : 7560
+  THE FAMILY (two rounds)                          : 57153600
+  [PASS] G-FAMILY-COUNT
+         THE FAMILY IS COUNTED, NOT ASSERTED (#24).  A schedule is a choice, for each of the committed constructor's two rounds, of which cell-pairs arbitrate together -- equivalently a partition of the nine cells into three three-proposer conflict groups, the committed per-round budget -- together with a seed for each group.  Enumeration gives 280 partitions and 27 seed assignments each, so 7560 schedules per round and 57153600 in the family; the closed form 9!/(3!^3 3!) x 3^3, squared, computed by a second route that shares no code with the enumeration, returns the same number
+         evidence: {'partitions': 280, 'closed_form': 280, 'family': 57153600, 'family_closed': 57153600}
+  THE DECLARED GRAMMAR WINDOW                      : 11664 (1/4900 of the family)
+  [PASS] G-WINDOW-DISCLOSED
+         THE WINDOW IS DECLARED IN THE HEAD AND IS A STRICT SUBSET (no-silent-caps).  Driving the layer's menus over all 57153600 schedules is not affordable, so grammar-admissibility is decided EXHAUSTIVELY on a declared window -- both rounds' groupings drawn from the four parallel classes of AG(2,3), which is d66's own resolvable device, with the seeds free: 11664 schedules, 1/4900 of the family, containing the committed schedule.  Every OTHER column below is exhaustive over the WHOLE family, and the window's scope is carried in the constructibility verdict string itself
+         evidence: {'family': 57153600, 'window': 11664, 'declared': 11664, 'strict_subset': True, 'committed_in_window': True}
+
+==============================================================================
+SEC 4   CONSTRUCTIBILITY (pin R2.1) -- the menus driven, per schedule
+==============================================================================
+  window schedules driven : 11664
+  fates                   : {'FORCED': 11664}
+  event counts            : {24: 2916, 30: 8748}
+  [PASS] G-CONSTRUCTIBILITY
+         EVERY schedule of the declared window is evaluated against its OWN driven record (#87), not against an aggregate: for each of the 11664 schedules the layer's menu offered every specified full event tuple exactly once (maxhits = 1), no step was refused, the record carries exactly 6 division events and between 24 and 30 events in total.  Measured fates: {'FORCED': 11664}.  The instrument's ability to return the other two fates is demonstrated by the two declared controls below
+         evidence: {'schedules': 11664, 'fates': {'FORCED': 11664}, 'events': {24: 2916, 30: 8748}, 'refused': []}
+  CONTROL 1 (no-supply)   : refusal ('propose G10', 13) after 13 events
+  [PASS] G-CTRL-REFUSED
+         THE REFUSED FATE IS REACHABLE AND THE INSTRUMENT SEES IT.  The declared no-supply control runs the committed schedule with the conflict-supply deliveries suppressed; the layer then refuses the first round-1 proposal by an actor that does not hold the base, at the located prefix ('propose G10', 13).  A refusal is recorded, never patched
+         evidence: {'refusal': ('propose G10', 13), 'events': 13}
+  CONTROL 2 (under-spec)  : 7 menu candidates match at prefix 3, so maxhits = 7
+  [PASS] G-CTRL-BRANCHING
+         THE BRANCHING FATE IS REACHABLE AND THE INSTRUMENT SEES IT.  At prefix 3 of the committed record the declared under-specified control asks d60's `pick` for an arbitration by G00 WITHOUT naming its conflict key and winner key; 7 menu candidates match, so the builder's own `maxhits` reads 7 > 1 and the fate is BRANCHING.  This is what makes the FORCED reading above a measurement rather than a structural tautology.  ONLY THE COUNT IS REPORTED, and that is deliberate: d60's `pick` breaks ties with `sorted(key=repr)`, whose value on a frozenset depends on the interpreter's per-process string hashing, so WHICH candidate an under-specified pick selects is not reproducible.  Every event of every schedule in this census is specified by its FULL TUPLE, where at most one candidate can match and the tie-break is never consulted; the control stops at the first under-specified pick and never continues a record past it
+         evidence: {'candidates': 7, 'prefix': 3, 'initiator': 'G00'}
+
+==============================================================================
+SEC 5   THE STABILIZER COLUMN (pin R2.2) -- both readings, 3 routes
+==============================================================================
+  [PASS] G-STAB-ROUTES
+         THE STABILIZER OF EVERY SEED-PAIR FIELD IS COMPUTED THREE TIMES BY ROUTES SHARING NO CODE AND NO TYPED CONSTANT, and the three agree element for element at every one of the 7056 objects: (1) translate the field over Z_3^2 and compare; (2) take the annihilator of the support of the exact Z_3^2 Fourier transform in Z[w] = Z[t]/(t^2 + t + 1), running over the dual group; (3) walk the subgroup lattice and take the largest H on whose cosets the field is constant
+         evidence: {'objects': 7056, 'disagreements': 0, 'first': None}
+  [PASS] G-DRIVEN-EQUALS-COMBINATORIAL
+         for EVERY one of the 11664 window schedules the division-event field read off the DRIVEN record -- the initiator field from each arbitration's `op[1]`, the footprint field from each arbitration's `regs_of` footprint intersected with the actor set -- equals the field the combinatorial census computes from the schedule alone (#87, per object).  That equality is what lets the stabilizer and determinant columns be exhaustive over the whole family while the menus are driven on the window
+         evidence: {'objects': 11664, 'mismatches': 0, 'first': None}
+  [PASS] G-FOOTPRINT-CONSTANT
+         AT THE FOOTPRINT READING THE DIVISION FIELD IS THE CONSTANT 2 AT EVERY SITE OF EVERY SCHEDULE, so its stabilizer is the whole group Z_3^2 identically -- checked on each of the 11664 driven records separately.  Each round's three conflict groups partition the nine cells, so every cell lies in exactly one footprint per round; the footprint reading is a CENSUS ARTIFACT of the committed budget and carries no information about the schedule.  This is the constant-field vacuous positive the U4 adjudication named, exhibited here as a property of the whole family
+         evidence: {'objects': 11664, 'non_constant': 0, 'value': 2}
+  seed-set pairs                    : 7056
+  partitions admitting a given seed set (uniform) : [90]
+    Stab = 1         :   6804 seed pairs ->  55112400 schedules
+    Stab = <(1,0)>   :     63 seed pairs ->    510300 schedules
+    Stab = <(0,1)>   :     63 seed pairs ->    510300 schedules
+    Stab = <(1,1)>   :     63 seed pairs ->    510300 schedules
+    Stab = <(1,2)>   :     63 seed pairs ->    510300 schedules
+  CRYSTALLINE (initiator reading)   : 2041200 of 57153600 = 1/28
+  [PASS] G-STAB-FULL-FAMILY
+         THE STABILIZER COLUMN IS EXHAUSTIVE OVER THE WHOLE FAMILY, not over a window.  The initiator field depends on the schedule only through its two seed sets, and every 3-subset of Z_3^2 is a transversal of exactly 90 of the 280 partitions -- a uniform weight, measured, not assumed -- so the 7056 seed-set pairs carry the whole census with multiplicity 8100.  Measured: 2041200 of 57153600 schedules are crystalline at the initiator reading (1/28), and the full group Z_3^2 never occurs there because six division events cannot spread evenly over nine sites
+         evidence: {'weights': [90], 'pairs': 7056, 'per_subgroup': {'1': 6804, '<(0,1)>': 63, '<(1,0)>': 63, '<(1,1)>': 63, '<(1,2)>': 63}, 'family_check': 57153600}
+
+==============================================================================
+SEC 6   THE DETERMINANT COLUMN (pin R2.3) -- the weld-arena scout
+==============================================================================
+  partition pairs                       : 78400
+  det != 0 at ALL NINE sites            : 747 pairs -> 544563 schedules
+  of those, homogeneous (one q at every site) : 9
+  of those, det < 0 at all nine sites    : 261 ; mixed sign : 486
+  max sites at which q is positive definite, over ALL pairs : 3
+  pairs meeting I7's strict positivity (all 27 counts > 0)  : 0
+  det values over the non-degenerate cells : {'-1': 855, '-1/4': 5238, '1': 108, '3/4': 522}
+  NAMED WITNESS ROW|ROW/DIAG : q_11=0 q_22=2 q_12=-1 det=-1 at 9 of 9 sites
+  [PASS] G-DET-NONZERO-EXISTS
+         DET-NONZERO-EXISTS, AND THE WITNESS IS NAMED.  The schedule ROW|ROW/DIAG -- the committed constructor with round 1's column class replaced by the row class again, i.e. the schedule that never rotates its conflict groups, with the committed diagonal seeds -- induces q = [[0, -1], [-1, 2]] with det = -1 at every one of the nine sites, the same form at every site.  It is a member of the declared window and its record is FORCED.  Over the whole family 747 of the 78400 partition pairs (544563 of 57153600 schedules) carry a non-degenerate induced form at all nine sites
+         evidence: {'witness': 'ROW|ROW/DIAG', 'q11': '0', 'q22': '2', 'q12': '-1', 'det': '-1', 'sites': 9, 'pairs': 747, 'schedules': 544563}
+  [PASS] G-POSDEF-EMPTY
+         NO SCHEDULE IN THE FAMILY CARRIES A POSITIVE-DEFINITE INDUCED FORM AT EVERY SITE.  Exhaustively over all 78400 partition pairs the maximum number of sites at which q is positive definite is 3, never 9.  The mechanism is a budget: a partition into three triples has nine within-group pairs, and only those whose difference direction lies in I7's link set contribute, so the two rounds deposit at most 18 link-incidences over the nine sites -- while positive definiteness at a site needs q_11, q_22 > 0 and 4 q_11 q_22 > (n_(1,1) - q_11 - q_22)^2, hence at least 3 incidences there, hence at least 27 in all
+         evidence: {'pairs': 78400, 'max_posdef_sites': 3, 'budget': 18, 'needed': 27}
+  [PASS] G-I7-STRICT-EMPTY
+         I7's OWN ADMISSIBILITY CRITERION IS EMPTY ON THIS FAMILY: not one of the 78400 partition pairs makes all 27 link counts strictly positive, so no schedule is an admissible I7 geometry record, and the renewal-crystal weld census the U4 effectus predicted EMPTY is recorded EMPTY here for a reason the effectus did not have -- the link budget, not the diagonal alone
+         evidence: {'pairs': 78400, 'strictly_positive': 0, 'budget': 18, 'needed': 27}
+  of the 11664 window schedules, 6561 carry det != 0 at all nine sites
+    ROW + ROW : q_11=0  q_22=2  q_12=-1   det=-1   homogeneous True, non-degenerate at 9 of 9 sites
+    ROW + COL : q_11=1  q_22=1  q_12=-1   det=0    homogeneous True, non-degenerate at 0 of 9 sites
+    ROW + DIA : q_11=0  q_22=1  q_12=0    det=0    homogeneous True, non-degenerate at 0 of 9 sites
+    ROW + ANT : q_11=0  q_22=1  q_12=-1/2 det=-1/4 homogeneous True, non-degenerate at 9 of 9 sites
+    COL + ROW : q_11=1  q_22=1  q_12=-1   det=0    homogeneous True, non-degenerate at 0 of 9 sites
+    COL + COL : q_11=2  q_22=0  q_12=-1   det=-1   homogeneous True, non-degenerate at 9 of 9 sites
+    COL + DIA : q_11=1  q_22=0  q_12=0    det=0    homogeneous True, non-degenerate at 0 of 9 sites
+    COL + ANT : q_11=1  q_22=0  q_12=-1/2 det=-1/4 homogeneous True, non-degenerate at 9 of 9 sites
+    DIA + ROW : q_11=0  q_22=1  q_12=0    det=0    homogeneous True, non-degenerate at 0 of 9 sites
+    DIA + COL : q_11=1  q_22=0  q_12=0    det=0    homogeneous True, non-degenerate at 0 of 9 sites
+    DIA + DIA : q_11=0  q_22=0  q_12=1    det=-1   homogeneous True, non-degenerate at 9 of 9 sites
+    DIA + ANT : q_11=0  q_22=0  q_12=1/2  det=-1/4 homogeneous True, non-degenerate at 9 of 9 sites
+    ANT + ROW : q_11=0  q_22=1  q_12=-1/2 det=-1/4 homogeneous True, non-degenerate at 9 of 9 sites
+    ANT + COL : q_11=1  q_22=0  q_12=-1/2 det=-1/4 homogeneous True, non-degenerate at 9 of 9 sites
+    ANT + DIA : q_11=0  q_22=0  q_12=1/2  det=-1/4 homogeneous True, non-degenerate at 9 of 9 sites
+    ANT + ANT : q_11=0  q_22=0  q_12=0    det=0    homogeneous True, non-degenerate at 0 of 9 sites
+  [PASS] G-CLASS-PAIR-TABLE
+         THE SIXTEEN RESOLVABLE CLASS PAIRS CARRY A HOMOGENEOUS INDUCED FORM, AND EACH ROW IS BOUND TO THE WHOLE-FAMILY COLUMN.  When both rounds group along parallel classes, every site sees the same q -- checked row by row (#87), and each row's non-degeneracy count is required to equal the number the exhaustive 78400-pair census independently assigns to that pair.  9 of the 16 pairs are non-degenerate at all nine sites, which is why 6561 of the 11664 window schedules are
+         evidence: {'rows': 16, 'mismatches': 'none', 'table': [{'round0': 'ROW', 'round1': 'ROW', 'q11': '0', 'q22': '2', 'q12': '-1', 'det': '-1', 'homogeneous': True, 'nonzero_sites': 9}, {'round0': 'ROW', 'round1': 'COL', 'q11': '1', 'q22': '1', 'q12': '-1', 'det': '0', 'homogeneous': True, 'nonzero_sites': 0}, {'round0': 'ROW', 'round1': 'DIA', 'q11': '0', 'q22': '1', 'q12': '0', 'det': '0', 'homogeneous': True, 'nonzero_sites': 0}, {'round0': 'ROW', 'round1': 'ANT', 'q11': '0', 'q22': '1', 'q12': '-1/2', 'det': '-1/4', 'homogeneous': True, 'nonzero_sites': 9}, {'round0': 'COL', 'round1': 'ROW', 'q11': '1', 'q22': '1', 'q12': '-1', 'det': '0', 'homogeneous': True, 'nonzero_sites': 0}, {'round0': 'COL', 'round1': 'COL', 'q11': '2', 'q22': '0', 'q12': '-1', 'det': '-1', 'homogeneous': True, 'nonzero_sites': 9}, {'round0': 'COL', 'round1': 'DIA', 'q11': '1', 'q22': '0', 'q12': '0', 'det': '0', 'homogeneous': True, 'nonzero_sites': 0}, {'round0': 'COL', 'round1': 'ANT', 'q11': '1', 'q22': '0', 'q12': '-1/2', 'det': '-1/4', 'homogeneous': True, 'nonzero_sites': 9}, {'round0': 'DIA', 'round1': 'ROW', 'q11': '0', 'q22': '1', 'q12': '0', 'det': '0', 'homogeneous': True, 'nonzero_sites': 0}, {'round0': 'DIA', 'round1': 'COL', 'q11': '1', 'q22': '0', 'q12': '0', 'det': '0', 'homogeneous': True, 'nonzero_sites': 0}, {'round0': 'DIA', 'round1': 'DIA', 'q11': '0', 'q22': '0', 'q12': '1', 'det': '-1', 'homogeneous': True, 'nonzero_sites': 9}, {'round0': 'DIA', 'round1': 'ANT', 'q11': '0', 'q22': '0', 'q12': '1/2', 'det': '-1/4', 'homogeneous': True, 'nonzero_sites': 9}, {'round0': 'ANT', 'round1': 'ROW', 'q11': '0', 'q22': '1', 'q12': '-1/2', 'det': '-1/4', 'homogeneous': True, 'nonzero_sites': 9}, {'round0': 'ANT', 'round1': 'COL', 'q11': '1', 'q22': '0', 'q12': '-1/2', 'det': '-1/4', 'homogeneous': True, 'nonzero_sites': 9}, {'round0': 'ANT', 'round1': 'DIA', 'q11': '0', 'q22': '0', 'q12': '1/2', 'det': '-1/4', 'homogeneous': True, 'nonzero_sites': 9}, {'round0': 'ANT', 'round1': 'ANT', 'q11': '0', 'q22': '0', 'q12': '0', 'det': '0', 'homogeneous': True, 'nonzero_sites': 0}]}
+
+==============================================================================
+SEC 7   THE AFFINE NULL (pin R3) -- coset-union vs beyond-coset
+==============================================================================
+  CU-JOINT      :    291600 schedules,    291600 crystalline = 1       subgroups ['<(0,1)>', '<(1,0)>', '<(1,1)>', '<(1,2)>']
+  CU-SPLIT      :    874800 schedules,         0 crystalline = 0       subgroups -
+  BEYOND-COSET  :  55987200 schedules,   1749600 crystalline = 1/32    subgroups ['<(0,1)>', '<(1,0)>', '<(1,1)>', '<(1,2)>']
+  [PASS] G-AFFINE-LAW
+         THE AFFINE NULL HOLDS EXACTLY WHERE IT IS PREDICTED TO.  Every one of the 36 CU-JOINT seed pairs -- both seed sets a coset of ONE order-3 subgroup H -- is evaluated on its own field and every one has Stab containing H: 291600 of 291600 schedules, 100 per cent.  This is the U4 adjudication's mechanism n = c + m*1_S read as a prediction and confirmed; the crystallinity of these schedules carries NO emergence information
+         evidence: {'cu_joint_pairs': 36, 'crystalline': 291600, 'schedules': 291600}
+  [PASS] G-CU-SPLIT-EMPTY
+         AND IT HOLDS NOWHERE ELSE AMONG THE COSET SEEDS.  Every one of the 108 CU-SPLIT seed pairs -- both seed sets cosets, of DIFFERENT subgroups -- is evaluated on its own field and every one has trivial stabilizer: two lines of different directions meet in exactly one point, so the field takes the value 2 at a single site, and no order-3 period can carry a value that occurs once.  0 of 874800 schedules crystalline
+         evidence: {'cu_split_pairs': 108, 'crystalline': 0}
+    beyond-coset crystalline witness: S0=[(0, 0), (0, 1), (1, 0)] S1=[(0, 2), (1, 1), (1, 2)] -> Stab <(0,1)> (lines: False, False)
+    beyond-coset crystalline witness: S0=[(0, 0), (0, 1), (1, 0)] S1=[(1, 1), (2, 0), (2, 1)] -> Stab <(1,0)> (lines: False, False)
+    beyond-coset crystalline witness: S0=[(0, 0), (0, 1), (1, 0)] S1=[(1, 2), (2, 1), (2, 2)] -> Stab <(1,2)> (lines: False, False)
+    beyond-coset crystalline witness: S0=[(0, 0), (0, 1), (1, 1)] S1=[(0, 2), (1, 0), (1, 2)] -> Stab <(0,1)> (lines: False, False)
+  [PASS] G-BEYOND-COSET-CRYSTALLINE
+         CRYSTALLINITY IS NOT CONFINED TO THE CONSTRUCTOR-INHERITED LOCUS.  216 of the 6912 beyond-coset seed pairs -- at least one seed set NOT a coset of any order-3 subgroup -- carry a nontrivial translation stabilizer, and each is verified on its own field: 1749600 of 55987200 beyond-coset schedules, a rate of 1/32, realizing all four order-3 subgroups ['<(0,1)>', '<(1,0)>', '<(1,1)>', '<(1,2)>'].  The mechanism is measured too: the field takes the value 1 on a union of two H-cosets and 0 on the third while NEITHER seed set is an H-coset, so the period is a property of the PAIR and not of either seed
+         evidence: {'beyond_coset_crystalline_pairs': 216, 'beyond_coset_pairs': 6912, 'subgroups': ['<(0,1)>', '<(1,0)>', '<(1,1)>', '<(1,2)>'], 'witnesses': [{'S0': [(0, 0), (0, 1), (1, 0)], 'S1': [(0, 2), (1, 1), (1, 2)], 'stab': '<(0,1)>', 'S0_is_line': False, 'S1_is_line': False}, {'S0': [(0, 0), (0, 1), (1, 0)], 'S1': [(1, 1), (2, 0), (2, 1)], 'stab': '<(1,0)>', 'S0_is_line': False, 'S1_is_line': False}, {'S0': [(0, 0), (0, 1), (1, 0)], 'S1': [(1, 2), (2, 1), (2, 2)], 'stab': '<(1,2)>', 'S0_is_line': False, 'S1_is_line': False}, {'S0': [(0, 0), (0, 1), (1, 1)], 'S1': [(0, 2), (1, 0), (1, 2)], 'stab': '<(0,1)>', 'S0_is_line': False, 'S1_is_line': False}]}
+  crystalline AND non-degenerate        : 19791 schedules (17118 of them beyond-coset)
+  census strata (stab x affine x det9)  : 20, all witnessed by a menu-driven schedule outside as well as inside the window: 20
+  [PASS] G-STRATA-WITNESSED
+         EVERY NONEMPTY CENSUS STRATUM HAS A MENU-DRIVEN WITNESS.  The 20 nonempty (stabilizer x affine-class x non-degeneracy) strata of the WHOLE family are each given a deterministic representative -- the first in a fixed enumeration, no sampling -- and each representative's record is built by driving the layer's menus: 20 witnesses, every one FORCED (maxhits = 1, no refusal, 6 division events).  So the grammar's verdict is not confined to the resolvable window: it has been taken at least once in every cell of the census
+         evidence: {'strata': 20, 'witnessed': 20, 'missing': [], 'all_forced': True}
+
+==============================================================================
+SEC 8   FRAGILITY (pin R2.4) -- computed, not sampled, on the window
+==============================================================================
+  crystalline schedules in the window   : 540
+  (broken, admissible) edit census      : {'(12, 12)': 540}
+  [PASS] G-FRAGILITY
+         THE CRYSTAL IS MAXIMALLY FRAGILE, AT EVERY CRYSTALLINE SCHEDULE OF THE WINDOW.  A single-arbitration re-seating -- moving exactly one division event to another cell of its own conflict group, the smallest edit that stays in the family -- has 12 admissible forms at every schedule (6 arbitrations x 2 alternative seats, each an admissible member of the window in its own right), and at every one of the 540 crystalline window schedules ALL of them destroy the period.  Each schedule is evaluated against its own edits (#87).  The mechanism: the edit changes the field by 1_new - 1_old, and a difference of two distinct point masses is never constant on the cosets of an order-3 subgroup
+         evidence: {'crystalline_window': 540, 'census': {'(12, 12)': 540}, 'exceptions': 0}
+
+==============================================================================
+SEC 9   THE WALLS (pin R4), the four inherited from U4
+==============================================================================
+  [PASS] G-WALL-L1
+         L-1 IS ARGUED BEFORE ANY TEST AND THEN DECLINED, AND THE RETRACTED SENTENCE IS ABSENT.  Order-level covariance is a fourth form outside paper 8's three (verbatim anchor V07) and its admissibility is v11's to argue; this unit measures a PERMUTATION action of Z_3^2 on the actor set, which L-1's own scope guard leaves free, constructs no bridge from those translations to any boost, and states in the paper that the fourth form is NOT TESTED HERE.  The prohibition gate whitespace-normalises and ASCII-folds BOTH sides (#125), so a line-wrapped injection of the 97-character retracted sentence is caught -- the mutant MUT-WALL-L1 injects exactly that
+         evidence: {'banned_len': 97, 'absent_from_paper': True, 'argued_first': True, 'present_in_source_prose': False}
+  [PASS] G-WALL-BHS
+         NO SPRINKLING-GRADE LORENTZ-INVARIANCE TEST IS RUN.  The catalog's BHS block (verbatim anchor V08) says a Poisson sprinkling admits no Lorentz-invariant finite-valency graph, and these schedules are finite-valency by construction, so running the test would manufacture a false negative.  Measured on this program's own source: no sprinkling, no boost, no rapidity and no frame is computed anywhere -- the only group that acts here is the translation group of a 9-element site lattice
+         evidence: {'sprinkling_computed': False, 'groups_acting': ['Z_3^2 translations']}
+  [PASS] G-WALL-KR
+         NO DIMENSION READING IS TAKEN, SO THE KLEITMAN-ROTHSCHILD HEIGHT CONTROL HAS NOTHING TO CONTROL.  The catalog's carry is that a dimension reading without a height control is worthless (verbatim anchor V09).  This unit measures no chart width, no Myrheim-Meyer estimate and no max-shatter dimension: its columns are a translation stabilizer, a determinant and a constructibility fate, none of which is dimension-adjacent.  The gate is the conjunction: either the paper takes no dimension reading, or it carries a height control
+         evidence: {'dimension_reading': 'none', 'paper_mentions_height': True}
+  [PASS] G-WALL-DIAGONAL
+         THE DIAGONAL COUNTERPOINT IS MEASURED HERE -- THAT IS THIS UNIT'S POINT (verbatim anchor V10) -- AND COSMOLOGICAL READINGS STAY BARRED.  U4 found the division field's period and the vanishing diagonal link count jointly forced by one design choice; this census varies that choice and measures the two separately: the period direction ranges over all four order-3 subgroups and the diagonal link count is populated by the diagonal parallel class.  No cosmological word appears in the paper
+         evidence: {'cosmological_words': [], 'diagonal_measured': True, 'period_directions': ['<(0,1)>', '<(1,0)>', '<(1,1)>', '<(1,2)>']}
+
+==============================================================================
+SEC 10  THE VERDICT
+==============================================================================
+  U4B-CRYSTAL-GENERIC-[beyond-coset 1/32; 1749600 of 55987200; <(0,1)>|<(1,0)>|<(1,1)>|<(1,2)>]
+  DET-NONZERO-EXISTS-[ROW|ROW/DIAG: det=-1 at 9 of 9; 747 of 78400 pairs; POSDEF-EMPTY; I7-STRICT-EMPTY]
+  CONSTRUCTIBILITY-[FORCED 11664 of 11664; BRANCHING 0; REFUSED 0]@WINDOW-11664-OF-57153600+20-STRATUM-WITNESSES
+  [PASS] G-VERDICT-RECONSTRUCTED
+         THE HEAD IS DERIVED A SECOND TIME BY A PATH THAT SHARES NEITHER CODE NOR INPUT NOR TYPED LITERAL WITH THE BUILDER.  The builder assembles the three verdict strings from live Python objects; the comparator reads the RECEIPT'S OWN census rows, recomputes the beyond-coset rate as a Fraction from the two counts it finds there, re-sorts the subgroup list, and rebuilds all three strings from its own format templates.  The two agree character for character
+         evidence: {'crystal': 'U4B-CRYSTAL-GENERIC-[beyond-coset 1/32; 1749600 of 55987200; <(0,1)>|<(1,0)>|<(1,1)>|<(1,2)>]', 'det': 'DET-NONZERO-EXISTS-[ROW|ROW/DIAG: det=-1 at 9 of 9; 747 of 78400 pairs; POSDEF-EMPTY; I7-STRICT-EMPTY]', 'constructibility': 'CONSTRUCTIBILITY-[FORCED 11664 of 11664; BRANCHING 0; REFUSED 0]@WINDOW-11664-OF-57153600+20-STRATUM-WITNESSES'}
+  [PASS] G-SEAL-COMPLETE
+         EVERY PUBLISHED OBJECT WAS DIGESTED AT THE MOMENT ITS GATE PASSED (#119) AND EVERY ONE OF THOSE 15 IN-RUN SEALS STILL VERIFIES HERE.  The artifacts below are written FROM the sealed payload, and the terminal integrity gate compares the bytes on disk against these digests, never against a re-derivation
+         evidence: {'seals': 15, 'declared_in_run': 16, 'broken': []}
+  [PASS] G-EXACT
+         THE ARITHMETIC IS EXACT END TO END.  An AST scan of this file finds 0 float literals and 0 references to `float`; a recursive type scan of the receipt about to be emitted finds no float anywhere.  Every quadratic form component and every determinant is a `fractions.Fraction`; every count is a Python integer
+         evidence: {'float_literals': 0, 'float_refs': 0, 'receipt_floats': False}
+  [PASS] G-CLI-WHITELIST
+         THE CLI IS ARGV-PARSED AGAINST A WHITELIST AND EXERCISED HERE (#82): unknown flags, unknown flag arguments, missing flag arguments and a --verify-paper path that does not exist are all rejected with exit 2, while the two documented no-op-free flags parse.  8 probes, all as declared.  The registered PERMISSIVE shape -- a runner that ignores what it does not recognise -- is present only as this gate's falsifier and is what MUT-CLI-PERMISSIVE substitutes
+         evidence: {'probes': [{'argv': ['--not-a-flag'], 'rejected': True, 'expected': True}, {'argv': ['--mutant'], 'rejected': True, 'expected': True}, {'argv': ['--mutant', 'NOPE'], 'rejected': True, 'expected': True}, {'argv': ['--break-anchor'], 'rejected': True, 'expected': True}, {'argv': ['--verify-paper', '/no/such/file.md'], 'rejected': True, 'expected': True}, {'argv': ['extra'], 'rejected': True, 'expected': True}, {'argv': ['--no-write'], 'rejected': False, 'expected': False}, {'argv': ['--numbers'], 'rejected': False, 'expected': False}]}
+  [PASS] G-WAIVERS-VERIFIED
+         THE COVERAGE LEDGER IS HONEST (#34).  Every gate this instrument declares -- the ones evaluated here and the ones evaluated only in the paper, mutant, self-test and writing paths -- is classified FALSIFIABLE, meaning a declared mutant or a declared control drives it to FAIL, or WAIVED WITH A FORCING that says why it cannot fail and what would have to change for it to.  50 gates: 43 falsifiable, 7 waived-with-forcing, 0 unaccounted
+         evidence: {'gates': 50, 'falsifiable': 43, 'waived': 7, 'unaccounted': 'none'}
+
+==============================================================================
+SEC 11  THE PAPER GATES
+==============================================================================
+  [PASS] G-PAPER-CLAIMS
+         every one of the 15 claims this instrument makes is rendered in the paper under test, whitespace-normalised and ASCII-folded on both sides (#125)
+         evidence: {'missing': 'none', 'claims': 15}
+  [PASS] G-PAPER-NUMERAL-COVERAGE
+         every numeral occurring in the paper is either a number this run COMPUTED and registered, or one of the 54 declared in-text residues; every hexadecimal token is one of the 10 pinned source digests or the 3 declared commits; 95 distinct numerals over 532 occurrences
+         evidence: {'uncovered': 'none', 'undeclared_hex': 'none'}
+  [PASS] G-PAPER-CLAIM-POLARITY
+         every declared polarity of the head is present in the paper in its TRUE form and absent in its FALSE form: 4 pairs
+         evidence: {'polarity': [{'id': 'P1', 'true_present': True, 'false_present': False, 'ok': True}, {'id': 'P2', 'true_present': True, 'false_present': False, 'ok': True}, {'id': 'P3', 'true_present': True, 'false_present': False, 'ok': True}, {'id': 'P4', 'true_present': True, 'false_present': False, 'ok': True}]}
+
+==============================================================================
+SEC 12  THE DECLARED MUTANTS, RUN IN PROCESS
+==============================================================================
+  MUT-CRYSTAL-SEEDED       -> G-BEYOND-COSET-CRYSTALLINE
+  MUT-AFFINE-NULL          -> G-AFFINE-LAW
+  MUT-CU-SPLIT             -> G-CU-SPLIT-EMPTY
+  MUT-DET-EMPTY            -> G-DET-NONZERO-EXISTS
+  MUT-DET-POSDEF           -> G-POSDEF-EMPTY
+  MUT-I7-STRICT            -> G-I7-STRICT-EMPTY
+  MUT-STAB-ROUTE           -> G-STAB-ROUTES
+  MUT-FOOTPRINT            -> G-FOOTPRINT-CONSTANT
+  MUT-DRIVEN-FIELD         -> G-DRIVEN-EQUALS-COMBINATORIAL
+  MUT-NOT-FORCED           -> G-CONSTRUCTIBILITY
+  MUT-REFUSAL-BLIND        -> G-CTRL-REFUSED
+  MUT-BRANCHING-BLIND      -> G-CTRL-BRANCHING
+  MUT-COMMITTED-RECORD     -> G-COMMITTED-RECORD
+  MUT-FAMILY-COUNT         -> G-FAMILY-COUNT
+  MUT-WINDOW-SILENT        -> G-WINDOW-DISCLOSED
+  MUT-FRAGILITY            -> G-FRAGILITY
+  MUT-WALL-L1              -> G-WALL-L1
+  MUT-WALL-BHS             -> G-WALL-BHS
+  MUT-HEAD                 -> G-VERDICT-RECONSTRUCTED
+  MUT-SEAL-BROKEN          -> G-SEAL-COMPLETE
+  MUT-SELFTEST-WRITES      -> G-SELFTEST-WRITES-NOTHING
+  MUT-CLI-PERMISSIVE       -> G-CLI-WHITELIST
+  MUT-PAPER-POLARITY       -> G-PAPER-CLAIM-POLARITY
+  MUT-VERBATIM             -> G-VERBATIM
+  MUT-ANCHOR-DRIFT         -> G-ANCHORS-READ
+  MUT-STRATUM-BLIND        -> G-STRATA-WITNESSED
+  MUT-CLASSPAIR            -> G-CLASS-PAIR-TABLE
+  MUT-WALL-KR              -> G-WALL-KR
+  MUT-WALL-COSMO           -> G-WALL-DIAGONAL
+  MUT-PAPER-CLAIM          -> G-PAPER-CLAIMS
+  MUT-PAPER-NUMERAL        -> G-PAPER-NUMERAL-COVERAGE
+  [PASS] G-MUTANTS-ON-TARGET
+         every one of the 31 declared mutants is killed, and killed by the gate it was declared to falsify: a mutant that dies elsewhere is a gate boundary this unit does not understand
+         evidence: {'killed': 31, 'on_target': 31, 'off_target': 'none'}
+  [PASS] G-PAPER-COVERAGE-FINAL
+         the paper-claim and numeral-coverage check is re-run once the instrument's own totals close, so the paper's instrument section is covered too; its in-run twins carry the injection falsifiers and this evaluation is the enforcement -- a failure here exits 1 and writes nothing.  It also closes the residue ledger: every declared in-text residue must actually occur in the paper, so the list cannot be padded
+         evidence: {'missing': 'none', 'uncovered': 'none', 'undeclared_hex': 'none', 'declared_but_absent': 'none'}
+
+==============================================================================
+RECEIPT
+==============================================================================
+  gates      : 50 evaluated, all passed
+  sources    : 10 hash-pinned; verbatim anchors 10; read anchors 3
+  mutants    : 31 declared
+  menu drives: 11686 records built by the layer's own menu
+  seals      : 19 objects sealed at gate time
+    SEAL-ANCHORS             anchors                      794287cb51b3
+    SEAL-VERBATIM            verbatim_anchors             f9424a945a51
+    SEAL-FAMILY              family                       b4ebed48a284
+    SEAL-CONSTRUCTIBILITY    constructibility             92c8f8c6b129
+    SEAL-STABILIZER          stabilizer                   fc13b6294766
+    SEAL-DETERMINANT         determinant                  e66157ef595b
+    SEAL-CLASS-PAIRS         class_pairs                  b001164bc55f
+    SEAL-AFFINE              affine                       9ea7cb5e1f0c
+    SEAL-STRATA              strata                       0d3990541047
+    SEAL-FRAGILITY           fragility                    9db7c3c84864
+    SEAL-WALLS               walls                        b81f389fd5cb
+    SEAL-VERDICT-CRYSTAL     verdict/crystal              e134d3623415
+    SEAL-VERDICT-DET         verdict/det                  4cf504e40adc
+    SEAL-VERDICT-CONSTR      verdict/constructibility     4fc8b0a0a935
+    SEAL-COUNTS              counts                       c1d5c9d9f710
+    SEAL-WAIVERS             waiver_ledger                dc5c6bd78afb
+    SEAL-MUTANTS             mutants                      19af84f254ab
+    SEAL-GATES               gates                        8274c9224584
+    SEAL-TOTALS              totals                       9d3bedcd1a70

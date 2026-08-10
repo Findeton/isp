@@ -4239,3 +4239,52 @@ set at both sizes).  The choice inventory omits the
 verdict-determining choice (which gate is declared).  NO
 measured quantity requires correction.  One seat pending
 (instrument) → adjudication.
+
+## 2026-08-10 — U4B DELIVERED, COMMITTED AS-IS (v14 LEDGER #146)
+
+Paper-17 delivered.  **VERDICTS (CANDIDATE READINGS):
+U4B-CRYSTAL-GENERIC — the affine null CONFIRMED exactly where
+predicted AND FAILS TO EXHAUST THE PHENOMENON: beyond-coset
+schedules crystallize at 1/32 (1,749,600 of 55,987,200; all four
+order-3 subgroups appear), with the NEW MECHANISM MEASURED — the
+field is 1 on a union of two H-cosets while NEITHER seed set is
+an H-coset: THE PERIOD BELONGS TO THE PAIR, not to either seed.**
+CU-JOINT 291,600/291,600 crystalline (the null); CU-SPLIT 0;
+overall 1/28.  **DET-NONZERO-EXISTS: 747 of 78,400 partition
+pairs (544,563 schedules) carry det≠0 at ALL NINE SITES — the
+witness BY NAME: ROW|ROW/DIAG, the schedule that never rotates
+its conflict groups (q=[[0,−1],[−1,2]], det=−1 at 9/9,
+homogeneous, FORCED, in-window).  THE CORPUS'S FIRST
+NON-DEGENERATE GRAMMAR-GENERATED GEOMETRY CARRIER EXISTS.**
+BUT: positive-definite sites max at 3-of-9 over ALL 78,400 pairs
+(the link budget 18 < the 27 needed) and ZERO pairs meet I7's
+strict positivity — **the weld census stays EMPTY for a LARGER
+cause than the diagonal: THE BUDGET WALL (18<27)**; and surprise
+(2): **the carrier can never be Riemannian, by a counting fact —
+486 of the 747 non-degenerate pairs carry BOTH det signs across
+sites (signature non-constant)**.  19,791 schedules are both
+crystalline AND non-degenerate (17,118 beyond-coset).  FAMILY =
+57,153,600 (computed twice: enumeration and closed form); the
+grammar-drive WINDOW = 11,664 declared IN THE VERDICT STRING
+(1/4900, containing the committed schedule) + 20 stratum
+witnesses; all other columns exhaustive over the whole family,
+licensed by the driven-field=combinatorial-field gate at all
+11,664 window records.  Constructibility FORCED 11,664/11,664 +
+20/20 (both negative fates exhibited by declared controls);
+fragility MAXIMAL (12/12 edits break the stabilizer at all 540
+crystalline window schedules).  Surprises: the footprint reading
+is a CENSUS ARTIFACT (constant 2, Stab=Z₃² for EVERY schedule —
+U4's two vacuous cells are a budget property); **d60's pick
+tie-break sorted(key=repr) is hash-seed dependent** (the class
+the Γ-iter reviewer swept, found live in a v10 constructor —
+made a branching control non-reproducible; handled honestly:
+the control reports the candidate count and the paper says
+why).  Instrument: born-#119 — **the seal caught a real defect
+DURING construction** (a published row appended after
+SEAL.take); 50 gates; 31/31 mutants on-target; 10 verbatim
+anchors ≥57 chars; 3 anchors READ-and-reproduced; byte ×2 +
+off-tree git-absent; selftest exit-1-writes-nothing.  U4 and
+weld-2 sources cited-not-read (rewrites in flight; frozen shas
+used) — priced.  Artifacts committed as-is: paper 2bcba873d78e,
+code 2c9b999dea31, output 8715c46a7b7f, receipt c4a4e8223b64.
+Battery + panel next.
