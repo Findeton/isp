@@ -2767,3 +2767,44 @@ declare; (c) hazards — the dead list, the scissors quantifier,
 the diagonal question, the four binding engravings.
 Construction pins remain gated on the weld-2 adjudication per
 the candidate-readings discipline.
+
+## 2026-08-10 — WELD-2 OPERATOR FROZEN (1 OF 3) (v14 LEDGER #96)
+
+review-w2-operator.md frozen (64ddbfb0c2f6).  Grade AWF; 115
+recomputations, 0 divergences; the rebuild imported nothing
+(Tarjan SCC vs the unit's Kahn+length-6; isomorphisms
+brute-forced over all 362,880 bijections; different primitives
+throughout); **off-tree scratch run BYTE-IDENTICAL to both
+committed artifacts** (the no-moving-refs standard met).
+**MAJOR-1 — THE ×2-CARRIERS AXIS IS INERT:** all 30 @MENU census
+rows are identical to the 30 @CONG rows in every field; the code
+selects the class map by the SITE generator, never by the
+carrier; CANDIDATES=60 is 30 counted twice; §5's
+"built separately on each carrier's own class graph"
+mis-describes the code; the carrier-relativity
+"silence-is-a-result" claim is wrong in its grounds (the
+instrument CANNOT discriminate the carriers) — the substance of
+@BOTH survives via the site axis, but the verdict segment and
+§5/§9 need recomposition.  MAJOR-2: one prose cell (§2.2 P4
+MENU q-holonomy {2,3} rank 2) is never computed — my rebuild
+confirms the VALUE is right; it is unbacked, not false (#20;
+two-line repair supplied).  Six MINORs incl. the kill criterion
+(directed acyclicity) being strictly stronger than the admit
+criterion (undirected isomorphism) at the positive control, and
+I-ORIENT never returning its other value.  **FOUR
+STRENGTHENINGS SUPPLIED:** (1) the scissors SURVIVES AT d≤5 —
+the §9.3(i) registered experiment run: MENU@d≤5 265 classes/113
+self-loops/0 non-trivial SCCs; CONG@d≤5 462/0/0; the actor-pair
+still 2 objects; D74's 265/462 row reproduced from the unit's
+own definitions; (2) acyclicity at EVERY length by SCC, not
+just 2–6; (3) **A THEOREM THE UNIT CAN HAVE: every extension
+edge raises history length by exactly 1 (0 exceptions) ⟹ the
+class graphs are GRADED ⟹ acyclic with NO computation** —
+CONG-185 is length-homogeneous at both depths, and MENU's 45
+self-loop classes are EXACTLY its 45 multi-length classes;
+(4) the charitable-reconstruction attack fails (every
+type-killed cell, most generously read, is 2-object-cyclic or
+many-object-acyclic).  Reviewer honesty note on the record: its
+own first-pass 268/470 (repr()-keyed, seed-dependent) caught
+and corrected to 265/462 before reaching a finding.  Two seats
+pending (effectus, instrument).
