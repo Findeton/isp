@@ -2314,3 +2314,36 @@ in the deep corpus); the actor/pool structures.  The
 precedent warning carried: R6b′'s identification census
 found 0-of-5 motivated at the interval level.  The weld-2
 unit pins on the scout's report + the user's word.
+
+## 2026-08-10 — Γ-MAIN INSTRUMENT FROZEN + CORRECTION OF RECORD (v14 LEDGER #81)
+review-gmain-instrument.md frozen.  Grade AWF (8 MAJOR); 18
+executions + ~325 recomputations; reproduction clean (0
+anchor mismatches; byte-identical).  **THE UNIT HAS ZERO
+INPUT CHANNELS** — no sys.argv anywhere; no mutant harness;
+unknown flags unreadable; the run overwrites unconditionally.
+**CORRECTION OF RECORD: my #73 "selftest exit 0" was VACUOUS
+— a third plain run** (the #66 disease recurring on the
+adjudicator at Γ-main; the #238 pre-check matched docstring
+text, not an argv handler; owned).  Byte-identity (×2 worker
++ ×2 mine) stands.  COVERAGE: honest denominator **15 of 88
+gates (17%)**; 18-of-36 mutants genuine (10 assert the
+unmutated object, 8 tautological); mutant() hard-codes
+reaches_target=True.  **G-VERDICT-EQUALITY IS THE SAME
+CONCATENATION WRITTEN TWICE — the #219 disease AT THE GATE
+THE #10 ENGRAVING CREATED** (the R4 MAJOR-6 shared-literal
+twin; recurrence, MAJOR by default).  **FOUR INJECTIONS
+SURVIVE, proven-executed: eq-22 negatives→0 flips a PAPER
+HEADLINE (REFUTED→STOCHASTIC) at exit 0; motivation reclass;
+quotation-meaning inversion (the T1 disease — the unit
+POSTDATES #62 and claimed compliance falsely); three false
+prose numbers byte-identical.**  NOVEL: **INJ12 — the
+instrument CANNOT EMIT A SETTLED VERDICT (the clean mutant
+sheet is contingent on PARTIAL)**; INJ09 — G-COMPLIANCE
+passes on a null row while its text claims a death.  A
+declared Γ-prep path-value probe DOES NOT RESOLVE (silently
+swallowed; the receipt is flat).  One unanchored mutable
+input (its own paper from the worktree).  Three false
+instrument claims in the paper + one in the output (0 false
+NUMBERS in 69 traced).  Both theorem-pass waivers genuine;
+all four settlement conjuncts flippable.  **THE Γ-MAIN PANEL
+IS COMPLETE: 3× AWF.**  Adjudication next.
