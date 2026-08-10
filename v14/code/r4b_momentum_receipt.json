@@ -1,0 +1,7753 @@
+{
+ "agreement_matrix": {
+  "NEGATIVE|NEGATIVE": 25,
+  "NEGATIVE|POSITIVE": 32,
+  "NEGATIVE|TIE-AVERAGED": 33,
+  "POSITIVE|NEGATIVE": 32,
+  "POSITIVE|POSITIVE": 25,
+  "POSITIVE|TIE-AVERAGED": 33,
+  "TIE-AVERAGED|NEGATIVE": 39,
+  "TIE-AVERAGED|POSITIVE": 39,
+  "TIE-AVERAGED|TIE-AVERAGED": 58
+ },
+ "arena_declaration": {
+  "arena": "the anchored chart group and R4's declared extension by the square point group; the 22 extended classes are inherited and rebuilt",
+  "boundary": "the finite periodic site lattice X = (Z_L)^d with d = 2 and L = 4 read from the parent's anchored receipt; the carrier is the single-occupation sector, so |C| = |X| = 16",
+  "division_events": "inherited unchanged from the parent: t = 0 and t = 2 are division events, the cut at t = 1 is not; indivisibility is DECLARED by those times and is never measured here",
+  "family": "R4's terminal family, rebuilt here from its definitions and gated row by row against the parent receipt: the 58 translation-covariant (circulant) unitary generators on the 3-term axis stencil over the declared 25-element alphabet, plus the 6 declared controls",
+  "law": "the Bloch eigenphase s(k) in Z/8 defined by lambda(k) = zeta_8^{s(k)}; the group velocity is the declared discrete derivative of the phase on the dual torus",
+  "momentum": "THE DUAL TORUS, declared as data: the 16 characters chi_k(x) = zeta_4^{k.x} for k in (Z_4)^2.  Every circulant is diagonal in this basis; the eigenvalue is the symbol and its exponent is the exact eigenphase"
+ },
+ "arithmetic": "fractions.Fraction 4-tuples over Q(zeta_8) modulo x^4 + 1; eigenphases exact in Z/8; velocities exact rationals; no floats",
+ "axes": [
+  {
+   "axis": [
+    0,
+    1
+   ],
+   "order": 4,
+   "radius": 1
+  },
+  {
+   "axis": [
+    0,
+    2
+   ],
+   "order": 2,
+   "radius": 2
+  },
+  {
+   "axis": [
+    1,
+    0
+   ],
+   "order": 4,
+   "radius": 1
+  },
+  {
+   "axis": [
+    1,
+    1
+   ],
+   "order": 4,
+   "radius": 1
+  },
+  {
+   "axis": [
+    1,
+    2
+   ],
+   "order": 4,
+   "radius": 2
+  },
+  {
+   "axis": [
+    1,
+    3
+   ],
+   "order": 4,
+   "radius": 1
+  },
+  {
+   "axis": [
+    2,
+    0
+   ],
+   "order": 2,
+   "radius": 2
+  },
+  {
+   "axis": [
+    2,
+    1
+   ],
+   "order": 4,
+   "radius": 2
+  },
+  {
+   "axis": [
+    2,
+    2
+   ],
+   "order": 2,
+   "radius": 2
+  }
+ ],
+ "byte_anchors": [
+  {
+   "artifact": "v14/paper-10-defect-on-the-stage.md",
+   "expected": "1063401c7bb5",
+   "id": "A-R4-PAPER",
+   "measured": "1063401c7bb5",
+   "note": "THE PARENT, terminal at commit 583cae7: the family's construction, the ceilings, the propagator observation."
+  },
+  {
+   "artifact": "v14/code/r4_defect_stage_exact.py",
+   "expected": "2959c5a6a84b",
+   "id": "A-R4-CODE",
+   "measured": "2959c5a6a84b",
+   "note": "the parent instrument.  READ AS BYTES ONLY -- never imported, never executed; its definitions are reimplemented here."
+  },
+  {
+   "artifact": "v14/code/r4_defect_stage_output.txt",
+   "expected": "ffd069ff3eb4",
+   "id": "A-R4-OUTPUT",
+   "measured": "ffd069ff3eb4",
+   "note": "the parent's terminal output: the family rows this unit rebuilds against."
+  },
+  {
+   "artifact": "v14/code/r4_defect_stage_receipt.json",
+   "expected": "3dc1393b0df8",
+   "id": "A-R4-RECEIPT",
+   "measured": "3dc1393b0df8",
+   "note": "THE REBUILD GATE'S OPPONENT: the parent's 64 generator rows with exact coefficients, its 22 extended classes, and its counts."
+  },
+  {
+   "artifact": "v14/note-r4-adjudication.md",
+   "expected": "3b00a9481b28",
+   "id": "A-R4-ADJ",
+   "measured": "3b00a9481b28",
+   "note": "the parent's joint adjudication: the successor register that names this unit (R-R4-11)."
+  },
+  {
+   "artifact": "v14/review-r4-operator.md",
+   "expected": "3828376b49a6",
+   "id": "A-REV-OPERATOR",
+   "measured": "3828376b49a6",
+   "note": "the frozen operator review: K3, the charge-without-momentum tension."
+  },
+  {
+   "artifact": "v14/review-r4-effectus.md",
+   "expected": "f54fa11dfd07",
+   "id": "A-REV-EFFECTUS",
+   "measured": "f54fa11dfd07",
+   "note": "the frozen effectus review: the 57-of-58 dispersion row and the one-step drift table."
+  },
+  {
+   "artifact": "v14/note-r4b-momentum-pin.md",
+   "expected": "bcd12bbe6fd8",
+   "id": "A-PIN-R4B",
+   "measured": "bcd12bbe6fd8",
+   "note": "this unit's pin, frozen at v14 ledger #106."
+  }
+ ],
+ "class_rows": [
+  {
+   "aliased_cells": 0,
+   "class": "C004",
+   "kind": "CIRC",
+   "motion": "STATIC",
+   "profiles": 1,
+   "radius": 0,
+   "size": 1,
+   "speed": "0",
+   "support": 1
+  },
+  {
+   "aliased_cells": 0,
+   "class": "C000",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 4,
+   "radius": 1,
+   "size": 4,
+   "speed": "1",
+   "support": 3
+  },
+  {
+   "aliased_cells": 0,
+   "class": "C001",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 4,
+   "radius": 1,
+   "size": 4,
+   "speed": "1",
+   "support": 3
+  },
+  {
+   "aliased_cells": 0,
+   "class": "C007",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 4,
+   "radius": 1,
+   "size": 4,
+   "speed": "1",
+   "support": 1
+  },
+  {
+   "aliased_cells": 32,
+   "class": "C005",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 4,
+   "radius": 1,
+   "size": 4,
+   "speed": "2",
+   "support": 2
+  },
+  {
+   "aliased_cells": 0,
+   "class": "C009",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 2,
+   "radius": 2,
+   "size": 2,
+   "speed": "1",
+   "support": 2
+  },
+  {
+   "aliased_cells": 0,
+   "class": "C010",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 2,
+   "radius": 2,
+   "size": 2,
+   "speed": "1",
+   "support": 2
+  },
+  {
+   "aliased_cells": 32,
+   "class": "C011",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 2,
+   "radius": 2,
+   "size": 2,
+   "speed": "2",
+   "support": 1
+  },
+  {
+   "aliased_cells": 0,
+   "class": "C020",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 4,
+   "radius": 1,
+   "size": 4,
+   "speed": "1",
+   "support": 3
+  },
+  {
+   "aliased_cells": 0,
+   "class": "C021",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 4,
+   "radius": 1,
+   "size": 4,
+   "speed": "1",
+   "support": 3
+  },
+  {
+   "aliased_cells": 0,
+   "class": "C026",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 4,
+   "radius": 1,
+   "size": 4,
+   "speed": "1",
+   "support": 1
+  },
+  {
+   "aliased_cells": 64,
+   "class": "C024",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 4,
+   "radius": 1,
+   "size": 4,
+   "speed": "2",
+   "support": 2
+  },
+  {
+   "aliased_cells": 0,
+   "class": "C028",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 4,
+   "radius": 2,
+   "size": 4,
+   "speed": "1",
+   "support": 3
+  },
+  {
+   "aliased_cells": 0,
+   "class": "C029",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 4,
+   "radius": 2,
+   "size": 4,
+   "speed": "1",
+   "support": 3
+  },
+  {
+   "aliased_cells": 64,
+   "class": "C034",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 4,
+   "radius": 2,
+   "size": 4,
+   "speed": "2",
+   "support": 1
+  },
+  {
+   "aliased_cells": 96,
+   "class": "C032",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 4,
+   "radius": 2,
+   "size": 4,
+   "speed": "2",
+   "support": 2
+  },
+  {
+   "aliased_cells": 0,
+   "class": "C055",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 1,
+   "radius": 2,
+   "size": 1,
+   "speed": "1",
+   "support": 2
+  },
+  {
+   "aliased_cells": 0,
+   "class": "C056",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 1,
+   "radius": 2,
+   "size": 1,
+   "speed": "1",
+   "support": 2
+  },
+  {
+   "aliased_cells": 32,
+   "class": "C057",
+   "kind": "CIRC",
+   "motion": "MOVES",
+   "profiles": 1,
+   "radius": 2,
+   "size": 1,
+   "speed": "2",
+   "support": 1
+  },
+  {
+   "aliased_cells": null,
+   "class": "B058",
+   "kind": "BRICK",
+   "motion": "NOT-BLOCH-DIAGONAL",
+   "profiles": null,
+   "radius": null,
+   "size": 4,
+   "speed": null,
+   "support": null
+  },
+  {
+   "aliased_cells": null,
+   "class": "S062",
+   "kind": "SCRAM",
+   "motion": "NOT-BLOCH-DIAGONAL",
+   "profiles": null,
+   "radius": null,
+   "size": 1,
+   "speed": null,
+   "support": null
+  },
+  {
+   "aliased_cells": null,
+   "class": "S063",
+   "kind": "SCRAM",
+   "motion": "NOT-BLOCH-DIAGONAL",
+   "profiles": null,
+   "radius": null,
+   "size": 1,
+   "speed": null,
+   "support": null
+  }
+ ],
+ "class_sizes": [
+  1,
+  2,
+  4
+ ],
+ "cli_probes": [
+  {
+   "argv": [
+    "--not-a-flag"
+   ],
+   "must_reject": true,
+   "rejected": true
+  },
+  {
+   "argv": [
+    "--mutant"
+   ],
+   "must_reject": true,
+   "rejected": true
+  },
+  {
+   "argv": [
+    "--mutant",
+    "NOPE"
+   ],
+   "must_reject": true,
+   "rejected": true
+  },
+  {
+   "argv": [
+    "--break-anchor",
+    "NOPE"
+   ],
+   "must_reject": true,
+   "rejected": true
+  },
+  {
+   "argv": [
+    "--break-anchor"
+   ],
+   "must_reject": true,
+   "rejected": true
+  },
+  {
+   "argv": [
+    "--no-write"
+   ],
+   "must_reject": false,
+   "rejected": false
+  },
+  {
+   "argv": [
+    "--selftest"
+   ],
+   "must_reject": false,
+   "rejected": false
+  },
+  {
+   "argv": [
+    "--verify-paper"
+   ],
+   "must_reject": false,
+   "rejected": false
+  },
+  {
+   "argv": [
+    "--mutant",
+    "MUT-ANCHOR"
+   ],
+   "must_reject": false,
+   "rejected": false
+  }
+ ],
+ "counts": {
+  "L": 4,
+  "aliased_cells": 320,
+  "aliased_families": 19,
+  "alphabet": 25,
+  "bound_has_content": false,
+  "cells": 928,
+  "class_labels": 14,
+  "classes_circulant": 19,
+  "classes_extended": 22,
+  "classes_moving": 18,
+  "classes_not_bloch": 3,
+  "classes_static": 1,
+  "cone_sites_one_step": 16,
+  "connective_tag": "MAX-NORM",
+  "control": "C004",
+  "d": 2,
+  "diameter": 2,
+  "distinct_profiles": 58,
+  "drift_winding_matched": 58,
+  "drift_winding_mismatched": 39,
+  "eigen_verified": 928,
+  "families": 58,
+  "field": "Q(ZETA-8)",
+  "forcing_link": "(1,1)",
+  "in_mu8": 928,
+  "indivisibility": "DECLARED-BY-DIVISION-EVENT-TIMES",
+  "integer_velocities": 1856,
+  "interfering": 42,
+  "interfering_moving": 42,
+  "interior_radii": [
+   1
+  ],
+  "markov_nonzero": 0,
+  "markov_pairs": 1792,
+  "max_defect_radius": 2,
+  "momenta": 16,
+  "monomial": 16,
+  "moving": 57,
+  "nonmonomial_pool": 48,
+  "nonzero_winding": 12,
+  "parity_invariant": 58,
+  "pool": 64,
+  "radius_ceiling": 2,
+  "reach_equal": 36,
+  "reach_over": 8,
+  "reach_under": 14,
+  "reading_pairs": 9,
+  "reading_pairs_with_identity": 1,
+  "sector": "SINGLE-OCCUPATION",
+  "separations": 16,
+  "separations_ceiling": 16,
+  "sites": 16,
+  "speed_spectrum": [
+   "0",
+   "1",
+   "2"
+  ],
+  "static": 1,
+  "stencil": "3-TERM-AXIS",
+  "unit_modulus": 928,
+  "velocity_cells": 1856,
+  "velocity_definition": "FORWARD-DIFFERENCE-WITH-TIE-AVERAGED",
+  "velocity_fiber": 9,
+  "vmax": "2"
+ },
+ "dispersion_census": [
+  {
+   "aliased_cells": 0,
+   "axis": [
+    0,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "family": "C004",
+   "max_speed": "0",
+   "monomial": true,
+   "motion": "STATIC",
+   "radius": 0,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "support": 1,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    0,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ],
+    [
+     [
+      0,
+      3
+     ],
+     [
+      "0",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    6,
+    6,
+    4,
+    4,
+    6,
+    6,
+    4,
+    4,
+    6,
+    6,
+    4,
+    4,
+    6,
+    6
+   ],
+   "family": "C000",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    2,
+    2
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    0,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      0,
+      3
+     ],
+     [
+      "1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    4,
+    4,
+    6,
+    6,
+    4,
+    4,
+    6,
+    6,
+    4,
+    4,
+    6,
+    6,
+    4,
+    4,
+    6
+   ],
+   "family": "C001",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    6,
+    6,
+    0,
+    0,
+    6,
+    6,
+    0,
+    0,
+    6,
+    6,
+    0,
+    0,
+    6,
+    6,
+    0
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    0,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      "0",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      0,
+      3
+     ],
+     [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    6,
+    6,
+    4,
+    4,
+    6,
+    6,
+    4,
+    4,
+    6,
+    6,
+    4,
+    4,
+    6,
+    6,
+    4
+   ],
+   "family": "C002",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    2,
+    2,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    2,
+    2,
+    0
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    0,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      "1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ],
+    [
+     [
+      0,
+      3
+     ],
+     [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    6,
+    4,
+    4,
+    6,
+    6,
+    4,
+    4,
+    6,
+    6,
+    4,
+    4,
+    6,
+    6,
+    4,
+    4
+   ],
+   "family": "C003",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    6,
+    6,
+    0,
+    0,
+    6,
+    6,
+    0,
+    0,
+    6,
+    6,
+    0,
+    0,
+    6,
+    6
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    0,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      1
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "1"
+   ],
+   "eigenphase": [
+    4,
+    2,
+    0,
+    6,
+    4,
+    2,
+    0,
+    6,
+    4,
+    2,
+    0,
+    6,
+    4,
+    2,
+    0,
+    6
+   ],
+   "family": "C007",
+   "max_speed": "1",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    6,
+    4,
+    2,
+    0,
+    6,
+    4,
+    2,
+    0,
+    6,
+    4,
+    2,
+    0,
+    6,
+    4,
+    2
+   ],
+   "support": 1,
+   "winding": [
+    "0",
+    "1"
+   ]
+  },
+  {
+   "aliased_cells": 8,
+   "axis": [
+    0,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      1
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      0,
+      3
+     ],
+     [
+      "-1/2",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    0,
+    0,
+    4,
+    4,
+    0,
+    0,
+    4,
+    4,
+    0,
+    0,
+    4,
+    4,
+    0,
+    0
+   ],
+   "family": "C005",
+   "max_speed": "2",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "OVER",
+   "reduced_dispersion": [
+    0,
+    0,
+    4,
+    4,
+    0,
+    0,
+    4,
+    4,
+    0,
+    0,
+    4,
+    4,
+    0,
+    0,
+    4,
+    4
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 8,
+   "axis": [
+    0,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      1
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      0,
+      3
+     ],
+     [
+      "1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    2,
+    2,
+    6,
+    6,
+    2,
+    2,
+    6,
+    6,
+    2,
+    2,
+    6,
+    6,
+    2,
+    2,
+    6
+   ],
+   "family": "C006",
+   "max_speed": "2",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "OVER",
+   "reduced_dispersion": [
+    0,
+    4,
+    4,
+    0,
+    0,
+    4,
+    4,
+    0,
+    0,
+    4,
+    4,
+    0,
+    0,
+    4,
+    4,
+    0
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    0,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      3
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "-1"
+   ],
+   "eigenphase": [
+    4,
+    6,
+    0,
+    2,
+    4,
+    6,
+    0,
+    2,
+    4,
+    6,
+    0,
+    2,
+    4,
+    6,
+    0,
+    2
+   ],
+   "family": "C008",
+   "max_speed": "1",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    2,
+    4,
+    6,
+    0,
+    2,
+    4,
+    6,
+    0,
+    2,
+    4,
+    6,
+    0,
+    2,
+    4,
+    6
+   ],
+   "support": 1,
+   "winding": [
+    "0",
+    "-1"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    0,
+    2
+   ],
+   "axis_order": 2,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      0,
+      2
+     ],
+     [
+      "-1/2",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6
+   ],
+   "family": "C009",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "UNDER",
+   "reduced_dispersion": [
+    0,
+    2,
+    0,
+    2,
+    0,
+    2,
+    0,
+    2,
+    0,
+    2,
+    0,
+    2,
+    0,
+    2,
+    0,
+    2
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    0,
+    2
+   ],
+   "axis_order": 2,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      0,
+      2
+     ],
+     [
+      "1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4
+   ],
+   "family": "C010",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "UNDER",
+   "reduced_dispersion": [
+    0,
+    6,
+    0,
+    6,
+    0,
+    6,
+    0,
+    6,
+    0,
+    6,
+    0,
+    6,
+    0,
+    6,
+    0,
+    6
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 16,
+   "axis": [
+    0,
+    2
+   ],
+   "axis_order": 2,
+   "coefficients": [
+    [
+     [
+      0,
+      2
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0
+   ],
+   "family": "C011",
+   "max_speed": "2",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4
+   ],
+   "support": 1,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    0
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      0
+     ],
+     [
+      "0",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "family": "C012",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    0
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      0
+     ],
+     [
+      "1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    6,
+    6,
+    6,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    6,
+    6,
+    6,
+    6
+   ],
+   "family": "C013",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    0,
+    0,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    0,
+    0,
+    0,
+    0
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    0
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      "0",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    4,
+    4,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    4,
+    4,
+    4,
+    4
+   ],
+   "family": "C014",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    0
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      "1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      0
+     ],
+     [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "family": "C015",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    0
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      1,
+      0
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "1",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    4,
+    4,
+    2,
+    2,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    6,
+    6,
+    6,
+    6
+   ],
+   "family": "C018",
+   "max_speed": "1",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    0,
+    0,
+    6,
+    6,
+    6,
+    6,
+    4,
+    4,
+    4,
+    4,
+    2,
+    2,
+    2,
+    2
+   ],
+   "support": 1,
+   "winding": [
+    "1",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 8,
+   "axis": [
+    1,
+    0
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      1,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "family": "C016",
+   "max_speed": "2",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "OVER",
+   "reduced_dispersion": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 8,
+   "axis": [
+    1,
+    0
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      1,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      0
+     ],
+     [
+      "1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    6,
+    6,
+    6,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    6,
+    6,
+    6,
+    6
+   ],
+   "family": "C017",
+   "max_speed": "2",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "OVER",
+   "reduced_dispersion": [
+    0,
+    0,
+    0,
+    0,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    0,
+    0,
+    0,
+    0
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    0
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      3,
+      0
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "-1",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    4,
+    4,
+    6,
+    6,
+    6,
+    6,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    2,
+    2
+   ],
+   "family": "C019",
+   "max_speed": "1",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    2,
+    2,
+    4,
+    4,
+    4,
+    4,
+    6,
+    6,
+    6,
+    6
+   ],
+   "support": 1,
+   "winding": [
+    "-1",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      3
+     ],
+     [
+      "0",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    6,
+    6,
+    4,
+    6,
+    6,
+    4,
+    6,
+    6,
+    4,
+    4,
+    6,
+    4,
+    4,
+    6
+   ],
+   "family": "C020",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    2,
+    2,
+    0,
+    2,
+    2,
+    0,
+    2,
+    2,
+    0,
+    0,
+    2,
+    0,
+    0,
+    2
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      3
+     ],
+     [
+      "1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    4,
+    4,
+    6,
+    4,
+    4,
+    6,
+    6,
+    4,
+    6,
+    6,
+    4,
+    6,
+    6,
+    4,
+    4
+   ],
+   "family": "C021",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    6,
+    6,
+    0,
+    6,
+    6,
+    0,
+    0,
+    6,
+    0,
+    0,
+    6,
+    0,
+    0,
+    6,
+    6
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     [
+      "0",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      3
+     ],
+     [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    6,
+    6,
+    4,
+    6,
+    6,
+    4,
+    4,
+    6,
+    4,
+    4,
+    6,
+    4,
+    4,
+    6,
+    6
+   ],
+   "family": "C022",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    2,
+    2,
+    0,
+    2,
+    2,
+    0,
+    0,
+    2,
+    0,
+    0,
+    2,
+    0,
+    0,
+    2,
+    2
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     [
+      "1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      3
+     ],
+     [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    6,
+    4,
+    4,
+    6,
+    4,
+    4,
+    6,
+    4,
+    4,
+    6,
+    6,
+    4,
+    6,
+    6,
+    4
+   ],
+   "family": "C023",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    6,
+    6,
+    0,
+    6,
+    6,
+    0,
+    6,
+    6,
+    0,
+    0,
+    6,
+    0,
+    0,
+    6
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      1,
+      1
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "1",
+    "1"
+   ],
+   "eigenphase": [
+    4,
+    2,
+    0,
+    6,
+    2,
+    0,
+    6,
+    4,
+    0,
+    6,
+    4,
+    2,
+    6,
+    4,
+    2,
+    0
+   ],
+   "family": "C026",
+   "max_speed": "1",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    6,
+    4,
+    2,
+    6,
+    4,
+    2,
+    0,
+    4,
+    2,
+    0,
+    6,
+    2,
+    0,
+    6,
+    4
+   ],
+   "support": 1,
+   "winding": [
+    "1",
+    "1"
+   ]
+  },
+  {
+   "aliased_cells": 16,
+   "axis": [
+    1,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      1,
+      1
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      3
+     ],
+     [
+      "-1/2",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    0,
+    0,
+    4,
+    0,
+    0,
+    4,
+    0,
+    0,
+    4,
+    4,
+    0,
+    4,
+    4,
+    0
+   ],
+   "family": "C024",
+   "max_speed": "2",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "OVER",
+   "reduced_dispersion": [
+    0,
+    0,
+    4,
+    4,
+    0,
+    4,
+    4,
+    0,
+    4,
+    4,
+    0,
+    0,
+    4,
+    0,
+    0,
+    4
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 16,
+   "axis": [
+    1,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      1,
+      1
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      3
+     ],
+     [
+      "1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    2,
+    2,
+    6,
+    2,
+    2,
+    6,
+    6,
+    2,
+    6,
+    6,
+    2,
+    6,
+    6,
+    2,
+    2
+   ],
+   "family": "C025",
+   "max_speed": "2",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "OVER",
+   "reduced_dispersion": [
+    0,
+    4,
+    4,
+    0,
+    4,
+    4,
+    0,
+    0,
+    4,
+    0,
+    0,
+    4,
+    0,
+    0,
+    4,
+    4
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      3,
+      3
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "-1",
+    "-1"
+   ],
+   "eigenphase": [
+    4,
+    6,
+    0,
+    2,
+    6,
+    0,
+    2,
+    4,
+    0,
+    2,
+    4,
+    6,
+    2,
+    4,
+    6,
+    0
+   ],
+   "family": "C027",
+   "max_speed": "1",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    2,
+    4,
+    6,
+    2,
+    4,
+    6,
+    0,
+    4,
+    6,
+    0,
+    2,
+    6,
+    0,
+    2,
+    4
+   ],
+   "support": 1,
+   "winding": [
+    "-1",
+    "-1"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    2
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      2
+     ],
+     [
+      "0",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4
+   ],
+   "family": "C028",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "UNDER",
+   "reduced_dispersion": [
+    0,
+    2,
+    0,
+    2,
+    0,
+    2,
+    0,
+    2,
+    2,
+    0,
+    2,
+    0,
+    2,
+    0,
+    2,
+    0
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    2
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      2
+     ],
+     [
+      "1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    4,
+    6,
+    4,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    6,
+    4,
+    6,
+    4
+   ],
+   "family": "C029",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "UNDER",
+   "reduced_dispersion": [
+    0,
+    6,
+    0,
+    6,
+    6,
+    0,
+    6,
+    0,
+    6,
+    0,
+    6,
+    0,
+    0,
+    6,
+    0,
+    6
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    2
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     [
+      "0",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      2
+     ],
+     [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    6,
+    4,
+    6,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    4,
+    6,
+    4,
+    6
+   ],
+   "family": "C030",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "UNDER",
+   "reduced_dispersion": [
+    0,
+    2,
+    0,
+    2,
+    2,
+    0,
+    2,
+    0,
+    2,
+    0,
+    2,
+    0,
+    0,
+    2,
+    0,
+    2
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    2
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     [
+      "1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      2
+     ],
+     [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6,
+    4,
+    6
+   ],
+   "family": "C031",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "UNDER",
+   "reduced_dispersion": [
+    0,
+    6,
+    0,
+    6,
+    0,
+    6,
+    0,
+    6,
+    6,
+    0,
+    6,
+    0,
+    6,
+    0,
+    6,
+    0
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 16,
+   "axis": [
+    1,
+    2
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      1,
+      2
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "1",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    0,
+    4,
+    0,
+    2,
+    6,
+    2,
+    6,
+    0,
+    4,
+    0,
+    4,
+    6,
+    2,
+    6,
+    2
+   ],
+   "family": "C034",
+   "max_speed": "2",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    4,
+    0,
+    4,
+    6,
+    2,
+    6,
+    2,
+    4,
+    0,
+    4,
+    0,
+    2,
+    6,
+    2,
+    6
+   ],
+   "support": 1,
+   "winding": [
+    "1",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 24,
+   "axis": [
+    1,
+    2
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      1,
+      2
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      2
+     ],
+     [
+      "-1/2",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4
+   ],
+   "family": "C032",
+   "max_speed": "2",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 24,
+   "axis": [
+    1,
+    2
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      1,
+      2
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      2
+     ],
+     [
+      "1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    2,
+    6,
+    2,
+    2,
+    6,
+    2,
+    6,
+    2,
+    6,
+    2,
+    6,
+    6,
+    2,
+    6,
+    2
+   ],
+   "family": "C033",
+   "max_speed": "2",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    4,
+    0,
+    4,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    4,
+    0,
+    0,
+    4,
+    0,
+    4
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 16,
+   "axis": [
+    1,
+    2
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      3,
+      2
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "-1",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    0,
+    4,
+    0,
+    6,
+    2,
+    6,
+    2,
+    0,
+    4,
+    0,
+    4,
+    2,
+    6,
+    2,
+    6
+   ],
+   "family": "C035",
+   "max_speed": "2",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    4,
+    0,
+    4,
+    2,
+    6,
+    2,
+    6,
+    4,
+    0,
+    4,
+    0,
+    6,
+    2,
+    6,
+    2
+   ],
+   "support": 1,
+   "winding": [
+    "-1",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    3
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      1
+     ],
+     [
+      "0",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    6,
+    6,
+    4,
+    4,
+    4,
+    6,
+    6,
+    6,
+    4,
+    4,
+    6,
+    6,
+    6,
+    4,
+    4
+   ],
+   "family": "C036",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    2,
+    2,
+    0,
+    0,
+    0,
+    2,
+    2,
+    2,
+    0,
+    0,
+    2,
+    2,
+    2,
+    0,
+    0
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    3
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      1
+     ],
+     [
+      "1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    6,
+    4,
+    4,
+    4,
+    6,
+    6,
+    4,
+    4,
+    4,
+    6,
+    6,
+    6,
+    4,
+    4,
+    6
+   ],
+   "family": "C037",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    6,
+    6,
+    6,
+    0,
+    0,
+    6,
+    6,
+    6,
+    0,
+    0,
+    0,
+    6,
+    6,
+    0
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    3
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     [
+      "0",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      1
+     ],
+     [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    6,
+    6,
+    6,
+    4,
+    4,
+    6,
+    6,
+    6,
+    4,
+    4,
+    4,
+    6,
+    6,
+    4
+   ],
+   "family": "C038",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    2,
+    2,
+    2,
+    0,
+    0,
+    2,
+    2,
+    2,
+    0,
+    0,
+    0,
+    2,
+    2,
+    0
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    3
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     [
+      "1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      1
+     ],
+     [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    4,
+    4,
+    6,
+    6,
+    6,
+    4,
+    4,
+    4,
+    6,
+    6,
+    4,
+    4,
+    4,
+    6,
+    6
+   ],
+   "family": "C039",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    6,
+    6,
+    0,
+    0,
+    0,
+    6,
+    6,
+    6,
+    0,
+    0,
+    6,
+    6,
+    6,
+    0,
+    0
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    3
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      1,
+      3
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "1",
+    "-1"
+   ],
+   "eigenphase": [
+    4,
+    6,
+    0,
+    2,
+    2,
+    4,
+    6,
+    0,
+    0,
+    2,
+    4,
+    6,
+    6,
+    0,
+    2,
+    4
+   ],
+   "family": "C042",
+   "max_speed": "1",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    2,
+    4,
+    6,
+    6,
+    0,
+    2,
+    4,
+    4,
+    6,
+    0,
+    2,
+    2,
+    4,
+    6,
+    0
+   ],
+   "support": 1,
+   "winding": [
+    "1",
+    "-1"
+   ]
+  },
+  {
+   "aliased_cells": 16,
+   "axis": [
+    1,
+    3
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      1,
+      3
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      1
+     ],
+     [
+      "-1/2",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    0,
+    0,
+    4,
+    4,
+    4,
+    0,
+    0,
+    0,
+    4,
+    4,
+    0,
+    0,
+    0,
+    4,
+    4
+   ],
+   "family": "C040",
+   "max_speed": "2",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "OVER",
+   "reduced_dispersion": [
+    0,
+    4,
+    4,
+    0,
+    0,
+    0,
+    4,
+    4,
+    4,
+    0,
+    0,
+    4,
+    4,
+    4,
+    0,
+    0
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 16,
+   "axis": [
+    1,
+    3
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      1,
+      3
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      3,
+      1
+     ],
+     [
+      "1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    6,
+    2,
+    2,
+    2,
+    6,
+    6,
+    2,
+    2,
+    2,
+    6,
+    6,
+    6,
+    2,
+    2,
+    6
+   ],
+   "family": "C041",
+   "max_speed": "2",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "OVER",
+   "reduced_dispersion": [
+    0,
+    0,
+    4,
+    4,
+    4,
+    0,
+    0,
+    4,
+    4,
+    4,
+    0,
+    0,
+    0,
+    4,
+    4,
+    0
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    1,
+    3
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      3,
+      1
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "-1",
+    "1"
+   ],
+   "eigenphase": [
+    4,
+    2,
+    0,
+    6,
+    6,
+    4,
+    2,
+    0,
+    0,
+    6,
+    4,
+    2,
+    2,
+    0,
+    6,
+    4
+   ],
+   "family": "C043",
+   "max_speed": "1",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 1,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    6,
+    4,
+    2,
+    2,
+    0,
+    6,
+    4,
+    4,
+    2,
+    0,
+    6,
+    6,
+    4,
+    2,
+    0
+   ],
+   "support": 1,
+   "winding": [
+    "-1",
+    "1"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    2,
+    0
+   ],
+   "axis_order": 2,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    4,
+    4,
+    6,
+    6,
+    6,
+    6,
+    4,
+    4,
+    4,
+    4,
+    6,
+    6,
+    6,
+    6
+   ],
+   "family": "C044",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "UNDER",
+   "reduced_dispersion": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    2,
+    2
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    2,
+    0
+   ],
+   "axis_order": 2,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      "1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    6,
+    6,
+    6,
+    4,
+    4,
+    4,
+    4,
+    6,
+    6,
+    6,
+    6,
+    4,
+    4,
+    4,
+    4
+   ],
+   "family": "C045",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "UNDER",
+   "reduced_dispersion": [
+    0,
+    0,
+    0,
+    0,
+    6,
+    6,
+    6,
+    6,
+    0,
+    0,
+    0,
+    0,
+    6,
+    6,
+    6,
+    6
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 16,
+   "axis": [
+    2,
+    0
+   ],
+   "axis_order": 2,
+   "coefficients": [
+    [
+     [
+      2,
+      0
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    4,
+    4,
+    0,
+    0,
+    0,
+    0,
+    4,
+    4,
+    4,
+    4,
+    0,
+    0,
+    0,
+    0
+   ],
+   "family": "C046",
+   "max_speed": "2",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    0,
+    0,
+    4,
+    4,
+    4,
+    4,
+    0,
+    0,
+    0,
+    0,
+    4,
+    4,
+    4,
+    4
+   ],
+   "support": 1,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    2,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      2,
+      1
+     ],
+     [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     [
+      "0",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    6,
+    6,
+    6,
+    6,
+    4,
+    4,
+    4,
+    4,
+    6,
+    6,
+    6,
+    6,
+    4,
+    4
+   ],
+   "family": "C047",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "UNDER",
+   "reduced_dispersion": [
+    0,
+    0,
+    2,
+    2,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    2,
+    2,
+    0,
+    0
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    2,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      2,
+      1
+     ],
+     [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     [
+      "1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    4,
+    4,
+    6,
+    4,
+    6,
+    6,
+    4,
+    6,
+    4,
+    4,
+    6,
+    4,
+    6,
+    6,
+    4
+   ],
+   "family": "C048",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "UNDER",
+   "reduced_dispersion": [
+    0,
+    6,
+    6,
+    0,
+    6,
+    0,
+    0,
+    6,
+    0,
+    6,
+    6,
+    0,
+    6,
+    0,
+    0,
+    6
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    2,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      2,
+      1
+     ],
+     [
+      "0",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    6,
+    6,
+    4,
+    6,
+    4,
+    4,
+    6,
+    4,
+    6,
+    6,
+    4,
+    6,
+    4,
+    4,
+    6
+   ],
+   "family": "C049",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "UNDER",
+   "reduced_dispersion": [
+    0,
+    2,
+    2,
+    0,
+    2,
+    0,
+    0,
+    2,
+    0,
+    2,
+    2,
+    0,
+    2,
+    0,
+    0,
+    2
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    2,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      2,
+      1
+     ],
+     [
+      "1/2",
+      "0",
+      "0",
+      "0"
+     ]
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    6,
+    4,
+    4,
+    4,
+    4,
+    6,
+    6,
+    6,
+    6,
+    4,
+    4,
+    4,
+    4,
+    6,
+    6
+   ],
+   "family": "C050",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "UNDER",
+   "reduced_dispersion": [
+    0,
+    0,
+    6,
+    6,
+    6,
+    6,
+    0,
+    0,
+    0,
+    0,
+    6,
+    6,
+    6,
+    6,
+    0,
+    0
+   ],
+   "support": 3,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 16,
+   "axis": [
+    2,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      2,
+      1
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "1"
+   ],
+   "eigenphase": [
+    4,
+    2,
+    0,
+    6,
+    0,
+    6,
+    4,
+    2,
+    4,
+    2,
+    0,
+    6,
+    0,
+    6,
+    4,
+    2
+   ],
+   "family": "C053",
+   "max_speed": "2",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    6,
+    4,
+    2,
+    4,
+    2,
+    0,
+    6,
+    0,
+    6,
+    4,
+    2,
+    4,
+    2,
+    0,
+    6
+   ],
+   "support": 1,
+   "winding": [
+    "0",
+    "1"
+   ]
+  },
+  {
+   "aliased_cells": 24,
+   "axis": [
+    2,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      2,
+      1
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     [
+      "-1/2",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    4,
+    0,
+    0,
+    0,
+    0,
+    4,
+    4,
+    4,
+    4,
+    0,
+    0,
+    0,
+    0,
+    4,
+    4
+   ],
+   "family": "C051",
+   "max_speed": "2",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    0,
+    4,
+    4,
+    4,
+    4,
+    0,
+    0,
+    0,
+    0,
+    4,
+    4,
+    4,
+    4,
+    0,
+    0
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 24,
+   "axis": [
+    2,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      2,
+      1
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     [
+      "1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    2,
+    2,
+    6,
+    2,
+    6,
+    6,
+    2,
+    6,
+    2,
+    2,
+    6,
+    2,
+    6,
+    6,
+    2
+   ],
+   "family": "C052",
+   "max_speed": "2",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    4,
+    4,
+    0,
+    4,
+    0,
+    0,
+    4,
+    0,
+    4,
+    4,
+    0,
+    4,
+    0,
+    0,
+    4
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 16,
+   "axis": [
+    2,
+    1
+   ],
+   "axis_order": 4,
+   "coefficients": [
+    [
+     [
+      2,
+      3
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "-1"
+   ],
+   "eigenphase": [
+    4,
+    6,
+    0,
+    2,
+    0,
+    2,
+    4,
+    6,
+    4,
+    6,
+    0,
+    2,
+    0,
+    2,
+    4,
+    6
+   ],
+   "family": "C054",
+   "max_speed": "2",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    2,
+    4,
+    6,
+    4,
+    6,
+    0,
+    2,
+    0,
+    2,
+    4,
+    6,
+    4,
+    6,
+    0,
+    2
+   ],
+   "support": 1,
+   "winding": [
+    "0",
+    "-1"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    2,
+    2
+   ],
+   "axis_order": 2,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      2,
+      2
+     ],
+     [
+      "-1/2",
+      "0",
+      "1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    6,
+    4,
+    6,
+    6,
+    4,
+    6,
+    4,
+    4,
+    6,
+    4,
+    6,
+    6,
+    4,
+    6,
+    4
+   ],
+   "family": "C055",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "UNDER",
+   "reduced_dispersion": [
+    0,
+    2,
+    0,
+    2,
+    2,
+    0,
+    2,
+    0,
+    0,
+    2,
+    0,
+    2,
+    2,
+    0,
+    2,
+    0
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 0,
+   "axis": [
+    2,
+    2
+   ],
+   "axis_order": 2,
+   "coefficients": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ],
+    [
+     [
+      2,
+      2
+     ],
+     [
+      "1/2",
+      "0",
+      "-1/2",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    6,
+    4,
+    6,
+    4,
+    4,
+    6,
+    4,
+    6,
+    6,
+    4,
+    6,
+    4,
+    4,
+    6,
+    4,
+    6
+   ],
+   "family": "C056",
+   "max_speed": "1",
+   "monomial": false,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "UNDER",
+   "reduced_dispersion": [
+    0,
+    6,
+    0,
+    6,
+    6,
+    0,
+    6,
+    0,
+    0,
+    6,
+    0,
+    6,
+    6,
+    0,
+    6,
+    0
+   ],
+   "support": 2,
+   "winding": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "aliased_cells": 32,
+   "axis": [
+    2,
+    2
+   ],
+   "axis_order": 2,
+   "coefficients": [
+    [
+     [
+      2,
+      2
+     ],
+     [
+      "-1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   ],
+   "drift": [
+    "0",
+    "0"
+   ],
+   "eigenphase": [
+    4,
+    0,
+    4,
+    0,
+    0,
+    4,
+    0,
+    4,
+    4,
+    0,
+    4,
+    0,
+    0,
+    4,
+    0,
+    4
+   ],
+   "family": "C057",
+   "max_speed": "2",
+   "monomial": true,
+   "motion": "MOVES",
+   "radius": 2,
+   "reach_vs_speed": "EQUAL",
+   "reduced_dispersion": [
+    0,
+    4,
+    0,
+    4,
+    4,
+    0,
+    4,
+    0,
+    0,
+    4,
+    0,
+    4,
+    4,
+    0,
+    4,
+    0
+   ],
+   "support": 1,
+   "winding": [
+    "0",
+    "0"
+   ]
+  }
+ ],
+ "gates": [
+  {
+   "claim": "every verbatim anchor is a context window present in its pinned source, and each is bound to the named gate that consumes it (#34: evaluated before the byte anchors)",
+   "detail": "missing none over 13 windows",
+   "gate": "G-VERBATIM-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every runtime input matches the digest this unit froze from the parent's terminal commit; the parent program is among them and is read as bytes only",
+   "detail": "mismatched none over 8 sources",
+   "gate": "G-BYTE-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every inherited value this unit consumes is read from the parent's receipt at a frozen path and equals the frozen value: the arena, the ceilings and the connective are taken, not typed",
+   "detail": "mismatched none over 20 anchors",
+   "gate": "G-PATH-VALUE-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this unit is the successor the parent's adjudication registers (R-R4-11), and the register names both objects it must read: the unread dispersions and the propagator observation",
+   "detail": "successor register present in A-R4-ADJ",
+   "gate": "G-UNIT-IS-THE-DECLARED-SUCCESSOR",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the momentum lattice is DECLARED as data by this unit's pin -- the dual torus with 16 momenta -- and the pin's sentence is anchored verbatim",
+   "detail": "declared in the pin, not chosen by the instrument",
+   "gate": "G-MOMENTUM-LATTICE-DECLARED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the lattice this unit censuses is the lattice the parent admitted: L and d are taken FROM the anchored receipt and never typed beside it",
+   "detail": "L=4 d=2",
+   "gate": "G-ARENA-FROM-ANCHOR",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the exact field: zeta_8 has order 8, zeta_8^4 = -1, conjugation is an involution with z*conj(z) rational, and the 4-tuple representation is canonical so tuple equality IS field equality",
+   "detail": "z^8=1, z^4=-1, 8 distinct powers, conjugation involutive",
+   "gate": "G-FIELD-CANONICAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the coefficient alphabet is rebuilt from the parent's declared recipe -- 0 together with zeta_8^t times a modulus in {1, 1/2, 1/sqrt2} -- and has exactly the anchored size",
+   "detail": "alphabet=25 squared moduli ['0', '1', '1/2', '1/4']",
+   "gate": "G-ALPHABET-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the declared global-phase gauge acts freely on the solution set: every orbit has the full group's size, so the pool's representatives are a clean quotient",
+   "detail": "orbit sizes [8] over 66 orbits",
+   "gate": "G-GAUGE-ORBITS-FREE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the axis set is every nonzero offset modulo sign, exhaustive and not sampled; each axis's order and radius are computed",
+   "detail": "axes=9 local=4 orders=[2, 4]",
+   "gate": "G-AXES-EXHAUSTIVE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every generator in the rebuilt pool is unitary by two routes -- the adjoint product U*U = I on the 16-dimensional carrier and the delta autocorrelation of its coefficient sequence -- checked object by object",
+   "detail": "failures none over 64 generators",
+   "gate": "G-UNITARY-TWO-ROUTES",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the rebuilt circulant family and the parent's are the SAME family: every rebuilt coefficient map matches exactly one parent row modulo the declared global phase, and the correspondence is a bijection in both directions -- object by object, across two different exact representations of the field",
+   "detail": "matched=58 unmatched mine=none theirs=none",
+   "gate": "G-REBUILD-BIJECTION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "for every matched pair the five family invariants agree -- axis, axis order, support, radius, monomiality -- so the rebuild inherits the parent's rows and does not merely count them",
+   "detail": "disagreements none over 58 families",
+   "gate": "G-REBUILD-INVARIANTS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the six declared controls rebuild in the parent's construction order with the parent's kind, axis, axis order and radius: the 4 brickwork and 2 scrambled generators are the same objects",
+   "detail": "disagreements none over 6 controls",
+   "gate": "G-REBUILD-CONTROLS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the pool's parts are counted from the rebuild and sum to the anchored total",
+   "detail": "{'total': 64, 'circulant': 58, 'brickwork': 4, 'scrambled': 2, 'axes': 9, 'local_axes': 4}",
+   "gate": "G-POOL-COUNTS-DERIVED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the fact the parent's panel called forced, re-derived here as a measurement on every generator: conjugation by a translation fixes every circulant -- all 58 have the full translation group as stabiliser -- and fixes no control, the brickwork generators having an index-two stabiliser.  Translations act trivially on the family and non-trivially on the controls",
+   "detail": "circulant stabilisers [16] of 16; brickwork [8]; controls [1, 2, 8]",
+   "gate": "G-TRANSLATION-STABILISER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the extended transformation-type partition rebuilds exactly: every rebuilt class's member set, transported through the verified bijection, is one of the parent's 22 -- set for set, not merely 22 for 22",
+   "detail": "classes=22 unmatched=none",
+   "gate": "G-CLASS-PARTITION-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the class sizes are computed from the rebuilt orbits and equal the parent's",
+   "detail": "sizes [1, 2, 4]",
+   "gate": "G-CLASS-SIZES",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the declared momentum lattice is the dual torus of the admitted site lattice: L^d momenta, one character per momentum, and the characters are distinct",
+   "detail": "momenta=16 distinct characters=16",
+   "gate": "G-DUAL-TORUS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the character is an eigenvector and the symbol is its eigenvalue, verified as an exact matrix identity M chi_k = lambda(k) chi_k at every family and every momentum -- the eigenphase is not a convention, it is the verified eigenvalue",
+   "detail": "verified 928 of 928 (family, momentum) cells",
+   "gate": "G-BLOCH-EIGEN-EQUATION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every eigenvalue is an 8th root of unity, so the eigenphase is an EXACT element of Z/8 and no branch, no approximation and no field extension is needed anywhere in this census",
+   "detail": "in mu_8: 928 of 928; outside none",
+   "gate": "G-EIGENPHASE-IN-MU8",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every eigenvalue has exact unit modulus lambda * conj(lambda) = 1 -- the second, independent route to the same fact, computed from the field element rather than from a table lookup",
+   "detail": "unit modulus at 928 of 928 cells",
+   "gate": "G-UNIT-MODULUS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the finite legs of the reason the eigenvalues cannot be anything else: every coefficient has a 2-power denominator, so a unit-modulus symbol is a unit of Z[zeta_8] with all conjugates of modulus 1, hence a root of unity, hence one of the 8 the field contains",
+   "detail": "odd parts of coefficient denominators [1]; roots of unity in the field 8",
+   "gate": "G-MU8-THEOREM-LEGS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the eigenphase moves by a constant under the declared global phase and its DIFFERENCES do not: the reduced dispersion sigma(k) = s(k) - s(0) and everything built on it are gauge invariants, so nothing reported here depends on which representative the pool carries",
+   "detail": "violations none over 464 family-phase pairs",
+   "gate": "G-PHASE-GAUGE-COVARIANT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parent panel's unread row, re-derived in this unit from the rebuilt family: the dispersion is non-constant for all but one circulant family, and the exceptional family is unique",
+   "detail": "non-constant 57 of 58; constant ['C004']",
+   "gate": "G-NONCONSTANT-CENSUS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the one family with a constant dispersion is identified, not merely counted: it is the identity generator -- support 1, radius 0, matrix equal to the identity up to the declared global phase -- and it is this unit's NO-MOTION control",
+   "detail": "control C004 support=1 radius=0 phase=[4] reduced=[0]",
+   "gate": "G-CONTROL-IS-THE-IDENTITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parity of the eigenphase is a family invariant -- Q(zeta_8) splits as Q(i) + zeta_8 Q(i), unitarity keeps a generator's coefficients in one part, and zeta_4 preserves it -- so every phase difference is even and every group velocity is an INTEGER, never a half-integer",
+   "detail": "families with mixed phase parity: none over 58",
+   "gate": "G-PHASE-PARITY-INVARIANT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every phase difference on the dual torus is an even element of Z/8: the velocity spectrum is contained in the integers, measured cell by cell",
+   "detail": "odd differences none over 1856 cells",
+   "gate": "G-PHASE-DIFFERENCES-EVEN",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the speed of a cell is the circle distance of its phase difference divided by two: a BRANCH-FREE exact rational, independent of every reading in the fiber, because the distance of an element of Z/8 to zero does not depend on how the antipode is signed",
+   "detail": "speed spectrum ['0', '1', '2']",
+   "gate": "G-SPEED-CANONICAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the maximal group speed is the maximum over every family, momentum and direction of the computed cell speeds -- derived from the census, never typed",
+   "detail": "VMAX = 2",
+   "gate": "G-VMAX-DERIVED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the antipodal phase difference -- the one value at which the direction of travel is not determined by the phase, because the displacement is L/2 and +L/2 = -L/2 on the site torus -- is counted where it occurs",
+   "detail": "aliased cells 320 of 1856 in 19 families",
+   "gate": "G-ALIASING-CENSUS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the velocity definition is DECLARED as data and its fiber is printed: three readings of the antipodal tie times three difference stencils, all computed, and the readings differ from the declared one at exactly the aliased cells and nowhere else",
+   "detail": "fiber rows 9; the two other lifts agree at 1536 of 1856 cells (= all but the aliased)",
+   "gate": "G-VELOCITY-DEFINITION-FIBER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the character convention is a declared item with fiber two, and the whole census is recomputed under the other member: the conjugate convention relabels the dual torus by k -> -k, so the speed multiset, the motion head and the aliasing count are IDENTICAL family by family, while the signed velocity and the winding are exactly NEGATED -- the labelling and the sign of the velocity formula are one declaration, not two",
+   "detail": "speed multiset identical at 58 of 58; head identical at 58; aliased cells 320 = 320; winding negated at 58",
+   "gate": "G-CHARACTER-CONVENTION-FIBER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every family's motion head is bound to ITS OWN computed dispersion by its own predicate -- 58 individual verdicts, no aggregate stands in for any of them -- and two independent routes (non-constant phase; some nonzero cell speed) agree on every one",
+   "detail": "disagreements none over 58 families",
+   "gate": "G-MOTION-HEAD-PER-FAMILY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the head is two-way at the control: the NO-MOTION control returns STATIC and every other family returns MOVES.  A head that cannot return its other value is not a measurement",
+   "detail": "MOVES=57 STATIC=1 control=C004->STATIC",
+   "gate": "G-MOTION-TWO-WAY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the motion head and the maximal speed are constant on every extended class -- they must be, since the point group permutes the dual torus and preserves the max norm, and here they are measured to be, class by class",
+   "detail": "classes with a split head or speed: none over 19",
+   "gate": "G-MOTION-CLASS-INVARIANT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the dispersion census's domain is exactly the circulant family, and that restriction is MEASURED rather than assumed: not one of the six declared controls is diagonalised by the characters, so the three non-circulant classes carry no Bloch dispersion at all",
+   "detail": "not Bloch diagonal: 6 of 6 controls, in 3 classes",
+   "gate": "G-NOT-BLOCH-CONTROL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the propagation question, asked of every family separately: does the family's maximal group speed bound the max-norm reach of one step of that family, which is exactly its support radius?  Each of the 58 families answers for itself",
+   "detail": "speed > reach: 8; speed < reach: 14; equal: 36",
+   "gate": "G-REACH-BOUND-PER-FAMILY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the cone the dispersion predicts after a SINGLE step of the fastest family already contains every site of the torus, so the cone constraint on the parent's two-step composed segment excludes no separation whatever",
+   "detail": "cone at 1 step = 16 of 16 sites; VMAX=2 diameter=2",
+   "gate": "G-CONE-AT-ONE-STEP",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the bound's verdict is DERIVED from the two computed facts -- whether the one-step cone is proper, and whether any family's speed falls below its own reach -- and is not a typed opinion",
+   "detail": "cone proper=False; families under their own reach=14; bound has content=False",
+   "gate": "G-BOUND-DERIVED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parent's two-point rows are inherited AT THEIR CEILINGS and the disclosure travels with them: 16 of 16 separations carry a defect and the maximal defect radius is 2 of 2, so neither row can distinguish a cone from its complement",
+   "detail": "separations 16 of 16; max defect radius 2 of 2; parent's cone content radii [0]",
+   "gate": "G-CEILINGS-INHERITED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parent's closing observation, stated as a measured relation in both spaces: on the site side the torus has exactly one max-norm radius strictly between zero and its diameter, and the fastest family crosses the whole diameter in one step; on the momentum side the dual torus carries L points per axis, so the phase difference reaches its antipodal, direction-free value at a measured share of cells.  No propagation front is resolvable at this scale, in either space",
+   "detail": "{'dual_points_per_axis': 4, 'phase_values': 8, 'aliased_cells': 320, 'aliased_families': 19, 'cells': 1856, 'diameter': 2, 'radius_classes': [0, 1, 2], 'interior_radii': [1], 'vmax': '2', 'steps_to_cover': 1}",
+   "gate": "G-RESOLUTION-RELATION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the two roads to how far a family moves in one step -- the Born drift of the coefficient map in position space, and the winding of the eigenphase around the dual torus -- are computed independently and compared family by family under all nine ways of reading the two antipodal ties.  EXACTLY ONE reading pair makes them agree for every family, and it is the pair that resolves both ties the same way: by averaging.  The velocity convention is therefore SELECTED by an identity, not chosen",
+   "detail": "identity holds at 1 of 9 reading pairs ([('TIE-AVERAGED', 'TIE-AVERAGED')]); best other pair 39 of 58 families",
+   "gate": "G-DRIFT-WINDING-IDENTITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the frozen effectus review's one-step drift table is reproduced from this unit's own rebuild, and reproducing it IDENTIFIES the convention it was taken under: the antipodal displacement is tie-averaged to zero.  Under that reading, and only under it, the table's three rows come out as the review printed them",
+   "detail": "{1: {'generators': 16, 'nonzero_drift': 12}, 2: {'generators': 18, 'nonzero_drift': 0}, 3: {'generators': 24, 'nonzero_drift': 0}}",
+   "gate": "G-EFFECTUS-DRIFT-TABLE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parent panel's tension, measured: every family with nonzero net transport is monomial, every interfering family has exactly zero net transport in BOTH spaces, and yet every one of those interfering families MOVES -- its dispersion is non-constant and its group velocity is nonzero at individual momenta.  The cancellation, not the absence, is what the class census saw",
+   "detail": "nonzero winding 12 (all monomial); interfering 42, all with zero net transport and all MOVING; the inherited Markovian control's 1792 pairs are exactly the 64^2 - 48^2 pairs with a monomial member",
+   "gate": "G-CHARGE-WITHOUT-MOMENTUM",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the reading the operator review names is available in this unit's own numbers: the momentum label lives on the symbol, and the symbol SEPARATES COMPLETELY -- the reduced dispersion takes a different value on every one of the families, where the parent's invariant labels do not even separate its classes.  Complete separation is forced (the character transform is invertible, and the reduction by s(0) is exactly the global-phase quotient) and it is measured here",
+   "detail": "distinct reduced dispersions 58 vs 14 distinct invariant labels",
+   "gate": "G-MOMENTUM-ON-THE-SYMBOL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the head this run emits is one of the three the pin registered before the census ran, and the pin's sentence is anchored verbatim",
+   "detail": "head=R4B-DISPERSION-READ preregistered=['R4B-DISPERSION-READ', 'R4B-NO-MOTION', 'R4B-BLOCKED-AT']",
+   "gate": "G-VERDICT-PREREGISTERED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the COMPLETE verdict string, head included, is rebuilt from the serialized receipt by an independent path that shares no helper, no head law and no typed value with the assembler, and the two strings are equal character for character",
+   "detail": "reconstruction equal (1242 chars)",
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the head is named by the dispersion census and by nothing else: with the moving count zeroed the head law returns the pin's OTHER outcome, so a head that cannot move is not this one",
+   "detail": "head=R4B-DISPERSION-READ; head under a zeroed motion census=R4B-NO-MOTION",
+   "gate": "G-HEAD-LAW-RESPONSIVE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every value the verdict carries has its own flip probe: perturbing the receipt key it renders from moves the complete reconstruction.  A value that renders from a key nothing reads is caught here",
+   "detail": "unflippable keys none over 56 verdict values",
+   "gate": "G-VERDICT-VALUES-FLIPPABLE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the SCOPE segment inherits the parent's verbatim, clause by clause, and the FORCED connective travels with it: the clause this unit emits is character for character the clause the parent's own terminal output prints",
+   "detail": "10 inherited clauses present; connective clause matches the parent's output",
+   "gate": "G-SCOPE-INHERITED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "no float appears anywhere in the emitted receipt, and none appears in this file: the arithmetic is exact end to end",
+   "detail": "receipt float-free=True; source float-free=True",
+   "gate": "G-NO-FLOATS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the receipt is serialization-stable: parsing what was built and re-serializing it reproduces the same bytes, so the artifact is deterministic and independent of dictionary order",
+   "detail": "round trip stable over 70430 bytes",
+   "gate": "G-RECEIPT-ROUND-TRIP",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this instrument never invokes a subprocess and never calls git: an AST scan of its own source finds no import of subprocess, no os.system and no shell call, so the run is correct off-tree and in a directory with no version control at all",
+   "detail": "subprocess-free source scan over 140587 bytes",
+   "gate": "G-NO-SUBPROCESS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parent program is an anchor, not a dependency: it is read as bytes for its digest, no module from it is imported, and nothing in this process comes from it",
+   "detail": "no parent module in sys.modules; no import of it in source",
+   "gate": "G-PARENT-NOT-IMPORTED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "no gate predicate reads the mutant switch (#208): a standing AST probe walks every gate call in this file's own source and reports any predicate that would exempt its own falsifier",
+   "detail": "gate predicates reading the switch: none",
+   "gate": "G-NO-MUTANT-ONLY-CLAUSE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "exactly the declared sources are read at run time, plus this unit's own paper as the object under test; nothing else and no mutable repository state is opened",
+   "detail": "declared 8, read 8",
+   "gate": "G-RUNTIME-INPUTS-ENUMERATED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every claim string the receipt renders occurs verbatim in the paper, so no number in the prose is unsupported by a computed value",
+   "detail": "missing none over 44 claims",
+   "gate": "G-PAPER-CLAIMS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every numeral in the paper is either rendered from the receipt or named in the declared derived-in-text residue, and every residue entry actually occurs: the coverage runs INSIDE the delivery run as a gate, not beside it as a flag",
+   "detail": "uncovered none; declared-but-absent none; 78 distinct numerals over 413 occurrences",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the CLI is argv-parsed against a whitelist and exercised here: every unknown flag, unknown flag argument and missing argument is rejected, and the permissive shape -- the registered disease -- fails this gate",
+   "detail": "9 probes, 5 rejections",
+   "gate": "G-CLI-CONTRACT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "no diagnostic path can write: the self-test, the mutant runner and the anchor-break runner all come out of the parser with write=False, measured here on the parser's own output rather than asserted in prose",
+   "detail": "selftest/mutant/break-anchor all write=False",
+   "gate": "G-SELFTEST-WRITES-NOTHING",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every gate this unit evaluates is the declared target of at least one mutant, except the two whose falsification mechanism is registered instead (#34): coverage of the ledger is measured, not claimed",
+   "detail": "gates 67, targeted 64, untargeted none, targets with no gate none",
+   "gate": "G-GATE-MUTANT-COVERAGE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every verbatim anchor names a gate that actually exists and is actually evaluated: a window bound to a gate the run never reaches is a decoration, not an anchor",
+   "detail": "anchors 13, dangling consumers none",
+   "gate": "G-ANCHOR-CONSUMERS-EXIST",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every gate without an injection falsifier registers its forcing, and the registration is checked rather than asserted (#34): a waiver claim is a gate claim",
+   "detail": "falsifiable 64, waived 3, unregistered none",
+   "gate": "G-WAIVERS-VERIFIED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every declared mutant is killed, and killed by the gate it was declared to falsify: a mutant that dies elsewhere is a gate boundary this unit does not understand",
+   "detail": "killed 66 of 66; off target none",
+   "gate": "G-MUTANTS-ON-TARGET",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the paper-claim and numeral-coverage check re-run once the instrument's own totals close, so the paper's instrument section is covered too; its in-run twins carry the injection falsifiers, and this evaluation is the enforcement -- a failure here exits 1 and writes nothing",
+   "detail": "missing none; uncovered none; declared-but-absent none; 44 claims, 78 distinct numerals over 413 occurrences",
+   "gate": "G-PAPER-COVERAGE-FINAL",
+   "kind": "MEASURED",
+   "passed": true
+  }
+ ],
+ "momentum_lattice": {
+  "character": "chi_k(x) = zeta_4^{k.x}",
+  "declared": true,
+  "dual_torus": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    1,
+    3
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    3,
+    1
+   ],
+   [
+    3,
+    2
+   ],
+   [
+    3,
+    3
+   ]
+  ],
+  "symbol": "lambda(k) = sum_o c_o zeta_4^{-k.o}"
+ },
+ "mutants": [
+  {
+   "killed": true,
+   "killed_at": "G-BYTE-ANCHORS",
+   "mutant": "MUT-ANCHOR",
+   "note": "corrupts the parent receipt's digest",
+   "on_target": true,
+   "target": "G-BYTE-ANCHORS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PATH-VALUE-ANCHORS",
+   "mutant": "MUT-PATH-VALUE",
+   "note": "moves an inherited value",
+   "on_target": true,
+   "target": "G-PATH-VALUE-ANCHORS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VERBATIM-ANCHORS",
+   "mutant": "MUT-VERBATIM",
+   "note": "edits a verbatim window",
+   "on_target": true,
+   "target": "G-VERBATIM-ANCHORS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-ARENA-FROM-ANCHOR",
+   "mutant": "MUT-LATTICE-UNBOUND",
+   "note": "censuses a lattice the anchor did not admit",
+   "on_target": true,
+   "target": "G-ARENA-FROM-ANCHOR"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-ALPHABET-REBUILT",
+   "mutant": "MUT-ALPHABET",
+   "note": "drops an alphabet element",
+   "on_target": true,
+   "target": "G-ALPHABET-REBUILT"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-GAUGE-ORBITS-FREE",
+   "mutant": "MUT-GAUGE-ORBIT",
+   "note": "reports a short gauge orbit",
+   "on_target": true,
+   "target": "G-GAUGE-ORBITS-FREE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-UNITARY-TWO-ROUTES",
+   "mutant": "MUT-UNITARITY",
+   "note": "breaks one generator's unitarity",
+   "on_target": true,
+   "target": "G-UNITARY-TWO-ROUTES"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-REBUILD-BIJECTION",
+   "mutant": "MUT-BIJECTION",
+   "note": "drops a family from the rebuild",
+   "on_target": true,
+   "target": "G-REBUILD-BIJECTION"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-REBUILD-INVARIANTS",
+   "mutant": "MUT-INVARIANT",
+   "note": "injects an invariant disagreement",
+   "on_target": true,
+   "target": "G-REBUILD-INVARIANTS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-CLASS-PARTITION-REBUILT",
+   "mutant": "MUT-CLASS-DROP",
+   "note": "drops an extended class",
+   "on_target": true,
+   "target": "G-CLASS-PARTITION-REBUILT"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-BLOCH-EIGEN-EQUATION",
+   "mutant": "MUT-SYMBOL",
+   "note": "perturbs one symbol",
+   "on_target": true,
+   "target": "G-BLOCH-EIGEN-EQUATION"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-NONCONSTANT-CENSUS",
+   "mutant": "MUT-NONCONSTANT",
+   "note": "miscounts the non-constant dispersions",
+   "on_target": true,
+   "target": "G-NONCONSTANT-CENSUS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-MOTION-HEAD-PER-FAMILY",
+   "mutant": "MUT-MOTION-HEAD",
+   "note": "flips one family's head",
+   "on_target": true,
+   "target": "G-MOTION-HEAD-PER-FAMILY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-MOTION-HEAD-PER-FAMILY",
+   "mutant": "MUT-MOTION-CONTROL",
+   "note": "flips the control's head",
+   "on_target": true,
+   "target": "G-MOTION-HEAD-PER-FAMILY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VMAX-DERIVED",
+   "mutant": "MUT-SPEED",
+   "note": "inflates one family's speed",
+   "on_target": true,
+   "target": "G-VMAX-DERIVED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-REACH-BOUND-PER-FAMILY",
+   "mutant": "MUT-REACH",
+   "note": "hides a family that falls below its own reach",
+   "on_target": true,
+   "target": "G-REACH-BOUND-PER-FAMILY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-DRIFT-WINDING-IDENTITY",
+   "mutant": "MUT-IDENTITY",
+   "note": "breaks the drift-winding count",
+   "on_target": true,
+   "target": "G-DRIFT-WINDING-IDENTITY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-EFFECTUS-DRIFT-TABLE",
+   "mutant": "MUT-DRIFT-TABLE",
+   "note": "moves a row of the review's table",
+   "on_target": true,
+   "target": "G-EFFECTUS-DRIFT-TABLE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VERDICT-RECONSTRUCTED",
+   "mutant": "MUT-COUNT-TYPED",
+   "note": "types a count the census did not produce",
+   "on_target": true,
+   "target": "G-VERDICT-RECONSTRUCTED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VERDICT-RECONSTRUCTED",
+   "mutant": "MUT-HEAD-TYPED",
+   "note": "retypes the head after the verdict object exists",
+   "on_target": true,
+   "target": "G-VERDICT-RECONSTRUCTED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-HEAD-LAW-RESPONSIVE",
+   "mutant": "MUT-HEAD-CONSTANT",
+   "note": "makes the head law constant",
+   "on_target": true,
+   "target": "G-HEAD-LAW-RESPONSIVE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VERDICT-PREREGISTERED",
+   "mutant": "MUT-HEAD-OUTSIDE-PIN",
+   "note": "names a head the pin never registered",
+   "on_target": true,
+   "target": "G-VERDICT-PREREGISTERED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VERDICT-VALUES-FLIPPABLE",
+   "mutant": "MUT-FLIP-DEAD",
+   "note": "renders a verdict value from a key the reconstruction ignores",
+   "on_target": true,
+   "target": "G-VERDICT-VALUES-FLIPPABLE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PAPER-CLAIMS",
+   "mutant": "MUT-PAPER-CLAIM",
+   "note": "renders a claim the paper does not carry",
+   "on_target": true,
+   "target": "G-PAPER-CLAIMS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PAPER-NUMERAL-COVERAGE",
+   "mutant": "MUT-PAPER-NUMERAL",
+   "note": "leaves a paper numeral uncovered",
+   "on_target": true,
+   "target": "G-PAPER-NUMERAL-COVERAGE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-CLI-CONTRACT",
+   "mutant": "MUT-CLI-PERMISSIVE",
+   "note": "accepts an unknown flag",
+   "on_target": true,
+   "target": "G-CLI-CONTRACT"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-WAIVERS-VERIFIED",
+   "mutant": "MUT-WAIVER",
+   "note": "waives a gate with no forcing",
+   "on_target": true,
+   "target": "G-WAIVERS-VERIFIED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-GATE-MUTANT-COVERAGE",
+   "mutant": "MUT-REGISTRY",
+   "note": "adds a gate no mutant targets",
+   "on_target": true,
+   "target": "G-GATE-MUTANT-COVERAGE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-NO-FLOATS",
+   "mutant": "MUT-FLOAT",
+   "note": "puts a float in the receipt",
+   "on_target": true,
+   "target": "G-NO-FLOATS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-NO-MUTANT-ONLY-CLAUSE",
+   "mutant": "MUT-LAUNDER",
+   "note": "guards a gate predicate with the mutant switch",
+   "on_target": true,
+   "target": "G-NO-MUTANT-ONLY-CLAUSE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PHASE-DIFFERENCES-EVEN",
+   "mutant": "MUT-DELTA-ODD",
+   "note": "injects an odd phase difference",
+   "on_target": true,
+   "target": "G-PHASE-DIFFERENCES-EVEN"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VELOCITY-DEFINITION-FIBER",
+   "mutant": "MUT-FIBER",
+   "note": "hides a reading of the fiber",
+   "on_target": true,
+   "target": "G-VELOCITY-DEFINITION-FIBER"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-ALIASING-CENSUS",
+   "mutant": "MUT-ALIAS",
+   "note": "miscounts the aliased cells",
+   "on_target": true,
+   "target": "G-ALIASING-CENSUS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-NOT-BLOCH-CONTROL",
+   "mutant": "MUT-NOTBLOCH",
+   "note": "claims a control is Bloch diagonal",
+   "on_target": true,
+   "target": "G-NOT-BLOCH-CONTROL"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PHASE-PARITY-INVARIANT",
+   "mutant": "MUT-PARITY",
+   "note": "injects a mixed-parity family",
+   "on_target": true,
+   "target": "G-PHASE-PARITY-INVARIANT"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-CONTROL-IS-THE-IDENTITY",
+   "mutant": "MUT-CONTROL-ID",
+   "note": "misidentifies the control",
+   "on_target": true,
+   "target": "G-CONTROL-IS-THE-IDENTITY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-CEILINGS-INHERITED",
+   "mutant": "MUT-CEILING",
+   "note": "drops the ceiling disclosure",
+   "on_target": true,
+   "target": "G-CEILINGS-INHERITED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-CONE-AT-ONE-STEP",
+   "mutant": "MUT-CONE",
+   "note": "shrinks the one-step cone",
+   "on_target": true,
+   "target": "G-CONE-AT-ONE-STEP"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-RESOLUTION-RELATION",
+   "mutant": "MUT-RESOLUTION",
+   "note": "breaks a leg of the resolution relation",
+   "on_target": true,
+   "target": "G-RESOLUTION-RELATION"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-CHARGE-WITHOUT-MOMENTUM",
+   "mutant": "MUT-CHARGE",
+   "note": "claims an interfering family transports",
+   "on_target": true,
+   "target": "G-CHARGE-WITHOUT-MOMENTUM"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-MOMENTUM-ON-THE-SYMBOL",
+   "mutant": "MUT-SYMBOL-LABEL",
+   "note": "claims the symbol separates no more than the labels",
+   "on_target": true,
+   "target": "G-MOMENTUM-ON-THE-SYMBOL"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-MOTION-CLASS-INVARIANT",
+   "mutant": "MUT-CLASS-SPLIT",
+   "note": "splits a class's head",
+   "on_target": true,
+   "target": "G-MOTION-CLASS-INVARIANT"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-RECEIPT-ROUND-TRIP",
+   "mutant": "MUT-DETERMINISM",
+   "note": "makes the receipt fail to round-trip",
+   "on_target": true,
+   "target": "G-RECEIPT-ROUND-TRIP"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SELFTEST-WRITES-NOTHING",
+   "mutant": "MUT-SELFTEST-WRITES",
+   "note": "lets the self-test path reach a writer",
+   "on_target": true,
+   "target": "G-SELFTEST-WRITES-NOTHING"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-NO-SUBPROCESS",
+   "mutant": "MUT-SUBPROCESS",
+   "note": "imports a subprocess module",
+   "on_target": true,
+   "target": "G-NO-SUBPROCESS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SCOPE-INHERITED",
+   "mutant": "MUT-SCOPE",
+   "note": "moves the inherited connective clause",
+   "on_target": true,
+   "target": "G-SCOPE-INHERITED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-TRANSLATION-STABILISER",
+   "mutant": "MUT-STABILISER",
+   "note": "shrinks a circulant's translation stabiliser",
+   "on_target": true,
+   "target": "G-TRANSLATION-STABILISER"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-CHARACTER-CONVENTION-FIBER",
+   "mutant": "MUT-CONVENTION",
+   "note": "breaks the character convention's invariance census",
+   "on_target": true,
+   "target": "G-CHARACTER-CONVENTION-FIBER"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-ANCHOR-CONSUMERS-EXIST",
+   "mutant": "MUT-DANGLING-CONSUMER",
+   "note": "binds a verbatim window to a gate that does not exist",
+   "on_target": true,
+   "target": "G-ANCHOR-CONSUMERS-EXIST"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-AXES-EXHAUSTIVE",
+   "mutant": "MUT-AXES",
+   "note": "drops an axis from the exhaustive set",
+   "on_target": true,
+   "target": "G-AXES-EXHAUSTIVE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-FIELD-CANONICAL",
+   "mutant": "MUT-FIELD",
+   "note": "breaks the order of zeta_8",
+   "on_target": true,
+   "target": "G-FIELD-CANONICAL"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-DUAL-TORUS",
+   "mutant": "MUT-DUAL",
+   "note": "drops a momentum from the dual torus",
+   "on_target": true,
+   "target": "G-DUAL-TORUS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-EIGENPHASE-IN-MU8",
+   "mutant": "MUT-MU8",
+   "note": "reports an eigenvalue outside mu_8",
+   "on_target": true,
+   "target": "G-EIGENPHASE-IN-MU8"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-UNIT-MODULUS",
+   "mutant": "MUT-MODULUS",
+   "note": "loses a unit-modulus verification",
+   "on_target": true,
+   "target": "G-UNIT-MODULUS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-MU8-THEOREM-LEGS",
+   "mutant": "MUT-DENOMINATOR",
+   "note": "admits an odd denominator",
+   "on_target": true,
+   "target": "G-MU8-THEOREM-LEGS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PHASE-GAUGE-COVARIANT",
+   "mutant": "MUT-GAUGE-PHASE",
+   "note": "breaks gauge covariance",
+   "on_target": true,
+   "target": "G-PHASE-GAUGE-COVARIANT"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SPEED-CANONICAL",
+   "mutant": "MUT-SPECTRUM",
+   "note": "truncates the speed spectrum",
+   "on_target": true,
+   "target": "G-SPEED-CANONICAL"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-MOTION-TWO-WAY",
+   "mutant": "MUT-TWO-WAY",
+   "note": "empties the STATIC side of the head",
+   "on_target": true,
+   "target": "G-MOTION-TWO-WAY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-BOUND-DERIVED",
+   "mutant": "MUT-BOUND",
+   "note": "claims the bound has content",
+   "on_target": true,
+   "target": "G-BOUND-DERIVED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-CLASS-SIZES",
+   "mutant": "MUT-CLASS-SIZES",
+   "note": "drops a class size",
+   "on_target": true,
+   "target": "G-CLASS-SIZES"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-REBUILD-CONTROLS",
+   "mutant": "MUT-CONTROLS",
+   "note": "breaks a control's rebuild",
+   "on_target": true,
+   "target": "G-REBUILD-CONTROLS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-POOL-COUNTS-DERIVED",
+   "mutant": "MUT-POOL-COUNT",
+   "note": "miscounts the pool",
+   "on_target": true,
+   "target": "G-POOL-COUNTS-DERIVED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-RUNTIME-INPUTS-ENUMERATED",
+   "mutant": "MUT-EXTRA-READ",
+   "note": "reads an undeclared file",
+   "on_target": true,
+   "target": "G-RUNTIME-INPUTS-ENUMERATED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PARENT-NOT-IMPORTED",
+   "mutant": "MUT-PARENT-IMPORT",
+   "note": "imports the parent program",
+   "on_target": true,
+   "target": "G-PARENT-NOT-IMPORTED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-UNIT-IS-THE-DECLARED-SUCCESSOR",
+   "mutant": "MUT-SUCCESSOR",
+   "note": "loses the successor register",
+   "on_target": true,
+   "target": "G-UNIT-IS-THE-DECLARED-SUCCESSOR"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-MOMENTUM-LATTICE-DECLARED",
+   "mutant": "MUT-LATTICE-UNDECLARED",
+   "note": "loses the pin's declaration of the momentum lattice",
+   "on_target": true,
+   "target": "G-MOMENTUM-LATTICE-DECLARED"
+  }
+ ],
+ "not_executed": [
+  "no continuum, infinite-volume or long-time limit is taken; the dual torus has 16 points and every statement here is a statement about it",
+  "the non-circulant controls are NOT given a dispersion: they are measured not to be diagonal in the character basis, and the finer decomposition their index-two translation stabiliser would allow is not built",
+  "no defect is recomputed in this unit; every defect number is inherited from the parent's receipt at a hash-pinned path",
+  "the wider five-point local family at the admitted size is disclosed by the parent and is not censused here either",
+  "indivisibility is DECLARED by the division-event times and is never measured, exactly as in the parent",
+  "no state is propagated: the group velocity is read off the exact eigenphase, and no wavepacket is constructed or evolved",
+  "the alphabet is not widened; the effectus review's constructive motion-carrying generator over Q(i, sqrt 3) is outside this unit's declared field and is not built"
+ ],
+ "paper": "v14/paper-15-momentum.md",
+ "paper_claims": {
+  "L": "L = 4",
+  "alias": "320 of 1856 cells, in 19 of 58 families",
+  "alphabet": "25 elements",
+  "anchors": "41 anchors",
+  "axes": "9 axes",
+  "byte_anchors": "8 file-bytes anchors",
+  "ceilings": "16 of 16 separations and a maximal defect radius of 2 of 2",
+  "cells": "928 (family, momentum) cells",
+  "cells_v": "1856 cells",
+  "classes": "22 extended classes",
+  "classes_moving": "18 of the 19 circulant classes MOVE",
+  "cone": "16 of 16 sites",
+  "d": "d = 2",
+  "diameter": "diameter 2",
+  "drift_table": "16 | 12",
+  "drift_table2": "18 | 0",
+  "drift_table3": "24 | 0",
+  "eigen": "verified as an exact matrix identity at all 928 cells",
+  "families": "58 circulant families",
+  "fiber": "9 readings",
+  "gates": "67 gates",
+  "gates_falsifiable": "64 carrying their own injection falsifier and 3 their registered forcing",
+  "identity": "58 of 58 families",
+  "identity_pairs": "1 of the 9 reading pairs",
+  "interfering": "42 interfering families",
+  "labels": "14 distinct invariant labels",
+  "markov": "0 of 1792",
+  "mismatched": "39 of 58",
+  "momenta": "16 momenta",
+  "monomial": "16 monomial families",
+  "moving": "57 of 58 families MOVE",
+  "mu8": "every one of the 928 eigenvalues is an 8th root of unity",
+  "mutants": "66 declared mutants",
+  "notbloch": "3 classes carry no Bloch dispersion",
+  "pool": "64 generators",
+  "profiles": "58 distinct reduced dispersions",
+  "pv_anchors": "20 path-value anchors",
+  "reach": "8 families overshoot it, 14 fall below it, 36 meet it exactly",
+  "spectrum": "the speed spectrum is {0, 1, 2}",
+  "static": "C004, and it is the identity",
+  "vb_anchors": "13 verbatim-text anchors",
+  "verdict_values": "56 measured values",
+  "vmax": "VMAX = 2",
+  "winding": "12 families with nonzero winding, every one of them monomial"
+ },
+ "paper_coverage": {
+  "claims": 44,
+  "covered_by_rendering": 74,
+  "declared_derived_in_text": 12,
+  "distinct_numerals": 78,
+  "missing": [],
+  "numeral_occurrences": 413,
+  "residue_declared_but_absent": [],
+  "uncovered": []
+ },
+ "path_value_anchors": [
+  {
+   "expected": 4,
+   "id": "PV-R4-L",
+   "measured": 4,
+   "note": "the admitted lattice size -- this unit's arena, taken not typed",
+   "path": "counts/L",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": 2,
+   "id": "PV-R4-D",
+   "measured": 2,
+   "note": "the anchored spatial dimension",
+   "path": "counts/d",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": 64,
+   "id": "PV-R4-POOL",
+   "measured": 64,
+   "note": "the parent's generator pool",
+   "path": "counts/pool",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": 58,
+   "id": "PV-R4-CIRC",
+   "measured": 58,
+   "note": "the circulant families -- the dispersion census's domain",
+   "path": "counts/circulants",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": 25,
+   "id": "PV-R4-ALPHABET",
+   "measured": 25,
+   "note": "the declared coefficient alphabet",
+   "path": "counts/alphabet",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": "Q(ZETA-8)",
+   "id": "PV-R4-FIELD",
+   "measured": "Q(ZETA-8)",
+   "note": "the field, inherited",
+   "path": "counts/field",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": 22,
+   "id": "PV-R4-CLASSES",
+   "measured": 22,
+   "note": "the extended transformation-type classes the motion head reports on",
+   "path": "counts/classes_extended",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": 38,
+   "id": "PV-R4-ANCHORED",
+   "measured": 38,
+   "note": "the anchored-chart-group classes",
+   "path": "counts/classes_anchored",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": 16,
+   "id": "PV-R4-SEPARATIONS",
+   "measured": 16,
+   "note": "THE CEILING ROW: separations carrying a defect",
+   "path": "counts/separations",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": 16,
+   "id": "PV-R4-SEP-CEILING",
+   "measured": 16,
+   "note": "THE CEILING ROW: the ceiling it sits at",
+   "path": "counts/separations_ceiling",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": 2,
+   "id": "PV-R4-MAXRAD",
+   "measured": 2,
+   "note": "THE CEILING ROW: the maximal defect radius",
+   "path": "counts/max_defect_radius",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": 2,
+   "id": "PV-R4-RAD-CEILING",
+   "measured": 2,
+   "note": "THE CEILING ROW: the ceiling it sits at",
+   "path": "counts/radius_ceiling",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": [
+    0
+   ],
+   "id": "PV-R4-CONE",
+   "measured": [
+    0
+   ],
+   "note": "the parent's light-cone segment: content only at radius 0",
+   "path": "counts/lightcone_content_radii",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": 0,
+   "id": "PV-R4-MARKOV",
+   "measured": 0,
+   "note": "the Markovian control: no monomial pair carries a defect",
+   "path": "counts/markov_nonzero",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": 1792,
+   "id": "PV-R4-MARKOV-PAIRS",
+   "measured": 1792,
+   "note": "the Markovian control's size",
+   "path": "counts/markov_pairs",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": "MAX-NORM",
+   "id": "PV-R4-CONNECTIVE",
+   "measured": "MAX-NORM",
+   "note": "the FORCED connective, inherited verbatim into SCOPE",
+   "path": "counts/connective_tag",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": "(1,1)",
+   "id": "PV-R4-LINK",
+   "measured": "(1,1)",
+   "note": "the anchored link that forces it",
+   "path": "counts/forcing_link",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": "SINGLE-OCCUPATION",
+   "id": "PV-R4-SECTOR",
+   "measured": "SINGLE-OCCUPATION",
+   "note": "the sector, inherited",
+   "path": "counts/sector",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": "3-TERM-AXIS",
+   "id": "PV-R4-STENCIL",
+   "measured": "3-TERM-AXIS",
+   "note": "the stencil, inherited",
+   "path": "counts/stencil",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "expected": "DECLARED-BY-DIVISION-EVENT-TIMES",
+   "id": "PV-R4-INDIV",
+   "measured": "DECLARED-BY-DIVISION-EVENT-TIMES",
+   "note": "indivisibility is declared, never measured -- inherited",
+   "path": "counts/indivisibility",
+   "source": "A-R4-RECEIPT"
+  }
+ ],
+ "pool_counts": {
+  "axes": 9,
+  "brickwork": 4,
+  "circulant": 58,
+  "local_axes": 4,
+  "scrambled": 2,
+  "total": 64
+ },
+ "profiles": {
+  "distinct": 58,
+  "largest": 1
+ },
+ "resolution": {
+  "aliased_cells": 320,
+  "aliased_families": 19,
+  "cells": 1856,
+  "diameter": 2,
+  "dual_points_per_axis": 4,
+  "interior_radii": [
+   1
+  ],
+  "phase_values": 8,
+  "radius_classes": [
+   0,
+   1,
+   2
+  ],
+  "steps_to_cover": 1,
+  "vmax": "2"
+ },
+ "schema": "isp/v14/r4b-momentum/1",
+ "support_drift_table": {
+  "1": {
+   "generators": 16,
+   "nonzero_drift": 12
+  },
+  "2": {
+   "generators": 18,
+   "nonzero_drift": 0
+  },
+  "3": {
+   "generators": 24,
+   "nonzero_drift": 0
+  }
+ },
+ "support_drift_table_positive_reading": {
+  "1": {
+   "generators": 16,
+   "nonzero_drift": 15
+  },
+  "2": {
+   "generators": 18,
+   "nonzero_drift": 10
+  },
+  "3": {
+   "generators": 24,
+   "nonzero_drift": 8
+  }
+ },
+ "totals": {
+  "anchors": 41,
+  "byte_anchors": 8,
+  "census_cells": 928,
+  "families": 58,
+  "gates": 67,
+  "gates_falsifiable": 64,
+  "gates_passed": 67,
+  "gates_waived": 3,
+  "mutants": 66,
+  "mutants_killed": 66,
+  "mutants_on_target": 66,
+  "path_value_anchors": 20,
+  "verbatim_anchors": 13,
+  "verdict_values": 56
+ },
+ "translation_stabilisers": {
+  "brickwork": [
+   8
+  ],
+  "circulant": [
+   16
+  ],
+  "controls": [
+   1,
+   2,
+   8
+  ],
+  "group": 16
+ },
+ "unit": "v14 R4b -- momentum: reading the dispersions",
+ "velocity_definition": {
+  "declared": "forward difference of the eigenphase along +e_j on the dual torus, divided by the momentum step: v_j(k) = -(L/2pi) [theta(k+e_j) - theta(k)] = -lift(Delta_j s(k))/2",
+  "lift_readings": [
+   "TIE-AVERAGED",
+   "POSITIVE",
+   "NEGATIVE"
+  ],
+  "speed": "the branch-free circle distance of Delta_j s to 0, halved",
+  "stencil_readings": [
+   "FORWARD",
+   "BACKWARD",
+   "CENTRAL"
+  ],
+  "tie_reading": "TIE-AVERAGED"
+ },
+ "velocity_fiber": [
+  {
+   "cells": 1856,
+   "cells_agreeing_with_declared": 1856,
+   "lift": "TIE-AVERAGED",
+   "stencil": "FORWARD"
+  },
+  {
+   "cells": 1856,
+   "cells_agreeing_with_declared": 1088,
+   "lift": "TIE-AVERAGED",
+   "stencil": "BACKWARD"
+  },
+  {
+   "cells": 1856,
+   "cells_agreeing_with_declared": 832,
+   "lift": "TIE-AVERAGED",
+   "stencil": "CENTRAL"
+  },
+  {
+   "cells": 1856,
+   "cells_agreeing_with_declared": 1536,
+   "lift": "POSITIVE",
+   "stencil": "FORWARD"
+  },
+  {
+   "cells": 1856,
+   "cells_agreeing_with_declared": 768,
+   "lift": "POSITIVE",
+   "stencil": "BACKWARD"
+  },
+  {
+   "cells": 1856,
+   "cells_agreeing_with_declared": 704,
+   "lift": "POSITIVE",
+   "stencil": "CENTRAL"
+  },
+  {
+   "cells": 1856,
+   "cells_agreeing_with_declared": 1536,
+   "lift": "NEGATIVE",
+   "stencil": "FORWARD"
+  },
+  {
+   "cells": 1856,
+   "cells_agreeing_with_declared": 768,
+   "lift": "NEGATIVE",
+   "stencil": "BACKWARD"
+  },
+  {
+   "cells": 1856,
+   "cells_agreeing_with_declared": 704,
+   "lift": "NEGATIVE",
+   "stencil": "CENTRAL"
+  }
+ ],
+ "verbatim_anchors": [
+  {
+   "chars": 214,
+   "consumer_gate": "G-NONCONSTANT-CENSUS",
+   "id": "VB-DISPERSION-57",
+   "present": true,
+   "source": "A-REV-EFFECTUS"
+  },
+  {
+   "chars": 120,
+   "consumer_gate": "G-EFFECTUS-DRIFT-TABLE",
+   "id": "VB-DRIFT-TABLE",
+   "present": true,
+   "source": "A-REV-EFFECTUS"
+  },
+  {
+   "chars": 134,
+   "consumer_gate": "G-CHARGE-WITHOUT-MOMENTUM",
+   "id": "VB-K3-NO-MOMENTUM",
+   "present": true,
+   "source": "A-REV-OPERATOR"
+  },
+  {
+   "chars": 169,
+   "consumer_gate": "G-MOMENTUM-ON-THE-SYMBOL",
+   "id": "VB-K3-SYMBOL",
+   "present": true,
+   "source": "A-REV-OPERATOR"
+  },
+  {
+   "chars": 138,
+   "consumer_gate": "G-RESOLUTION-RELATION",
+   "id": "VB-PROPAGATOR",
+   "present": true,
+   "source": "A-R4-PAPER"
+  },
+  {
+   "chars": 56,
+   "consumer_gate": "G-CEILINGS-INHERITED",
+   "id": "VB-CEILINGS",
+   "present": true,
+   "source": "A-R4-OUTPUT"
+  },
+  {
+   "chars": 50,
+   "consumer_gate": "G-SCOPE-INHERITED",
+   "id": "VB-CONNECTIVE",
+   "present": true,
+   "source": "A-R4-OUTPUT"
+  },
+  {
+   "chars": 90,
+   "consumer_gate": "G-UNIT-IS-THE-DECLARED-SUCCESSOR",
+   "id": "VB-SUCCESSOR",
+   "present": true,
+   "source": "A-R4-ADJ"
+  },
+  {
+   "chars": 132,
+   "consumer_gate": "G-ALPHABET-REBUILT",
+   "id": "VB-ALPHABET",
+   "present": true,
+   "source": "A-R4-PAPER"
+  },
+  {
+   "chars": 115,
+   "consumer_gate": "G-UNITARY-TWO-ROUTES",
+   "id": "VB-UNITARITY",
+   "present": true,
+   "source": "A-R4-PAPER"
+  },
+  {
+   "chars": 147,
+   "consumer_gate": "G-REBUILD-BIJECTION",
+   "id": "VB-GENERATOR",
+   "present": true,
+   "source": "A-R4-PAPER"
+  },
+  {
+   "chars": 110,
+   "consumer_gate": "G-VERDICT-PREREGISTERED",
+   "id": "VB-PIN-OUTCOMES",
+   "present": true,
+   "source": "A-PIN-R4B"
+  },
+  {
+   "chars": 74,
+   "consumer_gate": "G-MOMENTUM-LATTICE-DECLARED",
+   "id": "VB-PIN-LATTICE",
+   "present": true,
+   "source": "A-PIN-R4B"
+  }
+ ],
+ "verdict": {
+  "head": "R4B-DISPERSION-READ",
+  "head_under_zeroed_census": "R4B-NO-MOTION",
+  "preregistered_heads": [
+   "R4B-DISPERSION-READ",
+   "R4B-NO-MOTION",
+   "R4B-BLOCKED-AT"
+  ],
+  "segments": [
+   [
+    "MOTION",
+    "MOVING=57-OF-58;STATIC=1-OF-58;CONTROL=C004-IDENTITY-TWO-WAY;CLASSES-MOVING=18-OF-19-CIRCULANT;NOT-BLOCH-DIAGONAL=3-OF-22"
+   ],
+   [
+    "DISPERSION",
+    "EIGENPHASES-IN-MU-8=928-OF-928;EIGEN-EQUATION-VERIFIED=928;UNIT-MODULUS=928;PARITY-INVARIANT=58-OF-58;DISTINCT-REDUCED-PROFILES=58-VS-14-INVARIANT-LABELS"
+   ],
+   [
+    "VELOCITY",
+    "SPECTRUM=0+1+2;VMAX=2;INTEGER-VALUED=1856-OF-1856;ALIASED=320-OF-1856-IN-19-FAMILIES;DEFINITION=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED(FIBER=9)"
+   ],
+   [
+    "BOUND",
+    "NO-CONTENT=YES;CONE-AT-ONE-STEP=16-OF-16-SITES;VMAX=2=DIAMETER=2;REACH-BOUND-FALSE-AT=14-OF-58;OVERSHOOTS-AT=8;SATURATES-AT=36;INHERITED-CEILINGS=SEPARATIONS=16-OF-16;MAX-DEFECT-RADIUS=2-OF-2;INTERIOR-RADII=1"
+   ],
+   [
+    "TRANSPORT",
+    "DRIFT=WINDING-AT-58-OF-58-FAMILIES-UNDER-1-OF-9-READING-PAIRS(BEST-OTHER=39-OF-58);NONZERO-WINDING=12-OF-58-ALL-MONOMIAL-OF-16;INTERFERING=42-ZERO-NET-TRANSPORT-AND-42-MOVING;MARKOV=0-OF-1792-NONZERO-INHERITED"
+   ],
+   [
+    "SCOPE",
+    "D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;SECTOR=SINGLE-OCCUPATION;MOMENTUM-LATTICE=DUAL-TORUS-16-DECLARED;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT"
+   ]
+  ],
+  "string": "R4B-DISPERSION-READ<MOTION=MOVING=57-OF-58;STATIC=1-OF-58;CONTROL=C004-IDENTITY-TWO-WAY;CLASSES-MOVING=18-OF-19-CIRCULANT;NOT-BLOCH-DIAGONAL=3-OF-22|DISPERSION=EIGENPHASES-IN-MU-8=928-OF-928;EIGEN-EQUATION-VERIFIED=928;UNIT-MODULUS=928;PARITY-INVARIANT=58-OF-58;DISTINCT-REDUCED-PROFILES=58-VS-14-INVARIANT-LABELS|VELOCITY=SPECTRUM=0+1+2;VMAX=2;INTEGER-VALUED=1856-OF-1856;ALIASED=320-OF-1856-IN-19-FAMILIES;DEFINITION=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED(FIBER=9)|BOUND=NO-CONTENT=YES;CONE-AT-ONE-STEP=16-OF-16-SITES;VMAX=2=DIAMETER=2;REACH-BOUND-FALSE-AT=14-OF-58;OVERSHOOTS-AT=8;SATURATES-AT=36;INHERITED-CEILINGS=SEPARATIONS=16-OF-16;MAX-DEFECT-RADIUS=2-OF-2;INTERIOR-RADII=1|TRANSPORT=DRIFT=WINDING-AT-58-OF-58-FAMILIES-UNDER-1-OF-9-READING-PAIRS(BEST-OTHER=39-OF-58);NONZERO-WINDING=12-OF-58-ALL-MONOMIAL-OF-16;INTERFERING=42-ZERO-NET-TRANSPORT-AND-42-MOVING;MARKOV=0-OF-1792-NONZERO-INHERITED|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;SECTOR=SINGLE-OCCUPATION;MOMENTUM-LATTICE=DUAL-TORUS-16-DECLARED;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT>"
+ },
+ "waiver_ledger": [
+  {
+   "falsifier": [
+    "MUT-ALIAS"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-ALIASING-CENSUS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-ALPHABET"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-ALPHABET-REBUILT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-DANGLING-CONSUMER"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-ANCHOR-CONSUMERS-EXIST",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-LATTICE-UNBOUND"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-ARENA-FROM-ANCHOR",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [],
+   "forcing": "evaluated only in the writing path, which no diagnostic run reaches; it is two-way by construction -- a deliberately corrupted payload is written to a probe path, re-read and required to be detected, before the real artifacts are written and required to match",
+   "forcing_registered": true,
+   "gate": "G-ARTIFACT-INTEGRITY",
+   "status": "WAIVED"
+  },
+  {
+   "falsifier": [
+    "MUT-AXES"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-AXES-EXHAUSTIVE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-SYMBOL"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-BLOCH-EIGEN-EQUATION",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-BOUND"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-BOUND-DERIVED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-ANCHOR"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-BYTE-ANCHORS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-CEILING"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-CEILINGS-INHERITED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-CONVENTION"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-CHARACTER-CONVENTION-FIBER",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-CHARGE"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-CHARGE-WITHOUT-MOMENTUM",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-CLASS-DROP"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-CLASS-PARTITION-REBUILT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-CLASS-SIZES"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-CLASS-SIZES",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-CLI-PERMISSIVE"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-CLI-CONTRACT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-CONE"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-CONE-AT-ONE-STEP",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-CONTROL-ID"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-CONTROL-IS-THE-IDENTITY",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-IDENTITY"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-DRIFT-WINDING-IDENTITY",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-DUAL"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-DUAL-TORUS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-DRIFT-TABLE"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-EFFECTUS-DRIFT-TABLE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-MU8"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-EIGENPHASE-IN-MU8",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-FIELD"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-FIELD-CANONICAL",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-REGISTRY"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-GATE-MUTANT-COVERAGE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-GAUGE-ORBIT"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-GAUGE-ORBITS-FREE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-HEAD-CONSTANT"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-HEAD-LAW-RESPONSIVE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-LATTICE-UNDECLARED"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-MOMENTUM-LATTICE-DECLARED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-SYMBOL-LABEL"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-MOMENTUM-ON-THE-SYMBOL",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-CLASS-SPLIT"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-MOTION-CLASS-INVARIANT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-MOTION-CONTROL",
+    "MUT-MOTION-HEAD"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-MOTION-HEAD-PER-FAMILY",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-TWO-WAY"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-MOTION-TWO-WAY",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-DENOMINATOR"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-MU8-THEOREM-LEGS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [],
+   "forcing": "the gate that adjudicates the mutant sweep cannot itself be a mutant's target; its falsifier is the sweep, and every surviving or off-target injection fails it -- exercised by all declared mutants on every run",
+   "forcing_registered": true,
+   "gate": "G-MUTANTS-ON-TARGET",
+   "status": "WAIVED"
+  },
+  {
+   "falsifier": [
+    "MUT-FLOAT"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-NO-FLOATS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-LAUNDER"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-NO-MUTANT-ONLY-CLAUSE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-SUBPROCESS"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-NO-SUBPROCESS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-NONCONSTANT"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-NONCONSTANT-CENSUS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-NOTBLOCH"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-NOT-BLOCH-CONTROL",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-PAPER-CLAIM"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-PAPER-CLAIMS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [],
+   "forcing": "evaluated after the mutant sweep closes the instrument's totals, so no in-process mutant can reach it; its in-run twins G-PAPER-CLAIMS and G-PAPER-NUMERAL-COVERAGE carry the two injection falsifiers and die on every sweep",
+   "forcing_registered": true,
+   "gate": "G-PAPER-COVERAGE-FINAL",
+   "status": "WAIVED"
+  },
+  {
+   "falsifier": [
+    "MUT-PAPER-NUMERAL"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-PARENT-IMPORT"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-PARENT-NOT-IMPORTED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-PATH-VALUE"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-PATH-VALUE-ANCHORS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-DELTA-ODD"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-PHASE-DIFFERENCES-EVEN",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-GAUGE-PHASE"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-PHASE-GAUGE-COVARIANT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-PARITY"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-PHASE-PARITY-INVARIANT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-POOL-COUNT"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-POOL-COUNTS-DERIVED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-REACH"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-REACH-BOUND-PER-FAMILY",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-BIJECTION"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-REBUILD-BIJECTION",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-CONTROLS"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-REBUILD-CONTROLS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-INVARIANT"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-REBUILD-INVARIANTS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-DETERMINISM"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-RECEIPT-ROUND-TRIP",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-RESOLUTION"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-RESOLUTION-RELATION",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-EXTRA-READ"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-RUNTIME-INPUTS-ENUMERATED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-SCOPE"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-SCOPE-INHERITED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-SELFTEST-WRITES"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-SELFTEST-WRITES-NOTHING",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-SPECTRUM"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-SPEED-CANONICAL",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-STABILISER"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-TRANSLATION-STABILISER",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-SUCCESSOR"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-UNIT-IS-THE-DECLARED-SUCCESSOR",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-MODULUS"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-UNIT-MODULUS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-UNITARITY"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-UNITARY-TWO-ROUTES",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-FIBER"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-VELOCITY-DEFINITION-FIBER",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-VERBATIM"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-VERBATIM-ANCHORS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-HEAD-OUTSIDE-PIN"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-VERDICT-PREREGISTERED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-COUNT-TYPED",
+    "MUT-HEAD-TYPED"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-FLIP-DEAD"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-VERDICT-VALUES-FLIPPABLE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-SPEED"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-VMAX-DERIVED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-WAIVER"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-WAIVERS-VERIFIED",
+   "status": "FALSIFIABLE"
+  }
+ ]
+}

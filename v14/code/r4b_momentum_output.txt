@@ -1,0 +1,192 @@
+==============================================================================
+v14 R4b -- MOMENTUM: READING THE DISPERSIONS
+==============================================================================
+[1/10] anchors, arena, field
+[2/10] the family, rebuilt from the parent's definitions
+[3/10] the extended classes, rebuilt
+[4/10] the dispersion census, exact
+[5/10] group velocity: the declared derivative and its fiber
+[6/10] the motion head, family by family and class by class
+[7/10] the propagation bound and the resolution relation
+[8/10] transport: the drift, the winding, and the tension
+[9/10] the verdict, its reconstruction, and the receipt gates
+[10/10] running 66 declared mutants
+    mutants: 66 declared, 66 killed, 66 killed by their declared target
+
+------------------------------------------------------------------------------
+ARENA (declared as data)
+  boundary         the finite periodic site lattice X = (Z_L)^d with d = 2 and L = 4 read from the parent's anchored receipt; the carrier is the single-occupation sector, so |C| = |X| = 16
+  family           R4's terminal family, rebuilt here from its definitions and gated row by row against the parent receipt: the 58 translation-covariant (circulant) unitary generators on the 3-term axis stencil over the declared 25-element alphabet, plus the 6 declared controls
+  momentum         THE DUAL TORUS, declared as data: the 16 characters chi_k(x) = zeta_4^{k.x} for k in (Z_4)^2.  Every circulant is diagonal in this basis; the eigenvalue is the symbol and its exponent is the exact eigenphase
+  law              the Bloch eigenphase s(k) in Z/8 defined by lambda(k) = zeta_8^{s(k)}; the group velocity is the declared discrete derivative of the phase on the dual torus
+  arena            the anchored chart group and R4's declared extension by the square point group; the 22 extended classes are inherited and rebuilt
+  division_events  inherited unchanged from the parent: t = 0 and t = 2 are division events, the cut at t = 1 is not; indivisibility is DECLARED by those times and is never measured here
+
+ANCHORS
+  verbatim   VB-DISPERSION-57     -> G-NONCONSTANT-CENSUS               present
+  verbatim   VB-DRIFT-TABLE       -> G-EFFECTUS-DRIFT-TABLE             present
+  verbatim   VB-K3-NO-MOMENTUM    -> G-CHARGE-WITHOUT-MOMENTUM          present
+  verbatim   VB-K3-SYMBOL         -> G-MOMENTUM-ON-THE-SYMBOL           present
+  verbatim   VB-PROPAGATOR        -> G-RESOLUTION-RELATION              present
+  verbatim   VB-CEILINGS          -> G-CEILINGS-INHERITED               present
+  verbatim   VB-CONNECTIVE        -> G-SCOPE-INHERITED                  present
+  verbatim   VB-SUCCESSOR         -> G-UNIT-IS-THE-DECLARED-SUCCESSOR   present
+  verbatim   VB-ALPHABET          -> G-ALPHABET-REBUILT                 present
+  verbatim   VB-UNITARITY         -> G-UNITARY-TWO-ROUTES               present
+  verbatim   VB-GENERATOR         -> G-REBUILD-BIJECTION                present
+  verbatim   VB-PIN-OUTCOMES      -> G-VERDICT-PREREGISTERED            present
+  verbatim   VB-PIN-LATTICE       -> G-MOMENTUM-LATTICE-DECLARED        present
+  bytes      A-R4-PAPER           v14/paper-10-defect-on-the-stage.md 1063401c7bb5
+  bytes      A-R4-CODE            v14/code/r4_defect_stage_exact.py 2959c5a6a84b
+  bytes      A-R4-OUTPUT          v14/code/r4_defect_stage_output.txt ffd069ff3eb4
+  bytes      A-R4-RECEIPT         v14/code/r4_defect_stage_receipt.json 3dc1393b0df8
+  bytes      A-R4-ADJ             v14/note-r4-adjudication.md 3b00a9481b28
+  bytes      A-REV-OPERATOR       v14/review-r4-operator.md 3828376b49a6
+  bytes      A-REV-EFFECTUS       v14/review-r4-effectus.md f54fa11dfd07
+  bytes      A-PIN-R4B            v14/note-r4b-momentum-pin.md bcd12bbe6fd8
+  path-value PV-R4-L              counts/L = 4
+  path-value PV-R4-D              counts/d = 2
+  path-value PV-R4-POOL           counts/pool = 64
+  path-value PV-R4-CIRC           counts/circulants = 58
+  path-value PV-R4-ALPHABET       counts/alphabet = 25
+  path-value PV-R4-FIELD          counts/field = "Q(ZETA-8)"
+  path-value PV-R4-CLASSES        counts/classes_extended = 22
+  path-value PV-R4-ANCHORED       counts/classes_anchored = 38
+  path-value PV-R4-SEPARATIONS    counts/separations = 16
+  path-value PV-R4-SEP-CEILING    counts/separations_ceiling = 16
+  path-value PV-R4-MAXRAD         counts/max_defect_radius = 2
+  path-value PV-R4-RAD-CEILING    counts/radius_ceiling = 2
+  path-value PV-R4-CONE           counts/lightcone_content_radii = [0]
+  path-value PV-R4-MARKOV         counts/markov_nonzero = 0
+  path-value PV-R4-MARKOV-PAIRS   counts/markov_pairs = 1792
+  path-value PV-R4-CONNECTIVE     counts/connective_tag = "MAX-NORM"
+  path-value PV-R4-LINK           counts/forcing_link = "(1,1)"
+  path-value PV-R4-SECTOR         counts/sector = "SINGLE-OCCUPATION"
+  path-value PV-R4-STENCIL        counts/stencil = "3-TERM-AXIS"
+  path-value PV-R4-INDIV          counts/indivisibility = "DECLARED-BY-DIVISION-EVENT-TIMES"
+
+THE FAMILY, REBUILT AND GATED AGAINST THE PARENT'S ROWS
+  pool {'total': 64, 'circulant': 58, 'brickwork': 4, 'scrambled': 2, 'axes': 9, 'local_axes': 4}
+  axes (offset, order, radius): [((0, 1), 4, 1), ((0, 2), 2, 2), ((1, 0), 4, 1), ((1, 1), 4, 1), ((1, 2), 4, 2), ((1, 3), 4, 1), ((2, 0), 2, 2), ((2, 1), 4, 2), ((2, 2), 2, 2)]
+  extended classes 22, sizes [1, 2, 4]
+
+THE DISPERSION CENSUS (exact, Q(zeta_8); phases are elements of Z/8)
+  (family, momentum) cells            928
+  eigen-equation M chi = lambda chi   928
+  eigenvalues in mu_8                 928
+  exact unit modulus                  928
+  non-constant dispersions            57 of 58
+  constant (the NO-MOTION control)    C004
+  phase parity a family invariant     58 of 58
+  distinct reduced dispersions        58 (vs 14 distinct invariant labels)
+
+  the reduced dispersion sigma(k) = s(k) - s(0), first rows (k in lexicographic order):
+    C004  supp=1 rad=0  sigma=0000000000000000  v_max=0  STATIC
+    C000  supp=3 rad=1  sigma=0022002200220022  v_max=1  MOVES
+    C001  supp=3 rad=1  sigma=0660066006600660  v_max=1  MOVES
+    C002  supp=3 rad=1  sigma=0220022002200220  v_max=1  MOVES
+    C003  supp=3 rad=1  sigma=0066006600660066  v_max=1  MOVES
+    C007  supp=1 rad=1  sigma=0642064206420642  v_max=1  MOVES
+
+GROUP VELOCITY
+  definition (declared)   forward difference of the eigenphase along +e_j on the dual torus, divided by the momentum step: v_j(k) = -(L/2pi) [theta(k+e_j) - theta(k)] = -lift(Delta_j s(k))/2
+  tie reading (declared)  TIE-AVERAGED
+  speed (branch-free)     the branch-free circle distance of Delta_j s to 0, halved
+  phase differences       1856, all even -> every velocity an integer
+  speed spectrum          {0, 1, 2}      VMAX = 2
+  aliased cells           320 of 1856, in 19 of 58 families
+  the fiber (lift x stencil), cells agreeing with the declared reading:
+    TIE-AVERAGED  FORWARD   1856 of 1856
+    TIE-AVERAGED  BACKWARD  1088 of 1856
+    TIE-AVERAGED  CENTRAL   832 of 1856
+    POSITIVE      FORWARD   1536 of 1856
+    POSITIVE      BACKWARD  768 of 1856
+    POSITIVE      CENTRAL   704 of 1856
+    NEGATIVE      FORWARD   1536 of 1856
+    NEGATIVE      BACKWARD  768 of 1856
+    NEGATIVE      CENTRAL   704 of 1856
+
+THE MOTION HEAD, PER EXTENDED CLASS
+    class C004  size=1  supp=1 radius=0 v_max=0 aliased=0  profiles=1  STATIC
+    class C000  size=4  supp=3 radius=1 v_max=1 aliased=0  profiles=4  MOVES
+    class C001  size=4  supp=3 radius=1 v_max=1 aliased=0  profiles=4  MOVES
+    class C007  size=4  supp=1 radius=1 v_max=1 aliased=0  profiles=4  MOVES
+    class C005  size=4  supp=2 radius=1 v_max=2 aliased=32 profiles=4  MOVES
+    class C009  size=2  supp=2 radius=2 v_max=1 aliased=0  profiles=2  MOVES
+    class C010  size=2  supp=2 radius=2 v_max=1 aliased=0  profiles=2  MOVES
+    class C011  size=2  supp=1 radius=2 v_max=2 aliased=32 profiles=2  MOVES
+    class C020  size=4  supp=3 radius=1 v_max=1 aliased=0  profiles=4  MOVES
+    class C021  size=4  supp=3 radius=1 v_max=1 aliased=0  profiles=4  MOVES
+    class C026  size=4  supp=1 radius=1 v_max=1 aliased=0  profiles=4  MOVES
+    class C024  size=4  supp=2 radius=1 v_max=2 aliased=64 profiles=4  MOVES
+    class C028  size=4  supp=3 radius=2 v_max=1 aliased=0  profiles=4  MOVES
+    class C029  size=4  supp=3 radius=2 v_max=1 aliased=0  profiles=4  MOVES
+    class C034  size=4  supp=1 radius=2 v_max=2 aliased=64 profiles=4  MOVES
+    class C032  size=4  supp=2 radius=2 v_max=2 aliased=96 profiles=4  MOVES
+    class C055  size=1  supp=2 radius=2 v_max=1 aliased=0  profiles=1  MOVES
+    class C056  size=1  supp=2 radius=2 v_max=1 aliased=0  profiles=1  MOVES
+    class C057  size=1  supp=1 radius=2 v_max=2 aliased=32 profiles=1  MOVES
+    class B058  size=4  kind=BRICK  NOT-BLOCH-DIAGONAL
+    class S062  size=1  kind=SCRAM  NOT-BLOCH-DIAGONAL
+    class S063  size=1  kind=SCRAM  NOT-BLOCH-DIAGONAL
+
+THE PROPAGATION BOUND
+  VMAX = 2; torus max-norm diameter = 2; radii present [0, 1, 2]; interior [1]
+  the cone after ONE step covers 16 of 16 sites
+  per family, speed against its own one-step reach: over 8, under 14, equal 36
+  inherited AT THE CEILING: separations 16 of 16; max defect radius 2 of 2
+  the bound has content: False
+  the resolution relation: {'dual_points_per_axis': 4, 'phase_values': 8, 'aliased_cells': 320, 'aliased_families': 19, 'cells': 1856, 'diameter': 2, 'radius_classes': [0, 1, 2], 'interior_radii': [1], 'vmax': '2', 'steps_to_cover': 1}
+
+TRANSPORT: THE DRIFT AND THE WINDING
+  support -> [generators, nonzero drift] under the tie-averaged reading: {'1': {'generators': 16, 'nonzero_drift': 12}, '2': {'generators': 18, 'nonzero_drift': 0}, '3': {'generators': 24, 'nonzero_drift': 0}}
+  drift == winding, by reading pair:
+    drift NEGATIVE      vs winding NEGATIVE      : 25 of 58
+    drift NEGATIVE      vs winding POSITIVE      : 32 of 58
+    drift NEGATIVE      vs winding TIE-AVERAGED  : 33 of 58
+    drift POSITIVE      vs winding NEGATIVE      : 32 of 58
+    drift POSITIVE      vs winding POSITIVE      : 25 of 58
+    drift POSITIVE      vs winding TIE-AVERAGED  : 33 of 58
+    drift TIE-AVERAGED  vs winding NEGATIVE      : 39 of 58
+    drift TIE-AVERAGED  vs winding POSITIVE      : 39 of 58
+    drift TIE-AVERAGED  vs winding TIE-AVERAGED  : 58 of 58
+  nonzero winding 12, all monomial (of 16 monomial families)
+  interfering families 42: all with zero net transport, all MOVING (42)
+  inherited: the Markovian control is 0 of 1792 nonzero
+
+PAPER CLAIM COVERAGE
+  {'claims': 44, 'missing': [], 'distinct_numerals': 78, 'numeral_occurrences': 413, 'covered_by_rendering': 74, 'declared_derived_in_text': 12, 'residue_declared_but_absent': [], 'uncovered': []}
+
+THE VERDICT
+
+  R4B-DISPERSION-READ<MOTION=MOVING=57-OF-58;STATIC=1-OF-58;CONTROL=C004-IDE
+  NTITY-TWO-WAY;CLASSES-MOVING=18-OF-19-CIRCULANT;NOT-BLOCH-DIAGONAL=3-OF-22
+  |DISPERSION=EIGENPHASES-IN-MU-8=928-OF-928;EIGEN-EQUATION-VERIFIED=928;UNI
+  T-MODULUS=928;PARITY-INVARIANT=58-OF-58;DISTINCT-REDUCED-PROFILES=58-VS-14
+  -INVARIANT-LABELS|VELOCITY=SPECTRUM=0+1+2;VMAX=2;INTEGER-VALUED=1856-OF-18
+  56;ALIASED=320-OF-1856-IN-19-FAMILIES;DEFINITION=FORWARD-DIFFERENCE-WITH-T
+  IE-AVERAGED(FIBER=9)|BOUND=NO-CONTENT=YES;CONE-AT-ONE-STEP=16-OF-16-SITES;
+  VMAX=2=DIAMETER=2;REACH-BOUND-FALSE-AT=14-OF-58;OVERSHOOTS-AT=8;SATURATES-
+  AT=36;INHERITED-CEILINGS=SEPARATIONS=16-OF-16;MAX-DEFECT-RADIUS=2-OF-2;INT
+  ERIOR-RADII=1|TRANSPORT=DRIFT=WINDING-AT-58-OF-58-FAMILIES-UNDER-1-OF-9-RE
+  ADING-PAIRS(BEST-OTHER=39-OF-58);NONZERO-WINDING=12-OF-58-ALL-MONOMIAL-OF-
+  16;INTERFERING=42-ZERO-NET-TRANSPORT-AND-42-MOVING;MARKOV=0-OF-1792-NONZER
+  O-INHERITED|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCI
+  L=3-TERM-AXIS;SECTOR=SINGLE-OCCUPATION;MOMENTUM-LATTICE=DUAL-TORUS-16-DECL
+  ARED;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DEC
+  LARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-IN
+  TERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT>
+
+TOTALS: {"anchors": 41, "byte_anchors": 8, "census_cells": 928, "families": 58, "gates": 67, "gates_falsifiable": 64, "gates_passed": 67, "gates_waived": 3, "mutants": 66, "mutants_killed": 66, "mutants_on_target": 66, "path_value_anchors": 20, "verbatim_anchors": 13, "verdict_values": 56}
+
+NOT EXECUTED
+  - no continuum, infinite-volume or long-time limit is taken; the dual torus has 16 points and every statement here is a statement about it
+  - the non-circulant controls are NOT given a dispersion: they are measured not to be diagonal in the character basis, and the finer decomposition their index-two translation stabiliser would allow is not built
+  - no defect is recomputed in this unit; every defect number is inherited from the parent's receipt at a hash-pinned path
+  - the wider five-point local family at the admitted size is disclosed by the parent and is not censused here either
+  - indivisibility is DECLARED by the division-event times and is never measured, exactly as in the parent
+  - no state is propagated: the group velocity is read off the exact eigenphase, and no wavepacket is constructed or evolved
+  - the alphabet is not widened; the effectus review's constructive motion-carrying generator over Q(i, sqrt 3) is outside this unit's declared field and is not built
+
+ALL GATES PASSED (67/67); ALL MUTANTS DEAD (66/66)
+EXIT 0

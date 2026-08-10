@@ -3185,3 +3185,38 @@ return).**  Supply: d≤5 265/462; the fifth block; the
 coarsening lemma; the §10 unpinned rows resolved.  Full era
 standards at construction.  Worker launched (opus).  In flight
 (4): weld-2 repair, U4, R4b, Γ-iteration.
+
+## 2026-08-10 — R4B DELIVERED, COMMITTED AS-IS (v14 LEDGER #110)
+
+Paper-15 (momentum) delivered.  **Verdict (CANDIDATE READING):
+R4B-DISPERSION-READ — MOVING 57-OF-58, STATIC 1-OF-58 with the
+static family IDENTIFIED as the identity (C004, matrix = I up to
+global phase, the two-way control); 18 of 19 circulant classes
+MOVE; 3 of 22 classes measured NOT-BLOCH-DIAGONAL.**  The whole
+eigenphase census lands in μ₈ — 928/928, exact in Z/8, no field
+extension (a Kronecker argument with gated finite legs).
+**VMAX = 2 = the torus max-norm diameter ⟹ the light-cone bound
+has NO CONTENT, two ways** (the one-step cone covers 16/16
+sites; per-family the bound is FALSE as a reach bound at 14/58,
+overshoots at 8, saturates at 36); the propagator observation
+now a measured relation (one interior radius; 320/1856
+direction-free cells in 19 families).  **THE VELOCITY CONVENTION
+IS SELECTED, NOT DECLARED** — of the 9 antipodal-tie readings
+exactly one makes drift = winding at 58/58 (best other 39/58),
+and under it the frozen R4-effectus drift table reproduces
+EXACTLY (identifying the panel's unstated convention).
+**CHARGE-WITHOUT-MOMENTUM RESOLVED AS CANCELLATION, NOT
+ABSENCE: all 42 interfering families MOVE yet carry zero net
+transport in both spaces; the 12 nonzero-winding families are
+all monomial**; the inherited Markov row bound to that count
+(1792 = 64²−48²).  The symbol separates completely (58 distinct
+reduced dispersions vs 14 invariant labels; speed 2 is
+definitionally the resolution limit).  Instrument (claimed,
+verification next): 67 gates (64 injection-falsified + 3
+registered forcings); 66 mutants all on-target; 41 anchors with
+consumer gates proved reached; 56 verdict values flip-probed;
+head derived twice; byte-identical ×2 AND off-tree/git-less;
+selftest exit-1-writes-nothing; the era learned at
+construction.  Artifacts committed as-is: paper 5f8ec142319c,
+code 53a10e87ec19, output d33412225949, receipt 00e7f6ea0f90.
+Battery + panel next.
