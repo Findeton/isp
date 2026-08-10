@@ -1680,3 +1680,35 @@ provenance handling audited as the candidate STANDARD for
 concurrent-unit reads).  Three reviewers dispatched
 (Opus ×3) — six agents total w/ Γ-prep, the R3 repair, CR-D.
 CR-A/B/C and R4 panels remain queued for the next wave.
+
+## 2026-08-09 — R6b′ REVIEW: OPERATOR FROZEN (v14 LEDGER #59)
+review-r6bp-operator.md frozen as delivered.  Grade AWF
+(fixes BLOCKING); 171 recomputations, zero number
+divergences — every kill definitional/compositional.
+**MAJOR-1: THE RENEWAL CONVENTION IS UNDECLARED AND
+CONTRADICTS S1'S OWN DEFINITION** (d43b's REN = class 0
+CARRYING AN ARB; the unit read bare state-0 visits) — six
+headline numbers move under the source's convention (return
+13/16→1/4; holes {1,2}; cost 79/201); no I-RENEWAL row exists
+in any inventory.  **MAJOR-2: the two composed heads rest on
+INCOMPATIBLE conventions** — and the arb convention
+REPRODUCES S2's delivery-free census exactly from S1 alone
+(the validation hiding inside the kill).  **MAJOR-3 — THE
+UPGRADE: count-4-only is a ROUTE ARTIFACT; a uniform
+positional law is DERIVABLE AT EVERY n≥4 from S1 alone**
+(C(n−1,2) equiprobable configurations; the position marginal
+exactly uniform on n−1 positions; g(5)=27/2048; **coverage
+37/201 → 102/201**; the residual free choice named:
+filler-set → position reduction).  **MAJOR-4: THE SEAM IS
+AVOIDABLE** — a single-scope delivery-free row set
+(S1+S4+I7) supplies BOTH layers; S2's unique content is a
+statement ABOUT transport, not an obstruction; **for Γ-main:
+pin the delivery-free single-scope set; Γ-prep need not
+dissolve the seam.**  MODERATE: "det-blind" false
+(I = adj(q)/det(q), scale 4/3 measured); the D12 kill an
+unflagged extension (verdict stands).  NOTE: the R6a
+provenance handling CLEAN AND ADOPTABLE (consumed paths
+byte-identical across both hashes; §8 provably the unit's
+own).  SURVIVES: TRANSPORT-UNMOTIVATED (all five inventories
+recounted), the 201-census, G-DIAG2, CR-B's 2→0 and 2/21,
+the tail bound, 7/7 paper↔output.  Two reviewers pending.
