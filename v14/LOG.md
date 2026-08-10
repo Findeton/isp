@@ -3681,3 +3681,40 @@ prohibition; THE SEAL DISCIPLINED FROM BIRTH (#119).  The U4
 REPAIR worker (R-U4-1..10) and the U4B construction worker both
 launched (opus).  In flight (4): Γ-iteration (final battery),
 R4b repair, U4 repair, U4b construction.
+
+## 2026-08-10 — R4B REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #127)
+
+All nine orders discharged.  **The recomposed head carries the
+stratified convention (STENCIL-FORCED-TO-2-BY-MONOMIAL-
+NORMALISATION-AT-384-OF-384; LIFT-SELECTED-1-OF-3-BY-
+DRIFT=WINDING; RESIDUAL-FIBER=2-MEASURED-INERT;
+IDENTITY=ARENA-INSTRUMENT-FAILS-AT-MU-12), the structural bound
+(VMAX=2=DIAMETER, CEILING-FORCED, STRUCTURAL-AT-EVERY-EVEN-L,
+INTERIOR-RADII=1-HERE-3-AT-L-8, RESIDUAL-FIBER-INVARIANT=YES),
+the corrected REACH labels (upper-bound-false-at-8;
+lower-at-14), the robustness splits (24/42, 30/42), and the
+19/19 multiset separation.**  The Q(i,√3) counterexample REBUILT
+exactly in a second field (Q(ζ₁₂): winding −1 vs drift −1/2)
+and bound by a new verbatim anchor.  **THE SEAL, DISCIPLINED
+(the first #119-native instrument): 18 sealed objects; writes
+staged through temporaries and os.replace'd only after matching
+the seal; ALL TEN panel injections now CAUGHT** (head flip →
+SEAL-VERDICT-STRING; cell moves → SEAL-CENSUS; receipt →
+SEAL-MUTANTS/GATES/TOTALS; the control-under-census-label →
+SEAL-CENSUS; prose inversions → G-PAPER-CLAIMS +
+G-PAPER-CLAIM-POLARITY; the "the "-window →
+G-VERBATIM-WINDOW-DIGESTS) with artifacts unchanged in every
+case; the integrity-failure path itself exits 1 WRITING
+NOTHING.  --verify-paper is REAL (coverage+polarity report;
+exit 1 on wrong file; exit 2 on bad path).  Honest partials
+named (the identity's domain = the registered open; the
+polarity instrument two-legged with both demonstrated classes
+dying; consumer gates digest-pin but do not read window text).
+Counts: gates 67→82; falsifiable 64→79; mutants 66→86 all
+named-gate; verdict values 56→74; sealed 0→18; numerals 88/567
+zero uncovered; NO census number moved.  Verification at the
+worker's hands: byte ×2; off-tree git-less bare-mirror
+foreign-CWD seed-varied BYTE-IDENTICAL; 14 hostile argv exit 2.
+Artifacts committed as-is: paper 89c636906061, code
+4216f3de5f44, output 9e8e928d318e, receipt 562e2a3d4d85.
+Battery next; TERMINAL on completion (the tenth).

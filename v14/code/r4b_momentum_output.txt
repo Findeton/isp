@@ -9,16 +9,16 @@ v14 R4b -- MOMENTUM: READING THE DISPERSIONS
 [6/10] the motion head, family by family and class by class
 [7/10] the propagation bound and the resolution relation
 [8/10] transport: the drift, the winding, and the tension
-[9/10] the verdict, its reconstruction, and the receipt gates
-[10/10] running 66 declared mutants
-    mutants: 66 declared, 66 killed, 66 killed by their declared target
+[9/10] the verdict, its reconstruction, the seal and the receipt gates
+[10/10] running 86 declared mutants
+    mutants: 86 declared, 86 killed, 86 killed by their declared target
 
 ------------------------------------------------------------------------------
 ARENA (declared as data)
   boundary         the finite periodic site lattice X = (Z_L)^d with d = 2 and L = 4 read from the parent's anchored receipt; the carrier is the single-occupation sector, so |C| = |X| = 16
   family           R4's terminal family, rebuilt here from its definitions and gated row by row against the parent receipt: the 58 translation-covariant (circulant) unitary generators on the 3-term axis stencil over the declared 25-element alphabet, plus the 6 declared controls
   momentum         THE DUAL TORUS, declared as data: the 16 characters chi_k(x) = zeta_4^{k.x} for k in (Z_4)^2.  Every circulant is diagonal in this basis; the eigenvalue is the symbol and its exponent is the exact eigenphase
-  law              the Bloch eigenphase s(k) in Z/8 defined by lambda(k) = zeta_8^{s(k)}; the group velocity is the declared discrete derivative of the phase on the dual torus
+  law              the Bloch eigenphase s(k) in Z/8 defined by lambda(k) = zeta_8^{s(k)}; the group velocity is a discrete derivative of the phase on the dual torus whose TWO COORDINATES ARE DATA: the difference STENCIL (forward | backward | central), FORCED to {forward, backward} by the declared monomial normalisation, and the antipodal-TIE LIFT (tie-averaged | positive | negative), SELECTED to tie-averaged in this arena by the drift = winding identity.  The residual fiber is 2 -- forward and backward -- measured inert on every quantity this unit reports and differing only in the cell-level labelling of signed velocity
   arena            the anchored chart group and R4's declared extension by the square point group; the 22 extended classes are inherited and rebuilt
   division_events  inherited unchanged from the parent: t = 0 and t = 2 are division events, the cut at t = 1 is not; indivisibility is DECLARED by those times and is never measured here
 
@@ -36,6 +36,7 @@ ANCHORS
   verbatim   VB-GENERATOR         -> G-REBUILD-BIJECTION                present
   verbatim   VB-PIN-OUTCOMES      -> G-VERDICT-PREREGISTERED            present
   verbatim   VB-PIN-LATTICE       -> G-MOMENTUM-LATTICE-DECLARED        present
+  verbatim   VB-WIDENED-GENERATOR -> G-ARENA-ARTIFACT-WITNESS           present
   bytes      A-R4-PAPER           v14/paper-10-defect-on-the-stage.md 1063401c7bb5
   bytes      A-R4-CODE            v14/code/r4_defect_stage_exact.py 2959c5a6a84b
   bytes      A-R4-OUTPUT          v14/code/r4_defect_stage_output.txt ffd069ff3eb4
@@ -69,6 +70,8 @@ THE FAMILY, REBUILT AND GATED AGAINST THE PARENT'S ROWS
   pool {'total': 64, 'circulant': 58, 'brickwork': 4, 'scrambled': 2, 'axes': 9, 'local_axes': 4}
   axes (offset, order, radius): [((0, 1), 4, 1), ((0, 2), 2, 2), ((1, 0), 4, 1), ((1, 1), 4, 1), ((1, 2), 4, 2), ((1, 3), 4, 1), ((2, 0), 2, 2), ((2, 1), 4, 2), ((2, 2), 2, 2)]
   extended classes 22, sizes [1, 2, 4]
+  translation stabilisers {'circulant': [16], 'brickwork': [8], 'scrambled': [1, 2], 'controls': [1, 2, 8], 'group': 16}
+  the instrument that produced this receipt: 4216f3de5f44
 
 THE DISPERSION CENSUS (exact, Q(zeta_8); phases are elements of Z/8)
   (family, momentum) cells            928
@@ -138,9 +141,27 @@ THE PROPAGATION BOUND
   the bound has content: False
   the resolution relation: {'dual_points_per_axis': 4, 'phase_values': 8, 'aliased_cells': 320, 'aliased_families': 19, 'cells': 1856, 'diameter': 2, 'radius_classes': [0, 1, 2], 'interior_radii': [1], 'vmax': '2', 'steps_to_cover': 1}
 
+THE VELOCITY READING, STRATIFIED
+  the declared normalisation (a monomial shift by o has velocity o), by stencil:
+    FORWARD   384 of 384 non-antipodal monomial coordinates   ADMITTED
+    BACKWARD  384 of 384 non-antipodal monomial coordinates   ADMITTED
+    CENTRAL   128 of 384 non-antipodal monomial coordinates   REJECTED
+  stencil FORCED to ['FORWARD', 'BACKWARD']; lift SELECTED by the identity; residual fiber 2
+  the residual fiber, measured inert: {'residual_fiber': 2, 'members': ['FORWARD', 'BACKWARD'], 'per_family_max_speed_identical': True, 'spectrum_identical': True, 'aliased_cells_identical': True, 'aliased_families_identical': True, 'motion_head_identical': True, 'signed_velocity_cells_differing': 768, 'cells': 1856}
+  what the rejected stencil would have said: {'vmax': '1', 'aliased_cells': 512, 'aliased_families': 24, 'reach_over': 0, 'reach_under': 41, 'reach_equal': 17, 'cone_sites_one_step': 9}
+  VMAX = diameter, at every even L:
+    L=4   diameter 2  antipodal monomial speed 2  interior radii [1]
+    L=6   diameter 3  antipodal monomial speed 3  interior radii [1, 2]
+    L=8   diameter 4  antipodal monomial speed 4  interior radii [1, 2, 3]
+    L=10  diameter 5  antipodal monomial speed 5  interior radii [1, 2, 3, 4]
+    L=12  diameter 6  antipodal monomial speed 6  interior radii [1, 2, 3, 4, 5]
+  the reach bound, by direction: {'upper_bound_holds': False, 'upper_bound_falsified_by': 8, 'lower_bound_holds': False, 'lower_bound_falsified_by': 14, 'saturating': 36}
+
 TRANSPORT: THE DRIFT AND THE WINDING
-  support -> [generators, nonzero drift] under the tie-averaged reading: {'1': {'generators': 16, 'nonzero_drift': 12}, '2': {'generators': 18, 'nonzero_drift': 0}, '3': {'generators': 24, 'nonzero_drift': 0}}
-  drift == winding, by reading pair:
+  support -> [generators, nonzero drift] under the TIE-AVERAGED  reading: {'1': {'generators': 16, 'nonzero_drift': 12}, '2': {'generators': 18, 'nonzero_drift': 0}, '3': {'generators': 24, 'nonzero_drift': 0}}
+  support -> [generators, nonzero drift] under the POSITIVE      reading: {'1': {'generators': 16, 'nonzero_drift': 15}, '2': {'generators': 18, 'nonzero_drift': 10}, '3': {'generators': 24, 'nonzero_drift': 8}}
+  support -> [generators, nonzero drift] under the NEGATIVE      reading: {'1': {'generators': 16, 'nonzero_drift': 15}, '2': {'generators': 18, 'nonzero_drift': 10}, '3': {'generators': 24, 'nonzero_drift': 8}}
+  drift == winding, by tie-reading pair:
     drift NEGATIVE      vs winding NEGATIVE      : 25 of 58
     drift NEGATIVE      vs winding POSITIVE      : 32 of 58
     drift NEGATIVE      vs winding TIE-AVERAGED  : 33 of 58
@@ -150,34 +171,72 @@ TRANSPORT: THE DRIFT AND THE WINDING
     drift TIE-AVERAGED  vs winding NEGATIVE      : 39 of 58
     drift TIE-AVERAGED  vs winding POSITIVE      : 39 of 58
     drift TIE-AVERAGED  vs winding TIE-AVERAGED  : 58 of 58
+  over the 27 lift x lift x stencil readings the identity holds at 2
+  THE SCOPE WITNESS (the identity is an arena instrument): {'field': 'Q(i,sqrt3) = Q(zeta_12)', 'generator': 'c_(1,0) = 1/2, c_(3,0) = i sqrt3 / 2', 'unitary_all_lags': True, 'root_order': 12, 'eigenphases_in_mu_12': 16, 'eigenphase_row_k_y_0': [2, 7, 8, 1], 'forward_differences_lifted': [5, 1, 5, 1], 'difference_sum': 12, 'winding': '-1', 'born_drift': '-1/2', 'identity_holds': False, 'cells': 16, 'eigenphases_outside_mu_8': 16}
   nonzero winding 12, all monomial (of 16 monomial families)
-  interfering families 42: all with zero net transport, all MOVING (42)
+  non-monomial families 42: all MOVING (42), all with zero net transport at the selected reading (42)
+  the zero, stratified by the tie: {'non_monomial': 42, 'zero_drift_all_readings': 24, 'zero_drift_averaged_only': 18, 'zero_winding_all_readings': 30, 'zero_winding_averaged_only': 12, 'winding_averaged_only_are_the_aliased': True}
+  the word bound to the parent's rows: {'non_monomial_with_nonzero_diagonal_defect': 42, 'defect_free_across_every_pair': 16, 'parent_rows_read': 4096}
+  the like-for-like class separation: {'circulant_classes': 19, 'distinct_dispersion_multisets': 19, 'classes_with_a_constant_dispersion': ['C004', 'C055', 'C056', 'C057'], 'parent_invariant_labels': 14, 'parent_extended_classes': 22}
   inherited: the Markovian control is 0 of 1792 nonzero
 
 PAPER CLAIM COVERAGE
-  {'claims': 44, 'missing': [], 'distinct_numerals': 78, 'numeral_occurrences': 413, 'covered_by_rendering': 74, 'declared_derived_in_text': 12, 'residue_declared_but_absent': [], 'uncovered': []}
+  {'claims': 71, 'missing': [], 'distinct_numerals': 88, 'numeral_occurrences': 567, 'covered_by_rendering': 86, 'declared_derived_in_text': 13, 'residue_declared_but_absent': [], 'uncovered': []}
+  polarity {'claims_with_expected_occurrences': 9, 'polarity_guarded_claims': 6, 'window': 64, 'miscounted': [], 'inverted': []}
+
+THE GATE-TIME SEAL
+  SEAL-VERDICT-STRING    verdict/string           sealed at G-VERDICT-RECONSTRUCTED    cf1dd478fda2
+  SEAL-VERDICT-HEAD      verdict/head             sealed at G-VERDICT-RECONSTRUCTED    b89a1bface7e
+  SEAL-COUNTS            counts                   sealed at G-VERDICT-RECONSTRUCTED    2adfbfd01111
+  SEAL-CENSUS            dispersion_census        sealed at G-PUBLISHED-ROWS-BOUND     77f493f17b36
+  SEAL-CLASS-ROWS        class_rows               sealed at G-PUBLISHED-ROWS-BOUND     bec037bb000d
+  SEAL-FIBER             velocity_fiber           sealed at G-PUBLISHED-ROWS-BOUND     c3c3c608fef1
+  SEAL-AGREEMENT         agreement_matrix         sealed at G-PUBLISHED-ROWS-BOUND     4866c571fb37
+  SEAL-DRIFT-TABLES      support_drift_tables     sealed at G-PUBLISHED-ROWS-BOUND     9c4e66368490
+  SEAL-STRATIFICATION    stratification           sealed at G-PUBLISHED-ROWS-BOUND     cae8d7bc1a64
+  SEAL-RESOLUTION        resolution               sealed at G-PUBLISHED-ROWS-BOUND     6a052ad85ce2
+  SEAL-PATH-ANCHORS      path_value_anchors       sealed at G-PUBLISHED-ROWS-BOUND     0952dc5b306b
+  SEAL-BYTE-ANCHORS      byte_anchors             sealed at G-PUBLISHED-ROWS-BOUND     eda270392655
+  SEAL-VERBATIM          verbatim_anchors         sealed at G-PUBLISHED-ROWS-BOUND     62f87f7ae27e
+  SEAL-WAIVERS           waiver_ledger            sealed at G-WAIVERS-VERIFIED         9b96b5515879
+  SEAL-MUTANTS           mutants                  sealed at G-MUTANTS-ON-TARGET        ad443b400197
+  SEAL-GATES             gates                    sealed at G-PAPER-COVERAGE-FINAL     07e4184cc234
+  SEAL-TOTALS            totals                   sealed at G-PAPER-COVERAGE-FINAL     be90631b3a29
+  SEAL-COVERAGE          paper_coverage           sealed at G-PAPER-COVERAGE-FINAL     084cc4d8ee35
 
 THE VERDICT
 
   R4B-DISPERSION-READ<MOTION=MOVING=57-OF-58;STATIC=1-OF-58;CONTROL=C004-IDE
   NTITY-TWO-WAY;CLASSES-MOVING=18-OF-19-CIRCULANT;NOT-BLOCH-DIAGONAL=3-OF-22
   |DISPERSION=EIGENPHASES-IN-MU-8=928-OF-928;EIGEN-EQUATION-VERIFIED=928;UNI
-  T-MODULUS=928;PARITY-INVARIANT=58-OF-58;DISTINCT-REDUCED-PROFILES=58-VS-14
-  -INVARIANT-LABELS|VELOCITY=SPECTRUM=0+1+2;VMAX=2;INTEGER-VALUED=1856-OF-18
-  56;ALIASED=320-OF-1856-IN-19-FAMILIES;DEFINITION=FORWARD-DIFFERENCE-WITH-T
-  IE-AVERAGED(FIBER=9)|BOUND=NO-CONTENT=YES;CONE-AT-ONE-STEP=16-OF-16-SITES;
-  VMAX=2=DIAMETER=2;REACH-BOUND-FALSE-AT=14-OF-58;OVERSHOOTS-AT=8;SATURATES-
-  AT=36;INHERITED-CEILINGS=SEPARATIONS=16-OF-16;MAX-DEFECT-RADIUS=2-OF-2;INT
-  ERIOR-RADII=1|TRANSPORT=DRIFT=WINDING-AT-58-OF-58-FAMILIES-UNDER-1-OF-9-RE
-  ADING-PAIRS(BEST-OTHER=39-OF-58);NONZERO-WINDING=12-OF-58-ALL-MONOMIAL-OF-
-  16;INTERFERING=42-ZERO-NET-TRANSPORT-AND-42-MOVING;MARKOV=0-OF-1792-NONZER
-  O-INHERITED|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCI
-  L=3-TERM-AXIS;SECTOR=SINGLE-OCCUPATION;MOMENTUM-LATTICE=DUAL-TORUS-16-DECL
-  ARED;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DEC
-  LARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-IN
-  TERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT>
+  T-MODULUS=928;ALGEBRAIC-INTEGERS=928;PARITY-INVARIANT=58-OF-58;DISTINCT-RE
+  DUCED-PROFILES=58-OF-58-FAMILIES(FORCED-BY-INVERTIBILITY);CLASS-SEPARATION
+  =19-OF-19-CIRCULANT-BY-DISPERSION-MULTISET-VS-14-LABELS-FOR-22-CLASSES|VEL
+  OCITY=SPECTRUM=0+1+2;VMAX=2;INTEGER-VALUED=1856-OF-1856;ALIASED=320-OF-185
+  6-IN-19-FAMILIES;DEFINITION=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED(FIBER=9;S
+  TENCIL-FORCED-TO-2-BY-MONOMIAL-NORMALISATION-AT-384-OF-384;LIFT-SELECTED-1
+  -OF-3-BY-DRIFT=WINDING;RESIDUAL-FIBER=2-MEASURED-INERT-DIFFERING-AT-768-OF
+  -1856-SIGNED-CELLS)|BOUND=NO-CONTENT=YES;CONE-AT-ONE-STEP=16-OF-16-SITES;V
+  MAX=2=DIAMETER=2(CEILING-FORCED;ATTAINMENT-MEASURED;STRUCTURAL-AT-EVERY-EV
+  EN-L-AT-5-SIZES);REACH-UPPER-BOUND-FALSE-AT=8-OF-58;REACH-LOWER-BOUND-FALS
+  E-AT=14-OF-58;SATURATES-AT=36;INHERITED-CEILINGS=SEPARATIONS=16-OF-16;MAX-
+  DEFECT-RADIUS=2-OF-2;INTERIOR-RADII=1-HERE-3-AT-L-8;RESIDUAL-FIBER-INVARIA
+  NT=YES|TRANSPORT=DRIFT=WINDING-AT-58-OF-58-FAMILIES-UNDER-1-OF-9-TIE-READI
+  NG-PAIRS(BEST-OTHER=39-OF-58;STENCIL-BLIND-SO-2-OF-27-FULL-READINGS);IDENT
+  ITY=ARENA-INSTRUMENT-FAILS-AT-MU-12-WINDING=-1-VS-DRIFT=-1/2;NONZERO-WINDI
+  NG=12-OF-58-ALL-MONOMIAL-OF-16;NON-MONOMIAL=42-MOVING=42;ZERO-NET-TRANSPOR
+  T-AT-SELECTED-READING=42;READING-INDEPENDENT-ZERO-DRIFT=24-OF-42;READING-I
+  NDEPENDENT-ZERO-WINDING=30-OF-42;DIAGONAL-DEFECT-NONZERO=42-INHERITED;MARK
+  OV=0-OF-1792-NONZERO-INHERITED|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;G
+  ENERATORS=64;STENCIL=3-TERM-AXIS;SECTOR=SINGLE-OCCUPATION;MOMENTUM-LATTICE
+  =DUAL-TORUS-16-DECLARED;VELOCITY-READING=FORWARD-DIFFERENCE-WITH-TIE-AVERA
+  GED(STENCIL-FORCED-TO-2;LIFT-SELECTED-BY-AN-ARENA-INSTRUMENT;RESIDUAL-FIBE
+  R=2);CHARACTER-CONVENTION=DECLARED-JOINTLY-WITH-VELOCITY-SIGN(FIBER=2);CON
+  NECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DECLARED-BY
+  -DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTIN
+  G-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT>
 
-TOTALS: {"anchors": 41, "byte_anchors": 8, "census_cells": 928, "families": 58, "gates": 67, "gates_falsifiable": 64, "gates_passed": 67, "gates_waived": 3, "mutants": 66, "mutants_killed": 66, "mutants_on_target": 66, "path_value_anchors": 20, "verbatim_anchors": 13, "verdict_values": 56}
+TOTALS: {"anchors": 42, "byte_anchors": 8, "census_cells": 928, "families": 58, "gates": 82, "gates_falsifiable": 79, "gates_in_receipt": 81, "gates_passed_in_receipt": 81, "gates_waived": 3, "integrity_gate": "EVALUATED-IN-THE-WRITING-PATH-AGAINST-THE-GATE-TIME-SEAL-REPORTED-ON-STDOUT", "mutants": 86, "mutants_killed": 86, "mutants_on_target": 86, "path_value_anchors": 20, "seals": 18, "verbatim_anchors": 14, "verdict_values": 74}
 
 NOT EXECUTED
   - no continuum, infinite-volume or long-time limit is taken; the dual torus has 16 points and every statement here is a statement about it
@@ -186,7 +245,8 @@ NOT EXECUTED
   - the wider five-point local family at the admitted size is disclosed by the parent and is not censused here either
   - indivisibility is DECLARED by the division-event times and is never measured, exactly as in the parent
   - no state is propagated: the group velocity is read off the exact eigenphase, and no wavepacket is constructed or evolved
-  - the alphabet is not widened; the effectus review's constructive motion-carrying generator over Q(i, sqrt 3) is outside this unit's declared field and is not built
+  - the alphabet is NOT widened as a census: the parent panel's motion-carrying generator over Q(i, sqrt 3) is rebuilt as a single SCOPE WITNESS -- one generator, in a second field used nowhere else -- to show that the selecting identity fails there.  No census is run over the wider field and no result of this unit is claimed for it
+  - the selection criterion's DOMAIN is not censused: one counterexample is exhibited, not a sweep, so whether the drift = winding identity fails generically over widened alphabets is open and is this unit's most consequential registered open
 
-ALL GATES PASSED (67/67); ALL MUTANTS DEAD (66/66)
+ALL GATES PASSED (81/81 IN THE RECEIPT; the last of the 82 declared is the terminal integrity gate, evaluated in the writing path); ALL MUTANTS DEAD (86/86)
 EXIT 0

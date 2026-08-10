@@ -37,12 +37,23 @@ CLI CONTRACT (the #82 minimum: argv-parsed against a whitelist)
         The run must exit 1.  Writes nothing.
 
     python3.13 v14/code/r4b_momentum_exact.py --verify-paper [PATH]
-        Reports the paper-claim rendering and numeral coverage against PATH
-        (this unit's paper by default).  The same check runs as a GATE inside
-        the delivery run, so this flag is a report, not the enforcement.
+        RUNS THE #20 INSTRUMENT AGAINST PATH (this unit's paper by default):
+        the whole derivation is rebuilt and the paper gates -- claim
+        rendering, numeral coverage and claim POLARITY -- are evaluated with
+        PATH as the object under test.  Exits 1 on any drift, 0 on a clean
+        paper, and 2 if PATH does not exist.  Writes nothing.
 
-    Any other argument, any unknown flag argument and any missing flag
-    argument exits 2.  No flag is mutant-only.
+    Any other argument, any unknown flag argument, any missing flag argument
+    and any --verify-paper PATH that does not exist exits 2.  No flag is
+    mutant-only, and no flag is a no-op.
+
+THE GATE-TO-DISK SEAL (RUNBOOK 14 addendum, this unit's engraving).  A gate
+that fires on an object which is still mutable when the artifact is built has
+not gated the artifact.  Every published object is DIGESTED AT THE MOMENT ITS
+GATE PASSES (`SEAL`); the payload may only be sealed if every earlier seal
+still verifies; the artifacts are written FROM the sealed payload; and the
+terminal integrity gate compares the BYTES ON DISK against the gate-time seal.
+A re-derivation from disk is not an integrity check -- it confirms corruption.
 
 ARITHMETIC.  Exact only.  The field is Q(zeta_8) carried as a 4-tuple of
 `fractions.Fraction` over the basis (1, z, z^2, z^3) reduced modulo
@@ -200,7 +211,31 @@ VERBATIM_ANCHORS = [
      "`R4B-NO-MOTION-<witness>` / `R4B-BLOCKED-AT-<object>`."),
     ("VB-PIN-LATTICE", "A-PIN-R4B", "G-MOMENTUM-LATTICE-DECLARED",
      "**The momentum lattice is the dual torus (16\nmomenta), DECLARED as data.**"),
+    ("VB-WIDENED-GENERATOR", "A-REV-EFFECTUS", "G-ARENA-ARTIFACT-WITNESS",
+     "> c_a = 1/2, c₋ₐ = i·√3/2, c₀ = 0 →\n"
+     "> **unitary** (all lags verified), **support 2** (non-monomial),\n"
+     "> **⟨Δx⟩ = −1/2 ≠ 0** (motion)"),
 ]
+
+# --- the frozen digest of every verbatim window (#62) -----------------------
+# A window is an ANCHOR only if its bytes are pinned.  Bare substring presence
+# admits a window truncated to a decoration; these digests do not.
+WINDOW_DIGESTS = {
+    "VB-DISPERSION-57": "508f67433486",
+    "VB-DRIFT-TABLE": "d8c389ecdf60",
+    "VB-K3-NO-MOMENTUM": "ed819ea09c6a",
+    "VB-K3-SYMBOL": "6c95fefc3a11",
+    "VB-PROPAGATOR": "ab21344b844a",
+    "VB-CEILINGS": "aac35ce16ca7",
+    "VB-CONNECTIVE": "37bb69c658cb",
+    "VB-SUCCESSOR": "9ffa39e20ca3",
+    "VB-ALPHABET": "d21521ca4f99",
+    "VB-UNITARITY": "4ba66899d14a",
+    "VB-GENERATOR": "83ceeb0b0e63",
+    "VB-PIN-OUTCOMES": "bc3ce14bef66",
+    "VB-PIN-LATTICE": "581f8f6845e1",
+    "VB-WIDENED-GENERATOR": "85f986613574",
+}
 
 # --- the arena, declared as data -------------------------------------------
 ARENA = {
@@ -217,8 +252,15 @@ ARENA = {
                 "diagonal in this basis; the eigenvalue is the symbol and its "
                 "exponent is the exact eigenphase",
     "law": "the Bloch eigenphase s(k) in Z/8 defined by lambda(k) = zeta_8^{s(k)}; "
-           "the group velocity is the declared discrete derivative of the phase "
-           "on the dual torus",
+           "the group velocity is a discrete derivative of the phase on the dual "
+           "torus whose TWO COORDINATES ARE DATA: the difference STENCIL "
+           "(forward | backward | central), FORCED to {forward, backward} by the "
+           "declared monomial normalisation, and the antipodal-TIE LIFT "
+           "(tie-averaged | positive | negative), SELECTED to tie-averaged in "
+           "this arena by the drift = winding identity.  The residual fiber is 2 "
+           "-- forward and backward -- measured inert on every quantity this "
+           "unit reports and differing only in the cell-level labelling of "
+           "signed velocity",
     "arena": "the anchored chart group and R4's declared extension by the square "
              "point group; the 22 extended classes are inherited and rebuilt",
     "division_events": "inherited unchanged from the parent: t = 0 and t = 2 are "
@@ -234,6 +276,11 @@ LIFT_READINGS = ("TIE-AVERAGED", "POSITIVE", "NEGATIVE")
 LIFT_DECLARED = "TIE-AVERAGED"
 STENCIL_READINGS = ("FORWARD", "BACKWARD", "CENTRAL")
 STENCIL_DECLARED = "FORWARD"
+# the stencil coordinate the declared monomial normalisation admits: a monomial
+# shift by an offset o must have velocity o.  Measured, not asserted.
+STENCIL_FORCED = ("FORWARD", "BACKWARD")
+# the even sizes at which the VMAX = diameter theorem is exercised
+STRUCTURAL_SIZES = (4, 6, 8, 10, 12)
 
 PREREGISTERED_HEADS = ("R4B-DISPERSION-READ", "R4B-NO-MOTION", "R4B-BLOCKED-AT")
 
@@ -301,6 +348,33 @@ def fstr(a):
     return "".join(parts) if parts else "0"
 
 
+def charpoly(a):
+    """the characteristic polynomial of MULTIPLICATION BY a on the Q-basis
+    (1, z, z^2, z^3), exactly, by Faddeev--LeVerrier.  Returns the four
+    coefficients (c1, c2, c3, c4) of x^4 + c1 x^3 + c2 x^2 + c3 x + c4.  This
+    is the load-bearing step of the Kronecker argument: a unit-modulus element
+    is a root of unity only once it is known to be an ALGEBRAIC INTEGER, and
+    that is exactly the statement that these four rationals are integers.
+    ((3+4i)/5 has all conjugates of modulus one and is not a root of unity.)"""
+    A = [[a[0], -a[3], -a[2], -a[1]],
+         [a[1], a[0], -a[3], -a[2]],
+         [a[2], a[1], a[0], -a[3]],
+         [a[3], a[2], a[1], a[0]]]
+
+    def mm(X, Y):
+        return [[sum(X[i][t] * Y[t][j] for t in range(4)) for j in range(4)]
+                for i in range(4)]
+
+    cs, Mk = [], A
+    for k in range(1, 5):
+        ck = Fraction(-sum(Mk[i][i] for i in range(4)), k)
+        cs.append(ck)
+        if k < 4:
+            Mk = mm(A, [[Mk[i][j] + (ck if i == j else Q0) for j in range(4)]
+                        for i in range(4)])
+    return tuple(cs)
+
+
 INV_SQ2 = (Q0, Fraction(1, 2), Q0, Fraction(-1, 2))   # (z - z^3)/2 = 1/sqrt(2)
 
 
@@ -363,9 +437,9 @@ class Ledger:
         return True
 
 
-# the only two gates with no declared mutant: both are evaluated OUTSIDE the
-# in-process mutant runner, so a mutant could not reach them.  Each registers
-# the mechanism that falsifies it instead (#34).
+# the only THREE gates with no declared mutant: all three are evaluated OUTSIDE
+# the in-process mutant runner, so a mutant could not reach them.  Each
+# registers the mechanism that falsifies it instead (#34).
 FORCINGS = {
     "G-MUTANTS-ON-TARGET": "the gate that adjudicates the mutant sweep cannot "
                            "itself be a mutant's target; its falsifier is the "
@@ -376,14 +450,115 @@ FORCINGS = {
                             "diagnostic run reaches; it is two-way by "
                             "construction -- a deliberately corrupted payload "
                             "is written to a probe path, re-read and required "
-                            "to be detected, before the real artifacts are "
-                            "written and required to match",
+                            "to be detected -- and its reference value is the "
+                            "GATE-TIME SEAL, whose in-run half G-SEAL-COMPLETE "
+                            "carries the injection falsifier MUT-SEAL-BROKEN",
     "G-PAPER-COVERAGE-FINAL": "evaluated after the mutant sweep closes the "
                               "instrument's totals, so no in-process mutant "
-                              "can reach it; its in-run twins G-PAPER-CLAIMS "
-                              "and G-PAPER-NUMERAL-COVERAGE carry the two "
+                              "can reach it; the claims that render from the "
+                              "CLOSED totals (the mutant sweep's own result) "
+                              "exist only at this evaluation, and its in-run "
+                              "twins G-PAPER-CLAIMS, G-PAPER-NUMERAL-COVERAGE "
+                              "and G-PAPER-CLAIM-POLARITY carry the three "
                               "injection falsifiers and die on every sweep",
 }
+
+
+# ---------------------------------------------------------------------------
+# THE GATE-TIME SEAL (the engraving this unit buys).  A value is digested at
+# the moment its gate passes; the payload may only be sealed once every earlier
+# seal still verifies; the artifacts are written FROM the sealed payload; and
+# the terminal integrity gate compares the bytes on disk against these digests.
+# ---------------------------------------------------------------------------
+
+SEALED_PATHS = [
+    ("SEAL-VERDICT-STRING", "verdict/string", "G-VERDICT-RECONSTRUCTED"),
+    ("SEAL-VERDICT-HEAD", "verdict/head", "G-VERDICT-RECONSTRUCTED"),
+    ("SEAL-COUNTS", "counts", "G-VERDICT-RECONSTRUCTED"),
+    ("SEAL-CENSUS", "dispersion_census", "G-PUBLISHED-ROWS-BOUND"),
+    ("SEAL-CLASS-ROWS", "class_rows", "G-PUBLISHED-ROWS-BOUND"),
+    ("SEAL-FIBER", "velocity_fiber", "G-PUBLISHED-ROWS-BOUND"),
+    ("SEAL-AGREEMENT", "agreement_matrix", "G-PUBLISHED-ROWS-BOUND"),
+    ("SEAL-DRIFT-TABLES", "support_drift_tables", "G-PUBLISHED-ROWS-BOUND"),
+    ("SEAL-STRATIFICATION", "stratification", "G-PUBLISHED-ROWS-BOUND"),
+    ("SEAL-RESOLUTION", "resolution", "G-PUBLISHED-ROWS-BOUND"),
+    ("SEAL-PATH-ANCHORS", "path_value_anchors", "G-PUBLISHED-ROWS-BOUND"),
+    ("SEAL-BYTE-ANCHORS", "byte_anchors", "G-PUBLISHED-ROWS-BOUND"),
+    ("SEAL-VERBATIM", "verbatim_anchors", "G-PUBLISHED-ROWS-BOUND"),
+    ("SEAL-WAIVERS", "waiver_ledger", "G-WAIVERS-VERIFIED"),
+    ("SEAL-MUTANTS", "mutants", "G-MUTANTS-ON-TARGET"),
+    ("SEAL-GATES", "gates", "G-PAPER-COVERAGE-FINAL"),
+    ("SEAL-TOTALS", "totals", "G-PAPER-COVERAGE-FINAL"),
+    ("SEAL-COVERAGE", "paper_coverage", "G-PAPER-COVERAGE-FINAL"),
+]
+# the seals taken before the mutant sweep -- the ones an in-process gate can
+# verify, and the ones MUT-SEAL-BROKEN is measured against
+SEALS_IN_RUN = tuple(sid for sid, _p, g in SEALED_PATHS
+                     if g not in ("G-MUTANTS-ON-TARGET", "G-PAPER-COVERAGE-FINAL"))
+
+
+def digest(value):
+    """the canonical digest of a receipt object: its deterministic
+    serialization, hashed.  Strings are hashed as themselves."""
+    if isinstance(value, str):
+        return hashlib.sha256(value.encode("utf-8")).hexdigest()[:12]
+    return hashlib.sha256(
+        json.dumps(value, indent=1, sort_keys=True).encode("utf-8")
+    ).hexdigest()[:12]
+
+
+class Seal:
+    """the gate-time seal.  `take` digests an object at the moment its gate
+    passed; `verify` re-digests the object as it stands NOW and names every
+    seal that has since been broken; `close` refuses to seal the payload
+    unless every earlier seal still holds."""
+
+    def __init__(self):
+        self.rows = []
+        self.index = {}
+        self.verdict_string = None
+        self.payload = None
+        self.payload_sha = None
+        self.transcript = None
+        self.transcript_sha = None
+
+    def take(self, sid, obj):
+        path = [p for s, p, _g in SEALED_PATHS if s == sid][0]
+        gate = [g for s, _p, g in SEALED_PATHS if s == sid][0]
+        value = jpath(obj, path)
+        d = digest(value)
+        self.rows.append({"seal": sid, "path": path, "sealed_at_gate": gate,
+                          "sha256_12": d})
+        self.index[sid] = d
+        if sid == "SEAL-VERDICT-STRING":
+            self.verdict_string = value
+
+    def verify(self, obj, only=None):
+        broken = []
+        for row in self.rows:
+            if only is not None and row["seal"] not in only:
+                continue
+            try:
+                now = digest(jpath(obj, row["path"]))
+            except (KeyError, IndexError, TypeError):
+                broken.append(row["seal"])
+                continue
+            if now != row["sha256_12"]:
+                broken.append(row["seal"])
+        return broken
+
+    def close(self, obj, payload):
+        """seal the payload -- only if every object seal still verifies."""
+        broken = self.verify(obj)
+        if broken:
+            raise GateFail("G-ARTIFACT-INTEGRITY :: the payload was sealed over "
+                           "a broken seal :: %s" % broken)
+        self.payload = payload
+        self.payload_sha = digest(payload)
+
+    def close_transcript(self, text):
+        self.transcript = text
+        self.transcript_sha = digest(text)
 
 
 # ===========================================================================
@@ -488,6 +663,14 @@ def build_family(L, alphabet, LD):
     pool, pool_keys, orbit_sizes = [], set(), []
     for a in axes:
         gens = {}
+        # NOTE on the sweep.  The stencil is the SET {0, a, -a}, which at the
+        # three order-2 axes has only two distinct offsets: there the two
+        # signed entries are ADDED, so the coefficient at that offset ranges
+        # over the SUMSET of the declared alphabet rather than over the
+        # alphabet itself.  That is a strictly wider search, not a narrower
+        # one, and it admits no extra unitary -- the rebuild is a bijection
+        # onto the parent's 58 rows (G-REBUILD-BIJECTION), which is what
+        # establishes that the widening changes nothing.
         for trip in product(alphabet, repeat=3):
             c = {}
             for o, v in (((0, 0), trip[0]), (a, trip[1]), (smul(L - 1, a), trip[2])):
@@ -651,6 +834,94 @@ def lift(d, reading):
     return d - 8 if d > 4 else d
 
 
+def arena_artifact_witness():
+    """THE SCOPE WITNESS.  The drift = winding identity that selects the tie in
+    this arena is a property of THIS ALPHABET, not of the velocity definition.
+    The parent's effectus panel exhibits, at the SAME lattice size, a unitary
+    two-term generator over the wider field Q(i, sqrt 3) = Q(zeta_12):
+    c_a = 1/2 at a = (1,0), c_{-a} = i sqrt3 / 2.  It is rebuilt here exactly,
+    in a second field this unit constructs for the purpose and uses nowhere
+    else, and its drift and its winding are computed and compared.  Q(zeta_12)
+    is carried as 4-tuples over (1, w, w^2, w^3) modulo Phi_12 = x^4 - x^2 + 1,
+    so w^4 = w^2 - 1 and w^6 = -1; the representation is canonical."""
+    Z = Fraction(0)
+    U = (Fraction(1), Z, Z, Z)
+
+    def a12(x, y):
+        return (x[0] + y[0], x[1] + y[1], x[2] + y[2], x[3] + y[3])
+
+    def m12(x, y):
+        r = [Z] * 7
+        for i in range(4):
+            if x[i]:
+                for j in range(4):
+                    if y[j]:
+                        r[i + j] += x[i] * y[j]
+        return (r[0] - r[4] - r[6], r[1] - r[5], r[2] + r[4], r[3] + r[5])
+
+    def w12(t):
+        p = U
+        for _ in range(t % 12):
+            p = m12(p, (Z, Fraction(1), Z, Z))
+        return p
+
+    def c12(x):
+        """conjugation: w -> w^{-1} = w^{11}."""
+        acc, p = (Z, Z, Z, Z), U
+        for i in range(4):
+            acc = a12(acc, tuple(x[i] * q for q in p))
+            p = m12(p, w12(11))
+        return acc
+
+    MU12 = {w12(t): t for t in range(12)}
+    i_ = w12(3)                                   # i = zeta_12^3
+    sqrt3 = a12(w12(1), w12(11))                  # 2 cos(pi/6) = sqrt 3
+    half = Fraction(1, 2)
+    coef = {(1, 0): tuple(half * q for q in U),
+            (3, 0): tuple(half * q for q in m12(i_, sqrt3))}
+    LW = 4
+    lags_ok = True
+    for m in product(range(LW), repeat=2):
+        acc = (Z, Z, Z, Z)
+        for v, cv in coef.items():
+            w = ((v[0] + m[0]) % LW, (v[1] + m[1]) % LW)
+            if w in coef:
+                acc = a12(acc, m12(cv, c12(coef[w])))
+        if acc != (U if not any(m) else (Z, Z, Z, Z)):
+            lags_ok = False
+    s = {}
+    for k in product(range(LW), repeat=2):
+        acc = (Z, Z, Z, Z)
+        for o, cv in coef.items():
+            acc = a12(acc, m12(cv, w12((-3 * (k[0] * o[0] + k[1] * o[1])) % 12)))
+        s[k] = MU12.get(acc)
+    in_mu12 = sum(1 for v in s.values() if v is not None)
+
+    def lift12(d):
+        d %= 12
+        return d - 12 if d > 6 else d
+
+    diffs = [lift12(s[((kx + 1) % LW, 0)] - s[(kx, 0)]) for kx in range(LW)]
+    # v = -(L/N) lift(Delta) with L = 4, N = 12
+    wind = Fraction(-sum(lift12(s[((k[0] + 1) % LW, k[1])] - s[k])
+                         for k in product(range(LW), repeat=2)), 3 * LW * LW)
+    dr = sum(m12(cv, c12(cv))[0] * (o[0] - LW if 2 * o[0] > LW else o[0])
+             for o, cv in coef.items())
+    return {"field": "Q(i,sqrt3) = Q(zeta_12)",
+            "generator": "c_(1,0) = 1/2, c_(3,0) = i sqrt3 / 2",
+            "unitary_all_lags": lags_ok,
+            "root_order": 12,
+            "eigenphases_in_mu_12": in_mu12,
+            "eigenphase_row_k_y_0": [s[(kx, 0)] for kx in range(LW)],
+            "forward_differences_lifted": diffs,
+            "difference_sum": sum(diffs),
+            "winding": str(wind),
+            "born_drift": str(dr),
+            "identity_holds": wind == dr,
+            "cells": LW * LW,
+            "eigenphases_outside_mu_8": sum(1 for v in s.values() if v % 3 != 0)}
+
+
 def offset_rep(o, L, reading):
     """the declared readings of a lattice offset as a signed displacement.
     The same tie, in the same place: the antipodal offset L/2 is its own
@@ -684,17 +955,40 @@ def build_state(break_anchor=None):
         w = window
         if mut("MUT-VERBATIM") and vid == "VB-DISPERSION-57":
             w = window.replace("57", "56")
+        if mut("MUT-QUOTE-TRUNCATE"):
+            w = w[:4]                    # every window reduced to a decoration
         present = w in texts[sid]
         vb_rows.append({"id": vid, "source": sid, "consumer_gate": consumer,
-                        "present": present, "chars": len(w)})
+                        "present": present, "chars": len(w),
+                        "occurrences": texts[sid].count(w),
+                        "window_sha256_12": digest(w)})
         if not present:
             vb_missing.append(vid)
+    if mut("MUT-QUOTE-AMBIGUOUS"):
+        vb_rows[0]["occurrences"] = 2
     LD.gate("G-VERBATIM-ANCHORS",
             "every verbatim anchor is a context window present in its pinned "
             "source, and each is bound to the named gate that consumes it "
             "(#34: evaluated before the byte anchors)",
             not vb_missing, "missing %s over %d windows"
             % (vb_missing or "none", len(vb_rows)))
+    bad_window = sorted(r["id"] for r in vb_rows
+                        if r["window_sha256_12"] != WINDOW_DIGESTS.get(r["id"]))
+    LD.gate("G-VERBATIM-WINDOW-DIGESTS",
+            "a window is an ANCHOR only if its BYTES are pinned: every "
+            "verbatim window's sha256-12 equals the digest this unit froze, so "
+            "a window silently shortened to a decoration -- the failure mode a "
+            "bare substring test admits -- is caught rather than displayed "
+            "(#62, the parent's window_sha256_12 field restored)",
+            not bad_window, "windows off their frozen digest: %s over %d"
+            % (bad_window or "none", len(vb_rows)))
+    ambiguous = sorted(r["id"] for r in vb_rows if r["occurrences"] != 1)
+    LD.gate("G-VERBATIM-WINDOWS-UNIQUE",
+            "every verbatim window occurs EXACTLY ONCE in its pinned source: a "
+            "window that matches in several places does not identify the "
+            "sentence it claims to quote",
+            not ambiguous, "windows not occurring exactly once: %s over %d"
+            % (ambiguous or "none", len(vb_rows)))
 
     byte_rows, bad_digest = [], []
     for sid, rel, dig, note in SOURCES:
@@ -966,6 +1260,9 @@ def build_state(break_anchor=None):
                sorted(ctrl_stab)))
     S["stabilisers"] = {"circulant": sorted(circ_stab),
                         "brickwork": sorted(brick_stab),
+                        "scrambled": sorted({stab[name[g["local"]]]
+                                             for g in pool
+                                             if g["kind"] == "SCRAM"}),
                         "controls": sorted(ctrl_stab),
                         "group": len(sites)}
 
@@ -1085,20 +1382,32 @@ def build_state(break_anchor=None):
                 dens.add(d)
     if mut("MUT-DENOMINATOR"):
         dens.add(3)
-    roots = set()
-    for n in range(1, 25):
-        for t in range(n):
-            # zeta_n^t lies in Q(zeta_8) iff it is one of the 8 powers of zeta_8
-            pass
+    # THE LOAD-BEARING LEG.  Kronecker's theorem needs an ALGEBRAIC INTEGER,
+    # and that does not follow from unit modulus alone.  It is measured here:
+    # the characteristic polynomial of multiplication by each symbol has
+    # integer coefficients, at every one of the census cells.
+    nonintegral = []
+    for g in pool[:ncirc]:
+        for k in duals:
+            cs = charpoly(symbol(g["coef"], k, L))
+            if any(q.denominator != 1 for q in cs):
+                nonintegral.append((name[g["local"]], k))
+    if mut("MUT-INTEGRALITY"):
+        nonintegral.append(("INJECTED", (0, 0)))
     LD.gate("G-MU8-THEOREM-LEGS",
             "the finite legs of the reason the eigenvalues cannot be anything "
-            "else: every coefficient has a 2-power denominator, so a "
-            "unit-modulus symbol is a unit of Z[zeta_8] with all conjugates of "
-            "modulus 1, hence a root of unity, hence one of the 8 the field "
-            "contains",
-            dens == {1} and len(MU8) == 8,
+            "else: every coefficient has a 2-power denominator, and 2 is "
+            "totally ramified in Q(zeta_8), so a unit-modulus symbol is an "
+            "ALGEBRAIC INTEGER -- measured here as the integrality of the "
+            "characteristic polynomial of multiplication by the symbol at "
+            "every cell -- and a unit of Z[zeta_8] all of whose conjugates "
+            "have modulus 1, hence a root of unity, hence one of the 8 the "
+            "field contains",
+            dens == {1} and len(MU8) == 8 and not nonintegral,
             "odd parts of coefficient denominators %s; roots of unity in the "
-            "field %d" % (sorted(dens), len(MU8)))
+            "field %d; symbols with a non-integral characteristic polynomial "
+            "%s over %d cells"
+            % (sorted(dens), len(MU8), nonintegral[:3] or "none", total_cells))
 
     # gauge covariance of the phase: multiplying by zeta_8^t shifts s uniformly
     gauge_bad = []
@@ -1221,9 +1530,11 @@ def build_state(break_anchor=None):
     LD.gate("G-SPEED-CANONICAL",
             "the speed of a cell is the circle distance of its phase "
             "difference divided by two: a BRANCH-FREE exact rational, "
-            "independent of every reading in the fiber, because the distance "
-            "of an element of Z/8 to zero does not depend on how the antipode "
-            "is signed",
+            "independent of every reading OF THE TIE -- of all three lifts -- "
+            "because the distance of an element of Z/8 to zero does not depend "
+            "on how the antipode is signed.  (Independence of the STENCIL "
+            "coordinate is a different statement and is measured separately, "
+            "at G-RESIDUAL-FIBER-INERT.)",
             spectrum == [Fraction(0), Fraction(1), Fraction(2)]
             and all(v.denominator == 1 for v in spectrum),
             "speed spectrum %s" % [str(v) for v in spectrum])
@@ -1279,6 +1590,111 @@ def build_state(break_anchor=None):
             "fiber rows %d; the two other lifts agree at %d of %d cells "
             "(= all but the aliased)"
             % (len(fiber_rows), n_delta - len(aliased), n_delta))
+
+    # ---- THE STENCIL COORDINATE IS FORCED BY THE DECLARED NORMALISATION ----
+    # The definition's own sign-fixing requirement -- a monomial shift by an
+    # offset o has velocity o -- is a CRITERION, not a remark.  Measured over
+    # every monomial family, every momentum, every direction and every
+    # non-antipodal offset coordinate (where the requirement is not degenerate).
+    norm_rows = []
+    for stencil in STENCIL_READINGS:
+        ok = tot = 0
+        for g in pool[:ncirc]:
+            if not g["monomial"]:
+                continue
+            n = name[g["local"]]
+            o = list(g["coef"])[0] if g["coef"] else (0, 0)
+            for k in duals:
+                for j in range(D):
+                    oj = o[j] % L
+                    if 2 * oj == L:
+                        continue          # the antipodal coordinate: degenerate
+                    want = oj - L if 2 * oj > L else oj
+                    tot += 1
+                    if velocity(n, k, j, LIFT_DECLARED, stencil) == want:
+                        ok += 1
+        norm_rows.append({"stencil": stencil, "satisfied": ok,
+                          "coordinates": tot,
+                          "admitted": ok == tot})
+    if mut("MUT-STENCIL-CENTRAL"):
+        [r for r in norm_rows if r["stencil"] == "CENTRAL"][0]["admitted"] = True
+    admitted = tuple(r["stencil"] for r in norm_rows if r["admitted"])
+    LD.gate("G-STENCIL-FORCED-BY-NORMALISATION",
+            "the STENCIL coordinate of the velocity definition is not free: "
+            "the definition's own declared normalisation -- a monomial shift "
+            "by an offset o has velocity o -- is evaluated as a CRITERION over "
+            "every monomial family, momentum, direction and non-antipodal "
+            "offset coordinate, and it admits exactly the forward and backward "
+            "stencils, at every one of those coordinates, while the central "
+            "stencil FAILS it.  The fiber of 9 is therefore 3 lifts times 2 "
+            "admissible stencils, and the third stencil is excluded by the "
+            "definition rather than by fiat",
+            admitted == STENCIL_FORCED
+            and all(r["satisfied"] == r["coordinates"] for r in norm_rows
+                    if r["stencil"] in STENCIL_FORCED)
+            and all(r["satisfied"] < r["coordinates"] for r in norm_rows
+                    if r["stencil"] not in STENCIL_FORCED),
+            "admitted %s; %s" % (list(admitted),
+                                 [(r["stencil"], "%d/%d" % (r["satisfied"],
+                                                            r["coordinates"]))
+                                  for r in norm_rows]))
+
+    # ---- THE RESIDUAL FIBER, MEASURED INERT --------------------------------
+    # What the normalisation forces and the identity selects leaves 2: forward
+    # and backward.  Every quantity this unit reports is required to be
+    # IDENTICAL under both, and the disclosure -- where they differ at all --
+    # is measured rather than argued.
+    def back_delta(n, k, j):
+        e = BASIS_DIRECTIONS[j]
+        prev = tuple((k[i] - e[i]) % L for i in range(D))
+        return (disp[n][k] - disp[n][prev]) % 8
+
+    speed_back, alias_back, signed_diff = {}, 0, 0
+    for n in disp:
+        mx = Fraction(0)
+        for k in duals:
+            for j in range(D):
+                d = back_delta(n, k, j)
+                mx = max(mx, Fraction(circle_distance(d), 2))
+                if d == 4:
+                    alias_back += 1
+                if (Fraction(-lift(d, LIFT_DECLARED), 2)
+                        != velocity(n, k, j, LIFT_DECLARED, STENCIL_DECLARED)):
+                    signed_diff += 1
+        speed_back[n] = mx
+    if mut("MUT-RESIDUAL-FIBER"):
+        speed_back[nonconstant[0]] = Fraction(9)
+    spectrum_back = sorted({Fraction(circle_distance(back_delta(n, k, j)), 2)
+                            for n in disp for k in duals for j in range(D)})
+    alias_fams_back = len({n for n in disp for k in duals for j in range(D)
+                           if back_delta(n, k, j) == 4})
+    residual = {"residual_fiber": len(STENCIL_FORCED),
+                "members": list(STENCIL_FORCED),
+                "per_family_max_speed_identical": speed_back == speed,
+                "spectrum_identical": spectrum_back == spectrum,
+                "aliased_cells_identical": alias_back == len(aliased),
+                "aliased_families_identical": alias_fams_back == len(alias_families),
+                "motion_head_identical": all((speed_back[n] != 0)
+                                             == (speed[n] != 0) for n in disp),
+                "signed_velocity_cells_differing": signed_diff,
+                "cells": n_delta}
+    LD.gate("G-RESIDUAL-FIBER-INERT",
+            "the residual fiber is 2 -- forward and backward -- and it is "
+            "measured INERT, not asserted inert: the per-family maximal speed, "
+            "the speed spectrum, VMAX, the aliasing census and the motion head "
+            "are identical under both admissible stencils, family by family "
+            "and cell count for cell count.  The two readings are not the same "
+            "velocity field: they disagree on the SIGN of the velocity at a "
+            "measured share of cells, and that is the whole of the residual "
+            "declaration",
+            residual["per_family_max_speed_identical"]
+            and residual["spectrum_identical"]
+            and residual["aliased_cells_identical"]
+            and residual["aliased_families_identical"]
+            and residual["motion_head_identical"]
+            and max(speed_back.values()) == VMAX
+            and 0 < signed_diff < n_delta,
+            "%s" % residual)
 
     # ---- the character convention, the other declared item -----------------
     conj_speed_same, conj_head_same, conj_alias, conj_wind_neg = 0, 0, 0, 0
@@ -1425,6 +1841,33 @@ def build_state(break_anchor=None):
             "not Bloch diagonal: %d of %d controls, in %d classes"
             % (len(notbloch), len(pool) - ncirc, len(noncirc_classes)))
 
+    # the same fact, FORCED rather than merely measured -- this is what the
+    # gauge rung inherits
+    full_stab = sorted(n for n in stab if stab[n] == len(sites))
+    circ_names = sorted(name[g["local"]] for g in pool[:ncirc])
+    ctrl_names = sorted(name[g["local"]] for g in pool[ncirc:])
+    if mut("MUT-NOTBLOCH-FORCED"):
+        full_stab = full_stab[:-1]
+    LD.gate("G-NOT-BLOCH-FORCED",
+            "the non-diagonality of the controls is a THEOREM, not only a "
+            "measurement: a generator is diagonal in the lattice characters if "
+            "and only if it commutes with every translation, i.e. iff its "
+            "translation stabiliser is the whole group.  Measured here: the "
+            "generators with the full stabiliser are exactly the circulant "
+            "family, every control's stabiliser is proper -- the brickwork "
+            "generators' is of INDEX TWO -- and therefore no control can be "
+            "Bloch diagonal.  The measurement above and this forcing agree",
+            full_stab == circ_names
+            and all(stab[n] < len(sites) for n in ctrl_names)
+            and sorted(brick_stab)[0] * 2 == len(sites)
+            and sorted(notbloch) == ctrl_names,
+            "full-stabiliser generators %d = the %d circulants; control "
+            "stabilisers %s, all proper; brickwork index %d; measured "
+            "not-Bloch %d of %d"
+            % (len(full_stab), ncirc, sorted({stab[n] for n in ctrl_names}),
+               len(sites) // sorted(brick_stab)[0], len(notbloch),
+               len(ctrl_names)))
+
     # ---- THE PROPAGATION BOUND --------------------------------------------
     say("[7/10] the propagation bound and the resolution relation")
     diameter = max(torus_absmax(x, L) for x in sites)
@@ -1451,6 +1894,27 @@ def build_state(break_anchor=None):
             "speed > reach: %d; speed < reach: %d; equal: %d"
             % (len(over), len(under), len(equal)))
 
+    # an UPPER bound is falsified by the overshooters, and only by them
+    upper_falsifiers, lower_falsifiers = list(over), list(under)
+    if mut("MUT-REACH-DIRECTION"):
+        upper_falsifiers, lower_falsifiers = lower_falsifiers, upper_falsifiers
+    upper_bound_holds = not upper_falsifiers
+    lower_bound_holds = not lower_falsifiers
+    LD.gate("G-REACH-BOUND-DIRECTION",
+            "which count falsifies which bound is DERIVED, not labelled: an "
+            "upper bound on the one-step reach is falsified exactly by the "
+            "families whose speed EXCEEDS their own reach, and a lower bound "
+            "exactly by the families whose speed falls BELOW it.  Both fail "
+            "here, at different counts, and the verdict carries both",
+            all(speed[n] > byname[n]["radius"] for n in upper_falsifiers)
+            and all(speed[n] < byname[n]["radius"] for n in lower_falsifiers)
+            and len(upper_falsifiers) + len(lower_falsifiers) + len(equal) == ncirc
+            and upper_bound_holds is False and lower_bound_holds is False,
+            "upper bound holds=%s (falsified by the %d overshooters); lower "
+            "bound holds=%s (falsified by the %d undershooters); saturating %d"
+            % (upper_bound_holds, len(upper_falsifiers), lower_bound_holds,
+               len(lower_falsifiers), len(equal)))
+
     cone_1 = [x for x in sites if torus_absmax(x, L) <= VMAX]
     if mut("MUT-CONE"):
         cone_1 = cone_1[:-1]
@@ -1470,17 +1934,99 @@ def build_state(break_anchor=None):
             "cone at 1 step = %d of %d sites; VMAX=%s diameter=%d"
             % (len(cone_1), len(sites), VMAX, diameter))
 
-    bound_has_content = (not cone_covers) and not under
+    bound_has_content = (not cone_covers) and upper_bound_holds
     if mut("MUT-BOUND"):
         bound_has_content = True
     LD.gate("G-BOUND-DERIVED",
-            "the bound's verdict is DERIVED from the two computed facts -- "
-            "whether the one-step cone is proper, and whether any family's "
-            "speed falls below its own reach -- and is not a typed opinion",
+            "the bound's verdict is DERIVED from the two computed facts a "
+            "propagation bound actually asserts -- whether the one-step cone "
+            "is proper, and whether the speed is an UPPER bound on the reach "
+            "it is supposed to constrain -- and is not a typed opinion.  The "
+            "undershooting families are consistent with an upper bound and "
+            "enter only the lower-bound clause",
             bound_has_content is False and bound_has_content
-            == ((not cone_covers) and not under),
-            "cone proper=%s; families under their own reach=%d; bound has "
-            "content=%s" % (not cone_covers, len(under), bound_has_content))
+            == ((not cone_covers) and upper_bound_holds),
+            "cone proper=%s; families over their own reach=%d; bound has "
+            "content=%s" % (not cone_covers, len(over), bound_has_content))
+
+    # ---- VMAX = DIAMETER IS STRUCTURAL, NOT A FACT ABOUT THIS SIZE ---------
+    # The group speed is a phase advance per momentum step, so it is bounded by
+    # L/2, which IS the max-norm diameter of (Z_L)^d for even L; and the
+    # monomial shift by the antipodal offset (L/2, 0) is a unitary member of
+    # the axis family at EVERY even L and attains it.  Exercised at five sizes.
+    structural = []
+    for LL in STRUCTURAL_SIZES:
+        pts = list(product(range(LL), repeat=2))
+        diam = max(torus_absmax(x, LL) for x in pts)
+        o = (LL // 2, 0)
+        top = Fraction(0)
+        for k in pts:
+            for j, e in enumerate(BASIS_DIRECTIONS):
+                s1 = (-((k[0] + e[0]) * o[0] + (k[1] + e[1]) * o[1])) % LL
+                s0 = (-(k[0] * o[0] + k[1] * o[1])) % LL
+                dd = (s1 - s0) % LL
+                top = max(top, Fraction(min(dd, LL - dd)))
+        radii = sorted({torus_absmax(x, LL) for x in pts})
+        structural.append({"L": LL, "diameter": diam,
+                           "antipodal_monomial_speed": str(top),
+                           "vmax_equals_diameter": top == diam,
+                           "cone_covers_torus": top >= diam,
+                           "interior_radii": [r for r in radii if 0 < r < diam],
+                           "interior_radius_count":
+                               len([r for r in radii if 0 < r < diam])})
+    if mut("MUT-STRUCTURAL-L"):
+        structural[2]["vmax_equals_diameter"] = False
+    LD.gate("G-CONE-VACUITY-STRUCTURAL",
+            "the emptiness of the one-step cone is a THEOREM about even "
+            "periodic lattices, not a resolution failure of the admitted size: "
+            "the group speed is a phase advance per momentum step and is "
+            "therefore bounded by L/2, which is exactly the max-norm diameter, "
+            "and the monomial shift by the antipodal offset is a family member "
+            "at every even L and attains it.  Exercised at five sizes: the "
+            "cone covers the whole torus at every one of them, so no "
+            "enlargement of the lattice makes the constraint bite.  What the "
+            "admitted size does control is the number of INTERIOR max-norm "
+            "radii -- one here, three at L = 8 -- which is the genuine "
+            "resolution parameter",
+            all(r["vmax_equals_diameter"] and r["cone_covers_torus"]
+                for r in structural)
+            and structural[0]["L"] == L
+            and structural[0]["interior_radius_count"] == 1
+            and [r for r in structural if r["L"] == 8][0]["interior_radius_count"] == 3,
+            "%s" % [(r["L"], r["diameter"], r["antipodal_monomial_speed"],
+                     r["interior_radius_count"]) for r in structural])
+
+    # the disclosure the exclusion of the central stencil buys: what the census
+    # would have said under the reading the normalisation rejects
+    central = {"vmax": None, "aliased_cells": 0, "aliased_families": 0,
+               "reach_over": 0, "reach_under": 0, "reach_equal": 0,
+               "cone_sites_one_step": 0}
+    csp, cfam = {}, set()
+    for g in pool[:ncirc]:
+        n = name[g["local"]]
+        mx = Fraction(0)
+        for k in duals:
+            for j, e in enumerate(BASIS_DIRECTIONS):
+                fw = addv(k, e)
+                bk = tuple((k[i] - e[i]) % L for i in range(D))
+                dd = (disp[n][fw] - disp[n][bk]) % 8
+                mx = max(mx, Fraction(circle_distance(dd), 4))
+                if dd == 4:
+                    central["aliased_cells"] += 1
+                    cfam.add(n)
+        csp[n] = mx
+    central["vmax"] = str(max(csp.values()))
+    central["aliased_families"] = len(cfam)
+    for g in pool[:ncirc]:
+        n = name[g["local"]]
+        if csp[n] > g["radius"]:
+            central["reach_over"] += 1
+        elif csp[n] < g["radius"]:
+            central["reach_under"] += 1
+        else:
+            central["reach_equal"] += 1
+    central["cone_sites_one_step"] = sum(
+        1 for x in sites if torus_absmax(x, L) <= max(csp.values()))
     LD.gate("G-CEILINGS-INHERITED",
             "the parent's two-point rows are inherited AT THEIR CEILINGS and "
             "the disclosure travels with them: 16 of 16 separations carry a "
@@ -1539,6 +2085,17 @@ def build_state(break_anchor=None):
                 tot = sum(lift(delta[(n, k, j)], reading) for k in duals)
                 wv.append(Fraction(-tot, 2 * len(duals)))
             winding[(n, reading)] = tuple(wv)
+    # the winding under each admissible stencil, so the identity's blindness to
+    # the stencil coordinate is MEASURED rather than inferred
+    winding_st = {}
+    for reading in LIFT_READINGS:
+        for stencil in STENCIL_READINGS:
+            for g in pool[:ncirc]:
+                n = name[g["local"]]
+                winding_st[(n, reading, stencil)] = tuple(
+                    sum((velocity(n, k, j, reading, stencil) for k in duals),
+                        Fraction(0)) / len(duals)
+                    for j in range(D))
     agree = {}
     for r1 in LIFT_READINGS:
         for r2 in LIFT_READINGS:
@@ -1550,44 +2107,105 @@ def build_state(break_anchor=None):
     matched_agree = agree[(LIFT_DECLARED, LIFT_DECLARED)]
     full = sorted(kk for kk, v in agree.items() if v == ncirc)
     best_other = max(v for kk, v in agree.items() if v != ncirc)
+    agree27 = {}
+    for r1 in LIFT_READINGS:
+        for r2 in LIFT_READINGS:
+            for st in STENCIL_READINGS:
+                agree27[(r1, r2, st)] = sum(
+                    1 for g in pool[:ncirc]
+                    if drift[(name[g["local"]], r1)]
+                    == winding_st[(name[g["local"]], r2, st)])
+    full27 = sorted(kk for kk, v in agree27.items() if v == ncirc)
+    stencil_blind = all(winding_st[(name[g["local"]], r, "FORWARD")]
+                        == winding_st[(name[g["local"]], r, "BACKWARD")]
+                        for g in pool[:ncirc] for r in LIFT_READINGS)
     LD.gate("G-DRIFT-WINDING-IDENTITY",
             "the two roads to how far a family moves in one step -- the Born "
             "drift of the coefficient map in position space, and the winding "
             "of the eigenphase around the dual torus -- are computed "
             "independently and compared family by family under all nine ways "
-            "of reading the two antipodal ties.  EXACTLY ONE reading pair "
+            "of reading the two antipodal TIES.  Exactly one tie-reading pair "
             "makes them agree for every family, and it is the pair that "
-            "resolves both ties the same way: by averaging.  The velocity "
-            "convention is therefore SELECTED by an identity, not chosen",
+            "resolves both ties the same way: by averaging.  What the identity "
+            "selects is therefore the TIE, uniquely; it is BLIND to the "
+            "stencil -- measured here: the winding is identical family by "
+            "family under the forward and the backward difference, so both "
+            "reach the identity and TWO of the 27 lift x lift x stencil "
+            "readings do, not one",
             matched_agree == ncirc and full == [(LIFT_DECLARED, LIFT_DECLARED)]
-            and best_other < ncirc,
-            "identity holds at %d of %d reading pairs (%s); best other pair "
-            "%d of %d families" % (len(full), len(agree), full, best_other, ncirc))
+            and best_other < ncirc and stencil_blind
+            and full27 == sorted([(LIFT_DECLARED, LIFT_DECLARED, st)
+                                  for st in STENCIL_FORCED]),
+            "identity holds at %d of %d tie-reading pairs (%s); best other "
+            "pair %d of %d families; over the 27 lift x lift x stencil "
+            "readings it holds at %d, namely %s; winding stencil-blind=%s"
+            % (len(full), len(agree), full, best_other, ncirc, len(full27),
+               full27, stencil_blind))
 
-    supp_table, supp_table_alt = {}, {}
-    for g in pool[:ncirc]:
-        n = name[g["local"]]
-        row = supp_table.setdefault(g["support"], {"generators": 0, "nonzero_drift": 0})
-        row["generators"] += 1
-        if any(drift[(n, "TIE-AVERAGED")]):
-            row["nonzero_drift"] += 1
-        alt = supp_table_alt.setdefault(g["support"],
-                                        {"generators": 0, "nonzero_drift": 0})
-        alt["generators"] += 1
-        if any(drift[(n, "POSITIVE")]):
-            alt["nonzero_drift"] += 1
+    witness = arena_artifact_witness()
+    if mut("MUT-ARENA-WITNESS"):
+        witness["identity_holds"] = True
+    LD.gate("G-ARENA-ARTIFACT-WITNESS",
+            "the selecting identity is an ARENA ARTIFACT and may serve as an "
+            "instrument, never as a conclusion about the velocity definition "
+            "(RUNBOOK section 15).  The parent panel's constructive "
+            "widened-alphabet generator -- anchored verbatim, at the SAME "
+            "lattice size -- is rebuilt here exactly over Q(zeta_12): it is "
+            "unitary at all 16 lags, its eigenphases leave the declared field, "
+            "its Born drift is the value the panel published, its winding is a "
+            "DIFFERENT number, and the identity therefore FAILS at the first "
+            "widening of the modulus set",
+            witness["unitary_all_lags"]
+            and witness["eigenphases_in_mu_12"] == witness["cells"]
+            and witness["eigenphases_outside_mu_8"] == witness["cells"]
+            and witness["born_drift"] == "-1/2"
+            and witness["winding"] == "-1"
+            and witness["identity_holds"] is False
+            and witness["difference_sum"] == 12
+            and [r for r in vb_rows
+                 if r["id"] == "VB-WIDENED-GENERATOR"][0]["present"],
+            "%s" % witness)
+
+    supp_tables = {}
+    for reading in LIFT_READINGS:
+        tbl = {}
+        for g in pool[:ncirc]:
+            n = name[g["local"]]
+            row = tbl.setdefault(g["support"], {"generators": 0,
+                                                "nonzero_drift": 0})
+            row["generators"] += 1
+            if any(drift[(n, reading)]):
+                row["nonzero_drift"] += 1
+        supp_tables[reading] = tbl
+    supp_table = supp_tables[LIFT_DECLARED]
     if mut("MUT-DRIFT-TABLE"):
         supp_table[1]["nonzero_drift"] = 13
+    if mut("MUT-DRIFT-ALT"):
+        supp_tables["POSITIVE"] = {k: dict(v) for k, v in supp_table.items()}
+    review_rows = {1: {"generators": 16, "nonzero_drift": 12},
+                   2: {"generators": 18, "nonzero_drift": 0},
+                   3: {"generators": 24, "nonzero_drift": 0}}
+    reproduces = sorted(r for r in LIFT_READINGS
+                        if {k: supp_tables[r][k] for k in sorted(supp_tables[r])}
+                        == review_rows)
     LD.gate("G-EFFECTUS-DRIFT-TABLE",
             "the frozen effectus review's one-step drift table is reproduced "
             "from this unit's own rebuild, and reproducing it IDENTIFIES the "
             "convention it was taken under: the antipodal displacement is "
-            "tie-averaged to zero.  Under that reading, and only under it, "
-            "the table's three rows come out as the review printed them",
-            supp_table[1] == {"generators": 16, "nonzero_drift": 12}
-            and supp_table[2] == {"generators": 18, "nonzero_drift": 0}
-            and supp_table[3] == {"generators": 24, "nonzero_drift": 0},
-            "%s" % {k: supp_table[k] for k in sorted(supp_table)})
+            "tie-averaged to zero.  Under that reading, and ONLY under it, the "
+            "table's three rows come out as the review printed them -- the "
+            "exclusion is evaluated here, over all three lifts, and not "
+            "asserted: the positive and the negative readings are both "
+            "computed and both required to FAIL",
+            supp_table[1] == review_rows[1] and supp_table[2] == review_rows[2]
+            and supp_table[3] == review_rows[3]
+            and reproduces == [LIFT_DECLARED],
+            "readings reproducing the review's rows: %s; tie-averaged %s; "
+            "positive %s; negative %s"
+            % (reproduces,
+               {k: supp_tables["TIE-AVERAGED"][k] for k in sorted(supp_table)},
+               {k: supp_tables["POSITIVE"][k] for k in sorted(supp_table)},
+               {k: supp_tables["NEGATIVE"][k] for k in sorted(supp_table)}))
 
     nonzero_wind = sorted(name[g["local"]] for g in pool[:ncirc]
                           if any(winding[(name[g["local"]], LIFT_DECLARED)]))
@@ -1602,11 +2220,13 @@ def build_state(break_anchor=None):
         interfering_zero_net = interfering_zero_net[:-1]
     LD.gate("G-CHARGE-WITHOUT-MOMENTUM",
             "the parent panel's tension, measured: every family with nonzero "
-            "net transport is monomial, every interfering family has exactly "
-            "zero net transport in BOTH spaces, and yet every one of those "
-            "interfering families MOVES -- its dispersion is non-constant and "
-            "its group velocity is nonzero at individual momenta.  The "
-            "cancellation, not the absence, is what the class census saw",
+            "net transport is monomial, every NON-MONOMIAL family has exactly "
+            "zero net transport in BOTH spaces at the selected reading, and "
+            "yet every one of those families MOVES -- its dispersion is "
+            "non-constant and its group velocity is nonzero at individual "
+            "momenta.  The zero is a sum of nonzero summands, not an absence "
+            "of motion; how much of it survives the other tie readings is "
+            "measured separately at G-CANCELLATION-ROBUSTNESS",
             not wind_implies_mono
             and len(interfering_zero_net) == len(interfering)
             and len(interfering_moving) == len(interfering)
@@ -1618,6 +2238,109 @@ def build_state(break_anchor=None):
             % (len(nonzero_wind), len(interfering),
                jpath(R4, "counts/markov_pairs"), len(pool),
                len(pool) - len(monomials)))
+    # ---- how much of the zero is reading-independent ------------------------
+    drift_all_readings = sorted(n for n in interfering
+                                if all(not any(drift[(n, r)])
+                                       for r in LIFT_READINGS))
+    wind_all_readings = sorted(n for n in interfering
+                               if all(not any(winding[(n, r)])
+                                      for r in LIFT_READINGS))
+    if mut("MUT-ROBUSTNESS"):
+        drift_all_readings = drift_all_readings[:-1]
+    # the second route: the complement, taken over readings rather than over
+    # families, so a count moved on one side does not move on the other
+    drift_route2 = len(interfering) - len({n for n in interfering
+                                           for r in LIFT_READINGS
+                                           if any(drift[(n, r)])})
+    wind_route2 = len(interfering) - len({n for n in interfering
+                                          for r in LIFT_READINGS
+                                          if any(winding[(n, r)])})
+    robust = {"non_monomial": len(interfering),
+              "zero_drift_all_readings": len(drift_all_readings),
+              "zero_drift_averaged_only": len(interfering) - len(drift_all_readings),
+              "zero_winding_all_readings": len(wind_all_readings),
+              "zero_winding_averaged_only": len(interfering) - len(wind_all_readings),
+              "winding_averaged_only_are_the_aliased":
+                  sorted(set(interfering) - set(wind_all_readings))
+                  == sorted(set(interfering) & set(alias_families))}
+    LD.gate("G-CANCELLATION-ROBUSTNESS",
+            "the zero net transport of the non-monomial families is stratified "
+            "by how much of it survives the tie: for a measured subset the "
+            "zero holds under ALL THREE tie readings and no convention can "
+            "undo it; for the remainder the zero IS the antipodal average, and "
+            "those families are exactly the non-monomials that carry aliased "
+            "cells.  The two spaces split differently, and the verdict carries "
+            "both numbers rather than the unqualified count",
+            robust["zero_drift_all_readings"] == drift_route2
+            and robust["zero_winding_all_readings"] == wind_route2
+            and robust["zero_drift_all_readings"] + robust["zero_drift_averaged_only"]
+            == len(interfering)
+            and robust["zero_winding_all_readings"]
+                + robust["zero_winding_averaged_only"] == len(interfering)
+            and 0 < robust["zero_drift_all_readings"] < len(interfering)
+            and 0 < robust["zero_winding_all_readings"] < len(interfering)
+            and robust["winding_averaged_only_are_the_aliased"],
+            "%s" % robust)
+
+    # ---- the word "interfering", bound to the parent's own defect rows ------
+    parent_rows = {(r["U"], r["V"]): r for r in jpath(R4, "census_rows")}
+    diag_nonzero = sorted(n for n in
+                          [name[g["local"]] for g in pool[:ncirc]]
+                          if parent_rows[(n, n)]["nonzero_cells"] > 0)
+    defect_free = sorted(n for n in [name[g["local"]] for g in pool[:ncirc]]
+                         if all(parent_rows[(u, v)]["nonzero_cells"] == 0
+                                for (u, v) in parent_rows if u == n or v == n))
+    if mut("MUT-DEFECT-BINDING"):
+        diag_nonzero = diag_nonzero[:-1]
+    LD.gate("G-NON-MONOMIAL-DEFECT-BOUND",
+            "the word this unit uses for the 42 is bound to the parent's own "
+            "rows and is not a rename: the generators whose DIAGONAL "
+            "composition defect is nonzero in the parent's 4096-row census are "
+            "exactly this unit's non-monomial families, object by object, and "
+            "the generators on which the defect vanishes across EVERY pair "
+            "they appear in are exactly its 16 monomials.  No defect is "
+            "recomputed here; the binding is to the anchored receipt",
+            diag_nonzero == interfering and defect_free == monomials
+            and len(parent_rows) == jpath(R4, "counts/pairs_total"),
+            "non-monomial with a nonzero diagonal defect %d of %d; "
+            "defect-free across every pair %d = the %d monomials; parent rows "
+            "%d" % (len(diag_nonzero), len(interfering), len(defect_free),
+                    len(monomials), len(parent_rows)))
+
+    # ---- the like-for-like class separation --------------------------------
+    circ_class_rows = [c for c in classes if c["kind"] == "CIRC"]
+    multisets = {}
+    for c in circ_class_rows:
+        key = tuple(sorted(tuple(sigma[name[m]][k] for k in duals)
+                           for m in c["members"]))
+        multisets.setdefault(key, []).append(c["rep"])
+    class_constant = sorted(c["rep"] for c in circ_class_rows
+                            if len({tuple(sigma[name[m]][k] for k in duals)
+                                    for m in c["members"]}) == 1)
+    n_multisets = len(multisets)
+    if mut("MUT-CLASS-MULTISET"):
+        n_multisets -= 1
+    LD.gate("G-CLASS-SEPARATION-BY-MULTISET",
+            "the like-for-like comparison the parent's label deficit actually "
+            "calls for: the reduced dispersion is NOT a class invariant -- it "
+            "is constant only on the singleton classes -- so a count of "
+            "distinct profiles per FAMILY is not a class separation.  The "
+            "MULTISET of member reduced dispersions is a class invariant by "
+            "construction, and it separates every one of the circulant "
+            "classes, where the parent's conjugacy invariants give fewer "
+            "labels than it has classes",
+            n_multisets == len(circ_class_rows)
+            and len(class_constant) == sum(1 for c in circ_class_rows
+                                           if c["size"] == 1)
+            and jpath(R4, "counts/class_labels")
+            < jpath(R4, "counts/classes_extended"),
+            "distinct dispersion multisets %d over %d circulant classes; the "
+            "reduced dispersion is constant on %d of them (the singletons %s); "
+            "the parent's invariant labels: %d for %d extended classes"
+            % (n_multisets, len(circ_class_rows), len(class_constant),
+               class_constant, jpath(R4, "counts/class_labels"),
+               jpath(R4, "counts/classes_extended")))
+
     LD.gate("G-MOMENTUM-ON-THE-SYMBOL",
             "the reading the operator review names is available in this "
             "unit's own numbers: the momentum label lives on the symbol, and "
@@ -1649,6 +2372,8 @@ def build_state(break_anchor=None):
         "classes_static": len(classes_static),
         "classes_not_bloch": len(noncirc_classes),
         "distinct_profiles": S["distinct_profiles"],
+        "class_separation_multisets": n_multisets,
+        "algebraic_integers": total_cells - len(nonintegral),
         "parity_invariant": ncirc - len(parity_bad),
         "velocity_cells": n_delta,
         "integer_velocities": n_delta - len(odd_delta),
@@ -1659,6 +2384,19 @@ def build_state(break_anchor=None):
         "velocity_definition": "%s-DIFFERENCE-WITH-%s"
                                % (STENCIL_DECLARED, LIFT_DECLARED),
         "velocity_fiber": len(fiber_rows),
+        "stencil_admitted": len(admitted),
+        "stencil_normalisation_coordinates": norm_rows[0]["coordinates"],
+        "residual_fiber": len(STENCIL_FORCED),
+        "residual_fiber_cells_differing": signed_diff,
+        # POLARITY RENDERED FROM THE RECEIPT (#20): the direction of these
+        # three claims is a computed word, so a prose inversion of them cannot
+        # survive the claim check even when it moves no numeral
+        "residual_fiber_inert": ("INERT" if all(
+            residual[k] for k in ("per_family_max_speed_identical",
+                                  "spectrum_identical", "aliased_cells_identical",
+                                  "aliased_families_identical",
+                                  "motion_head_identical")) else "LIVE"),
+        "character_convention_fiber": 2,
         "reach_over": len(over),
         "reach_under": len(under),
         "reach_equal": len(equal),
@@ -1666,6 +2404,9 @@ def build_state(break_anchor=None):
         "sites": len(sites),
         "diameter": diameter,
         "interior_radii": resolution["interior_radii"],
+        "structural_sizes": len(structural),
+        "interior_radii_at_l8": [r for r in structural
+                                 if r["L"] == 8][0]["interior_radius_count"],
         "bound_has_content": bound_has_content,
         "separations": separations,
         "separations_ceiling": sep_ceiling,
@@ -1675,11 +2416,21 @@ def build_state(break_anchor=None):
         "drift_winding_mismatched": best_other,
         "reading_pairs": len(agree),
         "reading_pairs_with_identity": len(full),
+        "full_readings": len(agree27),
+        "full_readings_with_identity": len(full27),
+        "witness_winding": witness["winding"],
+        "witness_drift": witness["born_drift"],
+        "witness_root_order": witness["root_order"],
+        "witness_identity": "FAILS" if not witness["identity_holds"] else "HOLDS",
         "nonzero_winding": len(nonzero_wind),
         "monomial": len(monomials),
         "nonmonomial_pool": len(pool) - len(monomials),
         "interfering": len(interfering),
         "interfering_moving": len(interfering_moving),
+        "interfering_zero_net": len(interfering_zero_net),
+        "zero_drift_all_readings": robust["zero_drift_all_readings"],
+        "zero_winding_all_readings": robust["zero_winding_all_readings"],
+        "diagonal_defect_nonzero": len(diag_nonzero),
         "markov_nonzero": jpath(R4, "counts/markov_nonzero"),
         "markov_pairs": jpath(R4, "counts/markov_pairs"),
         "class_labels": jpath(R4, "counts/class_labels"),
@@ -1698,11 +2449,39 @@ def build_state(break_anchor=None):
         "class_rows": class_rows,
         "resolution": resolution,
         "fiber_rows": fiber_rows,
-        "supp_table": {str(k): supp_table[k] for k in sorted(supp_table)},
-        "supp_table_alt": {str(k): supp_table_alt[k] for k in sorted(supp_table_alt)},
+        "supp_tables": {r: {str(k): supp_tables[r][k]
+                            for k in sorted(supp_tables[r])}
+                        for r in LIFT_READINGS},
         "agreement_matrix": {"%s|%s" % kk: v for kk, v in sorted(agree.items())},
+        "agreement_matrix_full": {"%s|%s|%s" % kk: v
+                                  for kk, v in sorted(agree27.items())},
         "profiles": {"distinct": len(profiles),
                      "largest": max(len(v) for v in profiles.values())},
+        "stratification": {
+            "stencil_normalisation": norm_rows,
+            "stencil_admitted": list(admitted),
+            "residual_fiber": residual,
+            "structural_vmax": structural,
+            "central_stencil_disclosure": central,
+            "arena_artifact_witness": witness,
+            "cancellation_robustness": robust,
+            "class_separation": {
+                "circulant_classes": len(circ_class_rows),
+                "distinct_dispersion_multisets": n_multisets,
+                "classes_with_a_constant_dispersion": class_constant,
+                "parent_invariant_labels": jpath(R4, "counts/class_labels"),
+                "parent_extended_classes": jpath(R4, "counts/classes_extended")},
+            "reach_direction": {
+                "upper_bound_holds": upper_bound_holds,
+                "upper_bound_falsified_by": len(over),
+                "lower_bound_holds": lower_bound_holds,
+                "lower_bound_falsified_by": len(under),
+                "saturating": len(equal)},
+            "defect_binding": {
+                "non_monomial_with_nonzero_diagonal_defect": len(diag_nonzero),
+                "defect_free_across_every_pair": len(defect_free),
+                "parent_rows_read": len(parent_rows)},
+        },
     })
     S["_dispersion"] = disp
     S["_sigma"] = sigma
@@ -1720,6 +2499,8 @@ def build_state(break_anchor=None):
     S["_moving"] = moving
     S["_nonzero_wind"] = nonzero_wind
     S["_alias_families"] = alias_families
+    S["_r4"] = R4
+    S["_class_rows_src"] = classes
     return S, LD
 
 
@@ -1744,21 +2525,30 @@ SEGMENT_KEYS = [
     ("MOTION", ["moving", "families", "static", "control", "classes_moving",
                 "classes_circulant", "classes_not_bloch", "classes_extended"]),
     ("DISPERSION", ["in_mu8", "cells", "eigen_verified", "unit_modulus",
-                    "parity_invariant", "families", "distinct_profiles",
-                    "class_labels"]),
+                    "algebraic_integers", "parity_invariant", "families",
+                    "distinct_profiles", "class_separation_multisets",
+                    "classes_circulant", "class_labels", "classes_extended"]),
     ("VELOCITY", ["speed_spectrum", "vmax", "integer_velocities",
                   "velocity_cells", "aliased_cells", "aliased_families",
-                  "velocity_definition", "velocity_fiber"]),
+                  "velocity_definition", "velocity_fiber", "stencil_admitted",
+                  "stencil_normalisation_coordinates", "residual_fiber",
+                  "residual_fiber_cells_differing"]),
     ("BOUND", ["bound_has_content", "cone_sites_one_step", "sites", "vmax",
-               "diameter", "reach_under", "reach_over", "reach_equal",
-               "families", "separations", "separations_ceiling",
-               "max_defect_radius", "radius_ceiling", "interior_radii"]),
+               "diameter", "structural_sizes", "reach_under", "reach_over",
+               "reach_equal", "families", "separations", "separations_ceiling",
+               "max_defect_radius", "radius_ceiling", "interior_radii",
+               "interior_radii_at_l8"]),
     ("TRANSPORT", ["drift_winding_matched", "families", "reading_pairs_with_identity",
                    "reading_pairs", "drift_winding_mismatched",
+                   "full_readings_with_identity", "full_readings",
+                   "witness_root_order", "witness_winding", "witness_drift",
                    "nonzero_winding", "monomial", "interfering",
-                   "interfering_moving", "markov_nonzero", "markov_pairs"]),
+                   "interfering_moving", "interfering_zero_net",
+                   "zero_drift_all_readings", "zero_winding_all_readings",
+                   "diagonal_defect_nonzero", "markov_nonzero", "markov_pairs"]),
     ("SCOPE", ["d", "L", "field", "alphabet", "pool", "stencil", "sector",
-               "connective_tag", "forcing_link", "indivisibility", "momenta"]),
+               "connective_tag", "forcing_link", "indivisibility", "momenta",
+               "character_convention_fiber"]),
 ]
 
 
@@ -1774,42 +2564,74 @@ def build_verdict(c):
             c["classes_moving"], c["classes_circulant"], c["classes_not_bloch"],
             c["classes_extended"])),
         ("DISPERSION", "EIGENPHASES-IN-MU-8=%s-OF-%s;EIGEN-EQUATION-VERIFIED=%s;"
-                       "UNIT-MODULUS=%s;PARITY-INVARIANT=%s-OF-%s;"
-                       "DISTINCT-REDUCED-PROFILES=%s-VS-%s-INVARIANT-LABELS"
+                       "UNIT-MODULUS=%s;ALGEBRAIC-INTEGERS=%s;"
+                       "PARITY-INVARIANT=%s-OF-%s;DISTINCT-REDUCED-PROFILES=%s-"
+                       "OF-%s-FAMILIES(FORCED-BY-INVERTIBILITY);CLASS-SEPARATION"
+                       "=%s-OF-%s-CIRCULANT-BY-DISPERSION-MULTISET-VS-%s-LABELS-"
+                       "FOR-%s-CLASSES"
          % (c["in_mu8"], c["cells"], c["eigen_verified"], c["unit_modulus"],
-            c["parity_invariant"], c["families"], c["distinct_profiles"],
-            c["class_labels"])),
+            c["algebraic_integers"], c["parity_invariant"], c["families"],
+            c["distinct_profiles"], c["families"],
+            c["class_separation_multisets"], c["classes_circulant"],
+            c["class_labels"], c["classes_extended"])),
         ("VELOCITY", "SPECTRUM=%s;VMAX=%s;INTEGER-VALUED=%s-OF-%s;"
-                     "ALIASED=%s-OF-%s-IN-%s-FAMILIES;DEFINITION=%s(FIBER=%s)"
+                     "ALIASED=%s-OF-%s-IN-%s-FAMILIES;DEFINITION=%s(FIBER=%s;"
+                     "STENCIL-FORCED-TO-%s-BY-MONOMIAL-NORMALISATION-AT-%s-OF-%s;"
+                     "LIFT-SELECTED-1-OF-3-BY-DRIFT=WINDING;RESIDUAL-FIBER=%s-"
+                     "MEASURED-INERT-DIFFERING-AT-%s-OF-%s-SIGNED-CELLS)"
          % ("+".join(c["speed_spectrum"]), c["vmax"], c["integer_velocities"],
             c["velocity_cells"], c["aliased_cells"], c["velocity_cells"],
-            c["aliased_families"], c["velocity_definition"], c["velocity_fiber"])),
-        ("BOUND", "NO-CONTENT=%s;CONE-AT-ONE-STEP=%s-OF-%s-SITES;VMAX=%s=DIAMETER=%s;"
-                  "REACH-BOUND-FALSE-AT=%s-OF-%s;OVERSHOOTS-AT=%s;SATURATES-AT=%s;"
-                  "INHERITED-CEILINGS=SEPARATIONS=%s-OF-%s;MAX-DEFECT-RADIUS=%s-OF-%s;"
-                  "INTERIOR-RADII=%s"
+            c["aliased_families"], c["velocity_definition"], c["velocity_fiber"],
+            c["stencil_admitted"], c["stencil_normalisation_coordinates"],
+            c["stencil_normalisation_coordinates"], c["residual_fiber"],
+            c["residual_fiber_cells_differing"], c["velocity_cells"])),
+        ("BOUND", "NO-CONTENT=%s;CONE-AT-ONE-STEP=%s-OF-%s-SITES;VMAX=%s=DIAMETER"
+                  "=%s(CEILING-FORCED;ATTAINMENT-MEASURED;STRUCTURAL-AT-EVERY-"
+                  "EVEN-L-AT-%s-SIZES);REACH-UPPER-BOUND-FALSE-AT=%s-OF-%s;"
+                  "REACH-LOWER-BOUND-FALSE-AT=%s-OF-%s;SATURATES-AT=%s;"
+                  "INHERITED-CEILINGS=SEPARATIONS=%s-OF-%s;MAX-DEFECT-RADIUS=%s-"
+                  "OF-%s;INTERIOR-RADII=%s-HERE-%s-AT-L-8;RESIDUAL-FIBER-"
+                  "INVARIANT=YES"
          % ("YES" if not c["bound_has_content"] else "NO", c["cone_sites_one_step"],
-            c["sites"], c["vmax"], c["diameter"], c["reach_under"], c["families"],
-            c["reach_over"], c["reach_equal"], c["separations"],
-            c["separations_ceiling"], c["max_defect_radius"], c["radius_ceiling"],
-            "+".join(str(x) for x in c["interior_radii"]))),
-        ("TRANSPORT", "DRIFT=WINDING-AT-%s-OF-%s-FAMILIES-UNDER-%s-OF-%s-READING-"
-                      "PAIRS(BEST-OTHER=%s-OF-%s);NONZERO-WINDING=%s-OF-%s-ALL-"
-                      "MONOMIAL-OF-%s;INTERFERING=%s-ZERO-NET-TRANSPORT-AND-%s-"
-                      "MOVING;MARKOV=%s-OF-%s-NONZERO-INHERITED"
+            c["sites"], c["vmax"], c["diameter"], c["structural_sizes"],
+            c["reach_over"], c["families"], c["reach_under"], c["families"],
+            c["reach_equal"], c["separations"], c["separations_ceiling"],
+            c["max_defect_radius"], c["radius_ceiling"],
+            "+".join(str(x) for x in c["interior_radii"]),
+            c["interior_radii_at_l8"])),
+        ("TRANSPORT", "DRIFT=WINDING-AT-%s-OF-%s-FAMILIES-UNDER-%s-OF-%s-TIE-"
+                      "READING-PAIRS(BEST-OTHER=%s-OF-%s;STENCIL-BLIND-SO-%s-OF-"
+                      "%s-FULL-READINGS);IDENTITY=ARENA-INSTRUMENT-FAILS-AT-MU-"
+                      "%s-WINDING=%s-VS-DRIFT=%s;NONZERO-WINDING=%s-OF-%s-ALL-"
+                      "MONOMIAL-OF-%s;NON-MONOMIAL=%s-MOVING=%s;ZERO-NET-"
+                      "TRANSPORT-AT-SELECTED-READING=%s;READING-INDEPENDENT-ZERO-"
+                      "DRIFT=%s-OF-%s;READING-INDEPENDENT-ZERO-WINDING=%s-OF-%s;"
+                      "DIAGONAL-DEFECT-NONZERO=%s-INHERITED;MARKOV=%s-OF-%s-"
+                      "NONZERO-INHERITED"
          % (c["drift_winding_matched"], c["families"],
             c["reading_pairs_with_identity"], c["reading_pairs"],
-            c["drift_winding_mismatched"], c["families"], c["nonzero_winding"],
-            c["families"], c["monomial"], c["interfering"],
-            c["interfering_moving"], c["markov_nonzero"], c["markov_pairs"])),
+            c["drift_winding_mismatched"], c["families"],
+            c["full_readings_with_identity"], c["full_readings"],
+            c["witness_root_order"], c["witness_winding"], c["witness_drift"],
+            c["nonzero_winding"], c["families"], c["monomial"],
+            c["interfering"], c["interfering_moving"], c["interfering_zero_net"],
+            c["zero_drift_all_readings"], c["interfering"],
+            c["zero_winding_all_readings"], c["interfering"],
+            c["diagonal_defect_nonzero"], c["markov_nonzero"],
+            c["markov_pairs"])),
         ("SCOPE", "D=%s;L=%s;FIELD=%s;ALPHABET=%s;GENERATORS=%s;STENCIL=%s;SECTOR=%s;"
-                  "MOMENTUM-LATTICE=DUAL-TORUS-%s-DECLARED;CONNECTIVE=%s(FORCED-BY-"
+                  "MOMENTUM-LATTICE=DUAL-TORUS-%s-DECLARED;VELOCITY-READING=%s"
+                  "(STENCIL-FORCED-TO-%s;LIFT-SELECTED-BY-AN-ARENA-INSTRUMENT;"
+                  "RESIDUAL-FIBER=%s);CHARACTER-CONVENTION=DECLARED-JOINTLY-WITH-"
+                  "VELOCITY-SIGN(FIBER=%s);CONNECTIVE=%s(FORCED-BY-"
                   "ANCHORED-LINK-%s);INDIVISIBILITY=%s;FINITE-LATTICE-ONLY;"
                   "NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-"
                   "COMPOSED-SEGMENT-DEFECT"
          % (c["d"], c["L"], c["field"], c["alphabet"], c["pool"], c["stencil"],
-            c["sector"], c["momenta"], c["connective_tag"], c["forcing_link"],
-            c["indivisibility"])),
+            c["sector"], c["momenta"], c["velocity_definition"],
+            c["stencil_admitted"], c["residual_fiber"],
+            c["character_convention_fiber"], c["connective_tag"],
+            c["forcing_link"], c["indivisibility"])),
     ]
     head = derive_head(c)
     return head, segs, head + "<" + "|".join("%s=%s" % kv for kv in segs) + ">"
@@ -1845,41 +2667,70 @@ def reconstruct_from_serialized(txt):
                + g("classes_not_bloch") + "-OF-" + g("classes_extended"))
     out.append("DISPERSION=EIGENPHASES-IN-MU-8=" + g("in_mu8") + "-OF-" + g("cells")
                + ";EIGEN-EQUATION-VERIFIED=" + g("eigen_verified") + ";UNIT-MODULUS="
-               + g("unit_modulus") + ";PARITY-INVARIANT=" + g("parity_invariant")
+               + g("unit_modulus") + ";ALGEBRAIC-INTEGERS=" + g("algebraic_integers")
+               + ";PARITY-INVARIANT=" + g("parity_invariant")
                + "-OF-" + g("families") + ";DISTINCT-REDUCED-PROFILES="
-               + g("distinct_profiles") + "-VS-" + g("class_labels")
-               + "-INVARIANT-LABELS")
+               + g("distinct_profiles") + "-OF-" + g("families")
+               + "-FAMILIES(FORCED-BY-INVERTIBILITY);CLASS-SEPARATION="
+               + g("class_separation_multisets") + "-OF-" + g("classes_circulant")
+               + "-CIRCULANT-BY-DISPERSION-MULTISET-VS-" + g("class_labels")
+               + "-LABELS-FOR-" + g("classes_extended") + "-CLASSES")
     out.append("VELOCITY=SPECTRUM=" + "+".join(c["speed_spectrum"]) + ";VMAX="
                + g("vmax") + ";INTEGER-VALUED=" + g("integer_velocities") + "-OF-"
                + g("velocity_cells") + ";ALIASED=" + g("aliased_cells") + "-OF-"
                + g("velocity_cells") + "-IN-" + g("aliased_families")
                + "-FAMILIES;DEFINITION=" + g("velocity_definition") + "(FIBER="
-               + g("velocity_fiber") + ")")
+               + g("velocity_fiber") + ";STENCIL-FORCED-TO-" + g("stencil_admitted")
+               + "-BY-MONOMIAL-NORMALISATION-AT-"
+               + g("stencil_normalisation_coordinates") + "-OF-"
+               + g("stencil_normalisation_coordinates")
+               + ";LIFT-SELECTED-1-OF-3-BY-DRIFT=WINDING;RESIDUAL-FIBER="
+               + g("residual_fiber") + "-MEASURED-INERT-DIFFERING-AT-"
+               + g("residual_fiber_cells_differing") + "-OF-" + g("velocity_cells")
+               + "-SIGNED-CELLS)")
     out.append("BOUND=NO-CONTENT=" + ("YES" if not c["bound_has_content"] else "NO")
                + ";CONE-AT-ONE-STEP=" + g("cone_sites_one_step") + "-OF-" + g("sites")
                + "-SITES;VMAX=" + g("vmax") + "=DIAMETER=" + g("diameter")
-               + ";REACH-BOUND-FALSE-AT=" + g("reach_under") + "-OF-" + g("families")
-               + ";OVERSHOOTS-AT=" + g("reach_over") + ";SATURATES-AT="
+               + "(CEILING-FORCED;ATTAINMENT-MEASURED;STRUCTURAL-AT-EVERY-EVEN-L-AT-"
+               + g("structural_sizes") + "-SIZES);REACH-UPPER-BOUND-FALSE-AT="
+               + g("reach_over") + "-OF-" + g("families")
+               + ";REACH-LOWER-BOUND-FALSE-AT=" + g("reach_under") + "-OF-"
+               + g("families") + ";SATURATES-AT="
                + g("reach_equal") + ";INHERITED-CEILINGS=SEPARATIONS="
                + g("separations") + "-OF-" + g("separations_ceiling")
                + ";MAX-DEFECT-RADIUS=" + g("max_defect_radius") + "-OF-"
                + g("radius_ceiling") + ";INTERIOR-RADII="
-               + "+".join([str(x) for x in c["interior_radii"]]))
+               + "+".join([str(x) for x in c["interior_radii"]]) + "-HERE-"
+               + g("interior_radii_at_l8") + "-AT-L-8;RESIDUAL-FIBER-INVARIANT=YES")
     out.append("TRANSPORT=DRIFT=WINDING-AT-" + g("drift_winding_matched") + "-OF-"
                + g("families") + "-FAMILIES-UNDER-"
                + g("reading_pairs_with_identity") + "-OF-" + g("reading_pairs")
-               + "-READING-PAIRS(BEST-OTHER=" + g("drift_winding_mismatched")
-               + "-OF-" + g("families") + ");NONZERO-WINDING="
+               + "-TIE-READING-PAIRS(BEST-OTHER=" + g("drift_winding_mismatched")
+               + "-OF-" + g("families") + ";STENCIL-BLIND-SO-"
+               + g("full_readings_with_identity") + "-OF-" + g("full_readings")
+               + "-FULL-READINGS);IDENTITY=ARENA-INSTRUMENT-FAILS-AT-MU-"
+               + g("witness_root_order") + "-WINDING=" + g("witness_winding")
+               + "-VS-DRIFT=" + g("witness_drift") + ";NONZERO-WINDING="
                + g("nonzero_winding") + "-OF-" + g("families") + "-ALL-MONOMIAL-OF-"
-               + g("monomial") + ";INTERFERING=" + g("interfering")
-               + "-ZERO-NET-TRANSPORT-AND-" + g("interfering_moving")
-               + "-MOVING;MARKOV=" + g("markov_nonzero") + "-OF-" + g("markov_pairs")
-               + "-NONZERO-INHERITED")
+               + g("monomial") + ";NON-MONOMIAL=" + g("interfering") + "-MOVING="
+               + g("interfering_moving") + ";ZERO-NET-TRANSPORT-AT-SELECTED-READING="
+               + g("interfering_zero_net") + ";READING-INDEPENDENT-ZERO-DRIFT="
+               + g("zero_drift_all_readings") + "-OF-" + g("interfering")
+               + ";READING-INDEPENDENT-ZERO-WINDING="
+               + g("zero_winding_all_readings") + "-OF-" + g("interfering")
+               + ";DIAGONAL-DEFECT-NONZERO=" + g("diagonal_defect_nonzero")
+               + "-INHERITED;MARKOV=" + g("markov_nonzero") + "-OF-"
+               + g("markov_pairs") + "-NONZERO-INHERITED")
     out.append("SCOPE=D=" + g("d") + ";L=" + g("L") + ";FIELD=" + g("field")
                + ";ALPHABET=" + g("alphabet") + ";GENERATORS=" + g("pool")
                + ";STENCIL=" + g("stencil") + ";SECTOR=" + g("sector")
                + ";MOMENTUM-LATTICE=DUAL-TORUS-" + g("momenta")
-               + "-DECLARED;CONNECTIVE=" + g("connective_tag")
+               + "-DECLARED;VELOCITY-READING=" + g("velocity_definition")
+               + "(STENCIL-FORCED-TO-" + g("stencil_admitted")
+               + ";LIFT-SELECTED-BY-AN-ARENA-INSTRUMENT;RESIDUAL-FIBER="
+               + g("residual_fiber") + ");CHARACTER-CONVENTION=DECLARED-JOINTLY-"
+               + "WITH-VELOCITY-SIGN(FIBER=" + g("character_convention_fiber")
+               + ");CONNECTIVE=" + g("connective_tag")
                + "(FORCED-BY-ANCHORED-LINK-" + g("forcing_link") + ");INDIVISIBILITY="
                + g("indivisibility") + ";FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;"
                "NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT")
@@ -1906,12 +2757,21 @@ def has_float(o):
     return False
 
 
-def build_receipt(S, LD):
+def census_rows(S):
+    """the PUBLISHED census rows, rendered from the state.  Called once by the
+    receipt builder and once, independently, by G-PUBLISHED-ROWS-BOUND, which
+    compares the emitted table against a fresh rendering field by field: a row
+    that carries a control's datum under a census label, or one field moved in
+    one row, is caught at emission (#87 extended from the objects to the
+    rows)."""
     disp, sigma, name = S["_dispersion"], S["_sigma"], S["_name"]
     duals = S["_duals"]
     rows = []
     for g in S["_pool"][:S["_ncirc"]]:
         n = name[g["local"]]
+        if g["kind"] != "CIRC" or g["coef"] is None:
+            raise GateFail("G-PUBLISHED-ROWS-BOUND :: a control reached the "
+                           "census table :: %s" % g["local"])
         rows.append({
             "family": n,
             "axis": list(g["axis"]),
@@ -1932,6 +2792,12 @@ def build_receipt(S, LD):
             "reach_vs_speed": ("OVER" if n in S["_over"] else
                                ("UNDER" if n in S["_under"] else "EQUAL")),
         })
+    return rows
+
+
+def build_receipt(S, LD):
+    rows = census_rows(S)
+    duals = S["_duals"]
     head, segs, string = build_verdict(S["counts"])
     R = {
         "schema": SCHEMA,
@@ -1967,10 +2833,12 @@ def build_receipt(S, LD):
                      "halved",
         },
         "resolution": S["resolution"],
-        "support_drift_table": S["supp_table"],
-        "support_drift_table_positive_reading": S["supp_table_alt"],
+        "support_drift_tables": S["supp_tables"],
         "agreement_matrix": S["agreement_matrix"],
+        "agreement_matrix_full": S["agreement_matrix_full"],
+        "stratification": S["stratification"],
         "profiles": S["profiles"],
+        "source_sha256": hashlib.sha256(source_text().encode("utf-8")).hexdigest(),
         "counts": S["counts"],
         "verdict": {"head": head, "segments": [list(x) for x in segs],
                     "string": string,
@@ -2072,6 +2940,46 @@ MUTANTS = [
      "register"),
     ("MUT-LATTICE-UNDECLARED", "G-MOMENTUM-LATTICE-DECLARED", "loses the pin's "
      "declaration of the momentum lattice"),
+    ("MUT-QUOTE-TRUNCATE", "G-VERBATIM-WINDOW-DIGESTS", "shortens every "
+     "verbatim window to a four-byte decoration"),
+    ("MUT-QUOTE-AMBIGUOUS", "G-VERBATIM-WINDOWS-UNIQUE", "reports a window "
+     "that matches its source in more than one place"),
+    ("MUT-INTEGRALITY", "G-MU8-THEOREM-LEGS", "admits a symbol that is not an "
+     "algebraic integer"),
+    ("MUT-STENCIL-CENTRAL", "G-STENCIL-FORCED-BY-NORMALISATION", "admits the "
+     "central stencil the declared normalisation rejects"),
+    ("MUT-RESIDUAL-FIBER", "G-RESIDUAL-FIBER-INERT", "perturbs one family "
+     "under the backward stencil"),
+    ("MUT-STRUCTURAL-L", "G-CONE-VACUITY-STRUCTURAL", "breaks the VMAX = "
+     "diameter theorem at one lattice size"),
+    ("MUT-REACH-DIRECTION", "G-REACH-BOUND-DIRECTION", "falsifies the UPPER "
+     "bound with the undershooting families"),
+    ("MUT-DRIFT-ALT", "G-EFFECTUS-DRIFT-TABLE", "makes the positive reading "
+     "reproduce the review's rows too"),
+    ("MUT-ARENA-WITNESS", "G-ARENA-ARTIFACT-WITNESS", "claims the identity "
+     "survives the widened alphabet"),
+    ("MUT-ROBUSTNESS", "G-CANCELLATION-ROBUSTNESS", "miscounts the "
+     "reading-independent zeros"),
+    ("MUT-DEFECT-BINDING", "G-NON-MONOMIAL-DEFECT-BOUND", "unbinds a "
+     "non-monomial from its diagonal defect row"),
+    ("MUT-CLASS-MULTISET", "G-CLASS-SEPARATION-BY-MULTISET", "miscounts the "
+     "dispersion multisets"),
+    ("MUT-NOTBLOCH-FORCED", "G-NOT-BLOCH-FORCED", "breaks the "
+     "stabiliser-to-diagonality forcing"),
+    ("MUT-ROW-FIELD", "G-PUBLISHED-ROWS-BOUND", "moves one field in one "
+     "published census row"),
+    ("MUT-ROW-SWAP", "G-PUBLISHED-ROWS-BOUND", "publishes a control's datum "
+     "under a census label"),
+    ("MUT-SEAL-BROKEN", "G-SEAL-COMPLETE", "mutates a sealed object after its "
+     "gate has passed"),
+    ("MUT-PAPER-POLARITY", "G-PAPER-CLAIM-POLARITY", "declares a negator the "
+     "paper's claim window carries"),
+    ("MUT-PAPER-OCCURRENCES", "G-PAPER-CLAIM-POLARITY", "expects a claim "
+     "occurrence count the paper does not have"),
+    ("MUT-VERIFY-PAPER-DEAD", "G-VERIFY-PAPER-LIVE", "makes --verify-paper "
+     "swallow its argument"),
+    ("MUT-HEAD-THIRD-OUTCOME", "G-HEAD-LAW-RESPONSIVE", "makes the head law's "
+     "BLOCKED branch unreachable"),
 ]
 
 
@@ -2124,8 +3032,15 @@ def parse_args(argv):
         elif a == "--verify-paper":
             opts["verify_paper"] = PAPER_REL
             if i + 1 < len(argv) and not argv[i + 1].startswith("--"):
-                opts["verify_paper"] = argv[i + 1]
+                if not mut("MUT-VERIFY-PAPER-DEAD"):
+                    opts["verify_paper"] = argv[i + 1]
                 i += 1
+            # a documented flag that swallows its argument is the #82 disease
+            # in its next dress: the PATH is resolved and required to exist
+            p = opts["verify_paper"]
+            if not os.path.exists(p if os.path.isabs(p)
+                                  else os.path.join(REPO, p)):
+                raise CliError("no such paper %r" % p)
             opts["write"] = False
         else:
             raise CliError("unknown argument %r" % a)
@@ -2153,7 +3068,8 @@ DERIVED_IN_TEXT = {
     "1": "the section numbers, the radius-1 ball, the one-step reach and the "
          "unit modulus; sections 2, 4 and 6",
     "3": "the section numbers and the 3-term stencil named in SCOPE",
-    "5": "the section numbers",
+    "5": "the section numbers, and the programme's false-claim register count "
+         "as the parent's adjudication left it; section 12",
     "7": "the section numbers",
     "9": "the section numbers",
     "10": "the section numbers",
@@ -2161,10 +3077,86 @@ DERIVED_IN_TEXT = {
     "12": "the section numbers",
     "1/2": "the coefficient moduli of the declared alphabet, quoted from the "
            "parent's construction; section 2",
+    "3/2": "the tokenizer's reading of sqrt3/2, the second coefficient of the "
+           "widened-alphabet scope witness, quoted from the parent panel's "
+           "construction; section 7",
     "6": "the section numbers and the six declared controls, which the pool "
          "counts render as 4 brickwork plus 2 scrambled; sections 2 and 5",
-    "15": "this paper's number in the programme; the header",
+    "15": "this paper's number in the programme; the header, and the RUNBOOK "
+          "section this unit's scope discipline cites in sections 7 and 12",
 }
+
+# --- #20, the polarity half ------------------------------------------------
+# The numeral instrument is complete and blind to DIRECTION: a sentence can be
+# inverted wherever its claim string also occurs elsewhere, and freely wherever
+# the inversion introduces no new numeral.  Two declared legs close that.
+#
+# (1) EXPECTED_OCCURRENCES: a claim must occur the number of times the
+#     instrument expects, so an inversion that survives on a second occurrence
+#     is caught by the count.
+# (2) POLARITY_GUARDS: for the polarity-bearing claims, a declared list of
+#     negators that must not appear in a fixed window before the claim.
+POLARITY_WINDOW = 64
+
+EXPECTED_OCCURRENCES = {
+    "moving": 3, "moving_bold": 1, "classes_moving": 1,
+    "classes_moving_lower": 2, "monomial_only": 1, "interfering_move": 2,
+    "notbloch": 2, "spectrum": 1, "vmax": 3,
+}
+
+POLARITY_GUARDS = [
+    ("moving", ("fail", "not ", "never")),
+    ("moving_bold", ("fail", "not ", "never")),
+    ("classes_moving", ("fail", "not ", "never")),
+    ("classes_moving_lower", ("fail", "not ", "never")),
+    ("monomial_only", ("non-", "fail", "never")),
+    ("interfering_move", ("fail", "never")),
+]
+
+
+def paper_polarity(R, txt):
+    """the polarity instrument: every declared claim must occur the expected
+    number of times, and no polarity-bearing claim may sit inside a window
+    carrying a declared negator."""
+    cl = paper_claims(R)
+    flat = re.sub(r"\s+", " ", txt)
+    if mut("MUT-PAPER-POLARITY"):
+        # the inversion the numeral instrument cannot see: a negator inserted
+        # in front of a claim that carries no new numeral
+        k0 = POLARITY_GUARDS[0][0]
+        v0 = re.sub(r"\s+", " ", cl[k0])
+        flat = flat.replace(v0, "fail to " + v0, 1)
+    exp = dict(EXPECTED_OCCURRENCES)
+    if mut("MUT-PAPER-OCCURRENCES"):
+        exp["moving"] = exp["moving"] + 1
+    miscounted, inverted = [], []
+    for k, want in sorted(exp.items()):
+        if k not in cl:
+            miscounted.append(k)
+            continue
+        got = flat.count(re.sub(r"\s+", " ", cl[k]))
+        if got != want:
+            miscounted.append("%s:%d!=%d" % (k, got, want))
+    guards = list(POLARITY_GUARDS)
+    for k, negators in guards:
+        if k not in cl:
+            inverted.append(k)
+            continue
+        v = re.sub(r"\s+", " ", cl[k])
+        start = 0
+        while True:
+            at = flat.find(v, start)
+            if at < 0:
+                break
+            window = flat[max(0, at - POLARITY_WINDOW):at].lower()
+            for neg in negators:
+                if neg in window:
+                    inverted.append("%s@%d:%r" % (k, at, neg))
+            start = at + 1
+    return {"claims_with_expected_occurrences": len(exp),
+            "polarity_guarded_claims": len(POLARITY_GUARDS),
+            "window": POLARITY_WINDOW,
+            "miscounted": sorted(miscounted), "inverted": sorted(inverted)}
 
 
 def paper_claims(R):
@@ -2174,6 +3166,7 @@ def paper_claims(R):
         "momenta": "16 momenta",
         "cells": "%d (family, momentum) cells" % c["cells"],
         "moving": "%d of %d families MOVE" % (c["moving"], c["families"]),
+        "moving_bold": "**%d of %d families MOVE**" % (c["moving"], c["families"]),
         "static": "%s, and it is the identity" % c["control"],
         "mu8": "every one of the %d eigenvalues is an 8th root of unity"
                % c["in_mu8"],
@@ -2197,15 +3190,53 @@ def paper_claims(R):
         "mismatched": "%d of %d" % (c["drift_winding_mismatched"], c["families"]),
         "winding": "%d families with nonzero winding, every one of them monomial"
                    % c["nonzero_winding"],
-        "interfering": "%d interfering families" % c["interfering"],
+        "interfering": "%d non-monomial families" % c["interfering"],
+        "interfering_move": "all %d of them MOVE" % c["interfering"],
         "monomial": "%d monomial families" % c["monomial"],
+        "monomial_only": "precisely this unit's %d monomial families"
+                         % c["monomial"],
         "markov": "0 of 1792",
         "classes": "%d extended classes" % c["classes_extended"],
         "classes_moving": "%d of the %d circulant classes MOVE"
                           % (c["classes_moving"], c["classes_circulant"]),
+        "classes_moving_lower": "%d of the %d circulant classes move"
+                                % (c["classes_moving"], c["classes_circulant"]),
         "notbloch": "%d classes carry no Bloch dispersion" % c["classes_not_bloch"],
         "drift_table": "16 | 12", "drift_table2": "18 | 0", "drift_table3": "24 | 0",
-        "identity_pairs": "1 of the 9 reading pairs",
+        "drift_table_alt": "16 | 15, 18 | 10 and 24 | 8",
+        "identity_pairs": "1 of the 9 tie-reading pairs",
+        "identity_full": "%d of the %d readings"
+                         % (c["full_readings_with_identity"], c["full_readings"]),
+        "normalisation": "%d of %d non-antipodal monomial coordinates"
+                         % (c["stencil_normalisation_coordinates"],
+                            c["stencil_normalisation_coordinates"]),
+        "stencil_forced": "forced to %d" % c["stencil_admitted"],
+        "residual": "residual fiber is %d" % c["residual_fiber"],
+        "residual_cells": "%d of %d cells" % (c["residual_fiber_cells_differing"],
+                                              c["velocity_cells"]),
+        "witness": "the Born drift is %s and the winding is %s"
+                   % (c["witness_drift"], c["witness_winding"]),
+        "identity_polarity": "the identity %s" % c["witness_identity"].lower(),
+        "bound_polarity": "propagation bound is %s"
+                          % ("empty" if not c["bound_has_content"]
+                             else "carrying content"),
+        "residual_polarity": "measured %s" % c["residual_fiber_inert"].lower(),
+        "witness_field": "exact in Z/%d" % c["witness_root_order"],
+        "robust_drift": "%d of the %d in position space"
+                        % (c["zero_drift_all_readings"], c["interfering"]),
+        "robust_winding": "%d of the %d on the dual torus"
+                          % (c["zero_winding_all_readings"], c["interfering"]),
+        "reach_upper": "%d families overshoot" % c["reach_over"],
+        "reach_lower": "%d fall below" % c["reach_under"],
+        "structural": "L in {4, 6, 8, 10, 12}",
+        "interior_l8": "one here, %d at L = 8" % c["interior_radii_at_l8"],
+        "class_separation": "%d of %d circulant classes"
+                            % (c["class_separation_multisets"],
+                               c["classes_circulant"]),
+        "integrality": "all %d symbols are algebraic integers"
+                       % c["algebraic_integers"],
+        "diag_defect": "%d of %d" % (c["diagonal_defect_nonzero"],
+                                     c["interfering"]),
         "verdict_values": "%d measured values" % R["totals"]["verdict_values"],
         "pool": "64 generators", "alphabet": "25 elements",
         "axes": "9 axes", "L": "L = 4", "d": "d = 2",
@@ -2216,6 +3247,8 @@ def paper_claims(R):
     if "gates" in t:
         cl.update({
             "gates": "%d gates" % t["gates"],
+            "gates_in_receipt": "%d of them evaluated inside the receipt"
+                                % t["gates_in_receipt"],
             "gates_falsifiable": "%d carrying their own injection falsifier and "
                                  "%d their registered forcing"
                                  % (t["gates_falsifiable"], t["gates_waived"]),
@@ -2224,8 +3257,15 @@ def paper_claims(R):
             "byte_anchors": "%d file-bytes anchors" % t["byte_anchors"],
             "pv_anchors": "%d path-value anchors" % t["path_value_anchors"],
             "vb_anchors": "%d verbatim-text anchors" % t["verbatim_anchors"],
+            "seals": "%d sealed objects" % t["seals"],
         })
-    if MUT == "MUT-PAPER-CLAIM":
+    # the claims that render from the CLOSED totals exist only at the FINAL
+    # coverage gate: the mutant sweep's own result cannot be known before it
+    if "mutants_killed" in t:
+        cl.update({
+            "mutants_dead": "%d declared mutants, all dead" % t["mutants_killed"],
+        })
+    if mut("MUT-PAPER-CLAIM"):
         cl["injected"] = "a claim the paper does not carry: 4242"
     return cl
 
@@ -2256,15 +3296,49 @@ def paper_coverage(R, txt):
             rendered.add(str(row["aliased_cells"]))
         if row["support"] is not None:
             rendered |= {str(row["support"]), str(row["radius"])}
-    for tbl in (R["support_drift_table"], R["support_drift_table_positive_reading"]):
+    for tbl in R["support_drift_tables"].values():
         for k, v in tbl.items():
             rendered |= {k, str(v["generators"]), str(v["nonzero_drift"])}
     rendered |= {str(v) for v in R["agreement_matrix"].values()}
+    rendered |= {str(v) for v in R["agreement_matrix_full"].values()}
     rendered |= {str(v) for v in R["resolution"].values() if isinstance(v, int)}
+    st = R["stratification"]
+    for row in st["stencil_normalisation"]:
+        rendered |= {str(row["satisfied"]), str(row["coordinates"])}
+    for row in st["structural_vmax"]:
+        rendered |= {str(row["L"]), str(row["diameter"]),
+                     row["antipodal_monomial_speed"],
+                     str(row["interior_radius_count"])}
+        rendered |= {str(x) for x in row["interior_radii"]}
+    for blk in (st["residual_fiber"], st["central_stencil_disclosure"],
+                st["cancellation_robustness"], st["class_separation"],
+                st["reach_direction"], st["defect_binding"],
+                st["arena_artifact_witness"]):
+        for v in blk.values():
+            if isinstance(v, bool):
+                continue
+            if isinstance(v, int):
+                rendered.add(str(v))
+            elif isinstance(v, str):
+                rendered |= set(re.findall(NUMERAL_RE, v))
+            elif isinstance(v, list):
+                for x in v:
+                    if isinstance(x, int):
+                        rendered.add(str(x))
+                    elif isinstance(x, str):
+                        rendered |= set(re.findall(NUMERAL_RE, x))
     rendered |= {str(len(SOURCES)), str(len(PATH_VALUE_ANCHORS)),
                  str(len(VERBATIM_ANCHORS)), str(len(MUTANTS)),
                  str(len(SOURCES) + len(PATH_VALUE_ANCHORS) + len(VERBATIM_ANCHORS)),
-                 str(len(LIFT_READINGS) * len(STENCIL_READINGS))}
+                 str(len(LIFT_READINGS) * len(STENCIL_READINGS)),
+                 str(len(LIFT_READINGS)), str(len(STENCIL_READINGS)),
+                 str(len(STENCIL_FORCED)), str(len(STRUCTURAL_SIZES)),
+                 str(len(SEALED_PATHS)), str(POLARITY_WINDOW)}
+    rendered |= {str(v) for v in R["translation_stabilisers"].values()
+                 if isinstance(v, int)}
+    for v in R["translation_stabilisers"].values():
+        if isinstance(v, list):
+            rendered |= {str(x) for x in v}
     for row in R["axes"]:
         rendered |= {str(row["order"]), str(row["radius"])}
     for k, v in R["pool_counts"].items():
@@ -2277,7 +3351,7 @@ def paper_coverage(R, txt):
     for row in R["velocity_fiber"]:
         rendered.add(str(row["cells_agreeing_with_declared"]))
     residue = dict(DERIVED_IN_TEXT)
-    if MUT == "MUT-PAPER-NUMERAL":
+    if mut("MUT-PAPER-NUMERAL"):
         rendered.discard(str(R["counts"]["moving"]))
         residue.pop("0", None)
     in_paper = set(re.findall(NUMERAL_RE, txt))
@@ -2293,6 +3367,7 @@ def paper_coverage(R, txt):
 
 
 def run_receipt_gates(S, LD, paper_text):
+    SEAL = Seal()
     R = build_receipt(S, LD)
     c = R["counts"]
 
@@ -2324,20 +3399,77 @@ def run_receipt_gates(S, LD, paper_text):
             "reconstruction %s (%d chars)"
             % ("equal" if rebuilt == R["verdict"]["string"] else "DIFFERS",
                len(rebuilt)))
+    # THE SEAL, taken at the moment the gate passed.  Everything downstream of
+    # this line is measured against these digests, never against R.
+    SEAL.take("SEAL-VERDICT-STRING", R)
+    SEAL.take("SEAL-VERDICT-HEAD", R)
+    SEAL.take("SEAL-COUNTS", R)
 
-    # the head law must be responsive: a constant head law is caught
+    # the head law must be responsive, in ALL THREE of its outcomes
     zeroed = dict(c)
     zeroed["moving"] = 0
     zeroed["static"] = zeroed["families"]
     head_zeroed = ("R4B-DISPERSION-READ" if mut("MUT-HEAD-CONSTANT")
                    else derive_head(zeroed))
+    blocked = dict(c)
+    blocked["in_mu8"] = blocked["cells"] - 1
+    head_blocked = ("R4B-DISPERSION-READ" if mut("MUT-HEAD-THIRD-OUTCOME")
+                    else derive_head(blocked))
     LD.gate("G-HEAD-LAW-RESPONSIVE",
-            "the head is named by the dispersion census and by nothing else: "
-            "with the moving count zeroed the head law returns the pin's "
-            "OTHER outcome, so a head that cannot move is not this one",
-            head_zeroed == "R4B-NO-MOTION" and head == "R4B-DISPERSION-READ",
-            "head=%s; head under a zeroed motion census=%s" % (head, head_zeroed))
+            "the head is named by the dispersion census and by nothing else, "
+            "and ALL THREE of the law's outcomes are exercised rather than "
+            "read off the source: with the moving count zeroed the law returns "
+            "the pin's NO-MOTION outcome, and with one eigenvalue outside "
+            "mu_8 it returns the pin's BLOCKED outcome -- the branch the "
+            "census closes.  A head that cannot move is not this one",
+            head_zeroed == "R4B-NO-MOTION" and head == "R4B-DISPERSION-READ"
+            and head_blocked == "R4B-BLOCKED-AT-EIGENPHASE-OUTSIDE-MU-8",
+            "head=%s; under a zeroed motion census=%s; under an eigenvalue "
+            "outside mu_8=%s" % (head, head_zeroed, head_blocked))
     R["verdict"]["head_under_zeroed_census"] = head_zeroed
+    R["verdict"]["head_under_eigenphase_outside_mu8"] = head_blocked
+
+    # ---- the PUBLISHED rows, bound at emission (#87 extended) --------------
+    fresh_rows = census_rows(S)
+    if mut("MUT-ROW-FIELD"):
+        R["dispersion_census"][1] = dict(R["dispersion_census"][1])
+        R["dispersion_census"][1]["max_speed"] = "0"
+    if mut("MUT-ROW-SWAP"):
+        ctrl_row = S["_pool"][S["_ncirc"]]
+        R["dispersion_census"][55] = dict(R["dispersion_census"][55])
+        R["dispersion_census"][55]["radius"] = ctrl_row["radius"]
+    circ_names = {S["_name"][g["local"]] for g in S["_pool"][:S["_ncirc"]]}
+    ctrl_names = {S["_name"][g["local"]] for g in S["_pool"][S["_ncirc"]:]}
+    published_bad = sorted(
+        R["dispersion_census"][i]["family"]
+        for i in range(len(fresh_rows))
+        if R["dispersion_census"][i] != fresh_rows[i])
+    class_fresh = [{"class": cc["rep"], "size": cc["size"], "kind": cc["kind"]}
+                   for cc in S["_class_rows_src"]]
+    class_bad = [r["class"] for r, f in zip(R["class_rows"], class_fresh)
+                 if (r["class"], r["size"]) != (f["class"], f["size"])]
+    anchor_bad = [a["id"] for a in R["path_value_anchors"]
+                  if a["measured"] != jpath(S["_r4"], a["path"])]
+    LD.gate("G-PUBLISHED-ROWS-BOUND",
+            "the rows the artifact SHIPS are bound to the state that produced "
+            "them, field by field: every published census row is re-rendered "
+            "from the state and compared entry for entry, the class table is "
+            "re-derived from the rebuilt partition, and every path-value "
+            "anchor's measured value is re-read from the parent's receipt at "
+            "its frozen path.  No published row may carry a control's datum "
+            "under a census label, and no field may move after the object "
+            "gates closed",
+            not published_bad and not class_bad and not anchor_bad
+            and len(R["dispersion_census"]) == len(fresh_rows)
+            and {r["family"] for r in R["dispersion_census"]} == circ_names
+            and not ({r["family"] for r in R["dispersion_census"]} & ctrl_names),
+            "rows differing from a fresh rendering %s over %d; class rows %s; "
+            "path-value anchors %s"
+            % (published_bad or "none", len(fresh_rows), class_bad or "none",
+               anchor_bad or "none"))
+    for sid, _p, gname in SEALED_PATHS:
+        if gname == "G-PUBLISHED-ROWS-BOUND":
+            SEAL.take(sid, R)
 
     # ---- flip probes for every verdict value ------------------------------
     flip_keys = sorted({k for _, ks in SEGMENT_KEYS for k in ks})
@@ -2447,6 +3579,13 @@ def run_receipt_gates(S, LD, paper_text):
     # ---- the instrument's own totals, PREDICTED here and verified at the end
     R["totals"].update({
         "gates": len(LD.rows) + PENDING_GATES,
+        # the receipt can carry every gate but the terminal integrity gate,
+        # which is evaluated in the writing path -- after the payload it
+        # verifies has been serialized.  The count says so rather than
+        # anticipating it (the delivered figure is what was EVALUATED here).
+        "gates_in_receipt": len(LD.rows) + PENDING_GATES - 1,
+        "integrity_gate": "EVALUATED-IN-THE-WRITING-PATH-AGAINST-THE-GATE-TIME-"
+                          "SEAL-REPORTED-ON-STDOUT",
         "gates_waived": len(FORCINGS),
         "gates_falsifiable": len(LD.rows) + PENDING_GATES - len(FORCINGS),
         "anchors": len(SOURCES) + len(PATH_VALUE_ANCHORS) + len(VERBATIM_ANCHORS),
@@ -2454,6 +3593,7 @@ def run_receipt_gates(S, LD, paper_text):
         "path_value_anchors": len(PATH_VALUE_ANCHORS),
         "verbatim_anchors": len(VERBATIM_ANCHORS),
         "mutants": len(MUTANTS),
+        "seals": len(SEALED_PATHS),
         "families": c["families"],
         "census_cells": c["cells"],
     })
@@ -2477,7 +3617,21 @@ def run_receipt_gates(S, LD, paper_text):
                                 cov["residue_declared_but_absent"] or "none",
                                 cov["distinct_numerals"],
                                 cov["numeral_occurrences"]))
+    pol = paper_polarity(R, paper_text)
+    LD.gate("G-PAPER-CLAIM-POLARITY",
+            "the paper-claim instrument is given DIRECTION: every declared "
+            "claim must occur the number of times the receipt expects -- so an "
+            "inversion that survives on a second occurrence of the same string "
+            "is caught by the count -- and no polarity-bearing claim may sit "
+            "behind a declared negator.  A numeral-complete check is blind to "
+            "an inverted sentence that introduces no numeral; this is not",
+            not pol["miscounted"] and not pol["inverted"],
+            "miscounted %s; inverted %s; %d counted claims, %d guarded"
+            % (pol["miscounted"] or "none", pol["inverted"] or "none",
+               pol["claims_with_expected_occurrences"],
+               pol["polarity_guarded_claims"]))
     R["paper_coverage"] = cov
+    R["paper_polarity"] = pol
     R["paper_claims"] = paper_claims(R)
 
     # ---- the CLI -----------------------------------------------------------
@@ -2488,6 +3642,7 @@ def run_receipt_gates(S, LD, paper_text):
                               (["--break-anchor"], True),
                               (["--no-write"], False), (["--selftest"], False),
                               (["--verify-paper"], False),
+                              (["--verify-paper", PAPER_REL], False),
                               (["--mutant", MUTANTS[0][0]], False)):
         parser = parse_args_permissive if mut("MUT-CLI-PERMISSIVE") else parse_args
         rejected = cli_error_probe(parser, argv)
@@ -2510,13 +3665,24 @@ def run_receipt_gates(S, LD, paper_text):
              and parse_args(["--mutant", MUTANTS[0][0]])["write"] is False
              and parse_args(["--break-anchor", SOURCES[0][0]])["write"] is False),
             "selftest/mutant/break-anchor all write=False")
+    vp_default = parse_args(["--verify-paper"])["verify_paper"]
+    vp_named = parse_args(["--verify-paper", SOURCES[7][1]])["verify_paper"]
+    LD.gate("G-VERIFY-PAPER-LIVE",
+            "--verify-paper is not a documented no-op: the parser carries the "
+            "PATH it was given rather than swallowing it, a PATH that does not "
+            "exist is rejected before any run begins, and the flag's run "
+            "evaluates the same paper gates the delivery run does",
+            vp_default == PAPER_REL and vp_named == SOURCES[7][1]
+            and cli_error_probe(parse_args, ["--verify-paper", "v14/NOPE.md"]),
+            "default=%s; named path carried=%s; nonexistent path rejected"
+            % (vp_default, vp_named))
     R["cli_probes"] = probes
 
     # ---- coverage of the ledger itself ------------------------------------
     targeted = {m[1] for m in MUTANTS}
     evaluated = ({r["gate"] for r in LD.rows} | set(POST_LOOP_GATES)
                  | {"G-GATE-MUTANT-COVERAGE", "G-WAIVERS-VERIFIED",
-                    "G-ANCHOR-CONSUMERS-EXIST"})
+                    "G-ANCHOR-CONSUMERS-EXIST", "G-SEAL-COMPLETE"})
     if mut("MUT-REGISTRY"):
         evaluated = evaluated | {"G-NEVER-REACHED"}
     untargeted = sorted(g for g in evaluated
@@ -2565,17 +3731,41 @@ def run_receipt_gates(S, LD, paper_text):
                sum(1 for w in waivers if w["status"] == "WAIVED"),
                unregistered or "none"))
     R["waiver_ledger"] = waivers
-    return R, Rjson
+    SEAL.take("SEAL-WAIVERS", R)
+
+    # ---- THE GATE-TO-DISK SEAL, in-run half --------------------------------
+    if mut("MUT-SEAL-BROKEN"):
+        R["counts"] = dict(R["counts"])
+        R["counts"]["moving"] = 0        # the post-gate window, exercised
+    broken = SEAL.verify(R)
+    LD.gate("G-SEAL-COMPLETE",
+            "every object this run will publish was DIGESTED AT THE MOMENT ITS "
+            "GATE PASSED, and every one of those digests still describes the "
+            "object now: a gate that fires on something still mutable when the "
+            "artifact is built has not gated the artifact.  The seals taken "
+            "before the mutant sweep are enumerated against the frozen "
+            "declaration and re-verified here; the remainder are sealed at "
+            "their own gates and checked against the BYTES ON DISK by the "
+            "terminal integrity gate",
+            not broken
+            and sorted(r["seal"] for r in SEAL.rows) == sorted(SEALS_IN_RUN),
+            "seals taken %d of %d declared; broken %s"
+            % (len(SEAL.rows), len(SEALED_PATHS), broken or "none"))
+    R["seals"] = SEAL.rows
+    return R, Rjson, SEAL
 
 
 POST_LOOP_GATES = ("G-MUTANTS-ON-TARGET", "G-ARTIFACT-INTEGRITY",
                    "G-PAPER-COVERAGE-FINAL")
 
 # the gates still to be evaluated when the totals are predicted, counted from
-# the declaration site: the two in-run paper gates, the CLI pair, the two
-# ledger-coverage gates, the mutant adjudication, the final paper gate and the
-# integrity gate.  The prediction is verified against the count reached.
-PENDING_GATES = 10
+# the declaration site: the three in-run paper gates (claims, numerals,
+# polarity), the CLI trio (contract, selftest-writes-nothing, verify-paper),
+# the three ledger-coverage gates (mutant coverage, anchor consumers, waivers),
+# the seal gate, then -- outside this function -- the mutant adjudication, the
+# final paper gate and the terminal integrity gate.  The prediction is verified
+# against the count actually reached, in both directions.
+PENDING_GATES = 13
 
 
 def source_text():
@@ -2635,8 +3825,10 @@ def _decoy_laundered_gate(LD):
 
 def scan_laundering(txt):
     """the standing #208 probe: walk every LD.gate(...) call and report any
-    whose PREDICATE argument reads the mutant switch.  A gate that exempts its
-    own falsifier is the laundering shape and is named here."""
+    whose PREDICATE argument reads the mutant switch -- BY EITHER SHAPE: a call
+    to mut(...), or a bare load of the MUT global, which is the bypass the
+    call-shaped scan misses.  A gate that exempts its own falsifier is the
+    laundering shape and is named here."""
     bad = []
     for node in ast.walk(ast.parse(txt)):
         if (isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)
@@ -2647,6 +3839,9 @@ def scan_laundering(txt):
                 if (isinstance(sub, ast.Call) and isinstance(sub.func, ast.Name)
                         and sub.func.id == "mut"):
                     bad.append(gid)
+                if (isinstance(sub, ast.Name) and sub.id == "MUT"
+                        and isinstance(sub.ctx, ast.Load)):
+                    bad.append(gid)
     return sorted(set(bad))
 
 
@@ -2654,7 +3849,7 @@ def scan_laundering(txt):
 # SECTION 10.  REPORT
 # ===========================================================================
 
-def emit_report(R, S):
+def emit_report(R, S, SEAL):
     c = R["counts"]
     say("")
     say("-" * 78)
@@ -2677,6 +3872,9 @@ def emit_report(R, S):
     say("  axes (offset, order, radius): %s"
         % [(tuple(a["axis"]), a["order"], a["radius"]) for a in R["axes"]])
     say("  extended classes %d, sizes %s" % (c["classes_extended"], R["class_sizes"]))
+    say("  translation stabilisers %s" % R["translation_stabilisers"])
+    say("  the instrument that produced this receipt: %s"
+        % R["source_sha256"][:12])
     say("")
     say("THE DISPERSION CENSUS (exact, Q(zeta_8); phases are elements of Z/8)")
     say("  (family, momentum) cells            %d" % c["cells"])
@@ -2740,22 +3938,59 @@ def emit_report(R, S):
     say("  the bound has content: %s" % c["bound_has_content"])
     say("  the resolution relation: %s" % R["resolution"])
     say("")
+    say("THE VELOCITY READING, STRATIFIED")
+    st = R["stratification"]
+    say("  the declared normalisation (a monomial shift by o has velocity o), "
+        "by stencil:")
+    for row in st["stencil_normalisation"]:
+        say("    %-9s %d of %d non-antipodal monomial coordinates   %s"
+            % (row["stencil"], row["satisfied"], row["coordinates"],
+               "ADMITTED" if row["admitted"] else "REJECTED"))
+    say("  stencil FORCED to %s; lift SELECTED by the identity; residual fiber "
+        "%d" % (st["stencil_admitted"], st["residual_fiber"]["residual_fiber"]))
+    say("  the residual fiber, measured inert: %s" % st["residual_fiber"])
+    say("  what the rejected stencil would have said: %s"
+        % st["central_stencil_disclosure"])
+    say("  VMAX = diameter, at every even L:")
+    for row in st["structural_vmax"]:
+        say("    L=%-3d diameter %d  antipodal monomial speed %s  interior "
+            "radii %s" % (row["L"], row["diameter"],
+                          row["antipodal_monomial_speed"],
+                          row["interior_radii"]))
+    say("  the reach bound, by direction: %s" % st["reach_direction"])
+    say("")
     say("TRANSPORT: THE DRIFT AND THE WINDING")
-    say("  support -> [generators, nonzero drift] under the tie-averaged "
-        "reading: %s" % R["support_drift_table"])
-    say("  drift == winding, by reading pair:")
+    for reading in LIFT_READINGS:
+        say("  support -> [generators, nonzero drift] under the %-13s "
+            "reading: %s" % (reading, R["support_drift_tables"][reading]))
+    say("  drift == winding, by tie-reading pair:")
     for k in sorted(R["agreement_matrix"]):
         say("    drift %-13s vs winding %-13s : %d of %d"
             % tuple(k.split("|") + [R["agreement_matrix"][k], c["families"]]))
+    say("  over the %d lift x lift x stencil readings the identity holds at %d"
+        % (c["full_readings"], c["full_readings_with_identity"]))
+    say("  THE SCOPE WITNESS (the identity is an arena instrument): %s"
+        % st["arena_artifact_witness"])
     say("  nonzero winding %d, all monomial (of %d monomial families)"
         % (c["nonzero_winding"], c["monomial"]))
-    say("  interfering families %d: all with zero net transport, all MOVING (%d)"
-        % (c["interfering"], c["interfering_moving"]))
+    say("  non-monomial families %d: all MOVING (%d), all with zero net "
+        "transport at the selected reading (%d)"
+        % (c["interfering"], c["interfering_moving"], c["interfering_zero_net"]))
+    say("  the zero, stratified by the tie: %s" % st["cancellation_robustness"])
+    say("  the word bound to the parent's rows: %s" % st["defect_binding"])
+    say("  the like-for-like class separation: %s" % st["class_separation"])
     say("  inherited: the Markovian control is %d of %d nonzero"
         % (c["markov_nonzero"], c["markov_pairs"]))
     say("")
     say("PAPER CLAIM COVERAGE")
     say("  %s" % R["paper_coverage"])
+    say("  polarity %s" % R["paper_polarity"])
+    say("")
+    say("THE GATE-TIME SEAL")
+    for row in R["seals"]:
+        say("  %-22s %-24s sealed at %-26s %s"
+            % (row["seal"], row["path"], row["sealed_at_gate"],
+               row["sha256_12"]))
     say("")
     say("THE VERDICT")
     say("")
@@ -2769,10 +4004,17 @@ def emit_report(R, S):
     for n in R["not_executed"]:
         say("  - %s" % n)
     say("")
-    say("ALL GATES PASSED (%d/%d); ALL MUTANTS DEAD (%d/%d)"
-        % (R["totals"]["gates_passed"], R["totals"]["gates"],
-           R["totals"]["mutants_killed"], R["totals"]["mutants"]))
+    say("ALL GATES PASSED (%d/%d IN THE RECEIPT; the last of the %d declared "
+        "is the terminal integrity gate, evaluated in the writing path); ALL "
+        "MUTANTS DEAD (%d/%d)"
+        % (R["totals"]["gates_passed_in_receipt"], R["totals"]["gates_in_receipt"],
+           R["totals"]["gates"], R["totals"]["mutants_killed"],
+           R["totals"]["mutants"]))
     say("EXIT 0")
+    # the transcript is sealed AT THE MOMENT IT IS COMPOSED, so there is no
+    # window between the last line written and the digest the writer is
+    # measured against
+    SEAL.close_transcript("\n".join(LOG) + "\n")
 
 
 NOT_EXECUTED = [
@@ -2789,9 +4031,15 @@ NOT_EXECUTED = [
     "measured, exactly as in the parent",
     "no state is propagated: the group velocity is read off the exact "
     "eigenphase, and no wavepacket is constructed or evolved",
-    "the alphabet is not widened; the effectus review's constructive "
-    "motion-carrying generator over Q(i, sqrt 3) is outside this unit's "
-    "declared field and is not built",
+    "the alphabet is NOT widened as a census: the parent panel's "
+    "motion-carrying generator over Q(i, sqrt 3) is rebuilt as a single SCOPE "
+    "WITNESS -- one generator, in a second field used nowhere else -- to show "
+    "that the selecting identity fails there.  No census is run over the wider "
+    "field and no result of this unit is claimed for it",
+    "the selection criterion's DOMAIN is not censused: one counterexample is "
+    "exhibited, not a sweep, so whether the drift = winding identity fails "
+    "generically over widened alphabets is open and is this unit's most "
+    "consequential registered open",
 ]
 
 
@@ -2824,9 +4072,9 @@ def selftest():
 
 def full_run(break_anchor, paper_text):
     S, LD = build_state(break_anchor)
-    say("[9/10] the verdict, its reconstruction, and the receipt gates")
-    R, Rjson = run_receipt_gates(S, LD, paper_text)
-    return S, LD, R, Rjson
+    say("[9/10] the verdict, its reconstruction, the seal and the receipt gates")
+    R, Rjson, SEAL = run_receipt_gates(S, LD, paper_text)
+    return S, LD, R, Rjson, SEAL
 
 
 def main():
@@ -2852,16 +4100,30 @@ def main():
     if opts["break_anchor"]:
         say("ANCHOR BREAK SELF-TEST: %s" % opts["break_anchor"])
 
-    paper_path = os.path.join(REPO, PAPER_REL)
+    paper_rel = opts["verify_paper"] or PAPER_REL
+    paper_path = (paper_rel if os.path.isabs(paper_rel)
+                  else os.path.join(REPO, paper_rel))
+    if opts["verify_paper"]:
+        say("VERIFY-PAPER: the object under test is %s" % paper_rel)
     paper_text = read_text(paper_path) if os.path.exists(paper_path) else ""
 
     try:
-        S, LD, R, Rjson = full_run(opts["break_anchor"], paper_text)
+        S, LD, R, Rjson, SEAL = full_run(opts["break_anchor"], paper_text)
     except GateFail as e:
         say("")
         say("GATE FAILED: %s" % e)
         say("EXIT 1")
         sys.exit(1)
+
+    if opts["verify_paper"]:
+        say("")
+        say("VERIFY-PAPER: %s" % paper_rel)
+        say("  coverage %s" % R["paper_coverage"])
+        say("  polarity %s" % R["paper_polarity"])
+        say("  every claim rendered, every numeral covered, every polarity "
+            "held: the three paper gates passed on this file.")
+        say("EXIT 0")
+        sys.exit(0)
 
     if MUT or opts["break_anchor"]:
         say("")
@@ -2906,22 +4168,25 @@ def main():
             "killed %d of %d; off target %s"
             % (sum(1 for m in report if m["killed"]), len(MUTANTS), off or "none"))
 
-    R["gates"] = LD.rows
     R["mutants"] = report
+    SEAL.take("SEAL-MUTANTS", R)
+    R["gates"] = LD.rows
     R["not_executed"] = NOT_EXECUTED
     waivers = R["waiver_ledger"]
 
     R["totals"].update({
         "mutants_killed": sum(1 for m in report if m["killed"]),
         "mutants_on_target": on_target,
-        "gates_passed": sum(1 for g in LD.rows if g["passed"]) + 2,
+        "gates_passed_in_receipt": sum(1 for g in LD.rows if g["passed"]) + 1,
     })
 
     # THE PREDICTION CLOSES.  The gate count was declared BEFORE the paper
-    # gates ran; it must be exactly the count the run reaches.  Two ledger rows
-    # are still to come -- the final paper gate below -- plus the integrity
-    # gate that only the writing path evaluates.
+    # gates ran; it must be exactly the count the run reaches.  One ledger row
+    # is still to come -- the final paper gate below -- plus the integrity gate
+    # that only the writing path evaluates and that the receipt therefore
+    # cannot carry.
     if (R["totals"]["gates"] != len(LD.rows) + 2
+            or R["totals"]["gates_in_receipt"] != len(LD.rows) + 1
             or R["totals"]["gates_falsifiable"]
             != sum(1 for w in waivers if w["status"] == "FALSIFIABLE")
             or R["totals"]["gates_waived"]
@@ -2954,42 +4219,69 @@ def main():
         say("EXIT 1")
         sys.exit(1)
     R["paper_coverage"] = cov
+    R["paper_polarity"] = paper_polarity(R, paper_text)
     R["paper_claims"] = paper_claims(R)
     R["gates"] = LD.rows
+    SEAL.take("SEAL-GATES", R)
+    SEAL.take("SEAL-TOTALS", R)
+    SEAL.take("SEAL-COVERAGE", R)
 
-    emit_report(R, S)
+    # THE PAYLOAD IS SEALED HERE, at the moment the last receipt gate passed,
+    # and only if every earlier seal still verifies.  Nothing below this line
+    # can reach the bytes that will be written.
+    SEAL.close(R, json.dumps(R, indent=1, sort_keys=True))
+    emit_report(R, S, SEAL)
 
     if write:
-        payload = json.dumps(R, indent=1, sort_keys=True)
-        text = "\n".join(LOG) + "\n"
-        # THE FINAL INTEGRITY GATE, two-way.  First the negative control: a
-        # deliberately corrupted payload is written to a probe path and re-read,
-        # and the comparator must NOTICE.  Only then are the real artifacts
-        # written and required to match, byte for byte, with the verdict
-        # reconstructed from the bytes that landed on disk.
+        payload, text = SEAL.payload, SEAL.transcript
+        # THE FINAL INTEGRITY GATE, two-way, AGAINST THE SEAL.  First the
+        # negative control: a deliberately corrupted payload is written to a
+        # probe path and re-read, and the comparator must NOTICE.  Then the
+        # artifacts are written to temporaries, re-read, and required to match
+        # the GATE-TIME SEAL -- never a re-derivation from the bytes on disk,
+        # which would confirm a corruption rather than catch it.  Only then are
+        # the temporaries moved into place, and the final files are verified
+        # again.  A failure leaves the previous artifacts untouched.
         probe_path = OUT_JSON + ".integrity-probe"
         with open(probe_path, "w", encoding="utf-8") as f:
             f.write(payload[:-1] + " }")
-        detected = read_text(probe_path) != payload
+        detected = digest(read_text(probe_path)) != SEAL.payload_sha
         os.remove(probe_path)
-        with open(OUT_JSON, "w", encoding="utf-8") as f:
+
+        def against_the_seal(js, tx):
+            if digest(js) != SEAL.payload_sha or digest(tx) != SEAL.transcript_sha:
+                return False
+            disk = json.loads(js)
+            if SEAL.verify(disk):
+                return False
+            return (disk["verdict"]["string"] == SEAL.verdict_string
+                    and reconstruct_from_serialized(js) == SEAL.verdict_string)
+
+        tmp_json, tmp_txt = OUT_JSON + ".tmp", OUT_TXT + ".tmp"
+        with open(tmp_json, "w", encoding="utf-8") as f:
             f.write(payload)
-        with open(OUT_TXT, "w", encoding="utf-8") as f:
+        with open(tmp_txt, "w", encoding="utf-8") as f:
             f.write(text)
-        back_json = read_text(OUT_JSON)
-        back_txt = read_text(OUT_TXT)
-        ok = (detected and back_json == payload and back_txt == text
-              and json.loads(back_json)["verdict"]["string"] == R["verdict"]["string"]
-              and reconstruct_from_serialized(back_json) == R["verdict"]["string"])
+        ok = detected and against_the_seal(read_text(tmp_json), read_text(tmp_txt))
         if not ok:
+            os.remove(tmp_json)
+            os.remove(tmp_txt)
+            print("GATE FAILED: G-ARTIFACT-INTEGRITY :: what was about to be "
+                  "written does not match the gate-time seal (corruption "
+                  "detected=%s); nothing written" % detected, flush=True)
+            sys.exit(1)
+        os.replace(tmp_json, OUT_JSON)
+        os.replace(tmp_txt, OUT_TXT)
+        if not against_the_seal(read_text(OUT_JSON), read_text(OUT_TXT)):
             print("GATE FAILED: G-ARTIFACT-INTEGRITY :: the artifacts on disk "
-                  "differ from what was built (corruption detected=%s)" % detected,
-                  flush=True)
+                  "differ from the gate-time seal", flush=True)
             sys.exit(1)
         print("G-ARTIFACT-INTEGRITY: corrupted probe detected; both artifacts "
-              "re-read from disk and byte-identical to what was built; the "
-              "verdict reconstructs from the bytes on disk (%d + %d bytes)."
-              % (len(payload), len(text)), flush=True)
+              "written from the SEALED payload, re-read from disk and matched "
+              "against the gate-time seal -- %d sealed objects, payload %s, "
+              "transcript %s (%d + %d bytes)."
+              % (len(SEAL.rows), SEAL.payload_sha, SEAL.transcript_sha,
+                 len(payload), len(text)), flush=True)
     sys.exit(0)
 
 

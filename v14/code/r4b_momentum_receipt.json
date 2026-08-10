@@ -10,12 +10,41 @@
   "TIE-AVERAGED|POSITIVE": 39,
   "TIE-AVERAGED|TIE-AVERAGED": 58
  },
+ "agreement_matrix_full": {
+  "NEGATIVE|NEGATIVE|BACKWARD": 25,
+  "NEGATIVE|NEGATIVE|CENTRAL": 20,
+  "NEGATIVE|NEGATIVE|FORWARD": 25,
+  "NEGATIVE|POSITIVE|BACKWARD": 32,
+  "NEGATIVE|POSITIVE|CENTRAL": 20,
+  "NEGATIVE|POSITIVE|FORWARD": 32,
+  "NEGATIVE|TIE-AVERAGED|BACKWARD": 33,
+  "NEGATIVE|TIE-AVERAGED|CENTRAL": 25,
+  "NEGATIVE|TIE-AVERAGED|FORWARD": 33,
+  "POSITIVE|NEGATIVE|BACKWARD": 32,
+  "POSITIVE|NEGATIVE|CENTRAL": 20,
+  "POSITIVE|NEGATIVE|FORWARD": 32,
+  "POSITIVE|POSITIVE|BACKWARD": 25,
+  "POSITIVE|POSITIVE|CENTRAL": 20,
+  "POSITIVE|POSITIVE|FORWARD": 25,
+  "POSITIVE|TIE-AVERAGED|BACKWARD": 33,
+  "POSITIVE|TIE-AVERAGED|CENTRAL": 25,
+  "POSITIVE|TIE-AVERAGED|FORWARD": 33,
+  "TIE-AVERAGED|NEGATIVE|BACKWARD": 39,
+  "TIE-AVERAGED|NEGATIVE|CENTRAL": 39,
+  "TIE-AVERAGED|NEGATIVE|FORWARD": 39,
+  "TIE-AVERAGED|POSITIVE|BACKWARD": 39,
+  "TIE-AVERAGED|POSITIVE|CENTRAL": 39,
+  "TIE-AVERAGED|POSITIVE|FORWARD": 39,
+  "TIE-AVERAGED|TIE-AVERAGED|BACKWARD": 58,
+  "TIE-AVERAGED|TIE-AVERAGED|CENTRAL": 46,
+  "TIE-AVERAGED|TIE-AVERAGED|FORWARD": 58
+ },
  "arena_declaration": {
   "arena": "the anchored chart group and R4's declared extension by the square point group; the 22 extended classes are inherited and rebuilt",
   "boundary": "the finite periodic site lattice X = (Z_L)^d with d = 2 and L = 4 read from the parent's anchored receipt; the carrier is the single-occupation sector, so |C| = |X| = 16",
   "division_events": "inherited unchanged from the parent: t = 0 and t = 2 are division events, the cut at t = 1 is not; indivisibility is DECLARED by those times and is never measured here",
   "family": "R4's terminal family, rebuilt here from its definitions and gated row by row against the parent receipt: the 58 translation-covariant (circulant) unitary generators on the 3-term axis stencil over the declared 25-element alphabet, plus the 6 declared controls",
-  "law": "the Bloch eigenphase s(k) in Z/8 defined by lambda(k) = zeta_8^{s(k)}; the group velocity is the declared discrete derivative of the phase on the dual torus",
+  "law": "the Bloch eigenphase s(k) in Z/8 defined by lambda(k) = zeta_8^{s(k)}; the group velocity is a discrete derivative of the phase on the dual torus whose TWO COORDINATES ARE DATA: the difference STENCIL (forward | backward | central), FORCED to {forward, backward} by the declared monomial normalisation, and the antipodal-TIE LIFT (tie-averaged | positive | negative), SELECTED to tie-averaged in this arena by the drift = winding identity.  The residual fiber is 2 -- forward and backward -- measured inert on every quantity this unit reports and differing only in the cell-level labelling of signed velocity",
   "momentum": "THE DUAL TORUS, declared as data: the 16 characters chi_k(x) = zeta_4^{k.x} for k in (Z_4)^2.  Every circulant is diagonal in this basis; the eigenvalue is the symbol and its exponent is the exact eigenphase"
  },
  "arithmetic": "fractions.Fraction 4-tuples over Q(zeta_8) modulo x^4 + 1; eigenphases exact in Z/8; velocities exact rationals; no floats",
@@ -461,6 +490,14 @@
   },
   {
    "argv": [
+    "--verify-paper",
+    "v14/paper-15-momentum.md"
+   ],
+   "must_reject": false,
+   "rejected": false
+  },
+  {
+   "argv": [
     "--mutant",
     "MUT-ANCHOR"
    ],
@@ -470,12 +507,15 @@
  ],
  "counts": {
   "L": 4,
+  "algebraic_integers": 928,
   "aliased_cells": 320,
   "aliased_families": 19,
   "alphabet": 25,
   "bound_has_content": false,
   "cells": 928,
+  "character_convention_fiber": 2,
   "class_labels": 14,
+  "class_separation_multisets": 19,
   "classes_circulant": 19,
   "classes_extended": 22,
   "classes_moving": 18,
@@ -485,6 +525,7 @@
   "connective_tag": "MAX-NORM",
   "control": "C004",
   "d": 2,
+  "diagonal_defect_nonzero": 42,
   "diameter": 2,
   "distinct_profiles": 58,
   "drift_winding_matched": 58,
@@ -493,14 +534,18 @@
   "families": 58,
   "field": "Q(ZETA-8)",
   "forcing_link": "(1,1)",
+  "full_readings": 27,
+  "full_readings_with_identity": 2,
   "in_mu8": 928,
   "indivisibility": "DECLARED-BY-DIVISION-EVENT-TIMES",
   "integer_velocities": 1856,
   "interfering": 42,
   "interfering_moving": 42,
+  "interfering_zero_net": 42,
   "interior_radii": [
    1
   ],
+  "interior_radii_at_l8": 3,
   "markov_nonzero": 0,
   "markov_pairs": 1792,
   "max_defect_radius": 2,
@@ -517,6 +562,9 @@
   "reach_under": 14,
   "reading_pairs": 9,
   "reading_pairs_with_identity": 1,
+  "residual_fiber": 2,
+  "residual_fiber_cells_differing": 768,
+  "residual_fiber_inert": "INERT",
   "sector": "SINGLE-OCCUPATION",
   "separations": 16,
   "separations_ceiling": 16,
@@ -528,11 +576,20 @@
   ],
   "static": 1,
   "stencil": "3-TERM-AXIS",
+  "stencil_admitted": 2,
+  "stencil_normalisation_coordinates": 384,
+  "structural_sizes": 5,
   "unit_modulus": 928,
   "velocity_cells": 1856,
   "velocity_definition": "FORWARD-DIFFERENCE-WITH-TIE-AVERAGED",
   "velocity_fiber": 9,
-  "vmax": "2"
+  "vmax": "2",
+  "witness_drift": "-1/2",
+  "witness_identity": "FAILS",
+  "witness_root_order": 12,
+  "witness_winding": "-1",
+  "zero_drift_all_readings": 24,
+  "zero_winding_all_readings": 30
  },
  "dispersion_census": [
   {
@@ -5565,8 +5622,22 @@
  "gates": [
   {
    "claim": "every verbatim anchor is a context window present in its pinned source, and each is bound to the named gate that consumes it (#34: evaluated before the byte anchors)",
-   "detail": "missing none over 13 windows",
+   "detail": "missing none over 14 windows",
    "gate": "G-VERBATIM-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "a window is an ANCHOR only if its BYTES are pinned: every verbatim window's sha256-12 equals the digest this unit froze, so a window silently shortened to a decoration -- the failure mode a bare substring test admits -- is caught rather than displayed (#62, the parent's window_sha256_12 field restored)",
+   "detail": "windows off their frozen digest: none over 14",
+   "gate": "G-VERBATIM-WINDOW-DIGESTS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every verbatim window occurs EXACTLY ONCE in its pinned source: a window that matches in several places does not identify the sentence it claims to quote",
+   "detail": "windows not occurring exactly once: none over 14",
+   "gate": "G-VERBATIM-WINDOWS-UNIQUE",
    "kind": "MEASURED",
    "passed": true
   },
@@ -5718,8 +5789,8 @@
    "passed": true
   },
   {
-   "claim": "the finite legs of the reason the eigenvalues cannot be anything else: every coefficient has a 2-power denominator, so a unit-modulus symbol is a unit of Z[zeta_8] with all conjugates of modulus 1, hence a root of unity, hence one of the 8 the field contains",
-   "detail": "odd parts of coefficient denominators [1]; roots of unity in the field 8",
+   "claim": "the finite legs of the reason the eigenvalues cannot be anything else: every coefficient has a 2-power denominator, and 2 is totally ramified in Q(zeta_8), so a unit-modulus symbol is an ALGEBRAIC INTEGER -- measured here as the integrality of the characteristic polynomial of multiplication by the symbol at every cell -- and a unit of Z[zeta_8] all of whose conjugates have modulus 1, hence a root of unity, hence one of the 8 the field contains",
+   "detail": "odd parts of coefficient denominators [1]; roots of unity in the field 8; symbols with a non-integral characteristic polynomial none over 928 cells",
    "gate": "G-MU8-THEOREM-LEGS",
    "kind": "MEASURED",
    "passed": true
@@ -5760,7 +5831,7 @@
    "passed": true
   },
   {
-   "claim": "the speed of a cell is the circle distance of its phase difference divided by two: a BRANCH-FREE exact rational, independent of every reading in the fiber, because the distance of an element of Z/8 to zero does not depend on how the antipode is signed",
+   "claim": "the speed of a cell is the circle distance of its phase difference divided by two: a BRANCH-FREE exact rational, independent of every reading OF THE TIE -- of all three lifts -- because the distance of an element of Z/8 to zero does not depend on how the antipode is signed.  (Independence of the STENCIL coordinate is a different statement and is measured separately, at G-RESIDUAL-FIBER-INERT.)",
    "detail": "speed spectrum ['0', '1', '2']",
    "gate": "G-SPEED-CANONICAL",
    "kind": "MEASURED",
@@ -5784,6 +5855,20 @@
    "claim": "the velocity definition is DECLARED as data and its fiber is printed: three readings of the antipodal tie times three difference stencils, all computed, and the readings differ from the declared one at exactly the aliased cells and nowhere else",
    "detail": "fiber rows 9; the two other lifts agree at 1536 of 1856 cells (= all but the aliased)",
    "gate": "G-VELOCITY-DEFINITION-FIBER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the STENCIL coordinate of the velocity definition is not free: the definition's own declared normalisation -- a monomial shift by an offset o has velocity o -- is evaluated as a CRITERION over every monomial family, momentum, direction and non-antipodal offset coordinate, and it admits exactly the forward and backward stencils, at every one of those coordinates, while the central stencil FAILS it.  The fiber of 9 is therefore 3 lifts times 2 admissible stencils, and the third stencil is excluded by the definition rather than by fiat",
+   "detail": "admitted ['FORWARD', 'BACKWARD']; [('FORWARD', '384/384'), ('BACKWARD', '384/384'), ('CENTRAL', '128/384')]",
+   "gate": "G-STENCIL-FORCED-BY-NORMALISATION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the residual fiber is 2 -- forward and backward -- and it is measured INERT, not asserted inert: the per-family maximal speed, the speed spectrum, VMAX, the aliasing census and the motion head are identical under both admissible stencils, family by family and cell count for cell count.  The two readings are not the same velocity field: they disagree on the SIGN of the velocity at a measured share of cells, and that is the whole of the residual declaration",
+   "detail": "{'residual_fiber': 2, 'members': ['FORWARD', 'BACKWARD'], 'per_family_max_speed_identical': True, 'spectrum_identical': True, 'aliased_cells_identical': True, 'aliased_families_identical': True, 'motion_head_identical': True, 'signed_velocity_cells_differing': 768, 'cells': 1856}",
+   "gate": "G-RESIDUAL-FIBER-INERT",
    "kind": "MEASURED",
    "passed": true
   },
@@ -5823,9 +5908,23 @@
    "passed": true
   },
   {
+   "claim": "the non-diagonality of the controls is a THEOREM, not only a measurement: a generator is diagonal in the lattice characters if and only if it commutes with every translation, i.e. iff its translation stabiliser is the whole group.  Measured here: the generators with the full stabiliser are exactly the circulant family, every control's stabiliser is proper -- the brickwork generators' is of INDEX TWO -- and therefore no control can be Bloch diagonal.  The measurement above and this forcing agree",
+   "detail": "full-stabiliser generators 58 = the 58 circulants; control stabilisers [1, 2, 8], all proper; brickwork index 2; measured not-Bloch 6 of 6",
+   "gate": "G-NOT-BLOCH-FORCED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "the propagation question, asked of every family separately: does the family's maximal group speed bound the max-norm reach of one step of that family, which is exactly its support radius?  Each of the 58 families answers for itself",
    "detail": "speed > reach: 8; speed < reach: 14; equal: 36",
    "gate": "G-REACH-BOUND-PER-FAMILY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "which count falsifies which bound is DERIVED, not labelled: an upper bound on the one-step reach is falsified exactly by the families whose speed EXCEEDS their own reach, and a lower bound exactly by the families whose speed falls BELOW it.  Both fail here, at different counts, and the verdict carries both",
+   "detail": "upper bound holds=False (falsified by the 8 overshooters); lower bound holds=False (falsified by the 14 undershooters); saturating 36",
+   "gate": "G-REACH-BOUND-DIRECTION",
    "kind": "MEASURED",
    "passed": true
   },
@@ -5837,9 +5936,16 @@
    "passed": true
   },
   {
-   "claim": "the bound's verdict is DERIVED from the two computed facts -- whether the one-step cone is proper, and whether any family's speed falls below its own reach -- and is not a typed opinion",
-   "detail": "cone proper=False; families under their own reach=14; bound has content=False",
+   "claim": "the bound's verdict is DERIVED from the two computed facts a propagation bound actually asserts -- whether the one-step cone is proper, and whether the speed is an UPPER bound on the reach it is supposed to constrain -- and is not a typed opinion.  The undershooting families are consistent with an upper bound and enter only the lower-bound clause",
+   "detail": "cone proper=False; families over their own reach=8; bound has content=False",
    "gate": "G-BOUND-DERIVED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the emptiness of the one-step cone is a THEOREM about even periodic lattices, not a resolution failure of the admitted size: the group speed is a phase advance per momentum step and is therefore bounded by L/2, which is exactly the max-norm diameter, and the monomial shift by the antipodal offset is a family member at every even L and attains it.  Exercised at five sizes: the cone covers the whole torus at every one of them, so no enlargement of the lattice makes the constraint bite.  What the admitted size does control is the number of INTERIOR max-norm radii -- one here, three at L = 8 -- which is the genuine resolution parameter",
+   "detail": "[(4, 2, '2', 1), (6, 3, '3', 2), (8, 4, '4', 3), (10, 5, '5', 4), (12, 6, '6', 5)]",
+   "gate": "G-CONE-VACUITY-STRUCTURAL",
    "kind": "MEASURED",
    "passed": true
   },
@@ -5858,23 +5964,51 @@
    "passed": true
   },
   {
-   "claim": "the two roads to how far a family moves in one step -- the Born drift of the coefficient map in position space, and the winding of the eigenphase around the dual torus -- are computed independently and compared family by family under all nine ways of reading the two antipodal ties.  EXACTLY ONE reading pair makes them agree for every family, and it is the pair that resolves both ties the same way: by averaging.  The velocity convention is therefore SELECTED by an identity, not chosen",
-   "detail": "identity holds at 1 of 9 reading pairs ([('TIE-AVERAGED', 'TIE-AVERAGED')]); best other pair 39 of 58 families",
+   "claim": "the two roads to how far a family moves in one step -- the Born drift of the coefficient map in position space, and the winding of the eigenphase around the dual torus -- are computed independently and compared family by family under all nine ways of reading the two antipodal TIES.  Exactly one tie-reading pair makes them agree for every family, and it is the pair that resolves both ties the same way: by averaging.  What the identity selects is therefore the TIE, uniquely; it is BLIND to the stencil -- measured here: the winding is identical family by family under the forward and the backward difference, so both reach the identity and TWO of the 27 lift x lift x stencil readings do, not one",
+   "detail": "identity holds at 1 of 9 tie-reading pairs ([('TIE-AVERAGED', 'TIE-AVERAGED')]); best other pair 39 of 58 families; over the 27 lift x lift x stencil readings it holds at 2, namely [('TIE-AVERAGED', 'TIE-AVERAGED', 'BACKWARD'), ('TIE-AVERAGED', 'TIE-AVERAGED', 'FORWARD')]; winding stencil-blind=True",
    "gate": "G-DRIFT-WINDING-IDENTITY",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the frozen effectus review's one-step drift table is reproduced from this unit's own rebuild, and reproducing it IDENTIFIES the convention it was taken under: the antipodal displacement is tie-averaged to zero.  Under that reading, and only under it, the table's three rows come out as the review printed them",
-   "detail": "{1: {'generators': 16, 'nonzero_drift': 12}, 2: {'generators': 18, 'nonzero_drift': 0}, 3: {'generators': 24, 'nonzero_drift': 0}}",
+   "claim": "the selecting identity is an ARENA ARTIFACT and may serve as an instrument, never as a conclusion about the velocity definition (RUNBOOK section 15).  The parent panel's constructive widened-alphabet generator -- anchored verbatim, at the SAME lattice size -- is rebuilt here exactly over Q(zeta_12): it is unitary at all 16 lags, its eigenphases leave the declared field, its Born drift is the value the panel published, its winding is a DIFFERENT number, and the identity therefore FAILS at the first widening of the modulus set",
+   "detail": "{'field': 'Q(i,sqrt3) = Q(zeta_12)', 'generator': 'c_(1,0) = 1/2, c_(3,0) = i sqrt3 / 2', 'unitary_all_lags': True, 'root_order': 12, 'eigenphases_in_mu_12': 16, 'eigenphase_row_k_y_0': [2, 7, 8, 1], 'forward_differences_lifted': [5, 1, 5, 1], 'difference_sum': 12, 'winding': '-1', 'born_drift': '-1/2', 'identity_holds': False, 'cells': 16, 'eigenphases_outside_mu_8': 16}",
+   "gate": "G-ARENA-ARTIFACT-WITNESS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the frozen effectus review's one-step drift table is reproduced from this unit's own rebuild, and reproducing it IDENTIFIES the convention it was taken under: the antipodal displacement is tie-averaged to zero.  Under that reading, and ONLY under it, the table's three rows come out as the review printed them -- the exclusion is evaluated here, over all three lifts, and not asserted: the positive and the negative readings are both computed and both required to FAIL",
+   "detail": "readings reproducing the review's rows: ['TIE-AVERAGED']; tie-averaged {1: {'generators': 16, 'nonzero_drift': 12}, 2: {'generators': 18, 'nonzero_drift': 0}, 3: {'generators': 24, 'nonzero_drift': 0}}; positive {1: {'generators': 16, 'nonzero_drift': 15}, 2: {'generators': 18, 'nonzero_drift': 10}, 3: {'generators': 24, 'nonzero_drift': 8}}; negative {1: {'generators': 16, 'nonzero_drift': 15}, 2: {'generators': 18, 'nonzero_drift': 10}, 3: {'generators': 24, 'nonzero_drift': 8}}",
    "gate": "G-EFFECTUS-DRIFT-TABLE",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the parent panel's tension, measured: every family with nonzero net transport is monomial, every interfering family has exactly zero net transport in BOTH spaces, and yet every one of those interfering families MOVES -- its dispersion is non-constant and its group velocity is nonzero at individual momenta.  The cancellation, not the absence, is what the class census saw",
+   "claim": "the parent panel's tension, measured: every family with nonzero net transport is monomial, every NON-MONOMIAL family has exactly zero net transport in BOTH spaces at the selected reading, and yet every one of those families MOVES -- its dispersion is non-constant and its group velocity is nonzero at individual momenta.  The zero is a sum of nonzero summands, not an absence of motion; how much of it survives the other tie readings is measured separately at G-CANCELLATION-ROBUSTNESS",
    "detail": "nonzero winding 12 (all monomial); interfering 42, all with zero net transport and all MOVING; the inherited Markovian control's 1792 pairs are exactly the 64^2 - 48^2 pairs with a monomial member",
    "gate": "G-CHARGE-WITHOUT-MOMENTUM",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the zero net transport of the non-monomial families is stratified by how much of it survives the tie: for a measured subset the zero holds under ALL THREE tie readings and no convention can undo it; for the remainder the zero IS the antipodal average, and those families are exactly the non-monomials that carry aliased cells.  The two spaces split differently, and the verdict carries both numbers rather than the unqualified count",
+   "detail": "{'non_monomial': 42, 'zero_drift_all_readings': 24, 'zero_drift_averaged_only': 18, 'zero_winding_all_readings': 30, 'zero_winding_averaged_only': 12, 'winding_averaged_only_are_the_aliased': True}",
+   "gate": "G-CANCELLATION-ROBUSTNESS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the word this unit uses for the 42 is bound to the parent's own rows and is not a rename: the generators whose DIAGONAL composition defect is nonzero in the parent's 4096-row census are exactly this unit's non-monomial families, object by object, and the generators on which the defect vanishes across EVERY pair they appear in are exactly its 16 monomials.  No defect is recomputed here; the binding is to the anchored receipt",
+   "detail": "non-monomial with a nonzero diagonal defect 42 of 42; defect-free across every pair 16 = the 16 monomials; parent rows 4096",
+   "gate": "G-NON-MONOMIAL-DEFECT-BOUND",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the like-for-like comparison the parent's label deficit actually calls for: the reduced dispersion is NOT a class invariant -- it is constant only on the singleton classes -- so a count of distinct profiles per FAMILY is not a class separation.  The MULTISET of member reduced dispersions is a class invariant by construction, and it separates every one of the circulant classes, where the parent's conjugacy invariants give fewer labels than it has classes",
+   "detail": "distinct dispersion multisets 19 over 19 circulant classes; the reduced dispersion is constant on 4 of them (the singletons ['C004', 'C055', 'C056', 'C057']); the parent's invariant labels: 14 for 22 extended classes",
+   "gate": "G-CLASS-SEPARATION-BY-MULTISET",
    "kind": "MEASURED",
    "passed": true
   },
@@ -5894,21 +6028,28 @@
   },
   {
    "claim": "the COMPLETE verdict string, head included, is rebuilt from the serialized receipt by an independent path that shares no helper, no head law and no typed value with the assembler, and the two strings are equal character for character",
-   "detail": "reconstruction equal (1242 chars)",
+   "detail": "reconstruction equal (2122 chars)",
    "gate": "G-VERDICT-RECONSTRUCTED",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the head is named by the dispersion census and by nothing else: with the moving count zeroed the head law returns the pin's OTHER outcome, so a head that cannot move is not this one",
-   "detail": "head=R4B-DISPERSION-READ; head under a zeroed motion census=R4B-NO-MOTION",
+   "claim": "the head is named by the dispersion census and by nothing else, and ALL THREE of the law's outcomes are exercised rather than read off the source: with the moving count zeroed the law returns the pin's NO-MOTION outcome, and with one eigenvalue outside mu_8 it returns the pin's BLOCKED outcome -- the branch the census closes.  A head that cannot move is not this one",
+   "detail": "head=R4B-DISPERSION-READ; under a zeroed motion census=R4B-NO-MOTION; under an eigenvalue outside mu_8=R4B-BLOCKED-AT-EIGENPHASE-OUTSIDE-MU-8",
    "gate": "G-HEAD-LAW-RESPONSIVE",
    "kind": "MEASURED",
    "passed": true
   },
   {
+   "claim": "the rows the artifact SHIPS are bound to the state that produced them, field by field: every published census row is re-rendered from the state and compared entry for entry, the class table is re-derived from the rebuilt partition, and every path-value anchor's measured value is re-read from the parent's receipt at its frozen path.  No published row may carry a control's datum under a census label, and no field may move after the object gates closed",
+   "detail": "rows differing from a fresh rendering none over 58; class rows none; path-value anchors none",
+   "gate": "G-PUBLISHED-ROWS-BOUND",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "every value the verdict carries has its own flip probe: perturbing the receipt key it renders from moves the complete reconstruction.  A value that renders from a key nothing reads is caught here",
-   "detail": "unflippable keys none over 56 verdict values",
+   "detail": "unflippable keys none over 74 verdict values",
    "gate": "G-VERDICT-VALUES-FLIPPABLE",
    "kind": "MEASURED",
    "passed": true
@@ -5929,14 +6070,14 @@
   },
   {
    "claim": "the receipt is serialization-stable: parsing what was built and re-serializing it reproduces the same bytes, so the artifact is deterministic and independent of dictionary order",
-   "detail": "round trip stable over 70430 bytes",
+   "detail": "round trip stable over 79140 bytes",
    "gate": "G-RECEIPT-ROUND-TRIP",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "this instrument never invokes a subprocess and never calls git: an AST scan of its own source finds no import of subprocess, no os.system and no shell call, so the run is correct off-tree and in a directory with no version control at all",
-   "detail": "subprocess-free source scan over 140587 bytes",
+   "detail": "subprocess-free source scan over 211335 bytes",
    "gate": "G-NO-SUBPROCESS",
    "kind": "MEASURED",
    "passed": true
@@ -5964,21 +6105,28 @@
   },
   {
    "claim": "every claim string the receipt renders occurs verbatim in the paper, so no number in the prose is unsupported by a computed value",
-   "detail": "missing none over 44 claims",
+   "detail": "missing none over 70 claims",
    "gate": "G-PAPER-CLAIMS",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "every numeral in the paper is either rendered from the receipt or named in the declared derived-in-text residue, and every residue entry actually occurs: the coverage runs INSIDE the delivery run as a gate, not beside it as a flag",
-   "detail": "uncovered none; declared-but-absent none; 78 distinct numerals over 413 occurrences",
+   "detail": "uncovered none; declared-but-absent none; 88 distinct numerals over 567 occurrences",
    "gate": "G-PAPER-NUMERAL-COVERAGE",
    "kind": "MEASURED",
    "passed": true
   },
   {
+   "claim": "the paper-claim instrument is given DIRECTION: every declared claim must occur the number of times the receipt expects -- so an inversion that survives on a second occurrence of the same string is caught by the count -- and no polarity-bearing claim may sit behind a declared negator.  A numeral-complete check is blind to an inverted sentence that introduces no numeral; this is not",
+   "detail": "miscounted none; inverted none; 9 counted claims, 6 guarded",
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "the CLI is argv-parsed against a whitelist and exercised here: every unknown flag, unknown flag argument and missing argument is rejected, and the permissive shape -- the registered disease -- fails this gate",
-   "detail": "9 probes, 5 rejections",
+   "detail": "10 probes, 5 rejections",
    "gate": "G-CLI-CONTRACT",
    "kind": "MEASURED",
    "passed": true
@@ -5991,36 +6139,50 @@
    "passed": true
   },
   {
+   "claim": "--verify-paper is not a documented no-op: the parser carries the PATH it was given rather than swallowing it, a PATH that does not exist is rejected before any run begins, and the flag's run evaluates the same paper gates the delivery run does",
+   "detail": "default=v14/paper-15-momentum.md; named path carried=v14/note-r4b-momentum-pin.md; nonexistent path rejected",
+   "gate": "G-VERIFY-PAPER-LIVE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "every gate this unit evaluates is the declared target of at least one mutant, except the two whose falsification mechanism is registered instead (#34): coverage of the ledger is measured, not claimed",
-   "detail": "gates 67, targeted 64, untargeted none, targets with no gate none",
+   "detail": "gates 82, targeted 79, untargeted none, targets with no gate none",
    "gate": "G-GATE-MUTANT-COVERAGE",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "every verbatim anchor names a gate that actually exists and is actually evaluated: a window bound to a gate the run never reaches is a decoration, not an anchor",
-   "detail": "anchors 13, dangling consumers none",
+   "detail": "anchors 14, dangling consumers none",
    "gate": "G-ANCHOR-CONSUMERS-EXIST",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "every gate without an injection falsifier registers its forcing, and the registration is checked rather than asserted (#34): a waiver claim is a gate claim",
-   "detail": "falsifiable 64, waived 3, unregistered none",
+   "detail": "falsifiable 79, waived 3, unregistered none",
    "gate": "G-WAIVERS-VERIFIED",
    "kind": "MEASURED",
    "passed": true
   },
   {
+   "claim": "every object this run will publish was DIGESTED AT THE MOMENT ITS GATE PASSED, and every one of those digests still describes the object now: a gate that fires on something still mutable when the artifact is built has not gated the artifact.  The seals taken before the mutant sweep are enumerated against the frozen declaration and re-verified here; the remainder are sealed at their own gates and checked against the BYTES ON DISK by the terminal integrity gate",
+   "detail": "seals taken 14 of 18 declared; broken none",
+   "gate": "G-SEAL-COMPLETE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "every declared mutant is killed, and killed by the gate it was declared to falsify: a mutant that dies elsewhere is a gate boundary this unit does not understand",
-   "detail": "killed 66 of 66; off target none",
+   "detail": "killed 86 of 86; off target none",
    "gate": "G-MUTANTS-ON-TARGET",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the paper-claim and numeral-coverage check re-run once the instrument's own totals close, so the paper's instrument section is covered too; its in-run twins carry the injection falsifiers, and this evaluation is the enforcement -- a failure here exits 1 and writes nothing",
-   "detail": "missing none; uncovered none; declared-but-absent none; 44 claims, 78 distinct numerals over 413 occurrences",
+   "detail": "missing none; uncovered none; declared-but-absent none; 71 claims, 88 distinct numerals over 567 occurrences",
    "gate": "G-PAPER-COVERAGE-FINAL",
    "kind": "MEASURED",
    "passed": true
@@ -6625,6 +6787,166 @@
    "note": "loses the pin's declaration of the momentum lattice",
    "on_target": true,
    "target": "G-MOMENTUM-LATTICE-DECLARED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VERBATIM-WINDOW-DIGESTS",
+   "mutant": "MUT-QUOTE-TRUNCATE",
+   "note": "shortens every verbatim window to a four-byte decoration",
+   "on_target": true,
+   "target": "G-VERBATIM-WINDOW-DIGESTS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VERBATIM-WINDOWS-UNIQUE",
+   "mutant": "MUT-QUOTE-AMBIGUOUS",
+   "note": "reports a window that matches its source in more than one place",
+   "on_target": true,
+   "target": "G-VERBATIM-WINDOWS-UNIQUE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-MU8-THEOREM-LEGS",
+   "mutant": "MUT-INTEGRALITY",
+   "note": "admits a symbol that is not an algebraic integer",
+   "on_target": true,
+   "target": "G-MU8-THEOREM-LEGS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-STENCIL-FORCED-BY-NORMALISATION",
+   "mutant": "MUT-STENCIL-CENTRAL",
+   "note": "admits the central stencil the declared normalisation rejects",
+   "on_target": true,
+   "target": "G-STENCIL-FORCED-BY-NORMALISATION"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-RESIDUAL-FIBER-INERT",
+   "mutant": "MUT-RESIDUAL-FIBER",
+   "note": "perturbs one family under the backward stencil",
+   "on_target": true,
+   "target": "G-RESIDUAL-FIBER-INERT"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-CONE-VACUITY-STRUCTURAL",
+   "mutant": "MUT-STRUCTURAL-L",
+   "note": "breaks the VMAX = diameter theorem at one lattice size",
+   "on_target": true,
+   "target": "G-CONE-VACUITY-STRUCTURAL"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-REACH-BOUND-DIRECTION",
+   "mutant": "MUT-REACH-DIRECTION",
+   "note": "falsifies the UPPER bound with the undershooting families",
+   "on_target": true,
+   "target": "G-REACH-BOUND-DIRECTION"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-EFFECTUS-DRIFT-TABLE",
+   "mutant": "MUT-DRIFT-ALT",
+   "note": "makes the positive reading reproduce the review's rows too",
+   "on_target": true,
+   "target": "G-EFFECTUS-DRIFT-TABLE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-ARENA-ARTIFACT-WITNESS",
+   "mutant": "MUT-ARENA-WITNESS",
+   "note": "claims the identity survives the widened alphabet",
+   "on_target": true,
+   "target": "G-ARENA-ARTIFACT-WITNESS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-CANCELLATION-ROBUSTNESS",
+   "mutant": "MUT-ROBUSTNESS",
+   "note": "miscounts the reading-independent zeros",
+   "on_target": true,
+   "target": "G-CANCELLATION-ROBUSTNESS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-NON-MONOMIAL-DEFECT-BOUND",
+   "mutant": "MUT-DEFECT-BINDING",
+   "note": "unbinds a non-monomial from its diagonal defect row",
+   "on_target": true,
+   "target": "G-NON-MONOMIAL-DEFECT-BOUND"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-CLASS-SEPARATION-BY-MULTISET",
+   "mutant": "MUT-CLASS-MULTISET",
+   "note": "miscounts the dispersion multisets",
+   "on_target": true,
+   "target": "G-CLASS-SEPARATION-BY-MULTISET"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-NOT-BLOCH-FORCED",
+   "mutant": "MUT-NOTBLOCH-FORCED",
+   "note": "breaks the stabiliser-to-diagonality forcing",
+   "on_target": true,
+   "target": "G-NOT-BLOCH-FORCED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PUBLISHED-ROWS-BOUND",
+   "mutant": "MUT-ROW-FIELD",
+   "note": "moves one field in one published census row",
+   "on_target": true,
+   "target": "G-PUBLISHED-ROWS-BOUND"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PUBLISHED-ROWS-BOUND",
+   "mutant": "MUT-ROW-SWAP",
+   "note": "publishes a control's datum under a census label",
+   "on_target": true,
+   "target": "G-PUBLISHED-ROWS-BOUND"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SEAL-COMPLETE",
+   "mutant": "MUT-SEAL-BROKEN",
+   "note": "mutates a sealed object after its gate has passed",
+   "on_target": true,
+   "target": "G-SEAL-COMPLETE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PAPER-CLAIM-POLARITY",
+   "mutant": "MUT-PAPER-POLARITY",
+   "note": "declares a negator the paper's claim window carries",
+   "on_target": true,
+   "target": "G-PAPER-CLAIM-POLARITY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PAPER-CLAIM-POLARITY",
+   "mutant": "MUT-PAPER-OCCURRENCES",
+   "note": "expects a claim occurrence count the paper does not have",
+   "on_target": true,
+   "target": "G-PAPER-CLAIM-POLARITY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VERIFY-PAPER-LIVE",
+   "mutant": "MUT-VERIFY-PAPER-DEAD",
+   "note": "makes --verify-paper swallow its argument",
+   "on_target": true,
+   "target": "G-VERIFY-PAPER-LIVE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-HEAD-LAW-RESPONSIVE",
+   "mutant": "MUT-HEAD-THIRD-OUTCOME",
+   "note": "makes the head law's BLOCKED branch unreachable",
+   "on_target": true,
+   "target": "G-HEAD-LAW-RESPONSIVE"
   }
  ],
  "not_executed": [
@@ -6634,64 +6956,99 @@
   "the wider five-point local family at the admitted size is disclosed by the parent and is not censused here either",
   "indivisibility is DECLARED by the division-event times and is never measured, exactly as in the parent",
   "no state is propagated: the group velocity is read off the exact eigenphase, and no wavepacket is constructed or evolved",
-  "the alphabet is not widened; the effectus review's constructive motion-carrying generator over Q(i, sqrt 3) is outside this unit's declared field and is not built"
+  "the alphabet is NOT widened as a census: the parent panel's motion-carrying generator over Q(i, sqrt 3) is rebuilt as a single SCOPE WITNESS -- one generator, in a second field used nowhere else -- to show that the selecting identity fails there.  No census is run over the wider field and no result of this unit is claimed for it",
+  "the selection criterion's DOMAIN is not censused: one counterexample is exhibited, not a sweep, so whether the drift = winding identity fails generically over widened alphabets is open and is this unit's most consequential registered open"
  ],
  "paper": "v14/paper-15-momentum.md",
  "paper_claims": {
   "L": "L = 4",
   "alias": "320 of 1856 cells, in 19 of 58 families",
   "alphabet": "25 elements",
-  "anchors": "41 anchors",
+  "anchors": "42 anchors",
   "axes": "9 axes",
+  "bound_polarity": "propagation bound is empty",
   "byte_anchors": "8 file-bytes anchors",
   "ceilings": "16 of 16 separations and a maximal defect radius of 2 of 2",
   "cells": "928 (family, momentum) cells",
   "cells_v": "1856 cells",
+  "class_separation": "19 of 19 circulant classes",
   "classes": "22 extended classes",
   "classes_moving": "18 of the 19 circulant classes MOVE",
+  "classes_moving_lower": "18 of the 19 circulant classes move",
   "cone": "16 of 16 sites",
   "d": "d = 2",
+  "diag_defect": "42 of 42",
   "diameter": "diameter 2",
   "drift_table": "16 | 12",
   "drift_table2": "18 | 0",
   "drift_table3": "24 | 0",
+  "drift_table_alt": "16 | 15, 18 | 10 and 24 | 8",
   "eigen": "verified as an exact matrix identity at all 928 cells",
   "families": "58 circulant families",
   "fiber": "9 readings",
-  "gates": "67 gates",
-  "gates_falsifiable": "64 carrying their own injection falsifier and 3 their registered forcing",
+  "gates": "82 gates",
+  "gates_falsifiable": "79 carrying their own injection falsifier and 3 their registered forcing",
+  "gates_in_receipt": "81 of them evaluated inside the receipt",
   "identity": "58 of 58 families",
-  "identity_pairs": "1 of the 9 reading pairs",
-  "interfering": "42 interfering families",
+  "identity_full": "2 of the 27 readings",
+  "identity_pairs": "1 of the 9 tie-reading pairs",
+  "identity_polarity": "the identity fails",
+  "integrality": "all 928 symbols are algebraic integers",
+  "interfering": "42 non-monomial families",
+  "interfering_move": "all 42 of them MOVE",
+  "interior_l8": "one here, 3 at L = 8",
   "labels": "14 distinct invariant labels",
   "markov": "0 of 1792",
   "mismatched": "39 of 58",
   "momenta": "16 momenta",
   "monomial": "16 monomial families",
+  "monomial_only": "precisely this unit's 16 monomial families",
   "moving": "57 of 58 families MOVE",
+  "moving_bold": "**57 of 58 families MOVE**",
   "mu8": "every one of the 928 eigenvalues is an 8th root of unity",
-  "mutants": "66 declared mutants",
+  "mutants": "86 declared mutants",
+  "mutants_dead": "86 declared mutants, all dead",
+  "normalisation": "384 of 384 non-antipodal monomial coordinates",
   "notbloch": "3 classes carry no Bloch dispersion",
   "pool": "64 generators",
   "profiles": "58 distinct reduced dispersions",
   "pv_anchors": "20 path-value anchors",
   "reach": "8 families overshoot it, 14 fall below it, 36 meet it exactly",
+  "reach_lower": "14 fall below",
+  "reach_upper": "8 families overshoot",
+  "residual": "residual fiber is 2",
+  "residual_cells": "768 of 1856 cells",
+  "residual_polarity": "measured inert",
+  "robust_drift": "24 of the 42 in position space",
+  "robust_winding": "30 of the 42 on the dual torus",
+  "seals": "18 sealed objects",
   "spectrum": "the speed spectrum is {0, 1, 2}",
   "static": "C004, and it is the identity",
-  "vb_anchors": "13 verbatim-text anchors",
-  "verdict_values": "56 measured values",
+  "stencil_forced": "forced to 2",
+  "structural": "L in {4, 6, 8, 10, 12}",
+  "vb_anchors": "14 verbatim-text anchors",
+  "verdict_values": "74 measured values",
   "vmax": "VMAX = 2",
-  "winding": "12 families with nonzero winding, every one of them monomial"
+  "winding": "12 families with nonzero winding, every one of them monomial",
+  "witness": "the Born drift is -1/2 and the winding is -1",
+  "witness_field": "exact in Z/12"
  },
  "paper_coverage": {
-  "claims": 44,
-  "covered_by_rendering": 74,
-  "declared_derived_in_text": 12,
-  "distinct_numerals": 78,
+  "claims": 71,
+  "covered_by_rendering": 86,
+  "declared_derived_in_text": 13,
+  "distinct_numerals": 88,
   "missing": [],
-  "numeral_occurrences": 413,
+  "numeral_occurrences": 567,
   "residue_declared_but_absent": [],
   "uncovered": []
+ },
+ "paper_polarity": {
+  "claims_with_expected_occurrences": 9,
+  "inverted": [],
+  "miscounted": [],
+  "polarity_guarded_claims": 6,
+  "window": 64
  },
  "path_value_anchors": [
   {
@@ -6890,49 +7247,352 @@
   "vmax": "2"
  },
  "schema": "isp/v14/r4b-momentum/1",
- "support_drift_table": {
-  "1": {
-   "generators": 16,
-   "nonzero_drift": 12
+ "seals": [
+  {
+   "path": "verdict/string",
+   "seal": "SEAL-VERDICT-STRING",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "cf1dd478fda2"
   },
-  "2": {
-   "generators": 18,
-   "nonzero_drift": 0
+  {
+   "path": "verdict/head",
+   "seal": "SEAL-VERDICT-HEAD",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "b89a1bface7e"
   },
-  "3": {
-   "generators": 24,
-   "nonzero_drift": 0
+  {
+   "path": "counts",
+   "seal": "SEAL-COUNTS",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "2adfbfd01111"
+  },
+  {
+   "path": "dispersion_census",
+   "seal": "SEAL-CENSUS",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "77f493f17b36"
+  },
+  {
+   "path": "class_rows",
+   "seal": "SEAL-CLASS-ROWS",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "bec037bb000d"
+  },
+  {
+   "path": "velocity_fiber",
+   "seal": "SEAL-FIBER",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "c3c3c608fef1"
+  },
+  {
+   "path": "agreement_matrix",
+   "seal": "SEAL-AGREEMENT",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "4866c571fb37"
+  },
+  {
+   "path": "support_drift_tables",
+   "seal": "SEAL-DRIFT-TABLES",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "9c4e66368490"
+  },
+  {
+   "path": "stratification",
+   "seal": "SEAL-STRATIFICATION",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "cae8d7bc1a64"
+  },
+  {
+   "path": "resolution",
+   "seal": "SEAL-RESOLUTION",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "6a052ad85ce2"
+  },
+  {
+   "path": "path_value_anchors",
+   "seal": "SEAL-PATH-ANCHORS",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "0952dc5b306b"
+  },
+  {
+   "path": "byte_anchors",
+   "seal": "SEAL-BYTE-ANCHORS",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "eda270392655"
+  },
+  {
+   "path": "verbatim_anchors",
+   "seal": "SEAL-VERBATIM",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "62f87f7ae27e"
+  },
+  {
+   "path": "waiver_ledger",
+   "seal": "SEAL-WAIVERS",
+   "sealed_at_gate": "G-WAIVERS-VERIFIED",
+   "sha256_12": "9b96b5515879"
+  },
+  {
+   "path": "mutants",
+   "seal": "SEAL-MUTANTS",
+   "sealed_at_gate": "G-MUTANTS-ON-TARGET",
+   "sha256_12": "ad443b400197"
+  },
+  {
+   "path": "gates",
+   "seal": "SEAL-GATES",
+   "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+   "sha256_12": "07e4184cc234"
+  },
+  {
+   "path": "totals",
+   "seal": "SEAL-TOTALS",
+   "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+   "sha256_12": "be90631b3a29"
+  },
+  {
+   "path": "paper_coverage",
+   "seal": "SEAL-COVERAGE",
+   "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+   "sha256_12": "084cc4d8ee35"
   }
+ ],
+ "source_sha256": "4216f3de5f44eada6a93b8ca117a29f54a2eaad663cf47d6b69cf02d9557ce4f",
+ "stratification": {
+  "arena_artifact_witness": {
+   "born_drift": "-1/2",
+   "cells": 16,
+   "difference_sum": 12,
+   "eigenphase_row_k_y_0": [
+    2,
+    7,
+    8,
+    1
+   ],
+   "eigenphases_in_mu_12": 16,
+   "eigenphases_outside_mu_8": 16,
+   "field": "Q(i,sqrt3) = Q(zeta_12)",
+   "forward_differences_lifted": [
+    5,
+    1,
+    5,
+    1
+   ],
+   "generator": "c_(1,0) = 1/2, c_(3,0) = i sqrt3 / 2",
+   "identity_holds": false,
+   "root_order": 12,
+   "unitary_all_lags": true,
+   "winding": "-1"
+  },
+  "cancellation_robustness": {
+   "non_monomial": 42,
+   "winding_averaged_only_are_the_aliased": true,
+   "zero_drift_all_readings": 24,
+   "zero_drift_averaged_only": 18,
+   "zero_winding_all_readings": 30,
+   "zero_winding_averaged_only": 12
+  },
+  "central_stencil_disclosure": {
+   "aliased_cells": 512,
+   "aliased_families": 24,
+   "cone_sites_one_step": 9,
+   "reach_equal": 17,
+   "reach_over": 0,
+   "reach_under": 41,
+   "vmax": "1"
+  },
+  "class_separation": {
+   "circulant_classes": 19,
+   "classes_with_a_constant_dispersion": [
+    "C004",
+    "C055",
+    "C056",
+    "C057"
+   ],
+   "distinct_dispersion_multisets": 19,
+   "parent_extended_classes": 22,
+   "parent_invariant_labels": 14
+  },
+  "defect_binding": {
+   "defect_free_across_every_pair": 16,
+   "non_monomial_with_nonzero_diagonal_defect": 42,
+   "parent_rows_read": 4096
+  },
+  "reach_direction": {
+   "lower_bound_falsified_by": 14,
+   "lower_bound_holds": false,
+   "saturating": 36,
+   "upper_bound_falsified_by": 8,
+   "upper_bound_holds": false
+  },
+  "residual_fiber": {
+   "aliased_cells_identical": true,
+   "aliased_families_identical": true,
+   "cells": 1856,
+   "members": [
+    "FORWARD",
+    "BACKWARD"
+   ],
+   "motion_head_identical": true,
+   "per_family_max_speed_identical": true,
+   "residual_fiber": 2,
+   "signed_velocity_cells_differing": 768,
+   "spectrum_identical": true
+  },
+  "stencil_admitted": [
+   "FORWARD",
+   "BACKWARD"
+  ],
+  "stencil_normalisation": [
+   {
+    "admitted": true,
+    "coordinates": 384,
+    "satisfied": 384,
+    "stencil": "FORWARD"
+   },
+   {
+    "admitted": true,
+    "coordinates": 384,
+    "satisfied": 384,
+    "stencil": "BACKWARD"
+   },
+   {
+    "admitted": false,
+    "coordinates": 384,
+    "satisfied": 128,
+    "stencil": "CENTRAL"
+   }
+  ],
+  "structural_vmax": [
+   {
+    "L": 4,
+    "antipodal_monomial_speed": "2",
+    "cone_covers_torus": true,
+    "diameter": 2,
+    "interior_radii": [
+     1
+    ],
+    "interior_radius_count": 1,
+    "vmax_equals_diameter": true
+   },
+   {
+    "L": 6,
+    "antipodal_monomial_speed": "3",
+    "cone_covers_torus": true,
+    "diameter": 3,
+    "interior_radii": [
+     1,
+     2
+    ],
+    "interior_radius_count": 2,
+    "vmax_equals_diameter": true
+   },
+   {
+    "L": 8,
+    "antipodal_monomial_speed": "4",
+    "cone_covers_torus": true,
+    "diameter": 4,
+    "interior_radii": [
+     1,
+     2,
+     3
+    ],
+    "interior_radius_count": 3,
+    "vmax_equals_diameter": true
+   },
+   {
+    "L": 10,
+    "antipodal_monomial_speed": "5",
+    "cone_covers_torus": true,
+    "diameter": 5,
+    "interior_radii": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "interior_radius_count": 4,
+    "vmax_equals_diameter": true
+   },
+   {
+    "L": 12,
+    "antipodal_monomial_speed": "6",
+    "cone_covers_torus": true,
+    "diameter": 6,
+    "interior_radii": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "interior_radius_count": 5,
+    "vmax_equals_diameter": true
+   }
+  ]
  },
- "support_drift_table_positive_reading": {
-  "1": {
-   "generators": 16,
-   "nonzero_drift": 15
+ "support_drift_tables": {
+  "NEGATIVE": {
+   "1": {
+    "generators": 16,
+    "nonzero_drift": 15
+   },
+   "2": {
+    "generators": 18,
+    "nonzero_drift": 10
+   },
+   "3": {
+    "generators": 24,
+    "nonzero_drift": 8
+   }
   },
-  "2": {
-   "generators": 18,
-   "nonzero_drift": 10
+  "POSITIVE": {
+   "1": {
+    "generators": 16,
+    "nonzero_drift": 15
+   },
+   "2": {
+    "generators": 18,
+    "nonzero_drift": 10
+   },
+   "3": {
+    "generators": 24,
+    "nonzero_drift": 8
+   }
   },
-  "3": {
-   "generators": 24,
-   "nonzero_drift": 8
+  "TIE-AVERAGED": {
+   "1": {
+    "generators": 16,
+    "nonzero_drift": 12
+   },
+   "2": {
+    "generators": 18,
+    "nonzero_drift": 0
+   },
+   "3": {
+    "generators": 24,
+    "nonzero_drift": 0
+   }
   }
  },
  "totals": {
-  "anchors": 41,
+  "anchors": 42,
   "byte_anchors": 8,
   "census_cells": 928,
   "families": 58,
-  "gates": 67,
-  "gates_falsifiable": 64,
-  "gates_passed": 67,
+  "gates": 82,
+  "gates_falsifiable": 79,
+  "gates_in_receipt": 81,
+  "gates_passed_in_receipt": 81,
   "gates_waived": 3,
-  "mutants": 66,
-  "mutants_killed": 66,
-  "mutants_on_target": 66,
+  "integrity_gate": "EVALUATED-IN-THE-WRITING-PATH-AGAINST-THE-GATE-TIME-SEAL-REPORTED-ON-STDOUT",
+  "mutants": 86,
+  "mutants_killed": 86,
+  "mutants_on_target": 86,
   "path_value_anchors": 20,
-  "verbatim_anchors": 13,
-  "verdict_values": 56
+  "seals": 18,
+  "verbatim_anchors": 14,
+  "verdict_values": 74
  },
  "translation_stabilisers": {
   "brickwork": [
@@ -6946,7 +7606,11 @@
    2,
    8
   ],
-  "group": 16
+  "group": 16,
+  "scrambled": [
+   1,
+   2
+  ]
  },
  "unit": "v14 R4b -- momentum: reading the dispersions",
  "velocity_definition": {
@@ -7025,96 +7689,132 @@
    "chars": 214,
    "consumer_gate": "G-NONCONSTANT-CENSUS",
    "id": "VB-DISPERSION-57",
+   "occurrences": 1,
    "present": true,
-   "source": "A-REV-EFFECTUS"
+   "source": "A-REV-EFFECTUS",
+   "window_sha256_12": "508f67433486"
   },
   {
    "chars": 120,
    "consumer_gate": "G-EFFECTUS-DRIFT-TABLE",
    "id": "VB-DRIFT-TABLE",
+   "occurrences": 1,
    "present": true,
-   "source": "A-REV-EFFECTUS"
+   "source": "A-REV-EFFECTUS",
+   "window_sha256_12": "d8c389ecdf60"
   },
   {
    "chars": 134,
    "consumer_gate": "G-CHARGE-WITHOUT-MOMENTUM",
    "id": "VB-K3-NO-MOMENTUM",
+   "occurrences": 1,
    "present": true,
-   "source": "A-REV-OPERATOR"
+   "source": "A-REV-OPERATOR",
+   "window_sha256_12": "ed819ea09c6a"
   },
   {
    "chars": 169,
    "consumer_gate": "G-MOMENTUM-ON-THE-SYMBOL",
    "id": "VB-K3-SYMBOL",
+   "occurrences": 1,
    "present": true,
-   "source": "A-REV-OPERATOR"
+   "source": "A-REV-OPERATOR",
+   "window_sha256_12": "6c95fefc3a11"
   },
   {
    "chars": 138,
    "consumer_gate": "G-RESOLUTION-RELATION",
    "id": "VB-PROPAGATOR",
+   "occurrences": 1,
    "present": true,
-   "source": "A-R4-PAPER"
+   "source": "A-R4-PAPER",
+   "window_sha256_12": "ab21344b844a"
   },
   {
    "chars": 56,
    "consumer_gate": "G-CEILINGS-INHERITED",
    "id": "VB-CEILINGS",
+   "occurrences": 1,
    "present": true,
-   "source": "A-R4-OUTPUT"
+   "source": "A-R4-OUTPUT",
+   "window_sha256_12": "aac35ce16ca7"
   },
   {
    "chars": 50,
    "consumer_gate": "G-SCOPE-INHERITED",
    "id": "VB-CONNECTIVE",
+   "occurrences": 1,
    "present": true,
-   "source": "A-R4-OUTPUT"
+   "source": "A-R4-OUTPUT",
+   "window_sha256_12": "37bb69c658cb"
   },
   {
    "chars": 90,
    "consumer_gate": "G-UNIT-IS-THE-DECLARED-SUCCESSOR",
    "id": "VB-SUCCESSOR",
+   "occurrences": 1,
    "present": true,
-   "source": "A-R4-ADJ"
+   "source": "A-R4-ADJ",
+   "window_sha256_12": "9ffa39e20ca3"
   },
   {
    "chars": 132,
    "consumer_gate": "G-ALPHABET-REBUILT",
    "id": "VB-ALPHABET",
+   "occurrences": 1,
    "present": true,
-   "source": "A-R4-PAPER"
+   "source": "A-R4-PAPER",
+   "window_sha256_12": "d21521ca4f99"
   },
   {
    "chars": 115,
    "consumer_gate": "G-UNITARY-TWO-ROUTES",
    "id": "VB-UNITARITY",
+   "occurrences": 1,
    "present": true,
-   "source": "A-R4-PAPER"
+   "source": "A-R4-PAPER",
+   "window_sha256_12": "4ba66899d14a"
   },
   {
    "chars": 147,
    "consumer_gate": "G-REBUILD-BIJECTION",
    "id": "VB-GENERATOR",
+   "occurrences": 1,
    "present": true,
-   "source": "A-R4-PAPER"
+   "source": "A-R4-PAPER",
+   "window_sha256_12": "83ceeb0b0e63"
   },
   {
    "chars": 110,
    "consumer_gate": "G-VERDICT-PREREGISTERED",
    "id": "VB-PIN-OUTCOMES",
+   "occurrences": 1,
    "present": true,
-   "source": "A-PIN-R4B"
+   "source": "A-PIN-R4B",
+   "window_sha256_12": "bc3ce14bef66"
   },
   {
    "chars": 74,
    "consumer_gate": "G-MOMENTUM-LATTICE-DECLARED",
    "id": "VB-PIN-LATTICE",
+   "occurrences": 1,
    "present": true,
-   "source": "A-PIN-R4B"
+   "source": "A-PIN-R4B",
+   "window_sha256_12": "581f8f6845e1"
+  },
+  {
+   "chars": 131,
+   "consumer_gate": "G-ARENA-ARTIFACT-WITNESS",
+   "id": "VB-WIDENED-GENERATOR",
+   "occurrences": 1,
+   "present": true,
+   "source": "A-REV-EFFECTUS",
+   "window_sha256_12": "85f986613574"
   }
  ],
  "verdict": {
   "head": "R4B-DISPERSION-READ",
+  "head_under_eigenphase_outside_mu8": "R4B-BLOCKED-AT-EIGENPHASE-OUTSIDE-MU-8",
   "head_under_zeroed_census": "R4B-NO-MOTION",
   "preregistered_heads": [
    "R4B-DISPERSION-READ",
@@ -7128,26 +7828,26 @@
    ],
    [
     "DISPERSION",
-    "EIGENPHASES-IN-MU-8=928-OF-928;EIGEN-EQUATION-VERIFIED=928;UNIT-MODULUS=928;PARITY-INVARIANT=58-OF-58;DISTINCT-REDUCED-PROFILES=58-VS-14-INVARIANT-LABELS"
+    "EIGENPHASES-IN-MU-8=928-OF-928;EIGEN-EQUATION-VERIFIED=928;UNIT-MODULUS=928;ALGEBRAIC-INTEGERS=928;PARITY-INVARIANT=58-OF-58;DISTINCT-REDUCED-PROFILES=58-OF-58-FAMILIES(FORCED-BY-INVERTIBILITY);CLASS-SEPARATION=19-OF-19-CIRCULANT-BY-DISPERSION-MULTISET-VS-14-LABELS-FOR-22-CLASSES"
    ],
    [
     "VELOCITY",
-    "SPECTRUM=0+1+2;VMAX=2;INTEGER-VALUED=1856-OF-1856;ALIASED=320-OF-1856-IN-19-FAMILIES;DEFINITION=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED(FIBER=9)"
+    "SPECTRUM=0+1+2;VMAX=2;INTEGER-VALUED=1856-OF-1856;ALIASED=320-OF-1856-IN-19-FAMILIES;DEFINITION=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED(FIBER=9;STENCIL-FORCED-TO-2-BY-MONOMIAL-NORMALISATION-AT-384-OF-384;LIFT-SELECTED-1-OF-3-BY-DRIFT=WINDING;RESIDUAL-FIBER=2-MEASURED-INERT-DIFFERING-AT-768-OF-1856-SIGNED-CELLS)"
    ],
    [
     "BOUND",
-    "NO-CONTENT=YES;CONE-AT-ONE-STEP=16-OF-16-SITES;VMAX=2=DIAMETER=2;REACH-BOUND-FALSE-AT=14-OF-58;OVERSHOOTS-AT=8;SATURATES-AT=36;INHERITED-CEILINGS=SEPARATIONS=16-OF-16;MAX-DEFECT-RADIUS=2-OF-2;INTERIOR-RADII=1"
+    "NO-CONTENT=YES;CONE-AT-ONE-STEP=16-OF-16-SITES;VMAX=2=DIAMETER=2(CEILING-FORCED;ATTAINMENT-MEASURED;STRUCTURAL-AT-EVERY-EVEN-L-AT-5-SIZES);REACH-UPPER-BOUND-FALSE-AT=8-OF-58;REACH-LOWER-BOUND-FALSE-AT=14-OF-58;SATURATES-AT=36;INHERITED-CEILINGS=SEPARATIONS=16-OF-16;MAX-DEFECT-RADIUS=2-OF-2;INTERIOR-RADII=1-HERE-3-AT-L-8;RESIDUAL-FIBER-INVARIANT=YES"
    ],
    [
     "TRANSPORT",
-    "DRIFT=WINDING-AT-58-OF-58-FAMILIES-UNDER-1-OF-9-READING-PAIRS(BEST-OTHER=39-OF-58);NONZERO-WINDING=12-OF-58-ALL-MONOMIAL-OF-16;INTERFERING=42-ZERO-NET-TRANSPORT-AND-42-MOVING;MARKOV=0-OF-1792-NONZERO-INHERITED"
+    "DRIFT=WINDING-AT-58-OF-58-FAMILIES-UNDER-1-OF-9-TIE-READING-PAIRS(BEST-OTHER=39-OF-58;STENCIL-BLIND-SO-2-OF-27-FULL-READINGS);IDENTITY=ARENA-INSTRUMENT-FAILS-AT-MU-12-WINDING=-1-VS-DRIFT=-1/2;NONZERO-WINDING=12-OF-58-ALL-MONOMIAL-OF-16;NON-MONOMIAL=42-MOVING=42;ZERO-NET-TRANSPORT-AT-SELECTED-READING=42;READING-INDEPENDENT-ZERO-DRIFT=24-OF-42;READING-INDEPENDENT-ZERO-WINDING=30-OF-42;DIAGONAL-DEFECT-NONZERO=42-INHERITED;MARKOV=0-OF-1792-NONZERO-INHERITED"
    ],
    [
     "SCOPE",
-    "D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;SECTOR=SINGLE-OCCUPATION;MOMENTUM-LATTICE=DUAL-TORUS-16-DECLARED;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT"
+    "D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;SECTOR=SINGLE-OCCUPATION;MOMENTUM-LATTICE=DUAL-TORUS-16-DECLARED;VELOCITY-READING=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED(STENCIL-FORCED-TO-2;LIFT-SELECTED-BY-AN-ARENA-INSTRUMENT;RESIDUAL-FIBER=2);CHARACTER-CONVENTION=DECLARED-JOINTLY-WITH-VELOCITY-SIGN(FIBER=2);CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT"
    ]
   ],
-  "string": "R4B-DISPERSION-READ<MOTION=MOVING=57-OF-58;STATIC=1-OF-58;CONTROL=C004-IDENTITY-TWO-WAY;CLASSES-MOVING=18-OF-19-CIRCULANT;NOT-BLOCH-DIAGONAL=3-OF-22|DISPERSION=EIGENPHASES-IN-MU-8=928-OF-928;EIGEN-EQUATION-VERIFIED=928;UNIT-MODULUS=928;PARITY-INVARIANT=58-OF-58;DISTINCT-REDUCED-PROFILES=58-VS-14-INVARIANT-LABELS|VELOCITY=SPECTRUM=0+1+2;VMAX=2;INTEGER-VALUED=1856-OF-1856;ALIASED=320-OF-1856-IN-19-FAMILIES;DEFINITION=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED(FIBER=9)|BOUND=NO-CONTENT=YES;CONE-AT-ONE-STEP=16-OF-16-SITES;VMAX=2=DIAMETER=2;REACH-BOUND-FALSE-AT=14-OF-58;OVERSHOOTS-AT=8;SATURATES-AT=36;INHERITED-CEILINGS=SEPARATIONS=16-OF-16;MAX-DEFECT-RADIUS=2-OF-2;INTERIOR-RADII=1|TRANSPORT=DRIFT=WINDING-AT-58-OF-58-FAMILIES-UNDER-1-OF-9-READING-PAIRS(BEST-OTHER=39-OF-58);NONZERO-WINDING=12-OF-58-ALL-MONOMIAL-OF-16;INTERFERING=42-ZERO-NET-TRANSPORT-AND-42-MOVING;MARKOV=0-OF-1792-NONZERO-INHERITED|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;SECTOR=SINGLE-OCCUPATION;MOMENTUM-LATTICE=DUAL-TORUS-16-DECLARED;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT>"
+  "string": "R4B-DISPERSION-READ<MOTION=MOVING=57-OF-58;STATIC=1-OF-58;CONTROL=C004-IDENTITY-TWO-WAY;CLASSES-MOVING=18-OF-19-CIRCULANT;NOT-BLOCH-DIAGONAL=3-OF-22|DISPERSION=EIGENPHASES-IN-MU-8=928-OF-928;EIGEN-EQUATION-VERIFIED=928;UNIT-MODULUS=928;ALGEBRAIC-INTEGERS=928;PARITY-INVARIANT=58-OF-58;DISTINCT-REDUCED-PROFILES=58-OF-58-FAMILIES(FORCED-BY-INVERTIBILITY);CLASS-SEPARATION=19-OF-19-CIRCULANT-BY-DISPERSION-MULTISET-VS-14-LABELS-FOR-22-CLASSES|VELOCITY=SPECTRUM=0+1+2;VMAX=2;INTEGER-VALUED=1856-OF-1856;ALIASED=320-OF-1856-IN-19-FAMILIES;DEFINITION=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED(FIBER=9;STENCIL-FORCED-TO-2-BY-MONOMIAL-NORMALISATION-AT-384-OF-384;LIFT-SELECTED-1-OF-3-BY-DRIFT=WINDING;RESIDUAL-FIBER=2-MEASURED-INERT-DIFFERING-AT-768-OF-1856-SIGNED-CELLS)|BOUND=NO-CONTENT=YES;CONE-AT-ONE-STEP=16-OF-16-SITES;VMAX=2=DIAMETER=2(CEILING-FORCED;ATTAINMENT-MEASURED;STRUCTURAL-AT-EVERY-EVEN-L-AT-5-SIZES);REACH-UPPER-BOUND-FALSE-AT=8-OF-58;REACH-LOWER-BOUND-FALSE-AT=14-OF-58;SATURATES-AT=36;INHERITED-CEILINGS=SEPARATIONS=16-OF-16;MAX-DEFECT-RADIUS=2-OF-2;INTERIOR-RADII=1-HERE-3-AT-L-8;RESIDUAL-FIBER-INVARIANT=YES|TRANSPORT=DRIFT=WINDING-AT-58-OF-58-FAMILIES-UNDER-1-OF-9-TIE-READING-PAIRS(BEST-OTHER=39-OF-58;STENCIL-BLIND-SO-2-OF-27-FULL-READINGS);IDENTITY=ARENA-INSTRUMENT-FAILS-AT-MU-12-WINDING=-1-VS-DRIFT=-1/2;NONZERO-WINDING=12-OF-58-ALL-MONOMIAL-OF-16;NON-MONOMIAL=42-MOVING=42;ZERO-NET-TRANSPORT-AT-SELECTED-READING=42;READING-INDEPENDENT-ZERO-DRIFT=24-OF-42;READING-INDEPENDENT-ZERO-WINDING=30-OF-42;DIAGONAL-DEFECT-NONZERO=42-INHERITED;MARKOV=0-OF-1792-NONZERO-INHERITED|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;SECTOR=SINGLE-OCCUPATION;MOMENTUM-LATTICE=DUAL-TORUS-16-DECLARED;VELOCITY-READING=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED(STENCIL-FORCED-TO-2;LIFT-SELECTED-BY-AN-ARENA-INSTRUMENT;RESIDUAL-FIBER=2);CHARACTER-CONVENTION=DECLARED-JOINTLY-WITH-VELOCITY-SIGN(FIBER=2);CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT>"
  },
  "waiver_ledger": [
   {
@@ -7179,6 +7879,15 @@
   },
   {
    "falsifier": [
+    "MUT-ARENA-WITNESS"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-ARENA-ARTIFACT-WITNESS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
     "MUT-LATTICE-UNBOUND"
    ],
    "forcing": "",
@@ -7188,7 +7897,7 @@
   },
   {
    "falsifier": [],
-   "forcing": "evaluated only in the writing path, which no diagnostic run reaches; it is two-way by construction -- a deliberately corrupted payload is written to a probe path, re-read and required to be detected, before the real artifacts are written and required to match",
+   "forcing": "evaluated only in the writing path, which no diagnostic run reaches; it is two-way by construction -- a deliberately corrupted payload is written to a probe path, re-read and required to be detected -- and its reference value is the GATE-TIME SEAL, whose in-run half G-SEAL-COMPLETE carries the injection falsifier MUT-SEAL-BROKEN",
    "forcing_registered": true,
    "gate": "G-ARTIFACT-INTEGRITY",
    "status": "WAIVED"
@@ -7231,6 +7940,15 @@
   },
   {
    "falsifier": [
+    "MUT-ROBUSTNESS"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-CANCELLATION-ROBUSTNESS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
     "MUT-CEILING"
    ],
    "forcing": "",
@@ -7267,6 +7985,15 @@
   },
   {
    "falsifier": [
+    "MUT-CLASS-MULTISET"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-CLASS-SEPARATION-BY-MULTISET",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
     "MUT-CLASS-SIZES"
    ],
    "forcing": "",
@@ -7290,6 +8017,15 @@
    "forcing": "",
    "forcing_registered": true,
    "gate": "G-CONE-AT-ONE-STEP",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-STRUCTURAL-L"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-CONE-VACUITY-STRUCTURAL",
    "status": "FALSIFIABLE"
   },
   {
@@ -7321,6 +8057,7 @@
   },
   {
    "falsifier": [
+    "MUT-DRIFT-ALT",
     "MUT-DRIFT-TABLE"
    ],
    "forcing": "",
@@ -7366,7 +8103,8 @@
   },
   {
    "falsifier": [
-    "MUT-HEAD-CONSTANT"
+    "MUT-HEAD-CONSTANT",
+    "MUT-HEAD-THIRD-OUTCOME"
    ],
    "forcing": "",
    "forcing_registered": true,
@@ -7421,7 +8159,8 @@
   },
   {
    "falsifier": [
-    "MUT-DENOMINATOR"
+    "MUT-DENOMINATOR",
+    "MUT-INTEGRALITY"
    ],
    "forcing": "",
    "forcing_registered": true,
@@ -7464,6 +8203,15 @@
   },
   {
    "falsifier": [
+    "MUT-DEFECT-BINDING"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-NON-MONOMIAL-DEFECT-BOUND",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
     "MUT-NONCONSTANT"
    ],
    "forcing": "",
@@ -7482,6 +8230,25 @@
   },
   {
    "falsifier": [
+    "MUT-NOTBLOCH-FORCED"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-NOT-BLOCH-FORCED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-PAPER-OCCURRENCES",
+    "MUT-PAPER-POLARITY"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
     "MUT-PAPER-CLAIM"
    ],
    "forcing": "",
@@ -7491,7 +8258,7 @@
   },
   {
    "falsifier": [],
-   "forcing": "evaluated after the mutant sweep closes the instrument's totals, so no in-process mutant can reach it; its in-run twins G-PAPER-CLAIMS and G-PAPER-NUMERAL-COVERAGE carry the two injection falsifiers and die on every sweep",
+   "forcing": "evaluated after the mutant sweep closes the instrument's totals, so no in-process mutant can reach it; the claims that render from the CLOSED totals (the mutant sweep's own result) exist only at this evaluation, and its in-run twins G-PAPER-CLAIMS, G-PAPER-NUMERAL-COVERAGE and G-PAPER-CLAIM-POLARITY carry the three injection falsifiers and die on every sweep",
    "forcing_registered": true,
    "gate": "G-PAPER-COVERAGE-FINAL",
    "status": "WAIVED"
@@ -7561,6 +8328,25 @@
   },
   {
    "falsifier": [
+    "MUT-ROW-FIELD",
+    "MUT-ROW-SWAP"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-PUBLISHED-ROWS-BOUND",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-REACH-DIRECTION"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-REACH-BOUND-DIRECTION",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
     "MUT-REACH"
    ],
    "forcing": "",
@@ -7606,6 +8392,15 @@
   },
   {
    "falsifier": [
+    "MUT-RESIDUAL-FIBER"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-RESIDUAL-FIBER-INERT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
     "MUT-RESOLUTION"
    ],
    "forcing": "",
@@ -7633,6 +8428,15 @@
   },
   {
    "falsifier": [
+    "MUT-SEAL-BROKEN"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-SEAL-COMPLETE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
     "MUT-SELFTEST-WRITES"
    ],
    "forcing": "",
@@ -7647,6 +8451,15 @@
    "forcing": "",
    "forcing_registered": true,
    "gate": "G-SPEED-CANONICAL",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-STENCIL-CENTRAL"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-STENCIL-FORCED-BY-NORMALISATION",
    "status": "FALSIFIABLE"
   },
   {
@@ -7705,6 +8518,24 @@
   },
   {
    "falsifier": [
+    "MUT-QUOTE-TRUNCATE"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-VERBATIM-WINDOW-DIGESTS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-QUOTE-AMBIGUOUS"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-VERBATIM-WINDOWS-UNIQUE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
     "MUT-HEAD-OUTSIDE-PIN"
    ],
    "forcing": "",
@@ -7729,6 +8560,15 @@
    "forcing": "",
    "forcing_registered": true,
    "gate": "G-VERDICT-VALUES-FLIPPABLE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": [
+    "MUT-VERIFY-PAPER-DEAD"
+   ],
+   "forcing": "",
+   "forcing_registered": true,
+   "gate": "G-VERIFY-PAPER-LIVE",
    "status": "FALSIFIABLE"
   },
   {
