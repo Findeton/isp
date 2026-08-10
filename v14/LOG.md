@@ -3503,3 +3503,19 @@ falsifier coverage 34%→~64%.  Off-tree byte-identical
 9cdb10472953, code 9bfcef7b3e11, output 4bfecd926e8f, receipt
 bd68497d4510.  Battery next; TERMINAL on completion (the
 ninth).
+
+## 2026-08-10 — WELD 2 / PAPER-13 TERMINAL (v14 LEDGER #121)
+
+Battery 4/4: plain BYTE-IDENTICAL; unknown flag exit 2;
+--selftest exit 0 + WROTE NOTHING (live status
+anchor_failures=0 gate_failures=0); MUT-CYCLE-PLANT
+DIED-AT-TARGET=True, artifacts unchanged.  **WELD 2 IS TERMINAL
+— the ninth terminal (papers 01/02/03/04/09/10/11/12/13).**
+The user's Route-A order, closed at full strength: no forced
+process↔space dictionary at the current carrier, under BOTH
+admissible readings, by a validated tamper-evident instrument
+(12/12 known blind spots dead), with the obstructions upgraded
+to theorems and the FOUND capability demonstrated at the
+verdict's own target.  STATUS row written (same commit, §13).
+The successor arena is U4's renewal crystal (panel in flight);
+Route B remains the user's call at its measured price.
