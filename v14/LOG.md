@@ -4109,3 +4109,34 @@ both holonomies incl. the enlargement's disappearance; the 772
 row problems both directions; the coupled 4/4 witness VERIFIED
 a genuine stochastic interpolant; the full δ*/block battery;
 0-vs-1900; d≤5.  Joint adjudication next.
+
+## 2026-08-10 — Γ-ITERATION JOINT ADJUDICATION (v14 LEDGER #142)
+
+Three AWF; ~876 seat recomputations; ZERO false numbers and
+ZERO numerical divergences; grade ACCEPT-WITH-FIXES;
+**GITER-LAW-CONFIRMED SURVIVES as the head with all three
+answers recomposed**: (a) QUANTUM=CARRIER-RELATIVE stands as
+measurement; the mechanism claim falls three-ways-convergent
+(round-1 counterexample; FIVE source classes; the 121-class
+minimal split leaving 36 edges standing CK-exact —
+single-valuedness SUFFICIENT NOT NECESSARY); **the licensed
+sentence adopted: NON-MARKOVIANITY IS A PROPERTY OF THE
+DESCRIPTION — the history chain is Markov by construction.**
+(b) **ANCHOR=SEDIMENTARY-BY-THEOREM-AT-EVERY-FINITE-CAP** (the
+effectus theorem adopted with proof; AT-THIS-CAP refused; the
+boundary convention = the sole successor question; the
+recurrence⟷non-Markov co-location dropped as coincidental).
+(c) the TARGETS segment carrier-free → moved to a LAW segment;
+the step-normaliser LAW-NATIVE.  **Paper-12 gets a
+SCOPE-ANNOTATION row, not an erratum; THE CORPUS-WIDE SCOPE
+NOTE REGISTERED: eq-22 negativity does NOT imply non-existence
+of a stochastic interpolant** (the (1,2,4) cell named; no
+retro-edits — form-scoped claims).  **The R6 wall registered**
+(no regeneration anchors at any finite cap, by theorem).
+Twelve repair orders R-GI-1..12 (the R4b seal lifted verbatim;
+GITER-DEVIATION made reachable; the tautologous off-tree gate;
+coverage-to-reach; #125; MCENSUS sorted; verify-paper
+value-binding; the comparator re-derives; the choice inventory
+added; the coupling-unit inheritance row).  No new engravings;
+three recurrences logged.  Repair worker dispatched — TERMINAL
+on its landing + battery = the gravity law's finish line.
