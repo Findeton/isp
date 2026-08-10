@@ -3631,3 +3631,33 @@ only d → same refusal on all five).  MINORs: §2's "every" false
 widest witness corroborating the sharpening); the two Z₃² cells
 vacuous positives (constant fields); "enlarges"→"contains".
 Joint adjudication next.
+
+## 2026-08-10 — U4 JOINT ADJUDICATION (v14 LEDGER #125)
+
+Three AWF; 989 seat recomputations; ZERO false numbers; both
+verdict strings STAND AS MEASUREMENTS (four independent
+stabilizer routes across unit+panel); grade ACCEPT-WITH-FIXES.
+**THE CORRECTED SETTLEMENT: TRUE, AND INHERITED** — the head
+gains CONSTRUCTOR-INHERITED via THE AFFINE MECHANISM
+(n = c + m·1_S; Stab(n)=Stab(1_S); S = full ⟨(1,1)⟩ cosets from
+d66's uniform column offset; "the diagonal is d66's seed rule,
+not a property of division events"); THE DIAGONAL UNIFICATION
+ADOPTED (I7's third link IS (1,1); det≡0 kernel (1,1); one
+cause, two shadows; the renewal-crystal weld census PREDICTABLY
+EMPTY at this family → re-scoped into U4b's determinant
+column); height purity STRENGTHENED cross-record; the honest
+ledger (KR re-worded; the founding spec 1-of-5 with
+indivisibility UNPOSABLE on forced records — the arena split
+stated).  Instrument: the L-1 wall's wrapping defeat (verified
+repair adopted); VARIES made reachable; THE SEAL disciplined
+per #119 (nine one-layer-down survivors → dead mutants); the
+42 anchors READ not typed; MUT-SITEMAP corrected + registry
+sweep; coverage lifted.  Ten repair orders R-U4-1..10.  **ONE
+ENGRAVING: text gates match text as written (whitespace
+normalisation + anchored needles + canonical fragments).**
+**THE SUCCESSOR RULING: U4b (paper-17) PINNED NOW** — the
+schedule census (the constructor as a variable; the
+diagonal-coset seed one point; the determinant column = the
+weld-arena scout; the affine null hypothesis; the fragility
+column; the law-side and diagonal-constructor siblings
+registered).  Repair worker dispatched; U4b pin next.
