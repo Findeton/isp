@@ -3887,3 +3887,55 @@ events; the diagonal mystery is one cause; the quantum question
 is unposable where the records are forced.  STATUS row written
 (same commit, §13).  U4b (paper-17) carries the emergence
 question forward, in construction now.
+
+## 2026-08-10 — Γ-ITERATION EFFECTUS FROZEN (1 OF 3) (v14 LEDGER #134)
+
+review-giter-effectus.md frozen.  Grade AWF (fixes BLOCKING);
+113 recomputations, zero numerical divergences (one apparent
+divergence traced to the REVIEWER's own horizon convention,
+resolved in the unit's favour — owned in-review).  **(a) THE
+QUANTUM MECHANISM IS REFUTED ON THE UNIT'S OWN ARENA (MAJOR):**
+the "entire signature carried by MENU's 4 multi-target edges"
+dies at the unit's own refinement trace — round 1 (162 classes)
+carries 132 multi-target edges (33× MENU's 4) and is CK-EXACT
+0/10; the statistic is not monotone (4→132→36→8→0); what
+survives is the sufficient direction only (congruence ⟹
+bisimulation ⟹ CK — a theorem).  The polarity kill: MENU is
+the COARSEST and the only non-Markov carrier; REC is the FINEST
+and Markov; **the licensed sentence: NON-MARKOVIANITY IS A
+PROPERTY OF THE DESCRIPTION — the history chain is Markov by
+construction.**  REC matches CONG-185 on every quantum
+statistic (the ruled carrier and the flat control DO NOT
+SEPARATE).  The eq-22 half of the mechanism (shared labels
+13/13/45/45 vs 0/0/0/0) IS measured and sound — the two halves
+split.  NEW unreported structure: MENU's 4 descent failures ARE
+the 4 multi-target sources, set-identical.  **(b) THE CAP AUDIT
+COMES OUT OPPOSITE — SEDIMENTARY IS LICENSED MORE STRONGLY THAN
+CLAIMED (MAJOR):** AT-THIS-CAP is the WRONG repair — the unit
+itself builds the d≤5 supply and its own dropped trace gives
+0/462 spanning, prefix-returns 0, purity at round 5-of-6; and
+it is a THEOREM (after round k the class determines
+min(N−|h|,k) ⟹ depth purity forced at EVERY finite cap).  The
+successor question is the BOUNDARY CONVENTION, not the cap.
+The recurrence⟷non-Markov link is COINCIDENTAL (round 1: the
+root recurs at 4 depths with 204 prefix-returns AND CK 0).
+**(c)** the Γ-main "correction" compares TWO OBJECTS (eq-22's
+padded/square form vs the rectangular problem; at MENU both
+hold — 104 negatives AND a certified feasible interpolant): NO
+erratum on paper-12, a scope-annotation row; **the under-billed
+item: eq-22 negativity ≠ non-existence of a stochastic
+interpolant — weakening every eq-22 refutation in the corpus**
+(a corpus-wide scope note); the verdict string self-contradicts
+across its QUANTUM and B3 segments; the [B3] isolation GATED
+AND EARNED (772/772 both directions); atom death + the (1,1)
+split verified exactly.  Also: NO choice inventory at all (the
+two missing items are exactly THE CAP and THE [B3] FORM); the
+flow identity's 244 passing off-horizon tests hidden by the
+head's phrasing; CK-at-10-triples does not select the carrier.
+Successor: **the depth-grading theorem is a WALL for the R6
+continuum line** (no regeneration anchor at any cap, by
+theorem); the Γ campaign closes on construction, opens on
+interpretation (the boundary-convention carrier; the
+eq-22/feasibility separation; what one refinement round
+removes).  NO delivered number moves under any fix.  Two seats
+pending.
