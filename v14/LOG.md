@@ -4426,3 +4426,37 @@ unit inheriting ROW|ROW/DIAG is PREMATURE — inherit the
 19,791/17,118 pool AND the wall; no pair-mechanism unit
 (register the closed form as a theorem); the posdef ceiling
 open (wall permits 6, measured 3).  Two seats pending.
+
+## 2026-08-10 — U4B OPERATOR FROZEN (2 OF 3) (v14 LEDGER #151)
+
+review-u4b-operator.md frozen (2f197645d498).  Grade AWF; 200
+recomputations + 904 independently driven grammar records; ZERO
+false numbers; scratch plain byte-identical.  **BOTH CLAIMED
+THEOREMS VERIFY AS THEOREMS: the budget wall airtight** (max
+incidence measured EXACTLY 18, tight at 1,296 pairs; min
+incidence at a posdef site exactly 3) **and never-Riemannian
+follows.**  All six K1 items confirmed: the family count both
+routes; the window licence rebuilt with an AST-loaded d42b1
+driver — **plus 250 random OUT-OF-WINDOW schedules all FORCED, a
+test the unit did not run**; the crystallinity census with the
+null verified ELEMENTWISE; **the pair-mechanism confirmed at all
+four witnesses and CLOSED-FORM DERIVABLE (216 = 4×3×18)** —
+consistent with the effectus's union-carrier reading; the
+determinant census incl. the third case the paper omits (0
+pairs det>0 at all nine); fragility pushed FAMILY-WIDE (9,072
+single-seed replacements over all 252 crystalline pairs, 0
+survivors).  **F1 (MAJOR): §10's "never positive definite
+anywhere in the family" is FALSE** — 36.2% of schedules
+(20,706,516) carry a posdef SITE; the true claim is "at every
+site"; two-word repair — **the register's 10th false paper
+claim (prose)**.  F2 (MAJOR): the bolded exhaustiveness
+sentence false for the fragility column.  MINORs: the
+never-Riemannian proof omits the n₍₁,₁₎≥1 step (the theorem
+still verified); the window licence is really
+CONSTRUCTIBILITY; BRANCHING-0 structural; §6 under-claims
+("neither seed is a LINE"); the processing-order item measured
+inert across 360 variants.  **Handed to K3: G-SEAL-COMPLETE
+reports 15 seals with declared_in_run=16 while the run ends at
+19 — Seal.verify iterates only TAKEN seals, so a
+declared-but-untaken seal is invisible** (a totality-addendum
+instance).  One seat pending (instrument) → adjudication.
