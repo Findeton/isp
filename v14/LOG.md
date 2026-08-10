@@ -2656,3 +2656,51 @@ keys falsifier-free.  Twelve repair orders R-GP-1..12
 (§13/#46 addendum)** — pinned-sha reads only, products gated,
 off-tree/git-less byte-reproduction mandatory.  Repair worker
 dispatched.
+
+## 2026-08-10 — WELD 2 DELIVERED, COMMITTED AS-IS (v14 LEDGER #92)
+
+Paper-13 (the carrier census, Route A per the user's word #85)
+delivered.  **Verdict (CANDIDATE READING until adjudicated):
+`WELD2-EMPTY-AT-THE-DECLARED-FAMILY-THE-ARITY-CYCLICITY-SCISSORS
+@BOTH:MENU-113+CONG-185` with CANDIDATES=60 | FOUND=0 |
+SMUGGLED=0 | UNMOTIVATED=0** (fates, identical at both carriers,
+30 cells each: TYPE-DEAD 36, ARITY-DEAD 12, ARITY-DEAD-BELOW 2,
+STRUCT-DEAD 10).  **BOTH CONTROLS FIRED AND BOTH FALSIFIED:**
+FOUND at the crystal (DOUBLE-GRID(3,2): 72 isomorphisms all
+giving ONE count field, all three fibers = 1; flips to
+UNMOTIVATED — I-SITE-ASSIGNMENT fiber 6 — when one row-group
+arbitration is withheld); EMPTY at the D58 walk (ARITY-DEAD 2-vs-9
++ an independent falsifier: 0 of its 4 division events on the
+(A,B) channel; flips to FOUND on crystal substitution); the
+crystal against I7's own 3-link lattice STRUCT-DEAD (0 of 9!
+bijections).  **CONG-185 RE-DERIVED SIX-OF-SIX, no mismatch**
+(185 classes in 5 rounds, independent bisimulation comparator;
+descent everywhere vs MENU failing at horizon 2 on 4 classes;
+0 multi-valued edges; 44 squares intact, 1362/1546 closing;
+q- AND k-holonomy ⟨2,3⟩ rank 2 vs MENU rank 3; CK 10/10 vs
+6/10).  **SURPRISES:** (1) THE DIAGONAL IS EMPTY across the whole
+committed crystal family — n_{e1+e2} ≡ 0 at 9/9 sites in 5/5
+crystals; at d=2 that count is exactly what fixes q₁₂ — the
+corpus's only lattice-carrying grammar records supply q₁₁ and
+q₂₂ and NEVER the cross term (neither pin nor scout anticipated;
+note the R4 resonance: the (1,1) link that FORCES the connective
+on the declared side is the one the generated side never
+writes).  (2) THE OBSTRUCTION IS A SCISSORS, not an absence:
+the one cyclic generator has 2 objects; every ≥9-object generator
+is acyclic (0 simple cycles at lengths 2–6); I7 is Z₃-periodic —
+so all C(113,9)/C(185,9)/C(2²⁰,9)/C(3969,9) restrictions die BY
+THEOREM, no enumeration; the posable successor is NAMED: a
+transport carrier over ≥9 actors.  (3) the unweighted menu
+partition also gives 113 (weights add no refinement at this
+scope, disclosed).  (4) two pinned sources had drifted in the
+working tree (concurrent repairs); both read via git show at
+95c3b77, routes recorded — the #46/no-moving-refs discipline
+working as designed.  Worker-claimed compliance (verification
+next): 32 gates/0 fail; 13 mutants all dying named; selftest
+18/18 anchors killable, writes nothing; unknown flags exit 2;
+byte-reproducible ×2; the first unit BORN under the #82
+contract.  Artifacts committed as-is: paper 535e288ff412, code
+290149118b9d, output 5e35e7a0115f, receipt bacdb7a5e985.
+Successor register (registered, not claimed): U4 renewal-only
+crystals; the diagonal question; the ≥9-actor carrier; Route B
+still the user's call.

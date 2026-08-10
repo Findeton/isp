@@ -1,0 +1,241 @@
+==============================================================================
+v14 WELD 2 -- paper-13: THE CARRIER CENSUS
+pin v14/note-weld2-census-pin.md (9d19515cb3ae), ledger #85, Route A
+exact arithmetic (fractions.Fraction / integers); no floats
+==============================================================================
+
+==============================================================================
+SEC 1  PROVENANCE -- every pinned source sha256-verified at start
+==============================================================================
+  [PASS] G-PROVENANCE
+         all 24 pinned sources resolve to their pinned sha256-12: 24 of 24 resolved, 0 unresolved.  2 carry different WORKING-TREE bytes -- the repo has live concurrent writers -- and are read from git at a declared pin commit instead, never from mutable worktree state: [{"path": "v14/note-weld2-referent-scout.md", "route": "git show 95c3b77:", "worktree": "425303a8ce1e"}, {"path": "v14/paper-12-gamma-main.md", "route": "git show 95c3b77:", "worktree": "05f5dc7c7273"}]
+         evidence: {"rerouted": [{"path": "v14/note-weld2-referent-scout.md", "route": "git show 95c3b77:", "worktree": "425303a8ce1e"}, {"path": "v14/paper-12-gamma-main.md", "route": "git show 95c3b77:", "worktree": "05f5dc7c7273"}], "resolved": 24, "total": 24, "unresolved": []}
+
+  VERBATIM ANCHORS (#62) -- meaning-binding, consumer-gated:
+  [VANCH] V01  v13/paper-ha-successor.md -> G-COUNT-SEMANTICS  (92 bytes verbatim, via worktree)
+  [VANCH] V02  v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md -> G-DIVISION-PREDICATE  (61 bytes verbatim, via worktree)
+  [VANCH] V03  v14/paper-04-refinement-grammar.md -> G-ADDITIVITY-972  (42 bytes verbatim, via worktree)
+  [VANCH] V04  v14/paper-09-renewal-transport.md -> G-INTERIOR-DEAD-ON-ARRIVAL  (81 bytes verbatim, via worktree)
+  [VANCH] V05  v13/paper-ha-successor.md -> G-TWO-WAY  (101 bytes verbatim, via worktree)
+  [VANCH] V06  v14/review-gmain-operator.md -> G-CONG-CLASSES  (62 bytes verbatim, via worktree)
+  [VANCH] V07  v14/paper-02-manifold-rung.md -> G-DEAD-LIST-CITED  (48 bytes verbatim, via worktree)
+  [VANCH] V08  v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md -> G-U4-REGISTERED  (51 bytes verbatim, via worktree)
+  [VANCH] V09  v14/note-weld2-referent-scout.md -> G-VERDICT  (22 bytes verbatim, via git show 95c3b77:)
+  [VANCH] V10  v10/note-d74-transport-holonomy-result.md -> G-CONG-ROUNDS  (88 bytes verbatim, via worktree)
+  [VANCH] V11  v14/paper-09-renewal-transport.md -> G-DIVISION-PREDICATE  (92 bytes verbatim, via worktree)
+
+==============================================================================
+SEC 3  THE AB4 ARENA -- the transport family, rebuilt
+==============================================================================
+  [ANCH] A01  ARM-1T (A,B) d<=4 family size: committed=3969 computed=3969
+  [ANCH] A02  MENU quotient classes at AB4: committed=113 computed=113
+  [PASS] G-MENU-CLASSES
+         the weighted-menu partition of the 3969 histories has 113 classes, and an INDEPENDENT comparator -- pairwise equality of menus as mappings event -> Fraction, sharing no key primitive with the builder -- returns 113.  DISCLOSED because it was measured: the UNWEIGHTED partition, on the event SET alone, returns 113 -- so at this scope the weights add nothing to the event set, and the carrier is the coarser object it looks like
+         evidence: {"builder": 113, "comparator": 113, "histories": 3969, "unweighted": 113}
+  [ANCH] A03  closed exchange squares at AB4: committed=1546 computed=1546
+  [ANCH] A04  defective (non-unit) squares at AB4: committed=88 computed=88
+  [PASS] G-SQUARES
+         the exchange-square census returns 1546 closed squares of which 88 are defective, spectrum {'1/2': 70, '2': 10, '2/3': 2, '3/2': 6}; an INDEPENDENT comparator that walks the depth-|h|+2 DESCENDANTS instead of the candidate pairs returns 1546 closed squares
+         evidence: {"closed": 1546, "comparator": 1546, "defective": 88, "spectrum": {"1/2": 70, "2": 10, "2/3": 2, "3/2": 6}}
+  [PASS] G-MENU-CLOSES
+         the MENU carrier closes 1402 of the 1546 closed squares and 44 of the 88 defective ones -- D74's curvature/descent-obstruction dichotomy 44 + 44 reproduced
+         evidence: {"all": 1402, "defective": 44}
+
+==============================================================================
+SEC 4  CONG-185 RE-DERIVED, ITS SIX RULING PROPERTIES GATED
+==============================================================================
+  [ANCH] A05  coarsest weighted congruence classes at AB4: committed=185 computed=185
+  [PASS] G-CONG-CLASSES
+         CONG-185 is RE-DERIVED here from the D74 pinned definition (partition refinement from the menu partition to a fixed point) and returns 185 classes; an INDEPENDENT comparator -- the coarsest bisimulation inside the menu partition, found by explicit pair-splitting on the relation with no signature hashing -- returns 185.  No substitution: the object used below is the one re-derived here
+         evidence: {"builder": 185, "comparator": 185}
+  [PASS] G-CONG-ROUNDS
+         the refinement reaches its fixed point in 5 rounds, inside D74's declared 4-6 window (V10) and matching the operator review's '5 rounds'
+         evidence: {"rounds": 5}
+  [PASS] G-CONG-P1-DESCENT
+         the horizon potential is class-constant on CONG at EVERY horizon (0 horizons carry a non-constant class), while on MENU it is not: G(.,2) takes more than one value on 4 classes -- the property is not vacuous
+         evidence: {"cong_nonconstant": {}, "menu_nonconstant": {"2": 4}}
+  [PASS] G-CONG-P2-SINGLE-VALUED
+         CONG carries 0 multi-valued labelled edge weights and 0 multi-valued labelled targets -- a genuine congruence; MENU carries 0 and 4
+         evidence: {"cong_weights_targets": [0, 0], "menu_weights_targets": [0, 4]}
+  [PASS] G-CONG-P3-CURVATURE-44
+         all 44 curvature-type defective squares survive: CONG closes 44 of 88 defective and 1362 of 1546 closed squares, with 44 non-unit self-loops and obstruction 44
+         evidence: {"closes_all": 1362, "closes_defective": 44, "obstruction": 44, "selfloops": 44}
+  [PASS] G-CONG-P4-Q-HOLONOMY
+         the q-reading's group on CONG is generated by primes [2, 3] at rank 2 -- D74's <2,3> reproduced, by exact integer row reduction on prime valuations, not read off by eye
+         evidence: {"primes": [2, 3], "rank": 2, "values": ["1/2", "2/3", "3/2", "2"]}
+  [PASS] G-CONG-P5-K-HOLONOMY
+         the k-reading COLLAPSES onto the q-reading on CONG: primes [2, 3] rank 2; on MENU it does not, primes [2, 3, 5, 13] rank 3 -- the enlargement is a non-descending-carrier artefact
+         evidence: {"menu_primes": [2, 3, 5, 13], "menu_rank": 3, "primes": [2, 3], "rank": 2}
+  [PASS] G-CONG-P6-LUMPABLE
+         the CONG class chain is EXACTLY LUMPABLE: Chapman-Kolmogorov divides at 10 of 10 depth triples, against MENU's 6 of 10
+         evidence: {"cong_ck": [10, 10], "menu_ck": [6, 10]}
+  [PASS] G-CONG-SIX-PROPERTIES
+         CONG-185's SIX ruling properties are gated BEFORE use and 6 of 6 hold: {"P1-descent": true, "P2-single-valued": true, "P3-curvature-44": true, "P4-q-holonomy": true, "P5-k-holonomy": true, "P6-exact-lumpability": true}.  The re-derivation matches the definitional source at every property; no mismatch to report as a finding
+         evidence: {"properties": {"P1-descent": true, "P2-single-valued": true, "P3-curvature-44": true, "P4-q-holonomy": true, "P5-k-holonomy": true, "P6-exact-lumpability": true}}
+
+==============================================================================
+SEC 5  I7's ARENA AND THE ONLY MOTIVATED INGREDIENT
+==============================================================================
+  [PASS] G-I7-ARENA
+         I7's arena is read as DATA from the pinned HA receipt: 9 sites (Z_3)^2, 3 declared links [[1, 0], [0, 1], [1, 1]], 11 declared records of which 9 are admissible by the exact Sylvester criterion and 6 are splittable (['G-ANISO', 'G-CURVED', 'G-FLAT'] carry a count-1 interval)
+         evidence: {"admissible": 9, "links": 3, "sites": 9, "splittable": 6, "unsplittable": ["G-ANISO", "G-CURVED", "G-FLAT"]}
+  [ANCH] A06  R6a additivity constraints: committed=972 computed=972
+  [ANCH] A07  R6a additivity violations: committed=0 computed=0
+  [PASS] G-ADDITIVITY-972
+         the ONLY motivated ingredient's second requirement reproduces: count additivity under the induced dyadic subdivision holds at 972 of 972 constraints over 36 refinements (6 splittable records x 3 declared split rules x 2 declared completions).  An INDEPENDENT arithmetic comparator -- family cardinalities multiplied out, sharing no construction with the builder -- gives 972
+         evidence: {"builds": 36, "checks": 972, "comparator": 972, "violations": 0}
+  [PASS] G-DIVISION-PREDICATE
+         the division-event predicate is the ARBITRATION TAG, and it is the pinned convention, not this unit's choice: R6b' 3 records it SOURCE-FORCED from three agreeing rows (V02's [POSIT], V11's S1-code test `any(e[0] == 'r' ...)`, and S4's event-level naming). MEASURED: every one of the 1536 events the predicate selects carries the tag (1536 of 1536); the family contains 20 distinct arbitration events of which 8 are PAIR arbitrations, so S4's narrower sufficient condition would select a strict subset -- that sensitivity is DISCLOSED here and the forced reading is the one used
+         evidence: {"distinct_arbitrations": 20, "distinct_pair": 8, "selected": 1536, "tagged": 1536}
+  [PASS] G-COUNT-SEMANTICS
+         the count semantics is the pin's only motivated ingredient and it is carried verbatim (V01): n_l(x) counts DIVISION EVENTS in the record interval between x and x+l.  Every candidate below is required to send a set of grammar division events to the count register of a specific link; the requirement is enforced at the count generator, which is the single declared member DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS
+         evidence: {"count_generators": ["DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS"]}
+
+==============================================================================
+SEC 6  THE CONTROL ARENAS -- the crystals and the generic walk
+==============================================================================
+  [DATA] DOUBLE-GRID(3,2): 72 events, refusal=None, maxhits=1, division events=18
+         count field by link: {'(1, 0)': [(2, 9)], '(0, 1)': [(2, 9)], '(1, 1)': [(0, 9)]}
+  [DATA] DOUBLE-GRID(3,3): 96 events, refusal=None, maxhits=1, division events=24
+         count field by link: {'(1, 0)': [(3, 9)], '(0, 1)': [(3, 9)], '(1, 1)': [(0, 9)]}
+  [DATA] CONFLICT-GRID(3,2): 30 events, refusal=None, maxhits=1, division events=6
+         count field by link: {'(1, 0)': [(1, 9)], '(0, 1)': [(1, 9)], '(1, 1)': [(0, 9)]}
+  [DATA] CONFLICT-GRID(3,4): 66 events, refusal=None, maxhits=1, division events=12
+         count field by link: {'(1, 0)': [(2, 9)], '(0, 1)': [(2, 9)], '(1, 1)': [(0, 9)]}
+  [DATA] D60-GRID(3,12): 46 events, refusal=None, maxhits=1, division events=1
+         count field by link: {'(1, 0)': [(0, 9)], '(0, 1)': [(0, 9)], '(1, 1)': [(0, 9)]}
+  [PASS] G-CRYSTAL-FORCED
+         5 of 5 rebuilt crystals are FORCED records -- every event offered by the committed layer's own menu and every specification matched by EXACTLY ONE candidate (maxhits = 1, no refusal), reproducing D60's C1/C2 and D66/D67's _pick discipline
+         evidence: {"forced": 5, "total": 5}
+  [PASS] G-CRYSTAL-DIAGONAL-EMPTY
+         MEASURED ACROSS THE COMMITTED CRYSTAL FAMILY: the axis link counts are homogeneous and strictly positive on the arbitration crystals, and the DIAGONAL link count is identically ZERO at 9 of 9 sites in 5 of 5 crystals -- the corpus's only lattice-carrying grammar records supply q_11 and q_22 and never q_12
+         evidence: {"diagonal_zero_crystals": 5, "total": 5}
+  [DATA] D58 generic 2-actor walk (depth 30, seed 4242): 30 events, 4 division events, 0 of them on the (A,B) channel
+
+==============================================================================
+SEC 8  CONTROLS FIRST -- both verdicts reachable, each falsified
+==============================================================================
+  [PASS] G-TWO-WAY
+         HA 14 requirement 3 is carried verbatim (V05) and honoured below: the FOUND branch is demonstrated on the crystal arena and the EMPTY branch on the generic walk, each with an in-run declared falsifier that flips it
+         evidence: {"requirement": "HA 14 item 3"}
+         WAIVER [DECLARATION-CARRIED]: this gate records that the two-way requirement is in force; its content is discharged by G-CTRL-FOUND and G-CTRL-EMPTY, which carry the measurements
+  [DATA] crystal @ crystal-carried lattice: fate=FOUND-candidate  (zero free items at the RSQ standard)  inventory={'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  [DATA] crystal @ I7's declared lattice: fate=STRUCT-DEAD  (cyclic, but 0 of the 9! bijections carry the site incidence onto the target's link structure)
+  [DATA] inhomogeneous crystal (falsifier): fate=UNMOTIVATED  (2 genuinely free item(s): I-DIRECTION-LABEL fiber 2, I-SITE-ASSIGNMENT fiber 6)  inventory={'I-SITE-ASSIGNMENT': 6, 'I-DIRECTION-LABEL': 2, 'I-ORIENT': 1}
+  [DATA] generic walk @ I7's declared lattice: fate=ARITY-DEAD  (2 site objects against the target's 9; no repair declared)
+  [PASS] G-CTRL-FOUND
+         POSITIVE CONTROL: on the crystal arena -- a grammar record PROVABLY carrying a lattice (forced, exactly-one-candidate, D60 C1/C2; width ceiling k*b <= k^2 saturated, D66/D67) -- the census machinery returns FOUND-candidate at the lattice the record itself carries, with 72 site assignments all giving ONE count field: inventory {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}, free items [].  The record's own co-division structure forces the reading
+         evidence: {"acyclicity_basis": "measured", "arena": "CRYSTAL/DOUBLE-GRID(3,2)", "arity_repair": "NONE", "carrier": null, "count_cells": 18, "count_field": [["((0, 0), (0, 1))", 2], ["((0, 0), (1, 0))", 2], ["((0, 1), (0, 1))", 2], ["((0, 1), (1, 0))", 2], ["((0, 2), (0, 1))", 2], ["((0, 2), (1, 0))", 2], ["((1, 0), (0, 1))", 2], ["((1, 0), (1, 0))", 2], ["((1, 1), (0, 1))", 2], ["((1, 1), (1, 0))", 2], ["((1, 2), (0, 1))", 2], ["((1, 2), (1, 0))", 2], ["((2, 0), (0, 1))", 2], ["((2, 0), (1, 0))", 2], ["((2, 1), (0, 1))", 2], ["((2, 1), (1, 0))", 2], ["((2, 2), (0, 1))", 2], ["((2, 2), (1, 0))", 2]], "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS", "count_max": 2, "count_min": 2, "fate": "FOUND-candidate", "free_items": [], "inventory": {"I-DIRECTION-LABEL": 1, "I-ORIENT": 1, "I-SITE-ASSIGNMENT": 1}, "isomorphisms": 72, "link_acyclic": false, "link_gen": "ACTOR-PAIR", "link_note": "co-division incidence on the ordered actor pair", "needs_interior_position": false, "reason": "zero free items at the RSQ standard", "site_arity": 9, "site_gen": "ACTOR", "site_note": "the record's declared actor pool", "smuggled": false, "target": "CRYSTAL-CARRIED-LATTICE"}
+  [PASS] G-CTRL-FOUND-FALSIFIABLE
+         the FOUND control CAN FAIL: the same machinery on the declared falsifier -- the same crystal with one row-group arbitration withheld -- returns UNMOTIVATED (2 genuinely free item(s): I-DIRECTION-LABEL fiber 2, I-SITE-ASSIGNMENT fiber 6).  A control that cannot fail would be a finding against this unit; this one fails on demand
+         evidence: {"acyclicity_basis": "measured", "arena": "CRYSTAL-INHOMOGENEOUS (declared falsifier)", "arity_repair": "NONE", "carrier": null, "count_cells": 18, "count_field": [["((0, 0), (0, 1))", 1], ["((0, 0), (1, 0))", 2], ["((0, 1), (0, 1))", 1], ["((0, 1), (1, 0))", 2], ["((0, 2), (0, 1))", 1], ["((0, 2), (1, 0))", 2], ["((1, 0), (0, 1))", 2], ["((1, 0), (1, 0))", 2], ["((1, 1), (0, 1))", 2], ["((1, 1), (1, 0))", 2], ["((1, 2), (0, 1))", 2], ["((1, 2), (1, 0))", 2], ["((2, 0), (0, 1))", 2], ["((2, 0), (1, 0))", 2], ["((2, 1), (0, 1))", 2], ["((2, 1), (1, 0))", 2], ["((2, 2), (0, 1))", 2], ["((2, 2), (1, 0))", 2]], "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS", "count_max": 2, "count_min": 1, "fate": "UNMOTIVATED", "free_items": ["I-DIRECTION-LABEL", "I-SITE-ASSIGNMENT"], "inventory": {"I-DIRECTION-LABEL": 2, "I-ORIENT": 1, "I-SITE-ASSIGNMENT": 6}, "isomorphisms": 72, "link_acyclic": false, "link_gen": "ACTOR-PAIR", "link_note": "co-division incidence on the ordered actor pair", "needs_interior_position": false, "reason": "2 genuinely free item(s): I-DIRECTION-LABEL fiber 2, I-SITE-ASSIGNMENT fiber 6", "site_arity": 9, "site_gen": "ACTOR", "site_note": "the record's declared actor pool", "smuggled": false, "target": "CRYSTAL-CARRIED-LATTICE"}
+  [PASS] G-CTRL-CRYSTAL-AT-I7
+         REPORTED WHICHEVER WAY IT LANDS: the same crystal, run against I7's OWN declared 3-link lattice, returns STRUCT-DEAD -- cyclic, but 0 of the 9! bijections carry the site incidence onto the target's link structure.  The crystal control demonstrates the detector's FOUND branch; it does NOT deliver a weld, and this row is why
+         evidence: {"acyclicity_basis": "measured", "arena": "CRYSTAL/DOUBLE-GRID(3,2)", "arity_repair": "NONE", "carrier": null, "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS", "fate": "STRUCT-DEAD", "isomorphisms": 0, "link_acyclic": false, "link_gen": "ACTOR-PAIR", "link_note": "co-division incidence on the ordered actor pair", "needs_interior_position": false, "reason": "cyclic, but 0 of the 9! bijections carry the site incidence onto the target's link structure", "site_arity": 9, "site_gen": "ACTOR", "site_note": "the record's declared actor pool", "target": "I7-DECLARED-LATTICE"}
+  [PASS] G-CTRL-EMPTY
+         NEGATIVE CONTROL: on D58's generic 2-actor walk the census returns ARITY-DEAD against I7's declared lattice, by the declared falsifier ARITY -- 2 site objects against the target's 9; no repair declared -- and ARITY-DEAD-BELOW once the declared restriction is offered, because a restriction can only shrink a site set.  The walk carries a SECOND, independent falsifier: 0 of its 4 division events lie on the (A,B) channel, so its count register is empty as well
+         evidence: {"divisions_on_AB": 0, "no_repair": {"acyclicity_basis": "measured", "arena": "D58-GENERIC-2-ACTOR-WALK", "arity_repair": "NONE", "carrier": null, "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS", "fate": "ARITY-DEAD", "link_acyclic": true, "link_gen": "ACTOR-PAIR", "link_note": "co-division incidence on the ordered actor pair", "needs_interior_position": false, "reason": "2 site objects against the target's 9; no repair declared", "site_arity": 2, "site_gen": "ACTOR", "site_note": "the record's declared actor pool", "target": "I7-DECLARED-LATTICE"}, "with_repair": {"acyclicity_basis": "measured", "arena": "D58-GENERIC-2-ACTOR-WALK", "arity_repair": "DECLARED-RESTRICTION", "carrier": null, "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS", "fate": "ARITY-DEAD-BELOW", "link_acyclic": true, "link_gen": "ACTOR-PAIR", "link_note": "co-division incidence on the ordered actor pair", "needs_interior_position": false, "reason": "2 site objects against the target's 9; a declared restriction can only shrink a site set, so no repair exists", "site_arity": 2, "site_gen": "ACTOR", "site_note": "the record's declared actor pool", "target": "I7-DECLARED-LATTICE"}}
+  [PASS] G-CTRL-EMPTY-FALSIFIABLE
+         the EMPTY control CAN return its other value: the identical call, on the crystal record, returns FOUND-candidate -- so EMPTY at the walk is a property of the walk and not of the plumbing
+         evidence: {"acyclicity_basis": "measured", "arena": "CRYSTAL/DOUBLE-GRID(3,2)", "arity_repair": "NONE", "carrier": null, "count_cells": 18, "count_field": [["((0, 0), (0, 1))", 2], ["((0, 0), (1, 0))", 2], ["((0, 1), (0, 1))", 2], ["((0, 1), (1, 0))", 2], ["((0, 2), (0, 1))", 2], ["((0, 2), (1, 0))", 2], ["((1, 0), (0, 1))", 2], ["((1, 0), (1, 0))", 2], ["((1, 1), (0, 1))", 2], ["((1, 1), (1, 0))", 2], ["((1, 2), (0, 1))", 2], ["((1, 2), (1, 0))", 2], ["((2, 0), (0, 1))", 2], ["((2, 0), (1, 0))", 2], ["((2, 1), (0, 1))", 2], ["((2, 1), (1, 0))", 2], ["((2, 2), (0, 1))", 2], ["((2, 2), (1, 0))", 2]], "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS", "count_max": 2, "count_min": 2, "fate": "FOUND-candidate", "free_items": [], "inventory": {"I-DIRECTION-LABEL": 1, "I-ORIENT": 1, "I-SITE-ASSIGNMENT": 1}, "isomorphisms": 72, "link_acyclic": false, "link_gen": "ACTOR-PAIR", "link_note": "co-division incidence on the ordered actor pair", "needs_interior_position": false, "reason": "zero free items at the RSQ standard", "site_arity": 9, "site_gen": "ACTOR", "site_note": "the record's declared actor pool", "smuggled": false, "target": "CRYSTAL-CARRIED-LATTICE"}
+  [PASS] G-SMUGGLE-REACHABLE
+         the R6 no-smuggling classifier is a MEASUREMENT, not a label: a declared probe whose count function reads I7's own s classifies SMUGGLED=True, and a grammar-side probe classifies SMUGGLED=False.  At I7 record and metric are one datum in two coordinate systems (det 2), so the test is WHICH FUNCTION of grammar data a candidate computes
+         evidence: {"grammar_side": false, "reads_s": true}
+  [PASS] G-INTERIOR-DEAD-ON-ARRIVAL
+         the interior classifier is two-valued and both values are exercised: a probe reading that must place a division INSIDE a leg classifies dead-on-arrival (True) -- R6b' 9's type census (V04) -- while the declared count generator does not (False), because it counts events ON a link object and never positions inside one.  The probe CITES R6b' C1's type verdict; it does not re-run C1
+         evidence: {"census_generator": false, "probe": true}
+  [PASS] G-DEAD-LIST-CITED
+         the pre-registered dead list (pin R4 / scout (b)) is CITED and not re-run: R6b' C1-C5 with free items 6/5/1/4/1, BRG-EMPTY-AT-CARRIER, GW1 2's order-only spatial instruments, v12's Gamma objects, and the naive 9<->9 whose L>=4 requirement is measured at V07.  No candidate row below re-derives any of them
+         evidence: {"dead_items": 5}
+         WAIVER [DECLARATION-CARRIED]: a discipline statement about what this unit does NOT compute; its content is the absence of those computations, which the receipt's candidate rows exhibit
+  [PASS] G-U4-REGISTERED
+         v11 paper 0 7's U4 -- 'the division events of a crystal form a crystal' (V08) -- is REGISTERED as the successor form of this unit's FOUND-side control and is NOT claimed here: this unit builds the committed crystals and reads their division events, it does not rebuild the crystals with renewal-only records
+         evidence: {"claimed": false, "registered": "U4"}
+         WAIVER [REGISTER-ONLY]: a successor register entry; nothing in the verdict descends from it
+
+==============================================================================
+SEC 9  THE CENSUS AT BOTH CARRIERS
+==============================================================================
+  [DATA] candidates enumerated (COMPUTED): 60 = 5 site x 3 link x 1 count x 2 repair x 2 carriers
+  [DATA] fates: {'ARITY-DEAD': 12, 'ARITY-DEAD-BELOW': 2, 'STRUCT-DEAD': 10, 'TYPE-DEAD': 36}
+  [DATA] fates @MENU: {'ARITY-DEAD': 6, 'ARITY-DEAD-BELOW': 1, 'STRUCT-DEAD': 5, 'TYPE-DEAD': 18}
+  [DATA] fates @CONG: {'ARITY-DEAD': 6, 'ARITY-DEAD-BELOW': 1, 'STRUCT-DEAD': 5, 'TYPE-DEAD': 18}
+
+  the full candidate table:
+  carrier  site          link            rep                      arity  fate
+  MENU     ACTOR         ACTOR-PAIR      NONE                         2  ARITY-DEAD
+  MENU     ACTOR         ACTOR-PAIR      DECLARED-RESTRICTION         2  ARITY-DEAD-BELOW
+  MENU     ACTOR         EXTENSION-EDGE  NONE                         2  TYPE-DEAD
+  MENU     ACTOR         EXTENSION-EDGE  DECLARED-RESTRICTION         2  TYPE-DEAD
+  MENU     ACTOR         COVER-PAIR      NONE                         2  TYPE-DEAD
+  MENU     ACTOR         COVER-PAIR      DECLARED-RESTRICTION         2  TYPE-DEAD
+  MENU     MENU-CLASS    ACTOR-PAIR      NONE                       113  TYPE-DEAD
+  MENU     MENU-CLASS    ACTOR-PAIR      DECLARED-RESTRICTION       113  TYPE-DEAD
+  MENU     MENU-CLASS    EXTENSION-EDGE  NONE                       113  ARITY-DEAD
+  MENU     MENU-CLASS    EXTENSION-EDGE  DECLARED-RESTRICTION       113  STRUCT-DEAD
+  MENU     MENU-CLASS    COVER-PAIR      NONE                       113  TYPE-DEAD
+  MENU     MENU-CLASS    COVER-PAIR      DECLARED-RESTRICTION       113  TYPE-DEAD
+  MENU     CONG-CLASS    ACTOR-PAIR      NONE                       185  TYPE-DEAD
+  MENU     CONG-CLASS    ACTOR-PAIR      DECLARED-RESTRICTION       185  TYPE-DEAD
+  MENU     CONG-CLASS    EXTENSION-EDGE  NONE                       185  ARITY-DEAD
+  MENU     CONG-CLASS    EXTENSION-EDGE  DECLARED-RESTRICTION       185  STRUCT-DEAD
+  MENU     CONG-CLASS    COVER-PAIR      NONE                       185  TYPE-DEAD
+  MENU     CONG-CLASS    COVER-PAIR      DECLARED-RESTRICTION       185  TYPE-DEAD
+  MENU     EVENT-SUBSET  ACTOR-PAIR      NONE                   1048576  TYPE-DEAD
+  MENU     EVENT-SUBSET  ACTOR-PAIR      DECLARED-RESTRICTION   1048576  TYPE-DEAD
+  MENU     EVENT-SUBSET  EXTENSION-EDGE  NONE                   1048576  ARITY-DEAD
+  MENU     EVENT-SUBSET  EXTENSION-EDGE  DECLARED-RESTRICTION   1048576  STRUCT-DEAD
+  MENU     EVENT-SUBSET  COVER-PAIR      NONE                   1048576  ARITY-DEAD
+  MENU     EVENT-SUBSET  COVER-PAIR      DECLARED-RESTRICTION   1048576  STRUCT-DEAD
+  MENU     ULAM-PREFIX   ACTOR-PAIR      NONE                      3969  TYPE-DEAD
+  MENU     ULAM-PREFIX   ACTOR-PAIR      DECLARED-RESTRICTION      3969  TYPE-DEAD
+  MENU     ULAM-PREFIX   EXTENSION-EDGE  NONE                      3969  ARITY-DEAD
+  MENU     ULAM-PREFIX   EXTENSION-EDGE  DECLARED-RESTRICTION      3969  STRUCT-DEAD
+  MENU     ULAM-PREFIX   COVER-PAIR      NONE                      3969  TYPE-DEAD
+  MENU     ULAM-PREFIX   COVER-PAIR      DECLARED-RESTRICTION      3969  TYPE-DEAD
+  CONG     ACTOR         ACTOR-PAIR      NONE                         2  ARITY-DEAD
+  CONG     ACTOR         ACTOR-PAIR      DECLARED-RESTRICTION         2  ARITY-DEAD-BELOW
+  CONG     ACTOR         EXTENSION-EDGE  NONE                         2  TYPE-DEAD
+  CONG     ACTOR         EXTENSION-EDGE  DECLARED-RESTRICTION         2  TYPE-DEAD
+  CONG     ACTOR         COVER-PAIR      NONE                         2  TYPE-DEAD
+  CONG     ACTOR         COVER-PAIR      DECLARED-RESTRICTION         2  TYPE-DEAD
+  CONG     MENU-CLASS    ACTOR-PAIR      NONE                       113  TYPE-DEAD
+  CONG     MENU-CLASS    ACTOR-PAIR      DECLARED-RESTRICTION       113  TYPE-DEAD
+  CONG     MENU-CLASS    EXTENSION-EDGE  NONE                       113  ARITY-DEAD
+  CONG     MENU-CLASS    EXTENSION-EDGE  DECLARED-RESTRICTION       113  STRUCT-DEAD
+  CONG     MENU-CLASS    COVER-PAIR      NONE                       113  TYPE-DEAD
+  CONG     MENU-CLASS    COVER-PAIR      DECLARED-RESTRICTION       113  TYPE-DEAD
+  CONG     CONG-CLASS    ACTOR-PAIR      NONE                       185  TYPE-DEAD
+  CONG     CONG-CLASS    ACTOR-PAIR      DECLARED-RESTRICTION       185  TYPE-DEAD
+  CONG     CONG-CLASS    EXTENSION-EDGE  NONE                       185  ARITY-DEAD
+  CONG     CONG-CLASS    EXTENSION-EDGE  DECLARED-RESTRICTION       185  STRUCT-DEAD
+  CONG     CONG-CLASS    COVER-PAIR      NONE                       185  TYPE-DEAD
+  CONG     CONG-CLASS    COVER-PAIR      DECLARED-RESTRICTION       185  TYPE-DEAD
+  CONG     EVENT-SUBSET  ACTOR-PAIR      NONE                   1048576  TYPE-DEAD
+  CONG     EVENT-SUBSET  ACTOR-PAIR      DECLARED-RESTRICTION   1048576  TYPE-DEAD
+  CONG     EVENT-SUBSET  EXTENSION-EDGE  NONE                   1048576  ARITY-DEAD
+  CONG     EVENT-SUBSET  EXTENSION-EDGE  DECLARED-RESTRICTION   1048576  STRUCT-DEAD
+  CONG     EVENT-SUBSET  COVER-PAIR      NONE                   1048576  ARITY-DEAD
+  CONG     EVENT-SUBSET  COVER-PAIR      DECLARED-RESTRICTION   1048576  STRUCT-DEAD
+  CONG     ULAM-PREFIX   ACTOR-PAIR      NONE                      3969  TYPE-DEAD
+  CONG     ULAM-PREFIX   ACTOR-PAIR      DECLARED-RESTRICTION      3969  TYPE-DEAD
+  CONG     ULAM-PREFIX   EXTENSION-EDGE  NONE                      3969  ARITY-DEAD
+  CONG     ULAM-PREFIX   EXTENSION-EDGE  DECLARED-RESTRICTION      3969  STRUCT-DEAD
+  CONG     ULAM-PREFIX   COVER-PAIR      NONE                      3969  TYPE-DEAD
+  CONG     ULAM-PREFIX   COVER-PAIR      DECLARED-RESTRICTION      3969  TYPE-DEAD
+  [PASS] G-CENSUS-COMPLETE
+         the candidate family is enumerated exhaustively over the pin's declared generator vocabulary and its size is COMPUTED, not typed: 60 candidates (5 site generators x 3 link generators x 1 count generator x 2 arity treatments x 2 carriers); every cell carries a measured fate, none is skipped
+         evidence: {"candidates": 60, "fates": {"ARITY-DEAD": 12, "ARITY-DEAD-BELOW": 2, "STRUCT-DEAD": 10, "TYPE-DEAD": 36}}
+  [PASS] G-SCISSORS
+         THE MECHANISM, measured on both sides at once.  The one link generator that carries directed cycles at the transport carrier is the actor pair / delivery channel, and it has exactly 2 site objects; the link generators with enough objects are ACYCLIC -- the MENU class-extension graph carries 45 self-loops and, after their removal, no directed cycle on distinct vertices (comparator: {2: 0, 3: 0, 4: 0, 5: 0, 6: 0} simple cycles at lengths 2..6), and the CONG class-extension graph carries 0 self-loops and is acyclic outright (comparator: {2: 0, 3: 0, 4: 0, 5: 0, 6: 0}).  I7's lattice needs 9 sites AND a 3-cycle on 3 distinct sites through every generator.  A self-loop is not a generator cycle: the declared link displacements are non-zero
+         evidence: {"actor_pair_relation": [["A->B", 336], ["B->A", 336]], "actor_site_objects": 2, "cong_class_acyclic": true, "cong_class_selfloops": 0, "cong_simple_cycles_len2to6": {"2": 0, "3": 0, "4": 0, "5": 0, "6": 0}, "divisions_on_the_AB_channel_in_family": 336, "menu_class_acyclic": true, "menu_class_selfloops": 45, "menu_simple_cycles_len2to6": {"2": 0, "3": 0, "4": 0, "5": 0, "6": 0}}
+
+==============================================================================
+SEC 10  THE VERDICT
+==============================================================================
+  WELD2-EMPTY-AT-THE-DECLARED-FAMILY-THE-ARITY-CYCLICITY-SCISSORS@BOTH:MENU-113+CONG-185<CANDIDATES=60|FOUND=0|SMUGGLED=0|UNMOTIVATED=0|TYPE-DEAD=36|ARITY-DEAD=12|ARITY-DEAD-BELOW=2|STRUCT-DEAD=10 -- MECHANISM=THE-ONLY-CYCLIC-LINK-GENERATOR-HAS-2-OBJECTS(336-DIVISION-EVENTS-ON-THE-(A,B)-CHANNEL)-AND-EVERY-LINK-GENERATOR-WITH-9-OR-MORE-IS-ACYCLIC(MENU-SELFLOOPS=45|CONG-SELFLOOPS=0|SIMPLE-CYCLES-LEN-2..6=0-AT-BOTH) -- CONTROLS=FOUND-AT-CRYSTAL(FOUND-candidate,ISOS=72,FIBERS-ALL-1)|FALSIFIER-FLIPS(UNMOTIVATED,I-SITE-ASSIGNMENT-FIBER=6)|EMPTY-AT-WALK(ARITY-DEAD)|CRYSTAL-AT-I7(STRUCT-DEAD) -- INGREDIENT=COUNT-SEMANTICS-INTACT(ADDITIVITY-972-OF-972|DIVISION=ARBITRATION-TAG-FORCED) -- CARRIER-RE-DERIVATION=CONG-185-SIX-OF-SIX -- SCOPE=(A,B)-D<=4-CARRIER|I7-d2-L3-9-SITES-3-LINKS|DECLARED-WINDOW=FIRST-TO-LAST-ARBITRATION-CUT>
+  [PASS] G-VERDICT
+         the pre-registered outcome string that fires is WELD2-EMPTY-AT-THE-DECLARED-FAMILY, carrier-stamped @BOTH (MENU-113 and CONG-185), with obstruction THE-ARITY-CYCLICITY-SCISSORS: of 60 candidates 0 are FOUND, 0 SMUGGLED, 0 UNMOTIVATED, and the remainder die at measured type, arity and structure obstructions {'ARITY-DEAD': 12, 'ARITY-DEAD-BELOW': 2, 'STRUCT-DEAD': 10, 'TYPE-DEAD': 36}.  Between delivery and adjudication this is a CANDIDATE READING
+         evidence: {"fates": {"ARITY-DEAD": 12, "ARITY-DEAD-BELOW": 2, "STRUCT-DEAD": 10, "TYPE-DEAD": 36}, "found": 0, "smuggled": 0, "unmotivated": 0, "verdict": "WELD2-EMPTY-AT-THE-DECLARED-FAMILY-THE-ARITY-CYCLICITY-SCISSORS@BOTH:MENU-113+CONG-185<CANDIDATES=60|FOUND=0|SMUGGLED=0|UNMOTIVATED=0|TYPE-DEAD=36|ARITY-DEAD=12|ARITY-DEAD-BELOW=2|STRUCT-DEAD=10 -- MECHANISM=THE-ONLY-CYCLIC-LINK-GENERATOR-HAS-2-OBJECTS(336-DIVISION-EVENTS-ON-THE-(A,B)-CHANNEL)-AND-EVERY-LINK-GENERATOR-WITH-9-OR-MORE-IS-ACYCLIC(MENU-SELFLOOPS=45|CONG-SELFLOOPS=0|SIMPLE-CYCLES-LEN-2..6=0-AT-BOTH) -- CONTROLS=FOUND-AT-CRYSTAL(FOUND-candidate,ISOS=72,FIBERS-ALL-1)|FALSIFIER-FLIPS(UNMOTIVATED,I-SITE-ASSIGNMENT-FIBER=6)|EMPTY-AT-WALK(ARITY-DEAD)|CRYSTAL-AT-I7(STRUCT-DEAD) -- INGREDIENT=COUNT-SEMANTICS-INTACT(ADDITIVITY-972-OF-972|DIVISION=ARBITRATION-TAG-FORCED) -- CARRIER-RE-DERIVATION=CONG-185-SIX-OF-SIX -- SCOPE=(A,B)-D<=4-CARRIER|I7-d2-L3-9-SITES-3-LINKS|DECLARED-WINDOW=FIRST-TO-LAST-ARBITRATION-CUT>"}
+
+  gates: 32, failures: 0; anchors: 7 numeric + 11 verbatim, failures: 0; waivers: 3

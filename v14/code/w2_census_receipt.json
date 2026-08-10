@@ -1,0 +1,2701 @@
+{
+ "anchor_failures": 0,
+ "anchors": [
+  {
+   "committed": 3969,
+   "computed": 3969,
+   "id": "A01",
+   "passed": true,
+   "quantity": "ARM-1T (A,B) d<=4 family size",
+   "source": "v10/note-d74-transport-holonomy-result.md (AB4 arm); v14/paper-12-gamma-main.md 9"
+  },
+  {
+   "committed": 113,
+   "computed": 113,
+   "id": "A02",
+   "passed": true,
+   "quantity": "MENU quotient classes at AB4",
+   "source": "v10/note-d74-transport-holonomy-result.md TH-A carrier table"
+  },
+  {
+   "committed": 1546,
+   "computed": 1546,
+   "id": "A03",
+   "passed": true,
+   "quantity": "closed exchange squares at AB4",
+   "source": "v14/review-gmain-operator.md 4(c); v10 D74 AB4"
+  },
+  {
+   "committed": 88,
+   "computed": 88,
+   "id": "A04",
+   "passed": true,
+   "quantity": "defective (non-unit) squares at AB4",
+   "source": "v10/note-d74-transport-holonomy-result.md TH-A"
+  },
+  {
+   "committed": 185,
+   "computed": 185,
+   "id": "A05",
+   "passed": true,
+   "quantity": "coarsest weighted congruence classes at AB4",
+   "source": "v14/review-gmain-operator.md 4(b); v10 D74 TH-A carrier table"
+  },
+  {
+   "committed": 972,
+   "computed": 972,
+   "id": "A06",
+   "passed": true,
+   "quantity": "R6a additivity constraints",
+   "source": "v14/paper-04-refinement-grammar.md 1 / 5"
+  },
+  {
+   "committed": 0,
+   "computed": 0,
+   "id": "A07",
+   "passed": true,
+   "quantity": "R6a additivity violations",
+   "source": "v14/paper-04-refinement-grammar.md 5"
+  }
+ ],
+ "arithmetic": "fractions.Fraction / exact integers; no floats",
+ "gate_count": 32,
+ "gate_failures": 0,
+ "gates": [
+  {
+   "evidence": {
+    "rerouted": [
+     {
+      "path": "v14/note-weld2-referent-scout.md",
+      "route": "git show 95c3b77:",
+      "worktree": "425303a8ce1e"
+     },
+     {
+      "path": "v14/paper-12-gamma-main.md",
+      "route": "git show 95c3b77:",
+      "worktree": "05f5dc7c7273"
+     }
+    ],
+    "resolved": 24,
+    "total": 24,
+    "unresolved": []
+   },
+   "gate": "G-PROVENANCE",
+   "passed": true,
+   "statement": "all 24 pinned sources resolve to their pinned sha256-12: 24 of 24 resolved, 0 unresolved.  2 carry different WORKING-TREE bytes -- the repo has live concurrent writers -- and are read from git at a declared pin commit instead, never from mutable worktree state: [{\"path\": \"v14/note-weld2-referent-scout.md\", \"route\": \"git show 95c3b77:\", \"worktree\": \"425303a8ce1e\"}, {\"path\": \"v14/paper-12-gamma-main.md\", \"route\": \"git show 95c3b77:\", \"worktree\": \"05f5dc7c7273\"}]",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "builder": 113,
+    "comparator": 113,
+    "histories": 3969,
+    "unweighted": 113
+   },
+   "gate": "G-MENU-CLASSES",
+   "passed": true,
+   "statement": "the weighted-menu partition of the 3969 histories has 113 classes, and an INDEPENDENT comparator -- pairwise equality of menus as mappings event -> Fraction, sharing no key primitive with the builder -- returns 113.  DISCLOSED because it was measured: the UNWEIGHTED partition, on the event SET alone, returns 113 -- so at this scope the weights add nothing to the event set, and the carrier is the coarser object it looks like",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "closed": 1546,
+    "comparator": 1546,
+    "defective": 88,
+    "spectrum": {
+     "1/2": 70,
+     "2": 10,
+     "2/3": 2,
+     "3/2": 6
+    }
+   },
+   "gate": "G-SQUARES",
+   "passed": true,
+   "statement": "the exchange-square census returns 1546 closed squares of which 88 are defective, spectrum {'1/2': 70, '2': 10, '2/3': 2, '3/2': 6}; an INDEPENDENT comparator that walks the depth-|h|+2 DESCENDANTS instead of the candidate pairs returns 1546 closed squares",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "all": 1402,
+    "defective": 44
+   },
+   "gate": "G-MENU-CLOSES",
+   "passed": true,
+   "statement": "the MENU carrier closes 1402 of the 1546 closed squares and 44 of the 88 defective ones -- D74's curvature/descent-obstruction dichotomy 44 + 44 reproduced",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "builder": 185,
+    "comparator": 185
+   },
+   "gate": "G-CONG-CLASSES",
+   "passed": true,
+   "statement": "CONG-185 is RE-DERIVED here from the D74 pinned definition (partition refinement from the menu partition to a fixed point) and returns 185 classes; an INDEPENDENT comparator -- the coarsest bisimulation inside the menu partition, found by explicit pair-splitting on the relation with no signature hashing -- returns 185.  No substitution: the object used below is the one re-derived here",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "rounds": 5
+   },
+   "gate": "G-CONG-ROUNDS",
+   "passed": true,
+   "statement": "the refinement reaches its fixed point in 5 rounds, inside D74's declared 4-6 window (V10) and matching the operator review's '5 rounds'",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "cong_nonconstant": {},
+    "menu_nonconstant": {
+     "2": 4
+    }
+   },
+   "gate": "G-CONG-P1-DESCENT",
+   "passed": true,
+   "statement": "the horizon potential is class-constant on CONG at EVERY horizon (0 horizons carry a non-constant class), while on MENU it is not: G(.,2) takes more than one value on 4 classes -- the property is not vacuous",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "cong_weights_targets": [
+     0,
+     0
+    ],
+    "menu_weights_targets": [
+     0,
+     4
+    ]
+   },
+   "gate": "G-CONG-P2-SINGLE-VALUED",
+   "passed": true,
+   "statement": "CONG carries 0 multi-valued labelled edge weights and 0 multi-valued labelled targets -- a genuine congruence; MENU carries 0 and 4",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "closes_all": 1362,
+    "closes_defective": 44,
+    "obstruction": 44,
+    "selfloops": 44
+   },
+   "gate": "G-CONG-P3-CURVATURE-44",
+   "passed": true,
+   "statement": "all 44 curvature-type defective squares survive: CONG closes 44 of 88 defective and 1362 of 1546 closed squares, with 44 non-unit self-loops and obstruction 44",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "primes": [
+     2,
+     3
+    ],
+    "rank": 2,
+    "values": [
+     "1/2",
+     "2/3",
+     "3/2",
+     "2"
+    ]
+   },
+   "gate": "G-CONG-P4-Q-HOLONOMY",
+   "passed": true,
+   "statement": "the q-reading's group on CONG is generated by primes [2, 3] at rank 2 -- D74's <2,3> reproduced, by exact integer row reduction on prime valuations, not read off by eye",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "menu_primes": [
+     2,
+     3,
+     5,
+     13
+    ],
+    "menu_rank": 3,
+    "primes": [
+     2,
+     3
+    ],
+    "rank": 2
+   },
+   "gate": "G-CONG-P5-K-HOLONOMY",
+   "passed": true,
+   "statement": "the k-reading COLLAPSES onto the q-reading on CONG: primes [2, 3] rank 2; on MENU it does not, primes [2, 3, 5, 13] rank 3 -- the enlargement is a non-descending-carrier artefact",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "cong_ck": [
+     10,
+     10
+    ],
+    "menu_ck": [
+     6,
+     10
+    ]
+   },
+   "gate": "G-CONG-P6-LUMPABLE",
+   "passed": true,
+   "statement": "the CONG class chain is EXACTLY LUMPABLE: Chapman-Kolmogorov divides at 10 of 10 depth triples, against MENU's 6 of 10",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "properties": {
+     "P1-descent": true,
+     "P2-single-valued": true,
+     "P3-curvature-44": true,
+     "P4-q-holonomy": true,
+     "P5-k-holonomy": true,
+     "P6-exact-lumpability": true
+    }
+   },
+   "gate": "G-CONG-SIX-PROPERTIES",
+   "passed": true,
+   "statement": "CONG-185's SIX ruling properties are gated BEFORE use and 6 of 6 hold: {\"P1-descent\": true, \"P2-single-valued\": true, \"P3-curvature-44\": true, \"P4-q-holonomy\": true, \"P5-k-holonomy\": true, \"P6-exact-lumpability\": true}.  The re-derivation matches the definitional source at every property; no mismatch to report as a finding",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "admissible": 9,
+    "links": 3,
+    "sites": 9,
+    "splittable": 6,
+    "unsplittable": [
+     "G-ANISO",
+     "G-CURVED",
+     "G-FLAT"
+    ]
+   },
+   "gate": "G-I7-ARENA",
+   "passed": true,
+   "statement": "I7's arena is read as DATA from the pinned HA receipt: 9 sites (Z_3)^2, 3 declared links [[1, 0], [0, 1], [1, 1]], 11 declared records of which 9 are admissible by the exact Sylvester criterion and 6 are splittable (['G-ANISO', 'G-CURVED', 'G-FLAT'] carry a count-1 interval)",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "builds": 36,
+    "checks": 972,
+    "comparator": 972,
+    "violations": 0
+   },
+   "gate": "G-ADDITIVITY-972",
+   "passed": true,
+   "statement": "the ONLY motivated ingredient's second requirement reproduces: count additivity under the induced dyadic subdivision holds at 972 of 972 constraints over 36 refinements (6 splittable records x 3 declared split rules x 2 declared completions).  An INDEPENDENT arithmetic comparator -- family cardinalities multiplied out, sharing no construction with the builder -- gives 972",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "distinct_arbitrations": 20,
+    "distinct_pair": 8,
+    "selected": 1536,
+    "tagged": 1536
+   },
+   "gate": "G-DIVISION-PREDICATE",
+   "passed": true,
+   "statement": "the division-event predicate is the ARBITRATION TAG, and it is the pinned convention, not this unit's choice: R6b' 3 records it SOURCE-FORCED from three agreeing rows (V02's [POSIT], V11's S1-code test `any(e[0] == 'r' ...)`, and S4's event-level naming). MEASURED: every one of the 1536 events the predicate selects carries the tag (1536 of 1536); the family contains 20 distinct arbitration events of which 8 are PAIR arbitrations, so S4's narrower sufficient condition would select a strict subset -- that sensitivity is DISCLOSED here and the forced reading is the one used",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "count_generators": [
+     "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS"
+    ]
+   },
+   "gate": "G-COUNT-SEMANTICS",
+   "passed": true,
+   "statement": "the count semantics is the pin's only motivated ingredient and it is carried verbatim (V01): n_l(x) counts DIVISION EVENTS in the record interval between x and x+l.  Every candidate below is required to send a set of grammar division events to the count register of a specific link; the requirement is enforced at the count generator, which is the single declared member DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "forced": 5,
+    "total": 5
+   },
+   "gate": "G-CRYSTAL-FORCED",
+   "passed": true,
+   "statement": "5 of 5 rebuilt crystals are FORCED records -- every event offered by the committed layer's own menu and every specification matched by EXACTLY ONE candidate (maxhits = 1, no refusal), reproducing D60's C1/C2 and D66/D67's _pick discipline",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "diagonal_zero_crystals": 5,
+    "total": 5
+   },
+   "gate": "G-CRYSTAL-DIAGONAL-EMPTY",
+   "passed": true,
+   "statement": "MEASURED ACROSS THE COMMITTED CRYSTAL FAMILY: the axis link counts are homogeneous and strictly positive on the arbitration crystals, and the DIAGONAL link count is identically ZERO at 9 of 9 sites in 5 of 5 crystals -- the corpus's only lattice-carrying grammar records supply q_11 and q_22 and never q_12",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "requirement": "HA 14 item 3"
+   },
+   "gate": "G-TWO-WAY",
+   "passed": true,
+   "statement": "HA 14 requirement 3 is carried verbatim (V05) and honoured below: the FOUND branch is demonstrated on the crystal arena and the EMPTY branch on the generic walk, each with an in-run declared falsifier that flips it",
+   "waiver": "this gate records that the two-way requirement is in force; its content is discharged by G-CTRL-FOUND and G-CTRL-EMPTY, which carry the measurements"
+  },
+  {
+   "evidence": {
+    "acyclicity_basis": "measured",
+    "arena": "CRYSTAL/DOUBLE-GRID(3,2)",
+    "arity_repair": "NONE",
+    "carrier": null,
+    "count_cells": 18,
+    "count_field": [
+     [
+      "((0, 0), (0, 1))",
+      2
+     ],
+     [
+      "((0, 0), (1, 0))",
+      2
+     ],
+     [
+      "((0, 1), (0, 1))",
+      2
+     ],
+     [
+      "((0, 1), (1, 0))",
+      2
+     ],
+     [
+      "((0, 2), (0, 1))",
+      2
+     ],
+     [
+      "((0, 2), (1, 0))",
+      2
+     ],
+     [
+      "((1, 0), (0, 1))",
+      2
+     ],
+     [
+      "((1, 0), (1, 0))",
+      2
+     ],
+     [
+      "((1, 1), (0, 1))",
+      2
+     ],
+     [
+      "((1, 1), (1, 0))",
+      2
+     ],
+     [
+      "((1, 2), (0, 1))",
+      2
+     ],
+     [
+      "((1, 2), (1, 0))",
+      2
+     ],
+     [
+      "((2, 0), (0, 1))",
+      2
+     ],
+     [
+      "((2, 0), (1, 0))",
+      2
+     ],
+     [
+      "((2, 1), (0, 1))",
+      2
+     ],
+     [
+      "((2, 1), (1, 0))",
+      2
+     ],
+     [
+      "((2, 2), (0, 1))",
+      2
+     ],
+     [
+      "((2, 2), (1, 0))",
+      2
+     ]
+    ],
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "count_max": 2,
+    "count_min": 2,
+    "fate": "FOUND-candidate",
+    "free_items": [],
+    "inventory": {
+     "I-DIRECTION-LABEL": 1,
+     "I-ORIENT": 1,
+     "I-SITE-ASSIGNMENT": 1
+    },
+    "isomorphisms": 72,
+    "link_acyclic": false,
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "co-division incidence on the ordered actor pair",
+    "needs_interior_position": false,
+    "reason": "zero free items at the RSQ standard",
+    "site_arity": 9,
+    "site_gen": "ACTOR",
+    "site_note": "the record's declared actor pool",
+    "smuggled": false,
+    "target": "CRYSTAL-CARRIED-LATTICE"
+   },
+   "gate": "G-CTRL-FOUND",
+   "passed": true,
+   "statement": "POSITIVE CONTROL: on the crystal arena -- a grammar record PROVABLY carrying a lattice (forced, exactly-one-candidate, D60 C1/C2; width ceiling k*b <= k^2 saturated, D66/D67) -- the census machinery returns FOUND-candidate at the lattice the record itself carries, with 72 site assignments all giving ONE count field: inventory {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}, free items [].  The record's own co-division structure forces the reading",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "acyclicity_basis": "measured",
+    "arena": "CRYSTAL-INHOMOGENEOUS (declared falsifier)",
+    "arity_repair": "NONE",
+    "carrier": null,
+    "count_cells": 18,
+    "count_field": [
+     [
+      "((0, 0), (0, 1))",
+      1
+     ],
+     [
+      "((0, 0), (1, 0))",
+      2
+     ],
+     [
+      "((0, 1), (0, 1))",
+      1
+     ],
+     [
+      "((0, 1), (1, 0))",
+      2
+     ],
+     [
+      "((0, 2), (0, 1))",
+      1
+     ],
+     [
+      "((0, 2), (1, 0))",
+      2
+     ],
+     [
+      "((1, 0), (0, 1))",
+      2
+     ],
+     [
+      "((1, 0), (1, 0))",
+      2
+     ],
+     [
+      "((1, 1), (0, 1))",
+      2
+     ],
+     [
+      "((1, 1), (1, 0))",
+      2
+     ],
+     [
+      "((1, 2), (0, 1))",
+      2
+     ],
+     [
+      "((1, 2), (1, 0))",
+      2
+     ],
+     [
+      "((2, 0), (0, 1))",
+      2
+     ],
+     [
+      "((2, 0), (1, 0))",
+      2
+     ],
+     [
+      "((2, 1), (0, 1))",
+      2
+     ],
+     [
+      "((2, 1), (1, 0))",
+      2
+     ],
+     [
+      "((2, 2), (0, 1))",
+      2
+     ],
+     [
+      "((2, 2), (1, 0))",
+      2
+     ]
+    ],
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "count_max": 2,
+    "count_min": 1,
+    "fate": "UNMOTIVATED",
+    "free_items": [
+     "I-DIRECTION-LABEL",
+     "I-SITE-ASSIGNMENT"
+    ],
+    "inventory": {
+     "I-DIRECTION-LABEL": 2,
+     "I-ORIENT": 1,
+     "I-SITE-ASSIGNMENT": 6
+    },
+    "isomorphisms": 72,
+    "link_acyclic": false,
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "co-division incidence on the ordered actor pair",
+    "needs_interior_position": false,
+    "reason": "2 genuinely free item(s): I-DIRECTION-LABEL fiber 2, I-SITE-ASSIGNMENT fiber 6",
+    "site_arity": 9,
+    "site_gen": "ACTOR",
+    "site_note": "the record's declared actor pool",
+    "smuggled": false,
+    "target": "CRYSTAL-CARRIED-LATTICE"
+   },
+   "gate": "G-CTRL-FOUND-FALSIFIABLE",
+   "passed": true,
+   "statement": "the FOUND control CAN FAIL: the same machinery on the declared falsifier -- the same crystal with one row-group arbitration withheld -- returns UNMOTIVATED (2 genuinely free item(s): I-DIRECTION-LABEL fiber 2, I-SITE-ASSIGNMENT fiber 6).  A control that cannot fail would be a finding against this unit; this one fails on demand",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "acyclicity_basis": "measured",
+    "arena": "CRYSTAL/DOUBLE-GRID(3,2)",
+    "arity_repair": "NONE",
+    "carrier": null,
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "STRUCT-DEAD",
+    "isomorphisms": 0,
+    "link_acyclic": false,
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "co-division incidence on the ordered actor pair",
+    "needs_interior_position": false,
+    "reason": "cyclic, but 0 of the 9! bijections carry the site incidence onto the target's link structure",
+    "site_arity": 9,
+    "site_gen": "ACTOR",
+    "site_note": "the record's declared actor pool",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   "gate": "G-CTRL-CRYSTAL-AT-I7",
+   "passed": true,
+   "statement": "REPORTED WHICHEVER WAY IT LANDS: the same crystal, run against I7's OWN declared 3-link lattice, returns STRUCT-DEAD -- cyclic, but 0 of the 9! bijections carry the site incidence onto the target's link structure.  The crystal control demonstrates the detector's FOUND branch; it does NOT deliver a weld, and this row is why",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "divisions_on_AB": 0,
+    "no_repair": {
+     "acyclicity_basis": "measured",
+     "arena": "D58-GENERIC-2-ACTOR-WALK",
+     "arity_repair": "NONE",
+     "carrier": null,
+     "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+     "fate": "ARITY-DEAD",
+     "link_acyclic": true,
+     "link_gen": "ACTOR-PAIR",
+     "link_note": "co-division incidence on the ordered actor pair",
+     "needs_interior_position": false,
+     "reason": "2 site objects against the target's 9; no repair declared",
+     "site_arity": 2,
+     "site_gen": "ACTOR",
+     "site_note": "the record's declared actor pool",
+     "target": "I7-DECLARED-LATTICE"
+    },
+    "with_repair": {
+     "acyclicity_basis": "measured",
+     "arena": "D58-GENERIC-2-ACTOR-WALK",
+     "arity_repair": "DECLARED-RESTRICTION",
+     "carrier": null,
+     "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+     "fate": "ARITY-DEAD-BELOW",
+     "link_acyclic": true,
+     "link_gen": "ACTOR-PAIR",
+     "link_note": "co-division incidence on the ordered actor pair",
+     "needs_interior_position": false,
+     "reason": "2 site objects against the target's 9; a declared restriction can only shrink a site set, so no repair exists",
+     "site_arity": 2,
+     "site_gen": "ACTOR",
+     "site_note": "the record's declared actor pool",
+     "target": "I7-DECLARED-LATTICE"
+    }
+   },
+   "gate": "G-CTRL-EMPTY",
+   "passed": true,
+   "statement": "NEGATIVE CONTROL: on D58's generic 2-actor walk the census returns ARITY-DEAD against I7's declared lattice, by the declared falsifier ARITY -- 2 site objects against the target's 9; no repair declared -- and ARITY-DEAD-BELOW once the declared restriction is offered, because a restriction can only shrink a site set.  The walk carries a SECOND, independent falsifier: 0 of its 4 division events lie on the (A,B) channel, so its count register is empty as well",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "acyclicity_basis": "measured",
+    "arena": "CRYSTAL/DOUBLE-GRID(3,2)",
+    "arity_repair": "NONE",
+    "carrier": null,
+    "count_cells": 18,
+    "count_field": [
+     [
+      "((0, 0), (0, 1))",
+      2
+     ],
+     [
+      "((0, 0), (1, 0))",
+      2
+     ],
+     [
+      "((0, 1), (0, 1))",
+      2
+     ],
+     [
+      "((0, 1), (1, 0))",
+      2
+     ],
+     [
+      "((0, 2), (0, 1))",
+      2
+     ],
+     [
+      "((0, 2), (1, 0))",
+      2
+     ],
+     [
+      "((1, 0), (0, 1))",
+      2
+     ],
+     [
+      "((1, 0), (1, 0))",
+      2
+     ],
+     [
+      "((1, 1), (0, 1))",
+      2
+     ],
+     [
+      "((1, 1), (1, 0))",
+      2
+     ],
+     [
+      "((1, 2), (0, 1))",
+      2
+     ],
+     [
+      "((1, 2), (1, 0))",
+      2
+     ],
+     [
+      "((2, 0), (0, 1))",
+      2
+     ],
+     [
+      "((2, 0), (1, 0))",
+      2
+     ],
+     [
+      "((2, 1), (0, 1))",
+      2
+     ],
+     [
+      "((2, 1), (1, 0))",
+      2
+     ],
+     [
+      "((2, 2), (0, 1))",
+      2
+     ],
+     [
+      "((2, 2), (1, 0))",
+      2
+     ]
+    ],
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "count_max": 2,
+    "count_min": 2,
+    "fate": "FOUND-candidate",
+    "free_items": [],
+    "inventory": {
+     "I-DIRECTION-LABEL": 1,
+     "I-ORIENT": 1,
+     "I-SITE-ASSIGNMENT": 1
+    },
+    "isomorphisms": 72,
+    "link_acyclic": false,
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "co-division incidence on the ordered actor pair",
+    "needs_interior_position": false,
+    "reason": "zero free items at the RSQ standard",
+    "site_arity": 9,
+    "site_gen": "ACTOR",
+    "site_note": "the record's declared actor pool",
+    "smuggled": false,
+    "target": "CRYSTAL-CARRIED-LATTICE"
+   },
+   "gate": "G-CTRL-EMPTY-FALSIFIABLE",
+   "passed": true,
+   "statement": "the EMPTY control CAN return its other value: the identical call, on the crystal record, returns FOUND-candidate -- so EMPTY at the walk is a property of the walk and not of the plumbing",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "grammar_side": false,
+    "reads_s": true
+   },
+   "gate": "G-SMUGGLE-REACHABLE",
+   "passed": true,
+   "statement": "the R6 no-smuggling classifier is a MEASUREMENT, not a label: a declared probe whose count function reads I7's own s classifies SMUGGLED=True, and a grammar-side probe classifies SMUGGLED=False.  At I7 record and metric are one datum in two coordinate systems (det 2), so the test is WHICH FUNCTION of grammar data a candidate computes",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "census_generator": false,
+    "probe": true
+   },
+   "gate": "G-INTERIOR-DEAD-ON-ARRIVAL",
+   "passed": true,
+   "statement": "the interior classifier is two-valued and both values are exercised: a probe reading that must place a division INSIDE a leg classifies dead-on-arrival (True) -- R6b' 9's type census (V04) -- while the declared count generator does not (False), because it counts events ON a link object and never positions inside one.  The probe CITES R6b' C1's type verdict; it does not re-run C1",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "dead_items": 5
+   },
+   "gate": "G-DEAD-LIST-CITED",
+   "passed": true,
+   "statement": "the pre-registered dead list (pin R4 / scout (b)) is CITED and not re-run: R6b' C1-C5 with free items 6/5/1/4/1, BRG-EMPTY-AT-CARRIER, GW1 2's order-only spatial instruments, v12's Gamma objects, and the naive 9<->9 whose L>=4 requirement is measured at V07.  No candidate row below re-derives any of them",
+   "waiver": "a discipline statement about what this unit does NOT compute; its content is the absence of those computations, which the receipt's candidate rows exhibit"
+  },
+  {
+   "evidence": {
+    "claimed": false,
+    "registered": "U4"
+   },
+   "gate": "G-U4-REGISTERED",
+   "passed": true,
+   "statement": "v11 paper 0 7's U4 -- 'the division events of a crystal form a crystal' (V08) -- is REGISTERED as the successor form of this unit's FOUND-side control and is NOT claimed here: this unit builds the committed crystals and reads their division events, it does not rebuild the crystals with renewal-only records",
+   "waiver": "a successor register entry; nothing in the verdict descends from it"
+  },
+  {
+   "evidence": {
+    "candidates": 60,
+    "fates": {
+     "ARITY-DEAD": 12,
+     "ARITY-DEAD-BELOW": 2,
+     "STRUCT-DEAD": 10,
+     "TYPE-DEAD": 36
+    }
+   },
+   "gate": "G-CENSUS-COMPLETE",
+   "passed": true,
+   "statement": "the candidate family is enumerated exhaustively over the pin's declared generator vocabulary and its size is COMPUTED, not typed: 60 candidates (5 site generators x 3 link generators x 1 count generator x 2 arity treatments x 2 carriers); every cell carries a measured fate, none is skipped",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "actor_pair_relation": [
+     [
+      "A->B",
+      336
+     ],
+     [
+      "B->A",
+      336
+     ]
+    ],
+    "actor_site_objects": 2,
+    "cong_class_acyclic": true,
+    "cong_class_selfloops": 0,
+    "cong_simple_cycles_len2to6": {
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0
+    },
+    "divisions_on_the_AB_channel_in_family": 336,
+    "menu_class_acyclic": true,
+    "menu_class_selfloops": 45,
+    "menu_simple_cycles_len2to6": {
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0
+    }
+   },
+   "gate": "G-SCISSORS",
+   "passed": true,
+   "statement": "THE MECHANISM, measured on both sides at once.  The one link generator that carries directed cycles at the transport carrier is the actor pair / delivery channel, and it has exactly 2 site objects; the link generators with enough objects are ACYCLIC -- the MENU class-extension graph carries 45 self-loops and, after their removal, no directed cycle on distinct vertices (comparator: {2: 0, 3: 0, 4: 0, 5: 0, 6: 0} simple cycles at lengths 2..6), and the CONG class-extension graph carries 0 self-loops and is acyclic outright (comparator: {2: 0, 3: 0, 4: 0, 5: 0, 6: 0}).  I7's lattice needs 9 sites AND a 3-cycle on 3 distinct sites through every generator.  A self-loop is not a generator cycle: the declared link displacements are non-zero",
+   "waiver": null
+  },
+  {
+   "evidence": {
+    "fates": {
+     "ARITY-DEAD": 12,
+     "ARITY-DEAD-BELOW": 2,
+     "STRUCT-DEAD": 10,
+     "TYPE-DEAD": 36
+    },
+    "found": 0,
+    "smuggled": 0,
+    "unmotivated": 0,
+    "verdict": "WELD2-EMPTY-AT-THE-DECLARED-FAMILY-THE-ARITY-CYCLICITY-SCISSORS@BOTH:MENU-113+CONG-185<CANDIDATES=60|FOUND=0|SMUGGLED=0|UNMOTIVATED=0|TYPE-DEAD=36|ARITY-DEAD=12|ARITY-DEAD-BELOW=2|STRUCT-DEAD=10 -- MECHANISM=THE-ONLY-CYCLIC-LINK-GENERATOR-HAS-2-OBJECTS(336-DIVISION-EVENTS-ON-THE-(A,B)-CHANNEL)-AND-EVERY-LINK-GENERATOR-WITH-9-OR-MORE-IS-ACYCLIC(MENU-SELFLOOPS=45|CONG-SELFLOOPS=0|SIMPLE-CYCLES-LEN-2..6=0-AT-BOTH) -- CONTROLS=FOUND-AT-CRYSTAL(FOUND-candidate,ISOS=72,FIBERS-ALL-1)|FALSIFIER-FLIPS(UNMOTIVATED,I-SITE-ASSIGNMENT-FIBER=6)|EMPTY-AT-WALK(ARITY-DEAD)|CRYSTAL-AT-I7(STRUCT-DEAD) -- INGREDIENT=COUNT-SEMANTICS-INTACT(ADDITIVITY-972-OF-972|DIVISION=ARBITRATION-TAG-FORCED) -- CARRIER-RE-DERIVATION=CONG-185-SIX-OF-SIX -- SCOPE=(A,B)-D<=4-CARRIER|I7-d2-L3-9-SITES-3-LINKS|DECLARED-WINDOW=FIRST-TO-LAST-ARBITRATION-CUT>"
+   },
+   "gate": "G-VERDICT",
+   "passed": true,
+   "statement": "the pre-registered outcome string that fires is WELD2-EMPTY-AT-THE-DECLARED-FAMILY, carrier-stamped @BOTH (MENU-113 and CONG-185), with obstruction THE-ARITY-CYCLICITY-SCISSORS: of 60 candidates 0 are FOUND, 0 SMUGGLED, 0 UNMOTIVATED, and the remainder die at measured type, arity and structure obstructions {'ARITY-DEAD': 12, 'ARITY-DEAD-BELOW': 2, 'STRUCT-DEAD': 10, 'TYPE-DEAD': 36}.  Between delivery and adjudication this is a CANDIDATE READING",
+   "waiver": null
+  }
+ ],
+ "interpreter": "/opt/homebrew/bin/python3.13",
+ "payload": {
+  "candidate_count": 60,
+  "census_rows": [
+   {
+    "acyclicity_basis": "measured",
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD",
+    "link_acyclic": false,
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "co-division incidence on the ordered actor pair",
+    "needs_interior_position": false,
+    "reason": "2 site objects against the target's 9; no repair declared",
+    "site_arity": 2,
+    "site_gen": "ACTOR",
+    "site_note": "the declared actor pool of ARM-1T",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "measured",
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD-BELOW",
+    "link_acyclic": false,
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "co-division incidence on the ordered actor pair",
+    "needs_interior_position": false,
+    "reason": "2 site objects against the target's 9; a declared restriction can only shrink a site set, so no repair exists",
+    "site_arity": 2,
+    "site_gen": "ACTOR",
+    "site_note": "the declared actor pool of ARM-1T",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "an extension edge joins histories; an actor is not a history and no pinned row maps one to the other",
+    "reason": "an extension edge joins histories; an actor is not a history and no pinned row maps one to the other",
+    "site_arity": 2,
+    "site_gen": "ACTOR",
+    "site_note": "the declared actor pool of ARM-1T",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "an extension edge joins histories; an actor is not a history and no pinned row maps one to the other",
+    "reason": "an extension edge joins histories; an actor is not a history and no pinned row maps one to the other",
+    "site_arity": 2,
+    "site_gen": "ACTOR",
+    "site_note": "the declared actor pool of ARM-1T",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "the carrier is a family, not a record; the event poset's cover relation has no family-level referent",
+    "reason": "the carrier is a family, not a record; the event poset's cover relation has no family-level referent",
+    "site_arity": 2,
+    "site_gen": "ACTOR",
+    "site_note": "the declared actor pool of ARM-1T",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "the carrier is a family, not a record; the event poset's cover relation has no family-level referent",
+    "reason": "the carrier is a family, not a record; the event poset's cover relation has no family-level referent",
+    "site_arity": 2,
+    "site_gen": "ACTOR",
+    "site_note": "the declared actor pool of ARM-1T",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "a MENU class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "reason": "a MENU class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "site_arity": 113,
+    "site_gen": "MENU-CLASS",
+    "site_note": "the weighted-menu quotient",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "a MENU class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "reason": "a MENU class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "site_arity": 113,
+    "site_gen": "MENU-CLASS",
+    "site_note": "the weighted-menu quotient",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "measured",
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "the class-level event-extension graph",
+    "needs_interior_position": false,
+    "reason": "113 site objects against the target's 9; no repair declared",
+    "site_arity": 113,
+    "site_gen": "MENU-CLASS",
+    "site_note": "the weighted-menu quotient",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "measured",
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "STRUCT-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "the class-level event-extension graph",
+    "needs_interior_position": false,
+    "reason": "the link relation has no directed cycle on distinct vertices (measured); the target is Z_3-periodic and every generator closes a 3-cycle on 3 distinct sites, so no subset of any size embeds",
+    "site_arity": 113,
+    "site_gen": "MENU-CLASS",
+    "site_note": "the weighted-menu quotient",
+    "subsets_excluded": "all 113-choose-9 restrictions",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "a cover pair joins single events; no pinned row maps a single event to a menu class",
+    "reason": "a cover pair joins single events; no pinned row maps a single event to a menu class",
+    "site_arity": 113,
+    "site_gen": "MENU-CLASS",
+    "site_note": "the weighted-menu quotient",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "a cover pair joins single events; no pinned row maps a single event to a menu class",
+    "reason": "a cover pair joins single events; no pinned row maps a single event to a menu class",
+    "site_arity": 113,
+    "site_gen": "MENU-CLASS",
+    "site_note": "the weighted-menu quotient",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "a CONG class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "reason": "a CONG class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "site_arity": 185,
+    "site_gen": "CONG-CLASS",
+    "site_note": "the weighted congruence",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "a CONG class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "reason": "a CONG class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "site_arity": 185,
+    "site_gen": "CONG-CLASS",
+    "site_note": "the weighted congruence",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "measured",
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "the class-level event-extension graph",
+    "needs_interior_position": false,
+    "reason": "185 site objects against the target's 9; no repair declared",
+    "site_arity": 185,
+    "site_gen": "CONG-CLASS",
+    "site_note": "the weighted congruence",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "measured",
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "STRUCT-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "the class-level event-extension graph",
+    "needs_interior_position": false,
+    "reason": "the link relation has no directed cycle on distinct vertices (measured); the target is Z_3-periodic and every generator closes a 3-cycle on 3 distinct sites, so no subset of any size embeds",
+    "site_arity": 185,
+    "site_gen": "CONG-CLASS",
+    "site_note": "the weighted congruence",
+    "subsets_excluded": "all 185-choose-9 restrictions",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "a cover pair joins single events; no pinned row maps a single event to a congruence class",
+    "reason": "a cover pair joins single events; no pinned row maps a single event to a congruence class",
+    "site_arity": 185,
+    "site_gen": "CONG-CLASS",
+    "site_note": "the weighted congruence",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "a cover pair joins single events; no pinned row maps a single event to a congruence class",
+    "reason": "a cover pair joins single events; no pinned row maps a single event to a congruence class",
+    "site_arity": 185,
+    "site_gen": "CONG-CLASS",
+    "site_note": "the weighted congruence",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "a division-event subset spans actors; no pinned row maps a subset to a single actor",
+    "reason": "a division-event subset spans actors; no pinned row maps a subset to a single actor",
+    "site_arity": 1048576,
+    "site_gen": "EVENT-SUBSET",
+    "site_note": "all subsets of the 20 distinct division events of the family",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "a division-event subset spans actors; no pinned row maps a subset to a single actor",
+    "reason": "a division-event subset spans actors; no pinned row maps a subset to a single actor",
+    "site_arity": 1048576,
+    "site_gen": "EVENT-SUBSET",
+    "site_note": "all subsets of the 20 distinct division events of the family",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "the cardinality grading of the Boolean lattice",
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "a division-event set to itself plus one event",
+    "needs_interior_position": false,
+    "reason": "1048576 site objects against the target's 9; no repair declared",
+    "site_arity": 1048576,
+    "site_gen": "EVENT-SUBSET",
+    "site_note": "all subsets of the 20 distinct division events of the family",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "the cardinality grading of the Boolean lattice",
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "STRUCT-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "a division-event set to itself plus one event",
+    "needs_interior_position": false,
+    "reason": "the link relation has no directed cycle on distinct vertices (the cardinality grading of the Boolean lattice); the target is Z_3-periodic and every generator closes a 3-cycle on 3 distinct sites, so no subset of any size embeds",
+    "site_arity": 1048576,
+    "site_gen": "EVENT-SUBSET",
+    "site_note": "all subsets of the 20 distinct division events of the family",
+    "subsets_excluded": "2^1048576",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "the poset height grading",
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD",
+    "link_acyclic": true,
+    "link_gen": "COVER-PAIR",
+    "link_note": "singleton subsets under the event poset's covers",
+    "needs_interior_position": false,
+    "reason": "1048576 site objects against the target's 9; no repair declared",
+    "site_arity": 1048576,
+    "site_gen": "EVENT-SUBSET",
+    "site_note": "all subsets of the 20 distinct division events of the family",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "the poset height grading",
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "STRUCT-DEAD",
+    "link_acyclic": true,
+    "link_gen": "COVER-PAIR",
+    "link_note": "singleton subsets under the event poset's covers",
+    "needs_interior_position": false,
+    "reason": "the link relation has no directed cycle on distinct vertices (the poset height grading); the target is Z_3-periodic and every generator closes a 3-cycle on 3 distinct sites, so no subset of any size embeds",
+    "site_arity": 1048576,
+    "site_gen": "EVENT-SUBSET",
+    "site_note": "all subsets of the 20 distinct division events of the family",
+    "subsets_excluded": "2^1048576",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "an Ulam address is an enumeration coordinate, not an actor; no pinned row maps one to the other",
+    "reason": "an Ulam address is an enumeration coordinate, not an actor; no pinned row maps one to the other",
+    "site_arity": 3969,
+    "site_gen": "ULAM-PREFIX",
+    "site_note": "the Ulam address prefixes at every depth 0..4",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "an Ulam address is an enumeration coordinate, not an actor; no pinned row maps one to the other",
+    "reason": "an Ulam address is an enumeration coordinate, not an actor; no pinned row maps one to the other",
+    "site_arity": 3969,
+    "site_gen": "ULAM-PREFIX",
+    "site_note": "the Ulam address prefixes at every depth 0..4",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "the address-length grading",
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "an Ulam address to its one-step extensions",
+    "needs_interior_position": false,
+    "reason": "3969 site objects against the target's 9; no repair declared",
+    "site_arity": 3969,
+    "site_gen": "ULAM-PREFIX",
+    "site_note": "the Ulam address prefixes at every depth 0..4",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "the address-length grading",
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "STRUCT-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "an Ulam address to its one-step extensions",
+    "needs_interior_position": false,
+    "reason": "the link relation has no directed cycle on distinct vertices (the address-length grading); the target is Z_3-periodic and every generator closes a 3-cycle on 3 distinct sites, so no subset of any size embeds",
+    "site_arity": 3969,
+    "site_gen": "ULAM-PREFIX",
+    "site_note": "the Ulam address prefixes at every depth 0..4",
+    "subsets_excluded": "2^3969",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "NONE",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "a cover pair joins single events; an Ulam address is a property of a history, not an event",
+    "reason": "a cover pair joins single events; an Ulam address is a property of a history, not an event",
+    "site_arity": 3969,
+    "site_gen": "ULAM-PREFIX",
+    "site_note": "the Ulam address prefixes at every depth 0..4",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@MENU",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "MENU",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "a cover pair joins single events; an Ulam address is a property of a history, not an event",
+    "reason": "a cover pair joins single events; an Ulam address is a property of a history, not an event",
+    "site_arity": 3969,
+    "site_gen": "ULAM-PREFIX",
+    "site_note": "the Ulam address prefixes at every depth 0..4",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "measured",
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD",
+    "link_acyclic": false,
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "co-division incidence on the ordered actor pair",
+    "needs_interior_position": false,
+    "reason": "2 site objects against the target's 9; no repair declared",
+    "site_arity": 2,
+    "site_gen": "ACTOR",
+    "site_note": "the declared actor pool of ARM-1T",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "measured",
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD-BELOW",
+    "link_acyclic": false,
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "co-division incidence on the ordered actor pair",
+    "needs_interior_position": false,
+    "reason": "2 site objects against the target's 9; a declared restriction can only shrink a site set, so no repair exists",
+    "site_arity": 2,
+    "site_gen": "ACTOR",
+    "site_note": "the declared actor pool of ARM-1T",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "an extension edge joins histories; an actor is not a history and no pinned row maps one to the other",
+    "reason": "an extension edge joins histories; an actor is not a history and no pinned row maps one to the other",
+    "site_arity": 2,
+    "site_gen": "ACTOR",
+    "site_note": "the declared actor pool of ARM-1T",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "an extension edge joins histories; an actor is not a history and no pinned row maps one to the other",
+    "reason": "an extension edge joins histories; an actor is not a history and no pinned row maps one to the other",
+    "site_arity": 2,
+    "site_gen": "ACTOR",
+    "site_note": "the declared actor pool of ARM-1T",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "the carrier is a family, not a record; the event poset's cover relation has no family-level referent",
+    "reason": "the carrier is a family, not a record; the event poset's cover relation has no family-level referent",
+    "site_arity": 2,
+    "site_gen": "ACTOR",
+    "site_note": "the declared actor pool of ARM-1T",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "the carrier is a family, not a record; the event poset's cover relation has no family-level referent",
+    "reason": "the carrier is a family, not a record; the event poset's cover relation has no family-level referent",
+    "site_arity": 2,
+    "site_gen": "ACTOR",
+    "site_note": "the declared actor pool of ARM-1T",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "a MENU class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "reason": "a MENU class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "site_arity": 113,
+    "site_gen": "MENU-CLASS",
+    "site_note": "the weighted-menu quotient",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "a MENU class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "reason": "a MENU class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "site_arity": 113,
+    "site_gen": "MENU-CLASS",
+    "site_note": "the weighted-menu quotient",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "measured",
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "the class-level event-extension graph",
+    "needs_interior_position": false,
+    "reason": "113 site objects against the target's 9; no repair declared",
+    "site_arity": 113,
+    "site_gen": "MENU-CLASS",
+    "site_note": "the weighted-menu quotient",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "measured",
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "STRUCT-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "the class-level event-extension graph",
+    "needs_interior_position": false,
+    "reason": "the link relation has no directed cycle on distinct vertices (measured); the target is Z_3-periodic and every generator closes a 3-cycle on 3 distinct sites, so no subset of any size embeds",
+    "site_arity": 113,
+    "site_gen": "MENU-CLASS",
+    "site_note": "the weighted-menu quotient",
+    "subsets_excluded": "all 113-choose-9 restrictions",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "a cover pair joins single events; no pinned row maps a single event to a menu class",
+    "reason": "a cover pair joins single events; no pinned row maps a single event to a menu class",
+    "site_arity": 113,
+    "site_gen": "MENU-CLASS",
+    "site_note": "the weighted-menu quotient",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "a cover pair joins single events; no pinned row maps a single event to a menu class",
+    "reason": "a cover pair joins single events; no pinned row maps a single event to a menu class",
+    "site_arity": 113,
+    "site_gen": "MENU-CLASS",
+    "site_note": "the weighted-menu quotient",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "a CONG class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "reason": "a CONG class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "site_arity": 185,
+    "site_gen": "CONG-CLASS",
+    "site_note": "the weighted congruence",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "a CONG class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "reason": "a CONG class contains histories with events by both actors; no pinned row maps a class to an actor",
+    "site_arity": 185,
+    "site_gen": "CONG-CLASS",
+    "site_note": "the weighted congruence",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "measured",
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "the class-level event-extension graph",
+    "needs_interior_position": false,
+    "reason": "185 site objects against the target's 9; no repair declared",
+    "site_arity": 185,
+    "site_gen": "CONG-CLASS",
+    "site_note": "the weighted congruence",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "measured",
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "STRUCT-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "the class-level event-extension graph",
+    "needs_interior_position": false,
+    "reason": "the link relation has no directed cycle on distinct vertices (measured); the target is Z_3-periodic and every generator closes a 3-cycle on 3 distinct sites, so no subset of any size embeds",
+    "site_arity": 185,
+    "site_gen": "CONG-CLASS",
+    "site_note": "the weighted congruence",
+    "subsets_excluded": "all 185-choose-9 restrictions",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "a cover pair joins single events; no pinned row maps a single event to a congruence class",
+    "reason": "a cover pair joins single events; no pinned row maps a single event to a congruence class",
+    "site_arity": 185,
+    "site_gen": "CONG-CLASS",
+    "site_note": "the weighted congruence",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "a cover pair joins single events; no pinned row maps a single event to a congruence class",
+    "reason": "a cover pair joins single events; no pinned row maps a single event to a congruence class",
+    "site_arity": 185,
+    "site_gen": "CONG-CLASS",
+    "site_note": "the weighted congruence",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "a division-event subset spans actors; no pinned row maps a subset to a single actor",
+    "reason": "a division-event subset spans actors; no pinned row maps a subset to a single actor",
+    "site_arity": 1048576,
+    "site_gen": "EVENT-SUBSET",
+    "site_note": "all subsets of the 20 distinct division events of the family",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "a division-event subset spans actors; no pinned row maps a subset to a single actor",
+    "reason": "a division-event subset spans actors; no pinned row maps a subset to a single actor",
+    "site_arity": 1048576,
+    "site_gen": "EVENT-SUBSET",
+    "site_note": "all subsets of the 20 distinct division events of the family",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "the cardinality grading of the Boolean lattice",
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "a division-event set to itself plus one event",
+    "needs_interior_position": false,
+    "reason": "1048576 site objects against the target's 9; no repair declared",
+    "site_arity": 1048576,
+    "site_gen": "EVENT-SUBSET",
+    "site_note": "all subsets of the 20 distinct division events of the family",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "the cardinality grading of the Boolean lattice",
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "STRUCT-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "a division-event set to itself plus one event",
+    "needs_interior_position": false,
+    "reason": "the link relation has no directed cycle on distinct vertices (the cardinality grading of the Boolean lattice); the target is Z_3-periodic and every generator closes a 3-cycle on 3 distinct sites, so no subset of any size embeds",
+    "site_arity": 1048576,
+    "site_gen": "EVENT-SUBSET",
+    "site_note": "all subsets of the 20 distinct division events of the family",
+    "subsets_excluded": "2^1048576",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "the poset height grading",
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD",
+    "link_acyclic": true,
+    "link_gen": "COVER-PAIR",
+    "link_note": "singleton subsets under the event poset's covers",
+    "needs_interior_position": false,
+    "reason": "1048576 site objects against the target's 9; no repair declared",
+    "site_arity": 1048576,
+    "site_gen": "EVENT-SUBSET",
+    "site_note": "all subsets of the 20 distinct division events of the family",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "the poset height grading",
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "STRUCT-DEAD",
+    "link_acyclic": true,
+    "link_gen": "COVER-PAIR",
+    "link_note": "singleton subsets under the event poset's covers",
+    "needs_interior_position": false,
+    "reason": "the link relation has no directed cycle on distinct vertices (the poset height grading); the target is Z_3-periodic and every generator closes a 3-cycle on 3 distinct sites, so no subset of any size embeds",
+    "site_arity": 1048576,
+    "site_gen": "EVENT-SUBSET",
+    "site_note": "all subsets of the 20 distinct division events of the family",
+    "subsets_excluded": "2^1048576",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "an Ulam address is an enumeration coordinate, not an actor; no pinned row maps one to the other",
+    "reason": "an Ulam address is an enumeration coordinate, not an actor; no pinned row maps one to the other",
+    "site_arity": 3969,
+    "site_gen": "ULAM-PREFIX",
+    "site_note": "the Ulam address prefixes at every depth 0..4",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "an Ulam address is an enumeration coordinate, not an actor; no pinned row maps one to the other",
+    "reason": "an Ulam address is an enumeration coordinate, not an actor; no pinned row maps one to the other",
+    "site_arity": 3969,
+    "site_gen": "ULAM-PREFIX",
+    "site_note": "the Ulam address prefixes at every depth 0..4",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "the address-length grading",
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "an Ulam address to its one-step extensions",
+    "needs_interior_position": false,
+    "reason": "3969 site objects against the target's 9; no repair declared",
+    "site_arity": 3969,
+    "site_gen": "ULAM-PREFIX",
+    "site_note": "the Ulam address prefixes at every depth 0..4",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "acyclicity_basis": "the address-length grading",
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "STRUCT-DEAD",
+    "link_acyclic": true,
+    "link_gen": "EXTENSION-EDGE",
+    "link_note": "an Ulam address to its one-step extensions",
+    "needs_interior_position": false,
+    "reason": "the link relation has no directed cycle on distinct vertices (the address-length grading); the target is Z_3-periodic and every generator closes a 3-cycle on 3 distinct sites, so no subset of any size embeds",
+    "site_arity": 3969,
+    "site_gen": "ULAM-PREFIX",
+    "site_note": "the Ulam address prefixes at every depth 0..4",
+    "subsets_excluded": "2^3969",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "NONE",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "a cover pair joins single events; an Ulam address is a property of a history, not an event",
+    "reason": "a cover pair joins single events; an Ulam address is a property of a history, not an event",
+    "site_arity": 3969,
+    "site_gen": "ULAM-PREFIX",
+    "site_note": "the Ulam address prefixes at every depth 0..4",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "AB4-TRANSPORT-CARRIER@CONG",
+    "arity_repair": "DECLARED-RESTRICTION",
+    "carrier": "CONG",
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "TYPE-DEAD",
+    "link_gen": "COVER-PAIR",
+    "link_note": "a cover pair joins single events; an Ulam address is a property of a history, not an event",
+    "reason": "a cover pair joins single events; an Ulam address is a property of a history, not an event",
+    "site_arity": 3969,
+    "site_gen": "ULAM-PREFIX",
+    "site_note": "the Ulam address prefixes at every depth 0..4",
+    "target": "I7-DECLARED-LATTICE"
+   }
+  ],
+  "closed_squares": 1546,
+  "cong_classes": 185,
+  "cong_classes_comparator": 185,
+  "cong_properties": {
+   "ck": [
+    10,
+    10
+   ],
+   "closes_all": 1362,
+   "closes_defective": 44,
+   "descent_nonconstant_horizons": {},
+   "k_obstruction": 44,
+   "k_primes": [
+    2,
+    3
+   ],
+   "k_rank": 2,
+   "k_selfloop_spectrum": {
+    "1/2": 26,
+    "2": 10,
+    "2/3": 2,
+    "3/2": 6
+   },
+   "multivalued_weights_targets": [
+    0,
+    0
+   ],
+   "q_obstruction": 44,
+   "q_primes": [
+    2,
+    3
+   ],
+   "q_rank": 2,
+   "q_selfloop_spectrum": {
+    "1/2": 26,
+    "2": 10,
+    "2/3": 2,
+    "3/2": 6
+   }
+  },
+  "cong_rounds": 5,
+  "cong_six_properties_passed": 6,
+  "controls": {
+   "EMPTY_at_walk": {
+    "acyclicity_basis": "measured",
+    "arena": "D58-GENERIC-2-ACTOR-WALK",
+    "arity_repair": "NONE",
+    "carrier": null,
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "ARITY-DEAD",
+    "link_acyclic": true,
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "co-division incidence on the ordered actor pair",
+    "needs_interior_position": false,
+    "reason": "2 site objects against the target's 9; no repair declared",
+    "site_arity": 2,
+    "site_gen": "ACTOR",
+    "site_note": "the record's declared actor pool",
+    "target": "I7-DECLARED-LATTICE"
+   },
+   "FOUND_at_crystal": {
+    "acyclicity_basis": "measured",
+    "arena": "CRYSTAL/DOUBLE-GRID(3,2)",
+    "arity_repair": "NONE",
+    "carrier": null,
+    "count_cells": 18,
+    "count_field": [
+     [
+      "((0, 0), (0, 1))",
+      2
+     ],
+     [
+      "((0, 0), (1, 0))",
+      2
+     ],
+     [
+      "((0, 1), (0, 1))",
+      2
+     ],
+     [
+      "((0, 1), (1, 0))",
+      2
+     ],
+     [
+      "((0, 2), (0, 1))",
+      2
+     ],
+     [
+      "((0, 2), (1, 0))",
+      2
+     ],
+     [
+      "((1, 0), (0, 1))",
+      2
+     ],
+     [
+      "((1, 0), (1, 0))",
+      2
+     ],
+     [
+      "((1, 1), (0, 1))",
+      2
+     ],
+     [
+      "((1, 1), (1, 0))",
+      2
+     ],
+     [
+      "((1, 2), (0, 1))",
+      2
+     ],
+     [
+      "((1, 2), (1, 0))",
+      2
+     ],
+     [
+      "((2, 0), (0, 1))",
+      2
+     ],
+     [
+      "((2, 0), (1, 0))",
+      2
+     ],
+     [
+      "((2, 1), (0, 1))",
+      2
+     ],
+     [
+      "((2, 1), (1, 0))",
+      2
+     ],
+     [
+      "((2, 2), (0, 1))",
+      2
+     ],
+     [
+      "((2, 2), (1, 0))",
+      2
+     ]
+    ],
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "count_max": 2,
+    "count_min": 2,
+    "fate": "FOUND-candidate",
+    "free_items": [],
+    "inventory": {
+     "I-DIRECTION-LABEL": 1,
+     "I-ORIENT": 1,
+     "I-SITE-ASSIGNMENT": 1
+    },
+    "isomorphisms": 72,
+    "link_acyclic": false,
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "co-division incidence on the ordered actor pair",
+    "needs_interior_position": false,
+    "reason": "zero free items at the RSQ standard",
+    "site_arity": 9,
+    "site_gen": "ACTOR",
+    "site_note": "the record's declared actor pool",
+    "smuggled": false,
+    "target": "CRYSTAL-CARRIED-LATTICE"
+   },
+   "FOUND_falsifier": {
+    "acyclicity_basis": "measured",
+    "arena": "CRYSTAL-INHOMOGENEOUS (declared falsifier)",
+    "arity_repair": "NONE",
+    "carrier": null,
+    "count_cells": 18,
+    "count_field": [
+     [
+      "((0, 0), (0, 1))",
+      1
+     ],
+     [
+      "((0, 0), (1, 0))",
+      2
+     ],
+     [
+      "((0, 1), (0, 1))",
+      1
+     ],
+     [
+      "((0, 1), (1, 0))",
+      2
+     ],
+     [
+      "((0, 2), (0, 1))",
+      1
+     ],
+     [
+      "((0, 2), (1, 0))",
+      2
+     ],
+     [
+      "((1, 0), (0, 1))",
+      2
+     ],
+     [
+      "((1, 0), (1, 0))",
+      2
+     ],
+     [
+      "((1, 1), (0, 1))",
+      2
+     ],
+     [
+      "((1, 1), (1, 0))",
+      2
+     ],
+     [
+      "((1, 2), (0, 1))",
+      2
+     ],
+     [
+      "((1, 2), (1, 0))",
+      2
+     ],
+     [
+      "((2, 0), (0, 1))",
+      2
+     ],
+     [
+      "((2, 0), (1, 0))",
+      2
+     ],
+     [
+      "((2, 1), (0, 1))",
+      2
+     ],
+     [
+      "((2, 1), (1, 0))",
+      2
+     ],
+     [
+      "((2, 2), (0, 1))",
+      2
+     ],
+     [
+      "((2, 2), (1, 0))",
+      2
+     ]
+    ],
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "count_max": 2,
+    "count_min": 1,
+    "fate": "UNMOTIVATED",
+    "free_items": [
+     "I-DIRECTION-LABEL",
+     "I-SITE-ASSIGNMENT"
+    ],
+    "inventory": {
+     "I-DIRECTION-LABEL": 2,
+     "I-ORIENT": 1,
+     "I-SITE-ASSIGNMENT": 6
+    },
+    "isomorphisms": 72,
+    "link_acyclic": false,
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "co-division incidence on the ordered actor pair",
+    "needs_interior_position": false,
+    "reason": "2 genuinely free item(s): I-DIRECTION-LABEL fiber 2, I-SITE-ASSIGNMENT fiber 6",
+    "site_arity": 9,
+    "site_gen": "ACTOR",
+    "site_note": "the record's declared actor pool",
+    "smuggled": false,
+    "target": "CRYSTAL-CARRIED-LATTICE"
+   },
+   "crystal_at_I7_target": {
+    "acyclicity_basis": "measured",
+    "arena": "CRYSTAL/DOUBLE-GRID(3,2)",
+    "arity_repair": "NONE",
+    "carrier": null,
+    "count_gen": "DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS",
+    "fate": "STRUCT-DEAD",
+    "isomorphisms": 0,
+    "link_acyclic": false,
+    "link_gen": "ACTOR-PAIR",
+    "link_note": "co-division incidence on the ordered actor pair",
+    "needs_interior_position": false,
+    "reason": "cyclic, but 0 of the 9! bijections carry the site incidence onto the target's link structure",
+    "site_arity": 9,
+    "site_gen": "ACTOR",
+    "site_note": "the record's declared actor pool",
+    "target": "I7-DECLARED-LATTICE"
+   }
+  },
+  "crystals": [
+   {
+    "count_field_by_link": {
+     "(0, 1)": [
+      [
+       2,
+       9
+      ]
+     ],
+     "(1, 0)": [
+      [
+       2,
+       9
+      ]
+     ],
+     "(1, 1)": [
+      [
+       0,
+       9
+      ]
+     ]
+    },
+    "crystal": "DOUBLE-GRID(3,2)",
+    "divisions": 18,
+    "events": 72,
+    "maxhits": 1,
+    "refusal": null
+   },
+   {
+    "count_field_by_link": {
+     "(0, 1)": [
+      [
+       3,
+       9
+      ]
+     ],
+     "(1, 0)": [
+      [
+       3,
+       9
+      ]
+     ],
+     "(1, 1)": [
+      [
+       0,
+       9
+      ]
+     ]
+    },
+    "crystal": "DOUBLE-GRID(3,3)",
+    "divisions": 24,
+    "events": 96,
+    "maxhits": 1,
+    "refusal": null
+   },
+   {
+    "count_field_by_link": {
+     "(0, 1)": [
+      [
+       1,
+       9
+      ]
+     ],
+     "(1, 0)": [
+      [
+       1,
+       9
+      ]
+     ],
+     "(1, 1)": [
+      [
+       0,
+       9
+      ]
+     ]
+    },
+    "crystal": "CONFLICT-GRID(3,2)",
+    "divisions": 6,
+    "events": 30,
+    "maxhits": 1,
+    "refusal": null
+   },
+   {
+    "count_field_by_link": {
+     "(0, 1)": [
+      [
+       2,
+       9
+      ]
+     ],
+     "(1, 0)": [
+      [
+       2,
+       9
+      ]
+     ],
+     "(1, 1)": [
+      [
+       0,
+       9
+      ]
+     ]
+    },
+    "crystal": "CONFLICT-GRID(3,4)",
+    "divisions": 12,
+    "events": 66,
+    "maxhits": 1,
+    "refusal": null
+   },
+   {
+    "count_field_by_link": {
+     "(0, 1)": [
+      [
+       0,
+       9
+      ]
+     ],
+     "(1, 0)": [
+      [
+       0,
+       9
+      ]
+     ],
+     "(1, 1)": [
+      [
+       0,
+       9
+      ]
+     ]
+    },
+    "crystal": "D60-GRID(3,12)",
+    "divisions": 1,
+    "events": 46,
+    "maxhits": 1,
+    "refusal": null
+   }
+  ],
+  "defect_spectrum": {
+   "1/2": 70,
+   "2": 10,
+   "2/3": 2,
+   "3/2": 6
+  },
+  "defective_squares": 88,
+  "division_events": {
+   "arbitration_instances": 1536,
+   "distinct_arbitration_events": 20,
+   "distinct_division_labels_in_family": 20,
+   "distinct_pair_arbitrations": 8,
+   "selected_carrying_the_arbitration_tag": 1536,
+   "selected_instances": 1536
+  },
+  "fates": {
+   "ARITY-DEAD": 12,
+   "ARITY-DEAD-BELOW": 2,
+   "STRUCT-DEAD": 10,
+   "TYPE-DEAD": 36
+  },
+  "fates_by_carrier": {
+   "CONG": {
+    "ARITY-DEAD": 6,
+    "ARITY-DEAD-BELOW": 1,
+    "STRUCT-DEAD": 5,
+    "TYPE-DEAD": 18
+   },
+   "MENU": {
+    "ARITY-DEAD": 6,
+    "ARITY-DEAD-BELOW": 1,
+    "STRUCT-DEAD": 5,
+    "TYPE-DEAD": 18
+   }
+  },
+  "free_item_fibers": {
+   "CONTROL-CRYSTAL": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "CONTROL-CRYSTAL-FALSIFIER": {
+    "I-DIRECTION-LABEL": 2,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 6
+   }
+  },
+  "histories": 3969,
+  "i7": {
+   "L": 3,
+   "additivity_checks": 972,
+   "additivity_violations": 0,
+   "d": 2,
+   "links": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "records_admissible": 9,
+   "records_declared": 11,
+   "records_splittable": 6,
+   "records_unsplittable": [
+    "G-ANISO",
+    "G-CURVED",
+    "G-FLAT"
+   ],
+   "refinements_built": 36,
+   "sites": 9
+  },
+  "mechanism": {
+   "actor_pair_relation": [
+    [
+     "A->B",
+     336
+    ],
+    [
+     "B->A",
+     336
+    ]
+   ],
+   "actor_site_objects": 2,
+   "cong_class_acyclic": true,
+   "cong_class_selfloops": 0,
+   "cong_simple_cycles_len2to6": {
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0
+   },
+   "divisions_on_the_AB_channel_in_family": 336,
+   "menu_class_acyclic": true,
+   "menu_class_selfloops": 45,
+   "menu_simple_cycles_len2to6": {
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0
+   }
+  },
+  "menu_classes": 113,
+  "menu_classes_comparator": 113,
+  "menu_classes_unweighted": 113,
+  "menu_closes_all": 1402,
+  "menu_closes_def": 44,
+  "menu_properties": {
+   "ck": [
+    6,
+    10
+   ],
+   "descent_nonconstant_horizons": {
+    "2": 4
+   },
+   "k_primes": [
+    2,
+    3,
+    5,
+    13
+   ],
+   "k_rank": 3,
+   "multivalued_weights_targets": [
+    0,
+    4
+   ]
+  },
+  "obstruction": "THE-ARITY-CYCLICITY-SCISSORS",
+  "pinned_source_count": 24,
+  "provenance": [
+   {
+    "ok": true,
+    "path": "v14/note-weld2-census-pin.md",
+    "pinned": "9d19515cb3ae",
+    "role": "THE PIN",
+    "route": "worktree",
+    "worktree": "9d19515cb3ae"
+   },
+   {
+    "ok": true,
+    "path": "v14/note-weld2-referent-scout.md",
+    "pinned": "e1f771a9d0ed",
+    "role": "the scout report",
+    "route": "git show 95c3b77:",
+    "worktree": "425303a8ce1e"
+   },
+   {
+    "ok": true,
+    "path": "v13/code/ha_successor_receipt.json",
+    "pinned": "542b8735daf0",
+    "role": "I7 receipt",
+    "route": "worktree",
+    "worktree": "542b8735daf0"
+   },
+   {
+    "ok": true,
+    "path": "v13/paper-ha-successor.md",
+    "pinned": "f286ba10d2d9",
+    "role": "HA paper (count semantics)",
+    "route": "worktree",
+    "worktree": "f286ba10d2d9"
+   },
+   {
+    "ok": true,
+    "path": "v13/code/ha_successor_exact.py",
+    "pinned": "d44cb72f8ee9",
+    "role": "HA code",
+    "route": "worktree",
+    "worktree": "d44cb72f8ee9"
+   },
+   {
+    "ok": true,
+    "path": "v14/paper-12-gamma-main.md",
+    "pinned": "d85a629a9378",
+    "role": "Gamma-main (MENU carrier)",
+    "route": "git show 95c3b77:",
+    "worktree": "05f5dc7c7273"
+   },
+   {
+    "ok": true,
+    "path": "v10/note-d74-transport-holonomy-result.md",
+    "pinned": "0180e21c7127",
+    "role": "D74 result",
+    "route": "worktree",
+    "worktree": "0180e21c7127"
+   },
+   {
+    "ok": true,
+    "path": "v10/note-d74-transport-holonomy-pin.md",
+    "pinned": "b9997d125ef5",
+    "role": "D74 pin",
+    "route": "worktree",
+    "worktree": "b9997d125ef5"
+   },
+   {
+    "ok": true,
+    "path": "v14/review-gmain-operator.md",
+    "pinned": "f67871bc51f5",
+    "role": "CONG-185 definitional source",
+    "route": "worktree",
+    "worktree": "f67871bc51f5"
+   },
+   {
+    "ok": true,
+    "path": "v14/note-gmain-adjudication.md",
+    "pinned": "972e54741330",
+    "role": "Gamma-main adjudication",
+    "route": "worktree",
+    "worktree": "972e54741330"
+   },
+   {
+    "ok": true,
+    "path": "v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md",
+    "pinned": "37a428321f46",
+    "role": "v11 paper 0 (the POSIT, U4)",
+    "route": "worktree",
+    "worktree": "37a428321f46"
+   },
+   {
+    "ok": true,
+    "path": "v14/paper-04-refinement-grammar.md",
+    "pinned": "dfa5090f26b1",
+    "role": "R6a (additivity)",
+    "route": "worktree",
+    "worktree": "dfa5090f26b1"
+   },
+   {
+    "ok": true,
+    "path": "v14/paper-09-renewal-transport.md",
+    "pinned": "006f96aaa2ff",
+    "role": "R6b' (type census, dead list)",
+    "route": "worktree",
+    "worktree": "006f96aaa2ff"
+   },
+   {
+    "ok": true,
+    "path": "v13/paper-brg-bridge.md",
+    "pinned": "371e38742059",
+    "role": "BRG (species discipline)",
+    "route": "worktree",
+    "worktree": "371e38742059"
+   },
+   {
+    "ok": true,
+    "path": "v13/note-gw1-metric-from-closure.md",
+    "pinned": "6f825ef6e1ce",
+    "role": "GW1 (permitted list)",
+    "route": "worktree",
+    "worktree": "6f825ef6e1ce"
+   },
+   {
+    "ok": true,
+    "path": "v14/note-r6bprime-transport-pin.md",
+    "pinned": "17111fd19022",
+    "role": "R6b' pin (v12 Gamma dead)",
+    "route": "worktree",
+    "worktree": "17111fd19022"
+   },
+   {
+    "ok": true,
+    "path": "v14/paper-02-manifold-rung.md",
+    "pinned": "1a80a5bf1a1b",
+    "role": "R2 (naive 9<->9 dead)",
+    "route": "worktree",
+    "worktree": "1a80a5bf1a1b"
+   },
+   {
+    "ok": true,
+    "path": "v10/note-d60-crystal-question-pin.md",
+    "pinned": "2c715308c22b",
+    "role": "D60 pin",
+    "route": "worktree",
+    "worktree": "2c715308c22b"
+   },
+   {
+    "ok": true,
+    "path": "v10/note-d60-crystal-result.md",
+    "pinned": "19e50d34635f",
+    "role": "D60 result",
+    "route": "worktree",
+    "worktree": "19e50d34635f"
+   },
+   {
+    "ok": true,
+    "path": "v10/note-d66-arbitration-crystal-pin.md",
+    "pinned": "f09c9091bf58",
+    "role": "D66 pin",
+    "route": "worktree",
+    "worktree": "f09c9091bf58"
+   },
+   {
+    "ok": true,
+    "path": "v10/note-d66-arbitration-crystal-result.md",
+    "pinned": "c32eb7814993",
+    "role": "D66 result",
+    "route": "worktree",
+    "worktree": "c32eb7814993"
+   },
+   {
+    "ok": true,
+    "path": "v10/note-d67-k4-double-grid-pin.md",
+    "pinned": "598c429fcc9c",
+    "role": "D67 pin",
+    "route": "worktree",
+    "worktree": "598c429fcc9c"
+   },
+   {
+    "ok": true,
+    "path": "v10/note-d67-k4-double-grid-result.md",
+    "pinned": "13712723c0cd",
+    "role": "D67 result",
+    "route": "worktree",
+    "worktree": "13712723c0cd"
+   },
+   {
+    "ok": true,
+    "path": "v10/note-d58-atlas-instrument-result.md",
+    "pinned": "ce536758fbaa",
+    "role": "D58 (the walk)",
+    "route": "worktree",
+    "worktree": "ce536758fbaa"
+   }
+  ],
+  "rerouted_sources": [
+   {
+    "path": "v14/note-weld2-referent-scout.md",
+    "route": "git show 95c3b77:",
+    "worktree": "425303a8ce1e"
+   },
+   {
+    "path": "v14/paper-12-gamma-main.md",
+    "route": "git show 95c3b77:",
+    "worktree": "05f5dc7c7273"
+   }
+  ],
+  "smuggling_probes": {
+   "grammar_side_constant": false,
+   "reads_I7_s": true
+  },
+  "ulam_prefixes_by_depth": {
+   "0": 1,
+   "1": 8,
+   "2": 60,
+   "3": 452,
+   "4": 3448
+  },
+  "ulam_prefixes_total": 3969,
+  "verdict": "WELD2-EMPTY-AT-THE-DECLARED-FAMILY-THE-ARITY-CYCLICITY-SCISSORS@BOTH:MENU-113+CONG-185<CANDIDATES=60|FOUND=0|SMUGGLED=0|UNMOTIVATED=0|TYPE-DEAD=36|ARITY-DEAD=12|ARITY-DEAD-BELOW=2|STRUCT-DEAD=10 -- MECHANISM=THE-ONLY-CYCLIC-LINK-GENERATOR-HAS-2-OBJECTS(336-DIVISION-EVENTS-ON-THE-(A,B)-CHANNEL)-AND-EVERY-LINK-GENERATOR-WITH-9-OR-MORE-IS-ACYCLIC(MENU-SELFLOOPS=45|CONG-SELFLOOPS=0|SIMPLE-CYCLES-LEN-2..6=0-AT-BOTH) -- CONTROLS=FOUND-AT-CRYSTAL(FOUND-candidate,ISOS=72,FIBERS-ALL-1)|FALSIFIER-FLIPS(UNMOTIVATED,I-SITE-ASSIGNMENT-FIBER=6)|EMPTY-AT-WALK(ARITY-DEAD)|CRYSTAL-AT-I7(STRUCT-DEAD) -- INGREDIENT=COUNT-SEMANTICS-INTACT(ADDITIVITY-972-OF-972|DIVISION=ARBITRATION-TAG-FORCED) -- CARRIER-RE-DERIVATION=CONG-185-SIX-OF-SIX -- SCOPE=(A,B)-D<=4-CARRIER|I7-d2-L3-9-SITES-3-LINKS|DECLARED-WINDOW=FIRST-TO-LAST-ARBITRATION-CUT>",
+  "walk": {
+   "divisions": 4,
+   "divisions_on_the_AB_channel": 0,
+   "events": 30,
+   "kinds": {
+    "d": 16,
+    "m": 1,
+    "n": 3,
+    "p": 6,
+    "r": 4
+   }
+  }
+ },
+ "pin": "v14/note-weld2-census-pin.md",
+ "pin_sha256_12": "9d19515cb3ae",
+ "source_sha256": "290149118b9d12abaa5ee8d27f30e86f796e963840a87bc2ba0a36d107a58dbf",
+ "unit": "v14 WELD 2 -- paper-13, the carrier census",
+ "verbatim_anchors": [
+  {
+   "bytes": 92,
+   "consumer_gate": "G-COUNT-SEMANTICS",
+   "id": "V01",
+   "passed": true,
+   "path": "v13/paper-ha-successor.md",
+   "quote": "$n_\\ell(x)$ is the number of division events in the record interval between $x$\nand $x+\\ell$",
+   "route": "worktree"
+  },
+  {
+   "bytes": 61,
+   "consumer_gate": "G-DIVISION-PREDICATE",
+   "id": "V02",
+   "passed": true,
+   "path": "v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md",
+   "quote": "**[POSIT]** v11's **division events are the renewal events.**",
+   "route": "worktree"
+  },
+  {
+   "bytes": 42,
+   "consumer_gate": "G-ADDITIVITY-972",
+   "id": "V03",
+   "passed": true,
+   "path": "v14/paper-04-refinement-grammar.md",
+   "quote": "additivity holds at 972 of 972 constraints",
+   "route": "worktree"
+  },
+  {
+   "bytes": 81,
+   "consumer_gate": "G-INTERIOR-DEAD-ON-ARRIVAL",
+   "id": "V04",
+   "passed": true,
+   "path": "v14/paper-09-renewal-transport.md",
+   "quote": "the type census proves a leg has no interior\ndivision event for a split to sit at",
+   "route": "worktree"
+  },
+  {
+   "bytes": 101,
+   "consumer_gate": "G-TWO-WAY",
+   "id": "V05",
+   "passed": true,
+   "path": "v13/paper-ha-successor.md",
+   "quote": "A predicate that cannot return its other value\n   anywhere in the declared arena is not a measurement",
+   "route": "worktree"
+  },
+  {
+   "bytes": 62,
+   "consumer_gate": "G-CONG-CLASSES",
+   "id": "V06",
+   "passed": true,
+   "path": "v14/review-gmain-operator.md",
+   "quote": "**185 classes, reproducing d74's committed AB4 value exactly**",
+   "route": "worktree"
+  },
+  {
+   "bytes": 48,
+   "consumer_gate": "G-DEAD-LIST-CITED",
+   "id": "V07",
+   "passed": true,
+   "path": "v14/paper-02-manifold-rung.md",
+   "quote": "**$L\\ge 4$ is therefore a measured requirement**",
+   "route": "worktree"
+  },
+  {
+   "bytes": 51,
+   "consumer_gate": "G-U4-REGISTERED",
+   "id": "V08",
+   "passed": true,
+   "path": "v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md",
+   "quote": "*the\n  division events of a crystal form a crystal*",
+   "route": "worktree"
+  },
+  {
+   "bytes": 22,
+   "consumer_gate": "G-VERDICT",
+   "id": "V09",
+   "passed": true,
+   "path": "v14/note-weld2-referent-scout.md",
+   "quote": "NO-SEED-AT-THE-CARRIER",
+   "route": "git show 95c3b77:"
+  },
+  {
+   "bytes": 88,
+   "consumer_gate": "G-CONG-ROUNDS",
+   "id": "V10",
+   "passed": true,
+   "path": "v10/note-d74-transport-holonomy-result.md",
+   "quote": "the coarsest weighted **congruence** (partition refinement, 4\u20136 rounds to a fixed point)",
+   "route": "worktree"
+  },
+  {
+   "bytes": 92,
+   "consumer_gate": "G-DIVISION-PREDICATE",
+   "id": "V11",
+   "passed": true,
+   "path": "v14/paper-09-renewal-transport.md",
+   "quote": "REN = [h for h in FAM if len(h) <= 4 and CLS[tuple(h)] == 0 and any(e[0] == 'r' for e in h)]",
+   "route": "worktree"
+  }
+ ],
+ "verdicts": {
+  "cong185_six_properties": {
+   "P1-descent": true,
+   "P2-single-valued": true,
+   "P3-curvature-44": true,
+   "P4-q-holonomy": true,
+   "P5-k-holonomy": true,
+   "P6-exact-lumpability": true
+  },
+  "controls": {
+   "EMPTY_at_walk": "ARITY-DEAD",
+   "FOUND_at_crystal": "FOUND-candidate",
+   "FOUND_falsifier": "UNMOTIVATED",
+   "crystal_at_I7": "STRUCT-DEAD"
+  },
+  "weld2": "WELD2-EMPTY-AT-THE-DECLARED-FAMILY-THE-ARITY-CYCLICITY-SCISSORS@BOTH:MENU-113+CONG-185<CANDIDATES=60|FOUND=0|SMUGGLED=0|UNMOTIVATED=0|TYPE-DEAD=36|ARITY-DEAD=12|ARITY-DEAD-BELOW=2|STRUCT-DEAD=10 -- MECHANISM=THE-ONLY-CYCLIC-LINK-GENERATOR-HAS-2-OBJECTS(336-DIVISION-EVENTS-ON-THE-(A,B)-CHANNEL)-AND-EVERY-LINK-GENERATOR-WITH-9-OR-MORE-IS-ACYCLIC(MENU-SELFLOOPS=45|CONG-SELFLOOPS=0|SIMPLE-CYCLES-LEN-2..6=0-AT-BOTH) -- CONTROLS=FOUND-AT-CRYSTAL(FOUND-candidate,ISOS=72,FIBERS-ALL-1)|FALSIFIER-FLIPS(UNMOTIVATED,I-SITE-ASSIGNMENT-FIBER=6)|EMPTY-AT-WALK(ARITY-DEAD)|CRYSTAL-AT-I7(STRUCT-DEAD) -- INGREDIENT=COUNT-SEMANTICS-INTACT(ADDITIVITY-972-OF-972|DIVISION=ARBITRATION-TAG-FORCED) -- CARRIER-RE-DERIVATION=CONG-185-SIX-OF-SIX -- SCOPE=(A,B)-D<=4-CARRIER|I7-d2-L3-9-SITES-3-LINKS|DECLARED-WINDOW=FIRST-TO-LAST-ARBITRATION-CUT>"
+ },
+ "waivers": [
+  {
+   "class": "DECLARATION-CARRIED",
+   "gate": "G-TWO-WAY",
+   "reason": "this gate records that the two-way requirement is in force; its content is discharged by G-CTRL-FOUND and G-CTRL-EMPTY, which carry the measurements"
+  },
+  {
+   "class": "DECLARATION-CARRIED",
+   "gate": "G-DEAD-LIST-CITED",
+   "reason": "a discipline statement about what this unit does NOT compute; its content is the absence of those computations, which the receipt's candidate rows exhibit"
+  },
+  {
+   "class": "REGISTER-ONLY",
+   "gate": "G-U4-REGISTERED",
+   "reason": "a successor register entry; nothing in the verdict descends from it"
+  }
+ ]
+}
