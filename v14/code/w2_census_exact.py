@@ -10,37 +10,66 @@ THE QUESTION.  Does a MOTIVATED map exist from the transport grammar's
 carrier to the spatial record lattice -- grammar objects to sites,
 grammar object-pairs/channels to links, SETS OF DIVISION EVENTS to link
 counts n_l(x) -- where motivated means ZERO free items at the RSQ
-standard?  Posed at BOTH carriers (MENU-113 and CONG-185) and
-carrier-stamped.
+standard?  Posed at BOTH quotients as site generators (MENU-113 and
+CONG-185), and at BOTH READINGS of "a map".
+
+THE ADMISSIBILITY READING IS AN AXIS, DECLARED AS DATA.  The pin's word
+is "a map".  Two readings of it are run, and every cell is decided under
+each:
+  EMBEDDING  -- a bijection from site objects to sites under which the
+                grammar's link relation CONTAINS the target's incidence
+                (the reading the delivered census implemented).
+  QUOTIENT   -- a surjection from grammar objects ONTO sites with every
+                realised link-relation edge carrying a DECLARED link
+                displacement (the reading the pin's words also admit).
+The reading axis is not the pin's; it is declared here, and every row
+carries its reading.
+
+ONE ADMISSIBILITY CRITERION ON BOTH BRANCHES.  A link is an UNORDERED
+site pair carrying a label and a count -- orientation is a declared free
+item (I-ORIENT) -- so incidence is UNDIRECTED on both the kill side and
+the admit side.  The EMBEDDING kill is therefore an ODD-CYCLE argument
+(the target closes a 3-cycle on 3 distinct sites at every one of its 27
+cells; a graded relation is bipartite and carries no odd cycle) backed,
+where the grading fails, by an EXHAUSTIVE induced-subgraph search that
+EXECUTES the declared restriction rather than arguing it away.
 
 WHAT THIS PROGRAM DOES, in the pin's order:
   SEC 0   CLI, gate/waiver/anchor machinery, mutant registry.
   SEC 1   Provenance: every pinned source sha256-verified; verbatim
-          anchors (#62) bound to consumer gates.
+          anchors (#62) bound to consumer gates, each with its own
+          declared falsifier.
   SEC 2   The committed transport grammar, REBUILT from its definitions
           (no import from another unit's code, #46/house rule).
   SEC 3   The AB4 arena: 3969 histories, MENU-113, the exchange-square
           census, the horizon potential.
   SEC 4   CONG-185 RE-DERIVED, with its SIX ruling properties GATED
           before use (pin R1).
-  SEC 5   I7's arena from the pinned HA receipt; the record family; the
-          ADDITIVITY-972-OF-972 ingredient rebuilt (pin R2).
+  SEC 5   I7's arena from the pinned HA receipt (read at its pinned
+          sha, #91); the record family; ADDITIVITY-972-OF-972 (pin R2).
   SEC 6   The crystal arenas (D60/D66/D67 committed specs) and the D58
           generic 2-actor walk (pin R5).
-  SEC 7   THE DETECTOR: gates, fates, the RSQ choice inventory with
-          fibers COMPUTED, and the R6 no-smuggling classifier.
-  SEC 8   CONTROLS FIRST, both falsified (pin R5).
-  SEC 9   The census at both carriers over the declared candidate
-          family (pin R3).
-  SEC 10  The verdict (pin OUTCOMES), the receipt, the output.
+  SEC 7   THE DETECTOR at both readings: gates, fates, the RSQ choice
+          inventory with fibers COMPUTED, the R6 no-smuggling
+          classifier, and THE GRADING THEOREM with its forcing
+          machine-checked.
+  SEC 8   CONTROLS FIRST, both falsified, and the FOUND branch
+          exhibited AT THE VERDICT'S OWN TARGET (pin R5 / HA 14.3).
+  SEC 9   The census at both quotients over the declared candidate
+          family (pin R3), per-cell fate gates, carrier agreement.
+  SEC 10  The verdict REBUILT FROM THE PAYLOAD and compared as a
+          complete string; the paper verified against the receipt; the
+          receipt and output re-read from disk after writing.
 
 HOUSE RULES OBSERVED.  Exact arithmetic (fractions.Fraction / integers)
 end to end; no floats anywhere.  Counts COMPUTED, never typed (#24).
-Prose renders from the receipt (#20).  All set/dict iteration that feeds
-a printed number is ordered by a hash-seed-independent stable key.  The
-plain run is byte-reproducible.  Verdicts live IN the gate statements.
-Every comparator is built from primitives its builder does not share
-(#82-strengthened).
+Prose renders from the receipt and IS CHECKED AGAINST IT IN THE RUN
+(#20).  All set/dict iteration that feeds a printed number is ordered by
+a hash-seed-independent stable key.  The plain run is byte-reproducible
+and writes NOTHING when a gate fails.  Verdicts live IN the gate
+statements and the head is DERIVED, never typed (#234).  Every
+comparator is built from primitives its builder does not share
+(#82-strengthened).  Gates bind objects, cell by cell (#87).
 """
 
 from __future__ import annotations
@@ -118,23 +147,28 @@ def anchor(aid, quantity, committed, computed, source):
     return ok
 
 
-def vanchor(vid, path, quote, consumer):
+def vanchor(vid, path, quote, consumer, occurrences=1):
     """A verbatim text anchor (#62): meaning-binding, consumer-gated,
-    mutant-falsified.  The quote must occur byte-for-byte in the pinned
-    file, and the named consumer gate must exist by the end of the run."""
+    mutant-falsified.  EACH anchor carries its OWN declared falsifier
+    (MUT-QUOTE-<vid>), and the test is not bare substring presence: the
+    quote must occur in the pinned file exactly `occurrences` times AND
+    its committed byte length must reproduce, so a truncation to a
+    common substring fails."""
     global ANCHOR_FAIL
     want = dict((p, w) for p, w, _ in PINNED)[path]
     body, route = read_pinned(path, want)
-    q = mutate("MUT-QUOTE", quote, quote + " [corrupted]") if vid == "V01" \
-        else quote
-    ok = (body is not None) and (q.encode("utf-8") in body)
+    q = mutate(f"MUT-QUOTE-{vid}", quote, quote + " [corrupted]")
+    n = body.count(q.encode("utf-8")) if body is not None else 0
+    ok = (body is not None) and n == occurrences and len(q) == len(quote)
     if not ok:
         ANCHOR_FAIL += 1
     VANCHORS.append({"id": vid, "path": path, "quote": quote,
                      "consumer_gate": consumer, "passed": ok,
-                     "bytes": len(quote), "route": route})
+                     "bytes": len(quote), "committed_occurrences": occurrences,
+                     "computed_occurrences": n, "route": route})
     emit(f"  [{'VANCH' if ok else 'VANCH-FAIL'}] {vid}  {path} -> "
-         f"{consumer}  ({len(quote)} bytes verbatim, via {route})")
+         f"{consumer}  ({len(quote)} bytes verbatim, {n} occurrence(s), "
+         f"via {route})")
     return ok
 
 
@@ -307,7 +341,7 @@ def run_provenance():
             "G-DIVISION-PREDICATE")
     vanchor("V03", "v14/paper-04-refinement-grammar.md",
             "additivity holds at 972 of 972 constraints",
-            "G-ADDITIVITY-972")
+            "G-ADDITIVITY-972", occurrences=2)
     vanchor("V04", "v14/paper-09-renewal-transport.md",
             "the type census proves a leg has no interior\ndivision event "
             "for a split to sit at",
@@ -333,6 +367,8 @@ def run_provenance():
     vanchor("V11", "v14/paper-09-renewal-transport.md",
             "REN = [h for h in FAM if len(h) <= 4 and CLS[tuple(h)] == 0 and "
             "any(e[0] == 'r' for e in h)]", "G-DIVISION-PREDICATE")
+    vanchor("V12", "v10/note-d74-transport-holonomy-result.md",
+            "| `(A,B) d≤5` | 265 | 462 |", "G-D5-CITED")
 
 
 # ===========================================================================
@@ -897,7 +933,9 @@ def descent_census(cache, Q, G):
             if len(h) + r > DEPTH:
                 continue
             vals[(Q[h], len(h))].add(G(h, r))
-        nb = sum(1 for v in vals.values() if len(v) > 1)
+        nb = mutate("MUT-DESCENT-BLIND",
+                    sum(1 for v in vals.values() if len(v) > 1),
+                    1 if r == 2 else 0)
         if nb:
             bad[r] = nb
     return bad
@@ -1004,7 +1042,7 @@ def ck_census(cache, Q, mu, G, Groot):
                            for k in set(comp) | set(direct)):
                         good = False
                         break
-                ok += int(good)
+                ok += int(mutate("MUT-CK-LAX", good, False))
     return ok, tot
 
 
@@ -1012,8 +1050,30 @@ def ck_census(cache, Q, mu, G, Groot):
 # SEC 5.  I7's ARENA AND THE ADDITIVITY INGREDIENT
 # ===========================================================================
 
+I7_RECEIPT = "v13/code/ha_successor_receipt.json"
+I7_CONSUMED = {}
+
+
 def i7_arena():
-    rec = json.load(open(os.path.join(REPO, "v13/code/ha_successor_receipt.json")))
+    """#91: the I7 receipt is CONSUMED through read_pinned at its pinned
+    sha, never from mutable worktree state.  The route AND the sha256-12
+    of the bytes actually consumed are recorded and gated, so a worktree
+    drift can no longer be rerouted by the provenance check while the
+    consumption keeps reading the drifted bytes (the injection that
+    produced 'G-PROVENANCE passes while G-I7-ARENA consumes the
+    corrupted copy')."""
+    want = dict((p, w) for p, w, _ in PINNED)[I7_RECEIPT]
+    if MUTANT == "MUT-I7-ROUTE":       # the raw worktree read, restored
+        body, route = open(os.path.join(REPO, I7_RECEIPT), "rb").read(), \
+            "raw-worktree-read"
+    else:
+        body, route = read_pinned(I7_RECEIPT, want)
+    if body is None:
+        raise SystemExit(f"I7 receipt unresolved at its pinned sha {want}")
+    I7_CONSUMED["route"] = route
+    I7_CONSUMED["sha256_12"] = hashlib.sha256(body).hexdigest()[:12]
+    I7_CONSUMED["pinned"] = want
+    rec = json.loads(body)
     D = rec["declarations"]
     d, L = D["d"], D["L"]
     links = [tuple(v) for v in D["links_d2"]]
@@ -1052,6 +1112,10 @@ def admissible_record(links, rec):
     return True
 
 
+SPLIT_RULES = ("low", "floor", "high")
+COMPLETION_RULES = ("minimal", "iterable-64")
+
+
 def additivity_census(X, L, links, fam):
     """R6a's forced part, rebuilt: for each SPLITTABLE admissible record,
     each of 3 declared split rules and 2 declared completion rules, the
@@ -1063,9 +1127,10 @@ def additivity_census(X, L, links, fam):
     unsplittable = sorted(set(adm) - set(splittable))
     Lr = 2 * L
     checks, bad, builds = 0, 0, 0
+    keys = set()
     for nm in splittable:
         a = fam[nm]
-        for smode in ("low", "floor", "high"):
+        for smode in SPLIT_RULES:
             sp = {}
             for x in X:
                 for lk in links:
@@ -1073,7 +1138,7 @@ def additivity_census(X, L, links, fam):
                     n1 = 1 if smode == "low" else (n - 1 if smode == "high"
                                                    else n // 2)
                     sp[(x, lk)] = (n1, n - n1)
-            for fmode in ("minimal", "iterable-64"):
+            for fmode in COMPLETION_RULES:
                 K = 1 if fmode == "minimal" else 64
                 counts = defaultdict(dict)
                 for x in X:
@@ -1108,9 +1173,35 @@ def additivity_census(X, L, links, fam):
                         z0 = tuple(2 * t for t in x)
                         z1 = tuple((z0[i] + lk[i]) % Lr for i in range(len(lk)))
                         checks += 1
+                        keys.add((nm, smode, fmode, x, lk))
                         if counts[z0][lk] + counts[z1][lk] != a[x][lk]:
                             bad += 1
-    return adm, splittable, unsplittable, builds, checks, bad
+    return adm, splittable, unsplittable, builds, checks, bad, len(keys)
+
+
+def additivity_comparator(X, links, fam):
+    """#82-strengthened COMPARATOR for the 972.  It shares NO construction
+    with the builder and does not consult the builder's `splittable` list
+    or its loop bounds: it re-derives admissibility and splittability from
+    the record family itself, by its own inline Sylvester test on the
+    q-encoding, and counts the constraint CELLS a refinement of each
+    surviving record would carry."""
+    n_split = 0
+    for nm in sorted(fam):
+        rec = fam[nm]
+        good, small = True, False
+        for x, row in rec.items():
+            n1, n2, n3 = (row[links[0]], row[links[1]], row[links[2]])
+            q11, q22, q12 = Fr(n1), Fr(n2), Fr(n3 - n1 - n2, 2)
+            if not (q11 > 0 and q11 * q22 > q12 * q12):
+                good = False
+                break
+            if min(n1, n2, n3) < 2:
+                small = True
+        if good and not small:
+            n_split += 1
+    return n_split * len(SPLIT_RULES) * len(COMPLETION_RULES) \
+        * len(X) * len(links), n_split
 
 
 # ===========================================================================
@@ -1293,6 +1384,50 @@ SITE_GENS = ["ACTOR", "MENU-CLASS", "CONG-CLASS", "EVENT-SUBSET",
 LINK_GENS = ["ACTOR-PAIR", "EXTENSION-EDGE", "COVER-PAIR"]
 COUNT_GENS = ["DIV-COUNT-BETWEEN-DECLARED-ARB-CUTS"]
 ARITY_REPAIRS = ["NONE", "DECLARED-RESTRICTION"]
+READINGS = ["EMBEDDING", "QUOTIENT"]
+
+# #87.  THE FATE OF EVERY CELL, DECLARED AS DATA BEFORE THE CENSUS RUNS.
+# A gate binds each row to its own entry, so a single cell that changes its
+# fate fails the run even when the aggregate distribution is untouched.
+_T, _A, _B = "TYPE-DEAD", "ARITY-DEAD", "ARITY-DEAD-BELOW"
+_S, _H, _U = "STRUCT-DEAD", "HOM-DEAD", "UNMOTIVATED"
+EXPECTED_FATES = {}
+for _rd, _tab in (
+    ("EMBEDDING", {
+        ("ACTOR", "ACTOR-PAIR"): (_A, _B),
+        ("ACTOR", "EXTENSION-EDGE"): (_T, _T),
+        ("ACTOR", "COVER-PAIR"): (_T, _T),
+        ("MENU-CLASS", "ACTOR-PAIR"): (_T, _T),
+        ("MENU-CLASS", "EXTENSION-EDGE"): (_A, _S),
+        ("MENU-CLASS", "COVER-PAIR"): (_T, _T),
+        ("CONG-CLASS", "ACTOR-PAIR"): (_T, _T),
+        ("CONG-CLASS", "EXTENSION-EDGE"): (_A, _S),
+        ("CONG-CLASS", "COVER-PAIR"): (_T, _T),
+        ("EVENT-SUBSET", "ACTOR-PAIR"): (_T, _T),
+        ("EVENT-SUBSET", "EXTENSION-EDGE"): (_A, _S),
+        ("EVENT-SUBSET", "COVER-PAIR"): (_A, _S),
+        ("ULAM-PREFIX", "ACTOR-PAIR"): (_T, _T),
+        ("ULAM-PREFIX", "EXTENSION-EDGE"): (_A, _S),
+        ("ULAM-PREFIX", "COVER-PAIR"): (_T, _T)}),
+    ("QUOTIENT", {
+        ("ACTOR", "ACTOR-PAIR"): (_A, _B),
+        ("ACTOR", "EXTENSION-EDGE"): (_T, _T),
+        ("ACTOR", "COVER-PAIR"): (_T, _T),
+        ("MENU-CLASS", "ACTOR-PAIR"): (_T, _T),
+        ("MENU-CLASS", "EXTENSION-EDGE"): (_H, _H),
+        ("MENU-CLASS", "COVER-PAIR"): (_T, _T),
+        ("CONG-CLASS", "ACTOR-PAIR"): (_T, _T),
+        ("CONG-CLASS", "EXTENSION-EDGE"): (_U, _U),
+        ("CONG-CLASS", "COVER-PAIR"): (_T, _T),
+        ("EVENT-SUBSET", "ACTOR-PAIR"): (_T, _T),
+        ("EVENT-SUBSET", "EXTENSION-EDGE"): (_H, _H),
+        ("EVENT-SUBSET", "COVER-PAIR"): (_A, _B),
+        ("ULAM-PREFIX", "ACTOR-PAIR"): (_T, _T),
+        ("ULAM-PREFIX", "EXTENSION-EDGE"): (_U, _U),
+        ("ULAM-PREFIX", "COVER-PAIR"): (_T, _T)})):
+    for _cell, _fs in _tab.items():
+        for _i, _rep in enumerate(ARITY_REPAIRS):
+            EXPECTED_FATES[(_rd, _cell[0], _cell[1], _rep)] = _fs[_i]
 
 
 def cayley(X, links, Lmod):
@@ -1325,6 +1460,306 @@ def has_distinct_vertex_cycle(nodes, edges):
             if indeg[v] == 0:
                 q.append(v)
     return seen != len(N)
+
+
+def nontrivial_sccs(nodes, edges):
+    """COMPARATOR at EVERY length: Tarjan's strongly-connected components
+    on the self-loop-free digraph, iterative.  A directed cycle on
+    distinct vertices exists iff some component has more than one vertex,
+    so this decides cyclicity at every length at once and replaces the
+    length-6 bound as the operative statement."""
+    adj = defaultdict(list)
+    for u, v in edges:
+        if u != v:
+            adj[sk(u)].append(sk(v))
+    N = sorted({sk(x) for x in nodes}, key=str)
+    idx, low, on, st, cnt, out = {}, {}, {}, [], [0], []
+    for r in N:
+        if r in idx:
+            continue
+        work = [(r, 0)]
+        while work:
+            v, pi = work[-1]
+            if pi == 0:
+                idx[v] = low[v] = cnt[0]
+                cnt[0] += 1
+                st.append(v)
+                on[v] = True
+            nb = sorted(set(adj.get(v, ())), key=str)
+            descend = False
+            for i in range(pi, len(nb)):
+                w = nb[i]
+                if w not in idx:
+                    work[-1] = (v, i + 1)
+                    work.append((w, 0))
+                    descend = True
+                    break
+                if on.get(w):
+                    low[v] = min(low[v], idx[w])
+            if descend:
+                continue
+            if low[v] == idx[v]:
+                comp = []
+                while True:
+                    w = st.pop()
+                    on[w] = False
+                    comp.append(w)
+                    if w == v:
+                        break
+                if len(comp) > 1:
+                    out.append(len(comp))
+            work.pop()
+            if work:
+                u = work[-1][0]
+                low[u] = min(low[u], low[v])
+    return out
+
+
+def bipartite_witness(nodes, edges):
+    """-> (is_bipartite, witness).  THE UNDIRECTED FORM OF THE GRADING
+    THEOREM: a relation graded so that every edge raises the grade by
+    exactly one is 2-colourable by the grade's parity, hence carries no
+    ODD cycle.  Self-loops are dropped: a bijection sends distinct sites
+    to distinct objects, so a loop is unusable as a generator cycle."""
+    adj = defaultdict(set)
+    for (u, v) in edges:
+        if u == v:
+            continue
+        adj[sk(u)].add(sk(v))
+        adj[sk(v)].add(sk(u))
+    col = {}
+    for r in sorted({sk(x) for x in nodes}, key=str):
+        if r in col:
+            continue
+        col[r] = 0
+        q = [r]
+        while q:
+            u = q.pop()
+            for v in sorted(adj.get(u, ()), key=str):
+                if v not in col:
+                    col[v] = 1 - col[u]
+                    q.append(v)
+                elif col[v] == col[u]:
+                    if MUTANT == "MUT-BIPARTITE-LAX":
+                        continue
+                    return False, [str(u), str(v)]
+    return True, None
+
+
+def induced_target_embeddings(nodes, edges, X, links, Lmod, cap=1):
+    """THE DECLARED RESTRICTION, EXECUTED.  A complete backtracking search
+    for injections psi: X -> site objects under which target adjacency and
+    source adjacency agree at EVERY pair (an INDUCED subgraph
+    isomorphism).  Every vertex of an admissible restriction has the
+    target's minimum degree inside the restriction, hence at least that
+    degree in the whole graph, so the search is confined to that set --
+    a sound restriction, not a sample.  Returns (count, |candidates|,
+    search nodes); `cap` stops the enumeration once existence is decided."""
+    adj = defaultdict(set)
+    for (u, v) in edges:
+        if u == v:
+            continue
+        adj[sk(u)].add(sk(v))
+        adj[sk(v)].add(sk(u))
+    tadj = defaultdict(set)
+    for x in X:
+        for lk in links:
+            y = tuple((x[i] + lk[i]) % Lmod for i in range(len(lk)))
+            tadj[x].add(y)
+            tadj[y].add(x)
+    dmin = min(len(tadj[x]) for x in X)
+    A = [u for u in sorted({sk(x) for x in nodes}, key=str)
+         if len(adj[u]) >= dmin]
+    Xs = sorted(X)
+    out, psi, used, visited = [], {}, set(), [0]
+
+    def bt(k):
+        if len(out) >= cap:
+            return
+        if k == len(Xs):
+            out.append(dict(psi))
+            return
+        x = Xs[k]
+        for u in A:
+            visited[0] += 1
+            if u in used:
+                continue
+            ok = True
+            for j in range(k):
+                y = Xs[j]
+                if (y in tadj[x]) != (psi[y] in adj[u]):
+                    ok = False
+                    break
+            if ok:
+                psi[x] = u
+                used.add(u)
+                bt(k + 1)
+                used.discard(u)
+                del psi[x]
+    bt(0)
+    if MUTANT == "MUT-RESTRICTION-BLIND":
+        return 1, len(A), visited[0]
+    return len(out), len(A), visited[0]
+
+
+# --- the QUOTIENT reading's admissibility test ------------------------------
+# A quotient candidate is a SURJECTION phi from the realised grammar objects
+# onto the sites under which every realised link-relation edge carries a
+# DECLARED link displacement.  Acyclicity is no obstruction to one.  The
+# search below is DECLARED AS DATA: an LCG-driven sampler in topological
+# order, falling back to maintained arc consistency with minimum-remaining-
+# values when the topological sampler dead-ends, both at a declared seed and
+# a declared solution cap.  Nothing about it is random at run time.
+QSEED = 20260810
+QCAP = 40
+QLCG = (1103515245, 12345, 1 << 31)
+
+
+def _lcg(seed):
+    a, c, m = QLCG
+    s = seed % m
+    while True:
+        s = (a * s + c) % m
+        yield s
+
+
+def quotient_maps(nodes, rel, X, links, Lmod, cap=QCAP, seed=QSEED):
+    """-> dict with the exact obstruction or the searched solutions."""
+    shift = {x: frozenset(tuple((x[i] + lk[i]) % Lmod for i in range(len(lk)))
+                          for lk in links) for x in X}
+    back = {x: frozenset(tuple((x[i] - lk[i]) % Lmod for i in range(len(lk)))
+                         for lk in links) for x in X}
+    nodes = sorted({sk(u) for u in nodes}, key=str)
+    E = sorted({(sk(u), sk(v)) for (u, v) in rel}, key=str)
+    loops = sorted({u for (u, v) in E if u == v})
+    if MUTANT == "MUT-QUOTIENT-BLIND":
+        loops = []
+        E = [(u, v) for (u, v) in E if u != v]
+    if loops:
+        return {"solvable": False, "engine": "NODE-CONSISTENCY",
+                "obstruction": "SELF-LOOP",
+                "reason": (f"{len(loops)} of the {len(nodes)} site objects "
+                           f"carry a self-loop, which demands the zero "
+                           f"displacement; no declared link displacement is "
+                           f"zero, so those domains empty with no search"),
+                "emptied": len(loops), "solutions": [], "searched": 0}
+    succ, pred = defaultdict(list), defaultdict(list)
+    for (u, v) in E:
+        succ[u].append(v)
+        pred[v].append(u)
+    dom = {u: set(X) for u in nodes}
+
+    def propagate(D, seeds):
+        q = list(seeds)
+        while q:
+            u = q.pop()
+            if not D[u]:
+                return False
+            fwd = set().union(*[shift[x] for x in D[u]])
+            for v in succ[u]:
+                if D[v] - fwd:
+                    D[v] &= fwd
+                    if not D[v]:
+                        return False
+                    q.append(v)
+            bwd = set().union(*[back[x] for x in D[u]])
+            for w in pred[u]:
+                if D[w] - bwd:
+                    D[w] &= bwd
+                    if not D[w]:
+                        return False
+                    q.append(w)
+        return True
+
+    if not propagate(dom, nodes):
+        return {"solvable": False, "engine": "ARC-CONSISTENCY",
+                "obstruction": "DOMAIN-WIPEOUT",
+                "reason": ("arc consistency over the nine sites empties a "
+                           "domain: no assignment carries every realised "
+                           "edge onto a declared displacement"),
+                "emptied": sum(1 for u in nodes if not dom[u]),
+                "solutions": [], "searched": 0}
+    rng = _lcg(seed)
+    order = sorted(nodes, key=lambda u: (len(pred[u]), str(u)))
+    topo = [u for u in nodes if not pred[u]]
+    seen = set(topo)
+    i = 0
+    while i < len(topo):
+        u = topo[i]
+        i += 1
+        for v in sorted(succ[u]):
+            if v not in seen and all(w in seen for w in pred[v]):
+                seen.add(v)
+                topo.append(v)
+    if len(topo) != len(nodes):
+        topo = order
+    sols, engine = [], "TOPOLOGICAL-SAMPLER"
+    for _ in range(cap):
+        phi, good = {}, True
+        for u in topo:
+            feas = set(dom[u])
+            for w in pred[u]:
+                if w in phi:
+                    feas &= shift[phi[w]]
+            if not feas:
+                good = False
+                break
+            fs = sorted(feas)
+            phi[u] = fs[next(rng) % len(fs)]
+        if good:
+            sols.append(phi)
+        else:
+            break
+    if not sols:
+        engine = "MAC-MRV"
+        for _ in range(cap):
+            r0 = next(rng)
+            D = {u: set(dom[u]) for u in nodes}
+            steps, ok = 0, True
+            while ok:
+                steps += 1
+                un = [u for u in nodes if len(D[u]) > 1]
+                if not un:
+                    break
+                u = min(un, key=lambda z: (len(D[z]), str(z)))
+                vals = sorted(D[u])
+                x = vals[(r0 + 7919 * steps) % len(vals)]
+                trial = {a: set(b) for a, b in D.items()}
+                trial[u] = {x}
+                if propagate(trial, [u]):
+                    D = trial
+                else:
+                    D[u].discard(x)
+                    if not D[u] or not propagate(D, [u]):
+                        ok = False
+                if steps > 4000:
+                    ok = False
+            if ok:
+                sols.append({u: next(iter(D[u])) for u in nodes})
+    return {"solvable": bool(sols), "engine": engine, "obstruction": None,
+            "solutions": sols, "searched": cap,
+            "reason": (f"a quotient map exists: {len(sols)} of {cap} declared "
+                       f"searches returned one ({engine})") if sols else
+            ("no quotient map was found within the declared search, and "
+             "none is excluded by it")}
+
+
+def quotient_field(rel, phi, X, links, Lmod, labelperm, orient):
+    """The pushforward count field of a quotient map: the count at (x, l)
+    is the total division-event count on the realised edges from the fibre
+    over x to the fibre over x + l."""
+    push = {}
+    for (u, v), n in rel.items():
+        a, b = phi[sk(u)], phi[sk(v)]
+        d = tuple((b[i] - a[i]) % Lmod for i in range(len(a)))
+        push[(a, d)] = push.get((a, d), 0) + n
+    out = {}
+    for x in X:
+        for i, lk in enumerate(links):
+            lk2 = links[labelperm[i]]
+            step = tuple((-c) % Lmod for c in lk2) if orient else lk2
+            out[(x, lk)] = push.get((x, step), 0)
+    return out
 
 
 def simple_cycle_census(nodes, edges, K=6):
@@ -1367,21 +1802,35 @@ def count_field(site_of, links_rel, divisions, X, links, Lmod, assign,
     return out
 
 
-def graph_isomorphisms(S, rel, X, links, Lmod):
+def graph_isomorphisms(S, rel, X, links, Lmod, directed=False):
     """ALL bijections S -> X carrying the site-object incidence onto the
-    target's UNDIRECTED Cayley incidence, by exhaustive backtracking.
-    No sampling, no cap: the enumeration is complete."""
+    target's Cayley incidence, by exhaustive backtracking.  No sampling,
+    no cap: the enumeration is complete.
+
+    THE DECLARED CRITERION IS THE UNDIRECTED ONE (`directed=False`), on
+    both branches of the detector: a link is an unordered site pair
+    carrying a label and a count, and orientation is a declared free item
+    (I-ORIENT).  `directed=True` is carried only as a COMPARATOR, and its
+    value is reported: co-division incidence is symmetric by
+    construction while the target's directed Cayley relation is
+    antisymmetric, so the directed criterion returns 0 at every
+    co-division arena -- which is why it cannot be the admit criterion
+    without making the FOUND branch unreachable in principle."""
+    if MUTANT == "MUT-ONE-CRITERION":
+        directed = False
     tgt = set()
     for x in X:
         for lk in links:
             y = tuple((x[i] + lk[i]) % Lmod for i in range(len(lk)))
             tgt.add((x, y))
-            tgt.add((y, x))
+            if not directed:
+                tgt.add((y, x))
     src = set()
     for (u, v) in rel:
         if u != v:
             src.add((u, v))
-            src.add((v, u))
+            if not directed:
+                src.add((v, u))
     Ss = sorted(S, key=str)
     Xs = sorted(X)
     out, phi, used = [], {}, set()
@@ -1397,7 +1846,8 @@ def graph_isomorphisms(S, rel, X, links, Lmod):
             ok = True
             for j in range(k):
                 w = Ss[j]
-                if ((u, w) in src) != ((x, phi[w]) in tgt):
+                if ((u, w) in src) != ((x, phi[w]) in tgt) or \
+                   ((w, u) in src) != ((phi[w], x) in tgt):
                     ok = False
                     break
             if ok:
@@ -1481,6 +1931,8 @@ def arena_sites(arena, sgen):
     """-> (objects | None, arity, note).  `objects` is None only when the
     arity is astronomical; the structural verdict is then decided by a
     GRADING THEOREM, never by sampling."""
+    if arena["kind"] == "probe":
+        return list(arena["objects"]), len(arena["objects"]), arena["site_note"]
     if arena["kind"] == "carrier":
         if sgen == "ACTOR":
             return list(AB), 2, "the declared actor pool of ARM-1T"
@@ -1515,12 +1967,187 @@ def arena_sites(arena, sgen):
     return None, 0, "undefined"
 
 
+def build_realised(cache, menu, cong, divisions, actors):
+    """THE OBJECTS THE FAMILY ACTUALLY REALISES, with every grading's
+    FORCING machine-checked.  The embedding reading decides three of the
+    site generators by a grading THEOREM rather than by enumeration; the
+    theorem's hypothesis -- that the grading rises by exactly one along
+    every edge -- is a fact about the realised relation, so it is checked
+    here, edge by edge, and the count of exceptions is carried into the
+    row that uses it.  These same realised objects are what the QUOTIENT
+    reading maps onto the sites."""
+    R = {}
+
+    # (a) the two class-extension graphs
+    for sgen, Q in (("MENU-CLASS", menu), ("CONG-CLASS", cong)):
+        rel = {}
+        for h in cache:
+            if len(h) >= DEPTH:
+                continue
+            for e, q in cache[h]:
+                hp = h + (e,)
+                if hp not in cache:
+                    continue
+                key = (Q[h], Q[hp])
+                rel[key] = rel.get(key, 0) + (1 if is_division(e) else 0)
+        span = defaultdict(set)
+        for h in cache:
+            span[Q[h]].add(len(h))
+        multi = sorted(c for c, s in span.items() if len(s) > 1)
+        R[(sgen, "EXTENSION-EDGE")] = {
+            "objects": sorted(set(Q.values())), "rel": rel,
+            "grading": "history length",
+            "forcing": {"edges": sum(1 for _ in rel),
+                        "multi_grade_classes": len(multi),
+                        "homogeneous": not multi}}
+
+    # (b) the realised division-event subsets
+    dset = {h: frozenset(sk(e) for e in h if is_division(e)) for h in cache}
+    rel, bad = {}, 0
+    for h in cache:
+        if len(h) >= DEPTH:
+            continue
+        for e, q in cache[h]:
+            hp = h + (e,)
+            if hp not in cache:
+                continue
+            a, b = dset[h], dset[hp]
+            if a != b and len(b) != len(a) + 1:
+                bad += 1
+            key = (a, b)
+            rel[key] = rel.get(key, 0) + (1 if is_division(e) else 0)
+    R[("EVENT-SUBSET", "EXTENSION-EDGE")] = {
+        "objects": sorted(set(dset.values()), key=sk), "rel": rel,
+        "grading": "the cardinality grading of the Boolean lattice",
+        "forcing": {"edges": sum(1 for _ in rel), "rise_exceptions": bad}}
+
+    # (c) the realised Ulam prefixes
+    addr = {(): ()}
+    for h in sorted(cache, key=lambda z: (len(z), sk(z))):
+        if len(h) >= DEPTH:
+            continue
+        for i, (e, q) in enumerate(sorted(cache[h], key=lambda z: sk(z[0]))):
+            if h + (e,) in cache:
+                addr[h + (e,)] = mutate("MUT-GRADING-BLIND",
+                                        addr[h] + (i,),
+                                        addr[h] if i == 0 else addr[h] + (i,))
+    rel, bad = {}, 0
+    for h in cache:
+        if len(h) >= DEPTH:
+            continue
+        for e, q in cache[h]:
+            hp = h + (e,)
+            if hp not in cache:
+                continue
+            a, b = addr[h], addr[hp]
+            if len(b) != len(a) + 1:
+                bad += 1
+            rel[(a, b)] = rel.get((a, b), 0) + (1 if is_division(e) else 0)
+    pref = sorted({a[:k] for a in addr.values() for k in range(len(a) + 1)})
+    R[("ULAM-PREFIX", "EXTENSION-EDGE")] = {
+        "objects": pref, "rel": rel, "grading": "the address-length grading",
+        "forcing": {"edges": sum(1 for _ in rel), "rise_exceptions": bad}}
+    R["ulam_addresses"] = addr
+    R["ulam_prefixes"] = pref
+
+    # (d) the realised cover relation on singleton division-event subsets,
+    #     with the poset-height forcing checked on the FULL family covers
+    rel, bad, ncov, sing = {}, 0, 0, set()
+    actor_cov = set()
+    for h in cache:
+        if not h:
+            continue
+        cov = poset_covers(list(h))
+        ht = _poset_heights(list(h))
+        for (i, j) in cov:
+            ncov += 1
+            if ht[j] != ht[i] + 1:
+                bad += 1
+            a, b = initiator(h[i]), initiator(h[j])
+            if a != b:
+                actor_cov.add((a, b))
+            if is_division(h[i]) and is_division(h[j]):
+                u = frozenset([sk(h[i])])
+                v = frozenset([sk(h[j])])
+                sing.add(u)
+                sing.add(v)
+                rel[(u, v)] = 0          # covers bound no interior (S4)
+    R[("EVENT-SUBSET", "COVER-PAIR")] = {
+        "objects": sorted(sing, key=sk), "rel": rel,
+        "grading": "the poset height grading",
+        "forcing": {"covers": ncov, "rise_exceptions": bad,
+                    "covers_joining_two_division_events": len(rel)}}
+    # the operator's charitable reconstruction of the two rows the census
+    # types out: the family-wide cover relation pushed to initiators.  It
+    # is materialised here rather than argued away, and it changes no fate.
+    R["charitable"] = {
+        "ACTOR x COVER-PAIR (family-wide covers pushed to initiators)": {
+            "objects": len(actors), "edges": sorted(f"{u}->{v}"
+                                                    for (u, v) in actor_cov),
+            "cyclic_on_distinct_vertices":
+                has_distinct_vertex_cycle(sorted(actors), actor_cov)},
+        "EVENT-SUBSET x EXTENSION-EDGE (realised)": {
+            "objects": len(R[("EVENT-SUBSET", "EXTENSION-EDGE")]["objects"]),
+            "declared_arity": "2^20"},
+        "ULAM-PREFIX x EXTENSION-EDGE (realised)": {
+            "objects": len(R[("ULAM-PREFIX", "EXTENSION-EDGE")]["objects"]),
+            "declared_arity": "3969"}}
+
+    # (e) the actor pair
+    rel = {}
+    for u in actors:
+        for v in actors:
+            if u != v:
+                rel[(u, v)] = sum(1 for e in divisions
+                                  if u in regs_of(e) and v in regs_of(e))
+    R[("ACTOR", "ACTOR-PAIR")] = {
+        "objects": sorted(actors), "rel": rel, "grading": None,
+        "forcing": {}}
+    return R
+
+
+def _poset_heights(acts):
+    pred = event_poset(acts)
+    ht = [0] * len(acts)
+    for j in range(len(acts)):
+        ht[j] = 1 + max([ht[i] for i in pred[j]], default=-1)
+    return ht
+
+
+def arena_quotient_rel(arena, sgen, lgen):
+    """-> (objects, rel, note) for the QUOTIENT reading, or (None, None,
+    reason).  The quotient reading maps REALISED grammar objects onto the
+    sites, so it is run on the realised relations of `build_realised`;
+    where the family realises nothing, it says so."""
+    et = ENDPOINT_TYPE[lgen]
+    if (sgen, et) not in FORCED_MAP:
+        return None, None, TYPE_REASON.get(
+            (sgen, et), "no pinned choice-free map between the two types")
+    if arena["kind"] != "carrier":
+        return None, None, ("the quotient census is posed at the transport "
+                            "carrier only")
+    R = arena.get("realised") or {}
+    if lgen == "COVER-PAIR" and sgen == "ACTOR":
+        return None, None, ("the carrier is a family, not a record; the event "
+                            "poset's cover relation has no family-level "
+                            "referent")
+    key = (sgen, lgen)
+    if key not in R:
+        return None, None, "no realised relation at this cell"
+    e = R[key]
+    return e["objects"], e["rel"], e.get("grading") or "the realised relation"
+
+
 def arena_linkrel(arena, sgen, lgen):
     """-> (relation | None, acyclic, acyclic_basis, note).  `relation`
     maps ordered site-object pairs to the DIVISION-EVENT COUNT on that
     link object inside the declared window.  `acyclic_basis` is either
     'measured' or the name of the grading that forces it."""
     et = ENDPOINT_TYPE[lgen]
+    if arena["kind"] == "probe":
+        rel = arena["rel"]
+        return rel, not has_distinct_vertex_cycle(arena["objects"], set(rel)), \
+            "measured", arena["link_note"]
     if (sgen, et) not in FORCED_MAP:
         return None, None, None, TYPE_REASON.get(
             (sgen, et), "no pinned choice-free map between the two types")
@@ -1559,8 +2186,13 @@ def arena_linkrel(arena, sgen, lgen):
             cyc = has_distinct_vertex_cycle(arena["actors"], set(rel))
             return rel, (not cyc), "measured", \
                 "the event poset's covers, pushed to initiators"
-        return {}, True, "the poset height grading", \
-            "singleton subsets under the event poset's covers"
+        # MEASURED, not argued: the family's event posets carry 10566
+        # covers and NONE of them joins two division events, so the
+        # relation on singleton division-event subsets is EMPTY.  (The
+        # poset HEIGHT grading is not strict -- 384 covers raise height by
+        # more than one -- so emptiness, not grading, is the basis here.)
+        return {}, True, "the measured emptiness of the realised relation", \
+            "singleton division-event subsets under the event poset's covers"
 
     # EXTENSION-EDGE
     if arena["kind"] == "carrier":
@@ -1575,6 +2207,8 @@ def arena_linkrel(arena, sgen, lgen):
                     if hp not in arena["cache"]:
                         continue
                     key = (Q[h], Q[hp])
+                    if MUTANT == "MUT-SELFLOOP-DROP" and key[0] == key[1]:
+                        continue
                     rel[key] = rel.get(key, 0) + (1 if is_division(e) else 0)
             nodes = sorted(set(Q.values()))
             if MUTANT == "MUT-CYCLE-PLANT":
@@ -1608,10 +2242,157 @@ def arena_linkrel(arena, sgen, lgen):
 # THE DETECTOR proper
 # ---------------------------------------------------------------------------
 
-def detect(arena, sgen, lgen, cgen, repair, target, i7_family, links_i7):
-    """One census row.  Every fate is a MEASURED outcome with its number."""
+def detect_quotient(arena, sgen, lgen, cgen, repair, target, i7_family,
+                    links_i7):
+    """One census row under the QUOTIENT reading of "a map": a SURJECTION
+    from the realised grammar objects onto the sites, every realised link
+    edge carrying a DECLARED displacement.  Acyclicity is no obstruction
+    to one, so the embedding reading's second blade does not apply here
+    and the cell is decided further down: at the map's existence, at
+    count positivity, or -- as the pin expected -- AT THE CHOICE
+    INVENTORY."""
     X, links, Lmod = target["X"], target["links"], target["Lmod"]
     row = {"arena": arena["name"], "carrier": arena.get("carrier"),
+           "reading": "QUOTIENT",
+           "site_gen": sgen, "link_gen": lgen, "count_gen": cgen,
+           "arity_repair": repair, "target": target["name"]}
+    _, declared_arity, snote = arena_sites(arena, sgen)
+    row["site_arity"] = declared_arity
+    row["site_note"] = snote
+    objs, rel, note = arena_quotient_rel(arena, sgen, lgen)
+    row["link_note"] = note
+    if rel is None:
+        row["fate"] = "TYPE-DEAD"
+        row["reason"] = note
+        return row
+    row["realised_objects"] = len(objs)
+    row["realised_edges"] = len(rel)
+    row["needs_interior_position"] = False
+
+    # (2) arity.  A surjection needs AT LEAST the target's site count;
+    #     over-largeness is what a quotient invites, not an obstruction.
+    if len(objs) < len(X):
+        if repair == "NONE":
+            row["fate"] = "ARITY-DEAD"
+            row["reason"] = (f"{len(objs)} realised site objects cannot cover "
+                             f"the target's {len(X)} sites; no repair "
+                             f"declared")
+        else:
+            row["fate"] = "ARITY-DEAD-BELOW"
+            row["reason"] = (f"{len(objs)} realised site objects against the "
+                             f"target's {len(X)}; a declared restriction can "
+                             f"only shrink a site set, so no repair exists "
+                             f"even in principle")
+        return row
+
+    # (3) does a quotient map exist at all?
+    qm = quotient_maps(objs, rel, X, links, Lmod)
+    row["quotient_search"] = {"engine": qm["engine"],
+                              "declared_solutions": qm["searched"],
+                              "solutions_found": len(qm["solutions"]),
+                              "seed": QSEED, "lcg": list(QLCG)}
+    if not qm["solvable"]:
+        row["fate"] = "HOM-DEAD"
+        row["obstruction"] = qm["obstruction"]
+        row["reason"] = qm["reason"]
+        return row
+
+    # (4) the induced count fields, over the declared solution set
+    sols = qm["solutions"]
+    fields = {}
+    nlab = len(links)
+    for i, phi in enumerate(sols):
+        fields[(i, tuple(range(nlab)), False)] = quotient_field(
+            rel, phi, X, links, Lmod, tuple(range(nlab)), False)
+    best_i, best_pos = 0, -1
+    for i in range(len(sols)):
+        f = fields[(i, tuple(range(nlab)), False)]
+        pos = sum(1 for v in f.values() if v > 0)
+        if pos > best_pos:
+            best_i, best_pos = i, pos
+    row["count_cells"] = len(X) * nlab
+    row["count_positive_cells_best"] = best_pos
+    row["count_positive_cells_min"] = min(
+        sum(1 for v in fields[(i, tuple(range(nlab)), False)].values() if v > 0)
+        for i in range(len(sols)))
+    base_field = fields[(best_i, tuple(range(nlab)), False)]
+    row["surjective_solutions"] = sum(
+        1 for phi in sols if len({phi[k] for k in phi}) == len(X))
+
+    # the choice inventory, REACHED: the fibers are the number of DISTINCT
+    # induced count fields the choice produces.  Over a searched solution
+    # set they are LOWER BOUNDS -- more search can only add fields, never
+    # remove one -- so a fiber above 1 is a free item for good.
+    def key(f):
+        return tuple(sorted(((str(k), v) for k, v in f.items())))
+    fib_site = len({key(fields[(i, tuple(range(nlab)), False)])
+                    for i in range(len(sols))})
+    fib_label = len({key(quotient_field(rel, sols[best_i], X, links, Lmod,
+                                        lp, False))
+                     for lp in permutations(range(nlab))})
+    fib_orient = len({key(quotient_field(rel, sols[best_i], X, links, Lmod,
+                                         tuple(range(nlab)), o))
+                      for o in (False, True)})
+    inv = mutate("MUT-FIBER-LAX",
+                 {"I-SITE-ASSIGNMENT": fib_site, "I-DIRECTION-LABEL": fib_label,
+                  "I-ORIENT": fib_orient},
+                 {"I-SITE-ASSIGNMENT": 1, "I-DIRECTION-LABEL": 1,
+                  "I-ORIENT": 1})
+    row["inventory"] = inv
+    row["inventory_is_a_lower_bound_over_the_declared_search"] = True
+    free = sorted(k for k, v in inv.items() if v > 1)
+    row["free_items"] = free
+
+    smug = classify_smuggling(lambda i7rec: base_field, i7_family)
+    row["smuggled"] = smug
+    if smug:
+        row["fate"] = "SMUGGLED"
+        row["reason"] = ("the candidate's counts move when I7's own record s "
+                         "is replaced")
+        return row
+    if not free:
+        if best_pos < len(X) * nlab:
+            row["fate"] = "COUNT-DEAD"
+            row["reason"] = (f"n_l(x) must lie in Z_>0 (HA 3.1); the best of "
+                             f"{len(sols)} declared quotient maps leaves "
+                             f"{len(X) * nlab - best_pos} of {len(X) * nlab} "
+                             f"cells at zero")
+            return row
+        row["fate"] = "FOUND-candidate"
+        row["reason"] = "zero free items at the RSQ standard"
+        return row
+    row["fate"] = "UNMOTIVATED"
+    row["reason"] = (
+        f"{len(free)} genuinely free item(s): "
+        + ", ".join(f"{k} fiber >= {inv[k]}" for k in free)
+        + (f"; and the best of {len(sols)} declared quotient maps leaves "
+           f"{len(X) * nlab - best_pos} of {len(X) * nlab} count cells at "
+           f"zero" if best_pos < len(X) * nlab else
+           f"; the count field IS strictly positive at all {len(X) * nlab} "
+           f"cells, so this cell dies at the CHOICE STANDARD and nowhere "
+           f"earlier"))
+    row["count_field"] = tuple(sorted(base_field.items(),
+                                      key=lambda z: str(z)))
+    return row
+
+
+
+def detect(arena, sgen, lgen, cgen, repair, target, i7_family, links_i7,
+           reading="EMBEDDING"):
+    """One census row.  Every fate is a MEASURED outcome with its number.
+
+    `reading` is the DECLARED admissibility axis.  EMBEDDING asks for a
+    bijection under which the grammar's link relation contains the
+    target's incidence; QUOTIENT asks for a surjection of realised
+    grammar objects onto the sites carrying every realised edge onto a
+    declared displacement.  The type gate is the same question in either
+    direction and fires identically."""
+    if reading == "QUOTIENT":
+        return detect_quotient(arena, sgen, lgen, cgen, repair, target,
+                               i7_family, links_i7)
+    X, links, Lmod = target["X"], target["links"], target["Lmod"]
+    row = {"arena": arena["name"], "carrier": arena.get("carrier"),
+           "reading": reading,
            "site_gen": sgen, "link_gen": lgen, "count_gen": cgen,
            "arity_repair": repair, "target": target["name"]}
 
@@ -1650,39 +2431,70 @@ def detect(arena, sgen, lgen, cgen, repair, target, i7_family, links_i7):
                              f"shrink a site set, so no repair exists")
             return row
 
-    # (3) structure.  The target lattice is periodic: every site returns to
-    #     itself in Lmod steps along every generator, on Lmod DISTINCT
-    #     vertices.  A link relation with no directed cycle on distinct
-    #     vertices therefore admits NO embedding -- at any size, over every
-    #     subset at once.  This is exact and needs no enumeration.
-    if acyc:
+    # (3) structure, at THE DECLARED CRITERION.  A link is an unordered
+    #     site pair -- orientation is a declared free item -- so incidence
+    #     is UNDIRECTED on the kill side and the admit side alike.  The
+    #     target is Z_Lmod-periodic: every one of its cells closes an
+    #     Lmod-cycle on Lmod DISTINCT sites, an ODD cycle at Lmod = 3.  A
+    #     relation graded so that every edge raises the grade by exactly
+    #     one is 2-colourable by the grade's parity and carries no odd
+    #     cycle, so it admits no restriction of any size -- every subset
+    #     at once, no enumeration.  Where the grading fails, the declared
+    #     restriction is not argued away but EXECUTED, by a complete
+    #     induced-subgraph search.
+    realised = set(k for k, n in rel.items() if n > 0) if lgen == "ACTOR-PAIR" \
+        else set(rel)
+    bip, wit = bipartite_witness(objs if objs is not None else
+                                 sorted({u for e in realised for u in e},
+                                        key=str), realised)
+    row["link_bipartite"] = bip
+    row["odd_cycle_witness"] = wit
+    if bip:
         row["fate"] = "STRUCT-DEAD"
-        row["reason"] = (f"the link relation has no directed cycle on "
-                         f"distinct vertices ({basis}); the target is "
-                         f"Z_{Lmod}-periodic and every generator closes a "
-                         f"{Lmod}-cycle on {Lmod} distinct sites, so no "
-                         f"subset of any size embeds")
-        row["subsets_excluded"] = f"2^{arity}" if objs is None else \
-            f"all {arity}-choose-{len(X)} restrictions"
-        return row
-
-    if objs is None:
-        row["fate"] = "SCOPE-BLOCKED"
-        row["reason"] = "cyclic but not materialisable at this arity"
+        row["reason"] = (f"the link relation is graded ({basis}) and so "
+                         f"carries no odd cycle, while the target is "
+                         f"Z_{Lmod}-periodic and closes a {Lmod}-cycle on "
+                         f"{Lmod} distinct sites at every one of its cells; "
+                         f"no restriction of any size embeds")
+        row["subsets_excluded"] = f"all C({arity},{len(X)}) restrictions"
         return row
 
     if arity != len(X):
+        if objs is None:
+            row["fate"] = "SCOPE-BLOCKED"
+            row["reason"] = ("odd-cycle-carrying and not materialisable at "
+                             "this arity")
+            return row
+        n_emb, n_cand, n_vis = induced_target_embeddings(
+            objs, realised, X, links, Lmod)
+        row["restriction_executed"] = {"embeddings": n_emb,
+                                       "candidate_objects": n_cand,
+                                       "search_nodes": n_vis}
+        if n_emb == 0:
+            row["fate"] = "STRUCT-DEAD"
+            row["reason"] = (f"the declared restriction is EXECUTED, not "
+                             f"argued: a complete induced-subgraph search "
+                             f"over the {n_cand} site objects that carry at "
+                             f"least the target's minimum degree finds 0 of "
+                             f"the C({arity},{len(X)}) restrictions inducing "
+                             f"the target ({n_vis} search nodes)")
+            row["subsets_excluded"] = f"all C({arity},{len(X)}) restrictions"
+            return row
         row["fate"] = "ARITY-REPAIR-UNDECIDED"
-        row["reason"] = "cyclic and over-large; handled at the repair row"
+        row["reason"] = (f"{n_emb} restriction(s) induce the target; the "
+                         f"count field on a selected restriction is not "
+                         f"built by this detector")
         return row
 
-    isos = graph_isomorphisms(objs, set(k for k, n in rel.items() if n > 0),
-                              X, links, Lmod)
+    isos = graph_isomorphisms(objs, realised, X, links, Lmod)
     row["isomorphisms"] = len(isos)
+    row["isomorphisms_directed_comparator"] = len(
+        graph_isomorphisms(objs, realised, X, links, Lmod, directed=True))
     if not isos:
         row["fate"] = "STRUCT-DEAD"
-        row["reason"] = (f"cyclic, but 0 of the {arity}! bijections carry the "
-                         f"site incidence onto the target's link structure")
+        row["reason"] = (f"odd-cycle-carrying, but 0 of the {arity}! "
+                         f"bijections carry the site incidence onto the "
+                         f"target's link structure")
         return row
 
     # (4) counts, and the choice inventory with fibers COMPUTED
@@ -1749,10 +2561,196 @@ def detect(arena, sgen, lgen, cgen, repair, target, i7_family, links_i7):
 
 
 # ===========================================================================
-# SEC 10 helpers: the output/receipt writers
+# SEC 10 helpers: the DERIVED head, the paper check, the writers
 # ===========================================================================
 
-def write_artifacts(verdicts):
+def derive_obstruction(P):
+    """The obstruction NAME is derived from the measurements too, so that
+    no string in the head is a literal a gate could fail to compare."""
+    g, qm = P["grading_theorem"], P["quotient_mechanism"]
+    graded = (g["edges_not_raising_length_by_exactly_one"] == 0
+              and g["cong_multi_length_classes"] == 0)
+    wiped = qm["hom_dead_rows"] > 0
+    if graded and wiped:
+        return "READING-STRATIFIED-THE-GRADING-THEOREM-AND-THE-SELF-LOOP-WIPEOUT"
+    if graded:
+        return "THE-GRADING-THEOREM"
+    if wiped:
+        return "THE-SELF-LOOP-WIPEOUT"
+    return "NO-OBSTRUCTION-MEASURED"
+
+
+def rebuild_verdict(P):
+    """THE HEAD, DERIVED.  This function reads ONLY the receipt payload: it
+    shares no local variable, no typed count and no branch with the run
+    that produced it, and the outcome word itself is selected by the
+    measured fate multiset rather than typed into an f-string.  The run
+    calls it twice -- once to emit, once (through a JSON round trip) to
+    compare as a complete string at G-VERDICT-EQUALITY."""
+    f = {k: int(v) for k, v in P["fates"].items()}
+    rows = int(P["candidate_count"])
+    n_found = f.get("FOUND-candidate", 0)
+    n_smug = f.get("SMUGGLED", 0)
+    n_unmot = f.get("UNMOTIVATED", 0)
+    head = ("WELD2-FOUND-AT-THE-DECLARED-FAMILY" if n_found else
+            "WELD2-SMUGGLED-AT-THE-DECLARED-FAMILY" if n_smug else
+            "WELD2-EMPTY-AT-THE-DECLARED-FAMILY")
+    m, qm = P["mechanism"], P["quotient_mechanism"]
+    c = P["controls"]
+    ca = P["choice_arenas"]
+    g = P["grading_theorem"]
+    cnt = P["counts_for_the_head"]
+    unmot_readings = sorted({r["reading"] for r in P["census_rows"]
+                             if r["fate"] == "UNMOTIVATED"}) or ["NONE"]
+    parts = [
+        f"{head}-{derive_obstruction(P)}",
+        f"@BOTH-QUOTIENTS-AS-SITE-GENERATORS:MENU-"
+        f"{P['menu_classes']}+CONG-{P['cong_classes']}"
+        f"(CARRIER-AXIS-INERT:{P['distinct_candidates']}-DISTINCT-CELLS"
+        f"-x2-STAMPS)",
+        f"<ROWS={rows}|READINGS={'+'.join(sorted(P['fates_by_reading']))}"
+        f"|FOUND={n_found}|SMUGGLED={n_smug}"
+        f"(STRUCTURAL-NOT-MEASURED-FOR-CANDIDATES)"
+        f"|UNMOTIVATED={n_unmot}(ALL-AT-{'+'.join(unmot_readings)})"
+        + "".join(f"|{k}={f[k]}" for k in sorted(f)
+                  if k not in ("FOUND-candidate", "SMUGGLED", "UNMOTIVATED")),
+        f" -- MECHANISM@EMBEDDING=THE-GRADING-THEOREM"
+        f"(EVERY-EXTENSION-EDGE-RAISES-LENGTH-BY-1:"
+        f"{g['extension_edges'] - g['edges_not_raising_length_by_exactly_one']}"
+        f"-OF-{g['extension_edges']}"
+        f"|CONG-LENGTH-HOMOGENEOUS-SO-GRADED-AND-BIPARTITE"
+        f"|MENU-NOT:{g['menu_multi_length_classes']}-MULTI-LENGTH-CLASSES"
+        f"=EXACTLY-ITS-{m['menu_class_selfloops']}-SELF-LOOPS"
+        f"|TARGET-CLOSES-A-3-CYCLE-ON-3-DISTINCT-SITES-AT-"
+        f"{m['target_cells_closing_a_3_cycle_on_3_distinct_sites']}-OF-"
+        f"{m['target_cells']}-CELLS)"
+        f"-AND-THE-DECLARED-RESTRICTION-EXECUTED"
+        f"(INDUCED-SUBGRAPH-SEARCH-COMPLETE:"
+        f"{m['menu_induced_target_embeddings']}-OF-C(113,9)|"
+        f"{m['cong_induced_target_embeddings']}-OF-C(185,9))"
+        f"-AND-ARITY(THE-ONLY-GENERATOR-CARRYING-A-TARGET-TYPE-CYCLE-IS-THE-"
+        f"ACTOR-PAIR-WITH-{m['actor_site_objects']}-OBJECTS:"
+        f"{m['AB_channel_occurrences_each_direction']}-CO-DIVISION-"
+        f"OCCURRENCES-OF-{m['AB_channel_distinct_events']}-DISTINCT-EVENTS-"
+        f"THE-SAME-SET-BOTH-WAYS)",
+        f" -- MECHANISM@QUOTIENT=MENU-SELF-LOOP-WIPEOUT-EXACT"
+        f"({qm['menu_selfloops_forcing_the_zero_displacement']}-SELF-LOOPS-"
+        f"DEMAND-DISPLACEMENT-0-AND-NO-DECLARED-LINK-IS-0;"
+        f"{qm['hom_dead_rows']}-ROWS-HOM-DEAD)"
+        f"|CONG-COUNT-POSITIVITY-{qm['cong_best_positive_cells']}-OF-"
+        f"{qm['cong_cells']}-AT-{qm['declared_search']['declared_solutions']}"
+        f"-DECLARED-SOLUTIONS"
+        f"|THE-PRE-REGISTERED-FREE-ITEMS-ARE-REACHED"
+        f"(ULAM-COUNT-FIELD-POSITIVE-AT-{qm['ulam_best_positive_cells']}-OF-"
+        f"{qm['cong_cells']}-AND-UNMOTIVATED-AT-THE-CHOICE-STANDARD)",
+        f" -- CONTROLS=FOUND-AT-CRYSTAL@CRYSTAL-CARRIED-L2"
+        f"({c['FOUND_at_crystal']['fate']},"
+        f"ISOS={c['FOUND_at_crystal'].get('isomorphisms')},FIBERS-ALL-1,"
+        f"CONFIGS={ca['control_at_CRYSTAL-CARRIED-L2']['configurations']})"
+        f"|FALSIFIER-FLIPS({c['FOUND_falsifier']['fate']},"
+        f"I-SITE-ASSIGNMENT-FIBER="
+        f"{c['FOUND_falsifier'].get('inventory', {}).get('I-SITE-ASSIGNMENT')})"
+        f"|EMPTY-AT-WALK({c['EMPTY_at_walk']['fate']})"
+        f"|CRYSTAL-AT-I7({c['crystal_at_I7_target']['fate']})"
+        f"|PIN-NAMED-COVER-GENERATOR-NEVER-FIRES"
+        f"({'+'.join(sorted({v['fate'] for v in c['pin_named_cover_generator'].values()}))}"
+        f"-AT-BOTH-TARGETS)"
+        f"|FOUND-AT-I7-TARGET=NO-COMMITTED-GRAMMAR-RECORD;"
+        f"REACHABLE-AT-A-DECLARED-PROBE"
+        f"({c['FOUND_at_I7_target_declared_probe']['fate']},"
+        f"ISOS={c['FOUND_at_I7_target_declared_probe'].get('isomorphisms')},"
+        f"CONFIGS={ca['census_target_I7-DECLARED-L3']['configurations']})",
+        f" -- INGREDIENT=COUNT-SEMANTICS-INTACT"
+        f"(ADDITIVITY-{cnt['additivity_ok']}-OF-{cnt['additivity_total']}"
+        f"|DIVISION=ARBITRATION-TAG-FORCED)",
+        f" -- CARRIER-RE-DERIVATION=CONG-{P['cong_classes']}-"
+        f"{cnt['six_properties']}-OF-6",
+        f" -- CRYSTALS=DIAGONAL-EMPTY-AT-9-OF-9-IN-"
+        f"{sum(1 for r in P['crystals'] if r['count_field_by_link'][str(tuple(P['i7']['links'][2]))] == [[0, 9]] or r['count_field_by_link'][str(tuple(P['i7']['links'][2]))] == [(0, 9)])}"
+        f"-OF-{len(P['crystals'])}"
+        f"|INDUCED-DET=0-AT-EVERY-SITE-OF-EVERY-CRYSTAL"
+        f"|ADMISSIBLE-I7-RECORDS-INDUCED="
+        f"{sum(1 for r in P['crystals'] if r['induces_an_admissible_I7_record'])}",
+        f" -- SCOPE=(A,B)-D<=4-CARRIER|I7-d2-L3-9-SITES-3-LINKS"
+        f"|DECLARED-WINDOW=FIRST-TO-LAST-ARBITRATION-CUT"
+        f"|READING-AXIS-DECLARED-BY-THIS-UNIT-NOT-BY-THE-PIN>",
+    ]
+    return "".join(parts)
+
+
+CITED_ELSEWHERE = {
+    "89": "ledger reference #89 (the scout's amendment)",
+    "96": "ledger reference #96 (the operator review)",
+    "97": "ledger reference #97 (the effectus review)",
+    "100": "ledger reference #100 (the instrument review)",
+    "102": "ledger reference #102 (the adjudication)",
+    "85": "ledger reference #85 (the pin)",
+    "83": "ledger reference #83 (the scout)",
+    "14": "HA 14, a section number",
+    "29": "paper 29, a corpus reference",
+    "47": "d47 pin, a corpus reference",
+    "3": "section and item numbers",
+    "4": "section and item numbers",
+    "5": "section and item numbers",
+    "6": "section and item numbers",
+    "7": "section and item numbers",
+    "8": "section and item numbers",
+    "9": "section and item numbers",
+    "10": "section and item numbers",
+    "11": "section and item numbers",
+    "12": "section and item numbers",
+    "13": "section and item numbers",
+    "2": "section and item numbers",
+    "1": "section and item numbers",
+    "0": "section and item numbers",
+}
+PAPER = "v14/paper-13-weld2-carrier-census.md"
+
+
+def verify_paper():
+    """#20, INSTRUMENTED.  The paper's own numerals are extracted and each
+    one is required to occur in the receipt payload's JSON serialisation
+    or in the declared allow-list of citations and section numbers.  The
+    claim 'every number printed here renders from the receipt' is checked
+    in the run that writes the receipt, not asserted beside it."""
+    import re
+    path = os.path.join(REPO, PAPER)
+    try:
+        text = open(path, encoding="utf-8").read()
+    except OSError:
+        gate("G-PAPER-RENDERS",
+             f"#20: {PAPER} could not be opened, so the claim that every "
+             f"number in it renders from the receipt is UNCHECKED",
+             False, {"path": PAPER, "error": "unreadable"})
+        return
+    text = mutate("MUT-PAPER-DRIFT", text,
+                  text.replace("3969 histories", "3970 histories"))
+    norm = text.replace(" ", "").replace(" ", "")
+    norm = norm.replace("\\,", "").replace("1 048 576", "1048576")
+    norm = re.sub(r"(?<=\d) (?=\d\d\d\b)", "", norm)
+    body = json.dumps({"payload": PAYLOAD, "gates": GATES, "anchors": ANCHORS,
+                       "verbatim": VANCHORS}, default=str, sort_keys=True)
+    # the receipt's own numerals, as DELIMITED tokens rather than as
+    # substrings: "45" must occur in the receipt as the number 45, not
+    # inside 1456, or the check would pass on drift it should catch
+    have = set(re.findall(r"(?<![\w.])\d+(?![\w.])", body))
+    toks = re.findall(r"(?<![\w.])\d+(?![\w])", norm)
+    unexplained = sorted({t for t in toks
+                          if t not in CITED_ELSEWHERE and t not in have},
+                         key=lambda z: (len(z), z))
+    PAYLOAD["paper_check"] = {"path": PAPER, "tokens": len(toks),
+                              "distinct_tokens": len(set(toks)),
+                              "unexplained": unexplained}
+    gate("G-PAPER-RENDERS",
+         f"#20, INSTRUMENTED rather than asserted: every one of the "
+         f"{len(set(toks))} distinct numerals in {PAPER} "
+         f"({len(toks)} occurrences) is required to occur in this receipt or "
+         f"in the declared allow-list of ledger references and section "
+         f"numbers.  Unexplained: {unexplained}",
+         not unexplained, PAYLOAD["paper_check"])
+
+
+def build_receipt(verdicts):
     src = hashlib.sha256(open(os.path.abspath(__file__), "rb").read()).hexdigest()
     receipt = {
         "unit": "v14 WELD 2 -- paper-13, the carrier census",
@@ -1771,12 +2769,78 @@ def write_artifacts(verdicts):
         "gate_failures": FAILED,
         "anchor_failures": ANCHOR_FAIL,
     }
+    if MUTANT == "MUT-INTEGRITY":
+        receipt["gate_count"] = 99
+        receipt["gate_failures"] = 7
+    return receipt
+
+
+def write_files(receipt):
     with open(OUT_TXT, "w") as f:
         f.write("\n".join(LINES) + "\n")
     with open(OUT_JSON, "w") as f:
         json.dump(receipt, f, indent=1, sort_keys=True, default=str)
         f.write("\n")
     return receipt
+
+
+def snapshot():
+    """The invariants the integrity check compares against, taken BEFORE
+    the receipt is built.  Comparing a written receipt against the live
+    payload would let a post-gate edit move both sides together; this
+    freezes the values first, so it cannot."""
+    return {"verdict": PAYLOAD["verdict"],
+            "candidate_count": PAYLOAD["candidate_count"],
+            "distinct_candidates": PAYLOAD["distinct_candidates"],
+            "fates": json.loads(json.dumps(PAYLOAD["fates"])),
+            "obstruction": PAYLOAD["obstruction"],
+            "gate_count": len(GATES), "gate_failures": FAILED,
+            "anchor_failures": ANCHOR_FAIL,
+            "gate_names": [g["gate"] for g in GATES],
+            "expected_final_gate_count": len(GATES) + (
+                0 if any(g["gate"] == "G-ARTIFACT-INTEGRITY" for g in GATES)
+                else 1),
+            "lines": len(LINES)}
+
+
+def integrity_check(verdict, receipt=None, snap=None):
+    """RE-READ WHAT WAS WRITTEN.  A receipt that contradicts its own output
+    text, or either artifact that contradicts the run that produced it, is
+    caught here rather than shipped: the two artifacts are read back --
+    from DISK on a writing run, and from the serialisation the run would
+    have written otherwise -- and compared field by field against the live
+    run, so the check is exercised on every path including the mutants."""
+    try:
+        if receipt is None:
+            txt = open(OUT_TXT, encoding="utf-8").read()
+            rec = json.loads(open(OUT_JSON, encoding="utf-8").read())
+        else:
+            txt = "\n".join(LINES) + "\n"
+            rec = json.loads(json.dumps(receipt, sort_keys=True, default=str))
+    except Exception as exc:                                # noqa: BLE001
+        return False, {"error": str(exc)}
+    s = snap or snapshot()
+    P = rec.get("payload", {})
+    ev = {
+        "output_text_matches_the_run": txt == "\n".join(LINES) + "\n",
+        "receipt_verdict_matches": P.get("verdict") == verdict == s["verdict"],
+        "gate_count_matches": rec.get("gate_count") == s["gate_count"],
+        "gate_failures_match": rec.get("gate_failures") == s["gate_failures"],
+        "anchor_failures_match": rec.get("anchor_failures")
+        == s["anchor_failures"],
+        "candidate_count_matches": P.get("candidate_count")
+        == s["candidate_count"],
+        "distinct_candidates_match": P.get("distinct_candidates")
+        == s["distinct_candidates"],
+        "obstruction_matches": P.get("obstruction") == s["obstruction"],
+        "fates_match": P.get("fates") == s["fates"],
+        "gate_names_match": [g["gate"] for g in rec.get("gates", [])]
+        == s["gate_names"],
+        "registry_gate_total_matches":
+            P.get("registry", {}).get("gates_including_the_terminal_gates")
+            == s["expected_final_gate_count"],
+    }
+    return all(ev.values()), ev
 
 
 # ===========================================================================
@@ -1927,6 +2991,10 @@ def run_all():
     sl_km, rk_km, ob_km, val_km = reading(cache, menu, closed, G, "k")
     ps_km, rk_group_km = group_rank(val_km)
     ckm_ok, ckm_tot = ck_census(cache, menu, mu, G, Groot)
+    # the MENU q-reading: rendered, not asserted (the one prose cell the
+    # delivered run left with no computation behind it)
+    sl_qm, rk_qm, ob_qm, val_qm = reading(cache, menu, closed, G, "q")
+    ps_qm, rk_group_qm = group_rank(val_qm)
 
     PAYLOAD["cong_properties"] = {
         "descent_nonconstant_horizons": {str(k): v for k, v in d_cong.items()},
@@ -1942,6 +3010,7 @@ def run_all():
     PAYLOAD["menu_properties"] = {
         "descent_nonconstant_horizons": {str(k): v for k, v in d_menu.items()},
         "multivalued_weights_targets": list(mv_menu),
+        "q_primes": ps_qm, "q_rank": rk_group_qm,
         "k_primes": ps_km, "k_rank": rk_group_km, "ck": [ckm_ok, ckm_tot]}
 
     for nm, ok, ev in [
@@ -1954,8 +3023,8 @@ def run_all():
          {"closes_all": c_all, "closes_defective": c_def,
           "selfloops": sum(sl_q.values()), "obstruction": ob_q}),
         ("G-CONG-P4-Q-HOLONOMY", props["P4-q-holonomy"],
-         {"primes": ps_q, "rank": rk_group_q,
-          "values": [str(v) for v in val_q]}),
+         {"primes": ps_q, "rank": rk_group_q, "menu_primes": ps_qm,
+          "menu_rank": rk_group_qm, "values": [str(v) for v in val_q]}),
         ("G-CONG-P5-K-HOLONOMY", props["P5-k-holonomy"],
          {"primes": ps_k, "rank": rk_group_k, "menu_primes": ps_km,
           "menu_rank": rk_group_km}),
@@ -1980,7 +3049,9 @@ def run_all():
             "G-CONG-P4-Q-HOLONOMY":
                 f"the q-reading's group on CONG is generated by primes {ps_q} "
                 f"at rank {rk_group_q} -- D74's <2,3> reproduced, by exact "
-                f"integer row reduction on prime valuations, not read off by eye",
+                f"integer row reduction on prime valuations, not read off by "
+                f"eye; the MENU q-reading is COMPUTED here rather than "
+                f"asserted, primes {ps_qm} rank {rk_group_qm}",
             "G-CONG-P5-K-HOLONOMY":
                 f"the k-reading COLLAPSES onto the q-reading on CONG: primes "
                 f"{ps_k} rank {rk_group_k}; on MENU it does not, primes "
@@ -2008,9 +3079,23 @@ def run_all():
     emit("SEC 5  I7's ARENA AND THE ONLY MOTIVATED INGREDIENT")
     emit("=" * 78)
     d7, L7, X7, links7, i7fam = i7_arena()
-    adm, splittable, unsplit, builds, achecks, abad = additivity_census(
+    adm, splittable, unsplit, builds, achecks, abad, akeys = additivity_census(
         X7, L7, links7, i7fam)
-    add_cmp = len(splittable) * 3 * 2 * len(X7) * len(links7)
+    add_cmp, cmp_split = additivity_comparator(X7, links7, i7fam)
+    prov_route = {r["path"]: r["route"] for r in PAYLOAD["provenance"]}
+    PAYLOAD["i7_receipt_consumption"] = dict(I7_CONSUMED)
+    gate("G-I7-ROUTE",
+         f"#91: the I7 receipt is CONSUMED through the pinned-sha reader, "
+         f"never from mutable worktree state.  The bytes this run parsed "
+         f"carry sha256-12 {I7_CONSUMED.get('sha256_12')} against the pinned "
+         f"{I7_CONSUMED.get('pinned')}, taken via '{I7_CONSUMED.get('route')}' "
+         f"-- the same route the provenance row for that path records "
+         f"('{prov_route.get(I7_RECEIPT)}').  A worktree drift can therefore "
+         f"no longer be rerouted by the provenance check while consumption "
+         f"reads the drifted copy",
+         I7_CONSUMED.get("sha256_12") == I7_CONSUMED.get("pinned")
+         and I7_CONSUMED.get("route") == prov_route.get(I7_RECEIPT),
+         dict(I7_CONSUMED, provenance_route=prov_route.get(I7_RECEIPT)))
     PAYLOAD["i7"] = {"d": d7, "L": L7, "sites": len(X7),
                      "links": [list(v) for v in links7],
                      "records_declared": len(i7fam),
@@ -2040,12 +3125,18 @@ def run_all():
          f"count additivity under the induced dyadic subdivision holds at "
          f"{achecks - abad} of {achecks} constraints over {builds} "
          f"refinements ({len(splittable)} splittable records x 3 declared "
-         f"split rules x 2 declared completions).  An INDEPENDENT arithmetic "
-         f"comparator -- family cardinalities multiplied out, sharing no "
-         f"construction with the builder -- gives {add_cmp}",
-         achecks == 972 and abad == 0 and add_cmp == 972,
+         f"split rules x 2 declared completions).  An INDEPENDENT comparator "
+         f"-- which does NOT re-multiply the builder's loop bounds but "
+         f"RE-DERIVES admissibility and splittability from the record family "
+         f"by its own inline Sylvester test on the q-encoding, finding "
+         f"{cmp_split} splittable records -- gives {add_cmp}; and the "
+         f"constraint CELLS actually compared inside the census, counted as "
+         f"a set of keys rather than as a product, number {akeys}",
+         achecks == 972 and abad == 0 and add_cmp == 972 and akeys == 972
+         and cmp_split == len(splittable),
          {"checks": achecks, "violations": abad, "comparator": add_cmp,
-          "builds": builds})
+          "distinct_constraint_keys": akeys, "comparator_splittable":
+          cmp_split, "builds": builds})
 
     divs_fam = sorted({sk(e) for h in cache for e in h if is_division(e)})
     n_divlab = len(divs_fam)
@@ -2056,6 +3147,12 @@ def run_all():
     dist_pair = len({sk(e) for e in all_r if len(e[2]) == 2})
     PAYLOAD["division_events"] = {
         "distinct_division_labels_in_family": n_divlab,
+        "distinct_events_of_any_kind_realised_in_histories":
+            len({sk(e) for h in cache for e in h}),
+        "distinct_events_of_any_kind_offered_in_menus":
+            len({sk(e) for h in cache for e, q in cache[h]}),
+        "distinct_division_events_offered_in_menus":
+            len({sk(e) for h in cache for e, q in cache[h] if is_division(e)}),
         "distinct_arbitration_events": dist_r,
         "distinct_pair_arbitrations": dist_pair,
         "arbitration_instances": len(all_r),
@@ -2083,7 +3180,13 @@ def run_all():
          f"register of a specific link; the requirement is enforced at the "
          f"count generator, which is the single declared member "
          f"{COUNT_GENS[0]}",
-         len(COUNT_GENS) == 1, {"count_generators": COUNT_GENS})
+         len(COUNT_GENS) == 1, {"count_generators": COUNT_GENS},
+         waiver={"class": "DECLARATION-CARRIED",
+                 "reason": "the condition is a fact about a declared module "
+                           "constant, not a measurement; the count "
+                           "semantics' own content is bound at V01 and "
+                           "measured at G-ADDITIVITY-972 and "
+                           "G-DIVISION-PREDICATE"})
 
     # ------------------------------------------------------------------ SEC 6
     emit("")
@@ -2108,16 +3211,42 @@ def run_all():
                     y = ((i + lk[0]) % 3, (j + lk[1]) % 3)
                     u = f"{acts[0][0]}{i}{j}"
                     v = f"{acts[0][0]}{y[0]}{y[1]}"
-                    fld[((i, j), lk)] = sum(1 for e in divs
-                                            if u in regs_of(e)
-                                            and v in regs_of(e))
+                    fld[((i, j), lk)] = mutate(
+                        "MUT-CRYSTAL-DIAG",
+                        sum(1 for e in divs
+                            if u in regs_of(e) and v in regs_of(e)),
+                        1 if lk == links7[2] else
+                        sum(1 for e in divs
+                            if u in regs_of(e) and v in regs_of(e)))
         per = {str(lk): sorted(Counter(fld[(x, lk)] for x in
                                        [(i, j) for i in range(3)
                                         for j in range(3)]).items())
                for lk in links7}
+        # effectus 5.3, adopted: push the measured counts through HA 3.2's
+        # own readout and ask the exact Sylvester question the unit already
+        # applies to I7's family.  q_12 = (n_diag - n_1 - n_2)/2 = -k when
+        # the axis counts are homogeneous at k and the diagonal is 0, so
+        # det = k^2 - k^2 = 0 at every site: the failure is EXACTLY
+        # degenerate, not merely negative.
+        dets = sorted({str(q_from_counts(links7, {lk: fld[(x, lk)]
+                                                  for lk in links7})[0]
+                           * q_from_counts(links7, {lk: fld[(x, lk)]
+                                                    for lk in links7})[1]
+                           - q_from_counts(links7, {lk: fld[(x, lk)]
+                                                    for lk in links7})[2] ** 2)
+                       for x in [(i, j) for i in range(3) for j in range(3)]})
+        cadm = admissible_record(links7, {x: {lk: fld[(x, lk)] for lk in links7}
+                                          for x in [(i, j) for i in range(3)
+                                                    for j in range(3)]})
+        axis_pos = all(fld[(x, lk)] > 0
+                       for x in [(i, j) for i in range(3) for j in range(3)]
+                       for lk in links7[:2])
         cry_rows.append({"crystal": nm, "events": len(b.H),
                          "refusal": b.refusal, "maxhits": b.maxhits,
-                         "divisions": len(divs), "count_field_by_link": per})
+                         "divisions": len(divs), "count_field_by_link": per,
+                         "induced_determinants": dets,
+                         "induces_an_admissible_I7_record": cadm,
+                         "axis_counts_strictly_positive": axis_pos})
         emit(f"  [DATA] {nm}: {len(b.H)} events, refusal={b.refusal}, "
              f"maxhits={b.maxhits}, division events={len(divs)}")
         emit(f"         count field by link: {per}")
@@ -2133,15 +3262,40 @@ def run_all():
          f"_pick discipline",
          len(forced) == len(cry_rows),
          {"forced": len(forced), "total": len(cry_rows)})
+    n_axis_pos = sum(1 for r in cry_rows if r["axis_counts_strictly_positive"])
+    n_adm = sum(1 for r in cry_rows if r["induces_an_admissible_I7_record"])
+    all_det_zero = all(r["induced_determinants"] == ["0"] for r in cry_rows)
     gate("G-CRYSTAL-DIAGONAL-EMPTY",
          f"MEASURED ACROSS THE COMMITTED CRYSTAL FAMILY: the axis link counts "
-         f"are homogeneous and strictly positive on the arbitration crystals, "
-         f"and the DIAGONAL link count is identically ZERO at 9 of 9 sites in "
+         f"are homogeneous, and strictly positive at {n_axis_pos} of "
+         f"{len(cry_rows)} crystals -- the four ARBITRATION crystals; the "
+         f"delivery grid D60-GRID(3,12) carries one division event and so has "
+         f"axis counts 0 as well, which is why the strict-positivity conjunct "
+         f"is stamped to the arbitration crystals and not to the family.  The "
+         f"DIAGONAL link count is identically ZERO at 9 of 9 sites in "
          f"{len(diag_zero)} of {len(cry_rows)} crystals -- the corpus's only "
          f"lattice-carrying grammar records supply q_11 and q_22 and never "
          f"q_12",
-         len(diag_zero) == len(cry_rows),
-         {"diagonal_zero_crystals": len(diag_zero), "total": len(cry_rows)})
+         len(diag_zero) == len(cry_rows) and n_axis_pos == 4,
+         {"diagonal_zero_crystals": len(diag_zero), "total": len(cry_rows),
+          "axis_strictly_positive": n_axis_pos})
+    gate("G-CRYSTAL-DEGENERATE",
+         f"THE SHARPEST FORM OF THE EMPTY DIAGONAL, arrived at from the "
+         f"metric side rather than the graph side: pushing each crystal's "
+         f"measured counts through HA 3.2's own readout gives q_12 = -k "
+         f"wherever the axis counts are homogeneous at k and the diagonal is "
+         f"0, hence det = q_11 q_22 - q_12^2 = 0 at EVERY site of EVERY "
+         f"crystal ({len(cry_rows)} of {len(cry_rows)} crystals, all "
+         f"determinants exactly 0).  So {n_adm} of {len(cry_rows)} committed "
+         f"crystals induce an admissible I7 record by the exact Sylvester "
+         f"criterion this unit applies to I7's own family -- the failure is "
+         f"EXACTLY degenerate, a third and independent route to the STRUCT-"
+         f"DEAD of the crystal at I7's target",
+         all_det_zero and n_adm == 0,
+         {"all_determinants_zero": all_det_zero, "admissible_crystals": n_adm,
+          "per_crystal": [{"crystal": r["crystal"],
+                           "determinants": r["induced_determinants"]}
+                          for r in cry_rows]})
 
     walkH = generic_walk()
     walk_actors = list(AB)
@@ -2151,6 +3305,7 @@ def run_all():
     wdivs = [e for e in walkH if is_division(e)]
     wpair = sum(1 for e in wdivs if 'A' in regs_of(e) and 'B' in regs_of(e))
     PAYLOAD["walk"] = {"events": len(walkH), "divisions": len(wdivs),
+                       "declared_depth": 30, "declared_seed": 4242,
                        "divisions_on_the_AB_channel": wpair,
                        "kinds": dict(sorted(Counter(e[0] for e in
                                                     walkH).items()))}
@@ -2163,18 +3318,6 @@ def run_all():
     emit("=" * 78)
     emit("SEC 8  CONTROLS FIRST -- both verdicts reachable, each falsified")
     emit("=" * 78)
-    gate("G-TWO-WAY",
-         "HA 14 requirement 3 is carried verbatim (V05) and honoured below: "
-         "the FOUND branch is demonstrated on the crystal arena and the EMPTY "
-         "branch on the generic walk, each with an in-run declared falsifier "
-         "that flips it",
-         True, {"requirement": "HA 14 item 3"},
-         waiver={"class": "DECLARATION-CARRIED",
-                 "reason": "this gate records that the two-way requirement is "
-                           "in force; its content is discharged by "
-                           "G-CTRL-FOUND and G-CTRL-EMPTY, which carry the "
-                           "measurements"})
-
     TGT_I7 = {"name": "I7-DECLARED-LATTICE", "X": X7, "links": links7,
               "Lmod": L7}
     TGT_CRY = {"name": "CRYSTAL-CARRIED-LATTICE", "X": X7,
@@ -2208,10 +3351,59 @@ def run_all():
                             "DECLARED-RESTRICTION", TGT_I7, i7_two, links7)
     ctrl_empty_flip = detect(cry_arena, "ACTOR", "ACTOR-PAIR", COUNT_GENS[0],
                              "NONE", TGT_CRY, i7_two, links7)
+    # the PIN'S OWN NAMED control generator -- "the record's own cover
+    # structure forcing the lattice" -- run at BOTH targets and reported
+    # whichever way it lands.
+    ctrl_cover = {t["name"]: detect(cry_arena, "ACTOR", "COVER-PAIR",
+                                    COUNT_GENS[0], "NONE", t, i7_two, links7)
+                  for t in (TGT_CRY, TGT_I7)}
+    # THE FOUND BRANCH AT THE VERDICT'S OWN TARGET.  The census judges at
+    # I7's three-link lattice and no committed grammar record reaches FOUND
+    # there (the crystal is STRUCT-DEAD at it, for the empty diagonal).  So
+    # the two-way requirement is discharged at that target by a DECLARED
+    # PROBE -- not a grammar record and not a weld, exactly as the
+    # smuggling classifier's grammar-side probe is not a candidate -- whose
+    # co-division incidence is the target's own Cayley incidence with a
+    # homogeneous count field.  What it licenses: the predicate CAN return
+    # FOUND at TGT_I7, over the full 1296 x 6 x 2 choice arena.  What it
+    # does not license: anything at all about the grammar.
+    probe_objects = [f"P{i}{j}" for i in range(3) for j in range(3)]
+    probe_rel = {}
+    for i in range(3):
+        for j in range(3):
+            for lk in links7:
+                y = ((i + lk[0]) % 3, (j + lk[1]) % 3)
+                probe_rel[(f"P{i}{j}", f"P{y[0]}{y[1]}")] = 2
+                probe_rel[(f"P{y[0]}{y[1]}", f"P{i}{j}")] = 2
+    if MUTANT == "MUT-PROBE-INHOMOG":
+        probe_rel[("P00", "P10")] = 3
+        probe_rel[("P10", "P00")] = 3
+    probe_arena = {"name": "DECLARED-PROBE/CAYLEY-AT-I7", "kind": "probe",
+                   "carrier": None, "objects": probe_objects,
+                   "rel": probe_rel,
+                   "site_note": "nine declared probe objects, not grammar "
+                                "objects",
+                   "link_note": "the target's own Cayley incidence, carried "
+                                "with a homogeneous count field"}
+    ctrl_found_i7_probe = detect(probe_arena, "ACTOR", "ACTOR-PAIR",
+                                 COUNT_GENS[0], "NONE", TGT_I7, i7_two, links7)
     PAYLOAD["controls"] = {"FOUND_at_crystal": ctrl_found,
                            "crystal_at_I7_target": ctrl_found_i7,
                            "FOUND_falsifier": ctrl_falsif,
-                           "EMPTY_at_walk": ctrl_empty}
+                           "EMPTY_at_walk": ctrl_empty,
+                           "pin_named_cover_generator": ctrl_cover,
+                           "FOUND_at_I7_target_declared_probe":
+                               ctrl_found_i7_probe}
+    PAYLOAD["choice_arenas"] = {
+        "control_at_CRYSTAL-CARRIED-L2": {
+            "isomorphisms": ctrl_found.get("isomorphisms"),
+            "direction_label_permutations": 2, "orientations": 2,
+            "configurations": (ctrl_found.get("isomorphisms") or 0) * 2 * 2},
+        "census_target_I7-DECLARED-L3": {
+            "isomorphisms": ctrl_found_i7_probe.get("isomorphisms"),
+            "direction_label_permutations": 6, "orientations": 2,
+            "configurations": (ctrl_found_i7_probe.get("isomorphisms") or 0)
+            * 6 * 2}}
     for lbl, r in [("crystal @ crystal-carried lattice", ctrl_found),
                    ("crystal @ I7's declared lattice", ctrl_found_i7),
                    ("inhomogeneous crystal (falsifier)", ctrl_falsif),
@@ -2259,11 +3451,92 @@ def run_all():
          {"no_repair": ctrl_empty, "with_repair": ctrl_empty_rep,
           "divisions_on_AB": wpair})
     gate("G-CTRL-EMPTY-FALSIFIABLE",
-         f"the EMPTY control CAN return its other value: the identical call, "
-         f"on the crystal record, returns {ctrl_empty_flip['fate']} -- so "
-         f"EMPTY at the walk is a property of the walk and not of the "
-         f"plumbing",
-         ctrl_empty_flip["fate"] == "FOUND-candidate", ctrl_empty_flip)
+         f"the EMPTY control CAN return its other value: the same call with "
+         f"the ARENA AND THE TARGET replaced -- the crystal record at the "
+         f"lattice that record carries -- returns "
+         f"{ctrl_empty_flip['fate']}.  TWO coordinates change, not one, and "
+         f"the conclusion is licensed by the walk's own fate rather than by "
+         f"the flip: the walk dies on 2 site objects against 9, which is a "
+         f"property of the walk",
+         ctrl_empty_flip["fate"] == "FOUND-candidate"
+         and ctrl_empty["fate"] == "ARITY-DEAD", ctrl_empty_flip)
+    gate("G-CTRL-PIN-NAMED-GENERATOR",
+         f"REPORTED WHICHEVER WAY IT LANDS.  Pin R5 names the crystal "
+         f"control's mechanism as 'the record's own COVER STRUCTURE forcing "
+         f"the lattice'.  Measured: that generator returns "
+         f"{ctrl_cover[TGT_CRY['name']]['fate']} at the crystal-carried "
+         f"2-link target and {ctrl_cover[TGT_I7['name']]['fate']} at I7's "
+         f"3-link target -- it never fires.  The delivered control "
+         f"SUBSTITUTES co-division incidence on the ordered actor pair for "
+         f"it; the substitution is defensible and is now disclosed rather "
+         f"than silent",
+         all(r["fate"] in ("STRUCT-DEAD", "TYPE-DEAD", "COUNT-DEAD")
+             for r in ctrl_cover.values()),
+         {k: {"fate": v["fate"], "isomorphisms": v.get("isomorphisms")}
+          for k, v in ctrl_cover.items()})
+    gate("G-CTRL-FOUND-AT-THE-CENSUS-TARGET",
+         f"HA 14 requirement 3 (V05) AT THE TARGET THE VERDICT IS ABOUT.  "
+         f"The census judges every candidate at I7's declared 3-link "
+         f"lattice, where no committed grammar record reaches FOUND: the "
+         f"crystal is {ctrl_found_i7['fate']} there.  A DECLARED PROBE -- "
+         f"nine probe objects carrying the target's own Cayley incidence "
+         f"with a homogeneous count field, not a grammar record and not a "
+         f"weld -- returns {ctrl_found_i7_probe['fate']} at TGT_I7 with "
+         f"{ctrl_found_i7_probe.get('isomorphisms')} site assignments, "
+         f"inventory {ctrl_found_i7_probe.get('inventory')}, over the FULL "
+         f"choice arena of "
+         f"{PAYLOAD['choice_arenas']['census_target_I7-DECLARED-L3']['configurations']} "
+         f"configurations (against the crystal control's "
+         f"{PAYLOAD['choice_arenas']['control_at_CRYSTAL-CARRIED-L2']['configurations']} "
+         f"at 2 links).  So the FOUND branch is reachable at the census's "
+         f"own target and at its own choice arena; what is absent is a "
+         f"GRAMMAR RECORD that reaches it",
+         ctrl_found_i7_probe["fate"] == "FOUND-candidate"
+         and ctrl_found_i7_probe.get("isomorphisms") == 1296
+         and ctrl_found_i7["fate"] == "STRUCT-DEAD",
+         ctrl_found_i7_probe)
+    gate("G-ONE-CRITERION",
+         f"THE KILL AND THE ADMIT USE ONE DECLARED CRITERION.  A link is an "
+         f"unordered site pair carrying a label and a count -- orientation "
+         f"is a declared free item -- so incidence is UNDIRECTED on both "
+         f"branches.  The kill is therefore an ODD-CYCLE argument at the "
+         f"same notion of incidence as the admit test, not a directed-"
+         f"acyclicity argument against an undirected admission.  Measured, "
+         f"and this is why the directed reading cannot be the criterion: "
+         f"co-division incidence is symmetric by construction while the "
+         f"target's directed Cayley relation is antisymmetric, so the "
+         f"DIRECTED comparator returns "
+         f"{ctrl_found.get('isomorphisms_directed_comparator')} "
+         f"isomorphisms at the very arena where the undirected criterion "
+         f"returns {ctrl_found.get('isomorphisms')} -- adopting it would "
+         f"make the FOUND branch unreachable in principle at every "
+         f"co-division arena, which HA 14.3 forbids",
+         ctrl_found.get("isomorphisms_directed_comparator") == 0
+         and ctrl_found.get("isomorphisms") == 72,
+         {"undirected": ctrl_found.get("isomorphisms"),
+          "directed_comparator":
+              ctrl_found.get("isomorphisms_directed_comparator")})
+
+    two_way = {"FOUND@2-link-record": ctrl_found["fate"],
+               "FOUND@3-link-census-target(declared probe)":
+                   ctrl_found_i7_probe["fate"],
+               "UNMOTIVATED@falsifier": ctrl_falsif["fate"],
+               "EMPTY@walk": ctrl_empty["fate"],
+               "STRUCT-DEAD@crystal-at-I7": ctrl_found_i7["fate"]}
+    gate("G-TWO-WAY",
+         f"HA 14 requirement 3 is carried verbatim (V05) and DISCHARGED WITH "
+         f"MEASUREMENTS, not with a declaration: every value the detector can "
+         f"return is exhibited in this run -- {json.dumps(two_way, sort_keys=True)} "
+         f"-- and the FOUND value is exhibited BOTH on a grammar record (at "
+         f"the 2-link lattice that record carries) AND at the census's own "
+         f"3-link target (on a declared probe).  A predicate that could not "
+         f"return its other value in the declared arena would not be a "
+         f"measurement; this one returns five",
+         (ctrl_found["fate"] == "FOUND-candidate"
+          and ctrl_found_i7_probe["fate"] == "FOUND-candidate"
+          and ctrl_falsif["fate"] == "UNMOTIVATED"
+          and ctrl_empty["fate"] == "ARITY-DEAD"
+          and ctrl_found_i7["fate"] == "STRUCT-DEAD"), two_way)
 
     # the two classifier reachability probes
     probe_sm = classify_smuggling(
@@ -2291,7 +3564,12 @@ def run_all():
          f"positions inside one.  The probe CITES R6b' C1's type verdict; it "
          f"does not re-run C1",
          pi_probe is True and pi_census is False,
-         {"probe": pi_probe, "census_generator": pi_census})
+         {"probe": pi_probe, "census_generator": pi_census},
+         waiver={"class": "DECLARATION-CARRIED",
+                 "reason": "both values are exercised, but over two typed "
+                           "reading names rather than over measured objects; "
+                           "the underlying type verdict is R6b' C1's and is "
+                           "CITED at V04, not re-run here"})
     gate("G-DEAD-LIST-CITED",
          "the pre-registered dead list (pin R4 / scout (b)) is CITED and not "
          "re-run: R6b' C1-C5 with free items 6/5/1/4/1, BRG-EMPTY-AT-CARRIER, "
@@ -2338,56 +3616,200 @@ def run_all():
         str(k): len({a[:k] for a in addr.values() if len(a) >= k})
         for k in range(DEPTH + 1)}
 
+    realised = build_realised(cache, menu, cong,
+                              [e for h in cache for e in h if is_division(e)],
+                              list(AB))
+    PAYLOAD["realised_objects"] = {
+        f"{a}|{b}": {"objects": len(v["objects"]), "edges": len(v["rel"]),
+                     "grading": v["grading"], "forcing": v["forcing"]}
+        for (a, b), v in sorted(((k, v) for k, v in realised.items()
+                                 if isinstance(k, tuple)),
+                                key=lambda z: str(z[0]))}
+    PAYLOAD["charitable_reconstructions"] = realised["charitable"]
+    # the STRICT gradings -- cardinality and address length -- are the two
+    # the embedding reading leans on; each is checked edge by edge.  The
+    # poset HEIGHT grading is NOT strict (reported, not hidden), which is
+    # why the cover row's basis is the measured emptiness of its relation
+    # rather than a grading argument.
+    forcing_bad = sum(realised[k]["forcing"].get("rise_exceptions", 0)
+                      for k in (("EVENT-SUBSET", "EXTENSION-EDGE"),
+                                ("ULAM-PREFIX", "EXTENSION-EDGE")))
+    height_bad = realised[("EVENT-SUBSET", "COVER-PAIR")][
+        "forcing"]["rise_exceptions"]
+    height_tot = realised[("EVENT-SUBSET", "COVER-PAIR")]["forcing"]["covers"]
+    cover_div = realised[("EVENT-SUBSET", "COVER-PAIR")][
+        "forcing"]["covers_joining_two_division_events"]
+    ext_edges = realised[("CONG-CLASS", "EXTENSION-EDGE")]["forcing"]["edges"]
+    n_ext_total = sum(1 for h in cache if len(h) < DEPTH
+                      for e, q in cache[h] if h + (e,) in cache)
+    n_ext_bad = sum(1 for h in cache if len(h) < DEPTH
+                    for e, q in cache[h]
+                    if h + (e,) in cache and len(h + (e,)) != len(h) + 1)
+    cong_multi = realised[("CONG-CLASS", "EXTENSION-EDGE")][
+        "forcing"]["multi_grade_classes"]
+    menu_multi = realised[("MENU-CLASS", "EXTENSION-EDGE")][
+        "forcing"]["multi_grade_classes"]
+    PAYLOAD["grading_theorem"] = {
+        "extension_edges": n_ext_total,
+        "edges_not_raising_length_by_exactly_one": n_ext_bad,
+        "cong_multi_length_classes": cong_multi,
+        "menu_multi_length_classes": menu_multi,
+        "strict_grading_forcing_exceptions": forcing_bad,
+        "poset_covers": height_tot,
+        "poset_covers_raising_height_by_more_than_one": height_bad,
+        "poset_covers_joining_two_division_events": cover_div}
+    gate("G-GRADING-FORCING",
+         f"THE GRADING THEOREM'S HYPOTHESIS IS MACHINE-CHECKED, not assumed. "
+         f"Every extension edge raises history length by exactly 1 "
+         f"({n_ext_total - n_ext_bad} of {n_ext_total}); the cardinality "
+         f"grading of the realised division-event subsets and the "
+         f"address-length grading of the realised Ulam prefixes each rise by "
+         f"exactly one along every realised edge ({forcing_bad} exceptions "
+         f"over both).  REPORTED AGAINST INTEREST: the poset HEIGHT grading "
+         f"is NOT strict -- {height_bad} of the family's {height_tot} covers "
+         f"raise height by more than one -- so the cover row's structural "
+         f"basis is not a grading argument but a MEASUREMENT: {cover_div} of "
+         f"those {height_tot} covers join two division events, so the "
+         f"relation on singleton division-event subsets is empty",
+         n_ext_bad == 0 and forcing_bad == 0 and cover_div == 0,
+         {"extension_edges": n_ext_total, "length_rise_exceptions": n_ext_bad,
+          "strict_grading_exceptions": forcing_bad,
+          "poset_covers": height_tot, "height_rise_exceptions": height_bad,
+          "covers_joining_two_division_events": cover_div})
+
     rows = []
-    for carrier in ("MENU", "CONG"):
-        car = {"name": f"AB4-TRANSPORT-CARRIER@{carrier}", "kind": "carrier",
-               "carrier": carrier, "cache": cache, "menu": menu, "cong": cong,
-               "actors": list(AB), "n_division_labels": n_divlab,
-               "ulam_total": ulam_total,
-               "division_events": [e for h in cache for e in h
-                                   if is_division(e)]}
-        for sgen in SITE_GENS:
-            for lgen in LINK_GENS:
-                for cgen in COUNT_GENS:
-                    for rep in ARITY_REPAIRS:
-                        r = detect(car, sgen, lgen, cgen, rep, TGT_I7,
-                                   i7_two, links7)
-                        r["carrier"] = carrier
-                        rows.append(r)
+    for reading_name in READINGS:
+        for carrier in ("MENU", "CONG"):
+            car = {"name": f"AB4-TRANSPORT-CARRIER@{carrier}",
+                   "kind": "carrier",
+                   "carrier": carrier, "cache": cache, "menu": menu,
+                   "cong": cong, "actors": list(AB),
+                   "n_division_labels": n_divlab, "ulam_total": ulam_total,
+                   "realised": realised,
+                   "division_events": [e for h in cache for e in h
+                                       if is_division(e)]}
+            for sgen in SITE_GENS:
+                for lgen in LINK_GENS:
+                    for cgen in COUNT_GENS:
+                        for rep in ARITY_REPAIRS:
+                            r = detect(car, sgen, lgen, cgen, rep, TGT_I7,
+                                       i7_two, links7, reading=reading_name)
+                            r["carrier"] = carrier
+                            if MUTANT == "MUT-FATE-CELL" and \
+                                    (reading_name, carrier, sgen, lgen, rep) == \
+                                    ("EMBEDDING", "MENU", "ACTOR",
+                                     "EXTENSION-EDGE", "NONE"):
+                                r["fate"] = "ARITY-DEAD"
+                            if MUTANT == "MUT-CARRIER-SPLIT" and \
+                                    carrier == "CONG" and sgen == "ACTOR" and \
+                                    lgen == "COVER-PAIR" and rep == "NONE":
+                                r["fate"] = "STRUCT-DEAD"
+                            rows.append(r)
     PAYLOAD["census_rows"] = rows
     PAYLOAD["candidate_count"] = len(rows)
+    n_distinct = len({(r["reading"], r["site_gen"], r["link_gen"],
+                       r["arity_repair"]) for r in rows})
+    PAYLOAD["distinct_candidates"] = n_distinct
     fates = Counter(r["fate"] for r in rows)
     fates_by_carrier = {c: dict(sorted(Counter(
         r["fate"] for r in rows if r["carrier"] == c).items()))
         for c in ("MENU", "CONG")}
+    fates_by_reading = {rd: dict(sorted(Counter(
+        r["fate"] for r in rows if r["reading"] == rd).items()))
+        for rd in READINGS}
     PAYLOAD["fates"] = dict(sorted(fates.items()))
     PAYLOAD["fates_by_carrier"] = fates_by_carrier
-    emit(f"  [DATA] candidates enumerated (COMPUTED): {len(rows)} = "
-         f"{len(SITE_GENS)} site x {len(LINK_GENS)} link x {len(COUNT_GENS)} "
-         f"count x {len(ARITY_REPAIRS)} repair x 2 carriers")
+    PAYLOAD["fates_by_reading"] = fates_by_reading
+    emit(f"  [DATA] candidate ROWS enumerated (COMPUTED): {len(rows)} = "
+         f"{len(READINGS)} readings x {len(SITE_GENS)} site x "
+         f"{len(LINK_GENS)} link x {len(COUNT_GENS)} count x "
+         f"{len(ARITY_REPAIRS)} repair x 2 carrier stamps; DISTINCT "
+         f"computations = {n_distinct} (the carrier stamp enters no cell)")
     emit(f"  [DATA] fates: {dict(sorted(fates.items()))}")
+    for rd in READINGS:
+        emit(f"  [DATA] fates @{rd}: {fates_by_reading[rd]}")
     for c in ("MENU", "CONG"):
         emit(f"  [DATA] fates @{c}: {fates_by_carrier[c]}")
     emit("")
     emit("  the full candidate table:")
-    emit(f"  {'carrier':8} {'site':13} {'link':15} {'rep':22} {'arity':>7}  fate")
+    emit(f"  {'reading':9} {'carrier':8} {'site':13} {'link':15} {'rep':22} "
+         f"{'arity':>7}  fate")
     for r in rows:
-        emit(f"  {r['carrier']:8} {r['site_gen']:13} {r['link_gen']:15} "
-             f"{r['arity_repair']:22} {r['site_arity']:>7}  {r['fate']}")
+        emit(f"  {r['reading']:9} {r['carrier']:8} {r['site_gen']:13} "
+             f"{r['link_gen']:15} {r['arity_repair']:22} "
+             f"{r['site_arity']:>7}  {r['fate']}")
 
     n_found = fates.get("FOUND-candidate", 0)
     n_smug = fates.get("SMUGGLED", 0)
     n_unmot = fates.get("UNMOTIVATED", 0)
+
+    # #87: every cell bound to its OWN computed fate, and the two carrier
+    # tables compared cell by cell.
+    mism = [{"cell": [r["reading"], r["carrier"], r["site_gen"],
+                      r["link_gen"], r["arity_repair"]],
+             "computed": r["fate"],
+             "declared": EXPECTED_FATES.get((r["reading"], r["site_gen"],
+                                             r["link_gen"],
+                                             r["arity_repair"]))}
+            for r in rows
+            if r["fate"] != EXPECTED_FATES.get((r["reading"], r["site_gen"],
+                                                r["link_gen"],
+                                                r["arity_repair"]))]
+    gate("G-FATE-PER-CELL",
+         f"#87: every one of the {len(rows)} rows is bound to its OWN fate, "
+         f"not to an aggregate.  The {len(EXPECTED_FATES)} distinct "
+         f"(reading, site, link, repair) cells are DECLARED AS DATA above "
+         f"the census and each row's computed fate is compared against its "
+         f"own declared cell: {len(rows) - len(mism)} of {len(rows)} agree, "
+         f"{len(mism)} mismatch",
+         not mism, {"mismatches": mism, "cells_declared": len(EXPECTED_FATES)})
+    pairs = defaultdict(dict)
+    for r in rows:
+        pairs[(r["reading"], r["site_gen"], r["link_gen"],
+               r["arity_repair"])][r["carrier"]] = r
+    disagree = [{"cell": list(k), "menu": v["MENU"]["fate"],
+                 "cong": v["CONG"]["fate"]}
+                for k, v in sorted(pairs.items(), key=str)
+                if v["MENU"]["fate"] != v["CONG"]["fate"]]
+    ident = sum(1 for k, v in pairs.items()
+                if {kk: vv for kk, vv in v["MENU"].items()
+                    if kk not in ("carrier", "arena")}
+                == {kk: vv for kk, vv in v["CONG"].items()
+                    if kk not in ("carrier", "arena")})
+    gate("G-CARRIER-AGREEMENT",
+         f"#87, and the correction the panel ordered: the carrier stamp "
+         f"enters NO cell.  `arena_linkrel` selects the class map by the "
+         f"SITE generator (MENU-CLASS on the menu quotient, CONG-CLASS on "
+         f"the congruence), never by `arena['carrier']`, so the two stamped "
+         f"blocks are the SAME computation.  Measured, field by field with "
+         f"only the two label fields removed: {ident} of {len(pairs)} cells "
+         f"are byte-identical across the two labels and {len(disagree)} "
+         f"disagree.  The identical fate distributions are therefore a fact "
+         f"about the enumeration, NOT an agreement between carriers -- the "
+         f"carrier coordinate was never varied, and this gate is what makes "
+         f"a divergence impossible to stamp @BOTH silently",
+         not disagree and ident == len(pairs),
+         {"cells": len(pairs), "identical": ident, "disagreements": disagree})
     gate("G-CENSUS-COMPLETE",
          f"the candidate family is enumerated exhaustively over the pin's "
-         f"declared generator vocabulary and its size is COMPUTED, not typed: "
-         f"{len(rows)} candidates ({len(SITE_GENS)} site generators x "
-         f"{len(LINK_GENS)} link generators x {len(COUNT_GENS)} count "
-         f"generator x {len(ARITY_REPAIRS)} arity treatments x 2 carriers); "
-         f"every cell carries a measured fate, none is skipped",
-         len(rows) == len(SITE_GENS) * len(LINK_GENS) * len(COUNT_GENS)
-         * len(ARITY_REPAIRS) * 2 and all("fate" in r for r in rows),
-         {"candidates": len(rows), "fates": dict(sorted(fates.items()))})
+         f"THREE generator axes -- site ({len(SITE_GENS)}), link "
+         f"({len(LINK_GENS)}), count ({len(COUNT_GENS)}) -- plus the ARITY "
+         f"TREATMENT the census offers each cell ({len(ARITY_REPAIRS)}) and "
+         f"the ADMISSIBILITY READING declared as data by this repair "
+         f"({len(READINGS)}), each stamped at 2 carriers: {len(rows)} rows, "
+         f"{n_distinct} distinct computations, size COMPUTED and not typed.  "
+         f"Every cell carries a measured fate and none is skipped -- and "
+         f"under BOTH readings, so completeness is no longer contingent on "
+         f"the embedding reading's scissors closing: "
+         f"{fates.get('SCOPE-BLOCKED', 0)} rows are scope-blocked and "
+         f"{fates.get('ARITY-REPAIR-UNDECIDED', 0)} are repair-undecided",
+         len(rows) == len(READINGS) * len(SITE_GENS) * len(LINK_GENS)
+         * len(COUNT_GENS) * len(ARITY_REPAIRS) * 2
+         and all("fate" in r and r["fate"] for r in rows)
+         and fates.get("SCOPE-BLOCKED", 0) == 0
+         and fates.get("ARITY-REPAIR-UNDECIDED", 0) == 0,
+         {"rows": len(rows), "distinct": n_distinct,
+          "fates": dict(sorted(fates.items()))})
 
     # THE MECHANISM
     actor_rel, actor_acyc, _, _ = arena_linkrel(
@@ -2406,32 +3828,151 @@ def run_all():
                                        set(cong_rel))
     sl_menu = sum(1 for (u, v) in menu_rel if u == v)
     sl_cong = sum(1 for (u, v) in cong_rel if u == v)
-    ab_count = actor_rel.get(("A", "B"), 0)
+    ab_count = mutate("MUT-AB-COUNT", actor_rel.get(("A", "B"), 0), 999)
+    ab_count_ba = actor_rel.get(("B", "A"), 0)
+    ab_distinct = len({sk(e) for h in cache for e in h if is_division(e)
+                       and 'A' in regs_of(e) and 'B' in regs_of(e)})
+    scc_menu = nontrivial_sccs(sorted(set(menu.values())), set(menu_rel))
+    scc_cong = nontrivial_sccs(sorted(set(cong.values())), set(cong_rel))
+    bip_menu, wit_menu = bipartite_witness(sorted(set(menu.values())),
+                                           set(menu_rel))
+    bip_cong, wit_cong = bipartite_witness(sorted(set(cong.values())),
+                                           set(cong_rel))
+    emb_menu = induced_target_embeddings(sorted(set(menu.values())),
+                                         set(menu_rel), X7, links7, L7)
+    emb_cong = induced_target_embeddings(sorted(set(cong.values())),
+                                         set(cong_rel), X7, links7, L7)
+    tri = sum(1 for x in X7 for lk in links7
+              if len({x, tuple((x[i] + lk[i]) % L7 for i in range(2)),
+                      tuple((x[i] + 2 * lk[i]) % L7 for i in range(2))}) == 3
+              and tuple((x[i] + 3 * lk[i]) % L7 for i in range(2)) == x)
+    sl_classes_menu = {u for (u, v) in menu_rel if u == v}
+    menu_multi_set = set()
+    span = defaultdict(set)
+    for h in cache:
+        span[menu[h]].add(len(h))
+    menu_multi_set = {c for c, s in span.items() if len(s) > 1}
     PAYLOAD["mechanism"] = {
         "actor_pair_relation": sorted((f"{u}->{v}", n)
                                       for (u, v), n in actor_rel.items()),
         "actor_site_objects": 2,
+        "AB_channel_occurrences_each_direction": ab_count,
+        "AB_channel_is_the_same_set_both_ways": ab_count == ab_count_ba,
+        "AB_channel_distinct_events": ab_distinct,
         "menu_class_selfloops": sl_menu, "cong_class_selfloops": sl_cong,
         "menu_class_acyclic": menu_acyc, "cong_class_acyclic": cong_acyc,
+        "menu_nontrivial_sccs": len(scc_menu),
+        "cong_nontrivial_sccs": len(scc_cong),
+        "menu_bipartite": bip_menu, "cong_bipartite": bip_cong,
+        "menu_odd_cycle_witness": wit_menu,
+        "menu_selfloop_classes_are_exactly_its_multi_length_classes":
+            sl_classes_menu == menu_multi_set,
+        "menu_induced_target_embeddings": emb_menu[0],
+        "cong_induced_target_embeddings": emb_cong[0],
+        "menu_search_nodes": emb_menu[2], "cong_search_nodes": emb_cong[2],
+        "target_cells_closing_a_3_cycle_on_3_distinct_sites": tri,
+        "target_cells": len(X7) * len(links7),
         "menu_simple_cycles_len2to6": cyc_cmp_menu,
         "cong_simple_cycles_len2to6": cyc_cmp_cong,
         "divisions_on_the_AB_channel_in_family": ab_count}
     gate("G-SCISSORS",
-         f"THE MECHANISM, measured on both sides at once.  The one link "
-         f"generator that carries directed cycles at the transport carrier is "
-         f"the actor pair / delivery channel, and it has exactly 2 site "
-         f"objects; the link generators with enough objects are ACYCLIC -- "
-         f"the MENU class-extension graph carries {sl_menu} self-loops and, "
-         f"after their removal, no directed cycle on distinct vertices "
-         f"(comparator: {cyc_cmp_menu} simple cycles at lengths 2..6), and "
-         f"the CONG class-extension graph carries {sl_cong} self-loops and is "
-         f"acyclic outright (comparator: {cyc_cmp_cong}).  I7's lattice needs "
-         f"9 sites AND a 3-cycle on 3 distinct sites through every generator.  "
-         f"A self-loop is not a generator cycle: the declared link "
-         f"displacements are non-zero",
-         menu_acyc and cong_acyc and all(v == 0 for v in cyc_cmp_menu.values())
-         and all(v == 0 for v in cyc_cmp_cong.values()),
+         f"THE MECHANISM AT THE EMBEDDING READING, recomposed.  BLADE 1 "
+         f"(arity): the one link generator carrying a target-type cycle at "
+         f"the transport carrier is the actor pair / delivery channel, and it "
+         f"has exactly 2 site objects; the relation is symmetric, so its "
+         f"{ab_count} co-division occurrences are ONE set of events entered "
+         f"in both directions ({ab_distinct} distinct events), not two.  "
+         f"BLADE 2 (THE GRADING THEOREM): every extension edge raises history "
+         f"length by exactly 1 ({n_ext_total - n_ext_bad} of {n_ext_total}, "
+         f"{n_ext_bad} exceptions), so any LENGTH-HOMOGENEOUS quotient's "
+         f"class graph is graded -- hence acyclic AND bipartite -- with no "
+         f"computation.  CONG-185 is length-homogeneous ({cong_multi} classes "
+         f"span more than one length), so its blade is a THEOREM: bipartite "
+         f"{bip_cong}.  MENU-113 is not ({menu_multi} multi-length classes, "
+         f"and those are EXACTLY its {sl_menu} self-loop classes: "
+         f"{sl_classes_menu == menu_multi_set}), so its blade is MEASURED: "
+         f"bipartite {bip_menu}, and the declared restriction is EXECUTED "
+         f"rather than argued -- a complete induced-subgraph search finds "
+         f"{emb_menu[0]} of the C(113,9) restrictions inducing the target "
+         f"({emb_menu[2]} search nodes), and {emb_cong[0]} of the C(185,9).  "
+         f"The target closes a 3-cycle on 3 distinct sites at {tri} of "
+         f"{len(X7) * len(links7)} cells -- an ODD cycle, which no bipartite "
+         f"relation carries.  Directed comparators at every length: "
+         f"{len(scc_menu)} and {len(scc_cong)} non-trivial strongly connected "
+         f"components (Tarjan), replacing the length-6 bound as the operative "
+         f"statement; the enumerated comparator returns {cyc_cmp_menu} and "
+         f"{cyc_cmp_cong} simple cycles at lengths 2..6.  A self-loop is not "
+         f"a generator cycle: a bijection sends distinct sites to distinct "
+         f"objects",
+         (menu_acyc and cong_acyc and len(scc_menu) == 0 and len(scc_cong) == 0
+          and all(v == 0 for v in cyc_cmp_menu.values())
+          and all(v == 0 for v in cyc_cmp_cong.values())
+          and n_ext_bad == 0 and cong_multi == 0 and bip_cong
+          and not bip_menu and wit_menu is not None
+          and sl_classes_menu == menu_multi_set
+          and emb_menu[0] == 0 and emb_cong[0] == 0
+          and tri == len(X7) * len(links7)
+          and sl_menu == 45 and sl_cong == 0 and ab_count == 336),
          PAYLOAD["mechanism"])
+    qrows = [r for r in rows if r["reading"] == "QUOTIENT"]
+    q_wipe = [r for r in qrows if r["fate"] == "HOM-DEAD"]
+    q_cong = [r for r in qrows if r["site_gen"] == "CONG-CLASS"
+              and r["link_gen"] == "EXTENSION-EDGE"][0]
+    q_ulam = [r for r in qrows if r["site_gen"] == "ULAM-PREFIX"
+              and r["link_gen"] == "EXTENSION-EDGE"][0]
+    PAYLOAD["quotient_mechanism"] = {
+        "hom_dead_rows": len(q_wipe),
+        "menu_selfloops_forcing_the_zero_displacement": sl_menu,
+        "cong_fate": q_cong["fate"], "ulam_fate": q_ulam["fate"],
+        "cong_best_positive_cells":
+            q_cong.get("count_positive_cells_best", -1),
+        "cong_cells": q_cong.get("count_cells", -1),
+        "cong_inventory": q_cong.get("inventory", {}),
+        "ulam_best_positive_cells":
+            q_ulam.get("count_positive_cells_best", -1),
+        "ulam_inventory": q_ulam.get("inventory", {}),
+        "declared_search": q_cong.get(
+            "quotient_search", {"engine": "NOT-REACHED",
+                                "declared_solutions": QCAP,
+                                "solutions_found": 0, "seed": QSEED,
+                                "lcg": list(QLCG)})}
+    qm = PAYLOAD["quotient_mechanism"]
+    gate("G-QUOTIENT-READING",
+         f"THE MECHANISM AT THE QUOTIENT READING, which acyclicity does not "
+         f"decide.  MENU DIES EXACTLY: its {sl_menu} self-loop classes demand "
+         f"the zero displacement and no declared link displacement is zero, "
+         f"so node consistency empties those domains with no search -- and "
+         f"the realised division-event-subset graph dies the same way.  "
+         f"{len(q_wipe)} of the {len(qrows)} quotient rows die there.  CONG "
+         f"SURVIVES the existence question -- a quotient map exists, found by "
+         f"the declared search -- and dies further down: the best of "
+         f"{qm['declared_search']['solutions_found']} declared solutions "
+         f"leaves {qm['cong_cells'] - qm['cong_best_positive_cells']} "
+         f"of {qm['cong_cells']} count cells at zero "
+         f"({qm['cong_best_positive_cells']} strictly positive), and its "
+         f"choice inventory {qm['cong_inventory']} carries free items.  AND "
+         f"THE PRE-REGISTERED FREE ITEMS ARE REACHED: the Ulam-prefix quotient "
+         f"attains a STRICTLY POSITIVE count field at "
+         f"{qm['ulam_best_positive_cells']} of {qm['cong_cells']} "
+         f"cells and dies at the CHOICE STANDARD with inventory "
+         f"{qm['ulam_inventory']} -- the fibers are lower bounds over the "
+         f"declared search, so a free item stays free.  Under this reading "
+         f"the census is EMPTY of FOUND but not of UNMOTIVATED",
+         (len(q_wipe) == 8 and q_cong["fate"] == "UNMOTIVATED"
+          and q_ulam["fate"] == "UNMOTIVATED"
+          and qm["cong_best_positive_cells"] < qm["cong_cells"]
+          and qm["ulam_best_positive_cells"] == qm["cong_cells"]),
+         PAYLOAD["quotient_mechanism"])
+    gate("G-D5-CITED",
+         f"the deeper carrier's class counts are CITED, not run: D74's "
+         f"committed row for (A,B) at depth <= 5 carries 265 MENU and 462 "
+         f"CONG classes, and this run binds that row's bytes verbatim (V12) "
+         f"rather than printing the two numbers unsourced.  This unit's "
+         f"scope is depth <= 4 and its scissors argument is a statement "
+         f"about THIS carrier",
+         any(v["id"] == "V12" and v["passed"] for v in VANCHORS),
+         {"anchor": "V12", "menu_d5": 265, "cong_d5": 462,
+          "source": "v10/note-d74-transport-holonomy-result.md"})
 
     # ----------------------------------------------------------------- SEC 10
     emit("")
@@ -2440,73 +3981,178 @@ def run_all():
     emit("=" * 78)
     free_fibers = {k: v["inventory"] for k, v in
                    [("CONTROL-CRYSTAL", ctrl_found),
-                    ("CONTROL-CRYSTAL-FALSIFIER", ctrl_falsif)]
+                    ("CONTROL-CRYSTAL-FALSIFIER", ctrl_falsif),
+                    ("CONTROL-PROBE-AT-I7", ctrl_found_i7_probe),
+                    ("CENSUS-QUOTIENT-CONG", q_cong),
+                    ("CENSUS-QUOTIENT-ULAM", q_ulam)]
                    if "inventory" in v}
     PAYLOAD["free_item_fibers"] = free_fibers
-    obstruction = "THE-ARITY-CYCLICITY-SCISSORS"
-    verdict = (
-        f"WELD2-EMPTY-AT-THE-DECLARED-FAMILY-{obstruction}"
-        f"@BOTH:MENU-113+CONG-185"
-        f"<CANDIDATES={len(rows)}|FOUND={n_found}|SMUGGLED={n_smug}"
-        f"|UNMOTIVATED={n_unmot}"
-        f"|TYPE-DEAD={fates.get('TYPE-DEAD', 0)}"
-        f"|ARITY-DEAD={fates.get('ARITY-DEAD', 0)}"
-        f"|ARITY-DEAD-BELOW={fates.get('ARITY-DEAD-BELOW', 0)}"
-        f"|STRUCT-DEAD={fates.get('STRUCT-DEAD', 0)}"
-        f" -- MECHANISM=THE-ONLY-CYCLIC-LINK-GENERATOR-HAS-2-OBJECTS"
-        f"({ab_count}-DIVISION-EVENTS-ON-THE-(A,B)-CHANNEL)"
-        f"-AND-EVERY-LINK-GENERATOR-WITH-9-OR-MORE-IS-ACYCLIC"
-        f"(MENU-SELFLOOPS={sl_menu}|CONG-SELFLOOPS={sl_cong}"
-        f"|SIMPLE-CYCLES-LEN-2..6=0-AT-BOTH)"
-        f" -- CONTROLS=FOUND-AT-CRYSTAL({ctrl_found['fate']},"
-        f"ISOS={ctrl_found.get('isomorphisms')},FIBERS-ALL-1)"
-        f"|FALSIFIER-FLIPS({ctrl_falsif['fate']},"
-        f"I-SITE-ASSIGNMENT-FIBER={ctrl_falsif.get('inventory', {}).get('I-SITE-ASSIGNMENT')})"
-        f"|EMPTY-AT-WALK({ctrl_empty['fate']})"
-        f"|CRYSTAL-AT-I7({ctrl_found_i7['fate']})"
-        f" -- INGREDIENT=COUNT-SEMANTICS-INTACT(ADDITIVITY-{achecks - abad}"
-        f"-OF-{achecks}|DIVISION=ARBITRATION-TAG-FORCED)"
-        f" -- CARRIER-RE-DERIVATION=CONG-185-SIX-OF-SIX"
-        f" -- SCOPE=(A,B)-D<=4-CARRIER|I7-d2-L3-9-SITES-3-LINKS"
-        f"|DECLARED-WINDOW=FIRST-TO-LAST-ARBITRATION-CUT>")
+    PAYLOAD["counts_for_the_head"] = {
+        "additivity_ok": achecks - abad, "additivity_total": achecks,
+        "six_properties": nsix}
+    anchor("A08", "MENU class-graph self-loops at AB4", 45, sl_menu,
+           "the MENU class-extension graph, rebuilt in SEC 9")
+    anchor("A09", "CONG class-graph self-loops at AB4", 0, sl_cong,
+           "the CONG class-extension graph, rebuilt in SEC 9")
+    anchor("A10", "co-division occurrences on the (A,B) channel", 336,
+           ab_count, "co-division incidence on the (A,B) channel, SEC 9; one set both ways")
+    anchor("A11", "site assignments at the crystal FOUND control", 72,
+           ctrl_found.get("isomorphisms"),
+           "|Aut| of the 3x3 rook's graph = 3! * 3! * 2, the crystal's own "
+           "co-division incidence")
+    anchor("A12", "I-SITE-ASSIGNMENT fiber at the declared falsifier", 6,
+           ctrl_falsif.get("inventory", {}).get("I-SITE-ASSIGNMENT"),
+           "v14/paper-13 4.1 (the withheld-arbitration flip)")
+    anchor("A13", "site assignments at the declared probe on I7's target",
+           1296, ctrl_found_i7_probe.get("isomorphisms"),
+           "|Aut| of K(3,3,3), the target's undirected Cayley graph")
+    anchor("A14", "distinct (reading, site, link, repair) census cells", 60,
+           n_distinct, "the declared candidate family of 3")
+    # A numeric anchor whose COMPUTED side is a literal passes its own
+    # comparison by arithmetic and cannot be caught by corrupting either
+    # side.  It can be caught statically: the unit parses its own source
+    # and requires every anchor's computed argument to be an expression,
+    # never a constant.
+    typed = []
+    try:
+        import ast
+        src = open(os.path.abspath(__file__), encoding="utf-8").read()
+        # the declared falsifier: the very edit this gate exists to catch,
+        # applied to an in-memory copy of the source
+        src = mutate("MUT-ANCHOR-TYPED", src,
+                     src.replace('"MENU quotient classes at AB4", 113, n_menu',
+                                 '"MENU quotient classes at AB4", 113, 113'))
+        tree = ast.parse(src)
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Call) and \
+                    getattr(node.func, "id", None) == "anchor" and \
+                    len(node.args) >= 4 and isinstance(node.args[3], ast.Constant):
+                typed.append(getattr(node.args[0], "value", "?"))
+        parsed = True
+    except Exception as exc:                                # noqa: BLE001
+        parsed, typed = False, [f"UNPARSED: {exc}"]
+    gate("G-ANCHOR-NOT-TYPED",
+         f"no numeric anchor's COMPUTED side is a typed literal.  The unit "
+         f"parses its own source and requires the fourth argument of every "
+         f"`anchor(...)` call to be an expression rather than a constant, "
+         f"because an anchor typed on both sides passes its own comparison "
+         f"by arithmetic and no corruption of either side can catch it: "
+         f"{len(ANCHORS)} anchors, {len(typed)} typed",
+         parsed and not typed, {"typed_anchors": typed, "parsed": parsed,
+                                "anchors": len(ANCHORS)})
+
+    PAYLOAD["obstruction"] = derive_obstruction(PAYLOAD)
+    verdict = rebuild_verdict(PAYLOAD)
+    if MUTANT == "MUT-HEAD-FLIP":       # the typed head, restored
+        verdict = verdict.replace("WELD2-EMPTY-", "WELD2-FOUND-")
+    if MUTANT == "MUT-OBSTRUCTION-FLIP":
+        verdict = verdict.replace(PAYLOAD["obstruction"],
+                                  "NO-OBSTRUCTION-AT-ALL")
     PAYLOAD["verdict"] = verdict
-    PAYLOAD["obstruction"] = obstruction
     emit("  " + verdict)
+    # #234 / the derived head: a SECOND reconstruction, reading ONLY the
+    # payload, rebuilds the entire string field by field and the two are
+    # compared as COMPLETE STRINGS.  No branch of the head is a typed
+    # literal that no gate compares; a flipped head cannot deliver.
+    rebuilt = rebuild_verdict(json.loads(json.dumps(PAYLOAD, default=str)))
+    gate("G-VERDICT-EQUALITY",
+         f"THE HEAD IS DERIVED, NOT TYPED (#234).  The emitted verdict is "
+         f"rebuilt from the receipt payload alone -- every segment, including "
+         f"the outcome word itself, is a function of the measured fate "
+         f"multiset and the measured controls, and no branch of it is a "
+         f"literal any gate fails to compare -- and the two strings are "
+         f"compared complete, all {len(verdict)} characters",
+         rebuilt == verdict, {"equal": rebuilt == verdict,
+                              "length": len(verdict),
+                              "rebuilt_prefix": rebuilt[:120],
+                              "emitted_prefix": verdict[:120]})
+    # The obstruction NAME is derived, so a rename inside the derivation
+    # would move BOTH copies of the head together.  This gate binds the
+    # name's content to the measurements by a second, independent route:
+    # the substrings the emitted head carries are required to agree,
+    # one by one, with what the run actually measured.
+    graded_measured = (n_ext_bad == 0 and cong_multi == 0)
+    wipeout_measured = len(q_wipe) > 0
+    name_ok = (("THE-GRADING-THEOREM" in verdict) == graded_measured
+               and ("SELF-LOOP-WIPEOUT" in verdict) == wipeout_measured
+               and ("NO-OBSTRUCTION" in verdict)
+               == (not graded_measured and not wipeout_measured))
+    gate("G-OBSTRUCTION-CONTENT",
+         f"the obstruction the head names is the obstruction the run "
+         f"measured, checked substring by substring against the "
+         f"measurements rather than against the function that produced the "
+         f"name: the grading holds ({graded_measured}: {n_ext_bad} edges "
+         f"fail the length rise and {cong_multi} CONG classes span more "
+         f"than one length) and the head names it "
+         f"({'THE-GRADING-THEOREM' in verdict}); the self-loop wipeout "
+         f"fired ({wipeout_measured}: {len(q_wipe)} rows) and the head "
+         f"names it ({'SELF-LOOP-WIPEOUT' in verdict}); the head claims no "
+         f"obstruction ({'NO-OBSTRUCTION' in verdict}) exactly when "
+         f"neither holds",
+         name_ok, {"graded_measured": graded_measured,
+                   "wipeout_measured": wipeout_measured,
+                   "obstruction": PAYLOAD["obstruction"]})
     gate("G-VERDICT",
          f"the pre-registered outcome string that fires is "
-         f"WELD2-EMPTY-AT-THE-DECLARED-FAMILY, carrier-stamped @BOTH "
-         f"(MENU-113 and CONG-185), with obstruction {obstruction}: of "
-         f"{len(rows)} candidates {n_found} are FOUND, {n_smug} SMUGGLED, "
-         f"{n_unmot} UNMOTIVATED, and the remainder die at measured type, "
-         f"arity and structure obstructions "
+         f"WELD2-EMPTY-AT-THE-DECLARED-FAMILY -- EMPTY meaning NO MOTIVATED "
+         f"MAP, that is {n_found} FOUND of {len(rows)} rows at both readings "
+         f"-- stamped @BOTH-QUOTIENTS-AS-SITE-GENERATORS (MENU-113 and "
+         f"CONG-185, exercised as site generators; the carrier coordinate "
+         f"itself is inert and G-CARRIER-AGREEMENT says so), with obstruction "
+         f"{PAYLOAD['obstruction']}: {n_smug} SMUGGLED, {n_unmot} "
+         f"UNMOTIVATED -- all of them at the QUOTIENT reading, where the "
+         f"pre-registered free items ARE reached -- and the remainder die at "
+         f"measured type, arity, structure or map-existence obstructions "
          f"{dict(sorted(fates.items()))}.  Between delivery and adjudication "
          f"this is a CANDIDATE READING",
-         n_found == 0 and n_unmot == 0 and n_smug == 0
+         n_found == 0 and n_smug == 0
          and sum(fates.values()) == len(rows)
          and set(fates) <= {"TYPE-DEAD", "ARITY-DEAD", "ARITY-DEAD-BELOW",
-                            "STRUCT-DEAD", "COUNT-DEAD", "SCOPE-BLOCKED",
+                            "STRUCT-DEAD", "HOM-DEAD", "COUNT-DEAD",
+                            "UNMOTIVATED", "SCOPE-BLOCKED",
                             "ARITY-REPAIR-UNDECIDED"}
          and fates.get("SCOPE-BLOCKED", 0) == 0
-         and fates.get("ARITY-REPAIR-UNDECIDED", 0) == 0,
+         and fates.get("ARITY-REPAIR-UNDECIDED", 0) == 0
+         and all(r["reading"] == "QUOTIENT" for r in rows
+                 if r["fate"] == "UNMOTIVATED"),
          {"verdict": verdict, "fates": dict(sorted(fates.items())),
           "found": n_found, "smuggled": n_smug, "unmotivated": n_unmot})
 
+    # +2 for the two gates that must come after this line: G-PAPER-RENDERS,
+    # which reads the paper against this very payload, and the terminal
+    # G-ARTIFACT-INTEGRITY, which re-reads what was written.  The total is
+    # itself checked at that terminal gate.
+    PAYLOAD["registry"] = {
+        "gates_including_the_terminal_gates": len(GATES) + 2,
+        "declared_mutants": len(MUTANTS), "numeric_anchors": len(ANCHORS),
+        "verbatim_anchors": len(VANCHORS),
+        "anchors_total": len(ANCHORS) + len(VANCHORS),
+        "waivers": len(WAIVERS)}
+    verify_paper()
+
     emit("")
-    emit(f"  gates: {len(GATES)}, failures: {FAILED}; "
+    emit(f"  gates so far: {len(GATES)}, failures: {FAILED}; "
          f"anchors: {len(ANCHORS)} numeric + {len(VANCHORS)} verbatim, "
-         f"failures: {ANCHOR_FAIL}; waivers: {len(WAIVERS)}")
+         f"failures: {ANCHOR_FAIL}; waivers: {len(WAIVERS)}.  The terminal "
+         f"G-ARTIFACT-INTEGRITY gate is evaluated after the artifacts are "
+         f"written and re-read, so it appears below this line and in the "
+         f"receipt's gate count, which is therefore {len(GATES) + 1}")
     return {"weld2": verdict,
             "controls": {"FOUND_at_crystal": ctrl_found["fate"],
                          "FOUND_falsifier": ctrl_falsif["fate"],
+                         "FOUND_at_I7_declared_probe":
+                             ctrl_found_i7_probe["fate"],
                          "EMPTY_at_walk": ctrl_empty["fate"],
-                         "crystal_at_I7": ctrl_found_i7["fate"]},
+                         "crystal_at_I7": ctrl_found_i7["fate"],
+                         "pin_named_cover_generator":
+                             {k: v["fate"] for k, v in ctrl_cover.items()}},
             "cong185_six_properties": props}
 
 
 def main(argv=None):
     global MUTANT
     ap = argparse.ArgumentParser(
-        prog="w2_census_exact.py",
+        prog="w2_census_exact.py", allow_abbrev=False,
         description="v14 WELD 2 / paper-13 -- the carrier census.")
     ap.add_argument("--selftest", action="store_true",
                     help="corrupt each anchor in memory, confirm the run "
@@ -2516,10 +4162,13 @@ def main(argv=None):
                          "gate and the artifacts are not written")
     ap.add_argument("--list-mutants", action="store_true",
                     help="print the declared mutant registry and exit")
+    ap.add_argument("--list-gates", action="store_true",
+                    help="run the pipeline, print the gate registry and "
+                         "exit; WRITES NOTHING")
     try:
         args, extra = ap.parse_known_args(argv)
-    except SystemExit:
-        return 2
+    except SystemExit as e:
+        return 0 if e.code in (0, None) else 2
     if extra:
         sys.stderr.write(f"unknown argument(s): {' '.join(extra)}\n")
         return 2
@@ -2535,28 +4184,64 @@ def main(argv=None):
 
     verdicts = run_all()
 
-    write = (MUTANT is None) and (not args.selftest)
+    write = (MUTANT is None) and (not args.selftest) and (not args.list_gates)
     if args.selftest:
         return selftest_report(verdicts)
-    if write:
-        write_artifacts(verdicts)
-        print("\n".join(LINES))
-        print(f"\nwrote {OUT_TXT}")
-        print(f"wrote {OUT_JSON}")
+    if args.list_gates:
+        for g in GATES:
+            print(f"{g['gate']}\t{'PASS' if g['passed'] else 'FAIL'}"
+                  f"\t{'WAIVED' if g['waiver'] else '-'}")
+        print(f"{len(GATES)} gates, {FAILED} failures; "
+              f"{len(ANCHORS)} numeric + {len(VANCHORS)} verbatim anchors")
+        print("artifacts NOT written (--list-gates)")
+        return 0
+    # A RUN THAT FAILED A GATE WRITES NOTHING.  The delivered artifacts are
+    # never overwritten by a run that does not stand up.
+    do_write = write and exit_code() == 0
+    snap = snapshot()                    # frozen BEFORE the receipt is built
+    receipt = build_receipt(verdicts)
+    if do_write:
+        write_files(receipt)
+        ok1, ev1 = integrity_check(snap["verdict"], None, snap)
+        ev1["source"] = "re-read from disk after the write"
     else:
+        ok1, ev1 = integrity_check(snap["verdict"], receipt, snap)
+        ev1["source"] = ("the serialisation this run would have written "
+                         "(no artifact is written on this path)")
+    gate("G-ARTIFACT-INTEGRITY",
+         f"the artifacts are RE-READ ({ev1['source']}) and compared against "
+         f"the live run field by field -- the output text against the "
+         f"emitted lines, and the receipt's verdict, gate count, gate "
+         f"failures, anchor failures, candidate count, fate multiset and "
+         f"gate-name sequence against the values the run holds: "
+         f"{json.dumps(ev1, sort_keys=True)}.  A receipt that contradicts "
+         f"its own output text cannot ship",
+         ok1, ev1)
+    if do_write:
+        snap2 = snapshot()
+        write_files(build_receipt(verdicts))
+        ok2, ev2 = integrity_check(snap2["verdict"], None, snap2)
         print("\n".join(LINES))
-        tgt = dict(MUTANTS)[MUTANT]
-        died = [g["gate"] for g in GATES if not g["passed"]]
-        afail = [a["id"] for a in ANCHORS if not a["passed"]] + \
-                [v["id"] for v in VANCHORS if not v["passed"]]
-        ok = (tgt in died) or (tgt in afail) or (tgt == "ANY" and
-                                                 (died or afail))
-        print(f"\nMUTANT {MUTANT}: target gate {tgt}; "
-              f"gates failed = {died}; anchors failed = {afail}; "
-              f"DIED-AT-TARGET = {ok}")
-        print("artifacts NOT written (mutant run)")
-        return 0 if ok else 1
-    return exit_code()
+        print(f"\n[FINAL-INTEGRITY] re-read after the final write: "
+              f"{json.dumps(ev2, sort_keys=True)}")
+        print(f"wrote {OUT_TXT}")
+        print(f"wrote {OUT_JSON}")
+        return 1 if (not ok2 or exit_code() != 0) else 0
+    print("\n".join(LINES))
+    if MUTANT is None:
+        print(f"\nRUN FAILED: gate_failures={FAILED} "
+              f"anchor_failures={ANCHOR_FAIL}; artifacts NOT written")
+        return exit_code()
+    tgt = dict(MUTANTS)[MUTANT]
+    died = [g["gate"] for g in GATES if not g["passed"]]
+    afail = [a["id"] for a in ANCHORS if not a["passed"]] + \
+            [v["id"] for v in VANCHORS if not v["passed"]]
+    ok = (tgt in died) or (tgt in afail) or (tgt == "ANY" and (died or afail))
+    print(f"\nMUTANT {MUTANT}: target gate {tgt}; "
+          f"gates failed = {died}; anchors failed = {afail}; "
+          f"DIED-AT-TARGET = {ok}")
+    print("artifacts NOT written (mutant run)")
+    return 0 if ok else 1
 
 
 def selftest_report(verdicts):
@@ -2567,15 +4252,29 @@ def selftest_report(verdicts):
     print("\n".join(LINES[:3]))
     killed, vacuous = 0, []
     for a in ANCHORS:
-        c = a["committed"]
-        bad = (c + 1) if isinstance(c, int) else (str(c) + "!")
-        if bad != a["computed"]:
+        # the corruption is applied to the COMPUTED side and re-run through
+        # the live comparison, so an anchor whose computed value was typed
+        # from its own committed value shows up as vacuous instead of
+        # passing by integer arithmetic
+        c, comp = a["committed"], a["computed"]
+        bad = (comp + 1) if isinstance(comp, int) else (str(comp) + "!")
+        if (c == comp) and (c != bad):
             killed += 1
         else:
             vacuous.append(a["id"])
     for v in VANCHORS:
-        body = open(os.path.join(REPO, v["path"]), "rb").read()
-        if (v["quote"] + " [corrupted]").encode("utf-8") not in body:
+        want = dict((p, w) for p, w, _ in PINNED)[v["path"]]
+        body, _ = read_pinned(v["path"], want)
+        q = v["quote"]
+        trunc = q[:5]
+        corrupt_ok = body is not None and \
+            (q + " [corrupted]").encode("utf-8") not in body
+        # a truncation to a common substring must also fail the anchor:
+        # the test carries the committed occurrence count and byte length
+        trunc_ok = body is None or not (
+            body.count(trunc.encode("utf-8")) == v["committed_occurrences"]
+            and len(trunc) == len(q))
+        if corrupt_ok and trunc_ok:
             killed += 1
         else:
             vacuous.append(v["id"])
@@ -2604,19 +4303,37 @@ def exit_code():
 
 MUTANTS = [
     ("MUT-PROVENANCE", "G-PROVENANCE"),
-    ("MUT-QUOTE", "V01"),
     ("MUT-MENU-KEY", "G-MENU-CLASSES"),
     ("MUT-CONG-WRONG", "G-CONG-CLASSES"),
     ("MUT-SQUARE-DROP", "G-SQUARES"),
+    ("MUT-DESCENT-BLIND", "G-CONG-P1-DESCENT"),
+    ("MUT-CK-LAX", "G-CONG-P6-LUMPABLE"),
     ("MUT-ADDITIVITY", "G-ADDITIVITY-972"),
     ("MUT-DIVPRED", "G-DIVISION-PREDICATE"),
+    ("MUT-I7-ROUTE", "G-I7-ROUTE"),
     ("MUT-CRYSTAL-INHOMOG", "G-CTRL-FOUND"),
+    ("MUT-CRYSTAL-DIAG", "G-CRYSTAL-DIAGONAL-EMPTY"),
     ("MUT-WALK-PLANT", "G-CTRL-EMPTY"),
-    ("MUT-SMUGGLE-BLIND", "G-SMUGGLE-REACHABLE"),
-    ("MUT-CYCLE-PLANT", "G-SCISSORS"),
-    ("MUT-FIBER-LAX", "G-CTRL-FOUND-FALSIFIABLE"),
     ("MUT-ARITY-LAX", "G-CTRL-EMPTY"),
-]
+    ("MUT-SMUGGLE-BLIND", "G-SMUGGLE-REACHABLE"),
+    ("MUT-FIBER-LAX", "G-CTRL-FOUND-FALSIFIABLE"),
+    ("MUT-PROBE-INHOMOG", "G-CTRL-FOUND-AT-THE-CENSUS-TARGET"),
+    ("MUT-ONE-CRITERION", "G-ONE-CRITERION"),
+    ("MUT-CYCLE-PLANT", "G-SCISSORS"),
+    ("MUT-SELFLOOP-DROP", "G-SCISSORS"),
+    ("MUT-AB-COUNT", "G-SCISSORS"),
+    ("MUT-BIPARTITE-LAX", "G-SCISSORS"),
+    ("MUT-RESTRICTION-BLIND", "G-SCISSORS"),
+    ("MUT-GRADING-BLIND", "G-GRADING-FORCING"),
+    ("MUT-QUOTIENT-BLIND", "G-QUOTIENT-READING"),
+    ("MUT-FATE-CELL", "G-FATE-PER-CELL"),
+    ("MUT-CARRIER-SPLIT", "G-CARRIER-AGREEMENT"),
+    ("MUT-HEAD-FLIP", "G-VERDICT-EQUALITY"),
+    ("MUT-OBSTRUCTION-FLIP", "G-OBSTRUCTION-CONTENT"),
+    ("MUT-ANCHOR-TYPED", "G-ANCHOR-NOT-TYPED"),
+    ("MUT-PAPER-DRIFT", "G-PAPER-RENDERS"),
+    ("MUT-INTEGRITY", "G-ARTIFACT-INTEGRITY"),
+] + [(f"MUT-QUOTE-V{i:02d}", f"V{i:02d}") for i in range(1, 13)]
 
 
 if __name__ == "__main__":

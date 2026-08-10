@@ -3460,3 +3460,46 @@ orders R-R4B-1..9 (note-r4b-adjudication.md).  Repair worker
 dispatched; **THE U4 PANEL LAUNCHED** (protocol c4f2b33aa315,
 #114) — reviewers → v14/review-u4-{operator,effectus,
 instrument}.md.
+
+## 2026-08-10 — WELD-2 REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #120)
+
+All ten orders discharged; **12/12 panel injections now DEAD at
+named gates** (the head-flip at G-VERDICT-EQUALITY; fate/carrier
+at G-FATE-PER-CELL + G-CARRIER-AGREEMENT; post-gate corruption
+at snapshot-based G-ARTIFACT-INTEGRITY; prose at
+G-PAPER-RENDERS; the typed anchor at an AST self-parse; the #91
+bypass at G-I7-ROUTE; post-WRITE corruption reaches disk but
+fails loudly exit-1 — the stated ceiling, superseded by the #119
+seal engraving for FUTURE units).  **The recomposed head (2032
+chars, byte-exact paper↔receipt): EMPTY STANDS,
+READING-STRATIFIED — THE-GRADING-THEOREM-AND-THE-SELF-LOOP-
+WIPEOUT@BOTH-QUOTIENTS-AS-SITE-GENERATORS(CARRIER-AXIS-INERT:
+60-DISTINCT-CELLS-×2-STAMPS), ROWS=120, READINGS=EMBEDDING+
+QUOTIENT, UNMOTIVATED=8-ALL-AT-QUOTIENT** (the pre-registered
+free items REACHED at last — ULAM strictly positive 27/27,
+dying at the choice standard; I-ORIENT returns 2).  The
+embedding fates preserved exactly (36/12/2/10).  **Reported
+against interest: the poset-height grading is NOT strict
+(384/10566 covers) — the cover row now rests on the measured
+emptiness (0 covers join two division events).**  The criterion
+asymmetry resolved by UNIFICATION (the directed criterion would
+make FOUND unreachable in principle — 0 isos where undirected
+gives 72; undirected adopted; the kill re-derived as
+odd-cycle/bipartite; where MENU fails bipartiteness the
+restriction is EXECUTED — complete induced-subgraph search, 0
+of C(113,9) and 0 of C(185,9)).  **FOUND demonstrated AT THE
+VERDICT'S TARGET** (a declared probe at TGT_I7: 1296 isos,
+fibers 1/1/1); the pin-named cover generator STRUCT-DEAD at
+both targets, reported.  One stamped departure: CONG
+count-positivity 19-OF-27-AT-40-DECLARED-SOLUTIONS (not
+18-max; the number carries its search; fates argued
+monotone-safe).  Two self-caught errors killed before landing
+(offered-vs-realised 124→76; four crashing mutants).  Counts:
+gates 32→47; mutants 13→43 all named-gate dead; numeric anchors
+7→14; V12 binds the d≤5 265/462 row (sourced, not asserted);
+falsifier coverage 34%→~64%.  Off-tree byte-identical
+(seed-varied); git-less loud-fail writes nothing; selftest
+26/26 wrote-nothing.  Artifacts committed as-is: paper
+9cdb10472953, code 9bfcef7b3e11, output 4bfecd926e8f, receipt
+bd68497d4510.  Battery next; TERMINAL on completion (the
+ninth).
