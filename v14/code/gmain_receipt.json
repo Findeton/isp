@@ -1,0 +1,2942 @@
+{
+ "arena": {
+  "boundary": "the empty history; genesis v0 is the committed layer's declared boundary",
+  "carrier": "D74's committed MENU quotient (the weighted-menu partition), 113 classes at (A,B) d <= 4",
+  "cuts": "depth cuts 0..4 (the primary family); renewal cuts (the positive control); the renewal-leg ensembles at the declared deeper conditioned scope",
+  "family": "ARM-1T, actor pool (A, B), exhaustive menus; depth <= 5 for the Gamma-prep anchor scope, depth <= 4 for THE CARRIER",
+  "horizon": "H4 -- the horizon-4 chain from the root: a history at depth d steps under k_{4-d}; terminal G(h, 0) = 1",
+  "law": "the committed d42b1 weight law, exec'd from its committed bytes; nothing about admission or pricing re-implemented",
+  "negative control": "D74's committed REC quotient (canon), 2,477 classes, measured FLAT",
+  "positive control": "the renewal cuts (the D62-R4 pair-arb events), U1b's column-constancy wall",
+  "provenance": "declared commit shas; 23 hash-pinned artifacts",
+  "readout": "OCCUPANCY (the process's own horizon-normalized law) declared PRIMARY; COUNT (equiprobable admissible legs) declared ALTERNATIVE -- both measured, the fiber is 2",
+  "state": "the history itself; every coarser object is a declared abstraction, named at each use"
+ },
+ "arithmetic": "int / fractions.Fraction only; no float, no tolerance",
+ "byte_anchors": [
+  {
+   "expected": "8529ddc4a319",
+   "id": "S-PIN",
+   "measured": "8529ddc4a319",
+   "ok": true,
+   "path": "v14/note-gmain-pin.md",
+   "pedigree": "THIS UNIT'S OWN PIN, frozen at v14 ledger #64",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "e9d2bedff244",
+   "id": "S-R0",
+   "measured": "e9d2bedff244",
+   "ok": true,
+   "path": "v14/note-r0-founding-pin.md",
+   "pedigree": "the v14 founding pin (the inheritance floor)",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "3781cbce4e42",
+   "id": "S-RUNBOOK",
+   "measured": "3781cbce4e42",
+   "ok": true,
+   "path": "RUNBOOK.md",
+   "pedigree": "the programme runbook, all addenda",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "576275d55ecf",
+   "id": "S-LAYER",
+   "measured": "576275d55ecf",
+   "ok": true,
+   "path": "v10/code/d42b1_transport_exact.py",
+   "pedigree": "THE LAYER: d42b1 TERMINAL (v10 LOG #303)",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "0180e21c7127",
+   "id": "S-D74N",
+   "measured": "0180e21c7127",
+   "ok": true,
+   "path": "v10/note-d74-transport-holonomy-result.md",
+   "pedigree": "D74 TERMINAL at v10 LOG #495 (the ledger is the authority; the note header says only ROUND-1 REVIEWED AND REPAIRED)",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "bb852161aced",
+   "id": "S-D74C",
+   "measured": "bb852161aced",
+   "ok": true,
+   "path": "v10/code/d74_transport_holonomy_exact.py",
+   "pedigree": "D74 receipt, TERMINAL v10 #495",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "b5a9d50f9573",
+   "id": "S-D74O",
+   "measured": "b5a9d50f9573",
+   "ok": true,
+   "path": "v10/data/d74_transport_holonomy_exact.out",
+   "pedigree": "D74 output, TERMINAL v10 #495",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "63a0808fafbe",
+   "id": "S-U1C",
+   "measured": "63a0808fafbe",
+   "ok": true,
+   "path": "v11/code/u1_indivisibility_census_exact.py",
+   "pedigree": "U1 TERMINAL (v11 LOG #11-#14)",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "13a2430927ad",
+   "id": "S-U1N",
+   "measured": "13a2430927ad",
+   "ok": true,
+   "path": "v11/note-u1-indivisibility-census.md",
+   "pedigree": "U1 TERMINAL (v11 LOG #11-#14)",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "47f001fad828",
+   "id": "S-U1BN",
+   "measured": "47f001fad828",
+   "ok": true,
+   "path": "v11/note-u1b-renewal-class-sweep.md",
+   "pedigree": "U1b TERMINAL (hostile round 2026-07-28, v11 #21)",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "a955b8484465",
+   "id": "S-U1BO",
+   "measured": "a955b8484465",
+   "ok": true,
+   "path": "v11/code/u1b_output.txt",
+   "pedigree": "U1b TERMINAL output",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "ad48306d41e5",
+   "id": "S-U3N",
+   "measured": "ad48306d41e5",
+   "ok": true,
+   "path": "v11/note-u3-unistochasticity-screen.md",
+   "pedigree": "U3 GREEN-UNREVIEWED-REPAIRED, STRICT",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "ddc08bc2f83b",
+   "id": "S-U3C",
+   "measured": "ddc08bc2f83b",
+   "ok": true,
+   "path": "v11/code/u3_unistochasticity_screen_exact.py",
+   "pedigree": "U3 GREEN-UNREVIEWED-REPAIRED, STRICT",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "26d6690a7b23",
+   "id": "S-U2N",
+   "measured": "26d6690a7b23",
+   "ok": true,
+   "path": "v11/note-u2-three-address-weld.md",
+   "pedigree": "U2 (W-CROSS), round-corrected v11 LOG #24",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "37a428321f46",
+   "id": "S-P0",
+   "measured": "37a428321f46",
+   "ok": true,
+   "path": "v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md",
+   "pedigree": "v11 paper 0, the charter",
+   "sha": "f40f5e1"
+  },
+  {
+   "expected": "09482eb080cc",
+   "id": "S-GPP",
+   "measured": "09482eb080cc",
+   "ok": true,
+   "path": "v14/paper-11-transport-foundation.md",
+   "pedigree": "GAMMA-PREP DELIVERED-COMMITTED-VERIFICATION-IN-FLIGHT (v14 #63), carried",
+   "sha": "0f5d57eef77f"
+  },
+  {
+   "expected": "9a4f0529b840",
+   "id": "S-GPC",
+   "measured": "9a4f0529b840",
+   "ok": true,
+   "path": "v14/code/gprep_foundation_exact.py",
+   "pedigree": "GAMMA-PREP, same pedigree",
+   "sha": "0f5d57eef77f"
+  },
+  {
+   "expected": "097c08a0229d",
+   "id": "S-GPO",
+   "measured": "097c08a0229d",
+   "ok": true,
+   "path": "v14/code/gprep_foundation_output.txt",
+   "pedigree": "GAMMA-PREP, same pedigree",
+   "sha": "0f5d57eef77f"
+  },
+  {
+   "expected": "dd86ad1a80d7",
+   "id": "S-GPR",
+   "measured": "dd86ad1a80d7",
+   "ok": true,
+   "path": "v14/code/gprep_foundation_receipt.json",
+   "pedigree": "GAMMA-PREP, same pedigree",
+   "sha": "0f5d57eef77f"
+  },
+  {
+   "expected": "f6c11163c77d",
+   "id": "S-R6BP",
+   "measured": "f6c11163c77d",
+   "ok": true,
+   "path": "v14/note-r6bp-adjudication.md",
+   "pedigree": "THE R6b-prime ADJUDICATION REGISTER (v14 #62) -- the frozen carrier of the targets; the R6b-prime artifacts themselves are MID-REPAIR and are NOT read by this unit",
+   "sha": "d042ef1"
+  },
+  {
+   "expected": "5f68bac811bd",
+   "id": "S-CRA",
+   "measured": "5f68bac811bd",
+   "ok": true,
+   "path": "v14/code/cra_accumulation_receipt.json",
+   "pedigree": "CR-A delivered under panel (v14 #41/#44)",
+   "sha": "94df5ad"
+  },
+  {
+   "expected": "5ebeec141303",
+   "id": "S-CRB",
+   "measured": "5ebeec141303",
+   "ok": true,
+   "path": "v14/code/crb_stochastic_receipt.json",
+   "pedigree": "CR-B delivered under panel (v14 #37/#38)",
+   "sha": "fbc3a81"
+  },
+  {
+   "expected": "3214f4da3af2",
+   "id": "S-R4",
+   "measured": "3214f4da3af2",
+   "ok": true,
+   "path": "v14/code/r4_defect_stage_receipt.json",
+   "pedigree": "R4 delivered under panel (v14 #54/#55)",
+   "sha": "264cb54"
+  }
+ ],
+ "compliance": [
+  {
+   "computed": "G-VERDICT-EQUALITY equality True; 5 verdict mutants, killed 5",
+   "rule": "#10 containment is not equality: the verdict gate compares the COMPLETE emitted string for equality against a segment-by-segment rebuild",
+   "status": "APPLIED"
+  },
+  {
+   "computed": "one object: 85 gates read the same measured values that the receipt serialises; the paper renders from the receipt",
+   "rule": "#10 render from the gated object: the receipt and the paper render from the object the gates check",
+   "status": "APPLIED"
+  },
+  {
+   "computed": "paper claim gate below: evaluated",
+   "rule": "#20 prose renders from the receipt: every numeric claim in the paper renders from the receipt or is marked derived-in-text at its derivation site",
+   "status": "APPLIED"
+  },
+  {
+   "computed": "G-COMPLIANCE carries MUT-COMPLIANCE-FALSE, which reaches it and dies by its own predicate",
+   "rule": "#20 compliance claims are gate claims: a compliance gate ships with an injection falsifier",
+   "status": "APPLIED"
+  },
+  {
+   "computed": "9 path-value anchors; MUT-PATH-DRIFT killed True",
+   "rule": "#20 path-value anchoring: a read-by-path anchors the (path, value) pair, not only the bytes",
+   "status": "APPLIED"
+  },
+  {
+   "computed": "never-falsified 2, unwaived non-anchor 0",
+   "rule": "#34 waiver claims are gate claims: every never-falsified gate has a reaching, killing mutant or a verified waiver",
+   "status": "APPLIED"
+  },
+  {
+   "computed": "13 rows, mean window 103 chars, all evaluated before the 23 byte anchors",
+   "rule": "#34 verbatim-text anchors adopted: evaluated before byte anchors, bound to named consumer gates, context windows not fragments",
+   "status": "APPLIED"
+  },
+  {
+   "computed": "runtime reads: 23 committed blobs by declared sha, this file, and this unit's own paper; v14/LOG.md and /STATUS.md read: 0 (the LOG #4 erratum is carried as a frozen declaration)",
+   "rule": "#46 no unanchored runtime inputs: every runtime input is a hash-pinned artifact or this unit's own frozen declaration; ledgers and STATUS are never read",
+   "status": "APPLIED"
+  },
+  {
+   "computed": "consumers 13: all exist True; literal-True consumers 0; consumers with a killing declared mutant 13 of 13; short-circuit is structural (a verbatim failure exits before the byte-anchor loop)",
+   "rule": "#62 verbatim anchors, corrected spec: quote fidelity, consumer gates existing / non-literal / mutant-falsified, genuine short-circuit",
+   "status": "APPLIED"
+  },
+  {
+   "computed": "declared shas ['0f5d57eef77f', '264cb54', '94df5ad', 'd042ef1', 'f40f5e1', 'fbc3a81']; path-value stability across two shas: 3 of 3",
+   "rule": "#62 provenance by committed sha: sources declared by COMMIT SHA and read through it; `git show HEAD:` and worktree bytes are never read for a source",
+   "status": "APPLIED"
+  }
+ ],
+ "construction": {
+  "blocks": {
+   "carrier_block_pure": 9,
+   "carrier_classes_meeting_rsig": 9,
+   "profiles": {
+    "(1, 1)": 1365,
+    "(2, 2)": 3788,
+    "(2, 3)": 4,
+    "(3, 2)": 4
+   },
+   "rmenu": 1365,
+   "rsig": 5161
+  },
+  "carrier_histories": 3969,
+  "cumulative": [
+   1,
+   9,
+   69,
+   521,
+   3969,
+   30729
+  ],
+  "cut_masses": [
+   "1",
+   "1",
+   "1",
+   "1",
+   "1"
+  ],
+  "gamma_pairs_menu": 10,
+  "gamma_pairs_rec": 10,
+  "horizon_potential_multivalued": {
+   "MENU": [
+    [
+     0,
+     0,
+     113
+    ],
+    [
+     1,
+     0,
+     45
+    ],
+    [
+     2,
+     4,
+     13
+    ],
+    [
+     3,
+     0,
+     5
+    ],
+    [
+     4,
+     0,
+     1
+    ]
+   ],
+   "REC": [
+    [
+     0,
+     0,
+     2477
+    ],
+    [
+     1,
+     0,
+     384
+    ],
+    [
+     2,
+     0,
+     60
+    ],
+    [
+     3,
+     0,
+     9
+    ],
+    [
+     4,
+     0,
+     1
+    ]
+   ]
+  },
+  "labelled_edges": {
+   "MENU": [
+    368,
+    0,
+    4
+   ],
+   "REC": [
+    2900,
+    0,
+    0
+   ]
+  },
+  "menu_classes": 113,
+  "menu_dims_per_cut": [
+   1,
+   5,
+   13,
+   45,
+   113
+  ],
+  "per_level": [
+   1,
+   8,
+   60,
+   452,
+   3448,
+   26760
+  ],
+  "potentials_G_root": [
+   "2",
+   "4",
+   "257/32",
+   "1035/64",
+   "4173/128"
+  ],
+  "rec_classes": 2477,
+  "rec_dims_per_cut": [
+   1,
+   8,
+   51,
+   324,
+   2093
+  ]
+ },
+ "controls": {
+  "misnormalized": {
+   "columns": 521,
+   "columns_broken": 521
+  },
+  "rec_negative": {
+   "ck_failures": 0,
+   "gamma_nonunit": 0,
+   "obstruction": 0,
+   "selfloops": 0
+  },
+  "renewal_positive": {
+   "distinct_columns": 1,
+   "entries": "1/8",
+   "readouts_agree": true
+  },
+  "scramble": {
+   "classes": 113,
+   "descends": 10,
+   "obstruction": 665,
+   "primes": [
+    2,
+    3
+   ],
+   "rank": 2
+  }
+ },
+ "gates": [
+  {
+   "detail": "expected '8529ddc4a319', measured '8529ddc4a319'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-PIN",
+   "passed": true,
+   "statement": "sha256-12 of v14/note-gmain-pin.md @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected 'e9d2bedff244', measured 'e9d2bedff244'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-R0",
+   "passed": true,
+   "statement": "sha256-12 of v14/note-r0-founding-pin.md @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected '3781cbce4e42', measured '3781cbce4e42'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-RUNBOOK",
+   "passed": true,
+   "statement": "sha256-12 of RUNBOOK.md @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected '576275d55ecf', measured '576275d55ecf'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-LAYER",
+   "passed": true,
+   "statement": "sha256-12 of v10/code/d42b1_transport_exact.py @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected '0180e21c7127', measured '0180e21c7127'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-D74N",
+   "passed": true,
+   "statement": "sha256-12 of v10/note-d74-transport-holonomy-result.md @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected 'bb852161aced', measured 'bb852161aced'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-D74C",
+   "passed": true,
+   "statement": "sha256-12 of v10/code/d74_transport_holonomy_exact.py @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected 'b5a9d50f9573', measured 'b5a9d50f9573'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-D74O",
+   "passed": true,
+   "statement": "sha256-12 of v10/data/d74_transport_holonomy_exact.out @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected '63a0808fafbe', measured '63a0808fafbe'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-U1C",
+   "passed": true,
+   "statement": "sha256-12 of v11/code/u1_indivisibility_census_exact.py @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected '13a2430927ad', measured '13a2430927ad'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-U1N",
+   "passed": true,
+   "statement": "sha256-12 of v11/note-u1-indivisibility-census.md @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected '47f001fad828', measured '47f001fad828'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-U1BN",
+   "passed": true,
+   "statement": "sha256-12 of v11/note-u1b-renewal-class-sweep.md @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected 'a955b8484465', measured 'a955b8484465'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-U1BO",
+   "passed": true,
+   "statement": "sha256-12 of v11/code/u1b_output.txt @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected 'ad48306d41e5', measured 'ad48306d41e5'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-U3N",
+   "passed": true,
+   "statement": "sha256-12 of v11/note-u3-unistochasticity-screen.md @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected 'ddc08bc2f83b', measured 'ddc08bc2f83b'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-U3C",
+   "passed": true,
+   "statement": "sha256-12 of v11/code/u3_unistochasticity_screen_exact.py @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected '26d6690a7b23', measured '26d6690a7b23'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-U2N",
+   "passed": true,
+   "statement": "sha256-12 of v11/note-u2-three-address-weld.md @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected '37a428321f46', measured '37a428321f46'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-P0",
+   "passed": true,
+   "statement": "sha256-12 of v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md @ f40f5e1",
+   "waiver": null
+  },
+  {
+   "detail": "expected '09482eb080cc', measured '09482eb080cc'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-GPP",
+   "passed": true,
+   "statement": "sha256-12 of v14/paper-11-transport-foundation.md @ 0f5d57eef77f",
+   "waiver": null
+  },
+  {
+   "detail": "expected '9a4f0529b840', measured '9a4f0529b840'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-GPC",
+   "passed": true,
+   "statement": "sha256-12 of v14/code/gprep_foundation_exact.py @ 0f5d57eef77f",
+   "waiver": null
+  },
+  {
+   "detail": "expected '097c08a0229d', measured '097c08a0229d'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-GPO",
+   "passed": true,
+   "statement": "sha256-12 of v14/code/gprep_foundation_output.txt @ 0f5d57eef77f",
+   "waiver": null
+  },
+  {
+   "detail": "expected 'dd86ad1a80d7', measured 'dd86ad1a80d7'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-GPR",
+   "passed": true,
+   "statement": "sha256-12 of v14/code/gprep_foundation_receipt.json @ 0f5d57eef77f",
+   "waiver": null
+  },
+  {
+   "detail": "expected 'f6c11163c77d', measured 'f6c11163c77d'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-R6BP",
+   "passed": true,
+   "statement": "sha256-12 of v14/note-r6bp-adjudication.md @ d042ef1",
+   "waiver": null
+  },
+  {
+   "detail": "expected '5f68bac811bd', measured '5f68bac811bd'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-CRA",
+   "passed": true,
+   "statement": "sha256-12 of v14/code/cra_accumulation_receipt.json @ 94df5ad",
+   "waiver": null
+  },
+  {
+   "detail": "expected '5ebeec141303', measured '5ebeec141303'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-CRB",
+   "passed": true,
+   "statement": "sha256-12 of v14/code/crb_stochastic_receipt.json @ fbc3a81",
+   "waiver": null
+  },
+  {
+   "detail": "expected '3214f4da3af2', measured '3214f4da3af2'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-S-R4",
+   "passed": true,
+   "statement": "sha256-12 of v14/code/r4_defect_stage_receipt.json @ 264cb54",
+   "waiver": null
+  },
+  {
+   "detail": "3 of 3 paths stable across f40f5e1 and 0f5d57eef77f",
+   "falsifiers": [
+    "MUT-PATH-DRIFT"
+   ],
+   "kind": "MUST",
+   "name": "G-PATH-VALUE-STABILITY",
+   "passed": true,
+   "statement": "each declared frozen-tree path carries identical bytes at the pin commit and at the Gamma-prep commit",
+   "waiver": null
+  },
+  {
+   "detail": "expected 'CRA-BLOCKED-AT-STATIC-GEOMETRY', measured 'CRA-BLOCKED-AT-STATIC-GEOMETRY'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "PV-CRA-HEAD",
+   "passed": true,
+   "statement": "path-value verdict_head",
+   "waiver": null
+  },
+  {
+   "detail": "expected 'CENSUS=8192|ADVANCING=2976|ADMISSIBLE=1232', measured 'CENSUS=8192|ADVANCING=2976|ADMISSIBLE=1232'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "PV-CRA-CENSUS",
+   "passed": true,
+   "statement": "path-value verdict_segments/2",
+   "waiver": null
+  },
+  {
+   "detail": "expected 'FORCED=2|FORCED-ADVANCING=0', measured 'FORCED=2|FORCED-ADVANCING=0'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "PV-CRA-FORCED",
+   "passed": true,
+   "statement": "path-value verdict_segments/3",
+   "waiver": null
+  },
+  {
+   "detail": "expected 'CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW', measured 'CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "PV-CRB-HEAD",
+   "passed": true,
+   "statement": "path-value verdict_head",
+   "waiver": null
+  },
+  {
+   "detail": "expected 'n - 2', measured 'n - 2'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "PV-CRB-DIMLAW",
+   "passed": true,
+   "statement": "path-value per_interval_law/pinned_dim_law",
+   "waiver": null
+  },
+  {
+   "detail": "expected 2, measured 2",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "PV-CRB-N4",
+   "passed": true,
+   "statement": "path-value per_interval_law/rows/3/pinned_simplex_dim",
+   "waiver": null
+  },
+  {
+   "detail": "expected False, measured False",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "PV-CRB-N4T",
+   "passed": true,
+   "statement": "path-value per_interval_law/rows/3/pinned_transitive",
+   "waiver": null
+  },
+  {
+   "detail": "expected 'R4-DEFECT-PRESENT', measured 'R4-DEFECT-PRESENT'",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "PV-R4-HEAD",
+   "passed": true,
+   "statement": "path-value verdict/head",
+   "waiver": null
+  },
+  {
+   "detail": "expected [4], measured [4]",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "PV-R4-SCALE",
+   "passed": true,
+   "statement": "path-value admissible_scales",
+   "waiver": null
+  },
+  {
+   "detail": "float literals []; banned names []; division sites 13 (all int/Fraction)",
+   "falsifiers": [
+    "MUT-FLOAT-LEAK"
+   ],
+   "kind": "MUST",
+   "name": "G-FLOATGUARD",
+   "passed": true,
+   "statement": "an AST scan of this source finds no float literal and no numpy/math name; every division is between int/Fraction and is therefore exact",
+   "waiver": null
+  },
+  {
+   "detail": "prefix 16129 chars; defs ['View', 'admissible', 'candidates_for', 'canon', 'event_poset']; exit-free True",
+   "falsifiers": [
+    "MUT-LAYER-DRIFT"
+   ],
+   "kind": "MUST",
+   "name": "G-LAYER-SINGLE-SOURCE",
+   "passed": true,
+   "statement": "the transport grammar is exec'd from the COMMITTED bytes of the pinned layer, pre-print slice only; nothing about admission or pricing is re-implemented in this unit",
+   "waiver": null
+  },
+  {
+   "detail": "expected [1, 8, 60, 452, 3448, 26760], measured [1, 8, 60, 452, 3448, 26760]",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-CENSUS-LEVEL",
+   "passed": true,
+   "statement": "Gamma-prep's committed per-level transport census",
+   "waiver": null
+  },
+  {
+   "detail": "expected [1, 9, 69, 521, 3969, 30729], measured [1, 9, 69, 521, 3969, 30729]",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-CENSUS-CUM",
+   "passed": true,
+   "statement": "Gamma-prep's committed cumulative transport census",
+   "waiver": null
+  },
+  {
+   "detail": "expected 3969, measured 3969",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-CARRIER-SIZE",
+   "passed": true,
+   "statement": "D74's (A,B) d <= 4 arena size",
+   "waiver": null
+  },
+  {
+   "detail": "expected 113, measured 113",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-MENU-113",
+   "passed": true,
+   "statement": "D74's MENU rung: 113 classes at (A,B) d <= 4",
+   "waiver": null
+  },
+  {
+   "detail": "expected 2477, measured 2477",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-REC-2477",
+   "passed": true,
+   "statement": "D74's REC rung: 2,477 classes at (A,B) d <= 4",
+   "waiver": null
+  },
+  {
+   "detail": "expected ['2', '4', '257/32', '1035/64', '4173/128'], measured ['2', '4', '257/32', '1035/64', '4173/128']",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-POTENTIALS",
+   "passed": true,
+   "statement": "Gamma-prep's committed transport potentials G_D, D = 1..5",
+   "waiver": null
+  },
+  {
+   "detail": "0 violations over the carrier",
+   "falsifiers": [],
+   "kind": "THEOREM-PASS",
+   "name": "G-KERNEL-PROPER",
+   "passed": true,
+   "statement": "sum_e k_r(e|h) = 1 is an IDENTITY of the construction (G is defined as the numerator sum); it is disclosed, not evidence",
+   "waiver": "ANALYTICALLY FORCED: G(h,r) := sum_e q(e|h) G(h+e,r-1) and k_r divides by it, so the sum is 1 for every input the construction admits (RUNBOOK 14, v13 #208: analytically forced clauses are disclosures)"
+  },
+  {
+   "detail": "kernel entries <= 0: 0",
+   "falsifiers": [
+    "MUT-MISNORMALIZED"
+   ],
+   "kind": "MUST",
+   "name": "G-KERNEL-POSITIVE",
+   "passed": true,
+   "statement": "the substantive properness gate: every kernel entry and every potential is strictly positive (a zero denominator is the only way the identity can break)",
+   "waiver": null
+  },
+  {
+   "detail": "cut masses [1, 1, 1, 1, 1]",
+   "falsifiers": [],
+   "kind": "THEOREM-PASS",
+   "name": "G-CUT-ADDITIVITY",
+   "passed": true,
+   "statement": "the chained horizon kernel has cut mass 1 at every depth cut",
+   "waiver": "ANALYTICALLY FORCED by induction from the properness identity: a chain of probability kernels has cut mass 1 at every cut"
+  },
+  {
+   "detail": "expected 5161, measured 5161",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-RSIG",
+   "passed": true,
+   "statement": "Gamma-prep's committed R-SIG count at depth <= 5",
+   "waiver": null
+  },
+  {
+   "detail": "expected 1365, measured 1365",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-RMENU",
+   "passed": true,
+   "statement": "Gamma-prep's committed R-MENU count at depth <= 5",
+   "waiver": null
+  },
+  {
+   "detail": "expected {'(1, 1)': 1365, '(2, 2)': 3788, '(2, 3)': 4, '(3, 2)': 4}, measured {'(1, 1)': 1365, '(2, 2)': 3788, '(2, 3)': 4, '(3, 2)': 4}",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-PROFILES",
+   "passed": true,
+   "statement": "Gamma-prep's committed B2 holdings-profile blocks",
+   "waiver": null
+  },
+  {
+   "detail": "carrier R-SIG points 689 in blocks {(1, 1): 341, (2, 2): 348}; MENU classes meeting R-SIG 9, of which block-pure 9",
+   "falsifiers": [
+    "MUT-BLOCK-MERGE"
+   ],
+   "kind": "MUST",
+   "name": "G-BLOCK-DECOMPOSITION",
+   "passed": true,
+   "statement": "Gamma-prep's B2 atoms decompose the carrier: every MENU class that meets R-SIG meets exactly one holdings-profile block",
+   "waiver": null
+  },
+  {
+   "detail": "columns not summing to 1: 0; negative entries: 0; pairs 20",
+   "falsifiers": [
+    "MUT-MISNORMALIZED"
+   ],
+   "kind": "MUST",
+   "name": "G-COLUMN-STOCHASTIC",
+   "passed": true,
+   "statement": "every Gamma(cut'<-cut) on both quotients is exactly column-stochastic: columns sum to 1, entries >= 0, in exact rational arithmetic",
+   "waiver": null
+  },
+  {
+   "detail": "MENU multi-valued rows [(2, 4)]; REC multi-valued total 0",
+   "falsifiers": [
+    "MUT-QUOTIENT-SCRAMBLE"
+   ],
+   "kind": "MUST",
+   "name": "G-KERNEL-DOES-NOT-DESCEND",
+   "passed": true,
+   "statement": "the horizon potential is NOT class-constant on the MENU carrier (so the horizon kernel does not descend and a readout must be declared) but IS class-constant on REC",
+   "waiver": null
+  },
+  {
+   "detail": "expected 0, measured 0",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-D74-MULTIW-MENU",
+   "passed": true,
+   "statement": "D74's ladder: MENU carries 0 multi-valued labelled edges (weights)",
+   "waiver": null
+  },
+  {
+   "detail": "expected 0, measured 0",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-D74-MULTIW-REC",
+   "passed": true,
+   "statement": "D74's ladder: REC carries 0 multi-valued labelled edges",
+   "waiver": null
+  },
+  {
+   "detail": "expected {'AB-only': 28, 'BA-only': 12, 'both-blocked': 142, 'closed': 1546}, measured {'AB-only': 28, 'BA-only': 12, 'both-blocked': 142, 'closed': 1546}",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-D74-SQUARES",
+   "passed": true,
+   "statement": "D72/D74's committed (A,B) d <= 4 exchange-square census",
+   "waiver": null
+  },
+  {
+   "detail": "expected {'1/2': 70, '2/3': 2, '3/2': 6, '2': 10}, measured {'1/2': 70, '2/3': 2, '3/2': 6, '2': 10}",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-D74-SPECTRUM",
+   "passed": true,
+   "statement": "D74's committed non-unit spectrum at (A,B) d <= 4",
+   "waiver": null
+  },
+  {
+   "detail": "expected 88, measured 88",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-D74-DEFECTS",
+   "passed": true,
+   "statement": "D74's committed defective-square count at (A,B) d <= 4",
+   "waiver": null
+  },
+  {
+   "detail": "expected {'closes': 1402, 'obstruction': 44, 'selfloops': 44, 'cycle_rank': 134}, measured {'closes': 1402, 'obstruction': 44, 'selfloops': 44, 'cycle_rank': 134}",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-D74-MENU-RUNG",
+   "passed": true,
+   "statement": "D74's committed MENU rung of the abstraction ladder",
+   "waiver": null
+  },
+  {
+   "detail": "expected {'closes': 473, 'obstruction': 0, 'selfloops': 0, 'cycle_rank': 145}, measured {'closes': 473, 'obstruction': 0, 'selfloops': 0, 'cycle_rank': 145}",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-D74-REC-RUNG",
+   "passed": true,
+   "statement": "D74's committed REC rung: FLAT",
+   "waiver": null
+  },
+  {
+   "detail": "primes [2, 3], rank 2",
+   "falsifiers": [
+    "MUT-HOLONOMY-DRIFT",
+    "MUT-QUOTIENT-SCRAMBLE"
+   ],
+   "kind": "MUST",
+   "name": "T2-D74-ANCHOR",
+   "passed": true,
+   "statement": "the carrier reproduces D74's measured group: the q-connection on the MENU quotient generates the free abelian rank-2 group of 3-smooth positive rationals, primes {2, 3}",
+   "waiver": null
+  },
+  {
+   "detail": "REC q: obstruction 0 self-loops 0; REC k: obstruction 0 self-loops 0; REC Gamma: non-unit 0, spectrum {'1': 473}",
+   "falsifiers": [
+    "MUT-REC-CORRUPT"
+   ],
+   "kind": "MUST",
+   "name": "T2-REC-FLAT",
+   "passed": true,
+   "statement": "THE NEGATIVE CONTROL: on the REC quotient the connection is flat at ALL THREE readings -- zero obstruction, zero non-unit self-loops, and the constructed family assigns holonomy exactly 1 to every square that closes",
+   "waiver": null
+  },
+  {
+   "detail": "verdict DEVIATE-AT-BOTH; D74 reading primes [2, 3] rank 2; k-connection primes [2, 3, 5, 13] rank 3 (new self-loop values ['64/65', '65/64'], contains <2,3> = True); Gamma-family primes [2, 3, 5, 13, 19, 97, 389] rank 7, contains <2,3> = True, non-unit 416 of 1402 closing squares",
+   "falsifiers": [
+    "MUT-HOLONOMY-DRIFT"
+   ],
+   "kind": "MUST",
+   "name": "T2-HOLONOMY",
+   "passed": true,
+   "statement": "THE HOLONOMY GATE: the constructed family's holonomy is compared against D74's measured group; agreement or the deviation is reported exactly, and the comparison could have come out either way (REC returns AGREE-trivially on the same instrument)",
+   "waiver": null
+  },
+  {
+   "detail": "expected 16, measured 16",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-U1B-R1BASES",
+   "passed": true,
+   "statement": "U1b's committed ARM-C2 anchor: 16 renewal-1 bases at depth 3",
+   "waiver": null
+  },
+  {
+   "detail": "patterns {('p', 'p', 'r'): 16}",
+   "falsifiers": [
+    "MUT-LEG-PATTERN"
+   ],
+   "kind": "MUST",
+   "name": "T1-3EVENT-LAW",
+   "passed": true,
+   "statement": "U1b's committed law: a renewal three events after the boundary forces the pattern (p, p, r) and nothing else",
+   "waiver": null
+  },
+  {
+   "detail": "expected 3584, measured 3584",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-U1B-LEG1",
+   "passed": true,
+   "statement": "U1b's committed E2 leg-1 leaf count (3,584 renewal-2 leaves)",
+   "waiver": null
+  },
+  {
+   "detail": "deliveries by slot [1024, 0, 1024]; idles by slot [512, 512, 512]",
+   "falsifiers": [
+    "MUT-LEG-PATTERN"
+   ],
+   "kind": "MUST",
+   "name": "T1-F8",
+   "passed": true,
+   "statement": "F8, MEASURED HERE: the middle interior slot admits NO delivery -- the pattern (p, d, p, r) does not occur, while (p, n, p, r) does",
+   "waiver": null
+  },
+  {
+   "detail": "(p,d,p): comparable 512 of 512; (p,n,p): comparable 0 of 256",
+   "falsifiers": [
+    "MUT-F8-MECHANISM"
+   ],
+   "kind": "MUST",
+   "name": "T1-F8-MECHANISM",
+   "passed": true,
+   "statement": "F8's cause, measured: after (p, d, p) the two live proposals are ORDER-COMPARABLE at every instance (the delivery joins the two actors' registers), and an R4 needs two INCOMPARABLE live proposals; after (p, n, p) they are incomparable at every instance",
+   "waiver": null
+  },
+  {
+   "detail": "expected 256, measured 256",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-U1B-R2BASES",
+   "passed": true,
+   "statement": "U1b's committed ARM-C2 anchor: 256 renewal-2 histories at depth 6",
+   "waiver": null
+  },
+  {
+   "detail": "3 bases, 60492 raw continuations unpruned, 864 legs; pruned 864 legs; identical True",
+   "falsifiers": [
+    "MUT-PRUNE-LAX"
+   ],
+   "kind": "MUST",
+   "name": "T1-PRUNE-GATE",
+   "passed": true,
+   "statement": "the leg-2 pattern prune is gated, not assumed: on a declared subsample of renewal-2 bases the UNPRUNED scan returns exactly the pruned leg set, leg for leg and weight for weight",
+   "waiver": null
+  },
+  {
+   "detail": "verdict TARGETS-HIT-AT-THE-COUNT-READOUT-MISSED-AT-THE-OCCUPANCY-READOUT; leg1 count (3/7, 1/7, 3/7) vs target (3/7, 1/7, 3/7) -> True; leg2 count (4/9, 1/9, 4/9) vs target (4/9, 1/9, 4/9) -> True; leg1 occupancy (3/8, 1/4, 3/8) -> False; leg2 occupancy (3/8, 1/4, 3/8) -> False",
+   "falsifiers": [
+    "MUT-TARGET-DRIFT",
+    "MUT-READOUT-SWAP"
+   ],
+   "kind": "MUST",
+   "name": "T1-TARGETS",
+   "passed": true,
+   "statement": "THE POSITION-LAW TARGETS: the constructed family must reproduce (3/7,1/7,3/7) at leg 1 and (4/9,1/9,4/9) at leg 2; both readouts are measured and the readout at which the targets are hit is named",
+   "waiver": null
+  },
+  {
+   "detail": "multiplicity leg 1 = 2, leg 2 = 3; (m+1)/(2m+3) = 3/7 and 4/9",
+   "falsifiers": [
+    "MUT-TARGET-DRIFT"
+   ],
+   "kind": "MUST",
+   "name": "T1-MULTIPLICITY",
+   "passed": true,
+   "statement": "the mechanism the targets encode, measured: the delivery multiplicity (deliveries per idle in a filler slot) moves 2 -> 3 between leg 1 and leg 2, and (m+1)/(2m+3) is 3/7 at m = 2 and 4/9 at m = 3",
+   "waiver": null
+  },
+  {
+   "detail": "delivery sector mass ['1/2'] = ['1/2']; idle sector mass ['1'] = ['1']; delivery count [4] -> [6]; occupancy law leg 1 = leg 2 is True; count law leg 1 = leg 2 is False",
+   "falsifiers": [
+    "MUT-BLINDNESS-FLIP"
+   ],
+   "kind": "MUST",
+   "name": "T1-QUARTER-BLINDNESS",
+   "passed": true,
+   "statement": "the exact cause of the readout split, measured on both legs: the delivery and idle SECTOR MASSES are identical at renewal 1 and renewal 2 while the delivery COUNT moves, so the occupancy readout is multiplicity-blind by the quarter law and returns the same positional law at both legs, whereas the count readout moves with the multiplicity",
+   "waiver": null
+  },
+  {
+   "detail": "distinct columns 1; every entry 1/8 True; count and occupancy readouts agree True",
+   "falsifiers": [
+    "MUT-RENEWAL-CORRUPT"
+   ],
+   "kind": "MUST",
+   "name": "T4-RENEWAL-POSITIVE",
+   "passed": true,
+   "statement": "THE POSITIVE CONTROL, and the wall stated: at renewal cuts Gamma is column-CONSTANT (one distinct column), so by U1b (D-2) DIVISIBLE is forced by structure before any test is run -- this unit makes NO indivisibility claim at renewal grain, at any scope; and the matrix is exactly J/8, U3's own committed passer",
+   "waiver": null
+  },
+  {
+   "detail": "census {N/A-SHAPE: 5, S-FAIL-DS: 4, S-PASS: 1}; n = 3 objects arising from the construction: 0 (the n = 3 discriminant cell is EMPTY-BY-SHAPE: the family's shapes are [1, 5, 13, 45, 113] and their padded completions); EXCLUDED-BY-CAP 0",
+   "falsifiers": [
+    "MUT-SCREEN-FLIP",
+    "MUT-MISNORMALIZED"
+   ],
+   "kind": "MUST",
+   "name": "T3-SCREEN",
+   "passed": true,
+   "statement": "THE U3 SCREEN, run on Gamma: the census is the result, and the screen is shown to be able to return each of its verdicts on this unit's own inputs",
+   "waiver": null
+  },
+  {
+   "detail": "MENU: 6 of 10 triples divide by the process's own conditional; the 4 triples with a non-degenerate first cut fail at [34, 112, 12, 12] cells; REC (negative control): 10 of 10 -- the record chain is EXACTLY lumpable",
+   "falsifiers": [
+    "MUT-CK-CORRUPT"
+   ],
+   "kind": "MUST",
+   "name": "T4-CK",
+   "passed": true,
+   "statement": "the [B3] existence question, decided constructively where it can be: the process's own intermediate conditional is the canonical interpolant candidate, and it is tested cut-triple by cut-triple on the carrier and on the negative control",
+   "waiver": null
+  },
+  {
+   "detail": "raw shapes across cuts [1, 5, 13, 45, 113] -- never square away from renewals; eq. 22 rows 4: (1,2,3) PSEUDO-STOCHASTIC; (1,2,4) PSEUDO-STOCHASTIC; (1,3,4) PSEUDO-STOCHASTIC; (2,3,4) PSEUDO-STOCHASTIC",
+   "falsifiers": [
+    "MUT-PADDING-DROP"
+   ],
+   "kind": "MUST",
+   "name": "T4-PADDING",
+   "passed": true,
+   "statement": "U1's never-square-supports caveat and identity-padding CONVENTION are carried and declared: the carrier has no fixed configuration space away from renewals, the padding is a convention, and every eq.-22 count is relative to it",
+   "waiver": null
+  },
+  {
+   "detail": "n = 4 simplex dimension 2, transitive False (no unique invariant law); Gamma supplies (3/7, 1/7, 3/7) at leg 1 and (4/9, 1/9, 4/9) at leg 2 under COUNT, both in the simplex and DIFFERENT (leg-indexed, not n-indexed); and the single point (3/8, 1/4, 3/8) at both legs under OCCUPANCY (n-indexed).  The missing object EXISTS at the occupancy readout and does NOT exist at the count readout the targets select",
+   "falsifiers": [
+    "MUT-CRB-COLLAPSE"
+   ],
+   "kind": "MUST",
+   "name": "T5-CRB",
+   "passed": true,
+   "statement": "CR-B's kernel question, answered and answered READOUT-RELATIVELY: the constructed family DOES induce an interval-positional law -- a point of the very simplex CR-B's symmetry could not select -- and WHETHER that law is indexed by the renewal count n alone depends on the declared readout: one point at both legs under OCCUPANCY, two different points at the same n = 4 under COUNT",
+   "waiver": null
+  },
+  {
+   "detail": "Gamma advances on its own carrier (64 moving columns, 0 stationary); shared carrier with H_a[N]: 0 declared maps -- COMMUTATION EXCLUDED-BY-REFERENT; CR-A's anchored census CENSUS=8192|ADVANCING=2976|ADMISSIBLE=1232 and FORCED=2|FORCED-ADVANCING=0 stand untouched",
+   "falsifiers": [
+    "MUT-CRA-BRIDGE"
+   ],
+   "kind": "MUST",
+   "name": "T6-CRA",
+   "passed": true,
+   "statement": "CR-A's mover question, answered at the four-gate standard: Gamma IS a geometry-update law on ITS OWN carrier and it advances there; but CR-A's census lives on I7's record lattice, this unit's carrier is the MENU quotient of the transport grammar, and NO declared map between the two is pinned anywhere -- so the commutation status with H_a[N] is BLOCKED-AT-REFERENT and the 1,232/0 census is untouched by this unit",
+   "waiver": null
+  },
+  {
+   "detail": "curvature => quantum claims made by this unit: 0; W-CROSS clauses located in the committed U2 note: 3 of 3; the constructed family's curvature is reported as a measured group ([2, 3, 5, 13, 19, 97, 389], rank 7) and nothing is inferred from it about quantumness",
+   "falsifiers": [
+    "MUT-WCROSS-CLAIM"
+   ],
+   "kind": "MUST",
+   "name": "T7-WCROSS",
+   "passed": true,
+   "statement": "U2's W-CROSS binds any curvature => quantum reading: the three loci (curved / refused / non-lumpable) do not coincide at cut grain and no single grammar quantity predicts all three, so a curvature measurement does not license a quantum verdict.  THIS UNIT MAKES NO SUCH CLAIM: the count of curvature => quantum claims in this unit is measured and is zero, and the record-grain form of the crossing is flagged as the open one",
+   "waiver": null
+  },
+  {
+   "detail": "expected {'curvature': 44, 'descent-obstruction': 44}, measured {'curvature': 44, 'descent-obstruction': 44}",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-D74-DICHOTOMY",
+   "passed": true,
+   "statement": "D74's committed 44 + 44 dichotomy at (A,B) d <= 4",
+   "waiver": null
+  },
+  {
+   "detail": "expected {1: 4, 2: 40}, measured {1: 4, 2: 40}",
+   "falsifiers": [
+    "MUT-ANCHOR-DRIFT"
+   ],
+   "kind": "ANCHOR",
+   "name": "A-U1-44-BASEDEPTH",
+   "passed": true,
+   "statement": "U1's committed base-depth census of the 44 descent-obstruction squares",
+   "waiver": null
+  },
+  {
+   "detail": "curvature half: 44 squares, Gamma-holonomy non-unit at 44 of 44; descent-obstruction half: 44 squares, endpoints in DIFFERENT carrier classes at 44 of 44 -- NOT A LOOP UNDER Gamma",
+   "falsifiers": [
+    "MUT-44-MERGE"
+   ],
+   "kind": "MUST",
+   "name": "T9-44",
+   "passed": true,
+   "statement": "the 44 + 44 dichotomy under the constructed family: the curvature half closes in the carrier and Gamma assigns it a non-trivial holonomy; the descent-obstruction half does not close in the carrier at all, so Gamma has NO LOOP there and assigns it nothing -- the constructed law is silent on exactly the half D74 named as having no formalism at transport scope",
+   "waiver": null
+  },
+  {
+   "detail": "10 items: FORCED 4 ['I-CARRIER', 'I-CAP', 'I-RENEWAL', 'I-BLOCKS'], STABILIZER-FIXED 1 ['I-PRUNE'], GENUINELY-FREE 5 ['I-GRAIN', 'I-HORIZON', 'I-CUTS', 'I-READOUT', 'I-PADDING']; MOTIVATED (forced or stabilizer-fixed) = 5 of 10",
+   "falsifiers": [
+    "MUT-INVENTORY-DROP"
+   ],
+   "kind": "MUST",
+   "name": "T8-ATOMS",
+   "passed": true,
+   "statement": "THE MOTIVATION INVENTORY, at the RSQ standard: every construction choice is classed with an exact fiber, the I-READOUT item is present and measured, and the inventory is non-empty on the FORCED side -- a construction with zero motivated choices would say so here",
+   "waiver": null
+  },
+  {
+   "detail": "menu descends on 10 of 113 scrambled classes (carrier: 113 of 113); scrambled squares closing 87 (carrier: 1402), obstruction 665 (carrier: 44), non-unit self-loops 3 (carrier: 44); scrambled group primes [2, 3] rank 2 -- a subgroup of <2,3> by the value-set theorem above, hence NOT the discriminating statistic (seed 20260809, congruential shuffle x <- (1103515245 x + 12345) mod 2^31)",
+   "falsifiers": [
+    "MUT-SCRAMBLE-EQ"
+   ],
+   "kind": "MUST",
+   "name": "C-SCRAMBLE",
+   "passed": true,
+   "statement": "THE SCRAMBLED-QUOTIENT CONTROL: a deterministic congruential shuffle of the carrier's own class sizes destroys descent and moves D74's measured ladder row -- the holonomy gate is therefore measuring the quotient and not the pipeline",
+   "waiver": null
+  },
+  {
+   "detail": "constructed = True; holonomy_consistent = False; motivation_non_empty = True; targets_hit = True; settled False; failed links ['holonomy_consistent']",
+   "falsifiers": [
+    "MUT-SETTLEMENT-LAX"
+   ],
+   "kind": "MUST",
+   "name": "G-SETTLEMENT",
+   "passed": true,
+   "statement": "THE SETTLEMENT CONDITION, evaluated link by link and not summarised: the stake is settled only when all four links hold, and the emitted segment names every link that failed",
+   "waiver": null
+  },
+  {
+   "detail": "lengths 1146 / 1146; equal True",
+   "falsifiers": [
+    "MUT-VERDICT-APPEND",
+    "MUT-VERDICT-SWAP",
+    "MUT-VERDICT-TRUNC",
+    "MUT-VERDICT-DROP",
+    "MUT-VERDICT-RETYPE"
+   ],
+   "kind": "MUST",
+   "name": "G-VERDICT-EQUALITY",
+   "passed": true,
+   "statement": "the complete emitted verdict string is compared for EQUALITY against a string rebuilt segment by segment from the measured values; containment, prefix and substring checks are not verdict gates (#10)",
+   "waiver": null
+  },
+  {
+   "detail": "mutants 33, killed 33; never-falsified without a verified waiver: 0 []; anchors covered by MUT-ANCHOR-DRIFT: 0",
+   "falsifiers": [
+    "MUT-WAIVER-FALSE"
+   ],
+   "kind": "MUST",
+   "name": "G-NEVER-FALSIFIED",
+   "passed": true,
+   "statement": "every gate is either falsified by a declared mutant that reaches it and dies by the gate's own predicate, or carries a verified waiver (an analytically forced clause), or is a byte/path anchor covered by the anchor-drift mutant; no gate is waived that no execution path evaluates",
+   "waiver": null
+  },
+  {
+   "detail": "10 engravings enumerated; the committed RUNBOOK carries 10 v14-origin 2026-08-09 engravings; consumer gates exist True, literal 0, mutant-falsified 13 of 13",
+   "falsifiers": [
+    "MUT-COMPLIANCE-FALSE"
+   ],
+   "kind": "MUST",
+   "name": "G-COMPLIANCE",
+   "passed": true,
+   "statement": "all ten 2026-08-09 v14 engravings are enumerated with a COMPUTED status, and the compliance claim is itself gated",
+   "waiver": null
+  },
+  {
+   "detail": "13 of 13 rendered values present in v14/paper-12-gamma-main.md; missing []",
+   "falsifiers": [
+    "MUT-PAPER-DRIFT"
+   ],
+   "kind": "MUST",
+   "name": "G-PAPER-CLAIMS",
+   "passed": true,
+   "statement": "every headline number of the paper renders from this receipt: the paper's text must contain each rendered value",
+   "waiver": null
+  },
+  {
+   "detail": "complete ledger 87 gates; never-falsified 2; unwaived non-anchor 0 []",
+   "falsifiers": [
+    "MUT-CENSUS-LAX"
+   ],
+   "kind": "MUST",
+   "name": "G-CENSUS-CLOSED",
+   "passed": true,
+   "statement": "the closing census runs over the COMPLETE gate ledger, so that the compliance, paper-claim and never-falsified gates are themselves inside the census they report; only this gate is outside it, and it is falsified by MUT-CENSUS-LAX",
+   "waiver": null
+  }
+ ],
+ "mutants": [
+  {
+   "detail": "the count law moves (3/7, 1/7, 3/7 -> 4/9, 1/9, 4/9) and the occupancy law does not; asserting the reverse fails the gate",
+   "injects": "the two readouts exchanged in the blindness claim",
+   "killed": true,
+   "mutant": "MUT-BLINDNESS-FLIP",
+   "reaches_target": true,
+   "target": "T1-QUARTER-BLINDNESS"
+  },
+  {
+   "detail": "expected digest 0180e21c7128 (one hex off) does not match the committed bytes, so the anchor exits 1",
+   "injects": "corrupts a source's expected sha256-12",
+   "killed": true,
+   "mutant": "MUT-ANCHOR-DRIFT",
+   "reaches_target": true,
+   "target": "A-S-D74N"
+  },
+  {
+   "detail": "the drifted path resolves to None",
+   "injects": "a drifted path that must fail to resolve",
+   "killed": true,
+   "mutant": "MUT-PATH-DRIFT",
+   "reaches_target": true,
+   "target": "G-PATH-VALUE-STABILITY"
+  },
+  {
+   "detail": "the mutated quotation is absent from the committed adjudication register, so the verbatim row fails and the run short-circuits before any byte anchor",
+   "injects": "a one-digit change inside a verbatim-anchored quotation",
+   "killed": true,
+   "mutant": "MUT-QUOTE-DRIFT",
+   "reaches_target": true,
+   "target": "V-TARGETS"
+  },
+  {
+   "detail": "the mutated layer text does not reproduce the pinned digest",
+   "injects": "a re-implementation of the layer's pricing",
+   "killed": true,
+   "mutant": "MUT-LAYER-DRIFT",
+   "reaches_target": true,
+   "target": "G-LAYER-SINGLE-SOURCE"
+  },
+  {
+   "detail": "521 of 521 mis-normalized columns fail to sum to 1, so the constructed family is not column-stochastic and the screen's DS test fires with a non-zero exact deficit",
+   "injects": "the kernel divided by G(h, r-1) where G(h, r) belongs",
+   "killed": true,
+   "mutant": "MUT-MISNORMALIZED",
+   "reaches_target": true,
+   "target": "G-KERNEL-POSITIVE / T3-SCREEN"
+  },
+  {
+   "detail": "the scramble loses descent (10 of 113) and its obstruction is 665 against the carrier's 44, so the D74 ladder anchor fails on it",
+   "injects": "the carrier replaced by a size-matched scramble",
+   "killed": true,
+   "mutant": "MUT-QUOTIENT-SCRAMBLE",
+   "reaches_target": true,
+   "target": "G-KERNEL-DOES-NOT-DESCEND / T2-D74-ANCHOR"
+  },
+  {
+   "detail": "merging the two endpoints of one defective square (ratio 1/2) turns it into a self-loop: the corrupted record quotient has 2476 classes (2,477 required), obstruction 0, non-unit self-loops 1",
+   "injects": "one history moved out of its record class",
+   "killed": true,
+   "mutant": "MUT-REC-CORRUPT",
+   "reaches_target": true,
+   "target": "T2-REC-FLAT"
+  },
+  {
+   "detail": "the injected spectrum generates primes [2, 3, 5] rank 3, so the D74 group anchor fails",
+   "injects": "one extra holonomy value injected into the spectrum",
+   "killed": true,
+   "mutant": "MUT-HOLONOMY-DRIFT",
+   "reaches_target": true,
+   "target": "T2-D74-ANCHOR / T2-HOLONOMY"
+  },
+  {
+   "detail": "the measured leg-1 count law (3/7, 1/7, 3/7) differs from the drifted target (3/8,1/8,3/8), and leg 2 from (4/10,1/10,4/10)",
+   "injects": "the pre-registered targets drifted by one unit in the denominator",
+   "killed": true,
+   "mutant": "MUT-TARGET-DRIFT",
+   "reaches_target": true,
+   "target": "T1-TARGETS / T1-MULTIPLICITY"
+  },
+  {
+   "detail": "under the OCCUPANCY readout leg 1 reads (3/8, 1/4, 3/8) and leg 2 (3/8, 1/4, 3/8); neither equals its target, so the swap flips T1's verdict segment",
+   "injects": "the two readouts exchanged",
+   "killed": true,
+   "mutant": "MUT-READOUT-SWAP",
+   "reaches_target": true,
+   "target": "T1-TARGETS"
+  },
+  {
+   "detail": "the measured leg-1 pattern set is [('d', 'p', 'p', 'r'), ('n', 'p', 'p', 'r'), ('p', 'n', 'p', 'r'), ('p', 'p', 'd', 'r'), ('p', 'p', 'n', 'r')]; injecting (p,d,p,r) makes slot 2 carry a delivery and T1-F8 fails",
+   "injects": "the forbidden pattern (p, d, p, r) injected into the leg census",
+   "killed": true,
+   "mutant": "MUT-LEG-PATTERN",
+   "reaches_target": true,
+   "target": "T1-F8 / T1-3EVENT-LAW"
+  },
+  {
+   "detail": "inverting the predicate reads (p,d,p) comparable 0 of 512 and (p,n,p) comparable 256 of 256, both of which fail the gate",
+   "injects": "the comparability test inverted",
+   "killed": true,
+   "mutant": "MUT-F8-MECHANISM",
+   "reaches_target": true,
+   "target": "T1-F8-MECHANISM"
+  },
+  {
+   "detail": "dropping one leg leaves 863 against the unpruned 864, and the set comparison fails",
+   "injects": "one leg dropped from the pruned enumeration",
+   "killed": true,
+   "mutant": "MUT-PRUNE-LAX",
+   "reaches_target": true,
+   "target": "T1-PRUNE-GATE"
+  },
+  {
+   "detail": "perturbing one entry of J/8 breaks the row sums, so the screen returns S-FAIL-DS instead of S-PASS",
+   "injects": "the positive control perturbed off double stochasticity",
+   "killed": true,
+   "mutant": "MUT-SCREEN-FLIP",
+   "reaches_target": true,
+   "target": "T3-SCREEN"
+  },
+  {
+   "detail": "the carrier genuinely fails CK at [34, 112, 12, 12] cells while REC does not fail anywhere; a gate that asserted both would be false on one side",
+   "injects": "the record quotient's exact lumpability faked",
+   "killed": true,
+   "mutant": "MUT-CK-CORRUPT",
+   "reaches_target": true,
+   "target": "T4-CK"
+  },
+  {
+   "detail": "without the convention the raw shapes [1, 5, 13, 45, 113] are not square and eq. 22 is not even defined",
+   "injects": "the padding convention silently dropped",
+   "killed": true,
+   "mutant": "MUT-PADDING-DROP",
+   "reaches_target": true,
+   "target": "T4-PADDING"
+  },
+  {
+   "detail": "leg 1 and leg 2 give different points (3/7, 1/7, 3/7) vs (4/9, 1/9, 4/9); collapsing them would assert an n-indexed law the measurement refutes",
+   "injects": "the two legs read at one leg index",
+   "killed": true,
+   "mutant": "MUT-CRB-COLLAPSE",
+   "reaches_target": true,
+   "target": "T5-CRB"
+  },
+  {
+   "detail": "no declared map between the MENU quotient and I7's record lattice exists in any pinned source; asserting one would be an unanchored referent",
+   "injects": "a bridge to H_a[N] asserted without a pinned map",
+   "killed": true,
+   "mutant": "MUT-CRA-BRIDGE",
+   "reaches_target": true,
+   "target": "T6-CRA"
+  },
+  {
+   "detail": "the count of curvature => quantum claims is measured and is zero; a single such claim makes the gate false",
+   "injects": "a curvature => quantum sentence added to the unit",
+   "killed": true,
+   "mutant": "MUT-WCROSS-CLAIM",
+   "reaches_target": true,
+   "target": "T7-WCROSS"
+  },
+  {
+   "detail": "all 44 descent-obstruction squares have endpoints in different carrier classes; declaring them closed contradicts the measured dichotomy 44 + 44",
+   "injects": "the descent-obstruction half declared closed",
+   "killed": true,
+   "mutant": "MUT-44-MERGE",
+   "reaches_target": true,
+   "target": "T9-44"
+  },
+  {
+   "detail": "the gate requires the I-READOUT item by name, so its removal fails the gate",
+   "injects": "the I-READOUT item removed from the inventory",
+   "killed": true,
+   "mutant": "MUT-INVENTORY-DROP",
+   "reaches_target": true,
+   "target": "T8-ATOMS"
+  },
+  {
+   "detail": "the carrier returns obstruction 44 and 1402 closing squares exactly, so the control shows no contrast and C-SCRAMBLE fails on it",
+   "injects": "the scramble replaced by the carrier itself",
+   "killed": true,
+   "mutant": "MUT-SCRAMBLE-EQ",
+   "reaches_target": true,
+   "target": "C-SCRAMBLE"
+  },
+  {
+   "detail": "reassigning one point makes 1 MENU class(es) meet two blocks against 0 on the true decomposition, so the purity gate fails",
+   "injects": "one R-SIG point reassigned to a foreign holdings-profile block",
+   "killed": true,
+   "mutant": "MUT-BLOCK-MERGE",
+   "reaches_target": true,
+   "target": "G-BLOCK-DECOMPOSITION"
+  },
+  {
+   "detail": "perturbing one cell of the renewal transfer makes the columns non-constant, and U1b's (D-2) forcing no longer applies",
+   "injects": "one renewal-cut cell perturbed",
+   "killed": true,
+   "mutant": "MUT-RENEWAL-CORRUPT",
+   "reaches_target": true,
+   "target": "T4-RENEWAL-POSITIVE"
+  },
+  {
+   "detail": "the AST scan detects a float constant node, which is exactly what the guard counts",
+   "injects": "a float literal introduced into the source",
+   "killed": true,
+   "mutant": "MUT-FLOAT-LEAK",
+   "reaches_target": true,
+   "target": "G-FLOATGUARD"
+  },
+  {
+   "detail": "the measured links are constructed=True; holonomy_consistent=False; motivation_non_empty=True; targets_hit=True; a three-of-four rule would report SETTLED where the measurement reports PARTIAL",
+   "injects": "the settlement declared on three of the four links",
+   "killed": true,
+   "mutant": "MUT-SETTLEMENT-LAX",
+   "reaches_target": true,
+   "target": "G-SETTLEMENT"
+  },
+  {
+   "detail": "the corrupted string differs from the segment-by-segment rebuild",
+   "injects": "a verdict-string corruption",
+   "killed": true,
+   "mutant": "MUT-VERDICT-APPEND",
+   "reaches_target": true,
+   "target": "G-VERDICT-EQUALITY"
+  },
+  {
+   "detail": "the corrupted string differs from the segment-by-segment rebuild",
+   "injects": "a verdict-string corruption",
+   "killed": true,
+   "mutant": "MUT-VERDICT-SWAP",
+   "reaches_target": true,
+   "target": "G-VERDICT-EQUALITY"
+  },
+  {
+   "detail": "the corrupted string differs from the segment-by-segment rebuild",
+   "injects": "a verdict-string corruption",
+   "killed": true,
+   "mutant": "MUT-VERDICT-TRUNC",
+   "reaches_target": true,
+   "target": "G-VERDICT-EQUALITY"
+  },
+  {
+   "detail": "the corrupted string differs from the segment-by-segment rebuild",
+   "injects": "a verdict-string corruption",
+   "killed": true,
+   "mutant": "MUT-VERDICT-DROP",
+   "reaches_target": true,
+   "target": "G-VERDICT-EQUALITY"
+  },
+  {
+   "detail": "the corrupted string differs from the segment-by-segment rebuild",
+   "injects": "a verdict-string corruption",
+   "killed": true,
+   "mutant": "MUT-VERDICT-RETYPE",
+   "reaches_target": true,
+   "target": "G-VERDICT-EQUALITY"
+  },
+  {
+   "detail": "every gate in the ledger was appended by an executed gate() call, so no gate appears as waived without being evaluated",
+   "injects": "a waiver claimed for a gate no execution path evaluates",
+   "killed": true,
+   "mutant": "MUT-WAIVER-FALSE",
+   "reaches_target": true,
+   "target": "G-NEVER-FALSIFIED"
+  },
+  {
+   "detail": "0 rows carry a null computed status; the gate requires ten rows and the RUNBOOK's own count to agree",
+   "injects": "a compliance row asserted without a computed status",
+   "killed": true,
+   "mutant": "MUT-COMPLIANCE-FALSE",
+   "reaches_target": true,
+   "target": "G-COMPLIANCE"
+  },
+  {
+   "detail": "a value present in the paper but absent from the receipt is detected because the gate tests receipt-rendered values for presence in the paper",
+   "injects": "a headline number changed in the paper only",
+   "killed": true,
+   "mutant": "MUT-PAPER-DRIFT",
+   "reaches_target": true,
+   "target": "G-PAPER-CLAIMS"
+  },
+  {
+   "detail": "the ledger carries 87 gates of which 32 are must-pass; a census over the must-pass subset alone would omit 55 gates and could not close",
+   "injects": "the closing census taken over a subset of the gate ledger",
+   "killed": true,
+   "mutant": "MUT-CENSUS-LAX",
+   "reaches_target": true,
+   "target": "G-CENSUS-CLOSED"
+  }
+ ],
+ "never_falsified": [
+  {
+   "gate": "G-KERNEL-PROPER",
+   "kind": "THEOREM-PASS",
+   "waiver": "ANALYTICALLY FORCED: G(h,r) := sum_e q(e|h) G(h+e,r-1) and k_r divides by it, so the sum is 1 for every input the construction admits (RUNBOOK 14, v13 #208: analytically forced clauses are disclosures)"
+  },
+  {
+   "gate": "G-CUT-ADDITIVITY",
+   "kind": "THEOREM-PASS",
+   "waiver": "ANALYTICALLY FORCED by induction from the properness identity: a chain of probability kernels has cut mass 1 at every cut"
+  }
+ ],
+ "not_executed": [
+  "the (A,B) d <= 6 and d <= 7 arenas (Gamma-prep declares depth 7 infeasible at ~1,696,040 histories); the carrier is the pinned d <= 4 arena and deeper caps are EXCLUDED-BY-CAP",
+  "the three-actor and four-actor pools of D74 (the carrier is the (A,B) arena the pin declares)",
+  "the MATCHED horizon convention (H4 is declared; the alternative is named in the inventory and not run)",
+  "the 13-class primary grain of Gamma-prep (the 113-class control grain IS D74's carrier and is what the pin names)",
+  "an exact feasibility LP for the [B3] existence question at the triples where eq. 22 is silent: the decision order stops at the process's own conditional and the unique algebraic candidate, exactly as U1/U1b declare theirs",
+  "the eq.-22 inversion on the REC quotient (a 2,477-label rational inversion) -- EXCLUDED-BY-CAP",
+  "U3's general polygon obstruction (it needs U3's exact surd sign oracle); it is a necessary condition only and the census's one S-PASS carries a constructed certificate, so the omission moves no verdict here",
+  "any CP-divisibility, Bell, locality or covariance test"
+ ],
+ "paper_claims": {
+  "carrier": "3969",
+  "ck_fail": "4",
+  "dims": "[1, 5, 13, 45, 113]",
+  "gprimes": "[2, 3, 5, 13, 19, 97, 389]",
+  "kprimes": "[2, 3, 5, 13]",
+  "leg1": "3/7, 1/7, 3/7",
+  "leg1_occ": "3/8, 1/4, 3/8",
+  "leg2": "4/9, 1/9, 4/9",
+  "legs1": "3584",
+  "legs2": "73728",
+  "menu_classes": "113",
+  "rec_classes": "2477",
+  "rsig": "5161"
+ },
+ "path_value_anchors": [
+  {
+   "anchored": true,
+   "expected": "CRA-BLOCKED-AT-STATIC-GEOMETRY",
+   "id": "PV-CRA-HEAD",
+   "measured": "CRA-BLOCKED-AT-STATIC-GEOMETRY",
+   "ok": true,
+   "path": "verdict_head"
+  },
+  {
+   "anchored": true,
+   "expected": "CENSUS=8192|ADVANCING=2976|ADMISSIBLE=1232",
+   "id": "PV-CRA-CENSUS",
+   "measured": "CENSUS=8192|ADVANCING=2976|ADMISSIBLE=1232",
+   "ok": true,
+   "path": "verdict_segments/2"
+  },
+  {
+   "anchored": true,
+   "expected": "FORCED=2|FORCED-ADVANCING=0",
+   "id": "PV-CRA-FORCED",
+   "measured": "FORCED=2|FORCED-ADVANCING=0",
+   "ok": true,
+   "path": "verdict_segments/3"
+  },
+  {
+   "anchored": true,
+   "expected": "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW",
+   "id": "PV-CRB-HEAD",
+   "measured": "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW",
+   "ok": true,
+   "path": "verdict_head"
+  },
+  {
+   "anchored": true,
+   "expected": "n - 2",
+   "id": "PV-CRB-DIMLAW",
+   "measured": "n - 2",
+   "ok": true,
+   "path": "per_interval_law/pinned_dim_law"
+  },
+  {
+   "anchored": true,
+   "expected": "2",
+   "id": "PV-CRB-N4",
+   "measured": "2",
+   "ok": true,
+   "path": "per_interval_law/rows/3/pinned_simplex_dim"
+  },
+  {
+   "anchored": true,
+   "expected": "False",
+   "id": "PV-CRB-N4T",
+   "measured": "False",
+   "ok": true,
+   "path": "per_interval_law/rows/3/pinned_transitive"
+  },
+  {
+   "anchored": true,
+   "expected": "R4-DEFECT-PRESENT",
+   "id": "PV-R4-HEAD",
+   "measured": "R4-DEFECT-PRESENT",
+   "ok": true,
+   "path": "verdict/head"
+  },
+  {
+   "anchored": true,
+   "expected": "[4]",
+   "id": "PV-R4-SCALE",
+   "measured": "[4]",
+   "ok": true,
+   "path": "admissible_scales"
+  },
+  {
+   "anchored": false,
+   "id": "PV-GPREP-DELTA",
+   "path": "armB/atoms/0/delta_matched_primary",
+   "value": "<<PATH DOES NOT RESOLVE>>"
+  }
+ ],
+ "path_value_stability": [
+  {
+   "path": "v10/note-d74-transport-holonomy-result.md",
+   "stable": true
+  },
+  {
+   "path": "v11/note-u1b-renewal-class-sweep.md",
+   "stable": true
+  },
+  {
+   "path": "v10/code/d42b1_transport_exact.py",
+   "stable": true
+  }
+ ],
+ "pin": "v14/note-gmain-pin.md",
+ "pin_sha256_12": "8529ddc4a319",
+ "provenance": {
+  "declared_shas": {
+   "cra": "94df5ad",
+   "crb": "fbc3a81",
+   "gprep": "0f5d57eef77f",
+   "r4": "264cb54",
+   "r6bp": "d042ef1",
+   "tree": "f40f5e1"
+  },
+  "erratum_v14_4": "v14 LOG #4 (R0 companion-hash erratum): this unit reads neither v13/paper-rsq-reposed-square.md nor v13/paper-top-topology.md, and no verdict segment descends from R0 rows I2/I3.",
+  "exclusions": [
+   "v11/note-u1c-... (NOT CITABLE)",
+   "v10/note-d56-... (via v10/note-d57-sector-exact-pin.md only; not reached here)",
+   "THE-THEORY-SO-FAR / THE-COMPLETION-DICHOTOMY (index documents)",
+   "v14/LOG.md and /STATUS.md (FORBIDDEN runtime inputs, #46)",
+   "v14/code/r6bp_transport_*.{py,txt,json} and v14/paper-09-*.md (MID-REPAIR; the adjudication register carries what is needed)"
+  ],
+  "sources": [
+   {
+    "id": "S-PIN",
+    "path": "v14/note-gmain-pin.md",
+    "pedigree": "THIS UNIT'S OWN PIN, frozen at v14 ledger #64",
+    "sha": "f40f5e1",
+    "sha256_12": "8529ddc4a319"
+   },
+   {
+    "id": "S-R0",
+    "path": "v14/note-r0-founding-pin.md",
+    "pedigree": "the v14 founding pin (the inheritance floor)",
+    "sha": "f40f5e1",
+    "sha256_12": "e9d2bedff244"
+   },
+   {
+    "id": "S-RUNBOOK",
+    "path": "RUNBOOK.md",
+    "pedigree": "the programme runbook, all addenda",
+    "sha": "f40f5e1",
+    "sha256_12": "3781cbce4e42"
+   },
+   {
+    "id": "S-LAYER",
+    "path": "v10/code/d42b1_transport_exact.py",
+    "pedigree": "THE LAYER: d42b1 TERMINAL (v10 LOG #303)",
+    "sha": "f40f5e1",
+    "sha256_12": "576275d55ecf"
+   },
+   {
+    "id": "S-D74N",
+    "path": "v10/note-d74-transport-holonomy-result.md",
+    "pedigree": "D74 TERMINAL at v10 LOG #495 (the ledger is the authority; the note header says only ROUND-1 REVIEWED AND REPAIRED)",
+    "sha": "f40f5e1",
+    "sha256_12": "0180e21c7127"
+   },
+   {
+    "id": "S-D74C",
+    "path": "v10/code/d74_transport_holonomy_exact.py",
+    "pedigree": "D74 receipt, TERMINAL v10 #495",
+    "sha": "f40f5e1",
+    "sha256_12": "bb852161aced"
+   },
+   {
+    "id": "S-D74O",
+    "path": "v10/data/d74_transport_holonomy_exact.out",
+    "pedigree": "D74 output, TERMINAL v10 #495",
+    "sha": "f40f5e1",
+    "sha256_12": "b5a9d50f9573"
+   },
+   {
+    "id": "S-U1C",
+    "path": "v11/code/u1_indivisibility_census_exact.py",
+    "pedigree": "U1 TERMINAL (v11 LOG #11-#14)",
+    "sha": "f40f5e1",
+    "sha256_12": "63a0808fafbe"
+   },
+   {
+    "id": "S-U1N",
+    "path": "v11/note-u1-indivisibility-census.md",
+    "pedigree": "U1 TERMINAL (v11 LOG #11-#14)",
+    "sha": "f40f5e1",
+    "sha256_12": "13a2430927ad"
+   },
+   {
+    "id": "S-U1BN",
+    "path": "v11/note-u1b-renewal-class-sweep.md",
+    "pedigree": "U1b TERMINAL (hostile round 2026-07-28, v11 #21)",
+    "sha": "f40f5e1",
+    "sha256_12": "47f001fad828"
+   },
+   {
+    "id": "S-U1BO",
+    "path": "v11/code/u1b_output.txt",
+    "pedigree": "U1b TERMINAL output",
+    "sha": "f40f5e1",
+    "sha256_12": "a955b8484465"
+   },
+   {
+    "id": "S-U3N",
+    "path": "v11/note-u3-unistochasticity-screen.md",
+    "pedigree": "U3 GREEN-UNREVIEWED-REPAIRED, STRICT",
+    "sha": "f40f5e1",
+    "sha256_12": "ad48306d41e5"
+   },
+   {
+    "id": "S-U3C",
+    "path": "v11/code/u3_unistochasticity_screen_exact.py",
+    "pedigree": "U3 GREEN-UNREVIEWED-REPAIRED, STRICT",
+    "sha": "f40f5e1",
+    "sha256_12": "ddc08bc2f83b"
+   },
+   {
+    "id": "S-U2N",
+    "path": "v11/note-u2-three-address-weld.md",
+    "pedigree": "U2 (W-CROSS), round-corrected v11 LOG #24",
+    "sha": "f40f5e1",
+    "sha256_12": "26d6690a7b23"
+   },
+   {
+    "id": "S-P0",
+    "path": "v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md",
+    "pedigree": "v11 paper 0, the charter",
+    "sha": "f40f5e1",
+    "sha256_12": "37a428321f46"
+   },
+   {
+    "id": "S-GPP",
+    "path": "v14/paper-11-transport-foundation.md",
+    "pedigree": "GAMMA-PREP DELIVERED-COMMITTED-VERIFICATION-IN-FLIGHT (v14 #63), carried",
+    "sha": "0f5d57eef77f",
+    "sha256_12": "09482eb080cc"
+   },
+   {
+    "id": "S-GPC",
+    "path": "v14/code/gprep_foundation_exact.py",
+    "pedigree": "GAMMA-PREP, same pedigree",
+    "sha": "0f5d57eef77f",
+    "sha256_12": "9a4f0529b840"
+   },
+   {
+    "id": "S-GPO",
+    "path": "v14/code/gprep_foundation_output.txt",
+    "pedigree": "GAMMA-PREP, same pedigree",
+    "sha": "0f5d57eef77f",
+    "sha256_12": "097c08a0229d"
+   },
+   {
+    "id": "S-GPR",
+    "path": "v14/code/gprep_foundation_receipt.json",
+    "pedigree": "GAMMA-PREP, same pedigree",
+    "sha": "0f5d57eef77f",
+    "sha256_12": "dd86ad1a80d7"
+   },
+   {
+    "id": "S-R6BP",
+    "path": "v14/note-r6bp-adjudication.md",
+    "pedigree": "THE R6b-prime ADJUDICATION REGISTER (v14 #62) -- the frozen carrier of the targets; the R6b-prime artifacts themselves are MID-REPAIR and are NOT read by this unit",
+    "sha": "d042ef1",
+    "sha256_12": "f6c11163c77d"
+   },
+   {
+    "id": "S-CRA",
+    "path": "v14/code/cra_accumulation_receipt.json",
+    "pedigree": "CR-A delivered under panel (v14 #41/#44)",
+    "sha": "94df5ad",
+    "sha256_12": "5f68bac811bd"
+   },
+   {
+    "id": "S-CRB",
+    "path": "v14/code/crb_stochastic_receipt.json",
+    "pedigree": "CR-B delivered under panel (v14 #37/#38)",
+    "sha": "fbc3a81",
+    "sha256_12": "5ebeec141303"
+   },
+   {
+    "id": "S-R4",
+    "path": "v14/code/r4_defect_stage_receipt.json",
+    "pedigree": "R4 delivered under panel (v14 #54/#55)",
+    "sha": "264cb54",
+    "sha256_12": "3214f4da3af2"
+   }
+  ]
+ },
+ "python": "3.13.2",
+ "schema": "isp/v14/gmain-geometry-update-law/1",
+ "settlement": {
+  "constructed": true,
+  "holonomy_consistent": false,
+  "motivation_non_empty": true,
+  "targets_hit": true
+ },
+ "settlement_failed_links": [
+  "holonomy_consistent"
+ ],
+ "settlement_settled": false,
+ "source_sha256": "51c3b4cf3f3c",
+ "tests": {
+  "T1_position_law": {
+   "delivery_multiplicity": [
+    "2",
+    "3"
+   ],
+   "f8_mechanism": {
+    "pdp_comparable": 512,
+    "pdp_total": 512,
+    "pnp_comparable": 0,
+    "pnp_total": 256
+   },
+   "f8_slot_kind": {
+    "0": {
+     "d": 1024,
+     "n": 512
+    },
+    "1": {
+     "n": 512
+    },
+    "2": {
+     "d": 1024,
+     "n": 512
+    }
+   },
+   "leg1_count": [
+    "3/7",
+    "1/7",
+    "3/7"
+   ],
+   "leg1_legs": 3584,
+   "leg1_occupancy": [
+    "3/8",
+    "1/4",
+    "3/8"
+   ],
+   "leg1_patterns": {
+    "('d', 'p', 'p', 'r')": 1024,
+    "('n', 'p', 'p', 'r')": 512,
+    "('p', 'n', 'p', 'r')": 512,
+    "('p', 'p', 'd', 'r')": 1024,
+    "('p', 'p', 'n', 'r')": 512
+   },
+   "leg1_raw_continuations": 152672,
+   "leg2_count": [
+    "4/9",
+    "1/9",
+    "4/9"
+   ],
+   "leg2_expansions": 796672,
+   "leg2_legs": 73728,
+   "leg2_occupancy": [
+    "3/8",
+    "1/4",
+    "3/8"
+   ],
+   "leg2_patterns": {
+    "('d', 'p', 'p', 'r')": 24576,
+    "('n', 'p', 'p', 'r')": 8192,
+    "('p', 'n', 'p', 'r')": 8192,
+    "('p', 'p', 'd', 'r')": 24576,
+    "('p', 'p', 'n', 'r')": 8192
+   },
+   "prune_gate": {
+    "bases": 3,
+    "identical": true,
+    "legs": 864,
+    "unpruned_raw": 60492
+   },
+   "r1_bases": 16,
+   "r2_bases": 256,
+   "targets": [
+    [
+     "3/7",
+     "1/7",
+     "3/7"
+    ],
+    [
+     "4/9",
+     "1/9",
+     "4/9"
+    ]
+   ],
+   "verdict": "TARGETS-HIT-AT-THE-COUNT-READOUT-MISSED-AT-THE-OCCUPANCY-READOUT"
+  },
+  "T2_holonomy": {
+   "contains_d74": {
+    "gamma": true,
+    "k": true
+   },
+   "readings": {
+    "MENU": {
+     "Gamma (the constructed family)": {
+      "nonclosing": 144,
+      "nonunit": 416,
+      "primes": [
+       2,
+       3,
+       5,
+       13,
+       19,
+       97,
+       389
+      ],
+      "rank": 7,
+      "spectrum": {
+       "1": 986,
+       "1/3": 8,
+       "1/4": 6,
+       "1/6": 4,
+       "13/8": 12,
+       "15/19": 36,
+       "16/9": 8,
+       "19/15": 12,
+       "194/195": 12,
+       "195/194": 4,
+       "2/3": 74,
+       "3": 24,
+       "3/2": 62,
+       "388/389": 4,
+       "389/388": 12,
+       "389/390": 16,
+       "389/485": 6,
+       "389/582": 6,
+       "390/389": 48,
+       "4": 2,
+       "485/389": 2,
+       "5/6": 12,
+       "582/389": 2,
+       "6": 4,
+       "6/5": 12,
+       "8/13": 4,
+       "9/16": 24
+      },
+      "undefined": 0
+     },
+     "k (the horizon-normalized connection)": {
+      "closes": 1402,
+      "cycle_rank": 134,
+      "cycle_values": {
+       "1/2": 22,
+       "2": 22
+      },
+      "nodes": 16,
+      "obstruction": 44,
+      "primes": [
+       2,
+       3,
+       5,
+       13
+      ],
+      "rank": 3,
+      "selfloop_values": {
+       "1/2": 26,
+       "2": 10,
+       "2/3": 2,
+       "3/2": 6,
+       "64/65": 6,
+       "65/64": 2
+      },
+      "selfloops": 52
+     },
+     "q (D74's connection)": {
+      "closes": 1402,
+      "cycle_rank": 134,
+      "cycle_values": {
+       "1/2": 22,
+       "2": 22
+      },
+      "nodes": 16,
+      "obstruction": 44,
+      "primes": [
+       2,
+       3
+      ],
+      "rank": 2,
+      "selfloop_values": {
+       "1/2": 26,
+       "2": 10,
+       "2/3": 2,
+       "3/2": 6
+      },
+      "selfloops": 44
+     }
+    },
+    "REC": {
+     "Gamma (the constructed family)": {
+      "nonclosing": 1073,
+      "nonunit": 0,
+      "primes": [],
+      "rank": 0,
+      "spectrum": {
+       "1": 473
+      },
+      "undefined": 0
+     },
+     "k (the horizon-normalized connection)": {
+      "closes": 473,
+      "cycle_rank": 145,
+      "cycle_values": {},
+      "nodes": 1726,
+      "obstruction": 0,
+      "primes": [],
+      "rank": 0,
+      "selfloop_values": {},
+      "selfloops": 0
+     },
+     "q (D74's connection)": {
+      "closes": 473,
+      "cycle_rank": 145,
+      "cycle_values": {},
+      "nodes": 1726,
+      "obstruction": 0,
+      "primes": [],
+      "rank": 0,
+      "selfloop_values": {},
+      "selfloops": 0
+     }
+    }
+   },
+   "spectrum_k": {
+    "1": 1450,
+    "1/2": 70,
+    "2": 10,
+    "2/3": 2,
+    "3/2": 6,
+    "64/65": 6,
+    "65/64": 2
+   },
+   "spectrum_q": {
+    "1": 1458,
+    "1/2": 70,
+    "2": 10,
+    "2/3": 2,
+    "3/2": 6
+   },
+   "square_census": {
+    "AB-only": 28,
+    "BA-only": 12,
+    "both-blocked": 142,
+    "closed": 1546
+   },
+   "verdict": "DEVIATE-AT-BOTH"
+  },
+  "T3_screen": {
+   "census": {
+    "N/A-SHAPE": 5,
+    "S-FAIL-DS": 4,
+    "S-PASS": 1
+   },
+   "n3_objects": 0,
+   "rows": [
+    {
+     "datum": "shape 5 x 1; Barandes' criterion is defined for square matrices only and the trivial column completion is Theorem D1's move, SET ASIDE",
+     "name": "Gamma_MENU(1<-0) RAW",
+     "provenance": "the constructed family on the MENU carrier, cuts 0->1",
+     "shape": [
+      5,
+      1
+     ],
+     "verdict": "N/A-SHAPE"
+    },
+    {
+     "datum": "shape 13 x 5; Barandes' criterion is defined for square matrices only and the trivial column completion is Theorem D1's move, SET ASIDE",
+     "name": "Gamma_MENU(2<-1) RAW",
+     "provenance": "the constructed family on the MENU carrier, cuts 1->2",
+     "shape": [
+      13,
+      5
+     ],
+     "verdict": "N/A-SHAPE"
+    },
+    {
+     "datum": "shape 45 x 13; Barandes' criterion is defined for square matrices only and the trivial column completion is Theorem D1's move, SET ASIDE",
+     "name": "Gamma_MENU(3<-2) RAW",
+     "provenance": "the constructed family on the MENU carrier, cuts 2->3",
+     "shape": [
+      45,
+      13
+     ],
+     "verdict": "N/A-SHAPE"
+    },
+    {
+     "datum": "shape 113 x 45; Barandes' criterion is defined for square matrices only and the trivial column completion is Theorem D1's move, SET ASIDE",
+     "name": "Gamma_MENU(4<-3) RAW",
+     "provenance": "the constructed family on the MENU carrier, cuts 3->4",
+     "shape": [
+      113,
+      45
+     ],
+     "verdict": "N/A-SHAPE"
+    },
+    {
+     "datum": "shape 113 x 13; Barandes' criterion is defined for square matrices only and the trivial column completion is Theorem D1's move, SET ASIDE",
+     "name": "Gamma_MENU(4<-2) RAW",
+     "provenance": "the constructed family on the MENU carrier, cuts 2->4",
+     "shape": [
+      113,
+      13
+     ],
+     "verdict": "N/A-SHAPE"
+    },
+    {
+     "datum": "shape 13 x 13; sum|row deficit| = 70/33, sum|col deficit| = 0; PRICE: for every doubly-stochastic D, ||M - D||_1 >= 70/33",
+     "name": "Gamma_MENU(2<-1) IDENTITY-PADDED",
+     "provenance": "the same family under U1's declared identity-padding CONVENTION on the union support (13 labels)",
+     "shape": [
+      13,
+      13
+     ],
+     "verdict": "S-FAIL-DS"
+    },
+    {
+     "datum": "shape 45 x 45; sum|row deficit| = 31083/4279, sum|col deficit| = 0; PRICE: for every doubly-stochastic D, ||M - D||_1 >= 31083/4279",
+     "name": "Gamma_MENU(3<-2) IDENTITY-PADDED",
+     "provenance": "the same family under U1's declared identity-padding CONVENTION on the union support (45 labels)",
+     "shape": [
+      45,
+      45
+     ],
+     "verdict": "S-FAIL-DS"
+    },
+    {
+     "datum": "shape 113 x 113; sum|row deficit| = 209/10, sum|col deficit| = 0; PRICE: for every doubly-stochastic D, ||M - D||_1 >= 209/10",
+     "name": "Gamma_MENU(4<-3) IDENTITY-PADDED",
+     "provenance": "the same family under U1's declared identity-padding CONVENTION on the union support (113 labels)",
+     "shape": [
+      113,
+      113
+     ],
+     "verdict": "S-FAIL-DS"
+    },
+    {
+     "datum": "REAL ORTHOGONAL certificate U = H/sqrt(8) with H the Sylvester Hadamard matrix: H H^T - 8 I has 0 non-zero entries; |U_ij|^2 - M_ij has 0 mismatches (verified in exact integer and rational arithmetic, no surd needed because every |U_ij|^2 is H_ij^2/8)",
+     "name": "Gamma_RENEWAL(r2<-r1) [POSITIVE CONTROL]",
+     "provenance": "the renewal-cut family on the 8 payload labels; U3's own committed passer J/8",
+     "shape": [
+      8,
+      8
+     ],
+     "verdict": "S-PASS"
+    },
+    {
+     "datum": "shape 13 x 13; sum|row deficit| = 5/2, sum|col deficit| = 5/2; PRICE: for every doubly-stochastic D, ||M - D||_1 >= 5/2",
+     "name": "Gamma_MENU(2<-1) MIS-NORMALIZED [NEGATIVE CONTROL]",
+     "provenance": "the identity-padded transfer with every realised column re-weighted by 3/2: the screen must see the broken normalization exactly",
+     "shape": [
+      13,
+      13
+     ],
+     "verdict": "S-FAIL-DS"
+    }
+   ]
+  },
+  "T4_interpolant": {
+   "eq22": [
+    {
+     "colsums_all_one": true,
+     "invertible": true,
+     "labels": 45,
+     "most_negative": [
+      "-1/97",
+      "-1/97",
+      "-1/97",
+      "-1/97"
+     ],
+     "negatives": 36,
+     "reading": "PSEUDO-STOCHASTIC: the unique algebraic interpolant has negative entries, so no stochastic interpolant of eq. 22 form exists -- REFUTED outright, no Farkas vector needed",
+     "triple": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "colsums_all_one": true,
+     "invertible": true,
+     "labels": 113,
+     "most_negative": [
+      "-5/97",
+      "-5/97",
+      "-5/97",
+      "-5/97"
+     ],
+     "negatives": 104,
+     "reading": "PSEUDO-STOCHASTIC: the unique algebraic interpolant has negative entries, so no stochastic interpolant of eq. 22 form exists -- REFUTED outright, no Farkas vector needed",
+     "triple": [
+      1,
+      2,
+      4
+     ]
+    },
+    {
+     "colsums_all_one": true,
+     "invertible": true,
+     "labels": 113,
+     "most_negative": [
+      "-1/18",
+      "-1/18",
+      "-1/18",
+      "-1/18"
+     ],
+     "negatives": 108,
+     "reading": "PSEUDO-STOCHASTIC: the unique algebraic interpolant has negative entries, so no stochastic interpolant of eq. 22 form exists -- REFUTED outright, no Farkas vector needed",
+     "triple": [
+      1,
+      3,
+      4
+     ]
+    },
+    {
+     "colsums_all_one": true,
+     "invertible": true,
+     "labels": 113,
+     "most_negative": [
+      "-1/128",
+      "-1/128",
+      "-1/128",
+      "-1/128"
+     ],
+     "negatives": 164,
+     "reading": "PSEUDO-STOCHASTIC: the unique algebraic interpolant has negative entries, so no stochastic interpolant of eq. 22 form exists -- REFUTED outright, no Farkas vector needed",
+     "triple": [
+      2,
+      3,
+      4
+     ]
+    }
+   ],
+   "menu_ck": [
+    {
+     "cells": 13,
+     "cut": 0,
+     "cut2": 2,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 1
+    },
+    {
+     "cells": 45,
+     "cut": 0,
+     "cut2": 3,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 1
+    },
+    {
+     "cells": 113,
+     "cut": 0,
+     "cut2": 4,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 1
+    },
+    {
+     "cells": 45,
+     "cut": 0,
+     "cut2": 3,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 2
+    },
+    {
+     "cells": 113,
+     "cut": 0,
+     "cut2": 4,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 2
+    },
+    {
+     "cells": 113,
+     "cut": 0,
+     "cut2": 4,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 3
+    },
+    {
+     "cells": 225,
+     "cut": 1,
+     "cut2": 3,
+     "differing": 34,
+     "interpolates": false,
+     "mid": 2
+    },
+    {
+     "cells": 565,
+     "cut": 1,
+     "cut2": 4,
+     "differing": 112,
+     "interpolates": false,
+     "mid": 2
+    },
+    {
+     "cells": 565,
+     "cut": 1,
+     "cut2": 4,
+     "differing": 12,
+     "interpolates": false,
+     "mid": 3
+    },
+    {
+     "cells": 1469,
+     "cut": 2,
+     "cut2": 4,
+     "differing": 12,
+     "interpolates": false,
+     "mid": 3
+    }
+   ],
+   "rec_ck": [
+    {
+     "cells": 51,
+     "cut": 0,
+     "cut2": 2,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 1
+    },
+    {
+     "cells": 324,
+     "cut": 0,
+     "cut2": 3,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 1
+    },
+    {
+     "cells": 2093,
+     "cut": 0,
+     "cut2": 4,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 1
+    },
+    {
+     "cells": 324,
+     "cut": 0,
+     "cut2": 3,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 2
+    },
+    {
+     "cells": 2093,
+     "cut": 0,
+     "cut2": 4,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 2
+    },
+    {
+     "cells": 2093,
+     "cut": 0,
+     "cut2": 4,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 3
+    },
+    {
+     "cells": 392,
+     "cut": 1,
+     "cut2": 3,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 2
+    },
+    {
+     "cells": 2580,
+     "cut": 1,
+     "cut2": 4,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 2
+    },
+    {
+     "cells": 2580,
+     "cut": 1,
+     "cut2": 4,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 3
+    },
+    {
+     "cells": 2557,
+     "cut": 2,
+     "cut2": 4,
+     "differing": 0,
+     "interpolates": true,
+     "mid": 3
+    }
+   ],
+   "renewal_distinct_columns": 1
+  },
+  "T5_crb": {
+   "dim_law": "n - 2",
+   "induced_points_count": [
+    [
+     "3/7",
+     "1/7",
+     "3/7"
+    ],
+    [
+     "4/9",
+     "1/9",
+     "4/9"
+    ]
+   ],
+   "induced_points_occupancy": [
+    [
+     "3/8",
+     "1/4",
+     "3/8"
+    ],
+    [
+     "3/8",
+     "1/4",
+     "3/8"
+    ]
+   ],
+   "missing_tag": "THE-INTERVAL-POSITIONAL-LAW-=-THE-TRANSITION-KERNEL-BETWEEN-AN-INTERVALS-ENDPOINTS-WHOSE-RENEWAL-COUNT-IS-N|R0-CARRIES-THE-RECORD-LAYER-I7-AND-NO-TRANSITION-LAYER",
+   "n4_simplex_dim": 2,
+   "n4_transitive": false,
+   "n_indexed_law_at_count_refuted": true,
+   "n_indexed_law_at_occupancy_holds": true
+  },
+  "T6_cra": {
+   "census": "CENSUS=8192|ADVANCING=2976|ADMISSIBLE=1232",
+   "commutation": "EXCLUDED-BY-REFERENT",
+   "forced": "FORCED=2|FORCED-ADVANCING=0",
+   "gamma_moving_columns": 64,
+   "gamma_self_transitions": 64,
+   "gamma_stationary_columns": 0,
+   "head": "CRA-BLOCKED-AT-STATIC-GEOMETRY",
+   "shared_carrier_maps": 0
+  },
+  "T7_wcross": {
+   "claims_made": 0,
+   "u2_clauses_located": 3
+  },
+  "T8_motivation": {
+   "forced": [
+    "I-CARRIER",
+    "I-CAP",
+    "I-RENEWAL",
+    "I-BLOCKS"
+   ],
+   "genuinely_free": [
+    "I-GRAIN",
+    "I-HORIZON",
+    "I-CUTS",
+    "I-READOUT",
+    "I-PADDING"
+   ],
+   "items": [
+    {
+     "choice": "the quotient Gamma is read on",
+     "cls": "FORCED",
+     "fibre": 1,
+     "id": "I-CARRIER",
+     "measured": "of the two rungs this unit rebuilds (REC and MENU), 1 both descend and are non-flat; D74's committed ladder gives menu-descent only at SEQ, REC and MENU, and flatness at SEQ and REC",
+     "why": "D74's committed ladder has six rungs, and the pin names one: the MENU quotient is the COARSEST DESCENT quotient (menu descends 113/113) and the only rung at which the connection both descends and is non-flat.  The fiber of rungs meeting 'descends AND non-flat' is measured below."
+    },
+    {
+     "choice": "the depth cap of the carrier",
+     "cls": "FORCED",
+     "fibre": 1,
+     "id": "I-CAP",
+     "measured": "carrier 3969 histories, 113 classes; the deeper arena is not built",
+     "why": "the pin declares D74's (A,B) d <= 4 arena; the next depth is a different arena with a different class count (D74's committed 265 at d <= 5) and is EXCLUDED-BY-CAP here."
+    },
+    {
+     "choice": "the menu grain",
+     "cls": "GENUINELY-FREE",
+     "fibre": 2,
+     "id": "I-GRAIN",
+     "measured": "Gamma-prep's committed grain-swap control: the two grains disagree in class count (13 vs 113) and in escape count (68 vs 76)",
+     "why": "Gamma-prep declares two grains -- the 13-class kind x weight primary and the 113-class event x weight control -- and measures that they disagree.  The pin selects the 113-class one because it is D74's carrier; nothing pinned forces it, and the disagreement is an arena datum, not a discovery."
+    },
+    {
+     "choice": "the horizon convention",
+     "cls": "GENUINELY-FREE",
+     "fibre": 2,
+     "id": "I-HORIZON",
+     "measured": "the horizon potential is class-multi-valued on the carrier at [(2, 4)], so the convention is visible in the law",
+     "why": "Gamma-prep prints two conventions (H7 and MATCHED) and declares that naming one silently is the defect its predecessor's round convicted.  This unit declares H4 -- the arena-matched chain that terminates exactly at the cap -- and the alternative is not run here."
+    },
+    {
+     "choice": "the cut family",
+     "cls": "GENUINELY-FREE",
+     "fibre": 2,
+     "id": "I-CUTS",
+     "measured": "depth cuts: 4 of 10 triples do NOT divide by the process's own conditional; renewal cuts: DIVISIBLE is forced by column-constancy",
+     "why": "depth cuts (the primary family) and renewal cuts (the positive control) are both declared by the pin; the corpus supplies no principle selecting one, and the two give DIFFERENT answers to the interpolant question."
+    },
+    {
+     "choice": "the class-level readout",
+     "cls": "GENUINELY-FREE",
+     "fibre": 2,
+     "id": "I-READOUT",
+     "measured": "COUNT gives (3/7, 1/7, 3/7) and (4/9, 1/9, 4/9); OCCUPANCY gives (3/8, 1/4, 3/8) and (3/8, 1/4, 3/8); the targets are hit at COUNT and missed at OCCUPANCY",
+     "why": "the horizon kernel does NOT descend on the carrier (measured: the horizon potential is class-multi-valued), so a class-level law needs a lift.  Two are declared: OCCUPANCY (the process's own law) and COUNT (equiprobable admissible objects).  THE TWO DISAGREE ON THE PRE-REGISTERED TARGETS, and the targets select COUNT.  This is the effectus's I-READOUT item and it is the single most load-bearing free choice in the unit."
+    },
+    {
+     "choice": "the identity padding for eq. 22",
+     "cls": "GENUINELY-FREE",
+     "fibre": 2,
+     "id": "I-PADDING",
+     "measured": "(1,2,3) PSEUDO-STOCHASTIC; (1,2,4) PSEUDO-STOCHASTIC; (1,3,4) PSEUDO-STOCHASTIC; (2,3,4) PSEUDO-STOCHASTIC",
+     "why": "U1's declared convention (hold an unrealised configuration fixed) versus any other completion; every eq.-22 count is relative to it and is quoted with it."
+    },
+    {
+     "choice": "the leg-2 enumeration prune",
+     "cls": "STABILIZER-FIXED",
+     "fibre": 1,
+     "id": "I-PRUNE",
+     "measured": "unpruned agreement on 3 declared bases: 864 legs, identical to the pruned set",
+     "why": "the pattern prune is not a choice about the object: it is gated against an UNPRUNED scan on a declared subsample and reproduces it leg for leg and weight for weight."
+    },
+    {
+     "choice": "the renewal predicate",
+     "cls": "FORCED",
+     "fibre": 1,
+     "id": "I-RENEWAL",
+     "measured": "16 renewal-1 bases, all of pattern (p,p,r); 256 renewal-2 bases",
+     "why": "U1's committed is_R4 -- tag 'r' with two proposers in the ckey -- ported verbatim; it reads no state and this unit re-implements nothing."
+    },
+    {
+     "choice": "the block decomposition",
+     "cls": "FORCED",
+     "fibre": 1,
+     "id": "I-BLOCKS",
+     "measured": "R-SIG 5161, R-MENU 1365, profiles {(1, 1): 1365, (2, 2): 3788, (2, 3): 4, (3, 2): 4}",
+     "why": "Gamma-prep's B2 atoms are the holdings-profile blocks of R-SIG, and the census reproduces exactly; the blocks are read, not chosen."
+    }
+   ],
+   "stabilizer_fixed": [
+    "I-PRUNE"
+   ]
+  },
+  "T9_44": {
+   "curvature": 44,
+   "descent_base_depths": {
+    "1": 4,
+    "2": 40
+   },
+   "descent_kinds": {
+    "('r', 'd')": 44
+   },
+   "descent_obstruction": 44,
+   "gamma_spectrum_on_curvature": {
+    "1/3": 8,
+    "1/4": 2,
+    "13/8": 6,
+    "3": 24,
+    "4": 2,
+    "8/13": 2
+   }
+  }
+ },
+ "totals": {
+  "anchor_failures": 0,
+  "byte_anchors": 23,
+  "gates": 88,
+  "must_pass": 33,
+  "must_pass_failures": 0,
+  "mutants": 36,
+  "mutants_killed": 36,
+  "never_falsified": 2,
+  "never_falsified_unwaived": 0,
+  "path_value": 9,
+  "sources": 23,
+  "verbatim": 13
+ },
+ "unit": "v14 GAMMA-MAIN -- THE GEOMETRY-UPDATE LAW (paper-12)",
+ "verbatim_anchors": [
+  {
+   "chars": 60,
+   "consumer_gate": "T1-TARGETS",
+   "id": "V-TARGETS",
+   "in_paper": true,
+   "in_source": true,
+   "ok": true,
+   "quote_sha256_12": "c8e0fb58dda0",
+   "source": "S-R6BP"
+  },
+  {
+   "chars": 90,
+   "consumer_gate": "T1-F8",
+   "id": "V-F8",
+   "in_paper": true,
+   "in_source": true,
+   "ok": true,
+   "quote_sha256_12": "52579bb95549",
+   "source": "S-R6BP"
+  },
+  {
+   "chars": 83,
+   "consumer_gate": "T2-HOLONOMY",
+   "id": "V-HOLGATE",
+   "in_paper": true,
+   "in_source": true,
+   "ok": true,
+   "quote_sha256_12": "e1c3e8f5df18",
+   "source": "S-PIN"
+  },
+  {
+   "chars": 126,
+   "consumer_gate": "T2-D74-ANCHOR",
+   "id": "V-D74GROUP",
+   "in_paper": true,
+   "in_source": true,
+   "ok": true,
+   "quote_sha256_12": "5ddbbb838d57",
+   "source": "S-D74N"
+  },
+  {
+   "chars": 71,
+   "consumer_gate": "T2-REC-FLAT",
+   "id": "V-RECFLAT",
+   "in_paper": true,
+   "in_source": true,
+   "ok": true,
+   "quote_sha256_12": "d4063f58422b",
+   "source": "S-D74N"
+  },
+  {
+   "chars": 79,
+   "consumer_gate": "T3-SCREEN",
+   "id": "V-U3SHAPE",
+   "in_paper": true,
+   "in_source": true,
+   "ok": true,
+   "quote_sha256_12": "c0e42151e280",
+   "source": "S-U3N"
+  },
+  {
+   "chars": 154,
+   "consumer_gate": "T4-PADDING",
+   "id": "V-NEVERSQ",
+   "in_paper": true,
+   "in_source": true,
+   "ok": true,
+   "quote_sha256_12": "25ab1c340a44",
+   "source": "S-U1N"
+  },
+  {
+   "chars": 185,
+   "consumer_gate": "T4-RENEWAL-POSITIVE",
+   "id": "V-U1BWALL",
+   "in_paper": true,
+   "in_source": true,
+   "ok": true,
+   "quote_sha256_12": "f1c728121e6a",
+   "source": "S-U1BN"
+  },
+  {
+   "chars": 107,
+   "consumer_gate": "T5-CRB",
+   "id": "V-CRBMISS",
+   "in_paper": true,
+   "in_source": true,
+   "ok": true,
+   "quote_sha256_12": "d9a80fb6ca88",
+   "source": "S-CRB"
+  },
+  {
+   "chars": 61,
+   "consumer_gate": "T6-CRA",
+   "id": "V-CRAMOVER",
+   "in_paper": true,
+   "in_source": true,
+   "ok": true,
+   "quote_sha256_12": "89c1d3b6a9e3",
+   "source": "S-CRA"
+  },
+  {
+   "chars": 54,
+   "consumer_gate": "T7-WCROSS",
+   "id": "V-WCROSS",
+   "in_paper": true,
+   "in_source": true,
+   "ok": true,
+   "quote_sha256_12": "c88440ee1d4b",
+   "source": "S-U2N"
+  },
+  {
+   "chars": 169,
+   "consumer_gate": "G-SETTLEMENT",
+   "id": "V-SETTLE",
+   "in_paper": true,
+   "in_source": true,
+   "ok": true,
+   "quote_sha256_12": "ed4aab1df984",
+   "source": "S-PIN"
+  },
+  {
+   "chars": 101,
+   "consumer_gate": "T8-ATOMS",
+   "id": "V-LADDER",
+   "in_paper": true,
+   "in_source": true,
+   "ok": true,
+   "quote_sha256_12": "156ff461724e",
+   "source": "S-GPP"
+  }
+ ],
+ "verdict": "GMAIN-CONSTRUCTED-<CARRIER=D74-MENU-113-CLASSES-AT-(A,B)-D<=4|CUTS=5|DIMS=1x5x13x45x113|PAIRS=10|COLUMN-STOCHASTIC-EXACT|PROVENANCE=23-SHA-PINNED-ARTIFACTS -- REQUIREMENTS-TARGETS=TARGETS-HIT-AT-THE-COUNT-READOUT-MISSED-AT-THE-OCCUPANCY-READOUT|HOLONOMY=DEVIATE-AT-BOTH:D74-{2,3}-RANK-2-REPRODUCED,K-PRIMES-{2,3,5,13}-RANK-3,GAMMA-PRIMES-{2,3,5,13,19,97,389}-RANK-7,REC-FLAT-AT-ALL-THREE-READINGS|SCREEN=N/A-SHAPE:5-S-FAIL-DS:4-S-PASS:1|KERNEL=INDUCED;N-INDEXED-AT-OCCUPANCY;LEG-INDEXED-AT-COUNT|MOVER=BLOCKED-AT-REFERENT-NO-SHARED-CARRIER-WITH-H_a[N]|INTERPOLANT=NON-MARKOV-AT-4-OF-10-DEPTH-TRIPLES-REC-EXACTLY-LUMPABLE|44+44=44-CLOSE-44-NOT-A-LOOP -- MOTIVATION-FORCED-4|STABILIZER-FIXED-1|GENUINELY-FREE-5|I-READOUT=GENUINELY-FREE-FIBER-2-AND-TARGET-SELECTING|NON-EMPTY-True -- SCOPE-CAP=(A,B)-D<=4-CARRIER-AND-D<=5-ANCHOR|GRAIN=113-CLASS-EVENTxWEIGHT|HORIZON=H4|READOUT=OCCUPANCY-PRIMARY-COUNT-DECLARED|PADDING=U1-IDENTITY-CONVENTION|LEGS=RENEWAL-CUT-ENSEMBLES-AT-DEPTHS-3..10|DELIVERY-FREE-SHADOW=CONTROL-NEVER-TARGET|NO-CURVATURE=>QUANTUM-CLAIM|NO-INDIVISIBILITY-CLAIM-AT-RENEWAL-GRAIN -- SETTLEMENT=PARTIAL-FAILED-LINK-HOLONOMY-CONSISTENT>",
+ "verdict_head": "GMAIN-CONSTRUCTED",
+ "verdict_segments": [
+  "CARRIER=D74-MENU-113-CLASSES-AT-(A,B)-D<=4|CUTS=5|DIMS=1x5x13x45x113|PAIRS=10|COLUMN-STOCHASTIC-EXACT|PROVENANCE=23-SHA-PINNED-ARTIFACTS",
+  "REQUIREMENTS-TARGETS=TARGETS-HIT-AT-THE-COUNT-READOUT-MISSED-AT-THE-OCCUPANCY-READOUT|HOLONOMY=DEVIATE-AT-BOTH:D74-{2,3}-RANK-2-REPRODUCED,K-PRIMES-{2,3,5,13}-RANK-3,GAMMA-PRIMES-{2,3,5,13,19,97,389}-RANK-7,REC-FLAT-AT-ALL-THREE-READINGS|SCREEN=N/A-SHAPE:5-S-FAIL-DS:4-S-PASS:1|KERNEL=INDUCED;N-INDEXED-AT-OCCUPANCY;LEG-INDEXED-AT-COUNT|MOVER=BLOCKED-AT-REFERENT-NO-SHARED-CARRIER-WITH-H_a[N]|INTERPOLANT=NON-MARKOV-AT-4-OF-10-DEPTH-TRIPLES-REC-EXACTLY-LUMPABLE|44+44=44-CLOSE-44-NOT-A-LOOP",
+  "MOTIVATION-FORCED-4|STABILIZER-FIXED-1|GENUINELY-FREE-5|I-READOUT=GENUINELY-FREE-FIBER-2-AND-TARGET-SELECTING|NON-EMPTY-True",
+  "SCOPE-CAP=(A,B)-D<=4-CARRIER-AND-D<=5-ANCHOR|GRAIN=113-CLASS-EVENTxWEIGHT|HORIZON=H4|READOUT=OCCUPANCY-PRIMARY-COUNT-DECLARED|PADDING=U1-IDENTITY-CONVENTION|LEGS=RENEWAL-CUT-ENSEMBLES-AT-DEPTHS-3..10|DELIVERY-FREE-SHADOW=CONTROL-NEVER-TARGET|NO-CURVATURE=>QUANTUM-CLAIM|NO-INDIVISIBILITY-CLAIM-AT-RENEWAL-GRAIN",
+  "SETTLEMENT=PARTIAL-FAILED-LINK-HOLONOMY-CONSISTENT"
+ ]
+}

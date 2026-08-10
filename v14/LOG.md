@@ -2048,3 +2048,49 @@ Worker flag: the serial selftest (~4.6h at load 38) clean at
 15/15 at hand-off — the equivalent full-table verification
 complete via the independent harness; adjudicator
 verification next w/ the CR-D precedent available.
+
+## 2026-08-09 — Γ-MAIN DELIVERED, COMMITTED AS-IS (v14 LEDGER #72)
+paper-12-gamma-main.md (d85a629a9378) + gmain_exact.py
+(51c3b4cf3f3c) + _output.txt (b2b45be500b7) + _receipt.json
+(974f36b1251a) committed exactly as delivered.  **THE
+SETTLEMENT EVALUATION: PARTIAL — constructed TRUE · targets
+TRUE · HOLONOMY FALSE · motivation TRUE.  The QFT-needs-
+gravity stake is NOT SETTLED; the failed link named: the
+constructed family's holonomy STRICTLY CONTAINS ⟨2,3⟩ rather
+than equalling it.**  THE CONSTRUCTION: Γ(cut′←cut) on D74's
+MENU quotient — 113 classes, dims [1,5,13,45,113], 10 cut
+pairs, exact column-stochastic, 23 sha-pinned sources; a
+design-forcing fact measured: THE HORIZON POTENTIAL DOES NOT
+DESCEND on the carrier (multi-valued on 4/13 classes) ⟹ a
+readout had to be DECLARED (on REC it descends everywhere).
+THE NINE TESTS: (1) **TARGETS HIT AT THE COUNT READOUT —
+both laws EXACT; F8 DERIVED not imported** (deliveries by
+slot [1024,0,1024]); MISSED at the OCCUPANCY readout
+((3/8,1/4,3/8) both legs — the quarter law is
+multiplicity-blind); **I-READOUT (fiber 2) is what selects
+the targets — readout-relativity at the summit**.  (2)
+**HOLONOMY DEVIATE-AT-BOTH: q reproduces D74's ⟨2,3⟩ EXACTLY;
+k adds primes {5,13} (the 8 self-loops the non-descending
+potential forces); Γ reaches rank 7 w/ primes
+{2,3,5,13,19,97,389} — ENLARGEMENT, not replacement; REC
+FLAT at all three readings.**  (3) U3: one S-PASS = the
+known degenerate (ARMC2, no quantum content); shape/DS kill
+the rest.  (4) **the eq-22 interpolant REFUTED OUTRIGHT
+(negative entries at all four invertible triples) — the
+class chain NON-MARKOV at 4/10 triples: the indivisibility
+signature at the quotient**; REC exactly lumpable.  (5)
+CR-B answered READOUT-RELATIVELY (occupancy = the n-indexed
+kernel — CR-B's missing object; count = the leg-indexed
+targets).  (6) CR-A BLOCKED-AT-REFERENT (no pinned map
+between the quotient and I7's lattice — the two-arena gap).
+(7) W-CROSS honored (0 curvature⇒quantum claims).  (8)
+MOTIVATION NON-EMPTY (4 forced / 1 stabilizer / 5 free).
+(9) the 44 squares: the curvature half closes w/ non-unit
+holonomy at ALL 44; the descent half is not a loop for Γ.
+Instrument: 88 gates 0 failures, 36/36 mutants, never-
+falsified 2 (theorem-pass, verified), ten-of-ten engravings
+COMPUTED, byte-identical ×2.  **THE SUCCESSOR TENSION,
+measured into view: MENU has the holonomy but not the
+descent; REC has the descent but no holonomy — the proper
+carrier lives between them.**  Adjudicator verification
+next; panel to follow.
