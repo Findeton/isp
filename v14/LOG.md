@@ -3869,3 +3869,21 @@ git-less mirror byte-identical; off-tree LOUD FAIL by design
 exit 2.  Artifacts committed as-is: paper dbc300e16342, code
 d3aac4c5f413, output 8591be75413f, receipt a0e2b3342f54.
 Battery next; TERMINAL on completion (the eleventh).
+
+## 2026-08-10 — U4 / PAPER-14 TERMINAL (v14 LEDGER #133)
+
+Battery 4/4: plain BYTE-IDENTICAL; unknown flag exit 2;
+--selftest exit 0 + wrote-nothing + [PASS] G-SELFTEST;
+**MUT-WALL-L1-WRAPPED dies at G-WALL-L1** — the repaired
+prohibition gate killing exactly the wrapped injection that
+defeated it, at my own hands; artifacts unchanged.  **U4 IS
+TERMINAL — the eleventh terminal (papers
+01/02/03/04/09/10/11/12/13/14/15).**  The founding paper's §7
+experiment, run for the first time twenty-six ledger days after
+it was posed, stands as: the division events DO form a crystal —
+and the crystal is the constructor's signature, honestly
+qualified in the head; the geometry concentrates at division
+events; the diagonal mystery is one cause; the quantum question
+is unposable where the records are forced.  STATUS row written
+(same commit, §13).  U4b (paper-17) carries the emergence
+question forward, in construction now.
