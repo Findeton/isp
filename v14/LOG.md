@@ -2808,3 +2808,52 @@ many-object-acyclic).  Reviewer honesty note on the record: its
 own first-pass 268/470 (repr()-keyed, seed-dependent) caught
 and corrected to 265/462 before reaching a finding.  Two seats
 pending (effectus, instrument).
+
+## 2026-08-10 — WELD-2 EFFECTUS FROZEN (2 OF 3) (v14 LEDGER #97)
+
+review-w2-effectus.md frozen (da37c5b9a11f, 929 lines).  Grade
+AWF; 110 recomputations; off-tree BYTE-IDENTICAL; zero false
+COMPUTED numbers.  **THE VERDICT EMPTY SURVIVES EVERY ATTACK
+including a constructed counter-candidate — but the head's own
+mechanism claim is READING-DEPENDENT at 20 of 60 cells
+(MAJOR-1, decisive):** the pin asks for "a map"; the code
+silently demands BIJECTION + induced-subgraph ISOMORPHISM
+(embedding).  Under the pin's literal reading a QUOTIENT map is
+admissible and acyclicity is no obstruction to one — measured:
+the CONG-185 class graph ADMITS a Z₃ grading, explicit witness
+φ: 185→9 built (best 18/27 cells count-positive over 40
+solutions) — that cell is decided by COUNT POSITIVITY, not
+cycles.  40/60 cells reading-robust; the three pre-registered
+free items were never reached (an undeclared gate fired first),
+so §6's "structural, not accumulated freedom" is the over-read.
+BONUS REPAIR SUPPLIED: under the quotient reading MENU-113 dies
+EXACTLY (arc-consistency wipeout on its 45 self-loops) — a
+SECOND BLADE valid under both readings.  **MAJOR-2: the FOUND
+branch never demonstrated at the verdict's own target** (both
+FOUND controls run at TGT_CRY, 2 links; the census judges at
+TGT_I7, 3 links; arena 288 vs 15,552 = 1/54; and the pin-named
+generator — the record's own cover structure — returns
+STRUCT-DEAD at both targets, unreported).  **MAJOR-3: the
+carrier axis inert** (30/30 cells byte-identical across labels
+— independent convergence with the operator).  **K4 SHARPENED,
+free:** pushing the crystal counts through HA §3.2's readout
+gives q₁₂ = −k, hence **det = 0 at every site of every crystal
+— NO committed crystal induces an admissible I7 record at all**
+(a third independent STRUCT-DEAD route); the R4 resonance ruled
+to one licensed sentence: "the declared link that forces R4's
+connective is the one link no committed grammar record writes."
+Other: the abstract's "strictly positive across the whole
+family" is FALSE (D60-GRID has axis counts 0) — **the
+programme's 6th false paper claim, prose species**; §8.2's
+waiver-census citation false; the receipt's subsets_excluded
+carries powers where the paper correctly prints binomials;
+SMUGGLED=0 unreachable by construction (a two-way violation for
+that species); **§9's ≥9-actor successor UNDER-POSED (arity
+necessary, not sufficient; richer families drive incidence
+toward K₉, away from Cayley graphs; THE WELL-POSED FORM IS
+U4)**.  Survives untouched: the type gate (36/60,
+reading-robust), the count-semantics ingredient (972/972,
+1536/1536), CONG-185 six-of-six, the disclosure culture
+(selftest re-verified 18/18, 0 vacuous, wrote nothing).
+Successor register written for all four consumers.  Instrument
+seat pending → adjudication.
