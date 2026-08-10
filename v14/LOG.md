@@ -2993,3 +2993,35 @@ fourth-form ARGUED FIRST — retracted wording flagged; BHS;
 KR height control; rook's-graph q₁₂ ≡ 0 inherited) recorded.
 Convergent with the effectus: **U4 is the well-posed Route-A
 continuation.**  Zero writes confirmed.
+
+## 2026-08-10 — WELD-2 JOINT ADJUDICATION (v14 LEDGER #102)
+
+Three AWF; ~404 seat recomputations, zero disagreements with
+delivered numbers; grade ACCEPT-WITH-FIXES.  **EMPTY STANDS —
+attacked by all three seats incl. a constructed counter-candidate
+and a charitable-reconstruction sweep — and the ACCOUNT is
+corrected four ways:** (1) the carrier axis was INERT (30
+counted twice; the head says what ran); (2) **the mechanism is
+READING-STRATIFIED** — EMBEDDING: the scissors with its blade
+upgraded to THE GRADING THEOREM (histories grow by exactly 1 ⟹
+graded ⟹ acyclic, no computation; survives d≤5 at 265/462);
+QUOTIENT (admissible under the pin's words): MENU dies EXACTLY
+by self-loop wipeout, CONG by count-positivity (witness 18/27
+max) — 40/60 cells reading-robust; (3) the FOUND control ran at
+the wrong target (TGT_CRY vs TGT_I7; arena 1/54) — re-run or
+re-scoped; (4) ADOPTED: det=0 at every crystal site (no
+committed crystal induces an admissible I7 record at all); the
+licensed R4-resonance sentence; the scout's S1 REGISTERED (the
+link-count mismatch 4-vs-3; the diagonal absent from the
+crystals, not the grammar).  Instrument: born-compliant on the
+contract, not the era — ten repair orders R-W2-1..10 issued
+(the derived head; the quotient-reading census; read_pinned
+everywhere; per-cell + carrier-agreement gates; the integrity
+close; verify-paper; the 6th-false-claim prose block; the
+single-threaded rewrite with the ruled successor register).
+**THE SUCCESSOR RULING: the ≥9-actor unit NOT launched as posed
+(pre-determined; registered as S1 instead); U4 IS the next
+Route-A unit** — its pin inherits the scout's table, the
+declared-data obligations, and the four walls.  No new
+engravings; three recurrences logged.  Repair worker
+dispatched.
