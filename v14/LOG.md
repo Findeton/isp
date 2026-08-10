@@ -4078,3 +4078,34 @@ panel (#139) carries the era audit and the four decisive
 questions (the set-equality certification's soundness; the CR-D
 match's grade; the exclusion theorem's licensed reading; the
 two-verdicts composition).
+
+## 2026-08-10 — Γ-ITERATION OPERATOR FROZEN — THE PANEL COMPLETE 3× AWF (v14 LEDGER #141)
+
+review-giter-operator.md frozen (572 lines).  Grade AWF; 123
+recomputations, 0 disagreements; byte-identity at the reviewer's
+own hands (env -i, PATH stripped of git, seed 12345 →
+58ddd86a52f2 / 8d28b5f2f807 exactly).  **MAJOR-1 (converging
+with and SHARPENING the effectus): G-CARRIER-RELATIVE's
+statement is strictly stronger than its predicate** — the
+CK-failing cells at MENU are carried by FIVE source classes,
+not four; **the MINIMAL repair (split only the 4 offending
+classes → 121 classes, leaving 36 multi-target edges STANDING)
+already gives CK 0/10 — single-valuedness is SUFFICIENT, NOT
+NECESSARY**; the causal claim true-but-ungated, the stated
+REASON refuted as explanation; the ~15-line missing gate
+supplied.  **MAJOR-2: the TARGETS segment is CARRIER-FREE** —
+the law values are not a fact about CONG-185 (the unit's own
+token scan proves it; the legs live at depths 3–10 outside the
+cap); one-token repair.  **K2 RULED: the step-normaliser proof
+is LAW-NATIVE** (G(h,1)=M(h) by the terminal condition, true
+under ANY partition; verified at all 3969 histories) —
+"re-proved on this carrier" is wrong attribution.  MINORs: the
+one feasible [B3] cell NAMED — (1,2,4); G-VERIFY-PAPER is
+membership-only (cannot catch a numeral transposition, proof
+given) while the abstract oversells it; descent-at-r=0 vacuous;
+the prune gate at 3-of-256 bases (the reviewer ran 32, holds).
+EVERYTHING ELSE REPRODUCED: the carrier and its six properties;
+both holonomies incl. the enlargement's disappearance; the 772
+row problems both directions; the coupled 4/4 witness VERIFIED
+a genuine stochastic interpolant; the full δ*/block battery;
+0-vs-1900; d≤5.  Joint adjudication next.
