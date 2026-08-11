@@ -5007,3 +5007,53 @@ re-derived AS A PROOF, and 1040 = 136×2³ − 6×2³ tying the
 window to the twelve-multiset result.**  Grade AWF; FOUND NOT
 WEAKENED; M2 and the sweep-binding insisted on before
 terminal.  Joint adjudication next.
+
+## 2026-08-10 — PAPER-19 JOINT ADJUDICATION: FOUND STANDS (v14 LEDGER #168)
+
+Three AWF; ~1,016 seat recomputations (190+91+735); ZERO false
+computed numbers; ONE shared prose kill (the 11th register
+claim).  Grade ACCEPT-WITH-FIXES.  **THE SETTLEMENT:
+WELD3-FOUND STANDS, THREE-SEAT CONVERGENT, STRENGTHENED:** (1)
+stratum-wide BY THEOREM (any I7-STRICT triple forces the same
+27-pair relation — all 72 arrangements, all 12 multisets,
+window-independent; the operator's proof adopted); (2) FOUND
+survives the STRICTEST reading (site-carrier-fixed — the free
+site assignment unnecessary for the primary result); (3) **the
+meaning ruled at reading (a): the weld is to I7's record SPACE
+— the decisive precedent being weld-2's own FOUND witness,
+itself admissible-but-undeclared (its committed receipt read:
+(2,2,2), in the box, not one of the eleven)** — qualification 2
+DISSOLVES; (4) 1296 = |Aut(K₃,₃,₃)| adopted (the map count is
+symmetry); the sitewise posdef⟺I7-STRICT identity adopted (the
+rigidity a corollary); the #91 anomaly CLOSED (the instrument's
+hostile re-run byte-identical; §9 carries the settlement).
+**ROUTE B: MOOTED at this target and carrier** (adopted from
+the effectus; it survives only for the eleven declared records,
+arity-dead carriers, and the committed constructions).  **The
+shared kill adopted with its stronger restatement: the
+condition is COVERAGE, not count** — at R=2 the budget binds;
+at R=3 the budget stops binding and A PERFECT MATCHING becomes
+the constraint (46,656 pay 27; 72 weld; 1-in-648); the "18"
+typed literal dies.  REPAIR ORDERS (R-W3-1..8): the head
+comparator DERIVES all segments (the weld_string sharing dies;
+the WELD3-EMPTY forgery a dead mutant); **paper_coverage scans
+fenced blocks (M2 — the verdict-string numerals; ENGRAVED as a
+#20 addendum)**; the sweep execution BOUND (a
+sweep-never-ran delivery impossible); the three wall gates
+given real predicates; the coverage/count prose restated
+(three strings); the off-tree settlement into §9; the 7 minors
+incl. the directed comparator's 0-at-all-nine printed; the
+in-tree-run housekeeping flag logged (byte-identical, no harm;
+scratch discipline reiterated).  **SUCCESSOR RULINGS: THE
+COUPLING-UNIT PIN is CLEARED and SCOPED** — the arena = the
+welded (1,1,1) record with the forced dictionary; **the
+effectus's scoping binds: the coupling unit reaches a RECORD,
+not yet a law over records (the welded record is UNSPLITTABLE —
+split fiber 0 at all 27 intervals; papers 04/06/09's laws are
+empty on it)**; inherit the 72-stratum + the map + the R=2/R=3
+price law; registered: the R=4 G-FLAT row (a DECLARED record
+reachable at 276 quadruples — one unit away) and the
+non-markdown #125 evasions.  ONE ENGRAVING (#20 addendum:
+fenced blocks).  Repair worker dispatched; TERMINAL on its
+landing + battery — and THE COUPLING-UNIT PIN follows
+immediately.
