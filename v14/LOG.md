@@ -5714,3 +5714,54 @@ at a cheaper exit horizon (margin 2 diagonal / 5 axis)**;
 stationary-measure + history-dependent-closure follow-ons.
 Repair worker launched (Opus).  After repair + battery:
 paper-20 TERMINAL (the sixteenth).
+
+## 2026-08-11 — PAPER-23 EFFECTUS REVIEW LANDED (K2): AWF — THE VERDICT SURVIVES; THE TITLE SENTENCE UNLICENSED; R5 GETS A STRENGTHENING NOTE, NOT AN ERRATUM (v14 LEDGER #188)
+
+v14/review-r5m-effectus.md (eb14a5a64374) frozen.  **Grade
+AWF; 55 recomputations (own Q(ζ₈), own Burnside; both 85/86-
+digit orbit integers to the digit), NO delivered number moves;
+MEASURE-DECLARATION-REQUIRED survives every attack, two majors
+STRENGTHEN it.**  Rulings: (1) census PRINCIPLED (the two
+verdict-threatening extras are on the list) but under-argued —
+the unit owns a criterion it never states: **a canonical
+measure exists exactly where something acts transitively** (all
+8 rows instances; a 9th decided by the same test); maxent
+answered by UNGATED PROSE; **the stationary-measure candidate
+ABSENT — §1's "forced shut" is census-relative, not
+arena-relative**; (2) fiber EXACTLY licensed (simplex dims
+119/207 verified; both readings genuinely carried; head omits
+the word "invariant"); (3) **R5: NO erratum, NO number
+annotation — ONE NOTE recording a STRENGTHENING** (the uniform
+window IS the chart-fixed locus: a declaration upgraded to a
+derivation, chart-relative) + the corpus-wide caution "no count
+becomes a probability without a declared measure" — R5 swept
+for probability-words: it NEVER made that reading; (4) **the
+title sentence BORN-WRONG-SPACE is NOT LICENSED AS STATED — B
+is a KERNEL (a law), identity off the domino, not a
+distribution over 16 states; pressed for a measure it fixes
+NONE (stationary simplex dim 15 diagonal / 14 others,
+measured); the asymmetry is LAW-vs-NOTHING, not
+measure-vs-nothing** [orchestrator: my #181 in-ledger gloss
+"the substrate derives a measure over STATES" is hereby
+CORRECTED — the substrate hands a LAW over states, no measure
+anywhere]; (5) **the monomial⇔no-quantum biconditional is
+FALSE (128 interfering coins are defect-free too)** — my #181
+resonance note OVERSTATED; the licensed cross-unit sentence is
+same-species-different-modality (forced vs selected), citing
+only K1/K2's repaired instrument; (6) weld-2 silence
+L-PARITY-RELATIVE (bipartite iff L even; at odd L the blade
+FIRES) — live input to R6; (7) chart-group fibre 2 WRONG and
+it matters (translations-only: 2 link orbits, fixed locus
+409600 — the positive result is carried by the direction
+relabelling); a 4th verdict-determining row qualifies;
+prose slips (pin's-plus-five; four-classes; 27-of-56 absent);
+seal manifest non-total by one typed-exempt key (→K3); (8)
+successor: the stationary-measure candidate is a NEW UNIT's
+and currently UNOWNABLE (R4c is state-space-scoped; G-FLAT a
+record; Γ a law on histories); what it lacks is named:
+IRREDUCIBILITY, which no symmetry can supply.  FLAGGED:
+WIDEST-DISAGREEMENT tie-break UNDECLARED (two sets attain
+27/130; alphabetical order picks — #91); **the admissible mass
+of every headline set is exactly [0,1] at both readings**
+(endpoints by Gibbs functionals) — the declaration-dependence
+wider than reported.  → adjudication when K1+K3 land.
