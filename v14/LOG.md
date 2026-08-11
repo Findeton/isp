@@ -5174,3 +5174,35 @@ follow-on registered); the inheritances cited; the full 21
 engravings at construction.  Worker launched (opus).  **If
 G-REQUIREMENT passes its panel, "no QFT without gravity" is a
 measured structural theorem — the programme's summit claim.**
+
+## 2026-08-11 — FULL-SPEED WAVE: THREE PINS FROZEN, THE SUMMIT RESUMED, CR-A PANEL LAUNCHED (v14 LEDGER #174)
+
+Per the user's full-speed order.  **THREE PINS FROZEN AND
+LAUNCHED IN PARALLEL:** paper-21 (note-r4dec-pin.md — the R=4
+arena: the 276 unit-grade; THE DECLARED-RECORD WELD at G-FLAT,
+retiring the undeclared-target residue if FOUND; THE SPLITTABLE
+QUESTION — the law-over-records door; the R=4 price-law row);
+paper-22 (note-r4c-pin.md — two excitations on the R4 terminal
+stage; THE EXCHANGE CENSUS decisive — statistics FORCED or
+ADMITTED, measured never chosen; the two-body defect census;
+motion composition; NO transport number inherited); paper-23
+(note-r5m-pin.md — the configuration measure, R5's opening
+obligation: DERIVE OR DECLARE at the RSQ standard — the
+history-measure pushforward, the uniform null, the
+invariance-characterised candidate; Wilson EXPECTATIONS only if
+derived; the confinement word stays behind its gate).  **THE
+COUPLING WORKER (paper-20) RESUMED** (its horizon-5 discovery —
+the coupled record exits admissibility at horizon 5 with exact
+positive probability, not at ≤4 — preserved in the resume order
+as first-class material with the declare-or-handle fiber).
+**THE CR-A PANEL LAUNCHED** (paper-05-accumulation, the panel
+debt's first drain): protocol in-entry — K1 operator: rebuild
+the CRA-BLOCKED-AT-STATIC-GEOMETRY verdict and its census; K2
+effectus: the verdict's meaning POST-Γ (CR-A named the gap the
+Γ campaign then filled and the welds closed — a
+scope-annotation question, the licensed historical sentence;
+NOT a rewrite); K3 instrument: the era audit at BIRTH-DATE
+FAIRNESS (a pre-seal-era unit; the U4b precedent) — reviewers →
+v14/review-cra-{operator,effectus,instrument}.md.  In flight
+(7): the coupling worker + three constructions + three CR-A
+reviewers.
