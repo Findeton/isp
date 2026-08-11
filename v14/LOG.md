@@ -6915,3 +6915,51 @@ row renamed (11/5/8 preserved); **the width=interior-radius
 join is FORCED (both = {1,…,diam−1}, any connective, any L)
 — a theorem, not a coincidence**; VMAX intact, no R4b
 collision.  15 MINORs.  → adjudication when K1+K3 land.
+
+## 2026-08-11 — GDL EFFECTUS REVIEW LANDED (K2): AWF — THE HEAD FLIPS TO DECOUPLED-AT-THE-BAR; DECOUPLED WAS UNREACHABLE; THE THEOREM'S HYPOTHESIS WRONG; A THIRD CHANNEL MISSED (v14 LEDGER #224)
+
+v14/review-gdl-effectus.md frozen.  **Grade AWF; 243
+recomputations, zero false numbers — every published number
+survives; what does not survive: the verdict word, three
+sentences, and the prediction row's scope.**  ROW 1
+(decisive): **the licensed head is
+GDL-DECOUPLED-AT-THE-GRAVITATIONAL-BAR, not GDL-PARTIAL** —
+three legs: textual (the pin's G scopes "functional relation"
+to gravitational; gravitational_count=0 satisfies DECOUPLED);
+**instrumental — GDL-DECOUPLED WAS UNREACHABLE by the
+selector** (needs not-identities ∧ not-moves, both
+gate-forbidden in any writing run — §13's "the DECOUPLED
+outcome was available" is FALSE; a two-way violation);
+measured (the FROZEN control earns PARTIAL at 38/45 of its
+own cells — 26/28 coupled PARTIALs carry the identical word
+on the control; 11/28 are total failures stamped PARTIAL).
+**The zero is FORCED, not contingent** (both sides of the
+exact cell are functions of the site marginal — record-blind
+by theorem — the identity could not have failed frozen).  ROW
+2: **the exportable theorem's hypothesis is WRONG —
+site-uniformity NOT needed: BLOCK-DIAGONAL + unitary per
+block ⟹ the site marginal is record-blind, at ANY
+arena/graph/dimension/horizon** (verified with site-DEPENDENT
+coins); site-uniformity needed only for the off-diagonal
+Theorem B (which makes co-occupancy-necessity a theorem);
+**A THIRD CHANNEL IS MISSING ENTIRELY: coin_apply reads n mod
+3 — the record enters only mod 3, and the max-cell ladder
+[2,2,3,3,4] means the wraparound 4≡1 is EXERCISED INSIDE the
+delivered horizon** — a whole record-channel unanalyzed.
+Other MAJORs: §7's two-values-blind sentence false (D2
+moves); §7 names the WRONG occupancy predicate (fires at 3;
+the measured one at 4 — all 6 coins); the prediction row
+over-scopes (threshold not in the sealed digest; **the
+co-occupancy COUNT is coin-relative 16/24/33**); §5's
+92%-success framing inverted; the choice inventory omits the
+verdict-determining bar-scope choice.  Walls pass (DP
+shape-only ×3; no SI content).  SUCCESSOR REGISTER: **GDL-2
+specified — the m-fiber; RAISING m CANNOT RESCUE D1 AT ANY m;
+the live route = breaking block-diagonality, which RE-GATES
+paper-20's transport; a publishable no-go shape**; GDL-1a
+(the two-time rate functional) cheaper, precedes; **SIG
+INHERITS THEOREM A AS A PIN CONSTRAINT — no fiber spent on
+site-marginal observables** [adopted: the SIG pin will carry
+it beside reachability-before-polarity]; PER-R inherits the
+delay-law shape, not the counts.  → adjudication when K1+K3
+land.
