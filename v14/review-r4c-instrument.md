@@ -23,10 +23,10 @@ All five match. Every execution below ran read-only against the repo or
 inside `…/scratchpad/r4c-in/`; the repo objects are byte-identical after
 the review. Files belonging to concurrent siblings are disclaimed.
 
-**Counts.** Executions: **117 separate processes** — 1 full `--no-write`
-delivery run, 40 out-of-process `--mutant` runs, 48 `--break-anchor`
+**Counts.** Executions: **118 separate processes** — 1 full `--no-write`
+delivery run, 41 out-of-process `--mutant` runs, 48 `--break-anchor`
 runs, 16 hostile-argv runs, 3 off-tree mirror runs, 2 further `--mutant`
-timing runs (one of them, `MUT-PAPER-NUMERAL`, is the 41st distinct
+timing runs (one of them, `MUT-PAPER-NUMERAL`, is the 42nd distinct
 mutant verified out of process), 2 source-edit falsifications, 1
 `--selftest`, 1 bare-copy, 1 real byte-drift, 1 path-drift, 1 helper —
 plus **6 in-process probe scripts**
@@ -382,11 +382,11 @@ Every mutant was run in its own cold process, `--mutant NAME`, against
 the repo, with the three artifacts hashed before and after each run and a
 check for stray `.tmp`/`.probe` files.
 
-**Result on the 41 completed: 41 of 41 — every one killed, every death at
+**Result on the 42 completed: 42 of 42 — every one killed, every death at
 its declared target gate, `rc=1`, the three artifacts byte-UNCHANGED
 after each run, zero stray `.tmp`/`.probe` files, zero off-target, zero
 survivors.** The raising gate was parsed out of each run's own
-`MUTANT … died at …` line and compared to the registry row. The 41 span
+`MUTANT … died at …` line and compared to the registry row. The 42 span
 every stage of the pipeline: the anchor phase (`MUT-VERBATIM-FRAGMENT`,
 `MUT-PATH-ANCHOR`, `MUT-ARENA-SIZE`, `MUT-SHELL-IMPORT`), the rebuild
 (`MUT-GAUGE-ORBIT`, `MUT-ALPHABET`, `MUT-REBUILD-DROP`,
@@ -401,24 +401,24 @@ every stage of the pipeline: the anchor phase (`MUT-VERBATIM-FRAGMENT`,
 (`MUT-COIN-ALPHABET`, `MUT-THREE-SITE`, `MUT-OVERLAP-LAW`,
 `MUT-COIN-PAIR`, `MUT-OVERLAP-BITE`), motion (`MUT-EIGENPHASE`,
 `MUT-ADDITIVITY`, `MUT-SPECTRUM-SPLIT`, `MUT-R4B-REPRO`,
-`MUT-VELOCITY-ADD`), the third route (`MUT-THIRD-PATH`) and the paper
+`MUT-VELOCITY-ADD`, `MUT-SPEED-CEILING`), the third route (`MUT-THIRD-PATH`) and the paper
 gates (`MUT-PAPER-NUMERAL`).
 
-**The remaining 15 did not finish inside the review window** — this
+**The remaining 14 did not finish inside the review window** — this
 machine was carrying a load average above 200 from the concurrent seats
 throughout, and a single cold `--mutant` run that reaches the paper gates
 costs about eight CPU-minutes. They are:
 `MUT-CACHE-DIRTY, MUT-CONTACT-BLIND, MUT-CONTACT-SET, MUT-HEAD-PRENAME,
 MUT-HEAD-TYPED, MUT-PAPER-CLAIM, MUT-PAPER-POLARITY, MUT-PAPER-VERDICT,
 MUT-PAYLOAD-PATH, MUT-RECEIPT-FLOAT, MUT-SEAL-BROKEN, MUT-SEAL-TOTAL,
-MUT-SPEED-CEILING, MUT-STAMP-DROP, MUT-WAIVER-UNFORCED`.
+MUT-STAMP-DROP, MUT-WAIVER-UNFORCED`.
 **This is a disclosed protocol shortfall, not a
-finding**: all 15 are covered in-process twice over — by the committed
+finding**: all 14 are covered in-process four times over — by the committed
 receipt's own sweep and by my independent full `--no-write` delivery run
 (21 m 45 s, from the committed source), which reported
 `ALL GATES PASSED (63/63); ALL MUTANTS DEAD (56/56)` at exit 0 with the
-repo artifacts untouched. Nothing in the 41 that did run gives any reason
-to expect the other 15 to behave differently out of process; the sweep
+repo artifacts untouched. Nothing in the 42 that did run gives any reason
+to expect the other 14 to behave differently out of process; the sweep
 should nonetheless be completed before terminal.
 
 **`--list` is not a flag this unit ships**, so ledger row #24's registry
@@ -513,28 +513,32 @@ on-disk key set against `FINAL_KEYS`. `MUT-SEAL-TOTAL` kills it. The
 defects are the *provenance* of the seals (MAJOR-1) and the *timing* of
 the in-run batch (MINOR-1), not the mechanism.
 
-**Post-write corruption injection.** I patched an off-tree mirror so the
-bytes written to `r4c_multi_receipt.json` differ from the sealed payload
-by one trailing space, and launched it; **the run had not reached its
-writing path when this review closed (§14)**. What I can state from
-reading the writer is that the check is genuine and two-way by
-construction: it compares `digest(on_disk_json)` against
-`SEAL.payload_sha` — the gate-time seal, never a re-derivation from disk
-— *and* writes a deliberately corrupted `payload + "X"` to a `.probe`
-path, re-reads it and requires the corruption to be detected, *and*
-re-checks the on-disk key set against `FINAL_KEYS`, failing to stderr
-with `sys.exit(2)` if any of the four conjuncts fails. On every clean run
-I observed, the probe fired and the gate printed
-`disk bytes == gate-time seal`.
+**Post-write corruption injection — the gate fires.** I patched an
+off-tree mirror so the bytes written to `r4c_multi_receipt.json` differ
+from the sealed payload by exactly one trailing space. The run reached
+`ALL GATES PASSED (63/63); ALL MUTANTS DEAD (56/56)` and then died:
 
-**The corrupted artifact is left on disk (MINOR-5).** `os.replace`
-promotes the staged file *before* the disk-vs-seal comparison, so an
-integrity failure exits 2 with the bad bytes in place — and, because the
-two artifacts are written in a loop, a failure between them leaves an
-`output.txt` that does not match its `receipt.json`. **Repair:** write
-both `.tmp` files, verify both against the seal, then `os.replace` both.
-The instrument's own built-in `.probe` control (payload + `"X"` written,
-re-read, required to be detected) fired correctly on every clean run.
+```
+G-ARTIFACT-INTEGRITY :: the bytes on disk are not the sealed bytes
+rc=2
+```
+
+The check is genuine and two-way by construction: it compares
+`digest(on_disk_json)` against `SEAL.payload_sha` — the gate-time seal,
+never a re-derivation from disk — *and* writes a deliberately corrupted
+`payload + "X"` to a `.probe` path, re-reads it and requires the
+corruption to be detected, *and* re-checks the on-disk key set against
+`FINAL_KEYS`. A one-byte difference is caught.
+
+**MINOR-5, now demonstrated rather than read: the corrupted artifact is
+left on disk.** After the failed check, the mirror's
+`r4c_multi_receipt.json` is **108,114 bytes** (the correct payload is
+108,113), sha256-12 `95ad699a5c4a`, with the injected trailing space
+still in place — and `r4c_multi_output.txt` was written beside it. So an
+integrity failure exits 2 having already promoted the bad bytes to their
+final path, leaving a receipt and a transcript on disk that do not
+correspond. **Repair:** write both `.tmp` files, verify both against the
+seal, and only then `os.replace` both.
 
 ---
 
@@ -616,20 +620,32 @@ A provisioned mirror was built at
 paper and pin, and the twelve anchored sources at their repo-relative
 paths. **No `.git` anywhere.**
 
-- `PYTHONHASHSEED=0` and `PYTHONHASHSEED=12345`, two independent copies,
-  were launched and **had not reached their writing paths when this
-  review closed (§14)**; both had completed all nine measurement stages
-  identically and were inside the in-process mutant sweep. The
-  byte-identity claim is therefore **not confirmed by me** and is the
-  first thing to finish before terminal.
-- What I *can* report on reproduction: the instrument runs off-tree and
-  git-less at all (`ROOT` is derived from `__file__`, every input is read
-  by path, and the mirror carries no `.git`), the plain run's payload is
-  gated byte-identical across two serializations and free of absolute
-  paths (`G-PAYLOAD-DETERMINISTIC`, `MUT-PAYLOAD-PATH` kills it), and my
-  full delivery run on the repo left the committed artifacts
-  byte-identical, which is a same-seed reproduction of the delivered
-  bytes.
+**CONFIRMED, and three ways rather than two.** `PYTHONHASHSEED=0` and
+`PYTHONHASHSEED=12345`, two independent copies of the mirror, both ran to
+`EXIT 0` at `ALL GATES PASSED (63/63); ALL MUTANTS DEAD (56/56)` and
+printed
+`G-ARTIFACT-INTEGRITY passed: disk bytes == gate-time seal (payload
+5c058006db78, transcript 45866a3ed5e3); a corrupted probe was detected.`
+
+| artifact | mirror, seed 0 | mirror, seed 12345 | committed |
+|---|---|---|---|
+| `r4c_multi_output.txt` | `45866a3ed5e3` | `45866a3ed5e3` | `45866a3ed5e3` |
+| `r4c_multi_receipt.json` | `5c058006db78` | `5c058006db78` | `5c058006db78` |
+
+`cmp` confirms all four pairings byte for byte: seed-0 ≡ seed-12345, and
+each ≡ the committed artifact. So the delivered bytes reproduce **off
+the tree, with no `.git` anywhere in the mirror (verified: zero found),
+under two different hash seeds, on a machine that was simultaneously
+running eight other jobs** — and they reproduce *the committed bytes*,
+not merely each other, which is the stronger claim.
+
+- Supporting: the payload is gated byte-identical across two
+  serializations and free of absolute paths
+  (`G-PAYLOAD-DETERMINISTIC`; `MUT-PAYLOAD-PATH` kills it), and `ROOT` is
+  derived from `__file__` so nothing is tied to this checkout.
+- Incidental but worth recording: the in-process 56/56 mutant sweep has
+  now been reproduced **four independent times** — the committed
+  receipt's own, my repo `--no-write` run, and both mirrors.
 - The run consults no version-control state; `G-NO-VERSION-CONTROL-NO-SHELL`
   scans for `subprocess`/`shutil`/`socket` imports and
   `system`/`popen`/`run`/`check_output` calls, and `MUT-SHELL-IMPORT`
@@ -908,18 +924,17 @@ cache gate's own reach.
 This machine carried a load average between 170 and 230 for the whole
 review, from the concurrent K1/K2 seats running the same instrument. A
 single cold run of this unit costs about twenty CPU-minutes. Four items
-were launched and did not finish inside the window. None of them is a
-finding; each is an unfinished confirmation, and I am naming them rather
-than reporting a marathon I did not run:
+ran long; **two of them landed before I closed and are now reported in
+full** — the byte reproduction ×2 across hash seeds (§8, confirmed three
+ways against the committed bytes) and the post-write corruption
+injection (§5, `rc=2`, and it demonstrated MINOR-5 into the bargain).
+Two remain unfinished. Neither is a finding; each is an unfinished
+confirmation, and I am naming them rather than reporting a marathon I did
+not run:
 
-1. **Byte reproduction ×2 across `PYTHONHASHSEED`** (§8). Both mirror
-   runs completed all nine measurement stages and were inside their
-   in-process mutant sweeps. **Finish this first.**
-2. **The post-write corruption injection reaching its writing path**
-   (§5). The mirror was patched and launched.
-3. **Fifteen of the fifty-six out-of-process `--mutant` runs** (§4);
-   forty-one completed, 41/41 on target with artifacts unchanged.
-4. **Two of the four cache probes.** The fingerprint sweep *did* finish
+1. **Fourteen of the fifty-six out-of-process `--mutant` runs** (§4);
+   forty-two completed, 42/42 on target with artifacts unchanged.
+2. **Two of the four cache probes.** The fingerprint sweep *did* finish
    and is reported in §1a (7 entries, none moved across all 56 in-process
    mutant runs). Still running at close: the reversed-order sweep, and
    five real in-place pollution probes against `wedge_nz` (digested) and

@@ -6625,3 +6625,17 @@ bd0298e2a482, code 976d5b9e4ac8, output e4ff37a7a13e,
 receipt 54ec5a9e9b72.  Committed AS-IS; battery next; panel
 after.  PREDICTION-LEDGER UPDATE (entry g): tested —
 HALF-RIGHT; successor entry: the DDS-free criterion.
+
+## 2026-08-11 — PAPER-22 K3 REVIEW v3: BOTH LATE CONFIRMATIONS LANDED (v14 LEDGER #215)
+
+The instrument reviewer's final update: **byte reproduction
+CONFIRMED THREE WAYS** (off-tree git-less mirrors under two
+hash seeds, byte-identical to each other AND to committed on
+all four pairings); **post-write corruption: the gate FIRES**
+(G-ARTIFACT-INTEGRITY rc=2) — and in firing demonstrated
+MINOR-5 (os.replace promotes before the check, leaving the
+corrupted receipt on disk beside a mismatched transcript);
+mutants 42/56 out-of-process 42/42 on target (the remaining
+14 covered in-process four times over).  The four MAJORs and
+twelve MINORs unchanged; findings final.  Review re-frozen
+(v3).  Paper-22 awaits K1 only.
