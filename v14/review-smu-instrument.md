@@ -23,12 +23,12 @@ artifact-integrity gate leaves both corrupted artifacts promoted on disk; and
 fifteen of the forty-two falsifiers corrupt no object, two of them because
 their gate cannot fail on any object at all.
 
-**Counts.** 91 executions of the instrument (42 mutant runs as separate
+**Counts.** 92 executions of the instrument (42 mutant runs as separate
 processes out of harness; 20 injection runs covering 15 distinct injections,
 **five of them — every code-side one — reproduced in a second independent
-sandbox with identical outcomes**; 5 off-tree byte-reproduction runs; 23 CLI
-invocations; 1 bare-copy abort), plus 3 corrupted runs inside `--selftest`.
-324 independent recomputations of
+sandbox with identical outcomes**; 6 off-tree byte-reproduction runs across
+four hash seeds; 23 CLI invocations; 1 bare-copy abort), plus 3 corrupted
+runs inside `--selftest`. 324 independent recomputations of
 published quantities, zero mismatches. 350 paper numerals classified
 for gate-protection; 42 falsifiers classified for object-corruption power; 71
 anchor-consumer and seal-gate names resolved against the ledger.
@@ -513,16 +513,16 @@ ids and the one computed id is the one the registered forcing
 machine-checks. The registry is checked total against the AST in both
 directions and a computed mutant name is fatal rather than forgiven.
 
-**Byte reproduction (#91, row 11) — byte ×3 across three seeds.** Off-tree,
-in git-less directory trees provisioned from `git show 6d8582e:`: the plain
+**Byte reproduction (#91, row 11) — byte ×4 across four seeds.** Off-tree, in
+git-less directory trees provisioned from `git show 6d8582e:`: the plain
 delivery run reproduced **both committed artifacts byte-for-byte at
-`PYTHONHASHSEED=0`, at `987654321`, and at `1`** — three seeds, six files,
-all identical to the committed bytes. Two further runs in the `--quiet` form
-came out **identical to each other** across two seeds as well. There is
-therefore **no hash-seed dependence anywhere in this unit**: the v10-layer
-tie-break hazard (#160) does not bite, and the immunity is measured rather
-than argued. The quiet pair differed from the committed bytes only through
-MINOR-1, and only in `transcript_head`.
+`PYTHONHASHSEED=0`, at `987654321`, at `1`, and at `random`** — four seeds,
+eight files, every one identical to the committed bytes. Two further runs in
+the `--quiet` form came out **identical to each other** across two seeds as
+well. There is therefore **no hash-seed dependence anywhere in this unit**:
+the v10-layer tie-break hazard (#160) does not bite, and the immunity is
+measured rather than argued. The quiet pair differed from the committed bytes
+only through MINOR-1, and only in `transcript_head`.
 
 **CLI (row 10).** 20 hostile argv forms, every one **exit 2**: unknown long
 flag, unknown short flag, bare positional, `--mutant` with no name (arity),

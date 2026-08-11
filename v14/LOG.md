@@ -7554,3 +7554,11 @@ orders W1–W12 stand exactly; no re-instruction needed.
 Re-frozen (v3).  [The reviewer also relayed the claude.ai
 Google Drive connector's auth notice — unrelated to any
 unit; nothing depends on it.]
+
+## 2026-08-11 — SMU K3 REVIEW v4 (SEAT CLOSED): FOURTH HASH SEED (v14 LEDGER #244)
+
+The seat's closing polish (ac68954df925): byte-identity at
+FOUR hash seeds; 92 executions.  Findings verbatim-unchanged
+through v2→v3→v4; the adjudication and the in-flight repair
+stand.  The seat declares itself closed; this is the final
+freeze.
