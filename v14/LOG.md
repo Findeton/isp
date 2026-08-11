@@ -5788,3 +5788,37 @@ the historical §15 paragraph).  STATUS row appended (same
 commit, §13).  Sixteen terminal units.  The GREEN-UNREVIEWED
 stamp lifts from paper-05.  CR-B/C/D remain the panel debt;
 their panels queue behind the current flight.
+
+## 2026-08-11 — PAPER-23 OPERATOR REVIEW LANDED (K1): AWF — 61/61 EXACT; THE DERIVE ARM UNREACHABLE BY THE INSTRUMENT; TWO UNNAMED FOUND-CONTROLS (v14 LEDGER #190)
+
+v14/review-r5m-operator.md (7740b5d01f07) frozen.  **Grade AWF;
+63 recomputations, 61 delivered quantities compared, 61 EXACT,
+zero false numbers** (own Q(ζ₈), chart/gauge action, Burnside,
+Born layer; both 89-/88-digit integers character-exact; the
+full null table; 2624 = (208+120)×8 invariance checks; off-tree
+mirror BYTE-IDENTICAL; three mutants driven BY HAND dead on
+their gates).  **MAJOR-1: MEASURE-DERIVED IS NOT REACHABLE BY
+THIS INSTRUMENT though §5 says it is** — every candidate's
+free_items is a TYPED CONSTANT (no measurement feeds a price);
+demonstrated: on a synthetic transitive arena head_law STILL
+returns DECLARATION-REQUIRED-<0-SIMPLEX-ON-1-ORBITS> and
+G-FIBRE-PRICED (gate 46, pre-head) REFUSES outright — the
+two-way design is broken in the direction that never fired;
+head unaffected (this arena genuinely non-transitive); 8-line
+repair given [converges with K2's census-relative demotion of
+"forced shut"].  **MAJOR-2: the correspondence enumeration
+incomplete** — weld-2's own receipt carries TWO FOUND-candidate
+controls at zero free items (CRYSTAL/DOUBLE-GRID(3,2),
+DECLARED-PROBE/CAYLEY-AT-I7), neither named in paper or
+receipt; the one-dictionary gate checks only the dead list;
+verdict impact NONE (both die at the same site-count blade —
+measured).  Five liftable MINORs: the 27/130-ON-DIAGONAL
+alphabetical tie-break [= K2's #91 flag, found independently];
+PV-W3-DIVISIONS printed as sites (same value 9); "products
+that leave are exactly the interfering ones" — only
+131072/262144 interfering pairs leave; the load-bearing
+no-chart-reversal fact measured-published-UNGATED (no mutant);
+§4.7's "distribution over 16 states" is really a 2×2 doubly
+stochastic kernel on a domino [= K2's title-sentence kill,
+independently].  Not charged: 56 = the sealed-snapshot count
+with late_gates:2 disclosed.  → adjudication when K3 lands.
