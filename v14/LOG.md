@@ -4827,3 +4827,52 @@ for everything but that last patch** — for my battery and the
 panel.  Artifacts committed as-is: paper c669ab35e12a, code
 7a84aa27de8d, output 76ef29488b60, receipt 03670731ba1c.
 Battery + protocol + panel next.
+
+## 2026-08-10 — PAPER-19 PROTOCOL FROZEN IN-ENTRY, PANEL LAUNCHED (v14 LEDGER #163)
+
+The stakes demand the full treatment.  Reviewers
+operator/effectus/instrument →
+v14/review-r3w-{operator,effectus,instrument}.md; object =
+paper c669ab35e12a / code 7a84aa27de8d / output 76ef29488b60 /
+receipt 03670731ba1c at commit ddcd475; pin 20fba9b15f5e.
+**K1 (operator, decisive): THE FOUND VERDICT REBUILT FROM
+NOTHING** — re-derive the R=3 saturating record with an
+independent drive of the d42b1 source; rebuild the 1296
+isomorphisms AND the 1296 quotient maps with your own machinery;
+verify fibers 1/1/1 and the ZERO-free-items accounting at the
+RSQ standard; re-run all 18 census rows; the controls
+(crystal@L2's 72 against weld-2's committed number; the
+fiber-6 falsifier; the walk; crystal@I7; the R3-falsifier);
+verify the reading-difference result (structure-death vs
+count-positivity-death).  THE ATTACKS: is the map genuinely
+FORCED or does the W3 window smuggle the selection?  Does the
+site-assignment consume anything undeclared?  Is
+count-sufficiency (≥27 sufficient at this family) real?
+**K2 (operator share): the geometry census** — the posdef
+distribution over all 21,952,000 ordered triples incl. THE
+EMPTY CELL AT 8 (verify: attained-or-missed-by-two); the
+rigidity I7-STRICT = POSDEF-9 = field≡1 at exactly 72; the
+coordinate-free 288 = 4×72 (the worker's self-corrected fate);
+the R=2 back-anchor to U4b's committed row; the fragility
+contrast (crystallinity/geometry INDEPENDENT — seed edits
+151,632/151,632 vs geometry-invariant-under-all-19,683; the
+grouping transpositions 5,832/5,832).  **K3 (effectus,
+decisive): the THREE QUALIFICATIONS calibrated** — the
+grammar-admissible-not-committed schedule (d66's own R=3 point
+COUNT-DEAD); the admissible-but-undeclared (1,1,1) record
+(inside I7's 361-box, outside its 11 declared records — WHAT
+DOES FOUND MEAN when the target record is undeclared? the
+licensed sentence); the 72-of-22M stratum; what may the
+programme now claim about THE WELD as such (the
+process↔space dictionary at citable scope); what the COUPLING
+UNIT may inherit (the pin rows); whether Route B is mooted;
+the window's honesty (1:4×10⁸ disclosed in-string; the
+exhaustive columns' license).  **K4 (instrument): the era
+audit** — the total seal (26+4; the three caught post-seal
+mutations); #34 with reachability; #125; #62; #87 per-row;
+**THE DISCLOSED ANOMALY: the off-tree leg not re-run against
+the final accounting patch — RE-RUN IT YOURSELF and settle
+#91**; the 59-mutant sweep's four catches verified;
+byte-identity at your own hands.  Candidate-readings rule in
+force on EVERYTHING, most of all on FOUND.  Three reviewers
+launched (opus).
