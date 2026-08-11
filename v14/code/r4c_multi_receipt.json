@@ -25,7 +25,7 @@
    {
     "antisymmetric_lives": false,
     "arena": "A4-DISTINGUISHABLE-LIFT",
-    "detail": "the exchange operator fails to commute with the lift at 3306 of 3306 ordered pairs of distinct generators, and where it fails NEITHER sector is invariant",
+    "detail": "the exchange operator fails to commute with the lift at 3306 of 3306 ordered pairs of distinct generators, and at 3306 of them NEITHER sector is invariant -- both off-block matrix elements measured",
     "role": "one generator per excitation: the excitations are told apart by the law itself",
     "symmetric_lives": false
    }
@@ -63,6 +63,7 @@
    }
   ],
   "distinguishable_broken": 3306,
+  "distinguishable_neither_invariant": 3306,
   "distinguishable_pairs": 3306
  },
  "arena_declaration": {
@@ -71,7 +72,7 @@
   "division_events": "inherited unchanged: t = 0 and t = 2 are division events, the cut at t = 1 is not, and the leg at the cut is B(U2); indivisibility is DECLARED by those times and is never measured",
   "family": "R4's terminal family, rebuilt here from its definitions and gated coefficient map by coefficient map against the parent receipt: 58 circulant generators on the 3-term axis stencil over the declared 25-element alphabet, plus the 6 controls",
   "law": "the FREE LIFT U tensor U -- the substrate's own composition law applied to each excitation -- restricted to each sector; the declared alternative lifts are the distinguishable lift U tensor V and the contact-phase lift, both censused",
-  "occupancy": "the site occupancy CEILING is this unit's declaration and is NOT anchored: the stage's own count registers run to 6 and 12, and the parent's single-occupation sector is the common restriction of both ceilings",
+  "occupancy": "the site occupancy CEILING is this unit's declaration and is NOT anchored: the anchored stage declares no occupancy-shaped key at all, and the parent's single-occupation sector is the common restriction of both ceilings.  Whether a deeper layer can FORCE one is open and is handed on",
   "velocity": "R4b's stratified convention inherited AS DECLARED: forward difference with the antipodal tie averaged; no new selection claim is made here"
  },
  "byte_anchors": [
@@ -160,6 +161,88 @@
    "sha256_12": "162553b03ca9"
   }
  ],
+ "choice_inventory": [
+  {
+   "class": "GENUINELY-FREE",
+   "fibre": 2,
+   "item": "the occupancy ceiling",
+   "note": "the head changes name: BOTH-ADMITTED at ceiling 2, FORCED-ANTISYMMETRIC at ceiling 1",
+   "values": "hard core (1) / two",
+   "verdict_determining": true
+  },
+  {
+   "class": "GENUINELY-FREE",
+   "fibre": 3,
+   "item": "the lift",
+   "note": "the head returns NEITHER-INVARIANT at the distinguishable lift",
+   "values": "free (U tensor U) / distinguishable (U tensor V) / contact-phase",
+   "verdict_determining": true
+  },
+  {
+   "class": "DECLARED-CONTROL",
+   "fibre": 2,
+   "item": "the lattice: the verdict arena against the one-site control",
+   "note": "returns FORCED-SYMMETRIC at one site, and is declared a degenerate control rather than an arena",
+   "values": "L = 4 / one site",
+   "verdict_determining": false
+  },
+  {
+   "class": "INHERITED-AS-DECLARED",
+   "fibre": 1,
+   "item": "the division-event times and the leg at the cut",
+   "note": "fixes what the defect MEANS; not re-selected here",
+   "values": "the parent's, inherited unchanged",
+   "verdict_determining": false
+  },
+  {
+   "class": "INHERITED-AS-DECLARED",
+   "fibre": 2,
+   "item": "the velocity convention",
+   "note": "owns the 7168 velocity failures; R4b's scope stamp binds",
+   "values": "forward / backward difference, tie averaged",
+   "verdict_determining": false
+  },
+  {
+   "class": "GENUINELY-FREE",
+   "fibre": 1,
+   "item": "the third route's window",
+   "note": "declared, and gated to contain both predicate classes",
+   "values": "the first 12 generators in the parent's naming, 144 pairs",
+   "verdict_determining": false
+  },
+  {
+   "class": "GENUINELY-FREE",
+   "fibre": 3,
+   "item": "the local window's coin pairs",
+   "note": "each gated separately; the geometry is exhaustive",
+   "values": "(0,3), (1,1), (7,11) of the 512 interfering coins",
+   "verdict_determining": false
+  },
+  {
+   "class": "GENUINELY-FREE",
+   "fibre": 8,
+   "item": "the contact phase",
+   "note": "a declared operator, not a theory",
+   "values": "zeta_8^1 of 8",
+   "verdict_determining": false
+  },
+  {
+   "class": "GENUINELY-FREE",
+   "fibre": 1,
+   "item": "the stride window for the coarser reading of the triple identity",
+   "note": "declared as data; 259 pairs",
+   "values": "every 13th ordered pair",
+   "verdict_determining": false
+  },
+  {
+   "class": "FORCED",
+   "fibre": 1,
+   "item": "d, L, the alphabet, the stencil, the axes, the connective, the symmetrised basis",
+   "note": "read from the parents and the stage; none is this unit's",
+   "values": "anchored or forced",
+   "verdict_determining": false
+  }
+ ],
  "cli_probes": [
   {
    "argv": [
@@ -186,13 +269,30 @@
     "NOPE"
    ],
    "rejected": true
+  },
+  {
+   "argv": [
+    "--verify-paper",
+    "/nonexistent/paper.md"
+   ],
+   "rejected": true
+  },
+  {
+   "argv": [
+    "--mutant=MUT-FOLD"
+   ],
+   "rejected": true
   }
  ],
  "compliance": {
   "forcings": {
    "G-ARTIFACT-INTEGRITY": "evaluated only in the writing path, which no diagnostic run reaches; it is two-way by construction -- a deliberately corrupted payload is written to a probe path, re-read and required to be detected -- and its reference value is the GATE-TIME SEAL, whose in-run half G-SEAL-COMPLETE carries the injection falsifier MUT-SEAL-BROKEN",
+   "G-BYTE-ANCHORS": "reachable only from OUTSIDE the measurement path, because a mutant that could break an anchor in memory would be an anchor that the run itself can move.  Its falsifiers are the twelve --break-anchor runs, the --selftest (which corrupts one anchor and requires the run to die), a real on-disk drift of an anchored parent, and a missing anchored source, all of which kill the run at this gate and write nothing",
+   "G-MUTANT-SWITCH-CLEAN": "a gate on this SOURCE's own abstract syntax tree, for the same reason.  Its falsifier is a source edit -- putting a mut() call inside a gate predicate kills the run at this gate",
    "G-MUTANTS-ON-TARGET": "the gate that adjudicates the mutant sweep cannot itself be a mutant's target; its falsifier is the sweep, and every surviving or off-target injection fails it -- exercised by all declared mutants on every run",
-   "G-PAPER-COVERAGE-FINAL": "evaluated after the mutant sweep closes the instrument's totals, so no in-process mutant can reach it; its in-run twins G-PAPER-CLAIMS, G-PAPER-NUMERAL-COVERAGE and G-PAPER-CLAIM-POLARITY carry the injection falsifiers and die on every sweep"
+   "G-NO-FLOAT": "a gate on this SOURCE's own abstract syntax tree; an in-process switch cannot introduce a float literal into the file being parsed.  Its falsifier is a source edit -- inserting a float literal into a copy of the instrument kills the run at this gate",
+   "G-PAPER-COVERAGE-FINAL": "evaluated after the mutant sweep closes the instrument's totals, so no in-process mutant can reach it; its in-run twins G-PAPER-CLAIMS, G-PAPER-NUMERAL-COVERAGE and G-PAPER-CLAIM-POLARITY carry the injection falsifiers and die on every sweep",
+   "G-PAPER-PRESENT": "raised only when the paper is absent, which the argv whitelist now rejects at parse time; its falsifier is the bare-copy run, where the instrument alone in an empty tree dies before any measurement and writes nothing"
   },
   "structural_numerals": [
    "1",
@@ -219,6 +319,7 @@
   "handle": "a declared zeta_8 phase on the doubly-occupied configurations, exchange invariant and unitary",
   "moved_set_is_the_single_excitation_set": true,
   "pairs": 3364,
+  "scope": "THE CIRCULANT STRATUM; the antisymmetric zero is FORCED and generalises to every n, the visibility census does not",
   "symmetric_defect_moved": 588,
   "symmetric_nonzero_with_handle": 1764,
   "symmetric_nonzero_without_handle": 1764,
@@ -236,7 +337,8 @@
   "dim_ordered": 256,
   "dim_symmetric": 136,
   "discriminating_pairs": 588,
-  "gates": 53,
+  "entrywise_discriminating_pairs": 1764,
+  "gates": 64,
   "genuine_two_body": 1176,
   "losses": 0,
   "ordered_pairs": 3364,
@@ -245,6 +347,7 @@
   "single_nonzero": 588,
   "sites": 16,
   "symmetric_leaking": 48,
+  "theorem_witnesses": 240,
   "two_excitation_nonzero": 1764,
   "velocity_cells": 29696,
   "velocity_failures": 7168
@@ -252,8 +355,10 @@
  "defect_census": {
   "antisymmetric_nonzero": 1764,
   "derivation_failures": 0,
+  "derivation_fibre_failures": 0,
   "genuine_two_body": 1176,
   "losses": 0,
+  "monomial_leg_pairs_carrying_a_defect": 0,
   "non_monomial_generators": 42,
   "ordered_pairs": 3364,
   "ordered_sector_nonzero": 588,
@@ -294,6 +399,7 @@
    "9/64": 1920
   },
   "antisymmetric_distinct": 28,
+  "block_scope": "the published like-for-like comparison is on the 120x120 hard-core block BOTH sectors carry; the symmetric sector's own census is published beside it",
   "second_path_agrees": true,
   "single_distinct": 8,
   "single_excitation": {
@@ -306,7 +412,9 @@
    "1/8": 144,
    "5/8": 24
   },
-  "symmetric": {
+  "symmetric_distinct_full_sector": 39,
+  "symmetric_distinct_hardcore_block": 30,
+  "symmetric_hardcore_block": {
    "-1/128": 12288,
    "-1/16": 243072,
    "-1/32": 127488,
@@ -338,8 +446,61 @@
    "55/64": 2304,
    "9/64": 2304
   },
-  "symmetric_distinct": 30,
-  "third_path_window_pairs": 144
+  "symmetric_sector": {
+   "-1/128": 12288,
+   "-1/16": 258432,
+   "-1/32": 141312,
+   "-1/4": 39744,
+   "-1/64": 153600,
+   "-1/8": 29184,
+   "-11/64": 768,
+   "-19/128": 768,
+   "-27/128": 384,
+   "-3/128": 2304,
+   "-3/32": 29952,
+   "-3/64": 16512,
+   "-3/8": 1728,
+   "-5/32": 192,
+   "-5/64": 6144,
+   "-7/64": 768,
+   "-9/64": 2304,
+   "1/128": 12288,
+   "1/16": 156672,
+   "1/2": 864,
+   "1/32": 122112,
+   "1/64": 125952,
+   "1/8": 27648,
+   "101/128": 384,
+   "11/64": 768,
+   "13/64": 384,
+   "27/32": 192,
+   "3/16": 37248,
+   "3/32": 3456,
+   "3/4": 12096,
+   "3/64": 13056,
+   "3/8": 768,
+   "5/128": 2304,
+   "5/32": 5376,
+   "5/64": 384,
+   "5/8": 1728,
+   "53/64": 384,
+   "55/64": 2304,
+   "9/64": 2304
+  },
+  "third_path_window_monomial_generators": 4,
+  "third_path_window_nonzero_pairs": 64,
+  "third_path_window_pairs": 144,
+  "values_only_off_the_block": [
+   "-19/128",
+   "-27/128",
+   "-3/128",
+   "-3/8",
+   "101/128",
+   "3/8",
+   "5/128",
+   "5/32",
+   "5/8"
+  ]
  },
  "description_stamps": [
   {
@@ -352,15 +513,23 @@
   },
   {
    "claim": "the two-excitation defect is nonzero at exactly the pairs whose legs are both non-monomial",
-   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; the FREE lift; both exchange sectors; the parent's declared division-event times and leg at the cut"
+   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; the FREE lift; both exchange sectors; the parent's declared division-event times and leg at the cut; ON THE FULL-SUPPORT CIRCULANT STRATUM -- the same arena's local window carries 42840 rows of both-non-monomial pairs with no defect at all"
   },
   {
-   "claim": "the two shapes are discriminated by the defect at exactly the single-excitation defect set",
-   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; the FREE lift; value multisets on the hard-core block, the like-for-like comparison"
+   "claim": "the two shapes are discriminated by the defect cell by cell at exactly the two-excitation defect set",
+   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; the FREE lift; ENTRYWISE comparison on the 120x120 hard-core block both sectors carry, in the same row and column ordering; the circulant stratum"
+  },
+  {
+   "claim": "the two shapes' defect VALUE MULTISETS differ at exactly the single-excitation defect set",
+   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; the FREE lift; the RELABELLING-INVARIANT granularity -- value multisets on the hard-core block -- which is a coarser comparison than the entrywise one and confines the difference to a strictly smaller set; the circulant stratum"
+  },
+  {
+   "claim": "the entire two-body excess is created by exchange symmetrisation",
+   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; the ORDERED (labelled) sector against the symmetrised ones; the FREE lift; occupancy ceiling 2; the parent's declared division-event times; and the ORTHONORMAL SYMMETRISED BASIS, which is the description whose change IS the symmetrisation.  The law and its consequence are FORCED for every unitary family; the 1176 genuine pairs are this family's"
   },
   {
    "claim": "R5's support-overlap law survives the lift",
-   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; every 2-site support, exhaustive in the geometry, one declared interfering coin pair; both shapes"
+   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; every 2-site support, exhaustive in the geometry, against THREE declared interfering coin pairs, each gated separately -- the geometry is exhaustive and the coin axis is a declared sample of the 512 interfering coins; both shapes"
   },
   {
    "claim": "the eigenphases add and the velocities do not",
@@ -368,14 +537,76 @@
   },
   {
    "claim": "the contact interaction is invisible to the antisymmetric shape",
-   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; the declared contact-phase lift; occupancy ceiling 2; measured per pair over the circulant stratum"
+   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; the declared contact-phase lift, one zeta_8 phase of a declared eight; occupancy ceiling 2; measured per pair over the circulant stratum"
   }
  ],
  "discrimination": {
   "agreeing_pairs": 2776,
   "differing_pairs": 588,
+  "entrywise_agreeing_pairs": 1600,
+  "entrywise_differing_pairs": 1764,
+  "entrywise_set_is_the_two_excitation_nonzero_set": true,
+  "granularity": "TWO: entrywise (cell by cell) and relabelling-invariant (value multisets)",
   "set_equality": true,
-  "single_excitation_pairs": 588
+  "single_excitation_pairs": 588,
+  "stride_window": {
+   "discriminated": 43,
+   "pairs": 259,
+   "set_equality": true,
+   "single_excitation": 43,
+   "stride": 13
+  },
+  "witness": {
+   "antisymmetric_value_multiset": {
+    "-1/128": 32,
+    "-1/32": 128,
+    "-1/64": 128,
+    "1/128": 32,
+    "1/32": 128,
+    "1/64": 128
+   },
+   "entrywise_differing_cells": 576,
+   "named_cells": [
+    {
+     "antisymmetric": "-1/32",
+     "column": [
+      0,
+      1
+     ],
+     "row": [
+      0,
+      4
+     ],
+     "symmetric": "1/32"
+    },
+    {
+     "antisymmetric": "1/32",
+     "column": [
+      0,
+      5
+     ],
+     "row": [
+      0,
+      4
+     ],
+     "symmetric": "-1/32"
+    }
+   ],
+   "pair": [
+    "C000",
+    "C012"
+   ],
+   "single_excitation_defect": false,
+   "symmetric_block_value_multiset": {
+    "-1/128": 32,
+    "-1/32": 128,
+    "-1/64": 128,
+    "1/128": 32,
+    "1/32": 128,
+    "1/64": 128
+   },
+   "value_multisets_equal": true
+  }
  },
  "exchange_census": {
   "antisymmetric_admitted": 64,
@@ -1030,7 +1261,7 @@
  },
  "gates": [
   {
-   "claim": "every declared verbatim window is present in its named source after whitespace and markdown-prefix normalisation, and every window that carries a claim is a CONTEXT window (at least 40 normalised characters), not a fragment",
+   "claim": "every declared verbatim window is present in its named source after whitespace and markdown-prefix normalisation, and EVERY window is a CONTEXT window (at least 40 normalised characters), not a fragment -- the published floor is the true floor and no anchor is exempted from it inside the predicate",
    "detail": "12 windows, floor 50 chars",
    "gate": "G-VERBATIM-ANCHORS",
    "kind": "MEASURED",
@@ -1045,7 +1276,7 @@
   },
   {
    "claim": "every anchored (path, value) pair holds: the anchor is the VALUE at the path, not merely the file's bytes, so a receipt that keeps its digest while moving a number dies here",
-   "detail": "24 path-value anchors",
+   "detail": "25 path-value anchors",
    "gate": "G-PATH-VALUE-ANCHORS",
    "kind": "MEASURED",
    "passed": true
@@ -1128,6 +1359,34 @@
    "passed": true
   },
   {
+   "claim": "the composition defect is the object the anchored definition names, and the anchor is CONSUMED rather than quoted: the measured object equals the Born shadow of the coherent composite minus the shadow obtained by forgetting phases and restarting at the intermediate cut, with the declared leg B(U2) at the cut -- and the other leg order is a DIFFERENT object, which is why the declaration matters",
+   "detail": "the definitional identity holds at 100 of 100 declared pairs, 0 failures; the two leg orders are different objects at 34 of them",
+   "gate": "G-DEFECT-DEFINITION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the seed paper's witness property is exercised in both directions on this arena: the defect VANISHES exactly when the coherent composite's Born shadow equals the restarted one -- zero at a monomial leg, nonzero at a pair that interferes -- so the anchored sentence is a definition this unit uses and not a sentence it cites",
+   "detail": "the defect is zero at C004/C000 and nonzero at C000/C000",
+   "gate": "G-DEFECT-WITNESS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the question this unit asks is the one the parent's own terminal register named as the cheapest route off its stage, and the pin asks it in those words: the parent names a two-excitation sector as the first of exactly three routes out, and the carrier this unit declares IS that sector",
+   "detail": "the pin's question and the parent's route name the same sector",
+   "gate": "G-PIN-QUESTION-IS-THE-PARENTS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the sector is NEW: the parent's own bytes say it carried no multi-excitation sector and its receipt declares the sector SINGLE-OCCUPATION, while this unit's ordered carrier is |X|^2 configurations -- so nothing measured here is a re-reading of the parent's arena",
+   "detail": "the parent's sector is SINGLE-OCCUPATION on 16 configurations; this unit's ordered sector carries 256",
+   "gate": "G-SECTOR-IS-NEW",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "the two-excitation ordered sector decomposes into exactly the two exchange sectors and nothing else: at two excitations the symmetric group has two irreducible characters, so a parastatistics-shaped THIRD sector cannot exist here by dimension",
    "detail": "256 = 136 + 120",
    "gate": "G-SECTOR-DECOMPOSITION",
@@ -1149,30 +1408,44 @@
    "passed": true
   },
   {
-   "claim": "under the hard-core ceiling the symmetric sector fails to close at exactly the non-monomial generators and closes at exactly the monomial ones -- a per-generator predicate discharged per generator, with no aggregate standing in for any of them",
+   "claim": "under the hard-core ceiling the symmetric sector fails to close at exactly the non-monomial generators and closes at exactly the monomial ones -- a per-generator predicate discharged per generator, with no aggregate standing in for any of them.  The SPLIT is a theorem about Sym^2 of every unitary (G-LEAK-THEOREM-UNIVERSAL); what this pool contributes is its SIZE, and that is inherited from the parent's monomial classification",
    "detail": "48 leaking, 16 closed, 0 mismatches",
    "gate": "G-HARDCORE-LEAK-PER-GENERATOR",
-   "kind": "MEASURED",
+   "kind": "DISCLOSURE",
    "passed": true
   },
   {
-   "claim": "under the same ceiling the antisymmetric sector closes at every generator: the wedge has no doubly-occupied configuration to leak into, so the exclusion is not imposed on it but is the shape itself",
-   "detail": "64 of 64 generators, 120 hard-core configurations",
+   "claim": "under the same ceiling the antisymmetric sector closes at every generator -- MEASURED as the wedge's own leak cell count and not typed: the wedge has no doubly-occupied configuration to leak into, so the exclusion is not imposed on it but is the shape itself",
+   "detail": "64 of 64 generators, 0 leak cells over the whole pool, 120 hard-core configurations",
    "gate": "G-HARDCORE-ANTISYMMETRIC-CLOSED",
    "kind": "DISCLOSURE",
    "passed": true
   },
   {
-   "claim": "the two occupancy ceilings have the same one-excitation restriction, configuration for configuration -- so the parent's whole arena is a fixed point of both, and no single-excitation measurement whatever can select between them",
-   "detail": "16 = 16 configurations at one excitation; 136 against 120 at two",
+   "claim": "the two occupancy ceilings have the same one-excitation restriction AS AN OBJECT: the same configuration set, and for every generator in the pool the same transition matrix and the same Born shadow -- so the parent's whole arena is a fixed point of both, and no single-excitation measurement whatever, of any quantity at all, can select between them",
+   "detail": "16 = 16 configurations at one excitation, 64 generators agreeing as objects, 0 disagreeing; 136 against 120 at two",
    "gate": "G-CEILINGS-AGREE-AT-ONE-EXCITATION",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the occupancy ceiling is NOT anchored: the record layer declares the site lattice, the link set and the chart group and declares no ceiling at all, and its own count registers are integer valued and run past one -- which, if it argues anything, argues against the hard core.  The ceiling is therefore carried as this unit's declaration and censused both ways",
-   "detail": "anchored count register = 6",
-   "gate": "G-OCCUPANCY-NOT-ANCHORED",
+   "claim": "the occupancy ceiling is NOT anchored, and this is a MEASUREMENT of the record layer's silence rather than an inference from one of its integers: every declaration key the anchored stage publishes is enumerated and none of them is occupancy-shaped.  Its two integer count registers are LINK registers -- the swept box of division-count vectors, by the stage's own description -- and its one site-indexed register is binary, so neither argues either way",
+   "detail": "27 declaration keys, 0 occupancy-shaped; the two integer registers are the link-count box bounds 6 and 12",
+   "gate": "G-STAGE-DECLARES-NO-OCCUPANCY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the hard-core leak law is a THEOREM about Sym^2 of EVERY unitary and not a property of this family: the symmetric square leaks out of the hard core iff the unitary is non-monomial, because the only cell out of it is the single product 2 N U_ax U_ay in a domain; the wedge has no doubly-occupied configuration to leak into at any dimension.  Gated on constructed witnesses in dimensions 3, 4 and 5 and on the composites U2 U1, which this pool does not contain",
+   "detail": "240 witnesses in dimensions [3, 4, 5], 0 mismatches; 3364 composites (column support to 9), 2976 non-monomial, 2976 leaking, 0 mismatches; wedge leak cells 0",
+   "gate": "G-LEAK-THEOREM-UNIVERSAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and labelled excitations carry no genuine n-body defect for ANY unitary family whatever: B(U (x) U) = B(U) (x) B(U) entrywise, so the ordered defect is X (x) X - Y (x) Y = Delta (x) X + Y (x) Delta identically; X (x) X = Y (x) Y iff X = Y for row-stochastic X and Y; and the telescoping X^(x)n - Y^(x)n = sum_k Y^(x)k (x) Delta (x) X^(x)(n-1-k) carries both to every n -- measured at n = 2 and n = 3 on witnesses outside this arena",
+   "detail": "30 declared ordered pairs of witnesses; born 30, derivation 30, fibre 30, affine 30, injective 30, telescope n=2 30, n=3 30; 0 failures",
+   "gate": "G-INDISTINGUISHABILITY-UNIVERSAL",
    "kind": "MEASURED",
    "passed": true
   },
@@ -1180,6 +1453,13 @@
    "claim": "the NEITHER branch is reached on a REAL arena and not on a synthetic census: at the distinguishable lift every ordered pair of distinct generators breaks the exchange symmetry",
    "detail": "3306 of 3306 ordered pairs of distinct generators",
    "gate": "G-A4-NEITHER-REACHED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the arena's SECOND head-input is a second measurement: at every ordered pair of distinct generators BOTH off-block matrix elements are nonzero -- <antisymmetric|U (x) V|symmetric> and <symmetric|U (x) V|antisymmetric> -- so neither sector is invariant, measured per pair rather than asserted in a detail string beside the commutation",
+   "detail": "3306 of 3306 ordered pairs carry both cross-blocks nonzero",
+   "gate": "G-A4-NEITHER-INVARIANT",
    "kind": "MEASURED",
    "passed": true
   },
@@ -1226,16 +1506,37 @@
    "passed": true
   },
   {
-   "claim": "on the ORDERED sector the defect DOES compose, exactly and by a derivation law -- Delta(U2 (x) U2, U1 (x) U1) = Delta (x) X + Y (x) Delta with X the coherent and Y the restarted composite -- so the ordered sector carries no genuine two-body defect at all, and the whole excess above is carried by the exchange symmetrisation",
-   "detail": "0 derivation failures over 3364 pairs; ordered-sector defect set equals the single-excitation set",
-   "gate": "G-DERIVATION-LAW",
+   "claim": "the parent's anchored Markovian zero is CONSUMED here and not merely quoted: a monomial leg annihilates the defect against everything, at one excitation and at two and in both shapes, so no ordered pair with a monomial leg carries a defect anywhere in this census.  That is entailed by the per-pair law above rather than measured beside it, and it is the parent's control surviving the lift",
+   "detail": "16 monomial generators; 0 of the 1600 ordered pairs with a monomial leg carry a defect at any level",
+   "gate": "G-MARKOV-INHERITED",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the two shapes are told apart BY THE DEFECT, and exactly where the substrate already interferes: the set of ordered pairs at which the symmetric and antisymmetric two-excitation defects differ as value multisets is EXACTLY the set of pairs carrying a single-excitation defect -- a set equality, not a coincidence of cardinalities",
+   "claim": "on the ORDERED sector the defect DOES compose, exactly and by a derivation law -- Delta(U2 (x) U2, U1 (x) U1) = Delta (x) X + Y (x) Delta -- so the ordered sector carries no genuine two-body defect at all and the whole excess above is carried by the exchange symmetrisation.  Both the law and its ONE-PARAMETER FIBRE are checked at every pair: Delta (x) Y + X (x) Delta is an equally exact reading, so 'X the coherent and Y the restarted composite' is one point on a line and not the splitting.  The law and its consequence are FORCED (G-INDISTINGUISHABILITY-UNIVERSAL); what is measured beside them is the symmetrised census",
+   "detail": "0 derivation failures and 0 fibre failures over 3364 pairs; ordered-sector defect set equals the single-excitation set",
+   "gate": "G-DERIVATION-LAW",
+   "kind": "DISCLOSURE",
+   "passed": true
+  },
+  {
+   "claim": "at the relabelling-invariant granularity the two shapes are told apart exactly where the substrate already interferes: the set of ordered pairs at which the symmetric and antisymmetric two-excitation defects differ AS VALUE MULTISETS is EXACTLY the set of pairs carrying a single-excitation defect -- a set equality, not a coincidence of cardinalities",
    "detail": "588 differing pairs; set equality against the 588 single-excitation pairs",
    "gate": "G-SHAPES-DISCRIMINATED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and CELL BY CELL, on the same shared hard-core block, in the same row and column ordering, the two shapes differ at a strictly larger set: the set of ordered pairs at which the two two-excitation defects differ ENTRYWISE is EXACTLY the set on which the two-excitation defect is nonzero -- the pairs whose two legs are both non-monomial -- and they agree only where both defects vanish.  A set equality against the census's own nonzero set, with a declared witness carrying no single-excitation defect at all",
+   "detail": "1764 pairs differ entrywise, 1600 agree with both defects zero; witness C000/C012 carries no single-excitation defect, equal value multisets and 576 differing cells",
+   "gate": "G-SHAPES-DISCRIMINATED-ENTRYWISE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the triple identity is stated at BOTH granularities it holds at, and each is gated as a set equality: over the whole census the multiset-differing set, the handle's moved set and the single-excitation set are one 588-element set; and on the declared stride window -- every 13th ordered pair of the census's own enumeration -- the same three coincide again on a 43-element set, so the identity is not an artifact of reading the census whole",
+   "detail": "259 pairs in the declared stride window, 43 carrying a single-excitation defect, 43 discriminated, set-equal",
+   "gate": "G-TRIPLE-IDENTITY-BOTH-GRANULARITIES",
    "kind": "MEASURED",
    "passed": true
   },
@@ -1247,15 +1548,15 @@
    "passed": true
   },
   {
-   "claim": "and a third route agrees on a declared window: the explicit interference sum over ordered pairs of distinct intermediate configurations, which forms no composite matrix and no product of Born matrices at all.  The window is the first twelve generators in the parent's own naming, declared and not sampled at random",
-   "detail": "144 ordered pairs, 24 distinct values",
+   "claim": "and a third route agrees on a declared window: the explicit interference sum over ordered pairs of distinct intermediate configurations, which forms no composite matrix and no product of Born matrices at all.  The window is the first twelve generators in the parent's own naming, declared and not sampled at random -- and it is required to BITE: it must contain generators of BOTH predicate classes and pairs of both outcomes, so the agreement is not an agreement about an empty set",
+   "detail": "144 ordered pairs, 24 distinct values; the window carries 4 monomial and 8 non-monomial generators and 64 nonzero pairs",
    "gate": "G-THIRD-CODE-PATH",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "every two-excitation defect value is rational, in both shapes, although the field carries irrational elements and the Born projection is never coerced out of it",
-   "detail": "28 antisymmetric and 30 symmetric distinct values, all rational",
+   "claim": "every two-excitation defect value is rational, although the field carries irrational elements and the Born projection is never coerced out of it -- and the claim REACHES the whole symmetric sector and not only the hard-core block the wedge also carries: the 136-dimensional symmetric defect carries 39 distinct values, 9 of which the block never sees, and every one of them is rational too",
+   "detail": "28 antisymmetric, 30 symmetric on the hard-core block and 39 in the whole symmetric sector, all rational; 9 values live only off the block: ['-19/128', '-27/128', '-3/128', '-3/8', '101/128', '3/8', '5/128', '5/32', '5/8']",
    "gate": "G-DEFECT-RATIONAL",
    "kind": "MEASURED",
    "passed": true
@@ -1296,6 +1597,20 @@
    "passed": true
   },
   {
+   "claim": "R5's one declared two-excitation extension is CITED and NOT re-run, as the pin requires, and the number of rows this unit attributes to it is PARSED from R5's own anchored sentence rather than typed here -- so the citation cannot drift from the thing cited",
+   "detail": "18 rows cited and not re-run, parsed from the anchored sentence",
+   "gate": "G-R5-PRECEDENT-CITED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the shape discrimination is TAKEN at the local grain and not only on the circulant stratum, at both granularities.  On the 360 overlap-2 rows -- rows where the one-excitation defect fires at every one of them -- the two shapes differ at 240: at EVERY row of each declared pair of DISTINCT coins, and at NO row of the coin composed with itself.  So interference at one excitation does NOT by itself imply the shapes can be told apart: the coextension of the two is a fact about the CIRCULANT STRATUM, which is where this unit's discrimination law is scoped, and the local window carries 120 interfering rows on which the shapes agree",
+   "detail": "360 overlap-2 rows compared; 240 differ entrywise and 240 as value multisets; 1 of 3 declared coin pairs are a coin against itself and discriminate at none",
+   "gate": "G-OVERLAP-SHAPES-AT-THE-LOCAL-GRAIN",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "every single-excitation eigenvalue is an eighth root of unity, so every eigenphase is an exact element of Z/8 and the whole two-excitation census below is exact: no branch, no approximation and no field extension anywhere",
    "detail": "0 cells outside mu_8 over 928",
    "gate": "G-EIGENPHASES-IN-MU8",
@@ -1324,44 +1639,79 @@
    "passed": true
   },
   {
-   "claim": "the eigenphases add and the VELOCITIES do not: under the inherited convention the lift of a sum is not the sum of the lifts, and the failure is confined to one mechanism -- the antipodal tie, reached exactly when the two single-excitation phase advances are equal and nonzero",
-   "detail": "7168 of 29696 cells fail; failing lift pairs [(-2, -2), (2, 2)]",
+   "claim": "the velocity convention this unit inherits is DERIVED from R4b's own anchored values -- its declared tie reading and the first of its admissible stencils -- and not typed beside them, so the convention WORD the receipt publishes cannot drift from the convention the parent declared.  It is inherited AS DECLARED and is not re-selected here",
+   "detail": "convention derived as FORWARD-DIFFERENCE-WITH-TIE-AVERAGED-INHERITED-AS-DECLARED",
+   "gate": "G-R4B-CONVENTION-INHERITED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the eigenphases add and the VELOCITIES do not: under the inherited convention the lift of a sum is not the sum of the lifts.  The failure is confined to one mechanism, and the mechanism is stated in the RAW advances rather than in their lifts, because the lift sends both 0 and 4 to 0 and would hide the distinction: the failing raw pairs are exactly (2,2) and (6,6) -- an advance of pi/2 per momentum step in both legs, whose sum is the antipodal tie -- while the 4096 cells with both advances equal to 4, equal and nonzero, do NOT fail",
+   "detail": "7168 of 29696 cells fail; failing raw advance pairs [((2, 2), 3584), ((6, 6), 3584)]; equal and nonzero but not failing [((4, 4), 4096)]; failing lift pairs [(-2, -2), (2, 2)]",
    "gate": "G-VELOCITY-DOES-NOT-ADD",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "and two excitations move no faster than one: the two-excitation speed spectrum is the single-excitation spectrum, so the arena ceiling R4b measured does not widen with excitation number",
-   "detail": "two-excitation speeds [0, 1, 2] against [0, 1, 2]",
+   "claim": "and two excitations move no faster than one: the two-excitation speed spectrum is the single-excitation spectrum.  The CEILING is forced -- the declared speed is the branch-free circle distance on Z/8 halved, whose range is {0,1,2} for every argument at L = 4, so no family and no excitation number could widen it -- and what is measured is that all three values are ATTAINED at two excitations as well as at one",
+   "detail": "two-excitation speeds [0, 1, 2] against [0, 1, 2]; the declared reading's whole range is [0, 1, 2]",
    "gate": "G-SPEED-CEILING-UNCHANGED",
+   "kind": "DISCLOSURE",
+   "passed": true
+  },
+  {
+   "claim": "the pin's scope stamp is CONSUMED: no transport number is inherited from R4b and none is produced.  The parent publishes transport-shaped keys and this unit reads none of them into any measurement; the count it inherits is zero and the SCOPE segment says so",
+   "detail": "0 transport numbers inherited; 0 transport-shaped parent keys, none read",
+   "gate": "G-NO-TRANSPORT-NUMBER-INHERITED",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the declared contact interaction MOVES the symmetric shape's two-excitation defect and CANNOT move the antisymmetric shape's: the negative direction of this self-test fires where it can, so the zero is a measurement and not a vacuity",
+   "claim": "the declared contact interaction MOVES the symmetric shape's two-excitation defect and CANNOT move the antisymmetric shape's: the negative direction of this self-test fires where it can, so the zero is a measurement of the SHAPE and not a vacuity OF THE HANDLE -- the antisymmetric zero itself is forced, since the wedge carries no doubly-occupied configuration for the handle to act on",
    "detail": "the handle moves the symmetric defect at 588 of 3364 pairs and the antisymmetric defect at 0; it moves the symmetric operator at 58 of 58 generators and the antisymmetric operator at 0",
    "gate": "G-CONTACT-TWO-WAY",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "and the handle is visible at exactly the ordered pairs that carry a single-excitation defect -- the same set the two shapes are discriminated on, element for element, gated as a set equality and not as a count.  Everything that can see the doubly-occupied channel on this arena sees it exactly where the substrate already interferes",
+   "claim": "and the handle is visible at exactly the ordered pairs that carry a single-excitation defect -- the same set the two shapes are discriminated on at the relabelling-invariant granularity, element for element, gated as a set equality and not as a count.  ON THE CIRCULANT STRATUM everything that can see the doubly-occupied channel sees it exactly where the substrate already interferes; the local window of section 7 measures the same question at the local grain and answers it differently, so the coextension is stratum-scoped and is not claimed of the arena",
    "detail": "588 moved pairs against 588 single-excitation pairs, set equality",
    "gate": "G-CONTACT-SET-IS-THE-INTERFERING-SET",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "every quantum-layer claim this unit makes carries a description stamp naming the sector, the lift, the occupancy ceiling and the convention it was measured in; a claim without one is not a claim",
-   "detail": "7 stamped claims",
+   "claim": "every quantum-layer claim this unit makes carries a description stamp naming the sector, the lift, the occupancy ceiling, the granularity of the comparison and the stratum it was measured on; a claim without one is not a claim this unit makes",
+   "detail": "9 stamped claims",
    "gate": "G-DESCRIPTION-STAMPS",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "every gate registered as a DISCLOSURE names the mechanism that forces it and names the measuring gate that stands in its place; no gate carrying measured content is waived",
-   "detail": "3 waivers, all forced and all matched to a disclosure",
+   "claim": "the unit whose whole thesis is that a DECLARATION decides publishes its declarations, on the parents' schema, with the fibre and the verdict-determining flag -- and the flag is CHECKED against the arena census rather than asserted: exactly the items flagged verdict-determining are the ones the four declared arenas move, and moving them returns exactly the four distinct pre-registered head names the census reports",
+   "detail": "10 inventory rows, 2 verdict-determining: ['the lift', 'the occupancy ceiling']",
+   "gate": "G-CHOICE-INVENTORY-VERDICT-DETERMINING",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every gate registered as a DISCLOSURE names the mechanism that forces it and names the measuring gate that stands in its place; no gate carrying measured content is waived.  Six gates are disclosures here rather than three: the two forcings the unit delivered as measurements -- the hard-core split and the ordered-sector derivation law -- are theorems about every unitary, and the speed ceiling is forced by the dual torus",
+   "detail": "6 waivers, all forced and all matched to a disclosure",
    "gate": "G-WAIVERS-VERIFIED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the receipt's own schema and provenance are BOUND rather than decorative: the published key list is the manifest itself, every declared unsealed key is declared with a reason, every anchored source appears in the provenance with the digest the run verified, and the runtime inputs are the paths this run actually read -- the paper included, which the delivered provenance omitted because it was built before the paper was read",
+   "detail": "32 published keys, 1 declared unsealed, 12 sources, 13 runtime inputs",
+   "gate": "G-RECEIPT-SCHEMA",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every summary count the receipt publishes is RE-DERIVED from the per-object rows it summarises and required to agree: the pool size from the exchange rows, the commutation tally from their own predicates, the leak from the occupancy rows, the overlap total from the by-overlap table, the circulant count from the pool listing.  A summary that drifts from its rows dies here rather than being sealed beside them",
+   "detail": "6 summary counts re-derived from their rows, 0 disagreeing: []",
+   "gate": "G-PUBLISHED-ROWS-BOUND",
    "kind": "MEASURED",
    "passed": true
   },
@@ -1387,8 +1737,8 @@
    "passed": true
   },
   {
-   "claim": "the memoised census this run was served is byte-for-byte the census that was computed: no injection, this run's or an earlier run's, has reached it, so the mutant sweep measures 30 independent runs and not one contaminated sequence",
-   "detail": "1 cached censuses, 0 polluted",
+   "claim": "EVERY memoised census this run was served is the census that was computed, field for field: EVERY cache family is fingerprinted at creation over its WHOLE contents -- not seven fields of one of them -- and every fingerprint is re-checked here.  So no injection, this run's or an earlier run's, can reach the next run through the memo, and the mutant sweep measures independent runs rather than one contaminated sequence",
+   "detail": "9 cached censuses fingerprinted, 0 polluted: []",
    "gate": "G-CACHE-UNPOLLUTED",
    "kind": "MEASURED",
    "passed": true
@@ -1401,23 +1751,58 @@
    "passed": true
   },
   {
-   "claim": "every claim the paper makes about a measured quantity renders from a receipt key and is present in the paper as written",
-   "detail": "15 claims, 0 missing",
+   "claim": "the argv whitelist rejects every unknown flag, every unknown mutant name, every unknown anchor name, the equals form, and a --verify-paper path that does not exist -- the last at PARSE time, so a bad path costs an exit 2 and not an eight-minute census followed by a traceback",
+   "detail": "6 probes, all rejected",
+   "gate": "G-CLI-WHITELIST",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every claim the paper makes about a measured quantity renders from a receipt key and occurs in the paper EXACTLY ONCE -- an occurrence count, not containment.  Eleven of the delivered claim strings occurred two to five times, so corrupting any one copy left the claim satisfied by its twins (#125's duplicate-shadow variant); one occurrence each is the repair, and it is the paper that was made to satisfy it",
+   "detail": "24 claims, 0 not occurring exactly once: []",
    "gate": "G-PAPER-CLAIMS",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the paper quotes the COMPLETE verdict string the instrument emits, character for character, so the paper's verdict block cannot go stale behind the receipt",
-   "detail": "2353 characters of verdict quoted in the paper",
+   "claim": "E-22: THE TABLES RENDER AS CLAIMS.  Every row of the arena table, the sector table, the overlap table, the choice inventory and the witness cells is ASSEMBLED FROM THIS RUN's own measurements and required to occur in the paper exactly once, so a swapped row, an inverted lives/dies cell or a zeroed positive control dies inside the run rather than shipping at exit 0",
+   "detail": "28 rendered table rows, 0 not located exactly once: []",
+   "gate": "G-PAPER-TABLES",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the paper quotes the COMPLETE verdict string the instrument emits, character for character -- and its FENCED BLOCKS are compared to the derived verdict AS A MULTISET (E-22), not by containment: the paper carries exactly one fenced block and it is exactly this string, so a second fence asserting the opposite head cannot hide behind a clean twin",
+   "detail": "3291 characters of verdict quoted; 1 fenced blocks, 1 distinct, multiset matches the derived verdict: True",
    "gate": "G-PAPER-VERDICT-BLOCK",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "EVERY numeral in the paper -- prose, tables and fenced verdict blocks alike -- is licensed by a receipt value or is one of the declared structural numerals",
-   "detail": "52 numerals in the paper, 0 unlicensed: []",
+   "claim": "EVERY numeral in the paper -- prose, inline code spans, tables and the fenced verdict block alike -- is licensed by a MEASURED receipt value or is one of the declared structural numerals.  No numeral is licensed by a sha256 digest: the digest strings are removed from the pool",
+   "detail": "62 numerals in the paper, 0 unlicensed: []; 227 licensed values",
    "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the pin's wall is an INSTRUMENT and not a label: this unit's own paper is scanned word by word against a declared banned list, and the shape words survive only as the compounds the pin licenses -- fermionic-shape and bosonic-shape.  No particle noun, no spin, no anyon and no bare shape adjective occurs anywhere in it",
+   "detail": "0 banned words found: []; 4 licensed compounds",
+   "gate": "G-NO-PARTICLE-NAMING",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the connective clause travels VERBATIM, and the three copies are compared: the parent's own bytes, this unit's SCOPE segment, and the paper's own inline span -- the last by OCCURRENCE COUNT against the verdict string's own copies, so an inline span altered from LINK-(1,1) to LINK-(1,2) cannot hide behind the copy inside the fence",
+   "detail": "the anchored clause is in the SCOPE segment and occurs 2 times in the paper, 2 expected",
+   "gate": "G-CONNECTIVE-VERBATIM",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the paper's load-bearing SENTENCES carry polarity as its numbers do: for each declared pair the positive form must be present and its negation absent, so an inverted headline or an inverted wall dies here.  Both survived every delivered gate",
+   "detail": "6 sentence polarities, 0 failing: []",
+   "gate": "G-PAPER-SENTENCE-POLARITY",
    "kind": "MEASURED",
    "passed": true
   },
@@ -1429,43 +1814,57 @@
    "passed": true
   },
   {
+   "claim": "the paper verification is NON-DESTRUCTIVE: every perturbation it takes for the polarity test is restored, and the whole state is digested before and after and required to be identical.  A restore that silently fails moves a sealed, published row and is caught here and again at G-SEAL-COMPLETE",
+   "detail": "state digest abd8c47f555f before, abd8c47f555f after",
+   "gate": "G-STATE-RESTORED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "#62: every anchor and every seal names a CONSUMER GATE, and each named gate is required to be in this source's own gate registry -- read from the AST, not from a list -- AND to have been evaluated in this run, or to be one of the declared late gates main() evaluates after the census.  Thirty published rows named twelve gates that did not exist; an anchor whose consumer is an unread label binds existence and not meaning",
+   "detail": "43 distinct consumer gates over 88 registry entries; 0 not registered-and-evaluated: none",
+   "gate": "G-ANCHOR-CONSUMERS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and every seal's provenance column is a MEASUREMENT of the order of events: the gate it names exists, was evaluated in this run, and was evaluated BEFORE the digest was taken.  Fifteen of the delivered thirty named a gate that never ran, and the digests were taken in one batch at the end -- which is what let a silently failed restore ship a sealed receipt asserting 65 of 64 generators at exit 0",
+   "detail": "28 seals taken so far; 0 naming an unevaluated gate, 0 taken before their gate",
+   "gate": "G-SEAL-PROVENANCE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "the receipt payload is a pure function of the measurements: two serializations are byte identical and neither carries this machine's absolute paths, so the artifact reproduces byte for byte anywhere the pinned inputs are",
-   "detail": "67242 bytes, twice identical, no absolute path",
+   "detail": "92554 bytes, twice identical, no absolute path",
    "gate": "G-PAYLOAD-DETERMINISTIC",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "every object this unit vouches for was digested at the moment its gate passed, and every one of those digests still verifies now: the seal covers the measurements, the anchors, the schema, the provenance and the paper claims, not only the verdict",
-   "detail": "24 seals, 0 broken",
+   "claim": "every object this unit vouches for was digested ON THE LINE AFTER its own gate passed -- not in a batch at the end -- and every one of those digests still verifies now: the seal covers the measurements, the theorems, the anchors, the choice inventory, the schema, the provenance and the paper's own claims and tables, not only the verdict",
+   "detail": "28 seals taken at their gates of 28 expected, 0 broken: none",
    "gate": "G-SEAL-COMPLETE",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the manifest is TOTAL over the FINAL receipt, not over the receipt as it stands here: every key the artifact will publish is sealed, save the seal ledger itself, which is declared unsealed with its reason -- and the writing path re-checks the artifact's actual key set against this declaration",
-   "detail": "23 keys published so far, 29 declared for the artifact, 28 sealed, 1 declared unsealed",
+   "detail": "27 keys published so far, 32 declared for the artifact, 31 sealed, 1 declared unsealed",
    "gate": "G-SEAL-TOTAL",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the argv whitelist rejects every unknown flag, every unknown mutant name and every unknown anchor name",
-   "detail": "4 probes",
-   "gate": "G-CLI-WHITELIST",
-   "kind": "MEASURED",
-   "passed": true
-  },
-  {
    "claim": "every declared mutant is killed, and killed by the gate it was declared to falsify: a mutant that dies elsewhere is a gate boundary this unit does not understand",
-   "detail": "killed 56 of 56; on target 56; off target []",
+   "detail": "killed 94 of 94; on target 94; off target []",
    "gate": "G-MUTANTS-ON-TARGET",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the paper's coverage is re-asserted after the mutant sweep has closed the instrument's totals, so no in-process mutant can reach it",
-   "detail": "52 numerals, 0 unlicensed",
+   "detail": "62 numerals, 0 unlicensed",
    "gate": "G-PAPER-COVERAGE-FINAL",
    "kind": "MEASURED",
    "passed": true
@@ -1475,6 +1874,16 @@
   "antisymmetric_cells": 6960,
   "convention": "FORWARD-DIFFERENCE-WITH-TIE-AVERAGED-INHERITED-AS-DECLARED",
   "eigen_failures": 0,
+  "equal_and_nonzero_not_failing": [
+   [
+    [
+     4,
+     4
+    ],
+    4096
+   ]
+  ],
+  "equal_and_nonzero_not_failing_cells": 4096,
   "failing_lift_pairs": [
    [
     -2,
@@ -1485,11 +1894,113 @@
     2
    ]
   ],
+  "failing_raw_advance_pairs": [
+   [
+    [
+     2,
+     2
+    ],
+    3584
+   ],
+   [
+    [
+     6,
+     6
+    ],
+    3584
+   ]
+  ],
   "families": 58,
   "momenta": 16,
   "r4b_cells": 1856,
   "r4b_tie_cells": 320,
   "r4b_tie_families": 19,
+  "raw_advance_pairs": [
+   [
+    [
+     0,
+     0
+    ],
+    9216
+   ],
+   [
+    [
+     0,
+     2
+    ],
+    1024
+   ],
+   [
+    [
+     0,
+     4
+    ],
+    1024
+   ],
+   [
+    [
+     0,
+     6
+    ],
+    1024
+   ],
+   [
+    [
+     2,
+     0
+    ],
+    1024
+   ],
+   [
+    [
+     2,
+     2
+    ],
+    3584
+   ],
+   [
+    [
+     2,
+     6
+    ],
+    1536
+   ],
+   [
+    [
+     4,
+     0
+    ],
+    1024
+   ],
+   [
+    [
+     4,
+     4
+    ],
+    4096
+   ],
+   [
+    [
+     6,
+     0
+    ],
+    1024
+   ],
+   [
+    [
+     6,
+     2
+    ],
+    1536
+   ],
+   [
+    [
+     6,
+     6
+    ],
+    3584
+   ]
+  ],
   "single_cells": 928,
   "single_speed_spectrum": [
    0,
@@ -1498,6 +2009,11 @@
   ],
   "spectra_split_families": 58,
   "spectral_difference_cells": 16,
+  "speed_range_of_the_declared_reading": [
+   0,
+   1,
+   2
+  ],
   "symmetric_cells": 7888,
   "transport_numbers_inherited": 0,
   "two_speed_spectrum": [
@@ -1510,6 +2026,7 @@
  },
  "mutants": [
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-GAUGE-ORBITS-FREE",
    "killed": true,
    "mutant": "MUT-GAUGE-ORBIT",
@@ -1518,6 +2035,7 @@
    "what": "shrinks one gauge orbit"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-ARENA-ANCHORED",
    "killed": true,
    "mutant": "MUT-ARENA-SIZE",
@@ -1526,6 +2044,7 @@
    "what": "censuses a lattice the anchors do not name"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-ALPHABET-REBUILT",
    "killed": true,
    "mutant": "MUT-ALPHABET",
@@ -1534,6 +2053,7 @@
    "what": "drops an alphabet element"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-REBUILD-BIJECTION",
    "killed": true,
    "mutant": "MUT-REBUILD-DROP",
@@ -1542,6 +2062,7 @@
    "what": "drops one rebuilt generator"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-POOL-COMPLETE",
    "killed": true,
    "mutant": "MUT-POOL-COUNT",
@@ -1550,6 +2071,7 @@
    "what": "shortens the pool"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-VERBATIM-ANCHORS",
    "killed": true,
    "mutant": "MUT-VERBATIM-FRAGMENT",
@@ -1558,6 +2080,7 @@
    "what": "admits a 3-character anchor"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-SECTOR-DECOMPOSITION",
    "killed": true,
    "mutant": "MUT-SECTOR-DIM",
@@ -1566,6 +2089,7 @@
    "what": "inflates the symmetric dimension"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-EXCHANGE-COMMUTES",
    "killed": true,
    "mutant": "MUT-EXCHANGE-COMMUTE",
@@ -1574,6 +2098,7 @@
    "what": "breaks one commutation"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-HARDCORE-LEAK-PER-GENERATOR",
    "killed": true,
    "mutant": "MUT-LEAK-ZERO",
@@ -1582,6 +2107,7 @@
    "what": "zeroes every hard-core leak"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-ARENA-TWO-WAY",
    "killed": true,
    "mutant": "MUT-A3-DIM",
@@ -1590,6 +2116,7 @@
    "what": "gives the one-site wedge a state"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-A4-NEITHER-REACHED",
    "killed": true,
    "mutant": "MUT-A4-COMMUTE",
@@ -1598,6 +2125,7 @@
    "what": "claims the distinguishable lift commutes"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-ARENA-TWO-WAY",
    "killed": true,
    "mutant": "MUT-A3-LIVES",
@@ -1606,6 +2134,7 @@
    "what": "lets the symmetric shape live under the hard core"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-PARENT-REPRODUCED",
    "killed": true,
    "mutant": "MUT-PARENT-COUNT",
@@ -1614,6 +2143,7 @@
    "what": "moves the reproduced parent count"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-TWO-EXCITATION-PREDICATE",
    "killed": true,
    "mutant": "MUT-PREDICATE",
@@ -1622,6 +2152,7 @@
    "what": "adds a pair outside the predicate"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-SHAPES-DISCRIMINATED",
    "killed": true,
    "mutant": "MUT-DISCRIMINATION",
@@ -1630,6 +2161,7 @@
    "what": "drops one discriminating pair"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-COIN-ALPHABET-REBUILT",
    "killed": true,
    "mutant": "MUT-COIN-ALPHABET",
@@ -1638,6 +2170,7 @@
    "what": "shortens the coin alphabet"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-THREE-SITE-EMPTY",
    "killed": true,
    "mutant": "MUT-THREE-SITE",
@@ -1646,6 +2179,7 @@
    "what": "claims a three-site completion"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-OVERLAP-LAW-SURVIVES",
    "killed": true,
    "mutant": "MUT-OVERLAP-LAW",
@@ -1654,6 +2188,7 @@
    "what": "injects a defect at overlap one"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-OVERLAP-COIN-INDEPENDENT",
    "killed": true,
    "mutant": "MUT-COIN-PAIR",
@@ -1662,6 +2197,7 @@
    "what": "breaks one coin pair's row"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-EIGENPHASES-IN-MU8",
    "killed": true,
    "mutant": "MUT-EIGENPHASE",
@@ -1670,6 +2206,7 @@
    "what": "puts an eigenphase outside mu_8"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-EIGENPHASES-ADD",
    "killed": true,
    "mutant": "MUT-ADDITIVITY",
@@ -1678,6 +2215,7 @@
    "what": "breaks one two-excitation eigen-equation"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-SPECTRA-SEPARATE-THE-SHAPES",
    "killed": true,
    "mutant": "MUT-SPECTRUM-SPLIT",
@@ -1686,6 +2224,7 @@
    "what": "breaks one spectral split"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-VELOCITY-DOES-NOT-ADD",
    "killed": true,
    "mutant": "MUT-VELOCITY-ADD",
@@ -1694,6 +2233,7 @@
    "what": "claims the velocity adds"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-CONTACT-TWO-WAY",
    "killed": true,
    "mutant": "MUT-CONTACT-BLIND",
@@ -1702,6 +2242,7 @@
    "what": "blinds the symmetric shape to the handle"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-CONTACT-SET-IS-THE-INTERFERING-SET",
    "killed": true,
    "mutant": "MUT-CONTACT-SET",
@@ -1710,6 +2251,7 @@
    "what": "drops one moved pair"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-VERDICT-RECONSTRUCTED",
    "killed": true,
    "mutant": "MUT-HEAD-TYPED",
@@ -1718,6 +2260,7 @@
    "what": "retypes the head after the census"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-SEAL-COMPLETE",
    "killed": true,
    "mutant": "MUT-SEAL-BROKEN",
@@ -1726,6 +2269,7 @@
    "what": "mutates a sealed object after its seal"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-PAPER-VERDICT-BLOCK",
    "killed": true,
    "mutant": "MUT-PAPER-VERDICT",
@@ -1734,6 +2278,7 @@
    "what": "truncates the quoted verdict"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-PAPER-CLAIMS",
    "killed": true,
    "mutant": "MUT-PAPER-CLAIM",
@@ -1742,6 +2287,7 @@
    "what": "injects a claim the paper does not make"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-PAPER-NUMERAL-COVERAGE",
    "killed": true,
    "mutant": "MUT-PAPER-NUMERAL",
@@ -1750,14 +2296,16 @@
    "what": "injects an unlicensed numeral"
   },
   {
-   "died_at": "G-PAPER-CLAIM-POLARITY",
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-PAPER-SENTENCE-POLARITY",
    "killed": true,
    "mutant": "MUT-PAPER-POLARITY",
    "on_target": true,
-   "target": "G-PAPER-CLAIM-POLARITY",
-   "what": "injects a claim with no polarity"
+   "target": "G-PAPER-SENTENCE-POLARITY",
+   "what": "inverts the paper's declared sentence polarities, so the negative form of the headline and of the walls is what the paper carries"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-DESCRIPTION-STAMPS",
    "killed": true,
    "mutant": "MUT-STAMP-DROP",
@@ -1766,6 +2314,7 @@
    "what": "drops a description stamp"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-WAIVERS-VERIFIED",
    "killed": true,
    "mutant": "MUT-WAIVER-UNFORCED",
@@ -1774,6 +2323,7 @@
    "what": "waives a gate with no forcing"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-RECEIPT-EXACT",
    "killed": true,
    "mutant": "MUT-RECEIPT-FLOAT",
@@ -1782,6 +2332,7 @@
    "what": "writes a float into the receipt"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-PATH-VALUE-ANCHORS",
    "killed": true,
    "mutant": "MUT-PATH-ANCHOR",
@@ -1790,6 +2341,7 @@
    "what": "breaks one anchored value"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-REBUILD-CONTROLS",
    "killed": true,
    "mutant": "MUT-CONTROL-COUNT",
@@ -1798,6 +2350,7 @@
    "what": "drops one declared control"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-REBUILD-INVARIANTS",
    "killed": true,
    "mutant": "MUT-INVARIANT",
@@ -1806,6 +2359,7 @@
    "what": "reports one invariant mismatch"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-MONOMIAL-CLASSIFIER",
    "killed": true,
    "mutant": "MUT-MONOMIAL-LIST",
@@ -1814,6 +2368,7 @@
    "what": "drops a monomial name"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-BOTH-SECTORS-ADMITTED",
    "killed": true,
    "mutant": "MUT-BOTH-ADMITTED",
@@ -1822,6 +2377,7 @@
    "what": "closes one sector to one generator"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-CEILINGS-AGREE-AT-ONE-EXCITATION",
    "killed": true,
    "mutant": "MUT-CEILINGS",
@@ -1830,14 +2386,16 @@
    "what": "separates the two ceilings at one excitation"
   },
   {
-   "died_at": "G-OCCUPANCY-NOT-ANCHORED",
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-HEAD-LAW-EXERCISED",
    "killed": true,
-   "mutant": "MUT-REGISTER",
+   "mutant": "MUT-HEAD-REACH",
    "on_target": true,
-   "target": "G-OCCUPANCY-NOT-ANCHORED",
-   "what": "reads the stage's count register as one"
+   "target": "G-HEAD-LAW-EXERCISED",
+   "what": "makes two of the four declared arenas return the same pre-registered name, so the reachability discharge would rest on three branches"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-GENUINE-TWO-BODY",
    "killed": true,
    "mutant": "MUT-GENUINE-ZERO",
@@ -1846,6 +2404,7 @@
    "what": "empties the genuine two-body set"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-DERIVATION-LAW",
    "killed": true,
    "mutant": "MUT-DERIVATION",
@@ -1854,6 +2413,7 @@
    "what": "injects a derivation-law failure"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-DEFECT-FOLDS",
    "killed": true,
    "mutant": "MUT-FOLD",
@@ -1862,6 +2422,7 @@
    "what": "injects a fold conflict"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-PARENT-VALUE-MULTISET",
    "killed": true,
    "mutant": "MUT-VALUE-MULTISET",
@@ -1870,6 +2431,7 @@
    "what": "moves one reproduced cell count"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-SECOND-CODE-PATH",
    "killed": true,
    "mutant": "MUT-SECOND-PATH",
@@ -1878,6 +2440,7 @@
    "what": "moves the second route's multiset"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-THIRD-CODE-PATH",
    "killed": true,
    "mutant": "MUT-THIRD-PATH",
@@ -1886,14 +2449,16 @@
    "what": "moves the third route's multiset"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-DEFECT-RATIONAL",
    "killed": true,
    "mutant": "MUT-IRRATIONAL",
    "on_target": true,
    "target": "G-DEFECT-RATIONAL",
-   "what": "claims an irrational defect value"
+   "what": "flips the rationality flag without injecting a value"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-OVERLAP-TWO-BITES",
    "killed": true,
    "mutant": "MUT-OVERLAP-BITE",
@@ -1902,14 +2467,16 @@
    "what": "empties the overlap-two positive control"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-SPEED-CEILING-UNCHANGED",
    "killed": true,
    "mutant": "MUT-SPEED-CEILING",
    "on_target": true,
    "target": "G-SPEED-CEILING-UNCHANGED",
-   "what": "widens the two-excitation speed spectrum"
+   "what": "narrows the two-excitation speed spectrum"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-R4B-CONVENTION-REPRODUCED",
    "killed": true,
    "mutant": "MUT-R4B-REPRO",
@@ -1918,6 +2485,7 @@
    "what": "moves the reproduced tie count"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-HEAD-PREREGISTERED",
    "killed": true,
    "mutant": "MUT-HEAD-PRENAME",
@@ -1926,6 +2494,7 @@
    "what": "replaces the pre-registered names"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-SEAL-TOTAL",
    "killed": true,
    "mutant": "MUT-SEAL-TOTAL",
@@ -1934,6 +2503,7 @@
    "what": "publishes an unsealed, undeclared key"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-NO-VERSION-CONTROL-NO-SHELL",
    "killed": true,
    "mutant": "MUT-SHELL-IMPORT",
@@ -1942,6 +2512,7 @@
    "what": "adds a shell entry point"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-PAYLOAD-DETERMINISTIC",
    "killed": true,
    "mutant": "MUT-PAYLOAD-PATH",
@@ -1950,24 +2521,370 @@
    "what": "writes an absolute path into the payload"
   },
   {
+   "cache_entries_repaired_after": 0,
    "died_at": "G-CACHE-UNPOLLUTED",
    "killed": true,
    "mutant": "MUT-CACHE-DIRTY",
    "on_target": true,
    "target": "G-CACHE-UNPOLLUTED",
-   "what": "reports a polluted cache"
+   "what": "fabricates a polluted-cache report without polluting anything: the SYNTHETIC falsifier, kept beside the two real ones so the difference is on the record"
+  },
+  {
+   "cache_entries_repaired_after": 1,
+   "died_at": "G-CACHE-UNPOLLUTED",
+   "killed": true,
+   "mutant": "MUT-CACHE-SVALS",
+   "on_target": true,
+   "target": "G-CACHE-UNPOLLUTED",
+   "what": "writes IN PLACE into the cached census's svals, a published value multiset the delivered digest did not cover"
+  },
+  {
+   "cache_entries_repaired_after": 1,
+   "died_at": "G-CACHE-UNPOLLUTED",
+   "killed": true,
+   "mutant": "MUT-CACHE-ROWS",
+   "on_target": true,
+   "target": "G-CACHE-UNPOLLUTED",
+   "what": "writes IN PLACE into the cached census's rows, the per-pair cell counts the delivered digest did not cover"
+  },
+  {
+   "cache_entries_repaired_after": 1,
+   "died_at": "G-LEAK-THEOREM-UNIVERSAL",
+   "killed": true,
+   "mutant": "MUT-LEAK-THEOREM",
+   "on_target": true,
+   "target": "G-LEAK-THEOREM-UNIVERSAL",
+   "what": "reports a witness at which the leak law fails"
+  },
+  {
+   "cache_entries_repaired_after": 1,
+   "died_at": "G-INDISTINGUISHABILITY-UNIVERSAL",
+   "killed": true,
+   "mutant": "MUT-TELESCOPE",
+   "on_target": true,
+   "target": "G-INDISTINGUISHABILITY-UNIVERSAL",
+   "what": "reports a failure of the telescoping identity"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-HARDCORE-ANTISYMMETRIC-CLOSED",
+   "killed": true,
+   "mutant": "MUT-WEDGE-LEAK",
+   "on_target": true,
+   "target": "G-HARDCORE-ANTISYMMETRIC-CLOSED",
+   "what": "gives the wedge a hard-core leak cell"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-CEILINGS-AGREE-AT-ONE-EXCITATION",
+   "killed": true,
+   "mutant": "MUT-CEILING-SET",
+   "on_target": true,
+   "target": "G-CEILINGS-AGREE-AT-ONE-EXCITATION",
+   "what": "shortens one ceiling's one-excitation configuration set"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-STAGE-DECLARES-NO-OCCUPANCY",
+   "killed": true,
+   "mutant": "MUT-STAGE-OCCUPANCY-KEY",
+   "on_target": true,
+   "target": "G-STAGE-DECLARES-NO-OCCUPANCY",
+   "what": "adds an occupancy-shaped key to the stage's declarations"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-A4-NEITHER-INVARIANT",
+   "killed": true,
+   "mutant": "MUT-A4-INVARIANT",
+   "on_target": true,
+   "target": "G-A4-NEITHER-INVARIANT",
+   "what": "claims a sector stays invariant under the distinguishable lift"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-TWO-EXCITATION-PREDICATE",
+   "killed": true,
+   "mutant": "MUT-PREDICATE-OBJECT",
+   "on_target": true,
+   "target": "G-TWO-EXCITATION-PREDICATE",
+   "what": "swaps one pair in for another, preserving the cardinality exactly, so only the per-object clause can catch it"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-MARKOV-INHERITED",
+   "killed": true,
+   "mutant": "MUT-MARKOV-CARRY",
+   "on_target": true,
+   "target": "G-MARKOV-INHERITED",
+   "what": "gives a monomial-leg pair a defect"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-DERIVATION-LAW",
+   "killed": true,
+   "mutant": "MUT-FIBRE",
+   "on_target": true,
+   "target": "G-DERIVATION-LAW",
+   "what": "reports a failure of the derivation law's one-parameter fibre"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-SHAPES-DISCRIMINATED-ENTRYWISE",
+   "killed": true,
+   "mutant": "MUT-ENTRYWISE",
+   "on_target": true,
+   "target": "G-SHAPES-DISCRIMINATED-ENTRYWISE",
+   "what": "drops one entrywise-differing pair"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-SHAPES-DISCRIMINATED-ENTRYWISE",
+   "killed": true,
+   "mutant": "MUT-JOINT-ZERO",
+   "on_target": true,
+   "target": "G-SHAPES-DISCRIMINATED-ENTRYWISE",
+   "what": "drops one jointly-zero pair"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-SHAPES-DISCRIMINATED-ENTRYWISE",
+   "killed": true,
+   "mutant": "MUT-WITNESS",
+   "on_target": true,
+   "target": "G-SHAPES-DISCRIMINATED-ENTRYWISE",
+   "what": "zeroes the declared witness's differing cell count"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-TRIPLE-IDENTITY-BOTH-GRANULARITIES",
+   "killed": true,
+   "mutant": "MUT-SAMPLE-WINDOW",
+   "on_target": true,
+   "target": "G-TRIPLE-IDENTITY-BOTH-GRANULARITIES",
+   "what": "shortens the declared stride window"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-DEFECT-RATIONAL",
+   "killed": true,
+   "mutant": "MUT-SECTOR-VALUES",
+   "on_target": true,
+   "target": "G-DEFECT-RATIONAL",
+   "what": "claims an irrational value in the symmetric sector off the block"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-THIRD-CODE-PATH",
+   "killed": true,
+   "mutant": "MUT-WINDOW-BLIND",
+   "on_target": true,
+   "target": "G-THIRD-CODE-PATH",
+   "what": "empties the third route's window of monomial generators, so its agreement would be an agreement about one predicate class"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-R5-PRECEDENT-CITED",
+   "killed": true,
+   "mutant": "MUT-R5-CITED",
+   "on_target": true,
+   "target": "G-R5-PRECEDENT-CITED",
+   "what": "moves the cited row count away from R5's own sentence"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-OVERLAP-SHAPES-AT-THE-LOCAL-GRAIN",
+   "killed": true,
+   "mutant": "MUT-LOCAL-GRAIN",
+   "on_target": true,
+   "target": "G-OVERLAP-SHAPES-AT-THE-LOCAL-GRAIN",
+   "what": "claims the shapes are discriminated at every overlap-2 row"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-R4B-CONVENTION-INHERITED",
+   "killed": true,
+   "mutant": "MUT-R4B-CONVENTION",
+   "on_target": true,
+   "target": "G-R4B-CONVENTION-INHERITED",
+   "what": "derives the convention word from a tie reading R4b did not declare"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-VELOCITY-DOES-NOT-ADD",
+   "killed": true,
+   "mutant": "MUT-RAW-PAIRS",
+   "on_target": true,
+   "target": "G-VELOCITY-DOES-NOT-ADD",
+   "what": "adds a failing raw advance pair the census does not carry"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-CHOICE-INVENTORY-VERDICT-DETERMINING",
+   "killed": true,
+   "mutant": "MUT-CHOICE-FLAG",
+   "on_target": true,
+   "target": "G-CHOICE-INVENTORY-VERDICT-DETERMINING",
+   "what": "flags a choice as verdict-determining that determines no verdict"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-PAPER-TABLES",
+   "killed": true,
+   "mutant": "MUT-PAPER-TABLE",
+   "on_target": true,
+   "target": "G-PAPER-TABLES",
+   "what": "forges one rendered table row"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-PAPER-VERDICT-BLOCK",
+   "killed": true,
+   "mutant": "MUT-PAPER-BLOCK",
+   "on_target": true,
+   "target": "G-PAPER-VERDICT-BLOCK",
+   "what": "adds a second fenced block to the paper's block multiset"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-NO-PARTICLE-NAMING",
+   "killed": true,
+   "mutant": "MUT-PAPER-WALL",
+   "on_target": true,
+   "target": "G-NO-PARTICLE-NAMING",
+   "what": "reports a banned particle word in the paper"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-CONNECTIVE-VERBATIM",
+   "killed": true,
+   "mutant": "MUT-CONNECTIVE",
+   "on_target": true,
+   "target": "G-CONNECTIVE-VERBATIM",
+   "what": "alters the anchored connective clause's link"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-PAPER-CLAIM-POLARITY",
+   "killed": true,
+   "mutant": "MUT-PAPER-POLARITY-RENDER",
+   "on_target": true,
+   "target": "G-PAPER-CLAIM-POLARITY",
+   "what": "injects a claim with no polarity"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-STATE-RESTORED",
+   "killed": true,
+   "mutant": "MUT-RESTORE-NEUTERED",
+   "on_target": true,
+   "target": "G-STATE-RESTORED",
+   "what": "neuters the polarity test's restore, leaving a sealed published row perturbed in the delivered state"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-SEAL-PROVENANCE",
+   "killed": true,
+   "mutant": "MUT-SEAL-PROVENANCE",
+   "on_target": true,
+   "target": "G-SEAL-PROVENANCE",
+   "what": "seals an object at a gate that does not exist"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-ANCHOR-CONSUMERS",
+   "killed": true,
+   "mutant": "MUT-ANCHOR-CONSUMER",
+   "on_target": true,
+   "target": "G-ANCHOR-CONSUMERS",
+   "what": "names a consumer gate this instrument does not evaluate"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-CLI-WHITELIST",
+   "killed": true,
+   "mutant": "MUT-CLI-OPEN",
+   "on_target": true,
+   "target": "G-CLI-WHITELIST",
+   "what": "opens the argv whitelist so an unknown flag is accepted"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-RECEIPT-SCHEMA",
+   "killed": true,
+   "mutant": "MUT-SCHEMA-KEY",
+   "on_target": true,
+   "target": "G-RECEIPT-SCHEMA",
+   "what": "publishes a schema key set that is not the manifest"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-PUBLISHED-ROWS-BOUND",
+   "killed": true,
+   "mutant": "MUT-ROWS-BOUND",
+   "on_target": true,
+   "target": "G-PUBLISHED-ROWS-BOUND",
+   "what": "moves a published summary count away from the rows it summarises"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-DEFECT-DEFINITION",
+   "killed": true,
+   "mutant": "MUT-DEFECT-DEFINITION",
+   "on_target": true,
+   "target": "G-DEFECT-DEFINITION",
+   "what": "computes the defect by a definition the anchor does not carry"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-DEFECT-WITNESS",
+   "killed": true,
+   "mutant": "MUT-DEFECT-WITNESS",
+   "on_target": true,
+   "target": "G-DEFECT-WITNESS",
+   "what": "breaks the seed paper's own witness property"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-PIN-QUESTION-IS-THE-PARENTS",
+   "killed": true,
+   "mutant": "MUT-PIN-QUESTION",
+   "on_target": true,
+   "target": "G-PIN-QUESTION-IS-THE-PARENTS",
+   "what": "asks a question the pin and the parent do not name"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-SECTOR-IS-NEW",
+   "killed": true,
+   "mutant": "MUT-SECTOR-NEW",
+   "on_target": true,
+   "target": "G-SECTOR-IS-NEW",
+   "what": "claims the parent already carried a multi-excitation sector"
+  },
+  {
+   "cache_entries_repaired_after": 0,
+   "died_at": "G-NO-TRANSPORT-NUMBER-INHERITED",
+   "killed": true,
+   "mutant": "MUT-TRANSPORT",
+   "on_target": true,
+   "target": "G-NO-TRANSPORT-NUMBER-INHERITED",
+   "what": "inherits a transport number from R4b"
   }
  ],
  "occupancy": {
-  "anchored_count_register": 6,
   "antisymmetric_closed": 64,
+  "antisymmetric_leak_cells": 0,
   "ceiling_is_anchored": false,
+  "ceiling_status": "DECLARED-BY-THIS-UNIT-AND-CENSUSED-BOTH-WAYS; WHETHER-A-DEEPER-LAYER-CAN-FORCE-ONE-IS-OPEN",
   "configurations_ceiling_1": 120,
   "configurations_ceiling_2": 136,
   "one_excitation_configurations": 16,
+  "one_excitation_restrictions_agree_as_objects": 64,
   "rows": [
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C000",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -1975,6 +2892,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C001",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -1982,6 +2900,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C002",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -1989,6 +2908,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C003",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -1996,6 +2916,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C004",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2003,6 +2924,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C005",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2010,6 +2932,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C006",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2017,6 +2940,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C007",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2024,6 +2948,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C008",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2031,6 +2956,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C009",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2038,6 +2964,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C010",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2045,6 +2972,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C011",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2052,6 +2980,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C012",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2059,6 +2988,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C013",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2066,6 +2996,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C014",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2073,6 +3004,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C015",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2080,6 +3012,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C016",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2087,6 +3020,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C017",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2094,6 +3028,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C018",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2101,6 +3036,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C019",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2108,6 +3044,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C020",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2115,6 +3052,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C021",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2122,6 +3060,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C022",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2129,6 +3068,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C023",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2136,6 +3076,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C024",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2143,6 +3084,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C025",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2150,6 +3092,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C026",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2157,6 +3100,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C027",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2164,6 +3108,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C028",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2171,6 +3116,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C029",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2178,6 +3124,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C030",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2185,6 +3132,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C031",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2192,6 +3140,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C032",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2199,6 +3148,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C033",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2206,6 +3156,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C034",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2213,6 +3164,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C035",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2220,6 +3172,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C036",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2227,6 +3180,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C037",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2234,6 +3188,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C038",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2241,6 +3196,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C039",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2248,6 +3204,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C040",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2255,6 +3212,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C041",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2262,6 +3220,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C042",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2269,6 +3228,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C043",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2276,6 +3236,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C044",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2283,6 +3244,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C045",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2290,6 +3252,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C046",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2297,6 +3260,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C047",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2304,6 +3268,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C048",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2311,6 +3276,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C049",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2318,6 +3284,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C050",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2325,6 +3292,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C051",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2332,6 +3300,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C052",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2339,6 +3308,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C053",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2346,6 +3316,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C054",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2353,6 +3324,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C055",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2360,6 +3332,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C056",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2367,6 +3340,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "C057",
     "monomial": true,
     "symmetric_hardcore_closed": true,
@@ -2374,6 +3348,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "B058",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2381,6 +3356,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "B059",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2388,6 +3364,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "B060",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2395,6 +3372,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "B061",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2402,6 +3380,7 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "S062",
     "monomial": false,
     "symmetric_hardcore_closed": false,
@@ -2409,12 +3388,19 @@
    },
    {
     "antisymmetric_hardcore_closed": true,
+    "antisymmetric_hardcore_leak_cells": 0,
     "generator": "S063",
     "monomial": false,
     "symmetric_hardcore_closed": false,
     "symmetric_hardcore_leak_cells": 48
    }
   ],
+  "stage_declaration_keys": 27,
+  "stage_link_count_box_bounds": [
+   6,
+   12
+  ],
+  "stage_occupancy_shaped_keys": 0,
   "symmetric_closed": 16,
   "symmetric_leaking": 48
  },
@@ -2442,6 +3428,7 @@
     "symmetric_nonzero": 360
    }
   ],
+  "coin_axis_scope": "THREE DECLARED ORDERED COIN PAIRS drawn from the 512 interfering coins, each gated separately; the geometry is exhaustive and the coin axis is a declared sample",
   "coin_pairs": 3,
   "coins": 640,
   "interfering_coins": 512,
@@ -2450,6 +3437,8 @@
   "low_overlap_rows": 42840,
   "overlap_2_nonzero": 360,
   "overlap_2_rows": 360,
+  "overlap_2_shapes_differ_as_multisets": 240,
+  "overlap_2_shapes_differ_entrywise": 240,
   "per_coin_pair": [
    {
     "coin_pair": [
@@ -2460,6 +3449,8 @@
     "low_rows": 14280,
     "overlap_2_antisymmetric": 120,
     "overlap_2_rows": 120,
+    "overlap_2_shapes_differ_as_multisets": 120,
+    "overlap_2_shapes_differ_entrywise": 120,
     "overlap_2_single": 120,
     "overlap_2_symmetric": 120
    },
@@ -2472,6 +3463,8 @@
     "low_rows": 14280,
     "overlap_2_antisymmetric": 120,
     "overlap_2_rows": 120,
+    "overlap_2_shapes_differ_as_multisets": 0,
+    "overlap_2_shapes_differ_entrywise": 0,
     "overlap_2_single": 120,
     "overlap_2_symmetric": 120
    },
@@ -2484,6 +3477,8 @@
     "low_rows": 14280,
     "overlap_2_antisymmetric": 120,
     "overlap_2_rows": 120,
+    "overlap_2_shapes_differ_as_multisets": 120,
+    "overlap_2_shapes_differ_entrywise": 120,
     "overlap_2_single": 120,
     "overlap_2_symmetric": 120
    }
@@ -2492,92 +3487,309 @@
   "rows": 43200,
   "site_pairs": 120,
   "three_site_completions": 0,
-  "three_site_full_support_rows": 1536
+  "three_site_full_support_rows": 1536,
+  "three_site_reason": "the sweep is the reason: over this alphabet the only full-support unit row has squared moduli (1/2, 1/4, 1/4), and no two further alphabet rows are orthogonal to it and to each other"
  },
  "paper_claims": [
   {
    "id": "CL-ADMITTED",
+   "occurrences": 1,
    "path": "exchange_census/antisymmetric_admitted",
    "text": "64 of 64 generators"
   },
   {
    "id": "CL-DECOMP",
+   "occurrences": 1,
    "path": "exchange_census/dim_ordered",
    "text": "256 = 136 + 120"
   },
   {
    "id": "CL-LEAK",
+   "occurrences": 1,
    "path": "occupancy/symmetric_leaking",
    "text": "leaks at 48 of 64"
   },
   {
    "id": "CL-PARENT",
+   "occurrences": 1,
    "path": "defect_census/single_excitation_nonzero",
    "text": "588 of 3364 ordered pairs"
   },
   {
    "id": "CL-TWOEXC",
+   "occurrences": 1,
    "path": "defect_census/antisymmetric_nonzero",
    "text": "1764 of 3364 ordered pairs carry a nonzero two-excitation defect"
   },
   {
    "id": "CL-GENUINE",
+   "occurrences": 1,
    "path": "defect_census/genuine_two_body",
    "text": "1176 genuine two-body pairs"
   },
   {
    "id": "CL-PREDICATE",
+   "occurrences": 1,
    "path": "defect_census/predicate_mismatches",
    "text": "0 mismatches over 6728 per-pair tests"
   },
   {
    "id": "CL-DISCRIM",
+   "occurrences": 1,
    "path": "discrimination/differing_pairs",
-   "text": "differ at 588 of 3364 ordered pairs"
+   "text": "value multisets differ at 588 of the 3364 ordered pairs"
+  },
+  {
+   "id": "CL-ENTRYWISE",
+   "occurrences": 1,
+   "path": "discrimination/entrywise_differing_pairs",
+   "text": "differ cell by cell at 1764 of 3364 ordered pairs and agree at 1600"
+  },
+  {
+   "id": "CL-WITNESS",
+   "occurrences": 1,
+   "path": "discrimination/witness/entrywise_differing_cells",
+   "text": "differ at 576 cells"
+  },
+  {
+   "id": "CL-STRIDE",
+   "occurrences": 1,
+   "path": "discrimination/stride_window/single_excitation",
+   "text": "43 of the 259 pairs of the declared stride window"
+  },
+  {
+   "id": "CL-LOCAL-GRAIN",
+   "occurrences": 1,
+   "path": "overlap_census/overlap_2_shapes_differ_entrywise",
+   "text": "differ at 240 of the 360 rows at overlap two"
+  },
+  {
+   "id": "CL-SECTOR-VALUES",
+   "occurrences": 1,
+   "path": "defect_values/symmetric_distinct_full_sector",
+   "text": "39 distinct values in the symmetric sector, of which 9 are never seen on the block"
+  },
+  {
+   "id": "CL-THEOREM-LEAK",
+   "occurrences": 1,
+   "path": "theorems/leak_law/witnesses",
+   "text": "240 constructed witnesses and 3364 out-of-family composites"
+  },
+  {
+   "id": "CL-STAGE-KEYS",
+   "occurrences": 1,
+   "path": "occupancy/stage_declaration_keys",
+   "text": "27 declaration keys and none of them occupancy-shaped"
+  },
+  {
+   "id": "CL-A4-NEITHER",
+   "occurrences": 1,
+   "path": "arena_census/distinguishable_neither_invariant",
+   "text": "neither sector is invariant at 3306 of 3306"
+  },
+  {
+   "id": "CL-RAW-VELOCITY",
+   "occurrences": 1,
+   "path": "motion/equal_and_nonzero_not_failing_cells",
+   "text": "4096 cells carry two equal nonzero advances and do not fail"
   },
   {
    "id": "CL-OVERLAP",
+   "occurrences": 1,
    "path": "overlap_census/low_overlap_rows",
    "text": "42840 of 42840 rows at overlap at most one"
   },
   {
    "id": "CL-OVERLAP2",
+   "occurrences": 1,
    "path": "overlap_census/overlap_2_nonzero",
    "text": "360 of 360 rows at overlap two"
   },
   {
    "id": "CL-MOTION",
+   "occurrences": 1,
    "path": "motion/antisymmetric_cells",
    "text": "6960 antisymmetric and 7888 symmetric cells"
   },
   {
    "id": "CL-VELOCITY",
+   "occurrences": 1,
    "path": "motion/velocity_failures",
    "text": "7168 of 29696 cells"
   },
   {
    "id": "CL-CONTACT",
+   "occurrences": 1,
    "path": "contact_handle/symmetric_defect_moved",
-   "text": "588 of 3364 ordered pairs and the antisymmetric one at 0"
+   "text": "moves it at 588 of the 3364 ordered pairs and the antisymmetric one at 0"
   },
   {
    "id": "CL-A4",
+   "occurrences": 1,
    "path": "arena_census/distinguishable_broken",
    "text": "3306 of 3306 ordered pairs of distinct generators"
   },
   {
    "id": "CL-VALUES",
+   "occurrences": 1,
    "path": "defect_values/antisymmetric_distinct",
-   "text": "28 distinct values in the antisymmetric shape and 30 in the symmetric"
+   "text": "28 distinct values in the antisymmetric shape and 30 on the hard-core block in the symmetric"
   }
  ],
  "paper_coverage": {
-  "claims": 15,
-  "numerals": 52,
+  "banned_words": 0,
+  "claims": 24,
+  "fenced_blocks": 1,
+  "licensed_values": 227,
+  "numerals": 62,
   "paper": "paper-22-multi.md",
   "polarity_failures": 0,
+  "sentence_polarities": 6,
+  "table_rows": 28,
   "unlicensed": 0
  },
+ "paper_tables": [
+  {
+   "id": "T-A1-FREE-LIFT-CEILING-2",
+   "occurrences": 1,
+   "row": "| `A1-FREE-LIFT-CEILING-2` | lives | lives | `R4C-STATISTICS-BOTH-ADMITTED` |"
+  },
+  {
+   "id": "T-A2-FREE-LIFT-CEILING-1-HARD-CORE",
+   "occurrences": 1,
+   "row": "| `A2-FREE-LIFT-CEILING-1-HARD-CORE` | lives | dies | `R4C-STATISTICS-FORCED-ANTISYMMETRIC` |"
+  },
+  {
+   "id": "T-A3-ONE-SITE-LATTICE",
+   "occurrences": 1,
+   "row": "| `A3-ONE-SITE-LATTICE` | dies | lives | `R4C-STATISTICS-FORCED-SYMMETRIC` |"
+  },
+  {
+   "id": "T-A4-DISTINGUISHABLE-LIFT",
+   "occurrences": 1,
+   "row": "| `A4-DISTINGUISHABLE-LIFT` | dies | dies | `R4C-STATISTICS-NEITHER-INVARIANT` |"
+  },
+  {
+   "id": "T-BLOCK-ARENA",
+   "occurrences": 1,
+   "row": "| `A1-FREE-LIFT-CEILING-2` | lives | lives | `R4C-STATISTICS-BOTH-ADMITTED` | | `A2-FREE-LIFT-CEILING-1-HARD-CORE` | lives | dies | `R4C-STATISTICS-FORCED-ANTISYMMETRIC` | | `A3-ONE-SITE-LATTICE` | dies | lives | `R4C-STATISTICS-FORCED-SYMMETRIC` | | `A4-DISTINGUISHABLE-LIFT` | dies | dies | `R4C-STATISTICS-NEITHER-INVARIANT` |"
+  },
+  {
+   "id": "T-SECTOR-single_excitation_nonzero",
+   "occurrences": 1,
+   "row": "| one excitation | 3364 | 588 |"
+  },
+  {
+   "id": "T-SECTOR-ordered_sector_nonzero",
+   "occurrences": 1,
+   "row": "| ordered, labelled configurations | 3364 | 588 |"
+  },
+  {
+   "id": "T-SECTOR-symmetric_nonzero",
+   "occurrences": 1,
+   "row": "| symmetric | 3364 | 1764 |"
+  },
+  {
+   "id": "T-SECTOR-antisymmetric_nonzero",
+   "occurrences": 1,
+   "row": "| antisymmetric | 3364 | 1764 |"
+  },
+  {
+   "id": "T-BLOCK-SECTOR",
+   "occurrences": 1,
+   "row": "| one excitation | 3364 | 588 | | ordered, labelled configurations | 3364 | 588 | | symmetric | 3364 | 1764 | | antisymmetric | 3364 | 1764 |"
+  },
+  {
+   "id": "T-OVERLAP-0",
+   "occurrences": 1,
+   "row": "| 0 | 32760 | 0 | 0 | 0 |"
+  },
+  {
+   "id": "T-OVERLAP-1",
+   "occurrences": 1,
+   "row": "| 1 | 10080 | 0 | 0 | 0 |"
+  },
+  {
+   "id": "T-OVERLAP-2",
+   "occurrences": 1,
+   "row": "| 2 | 360 | 360 | 360 | 360 |"
+  },
+  {
+   "id": "T-BLOCK-OVERLAP",
+   "occurrences": 1,
+   "row": "| 0 | 32760 | 0 | 0 | 0 | | 1 | 10080 | 0 | 0 | 0 | | 2 | 360 | 360 | 360 | 360 |"
+  },
+  {
+   "id": "T-CHOICE-0",
+   "occurrences": 1,
+   "row": "| the occupancy ceiling | 2 | GENUINELY-FREE | YES |"
+  },
+  {
+   "id": "T-CHOICE-1",
+   "occurrences": 1,
+   "row": "| the lift | 3 | GENUINELY-FREE | YES |"
+  },
+  {
+   "id": "T-CHOICE-2",
+   "occurrences": 1,
+   "row": "| the lattice: the verdict arena against the one-site control | 2 | DECLARED-CONTROL | no |"
+  },
+  {
+   "id": "T-CHOICE-3",
+   "occurrences": 1,
+   "row": "| the division-event times and the leg at the cut | 1 | INHERITED-AS-DECLARED | no |"
+  },
+  {
+   "id": "T-CHOICE-4",
+   "occurrences": 1,
+   "row": "| the velocity convention | 2 | INHERITED-AS-DECLARED | no |"
+  },
+  {
+   "id": "T-CHOICE-5",
+   "occurrences": 1,
+   "row": "| the third route's window | 1 | GENUINELY-FREE | no |"
+  },
+  {
+   "id": "T-CHOICE-6",
+   "occurrences": 1,
+   "row": "| the local window's coin pairs | 3 | GENUINELY-FREE | no |"
+  },
+  {
+   "id": "T-CHOICE-7",
+   "occurrences": 1,
+   "row": "| the contact phase | 8 | GENUINELY-FREE | no |"
+  },
+  {
+   "id": "T-CHOICE-8",
+   "occurrences": 1,
+   "row": "| the stride window for the coarser reading of the triple identity | 1 | GENUINELY-FREE | no |"
+  },
+  {
+   "id": "T-CHOICE-9",
+   "occurrences": 1,
+   "row": "| d, L, the alphabet, the stencil, the axes, the connective, the symmetrised basis | 1 | FORCED | no |"
+  },
+  {
+   "id": "T-BLOCK-CHOICE",
+   "occurrences": 1,
+   "row": "| the occupancy ceiling | 2 | GENUINELY-FREE | YES | | the lift | 3 | GENUINELY-FREE | YES | | the lattice: the verdict arena against the one-site control | 2 | DECLARED-CONTROL | no | | the division-event times and the leg at the cut | 1 | INHERITED-AS-DECLARED | no | | the velocity convention | 2 | INHERITED-AS-DECLARED | no | | the third route's window | 1 | GENUINELY-FREE | no | | the local window's coin pairs | 3 | GENUINELY-FREE | no | | the contact phase | 8 | GENUINELY-FREE | no | | the stride window for the coarser reading of the triple identity | 1 | GENUINELY-FREE | no | | d, L, the alphabet, the stencil, the axes, the connective, the symmetrised basis | 1 | FORCED | no |"
+  },
+  {
+   "id": "T-WITNESS-0-1",
+   "occurrences": 1,
+   "row": "| {0,4} | {0,1} | 1/32 | -1/32 |"
+  },
+  {
+   "id": "T-WITNESS-0-5",
+   "occurrences": 1,
+   "row": "| {0,4} | {0,5} | -1/32 | 1/32 |"
+  },
+  {
+   "id": "T-BLOCK-WITNESS",
+   "occurrences": 1,
+   "row": "| {0,4} | {0,1} | 1/32 | -1/32 | | {0,4} | {0,5} | -1/32 | 1/32 |"
+  }
+ ],
  "parent_reproduction": {
   "r4_single_excitation_defects": 588,
   "r4_value_multiset_reproduced": true,
@@ -2633,8 +3845,8 @@
    ]
   },
   {
-   "anchor": "PV-COUNT-REGISTER",
-   "consumer": "G-OCCUPANCY-NOT-ANCHORED",
+   "anchor": "PV-LINK-COUNT-BOX-BOUND",
+   "consumer": "G-STAGE-DECLARES-NO-OCCUPANCY",
    "expected": 6,
    "ok": true,
    "path": "declarations/count_lattice/axis_max",
@@ -2642,13 +3854,22 @@
    "value": 6
   },
   {
-   "anchor": "PV-DIAG-REGISTER",
-   "consumer": "G-OCCUPANCY-NOT-ANCHORED",
+   "anchor": "PV-LINK-DIAG-BOX-BOUND",
+   "consumer": "G-STAGE-DECLARES-NO-OCCUPANCY",
    "expected": 12,
    "ok": true,
    "path": "declarations/count_lattice/diag_max",
    "source": "STAGE-RECEIPT",
    "value": 12
+  },
+  {
+   "anchor": "PV-LINK-BOX-DESCRIPTION",
+   "consumer": "G-STAGE-DECLARES-NO-OCCUPANCY",
+   "expected": "the declared box of count vectors (n_e1, n_e2, n_diag) swept for the link-locality theorem's witnesses",
+   "ok": true,
+   "path": "declarations/count_lattice/description",
+   "source": "STAGE-RECEIPT",
+   "value": "the declared box of count vectors (n_e1, n_e2, n_diag) swept for the link-locality theorem's witnesses"
   },
   {
    "anchor": "PV-L",
@@ -2715,7 +3936,7 @@
   },
   {
    "anchor": "PV-SECTOR",
-   "consumer": "G-OCCUPANCY-NOT-ANCHORED",
+   "consumer": "G-SECTOR-IS-NEW",
    "expected": "SINGLE-OCCUPATION",
    "ok": true,
    "path": "counts/sector",
@@ -3340,7 +4561,8 @@
    "v14/note-r4c-pin.md",
    "v14/paper-10-defect-on-the-stage.md",
    "v14/paper-15-momentum.md",
-   "v14/paper-18-gauge-rung.md"
+   "v14/paper-18-gauge-rung.md",
+   "v14/paper-22-multi.md"
   ],
   "sources": [
    {
@@ -3413,6 +4635,7 @@
    "arena_census",
    "arena_declaration",
    "byte_anchors",
+   "choice_inventory",
    "cli_probes",
    "compliance",
    "contact_handle",
@@ -3429,12 +4652,14 @@
    "overlap_census",
    "paper_claims",
    "paper_coverage",
+   "paper_tables",
    "parent_reproduction",
    "path_value_anchors",
    "pool",
    "provenance",
    "schema",
    "seals",
+   "theorems",
    "totals",
    "verbatim_anchors",
    "verdict",
@@ -3444,206 +4669,312 @@
   "unsealed_declared": {
    "seals": "the seal ledger is the reference against which every other key is checked; it cannot digest itself, and it is covered by the payload digest that G-ARTIFACT-INTEGRITY verifies on disk"
   },
-  "version": 1
+  "version": 2
  },
  "seals": [
   {
-   "path": "verdict/string",
-   "seal": "SEAL-VERDICT-STRING",
-   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
-   "sha256_12": "b0fcac720e8f"
+   "gates_evaluated_at_seal_time": 1,
+   "path": "verbatim_anchors",
+   "seal": "SEAL-VERBATIM",
+   "sealed_at_gate": "G-VERBATIM-ANCHORS",
+   "sha256_12": "c049eff965a2"
   },
   {
-   "path": "verdict/head",
-   "seal": "SEAL-VERDICT-HEAD",
-   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
-   "sha256_12": "8d00a71e9814"
-  },
-  {
-   "path": "counts",
-   "seal": "SEAL-COUNTS",
-   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
-   "sha256_12": "f35155882319"
-  },
-  {
-   "path": "exchange_census",
-   "seal": "SEAL-EXCHANGE",
-   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "4f62dd5c49e2"
-  },
-  {
-   "path": "arena_census",
-   "seal": "SEAL-ARENAS",
-   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "f40bdf0814ff"
-  },
-  {
-   "path": "occupancy",
-   "seal": "SEAL-OCCUPANCY",
-   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "0663065f42e9"
-  },
-  {
-   "path": "defect_census",
-   "seal": "SEAL-DEFECT",
-   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "f28d01de262b"
-  },
-  {
-   "path": "defect_values",
-   "seal": "SEAL-DEFECT-VALUES",
-   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "8a0f57cb1caf"
-  },
-  {
-   "path": "discrimination",
-   "seal": "SEAL-DISCRIMINATION",
-   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "fb78af45b4bb"
-  },
-  {
-   "path": "overlap_census",
-   "seal": "SEAL-OVERLAP",
-   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "23aee4ad7054"
-  },
-  {
-   "path": "motion",
-   "seal": "SEAL-MOTION",
-   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "d6cfb5b331d9"
-  },
-  {
-   "path": "contact_handle",
-   "seal": "SEAL-CONTACT",
-   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "2a10859d0a32"
-  },
-  {
-   "path": "parent_reproduction",
-   "seal": "SEAL-PARENT",
-   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "2c0ab78f56c3"
-  },
-  {
-   "path": "description_stamps",
-   "seal": "SEAL-STAMPS",
-   "sealed_at_gate": "G-DESCRIPTION-STAMPS",
-   "sha256_12": "84749dc5bf27"
-  },
-  {
-   "path": "path_value_anchors",
-   "seal": "SEAL-PATH-ANCHORS",
-   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "72bc862ad04e"
-  },
-  {
+   "gates_evaluated_at_seal_time": 2,
    "path": "byte_anchors",
    "seal": "SEAL-BYTE-ANCHORS",
-   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sealed_at_gate": "G-BYTE-ANCHORS",
    "sha256_12": "1a1a09366b18"
   },
   {
-   "path": "verbatim_anchors",
-   "seal": "SEAL-VERBATIM",
-   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "2faca74de3e9"
+   "gates_evaluated_at_seal_time": 3,
+   "path": "path_value_anchors",
+   "seal": "SEAL-PATH-ANCHORS",
+   "sealed_at_gate": "G-PATH-VALUE-ANCHORS",
+   "sha256_12": "d0a2dbbf383b"
   },
   {
-   "path": "waiver_ledger",
-   "seal": "SEAL-WAIVERS",
-   "sealed_at_gate": "G-WAIVERS-VERIFIED",
-   "sha256_12": "bcc510046f5e"
+   "gates_evaluated_at_seal_time": 4,
+   "path": "arena_declaration",
+   "seal": "SEAL-ARENA",
+   "sealed_at_gate": "G-ARENA-ANCHORED",
+   "sha256_12": "6a6c401e8dd8"
   },
   {
-   "path": "schema",
-   "seal": "SEAL-SCHEMA",
-   "sealed_at_gate": "G-RECEIPT-SCHEMA",
-   "sha256_12": "325247a4ac0f"
-  },
-  {
-   "path": "provenance",
-   "seal": "SEAL-PROVENANCE",
-   "sealed_at_gate": "G-RECEIPT-SCHEMA",
-   "sha256_12": "69d57a892d80"
-  },
-  {
-   "path": "paper_claims",
-   "seal": "SEAL-PAPER-CLAIMS",
-   "sealed_at_gate": "G-PAPER-CLAIMS",
-   "sha256_12": "d64294fc13d6"
-  },
-  {
+   "gates_evaluated_at_seal_time": 14,
    "path": "pool",
    "seal": "SEAL-POOL",
    "sealed_at_gate": "G-POOL-COMPLETE",
    "sha256_12": "6e26a7b03c40"
   },
   {
-   "path": "arena_declaration",
-   "seal": "SEAL-ARENA",
-   "sealed_at_gate": "G-ARENA-ANCHORED",
-   "sha256_12": "8ba3d55dac05"
+   "gates_evaluated_at_seal_time": 21,
+   "path": "exchange_census",
+   "seal": "SEAL-EXCHANGE",
+   "sealed_at_gate": "G-BOTH-SECTORS-ADMITTED",
+   "sha256_12": "4f62dd5c49e2"
   },
   {
+   "gates_evaluated_at_seal_time": 25,
+   "path": "occupancy",
+   "seal": "SEAL-OCCUPANCY",
+   "sealed_at_gate": "G-STAGE-DECLARES-NO-OCCUPANCY",
+   "sha256_12": "29470d6e64c4"
+  },
+  {
+   "gates_evaluated_at_seal_time": 27,
+   "path": "theorems",
+   "seal": "SEAL-THEOREMS",
+   "sealed_at_gate": "G-INDISTINGUISHABILITY-UNIVERSAL",
+   "sha256_12": "0b3fc8a25808"
+  },
+  {
+   "gates_evaluated_at_seal_time": 30,
+   "path": "arena_census",
+   "seal": "SEAL-ARENAS",
+   "sealed_at_gate": "G-ARENA-TWO-WAY",
+   "sha256_12": "2ae0fe2eb1d5"
+  },
+  {
+   "gates_evaluated_at_seal_time": 37,
+   "path": "defect_census",
+   "seal": "SEAL-DEFECT",
+   "sealed_at_gate": "G-DERIVATION-LAW",
+   "sha256_12": "e90afd856da0"
+  },
+  {
+   "gates_evaluated_at_seal_time": 40,
+   "path": "discrimination",
+   "seal": "SEAL-DISCRIMINATION",
+   "sealed_at_gate": "G-SHAPES-DISCRIMINATED-ENTRYWISE",
+   "sha256_12": "de04caf5c862"
+  },
+  {
+   "gates_evaluated_at_seal_time": 43,
+   "path": "defect_values",
+   "seal": "SEAL-DEFECT-VALUES",
+   "sealed_at_gate": "G-DEFECT-RATIONAL",
+   "sha256_12": "05c8279183f6"
+  },
+  {
+   "gates_evaluated_at_seal_time": 50,
+   "path": "overlap_census",
+   "seal": "SEAL-OVERLAP",
+   "sealed_at_gate": "G-OVERLAP-SHAPES-AT-THE-LOCAL-GRAIN",
+   "sha256_12": "1566709a8ec4"
+  },
+  {
+   "gates_evaluated_at_seal_time": 58,
+   "path": "motion",
+   "seal": "SEAL-MOTION",
+   "sealed_at_gate": "G-SPEED-CEILING-UNCHANGED",
+   "sha256_12": "b9b666992159"
+  },
+  {
+   "gates_evaluated_at_seal_time": 60,
+   "path": "contact_handle",
+   "seal": "SEAL-CONTACT",
+   "sealed_at_gate": "G-CONTACT-SET-IS-THE-INTERFERING-SET",
+   "sha256_12": "97b0a7503da5"
+  },
+  {
+   "gates_evaluated_at_seal_time": 61,
+   "path": "description_stamps",
+   "seal": "SEAL-STAMPS",
+   "sealed_at_gate": "G-DESCRIPTION-STAMPS",
+   "sha256_12": "d03cebb6368b"
+  },
+  {
+   "gates_evaluated_at_seal_time": 62,
+   "path": "choice_inventory",
+   "seal": "SEAL-CHOICES",
+   "sealed_at_gate": "G-CHOICE-INVENTORY-VERDICT-DETERMINING",
+   "sha256_12": "1470eae62463"
+  },
+  {
+   "gates_evaluated_at_seal_time": 63,
+   "path": "waiver_ledger",
+   "seal": "SEAL-WAIVERS",
+   "sealed_at_gate": "G-WAIVERS-VERIFIED",
+   "sha256_12": "88f5dc51a4ea"
+  },
+  {
+   "gates_evaluated_at_seal_time": 64,
+   "path": "schema",
+   "seal": "SEAL-SCHEMA",
+   "sealed_at_gate": "G-RECEIPT-SCHEMA",
+   "sha256_12": "3f022211370e"
+  },
+  {
+   "gates_evaluated_at_seal_time": 64,
+   "path": "provenance",
+   "seal": "SEAL-PROVENANCE",
+   "sealed_at_gate": "G-RECEIPT-SCHEMA",
+   "sha256_12": "49e7f1867f20"
+  },
+  {
+   "gates_evaluated_at_seal_time": 65,
+   "path": "counts",
+   "seal": "SEAL-COUNTS",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "64a098dac2c1"
+  },
+  {
+   "gates_evaluated_at_seal_time": 65,
+   "path": "parent_reproduction",
+   "seal": "SEAL-PARENT",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "2c0ab78f56c3"
+  },
+  {
+   "gates_evaluated_at_seal_time": 68,
+   "path": "verdict/string",
+   "seal": "SEAL-VERDICT-STRING",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "c8bcf76d0386"
+  },
+  {
+   "gates_evaluated_at_seal_time": 68,
+   "path": "verdict/head",
+   "seal": "SEAL-VERDICT-HEAD",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "8d00a71e9814"
+  },
+  {
+   "gates_evaluated_at_seal_time": 68,
    "path": "verdict",
    "seal": "SEAL-VERDICT-ALL",
    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
-   "sha256_12": "1449564e5078"
+   "sha256_12": "65619c43296a"
   },
   {
+   "gates_evaluated_at_seal_time": 71,
    "path": "cli_probes",
    "seal": "SEAL-CLI",
    "sealed_at_gate": "G-CLI-WHITELIST",
-   "sha256_12": "7ed899eb1a1c"
+   "sha256_12": "4818e35f409c"
   },
   {
+   "gates_evaluated_at_seal_time": 72,
+   "path": "paper_claims",
+   "seal": "SEAL-PAPER-CLAIMS",
+   "sealed_at_gate": "G-PAPER-CLAIMS",
+   "sha256_12": "03143af3231f"
+  },
+  {
+   "gates_evaluated_at_seal_time": 73,
+   "path": "paper_tables",
+   "seal": "SEAL-PAPER-TABLES",
+   "sealed_at_gate": "G-PAPER-TABLES",
+   "sha256_12": "5cb60267570b"
+  },
+  {
+   "gates_evaluated_at_seal_time": 86,
    "path": "mutants",
    "seal": "SEAL-MUTANTS",
    "sealed_at_gate": "G-MUTANTS-ON-TARGET",
-   "sha256_12": "2731e10c707d"
+   "sha256_12": "ea9aea807ea0"
   },
   {
+   "gates_evaluated_at_seal_time": 87,
    "path": "compliance",
    "seal": "SEAL-COMPLIANCE",
    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-   "sha256_12": "a20d42dbc932"
+   "sha256_12": "bccee6d4bb12"
   },
   {
+   "gates_evaluated_at_seal_time": 87,
    "path": "gates",
    "seal": "SEAL-GATES",
    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-   "sha256_12": "105cff7c387e"
+   "sha256_12": "de29ee2c71e3"
   },
   {
+   "gates_evaluated_at_seal_time": 87,
    "path": "totals",
    "seal": "SEAL-TOTALS",
    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-   "sha256_12": "3b9c5adc56c8"
+   "sha256_12": "46a95615e895"
   },
   {
+   "gates_evaluated_at_seal_time": 87,
    "path": "paper_coverage",
    "seal": "SEAL-COVERAGE",
    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-   "sha256_12": "b3768c870f46"
+   "sha256_12": "8873940635e7"
   }
  ],
+ "theorems": {
+  "indistinguishability_law": {
+   "affine_family": 30,
+   "born_multiplicative": 30,
+   "declared_pairs": 30,
+   "derivation_law": 30,
+   "failures": 0,
+   "injective_on_row_stochastic": 30,
+   "one_parameter_fibre": 30,
+   "statement": "B(U (x) U) = B(U) (x) B(U) entrywise; the ordered defect is X (x) X - Y (x) Y = Delta (x) X + Y (x) Delta; X^(x)n = Y^(x)n iff X = Y for row-stochastic X and Y; so labelled excitations carry no genuine n-body defect under a free lift, at every n",
+   "telescoping_n2": 30,
+   "telescoping_n3": 30,
+   "the_fibre": "the splitting is NOT unique: Delta (x) Y + X (x) Delta is an equally exact derivation law, and so is every affine mixture t X + (1-t) Y in the left leg with the complementary mixture in the right -- measured at t = 1, 1/2, 2 and -1.  'X the coherent and Y the restarted composite' is one point on a line of exact readings"
+  },
+  "leak_law": {
+   "composite_max_column_support": 9,
+   "composites_leaking": 2976,
+   "composites_mismatches": 0,
+   "composites_non_monomial": 2976,
+   "mismatches": 0,
+   "out_of_family_composites": 3364,
+   "rows": [
+    {
+     "configurations": 6,
+     "dimension": 3,
+     "monomial": 40,
+     "non_monomial": 40,
+     "witnesses": 80
+    },
+    {
+     "configurations": 10,
+     "dimension": 4,
+     "monomial": 40,
+     "non_monomial": 40,
+     "witnesses": 80
+    },
+    {
+     "configurations": 15,
+     "dimension": 5,
+     "monomial": 40,
+     "non_monomial": 40,
+     "witnesses": 80
+    }
+   ],
+   "statement": "for every unitary U on a finite configuration set, Sym^2(U) carries a hard-core configuration into a doubly-occupied one iff U is non-monomial; Lambda^2(U) never does",
+   "wedge_leak_cells": 0,
+   "what_this_family_contributes": "the SIZE of the split, 48 against 16, which is the parent's monomial classification and not a two-excitation fact",
+   "witness_dimensions": [
+    3,
+    4,
+    5
+   ],
+   "witnesses": 240
+  }
+ },
  "totals": {
-  "anchors": 48,
+  "anchors": 49,
   "byte_anchors": 12,
   "census_pairs": 3364,
-  "gates": 63,
-  "gates_disclosed": 3,
-  "gates_passed": 63,
+  "gates": 87,
+  "gates_disclosed": 6,
+  "gates_passed": 87,
   "integrity_gate": "EVALUATED-IN-THE-WRITING-PATH-AGAINST-THE-GATE-TIME-SEAL",
-  "mutants": 56,
-  "mutants_killed": 56,
-  "mutants_on_target": 56,
+  "mutants": 94,
+  "mutants_killed": 94,
+  "mutants_on_target": 94,
   "overlap_rows": 43200,
-  "path_value_anchors": 24,
-  "seals": 30,
+  "path_value_anchors": 25,
+  "seals": 33,
   "verbatim_anchors": 12,
-  "verdict_values": 69
+  "verdict_values": 84
  },
  "verbatim_anchors": [
   {
@@ -3725,7 +5056,7 @@
   },
   {
    "anchor": "VB-SEED-DEFECT",
-   "chars": 4,
+   "chars": 157,
    "consumer": "G-DEFECT-WITNESS",
    "present": true,
    "source": "SEED-PAPER"
@@ -3750,44 +5081,59 @@
   "segments": [
    [
     "EXCHANGE",
-    "COMMUTES-AT-64-OF-64(FORCED-BY-THE-FREE-LIFT);BOTH-SECTORS-CLOSED-UNITARY-STOCHASTIC=64-OF-64;DECOMPOSITION=256=136+120(NO-THIRD-SECTOR-AT-TWO-EXCITATIONS)"
+    "COMMUTES-AT-64-OF-64(FORCED-BY-THE-FREE-LIFT);BOTH-SECTORS-CLOSED-UNITARY-STOCHASTIC=64-OF-64(FORCED-BY-THE-FREE-LIFT);DECOMPOSITION=256=136+120(NO-THIRD-SECTOR-AT-TWO-EXCITATIONS;PERMUTATION-GROUP-ONLY-NO-BRAID-CLAIM)"
    ],
    [
     "OCCUPANCY",
-    "CEILING-DECLARED-NOT-ANCHORED(STAGE-COUNT-REGISTER=6);AT-CEILING-1-SYMMETRIC-LEAKS=48-OF-64-EXACTLY-THE-NON-MONOMIAL;ANTISYMMETRIC-LEAKS=0-OF-64;THE-TWO-CEILINGS-AGREE-AT-ONE-EXCITATION=16-OF-16-CONFIGURATIONS;AND-DIFFER-AT-TWO=136-VS-120"
+    "CEILING-DECLARED-NOT-ANCHORED(STAGE-DECLARES-NO-OCCUPANCY-KEY-IN-27);AT-CEILING-1-SYMMETRIC-LEAKS=48-OF-64-EXACTLY-THE-NON-MONOMIAL(THEOREM-FOR-EVERY-UNITARY-240-WITNESSES+3364-COMPOSITES;THE-48-IS-THE-FAMILY);ANTISYMMETRIC-LEAKS=0-OF-64(FORCED-NO-DOUBLY-OCCUPIED-CONFIGURATION);THE-TWO-CEILINGS-AGREE-AT-ONE-EXCITATION=16-OF-16-CONFIGURATIONS-AND-AS-OBJECTS-AT-64-OF-64-GENERATORS;AND-DIFFER-AT-TWO=136-VS-120;FORCING-THE-CEILING=OPEN"
    ],
    [
     "DISCRIMINATION",
-    "THE-SHAPES-DIFFER-BY-THE-DEFECT-AT-588-OF-3364-PAIRS=EXACTLY-THE-SINGLE-EXCITATION-DEFECT-SET(SET-EQUALITY);AGREE-AT-2776;SPECTRA-DIFFER-AT-16-DOUBLED-MOMENTUM-CELLS-AT-58-OF-58-FAMILIES"
+    "THE-SHAPES-DIFFER-CELL-BY-CELL-AT-1764-OF-3364-PAIRS=EXACTLY-THE-TWO-EXCITATION-DEFECT-SET(SET-EQUALITY);AGREE-ONLY-WHERE-BOTH-DEFECTS-VANISH=1600;VALUE-MULTISETS-DIFFER-AT-588-OF-3364=EXACTLY-THE-SINGLE-EXCITATION-DEFECT-SET(SET-EQUALITY);MULTISETS-AGREE-AT-2776;AT-THE-LOCAL-GRAIN-SHAPES-DIFFER-AT-240-OF-360-OVERLAP-2-ROWS(SO-THE-COEXTENSION-IS-CIRCULANT-STRATUM-SCOPED);SPECTRA-DIFFER-AT-16-DOUBLED-MOMENTUM-CELLS-AT-58-OF-58-FAMILIES"
    ],
    [
     "DEFECT",
-    "DOES-NOT-COMPOSE-IT-COMPLETES;NONZERO=1764-OF-3364-IN-BOTH-SHAPES=BOTH-LEGS-NON-MONOMIAL(0-MISMATCHES-OF-6728-PER-PAIR-TESTS;=42-SQUARED);GENUINE-TWO-BODY=1176;LOSSES=0;ORDERED-SECTOR=DERIVATION-LAW-EXACT-3364-OF-3364-AND-NO-GENUINE-TWO-BODY;VALUES=ANTISYMMETRIC-28-DISTINCT+SYMMETRIC-30-DISTINCT-ALL-RATIONAL;PARENT-SINGLE-EXCITATION=588-OF-3364-REPRODUCED-WITH-ITS-WHOLE-VALUE-MULTISET"
+    "DOES-NOT-COMPOSE-IT-COMPLETES;NONZERO=1764-OF-3364-IN-BOTH-SHAPES=BOTH-LEGS-NON-MONOMIAL(0-MISMATCHES-OF-6728-PER-PAIR-TESTS;=42-SQUARED);GENUINE-TWO-BODY=1176;LOSSES=0;ORDERED-SECTOR=DERIVATION-LAW-EXACT-3364-OF-3364-AND-NO-GENUINE-TWO-BODY(THEOREM-AT-EVERY-N-BY-TELESCOPING;THE-SPLITTING-HAS-A-ONE-PARAMETER-FIBRE);VALUES=ANTISYMMETRIC-28-DISTINCT+SYMMETRIC-39-DISTINCT-IN-THE-SECTOR(30-ON-THE-HARD-CORE-BLOCK)-ALL-RATIONAL;PARENT-SINGLE-EXCITATION=588-OF-3364-REPRODUCED-WITH-ITS-WHOLE-VALUE-MULTISET"
    ],
    [
     "OVERLAP",
-    "R5-LAW-SURVIVES-THE-LIFT=NO-DEFECT-AT-OVERLAP-LE-1-AT-42840-OF-42840-ROWS-BOTH-SHAPES;AT-OVERLAP-2=360-OF-360-CARRY;WINDOW=EVERY-2-SITE-SUPPORT-43200-ROWS-EXHAUSTIVE-IN-GEOMETRY;THREE-SITE-FULL-SUPPORT=EMPTY-OVER-THE-ALPHABET-1536-ROWS-SWEPT;COIN-PAIRS=3-EACH-GATED-SEPARATELY;R5-18-ROW-SAMPLE=CITED-NOT-RE-RUN"
+    "R5-LAW-SURVIVES-THE-LIFT=NO-DEFECT-AT-OVERLAP-LE-1-AT-42840-OF-42840-ROWS-BOTH-SHAPES;AT-OVERLAP-2=360-OF-360-CARRY;WINDOW=EVERY-2-SITE-SUPPORT-43200-ROWS-EXHAUSTIVE-IN-GEOMETRY;THREE-SITE-FULL-SUPPORT=EMPTY-OVER-THE-ALPHABET-1536-ROWS-SWEPT;COIN-PAIRS=3-DECLARED-SAMPLE-OF-512-INTERFERING-COINS-EACH-GATED-SEPARATELY;R5-18-ROW-SAMPLE=CITED-NOT-RE-RUN"
    ],
    [
     "MOTION",
-    "EIGENPHASES-ADD-EXACTLY(ANTISYMMETRIC=6960;SYMMETRIC=7888;FAILURES=0)(FORCED-BY-FUNCTORIALITY);SPEED-SPECTRUM=0+1+2-UNCHANGED-AT-TWO-EXCITATIONS;VELOCITY-DOES-NOT-ADD=7168-OF-29696-CELLS-AT-THE-ANTIPODAL-TIE-ONLY;CONTACT-HANDLE-MOVES-SYMMETRIC-DEFECT-AT-588-OF-3364-AND-ANTISYMMETRIC-AT-0(THE-MOVED-SET-IS-THE-SINGLE-EXCITATION-DEFECT-SET-BY-SET-EQUALITY);R4B-REPRODUCED=320-TIE-CELLS-IN-19-FAMILIES-OF-58"
+    "EIGENPHASES-ADD-EXACTLY(ANTISYMMETRIC=6960;SYMMETRIC=7888;FAILURES=0)(FORCED-BY-FUNCTORIALITY);SPEED-SPECTRUM=0+1+2-UNCHANGED-AT-TWO-EXCITATIONS(CEILING-FORCED-BY-THE-DUAL-TORUS;ALL-THREE-VALUES-ATTAINED);VELOCITY-DOES-NOT-ADD=7168-OF-29696-CELLS-AT-RAW-ADVANCE-PAIRS-(2,2)-AND-(6,6)-ONLY(THE-4096-CELLS-AT-(4,4)-ARE-EQUAL-AND-NONZERO-AND-DO-NOT-FAIL);CONTACT-HANDLE-MOVES-SYMMETRIC-DEFECT-AT-588-OF-3364-AND-ANTISYMMETRIC-AT-0(THE-MOVED-SET-IS-THE-SINGLE-EXCITATION-DEFECT-SET-BY-SET-EQUALITY);R4B-REPRODUCED=320-TIE-CELLS-IN-19-FAMILIES-OF-58"
    ],
    [
     "SCOPE",
-    "D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;EXCITATIONS=2;SECTORS=ORDERED+SYMMETRIC+ANTISYMMETRIC;LIFT=FREE(U-TENSOR-U)-WITH-DISTINGUISHABLE-AND-CONTACT-LIFTS-CENSUSED;OCCUPANCY-CEILING=DECLARED;VELOCITY-READING=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED-INHERITED-AS-DECLARED;NO-TRANSPORT-NUMBER-INHERITED;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-PARTICLE-CLAIM;SHAPE-WORDS-ONLY;N=2-ONLY-NO-GENERAL-N-CLAIM;NO-CONFIGURATION-MEASURE;NO-ACTION;NO-COUPLING"
+    "D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;EXCITATIONS=2;SECTORS=ORDERED+SYMMETRIC+ANTISYMMETRIC;LIFT=FREE(U-TENSOR-U)-WITH-DISTINGUISHABLE-AND-CONTACT-LIFTS-CENSUSED;OCCUPANCY-CEILING=DECLARED;VERDICT-BEARING-STRATUM=THE-58-CIRCULANTS;VELOCITY-READING=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED-INHERITED-AS-DECLARED;NO-TRANSPORT-NUMBER-INHERITED;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-PARTICLE-CLAIM;SHAPE-WORDS-ONLY;N=2-ONLY-NO-GENERAL-N-CLAIM;NO-BRAID-CLAIM;NO-CONFIGURATION-SPACE-TOPOLOGY;COUNTS=COUNTING-ONLY-NO-MEASURE-DECLARED;NO-CONFIGURATION-MEASURE;NO-ACTION;NO-COUPLING"
    ]
   ],
-  "string": "R4C-STATISTICS-BOTH-ADMITTED<EXCHANGE=COMMUTES-AT-64-OF-64(FORCED-BY-THE-FREE-LIFT);BOTH-SECTORS-CLOSED-UNITARY-STOCHASTIC=64-OF-64;DECOMPOSITION=256=136+120(NO-THIRD-SECTOR-AT-TWO-EXCITATIONS)|OCCUPANCY=CEILING-DECLARED-NOT-ANCHORED(STAGE-COUNT-REGISTER=6);AT-CEILING-1-SYMMETRIC-LEAKS=48-OF-64-EXACTLY-THE-NON-MONOMIAL;ANTISYMMETRIC-LEAKS=0-OF-64;THE-TWO-CEILINGS-AGREE-AT-ONE-EXCITATION=16-OF-16-CONFIGURATIONS;AND-DIFFER-AT-TWO=136-VS-120|DISCRIMINATION=THE-SHAPES-DIFFER-BY-THE-DEFECT-AT-588-OF-3364-PAIRS=EXACTLY-THE-SINGLE-EXCITATION-DEFECT-SET(SET-EQUALITY);AGREE-AT-2776;SPECTRA-DIFFER-AT-16-DOUBLED-MOMENTUM-CELLS-AT-58-OF-58-FAMILIES|DEFECT=DOES-NOT-COMPOSE-IT-COMPLETES;NONZERO=1764-OF-3364-IN-BOTH-SHAPES=BOTH-LEGS-NON-MONOMIAL(0-MISMATCHES-OF-6728-PER-PAIR-TESTS;=42-SQUARED);GENUINE-TWO-BODY=1176;LOSSES=0;ORDERED-SECTOR=DERIVATION-LAW-EXACT-3364-OF-3364-AND-NO-GENUINE-TWO-BODY;VALUES=ANTISYMMETRIC-28-DISTINCT+SYMMETRIC-30-DISTINCT-ALL-RATIONAL;PARENT-SINGLE-EXCITATION=588-OF-3364-REPRODUCED-WITH-ITS-WHOLE-VALUE-MULTISET|OVERLAP=R5-LAW-SURVIVES-THE-LIFT=NO-DEFECT-AT-OVERLAP-LE-1-AT-42840-OF-42840-ROWS-BOTH-SHAPES;AT-OVERLAP-2=360-OF-360-CARRY;WINDOW=EVERY-2-SITE-SUPPORT-43200-ROWS-EXHAUSTIVE-IN-GEOMETRY;THREE-SITE-FULL-SUPPORT=EMPTY-OVER-THE-ALPHABET-1536-ROWS-SWEPT;COIN-PAIRS=3-EACH-GATED-SEPARATELY;R5-18-ROW-SAMPLE=CITED-NOT-RE-RUN|MOTION=EIGENPHASES-ADD-EXACTLY(ANTISYMMETRIC=6960;SYMMETRIC=7888;FAILURES=0)(FORCED-BY-FUNCTORIALITY);SPEED-SPECTRUM=0+1+2-UNCHANGED-AT-TWO-EXCITATIONS;VELOCITY-DOES-NOT-ADD=7168-OF-29696-CELLS-AT-THE-ANTIPODAL-TIE-ONLY;CONTACT-HANDLE-MOVES-SYMMETRIC-DEFECT-AT-588-OF-3364-AND-ANTISYMMETRIC-AT-0(THE-MOVED-SET-IS-THE-SINGLE-EXCITATION-DEFECT-SET-BY-SET-EQUALITY);R4B-REPRODUCED=320-TIE-CELLS-IN-19-FAMILIES-OF-58|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;EXCITATIONS=2;SECTORS=ORDERED+SYMMETRIC+ANTISYMMETRIC;LIFT=FREE(U-TENSOR-U)-WITH-DISTINGUISHABLE-AND-CONTACT-LIFTS-CENSUSED;OCCUPANCY-CEILING=DECLARED;VELOCITY-READING=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED-INHERITED-AS-DECLARED;NO-TRANSPORT-NUMBER-INHERITED;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-PARTICLE-CLAIM;SHAPE-WORDS-ONLY;N=2-ONLY-NO-GENERAL-N-CLAIM;NO-CONFIGURATION-MEASURE;NO-ACTION;NO-COUPLING>"
+  "string": "R4C-STATISTICS-BOTH-ADMITTED<EXCHANGE=COMMUTES-AT-64-OF-64(FORCED-BY-THE-FREE-LIFT);BOTH-SECTORS-CLOSED-UNITARY-STOCHASTIC=64-OF-64(FORCED-BY-THE-FREE-LIFT);DECOMPOSITION=256=136+120(NO-THIRD-SECTOR-AT-TWO-EXCITATIONS;PERMUTATION-GROUP-ONLY-NO-BRAID-CLAIM)|OCCUPANCY=CEILING-DECLARED-NOT-ANCHORED(STAGE-DECLARES-NO-OCCUPANCY-KEY-IN-27);AT-CEILING-1-SYMMETRIC-LEAKS=48-OF-64-EXACTLY-THE-NON-MONOMIAL(THEOREM-FOR-EVERY-UNITARY-240-WITNESSES+3364-COMPOSITES;THE-48-IS-THE-FAMILY);ANTISYMMETRIC-LEAKS=0-OF-64(FORCED-NO-DOUBLY-OCCUPIED-CONFIGURATION);THE-TWO-CEILINGS-AGREE-AT-ONE-EXCITATION=16-OF-16-CONFIGURATIONS-AND-AS-OBJECTS-AT-64-OF-64-GENERATORS;AND-DIFFER-AT-TWO=136-VS-120;FORCING-THE-CEILING=OPEN|DISCRIMINATION=THE-SHAPES-DIFFER-CELL-BY-CELL-AT-1764-OF-3364-PAIRS=EXACTLY-THE-TWO-EXCITATION-DEFECT-SET(SET-EQUALITY);AGREE-ONLY-WHERE-BOTH-DEFECTS-VANISH=1600;VALUE-MULTISETS-DIFFER-AT-588-OF-3364=EXACTLY-THE-SINGLE-EXCITATION-DEFECT-SET(SET-EQUALITY);MULTISETS-AGREE-AT-2776;AT-THE-LOCAL-GRAIN-SHAPES-DIFFER-AT-240-OF-360-OVERLAP-2-ROWS(SO-THE-COEXTENSION-IS-CIRCULANT-STRATUM-SCOPED);SPECTRA-DIFFER-AT-16-DOUBLED-MOMENTUM-CELLS-AT-58-OF-58-FAMILIES|DEFECT=DOES-NOT-COMPOSE-IT-COMPLETES;NONZERO=1764-OF-3364-IN-BOTH-SHAPES=BOTH-LEGS-NON-MONOMIAL(0-MISMATCHES-OF-6728-PER-PAIR-TESTS;=42-SQUARED);GENUINE-TWO-BODY=1176;LOSSES=0;ORDERED-SECTOR=DERIVATION-LAW-EXACT-3364-OF-3364-AND-NO-GENUINE-TWO-BODY(THEOREM-AT-EVERY-N-BY-TELESCOPING;THE-SPLITTING-HAS-A-ONE-PARAMETER-FIBRE);VALUES=ANTISYMMETRIC-28-DISTINCT+SYMMETRIC-39-DISTINCT-IN-THE-SECTOR(30-ON-THE-HARD-CORE-BLOCK)-ALL-RATIONAL;PARENT-SINGLE-EXCITATION=588-OF-3364-REPRODUCED-WITH-ITS-WHOLE-VALUE-MULTISET|OVERLAP=R5-LAW-SURVIVES-THE-LIFT=NO-DEFECT-AT-OVERLAP-LE-1-AT-42840-OF-42840-ROWS-BOTH-SHAPES;AT-OVERLAP-2=360-OF-360-CARRY;WINDOW=EVERY-2-SITE-SUPPORT-43200-ROWS-EXHAUSTIVE-IN-GEOMETRY;THREE-SITE-FULL-SUPPORT=EMPTY-OVER-THE-ALPHABET-1536-ROWS-SWEPT;COIN-PAIRS=3-DECLARED-SAMPLE-OF-512-INTERFERING-COINS-EACH-GATED-SEPARATELY;R5-18-ROW-SAMPLE=CITED-NOT-RE-RUN|MOTION=EIGENPHASES-ADD-EXACTLY(ANTISYMMETRIC=6960;SYMMETRIC=7888;FAILURES=0)(FORCED-BY-FUNCTORIALITY);SPEED-SPECTRUM=0+1+2-UNCHANGED-AT-TWO-EXCITATIONS(CEILING-FORCED-BY-THE-DUAL-TORUS;ALL-THREE-VALUES-ATTAINED);VELOCITY-DOES-NOT-ADD=7168-OF-29696-CELLS-AT-RAW-ADVANCE-PAIRS-(2,2)-AND-(6,6)-ONLY(THE-4096-CELLS-AT-(4,4)-ARE-EQUAL-AND-NONZERO-AND-DO-NOT-FAIL);CONTACT-HANDLE-MOVES-SYMMETRIC-DEFECT-AT-588-OF-3364-AND-ANTISYMMETRIC-AT-0(THE-MOVED-SET-IS-THE-SINGLE-EXCITATION-DEFECT-SET-BY-SET-EQUALITY);R4B-REPRODUCED=320-TIE-CELLS-IN-19-FAMILIES-OF-58|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;EXCITATIONS=2;SECTORS=ORDERED+SYMMETRIC+ANTISYMMETRIC;LIFT=FREE(U-TENSOR-U)-WITH-DISTINGUISHABLE-AND-CONTACT-LIFTS-CENSUSED;OCCUPANCY-CEILING=DECLARED;VERDICT-BEARING-STRATUM=THE-58-CIRCULANTS;VELOCITY-READING=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED-INHERITED-AS-DECLARED;NO-TRANSPORT-NUMBER-INHERITED;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-PARTICLE-CLAIM;SHAPE-WORDS-ONLY;N=2-ONLY-NO-GENERAL-N-CLAIM;NO-BRAID-CLAIM;NO-CONFIGURATION-SPACE-TOPOLOGY;COUNTS=COUNTING-ONLY-NO-MEASURE-DECLARED;NO-CONFIGURATION-MEASURE;NO-ACTION;NO-COUPLING>"
  },
  "waiver_ledger": [
   {
-   "forcing": "P (U tensor U) P^{-1} = U tensor U holds for every U whatever, so the commutation is an identity of the free lift and not a property of this family.  It is registered as a disclosure with its forcing named, and the measured content that takes its place is G-HARDCORE-LEAK-PER-GENERATOR, whose split is NOT forced and separates the pool 48 to 16",
+   "forcing": "P (U tensor U) P^{-1} = U tensor U holds for every U whatever, so the commutation is an identity of the free lift and not a property of this family.  Its corollaries are forced with it: the restriction of a unitary to an invariant subspace is unitary, and the Born shadow of a unitary is stochastic, so G-BOTH-SECTORS-ADMITTED carries no family-dependent content either.  The measured content of this unit lives in sections 5 to 9, not in the head",
    "gate": "G-EXCHANGE-COMMUTES",
    "kind": "FORCED"
   },
   {
-   "forcing": "the wedge carries no doubly-occupied configuration, so there is nothing for it to leak into.  The measured content beside it is the symmetric sector's leak, which fires",
+   "forcing": "the wedge carries no doubly-occupied configuration, so there is nothing for it to leak into -- at n = 2 and at every n.  The zero is nevertheless MEASURED per generator, as the wedge's own leak cell count, rather than typed; and the measured content beside it is the symmetric sector's leak",
    "gate": "G-HARDCORE-ANTISYMMETRIC-CLOSED",
+   "kind": "FORCED"
+  },
+  {
+   "forcing": "the Sym^2 cell from a hard-core configuration (x, y), x != y, into a doubly-occupied (a, a) is 2 N U_ax U_ay, a single product in a domain, which cannot cancel; so the symmetric sector leaks out of the hard core iff some row of U carries two nonzero entries iff U is non-monomial -- an identity of Sym^2 for EVERY unitary and not a property of this family, gated as such at G-LEAK-THEOREM-UNIVERSAL on 240 witnesses in dimensions 3, 4 and 5 and on the 3364 out-of-family composites.  The measured content beside it is WHICH generators of THIS pool are monomial (16 of 64, the parent's Markovian set name for name, G-MONOMIAL-CLASSIFIER) and hence the SIZE of the split, 48 against 16",
+   "gate": "G-HARDCORE-LEAK-PER-GENERATOR",
+   "kind": "FORCED"
+  },
+  {
+   "forcing": "B(U tensor U) = B(U) tensor B(U) entrywise, so the ordered defect is X tensor X - Y tensor Y = Delta tensor X + Y tensor Delta identically; and X tensor X = Y tensor Y iff X = Y for row-stochastic X and Y (sum over a free index).  Labelled excitations therefore carry no genuine two-body defect for ANY unitary family, and by telescoping none at any n -- gated at G-INDISTINGUISHABILITY-UNIVERSAL.  The measured content beside it is the SYMMETRISED census, whose 1176 genuine two-body pairs are family facts, and the check at every pair here is an implementation check",
+   "gate": "G-DERIVATION-LAW",
+   "kind": "FORCED"
+  },
+  {
+   "forcing": "the declared speed is the branch-free circle distance on Z/8 halved, whose range is {0, 1, 2} for every argument whatever at L = 4, so no family and no excitation number could widen it: the ceiling is forced by the dual torus and not measured.  The measured content beside it is ATTAINMENT -- that all three values are reached at two excitations -- and G-VELOCITY-DOES-NOT-ADD, which fires at 7168 cells",
+   "gate": "G-SPEED-CEILING-UNCHANGED",
    "kind": "FORCED"
   },
   {

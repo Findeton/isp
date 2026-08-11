@@ -7594,3 +7594,41 @@ all findings unchanged in substance; the repair's W8 already
 binds the 12 parent quotations — ADVISORY sent to the repair
 worker adding INJ18/INJ19 to its mandatory replay list.
 Re-frozen (v5, dd11bd925adc).
+
+## 2026-08-11 — PAPER-22 REPAIR LANDED: T1–T12 EXECUTED; 15/15 INJECTIONS DIE; THE COEXTENSION STRATUM-SCOPED; COMMIT-AS-IS (v14 LEDGER #247)
+
+The statistics unit's repair delivered.  T1 the leak⟺
+non-monomial THEOREM gated (240 witnesses at dims 3/4/5 +
+3364 composites, 0 mismatches; the not-forced waiver
+deleted); T2 the entrywise law (1764/1600 set-equal to the
+two-excitation defect set; the (C000,C012) witness rendered
+with its 576 cells; both granularities incl. the 43-of-259
+stride window); T3 the occupancy claim replaced by the
+positive gate (27 keys, 0 occupancy-shaped; the ceiling OPEN
+in-head); T4 the UNIVERSAL indistinguishability theorem gated
+(30 pairs, three lemmas + telescoping at n=2,3; the
+one-parameter fibre disclosed and checked); **T5 the 360
+overlap-2 rows TAKEN — shapes differ at 240/360: the
+three-probes-one-set coextension is a CIRCULANT-STRATUM law,
+now said as such** [the one new measurement]; T6 the braid
+stamp; T7 the inventory; T8 ALL TWELVE phantom consumers
+built as real gates — **the wall is an instrument
+(G-NO-PARTICLE-NAMING; the inverted-wall injection dies)**;
+T9 occurrence-counted claims + tables as claims AND ordered
+blocks + digests out of the pool; T10 all 33 seals at
+value-close, Seal.take refusing unevaluated gates, artifacts
+verified against gate-time seals BEFORE os.replace; T11 every
+cache fingerprinted whole + defensive copies + two real
+falsifiers — the advisory injections (svals, rows) DIE at
+G-CACHE-UNPOLLUTED out-of-process; T12 the 39 values gated,
+the velocity attribution corrected ((2,2)+(6,6) only; the
+4096 (4,4) cells equal-nonzero-not-failing), §11's false
+sentences corrected, E-24 stamps, K3's twelve MINORs.
+INJECTION REPLAY 15/15 die at named gates.  Battery: 87/87
+gates; 94/94 mutants; plain ×2 byte; selftest writes
+nothing; 16/16 argv (incl. the previously-uncaught
+--verify-paper nonexistent); off-tree git-less two seeds
+byte-identical to committed.  No delivered measured number
+moved.  Shas: paper fb05cc2a376a, code f202cf185804, output
+6069a21f1067, receipt afa46ffaf651.  Committed AS-IS;
+orchestrator battery next; on green: TERMINAL → THE OCC PIN.

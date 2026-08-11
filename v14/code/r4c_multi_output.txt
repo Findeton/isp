@@ -1,12 +1,13 @@
-[1/9] anchors, the arena, the field
-[2/9] the family, rebuilt from the parent's definitions and gated
-[3/9] the exchange census: the sectors, per generator
-[4/9] the occupancy declaration, and what it kills
-[5/9] the four arenas: where each shape lives and where it dies
-[6/9] the defect census at two excitations, three sectors
-[7/9] the support-overlap law, generalised and lifted
-[8/9] motion: eigenphases, bands, and where the velocity fails to add
-[9/9] the contact handle: an interaction only one shape can see
+[1/11] anchors, the arena, the field
+[2/11] the family, rebuilt from the parent's definitions and gated
+[3/11] the exchange census: the sectors, per generator
+[4/11] the occupancy declaration, and what it kills
+[5/11] the two universal theorems, on witnesses outside this family
+[6/11] the four arenas: where each shape lives and where it dies
+[7/11] the defect census at two excitations, three sectors
+[8/11] the support-overlap law, generalised and lifted
+[9/11] motion: eigenphases, bands, and where the velocity fails to add
+[10/11] the contact handle: an interaction only one shape can see
 
 ==============================================================================
 v14 R4c -- TWO EXCITATIONS: STATISTICS AS A MEASUREMENT
@@ -17,7 +18,7 @@ ARENA (declared as data)
   carrier          the TWO-excitation sector over that lattice: the ordered sector on |X|^2 configurations, and its two exchange sectors, the symmetric one on |X|(|X|+1)/2 and the antisymmetric one on |X|(|X|-1)/2
   family           R4's terminal family, rebuilt here from its definitions and gated coefficient map by coefficient map against the parent receipt: 58 circulant generators on the 3-term axis stencil over the declared 25-element alphabet, plus the 6 controls
   law              the FREE LIFT U tensor U -- the substrate's own composition law applied to each excitation -- restricted to each sector; the declared alternative lifts are the distinguishable lift U tensor V and the contact-phase lift, both censused
-  occupancy        the site occupancy CEILING is this unit's declaration and is NOT anchored: the stage's own count registers run to 6 and 12, and the parent's single-occupation sector is the common restriction of both ceilings
+  occupancy        the site occupancy CEILING is this unit's declaration and is NOT anchored: the anchored stage declares no occupancy-shaped key at all, and the parent's single-occupation sector is the common restriction of both ceilings.  Whether a deeper layer can FORCE one is open and is handed on
   velocity         R4b's stratified convention inherited AS DECLARED: forward difference with the antipodal tie averaged; no new selection claim is made here
   division_events  inherited unchanged: t = 0 and t = 2 are division events, the cut at t = 1 is not, and the leg at the cut is B(U2); indivisibility is DECLARED by those times and is never measured
 
@@ -57,72 +58,88 @@ MOTION
   failing_lift_pairs               [(-2, -2), (2, 2)]
 
 SEALS (gate-time; the artifacts are written FROM these)
-  SEAL-VERDICT-STRING      verdict/string             b0fcac720e8f
-  SEAL-VERDICT-HEAD        verdict/head               8d00a71e9814
-  SEAL-COUNTS              counts                     f35155882319
-  SEAL-EXCHANGE            exchange_census            4f62dd5c49e2
-  SEAL-ARENAS              arena_census               f40bdf0814ff
-  SEAL-OCCUPANCY           occupancy                  0663065f42e9
-  SEAL-DEFECT              defect_census              f28d01de262b
-  SEAL-DEFECT-VALUES       defect_values              8a0f57cb1caf
-  SEAL-DISCRIMINATION      discrimination             fb78af45b4bb
-  SEAL-OVERLAP             overlap_census             23aee4ad7054
-  SEAL-MOTION              motion                     d6cfb5b331d9
-  SEAL-CONTACT             contact_handle             2a10859d0a32
-  SEAL-PARENT              parent_reproduction        2c0ab78f56c3
-  SEAL-STAMPS              description_stamps         84749dc5bf27
-  SEAL-PATH-ANCHORS        path_value_anchors         72bc862ad04e
+  SEAL-VERBATIM            verbatim_anchors           c049eff965a2
   SEAL-BYTE-ANCHORS        byte_anchors               1a1a09366b18
-  SEAL-VERBATIM            verbatim_anchors           2faca74de3e9
-  SEAL-WAIVERS             waiver_ledger              bcc510046f5e
-  SEAL-SCHEMA              schema                     325247a4ac0f
-  SEAL-PROVENANCE          provenance                 69d57a892d80
-  SEAL-PAPER-CLAIMS        paper_claims               d64294fc13d6
+  SEAL-PATH-ANCHORS        path_value_anchors         d0a2dbbf383b
+  SEAL-ARENA               arena_declaration          6a6c401e8dd8
   SEAL-POOL                pool                       6e26a7b03c40
-  SEAL-ARENA               arena_declaration          8ba3d55dac05
-  SEAL-VERDICT-ALL         verdict                    1449564e5078
-  SEAL-CLI                 cli_probes                 7ed899eb1a1c
-  SEAL-MUTANTS             mutants                    2731e10c707d
-  SEAL-COMPLIANCE          compliance                 a20d42dbc932
-  SEAL-GATES               gates                      105cff7c387e
-  SEAL-TOTALS              totals                     3b9c5adc56c8
-  SEAL-COVERAGE            paper_coverage             b3768c870f46
+  SEAL-EXCHANGE            exchange_census            4f62dd5c49e2
+  SEAL-OCCUPANCY           occupancy                  29470d6e64c4
+  SEAL-THEOREMS            theorems                   0b3fc8a25808
+  SEAL-ARENAS              arena_census               2ae0fe2eb1d5
+  SEAL-DEFECT              defect_census              e90afd856da0
+  SEAL-DISCRIMINATION      discrimination             de04caf5c862
+  SEAL-DEFECT-VALUES       defect_values              05c8279183f6
+  SEAL-OVERLAP             overlap_census             1566709a8ec4
+  SEAL-MOTION              motion                     b9b666992159
+  SEAL-CONTACT             contact_handle             97b0a7503da5
+  SEAL-STAMPS              description_stamps         d03cebb6368b
+  SEAL-CHOICES             choice_inventory           1470eae62463
+  SEAL-WAIVERS             waiver_ledger              88f5dc51a4ea
+  SEAL-SCHEMA              schema                     3f022211370e
+  SEAL-PROVENANCE          provenance                 49e7f1867f20
+  SEAL-COUNTS              counts                     64a098dac2c1
+  SEAL-PARENT              parent_reproduction        2c0ab78f56c3
+  SEAL-VERDICT-STRING      verdict/string             c8bcf76d0386
+  SEAL-VERDICT-HEAD        verdict/head               8d00a71e9814
+  SEAL-VERDICT-ALL         verdict                    65619c43296a
+  SEAL-CLI                 cli_probes                 4818e35f409c
+  SEAL-PAPER-CLAIMS        paper_claims               03143af3231f
+  SEAL-PAPER-TABLES        paper_tables               5cb60267570b
+  SEAL-MUTANTS             mutants                    ea9aea807ea0
+  SEAL-COMPLIANCE          compliance                 bccee6d4bb12
+  SEAL-GATES               gates                      de29ee2c71e3
+  SEAL-TOTALS              totals                     46a95615e895
+  SEAL-COVERAGE            paper_coverage             8873940635e7
 
 THE VERDICT
   R4C-STATISTICS-BOTH-ADMITTED<EXCHANGE=COMMUTES-AT-64-OF-64(FORCED-BY-THE-F
-  REE-LIFT);BOTH-SECTORS-CLOSED-UNITARY-STOCHASTIC=64-OF-64;DECOMPOSITION=25
-  6=136+120(NO-THIRD-SECTOR-AT-TWO-EXCITATIONS)|OCCUPANCY=CEILING-DECLARED-N
-  OT-ANCHORED(STAGE-COUNT-REGISTER=6);AT-CEILING-1-SYMMETRIC-LEAKS=48-OF-64-
-  EXACTLY-THE-NON-MONOMIAL;ANTISYMMETRIC-LEAKS=0-OF-64;THE-TWO-CEILINGS-AGRE
-  E-AT-ONE-EXCITATION=16-OF-16-CONFIGURATIONS;AND-DIFFER-AT-TWO=136-VS-120|D
-  ISCRIMINATION=THE-SHAPES-DIFFER-BY-THE-DEFECT-AT-588-OF-3364-PAIRS=EXACTLY
-  -THE-SINGLE-EXCITATION-DEFECT-SET(SET-EQUALITY);AGREE-AT-2776;SPECTRA-DIFF
-  ER-AT-16-DOUBLED-MOMENTUM-CELLS-AT-58-OF-58-FAMILIES|DEFECT=DOES-NOT-COMPO
-  SE-IT-COMPLETES;NONZERO=1764-OF-3364-IN-BOTH-SHAPES=BOTH-LEGS-NON-MONOMIAL
-  (0-MISMATCHES-OF-6728-PER-PAIR-TESTS;=42-SQUARED);GENUINE-TWO-BODY=1176;LO
-  SSES=0;ORDERED-SECTOR=DERIVATION-LAW-EXACT-3364-OF-3364-AND-NO-GENUINE-TWO
-  -BODY;VALUES=ANTISYMMETRIC-28-DISTINCT+SYMMETRIC-30-DISTINCT-ALL-RATIONAL;
-  PARENT-SINGLE-EXCITATION=588-OF-3364-REPRODUCED-WITH-ITS-WHOLE-VALUE-MULTI
-  SET|OVERLAP=R5-LAW-SURVIVES-THE-LIFT=NO-DEFECT-AT-OVERLAP-LE-1-AT-42840-OF
-  -42840-ROWS-BOTH-SHAPES;AT-OVERLAP-2=360-OF-360-CARRY;WINDOW=EVERY-2-SITE-
-  SUPPORT-43200-ROWS-EXHAUSTIVE-IN-GEOMETRY;THREE-SITE-FULL-SUPPORT=EMPTY-OV
-  ER-THE-ALPHABET-1536-ROWS-SWEPT;COIN-PAIRS=3-EACH-GATED-SEPARATELY;R5-18-R
-  OW-SAMPLE=CITED-NOT-RE-RUN|MOTION=EIGENPHASES-ADD-EXACTLY(ANTISYMMETRIC=69
-  60;SYMMETRIC=7888;FAILURES=0)(FORCED-BY-FUNCTORIALITY);SPEED-SPECTRUM=0+1+
-  2-UNCHANGED-AT-TWO-EXCITATIONS;VELOCITY-DOES-NOT-ADD=7168-OF-29696-CELLS-A
-  T-THE-ANTIPODAL-TIE-ONLY;CONTACT-HANDLE-MOVES-SYMMETRIC-DEFECT-AT-588-OF-3
-  364-AND-ANTISYMMETRIC-AT-0(THE-MOVED-SET-IS-THE-SINGLE-EXCITATION-DEFECT-S
-  ET-BY-SET-EQUALITY);R4B-REPRODUCED=320-TIE-CELLS-IN-19-FAMILIES-OF-58|SCOP
-  E=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;EX
-  CITATIONS=2;SECTORS=ORDERED+SYMMETRIC+ANTISYMMETRIC;LIFT=FREE(U-TENSOR-U)-
-  WITH-DISTINGUISHABLE-AND-CONTACT-LIFTS-CENSUSED;OCCUPANCY-CEILING=DECLARED
-  ;VELOCITY-READING=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED-INHERITED-AS-DECLAR
-  ED;NO-TRANSPORT-NUMBER-INHERITED;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LI
-  NK-(1,1));INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-O
-  NLY;NO-CONTINUUM-CLAIM;NO-PARTICLE-CLAIM;SHAPE-WORDS-ONLY;N=2-ONLY-NO-GENE
-  RAL-N-CLAIM;NO-CONFIGURATION-MEASURE;NO-ACTION;NO-COUPLING>
+  REE-LIFT);BOTH-SECTORS-CLOSED-UNITARY-STOCHASTIC=64-OF-64(FORCED-BY-THE-FR
+  EE-LIFT);DECOMPOSITION=256=136+120(NO-THIRD-SECTOR-AT-TWO-EXCITATIONS;PERM
+  UTATION-GROUP-ONLY-NO-BRAID-CLAIM)|OCCUPANCY=CEILING-DECLARED-NOT-ANCHORED
+  (STAGE-DECLARES-NO-OCCUPANCY-KEY-IN-27);AT-CEILING-1-SYMMETRIC-LEAKS=48-OF
+  -64-EXACTLY-THE-NON-MONOMIAL(THEOREM-FOR-EVERY-UNITARY-240-WITNESSES+3364-
+  COMPOSITES;THE-48-IS-THE-FAMILY);ANTISYMMETRIC-LEAKS=0-OF-64(FORCED-NO-DOU
+  BLY-OCCUPIED-CONFIGURATION);THE-TWO-CEILINGS-AGREE-AT-ONE-EXCITATION=16-OF
+  -16-CONFIGURATIONS-AND-AS-OBJECTS-AT-64-OF-64-GENERATORS;AND-DIFFER-AT-TWO
+  =136-VS-120;FORCING-THE-CEILING=OPEN|DISCRIMINATION=THE-SHAPES-DIFFER-CELL
+  -BY-CELL-AT-1764-OF-3364-PAIRS=EXACTLY-THE-TWO-EXCITATION-DEFECT-SET(SET-E
+  QUALITY);AGREE-ONLY-WHERE-BOTH-DEFECTS-VANISH=1600;VALUE-MULTISETS-DIFFER-
+  AT-588-OF-3364=EXACTLY-THE-SINGLE-EXCITATION-DEFECT-SET(SET-EQUALITY);MULT
+  ISETS-AGREE-AT-2776;AT-THE-LOCAL-GRAIN-SHAPES-DIFFER-AT-240-OF-360-OVERLAP
+  -2-ROWS(SO-THE-COEXTENSION-IS-CIRCULANT-STRATUM-SCOPED);SPECTRA-DIFFER-AT-
+  16-DOUBLED-MOMENTUM-CELLS-AT-58-OF-58-FAMILIES|DEFECT=DOES-NOT-COMPOSE-IT-
+  COMPLETES;NONZERO=1764-OF-3364-IN-BOTH-SHAPES=BOTH-LEGS-NON-MONOMIAL(0-MIS
+  MATCHES-OF-6728-PER-PAIR-TESTS;=42-SQUARED);GENUINE-TWO-BODY=1176;LOSSES=0
+  ;ORDERED-SECTOR=DERIVATION-LAW-EXACT-3364-OF-3364-AND-NO-GENUINE-TWO-BODY(
+  THEOREM-AT-EVERY-N-BY-TELESCOPING;THE-SPLITTING-HAS-A-ONE-PARAMETER-FIBRE)
+  ;VALUES=ANTISYMMETRIC-28-DISTINCT+SYMMETRIC-39-DISTINCT-IN-THE-SECTOR(30-O
+  N-THE-HARD-CORE-BLOCK)-ALL-RATIONAL;PARENT-SINGLE-EXCITATION=588-OF-3364-R
+  EPRODUCED-WITH-ITS-WHOLE-VALUE-MULTISET|OVERLAP=R5-LAW-SURVIVES-THE-LIFT=N
+  O-DEFECT-AT-OVERLAP-LE-1-AT-42840-OF-42840-ROWS-BOTH-SHAPES;AT-OVERLAP-2=3
+  60-OF-360-CARRY;WINDOW=EVERY-2-SITE-SUPPORT-43200-ROWS-EXHAUSTIVE-IN-GEOME
+  TRY;THREE-SITE-FULL-SUPPORT=EMPTY-OVER-THE-ALPHABET-1536-ROWS-SWEPT;COIN-P
+  AIRS=3-DECLARED-SAMPLE-OF-512-INTERFERING-COINS-EACH-GATED-SEPARATELY;R5-1
+  8-ROW-SAMPLE=CITED-NOT-RE-RUN|MOTION=EIGENPHASES-ADD-EXACTLY(ANTISYMMETRIC
+  =6960;SYMMETRIC=7888;FAILURES=0)(FORCED-BY-FUNCTORIALITY);SPEED-SPECTRUM=0
+  +1+2-UNCHANGED-AT-TWO-EXCITATIONS(CEILING-FORCED-BY-THE-DUAL-TORUS;ALL-THR
+  EE-VALUES-ATTAINED);VELOCITY-DOES-NOT-ADD=7168-OF-29696-CELLS-AT-RAW-ADVAN
+  CE-PAIRS-(2,2)-AND-(6,6)-ONLY(THE-4096-CELLS-AT-(4,4)-ARE-EQUAL-AND-NONZER
+  O-AND-DO-NOT-FAIL);CONTACT-HANDLE-MOVES-SYMMETRIC-DEFECT-AT-588-OF-3364-AN
+  D-ANTISYMMETRIC-AT-0(THE-MOVED-SET-IS-THE-SINGLE-EXCITATION-DEFECT-SET-BY-
+  SET-EQUALITY);R4B-REPRODUCED=320-TIE-CELLS-IN-19-FAMILIES-OF-58|SCOPE=D=2;
+  L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;EXCITATI
+  ONS=2;SECTORS=ORDERED+SYMMETRIC+ANTISYMMETRIC;LIFT=FREE(U-TENSOR-U)-WITH-D
+  ISTINGUISHABLE-AND-CONTACT-LIFTS-CENSUSED;OCCUPANCY-CEILING=DECLARED;VERDI
+  CT-BEARING-STRATUM=THE-58-CIRCULANTS;VELOCITY-READING=FORWARD-DIFFERENCE-W
+  ITH-TIE-AVERAGED-INHERITED-AS-DECLARED;NO-TRANSPORT-NUMBER-INHERITED;CONNE
+  CTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DECLARED-BY-D
+  IVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-PARTICLE-CLA
+  IM;SHAPE-WORDS-ONLY;N=2-ONLY-NO-GENERAL-N-CLAIM;NO-BRAID-CLAIM;NO-CONFIGUR
+  ATION-SPACE-TOPOLOGY;COUNTS=COUNTING-ONLY-NO-MEASURE-DECLARED;NO-CONFIGURA
+  TION-MEASURE;NO-ACTION;NO-COUPLING>
 
-TOTALS: {"anchors": 48, "byte_anchors": 12, "census_pairs": 3364, "gates": 63, "gates_disclosed": 3, "gates_passed": 63, "integrity_gate": "EVALUATED-IN-THE-WRITING-PATH-AGAINST-THE-GATE-TIME-SEAL", "mutants": 56, "mutants_killed": 56, "mutants_on_target": 56, "overlap_rows": 43200, "path_value_anchors": 24, "seals": 30, "verbatim_anchors": 12, "verdict_values": 69}
+TOTALS: {"anchors": 49, "byte_anchors": 12, "census_pairs": 3364, "gates": 87, "gates_disclosed": 6, "gates_passed": 87, "integrity_gate": "EVALUATED-IN-THE-WRITING-PATH-AGAINST-THE-GATE-TIME-SEAL", "mutants": 94, "mutants_killed": 94, "mutants_on_target": 94, "overlap_rows": 43200, "path_value_anchors": 25, "seals": 33, "verbatim_anchors": 12, "verdict_values": 84}
 
 NOT EXECUTED
   - no other unit's program is imported or executed; the parents are read as bytes and as anchored values only
@@ -133,5 +150,5 @@ NOT EXECUTED
   - the occupancy ceiling is DECLARED; the stage anchors none
   - no particle is named: fermionic-shape and bosonic-shape are shape words and the walls bar more
 
-ALL GATES PASSED (63/63); ALL MUTANTS DEAD (56/56)
+ALL GATES PASSED (87/87); ALL MUTANTS DEAD (94/94)
 EXIT 0
