@@ -7645,3 +7645,17 @@ source of many-body quantumness at every n; the entrywise
 discrimination law; the ceiling FORMALLY OPEN in the verdict
 itself.  **THE OCC PIN (paper-31) FIRES THIS LEDGER — frozen
 at #249 and launched.**
+
+## 2026-08-11 — OCC (PAPER-31) PINNED AND LAUNCHED ON PAPER-22'S TERMINAL (v14 LEDGER #249)
+
+v14/note-occ-pin.md frozen per the user's #209 order and the
+#217 adjudication.  The unit measures the seed conditional
+PREMISE BY PREMISE on committed layers (the weld bijection;
+the doubly-occupied constructibility in the coupled
+representation — the turning premise; the division grammar's
+closure; the pool), with the bare-stage control as the
+it-can-fail arm and the one-way asymmetry as the organizing
+frame.  All-premises-hold ⟹ FERMIONIC-SHAPE-A-THEOREM-OF-THE-
+COUPLED-THEORY; any premise open ⟹ the fiber priced,
+first-class.  Worker launched (Opus).  In flight (6): OCC +
+the SMU and PER-L repairs + SIG/PER-R/LOR.
