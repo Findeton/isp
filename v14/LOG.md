@@ -6963,3 +6963,40 @@ site-marginal observables** [adopted: the SIG pin will carry
 it beside reachability-before-polarity]; PER-R inherits the
 delay-law shape, not the counts.  → adjudication when K1+K3
 land.
+
+## 2026-08-11 — GDL OPERATOR REVIEW LANDED (K1): AWF — 348/348 CLEAN; THE MECHANISM VERIFIED AS ALGEBRA; G5 ITSELF RECORD-BLIND (v14 LEDGER #225)
+
+v14/review-gdl-operator.md (f3db1f15c9ea) frozen.  **Grade
+AWF; 348 independent recomputations, 0 mismatches, no false
+number anywhere** (own group-ring Z[x]/(x³−1) machinery; ε
+computed THROUGH the kernel; a second sort-based failure
+census sharing no dictionary).  Everything decisive
+reproduces: 14/14 parent values located verbatim; both
+collapses (the frozen one STRUCTURALLY FORCED); the 45-cell
+grid BOTH arms (coupled 2/28/15; frozen 1/38/6 — feeding
+K2's measured leg); five fiber members rebuilt incl. two
+hidden coins, same ladder {4,4,3}, the reviewer's OWN digest
+matching da4248b1a55b; **the blindness mechanism verified AS
+ALGEBRA — symbolic ψ, all 729 count-residue pairs, six coins,
+4,374 coefficient identities, 0 mismatches.**  THREE MAJORS,
+all descriptive: the §7 bolded universal contradicted by its
+own table (= K2's finding, independent); the 164,310
+denominator misattributed (D1's own is 54,770); **the
+1,479,176 kernel checks reproduce WITH their split — and all
+three classes are UNFALSIFIABLE AS CODED, a disclosure
+regression paper-20 had stamped definitional.**  Six MINORs
+(incl. the ε=p row a can't-fail assignment — strengthening
+supplied; the ℓ₁ denominator's 6,320 rational zeros).  **TWO
+NEW MEASUREMENTS HANDED FORWARD: the per-pair mechanism test
+at 1,971,720 checks — ≤1-overlap pairs move 0/452,745,
+co-occupying pairs 840,889/1,518,975 — the mechanism at the
+finest grain its algebra predicts, 36× the delivered
+evidence; and G5 IS ITSELF RECORD-BLIND (ε moves 0 over all
+foreign fields) — THE SINGLE EXACT CELL RELATES A
+RECORD-BLIND DECOHERENCE FUNCTIONAL TO A RECORD-BLIND GROWTH
+FUNCTIONAL, the sharpest ground for the frozen exclusion.**
+Mutants: four outside the harness incl. one HONEST FAILURE
+disclosed (MUT-1a's permutation preserves the multiset) and
+MUT-1b (genuine site-mixing) moving D1 at 2,259/2,400 —
+proving the delivered zero CONTENTFUL.  Numeral sweep clean
+(3 benign).  → adjudication when K3 lands.
