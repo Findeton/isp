@@ -6827,3 +6827,44 @@ E-22 native); byte ×2 + off-tree git-less; loud abort.
 Shas: paper e98003841378, code 81595d600575, output
 39128fafc7bf, receipt b87016e96285.  Committed AS-IS;
 battery next; panel after.
+
+## 2026-08-11 — GDL BATTERY GREEN; PANEL PROTOCOL FROZEN; THREE SEATS LAUNCHED (v14 LEDGER #222)
+
+Battery: mirror plain exit 0 BYTE-IDENTICAL both artifacts;
+unknown flag exit 2; selftest exit 1 writing nothing;
+MUT-ANCHOR-LEAVES died at G-PARENT-REPRODUCED; artifacts
+untouched.  **PROTOCOL — GDL is post-engraving-native; no
+birth-date excuses.  K1 OPERATOR** — rebuild: the 45-cell
+relation table both arms (2 EXACT / 28 PARTIAL with failure
+sets recounted / 15 VACUOUS), the D1=Σε² identity (98,586)
+AND its frozen-holding (the exclusion), **THE BLINDNESS
+MECHANISM hardest** (verify the cancellation algebra ρ_xy =
+Σ_l ω^(Δn_l) ψψ* AND the measurements: 0/164,310 diagonal;
+the co-occupancy threshold; 54,593/54,770 off-diagonal), the
+separation ladder across all 7 fiber members (the one-digest
+agreement), the domination failures' exact witnesses, the
+frozen collapse 9,751→5, the ℓ₁ pricing; mutants outside the
+harness.  **K2 EFFECTUS** — THE HEAD'S GRAMMAR (decisive): is
+GDL-PARTIAL the licensed word when ZERO gravitational
+relations exist (28 partial cells exist but all fail the
+frozen bar — is the honest head
+GDL-DECOUPLED-AT-THE-GRAVITATIONAL-BAR?); the blindness
+mechanism's scope (does the algebra license "ANY site-uniform
+unitary coin is record-blind on the diagonal" AS A THEOREM?);
+**the metric-consuming-coin successor row written precisely**
+(what the coin consumes; the fiber; whose unit — a Wave-A
+addendum?); the separation-ladder prediction row's
+registration with falsification conditions; the
+one-quantum-history sentence; the staleness-quantitative-twin
+framing; walls (shape-only verified — no DP/experimental
+claims); choice inventory; successor register.  **K3
+INSTRUMENT** — full era: the VACUOUS stamping honesty (15
+stamped not passed — audit the stamping gate); the
+axes-not-product fiber disclosure; the failure-census
+second-pass INDEPENDENCE; 56 mutants outside the harness; 34
+seals + post-write; E-22 injections (49 fenced, 137 inline,
+tables); E-23 descriptions vs code; E-24 stamps; hostile argv
+incl. arity; byte ×2 across seeds; loud abort.  Reviewers →
+v14/review-gdl-{operator,effectus,instrument}.md.  Objects at
+4c85ca4: e98003841378 / 81595d600575 / 39128fafc7bf /
+b87016e96285; pin fe9533371046.
