@@ -5151,3 +5151,26 @@ Both welds now stand: WELD 1 (the gravity law, #161) and WELD 2
 (the dictionary, this entry).  STATUS row written (same commit,
 §13).  **THE COUPLING-UNIT PIN (paper-20) — the summit —
 follows immediately.**
+
+## 2026-08-11 — THE COUPLING-UNIT PIN FROZEN (paper-20) — THE SUMMIT — WORKER LAUNCHED (v14 LEDGER #173)
+
+Both parents terminal; the #168 scope binding.  Pin
+v14/note-coupling-pin.md: the question — on the welded R=3
+record with the forced dictionary, a declared unitary coin walk
+whose interactions EMIT DIVISION EVENTS THROUGH THE CONFIRMED
+LAW, updating the counts it propagates on; three gates —
+G-CONSISTENCY (unitarity × column-stochasticity compose),
+G-NONTRIVIALITY (two-way vs the mandatory FROZEN control),
+**G-REQUIREMENT (the theorem, two-way): a closure condition of
+the quantum dynamics failing frozen and passing coupled, or
+the reverse**; declared data with priced fibers (the walk, the
+emission rule bound to the LAW-NATIVE normaliser with its
+transport GATED, the update semantics, the sedentary finite
+horizon); honest outcomes incl.
+COUPLING-CONSISTENT-NOT-REQUIRED and first-class
+BLOCKED-AT-THE-LAW-TRANSPORT; **SCOPE: A RECORD, NOT YET A LAW
+OVER RECORDS** (the unsplittable welded record; the R=4
+follow-on registered); the inheritances cited; the full 21
+engravings at construction.  Worker launched (opus).  **If
+G-REQUIREMENT passes its panel, "no QFT without gravity" is a
+measured structural theorem — the programme's summit claim.**
