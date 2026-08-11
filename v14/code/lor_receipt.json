@@ -1,0 +1,4800 @@
+{
+ "arena": {
+  "admissible_sites": 9,
+  "block_length": 3,
+  "blocks": 2,
+  "cells": 27,
+  "cells_at_count_2": 27,
+  "declared_by_i7": false,
+  "homogeneous": true,
+  "in_the_declared_count_box": true,
+  "link_constant": true,
+  "ordered_witnesses": 5184,
+  "record": [
+   [
+    2,
+    2,
+    2
+   ]
+  ],
+  "rounds": 6
+ },
+ "arithmetic": "exact: int and fractions.Fraction only, AST-scanned; no float literal, no float-adjacent import, no true division outside the one exact helper",
+ "ceiling": {
+  "budget_law": "a structurally live schedule reaches the link-constant record (m, m, m) at exactly R = 3m",
+  "ceiling_after_the_step": 0,
+  "ceiling_here": 1,
+  "dyadic_budgets": [
+   3,
+   6,
+   12,
+   24
+  ],
+  "ladder": [
+   {
+    "L_equals_R": true,
+    "R": 3,
+    "ceiling": 0,
+    "m": 1,
+    "places": 9,
+    "record": [
+     1,
+     1,
+     1
+    ],
+    "refined_L": 3
+   },
+   {
+    "L_equals_R": true,
+    "R": 6,
+    "ceiling": 1,
+    "m": 2,
+    "places": 36,
+    "record": [
+     2,
+     2,
+     2
+    ],
+    "refined_L": 6
+   },
+   {
+    "L_equals_R": false,
+    "R": 9,
+    "ceiling": 1,
+    "m": 3,
+    "places": 36,
+    "record": [
+     3,
+     3,
+     3
+    ],
+    "refined_L": 6
+   },
+   {
+    "L_equals_R": true,
+    "R": 12,
+    "ceiling": 2,
+    "m": 4,
+    "places": 144,
+    "record": [
+     4,
+     4,
+     4
+    ],
+    "refined_L": 12
+   },
+   {
+    "L_equals_R": false,
+    "R": 15,
+    "ceiling": 2,
+    "m": 5,
+    "places": 144,
+    "record": [
+     5,
+     5,
+     5
+    ],
+    "refined_L": 12
+   },
+   {
+    "L_equals_R": false,
+    "R": 18,
+    "ceiling": 2,
+    "m": 6,
+    "places": 144,
+    "record": [
+     6,
+     6,
+     6
+    ],
+    "refined_L": 12
+   },
+   {
+    "L_equals_R": false,
+    "R": 21,
+    "ceiling": 2,
+    "m": 7,
+    "places": 144,
+    "record": [
+     7,
+     7,
+     7
+    ],
+    "refined_L": 12
+   },
+   {
+    "L_equals_R": true,
+    "R": 24,
+    "ceiling": 3,
+    "m": 8,
+    "places": 576,
+    "record": [
+     8,
+     8,
+     8
+    ],
+    "refined_L": 24
+   }
+  ],
+  "law": "no record admits more than floor(log2(min n_l)) consecutive dyadic steps, because after k steps an interval of count n has been partitioned into 2^k strictly positive parts",
+  "min_count": 2,
+  "refined_min_count_after_the_step": 1,
+  "second_step_needs_R": 12,
+  "second_step_needs_min_count": 4,
+  "steps_taken": 1
+ },
+ "compatibility": {
+  "conflict": false,
+  "intervals_where_the_support_is_the_fiber": 27,
+  "law_04_fiber_size": [
+   1
+  ],
+  "law_06_support_size": [
+   1
+  ],
+  "scope_difference": "paper-04's move is record-level and needs every interval splittable at once; paper-06's law is per-interval.  At R = 4 they came apart -- 04 empty, 06 non-empty at 9 of 27.  At R = 6 both are live and their outputs coincide",
+  "slots_compared": 108,
+  "slots_equal_under_both_orders": 108,
+  "verdict": "COMPOSE-AND-AGREE"
+ },
+ "counts": {
+  "carrier_isomorphism_witnesses": 72,
+  "ceiling": 1,
+  "cells": 27,
+  "coarse_isomorphisms": 1296,
+  "determined_links": 54,
+  "driven_schedules": 16,
+  "free_links": 54,
+  "gates": 41,
+  "i7_strict_triples": 72,
+  "laws_non_empty": 2,
+  "live_cut_loci": 1,
+  "mutants": 41,
+  "new_sites": 27,
+  "partitions": 280,
+  "path_value_anchors": 31,
+  "refined_automorphisms": 432,
+  "refined_intervals": 108,
+  "refined_sites": 36,
+  "right_edge_count_witnesses": 864,
+  "saturating": 36,
+  "sources": 19,
+  "triangles": 18,
+  "verbatim_anchors": 26,
+  "witnesses": 5184
+ },
+ "coverage": {
+  "denominator": "the gate count of THIS run, not a hand-kept number",
+  "gates_evaluated": 53,
+  "gates_waived": 16,
+  "gates_with_a_declared_mutant": 38,
+  "registry_drift": [],
+  "uncovered": []
+ },
+ "dia": {
+  "coarse_intervals_without_the_diagonal": 18,
+  "coarse_q12": "-1",
+  "d3_committed_total": 216,
+  "d3_committed_unreached": 27,
+  "declared_links": 3,
+  "diagonal_new_sites": 9,
+  "new_sites_by_direction": {
+   "[0, 1]": 9,
+   "[1, 0]": 9,
+   "[1, 1]": 9
+  },
+  "q12_at_a_link_constant_record": "-n/2",
+  "reading": "the (1, 1) link is read as a direction on a finite lattice of counts and as nothing else",
+  "refined_q12": "-1/2",
+  "site_complete_with_the_diagonal": 36,
+  "unreached_parities": [
+   "[1, 1]"
+  ],
+  "unreached_without_the_diagonal": 9
+ },
+ "dictionary": {
+  "abstractly_isomorphic_dead_arenas": [
+   "R6-REFINED@DEAD-triangles12-lines6",
+   "R6-REFINED@DEAD-triangles9-lines9"
+  ],
+  "canonical_carrier_at_the_arena": {
+   "coarse_restored_cells": 27,
+   "codes": [
+    [
+     1,
+     1,
+     1
+    ]
+   ],
+   "foreign_edges": 0,
+   "is_an_isomorphism": true,
+   "missing_edges": 0,
+   "zero_cells": 0
+  },
+  "carrier": {
+   "actors": 9,
+   "carrier_is_a_bijection": true,
+   "carrier_size": 36,
+   "coarse_dictionary": "[ACTOR->SITE | CO-DIVISION-ACTOR-PAIR->LINK | DIVISION-COUNT->n_l(x)]",
+   "determined_links": 54,
+   "determined_links_that_are_actor_in_pair_incidences": 54,
+   "extended_carrier": "[ACTOR (+) CO-DIVISION-ACTOR-PAIR -> SITE]",
+   "free_links": 54,
+   "free_links_inside_a_non_collinear_declared_triangle": 54,
+   "free_links_per_triangle": [
+    3
+   ],
+   "pairs": 27,
+   "triangles": 18
+  },
+  "falsifier_rows": [
+   {
+    "arena": "R6-FALSIFIER(one pair's divisions withheld)",
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "fate": "STRUCT-DEAD",
+    "isomorphisms": 0,
+    "isomorphisms_directed_comparator": 0,
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "reading": "EMBEDDING",
+    "reason": "0 of the 9! bijections carry the site incidence onto the target's link structure",
+    "site_arity": 9,
+    "site_gen": "ACTOR",
+    "target_sites": 9
+   },
+   {
+    "arena": "R6-FALSIFIER(one pair's divisions withheld)",
+    "count_cells": 27,
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "count_max": 2,
+    "count_min": 0,
+    "fate": "COUNT-DEAD",
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "quotient_maps": 1296,
+    "reading": "QUOTIENT",
+    "reason": "n_l(x) must lie in Z_>0 (HA 3.1); the induced count is 0 at 1 of 27 cells",
+    "site_arity": 9,
+    "site_gen": "ACTOR",
+    "target_sites": 9,
+    "zero_cells": 1
+   }
+  ],
+  "fate_paper04_minimal": "UNMOTIVATED",
+  "fate_process_supplied": "FOUND-candidate",
+  "fate_unextended_carrier": "ARITY-DEAD",
+  "fates_exhibited": [
+   "ARITY-DEAD",
+   "COUNT-DEAD",
+   "FOUND-candidate",
+   "STRUCT-DEAD",
+   "UNMOTIVATED"
+  ],
+  "fibers_paper04_minimal": {
+   "I-DIRECTION-LABEL": 3,
+   "I-ORIENT": 2,
+   "I-SITE-ASSIGNMENT": 24
+  },
+  "fibers_process_supplied": {
+   "I-DIRECTION-LABEL": 1,
+   "I-ORIENT": 1,
+   "I-SITE-ASSIGNMENT": 1
+  },
+  "free_items_paper04_minimal": [
+   "I-DIRECTION-LABEL",
+   "I-ORIENT",
+   "I-SITE-ASSIGNMENT"
+  ],
+  "free_items_process_supplied": [],
+  "order_independence_comparator": 1296,
+  "refined_automorphisms": 432,
+  "rows": [
+   {
+    "arena": "R6-REFINED@PROCESS-SUPPLIED",
+    "base_maps_read": 432,
+    "count_cells": 108,
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "count_max": 1,
+    "count_min": 1,
+    "fate": "FOUND-candidate",
+    "fibers_base_map_invariant": true,
+    "free_items": [],
+    "free_items_at_every_base_map": 0,
+    "induced_record_at_the_base_map": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "inventory": {
+     "I-DIRECTION-LABEL": 1,
+     "I-ORIENT": 1,
+     "I-SITE-ASSIGNMENT": 1
+    },
+    "isomorphisms": 432,
+    "isomorphisms_directed_comparator": 0,
+    "label_fiber_spread": [
+     1
+    ],
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "orient_fiber_spread": [
+     1
+    ],
+    "reading": "EMBEDDING",
+    "reason": "zero free items at the RSQ standard",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@PROCESS-SUPPLIED",
+    "base_maps_read": 432,
+    "count_cells": 108,
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "count_max": 1,
+    "count_min": 1,
+    "fate": "FOUND-candidate",
+    "fibers_base_map_invariant": true,
+    "free_items": [],
+    "free_items_at_every_base_map": 0,
+    "induced_record_at_the_base_map": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "inventory": {
+     "I-DIRECTION-LABEL": 1,
+     "I-ORIENT": 1,
+     "I-SITE-ASSIGNMENT": 1
+    },
+    "label_fiber_spread": [
+     1
+    ],
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "orient_fiber_spread": [
+     1
+    ],
+    "quotient_maps": 432,
+    "reading": "QUOTIENT",
+    "reason": "zero free items at the RSQ standard",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@PAPER-04-DECLARED-MINIMAL",
+    "base_maps_read": 432,
+    "count_cells": 108,
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "count_max": 2,
+    "count_min": 1,
+    "fate": "UNMOTIVATED",
+    "fibers_base_map_invariant": false,
+    "free_items": [
+     "I-DIRECTION-LABEL",
+     "I-ORIENT",
+     "I-SITE-ASSIGNMENT"
+    ],
+    "free_items_at_every_base_map": 3,
+    "induced_record_at_the_base_map": [
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      2
+     ],
+     [
+      2,
+      2,
+      1
+     ]
+    ],
+    "inventory": {
+     "I-DIRECTION-LABEL": 3,
+     "I-ORIENT": 2,
+     "I-SITE-ASSIGNMENT": 24
+    },
+    "isomorphisms": 432,
+    "isomorphisms_directed_comparator": 0,
+    "label_fiber_spread": [
+     3,
+     6
+    ],
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "orient_fiber_spread": [
+     2
+    ],
+    "reading": "EMBEDDING",
+    "reason": "3 genuinely free item(s): I-DIRECTION-LABEL fiber 3, I-ORIENT fiber 2, I-SITE-ASSIGNMENT fiber 24",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@PAPER-04-DECLARED-MINIMAL",
+    "base_maps_read": 432,
+    "count_cells": 108,
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "count_max": 2,
+    "count_min": 1,
+    "fate": "UNMOTIVATED",
+    "fibers_base_map_invariant": false,
+    "free_items": [
+     "I-DIRECTION-LABEL",
+     "I-ORIENT",
+     "I-SITE-ASSIGNMENT"
+    ],
+    "free_items_at_every_base_map": 3,
+    "induced_record_at_the_base_map": [
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      2
+     ],
+     [
+      2,
+      2,
+      1
+     ]
+    ],
+    "inventory": {
+     "I-DIRECTION-LABEL": 3,
+     "I-ORIENT": 2,
+     "I-SITE-ASSIGNMENT": 24
+    },
+    "label_fiber_spread": [
+     3,
+     6
+    ],
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "orient_fiber_spread": [
+     2
+    ],
+    "quotient_maps": 432,
+    "reading": "QUOTIENT",
+    "reason": "3 genuinely free item(s): I-DIRECTION-LABEL fiber 3, I-ORIENT fiber 2, I-SITE-ASSIGNMENT fiber 24",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@THE-UNEXTENDED-9-ACTOR-CARRIER",
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "fate": "ARITY-DEAD",
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "reading": "EMBEDDING",
+    "reason": "9 site objects against the target's 36; no repair declared, and a declared restriction can only shrink a site set",
+    "site_arity": 9,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles0-lines9",
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       0,
+       1
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       1
+      ]
+     ],
+     "foreign_edges": 27,
+     "is_an_isomorphism": false,
+     "missing_edges": 54,
+     "zero_cells": 54
+    },
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "fate": "STRUCT-DEAD",
+    "isomorphisms": 0,
+    "isomorphisms_directed_comparator": 0,
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "reading": "EMBEDDING",
+    "reason": "0 of the 36! bijections carry the site incidence onto the target's link structure",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles0-lines9",
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       0,
+       1
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       1
+      ]
+     ],
+     "foreign_edges": 27,
+     "is_an_isomorphism": false,
+     "missing_edges": 54,
+     "zero_cells": 54
+    },
+    "count_cells": 108,
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "count_max": 2,
+    "count_min": 0,
+    "fate": "COUNT-DEAD",
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "quotient_maps": 864,
+    "reading": "QUOTIENT",
+    "reason": "n_l(x) must lie in Z_>0 (HA 3.1); the induced count is 0 at 27 of 108 cells",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36,
+    "zero_cells": 27
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles6-lines3",
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       0,
+       1
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       0,
+       2,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       1
+      ],
+      [
+       1,
+       2,
+       2
+      ],
+      [
+       2,
+       0,
+       1
+      ],
+      [
+       2,
+       1,
+       2
+      ]
+     ],
+     "foreign_edges": 9,
+     "is_an_isomorphism": false,
+     "missing_edges": 36,
+     "zero_cells": 36
+    },
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "fate": "STRUCT-DEAD",
+    "isomorphisms": 0,
+    "isomorphisms_directed_comparator": 0,
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "reading": "EMBEDDING",
+    "reason": "0 of the 36! bijections carry the site incidence onto the target's link structure",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles6-lines3",
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       0,
+       1
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       0,
+       2,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       1
+      ],
+      [
+       1,
+       2,
+       2
+      ],
+      [
+       2,
+       0,
+       1
+      ],
+      [
+       2,
+       1,
+       2
+      ]
+     ],
+     "foreign_edges": 9,
+     "is_an_isomorphism": false,
+     "missing_edges": 36,
+     "zero_cells": 36
+    },
+    "count_cells": 108,
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "count_max": 2,
+    "count_min": 0,
+    "fate": "COUNT-DEAD",
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "quotient_maps": 864,
+    "reading": "QUOTIENT",
+    "reason": "n_l(x) must lie in Z_>0 (HA 3.1); the induced count is 0 at 27 of 108 cells",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36,
+    "zero_cells": 27
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles6-lines9",
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       0,
+       1
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       0,
+       1,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       1,
+       1,
+       1
+      ]
+     ],
+     "foreign_edges": 27,
+     "is_an_isomorphism": false,
+     "missing_edges": 36,
+     "zero_cells": 36
+    },
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "fate": "STRUCT-DEAD",
+    "isomorphisms": 0,
+    "isomorphisms_directed_comparator": 0,
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "reading": "EMBEDDING",
+    "reason": "0 of the 36! bijections carry the site incidence onto the target's link structure",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles6-lines9",
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       0,
+       1
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       0,
+       1,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       1,
+       1,
+       1
+      ]
+     ],
+     "foreign_edges": 27,
+     "is_an_isomorphism": false,
+     "missing_edges": 36,
+     "zero_cells": 36
+    },
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "fate": "STRUCT-DEAD",
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "quotient_maps": 0,
+    "reading": "QUOTIENT",
+    "reason": "0 of the 36! bijections carry the site incidence into the target's link structure",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles9-lines0",
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       2,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       1
+      ],
+      [
+       2,
+       1,
+       2
+      ]
+     ],
+     "foreign_edges": 0,
+     "is_an_isomorphism": false,
+     "missing_edges": 27,
+     "zero_cells": 27
+    },
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "fate": "STRUCT-DEAD",
+    "isomorphisms": 0,
+    "isomorphisms_directed_comparator": 0,
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "reading": "EMBEDDING",
+    "reason": "0 of the 36! bijections carry the site incidence onto the target's link structure",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles9-lines0",
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       2,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       1
+      ],
+      [
+       2,
+       1,
+       2
+      ]
+     ],
+     "foreign_edges": 0,
+     "is_an_isomorphism": false,
+     "missing_edges": 27,
+     "zero_cells": 27
+    },
+    "count_cells": 108,
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "count_max": 2,
+    "count_min": 0,
+    "fate": "COUNT-DEAD",
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "quotient_maps": 864,
+    "reading": "QUOTIENT",
+    "reason": "n_l(x) must lie in Z_>0 (HA 3.1); the induced count is 0 at 27 of 108 cells",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36,
+    "zero_cells": 27
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles9-lines9",
+    "base_maps_read": 432,
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       1,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       1
+      ]
+     ],
+     "foreign_edges": 27,
+     "is_an_isomorphism": false,
+     "missing_edges": 27,
+     "zero_cells": 27
+    },
+    "count_cells": 108,
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "count_max": 1,
+    "count_min": 1,
+    "fate": "FOUND-candidate",
+    "fibers_base_map_invariant": true,
+    "free_items": [],
+    "free_items_at_every_base_map": 0,
+    "induced_record_at_the_base_map": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "inventory": {
+     "I-DIRECTION-LABEL": 1,
+     "I-ORIENT": 1,
+     "I-SITE-ASSIGNMENT": 1
+    },
+    "isomorphisms": 432,
+    "isomorphisms_directed_comparator": 0,
+    "label_fiber_spread": [
+     1
+    ],
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "orient_fiber_spread": [
+     1
+    ],
+    "reading": "EMBEDDING",
+    "reason": "zero free items at the RSQ standard",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles9-lines9",
+    "base_maps_read": 432,
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       1,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       1
+      ]
+     ],
+     "foreign_edges": 27,
+     "is_an_isomorphism": false,
+     "missing_edges": 27,
+     "zero_cells": 27
+    },
+    "count_cells": 108,
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "count_max": 1,
+    "count_min": 1,
+    "fate": "FOUND-candidate",
+    "fibers_base_map_invariant": true,
+    "free_items": [],
+    "free_items_at_every_base_map": 0,
+    "induced_record_at_the_base_map": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "inventory": {
+     "I-DIRECTION-LABEL": 1,
+     "I-ORIENT": 1,
+     "I-SITE-ASSIGNMENT": 1
+    },
+    "label_fiber_spread": [
+     1
+    ],
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "orient_fiber_spread": [
+     1
+    ],
+    "quotient_maps": 432,
+    "reading": "QUOTIENT",
+    "reason": "zero free items at the RSQ standard",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles10-lines5",
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       0,
+       1,
+       1
+      ],
+      [
+       0,
+       2,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       1,
+       1,
+       1
+      ],
+      [
+       1,
+       2,
+       2
+      ],
+      [
+       2,
+       0,
+       1
+      ],
+      [
+       2,
+       1,
+       2
+      ]
+     ],
+     "foreign_edges": 15,
+     "is_an_isomorphism": false,
+     "missing_edges": 24,
+     "zero_cells": 24
+    },
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "fate": "STRUCT-DEAD",
+    "isomorphisms": 0,
+    "isomorphisms_directed_comparator": 0,
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "reading": "EMBEDDING",
+    "reason": "0 of the 36! bijections carry the site incidence onto the target's link structure",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles10-lines5",
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       0,
+       1,
+       1
+      ],
+      [
+       0,
+       2,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       1,
+       1,
+       1
+      ],
+      [
+       1,
+       2,
+       2
+      ],
+      [
+       2,
+       0,
+       1
+      ],
+      [
+       2,
+       1,
+       2
+      ]
+     ],
+     "foreign_edges": 15,
+     "is_an_isomorphism": false,
+     "missing_edges": 24,
+     "zero_cells": 24
+    },
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "fate": "STRUCT-DEAD",
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "quotient_maps": 0,
+    "reading": "QUOTIENT",
+    "reason": "0 of the 36! bijections carry the site incidence into the target's link structure",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles12-lines3",
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       1,
+       1
+      ],
+      [
+       0,
+       2,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       1
+      ],
+      [
+       2,
+       1,
+       2
+      ]
+     ],
+     "foreign_edges": 9,
+     "is_an_isomorphism": false,
+     "missing_edges": 18,
+     "zero_cells": 18
+    },
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "fate": "STRUCT-DEAD",
+    "isomorphisms": 0,
+    "isomorphisms_directed_comparator": 0,
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "reading": "EMBEDDING",
+    "reason": "0 of the 36! bijections carry the site incidence onto the target's link structure",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles12-lines3",
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       1,
+       1
+      ],
+      [
+       0,
+       2,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       1
+      ],
+      [
+       2,
+       1,
+       2
+      ]
+     ],
+     "foreign_edges": 9,
+     "is_an_isomorphism": false,
+     "missing_edges": 18,
+     "zero_cells": 18
+    },
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "fate": "STRUCT-DEAD",
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "quotient_maps": 0,
+    "reading": "QUOTIENT",
+    "reason": "0 of the 36! bijections carry the site incidence into the target's link structure",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles12-lines6",
+    "base_maps_read": 432,
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       0,
+       1,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       1,
+       1,
+       1
+      ]
+     ],
+     "foreign_edges": 18,
+     "is_an_isomorphism": false,
+     "missing_edges": 18,
+     "zero_cells": 18
+    },
+    "count_cells": 108,
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "count_max": 1,
+    "count_min": 1,
+    "fate": "FOUND-candidate",
+    "fibers_base_map_invariant": true,
+    "free_items": [],
+    "free_items_at_every_base_map": 0,
+    "induced_record_at_the_base_map": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "inventory": {
+     "I-DIRECTION-LABEL": 1,
+     "I-ORIENT": 1,
+     "I-SITE-ASSIGNMENT": 1
+    },
+    "isomorphisms": 432,
+    "isomorphisms_directed_comparator": 0,
+    "label_fiber_spread": [
+     1
+    ],
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "orient_fiber_spread": [
+     1
+    ],
+    "reading": "EMBEDDING",
+    "reason": "zero free items at the RSQ standard",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   },
+   {
+    "arena": "R6-REFINED@DEAD-triangles12-lines6",
+    "base_maps_read": 432,
+    "canonical_carrier": {
+     "coarse_restored_cells": 27,
+     "codes": [
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       0,
+       1,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       1,
+       1,
+       1
+      ]
+     ],
+     "foreign_edges": 18,
+     "is_an_isomorphism": false,
+     "missing_edges": 18,
+     "zero_cells": 18
+    },
+    "count_cells": 108,
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "count_max": 1,
+    "count_min": 1,
+    "fate": "FOUND-candidate",
+    "fibers_base_map_invariant": true,
+    "free_items": [],
+    "free_items_at_every_base_map": 0,
+    "induced_record_at_the_base_map": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "inventory": {
+     "I-DIRECTION-LABEL": 1,
+     "I-ORIENT": 1,
+     "I-SITE-ASSIGNMENT": 1
+    },
+    "label_fiber_spread": [
+     1
+    ],
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "orient_fiber_spread": [
+     1
+    ],
+    "quotient_maps": 432,
+    "reading": "QUOTIENT",
+    "reason": "zero free items at the RSQ standard",
+    "site_arity": 36,
+    "site_gen": "ACTOR",
+    "target_sites": 36
+   }
+  ]
+ },
+ "driven": {
+  "cells_compared": 432,
+  "dead_classes_declared": 8,
+  "divisions_per_record": [
+   18
+  ],
+  "event_lengths": [
+   99,
+   100,
+   101,
+   102
+  ],
+  "family_size": 5184,
+  "mismatched_schedules": [],
+  "rows": [
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 99,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 0,
+    "stratum": "W6-SUPPLIED",
+    "triples": [
+     14,
+     16
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 99,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 0,
+    "stratum": "W6-SUPPLIED",
+    "triples": [
+     14,
+     17
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 99,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 0,
+    "stratum": "W6-SUPPLIED",
+    "triples": [
+     14,
+     32
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 99,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 0,
+    "stratum": "W6-SUPPLIED",
+    "triples": [
+     14,
+     33
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 101,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 0,
+    "stratum": "W6-SUPPLIED",
+    "triples": [
+     14,
+     42
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 101,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 0,
+    "stratum": "W6-SUPPLIED",
+    "triples": [
+     14,
+     43
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 102,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 0,
+    "stratum": "W6-DEAD-cover0-lines9",
+    "triples": [
+     0,
+     0
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 102,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 0,
+    "stratum": "W6-DEAD-cover6-lines3",
+    "triples": [
+     2,
+     2
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 100,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 0,
+    "stratum": "W6-DEAD-cover6-lines9",
+    "triples": [
+     0,
+     2
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 102,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 0,
+    "stratum": "W6-DEAD-cover9-lines0",
+    "triples": [
+     14,
+     14
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 100,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 0,
+    "stratum": "W6-DEAD-cover9-lines9",
+    "triples": [
+     0,
+     14
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 100,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 0,
+    "stratum": "W6-DEAD-cover10-lines5",
+    "triples": [
+     2,
+     4
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 100,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 0,
+    "stratum": "W6-DEAD-cover12-lines3",
+    "triples": [
+     2,
+     14
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 100,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 0,
+    "stratum": "W6-DEAD-cover12-lines6",
+    "triples": [
+     2,
+     12
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 101,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 1,
+    "stratum": "W6-SEEDFAN-k1",
+    "triples": [
+     14,
+     16
+    ]
+   },
+   {
+    "divisions": 18,
+    "driven_field_cells_matching": 27,
+    "driven_record": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "events": 100,
+    "footprint_sizes": [
+     3
+    ],
+    "footprints_are_the_conflict_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "seed_k": 2,
+    "stratum": "W6-SEEDFAN-k2",
+    "triples": [
+     14,
+     16
+    ]
+   }
+  ],
+  "schedules_driven": 16,
+  "strata": [
+   "W6-DEAD",
+   "W6-SEEDFAN-k1",
+   "W6-SEEDFAN-k2",
+   "W6-SUPPLIED"
+  ],
+  "stratum_counts": {
+   "W6-DEAD": 8,
+   "W6-SEEDFAN-k1": 1,
+   "W6-SEEDFAN-k2": 1,
+   "W6-SUPPLIED": 6
+  },
+  "window_name": "W6"
+ },
+ "falsifier_census": [
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "replaces the enumerated round-family count len(parts) by one more, so the enumeration, the closed form and paper-21's committed row disagree",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "n_parts_enum = mutate(\"MUT-PARTITION\", len(parts), len(parts) + 1)"
+   ],
+   "mutant": "MUT-PARTITION",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "len(parts)",
+   "target_gate": "G-PARTITION-COUNT"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "replaces the measured per-round incidence ceiling max(C['incidences']) by 10, breaking the equality that makes the saturating census exhaustive",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "maxinc = mutate(\"MUT-BUDGET\", max(C[\"incidences\"]), 10)"
+   ],
+   "mutant": "MUT-BUDGET",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "max(C['incidences'])",
+   "target_gate": "G-BUDGET-THEOREM"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "replaces the I7-STRICT triple count len(triples) by one fewer, so the pair-cover route and both committed rows disagree",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "n_tri = mutate(\"MUT-72\", len(triples), len(triples) - 1)"
+   ],
+   "mutant": "MUT-72",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "len(triples)",
+   "target_gate": "G-72-TRIPLES"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "raises the concatenated field at one cell, field[CELLS[0]], from 2 to 3, so the record is no longer (2, 2, 2) at that cell",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "field[CELLS[0]] = mutate(\"MUT-FIELD\", field[CELLS[0]], 3)"
+   ],
+   "mutant": "MUT-FIELD",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "field[CELLS[0]]",
+   "target_gate": "G-R6-FIELD"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "drops one ordered concatenation witness from the census count wit, so it no longer equals paper-21's committed row",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "wit = mutate(\"MUT-WITNESSES\", wit, wit - 1)"
+   ],
+   "mutant": "MUT-WITNESSES",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "wit",
+   "target_gate": "G-WITNESSES"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "blanks the value read at the ordered-witnesses path of paper-21's committed receipt, so the (path, value) anchor no longer matches its declaration",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "got = mutate(\"MUT-ANCHOR-VALUE\", got,\n                     None if path.endswith(\"ordered_witnesses\") else got)"
+   ],
+   "mutant": "MUT-ANCHOR-VALUE",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "got",
+   "target_gate": "G-ANCHORS-READ"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "rewrites paper-04's ceiling sentence in the bytes the quote is matched against, so quote fidelity fails at V13",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-VERBATIM\") and vid == \"V13\":\n            hay = hay.replace(\"No record admits more than\", \"Records admit\")"
+   ],
+   "mutant": "MUT-VERBATIM",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "hay",
+   "target_gate": "G-VERBATIM"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "adds an unregistered consumer-gate name to the anchor rows' gate list cons, so an anchor names a gate that does not exist",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-CONSUMER-BINDING\"):\n        cons = cons + [\"G-NOT-A-GATE\"]"
+   ],
+   "mutant": "MUT-CONSUMER-BINDING",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "cons",
+   "target_gate": "G-ANCHOR-CONSUMERS"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "drops the first schedule from the declared driven window, so the window no longer carries the declared number of driven schedules",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-WINDOW\"):\n        window = window[1:]"
+   ],
+   "mutant": "MUT-WINDOW",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "window",
+   "target_gate": "G-DRIVEN-WINDOW"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "replaces the raw split fiber rawprod by 0, so the arena would read as unsplittable",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "rawprod = mutate(\"MUT-SPLITFIBER\", rawprod, 0)"
+   ],
+   "mutant": "MUT-SPLITFIBER",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "rawprod",
+   "target_gate": "G-SPLIT-FIBER"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "replaces the count of intervals at which paper-06's law is unique by 9, the R = 4 value, so the record-level uniqueness claim fails",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "n_unique = mutate(\"MUT-LAW06\", law06[\"intervals_unique\"], 9)"
+   ],
+   "mutant": "MUT-LAW06",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "law06['intervals_unique']",
+   "target_gate": "G-LAW-06"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "replaces the DYADIC class's committed SUBDIVIDED tally by 26, so the move no longer subdivides every coarse interval",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "law04_ok = mutate(\"MUT-LAW04\", law04[\"subdivided\"], 26)"
+   ],
+   "mutant": "MUT-LAW04",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "law04['subdivided']",
+   "target_gate": "G-LAW-04"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "replaces the number of intervals inside paper-09's support hole by 0, so its kernel would read as non-empty here",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "hole_n = mutate(\"MUT-LAW09\", law09[\"intervals_in_the_hole\"], 0)"
+   ],
+   "mutant": "MUT-LAW09",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "law09['intervals_in_the_hole']",
+   "target_gate": "G-LAW-09"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "adds one to the second half of one refined interval, so the two halves no longer sum to the coarse count at that interval",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "c[radd(img(x), l)][l] = mutate(\n            \"MUT-ADDITIVITY\", n2,\n            n2 + 1 if (x == (0, 0) and l == I7_LINKS[0]) else n2)"
+   ],
+   "mutant": "MUT-ADDITIVITY",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "n2",
+   "target_gate": "G-REFINED-BUILD"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "replaces the measured new-site count places['new_sites'] by 0, so the place-count would read as unchanged",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "n_new = mutate(\"MUT-NEWPLACES\", places[\"new_sites\"], 0)"
+   ],
+   "mutant": "MUT-NEWPLACES",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "places['new_sites']",
+   "target_gate": "G-NEW-PLACES"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "drops one refined slot from the count of slots equal under both composition orders, slot_eq, so the two laws would read as conflicting",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "slot_eq = mutate(\"MUT-COMPAT\", slot_eq, slot_eq - 1)"
+   ],
+   "mutant": "MUT-COMPAT",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "slot_eq",
+   "target_gate": "G-COMPATIBILITY"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "adds one to the canonical-carrier isomorphism count canon_true, so it no longer equals the independently computed supplied-witness count",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "canon_true = mutate(\"MUT-CARRIER\", canon_true, canon_true + 1)"
+   ],
+   "mutant": "MUT-CARRIER",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "canon_true",
+   "target_gate": "G-PROCESS-SUPPLY"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "adds one to the supplied-witness count len(supplied) computed from the triangle multiplicities, so the two routes to 72 disagree",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "n_supplied = mutate(\"MUT-SUPPLY\", len(supplied), len(supplied) + 1)"
+   ],
+   "mutant": "MUT-SUPPLY",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "len(supplied)",
+   "target_gate": "G-PROCESS-SUPPLY"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "replaces the number of live cut loci at the arena by 2, so the seam would no longer be the unique admissible cut",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "n_live = mutate(\"MUT-CUT\", len(live_at_arena), 2)"
+   ],
+   "mutant": "MUT-CUT",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "len(live_at_arena)",
+   "target_gate": "G-CUT-UNIQUE"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "removes COUNT-DEAD from the set of detector fates the run exhibits, so a value the detector can return would go unexhibited",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-TWOWAY\"):\n        fates = fates - {\"COUNT-DEAD\"}"
+   ],
+   "mutant": "MUT-TWOWAY",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "fates",
+   "target_gate": "G-TWO-WAY"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "replaces the refined determinant str(qr[3]) by 1, so it no longer equals paper-19's committed uniform determinant",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "sigdet = mutate(\"MUT-SIG\", str(qr[3]), \"1\")"
+   ],
+   "mutant": "MUT-SIG",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "str(qr[3])",
+   "target_gate": "G-SIG"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "replaces the measured refinement ceiling ceil_here by 2, so the arena would admit a second step",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "ch = mutate(\"MUT-CEILING\", ceil_here, 2)"
+   ],
+   "mutant": "MUT-CEILING",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "ceil_here",
+   "target_gate": "G-CEILING"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "replaces the number of refined sites stranded when the diagonal is withdrawn, len(unreached), by 0, so the diagonal's role would vanish",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "du = mutate(\"MUT-DIA\", len(unreached), 0)"
+   ],
+   "mutant": "MUT-DIA",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "len(unreached)",
+   "target_gate": "G-DIA"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "adds a hit to the L-1 banned-sentence list l1_hits, so the retracted sentence reads as present",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-WALL-L1\"):\n        l1_hits = l1_hits + [\"injected\"]"
+   ],
+   "mutant": "MUT-WALL-L1",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "l1_hits",
+   "target_gate": "G-WALL-L1"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "writes a sprinkling-grade Lorentz-invariance reading into the declared measurement surface",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-WALL-BHS\"):\n        surface = surface + (\" the sprinkling is Lorentz invariant at this \"\n                             \"arena and the Poisson process is the measure\")"
+   ],
+   "mutant": "MUT-WALL-BHS",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "surface",
+   "target_gate": "G-WALL-BHS"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "writes a Myrheim-Meyer dimension reading with no height control into the declared measurement surface",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-WALL-KR\"):\n        surface = surface + (\" the Myrheim-Meyer dimension estimate of this \"\n                             \"record is 2 and no height control is taken\")"
+   ],
+   "mutant": "MUT-WALL-KR",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "surface",
+   "target_gate": "G-WALL-KR"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "writes an expansion-of-space reading into the declared measurement surface",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-WALL-COSMO\"):\n        surface = surface + (\" the universe expands as the record refines \"\n                             \"and new space is created by the process\")"
+   ],
+   "mutant": "MUT-WALL-COSMO",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "surface",
+   "target_gate": "G-WALL-COSMO"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "deletes the mandatory naming sentence from the copy of the object under test the gate reads, ptxt_named",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "ptxt_named = (ptxt.replace(\"NAMED AND NOT READ\", \"\")\n                  if mut(\"MUT-WALL-LORENTZ\") else ptxt)"
+   ],
+   "mutant": "MUT-WALL-LORENTZ",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "ptxt_named",
+   "target_gate": "G-WALL-LORENTZ-NAMED"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "appends an unstamped fraction to the measure-stamp table stamps",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-MEASURE\"):\n        stamps = stamps + [{\"quantity\": \"an unstamped fraction\",\n                            \"value\": \"1 of 2\", \"stamp\": \"\", \"reason\": \"\"}]"
+   ],
+   "mutant": "MUT-MEASURE",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "stamps",
+   "target_gate": "G-MEASURE-STAMP"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "returns from Seal.take before the coverage row reaches the manifest, so the total seal is incomplete",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-SEAL-DROP\") and sid == \"SEAL-COVERAGE\":\n            return          # the row never reaches self.rows or the manifest"
+   ],
+   "mutant": "MUT-SEAL-DROP",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "sid == \"SEAL-COVERAGE\"",
+   "target_gate": "G-SEAL-COMPLETE"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "corrupts one segment of the derived verdict head, segs, so the independent reconstruction from the serialized receipt disagrees",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-VERDICT\"):\n        segs[0] = segs[0].replace(\"REFINEMENT-ACTS\", \"REFINEMENT-INERT\")"
+   ],
+   "mutant": "MUT-VERDICT",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "segs",
+   "target_gate": "G-VERDICT-RECONSTRUCTED"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "perturbs one rendered paper claim, out, so the paper's sentence no longer matches the receipt it renders from",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-CLAIM\"):\n        out[\"places\"] = out[\"places\"].replace(\"grows\", \"does not grow\")"
+   ],
+   "mutant": "MUT-CLAIM",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "out",
+   "target_gate": "G-PAPER-CLAIMS"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "perturbs one rendered paper table row, rows, so a table cell no longer matches the receipt",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-TABLE\"):\n        rows[0] = rows[0].replace(\"| 36 |\", \"| 35 |\")"
+   ],
+   "mutant": "MUT-TABLE",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "rows",
+   "target_gate": "G-PAPER-TABLES"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "strips the fenced blocks and the inline code spans from the paper before the numeral scan, body, which is exactly the E-22 blindness",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "body = text if not mut(\"MUT-COVERAGE-SCAN\") else \\\n        FENCE.sub(\"\", re.sub(r\"`[^`]*`\", \"\", text))"
+   ],
+   "mutant": "MUT-COVERAGE-SCAN",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "body",
+   "target_gate": "G-PAPER-COVERAGE"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "forges one of the paper's two copies of a verdict fence in the text under test, so a containment gate would pass while the multiset gate fails",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-PAPER-FENCE-MULTISET\"):\n        seg = R[\"verdict\"][\"segments\"][0]\n        text = text.replace(seg, seg.replace(\"ACTS\", \"INERT\"), 1)"
+   ],
+   "mutant": "MUT-PAPER-FENCE-MULTISET",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "text",
+   "target_gate": "G-PAPER-COVERAGE"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "adds a numeral exemption that occurs nowhere in the paper, exempt, so a never-firing waiver ships",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-EXEMPTION-DEAD\"):\n        exempt = exempt + [[\"4242\", \"a literal that occurs nowhere\"]]"
+   ],
+   "mutant": "MUT-EXEMPTION-DEAD",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "exempt",
+   "target_gate": "G-PAPER-COVERAGE"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "adds one to the coarse weld's isomorphism count, so it no longer equals the quotient-map count or either committed row",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "wc = {\"rows\": wrows,\n          \"isomorphisms\": mutate(\"MUT-WELD\", wrows[0].get(\"isomorphisms\"),\n                                 wrows[0].get(\"isomorphisms\", 0) + 1),\n          \"quotient_maps\": wrows[1].get(\"quotient_maps\"),\n          \"fibers\": wrows[0][\"inventory\"],\n          \"free_items\": wrows[0][\"free_items\"],\n          \"fate\": wrows[0][\"fate\"],\n          \"directed_comparator\": wrows[0].get(\n              \"isomorphisms_directed_comparator\")}"
+   ],
+   "mutant": "MUT-WELD",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "wrows[0].get(\"isomorphisms\")",
+   "target_gate": "G-WELD-COARSE"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "replaces the refined weld's measured fate by UNMOTIVATED, so the dictionary would read as not surviving the step",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "proc_row[\"fate\"] = mutate(\"MUT-WELDREF\", proc_row[\"fate\"], \"UNMOTIVATED\")"
+   ],
+   "mutant": "MUT-WELDREF",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "proc_row[\"fate\"]",
+   "target_gate": "G-WELD-REFINED"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "injects a falsifier row whose hook does not exist into the census fc, so a dishonest row ships",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "if mut(\"MUT-FALSIFIER-HONEST\"):\n        fc = fc + [{\"mutant\": \"MUT-INJECTED\", \"target_gate\": \"G-NOT-A-GATE\",\n                    \"description\": \"an injected row whose hook does not exist\",\n                    \"object_corrupted\": \"nothing\", \"hook_found\": False,\n                    \"hook_sites\": 0, \"hook_source\": [],\n                    \"object_appears_in_the_hook\": False,\n                    \"corruption_is_a_constant_boolean\": False}]"
+   ],
+   "mutant": "MUT-FALSIFIER-HONEST",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "fc",
+   "target_gate": "G-FALSIFIER-HONEST"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "perturbs the head string compared against the paper, headtxt",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "headtxt = mutate(\"MUT-HEAD\", segs[0], segs[0] + \"-DRIFT\")"
+   ],
+   "mutant": "MUT-HEAD",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "headtxt",
+   "target_gate": "G-PAPER-HEAD-VERBATIM"
+  },
+  {
+   "corruption_is_a_constant_boolean": false,
+   "description": "appends a sentence asserting the opposite of a measured fate to the text under test, hay",
+   "hook_found": true,
+   "hook_sites": 1,
+   "hook_source": [
+    "hay = text + (\" the place-count is unchanged by the refinement\"\n                  if mut(\"MUT-POLARITY\") else \"\")"
+   ],
+   "mutant": "MUT-POLARITY",
+   "object_appears_in_the_hook": true,
+   "object_corrupted": "hay",
+   "target_gate": "G-PAPER-CLAIM-POLARITY"
+  }
+ ],
+ "gates": [
+  {
+   "evidence": "sources 19, mismatched none",
+   "gate": "G-PROVENANCE",
+   "passed": true,
+   "statement": "EVERY RUNTIME INPUT IS A HASH-PINNED SOURCE.  Each of the 19 declared sources is read by path and its sha256-12 compared against this unit's frozen declaration, per object; a drifted byte in any one of them dies here before a single number is computed",
+   "waiver": null
+  },
+  {
+   "evidence": "categories ['SOURCE'], source reads 19 of 19 declared",
+   "gate": "G-READS-DECLARED",
+   "passed": true,
+   "statement": "NO UNANCHORED RUNTIME INPUT.  Every read in this file is categorised at the call site; the SOURCE category must equal the declared source set exactly and no undeclared category may appear, so a read of mutable repository state cannot be added without failing here",
+   "waiver": null
+  },
+  {
+   "evidence": "float literals 0, true divisions 0, float-adjacent imports 0",
+   "gate": "G-EXACT-ARITHMETIC",
+   "passed": true,
+   "statement": "THE ARITHMETIC IS EXACT BY CONSTRUCTION, PROVED ON THIS FILE'S OWN SYNTAX TREE.  No float literal, no float-adjacent import and no true-division operator occurs anywhere in this file; every quotient is a Fraction",
+   "waiver": null
+  },
+  {
+   "evidence": "forbidden imports 0",
+   "gate": "G-NO-SUBPROCESS",
+   "passed": true,
+   "statement": "THE RUN IS OFF-TREE AND GIT-LESS (#91).  No subprocess, network or shell import occurs in this file, so the delivery run reads nothing but its declared sources and can be byte-reproduced with no version control present",
+   "waiver": null
+  },
+  {
+   "evidence": "path-value anchors 31, mismatched none, consumer gates 12",
+   "gate": "G-ANCHORS-READ",
+   "passed": true,
+   "statement": "THE PREDECESSORS ARE READ AT (PATH, VALUE), NOT ONLY AT BYTES.  31 rows are read out of five committed receipts by path and compared against this unit's frozen declaration, each row naming the gate it licenses; a path drift that changed the arena or the verdict while preserving a file hash dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "verbatim anchors 26, missing none",
+   "gate": "G-VERBATIM",
+   "passed": true,
+   "statement": "QUOTE FIDELITY (#62, corrected spec).  Every sentence this unit quotes or reimplements from a predecessor is matched WORD FOR WORD against that predecessor's committed bytes, after markdown-prefix stripping, ASCII folding and whitespace normalisation, with a 30-character floor; 26 anchors, evaluated BEFORE the byte anchors are used for anything",
+   "waiver": null
+  },
+  {
+   "evidence": "consumer gates named 24, unregistered none",
+   "gate": "G-ANCHOR-CONSUMERS",
+   "passed": true,
+   "statement": "EVERY ANCHOR BINDS MEANING TO USE.  Each verbatim and each path-value row names the gate it licenses, and every named gate must exist in this run's declared registry -- an anchor whose consumer is an unread label binds existence, not meaning",
+   "waiver": null
+  },
+  {
+   "evidence": "box admissible points recomputed 361, declared link list matches I7's own receipt True",
+   "gate": "G-I7-READOUT",
+   "passed": true,
+   "statement": "I7'S READOUT AND ADMISSIBILITY CRITERION ARE THE PINNED ONES, RECOMPUTED.  The readout sentence is matched verbatim against HA's committed bytes, the declared link list is read out of I7's own receipt at (path, value), and the declared count box is re-enumerated here rather than cited",
+   "waiver": null
+  },
+  {
+   "evidence": "enumeration 280, closed form 280, paper-21's committed row 280",
+   "gate": "G-PARTITION-COUNT",
+   "passed": true,
+   "statement": "THE ROUND FAMILY IS COUNTED TWICE BY ROUTES THAT SHARE NO CODE.  Exhaustive enumeration of the partitions of nine sites into three triples, and the closed form 9!/(3!^3 3!) built from a factorial computed here; the two must agree and must equal the value paper-21's committed receipt carries at /counts/partitions",
+   "waiver": null
+  },
+  {
+   "evidence": "max incidence per round 9, six-round budget 54, saturating partitions 36, spectrum {0: 1, 4: 27, 6: 54, 7: 162, 9: 36}",
+   "gate": "G-BUDGET-THEOREM",
+   "passed": true,
+   "statement": "THE BUDGET THEOREM, MEASURED EXHAUSTIVELY.  No round of this cycle deposits more than 9 link incidences -- measured over all 280 partitions, per partition -- so six rounds carry at most 54, and the link-constant record (2, 2, 2) needs exactly 6 x 9 = 54: equality forces every round to saturate, which makes the census over the 36 saturating groupings exhaustive over the whole family",
+   "waiver": null
+  },
+  {
+   "evidence": "route 1 72, route 2 (pair-cover) 72, paper-21 committed 72, paper-19 committed 72",
+   "gate": "G-72-TRIPLES",
+   "passed": true,
+   "statement": "THE R = 3 I7-STRICT TRIPLES, COUNTED TWICE AND ANCHORED.  Route one sums the per-round incidence vectors and requires the field to be identically one at all 27 cells; route two never forms an incidence vector at all and instead requires the triple's nine conflict groups to cover each of the 27 unordered declared actor pairs exactly once.  Both must return the number paper-19 and paper-21 committed",
+   "waiver": null
+  },
+  {
+   "evidence": "cells at count 2: 27 of 27, record [(2, 2, 2)], admissible sites 9 of 9, paper-21's committed record [2, 2, 2]",
+   "gate": "G-R6-FIELD",
+   "passed": true,
+   "statement": "THE ARENA IS (2, 2, 2) AT EVERY CELL, CHECKED PER CELL.  Two of the 72 I7-STRICT triples concatenate to a six-round schedule whose summed incidence field is 2 at each of the 27 (site, link) cells individually -- never as a total -- and the induced record is link-constant and positive definite at each of the nine sites individually, matching paper-21's committed G-R6-DOOR row",
+   "waiver": null
+  },
+  {
+   "evidence": "ordered witnesses 5184 of 5184 ordered pairs; paper-21's committed row 5184",
+   "gate": "G-WITNESSES",
+   "passed": true,
+   "statement": "EVERY ORDERED PAIR OF THE 72 IS A WITNESS, MEASURED RATHER THAN MULTIPLIED.  The concatenation census runs each of the 5184 ordered pairs through the per-cell test independently; the count must equal the value paper-21 committed at /split/r6_door/ordered_witnesses",
+   "waiver": null
+  },
+  {
+   "evidence": "isomorphisms 1296, quotient maps 1296, fibers {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}, free items none, fate FOUND-candidate/FOUND-candidate, directed comparator 0",
+   "gate": "G-WELD-COARSE",
+   "passed": true,
+   "statement": "THE WELD IS RE-VERIFIED ZERO-FREE ON THIS UNIT'S OWN DETECTOR.  The co-division arena of the concatenated record is built here from the actor pairs and run through both declared readings; each inventory item's fiber is checked individually against 1, and the isomorphism count against paper-21's and paper-19's committed rows",
+   "waiver": null
+  },
+  {
+   "evidence": "slice exit-free True, extracted bodies exit-free True",
+   "gate": "G-SLICE-EXIT-FREE",
+   "passed": true,
+   "statement": "THE COMMITTED LAYERS ARE LOADED WITHOUT RUNNING THEIR MODULE-LEVEL CODE.  d42b1 enters as a text slice cut at its own banner print; d60 and d66 enter by AST extraction of their definitions only; and no extracted body may call exit",
+   "waiver": null
+  },
+  {
+   "evidence": "schedules driven 16, strata {'W6-DEAD': 8, 'W6-SEEDFAN-k1': 1, 'W6-SEEDFAN-k2': 1, 'W6-SUPPLIED': 6} against 6 supplied + 8 dead classes + 2 seed-fan, cells compared 432, mismatched none, event lengths [99, 100, 101, 102], divisions [18]",
+   "gate": "G-DRIVEN-WINDOW",
+   "passed": true,
+   "statement": "THE R = 6 RECORDS ARE DRIVEN, NOT ONLY COMBINATORIAL.  A declared window of 16 six-round schedules is driven through the committed transport grammar's own menus, every event specified by its full tuple; for each schedule INDIVIDUALLY the driven link field -- read off the layer's own register footprints -- is compared cell by cell against the field the combinatorial route computes from the groupings alone, and each record's footprints are compared as a multiset against its own conflict groups.  Paper-21 drove nothing at six rounds",
+   "waiver": null
+  },
+  {
+   "evidence": "schedules at maxhits 1 with no refusal 16 of 16, offenders none",
+   "gate": "G-DRIVEN-MAXHITS",
+   "passed": true,
+   "statement": "THE v10-LAYER TIE-BREAK IS PRICED AS A GATE (#91/#160).  d60's `pick` breaks ties with sorted(key=repr), which is hash-seed dependent; every event of every driven schedule here is fully specified, so the builder's own maxhits must read 1 at every schedule and no refusal may occur -- the immunity is measured per schedule, not asserted",
+   "waiver": null
+  },
+  {
+   "evidence": "intervals with positive fiber 27 of 27, per-interval fibers [1], raw product 1, paper-21's committed R = 4 raw fiber 0",
+   "gate": "G-SPLIT-FIBER",
+   "passed": true,
+   "statement": "EVERY INTERVAL IS SPLITTABLE AND THE SPLIT IS A POINT, CHECKED PER INTERVAL.  Paper-04's identity -- an interval carrying only its total n admits exactly n-1 places for one interior boundary -- is evaluated at each of the 27 intervals on its own count; at count 2 each fiber is the single point (1, 1), so the raw product over all 27 slots is 1, against 0 at the R = 4 welded record where a count-1 interval cannot be split at all",
+   "waiver": null
+  },
+  {
+   "evidence": "intervals non-empty 27 of 27, unique 27 of 27, count-2 row fiber 1 orbits 1 simplex-dim 0 transitive True",
+   "gate": "G-LAW-06",
+   "passed": true,
+   "statement": "PAPER-06'S LAW IS NON-EMPTY AND UNIQUE HERE, AT THE RECORD LEVEL.  Its committed per-interval rows are read at (path, value) and applied to each of the 27 intervals on that interval's own count: at count 2 the fiber is one point, the orbit count is 1, the invariant simplex has dimension 0 = n - 2 and the pinned chart group is transitive.  At R = 4 the same law was unique at 9 of 27 intervals and empty at the record level",
+   "waiver": null
+  },
+  {
+   "evidence": "class ADMISSIBLE, subdivided 27 of 27, refined sites 36, raw fiber here 1, paper-21's committed row 1, the unique-split vector [[2, 2, 2]] of 261 splittable box points",
+   "gate": "G-LAW-04",
+   "passed": true,
+   "statement": "PAPER-04'S DYADIC MOVE IS LIVE HERE, AND ITS RAW FIBER IS A POINT.  The move's committed class row -- ADMISSIBLE, subdividing 27 of 27 coarse intervals onto a 6 x 6 refined lattice -- is read at (path, value); the raw fiber recomputed here from the counts alone equals the value paper-21 committed for this rung; and (2, 2, 2) is the one vector in I7's whole declared box whose admissible split is unique",
+   "waiver": null
+  },
+  {
+   "evidence": "support holes [1, 2], counts carried [2], intervals in the hole 27 of 27, paper-21's committed row 27",
+   "gate": "G-LAW-09",
+   "passed": true,
+   "statement": "PAPER-09'S KERNEL IS STILL EMPTY, AND THE MECHANISM IS ITS OWN SUPPORT HOLE.  Its committed first-return law has no inter-renewal leg of length one or two, exactly; every count this record carries is 2, so each of the 27 intervals is tested individually against the hole and each falls inside it",
+   "waiver": null
+  },
+  {
+   "evidence": "additivity 27 of 27 constraints, restriction 27 of 27 cells, readout recovered at 9 of 9 sites",
+   "gate": "G-REFINED-BUILD",
+   "passed": true,
+   "statement": "THE STEP IS TAKEN AND ITS FORCED PART VERIFIED PER CONSTRAINT.  Additivity is checked at each of the 27 interval constraints individually; the coarse counts are then read BACK from the refined arena by summing along the unique minimal decomposition and compared per cell; and I7's readout is recomputed on the restricted counts and compared per site, so record-IS-metric is shown to commute with this refinement rather than assumed",
+   "waiver": null
+  },
+  {
+   "evidence": "sites 9 -> 36 (new 27, unreached 0), intervals 27 -> 108 (determined 54, free 54), new sites by direction {'[1, 0]': 9, '[0, 1]': 9, '[1, 1]': 9}",
+   "gate": "G-NEW-PLACES",
+   "passed": true,
+   "statement": "THE PLACE-COUNT GROWS, AND THE GROWTH IS COUNTED PER SITE AND PER SLOT.  Every refined site is classified individually as a coarse image or as the interior of exactly one coarse interval, and every refined (site, link) slot individually as carrying a half of a coarse interval or as free: 9 sites become 36 and 27 intervals become 108, of which exactly half are determined by the step and half are the free transverse links paper-04 measured",
+   "waiver": null
+  },
+  {
+   "evidence": "intervals where 06's support is exactly 04's fiber 27 of 27; refined slots equal under both orders 108 of 108",
+   "gate": "G-COMPATIBILITY",
+   "passed": true,
+   "statement": "THE TWO LAWS COMPOSE AND AGREE, MEASURED ON THE OBJECTS.  At each of the 27 intervals the support of paper-06's unique invariant law is compared as a SET against the whole of paper-04's dyadic split fiber; then the refined record is built twice, once from each law's output, and the two are compared slot by slot over all 108 refined slots.  Neither law is consulted about the other's arena",
+   "waiver": null
+  },
+  {
+   "evidence": "admissible refined sites: process-supplied 36 of 36, paper-04-minimal 36 of 36; link-constant True / False; determined half values [1]",
+   "gate": "G-REFINED-ADMISSIBLE",
+   "passed": true,
+   "statement": "THE REFINED OBJECT IS STILL A RECORD, CHECKED PER SITE.  I7's own Sylvester criterion is evaluated at each of the 36 refined sites individually under BOTH declared completions; the process-supplied completion gives the link-constant record (1, 1, 1) at every site -- paper-19's own landing vector, admissible inside I7's declared count box and, like it, not one of I7's declared records",
+   "waiver": null
+  },
+  {
+   "evidence": "carrier 9 actors + 27 pairs = 36 sites, bijection True; determined links that are incidences 54 of 54; free links inside a triangle 54 of 54, [3] per triangle over 18 triangles",
+   "gate": "G-DICTIONARY-CARRIER",
+   "passed": true,
+   "statement": "THE REFINEMENT'S NEW PLACES ARE THE OLD LINKS, AS A BIJECTION.  The 9 actors and the 27 co-division actor pairs are mapped to the 36 refined sites -- actor to its coarse image, pair to the interior of its own interval -- and the map is checked to be a bijection; then each of the 54 determined refined links is checked individually to be an actor-in-pair incidence, and each of the 54 free refined links individually to be a pair of co-division pairs spanning one of the 18 non-collinear declared triangles, three per triangle",
+   "waiver": null
+  },
+  {
+   "evidence": "witnesses 5184, canonical-carrier isomorphisms 72, witnesses with the refined lattice's edge count 864, classes 9",
+   "gate": "G-PROCESS-SUPPLY",
+   "passed": true,
+   "statement": "THE DICTIONARY EXTENDS AT A MEASURED MINORITY, AND THE ABSTRACT STRUCTURE IS CHEAPER THAN THE DICTIONARY.  Every one of the 5184 ordered concatenation witnesses is classified individually by its own conflict groups: the canonical carrier is an isomorphism at exactly those whose 18 groups are the 18 non-collinear declared triangles, each once.  Separately, the number of witnesses whose relation merely has the refined lattice's edge count is measured, and it is larger",
+   "waiver": null
+  },
+  {
+   "evidence": "loci 17, live at the arena 1 ([9]), split multiset {(1, 1): 27}, census over all 5184 witnesses {(9,): 5184}, R = 9 control live loci 10 against a raw split fiber of 134217728",
+   "gate": "G-CUT-UNIQUE",
+   "passed": true,
+   "statement": "THE PROCESS SUPPLIES THE SPLIT, AND AT THIS ARENA IT SUPPLIES EXACTLY ONE.  Of the 17 event-level loci at which the six-round record can be cut, the number yielding a strictly positive split at EVERY one of the 27 intervals is measured -- by two routes that share no state -- at each of the 5184 witnesses: it is one, the seam between the two three-round blocks, and the split it yields is (1, 1) at all 27.  The predicate is not vacuous: at the declared R = 9 control, OUTSIDE this unit's arena, ten loci are live",
+   "waiver": null
+  },
+  {
+   "evidence": "process-supplied: fate FOUND-candidate, isomorphisms 432, fibers {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}, canonical carrier iso True with 0 zero cells and 27 of 27 coarse cells restored; paper-04-minimal: fate UNMOTIVATED fibers {'I-SITE-ASSIGNMENT': 24, 'I-DIRECTION-LABEL': 3, 'I-ORIENT': 2}; un-extended carrier ARITY-DEAD",
+   "gate": "G-WELD-REFINED",
+   "passed": true,
+   "statement": "THE DICTIONARY SURVIVES THE STEP, AND ITS SURVIVAL IS COMPLETION-RELATIVE.  The refined arena's relation is built PURELY PROCESS-SIDE -- actor in pair, pair union pair a realised division footprint -- and run through both readings: the canonical carrier is an isomorphism, the detector returns 432 automorphisms and each inventory item's fiber is checked individually against 1, so the refined weld carries ZERO FREE ITEMS.  Under paper-04's own declared minimal completion the same carrier and the same edge set give a record that is not link-constant and the detector returns free items",
+   "waiver": null
+  },
+  {
+   "evidence": "fates exhibited ['ARITY-DEAD', 'COUNT-DEAD', 'FOUND-candidate', 'STRUCT-DEAD', 'UNMOTIVATED'] (want ['ARITY-DEAD', 'COUNT-DEAD', 'FOUND-candidate', 'STRUCT-DEAD', 'UNMOTIVATED']); coarse isomorphism count under the plain order 1296 against the connected order 1296",
+   "gate": "G-TWO-WAY",
+   "passed": true,
+   "statement": "EVERY VALUE THIS DETECTOR CAN RETURN IS EXHIBITED IN THIS RUN, and the search order is shown not to be one of them.  FOUND at the coarse and the refined process-supplied arenas, UNMOTIVATED at paper-04's declared completion, ARITY-DEAD at the un-extended nine-actor carrier, and STRUCT-DEAD and COUNT-DEAD at this unit's declared falsifier and at the dead witness classes.  The isomorphism count at the coarse arena is recomputed under the PLAIN name order and must agree with the connected order",
+   "waiver": null
+  },
+  {
+   "evidence": "coarse det 3, refined det 3/4, ratio 4, paper-19's committed uniform det 3/4, refined det spectrum ['3/4'], paper-04-minimal det spectrum ['1', '3/4', '7/4']",
+   "gate": "G-SIG",
+   "passed": true,
+   "statement": "THE DETERMINANT SCALES BY EXACTLY 2^d AND THE SIGNATURE DOES NOT MOVE.  I7's readout is recomputed on the coarse record and on the refined one; the ratio of determinants is formed as an exact Fraction and compared against 2^d = 4; positive definiteness is re-decided by Sylvester at every site of both; and the refined determinant must equal the value paper-19 committed for its own landing record, which this refinement reproduces one level up",
+   "waiver": null
+  },
+  {
+   "evidence": "min count 2, ceiling here 1, steps taken 1, refined min count 1, ceiling after the step 0, a second step needs min count 4 at R = 12, dyadic budgets [3, 6, 12, 24]",
+   "gate": "G-CEILING",
+   "passed": true,
+   "statement": "EXACTLY ONE STEP IS POSSIBLE HERE, AND THE LADDER IS COMPUTED RATHER THAN QUOTED.  Paper-04's ceiling law, matched verbatim against its committed bytes, evaluated on this record's own minimum count 2 gives floor(log2 2) = 1; the step is taken and the refined record's own minimum count is 1, so its ceiling is 0 and no second step exists.  A second step needs a minimum count of 4, and by the budget law the link-constant record (4, 4, 4) is reachable only at R = 12",
+   "waiver": null
+  },
+  {
+   "evidence": "unreached without the diagonal 9 of 36, parities ['[1, 1]'], new sites by direction {'[1, 0]': 9, '[0, 1]': 9, '[1, 1]': 9}, unreached with the diagonal 0",
+   "gate": "G-DIA",
+   "passed": true,
+   "statement": "THE DIAGONAL IS WHAT MAKES THE STEP SITE-COMPLETE, MEASURED AS A COUNTERFACTUAL.  With the declared link set the dyadic move leaves no refined site off a coarse interval; with the diagonal withdrawn, each refined site is re-tested individually and the odd-odd parity class -- 9 sites, one third of the new places -- lies on no coarse interval at all.  That is paper-04's own d = 3 mechanism, where the missing body diagonal strands 27 of 216 sites, reproduced one dimension down; and the diagonal buys exactly as many new places as each axis",
+   "waiver": null
+  },
+  {
+   "evidence": "banned-sentence hits 0",
+   "gate": "G-WALL-L1",
+   "passed": true,
+   "statement": "L-1 IS ARGUED BEFORE ANY TEST AND THEN DECLINED.  The sentence retracted in 2026 is not reproduced anywhere in the object under test -- the gate whitespace-normalises, ASCII-folds and strips markdown prefixes from both sides, so a line-wrapped or blockquoted injection dies too -- and no order-level covariance test is run",
+   "waiver": null
+  },
+  {
+   "evidence": "sprinkling-grade hits in the declared surface: none",
+   "gate": "G-WALL-BHS",
+   "passed": true,
+   "statement": "NO SPRINKLING-GRADE LORENTZ-INVARIANCE READING.  The abstention is measured rather than asserted: this run's DECLARED MEASUREMENT SURFACE -- every measured receipt key together with the statement and evidence of every gate evaluated -- is scanned for a sprinkling-grade reading, and the declared falsifier writes one into that surface and dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "dimension-reading hits in the declared surface: none",
+   "gate": "G-WALL-KR",
+   "passed": true,
+   "statement": "NO DIMENSION READING, SO NO HEIGHT CONTROL IS OWED.  This unit takes no chart width, no Myrheim-Meyer estimate and no max-shatter reading; the same declared surface is scanned for one, and the declared falsifier writes one in and dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "cosmological hits none, description stamp present in the object under test True",
+   "gate": "G-WALL-COSMO",
+   "passed": true,
+   "statement": "NO COSMOLOGICAL READING, AND THE NEW-PLACES LANGUAGE IS CONFINED.  Refinement here is a measured operation on a pinned record, never an expansion narrative: the declared measurement surface is scanned for an expansion reading and the declared falsifier writes one in and dies here; and the paper must carry, word for word, the stamp confining the new places to the measured interval and site structure",
+   "waiver": null
+  },
+  {
+   "evidence": "naming sentence present True",
+   "gate": "G-WALL-LORENTZ-NAMED",
+   "passed": true,
+   "statement": "THE LORENTZIAN RESONANCE IS NAMED, MANDATORILY.  A reader arriving from the relativity line will hear `signature` in a determinant; the naming sentence must be present in the object under test word for word, and the declared falsifier deletes it and dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "stamped rows 4, unstamped none",
+   "gate": "G-MEASURE-STAMP",
+   "passed": true,
+   "statement": "NO COUNT BECOMES A PROBABILITY WITHOUT A DECLARED MEASURE (E-24).  Every fraction over a configuration space this unit publishes is listed with its own stamp and reason; a row without one dies here.  This unit declares no measure on the witness space, so every one of its fractions is COUNTING-ONLY and no typicality claim rests on any of them",
+   "waiver": null
+  },
+  {
+   "evidence": "falsifiers 41, dishonest none",
+   "gate": "G-FALSIFIER-HONEST",
+   "passed": true,
+   "statement": "EVERY FALSIFIER'S PUBLISHED DESCRIPTION IS VERIFIED AGAINST ITS CODE (E-23).  Each declared mutant's hook is located in this file's own syntax tree, its source published in the receipt, and the object its row NAMES as corrupted must actually appear in that source; a corruption that is a constant boolean -- the class that cannot fail -- is rejected, and every target gate must be in the declared registry",
+   "waiver": null
+  },
+  {
+   "evidence": "segments 4, equal 4, first difference none",
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "passed": true,
+   "statement": "THE HEAD IS DERIVED TWICE, THE SECOND TIME BY A COMPARATOR THAT SHARES NOTHING WITH THE BUILDER.  The four verdict segments are rebuilt from the SERIALIZED receipt -- the bytes that will be written to disk -- by a function that re-types every template itself, shares no code and no input object with the builder, and reads no measured variable; complete string equality is required segment by segment",
+   "waiver": null
+  },
+  {
+   "evidence": "claims 14, missing none",
+   "gate": "G-PAPER-CLAIMS",
+   "passed": true,
+   "statement": "EVERY LOAD-BEARING SENTENCE IS RENDERED FROM THE RECEIPT AND MATCHED IN THE PAPER.  14 claims are built from receipt cells and each must appear word for word in the object under test, so a prose number cannot drift from the measurement that produced it",
+   "waiver": null
+  },
+  {
+   "evidence": "table rows 13, missing 0",
+   "gate": "G-PAPER-TABLES",
+   "passed": true,
+   "statement": "TABLES RENDER AS CLAIMS (E-22).  Every published table row is built from receipt cells and matched in the object under test, so a table cell cannot carry a number the receipt does not have",
+   "waiver": null
+  },
+  {
+   "evidence": "numerals scanned 771 (fenced 218, inline spans 343, words 111), unbacked none, word-unbacked none, dead exemptions none, fence multiset matches True (8 of 8)",
+   "gate": "G-PAPER-COVERAGE",
+   "passed": true,
+   "statement": "EVERY NUMERAL IN THE PAPER IS BACKED, FENCES AND INLINE SPANS INCLUDED (#20 + E-22).  The scan covers the WHOLE object under test -- prose, tables, inline code spans and the fenced verdict blocks -- against this run's registered numbers, the receipt it publishes and a declared exemption table every row of which must fire; and the fenced blocks are gated by MULTISET equality against the declared copy count, so a second forged copy of a verdict fence cannot hide behind a clean one",
+   "waiver": null
+  },
+  {
+   "evidence": "head present True",
+   "gate": "G-PAPER-HEAD-VERBATIM",
+   "passed": true,
+   "statement": "THE PAPER'S HEAD IS THE RUN'S HEAD, CHARACTER FOR CHARACTER.  The derived first verdict segment must appear in the object under test verbatim, so the paper's verdict block can never go stale relative to the receipt",
+   "waiver": null
+  },
+  {
+   "evidence": "probes 6, violations none",
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "passed": true,
+   "statement": "THE PAPER DOES NOT ASSERT THE OPPOSITE OF A MEASURED FATE.  6 polarity probes, each the negation of a fate this run measured, are searched for in the object under test; the declared falsifier appends one and dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "mutants 41, off target none",
+   "gate": "G-MUTANTS-ON-TARGET",
+   "passed": true,
+   "statement": "EVERY DECLARED MUTANT IS RUN IN-PROCESS AND DIES AT THE GATE IT NAMES.  41 mutants, each a real corruption of a measured value or of the object under test, each required to be killed BY ITS OWN NAMED GATE rather than by whichever gate fires first",
+   "waiver": null
+  },
+  {
+   "evidence": "gates 53, with a mutant 38, waived 16, uncovered none, registry drift none",
+   "gate": "G-COVERAGE",
+   "passed": true,
+   "statement": "THE COVERAGE LEDGER IS HONEST AND ITS DENOMINATOR IS THIS RUN'S OWN.  Every gate evaluated anywhere in this run is either falsified by a declared mutant or waived with a machine-readable forcing; the declared gate registry and the set actually evaluated must agree exactly, so a gate removed from the file or added without a registry row dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "mutants 41, targets never evaluated none",
+   "gate": "G-REACHABILITY",
+   "passed": true,
+   "statement": "EVERY FALSIFIER REACHES ITS GATE (#34).  A mutant whose target gate is never evaluated on the run's own path is dead code wearing a green badge; every declared target must be a gate this run actually took",
+   "waiver": null
+  },
+  {
+   "evidence": "delivery-level True, sweep rows 41 of 41, on target 41",
+   "gate": "G-SWEEP-BOUND",
+   "passed": true,
+   "statement": "THE MUTANT SWEEP'S EXECUTION IS BOUND, NOT MERELY DECLARED.  A delivery-level run must carry one sweep row per declared mutant (41), every row ON TARGET, and the same conjunction is re-taken at the terminal integrity gate, so the only writer in this file is downstream of a sweep that actually ran",
+   "waiver": null
+  }
+ ],
+ "i7": {
+  "box_admissible_points": 361,
+  "criterion": "q nonsingular and positive definite at every site",
+  "links": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "q(1, 1, 1)": {
+   "det": "3/4",
+   "posdef": true,
+   "q11": "1",
+   "q12": "-1/2",
+   "q22": "1",
+   "trace": "2"
+  },
+  "q(1, 1, 2)": {
+   "det": "1",
+   "posdef": true,
+   "q11": "1",
+   "q12": "0",
+   "q22": "1",
+   "trace": "2"
+  },
+  "q(2, 2, 1)": {
+   "det": "7/4",
+   "posdef": true,
+   "q11": "2",
+   "q12": "-3/2",
+   "q22": "2",
+   "trace": "4"
+  },
+  "q(2, 2, 2)": {
+   "det": "3",
+   "posdef": true,
+   "q11": "2",
+   "q12": "-1",
+   "q22": "2",
+   "trace": "4"
+  },
+  "q(4, 4, 4)": {
+   "det": "12",
+   "posdef": true,
+   "q11": "4",
+   "q12": "-2",
+   "q22": "4",
+   "trace": "8"
+  },
+  "readout": "q11 = n_e1, q22 = n_e2, q12 = (n_diag - n_e1 - n_e2)/2"
+ },
+ "laws": {
+  "law_04": {
+   "class_verdict": "ADMISSIBLE",
+   "committed_raw_fiber_at_r6": 1,
+   "law": "paper-04's DYADIC refinement move",
+   "raw_fiber_here": 1,
+   "refined_shape": [
+    6,
+    6
+   ],
+   "refined_sites": 36,
+   "splittable_box_points": 261,
+   "subdivided": 27,
+   "the_unique_admissible_split_vector": [
+    [
+     2,
+     2,
+     2
+    ]
+   ]
+  },
+  "law_06": {
+   "at_r4_intervals_unique": 9,
+   "fiber_at_count_2": 1,
+   "intervals_non_empty": 27,
+   "intervals_unique": 27,
+   "law": "paper-06's per-interval invariant split law",
+   "orbits_at_count_2": 1,
+   "pinned_transitive_at_count_2": true,
+   "record_level_unique": true,
+   "simplex_dim_at_count_2": 0,
+   "support": [
+    [
+     1,
+     1
+    ]
+   ],
+   "the_only_pinned_transitive_vector": [
+    [
+     2,
+     2,
+     2
+    ]
+   ]
+  },
+  "law_09": {
+   "committed_intervals_in_the_hole": 27,
+   "counts_carried_by_this_record": [
+    2
+   ],
+   "intervals_in_the_hole": 27,
+   "law": "paper-09's renewal-grain transport kernel",
+   "non_empty": false,
+   "support_holes": [
+    1,
+    2
+   ]
+  },
+  "laws_considered": 3,
+  "laws_non_empty": 2,
+  "laws_non_empty_at_r4": 1
+ },
+ "measure_stamps": [
+  {
+   "quantity": "canonical-carrier isomorphisms among the witnesses",
+   "reason": "the cardinality of a subset of an exhaustively enumerated finite set; no measure on the witness space is declared and no typicality claim rests on it",
+   "stamp": "COUNTING-ONLY",
+   "value": "72 of 5184"
+  },
+  {
+   "quantity": "witnesses with the refined lattice's edge count",
+   "reason": "same",
+   "stamp": "COUNTING-ONLY",
+   "value": "864 of 5184"
+  },
+  {
+   "quantity": "live cut loci at the arena",
+   "reason": "same",
+   "stamp": "COUNTING-ONLY",
+   "value": "1 of 17"
+  },
+  {
+   "quantity": "determined refined intervals",
+   "reason": "same",
+   "stamp": "COUNTING-ONLY",
+   "value": "54 of 108"
+  }
+ ],
+ "mutant_sweep": [
+  {
+   "died_at": "G-PARTITION-COUNT",
+   "killed": true,
+   "mutant": "MUT-PARTITION",
+   "on_target": true,
+   "target": "G-PARTITION-COUNT"
+  },
+  {
+   "died_at": "G-BUDGET-THEOREM",
+   "killed": true,
+   "mutant": "MUT-BUDGET",
+   "on_target": true,
+   "target": "G-BUDGET-THEOREM"
+  },
+  {
+   "died_at": "G-72-TRIPLES",
+   "killed": true,
+   "mutant": "MUT-72",
+   "on_target": true,
+   "target": "G-72-TRIPLES"
+  },
+  {
+   "died_at": "G-R6-FIELD",
+   "killed": true,
+   "mutant": "MUT-FIELD",
+   "on_target": true,
+   "target": "G-R6-FIELD"
+  },
+  {
+   "died_at": "G-WITNESSES",
+   "killed": true,
+   "mutant": "MUT-WITNESSES",
+   "on_target": true,
+   "target": "G-WITNESSES"
+  },
+  {
+   "died_at": "G-ANCHORS-READ",
+   "killed": true,
+   "mutant": "MUT-ANCHOR-VALUE",
+   "on_target": true,
+   "target": "G-ANCHORS-READ"
+  },
+  {
+   "died_at": "G-VERBATIM",
+   "killed": true,
+   "mutant": "MUT-VERBATIM",
+   "on_target": true,
+   "target": "G-VERBATIM"
+  },
+  {
+   "died_at": "G-ANCHOR-CONSUMERS",
+   "killed": true,
+   "mutant": "MUT-CONSUMER-BINDING",
+   "on_target": true,
+   "target": "G-ANCHOR-CONSUMERS"
+  },
+  {
+   "died_at": "G-DRIVEN-WINDOW",
+   "killed": true,
+   "mutant": "MUT-WINDOW",
+   "on_target": true,
+   "target": "G-DRIVEN-WINDOW"
+  },
+  {
+   "died_at": "G-SPLIT-FIBER",
+   "killed": true,
+   "mutant": "MUT-SPLITFIBER",
+   "on_target": true,
+   "target": "G-SPLIT-FIBER"
+  },
+  {
+   "died_at": "G-LAW-06",
+   "killed": true,
+   "mutant": "MUT-LAW06",
+   "on_target": true,
+   "target": "G-LAW-06"
+  },
+  {
+   "died_at": "G-LAW-04",
+   "killed": true,
+   "mutant": "MUT-LAW04",
+   "on_target": true,
+   "target": "G-LAW-04"
+  },
+  {
+   "died_at": "G-LAW-09",
+   "killed": true,
+   "mutant": "MUT-LAW09",
+   "on_target": true,
+   "target": "G-LAW-09"
+  },
+  {
+   "died_at": "G-REFINED-BUILD",
+   "killed": true,
+   "mutant": "MUT-ADDITIVITY",
+   "on_target": true,
+   "target": "G-REFINED-BUILD"
+  },
+  {
+   "died_at": "G-NEW-PLACES",
+   "killed": true,
+   "mutant": "MUT-NEWPLACES",
+   "on_target": true,
+   "target": "G-NEW-PLACES"
+  },
+  {
+   "died_at": "G-COMPATIBILITY",
+   "killed": true,
+   "mutant": "MUT-COMPAT",
+   "on_target": true,
+   "target": "G-COMPATIBILITY"
+  },
+  {
+   "died_at": "G-PROCESS-SUPPLY",
+   "killed": true,
+   "mutant": "MUT-CARRIER",
+   "on_target": true,
+   "target": "G-PROCESS-SUPPLY"
+  },
+  {
+   "died_at": "G-PROCESS-SUPPLY",
+   "killed": true,
+   "mutant": "MUT-SUPPLY",
+   "on_target": true,
+   "target": "G-PROCESS-SUPPLY"
+  },
+  {
+   "died_at": "G-CUT-UNIQUE",
+   "killed": true,
+   "mutant": "MUT-CUT",
+   "on_target": true,
+   "target": "G-CUT-UNIQUE"
+  },
+  {
+   "died_at": "G-TWO-WAY",
+   "killed": true,
+   "mutant": "MUT-TWOWAY",
+   "on_target": true,
+   "target": "G-TWO-WAY"
+  },
+  {
+   "died_at": "G-SIG",
+   "killed": true,
+   "mutant": "MUT-SIG",
+   "on_target": true,
+   "target": "G-SIG"
+  },
+  {
+   "died_at": "G-CEILING",
+   "killed": true,
+   "mutant": "MUT-CEILING",
+   "on_target": true,
+   "target": "G-CEILING"
+  },
+  {
+   "died_at": "G-DIA",
+   "killed": true,
+   "mutant": "MUT-DIA",
+   "on_target": true,
+   "target": "G-DIA"
+  },
+  {
+   "died_at": "G-WALL-L1",
+   "killed": true,
+   "mutant": "MUT-WALL-L1",
+   "on_target": true,
+   "target": "G-WALL-L1"
+  },
+  {
+   "died_at": "G-WALL-BHS",
+   "killed": true,
+   "mutant": "MUT-WALL-BHS",
+   "on_target": true,
+   "target": "G-WALL-BHS"
+  },
+  {
+   "died_at": "G-WALL-KR",
+   "killed": true,
+   "mutant": "MUT-WALL-KR",
+   "on_target": true,
+   "target": "G-WALL-KR"
+  },
+  {
+   "died_at": "G-WALL-COSMO",
+   "killed": true,
+   "mutant": "MUT-WALL-COSMO",
+   "on_target": true,
+   "target": "G-WALL-COSMO"
+  },
+  {
+   "died_at": "G-WALL-LORENTZ-NAMED",
+   "killed": true,
+   "mutant": "MUT-WALL-LORENTZ",
+   "on_target": true,
+   "target": "G-WALL-LORENTZ-NAMED"
+  },
+  {
+   "died_at": "G-MEASURE-STAMP",
+   "killed": true,
+   "mutant": "MUT-MEASURE",
+   "on_target": true,
+   "target": "G-MEASURE-STAMP"
+  },
+  {
+   "died_at": "G-SEAL-COMPLETE",
+   "killed": true,
+   "mutant": "MUT-SEAL-DROP",
+   "on_target": true,
+   "target": "G-SEAL-COMPLETE"
+  },
+  {
+   "died_at": "G-VERDICT-RECONSTRUCTED",
+   "killed": true,
+   "mutant": "MUT-VERDICT",
+   "on_target": true,
+   "target": "G-VERDICT-RECONSTRUCTED"
+  },
+  {
+   "died_at": "G-PAPER-CLAIMS",
+   "killed": true,
+   "mutant": "MUT-CLAIM",
+   "on_target": true,
+   "target": "G-PAPER-CLAIMS"
+  },
+  {
+   "died_at": "G-PAPER-TABLES",
+   "killed": true,
+   "mutant": "MUT-TABLE",
+   "on_target": true,
+   "target": "G-PAPER-TABLES"
+  },
+  {
+   "died_at": "G-PAPER-COVERAGE",
+   "killed": true,
+   "mutant": "MUT-COVERAGE-SCAN",
+   "on_target": true,
+   "target": "G-PAPER-COVERAGE"
+  },
+  {
+   "died_at": "G-PAPER-COVERAGE",
+   "killed": true,
+   "mutant": "MUT-PAPER-FENCE-MULTISET",
+   "on_target": true,
+   "target": "G-PAPER-COVERAGE"
+  },
+  {
+   "died_at": "G-PAPER-COVERAGE",
+   "killed": true,
+   "mutant": "MUT-EXEMPTION-DEAD",
+   "on_target": true,
+   "target": "G-PAPER-COVERAGE"
+  },
+  {
+   "died_at": "G-WELD-COARSE",
+   "killed": true,
+   "mutant": "MUT-WELD",
+   "on_target": true,
+   "target": "G-WELD-COARSE"
+  },
+  {
+   "died_at": "G-WELD-REFINED",
+   "killed": true,
+   "mutant": "MUT-WELDREF",
+   "on_target": true,
+   "target": "G-WELD-REFINED"
+  },
+  {
+   "died_at": "G-FALSIFIER-HONEST",
+   "killed": true,
+   "mutant": "MUT-FALSIFIER-HONEST",
+   "on_target": true,
+   "target": "G-FALSIFIER-HONEST"
+  },
+  {
+   "died_at": "G-PAPER-HEAD-VERBATIM",
+   "killed": true,
+   "mutant": "MUT-HEAD",
+   "on_target": true,
+   "target": "G-PAPER-HEAD-VERBATIM"
+  },
+  {
+   "died_at": "G-PAPER-CLAIM-POLARITY",
+   "killed": true,
+   "mutant": "MUT-POLARITY",
+   "on_target": true,
+   "target": "G-PAPER-CLAIM-POLARITY"
+  }
+ ],
+ "mutants": [
+  {
+   "corrupts": "len(parts)",
+   "description": "replaces the enumerated round-family count len(parts) by one more, so the enumeration, the closed form and paper-21's committed row disagree",
+   "mutant": "MUT-PARTITION",
+   "target": "G-PARTITION-COUNT"
+  },
+  {
+   "corrupts": "max(C['incidences'])",
+   "description": "replaces the measured per-round incidence ceiling max(C['incidences']) by 10, breaking the equality that makes the saturating census exhaustive",
+   "mutant": "MUT-BUDGET",
+   "target": "G-BUDGET-THEOREM"
+  },
+  {
+   "corrupts": "len(triples)",
+   "description": "replaces the I7-STRICT triple count len(triples) by one fewer, so the pair-cover route and both committed rows disagree",
+   "mutant": "MUT-72",
+   "target": "G-72-TRIPLES"
+  },
+  {
+   "corrupts": "field[CELLS[0]]",
+   "description": "raises the concatenated field at one cell, field[CELLS[0]], from 2 to 3, so the record is no longer (2, 2, 2) at that cell",
+   "mutant": "MUT-FIELD",
+   "target": "G-R6-FIELD"
+  },
+  {
+   "corrupts": "wit",
+   "description": "drops one ordered concatenation witness from the census count wit, so it no longer equals paper-21's committed row",
+   "mutant": "MUT-WITNESSES",
+   "target": "G-WITNESSES"
+  },
+  {
+   "corrupts": "got",
+   "description": "blanks the value read at the ordered-witnesses path of paper-21's committed receipt, so the (path, value) anchor no longer matches its declaration",
+   "mutant": "MUT-ANCHOR-VALUE",
+   "target": "G-ANCHORS-READ"
+  },
+  {
+   "corrupts": "hay",
+   "description": "rewrites paper-04's ceiling sentence in the bytes the quote is matched against, so quote fidelity fails at V13",
+   "mutant": "MUT-VERBATIM",
+   "target": "G-VERBATIM"
+  },
+  {
+   "corrupts": "cons",
+   "description": "adds an unregistered consumer-gate name to the anchor rows' gate list cons, so an anchor names a gate that does not exist",
+   "mutant": "MUT-CONSUMER-BINDING",
+   "target": "G-ANCHOR-CONSUMERS"
+  },
+  {
+   "corrupts": "window",
+   "description": "drops the first schedule from the declared driven window, so the window no longer carries the declared number of driven schedules",
+   "mutant": "MUT-WINDOW",
+   "target": "G-DRIVEN-WINDOW"
+  },
+  {
+   "corrupts": "rawprod",
+   "description": "replaces the raw split fiber rawprod by 0, so the arena would read as unsplittable",
+   "mutant": "MUT-SPLITFIBER",
+   "target": "G-SPLIT-FIBER"
+  },
+  {
+   "corrupts": "law06['intervals_unique']",
+   "description": "replaces the count of intervals at which paper-06's law is unique by 9, the R = 4 value, so the record-level uniqueness claim fails",
+   "mutant": "MUT-LAW06",
+   "target": "G-LAW-06"
+  },
+  {
+   "corrupts": "law04['subdivided']",
+   "description": "replaces the DYADIC class's committed SUBDIVIDED tally by 26, so the move no longer subdivides every coarse interval",
+   "mutant": "MUT-LAW04",
+   "target": "G-LAW-04"
+  },
+  {
+   "corrupts": "law09['intervals_in_the_hole']",
+   "description": "replaces the number of intervals inside paper-09's support hole by 0, so its kernel would read as non-empty here",
+   "mutant": "MUT-LAW09",
+   "target": "G-LAW-09"
+  },
+  {
+   "corrupts": "n2",
+   "description": "adds one to the second half of one refined interval, so the two halves no longer sum to the coarse count at that interval",
+   "mutant": "MUT-ADDITIVITY",
+   "target": "G-REFINED-BUILD"
+  },
+  {
+   "corrupts": "places['new_sites']",
+   "description": "replaces the measured new-site count places['new_sites'] by 0, so the place-count would read as unchanged",
+   "mutant": "MUT-NEWPLACES",
+   "target": "G-NEW-PLACES"
+  },
+  {
+   "corrupts": "slot_eq",
+   "description": "drops one refined slot from the count of slots equal under both composition orders, slot_eq, so the two laws would read as conflicting",
+   "mutant": "MUT-COMPAT",
+   "target": "G-COMPATIBILITY"
+  },
+  {
+   "corrupts": "canon_true",
+   "description": "adds one to the canonical-carrier isomorphism count canon_true, so it no longer equals the independently computed supplied-witness count",
+   "mutant": "MUT-CARRIER",
+   "target": "G-PROCESS-SUPPLY"
+  },
+  {
+   "corrupts": "len(supplied)",
+   "description": "adds one to the supplied-witness count len(supplied) computed from the triangle multiplicities, so the two routes to 72 disagree",
+   "mutant": "MUT-SUPPLY",
+   "target": "G-PROCESS-SUPPLY"
+  },
+  {
+   "corrupts": "len(live_at_arena)",
+   "description": "replaces the number of live cut loci at the arena by 2, so the seam would no longer be the unique admissible cut",
+   "mutant": "MUT-CUT",
+   "target": "G-CUT-UNIQUE"
+  },
+  {
+   "corrupts": "fates",
+   "description": "removes COUNT-DEAD from the set of detector fates the run exhibits, so a value the detector can return would go unexhibited",
+   "mutant": "MUT-TWOWAY",
+   "target": "G-TWO-WAY"
+  },
+  {
+   "corrupts": "str(qr[3])",
+   "description": "replaces the refined determinant str(qr[3]) by 1, so it no longer equals paper-19's committed uniform determinant",
+   "mutant": "MUT-SIG",
+   "target": "G-SIG"
+  },
+  {
+   "corrupts": "ceil_here",
+   "description": "replaces the measured refinement ceiling ceil_here by 2, so the arena would admit a second step",
+   "mutant": "MUT-CEILING",
+   "target": "G-CEILING"
+  },
+  {
+   "corrupts": "len(unreached)",
+   "description": "replaces the number of refined sites stranded when the diagonal is withdrawn, len(unreached), by 0, so the diagonal's role would vanish",
+   "mutant": "MUT-DIA",
+   "target": "G-DIA"
+  },
+  {
+   "corrupts": "l1_hits",
+   "description": "adds a hit to the L-1 banned-sentence list l1_hits, so the retracted sentence reads as present",
+   "mutant": "MUT-WALL-L1",
+   "target": "G-WALL-L1"
+  },
+  {
+   "corrupts": "surface",
+   "description": "writes a sprinkling-grade Lorentz-invariance reading into the declared measurement surface",
+   "mutant": "MUT-WALL-BHS",
+   "target": "G-WALL-BHS"
+  },
+  {
+   "corrupts": "surface",
+   "description": "writes a Myrheim-Meyer dimension reading with no height control into the declared measurement surface",
+   "mutant": "MUT-WALL-KR",
+   "target": "G-WALL-KR"
+  },
+  {
+   "corrupts": "surface",
+   "description": "writes an expansion-of-space reading into the declared measurement surface",
+   "mutant": "MUT-WALL-COSMO",
+   "target": "G-WALL-COSMO"
+  },
+  {
+   "corrupts": "ptxt_named",
+   "description": "deletes the mandatory naming sentence from the copy of the object under test the gate reads, ptxt_named",
+   "mutant": "MUT-WALL-LORENTZ",
+   "target": "G-WALL-LORENTZ-NAMED"
+  },
+  {
+   "corrupts": "stamps",
+   "description": "appends an unstamped fraction to the measure-stamp table stamps",
+   "mutant": "MUT-MEASURE",
+   "target": "G-MEASURE-STAMP"
+  },
+  {
+   "corrupts": "sid == \"SEAL-COVERAGE\"",
+   "description": "returns from Seal.take before the coverage row reaches the manifest, so the total seal is incomplete",
+   "mutant": "MUT-SEAL-DROP",
+   "target": "G-SEAL-COMPLETE"
+  },
+  {
+   "corrupts": "segs",
+   "description": "corrupts one segment of the derived verdict head, segs, so the independent reconstruction from the serialized receipt disagrees",
+   "mutant": "MUT-VERDICT",
+   "target": "G-VERDICT-RECONSTRUCTED"
+  },
+  {
+   "corrupts": "out",
+   "description": "perturbs one rendered paper claim, out, so the paper's sentence no longer matches the receipt it renders from",
+   "mutant": "MUT-CLAIM",
+   "target": "G-PAPER-CLAIMS"
+  },
+  {
+   "corrupts": "rows",
+   "description": "perturbs one rendered paper table row, rows, so a table cell no longer matches the receipt",
+   "mutant": "MUT-TABLE",
+   "target": "G-PAPER-TABLES"
+  },
+  {
+   "corrupts": "body",
+   "description": "strips the fenced blocks and the inline code spans from the paper before the numeral scan, body, which is exactly the E-22 blindness",
+   "mutant": "MUT-COVERAGE-SCAN",
+   "target": "G-PAPER-COVERAGE"
+  },
+  {
+   "corrupts": "text",
+   "description": "forges one of the paper's two copies of a verdict fence in the text under test, so a containment gate would pass while the multiset gate fails",
+   "mutant": "MUT-PAPER-FENCE-MULTISET",
+   "target": "G-PAPER-COVERAGE"
+  },
+  {
+   "corrupts": "exempt",
+   "description": "adds a numeral exemption that occurs nowhere in the paper, exempt, so a never-firing waiver ships",
+   "mutant": "MUT-EXEMPTION-DEAD",
+   "target": "G-PAPER-COVERAGE"
+  },
+  {
+   "corrupts": "wrows[0].get(\"isomorphisms\")",
+   "description": "adds one to the coarse weld's isomorphism count, so it no longer equals the quotient-map count or either committed row",
+   "mutant": "MUT-WELD",
+   "target": "G-WELD-COARSE"
+  },
+  {
+   "corrupts": "proc_row[\"fate\"]",
+   "description": "replaces the refined weld's measured fate by UNMOTIVATED, so the dictionary would read as not surviving the step",
+   "mutant": "MUT-WELDREF",
+   "target": "G-WELD-REFINED"
+  },
+  {
+   "corrupts": "fc",
+   "description": "injects a falsifier row whose hook does not exist into the census fc, so a dishonest row ships",
+   "mutant": "MUT-FALSIFIER-HONEST",
+   "target": "G-FALSIFIER-HONEST"
+  },
+  {
+   "corrupts": "headtxt",
+   "description": "perturbs the head string compared against the paper, headtxt",
+   "mutant": "MUT-HEAD",
+   "target": "G-PAPER-HEAD-VERBATIM"
+  },
+  {
+   "corrupts": "hay",
+   "description": "appends a sentence asserting the opposite of a measured fate to the text under test, hay",
+   "mutant": "MUT-POLARITY",
+   "target": "G-PAPER-CLAIM-POLARITY"
+  }
+ ],
+ "new_places": {
+  "coarse_intervals": 27,
+  "coarse_sites": 9,
+  "description_stamp": "the new places are refined INTERVALS of the declared record and the sites the dyadic move inserts into them; no actor is created and no claim beyond this measured interval and site structure is made",
+  "determined_growth_factor": 2,
+  "growth_factor_intervals": 4,
+  "growth_factor_sites": 4,
+  "new_sites": 27,
+  "new_sites_by_direction": {
+   "[0, 1]": 9,
+   "[1, 0]": 9,
+   "[1, 1]": 9
+  },
+  "refined_intervals": 108,
+  "refined_intervals_determined_by_the_step": 54,
+  "refined_intervals_free": 54,
+  "refined_sites": 36,
+  "site_classes": {
+   "IMAGE": 9,
+   "MID(0, 1)": 9,
+   "MID(1, 0)": 9,
+   "MID(1, 1)": 9
+  },
+  "unreached_sites": 0
+ },
+ "paper_claims": {
+  "object_under_test": "v14/paper-30-lor.md",
+  "rendered": {
+   "arena": "the concatenated six-round record carries count 2 at each of the 27 (site, link) cells individually, and its weld is re-verified zero-free here at 1296 isomorphisms and 1296 quotient maps with fibers 1/1/1",
+   "carrier": "the 9 actors and the 27 co-division pairs are exactly the 36 refined sites, the 54 determined refined links are exactly the 54 actor-in-pair incidences, and the 54 free refined links are exactly 3 inside each of the 18 non-collinear declared triangles",
+   "ceiling": "the minimum count is 2, so the ceiling is 1 and exactly one step exists; after the step the minimum count is 1 and the ceiling is 0; a second step needs a minimum count of 4, which the budget law places at R = 12",
+   "compat": "the support of paper-06's law is exactly paper-04's whole split fiber at 27 of 27 intervals, and the refined record built from each law's output agrees slot by slot at 108 of 108 refined slots",
+   "cut": "of the 17 event-level loci at which the record can be cut, exactly 1 yields a strictly positive split at every interval at all 5,184 witnesses, and the split it yields is (1, 1) at all 27",
+   "dia": "the diagonal buys 9 of the 27 new places, and with the diagonal withdrawn 9 refined sites lie on no coarse interval at all",
+   "driven": "a declared window of 16 six-round schedules is driven through the committed grammar, and at every one of them the driven link field agrees with the combinatorial field at all 432 compared cells",
+   "laws": "2 of the 3 terminal refinement laws are non-empty here, against 1 at R = 4: paper-06's law is unique at 27 of 27 intervals and paper-04's dyadic move subdivides 27 of 27, while paper-09's kernel still puts all 27 intervals inside its support hole",
+   "places": "the place-count grows: 9 sites become 36 and 27 intervals become 108, of which 54 are determined by the step and 54 are free, and the 27 new sites divide 9 to each declared direction",
+   "refined_weld": "at the process-supplied completion the refined weld returns FOUND-candidate with 432 automorphisms and fibers 1/1/1, and under paper-04's own declared minimal completion the same carrier returns UNMOTIVATED with fibers 24/3/2",
+   "sig": "the determinant falls from 3 to 3/4, exactly a factor of 4, and the signature does not move: positive definite at 36 of 36 refined sites",
+   "split": "every one of the 27 intervals is splittable and its fiber is the single point (1, 1), so the raw product over all 27 slots is 1",
+   "step": "additivity holds at 27 of 27 constraints, the coarse counts are recovered at 27 of 27 cells and I7's readout at 9 of 9 sites",
+   "supply": "the canonical carrier is an isomorphism at 72 of the 5,184 witnesses, against 864 whose relation merely carries the refined lattice's edge count"
+  }
+ },
+ "paper_coverage": {
+  "declared_exemptions": [
+   {
+    "literal": "30",
+    "occurrences": 1,
+    "reason": "this paper's own number"
+   },
+   {
+    "literal": "256",
+    "occurrences": 1,
+    "reason": "the digest width inside the label sha256-12"
+   }
+  ],
+  "exemptions_that_never_fire": [],
+  "fence_copies_declared": 2,
+  "fenced_block_multiset_matches": true,
+  "fenced_blocks_expected": 8,
+  "fenced_blocks_found": 8,
+  "fenced_blocks_scanned": 8,
+  "fenced_numerals_scanned": 218,
+  "inline_span_numerals_scanned": 343,
+  "numerals_scanned": 771,
+  "registry_size": 116,
+  "unbacked": [],
+  "word_numerals_scanned": 111,
+  "word_numerals_unbacked": []
+ },
+ "paper_tables": {
+  "rendered": [
+   "| sites | 9 | 36 |",
+   "| intervals | 27 | 108 |",
+   "| intervals the record determines | 27 | 54 |",
+   "| intervals left free | 0 | 54 |",
+   "| triangles-0|lines-9|carrier-iso-False | 36 |",
+   "| triangles-10|lines-5|carrier-iso-False | 1944 |",
+   "| triangles-12|lines-3|carrier-iso-False | 1296 |",
+   "| triangles-12|lines-6|carrier-iso-False | 648 |",
+   "| triangles-18|lines-0|carrier-iso-True | 72 |",
+   "| triangles-6|lines-3|carrier-iso-False | 324 |",
+   "| triangles-6|lines-9|carrier-iso-False | 648 |",
+   "| triangles-9|lines-0|carrier-iso-False | 72 |",
+   "| triangles-9|lines-9|carrier-iso-False | 144 |"
+  ]
+ },
+ "path_value_anchors": [
+  {
+   "consumer_gate": "G-72-TRIPLES",
+   "declared": 72,
+   "match": true,
+   "measured": 72,
+   "path": "split/r6_door/r3_i7_strict_triples",
+   "source": "A-P21REC"
+  },
+  {
+   "consumer_gate": "G-72-TRIPLES",
+   "declared": 72,
+   "match": true,
+   "measured": 72,
+   "path": "split/r6_door/triples_at_field_1",
+   "source": "A-P21REC"
+  },
+  {
+   "consumer_gate": "G-WITNESSES",
+   "declared": 5184,
+   "match": true,
+   "measured": 5184,
+   "path": "split/r6_door/ordered_witnesses",
+   "source": "A-P21REC"
+  },
+  {
+   "consumer_gate": "G-WELD-COARSE",
+   "declared": 1296,
+   "match": true,
+   "measured": 1296,
+   "path": "split/r6_door/isomorphisms",
+   "source": "A-P21REC"
+  },
+  {
+   "consumer_gate": "G-WELD-COARSE",
+   "declared": 1,
+   "match": true,
+   "measured": 1,
+   "path": "split/r6_door/fibers/I-SITE-ASSIGNMENT",
+   "source": "A-P21REC"
+  },
+  {
+   "consumer_gate": "G-WELD-COARSE",
+   "declared": 1,
+   "match": true,
+   "measured": 1,
+   "path": "split/r6_door/fibers/I-DIRECTION-LABEL",
+   "source": "A-P21REC"
+  },
+  {
+   "consumer_gate": "G-WELD-COARSE",
+   "declared": 1,
+   "match": true,
+   "measured": 1,
+   "path": "split/r6_door/fibers/I-ORIENT",
+   "source": "A-P21REC"
+  },
+  {
+   "consumer_gate": "G-LAW-04",
+   "declared": 1,
+   "match": true,
+   "measured": 1,
+   "path": "split/r6_door/dyadic_raw_fiber",
+   "source": "A-P21REC"
+  },
+  {
+   "consumer_gate": "G-R6-FIELD",
+   "declared": 6,
+   "match": true,
+   "measured": 6,
+   "path": "split/r6_door/rounds",
+   "source": "A-P21REC"
+  },
+  {
+   "consumer_gate": "G-R6-FIELD",
+   "declared": [
+    2,
+    2,
+    2
+   ],
+   "match": true,
+   "measured": [
+    2,
+    2,
+    2
+   ],
+   "path": "split/r6_door/record",
+   "source": "A-P21REC"
+  },
+  {
+   "consumer_gate": "G-LAW-09",
+   "declared": 27,
+   "match": true,
+   "measured": 27,
+   "path": "split/r6_door/intervals_in_the_kernel_hole",
+   "source": "A-P21REC"
+  },
+  {
+   "consumer_gate": "G-LAW-06",
+   "declared": [
+    [
+     2,
+     2,
+     2
+    ]
+   ],
+   "match": true,
+   "measured": [
+    [
+     2,
+     2,
+     2
+    ]
+   ],
+   "path": "split/r6_door/crb_pinned_transitive",
+   "source": "A-P21REC"
+  },
+  {
+   "consumer_gate": "G-PARTITION-COUNT",
+   "declared": 280,
+   "match": true,
+   "measured": 280,
+   "path": "counts/partitions",
+   "source": "A-P21REC"
+  },
+  {
+   "consumer_gate": "G-72-TRIPLES",
+   "declared": 72,
+   "match": true,
+   "measured": 72,
+   "path": "counts/i7_strict_triples",
+   "source": "A-P19REC"
+  },
+  {
+   "consumer_gate": "G-WELD-COARSE",
+   "declared": 1296,
+   "match": true,
+   "measured": 1296,
+   "path": "counts/isomorphisms",
+   "source": "A-P19REC"
+  },
+  {
+   "consumer_gate": "G-SIG",
+   "declared": "3/4",
+   "match": true,
+   "measured": "3/4",
+   "path": "counts/det_uniform",
+   "source": "A-P19REC"
+  },
+  {
+   "consumer_gate": "G-LAW-09",
+   "declared": [
+    1,
+    2
+   ],
+   "match": true,
+   "measured": [
+    1,
+    2
+   ],
+   "path": "kernel/support_holes",
+   "source": "A-P09REC"
+  },
+  {
+   "consumer_gate": "G-LAW-04",
+   "declared": [
+    [
+     2,
+     2,
+     2
+    ]
+   ],
+   "match": true,
+   "measured": [
+    [
+     2,
+     2,
+     2
+    ]
+   ],
+   "path": "count_lattice/unique_admissible_split",
+   "source": "A-P04REC"
+  },
+  {
+   "consumer_gate": "G-LAW-04",
+   "declared": 261,
+   "match": true,
+   "measured": 261,
+   "path": "count_lattice/splittable",
+   "source": "A-P04REC"
+  },
+  {
+   "consumer_gate": "G-LAW-04",
+   "declared": 361,
+   "match": true,
+   "measured": 361,
+   "path": "count_lattice/admissible_count_vectors",
+   "source": "A-P04REC"
+  },
+  {
+   "consumer_gate": "G-NEW-PLACES",
+   "declared": 36,
+   "match": true,
+   "measured": 36,
+   "path": "move_census/rows/0/refined_sites",
+   "source": "A-P04REC"
+  },
+  {
+   "consumer_gate": "G-NEW-PLACES",
+   "declared": 27,
+   "match": true,
+   "measured": 27,
+   "path": "move_census/rows/0/tally/SUBDIVIDED",
+   "source": "A-P04REC"
+  },
+  {
+   "consumer_gate": "G-LAW-04",
+   "declared": "ADMISSIBLE",
+   "match": true,
+   "measured": "ADMISSIBLE",
+   "path": "move_census/rows/0/verdict",
+   "source": "A-P04REC"
+  },
+  {
+   "consumer_gate": "G-LAW-06",
+   "declared": 2,
+   "match": true,
+   "measured": 2,
+   "path": "per_interval_law/rows/1/n",
+   "source": "A-P06REC"
+  },
+  {
+   "consumer_gate": "G-LAW-06",
+   "declared": 1,
+   "match": true,
+   "measured": 1,
+   "path": "per_interval_law/rows/1/fiber",
+   "source": "A-P06REC"
+  },
+  {
+   "consumer_gate": "G-LAW-06",
+   "declared": 1,
+   "match": true,
+   "measured": 1,
+   "path": "per_interval_law/rows/1/pinned_orbits",
+   "source": "A-P06REC"
+  },
+  {
+   "consumer_gate": "G-LAW-06",
+   "declared": 0,
+   "match": true,
+   "measured": 0,
+   "path": "per_interval_law/rows/1/pinned_simplex_dim",
+   "source": "A-P06REC"
+  },
+  {
+   "consumer_gate": "G-LAW-06",
+   "declared": true,
+   "match": true,
+   "measured": true,
+   "path": "per_interval_law/rows/1/pinned_transitive",
+   "source": "A-P06REC"
+  },
+  {
+   "consumer_gate": "G-SPLIT-FIBER",
+   "declared": 0,
+   "match": true,
+   "measured": 0,
+   "path": "per_interval_law/rows/0/fiber",
+   "source": "A-P06REC"
+  },
+  {
+   "consumer_gate": "G-I7-READOUT",
+   "declared": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "match": true,
+   "measured": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "path": "declarations/links_d2",
+   "source": "A-I7"
+  },
+  {
+   "consumer_gate": "G-I7-READOUT",
+   "declared": 361,
+   "match": true,
+   "measured": 361,
+   "path": "tables/link_locality_lattice/admissible_points",
+   "source": "A-I7"
+  }
+ ],
+ "payload_sha256_12": "4f2b0b81885c",
+ "polarity": {
+  "probes": [
+   "the refinement acts",
+   "the place-count grows",
+   "the two laws compose and agree",
+   "the dictionary survives at the extended carrier",
+   "exactly one step is possible",
+   "paper-09's kernel is empty here"
+  ],
+  "violations": []
+ },
+ "process_supply": {
+  "cut": {
+   "census_over_all_witnesses": {
+    "[9]": 5184
+   },
+   "control_R9_is_outside_the_declared_arena": true,
+   "control_R9_live_loci": 10,
+   "control_R9_raw_split_fiber": 134217728,
+   "live_loci": 1,
+   "live_locus": [
+    9
+   ],
+   "loci": 17,
+   "routes": 2,
+   "split_at_the_live_locus": {
+    "[1, 1]": 27
+   },
+   "window_schedules_cross_checked": 16
+  },
+  "supply": {
+   "canonical_carrier_isomorphism": 72,
+   "census_by_class": {
+    "triangles-0|lines-9|carrier-iso-False": 36,
+    "triangles-10|lines-5|carrier-iso-False": 1944,
+    "triangles-12|lines-3|carrier-iso-False": 1296,
+    "triangles-12|lines-6|carrier-iso-False": 648,
+    "triangles-18|lines-0|carrier-iso-True": 72,
+    "triangles-6|lines-3|carrier-iso-False": 324,
+    "triangles-6|lines-9|carrier-iso-False": 648,
+    "triangles-9|lines-0|carrier-iso-False": 72,
+    "triangles-9|lines-9|carrier-iso-False": 144
+   },
+   "classes": 9,
+   "edge_count_census": {
+    "108": 864,
+    "81": 432,
+    "99": 3888
+   },
+   "measure_stamp": "COUNTING-ONLY",
+   "mechanism": "the canonical carrier is an isomorphism exactly when the schedule's 18 conflict groups ARE the 18 non-collinear declared triangles, each once: a line group contributes a foreign pair-of-pairs edge the refined lattice does not carry, and an unrealised triangle leaves three of its edges missing",
+   "witnesses": 5184,
+   "witnesses_right_shaped_without_the_carrier": 792,
+   "witnesses_with_the_refined_lattices_edge_count": 864
+  }
+ },
+ "provenance": [
+  {
+   "declared": "5239c4671f1a",
+   "id": "A-PIN",
+   "match": true,
+   "measured": "5239c4671f1a",
+   "path": "v14/note-lor-pin.md",
+   "role": "THIS UNIT'S PIN (ledger #233): the seven stages, the outcome names, the walls, and the new-places language this unit is confined to."
+  },
+  {
+   "declared": "ef4a8c35a0c4",
+   "id": "A-P21",
+   "match": true,
+   "measured": "ef4a8c35a0c4",
+   "path": "v14/paper-21-r4dec.md",
+   "role": "PAPER 21 (terminal): G-R6-DOOR -- the 72 triples, the concatenation to (2, 2, 2), the >= 5,184 witnesses, the 1/1/1 fibers, the RSQ link-constant theorem, and the dead lists this unit cites."
+  },
+  {
+   "declared": "1958a8cdfe28",
+   "id": "A-P21CODE",
+   "match": true,
+   "measured": "1958a8cdfe28",
+   "path": "v14/code/r4dec_exact.py",
+   "role": "PAPER 21's INSTRUMENT: the weld detector's two readings and the fiber definition, reimplemented here and gated against its committed row."
+  },
+  {
+   "declared": "a4538c7019e6",
+   "id": "A-P21REC",
+   "match": true,
+   "measured": "a4538c7019e6",
+   "path": "v14/code/r4dec_receipt.json",
+   "role": "PAPER 21's COMMITTED RECEIPT: the G-R6-DOOR row read as data at /split/r6_door, every number of which is rebuilt here."
+  },
+  {
+   "declared": "50bb81e67942",
+   "id": "A-P19",
+   "match": true,
+   "measured": "50bb81e67942",
+   "path": "v14/paper-19-r3-weld.md",
+   "role": "PAPER 19 (terminal): the weld machinery, the R = 3 landing record (1, 1, 1) and the rigidity theorem."
+  },
+  {
+   "declared": "dfea664f2408",
+   "id": "A-P19REC",
+   "match": true,
+   "measured": "dfea664f2408",
+   "path": "v14/code/r3_weld_receipt.json",
+   "role": "PAPER 19's COMMITTED RECEIPT: the R = 3 I7-STRICT count, read as data."
+  },
+  {
+   "declared": "dfa5090f26b1",
+   "id": "A-P04",
+   "match": true,
+   "measured": "dfa5090f26b1",
+   "path": "v14/paper-04-refinement-grammar.md",
+   "role": "PAPER 04 / R6a (terminal): the DYADIC move, the split-fiber identity, the free-transverse-link wall, the ceiling law and the d = 3 row."
+  },
+  {
+   "declared": "856f6e810ab5",
+   "id": "A-P04REC",
+   "match": true,
+   "measured": "856f6e810ab5",
+   "path": "v14/code/r6a_refinement_receipt.json",
+   "role": "PAPER 04's COMMITTED RECEIPT: the move census, the count lattice and the iteration traces, read as data."
+  },
+  {
+   "declared": "c350caab17ee",
+   "id": "A-P06",
+   "match": true,
+   "measured": "c350caab17ee",
+   "path": "v14/paper-06-stochastic-split.md",
+   "role": "PAPER 06 / CR-B (terminal): the per-interval invariant law, the transitivity criterion and the named missing object."
+  },
+  {
+   "declared": "5ebeec141303",
+   "id": "A-P06REC",
+   "match": true,
+   "measured": "5ebeec141303",
+   "path": "v14/code/crb_stochastic_receipt.json",
+   "role": "PAPER 06's COMMITTED RECEIPT: the per-interval law rows at every count, read as data."
+  },
+  {
+   "declared": "006f96aaa2ff",
+   "id": "A-P09",
+   "match": true,
+   "measured": "006f96aaa2ff",
+   "path": "v14/paper-09-renewal-transport.md",
+   "role": "PAPER 09 / R6b' (terminal): the renewal-grain kernel and its support hole at counts one and two."
+  },
+  {
+   "declared": "9c8f8af07050",
+   "id": "A-P09REC",
+   "match": true,
+   "measured": "9c8f8af07050",
+   "path": "v14/code/r6bp_transport_receipt.json",
+   "role": "PAPER 09's COMMITTED RECEIPT: the kernel's first-return law, read as data."
+  },
+  {
+   "declared": "f286ba10d2d9",
+   "id": "A-HA",
+   "match": true,
+   "measured": "f286ba10d2d9",
+   "path": "v13/paper-ha-successor.md",
+   "role": "I7 / HA: the declared readout, the admissibility criterion, and requirement 3 -- the two-way rule this unit's controls discharge."
+  },
+  {
+   "declared": "542b8735daf0",
+   "id": "A-I7",
+   "match": true,
+   "measured": "542b8735daf0",
+   "path": "v13/code/ha_successor_receipt.json",
+   "role": "I7's ARENA AS DATA: sites, links, the declared record family and the declared count box."
+  },
+  {
+   "declared": "576275d55ecf",
+   "id": "A-D42B1",
+   "match": true,
+   "measured": "576275d55ecf",
+   "path": "v10/code/d42b1_transport_exact.py",
+   "role": "THE COMMITTED TRANSPORT GRAMMAR, driven directly: this unit's only source of admissibility."
+  },
+  {
+   "declared": "684cdb76552b",
+   "id": "A-D60",
+   "match": true,
+   "measured": "684cdb76552b",
+   "path": "v10/code/d60_crystal_exact.py",
+   "role": "D60: the Builder `B` and the delivery helper `dl`, AST-extracted."
+  },
+  {
+   "declared": "3d0516ab106e",
+   "id": "A-D66",
+   "match": true,
+   "measured": "3d0516ab106e",
+   "path": "v10/code/d66_arbitration_crystal_exact.py",
+   "role": "D66: CONFLICT-GRID(g, R), the committed constructor, AST-extracted; its actor pool is what fixes the arity of the weld's site carrier."
+  },
+  {
+   "declared": "93ea24591c3c",
+   "id": "A-L1",
+   "match": true,
+   "measured": "93ea24591c3c",
+   "path": "v11/note-L1-lorentz-no-go-lemma.md",
+   "role": "L-1: the fourth-form clause argued before any test, and the sentence retracted on 2026-07-28 that no paper of this line may reproduce."
+  },
+  {
+   "declared": "0cebe543e814",
+   "id": "A-CAT",
+   "match": true,
+   "measured": "0cebe543e814",
+   "path": "v11/note-v11p0a-reproduction-catalog.md",
+   "role": "the reproduction catalog 1.6/1.7: the BHS block and the Kleitman-Rothschild height-control warning."
+  }
+ ],
+ "python": "3.13",
+ "question": "On the first motivated law-over-records arena -- the R = 6 welded record (2, 2, 2) -- do the refinement laws ACT, and what does one lawful act produce?",
+ "refined_status": {
+  "admissible_sites_paper04_minimal": 36,
+  "admissible_sites_process_supplied": 36,
+  "arena_note": "I7's admissibility PREDICATE extends to the refined lattice; I7's declared ARENA is L = 3, so the refined object is admissible by I7's own criterion and is not a member of I7's declared family",
+  "determined_half_values": [
+   1
+  ],
+  "i7_criterion": "q nonsingular and positive definite at every site",
+  "landing_vector": [
+   1,
+   1,
+   1
+  ],
+  "landing_vector_declared_by_i7": false,
+  "landing_vector_in_the_declared_box": true,
+  "landing_vector_is_paper19s": true,
+  "link_constant_paper04_minimal": false,
+  "link_constant_process_supplied": true,
+  "refined_lattice": [
+   6,
+   6
+  ],
+  "refined_record_paper04_minimal": {
+   "[1, 1, 1]": 9,
+   "[1, 1, 2]": 18,
+   "[2, 2, 1]": 9
+  },
+  "refined_record_process_supplied": {
+   "[1, 1, 1]": 36
+  },
+  "refined_sites": 36,
+  "the_link_constant_completion_is_unique": true
+ },
+ "refinement_step": {
+  "additivity_constraints": 27,
+  "additivity_satisfied": 27,
+  "builds": {
+   "PAPER-04-DECLARED-MINIMAL": {
+    "admissible_sites": 36,
+    "distinct_site_codes": 3,
+    "link_constant": false,
+    "max_count": 2,
+    "min_count": 1,
+    "site_codes": {
+     "[1, 1, 1]": 9,
+     "[1, 1, 2]": 18,
+     "[2, 2, 1]": 9
+    }
+   },
+   "PROCESS-SUPPLIED": {
+    "admissible_sites": 36,
+    "distinct_site_codes": 1,
+    "link_constant": true,
+    "max_count": 1,
+    "min_count": 1,
+    "site_codes": {
+     "[1, 1, 1]": 36
+    }
+   }
+  },
+  "intervals_split": 27,
+  "law_applied": "the unique invariant split law of paper-06, whose support is the single point paper-04's dyadic raw fiber contains",
+  "readout_recovered_sites": 9,
+  "restriction_cells": 27,
+  "restriction_recovered": 27,
+  "split_applied": [
+   1,
+   1
+  ]
+ },
+ "schema": "isp/v14/lor-a-law-over-records/1",
+ "seal_manifest": {
+  "declared_unsealed": [
+   "arithmetic",
+   "payload_sha256_12",
+   "python",
+   "question",
+   "seal_manifest",
+   "unit"
+  ],
+  "rows": [
+   {
+    "path": "schema",
+    "seal": "SEAL-SCHEMA",
+    "sealed_at_gate": "G-PROVENANCE",
+    "sha256_12": "41e44eaba1ff"
+   },
+   {
+    "path": "provenance",
+    "seal": "SEAL-PROVENANCE",
+    "sealed_at_gate": "G-PROVENANCE",
+    "sha256_12": "5aa731997674"
+   },
+   {
+    "path": "path_value_anchors",
+    "seal": "SEAL-PATHVALUE",
+    "sealed_at_gate": "G-ANCHORS-READ",
+    "sha256_12": "4e91fae9abdc"
+   },
+   {
+    "path": "verbatim_anchors",
+    "seal": "SEAL-VERBATIM",
+    "sealed_at_gate": "G-VERBATIM",
+    "sha256_12": "cda12814daec"
+   },
+   {
+    "path": "i7",
+    "seal": "SEAL-I7",
+    "sealed_at_gate": "G-I7-READOUT",
+    "sha256_12": "b292a2b2205d"
+   },
+   {
+    "path": "substrate",
+    "seal": "SEAL-SUBSTRATE",
+    "sealed_at_gate": "G-BUDGET-THEOREM",
+    "sha256_12": "7a18506d9b6e"
+   },
+   {
+    "path": "arena",
+    "seal": "SEAL-ARENA",
+    "sealed_at_gate": "G-WITNESSES",
+    "sha256_12": "6a684e195198"
+   },
+   {
+    "path": "weld_coarse",
+    "seal": "SEAL-WELD-COARSE",
+    "sealed_at_gate": "G-WELD-COARSE",
+    "sha256_12": "364964185055"
+   },
+   {
+    "path": "driven",
+    "seal": "SEAL-DRIVEN",
+    "sealed_at_gate": "G-DRIVEN-WINDOW",
+    "sha256_12": "bbaec71b8c6c"
+   },
+   {
+    "path": "splittable",
+    "seal": "SEAL-SPLIT",
+    "sealed_at_gate": "G-SPLIT-FIBER",
+    "sha256_12": "d5e4cb274e01"
+   },
+   {
+    "path": "laws",
+    "seal": "SEAL-LAWS",
+    "sealed_at_gate": "G-LAW-09",
+    "sha256_12": "c8817f1a1a7f"
+   },
+   {
+    "path": "refinement_step",
+    "seal": "SEAL-STEP",
+    "sealed_at_gate": "G-REFINED-BUILD",
+    "sha256_12": "ac9b42a01223"
+   },
+   {
+    "path": "new_places",
+    "seal": "SEAL-PLACES",
+    "sealed_at_gate": "G-NEW-PLACES",
+    "sha256_12": "a27dbbc88215"
+   },
+   {
+    "path": "compatibility",
+    "seal": "SEAL-COMPAT",
+    "sealed_at_gate": "G-COMPATIBILITY",
+    "sha256_12": "a13abd2a4642"
+   },
+   {
+    "path": "refined_status",
+    "seal": "SEAL-STATUS",
+    "sealed_at_gate": "G-REFINED-ADMISSIBLE",
+    "sha256_12": "8a9986f8b8da"
+   },
+   {
+    "path": "process_supply",
+    "seal": "SEAL-SUPPLY",
+    "sealed_at_gate": "G-CUT-UNIQUE",
+    "sha256_12": "ad4408b79600"
+   },
+   {
+    "path": "dictionary",
+    "seal": "SEAL-DICT",
+    "sealed_at_gate": "G-TWO-WAY",
+    "sha256_12": "dba5213f517d"
+   },
+   {
+    "path": "sig",
+    "seal": "SEAL-SIG",
+    "sealed_at_gate": "G-SIG",
+    "sha256_12": "12c349e55faf"
+   },
+   {
+    "path": "ceiling",
+    "seal": "SEAL-CEILING",
+    "sealed_at_gate": "G-CEILING",
+    "sha256_12": "5d591317a1ae"
+   },
+   {
+    "path": "dia",
+    "seal": "SEAL-DIA",
+    "sealed_at_gate": "G-DIA",
+    "sha256_12": "5238acef8362"
+   },
+   {
+    "path": "walls",
+    "seal": "SEAL-WALLS",
+    "sealed_at_gate": "G-WALL-LORENTZ-NAMED",
+    "sha256_12": "1f3ced4aef90"
+   },
+   {
+    "path": "measure_stamps",
+    "seal": "SEAL-MEASURE",
+    "sealed_at_gate": "G-MEASURE-STAMP",
+    "sha256_12": "2a345166c7d9"
+   },
+   {
+    "path": "falsifier_census",
+    "seal": "SEAL-FALSIFIER",
+    "sealed_at_gate": "G-FALSIFIER-HONEST",
+    "sha256_12": "0c3b7478e955"
+   },
+   {
+    "path": "verdict",
+    "seal": "SEAL-VERDICT",
+    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+    "sha256_12": "c8bd00373283"
+   },
+   {
+    "path": "counts",
+    "seal": "SEAL-COUNTS",
+    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+    "sha256_12": "94d92bd3ff6d"
+   },
+   {
+    "path": "paper_claims",
+    "seal": "SEAL-PAPER-CLAIMS",
+    "sealed_at_gate": "G-PAPER-CLAIMS",
+    "sha256_12": "d9b93405e2a5"
+   },
+   {
+    "path": "paper_tables",
+    "seal": "SEAL-PAPER-TABLES",
+    "sealed_at_gate": "G-PAPER-TABLES",
+    "sha256_12": "8e5da23f6998"
+   },
+   {
+    "path": "paper_coverage",
+    "seal": "SEAL-PAPER-COVERAGE",
+    "sealed_at_gate": "G-PAPER-HEAD-VERBATIM",
+    "sha256_12": "a55ef72969c6"
+   },
+   {
+    "path": "polarity",
+    "seal": "SEAL-POLARITY",
+    "sealed_at_gate": "G-PAPER-CLAIM-POLARITY",
+    "sha256_12": "d8500022489f"
+   },
+   {
+    "path": "coverage",
+    "seal": "SEAL-COVERAGE",
+    "sealed_at_gate": "G-COVERAGE",
+    "sha256_12": "642793857b3c"
+   },
+   {
+    "path": "waiver_ledger",
+    "seal": "SEAL-WAIVERS",
+    "sealed_at_gate": "G-COVERAGE",
+    "sha256_12": "35433a4b5366"
+   },
+   {
+    "path": "mutants",
+    "seal": "SEAL-MUTANTS",
+    "sealed_at_gate": "G-COVERAGE",
+    "sha256_12": "4105a898e601"
+   },
+   {
+    "path": "mutant_sweep",
+    "seal": "SEAL-MUTANT-SWEEP",
+    "sealed_at_gate": "G-SWEEP-BOUND",
+    "sha256_12": "d391b809f391"
+   },
+   {
+    "path": "gates",
+    "seal": "SEAL-GATES",
+    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+    "sha256_12": "6fa62c378b9b"
+   },
+   {
+    "path": "totals",
+    "seal": "SEAL-TOTALS",
+    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+    "sha256_12": "41594d72c24f"
+   },
+   {
+    "path": "transcript_head",
+    "seal": "SEAL-TRANSCRIPT",
+    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+    "sha256_12": "e3e948c3c0c0"
+   }
+  ],
+  "unaccounted_keys": []
+ },
+ "sig": {
+  "coarse_det": "3",
+  "coarse_q": [
+   "2",
+   "-1",
+   "-1",
+   "2"
+  ],
+  "coarse_record": [
+   2,
+   2,
+   2
+  ],
+  "coarse_trace": "4",
+  "det_ratio_coarse_over_refined": "4",
+  "det_ratio_equals_2_to_the_d": true,
+  "det_spectrum_paper04_minimal": [
+   "1",
+   "3/4",
+   "7/4"
+  ],
+  "det_spectrum_process_supplied": [
+   "3/4"
+  ],
+  "paper19_committed_det": "3/4",
+  "reading": "NAMED AND NOT READ: q is a positive definite Euclidean form on a finite lattice of counts; it is not a signature, not a metric on any continuum, and no Lorentzian reading of it is taken or licensed here",
+  "refined_det": "3/4",
+  "refined_q": [
+   "1",
+   "-1/2",
+   "-1/2",
+   "1"
+  ],
+  "refined_record": [
+   1,
+   1,
+   1
+  ],
+  "refined_trace": "2",
+  "signature_by_sylvester_coarse": "(+,+)",
+  "signature_by_sylvester_refined": "(+,+)",
+  "signature_moved": false,
+  "sites_positive_definite_coarse": 9,
+  "sites_positive_definite_refined": 36
+ },
+ "splittable": {
+  "identity": "raw split fiber = prod over the 27 slots of (n_l(x) - 1)",
+  "intervals": 27,
+  "intervals_with_positive_fiber": 27,
+  "per_interval_fiber": [
+   1
+  ],
+  "raw_product_at_r4_flat": 0,
+  "raw_product_over_all_intervals": 1,
+  "the_unique_split": [
+   1,
+   1
+  ]
+ },
+ "substrate": {
+  "budget_at_R6": 54,
+  "cells": 27,
+  "declared_lines": 9,
+  "declared_triples": 27,
+  "incidence_spectrum": {
+   "0": 1,
+   "4": 27,
+   "6": 54,
+   "7": 162,
+   "9": 36
+  },
+  "max_incidence_per_round": 9,
+  "non_collinear_triangles": 18,
+  "partitions": 280,
+  "saturating_partitions": 36
+ },
+ "totals": {
+  "gates": 53,
+  "mutants": 41,
+  "path_value": 31,
+  "seals": 37,
+  "sources": 19,
+  "verbatim": 26
+ },
+ "transcript_head": [
+  "",
+  "[SEC 1] PROVENANCE -- 19 pinned sources, hash-verified",
+  "  [PASS] G-PROVENANCE",
+  "         EVERY RUNTIME INPUT IS A HASH-PINNED SOURCE.  Each of the 19 declared sources is read by path and its sha256-12 compared against this unit's frozen declaration, per object; a drifted byte in any one of them dies here before a single number is computed",
+  "         evidence: sources 19, mismatched none",
+  "  [PASS] G-READS-DECLARED",
+  "         NO UNANCHORED RUNTIME INPUT.  Every read in this file is categorised at the call site; the SOURCE category must equal the declared source set exactly and no undeclared category may appear, so a read of mutable repository state cannot be added without failing here",
+  "         evidence: categories ['SOURCE'], source reads 19 of 19 declared",
+  "  [PASS] G-EXACT-ARITHMETIC",
+  "         THE ARITHMETIC IS EXACT BY CONSTRUCTION, PROVED ON THIS FILE'S OWN SYNTAX TREE.  No float literal, no float-adjacent import and no true-division operator occurs anywhere in this file; every quotient is a Fraction",
+  "         evidence: float literals 0, true divisions 0, float-adjacent imports 0",
+  "  [PASS] G-NO-SUBPROCESS",
+  "         THE RUN IS OFF-TREE AND GIT-LESS (#91).  No subprocess, network or shell import occurs in this file, so the delivery run reads nothing but its declared sources and can be byte-reproduced with no version control present",
+  "         evidence: forbidden imports 0",
+  "  [PASS] G-ANCHORS-READ",
+  "         THE PREDECESSORS ARE READ AT (PATH, VALUE), NOT ONLY AT BYTES.  31 rows are read out of five committed receipts by path and compared against this unit's frozen declaration, each row naming the gate it licenses; a path drift that changed the arena or the verdict while preserving a file hash dies here",
+  "         evidence: path-value anchors 31, mismatched none, consumer gates 12",
+  "  [PASS] G-VERBATIM",
+  "         QUOTE FIDELITY (#62, corrected spec).  Every sentence this unit quotes or reimplements from a predecessor is matched WORD FOR WORD against that predecessor's committed bytes, after markdown-prefix stripping, ASCII folding and whitespace normalisation, with a 30-character floor; 26 anchors, evaluated BEFORE the byte anchors are used for anything",
+  "         evidence: verbatim anchors 26, missing none",
+  "  [PASS] G-ANCHOR-CONSUMERS",
+  "         EVERY ANCHOR BINDS MEANING TO USE.  Each verbatim and each path-value row names the gate it licenses, and every named gate must exist in this run's declared registry -- an anchor whose consumer is an unread label binds existence, not meaning",
+  "         evidence: consumer gates named 24, unregistered none",
+  "  [PASS] G-I7-READOUT",
+  "         I7'S READOUT AND ADMISSIBILITY CRITERION ARE THE PINNED ONES, RECOMPUTED.  The readout sentence is matched verbatim against HA's committed bytes, the declared link list is read out of I7's own receipt at (path, value), and the declared count box is re-enumerated here rather than cited",
+  "         evidence: box admissible points recomputed 361, declared link list matches I7's own receipt True",
+  "",
+  "[SEC 2] STAGE 1 -- THE (2,2,2) ARENA, BUILT FROM NOTHING",
+  "  [PASS] G-PARTITION-COUNT",
+  "         THE ROUND FAMILY IS COUNTED TWICE BY ROUTES THAT SHARE NO CODE.  Exhaustive enumeration of the partitions of nine sites into three triples, and the closed form 9!/(3!^3 3!) built from a factorial computed here; the two must agree and must equal the value paper-21's committed receipt carries at /counts/partitions",
+  "         evidence: enumeration 280, closed form 280, paper-21's committed row 280",
+  "  [PASS] G-BUDGET-THEOREM",
+  "         THE BUDGET THEOREM, MEASURED EXHAUSTIVELY.  No round of this cycle deposits more than 9 link incidences -- measured over all 280 partitions, per partition -- so six rounds carry at most 54, and the link-constant record (2, 2, 2) needs exactly 6 x 9 = 54: equality forces every round to saturate, which makes the census over the 36 saturating groupings exhaustive over the whole family",
+  "         evidence: max incidence per round 9, six-round budget 54, saturating partitions 36, spectrum {0: 1, 4: 27, 6: 54, 7: 162, 9: 36}",
+  "  [PASS] G-72-TRIPLES",
+  "         THE R = 3 I7-STRICT TRIPLES, COUNTED TWICE AND ANCHORED.  Route one sums the per-round incidence vectors and requires the field to be identically one at all 27 cells; route two never forms an incidence vector at all and instead requires the triple's nine conflict groups to cover each of the 27 unordered declared actor pairs exactly once.  Both must return the number paper-19 and paper-21 committed",
+  "         evidence: route 1 72, route 2 (pair-cover) 72, paper-21 committed 72, paper-19 committed 72",
+  "  [PASS] G-R6-FIELD",
+  "         THE ARENA IS (2, 2, 2) AT EVERY CELL, CHECKED PER CELL.  Two of the 72 I7-STRICT triples concatenate to a six-round schedule whose summed incidence field is 2 at each of the 27 (site, link) cells individually -- never as a total -- and the induced record is link-constant and positive definite at each of the nine sites individually, matching paper-21's committed G-R6-DOOR row",
+  "         evidence: cells at count 2: 27 of 27, record [(2, 2, 2)], admissible sites 9 of 9, paper-21's committed record [2, 2, 2]"
+ ],
+ "unit": "v14 LOR-A -- the law over records at R = 6",
+ "verbatim_anchors": [
+  {
+   "chars": 88,
+   "consumer_gate": "G-NEW-PLACES",
+   "found": true,
+   "id": "V01",
+   "source": "A-PIN"
+  },
+  {
+   "chars": 91,
+   "consumer_gate": "G-WALL-COSMO",
+   "found": true,
+   "id": "V02",
+   "source": "A-PIN"
+  },
+  {
+   "chars": 32,
+   "consumer_gate": "G-WELD-REFINED",
+   "found": true,
+   "id": "V03",
+   "source": "A-PIN"
+  },
+  {
+   "chars": 33,
+   "consumer_gate": "G-72-TRIPLES",
+   "found": true,
+   "id": "V04",
+   "source": "A-P21"
+  },
+  {
+   "chars": 140,
+   "consumer_gate": "G-WELD-COARSE",
+   "found": true,
+   "id": "V05",
+   "source": "A-P21"
+  },
+  {
+   "chars": 96,
+   "consumer_gate": "G-LAW-04",
+   "found": true,
+   "id": "V06",
+   "source": "A-P21"
+  },
+  {
+   "chars": 106,
+   "consumer_gate": "G-LAW-09",
+   "found": true,
+   "id": "V07",
+   "source": "A-P21"
+  },
+  {
+   "chars": 42,
+   "consumer_gate": "G-REFINED-ADMISSIBLE",
+   "found": true,
+   "id": "V08",
+   "source": "A-P21"
+  },
+  {
+   "chars": 46,
+   "consumer_gate": "G-DRIVEN-WINDOW",
+   "found": true,
+   "id": "V09",
+   "source": "A-P21"
+  },
+  {
+   "chars": 79,
+   "consumer_gate": "G-WELD-COARSE",
+   "found": true,
+   "id": "V10",
+   "source": "A-P21"
+  },
+  {
+   "chars": 89,
+   "consumer_gate": "G-WELD-REFINED",
+   "found": true,
+   "id": "V11",
+   "source": "A-P21"
+  },
+  {
+   "chars": 98,
+   "consumer_gate": "G-SPLIT-FIBER",
+   "found": true,
+   "id": "V12",
+   "source": "A-P04"
+  },
+  {
+   "chars": 81,
+   "consumer_gate": "G-CEILING",
+   "found": true,
+   "id": "V13",
+   "source": "A-P04"
+  },
+  {
+   "chars": 112,
+   "consumer_gate": "G-NEW-PLACES",
+   "found": true,
+   "id": "V14",
+   "source": "A-P04"
+  },
+  {
+   "chars": 84,
+   "consumer_gate": "G-DIA",
+   "found": true,
+   "id": "V15",
+   "source": "A-P04"
+  },
+  {
+   "chars": 67,
+   "consumer_gate": "G-SPLIT-FIBER",
+   "found": true,
+   "id": "V16",
+   "source": "A-P04"
+  },
+  {
+   "chars": 58,
+   "consumer_gate": "G-CUT-UNIQUE",
+   "found": true,
+   "id": "V17",
+   "source": "A-P04"
+  },
+  {
+   "chars": 137,
+   "consumer_gate": "G-LAW-06",
+   "found": true,
+   "id": "V18",
+   "source": "A-P06"
+  },
+  {
+   "chars": 136,
+   "consumer_gate": "G-CUT-UNIQUE",
+   "found": true,
+   "id": "V19",
+   "source": "A-P06"
+  },
+  {
+   "chars": 43,
+   "consumer_gate": "G-COMPATIBILITY",
+   "found": true,
+   "id": "V20",
+   "source": "A-P06"
+  },
+  {
+   "chars": 60,
+   "consumer_gate": "G-LAW-09",
+   "found": true,
+   "id": "V21",
+   "source": "A-P09"
+  },
+  {
+   "chars": 98,
+   "consumer_gate": "G-TWO-WAY",
+   "found": true,
+   "id": "V22",
+   "source": "A-HA"
+  },
+  {
+   "chars": 116,
+   "consumer_gate": "G-I7-READOUT",
+   "found": true,
+   "id": "V23",
+   "source": "A-HA"
+  },
+  {
+   "chars": 90,
+   "consumer_gate": "G-WALL-L1",
+   "found": true,
+   "id": "V24",
+   "source": "A-L1"
+  },
+  {
+   "chars": 69,
+   "consumer_gate": "G-WALL-BHS",
+   "found": true,
+   "id": "V25",
+   "source": "A-CAT"
+  },
+  {
+   "chars": 57,
+   "consumer_gate": "G-WALL-KR",
+   "found": true,
+   "id": "V26",
+   "source": "A-CAT"
+  }
+ ],
+ "verdict": {
+  "head": "LOR-A-REFINEMENT-ACTS",
+  "outcome": "LOR-A-REFINEMENT-ACTS",
+  "segments": [
+   "LOR-A-REFINEMENT-ACTS-[ONE LAWFUL STEP TAKEN AT THE R = 6 WELDED RECORD (2, 2, 2); PLACES 9 -> 36 SITES AND 27 -> 108 INTERVALS; NEW SITES 27 = 9 PER DIRECTION; DETERMINED 54, FREE 54; ADDITIVITY 27 OF 27, RESTRICTION 27 OF 27, READOUT 9 OF 9]@WINDOW-16-DRIVEN-OF-5,184-WITNESSES",
+   "LOR-A-LAWS-2-OF-3-NON-EMPTY-AND-THEY-COMPOSE<PAPER-06=UNIQUE-AT-27-OF-27-INTERVALS(FIBER-1|ORBITS-1|SIMPLEX-DIM-0|PINNED-TRANSITIVE)-AGAINST-9-OF-27-AT-R-4|PAPER-04=DYADIC-LIVE-RAW-FIBER-1-SUBDIVIDES-27-OF-27|PAPER-09=EMPTY-ALL-27-INTERVALS-IN-THE-SUPPORT-HOLE-[1, 2]|COMPATIBILITY=COMPOSE-AND-AGREE(06-SUPPORT-IS-04-WHOLE-FIBER-AT-27-OF-27;THE-TWO-ORDERS-AGREE-AT-108-OF-108-SLOTS;CONFLICT-FALSE)>",
+   "LOR-A-DICTIONARY-SURVIVES-AT-THE-EXTENDED-CARRIER-[ACTOR-PLUS-CO-DIVISION-PAIR-TO-SITE]<9+27=36|DETERMINED-LINKS-54-ARE-THE-54-ACTOR-IN-PAIR-INCIDENCES|FREE-LINKS-54-ARE-3-EACH-INSIDE-THE-18-NON-COLLINEAR-DECLARED-TRIANGLES -- THE-PROCESS-SUPPLIES-BOTH-HALVES:THE-SPLIT-BY-ITS-OWN-SEAM(1-LIVE-CUT-LOCUS-OF-17-AT-5,184-OF-5,184-WITNESSES;SPLIT-1-1-AT-27-OF-27)AND-THE-FREE-HALF-BY-ITS-DIVISION-FOOTPRINTS -- CARRIER-ISOMORPHISM-AT-72-OF-5,184-COUNTING-ONLY-AGAINST-864-WITH-THE-REFINED-LATTICES-EDGE-COUNT:THE-ABSTRACT-STRUCTURE-IS-CHEAPER-THAN-THE-DICTIONARY -- REFINED-WELD=FOUND-candidate@EMBEDDING+QUOTIENT<AUT-432|FIBERS-1/1/1|ZERO-FREE-ITEMS> -- COMPLETION-RELATIVE:PAPER-04S-OWN-DECLARED-MINIMAL-COMPLETION-IS-ADMISSIBLE-36-OF-36-BUT-UNMOTIVATED(FIBERS-24/3/2)>",
+   "LOR-A-CEILING-EXACTLY-1-STEP<FLOOR-LOG2-MIN-N=FLOOR-LOG2-2=1;AFTER-THE-STEP-MIN-N-1-CEILING-0 -- A-SECOND-STEP-NEEDS-MIN-N-4-=(4,4,4)-REACHABLE-ONLY-AT-R-12-BY-THE-BUDGET-LAW-R-3m -- LADDER-L-MAX-3x2^FLOOR-LOG2-m-WITH-EQUALITY-AT-THE-DYADIC-BUDGETS-[3, 6, 12, 24] -- SIG=DET-3-TO-3/4-EXACTLY-2^d-4|SIGNATURE-(+,+)-UNMOVED-36-OF-36|REFINED-DET-IS-PAPER-19S-COMMITTED-3/4 -- DIA=THE-DIAGONAL-BUYS-9-OF-THE-27-NEW-PLACES-AND-WITHOUT-IT-9-REFINED-SITES-LIE-ON-NO-COARSE-INTERVAL-ODD-ODD,PAPER-04S-d-3-MECHANISM-27-OF-216-ONE-DIMENSION-DOWN>"
+  ]
+ },
+ "waiver_ledger": {
+  "G-ANCHOR-CONSUMERS": {
+   "class": "FALSIFIED",
+   "forcing": "MUT-CONSUMER-BINDING names an unregistered gate"
+  },
+  "G-ARTIFACT-INTEGRITY": {
+   "class": "EXERCISED-IN-RUN",
+   "forcing": "the run corrupts a written byte and shows the check detects it before comparing the real artifacts"
+  },
+  "G-COVERAGE": {
+   "class": "SELF-REFERENTIAL",
+   "forcing": "the gate is the coverage ledger"
+  },
+  "G-DICTIONARY-CARRIER": {
+   "class": "SHARED-TARGET",
+   "forcing": "MUT-CARRIER corrupts the carrier census the same construction feeds and is killed at G-PROCESS-SUPPLY, one gate later; the bijection itself is a construction whose failure would kill G-NEW-PLACES first"
+  },
+  "G-DRIVEN-MAXHITS": {
+   "class": "MEASURED-PER-OBJECT",
+   "forcing": "the predicate is the builder's own maxhits read off every driven schedule; MUT-WINDOW removes schedules from the same window and dies one gate earlier, and no corruption of a v10 internal is available to this file"
+  },
+  "G-EXACT-ARITHMETIC": {
+   "class": "SELF-SCANNING",
+   "forcing": "the gate parses this file; a float literal or a true division would fail it by construction"
+  },
+  "G-I7-READOUT": {
+   "class": "READ-ANCHORED",
+   "forcing": "the readout sentence is anchored verbatim at V23 and the link list at a (path, value) anchor; MUT-VERBATIM and MUT-ANCHOR-VALUE falsify both anchor classes"
+  },
+  "G-MUTANTS-ON-TARGET": {
+   "class": "SELF-REFERENTIAL",
+   "forcing": "the gate IS the mutant sweep"
+  },
+  "G-NO-SUBPROCESS": {
+   "class": "SELF-SCANNING",
+   "forcing": "same: the gate parses this file's own imports"
+  },
+  "G-PAPER-COVERAGE-FINAL": {
+   "class": "AGGREGATE",
+   "forcing": "it closes over gates each of which is separately falsified"
+  },
+  "G-PROVENANCE": {
+   "class": "FALSIFIED-BY-A-FLAG",
+   "forcing": "--break-anchor NAME corrupts any source's expected digest and the run dies here"
+  },
+  "G-REACHABILITY": {
+   "class": "SELF-REFERENTIAL",
+   "forcing": "same"
+  },
+  "G-READS-DECLARED": {
+   "class": "STRUCTURAL",
+   "forcing": "every reader in this file is categorised at the call site and this gate holds each category against its own declared set, so an uncategorised or undeclared read cannot be added without failing here"
+  },
+  "G-REFINED-ADMISSIBLE": {
+   "class": "SHARED-TARGET",
+   "forcing": "MUT-ADDITIVITY corrupts the refined counts this gate reads and is killed at G-REFINED-BUILD, one gate earlier"
+  },
+  "G-SLICE-EXIT-FREE": {
+   "class": "SOURCE-FORCED",
+   "forcing": "the property is evaluated on pinned bytes; corrupting it would corrupt a pinned source and die at G-PROVENANCE first"
+  },
+  "G-SWEEP-BOUND": {
+   "class": "DELIVERY-ONLY",
+   "forcing": "a mutant sub-run declares itself un-swept by construction, so no in-process mutant can reach its failing branch; the same conjunction is re-taken at G-ARTIFACT-INTEGRITY"
+  }
+ },
+ "walls": {
+  "BHS": {
+   "abstention": "a Poisson sprinkling admits no Lorentz-invariant finite-valency graph and these records are finite-valency by construction, so running the test would manufacture a false negative; none is run",
+   "hits": []
+  },
+  "COSMO": {
+   "description_stamp_present": true,
+   "hits": [],
+   "stamp": "the new places are refined INTERVALS of the declared record and the sites the dyadic move inserts into them; no actor is created and no claim beyond this measured interval and site structure is made"
+  },
+  "KR": {
+   "dimension_readings_taken": 0,
+   "hits": []
+  },
+  "L1": {
+   "argument": "order-level covariance would require a group declared to act on the generated causal order and a reason to read it as a covariance group; this arena supplies finite records and a translation action on a lattice of counts, and this unit constructs no bridge from it to any boost.  The fourth form is not tested here",
+   "banned_sentence_present": false,
+   "fourth_form_tested": false
+  },
+  "LORENTZ_NAMED": {
+   "present": true,
+   "sentence": "The induced form is NAMED AND NOT READ: q = [[1, -1/2], [-1/2, 1]] is a positive definite Euclidean form on a thirty-six-site lattice of counts, it is not a signature, it is not a metric on any continuum, and no Lorentzian reading of it is taken here or licensed by anything measured here."
+  }
+ },
+ "weld_coarse": {
+  "directed_comparator": 0,
+  "fate": "FOUND-candidate",
+  "fibers": {
+   "I-DIRECTION-LABEL": 1,
+   "I-ORIENT": 1,
+   "I-SITE-ASSIGNMENT": 1
+  },
+  "free_items": [],
+  "isomorphisms": 1296,
+  "quotient_maps": 1296,
+  "rows": [
+   {
+    "arena": "R6-CONCAT(2,2,2)",
+    "base_maps_read": 1296,
+    "count_cells": 27,
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "count_max": 2,
+    "count_min": 2,
+    "fate": "FOUND-candidate",
+    "fibers_base_map_invariant": true,
+    "free_items": [],
+    "free_items_at_every_base_map": 0,
+    "induced_record_at_the_base_map": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "inventory": {
+     "I-DIRECTION-LABEL": 1,
+     "I-ORIENT": 1,
+     "I-SITE-ASSIGNMENT": 1
+    },
+    "isomorphisms": 1296,
+    "isomorphisms_directed_comparator": 0,
+    "label_fiber_spread": [
+     1
+    ],
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "orient_fiber_spread": [
+     1
+    ],
+    "reading": "EMBEDDING",
+    "reason": "zero free items at the RSQ standard",
+    "site_arity": 9,
+    "site_gen": "ACTOR",
+    "target_sites": 9
+   },
+   {
+    "arena": "R6-CONCAT(2,2,2)",
+    "base_maps_read": 1296,
+    "count_cells": 27,
+    "count_gen": "DIVISION-COUNT-IN-THE-DECLARED-WINDOW",
+    "count_max": 2,
+    "count_min": 2,
+    "fate": "FOUND-candidate",
+    "fibers_base_map_invariant": true,
+    "free_items": [],
+    "free_items_at_every_base_map": 0,
+    "induced_record_at_the_base_map": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "inventory": {
+     "I-DIRECTION-LABEL": 1,
+     "I-ORIENT": 1,
+     "I-SITE-ASSIGNMENT": 1
+    },
+    "label_fiber_spread": [
+     1
+    ],
+    "link_gen": "CO-DIVISION-ACTOR-PAIR",
+    "orient_fiber_spread": [
+     1
+    ],
+    "quotient_maps": 1296,
+    "reading": "QUOTIENT",
+    "reason": "zero free items at the RSQ standard",
+    "site_arity": 9,
+    "site_gen": "ACTOR",
+    "target_sites": 9
+   }
+  ]
+ }
+}

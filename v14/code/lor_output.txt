@@ -1,0 +1,221 @@
+
+[SEC 1] PROVENANCE -- 19 pinned sources, hash-verified
+  [PASS] G-PROVENANCE
+         EVERY RUNTIME INPUT IS A HASH-PINNED SOURCE.  Each of the 19 declared sources is read by path and its sha256-12 compared against this unit's frozen declaration, per object; a drifted byte in any one of them dies here before a single number is computed
+         evidence: sources 19, mismatched none
+  [PASS] G-READS-DECLARED
+         NO UNANCHORED RUNTIME INPUT.  Every read in this file is categorised at the call site; the SOURCE category must equal the declared source set exactly and no undeclared category may appear, so a read of mutable repository state cannot be added without failing here
+         evidence: categories ['SOURCE'], source reads 19 of 19 declared
+  [PASS] G-EXACT-ARITHMETIC
+         THE ARITHMETIC IS EXACT BY CONSTRUCTION, PROVED ON THIS FILE'S OWN SYNTAX TREE.  No float literal, no float-adjacent import and no true-division operator occurs anywhere in this file; every quotient is a Fraction
+         evidence: float literals 0, true divisions 0, float-adjacent imports 0
+  [PASS] G-NO-SUBPROCESS
+         THE RUN IS OFF-TREE AND GIT-LESS (#91).  No subprocess, network or shell import occurs in this file, so the delivery run reads nothing but its declared sources and can be byte-reproduced with no version control present
+         evidence: forbidden imports 0
+  [PASS] G-ANCHORS-READ
+         THE PREDECESSORS ARE READ AT (PATH, VALUE), NOT ONLY AT BYTES.  31 rows are read out of five committed receipts by path and compared against this unit's frozen declaration, each row naming the gate it licenses; a path drift that changed the arena or the verdict while preserving a file hash dies here
+         evidence: path-value anchors 31, mismatched none, consumer gates 12
+  [PASS] G-VERBATIM
+         QUOTE FIDELITY (#62, corrected spec).  Every sentence this unit quotes or reimplements from a predecessor is matched WORD FOR WORD against that predecessor's committed bytes, after markdown-prefix stripping, ASCII folding and whitespace normalisation, with a 30-character floor; 26 anchors, evaluated BEFORE the byte anchors are used for anything
+         evidence: verbatim anchors 26, missing none
+  [PASS] G-ANCHOR-CONSUMERS
+         EVERY ANCHOR BINDS MEANING TO USE.  Each verbatim and each path-value row names the gate it licenses, and every named gate must exist in this run's declared registry -- an anchor whose consumer is an unread label binds existence, not meaning
+         evidence: consumer gates named 24, unregistered none
+  [PASS] G-I7-READOUT
+         I7'S READOUT AND ADMISSIBILITY CRITERION ARE THE PINNED ONES, RECOMPUTED.  The readout sentence is matched verbatim against HA's committed bytes, the declared link list is read out of I7's own receipt at (path, value), and the declared count box is re-enumerated here rather than cited
+         evidence: box admissible points recomputed 361, declared link list matches I7's own receipt True
+
+[SEC 2] STAGE 1 -- THE (2,2,2) ARENA, BUILT FROM NOTHING
+  [PASS] G-PARTITION-COUNT
+         THE ROUND FAMILY IS COUNTED TWICE BY ROUTES THAT SHARE NO CODE.  Exhaustive enumeration of the partitions of nine sites into three triples, and the closed form 9!/(3!^3 3!) built from a factorial computed here; the two must agree and must equal the value paper-21's committed receipt carries at /counts/partitions
+         evidence: enumeration 280, closed form 280, paper-21's committed row 280
+  [PASS] G-BUDGET-THEOREM
+         THE BUDGET THEOREM, MEASURED EXHAUSTIVELY.  No round of this cycle deposits more than 9 link incidences -- measured over all 280 partitions, per partition -- so six rounds carry at most 54, and the link-constant record (2, 2, 2) needs exactly 6 x 9 = 54: equality forces every round to saturate, which makes the census over the 36 saturating groupings exhaustive over the whole family
+         evidence: max incidence per round 9, six-round budget 54, saturating partitions 36, spectrum {0: 1, 4: 27, 6: 54, 7: 162, 9: 36}
+  [PASS] G-72-TRIPLES
+         THE R = 3 I7-STRICT TRIPLES, COUNTED TWICE AND ANCHORED.  Route one sums the per-round incidence vectors and requires the field to be identically one at all 27 cells; route two never forms an incidence vector at all and instead requires the triple's nine conflict groups to cover each of the 27 unordered declared actor pairs exactly once.  Both must return the number paper-19 and paper-21 committed
+         evidence: route 1 72, route 2 (pair-cover) 72, paper-21 committed 72, paper-19 committed 72
+  [PASS] G-R6-FIELD
+         THE ARENA IS (2, 2, 2) AT EVERY CELL, CHECKED PER CELL.  Two of the 72 I7-STRICT triples concatenate to a six-round schedule whose summed incidence field is 2 at each of the 27 (site, link) cells individually -- never as a total -- and the induced record is link-constant and positive definite at each of the nine sites individually, matching paper-21's committed G-R6-DOOR row
+         evidence: cells at count 2: 27 of 27, record [(2, 2, 2)], admissible sites 9 of 9, paper-21's committed record [2, 2, 2]
+  [PASS] G-WITNESSES
+         EVERY ORDERED PAIR OF THE 72 IS A WITNESS, MEASURED RATHER THAN MULTIPLIED.  The concatenation census runs each of the 5184 ordered pairs through the per-cell test independently; the count must equal the value paper-21 committed at /split/r6_door/ordered_witnesses
+         evidence: ordered witnesses 5184 of 5184 ordered pairs; paper-21's committed row 5184
+  [PASS] G-WELD-COARSE
+         THE WELD IS RE-VERIFIED ZERO-FREE ON THIS UNIT'S OWN DETECTOR.  The co-division arena of the concatenated record is built here from the actor pairs and run through both declared readings; each inventory item's fiber is checked individually against 1, and the isomorphism count against paper-21's and paper-19's committed rows
+         evidence: isomorphisms 1296, quotient maps 1296, fibers {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}, free items none, fate FOUND-candidate/FOUND-candidate, directed comparator 0
+
+[SEC 3] STAGE 1 -- THE DECLARED DRIVEN WINDOW W6
+  [PASS] G-SLICE-EXIT-FREE
+         THE COMMITTED LAYERS ARE LOADED WITHOUT RUNNING THEIR MODULE-LEVEL CODE.  d42b1 enters as a text slice cut at its own banner print; d60 and d66 enter by AST extraction of their definitions only; and no extracted body may call exit
+         evidence: slice exit-free True, extracted bodies exit-free True
+  [PASS] G-DRIVEN-WINDOW
+         THE R = 6 RECORDS ARE DRIVEN, NOT ONLY COMBINATORIAL.  A declared window of 16 six-round schedules is driven through the committed transport grammar's own menus, every event specified by its full tuple; for each schedule INDIVIDUALLY the driven link field -- read off the layer's own register footprints -- is compared cell by cell against the field the combinatorial route computes from the groupings alone, and each record's footprints are compared as a multiset against its own conflict groups.  Paper-21 drove nothing at six rounds
+         evidence: schedules driven 16, strata {'W6-DEAD': 8, 'W6-SEEDFAN-k1': 1, 'W6-SEEDFAN-k2': 1, 'W6-SUPPLIED': 6} against 6 supplied + 8 dead classes + 2 seed-fan, cells compared 432, mismatched none, event lengths [99, 100, 101, 102], divisions [18]
+  [PASS] G-DRIVEN-MAXHITS
+         THE v10-LAYER TIE-BREAK IS PRICED AS A GATE (#91/#160).  d60's `pick` breaks ties with sorted(key=repr), which is hash-seed dependent; every event of every driven schedule here is fully specified, so the builder's own maxhits must read 1 at every schedule and no refusal may occur -- the immunity is measured per schedule, not asserted
+         evidence: schedules at maxhits 1 with no refusal 16 of 16, offenders none
+
+[SEC 4] STAGE 1 -- THE SPLITTABLE CENSUS AT n = 2
+  [PASS] G-SPLIT-FIBER
+         EVERY INTERVAL IS SPLITTABLE AND THE SPLIT IS A POINT, CHECKED PER INTERVAL.  Paper-04's identity -- an interval carrying only its total n admits exactly n-1 places for one interior boundary -- is evaluated at each of the 27 intervals on its own count; at count 2 each fiber is the single point (1, 1), so the raw product over all 27 slots is 1, against 0 at the R = 4 welded record where a count-1 interval cannot be split at all
+         evidence: intervals with positive fiber 27 of 27, per-interval fibers [1], raw product 1, paper-21's committed R = 4 raw fiber 0
+
+[SEC 5] STAGES 2/3 -- THE THREE LAWS AT THIS ARENA
+  [PASS] G-LAW-06
+         PAPER-06'S LAW IS NON-EMPTY AND UNIQUE HERE, AT THE RECORD LEVEL.  Its committed per-interval rows are read at (path, value) and applied to each of the 27 intervals on that interval's own count: at count 2 the fiber is one point, the orbit count is 1, the invariant simplex has dimension 0 = n - 2 and the pinned chart group is transitive.  At R = 4 the same law was unique at 9 of 27 intervals and empty at the record level
+         evidence: intervals non-empty 27 of 27, unique 27 of 27, count-2 row fiber 1 orbits 1 simplex-dim 0 transitive True
+  [PASS] G-LAW-04
+         PAPER-04'S DYADIC MOVE IS LIVE HERE, AND ITS RAW FIBER IS A POINT.  The move's committed class row -- ADMISSIBLE, subdividing 27 of 27 coarse intervals onto a 6 x 6 refined lattice -- is read at (path, value); the raw fiber recomputed here from the counts alone equals the value paper-21 committed for this rung; and (2, 2, 2) is the one vector in I7's whole declared box whose admissible split is unique
+         evidence: class ADMISSIBLE, subdivided 27 of 27, refined sites 36, raw fiber here 1, paper-21's committed row 1, the unique-split vector [[2, 2, 2]] of 261 splittable box points
+  [PASS] G-LAW-09
+         PAPER-09'S KERNEL IS STILL EMPTY, AND THE MECHANISM IS ITS OWN SUPPORT HOLE.  Its committed first-return law has no inter-renewal leg of length one or two, exactly; every count this record carries is 2, so each of the 27 intervals is tested individually against the hole and each falls inside it
+         evidence: support holes [1, 2], counts carried [2], intervals in the hole 27 of 27, paper-21's committed row 27
+
+[SEC 6] STAGES 2/3 -- ONE LAWFUL REFINEMENT STEP
+  [PASS] G-REFINED-BUILD
+         THE STEP IS TAKEN AND ITS FORCED PART VERIFIED PER CONSTRAINT.  Additivity is checked at each of the 27 interval constraints individually; the coarse counts are then read BACK from the refined arena by summing along the unique minimal decomposition and compared per cell; and I7's readout is recomputed on the restricted counts and compared per site, so record-IS-metric is shown to commute with this refinement rather than assumed
+         evidence: additivity 27 of 27 constraints, restriction 27 of 27 cells, readout recovered at 9 of 9 sites
+  [PASS] G-NEW-PLACES
+         THE PLACE-COUNT GROWS, AND THE GROWTH IS COUNTED PER SITE AND PER SLOT.  Every refined site is classified individually as a coarse image or as the interior of exactly one coarse interval, and every refined (site, link) slot individually as carrying a half of a coarse interval or as free: 9 sites become 36 and 27 intervals become 108, of which exactly half are determined by the step and half are the free transverse links paper-04 measured
+         evidence: sites 9 -> 36 (new 27, unreached 0), intervals 27 -> 108 (determined 54, free 54), new sites by direction {'[1, 0]': 9, '[0, 1]': 9, '[1, 1]': 9}
+
+[SEC 7] STAGE 4 -- COMPATIBILITY OF THE TWO LAWS
+  [PASS] G-COMPATIBILITY
+         THE TWO LAWS COMPOSE AND AGREE, MEASURED ON THE OBJECTS.  At each of the 27 intervals the support of paper-06's unique invariant law is compared as a SET against the whole of paper-04's dyadic split fiber; then the refined record is built twice, once from each law's output, and the two are compared slot by slot over all 108 refined slots.  Neither law is consulted about the other's arena
+         evidence: intervals where 06's support is exactly 04's fiber 27 of 27; refined slots equal under both orders 108 of 108
+
+[SEC 8] STAGE 5 -- THE REFINED RECORD'S STATUS, AND THE DICTIONARY
+  [PASS] G-REFINED-ADMISSIBLE
+         THE REFINED OBJECT IS STILL A RECORD, CHECKED PER SITE.  I7's own Sylvester criterion is evaluated at each of the 36 refined sites individually under BOTH declared completions; the process-supplied completion gives the link-constant record (1, 1, 1) at every site -- paper-19's own landing vector, admissible inside I7's declared count box and, like it, not one of I7's declared records
+         evidence: admissible refined sites: process-supplied 36 of 36, paper-04-minimal 36 of 36; link-constant True / False; determined half values [1]
+  [PASS] G-DICTIONARY-CARRIER
+         THE REFINEMENT'S NEW PLACES ARE THE OLD LINKS, AS A BIJECTION.  The 9 actors and the 27 co-division actor pairs are mapped to the 36 refined sites -- actor to its coarse image, pair to the interior of its own interval -- and the map is checked to be a bijection; then each of the 54 determined refined links is checked individually to be an actor-in-pair incidence, and each of the 54 free refined links individually to be a pair of co-division pairs spanning one of the 18 non-collinear declared triangles, three per triangle
+         evidence: carrier 9 actors + 27 pairs = 36 sites, bijection True; determined links that are incidences 54 of 54; free links inside a triangle 54 of 54, [3] per triangle over 18 triangles
+  [PASS] G-PROCESS-SUPPLY
+         THE DICTIONARY EXTENDS AT A MEASURED MINORITY, AND THE ABSTRACT STRUCTURE IS CHEAPER THAN THE DICTIONARY.  Every one of the 5184 ordered concatenation witnesses is classified individually by its own conflict groups: the canonical carrier is an isomorphism at exactly those whose 18 groups are the 18 non-collinear declared triangles, each once.  Separately, the number of witnesses whose relation merely has the refined lattice's edge count is measured, and it is larger
+         evidence: witnesses 5184, canonical-carrier isomorphisms 72, witnesses with the refined lattice's edge count 864, classes 9
+  [PASS] G-CUT-UNIQUE
+         THE PROCESS SUPPLIES THE SPLIT, AND AT THIS ARENA IT SUPPLIES EXACTLY ONE.  Of the 17 event-level loci at which the six-round record can be cut, the number yielding a strictly positive split at EVERY one of the 27 intervals is measured -- by two routes that share no state -- at each of the 5184 witnesses: it is one, the seam between the two three-round blocks, and the split it yields is (1, 1) at all 27.  The predicate is not vacuous: at the declared R = 9 control, OUTSIDE this unit's arena, ten loci are live
+         evidence: loci 17, live at the arena 1 ([9]), split multiset {(1, 1): 27}, census over all 5184 witnesses {(9,): 5184}, R = 9 control live loci 10 against a raw split fiber of 134217728
+  [PASS] G-WELD-REFINED
+         THE DICTIONARY SURVIVES THE STEP, AND ITS SURVIVAL IS COMPLETION-RELATIVE.  The refined arena's relation is built PURELY PROCESS-SIDE -- actor in pair, pair union pair a realised division footprint -- and run through both readings: the canonical carrier is an isomorphism, the detector returns 432 automorphisms and each inventory item's fiber is checked individually against 1, so the refined weld carries ZERO FREE ITEMS.  Under paper-04's own declared minimal completion the same carrier and the same edge set give a record that is not link-constant and the detector returns free items
+         evidence: process-supplied: fate FOUND-candidate, isomorphisms 432, fibers {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}, canonical carrier iso True with 0 zero cells and 27 of 27 coarse cells restored; paper-04-minimal: fate UNMOTIVATED fibers {'I-SITE-ASSIGNMENT': 24, 'I-DIRECTION-LABEL': 3, 'I-ORIENT': 2}; un-extended carrier ARITY-DEAD
+  [PASS] G-TWO-WAY
+         EVERY VALUE THIS DETECTOR CAN RETURN IS EXHIBITED IN THIS RUN, and the search order is shown not to be one of them.  FOUND at the coarse and the refined process-supplied arenas, UNMOTIVATED at paper-04's declared completion, ARITY-DEAD at the un-extended nine-actor carrier, and STRUCT-DEAD and COUNT-DEAD at this unit's declared falsifier and at the dead witness classes.  The isomorphism count at the coarse arena is recomputed under the PLAIN name order and must agree with the connected order
+         evidence: fates exhibited ['ARITY-DEAD', 'COUNT-DEAD', 'FOUND-candidate', 'STRUCT-DEAD', 'UNMOTIVATED'] (want ['ARITY-DEAD', 'COUNT-DEAD', 'FOUND-candidate', 'STRUCT-DEAD', 'UNMOTIVATED']); coarse isomorphism count under the plain order 1296 against the connected order 1296
+
+[SEC 9] STAGES 6/7 -- THE SIGNATURE, THE CEILING AND THE DIAGONAL
+  [PASS] G-SIG
+         THE DETERMINANT SCALES BY EXACTLY 2^d AND THE SIGNATURE DOES NOT MOVE.  I7's readout is recomputed on the coarse record and on the refined one; the ratio of determinants is formed as an exact Fraction and compared against 2^d = 4; positive definiteness is re-decided by Sylvester at every site of both; and the refined determinant must equal the value paper-19 committed for its own landing record, which this refinement reproduces one level up
+         evidence: coarse det 3, refined det 3/4, ratio 4, paper-19's committed uniform det 3/4, refined det spectrum ['3/4'], paper-04-minimal det spectrum ['1', '3/4', '7/4']
+  [PASS] G-CEILING
+         EXACTLY ONE STEP IS POSSIBLE HERE, AND THE LADDER IS COMPUTED RATHER THAN QUOTED.  Paper-04's ceiling law, matched verbatim against its committed bytes, evaluated on this record's own minimum count 2 gives floor(log2 2) = 1; the step is taken and the refined record's own minimum count is 1, so its ceiling is 0 and no second step exists.  A second step needs a minimum count of 4, and by the budget law the link-constant record (4, 4, 4) is reachable only at R = 12
+         evidence: min count 2, ceiling here 1, steps taken 1, refined min count 1, ceiling after the step 0, a second step needs min count 4 at R = 12, dyadic budgets [3, 6, 12, 24]
+  [PASS] G-DIA
+         THE DIAGONAL IS WHAT MAKES THE STEP SITE-COMPLETE, MEASURED AS A COUNTERFACTUAL.  With the declared link set the dyadic move leaves no refined site off a coarse interval; with the diagonal withdrawn, each refined site is re-tested individually and the odd-odd parity class -- 9 sites, one third of the new places -- lies on no coarse interval at all.  That is paper-04's own d = 3 mechanism, where the missing body diagonal strands 27 of 216 sites, reproduced one dimension down; and the diagonal buys exactly as many new places as each axis
+         evidence: unreached without the diagonal 9 of 36, parities ['[1, 1]'], new sites by direction {'[1, 0]': 9, '[0, 1]': 9, '[1, 1]': 9}, unreached with the diagonal 0
+
+[SEC 10] THE WALLS
+  [PASS] G-WALL-L1
+         L-1 IS ARGUED BEFORE ANY TEST AND THEN DECLINED.  The sentence retracted in 2026 is not reproduced anywhere in the object under test -- the gate whitespace-normalises, ASCII-folds and strips markdown prefixes from both sides, so a line-wrapped or blockquoted injection dies too -- and no order-level covariance test is run
+         evidence: banned-sentence hits 0
+  [PASS] G-WALL-BHS
+         NO SPRINKLING-GRADE LORENTZ-INVARIANCE READING.  The abstention is measured rather than asserted: this run's DECLARED MEASUREMENT SURFACE -- every measured receipt key together with the statement and evidence of every gate evaluated -- is scanned for a sprinkling-grade reading, and the declared falsifier writes one into that surface and dies here
+         evidence: sprinkling-grade hits in the declared surface: none
+  [PASS] G-WALL-KR
+         NO DIMENSION READING, SO NO HEIGHT CONTROL IS OWED.  This unit takes no chart width, no Myrheim-Meyer estimate and no max-shatter reading; the same declared surface is scanned for one, and the declared falsifier writes one in and dies here
+         evidence: dimension-reading hits in the declared surface: none
+  [PASS] G-WALL-COSMO
+         NO COSMOLOGICAL READING, AND THE NEW-PLACES LANGUAGE IS CONFINED.  Refinement here is a measured operation on a pinned record, never an expansion narrative: the declared measurement surface is scanned for an expansion reading and the declared falsifier writes one in and dies here; and the paper must carry, word for word, the stamp confining the new places to the measured interval and site structure
+         evidence: cosmological hits none, description stamp present in the object under test True
+  [PASS] G-WALL-LORENTZ-NAMED
+         THE LORENTZIAN RESONANCE IS NAMED, MANDATORILY.  A reader arriving from the relativity line will hear `signature` in a determinant; the naming sentence must be present in the object under test word for word, and the declared falsifier deletes it and dies here
+         evidence: naming sentence present True
+  [PASS] G-MEASURE-STAMP
+         NO COUNT BECOMES A PROBABILITY WITHOUT A DECLARED MEASURE (E-24).  Every fraction over a configuration space this unit publishes is listed with its own stamp and reason; a row without one dies here.  This unit declares no measure on the witness space, so every one of its fractions is COUNTING-ONLY and no typicality claim rests on any of them
+         evidence: stamped rows 4, unstamped none
+
+[SEC 11] THE VERDICT, THE FALSIFIER CENSUS AND THE PAPER GATES
+  [PASS] G-FALSIFIER-HONEST
+         EVERY FALSIFIER'S PUBLISHED DESCRIPTION IS VERIFIED AGAINST ITS CODE (E-23).  Each declared mutant's hook is located in this file's own syntax tree, its source published in the receipt, and the object its row NAMES as corrupted must actually appear in that source; a corruption that is a constant boolean -- the class that cannot fail -- is rejected, and every target gate must be in the declared registry
+         evidence: falsifiers 41, dishonest none
+  [PASS] G-VERDICT-RECONSTRUCTED
+         THE HEAD IS DERIVED TWICE, THE SECOND TIME BY A COMPARATOR THAT SHARES NOTHING WITH THE BUILDER.  The four verdict segments are rebuilt from the SERIALIZED receipt -- the bytes that will be written to disk -- by a function that re-types every template itself, shares no code and no input object with the builder, and reads no measured variable; complete string equality is required segment by segment
+         evidence: segments 4, equal 4, first difference none
+  [PASS] G-PAPER-CLAIMS
+         EVERY LOAD-BEARING SENTENCE IS RENDERED FROM THE RECEIPT AND MATCHED IN THE PAPER.  14 claims are built from receipt cells and each must appear word for word in the object under test, so a prose number cannot drift from the measurement that produced it
+         evidence: claims 14, missing none
+  [PASS] G-PAPER-TABLES
+         TABLES RENDER AS CLAIMS (E-22).  Every published table row is built from receipt cells and matched in the object under test, so a table cell cannot carry a number the receipt does not have
+         evidence: table rows 13, missing 0
+  [PASS] G-PAPER-COVERAGE
+         EVERY NUMERAL IN THE PAPER IS BACKED, FENCES AND INLINE SPANS INCLUDED (#20 + E-22).  The scan covers the WHOLE object under test -- prose, tables, inline code spans and the fenced verdict blocks -- against this run's registered numbers, the receipt it publishes and a declared exemption table every row of which must fire; and the fenced blocks are gated by MULTISET equality against the declared copy count, so a second forged copy of a verdict fence cannot hide behind a clean one
+         evidence: numerals scanned 771 (fenced 218, inline spans 343, words 111), unbacked none, word-unbacked none, dead exemptions none, fence multiset matches True (8 of 8)
+  [PASS] G-PAPER-HEAD-VERBATIM
+         THE PAPER'S HEAD IS THE RUN'S HEAD, CHARACTER FOR CHARACTER.  The derived first verdict segment must appear in the object under test verbatim, so the paper's verdict block can never go stale relative to the receipt
+         evidence: head present True
+  [PASS] G-PAPER-CLAIM-POLARITY
+         THE PAPER DOES NOT ASSERT THE OPPOSITE OF A MEASURED FATE.  6 polarity probes, each the negation of a fate this run measured, are searched for in the object under test; the declared falsifier appends one and dies here
+         evidence: probes 6, violations none
+
+[SEC 13] THE MUTANT SWEEP, IN-PROCESS
+    MUT-PARTITION                -> G-PARTITION-COUNT            ON TARGET
+    MUT-BUDGET                   -> G-BUDGET-THEOREM             ON TARGET
+    MUT-72                       -> G-72-TRIPLES                 ON TARGET
+    MUT-FIELD                    -> G-R6-FIELD                   ON TARGET
+    MUT-WITNESSES                -> G-WITNESSES                  ON TARGET
+    MUT-ANCHOR-VALUE             -> G-ANCHORS-READ               ON TARGET
+    MUT-VERBATIM                 -> G-VERBATIM                   ON TARGET
+    MUT-CONSUMER-BINDING         -> G-ANCHOR-CONSUMERS           ON TARGET
+    MUT-WINDOW                   -> G-DRIVEN-WINDOW              ON TARGET
+    MUT-SPLITFIBER               -> G-SPLIT-FIBER                ON TARGET
+    MUT-LAW06                    -> G-LAW-06                     ON TARGET
+    MUT-LAW04                    -> G-LAW-04                     ON TARGET
+    MUT-LAW09                    -> G-LAW-09                     ON TARGET
+    MUT-ADDITIVITY               -> G-REFINED-BUILD              ON TARGET
+    MUT-NEWPLACES                -> G-NEW-PLACES                 ON TARGET
+    MUT-COMPAT                   -> G-COMPATIBILITY              ON TARGET
+    MUT-CARRIER                  -> G-PROCESS-SUPPLY             ON TARGET
+    MUT-SUPPLY                   -> G-PROCESS-SUPPLY             ON TARGET
+    MUT-CUT                      -> G-CUT-UNIQUE                 ON TARGET
+    MUT-TWOWAY                   -> G-TWO-WAY                    ON TARGET
+    MUT-SIG                      -> G-SIG                        ON TARGET
+    MUT-CEILING                  -> G-CEILING                    ON TARGET
+    MUT-DIA                      -> G-DIA                        ON TARGET
+    MUT-WALL-L1                  -> G-WALL-L1                    ON TARGET
+    MUT-WALL-BHS                 -> G-WALL-BHS                   ON TARGET
+    MUT-WALL-KR                  -> G-WALL-KR                    ON TARGET
+    MUT-WALL-COSMO               -> G-WALL-COSMO                 ON TARGET
+    MUT-WALL-LORENTZ             -> G-WALL-LORENTZ-NAMED         ON TARGET
+    MUT-MEASURE                  -> G-MEASURE-STAMP              ON TARGET
+    MUT-SEAL-DROP                -> G-SEAL-COMPLETE              ON TARGET
+    MUT-VERDICT                  -> G-VERDICT-RECONSTRUCTED      ON TARGET
+    MUT-CLAIM                    -> G-PAPER-CLAIMS               ON TARGET
+    MUT-TABLE                    -> G-PAPER-TABLES               ON TARGET
+    MUT-COVERAGE-SCAN            -> G-PAPER-COVERAGE             ON TARGET
+    MUT-PAPER-FENCE-MULTISET     -> G-PAPER-COVERAGE             ON TARGET
+    MUT-EXEMPTION-DEAD           -> G-PAPER-COVERAGE             ON TARGET
+    MUT-WELD                     -> G-WELD-COARSE                ON TARGET
+    MUT-WELDREF                  -> G-WELD-REFINED               ON TARGET
+    MUT-FALSIFIER-HONEST         -> G-FALSIFIER-HONEST           ON TARGET
+    MUT-HEAD                     -> G-PAPER-HEAD-VERBATIM        ON TARGET
+    MUT-POLARITY                 -> G-PAPER-CLAIM-POLARITY       ON TARGET
+  [PASS] G-MUTANTS-ON-TARGET
+         EVERY DECLARED MUTANT IS RUN IN-PROCESS AND DIES AT THE GATE IT NAMES.  41 mutants, each a real corruption of a measured value or of the object under test, each required to be killed BY ITS OWN NAMED GATE rather than by whichever gate fires first
+         evidence: mutants 41, off target none
+  [PASS] G-COVERAGE
+         THE COVERAGE LEDGER IS HONEST AND ITS DENOMINATOR IS THIS RUN'S OWN.  Every gate evaluated anywhere in this run is either falsified by a declared mutant or waived with a machine-readable forcing; the declared gate registry and the set actually evaluated must agree exactly, so a gate removed from the file or added without a registry row dies here
+         evidence: gates 53, with a mutant 38, waived 16, uncovered none, registry drift none
+  [PASS] G-REACHABILITY
+         EVERY FALSIFIER REACHES ITS GATE (#34).  A mutant whose target gate is never evaluated on the run's own path is dead code wearing a green badge; every declared target must be a gate this run actually took
+         evidence: mutants 41, targets never evaluated none
+  [PASS] G-SWEEP-BOUND
+         THE MUTANT SWEEP'S EXECUTION IS BOUND, NOT MERELY DECLARED.  A delivery-level run must carry one sweep row per declared mutant (41), every row ON TARGET, and the same conjunction is re-taken at the terminal integrity gate, so the only writer in this file is downstream of a sweep that actually ran
+         evidence: delivery-level True, sweep rows 41 of 41, on target 41
+  [PASS] G-PAPER-COVERAGE-FINAL
+         THE PAPER LAYER CLOSES.  Claim rendering, table rendering, numeral coverage including fenced blocks and inline spans, head-verbatim and claim polarity have all been evaluated, and the receipt carries each of their objects
+         evidence: paper objects present True, fence multiset True
+  [PASS] G-SEAL-COMPLETE
+         THE SEAL MANIFEST IS TOTAL (#119 + #148).  Every published receipt key is either sealed at the moment its own gate passed or listed DECLARED-UNSEALED; the manifest is compared against the DECLARED seal set rather than against the seals that happened to be taken, so a dropped seal row dies here
+         evidence: seals taken 36, declared 36, missing none, extra none, unaccounted receipt keys none

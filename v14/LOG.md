@@ -7720,3 +7720,60 @@ entry (c) closed as the separation ladder.  The persistence
 verdict of record: selective survival — structure that is
 forced survives growth; coincidences of scale die; and the
 window law replaces the magic number.
+
+## 2026-08-11 — LOR (PAPER-30) DELIVERED: REFINEMENT ACTS — SITES 9→36, THE DICTIONARY SURVIVES AT AN EXTENDED CARRIER; COMMIT-AS-IS (v14 LEDGER #252)
+
+The refinement worker delivered; all candidate readings.
+**Verdict: LOR-A-REFINEMENT-ACTS** — 2 of 3 laws non-empty
+(04's dyadic raw fiber 1 subdividing 27/27; 06 unique at
+27/27 record-level; 09 still empty in its {1,2} hole); ONE
+LAWFUL STEP TAKEN (additivity 27/27; restriction 27/27;
+readout 9/9 — record-IS-metric COMMUTES with refinement).
+**THE NEW-PLACES ANSWER: sites 9 → 36 (+27, exactly 9 per
+direction, 0 unreached); intervals 27 → 108 (54 determined =
+the coarse doubled; 54 free = paper-04's own free-transverse
+half)** — description-stamped; no actor created; the
+expansion-reading falsifier dies.  **THE DICTIONARY SURVIVES
+— at an EXTENDED CARRIER: SITE ← ACTOR ⊕ CO-DIVISION-PAIR
+(9+27=36 bijection; the 54 determined links ARE the
+actor-in-pair incidences; the free links live inside the 18
+non-collinear triangles); refined weld FOUND at both
+readings, Aut 432, fibers 1/1/1, ZERO FREE ITEMS; the bare
+9-actor carrier is ARITY-DEAD.  THE PROCESS SUPPLIES BOTH
+HALVES: the split by its own seam (of 17 event-level cut loci
+exactly 1 is live, at 5,184/5,184 witnesses, giving (1,1) at
+27/27; the R=9 control shows 10 live — not vacuous) and the
+free half by its division footprints (72/5,184,
+COUNTING-ONLY).**  THE SHARPEST FINDING: the abstract
+structure is CHEAPER than the dictionary (864 witnesses carry
+the edge count; only 72 pass the canonical carrier; two dead
+classes abstractly isomorphic with fibers 1/1/1 while the
+carrier induces zero cells — STRUCTURAL ISOMORPHISM ≠ THE
+DICTIONARY); and the completion is completion-relative
+(paper-04's own declared minimal completion admissible but
+UNMOTIVATED 24/3/2; the process-supplied one is the unique
+link-constant completion and keeps the weld motivated).
+COMPATIBILITY: COMPOSE-AND-AGREE (06's support = 04's whole
+fiber; 108/108 slots agree; conflict FALSE).  THE CEILING
+THEOREM: exactly one step at (2,2,2); a second needs R=12;
+**the dyadic ladder L_max = 3·2^⌊log₂ m⌋ — equality at R = 3,
+6, 12, 24** [the places-are-logarithmically-expensive gloss:
+candidate, only the R=6 row driven].  SIG FEED: det 3 → 3/4
+(exactly 2^d); signature (+,+) UNMOVED 36/36; **the refined
+det IS paper-19's committed 3/4 — the step lands on
+paper-19's own record at four times the places**; det
+completion-relative, signature completion-blind.  DIA: the
+diagonal buys 9 of the 27 new places; withdrawn, 9 odd-odd
+sites lie on no coarse interval; 9/9/9 isotropy vs R=4's
+anisotropy.  W6 = 16 driven schedules of 5,184 witnesses —
+THE FIRST DRIVEN R=6 RECORDS IN THE LINE; every other column
+exhaustive.  Instrument defects found+fixed in construction
+(a real coverage hole; two early seals; a growing-list seal;
+the read-registry accumulation that killed all 38 mutants
+off-target — all repaired; 41/41 now on target) + two
+computed-value bugs caught against prototypes pre-delivery
+(disclosed).  Counts: 53 gates; 41 mutants; 36 seals total;
+771 numerals 0 unbacked; byte ×2 + off-tree git-less.  Shas:
+paper f3e9e9df2c70, code 878e6007b785, output 427a5da397aa,
+receipt 8b4ca74d954c.  Committed AS-IS; battery next; panel
+queued on capacity.
