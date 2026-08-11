@@ -6297,3 +6297,18 @@ this ledger at #205) and paper-26 REQ2 (Wave B — pin
 obligation armed; launches as capacity frees).  SIG
 (paper-24) still awaits paper-21's terminal (panel in
 flight).**
+
+## 2026-08-11 — GDL (PAPER-25) PINNED AND LAUNCHED ON THE SUMMIT'S TERMINAL (v14 LEDGER #205)
+
+v14/note-gdl-pin.md frozen per THE STRATEGIC PLAN Wave A.  The
+question: does the substrate identity (one event = record =
+decoherence = metric increment) force an EXACT relation
+between decoherence functionals and record growth on the
+coupled machine — fitted forms BARRED, only exact relations;
+forcedness censused across the coin fiber (the paper-20
+invariance machinery inherited); the frozen control the
+it-can-differ arm; if forced, a substrate-native
+prediction-ledger entry (no SI numbers; the V5P2/DP citation
+shape-only).  Worker launched (Opus).  In flight (10): GDL +
+SMU + PER-L constructions; the paper-21 and paper-22 panels
+(3+3); REQ2 armed awaiting capacity.
