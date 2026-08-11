@@ -7333,3 +7333,22 @@ byte ×2 across seeds; the disclosed own-check bug.
 Reviewers → v14/review-smu-{operator,effectus,instrument}.md.
 Objects at 6d8582e: d14689919289 / 394cbfca621c /
 0bf6cc0502e6 / 808aca088ff6; pin a1fca5e7b238.
+
+## 2026-08-11 — SESSION-LIMIT INTERRUPTION: ALL NINE AGENTS KILLED MID-FLIGHT; ALL NINE RESUMED (v14 LEDGER #236)
+
+The session limit (reset 17:20 America/Bogota) terminated all
+nine in-flight agents: the three repairs (22 at its
+byte-identity re-run; GDL between delivery runs 1 and 2;
+PER-L at its out-of-process mutant sweep), the three SMU
+panel seats (operator mid-stage-2; effectus orienting;
+instrument launching batteries), and the three volley
+constructions (SIG with the dynamic half cleared at the
+parents' arena; PER-R reading the weld detector; LOR testing
+R=6 drive affordability).  The user resumed the session
+("continue").  ALL NINE resumed via SendMessage with the
+standing inventory-first order (scratch + transcript
+re-derivation; no prototype number trusted unrun).  The
+established recovery protocol's fourth full exercise; no
+committed state was ever at risk (every delivered unit is
+committed; the repairs' partial edits live in their
+worktrees/scratch and their transcripts).
