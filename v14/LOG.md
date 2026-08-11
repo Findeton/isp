@@ -5426,3 +5426,49 @@ argv, byte ×2 across seeds.  Reviewers →
 v14/review-coup-{operator,effectus,instrument}.md.  Objects at
 9b1860e: b328a8278fac / 9e71cf511ab3 / 3e3d04222782 /
 3ca0308b6c19; pin 7c6e9e44fc2c.
+
+## 2026-08-11 — PAPER-23 (THE CONFIGURATION MEASURE) DELIVERED: MEASURE-DECLARATION-REQUIRED — COMMIT-AS-IS (v14 LEDGER #181)
+
+The measure worker delivered.  **Delivered verdict (candidate):
+MEASURE-DECLARATION-REQUIRED-<ONE-POINT-OF-A-119-SIMPLEX-ON-
+120-ORBITS-AT-THE-CHART-128-READING; 207-SIMPLEX-ON-208-ORBITS-
+AT-THE-CHART-32-READING> — 8 candidates censused, 0 derive.**
+The census: (a) history-measure pushforward — NO pinned
+correspondence reaches this arena (weld 2 ran exactly this at
+Γ's carriers, 0/120 FOUND; weld 3's found dictionary granted
+anyway → its link datum is CONSTANT (27/27 cells at 1) → at
+most a point mass with the coin free among 640; support bound
+≥527/640 at mass zero); (b) counting — declared null, not even
+unique (two carriers × two nulls, all invariant); (c)
+invariance SELECTS A SUPPORT, NOT A MEASURE (uniqueness ⟺
+transitivity, gated: orbits 208/120, neither 1; gate
+demonstrated passable on a synthetic transitive arena); (d)
+family not Haar-closed (278528/409600 stay); (e) U(2)-Haar:
+finite subset measure zero; (f) Gibbs: no action by parent's
+own anchored declaration; (g) **the Born layer DERIVES EXACTLY
+— ON THE WRONG SPACE** (640 configurations → 3 state-images,
+fibres 64/64/512: the substrate derives a measure over STATES,
+not over gauge configurations); (h) holonomy pull-back: no
+single group (512 carry an infinite one).  Wilson expectations
+WITHHELD BY GATE ON THE PRODUCT (no expectation-valued key; AST
+defines no computing function; a planted one dies by mutant).
+SURPRISES: R5's uniform sweep IS the chart-fixed locus
+(655360/655360) — symmetry fixes support, never measure; Haar
+on the 128 monomial coins carries 0/384 defect-carrying coins —
+**where the measure is free, the quantum layer is absent**
+[orchestrator: resonates with paper-20's monomial-only theorem
+— two units, same monomial⇔no-quantum-character line]; **THE
+DECLARATION IS NOT INNOCUOUS: R5's headline 576/640 becomes
+9/10, 9/13 or 7/10 depending on the declared invariant null
+(spread 27/130; defect set moves 3/5→6/13; all three nulls
+invariant under BOTH groups, 2624 checks)** [adjudication
+material: possible R5 presentation annotation]; weld 2's blade
+SILENT here (bipartite) — correspondence question left OPEN not
+inherited-closed; parent census reproduced exactly
+(632/576/384); three self-caught errors fixed pre-ship incl.
+G-MUTANT-REGISTRY-TOTAL now AST-total.  Counts: 56 gates, 25/25
+mutants dead on target, 48 anchors, 31 seals, 11 choices (3
+verdict-determining), byte ×2 + off-tree git-less, 199 numerals
+0 unregistered.  Shas: paper 9249dda1c0a3, code f7de59960fe6,
+output 8ee12d000bad, receipt 1e794bd7f5fb.  Committed AS-IS;
+battery next.

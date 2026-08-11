@@ -1,0 +1,2378 @@
+{
+ "anchor_classes": [
+  "FILE-BYTES",
+  "PATH-VALUE",
+  "VERBATIM"
+ ],
+ "arena": {
+  "L": 4,
+  "admissible_rows": 80,
+  "alphabet": 25,
+  "alphabet_elements_used": 17,
+  "coins": 640,
+  "configuration_space": "640^32",
+  "configuration_space_exact": 627710173538668076383578942320766641610235544446403451289600000000000000000000000000000000,
+  "d": 2,
+  "field": "Q(ZETA-8)",
+  "links": 32,
+  "plaquettes": 16,
+  "sectors": {
+   "ANTIDIAGONAL": 64,
+   "BALANCED": 512,
+   "DIAGONAL": 64
+  },
+  "sites": 16,
+  "swept_by_the_parent": "THE UNIFORM CONFIGURATIONS, EXHAUSTIVELY",
+  "uniform_slice": 640
+ },
+ "arithmetic": "Q(zeta_8) as integer 5-tuples over (1, z, z^2, z^3) modulo z^4 + 1 in lowest terms; probabilities as exact Fractions; no float anywhere, gated on the instrument's own syntax tree",
+ "born_layer": {
+  "carrier_states": 16,
+  "configurations": 640,
+  "distinct_images": 3,
+  "doubly_stochastic": 640,
+  "fibres": [
+   64,
+   64,
+   512
+  ],
+  "free_items": 1,
+  "verdict": "DERIVES-A-MEASURE-ON-THE-CARRIER-NOT-ON-THE-CONFIGURATIONS"
+ },
+ "candidate_ambient_haar": {
+  "free_items": 1,
+  "verdict": "A-FINITE-SUBSET-OF-U(2)-CARRIES-HAAR-MEASURE-ZERO"
+ },
+ "candidate_counting": {
+  "carrier_declared_instances": 2,
+  "carrier_fibre": "UNBOUNDED",
+  "carriers_declared": [
+   "THE-UNIFORM-SLICE",
+   "THE-FULL-SPACE"
+  ],
+  "free_items": 2,
+  "nulls_declared": [
+   "COUNTING-ON-CONFIGURATIONS",
+   "COUNTING-ON-ORBITS"
+  ],
+  "nulls_declared_instances": 2,
+  "nulls_fibre": "UNBOUNDED",
+  "status": "DECLARED-NULL",
+  "verdict": "CARRIES-NO-INFORMATION-AND-IS-NOT-EVEN-UNIQUE-AMONG-THE-INVARIANT-MEASURES"
+ },
+ "candidate_gibbs": {
+  "free_items": 2,
+  "verdict": "NO-ACTION-AND-NO-COUPLING-ON-THIS-ARENA-BY-THE-PARENTS-OWN-DECLARATION"
+ },
+ "candidate_group_haar": {
+  "closure_by_sector_pair": {
+   "ANTIDIAGONAL|ANTIDIAGONAL": [
+    4096,
+    4096
+   ],
+   "ANTIDIAGONAL|BALANCED": [
+    32768,
+    32768
+   ],
+   "ANTIDIAGONAL|DIAGONAL": [
+    4096,
+    4096
+   ],
+   "BALANCED|ANTIDIAGONAL": [
+    32768,
+    32768
+   ],
+   "BALANCED|BALANCED": [
+    262144,
+    131072
+   ],
+   "BALANCED|DIAGONAL": [
+    32768,
+    32768
+   ],
+   "DIAGONAL|ANTIDIAGONAL": [
+    4096,
+    4096
+   ],
+   "DIAGONAL|BALANCED": [
+    32768,
+    32768
+   ],
+   "DIAGONAL|DIAGONAL": [
+    4096,
+    4096
+   ]
+  },
+  "coins_of_finite_order_inside_the_family": 384,
+  "defect_coins_in_the_haar_carrier": 0,
+  "free_items": 1,
+  "interfering_coins_adjoinable": 0,
+  "monomial_closure_failures": 0,
+  "monomial_coins": 128,
+  "monomial_inverse_failures": 0,
+  "products_inside": 278528,
+  "products_total": 409600,
+  "verdict": "HAAR-EXISTS-ON-A-DECLARED-SUBGROUP-WHICH-CARRIES-NO-DEFECT;THE-FAMILY-ITSELF-IS-NOT-A-GROUP"
+ },
+ "candidate_holonomy_pullback": {
+  "configurations_with_an_infinite_group": 512,
+  "distinct_plaquette_holonomies": 528,
+  "fibres": [
+   1,
+   8
+  ],
+  "free_items": 1,
+  "verdict": "NO-SINGLE-GROUP-TO-BORROW-FROM;A-SECTION-WOULD-BE-ONE-MORE-FREE-ITEM"
+ },
+ "candidate_invariance": {
+  "cross_invariance_checks": 2624,
+  "cross_invariance_failures": 0,
+  "free_items": 1,
+  "orbit_closure_rows": [
+   {
+    "orbit_closed": true,
+    "reading": "CHART-32",
+    "set": "DEFECT-CARRYING",
+    "size": 384
+   },
+   {
+    "orbit_closed": true,
+    "reading": "CHART-32",
+    "set": "DIAGONAL",
+    "size": 64
+   },
+   {
+    "orbit_closed": true,
+    "reading": "CHART-32",
+    "set": "NON-COMMUTING",
+    "size": 576
+   },
+   {
+    "orbit_closed": true,
+    "reading": "CHART-32",
+    "set": "NON-FLAT",
+    "size": 632
+   },
+   {
+    "orbit_closed": true,
+    "reading": "CHART-128",
+    "set": "DEFECT-CARRYING",
+    "size": 384
+   },
+   {
+    "orbit_closed": true,
+    "reading": "CHART-128",
+    "set": "DIAGONAL",
+    "size": 64
+   },
+   {
+    "orbit_closed": true,
+    "reading": "CHART-128",
+    "set": "NON-COMMUTING",
+    "size": 576
+   },
+   {
+    "orbit_closed": true,
+    "reading": "CHART-128",
+    "set": "NON-FLAT",
+    "size": 632
+   }
+  ],
+  "sector_multisets_on_the_full_space": 561,
+  "synthetic_transitive_orbits": 1,
+  "uniqueness": {
+   "CHART-128": {
+    "orbits": 120,
+    "simplex_dimension": 119,
+    "transitive": false,
+    "unique_invariant_measure": false
+   },
+   "CHART-32": {
+    "orbits": 208,
+    "simplex_dimension": 207,
+    "transitive": false,
+    "unique_invariant_measure": false
+   }
+  },
+  "verdict": "SELECTS-A-SUPPORT-NOT-A-MEASURE"
+ },
+ "candidate_pushforward": {
+  "actor_site_objects": 2,
+  "configurations_at_mass_zero_at_class_grain": 527,
+  "free_items": 2,
+  "gamma_classes": 185,
+  "gamma_cut_dimensions": [
+   1,
+   5,
+   17,
+   49,
+   113
+  ],
+  "granted_lattice_residual_fibre": 640,
+  "referent_census": [
+   {
+    "direction": "R5-OBJECT-IN-THE-GAMMA-PARENT",
+    "substring": 1,
+    "token": "coin",
+    "whole_word": 0
+   },
+   {
+    "direction": "R5-OBJECT-IN-THE-GAMMA-PARENT",
+    "substring": 0,
+    "token": "plaquette",
+    "whole_word": 0
+   },
+   {
+    "direction": "R5-OBJECT-IN-THE-GAMMA-PARENT",
+    "substring": 2,
+    "token": "link",
+    "whole_word": 2
+   },
+   {
+    "direction": "R5-OBJECT-IN-THE-GAMMA-PARENT",
+    "substring": 2,
+    "token": "site",
+    "whole_word": 0
+   },
+   {
+    "direction": "R5-OBJECT-IN-THE-GAMMA-PARENT",
+    "substring": 0,
+    "token": "torus",
+    "whole_word": 0
+   },
+   {
+    "direction": "R5-OBJECT-IN-THE-GAMMA-PARENT",
+    "substring": 0,
+    "token": "unitary",
+    "whole_word": 0
+   },
+   {
+    "direction": "R5-OBJECT-IN-THE-GAMMA-PARENT",
+    "substring": 0,
+    "token": "domino",
+    "whole_word": 0
+   },
+   {
+    "direction": "R5-OBJECT-IN-THE-GAMMA-PARENT",
+    "substring": 5,
+    "token": "lattice",
+    "whole_word": 5
+   },
+   {
+    "direction": "R5-OBJECT-IN-THE-GAMMA-PARENT",
+    "substring": 4,
+    "token": "stratum",
+    "whole_word": 4
+   },
+   {
+    "direction": "R5-OBJECT-IN-THE-GAMMA-PARENT",
+    "substring": 12,
+    "token": "holonomy",
+    "whole_word": 12
+   },
+   {
+    "direction": "GAMMA-OBJECT-IN-THE-R5-PARENT",
+    "substring": 0,
+    "token": "history",
+    "whole_word": 0
+   },
+   {
+    "direction": "GAMMA-OBJECT-IN-THE-R5-PARENT",
+    "substring": 0,
+    "token": "menu",
+    "whole_word": 0
+   },
+   {
+    "direction": "GAMMA-OBJECT-IN-THE-R5-PARENT",
+    "substring": 3,
+    "token": "actor",
+    "whole_word": 0
+   },
+   {
+    "direction": "GAMMA-OBJECT-IN-THE-R5-PARENT",
+    "substring": 0,
+    "token": "horizon",
+    "whole_word": 0
+   },
+   {
+    "direction": "GAMMA-OBJECT-IN-THE-R5-PARENT",
+    "substring": 0,
+    "token": "congruence",
+    "whole_word": 0
+   },
+   {
+    "direction": "GAMMA-OBJECT-IN-THE-R5-PARENT",
+    "substring": 0,
+    "token": "renewal",
+    "whole_word": 0
+   },
+   {
+    "direction": "GAMMA-OBJECT-IN-THE-R5-PARENT",
+    "substring": 0,
+    "token": "potential",
+    "whole_word": 0
+   },
+   {
+    "direction": "GAMMA-OBJECT-IN-THE-R5-PARENT",
+    "substring": 51,
+    "token": "class",
+    "whole_word": 42
+   },
+   {
+    "direction": "GAMMA-OBJECT-IN-THE-R5-PARENT",
+    "substring": 37,
+    "token": "holonomy",
+    "whole_word": 37
+   }
+  ],
+  "slice_configurations": 640,
+  "stencils_blocked_by_perfectness": 3,
+  "stencils_not_blocked": 3,
+  "substring_only_tokens": 3,
+  "target_bipartite": true,
+  "target_degrees": [
+   4
+  ],
+  "transport_holonomy_rank": 2,
+  "verdict": "NO-PINNED-CORRESPONDENCE-TO-THIS-ARENA;GRANTED-EVERYTHING-THE-RESIDUAL-IS-A-POINT-MASS-WITH-THE-COIN-FREE",
+  "weld2_distinct_candidates": 60,
+  "weld2_fates": [
+   [
+    "ARITY-DEAD",
+    16
+   ],
+   [
+    "ARITY-DEAD-BELOW",
+    6
+   ],
+   [
+    "HOM-DEAD",
+    8
+   ],
+   [
+    "STRUCT-DEAD",
+    10
+   ],
+   [
+    "TYPE-DEAD",
+    72
+   ],
+   [
+    "UNMOTIVATED",
+    8
+   ]
+  ],
+  "weld2_found": 0,
+  "weld2_rows": 120,
+  "weld3_dead_list_naming_the_carrier": [
+   "WELD2-SCISSORS-SCOPE((A,B)-CARRIER-AT-DEPTH<=4)",
+   "WELD2-TRANSPORT-CARRIER-CELLS(MENU-113|CONG-185|EVENT-SUBSET|ULAM-PREFIX)"
+  ],
+  "weld3_found_rows": 6,
+  "weld3_realised_cells_all_at_one_count": 27,
+  "weld3_target_sites": 9,
+  "whole_word_homonyms": 6
+ },
+ "census": {
+  "candidates": 8,
+  "deriving": 0,
+  "rows": [
+   {
+    "candidate": "a",
+    "derives": false,
+    "free_items": 2,
+    "source": "THE-HISTORY-MEASURE-PUSHFORWARD",
+    "verdict": "NO-PINNED-CORRESPONDENCE-TO-THIS-ARENA;GRANTED-EVERYTHING-THE-RESIDUAL-IS-A-POINT-MASS-WITH-THE-COIN-FREE"
+   },
+   {
+    "candidate": "b",
+    "derives": false,
+    "free_items": 2,
+    "source": "THE-COUNTING-MEASURE",
+    "verdict": "CARRIES-NO-INFORMATION-AND-IS-NOT-EVEN-UNIQUE-AMONG-THE-INVARIANT-MEASURES"
+   },
+   {
+    "candidate": "c",
+    "derives": false,
+    "free_items": 1,
+    "source": "AN-INVARIANCE-CHARACTERISED-MEASURE",
+    "verdict": "SELECTS-A-SUPPORT-NOT-A-MEASURE"
+   },
+   {
+    "candidate": "d",
+    "derives": false,
+    "free_items": 1,
+    "source": "HAAR-FROM-A-GROUP-STRUCTURE-ON-THE-FAMILY",
+    "verdict": "HAAR-EXISTS-ON-A-DECLARED-SUBGROUP-WHICH-CARRIES-NO-DEFECT;THE-FAMILY-ITSELF-IS-NOT-A-GROUP"
+   },
+   {
+    "candidate": "e",
+    "derives": false,
+    "free_items": 1,
+    "source": "HAAR-INHERITED-FROM-U(2)",
+    "verdict": "A-FINITE-SUBSET-OF-U(2)-CARRIES-HAAR-MEASURE-ZERO"
+   },
+   {
+    "candidate": "f",
+    "derives": false,
+    "free_items": 2,
+    "source": "GIBBS-FROM-AN-ACTION",
+    "verdict": "NO-ACTION-AND-NO-COUPLING-ON-THIS-ARENA-BY-THE-PARENTS-OWN-DECLARATION"
+   },
+   {
+    "candidate": "g",
+    "derives": false,
+    "free_items": 1,
+    "source": "THE-BORN-LAYER",
+    "verdict": "DERIVES-A-MEASURE-ON-THE-CARRIER-NOT-ON-THE-CONFIGURATIONS"
+   },
+   {
+    "candidate": "h",
+    "derives": false,
+    "free_items": 1,
+    "source": "PULL-BACK-FROM-THE-HOLONOMY-GROUP",
+    "verdict": "NO-SINGLE-GROUP-TO-BORROW-FROM;A-SECTION-WOULD-BE-ONE-MORE-FREE-ITEM"
+   }
+  ]
+ },
+ "choice_inventory": [
+  {
+   "choice": "the lattice size and dimension",
+   "declared_instances": 1,
+   "fibre": 1,
+   "status": "FORCED (anchored)",
+   "verdict_determining": false
+  },
+  {
+   "choice": "the coefficient alphabet",
+   "declared_instances": 1,
+   "fibre": 1,
+   "status": "FORCED (inherited)",
+   "verdict_determining": false
+  },
+  {
+   "choice": "the coin family",
+   "declared_instances": 1,
+   "fibre": 1,
+   "status": "FORCED (derived)",
+   "verdict_determining": false
+  },
+  {
+   "choice": "the link and plaquette sets",
+   "declared_instances": 1,
+   "fibre": 1,
+   "status": "FORCED (derived)",
+   "verdict_determining": false
+  },
+  {
+   "choice": "the gauge action's form",
+   "declared_instances": 1,
+   "fibre": 1,
+   "status": "FORCED (inherited)",
+   "verdict_determining": false
+  },
+  {
+   "choice": "WHICH CHART GROUP IS DECLARED",
+   "declared_instances": 2,
+   "fibre": 2,
+   "status": "GENUINELY-FREE",
+   "verdict_determining": true
+  },
+  {
+   "choice": "the carrier: the uniform slice or the full space",
+   "declared_instances": 2,
+   "fibre": "UNBOUNDED",
+   "status": "GENUINELY-FREE",
+   "verdict_determining": true
+  },
+  {
+   "choice": "the null: counting on configurations or on orbits",
+   "declared_instances": 2,
+   "fibre": "UNBOUNDED",
+   "status": "GENUINELY-FREE",
+   "verdict_determining": true
+  },
+  {
+   "choice": "the sets weighed against the nulls",
+   "declared_instances": 4,
+   "fibre": "UNBOUNDED",
+   "status": "DECLARED (the parent's own)",
+   "verdict_determining": false
+  },
+  {
+   "choice": "the candidate sources censused",
+   "declared_instances": 8,
+   "fibre": "UNBOUNDED",
+   "status": "DECLARED (the pin's plus two)",
+   "verdict_determining": false
+  },
+  {
+   "choice": "the base plaquette and its neighbour",
+   "declared_instances": 1,
+   "fibre": 16,
+   "status": "STABILIZER-FIXED",
+   "verdict_determining": false
+  }
+ ],
+ "closing_gates": {
+  "names": [
+   "G-SEAL-COMPLETE",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "warrant": "these two close after the gate ledger has been snapshotted and sealed.  G-SEAL-COMPLETE cannot be inside the object it seals, and G-ARTIFACT-INTEGRITY runs after the bytes are on disk; so the sealed ledger carries neither row, and their verdict is recorded by the artifacts themselves -- a run that reached the write at all is a run in which both passed."
+ },
+ "declared_unsealed": [
+  "seal_manifest",
+  "gate_digests",
+  "unit",
+  "pin_sha256_prefix",
+  "python",
+  "arithmetic",
+  "anchor_classes",
+  "paper_sha256_12",
+  "verdict_head",
+  "closing_gates"
+ ],
+ "fibre": {
+  "carrier_choice": [
+   "THE-UNIFORM-SLICE",
+   "THE-FULL-SPACE"
+  ],
+  "minimal": {
+   "orbits": 120,
+   "reading": "CHART-128"
+  },
+  "rows": [
+   {
+    "independent_numbers_a_declaration_must_supply": 119,
+    "orbits": 120,
+    "reading": "CHART-128"
+   },
+   {
+    "independent_numbers_a_declaration_must_supply": 207,
+    "orbits": 208,
+    "reading": "CHART-32"
+   }
+  ],
+  "what_a_declaration_must_add": "the carrier, then one point of the invariant simplex over its orbits"
+ },
+ "fixed_locus": {
+  "chart_fixed_configurations": 640,
+  "checks": 655360,
+  "extension_fixed_configurations": 32,
+  "failures": 0,
+  "the_distinction": "a symmetry fixes a SET OF CONFIGURATIONS; an invariant MEASURE is a different object, and the two are not to be conflated -- the fixed locus is a point of the configuration space, the invariant measures are a simplex over the orbits"
+ },
+ "gate_digests": [
+  "4d2bd23d3e8b",
+  "98b05e7d98a9",
+  "38483d3ed789",
+  "723af6b47649",
+  "326868fe8b03",
+  "d0d12c6508fe",
+  "723c07c01716",
+  "9954782482e5",
+  "8c398940dc7a",
+  "41423a9c8f82",
+  "c91fbcc169a5",
+  "0906a7070ca8",
+  "fb183be7b343",
+  "92aa8feba3f8",
+  "30373520b0c1",
+  "63bfb910109c",
+  "87a9a18fbbff",
+  "c9c5779f97a8",
+  "46035221184b",
+  "0f1d74d048b6",
+  "4d5e4fa678d5",
+  "92bd5d5954c3",
+  "5b045b549395",
+  "0ba11d2dae92",
+  "f63a1175d676",
+  "e16f3b77c275",
+  "1fcd4c20c090",
+  "efc5cdd9df0f",
+  "a2a8db900261",
+  "7391ab623edf",
+  "89b7ec8e1f01",
+  "27ece1c4a5a3",
+  "a37b4553fbf1",
+  "fab928b1fef8",
+  "9c108df4f54c",
+  "f01e0e5a0961",
+  "e4e60e14bc56",
+  "9ae2a5eecbfc",
+  "92035d23c7ff",
+  "32d20ae42d70",
+  "eb38da9ec5f0",
+  "1a2a1e260f72",
+  "9e12e2efa639",
+  "f71d803f8f8f",
+  "d33d5ad79136",
+  "e1dded97b695",
+  "2550e4fca055",
+  "8b2c89adf78b",
+  "a5fbb9a96b92",
+  "a41f32695807",
+  "74398c5a0153",
+  "571fe82346d7",
+  "828f5dc78994",
+  "22b6056f8809",
+  "e24fe222fab9",
+  "930867cf1b8d"
+ ],
+ "gates": [
+  {
+   "claim": "every runtime input is read at a DECLARED RELATIVE PATH resolved from this file's own location and gated against a sha256-12 frozen in this instrument before it ran; a drifted source dies here, before a single measurement, and no version-control command is invoked to find out (#91)",
+   "detail": "10 sources, 0 drifted",
+   "gate": "G-SOURCES-PINNED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the instrument's OWN syntax tree carries no float literal and no banned import or attribute call, so the exactness claim is a property of the source rather than of its author's intention",
+   "detail": "0 float literals, banned imports [], banned calls []",
+   "gate": "G-EXACT-ARITHMETIC",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "no moving reference is read anywhere in the instrument: the sources are pinned by digest, not by a branch name, so the run is correct off-tree and in a directory with no version control at all",
+   "detail": "moving references found: []",
+   "gate": "G-NO-MOVING-REFS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the mutant registry is TOTAL against the instrument's own syntax tree: every name the source switches on is declared, and every declared name is switched on somewhere, so no falsifier can exist as an unswept branch and none can be declared without a branch to fire",
+   "detail": "25 switches, 25 declared; undeclared [], unused []",
+   "gate": "G-MUTANT-REGISTRY-TOTAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every declared read path is RELATIVE, does not escape the repository root, and resolves under the root computed from this file's own location",
+   "detail": "escaping paths: []",
+   "gate": "G-PATHS-RELATIVE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every anchor is a (path, value) pair bound to the gate that CONSUMES it, not a bare file digest: the parent's own receipt is read at a named path and the value found there must equal the value this instrument was frozen against (#87)",
+   "detail": "26 probes, 0 mismatched",
+   "gate": "G-PATH-VALUE-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every verbatim window is located EXACTLY ONCE in its own pinned source under whitespace and markdown-prefix normalisation (#125), is pinned by its digest AND by its own frozen character count against a declared floor, and is bound to the gate that consumes it; and each is perturbed at a content-bearing token and required to stop being locatable, so no row is vacuous",
+   "detail": "12 windows, 0 failing",
+   "gate": "G-VERBATIM-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parent's coefficient alphabet is REBUILT here from its declared shape -- zero together with the eighth roots of unity at each of three moduli -- and its size is measured against the anchored value rather than typed",
+   "detail": "rebuilt 25, anchored 25",
+   "gate": "G-ALPHABET-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the coin family is DERIVED, exhaustively over the alphabet's admissible rows, and its size and its sector split are measured against the parent's own anchored values; unitarity is confirmed by a SECOND route, U^dagger U = I written out, on every member",
+   "detail": "640 coins, sectors [('ANTIDIAGONAL', 64), ('BALANCED', 512), ('DIAGONAL', 64)], 0 failing the second route",
+   "gate": "G-COINS-DERIVED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the stage is rebuilt from the anchored lattice size: the site, link and plaquette sets are DERIVED from the lattice rather than declared, and all three counts are measured against the parent's receipt",
+   "detail": "16 sites, 32 links, 16 plaquettes",
+   "gate": "G-LATTICE-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "both chart groups are rebuilt -- the anchored translations with the direction relabelling, and this arena's declared extension by the square point group -- and each element is checked to act on the LINK SET as a permutation; the two orders are measured against the parent's receipt",
+   "detail": "chart 32, extension 128, both acting by permutations",
+   "gate": "G-CHART-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the chart group is TRANSITIVE on the link set at both readings -- one orbit of all the links -- which is the fact that decides what a chart-fixed configuration can be",
+   "detail": "link orbits: 1 at the anchored reading, 1 at the extension",
+   "gate": "G-CHART-IS-TRANSITIVE-ON-LINKS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the swap conjugate -- the coin read from the other end of its own domino, which is what a direction-reversing chart element transports -- maps the derived family to itself",
+   "detail": "0 coins leaving the family",
+   "gate": "G-SWAP-CONJUGATE-CLOSED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the site-diagonal gauge acts on a link's coin by conjugation, and the action depends on the phase DIFFERENCE across the link alone; every one of its eight values permutes the derived family, so a gauge transformation moves a configuration inside the configuration space and never out of it",
+   "detail": "twists leaving the family: [(0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)]",
+   "gate": "G-GAUGE-ACTS-ON-THE-FAMILY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "which gauge transformations preserve the uniform slice is MEASURED by propagating the site phase around the torus and asking whether the assignment closes, not argued: a twist constant on every link is realisable exactly at the even values, because the phase must close after L steps",
+   "detail": "realisable constant twists [0, 2, 4, 6]",
+   "gate": "G-UNIFORMITY-PRESERVING-GAUGE-MEASURED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the residual group is the one the arena measures and its orbits are enumerated exactly: its order equals the number of uniformity-preserving twists at the anchored reading and twice that at the extension -- so the swap conjugation is measured to lie outside the twist subgroup rather than assumed to -- and the orbit sizes sum to the slice at both readings, so no configuration is counted twice and none is dropped",
+   "detail": "residual orders 4 and 8 against 4 realisable twists; 208 orbits at the anchored reading, 120 at the extension",
+   "gate": "G-ORBIT-CENSUS-EXACT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the chart-orbit count of the FULL configuration space is computed exactly by Burnside, the fixed-point count factorising over each element's cycles on the link set with the parity of the swap conjugations around each cycle; the group order divides the fixed-point total exactly, which is the arithmetic check the formula has to pass",
+   "detail": "19615942923083377386986841947523957550319860937261713352753238485891465108835574743040000 chart orbits, 4903985730770844346746710486880993541417452474995871943159704028721854423865774571520000 extension orbits on the full space",
+   "gate": "G-BURNSIDE-EXACT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "THE ONE THING THE MEASURED SYMMETRY DOES FIX, and it is not a measure: because the chart is transitive on the link set and reverses no link at the anchored reading, the configurations it leaves fixed are EXACTLY the uniform ones -- so the parent's declared sweep is not an arbitrary window but the chart-fixed locus itself, and the check is run configuration by configuration rather than read off the orbit formula",
+   "detail": "655360 fixed-locus checks, 0 failures",
+   "gate": "G-CHART-FIXED-LOCUS-IS-THE-SWEPT-SLICE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parent's three headline censuses are REPRODUCED here from the definitions -- the non-flat count, the non-commuting count and the count of coins carrying a composition defect -- and each is measured against the parent's own receipt at a named path.  A unit that proposes to weigh a set must first be able to build it",
+   "detail": "non-flat 632/632, non-commuting 576/576, defect-carrying 384/384",
+   "gate": "G-PARENT-CENSUS-REPRODUCED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the apparent shared vocabulary of the two arenas is measured and REFUSED rather than used: tokens that appear only as substrings of unrelated words are counted separately from whole words, and the substring hits are exactly that -- a configuration word inside 'coincidental', a lattice word inside 'refinement lattice'.  A coincidence is not a correspondence, and this unit will not build one out of one",
+   "detail": "3 substring-only tokens, 6 whole-word tokens carrying a different referent",
+   "gate": "G-VOCABULARY-COINCIDENCE-REFUSED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the closest thing to a correspondence in the corpus is the word HOLONOMY, and it names two different connections: the transport layer's is ABELIAN of measured rank 2 on the primes {2, 3}, this arena's is non-abelian and contains alternating groups that are PERFECT.  A correspondence required to transport the connection would need a homomorphism from the first onto the second; an abelian source has abelian image and a perfect non-trivial group is not abelian, so it is impossible at exactly the perfect stencils -- and possible at the abelian ones, which is why the obstruction is reported per stencil and not as a universal",
+   "detail": "3 of 6 declared local stencils carry a perfect class and are blocked; 3 carry an abelian class and are not",
+   "gate": "G-TRANSPORT-OBSTRUCTION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the corpus has ALREADY run the correspondence question from this very carrier: weld 2 asked for a motivated map from the transport grammar's carrier to a spatial record lattice -- objects to sites, pairs to links, division-event sets to link counts -- at both of the transport layer's own quotients, and returned EMPTY at every row.  So the pushforward has no pinned correspondence by MEASUREMENT and not by omission",
+   "detail": "120 rows, 60 distinct candidates, 0 FOUND, fates [('ARITY-DEAD', 16), ('ARITY-DEAD-BELOW', 6), ('HOM-DEAD', 8), ('STRUCT-DEAD', 10), ('TYPE-DEAD', 72), ('UNMOTIVATED', 8)]",
+   "gate": "G-WELD2-RAN-AT-THE-GAMMA-CARRIER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the corpus's ONE found dictionary is weld 3's -- actor to site, co-division actor pair to link, division count to the link's own count -- whose own pre-registered dead list cites the transport carrier this pin names as its candidate source.  The one correspondence that exists does not start where the pushforward would have to start",
+   "detail": "6 found weld rows; 2 dead-list entries naming the transport carrier: ['WELD2-SCISSORS-SCOPE((A,B)-CARRIER-AT-DEPTH<=4)', 'WELD2-TRANSPORT-CARRIER-CELLS(MENU-113|CONG-185|EVENT-SUBSET|ULAM-PREFIX)']",
+   "gate": "G-WELD3-IS-THE-ONE-FOUND-DICTIONARY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and its target is not this arena either: the found dictionary lands on a nine-site record lattice, where this arena has sixteen sites and thirty-two links, so the dictionary cannot be read here without being rebuilt -- and a rebuilt dictionary is a declaration, not an inheritance",
+   "detail": "the dictionary's target carries 9 sites; this arena carries 16",
+   "gate": "G-WELD3-TARGET-IS-NOT-THIS-ARENA",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and, granted everything else, its LINK DATUM is a count and the count is constant: every realised cell of the found arena carries the same value.  A constant link datum pulls back to a single configuration whichever coin one sends it to, so even the most generous grant delivers a POINT MASS with the coin free -- which is a declaration of one of the family's members, not a measure derived from anything",
+   "detail": "27 realised cells, every one at the same count",
+   "gate": "G-WELD3-LINK-DATUM-IS-CONSTANT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "one of weld 2's blades transfers to this target and is sharper here: the actor pool supplies two site objects against this arena's sixteen sites, where at weld 2's own target it faced nine",
+   "detail": "2 site objects against 16 sites",
+   "gate": "G-ARITY-BLADE-TRANSFERS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and one of them does NOT, which this unit measures rather than leaves for a reader to catch: weld 2's structural blade was that a graded class graph is bipartite and cannot carry its target's odd cycle.  THIS target is bipartite too -- every cycle of the link graph is even -- so that blade is SILENT here, and the correspondence question at this target is left OPEN by this unit rather than inherited as closed",
+   "detail": "target bipartite True, degrees [4] -- the odd-cycle blade cannot fire",
+   "gate": "G-STRUCTURAL-BLADE-DOES-NOT-TRANSFER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the arithmetic of the source is measured too, because a pushforward can charge no more atoms than its source has: the transport law's finest cut carries fewer classes than this arena has configurations even on the uniform slice, so any class-grain pushforward leaves most of the slice at mass zero, and on the full configuration space it charges a vanishing fraction",
+   "detail": "113 classes at the last cut against 640 slice configurations: at least 527 configurations at mass zero; the full space carries 627710173538668076383578942320766641610235544446403451289600000000000000000000000000000000",
+   "gate": "G-PUSHFORWARD-SUPPORT-BOUND",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "none of which is a complaint about the source: the transport law IS an exact probability, column-stochastic with cut mass one at every cut and its disintegration identity exact at every transition.  The candidate fails at the CORRESPONDENCE, not at the law -- which is why the honest outcome is a declaration price and not a refutation of the source",
+   "detail": "cut masses ['1', '1', '1', '1', '1'], disintegration exact at 3968 transitions",
+   "gate": "G-GAMMA-LAW-IS-A-PROBABILITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every set this unit weighs is checked to be a UNION OF ORBITS at both readings, object by object and never by a cardinality (#87), because a set that is not orbit-closed has no well-defined mass under an invariant measure and comparing masses across measures would be meaningless for it",
+   "detail": "8 (reading, set) rows, 0 not orbit-closed",
+   "gate": "G-DECLARED-SETS-ARE-ORBIT-CLOSED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the three measures compared below are all invariant under EVERYTHING this arena measures, and for the orbit-uniform nulls that is not automatic -- an orbit-uniform measure built on one reading's orbits is invariant under a larger group only if that group carries each orbit onto another of the same size.  It does, because the swap conjugation normalises the twist subgroup, and the check is run orbit by orbit rather than left as an argument; without it the comparison would be between measures answering different questions",
+   "detail": "2624 (group element, orbit) images checked, 0 not landing on an orbit of the same reading",
+   "gate": "G-EVERY-NULL-IS-INVARIANT-UNDER-EVERY-MEASURED-GROUP",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the choice among them is NOT innocuous, which is the measurement that prices the declaration: the counting measure on configurations and the counting measure on ORBITS are both invariant under everything this arena measures, and they assign materially different masses to the parent's own headline sets -- so a reader handed 'the natural measure' has been handed a choice, not a derivation",
+   "detail": "widest disagreement 27/130 on the DIAGONAL set",
+   "gate": "G-TWO-NULLS-DISAGREE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the uniqueness question is DECIDED and not assumed: the invariant measures are exactly the orbit-constant ones, so a measure is uniquely fixed by invariance IF AND ONLY IF the group acts transitively on the configurations.  It does not, at either reading, and the orbit counts say by how much -- the admissible set is a simplex of measured dimension, not a point",
+   "detail": "orbits {'CHART-128': 120, 'CHART-32': 208} -- no reading is transitive",
+   "gate": "G-UNIQUENESS-GATED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and that gate is not a formality: run on a synthetic arena whose declared group IS transitive, the same predicate returns UNIQUE, so the negative measured above is a property of this arena and not of the instrument's standard",
+   "detail": "synthetic transitive arena: 1 orbit on 4 configurations",
+   "gate": "G-UNIQUENESS-GATE-CAN-PASS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "on the FULL configuration space the same conclusion is reached without an orbit enumeration, by exhibiting an invariant: the gauge preserves each link's sector and the chart permutes the links, so the MULTISET of sectors over the links is invariant, every one of its values is realised, and the orbit count is at least that many -- the invariant measures there form a simplex of at least that dimension",
+   "detail": "561 realised values of the sector multiset over 32 links, so at least that many orbits",
+   "gate": "G-FULL-SPACE-NOT-TRANSITIVE-BY-AN-EXHIBITED-INVARIANT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the substrate's own Born layer does deliver an exact probability: B(U) is doubly stochastic at every one of the derived coins, in exact rational arithmetic, so the candidate is real and is not dismissed on a technicality",
+   "detail": "640 of 640 doubly stochastic",
+   "gate": "G-BORN-LAYER-IS-A-MEASURE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and it lands on the WRONG SPACE, which is the measurement that decides it: B(U) is a distribution over the carrier's STATES, not over the configurations, and its fibre over the configuration space is enormous -- the whole family collapses to one image per sector, so the Born layer cannot separate two configurations of the same sector, let alone weigh them",
+   "detail": "3 distinct Born images over 640 configurations, fibres [64, 64, 512]",
+   "gate": "G-BORN-LAYER-LANDS-ON-STATES",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the derived family is NOT closed under multiplication, so it carries no finite-group Haar measure to inherit: the products that leave are exactly the interfering ones, and they leave at an exactly measured rate",
+   "detail": "278528 of 409600 products stay inside the family",
+   "gate": "G-FAMILY-IS-NOT-A-GROUP",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "one part of it is: the monomial coins are closed under multiplication and under inverse, so they form a finite group, and a finite group DOES carry a canonical measure -- its Haar measure, which is the uniform one.  That is the only place in this arena where a measure is handed over rather than declared",
+   "detail": "128 monomial coins, 0 closure failures, 0 inverse failures",
+   "gate": "G-THE-MONOMIAL-SUBGROUP-IS-A-GROUP",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and it cannot be enlarged from where it sits: no interfering coin can be adjoined to the monomial group without the closure leaving the family, at every one of them",
+   "detail": "0 of 512 interfering coins adjoinable",
+   "gate": "G-THE-HAAR-CARRIER-IS-MAXIMAL-AT-DECLARED-SCOPE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "AND THAT IS THE FINDING, not the consolation: the one subset of this arena that hands over a canonical measure is exactly the subset on which the parent measured NO composition defect at all.  Where the substrate gives a measure for free the quantum layer is absent, and where the quantum layer lives the measure has to be declared",
+   "detail": "0 of 384 defect-carrying coins lie in the Haar carrier",
+   "gate": "G-THE-HAAR-CARRIER-CARRIES-NO-DEFECT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the ambient group's Haar cannot descend either: the family is a FINITE subset of a positive-dimensional Lie group, so it carries Haar measure zero and conditioning on it is undefined.  The family is not even closed under taking powers, which is measured here rather than argued",
+   "detail": "384 of 640 coins generate a finite cyclic group inside the family",
+   "gate": "G-U2-HAAR-CANNOT-DESCEND",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the Gibbs route needs two objects this arena does not have, and the parent says so in its own words at a window pinned by digest: a weight of the form exp(-S) requires an action functional and a coupling to put in front of it, and declaring either is declaring the measure by another name",
+   "detail": "the parent's declaration located once",
+   "gate": "G-GIBBS-NEEDS-AN-ACTION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the holonomy group cannot lend its own canonical measure back, because there is no single group to borrow from: the parent measures a finite alternating class on one sector and an INFINITE group on the other, so on most of this arena's configurations the holonomy group carries no normalisable invariant measure at all -- and a pull-back would in any case need a declared section, which is one more free item and not one fewer",
+   "detail": "512 configurations carry an infinite holonomy group; the plaquette holonomy takes 528 distinct values with fibres [1, 8]",
+   "gate": "G-HOLONOMY-GROUP-IS-CONFIGURATION-DEPENDENT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every candidate the pin names is measured and priced, and the census carries the two the pin did not name as well -- the ambient group's measure and the pull-back -- so no source is left out by being unmentioned; DERIVED means zero free items at the RSQ standard and nothing weaker",
+   "detail": "8 candidates, 0 deriving",
+   "gate": "G-CENSUS-IS-TOTAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the declaration is PRICED rather than deplored: after every symmetry this arena measures has been imposed, what remains to be declared is exactly one point of a simplex over the orbits, and its dimension is the number of independent conditions a declaration has to supply.  Both readings are priced, because which chart group is declared is itself a free axis (\u00a715)",
+   "detail": "[('CHART-128', 120, 119), ('CHART-32', 208, 207)]",
+   "gate": "G-FIBRE-PRICED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "all three pre-registered outcomes are reachable BY THE ONE HEAD LAW, driven here on synthetic censuses: a census in which a candidate has zero free items returns DERIVED, one in which an object cannot be evaluated returns BLOCKED, and this arena's returns the declaration price.  A head law that could not move would fail here",
+   "detail": "reachable heads: ['BLOCKED', 'DECLARATION-REQUIRED', 'DERIVED']",
+   "gate": "G-HEAD-LAW-REACHABILITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "THE PIN LICENSES A WILSON-EXPECTATION SEGMENT ONLY IN THE DERIVED CASE, and no source derives, so this unit computes none -- and the discipline is enforced on the product rather than promised in prose: the receipt is required to carry no expectation-valued key and the instrument's own syntax tree to define no function that would compute one",
+   "detail": "0 expectation-valued receipt keys, 0 expectation-computing functions",
+   "gate": "G-NO-WILSON-EXPECTATION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the construction choices are inventoried with BOTH numbers a reader needs -- the fibre and the declared instances -- and the verdict-determining rows are flagged: which chart group is declared, which carrier, and which null, because every one of those three moves a published number and none of them is fixed by anything this arena measures.  A genuinely free choice with fibre 1 would be a contradiction and none is reported",
+   "detail": "11 rows, 3 verdict-determining, 0 contradictory",
+   "gate": "G-CHOICE-INVENTORY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the complete verdict string -- head included -- is derived TWICE by disjoint routes and the two are compared for equality: the builder computes it from the live measurements, and an independent reconstruction reads only the serialized receipt, carries its own copy of the head law and re-renders EVERY segment from the primitive measured tables, sharing no format string, no helper and no typed value with the builder and reading neither its segments nor its counts",
+   "detail": "builder 2921 characters, reconstruction 2921",
+   "gate": "G-HEAD-STRING-EQUALITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every load-bearing number in the paper is RENDERED from a measured receipt field and located in the paper's own bytes under whitespace and markdown normalisation, so a value that moved in the run cannot stay still in the prose",
+   "detail": "34 claims, 0 not located: []",
+   "gate": "G-PAPER-CLAIMS-RENDER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the COMPLETE emitted verdict string occurs verbatim in the paper under whitespace normalisation, so a paper quoting an earlier run's verdict cannot be delivered -- only string equality reaches a retyped verdict block, since the numeral gate is structurally blind to numerals inside hyphenated segments",
+   "detail": "verdict of 2921 characters located",
+   "gate": "G-PAPER-CARRIES-THIS-RUNS-VERDICT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the pin's must-not vocabulary is SWEPT over the paper's own text with the declaring sentences removed first, so a paragraph that made an area-law, string-tension or potential claim would die on the delivery run.  Nothing weaker reaches it: a must-not carries no numeral, so the numeral gate is blind to it",
+   "detail": "must-not vocabulary found: []",
+   "gate": "G-MUST-NOT-VOCABULARY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the direction-bearing claims are checked for POLARITY as well as presence -- each must occur and must not sit inside a window carrying a declared negator -- which closes the direction-blindness of a fragment gate",
+   "detail": "3 polarity rows, 0 failing",
+   "gate": "G-PAPER-POLARITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "EVERY numeral of the paper, the fenced verdict block included, is either a value this run measured or a declared structural literal; the scan runs in the plain delivery run and not in a separate mode (#20)",
+   "detail": "199 numerals scanned across 1 fenced blocks, 0 unregistered: []",
+   "gate": "G-PAPER-COVERAGE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the gate total the paper states is the gate total this run produced: the claim is rendered before the paper gates close and this, the last of them, checks that the prediction came true, so the number in section 10 can never be a stale constant",
+   "detail": "the paper claims 56 gates; this run closes 56",
+   "gate": "G-GATE-COUNT-IS-AS-CLAIMED",
+   "kind": "MEASURED",
+   "passed": true
+  }
+ ],
+ "measure_comparison": {
+  "rows": [
+   {
+    "configurations": 384,
+    "counting": "3/5",
+    "orbit_uniform_CHART-128": "7/15",
+    "orbit_uniform_CHART-32": "6/13",
+    "set": "DEFECT-CARRYING"
+   },
+   {
+    "configurations": 64,
+    "counting": "1/10",
+    "orbit_uniform_CHART-128": "3/10",
+    "orbit_uniform_CHART-32": "4/13",
+    "set": "DIAGONAL"
+   },
+   {
+    "configurations": 576,
+    "counting": "9/10",
+    "orbit_uniform_CHART-128": "7/10",
+    "orbit_uniform_CHART-32": "9/13",
+    "set": "NON-COMMUTING"
+   },
+   {
+    "configurations": 632,
+    "counting": "79/80",
+    "orbit_uniform_CHART-128": "23/24",
+    "orbit_uniform_CHART-32": "25/26",
+    "set": "NON-FLAT"
+   }
+  ],
+  "spreads": [
+   [
+    "DEFECT-CARRYING",
+    "9/65"
+   ],
+   [
+    "DIAGONAL",
+    "27/130"
+   ],
+   [
+    "NON-COMMUTING",
+    "27/130"
+   ],
+   [
+    "NON-FLAT",
+    "7/240"
+   ]
+  ],
+  "widest": {
+   "set": "DIAGONAL",
+   "spread": "27/130"
+  }
+ },
+ "mutants": [
+  {
+   "name": "MUT-SOURCE-DRIFT",
+   "target": "G-SOURCES-PINNED",
+   "what": "a pinned source's digest moves"
+  },
+  {
+   "name": "MUT-FLOAT-SNEAK",
+   "target": "G-EXACT-ARITHMETIC",
+   "what": "a float literal appears"
+  },
+  {
+   "name": "MUT-PATH-VALUE",
+   "target": "G-PATH-VALUE-ANCHORS",
+   "what": "a (path, value) probe returns the wrong value"
+  },
+  {
+   "name": "MUT-VERBATIM-SHRINK",
+   "target": "G-VERBATIM-ANCHORS",
+   "what": "a verbatim window is shrunk below its declared floor"
+  },
+  {
+   "name": "MUT-ALPHABET",
+   "target": "G-ALPHABET-REBUILT",
+   "what": "the alphabet loses an element"
+  },
+  {
+   "name": "MUT-COIN-UNITARITY",
+   "target": "G-COINS-DERIVED",
+   "what": "a non-unitary matrix is admitted to the family"
+  },
+  {
+   "name": "MUT-PARENT-CENSUS",
+   "target": "G-PARENT-CENSUS-REPRODUCED",
+   "what": "the reproduced parent census drifts by one"
+  },
+  {
+   "name": "MUT-RESIDUAL-GROUP",
+   "target": "G-ORBIT-CENSUS-EXACT",
+   "what": "the residual group is made trivial, so the orbit count is the slice"
+  },
+  {
+   "name": "MUT-FIXED-LOCUS",
+   "target": "G-CHART-FIXED-LOCUS-IS-THE-SWEPT-SLICE",
+   "what": "a fixed-locus check is made to fail"
+  },
+  {
+   "name": "MUT-BORN-STOCHASTIC",
+   "target": "G-BORN-LAYER-IS-A-MEASURE",
+   "what": "a Born matrix stops being doubly stochastic"
+  },
+  {
+   "name": "MUT-ORBIT-CLOSURE",
+   "target": "G-DECLARED-SETS-ARE-ORBIT-CLOSED",
+   "what": "a weighed set stops being a union of orbits"
+  },
+  {
+   "name": "MUT-UNIQUENESS",
+   "target": "G-UNIQUENESS-GATED",
+   "what": "uniqueness is ASSERTED where the orbit count refutes it"
+  },
+  {
+   "name": "MUT-CLOSURE",
+   "target": "G-FAMILY-IS-NOT-A-GROUP",
+   "what": "the family is declared multiplicatively closed"
+  },
+  {
+   "name": "MUT-CENSUS-DERIVES",
+   "target": "G-HEAD-STRING-EQUALITY",
+   "what": "a candidate is declared to derive; the head moves and the two routes stop agreeing"
+  },
+  {
+   "name": "MUT-HEAD-CONSTANT",
+   "target": "G-HEAD-LAW-REACHABILITY",
+   "what": "the head law is made unable to move"
+  },
+  {
+   "name": "MUT-WILSON-SEGMENT",
+   "target": "G-NO-WILSON-EXPECTATION",
+   "what": "an expectation-valued key appears in the receipt"
+  },
+  {
+   "name": "MUT-CHOICE-INVENTORY",
+   "target": "G-CHOICE-INVENTORY",
+   "what": "a verdict-determining row loses its flag"
+  },
+  {
+   "name": "MUT-PAPER-CLAIM",
+   "target": "G-PAPER-CLAIMS-RENDER",
+   "what": "a rendered claim stops being locatable in the paper"
+  },
+  {
+   "name": "MUT-PAPER-NUMERAL",
+   "target": "G-PAPER-COVERAGE",
+   "what": "an unregistered numeral appears in the paper"
+  },
+  {
+   "name": "MUT-MUST-NOT",
+   "target": "G-MUST-NOT-VOCABULARY",
+   "what": "must-not vocabulary appears outside a declaring sentence"
+  },
+  {
+   "name": "MUT-GATE-COUNT",
+   "target": "G-GATE-COUNT-IS-AS-CLAIMED",
+   "what": "the gate total the paper states drifts from the run's own"
+  },
+  {
+   "name": "MUT-MOVING-REF",
+   "target": "G-NO-MOVING-REFS",
+   "what": "a moving reference is planted in the scanned haystack"
+  },
+  {
+   "name": "MUT-CROSS-INVARIANCE",
+   "target": "G-EVERY-NULL-IS-INVARIANT-UNDER-EVERY-MEASURED-GROUP",
+   "what": "a null stops being invariant under the larger group"
+  },
+  {
+   "name": "MUT-SEAL",
+   "target": "G-SEAL-COMPLETE",
+   "what": "a published object is mutated between its gate and the write"
+  },
+  {
+   "name": "MUT-RECONSTRUCTION",
+   "target": "G-HEAD-STRING-EQUALITY",
+   "what": "the independent reconstruction is desynchronised from the builder"
+  }
+ ],
+ "paper_claims": {
+  "adjoin": "0 of 512 interfering coins",
+  "anchors": "48 anchors in all",
+  "anchorsplit": "10 file-bytes anchors, 26 path-value anchors and 12 verbatim-text anchors",
+  "born": "3 distinct Born images",
+  "census": "8 candidate sources",
+  "chart": "order 32",
+  "choices": "11 construction choices",
+  "closure": "278528 of 409600 products",
+  "coins": "640 coins",
+  "defectoverlap": "0 of the 384 defect-carrying coins",
+  "deriving": "0 derive",
+  "df_count": "3/5 under counting",
+  "df_orb": "6/13 under the orbit null",
+  "ext": "order 128",
+  "extfixed": "32 of them survive",
+  "finite": "384 of 640 coins",
+  "fixed": "exactly the 640 uniform configurations",
+  "gates": "56 gates",
+  "links": "32 links",
+  "monomial": "128 monomial coins",
+  "multisets": "561 sector multisets",
+  "mutants": "25 declared mutants",
+  "nc_count": "9/10 at the counting measure",
+  "nc_orb": "9/13 at the orbit null",
+  "nonflat": "632 of 640 are non-flat",
+  "nonpaper": "576 non-commuting",
+  "orbits128": "120 orbits",
+  "orbits32": "208 orbits",
+  "simplex128": "119 independent numbers",
+  "simplex32": "207-dimensional simplex",
+  "sites": "16 sites",
+  "weld2": "120 rows, 60 distinct candidates",
+  "weld2found": "0 FOUND",
+  "weld3": "9 sites"
+ },
+ "paper_coverage": {
+  "allowed_values": 81,
+  "declared_structural_literals": [
+   "0",
+   "1",
+   "10",
+   "11",
+   "119",
+   "12",
+   "125",
+   "13",
+   "14",
+   "15",
+   "16",
+   "17",
+   "18",
+   "19",
+   "2",
+   "20",
+   "2026",
+   "21",
+   "22",
+   "23",
+   "3",
+   "34",
+   "4",
+   "46",
+   "5",
+   "6",
+   "62",
+   "7",
+   "8",
+   "82",
+   "87",
+   "9",
+   "91"
+  ],
+  "fenced_blocks": 1,
+  "scanned": 199,
+  "unregistered": []
+ },
+ "paper_polarity": [
+  {
+   "expected": 1,
+   "found": 2,
+   "fragment": "no measure on the configurations derives",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "selects a support, not a measure",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "does not act transitively",
+   "negated": false,
+   "ok": true
+  }
+ ],
+ "paper_sha256_12": "9249dda1c0a3",
+ "parent_census": {
+  "by_sector": {
+   "ANTIDIAGONAL": {
+    "coins": 64,
+    "defect_carrying": 0,
+    "non_commuting": 64,
+    "non_flat": 64
+   },
+   "BALANCED": {
+    "coins": 512,
+    "defect_carrying": 384,
+    "non_commuting": 512,
+    "non_flat": 512
+   },
+   "DIAGONAL": {
+    "coins": 64,
+    "defect_carrying": 0,
+    "non_commuting": 0,
+    "non_flat": 56
+   }
+  },
+  "defect_carrying": 384,
+  "non_commuting": 576,
+  "non_flat": 632
+ },
+ "path_value_anchors": [
+  {
+   "anchor": "PV-COINS",
+   "consumer": "G-COINS-DERIVED",
+   "declared": 640,
+   "measured": 640,
+   "ok": true,
+   "path": "counts/coins",
+   "source": "S-R5-RECEIPT",
+   "what": "the derived coin family's size"
+  },
+  {
+   "anchor": "PV-DIAG",
+   "consumer": "G-COINS-DERIVED",
+   "declared": 64,
+   "measured": 64,
+   "ok": true,
+   "path": "counts/coins_diagonal",
+   "source": "S-R5-RECEIPT",
+   "what": "the diagonal sector"
+  },
+  {
+   "anchor": "PV-ANTI",
+   "consumer": "G-COINS-DERIVED",
+   "declared": 64,
+   "measured": 64,
+   "ok": true,
+   "path": "counts/coins_antidiagonal",
+   "source": "S-R5-RECEIPT",
+   "what": "the antidiagonal sector"
+  },
+  {
+   "anchor": "PV-BAL",
+   "consumer": "G-COINS-DERIVED",
+   "declared": 512,
+   "measured": 512,
+   "ok": true,
+   "path": "counts/coins_balanced",
+   "source": "S-R5-RECEIPT",
+   "what": "the balanced (interfering) sector"
+  },
+  {
+   "anchor": "PV-ALPHABET",
+   "consumer": "G-ALPHABET-REBUILT",
+   "declared": 25,
+   "measured": 25,
+   "ok": true,
+   "path": "counts/alphabet",
+   "source": "S-R5-RECEIPT",
+   "what": "the parent's coefficient alphabet"
+  },
+  {
+   "anchor": "PV-L",
+   "consumer": "G-LATTICE-REBUILT",
+   "declared": 4,
+   "measured": 4,
+   "ok": true,
+   "path": "counts/L",
+   "source": "S-R5-RECEIPT",
+   "what": "the lattice size"
+  },
+  {
+   "anchor": "PV-D",
+   "consumer": "G-LATTICE-REBUILT",
+   "declared": 2,
+   "measured": 2,
+   "ok": true,
+   "path": "counts/d",
+   "source": "S-R5-RECEIPT",
+   "what": "the dimension"
+  },
+  {
+   "anchor": "PV-SITES",
+   "consumer": "G-LATTICE-REBUILT",
+   "declared": 16,
+   "measured": 16,
+   "ok": true,
+   "path": "counts/sites",
+   "source": "S-R5-RECEIPT",
+   "what": "the site count"
+  },
+  {
+   "anchor": "PV-LINKS",
+   "consumer": "G-LATTICE-REBUILT",
+   "declared": 32,
+   "measured": 32,
+   "ok": true,
+   "path": "counts/links",
+   "source": "S-R5-RECEIPT",
+   "what": "the link count -- the configuration space's exponent"
+  },
+  {
+   "anchor": "PV-PLAQS",
+   "consumer": "G-LATTICE-REBUILT",
+   "declared": 16,
+   "measured": 16,
+   "ok": true,
+   "path": "counts/plaquettes",
+   "source": "S-R5-RECEIPT",
+   "what": "the plaquette count"
+  },
+  {
+   "anchor": "PV-CHART",
+   "consumer": "G-CHART-REBUILT",
+   "declared": 32,
+   "measured": 32,
+   "ok": true,
+   "path": "counts/chart_group",
+   "source": "S-R5-RECEIPT",
+   "what": "the anchored chart group's order"
+  },
+  {
+   "anchor": "PV-EXT",
+   "consumer": "G-CHART-REBUILT",
+   "declared": 128,
+   "measured": 128,
+   "ok": true,
+   "path": "counts/extension_group",
+   "source": "S-R5-RECEIPT",
+   "what": "the declared extension by the square point group"
+  },
+  {
+   "anchor": "PV-NONFLAT",
+   "consumer": "G-PARENT-CENSUS-REPRODUCED",
+   "declared": 632,
+   "measured": 632,
+   "ok": true,
+   "path": "counts/nonflat_configs",
+   "source": "S-R5-RECEIPT",
+   "what": "the parent's non-flat census"
+  },
+  {
+   "anchor": "PV-NONCOMM",
+   "consumer": "G-PARENT-CENSUS-REPRODUCED",
+   "declared": 576,
+   "measured": 576,
+   "ok": true,
+   "path": "counts/noncommuting_configs",
+   "source": "S-R5-RECEIPT",
+   "what": "the parent's non-commuting census"
+  },
+  {
+   "anchor": "PV-DEFECT",
+   "consumer": "G-PARENT-CENSUS-REPRODUCED",
+   "declared": 384,
+   "measured": 384,
+   "ok": true,
+   "path": "counts/defect_carrying_coins",
+   "source": "S-R5-RECEIPT",
+   "what": "the parent's defect-carrying census"
+  },
+  {
+   "anchor": "PV-INFINITE",
+   "consumer": "G-HOLONOMY-GROUP-IS-CONFIGURATION-DEPENDENT",
+   "declared": 512,
+   "measured": 512,
+   "ok": true,
+   "path": "counts/balanced_infinite",
+   "source": "S-R5-RECEIPT",
+   "what": "the sector on which the holonomy group is infinite"
+  },
+  {
+   "anchor": "PV-GI-DIMS",
+   "consumer": "G-PUSHFORWARD-SUPPORT-BOUND",
+   "declared": [
+    1,
+    5,
+    17,
+    49,
+    113
+   ],
+   "measured": [
+    1,
+    5,
+    17,
+    49,
+    113
+   ],
+   "ok": true,
+   "path": "carrier/dims/CONG-185",
+   "source": "S-GI-RECEIPT",
+   "what": "PARENT 2's per-cut class dimensions -- the pushforward's support bound"
+  },
+  {
+   "anchor": "PV-GI-CLASSES",
+   "consumer": "G-PUSHFORWARD-SUPPORT-BOUND",
+   "declared": 185,
+   "measured": 185,
+   "ok": true,
+   "path": "carrier/classes",
+   "source": "S-GI-RECEIPT",
+   "what": "PARENT 2's carrier size"
+  },
+  {
+   "anchor": "PV-GI-CUTMASS",
+   "consumer": "G-GAMMA-LAW-IS-A-PROBABILITY",
+   "declared": [
+    "1",
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "measured": [
+    "1",
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "ok": true,
+   "path": "law/cut_masses",
+   "source": "S-GI-RECEIPT",
+   "what": "PARENT 2's cut masses -- each cut carries an exact probability"
+  },
+  {
+   "anchor": "PV-GI-FLOW",
+   "consumer": "G-GAMMA-LAW-IS-A-PROBABILITY",
+   "declared": 3968,
+   "measured": 3968,
+   "ok": true,
+   "path": "law/flow_ok",
+   "source": "S-GI-RECEIPT",
+   "what": "PARENT 2's disintegration identity"
+  },
+  {
+   "anchor": "PV-GI-QRANK",
+   "consumer": "G-TRANSPORT-OBSTRUCTION",
+   "declared": 2,
+   "measured": 2,
+   "ok": true,
+   "path": "holonomy/CONG-185|q/rank",
+   "source": "S-GI-RECEIPT",
+   "what": "PARENT 2's holonomy rank -- abelian"
+  },
+  {
+   "anchor": "PV-W2-CANDIDATES",
+   "consumer": "G-WELD2-RAN-AT-THE-GAMMA-CARRIER",
+   "declared": 120,
+   "measured": 120,
+   "ok": true,
+   "path": "payload/candidate_count",
+   "source": "S-W2-RECEIPT",
+   "what": "weld 2's census rows"
+  },
+  {
+   "anchor": "PV-W2-DISTINCT",
+   "consumer": "G-WELD2-RAN-AT-THE-GAMMA-CARRIER",
+   "declared": 60,
+   "measured": 60,
+   "ok": true,
+   "path": "payload/distinct_candidates",
+   "source": "S-W2-RECEIPT",
+   "what": "weld 2's distinct candidates"
+  },
+  {
+   "anchor": "PV-W2-ACTORS",
+   "consumer": "G-ARITY-BLADE-TRANSFERS",
+   "declared": 2,
+   "measured": 2,
+   "ok": true,
+   "path": "payload/mechanism/actor_site_objects",
+   "source": "S-W2-RECEIPT",
+   "what": "the actor pair's site objects -- the arity blade's measured input"
+  },
+  {
+   "anchor": "PV-W3-CELLS",
+   "consumer": "G-WELD3-LINK-DATUM-IS-CONSTANT",
+   "declared": 27,
+   "measured": 27,
+   "ok": true,
+   "path": "arena/cells_at_one",
+   "source": "S-W3-RECEIPT",
+   "what": "weld 3's realised link cells, every one of them at count 1"
+  },
+  {
+   "anchor": "PV-W3-DIVISIONS",
+   "consumer": "G-WELD3-TARGET-IS-NOT-THIS-ARENA",
+   "declared": 9,
+   "measured": 9,
+   "ok": true,
+   "path": "arena/divisions",
+   "source": "S-W3-RECEIPT",
+   "what": "weld 3's site count"
+  }
+ ],
+ "pin_sha256_prefix": "e5e09f65f83b",
+ "preregistered_heads": {
+  "BLOCKED": "MEASURE-BLOCKED-AT-<THE-SYNTHETIC-OBJECT>",
+  "DECLARATION-REQUIRED": "MEASURE-DECLARATION-REQUIRED-<ONE-POINT-OF-A-0-SIMPLEX-ON-1-ORBITS-AT-THE-SYN-READING>",
+  "DERIVED": "MEASURE-DERIVED-<SYN;UNIQUE>"
+ },
+ "provenance": {
+  "declared_not_read": [],
+  "object_under_test": "v14/paper-23-measure.md",
+  "pin_ledger_entry": 174,
+  "root": "resolved from __file__",
+  "sources": [
+   {
+    "measured": "e5e09f65f83b",
+    "name": "S-PIN",
+    "ok": true,
+    "path": "v14/note-r5m-pin.md",
+    "pinned": "e5e09f65f83b",
+    "what": "THE PIN, frozen before this instrument existed"
+   },
+   {
+    "measured": "62cfe5689d2c",
+    "name": "S-R5-PAPER",
+    "ok": true,
+    "path": "v14/paper-18-gauge-rung.md",
+    "pinned": "62cfe5689d2c",
+    "what": "PARENT 1, R5 terminal at commit 987cd73: the 640-coin family, the link-indexed configurations, the chart group, the gauge action, the plaquette loops"
+   },
+   {
+    "measured": "0d98de793b79",
+    "name": "S-R5-CODE",
+    "ok": true,
+    "path": "v14/code/r5_gauge_exact.py",
+    "pinned": "0d98de793b79",
+    "what": "PARENT 1's instrument -- read for its declared definitions only; nothing is imported from it"
+   },
+   {
+    "measured": "0c02b7684e5b",
+    "name": "S-R5-RECEIPT",
+    "ok": true,
+    "path": "v14/code/r5_gauge_receipt.json",
+    "pinned": "0c02b7684e5b",
+    "what": "PARENT 1's receipt: the anchored arena cardinalities and the parent census this unit reproduces"
+   },
+   {
+    "measured": "5c1df50673d4",
+    "name": "S-GI-PAPER",
+    "ok": true,
+    "path": "v14/paper-16-gamma-iteration.md",
+    "pinned": "5c1df50673d4",
+    "what": "PARENT 2, the Gamma-iteration terminal at commit 2895a9a: the transition layer's exact history probabilities -- the pin's candidate derivation source"
+   },
+   {
+    "measured": "42255f50328a",
+    "name": "S-GI-RECEIPT",
+    "ok": true,
+    "path": "v14/code/giter_receipt.json",
+    "pinned": "42255f50328a",
+    "what": "PARENT 2's receipt: the cut dimensions, the cut masses, the depth grading and the holonomy rank"
+   },
+   {
+    "measured": "9cdb10472953",
+    "name": "S-W2-PAPER",
+    "ok": true,
+    "path": "v14/paper-13-weld2-carrier-census.md",
+    "pinned": "9cdb10472953",
+    "what": "THE CORRESPONDENCE PRIOR: weld 2's carrier census, run at PARENT 2's own two carriers"
+   },
+   {
+    "measured": "bd68497d4510",
+    "name": "S-W2-RECEIPT",
+    "ok": true,
+    "path": "v14/code/w2_census_receipt.json",
+    "pinned": "bd68497d4510",
+    "what": "weld 2's receipt: the census fates"
+   },
+   {
+    "measured": "50bb81e67942",
+    "name": "S-W3-PAPER",
+    "ok": true,
+    "path": "v14/paper-19-r3-weld.md",
+    "pinned": "50bb81e67942",
+    "what": "THE ONE FOUND DICTIONARY IN THE CORPUS: weld 3's actor->site, co-division-pair->link, division-count->n_l(x)"
+   },
+   {
+    "measured": "dfea664f2408",
+    "name": "S-W3-RECEIPT",
+    "ok": true,
+    "path": "v14/code/r3_weld_receipt.json",
+    "pinned": "dfea664f2408",
+    "what": "weld 3's receipt: the found dictionary and its arena"
+   }
+  ]
+ },
+ "python": "3.13",
+ "schema": "r5m-measure-1",
+ "seal_manifest": [
+  {
+   "digest": "421fd0015011",
+   "gate": "G-SOURCES-PINNED",
+   "object": "provenance",
+   "receipt_key": "provenance"
+  },
+  {
+   "digest": "a6254e9dc67f",
+   "gate": "G-PATH-VALUE-ANCHORS",
+   "object": "path-value anchors",
+   "receipt_key": "path_value_anchors"
+  },
+  {
+   "digest": "afc989ca24a8",
+   "gate": "G-VERBATIM-ANCHORS",
+   "object": "verbatim anchors",
+   "receipt_key": "verbatim_anchors"
+  },
+  {
+   "digest": "a2f5b5d25658",
+   "gate": "G-COINS-DERIVED",
+   "object": "the arena",
+   "receipt_key": "arena"
+  },
+  {
+   "digest": "37cb71d9064f",
+   "gate": "G-ORBIT-CENSUS-EXACT",
+   "object": "the symmetry census",
+   "receipt_key": "symmetry"
+  },
+  {
+   "digest": "11d93fc01965",
+   "gate": "G-CHART-FIXED-LOCUS-IS-THE-SWEPT-SLICE",
+   "object": "the fixed locus",
+   "receipt_key": "fixed_locus"
+  },
+  {
+   "digest": "212dbafc71fe",
+   "gate": "G-PARENT-CENSUS-REPRODUCED",
+   "object": "the parent census",
+   "receipt_key": "parent_census"
+  },
+  {
+   "digest": "1ea6bc67b9d1",
+   "gate": "G-WELD2-RAN-AT-THE-GAMMA-CARRIER",
+   "object": "candidate (a)",
+   "receipt_key": "candidate_pushforward"
+  },
+  {
+   "digest": "0bbd3032b64c",
+   "gate": "G-TWO-NULLS-DISAGREE",
+   "object": "candidate (b)",
+   "receipt_key": "candidate_counting"
+  },
+  {
+   "digest": "83ad471b2829",
+   "gate": "G-UNIQUENESS-GATED",
+   "object": "candidate (c)",
+   "receipt_key": "candidate_invariance"
+  },
+  {
+   "digest": "ee04e36f302e",
+   "gate": "G-TWO-NULLS-DISAGREE",
+   "object": "the measure comparison",
+   "receipt_key": "measure_comparison"
+  },
+  {
+   "digest": "d4c136486fda",
+   "gate": "G-BORN-LAYER-IS-A-MEASURE",
+   "object": "the Born layer",
+   "receipt_key": "born_layer"
+  },
+  {
+   "digest": "0fceba6d4190",
+   "gate": "G-THE-MONOMIAL-SUBGROUP-IS-A-GROUP",
+   "object": "candidate (d)",
+   "receipt_key": "candidate_group_haar"
+  },
+  {
+   "digest": "c10482bfa7d7",
+   "gate": "G-U2-HAAR-CANNOT-DESCEND",
+   "object": "candidate (e)",
+   "receipt_key": "candidate_ambient_haar"
+  },
+  {
+   "digest": "572d96a17346",
+   "gate": "G-GIBBS-NEEDS-AN-ACTION",
+   "object": "candidate (f)",
+   "receipt_key": "candidate_gibbs"
+  },
+  {
+   "digest": "32693af376b5",
+   "gate": "G-HOLONOMY-GROUP-IS-CONFIGURATION-DEPENDENT",
+   "object": "candidate (h)",
+   "receipt_key": "candidate_holonomy_pullback"
+  },
+  {
+   "digest": "43cea0fa3988",
+   "gate": "G-CENSUS-IS-TOTAL",
+   "object": "the census",
+   "receipt_key": "census"
+  },
+  {
+   "digest": "d7fd6981acce",
+   "gate": "G-FIBRE-PRICED",
+   "object": "the fibre",
+   "receipt_key": "fibre"
+  },
+  {
+   "digest": "556fcebc5183",
+   "gate": "G-HEAD-LAW-REACHABILITY",
+   "object": "the pre-registered heads",
+   "receipt_key": "preregistered_heads"
+  },
+  {
+   "digest": "0d06d85d1ecb",
+   "gate": "G-NO-WILSON-EXPECTATION",
+   "object": "the withheld segment",
+   "receipt_key": "withheld"
+  },
+  {
+   "digest": "1dbd7f74f044",
+   "gate": "G-CHOICE-INVENTORY",
+   "object": "the choice inventory",
+   "receipt_key": "choice_inventory"
+  },
+  {
+   "digest": "3407d3e295c2",
+   "gate": "G-HEAD-STRING-EQUALITY",
+   "object": "the verdict",
+   "receipt_key": "verdict"
+  },
+  {
+   "digest": "db321a536b88",
+   "gate": "G-PAPER-CLAIMS-RENDER",
+   "object": "the paper claims",
+   "receipt_key": "paper_claims"
+  },
+  {
+   "digest": "5f6b647126bc",
+   "gate": "G-PAPER-POLARITY",
+   "object": "the paper polarity",
+   "receipt_key": "paper_polarity"
+  },
+  {
+   "digest": "57c4b94b1f10",
+   "gate": "G-PAPER-COVERAGE",
+   "object": "the paper coverage",
+   "receipt_key": "paper_coverage"
+  },
+  {
+   "digest": "1ed2c683502c",
+   "gate": "G-SEAL-COMPLETE",
+   "object": "the gate ledger",
+   "receipt_key": "gates"
+  },
+  {
+   "digest": "15b3758d150c",
+   "gate": "G-SEAL-COMPLETE",
+   "object": "the mutant registry",
+   "receipt_key": "mutants"
+  },
+  {
+   "digest": "13f635a11fd1",
+   "gate": "G-SEAL-COMPLETE",
+   "object": "the waiver ledger",
+   "receipt_key": "waiver_ledger"
+  },
+  {
+   "digest": "f7cf3360a652",
+   "gate": "G-SEAL-COMPLETE",
+   "object": "the schema",
+   "receipt_key": "schema"
+  },
+  {
+   "digest": "c147c74e8f34",
+   "gate": "G-SEAL-COMPLETE",
+   "object": "the transcript head",
+   "receipt_key": "transcript_head"
+  },
+  {
+   "digest": "938e56dcd866",
+   "gate": "G-SEAL-COMPLETE",
+   "object": "the totals",
+   "receipt_key": "totals"
+  }
+ ],
+ "symmetry": {
+  "chart_order": 32,
+  "elements_reversing_at_least_one_link_chart": 0,
+  "elements_reversing_at_least_one_link_extension": 96,
+  "elements_with_an_odd_parity_cycle_chart": 0,
+  "elements_with_an_odd_parity_cycle_extension": 12,
+  "extension_order": 128,
+  "full_space_chart_orbits": 19615942923083377386986841947523957550319860937261713352753238485891465108835574743040000,
+  "full_space_extension_orbits": 4903985730770844346746710486880993541417452474995871943159704028721854423865774571520000,
+  "gauge_twists_leaving_the_family": [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    4,
+    0
+   ],
+   [
+    5,
+    0
+   ],
+   [
+    6,
+    0
+   ],
+   [
+    7,
+    0
+   ]
+  ],
+  "link_orbits_chart": 1,
+  "link_orbits_extension": 1,
+  "orbit_size_histogram_chart": [
+   [
+    1,
+    64
+   ],
+   [
+    4,
+    144
+   ]
+  ],
+  "orbit_size_histogram_extension": [
+   [
+    1,
+    8
+   ],
+   [
+    2,
+    28
+   ],
+   [
+    4,
+    24
+   ],
+   [
+    8,
+    60
+   ]
+  ],
+  "orbits_chart": 208,
+  "orbits_extension": 120,
+  "residual_group_order_chart": 4,
+  "residual_group_order_extension": 8,
+  "swap_fixed_coins": 32,
+  "total_link_reversals_chart": 0,
+  "total_link_reversals_extension": 2048,
+  "uniformity_preserving_twists": [
+   0,
+   2,
+   4,
+   6
+  ]
+ },
+ "totals": {
+  "anchors": 48,
+  "byte_anchors": 10,
+  "candidates": 8,
+  "choices": 11,
+  "deriving": 0,
+  "gate_failures": 0,
+  "gates_in_the_sealed_snapshot": 56,
+  "late_gates": 2,
+  "mutants_declared": 25,
+  "path_value_anchors": 26,
+  "sealed_objects": 31,
+  "sources": 10,
+  "verbatim_anchors": 12
+ },
+ "transcript_head": [
+  "==========================================================================",
+  "R5M / paper-23 -- the configuration measure",
+  "==========================================================================",
+  "[1/9] provenance -- the pinned sources, at declared relative paths",
+  "[2/9] the arena, rebuilt from the parent's declared definitions",
+  "[3/9] the measured symmetries, and what they fix"
+ ],
+ "unit": "R5M / paper-23 -- the configuration measure",
+ "verbatim_anchors": [
+  {
+   "anchor": "VB-R5-NO-MEASURE",
+   "chars": 181,
+   "consumer": "G-THE-GAP-IS-THE-PARENTS-OWN",
+   "digest": "843addab776d",
+   "flipped_occurrences": 0,
+   "floor": 50,
+   "occurrences": 1,
+   "ok": true,
+   "source": "S-R5-PAPER"
+  },
+  {
+   "anchor": "VB-R5-THREE-OBJECTS",
+   "chars": 163,
+   "consumer": "G-THE-PIN-OPENS-IN-THE-RIGHT-PLACE",
+   "digest": "d6a3e7b922db",
+   "flipped_occurrences": 0,
+   "floor": 50,
+   "occurrences": 1,
+   "ok": true,
+   "source": "S-R5-PAPER"
+  },
+  {
+   "anchor": "VB-R5-NO-ACTION",
+   "chars": 105,
+   "consumer": "G-GIBBS-NEEDS-AN-ACTION",
+   "digest": "fa65b1b754c7",
+   "flipped_occurrences": 0,
+   "floor": 50,
+   "occurrences": 1,
+   "ok": true,
+   "source": "S-R5-PAPER"
+  },
+  {
+   "anchor": "VB-PIN-WILSON",
+   "chars": 55,
+   "consumer": "G-NO-WILSON-EXPECTATION",
+   "digest": "6fcd5fa4a6ec",
+   "flipped_occurrences": 0,
+   "floor": 50,
+   "occurrences": 1,
+   "ok": true,
+   "source": "S-PIN"
+  },
+  {
+   "anchor": "VB-PIN-MUSTNOT",
+   "chars": 134,
+   "consumer": "G-MUST-NOT-VOCABULARY",
+   "digest": "a1e3575fca9f",
+   "flipped_occurrences": 0,
+   "floor": 50,
+   "occurrences": 1,
+   "ok": true,
+   "source": "S-PIN"
+  },
+  {
+   "anchor": "VB-GI-LAW",
+   "chars": 146,
+   "consumer": "G-GAMMA-LAW-IS-A-PROBABILITY",
+   "digest": "362d2c234365",
+   "flipped_occurrences": 0,
+   "floor": 50,
+   "occurrences": 1,
+   "ok": true,
+   "source": "S-GI-PAPER"
+  },
+  {
+   "anchor": "VB-GI-DESCRIPTION",
+   "chars": 58,
+   "consumer": "G-GAMMA-LAW-IS-A-PROBABILITY",
+   "digest": "c0e9b2436a5c",
+   "flipped_occurrences": 0,
+   "floor": 50,
+   "occurrences": 1,
+   "ok": true,
+   "source": "S-GI-PAPER"
+  },
+  {
+   "anchor": "VB-W2-QUESTION",
+   "chars": 261,
+   "consumer": "G-WELD2-RAN-AT-THE-GAMMA-CARRIER",
+   "digest": "d9168d3d4b7e",
+   "flipped_occurrences": 0,
+   "floor": 50,
+   "occurrences": 1,
+   "ok": true,
+   "source": "S-W2-PAPER"
+  },
+  {
+   "anchor": "VB-W2-EMPTY",
+   "chars": 94,
+   "consumer": "G-WELD2-RAN-AT-THE-GAMMA-CARRIER",
+   "digest": "bdd1d118de5a",
+   "flipped_occurrences": 0,
+   "floor": 50,
+   "occurrences": 1,
+   "ok": true,
+   "source": "S-W2-PAPER"
+  },
+  {
+   "anchor": "VB-W3-DICTIONARY",
+   "chars": 200,
+   "consumer": "G-WELD3-IS-THE-ONE-FOUND-DICTIONARY",
+   "digest": "a9bc48b67565",
+   "flipped_occurrences": 0,
+   "floor": 50,
+   "occurrences": 1,
+   "ok": true,
+   "source": "S-W3-PAPER"
+  },
+  {
+   "anchor": "VB-W3-CONSTANT",
+   "chars": 103,
+   "consumer": "G-WELD3-LINK-DATUM-IS-CONSTANT",
+   "digest": "e2c0ddbe82c2",
+   "flipped_occurrences": 0,
+   "floor": 50,
+   "occurrences": 1,
+   "ok": true,
+   "source": "S-W3-PAPER"
+  },
+  {
+   "anchor": "VB-W3-DEADLIST",
+   "chars": 95,
+   "consumer": "G-WELD2-RAN-AT-THE-GAMMA-CARRIER",
+   "digest": "7ecd1f74c5ba",
+   "flipped_occurrences": 0,
+   "floor": 50,
+   "occurrences": 1,
+   "ok": true,
+   "source": "S-W3-PAPER"
+  }
+ ],
+ "verdict": {
+  "head": "MEASURE-DECLARATION-REQUIRED-",
+  "reconstruction_agrees": true,
+  "string": "MEASURE-DECLARATION-REQUIRED-<ONE-POINT-OF-A-119-SIMPLEX-ON-120-ORBITS-AT-THE-CHART-128-READING;207-SIMPLEX-ON-208-ORBITS-AT-THE-CHART-32-READING -- CENSUS=8-CANDIDATES-0-DERIVE|(a)PUSHFORWARD=NO-PINNED-CORRESPONDENCE-TO-THIS-ARENA(WELD2-120-ROWS-60-DISTINCT-CANDIDATES-0-FOUND-AT-THIS-CARRIER;WELD3-IS-THE-ONE-FOUND-DICTIONARY-AND-ITS-TARGET-CARRIES-9-SITES-AGAINST-16-WITH-A-CONSTANT-LINK-DATUM-AT-27-OF-27-CELLS;GRANTED-EVERYTHING-THE-RESIDUAL-IS-A-POINT-MASS-WITH-THE-COIN-FREE-AMONG-640)|(b)COUNTING=DECLARED-NULL-2-CARRIERS-x-2-NULLS-ALL-INVARIANT|(c)INVARIANCE=SELECTS-A-SUPPORT-NOT-A-MEASURE|(d)FINITE-GROUP-HAAR=THE-FAMILY-IS-NOT-CLOSED-278528-OF-409600-PRODUCTS-STAY|(e)U(2)-HAAR=A-FINITE-SUBSET-HAS-MEASURE-ZERO-AND-384-OF-640-COINS-HAVE-FINITE-ORDER-IN-FAMILY|(f)GIBBS=NO-ACTION-NO-COUPLING-BY-THE-PARENTS-OWN-DECLARATION|(g)BORN=DERIVES-EXACTLY-AND-LANDS-ON-THE-STATES-3-IMAGES-FOR-640-CONFIGURATIONS|(h)HOLONOMY-PULLBACK=NO-SINGLE-GROUP-512-CONFIGURATIONS-CARRY-AN-INFINITE-ONE -- UNIQUENESS=GATED-AND-FAILS-AT-BOTH-READINGS(CHART-128:120-ORBITS;CHART-32:208-ORBITS)|INVARIANT-MEASURES-ARE-EXACTLY-THE-ORBIT-CONSTANT-ONES-SO-UNIQUE-IFF-TRANSITIVE|THE-GATE-CAN-PASS-A-SYNTHETIC-TRANSITIVE-ARENA-RETURNS-1-ORBIT|FULL-SPACE-NOT-TRANSITIVE-BY-AN-EXHIBITED-INVARIANT-561-SECTOR-MULTISETS-OVER-32-LINKS -- WHAT-THE-SYMMETRY-DOES-FIX=A-SUPPORT:THE-CHART-FIXED-CONFIGURATIONS-ARE-EXACTLY-THE-640-UNIFORM-ONES-AT-655360-OF-655360-CHECKS-SO-THE-PARENTS-DECLARED-SWEEP-IS-THE-FIXED-LOCUS-ITSELF(32-AT-THE-EXTENSION-WHERE-REVERSAL-FORCES-U=XUX)|FULL-SPACE-CHART-ORBITS=19615942923083377386986841947523957550319860937261713352753238485891465108835574743040000-AND-4903985730770844346746710486880993541417452474995871943159704028721854423865774571520000-AT-THE-TWO-READINGS -- CONSEQUENCE=THE-DECLARATION-IS-NOT-INNOCUOUS:THE-PARENTS-OWN-HEADLINE-SETS-MOVE-BETWEEN-INVARIANT-MEASURES|NON-COMMUTING=9/10-AT-COUNTING-AND-9/13-AND-7/10-AT-THE-TWO-ORBIT-NULLS|DEFECT-CARRYING=3/5-AND-6/13-AND-7/15|WIDEST-DISAGREEMENT=27/130-ON-DIAGONAL -- THE-ONE-CANONICAL-MEASURE-THIS-ARENA-HANDS-OVER=HAAR-ON-THE-128-ELEMENT-MONOMIAL-SUBGROUP(CLOSED-0-FAILURES-INVERSES-0-FAILURES;MAXIMAL-0-OF-512-INTERFERING-COINS-ADJOINABLE)-AND-IT-CARRIES-0-OF-384-DEFECT-COINS:WHERE-THE-MEASURE-IS-FREE-THE-QUANTUM-LAYER-IS-ABSENT -- WILSON=SEGMENT-WITHHELD-BY-THE-PIN-NO-SOURCE-DERIVES|NO-EXPECTATION-COMPUTED-ANYWHERE-IN-THE-INSTRUMENT|NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM -- SCOPE=D=2;L=4;FIELD=Q(ZETA-8);COINS=640;LINKS=32;PLAQUETTES=16;CONFIGURATION-SPACE=640^32;PRIMARY-CARRIER=THE-UNIFORM-SLICE-WHICH-IS-THE-CHART-FIXED-LOCUS;FULL-SPACE-ORBIT-COUNT-UNDER-THE-JOINT-GROUP=NOT-COMPUTED-BY-COST-A-LOWER-BOUND-IS-EXHIBITED-INSTEAD;THE-CORRESPONDENCE-QUESTION-AT-THIS-TARGET=OPEN-WELD-2s-STRUCTURAL-BLADE-IS-SILENT-HERE-BECAUSE-THIS-LATTICE-IS-BIPARTITE;NO-MEASURE-DERIVED;NO-ACTION;NO-COUPLING;NO-DYNAMICS;NOT-QCD;NO-CONFINEMENT-CLAIM>"
+ },
+ "verdict_head": "MEASURE-DECLARATION-REQUIRED-",
+ "waiver_ledger": [
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-SOURCES-PINNED"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-EXACT-ARITHMETIC"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-NO-MOVING-REFS"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-MUTANT-REGISTRY-TOTAL"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-PATHS-RELATIVE"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-PATH-VALUE-ANCHORS"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-VERBATIM-ANCHORS"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-ALPHABET-REBUILT"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-COINS-DERIVED"
+  },
+  {
+   "class": "REGISTERED-FORCING",
+   "gate": "G-LATTICE-REBUILT"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-CHART-REBUILT"
+  },
+  {
+   "class": "REGISTERED-FORCING",
+   "gate": "G-CHART-IS-TRANSITIVE-ON-LINKS"
+  },
+  {
+   "class": "REGISTERED-FORCING",
+   "gate": "G-SWAP-CONJUGATE-CLOSED"
+  },
+  {
+   "class": "REGISTERED-FORCING",
+   "gate": "G-GAUGE-ACTS-ON-THE-FAMILY"
+  },
+  {
+   "class": "REGISTERED-FORCING",
+   "gate": "G-UNIFORMITY-PRESERVING-GAUGE-MEASURED"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-ORBIT-CENSUS-EXACT"
+  },
+  {
+   "class": "REGISTERED-FORCING",
+   "gate": "G-BURNSIDE-EXACT"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-CHART-FIXED-LOCUS-IS-THE-SWEPT-SLICE"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-PARENT-CENSUS-REPRODUCED"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-VOCABULARY-COINCIDENCE-REFUSED"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-TRANSPORT-OBSTRUCTION"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-WELD2-RAN-AT-THE-GAMMA-CARRIER"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-WELD3-IS-THE-ONE-FOUND-DICTIONARY"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-WELD3-TARGET-IS-NOT-THIS-ARENA"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-WELD3-LINK-DATUM-IS-CONSTANT"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-ARITY-BLADE-TRANSFERS"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-STRUCTURAL-BLADE-DOES-NOT-TRANSFER"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-PUSHFORWARD-SUPPORT-BOUND"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-GAMMA-LAW-IS-A-PROBABILITY"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-DECLARED-SETS-ARE-ORBIT-CLOSED"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-EVERY-NULL-IS-INVARIANT-UNDER-EVERY-MEASURED-GROUP"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-TWO-NULLS-DISAGREE"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-UNIQUENESS-GATED"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-UNIQUENESS-GATE-CAN-PASS"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-FULL-SPACE-NOT-TRANSITIVE-BY-AN-EXHIBITED-INVARIANT"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-BORN-LAYER-IS-A-MEASURE"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-BORN-LAYER-LANDS-ON-STATES"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-FAMILY-IS-NOT-A-GROUP"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-THE-MONOMIAL-SUBGROUP-IS-A-GROUP"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-THE-HAAR-CARRIER-IS-MAXIMAL-AT-DECLARED-SCOPE"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-THE-HAAR-CARRIER-CARRIES-NO-DEFECT"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-U2-HAAR-CANNOT-DESCEND"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-GIBBS-NEEDS-AN-ACTION"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-HOLONOMY-GROUP-IS-CONFIGURATION-DEPENDENT"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-CENSUS-IS-TOTAL"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-FIBRE-PRICED"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-HEAD-LAW-REACHABILITY"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-NO-WILSON-EXPECTATION"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-CHOICE-INVENTORY"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-HEAD-STRING-EQUALITY"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-PAPER-CLAIMS-RENDER"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-PAPER-CARRIES-THIS-RUNS-VERDICT"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-MUST-NOT-VOCABULARY"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-PAPER-POLARITY"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-PAPER-COVERAGE"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-GATE-COUNT-IS-AS-CLAIMED"
+  }
+ ],
+ "withheld": {
+  "consequence": "THE-SEGMENT-IS-WITHHELD-AND-THE-INSTRUMENT-COMPUTES-NO-EXPECTATION-AT-ALL",
+  "licensed_by_the_pin_only_if": "A-MEASURE-DERIVES",
+  "measured": "NO-SOURCE-DERIVES",
+  "object": "THE-WILSON-LOOP-EXPECTATIONS"
+ }
+}
