@@ -7474,3 +7474,10 @@ chain)**; the conditional stamps enforced per-row +
 payload-wide; #125 holds against a wrapped-emphasised
 area-law plant.  The headline untouched.  → adjudication when
 K1 lands.
+
+## 2026-08-11 — SMU K3 REVIEW v2: THIRD HASH SEED ADDED (v14 LEDGER #240)
+
+The instrument reviewer's final touch: byte-identity now
+verified at THREE hash seeds off-tree/git-less — the #160
+tie-break immunity measured, not argued.  Findings unchanged.
+Re-frozen (v2).

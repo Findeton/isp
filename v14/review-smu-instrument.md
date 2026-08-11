@@ -25,7 +25,7 @@ their gate cannot fail on any object at all.
 
 **Counts.** 88 executions of the instrument (42 mutant runs as separate
 processes out of harness; 18 injection runs covering 15 distinct injections,
-three of them reproduced in a second independent sandbox; 4 off-tree
+three of them reproduced in a second independent sandbox; 5 off-tree
 byte-reproduction runs; 23 CLI invocations; 1 bare-copy abort), plus 3
 corrupted runs inside `--selftest`. 324 independent recomputations of
 published quantities, zero mismatches. 350 paper numerals classified
@@ -510,14 +510,16 @@ ids and the one computed id is the one the registered forcing
 machine-checks. The registry is checked total against the AST in both
 directions and a computed mutant name is fatal rather than forgiven.
 
-**Byte reproduction (#91, row 11) — byte ×2 across two seeds.** Off-tree, in
-git-less directory trees provisioned from `git show 6d8582e:`: the plain
+**Byte reproduction (#91, row 11) — byte ×3 across three seeds.** Off-tree,
+in git-less directory trees provisioned from `git show 6d8582e:`: the plain
 delivery run reproduced **both committed artifacts byte-for-byte at
-`PYTHONHASHSEED=0` and again at `PYTHONHASHSEED=987654321`**. Two further
-runs (at seeds `987654321` and `1`) came out **identical to each other**, so
-there is **no hash-seed dependence anywhere** — the v10-layer tie-break
-hazard (#160) does not bite here. Those two differed from the committed bytes
-only through MINOR-1, and only in `transcript_head`.
+`PYTHONHASHSEED=0`, at `987654321`, and at `1`** — three seeds, six files,
+all identical to the committed bytes. Two further runs in the `--quiet` form
+came out **identical to each other** across two seeds as well. There is
+therefore **no hash-seed dependence anywhere in this unit**: the v10-layer
+tie-break hazard (#160) does not bite, and the immunity is measured rather
+than argued. The quiet pair differed from the committed bytes only through
+MINOR-1, and only in `transcript_head`.
 
 **CLI (row 10).** 20 hostile argv forms, every one **exit 2**: unknown long
 flag, unknown short flag, bare positional, `--mutant` with no name (arity),
