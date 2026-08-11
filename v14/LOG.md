@@ -6675,3 +6675,34 @@ gate far weaker than the (true) claim; the velocity
 attribution's counterexamples = exactly (dd=4,4); the speed
 ceiling forced by Z/8 circle distance; 1/√3 decorative.  ALL
 THREE SEATS IN → THE ADJUDICATION (this ledger, next entry).
+
+## 2026-08-11 — PAPER-22 ADJUDICATION: BOTH-ADMITTED UPGRADED TO THEOREM; THE HEADLINE LAW SIMPLIFIED; TWELVE ORDERS; REPAIR LAUNCHED (v14 LEDGER #217)
+
+v14/note-r4c-adjudication.md frozen.  Three seats AWF (~249
+recomputations; byte confirmed three ways), zero false
+computed numbers.  **BOTH-ADMITTED SURVIVES, UPGRADED FROM
+CENSUS TO THEOREM** (three seats independently: leak ⟺
+non-monomial is a one-line theorem for every unitary; the
+"not forced" waiver dies).  THE HEADLINE CORRECTION governs:
+the discrimination law was value-multiset undisclosed —
+entrywise the shapes differ at 1764/3364 (= the
+two-excitation nonzero set); **the repaired law simpler and
+stronger: differ cell-by-cell ⟺ both legs non-monomial;
+multiset discrimination confined to the 588; the triple
+identity survives at both granularities (43 coin-level / 588
+pair-level)**.  The ceiling stays a DECLARATION, open — the
+6-and-12 argument dies; OCC (user-adopted) carries the
+forcing conditional.  TWELVE orders T1–T12 (the theorem
+stamp; the entrywise rewrite; the positive occupancy gate;
+the UNIVERSAL all-n theorem stated+gated w/ the
+one-parameter fibre disclosed; the 360 rows discharged; the
+braid stamp; the choice inventory; the phantom consumers
+eliminated — THE WALL GETS ITS INSTRUMENT; occurrence-counted
+licensing minus sha-digest members; the seal window closed at
+all 30 w/ restore-fatal + replace-after-check; the real
+cache falsifier; the 39-value stamp + MINOR sweep).
+Successor register adopted (OCC owns the ceiling; FCK/SPT
+inheritances).  NO new engraving (all defects instantiate
+E-22/E-23/#62/#119 families; recurrences noted).  Repair
+worker launched (Opus).  After repair + battery: paper-22
+TERMINAL → the OCC pin unlocks.
