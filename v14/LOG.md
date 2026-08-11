@@ -7205,3 +7205,18 @@ delivery sweep's 3-tuple unpack).  Shas: paper ef4a8c35a0c4,
 code 1958a8cdfe28, output 6b30d85131db, receipt a4538c7019e6.
 Committed AS-IS; orchestrator battery next; on green:
 TERMINAL (the nineteenth) → THE PIN VOLLEY (SIG, PER-R, LOR).
+
+## 2026-08-11 — PAPER-21 TERMINAL: THE NINETEENTH — THE LADDER, THE OPEN DOOR, THE CLOSED CATALOGUE (v14 LEDGER #232)
+
+Battery green (mirror byte-identical both artifacts; unknown
+flag exit 2; selftest by sha256 at G-PROVENANCE;
+MUT-PAPER-FENCE-MULTISET ON TARGET; artifacts untouched).
+**PAPER-21 IS TERMINAL — the nineteenth.**  STATUS row
+appended (§13 same commit).  The arena's legacy: the ladder
+law (perfect welds at R ≡ 0 mod 3); the law-over-records
+door OPEN with paper-06's law unique on the R=4 record and
+the R=6 arena gated zero-free; the price catalogue CLOSED
+(budget→matching→cover); block quantisation; the compulsory
+diagonal.  **THE PIN VOLLEY FIRES THIS LEDGER: SIG
+(paper-24), PER-R (paper-29), LOR (paper-30) — pins frozen
+at #233 and workers launched.**
