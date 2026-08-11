@@ -6405,3 +6405,37 @@ re-posed as the slack census.  4 MINORs; sweep clean (1,094
 numerals, 1 unbacked = an engraving id; E-24 clean; walled
 vocabulary 100% inside negations).  → adjudication when
 K1+K3 land.
+
+## 2026-08-11 — PAPER-21 OPERATOR REVIEW LANDED (K1): AWF — 131/131 CLEAN, ZERO MAJORS; THE SATURATION THEOREM STRONGER; DIA COMPULSORY (v14 LEDGER #208)
+
+v14/review-r4dec-operator.md frozen.  **Grade AWF; 131
+recomputations, 0 disagreements, 0 MAJOR, 6 MINOR — the
+panel's cleanest content seat this era.**  Everything rebuilt
+from nothing (own enumerators; brute 9! isomorphisms;
+prune-free covering census) and everything reproduces: the
+276 by three routes; the weld fibers with spreads and ≥2 free
+items at every base map; the split row; the price row
+100,080 with the det spectrum by cell; 0 occurrences of the
+det-0 codes; back-validation.  **THE SATURATION THEOREM
+SURVIVES WITH MARGIN — stronger than stated: the next
+incidence value below 9 is 7, so non-saturating totals ≤ 34 <
+36, a gap of 2 not 1** (corroborated 3,000,000 random
+non-saturating quadruples, 0 hits) — the stage-4
+exhaustiveness license HOLDS.  Off-tree git-less
+byte-identical; 21/21 anchors; numeral sweep clean.  Two
+OUT-OF-REGISTRY mutants, both killed AT PRE-PREDICTED
+NUMBERS: O-2 (common-mode census edit) killed at G-276 —
+showing the real binding is paper-19's committed 276, not
+route independence; O-1 (unsound prune) killed at
+G-HOMOGENEOUS-R4 at exactly 99,864/274 — and revealing
+G-PRICE-ROW itself passed on the corrupted total (MINOR-6:
+name the single binding).  Six MINORs, all textual with exact
+repairs (§4.3's premise drop — matches K2's MAJOR-1
+independently; first-base-map coordinates unnamed; the
+two-fixings disclosure; the 252 attribution; the binding
+naming).  **SUCCESSOR DATUM, measured, not in the paper: the
+DIA parallel class occurs in ALL 276 quadruples and all 12
+multisets — the diagonal line-partition is COMPULSORY, which
+is why the budget populates that link twice** (one line to
+gate; sharpens S-5; resonates with U4's diagonal
+unification).  → adjudication when K3 lands.
