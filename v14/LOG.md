@@ -6706,3 +6706,46 @@ inheritances).  NO new engraving (all defects instantiate
 E-22/E-23/#62/#119 families; recurrences noted).  Repair
 worker launched (Opus).  After repair + battery: paper-22
 TERMINAL → the OCC pin unlocks.
+
+## 2026-08-11 — PER-L BATTERY GREEN; PANEL PROTOCOL FROZEN; THREE SEATS LAUNCHED (v14 LEDGER #218)
+
+Battery: argv whitelist in source (no list flag — usage-
+disclosed contract; my empty-name probe refused exit 2, the
+contract confirmed); mirror plain exit 0 BYTE-IDENTICAL both
+artifacts; unknown flag exit 2; selftest exit 1 writing
+nothing; MUT-DDS (from the source registry) exit 1, artifacts
+untouched.  **PROTOCOL — note: PER-L is the first unit built
+entirely AFTER E-22/E-23/E-24; no birth-date excuses apply.
+K1 OPERATOR** — rebuild: the DDS THEOREM itself (prove
+support-difference-doubling independently; field-freeness),
+the 18-arena sufficiency + the 10 necessity failures
+([2,2,1,1] multiplicities; first counterexample L=6
+AXIS-0-1), the 54's exact reproduction AND
+alphabet-relativity (48/0/0 across rungs; 0 at the control
+rung on the parents' alphabet), VMAX/interior radii, the
+fingerprint identity, the locality-width=interior-radius
+join, the 24-row table, **THE BAND HARDEST** (width sections
+{4}/{6,8}/{8,10,12}; constructive witnesses vs the one-sided
+absence above width 1), Z/lcm(8,L), the speed-3/2 witness.
+**K2 EFFECTUS** — the head's licensure
+(SUFFICIENT-NOT-NECESSARY; the prediction-ledger register for
+a half-right prediction); the DDS theorem's field-free scope;
+**THE BAND'S READING: it reverses R4's terminal headline with
+a one-sided argument — what sentence is licensed, and does R4
+need a scope-annotation note (the paper-12 precedent)?**; the
+per-row verbs; the Z/8-coincidence sentence; the
+integer-velocity break vs the walls (VMAX intact); the join's
+status; successor register (PER-R rows; the DDS successor
+prediction entry; GGS's first datum).  **K3 INSTRUMENT** —
+FULL era, zero excuses: the DDS |S|≤12 DECLARED-WINDOW audit;
+the 1,952,424-map scan licensing; 48 mutants outside the
+harness; 41 seals + post-write; the waiver ledger's 7
+STRUCTURAL audited; injections incl. band-table and
+persistence-table forgeries; 2 fences multiset + 42 table
+rows as claims + 15 inline spans (E-22); falsifier
+descriptions vs code (E-23); fraction stamps (E-24); hostile
+argv incl. arity; byte ×2 across seeds; loud-clean-abort
+writes nothing.  Reviewers →
+v14/review-perl-{operator,effectus,instrument}.md.  Objects
+at 9fcc081: bd0298e2a482 / 976d5b9e4ac8 / e4ff37a7a13e /
+54ec5a9e9b72; pin 973b160d52ed.
