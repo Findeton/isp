@@ -7000,3 +7000,41 @@ disclosed (MUT-1a's permutation preserves the multiset) and
 MUT-1b (genuine site-mixing) moving D1 at 2,259/2,400 —
 proving the delivered zero CONTENTFUL.  Numeral sweep clean
 (3 benign).  → adjudication when K3 lands.
+
+## 2026-08-11 — PER-L OPERATOR REVIEW LANDED (K1): AWF — THE BAND FALSIFIED AT WIDTH 2 IN-ALPHABET (L=7 BY DIFFERENCE SET); THE ABSENCE HALF FORCED AT EVERY WIDTH (v14 LEDGER #226)
+
+v14/review-perl-operator.md frozen.  **Grade AWF; 741
+recomputations in a DIFFERENT representation of Q(ζ₂₄)
+(8-basis integer numerators); zero false computed numbers
+outside §7; off-tree byte-identical; 9/9 verbatim windows;
+own out-of-harness mutants killed on target.**  Stage 1
+row-for-row; the control 78→54; pool identities; VMAX;
+Z/lcm(8,L); the −3/2 witness; the fingerprint set-equality;
+all 24 persistence rows.  **MAJOR-1 — THE BAND IS FALSIFIED
+AT WIDTH 2 INSIDE THE DECLARED ALPHABET: L=7 admitted over
+the parents' own 25-element alphabet via the (7,4,2)
+DIFFERENCE SET {(0,0),(0,1),(0,2),(0,5)} — not an
+involution-separated pair; Z₇² has NO involutions, which is
+exactly why the unit's witness search was blind; the witness
+c = ½(δ+δ−δ+δ) verified by autocorrelation AND full 49×49
+U†U=I (2401 entries, 0 mismatches).  Admitted at width 2 is
+[6,7,8], not [6,8].**  MAJOR-2: the evenness clause
+alphabet-relative (L=9 width-3 coset carries 54 over
+THIRDS-19; 0 over R4-25) [= K2's M1, independent].
+**MINOR-1 (the biggest gift): THE ABSENCE HALF IS FORCED AT
+EVERY WIDTH — the injectivity theorem (L ≥ 4r+1 ⟹ the
+radius-r ball is DDS-free) + the support-size ceiling 4
+forced by the alphabet's moduli; the census run to
+COMPLETION: width sections [4] / [6,7,8] / [8,10,12]** (the
+L=7 ball carries 6,704,152 DDS subsets — finite only by the
+alphabet).  The DDS theorem exercised in NINE
+positive-characteristic fields (318 exhaustive scans, 0
+violations, incl. F₄ where 1=−1) — field-freeness evidence
+beyond the unit's own.  G-PARTITION-COROLLARY INERT
+(hard-coded complete:True — §6 reports an assertion as a
+measurement).  "First counterexample" enumeration-order-
+relative; the conjugation wording a category slip (field
+WITH INVOLUTION); the interior-radius confirmation thinner
+than delivered (R4b's table already carried the rows).
+**SCALE is the segment that must move — both content seats
+concur.**  → adjudication when K3 lands.
