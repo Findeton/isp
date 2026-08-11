@@ -6099,3 +6099,48 @@ Registry 62 gates / 56 falsifiers / 35 seals / 12 waivers /
 output 42b103eeec14, receipt 55273f6b6068.  Committed AS-IS;
 orchestrator battery next; on green paper-20 TERMINAL (the
 seventeenth).
+
+## 2026-08-11 — PAPER-23 REPAIR LANDED: Q1–Q12 EXECUTED; THE DERIVE ARM REACHABLE WITH A LIVE CONTROL; 20/20 INJECTIONS DIE; COMMIT-AS-IS (v14 LEDGER #199)
+
+The measure unit's repair delivered.  Q1 every price now
+len() of a measured reason list; **the control arm runs IN THE
+PLAIN RUN through the same pricer/fibre-builder/head-law and
+emits MEASURE-DERIVED-<AN-INVARIANCE-CHARACTERISED-MEASURE;
+UNIQUE> on the synthetic transitive carrier** — the two-way
+design is now real, mutant-guarded.  Q2 kernel/law language
+throughout; LAW-vs-NOTHING; stationary simplex dims 15/14/14
+computed by exact elimination and gated.  Q3 the transitivity
+criterion stated and gated 9/9 with maxent row (i)
+(RELOCATES-THE-PRICE) and the NAMED-ABSENT stationary row (j);
+"forced shut" census-relative in the head.  Q4 both weld-2
+FOUND-controls named (+6 anchors);
+G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED walks all 8,
+all dying at the 9-vs-16 site blade.  Q5 a true second head
+law; K3's H1+H2 die.  Q6 the withholding gate recursive +
+AST-total + MUST_NOT grown (bare potential/confinement/wilson/
+expectation/loop-average) + fraction-aware coverage; W7/W8
+registered as mutants.  Q7 all §7 fractions bound; every
+column labelled with its measure; counts COUNTING-ONLY
+(E-24).  Q8 registry-totality closed both evasions.  Q9
+rows-not-counts + the 4th row.  Q10 translations-only chart
+measured (locus 409600; 512 checks); the relabelling-carried
+disclosure.  Q11 the arg-max SET published
+(ATTAINED-ON-2-OF-4-SETS, NONE-DECLARED).  Q12 all 13 items
+incl. the L-PARITY stamp gated at L=3..8.  **INJECTION
+REPLAY: 20/20 die at named gates writing nothing** (Wilson
+evasions → G-NO-WILSON-EXPECTATION; head corruptions →
+G-THE-TWO-HEAD-LAWS-AGREE; the paper set →
+G-PAPER-CLAIMS-RENDER / G-MUST-NOT-VOCABULARY /
+G-PAPER-POLARITY).  Batteries: plain ×2 across five hash
+seeds; selftest 3/3 fatal writing nothing; 44/44 mutants
+dead-on-target in separate processes; argv 9/9; off-tree
+git-less byte-identical; receipt totality 45 = 33+11+itself;
+zero banned keys at any depth.  No delivered measured number
+moved.  WORKER SCOPE NOTE, ADJUDICATOR-ACCEPTED: the verdict
+(a) segment rescoped to match the renamed enumeration gate
+(consistent with K1 M2 repair (ii)); K2's MAJOR-2/[0,1] and
+MAJOR-7 were not ordered and correctly not implemented — they
+remain review-carried facts under E-24's rationale.  Shas:
+paper 79cc67b4f6cd, code faf353385905, output 55a0731ac4a9,
+receipt c9edf97a5533.  Committed AS-IS; orchestrator battery
+next; on green paper-23 TERMINAL (the eighteenth).

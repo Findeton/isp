@@ -3,9 +3,13 @@
 
 Does the substrate DERIVE a probability measure on R5's gauge configurations
 (the link-indexed coin assignments of the declared 640-coin family), or must
-one be DECLARED?  The derivation census runs seven candidate sources, each
-measured at the RSQ standard -- derived iff zero free items -- and every
-uniqueness claim is GATED rather than asserted.
+one be DECLARED?  The derivation census runs the pin's three candidate
+sources and six more, each measured at the RSQ standard -- derived iff zero
+free items, and every price is the LENGTH OF A MEASURED LIST rather than a
+typed constant -- and every uniqueness claim is GATED rather than asserted.
+The DERIVE arm is reachable: a synthetic transitive CONTROL ARM runs in the
+plain delivery run, is priced by the same pricing function as this arena,
+and emits the MEASURE-DERIVED head.
 
 Built against the frozen pin v14/note-r5m-pin.md.  Exact arithmetic only:
 the field is Q(zeta_8) carried as integer 5-tuples over the basis
@@ -16,8 +20,18 @@ any measurement, and an AST scan of this file's own syntax tree is a gate.
 THE PIN'S MUST-NOT, INHERITED VERBATIM FROM R5 AND ENFORCED HERE: this unit
 builds the measure and makes NO area-law, NO string-tension and NO potential
 claim.  Wilson-loop EXPECTATIONS are licensed ONLY in the DERIVED case; no
-source derives, so the instrument computes none and a gate requires the
-receipt to carry no such field at all.
+source derives, so the instrument computes none, a gate walks the whole
+receipt tree for a banned key at ANY depth, and the same gate reads this
+file's own syntax tree for a banned function, a banned lambda and for any
+function at all that is not in the declared inventory.
+
+EXIT CONVENTIONS, DISCLOSED (they invert the usual reading and the reader is
+owed the inversion): the delivery run exits 0 when every gate passes and 1
+on any refusal, writing nothing; --selftest exits 0 when EVERY anchor class
+is fatal; --mutant exits 0 when the named mutant DIES ON ITS DECLARED TARGET
+and 1 when it survives or dies elsewhere; --all-mutants exits 0 only when
+all of them die on target; an unknown flag or a missing flag argument exits
+2.
 """
 
 import ast
@@ -56,6 +70,21 @@ def digest(obj):
 
 def bdigest(b):
     return hashlib.sha256(b).hexdigest()[:12]
+
+
+def own_source():
+    """the instrument's OWN source text, as the AST gates read it.  The two
+    source-planting mutants below insert a real definition into exactly this
+    text, so what they falsify is the object the gate measures and not the
+    gate's own finding (#34)."""
+    src = open(os.path.abspath(__file__), "rb").read().decode()
+    if mut("MUT-WILSON-FUNCTION"):
+        src = src + "\n\ndef wilson_expectation(S):\n    return Fraction(3, 8)\n"
+    if mut("MUT-FUNCTION-INVENTORY"):
+        src = src + "\n\ndef ghost_helper(S):\n    return Fraction(3, 8)\n"
+    if mut("MUT-REGISTRY-EVASION"):
+        src = src + "\n\n_gn = 'MUT-' + 'GHOST'\nif mut(_gn):\n    pass\n"
+    return src
 
 
 # ===========================================================================
@@ -330,8 +359,43 @@ PATH_VALUES = [
     ("PV-W3-CELLS", "S-W3-RECEIPT", "arena/cells_at_one", 27,
      "G-WELD3-LINK-DATUM-IS-CONSTANT",
      "weld 3's realised link cells, every one of them at count 1"),
-    ("PV-W3-DIVISIONS", "S-W3-RECEIPT", "arena/divisions", 9,
-     "G-WELD3-TARGET-IS-NOT-THIS-ARENA", "weld 3's site count"),
+    # the SITE COUNT, at the field that carries it.  arena/divisions is weld
+    # 3's division-event count per record and is NOT the site count, though
+    # both read 9; a (path, consumer) pair has to bind the field the consumer
+    # prints (#87)
+    ("PV-W3-SITES", "S-W3-RECEIPT", "arena/posdef_sites", 9,
+     "G-WELD3-TARGET-IS-NOT-THIS-ARENA",
+     "weld 3's target site count -- the blade the correspondence dies on"),
+    ("PV-W3-FOUND", "S-W3-RECEIPT", "counts/weld_found", 6,
+     "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+     "weld 3's FOUND rows -- the corpus's found dictionary, enumerated"),
+    # WELD 2'S OWN TWO FOUND CONTROLS, named: the enumeration is incomplete
+    # without them and this instrument reads the very block they sit in
+    ("PV-W2-CRYSTAL-FATE", "S-W2-RECEIPT",
+     "payload/controls/FOUND_at_crystal/fate", "FOUND-candidate",
+     "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+     "weld 2's first FOUND control, CRYSTAL/DOUBLE-GRID(3,2)"),
+    ("PV-W2-CRYSTAL-SITES", "S-W2-RECEIPT",
+     "payload/controls/FOUND_at_crystal/site_arity", 9,
+     "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+     "and its target's site count -- the same blade"),
+    ("PV-W2-CRYSTAL-FREE", "S-W2-RECEIPT",
+     "payload/controls/FOUND_at_crystal/free_items", [],
+     "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+     "and its price: zero free items at the RSQ standard, which is what "
+     "makes it a FOUND row this census must account for"),
+    ("PV-W2-PROBE-FATE", "S-W2-RECEIPT",
+     "payload/controls/FOUND_at_I7_target_declared_probe/fate",
+     "FOUND-candidate", "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+     "weld 2's second FOUND control, DECLARED-PROBE/CAYLEY-AT-I7"),
+    ("PV-W2-PROBE-SITES", "S-W2-RECEIPT",
+     "payload/controls/FOUND_at_I7_target_declared_probe/site_arity", 9,
+     "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+     "and its target's site count -- the same blade again"),
+    ("PV-W2-PROBE-FREE", "S-W2-RECEIPT",
+     "payload/controls/FOUND_at_I7_target_declared_probe/free_items", [],
+     "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+     "and its price, zero free items likewise"),
 ]
 
 
@@ -379,7 +443,8 @@ VERBATIM = [
     ("VB-W2-EMPTY", "S-W2-PAPER", "G-WELD2-RAN-AT-THE-GAMMA-CARRIER",
      "The census is **EMPTY under both**: **120 rows, 60 distinct "
      "candidates, 0 FOUND, 0 SMUGGLED**."),
-    ("VB-W3-DICTIONARY", "S-W3-PAPER", "G-WELD3-IS-THE-ONE-FOUND-DICTIONARY",
+    ("VB-W3-DICTIONARY", "S-W3-PAPER",
+     "G-WELD3-IS-THE-ONE-FOUND-DICTIONARY-AT-A-COMMITTED-RECORD-ARENA",
      "The site and link generators are the one cell weld 2 left live at a "
      "record arena — site ← ACTOR, link ← the co-division actor pair, count "
      "← the division events on that pair inside the declared window."),
@@ -758,6 +823,112 @@ def link_orbits(lat, prof):
 
 
 # ===========================================================================
+# SECTION 5b.  THE PRICES, MEASURED -- NOT ONE OF THEM IS TYPED
+#
+# THE RSQ STANDARD: a candidate is DERIVED iff it costs zero free items.
+# Every price below is the LENGTH OF A LIST, and every entry of every list is
+# appended under a predicate this run measures, so no candidate's price is a
+# constant a reader has to take on trust and the DERIVE arm is wired to a
+# measurement rather than asserted.  price_invariance is the one that can
+# return zero on this instrument's own measurements, and the control arm at
+# the end of the run drives THIS function on a synthetic transitive carrier
+# and gets [] back from it.
+# ===========================================================================
+
+def price_pushforward(a_correspondence_reaches_this_arena, residual_fibre):
+    out = []
+    if not a_correspondence_reaches_this_arena:
+        out.append("A-CORRESPONDENCE-TO-THIS-ARENA-MUST-BE-DECLARED")
+    if residual_fibre > 1:
+        out.append("THE-COIN-A-CONSTANT-LINK-DATUM-PULLS-BACK-TO-MUST-BE-"
+                   "DECLARED")
+    return out
+
+
+def price_counting(carriers, nulls):
+    out = []
+    if len(carriers) > 1:
+        out.append("WHICH-CARRIER-MUST-BE-DECLARED")
+    if len(nulls) > 1:
+        out.append("WHICH-NULL-MUST-BE-DECLARED")
+    return out
+
+
+def price_invariance(uniqueness):
+    """THE DERIVE ARM'S PRICE.  Invariance fixes a measure uniquely if and
+    only if the declared group acts TRANSITIVELY, so this price is zero
+    exactly at a transitive reading -- measured, at every reading handed in,
+    and never typed."""
+    if mut("MUT-INVARIANCE-PRICE-UNWIRED"):
+        return ["ONE-POINT-OF-THE-INVARIANT-SIMPLEX-MUST-BE-DECLARED"]
+    if any(v["unique_invariant_measure"] for v in uniqueness.values()):
+        return []
+    return ["ONE-POINT-OF-THE-INVARIANT-SIMPLEX-MUST-BE-DECLARED"]
+
+
+def price_group_haar(products_inside, products_total, inverse_failures):
+    out = []
+    if products_inside != products_total or inverse_failures > 0:
+        out.append("A-SUBGROUP-OF-THE-FAMILY-MUST-BE-DECLARED")
+    return out
+
+
+def price_ambient_haar(products_inside, products_total, finite_order, coins):
+    out = []
+    if products_inside != products_total or finite_order != coins:
+        out.append("A-CONDITIONING-ON-A-HAAR-NULL-SUBSET-MUST-BE-DECLARED")
+    return out
+
+
+def price_gibbs(objects_the_parent_declares_absent):
+    return ["THE-%s-MUST-BE-DECLARED" % o
+            for o in objects_the_parent_declares_absent]
+
+
+def price_born(distinct_kernels, configurations):
+    out = []
+    if distinct_kernels < configurations:
+        out.append("A-MEASURE-ON-THE-CONFIGURATIONS-MUST-STILL-BE-DECLARED")
+    return out
+
+
+def price_holonomy(distinct_holonomies, configurations):
+    out = []
+    if distinct_holonomies < configurations:
+        out.append("A-SECTION-OF-THE-HOLONOMY-MAP-MUST-BE-DECLARED")
+    return out
+
+
+def price_maxent(references_disagree, pinned_constraints):
+    out = []
+    if references_disagree:
+        out.append("THE-REFERENCE-MEASURE-MUST-BE-DECLARED")
+    if pinned_constraints == 0:
+        out.append("A-CONSTRAINT-TO-CONDITION-ON-MUST-BE-DECLARED")
+    return out
+
+
+def fibre_rows_from(uniqueness):
+    """the fibre a declaration must fill, one row per measured reading: the
+    invariant measures on a finite carrier are exactly the orbit-constant
+    ones, so they form a simplex of dimension (orbits - 1) and a declaration
+    picks one of its points.  A transitive reading gives a 0-simplex, which
+    is a point -- and a point is a derivation, which is why this builder is
+    shared with the control arm."""
+    return [{"reading": r, "orbits": uniqueness[r]["orbits"],
+             "independent_numbers_a_declaration_must_supply":
+                 uniqueness[r]["simplex_dimension"]}
+            for r in sorted(uniqueness)]
+
+
+def uniqueness_from_orbits(orbits_by_reading):
+    """the uniqueness reading, from an orbit count and nothing else."""
+    return {r: {"orbits": k, "transitive": k == 1, "simplex_dimension": k - 1,
+                "unique_invariant_measure": k == 1}
+            for r, k in orbits_by_reading.items()}
+
+
+# ===========================================================================
 # SECTION 6.  THE MEASUREMENT BODY
 # ===========================================================================
 
@@ -782,7 +953,7 @@ def measure_provenance(S):
                        "pin_ledger_entry": int(m.group(1)) if m else -1,
                        "declared_not_read": []}
 
-    me = open(os.path.abspath(__file__), "rb").read().decode()
+    me = own_source()
     tree = ast.parse(me)
     floats = [n for n in ast.walk(tree)
               if isinstance(n, ast.Constant) and isinstance(n.value, float)]
@@ -831,22 +1002,68 @@ def measure_provenance(S):
     # branch someone forgot to declare -- which would never be swept -- dies
     # here rather than sitting unexercised
     switched = set()
+    opaque = 0
     for n in ast.walk(tree):
         if (isinstance(n, ast.Call) and isinstance(n.func, ast.Name)
-                and n.func.id == "mut" and n.args
-                and isinstance(n.args[0], ast.Constant)):
-            switched.add(n.args[0].value)
+                and n.func.id == "mut"):
+            if n.args and isinstance(n.args[0], ast.Constant):
+                switched.add(n.args[0].value)
+            else:
+                # mut(_variable) -- a switch whose name no scan can read, so
+                # no sweep can reach it: the evasion is fatal, not forgiven
+                opaque += 1
+    # AND THE COMPARISON FORM: mut() is the ONLY mutant switch its own
+    # docstring claims it is, so a bare MUT == "..." elsewhere is an
+    # unregistered switch and dies here too
+    inside_mut = set()
+    for fn in ast.walk(tree):
+        if isinstance(fn, ast.FunctionDef) and fn.name == "mut":
+            for sub in ast.walk(fn):
+                inside_mut.add(id(sub))
+    bypass = 0
+    for n in ast.walk(tree):
+        if isinstance(n, ast.Compare) and id(n) not in inside_mut:
+            for side in [n.left] + list(n.comparators):
+                if isinstance(side, ast.Name) and side.id == "MUT":
+                    bypass += 1
     declared = {nm for (nm, _g, _w) in MUTANTS}
     LD.gate("G-MUTANT-REGISTRY-TOTAL",
             "the mutant registry is TOTAL against the instrument's own "
             "syntax tree: every name the source switches on is declared, and "
             "every declared name is switched on somewhere, so no falsifier "
             "can exist as an unswept branch and none can be declared without "
-            "a branch to fire",
-            switched == declared,
-            "%d switches, %d declared; undeclared %s, unused %s"
+            "a branch to fire.  A switch the scan cannot read -- mut() on a "
+            "variable, or a bare MUT comparison outside mut's own body -- is "
+            "an unregistered branch by construction and is fatal here",
+            switched == declared and opaque == 0 and bypass == 0,
+            "%d switches, %d declared; undeclared %s, unused %s; %d "
+            "unreadable mut() arguments, %d MUT comparisons outside mut"
             % (len(switched), len(declared), sorted(switched - declared),
-               sorted(declared - switched)))
+               sorted(declared - switched), opaque, bypass))
+
+    # THE GATE REGISTRY, read off the same syntax tree: every gate id this
+    # source can close is collected here and reconciled at the seal against
+    # the ledger this run actually produced plus the two declared closing
+    # gates and the declared conditional one.  A gate added after the ledger
+    # snapshot -- the way a late closing gate would be added -- is in the
+    # source and in neither list, and dies at G-SEAL-COMPLETE.
+    gate_ids, opaque_gates = set(), 0
+    for n in ast.walk(tree):
+        if (isinstance(n, ast.Call) and isinstance(n.func, ast.Attribute)
+                and n.func.attr == "gate"):
+            if n.args and isinstance(n.args[0], ast.Constant):
+                gate_ids.add(n.args[0].value)
+            else:
+                opaque_gates += 1
+    S["_gate_ids_in_source"] = sorted(gate_ids)
+    LD.gate("G-GATE-IDS-ARE-READABLE",
+            "every gate this source can close names itself with a literal, "
+            "so the gate registry is readable from the syntax tree and can "
+            "be reconciled against the run's own ledger at the seal; a gate "
+            "id assembled at runtime would be a gate no sweep could find",
+            opaque_gates == 0 and len(gate_ids) > 0,
+            "%d gate ids in the source, %d unreadable"
+            % (len(gate_ids), opaque_gates))
 
     esc = [rel for (_n, rel, _s, _w) in SOURCES
            if os.path.isabs(rel) or ".." in rel.split("/")]
@@ -1145,6 +1362,17 @@ def measure_fixed_locus(S, pv):
                     failures += 1
     if mut("MUT-FIXED-LOCUS"):
         failures = 1
+    # THE CONVERSE HALF, which the 655360 checks do not carry: the checks
+    # establish that every uniform configuration IS fixed; that no OTHER
+    # configuration is fixed rests on transitivity on the link set (gated
+    # above) together with the fact that no anchored chart element reverses a
+    # link.  That second fact was measured and published and bound to
+    # nothing; it is bound here, and a planted reversal falsifies it.
+    prof32 = chart_cycle_profile(lat, ch32)
+    if mut("MUT-ANCHORED-REVERSAL"):
+        ev, od, p, rv = prof32[1]
+        prof32[1] = (ev, od, p, tuple([True] + list(rv)[1:]))
+    rev32 = sum(1 for (_e, _o, _p, rv) in prof32 if any(rv))
     LD.gate("G-CHART-FIXED-LOCUS-IS-THE-SWEPT-SLICE",
             "THE ONE THING THE MEASURED SYMMETRY DOES FIX, and it is not a "
             "measure: because the chart is transitive on the link set and "
@@ -1152,13 +1380,74 @@ def measure_fixed_locus(S, pv):
             "leaves fixed are EXACTLY the uniform ones -- so the parent's "
             "declared sweep is not an arbitrary window but the chart-fixed "
             "locus itself, and the check is run configuration by "
-            "configuration rather than read off the orbit formula",
-            failures == 0 and checked == len(coins) * len(ch32) * len(lat.links),
-            "%d fixed-locus checks, %d failures" % (checked, failures))
+            "configuration rather than read off the orbit formula.  The two "
+            "halves are attributed separately: the checks carry the forward "
+            "direction, transitivity and the no-reversal count carry the "
+            "converse",
+            (failures == 0 and rev32 == 0
+             and checked == len(coins) * len(ch32) * len(lat.links)),
+            "%d fixed-locus checks, %d failures, %d anchored-chart elements "
+            "reversing a link" % (checked, failures, rev32))
+
+    # THE THIRD ADMISSIBLE CHART, measured as a contrast: the parent declared
+    # two readings and nothing makes two exhaustive.  Drop the direction
+    # relabelling and keep the translations alone; the link set falls into
+    # two orbits, no element reverses a link, and the fixed locus is the
+    # two-coin configurations -- one coin per direction -- of which the
+    # parent's swept uniform slice is a PROPER subset.  So the one positive
+    # result of this unit is carried specifically by the direction
+    # relabelling being inside the declared chart.
+    tr = [(v, (False, 1, 1)) for v in lat.sites]
+    if mut("MUT-TRANSLATIONS-CHART"):
+        tr = tr + [(v, (True, 1, 1)) for v in lat.sites]
+    ptr = chart_cycle_profile(lat, tr)
+    tro = link_orbits(lat, ptr)
+    tr_rev = sum(1 for (_e, _o, _p, rv) in ptr if any(rv))
+    tr_locus = len(coins) ** len(tro)
+    # and the forward check on the same footing as the anchored one: every
+    # configuration constant on the two link orbits is fixed by all 16
+    # translations, run link by link rather than read off the orbit formula
+    tr_checked = tr_bad = 0
+    lorb = {}
+    for i, o in enumerate(tro):
+        for j in o:
+            lorb[j] = i
+    for e in tr:
+        for l in lat.links:
+            im, rev = transported_link(lat, l, e)
+            tr_checked += 1
+            if rev or lorb[lat.lidx[im]] != lorb[lat.lidx[l]]:
+                tr_bad += 1
+    LD.gate("G-TRANSLATIONS-ONLY-CHART-IS-A-THIRD-READING",
+            "and the positive result is CHART-DECLARATION-RELATIVE, which is "
+            "measured here rather than left for a reader to find: the "
+            "translations alone are a third admissible chart, they carry the "
+            "link set into two orbits rather than one and reverse no link, "
+            "so their fixed locus is the two-coin configurations -- one coin "
+            "per direction -- and the parent's swept slice is a proper "
+            "subset of it.  It is the direction relabelling that forces the "
+            "uniform slice",
+            (len(tro) == 2 and tr_rev == 0 and tr_bad == 0
+             and tr_checked == len(tr) * len(lat.links)
+             and tr_locus > len(coins)
+             and tr_locus == len(coins) * len(coins)),
+            "%d translations, %d link orbits of sizes %s, %d reversals, %d "
+            "of %d incidence checks failing; fixed locus %d configurations "
+            "against the anchored chart's %d"
+            % (len(tr), len(tro), sorted({len(o) for o in tro}), tr_rev,
+               tr_bad, tr_checked, tr_locus, fixed32))
+
     S["fixed_locus"] = {
         "chart_fixed_configurations": fixed32,
         "extension_fixed_configurations": fixed128,
         "checks": checked, "failures": failures,
+        "anchored_chart_elements_reversing_a_link": rev32,
+        "translations_only_order": len(tr),
+        "translations_only_link_orbits": len(tro),
+        "translations_only_reversals": tr_rev,
+        "translations_only_incidence_checks": tr_checked,
+        "translations_only_fixed_configurations": tr_locus,
+        "carried_by": "THE-DIRECTION-RELABELLING",
         "the_distinction": "a symmetry fixes a SET OF CONFIGURATIONS; an "
         "invariant MEASURE is a different object, and the two are not to be "
         "conflated -- the fixed locus is a point of the configuration space, "
@@ -1224,11 +1513,49 @@ def measure_parent_census(S, pv):
     return S["_sets"]
 
 
+def nullity(rows, n):
+    """the exact dimension of the kernel of a rational matrix, by elimination
+    over Fraction -- no float, no tolerance, no rank estimate."""
+    M = [list(r) for r in rows]
+    rank = 0
+    for col in range(n):
+        piv = None
+        for r in range(rank, len(M)):
+            if M[r][col] != 0:
+                piv = r
+                break
+        if piv is None:
+            continue
+        M[rank], M[piv] = M[piv], M[rank]
+        pv = M[rank][col]
+        M[rank] = [x / pv for x in M[rank]]
+        for r in range(len(M)):
+            if r != rank and M[r][col] != 0:
+                f = M[r][col]
+                M[r] = [a - f * b for a, b in zip(M[r], M[rank])]
+        rank += 1
+    return n - rank
+
+
+def born_kernel_matrix(lat, m, n):
+    """B(U) on the carrier's n states, dense and exact: the link operator's
+    entrywise squared moduli.  It is the identity off the link's own domino,
+    which is the fact that decides what it can and cannot fix."""
+    sp = born(link_op(lat, lat.links[0], m, n))
+    M = [[Fraction(0)] * n for _ in range(n)]
+    for (i, j), v in sp.items():
+        M[i][j] = to_fraction(v)
+    return M
+
+
 def measure_born_layer(S):
-    """CANDIDATE (g): the substrate's own Born layer.  It DOES derive an
-    exact probability measure -- over the wrong space."""
+    """CANDIDATE (g): the substrate's own Born layer.  It DOES derive
+    something exact -- A LAW, not a measure, and on the states rather than on
+    the configurations."""
     lat, coins = S["_lat"], S["_coins"]
     n = len(lat.sites)
+    l0 = lat.links[0]
+    dom = set(lat.idx[s] for s in lat.ends(l0))
     ds = 0
     images = {}
     for m in coins:
@@ -1241,29 +1568,79 @@ def measure_born_layer(S):
     fibres = sorted(len(v) for v in images.values())
     if mut("MUT-BORN-STOCHASTIC"):
         ds -= 1
-    LD.gate("G-BORN-LAYER-IS-A-MEASURE",
-            "the substrate's own Born layer does deliver an exact "
-            "probability: B(U) is doubly stochastic at every one of the "
-            "derived coins, in exact rational arithmetic, so the candidate "
-            "is real and is not dismissed on a technicality",
+    LD.gate("G-BORN-LAYER-IS-A-KERNEL",
+            "the substrate's own Born layer does deliver something exact, "
+            "and naming it exactly is what decides the candidate: B(U) is a "
+            "doubly stochastic KERNEL on the two states of a link's own "
+            "domino -- each of its rows is an exact probability distribution "
+            "over the carrier's states, at every one of the derived coins, "
+            "in exact rational arithmetic -- so the candidate is real and is "
+            "not dismissed on a technicality",
             ds == len(coins), "%d of %d doubly stochastic" % (ds, len(coins)))
     LD.gate("G-BORN-LAYER-LANDS-ON-STATES",
             "and it lands on the WRONG SPACE, which is the measurement that "
-            "decides it: B(U) is a distribution over the carrier's STATES, "
-            "not over the configurations, and its fibre over the "
+            "decides it: B(U) is a law on the carrier's STATES, not a "
+            "measure over the configurations, and its fibre over the "
             "configuration space is enormous -- the whole family collapses "
-            "to one image per sector, so the Born layer cannot separate two "
+            "to one kernel per sector, so the Born layer cannot separate two "
             "configurations of the same sector, let alone weigh them",
             len(images) == len(S["parent_census"]["by_sector"]),
-            "%d distinct Born images over %d configurations, fibres %s"
+            "%d distinct Born kernels over %d configurations, fibres %s"
             % (len(images), len(coins), fibres))
+
+    # PRESSED FOR A MEASURE IT FIXES NONE EITHER, and the asymmetry the unit
+    # exists to state is therefore LAW versus NOTHING and not measure versus
+    # nothing: the kernel is the identity off the domino, hence reducible, so
+    # its own stationary distributions are a SIMPLEX on the states -- the
+    # whole state simplex in the diagonal sector, where B is the identity.
+    # Measured by exact elimination on the 16x16, per sector, not argued.
+    stat = {}
+    offdom = 0
+    for sname in sorted(S["parent_census"]["by_sector"]):
+        rep = [m for m in coins if coin_sector(m) == sname][0]
+        B = born_kernel_matrix(lat, rep, n)
+        rows = [[B[j][i] - (1 if i == j else 0) for j in range(n)]
+                for i in range(n)]
+        stat[sname] = nullity(rows, n) - 1
+    for m in coins:
+        B = born_kernel_matrix(lat, m, n)
+        for i in range(n):
+            for j in range(n):
+                if i in dom and j in dom:
+                    continue
+                if B[i][j] != (1 if i == j else 0):
+                    offdom += 1
+    if mut("MUT-BORN-STATIONARY"):
+        stat["DIAGONAL"] = 0
+    LD.gate("G-BORN-KERNEL-FIXES-NO-MEASURE-EITHER",
+            "and pressed for a MEASURE the kernel fixes none: it is the "
+            "identity off the link's own domino at every configuration -- "
+            "measured entry by entry across the whole family -- hence "
+            "reducible, and its stationary distributions form a simplex on "
+            "the states of positive dimension in every sector, the WHOLE "
+            "state simplex in the diagonal sector where B is the identity "
+            "matrix.  Double stochasticity singles out the uniform state "
+            "measure as stationary, and the uniform measure is the counting "
+            "measure, which is candidate (b)'s declared null.  So the "
+            "substrate hands over a LAW and never a measure: the asymmetry "
+            "this unit reports is law against nothing",
+            all(v > 0 for v in stat.values()) and offdom == 0
+            and stat["DIAGONAL"] == n - 1
+            and stat["ANTIDIAGONAL"] == stat["BALANCED"] < stat["DIAGONAL"],
+            "stationary simplex dimensions %s on %d states; %d off-domino "
+            "entries differing from the identity across %d configurations"
+            % (sorted(stat.items()), n, offdom, len(coins)))
+
     S["born_layer"] = {
         "doubly_stochastic": ds, "configurations": len(coins),
         "distinct_images": len(images), "fibres": fibres,
         "carrier_states": n,
-        "free_items": 1,
-        "verdict": "DERIVES-A-MEASURE-ON-THE-CARRIER-NOT-ON-THE-"
-                   "CONFIGURATIONS",
+        "stationary_simplex_dimension_by_sector": stat,
+        "off_domino_entries_not_the_identity": offdom,
+        "free_item_reasons": price_born(len(images), len(coins)),
+        "free_items": len(price_born(len(images), len(coins))),
+        "verdict": "DERIVES-A-LAW-ON-THE-STATES-EXACTLY-NOT-A-MEASURE-ON-"
+                   "EITHER-SPACE",
     }
     return len(images), fibres
 
@@ -1361,21 +1738,71 @@ def measure_correspondence(S, src, pv):
             % (w2["candidate_count"], w2["distinct_candidates"], found,
                sorted(fates.items())))
 
+    # EVERY FOUND ROW IN THE CORPUS, ENUMERATED -- not only weld 3's.  Weld
+    # 2's own controls carry two FOUND rows at zero free items, built from
+    # the same generators a pushforward would need, and an enumeration that
+    # omits the two rows nearest the claim is not an enumeration.  Both are
+    # walked here, with every weld-3 FOUND row, and each is required to die
+    # at the site-count blade against this arena.
+    found_rows = []
+    for r in w3["weld"]["rows"]:
+        if str(r.get("fate", "")).startswith("FOUND"):
+            found_rows.append({"receipt": "WELD3", "arena": r["arena"],
+                               "target": r["target"], "reading": r["reading"],
+                               "sites": r["site_arity"],
+                               "free_items": len(r["free_items"])})
+    for k, r in sorted(json.loads(src["S-W2-RECEIPT"].decode())["payload"]
+                       ["controls"].items()):
+        if str(r.get("fate", "")).startswith("FOUND"):
+            found_rows.append({"receipt": "WELD2-CONTROL", "arena": r["arena"],
+                               "target": r["target"], "reading": r["reading"],
+                               "sites": r["site_arity"],
+                               "free_items": len(r["free_items"])})
+    if mut("MUT-FOUND-ENUMERATION"):
+        found_rows = found_rows[:1]
+    blade = [r for r in found_rows if r["sites"] != len(lat.sites)]
+    LD.gate("G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+            "the enumeration is the finding, so it is TOTAL: every row of "
+            "both pinned weld receipts whose fate begins FOUND is walked -- "
+            "weld 3's found dictionary and weld 2's own two FOUND controls, "
+            "a crystal and a declared probe, which carry zero free items at "
+            "the RSQ standard and are built from the very generators a "
+            "pushforward would need -- and every one of them is required to "
+            "die at the SAME site-count blade: each lands on a nine-site "
+            "target where this arena carries sixteen.  A census that omitted "
+            "the two rows nearest its own claim would not be one",
+            (len(found_rows) >= 8 and len(blade) == len(found_rows)
+             and all(r["free_items"] == 0 for r in found_rows)),
+            "%d FOUND rows across the two pinned receipts, %d dying at the "
+            "site-count blade, target site counts %s against this arena's %d"
+            % (len(found_rows), len(blade),
+               sorted({r["sites"] for r in found_rows}), len(lat.sites)))
+
     dead = w3["weld"]["dead_lists_cited"]
     carrier_dead = [d for d in dead if "WELD2" in d]
-    LD.gate("G-WELD3-IS-THE-ONE-FOUND-DICTIONARY",
-            "and the corpus's ONE found dictionary is weld 3's -- actor to "
-            "site, co-division actor pair to link, division count to the "
-            "link's own count -- whose own pre-registered dead list cites "
-            "the transport carrier this pin names as its candidate source.  "
-            "The one correspondence that exists does not start where the "
-            "pushforward would have to start",
-            len(carrier_dead) >= 2 and w3["counts"]["weld_found"] > 0,
-            "%d found weld rows; %d dead-list entries naming the transport "
-            "carrier: %s" % (w3["counts"]["weld_found"], len(carrier_dead),
-                             carrier_dead))
+    LD.gate("G-WELD3-IS-THE-ONE-FOUND-DICTIONARY-AT-A-COMMITTED-RECORD-ARENA",
+            "and the corpus's one found dictionary AT A COMMITTED RECORD "
+            "ARENA is weld 3's -- actor to site, co-division actor pair to "
+            "link, division count to the link's own count -- whose own "
+            "pre-registered dead list cites the transport carrier this pin "
+            "names as its candidate source.  The word ONE is scoped and is "
+            "carried by a measurement rather than by the gate's name: weld "
+            "2's two FOUND rows are positive controls on a declared probe "
+            "and on a crystal, they are enumerated in the row above, and "
+            "they die at the same blade.  The one correspondence that exists "
+            "does not start where the pushforward would have to start",
+            (len(carrier_dead) >= 2 and w3["counts"]["weld_found"] > 0
+             and w3["counts"]["weld_found"] == sum(
+                 1 for r in found_rows if r["receipt"] == "WELD3")
+             and sum(1 for r in found_rows
+                     if r["receipt"] == "WELD2-CONTROL") == 2),
+            "%d found weld rows and %d weld-2 FOUND controls; %d dead-list "
+            "entries naming the transport carrier: %s"
+            % (w3["counts"]["weld_found"],
+               sum(1 for r in found_rows if r["receipt"] == "WELD2-CONTROL"),
+               len(carrier_dead), carrier_dead))
 
-    sites3 = pv["PV-W3-DIVISIONS"]
+    sites3 = pv["PV-W3-SITES"]
     LD.gate("G-WELD3-TARGET-IS-NOT-THIS-ARENA",
             "and its target is not this arena either: the found dictionary "
             "lands on a nine-site record lattice, where this arena has "
@@ -1429,6 +1856,47 @@ def measure_correspondence(S, src, pv):
                     bip = False
         frontier = nxt
     degs = sorted({len(adj[s]) for s in lat.sites})
+
+    # AND THE SILENCE IS L-PARITY-RELATIVE, measured over a range of lattice
+    # sizes rather than asserted of the species: (Z_L)^2 is bipartite exactly
+    # when L is even, so at any odd L the inherited blade FIRES and the
+    # correspondence question is closed by inheritance rather than open.
+    bip_by_L = {}
+    for LL in range(3, 9):
+        lt = Lattice(LL)
+        col2 = {lt.sites[0]: 0}
+        fr = [lt.sites[0]]
+        ok2 = True
+        while fr:
+            nx = []
+            for s in fr:
+                for d in range(2):
+                    for t in (lt.addv(s, EDIR[d]),
+                              lt.addv(s, (-EDIR[d][0], -EDIR[d][1]))):
+                        if t not in col2:
+                            col2[t] = 1 - col2[s]
+                            nx.append(t)
+                        elif col2[t] == col2[s]:
+                            ok2 = False
+            fr = nx
+        bip_by_L[LL] = ok2
+    if mut("MUT-L-PARITY"):
+        bip_by_L[3] = True
+    LD.gate("G-BIPARTITENESS-IS-L-PARITY",
+            "and the silence of that blade is a property of the declared "
+            "EVEN lattice size and not of the target species, which is "
+            "measured over a range of sizes rather than argued: (Z_L)^2 is "
+            "bipartite exactly when L is even, so at any odd L the target "
+            "carries odd cycles, the inherited blade FIRES, and the "
+            "correspondence question there is closed by inheritance rather "
+            "than open.  The open ruling below is scoped to the even-L "
+            "family, which is the family the parent's own refinement and "
+            "every scaling step live in",
+            all(v == (LL % 2 == 0) for LL, v in bip_by_L.items())
+            and bip_by_L[lat.L],
+            "bipartite by lattice size %s"
+            % sorted((LL, v) for LL, v in bip_by_L.items()))
+
     LD.gate("G-STRUCTURAL-BLADE-DOES-NOT-TRANSFER",
             "and one of them does NOT, which this unit measures rather than "
             "leaves for a reader to catch: weld 2's structural blade was "
@@ -1490,13 +1958,20 @@ def measure_correspondence(S, src, pv):
         "weld3_realised_cells_all_at_one_count": cells,
         "actor_site_objects": actors,
         "target_bipartite": bip, "target_degrees": degs,
+        "bipartite_by_lattice_size": {str(k): v
+                                      for k, v in sorted(bip_by_L.items())},
+        "found_rows_in_the_corpus": found_rows,
+        "found_rows_dying_at_the_site_count_blade": len(blade),
         "gamma_cut_dimensions": dims, "gamma_classes": classes,
         "slice_configurations": slice_n,
         "configurations_at_mass_zero_at_class_grain": zero_on_slice,
         "granted_lattice_residual_fibre": slice_n,
         "verdict": "NO-PINNED-CORRESPONDENCE-TO-THIS-ARENA;GRANTED-EVERYTHING"
                    "-THE-RESIDUAL-IS-A-POINT-MASS-WITH-THE-COIN-FREE",
-        "free_items": 2,
+        "free_item_reasons": price_pushforward(len(found_rows) > len(blade),
+                                               slice_n),
+        "free_items": len(price_pushforward(len(found_rows) > len(blade),
+                                            slice_n)),
     }
     return S["candidate_pushforward"]
 
@@ -1587,7 +2062,10 @@ def measure_invariance(S, pv):
                 Fraction(row["orbit_uniform_CHART-32"]),
                 Fraction(row["orbit_uniform_CHART-128"])]
         spreads.append((row["set"], str(max(vals) - min(vals))))
-    worst = max(spreads, key=lambda t: Fraction(t[1]))
+    top = max(Fraction(s) for (_n, s) in spreads)
+    attaining = sorted(n for (n, s) in spreads if Fraction(s) == top)
+    if mut("MUT-WIDEST-TIE"):
+        attaining = attaining[:1]
     LD.gate("G-TWO-NULLS-DISAGREE",
             "and the choice among them is NOT innocuous, which is the "
             "measurement that prices the declaration: the counting measure "
@@ -1595,16 +2073,18 @@ def measure_invariance(S, pv):
             "invariant under everything this arena measures, and they assign "
             "materially different masses to the parent's own headline sets "
             "-- so a reader handed 'the natural measure' has been handed a "
-            "choice, not a derivation",
-            Fraction(worst[1]) > 0,
-            "widest disagreement %s on the %s set" % (worst[1], worst[0]))
+            "choice, not a derivation.  The widest disagreement is published "
+            "with its ARG-MAX SET and its multiplicity (#91): it is attained "
+            "twice here, so naming one set would be an undeclared "
+            "alphabetical tie-break, and a future run in which the tie "
+            "breaks is a change the head shows",
+            top > 0 and len(attaining) == len(
+                [1 for (_n, s) in spreads if Fraction(s) == top]),
+            "widest disagreement %s, attained on %d of %d sets: %s"
+            % (str(top), len(attaining), len(spreads), attaining))
 
     # THE UNIQUENESS GATE -- gated, never asserted
-    uniq = {}
-    for rname, orbs in readings.items():
-        uniq[rname] = {"orbits": len(orbs), "transitive": len(orbs) == 1,
-                       "simplex_dimension": len(orbs) - 1,
-                       "unique_invariant_measure": len(orbs) == 1}
+    uniq = uniqueness_from_orbits({r: len(o) for r, o in readings.items()})
     if mut("MUT-UNIQUENESS"):
         uniq["CHART-32"]["unique_invariant_measure"] = True
     any_unique = any(v["unique_invariant_measure"] for v in uniq.values())
@@ -1650,15 +2130,58 @@ def measure_invariance(S, pv):
             "%d realised values of the sector multiset over %d links, so at "
             "least that many orbits" % (multisets, nlinks))
 
+    # CANDIDATE (i): MAXIMUM ENTROPY, the move a reader reaches for, entered
+    # as a census row rather than answered in ungated prose.  It relocates
+    # the price and does not escape it, by two different routes for its two
+    # sub-cases: unconstrained, it returns its own reference measure -- and
+    # the two references available here are exactly the two nulls of
+    # candidate (b), which are measured to disagree; constrained, it is
+    # candidate (f) with the constraint supplied, and the arena pins nothing
+    # to condition on, which is measured here rather than assumed.
+    refs = ["COUNTING-ON-CONFIGURATIONS", "COUNTING-ON-ORBITS"]
+    # what a constraint would have to be: a pinned VALUE for a functional on
+    # the configurations.  Every quantity the parent pins for the sets this
+    # unit weighs is an integer COUNT greater than one -- measured at its own
+    # anchor -- and a count is not a mass without a declared measure (E-24),
+    # so there is nothing here to set <f> equal to.
+    pvr = {r["anchor"]: r["measured"] for r in S["path_value_anchors"]}
+    setanchors = ("PV-NONFLAT", "PV-NONCOMM", "PV-DEFECT", "PV-DIAG")
+    pinned_constraints = sum(
+        1 for a in setanchors
+        if not (isinstance(pvr[a], int) and pvr[a] > 1))
+    if mut("MUT-MAXENT"):
+        pinned_constraints = 1
+    LD.gate("G-MAXENT-RELOCATES-THE-PRICE",
+            "maximum entropy is the move a reader reaches for and it is "
+            "answered as a CENSUS ROW rather than in prose: the entropy "
+            "functional is defined relative to a reference measure, so "
+            "unconstrained maximisation returns the reference it was given "
+            "-- and the two references this arena offers are the two nulls, "
+            "measured to disagree -- while constrained maximisation returns "
+            "exp(-lambda f) times that reference, which is the Gibbs "
+            "candidate with its constraint supplied.  The arena pins no "
+            "quantity to condition on, which is measured on the run's own "
+            "product and not assumed; so the principle names the answer it "
+            "was handed and its price is the reference plus the constraint",
+            len(refs) > 1 and top > 0 and pinned_constraints == 0,
+            "%d declared references disagreeing by %s; %d of %d anchored "
+            "parent quantities are masses rather than integer counts, so %d "
+            "constraints are pinned to condition on"
+            % (len(refs), str(top), pinned_constraints, len(setanchors),
+               pinned_constraints))
+
     S["candidate_counting"] = {
         "status": "DECLARED-NULL",
         "carriers_declared": ["THE-UNIFORM-SLICE", "THE-FULL-SPACE"],
         "carrier_fibre": "UNBOUNDED",
         "carrier_declared_instances": 2,
-        "nulls_declared": ["COUNTING-ON-CONFIGURATIONS", "COUNTING-ON-ORBITS"],
+        "nulls_declared": refs,
         "nulls_fibre": "UNBOUNDED",
         "nulls_declared_instances": 2,
-        "free_items": 2,
+        "free_item_reasons": price_counting(
+            ["THE-UNIFORM-SLICE", "THE-FULL-SPACE"], refs),
+        "free_items": len(price_counting(
+            ["THE-UNIFORM-SLICE", "THE-FULL-SPACE"], refs)),
         "verdict": "CARRIES-NO-INFORMATION-AND-IS-NOT-EVEN-UNIQUE-AMONG-"
                    "THE-INVARIANT-MEASURES",
     }
@@ -1669,12 +2192,26 @@ def measure_invariance(S, pv):
         "uniqueness": uniq,
         "synthetic_transitive_orbits": len(syn_orbs),
         "sector_multisets_on_the_full_space": multisets,
-        "free_items": 1,
+        "free_item_reasons": price_invariance(uniq),
+        "free_items": len(price_invariance(uniq)),
         "verdict": "SELECTS-A-SUPPORT-NOT-A-MEASURE",
     }
-    S["measure_comparison"] = {"rows": table, "spreads": spreads,
-                               "widest": {"set": worst[0], "spread": worst[1]}}
-    return uniq, table, worst
+    S["candidate_maxent"] = {
+        "references_available": refs,
+        "references_disagree_by": str(top),
+        "pinned_quantities_to_condition_on": pinned_constraints,
+        "free_item_reasons": price_maxent(top > 0, pinned_constraints),
+        "free_items": len(price_maxent(top > 0, pinned_constraints)),
+        "verdict": "RELOCATES-THE-PRICE-AND-DOES-NOT-ESCAPE-IT;"
+                   "UNCONSTRAINED-IT-RETURNS-ITS-DECLARED-REFERENCE;"
+                   "CONSTRAINED-IT-IS-THE-GIBBS-ROW-WITH-A-CONSTRAINT",
+    }
+    S["measure_comparison"] = {
+        "rows": table, "spreads": spreads,
+        "widest": {"spread": str(top), "sets": attaining,
+                   "attained_on": len(attaining), "of_sets": len(spreads),
+                   "tie_break": "NONE-DECLARED-THE-ARG-MAX-SET-IS-PUBLISHED"}}
+    return uniq, table, (attaining, str(top))
 
 
 # --------------------------------------------------------------------------
@@ -1698,13 +2235,32 @@ def measure_haar_and_gibbs(S, src, pv):
     total = len(coins) ** 2
     if mut("MUT-CLOSURE"):
         inside = total
+    finv = sum(1 for A in coins if cdag(A) not in cset)
+    # ONE WAY ONLY, and the table says so: every product that leaves has BOTH
+    # factors interfering, but only half of the interfering pairs leave.  The
+    # containment is one-directional and the numbers are published in both
+    # directions so the sentence cannot be read as an equivalence.
+    leaving = total - inside
+    bb = by_pair[("BALANCED", "BALANCED")]
+    leaving_bb = bb[0] - bb[1]
+    leaving_elsewhere = sum(v[0] - v[1] for k, v in by_pair.items()
+                            if k != ("BALANCED", "BALANCED"))
+    if mut("MUT-INTERFERING-PAIRS"):
+        leaving_elsewhere = 1
     LD.gate("G-FAMILY-IS-NOT-A-GROUP",
             "the derived family is NOT closed under multiplication, so it "
-            "carries no finite-group Haar measure to inherit: the products "
-            "that leave are exactly the interfering ones, and they leave at "
-            "an exactly measured rate",
-            inside < total,
-            "%d of %d products stay inside the family" % (inside, total))
+            "carries no finite-group Haar measure to inherit; and the "
+            "containment is ONE-WAY, which is measured in both directions "
+            "rather than stated as an equivalence: every product that leaves "
+            "the family has BOTH factors interfering, and no other pair "
+            "leaves at all -- but only half of the ordered interfering pairs "
+            "leave, so 'the ones that leave are the interfering ones' is a "
+            "containment and not a characterisation",
+            inside < total and leaving_elsewhere == 0 and leaving_bb == leaving
+            and 0 < leaving_bb < bb[0],
+            "%d of %d products stay inside the family; %d leave, all of them "
+            "from the %d ordered interfering pairs, %d from any other pair"
+            % (inside, total, leaving_bb, bb[0], leaving_elsewhere))
 
     mono = [m for m in coins if coin_sector(m) in ("DIAGONAL", "ANTIDIAGONAL")]
     mset = set(mono)
@@ -1788,33 +2344,57 @@ def measure_haar_and_gibbs(S, src, pv):
     r5 = wsnorm(src["S-R5-PAPER"].decode())
     needle = wsnorm("It has no configuration measure, no action functional, "
                     "no coupling and no dynamics for the link variables")
+    # the two objects the route needs are read OFF THE PARENT'S OWN
+    # DECLARATION, so the price of this row is a measurement against pinned
+    # bytes rather than a number typed by its author
+    absent = [o for (o, phrase) in (("ACTION-FUNCTIONAL", "no action functional"),
+                                    ("COUPLING", "no coupling"))
+              if wsnorm(phrase) in r5]
+    # the same window carries the fact the NAMED-ABSENT row turns on, and it
+    # is read here rather than assumed there
+    S["_no_dynamics"] = wsnorm("no dynamics for the link variables") in r5
     LD.gate("G-GIBBS-NEEDS-AN-ACTION",
             "the Gibbs route needs two objects this arena does not have, and "
             "the parent says so in its own words at a window pinned by "
             "digest: a weight of the form exp(-S) requires an action "
             "functional and a coupling to put in front of it, and declaring "
-            "either is declaring the measure by another name",
-            r5.count(needle) == 1, "the parent's declaration located once")
+            "either is declaring the measure by another name.  Both are read "
+            "off the parent's declaration, so this row's price is measured "
+            "against pinned bytes",
+            r5.count(needle) == 1 and len(absent) == 2,
+            "the parent's declaration located once; %d objects it declares "
+            "absent and this route needs: %s" % (len(absent), absent))
 
     S["candidate_group_haar"] = {
         "products_inside": inside, "products_total": total,
+        "products_leaving": leaving,
+        "ordered_interfering_pairs": bb[0],
+        "interfering_pairs_leaving": leaving_bb,
+        "leaving_pairs_with_a_non_interfering_factor": leaving_elsewhere,
         "closure_by_sector_pair": {"%s|%s" % k: v
                                    for k, v in sorted(by_pair.items())},
+        "family_inverse_failures": finv,
         "monomial_coins": len(mono), "monomial_closure_failures": mclose,
         "monomial_inverse_failures": minv,
         "interfering_coins_adjoinable": adjoinable,
         "defect_coins_in_the_haar_carrier": overlap,
         "coins_of_finite_order_inside_the_family": finite,
-        "free_items": 1,
+        "free_item_reasons": price_group_haar(inside, total, finv),
+        "free_items": len(price_group_haar(inside, total, finv)),
         "verdict": "HAAR-EXISTS-ON-A-DECLARED-SUBGROUP-WHICH-CARRIES-NO-"
                    "DEFECT;THE-FAMILY-ITSELF-IS-NOT-A-GROUP",
     }
     S["candidate_ambient_haar"] = {
-        "free_items": 1,
+        "free_item_reasons": price_ambient_haar(inside, total, finite,
+                                                len(coins)),
+        "free_items": len(price_ambient_haar(inside, total, finite,
+                                             len(coins))),
         "verdict": "A-FINITE-SUBSET-OF-U(2)-CARRIES-HAAR-MEASURE-ZERO",
     }
     S["candidate_gibbs"] = {
-        "free_items": 2,
+        "objects_the_parent_declares_absent": absent,
+        "free_item_reasons": price_gibbs(absent),
+        "free_items": len(price_gibbs(absent)),
         "verdict": "NO-ACTION-AND-NO-COUPLING-ON-THIS-ARENA-BY-THE-PARENTS-"
                    "OWN-DECLARATION",
     }
@@ -1848,7 +2428,8 @@ def measure_holonomy_pullback(S, pv):
     S["candidate_holonomy_pullback"] = {
         "distinct_plaquette_holonomies": len(images), "fibres": fib,
         "configurations_with_an_infinite_group": infinite,
-        "free_items": 1,
+        "free_item_reasons": price_holonomy(len(images), len(coins)),
+        "free_items": len(price_holonomy(len(images), len(coins))),
         "verdict": "NO-SINGLE-GROUP-TO-BORROW-FROM;A-SECTION-WOULD-BE-ONE-"
                    "MORE-FREE-ITEM",
     }
@@ -1860,72 +2441,217 @@ def measure_holonomy_pullback(S, pv):
 # ===========================================================================
 
 CANDIDATES = [
-    ("a", "THE-HISTORY-MEASURE-PUSHFORWARD", "candidate_pushforward"),
-    ("b", "THE-COUNTING-MEASURE", "candidate_counting"),
-    ("c", "AN-INVARIANCE-CHARACTERISED-MEASURE", "candidate_invariance"),
-    ("d", "HAAR-FROM-A-GROUP-STRUCTURE-ON-THE-FAMILY", "candidate_group_haar"),
-    ("e", "HAAR-INHERITED-FROM-U(2)", "candidate_ambient_haar"),
-    ("f", "GIBBS-FROM-AN-ACTION", "candidate_gibbs"),
-    ("g", "THE-BORN-LAYER", "born_layer"),
-    ("h", "PULL-BACK-FROM-THE-HOLONOMY-GROUP", "candidate_holonomy_pullback"),
+    ("a", "THE-HISTORY-MEASURE-PUSHFORWARD", "candidate_pushforward",
+     "the history-measure pushforward",
+     "transitivity borrowed through a pinned correspondence"),
+    ("b", "THE-COUNTING-MEASURE", "candidate_counting",
+     "the counting measure",
+     "transitivity by fiat, which is the free choice itself"),
+    ("c", "AN-INVARIANCE-CHARACTERISED-MEASURE", "candidate_invariance",
+     "an invariance-characterised measure",
+     "the measured symmetry group, acting transitively"),
+    ("d", "HAAR-FROM-A-GROUP-STRUCTURE-ON-THE-FAMILY", "candidate_group_haar",
+     "Haar from a group structure on the family",
+     "a group acting on itself"),
+    ("e", "HAAR-INHERITED-FROM-U(2)", "candidate_ambient_haar",
+     "Haar inherited from $U(2)$",
+     "the carrier as an orbit of the ambient group"),
+    ("f", "GIBBS-FROM-AN-ACTION", "candidate_gibbs",
+     "Gibbs from an action",
+     "an action, which exists to break transitivity"),
+    ("g", "THE-BORN-LAYER", "born_layer",
+     "the Born layer",
+     "its own kernel, irreducible on the carrier"),
+    ("h", "PULL-BACK-FROM-THE-HOLONOMY-GROUP", "candidate_holonomy_pullback",
+     "pull-back from the holonomy group",
+     "one holonomy group, plus a section"),
+    ("i", "MAXIMUM-ENTROPY", "candidate_maxent",
+     "maximum entropy",
+     "a canonical reference measure"),
+]
+
+# THE NAMED-ABSENT ROW.  It is not a censused candidate and it is not
+# silently missing either: the object it would be stationary FOR does not
+# exist in this corpus, so it cannot be priced -- and a census that simply
+# omitted it could not say that "MEASURE-BLOCKED-AT is forced shut" was a
+# fact about the arena rather than about the list.
+NAMED_ABSENT = [
+    ("j", "THE-STATIONARY-MEASURE-OF-A-DYNAMICS-ON-THE-CONFIGURATIONS",
+     "the stationary measure of a dynamics on the configurations",
+     "an irreducible chain on the carrier",
+     "NOT-CENSUSABLE-NO-PINNED-DYNAMICS-ON-CONFIGURATIONS;A-COVARIANT-CHAIN-"
+     "DERIVES-IFF-IT-IS-IRREDUCIBLE"),
 ]
 
 
+def transitivity_by_row(S):
+    """THE CENSUS'S ORGANIZING PRINCIPLE, measured row by row: a canonical --
+    equivariant, zero-free-item -- probability measure on a finite carrier
+    exists exactly where some declared structure acts TRANSITIVELY on that
+    carrier.  Each row's required structure is named in CANDIDATES and its
+    transitivity is measured here from this run's own quantities, so the
+    principle is a test a tenth candidate can be run through rather than a
+    list a reader has to trust."""
+    uq = S["candidate_invariance"]["uniqueness"]
+    sym = any(v["transitive"] for v in uq.values())
+    gh = S["candidate_group_haar"]
+    group = (gh["products_inside"] == gh["products_total"]
+             and gh["family_inverse_failures"] == 0)
+    pf = S["candidate_pushforward"]
+    reaches = (len(pf["found_rows_in_the_corpus"])
+               > pf["found_rows_dying_at_the_site_count_blade"])
+    bl = S["born_layer"]
+    irreducible = all(
+        v == 0 for v in bl["stationary_simplex_dimension_by_sector"].values())
+    hp = S["candidate_holonomy_pullback"]
+    one_group = (hp["configurations_with_an_infinite_group"] == 0
+                 and hp["distinct_plaquette_holonomies"] == S["arena"]["coins"])
+    action = len(S["candidate_gibbs"]["objects_the_parent_declares_absent"]) == 0
+    return {"a": reaches, "b": sym, "c": sym, "d": group, "e": group,
+            "f": action, "g": irreducible, "h": one_group, "i": sym}
+
+
 def build_census(S):
+    trans = transitivity_by_row(S)
+    if mut("MUT-CENSUS-CRITERION"):
+        trans["d"] = True
     rows = []
-    for (tag, name, key) in CANDIDATES:
+    for (tag, name, key, prose, requires) in CANDIDATES:
         blk = S[key]
-        if "free_items" not in blk:
+        if "free_items" not in blk or "free_item_reasons" not in blk:
             raise GateFail("G-CENSUS-IS-TOTAL :: candidate %s publishes no "
-                           "price" % tag)
+                           "measured price" % tag)
         fi = blk["free_items"]
-        rows.append({"candidate": tag, "source": name,
+        rows.append({"candidate": tag, "source": name, "prose": prose,
+                     "requires": requires,
+                     "acts_transitively_on_the_carrier": trans[tag],
                      "free_items": fi,
+                     "free_item_reasons": blk["free_item_reasons"],
                      "derives": fi == 0,
                      "verdict": blk["verdict"]})
     if mut("MUT-CENSUS-DERIVES"):
         rows[0]["derives"] = True
         rows[0]["free_items"] = 0
+        rows[0]["free_item_reasons"] = []
     derived = [r for r in rows if r["derives"]]
     LD.gate("G-CENSUS-IS-TOTAL",
             "every candidate the pin names is measured and priced, and the "
-            "census carries the two the pin did not name as well -- the "
-            "ambient group's measure and the pull-back -- so no source is "
+            "census carries six more the pin did not name -- the group "
+            "structure, the ambient Haar, the Gibbs route, the Born layer, "
+            "the holonomy pull-back and maximum entropy -- so no source is "
             "left out by being unmentioned; DERIVED means zero free items at "
             "the RSQ standard and nothing weaker",
             len(rows) == len(CANDIDATES)
             and all(r["free_items"] >= 0 for r in rows),
             "%d candidates, %d deriving" % (len(rows), len(derived)))
+
+    priced = [r for r in rows
+              if r["free_items"] != len(r["free_item_reasons"])]
+    if mut("MUT-PRICE-TYPED"):
+        rows[3]["free_items"] = 7
+        priced = [r for r in rows
+                  if r["free_items"] != len(r["free_item_reasons"])]
+    LD.gate("G-EVERY-CANDIDATE-PRICE-IS-MEASURED",
+            "and no price in this census is a typed constant: each is the "
+            "LENGTH OF A LIST whose every entry was appended under a "
+            "predicate this run measures -- a correspondence that does not "
+            "reach the arena, a carrier with more than one admissible "
+            "instance, a family that is not closed, a kernel that does not "
+            "separate the configurations -- so a reader can check the price "
+            "against the reasons and the DERIVE branch is wired to a "
+            "measurement rather than asserted",
+            not priced,
+            "%d candidates, %d whose published price is not the length of "
+            "its own measured reason list" % (len(rows), len(priced)))
+
+    bad_rows = [r for r in rows
+                if r["derives"] != r["acts_transitively_on_the_carrier"]
+                or not r["requires"]]
+    LD.gate("G-THE-CENSUS-CRITERION-IS-THE-ORGANIZING-PRINCIPLE",
+            "the census is not a list but a TEST: a canonical measure on a "
+            "finite carrier exists exactly where some declared structure "
+            "acts transitively on it, every row names the transitive "
+            "structure it would need, and that structure's transitivity is "
+            "measured here from this run's own quantities.  Every row agrees "
+            "with the criterion, which is what makes 'none of these derives' "
+            "an argument a tenth candidate can be run through rather than an "
+            "inventory a reader has to trust",
+            not bad_rows,
+            "%d rows, %d disagreeing with the criterion, %d transitive"
+            % (len(rows), len(bad_rows),
+               sum(1 for r in rows if r["acts_transitively_on_the_carrier"])))
+
+    absent = [{"candidate": tag, "source": name, "prose": prose,
+               "requires": requires, "verdict": verdict,
+               "censusable": False, "free_items": None}
+              for (tag, name, prose, requires, verdict) in NAMED_ABSENT]
+    no_dynamics = S["_no_dynamics"]
+    if mut("MUT-STATIONARY-ABSENT"):
+        absent = []
+    LD.gate("G-THE-STATIONARY-CANDIDATE-IS-NAMED-ABSENT",
+            "and the one candidate that could have returned the third "
+            "pre-registered outcome is NAMED rather than omitted: a "
+            "stationary measure needs a dynamics to be stationary for, the "
+            "parent declares in its own pinned bytes that it has none for "
+            "the link variables, and nothing in the corpus supplies one on "
+            "the configurations -- so the row cannot be priced at all.  It "
+            "is entered as NOT-CENSUSABLE with the requirement a future unit "
+            "would owe, IRREDUCIBILITY, which no symmetry supplies; and "
+            "'MEASURE-BLOCKED-AT is forced shut' is therefore true "
+            "CENSUS-RELATIVELY -- of the rows that could be evaluated -- and "
+            "not of the arena",
+            len(absent) == len(NAMED_ABSENT) and no_dynamics
+            and all(r["free_items"] is None for r in absent),
+            "%d named-absent rows; the parent's no-dynamics declaration "
+            "located: %s" % (len(absent), no_dynamics))
+
     S["census"] = {"rows": rows, "candidates": len(rows),
-                   "deriving": len(derived)}
+                   "deriving": len(derived),
+                   "named_absent": absent,
+                   "named_absent_rows": len(absent),
+                   "criterion": "A-CANONICAL-MEASURE-EXISTS-EXACTLY-WHERE-"
+                                "SOMETHING-ACTS-TRANSITIVELY-ON-THE-CARRIER",
+                   "rows_agreeing_with_the_criterion": len(rows)}
     return rows, derived
 
 
 def price_the_fibre(S):
     uniq = S["candidate_invariance"]["uniqueness"]
-    lo = min(uniq.values(), key=lambda v: v["orbits"])
-    hi = max(uniq.values(), key=lambda v: v["orbits"])
-    rows = []
-    for rname in sorted(uniq):
-        v = uniq[rname]
-        rows.append({"reading": rname, "orbits": v["orbits"],
-                     "independent_numbers_a_declaration_must_supply":
-                         v["simplex_dimension"]})
+    rows = fibre_rows_from(uniq)
+    lo = min(rows, key=lambda r: r["orbits"])
+    dims_ok = all(r["independent_numbers_a_declaration_must_supply"]
+                  == r["orbits"] - 1 for r in rows)
+    transitive_here = [r for r in rows if r["orbits"] == 1]
+    # and the word INVARIANT is what makes the price true: a declaration is
+    # not obliged to be invariant, and a non-invariant one on the slice pays
+    # the whole slice simplex instead of the orbit one
+    without = S["arena"]["uniform_slice"] - 1
     LD.gate("G-FIBRE-PRICED",
             "the declaration is PRICED rather than deplored: after every "
             "symmetry this arena measures has been imposed, what remains to "
-            "be declared is exactly one point of a simplex over the orbits, "
-            "and its dimension is the number of independent conditions a "
-            "declaration has to supply.  Both readings are priced, because "
-            "which chart group is declared is itself a free axis (§15)",
-            all(r["orbits"] > 1 for r in rows) and len(rows) == 2,
-            "%s" % [(r["reading"], r["orbits"],
-                     r["independent_numbers_a_declaration_must_supply"])
-                    for r in rows])
+            "be declared is exactly one point of the INVARIANT simplex over "
+            "the orbits, and its dimension is the number of independent "
+            "conditions a declaration has to supply.  Both readings are "
+            "priced, because which chart group is declared is itself a free "
+            "axis (§15).  A transitive reading is priced by the same rule "
+            "and returns a 0-simplex, which is a point -- so this gate does "
+            "not refuse a transitive arena, it prices it, and the head law "
+            "is what turns a 0-simplex into MEASURE-DERIVED.  The price is "
+            "the INVARIANT simplex's: a declaration that abandons invariance "
+            "pays the whole slice instead, which is measured here so that "
+            "the word in the head carries a number",
+            dims_ok and len(rows) == len(uniq)
+            and all(without > r["independent_numbers_a_declaration_must_supply"]
+                    for r in rows),
+            "%s; %d transitive readings priced at a 0-simplex; a "
+            "non-invariant declaration on the slice pays %d numbers"
+            % ([(r["reading"], r["orbits"],
+                 r["independent_numbers_a_declaration_must_supply"])
+                for r in rows], len(transitive_here), without))
     S["fibre"] = {
         "rows": rows,
-        "minimal": {"reading": "CHART-128", "orbits": hi["orbits"]
-                    if hi["orbits"] < lo["orbits"] else lo["orbits"]},
+        "the_price_without_invariance_on_the_slice": without,
+        "minimal": {"reading": lo["reading"], "orbits": lo["orbits"]},
         "carrier_choice": S["candidate_counting"]["carriers_declared"],
         "what_a_declaration_must_add":
             "the carrier, then one point of the invariant simplex over its "
@@ -1935,8 +2661,10 @@ def price_the_fibre(S):
 
 
 def head_law(census_rows, uniqueness, fibre_rows, blocked_object=None):
-    """THE HEAD LAW, one function, used by the builder, by the reconstruction
-    and by the reachability demonstration alike."""
+    """THE HEAD LAW as the BUILDER writes it.  The comparator does not call
+    it: it carries its own second implementation, second_head_law, written
+    with a different structure and sharing no helper, and the two are gated
+    for equality."""
     derived = [r for r in census_rows if r["derives"]]
     if derived:
         src = derived[0]["source"]
@@ -1948,7 +2676,34 @@ def head_law(census_rows, uniqueness, fibre_rows, blocked_object=None):
     per = ";".join("%s-SIMPLEX-ON-%d-ORBITS-AT-THE-%s-READING"
                    % (r["independent_numbers_a_declaration_must_supply"],
                       r["orbits"], r["reading"]) for r in fibre_rows)
-    return "MEASURE-DECLARATION-REQUIRED-<ONE-POINT-OF-A-%s>" % per
+    if mut("MUT-HEAD-LAW-DESYNC"):
+        per = per.replace("ORBITS", "ORBITZ")
+    return "MEASURE-DECLARATION-REQUIRED-<ONE-POINT-OF-THE-INVARIANT-%s>" % per
+
+
+def second_head_law(rows, uq, fib, blocked=None):
+    """THE COMPARATOR'S OWN HEAD LAW -- a second implementation, written from
+    the same pre-registered outcomes and sharing no format string, no helper
+    and no branch structure with head_law above.  A one-character corruption
+    inside either law moves one head and not the other, and the two are
+    compared."""
+    zero = [r for r in rows if r["free_items"] == 0]
+    if len(zero) > 0:
+        unique = False
+        for reading in uq:
+            if uq[reading]["orbits"] == 1:
+                unique = True
+        tail = "UNIQUE" if unique else "NOT-UNIQUE"
+        return "".join(["MEASURE-DERIVED-<", zero[0]["source"], ";", tail, ">"])
+    if blocked is not None:
+        return "".join(["MEASURE-BLOCKED-AT-<", blocked, ">"])
+    chunks = []
+    for r in fib:
+        chunks.append("".join([
+            str(r["orbits"] - 1), "-SIMPLEX-ON-", str(r["orbits"]),
+            "-ORBITS-AT-THE-", r["reading"], "-READING"]))
+    return "".join(["MEASURE-DECLARATION-REQUIRED-<ONE-POINT-OF-THE-INVARIANT-",
+                    ";".join(chunks), ">"])
 
 
 def demonstrate_reachability(S):
@@ -1982,34 +2737,155 @@ def demonstrate_reachability(S):
     return heads
 
 
+def control_arm(S):
+    """THE CONTROL ARM -- the DERIVE arm of this two-way design, RUN rather
+    than advertised, in the plain delivery run.  A synthetic carrier whose
+    declared group IS transitive is handed to the SAME pricing function, the
+    SAME fibre builder and the SAME head law as this arena; it is priced at
+    zero free items and emits MEASURE-DERIVED.  Nothing about this arena is
+    measured here: what is measured is the WIRING, in both of its branches,
+    which is what makes the negative a property of the arena instead of a
+    property of the instrument's standard."""
+    n = 4
+    G = gen_group(n, [tuple((i + 1) % n for i in range(n))])
+    orbs = orbits_of(G, n)
+    uq = uniqueness_from_orbits({"SYNTHETIC-TRANSITIVE-CONTROL": len(orbs)})
+    price = price_invariance(uq)
+    rows = [{"candidate": "c", "source": "AN-INVARIANCE-CHARACTERISED-MEASURE",
+             "free_items": len(price), "derives": len(price) == 0}]
+    fib = fibre_rows_from(uq)
+    head = head_law(rows, uq, fib)
+    real = S["candidate_invariance"]
+    real_transitive = any(v["transitive"] for v in real["uniqueness"].values())
+    wired = ((real["free_items"] == 0) == real_transitive
+             and (len(price) == 0) == (len(orbs) == 1))
+    ok = (len(orbs) == 1 and len(price) == 0
+          and fib[0]["independent_numbers_a_declaration_must_supply"] == 0
+          and head.startswith("MEASURE-DERIVED-<") and "UNIQUE" in head
+          and wired)
+    LD.gate("G-THE-DERIVE-ARM-IS-REACHABLE",
+            "THE DERIVE ARM IS REACHABLE AND IT IS RUN: a synthetic carrier "
+            "whose declared group is transitive goes through the same "
+            "pricing function this arena's invariance candidate goes "
+            "through, is priced at ZERO free items by it, is priced by the "
+            "same fibre builder at a 0-simplex, and emits MEASURE-DERIVED "
+            "from the same head law.  Both branches of the wiring are "
+            "asserted -- zero free items exactly at a transitive reading, on "
+            "the control and on this arena alike -- so the negative this "
+            "unit reports is a property of the arena and not of the "
+            "instrument's standard.  A price unwired from the measurement "
+            "dies here",
+            ok,
+            "control arm: %d orbit on %d synthetic configurations, price %d "
+            "free items, head %s; this arena: %d free items at %d/%d orbits"
+            % (len(orbs), n, len(price), head, real["free_items"],
+               S["fibre"]["rows"][0]["orbits"],
+               S["fibre"]["rows"][-1]["orbits"]))
+    S["control_arm"] = {
+        "label": "CONTROL-ARM-ON-A-SYNTHETIC-TRANSITIVE-CARRIER-NOT-THIS-"
+                 "ARENA",
+        "synthetic_configurations": n,
+        "orbits": len(orbs),
+        "simplex_dimension":
+            fib[0]["independent_numbers_a_declaration_must_supply"],
+        "free_items": len(price),
+        "head_emitted": head,
+        "this_arena_free_items": real["free_items"],
+        "the_wiring": "ZERO-FREE-ITEMS-EXACTLY-AT-A-TRANSITIVE-READING",
+    }
+    return head
+
+
+BANNED_KEY_RE = (r"wilson|expectation|expected.?value|loop.?average|"
+                 r"area.?law|string.?tension|potential")
+
+
+def banned_keys_at_every_depth(obj, path="", out=None):
+    """the receipt is walked to the BOTTOM.  A depth-1 key scan is defeated
+    by one level of nesting -- the banned token can sit inside census/... and
+    never be reached -- so every mapping in the published tree is visited."""
+    if out is None:
+        out = []
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if isinstance(k, str) and k.startswith("_") and not path:
+                continue
+            here = path + "/" + str(k)
+            if isinstance(k, str) and re.search(BANNED_KEY_RE, k, re.I):
+                out.append(here)
+            banned_keys_at_every_depth(v, here, out)
+    elif isinstance(obj, list):
+        for i, v in enumerate(obj):
+            banned_keys_at_every_depth(v, path + "/%d" % i, out)
+    return out
+
+
+def declared_function_names(tree):
+    """every function this source defines, however it defines it: def, async
+    def, and a lambda bound to a name.  A name scan alone is defeated by a
+    neutral name, so the inventory below is TOTAL rather than selective."""
+    names = set()
+    for n in ast.walk(tree):
+        if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            names.add(n.name)
+        elif isinstance(n, ast.Assign) and isinstance(n.value, ast.Lambda):
+            for t in n.targets:
+                if isinstance(t, ast.Name):
+                    names.add(t.id)
+                elif isinstance(t, ast.Tuple):
+                    for e in t.elts:
+                        if isinstance(e, ast.Name):
+                            names.add(e.id)
+    return names
+
+
 def withhold_the_licensed_segment(S):
     """THE PIN'S MUST-NOT, ENFORCED ON THE INSTRUMENT'S OWN PRODUCT."""
-    banned_keys = [k for k in S
-                   if not k.startswith("_")
-                   and re.search(r"wilson|expectation|area.?law|string.?"
-                                 r"tension|potential", k, re.I)]
-    src = open(os.path.abspath(__file__), "rb").read().decode()
-    tree = ast.parse(src)
-    fnames = {n.name for n in ast.walk(tree)
-              if isinstance(n, ast.FunctionDef)}
-    computing = sorted(f for f in fnames
-                       if re.search(r"wilson|expectation", f, re.I))
     if mut("MUT-WILSON-SEGMENT"):
-        banned_keys = ["wilson_expectations"]
+        S["wilson_expectations"] = {"THE-BASE-PLAQUETTE": "3/8"}
+    if mut("MUT-WILSON-NESTED-KEY"):
+        S["census"]["loop_average_of_the_base_plaquette"] = "3/8"
+    banned_keys = banned_keys_at_every_depth(S)
+    src = own_source()
+    tree = ast.parse(src)
+    fnames = declared_function_names(tree)
+    computing = sorted(f for f in fnames
+                       if re.search(r"wilson|expectation|average|mean", f,
+                                    re.I))
     LD.gate("G-NO-WILSON-EXPECTATION",
             "THE PIN LICENSES A WILSON-EXPECTATION SEGMENT ONLY IN THE "
             "DERIVED CASE, and no source derives, so this unit computes "
             "none -- and the discipline is enforced on the product rather "
-            "than promised in prose: the receipt is required to carry no "
-            "expectation-valued key and the instrument's own syntax tree to "
-            "define no function that would compute one",
+            "than promised in prose: the payload is walked to the BOTTOM for "
+            "a banned key at any depth, not at its top level only, and the "
+            "instrument's own syntax tree is read for a banned function "
+            "however it is defined -- def, async def, or a lambda bound to a "
+            "name -- so a rename by one level of nesting or by one keyword "
+            "walks past neither leg",
             not banned_keys and not computing,
-            "%d expectation-valued receipt keys, %d expectation-computing "
-            "functions" % (len(banned_keys), len(computing)))
+            "%d expectation-valued keys at any depth %s, %d "
+            "expectation-computing function names %s"
+            % (len(banned_keys), banned_keys[:4], len(computing), computing))
+
+    extra = sorted(fnames - set(FUNCTIONS))
+    missing = sorted(set(FUNCTIONS) - fnames)
+    LD.gate("G-INSTRUMENT-FUNCTION-INVENTORY-IS-TOTAL",
+            "and the name scan is backed by a TOTAL inventory, because a "
+            "neutrally-named function computing a loop average would carry "
+            "no banned word at all: the set of functions this source defines "
+            "must equal the declared inventory exactly, so a function added "
+            "to this instrument -- under any name -- dies here, and a "
+            "declared name deleted dies here too",
+            not extra and not missing,
+            "%d functions defined, %d declared; undeclared %s, missing %s"
+            % (len(fnames), len(FUNCTIONS), extra[:4], missing[:4]))
+
     S["withheld"] = {
         "object": "THE-WILSON-LOOP-EXPECTATIONS",
         "licensed_by_the_pin_only_if": "A-MEASURE-DERIVES",
         "measured": "NO-SOURCE-DERIVES",
+        "keys_walked_to_the_bottom": len(banned_keys_at_every_depth(S)) == 0,
+        "functions_declared": len(FUNCTIONS),
         "consequence": "THE-SEGMENT-IS-WITHHELD-AND-THE-INSTRUMENT-COMPUTES-"
                        "NO-EXPECTATION-AT-ALL",
     }
@@ -2037,64 +2913,94 @@ def build_verdict(S):
 
     nc = frow("NON-COMMUTING")
     df = frow("DEFECT-CARRYING")
+    ab = cen["named_absent"][0]
     segs = []
-    segs.append("CENSUS=%d-CANDIDATES-%d-DERIVE|(a)PUSHFORWARD=%s(WELD2-%d-"
+    segs.append("CENSUS=%d-CANDIDATES-%d-DERIVE|CLOSURE=%s-%d-OF-%d-ROWS-ARE-"
+                "INSTANCES-AND-A-%dTH-CANDIDATE-IS-DECIDED-BY-THE-SAME-TEST|"
+                "MEASURE-BLOCKED-AT=FORCED-SHUT-CENSUS-RELATIVELY-ONLY-%d-"
+                "NAMED-ABSENT-ROW(%s)=%s"
+                % (cen["candidates"], cen["deriving"], cen["criterion"],
+                   cen["rows_agreeing_with_the_criterion"], cen["candidates"],
+                   cen["candidates"] + 1, cen["named_absent_rows"],
+                   ab["source"], ab["verdict"]))
+    segs.append("(a)PUSHFORWARD=%s(WELD2-%d-"
                 "ROWS-%d-DISTINCT-CANDIDATES-%d-FOUND-AT-THIS-CARRIER;"
-                "WELD3-IS-THE-ONE-FOUND-DICTIONARY-AND-ITS-TARGET-CARRIES-%d-"
+                "WELD3-IS-THE-ONE-FOUND-DICTIONARY-AT-A-COMMITTED-RECORD-"
+                "ARENA-AND-ITS-TARGET-CARRIES-%d-"
                 "SITES-AGAINST-%d-WITH-A-CONSTANT-LINK-DATUM-AT-%d-OF-%d-"
-                "CELLS;GRANTED-EVERYTHING-THE-RESIDUAL-IS-A-POINT-MASS-WITH-"
+                "CELLS;ALL-%d-FOUND-ROWS-IN-THE-CORPUS-WELD2s-TWO-DECLARED-"
+                "PROBE-CONTROLS-INCLUDED-DIE-AT-THE-SAME-SITE-COUNT-BLADE;"
+                "GRANTED-EVERYTHING-THE-RESIDUAL-IS-A-POINT-MASS-WITH-"
                 "THE-COIN-FREE-AMONG-%d)|(b)COUNTING=DECLARED-NULL-%d-"
                 "CARRIERS-x-%d-NULLS-ALL-INVARIANT|(c)INVARIANCE=SELECTS-A-"
                 "SUPPORT-NOT-A-MEASURE|(d)FINITE-GROUP-HAAR=THE-FAMILY-IS-"
                 "NOT-CLOSED-%d-OF-%d-PRODUCTS-STAY|(e)U(2)-HAAR=A-FINITE-"
                 "SUBSET-HAS-MEASURE-ZERO-AND-%d-OF-%d-COINS-HAVE-FINITE-"
                 "ORDER-IN-FAMILY|(f)GIBBS=NO-ACTION-NO-COUPLING-BY-THE-"
-                "PARENTS-OWN-DECLARATION|(g)BORN=DERIVES-EXACTLY-AND-LANDS-"
-                "ON-THE-STATES-%d-IMAGES-FOR-%d-CONFIGURATIONS|(h)HOLONOMY-"
-                "PULLBACK=NO-SINGLE-GROUP-%d-CONFIGURATIONS-CARRY-AN-"
-                "INFINITE-ONE"
-                % (cen["candidates"], cen["deriving"],
-                   "NO-PINNED-CORRESPONDENCE-TO-THIS-ARENA",
+                "PARENTS-OWN-DECLARATION|(g)BORN=DERIVES-A-LAW-ON-THE-STATES-"
+                "EXACTLY-NOT-A-MEASURE-%d-KERNELS-FOR-%d-CONFIGURATIONS-"
+                "STATIONARY-SIMPLEX-DIM-%d-IN-THE-DIAGONAL-SECTOR-AND-%d-IN-"
+                "THE-OTHER-TWO|(h)HOLONOMY-PULLBACK=NO-SINGLE-GROUP-%d-"
+                "CONFIGURATIONS-CARRY-AN-INFINITE-ONE|(i)MAXENT=RELOCATES-"
+                "THE-PRICE-IT-RETURNS-ITS-DECLARED-REFERENCE-AND-THE-ARENA-"
+                "PINS-NO-CONSTRAINT-TO-CONDITION-ON"
+                % ("NO-PINNED-CORRESPONDENCE-TO-THIS-ARENA",
                    pf["weld2_rows"], pf["weld2_distinct_candidates"],
                    pf["weld2_found"], pf["weld3_target_sites"], a["sites"],
                    pf["weld3_realised_cells_all_at_one_count"],
                    pf["weld3_realised_cells_all_at_one_count"],
+                   len(pf["found_rows_in_the_corpus"]),
                    pf["granted_lattice_residual_fibre"],
                    len(S["candidate_counting"]["carriers_declared"]),
                    len(S["candidate_counting"]["nulls_declared"]),
                    gh["products_inside"], gh["products_total"],
                    gh["coins_of_finite_order_inside_the_family"], a["coins"],
                    bl["distinct_images"], bl["configurations"],
+                   bl["stationary_simplex_dimension_by_sector"]["DIAGONAL"],
+                   bl["stationary_simplex_dimension_by_sector"]["BALANCED"],
                    S["candidate_holonomy_pullback"]
                    ["configurations_with_an_infinite_group"]))
     segs.append("UNIQUENESS=GATED-AND-FAILS-AT-BOTH-READINGS(%s)|"
                 "INVARIANT-MEASURES-ARE-EXACTLY-THE-ORBIT-CONSTANT-ONES-SO-"
                 "UNIQUE-IFF-TRANSITIVE|THE-GATE-CAN-PASS-A-SYNTHETIC-"
-                "TRANSITIVE-ARENA-RETURNS-%d-ORBIT|FULL-SPACE-NOT-"
+                "TRANSITIVE-ARENA-RETURNS-%d-ORBIT|THE-DERIVE-ARM-IS-"
+                "REACHABLE-AND-IS-RUN:THE-CONTROL-ARM-ON-A-SYNTHETIC-"
+                "TRANSITIVE-CARRIER-IS-PRICED-AT-%d-FREE-ITEMS-BY-THE-SAME-"
+                "FUNCTION-AND-EMITS-%s|FULL-SPACE-NOT-"
                 "TRANSITIVE-BY-AN-EXHIBITED-INVARIANT-%d-SECTOR-MULTISETS-"
                 "OVER-%d-LINKS"
                 % (";".join("%s:%d-ORBITS" % (r["reading"], r["orbits"])
                             for r in fib),
                    inv["synthetic_transitive_orbits"],
+                   S["control_arm"]["free_items"],
+                   S["control_arm"]["head_emitted"],
                    inv["sector_multisets_on_the_full_space"], a["links"]))
     segs.append("WHAT-THE-SYMMETRY-DOES-FIX=A-SUPPORT:THE-CHART-FIXED-"
                 "CONFIGURATIONS-ARE-EXACTLY-THE-%d-UNIFORM-ONES-AT-%d-OF-%d-"
                 "CHECKS-SO-THE-PARENTS-DECLARED-SWEEP-IS-THE-FIXED-LOCUS-"
                 "ITSELF(%d-AT-THE-EXTENSION-WHERE-REVERSAL-FORCES-U=XUX)|"
+                "AND-IT-IS-CARRIED-BY-%s:UNDER-THE-TRANSLATIONS-ALONE-THE-"
+                "LINKS-FALL-INTO-%d-ORBITS-AND-THE-FIXED-LOCUS-IS-%d-"
+                "CONFIGURATIONS-OF-WHICH-THE-PARENTS-%d-IS-A-PROPER-SUBSET|"
                 "FULL-SPACE-CHART-ORBITS=%d-AND-%d-AT-THE-TWO-READINGS"
                 % (fx["chart_fixed_configurations"], fx["checks"], fx["checks"],
-                   fx["extension_fixed_configurations"],
+                   fx["extension_fixed_configurations"], fx["carried_by"],
+                   fx["translations_only_link_orbits"],
+                   fx["translations_only_fixed_configurations"],
+                   fx["chart_fixed_configurations"],
                    sym["full_space_chart_orbits"],
                    sym["full_space_extension_orbits"]))
     segs.append("CONSEQUENCE=THE-DECLARATION-IS-NOT-INNOCUOUS:THE-PARENTS-"
                 "OWN-HEADLINE-SETS-MOVE-BETWEEN-INVARIANT-MEASURES|"
                 "NON-COMMUTING=%s-AT-COUNTING-AND-%s-AND-%s-AT-THE-TWO-"
                 "ORBIT-NULLS|DEFECT-CARRYING=%s-AND-%s-AND-%s|WIDEST-"
-                "DISAGREEMENT=%s-ON-%s"
+                "DISAGREEMENT=%s-ATTAINED-ON-%d-OF-%d-SETS(%s)-%s"
                 % (nc["counting"], nc["orbit_uniform_CHART-32"],
                    nc["orbit_uniform_CHART-128"], df["counting"],
                    df["orbit_uniform_CHART-32"], df["orbit_uniform_CHART-128"],
-                   cmp_["widest"]["spread"], cmp_["widest"]["set"]))
+                   cmp_["widest"]["spread"], cmp_["widest"]["attained_on"],
+                   cmp_["widest"]["of_sets"], ",".join(cmp_["widest"]["sets"]),
+                   cmp_["widest"]["tie_break"]))
     segs.append("THE-ONE-CANONICAL-MEASURE-THIS-ARENA-HANDS-OVER=HAAR-ON-"
                 "THE-%d-ELEMENT-MONOMIAL-SUBGROUP(CLOSED-%d-FAILURES-"
                 "INVERSES-%d-FAILURES;MAXIMAL-%d-OF-%d-INTERFERING-COINS-"
@@ -2114,8 +3020,10 @@ def build_verdict(S):
                 "WHICH-IS-THE-CHART-FIXED-LOCUS;FULL-SPACE-ORBIT-COUNT-"
                 "UNDER-THE-JOINT-GROUP=NOT-COMPUTED-BY-COST-A-LOWER-BOUND-"
                 "IS-EXHIBITED-INSTEAD;THE-CORRESPONDENCE-QUESTION-AT-THIS-"
-                "TARGET=OPEN-WELD-2s-STRUCTURAL-BLADE-IS-SILENT-HERE-"
-                "BECAUSE-THIS-LATTICE-IS-BIPARTITE;NO-MEASURE-DERIVED;NO-"
+                "TARGET=OPEN-OVER-THE-EVEN-L-FAMILY-ONLY-WELD-2s-STRUCTURAL-"
+                "BLADE-IS-SILENT-HERE-BECAUSE-THIS-LATTICE-IS-BIPARTITE-"
+                "WHICH-AT-(Z-L)^2-HOLDS-EXACTLY-WHEN-L-IS-EVEN-SO-AT-ANY-"
+                "ODD-L-THE-INHERITED-BLADE-FIRES;NO-MEASURE-DERIVED;NO-"
                 "ACTION;NO-COUPLING;NO-DYNAMICS;NOT-QCD;NO-CONFINEMENT-CLAIM"
                 % (a["d"], a["L"], a["field"], a["coins"], a["links"],
                    a["plaquettes"], a["configuration_space"]))
@@ -2141,11 +3049,14 @@ def reconstruct_verdict(S):
                "free_items": R[key]["free_items"],
                "derives": R[key]["free_items"] == 0,
                "verdict": R[key]["verdict"]}
-              for (tag, name, key) in CANDIDATES]
+              for (tag, name, key, _p, _q) in CANDIDATES]
     uq = R["candidate_invariance"]["uniqueness"]
     fibre = R["fibre"]["rows"]
-    head = head_law([{"derives": r["derives"], "source": r["source"]}
-                     for r in census], uq, fibre)
+    # THE SECOND HEAD LAW.  Not head_law: a second implementation, written
+    # from the pre-registered outcomes with a different branch structure and
+    # no shared format string, so a one-character corruption inside either
+    # law moves one head and leaves the other where it was.
+    head = second_head_law(census, uq, fibre)
 
     def mass(setname, col):
         for r in R["measure_comparison"]["rows"]:
@@ -2154,16 +3065,26 @@ def reconstruct_verdict(S):
         raise KeyError(setname)
 
     parts = []
-    lut = {r["candidate"]: r for r in census}
+    absent = R["census"]["named_absent"]
     parts.append(
         "CENSUS=" + str(len(census)) + "-CANDIDATES-"
         + str(sum(1 for r in census if r["derives"])) + "-DERIVE"
-        + "|(a)PUSHFORWARD=NO-PINNED-CORRESPONDENCE-TO-THIS-ARENA(WELD2-"
+        + "|CLOSURE=" + R["census"]["criterion"] + "-"
+        + str(len([r for r in R["census"]["rows"]
+                   if r["derives"] == r["acts_transitively_on_the_carrier"]]))
+        + "-OF-" + str(len(census)) + "-ROWS-ARE-INSTANCES-AND-A-"
+        + str(len(census) + 1) + "TH-CANDIDATE-IS-DECIDED-BY-THE-SAME-TEST"
+        + "|MEASURE-BLOCKED-AT=FORCED-SHUT-CENSUS-RELATIVELY-ONLY-"
+        + str(len(absent)) + "-NAMED-ABSENT-ROW(" + absent[0]["source"] + ")="
+        + absent[0]["verdict"])
+    parts.append(
+        "(a)PUSHFORWARD=NO-PINNED-CORRESPONDENCE-TO-THIS-ARENA(WELD2-"
         + str(R["candidate_pushforward"]["weld2_rows"]) + "-ROWS-"
         + str(R["candidate_pushforward"]["weld2_distinct_candidates"])
         + "-DISTINCT-CANDIDATES-"
         + str(R["candidate_pushforward"]["weld2_found"])
-        + "-FOUND-AT-THIS-CARRIER;WELD3-IS-THE-ONE-FOUND-DICTIONARY-AND-ITS-"
+        + "-FOUND-AT-THIS-CARRIER;WELD3-IS-THE-ONE-FOUND-DICTIONARY-AT-A-"
+        "COMMITTED-RECORD-ARENA-AND-ITS-"
         "TARGET-CARRIES-" + str(R["candidate_pushforward"]["weld3_target_sites"])
         + "-SITES-AGAINST-" + str(R["arena"]["sites"])
         + "-WITH-A-CONSTANT-LINK-DATUM-AT-"
@@ -2171,7 +3092,11 @@ def reconstruct_verdict(S):
               ["weld3_realised_cells_all_at_one_count"]) + "-OF-"
         + str(R["candidate_pushforward"]
               ["weld3_realised_cells_all_at_one_count"])
-        + "-CELLS;GRANTED-EVERYTHING-THE-RESIDUAL-IS-A-POINT-MASS-WITH-THE-"
+        + "-CELLS;ALL-"
+        + str(len(R["candidate_pushforward"]["found_rows_in_the_corpus"]))
+        + "-FOUND-ROWS-IN-THE-CORPUS-WELD2s-TWO-DECLARED-PROBE-CONTROLS-"
+        "INCLUDED-DIE-AT-THE-SAME-SITE-COUNT-BLADE"
+        + ";GRANTED-EVERYTHING-THE-RESIDUAL-IS-A-POINT-MASS-WITH-THE-"
         "COIN-FREE-AMONG-"
         + str(R["candidate_pushforward"]["granted_lattice_residual_fibre"])
         + ")|(b)COUNTING=DECLARED-NULL-"
@@ -2186,13 +3111,20 @@ def reconstruct_verdict(S):
               ["coins_of_finite_order_inside_the_family"]) + "-OF-"
         + str(R["arena"]["coins"])
         + "-COINS-HAVE-FINITE-ORDER-IN-FAMILY|(f)GIBBS=NO-ACTION-NO-COUPLING-"
-        "BY-THE-PARENTS-OWN-DECLARATION|(g)BORN=DERIVES-EXACTLY-AND-LANDS-ON-"
-        "THE-STATES-" + str(R["born_layer"]["distinct_images"]) + "-IMAGES-FOR-"
-        + str(R["born_layer"]["configurations"])
-        + "-CONFIGURATIONS|(h)HOLONOMY-PULLBACK=NO-SINGLE-GROUP-"
+        "BY-THE-PARENTS-OWN-DECLARATION|(g)BORN=DERIVES-A-LAW-ON-THE-STATES-"
+        "EXACTLY-NOT-A-MEASURE-" + str(R["born_layer"]["distinct_images"])
+        + "-KERNELS-FOR-" + str(R["born_layer"]["configurations"])
+        + "-CONFIGURATIONS-STATIONARY-SIMPLEX-DIM-"
+        + str(R["born_layer"]["stationary_simplex_dimension_by_sector"]
+              ["DIAGONAL"]) + "-IN-THE-DIAGONAL-SECTOR-AND-"
+        + str(R["born_layer"]["stationary_simplex_dimension_by_sector"]
+              ["BALANCED"]) + "-IN-THE-OTHER-TWO"
+        + "|(h)HOLONOMY-PULLBACK=NO-SINGLE-GROUP-"
         + str(R["candidate_holonomy_pullback"]
               ["configurations_with_an_infinite_group"])
-        + "-CONFIGURATIONS-CARRY-AN-INFINITE-ONE")
+        + "-CONFIGURATIONS-CARRY-AN-INFINITE-ONE|(i)MAXENT=RELOCATES-THE-"
+        "PRICE-IT-RETURNS-ITS-DECLARED-REFERENCE-AND-THE-ARENA-PINS-NO-"
+        "CONSTRAINT-TO-CONDITION-ON")
     parts.append(
         "UNIQUENESS=GATED-AND-FAILS-AT-BOTH-READINGS("
         + ";".join(r["reading"] + ":" + str(r["orbits"]) + "-ORBITS"
@@ -2200,7 +3132,12 @@ def reconstruct_verdict(S):
         + ")|INVARIANT-MEASURES-ARE-EXACTLY-THE-ORBIT-CONSTANT-ONES-SO-UNIQUE-"
         "IFF-TRANSITIVE|THE-GATE-CAN-PASS-A-SYNTHETIC-TRANSITIVE-ARENA-"
         "RETURNS-" + str(R["candidate_invariance"]["synthetic_transitive_orbits"])
-        + "-ORBIT|FULL-SPACE-NOT-TRANSITIVE-BY-AN-EXHIBITED-INVARIANT-"
+        + "-ORBIT|THE-DERIVE-ARM-IS-REACHABLE-AND-IS-RUN:THE-CONTROL-ARM-ON-"
+        "A-SYNTHETIC-TRANSITIVE-CARRIER-IS-PRICED-AT-"
+        + str(R["control_arm"]["free_items"])
+        + "-FREE-ITEMS-BY-THE-SAME-FUNCTION-AND-EMITS-"
+        + R["control_arm"]["head_emitted"]
+        + "|FULL-SPACE-NOT-TRANSITIVE-BY-AN-EXHIBITED-INVARIANT-"
         + str(R["candidate_invariance"]["sector_multisets_on_the_full_space"])
         + "-SECTOR-MULTISETS-OVER-" + str(R["arena"]["links"]) + "-LINKS")
     parts.append(
@@ -2210,7 +3147,15 @@ def reconstruct_verdict(S):
         + str(R["fixed_locus"]["checks"])
         + "-CHECKS-SO-THE-PARENTS-DECLARED-SWEEP-IS-THE-FIXED-LOCUS-ITSELF("
         + str(R["fixed_locus"]["extension_fixed_configurations"])
-        + "-AT-THE-EXTENSION-WHERE-REVERSAL-FORCES-U=XUX)|FULL-SPACE-CHART-"
+        + "-AT-THE-EXTENSION-WHERE-REVERSAL-FORCES-U=XUX)|AND-IT-IS-CARRIED-"
+        "BY-" + R["fixed_locus"]["carried_by"]
+        + ":UNDER-THE-TRANSLATIONS-ALONE-THE-LINKS-FALL-INTO-"
+        + str(R["fixed_locus"]["translations_only_link_orbits"])
+        + "-ORBITS-AND-THE-FIXED-LOCUS-IS-"
+        + str(R["fixed_locus"]["translations_only_fixed_configurations"])
+        + "-CONFIGURATIONS-OF-WHICH-THE-PARENTS-"
+        + str(R["fixed_locus"]["chart_fixed_configurations"])
+        + "-IS-A-PROPER-SUBSET|FULL-SPACE-CHART-"
         "ORBITS=" + str(R["symmetry"]["full_space_chart_orbits"]) + "-AND-"
         + str(R["symmetry"]["full_space_extension_orbits"])
         + "-AT-THE-TWO-READINGS")
@@ -2225,7 +3170,11 @@ def reconstruct_verdict(S):
         + mass("DEFECT-CARRYING", "orbit_uniform_CHART-32") + "-AND-"
         + mass("DEFECT-CARRYING", "orbit_uniform_CHART-128")
         + "|WIDEST-DISAGREEMENT=" + R["measure_comparison"]["widest"]["spread"]
-        + "-ON-" + R["measure_comparison"]["widest"]["set"])
+        + "-ATTAINED-ON-"
+        + str(R["measure_comparison"]["widest"]["attained_on"]) + "-OF-"
+        + str(R["measure_comparison"]["widest"]["of_sets"]) + "-SETS("
+        + ",".join(R["measure_comparison"]["widest"]["sets"]) + ")-"
+        + R["measure_comparison"]["widest"]["tie_break"])
     parts.append(
         "THE-ONE-CANONICAL-MEASURE-THIS-ARENA-HANDS-OVER=HAAR-ON-THE-"
         + str(R["candidate_group_haar"]["monomial_coins"])
@@ -2253,13 +3202,14 @@ def reconstruct_verdict(S):
         + ";PRIMARY-CARRIER=THE-UNIFORM-SLICE-WHICH-IS-THE-CHART-FIXED-LOCUS"
         ";FULL-SPACE-ORBIT-COUNT-UNDER-THE-JOINT-GROUP=NOT-COMPUTED-BY-COST-"
         "A-LOWER-BOUND-IS-EXHIBITED-INSTEAD;THE-CORRESPONDENCE-QUESTION-AT-"
-        "THIS-TARGET=OPEN-WELD-2s-STRUCTURAL-BLADE-IS-SILENT-HERE-BECAUSE-"
-        "THIS-LATTICE-IS-BIPARTITE;NO-MEASURE-DERIVED;NO-ACTION;NO-COUPLING;"
+        "THIS-TARGET=OPEN-OVER-THE-EVEN-L-FAMILY-ONLY-WELD-2s-STRUCTURAL-"
+        "BLADE-IS-SILENT-HERE-BECAUSE-THIS-LATTICE-IS-BIPARTITE-WHICH-AT-"
+        "(Z-L)^2-HOLDS-EXACTLY-WHEN-L-IS-EVEN-SO-AT-ANY-ODD-L-THE-INHERITED-"
+        "BLADE-FIRES;NO-MEASURE-DERIVED;NO-ACTION;NO-COUPLING;"
         "NO-DYNAMICS;NOT-QCD;NO-CONFINEMENT-CLAIM")
-    assert lut
     if not head.endswith(">"):
         raise GateFail("the head law must close its own bracket")
-    return head[:-1] + " -- " + " -- ".join(parts) + ">"
+    return head[:-1] + " -- " + " -- ".join(parts) + ">", head
 
 
 # ===========================================================================
@@ -2271,45 +3221,81 @@ def build_choices(S):
     admissible alternatives -- and the declared instances, how many this unit
     ran.  A genuinely free choice with fibre 1 is a contradiction in terms
     and none is reported."""
-    a, sym = S["arena"], S["symmetry"]
+    uq = S["candidate_invariance"]["uniqueness"]
+    sym, fx, cen = S["symmetry"], S["fixed_locus"], S["census"]
+    wide = S["measure_comparison"]["widest"]
+    # THE MOVES COLUMN, MEASURED PER ROW (#87).  A row is verdict-determining
+    # if and only if the measurement it governs, re-run under this unit's
+    # OTHER declared instance of it, moves a number this run publishes -- and
+    # both instances are already measured for every flagged row.  A row whose
+    # alternatives this unit does not measure carries None and cannot be
+    # flagged by measurement, which is what stops the flag from being a typed
+    # opinion that can be moved between rows without consequence.
+    moves = {
+        "WHICH CHART GROUP IS DECLARED":
+            uq["CHART-32"]["orbits"] != uq["CHART-128"]["orbits"]
+            or fx["chart_fixed_configurations"]
+            != fx["extension_fixed_configurations"],
+        "the carrier: the uniform slice or the full space":
+            sym["full_space_chart_orbits"] != uq["CHART-32"]["orbits"],
+        "the null: counting on configurations or on orbits":
+            Fraction(wide["spread"]) > 0,
+        "the candidate sources censused: the pin's three plus six, and one "
+        "named absent": cen["named_absent_rows"] > 0,
+    }
     rows = [
-        ("the lattice size and dimension", "FORCED (anchored)", 1, 1, False),
-        ("the coefficient alphabet", "FORCED (inherited)", 1, 1, False),
-        ("the coin family", "FORCED (derived)", 1, 1, False),
-        ("the link and plaquette sets", "FORCED (derived)", 1, 1, False),
-        ("the gauge action's form", "FORCED (inherited)", 1, 1, False),
-        ("WHICH CHART GROUP IS DECLARED", "GENUINELY-FREE", 2, 2, True),
+        ("the lattice size and dimension", "FORCED (anchored)", 1, 1),
+        ("the coefficient alphabet", "FORCED (inherited)", 1, 1),
+        ("the coin family", "FORCED (derived)", 1, 1),
+        ("the link and plaquette sets", "FORCED (derived)", 1, 1),
+        ("the gauge action's form", "FORCED (inherited)", 1, 1),
+        ("WHICH CHART GROUP IS DECLARED", "GENUINELY-FREE",
+         "UNBOUNDED (2 INHERITED FROM THE PARENT, BOTH CARRIED; A THIRD "
+         "MEASURED HERE AS A CONTRAST)", 3),
         ("the carrier: the uniform slice or the full space",
-         "GENUINELY-FREE", "UNBOUNDED", 2, True),
+         "GENUINELY-FREE", "UNBOUNDED", 2),
         ("the null: counting on configurations or on orbits",
-         "GENUINELY-FREE", "UNBOUNDED", 2, True),
+         "GENUINELY-FREE", "UNBOUNDED", 2),
         ("the sets weighed against the nulls", "DECLARED (the parent's own)",
-         "UNBOUNDED", len(S["_sets"]), False),
-        ("the candidate sources censused", "DECLARED (the pin's plus two)",
-         "UNBOUNDED", len(CANDIDATES), False),
+         "UNBOUNDED", len(S["_sets"])),
+        ("the candidate sources censused: the pin's three plus six, and one "
+         "named absent", "GENUINELY-FREE", "UNBOUNDED",
+         len(CANDIDATES) + len(NAMED_ABSENT)),
         ("the base plaquette and its neighbour", "STABILIZER-FIXED",
-         len(S["_lat"].plaqs), 1, False),
+         len(S["_lat"].plaqs), 1),
     ]
     out = [{"choice": c, "status": st, "fibre": f, "declared_instances": d,
-            "verdict_determining": v} for (c, st, f, d, v) in rows]
+            "moves_a_published_number": moves.get(c),
+            "verdict_determining": moves.get(c) is True}
+           for (c, st, f, d) in rows]
+    if mut("MUT-CHOICE-INVENTORY"):
+        out[5]["verdict_determining"] = False
+    if mut("MUT-CHOICE-FLAG-MOVED"):
+        out[5]["verdict_determining"] = False
+        out[8]["verdict_determining"] = True
     vd = [r for r in out if r["verdict_determining"]]
     bad = [r for r in out
            if r["status"] == "GENUINELY-FREE" and r["fibre"] == 1]
-    if mut("MUT-CHOICE-INVENTORY"):
-        out[5]["verdict_determining"] = False
-        vd = [r for r in out if r["verdict_determining"]]
+    unearned = [r for r in out
+                if r["verdict_determining"]
+                != (r["moves_a_published_number"] is True)]
     LD.gate("G-CHOICE-INVENTORY",
             "the construction choices are inventoried with BOTH numbers a "
             "reader needs -- the fibre and the declared instances -- and the "
-            "verdict-determining rows are flagged: which chart group is "
-            "declared, which carrier, and which null, because every one of "
-            "those three moves a published number and none of them is fixed "
-            "by anything this arena measures.  A genuinely free choice with "
+            "verdict-determining flag binds ROWS rather than a cardinality "
+            "(#87): each row's flag must equal a MEASURED predicate, that "
+            "re-running the measurement it governs under this unit's other "
+            "declared instance moves a published number.  Four rows earn it "
+            "-- which chart group is declared, which carrier, which null, "
+            "and which candidate sources are censused, whose count is in the "
+            "head and whose list this unit itself measured to be extensible "
+            "-- and moving a flag between rows dies here rather than "
+            "surviving on an unchanged total.  A genuinely free choice with "
             "fibre 1 would be a contradiction and none is reported",
-            len(vd) == 3 and not bad,
-            "%d rows, %d verdict-determining, %d contradictory"
-            % (len(out), len(vd), len(bad)))
-    assert a and sym
+            not unearned and not bad and len(vd) == len(moves),
+            "%d rows, %d verdict-determining, %d flagged against their own "
+            "measured predicate, %d contradictory"
+            % (len(out), len(vd), len(unearned), len(bad)))
     S["choice_inventory"] = out
     return out
 
@@ -2318,9 +3304,17 @@ def build_choices(S):
 # SECTION 9.  THE PAPER GATES
 # ===========================================================================
 
+# THE PIN'S OWN WORDS, not a narrower list: the pin bars an area-law, a
+# string-tension and a POTENTIAL claim and licenses a Wilson-loop
+# EXPECTATION only in the derived case, so the bare words are banned and not
+# only their compounds.  Every legitimate occurrence in this paper sits
+# inside a declaring sentence enumerated below and is removed before the
+# sweep; anything else is a claim this unit is not licensed to make.
 MUST_NOT = [
-    "area law", "area-law", "string tension", "string-tension",
-    "confining", "confinement analog", "quark", "the potential between",
+    "area law", "area-law", "the law of the area",
+    "string tension", "string-tension",
+    "confining", "confinement", "quark", "potential",
+    "wilson", "expectation", "loop average",
 ]
 DECLARING = [
     "no area-law, string-tension, or potential claim",
@@ -2332,13 +3326,33 @@ DECLARING = [
     "no area-law claim, no string-tension claim and no potential claim",
     "A confinement analog would need three objects this arena does not have",
     "the word this unit does not use",
+    # the withholding, declared: the verdict's own segments and every
+    # sentence in which this paper says what it is NOT computing
+    "WILSON=SEGMENT-WITHHELD-BY-THE-PIN-NO-SOURCE-DERIVES",
+    "NO-EXPECTATION-COMPUTED-ANYWHERE-IN-THE-INSTRUMENT",
+    "so there is nothing yet to take an expectation over",
+    "The pin licenses a Wilson-loop expectation segment",
+    "the Wilson-expectation segment only in the DERIVED case",
+    "the receipt to carry no expectation-valued key at all",
+    "No expectation of any kind is computed here",
+    "If the programme wants expectations, it must declare a measure",
+    "the arena pins no quantity to condition on",
+    "a confinement-shaped follow-on",
 ]
 
 
+WAIVER_CLASSES = ["COVERED-BY-A-DECLARED-MUTANT", "REGISTERED-FORCING",
+                  "NO-FALSIFIER-REACHES-IT"]
+
+
 def paper_claims(S):
-    """every claim is a (fragment, expected occurrences) pair RENDERED from a
-    measured receipt field, so a number that moved in the run cannot stay
-    still in the paper."""
+    """every claim is a (fragment, EXPECTED OCCURRENCE COUNT) pair RENDERED
+    from a measured receipt field, so a number that moved in the run cannot
+    stay still in the paper -- and it is the COUNT that is gated, not mere
+    presence, so a fragment corrupted at one of its several occurrences dies
+    exactly as the verbatim anchors' do (#87).  The tables are rendered ROW
+    BY ROW (E-22): a table is a claim, and a cell swapped under its own
+    column heading moves a rendered row."""
     a, sym, pf = S["arena"], S["symmetry"], S["candidate_pushforward"]
     gh, bl, fx = S["candidate_group_haar"], S["born_layer"], S["fixed_locus"]
     inv, cmp_ = S["candidate_invariance"], S["measure_comparison"]
@@ -2351,63 +3365,128 @@ def paper_claims(S):
         raise KeyError(setname)
 
     C = {
-        "coins": "%d coins" % a["coins"],
-        "links": "%d links" % a["links"],
-        "sites": "%d sites" % a["sites"],
-        "orbits32": "%d orbits" % inv["uniqueness"]["CHART-32"]["orbits"],
-        "orbits128": "%d orbits" % inv["uniqueness"]["CHART-128"]["orbits"],
-        "simplex32": "%d-dimensional simplex"
-                     % inv["uniqueness"]["CHART-32"]["simplex_dimension"],
-        "simplex128": "%d independent numbers"
-                      % inv["uniqueness"]["CHART-128"]["simplex_dimension"],
-        "fixed": "exactly the %d uniform configurations"
-                 % fx["chart_fixed_configurations"],
-        "extfixed": "%d of them survive" % fx["extension_fixed_configurations"],
-        "weld2": "%d rows, %d distinct candidates"
-                 % (pf["weld2_rows"], pf["weld2_distinct_candidates"]),
-        "weld2found": "%d FOUND" % pf["weld2_found"],
-        "weld3": "%d sites" % pf["weld3_target_sites"],
-        "monomial": "%d monomial coins" % gh["monomial_coins"],
-        "adjoin": "%d of %d interfering coins"
-                  % (gh["interfering_coins_adjoinable"],
-                     S["parent_census"]["by_sector"]["BALANCED"]["coins"]),
-        "defectoverlap": "%d of the %d defect-carrying coins"
-                         % (gh["defect_coins_in_the_haar_carrier"],
-                            S["parent_census"]["defect_carrying"]),
-        "born": "%d distinct Born images" % bl["distinct_images"],
-        "closure": "%d of %d products" % (gh["products_inside"],
-                                          gh["products_total"]),
-        "finite": "%d of %d coins" % (gh["coins_of_finite_order_inside_the_family"],
-                                      a["coins"]),
-        "nc_count": "%s at the counting measure" % m("NON-COMMUTING", "counting"),
-        "nc_orb": "%s at the orbit null" % m("NON-COMMUTING",
-                                             "orbit_uniform_CHART-32"),
-        "df_count": "%s under counting" % m("DEFECT-CARRYING", "counting"),
-        "df_orb": "%s under the orbit null" % m("DEFECT-CARRYING",
-                                                "orbit_uniform_CHART-32"),
-        "census": "%d candidate sources" % cen["candidates"],
-        "deriving": "%d derive" % cen["deriving"],
-        "multisets": "%d sector multisets"
-                     % inv["sector_multisets_on_the_full_space"],
-        "chart": "order %d" % sym["chart_order"],
-        "ext": "order %d" % sym["extension_order"],
-        "nonflat": "%d of 640 are non-flat" % S["parent_census"]["non_flat"],
-        "nonpaper": "%d non-commuting" % S["parent_census"]["non_commuting"],
-        "gates": "%d gates" % (len(LD.rows) + len(PAPER_GATE_IDS)),
-        "mutants": "%d declared mutants" % len(MUTANTS),
-        "anchors": "%d anchors in all" % S["totals"]["anchors"],
-        "anchorsplit": "%d file-bytes anchors, %d path-value anchors and %d "
-                       "verbatim-text anchors"
-                       % (S["totals"]["byte_anchors"],
-                          S["totals"]["path_value_anchors"],
-                          S["totals"]["verbatim_anchors"]),
-        "choices": "%d construction choices" % len(S["choice_inventory"]),
+        "coins": ("%d coins" % a["coins"], 2),
+        "links": ("%d links" % a["links"], 2),
+        "sites": ("%d sites" % a["sites"], 2),
+        "orbits32": ("%d orbits" % inv["uniqueness"]["CHART-32"]["orbits"], 1),
+        "orbits128": ("%d orbits" % inv["uniqueness"]["CHART-128"]["orbits"],
+                      1),
+        "simplex32": ("%d-dimensional simplex"
+                      % inv["uniqueness"]["CHART-32"]["simplex_dimension"], 2),
+        "simplex128": ("%d independent numbers"
+                       % inv["uniqueness"]["CHART-128"]["simplex_dimension"],
+                       2),
+        "fixed": ("exactly the %d uniform configurations"
+                  % fx["chart_fixed_configurations"], 2),
+        "extfixed": ("%d of them survive"
+                     % fx["extension_fixed_configurations"], 2),
+        "weld2": ("%d rows, %d distinct candidates"
+                  % (pf["weld2_rows"], pf["weld2_distinct_candidates"]), 2),
+        "weld2found": ("%d FOUND" % pf["weld2_found"], 2),
+        "weld3": ("%d sites" % pf["weld3_target_sites"], 1),
+        "monomial": ("%d monomial coins" % gh["monomial_coins"], 2),
+        "adjoin": ("%d of %d interfering coins"
+                   % (gh["interfering_coins_adjoinable"],
+                      S["parent_census"]["by_sector"]["BALANCED"]["coins"]), 1),
+        "defectoverlap": ("%d of the %d defect-carrying coins"
+                          % (gh["defect_coins_in_the_haar_carrier"],
+                             S["parent_census"]["defect_carrying"]), 2),
+        "born": ("%d distinct Born kernels" % bl["distinct_images"], 2),
+        "bornstat": ("%d in the diagonal sector, where $B$ is the identity, "
+                     "and %d in the other two"
+                     % (bl["stationary_simplex_dimension_by_sector"]
+                        ["DIAGONAL"],
+                        bl["stationary_simplex_dimension_by_sector"]
+                        ["BALANCED"]), 2),
+        "closure": ("%d of %d products" % (gh["products_inside"],
+                                           gh["products_total"]), 1),
+        "pairs": ("%d of the %d ordered interfering pairs"
+                  % (gh["interfering_pairs_leaving"],
+                     gh["ordered_interfering_pairs"]), 1),
+        "finite": ("%d of %d coins"
+                   % (gh["coins_of_finite_order_inside_the_family"],
+                      a["coins"]), 1),
+        "nc_count": ("%s at the counting measure"
+                     % m("NON-COMMUTING", "counting"), 1),
+        "nc_orb": ("%s at the orbit null"
+                   % m("NON-COMMUTING", "orbit_uniform_CHART-32"), 1),
+        "df_count": ("%s under counting"
+                     % m("DEFECT-CARRYING", "counting"), 1),
+        "df_orb": ("%s under the orbit null"
+                   % m("DEFECT-CARRYING", "orbit_uniform_CHART-32"), 1),
+        "diag_count": ("%s of the slice by count"
+                       % m("DIAGONAL", "counting"), 1),
+        "diag_orb": ("%s of it by orbit"
+                     % m("DIAGONAL", "orbit_uniform_CHART-32"), 1),
+        "spread": ("a spread of %s" % cmp_["widest"]["spread"], 1),
+        "census": ("%d candidate sources" % cen["candidates"], 3),
+        "deriving": ("%d derive" % cen["deriving"], 3),
+        "absent": ("%d named-absent row" % cen["named_absent_rows"], 2),
+        "multisets": ("%d sector multisets"
+                      % inv["sector_multisets_on_the_full_space"], 2),
+        "chart": ("order %d" % sym["chart_order"], 1),
+        "ext": ("order %d" % sym["extension_order"], 1),
+        "nonflat": ("%d of 640 are non-flat" % S["parent_census"]["non_flat"],
+                    1),
+        "nonpaper": ("%d non-commuting" % S["parent_census"]["non_commuting"],
+                     1),
+        "control": ("the control arm is priced at %d free items and emits "
+                    "`%s`" % (S["control_arm"]["free_items"],
+                              S["control_arm"]["head_emitted"]), 2),
+        "trlocus": ("%d two-coin configurations"
+                    % fx["translations_only_fixed_configurations"], 2),
+        "trorbits": ("%d orbits rather than one"
+                     % fx["translations_only_link_orbits"], 1),
+        "foundrows": ("%d FOUND rows across the two pinned receipts"
+                      % len(pf["found_rows_in_the_corpus"]), 1),
+        "lparity": ("bipartite at %s and not at %s"
+                    % (", ".join(str(k) for k, v
+                                 in sorted(pf["bipartite_by_lattice_size"]
+                                           .items()) if v),
+                       ", ".join(str(k) for k, v
+                                 in sorted(pf["bipartite_by_lattice_size"]
+                                           .items()) if not v)), 1),
+        "gates": ("%d gates" % (len(LD.rows) + len(PAPER_GATE_IDS)), 1),
+        "mutants": ("%d declared mutants" % len(MUTANTS), 1),
+        "anchors": ("%d anchors in all" % S["totals"]["anchors"], 2),
+        "anchorsplit": ("%d file-bytes anchors, %d path-value anchors and %d "
+                        "verbatim-text anchors"
+                        % (S["totals"]["byte_anchors"],
+                           S["totals"]["path_value_anchors"],
+                           S["totals"]["verbatim_anchors"]), 2),
+        "waiverclasses": ("in %d classes" % len(WAIVER_CLASSES), 1),
+        "choices": ("%d construction choices" % len(S["choice_inventory"]), 1),
+        "flagged": ("exactly %d rows are flagged verdict-determining"
+                    % len([r for r in S["choice_inventory"]
+                           if r["verdict_determining"]]), 1),
     }
+    # THE §4 CENSUS TABLE, ROW BY ROW (E-22)
+    for r in cen["rows"]:
+        C["row_" + r["candidate"]] = (
+            "| (%s) | %s | %s | %s | %d |"
+            % (r["candidate"], r["prose"], r["requires"],
+               "yes" if r["acts_transitively_on_the_carrier"] else "no",
+               r["free_items"]), 1)
+    for r in cen["named_absent"]:
+        C["row_" + r["candidate"]] = (
+            "| (%s) | %s | %s | %s | NOT-CENSUSABLE |"
+            % (r["candidate"], r["prose"], r["requires"], "no"), 1)
+    # THE §4.3 ORBIT TABLE AND THE §7 NULL-DEPENDENCE TABLE, ROW BY ROW
+    for r in S["fibre"]["rows"]:
+        C["fibre_" + r["reading"]] = (
+            "| %s | %d | %d |"
+            % (r["reading"], r["orbits"],
+               r["independent_numbers_a_declaration_must_supply"]), 1)
+    for r in cmp_["rows"]:
+        C["null_" + r["set"]] = (
+            "| %s | %d | %s | %s | %s |"
+            % (r["set"], r["configurations"], r["counting"],
+               r["orbit_uniform_CHART-32"], r["orbit_uniform_CHART-128"]), 1)
     return C
 
 
 POLARITY = [
-    ("no measure on the configurations derives", 1),
+    ("no measure on the configurations derives", 2),
     ("selects a support, not a measure", 1),
     ("does not act transitively", 1),
 ]
@@ -2421,49 +3500,79 @@ PAPER_GATE_IDS = ["G-PAPER-CLAIMS-RENDER", "G-PAPER-CARRIES-THIS-RUNS-VERDICT",
                   "G-PAPER-COVERAGE", "G-GATE-COUNT-IS-AS-CLAIMED"]
 
 
+def mnorm(s):
+    """the must-not sweep's normalisation (#125, strengthened): whitespace
+    and markdown prefixes as everywhere else, AND inline emphasis and code
+    marks removed, because 'the *area* law' and 'the string **tension**' are
+    the same claim as the unmarked sentence and a scanner that reads the
+    marks is blind exactly where a writer would put them."""
+    return re.sub(r"[*_`]+", "", wsnorm(s)).lower()
+
+
 def gate_paper(S, paper_text, LDx):
     C = paper_claims(S)
     hay = wsnorm(paper_text)
-    missing = [k for k, v in C.items() if wsnorm(v) not in hay]
+    missing = [k for k, (v, n) in sorted(C.items())
+               if hay.count(wsnorm(v)) != n]
     if mut("MUT-PAPER-CLAIM"):
         missing = ["planted"]
     LDx.gate("G-PAPER-CLAIMS-RENDER",
              "every load-bearing number in the paper is RENDERED from a "
              "measured receipt field and located in the paper's own bytes "
              "under whitespace and markdown normalisation, so a value that "
-             "moved in the run cannot stay still in the prose",
-             not missing, "%d claims, %d not located: %s"
+             "moved in the run cannot stay still in the prose; and it is the "
+             "OCCURRENCE COUNT that is gated rather than presence anywhere, "
+             "so a claim corrupted at one of its several occurrences dies "
+             "here (#87).  The census table, the orbit table and the "
+             "null-dependence table are rendered row by row (E-22), so a "
+             "cell swapped under its own column heading moves a claim",
+             not missing, "%d claims with their occurrence counts, %d not "
+             "located at the count claimed: %s"
              % (len(C), len(missing), missing[:6]))
 
     verdict = S["verdict"]["string"]
+    blocks = [wsnorm(b) for b in
+              re.findall(r"```[^\n]*\n(.*?)```", paper_text, re.S)]
+    if mut("MUT-FENCE-TWIN"):
+        blocks = blocks + [wsnorm(verdict).replace("640", "4242")]
     LDx.gate("G-PAPER-CARRIES-THIS-RUNS-VERDICT",
              "the COMPLETE emitted verdict string occurs verbatim in the "
              "paper under whitespace normalisation, so a paper quoting an "
              "earlier run's verdict cannot be delivered -- only string "
              "equality reaches a retyped verdict block, since the numeral "
              "gate is structurally blind to numerals inside hyphenated "
-             "segments",
-             wsnorm(verdict) in hay,
-             "verdict of %d characters located" % len(verdict))
+             "segments.  And the paper's fenced blocks are gated by MULTISET "
+             "EQUALITY against the single block this run licenses (E-22), so "
+             "a second fence carrying a forged twin of the verdict cannot "
+             "ride along beside the clean one",
+             wsnorm(verdict) in hay and blocks == [wsnorm(verdict)],
+             "verdict of %d characters located; %d fenced blocks, %d "
+             "matching this run's verdict exactly"
+             % (len(verdict), len(blocks),
+                sum(1 for b in blocks if b == wsnorm(verdict))))
 
-    # the declaring sentences are removed FIRST, case-insensitively, so that
-    # a sentence that DECLARES the must-not is not mistaken for one that makes
-    # the claim; every needle is a long distinctive sentence, so the removal
-    # cannot over-reach
-    stripped = paper_text
+    # the declaring sentences are removed FIRST, case-insensitively and under
+    # the same normalisation as the sweep itself, so that a sentence that
+    # DECLARES the must-not is not mistaken for one that makes the claim, and
+    # so that a declaring sentence broken across lines is still removed;
+    # every needle is a long distinctive sentence, so the removal cannot
+    # over-reach
+    sw = mnorm(paper_text)
     for d in DECLARING:
-        stripped = re.sub(re.escape(d), " ", stripped, flags=re.I)
-    sw = wsnorm(stripped).lower()
-    hits = [w for w in MUST_NOT if w.lower() in sw]
+        sw = sw.replace(mnorm(d), " ")
+    hits = [w for w in MUST_NOT if mnorm(w) in sw]
     if mut("MUT-MUST-NOT"):
         hits = ["planted"]
     LDx.gate("G-MUST-NOT-VOCABULARY",
              "the pin's must-not vocabulary is SWEPT over the paper's own "
              "text with the declaring sentences removed first, so a "
              "paragraph that made an area-law, string-tension or potential "
-             "claim would die on the delivery run.  Nothing weaker reaches "
-             "it: a must-not carries no numeral, so the numeral gate is "
-             "blind to it",
+             "claim would die on the delivery run -- and the list is the "
+             "pin's OWN WORDS, the bare ones included: potential, "
+             "confinement, wilson, expectation, loop average, so a future "
+             "unit inheriting this list inherits the wall the pin wrote and "
+             "not a narrower one.  Inline emphasis is stripped before the "
+             "sweep, since a claim under asterisks is the same claim",
              not hits, "must-not vocabulary found: %s" % hits)
 
     pol = []
@@ -2476,7 +3585,7 @@ def gate_paper(S, paper_text, LDx):
             win = low[max(0, i - 64):i]
             bad = any(g in win for g in ("it is false that", "contrary to"))
         pol.append({"fragment": frag, "expected": want, "found": n,
-                    "negated": bad, "ok": n >= want and not bad})
+                    "negated": bad, "ok": n == want and not bad})
     LDx.gate("G-PAPER-POLARITY",
              "the direction-bearing claims are checked for POLARITY as well "
              "as presence -- each must occur and must not sit inside a "
@@ -2521,6 +3630,7 @@ def gate_paper(S, paper_text, LDx):
     for r in S["fibre"]["rows"]:
         add(r["orbits"])
         add(r["independent_numbers_a_declaration_must_supply"])
+    add(S["fibre"]["the_price_without_invariance_on_the_slice"])
     for r in S["path_value_anchors"]:
         add(r["measured"])
         if isinstance(r["measured"], list):
@@ -2535,6 +3645,11 @@ def gate_paper(S, paper_text, LDx):
     for t in S["totals"].values():
         add(t)
     add(S["provenance"]["pin_ledger_entry"])
+    for r in S["census"]["rows"]:
+        add(r["free_items"])
+    for r in S["candidate_pushforward"]["found_rows_in_the_corpus"]:
+        add(r["sites"])
+        add(r["free_items"])
     for v in C.values():
         for part in re.findall(r"\d+", str(v)):
             add(part)
@@ -2551,19 +3666,29 @@ def gate_paper(S, paper_text, LDx):
     # coverage gate was permitted to forgive.
     STRUCTURAL = {str(k) for k in range(0, 24)} | {
         "2026", "34", "62", "82", "87", "91", "119", "125", "46"}
-    nums = re.findall(r"(?<![\w/.-])(\d+)(?![\w/.-])", paper_text)
+    # THE FRACTION-AWARE SCAN.  A slash-adjacent numeral is a claim like any
+    # other -- and this paper's most consequential numbers are fractions --
+    # so the scan reads both sides of a fraction rather than skipping the
+    # whole token, and inline code spans are scanned like the rest (E-22).
+    nums = []
+    for hit in re.finditer(r"(?<![\w.-])(\d+)(?:/(\d+))?(?![\w.-])",
+                           paper_text):
+        nums.append(hit.group(1))
+        if hit.group(2):
+            nums.append(hit.group(2))
     unreg = sorted({x for x in nums if x not in allowed and x not in STRUCTURAL})
     fenced = len(re.findall(r"```", paper_text)) // 2
     if mut("MUT-PAPER-NUMERAL"):
         unreg = ["planted"]
     LDx.gate("G-PAPER-COVERAGE",
-             "EVERY numeral of the paper, the fenced verdict block included, "
-             "is either a value this run measured or a declared structural "
-             "literal; the scan runs in the plain delivery run and not in a "
-             "separate mode (#20)",
+             "EVERY numeral of the paper, the fenced verdict block and the "
+             "inline code spans included, is either a value this run "
+             "measured or a declared structural literal, and BOTH SIDES of "
+             "every fraction are read: the scan runs in the plain delivery "
+             "run and not in a separate mode (#20)",
              not unreg, "%d numerals scanned across %d fenced blocks, %d "
              "unregistered: %s" % (len(nums), fenced, len(unreg), unreg[:8]))
-    claimed = int(re.search(r"(\d+)", C["gates"]).group(1))
+    claimed = int(re.search(r"(\d+)", C["gates"][0]).group(1))
     if mut("MUT-GATE-COUNT"):
         claimed += 1
     LDx.gate("G-GATE-COUNT-IS-AS-CLAIMED",
@@ -2575,7 +3700,8 @@ def gate_paper(S, paper_text, LDx):
              claimed == len(LD.rows) + 1,
              "the paper claims %d gates; this run closes %d"
              % (claimed, len(LD.rows) + 1))
-    S["paper_claims"] = C
+    S["paper_claims"] = {k: {"fragment": v, "occurrences_required": n}
+                         for k, (v, n) in sorted(C.items())}
     S["paper_polarity"] = pol
     S["paper_coverage"] = {"scanned": len(nums), "fenced_blocks": fenced,
                            "unregistered": unreg,
@@ -2603,7 +3729,7 @@ MUTANTS = [
      "the residual group is made trivial, so the orbit count is the slice"),
     ("MUT-FIXED-LOCUS", "G-CHART-FIXED-LOCUS-IS-THE-SWEPT-SLICE",
      "a fixed-locus check is made to fail"),
-    ("MUT-BORN-STOCHASTIC", "G-BORN-LAYER-IS-A-MEASURE",
+    ("MUT-BORN-STOCHASTIC", "G-BORN-LAYER-IS-A-KERNEL",
      "a Born matrix stops being doubly stochastic"),
     ("MUT-ORBIT-CLOSURE", "G-DECLARED-SETS-ARE-ORBIT-CLOSED",
      "a weighed set stops being a union of orbits"),
@@ -2611,13 +3737,69 @@ MUTANTS = [
      "uniqueness is ASSERTED where the orbit count refutes it"),
     ("MUT-CLOSURE", "G-FAMILY-IS-NOT-A-GROUP",
      "the family is declared multiplicatively closed"),
-    ("MUT-CENSUS-DERIVES", "G-HEAD-STRING-EQUALITY",
-     "a candidate is declared to derive; the head moves and the two routes "
-     "stop agreeing"),
+    ("MUT-CENSUS-DERIVES", "G-THE-CENSUS-CRITERION-IS-THE-ORGANIZING-PRINCIPLE",
+     "a candidate is declared to derive without the transitive structure "
+     "that would make it derive"),
     ("MUT-HEAD-CONSTANT", "G-HEAD-LAW-REACHABILITY",
      "the head law is made unable to move"),
     ("MUT-WILSON-SEGMENT", "G-NO-WILSON-EXPECTATION",
-     "an expectation-valued key appears in the receipt"),
+     "a real expectation-valued key is planted in the payload before the "
+     "gate"),
+    ("MUT-WILSON-NESTED-KEY", "G-NO-WILSON-EXPECTATION",
+     "a real banned key is planted one level down, inside the census block, "
+     "where a top-level scan would never reach it"),
+    ("MUT-WILSON-FUNCTION", "G-NO-WILSON-EXPECTATION",
+     "a real banned function definition is planted in the source the AST "
+     "gate reads"),
+    ("MUT-FUNCTION-INVENTORY", "G-INSTRUMENT-FUNCTION-INVENTORY-IS-TOTAL",
+     "a NEUTRALLY-NAMED function is planted in the source the AST gate "
+     "reads, carrying no banned word at all"),
+    ("MUT-REGISTRY-EVASION", "G-MUTANT-REGISTRY-TOTAL",
+     "a mutant switch is planted whose name no scan can read -- mut() on a "
+     "variable"),
+    ("MUT-INVARIANCE-PRICE-UNWIRED", "G-THE-DERIVE-ARM-IS-REACHABLE",
+     "the invariance candidate's price is unwired from the uniqueness "
+     "measurement and typed, so the control arm stops deriving"),
+    ("MUT-PRICE-TYPED", "G-EVERY-CANDIDATE-PRICE-IS-MEASURED",
+     "a candidate's published price stops being the length of its own "
+     "measured reason list"),
+    ("MUT-CENSUS-CRITERION",
+     "G-THE-CENSUS-CRITERION-IS-THE-ORGANIZING-PRINCIPLE",
+     "a census row is made to disagree with the closure criterion"),
+    ("MUT-STATIONARY-ABSENT", "G-THE-STATIONARY-CANDIDATE-IS-NAMED-ABSENT",
+     "the named-absent stationary row is dropped, and the census stops "
+     "being able to scope its own forced-shut claim"),
+    ("MUT-MAXENT", "G-MAXENT-RELOCATES-THE-PRICE",
+     "the arena is made to pin a quantity to condition on"),
+    ("MUT-BORN-STATIONARY", "G-BORN-KERNEL-FIXES-NO-MEASURE-EITHER",
+     "the Born kernel's stationary simplex in the diagonal sector is made a "
+     "point, i.e. the kernel is made to fix a measure"),
+    ("MUT-FOUND-ENUMERATION",
+     "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+     "the corpus-wide FOUND enumeration is truncated"),
+    ("MUT-ANCHORED-REVERSAL", "G-CHART-FIXED-LOCUS-IS-THE-SWEPT-SLICE",
+     "an anchored chart element is made to reverse a link, so the converse "
+     "half of the fixed-locus claim fails"),
+    ("MUT-TRANSLATIONS-CHART", "G-TRANSLATIONS-ONLY-CHART-IS-A-THIRD-READING",
+     "the direction relabelling is put back into the translations-only "
+     "chart, which then acts transitively on the links and stops being a "
+     "third reading"),
+    ("MUT-L-PARITY", "G-BIPARTITENESS-IS-L-PARITY",
+     "an odd lattice size is made bipartite"),
+    ("MUT-INTERFERING-PAIRS", "G-FAMILY-IS-NOT-A-GROUP",
+     "a leaving product is given a non-interfering factor"),
+    ("MUT-WIDEST-TIE", "G-TWO-NULLS-DISAGREE",
+     "the arg-max set of the widest disagreement is truncated to one, "
+     "restoring the undeclared tie-break"),
+    ("MUT-CHOICE-FLAG-MOVED", "G-CHOICE-INVENTORY",
+     "the verdict-determining flag is MOVED from a row that earns it to a "
+     "row that does not, leaving the total unchanged"),
+    ("MUT-HEAD-LAW-DESYNC", "G-THE-TWO-HEAD-LAWS-AGREE",
+     "the builder's head law is corrupted by one token; the comparator's "
+     "own law does not follow it"),
+    ("MUT-FENCE-TWIN", "G-PAPER-CARRIES-THIS-RUNS-VERDICT",
+     "a second fenced block carrying a forged verdict rides beside the "
+     "clean one"),
     ("MUT-CHOICE-INVENTORY", "G-CHOICE-INVENTORY",
      "a verdict-determining row loses its flag"),
     ("MUT-PAPER-CLAIM", "G-PAPER-CLAIMS-RENDER",
@@ -2640,6 +3822,48 @@ MUTANTS = [
 ]
 
 ANCHOR_CLASSES = ["FILE-BYTES", "PATH-VALUE", "VERBATIM"]
+
+# THE GATES THAT CANNOT BE INSIDE THE OBJECT THEY SEAL, declared once and
+# read by the published count, by the published names and by the
+# reconciliation at the seal, so none of the three can drift from the others.
+CLOSING_GATES = ["G-SEAL-COMPLETE", "G-ARTIFACT-INTEGRITY"]
+# and the one gate a DELIVERY run never closes, because it fires only when
+# the object under test is absent.
+CONDITIONAL_GATES = ["G-PAPER-PRESENT"]
+
+# THE FUNCTION INVENTORY.  A name scan is defeated by a neutral name, so the
+# withholding gate is backed by this TOTAL list: the set of functions this
+# source defines -- def, async def, or a lambda bound to a name, at any
+# nesting depth -- must equal it exactly, and a function added to this
+# instrument under any name at all dies at its gate.
+FUNCTIONS = [
+    "add", "banned_keys_at_every_depth", "bdigest", "bmul", "born",
+    "born_kernel_matrix", "build_alphabet", "build_arena", "build_census",
+    "build_choices", "build_coins", "build_verdict", "build_waivers",
+    "burnside_orbits", "cdag", "chart_cycle_profile", "chart_elements",
+    "cmul", "coin_sector", "coin_unitary_second_route", "control_arm",
+    "declared_function_names", "demonstrate_reachability", "dig", "digest",
+    "fadd", "fconj", "fibre_rows_from", "finish", "fmul", "fneg", "fnorm",
+    "fnormsq", "frow", "fscal", "fsub", "gate_paper", "gen_group",
+    "head_law", "holonomy", "is_rational", "link_op", "link_orbits", "m",
+    "main", "mass", "measure_born_layer", "measure_correspondence",
+    "measure_fixed_locus", "measure_haar_and_gibbs",
+    "measure_holonomy_pullback", "measure_invariance", "measure_parent_census",
+    "measure_path_values", "measure_provenance", "measure_symmetries",
+    "measure_verbatim", "mnorm", "mut", "nullity", "orbit_closed",
+    "orbits_of", "own_source", "paper_claims", "pcompose", "perm_of",
+    "point_on_dir", "point_symmetries", "price_ambient_haar", "price_born",
+    "price_counting", "price_gibbs", "price_group_haar", "price_holonomy",
+    "price_invariance", "price_maxent", "price_pushforward",
+    "price_the_fibre", "read_bytes", "realisable_constant_twists",
+    "reconstruct_verdict", "run", "run_mutant", "say", "sdag",
+    "second_head_law", "selftest", "sident", "smul", "swap_conjugate",
+    "to_fraction", "transitivity_by_row", "transported_link",
+    "uniqueness_from_orbits", "withhold_the_licensed_segment", "wordcount",
+    "wsnorm", "zpow", "_g", "apply_point", "gauge_twist", "subcount",
+    "uniform_cfg", "__init__", "addv", "boundary", "ends", "gate",
+    "load_sources", "reverify", "take",
+]
 
 
 def run(paper_path=None, write=True, break_anchor=None):
@@ -2691,6 +3915,8 @@ def run(paper_path=None, write=True, break_anchor=None):
               S["candidate_counting"])
     SEAL.take("candidate (c)", "candidate_invariance", "G-UNIQUENESS-GATED",
               S["candidate_invariance"])
+    SEAL.take("candidate (i)", "candidate_maxent",
+              "G-MAXENT-RELOCATES-THE-PRICE", S["candidate_maxent"])
     SEAL.take("the measure comparison", "measure_comparison",
               "G-TWO-NULLS-DISAGREE", S["measure_comparison"])
 
@@ -2710,16 +3936,19 @@ def run(paper_path=None, write=True, break_anchor=None):
               "G-HOLONOMY-GROUP-IS-CONFIGURATION-DEPENDENT",
               S["candidate_holonomy_pullback"])
 
-    say("[8/9] the census, the fibre, the head")
+    say("[8/9] the census, the fibre, the control arm, the head")
     build_census(S)
     price_the_fibre(S)
     demonstrate_reachability(S)
+    control_arm(S)
     withhold_the_licensed_segment(S)
     build_choices(S)
     SEAL.take("the census", "census", "G-CENSUS-IS-TOTAL", S["census"])
     SEAL.take("the fibre", "fibre", "G-FIBRE-PRICED", S["fibre"])
     SEAL.take("the pre-registered heads", "preregistered_heads",
               "G-HEAD-LAW-REACHABILITY", S["preregistered_heads"])
+    SEAL.take("the control arm", "control_arm", "G-THE-DERIVE-ARM-IS-REACHABLE",
+              S["control_arm"])
     SEAL.take("the withheld segment", "withheld", "G-NO-WILSON-EXPECTATION",
               S["withheld"])
     SEAL.take("the choice inventory", "choice_inventory", "G-CHOICE-INVENTORY",
@@ -2738,9 +3967,21 @@ def run(paper_path=None, write=True, break_anchor=None):
         "choices": len(S["choice_inventory"]),
     }
     S["verdict"] = {"string": build_verdict(S)}
-    recon = reconstruct_verdict(S)
+    recon, recon_head = reconstruct_verdict(S)
     if mut("MUT-RECONSTRUCTION"):
         recon = recon + "X"
+    builder_head = S["verdict"]["string"].split(" -- ", 1)[0] + ">"
+    LD.gate("G-THE-TWO-HEAD-LAWS-AGREE",
+            "THE HEAD IS DERIVED BY TWO LAWS, not by one law called twice: "
+            "the builder's head_law and the comparator's second_head_law are "
+            "separate implementations of the same pre-registered outcomes, "
+            "written with different branch structures and sharing no format "
+            "string and no helper, and their two heads are compared here.  A "
+            "one-character corruption inside either law moves one head and "
+            "leaves the other where it was",
+            builder_head == recon_head,
+            "builder head %s; comparator head %s"
+            % (builder_head, recon_head))
     LD.gate("G-HEAD-STRING-EQUALITY",
             "the complete verdict string -- head included -- is derived TWICE "
             "by disjoint routes and the two are compared for equality: the "
@@ -2764,7 +4005,8 @@ def run(paper_path=None, write=True, break_anchor=None):
         gate_paper(S, ptext, LD)
         S["paper_sha256_12"] = bdigest(open(ppath, "rb").read())
     else:
-        S["paper_claims"] = paper_claims(S)
+        S["paper_claims"] = {k: {"fragment": v, "occurrences_required": n}
+                             for k, (v, n) in paper_claims(S).items()}
         S["paper_polarity"] = []
         S["paper_coverage"] = {"scanned": 0, "fenced_blocks": 0,
                                "unregistered": [], "allowed_values": 0}
@@ -2795,11 +4037,24 @@ def finish(S, write):
     S["gates"] = [dict(r) for r in LD.rows]
     S["gate_digests"] = list(LD.digests)
     S["totals"]["gates_in_the_sealed_snapshot"] = len(S["gates"])
-    S["totals"]["late_gates"] = 2
+    # DERIVED, not typed: the closing gates are one list, and the published
+    # count, the published names and the reconciliation at the seal all read
+    # that same list.  A third closing gate added anywhere in this source is
+    # in the syntax tree's gate registry and in neither the sealed ledger nor
+    # this list, and dies at G-SEAL-COMPLETE.
+    S["totals"]["late_gates"] = len(CLOSING_GATES)
     S["totals"]["gate_failures"] = sum(1 for r in S["gates"]
                                        if not r["passed"])
     S["mutants"] = [{"name": n, "target": g, "what": w} for (n, g, w) in MUTANTS]
     S["anchor_classes"] = ANCHOR_CLASSES
+    S["exit_conventions"] = {
+        "delivery_run": "0 ON SUCCESS, 1 ON ANY REFUSAL, WRITING NOTHING",
+        "selftest": "0 WHEN EVERY ANCHOR CLASS IS FATAL",
+        "mutant": "0 WHEN THE MUTANT DIES ON ITS DECLARED TARGET -- THE "
+                  "INVERSION OF THE USUAL READING",
+        "all_mutants": "0 ONLY WHEN ALL OF THEM DIE ON TARGET",
+        "argv": "2 ON AN UNKNOWN FLAG OR A MISSING FLAG ARGUMENT",
+    }
     S["waiver_ledger"] = build_waivers(S)
     S["transcript_head"] = LOG[:6]
     # the totals are sealed LAST, and their own seal count is set immediately
@@ -2821,12 +4076,14 @@ def finish(S, write):
     declared_unsealed = ["seal_manifest", "gate_digests", "unit",
                          "pin_sha256_prefix", "python", "arithmetic",
                          "anchor_classes", "paper_sha256_12", "verdict_head",
-                         "closing_gates"]
+                         "closing_gates", "exit_conventions"]
     payload["seal_manifest"] = SEAL.man
     payload["declared_unsealed"] = declared_unsealed
     payload["verdict_head"] = S["verdict"]["head"]
     payload["closing_gates"] = {
-        "names": ["G-SEAL-COMPLETE", "G-ARTIFACT-INTEGRITY"],
+        "names": list(CLOSING_GATES),
+        "conditional_gates_not_closed_by_a_delivery_run":
+            list(CONDITIONAL_GATES),
         "warrant": "these two close after the gate ledger has been "
                    "snapshotted and sealed.  G-SEAL-COMPLETE cannot be "
                    "inside the object it seals, and G-ARTIFACT-INTEGRITY "
@@ -2841,16 +4098,31 @@ def finish(S, write):
         payload["arena"] = dict(payload["arena"])
         payload["arena"]["coins"] = -1
     bad = SEAL.reverify(payload)
+    # AND THE GATE LEDGER IS RECONCILED AGAINST THE SYNTAX TREE: every gate
+    # id this source can close is either in the sealed snapshot, or one of
+    # the two declared closing gates, or the one declared conditional gate.
+    ran = {r["gate"] for r in S["gates"]}
+    accounted = ran | set(CLOSING_GATES) | set(CONDITIONAL_GATES)
+    stray = sorted(set(S["_gate_ids_in_source"]) - accounted)
+    orphan = sorted(accounted - set(S["_gate_ids_in_source"]))
     LD.gate("G-SEAL-COMPLETE",
             "the manifest is TOTAL and the seal is re-taken immediately "
             "before the write: every published top-level key is either "
             "sealed at the gate that produced it or named in the "
-            "declaration with the reason it cannot be, and a published "
-            "value mutated anywhere between its gate and the write refuses "
-            "the delivery",
-            not bad and not unsealed,
-            "%d seals, %d moved, %d published but neither sealed nor declared"
-            % (len(SEAL.man), len(bad), len(unsealed)))
+            "declaration with the reason it cannot be, and a published value "
+            "mutated anywhere between its gate and the write refuses the "
+            "delivery.  The gate "
+            "ledger is reconciled here too, against the gate ids this "
+            "source's own syntax tree carries: a gate closing after the "
+            "snapshot is in the tree and in neither the snapshot nor the "
+            "declared closing list, so a late gate cannot go unpublished",
+            not bad and not unsealed and not stray and not orphan,
+            "%d seals, %d moved, %d published but neither sealed nor "
+            "declared; %d gate ids in the source, %d unaccounted %s, %d "
+            "accounted but absent from the source %s"
+            % (len(SEAL.man), len(bad), len(unsealed),
+               len(S["_gate_ids_in_source"]), len(stray), stray[:3],
+               len(orphan), orphan[:3]))
     lines = list(LOG)
     lines.append("")
     lines.append("THE VERDICT")
@@ -2866,6 +4138,11 @@ def finish(S, write):
 
     outp = os.path.join(REPO, OUT_REL)
     recp = os.path.join(REPO, RECEIPT_REL)
+    if len(LD.rows) != len(S["gates"]) + 1:
+        raise GateFail("G-ARTIFACT-INTEGRITY :: %d gates closed between the "
+                       "ledger snapshot and the write, expected exactly the "
+                       "first of the %d declared closing gates"
+                       % (len(LD.rows) - len(S["gates"]), len(CLOSING_GATES)))
     seals = {outp: hashlib.sha256(out_text.encode()).hexdigest(),
              recp: hashlib.sha256(rec_text.encode()).hexdigest()}
     probe = recp + ".probe"
@@ -2902,16 +4179,18 @@ def finish(S, write):
 
 
 def build_waivers(S):
-    """#34 with reachability, at an HONEST denominator, in four classes."""
+    """#34 with reachability, at an HONEST denominator, in the three classes
+    a run can actually reach.  The fourth class an earlier draft published --
+    coverage by the anchor breaker -- was UNREACHABLE: all three of its gates
+    are declared-mutant targets too and the mutant branch is tested first, so
+    it named a class no gate could ever be in.  A class no row can carry is a
+    row of the ledger that cannot be audited, so it is gone."""
     targeted = {g for (_n, g, _w) in MUTANTS}
     rows = []
     for r in LD.rows:
         g = r["gate"]
         if g in targeted:
             cls = "COVERED-BY-A-DECLARED-MUTANT"
-        elif g in ("G-SOURCES-PINNED", "G-PATH-VALUE-ANCHORS",
-                   "G-VERBATIM-ANCHORS"):
-            cls = "COVERED-BY-THE-ANCHOR-BREAKER"
         elif g in ("G-CHART-IS-TRANSITIVE-ON-LINKS",
                    "G-SWAP-CONJUGATE-CLOSED", "G-GAUGE-ACTS-ON-THE-FAMILY",
                    "G-UNIFORMITY-PRESERVING-GAUGE-MEASURED",
@@ -2980,9 +4259,17 @@ def run_mutant(name):
         globals()["MUT"] = None
 
 
-USAGE = ("usage: r5m_measure_exact.py [--no-write] [--selftest] "
-         "[--mutant NAME] [--all-mutants] [--list-mutants] [--list-gates] "
-         "[--verify-paper PATH]")
+USAGE = (
+    "usage: r5m_measure_exact.py [--no-write] [--selftest] "
+    "[--mutant NAME] [--all-mutants] [--list-mutants] [--list-gates] "
+    "[--verify-paper PATH]\n"
+    "exit conventions, disclosed (they invert the usual reading): the "
+    "delivery run exits 0 when every gate passes and 1 on any refusal, "
+    "writing nothing; --selftest exits 0 when EVERY anchor class is fatal; "
+    "--mutant exits 0 when the named mutant DIES ON ITS DECLARED TARGET and "
+    "1 when it survives or dies elsewhere; --all-mutants exits 0 only when "
+    "all of them die on target; an unknown flag or a missing flag argument "
+    "exits 2.")
 
 
 def main(argv):

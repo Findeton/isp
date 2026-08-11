@@ -36,10 +36,22 @@
    64,
    512
   ],
+  "free_item_reasons": [
+   "A-MEASURE-ON-THE-CONFIGURATIONS-MUST-STILL-BE-DECLARED"
+  ],
   "free_items": 1,
-  "verdict": "DERIVES-A-MEASURE-ON-THE-CARRIER-NOT-ON-THE-CONFIGURATIONS"
+  "off_domino_entries_not_the_identity": 0,
+  "stationary_simplex_dimension_by_sector": {
+   "ANTIDIAGONAL": 14,
+   "BALANCED": 14,
+   "DIAGONAL": 15
+  },
+  "verdict": "DERIVES-A-LAW-ON-THE-STATES-EXACTLY-NOT-A-MEASURE-ON-EITHER-SPACE"
  },
  "candidate_ambient_haar": {
+  "free_item_reasons": [
+   "A-CONDITIONING-ON-A-HAAR-NULL-SUBSET-MUST-BE-DECLARED"
+  ],
   "free_items": 1,
   "verdict": "A-FINITE-SUBSET-OF-U(2)-CARRIES-HAAR-MEASURE-ZERO"
  },
@@ -49,6 +61,10 @@
   "carriers_declared": [
    "THE-UNIFORM-SLICE",
    "THE-FULL-SPACE"
+  ],
+  "free_item_reasons": [
+   "WHICH-CARRIER-MUST-BE-DECLARED",
+   "WHICH-NULL-MUST-BE-DECLARED"
   ],
   "free_items": 2,
   "nulls_declared": [
@@ -61,7 +77,15 @@
   "verdict": "CARRIES-NO-INFORMATION-AND-IS-NOT-EVEN-UNIQUE-AMONG-THE-INVARIANT-MEASURES"
  },
  "candidate_gibbs": {
+  "free_item_reasons": [
+   "THE-ACTION-FUNCTIONAL-MUST-BE-DECLARED",
+   "THE-COUPLING-MUST-BE-DECLARED"
+  ],
   "free_items": 2,
+  "objects_the_parent_declares_absent": [
+   "ACTION-FUNCTIONAL",
+   "COUPLING"
+  ],
   "verdict": "NO-ACTION-AND-NO-COUPLING-ON-THIS-ARENA-BY-THE-PARENTS-OWN-DECLARATION"
  },
  "candidate_group_haar": {
@@ -105,12 +129,20 @@
   },
   "coins_of_finite_order_inside_the_family": 384,
   "defect_coins_in_the_haar_carrier": 0,
+  "family_inverse_failures": 0,
+  "free_item_reasons": [
+   "A-SUBGROUP-OF-THE-FAMILY-MUST-BE-DECLARED"
+  ],
   "free_items": 1,
   "interfering_coins_adjoinable": 0,
+  "interfering_pairs_leaving": 131072,
+  "leaving_pairs_with_a_non_interfering_factor": 0,
   "monomial_closure_failures": 0,
   "monomial_coins": 128,
   "monomial_inverse_failures": 0,
+  "ordered_interfering_pairs": 262144,
   "products_inside": 278528,
+  "products_leaving": 131072,
   "products_total": 409600,
   "verdict": "HAAR-EXISTS-ON-A-DECLARED-SUBGROUP-WHICH-CARRIES-NO-DEFECT;THE-FAMILY-ITSELF-IS-NOT-A-GROUP"
  },
@@ -121,12 +153,18 @@
    1,
    8
   ],
+  "free_item_reasons": [
+   "A-SECTION-OF-THE-HOLONOMY-MAP-MUST-BE-DECLARED"
+  ],
   "free_items": 1,
   "verdict": "NO-SINGLE-GROUP-TO-BORROW-FROM;A-SECTION-WOULD-BE-ONE-MORE-FREE-ITEM"
  },
  "candidate_invariance": {
   "cross_invariance_checks": 2624,
   "cross_invariance_failures": 0,
+  "free_item_reasons": [
+   "ONE-POINT-OF-THE-INVARIANT-SIMPLEX-MUST-BE-DECLARED"
+  ],
   "free_items": 1,
   "orbit_closure_rows": [
    {
@@ -196,9 +234,102 @@
   },
   "verdict": "SELECTS-A-SUPPORT-NOT-A-MEASURE"
  },
+ "candidate_maxent": {
+  "free_item_reasons": [
+   "THE-REFERENCE-MEASURE-MUST-BE-DECLARED",
+   "A-CONSTRAINT-TO-CONDITION-ON-MUST-BE-DECLARED"
+  ],
+  "free_items": 2,
+  "pinned_quantities_to_condition_on": 0,
+  "references_available": [
+   "COUNTING-ON-CONFIGURATIONS",
+   "COUNTING-ON-ORBITS"
+  ],
+  "references_disagree_by": "27/130",
+  "verdict": "RELOCATES-THE-PRICE-AND-DOES-NOT-ESCAPE-IT;UNCONSTRAINED-IT-RETURNS-ITS-DECLARED-REFERENCE;CONSTRAINED-IT-IS-THE-GIBBS-ROW-WITH-A-CONSTRAINT"
+ },
  "candidate_pushforward": {
   "actor_site_objects": 2,
+  "bipartite_by_lattice_size": {
+   "3": false,
+   "4": true,
+   "5": false,
+   "6": true,
+   "7": false,
+   "8": true
+  },
   "configurations_at_mass_zero_at_class_grain": 527,
+  "found_rows_dying_at_the_site_count_blade": 8,
+  "found_rows_in_the_corpus": [
+   {
+    "arena": "R3-SAT",
+    "free_items": 0,
+    "reading": "EMBEDDING",
+    "receipt": "WELD3",
+    "sites": 9,
+    "target": "I7-DECLARED-L3"
+   },
+   {
+    "arena": "R3-SAT",
+    "free_items": 0,
+    "reading": "QUOTIENT",
+    "receipt": "WELD3",
+    "sites": 9,
+    "target": "I7-DECLARED-L3"
+   },
+   {
+    "arena": "R3-ROW|COL|ANT-SATURATING-AFTER-RELABELLING",
+    "free_items": 0,
+    "reading": "EMBEDDING",
+    "receipt": "WELD3",
+    "sites": 9,
+    "target": "I7-DECLARED-L3"
+   },
+   {
+    "arena": "R3-ROW|COL|ANT-SATURATING-AFTER-RELABELLING",
+    "free_items": 0,
+    "reading": "QUOTIENT",
+    "receipt": "WELD3",
+    "sites": 9,
+    "target": "I7-DECLARED-L3"
+   },
+   {
+    "arena": "CRYSTAL/DOUBLE-GRID(3,2)@L2",
+    "free_items": 0,
+    "reading": "EMBEDDING",
+    "receipt": "WELD3",
+    "sites": 9,
+    "target": "CRYSTAL-CARRIED-L2"
+   },
+   {
+    "arena": "CRYSTAL/DOUBLE-GRID(3,2)@L2",
+    "free_items": 0,
+    "reading": "QUOTIENT",
+    "receipt": "WELD3",
+    "sites": 9,
+    "target": "CRYSTAL-CARRIED-L2"
+   },
+   {
+    "arena": "DECLARED-PROBE/CAYLEY-AT-I7",
+    "free_items": 0,
+    "reading": "EMBEDDING",
+    "receipt": "WELD2-CONTROL",
+    "sites": 9,
+    "target": "I7-DECLARED-LATTICE"
+   },
+   {
+    "arena": "CRYSTAL/DOUBLE-GRID(3,2)",
+    "free_items": 0,
+    "reading": "EMBEDDING",
+    "receipt": "WELD2-CONTROL",
+    "sites": 9,
+    "target": "CRYSTAL-CARRIED-LATTICE"
+   }
+  ],
+  "free_item_reasons": [
+   "A-CORRESPONDENCE-TO-THIS-ARENA-MUST-BE-DECLARED",
+   "THE-COIN-A-CONSTANT-LINK-DATUM-PULLS-BACK-TO-MUST-BE-DECLARED"
+  ],
   "free_items": 2,
   "gamma_classes": 185,
   "gamma_cut_dimensions": [
@@ -374,72 +505,152 @@
   "whole_word_homonyms": 6
  },
  "census": {
-  "candidates": 8,
+  "candidates": 9,
+  "criterion": "A-CANONICAL-MEASURE-EXISTS-EXACTLY-WHERE-SOMETHING-ACTS-TRANSITIVELY-ON-THE-CARRIER",
   "deriving": 0,
+  "named_absent": [
+   {
+    "candidate": "j",
+    "censusable": false,
+    "free_items": null,
+    "prose": "the stationary measure of a dynamics on the configurations",
+    "requires": "an irreducible chain on the carrier",
+    "source": "THE-STATIONARY-MEASURE-OF-A-DYNAMICS-ON-THE-CONFIGURATIONS",
+    "verdict": "NOT-CENSUSABLE-NO-PINNED-DYNAMICS-ON-CONFIGURATIONS;A-COVARIANT-CHAIN-DERIVES-IFF-IT-IS-IRREDUCIBLE"
+   }
+  ],
+  "named_absent_rows": 1,
   "rows": [
    {
+    "acts_transitively_on_the_carrier": false,
     "candidate": "a",
     "derives": false,
+    "free_item_reasons": [
+     "A-CORRESPONDENCE-TO-THIS-ARENA-MUST-BE-DECLARED",
+     "THE-COIN-A-CONSTANT-LINK-DATUM-PULLS-BACK-TO-MUST-BE-DECLARED"
+    ],
     "free_items": 2,
+    "prose": "the history-measure pushforward",
+    "requires": "transitivity borrowed through a pinned correspondence",
     "source": "THE-HISTORY-MEASURE-PUSHFORWARD",
     "verdict": "NO-PINNED-CORRESPONDENCE-TO-THIS-ARENA;GRANTED-EVERYTHING-THE-RESIDUAL-IS-A-POINT-MASS-WITH-THE-COIN-FREE"
    },
    {
+    "acts_transitively_on_the_carrier": false,
     "candidate": "b",
     "derives": false,
+    "free_item_reasons": [
+     "WHICH-CARRIER-MUST-BE-DECLARED",
+     "WHICH-NULL-MUST-BE-DECLARED"
+    ],
     "free_items": 2,
+    "prose": "the counting measure",
+    "requires": "transitivity by fiat, which is the free choice itself",
     "source": "THE-COUNTING-MEASURE",
     "verdict": "CARRIES-NO-INFORMATION-AND-IS-NOT-EVEN-UNIQUE-AMONG-THE-INVARIANT-MEASURES"
    },
    {
+    "acts_transitively_on_the_carrier": false,
     "candidate": "c",
     "derives": false,
+    "free_item_reasons": [
+     "ONE-POINT-OF-THE-INVARIANT-SIMPLEX-MUST-BE-DECLARED"
+    ],
     "free_items": 1,
+    "prose": "an invariance-characterised measure",
+    "requires": "the measured symmetry group, acting transitively",
     "source": "AN-INVARIANCE-CHARACTERISED-MEASURE",
     "verdict": "SELECTS-A-SUPPORT-NOT-A-MEASURE"
    },
    {
+    "acts_transitively_on_the_carrier": false,
     "candidate": "d",
     "derives": false,
+    "free_item_reasons": [
+     "A-SUBGROUP-OF-THE-FAMILY-MUST-BE-DECLARED"
+    ],
     "free_items": 1,
+    "prose": "Haar from a group structure on the family",
+    "requires": "a group acting on itself",
     "source": "HAAR-FROM-A-GROUP-STRUCTURE-ON-THE-FAMILY",
     "verdict": "HAAR-EXISTS-ON-A-DECLARED-SUBGROUP-WHICH-CARRIES-NO-DEFECT;THE-FAMILY-ITSELF-IS-NOT-A-GROUP"
    },
    {
+    "acts_transitively_on_the_carrier": false,
     "candidate": "e",
     "derives": false,
+    "free_item_reasons": [
+     "A-CONDITIONING-ON-A-HAAR-NULL-SUBSET-MUST-BE-DECLARED"
+    ],
     "free_items": 1,
+    "prose": "Haar inherited from $U(2)$",
+    "requires": "the carrier as an orbit of the ambient group",
     "source": "HAAR-INHERITED-FROM-U(2)",
     "verdict": "A-FINITE-SUBSET-OF-U(2)-CARRIES-HAAR-MEASURE-ZERO"
    },
    {
+    "acts_transitively_on_the_carrier": false,
     "candidate": "f",
     "derives": false,
+    "free_item_reasons": [
+     "THE-ACTION-FUNCTIONAL-MUST-BE-DECLARED",
+     "THE-COUPLING-MUST-BE-DECLARED"
+    ],
     "free_items": 2,
+    "prose": "Gibbs from an action",
+    "requires": "an action, which exists to break transitivity",
     "source": "GIBBS-FROM-AN-ACTION",
     "verdict": "NO-ACTION-AND-NO-COUPLING-ON-THIS-ARENA-BY-THE-PARENTS-OWN-DECLARATION"
    },
    {
+    "acts_transitively_on_the_carrier": false,
     "candidate": "g",
     "derives": false,
+    "free_item_reasons": [
+     "A-MEASURE-ON-THE-CONFIGURATIONS-MUST-STILL-BE-DECLARED"
+    ],
     "free_items": 1,
+    "prose": "the Born layer",
+    "requires": "its own kernel, irreducible on the carrier",
     "source": "THE-BORN-LAYER",
-    "verdict": "DERIVES-A-MEASURE-ON-THE-CARRIER-NOT-ON-THE-CONFIGURATIONS"
+    "verdict": "DERIVES-A-LAW-ON-THE-STATES-EXACTLY-NOT-A-MEASURE-ON-EITHER-SPACE"
    },
    {
+    "acts_transitively_on_the_carrier": false,
     "candidate": "h",
     "derives": false,
+    "free_item_reasons": [
+     "A-SECTION-OF-THE-HOLONOMY-MAP-MUST-BE-DECLARED"
+    ],
     "free_items": 1,
+    "prose": "pull-back from the holonomy group",
+    "requires": "one holonomy group, plus a section",
     "source": "PULL-BACK-FROM-THE-HOLONOMY-GROUP",
     "verdict": "NO-SINGLE-GROUP-TO-BORROW-FROM;A-SECTION-WOULD-BE-ONE-MORE-FREE-ITEM"
+   },
+   {
+    "acts_transitively_on_the_carrier": false,
+    "candidate": "i",
+    "derives": false,
+    "free_item_reasons": [
+     "THE-REFERENCE-MEASURE-MUST-BE-DECLARED",
+     "A-CONSTRAINT-TO-CONDITION-ON-MUST-BE-DECLARED"
+    ],
+    "free_items": 2,
+    "prose": "maximum entropy",
+    "requires": "a canonical reference measure",
+    "source": "MAXIMUM-ENTROPY",
+    "verdict": "RELOCATES-THE-PRICE-AND-DOES-NOT-ESCAPE-IT;UNCONSTRAINED-IT-RETURNS-ITS-DECLARED-REFERENCE;CONSTRAINED-IT-IS-THE-GIBBS-ROW-WITH-A-CONSTRAINT"
    }
-  ]
+  ],
+  "rows_agreeing_with_the_criterion": 9
  },
  "choice_inventory": [
   {
    "choice": "the lattice size and dimension",
    "declared_instances": 1,
    "fibre": 1,
+   "moves_a_published_number": null,
    "status": "FORCED (anchored)",
    "verdict_determining": false
   },
@@ -447,6 +658,7 @@
    "choice": "the coefficient alphabet",
    "declared_instances": 1,
    "fibre": 1,
+   "moves_a_published_number": null,
    "status": "FORCED (inherited)",
    "verdict_determining": false
   },
@@ -454,6 +666,7 @@
    "choice": "the coin family",
    "declared_instances": 1,
    "fibre": 1,
+   "moves_a_published_number": null,
    "status": "FORCED (derived)",
    "verdict_determining": false
   },
@@ -461,6 +674,7 @@
    "choice": "the link and plaquette sets",
    "declared_instances": 1,
    "fibre": 1,
+   "moves_a_published_number": null,
    "status": "FORCED (derived)",
    "verdict_determining": false
   },
@@ -468,13 +682,15 @@
    "choice": "the gauge action's form",
    "declared_instances": 1,
    "fibre": 1,
+   "moves_a_published_number": null,
    "status": "FORCED (inherited)",
    "verdict_determining": false
   },
   {
    "choice": "WHICH CHART GROUP IS DECLARED",
-   "declared_instances": 2,
-   "fibre": 2,
+   "declared_instances": 3,
+   "fibre": "UNBOUNDED (2 INHERITED FROM THE PARENT, BOTH CARRIED; A THIRD MEASURED HERE AS A CONTRAST)",
+   "moves_a_published_number": true,
    "status": "GENUINELY-FREE",
    "verdict_determining": true
   },
@@ -482,6 +698,7 @@
    "choice": "the carrier: the uniform slice or the full space",
    "declared_instances": 2,
    "fibre": "UNBOUNDED",
+   "moves_a_published_number": true,
    "status": "GENUINELY-FREE",
    "verdict_determining": true
   },
@@ -489,6 +706,7 @@
    "choice": "the null: counting on configurations or on orbits",
    "declared_instances": 2,
    "fibre": "UNBOUNDED",
+   "moves_a_published_number": true,
    "status": "GENUINELY-FREE",
    "verdict_determining": true
   },
@@ -496,30 +714,46 @@
    "choice": "the sets weighed against the nulls",
    "declared_instances": 4,
    "fibre": "UNBOUNDED",
+   "moves_a_published_number": null,
    "status": "DECLARED (the parent's own)",
    "verdict_determining": false
   },
   {
-   "choice": "the candidate sources censused",
-   "declared_instances": 8,
+   "choice": "the candidate sources censused: the pin's three plus six, and one named absent",
+   "declared_instances": 10,
    "fibre": "UNBOUNDED",
-   "status": "DECLARED (the pin's plus two)",
-   "verdict_determining": false
+   "moves_a_published_number": true,
+   "status": "GENUINELY-FREE",
+   "verdict_determining": true
   },
   {
    "choice": "the base plaquette and its neighbour",
    "declared_instances": 1,
    "fibre": 16,
+   "moves_a_published_number": null,
    "status": "STABILIZER-FIXED",
    "verdict_determining": false
   }
  ],
  "closing_gates": {
+  "conditional_gates_not_closed_by_a_delivery_run": [
+   "G-PAPER-PRESENT"
+  ],
   "names": [
    "G-SEAL-COMPLETE",
    "G-ARTIFACT-INTEGRITY"
   ],
   "warrant": "these two close after the gate ledger has been snapshotted and sealed.  G-SEAL-COMPLETE cannot be inside the object it seals, and G-ARTIFACT-INTEGRITY runs after the bytes are on disk; so the sealed ledger carries neither row, and their verdict is recorded by the artifacts themselves -- a run that reached the write at all is a run in which both passed."
+ },
+ "control_arm": {
+  "free_items": 0,
+  "head_emitted": "MEASURE-DERIVED-<AN-INVARIANCE-CHARACTERISED-MEASURE;UNIQUE>",
+  "label": "CONTROL-ARM-ON-A-SYNTHETIC-TRANSITIVE-CARRIER-NOT-THIS-ARENA",
+  "orbits": 1,
+  "simplex_dimension": 0,
+  "synthetic_configurations": 4,
+  "the_wiring": "ZERO-FREE-ITEMS-EXACTLY-AT-A-TRANSITIVE-READING",
+  "this_arena_free_items": 1
  },
  "declared_unsealed": [
   "seal_manifest",
@@ -531,8 +765,16 @@
   "anchor_classes",
   "paper_sha256_12",
   "verdict_head",
-  "closing_gates"
+  "closing_gates",
+  "exit_conventions"
  ],
+ "exit_conventions": {
+  "all_mutants": "0 ONLY WHEN ALL OF THEM DIE ON TARGET",
+  "argv": "2 ON AN UNKNOWN FLAG OR A MISSING FLAG ARGUMENT",
+  "delivery_run": "0 ON SUCCESS, 1 ON ANY REFUSAL, WRITING NOTHING",
+  "mutant": "0 WHEN THE MUTANT DIES ON ITS DECLARED TARGET -- THE INVERSION OF THE USUAL READING",
+  "selftest": "0 WHEN EVERY ANCHOR CLASS IS FATAL"
+ },
  "fibre": {
   "carrier_choice": [
    "THE-UNIFORM-SLICE",
@@ -554,22 +796,31 @@
     "reading": "CHART-32"
    }
   ],
+  "the_price_without_invariance_on_the_slice": 639,
   "what_a_declaration_must_add": "the carrier, then one point of the invariant simplex over its orbits"
  },
  "fixed_locus": {
+  "anchored_chart_elements_reversing_a_link": 0,
+  "carried_by": "THE-DIRECTION-RELABELLING",
   "chart_fixed_configurations": 640,
   "checks": 655360,
   "extension_fixed_configurations": 32,
   "failures": 0,
-  "the_distinction": "a symmetry fixes a SET OF CONFIGURATIONS; an invariant MEASURE is a different object, and the two are not to be conflated -- the fixed locus is a point of the configuration space, the invariant measures are a simplex over the orbits"
+  "the_distinction": "a symmetry fixes a SET OF CONFIGURATIONS; an invariant MEASURE is a different object, and the two are not to be conflated -- the fixed locus is a point of the configuration space, the invariant measures are a simplex over the orbits",
+  "translations_only_fixed_configurations": 409600,
+  "translations_only_incidence_checks": 512,
+  "translations_only_link_orbits": 2,
+  "translations_only_order": 16,
+  "translations_only_reversals": 0
  },
  "gate_digests": [
   "4d2bd23d3e8b",
   "98b05e7d98a9",
   "38483d3ed789",
-  "723af6b47649",
+  "625e09c8f10d",
+  "11568b8df0b0",
   "326868fe8b03",
-  "d0d12c6508fe",
+  "ebad8daaa7c7",
   "723c07c01716",
   "9954782482e5",
   "8c398940dc7a",
@@ -581,45 +832,56 @@
   "30373520b0c1",
   "63bfb910109c",
   "87a9a18fbbff",
-  "c9c5779f97a8",
+  "d9c1b5f97651",
+  "d5c23789eada",
   "46035221184b",
   "0f1d74d048b6",
   "4d5e4fa678d5",
   "92bd5d5954c3",
-  "5b045b549395",
+  "2168092d6bb5",
+  "83f70083b72f",
   "0ba11d2dae92",
   "f63a1175d676",
   "e16f3b77c275",
+  "673b234c5c21",
   "1fcd4c20c090",
   "efc5cdd9df0f",
   "a2a8db900261",
   "7391ab623edf",
   "89b7ec8e1f01",
-  "27ece1c4a5a3",
+  "6150450a20c8",
   "a37b4553fbf1",
   "fab928b1fef8",
   "9c108df4f54c",
-  "f01e0e5a0961",
-  "e4e60e14bc56",
-  "9ae2a5eecbfc",
+  "18259579e42a",
+  "23b0ede3e7e4",
+  "3ced4380f0a8",
+  "f8ceb95d63a9",
+  "de497e08730c",
   "92035d23c7ff",
   "32d20ae42d70",
   "eb38da9ec5f0",
   "1a2a1e260f72",
-  "9e12e2efa639",
+  "4a22f5c32ca6",
   "f71d803f8f8f",
-  "d33d5ad79136",
-  "e1dded97b695",
+  "ea9b50fa899a",
+  "17acc1ae4596",
+  "3547356f544c",
+  "22369543d371",
+  "6329c268d9f0",
   "2550e4fca055",
-  "8b2c89adf78b",
-  "a5fbb9a96b92",
-  "a41f32695807",
-  "74398c5a0153",
-  "571fe82346d7",
-  "828f5dc78994",
+  "fb320805cf2a",
+  "bfce9b26fbcf",
+  "a3f30bcad8d0",
+  "e5f33370be56",
+  "79708d9f4104",
+  "21317fc8d5af",
+  "55236fd63355",
+  "549b5a29dcb4",
+  "ba002bd2d3bd",
   "22b6056f8809",
-  "e24fe222fab9",
-  "930867cf1b8d"
+  "d90c9a32954b",
+  "fcb976a2579c"
  ],
  "gates": [
   {
@@ -644,9 +906,16 @@
    "passed": true
   },
   {
-   "claim": "the mutant registry is TOTAL against the instrument's own syntax tree: every name the source switches on is declared, and every declared name is switched on somewhere, so no falsifier can exist as an unswept branch and none can be declared without a branch to fire",
-   "detail": "25 switches, 25 declared; undeclared [], unused []",
+   "claim": "the mutant registry is TOTAL against the instrument's own syntax tree: every name the source switches on is declared, and every declared name is switched on somewhere, so no falsifier can exist as an unswept branch and none can be declared without a branch to fire.  A switch the scan cannot read -- mut() on a variable, or a bare MUT comparison outside mut's own body -- is an unregistered branch by construction and is fatal here",
+   "detail": "44 switches, 44 declared; undeclared [], unused []; 0 unreadable mut() arguments, 0 MUT comparisons outside mut",
    "gate": "G-MUTANT-REGISTRY-TOTAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every gate this source can close names itself with a literal, so the gate registry is readable from the syntax tree and can be reconciled against the run's own ledger at the seal; a gate id assembled at runtime would be a gate no sweep could find",
+   "detail": "71 gate ids in the source, 0 unreadable",
+   "gate": "G-GATE-IDS-ARE-READABLE",
    "kind": "MEASURED",
    "passed": true
   },
@@ -659,7 +928,7 @@
   },
   {
    "claim": "every anchor is a (path, value) pair bound to the gate that CONSUMES it, not a bare file digest: the parent's own receipt is read at a named path and the value found there must equal the value this instrument was frozen against (#87)",
-   "detail": "26 probes, 0 mismatched",
+   "detail": "33 probes, 0 mismatched",
    "gate": "G-PATH-VALUE-ANCHORS",
    "kind": "MEASURED",
    "passed": true
@@ -742,9 +1011,16 @@
    "passed": true
   },
   {
-   "claim": "THE ONE THING THE MEASURED SYMMETRY DOES FIX, and it is not a measure: because the chart is transitive on the link set and reverses no link at the anchored reading, the configurations it leaves fixed are EXACTLY the uniform ones -- so the parent's declared sweep is not an arbitrary window but the chart-fixed locus itself, and the check is run configuration by configuration rather than read off the orbit formula",
-   "detail": "655360 fixed-locus checks, 0 failures",
+   "claim": "THE ONE THING THE MEASURED SYMMETRY DOES FIX, and it is not a measure: because the chart is transitive on the link set and reverses no link at the anchored reading, the configurations it leaves fixed are EXACTLY the uniform ones -- so the parent's declared sweep is not an arbitrary window but the chart-fixed locus itself, and the check is run configuration by configuration rather than read off the orbit formula.  The two halves are attributed separately: the checks carry the forward direction, transitivity and the no-reversal count carry the converse",
+   "detail": "655360 fixed-locus checks, 0 failures, 0 anchored-chart elements reversing a link",
    "gate": "G-CHART-FIXED-LOCUS-IS-THE-SWEPT-SLICE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the positive result is CHART-DECLARATION-RELATIVE, which is measured here rather than left for a reader to find: the translations alone are a third admissible chart, they carry the link set into two orbits rather than one and reverse no link, so their fixed locus is the two-coin configurations -- one coin per direction -- and the parent's swept slice is a proper subset of it.  It is the direction relabelling that forces the uniform slice",
+   "detail": "16 translations, 2 link orbits of sizes [16], 0 reversals, 0 of 512 incidence checks failing; fixed locus 409600 configurations against the anchored chart's 640",
+   "gate": "G-TRANSLATIONS-ONLY-CHART-IS-A-THIRD-READING",
    "kind": "MEASURED",
    "passed": true
   },
@@ -777,9 +1053,16 @@
    "passed": true
   },
   {
-   "claim": "and the corpus's ONE found dictionary is weld 3's -- actor to site, co-division actor pair to link, division count to the link's own count -- whose own pre-registered dead list cites the transport carrier this pin names as its candidate source.  The one correspondence that exists does not start where the pushforward would have to start",
-   "detail": "6 found weld rows; 2 dead-list entries naming the transport carrier: ['WELD2-SCISSORS-SCOPE((A,B)-CARRIER-AT-DEPTH<=4)', 'WELD2-TRANSPORT-CARRIER-CELLS(MENU-113|CONG-185|EVENT-SUBSET|ULAM-PREFIX)']",
-   "gate": "G-WELD3-IS-THE-ONE-FOUND-DICTIONARY",
+   "claim": "the enumeration is the finding, so it is TOTAL: every row of both pinned weld receipts whose fate begins FOUND is walked -- weld 3's found dictionary and weld 2's own two FOUND controls, a crystal and a declared probe, which carry zero free items at the RSQ standard and are built from the very generators a pushforward would need -- and every one of them is required to die at the SAME site-count blade: each lands on a nine-site target where this arena carries sixteen.  A census that omitted the two rows nearest its own claim would not be one",
+   "detail": "8 FOUND rows across the two pinned receipts, 8 dying at the site-count blade, target site counts [9] against this arena's 16",
+   "gate": "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the corpus's one found dictionary AT A COMMITTED RECORD ARENA is weld 3's -- actor to site, co-division actor pair to link, division count to the link's own count -- whose own pre-registered dead list cites the transport carrier this pin names as its candidate source.  The word ONE is scoped and is carried by a measurement rather than by the gate's name: weld 2's two FOUND rows are positive controls on a declared probe and on a crystal, they are enumerated in the row above, and they die at the same blade.  The one correspondence that exists does not start where the pushforward would have to start",
+   "detail": "6 found weld rows and 2 weld-2 FOUND controls; 2 dead-list entries naming the transport carrier: ['WELD2-SCISSORS-SCOPE((A,B)-CARRIER-AT-DEPTH<=4)', 'WELD2-TRANSPORT-CARRIER-CELLS(MENU-113|CONG-185|EVENT-SUBSET|ULAM-PREFIX)']",
+   "gate": "G-WELD3-IS-THE-ONE-FOUND-DICTIONARY-AT-A-COMMITTED-RECORD-ARENA",
    "kind": "MEASURED",
    "passed": true
   },
@@ -801,6 +1084,13 @@
    "claim": "one of weld 2's blades transfers to this target and is sharper here: the actor pool supplies two site objects against this arena's sixteen sites, where at weld 2's own target it faced nine",
    "detail": "2 site objects against 16 sites",
    "gate": "G-ARITY-BLADE-TRANSFERS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the silence of that blade is a property of the declared EVEN lattice size and not of the target species, which is measured over a range of sizes rather than argued: (Z_L)^2 is bipartite exactly when L is even, so at any odd L the target carries odd cycles, the inherited blade FIRES, and the correspondence question there is closed by inheritance rather than open.  The open ruling below is scoped to the even-L family, which is the family the parent's own refinement and every scaling step live in",
+   "detail": "bipartite by lattice size [(3, False), (4, True), (5, False), (6, True), (7, False), (8, True)]",
+   "gate": "G-BIPARTITENESS-IS-L-PARITY",
    "kind": "MEASURED",
    "passed": true
   },
@@ -840,8 +1130,8 @@
    "passed": true
   },
   {
-   "claim": "and the choice among them is NOT innocuous, which is the measurement that prices the declaration: the counting measure on configurations and the counting measure on ORBITS are both invariant under everything this arena measures, and they assign materially different masses to the parent's own headline sets -- so a reader handed 'the natural measure' has been handed a choice, not a derivation",
-   "detail": "widest disagreement 27/130 on the DIAGONAL set",
+   "claim": "and the choice among them is NOT innocuous, which is the measurement that prices the declaration: the counting measure on configurations and the counting measure on ORBITS are both invariant under everything this arena measures, and they assign materially different masses to the parent's own headline sets -- so a reader handed 'the natural measure' has been handed a choice, not a derivation.  The widest disagreement is published with its ARG-MAX SET and its multiplicity (#91): it is attained twice here, so naming one set would be an undeclared alphabetical tie-break, and a future run in which the tie breaks is a change the head shows",
+   "detail": "widest disagreement 27/130, attained on 2 of 4 sets: ['DIAGONAL', 'NON-COMMUTING']",
    "gate": "G-TWO-NULLS-DISAGREE",
    "kind": "MEASURED",
    "passed": true
@@ -868,22 +1158,36 @@
    "passed": true
   },
   {
-   "claim": "the substrate's own Born layer does deliver an exact probability: B(U) is doubly stochastic at every one of the derived coins, in exact rational arithmetic, so the candidate is real and is not dismissed on a technicality",
-   "detail": "640 of 640 doubly stochastic",
-   "gate": "G-BORN-LAYER-IS-A-MEASURE",
+   "claim": "maximum entropy is the move a reader reaches for and it is answered as a CENSUS ROW rather than in prose: the entropy functional is defined relative to a reference measure, so unconstrained maximisation returns the reference it was given -- and the two references this arena offers are the two nulls, measured to disagree -- while constrained maximisation returns exp(-lambda f) times that reference, which is the Gibbs candidate with its constraint supplied.  The arena pins no quantity to condition on, which is measured on the run's own product and not assumed; so the principle names the answer it was handed and its price is the reference plus the constraint",
+   "detail": "2 declared references disagreeing by 27/130; 0 of 4 anchored parent quantities are masses rather than integer counts, so 0 constraints are pinned to condition on",
+   "gate": "G-MAXENT-RELOCATES-THE-PRICE",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "and it lands on the WRONG SPACE, which is the measurement that decides it: B(U) is a distribution over the carrier's STATES, not over the configurations, and its fibre over the configuration space is enormous -- the whole family collapses to one image per sector, so the Born layer cannot separate two configurations of the same sector, let alone weigh them",
-   "detail": "3 distinct Born images over 640 configurations, fibres [64, 64, 512]",
+   "claim": "the substrate's own Born layer does deliver something exact, and naming it exactly is what decides the candidate: B(U) is a doubly stochastic KERNEL on the two states of a link's own domino -- each of its rows is an exact probability distribution over the carrier's states, at every one of the derived coins, in exact rational arithmetic -- so the candidate is real and is not dismissed on a technicality",
+   "detail": "640 of 640 doubly stochastic",
+   "gate": "G-BORN-LAYER-IS-A-KERNEL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and it lands on the WRONG SPACE, which is the measurement that decides it: B(U) is a law on the carrier's STATES, not a measure over the configurations, and its fibre over the configuration space is enormous -- the whole family collapses to one kernel per sector, so the Born layer cannot separate two configurations of the same sector, let alone weigh them",
+   "detail": "3 distinct Born kernels over 640 configurations, fibres [64, 64, 512]",
    "gate": "G-BORN-LAYER-LANDS-ON-STATES",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the derived family is NOT closed under multiplication, so it carries no finite-group Haar measure to inherit: the products that leave are exactly the interfering ones, and they leave at an exactly measured rate",
-   "detail": "278528 of 409600 products stay inside the family",
+   "claim": "and pressed for a MEASURE the kernel fixes none: it is the identity off the link's own domino at every configuration -- measured entry by entry across the whole family -- hence reducible, and its stationary distributions form a simplex on the states of positive dimension in every sector, the WHOLE state simplex in the diagonal sector where B is the identity matrix.  Double stochasticity singles out the uniform state measure as stationary, and the uniform measure is the counting measure, which is candidate (b)'s declared null.  So the substrate hands over a LAW and never a measure: the asymmetry this unit reports is law against nothing",
+   "detail": "stationary simplex dimensions [('ANTIDIAGONAL', 14), ('BALANCED', 14), ('DIAGONAL', 15)] on 16 states; 0 off-domino entries differing from the identity across 640 configurations",
+   "gate": "G-BORN-KERNEL-FIXES-NO-MEASURE-EITHER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the derived family is NOT closed under multiplication, so it carries no finite-group Haar measure to inherit; and the containment is ONE-WAY, which is measured in both directions rather than stated as an equivalence: every product that leaves the family has BOTH factors interfering, and no other pair leaves at all -- but only half of the ordered interfering pairs leave, so 'the ones that leave are the interfering ones' is a containment and not a characterisation",
+   "detail": "278528 of 409600 products stay inside the family; 131072 leave, all of them from the 262144 ordered interfering pairs, 0 from any other pair",
    "gate": "G-FAMILY-IS-NOT-A-GROUP",
    "kind": "MEASURED",
    "passed": true
@@ -917,8 +1221,8 @@
    "passed": true
   },
   {
-   "claim": "the Gibbs route needs two objects this arena does not have, and the parent says so in its own words at a window pinned by digest: a weight of the form exp(-S) requires an action functional and a coupling to put in front of it, and declaring either is declaring the measure by another name",
-   "detail": "the parent's declaration located once",
+   "claim": "the Gibbs route needs two objects this arena does not have, and the parent says so in its own words at a window pinned by digest: a weight of the form exp(-S) requires an action functional and a coupling to put in front of it, and declaring either is declaring the measure by another name.  Both are read off the parent's declaration, so this row's price is measured against pinned bytes",
+   "detail": "the parent's declaration located once; 2 objects it declares absent and this route needs: ['ACTION-FUNCTIONAL', 'COUPLING']",
    "gate": "G-GIBBS-NEEDS-AN-ACTION",
    "kind": "MEASURED",
    "passed": true
@@ -931,15 +1235,36 @@
    "passed": true
   },
   {
-   "claim": "every candidate the pin names is measured and priced, and the census carries the two the pin did not name as well -- the ambient group's measure and the pull-back -- so no source is left out by being unmentioned; DERIVED means zero free items at the RSQ standard and nothing weaker",
-   "detail": "8 candidates, 0 deriving",
+   "claim": "every candidate the pin names is measured and priced, and the census carries six more the pin did not name -- the group structure, the ambient Haar, the Gibbs route, the Born layer, the holonomy pull-back and maximum entropy -- so no source is left out by being unmentioned; DERIVED means zero free items at the RSQ standard and nothing weaker",
+   "detail": "9 candidates, 0 deriving",
    "gate": "G-CENSUS-IS-TOTAL",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the declaration is PRICED rather than deplored: after every symmetry this arena measures has been imposed, what remains to be declared is exactly one point of a simplex over the orbits, and its dimension is the number of independent conditions a declaration has to supply.  Both readings are priced, because which chart group is declared is itself a free axis (\u00a715)",
-   "detail": "[('CHART-128', 120, 119), ('CHART-32', 208, 207)]",
+   "claim": "and no price in this census is a typed constant: each is the LENGTH OF A LIST whose every entry was appended under a predicate this run measures -- a correspondence that does not reach the arena, a carrier with more than one admissible instance, a family that is not closed, a kernel that does not separate the configurations -- so a reader can check the price against the reasons and the DERIVE branch is wired to a measurement rather than asserted",
+   "detail": "9 candidates, 0 whose published price is not the length of its own measured reason list",
+   "gate": "G-EVERY-CANDIDATE-PRICE-IS-MEASURED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the census is not a list but a TEST: a canonical measure on a finite carrier exists exactly where some declared structure acts transitively on it, every row names the transitive structure it would need, and that structure's transitivity is measured here from this run's own quantities.  Every row agrees with the criterion, which is what makes 'none of these derives' an argument a tenth candidate can be run through rather than an inventory a reader has to trust",
+   "detail": "9 rows, 0 disagreeing with the criterion, 0 transitive",
+   "gate": "G-THE-CENSUS-CRITERION-IS-THE-ORGANIZING-PRINCIPLE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the one candidate that could have returned the third pre-registered outcome is NAMED rather than omitted: a stationary measure needs a dynamics to be stationary for, the parent declares in its own pinned bytes that it has none for the link variables, and nothing in the corpus supplies one on the configurations -- so the row cannot be priced at all.  It is entered as NOT-CENSUSABLE with the requirement a future unit would owe, IRREDUCIBILITY, which no symmetry supplies; and 'MEASURE-BLOCKED-AT is forced shut' is therefore true CENSUS-RELATIVELY -- of the rows that could be evaluated -- and not of the arena",
+   "detail": "1 named-absent rows; the parent's no-dynamics declaration located: True",
+   "gate": "G-THE-STATIONARY-CANDIDATE-IS-NAMED-ABSENT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the declaration is PRICED rather than deplored: after every symmetry this arena measures has been imposed, what remains to be declared is exactly one point of the INVARIANT simplex over the orbits, and its dimension is the number of independent conditions a declaration has to supply.  Both readings are priced, because which chart group is declared is itself a free axis (\u00a715).  A transitive reading is priced by the same rule and returns a 0-simplex, which is a point -- so this gate does not refuse a transitive arena, it prices it, and the head law is what turns a 0-simplex into MEASURE-DERIVED.  The price is the INVARIANT simplex's: a declaration that abandons invariance pays the whole slice instead, which is measured here so that the word in the head carries a number",
+   "detail": "[('CHART-128', 120, 119), ('CHART-32', 208, 207)]; 0 transitive readings priced at a 0-simplex; a non-invariant declaration on the slice pays 639 numbers",
    "gate": "G-FIBRE-PRICED",
    "kind": "MEASURED",
    "passed": true
@@ -952,42 +1277,63 @@
    "passed": true
   },
   {
-   "claim": "THE PIN LICENSES A WILSON-EXPECTATION SEGMENT ONLY IN THE DERIVED CASE, and no source derives, so this unit computes none -- and the discipline is enforced on the product rather than promised in prose: the receipt is required to carry no expectation-valued key and the instrument's own syntax tree to define no function that would compute one",
-   "detail": "0 expectation-valued receipt keys, 0 expectation-computing functions",
+   "claim": "THE DERIVE ARM IS REACHABLE AND IT IS RUN: a synthetic carrier whose declared group is transitive goes through the same pricing function this arena's invariance candidate goes through, is priced at ZERO free items by it, is priced by the same fibre builder at a 0-simplex, and emits MEASURE-DERIVED from the same head law.  Both branches of the wiring are asserted -- zero free items exactly at a transitive reading, on the control and on this arena alike -- so the negative this unit reports is a property of the arena and not of the instrument's standard.  A price unwired from the measurement dies here",
+   "detail": "control arm: 1 orbit on 4 synthetic configurations, price 0 free items, head MEASURE-DERIVED-<AN-INVARIANCE-CHARACTERISED-MEASURE;UNIQUE>; this arena: 1 free items at 120/208 orbits",
+   "gate": "G-THE-DERIVE-ARM-IS-REACHABLE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "THE PIN LICENSES A WILSON-EXPECTATION SEGMENT ONLY IN THE DERIVED CASE, and no source derives, so this unit computes none -- and the discipline is enforced on the product rather than promised in prose: the payload is walked to the BOTTOM for a banned key at any depth, not at its top level only, and the instrument's own syntax tree is read for a banned function however it is defined -- def, async def, or a lambda bound to a name -- so a rename by one level of nesting or by one keyword walks past neither leg",
+   "detail": "0 expectation-valued keys at any depth [], 0 expectation-computing function names []",
    "gate": "G-NO-WILSON-EXPECTATION",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the construction choices are inventoried with BOTH numbers a reader needs -- the fibre and the declared instances -- and the verdict-determining rows are flagged: which chart group is declared, which carrier, and which null, because every one of those three moves a published number and none of them is fixed by anything this arena measures.  A genuinely free choice with fibre 1 would be a contradiction and none is reported",
-   "detail": "11 rows, 3 verdict-determining, 0 contradictory",
+   "claim": "and the name scan is backed by a TOTAL inventory, because a neutrally-named function computing a loop average would carry no banned word at all: the set of functions this source defines must equal the declared inventory exactly, so a function added to this instrument -- under any name -- dies here, and a declared name deleted dies here too",
+   "detail": "111 functions defined, 111 declared; undeclared [], missing []",
+   "gate": "G-INSTRUMENT-FUNCTION-INVENTORY-IS-TOTAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the construction choices are inventoried with BOTH numbers a reader needs -- the fibre and the declared instances -- and the verdict-determining flag binds ROWS rather than a cardinality (#87): each row's flag must equal a MEASURED predicate, that re-running the measurement it governs under this unit's other declared instance moves a published number.  Four rows earn it -- which chart group is declared, which carrier, which null, and which candidate sources are censused, whose count is in the head and whose list this unit itself measured to be extensible -- and moving a flag between rows dies here rather than surviving on an unchanged total.  A genuinely free choice with fibre 1 would be a contradiction and none is reported",
+   "detail": "11 rows, 4 verdict-determining, 0 flagged against their own measured predicate, 0 contradictory",
    "gate": "G-CHOICE-INVENTORY",
    "kind": "MEASURED",
    "passed": true
   },
   {
+   "claim": "THE HEAD IS DERIVED BY TWO LAWS, not by one law called twice: the builder's head_law and the comparator's second_head_law are separate implementations of the same pre-registered outcomes, written with different branch structures and sharing no format string and no helper, and their two heads are compared here.  A one-character corruption inside either law moves one head and leaves the other where it was",
+   "detail": "builder head MEASURE-DECLARATION-REQUIRED-<ONE-POINT-OF-THE-INVARIANT-119-SIMPLEX-ON-120-ORBITS-AT-THE-CHART-128-READING;207-SIMPLEX-ON-208-ORBITS-AT-THE-CHART-32-READING>; comparator head MEASURE-DECLARATION-REQUIRED-<ONE-POINT-OF-THE-INVARIANT-119-SIMPLEX-ON-120-ORBITS-AT-THE-CHART-128-READING;207-SIMPLEX-ON-208-ORBITS-AT-THE-CHART-32-READING>",
+   "gate": "G-THE-TWO-HEAD-LAWS-AGREE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "the complete verdict string -- head included -- is derived TWICE by disjoint routes and the two are compared for equality: the builder computes it from the live measurements, and an independent reconstruction reads only the serialized receipt, carries its own copy of the head law and re-renders EVERY segment from the primitive measured tables, sharing no format string, no helper and no typed value with the builder and reading neither its segments nor its counts",
-   "detail": "builder 2921 characters, reconstruction 2921",
+   "detail": "builder 4265 characters, reconstruction 4265",
    "gate": "G-HEAD-STRING-EQUALITY",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "every load-bearing number in the paper is RENDERED from a measured receipt field and located in the paper's own bytes under whitespace and markdown normalisation, so a value that moved in the run cannot stay still in the prose",
-   "detail": "34 claims, 0 not located: []",
+   "claim": "every load-bearing number in the paper is RENDERED from a measured receipt field and located in the paper's own bytes under whitespace and markdown normalisation, so a value that moved in the run cannot stay still in the prose; and it is the OCCURRENCE COUNT that is gated rather than presence anywhere, so a claim corrupted at one of its several occurrences dies here (#87).  The census table, the orbit table and the null-dependence table are rendered row by row (E-22), so a cell swapped under its own column heading moves a claim",
+   "detail": "63 claims with their occurrence counts, 0 not located at the count claimed: []",
    "gate": "G-PAPER-CLAIMS-RENDER",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the COMPLETE emitted verdict string occurs verbatim in the paper under whitespace normalisation, so a paper quoting an earlier run's verdict cannot be delivered -- only string equality reaches a retyped verdict block, since the numeral gate is structurally blind to numerals inside hyphenated segments",
-   "detail": "verdict of 2921 characters located",
+   "claim": "the COMPLETE emitted verdict string occurs verbatim in the paper under whitespace normalisation, so a paper quoting an earlier run's verdict cannot be delivered -- only string equality reaches a retyped verdict block, since the numeral gate is structurally blind to numerals inside hyphenated segments.  And the paper's fenced blocks are gated by MULTISET EQUALITY against the single block this run licenses (E-22), so a second fence carrying a forged twin of the verdict cannot ride along beside the clean one",
+   "detail": "verdict of 4265 characters located; 1 fenced blocks, 1 matching this run's verdict exactly",
    "gate": "G-PAPER-CARRIES-THIS-RUNS-VERDICT",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the pin's must-not vocabulary is SWEPT over the paper's own text with the declaring sentences removed first, so a paragraph that made an area-law, string-tension or potential claim would die on the delivery run.  Nothing weaker reaches it: a must-not carries no numeral, so the numeral gate is blind to it",
+   "claim": "the pin's must-not vocabulary is SWEPT over the paper's own text with the declaring sentences removed first, so a paragraph that made an area-law, string-tension or potential claim would die on the delivery run -- and the list is the pin's OWN WORDS, the bare ones included: potential, confinement, wilson, expectation, loop average, so a future unit inheriting this list inherits the wall the pin wrote and not a narrower one.  Inline emphasis is stripped before the sweep, since a claim under asterisks is the same claim",
    "detail": "must-not vocabulary found: []",
    "gate": "G-MUST-NOT-VOCABULARY",
    "kind": "MEASURED",
@@ -1001,15 +1347,15 @@
    "passed": true
   },
   {
-   "claim": "EVERY numeral of the paper, the fenced verdict block included, is either a value this run measured or a declared structural literal; the scan runs in the plain delivery run and not in a separate mode (#20)",
-   "detail": "199 numerals scanned across 1 fenced blocks, 0 unregistered: []",
+   "claim": "EVERY numeral of the paper, the fenced verdict block and the inline code spans included, is either a value this run measured or a declared structural literal, and BOTH SIDES of every fraction are read: the scan runs in the plain delivery run and not in a separate mode (#20)",
+   "detail": "284 numerals scanned across 1 fenced blocks, 0 unregistered: []",
    "gate": "G-PAPER-COVERAGE",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "and the gate total the paper states is the gate total this run produced: the claim is rendered before the paper gates close and this, the last of them, checks that the prediction came true, so the number in section 10 can never be a stale constant",
-   "detail": "the paper claims 56 gates; this run closes 56",
+   "detail": "the paper claims 68 gates; this run closes 68",
    "gate": "G-GATE-COUNT-IS-AS-CLAIMED",
    "kind": "MEASURED",
    "passed": true
@@ -1065,8 +1411,14 @@
    ]
   ],
   "widest": {
-   "set": "DIAGONAL",
-   "spread": "27/130"
+   "attained_on": 2,
+   "of_sets": 4,
+   "sets": [
+    "DIAGONAL",
+    "NON-COMMUTING"
+   ],
+   "spread": "27/130",
+   "tie_break": "NONE-DECLARED-THE-ARG-MAX-SET-IS-PUBLISHED"
   }
  },
  "mutants": [
@@ -1117,7 +1469,7 @@
   },
   {
    "name": "MUT-BORN-STOCHASTIC",
-   "target": "G-BORN-LAYER-IS-A-MEASURE",
+   "target": "G-BORN-LAYER-IS-A-KERNEL",
    "what": "a Born matrix stops being doubly stochastic"
   },
   {
@@ -1137,8 +1489,8 @@
   },
   {
    "name": "MUT-CENSUS-DERIVES",
-   "target": "G-HEAD-STRING-EQUALITY",
-   "what": "a candidate is declared to derive; the head moves and the two routes stop agreeing"
+   "target": "G-THE-CENSUS-CRITERION-IS-THE-ORGANIZING-PRINCIPLE",
+   "what": "a candidate is declared to derive without the transitive structure that would make it derive"
   },
   {
    "name": "MUT-HEAD-CONSTANT",
@@ -1148,7 +1500,102 @@
   {
    "name": "MUT-WILSON-SEGMENT",
    "target": "G-NO-WILSON-EXPECTATION",
-   "what": "an expectation-valued key appears in the receipt"
+   "what": "a real expectation-valued key is planted in the payload before the gate"
+  },
+  {
+   "name": "MUT-WILSON-NESTED-KEY",
+   "target": "G-NO-WILSON-EXPECTATION",
+   "what": "a real banned key is planted one level down, inside the census block, where a top-level scan would never reach it"
+  },
+  {
+   "name": "MUT-WILSON-FUNCTION",
+   "target": "G-NO-WILSON-EXPECTATION",
+   "what": "a real banned function definition is planted in the source the AST gate reads"
+  },
+  {
+   "name": "MUT-FUNCTION-INVENTORY",
+   "target": "G-INSTRUMENT-FUNCTION-INVENTORY-IS-TOTAL",
+   "what": "a NEUTRALLY-NAMED function is planted in the source the AST gate reads, carrying no banned word at all"
+  },
+  {
+   "name": "MUT-REGISTRY-EVASION",
+   "target": "G-MUTANT-REGISTRY-TOTAL",
+   "what": "a mutant switch is planted whose name no scan can read -- mut() on a variable"
+  },
+  {
+   "name": "MUT-INVARIANCE-PRICE-UNWIRED",
+   "target": "G-THE-DERIVE-ARM-IS-REACHABLE",
+   "what": "the invariance candidate's price is unwired from the uniqueness measurement and typed, so the control arm stops deriving"
+  },
+  {
+   "name": "MUT-PRICE-TYPED",
+   "target": "G-EVERY-CANDIDATE-PRICE-IS-MEASURED",
+   "what": "a candidate's published price stops being the length of its own measured reason list"
+  },
+  {
+   "name": "MUT-CENSUS-CRITERION",
+   "target": "G-THE-CENSUS-CRITERION-IS-THE-ORGANIZING-PRINCIPLE",
+   "what": "a census row is made to disagree with the closure criterion"
+  },
+  {
+   "name": "MUT-STATIONARY-ABSENT",
+   "target": "G-THE-STATIONARY-CANDIDATE-IS-NAMED-ABSENT",
+   "what": "the named-absent stationary row is dropped, and the census stops being able to scope its own forced-shut claim"
+  },
+  {
+   "name": "MUT-MAXENT",
+   "target": "G-MAXENT-RELOCATES-THE-PRICE",
+   "what": "the arena is made to pin a quantity to condition on"
+  },
+  {
+   "name": "MUT-BORN-STATIONARY",
+   "target": "G-BORN-KERNEL-FIXES-NO-MEASURE-EITHER",
+   "what": "the Born kernel's stationary simplex in the diagonal sector is made a point, i.e. the kernel is made to fix a measure"
+  },
+  {
+   "name": "MUT-FOUND-ENUMERATION",
+   "target": "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+   "what": "the corpus-wide FOUND enumeration is truncated"
+  },
+  {
+   "name": "MUT-ANCHORED-REVERSAL",
+   "target": "G-CHART-FIXED-LOCUS-IS-THE-SWEPT-SLICE",
+   "what": "an anchored chart element is made to reverse a link, so the converse half of the fixed-locus claim fails"
+  },
+  {
+   "name": "MUT-TRANSLATIONS-CHART",
+   "target": "G-TRANSLATIONS-ONLY-CHART-IS-A-THIRD-READING",
+   "what": "the direction relabelling is put back into the translations-only chart, which then acts transitively on the links and stops being a third reading"
+  },
+  {
+   "name": "MUT-L-PARITY",
+   "target": "G-BIPARTITENESS-IS-L-PARITY",
+   "what": "an odd lattice size is made bipartite"
+  },
+  {
+   "name": "MUT-INTERFERING-PAIRS",
+   "target": "G-FAMILY-IS-NOT-A-GROUP",
+   "what": "a leaving product is given a non-interfering factor"
+  },
+  {
+   "name": "MUT-WIDEST-TIE",
+   "target": "G-TWO-NULLS-DISAGREE",
+   "what": "the arg-max set of the widest disagreement is truncated to one, restoring the undeclared tie-break"
+  },
+  {
+   "name": "MUT-CHOICE-FLAG-MOVED",
+   "target": "G-CHOICE-INVENTORY",
+   "what": "the verdict-determining flag is MOVED from a row that earns it to a row that does not, leaving the total unchanged"
+  },
+  {
+   "name": "MUT-HEAD-LAW-DESYNC",
+   "target": "G-THE-TWO-HEAD-LAWS-AGREE",
+   "what": "the builder's head law is corrupted by one token; the comparator's own law does not follow it"
+  },
+  {
+   "name": "MUT-FENCE-TWIN",
+   "target": "G-PAPER-CARRIES-THIS-RUNS-VERDICT",
+   "what": "a second fenced block carrying a forged verdict rides beside the clean one"
   },
   {
    "name": "MUT-CHOICE-INVENTORY",
@@ -1197,43 +1644,261 @@
   }
  ],
  "paper_claims": {
-  "adjoin": "0 of 512 interfering coins",
-  "anchors": "48 anchors in all",
-  "anchorsplit": "10 file-bytes anchors, 26 path-value anchors and 12 verbatim-text anchors",
-  "born": "3 distinct Born images",
-  "census": "8 candidate sources",
-  "chart": "order 32",
-  "choices": "11 construction choices",
-  "closure": "278528 of 409600 products",
-  "coins": "640 coins",
-  "defectoverlap": "0 of the 384 defect-carrying coins",
-  "deriving": "0 derive",
-  "df_count": "3/5 under counting",
-  "df_orb": "6/13 under the orbit null",
-  "ext": "order 128",
-  "extfixed": "32 of them survive",
-  "finite": "384 of 640 coins",
-  "fixed": "exactly the 640 uniform configurations",
-  "gates": "56 gates",
-  "links": "32 links",
-  "monomial": "128 monomial coins",
-  "multisets": "561 sector multisets",
-  "mutants": "25 declared mutants",
-  "nc_count": "9/10 at the counting measure",
-  "nc_orb": "9/13 at the orbit null",
-  "nonflat": "632 of 640 are non-flat",
-  "nonpaper": "576 non-commuting",
-  "orbits128": "120 orbits",
-  "orbits32": "208 orbits",
-  "simplex128": "119 independent numbers",
-  "simplex32": "207-dimensional simplex",
-  "sites": "16 sites",
-  "weld2": "120 rows, 60 distinct candidates",
-  "weld2found": "0 FOUND",
-  "weld3": "9 sites"
+  "absent": {
+   "fragment": "1 named-absent row",
+   "occurrences_required": 2
+  },
+  "adjoin": {
+   "fragment": "0 of 512 interfering coins",
+   "occurrences_required": 1
+  },
+  "anchors": {
+   "fragment": "55 anchors in all",
+   "occurrences_required": 2
+  },
+  "anchorsplit": {
+   "fragment": "10 file-bytes anchors, 33 path-value anchors and 12 verbatim-text anchors",
+   "occurrences_required": 2
+  },
+  "born": {
+   "fragment": "3 distinct Born kernels",
+   "occurrences_required": 2
+  },
+  "bornstat": {
+   "fragment": "15 in the diagonal sector, where $B$ is the identity, and 14 in the other two",
+   "occurrences_required": 2
+  },
+  "census": {
+   "fragment": "9 candidate sources",
+   "occurrences_required": 3
+  },
+  "chart": {
+   "fragment": "order 32",
+   "occurrences_required": 1
+  },
+  "choices": {
+   "fragment": "11 construction choices",
+   "occurrences_required": 1
+  },
+  "closure": {
+   "fragment": "278528 of 409600 products",
+   "occurrences_required": 1
+  },
+  "coins": {
+   "fragment": "640 coins",
+   "occurrences_required": 2
+  },
+  "control": {
+   "fragment": "the control arm is priced at 0 free items and emits `MEASURE-DERIVED-<AN-INVARIANCE-CHARACTERISED-MEASURE;UNIQUE>`",
+   "occurrences_required": 2
+  },
+  "defectoverlap": {
+   "fragment": "0 of the 384 defect-carrying coins",
+   "occurrences_required": 2
+  },
+  "deriving": {
+   "fragment": "0 derive",
+   "occurrences_required": 3
+  },
+  "df_count": {
+   "fragment": "3/5 under counting",
+   "occurrences_required": 1
+  },
+  "df_orb": {
+   "fragment": "6/13 under the orbit null",
+   "occurrences_required": 1
+  },
+  "diag_count": {
+   "fragment": "1/10 of the slice by count",
+   "occurrences_required": 1
+  },
+  "diag_orb": {
+   "fragment": "4/13 of it by orbit",
+   "occurrences_required": 1
+  },
+  "ext": {
+   "fragment": "order 128",
+   "occurrences_required": 1
+  },
+  "extfixed": {
+   "fragment": "32 of them survive",
+   "occurrences_required": 2
+  },
+  "fibre_CHART-128": {
+   "fragment": "| CHART-128 | 120 | 119 |",
+   "occurrences_required": 1
+  },
+  "fibre_CHART-32": {
+   "fragment": "| CHART-32 | 208 | 207 |",
+   "occurrences_required": 1
+  },
+  "finite": {
+   "fragment": "384 of 640 coins",
+   "occurrences_required": 1
+  },
+  "fixed": {
+   "fragment": "exactly the 640 uniform configurations",
+   "occurrences_required": 2
+  },
+  "flagged": {
+   "fragment": "exactly 4 rows are flagged verdict-determining",
+   "occurrences_required": 1
+  },
+  "foundrows": {
+   "fragment": "8 FOUND rows across the two pinned receipts",
+   "occurrences_required": 1
+  },
+  "gates": {
+   "fragment": "68 gates",
+   "occurrences_required": 1
+  },
+  "links": {
+   "fragment": "32 links",
+   "occurrences_required": 2
+  },
+  "lparity": {
+   "fragment": "bipartite at 4, 6, 8 and not at 3, 5, 7",
+   "occurrences_required": 1
+  },
+  "monomial": {
+   "fragment": "128 monomial coins",
+   "occurrences_required": 2
+  },
+  "multisets": {
+   "fragment": "561 sector multisets",
+   "occurrences_required": 2
+  },
+  "mutants": {
+   "fragment": "44 declared mutants",
+   "occurrences_required": 1
+  },
+  "nc_count": {
+   "fragment": "9/10 at the counting measure",
+   "occurrences_required": 1
+  },
+  "nc_orb": {
+   "fragment": "9/13 at the orbit null",
+   "occurrences_required": 1
+  },
+  "nonflat": {
+   "fragment": "632 of 640 are non-flat",
+   "occurrences_required": 1
+  },
+  "nonpaper": {
+   "fragment": "576 non-commuting",
+   "occurrences_required": 1
+  },
+  "null_DEFECT-CARRYING": {
+   "fragment": "| DEFECT-CARRYING | 384 | 3/5 | 6/13 | 7/15 |",
+   "occurrences_required": 1
+  },
+  "null_DIAGONAL": {
+   "fragment": "| DIAGONAL | 64 | 1/10 | 4/13 | 3/10 |",
+   "occurrences_required": 1
+  },
+  "null_NON-COMMUTING": {
+   "fragment": "| NON-COMMUTING | 576 | 9/10 | 9/13 | 7/10 |",
+   "occurrences_required": 1
+  },
+  "null_NON-FLAT": {
+   "fragment": "| NON-FLAT | 632 | 79/80 | 25/26 | 23/24 |",
+   "occurrences_required": 1
+  },
+  "orbits128": {
+   "fragment": "120 orbits",
+   "occurrences_required": 1
+  },
+  "orbits32": {
+   "fragment": "208 orbits",
+   "occurrences_required": 1
+  },
+  "pairs": {
+   "fragment": "131072 of the 262144 ordered interfering pairs",
+   "occurrences_required": 1
+  },
+  "row_a": {
+   "fragment": "| (a) | the history-measure pushforward | transitivity borrowed through a pinned correspondence | no | 2 |",
+   "occurrences_required": 1
+  },
+  "row_b": {
+   "fragment": "| (b) | the counting measure | transitivity by fiat, which is the free choice itself | no | 2 |",
+   "occurrences_required": 1
+  },
+  "row_c": {
+   "fragment": "| (c) | an invariance-characterised measure | the measured symmetry group, acting transitively | no | 1 |",
+   "occurrences_required": 1
+  },
+  "row_d": {
+   "fragment": "| (d) | Haar from a group structure on the family | a group acting on itself | no | 1 |",
+   "occurrences_required": 1
+  },
+  "row_e": {
+   "fragment": "| (e) | Haar inherited from $U(2)$ | the carrier as an orbit of the ambient group | no | 1 |",
+   "occurrences_required": 1
+  },
+  "row_f": {
+   "fragment": "| (f) | Gibbs from an action | an action, which exists to break transitivity | no | 2 |",
+   "occurrences_required": 1
+  },
+  "row_g": {
+   "fragment": "| (g) | the Born layer | its own kernel, irreducible on the carrier | no | 1 |",
+   "occurrences_required": 1
+  },
+  "row_h": {
+   "fragment": "| (h) | pull-back from the holonomy group | one holonomy group, plus a section | no | 1 |",
+   "occurrences_required": 1
+  },
+  "row_i": {
+   "fragment": "| (i) | maximum entropy | a canonical reference measure | no | 2 |",
+   "occurrences_required": 1
+  },
+  "row_j": {
+   "fragment": "| (j) | the stationary measure of a dynamics on the configurations | an irreducible chain on the carrier | no | NOT-CENSUSABLE |",
+   "occurrences_required": 1
+  },
+  "simplex128": {
+   "fragment": "119 independent numbers",
+   "occurrences_required": 2
+  },
+  "simplex32": {
+   "fragment": "207-dimensional simplex",
+   "occurrences_required": 2
+  },
+  "sites": {
+   "fragment": "16 sites",
+   "occurrences_required": 2
+  },
+  "spread": {
+   "fragment": "a spread of 27/130",
+   "occurrences_required": 1
+  },
+  "trlocus": {
+   "fragment": "409600 two-coin configurations",
+   "occurrences_required": 2
+  },
+  "trorbits": {
+   "fragment": "2 orbits rather than one",
+   "occurrences_required": 1
+  },
+  "waiverclasses": {
+   "fragment": "in 3 classes",
+   "occurrences_required": 1
+  },
+  "weld2": {
+   "fragment": "120 rows, 60 distinct candidates",
+   "occurrences_required": 2
+  },
+  "weld2found": {
+   "fragment": "0 FOUND",
+   "occurrences_required": 2
+  },
+  "weld3": {
+   "fragment": "9 sites",
+   "occurrences_required": 1
+  }
  },
  "paper_coverage": {
-  "allowed_values": 81,
+  "allowed_values": 90,
   "declared_structural_literals": [
    "0",
    "1",
@@ -1270,12 +1935,12 @@
    "91"
   ],
   "fenced_blocks": 1,
-  "scanned": 199,
+  "scanned": 284,
   "unregistered": []
  },
  "paper_polarity": [
   {
-   "expected": 1,
+   "expected": 2,
    "found": 2,
    "fragment": "no measure on the configurations derives",
    "negated": false,
@@ -1296,7 +1961,7 @@
    "ok": true
   }
  ],
- "paper_sha256_12": "9249dda1c0a3",
+ "paper_sha256_12": "79cc67b4f6cd",
  "parent_census": {
   "by_sector": {
    "ANTIDIAGONAL": {
@@ -1598,20 +2263,90 @@
    "what": "weld 3's realised link cells, every one of them at count 1"
   },
   {
-   "anchor": "PV-W3-DIVISIONS",
+   "anchor": "PV-W3-SITES",
    "consumer": "G-WELD3-TARGET-IS-NOT-THIS-ARENA",
    "declared": 9,
    "measured": 9,
    "ok": true,
-   "path": "arena/divisions",
+   "path": "arena/posdef_sites",
    "source": "S-W3-RECEIPT",
-   "what": "weld 3's site count"
+   "what": "weld 3's target site count -- the blade the correspondence dies on"
+  },
+  {
+   "anchor": "PV-W3-FOUND",
+   "consumer": "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+   "declared": 6,
+   "measured": 6,
+   "ok": true,
+   "path": "counts/weld_found",
+   "source": "S-W3-RECEIPT",
+   "what": "weld 3's FOUND rows -- the corpus's found dictionary, enumerated"
+  },
+  {
+   "anchor": "PV-W2-CRYSTAL-FATE",
+   "consumer": "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+   "declared": "FOUND-candidate",
+   "measured": "FOUND-candidate",
+   "ok": true,
+   "path": "payload/controls/FOUND_at_crystal/fate",
+   "source": "S-W2-RECEIPT",
+   "what": "weld 2's first FOUND control, CRYSTAL/DOUBLE-GRID(3,2)"
+  },
+  {
+   "anchor": "PV-W2-CRYSTAL-SITES",
+   "consumer": "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+   "declared": 9,
+   "measured": 9,
+   "ok": true,
+   "path": "payload/controls/FOUND_at_crystal/site_arity",
+   "source": "S-W2-RECEIPT",
+   "what": "and its target's site count -- the same blade"
+  },
+  {
+   "anchor": "PV-W2-CRYSTAL-FREE",
+   "consumer": "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+   "declared": [],
+   "measured": [],
+   "ok": true,
+   "path": "payload/controls/FOUND_at_crystal/free_items",
+   "source": "S-W2-RECEIPT",
+   "what": "and its price: zero free items at the RSQ standard, which is what makes it a FOUND row this census must account for"
+  },
+  {
+   "anchor": "PV-W2-PROBE-FATE",
+   "consumer": "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+   "declared": "FOUND-candidate",
+   "measured": "FOUND-candidate",
+   "ok": true,
+   "path": "payload/controls/FOUND_at_I7_target_declared_probe/fate",
+   "source": "S-W2-RECEIPT",
+   "what": "weld 2's second FOUND control, DECLARED-PROBE/CAYLEY-AT-I7"
+  },
+  {
+   "anchor": "PV-W2-PROBE-SITES",
+   "consumer": "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+   "declared": 9,
+   "measured": 9,
+   "ok": true,
+   "path": "payload/controls/FOUND_at_I7_target_declared_probe/site_arity",
+   "source": "S-W2-RECEIPT",
+   "what": "and its target's site count -- the same blade again"
+  },
+  {
+   "anchor": "PV-W2-PROBE-FREE",
+   "consumer": "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED",
+   "declared": [],
+   "measured": [],
+   "ok": true,
+   "path": "payload/controls/FOUND_at_I7_target_declared_probe/free_items",
+   "source": "S-W2-RECEIPT",
+   "what": "and its price, zero free items likewise"
   }
  ],
  "pin_sha256_prefix": "e5e09f65f83b",
  "preregistered_heads": {
   "BLOCKED": "MEASURE-BLOCKED-AT-<THE-SYNTHETIC-OBJECT>",
-  "DECLARATION-REQUIRED": "MEASURE-DECLARATION-REQUIRED-<ONE-POINT-OF-A-0-SIMPLEX-ON-1-ORBITS-AT-THE-SYN-READING>",
+  "DECLARATION-REQUIRED": "MEASURE-DECLARATION-REQUIRED-<ONE-POINT-OF-THE-INVARIANT-0-SIMPLEX-ON-1-ORBITS-AT-THE-SYN-READING>",
   "DERIVED": "MEASURE-DERIVED-<SYN;UNIQUE>"
  },
  "provenance": {
@@ -1712,13 +2447,13 @@
    "receipt_key": "provenance"
   },
   {
-   "digest": "a6254e9dc67f",
+   "digest": "16eb258e8495",
    "gate": "G-PATH-VALUE-ANCHORS",
    "object": "path-value anchors",
    "receipt_key": "path_value_anchors"
   },
   {
-   "digest": "afc989ca24a8",
+   "digest": "4bc201341865",
    "gate": "G-VERBATIM-ANCHORS",
    "object": "verbatim anchors",
    "receipt_key": "verbatim_anchors"
@@ -1736,7 +2471,7 @@
    "receipt_key": "symmetry"
   },
   {
-   "digest": "11d93fc01965",
+   "digest": "995cc7cf47b2",
    "gate": "G-CHART-FIXED-LOCUS-IS-THE-SWEPT-SLICE",
    "object": "the fixed locus",
    "receipt_key": "fixed_locus"
@@ -1748,127 +2483,139 @@
    "receipt_key": "parent_census"
   },
   {
-   "digest": "1ea6bc67b9d1",
+   "digest": "04bf6c245743",
    "gate": "G-WELD2-RAN-AT-THE-GAMMA-CARRIER",
    "object": "candidate (a)",
    "receipt_key": "candidate_pushforward"
   },
   {
-   "digest": "0bbd3032b64c",
+   "digest": "a79bacc95dcb",
    "gate": "G-TWO-NULLS-DISAGREE",
    "object": "candidate (b)",
    "receipt_key": "candidate_counting"
   },
   {
-   "digest": "83ad471b2829",
+   "digest": "e39a480a987f",
    "gate": "G-UNIQUENESS-GATED",
    "object": "candidate (c)",
    "receipt_key": "candidate_invariance"
   },
   {
-   "digest": "ee04e36f302e",
+   "digest": "ceaa0520c624",
+   "gate": "G-MAXENT-RELOCATES-THE-PRICE",
+   "object": "candidate (i)",
+   "receipt_key": "candidate_maxent"
+  },
+  {
+   "digest": "ea153850ad19",
    "gate": "G-TWO-NULLS-DISAGREE",
    "object": "the measure comparison",
    "receipt_key": "measure_comparison"
   },
   {
-   "digest": "d4c136486fda",
+   "digest": "a8013680c3d2",
    "gate": "G-BORN-LAYER-IS-A-MEASURE",
    "object": "the Born layer",
    "receipt_key": "born_layer"
   },
   {
-   "digest": "0fceba6d4190",
+   "digest": "6729b6f3e5d9",
    "gate": "G-THE-MONOMIAL-SUBGROUP-IS-A-GROUP",
    "object": "candidate (d)",
    "receipt_key": "candidate_group_haar"
   },
   {
-   "digest": "c10482bfa7d7",
+   "digest": "341ff194dfae",
    "gate": "G-U2-HAAR-CANNOT-DESCEND",
    "object": "candidate (e)",
    "receipt_key": "candidate_ambient_haar"
   },
   {
-   "digest": "572d96a17346",
+   "digest": "800073be92db",
    "gate": "G-GIBBS-NEEDS-AN-ACTION",
    "object": "candidate (f)",
    "receipt_key": "candidate_gibbs"
   },
   {
-   "digest": "32693af376b5",
+   "digest": "e0fb75ae32fe",
    "gate": "G-HOLONOMY-GROUP-IS-CONFIGURATION-DEPENDENT",
    "object": "candidate (h)",
    "receipt_key": "candidate_holonomy_pullback"
   },
   {
-   "digest": "43cea0fa3988",
+   "digest": "f364024a08aa",
    "gate": "G-CENSUS-IS-TOTAL",
    "object": "the census",
    "receipt_key": "census"
   },
   {
-   "digest": "d7fd6981acce",
+   "digest": "286078d317c3",
    "gate": "G-FIBRE-PRICED",
    "object": "the fibre",
    "receipt_key": "fibre"
   },
   {
-   "digest": "556fcebc5183",
+   "digest": "50b2d73ad57d",
    "gate": "G-HEAD-LAW-REACHABILITY",
    "object": "the pre-registered heads",
    "receipt_key": "preregistered_heads"
   },
   {
-   "digest": "0d06d85d1ecb",
+   "digest": "1824cbcb594f",
+   "gate": "G-THE-DERIVE-ARM-IS-REACHABLE",
+   "object": "the control arm",
+   "receipt_key": "control_arm"
+  },
+  {
+   "digest": "d4a090a6460d",
    "gate": "G-NO-WILSON-EXPECTATION",
    "object": "the withheld segment",
    "receipt_key": "withheld"
   },
   {
-   "digest": "1dbd7f74f044",
+   "digest": "4154fc43674b",
    "gate": "G-CHOICE-INVENTORY",
    "object": "the choice inventory",
    "receipt_key": "choice_inventory"
   },
   {
-   "digest": "3407d3e295c2",
+   "digest": "0f4e2680f3f1",
    "gate": "G-HEAD-STRING-EQUALITY",
    "object": "the verdict",
    "receipt_key": "verdict"
   },
   {
-   "digest": "db321a536b88",
+   "digest": "05953ddd50d7",
    "gate": "G-PAPER-CLAIMS-RENDER",
    "object": "the paper claims",
    "receipt_key": "paper_claims"
   },
   {
-   "digest": "5f6b647126bc",
+   "digest": "b94f3ed7e071",
    "gate": "G-PAPER-POLARITY",
    "object": "the paper polarity",
    "receipt_key": "paper_polarity"
   },
   {
-   "digest": "57c4b94b1f10",
+   "digest": "8e9e1b4e7e35",
    "gate": "G-PAPER-COVERAGE",
    "object": "the paper coverage",
    "receipt_key": "paper_coverage"
   },
   {
-   "digest": "1ed2c683502c",
+   "digest": "bb2db74bbc84",
    "gate": "G-SEAL-COMPLETE",
    "object": "the gate ledger",
    "receipt_key": "gates"
   },
   {
-   "digest": "15b3758d150c",
+   "digest": "b4cbd7f858fc",
    "gate": "G-SEAL-COMPLETE",
    "object": "the mutant registry",
    "receipt_key": "mutants"
   },
   {
-   "digest": "13f635a11fd1",
+   "digest": "987fc781195d",
    "gate": "G-SEAL-COMPLETE",
    "object": "the waiver ledger",
    "receipt_key": "waiver_ledger"
@@ -1886,7 +2633,7 @@
    "receipt_key": "transcript_head"
   },
   {
-   "digest": "938e56dcd866",
+   "digest": "6831985dc845",
    "gate": "G-SEAL-COMPLETE",
    "object": "the totals",
    "receipt_key": "totals"
@@ -1980,17 +2727,17 @@
   ]
  },
  "totals": {
-  "anchors": 48,
+  "anchors": 55,
   "byte_anchors": 10,
-  "candidates": 8,
+  "candidates": 9,
   "choices": 11,
   "deriving": 0,
   "gate_failures": 0,
-  "gates_in_the_sealed_snapshot": 56,
+  "gates_in_the_sealed_snapshot": 68,
   "late_gates": 2,
-  "mutants_declared": 25,
-  "path_value_anchors": 26,
-  "sealed_objects": 31,
+  "mutants_declared": 44,
+  "path_value_anchors": 33,
+  "sealed_objects": 33,
   "sources": 10,
   "verbatim_anchors": 12
  },
@@ -2106,7 +2853,7 @@
   {
    "anchor": "VB-W3-DICTIONARY",
    "chars": 200,
-   "consumer": "G-WELD3-IS-THE-ONE-FOUND-DICTIONARY",
+   "consumer": "G-WELD3-IS-THE-ONE-FOUND-DICTIONARY-AT-A-COMMITTED-RECORD-ARENA",
    "digest": "a9bc48b67565",
    "flipped_occurrences": 0,
    "floor": 50,
@@ -2140,7 +2887,7 @@
  "verdict": {
   "head": "MEASURE-DECLARATION-REQUIRED-",
   "reconstruction_agrees": true,
-  "string": "MEASURE-DECLARATION-REQUIRED-<ONE-POINT-OF-A-119-SIMPLEX-ON-120-ORBITS-AT-THE-CHART-128-READING;207-SIMPLEX-ON-208-ORBITS-AT-THE-CHART-32-READING -- CENSUS=8-CANDIDATES-0-DERIVE|(a)PUSHFORWARD=NO-PINNED-CORRESPONDENCE-TO-THIS-ARENA(WELD2-120-ROWS-60-DISTINCT-CANDIDATES-0-FOUND-AT-THIS-CARRIER;WELD3-IS-THE-ONE-FOUND-DICTIONARY-AND-ITS-TARGET-CARRIES-9-SITES-AGAINST-16-WITH-A-CONSTANT-LINK-DATUM-AT-27-OF-27-CELLS;GRANTED-EVERYTHING-THE-RESIDUAL-IS-A-POINT-MASS-WITH-THE-COIN-FREE-AMONG-640)|(b)COUNTING=DECLARED-NULL-2-CARRIERS-x-2-NULLS-ALL-INVARIANT|(c)INVARIANCE=SELECTS-A-SUPPORT-NOT-A-MEASURE|(d)FINITE-GROUP-HAAR=THE-FAMILY-IS-NOT-CLOSED-278528-OF-409600-PRODUCTS-STAY|(e)U(2)-HAAR=A-FINITE-SUBSET-HAS-MEASURE-ZERO-AND-384-OF-640-COINS-HAVE-FINITE-ORDER-IN-FAMILY|(f)GIBBS=NO-ACTION-NO-COUPLING-BY-THE-PARENTS-OWN-DECLARATION|(g)BORN=DERIVES-EXACTLY-AND-LANDS-ON-THE-STATES-3-IMAGES-FOR-640-CONFIGURATIONS|(h)HOLONOMY-PULLBACK=NO-SINGLE-GROUP-512-CONFIGURATIONS-CARRY-AN-INFINITE-ONE -- UNIQUENESS=GATED-AND-FAILS-AT-BOTH-READINGS(CHART-128:120-ORBITS;CHART-32:208-ORBITS)|INVARIANT-MEASURES-ARE-EXACTLY-THE-ORBIT-CONSTANT-ONES-SO-UNIQUE-IFF-TRANSITIVE|THE-GATE-CAN-PASS-A-SYNTHETIC-TRANSITIVE-ARENA-RETURNS-1-ORBIT|FULL-SPACE-NOT-TRANSITIVE-BY-AN-EXHIBITED-INVARIANT-561-SECTOR-MULTISETS-OVER-32-LINKS -- WHAT-THE-SYMMETRY-DOES-FIX=A-SUPPORT:THE-CHART-FIXED-CONFIGURATIONS-ARE-EXACTLY-THE-640-UNIFORM-ONES-AT-655360-OF-655360-CHECKS-SO-THE-PARENTS-DECLARED-SWEEP-IS-THE-FIXED-LOCUS-ITSELF(32-AT-THE-EXTENSION-WHERE-REVERSAL-FORCES-U=XUX)|FULL-SPACE-CHART-ORBITS=19615942923083377386986841947523957550319860937261713352753238485891465108835574743040000-AND-4903985730770844346746710486880993541417452474995871943159704028721854423865774571520000-AT-THE-TWO-READINGS -- CONSEQUENCE=THE-DECLARATION-IS-NOT-INNOCUOUS:THE-PARENTS-OWN-HEADLINE-SETS-MOVE-BETWEEN-INVARIANT-MEASURES|NON-COMMUTING=9/10-AT-COUNTING-AND-9/13-AND-7/10-AT-THE-TWO-ORBIT-NULLS|DEFECT-CARRYING=3/5-AND-6/13-AND-7/15|WIDEST-DISAGREEMENT=27/130-ON-DIAGONAL -- THE-ONE-CANONICAL-MEASURE-THIS-ARENA-HANDS-OVER=HAAR-ON-THE-128-ELEMENT-MONOMIAL-SUBGROUP(CLOSED-0-FAILURES-INVERSES-0-FAILURES;MAXIMAL-0-OF-512-INTERFERING-COINS-ADJOINABLE)-AND-IT-CARRIES-0-OF-384-DEFECT-COINS:WHERE-THE-MEASURE-IS-FREE-THE-QUANTUM-LAYER-IS-ABSENT -- WILSON=SEGMENT-WITHHELD-BY-THE-PIN-NO-SOURCE-DERIVES|NO-EXPECTATION-COMPUTED-ANYWHERE-IN-THE-INSTRUMENT|NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM -- SCOPE=D=2;L=4;FIELD=Q(ZETA-8);COINS=640;LINKS=32;PLAQUETTES=16;CONFIGURATION-SPACE=640^32;PRIMARY-CARRIER=THE-UNIFORM-SLICE-WHICH-IS-THE-CHART-FIXED-LOCUS;FULL-SPACE-ORBIT-COUNT-UNDER-THE-JOINT-GROUP=NOT-COMPUTED-BY-COST-A-LOWER-BOUND-IS-EXHIBITED-INSTEAD;THE-CORRESPONDENCE-QUESTION-AT-THIS-TARGET=OPEN-WELD-2s-STRUCTURAL-BLADE-IS-SILENT-HERE-BECAUSE-THIS-LATTICE-IS-BIPARTITE;NO-MEASURE-DERIVED;NO-ACTION;NO-COUPLING;NO-DYNAMICS;NOT-QCD;NO-CONFINEMENT-CLAIM>"
+  "string": "MEASURE-DECLARATION-REQUIRED-<ONE-POINT-OF-THE-INVARIANT-119-SIMPLEX-ON-120-ORBITS-AT-THE-CHART-128-READING;207-SIMPLEX-ON-208-ORBITS-AT-THE-CHART-32-READING -- CENSUS=9-CANDIDATES-0-DERIVE|CLOSURE=A-CANONICAL-MEASURE-EXISTS-EXACTLY-WHERE-SOMETHING-ACTS-TRANSITIVELY-ON-THE-CARRIER-9-OF-9-ROWS-ARE-INSTANCES-AND-A-10TH-CANDIDATE-IS-DECIDED-BY-THE-SAME-TEST|MEASURE-BLOCKED-AT=FORCED-SHUT-CENSUS-RELATIVELY-ONLY-1-NAMED-ABSENT-ROW(THE-STATIONARY-MEASURE-OF-A-DYNAMICS-ON-THE-CONFIGURATIONS)=NOT-CENSUSABLE-NO-PINNED-DYNAMICS-ON-CONFIGURATIONS;A-COVARIANT-CHAIN-DERIVES-IFF-IT-IS-IRREDUCIBLE -- (a)PUSHFORWARD=NO-PINNED-CORRESPONDENCE-TO-THIS-ARENA(WELD2-120-ROWS-60-DISTINCT-CANDIDATES-0-FOUND-AT-THIS-CARRIER;WELD3-IS-THE-ONE-FOUND-DICTIONARY-AT-A-COMMITTED-RECORD-ARENA-AND-ITS-TARGET-CARRIES-9-SITES-AGAINST-16-WITH-A-CONSTANT-LINK-DATUM-AT-27-OF-27-CELLS;ALL-8-FOUND-ROWS-IN-THE-CORPUS-WELD2s-TWO-DECLARED-PROBE-CONTROLS-INCLUDED-DIE-AT-THE-SAME-SITE-COUNT-BLADE;GRANTED-EVERYTHING-THE-RESIDUAL-IS-A-POINT-MASS-WITH-THE-COIN-FREE-AMONG-640)|(b)COUNTING=DECLARED-NULL-2-CARRIERS-x-2-NULLS-ALL-INVARIANT|(c)INVARIANCE=SELECTS-A-SUPPORT-NOT-A-MEASURE|(d)FINITE-GROUP-HAAR=THE-FAMILY-IS-NOT-CLOSED-278528-OF-409600-PRODUCTS-STAY|(e)U(2)-HAAR=A-FINITE-SUBSET-HAS-MEASURE-ZERO-AND-384-OF-640-COINS-HAVE-FINITE-ORDER-IN-FAMILY|(f)GIBBS=NO-ACTION-NO-COUPLING-BY-THE-PARENTS-OWN-DECLARATION|(g)BORN=DERIVES-A-LAW-ON-THE-STATES-EXACTLY-NOT-A-MEASURE-3-KERNELS-FOR-640-CONFIGURATIONS-STATIONARY-SIMPLEX-DIM-15-IN-THE-DIAGONAL-SECTOR-AND-14-IN-THE-OTHER-TWO|(h)HOLONOMY-PULLBACK=NO-SINGLE-GROUP-512-CONFIGURATIONS-CARRY-AN-INFINITE-ONE|(i)MAXENT=RELOCATES-THE-PRICE-IT-RETURNS-ITS-DECLARED-REFERENCE-AND-THE-ARENA-PINS-NO-CONSTRAINT-TO-CONDITION-ON -- UNIQUENESS=GATED-AND-FAILS-AT-BOTH-READINGS(CHART-128:120-ORBITS;CHART-32:208-ORBITS)|INVARIANT-MEASURES-ARE-EXACTLY-THE-ORBIT-CONSTANT-ONES-SO-UNIQUE-IFF-TRANSITIVE|THE-GATE-CAN-PASS-A-SYNTHETIC-TRANSITIVE-ARENA-RETURNS-1-ORBIT|THE-DERIVE-ARM-IS-REACHABLE-AND-IS-RUN:THE-CONTROL-ARM-ON-A-SYNTHETIC-TRANSITIVE-CARRIER-IS-PRICED-AT-0-FREE-ITEMS-BY-THE-SAME-FUNCTION-AND-EMITS-MEASURE-DERIVED-<AN-INVARIANCE-CHARACTERISED-MEASURE;UNIQUE>|FULL-SPACE-NOT-TRANSITIVE-BY-AN-EXHIBITED-INVARIANT-561-SECTOR-MULTISETS-OVER-32-LINKS -- WHAT-THE-SYMMETRY-DOES-FIX=A-SUPPORT:THE-CHART-FIXED-CONFIGURATIONS-ARE-EXACTLY-THE-640-UNIFORM-ONES-AT-655360-OF-655360-CHECKS-SO-THE-PARENTS-DECLARED-SWEEP-IS-THE-FIXED-LOCUS-ITSELF(32-AT-THE-EXTENSION-WHERE-REVERSAL-FORCES-U=XUX)|AND-IT-IS-CARRIED-BY-THE-DIRECTION-RELABELLING:UNDER-THE-TRANSLATIONS-ALONE-THE-LINKS-FALL-INTO-2-ORBITS-AND-THE-FIXED-LOCUS-IS-409600-CONFIGURATIONS-OF-WHICH-THE-PARENTS-640-IS-A-PROPER-SUBSET|FULL-SPACE-CHART-ORBITS=19615942923083377386986841947523957550319860937261713352753238485891465108835574743040000-AND-4903985730770844346746710486880993541417452474995871943159704028721854423865774571520000-AT-THE-TWO-READINGS -- CONSEQUENCE=THE-DECLARATION-IS-NOT-INNOCUOUS:THE-PARENTS-OWN-HEADLINE-SETS-MOVE-BETWEEN-INVARIANT-MEASURES|NON-COMMUTING=9/10-AT-COUNTING-AND-9/13-AND-7/10-AT-THE-TWO-ORBIT-NULLS|DEFECT-CARRYING=3/5-AND-6/13-AND-7/15|WIDEST-DISAGREEMENT=27/130-ATTAINED-ON-2-OF-4-SETS(DIAGONAL,NON-COMMUTING)-NONE-DECLARED-THE-ARG-MAX-SET-IS-PUBLISHED -- THE-ONE-CANONICAL-MEASURE-THIS-ARENA-HANDS-OVER=HAAR-ON-THE-128-ELEMENT-MONOMIAL-SUBGROUP(CLOSED-0-FAILURES-INVERSES-0-FAILURES;MAXIMAL-0-OF-512-INTERFERING-COINS-ADJOINABLE)-AND-IT-CARRIES-0-OF-384-DEFECT-COINS:WHERE-THE-MEASURE-IS-FREE-THE-QUANTUM-LAYER-IS-ABSENT -- WILSON=SEGMENT-WITHHELD-BY-THE-PIN-NO-SOURCE-DERIVES|NO-EXPECTATION-COMPUTED-ANYWHERE-IN-THE-INSTRUMENT|NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM -- SCOPE=D=2;L=4;FIELD=Q(ZETA-8);COINS=640;LINKS=32;PLAQUETTES=16;CONFIGURATION-SPACE=640^32;PRIMARY-CARRIER=THE-UNIFORM-SLICE-WHICH-IS-THE-CHART-FIXED-LOCUS;FULL-SPACE-ORBIT-COUNT-UNDER-THE-JOINT-GROUP=NOT-COMPUTED-BY-COST-A-LOWER-BOUND-IS-EXHIBITED-INSTEAD;THE-CORRESPONDENCE-QUESTION-AT-THIS-TARGET=OPEN-OVER-THE-EVEN-L-FAMILY-ONLY-WELD-2s-STRUCTURAL-BLADE-IS-SILENT-HERE-BECAUSE-THIS-LATTICE-IS-BIPARTITE-WHICH-AT-(Z-L)^2-HOLDS-EXACTLY-WHEN-L-IS-EVEN-SO-AT-ANY-ODD-L-THE-INHERITED-BLADE-FIRES;NO-MEASURE-DERIVED;NO-ACTION;NO-COUPLING;NO-DYNAMICS;NOT-QCD;NO-CONFINEMENT-CLAIM>"
  },
  "verdict_head": "MEASURE-DECLARATION-REQUIRED-",
  "waiver_ledger": [
@@ -2157,8 +2904,12 @@
    "gate": "G-NO-MOVING-REFS"
   },
   {
-   "class": "NO-FALSIFIER-REACHES-IT",
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
    "gate": "G-MUTANT-REGISTRY-TOTAL"
+  },
+  {
+   "class": "NO-FALSIFIER-REACHES-IT",
+   "gate": "G-GATE-IDS-ARE-READABLE"
   },
   {
    "class": "NO-FALSIFIER-REACHES-IT",
@@ -2218,6 +2969,10 @@
   },
   {
    "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-TRANSLATIONS-ONLY-CHART-IS-A-THIRD-READING"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
    "gate": "G-PARENT-CENSUS-REPRODUCED"
   },
   {
@@ -2233,8 +2988,12 @@
    "gate": "G-WELD2-RAN-AT-THE-GAMMA-CARRIER"
   },
   {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-EVERY-FOUND-ROW-IN-THE-CORPUS-IS-ENUMERATED"
+  },
+  {
    "class": "NO-FALSIFIER-REACHES-IT",
-   "gate": "G-WELD3-IS-THE-ONE-FOUND-DICTIONARY"
+   "gate": "G-WELD3-IS-THE-ONE-FOUND-DICTIONARY-AT-A-COMMITTED-RECORD-ARENA"
   },
   {
    "class": "NO-FALSIFIER-REACHES-IT",
@@ -2247,6 +3006,10 @@
   {
    "class": "NO-FALSIFIER-REACHES-IT",
    "gate": "G-ARITY-BLADE-TRANSFERS"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-BIPARTITENESS-IS-L-PARITY"
   },
   {
    "class": "NO-FALSIFIER-REACHES-IT",
@@ -2269,7 +3032,7 @@
    "gate": "G-EVERY-NULL-IS-INVARIANT-UNDER-EVERY-MEASURED-GROUP"
   },
   {
-   "class": "NO-FALSIFIER-REACHES-IT",
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
    "gate": "G-TWO-NULLS-DISAGREE"
   },
   {
@@ -2286,11 +3049,19 @@
   },
   {
    "class": "COVERED-BY-A-DECLARED-MUTANT",
-   "gate": "G-BORN-LAYER-IS-A-MEASURE"
+   "gate": "G-MAXENT-RELOCATES-THE-PRICE"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-BORN-LAYER-IS-A-KERNEL"
   },
   {
    "class": "NO-FALSIFIER-REACHES-IT",
    "gate": "G-BORN-LAYER-LANDS-ON-STATES"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-BORN-KERNEL-FIXES-NO-MEASURE-EITHER"
   },
   {
    "class": "COVERED-BY-A-DECLARED-MUTANT",
@@ -2325,6 +3096,18 @@
    "gate": "G-CENSUS-IS-TOTAL"
   },
   {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-EVERY-CANDIDATE-PRICE-IS-MEASURED"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-THE-CENSUS-CRITERION-IS-THE-ORGANIZING-PRINCIPLE"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-THE-STATIONARY-CANDIDATE-IS-NAMED-ABSENT"
+  },
+  {
    "class": "NO-FALSIFIER-REACHES-IT",
    "gate": "G-FIBRE-PRICED"
   },
@@ -2334,11 +3117,23 @@
   },
   {
    "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-THE-DERIVE-ARM-IS-REACHABLE"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
    "gate": "G-NO-WILSON-EXPECTATION"
   },
   {
    "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-INSTRUMENT-FUNCTION-INVENTORY-IS-TOTAL"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
    "gate": "G-CHOICE-INVENTORY"
+  },
+  {
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
+   "gate": "G-THE-TWO-HEAD-LAWS-AGREE"
   },
   {
    "class": "COVERED-BY-A-DECLARED-MUTANT",
@@ -2349,7 +3144,7 @@
    "gate": "G-PAPER-CLAIMS-RENDER"
   },
   {
-   "class": "NO-FALSIFIER-REACHES-IT",
+   "class": "COVERED-BY-A-DECLARED-MUTANT",
    "gate": "G-PAPER-CARRIES-THIS-RUNS-VERDICT"
   },
   {
@@ -2371,6 +3166,8 @@
  ],
  "withheld": {
   "consequence": "THE-SEGMENT-IS-WITHHELD-AND-THE-INSTRUMENT-COMPUTES-NO-EXPECTATION-AT-ALL",
+  "functions_declared": 111,
+  "keys_walked_to_the_bottom": true,
   "licensed_by_the_pin_only_if": "A-MEASURE-DERIVES",
   "measured": "NO-SOURCE-DERIVES",
   "object": "THE-WILSON-LOOP-EXPECTATIONS"
