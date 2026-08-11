@@ -5278,3 +5278,36 @@ EXPRESSIBLE=12/13 counts a typed column; the gmain bridge
 scanner is line-local (2/3 wrapped phrasings evade).  Nothing
 moves the head, census, theorem, or any number.  → the CR-A
 adjudication (instrument seat outstanding).
+
+## 2026-08-11 — CR-A INSTRUMENT REVIEW LANDED (K3): AWF — ERA BATTERY CLEAN; THE SEAM MEASURED; TWO MAJORS (v14 LEDGER #177)
+
+v14/review-cra-instrument.md (64235eac24b9) frozen.  **Grade
+AWF; ~162 executions + 373 recomputations; objects verified
+unchanged start and end.**  Era battery: plain run git-less
+off-tree BYTE-IDENTICAL both artifacts; selftest 39/39 died
+correctly; **39/39 mutants re-run OUTSIDE the harness with the
+raising gate parsed — zero false waivers**; 47/47 must-pass;
+paper↔output↔receipt ZERO false numbers (109 checks; all 6
+initial flags were the reviewer's own harness artifacts,
+resolved).  CLI conformant AND AHEAD OF ITS ERA (all four #82
+limbs pre-#82); one miss: trailing-argument slop.  **MAJORS
+(era-fair, both #34-family):** (1) G-NEVER-FALSIFIED-CENSUS's
+predicate CANNOT FAIL (isinstance-list) and the census runs
+before the last four gates register — receipt publishes 42
+where the honest denominator is 45; (2) §11's
+every-blockquote-rendered-and-gated sentence is FALSE: 2/13
+numeral-bearing blockquotes neither rendered nor gated — and
+they are the §6 STATIC-GEOMETRY THEOREM and THE VERDICT BLOCK
+(17 numerals).  **THE SEAM, measured not judged (birth-date
+fairness: 12 engravings post-date; 6 bite):** 8 injections
+survive at exit-0/47-green incl. the sharpest — INJ-6/7/8
+corrupt the PAPER (LIN/BIL column swap; theorem inverted to
+"SOME admissible advancing mover commutes"; the verdict block
+forged) while both delivered artifacts stay byte-identical;
+RUNBOOK.md the one unpinned runtime read (line-wrap hostage;
+absent → traceback not gate).  Recommendation: order only
+R-CRA-I2 (denominator, ~6 lines) + R-CRA-I3 (render+gate the
+theorem/verdict block, ~20 lines); DECLINE seal
+retrofit/RUNBOOK pin/CLI arity/#87 unless publication — no
+surviving injection is reachable from the pinned inputs.  → the
+CR-A adjudication (all three seats in).
