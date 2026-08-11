@@ -6213,3 +6213,66 @@ declaration measured (the invariant simplex).  **UNLOCKED BY
 THIS TERMINAL: paper-27 SMU (the stationary measure — the
 QCD road's next gate), pin obligation per THE STRATEGIC PLAN
 (#193); pinned and launched this ledger.**
+
+## 2026-08-11 — SMU (PAPER-27) PINNED AND LAUNCHED — THE QCD ROAD'S NEXT GATE (v14 LEDGER #202)
+
+v14/note-smu-pin.md frozen on paper-23's terminal (#201), per
+THE STRATEGIC PLAN Wave B.  The unit: DECLARE the dynamics on
+configuration space (three candidates minimum — the
+chart-group walk, the gauge-action walk, the law-native local
+resampling — every member run, none privileged), measure
+IRREDUCIBILITY per dynamics (the derives-iff-irreducible law
+from paper-23's head), compute the stationary measure exactly
+where it exists, and run THE DYNAMICS-RELATIVITY CENSUS
+(all-candidates-agree ⟹ quasi-derivation; else the spread
+priced).  Wilson expectations gated
+CONDITIONAL-ON-THE-DECLARED-DYNAMICS; the confinement
+vocabulary stays behind its inherited gate.  Worker launched
+(Opus).
+
+## 2026-08-11 — PAPER-21 BATTERY GREEN; PANEL PROTOCOL FROZEN; THREE SEATS LAUNCHED (v14 LEDGER #203)
+
+Battery: argv whitelist read in source (parse_args L3759);
+mirror plain exit 0, OUTPUT and RECEIPT BYTE-IDENTICAL;
+unknown flag/mutant exit 2; selftest exit 1 (A-D42B1 →
+G-PROVENANCE, artifacts unchanged); MUT-FAMILY-COUNT (from the
+live registry) killed at G-PARTITION-COUNT ON TARGET;
+artifacts untouched.  **PROTOCOL: K1 OPERATOR** — rebuild: the
+276 by three routes + THE SATURATION THEOREM (max 9
+incidences/round over 280 partitions; equality forces
+saturation ⟹ exhaustive over 6,146,560,000 — verify the
+theorem, it carries stage 4's license); driven FORCED 600/600;
+the weld fibers 36/3/1 + BOTH THEOREMS (zero-free ⟺
+link-constant; R=4 constancy arithmetically impossible); the
+split census (9/27 fiber 1; paper-06's law UNIQUE — simplex
+dim 0 pinned-transitive; 04/09 empty at their named mechanisms
+incl. the g(1)=g(2)=0 support hole); the price row
+COVER=POSDEF=I7-STRICT=100,080; back-validation (72; U4b's
+ceiling); the STRUCT-DEAD quadruple (9 foreign co-division
+pairs); the base-map fiber spreads [3,6]/[1,2] with verdict
+invariance; the sitewise-identity break (3 codes det 0,
+G-SINGULAR among them, 0 in covering); mutants outside the
+harness.  **K2 EFFECTUS** — the stratified head's verbs
+(FOUND-AT-THE-FORCED-CARRIER / UNMOTIVATED-AT-THE-FREE-
+ASSIGNMENT); "the R=3 perfection was special" as the licensed
+sentence (the two theorems' scope); THE SPLIT'S MEANING — the
+law-over-records register (what would the LOR unit measure;
+paper-06's unique law as its object); the R=8 concatenation
+row; the price sequence reading (budget→matching→cover);
+**G-SINGULAR two senses reconciled: the walk EXITS to det 0
+(paper-20) but coverings never CONTAIN it (this unit) — write
+the reconciliation row**; the SIG handoff (no negative det in
+the covering class ⟹ the indefinite form is DYNAMICS-ONLY);
+the PER-R inheritance rows (what the R=5 census must carry);
+choice inventory + sweep.  **K3 INSTRUMENT** — full era +
+E-22/E-23/E-24 with birth-date rulings per engraving; 50
+mutants outside the harness; anchors perturbed; 27 seals +
+post-write; the 8 fenced blocks by multiset; 1,068 numerals;
+**the W4 window license audited** (600 driven of 3.27
+quadrillion; driven=combinatorial 600/600 — the equality
+gate's strength); injections; argv incl. arity; byte ×2
+across seeds.  Reviewers →
+v14/review-r4dec-{operator,effectus,instrument}.md.  Objects
+at f45b3a1: f54dad8d51b8 / e387674bfcdd / 27ed73ded234 /
+e1f148dd6a0e; pin 973b160d52ed... [correction: pin
+f50630ced3be at d55571d].
