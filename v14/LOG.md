@@ -7352,3 +7352,46 @@ established recovery protocol's fourth full exercise; no
 committed state was ever at risk (every delivered unit is
 committed; the repairs' partial edits live in their
 worktrees/scratch and their transcripts).
+
+## 2026-08-11 — SMU EFFECTUS REVIEW LANDED (K2): AWF — THE PRIVILEGE REFUSED AT AN UNPINNED IDENTIFICATION; THE SPREAD COMPARISON UNLICENSED; THE CONSERVED PRICE EXPORTABLE (v14 LEDGER #237)
+
+v14/review-smu-effectus.md frozen.  **Grade AWF; ~131
+recomputations, zero delivered numbers moved, no false
+number, no false theorem — all findings licensure.**  THE
+PRIVILEGE QUESTION, ruled harder than anticipated: **the
+law-native chain is a RANK-ONE kernel (every row the same
+vector) — its "derived" measure IS its declared draw law,
+the dynamics does no work; and the Γ-triple→coin-sector
+identification is an UNPINNED cross-arena identification
+(paper-23's own 0-found row).  Ruling:
+LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-
+IDENTIFICATION** (the plain form refused as too generous);
+upgrade routes A (pinned correspondence) BLOCKED TWICE, B
+(forced grading) yields a measure not a dynamics, **C = ACT's
+action is the ONLY live route** — the QCD road now runs
+entirely through ACT.  Internal inconsistency flagged (§9
+demotes Metropolis as pricing-not-evidence yet promotes (c),
+the same species more extremely).  **MAJOR-1: the head's
+comparison clause UNLICENSED — restricted to paper-23's own
+three measures SMU's spread is EXACTLY 27/130 (no movement);
+the rise to 153/380 is six NEW measures entering, not a
+dynamics effect; the indicator-functional argument gives
+[0,1] anyway.  DYNAMICS-RELATIVE survives; the
+moves-further clause dies.**  MAJOR-3: covariance tested only
+against order-4 (the extension's 119 inherited, not
+measured).  MAJOR-4: every-member-run false at 2/7 axes with
+an isinstance-vacuous exemption — the unswept axis carries
+the whole price.  **THE CONSERVED-PRICE SENTENCE LICENSED as
+the unit's exportable theorem** with two boundaries (interior
+reach; covariance-retained — dropped, the same theorem gives
+639 numbers not 207, a free corollary).  **PAPER-23 RULING: a
+CORRECTION ANNOTATION** (not erratum, not scope-annotation —
+the converse simply false; nothing of paper-23 moves;
+four-clause note drafted).  Wilson [0,4] licensed (the 12
+rows reduce to three sector averages 2, 1, 5/4);
+**POT's confinement gate UNASKABLE UNTIL ACT LANDS.**  Walls
+and E-24 clean.  SUCCESSORS: ACT's row (the law-native π AS
+CONTROL, never spent as derived; the 207/639 frame; the
+cheap falsifier = a narrower-range functional); OCC/FCK
+doubly-stochastic connection CHECKED-AND-EMPTY.  →
+adjudication when K1+K3 land.
