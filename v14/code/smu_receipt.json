@@ -1,0 +1,3461 @@
+{
+ "anchor_classes": {
+  "file_bytes": 9,
+  "path_value": 30,
+  "total": 51,
+  "verbatim_text": 12
+ },
+ "arena": {
+  "L": 4,
+  "admissible_rows": 80,
+  "alphabet": 25,
+  "coins": 640,
+  "configuration_space": "640^32, NOT the carrier of this unit",
+  "d": 2,
+  "field": "Q(zeta_8)",
+  "lattice": "(Z_L)^2",
+  "links": 32,
+  "plaquettes": 16,
+  "sectors": {
+   "ANTIDIAGONAL": 64,
+   "BALANCED": 512,
+   "DIAGONAL": 64
+  },
+  "sites": 16
+ },
+ "arithmetic": {
+  "banned_calls": [],
+  "banned_imports": [],
+  "field": "Q(zeta_8) as integer 5-tuples over (1, z, z^2, z^3) mod z^4+1",
+  "float_literals": 0,
+  "probabilities": "fractions.Fraction",
+  "stationary_vectors": "exact kernel by elimination over Fraction"
+ },
+ "census": {
+  "derive": 12,
+  "distinct_stationary_vectors": 10,
+  "families": 6,
+  "head": "SMU-DYNAMICS-RELATIVE-SPREAD-153/380-OVER-12-DERIVING-INSTANCES",
+  "instances": [
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      1,
+      640
+     ]
+    ],
+    "closed_classes": 640,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 640,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-CHART-32-GROUP-AND-THE-RESIDUAL-GAUGE-GROUP",
+    "covariant": true,
+    "declaration": "one step applies a uniformly drawn element of the anchored chart group",
+    "extreme_point_names": [
+     [
+      "NEW",
+      640
+     ]
+    ],
+    "extreme_points": 640,
+    "family": "(a) THE CHART-GROUP WALK",
+    "fibre": 2,
+    "fibre_axis": "WHICH-CHART-GROUP",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "induced_identity": 32,
+    "instance": "CHART-32",
+    "irreducible": false,
+    "largest_class_solved": 1,
+    "measure_name": "A-SIMPLEX-NOT-A-POINT",
+    "published_vectors": 640,
+    "routes": [
+     "ROUTE-CLASS"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 639,
+    "transient_classes": 0,
+    "unique_stationary": false,
+    "vectors_verified_at_full_size": 640,
+    "verdict": "REDUCIBLE",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-EXTENSIONS-CLOSURE-OF-THE-UNIFORM-SLICE",
+    "carrier_size": 1248,
+    "class_size_profile": [
+     [
+      1,
+      32
+     ],
+     [
+      4,
+      304
+     ]
+    ],
+    "closed_classes": 336,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 336,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-CHART-128-GROUP",
+    "covariant": true,
+    "declaration": "one step applies a uniformly drawn element of the declared extension -- on the enlarged carrier, because the extension does not act on the parent's",
+    "extreme_point_names": [
+     [
+      "NEW",
+      336
+     ]
+    ],
+    "extreme_points": 336,
+    "family": "(a) THE CHART-GROUP WALK",
+    "fibre": 2,
+    "fibre_axis": "WHICH-CHART-GROUP",
+    "gauge_covariance_failures": null,
+    "gauge_covariant": null,
+    "instance": "CHART-128",
+    "irreducible": false,
+    "largest_class_solved": 4,
+    "measure_name": "A-SIMPLEX-NOT-A-POINT",
+    "published_vectors": 336,
+    "routes": [
+     "ROUTE-CLASS"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 335,
+    "transient_classes": 0,
+    "unique_stationary": false,
+    "vectors_verified_at_full_size": 336,
+    "verdict": "REDUCIBLE",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      1,
+      64
+     ],
+     [
+      4,
+      144
+     ]
+    ],
+    "closed_classes": 208,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 208,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "GAUGE-CHART-32",
+    "covariant": true,
+    "declaration": "one step applies a uniformly drawn element of the residual gauge group on the carrier at this chart reading",
+    "extreme_point_names": [
+     [
+      "NEW",
+      208
+     ]
+    ],
+    "extreme_points": 208,
+    "family": "(b) THE GAUGE-ACTION WALK",
+    "fibre": 2,
+    "fibre_axis": "WHICH-RESIDUAL-READING",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "GAUGE-CHART-32",
+    "irreducible": false,
+    "largest_class_solved": 4,
+    "measure_name": "A-SIMPLEX-NOT-A-POINT",
+    "published_vectors": 208,
+    "routes": [
+     "ROUTE-CLASS"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 207,
+    "transient_classes": 0,
+    "unique_stationary": false,
+    "vectors_verified_at_full_size": 208,
+    "verdict": "REDUCIBLE",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      1,
+      8
+     ],
+     [
+      2,
+      28
+     ],
+     [
+      4,
+      24
+     ],
+     [
+      8,
+      60
+     ]
+    ],
+    "closed_classes": 120,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 120,
+    "covariance_failures": 0,
+    "covariance_generators": 8,
+    "covariance_group": "GAUGE-CHART-128",
+    "covariant": true,
+    "declaration": "one step applies a uniformly drawn element of the residual gauge group on the carrier at this chart reading",
+    "extreme_point_names": [
+     [
+      "NEW",
+      120
+     ]
+    ],
+    "extreme_points": 120,
+    "family": "(b) THE GAUGE-ACTION WALK",
+    "fibre": 2,
+    "fibre_axis": "WHICH-RESIDUAL-READING",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "GAUGE-CHART-128",
+    "irreducible": false,
+    "largest_class_solved": 8,
+    "measure_name": "A-SIMPLEX-NOT-A-POINT",
+    "published_vectors": 120,
+    "routes": [
+     "ROUTE-CLASS"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 119,
+    "transient_classes": 0,
+    "unique_stationary": false,
+    "vectors_verified_at_full_size": 120,
+    "verdict": "REDUCIBLE",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      640,
+      1
+     ]
+    ],
+    "closed_classes": 1,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 1,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-RESIDUAL-GAUGE-GROUP-CHART-32",
+    "covariant": true,
+    "declaration": "one step discards the current coin and draws a new one: a sector by the Gamma-iteration's law-native positional law, then uniformly inside it",
+    "distinct_values": 3,
+    "extreme_points": 1,
+    "family": "(c) THE LAW-NATIVE RESAMPLING",
+    "fibre": 6,
+    "fibre_axis": "WHICH-SECTOR-CARRIES-WHICH-POSITION",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "LAW-NATIVE-012",
+    "irreducible": true,
+    "lumpability_failures": 0,
+    "lumping_blocks": 208,
+    "lumping_group_order": 4,
+    "lumping_group_transitive_on_every_block": true,
+    "measure_is_invariant_chart_128": true,
+    "measure_is_invariant_chart_32": true,
+    "measure_name": "NEW",
+    "published_vectors": 1,
+    "quotient_rank": 207,
+    "quotient_size": 208,
+    "routes": [
+     "ROUTE-LUMP"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 0,
+    "transient_classes": 0,
+    "unique_stationary": true,
+    "value_profile": [
+     [
+      "13/19456",
+      512
+     ],
+     [
+      "15/2432",
+      64
+     ],
+     [
+      "5/1216",
+      64
+     ]
+    ],
+    "vectors_verified_at_full_size": 1,
+    "verdict": "DERIVES",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      640,
+      1
+     ]
+    ],
+    "closed_classes": 1,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 1,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-RESIDUAL-GAUGE-GROUP-CHART-32",
+    "covariant": true,
+    "declaration": "one step discards the current coin and draws a new one: a sector by the Gamma-iteration's law-native positional law, then uniformly inside it",
+    "distinct_values": 3,
+    "extreme_points": 1,
+    "family": "(c) THE LAW-NATIVE RESAMPLING",
+    "fibre": 6,
+    "fibre_axis": "WHICH-SECTOR-CARRIES-WHICH-POSITION",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "LAW-NATIVE-021",
+    "irreducible": true,
+    "lumpability_failures": 0,
+    "lumping_blocks": 208,
+    "lumping_group_order": 4,
+    "lumping_group_transitive_on_every_block": true,
+    "measure_is_invariant_chart_128": true,
+    "measure_is_invariant_chart_32": true,
+    "measure_name": "NEW",
+    "published_vectors": 1,
+    "quotient_rank": 207,
+    "quotient_size": 208,
+    "routes": [
+     "ROUTE-LUMP"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 0,
+    "transient_classes": 0,
+    "unique_stationary": true,
+    "value_profile": [
+     [
+      "13/2432",
+      64
+     ],
+     [
+      "15/2432",
+      64
+     ],
+     [
+      "5/9728",
+      512
+     ]
+    ],
+    "vectors_verified_at_full_size": 1,
+    "verdict": "DERIVES",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      640,
+      1
+     ]
+    ],
+    "closed_classes": 1,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 1,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-RESIDUAL-GAUGE-GROUP-CHART-32",
+    "covariant": true,
+    "declaration": "one step discards the current coin and draws a new one: a sector by the Gamma-iteration's law-native positional law, then uniformly inside it",
+    "distinct_values": 3,
+    "extreme_points": 1,
+    "family": "(c) THE LAW-NATIVE RESAMPLING",
+    "fibre": 6,
+    "fibre_axis": "WHICH-SECTOR-CARRIES-WHICH-POSITION",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "LAW-NATIVE-102",
+    "irreducible": true,
+    "lumpability_failures": 0,
+    "lumping_blocks": 208,
+    "lumping_group_order": 4,
+    "lumping_group_transitive_on_every_block": true,
+    "measure_is_invariant_chart_128": true,
+    "measure_is_invariant_chart_32": true,
+    "measure_name": "NEW",
+    "published_vectors": 1,
+    "quotient_rank": 207,
+    "quotient_size": 208,
+    "routes": [
+     "ROUTE-LUMP"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 0,
+    "transient_classes": 0,
+    "unique_stationary": true,
+    "value_profile": [
+     [
+      "13/19456",
+      512
+     ],
+     [
+      "15/2432",
+      64
+     ],
+     [
+      "5/1216",
+      64
+     ]
+    ],
+    "vectors_verified_at_full_size": 1,
+    "verdict": "DERIVES",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      640,
+      1
+     ]
+    ],
+    "closed_classes": 1,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 1,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-RESIDUAL-GAUGE-GROUP-CHART-32",
+    "covariant": true,
+    "declaration": "one step discards the current coin and draws a new one: a sector by the Gamma-iteration's law-native positional law, then uniformly inside it",
+    "distinct_values": 3,
+    "extreme_points": 1,
+    "family": "(c) THE LAW-NATIVE RESAMPLING",
+    "fibre": 6,
+    "fibre_axis": "WHICH-SECTOR-CARRIES-WHICH-POSITION",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "LAW-NATIVE-120",
+    "irreducible": true,
+    "lumpability_failures": 0,
+    "lumping_blocks": 208,
+    "lumping_group_order": 4,
+    "lumping_group_transitive_on_every_block": true,
+    "measure_is_invariant_chart_128": true,
+    "measure_is_invariant_chart_32": true,
+    "measure_name": "NEW",
+    "published_vectors": 1,
+    "quotient_rank": 207,
+    "quotient_size": 208,
+    "routes": [
+     "ROUTE-LUMP"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 0,
+    "transient_classes": 0,
+    "unique_stationary": true,
+    "value_profile": [
+     [
+      "13/2432",
+      64
+     ],
+     [
+      "15/19456",
+      512
+     ],
+     [
+      "5/1216",
+      64
+     ]
+    ],
+    "vectors_verified_at_full_size": 1,
+    "verdict": "DERIVES",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      640,
+      1
+     ]
+    ],
+    "closed_classes": 1,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 1,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-RESIDUAL-GAUGE-GROUP-CHART-32",
+    "covariant": true,
+    "declaration": "one step discards the current coin and draws a new one: a sector by the Gamma-iteration's law-native positional law, then uniformly inside it",
+    "distinct_values": 3,
+    "extreme_points": 1,
+    "family": "(c) THE LAW-NATIVE RESAMPLING",
+    "fibre": 6,
+    "fibre_axis": "WHICH-SECTOR-CARRIES-WHICH-POSITION",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "LAW-NATIVE-201",
+    "irreducible": true,
+    "lumpability_failures": 0,
+    "lumping_blocks": 208,
+    "lumping_group_order": 4,
+    "lumping_group_transitive_on_every_block": true,
+    "measure_is_invariant_chart_128": true,
+    "measure_is_invariant_chart_32": true,
+    "measure_name": "NEW",
+    "published_vectors": 1,
+    "quotient_rank": 207,
+    "quotient_size": 208,
+    "routes": [
+     "ROUTE-LUMP"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 0,
+    "transient_classes": 0,
+    "unique_stationary": true,
+    "value_profile": [
+     [
+      "13/2432",
+      64
+     ],
+     [
+      "15/2432",
+      64
+     ],
+     [
+      "5/9728",
+      512
+     ]
+    ],
+    "vectors_verified_at_full_size": 1,
+    "verdict": "DERIVES",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      640,
+      1
+     ]
+    ],
+    "closed_classes": 1,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 1,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-RESIDUAL-GAUGE-GROUP-CHART-32",
+    "covariant": true,
+    "declaration": "one step discards the current coin and draws a new one: a sector by the Gamma-iteration's law-native positional law, then uniformly inside it",
+    "distinct_values": 3,
+    "extreme_points": 1,
+    "family": "(c) THE LAW-NATIVE RESAMPLING",
+    "fibre": 6,
+    "fibre_axis": "WHICH-SECTOR-CARRIES-WHICH-POSITION",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "LAW-NATIVE-210",
+    "irreducible": true,
+    "lumpability_failures": 0,
+    "lumping_blocks": 208,
+    "lumping_group_order": 4,
+    "lumping_group_transitive_on_every_block": true,
+    "measure_is_invariant_chart_128": true,
+    "measure_is_invariant_chart_32": true,
+    "measure_name": "NEW",
+    "published_vectors": 1,
+    "quotient_rank": 207,
+    "quotient_size": 208,
+    "routes": [
+     "ROUTE-LUMP"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 0,
+    "transient_classes": 0,
+    "unique_stationary": true,
+    "value_profile": [
+     [
+      "13/2432",
+      64
+     ],
+     [
+      "15/19456",
+      512
+     ],
+     [
+      "5/1216",
+      64
+     ]
+    ],
+    "vectors_verified_at_full_size": 1,
+    "verdict": "DERIVES",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      640,
+      1
+     ]
+    ],
+    "closed_classes": 1,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 1,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-RESIDUAL-GAUGE-GROUP-CHART-32",
+    "covariant": true,
+    "declaration": "one step composes the current coin with a uniformly drawn member of the family on the left and stays put when the product leaves the family",
+    "distinct_values": 1,
+    "extreme_points": 1,
+    "family": "(d) THE COMPOSITION WALK",
+    "fibre": 2,
+    "fibre_axis": "WHICH-SIDE-COMPOSES",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "COMPOSITION-LEFT",
+    "irreducible": true,
+    "lumpability_failures": 0,
+    "lumping_blocks": 208,
+    "lumping_group_order": 4,
+    "lumping_group_transitive_on_every_block": true,
+    "measure_is_invariant_chart_128": true,
+    "measure_is_invariant_chart_32": true,
+    "measure_name": "COUNTING",
+    "published_vectors": 1,
+    "quotient_rank": 207,
+    "quotient_size": 208,
+    "routes": [
+     "ROUTE-LUMP"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 0,
+    "transient_classes": 0,
+    "unique_stationary": true,
+    "value_profile": [
+     [
+      "1/640",
+      640
+     ]
+    ],
+    "vectors_verified_at_full_size": 1,
+    "verdict": "DERIVES",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      640,
+      1
+     ]
+    ],
+    "closed_classes": 1,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 1,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-RESIDUAL-GAUGE-GROUP-CHART-32",
+    "covariant": true,
+    "declaration": "one step composes the current coin with a uniformly drawn member of the family on the right and stays put when the product leaves the family",
+    "distinct_values": 1,
+    "extreme_points": 1,
+    "family": "(d) THE COMPOSITION WALK",
+    "fibre": 2,
+    "fibre_axis": "WHICH-SIDE-COMPOSES",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "COMPOSITION-RIGHT",
+    "irreducible": true,
+    "lumpability_failures": 0,
+    "lumping_blocks": 208,
+    "lumping_group_order": 4,
+    "lumping_group_transitive_on_every_block": true,
+    "measure_is_invariant_chart_128": true,
+    "measure_is_invariant_chart_32": true,
+    "measure_name": "COUNTING",
+    "published_vectors": 1,
+    "quotient_rank": 207,
+    "quotient_size": 208,
+    "routes": [
+     "ROUTE-LUMP"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 0,
+    "transient_classes": 0,
+    "unique_stationary": true,
+    "value_profile": [
+     [
+      "1/640",
+      640
+     ]
+    ],
+    "vectors_verified_at_full_size": 1,
+    "verdict": "DERIVES",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      128,
+      5
+     ]
+    ],
+    "closed_classes": 5,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 5,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-RESIDUAL-GAUGE-GROUP-CHART-32",
+    "covariant": true,
+    "declaration": "one step multiplies the current coin on the left by a uniformly drawn member of the arena's one group -- the 128 monomial coins, whose Haar measure is the one measure paper-23 found the arena hands over",
+    "extreme_point_names": [
+     [
+      "HAAR-ON-THE-128-MONOMIAL-SUBGROUP",
+      1
+     ],
+     [
+      "NEW",
+      4
+     ]
+    ],
+    "extreme_points": 5,
+    "family": "(e) THE MONOMIAL-HAAR WALK",
+    "fibre": 2,
+    "fibre_axis": "WHICH-SIDE-MULTIPLIES",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "MONOMIAL-LEFT",
+    "irreducible": false,
+    "largest_class_solved": 128,
+    "measure_name": "A-SIMPLEX-NOT-A-POINT",
+    "published_vectors": 5,
+    "routes": [
+     "ROUTE-CLASS"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 4,
+    "transient_classes": 0,
+    "unique_stationary": false,
+    "vectors_verified_at_full_size": 5,
+    "verdict": "REDUCIBLE",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      128,
+      5
+     ]
+    ],
+    "closed_classes": 5,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 5,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-RESIDUAL-GAUGE-GROUP-CHART-32",
+    "covariant": true,
+    "declaration": "one step multiplies the current coin on the right by a uniformly drawn member of the arena's one group -- the 128 monomial coins, whose Haar measure is the one measure paper-23 found the arena hands over",
+    "extreme_point_names": [
+     [
+      "HAAR-ON-THE-128-MONOMIAL-SUBGROUP",
+      1
+     ],
+     [
+      "NEW",
+      4
+     ]
+    ],
+    "extreme_points": 5,
+    "family": "(e) THE MONOMIAL-HAAR WALK",
+    "fibre": 2,
+    "fibre_axis": "WHICH-SIDE-MULTIPLIES",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "MONOMIAL-RIGHT",
+    "irreducible": false,
+    "largest_class_solved": 128,
+    "measure_name": "A-SIMPLEX-NOT-A-POINT",
+    "published_vectors": 5,
+    "routes": [
+     "ROUTE-CLASS"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 4,
+    "transient_classes": 0,
+    "unique_stationary": false,
+    "vectors_verified_at_full_size": 5,
+    "verdict": "REDUCIBLE",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      640,
+      1
+     ]
+    ],
+    "closed_classes": 1,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 1,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-RESIDUAL-GAUGE-GROUP-CHART-32",
+    "covariant": true,
+    "declaration": "one step proposes a uniformly drawn configuration and accepts it with probability min(1, pi(y)/pi(x)) at the declared invariant target COUNTING",
+    "distinct_values": 1,
+    "extreme_points": 1,
+    "family": "(f) THE COVARIANT METROPOLIS FAMILY",
+    "fibre": "THE-INVARIANT-SIMPLEX-ITSELF",
+    "fibre_axis": "WHICH-INVARIANT-TARGET",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "METROPOLIS-AT-COUNTING",
+    "irreducible": true,
+    "lumpability_failures": 0,
+    "lumping_blocks": 208,
+    "lumping_group_order": 4,
+    "lumping_group_transitive_on_every_block": true,
+    "measure_is_invariant_chart_128": true,
+    "measure_is_invariant_chart_32": true,
+    "measure_name": "COUNTING",
+    "published_vectors": 1,
+    "quotient_rank": 207,
+    "quotient_size": 208,
+    "routes": [
+     "ROUTE-LUMP"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 0,
+    "transient_classes": 0,
+    "unique_stationary": true,
+    "value_profile": [
+     [
+      "1/640",
+      640
+     ]
+    ],
+    "vectors_verified_at_full_size": 1,
+    "verdict": "DERIVES",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      640,
+      1
+     ]
+    ],
+    "closed_classes": 1,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 1,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-RESIDUAL-GAUGE-GROUP-CHART-32",
+    "covariant": true,
+    "declaration": "one step proposes a uniformly drawn configuration and accepts it with probability min(1, pi(y)/pi(x)) at the declared invariant target ORBIT-UNIFORM-CHART-32",
+    "distinct_values": 2,
+    "extreme_points": 1,
+    "family": "(f) THE COVARIANT METROPOLIS FAMILY",
+    "fibre": "THE-INVARIANT-SIMPLEX-ITSELF",
+    "fibre_axis": "WHICH-INVARIANT-TARGET",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "METROPOLIS-AT-ORBIT-UNIFORM-CHART-32",
+    "irreducible": true,
+    "lumpability_failures": 0,
+    "lumping_blocks": 208,
+    "lumping_group_order": 4,
+    "lumping_group_transitive_on_every_block": true,
+    "measure_is_invariant_chart_128": true,
+    "measure_is_invariant_chart_32": true,
+    "measure_name": "ORBIT-UNIFORM-CHART-32",
+    "published_vectors": 1,
+    "quotient_rank": 207,
+    "quotient_size": 208,
+    "routes": [
+     "ROUTE-LUMP"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 0,
+    "transient_classes": 0,
+    "unique_stationary": true,
+    "value_profile": [
+     [
+      "1/208",
+      64
+     ],
+     [
+      "1/832",
+      576
+     ]
+    ],
+    "vectors_verified_at_full_size": 1,
+    "verdict": "DERIVES",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      640,
+      1
+     ]
+    ],
+    "closed_classes": 1,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 1,
+    "covariance_failures": 0,
+    "covariance_generators": 4,
+    "covariance_group": "THE-RESIDUAL-GAUGE-GROUP-CHART-32",
+    "covariant": true,
+    "declaration": "one step proposes a uniformly drawn configuration and accepts it with probability min(1, pi(y)/pi(x)) at the declared invariant target ORBIT-UNIFORM-CHART-128",
+    "distinct_values": 4,
+    "extreme_points": 1,
+    "family": "(f) THE COVARIANT METROPOLIS FAMILY",
+    "fibre": "THE-INVARIANT-SIMPLEX-ITSELF",
+    "fibre_axis": "WHICH-INVARIANT-TARGET",
+    "gauge_covariance_failures": 0,
+    "gauge_covariant": true,
+    "instance": "METROPOLIS-AT-ORBIT-UNIFORM-CHART-128",
+    "irreducible": true,
+    "lumpability_failures": 0,
+    "lumping_blocks": 208,
+    "lumping_group_order": 4,
+    "lumping_group_transitive_on_every_block": true,
+    "measure_is_invariant_chart_128": true,
+    "measure_is_invariant_chart_32": true,
+    "measure_name": "ORBIT-UNIFORM-CHART-128",
+    "published_vectors": 1,
+    "quotient_rank": 207,
+    "quotient_size": 208,
+    "routes": [
+     "ROUTE-LUMP"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 0,
+    "transient_classes": 0,
+    "unique_stationary": true,
+    "value_profile": [
+     [
+      "1/120",
+      8
+     ],
+     [
+      "1/240",
+      56
+     ],
+     [
+      "1/480",
+      96
+     ],
+     [
+      "1/960",
+      480
+     ]
+    ],
+    "vectors_verified_at_full_size": 1,
+    "verdict": "DERIVES",
+    "verified_at_full_size": true
+   },
+   {
+    "aperiodic_by_self_loop": true,
+    "carrier": "THE-UNIFORM-SLICE",
+    "carrier_size": 640,
+    "class_size_profile": [
+     [
+      640,
+      1
+     ]
+    ],
+    "closed_classes": 1,
+    "closed_classes_with_a_non_unique_kernel": 0,
+    "communicating_classes": 1,
+    "covariance_failures": 0,
+    "covariance_generators": 2,
+    "covariance_group": "THE-DECLARED-BLOCK-CYCLE-NOT-THE-GAUGE-GROUP",
+    "covariant": true,
+    "declaration": "the same construction at a declared target measured NOT to be constant on the parent's orbits -- the control that shows what covariance is doing and what it is not",
+    "distinct_values": 4,
+    "extreme_points": 1,
+    "family": "(f) THE COVARIANT METROPOLIS FAMILY",
+    "fibre": "THE-WHOLE-SIMPLEX",
+    "fibre_axis": "WHICH-TARGET-THE-CONTROL",
+    "gauge_covariance_failures": 1488,
+    "gauge_covariant": false,
+    "instance": "METROPOLIS-AT-A-NON-INVARIANT-TARGET",
+    "irreducible": true,
+    "lumpability_failures": 0,
+    "lumping_blocks": 4,
+    "lumping_group_order": 160,
+    "lumping_group_transitive_on_every_block": true,
+    "measure_is_invariant_chart_128": false,
+    "measure_is_invariant_chart_32": false,
+    "measure_name": "NEW",
+    "published_vectors": 1,
+    "quotient_rank": 3,
+    "quotient_size": 4,
+    "routes": [
+     "ROUTE-LUMP"
+    ],
+    "row_stochastic": true,
+    "simplex_dimension": 0,
+    "transient_classes": 0,
+    "unique_stationary": true,
+    "value_profile": [
+     [
+      "1/1600",
+      160
+     ],
+     [
+      "1/400",
+      160
+     ],
+     [
+      "1/800",
+      160
+     ],
+     [
+      "3/1600",
+      160
+     ]
+    ],
+    "vectors_verified_at_full_size": 1,
+    "verdict": "DERIVES",
+    "verified_at_full_size": true
+   }
+  ],
+  "instances_run": 18,
+  "irreducible": 12,
+  "law_native_instances": 6,
+  "law_native_measure_name": "NEW",
+  "named_measures_reached": [
+   "COUNTING",
+   "ORBIT-UNIFORM-CHART-128",
+   "ORBIT-UNIFORM-CHART-32"
+  ],
+  "new_measures": 7,
+  "reducible": 6,
+  "transient_classes_total": 0
+ },
+ "chart_action": {
+  "CHART-128": {
+   "acts_on_the_carrier": false,
+   "all_reversal": 32,
+   "enlarged_carrier": 1248,
+   "mixed_reversal": 64,
+   "no_reversal": 32,
+   "order": 128
+  },
+  "CHART-32": {
+   "acts_on_the_carrier": true,
+   "all_reversal": 0,
+   "mixed_reversal": 0,
+   "no_reversal": 32,
+   "order": 32
+  }
+ },
+ "closing_gates": [
+  "G-SEAL-INTEGRITY",
+  "G-ARTIFACT-INTEGRITY"
+ ],
+ "code_sha256_12": "394cbfca621c",
+ "composition": {
+  "inverse_closed": 640,
+  "monomial_closure_failures": 0,
+  "monomial_coins": 128,
+  "monomial_exits_from_the_family": 0,
+  "products_inside": 278528,
+  "products_total": 409600
+ },
+ "declared_unsealed": {
+  "closing_gates": "the two gates that close after the snapshot",
+  "code_sha256_12": "this instrument's own digest, which cannot seal itself",
+  "declared_unsealed": "this declaration",
+  "exit_conventions": "the disclosed exit conventions, a constant",
+  "gate_digests": "the CHAINED per-row digests of that ledger",
+  "gates": "the gate ledger, snapshotted before the two closing gates -- a seal cannot be inside the object it seals",
+  "paper_sha256_12": "the paper's digest, taken at the paper gates",
+  "pin_sha256_prefix": "the pin digest, verified at G-SOURCE-BYTES",
+  "python": "the interpreter's major.minor, environmental",
+  "schema": "the receipt schema tag, a constant of this source",
+  "seal_manifest": "the manifest itself",
+  "totals": "the closing tallies, derived from sealed objects",
+  "transcript_head": "the transcript digest, taken at the disk boundary",
+  "unit": "the unit's own name, a constant of this source"
+ },
+ "dimension_theorem": {
+  "carrier_states": 3,
+  "chains_enumerated": 343,
+  "mismatches": 0,
+  "row_alphabet": 7
+ },
+ "exit_conventions": "the delivery run exits 0 on success and 1 on any refusal writing nothing; --selftest exits 0 when every anchor class is fatal; --mutant exits 0 when the named mutant dies on its declared target; an unknown flag exits 2",
+ "falsifier_totals": {
+  "declared_falsifiers": 42,
+  "distinct_target_gates": 41,
+  "functions_declared": 110,
+  "switches_in_the_syntax_tree": 42
+ },
+ "fibre": {
+  "price_of_a_covariant_declaration_chart_128": 119,
+  "price_of_a_covariant_declaration_chart_32": 207,
+  "rows": [
+   {
+    "choice": "THE-LATTICE-AND-ITS-SIZE",
+    "fibre": 1,
+    "instances_built": 1,
+    "status": "FORCED",
+    "why": "inherited from R5 at an anchored receipt path"
+   },
+   {
+    "choice": "THE-COIN-FAMILY",
+    "fibre": 1,
+    "instances_built": 1,
+    "status": "FORCED",
+    "why": "enumerated exhaustively from the declared alphabet"
+   },
+   {
+    "choice": "THE-CARRIER",
+    "fibre": 2,
+    "instances_built": 2,
+    "status": "DECLARED-AND-DISCLOSED",
+    "why": "the parent's primary carrier is used; the extension reading forces its own enlargement, which is built"
+   },
+   {
+    "choice": "THE-ELIMINATION-CAP",
+    "fibre": 1,
+    "instances_built": 1,
+    "status": "FORCED-BY-COST",
+    "why": "set to the parent's own orbit count, which is the size of every quotient this unit solves"
+   },
+   {
+    "choice": "WHICH-CHART-GROUP",
+    "distinct_outcomes": 2,
+    "fibre": 2,
+    "instances_built": 2,
+    "status": "DECLARED-AND-SWEPT",
+    "verdict_determining": true,
+    "why": "every declared instance of this axis is RUN and its outcome published"
+   },
+   {
+    "choice": "WHICH-INVARIANT-TARGET",
+    "distinct_outcomes": 3,
+    "fibre": "THE-INVARIANT-SIMPLEX-ITSELF",
+    "instances_built": 3,
+    "status": "DECLARED-AND-SWEPT",
+    "verdict_determining": true,
+    "why": "every declared instance of this axis is RUN and its outcome published"
+   },
+   {
+    "choice": "WHICH-RESIDUAL-READING",
+    "distinct_outcomes": 2,
+    "fibre": 2,
+    "instances_built": 2,
+    "status": "DECLARED-AND-SWEPT",
+    "verdict_determining": true,
+    "why": "every declared instance of this axis is RUN and its outcome published"
+   },
+   {
+    "choice": "WHICH-SECTOR-CARRIES-WHICH-POSITION",
+    "distinct_outcomes": 6,
+    "fibre": 6,
+    "instances_built": 6,
+    "status": "DECLARED-AND-SWEPT",
+    "verdict_determining": true,
+    "why": "every declared instance of this axis is RUN and its outcome published"
+   },
+   {
+    "choice": "WHICH-SIDE-COMPOSES",
+    "distinct_outcomes": 1,
+    "fibre": 2,
+    "instances_built": 2,
+    "status": "DECLARED-AND-SWEPT",
+    "verdict_determining": false,
+    "why": "every declared instance of this axis is RUN and its outcome published"
+   },
+   {
+    "choice": "WHICH-SIDE-MULTIPLIES",
+    "distinct_outcomes": 2,
+    "fibre": 2,
+    "instances_built": 2,
+    "status": "DECLARED-AND-SWEPT",
+    "verdict_determining": true,
+    "why": "every declared instance of this axis is RUN and its outcome published"
+   },
+   {
+    "choice": "WHICH-TARGET-THE-CONTROL",
+    "distinct_outcomes": 1,
+    "fibre": "THE-WHOLE-SIMPLEX",
+    "instances_built": 1,
+    "status": "DECLARED-AND-SWEPT",
+    "verdict_determining": false,
+    "why": "every declared instance of this axis is RUN and its outcome published"
+   }
+  ],
+  "what_a_declaration_must_supply": "ONE-POINT-OF-THE-INVARIANT-SIMPLEX-OVER-THE-CARRIERS-ORBITS-EXACTLY-AS-BEFORE"
+ },
+ "gate_digests": [
+  "bccc9a951ebe",
+  "fce45da8a1a1",
+  "14d418881084",
+  "328a63fba5a5",
+  "a367d374ad14",
+  "313589b566b6",
+  "825499de44dc",
+  "4804478fb660",
+  "cb0a1fc055ee",
+  "61962907338e",
+  "f482f0d31146",
+  "dd310f678942",
+  "b30b99f94b25",
+  "9ee2529b735e",
+  "c3e047602a5a",
+  "41d0a2f887ab",
+  "2739caf5c85c",
+  "86e212eb5a2b",
+  "a8912955bc63",
+  "a5871254ac55",
+  "780595574055",
+  "65637d090508",
+  "532a520e2826",
+  "bc405ca699be",
+  "e2271a7fef3f",
+  "87a71f62b646",
+  "966da4c3475f",
+  "3a195c5277dc",
+  "343fde73f513",
+  "02f9d34ec13f",
+  "460cdbc44f31",
+  "fc1928962ee1",
+  "067b6708240c",
+  "c09948842bf2",
+  "5d663a7a71d6",
+  "be6652889e7d",
+  "66f6982da5a0",
+  "493911625289",
+  "20dae2defef7",
+  "6d9b02e47698",
+  "eb1010caff8f",
+  "8be4c7da1cf2",
+  "fc4ec75a534f",
+  "b370ca9fbb77",
+  "02c660e5400b",
+  "9ff6f850a7a8",
+  "2047d97c301f",
+  "b235eeda2d21",
+  "137d17ea2d82",
+  "a803dfef1d87",
+  "1952942c9807",
+  "7f122d60fcad",
+  "fb3208b66f38",
+  "722979ee2995",
+  "e22b4a2b396e",
+  "4e31ed526b8c",
+  "92cd9d8fa674"
+ ],
+ "gates": [
+  {
+   "claim": "every pinned source is read at its declared relative path and its sha256-12 measured against the value frozen in this instrument, so a parent edited after this unit was built stops this run; the repository is read at NO moving reference at all -- no ledger, no STATUS, no worktree scan, no version-control call -- so this run is correct off-tree and in a directory with no version control (#91, #46)",
+   "detail": "9 of 9 source digests match; failing []",
+   "gate": "G-SOURCE-BYTES",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the instrument's own syntax tree carries NO float literal, no banned import and no banned call, so 'exact arithmetic only' is a property of this source and not a promise about it: every probability is a Fraction, every field element an integer 5-tuple, and every stationary vector the exact kernel of an exact matrix",
+   "detail": "0 float literals, banned imports [], banned calls []",
+   "gate": "G-EXACT-ARITHMETIC-BY-AST",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every inherited quantity is a (path, value) pair: the path must resolve in the pinned receipt AND the value there must be the one this instrument declares, and each is bound to the gate that consumes it, so a parent that moved a number under a surviving key stops this run",
+   "detail": "30 of 30 path-value anchors resolve; failing []",
+   "gate": "G-PATH-VALUE-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every quotation this paper makes of a parent is located EXACTLY ONCE in that parent's pinned bytes under whitespace and markdown-prefix normalisation (#125), is pinned by its own digest and its own character count against a declared floor, stops being locatable when a content-bearing token is perturbed, and is bound to the gate that consumes it -- so the anchor binds QUOTE FIDELITY and not mere existence (#62)",
+   "detail": "12 of 12 verbatim windows located exactly once and falsified under perturbation; failing []",
+   "gate": "G-VERBATIM-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the arena is REBUILT from the parents' declared definitions and not imported: the alphabet is enumerated from its declared shape, the coin family exhaustively from the admissible rows, the link and plaquette sets derived from the lattice -- and every cardinality is measured against the parent's receipt at a named path, with unitarity confirmed by a second route on every coin",
+   "detail": "alphabet 25, coins 640 ([('ANTIDIAGONAL', 64), ('BALANCED', 512), ('DIAGONAL', 64)]), unitary-by-second-route 640, sites 16, links 32, plaquettes 16",
+   "gate": "G-ARENA-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the carrier of this unit is the parent's own primary carrier -- the uniform configurations, one coin repeated on every link, which paper-23 measured to be exactly the chart-fixed locus of the anchored chart -- so this unit's dynamics act where the parent's simplex lives and the two are comparable object for object.  The full configuration space is not a carrier here and is named as scope",
+   "detail": "carrier 640 states; parent's uniform slice 640; parent's chart-fixed locus 640",
+   "gate": "G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "whether a declared group ACTS on the declared carrier is a measurement and it is taken first, element by element: an element carries a uniform configuration to a uniform one exactly when its reversal flag is constant over the link set.  At the anchored reading every element has no reversal at all, so the chart group acts -- trivially.  At the extension reading the flag is mixed on some elements, so the extension does NOT act on this carrier and a walk cannot be declared there without enlarging it",
+   "detail": "CHART-32 {'order': 32, 'no_reversal': 32, 'all_reversal': 0, 'mixed_reversal': 0, 'acts_on_the_carrier': True}; CHART-128 {'order': 128, 'no_reversal': 32, 'all_reversal': 32, 'mixed_reversal': 64, 'acts_on_the_carrier': False}",
+   "gate": "G-CHART-ACTION-MEASURED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the smallest carrier on which the extension DOES act is computed as an orbit closure of the parent's carrier rather than declared: every image of a uniform configuration is constant on each direction class, so the closure is a set of two-coin configurations, and it is closed by construction because the closure is taken to a fixed point",
+   "detail": "the extension's closure of the 640-state carrier is 1248 states",
+   "gate": "G-CHART-128-ENLARGEMENT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the residual gauge group on the carrier is measured by PROPAGATION -- which constant link twists a site-diagonal gauge can realise on the torus -- and its orbits are enumerated; both counts land on paper-23's own orbit counts at a named receipt path, so the two units are weighing the same partition",
+   "detail": "realisable twists [0, 2, 4, 6]; residual group orders 4 and 8; orbits 208 and 120 against the parent's 208 and 120",
+   "gate": "G-GAUGE-GROUP-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the family's multiplication table is built entry by entry in exact arithmetic and three separate facts are measured on it: how many products stay inside the family (the parent's number, at a named path), that the family IS closed under inverse -- which is the identity that makes the composition walk doubly stochastic and is measured rather than assumed -- and that the monomial coins are closed under multiplication and never carry a product out of the family",
+   "detail": "products inside 278528 of 409600; inverse-closed 640 of 640; monomial coins 128, closure failures 0, exits 0",
+   "gate": "G-COMPOSITION-WALK-BUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the three sets this unit re-weighs are REPRODUCED from their definitions -- the non-flat configurations, the non-commuting ones and the coins carrying a composition defect -- and each is measured against BOTH parents' receipts at named paths, because a unit that proposes to move a number must first be able to build the set that number weighs",
+   "detail": "non-flat 632, non-commuting 576, defect-carrying 384",
+   "gate": "G-PARENT-SETS-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the rates of candidate (c) are NOT invented here: they are the Gamma-iteration terminal's own step-normalised positional law, read at named receipt paths at both legs, measured to be a probability vector, measured to agree leg to leg, and measured to be non-degenerate -- three distinct positive values.  That unit proved the normaliser law-native, so what enters here is a law value and not a carrier statistic",
+   "detail": "law values ['15/38', '5/19', '13/38'] summing to 1; leg 2 first value 15/38; distinct values 3",
+   "gate": "G-LAW-NATIVE-RATE-SOURCE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 640 closed classes, 640 vectors, 640 verified at full size",
+   "gate": "G-INSTANCE-CHART-32",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 336 closed classes, 336 vectors, 336 verified at full size",
+   "gate": "G-INSTANCE-CHART-128",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 208 closed classes, 208 vectors, 208 verified at full size",
+   "gate": "G-INSTANCE-GAUGE-CHART-32",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 8 generators; lumping transitive True; 120 closed classes, 120 vectors, 120 verified at full size",
+   "gate": "G-INSTANCE-GAUGE-CHART-128",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 1 closed classes, 1 vectors, 1 verified at full size",
+   "gate": "G-INSTANCE-LAW-NATIVE-012",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 1 closed classes, 1 vectors, 1 verified at full size",
+   "gate": "G-INSTANCE-LAW-NATIVE-021",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 1 closed classes, 1 vectors, 1 verified at full size",
+   "gate": "G-INSTANCE-LAW-NATIVE-102",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 1 closed classes, 1 vectors, 1 verified at full size",
+   "gate": "G-INSTANCE-LAW-NATIVE-120",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 1 closed classes, 1 vectors, 1 verified at full size",
+   "gate": "G-INSTANCE-LAW-NATIVE-201",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 1 closed classes, 1 vectors, 1 verified at full size",
+   "gate": "G-INSTANCE-LAW-NATIVE-210",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 1 closed classes, 1 vectors, 1 verified at full size",
+   "gate": "G-INSTANCE-COMPOSITION-LEFT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 1 closed classes, 1 vectors, 1 verified at full size",
+   "gate": "G-INSTANCE-COMPOSITION-RIGHT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 5 closed classes, 5 vectors, 5 verified at full size",
+   "gate": "G-INSTANCE-MONOMIAL-LEFT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 5 closed classes, 5 vectors, 5 verified at full size",
+   "gate": "G-INSTANCE-MONOMIAL-RIGHT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 1 closed classes, 1 vectors, 1 verified at full size",
+   "gate": "G-INSTANCE-METROPOLIS-AT-COUNTING",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 1 closed classes, 1 vectors, 1 verified at full size",
+   "gate": "G-INSTANCE-METROPOLIS-AT-ORBIT-UNIFORM-CHART-32",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 4 generators; lumping transitive True; 1 closed classes, 1 vectors, 1 verified at full size",
+   "gate": "G-INSTANCE-METROPOLIS-AT-ORBIT-UNIFORM-CHART-128",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "this declared instance is gated on its OWN objects and never on an aggregate (#87): its transition law is row-stochastic row by row; its declared covariance group is verified generator by generator and row by row; where the exact solve goes through a quotient, that quotient's lumpability is measured block by block and its blocks are the orbits of a group measured transitive on each of them; every closed class it publishes has a one-dimensional stationary kernel computed by exact elimination; and every vector it publishes satisfies pi P = pi at FULL size",
+   "detail": "row-stochastic True; covariance failures 0 over 2 generators; lumping transitive True; 1 closed classes, 1 vectors, 1 verified at full size",
+   "gate": "G-INSTANCE-METROPOLIS-AT-A-NON-INVARIANT-TARGET",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the census is DECLARED and every member of it is RUN.  Each instance carries its own carrier, its own transition law written out in this instrument, its own fibre axis and its own declared covariance group -- and each is gated on its own objects: row-stochasticity per row, covariance per generator and per row, communicating classes from its own support, and the identity pi P = pi verified at full size for every vector it publishes.  None of the six families is privileged",
+   "detail": "6 families, 18 instances, all run; 18 row-stochastic, 18 verified at full size",
+   "gate": "G-DECLARED-DYNAMICS-CENSUS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "paper-23's law is applied as the criterion and not as a slogan: a chain fixes a measure exactly when its stationary simplex is a point, which happens exactly when it has one closed communicating class.  Irreducibility is the parent's stated form of that condition and it is measured separately, because it is SUFFICIENT and not necessary -- the sharp condition is the closed-class count, and a chain with one closed class and a transient class derives without being irreducible",
+   "detail": "12 instances derive, 12 are irreducible, 6 reducible; transient classes across the census: 0",
+   "gate": "G-IRREDUCIBILITY-IS-THE-CRITERION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the gap between the inherited law and the sharp one is EXHIBITED rather than asserted: a declared three-state chain with one transient state has more than one communicating class -- so it is not irreducible -- yet exactly one closed class and a stationary simplex of dimension zero, computed by the same exact elimination every instance uses.  It derives.  The parent's form is therefore sufficient and not necessary, and this unit says so rather than inheriting the stronger reading",
+   "detail": "communicating classes 2, closed classes 1, kernel dimension 1",
+   "gate": "G-THE-INHERITED-LAW-IS-SUFFICIENT-NOT-NECESSARY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the identity the reducible verdicts are read through -- the stationary simplex's dimension is one less than the number of closed communicating classes -- is VERIFIED EXHAUSTIVELY on a declared family of small chains, every one of them solved by the same exact elimination this unit uses at scale, so the bridge from a class count to a simplex dimension is measured and not quoted",
+   "detail": "343 chains enumerated exhaustively, 0 mismatches between the kernel dimension and the closed-class count",
+   "gate": "G-SIMPLEX-DIMENSION-THEOREM",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the gauge walk's closed communicating classes are compared with paper-23's orbits AS SETS, class by class and not by cardinality (#87): the two partitions are identical at both readings, so the dynamics layer's decomposition and the static layer's orbit census are the same object arrived at twice",
+   "detail": "chart-32: 208 classes against 208 parent orbits, identical True; chart-128: 120 against 120, identical True",
+   "gate": "G-GAUGE-WALK-CLASSES-ARE-THE-PARENTS-ORBITS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the gauge walk's stationary simplex IS paper-23's invariant simplex: an invariant measure is exactly an orbit-constant one, a group walk's stationary measures are exactly the invariant ones, and the dimensions this run computes by exact elimination land on the parent's published dimensions at named receipt paths.  The dynamics did not shrink the parent's simplex by one number",
+   "detail": "chart-32 simplex dimension 207 against the parent's 207; chart-128 119 against 119",
+   "gate": "G-GAUGE-WALK-SIMPLEX-IS-THE-PARENTS-SIMPLEX",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the monomial walk's decomposition is compared with paper-23's one canonical measure AS A SET: one of its closed classes is exactly the 128 monomial coins, so the corpus's single handed-over measure appears here as one extreme point of one declared dynamics' stationary simplex -- and the other extreme points are the classes the parent's Haar does not reach",
+   "detail": "5 closed classes of sizes [(128, 5)]; one is exactly the 128 monomial coins: True",
+   "gate": "G-MONOMIAL-WALK-CARRIES-THE-PARENTS-HAAR",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every set re-weighed below is checked to be a UNION OF ORBITS at both readings, orbit by orbit and never by a cardinality (#87), so its mass is well defined under every invariant measure compared -- without which the comparison would be between measures answering different questions",
+   "detail": "4 sets, all orbit-closed at both readings: ['DEFECT-CARRYING', 'DIAGONAL', 'NON-COMMUTING', 'NON-FLAT']",
+   "gate": "G-SETS-ARE-UNIONS-OF-ORBITS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the pin's fourth stage, answered on the objects: the stationary measure MOVES across the declared-dynamics fibre, and the movement is priced on the parent's own headline sets rather than on sets chosen to make it large.  Two of the columns reproduce paper-23's published masses exactly at named receipt paths, which is what makes the new columns comparable; and the widest spread is compared with the parent's own widest spread over INVARIANT measures, so the reader can see whether declaring a dynamics costs more or less than declaring a measure did",
+   "detail": "widest spread 153/380 over the 11 GAUGE-COVARIANT deriving instances on ['DEFECT-CARRYING'], against the parent's 27/130 over invariant measures (wider: True); over all 12 deriving instances, the declared non-covariant control included, it is 1701/3800; 4 sets weighed",
+   "gate": "G-RELATIVITY-CENSUS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the pin's strongest honest outcome -- all candidates agree, so the measure is quasi-derived -- is DECIDED by comparing the deriving instances' vectors entry by entry, not inferred from the spread table: it is reachable, it is the outcome this instrument would emit if the vectors coincided, and it is measured to fail",
+   "detail": "12 deriving instances carry 10 distinct stationary vectors",
+   "gate": "G-QUASI-DERIVATION-ARM-IS-DECIDED-NOT-ASSUMED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the surjection is exhibited on three levels and the control arm shows what covariance is doing: every declared INVARIANT target is the unique stationary measure of a COVARIANT irreducible chain built by one declared construction, so the covariant-dynamics fibre reaches every point of the parent's invariant simplex it was handed; the same construction at a target measured NOT to be orbit-constant lands outside that simplex, so it is covariance and not dynamics that confines the answer to the parent's object; and on a declared small carrier the surjection is verified EXHAUSTIVELY at a declared denominator, every target reached exactly",
+   "detail": "3 invariant targets reached exactly; the non-invariant control lands on its own target (True), is gauge-covariant: False, and is orbit-constant: False; exhaustive arm 55 targets, 0 failures",
+   "gate": "G-PRICE-IS-CONSERVED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the loop observable is REBUILT from R5's own definition, quoted at a verbatim anchor: the ordered product around the plaquette boundary with each factor inverted where the boundary runs against the link's own direction, whose whole holonomy lives in a four-by-four block.  The declared observable is that block's trace; the full carrier trace is measured to be the same quantity plus the untouched identity, so the normalisation fibre is 2 and both members are published.  The value is independent of WHICH plaquette on this carrier -- checked at every plaquette and every configuration -- and lies in the real subfield Q(sqrt2) at every one of them",
+   "detail": "0 plaquette-dependent cells of 10240; 640 of 640 block traces in Q(sqrt2); the full trace equals the block trace plus the untouched identity: True",
+   "gate": "G-WILSON-OBSERVABLE-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the observable is constant on every orbit of the residual gauge group -- checked orbit by orbit -- which is what makes its expectation under an invariant measure a function of the measure's orbit weights alone, and what makes the range computed below exactly the convex hull of the orbit values",
+   "detail": "constant on all 208 orbits: True",
+   "gate": "G-WILSON-OBSERVABLE-IS-GAUGE-INVARIANT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the pin licenses an expectation ONLY under a measure that derives at the RSQ standard GIVEN the declared dynamics, and the licence is enforced per row and not per table (#87): every published expectation names the dynamics it is conditional on, that dynamics' verdict is looked up in the census this run computed, and every row carries the stamp CONDITIONAL-ON-THE-DECLARED-DYNAMICS.  An expectation under a reducible dynamics, or an unstamped one, dies here",
+   "detail": "12 expectation rows, 0 under a non-deriving dynamics [], 0 unstamped []; 0 expectation-valued keys at any depth of the payload, 0 outside the registered key []",
+   "gate": "G-WILSON-LICENCE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every construction choice is inventoried with its fibre and its instances, and every DECLARED axis is swept to the bottom -- the number of instances built equals the fibre, so no member of a declared fibre is left unrun and the census cannot be a sample of its own declaration.  The verdict-determining flag binds each row by its own measured predicate: re-running the axis at another instance moves a published vector",
+   "detail": "11 inventory rows; 7 declared axes all swept to the bottom: True",
+   "gate": "G-FIBRE-INVENTORY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the head is derived TWICE, by two laws: the builder computes it from the live census, and an independent reconstruction written from the same pre-registered outcomes with a different branch structure and no shared format string returns the same string -- so a head typed rather than computed, or computed by a law that had drifted from its own measurements, dies here",
+   "detail": "builder 'SMU-DYNAMICS-RELATIVE-SPREAD-153/380-OVER-12-DERIVING-INSTANCES'; second law 'SMU-DYNAMICS-RELATIVE-SPREAD-153/380-OVER-12-DERIVING-INSTANCES'",
+   "gate": "G-HEAD-DERIVED-TWICE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every pre-registered outcome is REACHABLE on this instrument's own head law, and the reachability is RUN in the delivery run rather than advertised: the law is handed synthetic census tables that would have produced each other outcome and must return it, so a head law that had collapsed to a constant dies here (#34)",
+   "detail": "SMU-QUASI-DERIVED -> SMU-QUASI-DERIVED-ALL-1-DERIVING-INSTANCES-AGREE; SMU-REDUCIBLE -> SMU-REDUCIBLE-18-INSTANCES-0-DERIVE; SMU-BLOCKED-AT -> SMU-BLOCKED-AT-AN-OBJECT; SMU-DYNAMICS-RELATIVE -> SMU-DYNAMICS-RELATIVE-SPREAD-1/2-OVER-12-DERIVING-INSTANCES",
+   "gate": "G-HEAD-LAW-REACHABILITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the mutant registry is checked TOTAL against this instrument's own syntax tree: every switch the source contains is declared and every declared falsifier has a branch to fire, and a switch the scan cannot read -- mut() on a computed name, or a bare MUT comparison outside mut's own body -- is fatal rather than forgiven, so a falsifier cannot exist as an unswept branch",
+   "detail": "42 switches in the tree, 42 declared; undeclared [], missing [], unreadable []",
+   "gate": "G-MUTANT-REGISTRY-IS-TOTAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "E-23: a falsifier's published description is part of the sealed surface, so each one names the exact token it plants and that token is located in the source text of that mutant's own branch -- a description-inverted mutant is a false waiver wearing a green badge, and it dies here rather than in a reader's trust",
+   "detail": "42 declared falsifiers, 0 whose planted token is not found in their own branch: []",
+   "gate": "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the set of functions this source defines must equal the declared inventory exactly, so a function added to this instrument under any name -- neutral or not -- dies here, and a declared name deleted dies here too",
+   "detail": "110 functions defined, 110 declared; undeclared [], missing []",
+   "gate": "G-FUNCTION-INVENTORY-IS-TOTAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the falsifier ledger is published at an honest denominator (#34): every gate this run closed is either the declared target of a mutant, or a per-instance gate covered by a REGISTERED FORCING, or named with the reason no falsifier reaches it -- and the forcing is machine-checked rather than asserted, because the per-instance gate's predicate is verified to mention no instance by name, so the two mutants that fire it at two DIFFERENT instances fire the identical predicate every instance is judged by",
+   "detail": "50 gates closed; 34 are declared mutant targets, 16 are per-instance gates under the forcing, 2 are named unreachable, 0 uncovered []; the per-instance predicate names 0 instances; 2 distinct per-instance gates carry a mutant",
+   "gate": "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the complete verdict string is compared for equality against an INDEPENDENT reconstruction that reads only the serialized receipt, derives the head by a second head law, and re-renders every segment from the primitive measured tables -- reading neither the builder's segments nor the builder's counts and sharing no format string and no helper with it, so 'the same concatenation written twice' cannot pass",
+   "detail": "builder 3490 characters, reconstruction 3490, equal: True",
+   "gate": "G-VERDICT-RECONSTRUCTION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every load-bearing sentence of the paper is RENDERED FROM THE RECEIPT and located in the delivered bytes at its exact occurrence count, under whitespace and markdown-prefix normalisation (#125) -- so a number corrupted at one of its several occurrences dies, and a paper whose prose drifted from the run that produced it cannot be delivered",
+   "detail": "33 rendered claims, 0 not located at their counts: []",
+   "gate": "G-PAPER-CLAIMS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the paper's verdict block is compared for EQUALITY against the string this run emits, under whitespace normalisation, and the paper's fenced blocks are gated by MULTISET EQUALITY against the single block this run licenses (E-22) -- so neither a stale verdict nor a forged twin riding along beside the clean one can be delivered",
+   "detail": "1 fenced blocks; 1 equal to this run's verdict of 3490 characters",
+   "gate": "G-PAPER-VERDICT-EQUALITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the pin's must-not vocabulary -- inherited VERBATIM from paper-23's repaired gate, the bare words included -- is swept over this paper's own text with the declaring sentences removed first and inline emphasis stripped, so a claim under asterisks is still the same claim and a paragraph that made an area-law, string-tension or potential claim would die on the delivery run",
+   "detail": "must-not vocabulary found: []",
+   "gate": "G-MUST-NOT-VOCABULARY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the direction-bearing claims are checked for POLARITY as well as presence -- each must occur and must not sit inside a window carrying a declared negator -- which closes the direction-blindness of a fragment gate",
+   "detail": "4 polarity rows, 0 failing",
+   "gate": "G-PAPER-POLARITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "EVERY numeral of the paper is matched against a value this run computed -- fenced blocks, verdict block, inline code spans and both sides of every fraction included (E-22, #20) -- with only a published list of structural literals forgiven, so a number invented in prose, or moved from one claim to another, dies inside the delivery run",
+   "detail": "350 numerals scanned, 25 inline code spans carrying a numeral, 2 fence markers, 0 unmatched: []",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "kind": "MEASURED",
+   "passed": true
+  }
+ ],
+ "gauge": {
+  "orbit_size_profile_chart_128": [
+   [
+    1,
+    8
+   ],
+   [
+    2,
+    28
+   ],
+   [
+    4,
+    24
+   ],
+   [
+    8,
+    60
+   ]
+  ],
+  "orbit_size_profile_chart_32": [
+   [
+    1,
+    64
+   ],
+   [
+    4,
+    144
+   ]
+  ],
+  "orbits_chart_128": 120,
+  "orbits_chart_32": 208,
+  "realisable_constant_twists": [
+   0,
+   2,
+   4,
+   6
+  ],
+  "residual_group_order_chart_128": 8,
+  "residual_group_order_chart_32": 4
+ },
+ "law_native_rates": {
+  "measure_label": "A-LAW-VALUE-NOT-A-FREQUENCY",
+  "source": "the Gamma-iteration terminal's step-normalised readout k1 = q/M",
+  "sum": "1",
+  "values": [
+   "15/38",
+   "5/19",
+   "13/38"
+  ]
+ },
+ "law_refinement": {
+  "inherited": "A-COVARIANT-CHAIN-DERIVES-IFF-IT-IS-IRREDUCIBLE",
+  "relation": "IRREDUCIBLE-IMPLIES-ONE-CLOSED-CLASS-AND-NOT-CONVERSELY",
+  "sharp": "A-COVARIANT-CHAIN-DERIVES-IFF-IT-HAS-EXACTLY-ONE-CLOSED-COMMUNICATING-CLASS",
+  "witness_closed_classes": 1,
+  "witness_communicating_classes": 2,
+  "witness_simplex_dimension": 0,
+  "witness_states": 3
+ },
+ "ledger_shape": {
+  "closing_gates": 2,
+  "gates_closed_before_the_paper_gates": 52,
+  "instance_gates": 18,
+  "objects_sealed_before_the_paper_gates": 23,
+  "paper_gates": 5
+ },
+ "mutants": [
+  {
+   "description": "replaces one pinned source's measured digest with zeros",
+   "name": "MUT-SOURCE-DRIFT",
+   "plants": "\"000000000000\"",
+   "target_gate": "G-SOURCE-BYTES"
+  },
+  {
+   "description": "empties the float-literal list and plants a banned import",
+   "name": "MUT-AST-BLIND",
+   "plants": "badimp = [\"planted\"]",
+   "target_gate": "G-EXACT-ARITHMETIC-BY-AST"
+  },
+  {
+   "description": "moves one inherited path-value to 999",
+   "name": "MUT-PATH-VALUE",
+   "plants": "got = 999",
+   "target_gate": "G-PATH-VALUE-ANCHORS"
+  },
+  {
+   "description": "fails one verbatim window's locate-and-perturb test",
+   "name": "MUT-VERBATIM",
+   "plants": "ok = False",
+   "target_gate": "G-VERBATIM-ANCHORS"
+  },
+  {
+   "description": "drops one coin from the rebuilt family",
+   "name": "MUT-ARENA",
+   "plants": "coins = coins[:-1]",
+   "target_gate": "G-ARENA-REBUILT"
+  },
+  {
+   "description": "declares the extension to act on the carrier when it does not",
+   "name": "MUT-CHART-ACTION",
+   "plants": "\"acts_on_the_carrier\"",
+   "target_gate": "G-CHART-ACTION-MEASURED"
+  },
+  {
+   "description": "drops one gauge orbit",
+   "name": "MUT-GAUGE-ORBITS",
+   "plants": "O4 = O4[:-1]",
+   "target_gate": "G-GAUGE-GROUP-REBUILT"
+  },
+  {
+   "description": "reports one fewer product staying inside the family",
+   "name": "MUT-COMPOSITION",
+   "plants": "stay = stay - 1",
+   "target_gate": "G-COMPOSITION-WALK-BUILT"
+  },
+  {
+   "description": "drops one member of the non-flat set",
+   "name": "MUT-PARENT-SETS",
+   "plants": "nonflat = set(sorted",
+   "target_gate": "G-PARENT-SETS-REBUILT"
+  },
+  {
+   "description": "replaces the law-native rates with a degenerate uniform triple",
+   "name": "MUT-LAW-RATES",
+   "plants": "Fraction(1, 3)",
+   "target_gate": "G-LAW-NATIVE-RATE-SOURCE"
+  },
+  {
+   "description": "halves one entry of one instance's transition law, breaking row stochasticity",
+   "name": "MUT-STOCHASTIC",
+   "plants": "P[0][k] / 2",
+   "target_gate": "G-INSTANCE-GAUGE-CHART-32"
+  },
+  {
+   "description": "inverts one instance's measured covariance verdict",
+   "name": "MUT-COVARIANCE",
+   "plants": "cf = 0 if cf",
+   "target_gate": "G-INSTANCE-LAW-NATIVE-012"
+  },
+  {
+   "description": "inverts one deriving instance's irreducibility verdict, so that the census's deriving count and its irreducible count disagree",
+   "name": "MUT-IRREDUCIBILITY",
+   "plants": "rec[\"irreducible\"] = not rec[\"irreducible\"]",
+   "target_gate": "G-IRREDUCIBILITY-IS-THE-CRITERION"
+  },
+  {
+   "description": "truncates the synthetic witness's class list so the gap is not exhibited",
+   "name": "MUT-GAP-WITNESS",
+   "plants": "comps = comps[:1]",
+   "target_gate": "G-THE-INHERITED-LAW-IS-SUFFICIENT-NOT-NECESSARY"
+  },
+  {
+   "description": "inverts the exhaustive theorem check's mismatch count",
+   "name": "MUT-DIMENSION-THEOREM",
+   "plants": "bad = 0 if bad else 1",
+   "target_gate": "G-SIMPLEX-DIMENSION-THEOREM"
+  },
+  {
+   "description": "denies the set-level identity between the gauge walk's classes and the parent's orbits",
+   "name": "MUT-WELD",
+   "plants": "same32 = False",
+   "target_gate": "G-GAUGE-WALK-CLASSES-ARE-THE-PARENTS-ORBITS"
+  },
+  {
+   "description": "denies that one closed class is the parent's Haar carrier",
+   "name": "MUT-MONOMIAL",
+   "plants": "carries = False",
+   "target_gate": "G-MONOMIAL-WALK-CARRIES-THE-PARENTS-HAAR"
+  },
+  {
+   "description": "declares one re-weighed set not to be a union of orbits",
+   "name": "MUT-ORBIT-CLOSURE",
+   "plants": "\"orbit_closed_chart_32\"",
+   "target_gate": "G-SETS-ARE-UNIONS-OF-ORBITS"
+  },
+  {
+   "description": "zeroes the widest measured spread",
+   "name": "MUT-SPREAD",
+   "plants": "widest = Fraction(0)",
+   "target_gate": "G-RELATIVITY-CENSUS"
+  },
+  {
+   "description": "declares the deriving instances to agree when they do not",
+   "name": "MUT-QUASI",
+   "plants": "agree = True",
+   "target_gate": "G-QUASI-DERIVATION-ARM-IS-DECIDED-NOT-ASSUMED"
+  },
+  {
+   "description": "inverts the exhaustive surjection arm's failure count",
+   "name": "MUT-SURJECTION",
+   "plants": "bad = 1 if bad == 0",
+   "target_gate": "G-PRICE-IS-CONSERVED"
+  },
+  {
+   "description": "plants a plaquette-dependent cell in the loop observable",
+   "name": "MUT-WILSON-OBSERVABLE",
+   "plants": "dep = 1",
+   "target_gate": "G-WILSON-OBSERVABLE-REBUILT"
+  },
+  {
+   "description": "publishes an expectation under a REDUCIBLE dynamics",
+   "name": "MUT-WILSON-UNLICENSED",
+   "plants": "\"derives_given_the_declared_dynamics\": False",
+   "target_gate": "G-WILSON-LICENCE"
+  },
+  {
+   "description": "strips the conditional stamp from one expectation row",
+   "name": "MUT-WILSON-UNSTAMPED",
+   "plants": "\"stamp\"] = \"PLAIN\"",
+   "target_gate": "G-WILSON-LICENCE"
+  },
+  {
+   "description": "inflates one declared axis's fibre above the instances built",
+   "name": "MUT-FIBRE",
+   "plants": "rows[-1][\"fibre\"] = ",
+   "target_gate": "G-FIBRE-INVENTORY"
+  },
+  {
+   "description": "types the head instead of computing it",
+   "name": "MUT-HEAD",
+   "plants": "\"SMU-DERIVED-EVERYTHING\"",
+   "target_gate": "G-HEAD-DERIVED-TWICE"
+  },
+  {
+   "description": "corrupts the builder's verdict string after it is built",
+   "name": "MUT-VERDICT-COMPARATOR",
+   "plants": "verdict.replace(",
+   "target_gate": "G-VERDICT-RECONSTRUCTION"
+  },
+  {
+   "description": "plants a rendered claim that the paper does not carry",
+   "name": "MUT-CLAIM",
+   "plants": "\"claim\": \"planted\"",
+   "target_gate": "G-PAPER-CLAIMS"
+  },
+  {
+   "description": "adds a forged twin of the verdict fence beside the clean one",
+   "name": "MUT-VERDICT-TWIN",
+   "plants": "\"XMU-\"",
+   "target_gate": "G-PAPER-VERDICT-EQUALITY"
+  },
+  {
+   "description": "plants a must-not vocabulary hit",
+   "name": "MUT-MUST-NOT",
+   "plants": "hits = [\"planted\"]",
+   "target_gate": "G-MUST-NOT-VOCABULARY"
+  },
+  {
+   "description": "fails one polarity row",
+   "name": "MUT-POLARITY",
+   "plants": "pol[0][\"ok\"] = False",
+   "target_gate": "G-PAPER-POLARITY"
+  },
+  {
+   "description": "plants an unmatched numeral",
+   "name": "MUT-COVERAGE",
+   "plants": "unmatched = [\"planted\"]",
+   "target_gate": "G-PAPER-NUMERAL-COVERAGE"
+  },
+  {
+   "description": "defines an undeclared function in this instrument's own source text",
+   "name": "MUT-GHOST-FUNCTION",
+   "plants": "def ghost_helper",
+   "target_gate": "G-FUNCTION-INVENTORY-IS-TOTAL"
+  },
+  {
+   "description": "hides a mutant switch behind a computed name the AST scan cannot read",
+   "name": "MUT-REGISTRY-EVASION",
+   "plants": "'MUT-' + 'GHOST'",
+   "target_gate": "G-MUTANT-REGISTRY-IS-TOTAL"
+  },
+  {
+   "description": "edits a sealed object after its gate closed",
+   "name": "MUT-SEAL",
+   "plants": "\"MOVED-AFTER-THE-GATE\"",
+   "target_gate": "G-SEAL-INTEGRITY"
+  },
+  {
+   "description": "denies that this unit's carrier is the parent's primary carrier",
+   "name": "MUT-CARRIER",
+   "plants": "carrier_ok = False",
+   "target_gate": "G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER"
+  },
+  {
+   "description": "truncates the extension's orbit closure back to the parent's carrier",
+   "name": "MUT-ENLARGEMENT",
+   "plants": "states = states[:len(coins)]",
+   "target_gate": "G-CHART-128-ENLARGEMENT"
+  },
+  {
+   "description": "inverts the comparison of the gauge walk's simplex dimensions with the parent's",
+   "name": "MUT-SIMPLEX-DIM",
+   "plants": "ok = not ok",
+   "target_gate": "G-GAUGE-WALK-SIMPLEX-IS-THE-PARENTS-SIMPLEX"
+  },
+  {
+   "description": "denies that the loop observable is constant on the gauge orbits",
+   "name": "MUT-WILSON-GAUGE-INVARIANCE",
+   "plants": "gauge_inv = False",
+   "target_gate": "G-WILSON-OBSERVABLE-IS-GAUGE-INVARIANT"
+  },
+  {
+   "description": "collapses the head law's synthetic probes to one outcome",
+   "name": "MUT-REACHABILITY",
+   "plants": "\"SMU-DYNAMICS-RELATIVE\") for w, _g in probes",
+   "target_gate": "G-HEAD-LAW-REACHABILITY"
+  },
+  {
+   "description": "drops one declared instance from the census after it ran, so fewer instances are published than were declared",
+   "name": "MUT-CENSUS-SHORT",
+   "plants": "published = published[:-1]",
+   "target_gate": "G-DECLARED-DYNAMICS-CENSUS"
+  },
+  {
+   "description": "replaces one falsifier's published planted-token with a token its branch does not contain",
+   "name": "MUT-FALSIFIER-DESCRIPTION",
+   "plants": "\"a token it never plants\"",
+   "target_gate": "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST"
+  }
+ ],
+ "paper_claims": [
+  {
+   "claim": "6 families and 18 declared instances",
+   "occurrences": 1
+  },
+  {
+   "claim": "12 of them derive and 6 are reducible",
+   "occurrences": 1
+  },
+  {
+   "claim": "64 of 128 extension elements carry a uniform configuration off the carrier",
+   "occurrences": 1
+  },
+  {
+   "claim": "closure is 1248 states",
+   "occurrences": 1
+  },
+  {
+   "claim": "640 closed classes",
+   "occurrences": 1
+  },
+  {
+   "claim": "208 and 120 closed classes",
+   "occurrences": 1
+  },
+  {
+   "claim": "dimension 207 at the anchored reading and 119 at the extension",
+   "occurrences": 1
+  },
+  {
+   "claim": "278528 of 409600 products stay inside the family",
+   "occurrences": 1
+  },
+  {
+   "claim": "closed under inverse at 640 of 640",
+   "occurrences": 1
+  },
+  {
+   "claim": "5 closed classes of 128",
+   "occurrences": 1
+  },
+  {
+   "claim": "widest spread over the 11 gauge-covariant deriving instances is 153/380",
+   "occurrences": 1
+  },
+  {
+   "claim": "over all 12 deriving instances it is 1701/3800",
+   "occurrences": 1
+  },
+  {
+   "claim": "the parent's widest spread over invariant measures was 27/130",
+   "occurrences": 1
+  },
+  {
+   "claim": "55 targets at a declared denominator, 0 failures",
+   "occurrences": 1
+  },
+  {
+   "claim": "207 independent numbers at the anchored reading and 119 at the extension",
+   "occurrences": 1
+  },
+  {
+   "claim": "range of the expectation over the invariant simplex is exactly [0, 4]",
+   "occurrences": 1
+  },
+  {
+   "claim": "0 loop families are grown",
+   "occurrences": 1
+  },
+  {
+   "claim": "52 gates close before the paper gates, 18 of them binding one declared instance each, and 5 paper gates and 2 closing gates follow",
+   "occurrences": 1
+  },
+  {
+   "claim": "23 objects are sealed before the paper gates",
+   "occurrences": 1
+  },
+  {
+   "claim": "11 construction choices are inventoried, of which 5 are measured verdict-determining",
+   "occurrences": 1
+  },
+  {
+   "claim": "34 are the declared targets of falsifiers, 16 are the per-instance gates under one registered forcing, and 0 are uncovered",
+   "occurrences": 1
+  },
+  {
+   "claim": "13/10 under COMPOSITION-LEFT",
+   "occurrences": 1
+  },
+  {
+   "claim": "13/10 under COMPOSITION-RIGHT",
+   "occurrences": 1
+  },
+  {
+   "claim": "225/152 under LAW-NATIVE-012",
+   "occurrences": 1
+  },
+  {
+   "claim": "111/76 under LAW-NATIVE-021",
+   "occurrences": 1
+  },
+  {
+   "claim": "205/152 under LAW-NATIVE-102",
+   "occurrences": 1
+  },
+  {
+   "claim": "207/152 under LAW-NATIVE-120",
+   "occurrences": 1
+  },
+  {
+   "claim": "107/76 under LAW-NATIVE-201",
+   "occurrences": 1
+  },
+  {
+   "claim": "219/152 under LAW-NATIVE-210",
+   "occurrences": 1
+  },
+  {
+   "claim": "263/200 under METROPOLIS-AT-A-NON-INVARIANT-TARGET",
+   "occurrences": 1
+  },
+  {
+   "claim": "13/10 under METROPOLIS-AT-COUNTING",
+   "occurrences": 1
+  },
+  {
+   "claim": "29/20 under METROPOLIS-AT-ORBIT-UNIFORM-CHART-128",
+   "occurrences": 1
+  },
+  {
+   "claim": "19/13 under METROPOLIS-AT-ORBIT-UNIFORM-CHART-32",
+   "occurrences": 1
+  }
+ ],
+ "paper_coverage": {
+  "fence_markers": 2,
+  "inline_spans_with_a_numeral": 25,
+  "numerals_scanned": 350,
+  "structural_literals_forgiven": [
+   "0",
+   "1",
+   "1.0",
+   "1.1",
+   "1.10",
+   "1.11",
+   "1.12",
+   "1.2",
+   "1.3",
+   "1.4",
+   "1.5",
+   "1.6",
+   "1.7",
+   "1.8",
+   "1.9",
+   "10",
+   "10.0",
+   "10.1",
+   "10.10",
+   "10.11",
+   "10.12",
+   "10.2",
+   "10.3",
+   "10.4",
+   "10.5",
+   "10.6",
+   "10.7",
+   "10.8",
+   "10.9",
+   "11",
+   "11.0",
+   "11.1",
+   "11.10",
+   "11.11",
+   "11.12",
+   "11.2",
+   "11.3",
+   "11.4",
+   "11.5",
+   "11.6",
+   "11.7",
+   "11.8",
+   "11.9",
+   "119",
+   "12",
+   "12.0",
+   "12.1",
+   "12.10",
+   "12.11",
+   "12.12",
+   "12.2",
+   "12.3",
+   "12.4",
+   "12.5",
+   "12.6",
+   "12.7",
+   "12.8",
+   "12.9",
+   "125",
+   "13",
+   "14",
+   "15",
+   "16",
+   "17",
+   "18",
+   "19",
+   "2",
+   "2.0",
+   "2.1",
+   "2.10",
+   "2.11",
+   "2.12",
+   "2.2",
+   "2.3",
+   "2.4",
+   "2.5",
+   "2.6",
+   "2.7",
+   "2.8",
+   "2.9",
+   "20",
+   "21",
+   "22",
+   "23",
+   "24",
+   "25",
+   "26",
+   "27",
+   "3",
+   "3.0",
+   "3.1",
+   "3.10",
+   "3.11",
+   "3.12",
+   "3.2",
+   "3.3",
+   "3.4",
+   "3.5",
+   "3.6",
+   "3.7",
+   "3.8",
+   "3.9",
+   "34",
+   "4",
+   "4.0",
+   "4.1",
+   "4.10",
+   "4.11",
+   "4.12",
+   "4.2",
+   "4.3",
+   "4.4",
+   "4.5",
+   "4.6",
+   "4.7",
+   "4.8",
+   "4.9",
+   "46",
+   "5",
+   "5.0",
+   "5.1",
+   "5.10",
+   "5.11",
+   "5.12",
+   "5.2",
+   "5.3",
+   "5.4",
+   "5.5",
+   "5.6",
+   "5.7",
+   "5.8",
+   "5.9",
+   "6",
+   "6.0",
+   "6.1",
+   "6.10",
+   "6.11",
+   "6.12",
+   "6.2",
+   "6.3",
+   "6.4",
+   "6.5",
+   "6.6",
+   "6.7",
+   "6.8",
+   "6.9",
+   "62",
+   "7",
+   "7.0",
+   "7.1",
+   "7.10",
+   "7.11",
+   "7.12",
+   "7.2",
+   "7.3",
+   "7.4",
+   "7.5",
+   "7.6",
+   "7.7",
+   "7.8",
+   "7.9",
+   "8",
+   "8.0",
+   "8.1",
+   "8.10",
+   "8.11",
+   "8.12",
+   "8.2",
+   "8.3",
+   "8.4",
+   "8.5",
+   "8.6",
+   "8.7",
+   "8.8",
+   "8.9",
+   "82",
+   "87",
+   "9",
+   "9.0",
+   "9.1",
+   "9.10",
+   "9.11",
+   "9.12",
+   "9.2",
+   "9.3",
+   "9.4",
+   "9.5",
+   "9.6",
+   "9.7",
+   "9.8",
+   "9.9",
+   "91"
+  ],
+  "unmatched": 0
+ },
+ "paper_polarity": [
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "the stationary measure MOVES across the declared-dynamics fibre",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "the extension does not act on this carrier",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "the price is conserved, not paid",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "the inherited form is sufficient and not necessary",
+   "negated": false,
+   "ok": true
+  }
+ ],
+ "paper_sha256_12": "d14689919289",
+ "parent_sets": {
+  "DEFECT-CARRYING": 384,
+  "DIAGONAL": 64,
+  "NON-COMMUTING": 576,
+  "NON-FLAT": 632
+ },
+ "path_value_anchors": [
+  {
+   "anchor": "PV-COINS",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 640,
+   "measured": 640,
+   "ok": true,
+   "path": "counts/coins",
+   "source": "S-R5-RECEIPT",
+   "what": "the derived coin family's size"
+  },
+  {
+   "anchor": "PV-DIAG",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 64,
+   "measured": 64,
+   "ok": true,
+   "path": "counts/coins_diagonal",
+   "source": "S-R5-RECEIPT",
+   "what": "the diagonal sector"
+  },
+  {
+   "anchor": "PV-ANTI",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 64,
+   "measured": 64,
+   "ok": true,
+   "path": "counts/coins_antidiagonal",
+   "source": "S-R5-RECEIPT",
+   "what": "the antidiagonal sector"
+  },
+  {
+   "anchor": "PV-BAL",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 512,
+   "measured": 512,
+   "ok": true,
+   "path": "counts/coins_balanced",
+   "source": "S-R5-RECEIPT",
+   "what": "the balanced sector"
+  },
+  {
+   "anchor": "PV-ALPH",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 25,
+   "measured": 25,
+   "ok": true,
+   "path": "counts/alphabet",
+   "source": "S-R5-RECEIPT",
+   "what": "the coefficient alphabet"
+  },
+  {
+   "anchor": "PV-SITES",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 16,
+   "measured": 16,
+   "ok": true,
+   "path": "counts/sites",
+   "source": "S-R5-RECEIPT",
+   "what": "the site count at the anchored size"
+  },
+  {
+   "anchor": "PV-LINKS",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 32,
+   "measured": 32,
+   "ok": true,
+   "path": "counts/links",
+   "source": "S-R5-RECEIPT",
+   "what": "the link count"
+  },
+  {
+   "anchor": "PV-PLAQ",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 16,
+   "measured": 16,
+   "ok": true,
+   "path": "counts/plaquettes",
+   "source": "S-R5-RECEIPT",
+   "what": "the plaquette count"
+  },
+  {
+   "anchor": "PV-CHART",
+   "consumer": "G-CHART-ACTION-MEASURED",
+   "declared": 32,
+   "measured": 32,
+   "ok": true,
+   "path": "counts/chart_group",
+   "source": "S-R5-RECEIPT",
+   "what": "the anchored chart group's order"
+  },
+  {
+   "anchor": "PV-NONFLAT",
+   "consumer": "G-PARENT-SETS-REBUILT",
+   "declared": 632,
+   "measured": 632,
+   "ok": true,
+   "path": "counts/nonflat_configs",
+   "source": "S-R5-RECEIPT",
+   "what": "the parent's non-flat census"
+  },
+  {
+   "anchor": "PV-NONCOMM",
+   "consumer": "G-PARENT-SETS-REBUILT",
+   "declared": 576,
+   "measured": 576,
+   "ok": true,
+   "path": "counts/noncommuting_configs",
+   "source": "S-R5-RECEIPT",
+   "what": "the parent's non-commuting census"
+  },
+  {
+   "anchor": "PV-DEFECT",
+   "consumer": "G-PARENT-SETS-REBUILT",
+   "declared": 384,
+   "measured": 384,
+   "ok": true,
+   "path": "counts/defect_carrying_coins",
+   "source": "S-R5-RECEIPT",
+   "what": "the parent's defect census"
+  },
+  {
+   "anchor": "PV-ORB32",
+   "consumer": "G-GAUGE-WALK-CLASSES-ARE-THE-PARENTS-ORBITS",
+   "declared": 208,
+   "measured": 208,
+   "ok": true,
+   "path": "candidate_invariance/uniqueness/CHART-32/orbits",
+   "source": "S-P23-RECEIPT",
+   "what": "paper-23's orbit count at the anchored chart reading"
+  },
+  {
+   "anchor": "PV-SIMP32",
+   "consumer": "G-GAUGE-WALK-SIMPLEX-IS-THE-PARENTS-SIMPLEX",
+   "declared": 207,
+   "measured": 207,
+   "ok": true,
+   "path": "candidate_invariance/uniqueness/CHART-32/simplex_dimension",
+   "source": "S-P23-RECEIPT",
+   "what": "paper-23's invariant simplex dimension at the anchored reading"
+  },
+  {
+   "anchor": "PV-ORB128",
+   "consumer": "G-GAUGE-WALK-CLASSES-ARE-THE-PARENTS-ORBITS",
+   "declared": 120,
+   "measured": 120,
+   "ok": true,
+   "path": "candidate_invariance/uniqueness/CHART-128/orbits",
+   "source": "S-P23-RECEIPT",
+   "what": "paper-23's orbit count at the extension reading"
+  },
+  {
+   "anchor": "PV-SIMP128",
+   "consumer": "G-GAUGE-WALK-SIMPLEX-IS-THE-PARENTS-SIMPLEX",
+   "declared": 119,
+   "measured": 119,
+   "ok": true,
+   "path": "candidate_invariance/uniqueness/CHART-128/simplex_dimension",
+   "source": "S-P23-RECEIPT",
+   "what": "paper-23's invariant simplex dimension at the extension reading"
+  },
+  {
+   "anchor": "PV-MONO",
+   "consumer": "G-MONOMIAL-WALK-CARRIES-THE-PARENTS-HAAR",
+   "declared": 128,
+   "measured": 128,
+   "ok": true,
+   "path": "candidate_group_haar/monomial_coins",
+   "source": "S-P23-RECEIPT",
+   "what": "paper-23's one canonical measure's carrier"
+  },
+  {
+   "anchor": "PV-PRODIN",
+   "consumer": "G-COMPOSITION-WALK-BUILT",
+   "declared": 278528,
+   "measured": 278528,
+   "ok": true,
+   "path": "candidate_group_haar/products_inside",
+   "source": "S-P23-RECEIPT",
+   "what": "the products that stay inside the family"
+  },
+  {
+   "anchor": "PV-PRODTOT",
+   "consumer": "G-COMPOSITION-WALK-BUILT",
+   "declared": 409600,
+   "measured": 409600,
+   "ok": true,
+   "path": "candidate_group_haar/products_total",
+   "source": "S-P23-RECEIPT",
+   "what": "the products attempted"
+  },
+  {
+   "anchor": "PV-SLICE",
+   "consumer": "G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER",
+   "declared": 640,
+   "measured": 640,
+   "ok": true,
+   "path": "arena/uniform_slice",
+   "source": "S-P23-RECEIPT",
+   "what": "paper-23's primary carrier"
+  },
+  {
+   "anchor": "PV-FIXLOC",
+   "consumer": "G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER",
+   "declared": 640,
+   "measured": 640,
+   "ok": true,
+   "path": "fixed_locus/chart_fixed_configurations",
+   "source": "S-P23-RECEIPT",
+   "what": "the chart-fixed locus, which is that carrier"
+  },
+  {
+   "anchor": "PV-P23NF",
+   "consumer": "G-PARENT-SETS-REBUILT",
+   "declared": 632,
+   "measured": 632,
+   "ok": true,
+   "path": "parent_census/non_flat",
+   "source": "S-P23-RECEIPT",
+   "what": "paper-23's own reproduction of the set"
+  },
+  {
+   "anchor": "PV-P23NC",
+   "consumer": "G-PARENT-SETS-REBUILT",
+   "declared": 576,
+   "measured": 576,
+   "ok": true,
+   "path": "parent_census/non_commuting",
+   "source": "S-P23-RECEIPT",
+   "what": "paper-23's own reproduction of the set"
+  },
+  {
+   "anchor": "PV-LAW1",
+   "consumer": "G-LAW-NATIVE-RATE-SOURCE",
+   "declared": "15/38",
+   "measured": "15/38",
+   "ok": true,
+   "path": "targets/law_value_leg1/0",
+   "source": "S-GI-RECEIPT",
+   "what": "the law-native positional law, first position"
+  },
+  {
+   "anchor": "PV-LAW2",
+   "consumer": "G-LAW-NATIVE-RATE-SOURCE",
+   "declared": "5/19",
+   "measured": "5/19",
+   "ok": true,
+   "path": "targets/law_value_leg1/1",
+   "source": "S-GI-RECEIPT",
+   "what": "the law-native positional law, second position"
+  },
+  {
+   "anchor": "PV-LAW3",
+   "consumer": "G-LAW-NATIVE-RATE-SOURCE",
+   "declared": "13/38",
+   "measured": "13/38",
+   "ok": true,
+   "path": "targets/law_value_leg1/2",
+   "source": "S-GI-RECEIPT",
+   "what": "the law-native positional law, third position"
+  },
+  {
+   "anchor": "PV-LAW-LEG2",
+   "consumer": "G-LAW-NATIVE-RATE-SOURCE",
+   "declared": "15/38",
+   "measured": "15/38",
+   "ok": true,
+   "path": "targets/law_value_leg2/0",
+   "source": "S-GI-RECEIPT",
+   "what": "the same law value at the second leg -- leg-independent"
+  },
+  {
+   "anchor": "PV-P23-WIDEST",
+   "consumer": "G-RELATIVITY-CENSUS",
+   "declared": "27/130",
+   "measured": "27/130",
+   "ok": true,
+   "path": "measure_comparison/widest/spread",
+   "source": "S-P23-RECEIPT",
+   "what": "the widest spread paper-23 measured across INVARIANT measures -- the number this unit's own spread is compared against"
+  },
+  {
+   "anchor": "PV-P23-NC-COUNTING",
+   "consumer": "G-RELATIVITY-CENSUS",
+   "declared": "9/10",
+   "measured": "9/10",
+   "ok": true,
+   "path": "measure_comparison/rows/2/counting",
+   "source": "S-P23-RECEIPT",
+   "what": "the parent's non-commuting mass at the counting measure"
+  },
+  {
+   "anchor": "PV-P23-NC-ORB32",
+   "consumer": "G-RELATIVITY-CENSUS",
+   "declared": "9/13",
+   "measured": "9/13",
+   "ok": true,
+   "path": "measure_comparison/rows/2/orbit_uniform_CHART-32",
+   "source": "S-P23-RECEIPT",
+   "what": "the same mass at the parent's orbit-uniform null"
+  }
+ ],
+ "pin_sha256_prefix": "a1fca5e7b238",
+ "preregistered_heads": {
+  "outcomes": [
+   "SMU-DERIVED",
+   "SMU-QUASI-DERIVED",
+   "SMU-REDUCIBLE",
+   "SMU-DYNAMICS-RELATIVE",
+   "SMU-BLOCKED-AT"
+  ],
+  "probes": [
+   {
+    "outcome": "SMU-QUASI-DERIVED",
+    "returned": "SMU-QUASI-DERIVED-ALL-1-DERIVING-INSTANCES-AGREE"
+   },
+   {
+    "outcome": "SMU-REDUCIBLE",
+    "returned": "SMU-REDUCIBLE-18-INSTANCES-0-DERIVE"
+   },
+   {
+    "outcome": "SMU-BLOCKED-AT",
+    "returned": "SMU-BLOCKED-AT-AN-OBJECT"
+   },
+   {
+    "outcome": "SMU-DYNAMICS-RELATIVE",
+    "returned": "SMU-DYNAMICS-RELATIVE-SPREAD-1/2-OVER-12-DERIVING-INSTANCES"
+   }
+  ]
+ },
+ "provenance": {
+  "python": "3.13",
+  "sources": [
+   {
+    "measured": "a1fca5e7b238",
+    "name": "S-PIN",
+    "ok": true,
+    "path": "v14/note-smu-pin.md",
+    "pinned": "a1fca5e7b238",
+    "what": "THE PIN, frozen before this instrument existed"
+   },
+   {
+    "measured": "79cc67b4f6cd",
+    "name": "S-P23-PAPER",
+    "ok": true,
+    "path": "v14/paper-23-measure.md",
+    "pinned": "79cc67b4f6cd",
+    "what": "PARENT 1, paper-23 terminal at commit bb26ca4: the configuration measure, the invariant simplexes, the transitivity criterion, the derives-iff-irreducible law and the withholding machinery"
+   },
+   {
+    "measured": "faf353385905",
+    "name": "S-P23-CODE",
+    "ok": true,
+    "path": "v14/code/r5m_measure_exact.py",
+    "pinned": "faf353385905",
+    "what": "PARENT 1's instrument -- read for its declared definitions and its must-not list only; nothing is imported from it"
+   },
+   {
+    "measured": "c9edf97a5533",
+    "name": "S-P23-RECEIPT",
+    "ok": true,
+    "path": "v14/code/r5m_measure_receipt.json",
+    "pinned": "c9edf97a5533",
+    "what": "PARENT 1's receipt: the orbit counts, the simplex dimensions, the monomial subgroup and the parent census this unit reproduces"
+   },
+   {
+    "measured": "62cfe5689d2c",
+    "name": "S-R5-PAPER",
+    "ok": true,
+    "path": "v14/paper-18-gauge-rung.md",
+    "pinned": "62cfe5689d2c",
+    "what": "PARENT 2, R5 terminal at commit 987cd73: the 640-coin family, the link-indexed configurations, the chart group, the gauge action and the plaquette loops"
+   },
+   {
+    "measured": "0d98de793b79",
+    "name": "S-R5-CODE",
+    "ok": true,
+    "path": "v14/code/r5_gauge_exact.py",
+    "pinned": "0d98de793b79",
+    "what": "PARENT 2's instrument -- read for its declared definitions only"
+   },
+   {
+    "measured": "0c02b7684e5b",
+    "name": "S-R5-RECEIPT",
+    "ok": true,
+    "path": "v14/code/r5_gauge_receipt.json",
+    "pinned": "0c02b7684e5b",
+    "what": "PARENT 2's receipt: the anchored arena cardinalities and the census sets this unit re-weighs"
+   },
+   {
+    "measured": "5c1df50673d4",
+    "name": "S-GI-PAPER",
+    "ok": true,
+    "path": "v14/paper-16-gamma-iteration.md",
+    "pinned": "5c1df50673d4",
+    "what": "PARENT 3, the Gamma-iteration terminal at commit 2895a9a: the law-native step normaliser and the positional law it returns -- the rate source the pin names for candidate (c)"
+   },
+   {
+    "measured": "42255f50328a",
+    "name": "S-GI-RECEIPT",
+    "ok": true,
+    "path": "v14/code/giter_receipt.json",
+    "pinned": "42255f50328a",
+    "what": "PARENT 3's receipt: the law values at both legs"
+   }
+  ]
+ },
+ "python": "3.13",
+ "relativity": {
+  "all_deriving_instances_agree": false,
+  "deriving_instances": 12,
+  "gauge_covariant_deriving_instances": 11,
+  "measure_labels": "EVERY MASS IS LABELLED WITH THE DECLARED DYNAMICS WHOSE STATIONARY MEASURE PRODUCES IT; THE CONFIGURATION COLUMN IS A COUNT AND IS STAMPED COUNTING-ONLY (E-24)",
+  "parent_widest_spread_over_invariant_measures": "27/130",
+  "rows": [
+   {
+    "argmax": [
+     "METROPOLIS-AT-A-NON-INVARIANT-TARGET"
+    ],
+    "argmin": [
+     "LAW-NATIVE-021",
+     "LAW-NATIVE-201"
+    ],
+    "configurations_COUNTING_ONLY": 384,
+    "mass_by_declared_dynamics": {
+     "COMPOSITION-LEFT": "3/5",
+     "COMPOSITION-RIGHT": "3/5",
+     "LAW-NATIVE-012": "39/152",
+     "LAW-NATIVE-021": "15/76",
+     "LAW-NATIVE-102": "39/152",
+     "LAW-NATIVE-120": "45/152",
+     "LAW-NATIVE-201": "15/76",
+     "LAW-NATIVE-210": "45/152",
+     "METROPOLIS-AT-A-NON-INVARIANT-TARGET": "129/200",
+     "METROPOLIS-AT-COUNTING": "3/5",
+     "METROPOLIS-AT-ORBIT-UNIFORM-CHART-128": "7/15",
+     "METROPOLIS-AT-ORBIT-UNIFORM-CHART-32": "6/13"
+    },
+    "set": "DEFECT-CARRYING",
+    "spread_over_every_deriving_instance": "1701/3800",
+    "spread_over_the_covariant_instances": "153/380"
+   },
+   {
+    "argmax": [
+     "LAW-NATIVE-012",
+     "LAW-NATIVE-021"
+    ],
+    "argmin": [
+     "COMPOSITION-LEFT",
+     "COMPOSITION-RIGHT",
+     "METROPOLIS-AT-A-NON-INVARIANT-TARGET",
+     "METROPOLIS-AT-COUNTING"
+    ],
+    "configurations_COUNTING_ONLY": 64,
+    "mass_by_declared_dynamics": {
+     "COMPOSITION-LEFT": "1/10",
+     "COMPOSITION-RIGHT": "1/10",
+     "LAW-NATIVE-012": "15/38",
+     "LAW-NATIVE-021": "15/38",
+     "LAW-NATIVE-102": "5/19",
+     "LAW-NATIVE-120": "5/19",
+     "LAW-NATIVE-201": "13/38",
+     "LAW-NATIVE-210": "13/38",
+     "METROPOLIS-AT-A-NON-INVARIANT-TARGET": "1/10",
+     "METROPOLIS-AT-COUNTING": "1/10",
+     "METROPOLIS-AT-ORBIT-UNIFORM-CHART-128": "3/10",
+     "METROPOLIS-AT-ORBIT-UNIFORM-CHART-32": "4/13"
+    },
+    "set": "DIAGONAL",
+    "spread_over_every_deriving_instance": "28/95",
+    "spread_over_the_covariant_instances": "28/95"
+   },
+   {
+    "argmax": [
+     "COMPOSITION-LEFT",
+     "COMPOSITION-RIGHT",
+     "METROPOLIS-AT-A-NON-INVARIANT-TARGET",
+     "METROPOLIS-AT-COUNTING"
+    ],
+    "argmin": [
+     "LAW-NATIVE-012",
+     "LAW-NATIVE-021"
+    ],
+    "configurations_COUNTING_ONLY": 576,
+    "mass_by_declared_dynamics": {
+     "COMPOSITION-LEFT": "9/10",
+     "COMPOSITION-RIGHT": "9/10",
+     "LAW-NATIVE-012": "23/38",
+     "LAW-NATIVE-021": "23/38",
+     "LAW-NATIVE-102": "14/19",
+     "LAW-NATIVE-120": "14/19",
+     "LAW-NATIVE-201": "25/38",
+     "LAW-NATIVE-210": "25/38",
+     "METROPOLIS-AT-A-NON-INVARIANT-TARGET": "9/10",
+     "METROPOLIS-AT-COUNTING": "9/10",
+     "METROPOLIS-AT-ORBIT-UNIFORM-CHART-128": "7/10",
+     "METROPOLIS-AT-ORBIT-UNIFORM-CHART-32": "9/13"
+    },
+    "set": "NON-COMMUTING",
+    "spread_over_every_deriving_instance": "28/95",
+    "spread_over_the_covariant_instances": "28/95"
+   },
+   {
+    "argmax": [
+     "COMPOSITION-LEFT",
+     "COMPOSITION-RIGHT",
+     "METROPOLIS-AT-A-NON-INVARIANT-TARGET",
+     "METROPOLIS-AT-COUNTING"
+    ],
+    "argmin": [
+     "LAW-NATIVE-012",
+     "LAW-NATIVE-021"
+    ],
+    "configurations_COUNTING_ONLY": 632,
+    "mass_by_declared_dynamics": {
+     "COMPOSITION-LEFT": "79/80",
+     "COMPOSITION-RIGHT": "79/80",
+     "LAW-NATIVE-012": "289/304",
+     "LAW-NATIVE-021": "289/304",
+     "LAW-NATIVE-102": "147/152",
+     "LAW-NATIVE-120": "147/152",
+     "LAW-NATIVE-201": "291/304",
+     "LAW-NATIVE-210": "291/304",
+     "METROPOLIS-AT-A-NON-INVARIANT-TARGET": "79/80",
+     "METROPOLIS-AT-COUNTING": "79/80",
+     "METROPOLIS-AT-ORBIT-UNIFORM-CHART-128": "23/24",
+     "METROPOLIS-AT-ORBIT-UNIFORM-CHART-32": "25/26"
+    },
+    "set": "NON-FLAT",
+    "spread_over_every_deriving_instance": "7/190",
+    "spread_over_the_covariant_instances": "7/190"
+   }
+  ],
+  "this_fibre_is_wider_than_the_parents": true,
+  "widest_attained_count": 1,
+  "widest_attained_on": [
+   "DEFECT-CARRYING"
+  ],
+  "widest_spread": "153/380",
+  "widest_spread_over_every_deriving_instance": "1701/3800"
+ },
+ "schema": "smu-stationary-1",
+ "seal_manifest": [
+  {
+   "digest": "31bccc8e8f59",
+   "gate": "G-SOURCE-BYTES",
+   "object": "THE PINNED SOURCES",
+   "receipt_key": "provenance"
+  },
+  {
+   "digest": "ad7eea5d16dc",
+   "gate": "G-EXACT-ARITHMETIC-BY-AST",
+   "object": "THE ARITHMETIC",
+   "receipt_key": "arithmetic"
+  },
+  {
+   "digest": "fb32b885a4fc",
+   "gate": "G-PATH-VALUE-ANCHORS",
+   "object": "THE PATH-VALUE ANCHORS",
+   "receipt_key": "path_value_anchors"
+  },
+  {
+   "digest": "aab1bd85a86e",
+   "gate": "G-VERBATIM-ANCHORS",
+   "object": "THE VERBATIM ANCHORS",
+   "receipt_key": "verbatim_anchors"
+  },
+  {
+   "digest": "fbda9997fc5f",
+   "gate": "G-VERBATIM-ANCHORS",
+   "object": "THE ANCHOR CLASSES",
+   "receipt_key": "anchor_classes"
+  },
+  {
+   "digest": "2bb9bc1a4a8f",
+   "gate": "G-ARENA-REBUILT",
+   "object": "THE ARENA",
+   "receipt_key": "arena"
+  },
+  {
+   "digest": "a6463e221f57",
+   "gate": "G-CHART-ACTION-MEASURED",
+   "object": "THE CHART ACTION",
+   "receipt_key": "chart_action"
+  },
+  {
+   "digest": "918951080fc9",
+   "gate": "G-GAUGE-GROUP-REBUILT",
+   "object": "THE GAUGE GROUP",
+   "receipt_key": "gauge"
+  },
+  {
+   "digest": "7fa67c9aa3b2",
+   "gate": "G-COMPOSITION-WALK-BUILT",
+   "object": "THE COMPOSITION TABLE",
+   "receipt_key": "composition"
+  },
+  {
+   "digest": "42af4f699a0c",
+   "gate": "G-PARENT-SETS-REBUILT",
+   "object": "THE PARENT SETS",
+   "receipt_key": "parent_sets"
+  },
+  {
+   "digest": "5741b3f56265",
+   "gate": "G-LAW-NATIVE-RATE-SOURCE",
+   "object": "THE LAW-NATIVE RATES",
+   "receipt_key": "law_native_rates"
+  },
+  {
+   "digest": "23d73ddf411b",
+   "gate": "G-THE-INHERITED-LAW-IS-SUFFICIENT-NOT-NECESSARY",
+   "object": "THE LAW REFINEMENT",
+   "receipt_key": "law_refinement"
+  },
+  {
+   "digest": "29f152ab9f3d",
+   "gate": "G-SIMPLEX-DIMENSION-THEOREM",
+   "object": "THE DIMENSION THEOREM",
+   "receipt_key": "dimension_theorem"
+  },
+  {
+   "digest": "164434652cbb",
+   "gate": "G-GAUGE-WALK-CLASSES-ARE-THE-PARENTS-ORBITS",
+   "object": "THE WELDS",
+   "receipt_key": "welds"
+  },
+  {
+   "digest": "1167c1fd013d",
+   "gate": "G-RELATIVITY-CENSUS",
+   "object": "THE RELATIVITY CENSUS",
+   "receipt_key": "relativity"
+  },
+  {
+   "digest": "c18f4cb21868",
+   "gate": "G-PRICE-IS-CONSERVED",
+   "object": "THE SURJECTION",
+   "receipt_key": "surjection"
+  },
+  {
+   "digest": "0955f5ee8f4f",
+   "gate": "G-WILSON-LICENCE",
+   "object": "THE WILSON SEGMENT",
+   "receipt_key": "wilson"
+  },
+  {
+   "digest": "12049d6f6f73",
+   "gate": "G-FIBRE-INVENTORY",
+   "object": "THE FIBRE",
+   "receipt_key": "fibre"
+  },
+  {
+   "digest": "96b69a32c178",
+   "gate": "G-HEAD-DERIVED-TWICE",
+   "object": "THE CENSUS",
+   "receipt_key": "census"
+  },
+  {
+   "digest": "f5b372e56a3f",
+   "gate": "G-HEAD-LAW-REACHABILITY",
+   "object": "THE PRE-REGISTERED HEADS",
+   "receipt_key": "preregistered_heads"
+  },
+  {
+   "digest": "6d9643a47436",
+   "gate": "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+   "object": "THE WAIVER LEDGER",
+   "receipt_key": "waiver_ledger"
+  },
+  {
+   "digest": "d65bbfd32d9b",
+   "gate": "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST",
+   "object": "THE MUTANT REGISTRY",
+   "receipt_key": "mutants"
+  },
+  {
+   "digest": "07253f5c7c3a",
+   "gate": "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST",
+   "object": "THE FALSIFIER TOTALS",
+   "receipt_key": "falsifier_totals"
+  },
+  {
+   "digest": "c7db580e74f3",
+   "gate": "G-HEAD-DERIVED-TWICE",
+   "object": "THE LEDGER SHAPE",
+   "receipt_key": "ledger_shape"
+  },
+  {
+   "digest": "d73e7d24ba21",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "object": "THE PAPER COVERAGE",
+   "receipt_key": "paper_coverage"
+  },
+  {
+   "digest": "152b3e522889",
+   "gate": "G-PAPER-CLAIMS",
+   "object": "THE PAPER CLAIMS",
+   "receipt_key": "paper_claims"
+  },
+  {
+   "digest": "28cb288853e6",
+   "gate": "G-PAPER-POLARITY",
+   "object": "THE PAPER POLARITY",
+   "receipt_key": "paper_polarity"
+  },
+  {
+   "digest": "83f758d1e0ab",
+   "gate": "G-VERDICT-RECONSTRUCTION",
+   "object": "THE VERDICT STRING",
+   "receipt_key": "verdict"
+  },
+  {
+   "digest": "ddebcb4a8bc7",
+   "gate": "G-VERDICT-RECONSTRUCTION",
+   "object": "THE VERDICT HEAD",
+   "receipt_key": "verdict_head"
+  }
+ ],
+ "surjection": {
+  "consequence": "THE-COVARIANT-DYNAMICS-FIBRE-SURJECTS-ONTO-THE-INVARIANT-SIMPLEX",
+  "exhaustive_small_carrier_denominator": 12,
+  "exhaustive_small_carrier_failures": 0,
+  "exhaustive_small_carrier_states": 4,
+  "exhaustive_small_carrier_targets": 55,
+  "non_invariant_control_is_gauge_covariant": false,
+  "non_invariant_control_is_orbit_constant": false,
+  "non_invariant_control_reached_its_target": true,
+  "price_chart_128": 119,
+  "price_chart_32": 207,
+  "targets_reached": [
+   {
+    "covariant": true,
+    "derives": true,
+    "detailed_balance_failures": 0,
+    "instance": "METROPOLIS-AT-COUNTING",
+    "stationary_equals_the_target": true,
+    "target": "COUNTING"
+   },
+   {
+    "covariant": true,
+    "derives": true,
+    "detailed_balance_failures": 0,
+    "instance": "METROPOLIS-AT-ORBIT-UNIFORM-CHART-32",
+    "stationary_equals_the_target": true,
+    "target": "ORBIT-UNIFORM-CHART-32"
+   },
+   {
+    "covariant": true,
+    "derives": true,
+    "detailed_balance_failures": 0,
+    "instance": "METROPOLIS-AT-ORBIT-UNIFORM-CHART-128",
+    "stationary_equals_the_target": true,
+    "target": "ORBIT-UNIFORM-CHART-128"
+   }
+  ]
+ },
+ "totals": {
+  "anchors": 51,
+  "closing_gates": 2,
+  "gates": 59,
+  "gates_in_the_sealed_ledger": 57,
+  "instances_run": 18,
+  "mutants": 42,
+  "path_value_anchors": 30,
+  "sealed_objects": 29,
+  "sources": 9,
+  "verbatim_anchors": 12
+ },
+ "transcript_head": "deaabcc28161",
+ "unit": "SMU / paper-27 -- the stationary measure",
+ "verbatim_anchors": [
+  {
+   "anchor": "VB-PIN-LAW",
+   "chars": 52,
+   "consumer": "G-IRREDUCIBILITY-IS-THE-CRITERION",
+   "digest": "e6fddd5d388c",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-PIN",
+   "what": "the pin's own statement of the criterion this unit applies"
+  },
+  {
+   "anchor": "VB-PIN-WILSON",
+   "chars": 109,
+   "consumer": "G-WILSON-LICENCE",
+   "digest": "d54d2b8bb84a",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-PIN",
+   "what": "the pin's licensing condition for the Wilson segment"
+  },
+  {
+   "anchor": "VB-PIN-MUSTNOT",
+   "chars": 97,
+   "consumer": "G-MUST-NOT-VOCABULARY",
+   "digest": "814557319ae7",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-PIN",
+   "what": "the must-not list this unit inherits verbatim"
+  },
+  {
+   "anchor": "VB-PIN-RELATIVITY",
+   "chars": 68,
+   "consumer": "G-RELATIVITY-CENSUS",
+   "digest": "c12dafad12c3",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-PIN",
+   "what": "the pin's fourth stage, which this unit answers"
+  },
+  {
+   "anchor": "VB-P23-LAW",
+   "chars": 223,
+   "consumer": "G-IRREDUCIBILITY-IS-THE-CRITERION",
+   "digest": "64c9529960da",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-P23-PAPER",
+   "what": "paper-23's own statement of the obligation this unit discharges"
+  },
+  {
+   "anchor": "VB-P23-ABSENT",
+   "chars": 59,
+   "consumer": "G-DECLARED-DYNAMICS-CENSUS",
+   "digest": "54204b0463db",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-P23-PAPER",
+   "what": "the sentence that made this row NOT-CENSUSABLE for the parent"
+  },
+  {
+   "anchor": "VB-P23-PRICE",
+   "chars": 173,
+   "consumer": "G-PRICE-IS-CONSERVED",
+   "digest": "2595b6fae7f0",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-P23-PAPER",
+   "what": "the price this unit measures the dynamics declaration to reproduce"
+  },
+  {
+   "anchor": "VB-P23-INVARIANT",
+   "chars": 104,
+   "consumer": "G-GAUGE-WALK-SIMPLEX-IS-THE-PARENTS-SIMPLEX",
+   "digest": "a5211ef58db1",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-P23-PAPER",
+   "what": "the characterisation the gauge walk's stationary simplex instantiates"
+  },
+  {
+   "anchor": "VB-P23-HAAR",
+   "chars": 72,
+   "consumer": "G-MONOMIAL-WALK-CARRIES-THE-PARENTS-HAAR",
+   "digest": "0aac029f0adb",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-P23-PAPER",
+   "what": "the parent's one canonical measure, which is one closed class here"
+  },
+  {
+   "anchor": "VB-R5-PLAQ",
+   "chars": 154,
+   "consumer": "G-WILSON-OBSERVABLE-REBUILT",
+   "digest": "72ecc8f75bfa",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-R5-PAPER",
+   "what": "the loop observable's definition, rebuilt here from these words"
+  },
+  {
+   "anchor": "VB-R5-BLOCK",
+   "chars": 48,
+   "consumer": "G-WILSON-OBSERVABLE-REBUILT",
+   "digest": "345ef7fefab1",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-R5-PAPER",
+   "what": "why the declared loop observable is the four-corner trace"
+  },
+  {
+   "anchor": "VB-GI-NATIVE",
+   "chars": 121,
+   "consumer": "G-LAW-NATIVE-RATE-SOURCE",
+   "digest": "4ea51bf9b346",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-GI-PAPER",
+   "what": "why the rate source for candidate (c) is law-native"
+  }
+ ],
+ "verdict": "SMU-DYNAMICS-RELATIVE-SPREAD-153/380-OVER-12-DERIVING-INSTANCES-<CENSUS=6-FAMILIES-18-INSTANCES-ALL-RUN-12-DERIVE-6-REDUCIBLE|CRITERION=A-COVARIANT-CHAIN-DERIVES-IFF-IT-HAS-EXACTLY-ONE-CLOSED-COMMUNICATING-CLASS|THE-INHERITED-FORM-IS-SUFFICIENT-NOT-NECESSARY-WITNESS-AT-3-STATES-2-CLASSES-1-CLOSED -- (a)CHART-WALK=THE-ANCHORED-CHART-ACTS-TRIVIALLY-32-OF-32-ELEMENTS-INDUCE-THE-IDENTITY-SO-640-CLOSED-CLASSES-AND-THE-WHOLE-639-SIMPLEX-IS-STATIONARY;THE-EXTENSION-DOES-NOT-ACT-ON-THIS-CARRIER-AT-ALL-64-OF-128-ELEMENTS-CARRY-A-UNIFORM-CONFIGURATION-OFF-IT-AND-ITS-CLOSURE-IS-1248-STATES-WITH-336-CLOSED-CLASSES -- (b)GAUGE-WALK=REDUCIBLE-AT-BOTH-READINGS-208-AND-120-CLOSED-CLASSES-IDENTICAL-AS-SETS-TO-THE-PARENTS-ORBITS-AND-ITS-STATIONARY-SIMPLEX-IS-THE-PARENTS-INVARIANT-SIMPLEX-DIMENSION-207-AND-119 -- (c)LAW-NATIVE-RESAMPLING=IRREDUCIBLE-AND-DERIVES-AT-ALL-6-MEMBERS-OF-ITS-DECLARED-FIBRE;THE-MEASURE-IS-NEW-SECTOR-GRADED-AT-15/38-5/19-13/38-AND-INVARIANT-SO-IT-IS-A-POINT-OF-THE-PARENTS-SIMPLEX -- (d)COMPOSITION-WALK=IRREDUCIBLE-ON-BOTH-SIDES-AND-DERIVES-THE-COUNTING-MEASURE-BECAUSE-THE-FAMILY-IS-CLOSED-UNDER-INVERSE-640-OF-640-SO-THE-WALK-IS-DOUBLY-STOCHASTIC-WITH-278528-OF-409600-PRODUCTS-STAYING -- (e)MONOMIAL-HAAR-WALK=REDUCIBLE-5-CLOSED-CLASSES-OF-128-AND-ONE-OF-THEM-IS-EXACTLY-THE-PARENTS-HAAR-CARRIER-SO-THE-CORPUS-ONE-HANDED-OVER-MEASURE-IS-ONE-EXTREME-POINT-HERE -- (f)COVARIANT-METROPOLIS=EVERY-DECLARED-INVARIANT-TARGET-IS-REACHED-EXACTLY-3-OF-3-AND-THE-NON-INVARIANT-CONTROL-LANDS-OUTSIDE-THE-SIMPLEX-ORBIT-CONSTANT=FALSE;EXHAUSTIVE-ARM-55-TARGETS-0-FAILURES -- MEASURES=10-DISTINCT-STATIONARY-VECTORS-OVER-12-DERIVING-INSTANCES|NAMED-NULLS-REACHED=COUNTING,ORBIT-UNIFORM-CHART-128,ORBIT-UNIFORM-CHART-32|NEW=7 -- RELATIVITY=THE-MEASURE-MOVES|WIDEST-SPREAD-OVER-THE-11-GAUGE-COVARIANT-DERIVING-INSTANCES=153/380-ATTAINED-ON-1-OF-4-SETS(DEFECT-CARRYING)|OVER-ALL-12-DERIVING-INSTANCES-THE-DECLARED-NON-COVARIANT-CONTROL-INCLUDED=1701/3800|AGAINST-THE-PARENTS-WIDEST-OVER-INVARIANT-MEASURES-27/130-SO-DECLARING-A-DYNAMICS-MOVES-THE-PARENTS-OWN-HEADLINE-SETS-FURTHER|QUASI-DERIVATION-ARM-REACHABLE-AND-MEASURED-TO-FAIL -- PRICE=CONSERVED-NOT-PAID:THE-COVARIANT-DYNAMICS-FIBRE-SURJECTS-ONTO-THE-INVARIANT-SIMPLEX-SO-A-DECLARATION-STILL-SUPPLIES-207-INDEPENDENT-NUMBERS-AT-THE-ANCHORED-READING-AND-119-AT-THE-EXTENSION-EXACTLY-THE-PARENTS-COUNTS|WHAT-MOVED-IS-WHERE-THE-DECLARATION-IS-MADE-NOT-HOW-MUCH-IT-COSTS -- WILSON=LICENSED-BY-THE-PIN-AND-STAMPED-CONDITIONAL-ON-THE-DECLARED-DYNAMICS-AT-12-OF-12-ROWS|OBSERVABLE=THE-TRACE-OF-THE-PLAQUETTE-HOLONOMY-ON-ITS-OWN-FOUR-CORNER-BLOCK-PLAQUETTE-INDEPENDENT-AT-16-PLAQUETTES-AND-GAUGE-INVARIANT|VALUES=107/76@NEW,111/76@NEW,13/10@COUNTING,19/13@ORBIT-UNIFORM-CHART-32,205/152@NEW,207/152@NEW,219/152@NEW,225/152@NEW,263/200@NEW,29/20@ORBIT-UNIFORM-CHART-128|RANGE-OVER-THE-INVARIANT-SIMPLEX=[0,4]-BOTH-ENDPOINTS-ATTAINED-AT-EXTREME-POINTS-SO-COVARIANCE-PINS-THE-EXPECTATION-NOWHERE|NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM-AND-0-LOOP-FAMILIES-GROWN -- SCOPE=D=2;L=4;FIELD=Q(zeta_8);COINS=640;LINKS=32;PLAQUETTES=16;CARRIER=THE-PARENTS-PRIMARY-CARRIER-THE-640-UNIFORM-CONFIGURATIONS(PLUS-THE-EXTENSIONS-1248-STATE-CLOSURE-WHERE-THE-EXTENSION-IS-DECLARED);FULL-CONFIGURATION-SPACE=640^32-NOT-A-CARRIER-HERE;ELIMINATION-CAP=208-EVERY-EXACT-SOLVE-AT-OR-BELOW-IT;LOCALITY-IS-DEGENERATE-ON-THIS-CARRIER-ONE-COIN-SERVES-ALL-32-LINKS;THE-DYNAMICS-ARE-DECLARED-NOT-DERIVED;NO-ACTION;NO-COUPLING;NOT-QCD;NO-CONFINEMENT-CLAIM>",
+ "verdict_head": "SMU-DYNAMICS-RELATIVE-SPREAD-153/380-OVER-12-DERIVING-INSTANCES",
+ "waiver_ledger": {
+  "covered_by_a_declared_falsifier": 34,
+  "gates_closed": 50,
+  "instances_named_inside_the_predicate": [],
+  "named_unreachable": {
+   "G-ARTIFACT-INTEGRITY": "fires only on a run that writes, and a mutant run never writes; the seal it checks against is falsified by MUT-SEAL at the gate before it",
+   "G-PAPER-PRESENT": "the else-branch of a paper that exists; it cannot close in a run whose paper is present, and it is reported here rather than counted as covered"
+  },
+  "per_instance_gates_carrying_their_own_falsifier": [
+   "G-INSTANCE-GAUGE-CHART-32",
+   "G-INSTANCE-LAW-NATIVE-012"
+  ],
+  "per_instance_gates_under_the_registered_forcing": 16,
+  "the_forcing": "THE-PER-INSTANCE-GATE-PREDICATE-NAMES-NO-INSTANCE-SO-ONE-FALSIFIER-AT-ONE-INSTANCE-FALSIFIES-THE-PREDICATE-AT-ALL-OF-THEM",
+  "uncovered": []
+ },
+ "welds": {
+  "gauge_classes_equal_the_parents_orbits_chart_128": true,
+  "gauge_classes_equal_the_parents_orbits_chart_32": true,
+  "gauge_simplex_dimension_chart_128": 119,
+  "gauge_simplex_dimension_chart_32": 207,
+  "monomial_closed_classes": 5,
+  "monomial_walk_carries_the_parents_haar": true
+ },
+ "wilson": {
+  "covariant_licensed_rows": 12,
+  "distinct_values_over_the_carrier": 11,
+  "licensed_rows": 12,
+  "loop_families_grown": 0,
+  "must_not": "NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM-AND-NO-LOOP-FAMILY-IS-GROWN",
+  "normalisation_fibre": 2,
+  "observable": "THE-TRACE-OF-THE-PLAQUETTE-HOLONOMY-ON-ITS-OWN-FOUR-CORNER-BLOCK",
+  "plaquettes_checked": 16,
+  "range_over_the_invariant_simplex": {
+   "both_endpoints_are_extreme_points_of_the_simplex": true,
+   "maximum": "4",
+   "maximum_attained_on_an_orbit_of_size": 1,
+   "minimum": "0",
+   "minimum_attained_on_an_orbit_of_size": 1,
+   "stamp": "CONDITIONAL-ON-THE-DECLARED-DYNAMICS"
+  },
+  "rows": [
+   {
+    "block_trace_value": "13/10",
+    "declared_dynamics": "COMPOSITION-LEFT",
+    "derives_given_the_declared_dynamics": true,
+    "family": "(d) THE COMPOSITION WALK",
+    "full_trace_value": "133/10",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-DYNAMICS",
+    "the_measure": "COUNTING"
+   },
+   {
+    "block_trace_value": "13/10",
+    "declared_dynamics": "COMPOSITION-RIGHT",
+    "derives_given_the_declared_dynamics": true,
+    "family": "(d) THE COMPOSITION WALK",
+    "full_trace_value": "133/10",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-DYNAMICS",
+    "the_measure": "COUNTING"
+   },
+   {
+    "block_trace_value": "225/152",
+    "declared_dynamics": "LAW-NATIVE-012",
+    "derives_given_the_declared_dynamics": true,
+    "family": "(c) THE LAW-NATIVE RESAMPLING",
+    "full_trace_value": "2049/152",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-DYNAMICS",
+    "the_measure": "NEW"
+   },
+   {
+    "block_trace_value": "111/76",
+    "declared_dynamics": "LAW-NATIVE-021",
+    "derives_given_the_declared_dynamics": true,
+    "family": "(c) THE LAW-NATIVE RESAMPLING",
+    "full_trace_value": "1023/76",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-DYNAMICS",
+    "the_measure": "NEW"
+   },
+   {
+    "block_trace_value": "205/152",
+    "declared_dynamics": "LAW-NATIVE-102",
+    "derives_given_the_declared_dynamics": true,
+    "family": "(c) THE LAW-NATIVE RESAMPLING",
+    "full_trace_value": "2029/152",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-DYNAMICS",
+    "the_measure": "NEW"
+   },
+   {
+    "block_trace_value": "207/152",
+    "declared_dynamics": "LAW-NATIVE-120",
+    "derives_given_the_declared_dynamics": true,
+    "family": "(c) THE LAW-NATIVE RESAMPLING",
+    "full_trace_value": "2031/152",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-DYNAMICS",
+    "the_measure": "NEW"
+   },
+   {
+    "block_trace_value": "107/76",
+    "declared_dynamics": "LAW-NATIVE-201",
+    "derives_given_the_declared_dynamics": true,
+    "family": "(c) THE LAW-NATIVE RESAMPLING",
+    "full_trace_value": "1019/76",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-DYNAMICS",
+    "the_measure": "NEW"
+   },
+   {
+    "block_trace_value": "219/152",
+    "declared_dynamics": "LAW-NATIVE-210",
+    "derives_given_the_declared_dynamics": true,
+    "family": "(c) THE LAW-NATIVE RESAMPLING",
+    "full_trace_value": "2043/152",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-DYNAMICS",
+    "the_measure": "NEW"
+   },
+   {
+    "block_trace_value": "263/200",
+    "declared_dynamics": "METROPOLIS-AT-A-NON-INVARIANT-TARGET",
+    "derives_given_the_declared_dynamics": true,
+    "family": "(f) THE COVARIANT METROPOLIS FAMILY",
+    "full_trace_value": "2663/200",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-DYNAMICS",
+    "the_measure": "NEW"
+   },
+   {
+    "block_trace_value": "13/10",
+    "declared_dynamics": "METROPOLIS-AT-COUNTING",
+    "derives_given_the_declared_dynamics": true,
+    "family": "(f) THE COVARIANT METROPOLIS FAMILY",
+    "full_trace_value": "133/10",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-DYNAMICS",
+    "the_measure": "COUNTING"
+   },
+   {
+    "block_trace_value": "29/20",
+    "declared_dynamics": "METROPOLIS-AT-ORBIT-UNIFORM-CHART-128",
+    "derives_given_the_declared_dynamics": true,
+    "family": "(f) THE COVARIANT METROPOLIS FAMILY",
+    "full_trace_value": "269/20",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-DYNAMICS",
+    "the_measure": "ORBIT-UNIFORM-CHART-128"
+   },
+   {
+    "block_trace_value": "19/13",
+    "declared_dynamics": "METROPOLIS-AT-ORBIT-UNIFORM-CHART-32",
+    "derives_given_the_declared_dynamics": true,
+    "family": "(f) THE COVARIANT METROPOLIS FAMILY",
+    "full_trace_value": "175/13",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-DYNAMICS",
+    "the_measure": "ORBIT-UNIFORM-CHART-32"
+   }
+  ]
+ }
+}

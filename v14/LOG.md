@@ -7240,3 +7240,49 @@ AND paper-04's laws; THE NEW-PLACES SEGMENT first-class
 question; the one-step iteration ceiling stated; DIA under
 refinement.  In flight after the volley (8): SIG + PER-R +
 LOR constructions; the 22/25/28 repairs; SMU.
+
+## 2026-08-11 — SMU (PAPER-27) DELIVERED: DYNAMICS-RELATIVE — THE PRICE IS CONSERVED, NOT PAID; COMMIT-AS-IS (v14 LEDGER #234)
+
+The stationary-measure worker delivered; all candidate
+readings.  **Head: SMU-DYNAMICS-RELATIVE-SPREAD-153/380-OVER-
+12-DERIVING-INSTANCES.**  Six dynamics families, 18
+instances, all run: 12 derive / 6 reducible / 0 transient.
+The gauge walk's stationary simplex IS paper-23's invariant
+simplex (the price RE-DERIVED, dims 207/119); the composition
+walk DERIVES COUNTING (a named null, derived from the
+family's own multiplication); **the law-native resampling
+derives a NEW sector-graded measure π = (15/2432, 5/1216,
+13/19456) — the first point of the parent's simplex anything
+in the corpus has supplied**; monomial-Haar's extremes
+contain paper-23's Haar carrier.  **THE RELATIVITY VERDICT:
+THE MEASURE MOVES — spread 153/380 over the 11
+gauge-covariant deriving instances vs the parent's 27/130
+over invariant measures: DECLARING A DYNAMICS MOVES THE
+HEADLINE SETS FURTHER THAN DECLARING A MEASURE DID;
+quasi-derivation fails by entry-by-entry comparison.**  THE
+DEEPEST FINDING: **the price is CONSERVED, not paid — the
+covariant Metropolis fibre SURJECTS onto the invariant
+simplex (55 targets exhaustively + 632 re-checked, 0
+failures): a declaration still costs 207/119 numbers; the
+declaration was RELOCATED from measure to dynamics, not
+removed.**  CORRECTION to the inherited law:
+derives-iff-irreducible is SUFFICIENT-NOT-NECESSARY — the
+sharp condition is ONE CLOSED COMMUNICATING CLASS (3-state
+witness; 343 in-run + 50,625 four-state chains, 0
+mismatches).  WILSON: licensed and stamped
+CONDITIONAL-ON-THE-DECLARED-DYNAMICS (the four-corner
+plaquette trace, gauge-invariant, plaquette-independent
+16×640); 12 expectation rows; **the range over the invariant
+simplex is EXACTLY [0,4] — the observable's full range:
+covariance pins the expectation NOWHERE**; the confinement
+MUST_NOT inherited and swept.  Windows: the 640-slice
+carrier (locality degenerate, disclosed); the CHART-128
+extension does not act on the parent's carrier (orbit
+closure 1248, 336 classes) — a surprise; counting DERIVED a
+surprise; the spread WIDENING a surprise.  Counts: 57+2
+gates; 42/42 mutants; 51 anchors; 29 seals manifest-total; 5
+plain runs byte-identical + off-tree git-less; ~22
+pre-instrument recomputations (one own-check bug corrected
+and disclosed).  Shas: paper d14689919289, code
+394cbfca621c, output 0bf6cc0502e6, receipt 808aca088ff6.
+Committed AS-IS; battery next; panel after.
