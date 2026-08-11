@@ -63,12 +63,21 @@ F.3  MOVER-BLINDNESS of the limit: the exact rescaled limit (1/27, -1/54, 1/27) 
 G.  THE FOREIGN CONTROL
 ------------------------------------------------------------------------------
 G.1  coupling profiles: M-CLOSED reads {N}; M-DILATE reads {N,n,s}; M-FIAT reads {nothing}; M-FRONT reads {n}; M-LAPDIL reads {N,n,s}; M-NONE reads {nothing}; M-SOURCE reads {N}; M-TARGET reads {N}; M-TILT reads {n}
-G.2  FOREIGN flagged: M-FIAT (declared: M-FIAT).  COUPLED: M-CLOSED, M-DILATE, M-FRONT, M-LAPDIL, M-SOURCE, M-TARGET, M-TILT -- all of them class-(iii) unmotivated, which is a different finding.
+G.2  FOREIGN flagged: M-FIAT (declared: M-FIAT).  COUPLED: M-CLOSED, M-DILATE, M-FRONT, M-LAPDIL, M-SOURCE, M-TARGET, M-TILT -- 4 of them class-(iii) members of the admissible advancing census (M-DILATE, M-FRONT, M-LAPDIL, M-SOURCE) and 3 carried from outside it (M-CLOSED, M-TARGET, M-TILT), none motivated by anything pinned, which is a different finding.
 
 ------------------------------------------------------------------------------
 H.  THE DISCRIMINATOR CENSUS
 ------------------------------------------------------------------------------
 H.1  of 36 ordered-free pairs of named movers, 29 are separated by the one-step readout at the declared coordinate; 7 are not.
+H.2  the discriminator coordinate is free with a fiber of 3888: over the whole declared product the separation count ranges from 15 to 35 of 36, and 207 coordinates separate every one of the 6 pairs inside M-FIAT, M-FRONT, M-SOURCE, M-TARGET -- the set the delivered coordinate separates 0 of.
+
+------------------------------------------------------------------------------
+I.  THE MOVER-BLIND LIMIT, DECOMPOSED
+------------------------------------------------------------------------------
+I.1  the blind class holds 90 cells: the foreign move M-FIAT reaches the limit at 6 of 6 declared schedules, and the 4 coupled movers reach it at 1 -- SCH-CONST -- and at no other.  At the other 5 schedules those movers converge at 108 of 180 cells, 81 to a form that is not a metric and 27 to a form proportional to the limit at a different scale (9, 9/2), and at 0 of them to the value itself.
+I.2  at SCH-CONST every one of the 5 movers of the blind class writes a site- and link-uniform increment at every step, at every record: M-CLOSED writes 2; M-SOURCE writes 1; M-TARGET writes 1; M-FRONT writes 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19; M-FIAT writes 1.
+I.3  the undefined-normalization movers: M-NONE (writes at 0 of 54 cells); M-TILT (writes at 45 of 54 cells).  Every one of them sums its writes to exactly zero over every (schedule, record) cell; the writing one moves the record at 45 of its 54 cells, and over 6 steps of SCH-RAMP0 from G-FLAT it makes 90 nonzero writes of total magnitude 360 for a net of 0.
+I.4  the record (1, 1, 1) reads out as (1, -1/2, 1) with determinant 3/4; divided by |X| x |L| = 27 that is (1/27, -1/54, 1/27) -- the mover-blind limit exactly.  It is admissible here and is not one of the 9 declared records.
 
 ------------------------------------------------------------------------------
 THE VERDICT
@@ -84,13 +93,19 @@ PROSE| The commutation defect computed by literal composition and by the indepen
 PROSE| Across 972 trajectory cells at horizon t = 20, 531 converge, 117 diverge, 108 have an undefined normalization and 216 are unclassified, in 27 distinct exact limit classes.
 PROSE| The convergence type changes with the declared normalization at 216 of the 486 (mover, schedule, record) cells.
 PROSE| The exact rescaled limit (1/27, -1/54, 1/27) is reached by M-CLOSED, M-FIAT, M-FRONT, M-SOURCE, M-TARGET -- including the foreign fiat move.
-PROSE| The coupling instrument flags 1 of 1 declared external growth moves FOREIGN, and reports 7 coupled movers, every one of them class-(iii) unmotivated.
+PROSE| The coupling instrument flags 1 of 1 declared external growth moves FOREIGN, and reports 7 coupled movers, 4 of them class-(iii) members of the admissible advancing census and 3 carried from outside it, none motivated by anything pinned.
 PROSE| Of 36 pairs of named movers, 29 are separated by the one-step record readout at the declared coordinate.
-paper number sweep: 191 numeric tokens, 58 distinct, 0 unbacked.
+PROSE| Over the 3888 declared (record, lapse, front, site) coordinates the one-step readout separates between 15 and 35 of the 36 pairs, and 207 of them separate all 6 pairs inside the set the delivered coordinate separates none of.
+PROSE| The mover-blind limit is reached by the foreign move at 6 of 6 declared schedules and by each of the 4 coupled movers at exactly 1 of them, SCH-CONST, where every one of the 5 writes a site- and link-uniform increment at every step; over the 180 cells at the other 5 schedules the coupled movers reach that value 0 times.
+PROSE| M-TILT makes 90 nonzero interval writes of total magnitude 360 for a net of 0 over 6 steps of SCH-RAMP0 from G-FLAT, and its writes sum to zero at all 54 of its (schedule, record) cells -- at 45 of which it writes at all.
+BLOCK| VERDICT | CRA-BLOCKED-AT-STATIC-GEOMETRY-<MISSING=A-GEOMETRY-UPDATE-LAW; EXPRESSIBLE=12/13; CENSUS=8192|ADVANCING=2976|ADMISSIBLE=1232; FORCED=2|FORCED-ADVANCING=0; INVENTORY=i:0,ii:0,iii:1232; SELECTOR-CLOSURE-FIBER=4; COMMUTING-ADVANCING=0-AT-9-OF-11-RULES; TRAJ=CONVERGES:531,DIVERGES:117,UNDEF:108,UNCLASSIFIED:216; LIMIT-CLASSES=27|MOVER-BLIND-LIMIT=YES; NORMALIZATION-FLIPS=216; FOREIGN-FLAGGED=1/1>
+BLOCK| THEOREM | **Theorem (static geometry).** Let $r$ be any of the 9 declared drag rules whose weight reads at least one interval count. Then NO admissible advancing mover in the declared design space commutes with $H_a[N]$ for every declared lapse profile; the only commuting mover is $\Delta \equiv 0$, which does not advance. In particular the fiber is empty for the record-native closing rule `A-axis` and for the metric-inserted rule `A-insert` alike, and the joint fiber with closure preservation is empty.
+BLOCK| ARENA | The record whose three declared link counts are (1, 1, 1) reads out as (1, -1/2, 1) with determinant 3/4, and divided by the declared |X| x |L| = 27 that is (1/27, -1/54, 1/27) -- the mover-blind rescaled limit of section 7 exactly, reached here as a rescaled limit and there as a record.
+paper number sweep: 271 numeric tokens, 64 distinct, 0 unbacked.
 
 ------------------------------------------------------------------------------
 RECEIPT
 ------------------------------------------------------------------------------
-gates 47 (47 must-pass, 0 failures) | anchors 31 | mutants 39 | disclosures 6 | never-falsified 42
-never falsified: A-HA-CODE, A-HA-PAPER, A-PIN-CRA, A-R0-PIN, G-CENSUS-CELLS-COMPLETE-BIL, G-CENSUS-TWO-ROUTES-BIL, G-CLASS-II-SELECTS-NOTHING, G-COUNT-BLIND-EXCEPTION, G-DISCRIMINATOR-CENSUS, G-ENGRAVINGS-PRESENT, G-FORCED-ADVANCING-EMPTY, G-FOREIGN-AND-UNMOTIVATED-ARE-DIFFERENT-FINDINGS, G-MUTANT-BLINDNESS, G-NO-FLOATS-IN-RECEIPT, G-NO-PINNED-SELECTOR-SELECTS, G-S-ORBIT-SINGLETON, G-TRAJ-CLASSIFICATION-CERTIFIED, G-UNCLASSIFIED-CHARACTERIZED, G-VERDICT-STILL-EQUAL-AT-WRITE-TIME, N-ADMISSIBLE-RECORDS, N-CLOSURE-A-axis, N-CLOSURE-A-chart, N-CLOSURE-A-insert, N-CLOSURE-A-insert-2x, N-CLOSURE-A-insert-x, N-CLOSURE-A-linkframe, N-DIAGONAL-SECTOR, N-LAPSE-PAIRS, N-LATTICE, N-RANK, N-REJECTED-RECORDS, N-S-FROZEN-INSTANCES, P-I7-D, P-I7-L, P-I7-LAPSE, P-I7-LATTICE, P-I7-LINKS, P-I7-RANK, P-I7-REENCODE, P-I7-RULES, P-I7-SECTOR-NOTRANSPORT, P-I7-WEIGHT
+gates 53 (53 must-pass, 0 failures) | anchors 31 | mutants 45 | disclosures 6 | never-falsified 45
+never falsified: A-HA-CODE, A-HA-PAPER, A-PIN-CRA, A-R0-PIN, G-CENSUS-CELLS-COMPLETE-BIL, G-CENSUS-TWO-ROUTES-BIL, G-CLASS-II-SELECTS-NOTHING, G-COUNT-BLIND-EXCEPTION, G-DEFERRED-GATES-EVALUATED, G-DISCRIMINATOR-CENSUS, G-ENGRAVINGS-PRESENT, G-FINAL-COUNTS, G-FORCED-ADVANCING-EMPTY, G-FOREIGN-AND-UNMOTIVATED-ARE-DIFFERENT-FINDINGS, G-MUTANT-BLINDNESS, G-NEVER-FALSIFIED-CENSUS, G-NO-FLOATS-IN-RECEIPT, G-NO-PINNED-SELECTOR-SELECTS, G-S-ORBIT-SINGLETON, G-TRAJ-CLASSIFICATION-CERTIFIED, G-UNCLASSIFIED-CHARACTERIZED, G-VERDICT-STILL-EQUAL-AT-WRITE-TIME, N-ADMISSIBLE-RECORDS, N-CLOSURE-A-axis, N-CLOSURE-A-chart, N-CLOSURE-A-insert, N-CLOSURE-A-insert-2x, N-CLOSURE-A-insert-x, N-CLOSURE-A-linkframe, N-DIAGONAL-SECTOR, N-LAPSE-PAIRS, N-LATTICE, N-RANK, N-REJECTED-RECORDS, N-S-FROZEN-INSTANCES, P-I7-D, P-I7-L, P-I7-LAPSE, P-I7-LATTICE, P-I7-LINKS, P-I7-RANK, P-I7-REENCODE, P-I7-RULES, P-I7-SECTOR-NOTRANSPORT, P-I7-WEIGHT
 verdict: CRA-BLOCKED-AT-STATIC-GEOMETRY-<MISSING=A-GEOMETRY-UPDATE-LAW; EXPRESSIBLE=12/13; CENSUS=8192|ADVANCING=2976|ADMISSIBLE=1232; FORCED=2|FORCED-ADVANCING=0; INVENTORY=i:0,ii:0,iii:1232; SELECTOR-CLOSURE-FIBER=4; COMMUTING-ADVANCING=0-AT-9-OF-11-RULES; TRAJ=CONVERGES:531,DIVERGES:117,UNDEF:108,UNCLASSIFIED:216; LIMIT-CLASSES=27|MOVER-BLIND-LIMIT=YES; NORMALIZATION-FLIPS=216; FOREIGN-FLAGGED=1/1>

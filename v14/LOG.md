@@ -5607,3 +5607,41 @@ K9's coupled leg a provable identity, 7,200 randomised checks
 0 failures — the stamp EARNED); staleness blindness at the
 FULL horizon 5 (1,040,065 checks), not just the undisclosed
 horizon 3.**  → adjudication when K3 lands.
+
+## 2026-08-11 — CR-A REPAIR LANDED: ALL TEN ORDERS EXECUTED; COMMIT-AS-IS (v14 LEDGER #185)
+
+The repair worker delivered R1–R10 in place, declined items
+untouched.  Highlights: R1 head de-literaled (comparator now
+DERIVES class_i; verdict and all segments byte-identical); R2
+denominator 42→45 honest, the census gate registers LAST and
+re-derives from the live registry; R3 render+gate over the
+verdict block, the §6 theorem (polarity word and the three
+empty fibers DERIVED from the measurement) and §15's arena
+sentence — K3's INJ-7/INJ-8 replayed off-tree and NOW DIE;
+INJ-6 (the §4 table column swap) still passes — TABLES WERE
+OUTSIDE R3'S ORDERED SCOPE, recorded as a residual on the same
+publication trigger as the declined seal; R4 the 207-census
+computed in-code by TWO INDEPENDENT ROUTES per coordinate
+(separation 15–35/36; histogram sums 3888; the delivered
+coordinate 29/36 and 0/6 four-set pairs, 765 better; disclosed:
+its front is the two-route probe front, not one of the four
+declared); R5 existential + schedule census (the 90-cell blind
+class = M-FIAT 6/6 + four movers SCH-CONST-only; at SCH-CONST
+all five write site- and link-uniform increments; 0-to-value at
+non-constant schedules); R6 five-way boundary priced; R7
+telescoping merged (54/54 net-zero); R8 membership measured; R9
+the historical §15 paragraph with
+G-UNIT-RECORD-IS-THE-BLIND-LIMIT; R10 honesty edits.  **ONE
+VALUE CHANGED as R1's direct consequence, disclosed:
+motivated_all_converge typed-FALSE → measured-TRUE (vacuously,
+over the published-empty motivated set) — the delivered FALSE
+was the literal, the TRUE is the measurement.**  Numbers moved:
+none besides it and the ordered 42→45.  Counts: gates 47→53,
+mutants 39→45 (one falsifier per new gate), paper tokens
+191→271 at 0 unbacked.  Worker battery: plain ×3
+byte-identical, off-tree git-less byte-identical, selftest
+45/45 died-correctly, hostile argv clean.  Residual not
+ordered: K3 MINOR-3 source comment (accessor-block claim) —
+carried.  New shas: paper ef4df3099057, code dc629dfac7be,
+output 2cba39dc4c48, receipt b1661b6c38c2.  Committed AS-IS;
+orchestrator battery next; then TERMINAL.

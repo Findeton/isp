@@ -93,8 +93,22 @@ DEFERRED_GATES = ("G-PAPER-NUMBERS-IN-RECEIPT",
                   "G-VERDICT-STILL-EQUAL-AT-WRITE-TIME",
                   "G-NO-FLOATS-IN-RECEIPT",
                   "G-PROSE-RENDERS-FROM-THE-RECEIPT",
+                  "G-BLOCKS-RENDER-FROM-THE-RECEIPT",
                   "G-NEVER-FALSIFIED-CENSUS", "G-FINAL-COUNTS",
                   "G-DEFERRED-GATES-EVALUATED")
+
+# The never-falsified census seeds its denominator with the WHOLE declared
+# deferred list above, so the gates that have not yet registered when the
+# census is taken are still counted; G-DEFERRED-GATES-EVALUATED proves that
+# list is complete, and the census's own gate -- registered last of all --
+# re-derives the denominator from the live registry.
+#
+# The declared cardinality of the never-falsified census: every must-pass gate
+# and every anchor that no declared mutant kills.  It is a DECLARED number,
+# checked against the live registry by the last gate of the run, so a gate
+# added without a falsifier -- or a falsifier dropped -- fails the delivery
+# instead of quietly moving the count.
+NEVER_FALSIFIED_EXPECTED = 45
 
 
 def gate(name, statement, ok, value=None, must_pass=True):
@@ -490,7 +504,60 @@ def chart_act(pc):
     return (pc[1], pc[0], pc[2])
 
 
+def block_text(bid, txt):
+    """[instrument -- mutable] the rendered result BLOCKS (the verdict, the
+    static-geometry theorem, the section 15 historical sentence).  Unlike the
+    single-line prose sentences these are matched under the #125
+    normalisation, so the paper may wrap them."""
+    if MUTANT == "block-drift" and bid == "THEOREM":
+        return txt.replace("Then NO admissible", "Then SOME admissible")
+    return txt
+
+
+def separated_route2(n):
+    """[instrument -- mutable] the second route to the separated-pair count of
+    a discriminator coordinate: 36 minus the collisions inside each group of
+    equal readouts."""
+    return n + 1 if MUTANT == "discriminator-census-fake" else n
+
+
+def hex_schedule_census(dec):
+    """[instrument -- mutable] mover -> the set of declared schedules at which
+    the mover-blind rescaled limit is reached."""
+    if MUTANT == "schedule-census-fake":
+        return {k: set(SCHEDULES) for k in dec}
+    return {k: set(v) for k, v in dec.items()}
+
+
+def uniform_increment_rows(rows):
+    """[instrument -- mutable] one row per mover reaching the blind limit,
+    carrying its SCH-CONST increments."""
+    return rows[:-1] if MUTANT == "uniform-increment-drop" else list(rows)
+
+
+def tilt_net_total(v):
+    """[instrument -- mutable] the net of a mover's writes over a cell."""
+    return v + 1 if MUTANT == "tilt-net-fake" else v
+
+
+def weld_scale(k):
+    """[instrument -- mutable] |X| * |L|, the declared normalisation under
+    which the accumulation limit is read."""
+    return k - 1 if MUTANT == "unit-record-scale-drift" else k
+
+
 NUMBER_TOKEN = r"(?<![\w/.-])\d+(?:/\d+)?(?![\w.-])"
+MD_PREFIX = re.compile(r"^\s*(?:>+\s*|[-*+]\s+|\d+\.\s+)+")
+
+
+def norm125(txt):
+    """The RUNBOOK section 14 #125 normalisation, applied to BOTH sides of a
+    text gate: markdown blockquote / list prefixes stripped line by line, the
+    inline-code marker stripped, then every whitespace run collapsed to one
+    space.  Nothing else is touched -- emphasis markers, math delimiters and
+    every character of the claim itself must match as written."""
+    return " ".join(" ".join(MD_PREFIX.sub("", ln).replace("`", "")
+                             for ln in txt.split("\n")).split())
 
 
 def paper_number_tokens(txt):
@@ -1331,7 +1398,15 @@ def rebuild_verdict_from_receipt(R):
     inv = t["choice_inventory"]
     cen = t["census"]
     tr = t["trajectory_summary"]
-    if inv["class_i_motivated_movers"] == 0:
+    # THE HEAD-SELECTING QUANTITY IS DERIVED HERE, NOT RE-READ.  The builder's
+    # own copy (choice_inventory/class_i_motivated_movers) is never consulted:
+    # a motivated mover is one every freedom of which is class-(i) or
+    # class-(ii), so the comparator adds the two separately measured and
+    # separately gated components and derives the head from the sum.  A typed
+    # or drifted class_i therefore breaks string equality instead of being
+    # confirmed by a copy of itself.
+    class_i = inv["forced_advancing_movers"] + inv["class_ii_selected"]
+    if class_i == 0:
         head = "CRA-BLOCKED-AT-STATIC-GEOMETRY"
     elif tr["motivated_all_converge"]:
         head = "CRA-RESCALED-CONVERGES"
@@ -1346,7 +1421,7 @@ def rebuild_verdict_from_receipt(R):
                + str(cen["admissible"]))
     out.append("FORCED=" + str(inv["forced_movers"]) + "|FORCED-ADVANCING="
                + str(inv["forced_advancing_movers"]))
-    out.append("INVENTORY=i:" + str(inv["class_i_motivated_movers"]) + ",ii:"
+    out.append("INVENTORY=i:" + str(class_i) + ",ii:"
                + str(inv["class_ii_selected"]) + ",iii:"
                + str(inv["class_iii_fiber"]))
     out.append("SELECTOR-CLOSURE-FIBER="
@@ -1742,6 +1817,7 @@ def run_unit():
     say("-" * 78)
     cens = {}
     ADM = {}
+    ADV = {}
     for fam in ("LIN", "BIL"):
         cells = probe_cells(fam, RECS, LAPSES, FRONTS)
         adv, adm = run_census(fam, cells)
@@ -1767,6 +1843,7 @@ def run_unit():
                      "admissible": len(adm), "probe_cells": len(cells),
                      "full_product": expected_cells}
         ADM[fam] = adm
+        ADV[fam] = adv
         say("C.1  family %s: %d declared candidates -> %d advancing "
             "(delta >= 0 everywhere, > 0 somewhere) -> %d admissible (the "
             "record stays positive definite under 1, 2 and 3 applications).  "
@@ -1841,6 +1918,12 @@ def run_unit():
             fixedpts += 1
     equivariant = [pc for pc in perlink if chart_act(pc) == pc]
     uniform = [pc for pc in perlink if pc[0] == pc[1] == pc[2]]
+    # THE CLASS-(ii) SELECTION, MEASURED.  A censused candidate is selected by
+    # the stabilizer exactly when the chart action MOVES it; the count is
+    # computed from the action, never typed, because it is one of the two
+    # quantities the verdict HEAD is derived from.
+    selected_ii_points = [pc for pc in uniform if chart_act(pc) != pc]
+    selected_ii = len(selected_ii_points)
     gate("G-CHART-ACTION-NONTRIVIAL",
          "POSITIVE CONTROL for the stabilizer instrument: on the declared "
          "per-link coefficient space the chart group acts with orbits of size "
@@ -1852,10 +1935,9 @@ def run_unit():
          "chart-equivariant) but SELECTS no mover: every candidate of the "
          "censused uniform space is a fixed point, so the stabilizer leaves "
          "the whole fiber standing",
-         len(uniform) == len([pc for pc in uniform if chart_act(pc) == pc])
-         and len(equivariant) > 1,
+         selected_ii == 0 and len(equivariant) > 1,
          {"per_link": len(perlink), "chart_equivariant": len(equivariant),
-          "uniform": len(uniform), "selected": 0})
+          "uniform": len(uniform), "selected": selected_ii})
     say("D.2  class (ii) STABILIZER: on the per-link coefficient space "
         "(%d points) the chart group has %d orbits and %d fixed points -- the "
         "instrument sees a nontrivial action.  Chart-equivariance cuts that "
@@ -1864,7 +1946,19 @@ def run_unit():
         % (len(perlink), orbits, fixedpts, len(equivariant), len(uniform)))
 
     class_iii = tot_adm
-    motivated = motivated_count(0)
+    # THE HEAD-SELECTING QUANTITY, DERIVED FROM TWO MEASUREMENTS.  A mover is
+    # MOTIVATED when every freedom in it is class-(i) or class-(ii): it is
+    # either forced by a pinned clause while advancing, or selected by the
+    # pinned stabilizer.  Both components are measured above -- forced_adv from
+    # the quoted clause table against the admissible advancing census, and
+    # selected_ii from the chart action on the censused space -- and each is
+    # separately gated (G-FORCED-ADVANCING-EMPTY, G-CLASS-II-SELECTS-NOTHING).
+    # The head is derived from their sum; nothing here is typed.
+    motivated_pairs = set(forced_adv) | set(
+        (fam, pc[0]) for fam in ("LIN", "BIL") for pc in selected_ii_points)
+    motivated_movers = sorted(m[0] for m in MOVERS
+                              if (m[1], m[2]) in motivated_pairs)
+    motivated = motivated_count(len(forced_adv) + selected_ii)
     gate("G-CLASS-III-FIBER",
          "every admissible advancing mover is class-(iii): no pinned clause "
          "forces it and no pinned symmetry selects it; the fiber is counted "
@@ -1877,7 +1971,9 @@ def run_unit():
     R["tables"]["choice_inventory"] = {
         "forced_movers": len(forced), "forced_advancing_movers":
         len(forced_adv), "class_i_motivated_movers": motivated,
-        "class_ii_selected": 0, "class_iii_fiber": class_iii,
+        "class_ii_selected": selected_ii,
+        "motivated_movers": motivated_movers,
+        "class_iii_fiber": class_iii,
         "per_link_space": len(perlink), "per_link_orbits": orbits,
         "per_link_fixed_points": fixedpts,
         "chart_equivariant": len(equivariant), "uniform_space": len(uniform)}
@@ -2235,6 +2331,12 @@ def run_unit():
         % (("(" + ", ".join(blind_witness[0]) + ")") if blind_witness
            else "(none)",
            ", ".join(blind_witness[1]) if blind_witness else "(none)"))
+    # THE SECOND HEAD-SELECTING QUANTITY, MEASURED.  The convergence bit the
+    # verdict reads is a statement about the MOTIVATED movers of section D --
+    # measured over the trajectory census, not typed.  The motivated set is
+    # empty here, which is exactly what the blocked head reports.
+    motivated_all_converge = all(r["type"] == "CONVERGES" for r in traj_rows
+                                 if r["mover"] in motivated_movers)
     R["tables"]["trajectories"] = traj_rows
     R["tables"]["trajectory_summary"] = {
         "cells": len(traj_rows), "converges": conv, "diverges": div,
@@ -2246,7 +2348,8 @@ def run_unit():
         "mover_blind_witness": {"limit": list(blind_witness[0]),
                                 "movers": blind_witness[1]}
         if blind_witness else None,
-        "motivated_all_converge": False,
+        "motivated_movers": motivated_movers,
+        "motivated_all_converge": motivated_all_converge,
         "limit_classes": [{"limit": list(k),
                            "cells": len(v),
                            "movers": sorted(set(w[0] for w in v)),
@@ -2288,24 +2391,67 @@ def run_unit():
          sorted(flagged) == sorted(declared_foreign),
          {"flagged": sorted(flagged), "declared": declared_foreign,
           "blind_but_not_advancing": sorted(inert)})
+    # WHICH OF THE NAMED MOVERS THE CENSUS ACTUALLY CONTAINS.  class (iii) is
+    # the residue of the ADMISSIBLE ADVANCING census, so a named mover outside
+    # that census is not a class-(iii) member of it; the nine are carried
+    # through the trajectory measurement as the design space's structural
+    # classes, and their membership is measured here rather than assumed.
+    ADV_SET = set((f, cc) for f in ADV for cc in ADV[f])
+    ADM_SET = set((f, cc) for f in ADM for cc in ADM[f])
+    membership = [{"mover": m[0], "family": m[1],
+                   "advancing": (m[1], m[2]) in ADV_SET,
+                   "admissible_advancing": (m[1], m[2]) in ADM_SET,
+                   "coupling": ("FOREIGN" if m[0] in flagged else
+                                ("COUPLED" if m[0] in coupled else
+                                 "BLIND-NOT-ADVANCING"))}
+                  for m in MOVERS]
+    in_census = sorted(r["mover"] for r in membership
+                       if r["admissible_advancing"])
+    outside_census = sorted(r["mover"] for r in membership
+                            if not r["admissible_advancing"])
+    coupled_in = sorted(r["mover"] for r in membership
+                        if r["admissible_advancing"] and r["mover"] in coupled)
+    coupled_out = sorted(r["mover"] for r in membership
+                         if not r["admissible_advancing"]
+                         and r["mover"] in coupled)
+    R["tables"]["named_mover_membership"] = {
+        "table": membership, "named": len(MOVERS),
+        "in_the_admissible_advancing_census": in_census,
+        "carried_from_outside_it": outside_census,
+        "coupled_in_the_census": coupled_in,
+        "coupled_outside_the_census": coupled_out,
+        "advancing_but_inadmissible": sorted(
+            r["mover"] for r in membership
+            if r["advancing"] and not r["admissible_advancing"]),
+        "not_advancing": sorted(r["mover"] for r in membership
+                                if not r["advancing"])}
     # and the audit must ALSO refuse the coupled movers, for a different
-    # measured reason: they are class-(iii), like every other candidate.
+    # measured reason: no pinned clause forces or selects any of them.
     gate("G-FOREIGN-AND-UNMOTIVATED-ARE-DIFFERENT-FINDINGS",
          "the audit separates two gradings: FOREIGN (blind to every pinned "
-         "field) and UNMOTIVATED (class-(iii) in the choice inventory).  The "
+         "field) and UNMOTIVATED (nothing pinned forces or selects it).  The "
          "fiat move is both; every coupled mover is the second and not the "
-         "first",
-         len(flagged) == 1 and motivated == 0 and len(coupled) >= 3,
+         "first -- those inside the admissible advancing census as its "
+         "class-(iii) members, those outside it as movers the census excludes, "
+         "and the two lists together are exactly the coupled set",
+         len(flagged) == 1 and motivated == 0 and len(coupled) >= 3
+         and sorted(coupled_in + coupled_out) == sorted(coupled)
+         and len(coupled_out) > 0,
          {"foreign": sorted(flagged), "coupled_but_unmotivated":
-          sorted(coupled), "motivated": motivated})
+          sorted(coupled), "motivated": motivated,
+          "coupled_in_the_census": coupled_in,
+          "coupled_outside_the_census": coupled_out})
     say("G.1  coupling profiles: %s"
         % "; ".join("%s reads {%s}" % (m, ",".join(
             k for k in ("N", "n", "s") if profiles[m][k]) or "nothing")
             for m in sorted(profiles)))
-    say("G.2  FOREIGN flagged: %s (declared: %s).  COUPLED: %s -- all of them "
-        "class-(iii) unmotivated, which is a different finding."
+    say("G.2  FOREIGN flagged: %s (declared: %s).  COUPLED: %s -- %d of them "
+        "class-(iii) members of the admissible advancing census (%s) and %d "
+        "carried from outside it (%s), none motivated by anything pinned, "
+        "which is a different finding."
         % (", ".join(sorted(flagged)), ", ".join(declared_foreign),
-           ", ".join(sorted(coupled))))
+           ", ".join(sorted(coupled)), len(coupled_in),
+           ", ".join(coupled_in), len(coupled_out), ", ".join(coupled_out)))
     R["tables"]["foreign_control"] = {
         "profiles": profiles, "flagged": len(flagged),
         "declared": len(declared_foreign),
@@ -2348,6 +2494,394 @@ def run_unit():
         "pairs": len(pairs), "separated": len(separated),
         "indistinguishable": ["|".join(p) for p in pairs
                               if readouts[p[0]] == readouts[p[1]]]}
+
+    # ---- H.2  THE DISCRIMINATOR COORDINATE IS A FREE CHOICE, AND ITS WHOLE
+    # ---- FIBER IS CENSUSED.  The count above is a property of ONE coordinate;
+    # ---- the readout is therefore swept over the complete declared (record,
+    # ---- lapse, front, site) product -- the unit's own probe product, no
+    # ---- enlargement -- and the separation count is reported as a range with
+    # ---- the fiber that carries it (RUNBOOK section 15: a quantity that moves
+    # ---- across a declared free axis is an instrument, never a conclusion).
+    progress("section H.2: the discriminator coordinate census")
+
+    def readout_at(fam, c, rec, N, n, x):
+        moved = {lk: rec[x][lk] + dot(c, atomvec(fam, x, lk, N, n, rec))
+                 for lk in LINKS}
+        qq = qmat(moved)
+        return (str(qq[0][0]), str(qq[0][1]), str(qq[1][1]), str(qdet(qq)))
+
+    # the set whose pairs the delivered coordinate cannot separate is
+    # MEASURED, never named: it is the largest group of named movers sharing a
+    # readout there.
+    grp_delivered = {}
+    for mname in readouts:
+        grp_delivered.setdefault(readouts[mname], []).append(mname)
+    FOURSET = sorted(max(sorted(grp_delivered.values()), key=len))
+    four_pairs = [p for p in pairs if p[0] in FOURSET and p[1] in FOURSET]
+    hist = {}
+    seps = []
+    fullsep = 0
+    coord_best = None
+    coord_worst = None
+    route_bad = 0
+    for rn in sorted(RECS):
+        rec = RECS[rn]
+        for ln, N in LAPSES:
+            for fn, n in FRONTS:
+                for x in SITES:
+                    ro = {m[0]: readout_at(m[1], m[2], rec, N, n, x)
+                          for m in MOVERS}
+                    nsep = len([p for p in pairs if ro[p[0]] != ro[p[1]]])
+                    # ROUTE 2, independent: the separated pairs are all pairs
+                    # minus the collisions inside each group of equal readouts.
+                    grp = {}
+                    for mname in ro:
+                        grp[ro[mname]] = grp.get(ro[mname], 0) + 1
+                    coll = sum(g * (g - 1) // 2 for g in grp.values())
+                    if separated_route2(len(pairs) - coll) != nsep:
+                        route_bad += 1
+                    seps.append(nsep)
+                    hist[len(pairs) - nsep] = hist.get(len(pairs) - nsep,
+                                                       0) + 1
+                    if all(ro[p[0]] != ro[p[1]] for p in four_pairs):
+                        fullsep += 1
+                    if coord_best is None or nsep > coord_best[0]:
+                        coord_best = (nsep, rn, ln, fn, list(x))
+                    if coord_worst is None or nsep < coord_worst[0]:
+                        coord_worst = (nsep, rn, ln, fn, list(x))
+    declared_coords = len(RECS) * len(LAPSES) * len(FRONTS) * len(SITES)
+    better = sum(1 for z in seps if z > len(separated))
+    equal = sum(1 for z in seps if z == len(separated))
+    fewer = sum(1 for z in seps if z < len(separated))
+    delivered_four = len([p for p in four_pairs
+                          if readouts[p[0]] != readouts[p[1]]])
+    gate("G-DISCRIMINATOR-COORDINATE-CENSUS",
+         "the discriminator's coordinate is a FREE choice with an exactly "
+         "counted fiber, and the whole fiber is censused: over every declared "
+         "(record, lapse, front, site) coordinate the separation count is "
+         "measured by two independent routes (pairwise comparison, and the "
+         "complement of the collisions inside each group of equal readouts), "
+         "the range is reported with the fiber, and the coordinates that "
+         "separate EVERY pair of the set the delivered coordinate cannot "
+         "separate are counted",
+         route_bad == 0 and len(seps) == declared_coords
+         and sum(hist.values()) == declared_coords and fullsep > 0
+         and min(seps) < max(seps),
+         {"coordinates": declared_coords, "route_disagreements": route_bad,
+          "min_separated": min(seps), "max_separated": max(seps),
+          "pairs": len(pairs), "four_set": FOURSET,
+          "four_set_pairs": len(four_pairs),
+          "separating_the_four_set": fullsep})
+    say("H.2  the discriminator coordinate is free with a fiber of %d: over "
+        "the whole declared product the separation count ranges from %d to %d "
+        "of %d, and %d coordinates separate every one of the %d pairs inside "
+        "%s -- the set the delivered coordinate separates %d of."
+        % (declared_coords, min(seps), max(seps), len(pairs), fullsep,
+           len(four_pairs), ", ".join(FOURSET), delivered_four))
+    R["tables"]["discriminator_coordinate_census"] = {
+        "coordinates": declared_coords, "pairs": len(pairs),
+        "min_separated": min(seps), "max_separated": max(seps),
+        "best_coordinate": {"separated": coord_best[0],
+                            "record": coord_best[1], "lapse": coord_best[2],
+                            "front": coord_best[3], "site": coord_best[4]},
+        "worst_coordinate": {"separated": coord_worst[0],
+                             "record": coord_worst[1], "lapse": coord_worst[2],
+                             "front": coord_worst[3], "site": coord_worst[4]},
+        "indistinguishable_histogram": {str(k): hist[k]
+                                        for k in sorted(hist)},
+        "four_set": FOURSET, "four_set_pairs": len(four_pairs),
+        "separating_the_four_set": fullsep,
+        "route_disagreements": route_bad,
+        "delivered_coordinate": {
+            "record": "G-OFFDIAG", "lapse": "one", "site": list(DET),
+            "front": "the two-route probe front n(x) = x_1 + 1, which is NOT "
+                     "one of the four declared probe fronts",
+            "separated": len(separated),
+            "four_set_pairs_separated": delivered_four},
+        "declared_coordinates_separating_more": better,
+        "declared_coordinates_separating_the_same": equal,
+        "declared_coordinates_separating_fewer": fewer}
+
+    # =====================================================================
+    # SECTION I -- WHAT THE MOVER-BLIND LIMIT IS A PROPERTY OF, THE
+    # CONSERVATION LAW THE PER-EVENT DENOMINATOR CANNOT SEE, AND THE ARENA
+    # THE LIMIT IS
+    # =====================================================================
+    progress("section I: the schedule census, the conservation law, the arena")
+    say()
+    say("-" * 78)
+    say("I.  THE MOVER-BLIND LIMIT, DECOMPOSED")
+    say("-" * 78)
+
+    # ---- I.1  the blind class, decomposed by SCHEDULE ----------------------
+    wl = tuple(blind_witness[0])
+    dec1 = {}
+    for (mv_, sch_, rn_, nm_) in limitset[wl]:
+        dec1.setdefault(mv_, set()).add(sch_)
+    dec1 = hex_schedule_census(dec1)
+    dec2 = {}
+    for r in traj_rows:
+        if r["limit"] == list(wl):
+            dec2.setdefault(r["mover"], set()).add(r["schedule"])
+    hexcells = [r for r in traj_rows if r["limit"] == list(wl)]
+    blind_foreign = sorted(m for m in dec1 if m in flagged)
+    blind_coupled = sorted(m for m in dec1 if m in coupled)
+    shared_scheds = sorted(set.intersection(*[set(dec1[m])
+                                              for m in blind_coupled])) \
+        if blind_coupled else []
+    hexF = tuple(Fr(z) for z in wl)
+    nc = {"cells": 0, "converges": 0, "equal_to_the_limit": 0,
+          "not_a_metric": 0, "proportional": 0, "other": 0}
+    nc_scalars = set()
+    for r in traj_rows:
+        if r["mover"] not in blind_coupled or r["schedule"] in shared_scheds \
+                or r["normalization"] != "NORM-INT":
+            continue
+        nc["cells"] += 1
+        if r["type"] != "CONVERGES":
+            continue
+        nc["converges"] += 1
+        v = tuple(Fr(z) for z in r["limit"])
+        if v == hexF:
+            nc["equal_to_the_limit"] += 1
+        elif any(z == 0 for z in v) or v[0] * v[2] - v[1] * v[1] <= 0:
+            nc["not_a_metric"] += 1
+        else:
+            rat = set(divf(a, b) for a, b in zip(v, hexF))
+            if len(rat) == 1:
+                nc["proportional"] += 1
+                nc_scalars.add(str(sorted(rat)[0]))
+            else:
+                nc["other"] += 1
+    gate("G-BLIND-LIMIT-SCHEDULE-CENSUS",
+         "the mover-blind limit is a property of ONE declared schedule, and "
+         "the split is measured by two independent routes (the limit-class "
+         "aggregation and the trajectory table): the FOREIGN move reaches it "
+         "at every declared schedule, every COUPLED mover that reaches it at "
+         "all reaches it at exactly one and the same one, and at the other "
+         "schedules no coupled mover reaches the value -- so the licensed "
+         "statement is existential and the schedule is part of it",
+         dec1 == dec2 and len(hexcells) == len(limitset[wl])
+         and len(blind_foreign) == 1
+         and set(dec1[blind_foreign[0]]) == set(SCHEDULES)
+         and len(shared_scheds) == 1
+         and all(set(dec1[m]) == set(shared_scheds) for m in blind_coupled)
+         and nc["equal_to_the_limit"] == 0,
+         {"limit": list(wl), "cells": len(hexcells),
+          "foreign": blind_foreign, "coupled": blind_coupled,
+          "schedules_declared": len(SCHEDULES),
+          "foreign_schedules": sorted(dec1[blind_foreign[0]]),
+          "coupled_schedules": shared_scheds,
+          "by_mover": {m: sorted(dec1[m]) for m in sorted(dec1)},
+          "at_the_other_schedules": nc,
+          "proportionality_scalars": sorted(nc_scalars)})
+    say("I.1  the blind class holds %d cells: the foreign move %s reaches the "
+        "limit at %d of %d declared schedules, and the %d coupled movers "
+        "reach it at %d -- %s -- and at no other.  At the other %d schedules "
+        "those movers converge at %d of %d cells, %d to a form that is not a "
+        "metric and %d to a form proportional to the limit at a different "
+        "scale (%s), and at %d of them to the value itself."
+        % (len(hexcells), blind_foreign[0], len(dec1[blind_foreign[0]]),
+           len(SCHEDULES), len(blind_coupled), len(shared_scheds),
+           ", ".join(shared_scheds), len(SCHEDULES) - len(shared_scheds),
+           nc["converges"], nc["cells"], nc["not_a_metric"],
+           nc["proportional"], ", ".join(sorted(nc_scalars)),
+           nc["equal_to_the_limit"]))
+
+    # ---- I.2  why they agree there: the constant lapse is a degeneracy -----
+    uni_rows = []
+    for mname, fam, c, prose in MOVERS:
+        if mname not in dec1:
+            continue
+        vals = set()
+        uni = True
+        for rn in sorted(RECS):
+            s = {x: dict(RECS[rn][x]) for x in SITES}
+            n = {x: 0 for x in SITES}
+            Ns = schedule_of(shared_scheds[0], LAPSES, T_MAX)
+            for t in range(T_MAX):
+                N = Ns[t]
+                ds = {x: {lk: dot(c, atomvec(fam, x, lk, N, n, s))
+                          for lk in LINKS} for x in SITES}
+                flat = set(ds[x][lk] for x in SITES for lk in LINKS)
+                if len(flat) != 1:
+                    uni = False
+                vals |= flat
+                s = {x: {lk: s[x][lk] + ds[x][lk] for lk in LINKS}
+                     for x in SITES}
+                n = {x: n[x] + N[x] for x in SITES}
+        uni_rows.append({"mover": mname, "uniform_at_every_step": uni,
+                         "increments": [str(v) for v in sorted(vals)]})
+    uni_rows = uniform_increment_rows(uni_rows)
+    gate("G-SCH-CONST-UNIFORM-INCREMENT",
+         "the mechanism at that one schedule is measured and is a DEGENERACY "
+         "of it: there every mover of the blind class writes a site- and "
+         "link-uniform increment at every step of the declared horizon, at "
+         "every record, so a per-event denominator divides their scalars out "
+         "and the shared limit is forced -- the blindness is close to a "
+         "tautology at the one schedule where it is measured",
+         len(uni_rows) == len(dec1)
+         and all(r["uniform_at_every_step"] for r in uni_rows),
+         {"schedule": shared_scheds, "movers": [r["mover"] for r in uni_rows],
+          "horizon": T_MAX, "records": len(RECS), "rows": uni_rows})
+    say("I.2  at %s every one of the %d movers of the blind class writes a "
+        "site- and link-uniform increment at every step, at every record: %s."
+        % (", ".join(shared_scheds), len(uni_rows),
+           "; ".join("%s writes %s" % (r["mover"], ",".join(r["increments"]))
+                     for r in uni_rows)))
+
+    # ---- I.3  the undefined normalization is not always an absence of
+    # ---- writes: a conservation law can defeat a per-event denominator.
+    undef_movers = sorted(set(r["mover"] for r in traj_rows
+                              if r["type"] == "UNDEFINED-NORMALIZATION"))
+    cons_rows = []
+    sample = None
+    for mname, fam, c, prose in MOVERS:
+        if mname not in undef_movers:
+            continue
+        cells_ = 0
+        netzero = 0
+        wrote = 0
+        for sch in SCHEDULES:
+            for rn in sorted(RECS):
+                s = {x: dict(RECS[rn][x]) for x in SITES}
+                n = {x: 0 for x in SITES}
+                Ns = schedule_of(sch, LAPSES, T_MAX)
+                tot = 0
+                nz = 0
+                for t in range(T_MAX):
+                    N = Ns[t]
+                    ds = {x: {lk: dot(c, atomvec(fam, x, lk, N, n, s))
+                              for lk in LINKS} for x in SITES}
+                    for x in SITES:
+                        for lk in LINKS:
+                            tot += ds[x][lk]
+                            if ds[x][lk] != 0:
+                                nz += 1
+                    s = {x: {lk: s[x][lk] + ds[x][lk] for lk in LINKS}
+                         for x in SITES}
+                    n = {x: n[x] + N[x] for x in SITES}
+                cells_ += 1
+                if tilt_net_total(tot) == 0:
+                    netzero += 1
+                if nz > 0:
+                    wrote += 1
+        cons_rows.append({"mover": mname, "cells": cells_,
+                          "net_zero_cells": netzero,
+                          "cells_with_writes": wrote})
+        if wrote > 0 and sample is None:
+            # the declared sample: six steps of one non-constant schedule from
+            # one declared record, reported write by write.
+            s = {x: dict(RECS["G-FLAT"][x]) for x in SITES}
+            n = {x: 0 for x in SITES}
+            Ns = schedule_of("SCH-RAMP0", LAPSES, 6)
+            nzw = 0
+            mag = 0
+            net = 0
+            for t in range(6):
+                N = Ns[t]
+                ds = {x: {lk: dot(c, atomvec(fam, x, lk, N, n, s))
+                          for lk in LINKS} for x in SITES}
+                for x in SITES:
+                    for lk in LINKS:
+                        if ds[x][lk] != 0:
+                            nzw += 1
+                        mag += abs(ds[x][lk])
+                        net += ds[x][lk]
+                s = {x: {lk: s[x][lk] + ds[x][lk] for lk in LINKS}
+                     for x in SITES}
+                n = {x: n[x] + N[x] for x in SITES}
+            sample = {"mover": mname, "schedule": "SCH-RAMP0",
+                      "record": "G-FLAT", "steps": 6, "nonzero_writes": nzw,
+                      "absolute_magnitude": mag, "net": tilt_net_total(net),
+                      "record_moved": s_key(s) != s_key(RECS["G-FLAT"])}
+    gate("G-UNDEFINED-NORMALIZATION-MECHANISM",
+         "the undefined normalizations are of TWO kinds, and the second is a "
+         "conservation law rather than a silence: over every (schedule, "
+         "record) cell of every mover whose NORM-INT normalization is "
+         "undefined, the writes sum to exactly zero -- and at the cells where "
+         "that mover writes at all the record demonstrably moves while the "
+         "per-event denominator registers nothing",
+         all(r["net_zero_cells"] == r["cells"] for r in cons_rows)
+         and sample is not None and sample["nonzero_writes"] > 0
+         and sample["absolute_magnitude"] > 0 and sample["net"] == 0
+         and sample["record_moved"],
+         {"movers": cons_rows, "sample": sample})
+    say("I.3  the undefined-normalization movers: %s.  Every one of them sums "
+        "its writes to exactly zero over every (schedule, record) cell; the "
+        "writing one moves the record at %d of its %d cells, and over %d "
+        "steps of %s from %s it makes %d nonzero writes of total magnitude "
+        "%d for a net of %d."
+        % ("; ".join("%s (writes at %d of %d cells)"
+                     % (r["mover"], r["cells_with_writes"], r["cells"])
+                     for r in cons_rows),
+           [r for r in cons_rows if r["mover"] == sample["mover"]][0]
+           ["cells_with_writes"],
+           [r for r in cons_rows if r["mover"] == sample["mover"]][0]["cells"],
+           sample["steps"], sample["schedule"], sample["record"],
+           sample["nonzero_writes"], sample["absolute_magnitude"],
+           sample["net"]))
+    R["tables"]["blind_limit_schedule_census"] = {
+        "limit": list(wl), "cells": len(hexcells),
+        "normalizations": sorted(set(r["normalization"] for r in hexcells)),
+        "records": len(set(r["record"] for r in hexcells)),
+        "foreign": blind_foreign, "coupled": blind_coupled,
+        "declared_schedules": len(SCHEDULES),
+        "foreign_schedules": sorted(dec1[blind_foreign[0]]),
+        "coupled_schedules": shared_scheds,
+        "by_mover": {m: {"schedules": len(dec1[m]),
+                         "schedule_names": sorted(dec1[m]),
+                         "cells": len([r for r in hexcells
+                                       if r["mover"] == m])}
+                     for m in sorted(dec1)},
+        "at_the_other_schedules": nc,
+        "proportionality_scalars": sorted(nc_scalars),
+        "uniform_increment_rows": uni_rows,
+        "uniform_increment_horizon": T_MAX}
+    R["tables"]["undefined_normalization"] = {
+        "movers": cons_rows, "sample": sample,
+        "cells": sum(r["cells"] for r in cons_rows)}
+
+    # ---- I.4  THE ARENA THE LIMIT IS --------------------------------------
+    unit_rec = {lk: 1 for lk in LINKS}
+    qw = qmat(unit_rec)
+    wscale = weld_scale(len(SITES) * len(LINKS))
+    qw_scaled = (divf(qw[0][0], wscale), divf(qw[0][1], wscale),
+                 divf(qw[1][1], wscale))
+    weld_declared = [rn for rn in sorted(RECS)
+                     if all(RECS[rn][x][lk] == 1 for x in SITES
+                            for lk in LINKS)]
+    gate("G-UNIT-RECORD-IS-THE-BLIND-LIMIT",
+         "the record whose every declared link count is 1 has a readout "
+         "which, normalised by |X| x |L|, is EXACTLY the mover-blind rescaled "
+         "limit measured above -- the accumulation limit of this arena IS a "
+         "record's own readout, computed here from this unit's own readout "
+         "map; the record is admissible by this unit's test and is not one of "
+         "the declared ones",
+         tuple(str(z) for z in qw_scaled) == wl and posdef(qw)
+         and not weld_declared,
+         {"record": [unit_rec[lk] for lk in LINKS],
+          "readout": [str(qw[0][0]), str(qw[0][1]), str(qw[1][1])],
+          "determinant": str(qdet(qw)), "scale": wscale,
+          "scaled": [str(z) for z in qw_scaled], "limit": list(wl),
+          "one_of_the_declared_records": weld_declared})
+    say("I.4  the record (%s) reads out as (%s) with determinant %s; divided "
+        "by |X| x |L| = %d that is (%s) -- the mover-blind limit exactly.  It "
+        "is admissible here and is not one of the %d declared records."
+        % (", ".join(str(unit_rec[lk]) for lk in LINKS),
+           ", ".join([str(qw[0][0]), str(qw[0][1]), str(qw[1][1])]),
+           str(qdet(qw)), wscale, ", ".join(str(z) for z in qw_scaled),
+           len(RECS)))
+    R["tables"]["unit_record_arena"] = {
+        "record": [unit_rec[lk] for lk in LINKS],
+        "readout": [str(qw[0][0]), str(qw[0][1]), str(qw[1][1])],
+        "determinant": str(qdet(qw)),
+        "scale": wscale, "scale_reading": "|X| x |L|",
+        "scaled_readout": [str(z) for z in qw_scaled],
+        "blind_limit": list(wl),
+        "equals_the_blind_limit": tuple(str(z) for z in qw_scaled) == wl,
+        "admissible_here": posdef(qw),
+        "one_of_the_declared_records": weld_declared}
 
     # the missing object, named by the pinned source itself
     R["tables"]["missing_object"] = {
@@ -2403,7 +2937,8 @@ def run_unit():
         "expressible": len(expressible), "atoms_declared": len(ATOM_TABLE),
         "candidates": tot_cand, "advancing": tot_adv, "admissible": tot_adm,
         "forced": len(forced), "forced_advancing": len(forced_adv),
-        "class_i": motivated, "class_ii": 0, "class_iii": class_iii,
+        "class_i": motivated, "class_ii": selected_ii,
+        "class_iii": class_iii,
         "closure_fiber": len(closure_fiber),
         "commuting_advancing": len(commute_axis),
         "count_reading_rules": len(count_reading), "rules": len(RL),
@@ -2414,7 +2949,8 @@ def run_unit():
         "norm_flips": norm_flips,
         "foreign_flagged": len(flagged), "foreign_declared":
         len(declared_foreign),
-        "motivated": motivated, "motivated_all_converge": False,
+        "motivated": motivated,
+        "motivated_all_converge": motivated_all_converge,
     }
     head, segs, full = build_verdict(payload)
     R["verdict"] = full
@@ -2641,17 +3177,91 @@ def render_prose(R):
                  "the foreign fiat move."
                  % (", ".join(w["limit"]), ", ".join(w["movers"])))
     s.append("The coupling instrument flags %d of %d declared external growth "
-             "moves FOREIGN, and reports %d coupled movers, every one of them "
-             "class-(iii) unmotivated."
+             "moves FOREIGN, and reports %d coupled movers, %d of them "
+             "class-(iii) members of the admissible advancing census and %d "
+             "carried from outside it, none motivated by anything pinned."
              % (t["foreign_control"]["flagged"],
                 t["foreign_control"]["declared"],
-                len(t["foreign_control"]["coupled_names"])))
+                len(t["foreign_control"]["coupled_names"]),
+                len(t["named_mover_membership"]["coupled_in_the_census"]),
+                len(t["named_mover_membership"]["coupled_outside_the_census"])
+                ))
     s.append("Of %d pairs of named movers, %d are separated by the one-step "
              "record readout at the declared coordinate."
              % (t["discriminator"]["pairs"], t["discriminator"]["separated"]))
+    dc = t["discriminator_coordinate_census"]
+    s.append("Over the %d declared (record, lapse, front, site) coordinates "
+             "the one-step readout separates between %d and %d of the %d "
+             "pairs, and %d of them separate all %d pairs inside the set the "
+             "delivered coordinate separates none of."
+             % (dc["coordinates"], dc["min_separated"], dc["max_separated"],
+                dc["pairs"], dc["separating_the_four_set"],
+                dc["four_set_pairs"]))
+    bl = t["blind_limit_schedule_census"]
+    s.append("The mover-blind limit is reached by the foreign move at %d of "
+             "%d declared schedules and by each of the %d coupled movers at "
+             "exactly %d of them, %s, where every one of the %d writes a "
+             "site- and link-uniform increment at every step; over the %d "
+             "cells at the other %d schedules the coupled movers reach that "
+             "value %d times."
+             % (len(bl["foreign_schedules"]), bl["declared_schedules"],
+                len(bl["coupled"]), len(bl["coupled_schedules"]),
+                ", ".join(bl["coupled_schedules"]),
+                len(bl["uniform_increment_rows"]),
+                bl["at_the_other_schedules"]["cells"],
+                bl["declared_schedules"] - len(bl["coupled_schedules"]),
+                bl["at_the_other_schedules"]["equal_to_the_limit"]))
+    un = t["undefined_normalization"]
+    sm = un["sample"]
+    wrow = [r for r in un["movers"] if r["mover"] == sm["mover"]][0]
+    s.append("%s makes %d nonzero interval writes of total magnitude %d for a "
+             "net of %d over %d steps of %s from %s, and its writes sum to "
+             "zero at all %d of its (schedule, record) cells -- at %d of "
+             "which it writes at all."
+             % (sm["mover"], sm["nonzero_writes"], sm["absolute_magnitude"],
+                sm["net"], sm["steps"], sm["schedule"], sm["record"],
+                wrow["cells"], wrow["cells_with_writes"]))
     if MUTANT == "prose-drift":
         s[1] = s[1].replace("advancing", "ADVANCING")
     return s
+
+
+def render_blocks(R):
+    """The multi-line BLOCKS the paper states as results -- its own verdict,
+    the static-geometry theorem and the section 15 arena sentence -- rendered
+    HERE from the receipt object, with every numeral and every polarity word
+    derived from a measured value.  They are matched against the paper under
+    the #125 normalisation rather than character for character, because the
+    paper wraps them across lines and quotes them as blockquotes."""
+    t = R["tables"]
+    sel = t["selectors"]
+    ua = t["unit_record_arena"]
+    out = [("VERDICT", R["verdict"])]
+    pol = "NO" if sel["commuting_advancing"] == 0 else "SOME"
+    emp = ("empty" if (sel["commuting_advancing"] == 0
+                       and sel["commuting_advancing_insert"] == 0
+                       and sel["joint"] == 0) else "NOT empty")
+    out.append((
+        "THEOREM",
+        "**Theorem (static geometry).** Let $r$ be any of the %d declared "
+        "drag rules whose weight reads at least one interval count. Then %s "
+        "admissible advancing mover in the declared design space commutes "
+        "with $H_a[N]$ for every declared lapse profile; the only commuting "
+        "mover is $\\Delta \\equiv 0$, which does not advance. In particular "
+        "the fiber is %s for the record-native closing rule `A-axis` and for "
+        "the metric-inserted rule `A-insert` alike, and the joint fiber with "
+        "closure preservation is %s."
+        % (sel["count_reading_rules"], pol, emp, emp)))
+    out.append((
+        "ARENA",
+        "The record whose three declared link counts are (%s) reads out as "
+        "(%s) with determinant %s, and divided by the declared %s = %d that "
+        "is (%s) -- the mover-blind rescaled limit of section 7 exactly, "
+        "reached here as a rescaled limit and there as a record."
+        % (", ".join(str(z) for z in ua["record"]),
+           ", ".join(ua["readout"]), ua["determinant"], ua["scale_reading"],
+           ua["scale"], ", ".join(ua["scaled_readout"]))))
+    return [(bid, block_text(bid, txt)) for bid, txt in out]
 
 
 # ---------------------------------------------------------------------------
@@ -2708,14 +3318,21 @@ def deliver(R, payload):
          not bad, {"float_paths": bad[:8]})
 
     prose = render_prose(R)
+    blocks = render_blocks(R)
     R["prose"] = prose
+    R["blocks"] = [{"id": bid, "text": txt} for bid, txt in blocks]
     missing = []
+    missing_blocks = []
     if os.path.exists(PAPER):
         with open(PAPER, "r") as fh:
             ptxt = fh.read()
         missing = [p for p in prose if p not in ptxt]
+        pnorm = norm125(ptxt)
+        missing_blocks = [bid for bid, txt in blocks
+                          if norm125(txt) not in pnorm]
     else:
         missing = ["<paper file absent>"]
+        missing_blocks = ["<paper file absent>"]
     for p in prose:
         say("PROSE| " + p)
         progress("PROSE| " + p)
@@ -2724,22 +3341,43 @@ def deliver(R, payload):
          "from the receipt object and appears VERBATIM in "
          "v14/paper-05-accumulation.md (RUNBOOK section 13 addendum, v14 #20)",
          not missing, {"sentences": len(prose), "missing": missing})
+    for bid, txt in blocks:
+        say("BLOCK| " + bid + " | " + txt)
+        progress("BLOCK| " + bid)
+    gate("G-BLOCKS-RENDER-FROM-THE-RECEIPT",
+         "the paper's multi-line RESULT BLOCKS -- its own verdict block, the "
+         "static-geometry theorem and the section 15 arena sentence -- are "
+         "rendered HERE from the receipt object, every numeral and every "
+         "polarity word derived from a measured value, and each appears in "
+         "v14/paper-05-accumulation.md under the RUNBOOK section 14 #125 "
+         "normalisation (markdown blockquote prefixes and inline-code markers "
+         "stripped, whitespace collapsed).  A stated theorem, a quoted "
+         "verdict or a quoted arena that its own measurement no longer "
+         "supports cannot survive this gate",
+         not missing_blocks, {"blocks": [b[0] for b in blocks],
+                              "missing": missing_blocks})
 
-    # the never-falsified census
-    killed = set()
-    for m in MUTANTS:
-        killed.add(m["expected_gate"])
-    allg = [g["name"] for g in R["gates"] if g["must_pass"]] + \
-           [a["name"] for a in R["anchors"]]
-    never = sorted(set(allg) - killed)
+    # THE NEVER-FALSIFIED CENSUS -- the honest denominator.  It is the WHOLE
+    # ledger: every must-pass gate registered so far, UNION the declared
+    # deferred gates that still have to register (G-DEFERRED-GATES-EVALUATED
+    # proves that declaration is complete), UNION every anchor, minus every
+    # gate a declared mutant kills.  The SET is computed here because the
+    # receipt's counts are finalised before the paper sweep, so the paper's
+    # own quotation of them is swept like every other number; the CHECK is
+    # registered LAST, after every other gate has run, against the live
+    # registry.
+    killed = set(m["expected_gate"] for m in MUTANTS)
+    denom = (set(g["name"] for g in R["gates"] if g["must_pass"])
+             | set(DEFERRED_GATES) | set(a["name"] for a in R["anchors"]))
+    never = sorted(denom - killed)
     R["never_falsified"] = never
     R["mutants_declared"] = [m["name"] for m in MUTANTS]
-    gate("G-NEVER-FALSIFIED-CENSUS",
-         "the never-falsified census is present in the receipt from delivery "
-         "one: every must-pass gate and anchor that no declared mutant kills "
-         "is named",
-         isinstance(never, list), {"never_falsified": len(never),
-                                   "gates_and_anchors": len(allg)})
+    R["tables"]["never_falsified_census"] = {
+        "must_pass_gates_and_anchors": len(denom),
+        "killed_by_a_declared_mutant": len(killed),
+        "never_falsified": len(never),
+        "declared_expectation": NEVER_FALSIFIED_EXPECTED,
+        "names": never}
     # The receipt's own counts are finalised BEFORE the paper number sweep, so
     # that a paper quoting them is swept like every other number.  The gates
     # still to run are exactly the declared deferred ones that have not run.
@@ -2775,27 +3413,54 @@ def deliver(R, payload):
 
 
     ran = set(g["name"] for g in GATES)
+    LAST_GATES = ("G-DEFERRED-GATES-EVALUATED", "G-FINAL-COUNTS",
+                  "G-NEVER-FALSIFIED-CENSUS")
     gate("G-DEFERRED-GATES-EVALUATED",
          "every gate declared DEFERRED (evaluable only after the receipt "
          "object exists) really ran in this run",
-         all(g in ran or g in ("G-DEFERRED-GATES-EVALUATED",
-                               "G-FINAL-COUNTS")
-             for g in DEFERRED_GATES),
+         all(g in ran or g in LAST_GATES for g in DEFERRED_GATES),
          {"deferred": list(DEFERRED_GATES),
-          "evaluated_after_this_one": ["G-FINAL-COUNTS"],
+          "evaluated_after_this_one": ["G-FINAL-COUNTS",
+                                       "G-NEVER-FALSIFIED-CENSUS"],
           "not_run": [g for g in DEFERRED_GATES
-                      if g not in ran and g not in
-                      ("G-DEFERRED-GATES-EVALUATED", "G-FINAL-COUNTS")]})
+                      if g not in ran and g not in LAST_GATES]})
 
+    still = [g for g in DEFERRED_GATES
+             if g not in set(z["name"] for z in GATES)]
     gate("G-FINAL-COUNTS",
          "the receipt's own gate count, predicted from the ledger plus the "
          "declared deferred gates before the paper sweep, equals the count "
          "actually reached -- so a gate added or dropped anywhere breaks it",
-         len(GATES) + 1 == R["counts"]["gates"]
+         len(GATES) + len(still) == R["counts"]["gates"]
          and len(ANCHORS) == R["counts"]["anchors"],
-         {"predicted": R["counts"]["gates"], "reached": len(GATES) + 1,
+         {"predicted": R["counts"]["gates"],
+          "reached": len(GATES) + len(still), "still_to_register": still,
           "anchors": len(ANCHORS), "mutants": len(MUTANTS),
           "disclosures": len(DISCLOSURES)})
+
+    # LAST OF ALL: the never-falsified census, checked against the registry
+    # every other gate has now finished writing.  The only name this gate has
+    # to supply for itself is its own -- it cannot be in the live list at the
+    # moment its own predicate is evaluated.
+    live = (set(g["name"] for g in GATES if g["must_pass"])
+            | set(["G-NEVER-FALSIFIED-CENSUS"])
+            | set(a["name"] for a in ANCHORS))
+    gate("G-NEVER-FALSIFIED-CENSUS",
+         "the never-falsified census is in the receipt from delivery one AND "
+         "its denominator is the honest one: this gate runs after every other "
+         "gate has registered and requires the published census to be exactly "
+         "the live registry of must-pass gates and anchors -- this gate "
+         "included -- minus the gates the declared mutants kill, at the "
+         "declared cardinality",
+         set(never) == live - killed
+         and len(never) == NEVER_FALSIFIED_EXPECTED
+         and len(live) == len(denom),
+         {"never_falsified": len(never),
+          "declared_expectation": NEVER_FALSIFIED_EXPECTED,
+          "denominator_at_census_time": len(denom),
+          "live_denominator": len(live), "killed": len(killed),
+          "missing_from_the_census": sorted((live - killed) - set(never)),
+          "not_in_the_live_registry": sorted(set(never) - (live - killed))})
 
     say()
     say("-" * 78)
@@ -2936,6 +3601,35 @@ MUTANTS = [
      "breaks": "perturbs the record readout by one diagonal count: the "
                "record-IS-metric re-encoding and every recomputed closure row "
                "must fail"},
+    # ---- the falsifiers of the rendered blocks and of the five measurements
+    # ---- added with them: the coordinate census, the schedule census, the
+    # ---- constant-lapse degeneracy, the telescoping writes, and the arena.
+    {"name": "block-drift", "expected_gate":
+     "G-BLOCKS-RENDER-FROM-THE-RECEIPT",
+     "breaks": "inverts the polarity word of the rendered static-geometry "
+               "theorem, so the block the paper states is no longer the block "
+               "the measurement renders"},
+    {"name": "discriminator-census-fake", "expected_gate":
+     "G-DISCRIMINATOR-COORDINATE-CENSUS",
+     "breaks": "perturbs the second route to the separated-pair count, so the "
+               "coordinate census's two routes must disagree"},
+    {"name": "schedule-census-fake", "expected_gate":
+     "G-BLIND-LIMIT-SCHEDULE-CENSUS",
+     "breaks": "reports every mover of the blind class at every schedule -- "
+               "the generalization the schedule census exists to refuse"},
+    {"name": "uniform-increment-drop", "expected_gate":
+     "G-SCH-CONST-UNIFORM-INCREMENT",
+     "breaks": "drops one mover from the uniform-increment measurement, so "
+               "the degeneracy is claimed for fewer movers than it is "
+               "measured on"},
+    {"name": "tilt-net-fake", "expected_gate":
+     "G-UNDEFINED-NORMALIZATION-MECHANISM",
+     "breaks": "perturbs the net of the writes, so the telescoping "
+               "conservation law stops being exact"},
+    {"name": "unit-record-scale-drift", "expected_gate":
+     "G-UNIT-RECORD-IS-THE-BLIND-LIMIT",
+     "breaks": "drifts the declared normalisation |X| x |L| by one, so the "
+               "unit record's readout no longer equals the measured limit"},
 ]
 
 

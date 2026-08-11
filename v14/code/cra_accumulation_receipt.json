@@ -572,13 +572,27 @@
   }
  ],
  "arithmetic": "int / fractions.Fraction only; no floats, no tolerances",
+ "blocks": [
+  {
+   "id": "VERDICT",
+   "text": "CRA-BLOCKED-AT-STATIC-GEOMETRY-<MISSING=A-GEOMETRY-UPDATE-LAW; EXPRESSIBLE=12/13; CENSUS=8192|ADVANCING=2976|ADMISSIBLE=1232; FORCED=2|FORCED-ADVANCING=0; INVENTORY=i:0,ii:0,iii:1232; SELECTOR-CLOSURE-FIBER=4; COMMUTING-ADVANCING=0-AT-9-OF-11-RULES; TRAJ=CONVERGES:531,DIVERGES:117,UNDEF:108,UNCLASSIFIED:216; LIMIT-CLASSES=27|MOVER-BLIND-LIMIT=YES; NORMALIZATION-FLIPS=216; FOREIGN-FLAGGED=1/1>"
+  },
+  {
+   "id": "THEOREM",
+   "text": "**Theorem (static geometry).** Let $r$ be any of the 9 declared drag rules whose weight reads at least one interval count. Then NO admissible advancing mover in the declared design space commutes with $H_a[N]$ for every declared lapse profile; the only commuting mover is $\\Delta \\equiv 0$, which does not advance. In particular the fiber is empty for the record-native closing rule `A-axis` and for the metric-inserted rule `A-insert` alike, and the joint fiber with closure preservation is empty."
+  },
+  {
+   "id": "ARENA",
+   "text": "The record whose three declared link counts are (1, 1, 1) reads out as (1, -1/2, 1) with determinant 3/4, and divided by the declared |X| x |L| = 27 that is (1/27, -1/54, 1/27) -- the mover-blind rescaled limit of section 7 exactly, reached here as a rescaled limit and there as a record."
+  }
+ ],
  "counts": {
   "anchors": 31,
   "disclosures": 6,
-  "gates": 47,
-  "must_pass_gates": 47,
-  "mutants": 39,
-  "never_falsified": 42
+  "gates": 53,
+  "must_pass_gates": 53,
+  "mutants": 45,
+  "never_falsified": 45
  },
  "declarations": {
   "L": 3,
@@ -1341,7 +1355,7 @@
    "must_pass": true,
    "name": "G-FOREIGN-AND-UNMOTIVATED-ARE-DIFFERENT-FINDINGS",
    "passed": true,
-   "statement": "the audit separates two gradings: FOREIGN (blind to every pinned field) and UNMOTIVATED (class-(iii) in the choice inventory).  The fiat move is both; every coupled mover is the second and not the first",
+   "statement": "the audit separates two gradings: FOREIGN (blind to every pinned field) and UNMOTIVATED (nothing pinned forces or selects it).  The fiat move is both; every coupled mover is the second and not the first -- those inside the admissible advancing census as its class-(iii) members, those outside it as movers the census excludes, and the two lists together are exactly the coupled set",
    "value": {
     "coupled_but_unmotivated": [
      "M-CLOSED",
@@ -1349,6 +1363,17 @@
      "M-FRONT",
      "M-LAPDIL",
      "M-SOURCE",
+     "M-TARGET",
+     "M-TILT"
+    ],
+    "coupled_in_the_census": [
+     "M-DILATE",
+     "M-FRONT",
+     "M-LAPDIL",
+     "M-SOURCE"
+    ],
+    "coupled_outside_the_census": [
+     "M-CLOSED",
      "M-TARGET",
      "M-TILT"
     ],
@@ -1375,6 +1400,235 @@
     ],
     "pairs": 36,
     "separated": 29
+   }
+  },
+  {
+   "must_pass": true,
+   "name": "G-DISCRIMINATOR-COORDINATE-CENSUS",
+   "passed": true,
+   "statement": "the discriminator's coordinate is a FREE choice with an exactly counted fiber, and the whole fiber is censused: over every declared (record, lapse, front, site) coordinate the separation count is measured by two independent routes (pairwise comparison, and the complement of the collisions inside each group of equal readouts), the range is reported with the fiber, and the coordinates that separate EVERY pair of the set the delivered coordinate cannot separate are counted",
+   "value": {
+    "coordinates": 3888,
+    "four_set": [
+     "M-FIAT",
+     "M-FRONT",
+     "M-SOURCE",
+     "M-TARGET"
+    ],
+    "four_set_pairs": 6,
+    "max_separated": 35,
+    "min_separated": 15,
+    "pairs": 36,
+    "route_disagreements": 0,
+    "separating_the_four_set": 207
+   }
+  },
+  {
+   "must_pass": true,
+   "name": "G-BLIND-LIMIT-SCHEDULE-CENSUS",
+   "passed": true,
+   "statement": "the mover-blind limit is a property of ONE declared schedule, and the split is measured by two independent routes (the limit-class aggregation and the trajectory table): the FOREIGN move reaches it at every declared schedule, every COUPLED mover that reaches it at all reaches it at exactly one and the same one, and at the other schedules no coupled mover reaches the value -- so the licensed statement is existential and the schedule is part of it",
+   "value": {
+    "at_the_other_schedules": {
+     "cells": 180,
+     "converges": 108,
+     "equal_to_the_limit": 0,
+     "not_a_metric": 81,
+     "other": 0,
+     "proportional": 27
+    },
+    "by_mover": {
+     "M-CLOSED": [
+      "SCH-CONST"
+     ],
+     "M-FIAT": [
+      "SCH-CONST",
+      "SCH-DELTA-CYC",
+      "SCH-DELTA-FIX",
+      "SCH-MIX",
+      "SCH-RAMP0",
+      "SCH-RAMP1"
+     ],
+     "M-FRONT": [
+      "SCH-CONST"
+     ],
+     "M-SOURCE": [
+      "SCH-CONST"
+     ],
+     "M-TARGET": [
+      "SCH-CONST"
+     ]
+    },
+    "cells": 90,
+    "coupled": [
+     "M-CLOSED",
+     "M-FRONT",
+     "M-SOURCE",
+     "M-TARGET"
+    ],
+    "coupled_schedules": [
+     "SCH-CONST"
+    ],
+    "foreign": [
+     "M-FIAT"
+    ],
+    "foreign_schedules": [
+     "SCH-CONST",
+     "SCH-DELTA-CYC",
+     "SCH-DELTA-FIX",
+     "SCH-MIX",
+     "SCH-RAMP0",
+     "SCH-RAMP1"
+    ],
+    "limit": [
+     "1/27",
+     "-1/54",
+     "1/27"
+    ],
+    "proportionality_scalars": [
+     "9",
+     "9/2"
+    ],
+    "schedules_declared": 6
+   }
+  },
+  {
+   "must_pass": true,
+   "name": "G-SCH-CONST-UNIFORM-INCREMENT",
+   "passed": true,
+   "statement": "the mechanism at that one schedule is measured and is a DEGENERACY of it: there every mover of the blind class writes a site- and link-uniform increment at every step of the declared horizon, at every record, so a per-event denominator divides their scalars out and the shared limit is forced -- the blindness is close to a tautology at the one schedule where it is measured",
+   "value": {
+    "horizon": 20,
+    "movers": [
+     "M-CLOSED",
+     "M-SOURCE",
+     "M-TARGET",
+     "M-FRONT",
+     "M-FIAT"
+    ],
+    "records": 9,
+    "rows": [
+     {
+      "increments": [
+       "2"
+      ],
+      "mover": "M-CLOSED",
+      "uniform_at_every_step": true
+     },
+     {
+      "increments": [
+       "1"
+      ],
+      "mover": "M-SOURCE",
+      "uniform_at_every_step": true
+     },
+     {
+      "increments": [
+       "1"
+      ],
+      "mover": "M-TARGET",
+      "uniform_at_every_step": true
+     },
+     {
+      "increments": [
+       "0",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8",
+       "9",
+       "10",
+       "11",
+       "12",
+       "13",
+       "14",
+       "15",
+       "16",
+       "17",
+       "18",
+       "19"
+      ],
+      "mover": "M-FRONT",
+      "uniform_at_every_step": true
+     },
+     {
+      "increments": [
+       "1"
+      ],
+      "mover": "M-FIAT",
+      "uniform_at_every_step": true
+     }
+    ],
+    "schedule": [
+     "SCH-CONST"
+    ]
+   }
+  },
+  {
+   "must_pass": true,
+   "name": "G-UNDEFINED-NORMALIZATION-MECHANISM",
+   "passed": true,
+   "statement": "the undefined normalizations are of TWO kinds, and the second is a conservation law rather than a silence: over every (schedule, record) cell of every mover whose NORM-INT normalization is undefined, the writes sum to exactly zero -- and at the cells where that mover writes at all the record demonstrably moves while the per-event denominator registers nothing",
+   "value": {
+    "movers": [
+     {
+      "cells": 54,
+      "cells_with_writes": 0,
+      "mover": "M-NONE",
+      "net_zero_cells": 54
+     },
+     {
+      "cells": 54,
+      "cells_with_writes": 45,
+      "mover": "M-TILT",
+      "net_zero_cells": 54
+     }
+    ],
+    "sample": {
+     "absolute_magnitude": 360,
+     "mover": "M-TILT",
+     "net": 0,
+     "nonzero_writes": 90,
+     "record": "G-FLAT",
+     "record_moved": true,
+     "schedule": "SCH-RAMP0",
+     "steps": 6
+    }
+   }
+  },
+  {
+   "must_pass": true,
+   "name": "G-UNIT-RECORD-IS-THE-BLIND-LIMIT",
+   "passed": true,
+   "statement": "the record whose every declared link count is 1 has a readout which, normalised by |X| x |L|, is EXACTLY the mover-blind rescaled limit measured above -- the accumulation limit of this arena IS a record's own readout, computed here from this unit's own readout map; the record is admissible by this unit's test and is not one of the declared ones",
+   "value": {
+    "determinant": "3/4",
+    "limit": [
+     "1/27",
+     "-1/54",
+     "1/27"
+    ],
+    "one_of_the_declared_records": [],
+    "readout": [
+     "1",
+     "-1/2",
+     "1"
+    ],
+    "record": [
+     1,
+     1,
+     1
+    ],
+    "scale": 27,
+    "scaled": [
+     "1/27",
+     "-1/54",
+     "1/27"
+    ]
    }
   },
   {
@@ -1439,8 +1693,8 @@
    "passed": true,
    "statement": "the object the gates checked is bit-identical to the object the receipt and the paper render from (RUNBOOK section 13 addendum, v14 #10)",
    "value": {
-    "digest_at_gate_time": "2048f7ac05b95f22",
-    "digest_at_write_time": "2048f7ac05b95f22"
+    "digest_at_gate_time": "6ffa4994d2bd4a58",
+    "digest_at_write_time": "6ffa4994d2bd4a58"
    }
   },
   {
@@ -1468,17 +1722,21 @@
    "statement": "every load-bearing numeric sentence of the paper is rendered HERE from the receipt object and appears VERBATIM in v14/paper-05-accumulation.md (RUNBOOK section 13 addendum, v14 #20)",
    "value": {
     "missing": [],
-    "sentences": 11
+    "sentences": 14
    }
   },
   {
    "must_pass": true,
-   "name": "G-NEVER-FALSIFIED-CENSUS",
+   "name": "G-BLOCKS-RENDER-FROM-THE-RECEIPT",
    "passed": true,
-   "statement": "the never-falsified census is present in the receipt from delivery one: every must-pass gate and anchor that no declared mutant kills is named",
+   "statement": "the paper's multi-line RESULT BLOCKS -- its own verdict block, the static-geometry theorem and the section 15 arena sentence -- are rendered HERE from the receipt object, every numeral and every polarity word derived from a measured value, and each appears in v14/paper-05-accumulation.md under the RUNBOOK section 14 #125 normalisation (markdown blockquote prefixes and inline-code markers stripped, whitespace collapsed).  A stated theorem, a quoted verdict or a quoted arena that its own measurement no longer supports cannot survive this gate",
    "value": {
-    "gates_and_anchors": 74,
-    "never_falsified": 42
+    "blocks": [
+     "VERDICT",
+     "THEOREM",
+     "ARENA"
+    ],
+    "missing": []
    }
   },
   {
@@ -1487,8 +1745,8 @@
    "passed": true,
    "statement": "every numeric token appearing in the paper is a number the receipt object carries: the hand-written-prose surface is swept mechanically, not trusted",
    "value": {
-    "distinct": 58,
-    "tokens": 191,
+    "distinct": 64,
+    "tokens": 271,
     "unbacked": []
    }
   },
@@ -1504,12 +1762,14 @@
      "G-VERDICT-STILL-EQUAL-AT-WRITE-TIME",
      "G-NO-FLOATS-IN-RECEIPT",
      "G-PROSE-RENDERS-FROM-THE-RECEIPT",
+     "G-BLOCKS-RENDER-FROM-THE-RECEIPT",
      "G-NEVER-FALSIFIED-CENSUS",
      "G-FINAL-COUNTS",
      "G-DEFERRED-GATES-EVALUATED"
     ],
     "evaluated_after_this_one": [
-     "G-FINAL-COUNTS"
+     "G-FINAL-COUNTS",
+     "G-NEVER-FALSIFIED-CENSUS"
     ],
     "not_run": []
    }
@@ -1522,9 +1782,28 @@
    "value": {
     "anchors": 31,
     "disclosures": 6,
-    "mutants": 39,
-    "predicted": 47,
-    "reached": 47
+    "mutants": 45,
+    "predicted": 53,
+    "reached": 53,
+    "still_to_register": [
+     "G-NEVER-FALSIFIED-CENSUS",
+     "G-FINAL-COUNTS"
+    ]
+   }
+  },
+  {
+   "must_pass": true,
+   "name": "G-NEVER-FALSIFIED-CENSUS",
+   "passed": true,
+   "statement": "the never-falsified census is in the receipt from delivery one AND its denominator is the honest one: this gate runs after every other gate has registered and requires the published census to be exactly the live registry of must-pass gates and anchors -- this gate included -- minus the gates the declared mutants kill, at the declared cardinality",
+   "value": {
+    "declared_expectation": 45,
+    "denominator_at_census_time": 84,
+    "killed": 39,
+    "live_denominator": 84,
+    "missing_from_the_census": [],
+    "never_falsified": 45,
+    "not_in_the_live_registry": []
    }
   }
  ],
@@ -1567,7 +1846,13 @@
   "coupling-dead",
   "readlink-hide",
   "paper-number-inject",
-  "readout-perturb"
+  "readout-perturb",
+  "block-drift",
+  "discriminator-census-fake",
+  "schedule-census-fake",
+  "uniform-increment-drop",
+  "tilt-net-fake",
+  "unit-record-scale-drift"
  ],
  "never_falsified": [
   "A-HA-CODE",
@@ -1578,11 +1863,14 @@
   "G-CENSUS-TWO-ROUTES-BIL",
   "G-CLASS-II-SELECTS-NOTHING",
   "G-COUNT-BLIND-EXCEPTION",
+  "G-DEFERRED-GATES-EVALUATED",
   "G-DISCRIMINATOR-CENSUS",
   "G-ENGRAVINGS-PRESENT",
+  "G-FINAL-COUNTS",
   "G-FORCED-ADVANCING-EMPTY",
   "G-FOREIGN-AND-UNMOTIVATED-ARE-DIFFERENT-FINDINGS",
   "G-MUTANT-BLINDNESS",
+  "G-NEVER-FALSIFIED-CENSUS",
   "G-NO-FLOATS-IN-RECEIPT",
   "G-NO-PINNED-SELECTOR-SELECTS",
   "G-S-ORBIT-SINGLETON",
@@ -1624,12 +1912,15 @@
   "Across 972 trajectory cells at horizon t = 20, 531 converge, 117 diverge, 108 have an undefined normalization and 216 are unclassified, in 27 distinct exact limit classes.",
   "The convergence type changes with the declared normalization at 216 of the 486 (mover, schedule, record) cells.",
   "The exact rescaled limit (1/27, -1/54, 1/27) is reached by M-CLOSED, M-FIAT, M-FRONT, M-SOURCE, M-TARGET -- including the foreign fiat move.",
-  "The coupling instrument flags 1 of 1 declared external growth moves FOREIGN, and reports 7 coupled movers, every one of them class-(iii) unmotivated.",
-  "Of 36 pairs of named movers, 29 are separated by the one-step record readout at the declared coordinate."
+  "The coupling instrument flags 1 of 1 declared external growth moves FOREIGN, and reports 7 coupled movers, 4 of them class-(iii) members of the admissible advancing census and 3 carried from outside it, none motivated by anything pinned.",
+  "Of 36 pairs of named movers, 29 are separated by the one-step record readout at the declared coordinate.",
+  "Over the 3888 declared (record, lapse, front, site) coordinates the one-step readout separates between 15 and 35 of the 36 pairs, and 207 of them separate all 6 pairs inside the set the delivered coordinate separates none of.",
+  "The mover-blind limit is reached by the foreign move at 6 of 6 declared schedules and by each of the 4 coupled movers at exactly 1 of them, SCH-CONST, where every one of the 5 writes a site- and link-uniform increment at every step; over the 180 cells at the other 5 schedules the coupled movers reach that value 0 times.",
+  "M-TILT makes 90 nonzero interval writes of total magnitude 360 for a net of 0 over 6 steps of SCH-RAMP0 from G-FLAT, and its writes sum to zero at all 54 of its (schedule, record) cells -- at 45 of which it writes at all."
  ],
  "python": "3.13.2",
  "schema": "cra-accumulation-receipt-v1",
- "source_sha256": "e289d3afc852f6dc1af9a7e587f23275346c8a40bc450ddd3acf5ec168e00edd",
+ "source_sha256": "dc629dfac7bedfd0736353a0cddaf0bcddcd634b6ffa4399148f1a5acae343c5",
  "tables": {
   "atoms": {
    "banned": [
@@ -1731,6 +2022,150 @@
     }
    ]
   },
+  "blind_limit_schedule_census": {
+   "at_the_other_schedules": {
+    "cells": 180,
+    "converges": 108,
+    "equal_to_the_limit": 0,
+    "not_a_metric": 81,
+    "other": 0,
+    "proportional": 27
+   },
+   "by_mover": {
+    "M-CLOSED": {
+     "cells": 9,
+     "schedule_names": [
+      "SCH-CONST"
+     ],
+     "schedules": 1
+    },
+    "M-FIAT": {
+     "cells": 54,
+     "schedule_names": [
+      "SCH-CONST",
+      "SCH-DELTA-CYC",
+      "SCH-DELTA-FIX",
+      "SCH-MIX",
+      "SCH-RAMP0",
+      "SCH-RAMP1"
+     ],
+     "schedules": 6
+    },
+    "M-FRONT": {
+     "cells": 9,
+     "schedule_names": [
+      "SCH-CONST"
+     ],
+     "schedules": 1
+    },
+    "M-SOURCE": {
+     "cells": 9,
+     "schedule_names": [
+      "SCH-CONST"
+     ],
+     "schedules": 1
+    },
+    "M-TARGET": {
+     "cells": 9,
+     "schedule_names": [
+      "SCH-CONST"
+     ],
+     "schedules": 1
+    }
+   },
+   "cells": 90,
+   "coupled": [
+    "M-CLOSED",
+    "M-FRONT",
+    "M-SOURCE",
+    "M-TARGET"
+   ],
+   "coupled_schedules": [
+    "SCH-CONST"
+   ],
+   "declared_schedules": 6,
+   "foreign": [
+    "M-FIAT"
+   ],
+   "foreign_schedules": [
+    "SCH-CONST",
+    "SCH-DELTA-CYC",
+    "SCH-DELTA-FIX",
+    "SCH-MIX",
+    "SCH-RAMP0",
+    "SCH-RAMP1"
+   ],
+   "limit": [
+    "1/27",
+    "-1/54",
+    "1/27"
+   ],
+   "normalizations": [
+    "NORM-INT"
+   ],
+   "proportionality_scalars": [
+    "9",
+    "9/2"
+   ],
+   "records": 9,
+   "uniform_increment_horizon": 20,
+   "uniform_increment_rows": [
+    {
+     "increments": [
+      "2"
+     ],
+     "mover": "M-CLOSED",
+     "uniform_at_every_step": true
+    },
+    {
+     "increments": [
+      "1"
+     ],
+     "mover": "M-SOURCE",
+     "uniform_at_every_step": true
+    },
+    {
+     "increments": [
+      "1"
+     ],
+     "mover": "M-TARGET",
+     "uniform_at_every_step": true
+    },
+    {
+     "increments": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19"
+     ],
+     "mover": "M-FRONT",
+     "uniform_at_every_step": true
+    },
+    {
+     "increments": [
+      "1"
+     ],
+     "mover": "M-FIAT",
+     "uniform_at_every_step": true
+    }
+   ]
+  },
   "cache": {
    "bypass": 486,
    "disagreements": 0,
@@ -1766,6 +2201,7 @@
    "class_iii_fiber": 1232,
    "forced_advancing_movers": 0,
    "forced_movers": 2,
+   "motivated_movers": [],
    "per_link_fixed_points": 4096,
    "per_link_orbits": 133120,
    "per_link_space": 262144,
@@ -1886,6 +2322,70 @@
    },
    "separated": 29
   },
+  "discriminator_coordinate_census": {
+   "best_coordinate": {
+    "front": "n-ramp",
+    "lapse": "ramp0",
+    "record": "G-ANISO",
+    "separated": 35,
+    "site": [
+     2,
+     0
+    ]
+   },
+   "coordinates": 3888,
+   "declared_coordinates_separating_fewer": 2745,
+   "declared_coordinates_separating_more": 765,
+   "declared_coordinates_separating_the_same": 378,
+   "delivered_coordinate": {
+    "four_set_pairs_separated": 0,
+    "front": "the two-route probe front n(x) = x_1 + 1, which is NOT one of the four declared probe fronts",
+    "lapse": "one",
+    "record": "G-OFFDIAG",
+    "separated": 29,
+    "site": [
+     0,
+     0
+    ]
+   },
+   "four_set": [
+    "M-FIAT",
+    "M-FRONT",
+    "M-SOURCE",
+    "M-TARGET"
+   ],
+   "four_set_pairs": 6,
+   "indistinguishable_histogram": {
+    "1": 90,
+    "10": 342,
+    "11": 630,
+    "15": 270,
+    "16": 405,
+    "2": 63,
+    "21": 630,
+    "3": 81,
+    "4": 126,
+    "5": 405,
+    "7": 378,
+    "8": 414,
+    "9": 54
+   },
+   "max_separated": 35,
+   "min_separated": 15,
+   "pairs": 36,
+   "route_disagreements": 0,
+   "separating_the_four_set": 207,
+   "worst_coordinate": {
+    "front": "n-zero",
+    "lapse": "delta00",
+    "record": "G-ANISO",
+    "separated": 15,
+    "site": [
+     0,
+     1
+    ]
+   }
+  },
   "foreign_control": {
    "blind_but_not_advancing": [
     "M-NONE"
@@ -1975,6 +2475,159 @@
    "named_by": "v13/paper-ha-successor.md sections 12(7) and 14, quoted verbatim at clauses C-NOLAW and C-OPEN",
    "quote": "**No geometry-update law is constructed**",
    "token": "A-GEOMETRY-UPDATE-LAW"
+  },
+  "named_mover_membership": {
+   "advancing_but_inadmissible": [
+    "M-CLOSED",
+    "M-TARGET"
+   ],
+   "carried_from_outside_it": [
+    "M-CLOSED",
+    "M-NONE",
+    "M-TARGET",
+    "M-TILT"
+   ],
+   "coupled_in_the_census": [
+    "M-DILATE",
+    "M-FRONT",
+    "M-LAPDIL",
+    "M-SOURCE"
+   ],
+   "coupled_outside_the_census": [
+    "M-CLOSED",
+    "M-TARGET",
+    "M-TILT"
+   ],
+   "in_the_admissible_advancing_census": [
+    "M-DILATE",
+    "M-FIAT",
+    "M-FRONT",
+    "M-LAPDIL",
+    "M-SOURCE"
+   ],
+   "named": 9,
+   "not_advancing": [
+    "M-NONE",
+    "M-TILT"
+   ],
+   "table": [
+    {
+     "admissible_advancing": false,
+     "advancing": false,
+     "coupling": "BLIND-NOT-ADVANCING",
+     "family": "LIN",
+     "mover": "M-NONE"
+    },
+    {
+     "admissible_advancing": false,
+     "advancing": true,
+     "coupling": "COUPLED",
+     "family": "LIN",
+     "mover": "M-CLOSED"
+    },
+    {
+     "admissible_advancing": true,
+     "advancing": true,
+     "coupling": "COUPLED",
+     "family": "LIN",
+     "mover": "M-SOURCE"
+    },
+    {
+     "admissible_advancing": false,
+     "advancing": true,
+     "coupling": "COUPLED",
+     "family": "LIN",
+     "mover": "M-TARGET"
+    },
+    {
+     "admissible_advancing": true,
+     "advancing": true,
+     "coupling": "COUPLED",
+     "family": "LIN",
+     "mover": "M-FRONT"
+    },
+    {
+     "admissible_advancing": false,
+     "advancing": false,
+     "coupling": "COUPLED",
+     "family": "LIN",
+     "mover": "M-TILT"
+    },
+    {
+     "admissible_advancing": true,
+     "advancing": true,
+     "coupling": "COUPLED",
+     "family": "LIN",
+     "mover": "M-DILATE"
+    },
+    {
+     "admissible_advancing": true,
+     "advancing": true,
+     "coupling": "COUPLED",
+     "family": "BIL",
+     "mover": "M-LAPDIL"
+    },
+    {
+     "admissible_advancing": true,
+     "advancing": true,
+     "coupling": "FOREIGN",
+     "family": "LIN",
+     "mover": "M-FIAT"
+    }
+   ]
+  },
+  "never_falsified_census": {
+   "declared_expectation": 45,
+   "killed_by_a_declared_mutant": 39,
+   "must_pass_gates_and_anchors": 84,
+   "names": [
+    "A-HA-CODE",
+    "A-HA-PAPER",
+    "A-PIN-CRA",
+    "A-R0-PIN",
+    "G-CENSUS-CELLS-COMPLETE-BIL",
+    "G-CENSUS-TWO-ROUTES-BIL",
+    "G-CLASS-II-SELECTS-NOTHING",
+    "G-COUNT-BLIND-EXCEPTION",
+    "G-DEFERRED-GATES-EVALUATED",
+    "G-DISCRIMINATOR-CENSUS",
+    "G-ENGRAVINGS-PRESENT",
+    "G-FINAL-COUNTS",
+    "G-FORCED-ADVANCING-EMPTY",
+    "G-FOREIGN-AND-UNMOTIVATED-ARE-DIFFERENT-FINDINGS",
+    "G-MUTANT-BLINDNESS",
+    "G-NEVER-FALSIFIED-CENSUS",
+    "G-NO-FLOATS-IN-RECEIPT",
+    "G-NO-PINNED-SELECTOR-SELECTS",
+    "G-S-ORBIT-SINGLETON",
+    "G-TRAJ-CLASSIFICATION-CERTIFIED",
+    "G-UNCLASSIFIED-CHARACTERIZED",
+    "G-VERDICT-STILL-EQUAL-AT-WRITE-TIME",
+    "N-ADMISSIBLE-RECORDS",
+    "N-CLOSURE-A-axis",
+    "N-CLOSURE-A-chart",
+    "N-CLOSURE-A-insert",
+    "N-CLOSURE-A-insert-2x",
+    "N-CLOSURE-A-insert-x",
+    "N-CLOSURE-A-linkframe",
+    "N-DIAGONAL-SECTOR",
+    "N-LAPSE-PAIRS",
+    "N-LATTICE",
+    "N-RANK",
+    "N-REJECTED-RECORDS",
+    "N-S-FROZEN-INSTANCES",
+    "P-I7-D",
+    "P-I7-L",
+    "P-I7-LAPSE",
+    "P-I7-LATTICE",
+    "P-I7-LINKS",
+    "P-I7-RANK",
+    "P-I7-REENCODE",
+    "P-I7-RULES",
+    "P-I7-SECTOR-NOTRANSPORT",
+    "P-I7-WEIGHT"
+   ],
+   "never_falsified": 45
   },
   "s_frozen": {
    "controlled_s_orbit": 5,
@@ -15470,7 +16123,8 @@
      ]
     }
    ],
-   "motivated_all_converge": false,
+   "motivated_all_converge": true,
+   "motivated_movers": [],
    "mover_blind_limit": "YES",
    "mover_blind_witness": {
     "limit": [
@@ -15489,6 +16143,61 @@
    "normalization_flips": 216,
    "unclassified": 216,
    "undefined_normalization": 108
+  },
+  "undefined_normalization": {
+   "cells": 108,
+   "movers": [
+    {
+     "cells": 54,
+     "cells_with_writes": 0,
+     "mover": "M-NONE",
+     "net_zero_cells": 54
+    },
+    {
+     "cells": 54,
+     "cells_with_writes": 45,
+     "mover": "M-TILT",
+     "net_zero_cells": 54
+    }
+   ],
+   "sample": {
+    "absolute_magnitude": 360,
+    "mover": "M-TILT",
+    "net": 0,
+    "nonzero_writes": 90,
+    "record": "G-FLAT",
+    "record_moved": true,
+    "schedule": "SCH-RAMP0",
+    "steps": 6
+   }
+  },
+  "unit_record_arena": {
+   "admissible_here": true,
+   "blind_limit": [
+    "1/27",
+    "-1/54",
+    "1/27"
+   ],
+   "determinant": "3/4",
+   "equals_the_blind_limit": true,
+   "one_of_the_declared_records": [],
+   "readout": [
+    "1",
+    "-1/2",
+    "1"
+   ],
+   "record": [
+    1,
+    1,
+    1
+   ],
+   "scale": 27,
+   "scale_reading": "|X| x |L|",
+   "scaled_readout": [
+    "1/27",
+    "-1/54",
+    "1/27"
+   ]
   }
  },
  "verdict": "CRA-BLOCKED-AT-STATIC-GEOMETRY-<MISSING=A-GEOMETRY-UPDATE-LAW; EXPRESSIBLE=12/13; CENSUS=8192|ADVANCING=2976|ADMISSIBLE=1232; FORCED=2|FORCED-ADVANCING=0; INVENTORY=i:0,ii:0,iii:1232; SELECTOR-CLOSURE-FIBER=4; COMMUTING-ADVANCING=0-AT-9-OF-11-RULES; TRAJ=CONVERGES:531,DIVERGES:117,UNDEF:108,UNCLASSIFIED:216; LIMIT-CLASSES=27|MOVER-BLIND-LIMIT=YES; NORMALIZATION-FLIPS=216; FOREIGN-FLAGGED=1/1>",
