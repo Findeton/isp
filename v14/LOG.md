@@ -5245,3 +5245,36 @@ are mechanism/scope sentences, not numbers — the gate works,
 the failures live one level up).  7 successor rows incl. BIL′
 with the co-incidence atom.  Repairs → the CR-A adjudication
 (two seats outstanding).
+
+## 2026-08-11 — CR-A OPERATOR REVIEW LANDED (K1): AWF — REBUILD CLEAN 197/197; THE THEOREM STRENGTHENED; ONE TYPED-HEAD MAJOR (v14 LEDGER #176)
+
+v14/review-cra-operator.md frozen.  **Grade AWF; 197
+own-machinery recomputations, 0 disagreements — every delivered
+number reproduced** (census 8192→2976→1232; stabilizer chain;
+selector fibers incl. the exact 4 dilations; trajectories
+972→531/117/108/216; the hexagonal limit by 5 movers; the 36/29
+discriminator with the 7 unseparated pairs by name); off-tree
+scratch run BYTE-IDENTICAL; selftest 39/39; CLI honest.  **THE
+THEOREM STRENGTHENED:** the delivered commutation fiber used a
+sufficient condition — the reviewer measured the true defect:
+front-blindness exactly equivalent on the admissible set
+(116=116, 0 wrongly excluded) and the true
+commuting-and-advancing fiber is **0 at all NINE count-reading
+rules** (the delivery measured 2, censused 7) — the theorem is
+stronger than its delivered evidence.  MUT-CRA-BRIDGE still
+dies at T6-CRA; its zero-maps claim reproduced independently
+(0/24 bodies, 118,194 lines, commit-date-stable by
+construction).  **MAJOR-1 (the era's known disease):** the
+head-selecting variable is a TYPED LITERAL (motivated_count(0)
+at L1867 + four siblings) — the plain-run head cannot come out
+otherwise and the comparator rebuilds from the same literals;
+the head is nevertheless TRUE (both justifying quantities
+genuinely measured by G-FORCED-ADVANCING-EMPTY and
+G-CLASS-II-SELECTS-NOTHING); exact repair given and verified to
+move no number.  MINORs: §7 wrong for 45/108 undefined cells
+(M-TILT writes telescope on the torus — matches the effectus's
+finding independently); §3 verbatim-quote drops emphasis;
+EXPRESSIBLE=12/13 counts a typed column; the gmain bridge
+scanner is line-local (2/3 wrapped phrasings evade).  Nothing
+moves the head, census, theorem, or any number.  → the CR-A
+adjudication (instrument seat outstanding).
