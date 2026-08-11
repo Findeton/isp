@@ -5135,3 +5135,19 @@ Artifacts committed as-is: paper 50bb81e67942, code
 f95a26a1764b, output afc688553c16, receipt dfea664f2408.
 Battery next; TERMINAL on completion — THE FIFTEENTH, THE WELD
 FINAL — then THE COUPLING-UNIT PIN.
+
+## 2026-08-11 — PAPER-19 TERMINAL — THE WELD IS FINAL (v14 LEDGER #172)
+
+Battery 4/4: plain BYTE-IDENTICAL; unknown flag exit 2;
+--selftest exit 1 + artifacts-untouched; the unknown-mutant name
+exits 2 (the contract confirmed incidentally); MUT-WELD-FATE
+dies at G-WELD-CENSUS, artifacts unchanged.  **PAPER-19 IS
+TERMINAL — the fifteenth terminal.  WELD 2 IS CLOSED: the
+process↔space dictionary EXISTS, IS FORCED, AND IS SEALED** —
+actors are sites, co-division pairs are links, division counts
+are the metric; fibers 1/1/1; zero free items; stratum-wide by
+theorem; the meaning a live measurement; Route B mooted.
+Both welds now stand: WELD 1 (the gravity law, #161) and WELD 2
+(the dictionary, this entry).  STATUS row written (same commit,
+§13).  **THE COUPLING-UNIT PIN (paper-20) — the summit —
+follows immediately.**
