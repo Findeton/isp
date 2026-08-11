@@ -4876,3 +4876,12 @@ the final accounting patch — RE-RUN IT YOURSELF and settle
 byte-identity at your own hands.  Candidate-readings rule in
 force on EVERYTHING, most of all on FOUND.  Three reviewers
 launched (opus).
+
+## 2026-08-10 — PAPER-19 ORCHESTRATOR VERIFICATION 4/4 (v14 LEDGER #164)
+
+Plain run BYTE-IDENTICAL; unknown flag exit 2; --selftest exit 1
+with artifacts-untouched proved in-run; MUT-ADMISSIBLE dies at
+G-ADMISSIBLE, artifacts unchanged.  The unit stands verified at
+the #82 contract at my own hands; the panel (#163) carries the
+era audit, the FOUND rebuild, the meaning calibration, and the
+#91 settlement.
