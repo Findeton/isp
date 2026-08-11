@@ -7439,3 +7439,38 @@ tmp and promotes nothing.  Shas: paper cd1775184249, code
 55963dcbe4b4, output 62400cbf47db, receipt 0ea47d0ec827.
 Committed AS-IS; orchestrator battery next; on green:
 TERMINAL.
+
+## 2026-08-11 — SMU INSTRUMENT REVIEW LANDED (K3): AWF — UNRENDERED TABLES; THE CENSUS SEAL WINDOW; A REFUSAL THAT PROMOTES (v14 LEDGER #239)
+
+v14/review-smu-instrument.md (a12a60638b55) frozen.  **Grade
+AWF; 88 executions, 324 recomputations, ZERO mismatches — no
+computed number wrong.**  FOUR MAJORS, each demonstrated: M1
+E-22 tables-as-claims NOT satisfied (33 claims, no table
+rendered; 211/350 numerals bound only by the coverage pool;
+0/12 parent quotations bound; §6 row swaps, §4 row swaps,
+336→208, 16→12, and a provenance-digest exchange ALL pass at
+exit 0); **M2 the census seal window OPEN — the 18 instance
+records gated at #12–#30, sealed at #45: forging 54 published
+fields in the window delivers at exit 0 with all 29 digests
+recomputing, BECAUSE THE SEAL DIGESTED THE FORGERY**; M3 a
+refusing G-ARTIFACT-INTEGRITY leaves both artifacts PROMOTED
+(os.replace before read-back; "coins": 641 left on disk); M4
+15/42 falsifiers corrupt no object — 15 gates have none that
+does, and TWO gates are tautologies given closed
+predecessors, yet counted fully covered.  Nine MINORs headed
+by: **--quiet on a writing run silently publishes DIFFERENT
+BYTES at exit 0** (transcript_head moved — a
+byte-reproducibility hazard, two-line fix); the elimination
+cap claim ungated (true — solves verified); the Wilson-range
+headline ungated with a typed extreme-point flag; three
+vacuous clauses.  DISEASE SWEEP: phantom consumers ABSENT
+(71/71); containment fences ABSENT (list equality);
+fabricable sweeps ABSENT; PRESENT: unrendered tables, seal
+windows, constant-boolean falsifiers, vacuous clauses, digest
+pollution.  HELD: 42/42 mutants; byte at two seeds; 23 CLI
+forms; selftest tree-hashed; **the lumping license SOUND on
+three independent legs (full-size πP=π against the original
+chain)**; the conditional stamps enforced per-row +
+payload-wide; #125 holds against a wrapped-emphasised
+area-law plant.  The headline untouched.  → adjudication when
+K1 lands.
