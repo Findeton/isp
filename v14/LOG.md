@@ -5859,3 +5859,38 @@ unreachable waiver class; the exit-0 conventions disclosed
 nowhere in-unit; presence-anywhere claim gates vs 2–3×
 fragments.  Injections: 33 caught / 14 delivered, each with
 exact repair.  → THE ADJUDICATION (all three seats in).
+
+## 2026-08-11 — PAPER-23 ADJUDICATION: THE VERDICT SURVIVES WITH TWO HONESTY DEMOTIONS AND ONE PROMOTION; TWELVE ORDERS; E-24 ENGRAVED; REPAIR LAUNCHED (v14 LEDGER #192)
+
+v14/note-r5m-adjudication.md frozen.  Three seats AWF, ~159
+seat recomputations, ZERO delivered numbers moved.
+**MEASURE-DECLARATION-REQUIRED SURVIVES.**  Demotions: "forced
+shut" → CENSUS-RELATIVE (the stationary candidate absent and
+unownable — irreducibility the named missing ingredient); the
+DERIVE arm never reachable (typed prices; the transitive
+refusal) — head stands, instrument ordered honest.  Promotion:
+the census's organizing principle stated and verified — **a
+canonical measure exists exactly where something acts
+transitively.**  Conflict rulings: K3's totality measurement
+governs over K2's flag (42=31+10+1, the exempt key DECLARED);
+the title sentence killed twice independently → the licensed
+form LAW-vs-NOTHING (kernel on a domino; stationary simplex
+15/14 to be computed in-code); the 27/130 tie-break (#91)
+found twice → both sets printed; the monomial biconditional
+DEAD of record.  **THE R5 REGISTER: no erratum — a
+STRENGTHENING note** (the uniform window IS the chart-fixed
+locus, derived; R5 never made a probability reading).  TWELVE
+orders Q1–Q12 (derive arm reachable w/ the synthetic-transitive
+CONTROL ARM; the Born rewrite; the criterion + maxent row +
+the NAMED-ABSENT stationary row; the two FOUND-controls named
++ enumeration-tested; the honest second head route; the deep
+name-robust withholding gate w/ W7/W8 as mutants; the §7 table
+bound; registry-totality closed; rows-not-counts #87 + the 4th
+row; the translations-only contrast; both tie-break sets; the
+MINOR sweep incl. the L-PARITY stamp).  **E-24 ENGRAVED:
+measure-relativity of counts — no count becomes a probability
+without a declared measure.**  Successors: THE
+STATIONARY-MEASURE UNIT (the QCD road's next gate; unownable
+today), the odd-L blade to R6, the plaquette-grain Born
+re-pose.  Repair worker launched (Opus).  After repair +
+battery: paper-23 TERMINAL.

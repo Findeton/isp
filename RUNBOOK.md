@@ -1935,3 +1935,13 @@ badge.  Every load-bearing receipt row carries a falsifier or
 a named waiver with a forcing; a row with neither
 (paper-20's mdviol, 187,155 checks) is unguarded no matter how
 many times it ran.
+
+## E-24 — MEASURE-RELATIVITY OF COUNTS (bought at v14 #192, paper-23 K2)
+
+No count becomes a probability without a declared measure.  A
+headline fraction over a configuration space is
+measure-relative — paper-23 measured the admissible mass of
+every one of its parent's headline sets spanning exactly [0,1]
+over invariant measures (endpoints reached by Gibbs
+functionals).  A unit publishing a fraction either declares
+the measure with it or stamps it COUNTING-ONLY.
