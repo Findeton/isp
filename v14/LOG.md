@@ -7541,3 +7541,16 @@ findings instantiate engraved families; the
 seal-digested-the-forgery flavor noted as #119's sharpest
 instance).  Repair worker launched (Opus).  After repair +
 battery: paper-27 TERMINAL → ACT PINS.
+
+## 2026-08-11 — SMU K3 REVIEW v3 (FINAL): TWO-SANDBOX REPRODUCTION FOLDED IN (v14 LEDGER #243)
+
+The instrument reviewer's last update (630 lines,
+2c56180498c1): every code-side MAJOR now reproduced in TWO
+independent sandboxes, with the forged-artifact hashes
+recorded (the promoted corruption at c7c4c7c0ca10 /
+3e4edb2f9aec).  Findings verbatim-unchanged from the v2 the
+adjudication (#242) cited at 378c1508b659 — the repair
+orders W1–W12 stand exactly; no re-instruction needed.
+Re-frozen (v3).  [The reviewer also relayed the claude.ai
+Google Drive connector's auth notice — unrelated to any
+unit; nothing depends on it.]

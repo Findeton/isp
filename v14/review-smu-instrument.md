@@ -23,11 +23,12 @@ artifact-integrity gate leaves both corrupted artifacts promoted on disk; and
 fifteen of the forty-two falsifiers corrupt no object, two of them because
 their gate cannot fail on any object at all.
 
-**Counts.** 88 executions of the instrument (42 mutant runs as separate
-processes out of harness; 18 injection runs covering 15 distinct injections,
-three of them reproduced in a second independent sandbox; 5 off-tree
-byte-reproduction runs; 23 CLI invocations; 1 bare-copy abort), plus 3
-corrupted runs inside `--selftest`. 324 independent recomputations of
+**Counts.** 91 executions of the instrument (42 mutant runs as separate
+processes out of harness; 20 injection runs covering 15 distinct injections,
+**five of them — every code-side one — reproduced in a second independent
+sandbox with identical outcomes**; 5 off-tree byte-reproduction runs; 23 CLI
+invocations; 1 bare-copy abort), plus 3 corrupted runs inside `--selftest`.
+324 independent recomputations of
 published quantities, zero mismatches. 350 paper numerals classified
 for gate-protection; 42 falsifiers classified for object-corruption power; 71
 anchor-consumer and seal-gate names resolved against the ledger.
@@ -56,8 +57,9 @@ Every disease this era's panels found live in a sibling, checked here.
 
 Every injection ran the **plain delivery run** in its own pristine off-tree
 sandbox rebuilt from `6d8582e`, with both artifacts present beforehand so
-that "wrote nothing" is measurable. **15 ran live** (INJ12, INJ13 and INJ16
-twice each, in independent sandboxes, with identical outcomes); 4 are marked
+that "wrote nothing" is measurable. **15 ran live** — the five code-side ones
+(INJ12–INJ16) twice each, in independent sandboxes, with identical outcomes
+down to the bytes left on disk; 4 are marked
 REPLICA-PREDICTED and were **not** run live — those come from an offline
 re-implementation of the four paper gates which I validated against the
 pristine paper and which agreed with **all eleven** live paper runs, 11/11.
@@ -178,12 +180,13 @@ place, and only then reads the receipt back and compares against the
 gate-time seals. The gate is real and it fires — but by then the promotion
 has happened.
 
-**INJ14, live.** Corrupting the receipt on disk between `os.replace` and the
-read-back: the run refused at `G-ARTIFACT-INTEGRITY` with exit 1, and the
-sandbox was left holding `smu_receipt.json` containing `"coins": 641`
+**INJ14, live, in two independent sandboxes with byte-identical outcomes.**
+Corrupting the receipt on disk between `os.replace` and the read-back: the
+run refused at `G-ARTIFACT-INTEGRITY` with exit 1, and **both** sandboxes were
+left holding `smu_receipt.json` containing `"coins": 641`
 (sha `c7c4c7c0ca10`) and a replaced `smu_output.txt` (sha `3e4edb2f9aec`),
-neither equal to the committed artifacts. No `.tmp` was left, so there is no
-recovery path either. The unit's own standard — the pin's "failing runs write
+neither equal to the committed artifacts. No `.tmp` was left in either, so
+there is no recovery path either. The unit's own standard — the pin's "failing runs write
 nothing", and §10's "exits … 1 on any refusal, writing nothing" — is violated
 at exactly the gate built for the disk boundary.
 
