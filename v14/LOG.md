@@ -7562,3 +7562,18 @@ FOUR hash seeds; 92 executions.  Findings verbatim-unchanged
 through v2→v3→v4; the adjudication and the in-flight repair
 stand.  The seat declares itself closed; this is the final
 freeze.
+
+## 2026-08-11 — GDL TERMINAL: THE TWENTIETH — THE KEYHOLE SEALED (v14 LEDGER #245)
+
+Battery complete: mirror plain BYTE-IDENTICAL; unknown flag
+exit 2; selftest writes nothing; MUT-ANCHOR-LEAVES (registry
+name) died at G-PARENT-REPRODUCED; artifacts untouched.
+**PAPER-25 IS TERMINAL — the twentieth.**  STATUS row
+appended (§13 same commit).  The keyhole architecture is now
+terminal-grade: full decoupling by forced zero at this arena;
+the three named geometry→matter channels; the mod-3 channel
+loaded-but-unfired with the step-6 read fixed as GDL-1a's
+first measurement.  The prediction ledger's entry (c) closes
+honestly as the separation ladder (threshold-invariant form)
+in place of the hoped-for decoherence law.  Successors
+GDL-1a/GDL-2 remain on-capacity (Wave-A addendum per #230).
