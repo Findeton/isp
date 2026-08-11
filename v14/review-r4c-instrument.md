@@ -23,11 +23,13 @@ All five match. Every execution below ran read-only against the repo or
 inside `…/scratchpad/r4c-in/`; the repo objects are byte-identical after
 the review. Files belonging to concurrent siblings are disclaimed.
 
-**Counts.** Executions: **113 separate processes** — 1 full `--no-write`
-delivery run, 36 out-of-process `--mutant` runs, 48 `--break-anchor`
-runs, 16 hostile-argv runs, 3 off-tree mirror runs, 2 timing runs, 2
-source-edit falsifications, 1 `--selftest`, 1 bare-copy, 1 real
-byte-drift, 1 path-drift, 1 helper — plus **6 in-process probe scripts**
+**Counts.** Executions: **117 separate processes** — 1 full `--no-write`
+delivery run, 40 out-of-process `--mutant` runs, 48 `--break-anchor`
+runs, 16 hostile-argv runs, 3 off-tree mirror runs, 2 further `--mutant`
+timing runs (one of them, `MUT-PAPER-NUMERAL`, is the 41st distinct
+mutant verified out of process), 2 source-edit falsifications, 1
+`--selftest`, 1 bare-copy, 1 real byte-drift, 1 path-drift, 1 helper —
+plus **6 in-process probe scripts**
 driving 13 further `build_state` calls, 18 `verify_paper` calls and five
 custom census recomputations. **Independent recomputations: 96** (probe 3:
 20; the single-excitation census + fold probe: 8; the third-path window:
@@ -71,10 +73,10 @@ I could construct no in-place write to a cached object from any of the 56
 declared mutants: every consumer copies before it writes, and every
 in-census mutant either rebinds or writes a copy. The disease is not
 live, by exhaustive reading of all seven cache families and all 56 mutant
-bodies. *(An empirical corroboration — fingerprinting every
-`CENSUS_CACHE` entry before and after each of the 56 in-process mutant
-runs, plus a reversed-order sweep and five real in-place pollution probes
-— was still running when this review closed; see §14.)*
+bodies — **and the empirical sweep confirms it**: I fingerprinted every
+one of the run's **7 `CENSUS_CACHE` entries** before and after each of
+the 56 in-process mutant runs, and **not one entry moved** under any
+mutant. The repair holds under measurement, not only under reading.
 
 **But the gate that was bought is weaker than the paper says.** Three
 separate findings, all MAJOR-3:
@@ -380,11 +382,11 @@ Every mutant was run in its own cold process, `--mutant NAME`, against
 the repo, with the three artifacts hashed before and after each run and a
 check for stray `.tmp`/`.probe` files.
 
-**Result on the 37 completed: 37 of 37 — every one killed, every death at
+**Result on the 41 completed: 41 of 41 — every one killed, every death at
 its declared target gate, `rc=1`, the three artifacts byte-UNCHANGED
 after each run, zero stray `.tmp`/`.probe` files, zero off-target, zero
 survivors.** The raising gate was parsed out of each run's own
-`MUTANT … died at …` line and compared to the registry row. The 37 span
+`MUTANT … died at …` line and compared to the registry row. The 41 span
 every stage of the pipeline: the anchor phase (`MUT-VERBATIM-FRAGMENT`,
 `MUT-PATH-ANCHOR`, `MUT-ARENA-SIZE`, `MUT-SHELL-IMPORT`), the rebuild
 (`MUT-GAUGE-ORBIT`, `MUT-ALPHABET`, `MUT-REBUILD-DROP`,
@@ -397,25 +399,26 @@ every stage of the pipeline: the anchor phase (`MUT-VERBATIM-FRAGMENT`,
 `MUT-VALUE-MULTISET`, `MUT-GENUINE-ZERO`, `MUT-DERIVATION`,
 `MUT-IRRATIONAL`, `MUT-SECOND-PATH`), the overlap census
 (`MUT-COIN-ALPHABET`, `MUT-THREE-SITE`, `MUT-OVERLAP-LAW`,
-`MUT-COIN-PAIR`), motion (`MUT-EIGENPHASE`, `MUT-ADDITIVITY`,
-`MUT-SPECTRUM-SPLIT`) and the paper gates (`MUT-PAPER-NUMERAL`).
+`MUT-COIN-PAIR`, `MUT-OVERLAP-BITE`), motion (`MUT-EIGENPHASE`,
+`MUT-ADDITIVITY`, `MUT-SPECTRUM-SPLIT`, `MUT-R4B-REPRO`,
+`MUT-VELOCITY-ADD`), the third route (`MUT-THIRD-PATH`) and the paper
+gates (`MUT-PAPER-NUMERAL`).
 
-**The remaining 19 did not finish inside the review window** — this
+**The remaining 15 did not finish inside the review window** — this
 machine was carrying a load average above 200 from the concurrent seats
 throughout, and a single cold `--mutant` run that reaches the paper gates
 costs about eight CPU-minutes. They are:
 `MUT-CACHE-DIRTY, MUT-CONTACT-BLIND, MUT-CONTACT-SET, MUT-HEAD-PRENAME,
-MUT-HEAD-TYPED, MUT-OVERLAP-BITE, MUT-PAPER-CLAIM, MUT-PAPER-POLARITY,
-MUT-PAPER-VERDICT, MUT-PAYLOAD-PATH, MUT-R4B-REPRO, MUT-RECEIPT-FLOAT,
-MUT-SEAL-BROKEN, MUT-SEAL-TOTAL, MUT-SPEED-CEILING, MUT-STAMP-DROP,
-MUT-THIRD-PATH, MUT-VELOCITY-ADD, MUT-WAIVER-UNFORCED`.
+MUT-HEAD-TYPED, MUT-PAPER-CLAIM, MUT-PAPER-POLARITY, MUT-PAPER-VERDICT,
+MUT-PAYLOAD-PATH, MUT-RECEIPT-FLOAT, MUT-SEAL-BROKEN, MUT-SEAL-TOTAL,
+MUT-SPEED-CEILING, MUT-STAMP-DROP, MUT-WAIVER-UNFORCED`.
 **This is a disclosed protocol shortfall, not a
-finding**: all 19 are covered in-process twice over — by the committed
+finding**: all 15 are covered in-process twice over — by the committed
 receipt's own sweep and by my independent full `--no-write` delivery run
 (21 m 45 s, from the committed source), which reported
 `ALL GATES PASSED (63/63); ALL MUTANTS DEAD (56/56)` at exit 0 with the
-repo artifacts untouched. Nothing in the 37 that did run gives any reason
-to expect the other 19 to behave differently out of process; the sweep
+repo artifacts untouched. Nothing in the 41 that did run gives any reason
+to expect the other 15 to behave differently out of process; the sweep
 should nonetheless be completed before terminal.
 
 **`--list` is not a flag this unit ships**, so ledger row #24's registry
@@ -914,15 +917,17 @@ than reporting a marathon I did not run:
    in-process mutant sweeps. **Finish this first.**
 2. **The post-write corruption injection reaching its writing path**
    (§5). The mirror was patched and launched.
-3. **Nineteen of the fifty-six out-of-process `--mutant` runs** (§4);
-   thirty-seven completed, 37/37 on target with artifacts unchanged.
-4. **The empirical cache-pollution corroboration** (§1a): a fingerprint
-   of every `CENSUS_CACHE` entry across all 56 in-process mutant runs, a
-   reversed-order sweep, and five real in-place pollution probes against
-   `wedge_nz` (digested) and `wvals`/`svals`/`onevals`/`rows` (not
-   digested). The by-hand audit of all seven cache families and all 56
-   mutant bodies is complete and is what MAJOR-3 rests on; the
-   fingerprint would only have strengthened it.
+3. **Fifteen of the fifty-six out-of-process `--mutant` runs** (§4);
+   forty-one completed, 41/41 on target with artifacts unchanged.
+4. **Two of the four cache probes.** The fingerprint sweep *did* finish
+   and is reported in §1a (7 entries, none moved across all 56 in-process
+   mutant runs). Still running at close: the reversed-order sweep, and
+   five real in-place pollution probes against `wedge_nz` (digested) and
+   `wvals`/`svals`/`onevals`/`rows` (not digested) — the probes that
+   would quantify exactly how much of a real pollution
+   `G-CACHE-UNPOLLUTED` catches. MAJOR-3 does not depend on them: it
+   rests on reading the gate's predicate and `census_digest`'s field
+   list, both of which are plain in the source.
 
 Everything else in this review ran to completion. In particular the four
 MAJOR findings are each demonstrated, not inferred: MAJOR-1 by reading

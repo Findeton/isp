@@ -6555,3 +6555,19 @@ seats — four confirmations unfinished (byte ×2 across seeds
 FIRST; post-write-to-writer; 19/56 mutants; the cache
 fingerprint) — routed to the repair worker's battery and
 mine.  12 MINORs.  → adjudication when K1 lands.
+
+## 2026-08-11 — PAPER-22 K3 REVIEW UPDATED POST-FREEZE: LATE CONFIRMATIONS LANDED (v14 LEDGER #213)
+
+The instrument reviewer updated its review after the #212
+freeze with two late-arriving confirmations (its own
+monitored runs): **the cache repair now EMPIRICALLY confirmed
+(all 7 cache entries fingerprinted before/after each of the
+56 in-process mutant runs — none moved)** and the
+out-of-process mutant sweep extended to 41/56 (from 37), all
+on target.  The remaining §14 shortfall shrinks to: byte ×2
+across hash seeds (first), the post-write-to-writer run,
+15/56 mutants, two cache probes — all confirmations, no
+finding depending on them; routed to the repair battery.  The
+four MAJORs and twelve MINORs unchanged.  Review re-frozen at
+its updated sha (v2); the #212 entry's findings stand
+verbatim.
