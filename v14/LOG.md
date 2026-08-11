@@ -6192,3 +6192,24 @@ byte ×2 across seeds off-tree.  Reviewers →
 v14/review-r4c-{operator,effectus,instrument}.md.  Objects at
 4f89135: 1b4ac134e727 / deb0c1c83a76 / 45866a3ed5e3 /
 5c058006db78; pin 162553b03ca9.
+
+## 2026-08-11 — PAPER-23 TERMINAL: THE SEVENTEENTH — DYNAMICS DERIVED, PROBABILITY DECLARED (v14 LEDGER #201)
+
+Post-repair battery green: mirror plain BYTE-IDENTICAL both
+artifacts; unknown flag exit 2; selftest passed (every anchor
+class fatal, nothing written); MUT-WILSON-SEGMENT (the K3 W7
+injection, now a registered falsifier) died at
+G-NO-WILSON-EXPECTATION ON TARGET; artifacts untouched.
+**PAPER-23 IS TERMINAL — the seventeenth terminal unit** (it
+seals before paper-20, so the anticipatory ordinals in
+#198/#199 flip: paper-20 will be the eighteenth).  STATUS row
+appended (§13 same commit).  The head carries the verdict +
+the census + THE TRANSITIVITY CRITERION + the census-relative
+forced-shut with its one named-absent row and the
+derives-iff-irreducible law.  The licensed ontology sentence
+of record: THE SUBSTRATE HANDS A LAW, NEVER A MEASURE —
+dynamics derived, probability declared, and the price of the
+declaration measured (the invariant simplex).  **UNLOCKED BY
+THIS TERMINAL: paper-27 SMU (the stationary measure — the
+QCD road's next gate), pin obligation per THE STRATEGIC PLAN
+(#193); pinned and launched this ledger.**
