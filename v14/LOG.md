@@ -5382,3 +5382,47 @@ verdict-relevant and says so (G·D moves 7/9, D·G 5/9).  Shas:
 paper b328a8278fac, code 9e71cf511ab3, output 3e3d04222782,
 receipt 3ca0308b6c19.  Committed AS-IS; orchestrator battery
 next; panel after.
+
+## 2026-08-11 — PAPER-20 ORCHESTRATOR BATTERY GREEN; PANEL PROTOCOL FROZEN; THREE SEATS LAUNCHED (v14 LEDGER #180)
+
+Battery: argv handler read in source FIRST (whitelist at
+parse_args, L3440; CliError paths); unknown flag exit 2, no
+writes; unknown mutant exit 2, no writes; bare-copy loud clean
+abort confirmed as the DESIGNED #91 behavior (FileNotFoundError
+at the pinned-source read, nothing written); provisioned
+git-less mirror (hostile PATH): plain exit 0, OUTPUT and
+RECEIPT BYTE-IDENTICAL to committed; --selftest exit 1
+(corrupted A-D42B1 → died at G-PROVENANCE;
+G-SELFTEST-WRITES-NOTHING true); --mutant MUT-CONSISTENCY exit
+1 (died at its declared gate G-CONSISTENCY); artifacts
+untouched end-to-end.  **PROTOCOL (frozen here): K1 OPERATOR**
+— rebuild from nothing with own machinery: the composition
+census (948,297), the transport gate (406,413 site-steps;
+k₁ 1,215,681), the 18-row frozen contrast at its exact
+fractions, the horizon-5 exit (Born 927415552/847288609443;
+record-menu 37440224/5811307335; threshold exactly 5, 0
+below; singular-boundary-only), the 10-row requirement battery
+incl. the selector's UPDATE-RULE-RESTATED refusals (load-bearing
+for NO-WITNESS), the forced-coin theorems (343→18→0; ±Grover
+4→2), staleness-blindness (2,455), leaves 284,078/212,382.
+**K2 EFFECTUS** — the head's licensure: is the ψ-internal class
+honestly delimited (NO-WITNESS is only as strong as the
+battery's coverage; is K5-NO-RETURN really the only buildable
+history-dependent closure); the reversed horizon-5 licensed
+sentences; reconcile with the CR-A register rows R-CRA→20-1..4
+(note-cra-adjudication.md b7ce00951e5a — open-#4 commutation
+debt; G-SINGULAR proximity vs the measured exit); the transport
+confirmation's scope (site-block-diagonal mechanism —
+coin-shape-contingent?); interference-dies-here licensure;
+successor register (what the R=4 arena inherits); the
+coin-order disclosure.  **K3 INSTRUMENT** — the TOTAL-seal era
+audit: the 49+3 post-snapshot gate mechanism (the exact hole
+#119-totality targets), 44/44 mutants outside the harness, the
+worker's self-found bug (unpopulated sealed path; 2 no-op
+mutants) — verify repairs and sweep the same disease, the
+injection playbook (the seal must now CATCH post-write
+corruption), 12 forced waivers, fenced coverage, #125, hostile
+argv, byte ×2 across seeds.  Reviewers →
+v14/review-coup-{operator,effectus,instrument}.md.  Objects at
+9b1860e: b328a8278fac / 9e71cf511ab3 / 3e3d04222782 /
+3ca0308b6c19; pin 7c6e9e44fc2c.
