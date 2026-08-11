@@ -7100,3 +7100,38 @@ description-vs-code, the L=3 control rung named, the head
 derived, the whitelist scoped, and the R4 annotation note.
 Repair worker launched (Opus).  After repair + battery:
 paper-28 TERMINAL + the PLAN.md prediction-ledger update.
+
+## 2026-08-11 — GDL INSTRUMENT REVIEW LANDED (K3): AWF — THE VACUOUS STAMP SELF-CERTIFIED; E-22 TWICE; A FABRICATED SWEEP PASSES (v14 LEDGER #229)
+
+v14/review-gdl-instrument.md (1565d161354f) frozen.  **Grade
+AWF; 111 executions, 613 recomputations, zero false numbers;
+battery green** (byte ×2 across seeds; 56/56 mutants in
+separate processes; 36 seals = every key; post-write caught
+with nothing promoted; selftest write-nothing verified over
+the whole tree incl. mtimes).  FIVE MAJORS, all demonstrated
+by execution: M1 **the VACUOUS stamp certified against
+itself** — a genuinely PARTIAL cell (24 failing classes)
+restamped VACUOUS passes at exit 0 (the clause omits
+failing_classes==0; nonsingleton_classes is the ONE census
+number the second pass never recounts); M2 **E-22 twice** —
+a duplicated-and-forged verdict fence passes (containment,
+not multiset — while the gate's sealed statement claims
+immunity to exactly that) and 4 of 8 tables unrendered
+(§5/§2/§9 swaps survive); M3 **E-23 is substring
+containment** — an inverted description passes and a
+FABRICATED SWEEP (no mutant executed) passes G-SWEEP-BOUND;
+M4 the coverage allowlist polluted by the instrument's own
+self-description (incl. MUT-PAPER-NUMERAL's own needle — the
+one numeral the falsifier uses is the one the gate can never
+flag; 123/400 tokens from non-measured keys; repair verified
+liftable); M5 the D1 denominator misattribution (164,310 vs
+its own 54,770 — two denominators for one census in adjacent
+sentences) [= K1's M2, independent].  ROW 2 AFFIRMED: the
+failure-census second pass is GENUINELY independent
+(set-cardinality vs pivot-comparison) and bites (injected
+errors died at 66 and 23 cells).  COULD NOT BREAK: the
+record-only walk collapses (9,751→5); the foreign fields
+provably never generated; co-occupancy
+necessary-not-sufficient exactly as claimed; every
+unrendered table exact against the receipt.  → THE
+ADJUDICATION (all three seats in).
