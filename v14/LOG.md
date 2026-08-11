@@ -5560,3 +5560,50 @@ byte ×2 across seeds, the 199-numeral sweep.  Reviewers →
 v14/review-r5m-{operator,effectus,instrument}.md.  Objects at
 33da839: 9249dda1c0a3 / f7de59960fe6 / 8ee12d000bad /
 1e794bd7f5fb; pin e5e09f65f83b.
+
+## 2026-08-11 — PAPER-20 OPERATOR REVIEW LANDED (K1): AWF — 72/72 REBUILT, ZERO FALSE NUMBERS; THE COIN-FORCING KILLED TWICE AND THE VERDICT MADE COIN-INVARIANT (v14 LEDGER #184)
+
+v14/review-coup-operator.md frozen.  **Grade AWF; the whole
+object rebuilt from the pin's mathematics (own Z[ω], arena,
+coin, shift, menu, kernel, emission, update, tree walk) — 72
+delivered results re-derived, 0 mismatches, zero false
+numbers** (composition census by class 45,157/406,413×2/45,157
+×2; transport 406,413 + 1,215,681 + 187,155 all 0; leaves
+284,078/212,382/314,928; 18/18 contrast rows character-exact;
+threshold exactly 5 both readings, exits exact, frozen never,
+no indefinite form; staleness 2,455; battery 0/0).  FOUR
+MAJORS, all attribution/coverage: **M-1 (head-bearing,
+CONVERGES WITH K2's MAJOR-3): the ±Grover forcing holds only
+under an undeclared reality restriction — over the arena's own
+(1/3)Z[ω] there are 6 S₃-covariant coins up to phase, witness
+3C=[[3+ω,ω,ω],...] exact; F4 "DERIVED fiber 1" wrong — BUT THE
+VERDICT DOES NOT MOVE: all four hidden coins run to horizon 5
+— every one composes at 0 violations, non-inert 9/9, threshold
+exactly 5, singular-boundary-only.  The repair converts a
+broken forcing into a stronger measured COIN-INVARIANCE.**
+M-2: the site-block-diagonal mechanism sentence misattributed
+(reading A makes the 187,155 row an identity; proved with a
+unitary non-block-diagonal coin — mass-is-density 27/27 pass
+vs site row 15/27 fail; the mechanism lives in the 406,413
+site class) [converges with K2's transport-scope row].  **M-3
+(NEW COVERAGE CLASS): paper_coverage strips INLINE CODE SPANS
+— §7's contrast table and §9's ladder never scanned; two
+backticked values corrupted → all 44 paper gates pass exit 0;
+repair verified liftable (inline spans under the fenced rule:
+clean paper 0 unregistered, both injections caught)**
+[engraving candidate: the #20/#168 family's inline-span
+extension — for the adjudication].  M-4: F9's MEASURED row
+compares a run with itself (converges with K2's MAJOR-6) — the
+operator measured it PROPERLY: claim TRUE (ipr
+33596579/129140163 from three starts, distributions exact
+translates).  MINORs: K6 measured with K7's observable;
+343→18→0 discriminates nothing (same three numbers on the axis
+stencil; repaired-alphabet numbers 18/0 vs 216/198) [= K2's
+MAJOR-4]; orientation fiber inert on ipr only; 406,413 of the
+composition checks definitional; two disclosure gaps.  **TWO
+STRENGTHENINGS: NO-WITNESS survives dropping EITHER refusal
+alone (only flipping both class and stamp produces witnesses;
+K9's coupled leg a provable identity, 7,200 randomised checks
+0 failures — the stamp EARNED); staleness blindness at the
+FULL horizon 5 (1,040,065 checks), not just the undisclosed
+horizon 3.**  → adjudication when K3 lands.
