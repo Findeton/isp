@@ -7220,3 +7220,23 @@ the R=6 arena gated zero-free; the price catalogue CLOSED
 diagonal.  **THE PIN VOLLEY FIRES THIS LEDGER: SIG
 (paper-24), PER-R (paper-29), LOR (paper-30) — pins frozen
 at #233 and workers launched.**
+
+## 2026-08-11 — THE PIN VOLLEY: SIG (24), PER-R (29), LOR (30) FROZEN AND LAUNCHED ON PAPER-21'S TERMINAL (v14 LEDGER #233)
+
+Three pins frozen, three Opus workers launched.
+**note-sig-pin.md** — why-Lorentzian with BOTH panel
+constraints binding: reachability-before-polarity (Stage 0
+gates everything; BLOCKED-AT-REACHABILITY first-class) and
+no-site-marginal-observables (the GDL theorem).
+**note-perr-pin.md** — the R-ladder census: the three R=5
+predictions; the slack census (9(R−3) → 18 predicted); the
+dictionary row along the ladder (R=6 cited from G-R6-DOOR);
+the record-class structure at R=5 **computed first as THE
+SIG FEED**; the DIA row; the interference census cited
+closed.  **note-lor-pin.md** — the law over records at the
+R=6 arena: build (2,2,2) from the witnesses; apply paper-06's
+AND paper-04's laws; THE NEW-PLACES SEGMENT first-class
+(description-stamped); the dictionary-survives-refinement
+question; the one-step iteration ceiling stated; DIA under
+refinement.  In flight after the volley (8): SIG + PER-R +
+LOR constructions; the 22/25/28 repairs; SMU.
