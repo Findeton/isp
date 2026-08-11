@@ -6144,3 +6144,51 @@ remain review-carried facts under E-24's rationale.  Shas:
 paper 79cc67b4f6cd, code faf353385905, output 55a0731ac4a9,
 receipt c9edf97a5533.  Committed AS-IS; orchestrator battery
 next; on green paper-23 TERMINAL (the eighteenth).
+
+## 2026-08-11 — PAPER-22 BATTERY GREEN; PANEL PROTOCOL FROZEN; THREE SEATS LAUNCHED (v14 LEDGER #200)
+
+Battery: argv whitelist read in source; mirror plain exit 0
+with OUTPUT and RECEIPT BYTE-IDENTICAL; unknown flag exit 2;
+unknown mutant exit 2; selftest exit 1 writing nothing;
+MUT-ARENA-SIZE died at G-ARENA-ANCHORED ON TARGET; artifacts
+untouched.  **PROTOCOL: K1 OPERATOR** — rebuild from nothing:
+the exchange census (commutation with U⊗U at 64/64; the
+256=136+120 split and NOTHING ELSE — the no-parastatistics
+dimension argument), THE FIXED-POINT THEOREM (both ceilings'
+one-excitation restrictions IDENTICAL 16=16 — the decisive
+claim), the ceiling-1 leak at EXACTLY the 48 non-monomial
+generators, the four-arena two-way heads (BOTH-ADMITTED /
+FORCED-ANTISYMMETRIC / FORCED-SYMMETRIC / NEITHER-INVARIANT
+3306/3306), the defect census (1764/3364 both shapes
+identical; 588; 1176 genuine; NONZERO-IFF-BOTH-LEGS-
+NON-MONOMIAL 6728/6728; **Δ₂=Δ⊗X+Y⊗Δ 0/3364 on the labelled
+sector — no genuine two-body defect**), the support-overlap
+lift (42,840 + 360), motion (eigenphase additivity 14,848;
+the 7168/29696 antipodal ties as aliasing; speed {0,1,2}
+unchanged), **the 588 TRIPLE set-equality**, R4b independent
+reproduction; mutants outside the harness.  **K2 EFFECTUS** —
+licensure: is BOTH-ADMITTED the right verb given commutation
+is FORCED/disclosed; **the ceiling: a DECLARATION or a
+measurable of some layer** — the record-layer counts 6/12
+"against the hard core" sentence licensed?; the
+Pauli-implication sentence (exclusion→antisymmetry with NO
+spin and NO relativity — how far licensed); the
+indistinguishability-is-the-whole-source sentence
+(description-stamped?); the triple identity's meaning; the
+no-parastatistics scope (n=2 only; anyons need topology —
+stamped?); SUCCESSOR REGISTER: does anything force the
+ceiling (the registered question — if a deeper layer forces
+hard-core, fermionic-shape becomes a THEOREM); what FCK
+inherits; SPT's sector structure; walls (shape-words held?).
+**K3 INSTRUMENT** — full era incl. E-22/E-23/E-24 (unit built
+mid-engraving-era — birth-date fairness measured per
+engraving); the TWO SELF-CAUGHT defects (cache leak →
+G-CACHE-UNPOLLUTED; premature seal → totals-before-late-
+seals) verified + sibling sweep; 56 mutants outside the
+harness; 48 anchors perturbed; 30 seals + post-write
+corruption; paper injections under the multiset discipline;
+the three-code-path window audited; hostile argv incl. arity;
+byte ×2 across seeds off-tree.  Reviewers →
+v14/review-r4c-{operator,effectus,instrument}.md.  Objects at
+4f89135: 1b4ac134e727 / deb0c1c83a76 / 45866a3ed5e3 /
+5c058006db78; pin 162553b03ca9.
