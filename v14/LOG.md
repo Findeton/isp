@@ -6276,3 +6276,24 @@ v14/review-r4dec-{operator,effectus,instrument}.md.  Objects
 at f45b3a1: f54dad8d51b8 / e387674bfcdd / 27ed73ded234 /
 e1f148dd6a0e; pin 973b160d52ed... [correction: pin
 f50630ced3be at d55571d].
+
+## 2026-08-11 — PAPER-20 TERMINAL: THE SUMMIT SEALED — THE EIGHTEENTH (v14 LEDGER #204)
+
+Post-repair battery green: mirror plain BYTE-IDENTICAL;
+unknown flag exit 2; selftest exit 1 writing nothing;
+MUT-MASS-DENSITY (P8's new falsifier for the previously
+unguarded 187,155-check row) died at its declared gate
+G-LAW-TRANSPORT; artifacts untouched.  **PAPER-20 IS TERMINAL
+— the eighteenth terminal unit, and the summit.**  STATUS row
+appended (§13 same commit).  The measured architecture now
+carries its coupled capstone: one entity, both behaviors,
+composing exactly; the requirement honestly negative with its
+mechanism named (staleness-blindness) and its remaining door
+registered (history-dependent closures = REQ2); the mortality
+theorem exact with both halves attributed (CR-A's 3, the
+return-time's 5); the verdict coin-invariant.  **UNLOCKED BY
+THIS TERMINAL: paper-25 GDL (Wave A — pinned and launched
+this ledger at #205) and paper-26 REQ2 (Wave B — pin
+obligation armed; launches as capacity frees).  SIG
+(paper-24) still awaits paper-21's terminal (panel in
+flight).**
