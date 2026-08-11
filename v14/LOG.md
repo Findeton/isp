@@ -6052,3 +6052,50 @@ f54dad8d51b8, code e387674bfcdd, output 27ed73ded234, receipt
 e1f148dd6a0e.  Committed AS-IS; battery next; panel after.
 PER-R (paper-29) pin obligation now armed at this unit's
 terminal.
+
+## 2026-08-11 — PAPER-20 REPAIR LANDED: P1–P12 EXECUTED; THE HEAD RE-STAMPED; 9/9 INJECTIONS DIE; COMMIT-AS-IS (v14 LEDGER #198)
+
+The summit's repair delivered.  P1 coin → DECLARED-UNDER-A-
+REALITY-CONDITION fiber 6 (both scans in-code; witness 3C
+gated; G-COIN-INVARIANCE runs all four hidden coins coupled+
+frozen — all 0 violations, 9/9 rows moving, threshold 5, no
+indefinite form; the five exit probabilities exact).  P2 head
+re-stamped NO-WITNESS-CARRIED-BY-THE-STALENESS-THEOREM +
+BATTERY=EMPTY-IN-THE-FORWARD-DIRECTION-BEFORE-THE-RUN
+(G-COUNT-BLIND: 0/800 over 5 declared foreign fields) +
+REFUSAL-ROBUST=EITHER-DECLARATION-ALONE (0/0/2); staleness at
+the FULL horizon 1,040,065, quantifier corrected to
+single-time closures.  P3 K5 as rays (frozen 30 distinct;
+coupled 0 repeats to level 4).  P4 transport re-attributed to
+the site row; the 187,155 row labelled definitional;
+G-TRANSPORT-MECHANISM with the non-block-diagonal coin (0/27
+vs 15/27).  P5 inline spans through the fenced rule (201
+spans, 624 numerals 0 unregistered); blocks by multiset;
+G-PAPER-TABLES 15 rows each-exactly-once.  P6 G-WRITER-SHAPE
+sealed pre-snapshot; counts named 62/60/2; the TOTALS banner
+archived.  P7 transcript FULL 216/216; DECLARED_UNSEALED 4→2,
+survivors chained; the probe corrupts all 35 seals.  P8
+G-FALSIFIER-HONESTY (E-23) — 56 falsifiers' declared effects
+re-derived from the AST; MUT-MASS-DENSITY added;
+measured_members set-equality; pruned_branches two-route.  P9
+D·G at full horizon 2922723584/847288609443 (ratio floor
+315/100), threshold unmoved.  P10 F9 MEASURED fiber 3 (three
+starts; exact translates; ipr equal).  P11 the 37-value
+(1/3)Z[ω] scan 50,653 maps (links 18/0 vs axis 216/198; the
+retired alphabet measured blind in-run); K6 its own
+observable; the disclosure sweep.  P12 G-EXIT-CENSUS all
+1,316 leaves classified ((0,0,3); 379/471/466; weight = the
+exit probability EXACTLY; earliest third visit 5); CR-A the
+17th pinned source; the licensed sentence + R-CRA→20-4 in §9/
+§15.  INJECTION REPLAY: 9/9 paper injections DIE at named
+gates (P2/P3/P4 previously shipped); K1's two inline-span
+corruptions die at G-PAPER-NUMERAL-COVERAGE; the #125 control
+still located by design.  Battery: plain ×2 byte; selftest
+G-PROVENANCE writes nothing; **56/56 mutants cold-cache
+out-of-harness; 36/36 hostile argv; off-tree git-less
+PATH=/nonexistent under two hash seeds byte-identical.**
+Registry 62 gates / 56 falsifiers / 35 seals / 12 waivers /
+17 sources.  Shas: paper 4824d190af73, code 72e7b299f66e,
+output 42b103eeec14, receipt 55273f6b6068.  Committed AS-IS;
+orchestrator battery next; on green paper-20 TERMINAL (the
+seventeenth).

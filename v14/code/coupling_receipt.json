@@ -2,8 +2,9 @@
  "anchors": {
   "aut_factorisation": "3! * (3!)^3",
   "aut_k333_recomputed_here": 1296,
+  "cited_key": "counts/isomorphisms",
   "isos_cited_from_weld_receipt": 1296,
-  "occurrences_in_weld_receipt": 19
+  "occurrences_under_that_key_in_the_weld_receipt": 3
  },
  "arena": {
   "cells": 27,
@@ -68,7 +69,102 @@
  },
  "arithmetic": "exact: Python int and fractions.Fraction; amplitudes as integer pairs over Z[w] with a common power-of-3 denominator; 0 float literals in this file",
  "battery": {
+  "count_blindness": {
+   "checks": 800,
+   "fields": 5,
+   "psi_internal_violations": 0,
+   "rows": [
+    {
+     "checks": 160,
+     "field": "STALE",
+     "is_admissible": true,
+     "is_the_welded_record": false,
+     "psi_internal_violations": 0
+    },
+    {
+     "checks": 160,
+     "field": "ALL-TWO",
+     "is_admissible": true,
+     "is_the_welded_record": false,
+     "psi_internal_violations": 0
+    },
+    {
+     "checks": 160,
+     "field": "INADMISSIBLE-ONE-CELL",
+     "is_admissible": false,
+     "is_the_welded_record": false,
+     "psi_internal_violations": 0
+    },
+    {
+     "checks": 160,
+     "field": "LADDERED",
+     "is_admissible": true,
+     "is_the_welded_record": false,
+     "psi_internal_violations": 0
+    },
+    {
+     "checks": 160,
+     "field": "ZERO-AT-ONE-CELL",
+     "is_admissible": false,
+     "is_the_welded_record": false,
+     "psi_internal_violations": 0
+    }
+   ]
+  },
+  "forward_direction": "EMPTY-BEFORE-THE-RUN",
+  "k5_no_return": {
+   "coupled_by_level": [
+    {
+     "branches": 3,
+     "distinct_normalised_states": 1,
+     "distinct_rays": 1,
+     "t": 1
+    },
+    {
+     "branches": 27,
+     "distinct_normalised_states": 1,
+     "distinct_rays": 1,
+     "t": 2
+    },
+    {
+     "branches": 486,
+     "distinct_normalised_states": 3,
+     "distinct_rays": 3,
+     "t": 3
+    },
+    {
+     "branches": 10527,
+     "distinct_normalised_states": 252,
+     "distinct_rays": 252,
+     "t": 4
+    }
+   ],
+   "coupled_levels": 4,
+   "coupled_normalised_repeats": 0,
+   "coupled_ray_repeats": 0,
+   "frozen_distinct_rays": 30,
+   "frozen_normalised_repeats": 0,
+   "frozen_ray_repeats": 0,
+   "frozen_steps": 30,
+   "raw_norms_all_distinct": true,
+   "raw_state_norms_by_level": [
+    9,
+    81,
+    729,
+    6561,
+    59049
+   ]
+  },
   "psi_internal_rows": 5,
+  "refusal_robustness": {
+   "as_delivered": [],
+   "both_dropped": [
+    "K10-RECORDS-THEOREM",
+    "K9-SOURCING"
+   ],
+   "class_dropped": [],
+   "stamp_dropped": []
+  },
   "requirement_witnesses": [],
   "reverse_direction_rows": [
    "K6-BLOCH",
@@ -148,7 +244,7 @@
     {
      "class": "PSI-INTERNAL",
      "discriminates": false,
-     "evidence": "recurring states frozen 0, coupled 0; momentum sectors of provably infinite order 6 of 9, by trace non-integrality",
+     "evidence": "at the RAY grain: frozen arm driven 30 steps with 0 ray repeats and 0 exactly-normalised repeats, 30 distinct rays; coupled arm to level 4 with 0 cross-level ray repeats; the raw-amplitude predicate the delivered run used could not fire at all, since the state norms [9, 81, 729, 6561, 59049] are distinct by level.  Momentum sectors of provably infinite order 6 of 9, by trace non-integrality",
      "id": "K5-NO-RETURN",
      "measured": {
       "coupled_holds": true,
@@ -165,7 +261,7 @@
     {
      "class": "SYMMETRY",
      "discriminates": true,
-     "evidence": "the frozen stage's count field is translation-invariant at every branch; the coupled stage's is inhomogeneous with probability 1 - 7598838656/22876792454961",
+     "evidence": "count-field translation-invariance probability frozen 1, coupled 0 -- this row's OWN observable, not K7's",
      "id": "K6-BLOCH",
      "measured": {
       "coupled_holds": false,
@@ -320,7 +416,7 @@
     {
      "class": "PSI-INTERNAL",
      "discriminates": false,
-     "evidence": "recurring states frozen 0, coupled 0; momentum sectors of provably infinite order 6 of 9, by trace non-integrality",
+     "evidence": "at the RAY grain: frozen arm driven 30 steps with 0 ray repeats and 0 exactly-normalised repeats, 30 distinct rays; coupled arm to level 4 with 0 cross-level ray repeats; the raw-amplitude predicate the delivered run used could not fire at all, since the state norms [9, 81, 729, 6561, 59049] are distinct by level.  Momentum sectors of provably infinite order 6 of 9, by trace non-integrality",
      "id": "K5-NO-RETURN",
      "measured": {
       "coupled_holds": true,
@@ -337,7 +433,7 @@
     {
      "class": "SYMMETRY",
      "discriminates": true,
-     "evidence": "the frozen stage's count field is translation-invariant at every branch; the coupled stage's is inhomogeneous with probability 1 - 19991885/31381059609",
+     "evidence": "count-field translation-invariance probability frozen 1, coupled 0 -- this row's OWN observable, not K7's",
      "id": "K6-BLOCH",
      "measured": {
       "coupled_holds": false,
@@ -424,19 +520,21 @@
   "spec": 10,
   "staleness_blindness": {
    "checks": {
-    "column": 279,
-    "emission_total": 31,
-    "kernel": 172,
-    "kernel_entry": 516,
-    "law_native": 279,
-    "mass_is_density": 279,
-    "norm": 31,
-    "repricing": 279,
-    "site": 279,
-    "sourcing": 279,
-    "total": 31
+    "column": 100881,
+    "emission_total": 11209,
+    "kernel": 100288,
+    "kernel_entry": 300864,
+    "law_native": 100881,
+    "mass_is_density": 100881,
+    "norm": 11209,
+    "repricing": 100881,
+    "site": 100881,
+    "sourcing": 100881,
+    "total": 11209
    },
+   "horizon": 5,
    "psi_internal_closures_hold_on_the_stale_stage": true,
+   "quantifier": "every SINGLE-TIME closure that is a property of (psi, U(n)) uniformly in n; the machine check is an instance of it over K1-K4, not a proof of it",
    "stale_cells": [
     0,
     4,
@@ -444,7 +542,8 @@
     20,
     26
    ],
-   "stale_field_is_admissible": true
+   "stale_field_is_admissible": true,
+   "total_checks": 1040065
   },
   "update_rule_restated_rows": [
    "K10-RECORDS-THEOREM",
@@ -452,33 +551,281 @@
   ]
  },
  "closing_gates": {
+  "gates_after_the_snapshot": 2,
+  "gates_in_the_registry": 62,
+  "gates_in_the_sealed_snapshot": 60,
   "names": [
    "G-SEAL-COMPLETE",
    "G-ARTIFACT-INTEGRITY"
   ],
-  "warrant": "these two are evaluated after the gate ledger is snapshotted and sealed -- G-SEAL-COMPLETE cannot be inside the object it seals, and G-ARTIFACT-INTEGRITY runs after the bytes are on disk.  The archived transcript therefore carries G-SEAL-COMPLETE's row and NOT G-ARTIFACT-INTEGRITY's; that verdict is recorded instead by the artifacts themselves, since a run which fails any gate writes nothing and the staged bytes are moved into place only after it passes."
+  "warrant": "these two are evaluated after the gate ledger is snapshotted and sealed -- G-SEAL-COMPLETE cannot be inside the object it seals, and G-ARTIFACT-INTEGRITY runs after the bytes are on disk.  The archived transcript therefore carries G-SEAL-COMPLETE's row and NOT G-ARTIFACT-INTEGRITY's.  THAT GATE'S EXISTENCE IS NOT WITNESSED BY THE ARTIFACTS -- dropping it produced byte-identical ones -- so it is witnessed instead by G-WRITER-SHAPE, which reads this file's AST before the snapshot and seals the gate names finish() calls together with the line of every write."
+ },
+ "coin_invariance": {
+  "invariants": [
+   "consistency_violations = 0",
+   "every declared observable row differs from its own frozen control",
+   "exit threshold = 5",
+   "no indefinite form reached"
+  ],
+  "members": [
+   {
+    "coin": "w/3",
+    "consistency_violations": 0,
+    "exit_probability": "145274395/94143178827",
+    "exit_threshold": 5,
+    "indefinite_form_reached": false,
+    "is_s3_covariant": true,
+    "is_unitary_exactly": true,
+    "leaves_coupled": 314627,
+    "leaves_frozen": 314928,
+    "observable_rows": 9,
+    "observable_rows_differing": 9,
+    "three_C_numerators": [
+     [
+      [
+       3,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       3,
+       1
+      ]
+     ]
+    ]
+   },
+   {
+    "coin": "(-1+w)/3",
+    "consistency_violations": 0,
+    "exit_probability": "646/177147",
+    "exit_threshold": 5,
+    "indefinite_form_reached": false,
+    "is_s3_covariant": true,
+    "is_unitary_exactly": true,
+    "leaves_coupled": 214772,
+    "leaves_frozen": 194400,
+    "observable_rows": 9,
+    "observable_rows_differing": 9,
+    "three_C_numerators": [
+     [
+      [
+       2,
+       1
+      ],
+      [
+       -1,
+       1
+      ],
+      [
+       -1,
+       1
+      ]
+     ],
+     [
+      [
+       -1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       -1,
+       1
+      ]
+     ],
+     [
+      [
+       -1,
+       1
+      ],
+      [
+       -1,
+       1
+      ],
+      [
+       2,
+       1
+      ]
+     ]
+    ]
+   },
+   {
+    "coin": "(-1-w)/3",
+    "consistency_violations": 0,
+    "exit_probability": "833849422/282429536481",
+    "exit_threshold": 5,
+    "indefinite_form_reached": false,
+    "is_s3_covariant": true,
+    "is_unitary_exactly": true,
+    "leaves_coupled": 313842,
+    "leaves_frozen": 314928,
+    "observable_rows": 9,
+    "observable_rows_differing": 9,
+    "three_C_numerators": [
+     [
+      [
+       2,
+       -1
+      ],
+      [
+       -1,
+       -1
+      ],
+      [
+       -1,
+       -1
+      ]
+     ],
+     [
+      [
+       -1,
+       -1
+      ],
+      [
+       2,
+       -1
+      ],
+      [
+       -1,
+       -1
+      ]
+     ],
+     [
+      [
+       -1,
+       -1
+      ],
+      [
+       -1,
+       -1
+      ],
+      [
+       2,
+       -1
+      ]
+     ]
+    ]
+   },
+   {
+    "coin": "(-2-w)/3",
+    "consistency_violations": 0,
+    "exit_probability": "2087/531441",
+    "exit_threshold": 5,
+    "indefinite_form_reached": false,
+    "is_s3_covariant": true,
+    "is_unitary_exactly": true,
+    "leaves_coupled": 192258,
+    "leaves_frozen": 194400,
+    "observable_rows": 9,
+    "observable_rows_differing": 9,
+    "three_C_numerators": [
+     [
+      [
+       1,
+       -1
+      ],
+      [
+       -2,
+       -1
+      ],
+      [
+       -2,
+       -1
+      ]
+     ],
+     [
+      [
+       -2,
+       -1
+      ],
+      [
+       1,
+       -1
+      ],
+      [
+       -2,
+       -1
+      ]
+     ],
+     [
+      [
+       -2,
+       -1
+      ],
+      [
+       -2,
+       -1
+      ],
+      [
+       1,
+       -1
+      ]
+     ]
+    ]
+   }
+  ],
+  "members_failing": []
  },
  "consistency": {
   "checks": 948297,
+  "definitional_checks": 406413,
   "per_class": {
    "column": {
     "checks": 406413,
+    "kind": "DEFINITIONAL -- sum_l q/M = 1 is an identity in the definition of the kernel",
     "violations": 0
    },
    "emission_total": {
     "checks": 45157,
+    "kind": "REDUCES TO total",
     "violations": 0
    },
    "norm": {
     "checks": 45157,
+    "kind": "CONTENTFUL",
     "violations": 0
    },
    "site": {
     "checks": 406413,
+    "kind": "CONTENTFUL",
     "violations": 0
    },
    "total": {
     "checks": 45157,
+    "kind": "CONTENTFUL",
     "violations": 0
    }
   },
@@ -496,20 +843,20 @@
   "leaves_coupled_B": 314928,
   "leaves_frozen_A": 212382,
   "observable_rows": 18,
-  "sources": 16,
-  "verbatim": 11
+  "sources": 17,
+  "verbatim": 12
  },
  "coverage": {
-  "declared_registry": 52,
-  "gates": 52,
-  "gates_with_a_mutant": 40,
-  "honest_denominator": 52,
+  "declared_registry": 62,
+  "gates": 62,
+  "gates_with_a_mutant": 50,
+  "honest_denominator": 62,
   "late_gates": [
    "G-PAPER-COVERAGE-FINAL",
    "G-SEAL-COMPLETE",
    "G-ARTIFACT-INTEGRITY"
   ],
-  "mutants": 44,
+  "mutants": 56,
   "registry_drift": [],
   "uncovered": [],
   "waived": [
@@ -546,30 +893,35 @@
     "levels": [
      {
       "branches": 3,
+      "branches_from_emission_supports": 3,
       "mass": "1",
       "mass_is_one": true,
       "t": 1
      },
      {
       "branches": 27,
+      "branches_from_emission_supports": 27,
       "mass": "1",
       "mass_is_one": true,
       "t": 2
      },
      {
       "branches": 486,
+      "branches_from_emission_supports": 486,
       "mass": "1",
       "mass_is_one": true,
       "t": 3
      },
      {
       "branches": 10527,
+      "branches_from_emission_supports": 10527,
       "mass": "1",
       "mass_is_one": true,
       "t": 4
      },
      {
       "branches": 284078,
+      "branches_from_emission_supports": 284078,
       "mass": "1",
       "mass_is_one": true,
       "t": 5
@@ -595,30 +947,35 @@
     "levels": [
      {
       "branches": 3,
+      "branches_from_emission_supports": 3,
       "mass": "1",
       "mass_is_one": true,
       "t": 1
      },
      {
       "branches": 27,
+      "branches_from_emission_supports": 27,
       "mass": "1",
       "mass_is_one": true,
       "t": 2
      },
      {
       "branches": 486,
+      "branches_from_emission_supports": 486,
       "mass": "1",
       "mass_is_one": true,
       "t": 3
      },
      {
       "branches": 9234,
+      "branches_from_emission_supports": 9234,
       "mass": "1",
       "mass_is_one": true,
       "t": 4
      },
      {
       "branches": 212382,
+      "branches_from_emission_supports": 212382,
       "mass": "1",
       "mass_is_one": true,
       "t": 5
@@ -645,30 +1002,35 @@
     "levels": [
      {
       "branches": 3,
+      "branches_from_emission_supports": 3,
       "mass": "1",
       "mass_is_one": true,
       "t": 1
      },
      {
       "branches": 27,
+      "branches_from_emission_supports": 27,
       "mass": "1",
       "mass_is_one": true,
       "t": 2
      },
      {
       "branches": 486,
+      "branches_from_emission_supports": 486,
       "mass": "1",
       "mass_is_one": true,
       "t": 3
      },
      {
       "branches": 11664,
+      "branches_from_emission_supports": 11664,
       "mass": "1",
       "mass_is_one": true,
       "t": 4
      },
      {
       "branches": 314928,
+      "branches_from_emission_supports": 314928,
       "mass": "1",
       "mass_is_one": true,
       "t": 5
@@ -693,30 +1055,35 @@
     "levels": [
      {
       "branches": 3,
+      "branches_from_emission_supports": 3,
       "mass": "1",
       "mass_is_one": true,
       "t": 1
      },
      {
       "branches": 27,
+      "branches_from_emission_supports": 27,
       "mass": "1",
       "mass_is_one": true,
       "t": 2
      },
      {
       "branches": 486,
+      "branches_from_emission_supports": 486,
       "mass": "1",
       "mass_is_one": true,
       "t": 3
      },
      {
       "branches": 11664,
+      "branches_from_emission_supports": 11664,
       "mass": "1",
       "mass_is_one": true,
       "t": 4
      },
      {
       "branches": 314928,
+      "branches_from_emission_supports": 314928,
       "mass": "1",
       "mass_is_one": true,
       "t": 5
@@ -728,6 +1095,7 @@
     }
    }
   },
+  "branch_count_routes": 2,
   "horizon": 5,
   "ladder": [
    1,
@@ -742,49 +1110,138 @@
    "B-COUPLED": 314928,
    "B-FROZEN": 314928
   },
-  "pruned_branches": 0
+  "levels_compared": 20,
+  "pruned_branches": 0,
+  "route_disagreements": []
+ },
+ "exit_census": {
+  "count_vectors": {
+   "1,1,4": 466,
+   "1,4,1": 471,
+   "4,1,1": 379
+  },
+  "event_budget_from_the_welded_record": 3,
+  "excess_patterns": {
+   "0,0,3": 1316
+  },
+  "leaves": 1316,
+  "link_class_degeneracy": 3,
+  "schedule": {
+   "earliest_third_visit": 5,
+   "sites_reaching_a_third_visit": 9,
+   "sites_with_positive_mass_by_step": [
+    1,
+    3,
+    6,
+    8,
+    9
+   ],
+   "third_visit_step": {
+    "00": 5,
+    "01": 5,
+    "02": 5,
+    "10": 5,
+    "11": 5,
+    "12": 5,
+    "20": 5,
+    "21": 5,
+    "22": 5
+   },
+   "visits": {
+    "00": [
+     1,
+     4,
+     5
+    ],
+    "01": [
+     2,
+     4,
+     5
+    ],
+    "02": [
+     3,
+     4,
+     5
+    ],
+    "10": [
+     2,
+     4,
+     5
+    ],
+    "11": [
+     2,
+     3,
+     5
+    ],
+    "12": [
+     3,
+     4,
+     5
+    ],
+    "20": [
+     3,
+     4,
+     5
+    ],
+    "21": [
+     3,
+     4,
+     5
+    ],
+    "22": [
+     3,
+     4,
+     5
+    ]
+   }
+  },
+  "sites_out_per_leaf": {
+   "1": 1316
+  },
+  "step_budget_is_the_return_time": 5,
+  "weight_equals_the_exit_probability": true
  },
  "gates": [
   {
    "evidence": "mismatched anchors: none",
    "gate": "G-PROVENANCE",
    "passed": true,
-   "statement": "all 16 declared sources are read from paths resolved from THIS FILE's own location and matched against the sha256-12 this unit froze; a drifted source dies here before a single measurement runs, which is what a pinned-sha read buys with no version control present",
+   "statement": "all 17 declared sources are read from paths resolved from THIS FILE's own location and matched against the sha256-12 this unit froze; a drifted source dies here before a single measurement runs, which is what a pinned-sha read buys with no version control present",
    "waiver": null
   },
   {
-   "evidence": "float literals: 0",
+   "evidence": "float literals: 0; interpreter 3.13.2",
    "gate": "G-EXACT-ARITHMETIC",
    "passed": true,
-   "statement": "an AST scan of this file finds no float literal anywhere: the amplitudes are INTEGER pairs over Z[w] with a common power-of-3 denominator, and every probability is a fractions.Fraction",
+   "statement": "an AST scan of this file finds no float literal anywhere: the amplitudes are INTEGER pairs over Z[w] with a common power-of-3 denominator, and every probability is a fractions.Fraction.  The interpreter this ran under is recorded and SEALED at this gate rather than left unsealed: CPython 3.13.2",
    "waiver": null
   },
   {
-   "evidence": "banned imports: none",
+   "evidence": "banned imports and spawn attributes: none",
    "gate": "G-NO-SUBPROCESS",
    "passed": true,
-   "statement": "no subprocess of any kind is invoked and no version-control command is spawned: the scan reads IMPORT NAMES as well as uses, so an aliased import is a hit.  The run is therefore correct off-tree and with git absent",
+   "statement": "no subprocess of any kind is invoked and no version-control command is spawned: the scan reads IMPORT NAMES as well as uses, so an aliased import is a hit, AND it reads ATTRIBUTE names, so the process-spawning surface of an already-imported module -- os.system, os.popen, os.exec*, os.spawn*, os.fork -- is scanned too.  The run is therefore correct off-tree and with git absent",
    "waiver": null
   },
   {
-   "evidence": "undeclared none; declared-not-read none",
+   "evidence": "undeclared none; declared-not-read none; object reads ['PAPER', 'SELF']",
    "gate": "G-READS-DECLARED",
    "passed": true,
-   "statement": "the set of files read at run time is EXACTLY the declared source set: 16 reads, no repository state outside them",
+   "statement": "the set of files read at run time is EXACTLY the declared source set: 17 reads, no repository state outside them.  The SECOND read set is declared and gated the same way rather than left out of the accounting: this file itself, which its own AST probes parse, and the object under test -- 2 files, both named",
    "waiver": null
   },
   {
    "evidence": "anchors failing: none",
    "gate": "G-VERBATIM",
    "passed": true,
-   "statement": "11 verbatim anchors, each at least 30 characters after normalisation, each located exactly in its pinned source, each PERTURBED at a content-bearing token and re-located so the row counts as covered only when its own predicate flips, and each declared against a consumer gate",
+   "statement": "12 verbatim anchors, each at least 30 characters after normalisation, each located exactly in its pinned source, each PERTURBED at a content-bearing token and re-located so the row counts as covered only when its own predicate flips, and each declared against a consumer gate",
    "waiver": null
   },
   {
    "evidence": "slice exit-free True, extracted bodies exit-free True",
    "gate": "G-SLICE-EXIT-FREE",
    "passed": true,
-   "statement": "d42b1's transport layer is taken as a TEXT SLICE cut at the layer's own banner print, and d60/d66 enter by AST extraction of their definitions alone, so no module-level statement of theirs can run and no extracted body can terminate this process",
+   "statement": "d42b1's transport layer is taken as a TEXT SLICE cut at the layer's own banner print, and d60/d66 enter by AST extraction of their definitions alone, so no module-level statement of theirs can run and no extracted body can terminate this process.  The property is decided BEFORE the first exec rather than after it: a body that could call sys.exit would have ended this process before a gate evaluated afterwards could refuse it",
    "waiver": null
   },
   {
@@ -816,10 +1273,10 @@
    "waiver": null
   },
   {
-   "evidence": "recomputed 1296, cited 1296, occurrences in the weld's receipt 19",
+   "evidence": "recomputed 1296, cited 1296 from counts/isomorphisms, occurrences under that key 3",
    "gate": "G-ISOS-CITED",
    "passed": true,
-   "statement": "the 1296 site assignments are CITED AND VERIFIED, not re-derived: the weld's committed receipt is read at run time and its own number located in those bytes, and the same number is recomputed here from the target's automorphism group, 3! * (3!)^3 = 1296, which is forced once the two readings meet at equality",
+   "statement": "the 1296 site assignments are CITED AND VERIFIED, not re-derived: the weld's committed receipt is read at run time and the number is taken FROM ITS OWN KEY counts/isomorphisms -- not located by a bare substring search of the whole receipt, which would be satisfied by any occurrence anywhere -- and it is found under that key at 3 places.  The same number is recomputed here from the target's automorphism group, 3! * (3!)^3 = 1296, and the two readings are required to meet at equality",
    "waiver": null
   },
   {
@@ -830,17 +1287,24 @@
    "waiver": null
   },
   {
-   "evidence": "each difference realised once True; non-monomial unitary maps 0; axis-stencil multiplicities [3, 3]",
+   "evidence": "each difference realised once True; link non-monomial unitary maps 0; axis non-monomial unitary maps 198; the alphabet discriminates True; axis-stencil multiplicities [3, 3]; the retired 7-value alphabet, 343 maps, returns 18 unitary and 0 non-monomial on BOTH stencils and is therefore measured blind True",
    "gate": "G-SCALAR-MONOMIAL",
    "passed": true,
-   "statement": "THEOREM, and it is what FORCES the coin register.  R4b's family shape is a coefficient map on lattice offsets, unitary iff its autocorrelation is a delta.  On THIS arena's offset set -- I7's three declared link directions -- every one of the 6 nonzero differences of two distinct offsets is realised by EXACTLY ONE ordered pair, so each condition reads c_v conj(c_w) = 0 and forces one of the two to vanish; the three together leave at most one nonzero coefficient and the norm makes it a MONOMIAL, a deterministic shift with no interference at all.  Checked exhaustively over a declared alphabet of 7 values: 343 maps scanned, 18 unitary, 0 of them non-monomial.  R4b's own axis stencil realises each difference 3 times, which is exactly why interference survives there and dies here",
+   "statement": "THEOREM, and it is what FORCES the coin register.  R4b's family shape is a coefficient map on lattice offsets, unitary iff its autocorrelation is a delta.  On THIS arena's offset set -- I7's three declared link directions -- every one of the 6 nonzero differences of two distinct offsets is realised by EXACTLY ONE ordered pair, so each condition reads c_v conj(c_w) = 0 and forces one of the two to vanish; the three together leave at most one nonzero coefficient and the norm makes it a MONOMIAL, a deterministic shift with no interference at all.  The exhaustive check is taken over the DISCRIMINATING alphabet the arena's own ring supplies -- the 37 elements of (1/3)Z[w] of modulus at most 1, 50653 maps -- and it is taken ON BOTH STENCILS IN THIS RUN, which is what makes it evidence: LINK stencil 18 unitary, 0 non-monomial; R4b's own AXIS stencil, where interference survives, 216 unitary, 198 non-monomial, each difference realised 3 times.  The 7-value alphabet this unit first scanned returns the same answer on both and corroborates nothing",
    "waiver": null
   },
   {
-   "evidence": "solutions 4, non-trivial 2, all Grover True, the matrix this unit uses is exactly unitary True",
-   "gate": "G-COIN-FORCED",
+   "evidence": "real solutions 4 (non-trivial 2, all Grover True); ring solutions 36, classes up to phase 6, Grover classes 1; the witness is unitary True, S_3-covariant True, Grover False",
+   "gate": "G-COIN-CENSUS",
    "passed": true,
-   "statement": "THEOREM, and it is what makes the coin DERIVED rather than declared.  The arena's own direction-relabelling group is S_3 -- the weld measured the record invariant under all six of its relabellings -- and a coin covariant under it has the form a I + b J.  The exact rational scan returns 4 solutions of the unitarity conditions, 2 of them non-trivial, and every non-trivial one satisfies 3b = -2a: they are +/- the GROVER COIN and nothing else",
+   "statement": "THE COIN IS DECLARED UNDER A STATED REALITY CONDITION, AND ITS FIBER IS PRINTED.  The arena's own direction-relabelling group is S_3 -- the weld measured the record invariant under all six of its relabellings -- and a coin covariant under it has the form a I + b J.  The unitarity conditions |a|^2 = 1 and a conj(b) + conj(a) b + 3|b|^2 = 0 cut out a CIRCLE, not a finite set: over the exact rational solutions WITH a AND b REAL there are 4, 2 of them non-trivial and both +/- Grover, and that reality restriction is this unit's DECLARATION rather than its theorem.  Over the arena's own ring (1/3)Z[w] the same conditions have 36 solutions, 30 non-trivial, falling into 6 classes up to a global phase, of which 1 is +/- Grover -- so the fiber is 4 hidden members, and the witness a = 1, b = w/3 is exhibited, verified exactly unitary by C C* = I and exactly S_3-covariant, and is not +/- Grover",
+   "waiver": null
+  },
+  {
+   "evidence": "members failing an invariant: none; thresholds [5, 5, 5, 5]",
+   "gate": "G-COIN-INVARIANCE",
+   "passed": true,
+   "statement": "THE VERDICT IS MEASURED COIN-INVARIANT, WHICH IS THE STRONGER RESULT A BROKEN FORCING CLAIM BUYS.  Every one of the 4 HIDDEN non-Grover classes of the S_3-covariant family is run to the FULL horizon 5, coupled and against its own frozen control, and the four invariants that carry the verdict are re-taken on each: 0 consistency violations, 9 of 9 declared observable rows moving, the admissibility threshold at exactly 5, and no indefinite form reached.  The numbers are coin-specific -- the coupled leaf counts are 314627, 214772, 313842, 192258 against the delivered member's -- and the verdict shape is not",
    "waiver": null
   },
   {
@@ -858,10 +1322,17 @@
    "waiver": null
   },
   {
-   "evidence": "declared fiber members executed True; start-site fiber measured invariant True",
+   "evidence": "G.D threshold 5, D.G threshold 5, ratio 11416889/3622717, D.G reaches an indefinite form False",
+   "gate": "G-COIN-ORDER-FULL",
+   "passed": true,
+   "statement": "THE COIN-ORDER FIBER, RE-TAKEN AT THE FULL HORIZON, AND THE DISCLOSURE'S DIRECTION CORRECTED.  'Measurably weaker' was a count of moving rows at the reduced horizon.  On this unit's own sharpest observable, at the horizon the head reports, the alternative order is STRONGER: D.G leaves I7's admissible class with probability 2922723584/847288609443 against G.D's 927415552/847288609443 -- larger by a factor whose exact value is 11416889/3622717, that is 315/100 rounded down -- with 226404 leaves against 284078.  What is ORDER-INVARIANT is the part of the finding that is structural: the threshold is exactly 5 under both",
+   "waiver": null
+  },
+  {
+   "evidence": "declared members 10, executed 10, equal True; start-site distributions are exact translates True; start-site ipr invariant True; naive equality at the translated starts [False, False]",
    "gate": "G-FIBERS",
    "passed": true,
-   "statement": "THE CHOICE INVENTORY IS PRICED AND ITS DECLARED MEMBERS ARE RUN: 12 items, of which 2 are forced by the parents, 3 are DERIVED by the two theorems above, 1 is measured, and the declared ones have every member of their fiber actually executed at the reduced horizon 3 -- the coin order, the shift orientation and all three initial coin components.  ONE OF THEM IS VERDICT-RELEVANT AND SAYS SO: at the reduced horizon the coin order G.D moves 7 of 9 declared observables against its own frozen control while D.G moves 5, because a count phase applied AFTER the coin cannot enter that step's Born weights at all -- so the primary order is declared, and what the alternative costs is measured rather than hidden",
+   "statement": "THE CHOICE INVENTORY IS PRICED AND ITS DECLARED MEMBERS ARE RUN, AND THE EXECUTION IS BOUND BY SET EQUALITY RATHER THAN BY A CARDINALITY: 12 items, of which 2 are forced by the parents, 2 are DERIVED, 1 is DECLARED UNDER A REALITY CONDITION with its 6-member fiber run at the full horizon, 1 is MEASURED from three declared start sites, and every declared member of every other fiber is executed at the reduced horizon 3 -- 10 member ids declared, 10 recorded as executed by the census itself.  ONE OF THEM IS VERDICT-RELEVANT AND SAYS SO: at the reduced horizon the coin order G.D moves 7 of 9 declared observables against its own frozen control while D.G moves 5, and at the FULL horizon the direction of that disclosure reverses on the exit probability.  THE ORIENTATION FIBER IS INERT ON THE IPR ONLY: on the full observable set it moves 2 of 9 rows, p_site,emission_field.  THE START SITE gives the exact TRANSLATE of the base distribution -- naive list equality is False and translate equality is True, which is what a real measurement of this fiber looks like -- with the translation-invariant functional equal at 33596579/129140163",
    "waiver": null
   },
   {
@@ -886,17 +1357,24 @@
    "waiver": null
   },
   {
-   "evidence": "menu-mass-is-density violations 0 of 187155; terminal-condition falsifier kills the identity True",
+   "evidence": "site-row violations 0 of 406413; menu-mass-is-density violations 0 of 187155; terminal-condition falsifier kills the identity True",
    "gate": "G-LAW-TRANSPORT",
    "passed": true,
-   "statement": "THE TRANSPORT IS CONFIRMED AND NOT ASSUMED, and its CONTENT is the row that could have failed: under reading A the law's local menu mass M(x) is exactly the walk's own local Born mass p(x), at 187155 of 187155 site-steps -- because the coin is site-block-diagonal, which is a property of the walk and not a stipulation about the law.  And the transport is falsifiable: breaking the terminal condition G(x,0) = 1, which is the identity's only premise, breaks G(x,1) = M(x) at 10 site-steps of a rebuilt arm",
+   "statement": "THE TRANSPORT IS CONFIRMED AND NOT ASSUMED.  Its CONTENT -- the row that could have failed -- is the SITE row: the coin preserves each site's mass separately at 406413 of 406413 site-branch-steps, and a coin that mixed sites would leave the law without a menu.  The menu-mass-is-Born-mass row, 187155 of 187155 site-steps, is the identification stated per site and is DEFINITIONAL under reading A -- the menu IS the post-coin Born weight there -- so it is retained as a type check and no longer credited to site-block-diagonality, which the mechanism gate below shows measurably does not carry it.  The mechanism is site-locality, not the coin's identity: every member of the coin fiber confirms the transport, and any successor whose walk moves amplitude between sites before the menu is read must re-gate it -- BLOCKED-AT-THE-LAW-TRANSPORT is reserved for exactly that.  The transport is falsifiable: breaking the terminal condition G(x,0) = 1, the identity's only premise, breaks G(x,1) = M(x) at 10 site-steps of an arm rebuilt at the reduced horizon 2",
    "waiver": null
   },
   {
-   "evidence": "pruned branches 0; degenerate levels none",
+   "evidence": "the demonstration coin is unitary at every step True; mass-is-density violations 0 of 27; site-block-diagonality violations 15 of 27",
+   "gate": "G-TRANSPORT-MECHANISM",
+   "passed": true,
+   "statement": "THE MECHANISM SENTENCE IS FALSIFIED RATHER THAN ASSERTED, and it falsifies the delivered attribution.  A coin that is exactly unitary and NOT site-block-diagonal -- the delivered coin composed with the site cycle s -> s + 1 mod 9 -- is built and both rows are re-taken on it over 3 steps: the menu-mass-is-Born-mass row passes at 27 of 27, with a coin violating the very property it was credited to, while site-block-diagonality itself fails at 15 of 27.  What site-block-diagonality buys is p_post(x) = p_pre(x), which is the SITE row, and section 3 already names that one correctly as the law transport's own precondition",
+   "waiver": null
+  },
+  {
+   "evidence": "pruned branches 0 across 20 levels by two routes; route disagreements none; degenerate levels none",
    "gate": "G-ENSEMBLE-EXHAUSTIVE",
    "passed": true,
-   "statement": "the ensemble is EXHAUSTIVE: every branch of the emission tree is carried to the declared horizon T = 5, with no sampling, no pruning and no truncation by weight.  The coupled arm reaches 284078 leaves at the Born menu and 314928 at the record menu; the frozen control reaches 212382, and THAT DIFFERENCE IS ITSELF A MEASUREMENT -- the coupling opens emission channels the frozen stage closes",
+   "statement": "the ensemble is EXHAUSTIVE, and exhaustiveness is checked BY TWO INDEPENDENT ROUTES rather than by a hard-coded 0: at each of the 20 levels the carried frontier's own length is compared against the branch count recomputed from the emission supports of the level above, and `pruned_branches` is their difference.  Every branch of the emission tree is carried to the declared horizon T = 5, with no sampling, no pruning and no truncation by weight.  The coupled arm reaches 284078 leaves at the Born menu and 314928 at the record menu; the frozen control reaches 212382, and THAT DIFFERENCE IS ITSELF A MEASUREMENT -- the coupling opens emission channels the frozen stage closes",
    "waiver": null
   },
   {
@@ -907,10 +1385,10 @@
    "waiver": null
   },
   {
-   "evidence": "consistency violations 0 of 948297 checks",
+   "evidence": "consistency violations 0 of 948297 checks, of which 406413 are the definitional column class",
    "gate": "G-CONSISTENCY",
    "passed": true,
-   "statement": "GATE 1.  THE COUPLED STEP IS WELL DEFINED, and the composition is exact.  Unitarity gives sum_x p(x) = 1; site-block-diagonality gives sum_l k_1(l|x) = 1 at each of the 9 columns; the two COMPOSE to a total emission mass of exactly 1 at every step.  Measured PER OBJECT -- per branch, per step, per site -- across the four arms: 948297 checks, 0 violations.  Nothing here is an aggregate: every site of every branch of every step is compared against its own value",
+   "statement": "GATE 1.  THE COUPLED STEP IS WELL DEFINED, and the composition is exact.  Unitarity gives sum_x p(x) = 1; site-block-diagonality gives sum_l k_1(l|x) = 1 at each of the 9 columns; the two COMPOSE to a total emission mass of exactly 1 at every step.  Measured PER OBJECT -- per branch, per step, per site -- across the four arms: 948297 checks, 0 violations.  Nothing here is an aggregate: every site of every branch of every step is compared against its own value.  The classes are LABELLED rather than totalled blind: 406413 of them are the kernel's DEFINITIONAL leg, sum_l q/M = 1, which cannot fail for any coin, menu or record -- composing an identity with a theorem is exactly the claim, and the reader is told which is which",
    "waiver": null
   },
   {
@@ -935,6 +1413,13 @@
    "waiver": null
   },
   {
+   "evidence": "leaves 1316, classified 1316, one site out per leaf True, excess patterns ['0,0,3'], degeneracy 3, census weight equals the exit probability True, earliest third visit 5 equals the threshold 5",
+   "gate": "G-EXIT-CENSUS",
+   "passed": true,
+   "statement": "THE HORIZON-5 MECHANISM IS A CENSUS, NOT AN ASSERTION.  All 1316 inadmissible leaves of the coupled frontier are classified: every one has exactly ONE site out of I7's class, every one carries the excess pattern (0, 0, 3) at that site, and the census is 3-fold degenerate across the link classes -- 1,1,4 at 466, 1,4,1 at 471, 4,1,1 at 379 -- so the exit is one arithmetic event and nothing else, and its total weight is exactly the published exit probability.  THE TWO BUDGETS MEET: the margin from the welded record to a singular form is 3 events on one link, which is CR-A's own measured three-event margin to G-SINGULAR read from the other side; and the step budget is the RETURN TIME of the +l shift -- the walk emits one division event per step, so three events on one cell need positive Born mass at that site at three distinct steps, the support schedule is [1, 3, 6, 8, 9] sites at steps 1..5, and the earliest third visit over all nine sites is step 5.  CR-A supplies the 3; the return time supplies the 5",
+   "waiver": null
+  },
+  {
    "evidence": "polarity mismatches: none",
    "gate": "G-BATTERY-POLARITY",
    "passed": true,
@@ -949,17 +1434,38 @@
    "waiver": null
   },
   {
-   "evidence": "psi-internal closures on the stale stage hold True; the stale field is admissible True",
+   "evidence": "psi-internal closures on the stale stage hold True at 1040065 checks; the stale field is admissible True",
    "gate": "G-STALENESS-BLIND",
    "passed": true,
-   "statement": "THE STALENESS-BLINDNESS THEOREM, machine-checked rather than argued.  A frozen stage is itself an admissible stage, so the walk it generates is a perfectly good unitary walk on this arena: run on a DECLARED STALE count field -- admissible, and not the welded one -- every psi-internal closure of the battery still holds, at 2455 checks.  Nothing internal to the state at a single time can detect that its stage is out of date, which is exactly why the rows that discriminate are the ones that mention the record",
+   "statement": "THE STALENESS-BLINDNESS THEOREM, machine-checked rather than argued, AT THIS UNIT'S OWN FULL HORIZON 5 and disclosed as such.  A frozen stage is itself an admissible stage, so the walk it generates is a perfectly good unitary walk on this arena: run on a DECLARED STALE count field -- admissible, and not the welded one -- every psi-internal closure of the battery still holds, at 1040065 checks.  THE QUANTIFIER IS THE ONE THE ARGUMENT CARRIES: every SINGLE-TIME closure that is a property of (psi, U(n)) uniformly in n cannot see n, and this check is an INSTANCE of that over K1-K4 rather than a proof of it.  Nothing internal to the state at a single time can detect that its stage is out of date, which is exactly why the rows that discriminate are the ones that mention the record",
+   "waiver": null
+  },
+  {
+   "evidence": "psi-internal violations on foreign count fields 0 of 800 checks over 5 fields; fields not admissible 2",
+   "gate": "G-COUNT-BLIND",
+   "passed": true,
+   "statement": "THE FORWARD DIRECTION WAS EMPTY BEFORE THE RUN, AND THAT IS MEASURED HERE RATHER THAN CONCEDED IN PROSE.  K1, K2, K3 and K4 never read the record, so they hold for EVERY count field whatever -- run on 5 declared FOREIGN fields, two of which are not even admissible and none of which this run generates, they record 0 psi-internal violations in 800 checks.  With K5's delivered predicate unfireable, no psi-internal row of this battery COULD have failed frozen, whatever the physics did.  What makes that emptiness forced rather than chosen is the staleness-blindness theorem above: at a single time there is nothing else the class could have contained",
+   "waiver": null
+  },
+  {
+   "evidence": "frozen ray repeats 0 in 30 steps; coupled cross-level ray repeats 0 to level 4; raw norms distinct by level True",
+   "gate": "G-K5-NO-RETURN",
+   "passed": true,
+   "statement": "K5 IS A REAL TEST NOW.  The delivered predicate compared RAW amplitudes, which this unit's own unitarity gate proves carry norm 9^t exactly -- [9, 81, 729, 6561, 59049] by level -- so two states at different levels could never be equal and `repeat_states = 0` was a property of the normalisation, not a measurement.  The row is re-taken at two grains that CAN fire: the exactly normalised state psi_t / 3^t and the RAY class.  The frozen arm is driven 30 steps, well past the ladder: 0 ray repeats, 30 distinct rays.  The coupled arm is compared cross-level to level 4 -- [1, 1, 3, 252] distinct states by level -- with 0 repeats.  So the repaired row still holds ON BOTH STAGES, and the verdict stands on a row that could have moved it",
+   "waiver": null
+  },
+  {
+   "evidence": "as delivered none; stamp dropped none; class dropped none; both dropped ['K10-RECORDS-THEOREM', 'K9-SOURCING']",
+   "gate": "G-REFUSAL-ROBUST",
+   "passed": true,
+   "statement": "THE NEGATIVE IS DOUBLY GROUNDED, AND EITHER GROUND ALONE CARRIES IT.  NO-WITNESS rests on two declarations about K9 and K10 -- their CLASS and their UPDATE-RULE-RESTATED stamp -- and each is dropped alone and both together, with the selector re-run: drop the stamp alone and the witnesses are none, because the class filter still excludes them; reclassify them as PSI-INTERNAL and keep the stamp and the witnesses are none; drop BOTH and the witnesses are ['K10-RECORDS-THEOREM', 'K9-SOURCING'].  Only the conjunction of two failed declarations produces a witness, so NO-WITNESS survives the failure of EITHER refusal declaration alone",
    "waiver": null
   },
   {
    "evidence": "requirement witnesses: none",
    "gate": "G-REQUIREMENT",
    "passed": true,
-   "statement": "GATE 3, THE THEOREM, TWO-WAY.  A REQUIREMENT WITNESS must be a closure that is INTERNAL TO THE QUANTUM SIDE, is NOT the update rule restated, and FAILS frozen while PASSING coupled.  Measured: 0 such witnesses.  What the battery does return is measured and reported instead -- 3 rows in the REVERSE direction (K6-BLOCH,K7-CURVATURE-HOMOGENEOUS,K8-I7-ADMISSIBILITY), which the pin pre-registers as equally reportable, and 2 rows that fail frozen only by restating the update rule (K10-RECORDS-THEOREM,K9-SOURCING), which the selector refuses by construction.  All 5 psi-internal rows hold on BOTH stages",
+   "statement": "GATE 3, THE THEOREM, TWO-WAY -- AND THE NEGATIVE IS STAMPED WITH WHAT CARRIES IT.  A REQUIREMENT WITNESS must be a closure that is INTERNAL TO THE QUANTUM SIDE, is NOT the update rule restated, and FAILS frozen while PASSING coupled.  Measured: 0 such witnesses IN THE 10-ROW PRE-REGISTERED BATTERY -- and this is not a search that came back empty, it is a search whose FORWARD DIRECTION WAS EMPTY BEFORE THE RUN: K1-K4 are count-blind, measured on 5 foreign fields, and K5's delivered predicate could not fire.  What makes that emptiness FORCED rather than chosen is the staleness-blindness theorem, so the no-witness is CARRIED BY THE STALENESS THEOREM rather than by the battery's coverage, and the head says so.  What the battery does return is measured and reported instead -- 3 rows in the REVERSE direction (K6-BLOCH,K7-CURVATURE-HOMOGENEOUS,K8-I7-ADMISSIBILITY), which the pin pre-registers as equally reportable, and 2 rows that fail frozen only by restating the update rule (K10-RECORDS-THEOREM,K9-SOURCING), which the selector refuses by construction and whose refusal survives dropping either declaration alone.  All 5 psi-internal rows hold on BOTH stages, K5 at the repaired ray grain",
    "waiver": null
   },
   {
@@ -1015,21 +1521,28 @@
    "evidence": "claims not located: none",
    "gate": "G-PAPER-CLAIMS",
    "passed": true,
-   "statement": "9 load-bearing sentences are ASSEMBLED FROM THIS RUN's own measurements and located in the delivered paper's bytes, so a value moved to the wrong place in the prose dies inside the run.  The pin's scope row is one of them and it is carried verbatim",
+   "statement": "15 load-bearing sentences are ASSEMBLED FROM THIS RUN's own measurements and located in the delivered paper's bytes, so a value moved to the wrong place in the prose dies inside the run.  The pin's scope row is one of them and it is carried verbatim",
+   "waiver": null
+  },
+  {
+   "evidence": "rows not located exactly once: none",
+   "gate": "G-PAPER-TABLES",
+   "passed": true,
+   "statement": "E-22: THE TABLES RENDER AS CLAIMS.  Every one of the 15 rows of the composition census and the closure battery is ASSEMBLED FROM THIS RUN's own measurements and required to occur in the paper EXACTLY ONCE -- occurrence count, not containment -- so a moved cell in the census decomposition or a swapped battery polarity dies inside the run rather than shipping at exit 0",
    "waiver": null
   },
   {
    "evidence": "unregistered numerals: none",
    "gate": "G-PAPER-NUMERAL-COVERAGE",
    "passed": true,
-   "statement": "#20 WITH THE FENCED-BLOCK ADDENDUM: 341 numerals are scanned in the paper, 118 of them inside the 6 FENCED VERDICT BLOCKS under their own rule, where a hyphen is a word separator rather than a sign -- so the numerals of the head, the sentence the corpus quotes, are scanned rather than skipped.  Every one is allow-listed only against a value this run computed",
+   "statement": "#20 WITH THE FENCED-BLOCK ADDENDUM AND E-22's INLINE-SPAN ADDENDUM: 624 numerals are scanned in the paper, 182 of them inside the 6 FENCED VERDICT BLOCKS and 146 inside the 201 INLINE CODE SPANS, both under the fenced rule, where a hyphen is a word separator rather than a sign -- so the numerals of the head, the sentence the corpus quotes, AND every backticked value of the contrast and ladder tables are scanned rather than skipped.  Every one is allow-listed only against a value this run computed",
    "waiver": null
   },
   {
-   "evidence": "segments not located verbatim: none",
+   "evidence": "segments not located verbatim: none; fenced-block multiset matches the derived segments True (6 blocks, 3 distinct, copies [2])",
    "gate": "G-PAPER-HEAD-VERBATIM",
    "passed": true,
-   "statement": "each of the 3 derived verdict segments is matched into the paper CHARACTER FOR CHARACTER after normalisation, so the blocks a reader will quote are bound to the receipt as STRINGS and not merely as numbers",
+   "statement": "each of the 3 derived verdict segments is matched into the paper CHARACTER FOR CHARACTER after normalisation, so the blocks a reader will quote are bound to the receipt as STRINGS and not merely as numbers -- AND the fenced blocks are compared as a MULTISET rather than by containment (E-22): the paper carries 6 fenced blocks, 3 distinct, each of the 3 derived segments appearing exactly 2 times, so a second copy of a head cannot be forged behind a clean twin",
    "waiver": null
   },
   {
@@ -1047,52 +1560,66 @@
    "waiver": null
   },
   {
-   "evidence": "writer call sites reachable from the self-test path: 0",
+   "evidence": "the writer-shape probe reports the self-test path clean: True",
    "gate": "G-SELFTEST-WRITES-NOTHING",
    "passed": true,
-   "statement": "the --selftest path corrupts an anchor in memory, dies at G-PROVENANCE and reaches no writer: the writer is called from exactly one place in this file and the self-test path does not reach it",
+   "statement": "the --selftest path corrupts an anchor in memory, dies at G-PROVENANCE and reaches no writer: the writer is called from exactly one place in this file and the self-test path does not reach it -- and the predicate is now the AST probe's own value rather than a flag beside it",
    "waiver": null
   },
   {
-   "evidence": "on target 44 of 44; misses none",
+   "evidence": "on target 56 of 56; misses none",
    "gate": "G-MUTANTS-ON-TARGET",
    "passed": true,
-   "statement": "all 44 declared mutants are run IN PROCESS and each dies at the gate it names, with the artifacts untouched",
+   "statement": "all 56 declared mutants are run IN PROCESS and each dies at the gate it names, with the artifacts untouched",
    "waiver": null
   },
   {
-   "evidence": "uncovered gates: none; declared registry 52 vs evaluated 52, drift none",
+   "evidence": "uncovered gates: none; declared registry 62 vs evaluated 62, drift none",
    "gate": "G-COVERAGE",
    "passed": true,
-   "statement": "#34 WITH AN HONEST DENOMINATOR: of the 52 gates this delivery run evaluates -- 45 already closed, plus this gate and its twin, plus the sweep-binding and anchor-consumer gates evaluated between them, plus the 3 LATE gates, plus the sweep gate the delivery pipeline evaluates around it, every one of which is verified PRESENT at G-ARTIFACT-INTEGRITY rather than assumed -- 40 are falsified by at least one declared mutant and 12 are WAIVED with a forcing that says why they cannot fail.  The denominator is the gate count of THIS run, and the registry --list-gates prints is required to be EXACTLY that set",
+   "statement": "#34 WITH AN HONEST DENOMINATOR: of the 62 gates this delivery run evaluates -- 53 already closed, plus this gate and its twin, plus the sweep-binding, anchor-consumer, writer-shape and falsifier-honesty gates evaluated between them, plus the 3 LATE gates, every one of which is verified PRESENT at G-ARTIFACT-INTEGRITY rather than assumed -- 50 are falsified by at least one declared mutant and 12 are WAIVED with a forcing that says why they cannot fail.  The denominator is the gate count of THIS run, and the registry --list-gates prints is required to be EXACTLY that set",
    "waiver": null
   },
   {
-   "evidence": "sweep rows 44 of 44; sweep gate evaluated True",
+   "evidence": "declarations not matching their code: none; descriptions not naming their symbol and value: none; hooks naming an undeclared falsifier: none",
+   "gate": "G-FALSIFIER-HONESTY",
+   "passed": true,
+   "statement": "E-23: A FALSIFIER'S PUBLISHED DESCRIPTION IS PART OF THE SEALED SURFACE.  Each of the 56 declared falsifiers names THE SYMBOL IT MOVES and THE VALUE IT MOVES IT TO; both are re-derived from THIS FILE's own AST -- the innermost statement enclosing its hook -- and compared against the declaration, and the published prose is required to name both.  A description-inverted falsifier is a false waiver wearing a green badge: three of this unit's own said the opposite of their code and one load-bearing row had no falsifier at all.  56 hook sites are located, and every hook in the file names a declared falsifier",
+   "waiver": null
+  },
+  {
+   "evidence": "gates called in finish ['G-COVERAGE', 'G-FALSIFIER-HONESTY', 'G-WRITER-SHAPE', 'G-SWEEP-BOUND', 'G-ANCHOR-CONSUMERS', 'G-REACHABILITY', 'G-PAPER-COVERAGE-FINAL', 'G-SEAL-COMPLETE', 'G-ARTIFACT-INTEGRITY']; terminal gate present exactly once True; os.replace calls 2, all after the terminal gate True",
+   "gate": "G-WRITER-SHAPE",
+   "passed": true,
+   "statement": "THE SHAPE OF THE WRITER IS SEALED, AND IT IS SEALED BEFORE THE GATE LEDGER IS SNAPSHOTTED -- which is what makes it the one guard a post-snapshot gate's own removal cannot evade.  finish() calls 9 gates in source order, the terminal integrity gate appears exactly once among them, there are 2 os.replace calls, and every one of them sits BELOW that gate's own line.  Dropping or renaming the terminal gate, or lifting a write above it, moves a published and sealed value here",
+   "waiver": null
+  },
+  {
+   "evidence": "sweep rows 56 of 56; sweep gate evaluated True",
    "gate": "G-SWEEP-BOUND",
    "passed": true,
-   "statement": "THE SWEEP'S EXECUTION IS BOUND, NOT DECLARED: a delivery-level run must carry one sweep row per declared mutant (44), every row ON TARGET, and must have evaluated the sweep gate itself.  This run is delivery-level",
+   "statement": "THE SWEEP'S EXECUTION IS BOUND, NOT DECLARED: a delivery-level run must carry one sweep row per declared mutant (56), every row ON TARGET, and must have evaluated the sweep gate itself.  This run is delivery-level",
    "waiver": null
   },
   {
    "evidence": "consumers not registered-and-evaluated: none",
    "gate": "G-ANCHOR-CONSUMERS",
    "passed": true,
-   "statement": "#62's consumer binding: every verbatim anchor names a gate, and each named gate is required to be in the DECLARED registry AND in THIS RUN's own evaluated ledger, so the naming cannot drift into a gate that was removed or never reached -- 11 distinct consumer gates",
+   "statement": "#62's consumer binding: every verbatim anchor names a gate, and each named gate is required to be in the DECLARED registry AND in THIS RUN's own evaluated ledger, so the naming cannot drift into a gate that was removed or never reached -- 12 distinct consumer gates",
    "waiver": null
   },
   {
    "evidence": "dead falsifiers: none",
    "gate": "G-REACHABILITY",
    "passed": true,
-   "statement": "#34 WITH REACHABILITY: every declared falsifier is checked to REACH its gate -- the gate must be registered and must either have been evaluated in this run or be one of the gates this same function evaluates after the census, which are named rather than assumed.  44 falsifiers, 0 dead",
+   "statement": "#34 WITH REACHABILITY: every declared falsifier is checked to REACH its gate -- the gate must be registered and must either have been evaluated in this run or be one of the gates this same function evaluates after the census, which are named rather than assumed.  56 falsifiers, 0 dead",
    "waiver": null
   },
   {
-   "evidence": "gates 49, float-valued receipt paths none",
+   "evidence": "registry 62, snapshot 60, post-snapshot 2, snapshot names equal the registry True (delivery-level), float-valued receipt paths none",
    "gate": "G-PAPER-COVERAGE-FINAL",
    "passed": true,
-   "statement": "the payload closes: 49 gates evaluated, all passed, and a RECURSIVE TYPE SCAN of the receipt finds no float anywhere -- every published number is an int or a string carrying an exact Fraction",
+   "statement": "the payload closes.  THE THREE GATE CARDINALITIES ARE NAMED RATHER THAN CONFLATED: 62 gates in the DECLARED REGISTRY, 60 evaluated and carried into the SEALED SNAPSHOT (this gate included), and 2 evaluated AFTER the snapshot -- G-SEAL-COMPLETE, which cannot be inside the object it seals, and G-ARTIFACT-INTEGRITY, which runs after the bytes are on disk and whose existence is sealed by G-WRITER-SHAPE.  All passed, and a RECURSIVE TYPE SCAN of the receipt finds no float anywhere -- every published number is an int or a string carrying an exact Fraction",
    "waiver": null
   }
  ],
@@ -1211,11 +1738,16 @@
   }
  },
  "law": {
+  "content_row": "site",
+  "content_row_checks": 406413,
+  "content_row_violations": 0,
+  "empty_columns": 1186,
   "kernel_entry_checks": 1215681,
   "kernel_entry_violations": 0,
   "law_native_checks": 406413,
   "law_native_violations": 0,
   "mass_is_density_checks": 187155,
+  "mass_is_density_class": "DEFINITIONAL UNDER READING A -- the menu IS the post-coin Born weight there, so this row is the identification stated per site, retained as a type check",
   "mass_is_density_violations": 0,
   "readings": {
    "A": "the BORN MENU: q(l|x) = |(C psi)(x,l)|^2",
@@ -1223,6 +1755,7 @@
   },
   "repricing_checks": 406413,
   "repricing_violations": 0,
+  "terminal_falsifier_horizon": 2,
   "terminal_falsifier_kills": true,
   "terminal_falsifier_violations": 10,
   "verdict": "TRANSPORT-CONFIRMED"
@@ -1277,9 +1810,15 @@
    "on_target": true
   },
   {
-   "declared_gate": "G-COIN-FORCED",
-   "died_at": "G-COIN-FORCED",
+   "declared_gate": "G-COIN-CENSUS",
+   "died_at": "G-COIN-CENSUS",
    "mutant": "MUT-COIN-FREE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-COIN-INVARIANCE",
+   "died_at": "G-COIN-INVARIANCE",
+   "mutant": "MUT-COIN-INVARIANT",
    "on_target": true
   },
   {
@@ -1298,6 +1837,12 @@
    "declared_gate": "G-FIBERS",
    "died_at": "G-FIBERS",
    "mutant": "MUT-FIBER-BLIND",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-COIN-ORDER-FULL",
+   "died_at": "G-COIN-ORDER-FULL",
+   "mutant": "MUT-ORDER-FULL",
    "on_target": true
   },
   {
@@ -1321,7 +1866,19 @@
   {
    "declared_gate": "G-LAW-TRANSPORT",
    "died_at": "G-LAW-TRANSPORT",
+   "mutant": "MUT-MASS-DENSITY",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-LAW-TRANSPORT",
+   "died_at": "G-LAW-TRANSPORT",
    "mutant": "MUT-TRANSPORT-ASSUMED",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-TRANSPORT-MECHANISM",
+   "died_at": "G-TRANSPORT-MECHANISM",
+   "mutant": "MUT-NBD-BLIND",
    "on_target": true
   },
   {
@@ -1373,9 +1930,33 @@
    "on_target": true
   },
   {
+   "declared_gate": "G-COUNT-BLIND",
+   "died_at": "G-COUNT-BLIND",
+   "mutant": "MUT-COUNT-BLIND",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-K5-NO-RETURN",
+   "died_at": "G-K5-NO-RETURN",
+   "mutant": "MUT-K5-RETURN",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-REFUSAL-ROBUST",
+   "died_at": "G-REFUSAL-ROBUST",
+   "mutant": "MUT-REFUSAL-DROP",
+   "on_target": true
+  },
+  {
    "declared_gate": "G-ADMISSIBILITY-LADDER",
    "died_at": "G-ADMISSIBILITY-LADDER",
    "mutant": "MUT-LADDER",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-EXIT-CENSUS",
+   "died_at": "G-EXIT-CENSUS",
+   "mutant": "MUT-EXIT-CENSUS",
    "on_target": true
   },
   {
@@ -1439,6 +2020,12 @@
    "on_target": true
   },
   {
+   "declared_gate": "G-PAPER-TABLES",
+   "died_at": "G-PAPER-TABLES",
+   "mutant": "MUT-PAPER-TABLE",
+   "on_target": true
+  },
+  {
    "declared_gate": "G-PAPER-NUMERAL-COVERAGE",
    "died_at": "G-PAPER-NUMERAL-COVERAGE",
    "mutant": "MUT-PAPER-NUMERAL",
@@ -1448,6 +2035,12 @@
    "declared_gate": "G-PAPER-HEAD-VERBATIM",
    "died_at": "G-PAPER-HEAD-VERBATIM",
    "mutant": "MUT-PAPER-HEAD",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-HEAD-VERBATIM",
+   "died_at": "G-PAPER-HEAD-VERBATIM",
+   "mutant": "MUT-PAPER-BLOCK",
    "on_target": true
   },
   {
@@ -1466,6 +2059,18 @@
    "declared_gate": "G-SELFTEST-WRITES-NOTHING",
    "died_at": "G-SELFTEST-WRITES-NOTHING",
    "mutant": "MUT-SELFTEST-WRITES",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WRITER-SHAPE",
+   "died_at": "G-WRITER-SHAPE",
+   "mutant": "MUT-WRITER-SHAPE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-FALSIFIER-HONESTY",
+   "died_at": "G-FALSIFIER-HONESTY",
+   "mutant": "MUT-FALSIFIER-DESC",
    "on_target": true
   },
   {
@@ -1496,223 +2101,563 @@
  "mutants": [
   {
    "gate": "G-WELDED-RECORD",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "n_driven",
    "mutant": "MUT-WELD-CELL",
-   "what_it_does": "moves one of the 27 driven link counts of the welded record -- must die at the per-cell rebuild gate"
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `n_driven`, the driven link field, by 1 at one of the 27 cells -- must die at the per-cell rebuild gate"
   },
   {
    "gate": "G-WELDED-RECORD",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "maxhits",
    "mutant": "MUT-WELD-FORCED",
-   "what_it_does": "reports the driven record as FORCED while its builder recorded a menu of more than one candidate -- must die at the same gate"
+   "named_in_its_description": true,
+   "to": "2",
+   "what_it_does": "moves `maxhits` to 2: reports the driven record as FORCED while its builder recorded a menu of more than one candidate -- must die at the same gate"
   },
   {
    "gate": "G-WELDED-GEOMETRY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "d",
    "mutant": "MUT-WELD-DET",
-   "what_it_does": "reports the welded determinant as 1 rather than 3/4 -- must die at the per-site geometry gate"
+   "named_in_its_description": true,
+   "to": "Fraction(1)",
+   "what_it_does": "moves `d`, one site's determinant, to Fraction(1) rather than the measured 3/4 -- must die at the per-site geometry gate"
   },
   {
    "gate": "G-COMMITTED-ANCHOR",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "same",
    "mutant": "MUT-COMMITTED-ANCHOR",
-   "what_it_does": "perturbs one event of the driver's committed-schedule record -- must die at the event-for-event anchor against d66's own conflict_grid(3,2)"
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `same` to False: the driver's committed-schedule record no longer matches d66's own conflict_grid(3,2) event for event -- must die at the committed anchor"
   },
   {
    "gate": "G-DICTIONARY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "realised",
    "mutant": "MUT-DICTIONARY",
-   "what_it_does": "drops one realised co-division pair -- must die at the gate that requires the realised relation to BE the target's Cayley incidence"
+   "named_in_its_description": true,
+   "to": "[:-1]",
+   "what_it_does": "moves `realised` to the list with its last co-division pair dropped, [:-1] -- must die at the gate that requires the realised relation to BE the target's Cayley incidence"
   },
   {
    "gate": "G-ISOS-CITED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "isos_here",
    "mutant": "MUT-ISOS",
-   "what_it_does": "reports the site-assignment count as 1290 -- must die against the weld's own committed receipt"
+   "named_in_its_description": true,
+   "to": "1290",
+   "what_it_does": "moves `isos_here` to 1290 -- must die against the weld's own committed receipt"
   },
   {
    "gate": "G-UNSPLITTABLE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "prod_fiber",
    "mutant": "MUT-SPLIT",
-   "what_it_does": "reports a positive split fiber on a count-1 interval -- must die at the gate that warrants this unit's scope row"
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `prod_fiber` to 1: reports a positive split fiber on a count-1 interval -- must die at the gate that warrants this unit's scope row"
   },
   {
    "gate": "G-SCALAR-MONOMIAL",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "nonmonomial_unitary_maps",
    "mutant": "MUT-SCALAR-ALIVE",
-   "what_it_does": "reports a two-term scalar generator as unitary on the link offset set -- must die at the monomial-only theorem's own exhaustive check"
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `nonmonomial_unitary_maps` to 1: reports a two-term scalar generator as unitary on the link offset set -- must die at the monomial-only theorem's own exhaustive check"
   },
   {
-   "gate": "G-COIN-FORCED",
+   "gate": "G-COIN-CENSUS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "classes_up_to_phase",
    "mutant": "MUT-COIN-FREE",
-   "what_it_does": "reports a second, inequivalent S_3-covariant coin -- must die at the coin-forcing gate"
+   "named_in_its_description": true,
+   "to": "5",
+   "what_it_does": "moves `classes_up_to_phase` to 5: hides one of the six S_3-covariant coin classes the arena's own ring admits -- must die at the coin census"
+  },
+  {
+   "gate": "G-COIN-INVARIANCE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "inv_bad",
+   "mutant": "MUT-COIN-INVARIANT",
+   "named_in_its_description": true,
+   "to": "FORGED",
+   "what_it_does": "moves `inv_bad` to the one-element list ['FORGED']: reports a member of the hidden coin family as failing an invariant it was measured to hold -- must die at the coin-invariance gate"
   },
   {
    "gate": "G-CONNECTION-GROUP",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "connection_group_order",
    "mutant": "MUT-CONNECTION-GROUP",
-   "what_it_does": "reads the connection in Z_4 on an arena over F_3 -- must die at the gate that derives the connection group from the arena"
+   "named_in_its_description": true,
+   "to": "4",
+   "what_it_does": "moves `connection_group_order` to 4: reads the connection in Z_4 on an arena over F_3 -- must die at the gate that derives the connection group from the arena"
   },
   {
    "gate": "G-WALK-UNITARY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "uviol",
    "mutant": "MUT-WALK-UNITARY",
-   "what_it_does": "perturbs one coin entry so the step stops being norm-preserving -- must die at the per-site unitarity gate"
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `uviol` to 1: one coin entry stops being norm-preserving -- must die at the per-site unitarity gate"
   },
   {
    "gate": "G-FIBERS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "executed_members",
    "mutant": "MUT-FIBER-BLIND",
-   "what_it_does": "reports a declared fiber as measured when its members were never run -- must die at the fiber-inventory gate"
+   "named_in_its_description": true,
+   "to": "[:-1]",
+   "what_it_does": "moves `executed_members` to the executed list with its last id dropped, [:-1], so a declared fiber member is reported measured while its run is missing from the execution record -- must die at the fiber-inventory gate"
+  },
+  {
+   "gate": "G-COIN-ORDER-FULL",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "dg_threshold",
+   "mutant": "MUT-ORDER-FULL",
+   "named_in_its_description": true,
+   "to": "4",
+   "what_it_does": "moves `dg_threshold` to 4: reports the alternative coin order's admissibility threshold away from the measured one -- must die at the full-horizon coin-order gate"
   },
   {
    "gate": "G-LAW-NATIVE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "lawviol",
    "mutant": "MUT-LAW-TERMINAL",
-   "what_it_does": "breaks the potential recursion's terminal condition G(x,0) = 1, which is exactly what makes the normaliser law-native -- must die at the per-site-per-step transport gate"
+   "named_in_its_description": true,
+   "to": "3",
+   "what_it_does": "moves `lawviol` to 3: breaks the potential recursion's terminal condition G(x,0) = 1, which is exactly what makes the normaliser law-native -- must die at the per-site-per-step transport gate"
   },
   {
    "gate": "G-LAW-REPRICING",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "repviol",
    "mutant": "MUT-LAW-REPRICE",
-   "what_it_does": "re-prices one event and reports the identity as surviving when it does not -- must die at the arbitrary-re-pricing forcing gate"
+   "named_in_its_description": true,
+   "to": "2",
+   "what_it_does": "moves `repviol` to 2: re-prices events and reports the identity as surviving when it does not -- must die at the arbitrary-re-pricing forcing gate"
   },
   {
    "gate": "G-KERNEL-K1",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "kviol",
    "mutant": "MUT-KERNEL",
-   "what_it_does": "detaches one kernel entry from q/M -- must die at the kernel gate"
+   "named_in_its_description": true,
+   "to": "5",
+   "what_it_does": "moves `kviol` to 5: detaches five kernel entries from q/M -- must die at the kernel gate"
   },
   {
    "gate": "G-LAW-TRANSPORT",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "mdviol",
+   "mutant": "MUT-MASS-DENSITY",
+   "named_in_its_description": true,
+   "to": "4",
+   "what_it_does": "moves `mdviol` to 4: the menu-mass-is-Born-mass row -- the one the transport publishes as its identification -- is reported violated at four site-steps -- must die at the transport gate"
+  },
+  {
+   "gate": "G-LAW-TRANSPORT",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "transport_ok",
    "mutant": "MUT-TRANSPORT-ASSUMED",
-   "what_it_does": "declares the transport to hold without evaluating its own conjuncts -- must die at the gate that forbids assuming it"
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `transport_ok` to False while every one of its conjuncts still holds, so the published verdict flag is detached from the measurement under it -- must die at the same gate"
+  },
+  {
+   "gate": "G-TRANSPORT-MECHANISM",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "nbd_site_violations",
+   "mutant": "MUT-NBD-BLIND",
+   "named_in_its_description": true,
+   "to": "0",
+   "what_it_does": "moves `nbd_site_violations` to 0: reports the site-block-diagonality row as clean on a coin built to violate it -- must die at the mechanism gate"
   },
   {
    "gate": "G-ENSEMBLE-EXHAUSTIVE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "route1",
    "mutant": "MUT-PRUNE",
-   "what_it_does": "drops the lightest branch of the emission tree -- must die at the two-route branch-count gate"
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `route1`, the carried frontier's own branch count, down by 1 at one level while the emission supports still count it -- must die at the two-route branch-count gate"
   },
   {
    "gate": "G-BRANCH-MASS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "mass_bad",
    "mutant": "MUT-BRANCH-MASS",
-   "what_it_does": "perturbs one branch weight so the level mass stops being exactly 1 -- must die at the per-level mass gate"
+   "named_in_its_description": true,
+   "to": "A-COUPLED",
+   "what_it_does": "moves `mass_bad` to [(\"A-COUPLED\", 1)]: one branch weight stops the level mass being exactly 1 -- must die at the per-level mass gate"
   },
   {
    "gate": "G-CONSISTENCY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "cviol",
    "mutant": "MUT-CONSISTENCY",
-   "what_it_does": "reports a per-site column sum of 1 where the measured sum is not 1 -- must die at the composition gate"
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `cviol` to 1: a per-site column sum is reported 1 where the measured sum is not -- must die at the composition gate"
   },
   {
    "gate": "G-NONTRIVIALITY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "cv",
    "mutant": "MUT-INERT",
-   "what_it_does": "hands the frozen control's observables to the coupled arm, making the two identical -- must die at the two-way nontriviality gate"
+   "named_in_its_description": true,
+   "to": "fv",
+   "what_it_does": "moves `cv` to `fv`, handing the frozen control's observables to the coupled arm so the two are identical -- must die at the two-way nontriviality gate"
   },
   {
    "gate": "G-FROZEN-CONTROL",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "frozen_ran",
    "mutant": "MUT-NO-FROZEN",
-   "what_it_does": "reports the frozen control without running it -- must die at the gate that binds the control's execution"
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `frozen_ran` to False: reports the frozen control without its execution -- must die at the gate that binds the control's execution"
   },
   {
    "gate": "G-BATTERY-POLARITY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "mc",
    "mutant": "MUT-POLARITY",
-   "what_it_does": "flips one battery row's measured polarity against its pre-registration -- must die at the polarity gate"
+   "named_in_its_description": true,
+   "to": "True",
+   "what_it_does": "moves `mc` to True on one battery row, against its pre-registration -- must die at the polarity gate"
   },
   {
    "gate": "G-BATTERY-TWO-WAY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "restateds",
    "mutant": "MUT-ONE-WAY",
-   "what_it_does": "empties one direction of the battery, leaving a one-way instrument -- must die at the two-way gate"
+   "named_in_its_description": true,
+   "to": "[]",
+   "what_it_does": "moves `restateds` to []: one direction of the battery is emptied, leaving a one-way instrument -- must die at the two-way gate"
   },
   {
    "gate": "G-STALENESS-BLIND",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "stale_clean",
    "mutant": "MUT-STALENESS",
-   "what_it_does": "reports a psi-internal closure as failing on a declared stale stage -- must die at the staleness-blindness theorem's own check"
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `stale_clean` to False: reports a psi-internal closure as failing on the declared stale stage -- must die at the staleness-blindness theorem's own check"
+  },
+  {
+   "gate": "G-COUNT-BLIND",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "blind_viol",
+   "mutant": "MUT-COUNT-BLIND",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `blind_viol` to 1: reports K1-K4 as reading the record on a foreign count field -- must die at the count-blindness gate"
+  },
+  {
+   "gate": "G-K5-NO-RETURN",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "ray_repeats",
+   "mutant": "MUT-K5-RETURN",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `ray_repeats` to 1: reports a state recurrence the ray-grain measurement did not find -- must die at the no-return gate"
+  },
+  {
+   "gate": "G-REFUSAL-ROBUST",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "stamp_only",
+   "mutant": "MUT-REFUSAL-DROP",
+   "named_in_its_description": true,
+   "to": "2",
+   "what_it_does": "moves `stamp_only` to 2: reports witnesses appearing when the UPDATE-RULE-RESTATED stamp alone is dropped -- must die at the either-refusal-drop gate"
   },
   {
    "gate": "G-ADMISSIBILITY-LADDER",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "thresholds",
    "mutant": "MUT-LADDER",
-   "what_it_does": "reports the admissibility-exit threshold at horizon 4 -- must die at the ladder gate, which locates it by measuring every horizon"
+   "named_in_its_description": true,
+   "to": "4",
+   "what_it_does": "moves `thresholds` to {\"A\": 4, \"B\": 4}: reports the admissibility-exit threshold at horizon 4 -- must die at the ladder gate, which locates it by measuring every horizon"
+  },
+  {
+   "gate": "G-EXIT-CENSUS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "census_total",
+   "mutant": "MUT-EXIT-CENSUS",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `census_total`, the classified inadmissible-leaf count, by 1 away from the frontier's own -- must die at the exit-census gate"
   },
   {
    "gate": "G-REQUIREMENT",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "witnesses",
    "mutant": "MUT-REQUIRED",
-   "what_it_does": "promotes an UPDATE-RULE-RESTATED row to a requirement witness -- must die at the selector gate"
+   "named_in_its_description": true,
+   "to": "restated",
+   "what_it_does": "moves `witnesses` to `restated`, promoting an UPDATE-RULE-RESTATED row to a requirement witness -- must die at the selector gate"
   },
   {
    "gate": "G-WALL-L1",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "ptext",
    "mutant": "MUT-WALL-L1",
-   "what_it_does": "injects the retracted L-1 sentence into the object under test, line-wrapped and blockquoted -- must die at the L-1 wall"
+   "named_in_its_description": true,
+   "to": "BANNED_L1",
+   "what_it_does": "moves `ptext` to the object under test with `BANNED_L1`, the retracted L-1 sentence, appended line-wrapped and blockquoted -- must die at the L-1 wall"
   },
   {
    "gate": "G-WALL-BHS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "layer",
    "mutant": "MUT-WALL-BHS",
-   "what_it_does": "writes a sprinkling-grade boost reading into this run's measurement layer -- must die at the BHS abstention scan"
+   "named_in_its_description": true,
+   "to": "boosted rest frame",
+   "what_it_does": "moves `layer`, this run's measurement surface, to one carrying a sprinkling-grade `boosted rest frame` reading -- must die at the BHS abstention scan"
   },
   {
    "gate": "G-WALL-KR",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "layer",
    "mutant": "MUT-WALL-KR",
-   "what_it_does": "writes a dimension reading into the measurement layer with no height control -- must die at the Kleitman-Rothschild scan"
+   "named_in_its_description": true,
+   "to": "myrheim-meyer",
+   "what_it_does": "moves `layer` to one carrying a `myrheim-meyer` dimension estimate with no height control -- must die at the Kleitman-Rothschild scan"
   },
   {
    "gate": "G-WALL-COSMO",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "layer",
    "mutant": "MUT-WALL-COSMO",
-   "what_it_does": "writes a continuum reading into the measurement layer -- must die at the cosmological/continuum scan"
+   "named_in_its_description": true,
+   "to": "cosmological expansion",
+   "what_it_does": "moves `layer` to one carrying a `cosmological expansion` reading -- must die at the cosmological/continuum scan"
   },
   {
    "gate": "G-WALL-LORENTZ-NAMED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "lz",
    "mutant": "MUT-WALL-LORENTZ",
-   "what_it_does": "deletes the mandatory naming sentence from the object under test -- must die at the naming gate"
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `lz` to False: the mandatory Lorentzian naming sentence is reported absent from the object under test -- must die at the naming gate"
   },
   {
    "gate": "G-WALL-HEX-NAMED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "hx",
    "mutant": "MUT-WALL-HEX",
-   "what_it_does": "deletes the hexagonal naming sentence paper-19's S-7 registered for this unit -- must die at the second naming gate"
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `hx` to False: the hexagonal naming sentence paper-19's S-7 registered for this unit is reported absent -- must die at the second naming gate"
   },
   {
    "gate": "G-VERDICT-RECONSTRUCTED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "verdict",
    "mutant": "MUT-VERDICT-WORD",
-   "what_it_does": "forges the outcome word in the builder alone -- must die at the comparator, which types its own templates and re-derives the word"
+   "named_in_its_description": true,
+   "to": "COUPLING-CONSISTENT-AND-REQUIRED-K9-SOURCING",
+   "what_it_does": "moves `verdict`'s gates segment to one whose outcome word reads COUPLING-CONSISTENT-AND-REQUIRED-K9-SOURCING, in the builder alone -- must die at the comparator, which types its own templates and re-derives the word"
   },
   {
    "gate": "G-VERDICT-RECONSTRUCTED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "verdict",
    "mutant": "MUT-VERDICT-VALUE",
-   "what_it_does": "retypes one measured value inside a verdict segment -- must die at the same comparator, by occurrence count"
+   "named_in_its_description": true,
+   "to": "26 OF 27",
+   "what_it_does": "moves `verdict`'s arena segment by retyping one measured value inside it, 27 OF 27 to 26 OF 27 -- must die at the same comparator, by occurrence count"
   },
   {
    "gate": "G-PAPER-CLAIMS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "sent",
    "mutant": "MUT-PAPER-CLAIM",
-   "what_it_does": "renders a claim the paper does not carry -- must die at the claim gate"
+   "named_in_its_description": true,
+   "to": "26 cells",
+   "what_it_does": "moves `sent`, an assembled claim, to one reading 26 cells -- must die at the claim gate"
+  },
+  {
+   "gate": "G-PAPER-TABLES",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "trows",
+   "mutant": "MUT-PAPER-TABLE",
+   "named_in_its_description": true,
+   "to": "FORGED",
+   "what_it_does": "moves `trows`, the rendered table rows, to the list with its last row dropped and a FORGED one appended, so a row the paper does not carry is claimed -- must die at the table gate"
   },
   {
    "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "unregistered",
    "mutant": "MUT-PAPER-NUMERAL",
-   "what_it_does": "admits an unregistered numeral -- must die at the #20 coverage scan"
+   "named_in_its_description": true,
+   "to": "123456789",
+   "what_it_does": "moves `unregistered` to ['123456789'], an unregistered numeral -- must die at the #20 coverage scan"
   },
   {
    "gate": "G-PAPER-HEAD-VERBATIM",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "probe",
    "mutant": "MUT-PAPER-HEAD",
-   "what_it_does": "perturbs one character of a derived verdict segment before matching it into the paper -- must die at the head-verbatim gate"
+   "named_in_its_description": true,
+   "to": "Z",
+   "what_it_does": "moves `probe`, a derived verdict segment, by one character to seg[:-1] + Z before matching it into the paper -- must die at the head-verbatim gate"
+  },
+  {
+   "gate": "G-PAPER-HEAD-VERBATIM",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "blockmap",
+   "mutant": "MUT-PAPER-BLOCK",
+   "named_in_its_description": true,
+   "to": "[:-1]",
+   "what_it_does": "moves `blockmap`, the paper's own fenced-block multiset, to the same multiset with its last block dropped, [:-1], so a duplicated head could shadow a forged twin -- must die at the same gate's MULTISET leg"
   },
   {
    "gate": "G-PAPER-CLAIM-POLARITY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "mutated",
    "mutant": "MUT-PAPER-POLARITY",
-   "what_it_does": "swaps a positive claim for its negation in the object under test -- must die at the polarity gate"
+   "named_in_its_description": true,
+   "to": "True",
+   "what_it_does": "moves `mutated` to True, swapping a positive claim for its negation in the object under test -- must die at the polarity gate"
   },
   {
    "gate": "G-CLI-WHITELIST",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "bad",
    "mutant": "MUT-CLI-PERMISSIVE",
-   "what_it_does": "swaps the argv whitelist for the registered permissive shape -- must die at the CLI gate"
+   "named_in_its_description": true,
+   "to": "--nope",
+   "what_it_does": "moves `bad` to [['--nope']]: the argv whitelist is swapped for the registered permissive shape -- must die at the CLI gate"
   },
   {
    "gate": "G-SELFTEST-WRITES-NOTHING",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "st_ok",
    "mutant": "MUT-SELFTEST-WRITES",
-   "what_it_does": "claims the self-test path reaches a writer -- must die at the writes-nothing gate"
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `st_ok` to False: the self-test path is claimed to reach a writer -- must die at the writes-nothing gate"
+  },
+  {
+   "gate": "G-WRITER-SHAPE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "gate_names_in_finish",
+   "mutant": "MUT-WRITER-SHAPE",
+   "named_in_its_description": true,
+   "to": "[:-1]",
+   "what_it_does": "moves `gate_names_in_finish` to the list with the terminal integrity gate's name dropped, [:-1] -- must die at the writer-shape probe, which is taken BEFORE the gate ledger is snapshotted and is therefore the one guard a post-snapshot gate's own removal cannot evade"
+  },
+  {
+   "gate": "G-FALSIFIER-HONESTY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "declared",
+   "mutant": "MUT-FALSIFIER-DESC",
+   "named_in_its_description": true,
+   "to": "FORGED",
+   "what_it_does": "moves `declared`, one falsifier's declared (symbol, value) pair, to FORGED, away from what this file's AST says its hook writes -- must die at the falsifier-honesty gate"
   },
   {
    "gate": "G-SEAL-COMPLETE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "sid",
    "mutant": "MUT-SEAL-DROP",
-   "what_it_does": "silently drops one seal row -- must die at the totality gate, which compares the manifest against the DECLARED key set"
+   "named_in_its_description": true,
+   "to": "SEAL-COVERAGE",
+   "what_it_does": "silently drops the seal row whose `sid` is SEAL-COVERAGE -- must die at the totality gate, which compares the manifest against the DECLARED key set"
   },
   {
    "gate": "G-SEAL-COMPLETE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "horizon",
    "mutant": "MUT-SEAL-BROKEN",
-   "what_it_does": "mutates a published value between its gate and the write -- must die at the same gate, re-taking every seal against the live object"
+   "named_in_its_description": true,
+   "to": "+ 1",
+   "what_it_does": "moves `horizon` in the sealed counts block by + 1 between its gate and the write -- must die at the same gate, re-taking every seal against the live object"
   },
   {
    "gate": "G-SEAL-COMPLETE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "transcript_head",
    "mutant": "MUT-TRANSCRIPT-FLIP",
-   "what_it_does": "rewrites the archived transcript head after it is sealed -- must die at the same gate"
+   "named_in_its_description": true,
+   "to": "FLIPPED",
+   "what_it_does": "moves `transcript_head` to one beginning FLIPPED after it is sealed -- must die at the same gate"
   },
   {
    "gate": "G-SWEEP-BOUND",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "swept",
    "mutant": "MUT-SWEEP-UNBOUND",
-   "what_it_does": "ships a delivery whose mutant sweep never ran -- must die at the gate that binds the sweep's execution to the writer"
+   "named_in_its_description": true,
+   "to": "True",
+   "what_it_does": "moves `swept` to True on a run carrying no sweep, shipping a delivery whose mutant sweep never ran -- must die at the gate that binds the sweep's execution to the writer"
   }
  ],
  "nontriviality": {
@@ -2051,6 +2996,13 @@
   "rows": 18,
   "rows_that_differ": 18
  },
+ "object_reads": {
+  "count": 2,
+  "object_under_test": "v14/paper-20-coupling.md",
+  "object_why": "the object under test, read once by main and handed to the paper gates",
+  "self": "coupling_exact.py",
+  "self_why": "this file, AST-parsed by its own float scan, import scan, writer-shape probe and self-test shape probe"
+ },
  "paper_claims": [
   {
    "id": "C01",
@@ -2096,16 +3048,130 @@
    "id": "C09",
    "located": true,
    "sentence": "THIS UNIT REACHES A RECORD, NOT YET A LAW OVER RECORDS"
+  },
+  {
+   "id": "C10",
+   "located": true,
+   "sentence": "36 solutions over the arena's own (1/3)Z[w], falling into 6 classes up to a global phase, of which exactly 1 is +/- Grover"
+  },
+  {
+   "id": "C11",
+   "located": true,
+   "sentence": "all 4 hidden classes run to horizon 5: 0 consistency violations, 9 of 9 observable rows moving, exit threshold exactly 5, and no indefinite form, on every one"
+  },
+  {
+   "id": "C12",
+   "located": true,
+   "sentence": "every single-time psi-internal closure still holds at 1,040,065 checks"
+  },
+  {
+   "id": "C13",
+   "located": true,
+   "sentence": "all 1,316 inadmissible leaves carry the excess pattern (0, 0, 3) at exactly one site"
+  },
+  {
+   "id": "C14",
+   "located": true,
+   "sentence": "the alternative order D.G leaves the admissible class with probability 2922723584/847288609443, larger, at the same threshold"
+  },
+  {
+   "id": "C15",
+   "located": true,
+   "sentence": "K1 to K4 record 0 psi-internal violations in 800 checks over 5 declared foreign count fields"
   }
  ],
  "paper_coverage": {
-  "allowed": 341,
+  "allowed": 624,
+  "fenced_block_copies_each": [
+   2
+  ],
+  "fenced_block_distinct": 3,
+  "fenced_block_multiset_matches": true,
   "fenced_blocks": 6,
-  "fenced_numerals": 118,
-  "scanned": 341,
+  "fenced_numerals": 182,
+  "inline_numerals": 146,
+  "inline_spans": 201,
+  "scanned": 624,
   "unregistered": []
  },
- "payload_sha256_12": "caa980a54dbf",
+ "paper_tables": [
+  {
+   "id": "T-norm",
+   "occurrences": 1,
+   "row": "| norm | 45,157 | 0 | contentful |"
+  },
+  {
+   "id": "T-site",
+   "occurrences": 1,
+   "row": "| site | 406,413 | 0 | contentful |"
+  },
+  {
+   "id": "T-column",
+   "occurrences": 1,
+   "row": "| column | 406,413 | 0 | definitional |"
+  },
+  {
+   "id": "T-emission_total",
+   "occurrences": 1,
+   "row": "| emission_total | 45,157 | 0 | reduces to total |"
+  },
+  {
+   "id": "T-total",
+   "occurrences": 1,
+   "row": "| total | 45,157 | 0 | contentful |"
+  },
+  {
+   "id": "T-K1-NORM",
+   "occurrences": 1,
+   "row": "| K1-NORM | PSI-INTERNAL | holds | holds |"
+  },
+  {
+   "id": "T-K2-SITE-MASS",
+   "occurrences": 1,
+   "row": "| K2-SITE-MASS | PSI-INTERNAL | holds | holds |"
+  },
+  {
+   "id": "T-K3-LAW-NATIVE",
+   "occurrences": 1,
+   "row": "| K3-LAW-NATIVE | PSI-INTERNAL | holds | holds |"
+  },
+  {
+   "id": "T-K4-EMISSION-STOCHASTIC",
+   "occurrences": 1,
+   "row": "| K4-EMISSION-STOCHASTIC | PSI-INTERNAL | holds | holds |"
+  },
+  {
+   "id": "T-K5-NO-RETURN",
+   "occurrences": 1,
+   "row": "| K5-NO-RETURN | PSI-INTERNAL | holds | holds |"
+  },
+  {
+   "id": "T-K6-BLOCH",
+   "occurrences": 1,
+   "row": "| K6-BLOCH | SYMMETRY | holds | fails |"
+  },
+  {
+   "id": "T-K7-CURVATURE-HOMOGENEOUS",
+   "occurrences": 1,
+   "row": "| K7-CURVATURE-HOMOGENEOUS | SYMMETRY | holds | fails |"
+  },
+  {
+   "id": "T-K8-I7-ADMISSIBILITY",
+   "occurrences": 1,
+   "row": "| K8-I7-ADMISSIBILITY | ARENA-CLOSURE | holds | fails |"
+  },
+  {
+   "id": "T-K9-SOURCING",
+   "occurrences": 1,
+   "row": "| K9-SOURCING | RECORD-COUPLED | fails | holds |"
+  },
+  {
+   "id": "T-K10-RECORDS-THEOREM",
+   "occurrences": 1,
+   "row": "| K10-RECORDS-THEOREM | RECORD-COUPLED | fails | holds |"
+  }
+ ],
+ "payload_sha256_12": "54c642d28cdd",
  "polarity": [
   {
    "id": "P1",
@@ -2260,6 +3326,14 @@
    "path": "v11/note-v11p0a-reproduction-catalog.md",
    "sha256_12": "0cebe543e814",
    "why": "the reproduction catalog: the BHS block and the Kleitman-Rothschild height-control warning."
+  },
+  {
+   "declared": "b7ce00951e5a",
+   "id": "A-CRA",
+   "match": true,
+   "path": "v14/note-cra-adjudication.md",
+   "sha256_12": "b7ce00951e5a",
+   "why": "CR-A's adjudication (v14 #178): the register rows this unit answers, and the measured three-diagonal-event margin to G-SINGULAR that this unit's exit census meets from the other side."
   }
  ],
  "python": "3.13.2",
@@ -2315,10 +3389,16 @@
     "mutant": "MUT-SCALAR-ALIVE"
    },
    {
-    "gate": "G-COIN-FORCED",
+    "gate": "G-COIN-CENSUS",
     "gate_evaluated_or_declared_later": true,
     "gate_registered": true,
     "mutant": "MUT-COIN-FREE"
+   },
+   {
+    "gate": "G-COIN-INVARIANCE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-COIN-INVARIANT"
    },
    {
     "gate": "G-CONNECTION-GROUP",
@@ -2337,6 +3417,12 @@
     "gate_evaluated_or_declared_later": true,
     "gate_registered": true,
     "mutant": "MUT-FIBER-BLIND"
+   },
+   {
+    "gate": "G-COIN-ORDER-FULL",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-ORDER-FULL"
    },
    {
     "gate": "G-LAW-NATIVE",
@@ -2360,7 +3446,19 @@
     "gate": "G-LAW-TRANSPORT",
     "gate_evaluated_or_declared_later": true,
     "gate_registered": true,
+    "mutant": "MUT-MASS-DENSITY"
+   },
+   {
+    "gate": "G-LAW-TRANSPORT",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
     "mutant": "MUT-TRANSPORT-ASSUMED"
+   },
+   {
+    "gate": "G-TRANSPORT-MECHANISM",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-NBD-BLIND"
    },
    {
     "gate": "G-ENSEMBLE-EXHAUSTIVE",
@@ -2411,10 +3509,34 @@
     "mutant": "MUT-STALENESS"
    },
    {
+    "gate": "G-COUNT-BLIND",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-COUNT-BLIND"
+   },
+   {
+    "gate": "G-K5-NO-RETURN",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-K5-RETURN"
+   },
+   {
+    "gate": "G-REFUSAL-ROBUST",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-REFUSAL-DROP"
+   },
+   {
     "gate": "G-ADMISSIBILITY-LADDER",
     "gate_evaluated_or_declared_later": true,
     "gate_registered": true,
     "mutant": "MUT-LADDER"
+   },
+   {
+    "gate": "G-EXIT-CENSUS",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-EXIT-CENSUS"
    },
    {
     "gate": "G-REQUIREMENT",
@@ -2477,6 +3599,12 @@
     "mutant": "MUT-PAPER-CLAIM"
    },
    {
+    "gate": "G-PAPER-TABLES",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-TABLE"
+   },
+   {
     "gate": "G-PAPER-NUMERAL-COVERAGE",
     "gate_evaluated_or_declared_later": true,
     "gate_registered": true,
@@ -2487,6 +3615,12 @@
     "gate_evaluated_or_declared_later": true,
     "gate_registered": true,
     "mutant": "MUT-PAPER-HEAD"
+   },
+   {
+    "gate": "G-PAPER-HEAD-VERBATIM",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-BLOCK"
    },
    {
     "gate": "G-PAPER-CLAIM-POLARITY",
@@ -2505,6 +3639,18 @@
     "gate_evaluated_or_declared_later": true,
     "gate_registered": true,
     "mutant": "MUT-SELFTEST-WRITES"
+   },
+   {
+    "gate": "G-WRITER-SHAPE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WRITER-SHAPE"
+   },
+   {
+    "gate": "G-FALSIFIER-HONESTY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-FALSIFIER-DESC"
    },
    {
     "gate": "G-SEAL-COMPLETE",
@@ -2537,26 +3683,34 @@
   "declared_seals": [
    "SEAL-SCHEMA",
    "SEAL-PROVENANCE",
+   "SEAL-ARITHMETIC",
+   "SEAL-PYTHON",
+   "SEAL-OBJECT-READS",
    "SEAL-VERBATIM",
    "SEAL-ANCHORS",
    "SEAL-ARENA",
+   "SEAL-COIN-INVARIANCE",
    "SEAL-WALK",
    "SEAL-LAW",
+   "SEAL-MECHANISM",
    "SEAL-ENSEMBLE",
    "SEAL-CONSISTENCY",
    "SEAL-NONTRIVIALITY",
    "SEAL-BATTERY",
    "SEAL-LADDER",
+   "SEAL-EXIT-CENSUS",
    "SEAL-WALLS",
    "SEAL-VERDICT",
    "SEAL-COUNTS",
    "SEAL-PAPER-CLAIMS",
+   "SEAL-PAPER-TABLES",
    "SEAL-PAPER-COVERAGE",
    "SEAL-POLARITY",
    "SEAL-COVERAGE",
    "SEAL-REACHABILITY",
    "SEAL-WAIVERS",
    "SEAL-MUTANTS",
+   "SEAL-WRITER-SHAPE",
    "SEAL-MUTANT-SWEEP",
    "SEAL-GATES",
    "SEAL-CLOSING",
@@ -2564,12 +3718,21 @@
    "SEAL-TRANSCRIPT"
   ],
   "declared_unsealed": [
-   "arithmetic",
-   "python",
    "seal_manifest",
    "payload_sha256_12"
   ],
+  "declared_unsealed_are_chained_on_read_back": true,
   "declared_unsealed_carries_no_measurement": true,
+  "declared_unsealed_forcings": [
+   {
+    "forcing": "carries the seal rows themselves; sealing it would seal a digest of its own digest.  CHAINED: compared against SEAL.rows after read-back from disk.",
+    "key": "seal_manifest"
+   },
+   {
+    "forcing": "is the digest of the payload the seal closes over and is assigned after that close.  CHAINED: compared against SEAL.payload_sha after read-back.",
+    "key": "payload_sha256_12"
+   }
+  ],
   "declared_unsealed_frozen": true,
   "rows": [
    {
@@ -2582,19 +3745,37 @@
     "path": "provenance",
     "seal": "SEAL-PROVENANCE",
     "sealed_at_gate": "G-PROVENANCE",
-    "sha256_12": "e0b96d11dfcc"
+    "sha256_12": "149dd731d84c"
+   },
+   {
+    "path": "arithmetic",
+    "seal": "SEAL-ARITHMETIC",
+    "sealed_at_gate": "G-EXACT-ARITHMETIC",
+    "sha256_12": "c1ed9aca4565"
+   },
+   {
+    "path": "python",
+    "seal": "SEAL-PYTHON",
+    "sealed_at_gate": "G-EXACT-ARITHMETIC",
+    "sha256_12": "7431641f3bda"
+   },
+   {
+    "path": "object_reads",
+    "seal": "SEAL-OBJECT-READS",
+    "sealed_at_gate": "G-READS-DECLARED",
+    "sha256_12": "2824765c1cb7"
    },
    {
     "path": "verbatim_anchors",
     "seal": "SEAL-VERBATIM",
     "sealed_at_gate": "G-VERBATIM",
-    "sha256_12": "e57a6ef4a89b"
+    "sha256_12": "a04423a4f7ae"
    },
    {
     "path": "anchors",
     "seal": "SEAL-ANCHORS",
     "sealed_at_gate": "G-ISOS-CITED",
-    "sha256_12": "41388956e83c"
+    "sha256_12": "043645f70e34"
    },
    {
     "path": "arena",
@@ -2603,28 +3784,40 @@
     "sha256_12": "a84ad16b549c"
    },
    {
+    "path": "coin_invariance",
+    "seal": "SEAL-COIN-INVARIANCE",
+    "sealed_at_gate": "G-COIN-INVARIANCE",
+    "sha256_12": "27e828a03ba8"
+   },
+   {
     "path": "walk",
     "seal": "SEAL-WALK",
     "sealed_at_gate": "G-FIBERS",
-    "sha256_12": "f305b7d3f607"
+    "sha256_12": "b5a38c47349f"
    },
    {
     "path": "law",
     "seal": "SEAL-LAW",
     "sealed_at_gate": "G-LAW-TRANSPORT",
-    "sha256_12": "2c377987adf6"
+    "sha256_12": "29fa65c764ba"
+   },
+   {
+    "path": "transport_mechanism",
+    "seal": "SEAL-MECHANISM",
+    "sealed_at_gate": "G-TRANSPORT-MECHANISM",
+    "sha256_12": "88205f7cffb6"
    },
    {
     "path": "ensemble",
     "seal": "SEAL-ENSEMBLE",
     "sealed_at_gate": "G-BRANCH-MASS",
-    "sha256_12": "70a0ce8e1c5b"
+    "sha256_12": "6685028cbedf"
    },
    {
     "path": "consistency",
     "seal": "SEAL-CONSISTENCY",
     "sealed_at_gate": "G-CONSISTENCY",
-    "sha256_12": "3d49102aaef0"
+    "sha256_12": "5d57c15b777c"
    },
    {
     "path": "nontriviality",
@@ -2639,10 +3832,16 @@
     "sha256_12": "6cffc8b039e7"
    },
    {
+    "path": "exit_census",
+    "seal": "SEAL-EXIT-CENSUS",
+    "sealed_at_gate": "G-EXIT-CENSUS",
+    "sha256_12": "bffe7e805200"
+   },
+   {
     "path": "battery",
     "seal": "SEAL-BATTERY",
     "sealed_at_gate": "G-REQUIREMENT",
-    "sha256_12": "7373aaa3e6a9"
+    "sha256_12": "04a31829f2c0"
    },
    {
     "path": "walls",
@@ -2654,25 +3853,31 @@
     "path": "verdict",
     "seal": "SEAL-VERDICT",
     "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
-    "sha256_12": "a89947f6a87a"
+    "sha256_12": "7a1091ff6ac6"
    },
    {
     "path": "counts",
     "seal": "SEAL-COUNTS",
     "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
-    "sha256_12": "eb0ed7f9f98c"
+    "sha256_12": "20e2637ae34d"
    },
    {
     "path": "paper_claims",
     "seal": "SEAL-PAPER-CLAIMS",
     "sealed_at_gate": "G-PAPER-CLAIMS",
-    "sha256_12": "cdebe24450bf"
+    "sha256_12": "bfcbf2b14b41"
+   },
+   {
+    "path": "paper_tables",
+    "seal": "SEAL-PAPER-TABLES",
+    "sealed_at_gate": "G-PAPER-TABLES",
+    "sha256_12": "dc644f0fce75"
    },
    {
     "path": "paper_coverage",
     "seal": "SEAL-PAPER-COVERAGE",
     "sealed_at_gate": "G-PAPER-HEAD-VERBATIM",
-    "sha256_12": "a16e801879a9"
+    "sha256_12": "d20f8ce26939"
    },
    {
     "path": "polarity",
@@ -2684,55 +3889,61 @@
     "path": "coverage",
     "seal": "SEAL-COVERAGE",
     "sealed_at_gate": "G-COVERAGE",
-    "sha256_12": "2726c993def5"
+    "sha256_12": "f0d12ddcb33c"
    },
    {
     "path": "waiver_ledger",
     "seal": "SEAL-WAIVERS",
     "sealed_at_gate": "G-COVERAGE",
-    "sha256_12": "5511c59fc913"
+    "sha256_12": "25f9cf0d3c77"
    },
    {
     "path": "mutants",
     "seal": "SEAL-MUTANTS",
-    "sealed_at_gate": "G-COVERAGE",
-    "sha256_12": "ffddc55793d5"
+    "sealed_at_gate": "G-FALSIFIER-HONESTY",
+    "sha256_12": "52a579c39054"
+   },
+   {
+    "path": "writer_shape",
+    "seal": "SEAL-WRITER-SHAPE",
+    "sealed_at_gate": "G-WRITER-SHAPE",
+    "sha256_12": "907f3a346e20"
    },
    {
     "path": "mutant_sweep",
     "seal": "SEAL-MUTANT-SWEEP",
     "sealed_at_gate": "G-SWEEP-BOUND",
-    "sha256_12": "bf96b14d058e"
+    "sha256_12": "bd8dc075bd45"
    },
    {
     "path": "reachability",
     "seal": "SEAL-REACHABILITY",
     "sealed_at_gate": "G-REACHABILITY",
-    "sha256_12": "876b2f124e18"
+    "sha256_12": "4d9a459cb40d"
    },
    {
     "path": "gates",
     "seal": "SEAL-GATES",
     "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-    "sha256_12": "841b46fb3f44"
+    "sha256_12": "903bfdfe60b3"
    },
    {
     "path": "closing_gates",
     "seal": "SEAL-CLOSING",
     "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-    "sha256_12": "e2f418e2fafa"
+    "sha256_12": "a520aeba0f5b"
    },
    {
     "path": "totals",
     "seal": "SEAL-TOTALS",
     "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-    "sha256_12": "e5c9e6872995"
+    "sha256_12": "73cae4484293"
    },
    {
     "path": "transcript_head",
     "seal": "SEAL-TRANSCRIPT",
     "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-    "sha256_12": "2ece10459770"
+    "sha256_12": "acb9a522ba7f"
    }
   ]
  },
@@ -2740,13 +3951,16 @@
   "arms": 4,
   "battery_rows": 10,
   "consistency_checks": 948297,
-  "declared_unsealed": 4,
-  "gates": 49,
+  "declared_unsealed": 2,
+  "gates": 60,
+  "gates_after_the_snapshot": 2,
+  "gates_evaluated_before_the_snapshot": 60,
+  "gates_in_the_registry": 62,
   "horizon": 5,
-  "mutants": 44,
-  "seals": 27,
-  "sources": 16,
-  "verbatim_anchors": 11,
+  "mutants": 56,
+  "seals": 35,
+  "sources": 17,
+  "verbatim_anchors": 12,
   "waivers": 12
  },
  "transcript_head": [
@@ -2757,24 +3971,24 @@
   "",
   "SECTION 1.  PROVENANCE",
   "  [PASS] G-PROVENANCE",
-  "         all 16 declared sources are read from paths resolved from THIS FILE's own location and matched against the sha256-12 this unit froze; a drifted source dies here before a single measurement runs, which is what a pinned-sha read buys with no version control present",
+  "         all 17 declared sources are read from paths resolved from THIS FILE's own location and matched against the sha256-12 this unit froze; a drifted source dies here before a single measurement runs, which is what a pinned-sha read buys with no version control present",
   "         evidence: mismatched anchors: none",
   "  [PASS] G-EXACT-ARITHMETIC",
-  "         an AST scan of this file finds no float literal anywhere: the amplitudes are INTEGER pairs over Z[w] with a common power-of-3 denominator, and every probability is a fractions.Fraction",
-  "         evidence: float literals: 0",
+  "         an AST scan of this file finds no float literal anywhere: the amplitudes are INTEGER pairs over Z[w] with a common power-of-3 denominator, and every probability is a fractions.Fraction.  The interpreter this ran under is recorded and SEALED at this gate rather than left unsealed: CPython 3.13.2",
+  "         evidence: float literals: 0; interpreter 3.13.2",
   "  [PASS] G-NO-SUBPROCESS",
-  "         no subprocess of any kind is invoked and no version-control command is spawned: the scan reads IMPORT NAMES as well as uses, so an aliased import is a hit.  The run is therefore correct off-tree and with git absent",
-  "         evidence: banned imports: none",
+  "         no subprocess of any kind is invoked and no version-control command is spawned: the scan reads IMPORT NAMES as well as uses, so an aliased import is a hit, AND it reads ATTRIBUTE names, so the process-spawning surface of an already-imported module -- os.system, os.popen, os.exec*, os.spawn*, os.fork -- is scanned too.  The run is therefore correct off-tree and with git absent",
+  "         evidence: banned imports and spawn attributes: none",
   "  [PASS] G-READS-DECLARED",
-  "         the set of files read at run time is EXACTLY the declared source set: 16 reads, no repository state outside them",
-  "         evidence: undeclared none; declared-not-read none",
+  "         the set of files read at run time is EXACTLY the declared source set: 17 reads, no repository state outside them.  The SECOND read set is declared and gated the same way rather than left out of the accounting: this file itself, which its own AST probes parse, and the object under test -- 2 files, both named",
+  "         evidence: undeclared none; declared-not-read none; object reads ['PAPER', 'SELF']",
   "  [PASS] G-VERBATIM",
-  "         11 verbatim anchors, each at least 30 characters after normalisation, each located exactly in its pinned source, each PERTURBED at a content-bearing token and re-located so the row counts as covered only when its own predicate flips, and each declared against a consumer gate",
+  "         12 verbatim anchors, each at least 30 characters after normalisation, each located exactly in its pinned source, each PERTURBED at a content-bearing token and re-located so the row counts as covered only when its own predicate flips, and each declared against a consumer gate",
   "         evidence: anchors failing: none",
   "",
   "SECTION 2.  THE WELDED RECORD, REBUILT FROM THE COMMITTED GRAMMAR",
   "  [PASS] G-SLICE-EXIT-FREE",
-  "         d42b1's transport layer is taken as a TEXT SLICE cut at the layer's own banner print, and d60/d66 enter by AST extraction of their definitions alone, so no module-level statement of theirs can run and no extracted body can terminate this process",
+  "         d42b1's transport layer is taken as a TEXT SLICE cut at the layer's own banner print, and d60/d66 enter by AST extraction of their definitions alone, so no module-level statement of theirs can run and no extracted body can terminate this process.  The property is decided BEFORE the first exec rather than after it: a body that could call sys.exit would have ended this process before a gate evaluated afterwards could refuse it",
   "         evidence: slice exit-free True, extracted bodies exit-free True",
   "  [PASS] G-COMMITTED-ANCHOR",
   "         the generalized driver is ANCHORED against the object it generalizes: at the committed R = 2 schedule it and d66's own conflict_grid(3, 2), re-run in this process, emit IDENTICAL event lists -- 30 events compared one for one",
@@ -2789,8 +4003,17 @@
   "         THE FORCED DICTIONARY, instantiated and gated: ACTOR->SITE is the constructor's own naming, CO-DIVISION-PAIR->LINK is read off the layer's own footprints, and the realised relation IS the target's own Cayley incidence at equality -- 27 unordered pairs, the complete tripartite graph whose three parts are the lines of the one direction I7 does not declare, which the realised relation meets in 0 pairs",
   "         evidence: realised pairs 27, target pairs 27, equal True, pairs on the undeclared direction 0",
   "  [PASS] G-ISOS-CITED",
-  "         the 1296 site assignments are CITED AND VERIFIED, not re-derived: the weld's committed receipt is read at run time and its own number located in those bytes, and the same number is recomputed here from the target's automorphism group, 3! * (3!)^3 = 1296, which is forced once the two readings meet at equality"
+  "         the 1296 site assignments are CITED AND VERIFIED, not re-derived: the weld's committed receipt is read at run time and the number is taken FROM ITS OWN KEY counts/isomorphisms -- not located by a bare substring search of the whole receipt, which would be satisfied by any occurrence anywhere -- and it is found under that key at 3 places.  The same number is recomputed here from the target's automorphism group, 3! * (3!)^3 = 1296, and the two readings are required to meet at equality"
  ],
+ "transport_mechanism": {
+  "coin": "the delivered coin composed with the site cycle s -> s + 1 mod 9",
+  "coin_is_unitary_at_every_step": true,
+  "mass_is_density_checks": 27,
+  "mass_is_density_violations": 0,
+  "site_block_diagonal_checks": 27,
+  "site_block_diagonal_violations": 15,
+  "steps": 3
+ },
  "verbatim_anchors": [
   {
    "chars": 116,
@@ -2842,11 +4065,19 @@
   },
   {
    "chars": 107,
-   "consumer_gate": "G-COIN-FORCED",
+   "consumer_gate": "G-COIN-CENSUS",
    "id": "V-R5-SUPPORT",
    "located": true,
    "perturbation_flips": true,
    "source": "A-R5"
+  },
+  {
+   "chars": 63,
+   "consumer_gate": "G-EXIT-CENSUS",
+   "id": "V-CRA-MARGIN",
+   "located": true,
+   "perturbation_flips": true,
+   "source": "A-CRA"
   },
   {
    "chars": 69,
@@ -2883,8 +4114,8 @@
  ],
  "verdict": {
   "arena": "COUPLING-ARENA-[WELDED-RECORD-REBUILT-AND-DRIVEN-THROUGH-THE-COMMITTED-MENUS: n=1 AT 27 OF 27 CELLS; det=3/4 AT 9 OF 9 SITES; POSDEF 9 OF 9 BY I7'S OWN SYLVESTER CRITERION; FORCED AT MAXHITS 1 WITH 48 EVENTS AND 9 DIVISION EVENTS AND NO REFUSAL; THE FORCED DICTIONARY INSTANTIATED: THE REALISED CO-DIVISION RELATION IS THE TARGET'S OWN CAYLEY INCIDENCE AT 27 OF 27 PAIRS AT EQUALITY AND MEETS THE ONE DIRECTION I7 DOES NOT DECLARE AT 0; SITE-ASSIGNMENTS 1296=3!*(3!)^3 CITED-AND-VERIFIED AT THE WELD'S OWN RECEIPT; SPLIT-FIBER 0 AT ALL 27 INTERVALS]@COMMITTED-ANCHOR-EVENT-FOR-EVENT-AT-R=2",
-  "gates": "COUPLING-CONSISTENT-NOT-REQUIRED-<G-CONSISTENCY=PASS(THE COUPLED STEP IS WELL DEFINED: UNITARITY x COLUMN-STOCHASTICITY COMPOSE EXACTLY AT 948297 PER-OBJECT CHECKS -- PER BRANCH, PER STEP, PER SITE -- WITH 0 VIOLATIONS ACROSS 4 ARMS AT HORIZON 5) -- G-NONTRIVIALITY=PASS(18 OF 18 DECLARED-OBSERVABLE ROWS DIFFER FROM THE MANDATORY FROZEN-STAGE CONTROL AT BOTH READINGS; LEAVES 284078 COUPLED-BORN-MENU vs 212382 FROZEN, THE COUPLING OPENS EMISSION CHANNELS THE FROZEN STAGE CLOSES; NOT INERT) -- G-REQUIREMENT=NO-WITNESS(0 CLOSURES INTERNAL TO THE QUANTUM SIDE THAT ARE NOT THE UPDATE RULE RESTATED FAIL FROZEN AND PASS COUPLED; ALL 5 PSI-INTERNAL ROWS OF THE 10-ROW PRE-REGISTERED BATTERY HOLD ON BOTH STAGES) -- TWO-WAY=[FAIL-FROZEN-PASS-COUPLED: K10-RECORDS-THEOREM,K9-SOURCING, BOTH STAMPED UPDATE-RULE-RESTATED AND REFUSED BY THE SELECTOR | PASS-FROZEN-FAIL-COUPLED: K6-BLOCH,K7-CURVATURE-HOMOGENEOUS,K8-I7-ADMISSIBILITY] -- STALENESS-BLINDNESS-THEOREM=MACHINE-CHECKED(A FROZEN STAGE IS ITSELF AN ADMISSIBLE STAGE: ON A DECLARED STALE COUNT FIELD EVERY PSI-INTERNAL CLOSURE STILL HOLDS, SO NOTHING INTERNAL TO THE STATE AT A SINGLE TIME CAN DETECT THAT ITS STAGE IS OUT OF DATE) -- ADMISSIBILITY-LADDER=THRESHOLD-EXACTLY-5(THE COUPLED RECORD LEAVES I7'S ADMISSIBLE CLASS WITH EXACT PROBABILITY 927415552/847288609443 AT THE BORN MENU AND 37440224/5811307335 AT THE RECORD MENU, AND WITH PROBABILITY EXACTLY 0 AT EVERY HORIZON BELOW IT; THE FROZEN CONTROL NEVER LEAVES IT AT ANY HORIZON; THE EXIT IS TO THE SINGULAR BOUNDARY det=0 AND NO INDEFINITE FORM IS REACHED, MEASURED False) -- SCOPE=THIS UNIT REACHES A RECORD, NOT YET A LAW OVER RECORDS>",
-  "walk_law": "WALK-DERIVED-AND-LAW-TRANSPORTED-[COIN-REGISTER-FORCED-BY-THEOREM: THE SCALAR SHAPE IS MONOMIAL-ONLY ON THIS ARENA'S OFFSET SET -- 6 OF 6 NONZERO DIFFERENCES REALISED BY EXACTLY ONE ORDERED PAIR, 343 MAPS SCANNED OVER A 7-VALUE ALPHABET, 18 UNITARY, 0 NON-MONOMIAL -- AGAINST MULTIPLICITY 3 ON THE AXIS STENCIL WHERE INTERFERENCE SURVIVES | COIN-FORCED-BY-THEOREM: 4 SOLUTIONS OF THE S_3-COVARIANT UNITARITY CONDITIONS, 2 NON-TRIVIAL, EVERY ONE OF THEM +/-GROVER | CONNECTION-GROUP Z_3 DERIVED FROM THE ARENA'S OWN FIELD F_3, SO THE WALK CONSUMES THE COUNT RESIDUE n mod 3 AND THAT IS DISCLOSED | LAW-TRANSPORT=TRANSPORT-CONFIRMED: G(x,0)=1 => G(x,1)=M(x) AT 406413 SITE-STEPS WITH 0 VIOLATIONS, SURVIVING AN ARBITRARY EXACT RE-PRICING AT 406413 OF 406413; k_1=q/M AT 1215681 ENTRIES WITH 0 VIOLATIONS; THE LAW'S OWN MENU MASS IS THE WALK'S OWN LOCAL BORN MASS AT 187155 OF 187155 SITE-STEPS; THE TERMINAL-CONDITION FALSIFIER KILLS THE IDENTITY AT 10]"
+  "gates": "COUPLING-CONSISTENT-NOT-REQUIRED-<G-CONSISTENCY=PASS(THE COUPLED STEP IS WELL DEFINED: UNITARITY x COLUMN-STOCHASTICITY COMPOSE EXACTLY AT 948297 PER-OBJECT CHECKS -- PER BRANCH, PER STEP, PER SITE -- WITH 0 VIOLATIONS ACROSS 4 ARMS AT HORIZON 5, OF WHICH 406413 ARE THE KERNEL'S DEFINITIONAL COLUMN LEG) -- G-NONTRIVIALITY=PASS(18 OF 18 DECLARED-OBSERVABLE ROWS DIFFER FROM THE MANDATORY FROZEN-STAGE CONTROL AT BOTH READINGS; LEAVES 284078 COUPLED-BORN-MENU vs 212382 FROZEN, THE COUPLING OPENS EMISSION CHANNELS THE FROZEN STAGE CLOSES; NOT INERT) -- G-REQUIREMENT=NO-WITNESS-CARRIED-BY-THE-STALENESS-THEOREM(0 CLOSURES INTERNAL TO THE QUANTUM SIDE THAT ARE NOT THE UPDATE RULE RESTATED FAIL FROZEN AND PASS COUPLED IN THE 10-ROW PRE-REGISTERED BATTERY; ALL 5 PSI-INTERNAL ROWS HOLD ON BOTH STAGES, K5 AT THE REPAIRED RAY GRAIN) -- BATTERY=EMPTY-IN-THE-FORWARD-DIRECTION-BEFORE-THE-RUN(K1-K4 ARE COUNT-BLIND, MEASURED AT 0 VIOLATIONS IN 800 CHECKS OVER 5 DECLARED FOREIGN COUNT FIELDS, AND K5'S DELIVERED PREDICATE COULD NOT FIRE AT ALL SINCE THE RAW STATE NORMS ARE DISTINCT BY LEVEL; THE EMPTINESS IS FORCED BY THE STALENESS THEOREM, NOT CHOSEN) -- REFUSAL-ROBUST=EITHER-DECLARATION-ALONE(DROPPING THE UPDATE-RULE-RESTATED STAMP ALONE GIVES 0 WITNESSES, RECLASSIFYING K9/K10 AS PSI-INTERNAL ALONE GIVES 0, ONLY BOTH TOGETHER GIVE 2) -- TWO-WAY=[FAIL-FROZEN-PASS-COUPLED: K10-RECORDS-THEOREM,K9-SOURCING, BOTH STAMPED UPDATE-RULE-RESTATED AND REFUSED BY THE SELECTOR | PASS-FROZEN-FAIL-COUPLED: K6-BLOCH,K7-CURVATURE-HOMOGENEOUS,K8-I7-ADMISSIBILITY] -- STALENESS-BLINDNESS-THEOREM=MACHINE-CHECKED-AT-HORIZON-5(A FROZEN STAGE IS ITSELF AN ADMISSIBLE STAGE: ON A DECLARED STALE COUNT FIELD EVERY SINGLE-TIME PSI-INTERNAL CLOSURE STILL HOLDS AT 1040065 CHECKS, SO NOTHING INTERNAL TO THE STATE AT A SINGLE TIME CAN DETECT THAT ITS STAGE IS OUT OF DATE) -- ADMISSIBILITY-LADDER=THRESHOLD-EXACTLY-5(THE COUPLED RECORD LEAVES I7'S ADMISSIBLE CLASS WITH EXACT PROBABILITY 927415552/847288609443 AT THE BORN MENU AND 37440224/5811307335 AT THE RECORD MENU, AND WITH PROBABILITY EXACTLY 0 AT EVERY HORIZON BELOW IT; THE FROZEN CONTROL NEVER LEAVES IT AT ANY HORIZON; THE EXIT IS TO THE SINGULAR BOUNDARY det=0 AND NO INDEFINITE FORM IS REACHED, MEASURED False; THE ALTERNATIVE COIN ORDER D.G EXITS AT 2922723584/847288609443, LARGER, AT THE SAME THRESHOLD) -- EXIT-CENSUS=ALL-1316-INADMISSIBLE-LEAVES-CLASSIFIED(EVERY ONE HAS EXACTLY ONE SITE OUT AND THE EXCESS PATTERN (0,0,3), 3-FOLD DEGENERATE ACROSS THE LINK CLASSES; CR-A SUPPLIES THE 3, THE RETURN TIME OF THE SHIFT SUPPLIES THE 5) -- SCOPE=THIS UNIT REACHES A RECORD, NOT YET A LAW OVER RECORDS>",
+  "walk_law": "WALK-DERIVED-AND-LAW-TRANSPORTED-[COIN-REGISTER-FORCED-BY-THEOREM: THE SCALAR SHAPE IS MONOMIAL-ONLY ON THIS ARENA'S OFFSET SET -- 6 OF 6 NONZERO DIFFERENCES REALISED BY EXACTLY ONE ORDERED PAIR, 50653 MAPS SCANNED OVER THE ARENA'S OWN 37-VALUE ALPHABET (1/3)Z[w], 18 UNITARY, 0 NON-MONOMIAL -- AGAINST 216 UNITARY AND 198 NON-MONOMIAL AT MULTIPLICITY 3 ON THE AXIS STENCIL WHERE INTERFERENCE SURVIVES, THE SAME INSTRUMENT ON BOTH STENCILS IN THIS RUN | COIN-DECLARED-UNDER-A-REALITY-CONDITION: THE S_3-COVARIANT UNITARITY CONDITIONS CUT OUT A CIRCLE -- 4 SOLUTIONS OVER REAL RATIONALS, 2 NON-TRIVIAL AND BOTH +/-GROVER; 36 OVER THE ARENA'S OWN (1/3)Z[w], 6 CLASSES UP TO A GLOBAL PHASE OF WHICH 1 IS +/-GROVER | COIN-INVARIANCE=MEASURED: ALL 4 HIDDEN CLASSES RUN TO HORIZON 5 -- 0 CONSISTENCY VIOLATIONS, 9 OF 9 OBSERVABLE ROWS MOVING, EXIT THRESHOLD EXACTLY 5, NO INDEFINITE FORM, ON EVERY ONE | CONNECTION-GROUP Z_3 DERIVED FROM THE ARENA'S OWN FIELD F_3, SO THE WALK CONSUMES THE COUNT RESIDUE n mod 3 AND THAT IS DISCLOSED | LAW-TRANSPORT=TRANSPORT-CONFIRMED: G(x,0)=1 => G(x,1)=M(x) AT 406413 SITE-STEPS WITH 0 VIOLATIONS, SURVIVING AN ARBITRARY EXACT RE-PRICING AT 406413 OF 406413; k_1=q/M AT 1215681 ENTRIES WITH 0 VIOLATIONS; ITS CONTENT IS THE SITE ROW, 406413 OF 406413 WITH THE MENU-MASS-IS-BORN-MASS ROW DEFINITIONAL UNDER READING A AND MEASURED NOT TO BE CARRIED BY SITE-BLOCK-DIAGONALITY (27 OF 27 ON A NON-BLOCK-DIAGONAL UNITARY COIN THAT VIOLATES IT AT 15 OF 27); THE TERMINAL-CONDITION FALSIFIER KILLS THE IDENTITY AT 10]"
  },
  "waiver_ledger": [
   {
@@ -2893,9 +4124,9 @@
    "reason": "the gate compares two registries this file owns; a mutant on it would be a mutant on the accounting rather than on a measurement"
   },
   {
-   "class": "EXERCISED-IN-RUN",
+   "class": "EXERCISED-IN-RUN-AND-GUARDED-BY-THE-WRITER-SHAPE",
    "gate": "G-ARTIFACT-INTEGRITY",
-   "reason": "the run corrupts a written byte and shows the check detects it before comparing the real artifacts"
+   "reason": "a mutant on this gate is UNREACHABLE by construction -- run_mutant calls finish(write=False), which returns before the terminal gate runs -- so the waiver states the two things that do guard it.  (i) EXERCISED: the run corrupts a read-back copy of EVERY sealed row in turn and requires each corruption to be detected before the real artifacts are compared, so the check is known live per seal and not on one row.  (ii) EXISTENCE: G-WRITER-SHAPE reads this file's AST BEFORE the gate ledger is snapshotted and publishes the gate names finish() calls and the line of every os.replace, so dropping or renaming this gate, or moving a write above it, moves a SEALED published value -- which is exactly what the byte-identical artifacts of a dropped terminal gate did not do before"
   },
   {
    "class": "SELF-REFERENTIAL",
@@ -2935,7 +4166,7 @@
   {
    "class": "STRUCTURAL",
    "gate": "G-READS-DECLARED",
-   "reason": "the read list is appended by the only reader in the file; a mutant could only add a read the gate would then catch, which is what the gate already asserts"
+   "reason": "the source read list is appended by read_bytes, the only reader of a SOURCE in the file; the second reader, read_text, reads only the two files of the declared OBJECT set, which this same gate now names and binds.  A mutant could only add a read one of the two legs would then catch"
   },
   {
    "class": "SOURCE-FORCED",
@@ -2949,8 +4180,10 @@
   }
  ],
  "walk": {
-  "coin_forcing": {
-   "all_nontrivial_are_grover": true,
+  "coin_census": {
+   "all_real_nontrivial_are_grover": true,
+   "classes_up_to_phase": 6,
+   "grover_classes_up_to_phase": 1,
    "grover_is_unitary_exactly": true,
    "grover_numerators_over_3": [
     [
@@ -2969,8 +4202,77 @@
      -1
     ]
    ],
+   "hidden_classes": [
+    [
+     "-2/3",
+     "-1/3"
+    ],
+    [
+     "-1/3",
+     "-1/3"
+    ],
+    [
+     "-1/3",
+     "1/3"
+    ],
+    [
+     "0",
+     "1/3"
+    ]
+   ],
    "nontrivial": 2,
-   "solutions": 4
+   "reality_condition": "a and b real -- DECLARED, not derived",
+   "ring": "(1/3)Z[w], the arena's own",
+   "ring_nontrivial": 30,
+   "ring_solutions": 36,
+   "solutions": 4,
+   "witness_3C_numerators": [
+    [
+     [
+      3,
+      1
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      3,
+      1
+     ]
+    ]
+   ],
+   "witness_is_grover": false,
+   "witness_is_s3_covariant": true,
+   "witness_is_unitary_exactly": true
   },
   "coin_order_back_reaction": {
    "DG": {
@@ -2998,6 +4300,20 @@
     ]
    }
   },
+  "coin_order_full_horizon": {
+   "DG_curvature_constant_probability": "4747253936/7625597484987",
+   "DG_exit_probability": "2922723584/847288609443",
+   "DG_indefinite_form_reached": false,
+   "DG_leaves": 226404,
+   "DG_max_cell_count": 4,
+   "DG_over_GD_exact": "11416889/3622717",
+   "DG_over_GD_floor_x100": 315,
+   "DG_threshold": 5,
+   "GD_exit_probability": "927415552/847288609443",
+   "GD_leaves": 284078,
+   "GD_threshold": 5,
+   "horizon": 5
+  },
   "coin_states": 3,
   "connection": {
    "connection_group_order": 3,
@@ -3006,6 +4322,30 @@
    "phase_alphabet_closes": true,
    "site_group": "Z_3^2"
   },
+  "declared_fiber_members": [
+   "INIT-COIN-0",
+   "INIT-COIN-1",
+   "INIT-COIN-2",
+   "ORDER-DG",
+   "ORDER-GD",
+   "ORIENT-MINUS",
+   "ORIENT-PLUS",
+   "START-00",
+   "START-10",
+   "START-11"
+  ],
+  "executed_fiber_members": [
+   "INIT-COIN-0",
+   "INIT-COIN-1",
+   "INIT-COIN-2",
+   "ORDER-DG",
+   "ORDER-GD",
+   "ORIENT-MINUS",
+   "ORIENT-PLUS",
+   "START-00",
+   "START-10",
+   "START-11"
+  ],
   "fiber_horizon": 3,
   "fiber_measurements": {
    "INIT-COIN-0": "33596579/129140163",
@@ -3015,6 +4355,7 @@
    "ORDER-GD": "33596579/129140163",
    "ORIENT-MINUS": "33596579/129140163",
    "ORIENT-PLUS": "33596579/129140163",
+   "SITE-IPR-INVARIANT": "True",
    "SITE-TRANSLATION-INVARIANT": "True"
   },
   "fibers": [
@@ -3038,9 +4379,9 @@
    },
    {
     "id": "F4-COIN",
-    "note": "+/- Grover, the unique non-trivial S_3-covariant coin (theorem)",
-    "size": 1,
-    "status": "DERIVED"
+    "note": "the S_3-covariant unitarity conditions cut out a CIRCLE; the reality condition a, b real is DECLARED and selects +/- Grover.  Over the arena's own (1/3)Z[w] the fiber is 6 classes up to a global phase, and all 4 hidden non-Grover members are RUN to the full horizon: the verdict shape is invariant across the family",
+    "size": 6,
+    "status": "DECLARED-UNDER-A-REALITY-CONDITION"
    },
    {
     "id": "F5-CONNECTION-GROUP",
@@ -3056,7 +4397,7 @@
    },
    {
     "id": "F7-ORIENT",
-    "note": "the +l shift against the -l shift; both members run",
+    "note": "the +l shift against the -l shift; both members run.  INERT ON THE IPR ONLY: on the full declared observable set the two differ in p_site and the emission field, which are the arena's own reflection",
     "size": 2,
     "status": "DECLARED"
    },
@@ -3068,8 +4409,8 @@
    },
    {
     "id": "F9-INIT-SITE",
-    "note": "the start site, measured invariant by the arena's own translation covariance at the welded record",
-    "size": 1,
+    "note": "the start site: three declared starts are RUN and the comparison is the one translation covariance predicts -- the site distribution is the exact TRANSLATE of the base one, and the translation-invariant functional agrees exactly",
+    "size": 3,
     "status": "MEASURED"
    },
    {
@@ -3092,15 +4433,40 @@
    }
   ],
   "infinite_order_sectors": 6,
+  "orientation_back_reaction": {
+   "differing": 2,
+   "of": 9,
+   "which": [
+    "p_site",
+    "emission_field"
+   ]
+  },
   "scalar_shape": {
-   "alphabet": 7,
+   "alphabet": 37,
+   "alphabet_discriminates": true,
    "axis_multiplicities": [
     3,
     3
    ],
+   "axis_nonmonomial_unitary_maps": 198,
+   "axis_nonmonomial_witness": [
+    [
+     -3,
+     -2
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "axis_unitary_maps": 216,
    "differences": 6,
    "each_realised_once": true,
-   "maps_scanned": 343,
+   "maps_scanned": 50653,
    "multiplicities": [
     1,
     1,
@@ -3109,10 +4475,46 @@
     1,
     1
    ],
+   "narrow_alphabet": 7,
+   "narrow_alphabet_is_blind": true,
+   "narrow_axis_nonmonomial_unitary_maps": 0,
+   "narrow_axis_unitary_maps": 18,
+   "narrow_link_nonmonomial_unitary_maps": 0,
+   "narrow_link_unitary_maps": 18,
+   "narrow_maps_scanned": 343,
    "nonmonomial_unitary_maps": 0,
    "unitary_maps": 18
   },
   "sites": 9,
+  "start_site_rows": [
+   {
+    "ipr": "33596579/129140163",
+    "p_site_equals_base_naively": true,
+    "p_site_is_the_exact_translate": true,
+    "start": [
+     0,
+     0
+    ]
+   },
+   {
+    "ipr": "33596579/129140163",
+    "p_site_equals_base_naively": false,
+    "p_site_is_the_exact_translate": true,
+    "start": [
+     1,
+     0
+    ]
+   },
+   {
+    "ipr": "33596579/129140163",
+    "p_site_equals_base_naively": false,
+    "p_site_is_the_exact_translate": true,
+    "start": [
+     1,
+     1
+    ]
+   }
+  ],
   "state_space_size": 27,
   "trace_census": [
    {
@@ -3233,5 +4635,23 @@
   "kr_hits": [],
   "l1_sentence_present": false,
   "lorentz_named": true
+ },
+ "writer_shape": {
+  "every_replace_after_the_terminal_gate": true,
+  "finish_found": true,
+  "gate_names_in_finish": [
+   "G-COVERAGE",
+   "G-FALSIFIER-HONESTY",
+   "G-WRITER-SHAPE",
+   "G-SWEEP-BOUND",
+   "G-ANCHOR-CONSUMERS",
+   "G-REACHABILITY",
+   "G-PAPER-COVERAGE-FINAL",
+   "G-SEAL-COMPLETE",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "os_replace_calls": 2,
+  "terminal_gate": "G-ARTIFACT-INTEGRITY",
+  "terminal_gate_present_exactly_once": true
  }
 }
