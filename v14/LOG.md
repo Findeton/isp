@@ -7069,3 +7069,34 @@ blanket defeats E-22 (13→14 survives); MINOR-11: post-write
 corruption caught at exit 1 but the corrupted receipt LEFT
 PROMOTED.  All headlines stand; no physics number moved.  →
 THE ADJUDICATION (all three seats in).
+
+## 2026-08-11 — PER-L ADJUDICATION: THE VERDICT SURVIVES; THE BAND REWRITTEN AS A COMPLETED TWO-SIDED LAW; FIFTEEN ORDERS; REPAIR LAUNCHED (v14 LEDGER #228)
+
+v14/note-perl-adjudication.md frozen.  Three seats AWF
+(~1,401 seat recomputations), zero delivered numbers moved.
+**PERL-SIDON-SUFFICIENT-NOT-NECESSARY SURVIVES; THE SCALE
+SEGMENT MOVES** — the band falsified twice (K2's THIRDS-19
+odd witness; K1's IN-ALPHABET L=7 difference-set witness, a
+species the involution search was structurally blind to) AND
+completed by the same panel: the absence half FORCED at
+every width (the injectivity theorem + support ceiling), the
+true sections {4}/{6,7,8}/{8,10,12}, evenness deleted,
+alphabet-relativity stamped.  Promotions: five breaks = ONE
+mechanism; the join FORCED; nine-characteristic
+field-freeness.  RULINGS: the prediction ledger records
+THREE PARTS (mechanism CONFIRMED / transport
+CLOSED-BY-THEOREM — PER-R inherits a corollary, one census
+cancelled / control REFUTED-AS-STATED with the compression
+note); the successor prediction is THE CONVERSE
+(DDS-carrying ⟹ interference, already alphabet-relatively
+falsified — registered with both facts); **R4 receives a
+scope-annotation NOTE (paper-12 precedent; terminal paper
+untouched)**; paper-20 needs NO edit; K3's seam named
+(honest measurements, optimistic self-description) — no new
+engraving.  FIFTEEN orders U1–U15 incl. the completed band
+in-code, the ball census actually run, SEAL-TOTALS at
+value-close, STRUCTURAL made conditional, E-23
+description-vs-code, the L=3 control rung named, the head
+derived, the whitelist scoped, and the R4 annotation note.
+Repair worker launched (Opus).  After repair + battery:
+paper-28 TERMINAL + the PLAN.md prediction-ledger update.
