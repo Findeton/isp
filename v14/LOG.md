@@ -6773,3 +6773,13 @@ no-moving-refs discipline working from the reviewer's side.
 Re-frozen (v4, final).  Mid-flight advisory sent to the
 repair worker: T11 must kill the svals/rows injections
 specifically; G-CLI-WHITELIST gains a falsifier.
+
+## 2026-08-11 — CORRECTION: #218'S "SEATS LAUNCHED" WAS PREMATURE BY ONE TURN; LAUNCHED NOW (v14 LEDGER #220)
+
+The #218 entry recorded the PER-L panel as launched; the
+launch was preempted by a user exchange and did not happen
+that turn (caught by the scratch-dir sweep: no reviewer dirs
+existed).  The three seats are launched AT THIS ENTRY with
+the #218 protocol unchanged.  Ledger accuracy note: entries
+must record what HAS happened, not what the next tool call
+will do — the orchestrator's error, owned.
