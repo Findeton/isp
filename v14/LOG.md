@@ -5057,3 +5057,28 @@ non-markdown #125 evasions.  ONE ENGRAVING (#20 addendum:
 fenced blocks).  Repair worker dispatched; TERMINAL on its
 landing + battery — and THE COUPLING-UNIT PIN follows
 immediately.
+
+## 2026-08-11 — THE PAPER-19 REPAIR INTERRUPTED AT THE WEEKLY LIMIT (v14 LEDGER #169)
+
+The repair worker died on the account's WEEKLY usage limit
+(resets 2026-08-16 06:00 America/Bogota) mid-verification.  Its
+last report: all repair edits complete; in-tree ×2
+BYTE-IDENTICAL; the off-tree hostile run MATCHES; it was
+launching the remaining cold-cache mutants and the CLI battery
+when killed.  **Working-tree state (uncommitted, deliberately):
+all four r3w files carry the repair's edits** (paper 00:24,
+code 23:10 → f95a26a1764b, artifacts regenerated 00:59).  Per
+the discipline, the repair is NOT committed without its final
+report and complete battery — the tree is left exactly as the
+worker left it; nothing else is dirty.  **RESUME PLAN: on the
+limit reset (or on the user's word if capacity returns
+sooner), SendMessage-resume the worker with the standing
+inventory-first order: verify its own edits against its
+transcript, finish the cold-cache mutant sweep + CLI battery,
+deliver the final report; then commit-as-is → orchestrator
+battery → TERMINAL (the fifteenth) → THE COUPLING-UNIT PIN.**
+Board at interruption: FOURTEEN terminals; paper-19
+adjudicated FOUND-STANDS (#168) with the repair 80%+ done;
+Route B mooted; the coupling unit cleared and scoped; 21
+engravings; the computed-number record ZERO across the entire
+campaign.
