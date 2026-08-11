@@ -5645,3 +5645,41 @@ ordered: K3 MINOR-3 source comment (accessor-block claim) —
 carried.  New shas: paper ef4df3099057, code dc629dfac7be,
 output 2cba39dc4c48, receipt b1661b6c38c2.  Committed AS-IS;
 orchestrator battery next; then TERMINAL.
+
+## 2026-08-11 — PAPER-20 INSTRUMENT REVIEW LANDED (K3): AWF — THE TERMINAL GATE BYTE-INVISIBLE; THE PAPER PARTLY VOUCHED; THREE MISDESCRIBED FALSIFIERS (v14 LEDGER #186)
+
+v14/review-coup-instrument.md (8e71c5df2b8e) frozen.  **Grade
+AWF; 132 executions, ~367 recomputations; 4 MAJOR, 11 MINOR.**
+The snapshot is 50+2, not 49+3; the receipt publishes THREE
+undistinguished gate counts (52 registry / 50 snapshot / 49
+totals.gates).  MAJOR-1: **the terminal gate is
+byte-invisible** — post-snapshot gates are guarded by the
+mutant sweep, not the seal; G-ARTIFACT-INTEGRITY has no mutant
+(waived: run_mutant never reaches the writer) — dropping or
+renaming it → exit 0 with byte-identical artifacts, falsifying
+closing_gates.warrant; repair BUILT AND TESTED (AST
+writer_shape probe sealed pre-snapshot).  MAJOR-2: two
+disk-vs-seal holes shipping forged artifacts at exit 0
+(transcript compared only 40/181 lines; the four
+DECLARED_UNSEALED keys incl. payload_sha256_12 corruptible);
+three-line fixes.  MAJOR-3: the paper only PARTLY vouched —
+6/9 injections die, 3 survive (§6 consistency-table row; §8.1
+battery row swapped against the head; ONE OF THE TWO COPIES of
+the verdict fence — containment satisfied by the clean copy);
+verified repair: fenced blocks gated by MULTISET EQUALITY (6
+blocks, 3 distinct, each exactly twice) + tables rendered as
+claims.  MAJOR-4: three falsifiers whose published
+descriptions invert or miss their code (MUT-TRANSPORT-ASSUMED,
+MUT-FIBER-BLIND, MUT-PRUNE); mdviol (the 187,155 row §4 rests
+on) has NO falsifier; measured_members tautological;
+pruned_branches a typed literal.  Worker's self-found-bug
+repairs verified; disease sweeps clean (27/27 sealed paths;
+no dead needles; injected no-op dies).  CLEAN: 44/44 mutants
+cold-cache outside the harness, 12 forcings audited, 16/16
+break-anchors; byte ×2 off-tree git-less; bare copy dies
+writing nothing; 37/37 hostile argv NO arity slop; #20
+recomputed exactly; #125 44/44 re-wrappings locate; every
+paper table recomputes.  Scoping correction recorded: K3's
+"no false number" = consistency+reproducibility, not census
+correctness (K2 had already moved the coin count).  → THE
+SUMMIT'S ADJUDICATION (all three seats in).
