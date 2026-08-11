@@ -5765,3 +5765,26 @@ WIDEST-DISAGREEMENT tie-break UNDECLARED (two sets attain
 of every headline set is exactly [0,1] at both readings**
 (endpoints by Gibbs functionals) — the declaration-dependence
 wider than reported.  → adjudication when K1+K3 land.
+
+## 2026-08-11 — CR-A TERMINAL: THE FIRST CR DRAIN — STANDS-STRENGTHENED, THE SIXTEENTH TERMINAL UNIT (v14 LEDGER #189)
+
+Battery complete on the repaired unit: provisioned git-less
+mirror plain BYTE-IDENTICAL both artifacts; unknown flag exit
+2; selftest exit 0 "SELFTEST PASS (45 mutants)" writing
+nothing; my wrong-name invocation (--mutant MUT-CRA-BRIDGE, the
+reviewer's prose label, not a registry name) refused exit 2
+"unknown mutant" — the unknown-name contract confirmed live,
+and the lesson re-learned in the same window it was engraved:
+READ THE REGISTRY, NOT THE PROSE (the unit's names are short
+kebab, unchanged from the original — verified against the
+pre-repair blob); the head-constant falsifier (guarding R1's
+de-literal repair) died at G-VERDICT-ALL-THREE-HEADS-REACHABLE
+— "a head that could not come out otherwise is not a verdict"
+— artifacts untouched.  **CR-A IS TERMINAL: the head
+CRA-BLOCKED-AT-STATIC-GEOMETRY, STANDS-STRENGTHENED** (fiber 0
+at all nine rules; the mover-blind limit = the weld arena; §9
+reversed with the 207-census in-code; the five-way boundary;
+the historical §15 paragraph).  STATUS row appended (same
+commit, §13).  Sixteen terminal units.  The GREEN-UNREVIEWED
+stamp lifts from paper-05.  CR-B/C/D remain the panel debt;
+their panels queue behind the current flight.
