@@ -5096,3 +5096,42 @@ THE COUPLING-UNIT PIN, scoped); the queue; the ontology paragraph
 for conversational continuity; the worker-prompt essentials.
 The repo's LOG/STATUS/RUNBOOK remain authoritative over the
 summary.
+
+## 2026-08-11 — PAPER-19 REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #171)
+
+All eight orders discharged (the interrupted worker resumed and
+finished its two remaining legs).  **The recomposed head (1765
+chars, three segments string-equality gated, the comparator
+typing all three templates itself): WELD3-FOUND with the panel's
+strengthenings in-string** — ISOS=1296=|AUT(K333)|;
+STRATUM-WIDE-BY-THEOREM (all 72, 12 multisets each witnessed);
+THE-WELD-IS-TO-I7'S-RECORD-SPACE with the weld-2 witness
+precedent stated; COVERAGE-NOT-COUNT (46,656 pay; 72 weld;
+1-in-648); ROUTE-B-MOOTED; the STRICTEST-READING row; the
+sitewise identity in the geometry segment.  **The
+record-SPACE ruling upgraded from citation to MEASUREMENT**:
+G-W2-WITNESS reads weld-2's committed receipt (the 14th pinned
+source) and recomputes its FOUND witness as (2,2,2),
+admissible, in the 361-box, not one of the eleven.  **THE THREE
+SHIPPED FORGERIES, individually DEAD**: the one-line
+WELD3-EMPTY patch at G-VERDICT-RECONSTRUCTED; the
+fenced-verdict corruptions at G-PAPER-NUMERAL-COVERAGE +
+G-PAPER-HEAD-VERBATIM (the fenced scan: 427→671 numerals, 126
+fenced across 6 blocks — the #168 engraving implemented); the
+emptied sweep at G-SWEEP-BOUND; plus the coherent seal-drop at
+G-SEAL-COMPLETE.  The three wall gates given real predicates
+scanning a 50,413-char measurement layer.  Honest partials
+named (the selftest-writes mutant disclosed rather than
+repaired — a genuine falsifier would write; the non-markdown
+#125 evasions registered corpus-wide per the adjudication).
+Counts: sources 14; seals 27; gates 75; mutants 71 (71/71
+cold-cache out-of-process at their declared gates, 61 distinct,
+exit-1 proved directly on the forgery killers); CLI 30 hostile
+vectors exit 2.  **Off-tree hostile mirror (no .git to /,
+env -i, PATH=/nonexistent, random seed): 75/75 PASS,
+byte-identical.  ZERO measured numbers moved: 1,126 receipt
+paths compared against ddcd475, 0 changed, 61 added.**
+Artifacts committed as-is: paper 50bb81e67942, code
+f95a26a1764b, output afc688553c16, receipt dfea664f2408.
+Battery next; TERMINAL on completion — THE FIFTEENTH, THE WELD
+FINAL — then THE COUPLING-UNIT PIN.

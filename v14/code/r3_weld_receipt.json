@@ -92,7 +92,7 @@
    "G-SEAL-COMPLETE",
    "G-ARTIFACT-INTEGRITY"
   ],
-  "warrant": "these two are evaluated after the gate ledger is snapshotted and sealed -- G-SEAL-COMPLETE cannot be inside the object it seals, and G-ARTIFACT-INTEGRITY runs after the bytes are on disk.  A run that fails a gate writes nothing, so the existence of these artifacts IS the record of their verdict, and the transcript carries both rows in full."
+  "warrant": "these two are evaluated after the gate ledger is snapshotted and sealed -- G-SEAL-COMPLETE cannot be inside the object it seals, and G-ARTIFACT-INTEGRITY runs after the bytes are on disk.  The archived transcript therefore carries G-SEAL-COMPLETE's row and NOT G-ARTIFACT-INTEGRITY's, which is emitted to the console after the transcript string has been serialized; that verdict is recorded instead by the artifacts themselves, since a run which fails any gate writes nothing and the staged bytes are moved into place only after it passes."
  },
  "constructibility": {
   "BRANCHING": 0,
@@ -133,16 +133,16 @@
   "window": 1040
  },
  "coverage": {
-  "declared_registry": 68,
-  "gates": 68,
-  "gates_with_a_mutant": 54,
-  "honest_denominator": 68,
+  "declared_registry": 75,
+  "gates": 75,
+  "gates_with_a_mutant": 61,
+  "honest_denominator": 75,
   "late_gates": [
    "G-PAPER-COVERAGE-FINAL",
    "G-SEAL-COMPLETE",
    "G-ARTIFACT-INTEGRITY"
   ],
-  "mutants": 59,
+  "mutants": 71,
   "registry_drift": [],
   "uncovered": [],
   "waived": [
@@ -226,6 +226,7 @@
   "rounds": 3,
   "schedules_per_round": 7560,
   "window_declaration": "W3 = W3-CLASS (all 64 ordered triples of the four parallel classes of AG(2,3), d66's own resolvable device) UNION W3-SAT (ALL 72 I7-STRICT grouping triples, exhaustive), each at the first 2 canonical transversals of every round's grouping",
+  "window_distinct_grouping_triples": 130,
   "window_is_the_family": false,
   "window_ratio_denominator": 415462707,
   "window_size": 1040
@@ -235,7 +236,7 @@
    "evidence": "mismatches: none",
    "gate": "G-PROVENANCE",
    "passed": true,
-   "statement": "every one of the 13 declared sources is consumed at its pinned sha256-12, and the products of those bytes are what every later gate reads (#91: no subprocess, no version control, off-tree correct)",
+   "statement": "every one of the 14 declared sources is consumed at its pinned sha256-12, and the products of those bytes are what every later gate reads (#91: no subprocess, no version control, off-tree correct)",
    "waiver": null
   },
   {
@@ -253,7 +254,7 @@
    "waiver": null
   },
   {
-   "evidence": "read 13 distinct, declared 13, difference none",
+   "evidence": "read 14 distinct, declared 14, difference none",
    "gate": "G-READS-DECLARED",
    "passed": true,
    "statement": "the set of files read at run time as SOURCES is EXACTLY the declared set -- no repository state outside it is touched",
@@ -463,6 +464,20 @@
    "waiver": null
   },
   {
+   "evidence": "site codes 64; codes where positive-definiteness and min-count-positive disagree: none",
+   "gate": "G-SITEWISE-IDENTITY",
+   "passed": true,
+   "statement": "THE RIGIDITY THEOREM IS A COROLLARY OF A SITEWISE IDENTITY.  At every one of the 64 site codes reachable in this family -- three rounds deposit at most 1 per cell, so no count exceeds 3 -- the form is POSITIVE DEFINITE at a site IF AND ONLY IF all three of n_(1,0), n_(0,1) and n_(1,1) are at least 1 there.  The two predicates therefore coincide at EVERY site of EVERY one of the 21952000 ordered triples and not only at the top of the ladder, so the whole positive-definite distribution equals the whole strict distribution and I7-STRICT = POSDEF-9 is forced sitewise rather than by the 27-incidence budget alone",
+   "waiver": null
+  },
+  {
+   "evidence": "quadruples 1679616, reaching G-FLAT's chart orbit 276, G-FLAT admissible True",
+   "gate": "G-R4-REGISTER",
+   "passed": true,
+   "statement": "THE SUCCESSOR QUESTION THIS UNIT CREATES, MEASURED ON ITS COMBINATORIAL SIDE ONLY.  At R = 3 the rigidity theorem makes (1,1,1) the ONLY reachable I7-STRICT record, so no R = 3 schedule can reach a DECLARED I7 record at all -- the undeclaredness is a budget fact.  One round later the budget is 36 and I7's own G-FLAT = (1, 1, 2) needs exactly 36: over all 1679616 ordered quadruples of saturating partitions it is reached at 276, admissible, and it is one of the eleven.  NOTHING IS DRIVEN HERE and nothing is claimed constructible; the row is registered so the successor inherits a question with a number on it",
+   "waiver": null
+  },
+  {
    "evidence": "driven saturating records 72, distinct co-division arenas 1",
    "gate": "G-SAT-ARENA-IDENTITY",
    "passed": true,
@@ -477,10 +492,10 @@
    "waiver": null
   },
   {
-   "evidence": "rows @EMBEDDING 9, @QUOTIENT 9",
+   "evidence": "rows @EMBEDDING 9, @QUOTIENT 9; directed comparator max 0 over 8 arenas",
    "gate": "G-READINGS",
    "passed": true,
-   "statement": "BOTH READINGS of 'a map' are run and every row is stamped with the one it was decided under, exactly as weld 2 declared them: EMBEDDING asks for a bijection under which the grammar's link relation CONTAINS the target's incidence; QUOTIENT asks for a surjection of the realised objects onto the sites carrying every realised edge onto a declared displacement.  The difference is measured, not assumed: 4 rows die at a different place under the two readings",
+   "statement": "BOTH READINGS of 'a map' are run and every row is stamped with the one it was decided under, exactly as weld 2 declared them: EMBEDDING asks for a bijection under which the grammar's link relation CONTAINS the target's incidence; QUOTIENT asks for a surjection of the realised objects onto the sites carrying every realised edge onto a declared displacement.  The difference is measured, not assumed: 4 rows die at a different place under the two readings.  THE DIRECTED COMPARATOR IS CARRIED AND ITS VALUE IS REPORTED: it returns 0 at every one of the 8 arenas where it is defined -- the two FOUND rows included -- so it separates nothing anywhere, which is exactly why HA requirement 3 forbids it as the admit test.  FOUND holds at the undirected reading, and the number that would have made the directed one an alternative is zero",
    "waiver": null
   },
   {
@@ -561,31 +576,45 @@
    "waiver": null
   },
   {
-   "evidence": "declared records ['G-ANISO', 'G-ANISO2', 'G-DIAG2', 'G-FLAT', 'G-INDEF', 'G-OFFDIAG', 'G-OFFDIAG2', 'G-OFFNEG', 'G-SINGULAR']; chart orbit ['(1, 1, 1)']; hits none",
+   "evidence": "declared records ['G-ANISO', 'G-ANISO2', 'G-DIAG2', 'G-FLAT', 'G-INDEF', 'G-OFFDIAG', 'G-OFFDIAG2', 'G-OFFNEG', 'G-SINGULAR'] and ['G-CURVED', 'G-CURVOFF']; chart orbit ['(1, 1, 1)']; hits none",
    "gate": "G-NOT-IN-FAMILY",
    "passed": true,
-   "statement": "AND IT IS NOT ONE OF I7's 9 DECLARED RECORDS.  Each declared record is compared against the induced vector's whole chart orbit -- I7's chart group is its site translations and its d! direction relabellings, and on a homogeneous record the translations act trivially -- so the comparison is per record and not by name.  The weld lands INSIDE I7's admissible class and OUTSIDE its declared list, and that distinction is the honest scope of this result",
+   "statement": "AND IT IS NOT ONE OF I7's 11 DECLARED RECORDS.  Each declared record is compared against the induced vector's whole chart orbit -- I7's chart group is its site translations and its d! direction relabellings, and on a homogeneous record the translations act trivially -- so the comparison is per record and not by name.  The weld lands INSIDE I7's admissible class and OUTSIDE its declared list, and that distinction is the honest scope of this result",
    "waiver": null
   },
   {
-   "evidence": "saturating {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}; falsifier {'I-SITE-ASSIGNMENT': 6, 'I-DIRECTION-LABEL': 2, 'I-ORIENT': 1}",
+   "evidence": "weld 2's committed probe verdict FOUND-candidate; induced record [2, 2, 2]; admissible True; in the box True; declared-family hits none",
+   "gate": "G-W2-WITNESS",
+   "passed": true,
+   "statement": "WHAT REACHING FOUND AT THIS TARGET HAS ALWAYS MEANT, READ FROM WELD 2's OWN BYTES.  Weld 2 could exhibit its FOUND branch at I7's three-link target only on a DECLARED PROBE, and that probe is the object which fixed the meaning of the branch this unit now occupies.  Its committed count field is read here and its induced record recomputed by this unit's own readout: (2, 2, 2), q = [[2, -1], [-1, 2]], det 3 -- ADMISSIBLE by the same exact Sylvester criterion, INSIDE the same 361-point declared box, and NOT ONE OF I7's 11 DECLARED RECORDS EITHER.  So the branch weld 2 reserved was never a branch onto a declared record: THE WELD IS TO I7's RECORD SPACE -- its lattice and its record axioms -- and the eleven are named witnesses inside that space rather than the gate.  This unit lands the same species of object, on a DRIVEN grammar record instead of a probe",
+   "waiver": null
+  },
+  {
+   "evidence": "R3-SAT at the fixed carrier: min 1 max 1; R3-ROW|COL|ANT cells at zero: 9 of 27",
+   "gate": "G-STRICTEST-READING",
+   "passed": true,
+   "statement": "FOUND AT THE PRIMARY ARENA DOES NOT NEED THE SITE ASSIGNMENT TO BE FREE AT ALL.  Under the strictest reading available -- the site carrier FIXED to the constructor's own actor -> Z_3^2 parse, which is inventory item 3 and which this unit calls forced -- the saturating record still induces a strictly positive field: min 1, max 1 over the 27 cells.  The same reading KILLS the relabelling row: R3-ROW|COL|ANT leaves 9 of the 27 cells at zero, because the ANT class deposits nothing on any I7 link in fixed coordinates.  So the free site assignment carries the second FOUND row and nothing else, exactly as section 4.4 and deviation 6 price it",
+   "waiver": null
+  },
+  {
+   "evidence": "saturating {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}; falsifier {'I-SITE-ASSIGNMENT': 6, 'I-DIRECTION-LABEL': 2, 'I-ORIENT': 1}; base-map-invariant fibers 8 of 8 rows that carry an inventory",
    "gate": "G-FIBERS",
    "passed": true,
-   "statement": "THE RSQ CHOICE STANDARD, WITH THE FIBERS PRINTED.  MOTIVATED means zero free items, and a fiber is the number of DISTINCT count fields the choice produces.  At the saturating arena all three are 1 -- 1296 isomorphisms give one field, the 6 direction relabellings give one, both orientations give one -- and the reason is measured: the field is homogeneous.  The standard is not vacuous here, because the declared falsifier's site-assignment fiber is 6",
+   "statement": "THE RSQ CHOICE STANDARD, WITH THE FIBERS PRINTED.  MOTIVATED means zero free items, and a fiber is the number of DISTINCT count fields the choice produces.  At the saturating arena all three are 1 -- 1296 isomorphisms give one field, the 6 direction relabellings give one, both orientations give one -- and the reason is measured: the field is homogeneous.  The standard is not vacuous here, because the declared falsifier's site-assignment fiber is 6.  The label and orient fibers are READ at the base map the actor-name order fixes, so their BASE-MAP INVARIANCE is measured rather than assumed: both are re-read at every one of the 1296 base maps and both are constant",
    "waiver": null
   },
   {
-   "evidence": "I7-STRICT triples 72, incidences each 27, weld fate FOUND-candidate; the committed R = 3 grid deposits 18 and is COUNT-DEAD",
+   "evidence": "I7-STRICT triples 72, incidences each 27, weld fate FOUND-candidate; full budget paid by 46656 triples of which 72 weld (1 in 648); the committed R = 3 grid deposits 27 incidences over 18 of 27 cells and is COUNT-DEAD",
    "gate": "G-COUNT-IMPLIES-WELD",
    "passed": true,
-   "statement": "THE EFFECTUS'S DEMAND (iv), ANSWERED WITH A MEASUREMENT.  It asked for an explicit statement that >= 27 incidences is necessary and not sufficient for the weld.  NECESSARY is a theorem and is measured: all 72 I7-STRICT triples carry exactly 27.  SUFFICIENT is what this arena actually returns -- at THIS candidate family and THIS target, 27 incidences force the field to be identically 1, the co-division relation to be the target's own Cayley incidence, and every fiber to be 1, so the count condition entails the rest.  It is sufficient HERE; nothing measured here says it is sufficient anywhere else, and the census's other arenas show what fails when it is absent",
+   "statement": "THE EFFECTUS'S DEMAND (iv), ANSWERED AS POSED: >= 27 incidences is NECESSARY AND NOT SUFFICIENT, and what IS sufficient here is COVERAGE.  Necessity is a theorem and is measured: all 72 I7-STRICT triples carry exactly 27 incidences and no schedule of this budget carries more.  The COUNT alone is not sufficient and the census contains the counterexample: 46656 ordered grouping triples -- every triple of saturating partitions -- deposit the full 27, and exactly 72 of them weld, one in 648.  d66's own R = 3 point is one of the others: it deposits 27 incidences and spends them on 18 of the 27 cells, doubling nine row cells and leaving 9 diagonal cells at zero.  What is necessary and, at this candidate family and this target, sufficient is that every one of the 27 cells is covered at least once -- which is I7-STRICT itself -- and the rigidity theorem then forces the field to be identically 1, the co-division relation to be the target's own Cayley incidence and every fiber to be 1",
    "waiver": null
   },
   {
    "evidence": "cells 31, driven witnesses 31, non-FORCED 0",
    "gate": "G-STRATA-WITNESSED",
    "passed": true,
-   "statement": "the census stratifies by (stabilizer x affine class x geometry class).  The declared stratum scan -- 136 grouping triples at all 27 canonical seed triples -- realises 31 cells, and EVERY one of them is given a deterministic representative whose record is BUILT BY DRIVING THE MENUS.  So the grammar's verdict has been taken at least once in every cell of the census, including cells whose groupings are not parallel classes at all",
+   "statement": "the census stratifies by (stabilizer x affine class x geometry class).  The declared stratum scan -- 136 grouping triples at all 19683 seed triples each -- realises 31 cells, and EVERY one of them is given a deterministic representative whose record is BUILT BY DRIVING THE MENUS.  So the grammar's verdict has been taken at least once in every cell of the census, including cells whose groupings are not parallel classes at all",
    "waiver": null
   },
   {
@@ -596,24 +625,24 @@
    "waiver": null
   },
   {
-   "evidence": "sprinkling-grade test run: False",
+   "evidence": "terms scanned 4, surface 51374 chars, hits: none",
    "gate": "G-WALL-BHS",
    "passed": true,
-   "statement": "BHS: a Poisson sprinkling admits no Lorentz-invariant finite-valency graph, and these schedules are finite-valency by construction, so running a sprinkling-grade Lorentz-invariance test would manufacture a false negative.  None is run: no sprinkling, no boost, no rapidity and no frame appears in any measurement above",
+   "statement": "BHS: a Poisson sprinkling admits no Lorentz-invariant finite-valency graph, and these schedules are finite-valency by construction, so running a sprinkling-grade Lorentz-invariance test would manufacture a false negative.  None is run, and that is MEASURED rather than asserted: the 51374-character measurement layer of this run -- every measured receipt key plus the statement and evidence of all 55 non-wall gates evaluated so far -- is scanned for boost, rapidity, sprinkl, frame and contains none of them",
    "waiver": null
   },
   {
-   "evidence": "dimension reading taken: False",
+   "evidence": "terms scanned 6, surface 51374 chars, hits: none",
    "gate": "G-WALL-KR",
    "passed": true,
-   "statement": "Kleitman-Rothschild: a dimension reading without a height control is worthless.  This unit takes NO dimension reading at all -- no chart width, no Myrheim-Meyer estimate, no max-shatter dimension -- so the height control is not owed and not manufactured; the gate is the conjunction, and a paper that took a dimension reading would have to carry one",
+   "statement": "Kleitman-Rothschild: a dimension reading without a height control is worthless.  This unit takes NO dimension reading at all -- no chart width, no Myrheim-Meyer estimate, no max-shatter dimension -- so the height control is not owed and not manufactured.  The abstention is MEASURED on the same surface: myrheim, meyer, shatter, chart width, dimension, height appear nowhere in it, so there is no reading for a height control to be owed against",
    "waiver": null
   },
   {
-   "evidence": "cosmological reading taken: False",
+   "evidence": "terms scanned 6, surface 51374 chars, hits: none",
    "gate": "G-WALL-DIAGONAL",
    "passed": true,
-   "statement": "the diagonal is MEASURED here -- the (1,1) link is populated by every saturating arrangement and is exactly what lifts the determinant off zero -- and it is READ NO FURTHER.  The four directions above are directions on a nine-site lattice and are read as nothing else; cosmological readings stay barred and no continuum claim is made anywhere in this unit",
+   "statement": "the diagonal is MEASURED here -- the (1,1) link is populated by every saturating arrangement and is exactly what lifts the determinant off zero -- and it is READ NO FURTHER.  The four directions above are directions on a nine-site lattice and are read as nothing else, and that too is measured: cosmolog, continuum, horizon, redshift, universe, expansion appear nowhere in this run's measurement layer, so no cosmological or continuum reading is taken anywhere in this unit",
    "waiver": null
   },
   {
@@ -627,21 +656,28 @@
    "evidence": "segments compared 3, drifted none",
    "gate": "G-VERDICT-RECONSTRUCTED",
    "passed": true,
-   "statement": "the head is DERIVED, not typed: a second reconstruction reads only the serialized receipt, recomputes every segment from the rows it finds there -- the outcome word included, from the measured fate multiset -- and the two strings are compared complete, all 1183 characters of them",
+   "statement": "the head is DERIVED, not typed: a second reconstruction reads only the serialized receipt, recomputes every segment from the rows it finds there -- the outcome word included, from the measured fate multiset -- and the two strings are compared complete, all 1765 characters of them",
    "waiver": null
   },
   {
-   "evidence": "claims 15, missing none",
+   "evidence": "claims 21, missing none",
    "gate": "G-PAPER-CLAIMS",
    "passed": true,
-   "statement": "every instrument claim renders in the paper under test: 15 claims, each built HERE from the receipt's own rows and each matched against the paper with whitespace normalised, ASCII folded and markdown prefixes stripped",
+   "statement": "every instrument claim renders in the paper under test: 21 claims, each built HERE from the receipt's own rows and each matched against the paper with whitespace normalised, ASCII folded and markdown prefixes stripped",
    "waiver": null
   },
   {
-   "evidence": "scanned 427, allow-listed 427, unregistered none",
+   "evidence": "scanned 671 (fenced 126 in 6 blocks), allow-listed 671, unregistered none",
    "gate": "G-PAPER-NUMERAL-COVERAGE",
    "passed": true,
-   "statement": "every numeral in the paper occurs in the receipt as a DELIMITED number -- not as a substring of a longer one -- or in the declared allow-list of section, ledger and date references: 427 numerals scanned",
+   "statement": "every numeral in the paper occurs in the receipt as a DELIMITED number -- not as a substring of a longer one -- or in the declared allow-list of section, ledger and date references: 671 numerals scanned, of which 126 are inside the 6 FENCED VERDICT BLOCKS (the #20 addendum engraved at ledger #168: the old scan stripped every backticked span before scanning and so never read the head's numbers at all).  A fenced numeral is allow-listed only against the receipt -- the run's own verdict strings included -- so a head number this run never derived cannot pass",
+   "waiver": null
+  },
+  {
+   "evidence": "segments matched 3 of 3; missing none",
+   "gate": "G-PAPER-HEAD-VERBATIM",
+   "passed": true,
+   "statement": "THE PAPER'S HEAD IS THE RUN'S HEAD, CHARACTER FOR CHARACTER.  Each of the 3 verdict segments the run derived -- 1765 characters in all -- is matched into the paper under test with whitespace normalised, ASCII folded and markdown prefixes stripped, so the fenced blocks a reader will quote are bound to the receipt as strings and not merely as numbers",
    "waiver": null
   },
   {
@@ -655,7 +691,7 @@
    "evidence": "malformed vectors accepted none, legal shapes 9, permissive shape accepts unknown flags True",
    "gate": "G-CLI-WHITELIST",
    "passed": true,
-   "statement": "the #82 CLI contract, exercised in this run: 7 malformed argument vectors are all rejected with exit code 2, 9 legal shapes parse, and the registered PERMISSIVE shape -- present in this file only as this gate's own falsifier -- accepts an unknown flag, which is what makes the gate a measurement",
+   "statement": "the #82 CLI contract, exercised in this run: 10 malformed argument vectors are all rejected with exit code 2 -- the last three of them SECOND-MODE vectors, since a mode flag that silently overwrote an earlier one made the earlier flag a no-op -- 9 legal shapes parse, and the registered PERMISSIVE shape, present in this file only as this gate's own falsifier, accepts an unknown flag, which is what makes the gate a measurement",
    "waiver": null
   },
   {
@@ -666,31 +702,45 @@
    "waiver": null
   },
   {
-   "evidence": "on target 59 of 59; misses none",
+   "evidence": "on target 71 of 71; misses none",
    "gate": "G-MUTANTS-ON-TARGET",
    "passed": true,
-   "statement": "all 59 declared mutants are run IN PROCESS and each dies at the gate it names, with the artifacts untouched",
+   "statement": "all 71 declared mutants are run IN PROCESS and each dies at the gate it names, with the artifacts untouched",
    "waiver": null
   },
   {
-   "evidence": "uncovered gates: none; declared registry 68 vs evaluated 68, drift none",
+   "evidence": "uncovered gates: none; declared registry 75 vs evaluated 75, drift none",
    "gate": "G-COVERAGE",
    "passed": true,
-   "statement": "#34 WITH AN HONEST DENOMINATOR: of the 68 gates this delivery run evaluates -- 63 already closed, plus this gate and its twin, plus the 3 LATE gates this same function evaluates before it returns, plus the sweep gate the delivery pipeline evaluates around it; every one of those is verified PRESENT at G-ARTIFACT-INTEGRITY rather than assumed -- 54 are falsified by at least one declared mutant and 14 are WAIVED with a forcing that says why they cannot fail.  The denominator is the gate count of THIS run, not a hand-kept number -- and the registry `--list-gates` prints is required to be EXACTLY that set, so the CLI cannot advertise a stale ledger",
+   "statement": "#34 WITH AN HONEST DENOMINATOR: of the 75 gates this delivery run evaluates -- 68 already closed, plus this gate and its twin, plus the sweep-binding and anchor-consumer gates this same function evaluates between them, plus the 3 LATE gates this same function evaluates before it returns, plus the sweep gate the delivery pipeline evaluates around it; every one of those is verified PRESENT at G-ARTIFACT-INTEGRITY rather than assumed -- 61 are falsified by at least one declared mutant and 14 are WAIVED with a forcing that says why they cannot fail.  The denominator is the gate count of THIS run, not a hand-kept number -- and the registry `--list-gates` prints is required to be EXACTLY that set, so the CLI cannot advertise a stale ledger",
    "waiver": null
   },
   {
-   "evidence": "mutants 59, gates unreached none",
+   "evidence": "delivery-level True, sweep rows 71 of 71, on target 71, sweep gate evaluated True",
+   "gate": "G-SWEEP-BOUND",
+   "passed": true,
+   "statement": "THE SWEEP'S EXECUTION IS BOUND, NOT DECLARED.  This run is delivery-level; a delivery-level run is required to carry one sweep row per declared mutant (71), every row ON TARGET, and to have evaluated G-MUTANTS-ON-TARGET itself before this point -- so a delivery whose mutant loop never ran cannot reach a writer.  A mutant SUB-run declares itself un-swept and is held to that instead",
+   "waiver": null
+  },
+  {
+   "evidence": "anchors 20, consumers not registered-and-evaluated: none",
+   "gate": "G-ANCHOR-CONSUMERS",
+   "passed": true,
+   "statement": "EVERY VERBATIM ANCHOR'S NAMED CONSUMER IS A REAL GATE THAT REALLY RAN.  All 20 #62 anchors name the gate that consumes them; each named gate is required here to be in the declared registry AND in this run's own evaluated ledger, so the naming cannot drift into a gate that was removed, renamed or never reached",
+   "waiver": null
+  },
+  {
+   "evidence": "mutants 71, gates unreached none",
    "gate": "G-REACHABILITY",
    "passed": true,
    "statement": "every declared falsifier demonstrably REACHES its gate (the R5 lesson: a mutant whose gate never runs is not a falsifier).  3 mutants name 3 LATE gates -- evaluated after this point in this same function, unconditionally -- and their presence is verified at G-ARTIFACT-INTEGRITY rather than assumed here",
    "waiver": null
   },
   {
-   "evidence": "gates 65, float-valued receipt paths none",
+   "evidence": "gates 72, float-valued receipt paths none",
    "gate": "G-PAPER-COVERAGE-FINAL",
    "passed": true,
-   "statement": "the payload closes: 65 gates evaluated, all passed, and a RECURSIVE TYPE SCAN of the receipt finds no float anywhere -- every published number is an int or a string carrying an exact Fraction",
+   "statement": "the payload closes: 72 gates evaluated, all passed, and a RECURSIVE TYPE SCAN of the receipt finds no float anywhere -- every published number is an int or a string carrying an exact Fraction",
    "waiver": null
   }
  ],
@@ -717,6 +767,17 @@
     ]
    },
    "total": 288
+  },
+  "coverage_not_count": {
+   "committed_R3_cells_at_zero": 9,
+   "committed_R3_cells_covered": 18,
+   "committed_R3_incidences": 27,
+   "of_which_weld": 72,
+   "one_in": 648,
+   "saturating_partitions": 36,
+   "triples_paying_the_full_budget": 46656,
+   "weld_cells_covered": 27,
+   "weld_incidences": 27
   },
   "det_cells": 197568000,
   "det_spectrum": {
@@ -775,7 +836,25 @@
    "ordered_pairs": 78400,
    "posdef_ceiling": 3
   },
+  "r4_register_probe": {
+   "budget_rounds": 4,
+   "driven": false,
+   "ordered_quadruples_of_saturating_partitions": 1679616,
+   "reaching_the_target_chart_orbit": 276,
+   "status": "REGISTERED-NOT-CLAIMED: combinatorial reachability only",
+   "target": "G-FLAT",
+   "target_record": [
+    1,
+    1,
+    2
+   ]
+  },
   "saturating_partitions": 36,
+  "sitewise_identity": {
+   "counterexamples": [],
+   "posdef_iff_all_three_counts_positive": true,
+   "reachable_site_codes": 64
+  },
   "triples_at_ceiling": 72
  },
  "i7": {
@@ -868,7 +947,27 @@
   "site_dependent_records": [
    "G-CURVED",
    "G-CURVOFF"
-  ]
+  ],
+  "weld2_found_witness": {
+   "admissible": true,
+   "arena": "DECLARED-PROBE/CAYLEY-AT-I7",
+   "declared_family_hits": [],
+   "det": "3",
+   "distinct_counts": [
+    2
+   ],
+   "in_declared_box": true,
+   "n": [
+    2,
+    2,
+    2
+   ],
+   "q11": "2",
+   "q12": "-1",
+   "q22": "2",
+   "source": "A-W2REC",
+   "verdict": "FOUND-candidate"
+  }
  },
  "mutant_sweep": [
   {
@@ -1224,6 +1323,78 @@
    "died_at": "G-PAPER-CLAIM-POLARITY",
    "mutant": "MUT-PAPER-POLARITY",
    "on_target": true
+  },
+  {
+   "declared_gate": "G-VERDICT-RECONSTRUCTED",
+   "died_at": "G-VERDICT-RECONSTRUCTED",
+   "mutant": "MUT-WELD-FORGERY",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-NUMERAL-COVERAGE",
+   "died_at": "G-PAPER-NUMERAL-COVERAGE",
+   "mutant": "MUT-PAPER-HEAD-NUMERAL",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-HEAD-VERBATIM",
+   "died_at": "G-PAPER-HEAD-VERBATIM",
+   "mutant": "MUT-PAPER-HEAD",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-SWEEP-BOUND",
+   "died_at": "G-SWEEP-BOUND",
+   "mutant": "MUT-SWEEP-UNBOUND",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-ANCHOR-CONSUMERS",
+   "died_at": "G-ANCHOR-CONSUMERS",
+   "mutant": "MUT-CONSUMER-BINDING",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-SITEWISE-IDENTITY",
+   "died_at": "G-SITEWISE-IDENTITY",
+   "mutant": "MUT-SITEWISE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-STRICTEST-READING",
+   "died_at": "G-STRICTEST-READING",
+   "mutant": "MUT-STRICTEST",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-W2-WITNESS",
+   "died_at": "G-W2-WITNESS",
+   "mutant": "MUT-W2-WITNESS",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-COUNT-IMPLIES-WELD",
+   "died_at": "G-COUNT-IMPLIES-WELD",
+   "mutant": "MUT-COVERAGE-COUNT",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-READINGS",
+   "died_at": "G-READINGS",
+   "mutant": "MUT-DIRECTED",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-FIBERS",
+   "died_at": "G-FIBERS",
+   "mutant": "MUT-FIBER-BASEMAP",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-R4-REGISTER",
+   "died_at": "G-R4-REGISTER",
+   "mutant": "MUT-R4-REGISTER",
+   "on_target": true
   }
  ],
  "mutants": [
@@ -1521,6 +1692,66 @@
    "gate": "G-PAPER-CLAIM-POLARITY",
    "name": "MUT-PAPER-POLARITY",
    "what": "flips one declared polarity of the paper's head -- must die at the polarity gate"
+  },
+  {
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "name": "MUT-WELD-FORGERY",
+   "what": "THE ONE-LINE HEAD FORGERY (the instrument review's M1): patches the BUILDER's outcome word to EMPTY.  Before the repair the comparator called the same function and moved with it; now the comparator types the weld template itself and derives the outcome word from the receipt's own fate rows, so the forgery must die at the reconstruction gate"
+  },
+  {
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "name": "MUT-PAPER-HEAD-NUMERAL",
+   "what": "corrupts a numeral INSIDE the paper's fenced verdict block (the instrument review's M2): before the repair the numeral gate stripped every fenced block before scanning, so head numerals were never scanned at all -- must die at the numeral-coverage gate"
+  },
+  {
+   "gate": "G-PAPER-HEAD-VERBATIM",
+   "name": "MUT-PAPER-HEAD",
+   "what": "moves one non-numeric character of the paper's rendered head -- must die at the gate that matches every character of every verdict segment into the paper"
+  },
+  {
+   "gate": "G-SWEEP-BOUND",
+   "name": "MUT-SWEEP-UNBOUND",
+   "what": "declares the delivery-level sweep while carrying no sweep rows (the instrument review's m2: a delivery whose 59-mutant loop never ran shipped) -- must die at the sweep-execution gate"
+  },
+  {
+   "gate": "G-ANCHOR-CONSUMERS",
+   "name": "MUT-CONSUMER-BINDING",
+   "what": "names a consumer gate that no gate registry carries and that this run never evaluated (the instrument review's m3) -- must die at the gate that binds every verbatim anchor to a gate that actually ran"
+  },
+  {
+   "gate": "G-SITEWISE-IDENTITY",
+   "name": "MUT-SITEWISE",
+   "what": "breaks the sitewise identity at one of the 64 reachable site codes -- must die at the per-code identity gate"
+  },
+  {
+   "gate": "G-STRICTEST-READING",
+   "name": "MUT-STRICTEST",
+   "what": "reports the ROW|COL|ANT arena as surviving the site-carrier-fixed reading -- must die at the strictest-reading gate"
+  },
+  {
+   "gate": "G-W2-WITNESS",
+   "name": "MUT-W2-WITNESS",
+   "what": "reports weld 2's own FOUND-at-I7 witness as one of I7's declared records -- must die at the gate that reads that witness from weld 2's committed receipt"
+  },
+  {
+   "gate": "G-COUNT-IMPLIES-WELD",
+   "name": "MUT-COVERAGE-COUNT",
+   "what": "reports the committed R = 3 grid as covering all 27 cells -- must die at the COVERAGE-not-count gate"
+  },
+  {
+   "gate": "G-READINGS",
+   "name": "MUT-DIRECTED",
+   "what": "reports the directed comparator as separating an arena -- must die at the readings gate, which carries the comparator's measured value"
+  },
+  {
+   "gate": "G-FIBERS",
+   "name": "MUT-FIBER-BASEMAP",
+   "what": "reports the label and orient fibers as base-map-dependent -- must die at the choice-standard gate, which now reads both at EVERY base map"
+  },
+  {
+   "gate": "G-R4-REGISTER",
+   "name": "MUT-R4-REGISTER",
+   "what": "reports I7's own G-FLAT as unreachable at the R = 4 budget -- must die at the successor-register probe gate"
   }
  ],
  "paper_claims": [
@@ -1598,9 +1829,46 @@
    "id": "C15",
    "polarity": "POSITIVE",
    "text": "the coordinate-free saturating class is 288 ordered grouping triples, exactly four times the 72 that are I7-STRICT in the committed naming"
+  },
+  {
+   "id": "C16",
+   "polarity": "NEGATIVE",
+   "text": "46,656 ordered grouping triples deposit the full 27 incidences and exactly 72 of them weld, one in 648"
+  },
+  {
+   "id": "C17",
+   "polarity": "NEGATIVE",
+   "text": "spends all 27 of its incidences on 18 of the 27 cells"
+  },
+  {
+   "id": "C18",
+   "polarity": "POSITIVE",
+   "text": "positive definite at a site if and only if all three link counts are at least 1 there, at every one of the 64 site codes this family can reach"
+  },
+  {
+   "id": "C19",
+   "polarity": "POSITIVE",
+   "text": "weld 2's own FOUND-at-I7 witness is the declared probe whose induced record is (2, 2, 2), admissible by the same criterion, inside the same box, and not one of the 11 either"
+  },
+  {
+   "id": "C20",
+   "polarity": "NEGATIVE",
+   "text": "the directed comparator returns 0 at every one of the 8 arenas where it is defined"
+  },
+  {
+   "id": "C21",
+   "polarity": "NEGATIVE",
+   "text": "R3-ROW|COL|ANT leaves 9 of the 27 cells at zero"
   }
  ],
- "payload_sha256_12": "fd8fec76ec06",
+ "paper_coverage": {
+  "allowed": 671,
+  "fenced_blocks": 6,
+  "fenced_numerals": 126,
+  "scanned": 671,
+  "unregistered": []
+ },
+ "payload_sha256_12": "8996b66ab191",
  "polarity": [
   {
    "id": "P1",
@@ -1663,6 +1931,15 @@
    "path": "v14/paper-13-weld2-carrier-census.md",
    "pinned": "9cdb10472953",
    "why": "WELD 2 (terminal): the detector, the two readings, the RSQ choice standard, the crystal and walk controls, and the dead lists this unit cites and never re-runs."
+  },
+  {
+   "bytes": 199990,
+   "computed": "bd68497d4510",
+   "id": "A-W2REC",
+   "match": true,
+   "path": "v14/code/w2_census_receipt.json",
+   "pinned": "bd68497d4510",
+   "why": "WELD 2's COMMITTED RECEIPT: the FOUND-at-I7 declared probe on which weld 2 exhibited the FOUND branch.  Its induced record is READ from these bytes and recomputed here -- the precedent that fixes what reaching FOUND at this target has always meant."
   },
   {
    "bytes": 67216,
@@ -2101,6 +2378,78 @@
    "gate_evaluated_in_this_run": true,
    "late": false,
    "mutant": "MUT-PAPER-POLARITY"
+  },
+  {
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-WELD-FORGERY"
+  },
+  {
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-PAPER-HEAD-NUMERAL"
+  },
+  {
+   "gate": "G-PAPER-HEAD-VERBATIM",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-PAPER-HEAD"
+  },
+  {
+   "gate": "G-SWEEP-BOUND",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-SWEEP-UNBOUND"
+  },
+  {
+   "gate": "G-ANCHOR-CONSUMERS",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-CONSUMER-BINDING"
+  },
+  {
+   "gate": "G-SITEWISE-IDENTITY",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-SITEWISE"
+  },
+  {
+   "gate": "G-STRICTEST-READING",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-STRICTEST"
+  },
+  {
+   "gate": "G-W2-WITNESS",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-W2-WITNESS"
+  },
+  {
+   "gate": "G-COUNT-IMPLIES-WELD",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-COVERAGE-COUNT"
+  },
+  {
+   "gate": "G-READINGS",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-DIRECTED"
+  },
+  {
+   "gate": "G-FIBERS",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-FIBER-BASEMAP"
+  },
+  {
+   "gate": "G-R4-REGISTER",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-R4-REGISTER"
   }
  ],
  "schema": "isp/v14/r3-weld/1",
@@ -2122,6 +2471,7 @@
    "SEAL-VERDICT",
    "SEAL-COUNTS",
    "SEAL-PAPER-CLAIMS",
+   "SEAL-PAPER-COVERAGE",
    "SEAL-POLARITY",
    "SEAL-COVERAGE",
    "SEAL-REACHABILITY",
@@ -2139,6 +2489,8 @@
    "seal_manifest",
    "payload_sha256_12"
   ],
+  "declared_unsealed_carries_no_measurement": true,
+  "declared_unsealed_frozen": true,
   "rows": [
    {
     "path": "schema",
@@ -2150,7 +2502,7 @@
     "path": "provenance",
     "seal": "SEAL-PROVENANCE",
     "sealed_at_gate": "G-PROVENANCE",
-    "sha256_12": "eb7955a86057"
+    "sha256_12": "7f87d996f1ab"
    },
    {
     "path": "verbatim_anchors",
@@ -2162,7 +2514,7 @@
     "path": "family",
     "seal": "SEAL-FAMILY",
     "sealed_at_gate": "G-WINDOW-DISCLOSED",
-    "sha256_12": "6d742e389a13"
+    "sha256_12": "3502029ae85c"
    },
    {
     "path": "constructibility",
@@ -2186,7 +2538,7 @@
     "path": "geometry",
     "seal": "SEAL-GEOMETRY",
     "sealed_at_gate": "G-FRAGILITY-GEOM",
-    "sha256_12": "4c6120afe1d2"
+    "sha256_12": "7b4278f09877"
    },
    {
     "path": "anchors",
@@ -2198,13 +2550,13 @@
     "path": "i7",
     "seal": "SEAL-I7",
     "sealed_at_gate": "G-NOT-IN-FAMILY",
-    "sha256_12": "f7bad7bb5789"
+    "sha256_12": "23d7d1e26246"
    },
    {
     "path": "weld",
     "seal": "SEAL-WELD",
     "sealed_at_gate": "G-TWO-WAY",
-    "sha256_12": "de7c7932fbe0"
+    "sha256_12": "eeab1e8ca296"
    },
    {
     "path": "strata",
@@ -2222,7 +2574,7 @@
     "path": "verdict",
     "seal": "SEAL-VERDICT",
     "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
-    "sha256_12": "744e4d5a11d1"
+    "sha256_12": "952ba0a03b5b"
    },
    {
     "path": "counts",
@@ -2234,7 +2586,13 @@
     "path": "paper_claims",
     "seal": "SEAL-PAPER-CLAIMS",
     "sealed_at_gate": "G-PAPER-CLAIMS",
-    "sha256_12": "7b275ad6e4bc"
+    "sha256_12": "73a05fb13406"
+   },
+   {
+    "path": "paper_coverage",
+    "seal": "SEAL-PAPER-COVERAGE",
+    "sealed_at_gate": "G-PAPER-HEAD-VERBATIM",
+    "sha256_12": "fd1c09e77c7c"
    },
    {
     "path": "polarity",
@@ -2246,7 +2604,7 @@
     "path": "coverage",
     "seal": "SEAL-COVERAGE",
     "sealed_at_gate": "G-COVERAGE",
-    "sha256_12": "909c4cf4c0c0"
+    "sha256_12": "2bc69e164666"
    },
    {
     "path": "waiver_ledger",
@@ -2258,43 +2616,43 @@
     "path": "mutants",
     "seal": "SEAL-MUTANTS",
     "sealed_at_gate": "G-COVERAGE",
-    "sha256_12": "306b8f332b7d"
+    "sha256_12": "ef8de0d110de"
    },
    {
     "path": "mutant_sweep",
     "seal": "SEAL-MUTANT-SWEEP",
-    "sealed_at_gate": "G-COVERAGE",
-    "sha256_12": "bed938e239d8"
+    "sealed_at_gate": "G-SWEEP-BOUND",
+    "sha256_12": "5c0cbd7eedd0"
    },
    {
     "path": "reachability",
     "seal": "SEAL-REACHABILITY",
     "sealed_at_gate": "G-REACHABILITY",
-    "sha256_12": "d7a99ebbc819"
+    "sha256_12": "2d622927ce73"
    },
    {
     "path": "gates",
     "seal": "SEAL-GATES",
     "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-    "sha256_12": "0cabb35635de"
+    "sha256_12": "ec38199554a0"
    },
    {
     "path": "closing_gates",
     "seal": "SEAL-CLOSING",
     "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-    "sha256_12": "fa20c4c505fc"
+    "sha256_12": "bf571bf83428"
    },
    {
     "path": "totals",
     "seal": "SEAL-TOTALS",
     "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-    "sha256_12": "838a3153fb82"
+    "sha256_12": "7fcdbcfb9899"
    },
    {
     "path": "transcript_head",
     "seal": "SEAL-TRANSCRIPT",
     "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-    "sha256_12": "555fb82c4847"
+    "sha256_12": "136bd4fd3ad7"
    }
   ]
  },
@@ -2525,12 +2883,12 @@
  "totals": {
   "declared_unsealed": 4,
   "driven_records": 1212,
-  "gates": 65,
-  "mutants": 59,
+  "gates": 72,
+  "mutants": 71,
   "numeric_anchors": 6,
-  "seals": 26,
-  "seals_taken_when_totals_were_built": 22,
-  "sources": 13,
+  "seals": 27,
+  "seals_taken_when_totals_were_built": 23,
+  "sources": 14,
   "verbatim_anchors": 20,
   "waivers": 14,
   "weld_rows": 18
@@ -2540,9 +2898,9 @@
   "v14 R=3 WELD -- the arena, the positive geometry, and the weld",
   "==============================================================================",
   "",
-  "[SEC 1] PROVENANCE -- 13 pinned sources",
+  "[SEC 1] PROVENANCE -- 14 pinned sources",
   "  [PASS] G-PROVENANCE",
-  "         every one of the 13 declared sources is consumed at its pinned sha256-12, and the products of those bytes are what every later gate reads (#91: no subprocess, no version control, off-tree correct)",
+  "         every one of the 14 declared sources is consumed at its pinned sha256-12, and the products of those bytes are what every later gate reads (#91: no subprocess, no version control, off-tree correct)",
   "         evidence: mismatches: none",
   "  [PASS] G-EXACT-ARITHMETIC",
   "         an AST scan of this file finds no float literal and no call to float() or round(): every number in the census is an int or a Fraction, and the only bare reference to the float type is the isinstance test in the receipt's own recursive type scan",
@@ -2552,7 +2910,7 @@
   "         evidence: imports 9, shell-ish attributes 0",
   "  [PASS] G-READS-DECLARED",
   "         the set of files read at run time as SOURCES is EXACTLY the declared set -- no repository state outside it is touched",
-  "         evidence: read 13 distinct, declared 13, difference none",
+  "         evidence: read 14 distinct, declared 14, difference none",
   "",
   "[SEC 3] THE COMMITTED GRAMMAR, DRIVEN DIRECTLY",
   "  [PASS] G-SLICE-EXIT-FREE",
@@ -2741,8 +3099,8 @@
  ],
  "verdict": {
   "arena": "R3-ARENA-UNIT-GRADE-[n=1 at 27 of 27; det=3/4 at 9 of 9; POSDEF 9 of 9; FORCED 1040 of 1040; FULL-GROUP REACHABLE 1680]@WINDOW-1040-OF-432081216000+31-STRATUM-WITNESSES",
-  "geometry": "POSITIVE-GEOMETRY-[CEILING 9 ATTAINED at 72 of 21952000 GROUPING TRIPLES; 8 NEVER ATTAINED; I7-STRICT=POSDEF-9=FIELD-IDENTICALLY-1; DET-SPECTRUM 9 VALUES ON 197568000 CELLS]",
-  "weld": "WELD3-FOUND-[ACTOR->SITE|CO-DIVISION-ACTOR-PAIR->LINK|DIVISION-COUNT->n_l(x)]@EMBEDDING+QUOTIENT<ISOS=1296|QUOTIENT-MAPS=1296|FIBERS=1/1/1(SITE/LABEL/ORIENT)|INDUCED-RECORD=(1,1,1):q=[[1,-1/2],[-1/2,1]]:det=3/4:ADMISSIBLE-BY-HA-SYLVESTER:INSIDE-I7'S-OWN-361-POINT-DECLARED-BOX:NOT-ONE-OF-ITS-11-DECLARED-RECORDS -- SCOPE=THE-SATURATING-STRATUM(72-OF-21952000-GROUPING-TRIPLES-IN-THE-COMMITTED-NAMING;288-UP-TO-THE-SITE-ASSIGNMENT-THE-READING-DECLARES-FREE)|GRAMMAR-ADMISSIBLE-NOT-COMMITTED(d66'S-OWN-R=3-POINT-IS-COUNT-DEAD) -- CONTROLS=FOUND-AT-CRYSTAL@L2(ISOS=72,FIBERS-ALL-1)|FALSIFIER-FLIPS(UNMOTIVATED,SITE-FIBER=6)|EMPTY-AT-WALK(ARITY-DEAD:2-OBJECTS-AGAINST-9)|CRYSTAL-AT-I7(STRUCT-DEAD:DIAGONAL-0-AT-9-OF-9)|R3-FALSIFIER(STRUCT-DEAD) -- READINGS-DIFFER=DEAD-ROWS-DIE-AT-STRUCTURE-UNDER-EMBEDDING-AND-AT-COUNT-POSITIVITY-UNDER-QUOTIENT>"
+  "geometry": "POSITIVE-GEOMETRY-[CEILING 9 ATTAINED at 72 of 21952000 GROUPING TRIPLES; 8 NEVER ATTAINED; I7-STRICT=POSDEF-9=FIELD-IDENTICALLY-1 (SITEWISE: POSDEF(x) IFF min_l n_l(x)>=1, AT ALL 64 REACHABLE SITE CODES); DET-SPECTRUM 9 VALUES ON 197568000 CELLS]",
+  "weld": "WELD3-FOUND-[ACTOR->SITE|CO-DIVISION-ACTOR-PAIR->LINK|DIVISION-COUNT->n_l(x)]@EMBEDDING+QUOTIENT<ISOS=1296=|AUT(K333)||QUOTIENT-MAPS=1296|FIBERS=1/1/1(SITE/LABEL/ORIENT,BASE-MAP-INVARIANT)|INDUCED-RECORD=(1,1,1):q=[[1, -1/2], [-1/2, 1]]:det=3/4:ADMISSIBLE-BY-HA-SYLVESTER:INSIDE-I7'S-OWN-361-POINT-DECLARED-BOX:NOT-ONE-OF-ITS-11-DECLARED-RECORDS:THE-WELD-IS-TO-I7'S-RECORD-SPACE(WELD-2'S-OWN-FOUND-AT-I7-WITNESS-(2,2,2)-WAS-ADMISSIBLE-AND-UNDECLARED-TOO) -- SCOPE=THE-SATURATING-STRATUM(72-OF-21952000-GROUPING-TRIPLES-IN-THE-COMMITTED-NAMING;288-UP-TO-THE-SITE-ASSIGNMENT-THE-READING-DECLARES-FREE;STRATUM-WIDE-BY-THEOREM:ALL-72-CARRY-ONE-ARENA-IN-12-MULTISETS-EACH-WITNESSED)|GRAMMAR-ADMISSIBLE-NOT-COMMITTED(d66'S-OWN-R=3-POINT-SPENDS-27-INCIDENCES-ON-18-OF-27-CELLS-AND-IS-COUNT-DEAD)|COVERAGE-NOT-COUNT(46656-TRIPLES-PAY-THE-FULL-27;72-WELD;1-IN-648)|ROUTE-B-MOOTED-AT-THIS-TARGET-AND-CARRIER -- CONTROLS=FOUND-AT-CRYSTAL@L2(ISOS=72,FIBERS-ALL-1)|FALSIFIER-FLIPS(UNMOTIVATED,SITE-FIBER=6)|EMPTY-AT-WALK(ARITY-DEAD:2-OBJECTS-AGAINST-9)|CRYSTAL-AT-I7(STRUCT-DEAD:DIAGONAL-0-AT-9-OF-9)|R3-FALSIFIER(STRUCT-DEAD) -- READINGS-DIFFER=DEAD-ROWS-DIE-AT-STRUCTURE-UNDER-EMBEDDING-AND-AT-COUNT-POSITIVITY-UNDER-QUOTIENT|DIRECTED-COMPARATOR=0-AT-ALL-8-ARENAS|STRICTEST-READING(SITE-CARRIER-FIXED)=R3-SAT-SURVIVES-AT-n=1;R3-ROW|COL|ANT-DIES-AT-9-ZERO-CELLS>"
  },
  "waiver_ledger": [
   {
@@ -2836,6 +3194,8 @@
    "WELD2-SCISSORS-SCOPE((A,B)-CARRIER-AT-DEPTH<=4)",
    "WELD2-TRANSPORT-CARRIER-CELLS(MENU-113|CONG-185|EVENT-SUBSET|ULAM-PREFIX)"
   ],
+  "directed_comparator_max": 0,
+  "directed_comparator_rows": 8,
   "distinct_saturating_arenas": 1,
   "fate_distribution": {
    "ARITY-DEAD": 2,
@@ -2849,6 +3209,7 @@
    {
     "arena": "R3-SAT",
     "arity_repair": "NONE",
+    "base_maps_read": 1296,
     "count_cells": 27,
     "count_field": [
      [
@@ -2965,6 +3326,7 @@
     "count_min": 1,
     "declared_fate": "FOUND-candidate",
     "fate": "FOUND-candidate",
+    "fibers_base_map_invariant": true,
     "free_items": [],
     "inventory": {
      "I-DIRECTION-LABEL": 1,
@@ -2985,6 +3347,7 @@
    {
     "arena": "R3-SAT",
     "arity_repair": "NONE",
+    "base_maps_read": 1296,
     "count_cells": 27,
     "count_field": [
      [
@@ -3101,6 +3464,7 @@
     "count_min": 1,
     "declared_fate": "FOUND-candidate",
     "fate": "FOUND-candidate",
+    "fibers_base_map_invariant": true,
     "free_items": [],
     "inventory": {
      "I-DIRECTION-LABEL": 1,
@@ -3157,6 +3521,7 @@
    {
     "arena": "R3-ROW|COL|ANT-SATURATING-AFTER-RELABELLING",
     "arity_repair": "NONE",
+    "base_maps_read": 1296,
     "count_cells": 27,
     "count_field": [
      [
@@ -3273,6 +3638,7 @@
     "count_min": 1,
     "declared_fate": "FOUND-candidate",
     "fate": "FOUND-candidate",
+    "fibers_base_map_invariant": true,
     "free_items": [],
     "inventory": {
      "I-DIRECTION-LABEL": 1,
@@ -3293,6 +3659,7 @@
    {
     "arena": "R3-ROW|COL|ANT-SATURATING-AFTER-RELABELLING",
     "arity_repair": "NONE",
+    "base_maps_read": 1296,
     "count_cells": 27,
     "count_field": [
      [
@@ -3409,6 +3776,7 @@
     "count_min": 1,
     "declared_fate": "FOUND-candidate",
     "fate": "FOUND-candidate",
+    "fibers_base_map_invariant": true,
     "free_items": [],
     "inventory": {
      "I-DIRECTION-LABEL": 1,
@@ -3502,6 +3870,7 @@
    {
     "arena": "CRYSTAL/DOUBLE-GRID(3,2)@L2",
     "arity_repair": "NONE",
+    "base_maps_read": 72,
     "count_cells": 18,
     "count_field": [
      [
@@ -3582,6 +3951,7 @@
     "count_min": 2,
     "declared_fate": "FOUND-candidate",
     "fate": "FOUND-candidate",
+    "fibers_base_map_invariant": true,
     "free_items": [],
     "inventory": {
      "I-DIRECTION-LABEL": 1,
@@ -3602,6 +3972,7 @@
    {
     "arena": "CRYSTAL/DOUBLE-GRID(3,2)@L2",
     "arity_repair": "NONE",
+    "base_maps_read": 72,
     "count_cells": 18,
     "count_field": [
      [
@@ -3682,6 +4053,7 @@
     "count_min": 2,
     "declared_fate": "FOUND-candidate",
     "fate": "FOUND-candidate",
+    "fibers_base_map_invariant": true,
     "free_items": [],
     "inventory": {
      "I-DIRECTION-LABEL": 1,
@@ -3738,6 +4110,7 @@
    {
     "arena": "CRYSTAL-INHOMOGENEOUS@L2",
     "arity_repair": "NONE",
+    "base_maps_read": 72,
     "count_cells": 18,
     "count_field": [
      [
@@ -3818,6 +4191,7 @@
     "count_min": 1,
     "declared_fate": "UNMOTIVATED",
     "fate": "UNMOTIVATED",
+    "fibers_base_map_invariant": true,
     "free_items": [
      "I-DIRECTION-LABEL",
      "I-SITE-ASSIGNMENT"
@@ -3841,6 +4215,7 @@
    {
     "arena": "CRYSTAL-INHOMOGENEOUS@L2",
     "arity_repair": "NONE",
+    "base_maps_read": 72,
     "count_cells": 18,
     "count_field": [
      [
@@ -3921,6 +4296,7 @@
     "count_min": 1,
     "declared_fate": "UNMOTIVATED",
     "fate": "UNMOTIVATED",
+    "fibers_base_map_invariant": true,
     "free_items": [
      "I-DIRECTION-LABEL",
      "I-SITE-ASSIGNMENT"
@@ -3972,6 +4348,21 @@
    }
   ],
   "saturating_arenas_driven": 72,
+  "strictest_reading": {
+   "R3-ROW|COL|ANT": {
+    "cells_at_zero": 9,
+    "max": 1,
+    "min": 0,
+    "survives": false
+   },
+   "R3-SAT": {
+    "cells_at_zero": 0,
+    "max": 1,
+    "min": 1,
+    "survives": true
+   },
+   "reading": "SITE-CARRIER-FIXED (the constructor's own actor -> Z_3^2 parse; no site freedom at all)"
+  },
   "walk_control": {
    "depth": 30,
    "divisions": 4,

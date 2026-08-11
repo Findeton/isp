@@ -11,11 +11,11 @@ R3-ARENA-UNIT-GRADE-[n=1 at 27 of 27; det=3/4 at 9 of 9; POSDEF 9 of 9; FORCED 1
 ```
 
 ```
-POSITIVE-GEOMETRY-[CEILING 9 ATTAINED at 72 of 21952000 GROUPING TRIPLES; 8 NEVER ATTAINED; I7-STRICT=POSDEF-9=FIELD-IDENTICALLY-1; DET-SPECTRUM 9 VALUES ON 197568000 CELLS]
+POSITIVE-GEOMETRY-[CEILING 9 ATTAINED at 72 of 21952000 GROUPING TRIPLES; 8 NEVER ATTAINED; I7-STRICT=POSDEF-9=FIELD-IDENTICALLY-1 (SITEWISE: POSDEF(x) IFF min_l n_l(x)>=1, AT ALL 64 REACHABLE SITE CODES); DET-SPECTRUM 9 VALUES ON 197568000 CELLS]
 ```
 
 ```
-WELD3-FOUND-[ACTOR->SITE|CO-DIVISION-ACTOR-PAIR->LINK|DIVISION-COUNT->n_l(x)]@EMBEDDING+QUOTIENT<ISOS=1296|QUOTIENT-MAPS=1296|FIBERS=1/1/1(SITE/LABEL/ORIENT)|INDUCED-RECORD=(1,1,1):q=[[1,-1/2],[-1/2,1]]:det=3/4:ADMISSIBLE-BY-HA-SYLVESTER:INSIDE-I7'S-OWN-361-POINT-DECLARED-BOX:NOT-ONE-OF-ITS-11-DECLARED-RECORDS -- SCOPE=THE-SATURATING-STRATUM(72-OF-21952000-GROUPING-TRIPLES-IN-THE-COMMITTED-NAMING;288-UP-TO-THE-SITE-ASSIGNMENT-THE-READING-DECLARES-FREE)|GRAMMAR-ADMISSIBLE-NOT-COMMITTED(d66'S-OWN-R=3-POINT-IS-COUNT-DEAD) -- CONTROLS=FOUND-AT-CRYSTAL@L2(ISOS=72,FIBERS-ALL-1)|FALSIFIER-FLIPS(UNMOTIVATED,SITE-FIBER=6)|EMPTY-AT-WALK(ARITY-DEAD:2-OBJECTS-AGAINST-9)|CRYSTAL-AT-I7(STRUCT-DEAD:DIAGONAL-0-AT-9-OF-9)|R3-FALSIFIER(STRUCT-DEAD) -- READINGS-DIFFER=DEAD-ROWS-DIE-AT-STRUCTURE-UNDER-EMBEDDING-AND-AT-COUNT-POSITIVITY-UNDER-QUOTIENT>
+WELD3-FOUND-[ACTOR->SITE|CO-DIVISION-ACTOR-PAIR->LINK|DIVISION-COUNT->n_l(x)]@EMBEDDING+QUOTIENT<ISOS=1296=|AUT(K333)||QUOTIENT-MAPS=1296|FIBERS=1/1/1(SITE/LABEL/ORIENT,BASE-MAP-INVARIANT)|INDUCED-RECORD=(1,1,1):q=[[1, -1/2], [-1/2, 1]]:det=3/4:ADMISSIBLE-BY-HA-SYLVESTER:INSIDE-I7'S-OWN-361-POINT-DECLARED-BOX:NOT-ONE-OF-ITS-11-DECLARED-RECORDS:THE-WELD-IS-TO-I7'S-RECORD-SPACE(WELD-2'S-OWN-FOUND-AT-I7-WITNESS-(2,2,2)-WAS-ADMISSIBLE-AND-UNDECLARED-TOO) -- SCOPE=THE-SATURATING-STRATUM(72-OF-21952000-GROUPING-TRIPLES-IN-THE-COMMITTED-NAMING;288-UP-TO-THE-SITE-ASSIGNMENT-THE-READING-DECLARES-FREE;STRATUM-WIDE-BY-THEOREM:ALL-72-CARRY-ONE-ARENA-IN-12-MULTISETS-EACH-WITNESSED)|GRAMMAR-ADMISSIBLE-NOT-COMMITTED(d66'S-OWN-R=3-POINT-SPENDS-27-INCIDENCES-ON-18-OF-27-CELLS-AND-IS-COUNT-DEAD)|COVERAGE-NOT-COUNT(46656-TRIPLES-PAY-THE-FULL-27;72-WELD;1-IN-648)|ROUTE-B-MOOTED-AT-THIS-TARGET-AND-CARRIER -- CONTROLS=FOUND-AT-CRYSTAL@L2(ISOS=72,FIBERS-ALL-1)|FALSIFIER-FLIPS(UNMOTIVATED,SITE-FIBER=6)|EMPTY-AT-WALK(ARITY-DEAD:2-OBJECTS-AGAINST-9)|CRYSTAL-AT-I7(STRUCT-DEAD:DIAGONAL-0-AT-9-OF-9)|R3-FALSIFIER(STRUCT-DEAD) -- READINGS-DIFFER=DEAD-ROWS-DIE-AT-STRUCTURE-UNDER-EMBEDDING-AND-AT-COUNT-POSITIVITY-UNDER-QUOTIENT|DIRECTED-COMPARATOR=0-AT-ALL-8-ARENAS|STRICTEST-READING(SITE-CARRIER-FIXED)=R3-SAT-SURVIVES-AT-n=1;R3-ROW|COL|ANT-DIES-AT-9-ZERO-CELLS>
 ```
 
 Between delivery and adjudication every headline reading here is a
@@ -134,7 +134,10 @@ licenses that is the same equality U4b used, re-measured here: for every one
 of the 1040 driven records the link field read off the DRIVEN record — the
 footprints taken from the layer's own `regs_of` — equals the field the
 combinatorial route computes from the schedule alone, and so does the
-initiator field. **1040 records compared, 0 mismatches.**
+initiator field. **1040 records compared, 0 mismatches.** Those 1040 records
+span **130 distinct grouping triples** of the 21,952,000 — the object the
+exhaustive columns quantify over — and the 130 include all 72 that carry the
+verdict.
 
 ## 3. Stage 1 — the arena, unit-grade
 
@@ -272,11 +275,22 @@ I7-STRICT triples every such edit is taken, and **none of the 5,832
 single-transposition grouping edits leaves the triple I7-STRICT**.
 
 Read together these are the arena's sharpest structural statement. **Each
-saturation is destroyed by the edit that moves its own variable and is
-untouched by the edit that moves the other's.** The crystal is a property of
-the seeds and dies to a re-seating while the groupings are held; the geometry
-is a property of the groupings and dies to a transposition while the seeds
-range over all 19,683 choices without moving it by one cell.
+saturation is destroyed by the edit that moves its own variable.** The crystal
+is a property of the seeds and dies to a re-seating while the groupings are
+held; the geometry is a property of the groupings and dies to a transposition
+while the seeds range over all 19,683 choices without moving it by one cell.
+
+Three of the four cells are measured — 151,632 of 151,632, 5,832 of 5,832, and
+the 19,683-fold seed invariance. The fourth is not run and is not claimed: a
+grouping transposition can move a seed out of its own group, so the edited
+schedule is not always well formed, and the sense in which the crystal is
+untouched by it is that the seed *sets* are held fixed as sets. And the
+content of the contrast is in the two destruction columns, not in the
+invariances: at this generator a division event's footprint **is** its
+conflict group, so the geometry is a function of the groupings by
+construction and the period a function of the seed sets, and the measurements
+confirm that rather than discover it. A successor that changes the count
+generator loses both invariances.
 
 ## 4. Stage 2 — the positive-geometry census
 
@@ -303,7 +317,7 @@ permits 9 and 9 is attained: **the attained positive-definiteness ceiling is
 carries a result nobody asked for — **8 positive-definite sites never occur**
 — so the ceiling is attained or missed by at least two.
 
-### 4.2 The rigidity theorem
+### 4.2 The rigidity theorem, and the sitewise identity under it
 
 A round deposits at most 9 link incidences and a positive-definite site needs
 3, so 9 positive-definite sites need all 27 — every round saturating, every
@@ -321,9 +335,22 @@ packed exhaustive census over all 21,952,000 triples and a direct search over
 the 36 saturating partitions alone — carrying **1,417,176** schedules.
 
 Of those 12 multisets exactly **one** is the three link-direction parallel
-classes the effectus exhibited; the other **11** use conflict groups that are
-not lines of AG(2,3) at all. The exhibited configuration is one arrangement in
-twelve, not the arrangement.
+classes the effectus exhibited; the other **11** each contain conflict groups
+that are not lines of AG(2,3). The exhibited configuration is one arrangement
+in twelve, not the arrangement.
+
+The theorem is stronger than the budget argument that reaches it, and the
+census measures the stronger form. Write n_(1,0), n_(0,1), n_(1,1) for the
+three link counts at a site; three rounds deposit at most one incidence per
+cell, so no count exceeds 3 and a site's whole state is one of 64 codes. Over
+all 64 the form is **positive definite at a site if and only if all three link
+counts are at least 1 there, at every one of the 64 site codes this family can
+reach** — checked code by code, no counterexample. So POSDEF and I7-STRICT are
+not two predicates that happen to coincide at the top of the ladder: they
+coincide **sitewise**, at every site of every one of the 21,952,000 triples,
+and the whole positive-definite distribution above is therefore also the whole
+strict distribution. The 27-incidence budget is how the ceiling is *reached*;
+the sitewise identity is why the ceiling *is* the strict class.
 
 ### 4.3 The determinant spectrum
 
@@ -385,7 +412,12 @@ and under the **quotient** reading a surjection of the realised objects onto
 the sites carrying every realised edge onto a declared displacement. Every
 row below is stamped with the reading it was decided under. Admissibility is
 undirected on the kill side and the admit side alike, for weld 2's reason; the
-directed comparator is carried and reported.
+directed comparator is carried, and here is its number — **the directed
+comparator returns 0 at every one of the 8 arenas where it is defined**, the
+two FOUND rows included. It separates nothing anywhere, which is exactly why
+HA §14 requirement 3 forbids it as the admit test, and it is also why
+reporting it moves no verdict: FOUND holds at the undirected reading, and the
+number that would have made the directed one an alternative is zero.
 
 The site and link generators are the one cell weld 2 left live at a record
 arena — site ← ACTOR, link ← the co-division actor pair, count ← the division
@@ -396,13 +428,23 @@ arena-free Γ objects, the naive 9↔9, weld 2's scissors scope — the (A,B)
 carrier at depth ≤ 4 — and weld 2's transport-carrier cells. No row of this
 census re-derives one.
 
-### 5.2 One arena, measured rather than assumed
+### 5.2 One arena, measured rather than assumed — and the verdict is stratum-wide
 
 All **72** I7-STRICT grouping triples are driven, and every one of them
 carries the **identical** co-division arena: the same nine site objects, the
 same 27 unordered realised pairs, the same count 1 on every one of them. The
 census below therefore has one arena and not seventy-two, and that is a
 measurement.
+
+It is also the reason the FOUND row below is not a property of the one
+arrangement the effectus exhibited. The 72 fall into 12 multisets and every
+one of the 72 is driven, so every multiset carries a driven witness; and
+§4.2's rigidity theorem says why the measurement could not have come out any
+other way. Any I7-STRICT triple covers all 27 cells exactly once, so its
+realised co-division relation is forced to be exactly the target's own Cayley
+incidence — window or no window, driving or no driving. **FOUND at this arena
+is stratum-wide by theorem, not window-relative**, and the window's job is
+only to show that the grammar drives the schedules that realise it.
 
 ### 5.3 The census
 
@@ -446,6 +488,30 @@ At the saturating arena the detector returns **FOUND** at both readings.
   six direction relabellings and both orientations collapse to one field.
 - The standard is not vacuous here, because the declared falsifier's
   site-assignment fiber is **6** and its direction-label fiber is **2**.
+- The label and orient fibers are read at the base map the actor-name order
+  fixes, so their independence of that choice is measured rather than assumed:
+  both are re-read at every one of the 1,296 base maps and both are constant.
+
+**Where the 1,296 comes from, said plainly.** The two readings are opposite
+inclusions — the embedding reading asks that the realised relation *contain*
+the target's incidence, the quotient reading that it be *contained in* it — so
+FOUND at both means the driven record's co-division relation **is** I7's own
+Cayley incidence, at equality. That incidence is the complete tripartite graph
+on three parts of three, whose automorphism group has order 3! × (3!)^3 =
+1,296. The map count is therefore the target's own symmetry, forced once
+equality holds, and the three fibers are 1 for the same reason. It is one
+datum presented three ways, not three independent measurements agreeing; what
+is new is that a **driven** record realises the equality.
+
+**And FOUND at the primary arena does not need the site assignment to be free
+at all.** Under the strictest reading available — the site carrier fixed to
+the constructor's own actor → Z_3^2 parse, which is inventory item 3 and which
+this unit calls forced — the saturating record still induces a strictly
+positive field, 1 at every one of the 27 cells. The same reading kills the
+relabelling row: **R3-ROW|COL|ANT leaves 9 of the 27 cells at zero**, because
+the ANT class deposits nothing on any I7 link in fixed coordinates. The free
+site assignment carries the second FOUND row and nothing else, exactly as
+§4.4 and deviation 6 price it.
 
 ### 5.5 What the weld lands on
 
@@ -466,6 +532,29 @@ That distinction is the honest scope of this result. **The weld lands inside
 I7's admissible class and outside its declared list.** The corpus's first
 grammar record to induce an admissible I7 geometry induces a record I7 never
 wrote down.
+
+**What that distinction is worth is settled by the precedent, and the
+precedent is measured, not argued.** The object which fixed what reaching
+FOUND at this target means is the one weld 2 reached it on: its declared
+probe. Weld 2's committed receipt is a pinned source here, and its probe's
+count field is read from those bytes and put through this unit's own readout.
+Measured: **weld 2's own FOUND-at-I7 witness is the declared probe whose
+induced record is (2, 2, 2), admissible by the same criterion, inside the same
+box, and not one of the 11 either.** So the branch weld 2 reserved was never a
+branch onto
+a declared record. **The weld is to I7's record space — its lattice, its
+positivity axiom and its Sylvester criterion — and the eleven are named
+witnesses inside that space rather than the gate.** This unit lands the same
+species of object, on a driven grammar record instead of a probe.
+
+What the undeclaredness costs is downstream and should travel with the result.
+`(1,1,1)` is the minimal interior point of the box: every one of its 27
+intervals carries count 1, and by paper-04's own split fiber ∏(n_l − 1) a
+count-1 interval cannot be split into two strictly positive parts. The landing
+record is therefore **unsplittable, split fiber 0 at all 27 intervals**, so
+the refinement grammar, the stochastic split and the renewal-transport kernel
+are empty on it. **The weld reaches a record; it does not yet reach a law over
+records.**
 
 **The induced form is NAMED AND NOT READ: q = [[1, -1/2], [-1/2, 1]] is a
 positive definite Euclidean form on a nine-site lattice, it is not a
@@ -501,7 +590,7 @@ candidate's count function is built from the link relation alone and is a
 the census is **structural, not measured**, and the classifier's positive
 value is exercised only by the declared probe.
 
-### 5.7 Necessary, and — here — sufficient
+### 5.7 Necessary, not sufficient — and what is sufficient is coverage
 
 The effectus's demand (iv) asked for an explicit statement that
 
@@ -509,18 +598,31 @@ The effectus's demand (iv) asked for an explicit statement that
 > sufficient, for the weld.
 
 **Necessity is a theorem and it is measured**: all 72 I7-STRICT triples carry
-exactly 27 incidences, and every arena in the census that deposits fewer dies
-— the committed R = 3 grid deposits 18 and is COUNT-DEAD.
+exactly 27 incidences, and no schedule of this budget can carry more.
 
-**Sufficiency is what this arena actually returns, and the honest report is
-that it holds here.** At this candidate family and this target, 27 incidences
-force the field to be identically 1, the co-division relation to be the
-target's own Cayley incidence, and every fiber to be 1 — so the count
-condition entails the rest. That is a statement about *this* arena and *this*
-one-cell candidate family. Nothing measured here says the count is sufficient
-at any other carrier, at any other target, or for any candidate family with a
-generator this census does not run; §5.1's dead list is the record of what is
-not being claimed.
+**The count alone is not sufficient, and the census contains the
+counterexample.** Every triple of saturating partitions pays in full:
+**46,656 ordered grouping triples deposit the full 27 incidences and exactly
+72 of them weld, one in 648**. d66's own R = 3 point is one of the others. It
+does not deposit fewer than 27 — it **spends all 27 of its incidences on 18 of
+the 27 cells**, doubling nine row cells and leaving the nine diagonal cells at
+zero, and it is COUNT-DEAD for exactly that reason.
+
+**What is necessary and, at this candidate family and this target, sufficient
+is the coverage condition: every one of the 27 cells covered at least once.**
+That condition is I7-STRICT itself, and §4.2's rigidity theorem then forces
+the field to be identically 1, the co-division relation to be the target's own
+Cayley incidence, and every fiber to be 1.
+
+Read that way the sequence the two budgets make is the result. At R = 2 the
+**budget** was binding: 18 incidences against a requirement of 27, a genuine
+resource deficit, and the class is empty. At R = 3 the budget stops binding —
+46,656 triples pay it in full — and the binding constraint becomes a perfect
+matching of incidences onto cells. That is what the third round actually buys,
+and it is what makes the 72 meaningful. Nothing measured here says coverage is
+sufficient at any other carrier, at any other target, or for any candidate
+family with a generator this census does not run; §5.1's dead list is the
+record of what is not being claimed.
 
 ## 6. The walls
 
@@ -547,8 +649,12 @@ catalog records that
 > (BHS)
 
 and these schedules are finite-valency by construction, so running the test
-would manufacture a false negative. None is run: no sprinkling, no boost, no
-rapidity, no frame appears in any measurement above.
+would manufacture a false negative. None is run — and the abstention is
+measured rather than asserted. The gate scans this run's whole measurement
+layer, every measured receipt key together with the statement and evidence of
+every non-wall gate the run evaluated, for `boost`, `rapidity`, `sprinkl` and
+`frame`, and finds none of them; its falsifier writes a sprinkling-grade boost
+reading into that layer and dies there.
 
 **Kleitman–Rothschild — every dimension reading carries a height control.**
 The catalog's carry is that
@@ -557,18 +663,26 @@ The catalog's carry is that
 
 and this unit takes no dimension reading at all: no chart width, no
 Myrheim–Meyer estimate, no max-shatter dimension. The height control is
-therefore not owed and not manufactured, and the gate is the conjunction.
+therefore not owed and not manufactured — and, as at the BHS wall, that is a
+scan of the same measurement layer rather than a declaration: none of
+`myrheim`, `meyer`, `shatter`, `chart width`, `dimension` or `height` occurs
+in it, so there is no reading for a height control to be owed against.
 
 **The diagonal — measured here, and read no further.** The (1,1) link is
 populated by every saturating arrangement and is exactly what lifts the
 determinant off zero; that is this unit's point. It is read as a direction on
 a nine-site lattice and as nothing else. Cosmological readings stay barred and
-no continuum claim is made anywhere in this unit.
+no continuum claim is made anywhere in this unit — again measured on the same
+surface, which contains none of `cosmolog`, `continuum`, `horizon`,
+`redshift`, `universe` or `expansion`.
 
 **The Lorentzian resonance, NAMED.** A reader arriving from the relativity
 line will hear "signature" in a determinant that has just gone positive. The
 naming sentence in §5.5 is mandatory and a gate requires it to be present:
-silence is how a resonance becomes governance.
+silence is how a resonance becomes governance. The falsifier deletes the
+sentence from the object under test, and the L-1 falsifier injects the
+retracted sentence into it line-wrapped and blockquoted, so both wall gates
+are exercised against the text they police rather than against a flag.
 
 ## 7. Choice inventory
 
@@ -579,7 +693,7 @@ silence is how a resonance becomes governance.
 | 3 | the site carrier: actors to Z_3^2 | **forced** | 1 | the constructor's own actor naming |
 | 4 | admissibility: the layer's own menu | **forced** | 1 | d42b1 driven directly, no menu law re-typed |
 | 5 | the I7 readout | **forced** | 1 | HA §3.2, matched verbatim and recomputed |
-| 6 | R = 3 rather than R = 2 | **declared** | 1 | the pin; the demand the U4b adjudication registered |
+| 6 | R = 3 rather than R = 2 | **declared, VERDICT-DETERMINING** | 1 | the pin; the demand the U4b adjudication registered — the counterfactual is measured in-unit at §4.5, where the same pipeline returns I7-STRICT empty |
 | 7 | the driven window W3 | **declared** | 1 | §2.3, disclosed in the head |
 | 8 | the seed menu: two canonical transversals | **declared** | 1 | §2.3; the exhaustive columns do not use it |
 | 9 | the reading axis (EMBEDDING / QUOTIENT) | **declared** | 2 | weld 2's, carried unchanged; every row stamped |
@@ -602,11 +716,11 @@ R3-ARENA-UNIT-GRADE-[n=1 at 27 of 27; det=3/4 at 9 of 9; POSDEF 9 of 9; FORCED 1
 ```
 
 ```
-POSITIVE-GEOMETRY-[CEILING 9 ATTAINED at 72 of 21952000 GROUPING TRIPLES; 8 NEVER ATTAINED; I7-STRICT=POSDEF-9=FIELD-IDENTICALLY-1; DET-SPECTRUM 9 VALUES ON 197568000 CELLS]
+POSITIVE-GEOMETRY-[CEILING 9 ATTAINED at 72 of 21952000 GROUPING TRIPLES; 8 NEVER ATTAINED; I7-STRICT=POSDEF-9=FIELD-IDENTICALLY-1 (SITEWISE: POSDEF(x) IFF min_l n_l(x)>=1, AT ALL 64 REACHABLE SITE CODES); DET-SPECTRUM 9 VALUES ON 197568000 CELLS]
 ```
 
 ```
-WELD3-FOUND-[ACTOR->SITE|CO-DIVISION-ACTOR-PAIR->LINK|DIVISION-COUNT->n_l(x)]@EMBEDDING+QUOTIENT<ISOS=1296|QUOTIENT-MAPS=1296|FIBERS=1/1/1(SITE/LABEL/ORIENT)|INDUCED-RECORD=(1,1,1):q=[[1,-1/2],[-1/2,1]]:det=3/4:ADMISSIBLE-BY-HA-SYLVESTER:INSIDE-I7'S-OWN-361-POINT-DECLARED-BOX:NOT-ONE-OF-ITS-11-DECLARED-RECORDS -- SCOPE=THE-SATURATING-STRATUM(72-OF-21952000-GROUPING-TRIPLES-IN-THE-COMMITTED-NAMING;288-UP-TO-THE-SITE-ASSIGNMENT-THE-READING-DECLARES-FREE)|GRAMMAR-ADMISSIBLE-NOT-COMMITTED(d66'S-OWN-R=3-POINT-IS-COUNT-DEAD) -- CONTROLS=FOUND-AT-CRYSTAL@L2(ISOS=72,FIBERS-ALL-1)|FALSIFIER-FLIPS(UNMOTIVATED,SITE-FIBER=6)|EMPTY-AT-WALK(ARITY-DEAD:2-OBJECTS-AGAINST-9)|CRYSTAL-AT-I7(STRUCT-DEAD:DIAGONAL-0-AT-9-OF-9)|R3-FALSIFIER(STRUCT-DEAD) -- READINGS-DIFFER=DEAD-ROWS-DIE-AT-STRUCTURE-UNDER-EMBEDDING-AND-AT-COUNT-POSITIVITY-UNDER-QUOTIENT>
+WELD3-FOUND-[ACTOR->SITE|CO-DIVISION-ACTOR-PAIR->LINK|DIVISION-COUNT->n_l(x)]@EMBEDDING+QUOTIENT<ISOS=1296=|AUT(K333)||QUOTIENT-MAPS=1296|FIBERS=1/1/1(SITE/LABEL/ORIENT,BASE-MAP-INVARIANT)|INDUCED-RECORD=(1,1,1):q=[[1, -1/2], [-1/2, 1]]:det=3/4:ADMISSIBLE-BY-HA-SYLVESTER:INSIDE-I7'S-OWN-361-POINT-DECLARED-BOX:NOT-ONE-OF-ITS-11-DECLARED-RECORDS:THE-WELD-IS-TO-I7'S-RECORD-SPACE(WELD-2'S-OWN-FOUND-AT-I7-WITNESS-(2,2,2)-WAS-ADMISSIBLE-AND-UNDECLARED-TOO) -- SCOPE=THE-SATURATING-STRATUM(72-OF-21952000-GROUPING-TRIPLES-IN-THE-COMMITTED-NAMING;288-UP-TO-THE-SITE-ASSIGNMENT-THE-READING-DECLARES-FREE;STRATUM-WIDE-BY-THEOREM:ALL-72-CARRY-ONE-ARENA-IN-12-MULTISETS-EACH-WITNESSED)|GRAMMAR-ADMISSIBLE-NOT-COMMITTED(d66'S-OWN-R=3-POINT-SPENDS-27-INCIDENCES-ON-18-OF-27-CELLS-AND-IS-COUNT-DEAD)|COVERAGE-NOT-COUNT(46656-TRIPLES-PAY-THE-FULL-27;72-WELD;1-IN-648)|ROUTE-B-MOOTED-AT-THIS-TARGET-AND-CARRIER -- CONTROLS=FOUND-AT-CRYSTAL@L2(ISOS=72,FIBERS-ALL-1)|FALSIFIER-FLIPS(UNMOTIVATED,SITE-FIBER=6)|EMPTY-AT-WALK(ARITY-DEAD:2-OBJECTS-AGAINST-9)|CRYSTAL-AT-I7(STRUCT-DEAD:DIAGONAL-0-AT-9-OF-9)|R3-FALSIFIER(STRUCT-DEAD) -- READINGS-DIFFER=DEAD-ROWS-DIE-AT-STRUCTURE-UNDER-EMBEDDING-AND-AT-COUNT-POSITIVITY-UNDER-QUOTIENT|DIRECTED-COMPARATOR=0-AT-ALL-8-ARENAS|STRICTEST-READING(SITE-CARRIER-FIXED)=R3-SAT-SURVIVES-AT-n=1;R3-ROW|COL|ANT-DIES-AT-9-ZERO-CELLS>
 ```
 
 Read out. The weld route's exact demand is met: a schedule the committed
@@ -617,20 +731,40 @@ free items.
 
 Three qualifications travel with it and none of them is optional. The
 schedule is **grammar-admissible, not committed**: d66's own R = 3 point
-alternates row and column, deposits 18 incidences and is COUNT-DEAD; the
-saturating stratum is 72 grouping triples of 21,952,000 in the committed
-naming and 288 up to the site assignment the reading itself declares free.
-The record it induces is **admissible but undeclared**: inside I7's own
-361-point box, outside its 11-record list. And the geometry, unlike the
-crystal, is **not a property of the whole schedule but only of its groupings**
-— untouched by all 19,683 seed choices and destroyed by every one of the 5,832
-minimal grouping edits.
+alternates row and column, spends all 27 of its incidences on 18 of the 27
+cells and is COUNT-DEAD; the saturating stratum is 72 grouping triples of
+21,952,000 in the committed naming and 288 up to the site assignment the
+reading itself declares free. The record it induces is **admissible but
+undeclared**: inside I7's own 361-point box, outside its 11-record list — as
+weld 2's own FOUND-at-I7 witness was, which is why the weld is to I7's record
+space rather than to its list. And the geometry, unlike the crystal, is **not
+a property of the whole schedule but only of its groupings** — untouched by
+all 19,683 seed choices and destroyed by every one of the 5,832 minimal
+grouping edits.
+
+FOUND is not a property of the arrangement the effectus exhibited. All 72
+I7-STRICT triples are driven and every one of them carries the identical
+co-division arena, in 12 multisets each of which is given a driven witness, so
+the verdict is **stratum-wide by theorem** rather than window-relative: the
+rigidity theorem forces any I7-STRICT triple to realise exactly the target's
+own Cayley incidence, and the detector cannot then return anything but FOUND.
+
+**Route B is mooted at this target and this carrier — dominated, not
+refuted.** Weld 2 priced a Route-B declaration at a site set, a direction
+labelling, an orientation and a strictly positive diagonal count that no
+committed crystal supplies. All four are supplied here by derivation from a
+driven record, with the label and orientation fibers measured at 1 rather than
+declared, so no successor buys the more expensive object at this target. Route
+B stays live where this unit does not reach: I7's eleven declared records at
+R = 3, the arity-dead carriers, and the committed constructions.
 
 What has changed since weld 2 is precise. Weld 2 found no grammar record that
 reaches FOUND at I7's target and had to exhibit that branch on a declared
 probe. This unit exhibits it on a driven grammar record with the same 1296
-site assignments the probe had. The obstruction weld 2 measured was real and
-it was arithmetic; three rounds pay for it exactly.
+site assignments the probe had — which is the target's own automorphism count
+and is forced once the two readings meet at equality. The obstruction weld 2
+measured was real and it was arithmetic; three rounds pay the **budget**, and
+only the saturating groupings pay the **coverage**.
 
 ## 9. Deviations, priced
 
@@ -678,6 +812,28 @@ it was arithmetic; three rounds pay for it exactly.
    the saturating stratum because all 72 driven arenas are byte-identical as
    relations. That identity is gated, not assumed.
 
+8. **The off-tree leg, disclosed and now discharged.** The structural claim
+   that this run is correct off-tree and with no version control present is
+   sound by construction — every source path is resolved from the module's own
+   location and never from the working directory, no subprocess is invoked,
+   and the read set is gated — but an earlier off-tree execution of a
+   pre-final code state failed on an accounting defect and was disclosed
+   rather than repaired in place. The leg has since been executed twice, once
+   by an external reviewer against the code state that reviewer held and once
+   for this delivery: in a mirror holding only the pinned sources and the
+   paper, with no version control anywhere on the path, on a hostile PATH and
+   under a different hash seed. Both runs passed every gate and reproduced
+   their delivered artifacts byte for byte. The leg is cited here rather than
+   left in the ledger, because the paper is the citable artifact.
+
+9. **The R = 4 register probe is this unit's, not the pin's, and it is
+   combinatorial only.** §11 registers the successor question with a number on
+   it — G-FLAT reached at 276 of the 1,679,616 ordered quadruples of
+   saturating partitions — because a successor inheriting an open question
+   should inherit its size. Price: no menu is driven at four rounds, so
+   nothing there is claimed constructible, and the row is stamped
+   REGISTERED-NOT-CLAIMED in the receipt as well as in §11.
+
 ## 10. The instrument
 
 `v14/code/r3_weld_exact.py`, with the #82 CLI contract: a delivery run that is
@@ -690,37 +846,150 @@ CLI gate's own falsifier.
 Arithmetic is exact end to end: an AST scan of the file and a recursive type
 scan of the emitted receipt are gates. Counts are computed, never typed.
 Gates bind objects rather than aggregates: the constructibility, driven-field,
-unit-grade, homogeneity, affine, fragility, rigidity and census-row gates each
-evaluate every object against its own invariant. Provenance is by pinned sha
-with the products gated: 13 sources are read at run time, the set of reads is
-required to be exactly the declared set, and no subprocess of any kind is
-invoked, so the run is correct off-tree and with no version control present.
-The verbatim anchors each clear a length floor and each name the gate that
-consumes them; every text gate whitespace-normalises, ASCII-folds **and strips
-markdown line prefixes**, so a needle spanning a block quote or a numbered
-list cannot be evaded by re-wrapping.
+unit-grade, homogeneity, affine, fragility, rigidity, sitewise and census-row
+gates each evaluate every object against its own invariant. Provenance is by
+pinned sha with the products gated: 14 sources are read at run time, the set
+of reads is required to be exactly the declared set, and no subprocess of any
+kind is invoked, so the run is correct off-tree and with no version control
+present. The verbatim anchors each clear a length floor and each name the gate
+that consumes them, and each named gate is required to be in the declared
+registry **and** in this run's own evaluated ledger, so the naming cannot
+drift into a gate that was removed or never reached. Every text gate
+whitespace-normalises, ASCII-folds **and strips markdown line prefixes**, so a
+needle spanning a block quote or a numbered list cannot be evaded by
+re-wrapping.
+
+The four inherited walls are measurements rather than declarations. The two
+that read the paper — the retracted L-1 sentence's absence and the naming
+sentence's presence — carry falsifiers that edit the paper under test rather
+than the gate's boolean. The three abstention walls scan this run's whole
+measurement layer, every measured receipt key together with the statement and
+evidence of every non-wall gate evaluated, for the terms whose presence would
+mean the reading was taken.
 
 The coverage ledger is honest: every gate is either falsified by a declared
 mutant or waived with a forcing that says why it cannot fail, the denominator
 is the gate count of the run rather than a hand-kept number, and every
-declared falsifier is checked to reach its gate — with the three gates that
-run after the check named as LATE and their presence verified at the last gate
-rather than assumed.
+declared falsifier is checked to reach its gate — with the gates that run
+after the check named as declared-later and their presence verified at the
+last gate rather than assumed. The mutant sweep's *execution* is bound and not
+merely declared: a delivery-level run must carry one sweep row per declared
+mutant, every row on target, and must have evaluated the sweep gate itself,
+and the same conjunction is re-taken at the terminal integrity gate — so the
+only writer in this file is downstream of a sweep that actually ran.
 
 The seal is **total**: every published receipt key — the measured layer and
-the vouching layer alike, schema, provenance, paper claims, polarity,
-coverage, reachability, gates, totals and the transcript head — is either
+the vouching layer alike, schema, provenance, paper claims, coverage,
+polarity, reachability, gates, totals and the transcript head — is either
 sealed at the moment its gate passes or listed as DECLARED-UNSEALED, and the
 completeness gate compares the manifest against the declared key set rather
-than against the seals that happened to be taken. The artifacts are written
-from the sealed payload through `os.replace`; the terminal integrity gate
-compares the bytes on disk against the gate-time seal after a deliberately
-corrupted probe has been shown to be detected; a run that fails a gate writes
-nothing.
+than against the seals that happened to be taken. The unsealed declaration is
+itself frozen by content and by length and may name no key that carries a
+measurement, so the coherent drop — remove the seal row, remove the
+declaration and declare the key unsealed — has no surface either. The
+artifacts are written from the sealed payload through `os.replace`; the
+terminal integrity gate compares the bytes on disk against the gate-time seal
+after a deliberately corrupted probe has been shown to be detected; a run that
+fails a gate writes nothing. The archived transcript therefore carries
+G-SEAL-COMPLETE's row and not the integrity gate's, which is emitted after the
+transcript string is serialized; that verdict is recorded by the artifacts'
+existence instead.
 
 The head is derived a second time by a comparator that shares neither code nor
 input nor typed literal with the builder: it reads the serialized receipt,
-rebuilds all three verdict strings from its own templates and derives the
-outcome word from the measured fate multiset. The paper under test is checked
-in the same run for claim rendering, numeral coverage and claim polarity, and
-the delivery run is byte-reproducible.
+**types all three verdict templates itself** — the weld segment included, which
+carries the outcome word — and re-derives that word from the receipt's own
+fate rows, cross-checked against the published fate multiset. A one-line
+forgery of the builder's outcome word therefore moves the builder alone and
+dies at the reconstruction gate. The paper under test is checked in the same
+run for claim rendering, numeral coverage, head-verbatim rendering and claim
+polarity. Numeral coverage now scans the **fenced verdict blocks**: the old
+scan removed every backticked span before scanning and so never read the
+head's numbers at all, and a fenced numeral is allow-listed only against the
+receipt, the run's own verdict strings included. On top of that each of the
+three derived segments is matched into the paper character for character, so
+the blocks a reader will quote are bound to the receipt as strings and not
+merely as numbers. The delivery run is byte-reproducible.
+
+## 11. The successor register
+
+Registered, not claimed.
+
+**S-1 — the coupling unit, and the scope it must open with.** It inherits four
+things by citation and re-derives none of them: the arena (the 72 I7-STRICT
+grouping triples, 288 coordinate-free, all carrying one co-division arena);
+the record `(1,1,1)` with its `q` and its determinant; the map (FOUND at both
+readings, fibers 1/1/1, the count being the target's own automorphism number);
+and the equality that explains all three — the realised relation **is** the
+target's incidence, which is why the two readings agree and why a coupling
+arena that does not reach equality will split them again. Two conditions bind
+it. First, the welded record is **unsplittable**, split fiber 0 at all 27
+intervals, so paper-04's refinement grammar, paper-06's stochastic split and
+paper-09's renewal-transport kernel are empty on it: the coupling unit reaches
+a record, not yet a law over records, and any coupling that needs a refinement
+must first say which record it couples at. Second, every budget argument it
+carries to another budget must be restated as a **coverage** argument — at
+R = 2 the budget bound, at R = 3 it does not.
+
+**S-2 — the R = 4 question, and it is the sharpest one this unit creates.** At
+R = 3 the rigidity theorem makes `(1,1,1)` the only reachable I7-STRICT
+record, so no R = 3 schedule can reach a declared record at all: the
+undeclaredness is a budget fact and not a verdict about the grammar. One round
+later the budget is 36 and I7's own `G-FLAT` = (1, 1, 2) needs exactly 36. The
+combinatorial side is measured here and nothing more: over all 1,679,616
+ordered quadruples of saturating partitions, G-FLAT's chart orbit is reached
+at **276**. Nothing is driven, and constructibility at four rounds is neither
+run nor claimed. The successor question is whether the committed grammar
+drives one of the 276, with the seed and supply questions re-asked one round
+wider. If it does, the second qualification dissolves into a budget statement
+and the weld lands on declared corpus physics; if it does not, the
+undeclaredness is promoted from an accident of R = 3 to a property of the
+construction, which is the stronger result either way.
+
+**S-3 — the 288 and the naming question with teeth.** The weld's own class is
+288 and the difference from 72 is exactly the site assignment. Whether the 216
+extra triples — whose groups run along the one direction I7 does not declare —
+are *the same weld* or four welds related by a relabelling the corpus has
+never declared is a naming question, and the corpus has a precedent for
+treating those seriously rather than by fiat.
+
+**S-4 — the eleven non-collinear multisets.** Of the 12 multisets exactly one
+is the three parallel classes; the other 11 each contain conflict groups that
+are not lines of AG(2,3). At the detector they are identical, and that is
+gated. Whether they are identical *as processes* — record length, event count,
+crystallinity profile — is open and cheap.
+
+**S-5 — Route B, rescoped rather than retired.** Mooted at this target and
+this carrier, per §8. It stays live for I7's eleven declared records at R = 3,
+for the arity-dead carriers, and for the committed constructions; any future
+Route-B pricing must now beat the derived price paid here, and weld 2's
+dead-list rows stay cited and never re-run.
+
+**S-6 — the instrument rows.** Two are registered against this unit's own
+machinery. The #125 normaliser is complete against everything markdown can do
+to a needle — line wrapping, block quotes, nested quotes, bullets, numbering,
+bolding, back-ticking, table cells, headings, indentation, tabs, non-breaking
+spaces, em-dash folding, curly apostrophes — and stops at the markdown layer:
+zero-width characters, soft hyphens, interleaved inline HTML, HTML comments,
+HTML entities, backslash escapes and footnote markers are outside it. That is
+a corpus-wide instrument row rather than a defect of this unit, and it is
+registered so the next unit that hardens `canon` does it once for everybody.
+And the self-test's writes-nothing falsifier still sets its gate's boolean
+rather than moving a writer, which is disclosed here rather than repaired,
+because a falsifier that genuinely reached a writer would be a falsifier that
+writes.
+
+**S-7 — the second resonance, named before it is heard.** The Lorentzian
+resonance is named in §5.5 and gated. The next one a reader will hear at
+`q = [[1, -1/2], [-1/2, 1]]` is the hexagonal one: unit lengths meeting at one
+hundred and twenty degrees. No such reading is taken here and the sweep is
+clean,
+so this is not a violation — it is a wall row the coupling unit should inherit
+before it writes the word "triangular".
+
+**What may not be inherited**, as a standing row: the schedule as a committed
+object; count-sufficiency as a statement about counts; the fragility
+invariances as measured independence; the 1,296 as three agreeing
+measurements; the word "rare" as anything but a cardinality ratio over a
+declared arena; and any dynamics, signature, dimension, cosmological or
+continuum reading whatever.

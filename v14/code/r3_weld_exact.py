@@ -28,9 +28,11 @@ budget to exactly 27.  This unit runs the three stages the pin gates:
            falsified.
 
 WHAT THIS PROGRAM DOES
-  SEC 1  PROVENANCE.  13 pinned sources, sha256-12 verified, products gated;
-         the verbatim (#62) anchors bound to their consumer gates; every text
-         gate whitespace-normalises, ASCII-folds AND strips markdown prefixes.
+  SEC 1  PROVENANCE.  14 pinned sources, sha256-12 verified, products gated;
+         the verbatim (#62) anchors bound to their consumer gates -- each
+         named gate required to be in the registry AND in this run's ledger;
+         every text gate whitespace-normalises, ASCII-folds AND strips
+         markdown prefixes.
   SEC 2  EXACT ARITHMETIC on Z_3^2 and Z[w]; the three stabilizer routes.
   SEC 3  THE COMMITTED GRAMMAR, DRIVEN DIRECTLY.  d42b1's transport layer by
          text slice, d60's `B`/`dl`, d66's `conflict_grid`, d58's `walk2` by AST
@@ -42,8 +44,12 @@ WHAT THIS PROGRAM DOES
   SEC 7  STAGE 2.
   SEC 8  STAGE 3 -- the weld detector, the arenas, the controls.
   SEC 9  THE WALLS (four inherited from U4, the Lorentzian resonance NAMED).
-  SEC 10 The verdict, derived a second time from the serialized receipt, the
-         paper gates, the TOTAL seal, the artifacts, the integrity check.
+  SEC 10 The verdict, derived a second time from the serialized receipt by a
+         comparator that TYPES ALL THREE TEMPLATES ITSELF and re-derives the
+         outcome word from the receipt's own fate rows; the paper gates --
+         claim rendering, numeral coverage INCLUDING THE FENCED VERDICT
+         BLOCKS, head-verbatim and claim polarity; the TOTAL seal; the
+         sweep-execution binding; the artifacts; the integrity check.
 
 CLI CONTRACT (the #82 minimum: argv parsed against a whitelist)
 ---------------------------------------------------------------
@@ -76,9 +82,10 @@ CLI CONTRACT (the #82 minimum: argv parsed against a whitelist)
     --list-gates / --list-mutants
                     print the registries and exit 0.
 
-    Any other argument, any unknown flag argument, any missing flag argument
-    and any --verify-paper PATH that does not exist exits 2.  No flag is
-    mutant-only and no flag is a no-op.
+    Any other argument, any unknown flag argument, any missing flag argument,
+    any SECOND MODE FLAG and any --verify-paper PATH that does not exist exits
+    2.  No flag is mutant-only and no flag is a no-op: modes do not compose,
+    so a second mode flag is an error rather than a silent override.
 
 THE TOTAL GATE-TO-DISK SEAL (RUNBOOK 14 addendum, v14 #119 + the #148 totality
 addendum + the U4b vouching-layer lesson).  EVERY published receipt key -- the
@@ -100,7 +107,7 @@ ARITHMETIC.  Exact only: `fractions.Fraction` and Python integers.  There are
 no floats anywhere -- an AST scan of this file and a recursive type scan of the
 emitted receipt are gates.
 
-RUNTIME INPUTS (#46/#91).  Exactly 13 files are read at run time as SOURCES,
+RUNTIME INPUTS (#46/#91).  Exactly 14 files are read at run time as SOURCES,
 all hash-pinned by this unit's frozen declaration, plus exactly one file read
 as the OBJECT UNDER TEST -- this unit's own paper.  Both lists are enumerated
 and gated.  No repository state outside them is read and no subprocess of any
@@ -146,6 +153,11 @@ SOURCES = [
      "WELD 2 (terminal): the detector, the two readings, the RSQ choice "
      "standard, the crystal and walk controls, and the dead lists this unit "
      "cites and never re-runs."),
+    ("A-W2REC", "v14/code/w2_census_receipt.json", "bd68497d4510",
+     "WELD 2's COMMITTED RECEIPT: the FOUND-at-I7 declared probe on which "
+     "weld 2 exhibited the FOUND branch.  Its induced record is READ from "
+     "these bytes and recomputed here -- the precedent that fixes what "
+     "reaching FOUND at this target has always meant."),
     ("A-HA", "v13/paper-ha-successor.md", "f286ba10d2d9",
      "I7 / HA: the declared readout, the admissibility criterion, and "
      "requirement 3 -- the two-way rule this unit's controls discharge."),
@@ -370,6 +382,53 @@ MUTANTS = [
     ("MUT-PAPER-POLARITY", "G-PAPER-CLAIM-POLARITY",
      "flips one declared polarity of the paper's head -- must die at the "
      "polarity gate"),
+    # ---- the panel's repairs, each with its own falsifier ----------------
+    ("MUT-WELD-FORGERY", "G-VERDICT-RECONSTRUCTED",
+     "THE ONE-LINE HEAD FORGERY (the instrument review's M1): patches the "
+     "BUILDER's outcome word to EMPTY.  Before the repair the comparator "
+     "called the same function and moved with it; now the comparator types "
+     "the weld template itself and derives the outcome word from the "
+     "receipt's own fate rows, so the forgery must die at the "
+     "reconstruction gate"),
+    ("MUT-PAPER-HEAD-NUMERAL", "G-PAPER-NUMERAL-COVERAGE",
+     "corrupts a numeral INSIDE the paper's fenced verdict block (the "
+     "instrument review's M2): before the repair the numeral gate stripped "
+     "every fenced block before scanning, so head numerals were never "
+     "scanned at all -- must die at the numeral-coverage gate"),
+    ("MUT-PAPER-HEAD", "G-PAPER-HEAD-VERBATIM",
+     "moves one non-numeric character of the paper's rendered head -- must "
+     "die at the gate that matches every character of every verdict segment "
+     "into the paper"),
+    ("MUT-SWEEP-UNBOUND", "G-SWEEP-BOUND",
+     "declares the delivery-level sweep while carrying no sweep rows (the "
+     "instrument review's m2: a delivery whose 59-mutant loop never ran "
+     "shipped) -- must die at the sweep-execution gate"),
+    ("MUT-CONSUMER-BINDING", "G-ANCHOR-CONSUMERS",
+     "names a consumer gate that no gate registry carries and that this run "
+     "never evaluated (the instrument review's m3) -- must die at the gate "
+     "that binds every verbatim anchor to a gate that actually ran"),
+    ("MUT-SITEWISE", "G-SITEWISE-IDENTITY",
+     "breaks the sitewise identity at one of the 64 reachable site codes -- "
+     "must die at the per-code identity gate"),
+    ("MUT-STRICTEST", "G-STRICTEST-READING",
+     "reports the ROW|COL|ANT arena as surviving the site-carrier-fixed "
+     "reading -- must die at the strictest-reading gate"),
+    ("MUT-W2-WITNESS", "G-W2-WITNESS",
+     "reports weld 2's own FOUND-at-I7 witness as one of I7's declared "
+     "records -- must die at the gate that reads that witness from weld 2's "
+     "committed receipt"),
+    ("MUT-COVERAGE-COUNT", "G-COUNT-IMPLIES-WELD",
+     "reports the committed R = 3 grid as covering all 27 cells -- must die "
+     "at the COVERAGE-not-count gate"),
+    ("MUT-DIRECTED", "G-READINGS",
+     "reports the directed comparator as separating an arena -- must die at "
+     "the readings gate, which carries the comparator's measured value"),
+    ("MUT-FIBER-BASEMAP", "G-FIBERS",
+     "reports the label and orient fibers as base-map-dependent -- must die "
+     "at the choice-standard gate, which now reads both at EVERY base map"),
+    ("MUT-R4-REGISTER", "G-R4-REGISTER",
+     "reports I7's own G-FLAT as unreachable at the R = 4 budget -- must die "
+     "at the successor-register probe gate"),
 ]
 MUTANT_NAMES = {m[0] for m in MUTANTS}
 
@@ -463,12 +522,13 @@ SEALED_PATHS = [
     ("SEAL-VERDICT", "verdict", "G-VERDICT-RECONSTRUCTED"),
     ("SEAL-COUNTS", "counts", "G-VERDICT-RECONSTRUCTED"),
     ("SEAL-PAPER-CLAIMS", "paper_claims", "G-PAPER-CLAIMS"),
+    ("SEAL-PAPER-COVERAGE", "paper_coverage", "G-PAPER-HEAD-VERBATIM"),
     ("SEAL-POLARITY", "polarity", "G-PAPER-CLAIM-POLARITY"),
     ("SEAL-COVERAGE", "coverage", "G-COVERAGE"),
     ("SEAL-REACHABILITY", "reachability", "G-REACHABILITY"),
     ("SEAL-WAIVERS", "waiver_ledger", "G-COVERAGE"),
     ("SEAL-MUTANTS", "mutants", "G-COVERAGE"),
-    ("SEAL-MUTANT-SWEEP", "mutant_sweep", "G-COVERAGE"),
+    ("SEAL-MUTANT-SWEEP", "mutant_sweep", "G-SWEEP-BOUND"),
     ("SEAL-GATES", "gates", "G-PAPER-COVERAGE-FINAL"),
     ("SEAL-CLOSING", "closing_gates", "G-PAPER-COVERAGE-FINAL"),
     ("SEAL-TOTALS", "totals", "G-PAPER-COVERAGE-FINAL"),
@@ -477,6 +537,19 @@ SEALED_PATHS = [
 # the keys that CANNOT be sealed before the payload closes, declared unsealed
 DECLARED_UNSEALED = ["arithmetic", "python", "seal_manifest",
                      "payload_sha256_12"]
+# the instrument review's m1: the totality gate measured the manifest against
+# a declaration the same file owned, so a COHERENT drop -- remove the seal row,
+# remove the declaration AND append the key here -- shipped a corrupted object
+# with nothing but a longer unsealed list as its trace.  The list is therefore
+# frozen by content and by length, and no key that carries a MEASUREMENT may
+# appear on it.
+DECLARED_UNSEALED_FROZEN = ("arithmetic", "python", "seal_manifest",
+                            "payload_sha256_12")
+# the MEASUREMENT LAYER: the receipt keys that carry what this run measured.
+# The anchor and provenance layers are deliberately NOT here -- they quote the
+# walls' own pinned sources, and quoting a wall is not taking a reading.
+MEASURED_KEYS = ("arena", "family", "constructibility", "crystal", "geometry",
+                 "i7", "weld", "strata", "anchors", "counts", "verdict")
 SEALS_IN_RUN = tuple(s for s, _p, g in SEALED_PATHS
                      if g != "G-PAPER-COVERAGE-FINAL")
 
@@ -955,6 +1028,22 @@ def pack_links(P):
     return v, w
 
 
+def pack4_links(P):
+    """the same field at FOUR bits per cell, so four rounds cannot carry into
+    a neighbouring cell.  Used only by the R = 4 register probe."""
+    v = 0
+    for si, x in enumerate(SITES):
+        for li, l in enumerate(I7_LINKS):
+            if any(x in g and zadd(x, l) in g for g in P):
+                v |= 1 << (4 * (3 * si + li))
+    return v
+
+
+def pack4_target(nvec):
+    return sum(nvec[li] << (4 * (3 * si + li))
+               for si in range(9) for li in range(3))
+
+
 ALLONE = sum(0b010101 << (6 * k) for k in range(9))
 
 # the per-site code table: code = a + 4b + 16c with a = n_(1,0), b = n_(0,1),
@@ -1218,10 +1307,24 @@ def _detect(arena, target, reading):
         return row
     fib_site = len({fkey(fields[(i, tuple(range(nlab)), False)])
                     for i in range(len(maps))})
+    # the operator review's MINOR-1: the label and orient fibers are READ at
+    # the base map `sorted(S, key=str)` fixes -- an actor-name-order artifact.
+    # The whole (map x label x orient) grid is already computed, so the
+    # base-map INVARIANCE of both fibers is now measured at every base map and
+    # published, rather than being a fact the code did not check.
     fib_label = len({fkey(fields[(0, lp, False)])
                      for lp in permutations(range(nlab))})
     fib_orient = len({fkey(fields[(0, tuple(range(nlab)), o)])
                       for o in (False, True)})
+    lab_at = {len({fkey(fields[(i, lp, False)])
+                   for lp in permutations(range(nlab))})
+              for i in range(len(maps))}
+    ori_at = {len({fkey(fields[(i, tuple(range(nlab)), o)])
+                   for o in (False, True)})
+              for i in range(len(maps))}
+    row["fibers_base_map_invariant"] = (lab_at == {fib_label}
+                                        and ori_at == {fib_orient})
+    row["base_maps_read"] = len(maps)
     inv = {"I-SITE-ASSIGNMENT": fib_site, "I-DIRECTION-LABEL": fib_label,
            "I-ORIENT": fib_orient}
     row["inventory"] = inv
@@ -1955,6 +2058,12 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             % (n_class_triples, len(C["strict_triples"]),
                SEEDS_PER_ROUND_IN_WINDOW),
         "window_ratio_denominator": FAMILY // len(win),
+        # the effectus review's MINOR-4: the driven-vs-combinatorial equality
+        # that licenses the exhaustive columns is measured on 1040 RECORDS,
+        # which span this many distinct GROUPING TRIPLES -- the object those
+        # columns quantify over.
+        "window_distinct_grouping_triples":
+            len({tuple(P for P, _s in sch) for sch in win}),
         "window_is_the_family": len(win) >= FAMILY,
         "committed_R2_schedule_in_family": True,
         "committed_R3_schedule": "ROW|COL|ROW (d66's own alternation)",
@@ -2119,6 +2228,8 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         ufield[(I7_LINKS[2], SITES[4])] = 2
     cells_ok = sum(1 for c in ufield if ufield[c] == 1)
     dets, pds, forms = [], 0, set()
+    _uq = q_of((ufield[((1, 0), SITES[0])], ufield[((0, 1), SITES[0])],
+                ufield[((1, 1), SITES[0])]))
     for x in SITES:
         nvec = (ufield[((1, 0), x)], ufield[((0, 1), x)], ufield[((1, 1), x)])
         q11, q22, q12, det = q_of(nvec)
@@ -2137,7 +2248,10 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         "det": str(dets[0]), "posdef_sites": pds,
         "distinct_site_forms": sorted(forms),
         "incidences": sum(ufield.values()),
-        "q": ["1", "-1/2", "-1/2", "1"],
+        # the operator review's MINOR-2: the q that appears in the WELD3
+        # verdict string is BUILT from the measured site form, never typed,
+        # so the head cannot survive a moved form.
+        "q": [str(_uq[0]), str(_uq[2]), str(_uq[2]), str(_uq[1])],
         "driven_saturating_records": len(satwin),
     }
 
@@ -2582,6 +2696,103 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "per missing class %s; total %d; I7-STRICT (ANT missing) %d"
             % ({k: list(v) for k, v in sorted(C["found_by_class"].items())},
                cf_tot, strict_route1))
+
+    # THE SITEWISE IDENTITY (the operator review's strengthening): the
+    # rigidity theorem is a COROLLARY of a per-site fact, and the fact holds
+    # at every site of every triple in the family, not only at the ceiling.
+    sw_tab = dict(CODE_TAB)
+    if mut("MUT-SITEWISE"):
+        sw_tab[63] = (sw_tab[63][0], sw_tab[63][1], 0, sw_tab[63][3])
+    sw_bad = [c for c in sorted(sw_tab)
+              if bool(sw_tab[c][2]) != bool(sw_tab[c][3])]
+    R["geometry"]["sitewise_identity"] = {
+        "reachable_site_codes": len(sw_tab),
+        "posdef_iff_all_three_counts_positive": not sw_bad,
+        "counterexamples": sw_bad}
+    LD.gate("G-SITEWISE-IDENTITY",
+            "THE RIGIDITY THEOREM IS A COROLLARY OF A SITEWISE IDENTITY.  At "
+            "every one of the %d site codes reachable in this family -- three "
+            "rounds deposit at most 1 per cell, so no count exceeds 3 -- the "
+            "form is POSITIVE DEFINITE at a site IF AND ONLY IF all three of "
+            "n_(1,0), n_(0,1) and n_(1,1) are at least 1 there.  The two "
+            "predicates therefore coincide at EVERY site of EVERY one of the "
+            "%d ordered triples and not only at the top of the ladder, so the "
+            "whole positive-definite distribution equals the whole strict "
+            "distribution and I7-STRICT = POSDEF-9 is forced sitewise rather "
+            "than by the 27-incidence budget alone"
+            % (len(sw_tab), ordered_total),
+            not sw_bad,
+            "site codes %d; codes where positive-definiteness and "
+            "min-count-positive disagree: %s"
+            % (len(sw_tab), sw_bad or "none"))
+
+    # THE COVERAGE CONDITION, COMPUTED AND NEVER TYPED (the panel's shared
+    # kill).  The operative quantity is not the COUNT of incidences but their
+    # COVERAGE of the 27 cells: d66's own R = 3 point pays the full budget and
+    # dies anyway, which the delivered text mis-described as "deposits 18".
+    com3f = unpack_field(sum(pack_links(P)[0]
+                             for P, _s in COMMITTED_R3))
+    com3_inc = sum(com3f.values())
+    com3_cov = pick("MUT-COVERAGE-COUNT",
+                    sum(1 for v in com3f.values() if v > 0), 27)
+    com3_zero = sum(1 for v in com3f.values() if v == 0)
+    satf = unpack_field(sum(pack_links(CLASSES[c])[0]
+                            for c in ("ROW", "COL", "DIA")))
+    R["geometry"]["coverage_not_count"] = {
+        "saturating_partitions": len(C["sat"]),
+        "triples_paying_the_full_budget": len(C["sat"]) ** 3,
+        "of_which_weld": strict_route1,
+        "one_in": len(C["sat"]) ** 3 // strict_route1,
+        "committed_R3_incidences": com3_inc,
+        "committed_R3_cells_covered": com3_cov,
+        "committed_R3_cells_at_zero": com3_zero,
+        "weld_incidences": sum(satf.values()),
+        "weld_cells_covered": sum(1 for v in satf.values() if v > 0)}
+    reg(len(C["sat"]) ** 3, len(C["sat"]) ** 3 // strict_route1)
+
+    # THE R = 4 REGISTER PROBE (registered, NOT claimed).  At R = 3 the
+    # rigidity theorem makes (1,1,1) the only reachable I7-STRICT record, so
+    # no R = 3 schedule can reach a DECLARED one.  One round later the budget
+    # is 36 and I7's own G-FLAT needs exactly 36.  This is a combinatorial
+    # reachability count over quadruples of saturating partitions: no menu is
+    # driven, nothing is claimed constructible, and the successor question --
+    # whether the grammar DRIVES one of them -- is left open in section 11.
+    F4 = [pack4_links(parts[k]) for k in C["sat"]]
+    FLAT = tuple(i7["family"]["G-FLAT"])
+    TG4 = {pack4_target(o) for o in chart_orbit(FLAT)}
+    n_r4 = 0
+    for _a in F4:
+        for _b in F4:
+            _ab = _a + _b
+            for _c in F4:
+                _abc = _ab + _c
+                for _d in F4:
+                    if _abc + _d in TG4:
+                        n_r4 += 1
+    n_r4 = pick("MUT-R4-REGISTER", n_r4, 0)
+    R["geometry"]["r4_register_probe"] = {
+        "budget_rounds": 4, "target": "G-FLAT",
+        "target_record": list(FLAT),
+        "ordered_quadruples_of_saturating_partitions": len(F4) ** 4,
+        "reaching_the_target_chart_orbit": n_r4,
+        "driven": False,
+        "status": "REGISTERED-NOT-CLAIMED: combinatorial reachability only"}
+    reg(len(F4) ** 4, n_r4)
+    LD.gate("G-R4-REGISTER",
+            "THE SUCCESSOR QUESTION THIS UNIT CREATES, MEASURED ON ITS "
+            "COMBINATORIAL SIDE ONLY.  At R = 3 the rigidity theorem makes "
+            "(1,1,1) the ONLY reachable I7-STRICT record, so no R = 3 "
+            "schedule can reach a DECLARED I7 record at all -- the "
+            "undeclaredness is a budget fact.  One round later the budget is "
+            "36 and I7's own G-FLAT = %s needs exactly 36: over all %d "
+            "ordered quadruples of saturating partitions it is reached at "
+            "%d, admissible, and it is one of the eleven.  NOTHING IS DRIVEN "
+            "HERE and nothing is claimed constructible; the row is registered "
+            "so the successor inherits a question with a number on it"
+            % (str(FLAT), len(F4) ** 4, n_r4),
+            n_r4 > 0 and admissible(FLAT) and len(F4) ** 4 > n_r4,
+            "quadruples %d, reaching G-FLAT's chart orbit %d, G-FLAT "
+            "admissible %s" % (len(F4) ** 4, n_r4, admissible(FLAT)))
     SEAL.take("SEAL-GEOMETRY", R)
 
     # ---------------- SEC 8  THE WELD, RE-POSED -------------------------
@@ -2683,6 +2894,19 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                 r["inventory"] = {"I-SITE-ASSIGNMENT": 1,
                                   "I-DIRECTION-LABEL": 1, "I-ORIENT": 1}
                 r["free_items"] = []
+    if mut("MUT-FIBER-BASEMAP"):
+        for r in rows:
+            if "fibers_base_map_invariant" in r:
+                r["fibers_base_map_invariant"] = False
+    # the instrument review's m7: the directed comparator was CARRIED and not
+    # REPORTED.  Its value is 0 at every arena in the census -- it separates
+    # nothing anywhere, which is why HA requirement 3 forbids it as the admit
+    # test and why reporting it moves no verdict.
+    dirmax = max(r.get("isomorphisms_directed_comparator", 0) for r in rows)
+    dirrows = sum(1 for r in rows
+                  if "isomorphisms_directed_comparator" in r)
+    if mut("MUT-DIRECTED"):
+        dirmax = 1
     fates = Counter(r["fate"] for r in rows)
     R["weld"] = {"rows": rows, "fate_distribution": dict(fates),
                  "walk_control": {"depth": 30, "seed": 4242,
@@ -2691,6 +2915,8 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                  "arenas": len(ARENAS), "readings": 2,
                  "saturating_arenas_driven": len(satarenas),
                  "distinct_saturating_arenas": len(relsigs),
+                 "directed_comparator_max": dirmax,
+                 "directed_comparator_rows": dirrows,
                  "dead_lists_cited": DEAD_LISTS}
     LD.gate("G-WELD-CENSUS",
             "%d census rows over %d declared arenas at both readings.  Every "
@@ -2707,16 +2933,25 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "surjection of the realised objects onto the sites carrying every "
             "realised edge onto a declared displacement.  The difference is "
             "measured, not assumed: %d rows die at a different place under "
-            "the two readings"
-            % sum(1 for a, _t in ARENAS
-                  if EXPECTED[(a["name"], "EMBEDDING")]
-                  != EXPECTED[(a["name"], "QUOTIENT")]),
+            "the two readings.  THE DIRECTED COMPARATOR IS CARRIED AND ITS "
+            "VALUE IS REPORTED: it returns %d at every one of the %d arenas "
+            "where it is defined -- the two FOUND rows included -- so it "
+            "separates nothing anywhere, which is exactly why HA "
+            "requirement 3 forbids it as the admit test.  FOUND holds at the "
+            "undirected reading, and the number that would have made the "
+            "directed one an alternative is zero"
+            % (sum(1 for a, _t in ARENAS
+                   if EXPECTED[(a["name"], "EMBEDDING")]
+                   != EXPECTED[(a["name"], "QUOTIENT")]), dirmax, dirrows),
             len({r["reading"] for r in
                  pick("MUT-READINGS", rows,
-                      [dict(r, reading="EMBEDDING") for r in rows])}) == 2,
-            "rows @EMBEDDING %d, @QUOTIENT %d"
+                      [dict(r, reading="EMBEDDING") for r in rows])}) == 2
+            and dirmax == 0 and dirrows == len(ARENAS) - 1,
+            "rows @EMBEDDING %d, @QUOTIENT %d; directed comparator max %d "
+            "over %d arenas"
             % (sum(1 for r in rows if r["reading"] == "EMBEDDING"),
-               sum(1 for r in rows if r["reading"] == "QUOTIENT")))
+               sum(1 for r in rows if r["reading"] == "QUOTIENT"),
+               dirmax, dirrows))
 
     def rowof(name, reading):
         return [r for r in rows
@@ -2927,11 +3162,109 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "translations act trivially -- so the comparison is per record "
             "and not by name.  The weld lands INSIDE I7's admissible class "
             "and OUTSIDE its declared list, and that distinction is the "
-            "honest scope of this result" % len(i7["family"]),
+            "honest scope of this result"
+            % (len(i7["family"]) + len(i7["site_dependent_family"])),
             not hits,
-            "declared records %s; chart orbit %s; hits %s"
-            % (sorted(i7["family"]), sorted(str(o) for o in orb),
-               hits or "none"))
+            "declared records %s and %s; chart orbit %s; hits %s"
+            % (sorted(i7["family"]), sorted(i7["site_dependent_family"]),
+               sorted(str(o) for o in orb), hits or "none"))
+
+    # ---- THE PRECEDENT, READ FROM WELD 2's OWN COMMITTED RECEIPT --------
+    # What reaching FOUND at this target has always MEANT is fixed by the
+    # object weld 2 itself reached it on.  That object is read here, not
+    # argued: its induced record is recomputed from its committed count field
+    # by this unit's own readout.
+    w2rec = json.loads(source_text(texts, "A-W2REC"))
+    w2probe = w2rec["payload"]["controls"]["FOUND_at_I7_target_declared_probe"]
+    w2cf = {k: v for k, v in (tuple(z) for z in w2probe["count_field"])}
+    w2ind = (w2cf[str(((0, 0), (1, 0)))], w2cf[str(((0, 0), (0, 1)))],
+             w2cf[str(((0, 0), (1, 1)))])
+    w2q11, w2q22, w2q12, w2det = q_of(w2ind)
+    reg(w2q11, w2q22, w2q12, w2det)
+    w2orb = chart_orbit(w2ind)
+    w2hits = sorted(nm for nm, v in i7["family"].items()
+                    if tuple(v) in w2orb)
+    for nm, recmap in sorted(i7["site_dependent_family"].items()):
+        if all(tuple(recmap[x]) in w2orb for x in sorted(recmap)):
+            w2hits.append(nm)
+    if mut("MUT-W2-WITNESS"):
+        w2hits = ["G-FLAT"]
+    w2verdict = w2rec["verdicts"]["controls"]["FOUND_at_I7_declared_probe"]
+    R["i7"]["weld2_found_witness"] = {
+        "source": "A-W2REC", "arena": w2probe["arena"],
+        "verdict": w2verdict, "n": list(w2ind),
+        "q11": str(w2q11), "q22": str(w2q22), "q12": str(w2q12),
+        "det": str(w2det), "admissible": bool(admissible(w2ind)),
+        "in_declared_box": w2ind in set(boxpts),
+        "declared_family_hits": w2hits,
+        "distinct_counts": sorted({v for v in w2cf.values()})}
+    LD.gate("G-W2-WITNESS",
+            "WHAT REACHING FOUND AT THIS TARGET HAS ALWAYS MEANT, READ FROM "
+            "WELD 2's OWN BYTES.  Weld 2 could exhibit its FOUND branch at "
+            "I7's three-link target only on a DECLARED PROBE, and that probe "
+            "is the object which fixed the meaning of the branch this unit "
+            "now occupies.  Its committed count field is read here and its "
+            "induced record recomputed by this unit's own readout: %s, "
+            "q = [[%s, %s], [%s, %s]], det %s -- ADMISSIBLE by the same exact "
+            "Sylvester criterion, INSIDE the same %d-point declared box, and "
+            "NOT ONE OF I7's %d DECLARED RECORDS EITHER.  So the branch weld "
+            "2 reserved was never a branch onto a declared record: THE WELD "
+            "IS TO I7's RECORD SPACE -- its lattice and its record axioms -- "
+            "and the eleven are named witnesses inside that space rather than "
+            "the gate.  This unit lands the same species of object, on a "
+            "DRIVEN grammar record instead of a probe"
+            % (str(tuple(w2ind)), w2q11, w2q12, w2q12, w2q22, w2det,
+               len(boxpts), len(i7["family"])
+               + len(i7["site_dependent_family"])),
+            w2verdict == "FOUND-candidate" and admissible(w2ind)
+            and w2ind in set(boxpts) and not w2hits
+            and len({v for v in w2cf.values()}) == 1,
+            "weld 2's committed probe verdict %s; induced record %s; "
+            "admissible %s; in the box %s; declared-family hits %s"
+            % (w2verdict, list(w2ind), admissible(w2ind),
+               w2ind in set(boxpts), w2hits or "none"))
+
+    # ---- THE STRICTEST READING AVAILABLE (the operator review's (d3)) ----
+    # Force the map to be the constructor's OWN actor -> Z_3^2 parse, the
+    # inventory item this unit calls forced, and read the induced field with
+    # no site freedom whatever.
+    def carrier_fixed(a):
+        return count_field(a["rel"], TGT_I7["X"], TGT_I7["links"],
+                           TGT_I7["Lmod"], dict(ACTOR_SITE),
+                           tuple(range(len(TGT_I7["links"]))), False)
+    sat_fix = carrier_fixed(A_SAT)
+    non_fix = carrier_fixed(A_NON)
+    sat_fix_min = min(sat_fix.values())
+    non_fix_zero = pick("MUT-STRICTEST",
+                        sum(1 for v in non_fix.values() if v == 0), 0)
+    R["weld"]["strictest_reading"] = {
+        "reading": "SITE-CARRIER-FIXED (the constructor's own actor -> Z_3^2 "
+                   "parse; no site freedom at all)",
+        "R3-SAT": {"min": sat_fix_min, "max": max(sat_fix.values()),
+                   "cells_at_zero": sum(1 for v in sat_fix.values()
+                                        if v == 0), "survives": True},
+        "R3-ROW|COL|ANT": {"min": min(non_fix.values()),
+                           "max": max(non_fix.values()),
+                           "cells_at_zero": non_fix_zero,
+                           "survives": False}}
+    LD.gate("G-STRICTEST-READING",
+            "FOUND AT THE PRIMARY ARENA DOES NOT NEED THE SITE ASSIGNMENT TO "
+            "BE FREE AT ALL.  Under the strictest reading available -- the "
+            "site carrier FIXED to the constructor's own actor -> Z_3^2 "
+            "parse, which is inventory item 3 and which this unit calls "
+            "forced -- the saturating record still induces a strictly "
+            "positive field: min %d, max %d over the 27 cells.  The same "
+            "reading KILLS the relabelling row: R3-ROW|COL|ANT leaves %d of "
+            "the 27 cells at zero, because the ANT class deposits nothing on "
+            "any I7 link in fixed coordinates.  So the free site assignment "
+            "carries the second FOUND row and nothing else, exactly as "
+            "section 4.4 and deviation 6 price it"
+            % (sat_fix_min, max(sat_fix.values()), non_fix_zero),
+            sat_fix_min >= 1 and max(sat_fix.values()) == 1
+            and non_fix_zero == 9,
+            "R3-SAT at the fixed carrier: min %d max %d; R3-ROW|COL|ANT "
+            "cells at zero: %d of 27"
+            % (sat_fix_min, max(sat_fix.values()), non_fix_zero))
     SEAL.take("SEAL-I7", R)
     SEAL.take("SEAL-WELD", R)
 
@@ -2943,35 +3276,60 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "relabellings give one, both orientations give one -- and the "
             "reason is measured: the field is homogeneous.  The standard is "
             "not vacuous here, because the declared falsifier's "
-            "site-assignment fiber is %s"
+            "site-assignment fiber is %s.  The label and orient fibers are "
+            "READ at the base map the actor-name order fixes, so their "
+            "BASE-MAP INVARIANCE is measured rather than assumed: both are "
+            "re-read at every one of the %s base maps and both are constant"
             % (sat_e.get("isomorphisms"),
-               inh_e["inventory"]["I-SITE-ASSIGNMENT"]),
+               inh_e["inventory"]["I-SITE-ASSIGNMENT"],
+               sat_e.get("base_maps_read")),
             sat_e["inventory"] == {"I-SITE-ASSIGNMENT": 1,
                                    "I-DIRECTION-LABEL": 1, "I-ORIENT": 1}
-            and inh_e["inventory"]["I-SITE-ASSIGNMENT"] > 1,
-            "saturating %s; falsifier %s"
-            % (sat_e["inventory"], inh_e["inventory"]))
+            and inh_e["inventory"]["I-SITE-ASSIGNMENT"] > 1
+            and all(r.get("fibers_base_map_invariant", True) for r in rows),
+            "saturating %s; falsifier %s; base-map-invariant fibers %d of %d "
+            "rows that carry an inventory"
+            % (sat_e["inventory"], inh_e["inventory"],
+               sum(1 for r in rows if r.get("fibers_base_map_invariant")),
+               sum(1 for r in rows if "fibers_base_map_invariant" in r)))
+    cnc = R["geometry"]["coverage_not_count"]
+    com3_inc = cnc["committed_R3_incidences"]
+    com3_cov = cnc["committed_R3_cells_covered"]
+    com3_zero = cnc["committed_R3_cells_at_zero"]
+    full_budget = cnc["triples_paying_the_full_budget"]
+    weld_of_them = cnc["of_which_weld"]
     LD.gate("G-COUNT-IMPLIES-WELD",
-            "THE EFFECTUS'S DEMAND (iv), ANSWERED WITH A MEASUREMENT.  It "
-            "asked for an explicit statement that >= 27 incidences is "
-            "necessary and not sufficient for the weld.  NECESSARY is a "
-            "theorem and is measured: all %d I7-STRICT triples carry exactly "
-            "27.  SUFFICIENT is what this arena actually returns -- at THIS "
-            "candidate family and THIS target, 27 incidences force the field "
-            "to be identically 1, the co-division relation to be the target's "
-            "own Cayley incidence, and every fiber to be 1, so the count "
-            "condition entails the rest.  It is sufficient HERE; nothing "
-            "measured here says it is sufficient anywhere else, and the "
-            "census's other arenas show what fails when it is absent"
-            % len(C["strict_triples"]),
+            "THE EFFECTUS'S DEMAND (iv), ANSWERED AS POSED: >= 27 incidences "
+            "is NECESSARY AND NOT SUFFICIENT, and what IS sufficient here is "
+            "COVERAGE.  Necessity is a theorem and is measured: all %d "
+            "I7-STRICT triples carry exactly 27 incidences and no schedule of "
+            "this budget carries more.  The COUNT alone is not sufficient and "
+            "the census contains the counterexample: %d ordered grouping "
+            "triples -- every triple of saturating partitions -- deposit the "
+            "full 27, and exactly %d of them weld, one in %d.  d66's own "
+            "R = 3 point is one of the others: it deposits %d incidences and "
+            "spends them on %d of the 27 cells, doubling nine row cells and "
+            "leaving %d diagonal cells at zero.  What is necessary and, at "
+            "this candidate family and this target, sufficient is that every "
+            "one of the 27 cells is covered at least once -- which is "
+            "I7-STRICT itself -- and the rigidity theorem then forces the "
+            "field to be identically 1, the co-division relation to be the "
+            "target's own Cayley incidence and every fiber to be 1"
+            % (weld_of_them, full_budget, weld_of_them,
+               full_budget // weld_of_them, com3_inc, com3_cov, com3_zero),
             all(a["divisions"] == 9 for a in satarenas)
             and sat_e["fate"] == "FOUND-candidate"
+            and com3_inc == 27 and com3_cov == 18 and com3_zero == 9
+            and full_budget > weld_of_them
             and pick("MUT-COUNT-SUFFICIENT",
                      rowof("R3-COMMITTED-GRID(3,3)", "QUOTIENT")["fate"],
                      "FOUND-candidate") == "COUNT-DEAD",
-            "I7-STRICT triples %d, incidences each 27, weld fate %s; the "
-            "committed R = 3 grid deposits 18 and is %s"
-            % (len(C["strict_triples"]), sat_e["fate"],
+            "I7-STRICT triples %d, incidences each 27, weld fate %s; full "
+            "budget paid by %d triples of which %d weld (1 in %d); the "
+            "committed R = 3 grid deposits %d incidences over %d of 27 cells "
+            "and is %s"
+            % (len(C["strict_triples"]), sat_e["fate"], full_budget,
+               weld_of_them, full_budget // weld_of_them, com3_inc, com3_cov,
                rowof("R3-COMMITTED-GRID(3,3)", "QUOTIENT")["fate"]))
 
     # ---------------- THE STRATA, EACH WITH A DRIVEN WITNESS ------------
@@ -3027,12 +3385,13 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     LD.gate("G-STRATA-WITNESSED",
             "the census stratifies by (stabilizer x affine class x geometry "
             "class).  The declared stratum scan -- %d grouping triples at all "
-            "%d canonical seed triples -- realises %d cells, and EVERY one of "
+            "%d seed triples each -- realises %d cells, and EVERY one of "
             "them is given a deterministic representative whose record is "
             "BUILT BY DRIVING THE MENUS.  So the grammar's verdict has been "
             "taken at least once in every cell of the census, including cells "
             "whose groupings are not parallel classes at all"
-            % (len(scan), 27, len(cells)),
+            % (len(scan), R["strata"]["seed_triples_per_grouping"],
+               len(cells)),
             len(wits) == len(cells) and not wbad,
             "cells %d, driven witnesses %d, non-FORCED %d"
             % (len(cells), len(wits), len(wbad)))
@@ -3042,9 +3401,20 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     say("\n[SEC 9] THE WALLS")
     ptext = paper_text if paper_text is not None else ""
     l1 = source_text(texts, "A-L1")
+    # the instrument review's M3b: the declared falsifier says it INJECTS the
+    # retracted sentence "LINE-WRAPPED AND BLOCKQUOTED in house style", and it
+    # used to set the gate's boolean instead.  It now performs the injection
+    # it advertises, so the mutant exercises the #125 normaliser it names.
+    if mut("MUT-WALL-L1") and ptext:
+        _w, _line, _out = BANNED_L1.split(" "), "", []
+        for _tok in _w:
+            if len(_line) + len(_tok) + 1 > 40:
+                _out.append("> " + _line.strip())
+                _line = ""
+            _line += _tok + " "
+        _out.append("> " + _line.strip())
+        ptext = ptext + "\n\n" + "\n".join(_out) + "\n"
     banned_here = match_needle(ptext, BANNED_L1) if ptext else False
-    if mut("MUT-WALL-L1"):
-        banned_here = True
     LD.gate("G-WALL-L1",
             "L-1, ARGUED BEFORE ANY TEST AND THEN DECLINED.  Order-level "
             "covariance is a fourth form whose admissibility v11 must argue; "
@@ -3060,37 +3430,81 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "L-1 clause matched in its pinned bytes: %s; retracted sentence "
             "present in the paper: %s"
             % (match_needle(l1, VERBATIM[16][2]), banned_here))
-    boost_terms = ("boost", "rapidity", "sprinkl", "frame", "lorentz")
-    ran_boost = mut("MUT-WALL-BHS")
+    # THE THREE ABSTENTION WALLS, GIVEN REAL PREDICATES (the instrument
+    # review's M3).  They used to take their entire input from their own
+    # mutant flag, so they asserted a property rather than measuring one.  The
+    # measurement layer is now SCANNED: the receipt's measured keys plus the
+    # statement and evidence of every gate this run has evaluated that is not
+    # itself a wall gate -- the wall gates are excluded because naming the
+    # wall is exactly their job.  Both sides are #125-normalised.
+    if mut("MUT-WALL-BHS"):
+        R["arena"] = dict(R["arena"],
+                          sprinkling_boost_reading="rapidity 1/2 in the "
+                          "sprinkled frame")
+    if mut("MUT-WALL-KR"):
+        R["geometry"] = dict(R["geometry"],
+                             myrheim_meyer_dimension_estimate="4")
+    if mut("MUT-WALL-COSMO"):
+        R["weld"] = dict(R["weld"],
+                         cosmological_reading="the diagonal read as a "
+                         "continuum expansion direction")
+
+    def wall_surface():
+        body = json.dumps({k: R[k] for k in MEASURED_KEYS if k in R},
+                          sort_keys=True, default=str)
+        rows = "\n".join(g["statement"] + " " + g["evidence"] for g in LD.rows
+                         if not g["gate"].startswith("G-WALL-"))
+        return canon(body + "\n" + rows).lower()
+    BOOST_TERMS = ("boost", "rapidity", "sprinkl", "frame")
+    DIM_TERMS = ("myrheim", "meyer", "shatter", "chart width", "dimension",
+                 "height")
+    COSMO_TERMS = ("cosmolog", "continuum", "horizon", "redshift", "universe",
+                   "expansion")
+    surf = wall_surface()
+    boost_hits = [t for t in BOOST_TERMS if t in surf]
     LD.gate("G-WALL-BHS",
             "BHS: a Poisson sprinkling admits no Lorentz-invariant "
             "finite-valency graph, and these schedules are finite-valency by "
             "construction, so running a sprinkling-grade Lorentz-invariance "
-            "test would manufacture a false negative.  None is run: no "
-            "sprinkling, no boost, no rapidity and no frame appears in any "
-            "measurement above",
-            not ran_boost, "sprinkling-grade test run: %s" % ran_boost)
-    took_dim = mut("MUT-WALL-KR")
+            "test would manufacture a false negative.  None is run, and that "
+            "is MEASURED rather than asserted: the %d-character measurement "
+            "layer of this run -- every measured receipt key plus the "
+            "statement and evidence of all %d non-wall gates evaluated so far "
+            "-- is scanned for %s and contains none of them"
+            % (len(surf), sum(1 for g in LD.rows
+                              if not g["gate"].startswith("G-WALL-")),
+               ", ".join(BOOST_TERMS)),
+            not boost_hits, "terms scanned %d, surface %d chars, hits: %s"
+            % (len(BOOST_TERMS), len(surf), boost_hits or "none"))
+    dim_hits = [t for t in DIM_TERMS if t in surf]
     LD.gate("G-WALL-KR",
             "Kleitman-Rothschild: a dimension reading without a height "
             "control is worthless.  This unit takes NO dimension reading at "
             "all -- no chart width, no Myrheim-Meyer estimate, no "
             "max-shatter dimension -- so the height control is not owed and "
-            "not manufactured; the gate is the conjunction, and a paper that "
-            "took a dimension reading would have to carry one",
-            not took_dim, "dimension reading taken: %s" % took_dim)
-    cosmo = mut("MUT-WALL-COSMO")
+            "not manufactured.  The abstention is MEASURED on the same "
+            "surface: %s appear nowhere in it, so there is no reading for a "
+            "height control to be owed against"
+            % ", ".join(DIM_TERMS),
+            not dim_hits, "terms scanned %d, surface %d chars, hits: %s"
+            % (len(DIM_TERMS), len(surf), dim_hits or "none"))
+    cosmo_hits = [t for t in COSMO_TERMS if t in surf]
     LD.gate("G-WALL-DIAGONAL",
             "the diagonal is MEASURED here -- the (1,1) link is populated by "
             "every saturating arrangement and is exactly what lifts the "
             "determinant off zero -- and it is READ NO FURTHER.  The four "
             "directions above are directions on a nine-site lattice and are "
-            "read as nothing else; cosmological readings stay barred and no "
-            "continuum claim is made anywhere in this unit",
-            not cosmo, "cosmological reading taken: %s" % cosmo)
-    named = match_needle(ptext, LORENTZ_NAMED) if ptext else None
+            "read as nothing else, and that too is measured: %s appear "
+            "nowhere in this run's measurement layer, so no cosmological or "
+            "continuum reading is taken anywhere in this unit"
+            % ", ".join(COSMO_TERMS),
+            not cosmo_hits, "terms scanned %d, surface %d chars, hits: %s"
+            % (len(COSMO_TERMS), len(surf), cosmo_hits or "none"))
+    # M3 again: the naming falsifier now DELETES the sentence from the object
+    # under test rather than setting the gate's boolean.
     if mut("MUT-WALL-LORENTZ"):
-        named = False
+        ptext = ptext.replace("NAMED AND NOT READ", "named and considered")
+    named = match_needle(ptext, LORENTZ_NAMED) if ptext else None
     LD.gate("G-WALL-LORENTZ-NAMED",
             "THE LORENTZIAN RESONANCE IS NAMED AND NOT READ, and the naming "
             "is MANDATORY (the U4b lesson: silence is how a resonance becomes "
@@ -3135,15 +3549,37 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                      FAMILY, len(cells))),
         "geometry": ("POSITIVE-GEOMETRY-[CEILING %d ATTAINED at %d of %d "
                      "GROUPING TRIPLES; %d NEVER ATTAINED; "
-                     "I7-STRICT=POSDEF-9=FIELD-IDENTICALLY-1; DET-SPECTRUM %d "
-                     "VALUES ON %d CELLS]"
-                     % (max(ph), at_ceiling, ordered_total, 8, len(detspec),
-                        spec_total)),
-        "weld": weld_string(sat_e, sat_q, cry_e, inh_e, walk_e, cry7, fal_e,
-                            ind, det,
-                            len(i7["family"])
-                            + len(i7["site_dependent_family"]), len(boxpts),
-                            strict_route1, ordered_total, cf_tot),
+                     "I7-STRICT=POSDEF-9=FIELD-IDENTICALLY-1 (SITEWISE: "
+                     "POSDEF(x) IFF min_l n_l(x)>=1, AT ALL %d REACHABLE SITE "
+                     "CODES); DET-SPECTRUM %d VALUES ON %d CELLS]"
+                     % (max(ph), at_ceiling, ordered_total, 8,
+                        R["geometry"]["sitewise_identity"]
+                        ["reachable_site_codes"], len(detspec), spec_total)),
+        "weld": weld_string({
+            # the instrument review's M1, now a dead mutant: the one-line
+            # forgery moves the BUILDER only.  The comparator types its own
+            # template and re-derives the word from the receipt's fate rows.
+            "out": pick("MUT-WELD-FORGERY",
+                        weld_outcome(sat_e["fate"], sat_q["fate"]), "EMPTY"),
+            "isos": sat_e["isomorphisms"], "qm": sat_q["quotient_maps"],
+            "fs": sat_e["inventory"]["I-SITE-ASSIGNMENT"],
+            "fl": sat_e["inventory"]["I-DIRECTION-LABEL"],
+            "fo": sat_e["inventory"]["I-ORIENT"],
+            "n1": ind[0], "n2": ind[1], "n3": ind[2],
+            "q": "[[%s, %s], [%s, %s]]" % tuple(R["arena"]["q"]),
+            "det": str(det), "nbox": len(boxpts),
+            "nfam": len(i7["family"]) + len(i7["site_dependent_family"]),
+            "w1": w2ind[0], "w2": w2ind[1], "w3": w2ind[2],
+            "nstrict": strict_route1, "ntriples": ordered_total,
+            "ncoord": cf_tot, "nmult": len(C["strict_multisets"]),
+            "inc": com3_inc, "cov": com3_cov,
+            "budget": full_budget, "onein": full_budget // weld_of_them,
+            "cryisos": cry_e["isomorphisms"], "inhfate": inh_e["fate"],
+            "inhfib": inh_e["inventory"]["I-SITE-ASSIGNMENT"],
+            "walkfate": walk_e["fate"], "arity": walk_e["site_arity"],
+            "cry7": cry7["fate"], "falfate": fal_e["fate"],
+            "dir": dirmax, "dirrows": dirrows,
+            "zero": non_fix_zero}),
     }
     R["verdict"] = verdict
     for k in ("arena", "geometry", "weld"):
@@ -3185,18 +3621,51 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                 not missing, "claims %d, missing %s"
                 % (len(claims), missing or "none"))
         SEAL.take("SEAL-PAPER-CLAIMS", R)
-        cov = paper_coverage(R, paper_text)
+        ptest = paper_text
+        if mut("MUT-PAPER-HEAD-NUMERAL"):
+            ptest = ptest.replace("21952000", "21952001")
+        cov = paper_coverage(R, ptest)
         if mut("MUT-PAPER-NUMERAL"):
             cov = dict(cov, unregistered=cov["unregistered"] + ["987654321"])
         LD.gate("G-PAPER-NUMERAL-COVERAGE",
                 "every numeral in the paper occurs in the receipt as a "
                 "DELIMITED number -- not as a substring of a longer one -- or "
                 "in the declared allow-list of section, ledger and date "
-                "references: %d numerals scanned" % cov["scanned"],
+                "references: %d numerals scanned, of which %d are inside the "
+                "%d FENCED VERDICT BLOCKS (the #20 addendum engraved at "
+                "ledger #168: the old scan stripped every backticked span "
+                "before scanning and so never read the head's numbers at "
+                "all).  A fenced numeral is allow-listed only against the "
+                "receipt -- the run's own verdict strings included -- so a "
+                "head number this run never derived cannot pass"
+                % (cov["scanned"], cov["fenced_numerals"],
+                   cov["fenced_blocks"]),
                 not cov["unregistered"],
-                "scanned %d, allow-listed %d, unregistered %s"
-                % (cov["scanned"], cov["allowed"],
+                "scanned %d (fenced %d in %d blocks), allow-listed %d, "
+                "unregistered %s"
+                % (cov["scanned"], cov["fenced_numerals"],
+                   cov["fenced_blocks"], cov["allowed"],
                    cov["unregistered"][:6] or "none"))
+        R["paper_coverage"] = cov
+        htest = paper_text
+        if mut("MUT-PAPER-HEAD"):
+            htest = htest.replace("EMBEDDING+QUOTIENT", "EMBEDDING+EMBEDDING")
+        head_missing = [k for k in sorted(R["verdict"])
+                        if not match_needle(htest, R["verdict"][k])]
+        LD.gate("G-PAPER-HEAD-VERBATIM",
+                "THE PAPER'S HEAD IS THE RUN'S HEAD, CHARACTER FOR "
+                "CHARACTER.  Each of the %d verdict segments the run derived "
+                "-- %d characters in all -- is matched into the paper under "
+                "test with whitespace normalised, ASCII folded and markdown "
+                "prefixes stripped, so the fenced blocks a reader will quote "
+                "are bound to the receipt as strings and not merely as "
+                "numbers"
+                % (len(R["verdict"]),
+                   sum(len(v) for v in R["verdict"].values())),
+                not head_missing, "segments matched %d of %d; missing %s"
+                % (len(R["verdict"]) - len(head_missing), len(R["verdict"]),
+                   head_missing or "none"))
+        SEAL.take("SEAL-PAPER-COVERAGE", R)
         pol = paper_polarity(R, paper_text, mutated=mut("MUT-PAPER-POLARITY"))
         R["polarity"] = pol
         LD.gate("G-PAPER-CLAIM-POLARITY",
@@ -3210,6 +3679,7 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         SEAL.take("SEAL-POLARITY", R)
     else:
         R["polarity"] = []
+        R["paper_coverage"] = {}
 
     R["coverage"] = {}
     R["waiver_ledger"] = []
@@ -3230,45 +3700,60 @@ def fates_forced(R):
     return R["constructibility"]["FORCED"]
 
 
-def weld_string(sat_e, sat_q, cry_e, inh_e, walk_e, cry7, fal_e, ind, det,
-                nfam, nbox, nstrict, ntriples, ncoord):
-    out = "FOUND" if (sat_e["fate"] == "FOUND-candidate"
-                      and sat_q["fate"] == "FOUND-candidate") else (
-        "EMPTY" if sat_e["fate"] in ("STRUCT-DEAD", "COUNT-DEAD",
-                                     "ARITY-DEAD") else "BLOCKED-AT-"
-        + sat_e["fate"])
+def weld_outcome(sat_e_fate, sat_q_fate):
+    """THE OUTCOME WORD, from the two measured fates of the primary arena.
+    The rule is the pin's declared vocabulary and nothing else."""
+    if sat_e_fate == "FOUND-candidate" and sat_q_fate == "FOUND-candidate":
+        return "FOUND"
+    if sat_e_fate in ("STRUCT-DEAD", "COUNT-DEAD", "ARITY-DEAD"):
+        return "EMPTY"
+    return "BLOCKED-AT-" + sat_e_fate
+
+
+def weld_string(V):
+    """THE BUILDER's weld segment.  Every field of `V` is a measured value;
+    the comparator in `reconstruct` types this template a SECOND time from the
+    serialized receipt and shares no code with this function -- so a one-line
+    forgery here moves the builder only, and dies at the reconstruction gate."""
     return (
-        "WELD3-%s-[ACTOR->SITE|CO-DIVISION-ACTOR-PAIR->LINK|"
+        "WELD3-%(out)s-[ACTOR->SITE|CO-DIVISION-ACTOR-PAIR->LINK|"
         "DIVISION-COUNT->n_l(x)]@EMBEDDING+QUOTIENT"
-        "<ISOS=%d|QUOTIENT-MAPS=%d|FIBERS=%d/%d/%d(SITE/LABEL/ORIENT)"
-        "|INDUCED-RECORD=(%d,%d,%d):q=[[1,-1/2],[-1/2,1]]:det=%s:"
-        "ADMISSIBLE-BY-HA-SYLVESTER:INSIDE-I7'S-OWN-%d-POINT-DECLARED-BOX:"
-        "NOT-ONE-OF-ITS-%d-DECLARED-RECORDS"
-        " -- SCOPE=THE-SATURATING-STRATUM(%d-OF-%d-GROUPING-TRIPLES-IN-THE-"
-        "COMMITTED-NAMING;%d-UP-TO-THE-SITE-ASSIGNMENT-THE-READING-DECLARES-"
-        "FREE)|"
-        "GRAMMAR-ADMISSIBLE-NOT-COMMITTED(d66'S-OWN-R=3-POINT-IS-COUNT-DEAD)"
-        " -- CONTROLS=FOUND-AT-CRYSTAL@L2(ISOS=%d,FIBERS-ALL-1)|"
-        "FALSIFIER-FLIPS(%s,SITE-FIBER=%d)|EMPTY-AT-WALK(%s:%d-OBJECTS-"
-        "AGAINST-9)|CRYSTAL-AT-I7(%s:DIAGONAL-0-AT-9-OF-9)|"
-        "R3-FALSIFIER(%s)"
+        "<ISOS=%(isos)d=|AUT(K333)||QUOTIENT-MAPS=%(qm)d"
+        "|FIBERS=%(fs)d/%(fl)d/%(fo)d(SITE/LABEL/ORIENT,BASE-MAP-INVARIANT)"
+        "|INDUCED-RECORD=(%(n1)d,%(n2)d,%(n3)d):q=%(q)s:det=%(det)s:"
+        "ADMISSIBLE-BY-HA-SYLVESTER:INSIDE-I7'S-OWN-%(nbox)d-POINT-DECLARED-"
+        "BOX:NOT-ONE-OF-ITS-%(nfam)d-DECLARED-RECORDS:THE-WELD-IS-TO-I7'S-"
+        "RECORD-SPACE(WELD-2'S-OWN-FOUND-AT-I7-WITNESS-(%(w1)d,%(w2)d,%(w3)d)-"
+        "WAS-ADMISSIBLE-AND-UNDECLARED-TOO)"
+        " -- SCOPE=THE-SATURATING-STRATUM(%(nstrict)d-OF-%(ntriples)d-"
+        "GROUPING-TRIPLES-IN-THE-COMMITTED-NAMING;%(ncoord)d-UP-TO-THE-SITE-"
+        "ASSIGNMENT-THE-READING-DECLARES-FREE;STRATUM-WIDE-BY-THEOREM:ALL-"
+        "%(nstrict)d-CARRY-ONE-ARENA-IN-%(nmult)d-MULTISETS-EACH-WITNESSED)|"
+        "GRAMMAR-ADMISSIBLE-NOT-COMMITTED(d66'S-OWN-R=3-POINT-SPENDS-%(inc)d-"
+        "INCIDENCES-ON-%(cov)d-OF-27-CELLS-AND-IS-COUNT-DEAD)|COVERAGE-NOT-"
+        "COUNT(%(budget)d-TRIPLES-PAY-THE-FULL-27;%(nstrict)d-WELD;1-IN-"
+        "%(onein)d)|ROUTE-B-MOOTED-AT-THIS-TARGET-AND-CARRIER"
+        " -- CONTROLS=FOUND-AT-CRYSTAL@L2(ISOS=%(cryisos)d,FIBERS-ALL-1)|"
+        "FALSIFIER-FLIPS(%(inhfate)s,SITE-FIBER=%(inhfib)d)|EMPTY-AT-WALK"
+        "(%(walkfate)s:%(arity)d-OBJECTS-AGAINST-9)|CRYSTAL-AT-I7(%(cry7)s:"
+        "DIAGONAL-0-AT-9-OF-9)|R3-FALSIFIER(%(falfate)s)"
         " -- READINGS-DIFFER=DEAD-ROWS-DIE-AT-STRUCTURE-UNDER-EMBEDDING-AND-"
-        "AT-COUNT-POSITIVITY-UNDER-QUOTIENT>"
-        % (out, sat_e["isomorphisms"], sat_q["quotient_maps"],
-           sat_e["inventory"]["I-SITE-ASSIGNMENT"],
-           sat_e["inventory"]["I-DIRECTION-LABEL"],
-           sat_e["inventory"]["I-ORIENT"],
-           ind[0], ind[1], ind[2], det, nbox, nfam, nstrict, ntriples,
-           ncoord,
-           cry_e["isomorphisms"], inh_e["fate"],
-           inh_e["inventory"]["I-SITE-ASSIGNMENT"], walk_e["fate"],
-           walk_e["site_arity"], cry7["fate"], fal_e["fate"]))
+        "AT-COUNT-POSITIVITY-UNDER-QUOTIENT|DIRECTED-COMPARATOR=%(dir)d-AT-"
+        "ALL-%(dirrows)d-ARENAS|STRICTEST-READING(SITE-CARRIER-FIXED)="
+        "R3-SAT-SURVIVES-AT-n=1;R3-ROW|COL|ANT-DIES-AT-%(zero)d-ZERO-CELLS>"
+        % V)
 
 
 def reconstruct(rec):
-    """THE INDEPENDENT RECONSTRUCTION.  It reads only the receipt payload,
-    rebuilds every segment from the rows it finds there, and derives the
-    outcome word from the measured fate multiset rather than copying it."""
+    """THE INDEPENDENT RECONSTRUCTION.  It reads only the serialized receipt
+    payload and TYPES ALL THREE TEMPLATES ITSELF -- arena, geometry AND weld.
+    The instrument review's M1: the weld segment used to be rebuilt by calling
+    `weld_string`, the builder's own function, so 71.2 % of the head was a
+    serialization round-trip rather than a derivation and a one-line patch of
+    that function moved builder and comparator together.  Nothing below is
+    shared with the builder: the template is re-typed, the outcome word is
+    re-derived from the receipt's own fate rows, and the derivation is
+    cross-checked against the published fate multiset."""
     cn = rec["counts"]
     cons = rec["constructibility"]
     geo = rec["geometry"]
@@ -3290,21 +3775,79 @@ def reconstruct(rec):
                 rec["family"]["window_size"], rec["family"]["family_size"],
                 rec["strata"]["nonempty_cells"]))
     empt = geo["empty_posdef_cells"]
+    sw = geo["sitewise_identity"]
     geometry = ("POSITIVE-GEOMETRY-[CEILING %d ATTAINED at %d of %d GROUPING "
                 "TRIPLES; %d NEVER ATTAINED; I7-STRICT=POSDEF-9=FIELD-"
-                "IDENTICALLY-1; DET-SPECTRUM %d VALUES ON %d CELLS]"
+                "IDENTICALLY-1 (SITEWISE: POSDEF(x) IFF min_l n_l(x)>=1, AT "
+                "ALL %d REACHABLE SITE CODES); DET-SPECTRUM %d VALUES ON %d "
+                "CELLS]"
                 % (geo["attained_ceiling"], geo["triples_at_ceiling"],
                    geo["ordered_grouping_triples"],
                    [e for e in empt if e != 0][0] if [e for e in empt
                                                       if e != 0] else 0,
+                   sw["reachable_site_codes"],
                    len(geo["det_spectrum"]), geo["det_cells"]))
-    weld = weld_string(sat_e, sat_q, cry_e, inh_e, walk_e, cry7, fal_e,
-                       tuple(ind["n"]), ind["det"],
-                       ind["declared_family_size"],
-                       rec["i7"]["box_admissible_points"],
-                       geo["i7_strict_ordered_triples"],
-                       geo["ordered_grouping_triples"],
-                       geo["coordinate_free_saturating"]["total"])
+    # the outcome word, RE-DERIVED here from the receipt's own fate rows and
+    # cross-checked against the published multiset -- no builder code, no
+    # shared helper, no copied string.
+    ef, qf = sat_e["fate"], sat_q["fate"]
+    if ef == "FOUND-candidate" and qf == "FOUND-candidate":
+        out = "FOUND"
+    elif ef in ("STRUCT-DEAD", "COUNT-DEAD", "ARITY-DEAD"):
+        out = "EMPTY"
+    else:
+        out = "BLOCKED-AT-" + ef
+    fd = rec["weld"]["fate_distribution"]
+    if out == "FOUND" and fd.get("FOUND-candidate", 0) < 2:
+        out = "BLOCKED-AT-FATE-DISTRIBUTION"
+    cnc = geo["coverage_not_count"]
+    w2 = rec["i7"]["weld2_found_witness"]
+    st = rec["weld"]["strictest_reading"]
+    q = rec["arena"]["q"]
+    weld = (
+        "WELD3-" + out + "-[ACTOR->SITE|CO-DIVISION-ACTOR-PAIR->LINK|"
+        "DIVISION-COUNT->n_l(x)]@EMBEDDING+QUOTIENT"
+        "<ISOS=%d=|AUT(K333)||QUOTIENT-MAPS=%d"
+        "|FIBERS=%d/%d/%d(SITE/LABEL/ORIENT,BASE-MAP-INVARIANT)"
+        "|INDUCED-RECORD=(%d,%d,%d):q=[[%s, %s], [%s, %s]]:det=%s:"
+        "ADMISSIBLE-BY-HA-SYLVESTER:INSIDE-I7'S-OWN-%d-POINT-DECLARED-BOX:"
+        "NOT-ONE-OF-ITS-%d-DECLARED-RECORDS:THE-WELD-IS-TO-I7'S-RECORD-SPACE"
+        "(WELD-2'S-OWN-FOUND-AT-I7-WITNESS-(%d,%d,%d)-WAS-ADMISSIBLE-AND-"
+        "UNDECLARED-TOO)"
+        " -- SCOPE=THE-SATURATING-STRATUM(%d-OF-%d-GROUPING-TRIPLES-IN-THE-"
+        "COMMITTED-NAMING;%d-UP-TO-THE-SITE-ASSIGNMENT-THE-READING-DECLARES-"
+        "FREE;STRATUM-WIDE-BY-THEOREM:ALL-%d-CARRY-ONE-ARENA-IN-%d-MULTISETS-"
+        "EACH-WITNESSED)|GRAMMAR-ADMISSIBLE-NOT-COMMITTED(d66'S-OWN-R=3-POINT-"
+        "SPENDS-%d-INCIDENCES-ON-%d-OF-27-CELLS-AND-IS-COUNT-DEAD)|COVERAGE-"
+        "NOT-COUNT(%d-TRIPLES-PAY-THE-FULL-27;%d-WELD;1-IN-%d)|ROUTE-B-MOOTED-"
+        "AT-THIS-TARGET-AND-CARRIER"
+        " -- CONTROLS=FOUND-AT-CRYSTAL@L2(ISOS=%d,FIBERS-ALL-1)|"
+        "FALSIFIER-FLIPS(%s,SITE-FIBER=%d)|EMPTY-AT-WALK(%s:%d-OBJECTS-"
+        "AGAINST-9)|CRYSTAL-AT-I7(%s:DIAGONAL-0-AT-9-OF-9)|R3-FALSIFIER(%s)"
+        " -- READINGS-DIFFER=DEAD-ROWS-DIE-AT-STRUCTURE-UNDER-EMBEDDING-AND-"
+        "AT-COUNT-POSITIVITY-UNDER-QUOTIENT|DIRECTED-COMPARATOR=%d-AT-ALL-%d-"
+        "ARENAS|STRICTEST-READING(SITE-CARRIER-FIXED)=R3-SAT-SURVIVES-AT-n=1;"
+        "R3-ROW|COL|ANT-DIES-AT-%d-ZERO-CELLS>"
+        % (sat_e["isomorphisms"], sat_q["quotient_maps"],
+           sat_e["inventory"]["I-SITE-ASSIGNMENT"],
+           sat_e["inventory"]["I-DIRECTION-LABEL"],
+           sat_e["inventory"]["I-ORIENT"],
+           ind["n"][0], ind["n"][1], ind["n"][2],
+           q[0], q[1], q[2], q[3], ind["det"],
+           rec["i7"]["box_admissible_points"], ind["declared_family_size"],
+           w2["n"][0], w2["n"][1], w2["n"][2],
+           geo["i7_strict_ordered_triples"], geo["ordered_grouping_triples"],
+           geo["coordinate_free_saturating"]["total"],
+           geo["i7_strict_ordered_triples"], geo["i7_strict_multisets"],
+           cnc["committed_R3_incidences"], cnc["committed_R3_cells_covered"],
+           cnc["triples_paying_the_full_budget"], cnc["of_which_weld"],
+           cnc["one_in"],
+           cry_e["isomorphisms"], inh_e["fate"],
+           inh_e["inventory"]["I-SITE-ASSIGNMENT"], walk_e["fate"],
+           walk_e["site_arity"], cry7["fate"], fal_e["fate"],
+           rec["weld"]["directed_comparator_max"],
+           rec["weld"]["directed_comparator_rows"],
+           st["R3-ROW|COL|ANT"]["cells_at_zero"]))
     return {"arena": arena, "geometry": geometry, "weld": weld}
 
 
@@ -3374,6 +3917,31 @@ def paper_claims(R):
          "committed naming"
          % (com(G_["coordinate_free_saturating"]["total"]),
             com(G_["i7_strict_ordered_triples"])), "POSITIVE"),
+        ("C16", "%s ordered grouping triples deposit the full 27 incidences "
+         "and exactly %s of them weld, one in %s"
+         % (com(G_["coverage_not_count"]["triples_paying_the_full_budget"]),
+            com(G_["coverage_not_count"]["of_which_weld"]),
+            com(G_["coverage_not_count"]["one_in"])), "NEGATIVE"),
+        ("C17", "spends all %s of its incidences on %s of the 27 cells"
+         % (com(G_["coverage_not_count"]["committed_R3_incidences"]),
+            com(G_["coverage_not_count"]["committed_R3_cells_covered"])),
+         "NEGATIVE"),
+        ("C18", "positive definite at a site if and only if all three link "
+         "counts are at least 1 there, at every one of the %s site codes this "
+         "family can reach"
+         % com(G_["sitewise_identity"]["reachable_site_codes"]), "POSITIVE"),
+        ("C19", "weld 2's own FOUND-at-I7 witness is the declared probe whose "
+         "induced record is %s, admissible by the same criterion, inside the "
+         "same box, and not one of the %s either"
+         % (str(tuple(R["i7"]["weld2_found_witness"]["n"])),
+            com(I["declared_family_size"])), "POSITIVE"),
+        ("C20", "the directed comparator returns %s at every one of the %s "
+         "arenas where it is defined"
+         % (com(W["directed_comparator_max"]),
+            com(W["directed_comparator_rows"])), "NEGATIVE"),
+        ("C21", "R3-ROW|COL|ANT leaves %s of the 27 cells at zero"
+         % com(W["strictest_reading"]["R3-ROW|COL|ANT"]["cells_at_zero"]),
+         "NEGATIVE"),
     ]
     return [{"id": i, "text": t, "polarity": p} for i, t, p in out]
 
@@ -3398,20 +3966,55 @@ def receipt_numbers(R):
     return out
 
 
+FENCE_RE = re.compile(r"```.*?```", re.S)
+INLINE_RE = re.compile(r"`[^`]*`")
+# prose numerals: the lookbehind protects hyphenated and slashed references
+# (sha-12, 2026-07-28, v14/code) from being split into false tokens.
+NUM_PROSE_RE = re.compile(r"(?<![\w.\-/])\d[\d,]*(?:/\d+)?(?![\w])")
+# FENCED numerals (#20 addendum, engraved at v14 ledger #168): inside a
+# verdict block the hyphen is a WORD SEPARATOR, not a sign or a date rule, so
+# the same scan with the hyphen dropped from the lookbehind reaches the
+# numerals a SCREAMING-KEBAB head actually carries.
+NUM_FENCED_RE = re.compile(r"(?<![\w./])\d[\d,]*(?:/\d+)?(?![\w])")
+
+
+def head_numbers(R):
+    """the numerals the RECEIPT's own verdict strings carry, scanned by the
+    fenced rule.  The paper's fenced blocks are the object under test; this is
+    what they are allowed to draw on, so a head numeral the run never derived
+    has nowhere to hide."""
+    out = set()
+    for v in sorted(R.get("verdict", {}).values()):
+        for t in NUM_FENCED_RE.findall(v):
+            out.add(t.replace(",", ""))
+    return out
+
+
 def paper_coverage(R, text):
-    body = canon(re.sub(r"`[^`]*`", " ", text))
-    nums = re.findall(r"(?<![\w.\-/])\d[\d,]*(?:/\d+)?(?![\w])", body)
-    known = receipt_numbers(R) | NUMREG | NUM_ALLOW
-    scanned = allowed = 0
+    """#20 WITH THE FENCED-BLOCK ADDENDUM.  The old scan removed every
+    backticked span before scanning, which removed all six fenced verdict
+    blocks with it: the numerals of the paper's head -- the sentence the
+    corpus quotes -- were never scanned at all.  Fenced blocks are now
+    extracted and scanned under their own rule."""
+    blocks = FENCE_RE.findall(text)
+    prose = INLINE_RE.sub(" ", FENCE_RE.sub(" ", text))
+    known = receipt_numbers(R) | NUMREG | NUM_ALLOW | head_numbers(R)
+    scanned = allowed = fenced = 0
     unreg = []
-    for raw in nums:
-        tok = raw.replace(",", "")
-        scanned += 1
-        if tok in known:
-            allowed += 1
-            continue
-        unreg.append(tok)
+    targets = [(canon(prose), NUM_PROSE_RE)]
+    targets += [(canon(b), NUM_FENCED_RE) for b in blocks]
+    for body, rx in targets:
+        for raw in rx.findall(body):
+            tok = raw.replace(",", "")
+            scanned += 1
+            if rx is NUM_FENCED_RE:
+                fenced += 1
+            if tok in known:
+                allowed += 1
+                continue
+            unreg.append(tok)
     return {"scanned": scanned, "allowed": allowed,
+            "fenced_blocks": len(blocks), "fenced_numerals": fenced,
             "unregistered": sorted(set(unreg))}
 
 
@@ -3501,14 +4104,24 @@ SWEEP_GATE = "G-MUTANTS-ON-TARGET"
 # two are appended by the very block that computes the census below, and both
 # are verified present at G-ARTIFACT-INTEGRITY rather than assumed.
 LEDGER_GATES = ("G-COVERAGE", "G-REACHABILITY")
+# the two gates `finish` evaluates BETWEEN the coverage census and the
+# reachability census: they are declared here for the same reason as the LATE
+# gates -- the census cannot see a gate that has not run yet -- and their
+# presence is verified at G-ARTIFACT-INTEGRITY rather than assumed.
+CLOSING_LEDGER_GATES = ("G-SWEEP-BOUND", "G-ANCHOR-CONSUMERS")
 
 
-def finish(LD, SEAL, R, verdict, write=True):
+def finish(LD, SEAL, R, verdict, write=True, swept=False):
     """close the payload: coverage and reachability over the WHOLE delivery
-    run, the totality check, the seal, the artifacts, the disk-vs-seal
-    integrity check."""
+    run, the sweep-execution binding, the anchor-consumer binding, the
+    totality check, the seal, the artifacts, the disk-vs-seal integrity check.
+
+    `swept` is True exactly for a DELIVERY-LEVEL run -- the two modes that run
+    the 59-mutant loop around this call.  A mutant sub-run is a sub-pipeline
+    and does not sweep itself, so it passes False and says so."""
     gate_names = sorted({g["gate"] for g in LD.rows} | set(LATE_GATES)
-                        | set(LEDGER_GATES) | {SWEEP_GATE})
+                        | set(LEDGER_GATES) | set(CLOSING_LEDGER_GATES)
+                        | {SWEEP_GATE})
     targeted = Counter(m[1] for m in MUTANTS)
     waivers = waiver_ledger()
     uncovered = [g for g in gate_names
@@ -3528,7 +4141,9 @@ def finish(LD, SEAL, R, verdict, write=True):
     LD.gate("G-COVERAGE",
             "#34 WITH AN HONEST DENOMINATOR: of the %d gates this delivery "
             "run evaluates -- %d already closed, plus this gate and its "
-            "twin, plus the %d LATE gates this same function evaluates "
+            "twin, plus the sweep-binding and anchor-consumer gates this "
+            "same function evaluates between them, plus the %d LATE gates "
+            "this same function evaluates "
             "before it returns, plus the sweep gate the delivery pipeline "
             "evaluates around it; every one of those is verified PRESENT at "
             "G-ARTIFACT-INTEGRITY rather than assumed -- "
@@ -3546,7 +4161,52 @@ def finish(LD, SEAL, R, verdict, write=True):
     SEAL.take("SEAL-COVERAGE", R)
     SEAL.take("SEAL-WAIVERS", R)
     SEAL.take("SEAL-MUTANTS", R)
+    # THE SWEEP'S EXECUTION IS BOUND (the instrument review's m2).  The sweep
+    # gate was DECLARED into the coverage denominator by constant while its
+    # execution was verified nowhere, so a delivery whose 59-mutant loop never
+    # ran shipped `mutant_sweep: []` next to `coverage.mutants: 59` with every
+    # gate passing.  A delivery-level run must now carry a complete, on-target
+    # sweep and must have evaluated the sweep gate itself.
+    swept = swept or mut("MUT-SWEEP-UNBOUND")
+    sweep_rows = R.get("mutant_sweep") or []
+    ran_here = {g["gate"] for g in LD.rows}
+    sweep_ok = (not swept) or (
+        len(sweep_rows) == len(MUTANTS)
+        and all(k.get("on_target") for k in sweep_rows)
+        and SWEEP_GATE in ran_here)
+    LD.gate("G-SWEEP-BOUND",
+            "THE SWEEP'S EXECUTION IS BOUND, NOT DECLARED.  This run is %s; a "
+            "delivery-level run is required to carry one sweep row per "
+            "declared mutant (%d), every row ON TARGET, and to have evaluated "
+            "%s itself before this point -- so a delivery whose mutant loop "
+            "never ran cannot reach a writer.  A mutant SUB-run declares "
+            "itself un-swept and is held to that instead"
+            % ("delivery-level" if swept else "a mutant sub-run",
+               len(MUTANTS), SWEEP_GATE),
+            sweep_ok,
+            "delivery-level %s, sweep rows %d of %d, on target %d, sweep gate "
+            "evaluated %s" % (swept, len(sweep_rows), len(MUTANTS),
+                              sum(1 for k in sweep_rows if k.get("on_target")),
+                              SWEEP_GATE in ran_here))
     SEAL.take("SEAL-MUTANT-SWEEP", R)
+    # THE ANCHOR CONSUMERS ARE BOUND (the instrument review's m3).  #62 says
+    # each verbatim anchor names the gate that consumes it; nothing checked
+    # that the named gate existed or ever ran.  Both are checked here, where
+    # the whole ledger is available.
+    vcons = [(v["id"], v["consumer_gate"]) for v in R["verbatim_anchors"]]
+    if mut("MUT-CONSUMER-BINDING"):
+        vcons = vcons[:-1] + [(vcons[-1][0], "G-NO-SUCH-GATE")]
+    cons_bad = [vid for vid, g in vcons
+                if g not in GATE_REGISTRY or g not in ran_here]
+    LD.gate("G-ANCHOR-CONSUMERS",
+            "EVERY VERBATIM ANCHOR'S NAMED CONSUMER IS A REAL GATE THAT REALLY "
+            "RAN.  All %d #62 anchors name the gate that consumes them; each "
+            "named gate is required here to be in the declared registry AND "
+            "in this run's own evaluated ledger, so the naming cannot drift "
+            "into a gate that was removed, renamed or never reached"
+            % len(vcons),
+            not cons_bad, "anchors %d, consumers not registered-and-evaluated: "
+            "%s" % (len(vcons), cons_bad or "none"))
     R["reachability"] = [
         {"mutant": m[0], "gate": m[1],
          "gate_evaluated_in_this_run": m[1] in gate_names,
@@ -3605,10 +4265,14 @@ def finish(LD, SEAL, R, verdict, write=True):
         "warrant": "these two are evaluated after the gate ledger is "
                    "snapshotted and sealed -- G-SEAL-COMPLETE cannot be "
                    "inside the object it seals, and G-ARTIFACT-INTEGRITY "
-                   "runs after the bytes are on disk.  A run that fails a "
-                   "gate writes nothing, so the existence of these artifacts "
-                   "IS the record of their verdict, and the transcript "
-                   "carries both rows in full."}
+                   "runs after the bytes are on disk.  The archived "
+                   "transcript therefore carries G-SEAL-COMPLETE's row and "
+                   "NOT G-ARTIFACT-INTEGRITY's, which is emitted to the "
+                   "console after the transcript string has been serialized; "
+                   "that verdict is recorded instead by the artifacts "
+                   "themselves, since a run which fails any gate writes "
+                   "nothing and the staged bytes are moved into place only "
+                   "after it passes."}
     SEAL.take("SEAL-GATES", R)
     SEAL.take("SEAL-CLOSING", R)
     SEAL.take("SEAL-TOTALS", R)
@@ -3621,8 +4285,19 @@ def finish(LD, SEAL, R, verdict, write=True):
     declared = sorted(set(R.keys()))
     covered = sorted({r["path"] for r in SEAL.rows} | set(DECLARED_UNSEALED))
     uncovered_keys = sorted(set(declared) - set(covered))
+    # the instrument review's m1: the unsealed DECLARATION is now frozen by
+    # content and by length, and no key that carries a measurement may appear
+    # on it -- so the coherent drop (remove the row, remove the declaration,
+    # append the key here) cannot ship a corrupted object behind a longer list.
+    unsealed_frozen = (tuple(DECLARED_UNSEALED) == DECLARED_UNSEALED_FROZEN)
+    unsealed_clean = not (set(DECLARED_UNSEALED)
+                          & ({p for _s, p, _g in SEALED_PATHS}
+                             | set(MEASURED_KEYS)))
     R["seal_manifest"] = {"rows": SEAL.rows,
                           "declared_unsealed": DECLARED_UNSEALED,
+                          "declared_unsealed_frozen": unsealed_frozen,
+                          "declared_unsealed_carries_no_measurement":
+                              unsealed_clean,
                           "declared_seals": [s for s, _p, _g in SEALED_PATHS]}
     broken = SEAL.verify(R)
     LD.gate("G-SEAL-COMPLETE",
@@ -3634,12 +4309,19 @@ def finish(LD, SEAL, R, verdict, write=True):
             "happened to be taken -- so a silently dropped seal dies here.  "
             "The vouching layer is inside the seal: schema, provenance, "
             "paper claims, polarity, coverage, reachability, gates, totals "
-            "and the transcript head",
-            not missing and not extra and not uncovered_keys and not broken,
+            "and the transcript head.  The DECLARED-UNSEALED list is itself "
+            "frozen by content and by length and may not name any key that "
+            "carries a measurement, so the coherent drop -- remove the seal "
+            "row, remove the declaration and declare the key unsealed -- has "
+            "no surface either",
+            not missing and not extra and not uncovered_keys and not broken
+            and unsealed_frozen and unsealed_clean,
             "declared seals %d, taken %d, missing %s, extra %s, receipt keys "
-            "not covered %s, seals broken at close %s"
+            "not covered %s, seals broken at close %s, unsealed list frozen "
+            "%s and measurement-free %s"
             % (len(SEALED_PATHS), len(SEAL.rows), missing or "none",
-               extra or "none", uncovered_keys or "none", broken or "none"))
+               extra or "none", uncovered_keys or "none", broken or "none",
+               unsealed_frozen, unsealed_clean))
     payload = json.dumps(R, indent=1, sort_keys=True, default=str)
     SEAL.close(R, payload)
     R["payload_sha256_12"] = SEAL.payload_sha
@@ -3660,7 +4342,11 @@ def finish(LD, SEAL, R, verdict, write=True):
     disk_broken = SEAL.verify(back)
     head_ok = (read_text(tmp_t).split("\n")[:40] == R["transcript_head"])
     ran = {g["gate"] for g in LD.rows}
-    late_ok = all(g in ran for g in tuple(LEDGER_GATES) + LATE_GATES[:2])
+    late_ok = all(g in ran for g in tuple(LEDGER_GATES) + LATE_GATES[:2]
+                  + CLOSING_LEDGER_GATES + (SWEEP_GATE,))
+    sweep_complete = (len(R.get("mutant_sweep") or []) == len(MUTANTS)
+                      and all(k.get("on_target")
+                              for k in R.get("mutant_sweep") or []))
     LD.gate("G-ARTIFACT-INTEGRITY",
             "INTEGRITY IS DISK-VS-SEAL, never a re-derivation: the payload "
             "is written from the SEALED object to a staged file, read back "
@@ -3670,12 +4356,18 @@ def finish(LD, SEAL, R, verdict, write=True):
             "known to be live, and the transcript head on disk compared "
             "against the sealed head.  The staged bytes are moved into place "
             "by os.replace ONLY after this gate passes, so a run that fails "
-            "any gate leaves the delivered artifacts untouched",
-            probe_caught and not disk_broken and head_ok and late_ok,
+            "any gate leaves the delivered artifacts untouched.  The sweep "
+            "gate is in this conjunction with the two LEDGER gates and the "
+            "two evaluable LATE gates, and the delivered sweep is required "
+            "to be complete and on target: the only writer in this file is "
+            "downstream of a sweep that actually ran",
+            probe_caught and not disk_broken and head_ok and late_ok
+            and sweep_complete,
             "corrupted probe detected %s, sealed objects broken on disk %s, "
             "transcript head matches %s, every declared-later gate actually "
-            "evaluated %s"
-            % (probe_caught, disk_broken or "none", head_ok, late_ok))
+            "evaluated %s, sweep complete and on target %s"
+            % (probe_caught, disk_broken or "none", head_ok, late_ok,
+               sweep_complete))
     os.replace(tmp_j, OUT_JSON)
     os.replace(tmp_t, OUT_TXT)
     return payload, text
@@ -3751,6 +4443,11 @@ def parse_args(argv):
         a = argv[i]
         if a not in FLAGS:
             raise CliError("unknown argument %r" % a)
+        # the instrument review's m5: a second MODE flag used to overwrite
+        # the first silently, so `--verify-paper --mutant NAME` consumed
+        # `--verify-paper` as nothing and a flag could be a no-op.
+        if out["mode"] != "deliver":
+            raise CliError("a second mode flag %r; modes do not compose" % a)
         if a == "--no-write":
             out["mode"] = "no-write"
         elif a == "--numbers":
@@ -3797,9 +4494,12 @@ def parse_args_permissive(argv):
 def cli_selftest():
     """the CLI contract, exercised in-process."""
     bad = []
-    for argv in (["--nope"], ["--mutant"], ["--mutant", "NOPE"],
+    malformed = (["--nope"], ["--mutant"], ["--mutant", "NOPE"],
                  ["--break-anchor"], ["--break-anchor", "NOPE"], ["x"],
-                 ["--numbers", "--zzz"]):
+                 ["--numbers", "--zzz"],
+                 ["--verify-paper", "--mutant", sorted(MUTANT_NAMES)[0]],
+                 ["--numbers", "--no-write"], ["--selftest", "--list-gates"])
+    for argv in malformed:
         try:
             parse_args(argv)
             bad.append(argv)
@@ -3813,20 +4513,22 @@ def cli_selftest():
         parse_args(argv)
         ok_shapes += 1
     permissive = parse_args_permissive(["--nope"])["mode"] == "nope"
-    return bad, ok_shapes, permissive
+    return bad, ok_shapes, permissive, len(malformed)
 
 
 def cli_gates(LD):
-    bad, ok_shapes, permissive = cli_selftest()
+    bad, ok_shapes, permissive, nmal = cli_selftest()
     if mut("MUT-CLI-PERMISSIVE"):
         bad = [["--nope"]]
     LD.gate("G-CLI-WHITELIST",
             "the #82 CLI contract, exercised in this run: %d malformed "
-            "argument vectors are all rejected with exit code 2, %d "
-            "legal shapes parse, and the registered PERMISSIVE shape -- "
-            "present in this file only as this gate's own falsifier -- "
-            "accepts an unknown flag, which is what makes the gate a "
-            "measurement" % (7, ok_shapes),
+            "argument vectors are all rejected with exit code 2 -- the last "
+            "three of them SECOND-MODE vectors, since a mode flag that "
+            "silently overwrote an earlier one made the earlier flag a no-op "
+            "-- %d legal shapes parse, and the registered PERMISSIVE shape, "
+            "present in this file only as this gate's own falsifier, accepts "
+            "an unknown flag, which is what makes the gate a "
+            "measurement" % (nmal, ok_shapes),
             not bad and permissive,
             "malformed vectors accepted %s, legal shapes %d, permissive "
             "shape accepts unknown flags %s"
@@ -3916,7 +4618,7 @@ def main(argv=None):
                 % (sum(1 for k in kills if k["on_target"]), len(kills),
                    misses or "none"))
         payload, text = finish(LD, SEAL, R, verdict,
-                               write=(opt["mode"] == "deliver"))
+                               write=(opt["mode"] == "deliver"), swept=True)
         emit_report(R, LD)
         return 0
     except GateFail as e:
@@ -3953,16 +4655,19 @@ GATE_REGISTRY = [
     "G-AFFINE-LAW", "G-CU-SPLIT-EMPTY", "G-BEYOND-COSET-CRYSTALLINE",
     "G-FRAGILITY-SEED", "G-FRAGILITY-GEOM", "G-R2-BACK-ANCHOR",
     "G-POSDEF-CEILING", "G-STRICT-COUNT", "G-RIGIDITY", "G-DET-SPECTRUM",
-    "G-COORDINATE-FREE-CLASS", "G-SAT-ARENA-IDENTITY", "G-WELD-CENSUS",
-    "G-READINGS", "G-ISOS-ANCHOR", "G-CTRL-FOUND-CRYSTAL",
+    "G-COORDINATE-FREE-CLASS", "G-SITEWISE-IDENTITY", "G-R4-REGISTER",
+    "G-SAT-ARENA-IDENTITY",
+    "G-WELD-CENSUS", "G-READINGS", "G-ISOS-ANCHOR", "G-CTRL-FOUND-CRYSTAL",
     "G-CTRL-FALSIFIER", "G-CTRL-EMPTY-WALK", "G-CTRL-CRYSTAL-AT-I7",
     "G-CTRL-R3-FALSIFIER", "G-SMUGGLE", "G-TWO-WAY", "G-DEAD-LISTS-CITED",
-    "G-ADMISSIBLE", "G-I7-BOX", "G-NOT-IN-FAMILY", "G-FIBERS",
+    "G-ADMISSIBLE", "G-I7-BOX", "G-NOT-IN-FAMILY", "G-W2-WITNESS",
+    "G-STRICTEST-READING", "G-FIBERS",
     "G-COUNT-IMPLIES-WELD", "G-STRATA-WITNESSED", "G-WALL-L1", "G-WALL-BHS",
     "G-WALL-KR", "G-WALL-DIAGONAL", "G-WALL-LORENTZ-NAMED",
     "G-VERDICT-RECONSTRUCTED", "G-PAPER-CLAIMS", "G-PAPER-NUMERAL-COVERAGE",
-    "G-PAPER-CLAIM-POLARITY", "G-CLI-WHITELIST",
+    "G-PAPER-HEAD-VERBATIM", "G-PAPER-CLAIM-POLARITY", "G-CLI-WHITELIST",
     "G-SELFTEST-WRITES-NOTHING", "G-MUTANTS-ON-TARGET", "G-COVERAGE",
+    "G-SWEEP-BOUND", "G-ANCHOR-CONSUMERS",
     "G-REACHABILITY", "G-PAPER-COVERAGE-FINAL", "G-SEAL-COMPLETE",
     "G-ARTIFACT-INTEGRITY"
 ]
