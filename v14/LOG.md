@@ -5206,3 +5206,42 @@ FAIRNESS (a pre-seal-era unit; the U4b precedent) — reviewers →
 v14/review-cra-{operator,effectus,instrument}.md.  In flight
 (7): the coupling worker + three constructions + three CR-A
 reviewers.
+
+## 2026-08-11 — CR-A EFFECTUS REVIEW LANDED (K2): AWF — THE VERDICT STANDS; THE MOVER-BLIND LIMIT **IS** THE WELD ARENA; §9 REVERSED (v14 LEDGER #175)
+
+v14/review-cra-effectus.md (3984c7d31d80) frozen.  **Grade
+ACCEPT-WITH-FIXES; 826 recomputations (817 exact, 0 mismatches
+— no delivered number moved).**  Rulings: (1) the
+BLOCKED-AT-STATIC-GEOMETRY verdict STANDS unreservedly (§15
+excluded the very lineage Γ was built on — CR-A named the place
+the successor would look; no erratum); (2) NO scope-annotation
+note (paper-12 precedent fails twice; U4b's governs) — and the
+licensed sentence is SHARPER than offered: **CR-A's mover-blind
+limit is EXACTLY the weld arena — q(1,1,1)/27 = (1/27, −1/54,
+1/27) — the same matrix reached from two unrelated directions**
+(accumulation limit vs budget saturation), coincidence-forced
+by the link declaration per CR-A's own bar; (3) CR-A
+RETRO-BINDS PAPER-20 four ways (R-CRA→20-1..4): its
+static-geometry theorem is why G-REQUIREMENT is well-posed;
+open #4 (no substitute for commutation) is live debt; **the
+weld arena sits 3 diagonal-only events from I7's G-SINGULAR
+((1,1,1)→(1,1,4), det 0) — update semantics must gate
+admissibility per emission** [orchestrator note: this
+independently corners the coupling worker's horizon-5
+admissibility-exit finding — the two derivations meet at the
+paper-20 adjudication]; (4) THREE MAJORS, one disease
+(free-axis quantity reported as pinned-layer property; era-fair
+vs §15): MAJOR-1 the hexagonal limit is 1-of-6-schedules for
+4/5 movers (near-tautological at SCH-CONST; survives as
+existential); **MAJOR-2 §9 REVERSED — the pinned readout DOES
+discriminate (separation 15–35/36 across all 3888 coordinates;
+207 separate every pair)**; MAJOR-3 the BIL family lacks the
+lapse×lapse atom — the boundary choice is five-way and the
+fifth (co-division AND) is what paper-19 forced.  MINORs: §7
+"nothing is written" false at 45/54 M-TILT cells (telescoping
+net zero); §8 miscalls 3 movers; control value forced.
+Prose↔receipt clean (56 numerals; all three false statements
+are mechanism/scope sentences, not numbers — the gate works,
+the failures live one level up).  7 successor rows incl. BIL′
+with the co-incidence atom.  Repairs → the CR-A adjudication
+(two seats outstanding).
