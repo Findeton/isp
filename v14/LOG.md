@@ -7481,3 +7481,36 @@ The instrument reviewer's final touch: byte-identity now
 verified at THREE hash seeds off-tree/git-less — the #160
 tie-break immunity measured, not argued.  Findings unchanged.
 Re-frozen (v2).
+
+## 2026-08-11 — SMU OPERATOR REVIEW LANDED (K1): AWF — ZERO FALSE NUMBERS; THE SURJECTION EXTENDS TO THE CLOSED SIMPLEX; THE HEAD MISLABELS ITS POPULATION (v14 LEDGER #241)
+
+v14/review-smu-operator.md (f9537f9466b9) frozen.  **Grade
+AWF; 119 recomputations from own machinery (own Q(ζ₈)
+Fractions, own Tarjan SCC, own exact elimination, own
+lumpability test); ZERO false numbers — every physics
+quantity reproduced** incl. the 18-row census, π law-native
+with full-640 πP=π, all 12 Wilson rows, [0,4] with verified
+singleton endpoints, 55/55.  EXTENDED BEYOND THE UNIT: 50,625
+four-state chains 0 mismatches; 2,435 further surjection
+targets 0 failures; **five arbitrary invariant targets ON THE
+REAL 640-CARRIER — all covariant, irreducible, π = target
+exactly (the probe §7 needed and never ran)**; the lumping
+licence measured EXACT at all 12.  MAJOR-1: **the head
+mislabels its population — 153/380 is over 11 covariant
+instances, not 12 (1701/3800 is the 12-figure), and BOTH head
+laws carry the identical wrong template so the
+independent-reconstruction gate structurally cannot fire**
+(the twin-template disease; MUT-K1-A died only at
+verdict-equality).  MAJOR-2 (= K2's M4, independent): the
+every-axis-swept sentences false at two exempted axes.
+MAJOR-3: the control target is an ENUMERATION ARTIFACT
+(contiguous coin-index blocks; under R5's other literal
+reading E[W] 263/200→127/100 and 1701/3800→234/475 — the
+latter in the verdict string; undisclosed; the 153/380
+headline is enumeration-free).  **MINOR-1 WITH TEETH: the
+surjection extends to the CLOSED simplex — boundary targets
+derive by the unit's own sharp criterion (one closed class;
+38/38 small + 3/3 at n=640) — THE UNIT UNDERSTATES ITS OWN
+THEOREM.**  MUT-K1-B credit: the declared construction is
+bound by measurement.  → THE ADJUDICATION (all three seats
+in).
