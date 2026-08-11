@@ -6362,3 +6362,46 @@ priced fibre-2; the leak mechanism at every n; the
 labelled-sector theorem at every n; the sector count that
 does NOT lift); SPT's defect-as-discriminator WITH ITS BLIND
 SET.  → adjudication when K1+K3 land.
+
+## 2026-08-11 — PAPER-21 EFFECTUS REVIEW LANDED (K2): AWF — THE LADDER LAW; THE LOR DOOR AT R=6; SIG'S PIN ROW DECISIVE (v14 LEDGER #207)
+
+v14/review-r4dec-effectus.md frozen.  **Grade AWF; 87
+recomputations, 0 discrepancies, 0 false computed numbers**
+(every headline number reproduced by independent
+re-implementation incl. 100,080 exhaustive and the det
+spectrum by cell).  Rulings: (1) both head verbs EARNED — and
+STRONGER: no in-arena FOUND control could have existed (all
+20,160 R=4 link-constant quadruples die STRUCT-DEAD by
+theorem; the shortfall converts into a third result); (2)
+**THE THEOREMS EXPLAIN WELD-3, NOT DEMOTE IT: the budget law
+R = n₁+n₂+n₃ verified on all nine declared records; a live
+weld is motivated EXACTLY at R ≡ 0 (mod 3) with record
+(m,m,m) — I7 never declares such at any budget.  R=3 was the
+first rung of THE ONLY LADDER**; (3) **MAJOR-2: the
+law-over-records door opens at R=6, NOT R=8** — (2,2,2)
+reachable by concatenating two of paper-19's own 72 triples
+(≥5,184 witnesses, all rounds saturating), ZERO-FREE-ITEMS
+(motivated), carries paper-04's dyadic at raw fiber 1, and is
+CR-B's unique pinned-transitive vector in the whole 361-point
+box; only paper-09 fails there; LOR registered with two
+complementary rungs, LOR-A first; (4) MAJOR-1: §4.3's
+impossibility blockquote unscoped (contradicted by own §6.3;
+repair: "in any structurally live arena"); (5) **G-SINGULAR
+RECONCILED by BLOCK QUANTISATION** — the covering class's max
+cell count is 2 (7 codes in {1,2}³), deriving the whole det
+spectrum; G-SINGULAR statically reachable at R=6, its clean
+budget; (6) **SIG'S PIN ROW, DECISIVE: "no negative det ⟹
+dynamics-only" is NOT LICENSED — at R=4 det ≥ 0 is forced by
+the number 4; the indefinite region is unreached by BOTH arms
+at the pinned arena/horizon.  SIG MUST GATE REACHABILITY
+BEFORE POLARITY (floors: R=5 statically; R=8 for G-INDEF;
+horizon ≥ 6 dynamically) or it will report SIGNATURE-AVOIDED
+on an empty region** [BINDING ON THE SIG PIN — adopted by the
+orchestrator at pin time]; (7) PER-R inherits the saturation
+theorem AS A SCHEMA + three falsifiable R=5 predictions (no
+declared record has Σn=5; zero-free impossible; R=5 strictly
+weaker); **the price sequence CLOSES at R=4** — stage 4
+re-posed as the slack census.  4 MINORs; sweep clean (1,094
+numerals, 1 unbacked = an engraving id; E-24 clean; walled
+vocabulary 100% inside negations).  → adjudication when
+K1+K3 land.
