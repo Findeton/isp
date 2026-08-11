@@ -5472,3 +5472,48 @@ verdict-determining), byte ×2 + off-tree git-less, 199 numerals
 0 unregistered.  Shas: paper 9249dda1c0a3, code f7de59960fe6,
 output 8ee12d000bad, receipt 1e794bd7f5fb.  Committed AS-IS;
 battery next.
+
+## 2026-08-11 — PAPER-20 EFFECTUS REVIEW LANDED (K2): AWF — THE VERDICT WORD SURVIVES; SIX MAJORS INCL. THE COIN-FORCED CLAIM FALSE; THE HORIZON-5↔CR-A RECONCILIATION EXACT (v14 LEDGER #182)
+
+v14/review-coup-effectus.md (2f4b9eba6a88) frozen.  **Grade
+AWF; 191 recomputations (own Z[ω] walk, own indexing), ZERO
+delivered numbers moved; the verdict word
+COUPLING-CONSISTENT-NOT-REQUIRED SURVIVES every attack** (both
+UPDATE-RULE-RESTATED refusals principled; the one row that
+could flip repaired and re-measured — holds both stages).  SIX
+MAJORS: (1) NO-WITNESS HAD NO LIVE CANDIDATE — K1–K4 never
+read n (identities for ANY count field), K5 cannot fire; the
+forward direction was empty BEFORE the run; the result is
+carried by the STALENESS THEOREM, not the battery; head needs
+the battery stamp; (2) K5-NO-RETURN structurally vacuous
+(Σ|ψ|²=9^t makes cross-level equality impossible) — reviewer
+repaired (rays): frozen no return in 30, coupled 0 repeats to
+level 4, verdict stands; (3) **"COIN FORCED — ±GROVER" IS
+FALSE AS STATED: the S₃-covariant unitary conditions are a
+CIRCLE; over the unit's own cyclotomics 36 solutions, 6 up to
+phase (exact witnesses)** — F4 becomes
+DECLARED-under-a-reality-condition, fiber 5; (4) the 343-map
+monomial scan is BLIND as an instrument (returns 18/0 on R4b's
+axis stencil too, where interference survives); repaired
+instrument (19-value alphabet): link 18/0 vs axis 72/54 — the
+conclusion survives, the delivered instrument could not have
+seen it; (5) F6's coin-order direction claim REVERSED at full
+horizon (D·G exit 2922723584/847288609443 = 3.15× G·D;
+threshold still exactly 5); (6) F9-INIT-SITE's MEASURED row is
+a no-op (default, not a parameter; the declared comparison
+would have failed — translation covariance permutes p_site).
+**THE HORIZON-5↔CR-A RECONCILIATION IS EXACT:** all 1,316
+inadmissible leaves are pattern (0,0,3) at one site — CR-A's
+three-event margin, 3-fold degenerate across link classes; the
+step budget supplies the 5 (earliest third visit at step 5) —
+CR-A gives the 3, the return-time gives the 5.  R-CRA→20 open
+#4 CARRIED not discharged (the unit substitutes an ordering
+for commutation, measures its defect twice, never names it).
+Successor register for paper-21: the monomial theorem is a
+SIDON PROPERTY of the offset set — transports verbatim, dies
+at any fourth direction (54 non-monomial unitaries);
+**G-FLAT's margin is 2 events on the diagonal vs 5 on an axis,
+and the axis route reaches det=−1/4 — AN INDEFINITE FORM
+paper-20 never touches: R=4 inherits a sharper Lorentzian
+naming duty and a cheaper exit horizon.**  → adjudication when
+K1+K3 land.
