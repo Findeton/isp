@@ -268,3 +268,27 @@ RECOMMENDED** (its question lives in PER-L/PER-R with clean
 preconditions) — awaiting the user's word, as R6b was
 user-ordered.  Prediction-ledger entry (g) added: the Sidon
 transport [pending PER-L test].
+
+**AMENDMENT (2026-08-11, v14 #209, USER ORDER):**
+1. **R6b IS RETIRED.** The scaling rung's question — convergence
+   of intensive invariants along growth — lives on in PER-L
+   (paper-28, in flight) and PER-R (paper-29, armed at
+   paper-21's terminal), which carry it with clean
+   preconditions (R6b's own precondition died at R6a's
+   NO-MOTIVATED-SPLIT).  The charter entry closes here by the
+   user's word; no unit will bear the R6b name.
+2. **OCC ADOPTED, BEFORE FCK (user order, ahead of the
+   paper-22 adjudication).**  OCC = the occupancy-ceiling
+   forcing unit: does any deeper layer force the ceiling that
+   selects statistics?  Seed conditional (paper-22 K2, #206):
+   weld ACTOR→SITE bijection + excitation↔actor injection +
+   closure-required + the full 64-pool ⟹ hard-core forced ⟹
+   FERMIONIC-SHAPE IS A THEOREM OF THE COUPLED THEORY; the
+   one-way asymmetry (exclusion can select a shape, permission
+   cannot) is its organizing principle.  Pin obligation: at
+   paper-22's terminal (papers 19/20 terminals already in
+   hand).  FCK now INHERITS the ceiling from OCC instead of
+   declaring it; Wave C's chain reads ACT → POT → BST →
+   **OCC → FCK** → SPT → GAP, with OCC free to run earlier
+   the moment its pin parents are terminal (it does not
+   depend on ACT/POT/BST).

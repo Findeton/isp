@@ -6439,3 +6439,15 @@ multisets — the diagonal line-partition is COMPULSORY, which
 is why the budget populates that link twice** (one line to
 gate; sharpens S-5; resonates with U4's diagonal
 unification).  → adjudication when K3 lands.
+
+## 2026-08-11 — USER ORDERS: R6b RETIRED; OCC ADOPTED BEFORE FCK (v14 LEDGER #209)
+
+Both by the user's word this ledger ("ok do the R6b retirement
+and OCC before FCK").  Charter amended (#209 in PLAN.md).
+R6b's closing note points to PER-L/PER-R as the carriers of
+its question.  OCC (the occupancy-ceiling forcing unit) joins
+the plan with the paper-22 effectus's exact conditional as its
+seed and a pin obligation at paper-22's terminal; FCK now
+inherits the ceiling from OCC.  The paper-22 adjudication will
+still rule on the panel's OTHER proposals; OCC's adoption is
+settled by user order.
