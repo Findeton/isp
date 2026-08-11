@@ -5517,3 +5517,46 @@ and the axis route reaches det=−1/4 — AN INDEFINITE FORM
 paper-20 never touches: R=4 inherits a sharper Lorentzian
 naming duty and a cheaper exit horizon.**  → adjudication when
 K1+K3 land.
+
+## 2026-08-11 — PAPER-23 BATTERY GREEN; PANEL PROTOCOL FROZEN; THREE SEATS LAUNCHED (v14 LEDGER #183)
+
+Battery: argv whitelist read in source (main at L2988); mirror
+plain exit 0 with OUTPUT and RECEIPT BYTE-IDENTICAL; unknown
+flag exit 2; unknown mutant exit 2; --selftest exit 0 with
+"every anchor class is fatal, nothing written" (this unit's
+disclosed convention: the selftest RUNNER exits 0 when all
+fatality checks succeed; likewise --mutant exits 0 on
+DEAD-ON-TARGET per run_mutant); MUT-CENSUS-DERIVES died at
+G-HEAD-STRING-EQUALITY ON TARGET; artifacts untouched.
+**PROTOCOL: K1 OPERATOR** — rebuild the 8-candidate census
+from nothing: the no-pinned-correspondence claim + the
+granted-dictionary point-mass bound (≥527/640 at mass zero),
+orbits 208/120 + the transitivity⟺uniqueness gate + the
+synthetic-transitive pass, Haar-closure failure
+(278528/409600), the Born state-measure (fibres 64/64/512),
+the chart-fixed locus (655360/655360), THE NULL-DEPENDENCE
+TABLE (9/10, 9/13, 7/10; spread 27/130; 2624 invariance
+checks; both groups), parent census 632/576/384, finite-order
+384/640; mutants outside the harness.  **K2 EFFECTUS** — the
+census's delimitation: is 8 honestly complete (what would a
+9th candidate be — max-entropy under measured constraints? a
+stationary measure of a declared walk ON configurations? —
+principled or outcome-shaped); the fiber statement's objects
+(119-/207-simplex); **THE R5 ANNOTATION QUESTION** (the
+null-dependence — does R5 need a presentation annotation;
+prepare the register row; papers stay single-threaded); the
+Born-wrong-space licensed sentence; the monomial-Haar
+defect-empty resonance with paper-20 (cross-unit sentence
+licensure); the weld-2-blade-silent OPEN ruling; successor
+register (whose is the stationary-measure candidate).  **K3
+INSTRUMENT** — full era: 56 gates, 25 mutants outside the
+harness, 48 anchors perturbed, 31 seals, **the
+WITHHELD-BY-GATE-ON-PRODUCT mechanism audited hard** (no
+expectation-valued key + AST-defines-no-computing-function —
+can one sneak in renamed/in-prose?), G-MUTANT-REGISTRY-TOTAL
+sweep for siblings of the self-caught disease, injections,
+hostile argv (the exit-0 conventions disclosed and gated?),
+byte ×2 across seeds, the 199-numeral sweep.  Reviewers →
+v14/review-r5m-{operator,effectus,instrument}.md.  Objects at
+33da839: 9249dda1c0a3 / f7de59960fe6 / 8ee12d000bad /
+1e794bd7f5fb; pin e5e09f65f83b.
