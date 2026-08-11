@@ -1915,3 +1915,23 @@ modes (Γ-main's G-VERDICT-EQUALITY; R4's MAJOR-6).
 - **§13/#91 addendum (the v10-layer tie-break gate; v14 #160):** a byte-reproducibility claim by any unit driving a v10 grammar layer must state the maxhits == 1 immunity or price the tie-break — as a gate, not a remark.  Source: the d60 defect register (v14/note-d60-defect-register.md, 0e22bea6b53a) — sorted(key=repr) over unordered containers is hash-seed dependent in the committed d60 constructor; U4 and U4b are immune via maxhits = 1 and say so; the 7-unit audit scope stands.
 
 - **#20 addendum (paper coverage includes fenced blocks; v14 #168):** the in-run paper instrument scans ALL text — fenced/code blocks, verdict blocks, and tables included; a coverage scan that strips fences is blind exactly where the highest-stakes numerals live.  Demonstrated at paper-19: 79 of 506 numerals — including every numeral of all three verdict strings — were unscanned, and a paper with a forged head (ISOS=4242, FORCED-999) passed verify-paper with the clean paper's scan count.
+
+## E-22 — INLINE-SPAN COVERAGE; BLOCKS BY MULTISET (bought at v14 #187, paper-20 K1 M-3 + K3 MAJOR-3)
+
+Coverage includes INLINE CODE SPANS under the fenced rule — a
+backticked numeral is a claim like any other; a scanner that
+strips spans passed two injected corruptions at exit 0.
+Fenced blocks are gated by MULTISET EQUALITY, not containment
+— the object carried two copies of its verdict fence and the
+clean copy satisfied a containment gate while its twin was
+forged.  Tables render as claims.
+
+## E-23 — FALSIFIER HONESTY (bought at v14 #187, paper-20 K3 MAJOR-4)
+
+A falsifier's published description is part of the sealed
+surface: it must be verified against its code — a
+description-inverted mutant is a false waiver wearing a green
+badge.  Every load-bearing receipt row carries a falsifier or
+a named waiver with a forcing; a row with neither
+(paper-20's mdviol, 187,155 checks) is unguarded no matter how
+many times it ran.

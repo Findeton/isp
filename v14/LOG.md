@@ -5683,3 +5683,34 @@ paper table recomputes.  Scoping correction recorded: K3's
 "no false number" = consistency+reproducibility, not census
 correctness (K2 had already moved the coin count).  → THE
 SUMMIT'S ADJUDICATION (all three seats in).
+
+## 2026-08-11 — THE SUMMIT'S ADJUDICATION: THE VERDICT SURVIVES STRENGTHENED FOUR WAYS; TWELVE REPAIR ORDERS; TWO ENGRAVINGS BOUGHT; REPAIR LAUNCHED (v14 LEDGER #187)
+
+v14/note-coup-adjudication.md frozen.  Three seats AWF, ~630
+seat recomputations, ZERO false computed numbers (the three
+false claims are attribution/coverage prose — the programme's
+constant holds at the summit).  **COUPLING-CONSISTENT-NOT-
+REQUIRED SURVIVES STRENGTHENED: COIN-INVARIANT (all four
+hidden S₃-covariant coins — same three gate outcomes, same
+threshold 5, singular-only); robust to either-refusal-drop;
+staleness at the full horizon (1,040,065); K5-as-rays holds.
+RE-STAMPED: the NO-WITNESS is carried by the STALENESS
+THEOREM — the battery's forward direction was empty before
+the run.**  Seat conflicts: none (coin counts agree 36=6×6;
+scan alphabets differ by declaration — K1's (1/3)Z[ω]
+canonical).  TWELVE repair orders P1–P12 (coin fiber 6 +
+invariance segment; head re-stamp; K5 rays; transport
+re-attribution + falsifier; inline-span/multiset/table
+coverage; writer_shape probe pre-snapshot + gate counts 50+2;
+transcript 181/181 + DECLARED_UNSEALED reduced; falsifier
+descriptions + mdviol falsifier; F6 full-horizon direction;
+F9 real measurement; MINOR sweep; the (0,0,3) census + the
+CR-A licensed sentence + open-#4 CARRIED row).  **TWO
+ENGRAVINGS BOUGHT AND APPENDED: E-22 inline-span coverage +
+blocks-by-multiset; E-23 falsifier honesty.**  Successor
+register: the Sidon transport; **G-FLAT's axis route reaches
+det=−1/4 — the INDEFINITE FORM — R=4's Lorentzian naming duty
+at a cheaper exit horizon (margin 2 diagonal / 5 axis)**;
+stationary-measure + history-dependent-closure follow-ons.
+Repair worker launched (Opus).  After repair + battery:
+paper-20 TERMINAL (the sixteenth).
