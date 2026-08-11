@@ -5894,3 +5894,25 @@ STATIONARY-MEASURE UNIT (the QCD road's next gate; unownable
 today), the odd-L blade to R6, the plaquette-grain Born
 re-pose.  Repair worker launched (Opus).  After repair +
 battery: paper-23 TERMINAL.
+
+## 2026-08-11 — THE STRATEGIC PLAN ADOPTED BY USER ORDER; PAPERS 24–27 RESERVED; PIN OBLIGATIONS REGISTERED (v14 LEDGER #193)
+
+The user adopted the orchestrator's post-summit strategy
+("record this plan and pin whatever you need to") — appended
+to v14/PLAN.md as THE STRATEGIC PLAN section.  Wave A:
+paper-24 SIG (why-Lorentzian; pins at 21+20 terminals),
+paper-25 GDL (the gravitational-decoherence law; pins at 20
+terminal), CR-B panel.  Wave B: paper-26 REQ2
+(history-dependent closures; pins at 20 terminal), paper-27
+SMU (the stationary measure; pins at 23 terminal), CR-C/D
+panels.  Wave C: the QCD chain ACT→POT→BST→SPT→GAP (numbers
+at pin time; confinement's honest test at POT; the gap's
+persistence half = the user's R6b call, re-entering with
+paper-21's row).  Background: GGS, FSG, the limit spine.
+Deprioritized: SM numerics, naive continuum, cosmology.  The
+structural-prediction ledger instituted (two PROVEN, four
+pending).  NOTHING IS SHA-PINNABLE THIS MINUTE — all four
+Wave-A/B parents are mid-repair or mid-flight; each pin
+freezes THE MOMENT its parent goes terminal (the pin
+obligation is the record).  Current flight unchanged: paper-20
+repair, paper-23 repair, papers 21/22 constructions.

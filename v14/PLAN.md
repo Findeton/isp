@@ -163,3 +163,80 @@ v13 (and every earlier tree) stays byte-frozen in place.  No file is
 copied forward, renamed, or edited to "prepare" it for v14.  If a v14
 unit needs a v13 number, it pins the artifact and reads it at run time,
 the way v13 units pinned v12 and v11.
+
+## THE STRATEGIC PLAN (2026-08-11, USER-ADOPTED at v14 #193) — THE POST-SUMMIT WAVES
+
+Adopted by the user's order on the orchestrator's proposal.
+Ordering principle: uniqueness (questions only this framework
+can pose) × readiness × leverage.  Structural-prediction
+collection is a FIRST-CLASS output (the ledger below).  Papers
+24–27 reserved now; later units take numbers at pin time.
+Every unit: the full cycle (pin at terminal parents →
+construct → commit-as-is → battery → 3-seat panel →
+adjudication → repair → terminal).  Nothing below overrides
+the walls; E-24 binds every fraction; publication remains the
+user's alone.
+
+**WAVE A** (pins the moment their parents reach terminal):
+- **paper-24 — SIG, "why Lorentzian"** *(pins at paper-21 +
+  paper-20 terminals)*: on the R=4 arena run the coupled
+  dynamics and MEASURE whether it selects, avoids, or is
+  neutral toward the indefinite-signature region (det=−1/4)
+  vs the singular boundary — exit probabilities per sector,
+  exact.  Outcomes first-class:
+  SIGNATURE-SELECTED / SIGNATURE-AVOIDED /
+  SIGNATURE-DECLARATION-RELATIVE / BLOCKED-AT.
+- **paper-25 — GDL, the gravitational-decoherence law**
+  *(pins at paper-20 terminal; Γ-iteration terminal already
+  in hand)*: the substrate identity (one event = record =
+  decoherence = metric increment) forces a candidate exact
+  relation decoherence-rate ↔ metric growth; define the
+  decoherence functional on the coupled walk and measure the
+  relation.  The corpus's V5P2/DP arc is the target shape,
+  cite-not-inherit.  The programme's nearest
+  experiment-adjacent question.
+- **CR-B panel** (paper-06; objects long committed) — the
+  debt drain continues.
+
+**WAVE B:**
+- **paper-26 — REQ2, the requirement question done right**
+  *(pins at paper-20 terminal)*: build the
+  HISTORY-DEPENDENT closure family the staleness theorem
+  demands (records-theorem-native observables) and re-run the
+  two-way requirement gate.  Outcomes: the theorem, or an
+  honest exhaustion no-go with mechanism.
+- **paper-27 — SMU, the stationary measure** *(pins at
+  paper-23 terminal)*: a DECLARED dynamics on configuration
+  space (fiber priced) + the irreducibility question; decides
+  whether probability is physics or bookkeeping here; gates
+  the QCD chain.
+- **CR-C + CR-D panels.**
+
+**WAVE C — the QCD chain** (sequential, each pinning at its
+predecessor's terminal; numbers at pin time): the action unit
+(ACT) → static potentials (POT; the confinement gate's honest
+test lives HERE and nowhere earlier) → bound states (BST) →
+the species table (SPT) → **the finite-volume gap (GAP)**;
+the gap's PERSISTENCE half = R6b re-chartered on spectral
+invariants (the user's standing R6b call re-enters with
+paper-21's row in hand).
+
+**BACKGROUND / AS SLOTS FREE:** GGS (gauge-group selection
+along the ladders — "why these groups" as a measurement); FSG
+(can a world foresee its own singularity — the horizon-5
+information question); the limit-program spine (odd-L blade;
+L=8 persistence; interior radii).
+
+**DEPRIORITIZED BY DECISION:** SM numerics (no honest route at
+this scale); continuum limits for their own sake (R1's
+lesson); cosmological readings (walled).
+
+**THE STRUCTURAL-PREDICTION LEDGER** (theorems about worlds of
+this kind; kept current in STATUS): (a) interference exists
+only where displacements compose multiply [PROVEN, papers
+20+15]; (b) quantum back-reaction reaches singularity at a
+computable exact rate, frozen gravity never [PROVEN, paper
+20]; (c) decoherence↔metric-growth law [pending 25]; (d)
+signature selection [pending 24]; (e) gauge-structure
+selection [pending GGS]; (f) QFT-requires-gravity [pending
+26, may die honestly].
