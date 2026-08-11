@@ -7286,3 +7286,50 @@ pre-instrument recomputations (one own-check bug corrected
 and disclosed).  Shas: paper d14689919289, code
 394cbfca621c, output 0bf6cc0502e6, receipt 808aca088ff6.
 Committed AS-IS; battery next; panel after.
+
+## 2026-08-11 — SMU BATTERY GREEN; PANEL PROTOCOL FROZEN; THREE SEATS LAUNCHED (v14 LEDGER #235)
+
+Battery: mirror plain exit 0 BYTE-IDENTICAL both artifacts;
+unknown flag exit 2; selftest fatal at every anchor class
+writing nothing (disclosed exit-0-on-pass convention);
+MUT-ARENA died at G-ARENA-REBUILT (disclosed
+exit-0-on-dead convention); artifacts untouched.
+**PROTOCOL — post-engraving-native, no excuses.  K1
+OPERATOR** — rebuild: the 18-instance irreducibility census
+(own chain machinery; CHART-32's trivial action 32/32;
+CHART-128's off-carrier flight + the 1248-state closure);
+the stationary vectors by own elimination with πP=π at full
+size (the law-native π exact; counting-from-composition; the
+gauge simplex = paper-23's orbits AS SETS); **the surjection
+theorem hardest** (55/55 exhaustive + 632 re-checks; detailed
+balance); the sharp-condition correction (the 3-state
+witness; 50,625 chains); the spreads (153/380; 1701/3800; vs
+27/130); the Wilson rows + the [0,4] range +
+plaquette-independence 16×640; the doubly-stochastic
+640/640; mutants outside the harness.  **K2 EFFECTUS — THE
+PRIVILEGE QUESTION (decisive):** is the law-native dynamics
+MOTIVATED or another declaration — its RATE comes from the
+confirmed law's triple but its CONSTRUCTION (resampling) was
+pin-declared; rule the honest form (law-rated /
+construction-declared?) and what would upgrade it; **the
+conserved-price sentence's licensure** ("the declaration was
+relocated, not removed"); **DOES PAPER-23 NEED AN
+ANNOTATION** for the corrected iff (its terminal head says
+DERIVES-IFF-IRREDUCIBLE; now sufficient-not-necessary — the
+precedent machinery rules); the Wilson
+covariance-pins-nothing sentence; THE QCD REGISTER (what ACT
+inherits: the law-native π as the leading
+declared-with-motivation candidate + the conserved-price
+honesty frame); walls; the 5 verdict-determining choices
+audited.  **K3 INSTRUMENT** — the elimination-cap-208 +
+measured-lumping license audited; the disease sweep from
+this era's panels (phantom consumers; constant-boolean
+falsifiers; containment fences; unrendered tables; blanket
+whitelists; seal windows; VACUOUS clauses; fabricable
+sweeps); 42 mutants outside the harness; 51 anchors; 29
+seals; the chained 57+2; the conditional-stamp coverage
+(every expectation row); E-22/E-23/E-24 injections; argv;
+byte ×2 across seeds; the disclosed own-check bug.
+Reviewers → v14/review-smu-{operator,effectus,instrument}.md.
+Objects at 6d8582e: d14689919289 / 394cbfca621c /
+0bf6cc0502e6 / 808aca088ff6; pin a1fca5e7b238.
