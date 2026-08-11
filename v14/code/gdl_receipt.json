@@ -1,0 +1,6039 @@
+{
+ "arithmetic": {
+  "denominator": "a common power of 9 per level",
+  "floats": "none -- gated by an AST scan of this file and a recursive type scan of the receipt",
+  "rationals": "fractions.Fraction only",
+  "ring": "Z[w], w^2 = -1 - w, as INTEGER PAIRS"
+ },
+ "closing_gates": {
+  "gates_after_the_snapshot": 2,
+  "gates_in_the_registry": 63,
+  "gates_in_the_sealed_snapshot": 61,
+  "names": [
+   "G-SEAL-COMPLETE",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "warrant": "these two are evaluated after the gate ledger is snapshotted and sealed -- G-SEAL-COMPLETE cannot be inside the object it seals, and G-ARTIFACT-INTEGRITY runs after the bytes are on disk.  That gate's existence is witnessed by G-WRITER-SHAPE, which reads this file's AST before the snapshot"
+ },
+ "counts": {
+  "anchors_reproduced": 14,
+  "blindness_checks": 164310,
+  "branch_steps_coupled_distinct": 10954,
+  "branch_steps_coupled_raw": 11044,
+  "branch_steps_frozen_distinct": 5,
+  "branch_steps_frozen_raw": 9751,
+  "cells": 27,
+  "coin_fiber": 6,
+  "decoherence_functionals": 3,
+  "exact_cells": 2,
+  "excluded_cells": 2,
+  "fiber_rows": 7,
+  "gravitational_cells": 0,
+  "grid_cells_per_arm": 45,
+  "growth_functionals": 5,
+  "horizon": 5,
+  "mutants": 56,
+  "partial_cells": 28,
+  "reading_fiber": 2,
+  "resolutions": 3,
+  "seals": 34,
+  "sites": 9,
+  "sources": 11,
+  "vacuous_cells": 15,
+  "verbatim_anchors": 12,
+  "welded_cells_at_one": 27
+ },
+ "coverage": {
+  "declared_registry": 63,
+  "gates": 63,
+  "gates_with_a_mutant": 52,
+  "honest_denominator": 63,
+  "late_gates": [
+   "G-PAPER-COVERAGE-FINAL",
+   "G-SEAL-COMPLETE",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "mutants": 56,
+  "registry_drift": [],
+  "uncovered": [],
+  "waived": [
+   "G-ANCHOR-CONSUMERS",
+   "G-ARTIFACT-INTEGRITY",
+   "G-COVERAGE",
+   "G-EXACT-ARITHMETIC",
+   "G-MUTANTS-ON-TARGET",
+   "G-NO-SUBPROCESS",
+   "G-PAPER-COVERAGE-FINAL",
+   "G-PROVENANCE",
+   "G-REACHABILITY",
+   "G-READS-DECLARED",
+   "G-VERBATIM"
+  ]
+ },
+ "ensemble": {
+  "arms": {
+   "A-COUPLED": {
+    "checks": {
+     "emission_total": 11044,
+     "kernel": 98803,
+     "kernel_entry": 296409,
+     "law_native": 99396,
+     "norm": 11044,
+     "rate_is_born": 99396,
+     "site": 99396,
+     "total": 11044
+    },
+    "levels": [
+     {
+      "branches": 3,
+      "branches_from_emission_supports": 3,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 1
+     },
+     {
+      "branches": 27,
+      "branches_from_emission_supports": 27,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 2
+     },
+     {
+      "branches": 486,
+      "branches_from_emission_supports": 486,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 3
+     },
+     {
+      "branches": 10527,
+      "branches_from_emission_supports": 10527,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 4
+     },
+     {
+      "branches": 284078,
+      "branches_from_emission_supports": 284078,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 5
+     }
+    ],
+    "violations": {}
+   },
+   "A-FROZEN": {
+    "checks": {
+     "emission_total": 9751,
+     "kernel": 87166,
+     "kernel_entry": 261498,
+     "law_native": 87759,
+     "norm": 9751,
+     "rate_is_born": 87759,
+     "site": 87759,
+     "total": 9751
+    },
+    "levels": [
+     {
+      "branches": 3,
+      "branches_from_emission_supports": 3,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 1
+     },
+     {
+      "branches": 27,
+      "branches_from_emission_supports": 27,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 2
+     },
+     {
+      "branches": 486,
+      "branches_from_emission_supports": 486,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 3
+     },
+     {
+      "branches": 9234,
+      "branches_from_emission_supports": 9234,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 4
+     },
+     {
+      "branches": 212382,
+      "branches_from_emission_supports": 212382,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 5
+     }
+    ],
+    "violations": {}
+   },
+   "B-COUPLED": {
+    "checks": {
+     "emission_total": 12181,
+     "kernel": 109629,
+     "kernel_entry": 328887,
+     "law_native": 109629,
+     "norm": 12181,
+     "rate_is_born": 109629,
+     "site": 109629,
+     "total": 12181
+    },
+    "levels": [
+     {
+      "branches": 3,
+      "branches_from_emission_supports": 3,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 1
+     },
+     {
+      "branches": 27,
+      "branches_from_emission_supports": 27,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 2
+     },
+     {
+      "branches": 486,
+      "branches_from_emission_supports": 486,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 3
+     },
+     {
+      "branches": 11664,
+      "branches_from_emission_supports": 11664,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 4
+     },
+     {
+      "branches": 314928,
+      "branches_from_emission_supports": 314928,
+      "mass": "1",
+      "mass_is_one": true,
+      "t": 5
+     }
+    ],
+    "violations": {}
+   }
+  },
+  "branch_steps": {
+   "coupled_distinct": 10954,
+   "coupled_raw": 11044,
+   "frozen_distinct": 5,
+   "frozen_raw": 9751
+  },
+  "horizon": 5,
+  "levels_total": 15
+ },
+ "exclusion": {
+  "exact_cells_tested": 2,
+  "excluded": [
+   {
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "frozen_verdict": "VACUOUS",
+    "gravitational": false,
+    "growth": "G5-RATE-SITE",
+    "holds_identically_frozen": true,
+    "identity_holds_frozen": true,
+    "resolution": "RES-BRANCH"
+   },
+   {
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "frozen_verdict": "EXACT",
+    "gravitational": false,
+    "growth": "G5-RATE-SITE",
+    "holds_identically_frozen": true,
+    "identity_holds_frozen": true,
+    "resolution": "RES-SITE"
+   }
+  ],
+  "excluded_count": 2,
+  "frozen_branch_steps_distinct": 5,
+  "frozen_branch_steps_raw": 9751,
+  "frozen_control_executed": true,
+  "gravitational_cells": [],
+  "gravitational_count": 0,
+  "identities_frozen": [
+   {
+    "checks": 45,
+    "holds": true,
+    "id": "ID-RATE-IS-BORN",
+    "kind": "DEFINITIONAL-THROUGH-THE-LAW",
+    "statement": "the law's site emission rate IS the Born menu's site mass, eps(x) = p(x), at every site of every object",
+    "violations": 0
+   },
+   {
+    "checks": 5,
+    "holds": true,
+    "id": "ID-RATE-TOTAL",
+    "kind": "DEFINITIONAL-THROUGH-THE-LAW",
+    "statement": "the total emission rate is exactly one division event per coupled step, sum_x eps(x) = 1, at every object",
+    "violations": 0
+   },
+   {
+    "checks": 5,
+    "holds": true,
+    "id": "ID-D1-IS-SQUARED-RATE",
+    "kind": "DEFINITIONAL-THROUGH-THE-LAW",
+    "statement": "the site-basis inverse participation of the Born menu is the sum of the squared site emission rates, D1 = sum_x eps(x)^2, at every object",
+    "violations": 0
+   },
+   {
+    "checks": 5,
+    "holds": true,
+    "id": "ID-PURITY-SPLIT",
+    "kind": "DEFINITIONAL",
+    "statement": "the site-basis purity splits exactly, D1 + D2 = Tr(rho^2), at every object",
+    "violations": 0
+   }
+  ],
+  "rule": "A RELATION THAT HOLDS IDENTICALLY ON THE FROZEN STAGE IS NOT A GRAVITATIONAL-DECOHERENCE RELATION: the frozen record never grows, so anything still true there is a fact about the walk and the law rather than about the coupling"
+ },
+ "forcedness": {
+  "axes_not_a_product": "the fibers are run as DECLARED AXES: all 6 coin members at the delivered reading and both reading members at the delivered coin.  The cross-product is NOT claimed",
+  "coin_fiber": [
+   "GROVER",
+   "-GROVER",
+   "w/3",
+   "(-1+w)/3",
+   "(-1-w)/3",
+   "(-2-w)/3"
+  ],
+  "coin_fiber_size": 6,
+  "delivered_signature": "da4248b1a55b",
+  "members_declared": [
+   "(-1+w)/3",
+   "(-1-w)/3",
+   "(-2-w)/3",
+   "-GROVER",
+   "GROVER",
+   "w/3",
+   "READING-A",
+   "READING-B"
+  ],
+  "members_executed": [
+   "(-1+w)/3",
+   "(-1-w)/3",
+   "(-2-w)/3",
+   "-GROVER",
+   "GROVER",
+   "w/3",
+   "READING-A",
+   "READING-B"
+  ],
+  "reading_fiber": [
+   "A",
+   "B"
+  ],
+  "rows": [
+   {
+    "branch_steps_coupled_distinct": 10954,
+    "branch_steps_coupled_raw": 11044,
+    "branch_steps_frozen_distinct": 5,
+    "branch_steps_frozen_raw": 9751,
+    "cell_signature": "da4248b1a55b",
+    "cells": [
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "EXACT",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     }
+    ],
+    "coin": "GROVER",
+    "frozen_distinct_is_one_per_level": true,
+    "identities_all_hold": true,
+    "is_s3_covariant": true,
+    "is_unitary_exactly": true,
+    "reading": "A",
+    "separation_ladder": {
+     "D1": 4,
+     "D2": 4,
+     "D3": 3
+    },
+    "three_C_numerators": [
+     [
+      [
+       -1,
+       0
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       0
+      ]
+     ],
+     [
+      [
+       2,
+       0
+      ],
+      [
+       -1,
+       0
+      ],
+      [
+       2,
+       0
+      ]
+     ],
+     [
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       -1,
+       0
+      ]
+     ]
+    ]
+   },
+   {
+    "branch_steps_coupled_distinct": 10954,
+    "branch_steps_coupled_raw": 11044,
+    "branch_steps_frozen_distinct": 5,
+    "branch_steps_frozen_raw": 9751,
+    "cell_signature": "da4248b1a55b",
+    "cells": [
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "EXACT",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     }
+    ],
+    "coin": "-GROVER",
+    "frozen_distinct_is_one_per_level": true,
+    "identities_all_hold": true,
+    "is_s3_covariant": true,
+    "is_unitary_exactly": true,
+    "reading": "A",
+    "separation_ladder": {
+     "D1": 4,
+     "D2": 4,
+     "D3": 3
+    },
+    "three_C_numerators": [
+     [
+      [
+       1,
+       0
+      ],
+      [
+       -2,
+       0
+      ],
+      [
+       -2,
+       0
+      ]
+     ],
+     [
+      [
+       -2,
+       0
+      ],
+      [
+       1,
+       0
+      ],
+      [
+       -2,
+       0
+      ]
+     ],
+     [
+      [
+       -2,
+       0
+      ],
+      [
+       -2,
+       0
+      ],
+      [
+       1,
+       0
+      ]
+     ]
+    ]
+   },
+   {
+    "branch_steps_coupled_distinct": 11935,
+    "branch_steps_coupled_raw": 12175,
+    "branch_steps_frozen_distinct": 5,
+    "branch_steps_frozen_raw": 12181,
+    "cell_signature": "da4248b1a55b",
+    "cells": [
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "EXACT",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     }
+    ],
+    "coin": "w/3",
+    "frozen_distinct_is_one_per_level": true,
+    "identities_all_hold": true,
+    "is_s3_covariant": true,
+    "is_unitary_exactly": true,
+    "reading": "A",
+    "separation_ladder": {
+     "D1": 4,
+     "D2": 4,
+     "D3": 3
+    },
+    "three_C_numerators": [
+     [
+      [
+       3,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       3,
+       1
+      ]
+     ]
+    ]
+   },
+   {
+    "branch_steps_coupled_distinct": 10045,
+    "branch_steps_coupled_raw": 10138,
+    "branch_steps_frozen_distinct": 5,
+    "branch_steps_frozen_raw": 10237,
+    "cell_signature": "da4248b1a55b",
+    "cells": [
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "EXACT",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     }
+    ],
+    "coin": "(-1+w)/3",
+    "frozen_distinct_is_one_per_level": true,
+    "identities_all_hold": true,
+    "is_s3_covariant": true,
+    "is_unitary_exactly": true,
+    "reading": "A",
+    "separation_ladder": {
+     "D1": 4,
+     "D2": 4,
+     "D3": 3
+    },
+    "three_C_numerators": [
+     [
+      [
+       2,
+       1
+      ],
+      [
+       -1,
+       1
+      ],
+      [
+       -1,
+       1
+      ]
+     ],
+     [
+      [
+       -1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       -1,
+       1
+      ]
+     ],
+     [
+      [
+       -1,
+       1
+      ],
+      [
+       -1,
+       1
+      ],
+      [
+       2,
+       1
+      ]
+     ]
+    ]
+   },
+   {
+    "branch_steps_coupled_distinct": 11935,
+    "branch_steps_coupled_raw": 12175,
+    "branch_steps_frozen_distinct": 5,
+    "branch_steps_frozen_raw": 12181,
+    "cell_signature": "da4248b1a55b",
+    "cells": [
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "EXACT",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     }
+    ],
+    "coin": "(-1-w)/3",
+    "frozen_distinct_is_one_per_level": true,
+    "identities_all_hold": true,
+    "is_s3_covariant": true,
+    "is_unitary_exactly": true,
+    "reading": "A",
+    "separation_ladder": {
+     "D1": 4,
+     "D2": 4,
+     "D3": 3
+    },
+    "three_C_numerators": [
+     [
+      [
+       2,
+       -1
+      ],
+      [
+       -1,
+       -1
+      ],
+      [
+       -1,
+       -1
+      ]
+     ],
+     [
+      [
+       -1,
+       -1
+      ],
+      [
+       2,
+       -1
+      ],
+      [
+       -1,
+       -1
+      ]
+     ],
+     [
+      [
+       -1,
+       -1
+      ],
+      [
+       -1,
+       -1
+      ],
+      [
+       2,
+       -1
+      ]
+     ]
+    ]
+   },
+   {
+    "branch_steps_coupled_distinct": 9043,
+    "branch_steps_coupled_raw": 9148,
+    "branch_steps_frozen_distinct": 5,
+    "branch_steps_frozen_raw": 10237,
+    "cell_signature": "da4248b1a55b",
+    "cells": [
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "EXACT",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     }
+    ],
+    "coin": "(-2-w)/3",
+    "frozen_distinct_is_one_per_level": true,
+    "identities_all_hold": true,
+    "is_s3_covariant": true,
+    "is_unitary_exactly": true,
+    "reading": "A",
+    "separation_ladder": {
+     "D1": 4,
+     "D2": 4,
+     "D3": 3
+    },
+    "three_C_numerators": [
+     [
+      [
+       1,
+       -1
+      ],
+      [
+       -2,
+       -1
+      ],
+      [
+       -2,
+       -1
+      ]
+     ],
+     [
+      [
+       -2,
+       -1
+      ],
+      [
+       1,
+       -1
+      ],
+      [
+       -2,
+       -1
+      ]
+     ],
+     [
+      [
+       -2,
+       -1
+      ],
+      [
+       -2,
+       -1
+      ],
+      [
+       1,
+       -1
+      ]
+     ]
+    ]
+   },
+   {
+    "branch_steps_coupled_distinct": 11941,
+    "branch_steps_coupled_raw": 12181,
+    "branch_steps_frozen_distinct": 5,
+    "branch_steps_frozen_raw": 12181,
+    "cell_signature": "da4248b1a55b",
+    "cells": [
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G1-RECORD-CELL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G2-RECORD-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G3-RECORD-LINK"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "PARTIAL",
+      "growth": "G4-GROWTH-TOTAL"
+     },
+     {
+      "coupled": "EXACT",
+      "decoherence": "D1-IPR-BORN-MENU-SITE",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D2-OFFDIAG-SITE-MASS",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     },
+     {
+      "coupled": "PARTIAL",
+      "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+      "frozen": "VACUOUS",
+      "growth": "G5-RATE-SITE"
+     }
+    ],
+    "coin": "GROVER",
+    "frozen_distinct_is_one_per_level": true,
+    "identities_all_hold": true,
+    "is_s3_covariant": true,
+    "is_unitary_exactly": true,
+    "reading": "B",
+    "separation_ladder": {
+     "D1": 4,
+     "D2": 4,
+     "D3": 3
+    },
+    "three_C_numerators": [
+     [
+      [
+       -1,
+       0
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       0
+      ]
+     ],
+     [
+      [
+       2,
+       0
+      ],
+      [
+       -1,
+       0
+      ],
+      [
+       2,
+       0
+      ]
+     ],
+     [
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       -1,
+       0
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ "functionals": {
+  "count": 3,
+  "declared": [
+   {
+    "id": "D1-IPR-BORN-MENU-SITE",
+    "specification": "sum_x p(x)^2, p(x) the Born menu's site mass -- paper-20's own observable, inherited"
+   },
+   {
+    "id": "D2-OFFDIAG-SITE-MASS",
+    "specification": "sum_{x != y} |rho_xy|^2 / 9^{2t}, the site-basis off-diagonal mass of the Born menu, in SQUARED-MODULUS units because the exact l_1 is not in Q on this arena"
+   },
+   {
+    "id": "D3-RECORD-BORN-DIVERGENCE",
+    "specification": "sum_x p(x) . TV(k_A(.|x), k_B(.|x)), the Born-weighted total variation between the Born menu and the record menu -- exactly l_1"
+   }
+  ],
+  "fiber": "NONE PRIVILEGED: all three are run on every object of every arm of every fiber member, and no ranking among them is asserted anywhere",
+  "l1_price": {
+   "distinct_values": 547,
+   "exact_l1_is_in_Q": false,
+   "irrational_moduli": 278318,
+   "offdiagonal_entries": 388024,
+   "perfect_squares": 109706
+  },
+  "objects_measured": 10959,
+  "purity_split_violations": 0,
+  "values_are_exact_fractions": true
+ },
+ "gates": [
+  {
+   "evidence": "mismatched sources: none",
+   "gate": "G-PROVENANCE",
+   "passed": true,
+   "statement": "the 11 declared sources are read at run time from paths resolved from THIS FILE's own location and every one is sha256-12 verified against this unit's frozen declaration; a missing source aborts the run LOUDLY and CLEANLY before anything is computed, and --break-anchor NAME corrupts any one of them",
+   "waiver": null
+  },
+  {
+   "evidence": "float literals at lines: none",
+   "gate": "G-EXACT-ARITHMETIC",
+   "passed": true,
+   "statement": "EXACT ARITHMETIC ONLY: an AST scan of this file finds no float literal anywhere; every amplitude is an INTEGER PAIR over Z[w] with a common power-of-9 denominator and every published number is an integer or an exact Fraction",
+   "waiver": null
+  },
+  {
+   "evidence": "process modules none; foreign unit modules none",
+   "gate": "G-NO-SUBPROCESS",
+   "passed": true,
+   "statement": "#91: NO SUBPROCESS AND NO PARENT IMPORT.  The committed driver is read as a SPEC and this file re-implements the walk, the emission law and the update semantics; an AST scan of this file's own imports finds no process-spawning module and no module of any other unit, so the rebuild is independent by construction and the run is correct off-tree and git-less",
+   "waiver": null
+  },
+  {
+   "evidence": "undeclared source reads: none",
+   "gate": "G-READS-DECLARED",
+   "passed": true,
+   "statement": "#46/#91: the run reads exactly two declared sets -- the 11 pinned SOURCES, every one of them gated above, and the OBJECT set (this file, AST-parsed by its own scans, and the paper under test).  No repository state outside those two sets is read",
+   "waiver": null
+  },
+  {
+   "evidence": "anchors failing to locate or whose perturbation still matched: none",
+   "gate": "G-VERBATIM",
+   "passed": true,
+   "statement": "#62 + #125: 12 verbatim anchors are located in their pinned sources with BOTH sides whitespace-normalised, ASCII-folded and markdown-prefix-stripped, and each row carries its own falsifier -- the needle perturbed at its last three characters must NOT be found",
+   "waiver": null
+  },
+  {
+   "evidence": "rows disagreeing with the parent: none",
+   "gate": "G-PARENT-REPRODUCED",
+   "passed": true,
+   "statement": "THE REBUILD IS ANCHORED AT THE PARENT'S OWN COMMITTED BYTES.  paper-20's driver is read as a SPEC and never imported and never subprocessed; the walk, the emission law and the update semantics are re-implemented here, and 14 published values of the parent's committed receipt -- the branch ladders of three arms, both inverse participations, three exit probabilities, the link-class marginal, both site distributions, the maximum-cell ladder and both branch-step counts -- are required to come back out of THIS implementation at EQUALITY, row by row (#87)",
+   "waiver": null
+  },
+  {
+   "evidence": "located 14 of 14",
+   "gate": "G-PARENT-LOCATED",
+   "passed": true,
+   "statement": "and the same values are LOCATED VERBATIM in the parent's committed receipt bytes, so the comparison is against the COMMITTED OBJECT rather than against a number this file typed: 14 of 14 rows located",
+   "waiver": null
+  },
+  {
+   "evidence": "levels where the two routes disagree: 0",
+   "gate": "G-ENSEMBLE-EXHAUSTIVE",
+   "passed": true,
+   "statement": "the emission tree is carried EXHAUSTIVELY to the declared horizon 5 -- no sampling, no pruning, no truncation by weight -- and exhaustiveness is checked by TWO INDEPENDENT ROUTES at each of the 15 levels: the length of the carried frontier against the branch count recomputed from the emission supports of the level above",
+   "waiver": null
+  },
+  {
+   "evidence": "levels whose mass is not 1: none",
+   "gate": "G-BRANCH-MASS",
+   "passed": true,
+   "statement": "the branch weights sum to exactly 1 at every one of the 15 levels across the three anchored arms, as exact Fractions",
+   "waiver": null
+  },
+  {
+   "evidence": "violations: 0",
+   "gate": "G-WALK-UNITARY",
+   "passed": true,
+   "statement": "the rebuilt step is unitary EXACTLY and PER OBJECT: each site of each branch of each step preserves its own mass, at 296,784 site-branch-steps across the three arms",
+   "waiver": null
+  },
+  {
+   "evidence": "violations: 0",
+   "gate": "G-LAW-KERNEL",
+   "passed": true,
+   "statement": "the LAW-NATIVE normaliser is re-derived on this arena rather than assumed: G(x,0) = 1 terminal, G(x,1) = M(x), and the kernel k_1 = q/M entry by entry, at 1,479,176 per-object checks",
+   "waiver": null
+  },
+  {
+   "evidence": "functionals whose value disagrees with their published specification: none",
+   "gate": "G-FUNCTIONALS-DECLARED",
+   "passed": true,
+   "statement": "the 3 DECLARED decoherence functionals each carry a full specification in this file and each is re-derived here from its own published formula on a probe object: D1 from the Born menu's site masses, D2 from the exact purity split, D3 from its own per-site rows.  None is privileged and all three are run everywhere",
+   "waiver": null
+  },
+  {
+   "evidence": "non-exact values: 0",
+   "gate": "G-FUNCTIONALS-EXACT",
+   "passed": true,
+   "statement": "every decoherence value at every one of the 10,959 objects of the two delivered arms is an exact Fraction -- there is no float and no rounding anywhere in the functional layer",
+   "waiver": null
+  },
+  {
+   "evidence": "irrational moduli: 278318 of 388024",
+   "gate": "G-L1-PRICED",
+   "passed": true,
+   "statement": "THE l_1 DECLARATION IS PRICED, NOT WAVED THROUGH.  D2 is carried in SQUARED-MODULUS units because the exact l_1 form is not computable in Q on this arena, and that is MEASURED rather than asserted: of the 388,024 off-diagonal |rho_xy|^2 entries this run produces, 109,706 are perfect squares and 278,318 are not, so 278,318 exact moduli are irrational and outside this unit's arithmetic",
+   "waiver": null
+  },
+  {
+   "evidence": "violations: 0",
+   "gate": "G-PURITY-SPLIT",
+   "passed": true,
+   "statement": "the exact split D1 + D2 = Tr(rho^2) holds at every object of both delivered arms -- the inverse participation IS the diagonal of the site-basis purity and the coherence mass IS its complement",
+   "waiver": null
+  },
+  {
+   "evidence": "violations: 0",
+   "gate": "G-RATE-IS-BORN",
+   "passed": true,
+   "statement": "THE METRIC-GROWTH RATE IS THE MACHINE'S OWN, and it is measured to BE the Born menu's site mass: eps(x) = p(x) at every site of every one of the 10,959 objects of both arms at the delivered reading, because the kernel is column-stochastic by the law's own normaliser; the same identity is re-taken on every fiber member, the record menu included, at G-COIN-FIBER",
+   "waiver": null
+  },
+  {
+   "evidence": "violations: 0",
+   "gate": "G-RATE-TOTAL",
+   "passed": true,
+   "statement": "and the total rate is exactly ONE division event per coupled step at every object -- the emission law is a probability distribution over the 27 cells and its mass is the walk's",
+   "waiver": null
+  },
+  {
+   "evidence": "frozen objects whose record moved: 0",
+   "gate": "G-GROWTH-FROZEN-ZERO",
+   "passed": true,
+   "statement": "THE FROZEN CONTROL'S RECORD NEVER GROWS, and that is a per-object measurement rather than a definition read back: not one of the 5 distinct frozen objects carries a record different from the welded one, so the ACTUAL growth functionals G1..G4 are identically constant there while the LAW's rate G5 is not",
+   "waiver": null
+  },
+  {
+   "evidence": "cells whose word disagrees with their census: none",
+   "gate": "G-RELATION-CENSUS",
+   "passed": true,
+   "statement": "THE RELATION IS MEASURED, NOT FITTED.  45 cells per arm -- 3 decoherence functionals x 5 growth functionals x 3 resolutions -- are decided by EQUALITY inside a growth class and by nothing else, on both arms, and every cell's published verdict word is required to agree with its own censused counts (#87: the predicate is per cell, never on the tally)",
+   "waiver": null
+  },
+  {
+   "evidence": "cells published EXACT with no non-singleton class: 0",
+   "gate": "G-VACUITY-DECLARED",
+   "passed": true,
+   "statement": "A TEST WITH NO NON-SINGLETON CLASS DECIDES NOTHING and is stamped VACUOUS rather than EXACT -- the honest denominator of this whole section.  15 of the 45 coupled cells and the RES-STEP row of every column are vacuous by construction, and the stamp is checked per cell",
+   "waiver": null
+  },
+  {
+   "evidence": "cells whose recount disagrees: 0",
+   "gate": "G-FAILURE-CENSUS",
+   "passed": true,
+   "statement": "every PARTIAL cell reports its FAILURE SET exactly -- the failing classes, the objects inside them and the distinct D-values those classes carry -- and each census is RECOUNTED by a second pass that shares no intermediate with the first, over all 90 cells of both arms",
+   "waiver": null
+  },
+  {
+   "evidence": "fitted-form needles found in the relation layer: 0",
+   "gate": "G-NO-FITTED-FORM",
+   "passed": true,
+   "statement": "FITTED FORMS ARE BARRED by the pin and the bar is a scan, not a promise: this unit's whole relation layer is searched for the vocabulary of fitting -- fit, regression, approximation, correlation, estimation, residual -- and the only verdict words it carries are the equality-gated EXACT, PARTIAL, VACUOUS",
+   "waiver": null
+  },
+  {
+   "evidence": "members failing admissibility: none",
+   "gate": "G-COIN-ADMISSIBLE",
+   "passed": true,
+   "statement": "every member of the declared coin fiber is verified EXACTLY unitary (3C . 3C* = 9I in Z[w], entry by entry) and EXACTLY S_3-covariant against all six permutation matrices, per member and per entry (#87) -- 7 members",
+   "waiver": null
+  },
+  {
+   "evidence": "fiber members whose verdict shape differs: none",
+   "gate": "G-COIN-FIBER",
+   "passed": true,
+   "statement": "FORCEDNESS IS MEASURED ACROSS THE WHOLE DECLARED FIBER.  All 6 coin classes -- +/- Grover and the four hidden S_3-covariant members, paper-20's own witnesses -- are run to the full horizon on BOTH arms, and each is required to reproduce the delivered member's ENTIRE relation signature: all 15 grid cells' verdict words on both arms, the separation ladder, and every identity",
+   "waiver": null
+  },
+  {
+   "evidence": "declared ['(-1+w)/3', '(-1-w)/3', '(-2-w)/3', '-GROVER', 'GROVER', 'READING-A', 'READING-B', 'w/3']; executed ['(-1+w)/3', '(-1-w)/3', '(-2-w)/3', '-GROVER', 'GROVER', 'READING-A', 'READING-B', 'w/3']",
+   "gate": "G-FIBER-EXECUTED",
+   "passed": true,
+   "statement": "and the execution is bound by SET EQUALITY against the declared member ids rather than by a cardinality: 8 ids declared, 8 executed",
+   "waiver": null
+  },
+  {
+   "evidence": "rows differing between +Grover and -Grover: 0",
+   "gate": "G-GLOBAL-PHASE-PAIR",
+   "passed": true,
+   "statement": "+/- Grover differ by a GLOBAL PHASE, so every published row must be identical between them -- and this unit MEASURES that rather than assuming it, over the separation ladder, the whole cell signature and both distinct-object counts",
+   "waiver": null
+  },
+  {
+   "evidence": "frozen control executed: True",
+   "gate": "G-FROZEN-CONTROL",
+   "passed": true,
+   "statement": "THE MANDATORY FROZEN CONTROL IS EXECUTED, not declared: the same walk, the same emission rule and the same branching on counts that never update, through THE SAME FUNCTION as the coupled arm, at 9,751 branch-steps that collapse to 5 distinct measurements -- one per level, because on a frozen stage every branch of a level carries the same state on the same record",
+   "waiver": null
+  },
+  {
+   "evidence": "tested 2, excluded 2, gravitational 0",
+   "gate": "G-FROZEN-EXCLUSION",
+   "passed": true,
+   "statement": "THE EXCLUSION IS A GATE.  Every EXACT cell of the coupled arm is re-evaluated on the control and excluded if it survives there: 2 exact cells tested, 2 excluded as holding identically frozen, 0 surviving as gravitational-decoherence relations",
+   "waiver": null
+  },
+  {
+   "evidence": "functionals whose published first step disagrees with their own per-step rows: 0",
+   "gate": "G-SEPARATION-LADDER",
+   "passed": true,
+   "statement": "THE SEPARATION LADDER is a PER-OBJECT statement, not an average: for each functional the first step at which its VALUE SET on the coupled arm differs from the control's, recomputed inside the gate from the per-step rows -- D1 at 4, D2 at 4, D3 at 3",
+   "waiver": null
+  },
+  {
+   "evidence": "domination rows published without their witness: 0",
+   "gate": "G-DOMINATION",
+   "passed": true,
+   "statement": "MONOTONE DOMINATION WITH EXACT WITNESSES: a domination is claimed only where every SEPARATING step agrees in direction, the separating steps are named, and a direction that flips is published as NO-DOMINATION with the flip as its witness -- D1 COUPLED-DOMINATES, D2 NO-DOMINATION, D3 NO-DOMINATION",
+   "waiver": null
+  },
+  {
+   "evidence": "D1 movements in 164,310 checks: 0",
+   "gate": "G-BLINDNESS-D1",
+   "passed": true,
+   "statement": "THE INHERITED DECOHERENCE OBSERVABLE IS RECORD-BLIND, MEASURED.  The site-basis inverse participation of the Born menu is re-evaluated on 5 DECLARED FOREIGN count fields -- fields this run never generates, two of them not even admissible -- at every one of the 10,954 coupled objects, and it does not move once.  The coin's record-dependent phases are diagonal and unitary, so they cannot change a site's own mass; the record enters D1 only through the walk's history, with a delay",
+   "waiver": null
+  },
+  {
+   "evidence": "D3 movements: 54700",
+   "gate": "G-BLINDNESS-D3",
+   "passed": true,
+   "statement": "THE INSTRUMENT IS TWO-WAY, which is what makes the blindness a measurement rather than a property of the census: on the same fields and the same objects the record-reading functional D3 moves 54,700 times.  A census in which nothing moved would decide nothing",
+   "waiver": null
+  },
+  {
+   "evidence": "objects with no co-occupancy pair whose D2 moved: 0",
+   "gate": "G-COOCCUPANCY",
+   "passed": true,
+   "statement": "AND THE MIDDLE FUNCTIONAL'S BLINDNESS HAS AN EXACT MECHANISM, gated per object: D2 moves at 54,593 of the 54,770 object-and-field pairs and at NOT ONE pair whose occupied-link sets meet in at most one link -- co-occupancy is NECESSARY for the off-diagonal mass to see the record",
+   "waiver": null
+  },
+  {
+   "evidence": "coupled threshold 4, frozen threshold 4",
+   "gate": "G-COOCCUPANCY-THRESHOLD",
+   "passed": true,
+   "statement": "and the co-occupancy threshold is located by measuring EVERY step rather than by assertion: the first step of the coupled arm carrying a co-occupancy pair is 4, and the frozen control's is 4 -- the threshold is a property of the WALK, not of the coupling",
+   "waiver": null
+  },
+  {
+   "evidence": "distinct ladders 1 across 7 members; census carries the row True; published forced flag True",
+   "gate": "G-PREDICTION-ROW",
+   "passed": true,
+   "statement": "THE PREDICTION ROW IS ENTERED ONLY IF ITS OWN FIBER CENSUS CARRIES IT: the separation ladder must be IDENTICAL across all 7 executed fiber members and every functional must actually separate at a finite step -- 1 distinct ladders measured",
+   "waiver": null
+  },
+  {
+   "evidence": "rendered row: At this arena, at the declared horizon 5 and for every member of the declared coin and reading fibers, the record-reading decoherence functional separates the coupled stage from the frozen control at step 3, exactly one step before either state-internal functional, which separate at step 4; and the co-occupancy threshold that governs the middle functional's blindness is step 4 on BOTH arms.",
+   "gate": "G-PREDICTION-RENDERED",
+   "passed": true,
+   "statement": "and the row is RENDERED FROM THE RECEIPT rather than typed: every number in it is the measured value, and the sentence is required to carry them and to name no unit that is not a count or a step index",
+   "waiver": null
+  },
+  {
+   "evidence": "the retracted L-1 sentence present in the paper: False",
+   "gate": "G-WALL-L1",
+   "passed": true,
+   "statement": "L-1 IS ARGUED AND THEN DECLINED.  Order-level covariance is a fourth form outside paper 8's three; admitting it would need a group declared to act on the generated causal order and a reason to read it as a covariance group, and this unit constructs no such bridge.  THE FOURTH FORM IS NOT TESTED HERE, and the sentence retracted on 2026-07-28 is absent from the object under test -- the gate whitespace-normalises, ASCII-folds and strips markdown prefixes from BOTH sides, so a line-wrapped blockquoted copy cannot evade it",
+   "waiver": null
+  },
+  {
+   "evidence": "forbidden needles found: none",
+   "gate": "G-WALL-BHS",
+   "passed": true,
+   "statement": "the abstention is MEASURED rather than declared: this run's whole measurement surface -- every measured receipt key together with the statement and evidence of every non-wall gate evaluated -- is scanned for 4 forbidden needles, and the falsifier writes the forbidden reading INTO that surface and dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "forbidden needles found: none",
+   "gate": "G-WALL-KR",
+   "passed": true,
+   "statement": "the abstention is MEASURED rather than declared: this run's whole measurement surface -- every measured receipt key together with the statement and evidence of every non-wall gate evaluated -- is scanned for 4 forbidden needles, and the falsifier writes the forbidden reading INTO that surface and dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "forbidden needles found: none",
+   "gate": "G-WALL-COSMO",
+   "passed": true,
+   "statement": "the abstention is MEASURED rather than declared: this run's whole measurement surface -- every measured receipt key together with the statement and evidence of every non-wall gate evaluated -- is scanned for 5 forbidden needles, and the falsifier writes the forbidden reading INTO that surface and dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "forbidden needles found: none",
+   "gate": "G-WALL-NO-SI",
+   "passed": true,
+   "statement": "the abstention is MEASURED rather than declared: this run's whole measurement surface -- every measured receipt key together with the statement and evidence of every non-wall gate evaluated -- is scanned for 20 forbidden needles, and the falsifier writes the forbidden reading INTO that surface and dies here.  Three needles are DECLARED OUT with their reasons printed: `horizon` (this unit's own name for the declared finite number of coupled steps, and the gravity law's own relative-horizon index); `mass` (the off-diagonal coherence MASS and the menu MASS are declared objects of this unit and of paper-16's law); `rate` (the emission RATE is one of this unit's two declared growth functionals; a scan firing on it would fire on the pin's own vocabulary)",
+   "waiver": null
+  },
+  {
+   "evidence": "the shape-only naming sentence present: True",
+   "gate": "G-WALL-DP-SHAPE",
+   "passed": true,
+   "statement": "THE DIOSI-PENROSE CITATION IS SHAPE-ONLY AND THE ABSTENTION IS WRITTEN DOWN: the corpus's gravitational-decoherence arc is named in the object under test with the sentence that inherits no number, no rate, no mass and no experimental claim from it, and the naming sentence is mandatory",
+   "waiver": null
+  },
+  {
+   "evidence": "the Lorentzian naming sentence present: True",
+   "gate": "G-WALL-LORENTZ-NAMED",
+   "passed": true,
+   "statement": "THE LORENTZIAN RESONANCE IS NAMED, carried from the parent because this unit reads the same determinant: the sentence is mandatory and its falsifier deletes it",
+   "waiver": null
+  },
+  {
+   "evidence": "the hexagonal naming sentence present: True",
+   "gate": "G-WALL-HEX-NAMED",
+   "passed": true,
+   "statement": "THE HEXAGONAL RESONANCE IS NAMED, inherited from paper-19's S-7 through paper-20: the Gram matrix a reader will recognise is named before it is heard and no lattice-geometry reading is taken",
+   "waiver": null
+  },
+  {
+   "evidence": "keys carrying a fraction with no declared measure: none",
+   "gate": "G-MEASURE-DECLARED",
+   "passed": true,
+   "statement": "E-24: NO COUNT BECOMES A PROBABILITY WITHOUT A DECLARED MEASURE.  Every published key whose values include a fraction over a configuration space is required to name its measure or to carry the COUNTING-ONLY stamp; the probability-bearing keys all declare THE BRANCH MEASURE and the relation, forcedness and mechanism layers are stamped COUNTING-ONLY, since a failing-class count is not a probability of anything.  3 keys carry fractions",
+   "waiver": null
+  },
+  {
+   "evidence": "segments matching: {'arena': True, 'functionals': True, 'gates': True}",
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "passed": true,
+   "statement": "the verdict is DERIVED A SECOND TIME by a comparator that shares no code, no input and no typed literal with the builder: it is handed the receipt's own measured blocks as JSON, TYPES ITS OWN TEMPLATES, re-derives the outcome word from the exclusion and relation rows, and the three segments must match string for string",
+   "waiver": null
+  },
+  {
+   "evidence": "claims not located: none",
+   "gate": "G-PAPER-CLAIMS",
+   "passed": true,
+   "statement": "every load-bearing claim of the paper is ASSEMBLED FROM THE RECEIPT and then located in the object under test -- 14 claims, no number typed twice",
+   "waiver": null
+  },
+  {
+   "evidence": "table rows not located: none",
+   "gate": "G-PAPER-TABLES",
+   "passed": true,
+   "statement": "the paper's tables RENDER FROM THE RECEIPT: 16 rows are built from measured values and each is required to appear in the object under test",
+   "waiver": null
+  },
+  {
+   "evidence": "unregistered numerals: none",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "passed": true,
+   "statement": "#20 WITH THE FENCED-BLOCK AND INLINE-SPAN ADDENDA (E-22): the coverage scan reads ALL of the paper's text -- 313 prose-and-other numerals of which 49 live in 3 fenced blocks and 137 in 221 inline code spans -- and every numeral must be a value this run computed and registered",
+   "waiver": null
+  },
+  {
+   "evidence": "segments not located none; multiset mismatches 0",
+   "gate": "G-PAPER-HEAD-VERBATIM",
+   "passed": true,
+   "statement": "the paper's verdict block is the DERIVED head, rendered from the receipt: all 3 segments are located verbatim, and the fenced blocks are gated by MULTISET EQUALITY (E-22) rather than by containment, so a duplicated block cannot shadow a forged twin",
+   "waiver": null
+  },
+  {
+   "evidence": "polarity rows failing: none",
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "passed": true,
+   "statement": "every load-bearing claim is checked for POLARITY: the positive form must be present and its negation absent, on 4 pairs, so a paper carrying the opposite of what was measured dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "malformed vectors accepted none, legal shapes 9, permissive shape accepts unknown flags True",
+   "gate": "G-CLI-WHITELIST",
+   "passed": true,
+   "statement": "the #82 CLI contract, exercised in this run: 10 malformed argument vectors are all rejected with exit code 2 -- the last three of them SECOND-MODE vectors -- 9 legal shapes parse, and the registered PERMISSIVE shape, present in this file only as this gate's own falsifier, accepts an unknown flag",
+   "waiver": null
+  },
+  {
+   "evidence": "the writer-shape probe reports the self-test path clean: True",
+   "gate": "G-SELFTEST-WRITES-NOTHING",
+   "passed": true,
+   "statement": "the --selftest path corrupts an anchor in memory, dies at G-PROVENANCE and reaches no writer: the writer is called from exactly one place in this file and the self-test path does not reach it -- and the predicate is the AST probe's own value",
+   "waiver": null
+  },
+  {
+   "evidence": "on target 56 of 56; misses none",
+   "gate": "G-MUTANTS-ON-TARGET",
+   "passed": true,
+   "statement": "all 56 declared mutants are run IN PROCESS and each dies at the gate it names, with the artifacts untouched",
+   "waiver": null
+  },
+  {
+   "evidence": "uncovered gates: none; declared registry 63 vs evaluated 63, drift none",
+   "gate": "G-COVERAGE",
+   "passed": true,
+   "statement": "#34 WITH AN HONEST DENOMINATOR: of the 63 gates this delivery run evaluates, 52 are falsified by at least one declared mutant and 11 are WAIVED with a forcing that says why they cannot fail.  The denominator is the gate count of THIS run, and the registry --list-gates prints is required to be EXACTLY that set",
+   "waiver": null
+  },
+  {
+   "evidence": "declarations not matching their code: none; descriptions not naming their symbol and value: none; hooks naming an undeclared falsifier: none",
+   "gate": "G-FALSIFIER-HONESTY",
+   "passed": true,
+   "statement": "E-23: A FALSIFIER'S PUBLISHED DESCRIPTION IS PART OF THE SEALED SURFACE.  Each of the 56 declared falsifiers names THE SYMBOL IT MOVES and THE VALUE IT MOVES IT TO; both are re-derived from THIS FILE's own AST -- the innermost statement enclosing its hook -- and compared against the declaration, and the published prose is required to name both.  56 hook sites are located, and every hook in the file names a declared falsifier",
+   "waiver": null
+  },
+  {
+   "evidence": "gates called in finish ['G-COVERAGE', 'G-FALSIFIER-HONESTY', 'G-WRITER-SHAPE', 'G-SWEEP-BOUND', 'G-ANCHOR-CONSUMERS', 'G-REACHABILITY', 'G-PAPER-COVERAGE-FINAL', 'G-SEAL-COMPLETE', 'G-ARTIFACT-INTEGRITY']; terminal gate present exactly once True; os.replace calls 2, all after the terminal gate True",
+   "gate": "G-WRITER-SHAPE",
+   "passed": true,
+   "statement": "THE SHAPE OF THE WRITER IS SEALED, AND SEALED BEFORE THE GATE LEDGER IS SNAPSHOTTED -- the one guard a post-snapshot gate's own removal cannot evade.  finish() calls 9 gates in source order, the terminal integrity gate appears exactly once among them, there are 2 os.replace calls, and every one sits BELOW that gate's own line",
+   "waiver": null
+  },
+  {
+   "evidence": "sweep rows 56 of 56; sweep gate evaluated True",
+   "gate": "G-SWEEP-BOUND",
+   "passed": true,
+   "statement": "THE SWEEP'S EXECUTION IS BOUND, NOT DECLARED: a delivery-level run must carry one sweep row per declared mutant (56), every row ON TARGET, and must have evaluated the sweep gate itself.  This run is delivery-level",
+   "waiver": null
+  },
+  {
+   "evidence": "consumers not registered-and-evaluated: none",
+   "gate": "G-ANCHOR-CONSUMERS",
+   "passed": true,
+   "statement": "#62's consumer binding: every verbatim anchor names a gate, and each named gate is required to be in the DECLARED registry AND in THIS RUN's own evaluated ledger -- 11 distinct consumer gates",
+   "waiver": null
+  },
+  {
+   "evidence": "dead falsifiers: none",
+   "gate": "G-REACHABILITY",
+   "passed": true,
+   "statement": "#34 WITH REACHABILITY: every declared falsifier is checked to REACH its gate -- 56 falsifiers, 0 dead",
+   "waiver": null
+  },
+  {
+   "evidence": "registry 63, snapshot 61, post-snapshot 2, snapshot names equal the registry True (delivery-level), float-valued receipt paths none",
+   "gate": "G-PAPER-COVERAGE-FINAL",
+   "passed": true,
+   "statement": "the payload closes.  THE THREE GATE CARDINALITIES ARE NAMED RATHER THAN CONFLATED: 63 gates in the DECLARED REGISTRY, 61 evaluated and carried into the SEALED SNAPSHOT (this gate included), and 2 evaluated AFTER the snapshot.  All passed, and a RECURSIVE TYPE SCAN of the receipt finds no float anywhere",
+   "waiver": null
+  }
+ ],
+ "growth": {
+  "count": 5,
+  "declared": [
+   {
+    "id": "G1-RECORD-CELL",
+    "kind": "ACTUAL"
+   },
+   {
+    "id": "G2-RECORD-SITE",
+    "kind": "ACTUAL"
+   },
+   {
+    "id": "G3-RECORD-LINK",
+    "kind": "ACTUAL"
+   },
+   {
+    "id": "G4-GROWTH-TOTAL",
+    "kind": "ACTUAL"
+   },
+   {
+    "id": "G5-RATE-SITE",
+    "kind": "LAW"
+   }
+  ],
+  "frozen_records_that_grew": 0,
+  "n_growth_profile": {
+   "coupled": [
+    {
+     "link_class_growth": [
+      "0",
+      "0",
+      "0"
+     ],
+     "max_cell_count": 2,
+     "t": 1,
+     "total_growth": "0"
+    },
+    {
+     "link_class_growth": [
+      "1/9",
+      "4/9",
+      "4/9"
+     ],
+     "max_cell_count": 2,
+     "t": 2,
+     "total_growth": "1"
+    },
+    {
+     "link_class_growth": [
+      "14/27",
+      "20/27",
+      "20/27"
+     ],
+     "max_cell_count": 3,
+     "t": 3,
+     "total_growth": "2"
+    },
+    {
+     "link_class_growth": [
+      "20953/19683",
+      "18280/19683",
+      "19816/19683"
+     ],
+     "max_cell_count": 3,
+     "t": 4,
+     "total_growth": "3"
+    },
+    {
+     "link_class_growth": [
+      "55160876/43046721",
+      "55947116/43046721",
+      "61078892/43046721"
+     ],
+     "max_cell_count": 4,
+     "t": 5,
+     "total_growth": "4"
+    }
+   ],
+   "frozen": [
+    {
+     "t": 1,
+     "total_growth": "0"
+    },
+    {
+     "t": 2,
+     "total_growth": "0"
+    },
+    {
+     "t": 3,
+     "total_growth": "0"
+    },
+    {
+     "t": 4,
+     "total_growth": "0"
+    },
+    {
+     "t": 5,
+     "total_growth": "0"
+    }
+   ]
+  },
+  "rate_is_born_violations": 0,
+  "rate_source": "read off the machine's own emission_weights, never re-derived by this section",
+  "rate_total_violations": 0
+ },
+ "machine": {
+  "coin": "C(x) = G . D(x), D(x) = diag(w^{n_l(x)}), site-block-diagonal",
+  "emission": "q(l|x) = |(C psi)(x,l)|^2 (reading A) or n_l(x) (reading B); k_1(l|x) = q(l|x)/M(x); the weight at cell (x,l) is p(x) . k_1(l|x)",
+  "law_checks": 1479176,
+  "law_violations": 0,
+  "shift": "|x, l> -> |x + l, l>",
+  "unitarity_checks": 296784,
+  "unitarity_violations": 0,
+  "update": "a division event on (x,l) increments n_l(x) by one; admissibility is a property of the RECORD and not a precondition of the STEP"
+ },
+ "measure_ledger": {
+  "declared": {
+   "counts": "COUNTING-ONLY: the run's own cardinalities",
+   "ensemble": "THE BRANCH MEASURE: the emission law's own product measure over the branching tree -- at each coupled step a branch of weight w splits into one child of weight w . p(x) . k_1(l|x) per emitted cell, and the level masses are measured to be exactly 1",
+   "exclusion": "THE BRANCH MEASURE: the emission law's own product measure over the branching tree -- at each coupled step a branch of weight w splits into one child of weight w . p(x) . k_1(l|x) per emitted cell, and the level masses are measured to be exactly 1",
+   "forcedness": "COUNTING-ONLY: fiber-member counts and verdict words",
+   "functionals": "THE BRANCH MEASURE: the emission law's own product measure over the branching tree -- at each coupled step a branch of weight w splits into one child of weight w . p(x) . k_1(l|x) per emitted cell, and the level masses are measured to be exactly 1",
+   "growth": "THE BRANCH MEASURE: the emission law's own product measure over the branching tree -- at each coupled step a branch of weight w splits into one child of weight w . p(x) . k_1(l|x) per emitted cell, and the level masses are measured to be exactly 1",
+   "machine": "THE BRANCH MEASURE: the emission law's own product measure over the branching tree -- at each coupled step a branch of weight w splits into one child of weight w . p(x) . k_1(l|x) per emitted cell, and the level masses are measured to be exactly 1",
+   "measure_ledger": "COUNTING-ONLY: this ledger",
+   "mechanism": "COUNTING-ONLY: how many objects move under a declared foreign count field",
+   "prediction": "COUNTING-ONLY: step indices and fiber counts",
+   "rebuild": "THE BRANCH MEASURE: the emission law's own product measure over the branching tree -- at each coupled step a branch of weight w splits into one child of weight w . p(x) . k_1(l|x) per emitted cell, and the level masses are measured to be exactly 1",
+   "relation": "COUNTING-ONLY: class and object counts over the declared object sets, carrying no probability",
+   "verdict": "THE BRANCH MEASURE: the emission law's own product measure over the branching tree -- at each coupled step a branch of weight w splits into one child of weight w . p(x) . k_1(l|x) per emitted cell, and the level masses are measured to be exactly 1",
+   "walls": "COUNTING-ONLY: needle and scan counts"
+  },
+  "keys_carrying_fractions": [
+   "growth",
+   "prediction",
+   "rebuild"
+  ],
+  "undeclared": []
+ },
+ "mechanism": {
+  "D1_moves": 0,
+  "D2_moves": 54593,
+  "D2_moves_without_a_cooccupancy_pair": 0,
+  "D3_moves": 54700,
+  "checks": 164310,
+  "cooccupancy_ladder_coupled": [
+   {
+    "objects": 1,
+    "t": 1,
+    "with_a_cooccupancy_pair": 0
+   },
+   {
+    "objects": 3,
+    "t": 2,
+    "with_a_cooccupancy_pair": 0
+   },
+   {
+    "objects": 27,
+    "t": 3,
+    "with_a_cooccupancy_pair": 0
+   },
+   {
+    "objects": 486,
+    "t": 4,
+    "with_a_cooccupancy_pair": 486
+   },
+   {
+    "objects": 10437,
+    "t": 5,
+    "with_a_cooccupancy_pair": 10437
+   }
+  ],
+  "cooccupancy_ladder_frozen": [
+   {
+    "objects": 1,
+    "t": 1,
+    "with_a_cooccupancy_pair": 0
+   },
+   {
+    "objects": 1,
+    "t": 2,
+    "with_a_cooccupancy_pair": 0
+   },
+   {
+    "objects": 1,
+    "t": 3,
+    "with_a_cooccupancy_pair": 0
+   },
+   {
+    "objects": 1,
+    "t": 4,
+    "with_a_cooccupancy_pair": 1
+   },
+   {
+    "objects": 1,
+    "t": 5,
+    "with_a_cooccupancy_pair": 1
+   }
+  ],
+  "cooccupancy_threshold_coupled": 4,
+  "cooccupancy_threshold_frozen": 4,
+  "foreign_fields": [
+   {
+    "field": "STALE",
+    "is_admissible": true,
+    "is_the_welded_record": false
+   },
+   {
+    "field": "ALL-TWO",
+    "is_admissible": true,
+    "is_the_welded_record": false
+   },
+   {
+    "field": "INADMISSIBLE-ONE-CELL",
+    "is_admissible": false,
+    "is_the_welded_record": false
+   },
+   {
+    "field": "LADDERED",
+    "is_admissible": true,
+    "is_the_welded_record": false
+   },
+   {
+    "field": "ZERO-AT-ONE-CELL",
+    "is_admissible": false,
+    "is_the_welded_record": false
+   }
+  ],
+  "rows": [
+   {
+    "checks": 32862,
+    "field": "STALE",
+    "is_admissible": true,
+    "is_the_welded_record": false,
+    "moved": {
+     "D1": 0,
+     "D2": 10911,
+     "D3": 10953
+    },
+    "moved_without_a_cooccupancy_pair": {
+     "D1": 0,
+     "D2": 0,
+     "D3": 31
+    }
+   },
+   {
+    "checks": 32862,
+    "field": "ALL-TWO",
+    "is_admissible": true,
+    "is_the_welded_record": false,
+    "moved": {
+     "D1": 0,
+     "D2": 10922,
+     "D3": 10929
+    },
+    "moved_without_a_cooccupancy_pair": {
+     "D1": 0,
+     "D2": 0,
+     "D3": 9
+    }
+   },
+   {
+    "checks": 32862,
+    "field": "INADMISSIBLE-ONE-CELL",
+    "is_admissible": false,
+    "is_the_welded_record": false,
+    "moved": {
+     "D1": 0,
+     "D2": 10922,
+     "D3": 10929
+    },
+    "moved_without_a_cooccupancy_pair": {
+     "D1": 0,
+     "D2": 0,
+     "D3": 10
+    }
+   },
+   {
+    "checks": 32862,
+    "field": "LADDERED",
+    "is_admissible": true,
+    "is_the_welded_record": false,
+    "moved": {
+     "D1": 0,
+     "D2": 10922,
+     "D3": 10954
+    },
+    "moved_without_a_cooccupancy_pair": {
+     "D1": 0,
+     "D2": 0,
+     "D3": 31
+    }
+   },
+   {
+    "checks": 32862,
+    "field": "ZERO-AT-ONE-CELL",
+    "is_admissible": false,
+    "is_the_welded_record": false,
+    "moved": {
+     "D1": 0,
+     "D2": 10916,
+     "D3": 10935
+    },
+    "moved_without_a_cooccupancy_pair": {
+     "D1": 0,
+     "D2": 0,
+     "D3": 27
+    }
+   }
+  ],
+  "statement": "rho_xy = sum_l w^{n_l(x) - n_l(y)} psi(x,l) conj(psi(y,l)): the coin is unitary and the same at every site, so it CANCELS out of the site-basis density matrix and the record survives only on links occupied at BOTH ends.  A pair of sites meeting in at most one link contributes a pure global phase and cannot see the record at all; the diagonal x = y always meets itself in every occupied link with zero phase difference, which is why D1 is record-blind everywhere"
+ },
+ "mutant_sweep": [
+  {
+   "declared_gate": "G-PARENT-REPRODUCED",
+   "died_at": "G-PARENT-REPRODUCED",
+   "mutant": "MUT-ANCHOR-LEAVES",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PARENT-LOCATED",
+   "died_at": "G-PARENT-LOCATED",
+   "mutant": "MUT-ANCHOR-LOCATED",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-BRANCH-MASS",
+   "died_at": "G-BRANCH-MASS",
+   "mutant": "MUT-MASS",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-ENSEMBLE-EXHAUSTIVE",
+   "died_at": "G-ENSEMBLE-EXHAUSTIVE",
+   "mutant": "MUT-ROUTE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WALK-UNITARY",
+   "died_at": "G-WALK-UNITARY",
+   "mutant": "MUT-UNITARY",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-LAW-KERNEL",
+   "died_at": "G-LAW-KERNEL",
+   "mutant": "MUT-KERNEL",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-FUNCTIONALS-DECLARED",
+   "died_at": "G-FUNCTIONALS-DECLARED",
+   "mutant": "MUT-D-SPEC",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-FUNCTIONALS-EXACT",
+   "died_at": "G-FUNCTIONALS-EXACT",
+   "mutant": "MUT-D-EXACT",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-L1-PRICED",
+   "died_at": "G-L1-PRICED",
+   "mutant": "MUT-L1-PRICE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PURITY-SPLIT",
+   "died_at": "G-PURITY-SPLIT",
+   "mutant": "MUT-D2-SPLIT",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-RATE-IS-BORN",
+   "died_at": "G-RATE-IS-BORN",
+   "mutant": "MUT-RATE-IS-BORN",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-RATE-TOTAL",
+   "died_at": "G-RATE-TOTAL",
+   "mutant": "MUT-RATE-TOTAL",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-GROWTH-FROZEN-ZERO",
+   "died_at": "G-GROWTH-FROZEN-ZERO",
+   "mutant": "MUT-GROWTH-FROZEN",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-RELATION-CENSUS",
+   "died_at": "G-RELATION-CENSUS",
+   "mutant": "MUT-RELATION-EXACT",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-VACUITY-DECLARED",
+   "died_at": "G-VACUITY-DECLARED",
+   "mutant": "MUT-VACUITY",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-FAILURE-CENSUS",
+   "died_at": "G-FAILURE-CENSUS",
+   "mutant": "MUT-FAILURE-SET",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-NO-FITTED-FORM",
+   "died_at": "G-NO-FITTED-FORM",
+   "mutant": "MUT-FITTED",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-COIN-FIBER",
+   "died_at": "G-COIN-FIBER",
+   "mutant": "MUT-COIN-FIBER",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-FIBER-EXECUTED",
+   "died_at": "G-FIBER-EXECUTED",
+   "mutant": "MUT-FIBER-MEMBERS",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-COIN-ADMISSIBLE",
+   "died_at": "G-COIN-ADMISSIBLE",
+   "mutant": "MUT-COIN-UNITARY",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-GLOBAL-PHASE-PAIR",
+   "died_at": "G-GLOBAL-PHASE-PAIR",
+   "mutant": "MUT-PHASE-PAIR",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-FROZEN-EXCLUSION",
+   "died_at": "G-FROZEN-EXCLUSION",
+   "mutant": "MUT-FROZEN-EXCLUSION",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-FROZEN-CONTROL",
+   "died_at": "G-FROZEN-CONTROL",
+   "mutant": "MUT-FROZEN-RAN",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-SEPARATION-LADDER",
+   "died_at": "G-SEPARATION-LADDER",
+   "mutant": "MUT-SEPARATION",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-DOMINATION",
+   "died_at": "G-DOMINATION",
+   "mutant": "MUT-DOMINATION",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-BLINDNESS-D1",
+   "died_at": "G-BLINDNESS-D1",
+   "mutant": "MUT-BLIND-D1",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-COOCCUPANCY",
+   "died_at": "G-COOCCUPANCY",
+   "mutant": "MUT-COOCC",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-COOCCUPANCY-THRESHOLD",
+   "died_at": "G-COOCCUPANCY-THRESHOLD",
+   "mutant": "MUT-COOCC-THRESHOLD",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-BLINDNESS-D3",
+   "died_at": "G-BLINDNESS-D3",
+   "mutant": "MUT-D3-READS",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PREDICTION-ROW",
+   "died_at": "G-PREDICTION-ROW",
+   "mutant": "MUT-PREDICTION",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PREDICTION-RENDERED",
+   "died_at": "G-PREDICTION-RENDERED",
+   "mutant": "MUT-PREDICTION-RENDER",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WALL-L1",
+   "died_at": "G-WALL-L1",
+   "mutant": "MUT-WALL-L1",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WALL-BHS",
+   "died_at": "G-WALL-BHS",
+   "mutant": "MUT-WALL-BHS",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WALL-KR",
+   "died_at": "G-WALL-KR",
+   "mutant": "MUT-WALL-KR",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WALL-COSMO",
+   "died_at": "G-WALL-COSMO",
+   "mutant": "MUT-WALL-COSMO",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WALL-NO-SI",
+   "died_at": "G-WALL-NO-SI",
+   "mutant": "MUT-WALL-SI",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WALL-DP-SHAPE",
+   "died_at": "G-WALL-DP-SHAPE",
+   "mutant": "MUT-WALL-DP",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WALL-LORENTZ-NAMED",
+   "died_at": "G-WALL-LORENTZ-NAMED",
+   "mutant": "MUT-WALL-LORENTZ",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WALL-HEX-NAMED",
+   "died_at": "G-WALL-HEX-NAMED",
+   "mutant": "MUT-WALL-HEX",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-VERDICT-RECONSTRUCTED",
+   "died_at": "G-VERDICT-RECONSTRUCTED",
+   "mutant": "MUT-VERDICT-WORD",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-VERDICT-RECONSTRUCTED",
+   "died_at": "G-VERDICT-RECONSTRUCTED",
+   "mutant": "MUT-VERDICT-VALUE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-CLAIMS",
+   "died_at": "G-PAPER-CLAIMS",
+   "mutant": "MUT-PAPER-CLAIM",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-TABLES",
+   "died_at": "G-PAPER-TABLES",
+   "mutant": "MUT-PAPER-TABLE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-NUMERAL-COVERAGE",
+   "died_at": "G-PAPER-NUMERAL-COVERAGE",
+   "mutant": "MUT-PAPER-NUMERAL",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-HEAD-VERBATIM",
+   "died_at": "G-PAPER-HEAD-VERBATIM",
+   "mutant": "MUT-PAPER-HEAD",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-HEAD-VERBATIM",
+   "died_at": "G-PAPER-HEAD-VERBATIM",
+   "mutant": "MUT-PAPER-BLOCK",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-CLAIM-POLARITY",
+   "died_at": "G-PAPER-CLAIM-POLARITY",
+   "mutant": "MUT-PAPER-POLARITY",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-MEASURE-DECLARED",
+   "died_at": "G-MEASURE-DECLARED",
+   "mutant": "MUT-MEASURE-STAMP",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-CLI-WHITELIST",
+   "died_at": "G-CLI-WHITELIST",
+   "mutant": "MUT-CLI-PERMISSIVE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-SELFTEST-WRITES-NOTHING",
+   "died_at": "G-SELFTEST-WRITES-NOTHING",
+   "mutant": "MUT-SELFTEST-WRITES",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WRITER-SHAPE",
+   "died_at": "G-WRITER-SHAPE",
+   "mutant": "MUT-WRITER-SHAPE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-FALSIFIER-HONESTY",
+   "died_at": "G-FALSIFIER-HONESTY",
+   "mutant": "MUT-FALSIFIER-DESC",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-SEAL-COMPLETE",
+   "died_at": "G-SEAL-COMPLETE",
+   "mutant": "MUT-SEAL-DROP",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-SEAL-COMPLETE",
+   "died_at": "G-SEAL-COMPLETE",
+   "mutant": "MUT-SEAL-BROKEN",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-SEAL-COMPLETE",
+   "died_at": "G-SEAL-COMPLETE",
+   "mutant": "MUT-TRANSCRIPT-FLIP",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-SWEEP-BOUND",
+   "died_at": "G-SWEEP-BOUND",
+   "mutant": "MUT-SWEEP-UNBOUND",
+   "on_target": true
+  }
+ ],
+ "mutants": [
+  {
+   "gate": "G-PARENT-REPRODUCED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "anchor_bad",
+   "mutant": "MUT-ANCHOR-LEAVES",
+   "named_in_its_description": true,
+   "to": "FORGED",
+   "what_it_does": "moves `anchor_bad` to the one-element list ['FORGED']: an anchor value of the parent's committed receipt is reported reproduced when the rebuild disagrees -- must die at the parent-reproduction gate"
+  },
+  {
+   "gate": "G-PARENT-LOCATED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "located",
+   "mutant": "MUT-ANCHOR-LOCATED",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `located`, the count of rebuilt values located verbatim in the parent's committed bytes, down by 1 -- must die at the located-in-bytes gate"
+  },
+  {
+   "gate": "G-BRANCH-MASS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "mass_bad",
+   "mutant": "MUT-MASS",
+   "named_in_its_description": true,
+   "to": "A-COUPLED",
+   "what_it_does": "moves `mass_bad` to the one-element list ['A-COUPLED'], reporting a level whose branch weights do not sum to exactly 1 -- must die at the per-level mass gate"
+  },
+  {
+   "gate": "G-ENSEMBLE-EXHAUSTIVE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "route_bad",
+   "mutant": "MUT-ROUTE",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `route_bad` to 1: the carried frontier's branch count and the count recomputed from the emission supports disagree at one level -- must die at the two-route gate"
+  },
+  {
+   "gate": "G-WALK-UNITARY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "uviol",
+   "mutant": "MUT-UNITARY",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `uviol` to 1: one site-branch-step stops preserving its own site mass -- must die at the per-object unitarity gate"
+  },
+  {
+   "gate": "G-LAW-KERNEL",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "kviol",
+   "mutant": "MUT-KERNEL",
+   "named_in_its_description": true,
+   "to": "2",
+   "what_it_does": "moves `kviol` to 2: two kernel entries are detached from q/M -- must die at the law-native kernel gate"
+  },
+  {
+   "gate": "G-FUNCTIONALS-DECLARED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "spec_bad",
+   "mutant": "MUT-D-SPEC",
+   "named_in_its_description": true,
+   "to": "D2-OFFDIAG",
+   "what_it_does": "moves `spec_bad` to the one-element list ['D2-OFFDIAG'], reporting a declared decoherence functional whose published specification does not match the value its own code returns -- must die at the specification gate"
+  },
+  {
+   "gate": "G-FUNCTIONALS-EXACT",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "nonexact",
+   "mutant": "MUT-D-EXACT",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `nonexact` to 1: a decoherence value is reported carried as something other than an exact Fraction -- must die at the exactness gate"
+  },
+  {
+   "gate": "G-L1-PRICED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "irrational",
+   "mutant": "MUT-L1-PRICE",
+   "named_in_its_description": true,
+   "to": "0",
+   "what_it_does": "moves `irrational` to 0: the off-diagonal moduli are reported all rational, hiding the price of the squared-modulus declaration -- must die at the l1-price gate"
+  },
+  {
+   "gate": "G-PURITY-SPLIT",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "split_bad",
+   "mutant": "MUT-D2-SPLIT",
+   "named_in_its_description": true,
+   "to": "3",
+   "what_it_does": "moves `split_bad` to 3: the exact split D1 + D2 = purity is reported violated at three objects -- must die at the purity-split gate"
+  },
+  {
+   "gate": "G-RATE-IS-BORN",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "rb_bad",
+   "mutant": "MUT-RATE-IS-BORN",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `rb_bad` to 1: the law's own site emission rate is reported to differ from the Born site mass at one site-object -- must die at the emission-rate gate"
+  },
+  {
+   "gate": "G-RATE-TOTAL",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "rt_bad",
+   "mutant": "MUT-RATE-TOTAL",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `rt_bad` to 1: an object's total emission rate is reported away from exactly one division event per coupled step -- must die at the total-rate gate"
+  },
+  {
+   "gate": "G-GROWTH-FROZEN-ZERO",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "fz_growth",
+   "mutant": "MUT-GROWTH-FROZEN",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `fz_growth` to 1: the frozen control is reported to grow its record -- must die at the gate that binds the control's own definition"
+  },
+  {
+   "gate": "G-RELATION-CENSUS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "grid_bad",
+   "mutant": "MUT-RELATION-EXACT",
+   "named_in_its_description": true,
+   "to": "FORGED",
+   "what_it_does": "moves `grid_bad` to the one-element list ['FORGED'], reporting a grid cell whose published verdict word disagrees with its own censused failure count -- must die at the relation-census gate"
+  },
+  {
+   "gate": "G-VACUITY-DECLARED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "vac_bad",
+   "mutant": "MUT-VACUITY",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `vac_bad` to 1: a functional-dependence verdict of EXACT is published on a test with no non-singleton class -- must die at the vacuity gate"
+  },
+  {
+   "gate": "G-FAILURE-CENSUS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "census_bad",
+   "mutant": "MUT-FAILURE-SET",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `census_bad` to 1: a partial relation's censused failing-object count disagrees with the recount taken from its own partition -- must die at the failure-census gate"
+  },
+  {
+   "gate": "G-NO-FITTED-FORM",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "fitted",
+   "mutant": "MUT-FITTED",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `fitted` to 1: a fitted form is reported present in this unit's own published relation layer -- must die at the no-fitted-form gate"
+  },
+  {
+   "gate": "G-COIN-FIBER",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "fiber_bad",
+   "mutant": "MUT-COIN-FIBER",
+   "named_in_its_description": true,
+   "to": "w/3",
+   "what_it_does": "moves `fiber_bad` to the one-element list ['w/3'], reporting a coin fiber member whose verdict shape differs from the delivered one -- must die at the coin-fiber gate"
+  },
+  {
+   "gate": "G-FIBER-EXECUTED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "executed",
+   "mutant": "MUT-FIBER-MEMBERS",
+   "named_in_its_description": true,
+   "to": "[:-1]",
+   "what_it_does": "moves `executed`, the executed fiber-member ids, to the list with its last id dropped, [:-1], so a declared member is reported measured while its run is missing -- must die at the fiber-inventory gate"
+  },
+  {
+   "gate": "G-COIN-ADMISSIBLE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "cu_bad",
+   "mutant": "MUT-COIN-UNITARY",
+   "named_in_its_description": true,
+   "to": "(-1+w)/3",
+   "what_it_does": "moves `cu_bad` to the one-element list ['(-1+w)/3'], reporting a fiber member as exactly unitary and S_3-covariant when it is not -- must die at the coin-admissibility gate"
+  },
+  {
+   "gate": "G-GLOBAL-PHASE-PAIR",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "phase_bad",
+   "mutant": "MUT-PHASE-PAIR",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `phase_bad` to 1: +/- Grover, a pair differing by a global phase, are reported to give different published rows -- must die at the global-phase gate"
+  },
+  {
+   "gate": "G-FROZEN-EXCLUSION",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "excluded",
+   "mutant": "MUT-FROZEN-EXCLUSION",
+   "named_in_its_description": true,
+   "to": "[]",
+   "what_it_does": "moves `excluded` to the empty list [], hiding the exclusion of a relation that holds identically on the frozen stage -- must die at the frozen-exclusion gate"
+  },
+  {
+   "gate": "G-FROZEN-CONTROL",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "frozen_ran",
+   "mutant": "MUT-FROZEN-RAN",
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `frozen_ran` to False: the mandatory control is reported without its execution -- must die at the control-execution gate"
+  },
+  {
+   "gate": "G-SEPARATION-LADDER",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "sep_bad",
+   "mutant": "MUT-SEPARATION",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `sep_bad` to 1: a functional's first separating step is reported away from the step its own value sets first differ at -- must die at the separation-ladder gate"
+  },
+  {
+   "gate": "G-DOMINATION",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "dom_bad",
+   "mutant": "MUT-DOMINATION",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `dom_bad` to 1: a monotone domination is published without the exact witness its own census produced -- must die at the domination gate"
+  },
+  {
+   "gate": "G-BLINDNESS-D1",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "d1_moves",
+   "mutant": "MUT-BLIND-D1",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `d1_moves` to 1: the site-basis inverse participation is reported to move on a declared foreign count field -- must die at the record-blindness gate"
+  },
+  {
+   "gate": "G-COOCCUPANCY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "cooc_bad",
+   "mutant": "MUT-COOCC",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `cooc_bad` to 1: an object whose occupied-link sets meet in at most one link is reported with a moving off-diagonal mass -- must die at the co-occupancy gate"
+  },
+  {
+   "gate": "G-COOCCUPANCY-THRESHOLD",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "cooc_threshold",
+   "mutant": "MUT-COOCC-THRESHOLD",
+   "named_in_its_description": true,
+   "to": "3",
+   "what_it_does": "moves `cooc_threshold` to 3: the first step carrying a co-occupancy pair is reported one step early -- must die at the threshold gate"
+  },
+  {
+   "gate": "G-BLINDNESS-D3",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "d3_moves",
+   "mutant": "MUT-D3-READS",
+   "named_in_its_description": true,
+   "to": "0",
+   "what_it_does": "moves `d3_moves` to 0: the record-reading functional is reported blind to the record -- must die at the two-way blindness gate"
+  },
+  {
+   "gate": "G-PREDICTION-ROW",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "pred_forced",
+   "mutant": "MUT-PREDICTION",
+   "named_in_its_description": true,
+   "to": "not carried",
+   "what_it_does": "moves `pred_forced` to `not carried`, detaching the published forced flag from the fiber census that is supposed to carry it -- must die at the prediction gate"
+  },
+  {
+   "gate": "G-PREDICTION-RENDERED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "prow",
+   "mutant": "MUT-PREDICTION-RENDER",
+   "named_in_its_description": true,
+   "to": "FORGED",
+   "what_it_does": "moves `prow`, the rendered prediction sentence, to one carrying FORGED -- must die at the render gate"
+  },
+  {
+   "gate": "G-WALL-L1",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "ptext",
+   "mutant": "MUT-WALL-L1",
+   "named_in_its_description": true,
+   "to": "BANNED_L1",
+   "what_it_does": "moves `ptext` to the object under test with `BANNED_L1`, the retracted L-1 sentence, appended line-wrapped and blockquoted -- must die at the L-1 wall"
+  },
+  {
+   "gate": "G-WALL-BHS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "layer",
+   "mutant": "MUT-WALL-BHS",
+   "named_in_its_description": true,
+   "to": "boosted rest frame",
+   "what_it_does": "moves `layer`, this run's measurement surface, to one carrying a sprinkling-grade `boosted rest frame` reading -- must die at the BHS abstention scan"
+  },
+  {
+   "gate": "G-WALL-KR",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "layer",
+   "mutant": "MUT-WALL-KR",
+   "named_in_its_description": true,
+   "to": "myrheim-meyer",
+   "what_it_does": "moves `layer` to one carrying a `myrheim-meyer` dimension estimate with no height control -- must die at the Kleitman-Rothschild scan"
+  },
+  {
+   "gate": "G-WALL-COSMO",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "layer",
+   "mutant": "MUT-WALL-COSMO",
+   "named_in_its_description": true,
+   "to": "cosmological expansion",
+   "what_it_does": "moves `layer` to one carrying a `cosmological expansion` reading -- must die at the cosmological/continuum scan"
+  },
+  {
+   "gate": "G-WALL-NO-SI",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "layer",
+   "mutant": "MUT-WALL-SI",
+   "named_in_its_description": true,
+   "to": "collapse rate in kilogram",
+   "what_it_does": "moves `layer` to one carrying a `collapse rate in kilogram` reading -- must die at this unit's own SI/experimental-value scan"
+  },
+  {
+   "gate": "G-WALL-DP-SHAPE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "dp",
+   "mutant": "MUT-WALL-DP",
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `dp` to False: the mandatory shape-only naming of the Diosi-Penrose arc is reported absent from the object under test -- must die at the shape-citation gate"
+  },
+  {
+   "gate": "G-WALL-LORENTZ-NAMED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "lz",
+   "mutant": "MUT-WALL-LORENTZ",
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `lz` to False: the mandatory Lorentzian naming sentence is reported absent -- must die at the naming gate"
+  },
+  {
+   "gate": "G-WALL-HEX-NAMED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "hx",
+   "mutant": "MUT-WALL-HEX",
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `hx` to False: the hexagonal naming sentence is reported absent -- must die at the second naming gate"
+  },
+  {
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "verdict",
+   "mutant": "MUT-VERDICT-WORD",
+   "named_in_its_description": true,
+   "to": "GDL-LAW-FORCED-D1-IS-THE-SQUARED-RATE",
+   "what_it_does": "moves `verdict`'s gates segment to one whose outcome word reads GDL-LAW-FORCED-D1-IS-THE-SQUARED-RATE, in the builder alone -- must die at the comparator, which types its own templates and re-derives the word"
+  },
+  {
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "verdict",
+   "mutant": "MUT-VERDICT-VALUE",
+   "named_in_its_description": true,
+   "to": "26 OF 27",
+   "what_it_does": "moves `verdict`'s arena segment by retyping one measured value inside it, 27 OF 27 to 26 OF 27 -- must die at the same comparator, by occurrence count"
+  },
+  {
+   "gate": "G-PAPER-CLAIMS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "sent",
+   "mutant": "MUT-PAPER-CLAIM",
+   "named_in_its_description": true,
+   "to": "26 cells",
+   "what_it_does": "moves `sent`, an assembled claim, to one reading 26 cells -- must die at the claim gate"
+  },
+  {
+   "gate": "G-PAPER-TABLES",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "trows",
+   "mutant": "MUT-PAPER-TABLE",
+   "named_in_its_description": true,
+   "to": "FORGED",
+   "what_it_does": "moves `trows`, the rendered table rows, to the list with its last row dropped and a FORGED one appended -- must die at the table gate"
+  },
+  {
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "unregistered",
+   "mutant": "MUT-PAPER-NUMERAL",
+   "named_in_its_description": true,
+   "to": "123456789",
+   "what_it_does": "moves `unregistered` to ['123456789'], an unregistered numeral -- must die at the #20 coverage scan"
+  },
+  {
+   "gate": "G-PAPER-HEAD-VERBATIM",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "probe",
+   "mutant": "MUT-PAPER-HEAD",
+   "named_in_its_description": true,
+   "to": "Z",
+   "what_it_does": "moves `probe`, a derived verdict segment, by one character to seg[:-1] + Z before matching it into the paper -- must die at the head-verbatim gate"
+  },
+  {
+   "gate": "G-PAPER-HEAD-VERBATIM",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "blockmap",
+   "mutant": "MUT-PAPER-BLOCK",
+   "named_in_its_description": true,
+   "to": "[:-1]",
+   "what_it_does": "moves `blockmap`, the paper's own fenced-block multiset, to the same multiset with its last block dropped, [:-1], so a duplicated head could shadow a forged twin -- must die at the same gate's MULTISET leg"
+  },
+  {
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "mutated",
+   "mutant": "MUT-PAPER-POLARITY",
+   "named_in_its_description": true,
+   "to": "True",
+   "what_it_does": "moves `mutated` to True, swapping a positive claim for its negation in the object under test -- must die at the polarity gate"
+  },
+  {
+   "gate": "G-MEASURE-DECLARED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "stamp_bad",
+   "mutant": "MUT-MEASURE-STAMP",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `stamp_bad` to 1: a published fraction over a configuration space carries neither a declared measure nor the COUNTING-ONLY stamp -- must die at the E-24 measure gate"
+  },
+  {
+   "gate": "G-CLI-WHITELIST",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "bad",
+   "mutant": "MUT-CLI-PERMISSIVE",
+   "named_in_its_description": true,
+   "to": "--nope",
+   "what_it_does": "moves `bad` to [['--nope']]: the argv whitelist is swapped for the registered permissive shape -- must die at the CLI gate"
+  },
+  {
+   "gate": "G-SELFTEST-WRITES-NOTHING",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "st_ok",
+   "mutant": "MUT-SELFTEST-WRITES",
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `st_ok` to False: the self-test path is claimed to reach a writer -- must die at the writes-nothing gate"
+  },
+  {
+   "gate": "G-WRITER-SHAPE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "gate_names_in_finish",
+   "mutant": "MUT-WRITER-SHAPE",
+   "named_in_its_description": true,
+   "to": "[:-1]",
+   "what_it_does": "moves `gate_names_in_finish` to the list with the terminal integrity gate's name dropped, [:-1] -- must die at the writer-shape probe, which is taken BEFORE the gate ledger is snapshotted"
+  },
+  {
+   "gate": "G-FALSIFIER-HONESTY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "declared",
+   "mutant": "MUT-FALSIFIER-DESC",
+   "named_in_its_description": true,
+   "to": "FORGED",
+   "what_it_does": "moves `declared`, one falsifier's declared (symbol, value) pair, to FORGED, away from what this file's AST says its hook writes -- must die at the falsifier-honesty gate"
+  },
+  {
+   "gate": "G-SEAL-COMPLETE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "sid",
+   "mutant": "MUT-SEAL-DROP",
+   "named_in_its_description": true,
+   "to": "SEAL-COVERAGE",
+   "what_it_does": "silently drops the seal row whose `sid` is SEAL-COVERAGE -- must die at the totality gate"
+  },
+  {
+   "gate": "G-SEAL-COMPLETE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "horizon",
+   "mutant": "MUT-SEAL-BROKEN",
+   "named_in_its_description": true,
+   "to": "+ 1",
+   "what_it_does": "moves `horizon` in the sealed counts block by + 1 between its gate and the write -- must die at the same gate"
+  },
+  {
+   "gate": "G-SEAL-COMPLETE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "transcript_head",
+   "mutant": "MUT-TRANSCRIPT-FLIP",
+   "named_in_its_description": true,
+   "to": "FLIPPED",
+   "what_it_does": "moves `transcript_head` to one beginning FLIPPED after it is sealed -- must die at the same gate"
+  },
+  {
+   "gate": "G-SWEEP-BOUND",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "swept",
+   "mutant": "MUT-SWEEP-UNBOUND",
+   "named_in_its_description": true,
+   "to": "True",
+   "what_it_does": "moves `swept` to True on a run carrying no sweep -- must die at the gate that binds the sweep's execution to the writer"
+  }
+ ],
+ "object_reads": {
+  "declared": [
+   "PAPER",
+   "SELF"
+  ],
+  "source_reads": [
+   "v11/note-L1-lorentz-no-go-lemma.md",
+   "v11/note-v11p0a-reproduction-catalog.md",
+   "v13/paper-ha-successor.md",
+   "v14/code/coupling_exact.py",
+   "v14/code/coupling_output.txt",
+   "v14/code/coupling_receipt.json",
+   "v14/code/giter_receipt.json",
+   "v14/note-gdl-pin.md",
+   "v14/paper-16-gamma-iteration.md",
+   "v14/paper-19-r3-weld.md",
+   "v14/paper-20-coupling.md"
+  ],
+  "undeclared_source_reads": [],
+  "why": {
+   "PAPER": "the object under test, read once by main and handed to the paper gates",
+   "SELF": "this file, AST-parsed by its own float scan, import scan, writer-shape probe and self-test shape probe"
+  }
+ },
+ "paper_claims": [
+  {
+   "as_checked": "the rebuild reproduces 14 of 14 published values of paper-20 at equality, and all 14 are located verbatim in the parent's committed receipt bytes",
+   "id": "C1",
+   "present": true,
+   "sentence": "the rebuild reproduces 14 of 14 published values of paper-20 at equality, and all 14 are located verbatim in the parent's committed receipt bytes"
+  },
+  {
+   "as_checked": "the welded record is n = 1 at 27 of 27 cells",
+   "id": "C2",
+   "present": true,
+   "sentence": "the welded record is n = 1 at 27 of 27 cells"
+  },
+  {
+   "as_checked": "the frozen control's 9,751 branch-steps collapse to 5 distinct measurements, one per level",
+   "id": "C3",
+   "present": true,
+   "sentence": "the frozen control's 9,751 branch-steps collapse to 5 distinct measurements, one per level"
+  },
+  {
+   "as_checked": "the coupled arm's 11,044 branch-steps collapse to 10,954 distinct measurements",
+   "id": "C4",
+   "present": true,
+   "sentence": "the coupled arm's 11,044 branch-steps collapse to 10,954 distinct measurements"
+  },
+  {
+   "as_checked": "the site-basis inverse participation of the Born menu is the sum of the squared site emission rates, D1 = sum_x eps(x)^2, at every one of the 10,959 objects of both arms",
+   "id": "C5",
+   "present": true,
+   "sentence": "the site-basis inverse participation of the Born menu is the sum of the squared site emission rates, D1 = sum_x eps(x)^2, at every one of the 10,959 objects of both arms"
+  },
+  {
+   "as_checked": "2 of 2 exact cells are excluded because they hold identically on the frozen control, and 0 survive as gravitational-decoherence relations",
+   "id": "C6",
+   "present": true,
+   "sentence": "2 of 2 exact cells are excluded because they hold identically on the frozen control, and 0 survive as gravitational-decoherence relations"
+  },
+  {
+   "as_checked": "the inverse participation does not move once in 164,310 checks over 5 declared foreign count fields",
+   "id": "C7",
+   "present": true,
+   "sentence": "the inverse participation does not move once in 164,310 checks over 5 declared foreign count fields"
+  },
+  {
+   "as_checked": "the off-diagonal mass moves at 54,593 of the 54,770 object-and-field pairs, and at not one pair whose occupied-link sets meet in at most one link",
+   "id": "C8",
+   "present": true,
+   "sentence": "the off-diagonal mass moves at 54,593 of the 54,770 object-and-field pairs, and at not one pair whose occupied-link sets meet in at most one link"
+  },
+  {
+   "as_checked": "the record-reading functional separates the arms at step 3, one step before either state-internal functional, which separate at step 4",
+   "id": "C9",
+   "present": true,
+   "sentence": "the record-reading functional separates the arms at step 3, one step before either state-internal functional, which separate at step 4"
+  },
+  {
+   "as_checked": "the co-occupancy threshold is step 4 on both arms",
+   "id": "C10",
+   "present": true,
+   "sentence": "the co-occupancy threshold is step 4 on both arms"
+  },
+  {
+   "as_checked": "278,318 of 388,024 off-diagonal moduli are irrational",
+   "id": "C11",
+   "present": true,
+   "sentence": "278,318 of 388,024 off-diagonal moduli are irrational"
+  },
+  {
+   "as_checked": "45 cells per arm are decided by equality inside a growth class: 2 exact, 28 partial, 15 vacuous",
+   "id": "C12",
+   "present": true,
+   "sentence": "45 cells per arm are decided by equality inside a growth class: 2 exact, 28 partial, 15 vacuous"
+  },
+  {
+   "as_checked": "the separation ladder is identical across all 7 executed fiber members",
+   "id": "C13",
+   "present": true,
+   "sentence": "the separation ladder is identical across all 7 executed fiber members"
+  },
+  {
+   "as_checked": "the cell-grain record leaves 7,498 of 10,954 objects in classes carrying more than one value of the inverse participation",
+   "id": "C14",
+   "present": true,
+   "sentence": "the cell-grain record leaves 7,498 of 10,954 objects in classes carrying more than one value of the inverse participation"
+  }
+ ],
+ "paper_coverage": {
+  "allowed": 313,
+  "fenced_block_multiset_size": 3,
+  "fenced_blocks": 3,
+  "fenced_numerals": 49,
+  "head_segments": 3,
+  "inline_numerals": 137,
+  "inline_spans": 221,
+  "scanned": 313,
+  "unregistered": []
+ },
+ "paper_tables": {
+  "count": 16,
+  "missing": [],
+  "rows": [
+   "| `D1` | 4 |",
+   "| `D2` | 4 |",
+   "| `D3` | 3 |",
+   "| `STALE` | 0 | 10,911 | 10,953 |",
+   "| `ALL-TWO` | 0 | 10,922 | 10,929 |",
+   "| `INADMISSIBLE-ONE-CELL` | 0 | 10,922 | 10,929 |",
+   "| `LADDERED` | 0 | 10,922 | 10,954 |",
+   "| `ZERO-AT-ONE-CELL` | 0 | 10,916 | 10,935 |",
+   "| 1 | 1 | 0 |",
+   "| 2 | 3 | 0 |",
+   "| 3 | 27 | 0 |",
+   "| 4 | 486 | 486 |",
+   "| 5 | 10,437 | 10,437 |",
+   "| `D1` | [4, 5] | COUPLED-DOMINATES |",
+   "| `D2` | [4, 5] | NO-DOMINATION |",
+   "| `D3` | [3, 4, 5] | NO-DOMINATION |"
+  ]
+ },
+ "payload_sha256_12": "1a9b328dbf72",
+ "polarity": [
+  {
+   "id": "P1",
+   "negative": "GDL-LAW-FORCED",
+   "negative_present": false,
+   "ok": true,
+   "positive": "GDL-PARTIAL",
+   "positive_present": true
+  },
+  {
+   "id": "P2",
+   "negative": "the record determines the decoherence",
+   "negative_present": false,
+   "ok": true,
+   "positive": "the record does not determine the decoherence",
+   "positive_present": true
+  },
+  {
+   "id": "P3",
+   "negative": "the inherited observable reads the record",
+   "negative_present": false,
+   "ok": true,
+   "positive": "the inherited observable is record-blind",
+   "positive_present": true
+  },
+  {
+   "id": "P4",
+   "negative": "cited for its numbers",
+   "negative_present": false,
+   "ok": true,
+   "positive": "cited for shape only",
+   "positive_present": true
+  }
+ ],
+ "prediction": {
+  "cooccupancy_threshold": 4,
+  "distinct_separation_ladders_across_the_fiber": 1,
+  "domination_rows": [
+   {
+    "coupled_above_at": [
+     4,
+     5
+    ],
+    "coupled_below_at": [],
+    "functional": "D1",
+    "per_step": [
+     {
+      "coupled": "1",
+      "direction": "=",
+      "frozen": "1",
+      "t": 1
+     },
+     {
+      "coupled": "11/27",
+      "direction": "=",
+      "frozen": "11/27",
+      "t": 2
+     },
+     {
+      "coupled": "619/2187",
+      "direction": "=",
+      "frozen": "619/2187",
+      "t": 3
+     },
+     {
+      "coupled": "3822155/14348907",
+      "direction": ">",
+      "frozen": "40411/177147",
+      "t": 4
+     },
+     {
+      "coupled": "51476944417/282429536481",
+      "direction": ">",
+      "frozen": "81857/531441",
+      "t": 5
+     }
+    ],
+    "separating_steps": [
+     4,
+     5
+    ],
+    "verdict": "COUPLED-DOMINATES",
+    "witness": "steps [4, 5]"
+   },
+   {
+    "coupled_above_at": [
+     4
+    ],
+    "coupled_below_at": [
+     5
+    ],
+    "functional": "D2",
+    "per_step": [
+     {
+      "coupled": "0",
+      "direction": "=",
+      "frozen": "0",
+      "t": 1
+     },
+     {
+      "coupled": "0",
+      "direction": "=",
+      "frozen": "0",
+      "t": 2
+     },
+     {
+      "coupled": "128/729",
+      "direction": "=",
+      "frozen": "128/729",
+      "t": 3
+     },
+     {
+      "coupled": "2176942528/10460353203",
+      "direction": ">",
+      "frozen": "33920/177147",
+      "t": 4
+     },
+     {
+      "coupled": "5743648327744/22876792454961",
+      "direction": "<",
+      "frozen": "184192/531441",
+      "t": 5
+     }
+    ],
+    "separating_steps": [
+     4,
+     5
+    ],
+    "verdict": "NO-DOMINATION",
+    "witness": "steps [4] against [5]"
+   },
+   {
+    "coupled_above_at": [
+     3,
+     4
+    ],
+    "coupled_below_at": [
+     5
+    ],
+    "functional": "D3",
+    "per_step": [
+     {
+      "coupled": "2/9",
+      "direction": "=",
+      "frozen": "2/9",
+      "t": 1
+     },
+     {
+      "coupled": "2/9",
+      "direction": "=",
+      "frozen": "2/9",
+      "t": 2
+     },
+     {
+      "coupled": "22514/59049",
+      "direction": ">",
+      "frozen": "266/729",
+      "t": 3
+     },
+     {
+      "coupled": "76140755/258280326",
+      "direction": ">",
+      "frozen": "602/2187",
+      "t": 4
+     },
+     {
+      "coupled": "75207595228277/228767924549610",
+      "direction": "<",
+      "frozen": "2654/6561",
+      "t": 5
+     }
+    ],
+    "separating_steps": [
+     3,
+     4,
+     5
+    ],
+    "verdict": "NO-DOMINATION",
+    "witness": "steps [3, 4] against [5]"
+   }
+  ],
+  "fiber_members": 7,
+  "forced_across_the_fiber": true,
+  "row": "At this arena, at the declared horizon 5 and for every member of the declared coin and reading fibers, the record-reading decoherence functional separates the coupled stage from the frozen control at step 3, exactly one step before either state-internal functional, which separate at step 4; and the co-occupancy threshold that governs the middle functional's blindness is step 4 on BOTH arms.",
+  "separation_ladder": {
+   "D1": 4,
+   "D2": 4,
+   "D3": 3
+  },
+  "separation_rows": [
+   {
+    "first_separating_step": 4,
+    "functional": "D1",
+    "per_step": [
+     {
+      "coupled_values": 1,
+      "frozen_values": 1,
+      "identical": true,
+      "t": 1
+     },
+     {
+      "coupled_values": 1,
+      "frozen_values": 1,
+      "identical": true,
+      "t": 2
+     },
+     {
+      "coupled_values": 1,
+      "frozen_values": 1,
+      "identical": true,
+      "t": 3
+     },
+     {
+      "coupled_values": 2,
+      "frozen_values": 1,
+      "identical": false,
+      "t": 4
+     },
+     {
+      "coupled_values": 101,
+      "frozen_values": 1,
+      "identical": false,
+      "t": 5
+     }
+    ]
+   },
+   {
+    "first_separating_step": 4,
+    "functional": "D2",
+    "per_step": [
+     {
+      "coupled_values": 1,
+      "frozen_values": 1,
+      "identical": true,
+      "t": 1
+     },
+     {
+      "coupled_values": 1,
+      "frozen_values": 1,
+      "identical": true,
+      "t": 2
+     },
+     {
+      "coupled_values": 1,
+      "frozen_values": 1,
+      "identical": true,
+      "t": 3
+     },
+     {
+      "coupled_values": 141,
+      "frozen_values": 1,
+      "identical": false,
+      "t": 4
+     },
+     {
+      "coupled_values": 4835,
+      "frozen_values": 1,
+      "identical": false,
+      "t": 5
+     }
+    ]
+   },
+   {
+    "first_separating_step": 3,
+    "functional": "D3",
+    "per_step": [
+     {
+      "coupled_values": 1,
+      "frozen_values": 1,
+      "identical": true,
+      "t": 1
+     },
+     {
+      "coupled_values": 1,
+      "frozen_values": 1,
+      "identical": true,
+      "t": 2
+     },
+     {
+      "coupled_values": 3,
+      "frozen_values": 1,
+      "identical": false,
+      "t": 3
+     },
+     {
+      "coupled_values": 111,
+      "frozen_values": 1,
+      "identical": false,
+      "t": 4
+     },
+     {
+      "coupled_values": 5960,
+      "frozen_values": 1,
+      "identical": false,
+      "t": 5
+     }
+    ]
+   }
+  ],
+  "units": "SUBSTRATE-NATIVE: step indices and object counts only -- no SI quantity, no rate in any physical unit, no experimental value, and no number inherited from the corpus's Diosi-Penrose arc, which is cited for SHAPE ONLY"
+ },
+ "provenance": [
+  {
+   "actual": "fe9533371046",
+   "expected": "fe9533371046",
+   "id": "A-PIN",
+   "match": true,
+   "path": "v14/note-gdl-pin.md",
+   "why": "THIS UNIT'S PIN (ledger #205): the five stages, the barred fitted forms, the mandatory frozen control, the pre-registered outcomes and the shape-only status of the Diosi-Penrose citation."
+  },
+  {
+   "actual": "4824d190af73",
+   "expected": "4824d190af73",
+   "id": "A-P20",
+   "match": true,
+   "path": "v14/paper-20-coupling.md",
+   "why": "THE COUPLING (paper-20, terminal): the coupled machine's published description -- the walk, the emission law, the update semantics, the mandatory frozen control, the coin fiber and the declared horizon."
+  },
+  {
+   "actual": "72e7b299f66e",
+   "expected": "72e7b299f66e",
+   "id": "A-P20CODE",
+   "match": true,
+   "path": "v14/code/coupling_exact.py",
+   "why": "THE COMMITTED DRIVER, READ AS A SPEC AND NEVER RUN: this unit imports no module of it, subprocesses nothing, and re-implements the walk, the emission law and the update semantics from its published description."
+  },
+  {
+   "actual": "42b103eeec14",
+   "expected": "42b103eeec14",
+   "id": "A-P20OUT",
+   "match": true,
+   "path": "v14/code/coupling_output.txt",
+   "why": "THE PARENT'S COMMITTED TRANSCRIPT, read for the anchor values this unit's independent rebuild is required to reproduce at equality."
+  },
+  {
+   "actual": "55273f6b6068",
+   "expected": "55273f6b6068",
+   "id": "A-P20REC",
+   "match": true,
+   "path": "v14/code/coupling_receipt.json",
+   "why": "THE PARENT'S COMMITTED RECEIPT: the ladder, the leaf counts, the observables and the coin-fiber witnesses, read at run time and located in those bytes rather than retyped."
+  },
+  {
+   "actual": "5c1df50673d4",
+   "expected": "5c1df50673d4",
+   "id": "A-GITER",
+   "match": true,
+   "path": "v14/paper-16-gamma-iteration.md",
+   "why": "THE GRAVITY LAW (Gamma-iteration, terminal, commit 2895a9a): the LAW-NATIVE normaliser and the kernel k_1 = q/M this unit's emission rate is taken from."
+  },
+  {
+   "actual": "42255f50328a",
+   "expected": "42255f50328a",
+   "id": "A-GITERREC",
+   "match": true,
+   "path": "v14/code/giter_receipt.json",
+   "why": "THE LAW'S COMMITTED RECEIPT."
+  },
+  {
+   "actual": "50bb81e67942",
+   "expected": "50bb81e67942",
+   "id": "A-W3",
+   "match": true,
+   "path": "v14/paper-19-r3-weld.md",
+   "why": "THE WELD (paper-19, terminal): the arena and the forced dictionary [ACTOR->SITE | CO-DIVISION-PAIR->LINK | DIVISION-COUNT->n_l(x)]."
+  },
+  {
+   "actual": "f286ba10d2d9",
+   "expected": "f286ba10d2d9",
+   "id": "A-HA",
+   "match": true,
+   "path": "v13/paper-ha-successor.md",
+   "why": "I7 / HA: the declared readout and the admissibility criterion."
+  },
+  {
+   "actual": "93ea24591c3c",
+   "expected": "93ea24591c3c",
+   "id": "A-L1",
+   "match": true,
+   "path": "v11/note-L1-lorentz-no-go-lemma.md",
+   "why": "L-1: the fourth-form clause and the sentence retracted on 2026-07-28 that no paper of this line may reproduce."
+  },
+  {
+   "actual": "0cebe543e814",
+   "expected": "0cebe543e814",
+   "id": "A-CAT",
+   "match": true,
+   "path": "v11/note-v11p0a-reproduction-catalog.md",
+   "why": "the reproduction catalog: the BHS block and the Kleitman-Rothschild height-control warning."
+  }
+ ],
+ "python": {
+  "implementation": "CPython, exact integers",
+  "version": "3.13.2"
+ },
+ "reachability": {
+  "dead_falsifiers": [],
+  "rows": [
+   {
+    "gate": "G-PARENT-REPRODUCED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-ANCHOR-LEAVES"
+   },
+   {
+    "gate": "G-PARENT-LOCATED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-ANCHOR-LOCATED"
+   },
+   {
+    "gate": "G-BRANCH-MASS",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-MASS"
+   },
+   {
+    "gate": "G-ENSEMBLE-EXHAUSTIVE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-ROUTE"
+   },
+   {
+    "gate": "G-WALK-UNITARY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-UNITARY"
+   },
+   {
+    "gate": "G-LAW-KERNEL",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-KERNEL"
+   },
+   {
+    "gate": "G-FUNCTIONALS-DECLARED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-D-SPEC"
+   },
+   {
+    "gate": "G-FUNCTIONALS-EXACT",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-D-EXACT"
+   },
+   {
+    "gate": "G-L1-PRICED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-L1-PRICE"
+   },
+   {
+    "gate": "G-PURITY-SPLIT",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-D2-SPLIT"
+   },
+   {
+    "gate": "G-RATE-IS-BORN",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-RATE-IS-BORN"
+   },
+   {
+    "gate": "G-RATE-TOTAL",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-RATE-TOTAL"
+   },
+   {
+    "gate": "G-GROWTH-FROZEN-ZERO",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-GROWTH-FROZEN"
+   },
+   {
+    "gate": "G-RELATION-CENSUS",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-RELATION-EXACT"
+   },
+   {
+    "gate": "G-VACUITY-DECLARED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-VACUITY"
+   },
+   {
+    "gate": "G-FAILURE-CENSUS",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-FAILURE-SET"
+   },
+   {
+    "gate": "G-NO-FITTED-FORM",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-FITTED"
+   },
+   {
+    "gate": "G-COIN-FIBER",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-COIN-FIBER"
+   },
+   {
+    "gate": "G-FIBER-EXECUTED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-FIBER-MEMBERS"
+   },
+   {
+    "gate": "G-COIN-ADMISSIBLE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-COIN-UNITARY"
+   },
+   {
+    "gate": "G-GLOBAL-PHASE-PAIR",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PHASE-PAIR"
+   },
+   {
+    "gate": "G-FROZEN-EXCLUSION",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-FROZEN-EXCLUSION"
+   },
+   {
+    "gate": "G-FROZEN-CONTROL",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-FROZEN-RAN"
+   },
+   {
+    "gate": "G-SEPARATION-LADDER",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-SEPARATION"
+   },
+   {
+    "gate": "G-DOMINATION",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-DOMINATION"
+   },
+   {
+    "gate": "G-BLINDNESS-D1",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-BLIND-D1"
+   },
+   {
+    "gate": "G-COOCCUPANCY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-COOCC"
+   },
+   {
+    "gate": "G-COOCCUPANCY-THRESHOLD",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-COOCC-THRESHOLD"
+   },
+   {
+    "gate": "G-BLINDNESS-D3",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-D3-READS"
+   },
+   {
+    "gate": "G-PREDICTION-ROW",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PREDICTION"
+   },
+   {
+    "gate": "G-PREDICTION-RENDERED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PREDICTION-RENDER"
+   },
+   {
+    "gate": "G-WALL-L1",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WALL-L1"
+   },
+   {
+    "gate": "G-WALL-BHS",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WALL-BHS"
+   },
+   {
+    "gate": "G-WALL-KR",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WALL-KR"
+   },
+   {
+    "gate": "G-WALL-COSMO",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WALL-COSMO"
+   },
+   {
+    "gate": "G-WALL-NO-SI",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WALL-SI"
+   },
+   {
+    "gate": "G-WALL-DP-SHAPE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WALL-DP"
+   },
+   {
+    "gate": "G-WALL-LORENTZ-NAMED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WALL-LORENTZ"
+   },
+   {
+    "gate": "G-WALL-HEX-NAMED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WALL-HEX"
+   },
+   {
+    "gate": "G-VERDICT-RECONSTRUCTED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-VERDICT-WORD"
+   },
+   {
+    "gate": "G-VERDICT-RECONSTRUCTED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-VERDICT-VALUE"
+   },
+   {
+    "gate": "G-PAPER-CLAIMS",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-CLAIM"
+   },
+   {
+    "gate": "G-PAPER-TABLES",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-TABLE"
+   },
+   {
+    "gate": "G-PAPER-NUMERAL-COVERAGE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-NUMERAL"
+   },
+   {
+    "gate": "G-PAPER-HEAD-VERBATIM",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-HEAD"
+   },
+   {
+    "gate": "G-PAPER-HEAD-VERBATIM",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-BLOCK"
+   },
+   {
+    "gate": "G-PAPER-CLAIM-POLARITY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-POLARITY"
+   },
+   {
+    "gate": "G-MEASURE-DECLARED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-MEASURE-STAMP"
+   },
+   {
+    "gate": "G-CLI-WHITELIST",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-CLI-PERMISSIVE"
+   },
+   {
+    "gate": "G-SELFTEST-WRITES-NOTHING",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-SELFTEST-WRITES"
+   },
+   {
+    "gate": "G-WRITER-SHAPE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WRITER-SHAPE"
+   },
+   {
+    "gate": "G-FALSIFIER-HONESTY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-FALSIFIER-DESC"
+   },
+   {
+    "gate": "G-SEAL-COMPLETE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-SEAL-DROP"
+   },
+   {
+    "gate": "G-SEAL-COMPLETE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-SEAL-BROKEN"
+   },
+   {
+    "gate": "G-SEAL-COMPLETE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-TRANSCRIPT-FLIP"
+   },
+   {
+    "gate": "G-SWEEP-BOUND",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-SWEEP-UNBOUND"
+   }
+  ]
+ },
+ "rebuild": {
+  "anchor_rows": [
+   {
+    "equal": true,
+    "parent": "[3, 27, 486, 10527, 284078]",
+    "rebuilt": "[3, 27, 486, 10527, 284078]",
+    "receipt_path": "ensemble/arms/A-COUPLED/levels",
+    "what": "A-COUPLED branches per level"
+   },
+   {
+    "equal": true,
+    "parent": "[3, 27, 486, 9234, 212382]",
+    "rebuilt": "[3, 27, 486, 9234, 212382]",
+    "receipt_path": "ensemble/arms/A-FROZEN/levels",
+    "what": "A-FROZEN branches per level"
+   },
+   {
+    "equal": true,
+    "parent": "[3, 27, 486, 11664, 314928]",
+    "rebuilt": "[3, 27, 486, 11664, 314928]",
+    "receipt_path": "ensemble/arms/B-COUPLED/levels",
+    "what": "B-COUPLED branches per level"
+   },
+   {
+    "equal": true,
+    "parent": "35971074413334039128803/239299329230617529590083",
+    "rebuilt": "35971074413334039128803/239299329230617529590083",
+    "receipt_path": "nontriviality/observables",
+    "what": "coupled Born-menu inverse participation at the horizon"
+   },
+   {
+    "equal": true,
+    "parent": "2306155/14348907",
+    "rebuilt": "2306155/14348907",
+    "receipt_path": "nontriviality/observables",
+    "what": "frozen Born-menu inverse participation at the horizon"
+   },
+   {
+    "equal": true,
+    "parent": "927415552/847288609443",
+    "rebuilt": "927415552/847288609443",
+    "receipt_path": "ladder/exit_probability_at_horizon/A",
+    "what": "coupled admissibility-exit probability, Born menu"
+   },
+   {
+    "equal": true,
+    "parent": "37440224/5811307335",
+    "rebuilt": "37440224/5811307335",
+    "receipt_path": "ladder/exit_probability_at_horizon/B",
+    "what": "coupled admissibility-exit probability, record menu"
+   },
+   {
+    "equal": true,
+    "parent": "0",
+    "rebuilt": "0",
+    "receipt_path": "ladder/rows",
+    "what": "frozen admissibility-exit probability"
+   },
+   {
+    "equal": true,
+    "parent": "['1484731802239/847288609443', '1326536376376/847288609443', '1425174868600/847288609443']",
+    "rebuilt": "['1484731802239/847288609443', '1326536376376/847288609443', '1425174868600/847288609443']",
+    "receipt_path": "nontriviality/observables",
+    "what": "coupled link-class marginal at the horizon"
+   },
+   {
+    "equal": true,
+    "parent": "['175233895520/847288609443', '175071388384/847288609443', '42793914260/847288609443', '136317227872/847288609443', '61354232756/847288609443', '4919647264/94143178827', '43253844785/282429536481', '31797021556/847288609443', '5631396596/94143178827']",
+    "rebuilt": "['175233895520/847288609443', '175071388384/847288609443', '42793914260/847288609443', '136317227872/847288609443', '61354232756/847288609443', '4919647264/94143178827', '43253844785/282429536481', '31797021556/847288609443', '5631396596/94143178827']",
+    "receipt_path": "nontriviality/observables",
+    "what": "coupled site distribution at the horizon"
+   },
+   {
+    "equal": true,
+    "parent": "['352/2187', '352/2187', '416/6561', '352/2187', '160/6561', '544/6561', '1697/6561', '160/6561', '416/6561']",
+    "rebuilt": "['352/2187', '352/2187', '416/6561', '352/2187', '160/6561', '544/6561', '1697/6561', '160/6561', '416/6561']",
+    "receipt_path": "nontriviality/observables",
+    "what": "frozen site distribution at the horizon"
+   },
+   {
+    "equal": true,
+    "parent": "[2, 2, 3, 3, 4]",
+    "rebuilt": "[2, 2, 3, 3, 4]",
+    "receipt_path": "ladder/rows",
+    "what": "maximum cell count on the ladder"
+   },
+   {
+    "equal": true,
+    "parent": "11044",
+    "rebuilt": "11044",
+    "receipt_path": "ensemble/arms/A-COUPLED/checks/norm",
+    "what": "branch-step count of the coupled arm"
+   },
+   {
+    "equal": true,
+    "parent": "9751",
+    "rebuilt": "9751",
+    "receipt_path": "ensemble/arms/A-FROZEN/checks/norm",
+    "what": "branch-step count of the frozen arm"
+   }
+  ],
+  "anchors": 14,
+  "anchors_equal": 14,
+  "anchors_located": 14,
+  "independent": true,
+  "location_rows": [
+   {
+    "located": true,
+    "tokens": 5,
+    "what": "A-COUPLED branches per level"
+   },
+   {
+    "located": true,
+    "tokens": 5,
+    "what": "A-FROZEN branches per level"
+   },
+   {
+    "located": true,
+    "tokens": 5,
+    "what": "B-COUPLED branches per level"
+   },
+   {
+    "located": true,
+    "tokens": 1,
+    "what": "coupled Born-menu inverse participation at the horizon"
+   },
+   {
+    "located": true,
+    "tokens": 1,
+    "what": "frozen Born-menu inverse participation at the horizon"
+   },
+   {
+    "located": true,
+    "tokens": 1,
+    "what": "coupled admissibility-exit probability, Born menu"
+   },
+   {
+    "located": true,
+    "tokens": 1,
+    "what": "coupled admissibility-exit probability, record menu"
+   },
+   {
+    "located": true,
+    "tokens": 1,
+    "what": "frozen admissibility-exit probability"
+   },
+   {
+    "located": true,
+    "tokens": 3,
+    "what": "coupled link-class marginal at the horizon"
+   },
+   {
+    "located": true,
+    "tokens": 9,
+    "what": "coupled site distribution at the horizon"
+   },
+   {
+    "located": true,
+    "tokens": 9,
+    "what": "frozen site distribution at the horizon"
+   },
+   {
+    "located": true,
+    "tokens": 5,
+    "what": "maximum cell count on the ladder"
+   },
+   {
+    "located": true,
+    "tokens": 1,
+    "what": "branch-step count of the coupled arm"
+   },
+   {
+    "located": true,
+    "tokens": 1,
+    "what": "branch-step count of the frozen arm"
+   }
+  ],
+  "spec_source": "A-P20CODE (read, never imported, never subprocessed)"
+ },
+ "relation": {
+  "cells_per_arm": 45,
+  "exact": 2,
+  "exact_cells": [
+   {
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "growth": "G5-RATE-SITE",
+    "nonsingleton_classes": 130,
+    "resolution": "RES-BRANCH"
+   },
+   {
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "growth": "G5-RATE-SITE",
+    "nonsingleton_classes": 63,
+    "resolution": "RES-SITE"
+   }
+  ],
+  "grid_coupled": [
+   {
+    "classes": 6856,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 106,
+    "distinct_D_values_in_failing_classes": 7496,
+    "failing_classes": 3740,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 4080,
+    "objects": 10954,
+    "objects_in_failing_classes": 7498,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 6856,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4920,
+    "distinct_D_values_in_failing_classes": 8165,
+    "failing_classes": 4074,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 4080,
+    "objects": 10954,
+    "objects_in_failing_classes": 8166,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 6856,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 6022,
+    "distinct_D_values_in_failing_classes": 8100,
+    "failing_classes": 4041,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 4080,
+    "objects": 10954,
+    "objects_in_failing_classes": 8100,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 121,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 106,
+    "distinct_D_values_in_failing_classes": 1524,
+    "failing_classes": 104,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 120,
+    "objects": 10954,
+    "objects_in_failing_classes": 10599,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 121,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4920,
+    "distinct_D_values_in_failing_classes": 10453,
+    "failing_classes": 116,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 120,
+    "objects": 10954,
+    "objects_in_failing_classes": 10923,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 121,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 6022,
+    "distinct_D_values_in_failing_classes": 9216,
+    "failing_classes": 117,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 120,
+    "objects": 10954,
+    "objects_in_failing_classes": 10932,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 35,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 106,
+    "distinct_D_values_in_failing_classes": 609,
+    "failing_classes": 24,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 31,
+    "objects": 10954,
+    "objects_in_failing_classes": 10905,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 35,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4920,
+    "distinct_D_values_in_failing_classes": 8787,
+    "failing_classes": 25,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 31,
+    "objects": 10954,
+    "objects_in_failing_classes": 10923,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 35,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 6022,
+    "distinct_D_values_in_failing_classes": 9938,
+    "failing_classes": 31,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 31,
+    "objects": 10954,
+    "objects_in_failing_classes": 10950,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 106,
+    "distinct_D_values_in_failing_classes": 103,
+    "failing_classes": 2,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 4,
+    "objects": 10954,
+    "objects_in_failing_classes": 10923,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4920,
+    "distinct_D_values_in_failing_classes": 4976,
+    "failing_classes": 2,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 4,
+    "objects": 10954,
+    "objects_in_failing_classes": 10923,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 6022,
+    "distinct_D_values_in_failing_classes": 6074,
+    "failing_classes": 3,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 4,
+    "objects": 10954,
+    "objects_in_failing_classes": 10950,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 131,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 106,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 130,
+    "objects": 10954,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-BRANCH",
+    "verdict": "EXACT"
+   },
+   {
+    "classes": 131,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4920,
+    "distinct_D_values_in_failing_classes": 7935,
+    "failing_classes": 128,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 130,
+    "objects": 10954,
+    "objects_in_failing_classes": 10923,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 131,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 6022,
+    "distinct_D_values_in_failing_classes": 8620,
+    "failing_classes": 129,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 130,
+    "objects": 10954,
+    "objects_in_failing_classes": 10950,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 10,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 64,
+    "distinct_D_values_in_failing_classes": 411,
+    "failing_classes": 10,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 10,
+    "objects": 55140,
+    "objects_in_failing_classes": 55140,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 10,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 11767,
+    "distinct_D_values_in_failing_classes": 24356,
+    "failing_classes": 10,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 10,
+    "objects": 55140,
+    "objects_in_failing_classes": 55140,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 10,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 545,
+    "distinct_D_values_in_failing_classes": 828,
+    "failing_classes": 10,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 10,
+    "objects": 55140,
+    "objects_in_failing_classes": 55140,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 3,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 64,
+    "distinct_D_values_in_failing_classes": 151,
+    "failing_classes": 3,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 3,
+    "objects": 55140,
+    "objects_in_failing_classes": 55140,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 3,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 11767,
+    "distinct_D_values_in_failing_classes": 19660,
+    "failing_classes": 3,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 3,
+    "objects": 55140,
+    "objects_in_failing_classes": 55140,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 3,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 545,
+    "distinct_D_values_in_failing_classes": 618,
+    "failing_classes": 3,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 3,
+    "objects": 55140,
+    "objects_in_failing_classes": 55140,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 35,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 64,
+    "distinct_D_values_in_failing_classes": 696,
+    "failing_classes": 35,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 35,
+    "objects": 55140,
+    "objects_in_failing_classes": 55140,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 35,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 11767,
+    "distinct_D_values_in_failing_classes": 41273,
+    "failing_classes": 31,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 35,
+    "objects": 55140,
+    "objects_in_failing_classes": 55126,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 35,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 545,
+    "distinct_D_values_in_failing_classes": 2991,
+    "failing_classes": 35,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 35,
+    "objects": 55140,
+    "objects_in_failing_classes": 55140,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 64,
+    "distinct_D_values_in_failing_classes": 70,
+    "failing_classes": 5,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 5,
+    "objects": 55140,
+    "objects_in_failing_classes": 55140,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 11767,
+    "distinct_D_values_in_failing_classes": 11862,
+    "failing_classes": 3,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 5,
+    "objects": 55140,
+    "objects_in_failing_classes": 55126,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 545,
+    "distinct_D_values_in_failing_classes": 557,
+    "failing_classes": 5,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 5,
+    "objects": 55140,
+    "objects_in_failing_classes": 55140,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 64,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 64,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 63,
+    "objects": 55140,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-SITE",
+    "verdict": "EXACT"
+   },
+   {
+    "classes": 64,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 11767,
+    "distinct_D_values_in_failing_classes": 22646,
+    "failing_classes": 58,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 63,
+    "objects": 55140,
+    "objects_in_failing_classes": 55044,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 64,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 545,
+    "distinct_D_values_in_failing_classes": 684,
+    "failing_classes": 59,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 63,
+    "objects": 55140,
+    "objects_in_failing_classes": 55059,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   }
+  ],
+  "grid_frozen": [
+   {
+    "classes": 1,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 5,
+    "failing_classes": 1,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 5,
+    "failing_classes": 1,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 5,
+    "failing_classes": 1,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 5,
+    "failing_classes": 1,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-BRANCH",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-BRANCH",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-BRANCH",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-BRANCH",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 13,
+    "distinct_D_values_in_failing_classes": 13,
+    "failing_classes": 1,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 21,
+    "objects_in_failing_classes": 21,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 15,
+    "distinct_D_values_in_failing_classes": 15,
+    "failing_classes": 1,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 21,
+    "objects_in_failing_classes": 21,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 17,
+    "distinct_D_values_in_failing_classes": 17,
+    "failing_classes": 1,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 21,
+    "objects_in_failing_classes": 21,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 13,
+    "distinct_D_values_in_failing_classes": 13,
+    "failing_classes": 1,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 21,
+    "objects_in_failing_classes": 21,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 15,
+    "distinct_D_values_in_failing_classes": 15,
+    "failing_classes": 1,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 21,
+    "objects_in_failing_classes": 21,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 17,
+    "distinct_D_values_in_failing_classes": 17,
+    "failing_classes": 1,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 21,
+    "objects_in_failing_classes": 21,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 13,
+    "distinct_D_values_in_failing_classes": 13,
+    "failing_classes": 1,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 21,
+    "objects_in_failing_classes": 21,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 15,
+    "distinct_D_values_in_failing_classes": 15,
+    "failing_classes": 1,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 21,
+    "objects_in_failing_classes": 21,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 17,
+    "distinct_D_values_in_failing_classes": 17,
+    "failing_classes": 1,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 21,
+    "objects_in_failing_classes": 21,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 13,
+    "distinct_D_values_in_failing_classes": 13,
+    "failing_classes": 1,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 21,
+    "objects_in_failing_classes": 21,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 15,
+    "distinct_D_values_in_failing_classes": 15,
+    "failing_classes": 1,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 21,
+    "objects_in_failing_classes": 21,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 17,
+    "distinct_D_values_in_failing_classes": 17,
+    "failing_classes": 1,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 21,
+    "objects_in_failing_classes": 21,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 13,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 13,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 5,
+    "objects": 21,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-SITE",
+    "verdict": "EXACT"
+   },
+   {
+    "classes": 13,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 15,
+    "distinct_D_values_in_failing_classes": 9,
+    "failing_classes": 4,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 5,
+    "objects": 21,
+    "objects_in_failing_classes": 9,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 13,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 17,
+    "distinct_D_values_in_failing_classes": 8,
+    "failing_classes": 4,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 5,
+    "objects": 21,
+    "objects_in_failing_classes": 9,
+    "resolution": "RES-SITE",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 5,
+    "failing_classes": 1,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-STEP",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-STEP",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G1-RECORD-CELL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-STEP",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 5,
+    "failing_classes": 1,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-STEP",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-STEP",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G2-RECORD-SITE",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-STEP",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 5,
+    "failing_classes": 1,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-STEP",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-STEP",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G3-RECORD-LINK",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-STEP",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 5,
+    "failing_classes": 1,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-STEP",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-STEP",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 1,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 4,
+    "failing_classes": 1,
+    "growth": "G4-GROWTH-TOTAL",
+    "growth_kind": "ACTUAL",
+    "nonsingleton_classes": 1,
+    "objects": 5,
+    "objects_in_failing_classes": 5,
+    "resolution": "RES-STEP",
+    "verdict": "PARTIAL"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D1-IPR-BORN-MENU-SITE",
+    "distinct_D_values": 5,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D2-OFFDIAG-SITE-MASS",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   },
+   {
+    "classes": 5,
+    "decoherence": "D3-RECORD-BORN-DIVERGENCE",
+    "distinct_D_values": 4,
+    "distinct_D_values_in_failing_classes": 0,
+    "failing_classes": 0,
+    "growth": "G5-RATE-SITE",
+    "growth_kind": "LAW",
+    "nonsingleton_classes": 0,
+    "objects": 5,
+    "objects_in_failing_classes": 0,
+    "resolution": "RES-STEP",
+    "verdict": "VACUOUS"
+   }
+  ],
+  "identities_coupled": [
+   {
+    "checks": 98586,
+    "holds": true,
+    "id": "ID-RATE-IS-BORN",
+    "kind": "DEFINITIONAL-THROUGH-THE-LAW",
+    "statement": "the law's site emission rate IS the Born menu's site mass, eps(x) = p(x), at every site of every object",
+    "violations": 0
+   },
+   {
+    "checks": 10954,
+    "holds": true,
+    "id": "ID-RATE-TOTAL",
+    "kind": "DEFINITIONAL-THROUGH-THE-LAW",
+    "statement": "the total emission rate is exactly one division event per coupled step, sum_x eps(x) = 1, at every object",
+    "violations": 0
+   },
+   {
+    "checks": 10954,
+    "holds": true,
+    "id": "ID-D1-IS-SQUARED-RATE",
+    "kind": "DEFINITIONAL-THROUGH-THE-LAW",
+    "statement": "the site-basis inverse participation of the Born menu is the sum of the squared site emission rates, D1 = sum_x eps(x)^2, at every object",
+    "violations": 0
+   },
+   {
+    "checks": 10954,
+    "holds": true,
+    "id": "ID-PURITY-SPLIT",
+    "kind": "DEFINITIONAL",
+    "statement": "the site-basis purity splits exactly, D1 + D2 = Tr(rho^2), at every object",
+    "violations": 0
+   }
+  ],
+  "identities_frozen": [
+   {
+    "checks": 45,
+    "holds": true,
+    "id": "ID-RATE-IS-BORN",
+    "kind": "DEFINITIONAL-THROUGH-THE-LAW",
+    "statement": "the law's site emission rate IS the Born menu's site mass, eps(x) = p(x), at every site of every object",
+    "violations": 0
+   },
+   {
+    "checks": 5,
+    "holds": true,
+    "id": "ID-RATE-TOTAL",
+    "kind": "DEFINITIONAL-THROUGH-THE-LAW",
+    "statement": "the total emission rate is exactly one division event per coupled step, sum_x eps(x) = 1, at every object",
+    "violations": 0
+   },
+   {
+    "checks": 5,
+    "holds": true,
+    "id": "ID-D1-IS-SQUARED-RATE",
+    "kind": "DEFINITIONAL-THROUGH-THE-LAW",
+    "statement": "the site-basis inverse participation of the Born menu is the sum of the squared site emission rates, D1 = sum_x eps(x)^2, at every object",
+    "violations": 0
+   },
+   {
+    "checks": 5,
+    "holds": true,
+    "id": "ID-PURITY-SPLIT",
+    "kind": "DEFINITIONAL",
+    "statement": "the site-basis purity splits exactly, D1 + D2 = Tr(rho^2), at every object",
+    "violations": 0
+   }
+  ],
+  "no_fitted_form": true,
+  "partial": 28,
+  "resolutions": [
+   "RES-BRANCH",
+   "RES-SITE",
+   "RES-STEP"
+  ],
+  "test": "EQUALITY-GATED: D is a function of G exactly when every G-class carries one D-value; nothing is fitted, regressed or approximated anywhere",
+  "vacuous": 15,
+  "verdict_words": [
+   "EXACT",
+   "PARTIAL",
+   "VACUOUS"
+  ]
+ },
+ "schema": "isp/v14/gdl/1",
+ "seal_manifest": {
+  "declared_seals": [
+   "SEAL-SCHEMA",
+   "SEAL-PROVENANCE",
+   "SEAL-ARITHMETIC",
+   "SEAL-PYTHON",
+   "SEAL-OBJECT-READS",
+   "SEAL-VERBATIM",
+   "SEAL-REBUILD",
+   "SEAL-ENSEMBLE",
+   "SEAL-MACHINE",
+   "SEAL-FUNCTIONALS",
+   "SEAL-GROWTH",
+   "SEAL-RELATION",
+   "SEAL-FORCEDNESS",
+   "SEAL-EXCLUSION",
+   "SEAL-MECHANISM",
+   "SEAL-PREDICTION",
+   "SEAL-WALLS",
+   "SEAL-MEASURE",
+   "SEAL-VERDICT",
+   "SEAL-COUNTS",
+   "SEAL-PAPER-CLAIMS",
+   "SEAL-PAPER-TABLES",
+   "SEAL-PAPER-COVERAGE",
+   "SEAL-POLARITY",
+   "SEAL-COVERAGE",
+   "SEAL-REACHABILITY",
+   "SEAL-WAIVERS",
+   "SEAL-MUTANTS",
+   "SEAL-WRITER-SHAPE",
+   "SEAL-MUTANT-SWEEP",
+   "SEAL-GATES",
+   "SEAL-CLOSING",
+   "SEAL-TOTALS",
+   "SEAL-TRANSCRIPT"
+  ],
+  "declared_unsealed": [
+   "seal_manifest",
+   "payload_sha256_12"
+  ],
+  "declared_unsealed_are_chained_on_read_back": true,
+  "declared_unsealed_carries_no_measurement": true,
+  "declared_unsealed_forcings": [
+   {
+    "forcing": "carries the seal rows themselves; sealing it would seal a digest of its own digest.  CHAINED: compared against SEAL.rows after read-back from disk.",
+    "key": "seal_manifest"
+   },
+   {
+    "forcing": "is the digest of the payload the seal closes over and is assigned after that close.  CHAINED: compared against SEAL.payload_sha after read-back.",
+    "key": "payload_sha256_12"
+   }
+  ],
+  "declared_unsealed_frozen": true,
+  "rows": [
+   {
+    "path": "schema",
+    "seal": "SEAL-SCHEMA",
+    "sealed_at_gate": "G-PROVENANCE",
+    "sha256_12": "d23cd1d52942"
+   },
+   {
+    "path": "provenance",
+    "seal": "SEAL-PROVENANCE",
+    "sealed_at_gate": "G-PROVENANCE",
+    "sha256_12": "7fd8201e4f7f"
+   },
+   {
+    "path": "arithmetic",
+    "seal": "SEAL-ARITHMETIC",
+    "sealed_at_gate": "G-EXACT-ARITHMETIC",
+    "sha256_12": "c62d27899962"
+   },
+   {
+    "path": "python",
+    "seal": "SEAL-PYTHON",
+    "sealed_at_gate": "G-EXACT-ARITHMETIC",
+    "sha256_12": "6d78d9ba13bf"
+   },
+   {
+    "path": "object_reads",
+    "seal": "SEAL-OBJECT-READS",
+    "sealed_at_gate": "G-READS-DECLARED",
+    "sha256_12": "f4ec2fcd0e02"
+   },
+   {
+    "path": "verbatim_anchors",
+    "seal": "SEAL-VERBATIM",
+    "sealed_at_gate": "G-VERBATIM",
+    "sha256_12": "c5e779d244a6"
+   },
+   {
+    "path": "rebuild",
+    "seal": "SEAL-REBUILD",
+    "sealed_at_gate": "G-PARENT-REPRODUCED",
+    "sha256_12": "9346b14b8d80"
+   },
+   {
+    "path": "ensemble",
+    "seal": "SEAL-ENSEMBLE",
+    "sealed_at_gate": "G-BRANCH-MASS",
+    "sha256_12": "416c56b446ba"
+   },
+   {
+    "path": "machine",
+    "seal": "SEAL-MACHINE",
+    "sealed_at_gate": "G-LAW-KERNEL",
+    "sha256_12": "0036190201d6"
+   },
+   {
+    "path": "functionals",
+    "seal": "SEAL-FUNCTIONALS",
+    "sealed_at_gate": "G-FUNCTIONALS-DECLARED",
+    "sha256_12": "6594ccbe54fd"
+   },
+   {
+    "path": "growth",
+    "seal": "SEAL-GROWTH",
+    "sealed_at_gate": "G-RATE-IS-BORN",
+    "sha256_12": "f075525843ca"
+   },
+   {
+    "path": "relation",
+    "seal": "SEAL-RELATION",
+    "sealed_at_gate": "G-RELATION-CENSUS",
+    "sha256_12": "d4188b62c701"
+   },
+   {
+    "path": "forcedness",
+    "seal": "SEAL-FORCEDNESS",
+    "sealed_at_gate": "G-COIN-FIBER",
+    "sha256_12": "a0e4825b4680"
+   },
+   {
+    "path": "exclusion",
+    "seal": "SEAL-EXCLUSION",
+    "sealed_at_gate": "G-FROZEN-EXCLUSION",
+    "sha256_12": "6ee5559a449b"
+   },
+   {
+    "path": "mechanism",
+    "seal": "SEAL-MECHANISM",
+    "sealed_at_gate": "G-BLINDNESS-D1",
+    "sha256_12": "8f4afaa23884"
+   },
+   {
+    "path": "prediction",
+    "seal": "SEAL-PREDICTION",
+    "sealed_at_gate": "G-PREDICTION-ROW",
+    "sha256_12": "19d22a8a00fb"
+   },
+   {
+    "path": "walls",
+    "seal": "SEAL-WALLS",
+    "sealed_at_gate": "G-WALL-HEX-NAMED",
+    "sha256_12": "b3e8e520bccc"
+   },
+   {
+    "path": "measure_ledger",
+    "seal": "SEAL-MEASURE",
+    "sealed_at_gate": "G-MEASURE-DECLARED",
+    "sha256_12": "9aa1f81eadad"
+   },
+   {
+    "path": "verdict",
+    "seal": "SEAL-VERDICT",
+    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+    "sha256_12": "b9982842394c"
+   },
+   {
+    "path": "counts",
+    "seal": "SEAL-COUNTS",
+    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+    "sha256_12": "bc74af89e800"
+   },
+   {
+    "path": "paper_claims",
+    "seal": "SEAL-PAPER-CLAIMS",
+    "sealed_at_gate": "G-PAPER-CLAIMS",
+    "sha256_12": "e9e0491fe1e6"
+   },
+   {
+    "path": "paper_tables",
+    "seal": "SEAL-PAPER-TABLES",
+    "sealed_at_gate": "G-PAPER-TABLES",
+    "sha256_12": "caa2ef40e390"
+   },
+   {
+    "path": "paper_coverage",
+    "seal": "SEAL-PAPER-COVERAGE",
+    "sealed_at_gate": "G-PAPER-HEAD-VERBATIM",
+    "sha256_12": "919b6752dac1"
+   },
+   {
+    "path": "polarity",
+    "seal": "SEAL-POLARITY",
+    "sealed_at_gate": "G-PAPER-CLAIM-POLARITY",
+    "sha256_12": "405cdfdd4faf"
+   },
+   {
+    "path": "coverage",
+    "seal": "SEAL-COVERAGE",
+    "sealed_at_gate": "G-COVERAGE",
+    "sha256_12": "0bce389f806e"
+   },
+   {
+    "path": "waiver_ledger",
+    "seal": "SEAL-WAIVERS",
+    "sealed_at_gate": "G-COVERAGE",
+    "sha256_12": "a191686e2994"
+   },
+   {
+    "path": "mutants",
+    "seal": "SEAL-MUTANTS",
+    "sealed_at_gate": "G-FALSIFIER-HONESTY",
+    "sha256_12": "8ee5b23b3edf"
+   },
+   {
+    "path": "writer_shape",
+    "seal": "SEAL-WRITER-SHAPE",
+    "sealed_at_gate": "G-WRITER-SHAPE",
+    "sha256_12": "907f3a346e20"
+   },
+   {
+    "path": "mutant_sweep",
+    "seal": "SEAL-MUTANT-SWEEP",
+    "sealed_at_gate": "G-SWEEP-BOUND",
+    "sha256_12": "ec0ede5849b3"
+   },
+   {
+    "path": "reachability",
+    "seal": "SEAL-REACHABILITY",
+    "sealed_at_gate": "G-REACHABILITY",
+    "sha256_12": "3684452e87b6"
+   },
+   {
+    "path": "gates",
+    "seal": "SEAL-GATES",
+    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+    "sha256_12": "a5de4ac8fd59"
+   },
+   {
+    "path": "closing_gates",
+    "seal": "SEAL-CLOSING",
+    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+    "sha256_12": "522217cb0f5a"
+   },
+   {
+    "path": "totals",
+    "seal": "SEAL-TOTALS",
+    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+    "sha256_12": "09ced38c496f"
+   },
+   {
+    "path": "transcript_head",
+    "seal": "SEAL-TRANSCRIPT",
+    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+    "sha256_12": "23673d37138d"
+   }
+  ]
+ },
+ "totals": {
+  "blindness_checks": 164310,
+  "declared_unsealed": 2,
+  "fiber_rows": 7,
+  "gates": 61,
+  "gates_after_the_snapshot": 2,
+  "gates_evaluated_before_the_snapshot": 61,
+  "gates_in_the_registry": 63,
+  "horizon": 5,
+  "mutants": 56,
+  "relation_cells": 45,
+  "seals": 34,
+  "sources": 11,
+  "verbatim_anchors": 12,
+  "waivers": 11
+ },
+ "transcript_head": [
+  "==============================================================================",
+  "GDL -- THE GRAVITATIONAL-DECOHERENCE LAW  (v14 paper-25)",
+  "==============================================================================",
+  "  [PASS] G-PROVENANCE",
+  "         the 11 declared sources are read at run time from paths resolved from THIS FILE's own location and every one is sha256-12 verified against this unit's frozen declaration; a missing source aborts the run LOUDLY and CLEANLY before anything is computed, and --break-anchor NAME corrupts any one of them",
+  "         evidence: mismatched sources: none",
+  "  [PASS] G-EXACT-ARITHMETIC",
+  "         EXACT ARITHMETIC ONLY: an AST scan of this file finds no float literal anywhere; every amplitude is an INTEGER PAIR over Z[w] with a common power-of-9 denominator and every published number is an integer or an exact Fraction",
+  "         evidence: float literals at lines: none",
+  "  [PASS] G-NO-SUBPROCESS",
+  "         #91: NO SUBPROCESS AND NO PARENT IMPORT.  The committed driver is read as a SPEC and this file re-implements the walk, the emission law and the update semantics; an AST scan of this file's own imports finds no process-spawning module and no module of any other unit, so the rebuild is independent by construction and the run is correct off-tree and git-less",
+  "         evidence: process modules none; foreign unit modules none",
+  "  [PASS] G-READS-DECLARED",
+  "         #46/#91: the run reads exactly two declared sets -- the 11 pinned SOURCES, every one of them gated above, and the OBJECT set (this file, AST-parsed by its own scans, and the paper under test).  No repository state outside those two sets is read",
+  "         evidence: undeclared source reads: none",
+  "  [PASS] G-VERBATIM",
+  "         #62 + #125: 12 verbatim anchors are located in their pinned sources with BOTH sides whitespace-normalised, ASCII-folded and markdown-prefix-stripped, and each row carries its own falsifier -- the needle perturbed at its last three characters must NOT be found",
+  "         evidence: anchors failing to locate or whose perturbation still matched: none",
+  "  .. rebuilding the coupled machine and anchoring it",
+  "  .. the delivered configuration: coin GROVER, reading A",
+  "  .. the relation grid",
+  "  .. the blindness census on the declared foreign count fields",
+  "  .. the coin fiber (6 members) and the reading fiber (2 members)",
+  "  [PASS] G-PARENT-REPRODUCED",
+  "         THE REBUILD IS ANCHORED AT THE PARENT'S OWN COMMITTED BYTES.  paper-20's driver is read as a SPEC and never imported and never subprocessed; the walk, the emission law and the update semantics are re-implemented here, and 14 published values of the parent's committed receipt -- the branch ladders of three arms, both inverse participations, three exit probabilities, the link-class marginal, both site distributions, the maximum-cell ladder and both branch-step counts -- are required to come back out of THIS implementation at EQUALITY, row by row (#87)",
+  "         evidence: rows disagreeing with the parent: none",
+  "  [PASS] G-PARENT-LOCATED",
+  "         and the same values are LOCATED VERBATIM in the parent's committed receipt bytes, so the comparison is against the COMMITTED OBJECT rather than against a number this file typed: 14 of 14 rows located",
+  "         evidence: located 14 of 14",
+  "  [PASS] G-ENSEMBLE-EXHAUSTIVE",
+  "         the emission tree is carried EXHAUSTIVELY to the declared horizon 5 -- no sampling, no pruning, no truncation by weight -- and exhaustiveness is checked by TWO INDEPENDENT ROUTES at each of the 15 levels: the length of the carried frontier against the branch count recomputed from the emission supports of the level above",
+  "         evidence: levels where the two routes disagree: 0",
+  "  [PASS] G-BRANCH-MASS",
+  "         the branch weights sum to exactly 1 at every one of the 15 levels across the three anchored arms, as exact Fractions",
+  "         evidence: levels whose mass is not 1: none",
+  "  [PASS] G-WALK-UNITARY",
+  "         the rebuilt step is unitary EXACTLY and PER OBJECT: each site of each branch of each step preserves its own mass, at 296,784 site-branch-steps across the three arms",
+  "         evidence: violations: 0",
+  "  [PASS] G-LAW-KERNEL",
+  "         the LAW-NATIVE normaliser is re-derived on this arena rather than assumed: G(x,0) = 1 terminal, G(x,1) = M(x), and the kernel k_1 = q/M entry by entry, at 1,479,176 per-object checks"
+ ],
+ "verbatim_anchors": [
+  {
+   "consumer_gate": "G-NO-FITTED-FORM",
+   "id": "V-PIN-FITTED",
+   "located": true,
+   "needle_chars": 169,
+   "perturbed_needle_located": false,
+   "source": "A-PIN"
+  },
+  {
+   "consumer_gate": "G-FROZEN-EXCLUSION",
+   "id": "V-PIN-FROZEN",
+   "located": true,
+   "needle_chars": 231,
+   "perturbed_needle_located": false,
+   "source": "A-PIN"
+  },
+  {
+   "consumer_gate": "G-WALL-NO-SI",
+   "id": "V-PIN-SI",
+   "located": true,
+   "needle_chars": 185,
+   "perturbed_needle_located": false,
+   "source": "A-PIN"
+  },
+  {
+   "consumer_gate": "G-PARENT-REPRODUCED",
+   "id": "V-P20-MENU",
+   "located": true,
+   "needle_chars": 98,
+   "perturbed_needle_located": false,
+   "source": "A-P20"
+  },
+  {
+   "consumer_gate": "G-PARENT-REPRODUCED",
+   "id": "V-P20-UPDATE",
+   "located": true,
+   "needle_chars": 57,
+   "perturbed_needle_located": false,
+   "source": "A-P20"
+  },
+  {
+   "consumer_gate": "G-FROZEN-CONTROL",
+   "id": "V-P20-CONTROL",
+   "located": true,
+   "needle_chars": 118,
+   "perturbed_needle_located": false,
+   "source": "A-P20"
+  },
+  {
+   "consumer_gate": "G-COIN-FIBER",
+   "id": "V-P20-COIN",
+   "located": true,
+   "needle_chars": 122,
+   "perturbed_needle_located": false,
+   "source": "A-P20"
+  },
+  {
+   "consumer_gate": "G-BLINDNESS-D1",
+   "id": "V-P20-STALE",
+   "located": true,
+   "needle_chars": 99,
+   "perturbed_needle_located": false,
+   "source": "A-P20"
+  },
+  {
+   "consumer_gate": "G-LAW-KERNEL",
+   "id": "V-GITER-K1",
+   "located": true,
+   "needle_chars": 3,
+   "perturbed_needle_located": false,
+   "source": "A-GITER"
+  },
+  {
+   "consumer_gate": "G-WALL-L1",
+   "id": "V-L1-FOURTH",
+   "located": true,
+   "needle_chars": 62,
+   "perturbed_needle_located": false,
+   "source": "A-L1"
+  },
+  {
+   "consumer_gate": "G-WALL-BHS",
+   "id": "V-CAT-BHS",
+   "located": true,
+   "needle_chars": 69,
+   "perturbed_needle_located": false,
+   "source": "A-CAT"
+  },
+  {
+   "consumer_gate": "G-WALL-KR",
+   "id": "V-CAT-KR",
+   "located": true,
+   "needle_chars": 47,
+   "perturbed_needle_located": false,
+   "source": "A-CAT"
+  }
+ ],
+ "verdict": {
+  "arena": "GDL-ARENA-[THE COUPLED MACHINE RE-IMPLEMENTED FROM THE COMMITTED SPEC AND ANCHORED AT THE PARENT'S OWN COMMITTED BYTES: 14 OF 14 PUBLISHED VALUES OF PAPER-20 RE-DERIVED AT EQUALITY BY AN IMPLEMENTATION THAT IMPORTS NO MODULE OF IT AND SUBPROCESSES NOTHING, AND ALL 14 LOCATED VERBATIM IN THOSE BYTES; THE WELDED RECORD n = 1 AT 27 OF 27 CELLS DRIVEN TO HORIZON 5 ON 3 ARMS; 11,044 BRANCH-STEPS ON THE COUPLED ARM COLLAPSING TO 10,954 DISTINCT MEASUREMENTS AND 9,751 ON THE FROZEN CONTROL COLLAPSING TO 5 -- ONE PER LEVEL, BECAUSE A FROZEN STAGE CARRIES ONE QUANTUM HISTORY AND THE BRANCHING IS CLASSICAL BOOKKEEPING OVER IT; UNITARY AT 296,784 SITE-BRANCH-STEPS AND LAW-NATIVE AT 1,479,176 KERNEL CHECKS WITH 0 VIOLATIONS]@PAPER-20-TERMINAL-55273f6b6068",
+  "functionals": "GDL-FUNCTIONALS-AND-MECHANISM-[3 DECOHERENCE FUNCTIONALS DECLARED, NONE PRIVILEGED, ALL RUN ON EVERY OBJECT OF EVERY ARM OF EVERY FIBER MEMBER; THE l_1 DECLARATION PRICED -- 278,318 OF 388,024 OFF-DIAGONAL MODULI ARE IRRATIONAL AND OUTSIDE Q, WHICH IS WHY D2 IS CARRIED IN SQUARED MODULUS | 5 GROWTH FUNCTIONALS FROM THE MACHINE'S OWN EMISSION LAW: THE SITE RATE IS THE BORN SITE MASS AND THE TOTAL RATE IS EXACTLY ONE DIVISION EVENT PER COUPLED STEP, 0 VIOLATIONS | THE BLINDNESS MECHANISM, MEASURED ON 5 DECLARED FOREIGN COUNT FIELDS AT 164,310 CHECKS: D1 MOVES 0 TIMES, D2 MOVES 54,593 TIMES AND AT NOT ONE OBJECT WHOSE OCCUPIED-LINK SETS MEET IN AT MOST ONE LINK, D3 MOVES 54,700 TIMES -- THE COIN CANCELS OUT OF THE SITE-BASIS DENSITY MATRIX AND THE RECORD SURVIVES ONLY ON LINKS OCCUPIED AT BOTH ENDS, SO THE INHERITED OBSERVABLE IS RECORD-BLIND BY THEOREM AND THE CO-OCCUPANCY THRESHOLD IS STEP 4 ON BOTH ARMS | THE SEPARATION LADDER D3 AT 3, D1 AND D2 AT 4, IDENTICAL ACROSS ALL 7 EXECUTED FIBER MEMBERS]",
+  "gates": "GDL-PARTIAL-<THE RELATION=MEASURED-NOT-FITTED(45 CELLS PER ARM -- 3 DECOHERENCE x 5 GROWTH x 3 RESOLUTIONS -- DECIDED BY EQUALITY INSIDE A GROWTH CLASS AND BY NOTHING ELSE: 2 EXACT, 28 PARTIAL WITH EVERY FAILURE SET CENSUSED AND RECOUNTED, 15 VACUOUS AND STAMPED VACUOUS RATHER THAN PASSED) -- THE ONLY EXACT CELL IS THE LAW'S OWN IDENTITY(D1 = SUM_x eps(x)^2, THE SITE-BASIS INVERSE PARTICIPATION OF THE BORN MENU IS THE SUM OF THE SQUARED SITE EMISSION RATES, AT EVERY OBJECT OF BOTH ARMS -- A CONSEQUENCE OF THE LAW-NATIVE NORMALISER'S COLUMN-STOCHASTICITY, STAMPED DEFINITIONAL-THROUGH-THE-LAW) -- FROZEN-EXCLUSION=2 OF 2 EXACT CELLS EXCLUDED(THEY HOLD IDENTICALLY ON THE FROZEN CONTROL, WHOSE RECORD NEVER GROWS AT 9,751 BRANCH-STEPS, SO THEY ARE FACTS ABOUT THE WALK AND THE LAW RATHER THAN ABOUT THE COUPLING) -- GRAVITATIONAL-CELLS=0 -- THE RECORD DOES NOT DETERMINE THE DECOHERENCE(AT THE FINEST RESOLUTION THE CELL-GRAIN RECORD LEAVES 7,498 OF 10,954 OBJECTS IN CLASSES CARRYING MORE THAN ONE D1-VALUE, 8,166 FOR D2 AND 8,100 FOR D3; ON THE FROZEN CONTROL THE RECORD IS ONE CLASS CARRYING EVERY VALUE, SO IT CANNOT TESTIFY AT ALL) -- DOMINATION=D1 COUPLED-DOMINATES; D2 NO-DOMINATION; D3 NO-DOMINATION -- FORCEDNESS=7 OF 7 FIBER MEMBERS AGREE ON THE WHOLE RELATION SIGNATURE(+/- GROVER MEASURED IDENTICAL AS A GLOBAL-PHASE PAIR) -- PREDICTION-ROW=ENTERED -- SCOPE=THIS UNIT MEASURES A RELATION AT ONE ARENA AT ONE DECLARED HORIZON; NO CONTINUUM, NO SI QUANTITY, NO EXPERIMENTAL VALUE, AND THE DIOSI-PENROSE ARC CITED FOR SHAPE ONLY>"
+ },
+ "waiver_ledger": [
+  {
+   "class": "STRUCTURAL",
+   "gate": "G-ANCHOR-CONSUMERS",
+   "reason": "the gate compares two registries this file owns"
+  },
+  {
+   "class": "EXERCISED-IN-RUN-AND-GUARDED-BY-THE-WRITER-SHAPE",
+   "gate": "G-ARTIFACT-INTEGRITY",
+   "reason": "a mutant on this gate is UNREACHABLE by construction -- run_mutant calls finish(write=False), which returns before the terminal gate runs -- so the waiver states the two things that do guard it.  (i) EXERCISED: the run corrupts a read-back copy of EVERY sealed row in turn and requires each corruption to be detected before the real artifacts are compared.  (ii) EXISTENCE: G-WRITER-SHAPE reads this file's AST BEFORE the gate ledger is snapshotted and publishes the gate names finish() calls together with the line of every os.replace, so dropping or renaming this gate, or moving a write above it, moves a SEALED published value"
+  },
+  {
+   "class": "SELF-REFERENTIAL",
+   "gate": "G-COVERAGE",
+   "reason": "the gate IS the coverage ledger"
+  },
+  {
+   "class": "SELF-SCANNING",
+   "gate": "G-EXACT-ARITHMETIC",
+   "reason": "the gate parses this file; a mutant that introduced a float would fail it by construction"
+  },
+  {
+   "class": "SELF-REFERENTIAL",
+   "gate": "G-MUTANTS-ON-TARGET",
+   "reason": "the gate IS the mutant sweep"
+  },
+  {
+   "class": "SELF-SCANNING",
+   "gate": "G-NO-SUBPROCESS",
+   "reason": "same: the gate parses this file's own imports, and the independence of the rebuild is exactly what it certifies"
+  },
+  {
+   "class": "AGGREGATE",
+   "gate": "G-PAPER-COVERAGE-FINAL",
+   "reason": "it closes over gates each of which is separately falsified"
+  },
+  {
+   "class": "FALSIFIED-BY-A-FLAG",
+   "gate": "G-PROVENANCE",
+   "reason": "--break-anchor NAME corrupts any source's expected digest and the run dies here; a mutant would be a second, weaker copy of the same falsifier"
+  },
+  {
+   "class": "SELF-REFERENTIAL",
+   "gate": "G-REACHABILITY",
+   "reason": "same"
+  },
+  {
+   "class": "STRUCTURAL",
+   "gate": "G-READS-DECLARED",
+   "reason": "the source read list is appended by read_bytes, the only reader of a SOURCE in the file; the second reader, read_text, reads only the two files of the declared OBJECT set"
+  },
+  {
+   "class": "SELF-FALSIFYING-PER-ROW",
+   "gate": "G-VERBATIM",
+   "reason": "every anchor is perturbed at its last three characters and re-located inside the gate, so each row carries its own falsifier"
+  }
+ ],
+ "walls": {
+  "banned_L1_present": false,
+  "declared_out": {
+   "horizon": "this unit's own name for the declared finite number of coupled steps, and the gravity law's own relative-horizon index",
+   "mass": "the off-diagonal coherence MASS and the menu MASS are declared objects of this unit and of paper-16's law",
+   "rate": "the emission RATE is one of this unit's two declared growth functionals; a scan firing on it would fire on the pin's own vocabulary"
+  },
+  "dp_shape_only_named": true,
+  "hexagonal_named": true,
+  "lorentz_named": true,
+  "rows": [
+   {
+    "gate": "G-WALL-BHS",
+    "hits": [],
+    "needles": 4
+   },
+   {
+    "gate": "G-WALL-KR",
+    "hits": [],
+    "needles": 4
+   },
+   {
+    "gate": "G-WALL-COSMO",
+    "hits": [],
+    "needles": 5
+   },
+   {
+    "gate": "G-WALL-NO-SI",
+    "hits": [],
+    "needles": 20
+   }
+  ]
+ },
+ "writer_shape": {
+  "every_replace_after_the_terminal_gate": true,
+  "finish_found": true,
+  "gate_names_in_finish": [
+   "G-COVERAGE",
+   "G-FALSIFIER-HONESTY",
+   "G-WRITER-SHAPE",
+   "G-SWEEP-BOUND",
+   "G-ANCHOR-CONSUMERS",
+   "G-REACHABILITY",
+   "G-PAPER-COVERAGE-FINAL",
+   "G-SEAL-COMPLETE",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "os_replace_calls": 2,
+  "terminal_gate": "G-ARTIFACT-INTEGRITY",
+  "terminal_gate_present_exactly_once": true
+ }
+}

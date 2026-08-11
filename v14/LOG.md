@@ -6783,3 +6783,47 @@ existed).  The three seats are launched AT THIS ENTRY with
 the #218 protocol unchanged.  Ledger accuracy note: entries
 must record what HAS happened, not what the next tool call
 will do — the orchestrator's error, owned.
+
+## 2026-08-11 — GDL (PAPER-25) DELIVERED: GDL-PARTIAL — NO FORCED GRAVITATIONAL LAW; THE FUNCTIONALS RECORD-BLIND BY MECHANISM; COMMIT-AS-IS (v14 LEDGER #221)
+
+The GDL worker delivered; all candidate readings.  **Verdict:
+GDL-PARTIAL** — 45 cells per arm (3 functionals × 5 growth
+functionals × 3 resolutions), equality-gated, fitted forms
+barred by scan: **2 EXACT / 28 PARTIAL (every failure set
+censused twice) / 15 VACUOUS (stamped, not counted)**.  THE
+FROZEN EXCLUSION KILLS BOTH EXACT CELLS: the one exact
+relation (D1 = Σₓ ε(x)² — 98,586 checks 0 violations) is
+DEFINITIONAL-THROUGH-THE-LAW and holds on the frozen control
+too — 0 gravitational.  FORCEDNESS: 7/7 fiber members agree
+on the ENTIRE relation signature as one digest (±Grover
+byte-identical as a phase pair; axes-not-product stated).
+**THE DEEPEST FINDING — RECORD-BLINDNESS BY MECHANISM,
+measured: the site-uniform unitary coin CANCELS out of the
+site density matrix — ρ_xy = Σ_l ω^(n_l(x)−n_l(y)) ψψ*; the
+diagonal cannot see the record AT ALL (D1: 0 movements in
+164,310 checks over the 5 foreign fields); the off-diagonal
+moves ONLY at co-occupancy ≥ 2 links (D2: 54,593/54,770
+moving pairs, ZERO at overlap ≤ 1)** — the quantitative form
+of the staleness theorem: THE VALUES ARE BLIND, not just the
+closures.  [Orchestrator note for the panel/adjudication: the
+mechanism NAMES where a gravitational-decoherence law could
+live — coins that CONSUME n (metric-dependent coins), exactly
+the ingredient paper-20's declared walk did not use; the
+successor row writes itself.]  THE PREDICTION ROW (substrate-
+native): the separation ladder D3@3, D1@4, D2@4 — the
+record-reading functional detects coupling a full step
+earlier — identical across all 7 fiber members.  Dominations:
+D1 COUPLED-DOMINATES; D2/D3 rise at 4 and FALL at 5 (a
+monotone law would have been true at horizon 4 and false at
+5 — the horizon discipline vindicated).  The frozen control's
+9,751 branch-steps collapse to 5 distinct measurements — "a
+frozen stage is one quantum history with a classical ledger
+beside it."  ℓ₁ priced (irrational moduli → squared-modulus
+carrier, declared).  Counts: 14/14 parent values reproduced
+at equality + located verbatim in committed bytes; 296,784 +
+1,479,176 checks 0 violations; 63 gates; 56/56 mutants; 34
+seals; coverage 313/313 numerals (49 fenced, 137 inline —
+E-22 native); byte ×2 + off-tree git-less; loud abort.
+Shas: paper e98003841378, code 81595d600575, output
+39128fafc7bf, receipt b87016e96285.  Committed AS-IS;
+battery next; panel after.

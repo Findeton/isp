@@ -1,0 +1,198 @@
+==============================================================================
+GDL -- THE GRAVITATIONAL-DECOHERENCE LAW  (v14 paper-25)
+==============================================================================
+  [PASS] G-PROVENANCE
+         the 11 declared sources are read at run time from paths resolved from THIS FILE's own location and every one is sha256-12 verified against this unit's frozen declaration; a missing source aborts the run LOUDLY and CLEANLY before anything is computed, and --break-anchor NAME corrupts any one of them
+         evidence: mismatched sources: none
+  [PASS] G-EXACT-ARITHMETIC
+         EXACT ARITHMETIC ONLY: an AST scan of this file finds no float literal anywhere; every amplitude is an INTEGER PAIR over Z[w] with a common power-of-9 denominator and every published number is an integer or an exact Fraction
+         evidence: float literals at lines: none
+  [PASS] G-NO-SUBPROCESS
+         #91: NO SUBPROCESS AND NO PARENT IMPORT.  The committed driver is read as a SPEC and this file re-implements the walk, the emission law and the update semantics; an AST scan of this file's own imports finds no process-spawning module and no module of any other unit, so the rebuild is independent by construction and the run is correct off-tree and git-less
+         evidence: process modules none; foreign unit modules none
+  [PASS] G-READS-DECLARED
+         #46/#91: the run reads exactly two declared sets -- the 11 pinned SOURCES, every one of them gated above, and the OBJECT set (this file, AST-parsed by its own scans, and the paper under test).  No repository state outside those two sets is read
+         evidence: undeclared source reads: none
+  [PASS] G-VERBATIM
+         #62 + #125: 12 verbatim anchors are located in their pinned sources with BOTH sides whitespace-normalised, ASCII-folded and markdown-prefix-stripped, and each row carries its own falsifier -- the needle perturbed at its last three characters must NOT be found
+         evidence: anchors failing to locate or whose perturbation still matched: none
+  .. rebuilding the coupled machine and anchoring it
+  .. the delivered configuration: coin GROVER, reading A
+  .. the relation grid
+  .. the blindness census on the declared foreign count fields
+  .. the coin fiber (6 members) and the reading fiber (2 members)
+  [PASS] G-PARENT-REPRODUCED
+         THE REBUILD IS ANCHORED AT THE PARENT'S OWN COMMITTED BYTES.  paper-20's driver is read as a SPEC and never imported and never subprocessed; the walk, the emission law and the update semantics are re-implemented here, and 14 published values of the parent's committed receipt -- the branch ladders of three arms, both inverse participations, three exit probabilities, the link-class marginal, both site distributions, the maximum-cell ladder and both branch-step counts -- are required to come back out of THIS implementation at EQUALITY, row by row (#87)
+         evidence: rows disagreeing with the parent: none
+  [PASS] G-PARENT-LOCATED
+         and the same values are LOCATED VERBATIM in the parent's committed receipt bytes, so the comparison is against the COMMITTED OBJECT rather than against a number this file typed: 14 of 14 rows located
+         evidence: located 14 of 14
+  [PASS] G-ENSEMBLE-EXHAUSTIVE
+         the emission tree is carried EXHAUSTIVELY to the declared horizon 5 -- no sampling, no pruning, no truncation by weight -- and exhaustiveness is checked by TWO INDEPENDENT ROUTES at each of the 15 levels: the length of the carried frontier against the branch count recomputed from the emission supports of the level above
+         evidence: levels where the two routes disagree: 0
+  [PASS] G-BRANCH-MASS
+         the branch weights sum to exactly 1 at every one of the 15 levels across the three anchored arms, as exact Fractions
+         evidence: levels whose mass is not 1: none
+  [PASS] G-WALK-UNITARY
+         the rebuilt step is unitary EXACTLY and PER OBJECT: each site of each branch of each step preserves its own mass, at 296,784 site-branch-steps across the three arms
+         evidence: violations: 0
+  [PASS] G-LAW-KERNEL
+         the LAW-NATIVE normaliser is re-derived on this arena rather than assumed: G(x,0) = 1 terminal, G(x,1) = M(x), and the kernel k_1 = q/M entry by entry, at 1,479,176 per-object checks
+         evidence: violations: 0
+  [PASS] G-FUNCTIONALS-DECLARED
+         the 3 DECLARED decoherence functionals each carry a full specification in this file and each is re-derived here from its own published formula on a probe object: D1 from the Born menu's site masses, D2 from the exact purity split, D3 from its own per-site rows.  None is privileged and all three are run everywhere
+         evidence: functionals whose value disagrees with their published specification: none
+  [PASS] G-FUNCTIONALS-EXACT
+         every decoherence value at every one of the 10,959 objects of the two delivered arms is an exact Fraction -- there is no float and no rounding anywhere in the functional layer
+         evidence: non-exact values: 0
+  [PASS] G-L1-PRICED
+         THE l_1 DECLARATION IS PRICED, NOT WAVED THROUGH.  D2 is carried in SQUARED-MODULUS units because the exact l_1 form is not computable in Q on this arena, and that is MEASURED rather than asserted: of the 388,024 off-diagonal |rho_xy|^2 entries this run produces, 109,706 are perfect squares and 278,318 are not, so 278,318 exact moduli are irrational and outside this unit's arithmetic
+         evidence: irrational moduli: 278318 of 388024
+  [PASS] G-PURITY-SPLIT
+         the exact split D1 + D2 = Tr(rho^2) holds at every object of both delivered arms -- the inverse participation IS the diagonal of the site-basis purity and the coherence mass IS its complement
+         evidence: violations: 0
+  [PASS] G-RATE-IS-BORN
+         THE METRIC-GROWTH RATE IS THE MACHINE'S OWN, and it is measured to BE the Born menu's site mass: eps(x) = p(x) at every site of every one of the 10,959 objects of both arms at the delivered reading, because the kernel is column-stochastic by the law's own normaliser; the same identity is re-taken on every fiber member, the record menu included, at G-COIN-FIBER
+         evidence: violations: 0
+  [PASS] G-RATE-TOTAL
+         and the total rate is exactly ONE division event per coupled step at every object -- the emission law is a probability distribution over the 27 cells and its mass is the walk's
+         evidence: violations: 0
+  [PASS] G-GROWTH-FROZEN-ZERO
+         THE FROZEN CONTROL'S RECORD NEVER GROWS, and that is a per-object measurement rather than a definition read back: not one of the 5 distinct frozen objects carries a record different from the welded one, so the ACTUAL growth functionals G1..G4 are identically constant there while the LAW's rate G5 is not
+         evidence: frozen objects whose record moved: 0
+  [PASS] G-RELATION-CENSUS
+         THE RELATION IS MEASURED, NOT FITTED.  45 cells per arm -- 3 decoherence functionals x 5 growth functionals x 3 resolutions -- are decided by EQUALITY inside a growth class and by nothing else, on both arms, and every cell's published verdict word is required to agree with its own censused counts (#87: the predicate is per cell, never on the tally)
+         evidence: cells whose word disagrees with their census: none
+  [PASS] G-VACUITY-DECLARED
+         A TEST WITH NO NON-SINGLETON CLASS DECIDES NOTHING and is stamped VACUOUS rather than EXACT -- the honest denominator of this whole section.  15 of the 45 coupled cells and the RES-STEP row of every column are vacuous by construction, and the stamp is checked per cell
+         evidence: cells published EXACT with no non-singleton class: 0
+  [PASS] G-FAILURE-CENSUS
+         every PARTIAL cell reports its FAILURE SET exactly -- the failing classes, the objects inside them and the distinct D-values those classes carry -- and each census is RECOUNTED by a second pass that shares no intermediate with the first, over all 90 cells of both arms
+         evidence: cells whose recount disagrees: 0
+  [PASS] G-NO-FITTED-FORM
+         FITTED FORMS ARE BARRED by the pin and the bar is a scan, not a promise: this unit's whole relation layer is searched for the vocabulary of fitting -- fit, regression, approximation, correlation, estimation, residual -- and the only verdict words it carries are the equality-gated EXACT, PARTIAL, VACUOUS
+         evidence: fitted-form needles found in the relation layer: 0
+  [PASS] G-COIN-ADMISSIBLE
+         every member of the declared coin fiber is verified EXACTLY unitary (3C . 3C* = 9I in Z[w], entry by entry) and EXACTLY S_3-covariant against all six permutation matrices, per member and per entry (#87) -- 7 members
+         evidence: members failing admissibility: none
+  [PASS] G-COIN-FIBER
+         FORCEDNESS IS MEASURED ACROSS THE WHOLE DECLARED FIBER.  All 6 coin classes -- +/- Grover and the four hidden S_3-covariant members, paper-20's own witnesses -- are run to the full horizon on BOTH arms, and each is required to reproduce the delivered member's ENTIRE relation signature: all 15 grid cells' verdict words on both arms, the separation ladder, and every identity
+         evidence: fiber members whose verdict shape differs: none
+  [PASS] G-FIBER-EXECUTED
+         and the execution is bound by SET EQUALITY against the declared member ids rather than by a cardinality: 8 ids declared, 8 executed
+         evidence: declared ['(-1+w)/3', '(-1-w)/3', '(-2-w)/3', '-GROVER', 'GROVER', 'READING-A', 'READING-B', 'w/3']; executed ['(-1+w)/3', '(-1-w)/3', '(-2-w)/3', '-GROVER', 'GROVER', 'READING-A', 'READING-B', 'w/3']
+  [PASS] G-GLOBAL-PHASE-PAIR
+         +/- Grover differ by a GLOBAL PHASE, so every published row must be identical between them -- and this unit MEASURES that rather than assuming it, over the separation ladder, the whole cell signature and both distinct-object counts
+         evidence: rows differing between +Grover and -Grover: 0
+  [PASS] G-FROZEN-CONTROL
+         THE MANDATORY FROZEN CONTROL IS EXECUTED, not declared: the same walk, the same emission rule and the same branching on counts that never update, through THE SAME FUNCTION as the coupled arm, at 9,751 branch-steps that collapse to 5 distinct measurements -- one per level, because on a frozen stage every branch of a level carries the same state on the same record
+         evidence: frozen control executed: True
+  [PASS] G-FROZEN-EXCLUSION
+         THE EXCLUSION IS A GATE.  Every EXACT cell of the coupled arm is re-evaluated on the control and excluded if it survives there: 2 exact cells tested, 2 excluded as holding identically frozen, 0 surviving as gravitational-decoherence relations
+         evidence: tested 2, excluded 2, gravitational 0
+  [PASS] G-SEPARATION-LADDER
+         THE SEPARATION LADDER is a PER-OBJECT statement, not an average: for each functional the first step at which its VALUE SET on the coupled arm differs from the control's, recomputed inside the gate from the per-step rows -- D1 at 4, D2 at 4, D3 at 3
+         evidence: functionals whose published first step disagrees with their own per-step rows: 0
+  [PASS] G-DOMINATION
+         MONOTONE DOMINATION WITH EXACT WITNESSES: a domination is claimed only where every SEPARATING step agrees in direction, the separating steps are named, and a direction that flips is published as NO-DOMINATION with the flip as its witness -- D1 COUPLED-DOMINATES, D2 NO-DOMINATION, D3 NO-DOMINATION
+         evidence: domination rows published without their witness: 0
+  [PASS] G-BLINDNESS-D1
+         THE INHERITED DECOHERENCE OBSERVABLE IS RECORD-BLIND, MEASURED.  The site-basis inverse participation of the Born menu is re-evaluated on 5 DECLARED FOREIGN count fields -- fields this run never generates, two of them not even admissible -- at every one of the 10,954 coupled objects, and it does not move once.  The coin's record-dependent phases are diagonal and unitary, so they cannot change a site's own mass; the record enters D1 only through the walk's history, with a delay
+         evidence: D1 movements in 164,310 checks: 0
+  [PASS] G-BLINDNESS-D3
+         THE INSTRUMENT IS TWO-WAY, which is what makes the blindness a measurement rather than a property of the census: on the same fields and the same objects the record-reading functional D3 moves 54,700 times.  A census in which nothing moved would decide nothing
+         evidence: D3 movements: 54700
+  [PASS] G-COOCCUPANCY
+         AND THE MIDDLE FUNCTIONAL'S BLINDNESS HAS AN EXACT MECHANISM, gated per object: D2 moves at 54,593 of the 54,770 object-and-field pairs and at NOT ONE pair whose occupied-link sets meet in at most one link -- co-occupancy is NECESSARY for the off-diagonal mass to see the record
+         evidence: objects with no co-occupancy pair whose D2 moved: 0
+  [PASS] G-COOCCUPANCY-THRESHOLD
+         and the co-occupancy threshold is located by measuring EVERY step rather than by assertion: the first step of the coupled arm carrying a co-occupancy pair is 4, and the frozen control's is 4 -- the threshold is a property of the WALK, not of the coupling
+         evidence: coupled threshold 4, frozen threshold 4
+  [PASS] G-PREDICTION-ROW
+         THE PREDICTION ROW IS ENTERED ONLY IF ITS OWN FIBER CENSUS CARRIES IT: the separation ladder must be IDENTICAL across all 7 executed fiber members and every functional must actually separate at a finite step -- 1 distinct ladders measured
+         evidence: distinct ladders 1 across 7 members; census carries the row True; published forced flag True
+  [PASS] G-PREDICTION-RENDERED
+         and the row is RENDERED FROM THE RECEIPT rather than typed: every number in it is the measured value, and the sentence is required to carry them and to name no unit that is not a count or a step index
+         evidence: rendered row: At this arena, at the declared horizon 5 and for every member of the declared coin and reading fibers, the record-reading decoherence functional separates the coupled stage from the frozen control at step 3, exactly one step before either state-internal functional, which separate at step 4; and the co-occupancy threshold that governs the middle functional's blindness is step 4 on BOTH arms.
+  [PASS] G-WALL-L1
+         L-1 IS ARGUED AND THEN DECLINED.  Order-level covariance is a fourth form outside paper 8's three; admitting it would need a group declared to act on the generated causal order and a reason to read it as a covariance group, and this unit constructs no such bridge.  THE FOURTH FORM IS NOT TESTED HERE, and the sentence retracted on 2026-07-28 is absent from the object under test -- the gate whitespace-normalises, ASCII-folds and strips markdown prefixes from BOTH sides, so a line-wrapped blockquoted copy cannot evade it
+         evidence: the retracted L-1 sentence present in the paper: False
+  [PASS] G-WALL-BHS
+         the abstention is MEASURED rather than declared: this run's whole measurement surface -- every measured receipt key together with the statement and evidence of every non-wall gate evaluated -- is scanned for 4 forbidden needles, and the falsifier writes the forbidden reading INTO that surface and dies here
+         evidence: forbidden needles found: none
+  [PASS] G-WALL-KR
+         the abstention is MEASURED rather than declared: this run's whole measurement surface -- every measured receipt key together with the statement and evidence of every non-wall gate evaluated -- is scanned for 4 forbidden needles, and the falsifier writes the forbidden reading INTO that surface and dies here
+         evidence: forbidden needles found: none
+  [PASS] G-WALL-COSMO
+         the abstention is MEASURED rather than declared: this run's whole measurement surface -- every measured receipt key together with the statement and evidence of every non-wall gate evaluated -- is scanned for 5 forbidden needles, and the falsifier writes the forbidden reading INTO that surface and dies here
+         evidence: forbidden needles found: none
+  [PASS] G-WALL-NO-SI
+         the abstention is MEASURED rather than declared: this run's whole measurement surface -- every measured receipt key together with the statement and evidence of every non-wall gate evaluated -- is scanned for 20 forbidden needles, and the falsifier writes the forbidden reading INTO that surface and dies here.  Three needles are DECLARED OUT with their reasons printed: `horizon` (this unit's own name for the declared finite number of coupled steps, and the gravity law's own relative-horizon index); `mass` (the off-diagonal coherence MASS and the menu MASS are declared objects of this unit and of paper-16's law); `rate` (the emission RATE is one of this unit's two declared growth functionals; a scan firing on it would fire on the pin's own vocabulary)
+         evidence: forbidden needles found: none
+  [PASS] G-WALL-DP-SHAPE
+         THE DIOSI-PENROSE CITATION IS SHAPE-ONLY AND THE ABSTENTION IS WRITTEN DOWN: the corpus's gravitational-decoherence arc is named in the object under test with the sentence that inherits no number, no rate, no mass and no experimental claim from it, and the naming sentence is mandatory
+         evidence: the shape-only naming sentence present: True
+  [PASS] G-WALL-LORENTZ-NAMED
+         THE LORENTZIAN RESONANCE IS NAMED, carried from the parent because this unit reads the same determinant: the sentence is mandatory and its falsifier deletes it
+         evidence: the Lorentzian naming sentence present: True
+  [PASS] G-WALL-HEX-NAMED
+         THE HEXAGONAL RESONANCE IS NAMED, inherited from paper-19's S-7 through paper-20: the Gram matrix a reader will recognise is named before it is heard and no lattice-geometry reading is taken
+         evidence: the hexagonal naming sentence present: True
+  [PASS] G-MEASURE-DECLARED
+         E-24: NO COUNT BECOMES A PROBABILITY WITHOUT A DECLARED MEASURE.  Every published key whose values include a fraction over a configuration space is required to name its measure or to carry the COUNTING-ONLY stamp; the probability-bearing keys all declare THE BRANCH MEASURE and the relation, forcedness and mechanism layers are stamped COUNTING-ONLY, since a failing-class count is not a probability of anything.  3 keys carry fractions
+         evidence: keys carrying a fraction with no declared measure: none
+  [PASS] G-VERDICT-RECONSTRUCTED
+         the verdict is DERIVED A SECOND TIME by a comparator that shares no code, no input and no typed literal with the builder: it is handed the receipt's own measured blocks as JSON, TYPES ITS OWN TEMPLATES, re-derives the outcome word from the exclusion and relation rows, and the three segments must match string for string
+         evidence: segments matching: {'arena': True, 'functionals': True, 'gates': True}
+  [PASS] G-PAPER-CLAIMS
+         every load-bearing claim of the paper is ASSEMBLED FROM THE RECEIPT and then located in the object under test -- 14 claims, no number typed twice
+         evidence: claims not located: none
+  [PASS] G-PAPER-TABLES
+         the paper's tables RENDER FROM THE RECEIPT: 16 rows are built from measured values and each is required to appear in the object under test
+         evidence: table rows not located: none
+  [PASS] G-PAPER-NUMERAL-COVERAGE
+         #20 WITH THE FENCED-BLOCK AND INLINE-SPAN ADDENDA (E-22): the coverage scan reads ALL of the paper's text -- 313 prose-and-other numerals of which 49 live in 3 fenced blocks and 137 in 221 inline code spans -- and every numeral must be a value this run computed and registered
+         evidence: unregistered numerals: none
+  [PASS] G-PAPER-HEAD-VERBATIM
+         the paper's verdict block is the DERIVED head, rendered from the receipt: all 3 segments are located verbatim, and the fenced blocks are gated by MULTISET EQUALITY (E-22) rather than by containment, so a duplicated block cannot shadow a forged twin
+         evidence: segments not located none; multiset mismatches 0
+  [PASS] G-PAPER-CLAIM-POLARITY
+         every load-bearing claim is checked for POLARITY: the positive form must be present and its negation absent, on 4 pairs, so a paper carrying the opposite of what was measured dies here
+         evidence: polarity rows failing: none
+  [PASS] G-CLI-WHITELIST
+         the #82 CLI contract, exercised in this run: 10 malformed argument vectors are all rejected with exit code 2 -- the last three of them SECOND-MODE vectors -- 9 legal shapes parse, and the registered PERMISSIVE shape, present in this file only as this gate's own falsifier, accepts an unknown flag
+         evidence: malformed vectors accepted none, legal shapes 9, permissive shape accepts unknown flags True
+  [PASS] G-SELFTEST-WRITES-NOTHING
+         the --selftest path corrupts an anchor in memory, dies at G-PROVENANCE and reaches no writer: the writer is called from exactly one place in this file and the self-test path does not reach it -- and the predicate is the AST probe's own value
+         evidence: the writer-shape probe reports the self-test path clean: True
+  [PASS] G-MUTANTS-ON-TARGET
+         all 56 declared mutants are run IN PROCESS and each dies at the gate it names, with the artifacts untouched
+         evidence: on target 56 of 56; misses none
+  [PASS] G-COVERAGE
+         #34 WITH AN HONEST DENOMINATOR: of the 63 gates this delivery run evaluates, 52 are falsified by at least one declared mutant and 11 are WAIVED with a forcing that says why they cannot fail.  The denominator is the gate count of THIS run, and the registry --list-gates prints is required to be EXACTLY that set
+         evidence: uncovered gates: none; declared registry 63 vs evaluated 63, drift none
+  [PASS] G-FALSIFIER-HONESTY
+         E-23: A FALSIFIER'S PUBLISHED DESCRIPTION IS PART OF THE SEALED SURFACE.  Each of the 56 declared falsifiers names THE SYMBOL IT MOVES and THE VALUE IT MOVES IT TO; both are re-derived from THIS FILE's own AST -- the innermost statement enclosing its hook -- and compared against the declaration, and the published prose is required to name both.  56 hook sites are located, and every hook in the file names a declared falsifier
+         evidence: declarations not matching their code: none; descriptions not naming their symbol and value: none; hooks naming an undeclared falsifier: none
+  [PASS] G-WRITER-SHAPE
+         THE SHAPE OF THE WRITER IS SEALED, AND SEALED BEFORE THE GATE LEDGER IS SNAPSHOTTED -- the one guard a post-snapshot gate's own removal cannot evade.  finish() calls 9 gates in source order, the terminal integrity gate appears exactly once among them, there are 2 os.replace calls, and every one sits BELOW that gate's own line
+         evidence: gates called in finish ['G-COVERAGE', 'G-FALSIFIER-HONESTY', 'G-WRITER-SHAPE', 'G-SWEEP-BOUND', 'G-ANCHOR-CONSUMERS', 'G-REACHABILITY', 'G-PAPER-COVERAGE-FINAL', 'G-SEAL-COMPLETE', 'G-ARTIFACT-INTEGRITY']; terminal gate present exactly once True; os.replace calls 2, all after the terminal gate True
+  [PASS] G-SWEEP-BOUND
+         THE SWEEP'S EXECUTION IS BOUND, NOT DECLARED: a delivery-level run must carry one sweep row per declared mutant (56), every row ON TARGET, and must have evaluated the sweep gate itself.  This run is delivery-level
+         evidence: sweep rows 56 of 56; sweep gate evaluated True
+  [PASS] G-ANCHOR-CONSUMERS
+         #62's consumer binding: every verbatim anchor names a gate, and each named gate is required to be in the DECLARED registry AND in THIS RUN's own evaluated ledger -- 11 distinct consumer gates
+         evidence: consumers not registered-and-evaluated: none
+  [PASS] G-REACHABILITY
+         #34 WITH REACHABILITY: every declared falsifier is checked to REACH its gate -- 56 falsifiers, 0 dead
+         evidence: dead falsifiers: none
+  [PASS] G-PAPER-COVERAGE-FINAL
+         the payload closes.  THE THREE GATE CARDINALITIES ARE NAMED RATHER THAN CONFLATED: 63 gates in the DECLARED REGISTRY, 61 evaluated and carried into the SEALED SNAPSHOT (this gate included), and 2 evaluated AFTER the snapshot.  All passed, and a RECURSIVE TYPE SCAN of the receipt finds no float anywhere
+         evidence: registry 63, snapshot 61, post-snapshot 2, snapshot names equal the registry True (delivery-level), float-valued receipt paths none
+  [PASS] G-SEAL-COMPLETE
+         THE TOTAL SEAL.  EVERY published receipt key is either sealed at the gate that certified it or listed as DECLARED-UNSEALED, and this gate compares the manifest against the DECLARED seal set rather than against the seals that happened to be taken.  The vouching layer is inside the seal: schema, provenance, paper claims, polarity, coverage, reachability, gates, totals and the transcript head
+         evidence: declared seals 34, taken 34, missing none, extra none, receipt keys not covered none, seals broken at close none, unsealed list frozen True and measurement-free True
+
+------------------------------------------------------------------------------
+TOTALS: 11 sources, 12 verbatim anchors, 63 gates in the registry (61 in the sealed snapshot, 2 after it), 56 mutants, 34 seals, 45 relation cells per arm, 7 fiber rows, horizon 5, 164,310 blindness checks
+------------------------------------------------------------------------------
