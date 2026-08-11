@@ -7705,3 +7705,18 @@ paper 3e0d3cb46ee4, code 9764427bf14a, output 576a8fc25d9a,
 receipt 0d56862768cb, note d3100a181aa0.  Committed AS-IS;
 orchestrator battery next; on green: TERMINAL + the
 prediction-ledger update in PLAN.md.
+
+## 2026-08-11 — PER-L TERMINAL: THE TWENTY-SECOND — THE FIRST TESTED PREDICTION SEALED (v14 LEDGER #251)
+
+Battery green (mirror byte-identical; unknown flag exit 2;
+selftest writes nothing; MUT-DDS-WINDOW dead exit 1;
+artifacts untouched — attribution carried by the worker's own
+72/72 out-of-harness adjudicated sweep).  **PAPER-28 IS
+TERMINAL — the twenty-second.**  STATUS row appended and the
+PREDICTION LEDGER updated in PLAN.md (both §13, same
+commit): entry (g) TESTED in three parts; entry (h) the DDS
+converse registered; the DDS theorem to the theorem column;
+entry (c) closed as the separation ladder.  The persistence
+verdict of record: selective survival — structure that is
+forced survives growth; coincidences of scale die; and the
+window law replaces the magic number.

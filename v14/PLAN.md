@@ -292,3 +292,17 @@ transport [pending PER-L test].
    **OCC → FCK** → SPT → GAP, with OCC free to run earlier
    the moment its pin parents are terminal (it does not
    depend on ACT/POT/BST).
+
+**PREDICTION-LEDGER UPDATE (2026-08-11, v14 #251, at PER-L's
+terminal):** entry (g) the Sidon transport — **TESTED, three
+parts: mechanism CONFIRMED (18/18 arenas); transport to the
+R-ladder CLOSED BY THEOREM (LINK Sidon at every L ≥ 3);
+control REFUTED-AS-STATED (alphabet-relative; the false
+universal entered at compression)**.  Successor entry (h):
+the DDS converse — DDS-carrying ⟹ interference — registered
+NECESSARY-NOT-SUFFICIENT with its falsification condition
+(already alphabet-relatively falsified at one probe; the
+in-alphabet question open).  "DDS-free ⟹ no interference"
+moves to the THEOREM column (field-free; nine characteristics
+exercised).  Entry (c) closed at GDL's terminal as the
+separation ladder (threshold-invariant form).
