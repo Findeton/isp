@@ -4766,3 +4766,64 @@ corpus-wide eq-22 caution registered; the whole thing sealed
 17-objects + 160-rows deep.  STATUS row written (same commit,
 §13).  Remaining in flight: paper-19 (the weld answer).  The
 coupling unit's first prerequisite is NOW MET.
+
+## 2026-08-10 — PAPER-19 DELIVERED, COMMITTED AS-IS: THE WELD ANSWER IS FOUND (v14 LEDGER #162)
+
+**VERDICT (CANDIDATE READING UNTIL ADJUDICATED):
+WELD3-FOUND-[ACTOR→SITE | CO-DIVISION-ACTOR-PAIR→LINK |
+DIVISION-COUNT→n_ℓ(x)] @ EMBEDDING+QUOTIENT — FOUND at BOTH
+reading stamps, 1296 isomorphisms / 1296 quotient maps, fibers
+1/1/1, ZERO free items at the RSQ standard.**  The dictionary
+is the natural one: actors are sites, co-division pairs are
+links, division counts are the metric.  18 census rows (FOUND
+6, STRUCT-DEAD 4, COUNT-DEAD 4, UNMOTIVATED 2, ARITY-DEAD 2);
+all controls two-way and falsified (crystal@L2 FOUND with
+weld-2's own 72 read-and-reproduced; the withheld-arbitration
+falsifier UNMOTIVATED at site fiber 6 = weld-2's committed
+value; the walk ARITY-DEAD; crystal@I7 STRUCT-DEAD; the
+R3-falsifier STRUCT-DEAD); **the readings differ and that is a
+result** (dead rows die at STRUCTURE under embedding, at COUNT
+POSITIVITY under quotient).  **Stage 1 unit-grade:** the R=3
+saturation confirmed AND DRIVEN (27/27 cells n=1; q =
+[[1,−1/2],[−1/2,1]]; det 3/4; posdef 9/9; FORCED 1040/1040
+with both negative fates exhibited); Z₃² REACHABLE at R=3
+(1,680 triples — U4b's "never occurs" was a budget fact); the
+affine-on-union law 3,924/3,924; **THE FRAGILITY CONTRAST
+(unanticipated): seed edits break the crystal and never the
+geometry (151,632/151,632 vs invariant under all 19,683 seed
+choices); grouping edits break the geometry (5,832/5,832) —
+crystallinity and geometry are INDEPENDENT VARIABLES at R=3.**
+**Stage 2:** the posdef ceiling 9 ATTAINED (72 of 21,952,000
+ordered triples; the distribution printed; **8 NEVER ATTAINED
+— attained or missed by at least two**); the rigidity
+I7-STRICT = POSDEF-9 = field≡1 (72 triples, 12 multisets,
+mostly non-collinear; the effectus's configuration 1 of 12);
+back-anchored at R=2 to U4b's committed row exactly.  **THREE
+QUALIFICATIONS TRAVEL WITH THE VERDICT:** the schedule is
+grammar-admissible NOT committed (d66's own R=3 point is
+COUNT-DEAD); the induced (1,1,1) record is
+admissible-but-undeclared (inside I7's own 361-point box —
+recomputed, matches — outside its 11 declared records); the
+stratum is 72 of ~22M in the committed naming.  **Surprises:**
+the empty cell at 8; **the coordinate-free class is 288 = 4×72
+(the worker's own declared fate for ROW|COL|ANT corrected by
+its measurement — both numbers travel)**; count-sufficiency
+(≥27 measured ALSO SUFFICIENT at this arena and family, scoped
+hard).  The window W3 = 1040 driven of 4.32×10¹¹, licensed by
+the U4b equality gate 1040/1040; geometry (21,952,000),
+crystallinity (592,704), and fragility (1,417,176) EXHAUSTIVE
+— no window caps them.  Instrument: 68 gates; 59 mutants all
+named-gate (the sweep earned its keep: caught a
+cached-list-mutating mutant, two inert mutants, three
+pipeline-shape asymmetries); 26 declared seals + 4
+declared-unsealed (the total seal caught three post-seal
+mutations and two unsealed keys); byte ×2 under different
+seeds; 10 hostile argv exit 2.  **DISCLOSED ANOMALY (per the
+converge order): the off-tree/git-less leg ran the FULL
+pipeline (all 13 pinned reads resolving) but failed at
+G-MUTANTS-ON-TARGET on an accounting defect the final code
+fixes — NOT re-executed against the final code; #91 evidenced
+for everything but that last patch** — for my battery and the
+panel.  Artifacts committed as-is: paper c669ab35e12a, code
+7a84aa27de8d, output 76ef29488b60, receipt 03670731ba1c.
+Battery + protocol + panel next.
