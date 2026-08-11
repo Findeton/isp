@@ -6516,3 +6516,42 @@ census-total conjunct; the slack-census framing; the DIA
 gate; the MINOR sweep; the three-measure stamps).  Repair
 worker launched (Opus).  After repair + battery: paper-21
 TERMINAL (the nineteenth) → SIG + PER-R pins unlock.
+
+## 2026-08-11 — PAPER-22 INSTRUMENT REVIEW LANDED (K3): AWF — PHANTOM GATE CONSUMERS; THE SEAL WINDOW OPEN AT 24/30; THE WALL WITHOUT AN INSTRUMENT (v14 LEDGER #212)
+
+v14/review-r4c-instrument.md frozen.  **Grade AWF; 113
+processes + 96 independent recomputations, ZERO false
+computed numbers; the head and every content segment reached
+SURVIVE UNQUALIFIED** (64/64; the leak set EQUAL to the
+non-monomial set; 588/3364 + the parent's whole multiset; the
+fold 0/3364×16; 3306/3306; **the central triple identity
+confirmed at coin granularity: on 259 pairs the
+discrimination set = the contact-moved set = the
+single-excitation defect set = ONE 43-ELEMENT SET**
+[adjudication note: reconcile granularities with K2's
+588-pair statement — same identity, two resolutions]).  FOUR
+MAJORS, each demonstrated: **M1 — 30 sealed rows name 12
+GATES THAT DO NOT EXIST** (phantom consumers; the
+no-particle-naming WALL HAS NO INSTRUMENT — the inverted wall
+sentence "A particle is named…" PASSED; not birth-date-excused
+— r4b ships zero phantoms and the sibling shipped
+G-ANCHOR-CONSUMERS at #179); **M2 — 12/17 paper injections
+survive at exit 0** incl. a forged second fence asserting
+FORCED-ANTISYMMETRIC (licensing is set-membership over a
+218-pool with 39 sha-digest members; 11/15 claim strings
+occur 2–5× — twin shadowing; multiset/tables birth-date-fair
+at #198, the second-fence charged under #168); **M3 —
+G-CACHE-UNPOLLUTED under-bound** (fabricated report; 7/11
+fields of 1/7 caches; svals uncaught) though the repair
+itself holds (sibling sweep: no live pollution); **M4
+(sharpest) — THE SEAL WINDOW IS OPEN AT 24/30 SEALS** (the
+premature-seal repair covered only the six late seals; INJ-11
+delivers a SEALED receipt asserting 65-on-a-64-pool beside
+counts.pool=64, all 60 gates passing, SEAL.verify silent).
+Two false §11 prose claims.  48/48 anchors kill; 37/37
+out-of-process mutants on target; 15/16 argv.  DISCLOSED
+SHORTFALL (§14, honest): machine load 170–230 from concurrent
+seats — four confirmations unfinished (byte ×2 across seeds
+FIRST; post-write-to-writer; 19/56 mutants; the cache
+fingerprint) — routed to the repair worker's battery and
+mine.  12 MINORs.  → adjudication when K1 lands.
