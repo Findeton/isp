@@ -5976,3 +5976,24 @@ anchors, 30 seals, byte ×2, selftest dies writing nothing.
 Shas: paper 1b4ac134e727, code deb0c1c83a76, output
 45866a3ed5e3, receipt 5c058006db78.  Committed AS-IS; battery
 next; panel after.
+
+## 2026-08-11 — PERSISTENCE PROMOTED TO WAVE A BY USER DIRECTIVE; PER-L PINNED AND LAUNCHED; PER-R REGISTERED (v14 LEDGER #196)
+
+The user pressed the persistence inconsistency ("if this is so
+important, exactly how do you think we should change the
+plan") — the orchestrator's own epistemics ("what would move
+me most") demanded first-wave status.  Charter amended (#196
+in PLAN.md).  **v14/note-perl-pin.md FROZEN** — paper-28
+PER-L, the L-ladder persistence census: THE SIDON TEST (the
+first test of a terminal unit's registered prediction —
+prediction-testing becomes first-class practice);
+VMAX=diameter at L=6/8 + interior radii; the gauge fingerprint
+along L (GGS's first datum); locality windows; per-invariant
+PERSISTS/BREAKS/TRANSFORMS with witnesses.  Parents all
+terminal/frozen: R4 583cae7, R4b 6d32993, R5 987cd73, the #187
+adjudication 159200e, R2.  PER-R (paper-29) registered with
+pin obligation at paper-21's terminal (R=5 windowed).  Wave A
+= SIG + GDL + PER-L + CR-B.  R6b retirement RECOMMENDED,
+awaiting the user's word.  Construction worker launched
+(Opus).  Flight: paper-20 repair, paper-23 repair, paper-21
+delivery checks, paper-22 battery (background), PER-L worker.

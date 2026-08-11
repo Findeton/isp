@@ -248,3 +248,23 @@ declared priced), slotting between BST and SPT.  Without it
 the species table is stratified at fixed excitation number;
 with it, species become countable quanta.  The chain reads
 ACT → POT → BST → FCK → SPT → GAP.
+
+**AMENDMENT (2026-08-11, v14 #196) — PERSISTENCE PROMOTED TO
+WAVE A (user directive):** the open bet "forced structure
+survives growth" gets first-wave status as two units.
+**PER-L (paper-28)** — the L-ladder census (pins NOW: R4, R4b,
+R5 terminals + the #187 adjudication's registered Sidon
+prediction; contents: the Sidon prediction TESTED — the
+programme's first test of a terminal unit's registered
+prediction; VMAX=diameter extended to L=6/8; the gauge
+fingerprint along L; locality windows; per-invariant
+PERSISTS/BREAKS/TRANSFORMS).  **PER-R (paper-29)** — the
+R-ladder census (pin obligation at paper-21's terminal: the
+dictionary, the price law, record-class structure, signature
+reachability at R=5, windowed under the licensing pattern).
+Wave A now = SIG + GDL + PER-L + CR-B.  Wave C's GAP
+persistence half points at PER-R.  **R6b: retirement
+RECOMMENDED** (its question lives in PER-L/PER-R with clean
+preconditions) — awaiting the user's word, as R6b was
+user-ordered.  Prediction-ledger entry (g) added: the Sidon
+transport [pending PER-L test].
