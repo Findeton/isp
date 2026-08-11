@@ -6312,3 +6312,53 @@ prediction-ledger entry (no SI numbers; the V5P2/DP citation
 shape-only).  Worker launched (Opus).  In flight (10): GDL +
 SMU + PER-L constructions; the paper-21 and paper-22 panels
 (3+3); REQ2 armed awaiting capacity.
+
+## 2026-08-11 — PAPER-22 EFFECTUS REVIEW LANDED (K2): AWF — TWO HEADLINES STRONGER THAN DELIVERED; THE 6-AND-12 SENTENCE UNLICENSED; THE OCC UNIT PROPOSED (v14 LEDGER #206)
+
+v14/review-r4c-effectus.md frozen.  **Grade AWF; 65 exact
+recomputations + ~302k instance evaluations; ZERO false
+computed numbers.**  The unusual balance: two headlines
+STRONGER than delivered — (1) BOTH-ADMITTED is earned AS A
+THEOREM at all four arenas (A2's "not forced" waiver is
+wrong: the Sym² hard-core cell is 2·U_ax·U_ay with no
+cancellation ⟹ **leak ⟺ non-monomial FOR EVERY UNITARY, 240
+exact, 0 violations**; A4 forced by U⊗V=V⊗U ⟺ V=cU); the
+two-way design proves the head law DISCRIMINATES, not that
+the verdict was in doubt [MAJOR-1]; (2) **the
+indistinguishability theorem is UNIVERSAL — B(U⊗U)=B(U)⊗B(U),
+Δ₂=Δ⊗X+Y⊗Δ, X⊗X=Y⊗Y ⟺ X=Y, telescoping to ALL n** — but
+carried no claims row or stamp [MAJOR-3].  **MAJOR-2 (the
+deepest row): the ceiling is a DECLARATION, genuinely open,
+and the paper's answer right — but the "count registers run
+to 6 and 12, against the hard core" sentence is UNLICENSED**
+(count_lattice is v13/HA's LINK-register sweep bound, not a
+site capacity; the stage's only site-indexed register is
+BINARY; the gate sealed the inference testing regval==6 —
+E-23 shape); repair: the positive gate (27 stage keys, 0
+occupancy-shaped, verified).  **THE FORCING REGISTER ROW
+written with its exact conditional: weld ACTOR→SITE bijection
++ excitation↔actor injection + closure-required + the full
+64-pool ⟹ FERMIONIC-SHAPE IS A THEOREM OF THE COUPLED THEORY
+— with the four premises it is not, and the one-way
+asymmetry: EXCLUSION CAN SELECT A SHAPE, PERMISSION CANNOT.
+Owner: a new OCC unit, BEFORE FCK** [plan impact — for the
+adjudication].  Pauli: the paper never overclaims (zero
+Pauli/spin/relativity words; licensed form exclusion ⟹
+antisymmetry as a Sym² theorem; "the symmetric option is
+inconsistent" NOT licensed — it fails to CLOSE at 48/64,
+survives on the monomial 16).  MAJOR-4: the 588 triple is
+CIRCULANT-STRATUM-scoped — 360 overlap-2 rows where the
+substrate interferes and the shape discrimination was NEVER
+TAKEN (raw_overlap computes both, compares neither); cheap
+repair decides it.  MAJOR-5: braid/topology unstamped in a
+d=2 arena (S₂≠B₂).  MAJOR-6: NO choice inventory in the unit
+whose thesis is that a declaration decides (both parents
+publish one); ten-row inventory supplied.  8 MINORs incl.
+§7's false mechanism (the modulus-1/√3 reason wrong; the
+measurement stands) and E-24 unstamped (birth-date noted:
+pin #174 predates #192).  Walls held.  Successor register:
+OCC; the 360 rows; FCK's verbatim inheritance (ceiling as
+priced fibre-2; the leak mechanism at every n; the
+labelled-sector theorem at every n; the sector count that
+does NOT lift); SPT's defect-as-discriminator WITH ITS BLIND
+SET.  → adjudication when K1+K3 land.
