@@ -6451,3 +6451,41 @@ seed and a pin obligation at paper-22's terminal; FCK now
 inherits the ceiling from OCC.  The paper-22 adjudication will
 still rule on the panel's OTHER proposals; OCC's adoption is
 settled by user order.
+
+## 2026-08-11 — PAPER-21 INSTRUMENT REVIEW LANDED (K3): AWF — THE W4 LICENSE UNDER-CLAIMS; FIVE PERIMETER MAJORS; E-24 MEASURED STABLE (v14 LEDGER #210)
+
+v14/review-r4dec-instrument.md (5490807d2796) frozen.  **Grade
+AWF; 165 invocations, 7 reviewer programs, 653 recomputations,
+0 mismatches against any delivered number.**  HELD: byte ×2
+off-tree git-less across two seeds; 50/50 mutants outside the
+harness on target; 27/27 seals + corruptions caught; 21/21
+anchors non-vacuous with consumers evaluated; 27/27 hostile
+argv; #125 13/13 evasions caught; a clean-room rebuild sharing
+no code reproduced EVERY combinatorial column incl. 100,080 by
+meet-in-the-middle.  **ROW 1: THE W4 LICENSE — THE UNIT
+UNDER-CLAIMS** (300 out-of-window schedules + 72 non-canonical
+seeds: 0 mismatches; no column claimed exhaustive rests on the
+window — all rest on the budget theorem, verified as a
+theorem).  FIVE MAJORS, all paper-facing perimeter, none
+moving a number: M1 the verdict fences use CONTAINMENT with
+each fence present TWICE — forging either copy (incl.
+UNMOTIVATED→MOTIVATED) passes exit 0 (the E-22 two-copy
+disease, the paper-20 pattern recurring); M2 zero table rows
+rendered as claims (five forgeries survive incl.
+census-FOUND); M3 a 42-literal hand list silently unioned
+into coverage (11 dead; the 12→13 head-contradiction exploit
+passes); M4 seven falsifiers are constant-False conjuncts
+with INVERTED descriptions (E-23) — the reviewer's five
+shadow-object mutants died at their own gates (honesty
+defect, not a hole); M5 the comparator shares ≥14 typed
+literals with the builder — **q=[[1,0],[0,1]], the induced
+form the Lorentz wall is about, typed in three places and
+derived nowhere** (the §14 disease's third recurrence).  11
+MINORs with exact repairs.  **E-24 row: the sharpest fraction
+measured under THREE invariant measures — 79.03% / 79.08% /
+98.57% — MEASURE-STABLE.**  Birth-date rulings: E-24 fully
+excused; E-22/E-23 consequences stand as MAJOR only because
+#20/#34 (in the unit's own 21) already carry the obligation;
+M3/M5 NOT excused.  Two reviewer self-corrections recorded
+in-review (a shell-pipe rc bug; INJ-18 withdrawn).  → THE
+ADJUDICATION (all three seats in).
