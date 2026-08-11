@@ -5997,3 +5997,58 @@ pin obligation at paper-21's terminal (R=5 windowed).  Wave A
 awaiting the user's word.  Construction worker launched
 (Opus).  Flight: paper-20 repair, paper-23 repair, paper-21
 delivery checks, paper-22 battery (background), PER-L worker.
+
+## 2026-08-11 — PAPER-21 (THE R=4 ARENA) DELIVERED: WELD FOUND-AT-THE-FORCED-CARRIER; SPLITTABLE=YES — THE LAW-OVER-RECORDS DOOR OPENS WITH EXACTLY ONE LAW; THE COVER BINDS; COMMIT-AS-IS (v14 LEDGER #197)
+
+The R=4 worker delivered; all candidate readings.  **Stage 1 —
+the 276 CONFIRMED AND STRENGTHENED:** three routes agree (276;
+12 multisets); the saturation theorem (max incidences per
+round 9, G-FLAT needs 36 = 4×9, every round must saturate)
+makes the census EXHAUSTIVE over the whole
+6,146,560,000-quadruple family, not just 36⁴; driven FORCED
+600/600; the induced record EXACTLY I7's G-FLAT (1,1,2), det
+1, posdef 9/9.  **Stage 2 — THE WELD:
+R4W-DECLARED-WELD-FOUND-AT-THE-FORCED-CARRIER,
+UNMOTIVATED-AT-THE-FREE-ASSIGNMENT** — structure passes both
+readings (1296 = 1296 equality) but fibers 36/3/1 (2 free
+items) vs R=3's 1/1/1; TWO THEOREMS carry it: zero-free-items
+holds exactly at link-constant records (n,n,n), I7 declares 0
+of 9 such (its box holds 6, all undeclared); and at R=4
+link-constancy is ARITHMETICALLY IMPOSSIBLE (36 incidences
+cannot spread constantly over 27 cells) — the declared record
+and the free map cannot both be had at this budget; the R=3
+perfection was the special case.  **Stage 3 — SPLITTABLE=YES
+at 9 of 27 intervals (fiber 1 each): THE FIRST WELDED RECORD
+WITH POSITIVE SPLIT FIBER.  Exactly ONE law becomes non-empty:
+paper-06's per-interval invariant law — and there it is
+UNIQUE (fiber 1, orbits 1, simplex dim 0 = n−2,
+pinned-transitive)**; paper-04 EMPTY (dyadic needs the
+product; per-interval is R6a's REFUSED class); paper-09 EMPTY
+at a NEW mechanism (all 27 counts inside its measured support
+hole g(1)=g(2)=0; doubly — G-FLAT one of its three excluded
+records).  Scale row: the first refinable member (2,2,4) =
+G-DIAG2 at budget 72 = R=8, reachable by concatenation.
+**Stage 4 — THE PRICE ROW: R=2 budget binds → R=3 matching
+binds → R=4 THE COVER BINDS** (COVER-27 = POSDEF-9 =
+I7-STRICT = 100,080 of 6,146,560,000, exhaustive by the
+budget theorem; slack 9); back-validation reproduces
+paper-19's 72 and U4b's ceiling.  SURPRISES: the
+field-identically-1 quadruple is STRUCT-DEAD (the ANT round
+deposits 9 foreign co-division pairs) — forcing the two-way
+FOUND control onto the driven R=3 record and producing the
+constancy-impossibility theorem; label/orient fibers NOT
+base-map invariant at R=4 (spreads [3,6]/[1,2]) though the
+verdict is; **paper-19's sitewise identity FALSE on the R=4
+code space — 3 breaking codes, all det 0, one being I7's own
+G-SINGULAR — yet NEVER occurring inside a covering quadruple
+(0 occurrences): an empty cell with teeth**; R=4 the first
+mostly-inhomogeneous budget (20,988 vs 79,092; det spectrum
+{3/4, 1, 7/4} — note: no negative det in the covering class;
+the indefinite form stays a walk-exit object, SIG's question).
+Counts: 60 gates (0 uncovered), 50/50 mutants on target, 27
+seals, 1068 numerals (296 in fenced blocks) 0 unbacked, byte
+×2 + off-tree hostile-PATH different-seed.  Shas: paper
+f54dad8d51b8, code e387674bfcdd, output 27ed73ded234, receipt
+e1f148dd6a0e.  Committed AS-IS; battery next; panel after.
+PER-R (paper-29) pin obligation now armed at this unit's
+terminal.

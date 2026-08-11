@@ -1,0 +1,277 @@
+==============================================================================
+v14 R=4 -- THE DECLARED-RECORD WELD AND THE SPLITTABLE QUESTION
+paper v14/paper-21-r4dec.md   pin v14/note-r4dec-pin.md
+==============================================================================
+
+[SEC 1] PROVENANCE
+  [PASS] G-PROVENANCE
+         THE 18 RUNTIME SOURCES ARE PINNED BY CONTENT (#46/#91).  Every file this run reads is declared in the frozen table above with its sha256-12; the digest is recomputed from the bytes read and compared.  --break-anchor NAME corrupts any one of them and the run dies here
+         evidence: A-PIN ok; A-P19 ok; A-P19REC ok; A-R3WEFF ok; A-HA ok; A-I7 ok; A-P04 ok; A-P04REC ok; A-P06 ok; A-P06REC ok; A-P09 ok; A-P09REC ok; A-D42B1 ok; A-D60 ok; A-D66 ok; A-D66OUT ok; A-L1 ok; A-CAT ok
+  [PASS] G-READS-DECLARED
+         THE READ SET IS EXACTLY THE DECLARED SET.  Nothing outside the 18 pinned sources is opened, and every path is resolved from this module's own location rather than from the working directory, so the run is correct OFF-TREE and with NO VERSION CONTROL present
+         evidence: declared 18, read 18, difference none
+  [PASS] G-EXACT-ARITHMETIC
+         EXACT ARITHMETIC, SCANNED RATHER THAN PROMISED.  An AST scan of this file finds no float literal and no true division anywhere; every quotient is a Fraction or an integer floor division
+         evidence: float literals 0, true divisions 0
+  [PASS] G-NO-SUBPROCESS
+         NO SUBPROCESS OF ANY KIND (#91 off-tree/git-less).  The import set is scanned: no `subprocess`, no `shutil`, no `socket`, no `urllib`.  A run inside a mirror holding only the pinned sources and no version control produces the same bytes
+         evidence: imports ['ast', 'collections', 'fractions', 'hashlib', 'itertools', 'json', 'os', 're', 'sys']
+  [PASS] G-VERBATIM
+         THE #62 ANCHORS ARE MATCHED IN THE PINNED BYTES.  21 needles, each above the 30-character canonical floor, each naming the gate that consumes it; both sides of every match are whitespace-normalised, ASCII-folded and stripped of markdown line prefixes, so a needle spanning a block quote or a numbered list cannot be evaded by re-wrapping
+         evidence: anchors 21, missing none
+  [PASS] G-I7-READOUT
+         THE READOUT IS I7's OWN, matched verbatim in its pinned bytes and used unchanged: q11 = n_e1, q22 = n_e2, q12 = (n_(e1+e2) - n_e1 - n_e2)/2, the invertible linear re-encoding whose determinant I7 measured at 2 and this run recomputes.  Applied to I7's OWN declared record family it separates 7 admissible records from 2 inadmissible ones.  THE TARGET IS I7's OWN COMMITTED G-FLAT ROW, read from its receipt: (1, 1, 2), q = [[1, 0], [0, 1]], det = 1
+         evidence: re-encoding determinant 2; admissible declared records ['G-ANISO', 'G-ANISO2', 'G-DIAG2', 'G-FLAT', 'G-OFFDIAG', 'G-OFFDIAG2', 'G-OFFNEG']; rejected ['G-INDEF', 'G-SINGULAR']; target (1, 1, 2) admissible True det 1
+  [PASS] G-ANCHORS-READ
+         4 numbers are READ from committed files at run time and either RECOMPUTED here or carried as the committed side of a later gate, never re-typed: I7's own admissible-point count for its declared count box, I7's readout re-encoding determinant, paper-19's own R = 4 register row, and d66's own GRID(g=3,R=4) row
+         evidence: N-I7-BOX committed=361 computed=361; N-READOUT-DET committed=2 computed=2; N-P19-R4-REGISTER committed=276 computed=None; N-D66-GRID34 committed=[66, 12, 18] computed=None
+
+[SEC 2] THE R = 4 FAMILY, THE BUDGET THEOREM AND THE DECLARED WINDOW
+  [PASS] G-PARTITION-COUNT
+         THE ROUND'S OWN FAMILY, COUNTED TWICE BY ROUTES THAT SHARE NO CODE.  A round of the committed cycle partitions the nine sites into three conflict triples: exhaustive enumeration and the closed form 9!/(3!^3 3!) must agree
+         evidence: enumerated 280, closed form 280
+  [PASS] G-BUDGET-THEOREM
+         THE BUDGET FORCING, MEASURED AND THEN USED.  No round of this cycle can deposit more than 9 link incidences -- measured exhaustively over all 280 partitions, whose incidence spectrum is [(0, 1), (4, 27), (6, 54), (7, 162), (9, 36)] -- so four rounds carry at most 36.  I7's own G-FLAT needs 36.  Equality forces EVERY round to saturate, so the census over the 36 saturating partitions is EXHAUSTIVE OVER THE WHOLE 280^4 FAMILY and not a restriction of it
+         evidence: max per round 9, rounds 4, budget 36, G-FLAT needs 36, saturating partitions 36
+
+[SEC 3] STAGE 1 -- THE 276, UNIT-GRADE
+  [PASS] G-276
+         THE PIN'S PRIMARY OBJECT, REBUILT UNIT-GRADE AND COUNTED TWICE.  Exhaustive over all 1679616 ordered quadruples of saturating groupings -- which the budget theorem makes exhaustive over all 6146560000 ordered quadruples of partitions -- the summed link field is I7's own committed G-FLAT row at all 27 cells at exactly 276 of them, in 12 multisets.  Route 1 packs the field at four bits per cell and compares packed integers; route 2 sums 27-vectors and compares entry by entry against the vector I7's own row induces, sharing no code, no packing and no typed target with route 1.  Paper-19's own committed register row is 276
+         evidence: route 1 276, route 2 276, paper-19's committed row 276, multisets 12
+  [PASS] G-276-STRUCTURE
+         THE 276 ARE NOT ONE ARRANGEMENT.  They fall into 12 grouping multisets with orbit sizes [(12, 1), (24, 11)], and EXACTLY ONE of the 12 is the collinear arrangement -- the three link-direction parallel classes of AG(2,3) with the diagonal class taken twice.  The other 11 each contain conflict groups that are not lines of AG(2,3), exactly as paper-19 measured at R = 3
+         evidence: multisets 12, orbit-size spectrum [(12, 1), (24, 11)], collinear multiset present True, non-collinear 11
+
+[SEC 4] THE COMMITTED GRAMMAR, DRIVEN DIRECTLY
+  [PASS] G-SLICE-EXIT-FREE
+         THE COMMITTED LAYERS ENTER AS SINGLE SOURCES AND CANNOT EXIT.  d42b1's transport layer is taken as a TEXT SLICE cut at the layer's own banner print, so its menu function `candidates_for` -- this unit's only source of admissibility -- is the committed one and nothing below the cut can run; d60's `B`/`dl` and d66's `conflict_grid` enter by AST extraction of their definitions, so no module-level statement of theirs can run either
+         evidence: slice exit-free True, extracted bodies exit-free True, slice ends at char 16129 of 40838
+  [PASS] G-DRIVER-ANCHOR
+         THE GENERALIZED DRIVER IS ANCHORED AGAINST THE OBJECT IT GENERALIZES, AT THIS UNIT'S OWN BUDGET.  d66's committed `conflict_grid(3, 4)` is re-run in this process and the schedule-driven builder is run at d66's own R = 4 schedule -- rounds alternating ROW and COLUMN on the diagonal seed -- and the two emit IDENTICAL event lists.  The profile is then compared against d66's OWN COMMITTED OUTPUT ROW, read from its pinned bytes at run time: GRID(g=3,R=4) n = 66, arbs = 12, deliveries = 18
+         evidence: identical event lists True, driven row (66, 12, 18), d66's committed row (66, 12, 18)
+  [PASS] G-MENU-PURE
+         THE MEMO IS GATED RATHER THAN TRUSTED.  d42b1's `candidates_for` is a pure function of (history, initiators) and this run caches it on exactly that pair; 2 declared schedules are re-driven through a SECOND builder bound to the RAW layer function with no cache at all, and their records are compared event kind for event kind and footprint for footprint
+         evidence: schedules re-driven without the memo 2, records identical True, memo calls 258 hits 137
+
+[SEC 5] THE DECLARED DRIVEN WINDOW W4
+  [PASS] G-WINDOW-DISCLOSED
+         THE DRIVEN WINDOW IS DECLARED, DISCLOSED IN THE HEAD, AND CONTAINS THE PIN'S PRIMARY OBJECT ENTIRE.  W4 is 600 schedules of the 3266533992960000 the R = 4 family carries: {'W4-CLASS': 256, 'W4-FLAT': 264, 'W4-SEEDFAN': 80}.  Its grouping quadruples number 520 of the 6146560000, and ALL 276 G-FLAT-inducing quadruples are inside it -- the primary object is exhausted, not sampled.  Every other column below is exhaustive over an object the window does not cap
+         evidence: window 600, groupings 520, all 276 flat quadruples inside True
+  [PASS] G-DRIVEN-EQUALS-COMBINATORIAL
+         THE LICENSE FOR EVERY EXHAUSTIVE COLUMN, RE-MEASURED AT THIS BUDGET.  For every one of the 600 driven window records the link field read off the DRIVEN record -- the footprints taken from the layer's own `regs_of` -- equals, cell by cell, the field the combinatorial route computes from the schedule's groupings alone.  Nothing downstream quantifies over a combinatorial object without this equality
+         evidence: records compared 600, mismatches 0
+  [PASS] G-FORCED
+         FORCEDNESS, PER OBJECT.  Every event of every window schedule is specified by its FULL TUPLE, so at most one menu candidate can match and the builder's tie-break is never consulted; the builder's own `maxhits` is read at every schedule and required to be 1 there.  Measured: FORCED at 600 of 600, BRANCHING 0, REFUSED 0
+         evidence: FORCED 600 of 600; branching 0; refused 0
+  [PASS] G-RECORD-SHAPE
+         EVERY WINDOW RECORD CARRIES EXACTLY 12 DIVISION EVENTS -- one arbitration per conflict group per round -- and record length is a clean spectrum [(48, 4), (54, 36), (60, 210), (61, 30), (62, 68), (63, 38), (64, 72), (65, 28), (66, 114)], the conflict supply being the only variable: a round needs no supply for a group whose members already share a base
+         evidence: division-event counts [(12, 600)], length spectrum [(48, 4), (54, 36), (60, 210), (61, 30), (62, 68), (63, 38), (64, 72), (65, 28), (66, 114)]
+  [PASS] G-CTRL-REFUSED
+         THE REFUSAL FATE IS REACHABLE AND THE INSTRUMENT SEES IT.  The collinear arrangement is re-driven with its FIRST conflict-supply delivery withheld; the committed layer then refuses the first proposal by an actor that does not hold the base, and the refusal is RECORDED, never patched
+         evidence: refusal ('propose G10', 14)
+  [PASS] G-CTRL-BRANCHING
+         THE BRANCHING FATE IS REACHABLE, AND THE CONTROL IS REPRODUCIBLE.  The collinear record is replayed to its first arbitration, ONE under-specified pick is made -- the initiator named and the conflict and winner keys withheld -- and the builder's own `maxhits` rises above 1.  Only the COUNT is reported and the control STOPS THERE: d60's `pick` breaks ties with sorted(key=repr) and a frozenset's repr depends on the interpreter's per-process string hashing, so WHICH candidate an under-specified pick selects is not reproducible across runs -- a control that continued past one such pick would carry that irreproducibility into the delivered bytes
+         evidence: maxhits under-specified 7 at prefix 3 on initiator G00, maxhits fully specified 1
+
+[SEC 6] STAGE 1 -- THE INDUCED RECORD, DRIVEN
+  [PASS] G-UNIT-GRADE
+         THE PIN'S STAGE-1 DEMAND, DRIVEN AND CHECKED PER OBJECT.  The collinear arrangement -- ROW, COL, DIA, DIA, every event taken from the committed layer's own menu -- runs to 60 events with 12 division events, and its DRIVEN link field is I7's own committed G-FLAT row (1, 1, 2) at every one of the nine sites: 27 of 27 cells at target, det = 1 at 9 of 9 sites, positive definite at 9 of 9.  Every site is checked against its own value, never against an aggregate
+         evidence: sites at G-FLAT 9 of 9, cells at target 27 of 27, det 1 everywhere True, posdef 9 of 9
+  [PASS] G-DECLARED-RECORD
+         THE INDUCED RECORD IS ONE OF I7's ELEVEN DECLARED RECORDS -- compared PER RECORD against the induced vector's whole chart orbit under I7's own declared chart group, never by name.  It is G-FLAT, and paper-19's landing record (1,1,1) is not in the declared list at all: the undeclaredness one round down was a budget fact and it dissolves here
+         evidence: chart orbit [(1, 1, 2)], declared records hit ['G-FLAT'], declared family size 11
+  [PASS] G-SEED-INVARIANCE
+         THE GEOMETRY IS A FUNCTION OF THE GROUPINGS ALONE, DRIVEN.  The declared seed fan drives the collinear arrangement at all 81 canonical transversal quadruples of its four rounds, and all 81 records carry ONE AND THE SAME driven link field.  At this generator a division event's footprint IS its conflict group, so this confirms the mechanism rather than discovering it
+         evidence: seedings driven 81, distinct driven fields 1
+  [PASS] G-RESOLVABLE-TABLE
+         THE COMMITTED RESOLVABLE DEVICE REACHES THE DECLARED RECORD.  All 256 ordered quadruples of the four parallel classes of AG(2,3) are driven; every one induces a HOMOGENEOUS field, the 35 distinct multisets giving 35 distinct records of which 4 are admissible and 1 lie in the chart orbit of a declared I7 record.  d66's own device, extended two rounds and grouped on the three link directions with the diagonal twice, is one of them
+         evidence: multisets 35, admissible 4, declared-orbit [('COL', 'DIA', 'DIA', 'ROW')]
+
+[SEC 7] STAGE 2 -- THE DECLARED-RECORD WELD
+  [PASS] G-FLAT-ARENA-IDENTITY
+         ONE ARENA, MEASURED RATHER THAN ASSUMED.  All 356 driven G-FLAT schedules are turned into co-division arenas and every one of them carries the IDENTICAL relation: the same nine site objects, the same realised pairs and the same count on every one.  The census below therefore has one arena and not 356, and that is a measurement
+         evidence: driven G-FLAT schedules 356, distinct arena signatures 1
+  [PASS] G-CONSTANCY-IMPOSSIBLE
+         THE ARITHMETIC THAT DECIDES THE RSQ STANDARD AT THIS BUDGET, AND IT IS A THEOREM.  A round's realised co-division pairs are its conflict groups' own pairs, so a round whose relation stays inside the target's incidence is exactly a SATURATING one -- the field-identically-1 quadruple ROW/COL/DIA/ANT deposits 27 incidences on I7's links and 9 FOREIGN pairs, and is STRUCT-DEAD for that reason.  A clean R = 4 arena therefore spreads 36 incidences over 27 cells, and 36 is not a multiple of 27: a LINK-CONSTANT field is arithmetically impossible at R = 4, while at R = 3 the 27 incidences over 27 cells force one.  Zero free items and R = 4 cannot be had together at this carrier, whatever the record
+         evidence: R=4 incidences 36 over 27 cells, remainder 9; R=3 27 over 27, remainder 0; foreign pairs in the ANT quadruple 9
+    R4-FLAT                                        @EMBEDDING -> UNMOTIVATED
+    R4-FLAT                                        @QUOTIENT  -> UNMOTIVATED
+    R3-SAT(the same constructor, one round shorter) @EMBEDDING -> FOUND-candidate
+    R3-SAT(the same constructor, one round shorter) @QUOTIENT  -> FOUND-candidate
+    R4-ONE-ANT(field identically 1)                @EMBEDDING -> STRUCT-DEAD
+    R4-ONE-ANT(field identically 1)                @QUOTIENT  -> STRUCT-DEAD
+    R4-COMMITTED-GRID(3,4)                         @EMBEDDING -> STRUCT-DEAD
+    R4-COMMITTED-GRID(3,4)                         @QUOTIENT  -> COUNT-DEAD
+    R4-FLAT-FALSIFIER(one division withheld)       @EMBEDDING -> STRUCT-DEAD
+    R4-FLAT-FALSIFIER(one division withheld)       @QUOTIENT  -> COUNT-DEAD
+    R4-FLAT-RESTRICTED-TO-8(declared probe)        @EMBEDDING -> ARITY-DEAD
+    R4-FLAT-RESTRICTED-TO-8(declared probe)        @QUOTIENT  -> ARITY-DEAD
+  [PASS] G-WELD-CENSUS
+         EVERY CENSUS ROW'S FATE IS COMPARED AGAINST THE FATE DECLARED FOR ITS OWN CELL BEFORE THE RUN, per object and never in aggregate.  12 rows: the R = 4 G-FLAT arena at both readings, the R = 4 field-identically-1 arena at both, d66's own committed R = 4 point at both, this unit's declared falsifier at both, and a declared arity probe at both
+         evidence: rows 12, drift none
+  [PASS] G-WELD-FIBERS
+         THE CHOICE INVENTORY, WITH EVERY FIBER COMPUTED AS THE NUMBER OF DISTINCT COUNT FIELDS ITS CHOICE PRODUCES -- weld 2's own standard, carried unchanged.  At the R = 4 G-FLAT arena: I-SITE-ASSIGNMENT 36, I-DIRECTION-LABEL 3, I-ORIENT 1, read at 1296 base maps.  AND THE LABEL AND ORIENT FIBERS ARE NOT BASE-MAP INVARIANT HERE: re-read at every one of those base maps they take the values [3, 6] and [1, 2], against the single value each takes at the DRIVEN R = 3 saturating arena, where the same three fibers are 1 / 1 / 1 and invariance holds.  What IS invariant is the verdict: at EVERY base map the R = 4 arena carries at least 2 free item, because the site-assignment fiber is a property of the field rather than of the base map.  The structural test passes at both -- 1296 isomorphisms and 1296 quotient maps, the target's own automorphism number
+         evidence: G-FLAT fibers {'I-SITE-ASSIGNMENT': 36, 'I-DIRECTION-LABEL': 3, 'I-ORIENT': 1} (label spread [3, 6], orient spread [1, 2], free items at every base map >= 2); R=3 fibers {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}, invariant True; isos 1296, quotient maps 1296
+  [PASS] G-RSQ-THEOREM
+         WHY THE STANDARD AND THE LIST CANNOT BOTH BE HAD AT THIS CARRIER, AND IT IS A THEOREM WITH A MEASUREMENT ON EACH SIDE.  The realised relation is edge-transitive, so a count field invariant under all 1296 of its automorphisms is constant on all 27 edges -- I-SITE-ASSIGNMENT has fiber 1 exactly at the LINK-CONSTANT records (n,n,n), and so does I-DIRECTION-LABEL.  Measured on I7's own declared family: 0 of its 9 homogeneous declared records are link-constant, while the declared count box contains 6 link-constant admissible points.  So zero free items and a declared record are incompatible here, and paper-19's zero-free-items reading was carried by its record being identically 1 rather than by its map
+         evidence: link-constant declared records none of 9; link-constant admissible box points 6; fiber at (1,1,1) 1; fiber at G-FLAT 36
+  [PASS] G-STRICTEST-READING
+         AND THE DECLARED RECORD DOES NOT NEED THE SITE ASSIGNMENT TO BE FREE AT ALL.  Under the strictest reading available -- the site carrier fixed to the constructor's own actor-to-Z_3^2 parse, which paper-19 calls forced and which this unit inherits -- the driven record induces EXACTLY I7's committed G-FLAT row at every one of the nine sites, with the direction labels taken in I7's own declared order.  Of the 36 count fields the free assignment produces, 3 are homogeneous and EXACTLY 1 is a declared record
+         evidence: record at the forced carrier [(1, 1, 2)], fiber records 36, homogeneous [[1, 1, 2], [1, 2, 1], [2, 1, 1]], every field in the fiber admissible True
+  [PASS] G-TWO-WAY
+         HA REQUIREMENT 3, DISCHARGED IN THIS RUN AND NOT BY CITATION: a predicate that cannot return its other value anywhere in the declared arena is not a measurement.  Every value this detector can return is exhibited here -- ['ARITY-DEAD', 'COUNT-DEAD', 'FOUND-candidate', 'STRUCT-DEAD', 'UNMOTIVATED'] -- and the FOUND value is exhibited on a DRIVEN R = 4 grammar record rather than on a probe
+         evidence: fates exhibited ['ARITY-DEAD', 'COUNT-DEAD', 'FOUND-candidate', 'STRUCT-DEAD', 'UNMOTIVATED']
+
+[SEC 8] STAGE 3 -- THE SPLITTABLE QUESTION
+  [PASS] G-SPLIT-FIBER
+         THE SPLIT FIBER, INTERVAL BY INTERVAL, ON THE WELDED RECORD.  R6a's identity is that an interval carrying only its total n admits exactly n - 1 places for one interior boundary, and that a count-1 interval cannot be split into two strictly positive parts.  The R = 4 welded record ((1, 1, 2)) carries split fiber 1 at each of 9 of its 27 intervals -- the diagonal ones -- and 0 at the other 18, against 0 of 27 at paper-19's landing record.  The RAW fiber, R6a's product over all 27 slots, is still 0
+         evidence: intervals with positive split fiber 9 of 27, values [(0, 18), (1, 9)], raw product 0
+  [PASS] G-LAW-04
+         PAPER-04's REFINEMENT GRAMMAR IS STILL EMPTY ON THE WELDED RECORD, AND THE MOVE THAT WOULD USE THE NEW SLOTS IS ITS OWN REFUSED CLASS.  R6a's admissible class is the DYADIC move, which subdivides every one of the 27 coarse intervals at once, so it needs the raw fiber -- the product -- and G-FLAT is one of the three records R6a's own receipt marks unrefinable (['G-ANISO', 'G-CURVED', 'G-FLAT']), with raw fiber 0.  The per-interval move that the 9 positive slots would feed is R6a's SINGLE-INTERVAL class, REFUSED on arena shape: inserting one site into one link breaks the equal direction-0 cycle lengths a product-of-cyclic-groups site set forces
+         evidence: R6a's committed raw fiber for G-FLAT 0, recomputed 0, unrefinable records ['G-ANISO', 'G-CURVED', 'G-FLAT']
+  [PASS] G-LAW-06
+         PAPER-06's PER-INTERVAL LAW BECOMES NON-EMPTY, AND IT IS UNIQUE WHERE IT DOES.  CR-B's own committed rows give, at count 1, fiber 0 and no orbit at all; at count 2, fiber 1, 1 orbit, simplex dim 0 -- its law dim = n - 2 -- and the pinned chart symmetry TRANSITIVE.  The welded record carries 9 count-2 intervals, so at 9 of its 27 intervals a unique invariant split law exists, against 0 of 27 on paper-19's landing record.  At the RECORD level CR-B still marks G-FLAT unsplittable, because its lattice predicate asks every interval to split
+         evidence: count-1 row {'fiber': 0, 'pinned_orbits': 0, 'pinned_simplex_dim': None}; count-2 row {'fiber': 1, 'pinned_orbits': 1, 'pinned_simplex_dim': 0, 'pinned_transitive': True}; CR-B record-level splittable False
+  [PASS] G-KERNEL-HOLE
+         PAPER-09's DERIVED KERNEL IS EMPTY ON THE WELDED RECORD, AND AT A DIFFERENT MECHANISM FROM PAPER-04's.  R6b''s first-return law has g(1) = g(2) = 0 EXACTLY -- there is no inter-renewal leg of length one or two -- and its own committed interval-class table puts 79 of its 201 censused intervals in that hole.  Every count the welded record carries is 1 or 2, so ALL 27 of its intervals fall inside the hole: the kernel assigns them probability zero.  R6b' also lists G-FLAT among the three records it excludes for having R6a split fiber zero, so the emptiness is double
+         evidence: welded-record intervals inside the kernel hole 27 of 27; R6b's hole 79 of 201; G-FLAT in its unrefinable list True
+  [PASS] G-LAW-09
+         AND THE HONEST DENOMINATOR IS R6b''s OWN.  Its committed row excludes G-ANISO, G-CURVED and G-FLAT as carrying 60 of its censused intervals with nothing to collapse; the collapse class it does speak on is count >= 4, at 102 intervals.  The welded record's maximum count is 2
+         evidence: unrefinable intervals excluded by R6b' 60; collapse class 102; welded maximum count 2
+  [PASS] G-LAWS-OVER-RECORDS
+         THE PIN'S THIRD QUESTION, ANSWERED WITH ITS MECHANISM.  The R = 4 welded record IS splittable -- at 9 of its 27 intervals, split fiber 1 each -- and it is the first welded record with a positive split fiber anywhere.  Of the three terminal refinement laws EXACTLY 1 becomes non-empty on it (paper-06 per-interval invariant law), and it is non-empty at its degenerate end: a one-point fiber, a single orbit and simplex dim 0.  Paper-04 stays empty at the record level and refuses the per-interval move on arena shape; paper-09 stays empty inside its own measured support hole.  The door opens exactly one crack
+         evidence: splittable intervals 9 of 27; laws non-empty 1 of 3
+  [PASS] G-SCALE-ROW
+         AND THE OBSTRUCTION IS SCALE, NOT FLATNESS -- R6a's OWN SENTENCE, WITH THIS UNIT'S BUDGET ARITHMETIC ON IT.  R6a's committed flat-scale table gives the family (a, a, 2a) admissible at every scale with refinement ceilings [0, 1, 1, 2, 2, 2]; the welded record sits at the floor with ceiling 0, and the first refinable member is [2, 2, 4], which I7 declares as ['G-DIAG2'].  It needs 72 incidences, so the first budget that can carry it is R = 8 -- and it is reachable there by construction, since concatenating any two of the 276 G-FLAT quadruples doubles the field to [2, 2, 4]
+         evidence: flat-scale ceilings [0, 1, 1, 2, 2, 2]; first refinable [2, 2, 4] = ['G-DIAG2']; budget 72; rounds 8
+
+[SEC 9] STAGE 4 -- THE R = 4 PRICE-LAW ROW
+  [PASS] G-PRICE-ROW
+         THE R = 4 BUDGET CENSUS, EXHAUSTIVE OVER THE WHOLE FAMILY.  All 6146560000 ordered grouping quadruples are quantified over -- by a branch-and-bound on the uncovered-cell mask whose only pruning is the theorem that four rounds cannot deposit more than 36 incidences -- and 100080 of them cover all 27 cells.  Of those, 100080 are positive definite at all nine sites: the COVER class and the POSDEF-9 class COINCIDE at R = 4, measured and not assumed, and the positive-definite site distribution inside the covering class is [(9, 100080)]
+         evidence: COVER-27 100080, POSDEF-9 100080, posdef distribution [(9, 100080)], sites covered-but-not-posdef none
+  [PASS] G-SITEWISE-BREAK
+         PAPER-19's SITEWISE IDENTITY IS A THEOREM AT R = 3 AND A MEASURED EMPTY CELL AT R = 4.  At R = 3, POSDEF at a site is equivalent to all three link counts being at least 1 there, at every one of the 54 reachable site codes -- 0 exceptions.  At R = 4 the code space grows to 105 reachable codes and the equivalence is FALSE: exactly 3 codes are covered but not positive definite, [[1, 1, 4], [1, 4, 1], [4, 1, 1]], every one of them at determinant zero, and one of them is I7's own declared ['G-SINGULAR'].  All three are reachable at a site -- and NONE of them occurs at any site of any of the 100080 covering quadruples.  The identity survives on the family while failing on the code space
+         evidence: reachable codes R=3 54 breaking 0; R=4 105 breaking [[1, 1, 4], [1, 4, 1], [4, 1, 1]]; declared names ['G-SINGULAR']; occurrences inside the covering class 0
+  [PASS] G-HOMOGENEOUS-R4
+         AND R = 4 IS THE FIRST BUDGET WHOSE COVERING CLASS IS NOT HOMOGENEOUS.  At R = 3 every one of the 72 covering triples carried the field identically 1.  At R = 4 exactly 20988 of the 100080 covering quadruples are homogeneous, over 4 distinct records [[[1, 1, 1], 20160], [[1, 1, 2], 276], [[1, 2, 1], 276], [[2, 1, 1], 276]], of which 1 is a declared I7 record (['G-FLAT']) and it is reached at 276 -- the pin's own number, arrived at a second time from a census that never mentions G-FLAT.  The remaining 79092 covering quadruples induce INHOMOGENEOUS admissible records
+         evidence: homogeneous covering quadruples 20988 of 100080 over 4 records [[[1, 1, 1], 20160], [[1, 1, 2], 276], [[1, 2, 1], 276], [[2, 1, 1], 276]]; declared [('G-FLAT', [1, 1, 2])]; inhomogeneous 79092
+  [PASS] G-BACK-VALIDATION
+         THE PIPELINE IS VALIDATED ONE AND TWO ROUNDS DOWN, AGAINST COMMITTED ROWS IT DID NOT PRODUCE.  Run at R = 3 over the saturating cube -- exhaustive over all 21952000 triples by the same budget theorem -- it returns the I7-STRICT class at 72 triples in 12 multisets, paper-19's committed row.  Run at R = 2 over all 78400 ordered pairs it returns positive-definiteness ceiling 3 attained at 252 pairs, against a wall of 18 // 3 = 6, I7-STRICT EMPTY, and 747 pairs non-degenerate at all nine sites -- U4b's committed row
+         evidence: R=3 I7-STRICT 72 against paper-19's committed 72, multisets 12 against 12; R=2 ceiling 3 at 252 pairs, non-degenerate 747; paper-19's own R=2 back anchor {'committed_wall_and_ceiling': [6, 3], 'i7_strict': 0, 'max_incidences': 18, 'nondegenerate_at_9': 747, 'ordered_pairs': 78400, 'posdef_ceiling': 3}
+
+[SEC 10] THE FOUR INHERITED WALLS
+  [PASS] G-WALL-L1
+         WALL L-1, ARGUED BEFORE ANY TEST AND THEN DECLINED.  Order-level covariance is a FOURTH FORM outside paper 8's three; admitting it would need a group declared to act on the generated causal order and a reason to read that group as a covariance group.  This arena supplies finite records and a translation action on their SITE LATTICE; the corpus contains no bridge from Z_3^2 translations to any boost and this unit constructs none, so the fourth form is NOT TESTED here.  The sentence retracted on 2026-07-28 is not reproduced, and the gate that enforces its absence whitespace-normalises, ASCII-folds and strips markdown prefixes from both sides
+         evidence: L-1 clause matched in its pinned bytes True; retracted sentence present in the paper False
+  [PASS] G-WALL-LORENTZ-NAMED
+         THE LORENTZIAN RESONANCE IS NAMED, AND THE NAMING IS MANDATORY.  A reader arriving from the relativity line will hear 'signature' in a determinant that has just gone positive, and at R = 4 the induced q is the IDENTITY, which resonates harder than paper-19's.  Silence is how a resonance becomes governance, so the naming sentence is required present and its falsifier deletes it from the object under test rather than flipping a boolean
+         evidence: naming sentence present True
+  [PASS] G-WALL-BHS
+         WALL BHS -- NO SPRINKLING-GRADE LORENTZ-INVARIANCE TEST, AND THE ABSTENTION IS MEASURED RATHER THAN ASSERTED.  The reproduction catalog records that a Poisson sprinkling admits no Lorentz-invariant finite-valency graph, and these schedules are finite-valency by construction, so running the test would manufacture a false negative.  The gate scans this run's WHOLE MEASUREMENT LAYER -- every measured receipt key together with the statement and evidence of every non-wall gate evaluated -- for ['boost', 'rapidity', 'sprinkl', 'frame'] and finds none
+         evidence: terms found none
+  [PASS] G-WALL-KR
+         WALL KLEITMAN-ROTHSCHILD -- EVERY DIMENSION READING CARRIES A HEIGHT CONTROL, AND THIS UNIT TAKES NONE.  No chart width, no Myrheim-Meyer estimate, no max-shatter reading; the height control is therefore not owed and not manufactured, and that too is a scan of the same measurement layer for ['myrheim', 'meyer', 'shatter', 'chart width', 'dimension', 'height']
+         evidence: terms found none
+  [PASS] G-WALL-DIAGONAL
+         THE DIAGONAL, READ NO FURTHER.  The (1,1) link is the one this budget populates TWICE, and that is exactly what carries the induced form from paper-19's [[1, -1/2], [-1/2, 1]] to the identity.  It is read as a direction on a nine-site lattice and as nothing else; cosmological and continuum readings stay barred and the same measurement surface contains none of ['cosmolog', 'continuum', 'horizon', 'redshift', 'universe', 'expansion']
+         evidence: terms found none
+
+[SEC 11] THE VERDICT
+
+R4-ARENA-UNIT-GRADE-[INDUCED RECORD (1, 1, 2) = I7'S OWN DECLARED G-FLAT at 27 of 27 CELLS; det=1 at 9 of 9; POSDEF 9 of 9; FORCED 600 of 600; 276 OF 1,679,616 SATURATING QUADRUPLES = 276 OF 6,146,560,000 BY THE BUDGET THEOREM; 12 MULTISETS, 11 NON-COLLINEAR]@WINDOW-600-OF-3,266,533,992,960,000+SEED-FAN-81
+
+R4W-DECLARED-WELD-FOUND-AT-THE-FORCED-CARRIER-[ACTOR->SITE|CO-DIVISION-ACTOR-PAIR->LINK|DIVISION-COUNT->n_l(x)]@EMBEDDING+QUOTIENT<ISOS=1296|QUOTIENT-MAPS=1296|INDUCED-RECORD-AT-THE-FORCED-CARRIER=(1, 1, 2)=G-FLAT:q=[[1, 0], [0, 1]]:det=1:ONE-OF-I7'S-ELEVEN-DECLARED-RECORDS -- FIBERS=36/3/1(SITE/LABEL/ORIENT)=2-FREE-ITEMS=UNMOTIVATED-AT-THE-FREE-ASSIGNMENT|LABEL+ORIENT-NOT-BASE-MAP-INVARIANT(SPREADS [3, 6] AND [1, 2];>=2-FREE-ITEMS-AT-EVERY-BASE-MAP,AGAINST-INVARIANT-1/1/1-AT-R=3)|ASSIGNMENT-FIBER=36-RECORDS-ALL-ADMISSIBLE-3-HOMOGENEOUS-EXACTLY-1-DECLARED(G-FLAT) -- THEOREM=RSQ-ZERO-FREE-ITEMS-IFF-LINK-CONSTANT-RECORD;I7-DECLARES-0-OF-9-LINK-CONSTANT-WHILE-ITS-OWN-BOX-HOLDS-6 -- SCOPE=THE-SATURATING-STRATUM(276-OF-6,146,560,000;ONE-ARENA-MEASURED-AT-356-DRIVEN-SCHEDULES) -- CONTROLS=FOUND-AT-THE-DRIVEN-R=3-SATURATING-RECORD(FIBERS-ALL-1,INVARIANT)|STRUCT-DEAD-AT-THE-FIELD-IDENTICALLY-1-R=4-QUADRUPLE(9-FOREIGN-PAIRS)|COUNT-DEAD-AT-d66'S-OWN-GRID(3,4)|STRUCT-DEAD-AT-THE-FALSIFIER|ARITY-DEAD-AT-THE-DECLARED-8-ACTOR-PROBE|DIRECTED-COMPARATOR=0>
+
+R4-SPLITTABLE-YES-[SPLIT FIBER 1 AT 9 OF 27 INTERVALS, 0 AT 18; RAW PRODUCT 0; AGAINST 0 OF 27 AT PAPER-19'S LANDING RECORD] -- LAWS-OVER-RECORDS=1-OF-3-NON-EMPTY: PAPER-06'S PER-INTERVAL INVARIANT LAW AT THE 9 COUNT-2 INTERVALS(FIBER 1|ORBITS 1|SIMPLEX-DIM 0=n-2|PINNED-TRANSITIVE) -- PAPER-04 EMPTY(DYADIC NEEDS THE PRODUCT; SINGLE-INTERVAL IS ITS OWN REFUSED CLASS) -- PAPER-09 EMPTY(ALL 27 INTERVALS INSIDE ITS MEASURED SUPPORT HOLE g(1)=g(2)=0) -- SCALE=THE-FLOOR-NOT-THE-FLATNESS(CEILINGS [0, 1, 1, 2, 2, 2]; FIRST REFINABLE (2, 2, 4)=G-DIAG2 AT BUDGET 72 = R=8, REACHED BY CONCATENATION AT >= 76,176)
+
+R4-PRICE-[COVER-27 = POSDEF-9 = I7-STRICT = 100,080 OF 6,146,560,000 ORDERED GROUPING QUADRUPLES, EXHAUSTIVE; 20,988 HOMOGENEOUS OVER 4 RECORDS AND 79,092 INHOMOGENEOUS] -- SEQUENCE=R=2 THE BUDGET BINDS (18 < 27)->R=3 THE PERFECT MATCHING BINDS (27 = 27)->R=4 THE COVER BINDS (36 > 27, slack 9) -- SITEWISE=IDENTITY-TRUE-AT-R=3(54 REACHABLE CODES, 0 BREAKING)|FALSE-AT-R=4(105 CODES, 3 BREAKING: [[1, 1, 4], [1, 4, 1], [4, 1, 1]], ALL AT det=0, ONE OF THEM I7'S OWN G-SINGULAR)|BUT-NEVER-REACHED-INSIDE-THE-COVERING-CLASS(0 OCCURRENCES) -- BACK-VALIDATION=R=3 I7-STRICT 72 IN 12 MULTISETS|R=2 CEILING 3 AT 252 PAIRS AND 747 NON-DEGENERATE
+  [PASS] G-VERDICT-RECONSTRUCTED
+         THE HEAD IS DERIVED A SECOND TIME BY A COMPARATOR THAT SHARES NEITHER CODE NOR INPUT NOR TYPED LITERAL WITH THE BUILDER.  It reads the SERIALIZED receipt, TYPES ALL FOUR VERDICT TEMPLATES ITSELF -- the weld segment included, which carries the outcome words -- and re-derives those words from the receipt's own fate rows, cross-checked against the published fate multiset.  A one-line forgery of the builder's outcome word therefore moves the builder alone and dies here
+         evidence: segments 4, identical True
+
+[SEC 12] THE PAPER UNDER TEST: v14/paper-21-r4dec.md
+  [PASS] G-PAPER-CLAIMS
+         EVERY HEADLINE SENTENCE OF THE PAPER IS RENDERED FROM THE RECEIPT AND MATCHED INTO THE PAPER.  15 claims, each built here from measured values and required to appear in the object under test after the full #125 normalisation
+         evidence: claims 15, missing none
+  [PASS] G-PAPER-COVERAGE
+         NUMERAL COVERAGE, INCLUDING THE FENCED VERDICT BLOCKS.  Every numeral in the paper -- prose, tables AND the fenced head blocks a reader will quote -- is allow-listed only against the receipt's own registered numbers and this run's own verdict strings.  1068 numerals scanned, of which 296 live inside the 8 fenced verdict blocks -- the blocks the old scan never read at all, so their presence in the scan is gated here and not assumed
+         evidence: unbacked numerals none; fenced blocks 8 carrying 296 numerals, unbacked among them none
+  [PASS] G-PAPER-HEAD-VERBATIM
+         EACH DERIVED VERDICT SEGMENT IS MATCHED INTO THE PAPER CHARACTER FOR CHARACTER, so the blocks a reader will quote are bound to the receipt as STRINGS and not merely as numbers, and the paper's verdict block can never go stale
+         evidence: segments 4, all present True
+  [PASS] G-PAPER-CLAIM-POLARITY
+         CLAIM POLARITY: the paper must not assert the OPPOSITE of a measured fate anywhere.  5 polarity probes, each a sentence whose presence would contradict a measured row
+         evidence: violations none
+
+[SEC 13] THE MUTANT SWEEP, IN-PROCESS
+    MUT-FAMILY-COUNT         -> G-PARTITION-COUNT              ON TARGET
+    MUT-BUDGET               -> G-BUDGET-THEOREM               ON TARGET
+    MUT-276                  -> G-276                          ON TARGET
+    MUT-STRUCTURE            -> G-276-STRUCTURE                ON TARGET
+    MUT-DRIVER-ANCHOR        -> G-DRIVER-ANCHOR                ON TARGET
+    MUT-MEMO                 -> G-MENU-PURE                    ON TARGET
+    MUT-WINDOW               -> G-WINDOW-DISCLOSED             ON TARGET
+    MUT-EQUALITY             -> G-DRIVEN-EQUALS-COMBINATORIAL  ON TARGET
+    MUT-FORCED               -> G-FORCED                       ON TARGET
+    MUT-SHAPE                -> G-RECORD-SHAPE                 ON TARGET
+    MUT-REFUSED              -> G-CTRL-REFUSED                 ON TARGET
+    MUT-BRANCH               -> G-CTRL-BRANCHING               ON TARGET
+    MUT-UNIT-GRADE           -> G-UNIT-GRADE                   ON TARGET
+    MUT-DECLARED             -> G-DECLARED-RECORD              ON TARGET
+    MUT-SEED                 -> G-SEED-INVARIANCE              ON TARGET
+    MUT-TABLE                -> G-RESOLVABLE-TABLE             ON TARGET
+    MUT-ARENA-ID             -> G-FLAT-ARENA-IDENTITY          ON TARGET
+    MUT-WELD-FATE            -> G-WELD-CENSUS                  ON TARGET
+    MUT-FIBER                -> G-WELD-FIBERS                  ON TARGET
+    MUT-RSQ                  -> G-RSQ-THEOREM                  ON TARGET
+    MUT-STRICT               -> G-STRICTEST-READING            ON TARGET
+    MUT-CONSTANCY            -> G-CONSTANCY-IMPOSSIBLE         ON TARGET
+    MUT-TWOWAY               -> G-TWO-WAY                      ON TARGET
+    MUT-SPLIT                -> G-SPLIT-FIBER                  ON TARGET
+    MUT-LAW04                -> G-LAW-04                       ON TARGET
+    MUT-LAW06                -> G-LAW-06                       ON TARGET
+    MUT-HOLE                 -> G-KERNEL-HOLE                  ON TARGET
+    MUT-LAW09                -> G-LAW-09                       ON TARGET
+    MUT-LAWS                 -> G-LAWS-OVER-RECORDS            ON TARGET
+    MUT-SCALE                -> G-SCALE-ROW                    ON TARGET
+    MUT-COVER                -> G-PRICE-ROW                    ON TARGET
+    MUT-SITEWISE             -> G-SITEWISE-BREAK               ON TARGET
+    MUT-HOMOG                -> G-HOMOGENEOUS-R4               ON TARGET
+    MUT-BACKVAL              -> G-BACK-VALIDATION              ON TARGET
+    MUT-ANCHORS              -> G-ANCHORS-READ                 ON TARGET
+    MUT-VERBATIM             -> G-VERBATIM                     ON TARGET
+    MUT-HEAD                 -> G-VERDICT-RECONSTRUCTED        ON TARGET
+    MUT-PAPER-CLAIM          -> G-PAPER-CLAIMS                 ON TARGET
+    MUT-COVERAGE-SCAN        -> G-PAPER-COVERAGE               ON TARGET
+    MUT-PAPER-HEAD           -> G-PAPER-HEAD-VERBATIM          ON TARGET
+    MUT-PAPER-POLARITY       -> G-PAPER-CLAIM-POLARITY         ON TARGET
+    MUT-WALL-L1              -> G-WALL-L1                      ON TARGET
+    MUT-WALL-LORENTZ         -> G-WALL-LORENTZ-NAMED           ON TARGET
+    MUT-WALL-BHS             -> G-WALL-BHS                     ON TARGET
+    MUT-WALL-KR              -> G-WALL-KR                      ON TARGET
+    MUT-DIAGONAL             -> G-WALL-DIAGONAL                ON TARGET
+    MUT-SEAL-DROP            -> G-SEAL-COMPLETE                ON TARGET
+    MUT-SEAL-BROKEN          -> G-SEAL-COMPLETE                ON TARGET
+    MUT-TRANSCRIPT-FLIP      -> G-SEAL-COMPLETE                ON TARGET
+    MUT-CONSUMER-BINDING     -> G-ANCHOR-CONSUMERS             ON TARGET
+  [PASS] G-MUTANTS-ON-TARGET
+         EVERY DECLARED MUTANT IS RUN IN-PROCESS AND DIES AT THE GATE IT NAMES.  50 mutants, each a real corruption of a measured value or of the object under test, each required to be killed BY ITS OWN NAMED GATE rather than by any gate that happens to fire first
+         evidence: mutants 50, off target none
+  [PASS] G-COVERAGE
+         THE COVERAGE LEDGER IS HONEST AND ITS DENOMINATOR IS THIS RUN'S OWN.  Every gate evaluated anywhere in this run is either falsified by a declared mutant or waived with a machine-readable forcing that says why it cannot fail; the declared gate registry and the set actually evaluated must agree exactly, so a gate removed from the file or added without a registry row dies here
+         evidence: gates 60, with a mutant 48, waived 12, uncovered none, registry drift none
+  [PASS] G-SWEEP-BOUND
+         THE MUTANT SWEEP'S EXECUTION IS BOUND, NOT MERELY DECLARED.  A delivery-level run must carry one sweep row per declared mutant (50), every row ON TARGET -- killed at the gate it names -- and the same conjunction is re-taken at the terminal integrity gate, so the only writer in this file is downstream of a sweep that actually ran.  A mutant SUB-run declares itself un-swept and is held to that instead
+         evidence: delivery-level True, sweep rows 50 of 50, on target 50
+  [PASS] G-ANCHOR-CONSUMERS
+         EVERY VERBATIM ANCHOR'S NAMED CONSUMER IS A REAL GATE THAT REALLY RAN.  All 21 #62 anchors name the gate that consumes them; each named gate is required here to be in the declared registry AND in this run's own evaluated ledger, so the naming cannot drift into a gate that was removed, renamed or never reached
+         evidence: anchors 21, consumers not registered-and-evaluated none
+  [PASS] G-REACHABILITY
+         EVERY DECLARED FALSIFIER DEMONSTRABLY REACHES ITS GATE.  3 mutants name 3 LATE gates -- evaluated after this point in this same function, unconditionally -- and their presence is verified at G-ARTIFACT-INTEGRITY rather than assumed here
+         evidence: mutants 50, gates unreached none
+  [PASS] G-PAPER-COVERAGE-FINAL
+         THE PAYLOAD CLOSES: 57 gates evaluated, all passed, and a RECURSIVE TYPE SCAN of the receipt finds no float anywhere -- every published number is an int or a string carrying an exact Fraction
+         evidence: gates 57, float-valued receipt paths none
+  [PASS] G-SEAL-COMPLETE
+         THE TOTAL SEAL (#119 + the #148 totality addendum + the U4b vouching-layer lesson).  EVERY published receipt key is either sealed at the gate that certified it or listed as DECLARED-UNSEALED, and this gate compares the manifest against the DECLARED seal set rather than against the seals that happened to be taken.  The vouching layer is inside the seal: schema, provenance, paper claims, polarity, coverage, reachability, gates, totals and the transcript head.  The DECLARED-UNSEALED list is itself frozen by content and by length and may not name any key that carries a measurement
+         evidence: declared seals 27, taken 27, missing none, extra none, receipt keys not covered none, seals broken at close none, unsealed list frozen True and measurement-free True
