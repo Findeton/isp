@@ -7038,3 +7038,34 @@ WITH INVOLUTION); the interior-radius confirmation thinner
 than delivered (R4b's table already carried the rows).
 **SCALE is the segment that must move — both content seats
 concur.**  → adjudication when K3 lands.
+
+## 2026-08-11 — PER-L INSTRUMENT REVIEW LANDED (K3): AWF — HONEST MEASUREMENTS, OPTIMISTIC SELF-DESCRIPTION; TEN LIFTABLE MAJORS (v14 LEDGER #227)
+
+v14/review-perl-instrument.md frozen.  **Grade AWF (heavy
+end); 118 executions, ~360 recomputations; ZERO false
+computed numbers** (all 83 numerals, 21 claims, all tables
+recomputed matching; byte ×2 across seeds; 48/48 mutants on
+target; manifest total; NO phantom consumers; real post-seal
+edits DIE — the paper-22 disease does NOT repeat).  Six
+injections survive on ONE seam: the unit measures honestly
+and DESCRIBES ITS INSTRUMENT optimistically.  M1: the band's
+forced half claims an exhaustive DDS ball census that was
+NEVER RUN (involution pairs only) — the reviewer ran it: the
+claim is TRUE at every L in 2–14 but unmeasured and ungated;
+M2: SEAL-TOTALS taken 400 lines after its value closes
+(sources:99 publishable+sealable; G-TOTALS-REDERIVED binds
+2/9 keys); M3: STRUCTURAL is an unconditional else (of 7: 1
+earned, 2 mislabelled, 4 unfailable); M4: E-23 checked as
+existence not description-vs-code (6/48 descriptions
+mismatch incl. MUT-DESCRIPTION itself); M5: **the control
+rung is L=3 — 28% of the scan and the source of the headline
+54 — and neither SCOPE nor the paper ever names it**; M6:
+SCALE/BREAKS/SCOPE/global-support are TYPED LITERALS and the
+comparator discards 6 of 7 parts binding one number by
+substring; M7/8: three fractions unstamped (two in the
+head); 18-OF-18 = 3 substantive + 15 vacuous; M9/10: the
+band table and 27/69 rows unbound; the span whitelist's 0–24
+blanket defeats E-22 (13→14 survives); MINOR-11: post-write
+corruption caught at exit 1 but the corrupted receipt LEFT
+PROMOTED.  All headlines stand; no physics number moved.  →
+THE ADJUDICATION (all three seats in).
