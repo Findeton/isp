@@ -4970,3 +4970,40 @@ THE COUPLING UNIT REACHES A RECORD, NOT YET A LAW OVER
 RECORDS** — the summit pin must scope accordingly.  Eight
 MINORs.  One seat pending (instrument, the #91 settlement) →
 adjudication.
+
+## 2026-08-10 — PAPER-19 INSTRUMENT FROZEN — THE PANEL COMPLETE 3× AWF (v14 LEDGER #167)
+
+review-r3w-instrument.md frozen (579 lines).  **THE #91
+SETTLEMENT: CLOSED, BY BYTE-IDENTITY** — the reviewer re-ran
+the off-tree leg against the committed code (a mirror of
+exactly the 13 pinned sources + code + paper, no .git to /,
+env -i, PATH=/nonexistent, random seed): exit 0, empty stderr,
+**68 PASS / 0 FAIL including G-MUTANTS-ON-TARGET** (the gate
+that failed the worker's aborted attempt), artifacts
+byte-identical (76ef29488b60 / 03670731ba1c).  Finding: none.
+**THE SEAM RULING: one layer wide — between the head as a
+STRING and the head as a DERIVATION**: M1 the comparator
+shares weld_string with the builder (842/1183 chars = 71.2%
+not independently derived; **a WELD3-EMPTY head shipped past
+all 68 gates from a one-line patch** — the protection is the
+typed EXPECTED table, not reconstruction); **M2
+paper_coverage STRIPS FENCED BLOCKS — 79 of 506 numerals,
+including EVERY numeral of all three verdict strings, are
+never scanned** (a paper with ISOS=4242 / FIBERS=1/1/7 /
+FORCED-999 in its heads passes verify-paper with the same
+scan count as the clean paper); M3 three wall gates read only
+their mutant flag.  Seven MINORs incl. the sweep execution
+unbound (a delivery whose 59-mutant sweep never ran is
+constructible) and 8 non-markdown #125 evasions.  VERIFIED
+CLEAN at heroic depth: **59/59 mutants on target COLD-CACHE
+OUT-OF-PROCESS** (kill gates identical to in-process for all
+59 — the cached-list class dead warm and cold; the four
+claimed sweep catches real); CLI 34 vectors with no non-empty
+argv reaching the writer; #34 exact (68=68, drift []); #62
+13/13+20/20 with the reviewer's own normaliser; #87 per-row
+on all 18 cells and per-object on all 72 arenas; **735
+recomputations, zero false numbers — the rigidity theorem
+re-derived AS A PROOF, and 1040 = 136×2³ − 6×2³ tying the
+window to the twelve-multiset result.**  Grade AWF; FOUND NOT
+WEAKENED; M2 and the sweep-binding insisted on before
+terminal.  Joint adjudication next.
