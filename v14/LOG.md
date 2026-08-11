@@ -5311,3 +5311,25 @@ theorem/verdict block, ~20 lines); DECLINE seal
 retrofit/RUNBOOK pin/CLI arity/#87 unless publication — no
 surviving injection is reachable from the pinned inputs.  → the
 CR-A adjudication (all three seats in).
+
+## 2026-08-11 — CR-A ADJUDICATION: VERDICT STANDS-STRENGTHENED; TEN REPAIR ORDERS; REPAIR LAUNCHED (v14 LEDGER #178)
+
+v14/note-cra-adjudication.md frozen.  Three seats AWF, ~1,396
+seat recomputations, ZERO delivered numbers moved.  The
+BLOCKED-AT-STATIC-GEOMETRY verdict STANDS-STRENGTHENED (the
+fiber 0 at all nine count-reading rules).  The licensed
+historical sentence adopted in the effectus's SHARPENED form
+(the mover-blind limit IS the weld arena, coincidence-forced).
+TEN repair orders (R1 de-literal head; R2 census denominator
+42→45; R3 render+gate theorem+verdict blocks; R4 §9 REVERSAL
+in-code — 207/3888 separate every pair; R5 hexagonal limit →
+existential w/ schedule census; R6 five-way boundary + priced
+lapse×lapse atom; R7 M-TILT telescoping; R8 §8/§1 corrections;
+R9 the §15 historical paragraph, gated; R10 verbatim/EXPRESSIBLE
+honesty).  DECLINED-AT-ERA (publication-triggered): seal
+retrofit, RUNBOOK pin, CLI arity, #87, gmain scanner (routed to
+gmain's debt row).  NO NEW ENGRAVING (all defects instantiate
+engraved families on a pre-engraving unit).  The paper-20
+register rows carried (G-SINGULAR proximity corners horizon-5).
+Repair worker launched (Opus).  After repair + verification:
+CR-A → TERMINAL (the first CR drain).
