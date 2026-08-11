@@ -1,0 +1,181 @@
+==============================================================================
+v14 THE COUPLING UNIT -- paper-20-coupling
+A QUANTUM DYNAMICS THAT WRITES ITS OWN STAGE, ON THE WELDED R=3 ARENA
+==============================================================================
+
+SECTION 1.  PROVENANCE
+  [PASS] G-PROVENANCE
+         all 16 declared sources are read from paths resolved from THIS FILE's own location and matched against the sha256-12 this unit froze; a drifted source dies here before a single measurement runs, which is what a pinned-sha read buys with no version control present
+         evidence: mismatched anchors: none
+  [PASS] G-EXACT-ARITHMETIC
+         an AST scan of this file finds no float literal anywhere: the amplitudes are INTEGER pairs over Z[w] with a common power-of-3 denominator, and every probability is a fractions.Fraction
+         evidence: float literals: 0
+  [PASS] G-NO-SUBPROCESS
+         no subprocess of any kind is invoked and no version-control command is spawned: the scan reads IMPORT NAMES as well as uses, so an aliased import is a hit.  The run is therefore correct off-tree and with git absent
+         evidence: banned imports: none
+  [PASS] G-READS-DECLARED
+         the set of files read at run time is EXACTLY the declared source set: 16 reads, no repository state outside them
+         evidence: undeclared none; declared-not-read none
+  [PASS] G-VERBATIM
+         11 verbatim anchors, each at least 30 characters after normalisation, each located exactly in its pinned source, each PERTURBED at a content-bearing token and re-located so the row counts as covered only when its own predicate flips, and each declared against a consumer gate
+         evidence: anchors failing: none
+
+SECTION 2.  THE WELDED RECORD, REBUILT FROM THE COMMITTED GRAMMAR
+  [PASS] G-SLICE-EXIT-FREE
+         d42b1's transport layer is taken as a TEXT SLICE cut at the layer's own banner print, and d60/d66 enter by AST extraction of their definitions alone, so no module-level statement of theirs can run and no extracted body can terminate this process
+         evidence: slice exit-free True, extracted bodies exit-free True
+  [PASS] G-COMMITTED-ANCHOR
+         the generalized driver is ANCHORED against the object it generalizes: at the committed R = 2 schedule it and d66's own conflict_grid(3, 2), re-run in this process, emit IDENTICAL event lists -- 30 events compared one for one
+         evidence: driver events 30, d66 events 30, identical True
+  [PASS] G-WELDED-RECORD
+         THE WELDED RECORD IS REBUILT AND DRIVEN, not cited: the uniform R = 3 arrangement -- three rounds grouped on the three link-direction parallel classes -- is built by driving the committed layer's OWN MENUS, every specification matched by exactly one candidate and no refusal anywhere.  Measured CELL BY CELL: 48 events, 9 division events, and the driven link field is 1 at 27 of 27 cells
+         evidence: cells at 1: 27 of 27; maxhits 1; refusal None; divisions 9; pairs off the declared link set 0
+  [PASS] G-WELDED-GEOMETRY
+         and SITE BY SITE against its own value, never against an aggregate: q = [[1, -1/2], [-1/2, 1]] with det = 3/4 at all 9 sites, positive definite at 9 of 9 by I7's own exact Sylvester criterion
+         evidence: determinants ['3/4']; positive definite 9 of 9
+  [PASS] G-DICTIONARY
+         THE FORCED DICTIONARY, instantiated and gated: ACTOR->SITE is the constructor's own naming, CO-DIVISION-PAIR->LINK is read off the layer's own footprints, and the realised relation IS the target's own Cayley incidence at equality -- 27 unordered pairs, the complete tripartite graph whose three parts are the lines of the one direction I7 does not declare, which the realised relation meets in 0 pairs
+         evidence: realised pairs 27, target pairs 27, equal True, pairs on the undeclared direction 0
+  [PASS] G-ISOS-CITED
+         the 1296 site assignments are CITED AND VERIFIED, not re-derived: the weld's committed receipt is read at run time and its own number located in those bytes, and the same number is recomputed here from the target's automorphism group, 3! * (3!)^3 = 1296, which is forced once the two readings meet at equality
+         evidence: recomputed 1296, cited 1296, occurrences in the weld's receipt 19
+  [PASS] G-UNSPLITTABLE
+         THE SCOPE ROW'S WARRANT, measured here rather than inherited by assertion: paper-04's split fiber is the product over the interval's links of (n_l - 1), so a count-1 interval cannot be split into two strictly positive parts.  The landing record is 1 everywhere, so the split fiber is 0 at 27 of 27 intervals and the refinement grammar, the stochastic split and the renewal-transport kernel are EMPTY on it
+         evidence: intervals with split fiber 0: 27 of 27; product fiber 0
+
+SECTION 3.  THE WALK -- DERIVED WHERE DERIVABLE
+  [PASS] G-SCALAR-MONOMIAL
+         THEOREM, and it is what FORCES the coin register.  R4b's family shape is a coefficient map on lattice offsets, unitary iff its autocorrelation is a delta.  On THIS arena's offset set -- I7's three declared link directions -- every one of the 6 nonzero differences of two distinct offsets is realised by EXACTLY ONE ordered pair, so each condition reads c_v conj(c_w) = 0 and forces one of the two to vanish; the three together leave at most one nonzero coefficient and the norm makes it a MONOMIAL, a deterministic shift with no interference at all.  Checked exhaustively over a declared alphabet of 7 values: 343 maps scanned, 18 unitary, 0 of them non-monomial.  R4b's own axis stencil realises each difference 3 times, which is exactly why interference survives there and dies here
+         evidence: each difference realised once True; non-monomial unitary maps 0; axis-stencil multiplicities [3, 3]
+  [PASS] G-COIN-FORCED
+         THEOREM, and it is what makes the coin DERIVED rather than declared.  The arena's own direction-relabelling group is S_3 -- the weld measured the record invariant under all six of its relabellings -- and a coin covariant under it has the form a I + b J.  The exact rational scan returns 4 solutions of the unitarity conditions, 2 of them non-trivial, and every non-trivial one satisfies 3b = -2a: they are +/- the GROVER COIN and nothing else
+         evidence: solutions 4, non-trivial 2, all Grover True, the matrix this unit uses is exactly unitary True
+  [PASS] G-CONNECTION-GROUP
+         the connection group is DERIVED from the arena and not chosen: the sites are Z_3^2 and the parallel classes are the lines of AG(2,3), so the arena is over F_3 and the link connection the record defines is valued in the arena's own scalar group Z_3.  The consequence is stated rather than hidden -- the walk consumes the count RESIDUE n mod 3, not the count
+         evidence: connection group order 3, phase alphabet closes True, consumes n mod 3
+  [PASS] G-WALK-UNITARY
+         the step is unitary EXACTLY and PER OBJECT: the state is a unit vector at 45157 branch-steps across the four arms with 0 violations, and the coin preserves each SITE's mass separately at 406413 site-branch-steps with 0 violations -- the second is the stronger statement and it is the law transport's own precondition
+         evidence: norm violations 0 of 45157; site-mass violations 0 of 406413
+  [PASS] G-FIBERS
+         THE CHOICE INVENTORY IS PRICED AND ITS DECLARED MEMBERS ARE RUN: 12 items, of which 2 are forced by the parents, 3 are DERIVED by the two theorems above, 1 is measured, and the declared ones have every member of their fiber actually executed at the reduced horizon 3 -- the coin order, the shift orientation and all three initial coin components.  ONE OF THEM IS VERDICT-RELEVANT AND SAYS SO: at the reduced horizon the coin order G.D moves 7 of 9 declared observables against its own frozen control while D.G moves 5, because a count phase applied AFTER the coin cannot enter that step's Born weights at all -- so the primary order is declared, and what the alternative costs is measured rather than hidden
+         evidence: declared fiber members executed True; start-site fiber measured invariant True
+
+SECTION 4.  THE LAW TRANSPORT -- GATED, NEVER ASSUMED
+  [PASS] G-LAW-NATIVE
+         THE LAW-NATIVE NORMALISER, RE-DERIVED ON THIS ARENA rather than imported: the potential recursion's terminal condition G(x,0) = 1 gives G(x,1) = sum_l q(l|x) G(x+l,0) = sum_l q(l|x) = M(x), and that is measured at 406413 SITE-STEPS across the four arms with 0 violations.  The forcing is machine-checked, not asserted: the identity survives an ARBITRARY EXACT RE-PRICING of every priced event at 406413 of 406413, which is what makes it a fact about the law and not about this carrier
+         evidence: G(x,1)=M(x) violations 0 of 406413; re-pricing violations 0 of 406413
+  [PASS] G-LAW-REPRICING
+         the re-pricing forcing is carried as its own row because it is the whole warrant for calling the normaliser LAW-NATIVE: every priced event is multiplied by an arbitrary exact rational and the identity must survive, at 406413 of 406413 site-steps
+         evidence: re-pricing violations 0 of 406413
+  [PASS] G-KERNEL-K1
+         the kernel is q/M ENTRY BY ENTRY: k_1(l|x) M(x) = q(l|x) at 1215681 of 1215681 kernel entries across the four arms, and the columns sum to 1 exactly
+         evidence: kernel-entry violations 0 of 1215681
+  [PASS] G-LAW-TRANSPORT
+         THE TRANSPORT IS CONFIRMED AND NOT ASSUMED, and its CONTENT is the row that could have failed: under reading A the law's local menu mass M(x) is exactly the walk's own local Born mass p(x), at 187155 of 187155 site-steps -- because the coin is site-block-diagonal, which is a property of the walk and not a stipulation about the law.  And the transport is falsifiable: breaking the terminal condition G(x,0) = 1, which is the identity's only premise, breaks G(x,1) = M(x) at 10 site-steps of a rebuilt arm
+         evidence: menu-mass-is-density violations 0 of 187155; terminal-condition falsifier kills the identity True
+
+SECTION 5.  THE COUPLED ENSEMBLE, EXHAUSTIVE TO THE DECLARED HORIZON
+  [PASS] G-ENSEMBLE-EXHAUSTIVE
+         the ensemble is EXHAUSTIVE: every branch of the emission tree is carried to the declared horizon T = 5, with no sampling, no pruning and no truncation by weight.  The coupled arm reaches 284078 leaves at the Born menu and 314928 at the record menu; the frozen control reaches 212382, and THAT DIFFERENCE IS ITSELF A MEASUREMENT -- the coupling opens emission channels the frozen stage closes
+         evidence: pruned branches 0; degenerate levels none
+  [PASS] G-BRANCH-MASS
+         the ensemble is a probability measure at EVERY level of EVERY arm: the branch weights sum to exactly 1 at all 20 levels across the four arms, in exact rational arithmetic
+         evidence: levels whose mass is not 1: none
+
+SECTION 6.  THE THREE GATES
+  [PASS] G-CONSISTENCY
+         GATE 1.  THE COUPLED STEP IS WELL DEFINED, and the composition is exact.  Unitarity gives sum_x p(x) = 1; site-block-diagonality gives sum_l k_1(l|x) = 1 at each of the 9 columns; the two COMPOSE to a total emission mass of exactly 1 at every step.  Measured PER OBJECT -- per branch, per step, per site -- across the four arms: 948297 checks, 0 violations.  Nothing here is an aggregate: every site of every branch of every step is compared against its own value
+         evidence: consistency violations 0 of 948297 checks
+  [PASS] G-FROZEN-CONTROL
+         THE FROZEN-STAGE CONTROL IS MANDATORY AND IT RAN: the same walk, the same emission rule, the same branching, and counts that never update -- executed through the SAME function as the coupled arm, so the control cannot differ from it in anything but the one line that updates the record
+         evidence: frozen arms executed True
+  [PASS] G-NONTRIVIALITY
+         GATE 2, TWO-WAY.  The declared observable set -- the site distribution, its inverse participation, the emission field, the link-class marginal, the I7-admissibility exit probability, the positive-definite-site distribution, the determinant spectrum, the maximum cell count and the curvature homogeneity -- is compared against the FROZEN-STAGE CONTROL at both readings: 18 of 18 rows DIFFER.  Identical would have been COUPLING-INERT, an honest first-class outcome, and the gate is written so that it would have been reported
+         evidence: rows differing 18 of 18; inert False
+  [PASS] G-ADMISSIBILITY-LADDER
+         THE SHARPEST MEASUREMENT IN THIS UNIT, and it is a THRESHOLD.  I7's own criterion -- a record is admissible when q is nonsingular and positive definite at every site, by the exact Sylvester criterion -- is evaluated on the record the walk reads, at EVERY horizon of the ladder and on both arms.  The coupled record leaves I7's admissible class with exact positive probability 927415552/847288609443 at the Born menu and 37440224/5811307335 at the record menu, and with probability EXACTLY ZERO at every horizon below 5.  The frozen control never leaves it, at any horizon.  The exit is to the SINGULAR boundary, det = 0: no indefinite form is reached here, and that is measured (False) rather than assumed
+         evidence: exit thresholds {'A': 5, 'B': 5}; frozen exit identically zero True; indefinite form reached False
+  [PASS] G-BATTERY-POLARITY
+         every one of the 10 battery rows carries the polarity it was PRE-REGISTERED with, at both readings, and the measurement is compared against that pre-registration row by row: 0 mismatches.  The sedimentary row is the corpus's own -- at the ruled carrier no class is ever revisited -- transported to the state grain and measured here
+         evidence: polarity mismatches: none
+  [PASS] G-BATTERY-TWO-WAY
+         the battery is TWO-WAY and both directions are non-empty, which is what makes it an instrument rather than a list: 2 rows fail frozen and pass coupled (K10-RECORDS-THEOREM,K9-SOURCING), and 3 rows pass frozen and fail coupled (K6-BLOCH,K7-CURVATURE-HOMOGENEOUS,K8-I7-ADMISSIBILITY).  A one-way battery could not have returned NOT-REQUIRED as a measurement
+         evidence: fail-frozen rows ['K10-RECORDS-THEOREM', 'K9-SOURCING']; fail-coupled rows ['K6-BLOCH', 'K7-CURVATURE-HOMOGENEOUS', 'K8-I7-ADMISSIBILITY']
+  [PASS] G-STALENESS-BLIND
+         THE STALENESS-BLINDNESS THEOREM, machine-checked rather than argued.  A frozen stage is itself an admissible stage, so the walk it generates is a perfectly good unitary walk on this arena: run on a DECLARED STALE count field -- admissible, and not the welded one -- every psi-internal closure of the battery still holds, at 2455 checks.  Nothing internal to the state at a single time can detect that its stage is out of date, which is exactly why the rows that discriminate are the ones that mention the record
+         evidence: psi-internal closures on the stale stage hold True; the stale field is admissible True
+  [PASS] G-REQUIREMENT
+         GATE 3, THE THEOREM, TWO-WAY.  A REQUIREMENT WITNESS must be a closure that is INTERNAL TO THE QUANTUM SIDE, is NOT the update rule restated, and FAILS frozen while PASSING coupled.  Measured: 0 such witnesses.  What the battery does return is measured and reported instead -- 3 rows in the REVERSE direction (K6-BLOCH,K7-CURVATURE-HOMOGENEOUS,K8-I7-ADMISSIBILITY), which the pin pre-registers as equally reportable, and 2 rows that fail frozen only by restating the update rule (K10-RECORDS-THEOREM,K9-SOURCING), which the selector refuses by construction.  All 5 psi-internal rows hold on BOTH stages
+         evidence: requirement witnesses: none
+
+SECTION 7.  THE WALLS
+  [PASS] G-WALL-L1
+         L-1: order-level covariance is a FOURTH FORM, outside paper 8's three, and its admissibility is not argued here.  This unit declares no group acting on the generated causal order and constructs no bridge from Z_3^2 translations to any covariance group, so THE FOURTH FORM IS NOT TESTED HERE.  The sentence retracted in 2026 is not reproduced, and the gate that enforces its absence whitespace-normalises, ASCII-folds and strips markdown prefixes from both sides, so a line-wrapped or blockquoted injection dies too
+         evidence: the retracted sentence is present: False
+  [PASS] G-WALL-BHS
+         BHS: a Poisson sprinkling admits no Lorentz-invariant finite-valency graph, and this arena is finite-valency by construction, so running that test would manufacture a false negative.  None is run -- and the abstention is MEASURED rather than asserted: this run's whole measurement layer, every measured receipt key together with the statement and evidence of every non-wall gate evaluated, is scanned for the terms whose presence would mean the reading was taken
+         evidence: hits: none
+  [PASS] G-WALL-KR
+         Kleitman-Rothschild: a reading of that kind without a height control is worthless, and this unit takes none -- no chart width, no Myrheim-Meyer estimate, no max-shatter reading -- so the height control is not owed and not manufactured.  Measured on the same surface
+         evidence: hits: none
+  [PASS] G-WALL-COSMO
+         no continuum, limit, asymptotic or cosmological reading is taken anywhere in this unit, and the scan runs on the same surface.  The word `horizon` is DECLARED OUT of this needle set with its reason printed: it is this unit's own name for the declared finite number of coupled steps and the gravity law's own relative-horizon index, so a scan that fired on it would fire on the pin's own vocabulary
+         evidence: hits: none
+  [PASS] G-WALL-LORENTZ-NAMED
+         THE LORENTZIAN RESONANCE IS NAMED, and the naming is mandatory and sharper here than at the weld, because this unit MEASURES a determinant that reaches 0.  A reader arriving from the relativity line will hear a signature in that; the naming sentence is required to be present in the object under test and the falsifier deletes it.  Silence is how a resonance becomes governance
+         evidence: the naming sentence is present: True
+  [PASS] G-WALL-HEX-NAMED
+         THE SECOND RESONANCE IS NAMED, and paper-19's S-7 registered it FOR this unit before this unit was written -- the hexagonal one, unit lengths meeting at one hundred and twenty degrees, a wall row the coupling unit should inherit before it writes the word `triangular`.  It is inherited, named and gated here
+         evidence: the hexagonal naming sentence is present: True
+
+SECTION 8.  THE VERDICT
+  [PASS] G-VERDICT-RECONSTRUCTED
+         the head is DERIVED A SECOND TIME by a comparator that shares no builder code and no typed literal with the emitter: it re-parses the SERIALIZED receipt, TYPES ALL THREE VERDICT TEMPLATES ITSELF -- the gates segment included, which carries the outcome word -- and re-derives that word from the receipt's own consistency, nontriviality and battery rows.  A one-line forgery of the outcome word moves the emitter alone and dies here, and so does a retyped value inside a segment
+         evidence: segments matching: ['arena', 'gates', 'walk_law']; comparator note: outcome re-derived as COUPLING-CONSISTENT-NOT-REQUIRED from consistent=True inert=False witnesses=none
+
+COUPLING-ARENA-[WELDED-RECORD-REBUILT-AND-DRIVEN-THROUGH-THE-COMMITTED-MENUS: n=1 AT 27 OF 27 CELLS; det=3/4 AT 9 OF 9 SITES; POSDEF 9 OF 9 BY I7'S OWN SYLVESTER CRITERION; FORCED AT MAXHITS 1 WITH 48 EVENTS AND 9 DIVISION EVENTS AND NO REFUSAL; THE FORCED DICTIONARY INSTANTIATED: THE REALISED CO-DIVISION RELATION IS THE TARGET'S OWN CAYLEY INCIDENCE AT 27 OF 27 PAIRS AT EQUALITY AND MEETS THE ONE DIRECTION I7 DOES NOT DECLARE AT 0; SITE-ASSIGNMENTS 1296=3!*(3!)^3 CITED-AND-VERIFIED AT THE WELD'S OWN RECEIPT; SPLIT-FIBER 0 AT ALL 27 INTERVALS]@COMMITTED-ANCHOR-EVENT-FOR-EVENT-AT-R=2
+
+WALK-DERIVED-AND-LAW-TRANSPORTED-[COIN-REGISTER-FORCED-BY-THEOREM: THE SCALAR SHAPE IS MONOMIAL-ONLY ON THIS ARENA'S OFFSET SET -- 6 OF 6 NONZERO DIFFERENCES REALISED BY EXACTLY ONE ORDERED PAIR, 343 MAPS SCANNED OVER A 7-VALUE ALPHABET, 18 UNITARY, 0 NON-MONOMIAL -- AGAINST MULTIPLICITY 3 ON THE AXIS STENCIL WHERE INTERFERENCE SURVIVES | COIN-FORCED-BY-THEOREM: 4 SOLUTIONS OF THE S_3-COVARIANT UNITARITY CONDITIONS, 2 NON-TRIVIAL, EVERY ONE OF THEM +/-GROVER | CONNECTION-GROUP Z_3 DERIVED FROM THE ARENA'S OWN FIELD F_3, SO THE WALK CONSUMES THE COUNT RESIDUE n mod 3 AND THAT IS DISCLOSED | LAW-TRANSPORT=TRANSPORT-CONFIRMED: G(x,0)=1 => G(x,1)=M(x) AT 406413 SITE-STEPS WITH 0 VIOLATIONS, SURVIVING AN ARBITRARY EXACT RE-PRICING AT 406413 OF 406413; k_1=q/M AT 1215681 ENTRIES WITH 0 VIOLATIONS; THE LAW'S OWN MENU MASS IS THE WALK'S OWN LOCAL BORN MASS AT 187155 OF 187155 SITE-STEPS; THE TERMINAL-CONDITION FALSIFIER KILLS THE IDENTITY AT 10]
+
+COUPLING-CONSISTENT-NOT-REQUIRED-<G-CONSISTENCY=PASS(THE COUPLED STEP IS WELL DEFINED: UNITARITY x COLUMN-STOCHASTICITY COMPOSE EXACTLY AT 948297 PER-OBJECT CHECKS -- PER BRANCH, PER STEP, PER SITE -- WITH 0 VIOLATIONS ACROSS 4 ARMS AT HORIZON 5) -- G-NONTRIVIALITY=PASS(18 OF 18 DECLARED-OBSERVABLE ROWS DIFFER FROM THE MANDATORY FROZEN-STAGE CONTROL AT BOTH READINGS; LEAVES 284078 COUPLED-BORN-MENU vs 212382 FROZEN, THE COUPLING OPENS EMISSION CHANNELS THE FROZEN STAGE CLOSES; NOT INERT) -- G-REQUIREMENT=NO-WITNESS(0 CLOSURES INTERNAL TO THE QUANTUM SIDE THAT ARE NOT THE UPDATE RULE RESTATED FAIL FROZEN AND PASS COUPLED; ALL 5 PSI-INTERNAL ROWS OF THE 10-ROW PRE-REGISTERED BATTERY HOLD ON BOTH STAGES) -- TWO-WAY=[FAIL-FROZEN-PASS-COUPLED: K10-RECORDS-THEOREM,K9-SOURCING, BOTH STAMPED UPDATE-RULE-RESTATED AND REFUSED BY THE SELECTOR | PASS-FROZEN-FAIL-COUPLED: K6-BLOCH,K7-CURVATURE-HOMOGENEOUS,K8-I7-ADMISSIBILITY] -- STALENESS-BLINDNESS-THEOREM=MACHINE-CHECKED(A FROZEN STAGE IS ITSELF AN ADMISSIBLE STAGE: ON A DECLARED STALE COUNT FIELD EVERY PSI-INTERNAL CLOSURE STILL HOLDS, SO NOTHING INTERNAL TO THE STATE AT A SINGLE TIME CAN DETECT THAT ITS STAGE IS OUT OF DATE) -- ADMISSIBILITY-LADDER=THRESHOLD-EXACTLY-5(THE COUPLED RECORD LEAVES I7'S ADMISSIBLE CLASS WITH EXACT PROBABILITY 927415552/847288609443 AT THE BORN MENU AND 37440224/5811307335 AT THE RECORD MENU, AND WITH PROBABILITY EXACTLY 0 AT EVERY HORIZON BELOW IT; THE FROZEN CONTROL NEVER LEAVES IT AT ANY HORIZON; THE EXIT IS TO THE SINGULAR BOUNDARY det=0 AND NO INDEFINITE FORM IS REACHED, MEASURED False) -- SCOPE=THIS UNIT REACHES A RECORD, NOT YET A LAW OVER RECORDS>
+
+SECTION 9.  THE PAPER UNDER TEST
+  [PASS] G-PAPER-CLAIMS
+         9 load-bearing sentences are ASSEMBLED FROM THIS RUN's own measurements and located in the delivered paper's bytes, so a value moved to the wrong place in the prose dies inside the run.  The pin's scope row is one of them and it is carried verbatim
+         evidence: claims not located: none
+  [PASS] G-PAPER-NUMERAL-COVERAGE
+         #20 WITH THE FENCED-BLOCK ADDENDUM: 341 numerals are scanned in the paper, 118 of them inside the 6 FENCED VERDICT BLOCKS under their own rule, where a hyphen is a word separator rather than a sign -- so the numerals of the head, the sentence the corpus quotes, are scanned rather than skipped.  Every one is allow-listed only against a value this run computed
+         evidence: unregistered numerals: none
+  [PASS] G-PAPER-HEAD-VERBATIM
+         each of the 3 derived verdict segments is matched into the paper CHARACTER FOR CHARACTER after normalisation, so the blocks a reader will quote are bound to the receipt as STRINGS and not merely as numbers
+         evidence: segments not located verbatim: none
+  [PASS] G-PAPER-CLAIM-POLARITY
+         3 claim polarities: for each, the POSITIVE form must be present in the paper and its NEGATION absent, so a paper that carried both readings, or the wrong one, dies here
+         evidence: failing polarities: none
+  [PASS] G-CLI-WHITELIST
+         the #82 CLI contract, exercised in this run: 10 malformed argument vectors are all rejected with exit code 2 -- the last three of them SECOND-MODE vectors, since a mode flag that silently overwrote an earlier one would make the earlier flag a no-op -- 9 legal shapes parse, and the registered PERMISSIVE shape, present in this file only as this gate's own falsifier, accepts an unknown flag, which is what makes the gate a measurement
+         evidence: malformed vectors accepted none, legal shapes 9, permissive shape accepts unknown flags True
+  [PASS] G-SELFTEST-WRITES-NOTHING
+         the --selftest path corrupts an anchor in memory, dies at G-PROVENANCE and reaches no writer: the writer is called from exactly one place in this file and the self-test path does not reach it
+         evidence: writer call sites reachable from the self-test path: 0
+  [PASS] G-MUTANTS-ON-TARGET
+         all 44 declared mutants are run IN PROCESS and each dies at the gate it names, with the artifacts untouched
+         evidence: on target 44 of 44; misses none
+  [PASS] G-COVERAGE
+         #34 WITH AN HONEST DENOMINATOR: of the 52 gates this delivery run evaluates -- 45 already closed, plus this gate and its twin, plus the sweep-binding and anchor-consumer gates evaluated between them, plus the 3 LATE gates, plus the sweep gate the delivery pipeline evaluates around it, every one of which is verified PRESENT at G-ARTIFACT-INTEGRITY rather than assumed -- 40 are falsified by at least one declared mutant and 12 are WAIVED with a forcing that says why they cannot fail.  The denominator is the gate count of THIS run, and the registry --list-gates prints is required to be EXACTLY that set
+         evidence: uncovered gates: none; declared registry 52 vs evaluated 52, drift none
+  [PASS] G-SWEEP-BOUND
+         THE SWEEP'S EXECUTION IS BOUND, NOT DECLARED: a delivery-level run must carry one sweep row per declared mutant (44), every row ON TARGET, and must have evaluated the sweep gate itself.  This run is delivery-level
+         evidence: sweep rows 44 of 44; sweep gate evaluated True
+  [PASS] G-ANCHOR-CONSUMERS
+         #62's consumer binding: every verbatim anchor names a gate, and each named gate is required to be in the DECLARED registry AND in THIS RUN's own evaluated ledger, so the naming cannot drift into a gate that was removed or never reached -- 11 distinct consumer gates
+         evidence: consumers not registered-and-evaluated: none
+  [PASS] G-REACHABILITY
+         #34 WITH REACHABILITY: every declared falsifier is checked to REACH its gate -- the gate must be registered and must either have been evaluated in this run or be one of the gates this same function evaluates after the census, which are named rather than assumed.  44 falsifiers, 0 dead
+         evidence: dead falsifiers: none
+  [PASS] G-PAPER-COVERAGE-FINAL
+         the payload closes: 49 gates evaluated, all passed, and a RECURSIVE TYPE SCAN of the receipt finds no float anywhere -- every published number is an int or a string carrying an exact Fraction
+         evidence: gates 49, float-valued receipt paths none
+  [PASS] G-SEAL-COMPLETE
+         THE TOTAL SEAL.  EVERY published receipt key is either sealed at the gate that certified it or listed as DECLARED-UNSEALED, and this gate compares the manifest against the DECLARED seal set rather than against the seals that happened to be taken, so a silently dropped seal dies here.  The vouching layer is inside the seal: schema, provenance, paper claims, polarity, coverage, reachability, gates, totals and the transcript head.  The DECLARED-UNSEALED list is itself frozen by content and by length and may not name any key that carries a measurement
+         evidence: declared seals 27, taken 27, missing none, extra none, receipt keys not covered none, seals broken at close none, unsealed list frozen True and measurement-free True

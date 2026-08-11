@@ -5333,3 +5333,52 @@ engraved families on a pre-engraving unit).  The paper-20
 register rows carried (G-SINGULAR proximity corners horizon-5).
 Repair worker launched (Opus).  After repair + verification:
 CR-A → TERMINAL (the first CR drain).
+
+## 2026-08-11 — PAPER-20 (THE SUMMIT) DELIVERED: COUPLING-CONSISTENT-NOT-REQUIRED — COMMIT-AS-IS (v14 LEDGER #179)
+
+The coupling worker delivered all four artifacts, byte ×2
+in-tree and off-tree/git-less on a hostile PATH under three
+hash seeds.  **Delivered verdict (candidate until
+adjudication): COUPLING-CONSISTENT-NOT-REQUIRED — no closure
+identity named because none was earned.**  G-CONSISTENCY PASS
+(948,297 per-object checks, 0 violations, 4 arms, horizon 5;
+**the law transport GATED AND CONFIRMED, not blocked** —
+G(x,0)=1 ⟹ G(x,1)=M(x) at 406,413 site-steps; k₁=q/M at
+1,215,681 entries; the law's local menu mass IS the walk's own
+Born mass because the coin is site-block-diagonal; falsifier
+kills at 10 site-steps).  G-NONTRIVIALITY PASS (18/18 declared
+observables differ from the mandatory frozen control — not
+inert).  **G-REQUIREMENT: NO WITNESS** (0 ψ-internal
+non-update-restated closures fail frozen and pass coupled; the
+10-row battery: 5 ψ-internal hold BOTH stages; 2 fail frozen
+but stamped UPDATE-RULE-RESTATED and selector-refused; 3 fail
+coupled: K6-BLOCH, K7-CURVATURE-HOMOGENEOUS,
+K8-I7-ADMISSIBILITY).  **THE HORIZON-5 EXIT SURVIVED
+UNIT-GRADE, READING REVERSED:** the coupled record exits I7
+admissibility at threshold EXACTLY 5 (0 below), Born
+probability 927415552/847288609443, det reaching 0 — singular
+boundary only, no indefinite form; the frozen control NEVER
+exits — on the arena's own axiom THE FROZEN STAGE IS SAFER
+[orchestrator: = CR-A's G-SINGULAR-proximity cornering,
+independently confirmed].  SURPRISES: the coin register FORCED
+BY THEOREM (monomial-only on this arena's offset set — each of
+6 nonzero offset differences realised by exactly one ordered
+pair, unitarity kills non-monomials 343→18→0; against
+multiplicity 3 on R4b's axis stencil — why interference lives
+there and dies here); the coin forced too (±Grover unique
+non-trivial S₃-covariant, 4→2); THE STALENESS-BLINDNESS
+THEOREM replaces the witness (a frozen stage is itself an
+admissible stage, 2,455 checks — a requirement theorem needs a
+ψ-internal HISTORY-DEPENDENT closure; the only buildable one,
+K5-NO-RETURN, holds on both stages); latent instrument bug
+found+fixed by the worker (unpopulated sealed path; 2 no-op
+mutants repaired; 44/44 on target).  Counts: 52 gates (49
+sealed-snapshot + 3 post-snapshot verified), 12 waivers each
+forced, 16 pinned sources, 11 anchors w/ perturbation
+falsifiers, 27 seals.  Fiber: 12 items — 2 forced, 3 DERIVED
+(coin register, coin, connection group), 1 measured inert, 6
+declared all-members-run; coin-order declared item
+verdict-relevant and says so (G·D moves 7/9, D·G 5/9).  Shas:
+paper b328a8278fac, code 9e71cf511ab3, output 3e3d04222782,
+receipt 3ca0308b6c19.  Committed AS-IS; orchestrator battery
+next; panel after.
