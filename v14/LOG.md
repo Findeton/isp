@@ -7135,3 +7135,34 @@ provably never generated; co-occupancy
 necessary-not-sufficient exactly as claimed; every
 unrendered table exact against the receipt.  → THE
 ADJUDICATION (all three seats in).
+
+## 2026-08-11 — GDL ADJUDICATION: THE HEAD MOVES TO DECOUPLED-AT-THE-GRAVITATIONAL-BAR; THE MOD-3 CHANNEL ORDERED MEASURED; THIRTEEN ORDERS; REPAIR LAUNCHED (v14 LEDGER #230)
+
+v14/note-gdl-adjudication.md frozen.  Three seats AWF (~1,204
+seat recomputations), zero false computed numbers.  **THE
+HEAD MOVES: GDL-PARTIAL → GDL-DECOUPLED-AT-THE-GRAVITATIONAL-
+BAR** (K2's three legs adopted; the delivered selector could
+never emit DECOUPLED — the truer word lost by construction,
+the two-way disease's second instance; the frozen control
+carries the identical PARTIAL word at 26/28 cells).  **The
+zero FORCED TWICE OVER** (the exact cell doubly record-blind
+— K1's G5 measurement).  The blindness mechanism
+algebra-verified and STRENGTHENED to block-diagonality (any
+arena/graph/dimension/horizon).  **THE MOD-3 CHANNEL ordered
+measured (V4)** — the third geometry→matter channel, wrapping
+inside the delivered horizon.  THIRTEEN orders V1–V13 (the
+two-way selector with a control arm; the frozen table
+published; the corrected theorem; the residue channel; the
+predicate/denominator/framing fixes; the rescoped prediction
+row — threshold invariant, count coin-relative; K1's two
+gifts in-code; the kernel classes stamped; the VACUOUS
+clause closed; true-multiset fences + all tables rendered;
+semantic E-23 + execution-bound sweeps; the allowlist
+cleaned; the sweep).  SUCCESSORS adopted: GDL-1a before
+GDL-2 (the m-no-go carried; block-diagonality-breaking the
+live route); SIG's pin constraint binding; PER-R's
+delay-law-shape inheritance.  NO new engraving (E-22/E-23/
+#34 families; the vacuous-self-certification noted as the
+#34 family's sharpest instance to date).  Repair worker
+launched (Opus).  After repair + battery: paper-25 TERMINAL
++ the prediction-ledger update.
