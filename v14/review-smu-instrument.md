@@ -23,12 +23,12 @@ artifact-integrity gate leaves both corrupted artifacts promoted on disk; and
 fifteen of the forty-two falsifiers corrupt no object, two of them because
 their gate cannot fail on any object at all.
 
-**Counts.** 92 executions of the instrument (42 mutant runs as separate
-processes out of harness; 20 injection runs covering 15 distinct injections,
-**five of them — every code-side one — reproduced in a second independent
-sandbox with identical outcomes**; 6 off-tree byte-reproduction runs across
-four hash seeds; 23 CLI invocations; 1 bare-copy abort), plus 3 corrupted
-runs inside `--selftest`. 324 independent recomputations of
+**Counts.** 96 executions of the instrument (42 mutant runs as separate
+processes out of harness; 24 injection runs covering **19 distinct
+injections, every one run live**, five of them — every code-side one —
+reproduced in a second independent sandbox with identical outcomes; 6
+off-tree byte-reproduction runs across four hash seeds; 23 CLI invocations;
+1 bare-copy abort), plus 3 corrupted runs inside `--selftest`. 324 independent recomputations of
 published quantities, zero mismatches. 350 paper numerals classified
 for gate-protection; 42 falsifiers classified for object-corruption power; 71
 anchor-consumer and seal-gate names resolved against the ledger.
@@ -57,18 +57,18 @@ Every disease this era's panels found live in a sibling, checked here.
 
 Every injection ran the **plain delivery run** in its own pristine off-tree
 sandbox rebuilt from `6d8582e`, with both artifacts present beforehand so
-that "wrote nothing" is measurable. **15 ran live** — the five code-side ones
-(INJ12–INJ16) twice each, in independent sandboxes, with identical outcomes
-down to the bytes left on disk; 4 are marked
-REPLICA-PREDICTED and were **not** run live — those come from an offline
-re-implementation of the four paper gates which I validated against the
-pristine paper and which agreed with **all eleven** live paper runs, 11/11.
+that "wrote nothing" is measurable. **All 19 ran live** — nothing below is
+predicted — with the five code-side ones (INJ12–INJ16) run twice each in
+independent sandboxes, identical outcomes down to the bytes left on disk. An
+offline re-implementation of the four paper gates, validated against the
+pristine paper, was used to triage while the machine was loaded; it agreed
+with **every** live run, **15/15**, and no claim below rests on it.
 
 | # | what / where | caught by | exit | wrote nothing |
 |---|---|---|---|---|
 | INJ01 | §6 spread table: `NON-COMMUTING` and `DEFECT-CARRYING` mass rows exchanged | **NOTHING** | **0** | no — both artifacts written |
 | INJ02 | §4 census table: rows (c) and (d) exchanged (fibres 6↔2, measures NEW↔counting) | **NOTHING** | **0** | no — both artifacts written |
-| INJ03 | §8: two Wilson expectation values exchanged | `G-PAPER-CLAIMS` | 1 | yes *(REPLICA-PREDICTED; the live patch mis-matched a line wrap)* |
+| INJ03 | §8: two Wilson expectation values exchanged | `G-PAPER-CLAIMS` | 1 | yes |
 | INJ04 | one digit of the backticked sha `c9edf97a5533` | `G-PAPER-NUMERAL-COVERAGE` | 1 | yes |
 | INJ05 | the paper's two `paper-18` provenance digests exchanged (instrument ↔ receipt) | **NOTHING** | **0** | no — both artifacts written |
 | INJ06 | the **clean** verdict fence duplicated verbatim | `G-PAPER-VERDICT-EQUALITY` | 1 | yes |
@@ -82,20 +82,21 @@ pristine paper and which agreed with **all eleven** live paper runs, 11/11.
 | INJ14 | the receipt corrupted **on disk** between `os.replace` and read-back (`"coins": 640`→`641`) | `G-ARTIFACT-INTEGRITY` | 1 | **no — both artifacts left promoted, receipt on disk carries `"coins": 641`** |
 | INJ15 | an unstamped expectation-valued key planted at depth (`relativity.wilson_expectation_over_the_carrier`) | `G-WILSON-LICENCE` | 1 | yes |
 | INJ16 | a real float literal (`_TOLERANCE = 1e-9`) planted in the instrument's source | `G-EXACT-ARITHMETIC-BY-AST` | 1 | yes |
-| INJ17 | a verbatim anchor's needle made non-verbatim ("needs"→"requires") | `G-VERBATIM-ANCHORS` | 1 | yes *(REPLICA-PREDICTED)* |
-| INJ18 | the paper misquotes its parent inside a blockquote ("needs a dynamics" → "needs a declared dynamics, and a carrier") | **NOTHING** | **0** | no *(REPLICA-PREDICTED)* |
-| INJ19 | the paper **inverts** R5's definition it quotes ("the ordered product" → "the unordered sum") | **NOTHING** | **0** | no *(REPLICA-PREDICTED)* |
+| INJ17 | a verbatim anchor's needle made non-verbatim ("needs"→"requires") | `G-VERBATIM-ANCHORS` | 1 | yes |
+| INJ18 | the paper misquotes its parent inside a blockquote ("needs a dynamics" → "needs a declared dynamics, and a carrier") | **NOTHING** | **0** | no — both artifacts written |
+| INJ19 | the paper **inverts** R5's definition it quotes ("the ordered product" → "the unordered sum") | **NOTHING** | **0** | no — both artifacts written |
 
-Six survivals. Two of them (INJ01, INJ02) are E-22 violations; two (INJ08,
-INJ09) are load-bearing prose numbers; two (INJ18, INJ19) are misquotations
-of the parents the whole inheritance apparatus exists to bind. INJ12 is the
-seal window. INJ14 is the promotion order.
+**Eight survivals at exit 0.** Two (INJ01, INJ02) are E-22 table violations;
+one (INJ05) is a provenance digest; two (INJ08, INJ09) are load-bearing prose
+numbers; two (INJ18, INJ19) are misquotations of the parents the whole
+inheritance apparatus exists to bind; and INJ12 is the seal window. INJ14
+died correctly but left both corrupted artifacts promoted.
 
 ---
 
 ## 3. FINDINGS
 
-### MAJOR-1 — E-22's "tables render as claims" is not satisfied; two row swaps and a misquote deliver at exit 0
+### MAJOR-1 — E-22's "tables render as claims" is not satisfied; two row swaps, two prose numbers and two misquotations deliver at exit 0
 
 **Measured.** `build_claims` renders 33 claims: 21 prose sentences and one per
 Wilson expectation row. It renders **no table**. I mapped every claim
@@ -110,10 +111,16 @@ identical to the instrument's own normaliser on the delivered paper:
   in the unbound 211.
 - **0 of the paper's 12 quotations of its parents are bound.** The verbatim
   anchors gate the *parent's* bytes; nothing gates the paper's rendering of
-  them. INJ19 shows the consequence: the paper can print "the holonomy is the
-  **unordered sum** of the four link operators" as a blockquote attributed to
-  R5, while `G-VERBATIM-ANCHORS` passes on the correct sentence in R5's own
-  file.
+  them. **INJ19 shows the consequence, live:** the paper printed "the holonomy
+  is the **unordered sum** of the four link operators" as a blockquote
+  attributed to R5 — an inversion of the definition the unit's own observable
+  is rebuilt from — and the run **exited 0 and wrote both artifacts**, while
+  `G-VERBATIM-ANCHORS` passed on the correct sentence sitting in R5's own
+  file. INJ18, a softer misquote of paper-23, likewise delivered at exit 0.
+  The two anchors involved (`VB-R5-PLAQ`, `VB-P23-ABSENT`) are *sound* — INJ17
+  confirms they fire when the needle itself stops being verbatim — so the hole
+  is precisely that nothing connects a verified anchor to the paper's
+  rendering of it.
 
 The one table-shaped object the instrument *does* render — the twelve Wilson
 rows — is exactly the one that is protected (INJ03).
@@ -610,14 +617,10 @@ untouched by anything in this review.
 - I did not rule on the surjection theorem, on whether the law-native family
   is motivated or declared, or on the paper-23 annotation question — K1 and
   K2's rows.
-- Four injections (INJ03, INJ17, INJ18, INJ19) are marked REPLICA-PREDICTED
-  and were **not** run live — the machine was carrying two sibling seats'
-  batteries at load ~250 on 8 cores and each delivery run cost ~100 s of CPU.
-  The replica agreed with the pristine paper and with all eleven live paper
-  runs (11/11), but they are labelled so a reader can discount them. The two
-  that matter most for MAJOR-1 (INJ18, INJ19, the misquotations) are also
-  established structurally: `build_claims` renders no blockquote, and the
-  verbatim anchors read the parents' files, never the paper.
+- Nothing in this review is predicted. All 19 injections ran live; the
+  offline gate replica was a triage aid only (the machine was carrying two
+  sibling seats' batteries at load ~250 on 8 cores, ~100 s CPU per delivery
+  run) and it agreed with every live run, 15/15.
 - The `--no-write` and `--verify-paper` write-nothing checks were run with
   `--quiet`; that flag is irrelevant there because neither writes, and the
   byte-identity checks were run **without** it.

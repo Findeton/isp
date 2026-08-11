@@ -7577,3 +7577,20 @@ first measurement.  The prediction ledger's entry (c) closes
 honestly as the separation ladder (threshold-invariant form)
 in place of the hoped-for decoherence law.  Successors
 GDL-1a/GDL-2 remain on-capacity (Wave-A addendum per #230).
+
+## 2026-08-11 — SMU K3 REVIEW v5: ALL INJECTIONS LIVE — NOTHING PREDICTED; THE QUOTATION HOLE DEMONSTRATED (v14 LEDGER #246)
+
+The seat's deferred wave-2 injections ran live (15/15
+replica-vs-live; 19 distinct injections, every one live; 96
+executions).  **The sharpened finding: INJ19 — the paper
+quoting an INVERTED R5 definition ("the holonomy is the
+UNORDERED SUM…") as a blockquote — delivered at exit 0,
+while INJ17 (needle made non-verbatim) correctly died at
+G-VERBATIM-ANCHORS: the anchors are SOUND; the hole is
+precisely that nothing connects a verified anchor to the
+paper's RENDERING of it.**  Survival tally corrected 6→8
+(the reviewer's own undercount, disclosed).  Grade AWF and
+all findings unchanged in substance; the repair's W8 already
+binds the 12 parent quotations — ADVISORY sent to the repair
+worker adding INJ18/INJ19 to its mandatory replay list.
+Re-frozen (v5, dd11bd925adc).
