@@ -108,7 +108,7 @@ import os
 import re
 import sys
 from fractions import Fraction
-from itertools import product, combinations
+from itertools import product, combinations, permutations
 
 # ===========================================================================
 # SECTION 0.  THE FROZEN DECLARATION (RUNBOOK section 15: the arena is data)
@@ -299,6 +299,37 @@ FOURTH_DIRECTION = (1, 2)                 # paper-20's declared fourth
 WIDTHS = (1, 2, 3)                        # the declared window widths
 BAND_SIZES = tuple(range(2, 15))          # the declared band sweep
 DDS_SUBSET_WINDOW = 12             # |S| at which the subset census is run
+
+# THE SUPPORT-SIZE CEILING.  The declared alphabet's squared moduli lie in
+# {0, 1/4, 1/2, 1}, so a unitary map's squared moduli sum to 1 with at most
+# SUPPORT_CEILING nonzero coefficients.  The ceiling is COMPUTED from the
+# rebuilt alphabet at G-SUPPORT-CEILING, never assumed -- it is what makes the
+# band's ABSENCE half a finite census rather than a declared window.
+SUPPORT_CEILING = 4
+
+# THE CONTROL COSET: the order-3 coset inside the radius-3 ball at L = 9, the
+# ALPHABET-RELATIVE odd-L datum.  Declared here so the disclosure the SCALE
+# clause carries is measured and not asserted.
+ODD_COSET_RUNG = 9
+ODD_COSET_WIDTH = 3
+ODD_COSET = ((0, 0), (3, 0), (6, 0))
+
+# THE (7,4,2) DIFFERENCE-SET WITNESS: the in-alphabet, in-ball, non-monomial
+# unitary at L = 7 and width 2 that the involution-pair search is structurally
+# blind to (Z_7^2 has no involution at all).  Verified two ways in-run.
+L7_RUNG = 7
+L7_WIDTH = 2
+L7_SUPPORT = ((0, 0), (0, 1), (0, 2), (0, 5))
+L7_SIGNS = (1, 1, -1, 1)
+
+# THE NINE-CHARACTERISTIC EXERCISE (the DDS theorem is field-free, and this
+# unit exercises it outside characteristic zero).  The involution is the
+# FROBENIUS COMPUTED IN THE FIELD -- never assumed to be b -> -b, which is
+# false in characteristic 2 -- and is verified to be an order-2 (or trivial)
+# field automorphism before a single map is scanned.
+CHAR_P_FIELDS = (2, 3, 5, 7, 11, 4, 9, 25, 49)
+CHAR_P_SCAN_WINDOW = 150000        # |F|^|S| at which a scan is run
+
 PLAQ_STENCILS = (("S1-ONE", ((0, 0),)),
                  ("S2-EDGE", ((0, 0), (1, 0))),
                  ("S2-CORNER", ((0, 0), (1, 1))),
@@ -583,8 +614,28 @@ SEALED_PATHS = [
     ("SEAL-PAPER-FENCES", "paper_fences", "G-PAPER-FENCED-MULTISET"),
     ("SEAL-MUTANTS", "mutants", "G-MUTANTS-ON-TARGET"),
     ("SEAL-GATES", "gates", "G-PAPER-COVERAGE-FINAL"),
-    ("SEAL-TOTALS", "totals", "G-PAPER-COVERAGE-FINAL"),
+    # #148: a seal is taken at the gate that CLOSES ITS VALUE.  `totals` is
+    # complete at G-TOTALS-REDERIVED and is sealed there, not four hundred
+    # lines and a whole mutant sweep later.
+    ("SEAL-TOTALS", "totals", "G-TOTALS-REDERIVED"),
     ("SEAL-COVERAGE", "paper_coverage", "G-PAPER-COVERAGE-FINAL"),
+    ("SEAL-SUCCESSOR", "successor_register", "G-SUCCESSOR-REGISTER-WRITTEN"),
+    ("SEAL-BAND-CENSUS", "band_law", "G-BAND-ABSENCE-FORCED"),
+    ("SEAL-L7", "l7_witness", "G-L7-DIFFERENCE-SET-WITNESS"),
+    ("SEAL-ODD-COSET", "odd_coset", "G-ODD-COSET-ALPHABET-RELATIVE"),
+    ("SEAL-CEILING", "support_ceiling", "G-SUPPORT-CEILING"),
+    ("SEAL-INJECTIVITY", "injectivity_theorem", "G-BAND-INJECTIVITY"),
+    ("SEAL-CHAR-P", "char_p_census", "G-CHAR-P-FIELD-FREE"),
+    ("SEAL-JOIN", "width_radius_join",
+     "G-WIDTH-RADIUS-JOIN-IS-AN-IDENTITY"),
+    ("SEAL-FORCING", "persistence_forcing",
+     "G-PERSISTENCE-FORCING-DECLARED"),
+    ("SEAL-INSTANCES", "declared_instances",
+     "G-DECLARED-INSTANCES-EXECUTED"),
+    ("SEAL-DDS-WINDOW", "dds_window", "G-DDS-WINDOW"),
+    ("SEAL-FRACTION-CENSUS", "fraction_census", "G-FRACTIONS-STAMPED"),
+    ("SEAL-SEAL-WINDOWS", "seal_windows", "G-SEAL-WINDOWS-DECLARED"),
+    ("SEAL-STRUCTURAL", "structural_registry", "G-STRUCTURAL-REGISTERED"),
     ("SEAL-ALPHABET", "alphabet_rebuilt", "G-ALPHABET-REBUILT"),
     ("SEAL-AXES", "axis_census", "G-AXIS-SET-EXHAUSTIVE"),
     ("SEAL-WRAP", "non_wrapping", "G-NON-WRAPPING"),
@@ -730,6 +781,27 @@ FORCINGS = {
         "provisioning failure earns; its falsifier is the off-tree battery, "
         "which runs the instrument from a copy with a source removed and "
         "requires exit 1 with nothing written",
+    "G-STAGES-DECLARED":
+        "a REAL binding to a pinned verbatim window rather than a rebuild "
+        "identity, so it does not belong in the structural bucket: its "
+        "falsifier is `--break-anchor VB-PIN-STAGES`, which corrupts the "
+        "quoted window and kills the run at this gate.  No in-process mutant "
+        "is declared for it because the anchor-break harness is the honest "
+        "falsifier and is exercised by name",
+}
+
+# E-23, repaired.  STRUCTURAL is an EXPLICIT REGISTRY, not a default `else`:
+# a gate enters it only by naming the TWO INDEPENDENTLY COMPUTED OBJECTS its
+# predicate compares.  A gate that is neither a mutant target, nor waived
+# with a forcing, nor registered here is UNCLASSIFIED and dies at
+# G-WAIVERS-VERIFIED -- which is what the delivered default branch could not
+# do.
+STRUCTURAL_REGISTRY = {
+    "G-DISPERSION-REPRODUCES-THE-PARENT":
+        ("this unit's rebuilt cell, moving, static and distinct-profile "
+         "counts at the parent rung, computed from a pool it built itself",
+         "four path-value anchors read from the momentum parent's receipt at "
+         "named paths"),
 }
 
 # ===========================================================================
@@ -843,12 +915,62 @@ def doubled_subsets(S, L):
 
 def doubled_pair(S, L):
     """the cheapest doubled subset: two offsets differing by an involution.
-    Available at any |S|, and the constructive witness below uses it."""
+    Available at any |S|, and ONE of the two mechanisms the band carries."""
     for v, w in combinations(sorted(S), 2):
         d = ((v[0] - w[0]) % L, (v[1] - w[1]) % L)
         if (2 * d[0]) % L == 0 and (2 * d[1]) % L == 0:
             return (v, w)
     return None
+
+
+_DDS4_MEMO = {}
+
+
+def dds_subsets_bounded(S, L, kmax):
+    """EVERY difference-doubled subset of S of size 2..kmax.
+
+    The criterion is rewritten so that a ball of 49 offsets is a finite
+    census rather than a 2^49 one: an ordered difference d and its negative
+    -d are realised the same number of times unless d is an involution, in
+    which case one unordered pair already realises d twice.  So
+
+        T is difference-doubled  <=>  every unordered pair difference of T
+        is an involution, or its +-class is carried by at least two of T's
+        unordered pairs.
+
+    Equivalent to `is_doubled` by construction, and G-DDS-CRITERION-AGREES
+    binds the two routes against each other over every arena and every ball
+    small enough to admit the naive census."""
+    key = (tuple(sorted(S)), L, kmax)
+    got = _DDS4_MEMO.get(key)
+    if got is not None:
+        return got
+    B = sorted(S)
+    n = len(B)
+    inv = [[False] * n for _ in range(n)]
+    cls = [[None] * n for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            d = ((B[i][0] - B[j][0]) % L, (B[i][1] - B[j][1]) % L)
+            nd = ((-d[0]) % L, (-d[1]) % L)
+            inv[i][j] = (d == nd)
+            cls[i][j] = min(d, nd)
+    out = []
+    for r in range(2, min(kmax, n) + 1):
+        for T in combinations(range(n), r):
+            ps = tuple(combinations(T, 2))
+            ok = True
+            for a, b in ps:
+                if inv[a][b]:
+                    continue
+                c = cls[a][b]
+                if sum(1 for x, y in ps if cls[x][y] == c) < 2:
+                    ok = False
+                    break
+            if ok:
+                out.append(tuple(B[i] for i in T))
+    _DDS4_MEMO[key] = out
+    return out
 
 # ===========================================================================
 # SECTION 5.  THE UNITARITY SCAN
@@ -910,6 +1032,35 @@ def scan_offsets(S, A, L):
     return out
 
 
+def matrix_unitary(coef, L):
+    """the THIRD route, and the most literal one: build the full L^2 x L^2
+    matrix U (U[s+v][s] = c_v) and check U^dag U = I entry by entry.  No
+    autocorrelation identity is used -- this is the definition of unitarity
+    evaluated on every one of the L^4 entries."""
+    sites = list(product(range(L), repeat=2))
+    idx = {s: i for i, s in enumerate(sites)}
+    n = len(sites)
+    U = [[ZERO] * n for _ in range(n)]
+    for s in sites:
+        for v, cv in coef.items():
+            t = idx[((s[0] + v[0]) % L, (s[1] + v[1]) % L)]
+            U[t][idx[s]] = cadd(U[t][idx[s]], cv)
+    cols = [[(k, cconj(U[k][j])) for k in range(n) if U[k][j] != ZERO]
+            for j in range(n)]
+    checked = bad = 0
+    for i in range(n):
+        for j in range(n):
+            acc = ZERO
+            for k, cu in cols[i]:
+                if U[k][j] != ZERO:
+                    acc = cadd(acc, cmul(cu, U[k][j]))
+            checked += 1
+            if acc != (ONE if i == j else ZERO):
+                bad += 1
+    return {"entries": checked, "mismatches": bad, "unitary": bad == 0,
+            "dimension": n}
+
+
 def autocorr_is_delta(coef, L):
     """the parent's own criterion, written over the WHOLE torus: the second,
     independent code path.  Used at the parent rung to bind the structural
@@ -924,6 +1075,156 @@ def autocorr_is_delta(coef, L):
         if acc != (ONE if not any(m) else ZERO):
             return False
     return True
+
+# ===========================================================================
+# SECTION 5b.  THE DDS THEOREM OUTSIDE CHARACTERISTIC ZERO
+# ===========================================================================
+# The DDS theorem's proof uses exactly two properties -- the coefficient field
+# has no zero divisors, and the involution takes nonzero to nonzero -- so it
+# holds over ANY field equipped with an involution, the trivial involution
+# included.  The delivered proof is read in characteristic 0 and nowhere else,
+# so this section exercises it in nine finite fields, with the involution
+# taken as the FROBENIUS COMPUTED IN THE FIELD and verified to be an order-2
+# (or trivial) field automorphism.  F_4 is the hardest case and the one
+# characteristic 0 cannot see: there 1 = -1, so b -> -b is the identity while
+# the Frobenius is not.
+
+_FIELD_MEMO = {}
+
+
+def finite_field(q):
+    """F_q for q a prime or the square of a prime, with the Frobenius.
+    Returns (elements, add, mul, one, zero, frobenius, p, degree).  The
+    irreducible quadratic is FOUND by exhaustion, never typed."""
+    got = _FIELD_MEMO.get(q)
+    if got is not None:
+        return got
+    prime = q > 1 and all(q % d for d in range(2, q))
+    if prime:
+        els = tuple(range(q))
+        res = (els, lambda a, b, p=q: (a + b) % p,
+               lambda a, b, p=q: (a * b) % p, 1, 0, (lambda a: a), q, 1)
+        _FIELD_MEMO[q] = res
+        return res
+    p = None
+    for cand in range(2, q):
+        if cand * cand == q and all(cand % d for d in range(2, cand)):
+            p = cand
+    if p is None:
+        raise GateFail("G-CHAR-P-FIELDS :: %d is neither a prime nor a prime "
+                       "square" % q)
+    u = v = None
+    for uu in range(p):
+        for vv in range(p):
+            if all((r * r + uu * r + vv) % p for r in range(p)):
+                u, v = uu, vv
+                break
+        if u is not None:
+            break
+    els = tuple((a, b) for a in range(p) for b in range(p))
+
+    def fadd(x, y, p=p):
+        return ((x[0] + y[0]) % p, (x[1] + y[1]) % p)
+
+    def fmul(x, y, p=p, u=u, v=v):
+        a, b, c = x[0] * y[0], x[0] * y[1] + x[1] * y[0], x[1] * y[1]
+        return ((a - c * v) % p, (b - c * u) % p)
+
+    def frob(x, p=p, fmul=fmul):
+        r, base, e = (1, 0), x, p
+        while e:
+            if e & 1:
+                r = fmul(r, base)
+            base = fmul(base, base)
+            e >>= 1
+        return r
+
+    res = (els, fadd, fmul, (1, 0), (0, 0), frob, p, 2)
+    _FIELD_MEMO[q] = res
+    return res
+
+
+def field_involution_report(q):
+    """the involution is VERIFIED, not declared: order 2 or 1, additive,
+    multiplicative, exhaustively over the whole field."""
+    els, fadd, fmul, one, zero, frob, p, k = finite_field(q)
+    invol = all(frob(frob(e)) == e for e in els)
+    additive = all(frob(fadd(a, b)) == fadd(frob(a), frob(b))
+                   for a in els for b in els)
+    multiplicative = all(frob(fmul(a, b)) == fmul(frob(a), frob(b))
+                         for a in els for b in els)
+    return {"q": q, "characteristic": p, "degree": k,
+            "involution_order": 1 if all(frob(e) == e for e in els) else 2,
+            "is_an_involution": invol, "additive": additive,
+            "multiplicative": multiplicative,
+            "one_equals_minus_one": fadd(one, one) == zero,
+            "pairs_checked": len(els) * len(els) * 2}
+
+
+def char_p_scan(S, q, L, dim):
+    """EXHAUSTIVE over F_q^|S|: the unitary maps on the offset set S in
+    (Z_L)^dim, with the Frobenius as the involution."""
+    els, fadd, fmul, one, zero, frob, p, k = finite_field(q)
+    if dim == 1:
+        def sub(a, b):
+            return (a - b) % L
+    else:
+        def sub(a, b):
+            return ((a[0] - b[0]) % L, (a[1] - b[1]) % L)
+    tab = {}
+    for i, v in enumerate(S):
+        for j, w in enumerate(S):
+            tab.setdefault(sub(v, w), []).append((i, j))
+    zd = sub(S[0], S[0])
+    lags = sorted(((m, pr) for m, pr in tab.items() if m != zd),
+                  key=lambda t: len(t[1]))
+    cj = {e: frob(e) for e in els}
+    pt = {(a, b): fmul(a, cj[b]) for a in els for b in els}
+    uni = mono = 0
+    for c in product(els, repeat=len(S)):
+        ok = True
+        for m, prs in lags:
+            acc = zero
+            for (i, j) in prs:
+                if c[i] != zero and c[j] != zero:
+                    acc = fadd(acc, pt[(c[i], c[j])])
+            if acc != zero:
+                ok = False
+                break
+        if not ok:
+            continue
+        acc = zero
+        for (i, j) in tab[zd]:
+            if c[i] != zero and c[j] != zero:
+                acc = fadd(acc, pt[(c[i], c[j])])
+        if acc != one:
+            continue
+        uni += 1
+        if sum(1 for x in c if x != zero) <= 1:
+            mono += 1
+    return {"maps": len(els) ** len(S), "unitary": uni, "monomial": mono,
+            "non_monomial": uni - mono}
+
+
+def char_p_arenas():
+    """the arenas the char-p exercise runs: the parent's own 3-term stencil at
+    every order the order census sweeps, and the anchored link set (and the
+    fourth direction) on small tori.  DDS-freeness is computed for each."""
+    out = []
+    for n in range(2, 9):
+        S = tuple(sorted({0 % n, 1 % n, (-1) % n}))
+        lift = [(x, 0) for x in S]
+        free = not dds_subsets_bounded(lift, n, len(S))
+        out.append(("ORD-%d" % n, S, n, 1, free))
+    for L in (3, 4, 5):
+        S = tuple(sorted(LINK_SET))
+        out.append(("LINK-L%d" % L, S, L, 2,
+                    not dds_subsets_bounded(S, L, len(S))))
+    for L in (3, 4):
+        S = tuple(sorted(list(LINK_SET) + [FOURTH_DIRECTION]))
+        out.append(("LINK-PLUS-4TH-L%d" % L, S, L, 2,
+                    not dds_subsets_bounded(S, L, len(S))))
+    return out
 
 # ===========================================================================
 # SECTION 6.  THE FAMILY, GENERALISED: AXES, THE POOL, THE DISPERSIONS
@@ -1167,25 +1468,43 @@ def locality_at_width(L, r):
 
 
 def blockwise_components(L, b):
-    """R2's partition corollary, transported: an atlas whose cells partition
-    the sites can never produce a non-complete component."""
+    """R2's partition corollary, transported.  The adjacency is EVALUATED,
+    not asserted: two sites share a chart iff they fall in the same block, so
+    `drawn` counts the pairs actually found adjacent by that test and
+    `possible` counts the pairs of the cell.  A cell is complete iff the two
+    agree, and `cross` counts the pairs the test finds adjacent across two
+    different cells -- which must be zero for a partition."""
     comps = {}
     for v in product(range(L), repeat=2):
         comps.setdefault((v[0] // b, v[1] // b), []).append(v)
+
+    def same_chart(x, y):
+        return (x[0] // b, x[1] // b) == (y[0] // b, y[1] // b)
+
     rows = []
     for key, cell in sorted(comps.items()):
         n = len(cell)
-        rows.append({"cell": list(key), "size": n,
-                     "drawn": n * (n - 1) // 2,
-                     "possible": n * (n - 1) // 2, "complete": True})
-    return rows
+        drawn = sum(1 for x, y in combinations(sorted(cell), 2)
+                    if same_chart(x, y))
+        rows.append({"cell": list(key), "size": n, "drawn": drawn,
+                     "possible": n * (n - 1) // 2,
+                     "complete": drawn == n * (n - 1) // 2})
+    keys = sorted(comps)
+    cross = 0
+    for i, j in combinations(range(len(keys)), 2):
+        for x in comps[keys[i]]:
+            for y in comps[keys[j]]:
+                if same_chart(x, y):
+                    cross += 1
+    return rows, cross
 
 
 def band_witness(L, r):
-    """the constructive half of the band law: two offsets of the radius-r
+    """ONE of the two mechanisms the band carries: two offsets of the radius-r
     ball differing by an involution carry an explicit non-monomial unitary,
     c = 1/sqrt2 at one and i/sqrt2 at the other, both in the declared
-    alphabet.  Verified by the parent's own whole-torus criterion."""
+    alphabet.  Verified by the parent's own whole-torus criterion.  This is
+    NOT a decision procedure for admission -- see `band_census`, which is."""
     dp = doubled_pair(ball(L, r), L)
     if dp is None:
         return None
@@ -1197,6 +1516,183 @@ def band_witness(L, r):
     return {"pair": [list(v), list(w)],
             "radius": max(torus_absmax(o, L) for o in coef),
             "support": 2, "coefficients": [cstr(INV_SQ2), cstr(I_INV_SQ2)]}
+
+
+# ---------------------------------------------------------------------------
+# THE COMPLETED, TWO-SIDED BAND CENSUS
+# ---------------------------------------------------------------------------
+# The delivered band was the section of ONE construction -- the
+# involution-separated pair -- and its closed form asserted evenness.  The
+# census below decides admission outright, at every declared width and size,
+# and both of its halves are forced:
+#
+#   ABSENCE, above 4r.  THEOREM (injectivity).  Lift the radius-r ball to
+#   {-r..r}^2 in Z^2.  Two lifted differences lie in {-2r..2r}^2 and are
+#   congruent mod L only if they differ by L.e with |L.e_i| <= 4r, so e = 0
+#   whenever L >= 4r+1; the lifted difference map is then injective on the
+#   ball's differences, every internal difference is realised by exactly one
+#   ordered pair, and the ball is DDS-free.  `injective_lift` evaluates the
+#   hypothesis directly, over the whole lifted difference box.
+#
+#   ABSENCE, below 4r+1.  THEOREM (the support-size ceiling).  The declared
+#   alphabet's squared moduli lie in {0, 1/4, 1/2, 1}, so a unitary map's
+#   squared moduli sum to 1 with at most four nonzero coefficients and the
+#   profile is forced.  The whole admission question is then a FINITE census
+#   over the ball's subsets of size 2, 3 and 4, which is what runs.
+#
+#   PRESENCE.  Constructive: an explicit map, verified by the parent's own
+#   whole-torus criterion.
+#
+# Two mechanisms occur in the declared sweep -- the involution-separated pair
+# (even L <= 4r) and the PERFECT DIFFERENCE SET (L = 7 at r = 2, the (7,4,2)
+# set, in a group with no involution at all).  Evenness is NOT a law.
+
+_CEIL_MEMO = {}
+
+
+def support_ceiling(A):
+    """the ceiling, COMPUTED from the rebuilt alphabet: the multisets of
+    nonzero squared moduli that sum to 1, and the largest support any of them
+    admits."""
+    key = tuple(A)
+    got = _CEIL_MEMO.get(key)
+    if got is not None:
+        return got
+    mods = sorted({cmul(a, cconj(a)) for a in A if a != ZERO})
+    vals = []
+    for m in mods:
+        f = m[0]
+        if any(m[i] for i in range(1, DEG)) or f <= 0 or f > 1:
+            raise GateFail("G-SUPPORT-CEILING :: a squared modulus is not a "
+                           "rational in (0, 1]: %s" % cstr(m))
+        vals.append(f)
+    vals = sorted(set(vals))
+    sols = []
+
+    def rec(cur, rem, start):
+        if rem == 0:
+            sols.append(tuple(cur))
+            return
+        if rem < 0 or len(cur) > 16:
+            return
+        for i in range(start, len(vals)):
+            rec(cur + [vals[i]], rem - vals[i], i)
+
+    rec([], Fraction(1), 0)
+    by_size = {}
+    for s in sols:
+        by_size.setdefault(len(s), []).append([str(x) for x in s])
+    res = {"squared_moduli": [str(v) for v in vals],
+           "profiles": {str(k): v for k, v in sorted(by_size.items())},
+           "ceiling": max(len(s) for s in sols)}
+    _CEIL_MEMO[key] = res
+    return res
+
+
+def injective_lift(L, r):
+    """the injectivity theorem's hypothesis, evaluated: distinct lifted
+    differences in {-2r..2r}^2 stay distinct modulo L."""
+    seen = {}
+    collisions = 0
+    for d in product(range(-2 * r, 2 * r + 1), repeat=2):
+        k = (d[0] % L, d[1] % L)
+        if k in seen and seen[k] != d:
+            collisions += 1
+        else:
+            seen[k] = d
+    return {"L": L, "r": r, "box": (4 * r + 1) ** 2, "collisions": collisions,
+            "injective": collisions == 0, "threshold": 4 * r + 1}
+
+
+_BAND_MEMO = {}
+
+
+def band_census(L, r, A):
+    """DECIDES admission at (L, r) over the declared alphabet: is there a
+    non-monomial unitary supported inside the radius-r ball?
+
+    Exhaustive by the ceiling: every difference-doubled subset of the ball of
+    size 2..SUPPORT_CEILING is enumerated, and on each the coefficient maps
+    with the forced modulus profile are scanned, the global phase fixed.  A
+    witness is verified by the parent's own whole-torus criterion before it
+    is returned.  When none is found the scan is exhaustive and the ABSENCE
+    is measured, not declared."""
+    key = (L, r, tuple(A))
+    got = _BAND_MEMO.get(key)
+    if got is not None:
+        return got
+    B = ball(L, r)
+    subs = dds_subsets_bounded(B, L, SUPPORT_CEILING)
+    by_mod = {}
+    for i, a in enumerate(A):
+        if a == ZERO:
+            continue
+        m = cmul(a, cconj(a))
+        by_mod.setdefault(m[0], []).append(i)
+    ceil = support_ceiling(A)
+    prof = {int(k): [[Fraction(x) for x in p] for p in v]
+            for k, v in ceil["profiles"].items()}
+    pt = [[cmul(A[i], cconj(A[j])) for j in range(len(A))]
+          for i in range(len(A))]
+    tested = 0
+    witness = None
+    for T in subs:
+        k = len(T)
+        if k not in prof or witness is not None:
+            continue
+        tab = lag_structure(list(T), L)
+        lags = sorted(((m, pr) for m, pr in tab.items() if m != (0, 0)),
+                      key=lambda t: len(t[1]))
+        for profile in prof[k]:
+            for perm in set(permutations(profile)):
+                pools = [by_mod.get(slot, []) for slot in perm]
+                if not all(pools):
+                    continue
+                pools = [pools[0][:1]] + pools[1:]     # the global phase
+                for c in product(*pools):
+                    tested += 1
+                    ok = True
+                    for m, prs in lags:
+                        acc = ZERO
+                        for (i, j) in prs:
+                            acc = cadd(acc, pt[c[i]][c[j]])
+                        if acc != ZERO:
+                            ok = False
+                            break
+                    if not ok:
+                        continue
+                    coef = {T[i]: A[c[i]] for i in range(k)}
+                    if not autocorr_is_delta(coef, L):
+                        raise GateFail(
+                            "G-BAND-CENSUS :: a census witness fails the "
+                            "parent's whole-torus criterion at L=%d r=%d"
+                            % (L, r))
+                    witness = {"support": [list(v) for v in T],
+                               "size": k,
+                               "coefficients": [cstr(A[c[i]])
+                                                for i in range(k)],
+                               "radius": max(torus_absmax(v, L) for v in T),
+                               "difference_multiplicities":
+                                   sorted(diff_multiset(list(T), L).values(),
+                                          reverse=True),
+                               "mechanism": ("INVOLUTION-PAIR" if k == 2 else
+                                             "PERFECT-DIFFERENCE-SET" if
+                                             len(set(diff_multiset(
+                                                 list(T), L).values())) == 1
+                                             and k == 4 else
+                                             "DIFFERENCE-DOUBLED-SUBSET")}
+                    break
+                if witness is not None:
+                    break
+            if witness is not None:
+                break
+    res = {"L": L, "r": r, "ball": len(B), "dds_subsets": len(subs),
+           "maps_tested": tested, "witness": witness,
+           "carries_a_non_monomial": witness is not None,
+           "exhaustive": witness is None,
+           "injectivity": injective_lift(L, r)}
+    _BAND_MEMO[key] = res
+    return res
 
 # ===========================================================================
 # SECTION 8.  THE GAUGE FINGERPRINT: COINS, STRATA, PLAQUETTE HOLONOMY
@@ -1375,107 +1871,270 @@ def is_three_cycle(p):
 # and G-FALSIFIER-DESCRIPTIONS checks each description against the source
 # text of the branch guarded by its own `mut(...)` call.
 
+# E-23, REPAIRED.  A published description is bound to its branch TWO ways:
+#   (1) its leading VERB must lie in the verb set of its declared EFFECT
+#       CLASS, so an inverted description ("drops" -> "adds") changes the
+#       class and dies -- which is the injection the delivered gate survived;
+#   (2) the source text of the branch its own switch guards is DIGESTED and
+#       the digest is PINNED in this frozen table, so editing the code
+#       without editing the description dies too.
+# The switch-existence test that used to stand alone is kept as the third leg.
+VERB_CLASSES = {
+    "SHRINK": ("drops", "shortens", "shrinks", "removes", "truncates",
+               "hides", "deletes", "narrows"),
+    "GROW": ("adds", "appends", "publishes", "emits", "widens", "inserts",
+             "admits"),
+    "MOVE": ("moves", "edits", "flips", "rewrites", "reports", "marks",
+             "returns", "inverts", "corrupts", "breaks", "injects",
+             "declares", "perturbs", "replaces"),
+}
+
 MUTANTS = [
-    ("MUT-SOURCE-DIGEST", "G-SOURCES-PINNED",
+    ("MUT-SOURCE-DIGEST", "G-SOURCES-PINNED", "MOVE",
      "corrupts one pinned source digest before the byte anchors are checked"),
-    ("MUT-PATH-VALUE", "G-PATH-VALUE-ANCHORS",
+    ("MUT-PATH-VALUE", "G-PATH-VALUE-ANCHORS", "MOVE",
      "moves one path-value anchor's read value away from its declaration"),
-    ("MUT-VERBATIM-FRAGMENT", "G-VERBATIM-ANCHORS",
-     "admits a verbatim window shorter than the declared length floor"),
-    ("MUT-EXTRA-READ", "G-RUNTIME-INPUTS-ENUMERATED",
+    ("MUT-VERBATIM-FRAGMENT", "G-VERBATIM-ANCHORS", "SHRINK",
+     "shortens one verbatim window below the declared length floor"),
+    ("MUT-EXTRA-READ", "G-RUNTIME-INPUTS-ENUMERATED", "GROW",
      "appends an undeclared path to the runtime read list"),
-    ("MUT-FLOAT", "G-NO-FLOATS",
+    ("MUT-FLOAT", "G-NO-FLOATS", "MOVE",
      "injects a float into the receipt before the type scan"),
-    ("MUT-ALPHABET", "G-ALPHABET-REBUILT",
+    ("MUT-ALPHABET", "G-ALPHABET-REBUILT", "SHRINK",
      "drops one element from the rebuilt coefficient alphabet"),
-    ("MUT-AXIS-DROP", "G-AXIS-SET-EXHAUSTIVE",
+    ("MUT-AXIS-DROP", "G-AXIS-SET-EXHAUSTIVE", "SHRINK",
      "drops one axis from the axis set at the parent rung"),
-    ("MUT-LAG", "G-LAG-SUPPORT-STRUCTURAL",
-     "declares one lag outside the difference table to be empty when it is "
-     "not"),
-    ("MUT-POOL", "G-POOL-REPRODUCES-THE-PARENT",
+    ("MUT-LAG", "G-LAG-SUPPORT-STRUCTURAL", "MOVE",
+     "declares one lag of the difference table to be empty when it is not"),
+    ("MUT-POOL", "G-POOL-REPRODUCES-THE-PARENT", "SHRINK",
      "shortens the rebuilt pool at the parent rung by one generator"),
-    ("MUT-GAUGE-ORBIT", "G-GAUGE-ORBITS-FREE",
+    ("MUT-GAUGE-ORBIT", "G-GAUGE-ORBITS-FREE", "SHRINK",
      "shrinks one recorded global-phase orbit below the group's size"),
-    ("MUT-TWO-ROUTE", "G-TWO-ROUTE-POOL",
+    ("MUT-TWO-ROUTE", "G-TWO-ROUTE-POOL", "MOVE",
      "perturbs the second, whole-torus pool route's count at the parent rung"),
-    ("MUT-ORD", "G-ORD-CENSUS-REPRODUCED",
+    ("MUT-ORD", "G-ORD-CENSUS-REPRODUCED", "MOVE",
      "moves one order-census non-monomial count away from the parent's"),
-    ("MUT-SIDON", "G-SIDON-MEASURED",
+    ("MUT-SIDON", "G-SIDON-MEASURED", "MOVE",
      "reports one arena as Sidon whose difference multiset is not"),
-    ("MUT-DDS", "G-DDS-CRITERION-SOUND",
+    ("MUT-DDS", "G-DDS-CRITERION-SOUND", "MOVE",
      "reports a DDS-free arena as carrying a non-monomial unitary"),
-    ("MUT-SIDON-VERDICT", "G-SIDON-PREDICTION-TESTED",
+    ("MUT-SIDON-VERDICT", "G-SIDON-PREDICTION-TESTED", "MOVE",
      "flips one arena's prediction verdict away from its own two measured "
      "legs"),
-    ("MUT-CONTROL", "G-FOURTH-DIRECTION-CONTROL",
+    ("MUT-SUFFICIENCY-SPLIT", "G-SUFFICIENCY-DENOMINATOR-HONEST", "MOVE",
+     "moves the count of substantively holding Sidon arenas away from the "
+     "per-arena legs it is summed from"),
+    ("MUT-CONTROL", "G-FOURTH-DIRECTION-CONTROL", "MOVE",
      "moves the reproduced non-monomial count at the control arena"),
-    ("MUT-EIGEN", "G-EIGENVALUES-ROOTS-OF-UNITY",
+    ("MUT-FROBENIUS", "G-CHAR-P-INVOLUTIONS", "MOVE",
+     "reports the Frobenius of a quadratic extension as the trivial "
+     "involution"),
+    ("MUT-CHAR-P", "G-CHAR-P-FIELD-FREE", "MOVE",
+     "reports one finite-field scan as DDS-free while carrying a "
+     "non-monomial unitary"),
+    ("MUT-EIGEN", "G-EIGENVALUES-ROOTS-OF-UNITY", "MOVE",
      "marks one dispersion cell as lying off the root-of-unity lattice"),
-    ("MUT-EIGENLATTICE", "G-EIGENPHASE-LATTICE",
+    ("MUT-EIGENLATTICE", "G-EIGENPHASE-LATTICE", "MOVE",
      "reports the eigenphase lattice at one rung as the parent rung's"),
-    ("MUT-VMAX", "G-VMAX-IS-DIAMETER",
+    ("MUT-VMAX", "G-VMAX-IS-DIAMETER", "MOVE",
      "moves the measured maximal group speed at one rung"),
-    ("MUT-ATTAINED", "G-VMAX-ATTAINED-BY-THE-ANTIPODE",
+    ("MUT-ATTAINED", "G-VMAX-ATTAINED-BY-THE-ANTIPODE", "SHRINK",
      "removes the antipodal monomial witness at one rung"),
-    ("MUT-INTERIOR", "G-INTERIOR-RADII",
-     "moves the interior-radius count at the rung the register names"),
-    ("MUT-VELOCITY", "G-INTEGER-VELOCITY-CENSUS",
+    ("MUT-INTERIOR", "G-INTERIOR-RADII", "SHRINK",
+     "drops one interior radius at the rung the register names"),
+    ("MUT-VELOCITY", "G-INTEGER-VELOCITY-CENSUS", "SHRINK",
      "hides the non-integer velocity witness at the rung that carries it"),
-    ("MUT-COIN", "G-COIN-ALPHABET-DERIVED",
+    ("MUT-ONE-MECHANISM", "G-MONOMIAL-VELOCITY-IS-AN-INTEGER", "MOVE",
+     "reports a monomial family as carrying a non-integer velocity"),
+    ("MUT-COIN", "G-COIN-ALPHABET-DERIVED", "SHRINK",
      "drops one coin from the derived coin family"),
-    ("MUT-STRATA", "G-STRATA-PERFECT-MATCHINGS",
+    ("MUT-STRATA", "G-STRATA-PERFECT-MATCHINGS", "MOVE",
      "reports one parity stratum as covering a site twice"),
-    ("MUT-WRAP", "G-NON-WRAPPING",
+    ("MUT-WRAP", "G-NON-WRAPPING", "MOVE",
      "reports a declared plaquette stencil as wrapping when it does not"),
-    ("MUT-PROFILE", "G-PROFILE-PERSISTS",
+    ("MUT-PROFILE", "G-PROFILE-PERSISTS", "MOVE",
      "moves one measured group order in the (order, support) profile"),
-    ("MUT-ALT", "G-ALTERNATING-ON-ORBITS",
-     "breaks the alternating certificate by moving one predicted order"),
-    ("MUT-GLOBAL", "G-GLOBAL-SUPPORT-IS-THE-VOLUME",
-     "reports the global stencil's support as smaller than the volume"),
-    ("MUT-LOCALITY", "G-LOCALITY-WINDOWS",
+    ("MUT-ALT", "G-ALTERNATING-ON-ORBITS", "MOVE",
+     "moves the predicted alternating order at one rung and stencil, so the "
+     "certificate no longer closes"),
+    ("MUT-GLOBAL", "G-GLOBAL-SUPPORT-IS-THE-VOLUME", "SHRINK",
+     "shrinks the global stencil's measured support below the volume"),
+    ("MUT-LOCALITY", "G-LOCALITY-WINDOWS", "MOVE",
      "flips one window's locality flag away from its own completeness test"),
-    ("MUT-WIDTH", "G-WIDTH-COUNT-EQUALS-INTERIOR-RADII",
+    ("MUT-WIDTH", "G-WIDTH-COUNT-EQUALS-INTERIOR-RADII", "MOVE",
      "moves the count of locality-admitting widths at one rung"),
-    ("MUT-PARTITION", "G-PARTITION-COROLLARY",
-     "reports a blockwise cell as non-complete"),
-    ("MUT-BAND", "G-BAND-LAW",
-     "moves one admitted size out of the measured band at one width"),
-    ("MUT-TABLE", "G-PERSISTENCE-TABLE-BOUND",
+    ("MUT-JOIN", "G-WIDTH-RADIUS-JOIN-IS-AN-IDENTITY", "SHRINK",
+     "drops one width from the measured locality-admitting set at one size, "
+     "so it no longer equals the interior radii"),
+    ("MUT-PARTITION", "G-PARTITION-COROLLARY", "SHRINK",
+     "drops one drawn adjacency from a blockwise cell, so the cell is no "
+     "longer a clique"),
+    ("MUT-CEILING", "G-SUPPORT-CEILING", "MOVE",
+     "moves the computed support ceiling away from the declared one"),
+    ("MUT-INJECTIVITY", "G-BAND-INJECTIVITY", "GROW",
+     "adds a collision to one lifted difference box, so its measured "
+     "injectivity leaves the 4r+1 threshold"),
+    ("MUT-DDS-ROUTES", "G-DDS-CRITERION-AGREES", "SHRINK",
+     "drops one subset from the naive difference-doubled census, so the two "
+     "routes no longer agree"),
+    ("MUT-DDS-WINDOW", "G-DDS-WINDOW", "MOVE",
+     "reports an arena wider than the declared subset window"),
+    ("MUT-BAND", "G-BAND-LAW", "SHRINK",
+     "drops one admitted size out of the measured band at one width"),
+    ("MUT-BAND-ABSENCE", "G-BAND-ABSENCE-FORCED", "MOVE",
+     "reports one excluded cell as neither locality-blocked nor exhausted"),
+    ("MUT-BAND-PAIR", "G-BAND-PAIR-MECHANISM", "MOVE",
+     "moves one size out of the involution-pair mechanism's own section"),
+    ("MUT-L7-WITNESS", "G-L7-DIFFERENCE-SET-WITNESS", "MOVE",
+     "flips one sign of the difference-set witness's coefficient map"),
+    ("MUT-L7-SECTION", "G-L7-IN-THE-SECTION", "MOVE",
+     "reports the difference-set cell as carrying an involution pair"),
+    ("MUT-ODD-COSET", "G-ODD-COSET-ALPHABET-RELATIVE", "MOVE",
+     "moves the order-3 coset's non-monomial count over the probe alphabet"),
+    ("MUT-TABLE", "G-PERSISTENCE-TABLE-BOUND", "MOVE",
      "rewrites one persistence verdict away from its own measured cells"),
-    ("MUT-FRACTION", "G-FRACTIONS-STAMPED",
-     "publishes a fraction with neither a measure nor the COUNTING-ONLY "
-     "stamp"),
-    ("MUT-VERDICT", "G-VERDICT-RECONSTRUCTED",
+    ("MUT-FORCING", "G-PERSISTENCE-FORCING-DECLARED", "MOVE",
+     "marks a BREAKS row FORCED, which names no theorem and is not a "
+     "survival"),
+    ("MUT-SUCCESSOR", "G-SUCCESSOR-REGISTER-WRITTEN", "SHRINK",
+     "drops one part from the three-part record of the registered "
+     "prediction"),
+    ("MUT-ARENA-DECLARED", "G-ARENA-DECLARED", "MOVE",
+     "moves the declared control rung away from the one the run uses"),
+    ("MUT-CHOICES", "G-CHOICES-INVENTORIED", "MOVE",
+     "moves a priced choice's instance count away from the number of "
+     "instances its sweep executed"),
+    ("MUT-INSTANCE-PLAN", "G-DECLARED-INSTANCES-EXECUTED", "GROW",
+     "adds a planned instance to a declared sweep that the run never "
+     "executes"),
+    ("MUT-NOT-EXECUTED", "G-NOT-EXECUTED-EMPTY", "GROW",
+     "appends a declared instance to the not-executed list"),
+    ("MUT-VACUOUS-GATE", "G-WAIVERS-VERIFIED", "GROW",
+     "adds a gate that binds nothing to the set the waiver ledger must "
+     "classify"),
+    ("MUT-STRUCTURAL-STALE", "G-STRUCTURAL-REGISTERED", "SHRINK",
+     "removes a registered structural gate from the set of gates the run "
+     "reaches"),
+    ("MUT-TOTALS", "G-TOTALS-REDERIVED", "MOVE",
+     "moves one published total away from the object that produces it"),
+    ("MUT-FRACTION", "G-FRACTIONS-STAMPED", "GROW",
+     "adds a fraction to the paper's scanned text with neither a measure nor "
+     "the COUNTING-ONLY stamp"),
+    ("MUT-VERDICT", "G-VERDICT-RECONSTRUCTED", "MOVE",
      "edits the verdict string after its segments are derived"),
-    ("MUT-HEAD", "G-VERDICT-PREREGISTERED",
-     "emits a head that is not one of the pre-registered forms"),
-    ("MUT-WALLS", "G-WALLS",
+    ("MUT-HEAD", "G-VERDICT-PREREGISTERED", "MOVE",
+     "replaces the head with one that is not a pre-registered form"),
+    ("MUT-WALLS", "G-WALLS", "GROW",
      "inserts a continuum claim into the scope segment"),
-    ("MUT-DESCRIPTION", "G-FALSIFIER-DESCRIPTIONS",
-     "inverts one published mutant description relative to its code"),
-    ("MUT-SEAL-BROKEN", "G-SEAL-COMPLETE",
+    ("MUT-DESCRIPTION", "G-FALSIFIER-DESCRIPTIONS", "MOVE",
+     "inverts the leading verb of one published mutant description, leaving "
+     "its code untouched"),
+    ("MUT-SEAL-BROKEN", "G-SEAL-COMPLETE", "MOVE",
      "edits a sealed object after its gate-time digest was taken"),
-    ("MUT-SEAL-MANIFEST", "G-SEAL-MANIFEST-TOTAL",
+    ("MUT-SEAL-WINDOW", "G-SEAL-WINDOWS-DECLARED", "SHRINK",
+     "removes one declared seal from the takes the run performed, as a seal "
+     "homed to a gate that closes before its value exists would be"),
+    ("MUT-SEAL-MANIFEST", "G-SEAL-MANIFEST-TOTAL", "GROW",
      "publishes a receipt key that is neither sealed nor declared unsealed"),
-    ("MUT-GATE-CHAIN", "G-GATE-ROWS-SEALED",
-     "edits the detail of a closed gate row after its digest entered the chain"),
-    ("MUT-PAPER-CLAIM", "G-PAPER-CLAIMS",
+    ("MUT-GATE-CHAIN", "G-GATE-ROWS-SEALED", "MOVE",
+     "edits the detail of a closed gate row after its digest entered the "
+     "chain"),
+    ("MUT-PAPER-CLAIM", "G-PAPER-CLAIMS", "GROW",
      "adds a measured claim the paper does not make"),
-    ("MUT-PAPER-NUMERAL", "G-PAPER-NUMERAL-COVERAGE",
+    ("MUT-PAPER-NUMERAL", "G-PAPER-NUMERAL-COVERAGE", "GROW",
      "adds an unlicensed numeral to the paper's scanned set"),
-    ("MUT-PAPER-SPAN", "G-PAPER-INLINE-SPANS",
-     "adds an unlicensed numeral inside an inline code span"),
-    ("MUT-PAPER-FENCE", "G-PAPER-FENCED-MULTISET",
-     "drops one copy of a duplicated fenced block from the rendered multiset"),
-    ("MUT-PAPER-TABLE", "G-PAPER-TABLES-AS-CLAIMS",
+    ("MUT-PAPER-SPAN", "G-PAPER-INLINE-SPANS", "GROW",
+     "adds an inline code span carrying an unlicensed numeral to the scanned "
+     "span list"),
+    ("MUT-PAPER-FENCE", "G-PAPER-FENCED-MULTISET", "SHRINK",
+     "drops one copy of a duplicated fenced block from the rendered "
+     "multiset"),
+    ("MUT-PAPER-TABLE", "G-PAPER-TABLES-AS-CLAIMS", "MOVE",
      "moves one rendered table row away from the paper's"),
-    ("MUT-PAPER-POLARITY", "G-PAPER-CLAIM-POLARITY",
+    ("MUT-PAPER-POLARITY", "G-PAPER-CLAIM-POLARITY", "MOVE",
      "returns an unmoved claim after its receipt key was perturbed"),
-    ("MUT-PAPER-VERDICT", "G-PAPER-VERDICT-BLOCK",
+    ("MUT-PAPER-VERDICT", "G-PAPER-VERDICT-BLOCK", "SHRINK",
      "truncates the verdict string the paper is required to quote"),
 ]
+
+# The digest of the 240 source characters beginning at each switch, PINNED.
+# Editing a branch without editing its published description moves the digest
+# and dies at G-FALSIFIER-DESCRIPTIONS; editing the description without
+# editing the branch changes the verb class and dies at the same gate.
+MUTANT_CODE_DIGESTS = {
+    "MUT-SOURCE-DIGEST": "7e6cd1e223bc",
+    "MUT-PATH-VALUE": "d50a99ba4ddb",
+    "MUT-VERBATIM-FRAGMENT": "405c1952166d",
+    "MUT-EXTRA-READ": "9d7cf3ec8e8a",
+    "MUT-FLOAT": "f627494873b9",
+    "MUT-ALPHABET": "0077707563e6",
+    "MUT-AXIS-DROP": "d37401db9e6f",
+    "MUT-LAG": "be114659153a",
+    "MUT-POOL": "5cb9bd82e0dc",
+    "MUT-GAUGE-ORBIT": "ad5c75b6f924",
+    "MUT-TWO-ROUTE": "c7bb87ab0b2b",
+    "MUT-ORD": "4f12fff3a44d",
+    "MUT-SIDON": "406d09d44b69",
+    "MUT-DDS": "fa514afb73cd",
+    "MUT-SIDON-VERDICT": "c1cb0df8a47c",
+    "MUT-SUFFICIENCY-SPLIT": "37b489c1dfff",
+    "MUT-CONTROL": "628ab9dbf735",
+    "MUT-FROBENIUS": "11f3523423ec",
+    "MUT-CHAR-P": "f2c81f0acd82",
+    "MUT-EIGEN": "c9419d7326eb",
+    "MUT-EIGENLATTICE": "c34f96b0e092",
+    "MUT-VMAX": "2e755ecf25d6",
+    "MUT-ATTAINED": "be8559e4afe2",
+    "MUT-INTERIOR": "1e6f8bc54e40",
+    "MUT-VELOCITY": "51b8c6f568cd",
+    "MUT-ONE-MECHANISM": "a537bf9520c1",
+    "MUT-COIN": "26c5dc528091",
+    "MUT-STRATA": "9adf674d9d2f",
+    "MUT-WRAP": "9ca644b963d8",
+    "MUT-PROFILE": "d132fd527d76",
+    "MUT-ALT": "578992fb2852",
+    "MUT-GLOBAL": "adea165eabd2",
+    "MUT-LOCALITY": "097c4cabbc3a",
+    "MUT-WIDTH": "a18210c35960",
+    "MUT-JOIN": "c587a38be0c7",
+    "MUT-PARTITION": "8dcf5bedcfdd",
+    "MUT-CEILING": "b555962527cf",
+    "MUT-INJECTIVITY": "9e64a6ec685e",
+    "MUT-DDS-ROUTES": "6c0961472412",
+    "MUT-DDS-WINDOW": "b6d1e821bcee",
+    "MUT-BAND": "677e1ea91b9d",
+    "MUT-BAND-ABSENCE": "39f02498bf3c",
+    "MUT-BAND-PAIR": "0973c3eef4ae",
+    "MUT-L7-WITNESS": "3f871fe96a4c",
+    "MUT-L7-SECTION": "9229e9a98a91",
+    "MUT-ODD-COSET": "c7560407d589",
+    "MUT-TABLE": "aaed360df6ab",
+    "MUT-FORCING": "92c9153c33e3",
+    "MUT-SUCCESSOR": "51f376dd7eed",
+    "MUT-ARENA-DECLARED": "fbbb45aad495",
+    "MUT-CHOICES": "a2484bab63ad",
+    "MUT-INSTANCE-PLAN": "749c657494c2",
+    "MUT-NOT-EXECUTED": "a89754cefc5f",
+    "MUT-VACUOUS-GATE": "19cf25222d09",
+    "MUT-STRUCTURAL-STALE": "fd2096c8458a",
+    "MUT-TOTALS": "8895d577e545",
+    "MUT-FRACTION": "908f85a3fe7e",
+    "MUT-VERDICT": "57be912094ab",
+    "MUT-HEAD": "15569405a56a",
+    "MUT-WALLS": "7926bd22ab66",
+    "MUT-DESCRIPTION": "8973a61823bd",
+    "MUT-SEAL-BROKEN": "b506d7b08d1b",
+    "MUT-SEAL-WINDOW": "6f097b05b66d",
+    "MUT-SEAL-MANIFEST": "c0e4d175463a",
+    "MUT-GATE-CHAIN": "ebd45f64db48",
+    "MUT-PAPER-CLAIM": "58896be0bf3a",
+    "MUT-PAPER-NUMERAL": "9c5e9329aa19",
+    "MUT-PAPER-SPAN": "191b8206491b",
+    "MUT-PAPER-FENCE": "0e215bbc25b9",
+    "MUT-PAPER-TABLE": "a4b73c675b9d",
+    "MUT-PAPER-POLARITY": "cf996157a909",
+    "MUT-PAPER-VERDICT": "495fbfc6e9d2",
+}
 
 # the receipt keys the post-sweep stage adds; the in-run manifest gate uses
 # the PREDICTED final key set so that no key escapes it by arriving late.
@@ -1485,7 +2144,8 @@ LATE_KEYS = ("mutants", "gates", "gate_digests", "seal_manifest",
 # the gates that still run after the waiver ledger closes; the ledger is built
 # over these too, so no gate is published without a falsifier or a forcing.
 REMAINING_GATES = ("G-TOTALS-REDERIVED", "G-NO-FLOATS", "G-SEAL-COMPLETE",
-                   "G-SEAL-MANIFEST-TOTAL", "G-GATE-ROWS-SEALED",
+                   "G-SEAL-WINDOWS-DECLARED", "G-SEAL-MANIFEST-TOTAL",
+                   "G-GATE-ROWS-SEALED", "G-STRUCTURAL-REGISTERED",
                    "G-MUTANTS-ON-TARGET", "G-PUBLISHED-KEYS-COVERED",
                    "G-GATES-CLOSED-AS-PREDICTED", "G-PAPER-COVERAGE-FINAL",
                    "G-GATE-LEDGER-COVERS-THE-RUN")
@@ -1503,8 +2163,9 @@ LATE_GATES = ("G-WAIVERS-VERIFIED", "G-TOTALS-REDERIVED", "G-PAPER-CLAIMS",
 
 
 def build_state(break_anchor=None):
-    global READS
+    global READS, NOT_EXECUTED
     READS = []
+    NOT_EXECUTED = []
     LD = Ledger()
     S = {"schema": SCHEMA, "unit": UNIT, "pin": PIN_REL}
     SEAL = Seal()
@@ -1610,6 +2271,13 @@ def build_state(break_anchor=None):
         "forcing_link": pv("PV-FORCING-LINK"),
         "plaquette_stencils": [n for n, _o in PLAQ_STENCILS],
         "dds_subset_window": DDS_SUBSET_WINDOW,
+        "support_ceiling": SUPPORT_CEILING,
+        "char_p_fields": list(CHAR_P_FIELDS),
+        "char_p_scan_window": CHAR_P_SCAN_WINDOW,
+        "odd_coset": {"L": ODD_COSET_RUNG, "width": ODD_COSET_WIDTH,
+                      "support": [list(v) for v in ODD_COSET]},
+        "difference_set_witness": {"L": L7_RUNG, "width": L7_WIDTH,
+                                   "support": [list(v) for v in L7_SUPPORT]},
         "family_generalisation_rule":
             "R4's construction applied verbatim at each rung: axes = every "
             "nonzero offset modulo sign (exhaustive); stencil = the parent's "
@@ -1618,23 +2286,48 @@ def build_state(break_anchor=None):
             "rung, every instance run.",
         "probe_alphabets": [n for n, _a in PROBE_ALPHABETS],
     }
+    ad = S["arena_declaration"]
+    if mut("MUT-ARENA-DECLARED"):
+        ad = dict(ad)
+        ad["control_rung"] = PARENT_RUNG
+    # #15: the declaration must match EVERY coordinate the run uses -- the
+    # control rung included, which the delivered scope segment omitted.
+    ad_bad = [k for k, v in (
+        ("ladder", list(LADDER)), ("parent_rung", PARENT_RUNG),
+        ("control_rung", CONTROL_RUNG),
+        ("link_set", [list(v) for v in LINK_SET]),
+        ("fourth_direction", list(FOURTH_DIRECTION)),
+        ("widths", list(WIDTHS)), ("band_sizes", list(BAND_SIZES)),
+        ("dds_subset_window", DDS_SUBSET_WINDOW),
+        ("plaquette_stencils", [n for n, _o in PLAQ_STENCILS]),
+        ("probe_alphabets", [n for n, _a in PROBE_ALPHABETS]),
+        ("dimension", pv("PV-D")), ("alphabet", pv("PV-ALPHABET")),
+        ("stencil", pv("PV-STENCIL")), ("connective", pv("PV-CONNECTIVE")),
+        ("forcing_link", pv("PV-FORCING-LINK"))) if ad.get(k) != v]
+    ad_bad += [k for k in ("family_generalisation_rule", "support_ceiling",
+                           "char_p_fields") if not ad.get(k)]
+    ad_bad += ([] if ad["control_rung"] not in ad["ladder"]
+               else ["control_rung-collides-with-the-ladder"])
     LD.gate("G-ARENA-DECLARED",
-            "the arena is data: the ladder, the stencils, the widths, the "
-            "alphabet and the generalisation rule are declared before a "
-            "measurement is taken, and every one of them is either anchored "
-            "or a frozen literal named here",
-            (list(LADDER) == [4, 6, 8] and PARENT_RUNG in LADDER
-             and S["arena_declaration"]["alphabet"] == 25
-             and S["arena_declaration"]["dimension"] == 2),
-            "ladder %s at d=%d over an alphabet of %d"
-            % (list(LADDER), pv("PV-D"), pv("PV-ALPHABET")))
+            "the arena is data and the declaration matches EVERY coordinate "
+            "the run uses: the ladder, the parent rung, the CONTROL RUNG, the "
+            "link set, the fourth direction, the widths, the band sweep, the "
+            "subset window, the plaquette stencils, the probe alphabets, the "
+            "dimension, the alphabet, the stencil, the connective, the "
+            "forcing link and the generalisation rule are each compared "
+            "against the value the run carries, one by one",
+            not ad_bad, "%d declared coordinates checked, failing: %s"
+            % (len(ad), ad_bad or "none"))
 
+    stages_row = [r for r in vb_rows if r["anchor"] == "VB-PIN-STAGES"][0]
     LD.gate("G-STAGES-DECLARED",
             "the pin's five stages are the ones run, and the pin's own "
-            "sentence requiring a per-arena PASS/FAIL is quoted from it",
-            [r for r in vb_rows if r["anchor"] == "VB-PIN-STAGES"][0]["present"],
+            "sentence requiring a per-arena PASS/FAIL is quoted from it -- a "
+            "real binding, falsifiable by breaking that anchor",
+            stages_row["present"] and stages_row["long_enough"],
             "the pin's prediction-ledger sentence is present at "
-            "VB-PIN-STAGES")
+            "VB-PIN-STAGES (%d chars, floor %d)"
+            % (stages_row["chars"], stages_row["floor"]))
 
     # ---- the alphabet, rebuilt ----------------------------------------
     A = list(ALPHABET)
@@ -1831,7 +2524,10 @@ def build_state(break_anchor=None):
     S["dds_law"] = {
         "theorem": "if no subset of the offset set of size >= 2 is "
                    "difference-doubled, every unitary map on it is monomial, "
-                   "over any field closed under conjugation",
+                   "over any FIELD EQUIPPED WITH AN INVOLUTION (the trivial "
+                   "involution included).  The proof uses exactly two "
+                   "properties: a product of two nonzero elements is nonzero, "
+                   "and the involution takes nonzero to nonzero",
         "arenas_dds_free": len(dds_forced),
         "arenas_dds_free_and_monomial_only":
             sum(1 for r in dds_forced if r["monomial_only"]),
@@ -1854,6 +2550,73 @@ def build_state(break_anchor=None):
                S["dds_law"]["arenas_dds_free_and_monomial_only"],
                bad or "none"))
 
+    # ---- the theorem OUTSIDE characteristic zero -------------------------
+    fld_rows = [field_involution_report(q) for q in CHAR_P_FIELDS]
+    if mut("MUT-FROBENIUS"):
+        fld_rows[5] = dict(fld_rows[5])
+        fld_rows[5]["involution_order"] = 1
+    bad_f = [r["q"] for r in fld_rows
+             if not (r["is_an_involution"] and r["additive"]
+                     and r["multiplicative"])]
+    non_trivial = [r["q"] for r in fld_rows if r["involution_order"] == 2]
+    char2 = [r["q"] for r in fld_rows
+             if r["one_equals_minus_one"] and r["involution_order"] == 2]
+    LD.gate("G-CHAR-P-INVOLUTIONS",
+            "the involution used outside characteristic zero is the FROBENIUS "
+            "COMPUTED IN THE FIELD, verified exhaustively to be an order-2 "
+            "(or trivial) field automorphism -- never assumed to be b -> -b, "
+            "which is the identity in characteristic 2 -- and at least one "
+            "declared field has 1 = -1 with a NON-TRIVIAL involution, which "
+            "is the case characteristic zero cannot exhibit",
+            not bad_f and char2,
+            "%d fields, %d with a non-trivial involution (%s), %d with "
+            "1 = -1 and a non-trivial involution (%s), %d failing: %s"
+            % (len(fld_rows), len(non_trivial), non_trivial, len(char2),
+               char2, len(bad_f), bad_f or "none"))
+
+    cp_rows, cp_skipped = [], []
+    for q in CHAR_P_FIELDS:
+        for nm, St, n, dim, free in char_p_arenas():
+            if len(finite_field(q)[0]) ** len(St) > CHAR_P_SCAN_WINDOW:
+                cp_skipped.append({"q": q, "arena": nm,
+                                   "maps": len(finite_field(q)[0]) ** len(St),
+                                   "window": CHAR_P_SCAN_WINDOW})
+                continue
+            sc = char_p_scan(list(St), q, n, dim)
+            cp_rows.append({"q": q, "arena": nm, "group_order": n,
+                            "dimension": dim, "dds_free": free,
+                            "maps": sc["maps"], "unitary": sc["unitary"],
+                            "monomial": sc["monomial"],
+                            "non_monomial": sc["non_monomial"]})
+    if mut("MUT-CHAR-P"):
+        cp_rows[0] = dict(cp_rows[0])
+        cp_rows[0]["dds_free"] = True
+        cp_rows[0]["non_monomial"] = 1
+    S["char_p_census"] = {
+        "fields": fld_rows, "rows": cp_rows,
+        "scan_window": CHAR_P_SCAN_WINDOW,
+        "scans": len(cp_rows),
+        "outside_the_window": cp_skipped,
+        "dds_free_rows": sum(1 for r in cp_rows if r["dds_free"]),
+        "violations": [(r["q"], r["arena"]) for r in cp_rows
+                       if r["dds_free"] and r["non_monomial"]],
+        "note": "the DDS theorem's field-freeness EXERCISED, not merely "
+                "proved: every scan is exhaustive over F_q^|S| with the "
+                "Frobenius as the involution"}
+    LD.gate("G-CHAR-P-FIELD-FREE",
+            "the DDS theorem is exercised outside characteristic zero: at "
+            "every declared finite field and every declared arena small "
+            "enough for an exhaustive scan, a DDS-free offset set carries no "
+            "non-monomial unitary -- the field-freeness is measured in nine "
+            "characteristics rather than read off a proof written in one",
+            not S["char_p_census"]["violations"],
+            "%d exhaustive scans over %d fields, %d of them DDS-free, %d "
+            "violations: %s"
+            % (len(cp_rows), len(CHAR_P_FIELDS),
+               S["char_p_census"]["dds_free_rows"],
+               len(S["char_p_census"]["violations"]),
+               S["char_p_census"]["violations"] or "none"))
+
     # the prediction, arena by arena
     pred_rows = []
     for r in arenas:
@@ -1875,14 +2638,31 @@ def build_state(break_anchor=None):
                                 else "FAILS"))]
     suff = all(p["sufficiency_holds"] for p in pred_rows)
     nec_fail = [p for p in pred_rows if not p["necessity_holds"]]
+    # E-24 / #34: the sufficiency direction is a material implication, so at
+    # every arena whose antecedent is FALSE it holds VACUOUSLY.  The honest
+    # denominator is the Sidon arenas, and the split is published.
+    subst = [p for p in pred_rows if p["sidon"]]
+    vac = [p for p in pred_rows if not p["sidon"]]
+    n_subst = sum(1 for p in subst if p["sufficiency_holds"])
+    if mut("MUT-SUFFICIENCY-SPLIT"):
+        n_subst -= 1
     S["sidon_prediction"] = {
         "quoted": [r["sha256_12"] for r in vb_rows
                    if r["anchor"] == "VB-SIDON"][0],
         "rows": pred_rows,
         "sufficiency_holds_everywhere": suff,
+        "sufficiency_substantive": len(subst),
+        "sufficiency_substantive_holding": n_subst,
+        "sufficiency_vacuous": len(vac),
+        "sufficiency_split_note":
+            "the sufficiency direction is the material implication "
+            "(not Sidon) or monomial-only, so it holds VACUOUSLY at every "
+            "arena that is not Sidon.  It is substantively tested at the "
+            "Sidon arenas alone",
         "necessity_failures": len(nec_fail),
         "necessity_failure_arenas": ["L=%d %s" % (p["L"], p["arena"])
                                      for p in nec_fail],
+        "necessity_failure_rungs": sorted({p["L"] for p in nec_fail}),
         "verdict": ("SUFFICIENT-NOT-NECESSARY" if suff and nec_fail else
                     "CONFIRMED-BOTH-WAYS" if suff else "REFUTED")}
     LD.gate("G-SIDON-PREDICTION-TESTED",
@@ -1896,6 +2676,24 @@ def build_state(break_anchor=None):
             % (len(pred_rows), suff, len(nec_fail),
                ", ".join(S["sidon_prediction"]["necessity_failure_arenas"])
                or "none"))
+    sp = S["sidon_prediction"]
+    LD.gate("G-SUFFICIENCY-DENOMINATOR-HONEST",
+            "the sufficiency count is split at its own antecedent: the "
+            "material implication holds VACUOUSLY at every non-Sidon arena, "
+            "so the substantive denominator is the Sidon arenas and the "
+            "vacuous confirmations are published beside it rather than "
+            "folded into the headline",
+            (sp["sufficiency_substantive"] + sp["sufficiency_vacuous"]
+             == len(pred_rows)
+             and sp["sufficiency_substantive"]
+             == sum(1 for r in arenas if r["sidon"])
+             and sp["sufficiency_substantive_holding"]
+             == sp["sufficiency_substantive"]),
+            "%d substantive (all holding: %s) + %d vacuous = %d arenas"
+            % (sp["sufficiency_substantive"],
+               sp["sufficiency_substantive_holding"]
+               == sp["sufficiency_substantive"],
+               sp["sufficiency_vacuous"], len(pred_rows)))
 
     # the fourth-direction control, at paper-20's own arena and at the ladder
     ctrl = []
@@ -2081,15 +2879,55 @@ def build_state(break_anchor=None):
             w = ni[0]
             wit = {"axis": list(w["axis"]), "axis_order": w["ord"],
                    "support": w["support"],
-                   "speed": w["non_integer"][0][2],
+                   "velocity": w["non_integer"][0][2],
+                   "speed": w["non_integer"][0][2].lstrip("-"),
                    "momentum": list(w["non_integer"][0][0]),
                    "direction": w["non_integer"][0][1]}
+        # THE ONE MECHANISM.  A monomial generator is a shift by an offset o,
+        # whose symbol advances by a fixed step per momentum step, so its
+        # velocity is -o -- an INTEGER at every rung, by the parent's own
+        # forced normalisation.  Every non-integer velocity therefore lives
+        # on the NON-MONOMIAL residue, which is exactly the residue the DDS
+        # criterion still permits.  Both halves are measured here.
+        mono_ni = [g for g, v in zip(pools[L], vel_all[L])
+                   if g["monomial"] and v["non_integer"]]
+        if mut("MUT-ONE-MECHANISM") and L == 6:
+            mono_ni = [pools[L][0]]
+        nm_fams = [g for g in pools[L] if not g["monomial"]]
+        ni_are_nm = all(not g["monomial"]
+                        for g, v in zip(pools[L], vel_all[L])
+                        if v["non_integer"])
         vel_rows.append({"L": L, "velocity_cells": cells,
                          "non_integer_families": len(ni),
                          "non_integer_cells": sum(len(v["non_integer"])
                                                   for v in ni),
+                         "monomial_with_a_non_integer_velocity": len(mono_ni),
+                         "non_monomial_families": len(nm_fams),
+                         "non_integer_families_are_non_monomial": ni_are_nm,
+                         "non_integer_is_all_of_the_non_monomial":
+                             len(ni) == len(nm_fams),
                          "all_integer": not ni, "witness": wit})
     S["velocity_census"] = vel_rows
+    bad = [r["L"] for r in vel_rows
+           if r["monomial_with_a_non_integer_velocity"]
+           or not r["non_integer_families_are_non_monomial"]]
+    LD.gate("G-MONOMIAL-VELOCITY-IS-AN-INTEGER",
+            "the fifth break is not independent of the first four.  A "
+            "monomial generator is a shift, and under the parent's own forced "
+            "normalisation its velocity is the negated offset -- an integer "
+            "at every rung.  Measured per family at every rung: NO monomial "
+            "family anywhere carries a non-integer velocity, so every "
+            "non-integer velocity sits on the non-monomial residue, which is "
+            "exactly what the DDS criterion still permits",
+            not bad, "monomial families with a non-integer velocity by rung "
+            "%s; at L=6 the %d non-integer families are the %d non-monomial "
+            "families: %s"
+            % ({r["L"]: r["monomial_with_a_non_integer_velocity"]
+                for r in vel_rows},
+               [r["non_integer_families"] for r in vel_rows if r["L"] == 6][0],
+               [r["non_monomial_families"] for r in vel_rows if r["L"] == 6][0],
+               [r["non_integer_is_all_of_the_non_monomial"]
+                for r in vel_rows if r["L"] == 6][0]))
     p4v = [r for r in vel_rows if r["L"] == PARENT_RUNG][0]
     breaks = [r["L"] for r in vel_rows if not r["all_integer"]]
     # the SECOND ROUTE: v is an integer exactly when 24 divides L times the
@@ -2208,6 +3046,8 @@ def build_state(break_anchor=None):
                 pred = 1
                 for ob in orbs:
                     pred *= factorial(len(ob)) // 2
+                if mut("MUT-ALT") and L == 6 and nm == "S2-EDGE":
+                    pred *= 2
                 cells.add(("x".join("A%d" % len(ob) for ob in orbs)
                            or "TRIVIAL", order,
                            tuple(len(ob) for ob in orbs), order == pred,
@@ -2225,8 +3065,6 @@ def build_state(break_anchor=None):
                    "generators_are_three_cycles": bool(cl[0][4])}
             if mut("MUT-PROFILE") and L == 8 and nm == "S3-ROW":
                 row["order"] = 2519
-            if mut("MUT-ALT") and L == 6 and nm == "S2-EDGE":
-                row["alternating_certified"] = False
             prof_rows.append(row)
     S["gauge_profile"] = prof_rows
     S["non_wrapping"] = wrap_rows
@@ -2329,18 +3167,29 @@ def build_state(break_anchor=None):
             not bad, "%d (rung, width) windows, %d whose flag disagrees with "
             "its own test" % (len(win_rows), len(bad)))
 
+    # THE JOIN IS AN IDENTITY OF SETS, FORCED BY THE TWO DEFINITIONS, and it
+    # is measured as such: completeness is "the ball covers the torus", so the
+    # locality-admitting widths are {1, ..., diam-1}; the interior radii are
+    # the radius classes strictly between 0 and diam, i.e. the same set.  It
+    # therefore holds at ODD sizes too -- the one result here that says
+    # anything about odd rungs -- and the sweep runs over every band size.
     wc_rows = []
     for L in LADDER:
         loc = [w for w in win_rows if w["L"] == L and w["locality"]]
-        ir = [r for r in rad_rows if r["L"] == L][0]["interior_count"]
+        ir = [r for r in rad_rows if r["L"] == L][0]
         n = len(loc)
         if mut("MUT-WIDTH") and L == 8:
             n -= 1
         wc_rows.append({"L": L, "locality_admitting_widths": n,
                         "widths": [w["r"] for w in loc],
-                        "interior_radii": ir, "equal": n == ir})
+                        "interior_radii": ir["interior_count"],
+                        "width_set": [w["r"] for w in loc],
+                        "interior_radius_set": ir["interior_radii"],
+                        "sets_equal": [w["r"] for w in loc]
+                                      == ir["interior_radii"],
+                        "equal": n == ir["interior_count"]})
     S["width_count"] = wc_rows
-    bad = [r["L"] for r in wc_rows if not r["equal"]]
+    bad = [r["L"] for r in wc_rows if not (r["equal"] and r["sets_equal"])]
     LD.gate("G-WIDTH-COUNT-EQUALS-INTERIOR-RADII",
             "the number of window widths that admit locality equals the "
             "interior-radius count at every rung -- the parent's successor "
@@ -2349,75 +3198,434 @@ def build_state(break_anchor=None):
             % {r["L"]: (r["locality_admitting_widths"], r["interior_radii"])
                for r in wc_rows})
 
+    join_rows = []
+    for L in BAND_SIZES:
+        diam = max(torus_absmax(v, L) for v in product(range(L), repeat=2))
+        widths = []
+        r = 1
+        while True:
+            row = locality_at_width(L, r)
+            if row["locality"]:
+                widths.append(r)
+            if row["complete"]:
+                break
+            r += 1
+        radii = sorted({torus_absmax(v, L)
+                        for v in product(range(L), repeat=2)})
+        interior = [x for x in radii if 0 < x < diam]
+        expect = list(range(1, diam))
+        join_rows.append({"L": L, "diameter": diam, "widths": widths,
+                          "interior_radii": interior,
+                          "both_are_1_to_diam_minus_1":
+                              widths == interior == expect,
+                          "odd": L % 2 == 1})
+    if mut("MUT-JOIN"):
+        r0 = dict(join_rows[3])
+        r0["widths"] = r0["widths"][:-1] or [0]
+        r0["both_are_1_to_diam_minus_1"] = (
+            r0["widths"] == r0["interior_radii"]
+            == list(range(1, r0["diameter"])))
+        join_rows[3] = r0
+    S["width_radius_join"] = {
+        "rows": join_rows,
+        "status": "FORCED-BY-THE-TWO-DEFINITIONS",
+        "identity": "both sets are {1, ..., diam-1}: completeness is 'the "
+                    "radius-r ball covers the torus', so locality survives "
+                    "exactly while r < diam; and the interior radii are the "
+                    "radius classes strictly between 0 and diam.  This is an "
+                    "identity of SETS for any connective and any L, odd or "
+                    "even -- not a cross-instrument coincidence at three "
+                    "rungs",
+        "odd_sizes_covered": sum(1 for r in join_rows if r["odd"])}
+    bad = [r["L"] for r in join_rows if not r["both_are_1_to_diam_minus_1"]]
+    LD.gate("G-WIDTH-RADIUS-JOIN-IS-AN-IDENTITY",
+            "the join is an identity of SETS forced by the two definitions, "
+            "not a coincidence of counts at three rungs: at every size of the "
+            "whole band sweep -- ODD sizes included, where nothing else here "
+            "speaks -- the locality-admitting widths and the interior radii "
+            "are the same set, and both are {1, ..., diam-1}",
+            not bad, "%d sizes (%d of them odd), %d disagreeing: %s"
+            % (len(join_rows), S["width_radius_join"]["odd_sizes_covered"],
+               len(bad), bad or "none"))
+
     part_rows = []
     for L in LADDER:
         for b in range(2, L):
             if L % b:
                 continue
-            cells = blockwise_components(L, b)
-            ok = all(c["complete"] for c in cells)
+            cells, cross = blockwise_components(L, b)
             if mut("MUT-PARTITION") and L == 8 and b == 2:
-                ok = False
+                cells = [dict(c) for c in cells]
+                cells[0]["drawn"] = cells[0]["drawn"] - 1
+                cells[0]["complete"] = False
+            ok = all(c["drawn"] == c["possible"] for c in cells)
             part_rows.append({"L": L, "block": b, "cells": len(cells),
-                              "clique_only": ok,
-                              "locality": not ok})
+                              "pairs_drawn": sum(c["drawn"] for c in cells),
+                              "pairs_possible": sum(c["possible"]
+                                                    for c in cells),
+                              "cross_cell_adjacencies": cross,
+                              "clique_only": ok and cross == 0,
+                              "locality": not (ok and cross == 0)})
     S["partition_control"] = part_rows
     bad = [(r["L"], r["block"]) for r in part_rows if not r["clique_only"]]
     LD.gate("G-PARTITION-COROLLARY",
-            "R2's partition corollary transports: every blockwise atlas of "
-            "this stage is clique-only at every rung, so locality here is "
-            "carried by the SLIDING window and by nothing else",
-            not bad, "%d blockwise atlases, %d producing a non-complete "
-            "component" % (len(part_rows), len(bad)))
+            "R2's partition corollary transports, and the adjacency is "
+            "EVALUATED rather than asserted: at every rung and every divisor "
+            "block size, every pair inside a cell is found adjacent by the "
+            "same-chart test and no pair across two cells is, so every "
+            "component is a clique and locality here is carried by the "
+            "SLIDING window and by nothing else",
+            not bad, "%d blockwise atlases, %d pairs drawn of %d possible, "
+            "%d cross-cell adjacencies, %d producing a non-complete component"
+            % (len(part_rows), sum(r["pairs_drawn"] for r in part_rows),
+               sum(r["pairs_possible"] for r in part_rows),
+               sum(r["cross_cell_adjacencies"] for r in part_rows), len(bad)))
 
+    # ---- the support-size ceiling: what makes the absence half finite ----
+    ceil = support_ceiling(A)
+    if mut("MUT-CEILING"):
+        ceil = dict(ceil)
+        ceil["ceiling"] = ceil["ceiling"] + 1
+    S["support_ceiling"] = ceil
+    LD.gate("G-SUPPORT-CEILING",
+            "the largest support a unitary map can have over the declared "
+            "alphabet is COMPUTED from the alphabet itself: the squared "
+            "moduli are enumerated, every multiset of them summing to one is "
+            "found, and the ceiling is the largest such multiset -- which is "
+            "what turns the band's absence half into a finite census",
+            ceil["ceiling"] == SUPPORT_CEILING,
+            "squared moduli %s; profiles %s; ceiling %d against the declared "
+            "%d" % (ceil["squared_moduli"], ceil["profiles"], ceil["ceiling"],
+                    SUPPORT_CEILING))
+
+    # ---- the injectivity theorem, evaluated over the whole sweep ---------
+    inj_rows = []
+    for r in WIDTHS:
+        for L in BAND_SIZES:
+            row = injective_lift(L, r)
+            row["predicted"] = L >= 4 * r + 1
+            row["agrees"] = row["injective"] == row["predicted"]
+            inj_rows.append(row)
+    if mut("MUT-INJECTIVITY"):
+        k = [i for i, r in enumerate(inj_rows) if r["injective"]][0]
+        r0 = dict(inj_rows[k])
+        r0["collisions"] = r0["collisions"] + 1
+        r0["injective"] = r0["collisions"] == 0
+        r0["agrees"] = r0["injective"] == r0["predicted"]
+        inj_rows[k] = r0
+    S["injectivity_theorem"] = {
+        "statement": "lift the radius-r ball to {-r..r}^2 in Z^2; two lifted "
+                     "differences lie in {-2r..2r}^2 and are congruent mod L "
+                     "only if they differ by L.e with |L.e_i| <= 4r, so e = 0 "
+                     "whenever L >= 4r+1, the ball's differences are all "
+                     "simple, and the ball is DDS-FREE at every width",
+        "rows": inj_rows,
+        "threshold_by_width": {str(r): 4 * r + 1 for r in WIDTHS}}
+    bad = [(r["L"], r["r"]) for r in inj_rows if not r["agrees"]]
+    LD.gate("G-BAND-INJECTIVITY",
+            "the injectivity theorem's hypothesis is EVALUATED over the whole "
+            "lifted difference box at every declared width and size, and the "
+            "measured injectivity agrees with the theorem's threshold "
+            "L >= 4r+1 at every one of them",
+            not bad, "%d (width, size) boxes, %d disagreeing with 4r+1: %s"
+            % (len(inj_rows), len(bad), bad or "none"))
+
+    # ---- the census: the band DECIDED, both halves -----------------------
     band_rows = []
     for r in WIDTHS:
-        adm = []
+        adm, pair_adm = [], []
         for L in BAND_SIZES:
             loc = locality_at_width(L, r)["locality"]
-            wit = band_witness(L, r)
-            ok = loc and wit is not None
-            if mut("MUT-BAND") and r == 2 and L == 7:
-                ok = True
+            cen = band_census(L, r, A)
+            pw = band_witness(L, r)
+            ok = loc and cen["carries_a_non_monomial"]
+            if mut("MUT-BAND") and r == 1 and L == PARENT_RUNG:
+                ok = False
             if ok:
                 adm.append(L)
-            band_rows.append({"r": r, "L": L, "locality": loc,
-                              "non_monomial_witness": wit is not None,
-                              "witness": wit, "admitted": ok})
-        pred = [L for L in BAND_SIZES if L % 2 == 0 and 2 * r + 2 <= L <= 4 * r]
+            if loc and pw is not None and not (mut("MUT-BAND-PAIR")
+                                               and r == 3 and L == 10):
+                pair_adm.append(L)
+            exh = cen["exhaustive"]
+            if mut("MUT-BAND-ABSENCE") and r == 2 and L == 9:
+                exh = False
+            pairw = pw is not None
+            if mut("MUT-L7-SECTION") and r == L7_WIDTH and L == L7_RUNG:
+                pairw = True
+            band_rows.append({
+                "r": r, "L": L, "locality": loc,
+                "ball": cen["ball"], "dds_subsets": cen["dds_subsets"],
+                "maps_tested": cen["maps_tested"],
+                "carries_a_non_monomial": cen["carries_a_non_monomial"],
+                "absence_is_exhaustive": exh,
+                "lift_is_injective": cen["injectivity"]["injective"],
+                "witness": cen["witness"],
+                "involution_pair_witness": pairw,
+                "admitted": ok})
+        pair_pred = [L for L in BAND_SIZES
+                     if L % 2 == 0 and 2 * r + 2 <= L <= 4 * r]
         band_rows.append({"r": r, "L": None, "admitted_set": adm,
-                          "predicted_set": pred, "law_holds": adm == pred})
+                          "involution_pair_set": pair_adm,
+                          "involution_pair_closed_form": pair_pred,
+                          "pair_law_holds": pair_adm == pair_pred,
+                          "beyond_the_pair_mechanism":
+                              [L for L in adm if L not in pair_adm]})
     S["band_law"] = {
         "rows": [b for b in band_rows if b.get("L") is not None],
         "by_width": [b for b in band_rows if b.get("L") is None],
-        "law": "at window width r the sizes carrying BOTH locality and a "
-               "witnessed local non-monomial unitary are exactly the even L "
-               "with 2r+2 <= L <= 4r",
+        "law": "at window width r the admitted sizes are exactly the L with "
+               "L >= 2r+2 (locality) whose radius-r ball carries a "
+               "difference-doubled subset REALISED over the declared "
+               "alphabet.  Two mechanisms occur in the declared sweep: the "
+               "involution-separated pair (even L <= 4r) and the perfect "
+               "difference set (L = 7 at r = 2).  EVENNESS IS NOT A LAW.",
+        "absence_is_forced":
+            "below 2r+2 by locality; above 4r by the injectivity theorem "
+            "(G-BAND-INJECTIVITY); in between by an EXHAUSTIVE census over "
+            "the ball's difference-doubled subsets of size at most the "
+            "computed support ceiling (G-SUPPORT-CEILING).  Nothing in the "
+            "declared sweep is open.",
+        "alphabet_relativity":
+            "admission is a joint property of the ball and the ALPHABET: a "
+            "difference-doubled subset is a permission, and what converts a "
+            "permission into a realisation is the alphabet.  The order-3 "
+            "coset in the radius-3 ball at L = 9 is the measured witness "
+            "(G-ODD-COSET-ALPHABET-RELATIVE)",
         "parent_row": [b for b in band_rows
                        if b.get("L") is None and b["r"] == 1][0]["admitted_set"],
-        "one_sided_at_width_above_one":
-            "the presence half is constructive and verified at every listed "
-            "size; the absence half is FORCED only at width 1, where the "
-            "difference-doubled subset census over the nine-offset ball is "
-            "exhaustive -- at wider windows the complement is declared open"}
+        "sections": {str(b["r"]): b["admitted_set"] for b in band_rows
+                     if b.get("L") is None}}
     bad = [b["r"] for b in band_rows
-           if b.get("L") is None and not b["law_holds"]]
+           if b.get("L") is None and not b["pair_law_holds"]]
+    LD.gate("G-BAND-PAIR-MECHANISM",
+            "the involution-separated pair is ONE mechanism and its own "
+            "section is exactly the even sizes between 2r+2 and 4r -- a true "
+            "combinatorial identity about that construction, and NOT the "
+            "admitted set",
+            not bad, "involution-pair sections by width %s against the closed "
+            "form %s"
+            % ({b["r"]: b["involution_pair_set"] for b in band_rows
+                if b.get("L") is None},
+               {b["r"]: b["involution_pair_closed_form"] for b in band_rows
+                if b.get("L") is None}))
+    sect = {b["r"]: b["admitted_set"] for b in band_rows if b.get("L") is None}
     LD.gate("G-BAND-LAW",
             "the parent's admitted-scale set is re-derived at its own window "
-            "width and then at wider ones: at every declared width the "
-            "admitted sizes are exactly the even sizes between 2r+2 and 4r, "
-            "each carrying a constructive non-monomial witness verified "
-            "unitary by the whole-torus criterion",
-            not bad and [b for b in band_rows if b.get("L") is None
-                         and b["r"] == 1][0]["admitted_set"] == pv("PV-ADMISSIBLE"),
+            "width and then at wider ones by a census that DECIDES admission "
+            "rather than exhibiting one construction: every admitted size "
+            "carries a witness verified unitary by the whole-torus criterion, "
+            "and every excluded size is excluded by a theorem or an "
+            "exhausted census",
+            (sect[1] == pv("PV-ADMISSIBLE")
+             and all(len(v) > 0 for v in sect.values())
+             and all(all(L >= 2 * r + 2 for L in v) for r, v in sect.items())),
             "admitted sets by width %s; the width-1 row reproduces the "
-            "anchored %s"
-            % ({b["r"]: b["admitted_set"] for b in band_rows
-                if b.get("L") is None}, pv("PV-ADMISSIBLE")))
+            "anchored %s" % (sect, pv("PV-ADMISSIBLE")))
+
+    unforced = [(b["L"], b["r"]) for b in band_rows
+                if b.get("L") is not None and not b["admitted"]
+                and not (not b["locality"] or b["absence_is_exhaustive"])]
+    LD.gate("G-BAND-ABSENCE-FORCED",
+            "EVERY non-admitted cell of the sweep is forced and not merely "
+            "unwitnessed: either locality fails by the threshold theorem, or "
+            "the census over the ball's difference-doubled subsets up to the "
+            "computed support ceiling ran to exhaustion and found nothing.  "
+            "The band is two-sided at every declared width",
+            not unforced, "%d cells, %d not forced: %s"
+            % (len([b for b in band_rows if b.get("L") is not None]),
+               len(unforced), unforced or "none"))
+    # ---- the (7,4,2) witness: the species the pair search cannot see -----
+    l7 = {v: cscal(ONE, s, 2) for v, s in zip(L7_SUPPORT, L7_SIGNS)}
+    if mut("MUT-L7-WITNESS"):
+        l7[L7_SUPPORT[2]] = cscal(ONE, 1, 2)
+    l7_mat = matrix_unitary(l7, L7_RUNG)
+    l7_row = {
+        "L": L7_RUNG, "width": L7_WIDTH,
+        "support": [list(v) for v in L7_SUPPORT],
+        "coefficients": [cstr(l7[v]) for v in L7_SUPPORT],
+        "in_the_declared_alphabet": all(c in A for c in l7.values()),
+        "radii": [torus_absmax(v, L7_RUNG) for v in L7_SUPPORT],
+        "inside_the_ball": all(torus_absmax(v, L7_RUNG) <= L7_WIDTH
+                               for v in L7_SUPPORT),
+        "difference_multiplicities":
+            sorted(diff_multiset(list(L7_SUPPORT), L7_RUNG).values(),
+                   reverse=True),
+        "sidon": is_sidon(list(L7_SUPPORT), L7_RUNG)[0],
+        "autocorrelation_is_a_delta": autocorr_is_delta(l7, L7_RUNG),
+        "matrix_entries_checked": l7_mat["entries"],
+        "matrix_mismatches": l7_mat["mismatches"],
+        "matrix_dimension": l7_mat["dimension"],
+        "locality": locality_at_width(L7_RUNG, L7_WIDTH)["locality"],
+        "involutions_in_the_group":
+            sum(1 for v in product(range(L7_RUNG), repeat=2)
+                if any(v) and (2 * v[0]) % L7_RUNG == 0
+                and (2 * v[1]) % L7_RUNG == 0),
+        "note": "a (7,4,2) perfect difference set -- every nonzero difference "
+                "realised exactly twice -- carrying a non-monomial unitary "
+                "inside the radius-2 ball over the parents' own alphabet.  "
+                "The involution-pair search is structurally blind to it: "
+                "Z_7^2 has no involution at all."}
+    S["l7_witness"] = l7_row
+    LD.gate("G-L7-DIFFERENCE-SET-WITNESS",
+            "the odd size the delivered band excluded carries an explicit "
+            "in-alphabet non-monomial unitary inside the radius-2 ball, "
+            "verified TWICE -- the periodic autocorrelation is a delta, and "
+            "the full L^2 x L^2 matrix satisfies U^dag U = I entry by entry "
+            "-- in a group that contains no involution, so no pair mechanism "
+            "can account for it",
+            (l7_row["in_the_declared_alphabet"] and l7_row["inside_the_ball"]
+             and l7_row["locality"]
+             and l7_row["autocorrelation_is_a_delta"]
+             and l7_row["matrix_mismatches"] == 0
+             and l7_row["involutions_in_the_group"] == 0
+             and set(l7_row["difference_multiplicities"]) == {2}),
+            "L=%d support %s, radii %s, multiplicities %s, %d matrix entries "
+            "checked with %d mismatches, %d involutions in the group"
+            % (L7_RUNG, l7_row["support"], l7_row["radii"],
+               l7_row["difference_multiplicities"],
+               l7_row["matrix_entries_checked"], l7_row["matrix_mismatches"],
+               l7_row["involutions_in_the_group"]))
+    in_census = [b for b in band_rows
+                 if b.get("L") == L7_RUNG and b["r"] == L7_WIDTH][0]
+    LD.gate("G-L7-IN-THE-SECTION",
+            "the census reaches the same cell independently: L = 7 is in the "
+            "width-2 section, its witness is a difference-doubled subset of "
+            "the ball, and no involution pair exists there",
+            (in_census["admitted"] and in_census["carries_a_non_monomial"]
+             and not in_census["involution_pair_witness"]),
+            "L=7 at r=2: admitted %s, census witness %s, involution pair %s"
+            % (in_census["admitted"],
+               in_census["witness"] and in_census["witness"]["support"],
+               in_census["involution_pair_witness"]))
+
+    # ---- the alphabet-relativity of the SCALE clause, MEASURED ------------
+    coset_rows = []
+    for an, AA in PROBE_ALPHABETS:
+        sc = scan_offsets(tuple(ODD_COSET), AA, ODD_COSET_RUNG)
+        if mut("MUT-ODD-COSET") and an == "THIRDS-19":
+            sc = dict(sc)
+            sc["non_monomial"] = 0
+        coset_rows.append({"alphabet": an, "alphabet_size": len(AA),
+                           "maps": sc["maps"], "unitary": sc["unitary"],
+                           "non_monomial": sc["non_monomial"]})
+    S["odd_coset"] = {
+        "L": ODD_COSET_RUNG, "width": ODD_COSET_WIDTH,
+        "support": [list(v) for v in ODD_COSET],
+        "radii": [torus_absmax(v, ODD_COSET_RUNG) for v in ODD_COSET],
+        "inside_the_ball": all(torus_absmax(v, ODD_COSET_RUNG)
+                               <= ODD_COSET_WIDTH for v in ODD_COSET),
+        "locality": locality_at_width(ODD_COSET_RUNG,
+                                      ODD_COSET_WIDTH)["locality"],
+        "difference_multiplicities":
+            sorted(diff_multiset(list(ODD_COSET), ODD_COSET_RUNG).values(),
+                   reverse=True),
+        "rows": coset_rows,
+        "reading": "the same difference-doubled subset in the same ball at "
+                   "the same size carries no non-monomial unitary over the "
+                   "parents' 25 and over the 7-value probe, and the control's "
+                   "own count over the 19-value probe.  The SCALE clause is "
+                   "ALPHABET-RELATIVE, exactly as the CONTROL clause is."}
+    thirds = [r for r in coset_rows if r["alphabet"] == "THIRDS-19"][0]
+    parents = [r for r in coset_rows if r["alphabet"] == "R4-25"][0]
+    LD.gate("G-ODD-COSET-ALPHABET-RELATIVE",
+            "the band's admitted set is a joint property of the ball and the "
+            "alphabet, and the witness is measured rather than asserted: the "
+            "order-3 coset inside the radius-3 ball at L = 9 is "
+            "difference-doubled, locality holds there, and it carries "
+            "non-monomial unitaries over the control's probe alphabet and "
+            "none over the parents' own",
+            (S["odd_coset"]["inside_the_ball"] and S["odd_coset"]["locality"]
+             and parents["non_monomial"] == 0
+             and thirds["non_monomial"] == registered["non_monomial"]),
+            "L=9 r=3 coset %s: %d non-monomial over the parents' %d-element "
+            "alphabet, %d over the %d-value probe (the control's own count)"
+            % (S["odd_coset"]["support"], parents["non_monomial"],
+               parents["alphabet_size"], thirds["non_monomial"],
+               thirds["alphabet_size"]))
+
+    # ---- the two DDS routes, bound against each other --------------------
+    route_bad, route_checked = [], 0
+    for r in arenas:
+        St = [tuple(v) for v in r["offsets"]]
+        naive = {tuple(sorted(T)) for T in doubled_subsets(St, r["L"])}
+        fast = {tuple(sorted(T)) for T in
+                dds_subsets_bounded(St, r["L"], len(St))}
+        if mut("MUT-DDS-ROUTES") and r["L"] == PARENT_RUNG and naive:
+            naive = set(sorted(naive)[1:])
+        route_checked += 1
+        if naive != fast:
+            route_bad.append((r["L"], r["arena"]))
+    for L in BAND_SIZES:
+        B = ball(L, 1)
+        naive = {tuple(sorted(T)) for T in doubled_subsets(B, L)}
+        fast = {tuple(sorted(T)) for T in dds_subsets_bounded(B, L, len(B))}
+        route_checked += 1
+        if naive != fast:
+            route_bad.append((L, "BALL-r1"))
+    LD.gate("G-DDS-CRITERION-AGREES",
+            "the fast difference-doubled census used on the balls and the "
+            "naive one used on the arenas are bound against each other, SET "
+            "for SET, on every declared arena and on every radius-one ball of "
+            "the sweep -- the reduction that makes a 49-offset ball finite is "
+            "not taken on trust",
+            not route_bad, "%d objects, %d disagreeing: %s"
+            % (route_checked, len(route_bad), route_bad or "none"))
+
+    # ---- G-DDS-WINDOW: the hard stop, exercised ---------------------------
+    widest = max(len(r["offsets"]) for r in arenas)
+    if mut("MUT-DDS-WINDOW"):
+        widest = DDS_SUBSET_WINDOW + 1
+    S["dds_window"] = {
+        "window": DDS_SUBSET_WINDOW,
+        "largest_arena": widest,
+        "ball_census_ceiling": SUPPORT_CEILING,
+        "why": "the naive subset census is exhaustive at |S| <= %d, which "
+               "covers every declared arena (largest %d) and every "
+               "radius-one ball; the BALL census at wider windows is run by "
+               "the bounded route up to the COMPUTED support ceiling %d, "
+               "which is exhaustive for unitarity by G-SUPPORT-CEILING"
+               % (DDS_SUBSET_WINDOW,
+                  max(len(r["offsets"]) for r in arenas), SUPPORT_CEILING)}
+    LD.gate("G-DDS-WINDOW",
+            "the declared subset window is a real hard stop and it covers "
+            "what this unit asks of it: every arena the naive census runs on "
+            "is within the window, and nothing outside it is decided by that "
+            "route",
+            S["dds_window"]["largest_arena"] <= DDS_SUBSET_WINDOW,
+            "window %d, largest arena %d, ball ceiling %d"
+            % (DDS_SUBSET_WINDOW, S["dds_window"]["largest_arena"],
+               SUPPORT_CEILING))
 
     # =================================================================
     # STAGE 5.  THE PERSISTENCE TABLE
     # =================================================================
+    # m6: a PERSISTS row that is FORCED is a theorem restated at three rungs,
+    # not a survival.  Each row carries its status and, when forced, the
+    # theorem that forces it; G-PERSISTENCE-FORCING-DECLARED binds the split.
+    FORCED_ROWS = {
+        "the LINK stencil is Sidon":
+            "the anchored link set is Sidon at every L >= 3 -- one line from "
+            "its six differences",
+        "monomial-only on the LINK stencil":
+            "Sidon implies DDS-free implies monomial-only, over any field "
+            "with an involution (section 3.1)",
+        "the local AXIS stencil is Sidon":
+            "the 3-term stencil {0, a, -a} realises +-a twice at every order "
+            ">= 3, so it is non-Sidon at every rung of the ladder",
+        "VMAX equals the max-norm diameter":
+            "the momentum parent's even-L theorem, quoted at VB-VMAX",
+        "the coin family and its sector split":
+            "the coin is a 2x2 unitary over the coefficient alphabet and its "
+            "definition mentions no L (G-COIN-ALPHABET-DERIVED)",
+        "the (order, support) profile":
+            "no declared local stencil wraps at any rung (G-NON-WRAPPING), "
+            "so the generators are the same maps on the same relative "
+            "coordinates -- the gauge parent's own argument",
+        "the holonomy is alternating on each of its orbits":
+            "the same non-wrapping argument: the local groups are literally "
+            "the same groups at the three rungs",
+    }
+
     def cellrow(name, cells, kind, law=""):
         vals = [cells[L] for L in LADDER]
         if kind == "AUTO":
@@ -2429,7 +3637,10 @@ def build_state(break_anchor=None):
             v = kind
         return {"invariant": name,
                 "cells": {str(L): cells[L] for L in LADDER},
-                "verdict": v, "law": law}
+                "verdict": v, "law": law,
+                "status": ("FORCED" if name in FORCED_ROWS else
+                           "MEASURED-AT-THE-DECLARED-RUNGS"),
+                "forcing": FORCED_ROWS.get(name, "")}
 
     T = []
     T.append(cellrow("the LINK stencil is Sidon",
@@ -2450,11 +3661,14 @@ def build_state(break_anchor=None):
                       for L in LADDER}, "BREAKS-AT-L=6",
                      "48 at the parent rung, 0 at both new rungs: the local "
                      "family collapses to shifts"))
-    T.append(cellrow("the local AXIS stencil is DDS-free",
-                     {L: [r["dds_free"] for r in arenas
-                          if r["L"] == L and r["arena"].startswith("AXIS")][0]
+    T.append(cellrow("the local AXIS stencil carries a difference-doubled "
+                     "subset",
+                     {L: not [r["dds_free"] for r in arenas
+                              if r["L"] == L
+                              and r["arena"].startswith("AXIS")][0]
                       for L in LADDER}, "BREAKS-AT-L=6",
-                     "the criterion turns on at L = 6 and stays on"))
+                     "the permission the parent rung had is withdrawn at "
+                     "L = 6 and stays withdrawn: the criterion turns on"))
     T.append(cellrow("the fourth-direction death",
                      {L: [r["non_monomial"] for r in arenas
                           if r["L"] == L and r["arena"] == "LINK-PLUS-4TH"][0]
@@ -2538,8 +3752,10 @@ def build_state(break_anchor=None):
                           and L in b["admitted_set"]] for L in LADDER},
                      "TRANSFORMS",
                      "the parent's uniqueness is the width-1 section of a "
-                     "band that widens with the window: {4} at width 1, "
-                     "{6, 8} at width 2, {8, 10, 12} at width 3"))
+                     "band that widens with the window; every exclusion in "
+                     "this row is FORCED -- by locality at L=4 for r>=2 and "
+                     "at L=6 for r=3, and by the exhausted ball census at "
+                     "L=6 and L=8 for r=1"))
 
     if mut("MUT-TABLE"):
         T[1]["verdict"] = "BREAKS-AT-L=8"
@@ -2560,6 +3776,41 @@ def build_state(break_anchor=None):
             "TRANSFORMS require them not to, per row and never in aggregate",
             not bad, "%d rows, %d whose verdict contradicts its own cells: %s"
             % (len(T), len(bad), bad or "none"))
+
+    persists = [r for r in T if r["verdict"] == "PERSISTS"]
+    forced = [r for r in persists if r["status"] == "FORCED"]
+    contingent = [r for r in persists if r["status"] != "FORCED"]
+    unlabelled = [r["invariant"] for r in T
+                  if r["status"] == "FORCED" and not r["forcing"]]
+    stray = [r["invariant"] for r in T
+             if r["status"] == "FORCED" and r["verdict"] != "PERSISTS"]
+    if mut("MUT-FORCING"):
+        brk = [r for r in T if r["verdict"].startswith("BREAKS")][0]
+        brk["status"] = "FORCED"
+        unlabelled = [r["invariant"] for r in T
+                      if r["status"] == "FORCED" and not r["forcing"]]
+        stray = [r["invariant"] for r in T
+                 if r["status"] == "FORCED" and r["verdict"] != "PERSISTS"]
+    S["persistence_forcing"] = {
+        "persist_rows": len(persists),
+        "forced": len(forced), "contingent": len(contingent),
+        "forced_rows": [r["invariant"] for r in forced],
+        "contingent_rows": [r["invariant"] for r in contingent],
+        "note": "a FORCED row is a theorem restated at three rungs, not a "
+                "survival.  The licensed reading of the PERSISTS count is "
+                "%d contingent survivals and %d theorems"
+                % (len(contingent), len(forced))}
+    LD.gate("G-PERSISTENCE-FORCING-DECLARED",
+            "the PERSISTS count is split at its own modality: every row "
+            "labelled FORCED names the theorem that forces it, no forced "
+            "label sits on a row that is not a survival, and the honest "
+            "reading -- so many contingent survivals and so many theorems "
+            "restated -- is published beside the count",
+            not unlabelled and not stray and len(forced) + len(contingent)
+            == len(persists),
+            "%d PERSISTS rows: %d forced, %d contingent; unlabelled %s, "
+            "stray %s" % (len(persists), len(forced), len(contingent),
+                          unlabelled or "none", stray or "none"))
 
     S["counts"] = {
         "rungs": len(LADDER),
@@ -2595,6 +3846,41 @@ def build_state(break_anchor=None):
         "breaks": sum(1 for r in T if r["verdict"].startswith("BREAKS")),
         "transforms": sum(1 for r in T if r["verdict"] == "TRANSFORMS"),
         "lag_objects": lag_checked,
+        "control_rung": CONTROL_RUNG,
+        "rungs_declared": list(LADDER),
+        "arenas_sidon_substantive": S["sidon_prediction"]
+                                     ["sufficiency_substantive"],
+        "arenas_sidon_vacuous": S["sidon_prediction"]["sufficiency_vacuous"],
+        "band_widths": len(WIDTHS),
+        "band_sweep_low": min(BAND_SIZES), "band_sweep_high": max(BAND_SIZES),
+        "support_ceiling": ceil["ceiling"],
+        "band_dds_subsets": sum(b["dds_subsets"] for b in band_rows
+                                if b.get("L") is not None),
+        "band_maps_tested": sum(b["maps_tested"] for b in band_rows
+                                if b.get("L") is not None),
+        "char_p_fields": len(CHAR_P_FIELDS),
+        "char_p_scans": len(cp_rows),
+        "char_p_dds_free_rows": sum(1 for r in cp_rows if r["dds_free"]),
+        "char_p_outside_window": len(cp_skipped),
+        "join_sizes": len(join_rows),
+        "join_odd_sizes": sum(1 for r in join_rows if r["odd"]),
+        "l7_matrix_entries": l7_row["matrix_entries_checked"],
+        "l7_matrix_dimension": l7_row["matrix_dimension"],
+        "persists_forced": len(forced),
+        "persists_contingent": len(contingent),
+        "coins_antidiagonal": secs.get("ANTIDIAGONAL", 0),
+        "global_L4": [r["support"] for r in glob_rows if r["L"] == 4][0],
+        "global_L6": [r["support"] for r in glob_rows if r["L"] == 6][0],
+        "global_L8": [r["support"] for r in glob_rows if r["L"] == 8][0],
+        "eigenphase_L4": [r["eigenphase_lattice"] for r in disp_rows
+                          if r["L"] == 4][0],
+        "eigenphase_L6": [r["eigenphase_lattice"] for r in disp_rows
+                          if r["L"] == 6][0],
+        "eigenphase_L8": [r["eigenphase_lattice"] for r in disp_rows
+                          if r["L"] == 8][0],
+        "non_integer_families_L6": [r["non_integer_families"]
+                                    for r in vel_rows if r["L"] == 6][0],
+        "gauge_group_order": pool_rows[0]["orbit_sizes"][0],
         "sources": len(SOURCES),
         "path_value_anchors": len(PATH_VALUE_ANCHORS),
         "verbatim_anchors": len(VERBATIM_ANCHORS),
@@ -2605,29 +3891,157 @@ def build_state(break_anchor=None):
         "field": "Q(ZETA-24)",
     }
 
-    # ---- the two fractions, stamped (E-24) ----------------------------
-    fr = [
-        {"name": "arenas that are Sidon",
-         "value": "%d of %d" % (S["counts"]["arenas_sidon"], len(arenas)),
-         "measure": "COUNTING-ONLY",
-         "why": "a count over this unit's own declared arena list, which is "
-                "not a sample of any population and carries no measure"},
-        {"name": "arenas that are DDS-free",
-         "value": "%d of %d" % (S["counts"]["arenas_dds_free"], len(arenas)),
-         "measure": "COUNTING-ONLY",
-         "why": "the same declared list; the criterion's soundness is a "
-                "theorem, and this count is a coverage report, not a rate"},
-    ]
-    if mut("MUT-FRACTION"):
-        fr.append({"name": "unstamped", "value": "1 of 2"})
-    S["declared_fractions"] = fr
-    bad = [f["name"] for f in fr
-           if f.get("measure") not in ("COUNTING-ONLY",) and "measure" not in f]
-    LD.gate("G-FRACTIONS-STAMPED",
-            "every fraction this unit publishes declares its measure or is "
-            "stamped COUNTING-ONLY; no count becomes a probability here",
-            not bad, "%d fractions, %d unstamped: %s"
-            % (len(fr), len(bad), bad or "none"))
+    # =================================================================
+    # THE SUCCESSOR REGISTER (ruling 1 and ruling 2 of the adjudication)
+    # =================================================================
+    # A half-right prediction is recorded as its PARTS, never as a fraction.
+    link_all = [r for r in arenas if r["arena"] == "LINK"]
+    link_sidon_everywhere = all(r["sidon"] for r in link_all)
+    link_clean = all(r["non_monomial"] == 0 for r in link_all)
+    dl = S["dds_law"]
+    conv_rows = [r for r in arenas if not r["dds_free"]]
+    S["successor_register"] = {
+        "the_registered_prediction": {
+            "quoted_at": "VB-SIDON",
+            "recorded_as": "THREE PARTS, not a fraction",
+            "parts": [
+                {"part": "g1 MECHANISM",
+                 "claim": "the monomial theorem is a Sidon property of the "
+                          "offset set (sufficiency direction)",
+                 "status": "CONFIRMED AND STRENGTHENED",
+                 "measured": "holds at %d of %d declared arenas, "
+                             "substantively at the %d Sidon ones; and it is "
+                             "now a theorem with a weaker hypothesis, since "
+                             "DDS-free is strictly weaker than Sidon (%d "
+                             "arenas are DDS-free and not Sidon)"
+                             % (len(pred_rows), len(pred_rows),
+                                sp["sufficiency_substantive"],
+                                dl["sidon_but_not_the_only_forced"])},
+                {"part": "g2 TRANSPORT TO THE R = 4 ARENA",
+                 "claim": "the theorem transports verbatim to R = 4",
+                 "status": "CLOSED BY THEOREM, NOT BY MEASUREMENT",
+                 "measured": "the anchored link set is Sidon at every rung "
+                             "measured here (%s), hence DDS-free, hence "
+                             "monomial-only over ANY field with an "
+                             "involution.  The register's named target needs "
+                             "no scan and no R-ladder run; PER-R inherits it "
+                             "as a corollary and must not spend a census on "
+                             "it.  This unit did NOT enter the R-ladder"
+                             % link_sidon_everywhere},
+                {"part": "g3 CONTROL",
+                 "claim": "dies at ANY declared fourth direction (54 "
+                          "non-monomial unitaries appear)",
+                 "status": "REFUTED AS STATED",
+                 "measured": "the %d is reproduced exactly with the same "
+                             "witness support at the control rung L = %d, "
+                             "and it is ALPHABET-RELATIVE (%d over the "
+                             "parents' 25, %d over the 7-value probe); the "
+                             "death does not transport up the L-ladder, and "
+                             "there BY THEOREM -- the L = 6 and L = 8 "
+                             "LINK-PLUS-4TH sets are DDS-free, so 0 holds "
+                             "over any field"
+                             % (registered["non_monomial"], CONTROL_RUNG,
+                                [c for c in ctrl
+                                 if c["arena"] == "LINK-PLUS-4TH"
+                                 and c["alphabet"] == "R4-25"][0]
+                                ["non_monomial"],
+                                [c for c in ctrl
+                                 if c["arena"] == "LINK-PLUS-4TH"
+                                 and c["alphabet"] == "UNIT-7"][0]
+                                ["non_monomial"])},
+            ],
+            "score": "one confirmed, one closed by theorem, one refuted as "
+                     "stated.  Not a fraction",
+            "governance_note":
+                "the universal quantifier ('any declared fourth direction') "
+                "entered at the COMPRESSION from the seat finding to the "
+                "register, not at the measurement: the seat finding named "
+                "the specific fourth direction, the specific probe alphabet "
+                "and the mechanism.  That is a governance datum, and the "
+                "record of what was registered is not edited"},
+        "this_units_result_column": {
+            "theorem": "DDS-FREE IMPLIES MONOMIAL-ONLY is a THEOREM, "
+                       "registered as a RESULT and not as a bet: it has a "
+                       "proof, it is field-free (exercised in %d "
+                       "characteristics at G-CHAR-P-FIELD-FREE), and no "
+                       "measurement can falsify it" % len(CHAR_P_FIELDS)},
+        "the_new_prediction": {
+            "prediction": "DDS-CARRYING IMPLIES INTERFERENCE PRESENT (the "
+                          "CONVERSE of the theorem)",
+            "strength": "NECESSARY-NOT-SUFFICIENT",
+            "measured_here": "%d of %d DDS-carrying arenas on the declared "
+                             "list carry a non-monomial unitary"
+                             % (dl["arenas_dds_carrying_with_a_non_monomial"],
+                                dl["arenas_dds_carrying"]),
+            "already_falsified_alphabet_relatively":
+                "the order-3 coset in the radius-3 ball at L = %d is "
+                "DDS-carrying and carries %d non-monomial unitaries over the "
+                "parents' 25 and %d over the 7-value probe, against %d over "
+                "the 19-value probe (S['odd_coset'])"
+                % (ODD_COSET_RUNG,
+                   [r for r in coset_rows if r["alphabet"] == "R4-25"][0]
+                   ["non_monomial"],
+                   [r for r in coset_rows if r["alphabet"] == "UNIT-7"][0]
+                   ["non_monomial"],
+                   [r for r in coset_rows if r["alphabet"] == "THIRDS-19"][0]
+                   ["non_monomial"]),
+            "falsification_condition_stated_forward":
+                "a difference-doubled offset set whose non-monomial unitaries "
+                "are empty over EVERY alphabet closed under the declared "
+                "field's involution would refute it structurally.  A "
+                "difference-doubled set is a PERMISSION; what converts a "
+                "permission into a realisation is the alphabet"},
+        "per_r_inherits": [
+            "g2 above: the R-ladder's link register is forced at every R >= 3 "
+            "by theorem, so PER-R must not spend a scan on it and must ask "
+            "instead what its OWN offset set is",
+            "the alphabet-relativity discipline: every count of non-monomial "
+            "unitaries in this corpus is a joint property of the offset set "
+            "and the alphabet, and the R-ladder's alphabet is not the "
+            "parents' 25",
+            "the coset mechanism as the R-ladder's live danger: paper-20's "
+            "arena is over F_3, so cosets of order-3 subgroups are cheap "
+            "there and the criterion will bite",
+            "NOT inherited: the L-ladder's window band, VMAX = L/2, the "
+            "eigenphase law Z/lcm(%d, L) and the interior-radius count -- all "
+            "four are statements about (Z_L)^2 with this alphabet and none "
+            "has been asked of the R-ladder"
+            % pool_rows[0]["orbit_sizes"][0]],
+        "the_odd_rung_gap":
+            "correctly declared open for the ladder, with two exceptions "
+            "measured here: the width/interior-radius identity holds at odd "
+            "sizes by theorem (G-WIDTH-RADIUS-JOIN-IS-AN-IDENTITY), and the "
+            "band's width-2 section CONTAINS the odd size %d "
+            "(G-L7-DIFFERENCE-SET-WITNESS).  The odd-L blade, when it runs, "
+            "starts there" % L7_RUNG,
+    }
+    if mut("MUT-SUCCESSOR"):
+        S["successor_register"]["the_registered_prediction"]["parts"] = \
+            S["successor_register"]["the_registered_prediction"]["parts"][:-1]
+    sr = S["successor_register"]
+    LD.gate("G-SUCCESSOR-REGISTER-WRITTEN",
+            "the unit built to test a predecessor's successor register "
+            "carries one of its own: the registered prediction is recorded as "
+            "its three PARTS with each part's status measured, the theorem is "
+            "filed as a RESULT rather than a bet, and the falsifiable "
+            "successor is the CONVERSE with its falsification condition "
+            "stated forward and its first counterexample already measured",
+            (len(sr["the_registered_prediction"]["parts"]) == 3
+             and {p["status"] for p in sr["the_registered_prediction"]["parts"]}
+             == {"CONFIRMED AND STRENGTHENED",
+                 "CLOSED BY THEOREM, NOT BY MEASUREMENT",
+                 "REFUTED AS STATED"}
+             and link_sidon_everywhere and link_clean
+             and sr["the_new_prediction"]["strength"]
+             == "NECESSARY-NOT-SUFFICIENT"
+             and dl["arenas_dds_carrying_with_a_non_monomial"]
+             == dl["arenas_dds_carrying"]),
+            "three parts recorded; the link set Sidon at every rung: %s, "
+            "monomial-only: %s; the converse holds %d of %d here and is "
+            "falsified alphabet-relatively at L = %d"
+            % (link_sidon_everywhere, link_clean,
+               dl["arenas_dds_carrying_with_a_non_monomial"],
+               dl["arenas_dds_carrying"], ODD_COSET_RUNG))
 
     S["choice_inventory"] = [
         {"choice": "the spatial dimension", "class": "FORCED (anchored)",
@@ -2661,33 +4075,141 @@ def build_state(break_anchor=None):
          "why": "the registered count is alphabet-relative and this unit "
                 "measures the relativity rather than hiding it"},
         {"choice": "the window widths", "class": "GENUINELY-FREE",
-         "fibre": "UNBOUNDED", "instances": len(WIDTHS)},
+         "fibre": "UNBOUNDED", "instances": len(WIDTHS),
+         "why": "the band is the contested row, so its free coordinate is "
+                "priced here: widths 1, 2 and 3 are run because width 1 is "
+                "the parent's own and the two above it are the smallest that "
+                "still admit locality on this ladder.  Nothing above width 3 "
+                "is measured, and the SCALE clause is scoped to the widths "
+                "run"},
+        {"choice": "the band sweep range", "class": "GENUINELY-FREE",
+         "fibre": "UNBOUNDED", "instances": len(BAND_SIZES),
+         "why": "sizes %d to %d, chosen to contain every size the closed "
+                "forms of both mechanisms can reach at the declared widths "
+                "(4r <= 12) with two sizes of margin.  Above the sweep the "
+                "injectivity theorem forces absence at every width, so the "
+                "range is a presentation choice and not a scope limit"
+                % (min(BAND_SIZES), max(BAND_SIZES))},
         {"choice": "the plaquette stencils", "class": "FORCED (anchored)",
          "fibre": 1, "instances": len(PLAQ_STENCILS),
          "why": "the parent's own six, carried verbatim"},
         {"choice": "the DDS subset window", "class": "DECLARED-WINDOW",
          "fibre": 1, "instances": 1,
-         "why": "the subset census is exhaustive at |S| <= %d and the "
-                "absence half of the band law is claimed only where it runs"
-                % DDS_SUBSET_WINDOW},
+         "why": "the NAIVE subset census (all 2^|S| subsets) is exhaustive at "
+                "|S| <= %d and runs on the declared arenas and the "
+                "radius-one balls, which is everything it is asked for.  The "
+                "BALL census at wider windows runs by the bounded route up "
+                "to the COMPUTED support ceiling %d, which is exhaustive for "
+                "unitarity by G-SUPPORT-CEILING, and the two routes are bound "
+                "against each other at G-DDS-CRITERION-AGREES.  No absence "
+                "claim rests on the window"
+                % (DDS_SUBSET_WINDOW, SUPPORT_CEILING)},
+        {"choice": "the char-p scan window", "class": "DECLARED-WINDOW",
+         "fibre": 1, "instances": 1,
+         "why": "the nine-characteristic exercise runs every (field, arena) "
+                "pair with |F|^|S| <= %d exhaustively -- %d scans -- and the "
+                "%d pairs above it are listed rather than run.  The theorem "
+                "is proved, not established by this exercise; the exercise "
+                "is what stops the proof from being read in one "
+                "characteristic only"
+                % (CHAR_P_SCAN_WINDOW, len(cp_rows), len(cp_skipped))},
     ]
+    live = {"the axis set at each rung": sum(r["axes"] for r in ax_rows),
+            "the rungs of the ladder": len(LADDER),
+            "the probe alphabets at the control rung": len(ctrl) // 2,
+            "the window widths": len({b["r"] for b in band_rows}),
+            "the band sweep range": len({b["L"] for b in band_rows
+                                         if b.get("L") is not None}),
+            "the plaquette stencils": len({r["stencil"]
+                                           for r in prof_rows}),
+            "the char-p scan window": 1}
+    ci_bad = [c["choice"] for c in S["choice_inventory"]
+              if "class" not in c or "fibre" not in c
+              or (c["class"] in ("GENUINELY-FREE", "DECLARED-WINDOW")
+                  and not c.get("why"))
+              or (c["choice"] in live and c["instances"] != "all"
+                  and c["instances"] != live[c["choice"]])]
+    if mut("MUT-CHOICES"):
+        S["choice_inventory"] = [dict(c) for c in S["choice_inventory"]]
+        for c in S["choice_inventory"]:
+            if c["choice"] == "the window widths":
+                c["instances"] = c["instances"] + 1
+        ci_bad = [c["choice"] for c in S["choice_inventory"]
+                  if "class" not in c or "fibre" not in c
+                  or (c["class"] in ("GENUINELY-FREE", "DECLARED-WINDOW")
+                      and not c.get("why"))
+                  or (c["choice"] in live and c["instances"] != "all"
+                      and c["instances"] != live[c["choice"]])]
     LD.gate("G-CHOICES-INVENTORIED",
-            "every construction choice is inventoried with its class, its "
-            "fibre and the number of instances run, and the one declared "
-            "window is named as a window",
-            all("class" in c and "fibre" in c for c in S["choice_inventory"])
-            and any(c["class"] == "DECLARED-WINDOW"
-                    for c in S["choice_inventory"]),
-            "%d choices inventoried" % len(S["choice_inventory"]))
+            "every construction choice is inventoried with its class and its "
+            "fibre; every FREE or WINDOWED choice carries the reason it was "
+            "made; and every inventoried instance count is checked against "
+            "the number of instances the run actually executed, so a choice "
+            "cannot be priced at a number the sweep did not reach",
+            not ci_bad and any(c["class"] == "DECLARED-WINDOW"
+                               for c in S["choice_inventory"]),
+            "%d choices inventoried, %d instance counts checked against the "
+            "live sweeps, failing: %s"
+            % (len(S["choice_inventory"]), len(live), ci_bad or "none"))
+
+    # ---- the declared-instance registry: NOT_EXECUTED has a WRITER -------
+    # Every declared sweep states its planned instance set before it runs and
+    # the executed set is read back off the published rows; anything planned
+    # and not reached is APPENDED to NOT_EXECUTED, which G-NOT-EXECUTED-EMPTY
+    # then reports.  Without a writer that gate could not fail on any input.
+    plans = [
+        ("the arenas", {(L, nm) for L in LADDER
+                        for nm in ["LINK"]
+                        + ["AXIS-%d-%d" % a for a in axes(L)
+                           if torus_absmax(a, L) == 1]
+                        + ["LINK-PLUS-4TH"]},
+         {(r["L"], r["arena"]) for r in arenas}),
+        ("the control rows", {(nm, an) for nm in ("LINK", "LINK-PLUS-4TH")
+                              for an, _a in PROBE_ALPHABETS},
+         {(c["arena"], c["alphabet"]) for c in ctrl}),
+        ("the band cells", {(r, L) for r in WIDTHS for L in BAND_SIZES},
+         {(b["r"], b["L"]) for b in band_rows if b.get("L") is not None}),
+        ("the profile rows", {(L, nm) for L in LADDER
+                              for nm, _o in PLAQ_STENCILS},
+         {(r["L"], r["stencil"]) for r in prof_rows}),
+        ("the char-p scans",
+         {(q, nm) for q in CHAR_P_FIELDS for nm, St, _n, _d, _f
+          in char_p_arenas()
+          if len(finite_field(q)[0]) ** len(St) <= CHAR_P_SCAN_WINDOW},
+         {(r["q"], r["arena"]) for r in cp_rows}),
+        ("the persistence rows", {r["invariant"] for r in T},
+         {r["invariant"] for r in T if r["verdict"]}),
+    ]
+    if mut("MUT-INSTANCE-PLAN"):
+        plans[0] = (plans[0][0], plans[0][1] | {(99, "PLANNED-NEVER-RUN")},
+                    plans[0][2])
+    S["declared_instances"] = []
+    for nm, planned, done in plans:
+        missed = sorted(str(x) for x in (planned - done))
+        S["declared_instances"].append({"sweep": nm, "planned": len(planned),
+                                        "executed": len(done),
+                                        "not_executed": missed})
+        for x in missed:
+            NOT_EXECUTED.append("%s :: %s" % (nm, x))
+    LD.gate("G-DECLARED-INSTANCES-EXECUTED",
+            "every declared sweep states its planned instance set and the "
+            "executed set is read back off the rows it published; the two are "
+            "compared instance by instance, and anything planned but not "
+            "reached is written into the not-executed list rather than "
+            "silently dropped",
+            all(not d["not_executed"] for d in S["declared_instances"]),
+            "%d sweeps, %d planned instances, %d executed"
+            % (len(plans), sum(d["planned"] for d in S["declared_instances"]),
+               sum(d["executed"] for d in S["declared_instances"])))
 
     S["runtime_inputs"] = {"sources": [rel for _s, rel, _d, _n in SOURCES],
                            "object_under_test": PAPER_REL,
                            "reads": sorted(set(READS))}
+    if mut("MUT-EXTRA-READ"):
+        READS.append("v14/LOG.md")
     extra = [r for r in set(READS)
              if r not in {rel for _s, rel, _d, _n in SOURCES}
              and not r.endswith(PAPER_REL) and not os.path.isabs(r)]
-    if mut("MUT-EXTRA-READ"):
-        extra.append("v14/LOG.md")
     LD.gate("G-RUNTIME-INPUTS-ENUMERATED",
             "every path read at run time is one of the ten declared sources "
             "or the object under test; no ledger, no STATUS, no other unit's "
@@ -2718,9 +4240,16 @@ def _lcm_all(vals):
 # ===========================================================================
 
 
+def _setstr(xs):
+    """{a,b,c} rendered from a measured list -- never typed."""
+    return "{" + ",".join(str(x) for x in xs) + "}"
+
+
 def build_verdict(S):
     """the head is DERIVED from the sealed primitive tables; the segments are
-    built here and re-derived independently at G-VERDICT-RECONSTRUCTED."""
+    built here and re-derived independently at G-VERDICT-RECONSTRUCTED.
+    NO segment carries a typed measurement: every number and every set below
+    is rendered from a receipt table."""
     c = S["counts"]
     p = S["sidon_prediction"]
     head = {"SUFFICIENT-NOT-NECESSARY": "PERL-SIDON-SUFFICIENT-NOT-NECESSARY",
@@ -2735,52 +4264,107 @@ def build_verdict(S):
         if r["arena"].startswith("AXIS") and r["L"] not in axis:
             axis[r["L"]] = r
     ctl = S["fourth_direction_control"]
+    band = {b["r"]: b for b in S["band_law"]["by_width"]}
+    vel = {r["L"]: r for r in S["velocity_census"]}
+    eig = {r["L"]: r for r in S["dispersion_census"]}
+    glob = {r["L"]: r for r in S["global_stencil"]}
+    br = LADDER[1]                                # the rung the breaks name
+    velw = vel[br]["witness"]
     seg = []
-    seg.append("SIDON=SUFFICIENCY-HOLDS-AT-%d-OF-%d-ARENAS;"
-               "LINK-STENCIL-SIDON-AND-MONOMIAL-ONLY-AT-L-6-AND-8"
+    seg.append("SIDON=SUFFICIENCY-HOLDS-AT-%d-OF-%d-SIDON-ARENAS"
+               "(VACUOUS-AT-THE-OTHER-%d;THE-IMPLICATION-HOLDS-AT-ALL-%d);"
+               "LINK-STENCIL-SIDON-AND-MONOMIAL-ONLY-AT-L-%d-AND-%d"
                "(%d-AND-%d-NON-MONOMIAL-OF-%d-AND-%d-UNITARY);"
-               "NECESSITY-FAILS-AT-%d-ARENAS(FIRST=%s)"
-               % (len(p["rows"]), len(p["rows"]),
-                  link[6]["non_monomial"], link[8]["non_monomial"],
-                  link[6]["unitary"], link[8]["unitary"],
+               "NECESSITY-FAILS-AT-%d-ARENAS(FIRST-IN-THE-DECLARED-ORDER=%s;"
+               "ALL-%d-LOCAL-AXES-AT-L-%d-FAIL-TOGETHER)"
+               % (p["sufficiency_substantive_holding"],
+                  p["sufficiency_substantive"], p["sufficiency_vacuous"],
+                  len(p["rows"]), LADDER[1], LADDER[2],
+                  link[LADDER[1]]["non_monomial"],
+                  link[LADDER[2]]["non_monomial"],
+                  link[LADDER[1]]["unitary"], link[LADDER[2]]["unitary"],
                   p["necessity_failures"],
                   p["necessity_failure_arenas"][0].replace("=", "-")
-                  .replace(" ", "-")))
+                  .replace(" ", "-"),
+                  sum(1 for r in S["sidon_arenas"]
+                      if r["L"] == LADDER[1] and r["arena"].startswith("AXIS")
+                      and not r["sidon"] and r["monomial_only"]),
+                  LADDER[1]))
     seg.append("CONTROL=THE-FOURTH-DIRECTION-DEATH-DOES-NOT-TRANSPORT"
-               "(REGISTERED-%d-REPRODUCED-AT-THE-CONTROL-RUNG;"
-               "%d-AT-L-4;0-AT-L-6-AND-L-8;ALPHABET-RELATIVE-0-OF-%d-OVER-"
-               "THE-PARENTS-OWN-ALPHABET)"
-               % (ctl["registered_count_reproduced"],
+               "(REGISTERED-%d-REPRODUCED-AT-THE-CONTROL-RUNG-L-%d;"
+               "%d-AT-L-%d;%d-AND-%d-AT-L-%d-AND-L-%d-BY-THEOREM-OVER-ANY-"
+               "FIELD-WITH-AN-INVOLUTION;ALPHABET-RELATIVE-%d-NON-MONOMIAL-"
+               "OVER-THE-%d-ELEMENT-ALPHABET-OF-THE-PARENTS)"
+               % (ctl["registered_count_reproduced"], c["control_rung"],
                   [r["non_monomial"] for r in ctl["ladder_rows"]
-                   if r["L"] == 4][0], c["alphabet"]))
-    seg.append("LAW=DDS-FREE-FORCES-MONOMIAL-OVER-ANY-FIELD"
-               "(NO-DIFFERENCE-DOUBLED-SUBSET;%d-OF-%d-ARENAS-DDS-FREE-AND-"
-               "ALL-MONOMIAL-ONLY;SIDON-STRICTLY-STRONGER-AT-%d-ARENAS)"
+                   if r["L"] == LADDER[0]][0], LADDER[0],
+                  [r["non_monomial"] for r in ctl["ladder_rows"]
+                   if r["L"] == LADDER[1]][0],
+                  [r["non_monomial"] for r in ctl["ladder_rows"]
+                   if r["L"] == LADDER[2]][0], LADDER[1], LADDER[2],
+                  [r["non_monomial"] for r in ctl["control_rung_rows"]
+                   if r["arena"] == "LINK-PLUS-4TH"
+                   and r["alphabet"] == "R4-25"][0], c["alphabet"]))
+    seg.append("LAW=DDS-FREE-FORCES-MONOMIAL-OVER-ANY-FIELD-WITH-AN-"
+               "INVOLUTION(NO-DIFFERENCE-DOUBLED-SUBSET;%d-OF-%d-ARENAS-DDS-"
+               "FREE-AND-ALL-MONOMIAL-ONLY;SIDON-STRICTLY-STRONGER-AT-%d-"
+               "ARENAS;EXERCISED-IN-%d-FINITE-FIELDS-AT-%d-EXHAUSTIVE-SCANS)"
                % (S["dds_law"]["arenas_dds_free"], c["arenas"],
-                  S["dds_law"]["sidon_but_not_the_only_forced"]))
+                  S["dds_law"]["sidon_but_not_the_only_forced"],
+                  c["char_p_fields"], c["char_p_scans"]))
     seg.append("VMAX=DIAMETER-AT-EVERY-RUNG(%s;%s;%s=L/2)"
                % (c["vmax_L4"], c["vmax_L6"], c["vmax_L8"]))
-    seg.append("INTERIOR-RADII=%d;%d;%d(THE-3-AT-L-8-REGISTER-CLAIM-CONFIRMED;"
-               "EQUAL-TO-THE-LOCALITY-ADMITTING-WIDTH-COUNT-AT-EVERY-RUNG)"
-               % (c["interior_L4"], c["interior_L6"], c["interior_L8"]))
-    seg.append("FINGERPRINT=(ORDER,SUPPORT)-PROFILE-IDENTICAL-AT-ALL-THREE-"
+    seg.append("INTERIOR-RADII=%d;%d;%d(THE-%d-AT-L-%d-REGISTER-CLAIM-"
+               "RE-DERIVED-FROM-A-POOL-BUILT-HERE;EQUAL-TO-THE-LOCALITY-"
+               "ADMITTING-WIDTH-SET-BY-THEOREM(BOTH-ARE-{1..diam-1}))"
+               % (c["interior_L4"], c["interior_L6"], c["interior_L8"],
+                  c["interior_L8"], LADDER[2]))
+    seg.append("FINGERPRINT=(ORDER,SUPPORT)-PROFILE-IDENTICAL-AT-ALL-%d-"
                "RUNGS-ON-ALL-%d-ANTIDIAGONAL-COINS(%s);"
-               "GLOBAL-SUPPORT-IS-THE-VOLUME-16;36;64;NO-GROUP-SELECTION-LAW-"
-               "CLAIMED" % (S["counts"]["coins"] // 10,
-                            S["path_value_anchors"][0]["read"] and
+               "GLOBAL-SUPPORT-IS-THE-VOLUME-%d;%d;%d;NO-GROUP-SELECTION-LAW-"
+               "CLAIMED" % (c["rungs"], c["coins_antidiagonal"],
                             [r["read"] for r in S["path_value_anchors"]
-                             if r["anchor"] == "PV-PROFILE"][0]))
+                             if r["anchor"] == "PV-PROFILE"][0],
+                            glob[LADDER[0]]["support"],
+                            glob[LADDER[1]]["support"],
+                            glob[LADDER[2]]["support"]))
     seg.append("SCALE=THE-PARENTS-UNIQUE-SIZE-IS-WINDOW-RELATIVE"
-               "(ADMITTED-SIZES-AT-WIDTH-r-ARE-THE-EVEN-L-IN-[2r+2,4r];"
-               "WIDTH-1={4};WIDTH-2={6,8};WIDTH-3={8,10,12};"
-               "PRESENCE-CONSTRUCTIVE-ABSENCE-FORCED-ONLY-AT-WIDTH-1)")
-    seg.append("BREAKS=LOCAL-NON-MONOMIAL-FAMILY-EMPTY-FROM-L-6;"
-               "INTEGER-VELOCITIES-FAIL-AT-L-6(SPEED-3/2-ON-AN-ORDER-2-AXIS);"
-               "EIGENPHASE-LATTICE-TRANSFORMS-Z/lcm(8,L)")
-    seg.append("TABLE=%d-ROWS(%d-PERSIST;%d-BREAK;%d-TRANSFORM)"
-               % (c["table_rows"], c["persists"], c["breaks"],
-                  c["transforms"]))
-    seg.append("SCOPE=D=%d;RUNGS=L-IN-{4,6,8};FIELD=Q(ZETA-24);ALPHABET=%d;"
+               "(ADMITTED-SIZES-AT-WIDTH-r-ARE-THE-L-WITH-L>=2r+2-WHOSE-"
+               "RADIUS-r-BALL-CARRIES-A-DIFFERENCE-DOUBLED-SUBSET-REALISED-"
+               "OVER-THE-ALPHABET;%s;TWO-MECHANISMS(INVOLUTION-PAIR-EVEN-L<="
+               "4r;PERFECT-DIFFERENCE-SET-AT-L-%d-r-%d);EVENNESS-IS-NOT-A-"
+               "LAW;BOTH-HALVES-FORCED(LOCALITY-BELOW-2r+2;INJECTIVITY-ABOVE-"
+               "4r;EXHAUSTED-CENSUS-TO-SUPPORT-CEILING-%d-BETWEEN);"
+               "ALPHABET-RELATIVE(THE-ORDER-3-COSET-AT-L-%d-r-%d-CARRIES-%d-"
+               "OVER-THE-PARENTS-%d-AND-%d-OVER-THE-%d-VALUE-PROBE))"
+               % (";".join("WIDTH-%d=%s" % (r, _setstr(band[r]["admitted_set"]))
+                           for r in sorted(band)),
+                  S["l7_witness"]["L"], S["l7_witness"]["width"],
+                  c["support_ceiling"], S["odd_coset"]["L"],
+                  S["odd_coset"]["width"],
+                  [r["non_monomial"] for r in S["odd_coset"]["rows"]
+                   if r["alphabet"] == "R4-25"][0], c["alphabet"],
+                  [r["non_monomial"] for r in S["odd_coset"]["rows"]
+                   if r["alphabet"] == "THIRDS-19"][0],
+                  [r["alphabet_size"] for r in S["odd_coset"]["rows"]
+                   if r["alphabet"] == "THIRDS-19"][0]))
+    seg.append("BREAKS=LOCAL-NON-MONOMIAL-FAMILY-EMPTY-FROM-L-%d;"
+               "INTEGER-VELOCITIES-FAIL-AT-L-%d(SPEED-%s-ON-AN-ORDER-%d-AXIS;"
+               "THE-%d-NON-INTEGER-FAMILIES-ARE-THE-%d-DDS-PERMITTED-NON-"
+               "MONOMIAL-FAMILIES);EIGENPHASE-LATTICE-TRANSFORMS-Z/lcm(%d,L)"
+               "(%d;%d;%d)"
+               % (br, br, velw["speed"], velw["axis_order"],
+                  vel[br]["non_integer_families"],
+                  vel[br]["non_monomial_families"], c["gauge_group_order"],
+                  eig[LADDER[0]]["eigenphase_lattice"],
+                  eig[LADDER[1]]["eigenphase_lattice"],
+                  eig[LADDER[2]]["eigenphase_lattice"]))
+    seg.append("TABLE=%d-ROWS(%d-PERSIST(%d-FORCED;%d-CONTINGENT);%d-BREAK;"
+               "%d-TRANSFORM)"
+               % (c["table_rows"], c["persists"], c["persists_forced"],
+                  c["persists_contingent"], c["breaks"], c["transforms"]))
+    seg.append("SCOPE=D=%d;RUNGS=L-IN-%s+CONTROL-RUNG-L-%d;FIELD=Q(ZETA-24);"
+               "ALPHABET=%d;WIDTHS=%s;BAND-SWEEP=L-IN-%d..%d;"
                "STENCIL=3-TERM-AXIS-AND-THE-ANCHORED-LINK-SET;"
                "CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-%s);"
                "SECTOR=SINGLE-OCCUPATION;"
@@ -2788,7 +4372,10 @@ def build_verdict(S):
                "FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;"
                "NO-TRANSPORT-NUMBER-INHERITED;"
                "PERSISTENCE-AT-DECLARED-FINITE-RUNGS-ONLY"
-               % (c["d"], c["alphabet"], c["forcing_link"]))
+               % (c["d"], _setstr(c["rungs_declared"]), c["control_rung"],
+                  c["alphabet"], _setstr(sorted(band)),
+                  c["band_sweep_low"], c["band_sweep_high"],
+                  c["forcing_link"]))
     body = "|".join(seg)
     if mut("MUT-WALLS"):
         body = body.replace("NO-CONTINUUM-CLAIM", "CONTINUUM-LIMIT-ESTABLISHED")
@@ -2797,22 +4384,160 @@ def build_verdict(S):
 
 def reconstruct_verdict(receipt):
     """the INDEPENDENT comparator: rebuilt from the receipt's own primitive
-    tables by code that shares no literal and no helper with the builder."""
+    tables by code that shares no literal and no helper with the builder.
+    Every part below is recovered from a table the builder did not consult in
+    the same way, and each is compared BY EQUALITY against the segment parsed
+    out of the emitted string -- never by membership."""
     c = receipt["counts"]
     p = receipt["sidon_prediction"]
     names = {"SUFFICIENT-NOT-NECESSARY": "PERL-SIDON-SUFFICIENT-NOT-NECESSARY",
              "CONFIRMED-BOTH-WAYS": "PERL-SIDON-CONFIRMED-BOTH-WAYS",
              "REFUTED": "PERL-SIDON-REFUTED"}
     head = names[p["verdict"]]
-    parts = []
-    parts.append(c["arenas_sidon"])
-    parts.append(c["arenas_dds_free"])
-    parts.append(c["necessity_failures"])
-    parts.append(c["control_reproduced"])
-    parts.append([c["vmax_L4"], c["vmax_L6"], c["vmax_L8"]])
-    parts.append([c["interior_L4"], c["interior_L6"], c["interior_L8"]])
-    parts.append([c["persists"], c["breaks"], c["transforms"]])
+    rungs = sorted({r["L"] for r in receipt["sidon_arenas"]})
+    link = {r["L"]: r for r in receipt["sidon_arenas"]
+            if r["arena"] == "LINK"}
+    four = {r["L"]: r for r in receipt["sidon_arenas"]
+            if r["arena"] == "LINK-PLUS-4TH"}
+    ctlrows = receipt["fourth_direction_control"]["control_rung_rows"]
+    vel = {r["L"]: r for r in receipt["velocity_census"]}
+    eig = {r["L"]: r for r in receipt["dispersion_census"]}
+    glob = {r["L"]: r for r in receipt["global_stencil"]}
+    tab = receipt["persistence_table"]
+    parts = {}
+    parts["SIDON"] = [
+        sum(1 for r in p["rows"] if r["sidon"] and r["sufficiency_holds"]),
+        sum(1 for r in p["rows"] if r["sidon"]),
+        sum(1 for r in p["rows"] if not r["sidon"]), len(p["rows"]),
+        [link[rungs[1]]["non_monomial"], link[rungs[2]]["non_monomial"]],
+        [link[rungs[1]]["unitary"], link[rungs[2]]["unitary"]],
+        sum(1 for r in p["rows"] if not r["necessity_holds"])]
+    parts["CONTROL"] = [
+        [r["non_monomial"] for r in ctlrows
+         if r["arena"] == "LINK-PLUS-4TH" and r["alphabet"] == "THIRDS-19"][0],
+        receipt["counts"]["control_rung"],
+        [four[L]["non_monomial"] for L in rungs],
+        [r["non_monomial"] for r in ctlrows
+         if r["arena"] == "LINK-PLUS-4TH" and r["alphabet"] == "R4-25"][0]]
+    parts["LAW"] = [sum(1 for r in receipt["sidon_arenas"] if r["dds_free"]),
+                    len(receipt["sidon_arenas"]),
+                    sum(1 for r in receipt["sidon_arenas"]
+                        if r["dds_free"] and not r["sidon"]),
+                    len(receipt["char_p_census"]["fields"]),
+                    len(receipt["char_p_census"]["rows"])]
+    parts["VMAX"] = [r["vmax"] for r in receipt["vmax_census"]]
+    parts["INTERIOR-RADII"] = [r["interior_count"]
+                               for r in receipt["interior_radii"]]
+    parts["FINGERPRINT"] = [
+        len(rungs),
+        receipt["coin_sectors"]["sectors"]["ANTIDIAGONAL"],
+        [glob[L]["support"] for L in rungs]]
+    parts["SCALE"] = [
+        {str(b["r"]): b["admitted_set"] for b in receipt["band_law"]
+         ["by_width"]},
+        [receipt["l7_witness"]["L"], receipt["l7_witness"]["width"]],
+        receipt["support_ceiling"]["ceiling"],
+        [receipt["odd_coset"]["L"], receipt["odd_coset"]["width"]],
+        [[r["non_monomial"] for r in receipt["odd_coset"]["rows"]
+          if r["alphabet"] == "R4-25"][0],
+         [r["non_monomial"] for r in receipt["odd_coset"]["rows"]
+          if r["alphabet"] == "THIRDS-19"][0],
+         [r["alphabet_size"] for r in receipt["odd_coset"]["rows"]
+          if r["alphabet"] == "THIRDS-19"][0]]]
+    parts["BREAKS"] = [
+        min(r["L"] for r in receipt["pool_census"]
+            if r["local_non_monomial"] == 0),
+        vel[rungs[1]]["witness"]["speed"],
+        vel[rungs[1]]["witness"]["axis_order"],
+        vel[rungs[1]]["non_integer_families"],
+        vel[rungs[1]]["non_monomial_families"],
+        receipt["pool_census"][0]["orbit_sizes"][0],
+        [eig[L]["eigenphase_lattice"] for L in rungs]]
+    parts["TABLE"] = [
+        len(tab), sum(1 for r in tab if r["verdict"] == "PERSISTS"),
+        sum(1 for r in tab if r["verdict"] == "PERSISTS"
+            and r["status"] == "FORCED"),
+        sum(1 for r in tab if r["verdict"] == "PERSISTS"
+            and r["status"] != "FORCED"),
+        sum(1 for r in tab if r["verdict"].startswith("BREAKS")),
+        sum(1 for r in tab if r["verdict"] == "TRANSFORMS")]
+    parts["SCOPE"] = [
+        c["d"], rungs, receipt["counts"]["control_rung"], c["alphabet"],
+        sorted(int(b["r"]) for b in receipt["band_law"]["by_width"]),
+        [min(b["L"] for b in receipt["band_law"]["rows"]),
+         max(b["L"] for b in receipt["band_law"]["rows"])]]
     return head, parts
+
+
+def parse_verdict_parts(fp):
+    """READ THE STRING BACK.  Each segment is parsed into the structured
+    values a reader would take off it, so the emitted string and the receipt's
+    tables can be compared BY EQUALITY rather than by membership.  This is a
+    parser, not a second copy of the builder's concatenation: it shares no
+    format string and no helper with `build_verdict`, and a segment whose
+    shape has drifted fails to parse rather than passing silently."""
+    def grab(key, pattern, cast=int):
+        m = re.search(pattern, fp.get(key, ""))
+        if m is None:
+            raise GateFail("G-VERDICT-RECONSTRUCTED :: the %s segment does "
+                           "not parse against %r" % (key, pattern))
+        return [cast(g) for g in m.groups()]
+
+    def ints(s):
+        return [int(x) for x in s.split(",") if x.strip()]
+
+    out = {}
+    a = grab("SIDON", r"SUFFICIENCY-HOLDS-AT-(\d+)-OF-(\d+)-SIDON-ARENAS"
+                      r"\(VACUOUS-AT-THE-OTHER-(\d+);"
+                      r"THE-IMPLICATION-HOLDS-AT-ALL-(\d+)\)")
+    b = grab("SIDON", r"\((\d+)-AND-(\d+)-NON-MONOMIAL-OF-(\d+)-AND-(\d+)"
+                      r"-UNITARY\)")
+    d = grab("SIDON", r"NECESSITY-FAILS-AT-(\d+)-ARENAS")
+    out["SIDON"] = a + [[b[0], b[1]], [b[2], b[3]]] + d
+    a = grab("CONTROL", r"REGISTERED-(\d+)-REPRODUCED-AT-THE-CONTROL-RUNG-"
+                        r"L-(\d+)")
+    b = grab("CONTROL", r";(\d+)-AT-L-\d+;(\d+)-AND-(\d+)-AT-L-\d+-AND-L-\d+"
+                        r"-BY-THEOREM")
+    d = grab("CONTROL", r"ALPHABET-RELATIVE-(\d+)-NON-MONOMIAL-OVER-THE-\d+"
+                        r"-ELEMENT")
+    out["CONTROL"] = a + [b] + d
+    out["LAW"] = grab("LAW", r"\(NO-DIFFERENCE-DOUBLED-SUBSET;(\d+)-OF-(\d+)"
+                             r"-ARENAS-DDS-FREE-AND-ALL-MONOMIAL-ONLY;"
+                             r"SIDON-STRICTLY-STRONGER-AT-(\d+)-ARENAS;"
+                             r"EXERCISED-IN-(\d+)-FINITE-FIELDS-AT-(\d+)"
+                             r"-EXHAUSTIVE-SCANS\)")
+    v = grab("VMAX", r"DIAMETER-AT-EVERY-RUNG\(([^)]*)\)", str)[0]
+    out["VMAX"] = [x.split("=")[0] for x in v.split(";")]
+    out["INTERIOR-RADII"] = grab("INTERIOR-RADII", r"^(\d+);(\d+);(\d+)\(")
+    a = grab("FINGERPRINT", r"IDENTICAL-AT-ALL-(\d+)-RUNGS-ON-ALL-(\d+)"
+                            r"-ANTIDIAGONAL-COINS")
+    b = grab("FINGERPRINT", r"GLOBAL-SUPPORT-IS-THE-VOLUME-(\d+);(\d+);(\d+)")
+    out["FINGERPRINT"] = a + [b]
+    sec = dict((r, ints(s)) for r, s in
+               re.findall(r"WIDTH-(\d+)=\{([^}]*)\}", fp.get("SCALE", "")))
+    a = grab("SCALE", r"PERFECT-DIFFERENCE-SET-AT-L-(\d+)-r-(\d+)")
+    b = grab("SCALE", r"SUPPORT-CEILING-(\d+)")
+    d = grab("SCALE", r"THE-ORDER-3-COSET-AT-L-(\d+)-r-(\d+)-CARRIES-(\d+)"
+                      r"-OVER-THE-PARENTS-\d+-AND-(\d+)-OVER-THE-(\d+)"
+                      r"-VALUE-PROBE")
+    out["SCALE"] = [sec, a, b[0], d[:2], d[2:]]
+    a = grab("BREAKS", r"LOCAL-NON-MONOMIAL-FAMILY-EMPTY-FROM-L-(\d+)")
+    sp = grab("BREAKS", r"INTEGER-VELOCITIES-FAIL-AT-L-\d+\(SPEED-([\d/]+)"
+                        r"-ON-AN-ORDER-(\d+)-AXIS;THE-(\d+)-NON-INTEGER-"
+                        r"FAMILIES-ARE-THE-(\d+)-DDS-PERMITTED", str)
+    e = grab("BREAKS", r"Z/lcm\((\d+),L\)\((\d+);(\d+);(\d+)\)")
+    out["BREAKS"] = (a + [sp[0]] + [int(x) for x in sp[1:]] + [e[0]]
+                     + [e[1:]])
+    out["TABLE"] = grab("TABLE", r"(\d+)-ROWS\((\d+)-PERSIST\((\d+)-FORCED;"
+                                 r"(\d+)-CONTINGENT\);(\d+)-BREAK;(\d+)"
+                                 r"-TRANSFORM\)")
+    a = grab("SCOPE", r"^D=(\d+);RUNGS=L-IN-\{([^}]*)\}\+CONTROL-RUNG-L-"
+                      r"(\d+)", str)
+    b = grab("SCOPE", r"ALPHABET=(\d+);WIDTHS=\{([^}]*)\};BAND-SWEEP=L-IN-"
+                      r"(\d+)\.\.(\d+)", str)
+    out["SCOPE"] = [int(a[0]), ints(a[1]), int(a[2]), int(b[0]), ints(b[1]),
+                    [int(b[2]), int(b[3])]]
+    return out
 
 
 def verdict_fingerprint(vs, receipt):
@@ -2830,13 +4555,63 @@ def verdict_fingerprint(vs, receipt):
 # ===========================================================================
 
 DIGITS = "0123456789"
-# the declared structural numerals: section and rung labels, and the RUNBOOK
-# engraving numbers this unit's instrument section cites by name.  Everything
-# else in the paper must be licensed by a value in the receipt.
-STRUCTURAL = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11",
-              "12", "13", "14", "15", "16", "17", "18", "19", "20", "21",
-              "22", "23", "24", "28", "34", "46", "82", "87", "91", "119",
-              "125", "148", "187", "192", "196", "2026"}
+
+# E-22, repaired.  The delivered licence set admitted EVERY integer 0-24
+# unconditionally, so 24 of the paper's numerals were licensed by range alone
+# and a forged `14 of 18` survived at exit 0.  The blanket is gone.  A numeral
+# is structural only if it is
+#   (a) a heading number, COMPUTED from the paper's own heading lines;
+#   (b) a digit run inside a commit-sha token the paper cites, COMPUTED from
+#       the paper's own text;
+#   (c) one of the named engravings and ledger entries below, each with the
+#       reason it is cited.
+# Everything else must be licensed by a value in the receipt.
+ENGRAVINGS = {
+    "20": "engraving #20: paper coverage includes fenced blocks",
+    "22": "engraving E-22: inline-span coverage; blocks by multiset",
+    "23": "engraving E-23: falsifier honesty",
+    "24": "engraving E-24: measure-relativity of counts",
+    "34": "engraving #34: honest denominators",
+    "46": "engraving #46: the runtime-input rule",
+    "82": "engraving #82: the CLI contract",
+    "87": "engraving #87: gates bind objects, not cardinalities",
+    "91": "engraving #91: no moving refs, off-tree and git-less",
+    "119": "engraving #119: the gate-to-disk seal",
+    "125": "engraving #125: text gates match text as written",
+    "148": "engraving #148: the seal manifest is total",
+    "196": "the v14 ledger entry at which this unit's pin was frozen",
+    "228": "the v14 ledger entry that carries this unit's adjudication",
+    "2026": "the year in the dateline",
+}
+PAPER_REFERENCES = {
+    "02": "paper 02, the manifold rung (R2)",
+    "29": "paper 29, PER-R, the successor unit named in the register",
+}
+
+
+def heading_numerals(txt):
+    """(a) the paper's own section and subsection labels, read off its
+    heading lines rather than declared as a range."""
+    out = set()
+    for line in txt.split("\n"):
+        if line.startswith("#"):
+            out |= numerals(line)
+    return out
+
+
+def sha_numerals(txt):
+    """(b) the digit runs inside the commit-sha tokens the paper cites.  A
+    sha fragment is a provenance reference, not a claim."""
+    out = set()
+    for tok in re.findall(r"\b(?=[0-9a-f]{7,12}\b)(?=[a-f0-9]*[a-f])"
+                          r"[0-9a-f]{7,12}\b", txt):
+        out |= numerals(tok)
+    return out
+
+
+def structural_numerals(txt):
+    return (heading_numerals(txt) | sha_numerals(txt) | set(ENGRAVINGS)
+            | set(PAPER_REFERENCES))
 
 
 def numerals(text):
@@ -2999,13 +4774,59 @@ def paper_claims(S):
          "text": "%d coefficient maps are scanned in all" % c["maps_scanned"]},
         {"id": "CL-LAGS", "path": "counts/lag_objects",
          "text": "%d axis-and-lag objects are bound" % c["lag_objects"]},
+        {"id": "CL-SUFFICIENCY-SPLIT",
+         "path": "sidon_prediction/sufficiency_substantive",
+         "text": "the implication is substantively tested at the %d Sidon "
+                 "arenas and holds vacuously at the other %d"
+                 % (p["sufficiency_substantive"], p["sufficiency_vacuous"])},
+        {"id": "CL-DDS-FRACTION", "path": "declared_fractions/0/value",
+         "text": "the count %s is stamped COUNTING-ONLY"
+                 % S["declared_fractions"][0]["value"]},
+        {"id": "CL-BAND7", "path": "l7_witness/matrix_entries_checked",
+         "text": "the full %d by %d matrix satisfies U-dagger-U = I, all %d "
+                 "entries checked, %d mismatches"
+                 % (S["l7_witness"]["matrix_dimension"],
+                    S["l7_witness"]["matrix_dimension"],
+                    S["l7_witness"]["matrix_entries_checked"],
+                    S["l7_witness"]["matrix_mismatches"])},
+        {"id": "CL-BAND-CEILING", "path": "support_ceiling/ceiling",
+         "text": "a unitary map over this alphabet has at most %d nonzero "
+                 "coefficients" % S["support_ceiling"]["ceiling"]},
+        {"id": "CL-ODD-COSET", "path": "odd_coset/rows/2/non_monomial",
+         "text": "carries %d non-monomial unitaries over the parents' 25 and "
+                 "%d over the 19-value probe"
+                 % ([r["non_monomial"] for r in S["odd_coset"]["rows"]
+                     if r["alphabet"] == "R4-25"][0],
+                    [r["non_monomial"] for r in S["odd_coset"]["rows"]
+                     if r["alphabet"] == "THIRDS-19"][0])},
+        {"id": "CL-CHAR-P", "path": "char_p_census/scans",
+         "text": "%d exhaustive scans over %d finite fields, %d violations"
+                 % (S["char_p_census"]["scans"],
+                    len(S["char_p_census"]["fields"]),
+                    len(S["char_p_census"]["violations"]))},
+        {"id": "CL-FORCING", "path": "persistence_forcing/forced",
+         "text": "%d of the %d PERSISTS rows are theorems restated at three "
+                 "rungs and %d are contingent survivals"
+                 % (S["persistence_forcing"]["forced"],
+                    S["persistence_forcing"]["persist_rows"],
+                    S["persistence_forcing"]["contingent"])},
+        {"id": "CL-ONE-MECHANISM",
+         "path": "velocity_census/1/non_monomial_families",
+         "text": "the %d non-integer-velocity families at L = 6 are the %d "
+                 "non-monomial families"
+                 % ([r["non_integer_families"] for r in S["velocity_census"]
+                     if r["L"] == 6][0],
+                    [r["non_monomial_families"] for r in S["velocity_census"]
+                     if r["L"] == 6][0])},
     ]
     return out
 
 
 def paper_tables(S):
     """E-22: tables render as claims.  Each row below is the exact pipe row
-    the paper must carry."""
+    the paper must carry.  ALL SEVEN of the paper's tables render here -- the
+    delivered instrument rendered two of them and left the band table, the
+    one the paper itself nominated for attack, unbound."""
     rows = []
     for r in S["persistence_table"]:
         rows.append("| %s | %s | %s | %s | %s |"
@@ -3016,6 +4837,37 @@ def paper_tables(S):
                     % (a["L"], a["arena"], a["sidon"], a["dds_free"],
                        a["difference_multiplicities"], a["unitary"],
                        a["non_monomial"]))
+    # the control table (section 3.4)
+    for r in S["fourth_direction_control"]["control_rung_rows"]:
+        rows.append("| %s | %s | %d | %d | %d | %d |"
+                    % (r["arena"], r["alphabet"], r["alphabet_size"],
+                       r["maps"], r["unitary"], r["non_monomial"]))
+    # the VMAX / dispersion table (section 4)
+    for v, d, r in zip(S["vmax_census"], S["dispersion_census"],
+                       S["interior_radii"]):
+        rows.append("| %d | %d | %d | %s | %d | %d | %d |"
+                    % (v["L"], d["families"], d["cells"], v["vmax"],
+                       v["diameter"], r["interior_count"],
+                       d["eigenphase_lattice"]))
+    # the gauge profile table (section 5)
+    for r in S["gauge_profile"]:
+        if r["L"] != PARENT_RUNG:
+            continue
+        rows.append("| %s | %d | %d | %s | %s | same | same | same |"
+                    % (r["stencil"], r["order"], r["support"],
+                       " + ".join(str(x) for x in r["orbit_sizes"]),
+                       r["position_class"].replace("x", " x ")))
+    # the locality-window table (section 6)
+    for w in S["locality_windows"]:
+        rows.append("| %d | %d | %d | %d | %s | %s | %d |"
+                    % (w["L"], w["r"], w["neighbours"], w["offsets"],
+                       "yes" if w["complete"] else "no",
+                       "yes" if w["locality"] else "no", w["b1"]))
+    # THE BAND TABLE (section 7) -- the row the panel forged twice at exit 0
+    for b in S["band_law"]["by_width"]:
+        rows.append("| %d | %s | %s | %s |"
+                    % (b["r"], b["admitted_set"], b["involution_pair_set"],
+                       b["beyond_the_pair_mechanism"] or "-"))
     return rows
 
 
@@ -3047,7 +4899,7 @@ def paper_coverage_only(S, txt):
     norm = norm_text(txt)
     claims = paper_claims(S)
     missing = [c["id"] for c in claims if norm_text(c["text"]) not in norm]
-    lic = licensed_numerals(S, set()) | STRUCTURAL
+    lic = licensed_numerals(S, set()) | structural_numerals(txt)
     pn = numerals(txt)
     unlic = sorted(n for n in pn if n not in lic)
     spans = inline_spans(txt)
@@ -3090,7 +4942,7 @@ def verify_paper(S, LD, txt):
             not missing, "%d claims, %d missing: %s"
             % (len(claims), len(missing), missing or "none"))
 
-    lic = licensed_numerals(S, set()) | STRUCTURAL
+    lic = licensed_numerals(S, set()) | structural_numerals(txt)
     pn = numerals(txt)
     if mut("MUT-PAPER-NUMERAL"):
         pn = pn | {"987654321"}
@@ -3103,11 +4955,11 @@ def verify_paper(S, LD, txt):
             % (len(pn), len(unlic), unlic[:8] or "none"))
 
     spans = inline_spans(txt)
+    if mut("MUT-PAPER-SPAN"):
+        spans = spans + ["the forged span 424242"]
     sn = set()
     for s in spans:
         sn |= numerals(s)
-    if mut("MUT-PAPER-SPAN"):
-        sn = sn | {"424242"}
     span_bad = sorted(n for n in sn if n not in lic)
     LD.gate("G-PAPER-INLINE-SPANS",
             "the inline code spans are scanned in their own right under the "
@@ -3192,16 +5044,25 @@ def verify_paper(S, LD, txt):
 
 
 def falsifier_descriptions():
-    """E-23: each published description is checked against the source text of
-    the branch its own switch guards."""
+    """E-23, three-legged: each published description is bound to the branch
+    its own switch guards by (1) the switch existing, (2) the digest of the
+    guarded source matching the PINNED digest, and (3) the description's
+    leading VERB lying in the verb set of its declared effect class."""
     src = read_text(SELF)
     rows = []
-    for name, target, note in MUTANTS:
+    for name, target, effect, note in MUTANTS:
         i = src.find('mut("%s")' % name)
+        live = digest(src[i:i + 240]) if i >= 0 else None
+        pinned = MUTANT_CODE_DIGESTS.get(name)
+        verb = note.split()[0].lower()
         rows.append({"mutant": name, "target": target, "description": note,
+                     "effect_class": effect, "verb": verb,
                      "switch_present": i >= 0,
-                     "guarded_source_sha256_12":
-                         digest(src[i:i + 240]) if i >= 0 else None})
+                     "guarded_source_sha256_12": live,
+                     "pinned_source_sha256_12": pinned,
+                     "code_matches_its_pin": bool(pinned) and live == pinned,
+                     "verb_matches_its_class":
+                         verb in VERB_CLASSES.get(effect, ())})
     return rows
 
 
@@ -3220,18 +5081,101 @@ def build_receipt(S, LD, SEAL, paper_text):
             % (S["verdict"]["head"], len(PREREGISTERED_HEADS)))
     rh, rparts = reconstruct_verdict(S)
     fp = verdict_fingerprint(S["verdict"]["string"], S)
+    read_back = parse_verdict_parts(fp)
+    if mut("MUT-COMPARATOR"):
+        read_back = dict(read_back)
+        read_back["TABLE"] = list(read_back["TABLE"])
+        read_back["TABLE"][0] += 1
+    mismatched = sorted(k for k in rparts
+                        if json.dumps(read_back.get(k), sort_keys=True)
+                        != json.dumps(rparts[k], sort_keys=True))
     ok = (rh == S["verdict"]["head"]
           and S["verdict"]["string"].startswith(rh + "<")
-          and str(rparts[3]) in fp.get("CONTROL", "")
-          and set(fp) == {"SIDON", "CONTROL", "LAW", "VMAX", "INTERIOR-RADII",
-                          "FINGERPRINT", "SCALE", "BREAKS", "TABLE", "SCOPE"})
+          and not mismatched
+          and set(fp) == set(rparts))
     LD.gate("G-VERDICT-RECONSTRUCTED",
-            "the head and every segment key of the verdict string are "
-            "re-derived from the receipt's own primitive tables by a "
-            "comparator that shares no literal and no helper with the "
-            "builder, and the string is parsed back into its segments",
-            ok, "head %s, %d segments, keys %s"
-            % (S["verdict"]["head"], len(fp), sorted(fp)))
+            "the head and EVERY segment of the verdict string are bound "
+            "twice: the segments are re-derived from the receipt's own "
+            "primitive tables by a comparator that shares no literal, no "
+            "format string and no helper with the builder, and the emitted "
+            "string is PARSED BACK into structured values which are compared "
+            "against them BY EQUALITY, value for value -- not by membership, "
+            "and not by re-writing the same concatenation twice",
+            ok, "head %s, %d segments, %d parts compared by equality, "
+            "mismatched: %s"
+            % (S["verdict"]["head"], len(fp), len(rparts),
+               mismatched or "none"))
+
+    # ---- E-24: the fraction census SCANS, it does not self-select --------
+    # The delivered gate checked a hand-written two-row list and could not
+    # discover an unstamped fraction.  This one scans the rendered paper AND
+    # the emitted verdict string for every fraction-shaped construction and
+    # requires each hit to be covered by a stamped row built from a receipt
+    # value; a row that no hit reaches is a dead declaration and also fails.
+    c = S["counts"]
+    fr = [
+        {"name": "arenas that are DDS-free",
+         "value": "%d of %d" % (c["arenas_dds_free"], c["arenas"]),
+         "forms": ["%d of %d" % (c["arenas_dds_free"], c["arenas"]),
+                   "%d-OF-%d" % (c["arenas_dds_free"], c["arenas"])],
+         "measure": "COUNTING-ONLY",
+         "why": "a coverage report over this unit's own declared arena list, "
+                "which is not a sample of any population and carries no "
+                "measure; the criterion's soundness is a theorem"},
+        {"name": "Sidon arenas at which sufficiency is substantively tested",
+         "value": "%d of %d" % (c["arenas_sidon_substantive"],
+                                c["arenas_sidon"]),
+         "forms": ["%d of %d" % (c["arenas_sidon_substantive"],
+                                 c["arenas_sidon"]),
+                   "%d-OF-%d" % (c["arenas_sidon_substantive"],
+                                 c["arenas_sidon"])],
+         "measure": "COUNTING-ONLY",
+         "why": "the honest denominator of the sufficiency direction: the "
+                "implication is vacuous wherever its antecedent is false, so "
+                "the Sidon arenas are the ones it is tested at"},
+        {"name": "arenas at which necessity fails",
+         "value": "%d of %d" % (c["necessity_failures"], c["arenas"]),
+         "forms": ["%d of them" % c["necessity_failures"]],
+         "measure": "COUNTING-ONLY",
+         "why": "the same declared list, read the other way; a count of "
+                "arenas, not a rate over any space of arenas"},
+        {"name": "odd sizes in the width/radius join sweep",
+         "value": "%d of %d" % (c["join_odd_sizes"], c["join_sizes"]),
+         "forms": ["%d of them" % c["join_odd_sizes"]],
+         "measure": "COUNTING-ONLY",
+         "why": "a count over the declared band sweep, which is a "
+                "presentation range and not a sample; the identity it "
+                "reports is a theorem at every size, odd or even"},
+    ]
+    fr_txt = paper_text + " " + S["verdict"]["string"]
+    if mut("MUT-FRACTION"):
+        fr_txt = fr_txt + "  an unstamped 5 of 7 slipped into the prose"
+    hits = sorted(set(re.findall(r"\d+ of \d+", fr_txt))
+                  | set(re.findall(r"\d+-OF-\d+", fr_txt))
+                  | set(re.findall(r"\d+ of them", fr_txt)))
+    covered = {f for row in fr for f in row["forms"]}
+    unstamped = [h for h in hits if h not in covered]
+    dead = [row["name"] for row in fr
+            if not any(f in fr_txt for f in row["forms"])]
+    nomeasure = [row["name"] for row in fr if not row.get("measure")]
+    S["declared_fractions"] = fr
+    S["fraction_census"] = {"scanned": ["the rendered paper", "the verdict "
+                                        "string"],
+                            "patterns": ["N of M", "N-OF-M", "N of them"],
+                            "hits": hits, "covered": sorted(covered),
+                            "unstamped": unstamped, "dead_rows": dead}
+    LD.gate("G-FRACTIONS-STAMPED",
+            "the fraction census SCANS rather than self-selects: every "
+            "fraction-shaped construction in the rendered paper and in the "
+            "emitted verdict string is found by pattern, and each hit must be "
+            "covered by a row that carries its measure or the COUNTING-ONLY "
+            "stamp.  A declared row no hit reaches is a dead declaration and "
+            "fails here too, so the census has a denominator",
+            not unstamped and not dead and not nomeasure,
+            "%d fraction-shaped hits over %d stamped rows; unstamped %s, "
+            "dead %s, unmeasured %s"
+            % (len(hits), len(fr), unstamped or "none", dead or "none",
+               nomeasure or "none"))
 
     banned = ("CONTINUUM-LIMIT", "THERMODYNAMIC-LIMIT", "IN-THE-LIMIT",
               "SCALING-LIMIT-ESTABLISHED", "TRANSPORT-NUMBER-INHERITED")
@@ -3247,24 +5191,57 @@ def build_receipt(S, LD, SEAL, paper_text):
 
     fd = falsifier_descriptions()
     if mut("MUT-DESCRIPTION"):
-        fd[0]["switch_present"] = False
+        # inverts the DESCRIPTION's leading verb and nothing else: the code
+        # is untouched, which is exactly the injection a switch-existence
+        # gate cannot see.
+        inv = {"drops": "adds", "adds": "drops", "shortens": "lengthens",
+               "moves": "pins", "reports": "conceals"}
+        fd[0] = dict(fd[0])
+        old_verb = fd[0]["verb"]
+        fd[0]["description"] = fd[0]["description"].replace(
+            old_verb, inv.get(old_verb, "preserves"), 1)
+        fd[0]["verb"] = fd[0]["description"].split()[0].lower()
+        fd[0]["verb_matches_its_class"] = (
+            fd[0]["verb"] in VERB_CLASSES.get(fd[0]["effect_class"], ()))
     S["falsifier_descriptions"] = fd
-    bad = [r["mutant"] for r in fd if not r["switch_present"]]
+    no_switch = [r["mutant"] for r in fd if not r["switch_present"]]
+    drifted = [r["mutant"] for r in fd if not r["code_matches_its_pin"]]
+    misdescribed = [r["mutant"] for r in fd
+                    if not r["verb_matches_its_class"]]
     LD.gate("G-FALSIFIER-DESCRIPTIONS",
-            "every published mutant description names a switch that exists in "
-            "this file, so a description cannot be a false waiver wearing a "
-            "green badge",
-            not bad, "%d descriptions, %d without a switch in source: %s"
-            % (len(fd), len(bad), bad or "none"))
+            "every published mutant description is bound to the branch its "
+            "own switch guards THREE ways: the switch exists in this file; "
+            "the digest of the guarded source equals the digest PINNED in "
+            "the frozen registry, so code cannot move away from its "
+            "description; and the description's leading verb lies in the "
+            "verb set of its declared effect class, so a description cannot "
+            "be inverted while its code stands still",
+            not no_switch and not drifted and not misdescribed,
+            "%d descriptions: %d without a switch (%s), %d whose guarded "
+            "source has drifted from its pin (%s), %d whose verb does not "
+            "match its declared effect class (%s)"
+            % (len(fd), len(no_switch), no_switch or "none", len(drifted),
+               drifted or "none", len(misdescribed), misdescribed or "none"))
 
     # THE LEDGER COVERS EVERY GATE THE RUN WILL REACH, not only the ones
     # already closed: the gates that run after this point are enumerated in
     # REMAINING_GATES and classified here, and G-GATE-LEDGER-COVERS-THE-RUN
     # requires the closed ledger to have an entry for every gate row.
-    waivers = []
+    # E-23, repaired: STRUCTURAL is NO LONGER AN UNCONDITIONAL `else`.  A gate
+    # enters that bucket only through the explicit registry above, which names
+    # its two independently computed sides; a gate that is neither a mutant
+    # target, nor waived with a forcing, nor registered STRUCTURAL is
+    # UNCLASSIFIED and dies at G-WAIVERS-VERIFIED.
+    waivers, unclassified = [], []
     targets = {m[1] for m in MUTANTS}
-    for gid in sorted(set(LD.ids) | set(REMAINING_GATES) | set(LATE_GATES)
-                      | set(FORCINGS)):
+    reach = sorted(set(LD.ids) | set(REMAINING_GATES) | set(LATE_GATES)
+                   | set(FORCINGS))
+    if mut("MUT-VACUOUS-GATE"):
+        reach = reach + ["G-INJECTED-VACUOUS"]
+    if mut("MUT-STRUCTURAL-STALE"):
+        reach = [g for g in reach
+                 if g != "G-DISPERSION-REPRODUCES-THE-PARENT"]
+    for gid in reach:
         if gid in targets:
             waivers.append({"gate": gid, "status": "FALSIFIABLE",
                             "falsifier": [m[0] for m in MUTANTS
@@ -3272,46 +5249,78 @@ def build_receipt(S, LD, SEAL, paper_text):
         elif gid in FORCINGS:
             waivers.append({"gate": gid, "status": "WAIVED",
                             "forcing": FORCINGS[gid]})
-        else:
+        elif gid in STRUCTURAL_REGISTRY:
+            sides = STRUCTURAL_REGISTRY[gid]
             waivers.append({"gate": gid, "status": "STRUCTURAL",
-                            "forcing": "a rebuild identity: it compares two "
-                                       "independently computed objects, or "
-                                       "evaluates a per-object predicate over "
-                                       "a table it did not build, and cannot "
-                                       "pass unless they agree"})
+                            "route_a": sides[0], "route_b": sides[1],
+                            "forcing": "a rebuild identity between two "
+                                       "independently computed objects: %s "
+                                       "against %s" % sides})
+        else:
+            unclassified.append(gid)
+            waivers.append({"gate": gid, "status": "UNCLASSIFIED"})
     S["waiver_ledger"] = waivers
+    S["structural_registry"] = [{"gate": g, "route_a": a, "route_b": b}
+                                for g, (a, b)
+                                in sorted(STRUCTURAL_REGISTRY.items())]
+    stale = sorted((set(STRUCTURAL_REGISTRY) - set(reach))
+                   | (set(STRUCTURAL_REGISTRY) & (targets | set(FORCINGS))))
+    LD.gate("G-STRUCTURAL-REGISTERED",
+            "the STRUCTURAL bucket is an explicit registry and not a default "
+            "branch: each of its gates names the two independently computed "
+            "objects its predicate compares, and no registered entry is dead "
+            "-- every one is a gate this run reaches, and none of them is "
+            "already covered by a mutant or a forcing, so the registry says "
+            "exactly which gates rest on a rebuild identity and no more",
+            not stale, "%d structural gates registered, %d of them dead "
+            "(unreached, or already falsifiable or waived): %s"
+            % (len(STRUCTURAL_REGISTRY), len(stale), stale or "none"))
     unguarded = [w["gate"] for w in waivers
                  if (w["status"] == "FALSIFIABLE" and not w.get("falsifier"))
-                 or (w["status"] == "WAIVED" and not w.get("forcing"))]
+                 or (w["status"] == "WAIVED" and not w.get("forcing"))
+                 or (w["status"] == "STRUCTURAL"
+                     and not (w.get("route_a") and w.get("route_b")))
+                 or w["status"] == "UNCLASSIFIED"]
     LD.gate("G-WAIVERS-VERIFIED",
             "every gate is FALSIFIABLE with a named mutant, WAIVED with a "
-            "named forcing, or STRUCTURAL -- a two-route identity that cannot "
-            "pass unless its two routes agree; none is unguarded, and the "
-            "ledger is built over every gate the run will reach rather than "
-            "only the ones already closed",
-            not unguarded, "%d gates: %d falsifiable, %d waived, %d structural"
+            "named forcing, or STRUCTURAL through the explicit registry that "
+            "names its two independently computed sides.  A gate that fits "
+            "none of the three is UNCLASSIFIED and dies here -- there is no "
+            "default branch that can bless it -- and the ledger is built over "
+            "every gate the run will reach rather than only the ones already "
+            "closed",
+            not unguarded, "%d gates: %d falsifiable, %d waived, %d "
+            "structural, %d unclassified: %s"
             % (len(waivers),
                sum(1 for w in waivers if w["status"] == "FALSIFIABLE"),
                sum(1 for w in waivers if w["status"] == "WAIVED"),
-               sum(1 for w in waivers if w["status"] == "STRUCTURAL")))
+               sum(1 for w in waivers if w["status"] == "STRUCTURAL"),
+               len(unclassified), unclassified or "none"))
 
+    if mut("MUT-NOT-EXECUTED"):
+        NOT_EXECUTED.append("the arenas :: (99, 'PLANNED-NEVER-RUN')")
     S["not_executed"] = list(NOT_EXECUTED)
     LD.gate("G-NOT-EXECUTED-EMPTY",
-            "nothing declared was left unexecuted",
-            not S["not_executed"], "%d entries" % len(S["not_executed"]))
+            "nothing declared was left unexecuted: the declared-instance "
+            "registry writes every planned-but-unreached instance into this "
+            "list as the sweeps close, and the list is required to be empty",
+            not S["not_executed"], "%d entries: %s"
+            % (len(S["not_executed"]), S["not_executed"] or "none"))
 
     cov = verify_paper(S, LD, paper_text)
 
-    # THE PREDICTION, made before the remaining gates close: five more gates
-    # run in this function (totals, floats, the seal, the manifest, the
-    # chain) and five in the delivery path (the mutant sweep's adjudicator,
-    # the published-key check, the ledger-coverage check, this prediction's
-    # own check and the final paper pass).  G-GATES-CLOSED-AS-
-    # PREDICTED requires the ledger to end at exactly this number, and
-    # G-ARTIFACT-INTEGRITY is the one gate evaluated outside the ledger.
+    # THE PREDICTION, made before the remaining gates close: SIX more gates
+    # run in this function (the totals, the floats, the seal, the seal
+    # windows, the manifest and the chain) and FIVE in the delivery path (the
+    # mutant sweep's adjudicator, the published-key check, the
+    # ledger-coverage check, this prediction's own check and the final paper
+    # pass).  G-GATES-CLOSED-AS-PREDICTED requires the ledger to end at
+    # exactly this number, and G-ARTIFACT-INTEGRITY is the one gate evaluated
+    # outside the ledger, which is why `gates` exceeds `gates_in_receipt` by
+    # exactly one.
     S["totals"] = {
-        "gates": len(LD.rows) + 11,
-        "gates_in_receipt": len(LD.rows) + 10,
+        "gates": len(LD.rows) + 12,
+        "gates_in_receipt": len(LD.rows) + 11,
         "mutants": len(MUTANTS),
         "sources": len(SOURCES),
         "path_value_anchors": len(PATH_VALUE_ANCHORS),
@@ -3320,14 +5329,36 @@ def build_receipt(S, LD, SEAL, paper_text):
         "claims": cov["claims"],
         "numerals": cov["numerals"],
     }
+    # #87: EVERY totals key is re-derived from its own source, per key.  The
+    # delivered gate bound two of nine, and a typed `9` survived.
+    sources_of = {
+        "gates": len(LD.rows) + 12,
+        "gates_in_receipt": len(LD.rows) + 11,
+        "mutants": len(MUTANTS),
+        "sources": len(SOURCES),
+        "path_value_anchors": len(PATH_VALUE_ANCHORS),
+        "verbatim_anchors": len(VERBATIM_ANCHORS),
+        "seals": len(SEALED_PATHS),
+        "claims": len(S["paper_claims"]),
+        "numerals": len(numerals(paper_text)),
+    }
+    if mut("MUT-TOTALS"):
+        S["totals"] = dict(S["totals"])
+        S["totals"]["sources"] = len(SOURCES) + 1
+    typed = sorted(k for k, v in sources_of.items()
+                   if S["totals"].get(k) != v)
+    missing = sorted(set(S["totals"]) - set(sources_of))
     LD.gate("G-TOTALS-REDERIVED",
-            "the published totals are re-derived from the objects that "
-            "produce them rather than typed",
-            (S["totals"]["mutants"] == len(MUTANTS)
-             and S["totals"]["seals"] == len(SEALED_PATHS)),
-            "%d gates predicted, %d mutants, %d seals"
-            % (S["totals"]["gates"], S["totals"]["mutants"],
-               S["totals"]["seals"]))
+            "EVERY published total is re-derived from the object that "
+            "produces it and compared per key -- the gate count from the "
+            "closed ledger, the mutants from the registry, the sources and "
+            "the anchors from their declarations, the seals from the sealed "
+            "paths, the claims from the rendered claim list and the numerals "
+            "from a fresh scan of the paper -- and no key is published that "
+            "the re-derivation does not cover",
+            not typed and not missing,
+            "%d totals keys, all re-derived: typed %s, uncovered %s"
+            % (len(S["totals"]), typed or "none", missing or "none"))
 
     # the float scan
     def has_float(o):
@@ -3352,14 +5383,90 @@ def build_receipt(S, LD, SEAL, paper_text):
             "%d float literals in source, receipt clean: %s"
             % (len(src_floats), not has_float(probe)))
 
-    broken = SEAL.verify(S)
+    # MUT-SEAL-BROKEN edits an ACTUAL SEALED OBJECT after its gate-time
+    # digest was taken -- exactly what its description says -- rather than
+    # faking the gate's input.
     if mut("MUT-SEAL-BROKEN"):
-        broken = ["SEAL-COUNTS"]
+        S["counts"]["arenas"] = S["counts"]["arenas"] + 900
+    broken = SEAL.verify(S)
     LD.gate("G-SEAL-COMPLETE",
             "every gate-time seal still verifies against the object it was "
             "taken from, in run, before the payload is built",
             not broken, "%d seals, broken: %s" % (len(SEAL.rows),
                                                   broken or "none"))
+
+    # #148: the seal WINDOW -- the distance between the gate that closes a
+    # value and the gate that seals it -- is published for every seal, and
+    # the three seals whose values only exist at the final gate are named as
+    # such rather than left to be discovered.
+    # #148: a seal homed to a gate that closes BEFORE its value exists never
+    # fires -- `Ledger.gate` skips the take when the path is not yet there --
+    # and the delivered manifest gate could not see that, because it checks
+    # key coverage by path root rather than that the take happened.  This gate
+    # binds the two sides against each other: the DECLARED homing in
+    # SEALED_PATHS, and the takes the run actually performed, seal by seal.
+    # The split between "must already have fired" and "fires later" is READ
+    # OFF THE LIVE LEDGER -- a seal is DUE exactly when its declared gate has
+    # already closed -- so nothing here is typed and the two sides are
+    # genuinely independent: SEALED_PATHS on one, the takes the run performed
+    # and the gates it has actually closed on the other.
+    LATE_BY_NECESSITY = ("SEAL-MUTANTS", "SEAL-GATES", "SEAL-COVERAGE",
+                         "SEAL-SEAL-WINDOWS")
+    closed = set(LD.ids)
+    taken = {r["seal"]: r["sealed_at_gate"] for r in SEAL.rows}
+    if mut("MUT-SEAL-WINDOW"):
+        taken.pop("SEAL-BAND-CENSUS", None)
+    win_rows2 = []
+    for sid, path, g in SEALED_PATHS:
+        win_rows2.append({
+            "seal": sid, "path": path, "declared_gate": g,
+            "its_gate_has_closed": g in closed,
+            "taken_at_gate": taken.get(sid),
+            "fired": sid in taken,
+            "homed_as_declared": taken.get(sid) == g if sid in taken else None,
+            "still_to_fire": g not in closed})
+    never_fired = [r["seal"] for r in win_rows2
+                   if r["its_gate_has_closed"] and not r["fired"]]
+    mishomed = [r["seal"] for r in win_rows2
+                if r["fired"] and not r["homed_as_declared"]]
+    early = [r["seal"] for r in win_rows2
+             if not r["its_gate_has_closed"] and r["fired"]]
+    deferred = sorted(r["seal"] for r in win_rows2 if r["still_to_fire"])
+    unreachable = [r["seal"] for r in win_rows2
+                   if r["still_to_fire"]
+                   and r["declared_gate"] not in set(REMAINING_GATES)]
+    S["seal_windows"] = {
+        "rows": win_rows2,
+        "due_and_fired": sum(1 for r in win_rows2
+                             if r["its_gate_has_closed"] and r["fired"]),
+        "still_to_fire": deferred,
+        "late_by_necessity": list(LATE_BY_NECESSITY),
+        "note": "a seal is taken at the gate that CLOSES ITS VALUE.  A seal "
+                "homed to a gate that closes before its value exists is "
+                "silently skipped by the take and never fires at all -- that "
+                "is the failure this gate catches.  The seals still to fire "
+                "when this gate runs are exactly the four whose values do not "
+                "exist yet, and each is homed to a gate the run will still "
+                "reach"}
+    LD.gate("G-SEAL-WINDOWS-DECLARED",
+            "every seal whose gate HAS ALREADY CLOSED has actually fired, and "
+            "fired at the gate it was declared to fire at; no seal has fired "
+            "ahead of its gate; and every seal still to fire is homed to a "
+            "gate the run will still reach.  A seal homed to a gate that "
+            "closes before its value exists never fires, and the manifest "
+            "gate cannot see that because it checks key coverage rather than "
+            "the take -- so the declared homing and the takes actually "
+            "performed are compared here, seal by seal",
+            not never_fired and not mishomed and not early and not unreachable
+            and deferred == sorted(LATE_BY_NECESSITY),
+            "%d declared seals, %d due and fired, %d never fired (%s), %d "
+            "homed elsewhere (%s), %d fired early (%s); still to fire: %s "
+            "against the declared %s, %d of them homed to a gate the run "
+            "never reaches"
+            % (len(win_rows2), S["seal_windows"]["due_and_fired"],
+               len(never_fired), never_fired or "none", len(mishomed),
+               mishomed or "none", len(early), early or "none", deferred,
+               sorted(LATE_BY_NECESSITY), len(unreachable)))
 
     if mut("MUT-SEAL-MANIFEST"):
         S["unsealed_probe"] = len(SEALED_PATHS)
@@ -3394,8 +5501,9 @@ def build_receipt(S, LD, SEAL, paper_text):
 
 
 def finish_receipt(S, LD, SEAL, report, on_target):
-    S["mutants"] = report
-    SEAL.take("SEAL-MUTANTS", S)
+    # `mutants` is placed BEFORE G-MUTANTS-ON-TARGET closes, so the ledger's
+    # own take seals it at that gate -- here and nowhere else, exactly as the
+    # seal mechanism's comment says.  Nothing is sealed in a late take.
     S["gates"] = LD.rows
     S["gate_digests"] = LD.digests
     S["seal_manifest"] = SEAL.rows
@@ -3485,8 +5593,38 @@ def report_lines(S):
                    % (r["L"], r["locality_admitting_widths"],
                       r["interior_radii"]))
     for b in S["band_law"]["by_width"]:
-        out.append("  width r=%d admitted sizes %s; predicted %s"
-                   % (b["r"], b["admitted_set"], b["predicted_set"]))
+        out.append("  width r=%d admitted %s; involution-pair section %s; "
+                   "beyond that mechanism %s"
+                   % (b["r"], b["admitted_set"], b["involution_pair_set"],
+                      b["beyond_the_pair_mechanism"] or "-"))
+    w7 = S["l7_witness"]
+    out.append("  the difference-set witness at L=%d r=%d: support %s, "
+               "coefficients %s, multiplicities %s"
+               % (w7["L"], w7["width"], w7["support"], w7["coefficients"],
+                  w7["difference_multiplicities"]))
+    out.append("    autocorrelation is a delta: %s; U-dagger-U = I over %d "
+               "entries with %d mismatches; involutions in the group: %d"
+               % (w7["autocorrelation_is_a_delta"],
+                  w7["matrix_entries_checked"], w7["matrix_mismatches"],
+                  w7["involutions_in_the_group"]))
+    out.append("  the support ceiling, computed: %d  (profiles %s)"
+               % (S["support_ceiling"]["ceiling"],
+                  S["support_ceiling"]["profiles"]))
+    out.append("  the odd coset at L=%d r=%d: %s"
+               % (S["odd_coset"]["L"], S["odd_coset"]["width"],
+                  {r["alphabet"]: r["non_monomial"]
+                   for r in S["odd_coset"]["rows"]}))
+    out.append("")
+    out.append("THE DDS THEOREM OUTSIDE CHARACTERISTIC ZERO")
+    for f in S["char_p_census"]["fields"]:
+        out.append("  F%-3d char %-3d degree %d  involution order %d  "
+                   "1 = -1: %s"
+                   % (f["q"], f["characteristic"], f["degree"],
+                      f["involution_order"], f["one_equals_minus_one"]))
+    out.append("  %d exhaustive scans, %d of them DDS-free, %d violations"
+               % (S["char_p_census"]["scans"],
+                  S["char_p_census"]["dds_free_rows"],
+                  len(S["char_p_census"]["violations"])))
     out.append("")
     out.append("STAGE 5  THE PERSISTENCE TABLE")
     for r in S["persistence_table"]:
@@ -3498,6 +5636,10 @@ def report_lines(S):
     out.append("  %d rows: %d persist, %d break, %d transform"
                % (c["table_rows"], c["persists"], c["breaks"],
                   c["transforms"]))
+    out.append("  of the %d PERSISTS rows, %d are FORCED and %d contingent"
+               % (S["persistence_forcing"]["persist_rows"],
+                  S["persistence_forcing"]["forced"],
+                  S["persistence_forcing"]["contingent"]))
     out.append("  %d coefficient maps scanned; %d axis-and-lag objects bound"
                % (c["maps_scanned"], c["lag_objects"]))
     out.append("  gates %d (%d in the receipt); mutants %d"
@@ -3629,9 +5771,25 @@ def main():
         sys.exit(1)
 
     if opts["verify_paper"]:
+        # MINOR-13, repaired: the flag a reviewer is invited to use now runs
+        # the SAME final coverage pass the delivery path runs, so it is not
+        # strictly weaker than the path it stands in for.
+        S["gates"] = LD.rows
+        S["gate_digests"] = LD.digests
+        cov2 = paper_coverage_only(S, paper_text)
+        ok = (cov2["unlicensed"] == 0 and cov2["polarity_failures"] == 0
+              and cov2["missing"] == 0 and cov2["table_missing"] == 0
+              and cov2["fenced_multiset_equal"])
         say("")
         say("VERIFY-PAPER: %s" % paper_rel)
         say("  coverage %s" % cov)
+        say("  final pass %s" % cov2)
+        if not ok:
+            say("")
+            say("GATE FAILED: G-PAPER-COVERAGE-FINAL :: the final pass does "
+                "not close on %s" % paper_rel)
+            say("EXIT 1")
+            sys.exit(1)
         say("  every claim rendered, every numeral covered (prose, fences and "
             "inline spans), every fenced block matched by multiset, every "
             "table row rendered, every polarity held.")
@@ -3648,7 +5806,7 @@ def main():
     say("running %d declared mutants" % len(MUTANTS))
     report, all_dead, on_target = [], True, 0
     saved = list(READS)
-    for nm, target, note in MUTANTS:
+    for nm, target, effect, note in MUTANTS:
         MUT = nm
         QUIET = True
         globals()["QUIET"] = True
@@ -3662,8 +5820,9 @@ def main():
             killed_at = "SYSTEM-EXIT"
         globals()["QUIET"] = False
         MUT = None
-        report.append({"mutant": nm, "target": target, "note": note,
-                       "killed": killed_at is not None, "killed_at": killed_at,
+        report.append({"mutant": nm, "target": target, "effect": effect,
+                       "note": note, "killed": killed_at is not None,
+                       "killed_at": killed_at,
                        "on_target": killed_at == target})
         if killed_at is None:
             all_dead = False
@@ -3675,6 +5834,7 @@ def main():
                     on_target))
     off = [(m["mutant"], m["target"], m["killed_at"]) for m in report
            if not m["on_target"]]
+    S["mutants"] = report
     try:
         LD.gate("G-MUTANTS-ON-TARGET",
                 "every declared mutant is killed, and killed by the gate it "
@@ -3835,12 +5995,29 @@ def main():
                   "written does not match the gate-time seal (%s); nothing "
                   "written" % why, flush=True)
             sys.exit(1)
+        # A FAILING RUN WRITES NOTHING -- including on this path.  The
+        # pre-existing artifacts are copied aside before `os.replace` and
+        # restored if the post-write check fires, so a corrupt artifact is
+        # never left promoted.
+        prior = {}
+        for p in (OUT_JSON, OUT_TXT):
+            if os.path.exists(p):
+                with open(p, "rb") as f:
+                    prior[p] = f.read()
         os.replace(tj, OUT_JSON)
         os.replace(tt, OUT_TXT)
         why = against_the_seal(read_text(OUT_JSON), read_text(OUT_TXT))
         if why is not None:
+            for p, blob in prior.items():
+                with open(p, "wb") as f:
+                    f.write(blob)
+            for p in (OUT_JSON, OUT_TXT):
+                if p not in prior and os.path.exists(p):
+                    os.remove(p)
             print("GATE FAILED: G-ARTIFACT-INTEGRITY :: the artifacts on disk "
-                  "differ from the gate-time seal (%s)" % why, flush=True)
+                  "differ from the gate-time seal (%s); the previous "
+                  "artifacts have been restored and nothing of this run "
+                  "remains on disk" % why, flush=True)
             sys.exit(1)
         print("G-ARTIFACT-INTEGRITY: corrupted probe detected; both artifacts "
               "written from the SEALED payload, re-read from disk and matched "

@@ -7659,3 +7659,49 @@ frame.  All-premises-hold ⟹ FERMIONIC-SHAPE-A-THEOREM-OF-THE-
 COUPLED-THEORY; any premise open ⟹ the fiber priced,
 first-class.  Worker launched (Opus).  In flight (6): OCC +
 the SMU and PER-L repairs + SIG/PER-R/LOR.
+
+## 2026-08-11 — PER-L REPAIR LANDED: U1–U15 EXECUTED; THE COMPLETED BAND GATED; THE R4 ANNOTATION WRITTEN; COMMIT-AS-IS (v14 LEDGER #250)
+
+The persistence unit's repair delivered.  U1 the band as the
+completed two-sided law — **the L=7 difference-set witness
+verified in-code two ways (autocorrelation + full 49×49
+U†U=I; 0 involutions in Z₇² gated); the injectivity theorem +
+computed support ceiling as the absence half; EVENNESS
+DELETED (EVENNESS-IS-NOT-A-LAW); the sections {4} / {6,7,8} /
+{8,10,12} with the width-2 odd member beyond the
+involution-pair mechanism** (39 cells, 5,258 DDS subsets,
+164,714 maps); U3 the one-mechanism unification gated
+(monomial ⟹ integer velocity; the table recounted honest
+11=7-forced+4-contingent / 5 / 8, counts unmoved); U4 the
+successor register + the THREE-PART ledger record + the
+converse registered NECESSARY-NOT-SUFFICIENT; U5/U6
+attributions + the nine-characteristic exercise in-code (104
+scans over 9 fields incl. F₄, 0 violations; Frobenius
+verified); U7 the ball census RUN and gated; U8 all 9 totals
+re-derived per key; U9 STRUCTURAL an explicit registry —
+72 FALSIFIABLE / 8 WAIVED / 1 STRUCTURAL (exactly the one
+earned); U10 E-23 three-legged with pinned source digests;
+U11 the L=3 control rung named; U12 the head derived and
+PARSED BACK; U13 69/69 table rows bound, the blanket
+removed (coverage 86/89 receipt-licensed); U14 the
+failing-path promotion fixed (previous artifacts RESTORED);
+**U15 v14/note-r4-scope-annotation.md written — K2's register
+row verbatim (1350/1350 chars), R4/R4b untouched.**
+INJECTION REPLAY 6/6 + the worker's own CI-04b die writing
+nothing (the SEAL-TOTALS full-delivery edit dies at
+G-SEAL-COMPLETE with no false number published).  Batteries:
+plain ×2 byte; selftest; **72/72 mutants adjudicated
+out-of-harness by the worker's own driver against the
+source-parsed registry**; 57/57 anchor breaks; 20/20 argv;
+loud abort ×2; off-tree git-less two seeds.  ZERO delivered
+measured numbers moved (every stage table byte-identical);
+only the ordered changes (band sections; DDS row rename;
+sufficiency split; mutants 48→72).  TWO self-caught defects
+disclosed and fixed pre-delivery (a vacuous seal gate — whose
+repair immediately caught a real 4-seal distinction — and
+five predicate-flipping mutants replaced by object-binding
+ones: the exact class the repair was sent to remove).  Shas:
+paper 3e0d3cb46ee4, code 9764427bf14a, output 576a8fc25d9a,
+receipt 0d56862768cb, note d3100a181aa0.  Committed AS-IS;
+orchestrator battery next; on green: TERMINAL + the
+prediction-ledger update in PLAN.md.
