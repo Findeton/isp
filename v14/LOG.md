@@ -7514,3 +7514,30 @@ derive by the unit's own sharp criterion (one closed class;
 THEOREM.**  MUT-K1-B credit: the declared construction is
 bound by measurement.  → THE ADJUDICATION (all three seats
 in).
+
+## 2026-08-11 — SMU ADJUDICATION: THE VERDICT SURVIVES WITH TWO HEAD CORRECTIONS AND ONE UPGRADE; THE PRIVILEGE RULING ADOPTED; ACT ARMED; TWELVE ORDERS; REPAIR LAUNCHED (v14 LEDGER #242)
+
+v14/note-smu-adjudication.md frozen.  Three seats AWF (~574
+seat recomputations), zero false computed numbers.
+**SMU-DYNAMICS-RELATIVE SURVIVES**; the head's population
+label corrected (11 vs 12 — the twin-template disease); the
+moves-further clause DIES (restricted spread = 27/130
+exactly); **the conserved-price theorem UPGRADED to the
+CLOSED simplex** with the covariance-dropped 639 corollary
+(symmetry discounts the price, never pays it).  **THE
+PRIVILEGE RULING ADOPTED:
+LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-
+IDENTIFICATION; routes A/B closed; ROUTE C = ACT THE ONLY
+LIVE ROUTE — ACT PINS AT THIS UNIT'S TERMINAL** (the
+inheritance row: law-native π as CONTROL; the 207/639 frame;
+POT unaskable until ACT).  Twelve orders W1–W12 incl. the
+de-twinned head laws, the closed-simplex arm, the rank-one
+disclosure, the order-8 covariance, the disclosed
+enumeration sensitivity, the rendered tables + bound
+quotations, the value-close census seal, read-back-before-
+replace, the falsifier/tautology/vacuous sweep, and the
+paper-23 CORRECTION ANNOTATION note.  NO new engraving (all
+findings instantiate engraved families; the
+seal-digested-the-forgery flavor noted as #119's sharpest
+instance).  Repair worker launched (Opus).  After repair +
+battery: paper-27 TERMINAL → ACT PINS.
