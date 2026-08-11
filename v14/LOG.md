@@ -5082,3 +5082,17 @@ adjudicated FOUND-STANDS (#168) with the repair 80%+ done;
 Route B mooted; the coupling unit cleared and scoped; 21
 engravings; the computed-number record ZERO across the entire
 campaign.
+
+## 2026-08-11 — HANDOFF-PROMPT.md WRITTEN (v14 LEDGER #170)
+
+At the user's order: the complete successor-orchestrator prompt
+committed as HANDOFF-PROMPT.md (repo root) — role + the standing
+order; hard constants (Opus for all subagents; the orchestration
+layer never delegated); the full cycle machinery; the 21
+disciplines by name; recovery protocols; the user-interaction
+style; the state files; the current state at #169 with the
+immediate next steps (the paper-19 repair in flight → terminal →
+THE COUPLING-UNIT PIN, scoped); the queue; the ontology paragraph
+for conversational continuity; the worker-prompt essentials.
+The repo's LOG/STATUS/RUNBOOK remain authoritative over the
+summary.
