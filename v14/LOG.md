@@ -4924,3 +4924,49 @@ HOUSEKEEPING FLAG for the adjudication: another panel process
 ran the delivery with cwd inside v14/code (in-tree, against
 protocol; byte-identical so nothing moved) — identify and rule.
 Two seats pending.
+
+## 2026-08-10 — PAPER-19 EFFECTUS FROZEN (2 OF 3): THE MEANING RULED (v14 LEDGER #166)
+
+review-r3w-effectus.md frozen.  Grade AWF; 91 recomputations,
+83/83 delivered quantities exact (Stage 2 recomputed by a
+DIFFERENT method — per-site pattern signatures,
+site-factorised det spectrum — incl. the empty cell at 8;
+I7-STRICT=72 by three routes; 1296/72 by brute force over 9!
+AND closed form).  **THE LICENSED MEANING OF FOUND: reading
+(a) — FOUND STANDS AT FULL STRENGTH, NO HEAD CHANGE.  The weld
+is to I7's record SPACE (lattice + axioms), not its list of
+eleven.**  Three measured grounds, the decisive one:
+**weld-2's own FOUND-at-I7 witness — the object that DEFINED
+the demand — was ITSELF admissible-but-undeclared** (its
+committed receipt at e80d7ef read: count 2 everywhere,
+inducing (2,2,2), in the box, not one of the eleven); and
+terminal papers 04/06 already prove theorems at undeclared box
+points — the corpus has computed there for four papers.
+QUALIFICATION 2 DISSOLVES.  **THE MAJOR = the operator's twin,
+independently:** the "deposits 18" typed literal (the receipt
+itself says incidences=27); the sufficiency question answered
+at the quantity that makes it false — **the true condition is
+COVERAGE, not count** (46,656 triples pay the full 27; exactly
+72 weld — 1 in 648); restated, every sentence becomes true AND
+the result STRONGER: **at R=2 the budget binds; at R=3 it
+stops binding and a PERFECT MATCHING becomes the constraint.**
+Three-string repair, head untouched; the #162
+count-sufficiency surprise dead at the count — the register's
+11th claim (shared with the operator's finding, one item).
+**ROUTE B: MOOTED at this target and carrier** (it survives
+only for the eleven declared records, arity-dead carriers, and
+the committed constructions).  Walls sweep CLEAN ("metric"
+appears zero times; every resonance token inside §6 or the
+naming sentence).  The off-tree anomaly: honestly held,
+wrongly placed (absent from §9).  **NEW FOR THE SUCCESSOR
+REGISTER, both consequential:** (1) at R=3 rigidity makes
+(1,1,1) the ONLY reachable strict record — no DECLARED record
+reachable at that budget — **but G-FLAT (1,1,2) is reachable
+at R=4 at 276 ordered quadruples (exhaustive over 36⁴):
+qualification 2's residue may be a budget artifact, ONE UNIT
+AWAY**; (2) **the welded record is UNSPLITTABLE (split fiber 0
+at all 27 intervals) — papers 04/06/09's laws are empty on it:
+THE COUPLING UNIT REACHES A RECORD, NOT YET A LAW OVER
+RECORDS** — the summit pin must scope accordingly.  Eight
+MINORs.  One seat pending (instrument, the #91 settlement) →
+adjudication.
