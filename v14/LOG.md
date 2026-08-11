@@ -6639,3 +6639,39 @@ mutants 42/56 out-of-process 42/42 on target (the remaining
 14 covered in-process four times over).  The four MAJORs and
 twelve MINORs unchanged; findings final.  Review re-frozen
 (v3).  Paper-22 awaits K1 only.
+
+## 2026-08-11 — PAPER-22 OPERATOR REVIEW LANDED (K1): AWF — THE HEADLINE DISCRIMINATION WRONG AS WRITTEN, THE LAW SIMPLER; THE NOT-FORCED WAIVER FALSE; 39 NOT 30 (v14 LEDGER #216)
+
+v14/review-r4c-operator.md frozen.  **Grade AWF; 88
+independent recomputations (own Q(ζ₈)+Z[√2]+Fraction routes),
+ZERO false computed numbers; off-tree byte-identical; three
+mutants on target outside the harness.**  Reproduced exactly:
+exchange 64/64 (off-block invariance measured directly);
+256=136+120 via tr P=16; leak 48/64 = the non-monomial set;
+3306/3306; the defect census with functoriality over the
+WHOLE census (3364/3364 — stronger than delivered); the
+antisymmetric multiset cell-for-cell (28 values, 1,126,656
+cells); overlap with own coins; motion.  THREE MAJORS, all
+readings, no number moves: **M1 — THE HEADLINE DISCRIMINATION
+FINDING IS WRONG AS WRITTEN: the instrument compared
+VALUE-MULTISETS (its gate text says so; the paper never does)
+— ENTRYWISE the two shapes' defects differ at 1764/3364
+(exactly the two-excitation nonzero set), agreeing only where
+both vanish (1600), not 2776; witness (C000,C012) verified
+three ways (zero single-excitation defect, 576 differing
+cells); the repair makes the law SIMPLER — differ
+cell-by-cell ⟺ both legs non-monomial; multiset-level
+discrimination confined to the 588**; M2 — §3's "whose split
+is not forced" FALSE (leak ⟺ non-monomial is a one-line
+theorem for every unitary; 3364 out-of-family composites 0
+mismatches) [= K2's MAJOR-1, third independent derivation];
+M3 — the published "30 distinct symmetric values" is the
+hard-core block only, UNSTAMPED — the symmetric sector
+carries 39 (the 9 extras listed), G-DEFECT-RATIONAL never
+reaches them.  SIX MINORs: the ordered-sector law has a
+ONE-PARAMETER FIBRE (Δ⊗Y+X⊗Δ holds equally 3364/3364,
+undisclosed); A4's assertion measured TRUE; the fixed-point
+gate far weaker than the (true) claim; the velocity
+attribution's counterexamples = exactly (dd=4,4); the speed
+ceiling forced by Z/8 circle distance; 1/√3 decorative.  ALL
+THREE SEATS IN → THE ADJUDICATION (this ledger, next entry).
