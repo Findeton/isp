@@ -1,0 +1,3799 @@
+{
+ "arena_census": {
+  "arenas": [
+   {
+    "antisymmetric_lives": true,
+    "arena": "A1-FREE-LIFT-CEILING-2",
+    "detail": "both sectors invariant, unitary and stochastic at 64 of 64 generators",
+    "role": "THE DECLARED VERDICT ARENA",
+    "symmetric_lives": true
+   },
+   {
+    "antisymmetric_lives": true,
+    "arena": "A2-FREE-LIFT-CEILING-1-HARD-CORE",
+    "detail": "the symmetric sector leaks out of the hard core at 48 of 64 generators; the antisymmetric sector at none",
+    "role": "the occupancy declaration, tightened",
+    "symmetric_lives": false
+   },
+   {
+    "antisymmetric_lives": false,
+    "arena": "A3-ONE-SITE-LATTICE",
+    "detail": "at one site the antisymmetric sector has dimension 0 and the symmetric one dimension 1",
+    "role": "the exclusion as a dimension count (a degenerate control, declared as such)",
+    "symmetric_lives": true
+   },
+   {
+    "antisymmetric_lives": false,
+    "arena": "A4-DISTINGUISHABLE-LIFT",
+    "detail": "the exchange operator fails to commute with the lift at 3306 of 3306 ordered pairs of distinct generators, and where it fails NEITHER sector is invariant",
+    "role": "one generator per excitation: the excitations are told apart by the law itself",
+    "symmetric_lives": false
+   }
+  ],
+  "dimension_sweep": [
+   {
+    "antisymmetric_dim": 0,
+    "sites": 1,
+    "symmetric_dim": 1
+   },
+   {
+    "antisymmetric_dim": 1,
+    "sites": 2,
+    "symmetric_dim": 3
+   },
+   {
+    "antisymmetric_dim": 3,
+    "sites": 3,
+    "symmetric_dim": 6
+   },
+   {
+    "antisymmetric_dim": 6,
+    "sites": 4,
+    "symmetric_dim": 10
+   },
+   {
+    "antisymmetric_dim": 10,
+    "sites": 5,
+    "symmetric_dim": 15
+   },
+   {
+    "antisymmetric_dim": 15,
+    "sites": 6,
+    "symmetric_dim": 21
+   }
+  ],
+  "distinguishable_broken": 3306,
+  "distinguishable_pairs": 3306
+ },
+ "arena_declaration": {
+  "boundary": "the finite periodic site lattice X = (Z_L)^d with d = 2 and L = 4, read from the anchored stage and from the parent's measured admissible set",
+  "carrier": "the TWO-excitation sector over that lattice: the ordered sector on |X|^2 configurations, and its two exchange sectors, the symmetric one on |X|(|X|+1)/2 and the antisymmetric one on |X|(|X|-1)/2",
+  "division_events": "inherited unchanged: t = 0 and t = 2 are division events, the cut at t = 1 is not, and the leg at the cut is B(U2); indivisibility is DECLARED by those times and is never measured",
+  "family": "R4's terminal family, rebuilt here from its definitions and gated coefficient map by coefficient map against the parent receipt: 58 circulant generators on the 3-term axis stencil over the declared 25-element alphabet, plus the 6 controls",
+  "law": "the FREE LIFT U tensor U -- the substrate's own composition law applied to each excitation -- restricted to each sector; the declared alternative lifts are the distinguishable lift U tensor V and the contact-phase lift, both censused",
+  "occupancy": "the site occupancy CEILING is this unit's declaration and is NOT anchored: the stage's own count registers run to 6 and 12, and the parent's single-occupation sector is the common restriction of both ceilings",
+  "velocity": "R4b's stratified convention inherited AS DECLARED: forward difference with the antipodal tie averaged; no new selection claim is made here"
+ },
+ "byte_anchors": [
+  {
+   "anchor": "R4-RECEIPT",
+   "expected": "3dc1393b0df8",
+   "ok": true,
+   "path": "v14/code/r4_defect_stage_receipt.json",
+   "sha256_12": "3dc1393b0df8"
+  },
+  {
+   "anchor": "R4-CODE",
+   "expected": "2959c5a6a84b",
+   "ok": true,
+   "path": "v14/code/r4_defect_stage_exact.py",
+   "sha256_12": "2959c5a6a84b"
+  },
+  {
+   "anchor": "R4-PAPER",
+   "expected": "1063401c7bb5",
+   "ok": true,
+   "path": "v14/paper-10-defect-on-the-stage.md",
+   "sha256_12": "1063401c7bb5"
+  },
+  {
+   "anchor": "R4B-RECEIPT",
+   "expected": "562e2a3d4d85",
+   "ok": true,
+   "path": "v14/code/r4b_momentum_receipt.json",
+   "sha256_12": "562e2a3d4d85"
+  },
+  {
+   "anchor": "R4B-CODE",
+   "expected": "4216f3de5f44",
+   "ok": true,
+   "path": "v14/code/r4b_momentum_exact.py",
+   "sha256_12": "4216f3de5f44"
+  },
+  {
+   "anchor": "R4B-PAPER",
+   "expected": "89c636906061",
+   "ok": true,
+   "path": "v14/paper-15-momentum.md",
+   "sha256_12": "89c636906061"
+  },
+  {
+   "anchor": "R5-RECEIPT",
+   "expected": "0c02b7684e5b",
+   "ok": true,
+   "path": "v14/code/r5_gauge_receipt.json",
+   "sha256_12": "0c02b7684e5b"
+  },
+  {
+   "anchor": "R5-PAPER",
+   "expected": "62cfe5689d2c",
+   "ok": true,
+   "path": "v14/paper-18-gauge-rung.md",
+   "sha256_12": "62cfe5689d2c"
+  },
+  {
+   "anchor": "STAGE-RECEIPT",
+   "expected": "542b8735daf0",
+   "ok": true,
+   "path": "v13/code/ha_successor_receipt.json",
+   "sha256_12": "542b8735daf0"
+  },
+  {
+   "anchor": "SEED-PAPER",
+   "expected": "81bdab5673fb",
+   "ok": true,
+   "path": "v12/paper1-composition-defect.md",
+   "sha256_12": "81bdab5673fb"
+  },
+  {
+   "anchor": "SEED-CODE",
+   "expected": "8e90f6435922",
+   "ok": true,
+   "path": "v12/paper1_code/exact.py",
+   "sha256_12": "8e90f6435922"
+  },
+  {
+   "anchor": "PIN",
+   "expected": "162553b03ca9",
+   "ok": true,
+   "path": "v14/note-r4c-pin.md",
+   "sha256_12": "162553b03ca9"
+  }
+ ],
+ "cli_probes": [
+  {
+   "argv": [
+    "--nope"
+   ],
+   "rejected": true
+  },
+  {
+   "argv": [
+    "--mutant"
+   ],
+   "rejected": true
+  },
+  {
+   "argv": [
+    "--mutant",
+    "NOPE"
+   ],
+   "rejected": true
+  },
+  {
+   "argv": [
+    "--break-anchor",
+    "NOPE"
+   ],
+   "rejected": true
+  }
+ ],
+ "compliance": {
+  "forcings": {
+   "G-ARTIFACT-INTEGRITY": "evaluated only in the writing path, which no diagnostic run reaches; it is two-way by construction -- a deliberately corrupted payload is written to a probe path, re-read and required to be detected -- and its reference value is the GATE-TIME SEAL, whose in-run half G-SEAL-COMPLETE carries the injection falsifier MUT-SEAL-BROKEN",
+   "G-MUTANTS-ON-TARGET": "the gate that adjudicates the mutant sweep cannot itself be a mutant's target; its falsifier is the sweep, and every surviving or off-target injection fails it -- exercised by all declared mutants on every run",
+   "G-PAPER-COVERAGE-FINAL": "evaluated after the mutant sweep closes the instrument's totals, so no in-process mutant can reach it; its in-run twins G-PAPER-CLAIMS, G-PAPER-NUMERAL-COVERAGE and G-PAPER-CLAIM-POLARITY carry the injection falsifiers and die on every sweep"
+  },
+  "structural_numerals": [
+   "1",
+   "10",
+   "11",
+   "12",
+   "13",
+   "14",
+   "2",
+   "2026",
+   "22",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9"
+  ]
+ },
+ "contact_handle": {
+  "antisymmetric_defect_moved": 0,
+  "antisymmetric_operator_moved": 0,
+  "handle": "a declared zeta_8 phase on the doubly-occupied configurations, exchange invariant and unitary",
+  "moved_set_is_the_single_excitation_set": true,
+  "pairs": 3364,
+  "symmetric_defect_moved": 588,
+  "symmetric_nonzero_with_handle": 1764,
+  "symmetric_nonzero_without_handle": 1764,
+  "symmetric_operator_moved": 58
+ },
+ "counts": {
+  "L": 4,
+  "alphabet": 25,
+  "circulants": 58,
+  "commuting": 64,
+  "contact_antisymmetric_moved": 0,
+  "contact_symmetric_moved": 588,
+  "d": 2,
+  "dim_antisymmetric": 120,
+  "dim_ordered": 256,
+  "dim_symmetric": 136,
+  "discriminating_pairs": 588,
+  "gates": 53,
+  "genuine_two_body": 1176,
+  "losses": 0,
+  "ordered_pairs": 3364,
+  "overlap_rows": 43200,
+  "pool": 64,
+  "single_nonzero": 588,
+  "sites": 16,
+  "symmetric_leaking": 48,
+  "two_excitation_nonzero": 1764,
+  "velocity_cells": 29696,
+  "velocity_failures": 7168
+ },
+ "defect_census": {
+  "antisymmetric_nonzero": 1764,
+  "derivation_failures": 0,
+  "genuine_two_body": 1176,
+  "losses": 0,
+  "non_monomial_generators": 42,
+  "ordered_pairs": 3364,
+  "ordered_sector_nonzero": 588,
+  "predicate_mismatches": 0,
+  "predicate_tests": 6728,
+  "single_excitation_nonzero": 588,
+  "symmetric_nonzero": 1764
+ },
+ "defect_values": {
+  "antisymmetric": {
+   "-1/128": 12288,
+   "-1/16": 239616,
+   "-1/32": 142848,
+   "-1/4": 36288,
+   "-1/64": 144384,
+   "-1/8": 20736,
+   "-3/16": 1152,
+   "-3/32": 18432,
+   "-3/64": 15360,
+   "-5/32": 3072,
+   "-5/64": 5376,
+   "-7/64": 3840,
+   "-9/64": 2304,
+   "1/128": 12288,
+   "1/16": 147456,
+   "1/32": 105984,
+   "1/64": 119808,
+   "1/8": 6912,
+   "13/16": 384,
+   "3/16": 36864,
+   "3/32": 6144,
+   "3/4": 12096,
+   "3/64": 17664,
+   "3/8": 4608,
+   "41/64": 384,
+   "5/64": 6144,
+   "55/64": 2304,
+   "9/64": 1920
+  },
+  "antisymmetric_distinct": 28,
+  "second_path_agrees": true,
+  "single_distinct": 8,
+  "single_excitation": {
+   "-1/2": 108,
+   "-1/4": 336,
+   "-1/8": 192,
+   "-3/8": 24,
+   "1/2": 108,
+   "1/4": 336,
+   "1/8": 144,
+   "5/8": 24
+  },
+  "symmetric": {
+   "-1/128": 12288,
+   "-1/16": 243072,
+   "-1/32": 127488,
+   "-1/4": 36288,
+   "-1/64": 150528,
+   "-1/8": 6912,
+   "-11/64": 768,
+   "-3/32": 24576,
+   "-3/64": 16512,
+   "-5/32": 192,
+   "-5/64": 4608,
+   "-7/64": 768,
+   "-9/64": 2304,
+   "1/128": 12288,
+   "1/16": 150528,
+   "1/2": 864,
+   "1/32": 109824,
+   "1/64": 125952,
+   "1/8": 9216,
+   "11/64": 768,
+   "13/64": 384,
+   "27/32": 192,
+   "3/16": 37248,
+   "3/32": 3456,
+   "3/4": 12096,
+   "3/64": 11520,
+   "5/64": 384,
+   "53/64": 384,
+   "55/64": 2304,
+   "9/64": 2304
+  },
+  "symmetric_distinct": 30,
+  "third_path_window_pairs": 144
+ },
+ "description_stamps": [
+  {
+   "claim": "the composition law admits both exchange shapes",
+   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; the FREE lift U tensor U; occupancy ceiling 2; measured per generator over the whole pool"
+  },
+  {
+   "claim": "the symmetric shape fails to close under the hard core",
+   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; the FREE lift; occupancy ceiling 1 (DECLARED, not anchored); measured per generator"
+  },
+  {
+   "claim": "the two-excitation defect is nonzero at exactly the pairs whose legs are both non-monomial",
+   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; the FREE lift; both exchange sectors; the parent's declared division-event times and leg at the cut"
+  },
+  {
+   "claim": "the two shapes are discriminated by the defect at exactly the single-excitation defect set",
+   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; the FREE lift; value multisets on the hard-core block, the like-for-like comparison"
+  },
+  {
+   "claim": "R5's support-overlap law survives the lift",
+   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; every 2-site support, exhaustive in the geometry, one declared interfering coin pair; both shapes"
+  },
+  {
+   "claim": "the eigenphases add and the velocities do not",
+   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; the FREE lift; R4b's stratified convention inherited AS DECLARED (forward difference, tie averaged); no transport number inherited"
+  },
+  {
+   "claim": "the contact interaction is invisible to the antisymmetric shape",
+   "stamp": "d=2, L=4, Q(zeta_8), the 25-element alphabet, the 3-term axis stencil, two excitations; the declared contact-phase lift; occupancy ceiling 2; measured per pair over the circulant stratum"
+  }
+ ],
+ "discrimination": {
+  "agreeing_pairs": 2776,
+  "differing_pairs": 588,
+  "set_equality": true,
+  "single_excitation_pairs": 588
+ },
+ "exchange_census": {
+  "antisymmetric_admitted": 64,
+  "commuting": 64,
+  "dim_antisymmetric": 120,
+  "dim_ordered": 256,
+  "dim_symmetric": 136,
+  "generators": 64,
+  "rows": [
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C000",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C001",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C002",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C003",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C004",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C005",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C006",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C007",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C008",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C009",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C010",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C011",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C012",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C013",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C014",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C015",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C016",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C017",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C018",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C019",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C020",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C021",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C022",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C023",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C024",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C025",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C026",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C027",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C028",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C029",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C030",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C031",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C032",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C033",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C034",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C035",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C036",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C037",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C038",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C039",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C040",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C041",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C042",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C043",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C044",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C045",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C046",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C047",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C048",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C049",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C050",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C051",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C052",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C053",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C054",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C055",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C056",
+    "kind": "CIRC",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "C057",
+    "kind": "CIRC",
+    "monomial": true,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "B058",
+    "kind": "BRICK",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "B059",
+    "kind": "BRICK",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "B060",
+    "kind": "BRICK",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "B061",
+    "kind": "BRICK",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "S062",
+    "kind": "SCRAM",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   },
+   {
+    "antisymmetric_born_stochastic": true,
+    "antisymmetric_closed_unitary": true,
+    "exchange_commutes": true,
+    "generator": "S063",
+    "kind": "SCRAM",
+    "monomial": false,
+    "symmetric_born_stochastic": true,
+    "symmetric_closed_unitary": true
+   }
+  ],
+  "symmetric_admitted": 64
+ },
+ "gates": [
+  {
+   "claim": "every declared verbatim window is present in its named source after whitespace and markdown-prefix normalisation, and every window that carries a claim is a CONTEXT window (at least 40 normalised characters), not a fragment",
+   "detail": "12 windows, floor 50 chars",
+   "gate": "G-VERBATIM-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every hash-pinned source is the pinned bytes; a path drift or a content drift dies here and the run stops before a single measurement is taken",
+   "detail": "12 byte anchors",
+   "gate": "G-BYTE-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every anchored (path, value) pair holds: the anchor is the VALUE at the path, not merely the file's bytes, so a receipt that keeps its digest while moving a number dies here",
+   "detail": "24 path-value anchors",
+   "gate": "G-PATH-VALUE-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the spatial dimension is READ from the record layer's own declarations and the lattice size from the parent's measured admissible set; neither is this unit's to choose and neither is typed beside the census",
+   "detail": "d = 2, L = 4, |X| = 16",
+   "gate": "G-ARENA-ANCHORED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the coefficient alphabet is rebuilt from the parent's definition -- zero together with zeta_8^t times a modulus in {1, 1/2, 1/sqrt 2} -- and its size is the anchored one",
+   "detail": "25 distinct alphabet elements",
+   "gate": "G-ALPHABET-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the instrument's own source contains no float literal and no true division: every quantity in this unit is an exact element of Q(zeta_8) carried as integers",
+   "detail": "0 float literals, 0 true divisions",
+   "gate": "G-NO-FLOAT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the run reads every input by PATH and hash, shells out to nothing, and consults no version-control state: it reproduces off-tree and on a machine with no git, and an added subprocess or socket import dies here",
+   "detail": "0 shell or network entry points",
+   "gate": "G-NO-VERSION-CONTROL-NO-SHELL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "no gate predicate reads the mutant switch: every mut() call sits in the measurement path, so a mutant can only be killed by a gate that measures, never by a gate that recognises it",
+   "detail": "0 gate calls reading mut()",
+   "gate": "G-MUTANT-SWITCH-CLEAN",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the declared global-phase gauge acts freely on the solution set: every orbit has the full group's size, so the gauge quotient cannot merge two distinct laws",
+   "detail": "orbit sizes [8] over 66 orbits",
+   "gate": "G-GAUGE-ORBITS-FREE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every rebuilt coefficient map is exactly one of the parent's rows and every parent row is rebuilt: a bijection in BOTH directions, object by object, between two programs that share no code and no representation of the field",
+   "detail": "58 rebuilt, 58 parent rows, 9 axes",
+   "gate": "G-REBUILD-BIJECTION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "for every matched pair the axis, the axis order, the support, the radius and the monomiality agree -- a per-object obligation discharged per object, never as a count",
+   "detail": "0 invariant mismatches over 58 generators",
+   "gate": "G-REBUILD-INVARIANTS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the six declared controls are rebuilt in the parent's own construction order and count, from the parent's declared coin and its declared swap permutations, both read as anchored values",
+   "detail": "4 brickwork + 2 scrambled, all unitary",
+   "gate": "G-REBUILD-CONTROLS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the pool is the parent's, entire: the circulant stratum plus the six controls, at the anchored counts",
+   "detail": "64 generators",
+   "gate": "G-POOL-COMPLETE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the monomial sub-family is classified by MEASURED support and is exactly the parent's declared Markovian set, name for name",
+   "detail": "16 monomial generators",
+   "gate": "G-MONOMIAL-CLASSIFIER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the two-excitation ordered sector decomposes into exactly the two exchange sectors and nothing else: at two excitations the symmetric group has two irreducible characters, so a parastatistics-shaped THIRD sector cannot exist here by dimension",
+   "detail": "256 = 136 + 120",
+   "gate": "G-SECTOR-DECOMPOSITION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the exchange operator commutes with the free lift of EVERY generator in the pool -- measured generator by generator, with the predicate bound to the generator and not to the count",
+   "detail": "64 of 64 generators",
+   "gate": "G-EXCHANGE-COMMUTES",
+   "kind": "DISCLOSURE",
+   "passed": true
+  },
+  {
+   "claim": "both exchange sectors are invariant under every generator's free lift, and the restriction is unitary and its Born shadow stochastic in both -- so the composition law ADMITS both shapes and selects neither",
+   "detail": "antisymmetric 64 of 64, symmetric 64 of 64",
+   "gate": "G-BOTH-SECTORS-ADMITTED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "under the hard-core ceiling the symmetric sector fails to close at exactly the non-monomial generators and closes at exactly the monomial ones -- a per-generator predicate discharged per generator, with no aggregate standing in for any of them",
+   "detail": "48 leaking, 16 closed, 0 mismatches",
+   "gate": "G-HARDCORE-LEAK-PER-GENERATOR",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "under the same ceiling the antisymmetric sector closes at every generator: the wedge has no doubly-occupied configuration to leak into, so the exclusion is not imposed on it but is the shape itself",
+   "detail": "64 of 64 generators, 120 hard-core configurations",
+   "gate": "G-HARDCORE-ANTISYMMETRIC-CLOSED",
+   "kind": "DISCLOSURE",
+   "passed": true
+  },
+  {
+   "claim": "the two occupancy ceilings have the same one-excitation restriction, configuration for configuration -- so the parent's whole arena is a fixed point of both, and no single-excitation measurement whatever can select between them",
+   "detail": "16 = 16 configurations at one excitation; 136 against 120 at two",
+   "gate": "G-CEILINGS-AGREE-AT-ONE-EXCITATION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the occupancy ceiling is NOT anchored: the record layer declares the site lattice, the link set and the chart group and declares no ceiling at all, and its own count registers are integer valued and run past one -- which, if it argues anything, argues against the hard core.  The ceiling is therefore carried as this unit's declaration and censused both ways",
+   "detail": "anchored count register = 6",
+   "gate": "G-OCCUPANCY-NOT-ANCHORED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the NEITHER branch is reached on a REAL arena and not on a synthetic census: at the distinguishable lift every ordered pair of distinct generators breaks the exchange symmetry",
+   "detail": "3306 of 3306 ordered pairs of distinct generators",
+   "gate": "G-A4-NEITHER-REACHED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "each symmetry class demonstrably SURVIVES in some declared arena and demonstrably DIES in another, and the gate binds the ARENAS and not the tally: the antisymmetric shape lives at A1 and A2 and dies at A3 and A4; the symmetric shape lives at A1 and A3 and dies at A2 and A4",
+   "detail": "4 arenas: A1(A,S), A2(A,-), A3(-,S), A4(-,-)",
+   "gate": "G-ARENA-TWO-WAY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parent's headline single-excitation count is REPRODUCED here by a program that shares no code, no field representation and no cached product with it -- the census is rebuilt, not read",
+   "detail": "588 of 3364 ordered pairs",
+   "gate": "G-PARENT-REPRODUCED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every single-excitation defect table is a function of the lattice separation alone -- it folds without conflict on every column of every pair -- which is what makes the parent's separation-indexed value census and this unit's census the same object read twice",
+   "detail": "0 pairs whose defect table fails to fold",
+   "gate": "G-DEFECT-FOLDS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the parent's WHOLE single-excitation value multiset is reproduced, value for value and cell count for cell count -- not a sample of it and not merely its cardinality",
+   "detail": "8 distinct values, 1272 cells",
+   "gate": "G-PARENT-VALUE-MULTISET",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "at two excitations the defect is nonzero at EXACTLY the ordered pairs whose two legs are both non-monomial -- a per-pair predicate discharged pair by pair in both sectors, never as a count, and the count it implies is the square of the non-monomial population",
+   "detail": "1764 of 3364 pairs, 0 predicate mismatches over 6728 individual tests",
+   "gate": "G-TWO-EXCITATION-PREDICATE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the two-excitation defect set STRICTLY CONTAINS the single-excitation one: there are pairs carrying a defect that neither leg's own composition carries, and there is no pair that loses one -- so the defect does not compose, it completes",
+   "detail": "1176 genuine two-body pairs, 0 losses",
+   "gate": "G-GENUINE-TWO-BODY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "on the ORDERED sector the defect DOES compose, exactly and by a derivation law -- Delta(U2 (x) U2, U1 (x) U1) = Delta (x) X + Y (x) Delta with X the coherent and Y the restarted composite -- so the ordered sector carries no genuine two-body defect at all, and the whole excess above is carried by the exchange symmetrisation",
+   "detail": "0 derivation failures over 3364 pairs; ordered-sector defect set equals the single-excitation set",
+   "gate": "G-DERIVATION-LAW",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the two shapes are told apart BY THE DEFECT, and exactly where the substrate already interferes: the set of ordered pairs at which the symmetric and antisymmetric two-excitation defects differ as value multisets is EXACTLY the set of pairs carrying a single-excitation defect -- a set equality, not a coincidence of cardinalities",
+   "detail": "588 differing pairs; set equality against the 588 single-excitation pairs",
+   "gate": "G-SHAPES-DISCRIMINATED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the WHOLE antisymmetric-sector value multiset is recomputed through a second route that lifts the composed generator instead of composing the lifted ones, and agrees value for value: the binding is the entire census and not a sample of it",
+   "detail": "28 distinct values, 1126656 cells",
+   "gate": "G-SECOND-CODE-PATH",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and a third route agrees on a declared window: the explicit interference sum over ordered pairs of distinct intermediate configurations, which forms no composite matrix and no product of Born matrices at all.  The window is the first twelve generators in the parent's own naming, declared and not sampled at random",
+   "detail": "144 ordered pairs, 24 distinct values",
+   "gate": "G-THIRD-CODE-PATH",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every two-excitation defect value is rational, in both shapes, although the field carries irrational elements and the Born projection is never coerced out of it",
+   "detail": "28 antisymmetric and 30 symmetric distinct values, all rational",
+   "gate": "G-DEFECT-RATIONAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the local-operator window is rebuilt from the same declared alphabet and matches R5's anchored coin and link counts exactly, so the census below is comparable to R5's own",
+   "detail": "640 coins, 512 of them interfering, 32 links",
+   "gate": "G-COIN-ALPHABET-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "over the declared alphabet NO three-site local unitary has full support: every unit row of full support is exhausted and none completes to a unitary.  The 2-site window is therefore the complete interfering local window on this stage, not a sample of a larger one",
+   "detail": "1536 full-support unit rows swept, 0 completions",
+   "gate": "G-THREE-SITE-EMPTY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the law is not an artifact of one coin: EVERY declared coin pair in the window gives the same table on its own -- zero at overlap at most one and every row at overlap two -- so the gate binds each coin pair rather than their pooled total",
+   "detail": "3 declared coin pairs, 0 disagreeing",
+   "gate": "G-OVERLAP-COIN-INDEPENDENT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "R5's support-overlap law survives the two-excitation lift and survives the generalisation from adjacent links to every 2-site support: at overlap at most one there is no defect at one excitation and none at two, in EITHER shape",
+   "detail": "42840 rows at overlap <= 1, 0 nonzero at any level",
+   "gate": "G-OVERLAP-LAW-SURVIVES",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the law has teeth: at overlap two the same window carries a defect at every row, so the zero above is a measurement and not an inability of the instrument to see one",
+   "detail": "360 of 360 rows at overlap 2 carry a defect at all three levels",
+   "gate": "G-OVERLAP-TWO-BITES",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every single-excitation eigenvalue is an eighth root of unity, so every eigenphase is an exact element of Z/8 and the whole two-excitation census below is exact: no branch, no approximation and no field extension anywhere",
+   "detail": "0 cells outside mu_8 over 928",
+   "gate": "G-EIGENPHASES-IN-MU8",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the two-excitation eigenphases ADD, exactly: the wedge and the symmetric square of each character pair is an eigenvector of the lifted generator with eigenvalue the PRODUCT of the two symbols, verified as an exact matrix identity cell by cell in both sectors",
+   "detail": "6960 antisymmetric cells and 7888 symmetric cells, 0 failures",
+   "gate": "G-EIGENPHASES-ADD",
+   "kind": "DISCLOSURE",
+   "passed": true
+  },
+  {
+   "claim": "the two shapes carry DIFFERENT two-excitation spectra, and the difference is exactly the doubled-momentum cells the wedge cannot hold: the symmetric spectrum is the antisymmetric one together with those cells, at every family",
+   "detail": "58 of 58 families; 16 cells of difference",
+   "gate": "G-SPECTRA-SEPARATE-THE-SHAPES",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "R4b's single-excitation reading is reproduced here under its own declared convention, by an independent rebuild: the same speed spectrum, the same cell count, and the same antipodal-tie population in the same number of families",
+   "detail": "speeds [0, 1, 2], 1856 cells, 320 tie cells in 19 families",
+   "gate": "G-R4B-CONVENTION-REPRODUCED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the eigenphases add and the VELOCITIES do not: under the inherited convention the lift of a sum is not the sum of the lifts, and the failure is confined to one mechanism -- the antipodal tie, reached exactly when the two single-excitation phase advances are equal and nonzero",
+   "detail": "7168 of 29696 cells fail; failing lift pairs [(-2, -2), (2, 2)]",
+   "gate": "G-VELOCITY-DOES-NOT-ADD",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and two excitations move no faster than one: the two-excitation speed spectrum is the single-excitation spectrum, so the arena ceiling R4b measured does not widen with excitation number",
+   "detail": "two-excitation speeds [0, 1, 2] against [0, 1, 2]",
+   "gate": "G-SPEED-CEILING-UNCHANGED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the declared contact interaction MOVES the symmetric shape's two-excitation defect and CANNOT move the antisymmetric shape's: the negative direction of this self-test fires where it can, so the zero is a measurement and not a vacuity",
+   "detail": "the handle moves the symmetric defect at 588 of 3364 pairs and the antisymmetric defect at 0; it moves the symmetric operator at 58 of 58 generators and the antisymmetric operator at 0",
+   "gate": "G-CONTACT-TWO-WAY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the handle is visible at exactly the ordered pairs that carry a single-excitation defect -- the same set the two shapes are discriminated on, element for element, gated as a set equality and not as a count.  Everything that can see the doubly-occupied channel on this arena sees it exactly where the substrate already interferes",
+   "detail": "588 moved pairs against 588 single-excitation pairs, set equality",
+   "gate": "G-CONTACT-SET-IS-THE-INTERFERING-SET",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every quantum-layer claim this unit makes carries a description stamp naming the sector, the lift, the occupancy ceiling and the convention it was measured in; a claim without one is not a claim",
+   "detail": "7 stamped claims",
+   "gate": "G-DESCRIPTION-STAMPS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every gate registered as a DISCLOSURE names the mechanism that forces it and names the measuring gate that stands in its place; no gate carrying measured content is waived",
+   "detail": "3 waivers, all forced and all matched to a disclosure",
+   "gate": "G-WAIVERS-VERIFIED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the head is one of the pin's own pre-registered names, and the names are parsed from the pin's bytes rather than typed here",
+   "detail": "head R4C-STATISTICS-BOTH-ADMITTED; 5 pre-registered names",
+   "gate": "G-HEAD-PREREGISTERED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every pre-registered outcome is REACHED, and reached on a REAL arena rather than on a synthetic census: the same head law, applied to the four measured arenas and to the blocked probe, returns four different pre-registered names",
+   "detail": "A1-FREE-LIFT-CEILING-2 -> R4C-STATISTICS-BOTH-ADMITTED; A2-FREE-LIFT-CEILING-1-HARD-CORE -> R4C-STATISTICS-FORCED-ANTISYMMETRIC; A3-ONE-SITE-LATTICE -> R4C-STATISTICS-FORCED-SYMMETRIC; A4-DISTINGUISHABLE-LIFT -> R4C-STATISTICS-NEITHER-INVARIANT; BLOCKED-PROBE -> R4C-BLOCKED-AT-THE-SECTOR",
+   "gate": "G-HEAD-LAW-EXERCISED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the complete verdict string -- head included -- is compared for equality against an INDEPENDENT reconstruction that derives the head by its own copy of the head law, reads only the serialized receipt, and shares no helper, no input and no typed value with the builder",
+   "detail": "head R4C-STATISTICS-BOTH-ADMITTED reconstructed",
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the memoised census this run was served is byte-for-byte the census that was computed: no injection, this run's or an earlier run's, has reached it, so the mutant sweep measures 30 independent runs and not one contaminated sequence",
+   "detail": "1 cached censuses, 0 polluted",
+   "gate": "G-CACHE-UNPOLLUTED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the emitted receipt contains no float anywhere: a recursive type scan of every value it publishes",
+   "detail": "0 float values",
+   "gate": "G-RECEIPT-EXACT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every claim the paper makes about a measured quantity renders from a receipt key and is present in the paper as written",
+   "detail": "15 claims, 0 missing",
+   "gate": "G-PAPER-CLAIMS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the paper quotes the COMPLETE verdict string the instrument emits, character for character, so the paper's verdict block cannot go stale behind the receipt",
+   "detail": "2353 characters of verdict quoted in the paper",
+   "gate": "G-PAPER-VERDICT-BLOCK",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "EVERY numeral in the paper -- prose, tables and fenced verdict blocks alike -- is licensed by a receipt value or is one of the declared structural numerals",
+   "detail": "52 numerals in the paper, 0 unlicensed: []",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and every claim has POLARITY: perturbing the receipt key it renders from moves the claim, and the moved claim is no longer found in the paper -- so a claim cannot be satisfied by accident",
+   "detail": "0 claims with no polarity: []",
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the receipt payload is a pure function of the measurements: two serializations are byte identical and neither carries this machine's absolute paths, so the artifact reproduces byte for byte anywhere the pinned inputs are",
+   "detail": "67242 bytes, twice identical, no absolute path",
+   "gate": "G-PAYLOAD-DETERMINISTIC",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every object this unit vouches for was digested at the moment its gate passed, and every one of those digests still verifies now: the seal covers the measurements, the anchors, the schema, the provenance and the paper claims, not only the verdict",
+   "detail": "24 seals, 0 broken",
+   "gate": "G-SEAL-COMPLETE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the manifest is TOTAL over the FINAL receipt, not over the receipt as it stands here: every key the artifact will publish is sealed, save the seal ledger itself, which is declared unsealed with its reason -- and the writing path re-checks the artifact's actual key set against this declaration",
+   "detail": "23 keys published so far, 29 declared for the artifact, 28 sealed, 1 declared unsealed",
+   "gate": "G-SEAL-TOTAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the argv whitelist rejects every unknown flag, every unknown mutant name and every unknown anchor name",
+   "detail": "4 probes",
+   "gate": "G-CLI-WHITELIST",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every declared mutant is killed, and killed by the gate it was declared to falsify: a mutant that dies elsewhere is a gate boundary this unit does not understand",
+   "detail": "killed 56 of 56; on target 56; off target []",
+   "gate": "G-MUTANTS-ON-TARGET",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the paper's coverage is re-asserted after the mutant sweep has closed the instrument's totals, so no in-process mutant can reach it",
+   "detail": "52 numerals, 0 unlicensed",
+   "gate": "G-PAPER-COVERAGE-FINAL",
+   "kind": "MEASURED",
+   "passed": true
+  }
+ ],
+ "motion": {
+  "antisymmetric_cells": 6960,
+  "convention": "FORWARD-DIFFERENCE-WITH-TIE-AVERAGED-INHERITED-AS-DECLARED",
+  "eigen_failures": 0,
+  "failing_lift_pairs": [
+   [
+    -2,
+    -2
+   ],
+   [
+    2,
+    2
+   ]
+  ],
+  "families": 58,
+  "momenta": 16,
+  "r4b_cells": 1856,
+  "r4b_tie_cells": 320,
+  "r4b_tie_families": 19,
+  "single_cells": 928,
+  "single_speed_spectrum": [
+   0,
+   1,
+   2
+  ],
+  "spectra_split_families": 58,
+  "spectral_difference_cells": 16,
+  "symmetric_cells": 7888,
+  "transport_numbers_inherited": 0,
+  "two_speed_spectrum": [
+   0,
+   1,
+   2
+  ],
+  "velocity_cells": 29696,
+  "velocity_failures": 7168
+ },
+ "mutants": [
+  {
+   "died_at": "G-GAUGE-ORBITS-FREE",
+   "killed": true,
+   "mutant": "MUT-GAUGE-ORBIT",
+   "on_target": true,
+   "target": "G-GAUGE-ORBITS-FREE",
+   "what": "shrinks one gauge orbit"
+  },
+  {
+   "died_at": "G-ARENA-ANCHORED",
+   "killed": true,
+   "mutant": "MUT-ARENA-SIZE",
+   "on_target": true,
+   "target": "G-ARENA-ANCHORED",
+   "what": "censuses a lattice the anchors do not name"
+  },
+  {
+   "died_at": "G-ALPHABET-REBUILT",
+   "killed": true,
+   "mutant": "MUT-ALPHABET",
+   "on_target": true,
+   "target": "G-ALPHABET-REBUILT",
+   "what": "drops an alphabet element"
+  },
+  {
+   "died_at": "G-REBUILD-BIJECTION",
+   "killed": true,
+   "mutant": "MUT-REBUILD-DROP",
+   "on_target": true,
+   "target": "G-REBUILD-BIJECTION",
+   "what": "drops one rebuilt generator"
+  },
+  {
+   "died_at": "G-POOL-COMPLETE",
+   "killed": true,
+   "mutant": "MUT-POOL-COUNT",
+   "on_target": true,
+   "target": "G-POOL-COMPLETE",
+   "what": "shortens the pool"
+  },
+  {
+   "died_at": "G-VERBATIM-ANCHORS",
+   "killed": true,
+   "mutant": "MUT-VERBATIM-FRAGMENT",
+   "on_target": true,
+   "target": "G-VERBATIM-ANCHORS",
+   "what": "admits a 3-character anchor"
+  },
+  {
+   "died_at": "G-SECTOR-DECOMPOSITION",
+   "killed": true,
+   "mutant": "MUT-SECTOR-DIM",
+   "on_target": true,
+   "target": "G-SECTOR-DECOMPOSITION",
+   "what": "inflates the symmetric dimension"
+  },
+  {
+   "died_at": "G-EXCHANGE-COMMUTES",
+   "killed": true,
+   "mutant": "MUT-EXCHANGE-COMMUTE",
+   "on_target": true,
+   "target": "G-EXCHANGE-COMMUTES",
+   "what": "breaks one commutation"
+  },
+  {
+   "died_at": "G-HARDCORE-LEAK-PER-GENERATOR",
+   "killed": true,
+   "mutant": "MUT-LEAK-ZERO",
+   "on_target": true,
+   "target": "G-HARDCORE-LEAK-PER-GENERATOR",
+   "what": "zeroes every hard-core leak"
+  },
+  {
+   "died_at": "G-ARENA-TWO-WAY",
+   "killed": true,
+   "mutant": "MUT-A3-DIM",
+   "on_target": true,
+   "target": "G-ARENA-TWO-WAY",
+   "what": "gives the one-site wedge a state"
+  },
+  {
+   "died_at": "G-A4-NEITHER-REACHED",
+   "killed": true,
+   "mutant": "MUT-A4-COMMUTE",
+   "on_target": true,
+   "target": "G-A4-NEITHER-REACHED",
+   "what": "claims the distinguishable lift commutes"
+  },
+  {
+   "died_at": "G-ARENA-TWO-WAY",
+   "killed": true,
+   "mutant": "MUT-A3-LIVES",
+   "on_target": true,
+   "target": "G-ARENA-TWO-WAY",
+   "what": "lets the symmetric shape live under the hard core"
+  },
+  {
+   "died_at": "G-PARENT-REPRODUCED",
+   "killed": true,
+   "mutant": "MUT-PARENT-COUNT",
+   "on_target": true,
+   "target": "G-PARENT-REPRODUCED",
+   "what": "moves the reproduced parent count"
+  },
+  {
+   "died_at": "G-TWO-EXCITATION-PREDICATE",
+   "killed": true,
+   "mutant": "MUT-PREDICATE",
+   "on_target": true,
+   "target": "G-TWO-EXCITATION-PREDICATE",
+   "what": "adds a pair outside the predicate"
+  },
+  {
+   "died_at": "G-SHAPES-DISCRIMINATED",
+   "killed": true,
+   "mutant": "MUT-DISCRIMINATION",
+   "on_target": true,
+   "target": "G-SHAPES-DISCRIMINATED",
+   "what": "drops one discriminating pair"
+  },
+  {
+   "died_at": "G-COIN-ALPHABET-REBUILT",
+   "killed": true,
+   "mutant": "MUT-COIN-ALPHABET",
+   "on_target": true,
+   "target": "G-COIN-ALPHABET-REBUILT",
+   "what": "shortens the coin alphabet"
+  },
+  {
+   "died_at": "G-THREE-SITE-EMPTY",
+   "killed": true,
+   "mutant": "MUT-THREE-SITE",
+   "on_target": true,
+   "target": "G-THREE-SITE-EMPTY",
+   "what": "claims a three-site completion"
+  },
+  {
+   "died_at": "G-OVERLAP-LAW-SURVIVES",
+   "killed": true,
+   "mutant": "MUT-OVERLAP-LAW",
+   "on_target": true,
+   "target": "G-OVERLAP-LAW-SURVIVES",
+   "what": "injects a defect at overlap one"
+  },
+  {
+   "died_at": "G-OVERLAP-COIN-INDEPENDENT",
+   "killed": true,
+   "mutant": "MUT-COIN-PAIR",
+   "on_target": true,
+   "target": "G-OVERLAP-COIN-INDEPENDENT",
+   "what": "breaks one coin pair's row"
+  },
+  {
+   "died_at": "G-EIGENPHASES-IN-MU8",
+   "killed": true,
+   "mutant": "MUT-EIGENPHASE",
+   "on_target": true,
+   "target": "G-EIGENPHASES-IN-MU8",
+   "what": "puts an eigenphase outside mu_8"
+  },
+  {
+   "died_at": "G-EIGENPHASES-ADD",
+   "killed": true,
+   "mutant": "MUT-ADDITIVITY",
+   "on_target": true,
+   "target": "G-EIGENPHASES-ADD",
+   "what": "breaks one two-excitation eigen-equation"
+  },
+  {
+   "died_at": "G-SPECTRA-SEPARATE-THE-SHAPES",
+   "killed": true,
+   "mutant": "MUT-SPECTRUM-SPLIT",
+   "on_target": true,
+   "target": "G-SPECTRA-SEPARATE-THE-SHAPES",
+   "what": "breaks one spectral split"
+  },
+  {
+   "died_at": "G-VELOCITY-DOES-NOT-ADD",
+   "killed": true,
+   "mutant": "MUT-VELOCITY-ADD",
+   "on_target": true,
+   "target": "G-VELOCITY-DOES-NOT-ADD",
+   "what": "claims the velocity adds"
+  },
+  {
+   "died_at": "G-CONTACT-TWO-WAY",
+   "killed": true,
+   "mutant": "MUT-CONTACT-BLIND",
+   "on_target": true,
+   "target": "G-CONTACT-TWO-WAY",
+   "what": "blinds the symmetric shape to the handle"
+  },
+  {
+   "died_at": "G-CONTACT-SET-IS-THE-INTERFERING-SET",
+   "killed": true,
+   "mutant": "MUT-CONTACT-SET",
+   "on_target": true,
+   "target": "G-CONTACT-SET-IS-THE-INTERFERING-SET",
+   "what": "drops one moved pair"
+  },
+  {
+   "died_at": "G-VERDICT-RECONSTRUCTED",
+   "killed": true,
+   "mutant": "MUT-HEAD-TYPED",
+   "on_target": true,
+   "target": "G-VERDICT-RECONSTRUCTED",
+   "what": "retypes the head after the census"
+  },
+  {
+   "died_at": "G-SEAL-COMPLETE",
+   "killed": true,
+   "mutant": "MUT-SEAL-BROKEN",
+   "on_target": true,
+   "target": "G-SEAL-COMPLETE",
+   "what": "mutates a sealed object after its seal"
+  },
+  {
+   "died_at": "G-PAPER-VERDICT-BLOCK",
+   "killed": true,
+   "mutant": "MUT-PAPER-VERDICT",
+   "on_target": true,
+   "target": "G-PAPER-VERDICT-BLOCK",
+   "what": "truncates the quoted verdict"
+  },
+  {
+   "died_at": "G-PAPER-CLAIMS",
+   "killed": true,
+   "mutant": "MUT-PAPER-CLAIM",
+   "on_target": true,
+   "target": "G-PAPER-CLAIMS",
+   "what": "injects a claim the paper does not make"
+  },
+  {
+   "died_at": "G-PAPER-NUMERAL-COVERAGE",
+   "killed": true,
+   "mutant": "MUT-PAPER-NUMERAL",
+   "on_target": true,
+   "target": "G-PAPER-NUMERAL-COVERAGE",
+   "what": "injects an unlicensed numeral"
+  },
+  {
+   "died_at": "G-PAPER-CLAIM-POLARITY",
+   "killed": true,
+   "mutant": "MUT-PAPER-POLARITY",
+   "on_target": true,
+   "target": "G-PAPER-CLAIM-POLARITY",
+   "what": "injects a claim with no polarity"
+  },
+  {
+   "died_at": "G-DESCRIPTION-STAMPS",
+   "killed": true,
+   "mutant": "MUT-STAMP-DROP",
+   "on_target": true,
+   "target": "G-DESCRIPTION-STAMPS",
+   "what": "drops a description stamp"
+  },
+  {
+   "died_at": "G-WAIVERS-VERIFIED",
+   "killed": true,
+   "mutant": "MUT-WAIVER-UNFORCED",
+   "on_target": true,
+   "target": "G-WAIVERS-VERIFIED",
+   "what": "waives a gate with no forcing"
+  },
+  {
+   "died_at": "G-RECEIPT-EXACT",
+   "killed": true,
+   "mutant": "MUT-RECEIPT-FLOAT",
+   "on_target": true,
+   "target": "G-RECEIPT-EXACT",
+   "what": "writes a float into the receipt"
+  },
+  {
+   "died_at": "G-PATH-VALUE-ANCHORS",
+   "killed": true,
+   "mutant": "MUT-PATH-ANCHOR",
+   "on_target": true,
+   "target": "G-PATH-VALUE-ANCHORS",
+   "what": "breaks one anchored value"
+  },
+  {
+   "died_at": "G-REBUILD-CONTROLS",
+   "killed": true,
+   "mutant": "MUT-CONTROL-COUNT",
+   "on_target": true,
+   "target": "G-REBUILD-CONTROLS",
+   "what": "drops one declared control"
+  },
+  {
+   "died_at": "G-REBUILD-INVARIANTS",
+   "killed": true,
+   "mutant": "MUT-INVARIANT",
+   "on_target": true,
+   "target": "G-REBUILD-INVARIANTS",
+   "what": "reports one invariant mismatch"
+  },
+  {
+   "died_at": "G-MONOMIAL-CLASSIFIER",
+   "killed": true,
+   "mutant": "MUT-MONOMIAL-LIST",
+   "on_target": true,
+   "target": "G-MONOMIAL-CLASSIFIER",
+   "what": "drops a monomial name"
+  },
+  {
+   "died_at": "G-BOTH-SECTORS-ADMITTED",
+   "killed": true,
+   "mutant": "MUT-BOTH-ADMITTED",
+   "on_target": true,
+   "target": "G-BOTH-SECTORS-ADMITTED",
+   "what": "closes one sector to one generator"
+  },
+  {
+   "died_at": "G-CEILINGS-AGREE-AT-ONE-EXCITATION",
+   "killed": true,
+   "mutant": "MUT-CEILINGS",
+   "on_target": true,
+   "target": "G-CEILINGS-AGREE-AT-ONE-EXCITATION",
+   "what": "separates the two ceilings at one excitation"
+  },
+  {
+   "died_at": "G-OCCUPANCY-NOT-ANCHORED",
+   "killed": true,
+   "mutant": "MUT-REGISTER",
+   "on_target": true,
+   "target": "G-OCCUPANCY-NOT-ANCHORED",
+   "what": "reads the stage's count register as one"
+  },
+  {
+   "died_at": "G-GENUINE-TWO-BODY",
+   "killed": true,
+   "mutant": "MUT-GENUINE-ZERO",
+   "on_target": true,
+   "target": "G-GENUINE-TWO-BODY",
+   "what": "empties the genuine two-body set"
+  },
+  {
+   "died_at": "G-DERIVATION-LAW",
+   "killed": true,
+   "mutant": "MUT-DERIVATION",
+   "on_target": true,
+   "target": "G-DERIVATION-LAW",
+   "what": "injects a derivation-law failure"
+  },
+  {
+   "died_at": "G-DEFECT-FOLDS",
+   "killed": true,
+   "mutant": "MUT-FOLD",
+   "on_target": true,
+   "target": "G-DEFECT-FOLDS",
+   "what": "injects a fold conflict"
+  },
+  {
+   "died_at": "G-PARENT-VALUE-MULTISET",
+   "killed": true,
+   "mutant": "MUT-VALUE-MULTISET",
+   "on_target": true,
+   "target": "G-PARENT-VALUE-MULTISET",
+   "what": "moves one reproduced cell count"
+  },
+  {
+   "died_at": "G-SECOND-CODE-PATH",
+   "killed": true,
+   "mutant": "MUT-SECOND-PATH",
+   "on_target": true,
+   "target": "G-SECOND-CODE-PATH",
+   "what": "moves the second route's multiset"
+  },
+  {
+   "died_at": "G-THIRD-CODE-PATH",
+   "killed": true,
+   "mutant": "MUT-THIRD-PATH",
+   "on_target": true,
+   "target": "G-THIRD-CODE-PATH",
+   "what": "moves the third route's multiset"
+  },
+  {
+   "died_at": "G-DEFECT-RATIONAL",
+   "killed": true,
+   "mutant": "MUT-IRRATIONAL",
+   "on_target": true,
+   "target": "G-DEFECT-RATIONAL",
+   "what": "claims an irrational defect value"
+  },
+  {
+   "died_at": "G-OVERLAP-TWO-BITES",
+   "killed": true,
+   "mutant": "MUT-OVERLAP-BITE",
+   "on_target": true,
+   "target": "G-OVERLAP-TWO-BITES",
+   "what": "empties the overlap-two positive control"
+  },
+  {
+   "died_at": "G-SPEED-CEILING-UNCHANGED",
+   "killed": true,
+   "mutant": "MUT-SPEED-CEILING",
+   "on_target": true,
+   "target": "G-SPEED-CEILING-UNCHANGED",
+   "what": "widens the two-excitation speed spectrum"
+  },
+  {
+   "died_at": "G-R4B-CONVENTION-REPRODUCED",
+   "killed": true,
+   "mutant": "MUT-R4B-REPRO",
+   "on_target": true,
+   "target": "G-R4B-CONVENTION-REPRODUCED",
+   "what": "moves the reproduced tie count"
+  },
+  {
+   "died_at": "G-HEAD-PREREGISTERED",
+   "killed": true,
+   "mutant": "MUT-HEAD-PRENAME",
+   "on_target": true,
+   "target": "G-HEAD-PREREGISTERED",
+   "what": "replaces the pre-registered names"
+  },
+  {
+   "died_at": "G-SEAL-TOTAL",
+   "killed": true,
+   "mutant": "MUT-SEAL-TOTAL",
+   "on_target": true,
+   "target": "G-SEAL-TOTAL",
+   "what": "publishes an unsealed, undeclared key"
+  },
+  {
+   "died_at": "G-NO-VERSION-CONTROL-NO-SHELL",
+   "killed": true,
+   "mutant": "MUT-SHELL-IMPORT",
+   "on_target": true,
+   "target": "G-NO-VERSION-CONTROL-NO-SHELL",
+   "what": "adds a shell entry point"
+  },
+  {
+   "died_at": "G-PAYLOAD-DETERMINISTIC",
+   "killed": true,
+   "mutant": "MUT-PAYLOAD-PATH",
+   "on_target": true,
+   "target": "G-PAYLOAD-DETERMINISTIC",
+   "what": "writes an absolute path into the payload"
+  },
+  {
+   "died_at": "G-CACHE-UNPOLLUTED",
+   "killed": true,
+   "mutant": "MUT-CACHE-DIRTY",
+   "on_target": true,
+   "target": "G-CACHE-UNPOLLUTED",
+   "what": "reports a polluted cache"
+  }
+ ],
+ "occupancy": {
+  "anchored_count_register": 6,
+  "antisymmetric_closed": 64,
+  "ceiling_is_anchored": false,
+  "configurations_ceiling_1": 120,
+  "configurations_ceiling_2": 136,
+  "one_excitation_configurations": 16,
+  "rows": [
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C000",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C001",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C002",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C003",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C004",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C005",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C006",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C007",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C008",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C009",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C010",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C011",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C012",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C013",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C014",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C015",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C016",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C017",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C018",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C019",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C020",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C021",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C022",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C023",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C024",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C025",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C026",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C027",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C028",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C029",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C030",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C031",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C032",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C033",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C034",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C035",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C036",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C037",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C038",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C039",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C040",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C041",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C042",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C043",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C044",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C045",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C046",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C047",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C048",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C049",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C050",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C051",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C052",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C053",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C054",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C055",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C056",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "C057",
+    "monomial": true,
+    "symmetric_hardcore_closed": true,
+    "symmetric_hardcore_leak_cells": 0
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "B058",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "B059",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "B060",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "B061",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 16
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "S062",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   },
+   {
+    "antisymmetric_hardcore_closed": true,
+    "generator": "S063",
+    "monomial": false,
+    "symmetric_hardcore_closed": false,
+    "symmetric_hardcore_leak_cells": 48
+   }
+  ],
+  "symmetric_closed": 16,
+  "symmetric_leaking": 48
+ },
+ "overlap_census": {
+  "by_overlap": [
+   {
+    "antisymmetric_nonzero": 0,
+    "overlap": 0,
+    "rows": 32760,
+    "single_excitation_nonzero": 0,
+    "symmetric_nonzero": 0
+   },
+   {
+    "antisymmetric_nonzero": 0,
+    "overlap": 1,
+    "rows": 10080,
+    "single_excitation_nonzero": 0,
+    "symmetric_nonzero": 0
+   },
+   {
+    "antisymmetric_nonzero": 360,
+    "overlap": 2,
+    "rows": 360,
+    "single_excitation_nonzero": 360,
+    "symmetric_nonzero": 360
+   }
+  ],
+  "coin_pairs": 3,
+  "coins": 640,
+  "interfering_coins": 512,
+  "links": 32,
+  "low_overlap_nonzero": 0,
+  "low_overlap_rows": 42840,
+  "overlap_2_nonzero": 360,
+  "overlap_2_rows": 360,
+  "per_coin_pair": [
+   {
+    "coin_pair": [
+     0,
+     3
+    ],
+    "low_nonzero": 0,
+    "low_rows": 14280,
+    "overlap_2_antisymmetric": 120,
+    "overlap_2_rows": 120,
+    "overlap_2_single": 120,
+    "overlap_2_symmetric": 120
+   },
+   {
+    "coin_pair": [
+     1,
+     1
+    ],
+    "low_nonzero": 0,
+    "low_rows": 14280,
+    "overlap_2_antisymmetric": 120,
+    "overlap_2_rows": 120,
+    "overlap_2_single": 120,
+    "overlap_2_symmetric": 120
+   },
+   {
+    "coin_pair": [
+     7,
+     11
+    ],
+    "low_nonzero": 0,
+    "low_rows": 14280,
+    "overlap_2_antisymmetric": 120,
+    "overlap_2_rows": 120,
+    "overlap_2_single": 120,
+    "overlap_2_symmetric": 120
+   }
+  ],
+  "r5_rows_cited_not_rerun": 18,
+  "rows": 43200,
+  "site_pairs": 120,
+  "three_site_completions": 0,
+  "three_site_full_support_rows": 1536
+ },
+ "paper_claims": [
+  {
+   "id": "CL-ADMITTED",
+   "path": "exchange_census/antisymmetric_admitted",
+   "text": "64 of 64 generators"
+  },
+  {
+   "id": "CL-DECOMP",
+   "path": "exchange_census/dim_ordered",
+   "text": "256 = 136 + 120"
+  },
+  {
+   "id": "CL-LEAK",
+   "path": "occupancy/symmetric_leaking",
+   "text": "leaks at 48 of 64"
+  },
+  {
+   "id": "CL-PARENT",
+   "path": "defect_census/single_excitation_nonzero",
+   "text": "588 of 3364 ordered pairs"
+  },
+  {
+   "id": "CL-TWOEXC",
+   "path": "defect_census/antisymmetric_nonzero",
+   "text": "1764 of 3364 ordered pairs carry a nonzero two-excitation defect"
+  },
+  {
+   "id": "CL-GENUINE",
+   "path": "defect_census/genuine_two_body",
+   "text": "1176 genuine two-body pairs"
+  },
+  {
+   "id": "CL-PREDICATE",
+   "path": "defect_census/predicate_mismatches",
+   "text": "0 mismatches over 6728 per-pair tests"
+  },
+  {
+   "id": "CL-DISCRIM",
+   "path": "discrimination/differing_pairs",
+   "text": "differ at 588 of 3364 ordered pairs"
+  },
+  {
+   "id": "CL-OVERLAP",
+   "path": "overlap_census/low_overlap_rows",
+   "text": "42840 of 42840 rows at overlap at most one"
+  },
+  {
+   "id": "CL-OVERLAP2",
+   "path": "overlap_census/overlap_2_nonzero",
+   "text": "360 of 360 rows at overlap two"
+  },
+  {
+   "id": "CL-MOTION",
+   "path": "motion/antisymmetric_cells",
+   "text": "6960 antisymmetric and 7888 symmetric cells"
+  },
+  {
+   "id": "CL-VELOCITY",
+   "path": "motion/velocity_failures",
+   "text": "7168 of 29696 cells"
+  },
+  {
+   "id": "CL-CONTACT",
+   "path": "contact_handle/symmetric_defect_moved",
+   "text": "588 of 3364 ordered pairs and the antisymmetric one at 0"
+  },
+  {
+   "id": "CL-A4",
+   "path": "arena_census/distinguishable_broken",
+   "text": "3306 of 3306 ordered pairs of distinct generators"
+  },
+  {
+   "id": "CL-VALUES",
+   "path": "defect_values/antisymmetric_distinct",
+   "text": "28 distinct values in the antisymmetric shape and 30 in the symmetric"
+  }
+ ],
+ "paper_coverage": {
+  "claims": 15,
+  "numerals": 52,
+  "paper": "paper-22-multi.md",
+  "polarity_failures": 0,
+  "unlicensed": 0
+ },
+ "parent_reproduction": {
+  "r4_single_excitation_defects": 588,
+  "r4_value_multiset_reproduced": true,
+  "r4b_cells": 1856,
+  "r4b_tie_cells": 320,
+  "r4b_tie_families": 19,
+  "r5_two_excitation_rows_cited": 18,
+  "transport_numbers_inherited": 0
+ },
+ "path_value_anchors": [
+  {
+   "anchor": "PV-DIM",
+   "consumer": "G-ARENA-ANCHORED",
+   "expected": 2,
+   "ok": true,
+   "path": "declarations/d",
+   "source": "STAGE-RECEIPT",
+   "value": 2
+  },
+  {
+   "anchor": "PV-LINKS",
+   "consumer": "G-ARENA-ANCHORED",
+   "expected": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "ok": true,
+   "path": "declarations/links_d2",
+   "source": "STAGE-RECEIPT",
+   "value": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ]
+  },
+  {
+   "anchor": "PV-COUNT-REGISTER",
+   "consumer": "G-OCCUPANCY-NOT-ANCHORED",
+   "expected": 6,
+   "ok": true,
+   "path": "declarations/count_lattice/axis_max",
+   "source": "STAGE-RECEIPT",
+   "value": 6
+  },
+  {
+   "anchor": "PV-DIAG-REGISTER",
+   "consumer": "G-OCCUPANCY-NOT-ANCHORED",
+   "expected": 12,
+   "ok": true,
+   "path": "declarations/count_lattice/diag_max",
+   "source": "STAGE-RECEIPT",
+   "value": 12
+  },
+  {
+   "anchor": "PV-L",
+   "consumer": "G-ARENA-ANCHORED",
+   "expected": 4,
+   "ok": true,
+   "path": "counts/L",
+   "source": "R4-RECEIPT",
+   "value": 4
+  },
+  {
+   "anchor": "PV-ALPHABET",
+   "consumer": "G-ALPHABET-REBUILT",
+   "expected": 25,
+   "ok": true,
+   "path": "counts/alphabet",
+   "source": "R4-RECEIPT",
+   "value": 25
+  },
+  {
+   "anchor": "PV-POOL",
+   "consumer": "G-REBUILD-BIJECTION",
+   "expected": 64,
+   "ok": true,
+   "path": "counts/pool",
+   "source": "R4-RECEIPT",
+   "value": 64
+  },
+  {
+   "anchor": "PV-CIRC",
+   "consumer": "G-REBUILD-BIJECTION",
+   "expected": 58,
+   "ok": true,
+   "path": "pool_counts/circulant",
+   "source": "R4-RECEIPT",
+   "value": 58
+  },
+  {
+   "anchor": "PV-BRICK",
+   "consumer": "G-REBUILD-CONTROLS",
+   "expected": 4,
+   "ok": true,
+   "path": "pool_counts/brickwork",
+   "source": "R4-RECEIPT",
+   "value": 4
+  },
+  {
+   "anchor": "PV-SCRAM",
+   "consumer": "G-REBUILD-CONTROLS",
+   "expected": 2,
+   "ok": true,
+   "path": "pool_counts/scrambled",
+   "source": "R4-RECEIPT",
+   "value": 2
+  },
+  {
+   "anchor": "PV-AXES",
+   "consumer": "G-REBUILD-BIJECTION",
+   "expected": 9,
+   "ok": true,
+   "path": "pool_counts/axes",
+   "source": "R4-RECEIPT",
+   "value": 9
+  },
+  {
+   "anchor": "PV-SECTOR",
+   "consumer": "G-OCCUPANCY-NOT-ANCHORED",
+   "expected": "SINGLE-OCCUPATION",
+   "ok": true,
+   "path": "counts/sector",
+   "source": "R4-RECEIPT",
+   "value": "SINGLE-OCCUPATION"
+  },
+  {
+   "anchor": "PV-PARENT-DEFECT",
+   "consumer": "G-PARENT-REPRODUCED",
+   "expected": 588,
+   "ok": true,
+   "path": "counts/nonzero_at_maximal",
+   "source": "R4-RECEIPT",
+   "value": 588
+  },
+  {
+   "anchor": "PV-PARENT-PAIRS",
+   "consumer": "G-PARENT-REPRODUCED",
+   "expected": 3364,
+   "ok": true,
+   "path": "counts/pairs_at_maximal",
+   "source": "R4-RECEIPT",
+   "value": 3364
+  },
+  {
+   "anchor": "PV-PARENT-MARKOV",
+   "consumer": "G-MARKOV-INHERITED",
+   "expected": 0,
+   "ok": true,
+   "path": "counts/markov_nonzero",
+   "source": "R4-RECEIPT",
+   "value": 0
+  },
+  {
+   "anchor": "PV-PARENT-MONOMIALS",
+   "consumer": "G-MONOMIAL-CLASSIFIER",
+   "expected": [
+    "C004",
+    "C007",
+    "C008",
+    "C011",
+    "C018",
+    "C019",
+    "C026",
+    "C027",
+    "C034",
+    "C035",
+    "C042",
+    "C043",
+    "C046",
+    "C053",
+    "C054",
+    "C057"
+   ],
+   "ok": true,
+   "path": "markov_control/monomial_generators",
+   "source": "R4-RECEIPT",
+   "value": [
+    "C004",
+    "C007",
+    "C008",
+    "C011",
+    "C018",
+    "C019",
+    "C026",
+    "C027",
+    "C034",
+    "C035",
+    "C042",
+    "C043",
+    "C046",
+    "C053",
+    "C054",
+    "C057"
+   ]
+  },
+  {
+   "anchor": "PV-SCRAMBLE-SWAPS",
+   "consumer": "G-REBUILD-CONTROLS",
+   "expected": "[(0, 5), (1, 11)]",
+   "ok": true,
+   "path": "choice_inventory/12/value",
+   "source": "R4-RECEIPT",
+   "value": "[(0, 5), (1, 11)]"
+  },
+  {
+   "anchor": "PV-R4B-ALIASED",
+   "consumer": "G-R4B-CONVENTION-REPRODUCED",
+   "expected": 320,
+   "ok": true,
+   "path": "counts/aliased_cells",
+   "source": "R4B-RECEIPT",
+   "value": 320
+  },
+  {
+   "anchor": "PV-R4B-ALIASED-FAM",
+   "consumer": "G-R4B-CONVENTION-REPRODUCED",
+   "expected": 19,
+   "ok": true,
+   "path": "counts/aliased_families",
+   "source": "R4B-RECEIPT",
+   "value": 19
+  },
+  {
+   "anchor": "PV-R4B-CELLS",
+   "consumer": "G-R4B-CONVENTION-REPRODUCED",
+   "expected": 1856,
+   "ok": true,
+   "path": "counts/integer_velocities",
+   "source": "R4B-RECEIPT",
+   "value": 1856
+  },
+  {
+   "anchor": "PV-R4B-TIE",
+   "consumer": "G-R4B-CONVENTION-INHERITED",
+   "expected": "TIE-AVERAGED",
+   "ok": true,
+   "path": "velocity_definition/tie_reading",
+   "source": "R4B-RECEIPT",
+   "value": "TIE-AVERAGED"
+  },
+  {
+   "anchor": "PV-R4B-STENCIL",
+   "consumer": "G-R4B-CONVENTION-INHERITED",
+   "expected": [
+    "FORWARD",
+    "BACKWARD"
+   ],
+   "ok": true,
+   "path": "stratification/stencil_admitted",
+   "source": "R4B-RECEIPT",
+   "value": [
+    "FORWARD",
+    "BACKWARD"
+   ]
+  },
+  {
+   "anchor": "PV-R5-COINS",
+   "consumer": "G-COIN-ALPHABET-REBUILT",
+   "expected": 640,
+   "ok": true,
+   "path": "counts/coins",
+   "source": "R5-RECEIPT",
+   "value": 640
+  },
+  {
+   "anchor": "PV-R5-LINKS",
+   "consumer": "G-COIN-ALPHABET-REBUILT",
+   "expected": 32,
+   "ok": true,
+   "path": "counts/links",
+   "source": "R5-RECEIPT",
+   "value": 32
+  }
+ ],
+ "pool": [
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C000",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C001",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C002",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C003",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C004",
+   "radius": 0,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C005",
+   "radius": 1,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C006",
+   "radius": 1,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C007",
+   "radius": 1,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C008",
+   "radius": 1,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C009",
+   "radius": 2,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C010",
+   "radius": 2,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C011",
+   "radius": 2,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C012",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C013",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C014",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C015",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C016",
+   "radius": 1,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C017",
+   "radius": 1,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C018",
+   "radius": 1,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C019",
+   "radius": 1,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C020",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C021",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C022",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C023",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C024",
+   "radius": 1,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C025",
+   "radius": 1,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C026",
+   "radius": 1,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C027",
+   "radius": 1,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C028",
+   "radius": 2,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C029",
+   "radius": 2,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C030",
+   "radius": 2,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C031",
+   "radius": 2,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C032",
+   "radius": 2,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C033",
+   "radius": 2,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C034",
+   "radius": 2,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C035",
+   "radius": 2,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C036",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C037",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C038",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C039",
+   "radius": 1,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C040",
+   "radius": 1,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C041",
+   "radius": 1,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C042",
+   "radius": 1,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C043",
+   "radius": 1,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C044",
+   "radius": 2,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C045",
+   "radius": 2,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C046",
+   "radius": 2,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C047",
+   "radius": 2,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C048",
+   "radius": 2,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C049",
+   "radius": 2,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C050",
+   "radius": 2,
+   "support": 3
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C051",
+   "radius": 2,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C052",
+   "radius": 2,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C053",
+   "radius": 2,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C054",
+   "radius": 2,
+   "support": 1
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C055",
+   "radius": 2,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": false,
+   "name": "C056",
+   "radius": 2,
+   "support": 2
+  },
+  {
+   "kind": "CIRC",
+   "monomial": true,
+   "name": "C057",
+   "radius": 2,
+   "support": 1
+  },
+  {
+   "kind": "BRICK",
+   "monomial": false,
+   "name": "B058",
+   "radius": 1,
+   "support": null
+  },
+  {
+   "kind": "BRICK",
+   "monomial": false,
+   "name": "B059",
+   "radius": 1,
+   "support": null
+  },
+  {
+   "kind": "BRICK",
+   "monomial": false,
+   "name": "B060",
+   "radius": 1,
+   "support": null
+  },
+  {
+   "kind": "BRICK",
+   "monomial": false,
+   "name": "B061",
+   "radius": 1,
+   "support": null
+  },
+  {
+   "kind": "SCRAM",
+   "monomial": false,
+   "name": "S062",
+   "radius": 2,
+   "support": null
+  },
+  {
+   "kind": "SCRAM",
+   "monomial": false,
+   "name": "S063",
+   "radius": 2,
+   "support": null
+  }
+ ],
+ "provenance": {
+  "not_executed": [
+   "no other unit's program is imported or executed; the parents are read as bytes and as anchored values only",
+   "R5's 18-row two-excitation table is CITED and NOT re-run, as the pin requires",
+   "no transport number is inherited from R4b"
+  ],
+  "python": "3.13.2",
+  "runtime_inputs": [
+   "v12/paper1-composition-defect.md",
+   "v12/paper1_code/exact.py",
+   "v13/code/ha_successor_receipt.json",
+   "v14/code/r4_defect_stage_exact.py",
+   "v14/code/r4_defect_stage_receipt.json",
+   "v14/code/r4b_momentum_exact.py",
+   "v14/code/r4b_momentum_receipt.json",
+   "v14/code/r5_gauge_receipt.json",
+   "v14/note-r4c-pin.md",
+   "v14/paper-10-defect-on-the-stage.md",
+   "v14/paper-15-momentum.md",
+   "v14/paper-18-gauge-rung.md"
+  ],
+  "sources": [
+   {
+    "anchor": "R4-RECEIPT",
+    "path": "v14/code/r4_defect_stage_receipt.json",
+    "sha256_12": "3dc1393b0df8"
+   },
+   {
+    "anchor": "R4-CODE",
+    "path": "v14/code/r4_defect_stage_exact.py",
+    "sha256_12": "2959c5a6a84b"
+   },
+   {
+    "anchor": "R4-PAPER",
+    "path": "v14/paper-10-defect-on-the-stage.md",
+    "sha256_12": "1063401c7bb5"
+   },
+   {
+    "anchor": "R4B-RECEIPT",
+    "path": "v14/code/r4b_momentum_receipt.json",
+    "sha256_12": "562e2a3d4d85"
+   },
+   {
+    "anchor": "R4B-CODE",
+    "path": "v14/code/r4b_momentum_exact.py",
+    "sha256_12": "4216f3de5f44"
+   },
+   {
+    "anchor": "R4B-PAPER",
+    "path": "v14/paper-15-momentum.md",
+    "sha256_12": "89c636906061"
+   },
+   {
+    "anchor": "R5-RECEIPT",
+    "path": "v14/code/r5_gauge_receipt.json",
+    "sha256_12": "0c02b7684e5b"
+   },
+   {
+    "anchor": "R5-PAPER",
+    "path": "v14/paper-18-gauge-rung.md",
+    "sha256_12": "62cfe5689d2c"
+   },
+   {
+    "anchor": "STAGE-RECEIPT",
+    "path": "v13/code/ha_successor_receipt.json",
+    "sha256_12": "542b8735daf0"
+   },
+   {
+    "anchor": "SEED-PAPER",
+    "path": "v12/paper1-composition-defect.md",
+    "sha256_12": "81bdab5673fb"
+   },
+   {
+    "anchor": "SEED-CODE",
+    "path": "v12/paper1_code/exact.py",
+    "sha256_12": "8e90f6435922"
+   },
+   {
+    "anchor": "PIN",
+    "path": "v14/note-r4c-pin.md",
+    "sha256_12": "162553b03ca9"
+   }
+  ]
+ },
+ "schema": {
+  "arithmetic": "Q(zeta_8), exact, dyadic",
+  "instrument": "v14/code/r4c_multi_exact.py",
+  "paper": "v14/paper-22-multi.md",
+  "published_keys": [
+   "arena_census",
+   "arena_declaration",
+   "byte_anchors",
+   "cli_probes",
+   "compliance",
+   "contact_handle",
+   "counts",
+   "defect_census",
+   "defect_values",
+   "description_stamps",
+   "discrimination",
+   "exchange_census",
+   "gates",
+   "motion",
+   "mutants",
+   "occupancy",
+   "overlap_census",
+   "paper_claims",
+   "paper_coverage",
+   "parent_reproduction",
+   "path_value_anchors",
+   "pool",
+   "provenance",
+   "schema",
+   "seals",
+   "totals",
+   "verbatim_anchors",
+   "verdict",
+   "waiver_ledger"
+  ],
+  "unit": "R4c",
+  "unsealed_declared": {
+   "seals": "the seal ledger is the reference against which every other key is checked; it cannot digest itself, and it is covered by the payload digest that G-ARTIFACT-INTEGRITY verifies on disk"
+  },
+  "version": 1
+ },
+ "seals": [
+  {
+   "path": "verdict/string",
+   "seal": "SEAL-VERDICT-STRING",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "b0fcac720e8f"
+  },
+  {
+   "path": "verdict/head",
+   "seal": "SEAL-VERDICT-HEAD",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "8d00a71e9814"
+  },
+  {
+   "path": "counts",
+   "seal": "SEAL-COUNTS",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "f35155882319"
+  },
+  {
+   "path": "exchange_census",
+   "seal": "SEAL-EXCHANGE",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "4f62dd5c49e2"
+  },
+  {
+   "path": "arena_census",
+   "seal": "SEAL-ARENAS",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "f40bdf0814ff"
+  },
+  {
+   "path": "occupancy",
+   "seal": "SEAL-OCCUPANCY",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "0663065f42e9"
+  },
+  {
+   "path": "defect_census",
+   "seal": "SEAL-DEFECT",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "f28d01de262b"
+  },
+  {
+   "path": "defect_values",
+   "seal": "SEAL-DEFECT-VALUES",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "8a0f57cb1caf"
+  },
+  {
+   "path": "discrimination",
+   "seal": "SEAL-DISCRIMINATION",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "fb78af45b4bb"
+  },
+  {
+   "path": "overlap_census",
+   "seal": "SEAL-OVERLAP",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "23aee4ad7054"
+  },
+  {
+   "path": "motion",
+   "seal": "SEAL-MOTION",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "d6cfb5b331d9"
+  },
+  {
+   "path": "contact_handle",
+   "seal": "SEAL-CONTACT",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "2a10859d0a32"
+  },
+  {
+   "path": "parent_reproduction",
+   "seal": "SEAL-PARENT",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "2c0ab78f56c3"
+  },
+  {
+   "path": "description_stamps",
+   "seal": "SEAL-STAMPS",
+   "sealed_at_gate": "G-DESCRIPTION-STAMPS",
+   "sha256_12": "84749dc5bf27"
+  },
+  {
+   "path": "path_value_anchors",
+   "seal": "SEAL-PATH-ANCHORS",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "72bc862ad04e"
+  },
+  {
+   "path": "byte_anchors",
+   "seal": "SEAL-BYTE-ANCHORS",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "1a1a09366b18"
+  },
+  {
+   "path": "verbatim_anchors",
+   "seal": "SEAL-VERBATIM",
+   "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
+   "sha256_12": "2faca74de3e9"
+  },
+  {
+   "path": "waiver_ledger",
+   "seal": "SEAL-WAIVERS",
+   "sealed_at_gate": "G-WAIVERS-VERIFIED",
+   "sha256_12": "bcc510046f5e"
+  },
+  {
+   "path": "schema",
+   "seal": "SEAL-SCHEMA",
+   "sealed_at_gate": "G-RECEIPT-SCHEMA",
+   "sha256_12": "325247a4ac0f"
+  },
+  {
+   "path": "provenance",
+   "seal": "SEAL-PROVENANCE",
+   "sealed_at_gate": "G-RECEIPT-SCHEMA",
+   "sha256_12": "69d57a892d80"
+  },
+  {
+   "path": "paper_claims",
+   "seal": "SEAL-PAPER-CLAIMS",
+   "sealed_at_gate": "G-PAPER-CLAIMS",
+   "sha256_12": "d64294fc13d6"
+  },
+  {
+   "path": "pool",
+   "seal": "SEAL-POOL",
+   "sealed_at_gate": "G-POOL-COMPLETE",
+   "sha256_12": "6e26a7b03c40"
+  },
+  {
+   "path": "arena_declaration",
+   "seal": "SEAL-ARENA",
+   "sealed_at_gate": "G-ARENA-ANCHORED",
+   "sha256_12": "8ba3d55dac05"
+  },
+  {
+   "path": "verdict",
+   "seal": "SEAL-VERDICT-ALL",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "1449564e5078"
+  },
+  {
+   "path": "cli_probes",
+   "seal": "SEAL-CLI",
+   "sealed_at_gate": "G-CLI-WHITELIST",
+   "sha256_12": "7ed899eb1a1c"
+  },
+  {
+   "path": "mutants",
+   "seal": "SEAL-MUTANTS",
+   "sealed_at_gate": "G-MUTANTS-ON-TARGET",
+   "sha256_12": "2731e10c707d"
+  },
+  {
+   "path": "compliance",
+   "seal": "SEAL-COMPLIANCE",
+   "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+   "sha256_12": "a20d42dbc932"
+  },
+  {
+   "path": "gates",
+   "seal": "SEAL-GATES",
+   "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+   "sha256_12": "105cff7c387e"
+  },
+  {
+   "path": "totals",
+   "seal": "SEAL-TOTALS",
+   "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+   "sha256_12": "3b9c5adc56c8"
+  },
+  {
+   "path": "paper_coverage",
+   "seal": "SEAL-COVERAGE",
+   "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+   "sha256_12": "b3768c870f46"
+  }
+ ],
+ "totals": {
+  "anchors": 48,
+  "byte_anchors": 12,
+  "census_pairs": 3364,
+  "gates": 63,
+  "gates_disclosed": 3,
+  "gates_passed": 63,
+  "integrity_gate": "EVALUATED-IN-THE-WRITING-PATH-AGAINST-THE-GATE-TIME-SEAL",
+  "mutants": 56,
+  "mutants_killed": 56,
+  "mutants_on_target": 56,
+  "overlap_rows": 43200,
+  "path_value_anchors": 24,
+  "seals": 30,
+  "verbatim_anchors": 12,
+  "verdict_values": 69
+ },
+ "verbatim_anchors": [
+  {
+   "anchor": "VB-THREE-ROUTES",
+   "chars": 216,
+   "consumer": "G-PIN-QUESTION-IS-THE-PARENTS",
+   "present": true,
+   "source": "R4-PAPER"
+  },
+  {
+   "anchor": "VB-NO-MULTI",
+   "chars": 184,
+   "consumer": "G-SECTOR-IS-NEW",
+   "present": true,
+   "source": "R4-PAPER"
+  },
+  {
+   "anchor": "VB-DEFECT-DEF",
+   "chars": 184,
+   "consumer": "G-DEFECT-DEFINITION",
+   "present": true,
+   "source": "R4-PAPER"
+  },
+  {
+   "anchor": "VB-CONNECTIVE",
+   "chars": 50,
+   "consumer": "G-CONNECTIVE-VERBATIM",
+   "present": true,
+   "source": "R4-PAPER"
+  },
+  {
+   "anchor": "VB-R4B-CONVENTION",
+   "chars": 148,
+   "consumer": "G-R4B-CONVENTION-INHERITED",
+   "present": true,
+   "source": "R4B-PAPER"
+  },
+  {
+   "anchor": "VB-R4B-TIE",
+   "chars": 189,
+   "consumer": "G-R4B-CONVENTION-INHERITED",
+   "present": true,
+   "source": "R4B-PAPER"
+  },
+  {
+   "anchor": "VB-R5-LAMBDA2",
+   "chars": 192,
+   "consumer": "G-R5-PRECEDENT-CITED",
+   "present": true,
+   "source": "R5-PAPER"
+  },
+  {
+   "anchor": "VB-R5-EIGHTEEN",
+   "chars": 160,
+   "consumer": "G-R5-PRECEDENT-CITED",
+   "present": true,
+   "source": "R5-PAPER"
+  },
+  {
+   "anchor": "VB-PIN-QUESTION",
+   "chars": 100,
+   "consumer": "G-PIN-QUESTION-IS-THE-PARENTS",
+   "present": true,
+   "source": "PIN"
+  },
+  {
+   "anchor": "VB-PIN-SCOPE",
+   "chars": 59,
+   "consumer": "G-NO-TRANSPORT-NUMBER-INHERITED",
+   "present": true,
+   "source": "PIN"
+  },
+  {
+   "anchor": "VB-PIN-SHAPES",
+   "chars": 124,
+   "consumer": "G-NO-PARTICLE-NAMING",
+   "present": true,
+   "source": "PIN"
+  },
+  {
+   "anchor": "VB-SEED-DEFECT",
+   "chars": 4,
+   "consumer": "G-DEFECT-WITNESS",
+   "present": true,
+   "source": "SEED-PAPER"
+  }
+ ],
+ "verdict": {
+  "head": "R4C-STATISTICS-BOTH-ADMITTED",
+  "heads_by_arena": {
+   "A1-FREE-LIFT-CEILING-2": "R4C-STATISTICS-BOTH-ADMITTED",
+   "A2-FREE-LIFT-CEILING-1-HARD-CORE": "R4C-STATISTICS-FORCED-ANTISYMMETRIC",
+   "A3-ONE-SITE-LATTICE": "R4C-STATISTICS-FORCED-SYMMETRIC",
+   "A4-DISTINGUISHABLE-LIFT": "R4C-STATISTICS-NEITHER-INVARIANT",
+   "BLOCKED-PROBE": "R4C-BLOCKED-AT-THE-SECTOR"
+  },
+  "preregistered_heads": [
+   "R4C-STATISTICS-FORCED-ANTISYMMETRIC",
+   "R4C-STATISTICS-FORCED-SYMMETRIC",
+   "R4C-STATISTICS-BOTH-ADMITTED",
+   "R4C-STATISTICS-NEITHER",
+   "R4C-BLOCKED-AT"
+  ],
+  "segments": [
+   [
+    "EXCHANGE",
+    "COMMUTES-AT-64-OF-64(FORCED-BY-THE-FREE-LIFT);BOTH-SECTORS-CLOSED-UNITARY-STOCHASTIC=64-OF-64;DECOMPOSITION=256=136+120(NO-THIRD-SECTOR-AT-TWO-EXCITATIONS)"
+   ],
+   [
+    "OCCUPANCY",
+    "CEILING-DECLARED-NOT-ANCHORED(STAGE-COUNT-REGISTER=6);AT-CEILING-1-SYMMETRIC-LEAKS=48-OF-64-EXACTLY-THE-NON-MONOMIAL;ANTISYMMETRIC-LEAKS=0-OF-64;THE-TWO-CEILINGS-AGREE-AT-ONE-EXCITATION=16-OF-16-CONFIGURATIONS;AND-DIFFER-AT-TWO=136-VS-120"
+   ],
+   [
+    "DISCRIMINATION",
+    "THE-SHAPES-DIFFER-BY-THE-DEFECT-AT-588-OF-3364-PAIRS=EXACTLY-THE-SINGLE-EXCITATION-DEFECT-SET(SET-EQUALITY);AGREE-AT-2776;SPECTRA-DIFFER-AT-16-DOUBLED-MOMENTUM-CELLS-AT-58-OF-58-FAMILIES"
+   ],
+   [
+    "DEFECT",
+    "DOES-NOT-COMPOSE-IT-COMPLETES;NONZERO=1764-OF-3364-IN-BOTH-SHAPES=BOTH-LEGS-NON-MONOMIAL(0-MISMATCHES-OF-6728-PER-PAIR-TESTS;=42-SQUARED);GENUINE-TWO-BODY=1176;LOSSES=0;ORDERED-SECTOR=DERIVATION-LAW-EXACT-3364-OF-3364-AND-NO-GENUINE-TWO-BODY;VALUES=ANTISYMMETRIC-28-DISTINCT+SYMMETRIC-30-DISTINCT-ALL-RATIONAL;PARENT-SINGLE-EXCITATION=588-OF-3364-REPRODUCED-WITH-ITS-WHOLE-VALUE-MULTISET"
+   ],
+   [
+    "OVERLAP",
+    "R5-LAW-SURVIVES-THE-LIFT=NO-DEFECT-AT-OVERLAP-LE-1-AT-42840-OF-42840-ROWS-BOTH-SHAPES;AT-OVERLAP-2=360-OF-360-CARRY;WINDOW=EVERY-2-SITE-SUPPORT-43200-ROWS-EXHAUSTIVE-IN-GEOMETRY;THREE-SITE-FULL-SUPPORT=EMPTY-OVER-THE-ALPHABET-1536-ROWS-SWEPT;COIN-PAIRS=3-EACH-GATED-SEPARATELY;R5-18-ROW-SAMPLE=CITED-NOT-RE-RUN"
+   ],
+   [
+    "MOTION",
+    "EIGENPHASES-ADD-EXACTLY(ANTISYMMETRIC=6960;SYMMETRIC=7888;FAILURES=0)(FORCED-BY-FUNCTORIALITY);SPEED-SPECTRUM=0+1+2-UNCHANGED-AT-TWO-EXCITATIONS;VELOCITY-DOES-NOT-ADD=7168-OF-29696-CELLS-AT-THE-ANTIPODAL-TIE-ONLY;CONTACT-HANDLE-MOVES-SYMMETRIC-DEFECT-AT-588-OF-3364-AND-ANTISYMMETRIC-AT-0(THE-MOVED-SET-IS-THE-SINGLE-EXCITATION-DEFECT-SET-BY-SET-EQUALITY);R4B-REPRODUCED=320-TIE-CELLS-IN-19-FAMILIES-OF-58"
+   ],
+   [
+    "SCOPE",
+    "D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;EXCITATIONS=2;SECTORS=ORDERED+SYMMETRIC+ANTISYMMETRIC;LIFT=FREE(U-TENSOR-U)-WITH-DISTINGUISHABLE-AND-CONTACT-LIFTS-CENSUSED;OCCUPANCY-CEILING=DECLARED;VELOCITY-READING=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED-INHERITED-AS-DECLARED;NO-TRANSPORT-NUMBER-INHERITED;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-PARTICLE-CLAIM;SHAPE-WORDS-ONLY;N=2-ONLY-NO-GENERAL-N-CLAIM;NO-CONFIGURATION-MEASURE;NO-ACTION;NO-COUPLING"
+   ]
+  ],
+  "string": "R4C-STATISTICS-BOTH-ADMITTED<EXCHANGE=COMMUTES-AT-64-OF-64(FORCED-BY-THE-FREE-LIFT);BOTH-SECTORS-CLOSED-UNITARY-STOCHASTIC=64-OF-64;DECOMPOSITION=256=136+120(NO-THIRD-SECTOR-AT-TWO-EXCITATIONS)|OCCUPANCY=CEILING-DECLARED-NOT-ANCHORED(STAGE-COUNT-REGISTER=6);AT-CEILING-1-SYMMETRIC-LEAKS=48-OF-64-EXACTLY-THE-NON-MONOMIAL;ANTISYMMETRIC-LEAKS=0-OF-64;THE-TWO-CEILINGS-AGREE-AT-ONE-EXCITATION=16-OF-16-CONFIGURATIONS;AND-DIFFER-AT-TWO=136-VS-120|DISCRIMINATION=THE-SHAPES-DIFFER-BY-THE-DEFECT-AT-588-OF-3364-PAIRS=EXACTLY-THE-SINGLE-EXCITATION-DEFECT-SET(SET-EQUALITY);AGREE-AT-2776;SPECTRA-DIFFER-AT-16-DOUBLED-MOMENTUM-CELLS-AT-58-OF-58-FAMILIES|DEFECT=DOES-NOT-COMPOSE-IT-COMPLETES;NONZERO=1764-OF-3364-IN-BOTH-SHAPES=BOTH-LEGS-NON-MONOMIAL(0-MISMATCHES-OF-6728-PER-PAIR-TESTS;=42-SQUARED);GENUINE-TWO-BODY=1176;LOSSES=0;ORDERED-SECTOR=DERIVATION-LAW-EXACT-3364-OF-3364-AND-NO-GENUINE-TWO-BODY;VALUES=ANTISYMMETRIC-28-DISTINCT+SYMMETRIC-30-DISTINCT-ALL-RATIONAL;PARENT-SINGLE-EXCITATION=588-OF-3364-REPRODUCED-WITH-ITS-WHOLE-VALUE-MULTISET|OVERLAP=R5-LAW-SURVIVES-THE-LIFT=NO-DEFECT-AT-OVERLAP-LE-1-AT-42840-OF-42840-ROWS-BOTH-SHAPES;AT-OVERLAP-2=360-OF-360-CARRY;WINDOW=EVERY-2-SITE-SUPPORT-43200-ROWS-EXHAUSTIVE-IN-GEOMETRY;THREE-SITE-FULL-SUPPORT=EMPTY-OVER-THE-ALPHABET-1536-ROWS-SWEPT;COIN-PAIRS=3-EACH-GATED-SEPARATELY;R5-18-ROW-SAMPLE=CITED-NOT-RE-RUN|MOTION=EIGENPHASES-ADD-EXACTLY(ANTISYMMETRIC=6960;SYMMETRIC=7888;FAILURES=0)(FORCED-BY-FUNCTORIALITY);SPEED-SPECTRUM=0+1+2-UNCHANGED-AT-TWO-EXCITATIONS;VELOCITY-DOES-NOT-ADD=7168-OF-29696-CELLS-AT-THE-ANTIPODAL-TIE-ONLY;CONTACT-HANDLE-MOVES-SYMMETRIC-DEFECT-AT-588-OF-3364-AND-ANTISYMMETRIC-AT-0(THE-MOVED-SET-IS-THE-SINGLE-EXCITATION-DEFECT-SET-BY-SET-EQUALITY);R4B-REPRODUCED=320-TIE-CELLS-IN-19-FAMILIES-OF-58|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;EXCITATIONS=2;SECTORS=ORDERED+SYMMETRIC+ANTISYMMETRIC;LIFT=FREE(U-TENSOR-U)-WITH-DISTINGUISHABLE-AND-CONTACT-LIFTS-CENSUSED;OCCUPANCY-CEILING=DECLARED;VELOCITY-READING=FORWARD-DIFFERENCE-WITH-TIE-AVERAGED-INHERITED-AS-DECLARED;NO-TRANSPORT-NUMBER-INHERITED;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-PARTICLE-CLAIM;SHAPE-WORDS-ONLY;N=2-ONLY-NO-GENERAL-N-CLAIM;NO-CONFIGURATION-MEASURE;NO-ACTION;NO-COUPLING>"
+ },
+ "waiver_ledger": [
+  {
+   "forcing": "P (U tensor U) P^{-1} = U tensor U holds for every U whatever, so the commutation is an identity of the free lift and not a property of this family.  It is registered as a disclosure with its forcing named, and the measured content that takes its place is G-HARDCORE-LEAK-PER-GENERATOR, whose split is NOT forced and separates the pool 48 to 16",
+   "gate": "G-EXCHANGE-COMMUTES",
+   "kind": "FORCED"
+  },
+  {
+   "forcing": "the wedge carries no doubly-occupied configuration, so there is nothing for it to leak into.  The measured content beside it is the symmetric sector's leak, which fires",
+   "gate": "G-HARDCORE-ANTISYMMETRIC-CLOSED",
+   "kind": "FORCED"
+  },
+  {
+   "forcing": "the wedge and the symmetric square are functors, so the lifted eigenvalue is the product of the symbols by construction.  It is verified as an exact matrix identity at every cell anyway, and the measured content beside it is G-VELOCITY-DOES-NOT-ADD, which fires at 7168 cells",
+   "gate": "G-EIGENPHASES-ADD",
+   "kind": "FORCED"
+  }
+ ]
+}

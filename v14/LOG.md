@@ -5924,3 +5924,55 @@ recorded Wave C lacked the number-changing rung.  FCK added
 between BST and SPT (creation/annihilation as a declared
 extension, fiber priced; species become countable quanta).
 The chain: ACT → POT → BST → FCK → SPT → GAP.
+
+## 2026-08-11 — PAPER-22 (R4C, TWO EXCITATIONS) DELIVERED: STATISTICS-BOTH-ADMITTED — THE CEILING SELECTS, THE STAGE ANCHORS NONE; COMMIT-AS-IS (v14 LEDGER #195)
+
+The R4c worker delivered.  **Delivered verdict (candidate):
+R4C-STATISTICS-BOTH-ADMITTED — the composition law admits both
+shapes and selects neither.**  Exchange commutes with the free
+lift U⊗U at 64/64 generators (FORCED, disclosed); the ordered
+sector splits 256 = 136+120 and nothing else (no
+parastatistics-shaped third place at n=2).  **WHAT SELECTS IS
+THE OCCUPANCY CEILING, AND THE STAGE ANCHORS NONE:** at
+ceiling 2 both live; at ceiling 1 the symmetric shape LEAKS at
+exactly the 48 non-monomial generators (0 mismatches) and the
+antisymmetric never leaks; DECISIVELY — both ceilings have the
+SAME one-excitation restriction (16=16), so NO single-
+excitation measurement could ever select between them (the
+parent arena is a fixed point of both); the record layer
+declares no ceiling (its counts run to 6 and 12 — against the
+hard core if anything).  TWO-WAY, four real arenas, four
+different heads from one law: free-lift/ceiling-2
+BOTH-ADMITTED; hard-core FORCED-ANTISYMMETRIC; one-site
+FORCED-SYMMETRIC (wedge dim 0); distinguishable lift U⊗V
+NEITHER-INVARIANT 3306/3306.  **THE TWO-BODY DEFECT: IT DOES
+NOT COMPOSE, IT COMPLETES** — 1764/3364 ordered pairs nonzero
+(both shapes identical) vs 588 at one excitation; 1176 genuine
+two-body pairs, 0 losses; per-pair law NONZERO IFF BOTH LEGS
+NON-MONOMIAL (6728/6728); **on the labelled sector the defect
+composes exactly by the derivation law Δ₂ = Δ⊗X + Y⊗Δ
+(0/3364 failures) and carries NO genuine two-body defect — THE
+ENTIRE EXCESS IS CREATED BY EXCHANGE SYMMETRISATION ALONE**;
+the support-overlap law lifted and generalised (42,840/42,840
+at overlap ≤1; 360/360 at overlap 2; R5's 18-row sample cited
+not re-run) — exchange does not widen where a defect can
+live, it FILLS THAT REGION IN.  MOTION: eigenphases ADD
+EXACTLY (14,848 cells, 0 failures, functoriality-forced);
+velocities DO NOT (7168/29696 fail, exclusively the antipodal
+tie — aliasing, not interaction); speed spectrum {0,1,2}
+UNCHANGED — two excitations move no faster than one; spectra
+separate the shapes (16 doubled-momentum cells, 58/58
+families); R4b reproduced independently; NO transport number
+inherited.  THE SURPRISE: **the same 588-pair set THREE TIMES
+as gated set equalities** — the single-excitation defect set =
+the shapes-differ set = the contact-interaction-moves-
+symmetric set (58/58 operators; antisymmetric moved at 0) —
+everything that can see the doubly-occupied channel sees it
+exactly where the substrate already interferes.  Two
+instrument defects self-caught and fixed (cache leak →
+G-CACHE-UNPOLLUTED; premature seal → totals close before late
+seals).  Counts: 63/63 gates, 56/56 mutants on target, 48
+anchors, 30 seals, byte ×2, selftest dies writing nothing.
+Shas: paper 1b4ac134e727, code deb0c1c83a76, output
+45866a3ed5e3, receipt 5c058006db78.  Committed AS-IS; battery
+next; panel after.
