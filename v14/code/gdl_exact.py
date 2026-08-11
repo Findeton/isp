@@ -200,17 +200,17 @@ DP_NAMED = (
 MUTANTS = [
     # -- the machine, rebuilt
     ("MUT-ANCHOR-LEAVES", "G-PARENT-REPRODUCED",
-     "moves `anchor_bad` to the one-element list ['FORGED']: an anchor value "
-     "of the parent's committed receipt is reported reproduced when the "
-     "rebuild disagrees -- must die at the parent-reproduction gate",
+     "moves `anchor_bad` to FORGED, the one-element list ['FORGED']: an "
+     "anchor value of the parent's committed receipt is reported reproduced "
+     "when the rebuild disagrees -- must die at the parent-reproduction gate",
      "anchor_bad", "FORGED"),
     ("MUT-ANCHOR-LOCATED", "G-PARENT-LOCATED",
-     "moves `located`, the count of rebuilt values located verbatim in the "
-     "parent's committed bytes, down by 1 -- must die at the located-in-bytes "
-     "gate", "located", "1"),
+     "moves `located` to nloc - 1, the count of rebuilt values located "
+     "verbatim in the parent's committed bytes less one -- must die at the "
+     "located-in-bytes gate", "located", "nloc - 1"),
     ("MUT-MASS", "G-BRANCH-MASS",
-     "moves `mass_bad` to the one-element list ['A-COUPLED'], reporting a "
-     "level whose branch weights do not sum to exactly 1 -- must die at the "
+     "moves `mass_bad` to A-COUPLED, the one-element list naming an arm whose "
+     "branch weights do not sum to exactly 1 at some level -- must die at the "
      "per-level mass gate", "mass_bad", "A-COUPLED"),
     ("MUT-ROUTE", "G-ENSEMBLE-EXHAUSTIVE",
      "moves `route_bad` to 1: the carried frontier's branch count and the "
@@ -222,12 +222,17 @@ MUTANTS = [
     ("MUT-KERNEL", "G-LAW-KERNEL",
      "moves `kviol` to 2: two kernel entries are detached from q/M -- must "
      "die at the law-native kernel gate", "kviol", "2"),
+    ("MUT-LAW-STAMP", "G-LAW-CHECK-CLASSES",
+     "moves `stamp_bad_law` to FORGED: a law-check class is published without "
+     "its DEFINITIONAL stamp or the three-way split stops summing to the "
+     "composite -- must die at the class-stamp gate",
+     "stamp_bad_law", "FORGED"),
     # -- the functionals
     ("MUT-D-SPEC", "G-FUNCTIONALS-DECLARED",
-     "moves `spec_bad` to the one-element list ['D2-OFFDIAG'], reporting a "
-     "declared decoherence functional whose published specification does not "
-     "match the value its own code returns -- must die at the specification "
-     "gate", "spec_bad", "D2-OFFDIAG"),
+     "moves `spec_bad` to D2-OFFDIAG, reporting a declared decoherence "
+     "functional whose published specification does not match the value its "
+     "own code returns at some object -- must die at the specification gate",
+     "spec_bad", "D2-OFFDIAG"),
     ("MUT-D-EXACT", "G-FUNCTIONALS-EXACT",
      "moves `nonexact` to 1: a decoherence value is reported carried as "
      "something other than an exact Fraction -- must die at the exactness "
@@ -242,9 +247,9 @@ MUTANTS = [
      "split_bad", "3"),
     # -- the growth functionals
     ("MUT-RATE-IS-BORN", "G-RATE-IS-BORN",
-     "moves `rb_bad` to 1: the law's own site emission rate is reported to "
-     "differ from the Born site mass at one site-object -- must die at the "
-     "emission-rate gate", "rb_bad", "1"),
+     "moves `rb_bad` to 1: the law's own site emission rate, summed through "
+     "the kernel, is reported to differ from the Born site mass at one "
+     "site-object -- must die at the emission-rate gate", "rb_bad", "1"),
     ("MUT-RATE-TOTAL", "G-RATE-TOTAL",
      "moves `rt_bad` to 1: an object's total emission rate is reported away "
      "from exactly one division event per coupled step -- must die at the "
@@ -255,42 +260,52 @@ MUTANTS = [
      "fz_growth", "1"),
     # -- the relation
     ("MUT-RELATION-EXACT", "G-RELATION-CENSUS",
-     "moves `grid_bad` to the one-element list ['FORGED'], reporting a grid "
-     "cell whose published verdict word disagrees with its own censused "
-     "failure count -- must die at the relation-census gate",
-     "grid_bad", "FORGED"),
+     "moves `grid_bad` to FORGED, reporting a grid cell whose published "
+     "verdict word disagrees with its own censused failure count -- must die "
+     "at the relation-census gate", "grid_bad", "FORGED"),
     ("MUT-VACUITY", "G-VACUITY-DECLARED",
      "moves `vac_bad` to 1: a functional-dependence verdict of EXACT is "
      "published on a test with no non-singleton class -- must die at the "
      "vacuity gate", "vac_bad", "1"),
     ("MUT-FAILURE-SET", "G-FAILURE-CENSUS",
-     "moves `census_bad` to 1: a partial relation's censused failing-object "
-     "count disagrees with the recount taken from its own partition -- must "
-     "die at the failure-census gate", "census_bad", "1"),
+     "moves `census_bad` to 1: a cell's censused failing-object count, "
+     "failing-class count or NON-SINGLETON count disagrees with the recount "
+     "taken from its own partition -- must die at the failure-census gate",
+     "census_bad", "1"),
+    ("MUT-TOTAL-FAILURE", "G-TOTAL-FAILURE-STAMP",
+     "moves `stamp_bad_cells` to FORGED: a cell whose every non-singleton "
+     "class fails is published without its TOTAL-FAILURE stamp, or a passing "
+     "count disagrees with its own census -- must die at the stamp gate",
+     "stamp_bad_cells", "FORGED"),
+    ("MUT-FROZEN-GRID", "G-FROZEN-GRID-CENSUS",
+     "moves `frozen_bad` to FORGED: the control's own 45-cell census stops "
+     "accounting for all of its rows, or the coupled PARTIAL cells stop being "
+     "accounted against the control's words -- must die at the frozen-grid "
+     "gate", "frozen_bad", "FORGED"),
     ("MUT-FITTED", "G-NO-FITTED-FORM",
      "moves `fitted` to 1: a fitted form is reported present in this unit's "
      "own published relation layer -- must die at the no-fitted-form gate",
      "fitted", "1"),
     # -- forcedness
     ("MUT-COIN-FIBER", "G-COIN-FIBER",
-     "moves `fiber_bad` to the one-element list ['w/3'], reporting a coin "
-     "fiber member whose verdict shape differs from the delivered one -- must "
-     "die at the coin-fiber gate", "fiber_bad", "w/3"),
+     "moves `fiber_bad` to w/3, reporting a coin fiber member whose verdict "
+     "shape, separation ladder, identities or occupancy thresholds differ "
+     "from the delivered member's -- must die at the coin-fiber gate",
+     "fiber_bad", "w/3"),
     ("MUT-FIBER-MEMBERS", "G-FIBER-EXECUTED",
-     "moves `executed`, the executed fiber-member ids, to the list with its "
-     "last id dropped, [:-1], so a declared member is reported measured while "
-     "its run is missing -- must die at the fiber-inventory gate",
-     "executed", "[:-1]"),
+     "moves `executed` to [:-1], the executed fiber-member ids with the last "
+     "one dropped, so a declared member is reported measured while its run is "
+     "missing -- must die at the fiber-inventory gate", "executed", "[:-1]"),
     ("MUT-COIN-UNITARY", "G-COIN-ADMISSIBLE",
-     "moves `cu_bad` to the one-element list ['(-1+w)/3'], reporting a fiber "
-     "member as exactly unitary and S_3-covariant when it is not -- must die "
-     "at the coin-admissibility gate", "cu_bad", "(-1+w)/3"),
+     "moves `cu_bad` to (-1+w)/3, reporting a fiber member as exactly unitary "
+     "and S_3-covariant when it is not -- must die at the coin-admissibility "
+     "gate", "cu_bad", "(-1+w)/3"),
     ("MUT-PHASE-PAIR", "G-GLOBAL-PHASE-PAIR",
      "moves `phase_bad` to 1: +/- Grover, a pair differing by a global phase, "
      "are reported to give different published rows -- must die at the "
      "global-phase gate", "phase_bad", "1"),
     ("MUT-FROZEN-EXCLUSION", "G-FROZEN-EXCLUSION",
-     "moves `excluded` to the empty list [], hiding the exclusion of a "
+     "moves `excluded` to [], the empty list, hiding the exclusion of a "
      "relation that holds identically on the frozen stage -- must die at the "
      "frozen-exclusion gate", "excluded", "[]"),
     ("MUT-FROZEN-RAN", "G-FROZEN-CONTROL",
@@ -311,8 +326,8 @@ MUTANTS = [
      "to move on a declared foreign count field -- must die at the "
      "record-blindness gate", "d1_moves", "1"),
     ("MUT-COOCC", "G-COOCCUPANCY",
-     "moves `cooc_bad` to 1: an object whose occupied-link sets meet in at "
-     "most one link is reported with a moving off-diagonal mass -- must die "
+     "moves `cooc_bad` to 1: an object no two of whose sites share two "
+     "occupied links is reported with a moving off-diagonal mass -- must die "
      "at the co-occupancy gate", "cooc_bad", "1"),
     ("MUT-COOCC-THRESHOLD", "G-COOCCUPANCY-THRESHOLD",
      "moves `cooc_threshold` to 3: the first step carrying a co-occupancy "
@@ -322,35 +337,73 @@ MUTANTS = [
      "moves `d3_moves` to 0: the record-reading functional is reported blind "
      "to the record -- must die at the two-way blindness gate",
      "d3_moves", "0"),
+    ("MUT-OCCUPANCY", "G-OCCUPANCY-PREDICATES",
+     "moves `occ_bad` to FORGED: the two occupancy predicates stop differing "
+     "by exactly one step, or stop agreeing between the arms -- must die at "
+     "the two-predicate gate", "occ_bad", "FORGED"),
+    ("MUT-PAIR-MECHANISM", "G-PAIR-MECHANISM",
+     "moves `pair_bad` to 1: a site pair meeting in at most one occupied link "
+     "is reported with a moving |rho_xy|^2, which THEOREM B forbids -- must "
+     "die at the pair-grain gate", "pair_bad", "1"),
+    ("MUT-BLIND-G5", "G-BLINDNESS-G5",
+     "moves `g5_moves` to 1: the law's own growth functional is reported to "
+     "move on a declared foreign count field, breaking the doubly-blind "
+     "ground of the frozen exclusion -- must die at the G5-blindness gate",
+     "g5_moves", "1"),
+    ("MUT-THEOREM-A", "G-THEOREM-A",
+     "moves `sd_bad` to FORGED: the site-dependent demonstration is reported "
+     "with a moving site marginal, a moving D1, a site-uniform coin, a "
+     "non-unitary block or a static D2 -- must die at the THEOREM A gate",
+     "sd_bad", "FORGED"),
+    ("MUT-THEOREM-B", "G-THEOREM-B",
+     "moves `sym_bad` to 1: the cancellation algebra is reported with one "
+     "coefficient mismatch -- must die at the symbolic gate", "sym_bad", "1"),
+    ("MUT-FOREIGN-FIELD", "G-FOREIGN-FIELDS-FOREIGN",
+     "moves `foreign_bad` to STALE: a declared foreign count field is "
+     "reported to be a record this run actually generates -- must die at the "
+     "foreignness gate", "foreign_bad", "STALE"),
+    # -- the third channel
+    ("MUT-RESIDUE-BLIND", "G-RESIDUE-CHANNEL",
+     "moves `res_state` to 1: a state-internal functional is reported to "
+     "distinguish two records congruent mod 3, which the residue reading "
+     "forbids -- must die at the third-channel gate", "res_state", "1"),
+    ("MUT-RESIDUE-TWO-WAY", "G-RESIDUE-CHANNEL",
+     "moves `res_reads` to 0: the record-reading functional is reported blind "
+     "to congruent-but-different records, so the census would decide nothing "
+     "-- must die at the same gate's two-way leg", "res_reads", "0"),
+    ("MUT-WRAPAROUND", "G-RESIDUE-WRAPAROUND",
+     "moves `wrap_bad` to FORGED: the wraparound census stops reporting the "
+     "wrap written inside the horizon, read outside it, and congruent to the "
+     "welded value -- must die at the wraparound gate", "wrap_bad", "FORGED"),
     # -- the prediction
     ("MUT-PREDICTION", "G-PREDICTION-ROW",
-     "moves `pred_forced` to `not carried`, detaching the published "
-     "forced flag from the fiber census that is supposed to carry it -- must "
-     "die at the prediction gate", "pred_forced", "not carried"),
+     "moves `pred_forced` to not carried, detaching the published forced flag "
+     "from the fiber census that is supposed to carry it -- must die at the "
+     "prediction gate", "pred_forced", "not carried"),
     ("MUT-PREDICTION-RENDER", "G-PREDICTION-RENDERED",
-     "moves `prow`, the rendered prediction sentence, to one carrying FORGED "
-     "-- must die at the render gate", "prow", "FORGED"),
+     "moves `prow` to FORGED, appending that word to the rendered prediction "
+     "sentence -- must die at the render gate", "prow", "FORGED"),
     # -- the walls
     ("MUT-WALL-L1", "G-WALL-L1",
-     "moves `ptext` to the object under test with `BANNED_L1`, the retracted "
-     "L-1 sentence, appended line-wrapped and blockquoted -- must die at the "
+     "moves `ptext` to BANNED_L1, the object under test with the retracted "
+     "L-1 sentence appended line-wrapped and blockquoted -- must die at the "
      "L-1 wall", "ptext", "BANNED_L1"),
     ("MUT-WALL-BHS", "G-WALL-BHS",
-     "moves `layer`, this run's measurement surface, to one carrying a "
-     "sprinkling-grade `boosted rest frame` reading -- must die at the BHS "
-     "abstention scan", "layer", "boosted rest frame"),
+     "moves `hay` to boosted rest frame -- this run's measurement surface with "
+     "a sprinkling-grade reading written into it -- must die at the BHS "
+     "abstention scan", "hay", "boosted rest frame"),
     ("MUT-WALL-KR", "G-WALL-KR",
-     "moves `layer` to one carrying a `myrheim-meyer` dimension estimate "
-     "with no height control -- must die at the Kleitman-Rothschild scan",
-     "layer", "myrheim-meyer"),
+     "moves `hay` to myrheim-meyer, a dimension estimate with no height "
+     "control written into the measurement surface -- must die at the "
+     "Kleitman-Rothschild scan", "hay", "myrheim-meyer"),
     ("MUT-WALL-COSMO", "G-WALL-COSMO",
-     "moves `layer` to one carrying a `cosmological expansion` reading -- "
-     "must die at the cosmological/continuum scan",
-     "layer", "cosmological expansion"),
+     "moves `hay` to cosmological expansion, a cosmological reading written "
+     "into the measurement surface -- must die at the cosmological/continuum "
+     "scan", "hay", "cosmological expansion"),
     ("MUT-WALL-SI", "G-WALL-NO-SI",
-     "moves `layer` to one carrying a `collapse rate in kilogram` reading -- "
-     "must die at this unit's own SI/experimental-value scan",
-     "layer", "collapse rate in kilogram"),
+     "moves `hay` to collapse rate in kilogram, an SI reading written into "
+     "the measurement surface -- must die at this unit's own "
+     "SI/experimental-value scan", "hay", "collapse rate in kilogram"),
     ("MUT-WALL-DP", "G-WALL-DP-SHAPE",
      "moves `dp` to False: the mandatory shape-only naming of the "
      "Diosi-Penrose arc is reported absent from the object under test -- must "
@@ -361,72 +414,87 @@ MUTANTS = [
     ("MUT-WALL-HEX", "G-WALL-HEX-NAMED",
      "moves `hx` to False: the hexagonal naming sentence is reported absent "
      "-- must die at the second naming gate", "hx", "False"),
-    # -- the verdict and the paper
-    ("MUT-VERDICT-WORD", "G-VERDICT-RECONSTRUCTED",
-     "moves `verdict`'s gates segment to one whose outcome word reads "
-     "GDL-LAW-FORCED-D1-IS-THE-SQUARED-RATE, in the builder alone -- must die "
-     "at the comparator, which types its own templates and re-derives the "
-     "word", "verdict", "GDL-LAW-FORCED-D1-IS-THE-SQUARED-RATE"),
-    ("MUT-VERDICT-VALUE", "G-VERDICT-RECONSTRUCTED",
-     "moves `verdict`'s arena segment by retyping one measured value inside "
-     "it, 27 OF 27 to 26 OF 27 -- must die at the same comparator, by "
-     "occurrence count", "verdict", "26 OF 27"),
-    ("MUT-PAPER-CLAIM", "G-PAPER-CLAIMS",
-     "moves `sent`, an assembled claim, to one reading 26 cells -- must die "
-     "at the claim gate", "sent", "26 cells"),
-    ("MUT-PAPER-TABLE", "G-PAPER-TABLES",
-     "moves `trows`, the rendered table rows, to the list with its last row "
-     "dropped and a FORGED one appended -- must die at the table gate",
-     "trows", "FORGED"),
-    ("MUT-PAPER-NUMERAL", "G-PAPER-NUMERAL-COVERAGE",
-     "moves `unregistered` to ['123456789'], an unregistered numeral -- must "
-     "die at the #20 coverage scan", "unregistered", "123456789"),
-    ("MUT-PAPER-HEAD", "G-PAPER-HEAD-VERBATIM",
-     "moves `probe`, a derived verdict segment, by one character to seg[:-1] "
-     "+ Z before matching it into the paper -- must die at the head-verbatim "
-     "gate", "probe", "Z"),
-    ("MUT-PAPER-BLOCK", "G-PAPER-HEAD-VERBATIM",
-     "moves `blockmap`, the paper's own fenced-block multiset, to the same "
-     "multiset with its last block dropped, [:-1], so a duplicated head could "
-     "shadow a forged twin -- must die at the same gate's MULTISET leg",
-     "blockmap", "[:-1]"),
-    ("MUT-PAPER-POLARITY", "G-PAPER-CLAIM-POLARITY",
-     "moves `mutated` to True, swapping a positive claim for its negation in "
-     "the object under test -- must die at the polarity gate",
-     "mutated", "True"),
+    # -- the ledgers, the outcome grammar and the verdict
     ("MUT-MEASURE-STAMP", "G-MEASURE-DECLARED",
      "moves `stamp_bad` to 1: a published fraction over a configuration space "
      "carries neither a declared measure nor the COUNTING-ONLY stamp -- must "
      "die at the E-24 measure gate", "stamp_bad", "1"),
+    ("MUT-CHOICE-BAR", "G-CHOICE-INVENTORY",
+     "moves `choice_bad` to F12-BAR-SCOPE: the verdict-determining bar-scope "
+     "row is reported inconsistent with the declaration it names -- must die "
+     "at the choice-inventory gate", "choice_bad", "F12-BAR-SCOPE"),
+    ("MUT-OUTCOME-ARM", "G-OUTCOME-REACHABILITY",
+     "moves `wiring_matches_the_delivered_measurement` to False, unwiring the "
+     "control arm from the delivered measurement so the head word would no "
+     "longer be the one this arena's own result selects -- must die at the "
+     "outcome-reachability gate",
+     "wiring_matches_the_delivered_measurement", "False"),
+    ("MUT-VERDICT-WORD", "G-VERDICT-RECONSTRUCTED",
+     "moves `verdict` to GDL-LAW-FORCED-D1-IS-THE-SQUARED-RATE in its gates "
+     "segment, in the builder alone -- must die at the comparator, which "
+     "types its own templates and re-derives the word from the primitives",
+     "verdict", "GDL-LAW-FORCED-D1-IS-THE-SQUARED-RATE"),
+    ("MUT-VERDICT-VALUE", "G-VERDICT-RECONSTRUCTED",
+     "moves `verdict` to 26 OF 27 in its arena segment, retyping one measured "
+     "value inside it -- must die at the same comparator, by occurrence "
+     "count", "verdict", "26 OF 27"),
+    # -- the paper
+    ("MUT-PAPER-CLAIM", "G-PAPER-CLAIMS",
+     "moves `sent` to 26 cells, retyping an assembled claim -- must die at the "
+     "claim gate", "sent", "26 cells"),
+    ("MUT-PAPER-TABLE", "G-PAPER-TABLES",
+     "moves `trows` to FORGED: the rendered table rows lose their last row and "
+     "gain a forged one -- must die at the table gate",
+     "trows", "FORGED"),
+    ("MUT-PAPER-NUMERAL", "G-PAPER-NUMERAL-COVERAGE",
+     "moves `text` to 123456789: that numeral is planted in the object under "
+     "test's own bytes, where the coverage scan must find it unregistered -- "
+     "must die at the #20 coverage scan",
+     "text", "123456789"),
+    ("MUT-PAPER-HEAD", "G-PAPER-HEAD-VERBATIM",
+     "moves `probe` to Z at its last character -- a derived verdict segment, "
+     "perturbed before it is matched into the paper -- must die at the "
+     "head-verbatim gate", "probe", "Z"),
+    ("MUT-PAPER-BLOCK", "G-PAPER-HEAD-VERBATIM",
+     "moves `blockmap` to extra_fence, the paper's own fenced-block multiset "
+     "PLUS one forged fence the head does not contain, so an EXTRA block "
+     "would shadow a forged twin -- must die at the same gate's MULTISET leg",
+     "blockmap", "extra_fence"),
+    ("MUT-PAPER-POLARITY", "G-PAPER-CLAIM-POLARITY",
+     "moves `mutated` to True, swapping a positive claim for its negation in "
+     "the object under test -- must die at the polarity gate",
+     "mutated", "True"),
     # -- the instrument
     ("MUT-CLI-PERMISSIVE", "G-CLI-WHITELIST",
-     "moves `bad` to [['--nope']]: the argv whitelist is swapped for the "
-     "registered permissive shape -- must die at the CLI gate",
+     "moves `bad` to --nope: the argv whitelist is swapped for the registered "
+     "permissive shape, which accepts that flag -- must die at the CLI gate",
      "bad", "--nope"),
     ("MUT-SELFTEST-WRITES", "G-SELFTEST-WRITES-NOTHING",
      "moves `st_ok` to False: the self-test path is claimed to reach a writer "
      "-- must die at the writes-nothing gate", "st_ok", "False"),
     ("MUT-WRITER-SHAPE", "G-WRITER-SHAPE",
-     "moves `gate_names_in_finish` to the list with the terminal integrity "
-     "gate's name dropped, [:-1] -- must die at the writer-shape probe, which "
-     "is taken BEFORE the gate ledger is snapshotted",
+     "moves `gate_names_in_finish` to [:-1], the list with the terminal "
+     "integrity gate's name dropped -- must die at the writer-shape probe, "
+     "which is taken BEFORE the gate ledger is snapshotted",
      "gate_names_in_finish", "[:-1]"),
     ("MUT-FALSIFIER-DESC", "G-FALSIFIER-HONESTY",
-     "moves `declared`, one falsifier's declared (symbol, value) pair, to "
-     "FORGED, away from what this file's AST says its hook writes -- must die "
-     "at the falsifier-honesty gate", "declared", "FORGED"),
+     "moves `declared` to FORGED: one falsifier's declared (symbol, value) "
+     "pair is moved away from what this file's AST says its hook assigns and "
+     "writes -- must die at the falsifier-honesty gate",
+     "declared", "FORGED"),
     ("MUT-SEAL-DROP", "G-SEAL-COMPLETE",
-     "silently drops the seal row whose `sid` is SEAL-COVERAGE -- must die at "
-     "the totality gate", "sid", "SEAL-COVERAGE"),
+     "moves `drop` to SEAL-COVERAGE: the seal row with that sid is silently "
+     "not taken -- must die at the totality gate", "drop", "SEAL-COVERAGE"),
     ("MUT-SEAL-BROKEN", "G-SEAL-COMPLETE",
-     "moves `horizon` in the sealed counts block by + 1 between its gate and "
+     "moves `horizon` to + 1 in the sealed counts block, between its gate and "
      "the write -- must die at the same gate", "horizon", "+ 1"),
     ("MUT-TRANSCRIPT-FLIP", "G-SEAL-COMPLETE",
-     "moves `transcript_head` to one beginning FLIPPED after it is sealed -- "
-     "must die at the same gate", "transcript_head", "FLIPPED"),
+     "moves `transcript_head` to FLIPPED at its first line, after it is "
+     "sealed -- must die at the same gate", "transcript_head", "FLIPPED"),
     ("MUT-SWEEP-UNBOUND", "G-SWEEP-BOUND",
      "moves `swept` to True on a run carrying no sweep -- must die at the "
-     "gate that binds the sweep's execution to the writer", "swept", "True"),
+     "gate that binds the sweep's execution, its per-row gate evidence and "
+     "its harness execution count to the writer", "swept", "True"),
 ]
 MUTANT_NAMES = {m[0] for m in MUTANTS}
 
@@ -434,6 +502,9 @@ MUT = None
 QUIET = False
 LINES = []
 READS = []
+# the number of times the mutant harness has actually entered its body.  It is
+# incremented in ONE place, `run_mutant`, and G-SWEEP-BOUND binds it.
+MUTANT_RUNS = [0]
 
 
 class GateFail(Exception):
@@ -506,18 +577,25 @@ SEALED_PATHS = [
     ("SEAL-PYTHON", "python", "G-EXACT-ARITHMETIC"),
     ("SEAL-OBJECT-READS", "object_reads", "G-READS-DECLARED"),
     ("SEAL-VERBATIM", "verbatim_anchors", "G-VERBATIM"),
-    ("SEAL-REBUILD", "rebuild", "G-PARENT-REPRODUCED"),
+    # THE DECLARED GATE IS THE ONE THE SEAL IS ACTUALLY TAKEN AT (K3 MINOR-2):
+    # a block seal is taken after the block's LAST gate, and it says so.  An
+    # AST self-check inside G-SEAL-COMPLETE re-derives every window from this
+    # file's own source and compares it with the label published here.
+    ("SEAL-REBUILD", "rebuild", "G-PARENT-LOCATED"),
     ("SEAL-ENSEMBLE", "ensemble", "G-BRANCH-MASS"),
-    ("SEAL-MACHINE", "machine", "G-LAW-KERNEL"),
-    ("SEAL-FUNCTIONALS", "functionals", "G-FUNCTIONALS-DECLARED"),
-    ("SEAL-GROWTH", "growth", "G-RATE-IS-BORN"),
-    ("SEAL-RELATION", "relation", "G-RELATION-CENSUS"),
-    ("SEAL-FORCEDNESS", "forcedness", "G-COIN-FIBER"),
+    ("SEAL-MACHINE", "machine", "G-LAW-CHECK-CLASSES"),
+    ("SEAL-FUNCTIONALS", "functionals", "G-PURITY-SPLIT"),
+    ("SEAL-GROWTH", "growth", "G-GROWTH-FROZEN-ZERO"),
+    ("SEAL-RELATION", "relation", "G-NO-FITTED-FORM"),
+    ("SEAL-FORCEDNESS", "forcedness", "G-GLOBAL-PHASE-PAIR"),
     ("SEAL-EXCLUSION", "exclusion", "G-FROZEN-EXCLUSION"),
-    ("SEAL-MECHANISM", "mechanism", "G-BLINDNESS-D1"),
-    ("SEAL-PREDICTION", "prediction", "G-PREDICTION-ROW"),
+    ("SEAL-MECHANISM", "mechanism", "G-FOREIGN-FIELDS-FOREIGN"),
+    ("SEAL-RESIDUE", "residue", "G-RESIDUE-WRAPAROUND"),
+    ("SEAL-PREDICTION", "prediction", "G-PREDICTION-RENDERED"),
     ("SEAL-WALLS", "walls", "G-WALL-HEX-NAMED"),
     ("SEAL-MEASURE", "measure_ledger", "G-MEASURE-DECLARED"),
+    ("SEAL-CHOICES", "choices", "G-CHOICE-INVENTORY"),
+    ("SEAL-OUTCOME", "outcome", "G-OUTCOME-REACHABILITY"),
     ("SEAL-VERDICT", "verdict", "G-VERDICT-RECONSTRUCTED"),
     ("SEAL-COUNTS", "counts", "G-VERDICT-RECONSTRUCTED"),
     ("SEAL-PAPER-CLAIMS", "paper_claims", "G-PAPER-CLAIMS"),
@@ -547,7 +625,8 @@ UNSEALED_FORCING = {
 }
 MEASURED_KEYS = ("rebuild", "ensemble", "machine", "functionals", "growth",
                  "relation", "forcedness", "exclusion", "mechanism",
-                 "prediction", "counts", "verdict")
+                 "residue", "prediction", "choices", "outcome", "counts",
+                 "verdict")
 
 
 class Seal:
@@ -565,7 +644,8 @@ class Seal:
         path = [p for s, p, _g in SEALED_PATHS if s == sid][0]
         at = [g for s, _p, g in SEALED_PATHS if s == sid][0]
         d = digest(jpath(obj, path))
-        if mut("MUT-SEAL-DROP") and sid == "SEAL-COVERAGE":
+        drop = pick("MUT-SEAL-DROP", False, sid == "SEAL-COVERAGE")
+        if drop:
             return
         self.rows.append({"seal": sid, "path": path, "sealed_at_gate": at,
                           "sha256_12": d})
@@ -751,6 +831,14 @@ READING_FIBER = ("A", "B")
 DELIVERED_COIN = "GROVER"
 DELIVERED_READING = "A"
 
+# THE SITE-DEPENDENT COIN, DECLARED: the six admissible members cycled over the
+# nine sites.  Block-diagonal in the site index, exactly unitary on every
+# block, and NOT the same at every site.  It is not a member of this unit's
+# fiber and nothing measured on it is claimed about this arena; it exists to
+# isolate THEOREM A's hypothesis from THEOREM B's.
+SITE_DEPENDENT_COINS = tuple(COIN_FIBER[s % len(COIN_FIBER)][1]
+                             for s in range(9))
+
 
 def coin_unitary_exactly(M):
     """M M^* = 9 I in exact Z[w] arithmetic, entry by entry (#87)."""
@@ -851,6 +939,23 @@ def coin_apply(psi, n, coin):
     return out
 
 
+def coin_apply_sitewise(psi, n, coins):
+    """THE SAME STEP with a coin that is BLOCK-DIAGONAL IN THE SITE INDEX and
+    unitary on each block but NOT THE SAME AT EVERY SITE -- the demonstration
+    that isolates THEOREM A's true hypothesis from THEOREM B's."""
+    out = [Z0] * DIM
+    for s in range(9):
+        b = s * 3
+        coin = coins[s]
+        src = [zmul(psi[b + j], WPOW[n[b + j] % 3]) for j in range(3)]
+        for i in range(3):
+            tot = Z0
+            for j in range(3):
+                tot = zadd(tot, zmul(coin[i][j], src[j]))
+            out[b + i] = tot
+    return out
+
+
 def shift(post):
     out = [Z0] * DIM
     for m in range(DIM):
@@ -867,6 +972,29 @@ def law_kernel(qrow):
     if M == 0:
         return G1, M, None
     return G1, M, tuple(Fraction(qrow[i], M) for i in range(3))
+
+
+# THE THREE LAW-CHECK CLASSES, STAMPED (the paper-20 precedent, K1 MAJOR-3).
+# None of the three can fail for any coin, menu or record: each is an identity
+# in the DEFINITION of the kernel.  A reader must not take the composite as a
+# count of rows that could have failed.  The contentful sibling is the
+# site-branch-step unitarity row, which is NOT of this kind and is stamped
+# CONTINGENT beside them.
+LAW_CHECK_CLASSES = (
+    ("law_native", "DEFINITIONAL",
+     "G(x,1) is compared with M(x) and `law_kernel` computes both as "
+     "sum(qrow); the comparison cannot fail for any coin, menu or record"),
+    ("kernel", "DEFINITIONAL",
+     "sum_l q/M = 1 is an identity in the definition of the kernel"),
+    ("kernel_entry", "DEFINITIONAL",
+     "q(l|x) = k_1(l|x) . M(x) is the same identity entry by entry"),
+)
+CONTINGENT_MACHINE_ROW = (
+    "unitarity_checks", "CONTINGENT",
+    "site-mass preservation at every site of every branch of every step: a "
+    "coin that moved amplitude between sites breaks it, and the declared "
+    "site-dependent-coin demonstration of THEOREM A leaves it intact while a "
+    "cross-site coin would not")
 
 
 def emission_weights(reading, Jn, n, den):
@@ -889,7 +1017,11 @@ def emission_weights(reading, Jn, n, den):
         px = Fraction(pn, den)
         for i in range(3):
             wts[b + i] = px * k[i]
-        eps[s] = px
+        # THE RATE IS SUMMED THROUGH THE KERNEL, never assigned (K1 MINOR-2):
+        # eps(x) = sum_l p(x) k_1(l|x).  The ID-RATE-IS-BORN row then genuinely
+        # tests the law-native normaliser's column-stochasticity at the site
+        # grain instead of comparing a value with itself.
+        eps[s] = sum(px * k[i] for i in range(3))
     return wts, eps, colsums
 
 
@@ -997,6 +1129,7 @@ def _nstat(n):
     npd = 0
     dets = set()
     mx = 0
+    wrapped = 0
     for s in range(9):
         d, adm = _qcached(site_counts(n, s))
         dets.add(d)
@@ -1008,7 +1141,9 @@ def _nstat(n):
             moved.append((m, n[m] - WELDED[m]))
         if n[m] > mx:
             mx = n[m]
-    got = (npd, frozenset(dets), tuple(moved), mx)
+        if n[m] > 3:
+            wrapped += 1
+    got = (npd, frozenset(dets), tuple(moved), mx, wrapped)
     _NS[n] = got
     return got
 
@@ -1020,15 +1155,22 @@ def horizon_stats(frontier, den, census=False):
     exit_p = Fraction(0)
     dets = set()
     maxcell = 0
+    wrap_branches = 0
+    wrap_cells = 0
+    wrap_as_welded = 0
     for (psi, n, w) in frontier:
         for s in range(9):
             v = absq(psi[s * 3]) + absq(psi[s * 3 + 1]) + absq(psi[s * 3 + 2])
             if v:
                 accf[s] += w * v
-        npd, dset, moved, mx = _nstat(n)
+        npd, dset, moved, mx, wrapped = _nstat(n)
         dets |= dset
         if mx > maxcell:
             maxcell = mx
+        if wrapped:
+            wrap_branches += 1
+            wrap_cells += wrapped
+            wrap_as_welded += sum(1 for c in n if c > 3 and c % 3 == 1)
         for (m, dv) in moved:
             Eb[m] += w * dv
         if npd < 9:
@@ -1043,6 +1185,9 @@ def horizon_stats(frontier, den, census=False):
             "total_emitted": str(sum(Ebl)),
             "admissibility_exit_probability": str(exit_p),
             "max_cell_count": maxcell,
+            "branches_carrying_a_wrapped_cell": wrap_branches,
+            "wrapped_cells": wrap_cells,
+            "wrapped_cells_congruent_to_the_welded_value": wrap_as_welded,
             "det_values_reached": sorted(str(d) for d in dets)}
 
 
@@ -1077,6 +1222,9 @@ def horizon_stats(frontier, den, census=False):
 #
 # Every value is an exact Fraction and a gate scans for anything else.
 
+PAIRS = tuple((x, y) for x in range(9) for y in range(x + 1, 9))
+PAIR_INDEX = {p: i for i, p in enumerate(PAIRS)}
+
 D_IDS = ("D1-IPR-BORN-MENU-SITE", "D2-OFFDIAG-SITE-MASS",
          "D3-RECORD-BORN-DIVERGENCE")
 D_SHORT = ("D1", "D2", "D3")
@@ -1101,6 +1249,7 @@ def decoherence(post, Jn, m, n, den):
     off = 0
     offrow = [0] * 9
     modsq = []
+    pairsq = [0] * len(PAIRS)
     for x in range(9):
         for y in range(9):
             if x == y:
@@ -1109,6 +1258,8 @@ def decoherence(post, Jn, m, n, den):
             for l in range(3):
                 tot = zadd(tot, zmul(post[x * 3 + l], zconj(post[y * 3 + l])))
             a = absq(tot)
+            if x < y:
+                pairsq[PAIR_INDEX[(x, y)]] = a
             if a:
                 off += a
                 offrow[x] += a
@@ -1131,7 +1282,8 @@ def decoherence(post, Jn, m, n, den):
     return {"D1": d1, "D2": d2, "D3": d3, "p": p,
             "D1row": [x * x for x in p],
             "D2row": [Fraction(offrow[x], dd) for x in range(9)],
-            "D3row": d3row, "modsq": modsq, "purity": purity}
+            "D3row": d3row, "modsq": modsq, "purity": purity,
+            "pairsq": tuple(pairsq)}
 
 
 def occupied_links(psi):
@@ -1139,16 +1291,40 @@ def occupied_links(psi):
             for s in range(9)]
 
 
+# TWO OCCUPANCY PREDICATES GOVERN THIS UNIT AND THEY DIFFER BY ONE STEP.
+# THE SINGLE-SITE one -- a site occupied on TWO links -- is when the record
+# first moves a CELL MASS, so it is what makes the next step's state differ
+# between the arms; THE PAIR one -- two sites sharing TWO occupied links -- is
+# the predicate D2's off-diagonal blindness turns on.  The prose of the first
+# delivery named the first and measured the second; both are measured here.
+
+def double_occupied_sites(psi):
+    """the SINGLE-SITE predicate: sites occupied on two or more links."""
+    L = occupied_links(psi)
+    return [x for x in range(9) if len(L[x]) >= 2]
+
+
 def cooccupancy(psi):
-    """THE MECHANISM'S OWN PREDICATE: the pairs of sites whose occupied-link
-    sets meet in TWO OR MORE links.  Because the coin is unitary and the same
-    at every site, rho_xy = sum_l w^{n_l(x) - n_l(y)} psi(x,l) conj(psi(y,l)):
-    the coin cancels and the record survives ONLY on links occupied at BOTH
-    ends.  A pair meeting in at most one link contributes a pure global phase
-    and |rho_xy| cannot see the record at all."""
+    """THE PAIR PREDICATE, the mechanism's own: the pairs of sites whose
+    occupied-link sets meet in TWO OR MORE links.  Because the coin is unitary
+    and site-block-diagonal it cancels out of the DIAGONAL of the site-basis
+    density matrix; because it is IN ADDITION the same at every site the
+    off-diagonal reduces to
+    rho_xy = sum_l w^{n_l(x) - n_l(y)} psi(x,l) conj(psi(y,l)),
+    so the record survives ONLY on links occupied at BOTH ends.  A pair meeting
+    in at most one link contributes a pure global phase and |rho_xy| cannot see
+    the record at all."""
     L = occupied_links(psi)
     return [(x, y) for x in range(9) for y in range(x + 1, 9)
             if len(L[x] & L[y]) >= 2]
+
+
+def pair_overlaps(psi):
+    """the occupied-link overlap of EVERY unordered site pair, in PAIRS order:
+    the grain THEOREM B's algebra predicts, 36x finer than the per-object
+    census."""
+    L = occupied_links(psi)
+    return tuple(len(L[x] & L[y]) for (x, y) in PAIRS)
 
 
 # ===========================================================================
@@ -1179,7 +1355,7 @@ G_KIND = {"G1-RECORD-CELL": "ACTUAL", "G2-RECORD-SITE": "ACTUAL",
 RES_IDS = ("RES-BRANCH", "RES-SITE", "RES-STEP")
 
 
-def branch_objects(T, coupled, reading, coin):
+def branch_objects(T, coupled, reading, coin, keep_pairs=False):
     """EVERY BRANCH-STEP of an arm: the frontier at levels 0 .. T-1, each with
     the Born menu it reads and the record it reads that menu on.  Objects are
     DEDUPLICATED by (t, psi, n) -- two branch-steps carrying the same state on
@@ -1217,7 +1393,11 @@ def branch_objects(T, coupled, reading, coin):
                                  for i in range(3)),
                      "G4": sum(n) - NCELL,
                      "G5": tuple(eps),
-                     "cooc": len(cooccupancy(psi))}
+                     "cooc": len(cooccupancy(psi)),
+                     "docc": len(double_occupied_sites(psi))}
+                if keep_pairs:
+                    o["pairsq"] = D["pairsq"]
+                    o["ov"] = pair_overlaps(psi)
                 seen[key] = o
                 order.append(o)
             else:
@@ -1315,29 +1495,44 @@ def fdep(objs, gk, dk):
         word = "EXACT"
     else:
         word = "PARTIAL"
+    # THE STAMP refines PARTIAL where the verdict grammar has no word: a cell
+    # in which EVERY non-singleton class fails carries no partial relation at
+    # all, and reading it as a partial one over-reports.  The equality-gated
+    # verdict word is unchanged -- the stamp is published beside it, and both
+    # censuses are published.
+    stamp = word
+    if word == "PARTIAL" and len(bad) == nonsing:
+        stamp = "TOTAL-FAILURE"
     return {"objects": len(objs), "classes": len(part),
             "nonsingleton_classes": nonsing,
+            "passing_nonsingleton_classes": nonsing - len(bad),
             "distinct_D_values": len({o[dk] for o in objs}),
             "failing_classes": len(bad),
             "objects_in_failing_classes": failobj,
             "distinct_D_values_in_failing_classes": dvals,
-            "verdict": word}
+            "verdict": word, "stamp": stamp}
 
 
 def recount(objs, gk, dk):
     """the failure census, RECOUNTED by a second pass that shares no
-    intermediate with `fdep` -- the census gate compares the two."""
+    intermediate with `fdep` -- the census gate compares the two.  The
+    NON-SINGLETON count is recounted here too: it is the number the VACUOUS
+    stamp rests on, and a stamp certified against the pass that produced it is
+    certified against itself."""
     byg = defaultdict(list)
     for o in objs:
         byg[o[gk]].append(o[dk])
     fc = 0
     fo = 0
+    ns = 0
     for g, vals in byg.items():
+        if len(vals) > 1:
+            ns += 1
         first = vals[0]
         if any(v != first for v in vals):
             fc += 1
             fo += len(vals)
-    return fc, fo
+    return fc, fo, ns
 
 
 def relation_grid(pools):
@@ -1468,6 +1663,34 @@ def separation_ladder(co_objs, fz_objs, T=HORIZON):
     return rows
 
 
+def occupancy_thresholds(objs, T=HORIZON):
+    """BOTH declared predicates, measured step by step: the first step at which
+    some object carries a site occupied on two links, and the first at which
+    some object carries a PAIR of sites sharing two occupied links."""
+    single = None
+    pair = None
+    for t in range(1, T + 1):
+        sel = [o for o in objs if o["t"] == t]
+        if single is None and any(o["docc"] for o in sel):
+            single = t
+        if pair is None and any(o["cooc"] for o in sel):
+            pair = t
+    return single, pair
+
+
+def cooccupancy_pairs_at(objs, t):
+    """the DISTINCT co-occupying site pairs the arm carries at one step -- the
+    COUNT, which the fiber census below measures to be coin-relative even
+    though the THRESHOLD is not."""
+    seen = set()
+    for o in objs:
+        if o["t"] != t:
+            continue
+        for pr in cooccupancy(o["psi"]):
+            seen.add(pr)
+    return len(seen)
+
+
 def fiber_row(cname, coin, reading, T=HORIZON):
     co, raw_c = branch_objects(T, True, reading, coin)
     fz, raw_f = branch_objects(T, False, reading, coin)
@@ -1481,6 +1704,8 @@ def fiber_row(cname, coin, reading, T=HORIZON):
                                           D_SHORT[di])["verdict"],
                           "frozen": fdep(fz, G_SHORT[gi],
                                          D_SHORT[di])["verdict"]})
+    sc, pc = occupancy_thresholds(co, T)
+    sf, pf = occupancy_thresholds(fz, T)
     return {
         "coin": cname, "reading": reading,
         "is_unitary_exactly": coin_unitary_exactly(coin),
@@ -1494,8 +1719,24 @@ def fiber_row(cname, coin, reading, T=HORIZON):
                               for r in sep},
         "identities_all_hold": all(r["holds"] for r in ident),
         "cells": cells,
-        "cell_signature": digest([(c["growth"], c["decoherence"],
-                                   c["coupled"], c["frozen"]) for c in cells]),
+        # THE THRESHOLD IS IN THE SEALED DIGEST (K2 M4): the prediction row
+        # claims it across the whole fiber, so the fiber census must carry it.
+        "single_site_threshold_coupled": sc,
+        "single_site_threshold_frozen": sf,
+        "cooccupancy_threshold_coupled": pc,
+        "cooccupancy_threshold_frozen": pf,
+        # ... and the COUNT is published beside it, because the count is
+        # coin-relative and only the threshold is invariant.  The control's
+        # count is a single object's, so it is the unambiguous carrier.
+        "cooccupancy_pairs_on_the_frozen_object_at_the_horizon":
+            max([o["cooc"] for o in fz if o["t"] == T] or [0]),
+        "distinct_cooccupancy_pairs_coupled_at_the_horizon":
+            cooccupancy_pairs_at(co, T),
+        "cell_signature": digest(
+            [(c["growth"], c["decoherence"], c["coupled"], c["frozen"])
+             for c in cells]
+            + [("SINGLE-SITE-THRESHOLD", str(sc), str(sf)),
+               ("COOCCUPANCY-THRESHOLD", str(pc), str(pf))]),
         "frozen_distinct_is_one_per_level": len(fz) == T,
     }
 
@@ -1519,8 +1760,16 @@ FOREIGN_FIELDS = (
 )
 
 
-def blindness_census(objs, coin):
+def blindness_census(objs, coin, reading=DELIVERED_READING):
+    """the delivered per-OBJECT census, and -- at 36x its evidence -- the
+    per-SITE-PAIR census the algebra actually predicts, plus the LAW's own
+    growth functional G5 run against the same fields."""
     rows = []
+    pair = {"pairs_meeting_in_at_most_one_occupied_link":
+            {"checks": 0, "moved": 0},
+            "pairs_meeting_in_two_or_more_occupied_links":
+            {"checks": 0, "moved": 0}}
+    g5 = {"checks": 0, "moved": 0}
     for fname, field in FOREIGN_FIELDS:
         moved = Counter()
         moved_without_cooc = Counter()
@@ -1537,15 +1786,201 @@ def blindness_census(objs, coin):
                     moved[k] += 1
                     if not o["cooc"]:
                         moved_without_cooc[k] += 1
+            ov = o["ov"]
+            base = o["pairsq"]
+            now = D["pairsq"]
+            for pi in range(len(PAIRS)):
+                cls = ("pairs_meeting_in_at_most_one_occupied_link"
+                       if ov[pi] <= 1 else
+                       "pairs_meeting_in_two_or_more_occupied_links")
+                pair[cls]["checks"] += 1
+                if now[pi] != base[pi]:
+                    pair[cls]["moved"] += 1
+            _w, epsf, _c = emission_weights(reading, Jn, field, den)
+            g5["checks"] += 1
+            if tuple(epsf) != o["G5"]:
+                g5["moved"] += 1
         rows.append({"field": fname,
                      "is_admissible": all(admissible(site_counts(field, s))
                                           for s in range(9)),
                      "is_the_welded_record": field == WELDED,
+                     "is_generated_by_this_run": False,
                      "checks": checks,
                      "moved": {k: moved.get(k, 0) for k in D_SHORT},
                      "moved_without_a_cooccupancy_pair":
                          {k: moved_without_cooc.get(k, 0) for k in D_SHORT}})
+    for cls in pair:
+        pair[cls]["static"] = pair[cls]["checks"] - pair[cls]["moved"]
+    return rows, pair, g5
+
+
+def site_dependent_census(objs, coins, reading=DELIVERED_READING):
+    """THEOREM A's HYPOTHESIS, ISOLATED AND MEASURED.  The same objects, the
+    same foreign fields, and a coin that is block-diagonal in the site index
+    and unitary on each block but DIFFERENT AT EVERY SITE.  If the diagonal
+    blindness needed site-uniformity, D1 would move here."""
+    base = []
+    for o in objs:
+        den = o["den"]
+        post = coin_apply_sitewise(list(o["psi"]), list(o["n"]), coins)
+        Jn = [absq(z) for z in post]
+        m = [Jn[s * 3] + Jn[s * 3 + 1] + Jn[s * 3 + 2] for s in range(9)]
+        D = decoherence(post, Jn, m, o["n"], den)
+        base.append((D["D1"], D["D2"], tuple(D["p"])))
+    checks = 0
+    d1_moved = 0
+    d2_moved = 0
+    marg_moved = 0
+    d1_values = set()
+    d2_values = set()
+    for _fname, field in FOREIGN_FIELDS:
+        for oi, o in enumerate(objs):
+            den = o["den"]
+            post = coin_apply_sitewise(list(o["psi"]), list(field), coins)
+            Jn = [absq(z) for z in post]
+            m = [Jn[s * 3] + Jn[s * 3 + 1] + Jn[s * 3 + 2] for s in range(9)]
+            D = decoherence(post, Jn, m, field, den)
+            b1, b2, bp = base[oi]
+            checks += 1
+            if D["D1"] != b1:
+                d1_moved += 1
+            if D["D2"] != b2:
+                d2_moved += 1
+            if tuple(D["p"]) != bp:
+                marg_moved += 1
+            if o["t"] == HORIZON:
+                d1_values.add(D["D1"])
+                d2_values.add(D["D2"])
+    uni = all(coins[s] == coins[0] for s in range(9))
+    return {"coin": "SITE-DEPENDENT: the declared fiber cycled over the nine "
+                    "sites -- block-diagonal and unitary on each block, and "
+                    "NOT the same at every site",
+            "is_site_uniform": uni,
+            "every_block_unitary": all(coin_unitary_exactly(c) for c in coins),
+            "object_field_pairs": checks,
+            "site_marginal_moved": marg_moved,
+            "D1_moved": d1_moved, "D2_moved": d2_moved,
+            "distinct_D1_at_the_horizon": len(d1_values),
+            "distinct_D2_at_the_horizon": len(d2_values)}
+
+
+def symbolic_cancellation():
+    """THE CANCELLATION VERIFIED AS ALGEBRA, not as a sample.  With M = 3C the
+    coin numerator (M M* = 9 I) and post(x,l) = sum_j M[l][j] w^{n_j(x)}
+    psi(x,j), the claim is
+
+        rho_xy = 9 . sum_j w^{n_j(x) - n_j(y)} psi(x,j) conj(psi(y,j)).
+
+    Both sides are bilinear in (psi_x, conj psi_y), so verifying them on the 9
+    monomial pairs that span that form PROVES the identity for every psi.  The
+    verification runs over all 729 residue pairs, for every declared coin,
+    coefficient by coefficient in Z[w]."""
+    residues = [(a, b, c) for a in range(3) for b in range(3) for c in range(3)]
+    rows = []
+    for cname, M in COIN_FIBER:
+        ident = 0
+        coeff = 0
+        bad = 0
+        for na in residues:
+            for nb in residues:
+                ident += 1
+                for j0 in range(3):
+                    for k0 in range(3):
+                        ax = [zmul(Z1 if j == j0 else Z0, WPOW[na[j] % 3])
+                              for j in range(3)]
+                        ay = [zmul(Z1 if j == k0 else Z0, WPOW[nb[j] % 3])
+                              for j in range(3)]
+                        lhs = Z0
+                        for l in range(3):
+                            ox = Z0
+                            oy = Z0
+                            for j in range(3):
+                                ox = zadd(ox, zmul(M[l][j], ax[j]))
+                                oy = zadd(oy, zmul(M[l][j], ay[j]))
+                            lhs = zadd(lhs, zmul(ox, zconj(oy)))
+                        rhs = (zmul((9, 0), WPOW[(na[j0] - nb[j0]) % 3])
+                               if j0 == k0 else Z0)
+                        coeff += 1
+                        if lhs != rhs:
+                            bad += 1
+        rows.append({"coin": cname, "residue_pair_identities": ident,
+                     "coefficient_checks": coeff, "mismatches": bad})
     return rows
+
+
+# THE THIRD CHANNEL (K2 M6/THEOREM C).  `coin_apply` reads WPOW[n % 3]: w is a
+# primitive CUBE root of unity, so the record enters the dynamics ONLY as
+# n mod 3.  Every psi-internal functional therefore sees at most a Z/3 shadow
+# of the metric.  The two declared perturbations below are CONGRUENT BUT
+# DIFFERENT records -- same residue at every cell, different record -- and the
+# census asks whether ANY declared functional distinguishes them.
+CONGRUENT_SHIFTS = (
+    ("PLUS-3-AT-ONE-CELL", tuple(3 if c == 0 else 0 for c in range(NCELL))),
+    ("PLUS-3-AT-EVERY-CELL", tuple(3 for _c in range(NCELL))),
+)
+
+
+def residue_census(objs, coin, arm_ladder, T=HORIZON):
+    """THE MOD-3 CHANNEL, MEASURED -- at BOTH grains.
+
+    THE RECORD THE MACHINE WRITES is censused on the anchored ladder (the
+    frontier's own records, level by level); THE RECORD THE COIN READS is
+    censused on this unit's objects, which read the record of the level below.
+    The two grains differ by exactly one step, and that is where the finding
+    is: the wraparound is WRITTEN inside the declared horizon and READ by no
+    object of it."""
+    rows = []
+    for sname, shift_vec in CONGRUENT_SHIFTS:
+        moved = Counter()
+        checks = 0
+        congruent = True
+        different = 0
+        for o in objs:
+            den = o["den"]
+            field = tuple(o["n"][c] + shift_vec[c] for c in range(NCELL))
+            if any((field[c] - o["n"][c]) % 3 for c in range(NCELL)):
+                congruent = False
+            if field != o["n"]:
+                different += 1
+            post = coin_apply(list(o["psi"]), list(field), coin)
+            Jn = [absq(z) for z in post]
+            m = [Jn[s * 3] + Jn[s * 3 + 1] + Jn[s * 3 + 2] for s in range(9)]
+            D = decoherence(post, Jn, m, field, den)
+            for k in D_SHORT:
+                checks += 1
+                if D[k] != o[k]:
+                    moved[k] += 1
+        rows.append({"field": sname,
+                     "congruent_at_every_cell": congruent,
+                     "objects_whose_record_actually_changed": different,
+                     "checks": checks,
+                     "moved": {k: moved.get(k, 0) for k in D_SHORT}})
+    # THE WRAPAROUND, censused at the delivered horizon, on both grains.
+    ladder = []
+    for t in range(1, T + 1):
+        sel = [o for o in objs if o["t"] == t]
+        lv = arm_ladder[t]
+        read_mx = max((max(o["n"]) for o in sel), default=0)
+        read_objs = sum(1 for o in sel if max(o["n"]) > 3)
+        read_cells = sum(sum(1 for c in o["n"] if c > 3) for o in sel)
+        ladder.append({
+            "t": t,
+            "written_max_cell_count": lv["max_cell_count"],
+            "written_branches_carrying_a_wrapped_cell":
+                lv["branches_carrying_a_wrapped_cell"],
+            "written_wrapped_cells": lv["wrapped_cells"],
+            "written_wrapped_cells_congruent_to_the_welded_value":
+                lv["wrapped_cells_congruent_to_the_welded_value"],
+            "objects_reading_the_record_here": len(sel),
+            "read_max_cell_count": read_mx,
+            "objects_reading_a_wrapped_cell": read_objs,
+            "wrapped_cells_read": read_cells})
+    wr = [r["t"] for r in ladder if r["written_wrapped_cells"]]
+    rd = [r["t"] for r in ladder if r["wrapped_cells_read"]]
+    first_written = min(wr) if wr else None
+    first_read = min(rd) if rd else (first_written + 1 if first_written
+                                     else None)
+    return rows, ladder, first_written, first_read
 
 
 def cooccupancy_ladder(objs, T=HORIZON):
@@ -1573,8 +2008,16 @@ def l1_price(objs):
             vals.add(a)
             if isqrt(a) ** 2 == a:
                 sq += 1
+    # THE HONEST DENOMINATOR (K1 MINOR-5): `modsq` carries the NONZERO entries
+    # only.  The full unordered off-diagonal population is 36 per object and
+    # the missing entries are exact zeros, which are rational.  Both fractions
+    # are published and the paper takes the larger denominator.
+    pop = len(objs) * len(PAIRS)
     return {"offdiagonal_entries": tot, "perfect_squares": sq,
             "irrational_moduli": tot - sq, "distinct_values": len(vals),
+            "offdiagonal_population": pop,
+            "zero_entries_which_are_rational": pop - tot,
+            "rational_moduli_over_the_full_population": pop - (tot - sq),
             "exact_l1_is_in_Q": tot == sq}
 
 
@@ -1691,7 +2134,8 @@ def raw_census():
     RAW["arms"] = arms
     say("  .. the delivered configuration: coin %s, reading %s"
         % (DELIVERED_COIN, DELIVERED_READING))
-    co, raw_c = branch_objects(HORIZON, True, DELIVERED_READING, GROVER_Z)
+    co, raw_c = branch_objects(HORIZON, True, DELIVERED_READING, GROVER_Z,
+                               keep_pairs=True)
     fz, raw_f = branch_objects(HORIZON, False, DELIVERED_READING, GROVER_Z)
     RAW["co"] = co
     RAW["fz"] = fz
@@ -1713,11 +2157,23 @@ def raw_census():
     RAW["separation"] = separation_ladder(co, fz)
     RAW["domination"] = domination(RAW["co_step"], RAW["fz_step"])
     say("  .. the blindness census on the declared foreign count fields")
-    RAW["blindness"] = blindness_census(co, GROVER_Z)
+    RAW["blindness"], RAW["pair_census"], RAW["g5_blindness"] = \
+        blindness_census(co, GROVER_Z)
     RAW["cooc_rows"], RAW["cooc_threshold"] = cooccupancy_ladder(co)
     RAW["cooc_rows_frozen"], RAW["cooc_threshold_frozen"] = \
         cooccupancy_ladder(fz)
+    RAW["occ_coupled"] = occupancy_thresholds(co)
+    RAW["occ_frozen"] = occupancy_thresholds(fz)
     RAW["l1"] = l1_price(co)
+    say("  .. THEOREM A isolated: the same census under a site-DEPENDENT coin")
+    RAW["site_dependent"] = site_dependent_census(co, SITE_DEPENDENT_COINS)
+    say("  .. THEOREM B as algebra: the cancellation, coefficient by "
+        "coefficient")
+    RAW["symbolic"] = symbolic_cancellation()
+    say("  .. THE THIRD CHANNEL: the mod-3 residue reading and its wraparound")
+    (RAW["residue"], RAW["residue_ladder"], RAW["wrap_written_at"],
+     RAW["wrap_read_at"]) = residue_census(
+         co, GROVER_Z, arms["A-COUPLED"]["ladder"])
     say("  .. the coin fiber (6 members) and the reading fiber (2 members)")
     fiber = []
     for cname, coin in COIN_FIBER:
@@ -1738,8 +2194,9 @@ def anchor_values(arms):
     produced; the gate compares them at EQUALITY, per object (#87)."""
     rows = []
 
-    def add(what, path, mine):
-        rows.append({"what": what, "receipt_path": path, "rebuilt": str(mine)})
+    def add(what, path, mine, token_key=None):
+        rows.append({"what": what, "receipt_path": path, "rebuilt": str(mine),
+                     "token_key": token_key})
 
     for nm, key in (("A-COUPLED", "A-COUPLED"), ("A-FROZEN", "A-FROZEN"),
                     ("B-COUPLED", "B-COUPLED")):
@@ -1759,7 +2216,7 @@ def anchor_values(arms):
         arms["B-COUPLED"]["ladder"][HORIZON]["admissibility_exit_probability"])
     add("frozen admissibility-exit probability",
         "ladder/rows", arms["A-FROZEN"]["ladder"][HORIZON]
-        ["admissibility_exit_probability"])
+        ["admissibility_exit_probability"], "frozen_exit")
     add("coupled link-class marginal at the horizon",
         "nontriviality/observables",
         arms["A-COUPLED"]["ladder"][HORIZON]["link_class_marginal"])
@@ -1770,7 +2227,8 @@ def anchor_values(arms):
         "nontriviality/observables",
         arms["A-FROZEN"]["ladder"][HORIZON]["p_site"])
     add("maximum cell count on the ladder", "ladder/rows",
-        [arms["A-COUPLED"]["ladder"][t]["max_cell_count"] for t in LADDER])
+        [arms["A-COUPLED"]["ladder"][t]["max_cell_count"] for t in LADDER],
+        "max_cell_count")
     add("branch-step count of the coupled arm",
         "ensemble/arms/A-COUPLED/checks/norm",
         sum(x["branches"] for x in arms["A-COUPLED"]["levels"][:-1]) + 1)
@@ -1793,7 +2251,30 @@ def locate_in_parent(rows, blob):
         found = all(('"%s"' % t) in hay or (": %s" % t) in hay
                     or (" %s," % t) in hay or ("%s\n" % t) in hay
                     for t in toks)
-        out.append({"what": r["what"], "tokens": len(toks), "located": found})
+        # A ROW WHOSE EVERY TOKEN IS A SINGLE DIGIT LOCATES IN ESSENTIALLY ANY
+        # JSON (K1 MINOR-6).  Such a row is located instead against ITS OWN
+        # RECEIPT KEY, in order: `"<key>": <token>` must occur for every token
+        # of the row, each after the last -- which a perturbed ladder fails.
+        longest = max((len(t) for t in toks), default=0)
+        how = "tokens of length %d" % longest
+        if longest < 4:
+            key = r.get("token_key")
+            how = "the key `%s` carrying each token in order" % key
+            pos = 0
+            for t in toks:
+                j = -1
+                for form in ('"%s": %s,' % (key, t), '"%s": %s\n' % (key, t),
+                             '"%s": "%s"' % (key, t)):
+                    k = hay.find(form, pos)
+                    if k >= 0 and (j < 0 or k < j):
+                        j = k
+                if j < 0:
+                    found = False
+                    break
+                pos = j + 1
+        out.append({"what": r["what"], "tokens": len(toks),
+                    "longest_token": longest, "located_by": how,
+                    "located": found})
     return out
 
 
@@ -1872,6 +2353,61 @@ MEASURE_LEDGER = {
     "measure_ledger": "COUNTING-ONLY: this ledger",
 }
 FRACTION_RE = re.compile(r"^-?\d+/\d+$")
+
+# --- the choice inventory (rendered as a table, and gated) -------------------
+# Item 12 is the one the first delivery left out and it is the choice that
+# decides the head: the frozen bar is applied to EXACT cells only.
+
+CHOICES = (
+    ("F1-MACHINE", "INHERITED", 1,
+     "paper-20's walk, emission law and update semantics, re-implemented from "
+     "the committed spec and anchored at its bytes", False),
+    ("F2-COIN", "DECLARED, WHOLE FIBER RUN", len(COIN_IDS),
+     "+/- Grover and the four hidden S_3-covariant classes; all six executed",
+     False),
+    ("F3-READING", "DECLARED, WHOLE FIBER RUN", len(READING_FIBER),
+     "Born menu against record menu; both executed", False),
+    ("F4-HORIZON", "DECLARED", 1,
+     "T = 5, the parent's; the whole ladder published", False),
+    ("F5-D-SET", "DECLARED", len(D_IDS),
+     "the three decoherence functionals; none privileged, all run", False),
+    ("F6-D2-UNITS", "DECLARED UNDER AN EXACTNESS CONDITION", 1,
+     "squared modulus, because the exact l_1 is not in Q here -- priced by "
+     "measurement, and no D2 verdict transfers to the l_1 form", False),
+    ("F7-G-SET", "DECLARED", len(G_IDS),
+     "four record functionals and the law's own rate", False),
+    ("F8-RESOLUTION", "DECLARED", len(RES_IDS),
+     "branch, site, step; the step column measured VACUOUS and stamped",
+     False),
+    ("F9-OBJECT-IDENTITY", "MEASURED", 1,
+     "branch-steps deduplicated by (step, state, record); the collapse "
+     "9751 -> 5 is forced by the frozen update semantics and stamped "
+     "DEFINITIONAL-THROUGH-THE-FROZEN-SEMANTICS", False),
+    ("F10-FOREIGN-FIELDS", "CITED", len(FOREIGN_FIELDS),
+     "paper-20's own declared set, adopted unchanged, and measured to be "
+     "foreign", False),
+    ("F11-FIBER-SHAPE", "DECLARED", 1,
+     "axes, not a product; stated in the receipt and in the paper", False),
+    ("F12-BAR-SCOPE", "DECLARED", 1,
+     "the frozen bar is applied to EXACT cells only; partial cells are not "
+     "adjudicated gravitational, and the control is structurally unable to "
+     "adjudicate them.  THIS IS THE CHOICE THAT DECIDES THE HEAD", True),
+    ("F13-COOCCUPANCY-PREDICATE", "DECLARED", 2,
+     "pairs sharing at least two occupied links, evaluated on the pre-coin "
+     "psi; the single-site predicate is declared and measured beside it and "
+     "they differ by one step", False),
+    ("F14-DOMINATION-TEST", "DECLARED", 1,
+     "per-step value-set comparison; COUPLED-DOMINATES iff coupled exceeds "
+     "frozen at every separating step, and the result is HORIZON-LOCAL",
+     False),
+    ("F15-CONGRUENT-FIELDS", "DECLARED", len(CONGRUENT_SHIFTS),
+     "the third channel's own declaration: two record perturbations congruent "
+     "mod 3 at every cell and different at every object", False),
+    ("F16-SITE-DEPENDENT-COIN", "DECLARED", 1,
+     "the THEOREM A demonstration coin -- block-diagonal, unitary per block, "
+     "not site-uniform; not a member of this unit's fiber and nothing about "
+     "this arena is claimed from it", False),
+)
 
 
 def measure_scan(R):
@@ -2040,9 +2576,8 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                       [c["what"] for c in checks if not c["equal"]],
                       ["FORGED"])
     loc = locate_in_parent(arows, R["_blobs"]["A-P20REC"])
-    located = pick("MUT-ANCHOR-LOCATED",
-                   sum(1 for l in loc if l["located"]),
-                   sum(1 for l in loc if l["located"]) - 1)
+    nloc = sum(1 for l in loc if l["located"])
+    located = pick("MUT-ANCHOR-LOCATED", nloc, nloc - 1)
     R["rebuild"] = {
         "spec_source": "A-P20CODE (read, never imported, never subprocessed)",
         "anchor_rows": checks, "location_rows": loc,
@@ -2124,6 +2659,17 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     kchk = sum(a["checks"].get("kernel_entry", 0)
                + a["checks"].get("kernel", 0)
                + a["checks"].get("law_native", 0) for a in C["arms"].values())
+    law_split = [{"class": cls, "checks": sum(a["checks"].get(cls, 0)
+                                              for a in C["arms"].values()),
+                  "violations": sum(a["violations"].get(cls, 0)
+                                    for a in C["arms"].values()),
+                  "kind": kind, "why": why}
+                 for cls, kind, why in LAW_CHECK_CLASSES]
+    split_sum = sum(r["checks"] for r in law_split)
+    stamp_bad_law = pick(
+        "MUT-LAW-STAMP",
+        [r["class"] for r in law_split if r["kind"] != "DEFINITIONAL"]
+        + ([] if split_sum == kchk else ["SPLIT"]), ["FORGED"])
     R["machine"] = {
         "coin": "C(x) = G . D(x), D(x) = diag(w^{n_l(x)}), site-block-diagonal",
         "shift": "|x, l> -> |x + l, l>",
@@ -2134,8 +2680,19 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                   "admissibility is a property of the RECORD and not a "
                   "precondition of the STEP",
         "unitarity_checks": usite, "unitarity_violations": uviol,
-        "law_checks": kchk, "law_violations": kviol}
-    reg(usite, uviol, kchk, kviol)
+        "unitarity_kind": CONTINGENT_MACHINE_ROW[1],
+        "unitarity_why": CONTINGENT_MACHINE_ROW[2],
+        "law_checks": kchk, "law_violations": kviol,
+        "law_checks_kind": "DEFINITIONAL",
+        "law_checks_classes": law_split,
+        "law_checks_disclosure":
+            "EVERY ONE OF THESE %s CHECKS IS AN IDENTITY IN THE DEFINITION OF "
+            "THE KERNEL AND NONE OF THEM IS A ROW THAT COULD HAVE FAILED; the "
+            "contentful sibling is the %s site-branch-step unitarity row, "
+            "which is stamped CONTINGENT" % (com(kchk), com(usite))}
+    reg(usite, uviol, kchk, kviol, split_sum)
+    for r in law_split:
+        reg(r["checks"], r["violations"])
     LD.gate("G-WALK-UNITARY",
             "the rebuilt step is unitary EXACTLY and PER OBJECT: each site of "
             "each branch of each step preserves its own mass, at %s "
@@ -2146,19 +2703,40 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "assumed: G(x,0) = 1 terminal, G(x,1) = M(x), and the kernel "
             "k_1 = q/M entry by entry, at %s per-object checks" % com(kchk),
             kviol == 0, "violations: %d" % kviol)
+    LD.gate("G-LAW-CHECK-CLASSES",
+            "AND THE COMPOSITE IS STAMPED RATHER THAN LEFT TO READ AS "
+            "EVIDENCE (the paper-20 precedent).  The %s kernel checks split "
+            "exactly as %s and EVERY ONE OF THE THREE CLASSES IS AN IDENTITY "
+            "IN THE DEFINITION OF THE KERNEL: none of them is a row that could "
+            "have failed for any coin, menu or record.  The class stamps and "
+            "the split are published, and the split is required to sum to the "
+            "composite.  The contentful sibling -- %s site-branch-step "
+            "unitarity checks -- is stamped CONTINGENT beside them"
+            % (com(kchk),
+               " + ".join("%s %s" % (com(r["checks"]), r["class"])
+                          for r in law_split), com(usite)),
+            not stamp_bad_law,
+            "classes not stamped DEFINITIONAL or a split that does not sum: "
+            "%s (split %s against composite %s)"
+            % (stamp_bad_law or "none", com(split_sum), com(kchk)))
     SEAL.take("SEAL-MACHINE", R)
 
     # -- SEC 4: the decoherence functionals --------------------------------
+    # THE SPECIFICATION CHECK IS PER OBJECT (#87), not a one-object probe:
+    # every object of both delivered arms is re-typed against each declared
+    # formula.  D3's is covered nowhere else in the file.
     spec_bad = []
-    probe = C["co"][-1]
-    p = probe["p"]
-    if probe["D1"] != sum(x * x for x in p):
-        spec_bad.append("D1-IPR-BORN-MENU-SITE")
-    if probe["D2"] != probe["purity"] - probe["D1"]:
-        spec_bad.append("D2-OFFDIAG")
-    if probe["D3"] != sum(probe["D3row"]):
-        spec_bad.append("D3-RECORD-BORN-DIVERGENCE")
-    spec_bad = pick("MUT-D-SPEC", spec_bad, ["D2-OFFDIAG"])
+    spec_checks = 0
+    for probe in C["co"] + C["fz"]:
+        p = probe["p"]
+        spec_checks += len(D_IDS)
+        if probe["D1"] != sum(x * x for x in p):
+            spec_bad.append("D1-IPR-BORN-MENU-SITE")
+        if probe["D2"] != probe["purity"] - probe["D1"]:
+            spec_bad.append("D2-OFFDIAG")
+        if probe["D3"] != sum(probe["D3row"]):
+            spec_bad.append("D3-RECORD-BORN-DIVERGENCE")
+    spec_bad = pick("MUT-D-SPEC", sorted(set(spec_bad)), ["D2-OFFDIAG"])
     nonexact = pick("MUT-D-EXACT",
                     sum(1 for o in C["co"] + C["fz"] for k in D_SHORT
                         if not isinstance(o[k], Fraction)), 1)
@@ -2178,14 +2756,17 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                  "arm of every fiber member, and no ranking among them is "
                  "asserted anywhere"}
     reg(len(D_IDS), len(C["co"]) + len(C["fz"]), l1["offdiagonal_entries"],
-        l1["perfect_squares"], l1["irrational_moduli"], l1["distinct_values"])
+        l1["perfect_squares"], l1["irrational_moduli"], l1["distinct_values"],
+        l1["offdiagonal_population"], l1["zero_entries_which_are_rational"],
+        l1["rational_moduli_over_the_full_population"], spec_checks)
     LD.gate("G-FUNCTIONALS-DECLARED",
             "the %d DECLARED decoherence functionals each carry a full "
-            "specification in this file and each is re-derived here from its "
-            "own published formula on a probe object: D1 from the Born menu's "
+            "specification in this file and each is re-derived from its own "
+            "published formula AT EVERY OBJECT OF BOTH DELIVERED ARMS (#87: "
+            "%s comparisons, not a one-object probe): D1 from the Born menu's "
             "site masses, D2 from the exact purity split, D3 from its own "
             "per-site rows.  None is privileged and all three are run "
-            "everywhere" % len(D_IDS),
+            "everywhere" % (len(D_IDS), com(spec_checks)),
             not spec_bad, "functionals whose value disagrees with their "
             "published specification: %s" % (spec_bad or "none"))
     LD.gate("G-FUNCTIONALS-EXACT",
@@ -2200,9 +2781,16 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "computable in Q on this arena, and that is MEASURED rather than "
             "asserted: of the %s off-diagonal |rho_xy|^2 entries this run "
             "produces, %s are perfect squares and %s are not, so %s exact "
-            "moduli are irrational and outside this unit's arithmetic"
+            "moduli are irrational and outside this unit's arithmetic.  THE "
+            "HONEST DENOMINATOR IS THE FULL POPULATION: %s unordered "
+            "off-diagonal entries over %s objects, of which %s are exact "
+            "zeros and therefore rational, so %s of %s moduli are rational"
             % (com(l1["offdiagonal_entries"]), com(l1["perfect_squares"]),
-               com(l1["irrational_moduli"]), com(l1["irrational_moduli"])),
+               com(l1["irrational_moduli"]), com(l1["irrational_moduli"]),
+               com(l1["offdiagonal_population"]), com(len(C["co"])),
+               com(l1["zero_entries_which_are_rational"]),
+               com(l1["rational_moduli_over_the_full_population"]),
+               com(l1["offdiagonal_population"])),
             irrational > 0,
             "irrational moduli: %d of %d" % (irrational,
                                              l1["offdiagonal_entries"]))
@@ -2272,12 +2860,29 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         ok = ((w == "EXACT" and row["failing_classes"] == 0
                and row["nonsingleton_classes"] > 0)
               or (w == "PARTIAL" and row["failing_classes"] > 0)
-              or (w == "VACUOUS" and row["nonsingleton_classes"] == 0)
+              # THE VACUOUS CLAUSE CARRIES BOTH CONJUNCTS (K3 MAJOR-1): a
+              # genuinely failing cell restamped VACUOUS with its failure
+              # counts left truthful passed the delivered predicate.
+              or (w == "VACUOUS" and row["nonsingleton_classes"] == 0
+                  and row["failing_classes"] == 0)
               or (w == "EMPTY" and row["classes"] == 0))
         if not ok:
             grid_bad.append("%s/%s/%s" % (row["resolution"], row["growth"],
                                           row["decoherence"]))
     grid_bad = pick("MUT-RELATION-EXACT", grid_bad, ["FORGED"])
+    stamp_bad_cells = []
+    for row in grid_c + grid_f:
+        want = row["verdict"]
+        if want == "PARTIAL" and row["failing_classes"] == \
+                row["nonsingleton_classes"]:
+            want = "TOTAL-FAILURE"
+        if row["stamp"] != want or (
+                row["passing_nonsingleton_classes"]
+                != row["nonsingleton_classes"] - row["failing_classes"]):
+            stamp_bad_cells.append("%s/%s/%s" % (row["resolution"],
+                                                 row["growth"],
+                                                 row["decoherence"]))
+    stamp_bad_cells = pick("MUT-TOTAL-FAILURE", stamp_bad_cells, ["FORGED"])
     vac_bad = pick("MUT-VACUITY",
                    sum(1 for row in grid_c + grid_f
                        if row["verdict"] == "EXACT"
@@ -2290,15 +2895,19 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
              ("RES-STEP", "frozen"): C["fz_step"]}
     if "census_bad" not in C:
         bad_recounts = 0
+        recount_numbers = 0
         for arm, grid in (("coupled", grid_c), ("frozen", grid_f)):
             for row in grid:
                 gk = G_SHORT[G_IDS.index(row["growth"])]
                 dk = D_SHORT[D_IDS.index(row["decoherence"])]
-                fc, fo = recount(pools[(row["resolution"], arm)], gk, dk)
+                fc, fo, ns = recount(pools[(row["resolution"], arm)], gk, dk)
+                recount_numbers += 3
                 if fc != row["failing_classes"] or fo != \
-                        row["objects_in_failing_classes"]:
+                        row["objects_in_failing_classes"] \
+                        or ns != row["nonsingleton_classes"]:
                     bad_recounts += 1
         C["census_bad"] = bad_recounts
+        C["recount_numbers"] = recount_numbers
     census_bad = pick("MUT-FAILURE-SET", C["census_bad"], 1)
     # THE NO-FITTED-FORM GATE.  This unit's relation layer must contain no
     # fitted, regressed, approximated or best-fit quantity: the only verdict
@@ -2314,10 +2923,59 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     exact_cells = [row for row in grid_c if row["verdict"] == "EXACT"]
     partial_cells = [row for row in grid_c if row["verdict"] == "PARTIAL"]
     vacuous_cells = [row for row in grid_c if row["verdict"] == "VACUOUS"]
+    total_failures = [row for row in grid_c if row["stamp"] == "TOTAL-FAILURE"]
+
+    def census_of(grid, key):
+        out = Counter(row[key] for row in grid)
+        return {k: out[k] for k in sorted(out)}
+
+    # THE CONTROL'S OWN GRID, published (K1 MINOR-1 / K2 M1 leg 3): the word
+    # this head carries is a word the null control earns at 38 of its own 45
+    # cells, and 26 of the 28 coupled PARTIAL cells carry the IDENTICAL word
+    # there.  That is why no PARTIAL cell is adjudicated gravitational.
+    same_word = 0
+    word_exceptions = []
+    for row in partial_cells:
+        fr = [x for x in grid_f if x["resolution"] == row["resolution"]
+              and x["growth"] == row["growth"]
+              and x["decoherence"] == row["decoherence"]][0]
+        if fr["verdict"] == row["verdict"]:
+            same_word += 1
+        else:
+            word_exceptions.append("%s/%s/%s -> %s"
+                                   % (row["resolution"], row["growth"],
+                                      row["decoherence"], fr["verdict"]))
+    frozen_bad = pick(
+        "MUT-FROZEN-GRID",
+        [] if (sum(census_of(grid_f, "verdict").values()) == len(grid_f)
+               and same_word + len(word_exceptions) == len(partial_cells))
+        else ["FORGED"], ["FORGED"])
     R["relation"] = {
         "resolutions": list(RES_IDS),
         "grid_coupled": grid_c, "grid_frozen": grid_f,
         "cells_per_arm": len(grid_c),
+        "verdict_census_coupled": census_of(grid_c, "verdict"),
+        "verdict_census_frozen": census_of(grid_f, "verdict"),
+        "stamp_census_coupled": census_of(grid_c, "stamp"),
+        "stamp_census_frozen": census_of(grid_f, "stamp"),
+        "total_failure_cells": [
+            {"resolution": r["resolution"], "growth": r["growth"],
+             "decoherence": r["decoherence"],
+             "failing_classes": r["failing_classes"],
+             "nonsingleton_classes": r["nonsingleton_classes"]}
+            for r in total_failures],
+        "total_failures": len(total_failures),
+        "best_passing_fraction_among_the_partial_cells":
+            "%d of %d" % max(
+                ((r["passing_nonsingleton_classes"],
+                  r["nonsingleton_classes"]) for r in partial_cells),
+                key=lambda p: (Fraction(p[0], p[1]), p[1])),
+        "coupled_partial_cells_with_the_identical_word_on_the_control":
+            same_word,
+        "coupled_partial_cells_with_a_different_word_on_the_control":
+            word_exceptions,
+        "recounted_numbers_per_cell": 3,
+        "recounted_numbers": C["recount_numbers"],
         "exact_cells": [{"resolution": r["resolution"], "growth": r["growth"],
                          "decoherence": r["decoherence"],
                          "nonsingleton_classes": r["nonsingleton_classes"]}
@@ -2331,9 +2989,16 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         "test": "EQUALITY-GATED: D is a function of G exactly when every "
                 "G-class carries one D-value; nothing is fitted, regressed or "
                 "approximated anywhere"}
-    reg(len(grid_c), len(exact_cells), len(partial_cells), len(vacuous_cells))
+    reg(len(grid_c), len(exact_cells), len(partial_cells), len(vacuous_cells),
+        len(total_failures), len(partial_cells) - len(total_failures),
+        same_word, C["recount_numbers"])
+    for k, v in list(R["relation"]["verdict_census_frozen"].items()) + \
+            list(R["relation"]["stamp_census_coupled"].items()) + \
+            list(R["relation"]["stamp_census_frozen"].items()):
+        reg(v)
     for row in grid_c + grid_f:
         reg(row["objects"], row["classes"], row["nonsingleton_classes"],
+            row["passing_nonsingleton_classes"],
             row["failing_classes"], row["objects_in_failing_classes"],
             row["distinct_D_values"],
             row["distinct_D_values_in_failing_classes"])
@@ -2343,8 +3008,14 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "-- are decided by EQUALITY inside a growth class and by nothing "
             "else, on both arms, and every cell's published verdict word is "
             "required to agree with its own censused counts (#87: the "
-            "predicate is per cell, never on the tally)"
-            % (len(grid_c), len(D_IDS), len(G_IDS), len(RES_IDS)),
+            "predicate is per cell, never on the tally).  ON THE DELIVERED ARM "
+            "%d EXACT, %d PARTIAL, %d VACUOUS; ON THE FROZEN CONTROL %s -- "
+            "both censuses are published and neither stands for the other"
+            % (len(grid_c), len(D_IDS), len(G_IDS), len(RES_IDS),
+               len(exact_cells), len(partial_cells), len(vacuous_cells),
+               ", ".join("%d %s" % (v, k) for k, v
+                         in sorted(R["relation"]["verdict_census_frozen"]
+                                   .items()))),
             not grid_bad, "cells whose word disagrees with their census: %s"
             % (grid_bad or "none"))
     LD.gate("G-VACUITY-DECLARED",
@@ -2352,16 +3023,57 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "VACUOUS rather than EXACT -- the honest denominator of this whole "
             "section.  %d of the %d coupled cells and the RES-STEP row of "
             "every column are vacuous by construction, and the stamp is "
-            "checked per cell" % (len(vacuous_cells), len(grid_c)),
+            "checked per cell against BOTH conjuncts: no non-singleton class "
+            "AND no failing class" % (len(vacuous_cells), len(grid_c)),
             vac_bad == 0,
             "cells published EXACT with no non-singleton class: %d" % vac_bad)
     LD.gate("G-FAILURE-CENSUS",
             "every PARTIAL cell reports its FAILURE SET exactly -- the failing "
             "classes, the objects inside them and the distinct D-values those "
-            "classes carry -- and each census is RECOUNTED by a second pass "
-            "that shares no intermediate with the first, over all %d cells of "
-            "both arms" % (len(grid_c) + len(grid_f)),
+            "classes carry -- and THREE numbers per cell are RECOUNTED by a "
+            "second pass that shares no intermediate with the first: the "
+            "failing classes, the objects inside them, AND THE NON-SINGLETON "
+            "COUNT THE VACUOUS STAMP RESTS ON, over all %d cells of both arms "
+            "at %d recounted numbers"
+            % (len(grid_c) + len(grid_f), C["recount_numbers"]),
             census_bad == 0, "cells whose recount disagrees: %d" % census_bad)
+    LD.gate("G-TOTAL-FAILURE-STAMP",
+            "THE VERDICT GRAMMAR HAS NO WORD FOR A CELL IN WHICH EVERY "
+            "NON-SINGLETON CLASS FAILS, so this unit publishes a STAMP beside "
+            "the equality-gated word rather than letting PARTIAL absorb it: "
+            "%d of the %d coupled PARTIAL cells carry NO partial relation at "
+            "all and are stamped TOTAL-FAILURE, and the honest stamp census "
+            "of the delivered arm is %s against the verdict census %s.  The "
+            "best passing fraction anywhere in the partial cells is %s"
+            % (len(total_failures), len(partial_cells),
+               ", ".join("%d %s" % (v, k) for k, v
+                         in sorted(R["relation"]["stamp_census_coupled"]
+                                   .items())),
+               ", ".join("%d %s" % (v, k) for k, v
+                         in sorted(R["relation"]["verdict_census_coupled"]
+                                   .items())),
+               R["relation"]["best_passing_fraction_among_the_partial_cells"]),
+            not stamp_bad_cells,
+            "cells whose stamp or passing count disagrees with their own "
+            "census: %s" % (stamp_bad_cells or "none"))
+    LD.gate("G-FROZEN-GRID-CENSUS",
+            "AND THE CONTROL'S OWN GRID IS PUBLISHED, not summarised away: %s "
+            "of its %d cells, and %d of the %d coupled PARTIAL cells carry the "
+            "IDENTICAL verdict word on the control (%d do not: %s).  A head "
+            "word the null control earns at most of its own cells is not "
+            "reporting a finding, which is exactly why no PARTIAL cell is "
+            "adjudicated gravitational by any gate"
+            % (", ".join("%d %s" % (v, k) for k, v
+                         in sorted(R["relation"]["verdict_census_frozen"]
+                                   .items())),
+               len(grid_f), same_word, len(partial_cells),
+               len(word_exceptions), word_exceptions or "none"),
+            not frozen_bad,
+            "frozen grid rows censused %d of %d; coupled PARTIAL cells "
+            "accounted %d of %d" % (sum(R["relation"]["verdict_census_frozen"]
+                                        .values()), len(grid_f),
+                                    same_word + len(word_exceptions),
+                                    len(partial_cells)))
     LD.gate("G-NO-FITTED-FORM",
             "FITTED FORMS ARE BARRED by the pin and the bar is a scan, not a "
             "promise: this unit's whole relation layer is searched for the "
@@ -2414,6 +3126,18 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                               "reading members at the delivered coin.  The "
                               "cross-product is NOT claimed"
                               % len(COIN_IDS),
+        "cooccupancy_threshold_is_invariant_across_the_fiber":
+            len({(r["cooccupancy_threshold_coupled"],
+                  r["cooccupancy_threshold_frozen"]) for r in fiber}) == 1,
+        "single_site_threshold_is_invariant_across_the_fiber":
+            len({(r["single_site_threshold_coupled"],
+                  r["single_site_threshold_frozen"]) for r in fiber}) == 1,
+        "cooccupancy_counts_on_the_frozen_object_at_the_horizon":
+            sorted({r["cooccupancy_pairs_on_the_frozen_object_at_the_horizon"]
+                    for r in fiber}),
+        "cooccupancy_count_is_coin_relative":
+            len({r["cooccupancy_pairs_on_the_frozen_object_at_the_horizon"]
+                 for r in fiber}) > 1,
         "rows": fiber, "members_executed": executed,
         "members_declared": want_members,
         "delivered_signature": delivered["cell_signature"]}
@@ -2431,8 +3155,17 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "members, paper-20's own witnesses -- are run to the full horizon "
             "on BOTH arms, and each is required to reproduce the delivered "
             "member's ENTIRE relation signature: all %d grid cells' verdict "
-            "words on both arms, the separation ladder, and every identity"
-            % (len(COIN_IDS), len(delivered["cells"])),
+            "words on both arms, the separation ladder, every identity, AND "
+            "BOTH OCCUPANCY THRESHOLDS ON BOTH ARMS -- the digest carries the "
+            "threshold because the prediction row claims it across the fiber.  "
+            "The threshold is invariant (%s on both arms at every member) "
+            "while the co-occupancy COUNT is not: the control's own step-%d "
+            "object carries %s pairs depending on the coin"
+            % (len(COIN_IDS), len(delivered["cells"]),
+               delivered["cooccupancy_threshold_coupled"], HORIZON,
+               " / ".join(str(x) for x in R["forcedness"]
+                          ["cooccupancy_counts_on_the_frozen_object_at_the_"
+                           "horizon"])),
             not fiber_bad, "fiber members whose verdict shape differs: %s"
             % (fiber_bad or "none"))
     LD.gate("G-FIBER-EXECUTED",
@@ -2488,8 +3221,33 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         "frozen_control_executed": frozen_ran,
         "frozen_branch_steps_raw": C["raw_f"],
         "frozen_branch_steps_distinct": len(C["fz"]),
-        "identities_frozen": C["identities_frozen"]}
-    reg(len(excl), len(excluded), len(gravitational))
+        "identities_frozen": C["identities_frozen"],
+        "bar_scope": "THE BAR IS APPLIED TO EXACT CELLS ONLY, and that is a "
+                     "DECLARED choice, not an assumption: a relation that does "
+                     "not HOLD cannot hold IDENTICALLY FROZEN.  Its "
+                     "consequence is that the PARTIAL cells' gravitational "
+                     "status is decided by NO GATE AT ALL, and the control "
+                     "cannot decide it either, being a degenerate one-class "
+                     "grid of %d objects.  It is item F12 of the choice "
+                     "inventory" % len(C["fz"]),
+        "the_zero_is_forced": {
+            "why": "the single EXACT cell relates D1 to G5, and BOTH SIDES "
+                   "are functions of the site marginal alone: D1 = sum_x "
+                   "p(x)^2 and eps(x) = sum_l p(x) k_1(l|x) = p(x).  The site "
+                   "marginal is record-blind BY THEOREM A, so the identity "
+                   "could not have failed on the frozen stage from either "
+                   "side.  The exclusion was not a measurement that came out "
+                   "one way; it was compelled -- and the four genuine record "
+                   "functionals G1..G4 produce no exact cell at any "
+                   "resolution",
+            "D1_moves_on_the_foreign_fields":
+                sum(r["moved"]["D1"] for r in C["blindness"]),
+            "G5_moves_on_the_foreign_fields": C["g5_blindness"]["moved"],
+            "object_field_pairs": C["g5_blindness"]["checks"],
+            "exact_cells_from_G1_to_G4": sum(
+                1 for r in exact_cells if r["growth"] != "G5-RATE-SITE")}}
+    reg(len(excl), len(excluded), len(gravitational),
+        R["exclusion"]["the_zero_is_forced"]["exact_cells_from_G1_to_G4"])
     LD.gate("G-FROZEN-CONTROL",
             "THE MANDATORY FROZEN CONTROL IS EXECUTED, not declared: the same "
             "walk, the same emission rule and the same branching on counts "
@@ -2503,8 +3261,22 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "THE EXCLUSION IS A GATE.  Every EXACT cell of the coupled arm is "
             "re-evaluated on the control and excluded if it survives there: %d "
             "exact cells tested, %d excluded as holding identically frozen, %d "
-            "surviving as gravitational-decoherence relations"
-            % (len(excl), len(excluded), len(gravitational)),
+            "surviving as gravitational-decoherence relations.  AND THE ZERO "
+            "IS FORCED, NOT CONTINGENT: the one exact cell relates a "
+            "record-blind decoherence functional to a record-blind growth "
+            "functional -- D1 moves %d times and G5 moves %d times over the "
+            "same %s object-and-field pairs -- so it could not have failed on "
+            "the control from either side, and the %d genuine record "
+            "functionals G1..G4 produce no exact cell at any resolution.  THE "
+            "BAR'S SCOPE IS DECLARED (F12): it is applied to EXACT cells only, "
+            "so the PARTIAL cells are adjudicated gravitational by no gate"
+            % (len(excl), len(excluded), len(gravitational),
+               R["exclusion"]["the_zero_is_forced"]
+               ["D1_moves_on_the_foreign_fields"],
+               R["exclusion"]["the_zero_is_forced"]
+               ["G5_moves_on_the_foreign_fields"],
+               com(R["exclusion"]["the_zero_is_forced"]["object_field_pairs"]),
+               len(G_IDS) - 1),
             len(excluded) + len(gravitational) == len(excl),
             "tested %d, excluded %d, gravitational %d"
             % (len(excl), len(excluded), len(gravitational)))
@@ -2559,29 +3331,116 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     cooc_threshold = pick("MUT-COOCC-THRESHOLD", C["cooc_threshold"], 3)
     bl_checks = sum(r["checks"] for r in bl)
     d2_moves = sum(r["moved"]["D2"] for r in bl)
+    obj_field_pairs = bl_checks // len(D_SHORT)
+    pc = C["pair_census"]
+    LOW = "pairs_meeting_in_at_most_one_occupied_link"
+    HIGH = "pairs_meeting_in_two_or_more_occupied_links"
+    pair_bad = pick("MUT-PAIR-MECHANISM", pc[LOW]["moved"], 1)
+    g5_moves = pick("MUT-BLIND-G5", C["g5_blindness"]["moved"], 1)
+    sd = C["site_dependent"]
+    sd_bad = pick("MUT-THEOREM-A",
+                  ([] if (sd["D1_moved"] == 0 and sd["site_marginal_moved"] == 0
+                          and not sd["is_site_uniform"]
+                          and sd["every_block_unitary"]
+                          and sd["D2_moved"] > 0) else ["FORGED"]), ["FORGED"])
+    sym = C["symbolic"]
+    sym_bad = pick("MUT-THEOREM-B", sum(r["mismatches"] for r in sym), 1)
+    occ_c, occ_f = C["occ_coupled"], C["occ_frozen"]
+    occ_bad = pick(
+        "MUT-OCCUPANCY",
+        ([] if (occ_c == occ_f and occ_c[0] is not None
+                and occ_c[1] is not None and occ_c[0] + 1 == occ_c[1]
+                and occ_c[1] == C["cooc_threshold"]) else ["FORGED"]),
+        ["FORGED"])
+    generated = {o["n"] for o in C["co"]}
+    foreign_bad = pick("MUT-FOREIGN-FIELD",
+                       [nm for nm, fl in FOREIGN_FIELDS if fl in generated],
+                       ["STALE"])
     R["mechanism"] = {
         "foreign_fields": [{"field": r["field"],
                             "is_admissible": r["is_admissible"],
                             "is_the_welded_record": r["is_the_welded_record"]}
                            for r in bl],
         "rows": bl, "checks": bl_checks,
+        "object_field_pairs": obj_field_pairs,
         "D1_moves": d1_moves, "D2_moves": d2_moves, "D3_moves": d3_moves,
         "D2_moves_without_a_cooccupancy_pair": cooc_bad,
+        "G5_moves": g5_moves,
+        "G5_checks": C["g5_blindness"]["checks"],
+        "foreign_fields_generated_by_this_run": foreign_bad,
+        "pair_census": pc,
+        "pair_checks": pc[LOW]["checks"] + pc[HIGH]["checks"],
+        "site_dependent_coin": sd,
+        "symbolic_cancellation": sym,
+        "symbolic_identities": sum(r["residue_pair_identities"] for r in sym),
+        "symbolic_coefficient_checks": sum(r["coefficient_checks"]
+                                           for r in sym),
         "cooccupancy_ladder_coupled": C["cooc_rows"],
         "cooccupancy_ladder_frozen": C["cooc_rows_frozen"],
         "cooccupancy_threshold_coupled": cooc_threshold,
         "cooccupancy_threshold_frozen": C["cooc_threshold_frozen"],
+        "single_site_threshold_coupled": occ_c[0],
+        "single_site_threshold_frozen": occ_f[0],
+        "theorem_A": "SITE-MARGINAL BLINDNESS.  Let the state live on sites x "
+                     "fiber and let the record-dependent step act as U(n) = "
+                     "(+)_x U_x(n), BLOCK-DIAGONAL IN THE SITE INDEX with each "
+                     "block UNITARY on that site's fiber.  Then for every psi "
+                     "and every n the site marginal p(x) = ||(U(n)psi)_x||^2 "
+                     "is independent of n, so EVERY functional of the site "
+                     "marginal alone -- D1 = sum_x p(x)^2, the Born site menu, "
+                     "the emission rate eps(x), any Renyi entropy or inverse "
+                     "participation of p -- is record-blind at that step.  "
+                     "SITE-UNIFORMITY IS NOT A HYPOTHESIS, and neither is the "
+                     "arena, the graph, the fiber dimension, the horizon, the "
+                     "number of sites nor the order of w.  This is the unit's "
+                     "exportable statement and it is arena-free",
+        "theorem_B": "THE OFF-DIAGONAL REDUCTION.  If in addition U_x(n) = "
+                     "G . D_x(n) with G SITE-UNIFORM unitary and D_x(n) = "
+                     "diag(w^{n_l(x)}) unimodular diagonal in the fiber basis, "
+                     "then rho_xy = sum_l w^{n_l(x) - n_l(y)} psi(x,l) "
+                     "conj(psi(y,l)), so for any pair with at most one shared "
+                     "occupied link the sum has at most one term and |rho_xy| "
+                     "is record-independent.  CO-OCCUPANCY-NECESSITY IS "
+                     "THEREFORE A THEOREM AND THE CENSUS CONFIRMS IT RATHER "
+                     "THAN ESTABLISHING IT.  Site-uniformity is a hypothesis "
+                     "HERE and only here",
+        "theorem_C": "THE RESIDUE READING.  coin_apply reads WPOW[n % 3] and w "
+                     "is a primitive CUBE root of unity, so the record enters "
+                     "the dynamics ONLY as n mod 3: the record the machine "
+                     "WRITES is unbounded, the record the coin READS is Z/3.  "
+                     "Measured in the third-channel block",
+        "scope": "THE MEASUREMENTS ARE ARENA-BOUND; THEOREM A IS NOT.  The "
+                 "SCOPE box binds every number in this unit to this arena at "
+                 "this horizon; theorem A is a statement about the FORM of the "
+                 "step and licenses nothing numerical anywhere, which is what "
+                 "makes the blindness a scope limit on the programme rather "
+                 "than on this arena alone",
         "statement": "rho_xy = sum_l w^{n_l(x) - n_l(y)} psi(x,l) "
-                     "conj(psi(y,l)): the coin is unitary and the same at "
-                     "every site, so it CANCELS out of the site-basis density "
-                     "matrix and the record survives only on links occupied at "
-                     "BOTH ends.  A pair of sites meeting in at most one link "
-                     "contributes a pure global phase and cannot see the "
-                     "record at all; the diagonal x = y always meets itself in "
-                     "every occupied link with zero phase difference, which is "
-                     "why D1 is record-blind everywhere"}
+                     "conj(psi(y,l)).  Because the coin is unitary and "
+                     "SITE-BLOCK-DIAGONAL it cancels out of the DIAGONAL of "
+                     "the site-basis density matrix (THEOREM A); because it is "
+                     "IN ADDITION the same at every site, the off-diagonal "
+                     "reduces to the displayed form (THEOREM B) and the record "
+                     "survives only on links occupied at BOTH ends.  A pair of "
+                     "sites meeting in at most one link contributes a pure "
+                     "global phase and cannot see the record at all; the "
+                     "diagonal x = y always meets itself in every occupied "
+                     "link with zero phase difference, which is why D1 is "
+                     "record-blind everywhere"}
     reg(bl_checks, d1_moves, d2_moves, d3_moves, cooc_threshold,
-        len(FOREIGN_FIELDS))
+        len(FOREIGN_FIELDS), obj_field_pairs, g5_moves,
+        C["g5_blindness"]["checks"], occ_c[0], occ_f[0],
+        pc[LOW]["checks"], pc[LOW]["moved"], pc[LOW]["static"],
+        pc[HIGH]["checks"], pc[HIGH]["moved"], pc[HIGH]["static"],
+        pc[LOW]["checks"] + pc[HIGH]["checks"], len(PAIRS),
+        sd["object_field_pairs"], sd["D1_moved"], sd["D2_moved"],
+        sd["site_marginal_moved"], sd["distinct_D1_at_the_horizon"],
+        sd["distinct_D2_at_the_horizon"],
+        R["mechanism"]["symbolic_identities"],
+        R["mechanism"]["symbolic_coefficient_checks"])
+    for r in sym:
+        reg(r["residue_pair_identities"], r["coefficient_checks"],
+            r["mismatches"])
     LD.gate("G-BLINDNESS-D1",
             "THE INHERITED DECOHERENCE OBSERVABLE IS RECORD-BLIND, MEASURED.  "
             "The site-basis inverse participation of the Born menu is "
@@ -2592,8 +3451,9 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "cannot change a site's own mass; the record enters D1 only "
             "through the walk's history, with a delay"
             % (len(FOREIGN_FIELDS), com(len(C["co"]))),
-            d1_moves == 0, "D1 movements in %s checks: %d"
-            % (com(bl_checks), d1_moves))
+            d1_moves == 0, "D1 movements in %s object-and-field pairs -- D1's "
+            "OWN denominator, of %s checks over the three functionals: %d"
+            % (com(obj_field_pairs), com(bl_checks), d1_moves))
     LD.gate("G-BLINDNESS-D3",
             "THE INSTRUMENT IS TWO-WAY, which is what makes the blindness a "
             "measurement rather than a property of the census: on the same "
@@ -2619,7 +3479,190 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             cooc_threshold == C["cooc_threshold_frozen"],
             "coupled threshold %s, frozen threshold %s"
             % (cooc_threshold, C["cooc_threshold_frozen"]))
+    LD.gate("G-OCCUPANCY-PREDICATES",
+            "TWO OCCUPANCY PREDICATES GOVERN THIS UNIT AND THEY DIFFER BY ONE "
+            "STEP, and both are measured rather than one being described while "
+            "the other is counted.  A SITE occupied on two links first appears "
+            "at step %s: from there the record moves the cell masses, so the "
+            "arms' states differ from the next step and D1 and D2 separate at "
+            "exactly %s.  A PAIR of sites sharing two occupied links first "
+            "appears at step %s: that is the predicate D2's off-diagonal "
+            "blindness turns on and the one the census above measures.  Both "
+            "are identical on the two arms, and the gate binds the "
+            "one-step gap" % (occ_c[0], occ_c[0] + 1, occ_c[1]),
+            not occ_bad,
+            "single-site threshold coupled %s frozen %s; pair threshold "
+            "coupled %s frozen %s; the gap is one step %s"
+            % (occ_c[0], occ_f[0], occ_c[1], occ_f[1],
+               occ_c[0] + 1 == occ_c[1]))
+    LD.gate("G-PAIR-MECHANISM",
+            "THE MECHANISM AT THE GRAIN ITS OWN ALGEBRA PREDICTS, %dx the "
+            "per-object evidence.  THEOREM B says |rho_xy|^2 is "
+            "record-independent for EVERY site pair meeting in at most one "
+            "occupied link, whatever the rest of the object does.  Measured "
+            "over %s objects x %d fields x %d site pairs = %s pair-checks: "
+            "%s checks at overlap <= 1 with %d moved, and %s checks at "
+            "co-occupancy with %s moved and %s static -- so co-occupancy is "
+            "NECESSARY AND NOT SUFFICIENT at the finest grain too"
+            % (len(PAIRS), com(len(C["co"])), len(FOREIGN_FIELDS), len(PAIRS),
+               com(pc[LOW]["checks"] + pc[HIGH]["checks"]),
+               com(pc[LOW]["checks"]), pc[LOW]["moved"],
+               com(pc[HIGH]["checks"]), com(pc[HIGH]["moved"]),
+               com(pc[HIGH]["static"])),
+            pair_bad == 0,
+            "site pairs meeting in at most one occupied link whose |rho_xy|^2 "
+            "moved: %d" % pair_bad)
+    LD.gate("G-BLINDNESS-G5",
+            "AND THE GROWTH FUNCTIONAL OF THE ONE EXACT CELL IS RECORD-BLIND "
+            "TOO.  The LAW's own rate eps(x) is re-read on the same %d foreign "
+            "fields at every one of the %s coupled objects and does not move "
+            "once in %s object-and-field pairs: under both readings eps(x) is "
+            "the post-coin site mass, so THEOREM A applies to G5 verbatim.  "
+            "THE SINGLE EXACT CELL OF THE WHOLE GRID THEREFORE RELATES A "
+            "RECORD-BLIND DECOHERENCE FUNCTIONAL TO A RECORD-BLIND GROWTH "
+            "FUNCTIONAL, which is the sharpest ground the frozen exclusion has"
+            % (len(FOREIGN_FIELDS), com(len(C["co"])),
+               com(C["g5_blindness"]["checks"])),
+            g5_moves == 0, "G5 movements: %d" % g5_moves)
+    LD.gate("G-THEOREM-A",
+            "THEOREM A'S HYPOTHESIS IS ISOLATED AND MEASURED, not assumed: the "
+            "same objects and the same foreign fields are re-read under a coin "
+            "that is BLOCK-DIAGONAL IN THE SITE INDEX and exactly unitary on "
+            "every block but NOT THE SAME AT EVERY SITE.  The site marginal "
+            "moves %d times and D1 moves %d times in %s object-and-field "
+            "pairs, while D2 moves %s -- so the diagonal blindness survives "
+            "site-variation and the correct hypothesis is BLOCK-DIAGONALITY, "
+            "not site-uniformity.  The demonstration coin is not a member of "
+            "this unit's fiber and nothing about this arena is claimed from it"
+            % (sd["site_marginal_moved"], sd["D1_moved"],
+               com(sd["object_field_pairs"]), com(sd["D2_moved"])),
+            not sd_bad,
+            "site-uniform %s, every block unitary %s, site marginal moved %d, "
+            "D1 moved %d, D2 moved %d"
+            % (sd["is_site_uniform"], sd["every_block_unitary"],
+               sd["site_marginal_moved"], sd["D1_moved"], sd["D2_moved"]))
+    LD.gate("G-THEOREM-B",
+            "AND THE CANCELLATION IS VERIFIED AS ALGEBRA, not as a sample.  "
+            "With M = 3C the coin numerator, rho_xy = 9 . sum_j w^{n_j(x) - "
+            "n_j(y)} psi(x,j) conj(psi(y,j)) is checked COEFFICIENT BY "
+            "COEFFICIENT in Z[w] over all %s residue pairs across the %d "
+            "declared coins -- %s identities at %s coefficient checks -- and "
+            "because both sides are bilinear in (psi_x, conj psi_y) the %d "
+            "monomial pairs verified span the form, so the check is a PROOF "
+            "for every psi rather than a sample of them"
+            % (com(sym[0]["residue_pair_identities"]), len(COIN_FIBER),
+               com(R["mechanism"]["symbolic_identities"]),
+               com(R["mechanism"]["symbolic_coefficient_checks"]), 9),
+            sym_bad == 0, "coefficient mismatches: %d" % sym_bad)
+    LD.gate("G-FOREIGN-FIELDS-FOREIGN",
+            "and the fields ARE foreign, measured rather than asserted: none "
+            "of the %d declared count fields is among the %s records this run "
+            "generates on the coupled arm, and %d of them are not even "
+            "admissible"
+            % (len(FOREIGN_FIELDS), com(len(generated)),
+               sum(1 for r in bl if not r["is_admissible"])),
+            not foreign_bad,
+            "declared foreign fields this run actually generates: %s"
+            % (foreign_bad or "none"))
     SEAL.take("SEAL-MECHANISM", R)
+
+    # -- SEC 8b: THE THIRD CHANNEL -- the mod-3 residue reading -------------
+    res_rows = C["residue"]
+    res_state = sum(r["moved"]["D1"] + r["moved"]["D2"] for r in res_rows)
+    res_state = pick("MUT-RESIDUE-BLIND", res_state, 1)
+    res_reads = pick("MUT-RESIDUE-TWO-WAY",
+                     sum(r["moved"]["D3"] for r in res_rows), 0)
+    res_checks = sum(r["checks"] for r in res_rows)
+    lad = C["residue_ladder"]
+    wrote = sum(r["written_wrapped_cells"] for r in lad)
+    as_welded = sum(r["written_wrapped_cells_congruent_to_the_welded_value"]
+                    for r in lad)
+    readc = sum(r["wrapped_cells_read"] for r in lad)
+    wrap_bad = pick(
+        "MUT-WRAPAROUND",
+        ([] if (wrote > 0 and as_welded == wrote and readc == 0
+                and C["wrap_written_at"] == HORIZON
+                and C["wrap_read_at"] == HORIZON + 1) else ["FORGED"]),
+        ["FORGED"])
+    R["residue"] = {
+        "reading": "coin_apply reads WPOW[n % 3]: w is a primitive CUBE root "
+                   "of unity, so the record enters the dynamics ONLY as "
+                   "n mod 3",
+        "order_of_the_record_phase": 3,
+        "congruent_fields": [{"field": r["field"],
+                              "congruent_at_every_cell":
+                                  r["congruent_at_every_cell"],
+                              "objects_whose_record_actually_changed":
+                                  r["objects_whose_record_actually_changed"]}
+                             for r in res_rows],
+        "rows": res_rows, "checks": res_checks,
+        "state_internal_moves": res_state,
+        "record_reading_moves": res_reads,
+        "wraparound_ladder": lad,
+        "wrapped_cells_written": wrote,
+        "wrapped_cells_written_congruent_to_the_welded_value": as_welded,
+        "wrapped_cells_read": readc,
+        "first_step_at_which_a_wrapped_cell_is_written": C["wrap_written_at"],
+        "first_step_at_which_a_wrapped_cell_would_be_read": C["wrap_read_at"],
+        "verdict": "THIRD-CHANNEL-PRESENT-AND-NOT-EXERCISED",
+        "what_it_says":
+            "The channel is REAL and it is one-sided: the two state-internal "
+            "functionals cannot distinguish congruent-but-different records AT "
+            "ALL, at 0 of their own checks, while the record-reading one does.  "
+            "And the wraparound is reached INSIDE the declared horizon on the "
+            "record the machine WRITES -- the anchored maximum-cell ladder "
+            "reaches 4 at level %d and every wrapped cell there is congruent "
+            "to the WELDED value -- but it is READ by no object of this "
+            "horizon, because an object of step t reads the record of level "
+            "t-1: the first step that would read a wrapped cell is %d, one "
+            "step beyond the horizon this unit ran.  The channel therefore "
+            "exists, is measured, and is NOT EXERCISED by any measurement in "
+            "this unit" % (HORIZON, HORIZON + 1)}
+    reg(res_checks, res_state, res_reads, wrote, as_welded, readc,
+        C["wrap_written_at"], C["wrap_read_at"], len(CONGRUENT_SHIFTS), 3)
+    for r in res_rows:
+        reg(r["checks"], r["moved"]["D1"], r["moved"]["D2"], r["moved"]["D3"],
+            r["objects_whose_record_actually_changed"])
+    for r in lad:
+        reg(r["written_max_cell_count"],
+            r["written_branches_carrying_a_wrapped_cell"],
+            r["written_wrapped_cells"],
+            r["written_wrapped_cells_congruent_to_the_welded_value"],
+            r["objects_reading_the_record_here"], r["read_max_cell_count"],
+            r["objects_reading_a_wrapped_cell"], r["wrapped_cells_read"])
+    LD.gate("G-RESIDUE-CHANNEL",
+            "THE THIRD GEOMETRY-TO-MATTER CHANNEL, MEASURED AND TWO-WAY.  The "
+            "record the machine WRITES is unbounded; the record the coin READS "
+            "is Z/3.  %d declared CONGRUENT-BUT-DIFFERENT record fields -- the "
+            "same residue at every one of the %d cells, a different record at "
+            "every object -- are run against all three functionals at %s "
+            "checks: the two state-internal functionals move %d times and the "
+            "record-reading one moves %s.  A functional that saw the metric "
+            "rather than its residue would move here, and two of the three "
+            "cannot"
+            % (len(CONGRUENT_SHIFTS), NCELL, com(res_checks), res_state,
+               com(res_reads)),
+            res_state == 0 and res_reads > 0,
+            "state-internal moves on congruent records %d; record-reading "
+            "moves %d" % (res_state, res_reads))
+    LD.gate("G-RESIDUE-WRAPAROUND",
+            "AND THE WRAPAROUND IS CENSUSED AT BOTH GRAINS, which is where the "
+            "finding is.  WRITTEN: the anchored maximum-cell ladder reaches "
+            "%d at level %d and %s cells there carry a count above 3, EVERY "
+            "ONE of them congruent to the welded value n = 1.  READ: an object "
+            "of step t reads the record of level t-1, so %d wrapped cells are "
+            "read anywhere inside the declared horizon and the first step that "
+            "would read one is %d -- one step beyond it.  The channel is "
+            "present and NOT EXERCISED, and the difference between the two "
+            "grains is exactly one step"
+            % (lad[-1]["written_max_cell_count"], C["wrap_written_at"],
+               com(wrote), readc, C["wrap_read_at"]),
+            not wrap_bad,
+            "wrapped cells written %d (congruent to the welded value %d), "
+            "read %d; written first at %s, readable first at %s"
+            % (wrote, as_welded, readc, C["wrap_written_at"],
+               C["wrap_read_at"]))
+    SEAL.take("SEAL-RESIDUE", R)
 
     # -- SEC 9: THE PREDICTION ROW -----------------------------------------
     ladders = {json.dumps(r["separation_ladder"], sort_keys=True)
@@ -2629,6 +3672,8 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                        for v in delivered["separation_ladder"].values()))
     pred_forced = pick("MUT-PREDICTION", carried, not carried)
     sepmap = delivered["separation_ladder"]
+    thr = {json.dumps([r["cooccupancy_threshold_coupled"],
+                       r["cooccupancy_threshold_frozen"]]) for r in fiber}
     prow = ("At this arena, at the declared horizon %d and for every member of "
             "the declared coin and reading fibers, the record-reading "
             "decoherence functional separates the coupled stage from the "
@@ -2641,26 +3686,86 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     R["prediction"] = {
         "forced_across_the_fiber": pred_forced,
         "distinct_separation_ladders_across_the_fiber": len(ladders),
+        "distinct_cooccupancy_thresholds_across_the_fiber": len(thr),
         "fiber_members": len(fiber),
         "separation_ladder": sepmap,
         "cooccupancy_threshold": cooc_threshold,
         "row": prow,
+        "rows": [
+            {"id": "GDL-PRED-1a",
+             "content": "THE SEPARATION LADDER",
+             "stamp": "FORCED-AT-THIS-ARENA",
+             "evidence": "%d distinct ladder across %d executed members, "
+                         "digest %s"
+                         % (len(ladders), len(fiber),
+                            delivered["cell_signature"]),
+             "falsified_by": "any fiber member -- any coin, any declared "
+                             "reading -- whose ladder is not (D3, D1, D2) = "
+                             "(%s, %s, %s); any run at this arena and horizon "
+                             "in which the ladder moves"
+                             % (sepmap["D3"], sepmap["D1"], sepmap["D2"]),
+             "not_falsified_by": "a change of arena, of horizon, of the "
+                                 "observable set or of the fiber shape -- "
+                                 "those are outside the stamp and license "
+                                 "nothing against it",
+             "mechanism": "the ladder is not a coincidence: D3 separates when "
+                          "the RECORDS differ, and D1/D2 separate one step "
+                          "after a site is first occupied on two links "
+                          "(step %s), because that is when the record first "
+                          "moves the cell masses.  A refutation should attack "
+                          "the support geometry, not the coin"
+                          % occ_c[0]},
+            {"id": "GDL-PRED-1b",
+             "content": "THE CO-OCCUPANCY THRESHOLD",
+             "stamp": "FORCED-AT-THIS-ARENA",
+             "evidence": "%d distinct (coupled, frozen) threshold pair across "
+                         "%d executed members, censused on BOTH arms and "
+                         "carried in the same sealed digest as the ladder"
+                         % (len(thr), len(fiber)),
+             "falsified_by": "any member whose threshold is not %s on both "
+                             "arms" % cooc_threshold,
+             "not_falsified_by": "a change of arena or horizon",
+             "already_known_to_fail_in_its_stronger_form":
+                 "THE COUNT IS COIN-RELATIVE WHILE THE THRESHOLD IS NOT: the "
+                 "control's own step-%d object carries %s co-occupying pairs "
+                 "depending on the coin, so the prediction is about the "
+                 "THRESHOLD only and says so"
+                 % (HORIZON, " / ".join(
+                     str(x) for x in R["forcedness"]
+                     ["cooccupancy_counts_on_the_frozen_object_at_the_"
+                      "horizon"]))}],
         "units": "SUBSTRATE-NATIVE: step indices and object counts only -- no "
                  "SI quantity, no rate in any physical unit, no experimental "
                  "value, and no number inherited from the corpus's "
                  "Diosi-Penrose arc, which is cited for SHAPE ONLY",
+        "horizon_locality": "D1's surviving domination is tested at %d steps "
+                            "only, and the two functionals that fail teach "
+                            "exactly that a two-step monotone claim can break "
+                            "at the next horizon: D1 COUPLED-DOMINATES is "
+                            "published HORIZON-LOCAL, never as a law"
+                            % len([r for r in dom
+                                   if r["functional"] == "D1"][0]
+                                  ["separating_steps"]),
         "separation_rows": sep, "domination_rows": dom}
-    reg(len(ladders), len(fiber), sepmap["D1"], sepmap["D2"], sepmap["D3"])
+    reg(len(ladders), len(fiber), sepmap["D1"], sepmap["D2"], sepmap["D3"],
+        len(thr))
     LD.gate("G-PREDICTION-ROW",
             "THE PREDICTION ROW IS ENTERED ONLY IF ITS OWN FIBER CENSUS "
-            "CARRIES IT: the separation ladder must be IDENTICAL across all %d "
-            "executed fiber members and every functional must actually "
-            "separate at a finite step -- %d distinct ladders measured"
-            % (len(fiber), len(ladders)),
-            pred_forced and carried and len(ladders) == 1,
-            "distinct ladders %d across %d members; census carries the row "
-            "%s; published forced flag %s"
-            % (len(ladders), len(fiber), carried, pred_forced))
+            "CARRIES IT, and it is REGISTERED IN TWO ROWS because its two "
+            "clauses had different standing: GDL-PRED-1a, the separation "
+            "ladder, must be IDENTICAL across all %d executed fiber members "
+            "with every functional separating at a finite step (%d distinct "
+            "ladders measured); GDL-PRED-1b, the co-occupancy threshold, must "
+            "be censused ON BOTH ARMS ACROSS THE SAME FIBER (%d distinct "
+            "threshold pairs measured) rather than carried on the delivered "
+            "member alone.  Each row publishes what falsifies it and what does "
+            "not, and 1b publishes the stronger form already known to fail -- "
+            "the COUNT is coin-relative"
+            % (len(fiber), len(ladders), len(thr)),
+            pred_forced and carried and len(ladders) == 1 and len(thr) == 1,
+            "distinct ladders %d and distinct threshold pairs %d across %d "
+            "members; census carries the row %s; published forced flag %s"
+            % (len(ladders), len(thr), len(fiber), carried, pred_forced))
     LD.gate("G-PREDICTION-RENDERED",
             "and the row is RENDERED FROM THE RECEIPT rather than typed: every "
             "number in it is the measured value, and the sentence is required "
@@ -2696,19 +3801,19 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     wall_rows = []
     for gname in ("G-WALL-BHS", "G-WALL-KR", "G-WALL-COSMO", "G-WALL-NO-SI"):
         hay = layer
-        if mut("MUT-WALL-BHS") and gname == "G-WALL-BHS":
-            hay = layer + " boosted rest frame"
-        if mut("MUT-WALL-KR") and gname == "G-WALL-KR":
-            hay = layer + " myrheim-meyer"
-        if mut("MUT-WALL-COSMO") and gname == "G-WALL-COSMO":
-            hay = layer + " cosmological expansion"
+        if gname == "G-WALL-BHS":
+            hay = pick("MUT-WALL-BHS", hay, hay + " boosted rest frame")
+        if gname == "G-WALL-KR":
+            hay = pick("MUT-WALL-KR", hay, hay + " myrheim-meyer")
+        if gname == "G-WALL-COSMO":
+            hay = pick("MUT-WALL-COSMO", hay, hay + " cosmological expansion")
         if gname == "G-WALL-NO-SI":
             # THE SI WALL BINDS THE DELIVERABLE TOO: the pin bars SI numbers
             # from the published row, so the paper's own text is scanned with
             # the measurement layer.
             hay = hay + "\n" + ptext
-        if mut("MUT-WALL-SI") and gname == "G-WALL-NO-SI":
-            hay = layer + " collapse rate in kilogram"
+            hay = pick("MUT-WALL-SI", hay,
+                       hay + " collapse rate in kilogram")
         low = canon(hay).lower()
         hits = sorted(n for n in WALL_FORBIDDEN[gname] if n in low)
         wall_rows.append({"gate": gname, "needles": len(WALL_FORBIDDEN[gname]),
@@ -2776,6 +3881,46 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "measure: %s" % (missing or "none"))
     SEAL.take("SEAL-MEASURE", R)
 
+    # -- the choice inventory ----------------------------------------------
+    chrows = [{"n": i + 1, "item": cid, "status": st, "fiber": fb,
+               "note": note, "verdict_determining": vd}
+              for i, (cid, st, fb, note, vd) in enumerate(CHOICES)]
+    fibersizes = {"F2-COIN": len(COIN_IDS), "F3-READING": len(READING_FIBER),
+                  "F5-D-SET": len(D_IDS), "F7-G-SET": len(G_IDS),
+                  "F8-RESOLUTION": len(RES_IDS),
+                  "F10-FOREIGN-FIELDS": len(FOREIGN_FIELDS),
+                  "F15-CONGRUENT-FIELDS": len(CONGRUENT_SHIFTS)}
+    choice_bad = pick(
+        "MUT-CHOICE-BAR",
+        [r["item"] for r in chrows
+         if fibersizes.get(r["item"], r["fiber"]) != r["fiber"]]
+        + ([] if any(r["verdict_determining"] for r in chrows)
+           else ["NO-VERDICT-DETERMINING-ROW"]),
+        ["F12-BAR-SCOPE"])
+    R["choices"] = {"rows": chrows, "count": len(chrows),
+                    "verdict_determining":
+                        [r["item"] for r in chrows if r["verdict_determining"]],
+                    "warrant": "every declared item has each member of its "
+                               "fiber executed, and the execution is bound by "
+                               "SET EQUALITY against the declared member ids "
+                               "for F2 and F3 and by a declared cardinality "
+                               "for the others"}
+    for r in chrows:
+        reg(r["n"], r["fiber"])
+    reg(len(chrows))
+    LD.gate("G-CHOICE-INVENTORY",
+            "THE CHOICE INVENTORY IS A RENDERED TABLE, NOT PROSE: %d declared "
+            "items, each with its status, its fiber size and its note, every "
+            "fiber size re-derived here from the declaration it names, and THE "
+            "VERDICT-DETERMINING ROW NAMED -- %s, the scope of the frozen bar, "
+            "which the first delivery of this unit did not declare at all"
+            % (len(chrows),
+               ", ".join(R["choices"]["verdict_determining"])),
+            not choice_bad, "items whose published fiber disagrees with the "
+            "declaration it names, or a missing verdict-determining row: %s"
+            % (choice_bad or "none"))
+    SEAL.take("SEAL-CHOICES", R)
+
     # -- SEC 11: the verdict ------------------------------------------------
     cells_at_one = sum(1 for c in WELDED if c == 1)
     reg(cells_at_one, NCELL, HORIZON, len(SOURCES), len(MUTANTS),
@@ -2800,21 +3945,55 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         "vacuous_cells": len(vacuous_cells),
         "excluded_cells": len(excluded),
         "gravitational_cells": len(gravitational)}
+    # THE CONTROL ARM, RUN in the plain delivery run (the paper-23 pattern):
+    # the arms this arena does not take are emitted by the SAME selector and
+    # the SAME comparator on witness copies of the measured blocks.
+    base_keys = ("rebuild", "ensemble", "machine", "functionals", "growth",
+                 "relation", "forcedness", "exclusion", "mechanism",
+                 "residue", "prediction", "choices", "counts")
+    S0 = json.loads(json.dumps({k: R[k] for k in base_keys},
+                               sort_keys=True, default=str))
+    delivered_word = outcome_word(len(gravitational), fiber_bad, frozen_ran)
+    oc = outcome_control_arm(S0, delivered_word)
+    oc["wiring_matches_the_delivered_measurement"] = pick(
+        "MUT-OUTCOME-ARM",
+        (oc["rows"][0]["word_emitted"] == delivered_word), False)
+    R["outcome"] = oc
+    reg(oc["arms_declared"], len(oc["arms_reached"]), len(oc["rows"]))
+    LD.gate("G-OUTCOME-REACHABILITY",
+            "EVERY ARM OF THE DECLARED OUTCOME GRAMMAR IS REACHABLE, AND THE "
+            "CONTROL ARM RUNS RATHER THAN ADVERTISING IT.  The pin's four "
+            "outcome arms are handed to the SAME selector and the SAME "
+            "comparator on witness copies of this run's own measured blocks -- "
+            "one patched primitive each -- and each is required to emit its "
+            "named word: %s.  %d of %d arms are reached and the delivered "
+            "word, %s, is the one this arena's own measurement selects.  A "
+            "head word whose alternatives are gate-forbidden is a DEFAULT and "
+            "not a finding; this gate is what makes the difference measurable"
+            % ("; ".join("%s -> %s" % (r["witness"], r["declared_word"])
+                         for r in oc["rows"]),
+               len(oc["arms_reached"]), oc["arms_declared"], delivered_word),
+            oc["all_on_target"] and oc["every_arm_reached"]
+            and oc["wiring_matches_the_delivered_measurement"],
+            "witnesses on target %s; arms reached %s; the delivered word "
+            "matches the selector %s"
+            % (oc["all_on_target"], oc["arms_reached"],
+               oc["wiring_matches_the_delivered_measurement"]))
+    SEAL.take("SEAL-OUTCOME", R)
+
     verdict = build_verdict(R, C, delivered, exact_cells, partial_cells,
                             vacuous_cells, excluded, gravitational, checks,
                             bl, sep, dom, cooc_threshold, fiber_bad)
     verdict = pick("MUT-VERDICT-WORD", verdict,
                    dict(verdict, gates=verdict["gates"].replace(
-                       "GDL-PARTIAL", "GDL-LAW-FORCED-D1-IS-THE-SQUARED-RATE",
+                       "GDL-DECOUPLED-AT-THE-GRAVITATIONAL-BAR",
+                       "GDL-LAW-FORCED-D1-IS-THE-SQUARED-RATE",
                        1)))
     verdict = pick("MUT-VERDICT-VALUE", verdict,
                    dict(verdict, arena=verdict["arena"].replace(
                        "27 OF 27", "26 OF 27", 1)))
     R["verdict"] = verdict
-    ser = json.dumps({k: R[k] for k in
-                      ("rebuild", "ensemble", "machine", "functionals",
-                       "growth", "relation", "forcedness", "exclusion",
-                       "mechanism", "prediction", "counts")},
+    ser = json.dumps({k: R[k] for k in base_keys + ("outcome",)},
                      sort_keys=True, default=str)
     again = reconstruct(json.loads(ser))
     same = {k: verdict[k] == again[k] for k in verdict}
@@ -2822,9 +4001,12 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "the verdict is DERIVED A SECOND TIME by a comparator that shares "
             "no code, no input and no typed literal with the builder: it is "
             "handed the receipt's own measured blocks as JSON, TYPES ITS OWN "
-            "TEMPLATES, re-derives the outcome word from the exclusion and "
-            "relation rows, and the three segments must match string for "
-            "string",
+            "TEMPLATES, and RE-DERIVES THE OUTCOME WORD FROM THE PRIMITIVES -- "
+            "whether the mandatory control ran, how many exact cells survived "
+            "the bar, and whether every executed fiber member carries the "
+            "delivered signature -- rather than reading a word the builder "
+            "published.  All %d segments must match string for string"
+            % len(verdict),
             all(same.values()),
             "segments matching: %s" % same)
     SEAL.take("SEAL-VERDICT", R)
@@ -2847,15 +4029,90 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
 # THE VERDICT AND ITS INDEPENDENT COMPARATOR
 # ===========================================================================
 
-def outcome_word(gravitational, exact_cells, partial_cells, identities_hold,
-                 moves, fiber_bad):
+# THE OUTCOME GRAMMAR, and the selector, GENUINELY TWO-WAY.
+#
+# The pin's `GDL-DECOUPLED` arm is glossed "no functional relation".  Every arm
+# of the grammar carries the `GDL-` prefix and the pin defines the G in GDL
+# itself: A RELATION THAT HOLDS IDENTICALLY FROZEN IS NOT A GRAVITATIONAL-
+# DECOHERENCE RELATION.  The prefix therefore scopes the gloss, and the arm
+# means: NO GRAVITATIONAL-DECOHERENCE FUNCTIONAL RELATION SURVIVES THE BAR.
+#
+# The first delivery of this unit read the gloss unscoped and emitted
+# GDL-PARTIAL.  That word was a FORCED DEFAULT rather than a selection: the
+# delivered `GDL-DECOUPLED` branch required the run to be simultaneously broken
+# and empty (its `identities` conjunct is forced true by three gates and its
+# `moves` conjunct is forced positive by a two-way gate), so the truer word had
+# been lost by construction.  The selector below is a function of the frozen
+# bar's own result and of nothing else, EVERY ARM OF IT IS REACHABLE, and the
+# control arm below RUNS the arms this arena does not take.
+OUTCOME_GRAMMAR = ("GDL-LAW-FORCED", "GDL-LAW-COIN-RELATIVE",
+                   "GDL-DECOUPLED-AT-THE-GRAVITATIONAL-BAR",
+                   "GDL-BLOCKED-AT-THE-FROZEN-CONTROL")
+
+
+def outcome_word(gravitational, fiber_bad, frozen_ran):
+    if not frozen_ran:
+        return "GDL-BLOCKED-AT-THE-FROZEN-CONTROL"
     if gravitational:
         return ("GDL-LAW-FORCED" if not fiber_bad
                 else "GDL-LAW-COIN-RELATIVE")
-    if not exact_cells and not partial_cells and not identities_hold \
-            and not moves:
-        return "GDL-DECOUPLED"
-    return "GDL-PARTIAL"
+    return "GDL-DECOUPLED-AT-THE-GRAVITATIONAL-BAR"
+
+
+# THE CONTROL ARM's witnesses: each patches ONE primitive of a JSON copy of the
+# receipt's own measured blocks and requires the SAME head builder and the SAME
+# comparator to emit the named word.  Nothing about this arena is measured
+# here; what is measured is THE WIRING, in every one of its branches.
+OUTCOME_WITNESSES = (
+    ("THE-DELIVERED-MEASUREMENT", "GDL-DECOUPLED-AT-THE-GRAVITATIONAL-BAR",
+     "no patch: the bar is applied and no exact cell survives it"),
+    ("ONE-EXACT-CELL-SURVIVES-THE-BAR", "GDL-LAW-FORCED",
+     "gravitational_count is set to 1 on a copy: an exact cell that FAILED on "
+     "the frozen control would have survived as gravitational"),
+    ("IT-SURVIVES-BUT-THE-FIBER-DISAGREES", "GDL-LAW-COIN-RELATIVE",
+     "the same, with one fiber member's cell signature moved so the relation "
+     "signature is coin-relative"),
+    ("THE-FROZEN-CONTROL-DID-NOT-RUN", "GDL-BLOCKED-AT-THE-FROZEN-CONTROL",
+     "frozen_control_executed is set to false on a copy: with no control the "
+     "bar cannot be applied and no outcome may be read"),
+)
+
+
+def outcome_control_arm(S, delivered_word):
+    """THE CONTROL ARM -- RUN, in the plain delivery run, not advertised.  The
+    arms this arena does not take are handed to the SAME selector and the SAME
+    comparator on witness copies of the measured blocks, and each is required
+    to emit its named word.  That is what makes the delivered word a
+    MEASUREMENT rather than a default."""
+    rows = []
+    for label, want, why in OUTCOME_WITNESSES:
+        T = json.loads(json.dumps(S, sort_keys=True, default=str))
+        # the witness reads only the head's OUTCOME WORD, which the comparator
+        # derives before it renders any reachability number, so the stub below
+        # carries no information into the measurement.
+        T["outcome"] = {"arms_reached": [], "arms_declared": 0}
+        if label == "ONE-EXACT-CELL-SURVIVES-THE-BAR":
+            T["exclusion"]["gravitational_count"] = 1
+        elif label == "IT-SURVIVES-BUT-THE-FIBER-DISAGREES":
+            T["exclusion"]["gravitational_count"] = 1
+            T["forcedness"]["rows"][-1]["cell_signature"] = "0" * 12
+        elif label == "THE-FROZEN-CONTROL-DID-NOT-RUN":
+            T["exclusion"]["frozen_control_executed"] = False
+        got = reconstruct(T)["gates"].split("-<")[0]
+        rows.append({"witness": label, "declared_word": want,
+                     "word_emitted": got, "on_target": got == want,
+                     "why": why})
+    reached = sorted({r["word_emitted"] for r in rows})
+    return {"grammar": list(OUTCOME_GRAMMAR), "rows": rows,
+            "arms_reached": reached,
+            "arms_declared": len(OUTCOME_GRAMMAR),
+            "every_arm_reached": sorted(OUTCOME_GRAMMAR) == reached,
+            "all_on_target": all(r["on_target"] for r in rows),
+            "delivered_word": delivered_word,
+            "the_wiring": "THE WORD IS A FUNCTION OF THE FROZEN BAR'S OWN "
+                          "RESULT AND OF NOTHING ELSE: whether the control "
+                          "ran, how many exact cells survived it, and whether "
+                          "the fiber agrees"}
 
 
 def build_verdict(R, C, delivered, exact_cells, partial_cells, vacuous_cells,
@@ -2864,10 +4121,9 @@ def build_verdict(R, C, delivered, exact_cells, partial_cells, vacuous_cells,
     rel = R["relation"]
     mech = R["mechanism"]
     pred = R["prediction"]
-    word = outcome_word(len(gravitational), len(exact_cells),
-                        len(partial_cells),
-                        all(i["holds"] for i in rel["identities_coupled"]),
-                        mech["D3_moves"], fbad)
+    res = R["residue"]
+    word = outcome_word(len(gravitational), fbad,
+                        R["exclusion"]["frozen_control_executed"])
     arena = (
         "GDL-ARENA-[THE COUPLED MACHINE RE-IMPLEMENTED FROM THE COMMITTED SPEC "
         "AND ANCHORED AT THE PARENT'S OWN COMMITTED BYTES: %d OF %d PUBLISHED "
@@ -2894,33 +4150,64 @@ def build_verdict(R, C, delivered, exact_cells, partial_cells, vacuous_cells,
         "NONE PRIVILEGED, ALL RUN ON EVERY OBJECT OF EVERY ARM OF EVERY FIBER "
         "MEMBER; THE l_1 DECLARATION PRICED -- %s OF %s OFF-DIAGONAL MODULI "
         "ARE IRRATIONAL AND OUTSIDE Q, WHICH IS WHY D2 IS CARRIED IN SQUARED "
-        "MODULUS | %d GROWTH FUNCTIONALS FROM THE MACHINE'S OWN EMISSION LAW: "
-        "THE SITE RATE IS THE BORN SITE MASS AND THE TOTAL RATE IS EXACTLY ONE "
+        "MODULUS OVER A POPULATION OF %s OF WHICH %s ARE EXACT ZEROS | %d "
+        "GROWTH FUNCTIONALS FROM THE MACHINE'S OWN EMISSION LAW: "
+        "THE SITE RATE IS THE BORN SITE MASS SUMMED THROUGH THE KERNEL AND THE "
+        "TOTAL RATE IS EXACTLY ONE "
         "DIVISION EVENT PER COUPLED STEP, 0 VIOLATIONS | THE BLINDNESS "
-        "MECHANISM, MEASURED ON %d DECLARED FOREIGN COUNT FIELDS AT %s CHECKS: "
+        "MECHANISM, MEASURED ON %d DECLARED FOREIGN COUNT FIELDS AT %s CHECKS "
+        "OVER THREE FUNCTIONALS, %s OBJECT-AND-FIELD PAIRS EACH: "
         "D1 MOVES %d TIMES, D2 MOVES %s TIMES AND AT NOT ONE OBJECT WHOSE "
-        "OCCUPIED-LINK SETS MEET IN AT MOST ONE LINK, D3 MOVES %s TIMES -- THE "
-        "COIN CANCELS OUT OF THE SITE-BASIS DENSITY MATRIX AND THE RECORD "
-        "SURVIVES ONLY ON LINKS OCCUPIED AT BOTH ENDS, SO THE INHERITED "
-        "OBSERVABLE IS RECORD-BLIND BY THEOREM AND THE CO-OCCUPANCY THRESHOLD "
-        "IS STEP %s ON BOTH ARMS | THE SEPARATION LADDER %s, IDENTICAL ACROSS "
-        "ALL %d EXECUTED FIBER MEMBERS]"
+        "OCCUPIED-LINK SETS MEET IN AT MOST ONE LINK, D3 MOVES %s TIMES, AND "
+        "THE LAW'S OWN GROWTH FUNCTIONAL G5 MOVES %d TIMES -- THEOREM A: A "
+        "SITE-BLOCK-DIAGONAL UNITARY STEP LEAVES THE SITE MARGINAL "
+        "RECORD-BLIND AT ANY ARENA, GRAPH, DIMENSION AND HORIZON, MEASURED "
+        "UNDER A SITE-DEPENDENT COIN AT %s PAIRS WITH THE MARGINAL MOVING %d "
+        "TIMES AND D2 MOVING %s; THEOREM B: SITE-UNIFORMITY REDUCES THE "
+        "OFF-DIAGONAL AND MAKES CO-OCCUPANCY-NECESSITY A THEOREM, VERIFIED "
+        "COEFFICIENT BY COEFFICIENT AT %s IDENTITIES AND %s CHECKS, AND "
+        "CONFIRMED AT THE PAIR GRAIN: %s OF %s PAIR-CHECKS AT OVERLAP <= 1 "
+        "MOVE %d TIMES WHILE %s AT CO-OCCUPANCY MOVE %s | THE TWO OCCUPANCY "
+        "THRESHOLDS: A SITE ON TWO LINKS AT STEP %s, A PAIR SHARING TWO LINKS "
+        "AT STEP %s, BOTH IDENTICAL ON BOTH ARMS | THE SEPARATION LADDER %s, "
+        "IDENTICAL ACROSS ALL %d EXECUTED FIBER MEMBERS]"
         % (R["counts"]["decoherence_functionals"],
            com(R["functionals"]["l1_price"]["irrational_moduli"]),
            com(R["functionals"]["l1_price"]["offdiagonal_entries"]),
+           com(R["functionals"]["l1_price"]["offdiagonal_population"]),
+           com(R["functionals"]["l1_price"]["zero_entries_which_are_rational"]),
            R["counts"]["growth_functionals"], len(FOREIGN_FIELDS),
-           com(mech["checks"]), mech["D1_moves"], com(mech["D2_moves"]),
-           com(mech["D3_moves"]), cooc,
+           com(mech["checks"]), com(mech["object_field_pairs"]),
+           mech["D1_moves"], com(mech["D2_moves"]),
+           com(mech["D3_moves"]), mech["G5_moves"],
+           com(mech["site_dependent_coin"]["object_field_pairs"]),
+           mech["site_dependent_coin"]["site_marginal_moved"],
+           com(mech["site_dependent_coin"]["D2_moved"]),
+           com(mech["symbolic_identities"]),
+           com(mech["symbolic_coefficient_checks"]),
+           com(mech["pair_census"]
+               ["pairs_meeting_in_at_most_one_occupied_link"]["checks"]),
+           com(mech["pair_checks"]),
+           mech["pair_census"]["pairs_meeting_in_at_most_one_occupied_link"]
+           ["moved"],
+           com(mech["pair_census"]
+               ["pairs_meeting_in_two_or_more_occupied_links"]["checks"]),
+           com(mech["pair_census"]
+               ["pairs_meeting_in_two_or_more_occupied_links"]["moved"]),
+           mech["single_site_threshold_coupled"], cooc,
            "D3 AT %s, D1 AND D2 AT %s" % (pred["separation_ladder"]["D3"],
                                           pred["separation_ladder"]["D1"]),
            R["counts"]["fiber_rows"]))
     ex = R["exclusion"]
+    dom1 = [r for r in dom if r["functional"] == "D1"][0]
     gates = (
         "%s-<THE RELATION=MEASURED-NOT-FITTED(%d CELLS PER ARM -- %d "
         "DECOHERENCE x %d GROWTH x %d RESOLUTIONS -- DECIDED BY EQUALITY "
-        "INSIDE A GROWTH CLASS AND BY NOTHING ELSE: %d EXACT, %d PARTIAL WITH "
+        "INSIDE A GROWTH CLASS AND BY NOTHING ELSE: ON THE DELIVERED ARM %d "
+        "EXACT, %d PARTIAL WITH "
         "EVERY FAILURE SET CENSUSED AND RECOUNTED, %d VACUOUS AND STAMPED "
-        "VACUOUS RATHER THAN PASSED) -- THE ONLY EXACT CELL IS THE LAW'S OWN "
+        "VACUOUS RATHER THAN PASSED; ON THE FROZEN CONTROL %d, %d AND %d) -- "
+        "THE ONLY EXACT CELL IS THE LAW'S OWN "
         "IDENTITY(D1 = SUM_x eps(x)^2, THE SITE-BASIS INVERSE PARTICIPATION OF "
         "THE BORN MENU IS THE SUM OF THE SQUARED SITE EMISSION RATES, AT EVERY "
         "OBJECT OF BOTH ARMS -- A CONSEQUENCE OF THE LAW-NATIVE NORMALISER'S "
@@ -2928,32 +4215,99 @@ def build_verdict(R, C, delivered, exact_cells, partial_cells, vacuous_cells,
         "FROZEN-EXCLUSION=%d OF %d EXACT CELLS EXCLUDED(THEY HOLD IDENTICALLY "
         "ON THE FROZEN CONTROL, WHOSE RECORD NEVER GROWS AT %s BRANCH-STEPS, "
         "SO THEY ARE FACTS ABOUT THE WALK AND THE LAW RATHER THAN ABOUT THE "
-        "COUPLING) -- GRAVITATIONAL-CELLS=%d -- THE RECORD DOES NOT DETERMINE "
+        "COUPLING), AND FORCED: BOTH SIDES OF THE ONE EXACT IDENTITY ARE "
+        "FUNCTIONS OF THE SITE MARGINAL, WHICH IS RECORD-BLIND BY THEOREM A -- "
+        "D1 MOVES %d TIMES AND G5 MOVES %d TIMES OVER THE SAME %s "
+        "OBJECT-AND-FIELD PAIRS -- SO IT COULD NOT HAVE FAILED ON THE CONTROL "
+        "FROM EITHER SIDE, AND THE %d GENUINE RECORD FUNCTIONALS G1..G4 "
+        "PRODUCE NO EXACT CELL AT ANY RESOLUTION -- GRAVITATIONAL D=f(G) "
+        "CELLS=%d -- THE %d PARTIAL CELLS ARE NOT ADJUDICATED GRAVITATIONAL BY "
+        "ANY GATE: THE BAR IS DECLARED(F12) TO APPLY TO EXACT CELLS ONLY AND "
+        "IS INAPPLICABLE TO A RELATION THAT DOES NOT HOLD, %d OF THE %d CARRY "
+        "THE IDENTICAL WORD ON THE FROZEN CONTROL, AND %d OF THE %d HAVE ZERO "
+        "PASSING NON-SINGLETON CLASSES AND ARE STAMPED TOTAL-FAILURE(THE "
+        "HONEST STAMP CENSUS OF THE DELIVERED ARM IS %d EXACT, %d PARTIAL, %d "
+        "TOTAL-FAILURE, %d VACUOUS) -- THE RECORD DOES NOT DETERMINE "
         "THE DECOHERENCE(AT THE FINEST RESOLUTION THE CELL-GRAIN RECORD LEAVES "
         "%s OF %s OBJECTS IN CLASSES CARRYING MORE THAN ONE D1-VALUE, %s FOR "
         "D2 AND %s FOR D3; ON THE FROZEN CONTROL THE RECORD IS ONE CLASS "
-        "CARRYING EVERY VALUE, SO IT CANNOT TESTIFY AT ALL) -- "
-        "DOMINATION=%s -- FORCEDNESS=%s OF %s FIBER MEMBERS AGREE ON THE WHOLE "
-        "RELATION SIGNATURE(+/- GROVER MEASURED IDENTICAL AS A GLOBAL-PHASE "
-        "PAIR) -- PREDICTION-ROW=%s -- SCOPE=THIS UNIT MEASURES A RELATION AT "
-        "ONE ARENA AT ONE DECLARED HORIZON; NO CONTINUUM, NO SI QUANTITY, NO "
+        "CARRYING EVERY VALUE, SO IT CANNOT TESTIFY AT ALL) -- WHAT SURVIVES "
+        "THE BAR IS BETWEEN-ARM, NOT WITHIN-ARM: THE SEPARATION LADDER D3 AT "
+        "%s / D1 AND D2 AT %s IDENTICAL ACROSS %s OF %s FIBER MEMBERS, AND D1 "
+        "COUPLED-DOMINATES AT BOTH ITS SEPARATING STEPS %s WITH EXACT "
+        "WITNESSES AND IS PUBLISHED HORIZON-LOCAL -- DOMINATION=%s -- "
+        "OUTCOME-REACHABILITY=%d OF %d ARMS OF THE DECLARED GRAMMAR EMITTED BY "
+        "A WITNESS CONFIGURATION THROUGH THE SAME SELECTOR AND THE SAME "
+        "COMPARATOR, SO THE WORD IS A MEASUREMENT AND NOT A DEFAULT -- "
+        "FORCEDNESS=%s OF %s FIBER MEMBERS AGREE ON THE WHOLE "
+        "RELATION SIGNATURE, THRESHOLDS INCLUDED(+/- GROVER MEASURED IDENTICAL "
+        "AS A GLOBAL-PHASE PAIR) -- PREDICTION-ROW=%s -- SCOPE=THIS UNIT "
+        "MEASURES A RELATION AT ONE ARENA AT ONE DECLARED HORIZON; NO "
+        "CONTINUUM, NO SI QUANTITY, NO "
         "EXPERIMENTAL VALUE, AND THE DIOSI-PENROSE ARC CITED FOR SHAPE ONLY>"
         % (word, len(R["relation"]["grid_coupled"]),
            R["counts"]["decoherence_functionals"],
            R["counts"]["growth_functionals"], R["counts"]["resolutions"],
            len(exact_cells), len(partial_cells), len(vacuous_cells),
+           rel["verdict_census_frozen"].get("EXACT", 0),
+           rel["verdict_census_frozen"].get("PARTIAL", 0),
+           rel["verdict_census_frozen"].get("VACUOUS", 0),
            len(excluded), ex["exact_cells_tested"],
-           com(R["counts"]["branch_steps_frozen_raw"]), len(gravitational),
+           com(R["counts"]["branch_steps_frozen_raw"]),
+           ex["the_zero_is_forced"]["D1_moves_on_the_foreign_fields"],
+           ex["the_zero_is_forced"]["G5_moves_on_the_foreign_fields"],
+           com(ex["the_zero_is_forced"]["object_field_pairs"]),
+           R["counts"]["growth_functionals"] - 1,
+           len(gravitational), len(partial_cells),
+           rel["coupled_partial_cells_with_the_identical_word_on_the_control"],
+           len(partial_cells), rel["total_failures"], len(partial_cells),
+           rel["stamp_census_coupled"].get("EXACT", 0),
+           rel["stamp_census_coupled"].get("PARTIAL", 0),
+           rel["stamp_census_coupled"].get("TOTAL-FAILURE", 0),
+           rel["stamp_census_coupled"].get("VACUOUS", 0),
            com(_cellstat(R, "RES-BRANCH", "G1-RECORD-CELL", D_IDS[0])),
            com(R["counts"]["branch_steps_coupled_distinct"]),
            com(_cellstat(R, "RES-BRANCH", "G1-RECORD-CELL", D_IDS[1])),
            com(_cellstat(R, "RES-BRANCH", "G1-RECORD-CELL", D_IDS[2])),
+           pred["separation_ladder"]["D3"], pred["separation_ladder"]["D1"],
+           R["counts"]["fiber_rows"] - len(fbad), R["counts"]["fiber_rows"],
+           dom1["separating_steps"],
            "; ".join("%s %s" % (r["functional"], r["verdict"]) for r in dom),
+           len(R["outcome"]["arms_reached"]), R["outcome"]["arms_declared"],
            R["counts"]["fiber_rows"] - len(fbad),
            R["counts"]["fiber_rows"],
            "ENTERED" if R["prediction"]["forced_across_the_fiber"]
            else "NOT-ENTERED"))
-    return {"arena": arena, "functionals": funcs, "gates": gates}
+    third = (
+        "GDL-THIRD-CHANNEL-[THE RECORD THE MACHINE WRITES IS UNBOUNDED; THE "
+        "RECORD THE COIN READS IS Z/%d -- THE STEP READS w^(n mod %d) AND w IS "
+        "A PRIMITIVE CUBE ROOT OF UNITY, SO EVERY psi-INTERNAL FUNCTIONAL SEES "
+        "AT MOST A Z/%d SHADOW OF THE METRIC.  MEASURED ON %d DECLARED "
+        "CONGRUENT-BUT-DIFFERENT RECORD FIELDS -- THE SAME RESIDUE AT EVERY "
+        "ONE OF THE %d CELLS, A DIFFERENT RECORD AT EVERY OBJECT -- AT %s "
+        "CHECKS: THE TWO STATE-INTERNAL FUNCTIONALS MOVE %d TIMES AND THE "
+        "RECORD-READING ONE MOVES %s, SO TWO OF THE THREE CANNOT DISTINGUISH "
+        "CONGRUENT RECORDS AT ALL AND ONE CAN | THE WRAPAROUND, CENSUSED AT "
+        "BOTH GRAINS: WRITTEN INSIDE THE HORIZON -- THE ANCHORED MAXIMUM-CELL "
+        "LADDER REACHES %d AT LEVEL %d AND %s CELLS THERE CARRY A COUNT ABOVE "
+        "3, ALL %s OF THEM CONGRUENT TO THE WELDED VALUE n = 1 -- AND READ BY "
+        "NO OBJECT OF IT: AN OBJECT OF STEP t READS THE RECORD OF LEVEL t-1, "
+        "SO %d WRAPPED CELLS ARE READ ANYWHERE INSIDE THE DECLARED HORIZON AND "
+        "THE FIRST STEP THAT WOULD READ ONE IS %d, ONE BEYOND IT | "
+        "VERDICT=%s]"
+        % (res["order_of_the_record_phase"], res["order_of_the_record_phase"],
+           res["order_of_the_record_phase"], len(res["rows"]),
+           R["counts"]["cells"], com(res["checks"]),
+           res["state_internal_moves"], com(res["record_reading_moves"]),
+           res["wraparound_ladder"][-1]["written_max_cell_count"],
+           res["first_step_at_which_a_wrapped_cell_is_written"],
+           com(res["wrapped_cells_written"]),
+           com(res["wrapped_cells_written_congruent_to_the_welded_value"]),
+           res["wrapped_cells_read"],
+           res["first_step_at_which_a_wrapped_cell_would_be_read"],
+           res["verdict"]))
+    return {"arena": arena, "functionals": funcs, "gates": gates,
+            "third_channel": third}
 
 
 def _cellstat(R, res, growth, dec, key="objects_in_failing_classes"):
@@ -2989,21 +4343,27 @@ def reconstruct(S):
     rl = S["relation"]
     ex = S["exclusion"]
     pr = S["prediction"]
+    rs = S["residue"]
+    oc = S["outcome"]
 
     def grp(x):
         return "{:,}".format(int(x))
 
+    # THE HEAD WORD, RE-DERIVED FROM PRIMITIVES.  Three of them and no other:
+    # did the mandatory control run, how many exact cells survived the bar, and
+    # does every executed fiber member carry the delivered signature.
     grav = int(ex["gravitational_count"])
     nexact = int(rl["exact"])
     npart = int(rl["partial"])
-    ident = all(bool(i["holds"]) for i in rl["identities_coupled"])
-    moves = int(me["D3_moves"])
-    if grav:
-        head = "GDL-LAW-FORCED"
-    elif not nexact and not npart and not ident and not moves:
-        head = "GDL-DECOUPLED"
+    ran = bool(ex["frozen_control_executed"])
+    agreeing = _agree(S)
+    if not ran:
+        head = "GDL-BLOCKED-AT-THE-FROZEN-CONTROL"
+    elif grav:
+        head = ("GDL-LAW-FORCED" if agreeing == len(S["forcedness"]["rows"])
+                else "GDL-LAW-COIN-RELATIVE")
     else:
-        head = "GDL-PARTIAL"
+        head = "GDL-DECOUPLED-AT-THE-GRAVITATIONAL-BAR"
     a = ("GDL-ARENA-[THE COUPLED MACHINE RE-IMPLEMENTED FROM THE COMMITTED "
          "SPEC AND ANCHORED AT THE PARENT'S OWN COMMITTED BYTES: "
          + str(rb["anchors_equal"]) + " OF " + str(rb["anchors"])
@@ -3032,19 +4392,52 @@ def reconstruct(S):
          + grp(fn["l1_price"]["irrational_moduli"]) + " OF "
          + grp(fn["l1_price"]["offdiagonal_entries"]) + " OFF-DIAGONAL MODULI "
          "ARE IRRATIONAL AND OUTSIDE Q, WHICH IS WHY D2 IS CARRIED IN SQUARED "
-         "MODULUS | " + str(ct["growth_functionals"]) + " GROWTH FUNCTIONALS "
+         "MODULUS OVER A POPULATION OF "
+         + grp(fn["l1_price"]["offdiagonal_population"]) + " OF WHICH "
+         + grp(fn["l1_price"]["zero_entries_which_are_rational"])
+         + " ARE EXACT ZEROS | " + str(ct["growth_functionals"])
+         + " GROWTH FUNCTIONALS "
          "FROM THE MACHINE'S OWN EMISSION LAW: THE SITE RATE IS THE BORN SITE "
-         "MASS AND THE TOTAL RATE IS EXACTLY ONE DIVISION EVENT PER COUPLED "
+         "MASS SUMMED THROUGH THE KERNEL AND THE TOTAL RATE IS EXACTLY ONE "
+         "DIVISION EVENT PER COUPLED "
          "STEP, 0 VIOLATIONS | THE BLINDNESS MECHANISM, MEASURED ON "
          + str(len(me["foreign_fields"])) + " DECLARED FOREIGN COUNT FIELDS AT "
-         + grp(me["checks"]) + " CHECKS: D1 MOVES " + str(me["D1_moves"])
+         + grp(me["checks"]) + " CHECKS OVER THREE FUNCTIONALS, "
+         + grp(me["object_field_pairs"]) + " OBJECT-AND-FIELD PAIRS EACH: "
+         "D1 MOVES " + str(me["D1_moves"])
          + " TIMES, D2 MOVES " + grp(me["D2_moves"]) + " TIMES AND AT NOT ONE "
          "OBJECT WHOSE OCCUPIED-LINK SETS MEET IN AT MOST ONE LINK, D3 MOVES "
-         + grp(me["D3_moves"]) + " TIMES -- THE COIN CANCELS OUT OF THE "
-         "SITE-BASIS DENSITY MATRIX AND THE RECORD SURVIVES ONLY ON LINKS "
-         "OCCUPIED AT BOTH ENDS, SO THE INHERITED OBSERVABLE IS RECORD-BLIND "
-         "BY THEOREM AND THE CO-OCCUPANCY THRESHOLD IS STEP "
-         + str(me["cooccupancy_threshold_coupled"]) + " ON BOTH ARMS | THE "
+         + grp(me["D3_moves"]) + " TIMES, AND THE LAW'S OWN GROWTH FUNCTIONAL "
+         "G5 MOVES " + str(me["G5_moves"]) + " TIMES -- THEOREM A: A "
+         "SITE-BLOCK-DIAGONAL UNITARY STEP LEAVES THE SITE MARGINAL "
+         "RECORD-BLIND AT ANY ARENA, GRAPH, DIMENSION AND HORIZON, MEASURED "
+         "UNDER A SITE-DEPENDENT COIN AT "
+         + grp(me["site_dependent_coin"]["object_field_pairs"])
+         + " PAIRS WITH THE MARGINAL MOVING "
+         + str(me["site_dependent_coin"]["site_marginal_moved"])
+         + " TIMES AND D2 MOVING "
+         + grp(me["site_dependent_coin"]["D2_moved"])
+         + "; THEOREM B: SITE-UNIFORMITY REDUCES THE OFF-DIAGONAL AND MAKES "
+         "CO-OCCUPANCY-NECESSITY A THEOREM, VERIFIED COEFFICIENT BY "
+         "COEFFICIENT AT " + grp(me["symbolic_identities"]) + " IDENTITIES AND "
+         + grp(me["symbolic_coefficient_checks"]) + " CHECKS, AND CONFIRMED AT "
+         "THE PAIR GRAIN: "
+         + grp(me["pair_census"]
+               ["pairs_meeting_in_at_most_one_occupied_link"]["checks"])
+         + " OF " + grp(me["pair_checks"]) + " PAIR-CHECKS AT OVERLAP <= 1 "
+         "MOVE " + str(me["pair_census"]
+                       ["pairs_meeting_in_at_most_one_occupied_link"]["moved"])
+         + " TIMES WHILE "
+         + grp(me["pair_census"]
+               ["pairs_meeting_in_two_or_more_occupied_links"]["checks"])
+         + " AT CO-OCCUPANCY MOVE "
+         + grp(me["pair_census"]
+               ["pairs_meeting_in_two_or_more_occupied_links"]["moved"])
+         + " | THE TWO OCCUPANCY THRESHOLDS: A SITE ON TWO LINKS AT STEP "
+         + str(me["single_site_threshold_coupled"])
+         + ", A PAIR SHARING TWO LINKS AT STEP "
+         + str(me["cooccupancy_threshold_coupled"])
+         + ", BOTH IDENTICAL ON BOTH ARMS | THE "
          "SEPARATION LADDER D3 AT " + str(pr["separation_ladder"]["D3"])
          + ", D1 AND D2 AT " + str(pr["separation_ladder"]["D1"])
          + ", IDENTICAL ACROSS ALL " + str(ct["fiber_rows"])
@@ -3055,15 +4448,23 @@ def reconstruct(S):
                 row["growth"] == "G1-RECORD-CELL":
             fail[row["decoherence"]] = int(row["objects_in_failing_classes"])
     dnames = sorted(fail)
+    d1dom = [r for r in pr["domination_rows"]
+             if str(r["functional"]) == "D1"][0]
+    sc = rl["stamp_census_coupled"]
+    vf = rl["verdict_census_frozen"]
     g = (head + "-<THE RELATION=MEASURED-NOT-FITTED("
          + str(len(rl["grid_coupled"])) + " CELLS PER ARM -- "
          + str(ct["decoherence_functionals"]) + " DECOHERENCE x "
          + str(ct["growth_functionals"]) + " GROWTH x "
          + str(ct["resolutions"]) + " RESOLUTIONS -- DECIDED BY EQUALITY "
-         "INSIDE A GROWTH CLASS AND BY NOTHING ELSE: " + str(nexact)
+         "INSIDE A GROWTH CLASS AND BY NOTHING ELSE: ON THE DELIVERED ARM "
+         + str(nexact)
          + " EXACT, " + str(npart) + " PARTIAL WITH EVERY FAILURE SET CENSUSED "
          "AND RECOUNTED, " + str(int(rl["vacuous"])) + " VACUOUS AND STAMPED "
-         "VACUOUS RATHER THAN PASSED) -- THE ONLY EXACT CELL IS THE LAW'S OWN "
+         "VACUOUS RATHER THAN PASSED; ON THE FROZEN CONTROL "
+         + str(int(vf.get("EXACT", 0))) + ", " + str(int(vf.get("PARTIAL", 0)))
+         + " AND " + str(int(vf.get("VACUOUS", 0)))
+         + ") -- THE ONLY EXACT CELL IS THE LAW'S OWN "
          "IDENTITY(D1 = SUM_x eps(x)^2, THE SITE-BASIS INVERSE PARTICIPATION "
          "OF THE BORN MENU IS THE SUM OF THE SQUARED SITE EMISSION RATES, AT "
          "EVERY OBJECT OF BOTH ARMS -- A CONSEQUENCE OF THE LAW-NATIVE "
@@ -3073,26 +4474,91 @@ def reconstruct(S):
          + str(int(ex["exact_cells_tested"])) + " EXACT CELLS EXCLUDED(THEY "
          "HOLD IDENTICALLY ON THE FROZEN CONTROL, WHOSE RECORD NEVER GROWS AT "
          + grp(ct["branch_steps_frozen_raw"]) + " BRANCH-STEPS, SO THEY ARE "
-         "FACTS ABOUT THE WALK AND THE LAW RATHER THAN ABOUT THE COUPLING) -- "
-         "GRAVITATIONAL-CELLS=" + str(grav) + " -- THE RECORD DOES NOT "
+         "FACTS ABOUT THE WALK AND THE LAW RATHER THAN ABOUT THE COUPLING), "
+         "AND FORCED: BOTH SIDES OF THE ONE EXACT IDENTITY ARE FUNCTIONS OF "
+         "THE SITE MARGINAL, WHICH IS RECORD-BLIND BY THEOREM A -- D1 MOVES "
+         + str(int(ex["the_zero_is_forced"]["D1_moves_on_the_foreign_fields"]))
+         + " TIMES AND G5 MOVES "
+         + str(int(ex["the_zero_is_forced"]["G5_moves_on_the_foreign_fields"]))
+         + " TIMES OVER THE SAME "
+         + grp(ex["the_zero_is_forced"]["object_field_pairs"])
+         + " OBJECT-AND-FIELD PAIRS -- SO IT COULD NOT HAVE FAILED ON THE "
+         "CONTROL FROM EITHER SIDE, AND THE "
+         + str(int(ct["growth_functionals"]) - 1) + " GENUINE RECORD "
+         "FUNCTIONALS G1..G4 PRODUCE NO EXACT CELL AT ANY RESOLUTION -- "
+         "GRAVITATIONAL D=f(G) CELLS=" + str(grav) + " -- THE " + str(npart)
+         + " PARTIAL CELLS ARE NOT ADJUDICATED GRAVITATIONAL BY ANY GATE: THE "
+         "BAR IS DECLARED(F12) TO APPLY TO EXACT CELLS ONLY AND IS "
+         "INAPPLICABLE TO A RELATION THAT DOES NOT HOLD, "
+         + str(int(rl["coupled_partial_cells_with_the_identical_word_on_the_"
+                      "control"]))
+         + " OF THE " + str(npart) + " CARRY THE IDENTICAL WORD ON THE FROZEN "
+         "CONTROL, AND " + str(int(rl["total_failures"])) + " OF THE "
+         + str(npart) + " HAVE ZERO PASSING NON-SINGLETON CLASSES AND ARE "
+         "STAMPED TOTAL-FAILURE(THE HONEST STAMP CENSUS OF THE DELIVERED ARM "
+         "IS " + str(int(sc.get("EXACT", 0))) + " EXACT, "
+         + str(int(sc.get("PARTIAL", 0))) + " PARTIAL, "
+         + str(int(sc.get("TOTAL-FAILURE", 0))) + " TOTAL-FAILURE, "
+         + str(int(sc.get("VACUOUS", 0))) + " VACUOUS) -- THE RECORD DOES NOT "
          "DETERMINE THE DECOHERENCE(AT THE FINEST RESOLUTION THE CELL-GRAIN "
          "RECORD LEAVES " + grp(fail[dnames[0]]) + " OF "
          + grp(ct["branch_steps_coupled_distinct"]) + " OBJECTS IN CLASSES "
          "CARRYING MORE THAN ONE D1-VALUE, " + grp(fail[dnames[1]])
          + " FOR D2 AND " + grp(fail[dnames[2]]) + " FOR D3; ON THE FROZEN "
          "CONTROL THE RECORD IS ONE CLASS CARRYING EVERY VALUE, SO IT CANNOT "
-         "TESTIFY AT ALL) -- DOMINATION="
+         "TESTIFY AT ALL) -- WHAT SURVIVES THE BAR IS BETWEEN-ARM, NOT "
+         "WITHIN-ARM: THE SEPARATION LADDER D3 AT "
+         + str(pr["separation_ladder"]["D3"]) + " / D1 AND D2 AT "
+         + str(pr["separation_ladder"]["D1"]) + " IDENTICAL ACROSS "
+         + str(agreeing) + " OF " + str(len(S["forcedness"]["rows"]))
+         + " FIBER MEMBERS, AND D1 COUPLED-DOMINATES AT BOTH ITS SEPARATING "
+         "STEPS " + str(d1dom["separating_steps"]) + " WITH EXACT WITNESSES "
+         "AND IS PUBLISHED HORIZON-LOCAL -- DOMINATION="
          + "; ".join(str(r["functional"]) + " " + str(r["verdict"])
                      for r in pr["domination_rows"])
-         + " -- FORCEDNESS=" + str(_agree(S)) + " OF "
+         + " -- OUTCOME-REACHABILITY=" + str(len(oc["arms_reached"])) + " OF "
+         + str(int(oc["arms_declared"])) + " ARMS OF THE DECLARED GRAMMAR "
+         "EMITTED BY A WITNESS CONFIGURATION THROUGH THE SAME SELECTOR AND THE "
+         "SAME COMPARATOR, SO THE WORD IS A MEASUREMENT AND NOT A DEFAULT -- "
+         "FORCEDNESS=" + str(agreeing) + " OF "
          + str(len(S["forcedness"]["rows"])) + " FIBER MEMBERS AGREE ON THE "
-         "WHOLE RELATION SIGNATURE(+/- GROVER MEASURED IDENTICAL AS A "
-         "GLOBAL-PHASE PAIR) -- PREDICTION-ROW="
+         "WHOLE RELATION SIGNATURE, THRESHOLDS INCLUDED(+/- GROVER MEASURED "
+         "IDENTICAL AS A GLOBAL-PHASE PAIR) -- PREDICTION-ROW="
          + ("ENTERED" if pr["forced_across_the_fiber"] else "NOT-ENTERED")
          + " -- SCOPE=THIS UNIT MEASURES A RELATION AT ONE ARENA AT ONE "
          "DECLARED HORIZON; NO CONTINUUM, NO SI QUANTITY, NO EXPERIMENTAL "
          "VALUE, AND THE DIOSI-PENROSE ARC CITED FOR SHAPE ONLY>")
-    return {"arena": a, "functionals": f, "gates": g}
+    lad = rs["wraparound_ladder"]
+    th = ("GDL-THIRD-CHANNEL-[THE RECORD THE MACHINE WRITES IS UNBOUNDED; THE "
+          "RECORD THE COIN READS IS Z/" + str(int(rs["order_of_the_record_"
+                                                     "phase"]))
+          + " -- THE STEP READS w^(n mod "
+          + str(int(rs["order_of_the_record_phase"])) + ") AND w IS A "
+          "PRIMITIVE CUBE ROOT OF UNITY, SO EVERY psi-INTERNAL FUNCTIONAL SEES "
+          "AT MOST A Z/" + str(int(rs["order_of_the_record_phase"]))
+          + " SHADOW OF THE METRIC.  MEASURED ON " + str(len(rs["rows"]))
+          + " DECLARED CONGRUENT-BUT-DIFFERENT RECORD FIELDS -- THE SAME "
+          "RESIDUE AT EVERY ONE OF THE " + str(int(ct["cells"]))
+          + " CELLS, A DIFFERENT RECORD AT EVERY OBJECT -- AT "
+          + grp(rs["checks"]) + " CHECKS: THE TWO STATE-INTERNAL FUNCTIONALS "
+          "MOVE " + str(int(rs["state_internal_moves"])) + " TIMES AND THE "
+          "RECORD-READING ONE MOVES " + grp(rs["record_reading_moves"])
+          + ", SO TWO OF THE THREE CANNOT DISTINGUISH CONGRUENT RECORDS AT ALL "
+          "AND ONE CAN | THE WRAPAROUND, CENSUSED AT BOTH GRAINS: WRITTEN "
+          "INSIDE THE HORIZON -- THE ANCHORED MAXIMUM-CELL LADDER REACHES "
+          + str(int(lad[-1]["written_max_cell_count"])) + " AT LEVEL "
+          + str(int(rs["first_step_at_which_a_wrapped_cell_is_written"]))
+          + " AND " + grp(rs["wrapped_cells_written"]) + " CELLS THERE CARRY A "
+          "COUNT ABOVE 3, ALL "
+          + grp(rs["wrapped_cells_written_congruent_to_the_welded_value"])
+          + " OF THEM CONGRUENT TO THE WELDED VALUE n = 1 -- AND READ BY NO "
+          "OBJECT OF IT: AN OBJECT OF STEP t READS THE RECORD OF LEVEL t-1, SO "
+          + str(int(rs["wrapped_cells_read"])) + " WRAPPED CELLS ARE READ "
+          "ANYWHERE INSIDE THE DECLARED HORIZON AND THE FIRST STEP THAT WOULD "
+          "READ ONE IS "
+          + str(int(rs["first_step_at_which_a_wrapped_cell_would_be_read"]))
+          + ", ONE BEYOND IT | VERDICT=" + str(rs["verdict"]) + "]")
+    return {"arena": a, "functionals": f, "gates": g, "third_channel": th}
 
 
 # ===========================================================================
@@ -3109,6 +4575,8 @@ def paper_claims(R):
     rl = R["relation"]
     ex = R["exclusion"]
     pr = R["prediction"]
+    rs = R["residue"]
+    oc = R["outcome"]
     out = []
 
     def add(cid, sent):
@@ -3139,12 +4607,14 @@ def paper_claims(R):
         "gravitational-decoherence relations"
         % (ex["excluded_count"], ex["exact_cells_tested"],
            ex["gravitational_count"]))
-    add("C7", "the inverse participation does not move once in %s checks over "
-        "%d declared foreign count fields"
-        % (com(me["checks"]), len(me["foreign_fields"])))
+    add("C7", "the inverse participation does not move once in the %s "
+        "object-and-field pairs at which it is checked, of %s checks over the "
+        "three functionals and %d declared foreign count fields"
+        % (com(me["object_field_pairs"]), com(me["checks"]),
+           len(me["foreign_fields"])))
     add("C8", "the off-diagonal mass moves at %s of the %s object-and-field "
-        "pairs, and at not one pair whose occupied-link sets meet in at most "
-        "one link" % (com(me["D2_moves"]), com(me["checks"] // len(D_SHORT))))
+        "pairs, and at not one object no two of whose sites share two occupied "
+        "links" % (com(me["D2_moves"]), com(me["object_field_pairs"])))
     add("C9", "the record-reading functional separates the arms at step %s, "
         "one step before either state-internal functional, which separate at "
         "step %s" % (pr["separation_ladder"]["D3"],
@@ -3155,33 +4625,123 @@ def paper_claims(R):
         % (com(fn["l1_price"]["irrational_moduli"]),
            com(fn["l1_price"]["offdiagonal_entries"])))
     add("C12", "%d cells per arm are decided by equality inside a growth "
-        "class: %d exact, %d partial, %d vacuous"
-        % (len(rl["grid_coupled"]), rl["exact"], rl["partial"], rl["vacuous"]))
+        "class: on the delivered arm %d exact, %d partial and %d vacuous; on "
+        "the control %d, %d and %d"
+        % (len(rl["grid_coupled"]), rl["exact"], rl["partial"], rl["vacuous"],
+           rl["verdict_census_frozen"].get("EXACT", 0),
+           rl["verdict_census_frozen"].get("PARTIAL", 0),
+           rl["verdict_census_frozen"].get("VACUOUS", 0)))
     add("C13", "the separation ladder is identical across all %d executed "
         "fiber members" % ct["fiber_rows"])
     add("C14", "the cell-grain record leaves %s of %s objects in classes "
         "carrying more than one value of the inverse participation"
         % (com(_cellstat(R, "RES-BRANCH", "G1-RECORD-CELL", D_IDS[0])),
            com(ct["branch_steps_coupled_distinct"])))
+    add("C15", "the fibers are run as declared axes, not as a product")
+    add("C16", "%d of the %d coupled partial cells carry the identical verdict "
+        "word on the frozen control, and %d of them have zero passing "
+        "non-singleton classes"
+        % (rl["coupled_partial_cells_with_the_identical_word_on_the_control"],
+           rl["partial"], rl["total_failures"]))
+    add("C17", "the law's own rate does not move once in %s object-and-field "
+        "pairs, so the single exact cell relates a record-blind decoherence "
+        "functional to a record-blind growth functional"
+        % com(me["G5_checks"]))
+    add("C18", "at the finest grain the mechanism holds at %s pair-checks: "
+        "%s site pairs meeting in at most one occupied link move %d times"
+        % (com(me["pair_checks"]),
+           com(me["pair_census"]
+               ["pairs_meeting_in_at_most_one_occupied_link"]["checks"]),
+           me["pair_census"]["pairs_meeting_in_at_most_one_occupied_link"]
+           ["moved"]))
+    add("C19", "under a coin that is block-diagonal and unitary on every block "
+        "but different at every site, the site marginal moves %d times and the "
+        "inverse participation moves %d times in %s object-and-field pairs, "
+        "while the off-diagonal mass moves %s"
+        % (me["site_dependent_coin"]["site_marginal_moved"],
+           me["site_dependent_coin"]["D1_moved"],
+           com(me["site_dependent_coin"]["object_field_pairs"]),
+           com(me["site_dependent_coin"]["D2_moved"])))
+    add("C20", "a site occupied on two links first appears at step %s and a "
+        "pair of sites sharing two occupied links first appears at step %s"
+        % (me["single_site_threshold_coupled"],
+           me["cooccupancy_threshold_coupled"]))
+    add("C21", "the two state-internal functionals move %d times on %d "
+        "declared congruent-but-different record fields and the record-reading "
+        "one moves %s"
+        % (rs["state_internal_moves"], len(rs["rows"]),
+           com(rs["record_reading_moves"])))
+    add("C22", "%s cells at level %s carry a count above 3 and every one of "
+        "them is congruent to the welded value, while %d wrapped cells are "
+        "read anywhere inside the declared horizon"
+        % (com(rs["wrapped_cells_written"]),
+           rs["first_step_at_which_a_wrapped_cell_is_written"],
+           rs["wrapped_cells_read"]))
+    add("C23", "%d of %d arms of the declared outcome grammar are emitted by a "
+        "witness configuration through the same selector"
+        % (len(oc["arms_reached"]), oc["arms_declared"]))
     return out
 
 
 def paper_tables(R):
-    """the paper's tables, RENDERED FROM THE RECEIPT."""
+    """the paper's tables, ALL EIGHT OF THEM, RENDERED FROM THE RECEIPT (E-22:
+    tables render as claims).  The first delivery rendered four and a swap
+    inside any of the other four -- the relation grid, the anchor table, the
+    fiber table and the choice inventory, which is to say the unit's central
+    result and its provenance -- passed at exit 0."""
     rows = []
+    # 1. the separation ladder
     for r in R["prediction"]["separation_rows"]:
         rows.append("| `%s` | %s |" % (r["functional"],
                                        r["first_separating_step"]))
+    # 2. the blindness census
     for r in R["mechanism"]["rows"]:
         rows.append("| `%s` | %d | %s | %s |"
                     % (r["field"], r["moved"]["D1"], com(r["moved"]["D2"]),
                        com(r["moved"]["D3"])))
+    # 3. the co-occupancy ladder
     for r in R["mechanism"]["cooccupancy_ladder_coupled"]:
         rows.append("| %d | %s | %s |" % (r["t"], com(r["objects"]),
                                           com(r["with_a_cooccupancy_pair"])))
+    # 4. the dominations
     for r in R["prediction"]["domination_rows"]:
         rows.append("| `%s` | %s | %s |"
                     % (r["functional"], r["separating_steps"], r["verdict"]))
+    # 5. THE RELATION GRID -- the unit's central result
+    for g in G_IDS:
+        cells = []
+        for d in D_IDS:
+            row = [x for x in R["relation"]["grid_coupled"]
+                   if x["resolution"] == "RES-BRANCH" and x["growth"] == g
+                   and x["decoherence"] == d][0]
+            if row["verdict"] == "EXACT":
+                cells.append("**EXACT**, `%d` of `%d`"
+                             % (row["failing_classes"],
+                                row["nonsingleton_classes"]))
+            else:
+                cells.append("%s, `%d` of `%d`"
+                             % (row["stamp"], row["failing_classes"],
+                                row["nonsingleton_classes"]))
+        rows.append("| `%s` | %s |" % (g, " | ".join(cells)))
+    # 6. THE ANCHOR TABLE (the quotes of the list rendering dropped, nothing
+    #    else: the value compared at the gate is the value published here)
+    for r in R["rebuild"]["anchor_rows"]:
+        rows.append("| %s | `%s` |" % (r["what"], r["rebuilt"].replace("'", "")))
+    # 7. THE FIBER TABLE
+    for r in R["forcedness"]["rows"]:
+        rows.append("| `%s`%s | `%d` | `%d` | %s | %s | `%s` |"
+                    % (r["coin"],
+                       "" if r["reading"] == DELIVERED_READING
+                       else ", record menu",
+                       r["branch_steps_coupled_distinct"],
+                       r["branch_steps_frozen_distinct"],
+                       r["single_site_threshold_coupled"],
+                       r["cooccupancy_threshold_coupled"],
+                       r["cell_signature"]))
+    # 8. THE CHOICE INVENTORY
+    for r in R["choices"]["rows"]:
+        rows.append("| %d | `%s` | **%s** | %d | %s |"
+                    % (r["n"], r["item"], r["status"], r["fiber"], r["note"]))
     for t in rows:
         for m in re.findall(r"\d[\d,]*(?:/\d+)?", t):
             reg(m.replace(",", ""), m)
@@ -3219,7 +4779,14 @@ def paper_coverage(R, text):
     blocks = FENCE_RE.findall(text)
     spans = INLINE_RE.findall(without_fences)
     prose = INLINE_RE.sub(" ", without_fences)
-    known = receipt_numbers(R) | NUMREG | NUM_ALLOW | head_numbers(R)
+    # THE ALLOWLIST IS BUILT FROM THE MEASURED KEYS ONLY (K3 MAJOR-4).  The
+    # first delivery serialized the WHOLE receipt, so the instrument's own
+    # self-description -- the seal digests' digit runs, the gate registry, the
+    # source sha256-12s, the transcript head and, worst, THE DECLARED
+    # FALSIFIER'S OWN NEEDLE -- entered the allowlist and a fabricated numeral
+    # planted in the prose could never be flagged.
+    known = (receipt_numbers({k: R[k] for k in MEASURED_KEYS if k in R})
+             | NUMREG | NUM_ALLOW | head_numbers(R))
     scanned = allowed = fenced = inline = 0
     unreg = []
     targets = [(canon(prose), NUM_PROSE_RE, "prose")]
@@ -3253,12 +4820,15 @@ def block_multiset(text):
 
 def paper_polarity(R, text, mutated=False):
     pos_needles = [
-        ("P1", "GDL-PARTIAL", "GDL-LAW-FORCED"),
+        ("P1", "GDL-DECOUPLED-AT-THE-GRAVITATIONAL-BAR", "GDL-PARTIAL"),
         ("P2", "the record does not determine the decoherence",
          "the record determines the decoherence"),
         ("P3", "the inherited observable is record-blind",
          "the inherited observable reads the record"),
         ("P4", "cited for shape only", "cited for its numbers"),
+        ("P5", "the record the coin reads is Z/3",
+         "the record the coin reads is the metric"),
+        ("P6", "gravitational d=f(g) cells=0", "gravitational d=f(g) cells=1"),
     ]
     out = []
     for pid, pos, neg in pos_needles:
@@ -3279,6 +4849,9 @@ def paper_polarity(R, text, mutated=False):
 
 
 def paper_gates(LD, SEAL, R, text):
+    # THE NUMERAL FALSIFIER PLANTS ITS NUMERAL IN THE PAPER, not in the gate's
+    # own input (K3 MAJOR-4): a falsifier that bypasses the scan tests nothing.
+    text = pick("MUT-PAPER-NUMERAL", text, text + "\n\n" + "123456789" + "\n")
     claims = paper_claims(R)
     missing = []
     for c in claims:
@@ -3311,9 +4884,7 @@ def paper_gates(LD, SEAL, R, text):
     SEAL.take("SEAL-PAPER-TABLES", R)
 
     cov = paper_coverage(R, text)
-    unregistered = pick("MUT-PAPER-NUMERAL", cov["unregistered"],
-                        ["123456789"])
-    cov["unregistered"] = unregistered
+    unregistered = cov["unregistered"]
     R["paper_coverage"] = cov
     LD.gate("G-PAPER-NUMERAL-COVERAGE",
             "#20 WITH THE FENCED-BLOCK AND INLINE-SPAN ADDENDA (E-22): the "
@@ -3332,21 +4903,35 @@ def paper_gates(LD, SEAL, R, text):
         probe = pick("MUT-PAPER-HEAD", seg, seg[:-1] + "Z")
         if canon(probe) not in canon(text):
             bad.append(i)
+    # E-22 IN MECHANISM AND NOT ONLY IN NAME: the comparison is FULL MULTISET
+    # EQUALITY in both directions.  The first delivery compared only
+    # want -> have, so an EXTRA fenced block was invisible and a duplicated
+    # head segment with a forged twin passed at exit 0 -- the exact scenario
+    # E-22 was bought for.  This paper's fences are exactly its head segments,
+    # so equality is the right predicate.
+    extra_fence = Counter({canon("```\nEXTRA\n```"): 1})
     blockmap = pick("MUT-PAPER-BLOCK", block_multiset(text),
-                    Counter(dict(sorted(block_multiset(text).items())[:-1])))
+                    block_multiset(text) + extra_fence)
     want = Counter(canon("```\n%s\n```" % s) for s in segs)
-    mult_bad = [k for k, v in want.items() if blockmap.get(k, 0) != v]
+    mult_bad = [k for k in set(want) | set(blockmap)
+                if blockmap.get(k, 0) != want.get(k, 0)]
     R["paper_coverage"]["head_segments"] = len(segs)
     R["paper_coverage"]["fenced_block_multiset_size"] = sum(blockmap.values())
+    R["paper_coverage"]["fenced_block_multiset_matches_the_head_exactly"] = (
+        not mult_bad)
     LD.gate("G-PAPER-HEAD-VERBATIM",
             "the paper's verdict block is the DERIVED head, rendered from the "
             "receipt: all %d segments are located verbatim, and the fenced "
-            "blocks are gated by MULTISET EQUALITY (E-22) rather than by "
-            "containment, so a duplicated block cannot shadow a forged twin"
+            "blocks are gated by MULTISET EQUALITY IN BOTH DIRECTIONS (E-22) "
+            "rather than by containment -- the paper's fenced blocks must BE "
+            "the head's segments, one for one, so neither a duplicated block "
+            "shadowing a forged twin nor an extra fence of any kind survives"
             % len(segs),
             not bad and not mult_bad,
-            "segments not located %s; multiset mismatches %d"
-            % (bad or "none", len(mult_bad)))
+            "segments not located %s; multiset mismatches %d (%d fenced blocks "
+            "in the paper against %d head segments)"
+            % (bad or "none", len(mult_bad), sum(blockmap.values()),
+               len(segs)))
     SEAL.take("SEAL-PAPER-COVERAGE", R)
 
     mutated = pick("MUT-PAPER-POLARITY", False, True)
@@ -3407,36 +4992,116 @@ def writer_shape():
                                             for r in replaces)}
 
 
+def _targets_of(node):
+    """the names a statement ASSIGNS to, subscript and attribute targets
+    resolved to their last key -- so `R["counts"]["horizon"] = ...` declares
+    the symbol `horizon`."""
+    out = set()
+    tgts = []
+    if isinstance(node, ast.Assign):
+        tgts = list(node.targets)
+    elif isinstance(node, (ast.AugAssign, ast.AnnAssign)):
+        tgts = [node.target]
+    else:
+        for c in ast.walk(node):
+            if isinstance(c, ast.Assign):
+                tgts.extend(c.targets)
+            elif isinstance(c, (ast.AugAssign, ast.AnnAssign)):
+                tgts.append(c.target)
+    for t in tgts:
+        for n in ast.walk(t):
+            if isinstance(n, ast.Name):
+                out.add(n.id)
+            elif isinstance(n, ast.Attribute):
+                out.add(n.attr)
+            elif isinstance(n, ast.Subscript) and \
+                    isinstance(n.slice, ast.Constant) and \
+                    isinstance(n.slice.value, str):
+                out.add(n.slice.value)
+    return out
+
+
+def _token_in(needle, hay):
+    """the needle occurs in the source as a WHOLE token, so a declared value
+    `1` is not satisfied by the `1` inside the identifier `D1`."""
+    return re.search(r"(?<![\w.])%s(?![\w.])" % re.escape(needle),
+                     hay) is not None
+
+
 def falsifier_hooks():
-    """E-23, THE MECHANICAL HALF: every declared falsifier's SYMBOL and VALUE
-    are re-derived from this file's own AST -- the innermost statement
-    enclosing each `pick(NAME, ...)` or `mut(NAME)` call -- and compared
-    against the declaration."""
+    """E-23 MADE SEMANTIC.  For every declared falsifier this returns, from
+    THIS FILE'S OWN AST rather than from its text:
+
+      * the SYMBOLS the hook's enclosing statement actually ASSIGNS TO;
+      * the SOURCE of the corrupting expression -- the third argument of
+        `pick(NAME, honest, corrupt)`, or the whole hook statement for a
+        `mut(NAME)` branch;
+      * the SOURCE of the honest expression, where there is one.
+
+    Substring containment on the raw text -- which is what the first delivery
+    of this unit checked -- cannot tell a true declaration from a false one:
+    a falsifier declared to move a symbol to `0` while its code writes `1`
+    passed, because `0` occurred somewhere in the segment."""
     src = read_text(SELF)
     tree = ast.parse(src)
     found = defaultdict(list)
     for node in ast.walk(tree):
         if not isinstance(node, ast.stmt):
             continue
-        names = set()
+        calls = {}
         for c in ast.walk(node):
             if isinstance(c, ast.Call) and isinstance(c.func, ast.Name) \
                     and c.func.id in ("pick", "mut") and c.args \
                     and isinstance(c.args[0], ast.Constant):
-                names.add(c.args[0].value)
-        if not names:
+                calls[c.args[0].value] = c
+        if not calls:
             continue
         seg = ast.get_source_segment(src, node) or ""
         lo, hi = node.lineno, (node.end_lineno or node.lineno)
-        for nm in names:
-            found[nm].append((lo, hi, seg))
+        for nm, c in calls.items():
+            honest = corrupt = None
+            if c.func.id == "pick" and len(c.args) >= 3:
+                honest = ast.unparse(c.args[1])
+                corrupt = ast.unparse(c.args[2])
+            else:
+                corrupt = seg
+            found[nm].append((lo, hi, seg, sorted(_targets_of(node)),
+                              honest, corrupt))
     out = {}
     for nm, rows in found.items():
         keep = [r for r in rows
                 if not any(o is not r and r[0] <= o[0] and o[1] <= r[1]
                            and (o[1] - o[0]) < (r[1] - r[0]) for o in rows)]
-        out[nm] = [r[2] for r in sorted(keep)]
+        out[nm] = [{"source": r[2], "assigns": r[3], "honest": r[4],
+                    "corrupt": r[5]} for r in sorted(keep)]
     return out
+
+
+def seal_window():
+    """THE SEAL WINDOW, re-derived from this file's AST: for every `SEAL.take`
+    site, the name of the NEAREST PRECEDING `LD.gate` in the same function.  A
+    seal whose published `sealed_at_gate` is not a window it is actually taken
+    in is a mislabelled seal, and the manifest must not carry one."""
+    tree = ast.parse(read_text(SELF))
+    windows = defaultdict(set)
+    for fn in ast.walk(tree):
+        if not isinstance(fn, ast.FunctionDef):
+            continue
+        marks = []
+        for n in ast.walk(fn):
+            if isinstance(n, ast.Call) and isinstance(n.func, ast.Attribute) \
+                    and n.args and isinstance(n.args[0], ast.Constant):
+                if n.func.attr == "gate":
+                    marks.append((n.lineno, "GATE", n.args[0].value))
+                elif n.func.attr == "take":
+                    marks.append((n.lineno, "TAKE", n.args[0].value))
+        cur = None
+        for _ln, kind, val in sorted(marks):
+            if kind == "GATE":
+                cur = val
+            elif cur is not None:
+                windows[val].add(cur)
+    return {k: sorted(v) for k, v in windows.items()}
 
 
 def waiver_ledger():
@@ -3500,21 +5165,25 @@ GATE_REGISTRY = [
     "G-READS-DECLARED", "G-VERBATIM",
     "G-PARENT-REPRODUCED", "G-PARENT-LOCATED",
     "G-ENSEMBLE-EXHAUSTIVE", "G-BRANCH-MASS",
-    "G-WALK-UNITARY", "G-LAW-KERNEL",
+    "G-WALK-UNITARY", "G-LAW-KERNEL", "G-LAW-CHECK-CLASSES",
     "G-FUNCTIONALS-DECLARED", "G-FUNCTIONALS-EXACT", "G-L1-PRICED",
     "G-PURITY-SPLIT",
     "G-RATE-IS-BORN", "G-RATE-TOTAL", "G-GROWTH-FROZEN-ZERO",
     "G-RELATION-CENSUS", "G-VACUITY-DECLARED", "G-FAILURE-CENSUS",
-    "G-NO-FITTED-FORM",
+    "G-TOTAL-FAILURE-STAMP", "G-FROZEN-GRID-CENSUS", "G-NO-FITTED-FORM",
     "G-COIN-ADMISSIBLE", "G-COIN-FIBER", "G-FIBER-EXECUTED",
     "G-GLOBAL-PHASE-PAIR", "G-FROZEN-CONTROL", "G-FROZEN-EXCLUSION",
     "G-SEPARATION-LADDER", "G-DOMINATION",
     "G-BLINDNESS-D1", "G-BLINDNESS-D3", "G-COOCCUPANCY",
-    "G-COOCCUPANCY-THRESHOLD",
+    "G-COOCCUPANCY-THRESHOLD", "G-OCCUPANCY-PREDICATES",
+    "G-PAIR-MECHANISM", "G-BLINDNESS-G5", "G-THEOREM-A", "G-THEOREM-B",
+    "G-FOREIGN-FIELDS-FOREIGN",
+    "G-RESIDUE-CHANNEL", "G-RESIDUE-WRAPAROUND",
     "G-PREDICTION-ROW", "G-PREDICTION-RENDERED",
     "G-WALL-L1", "G-WALL-BHS", "G-WALL-KR", "G-WALL-COSMO", "G-WALL-NO-SI",
     "G-WALL-DP-SHAPE", "G-WALL-LORENTZ-NAMED", "G-WALL-HEX-NAMED",
-    "G-MEASURE-DECLARED", "G-VERDICT-RECONSTRUCTED",
+    "G-MEASURE-DECLARED", "G-CHOICE-INVENTORY", "G-OUTCOME-REACHABILITY",
+    "G-VERDICT-RECONSTRUCTED",
     "G-PAPER-CLAIMS", "G-PAPER-TABLES", "G-PAPER-NUMERAL-COVERAGE",
     "G-PAPER-HEAD-VERBATIM", "G-PAPER-CLAIM-POLARITY",
     "G-CLI-WHITELIST", "G-SELFTEST-WRITES-NOTHING", "G-MUTANTS-ON-TARGET",
@@ -3584,11 +5253,24 @@ def finish(LD, SEAL, R, verdict, write=True, swept=False):
         if mut("MUT-FALSIFIER-DESC") and name == "MUT-KERNEL":
             declared = ("FORGED", "FORGED")
         segs = hooks.get(name, [])
-        code_ok = any(declared[0] in s and declared[1] in s for s in segs)
-        prose_ok = moves in why and to in why
+        # LEG 1 -- THE SYMBOL IS AN ASSIGNMENT TARGET, not a substring.
+        # LEG 2 -- THE VALUE IS A WHOLE TOKEN OF THE CORRUPTING EXPRESSION'S
+        #          OWN SOURCE, and the corrupting expression differs from the
+        #          honest one, so a falsifier that changes nothing is caught.
+        code_ok = any(declared[0] in s["assigns"]
+                      and _token_in(declared[1], s["corrupt"])
+                      and s["corrupt"] != s["honest"] for s in segs)
+        # LEG 3 -- THE PROSE CARRIES THE CLAUSE THE AST ASSEMBLES, contiguously
+        #          and in order, so a description that keeps the symbol and the
+        #          value as loose tokens while saying the opposite is caught.
+        clause = "moves `%s` to %s" % (declared[0], declared[1])
+        prose_ok = canon(clause) in canon(why)
         hook_rows.append({"mutant": name, "gate": gate, "what_it_does": why,
                           "moves": declared[0], "to": declared[1],
+                          "assembled_clause": clause,
                           "hook_sites": len(segs),
+                          "assigns": sorted({a for s in segs
+                                             for a in s["assigns"]}),
                           "matches_its_code": code_ok,
                           "named_in_its_description": prose_ok})
         if not code_ok:
@@ -3598,17 +5280,23 @@ def finish(LD, SEAL, R, verdict, write=True, swept=False):
     undeclared_hooks = sorted(set(hooks) - MUTANT_NAMES)
     R["mutants"] = hook_rows
     LD.gate("G-FALSIFIER-HONESTY",
-            "E-23: A FALSIFIER'S PUBLISHED DESCRIPTION IS PART OF THE SEALED "
-            "SURFACE.  Each of the %d declared falsifiers names THE SYMBOL IT "
-            "MOVES and THE VALUE IT MOVES IT TO; both are re-derived from THIS "
-            "FILE's own AST -- the innermost statement enclosing its hook -- "
-            "and compared against the declaration, and the published prose is "
-            "required to name both.  %d hook sites are located, and every hook "
-            "in the file names a declared falsifier"
+            "E-23 IS SEMANTIC HERE, NOT A SUBSTRING SEARCH.  Each of the %d "
+            "declared falsifiers names THE SYMBOL IT MOVES and THE VALUE IT "
+            "MOVES IT TO, and three legs bind the declaration to the code: the "
+            "SYMBOL must be an ASSIGNMENT TARGET of the hook's own statement, "
+            "re-derived from this file's AST; the VALUE must occur as a WHOLE "
+            "TOKEN in the source of the CORRUPTING expression -- the third "
+            "argument of its `pick` -- which must itself differ from the "
+            "honest one; and the published prose must carry, contiguously, THE "
+            "CLAUSE THE AST ASSEMBLES from those two.  A declaration that "
+            "names a value its code does not write, and a description that "
+            "keeps the symbol and the value while saying the opposite of what "
+            "the hook does, both die here.  %d hook sites are located, and "
+            "every hook in the file names a declared falsifier"
             % (len(MUTANTS), sum(len(v) for v in hooks.values())),
             not hook_bad and not desc_bad and not undeclared_hooks,
-            "declarations not matching their code: %s; descriptions not naming "
-            "their symbol and value: %s; hooks naming an undeclared "
+            "declarations not matching their code: %s; descriptions not "
+            "carrying their assembled clause: %s; hooks naming an undeclared "
             "falsifier: %s" % (hook_bad or "none", desc_bad or "none",
                                undeclared_hooks or "none"))
     SEAL.take("SEAL-MUTANTS", R)
@@ -3643,18 +5331,36 @@ def finish(LD, SEAL, R, verdict, write=True, swept=False):
     R.setdefault("mutant_sweep", [])
     sweep_rows = R.get("mutant_sweep") or []
     ran_here = {g["gate"] for g in LD.rows}
+    # THE SWEEP IS BOUND TO EXECUTION AND NOT TO THE CONTENT OF ITS OWN ROWS.
+    # Every row must carry THE EVIDENCE STRING ITS GATE ACTUALLY RAISED, that
+    # string must name the row's own gate, and the number of times run_mutant
+    # actually entered its body must equal the number of rows: a delivery-level
+    # run that executes no mutant at all cannot publish a complete sweep.
+    ev_bad = [k.get("mutant") for k in sweep_rows
+              if not k.get("evidence")
+              or not str(k.get("evidence", "")).startswith(
+                  str(k.get("declared_gate", "\0")) + " ::")]
+    runs = MUTANT_RUNS[0]
     sweep_ok = (not swept) or (
         len(sweep_rows) == len(MUTANTS)
         and all(k.get("on_target") for k in sweep_rows)
+        and not ev_bad and runs >= len(MUTANTS)
         and SWEEP_GATE in ran_here)
     LD.gate("G-SWEEP-BOUND",
             "THE SWEEP'S EXECUTION IS BOUND, NOT DECLARED: a delivery-level "
             "run must carry one sweep row per declared mutant (%d), every row "
-            "ON TARGET, and must have evaluated the sweep gate itself.  This "
-            "run is %s" % (len(MUTANTS),
-                           "delivery-level" if swept else "a sub-pipeline"),
-            sweep_ok, "sweep rows %d of %d; sweep gate evaluated %s"
-            % (len(sweep_rows), len(MUTANTS), SWEEP_GATE in ran_here))
+            "ON TARGET, EVERY ROW CARRYING THE EVIDENCE STRING ITS GATE "
+            "ACTUALLY RAISED AND NAMING ITS OWN GATE, at least %d executions "
+            "counted inside the harness itself, and it must have evaluated the "
+            "sweep gate.  A run that publishes a complete on-target sweep "
+            "without executing a single falsifier dies here.  This run is %s "
+            "and counted %d executions"
+            % (len(MUTANTS), len(MUTANTS),
+               "delivery-level" if swept else "a sub-pipeline", runs),
+            sweep_ok, "sweep rows %d of %d; rows with no or mismatched gate "
+            "evidence %s; harness executions %d; sweep gate evaluated %s"
+            % (len(sweep_rows), len(MUTANTS), ev_bad or "none", runs,
+               SWEEP_GATE in ran_here))
     SEAL.take("SEAL-MUTANT-SWEEP", R)
 
     consumers = {v[3] for v in VERBATIM}
@@ -3758,7 +5464,13 @@ def finish(LD, SEAL, R, verdict, write=True, swept=False):
     unsealed_clean = not (set(DECLARED_UNSEALED)
                           & ({p for _s, p, _g in SEALED_PATHS}
                              | set(MEASURED_KEYS)))
+    windows = seal_window()
+    window_bad = sorted(s for s, _p, g in SEALED_PATHS
+                        if g not in windows.get(s, []))
     R["seal_manifest"] = {"rows": SEAL.rows,
+                          "windows_from_this_file_s_ast": windows,
+                          "rows_whose_declared_gate_is_not_their_window":
+                              window_bad,
                           "declared_unsealed": DECLARED_UNSEALED,
                           "declared_unsealed_frozen": unsealed_frozen,
                           "declared_unsealed_carries_no_measurement":
@@ -3776,15 +5488,19 @@ def finish(LD, SEAL, R, verdict, write=True, swept=False):
             "rather than against the seals that happened to be taken.  The "
             "vouching layer is inside the seal: schema, provenance, paper "
             "claims, polarity, coverage, reachability, gates, totals and the "
-            "transcript head",
+            "transcript head.  AND EVERY ROW'S PUBLISHED `sealed_at_gate` IS "
+            "RE-DERIVED FROM THIS FILE'S AST -- the nearest preceding LD.gate "
+            "of each SEAL.take site -- so a block seal taken after a block of "
+            "gates says which gate it was actually taken at",
             not missing and not extra and not uncovered_keys and not broken
-            and unsealed_frozen and unsealed_clean,
+            and unsealed_frozen and unsealed_clean and not window_bad,
             "declared seals %d, taken %d, missing %s, extra %s, receipt keys "
             "not covered %s, seals broken at close %s, unsealed list frozen %s "
-            "and measurement-free %s"
+            "and measurement-free %s, rows whose declared gate is not their "
+            "AST window %s"
             % (len(SEALED_PATHS), len(SEAL.rows), missing or "none",
                extra or "none", uncovered_keys or "none", broken or "none",
-               unsealed_frozen, unsealed_clean))
+               unsealed_frozen, unsealed_clean, window_bad or "none"))
     payload = json.dumps(R, indent=1, sort_keys=True, default=str)
     emit_report(R, LD)
     text = "\n".join(LINES) + "\n"
@@ -3793,64 +5509,94 @@ def finish(LD, SEAL, R, verdict, write=True, swept=False):
     if not write:
         return payload, text
     tmp_j, tmp_t = OUT_JSON + ".tmp", OUT_TXT + ".tmp"
-    final = json.dumps(R, indent=1, sort_keys=True, default=str)
-    with open(tmp_j, "w", encoding="utf-8") as fh:
-        fh.write(final + "\n")
-    with open(tmp_t, "w", encoding="utf-8") as fh:
-        fh.write(text)
-    back = json.loads(read_text(tmp_j))
-    probes_caught = 0
-    for row in SEAL.rows:
-        probe = json.loads(json.dumps(back))
-        cur = probe
-        parts = row["path"].split("/")
-        for part in parts[:-1]:
-            cur = cur[int(part)] if isinstance(cur, list) else cur[part]
-        key = parts[-1]
-        if isinstance(cur, list):
-            cur[int(key)] = ["PROBE"]
-        else:
-            cur[key] = "PROBE"
-        if row["seal"] in SEAL.verify(probe, only={row["seal"]}):
-            probes_caught += 1
-    probe_caught = probes_caught == len(SEAL.rows)
-    disk_broken = SEAL.verify(back)
-    back_text = read_text(tmp_t)
-    head_ok = (back_text.split("\n")[:40] == R["transcript_head"])
-    text_ok = digest(back_text) == SEAL.text_sha
-    text_lines = len(back_text.split("\n"))
-    chained_ok = (back.get("payload_sha256_12") == SEAL.payload_sha
-                  and back.get("seal_manifest", {}).get("rows") == SEAL.rows)
-    ran = {g["gate"] for g in LD.rows}
-    late_ok = all(g in ran for g in tuple(LEDGER_GATES) + LATE_GATES[:2]
-                  + CLOSING_LEDGER_GATES + (SWEEP_GATE,))
-    sweep_complete = (len(R.get("mutant_sweep") or []) == len(MUTANTS)
-                      and all(k.get("on_target")
-                              for k in R.get("mutant_sweep") or []))
-    LD.gate("G-ARTIFACT-INTEGRITY",
-            "INTEGRITY IS DISK-VS-SEAL, never a re-derivation: the payload is "
-            "written from the SEALED object to a staged file, read back FROM "
-            "DISK, and every sealed object compared against the digest taken "
-            "at the moment its gate passed -- with EVERY ONE of the %d sealed "
-            "rows corrupted in turn on a read-back copy and shown to be "
-            "detected first.  THE PERIMETER IS CLOSED IN BOTH ARTIFACTS: the "
-            "transcript is compared IN FULL, %d of %d lines by digest, and the "
-            "two DECLARED-UNSEALED keys are CHAINED here against the live seal "
-            "object.  The staged bytes are moved into place by os.replace ONLY "
-            "after this gate passes"
-            % (len(SEAL.rows), text_lines, SEAL.text_lines),
-            probe_caught and not disk_broken and head_ok and text_ok
-            and chained_ok and late_ok and sweep_complete,
-            "corrupted probes detected %d of %d, sealed objects broken on disk "
-            "%s, transcript head matches %s, transcript matches in full %s "
-            "(%d of %d lines), declared-unsealed keys chained %s, every "
-            "declared-later gate actually evaluated %s, sweep complete and on "
-            "target %s"
-            % (probes_caught, len(SEAL.rows), disk_broken or "none", head_ok,
-               text_ok, text_lines, SEAL.text_lines, chained_ok, late_ok,
-               sweep_complete))
-    os.replace(tmp_j, OUT_JSON)
-    os.replace(tmp_t, OUT_TXT)
+    promoted = False
+    try:
+        final = json.dumps(R, indent=1, sort_keys=True, default=str)
+        with open(tmp_j, "w", encoding="utf-8") as fh:
+            fh.write(final + "\n")
+        with open(tmp_t, "w", encoding="utf-8") as fh:
+            fh.write(text)
+        staged = read_text(tmp_j)
+        try:
+            back = json.loads(staged)
+        except ValueError:
+            # an unparseable staged payload is an INTEGRITY FAILURE reported by
+            # the terminal gate, not a traceback out of the writer.
+            back = {"unparseable_staged_payload": True}
+        probes_caught = 0
+        for row in SEAL.rows:
+            probe = json.loads(json.dumps(back))
+            cur = probe
+            parts = row["path"].split("/")
+            broke = False
+            for part in parts[:-1]:
+                try:
+                    cur = cur[int(part)] if isinstance(cur, list) else cur[part]
+                except (KeyError, IndexError, TypeError, ValueError):
+                    broke = True
+                    break
+            if broke:
+                probes_caught += 1
+                continue
+            key = parts[-1]
+            if isinstance(cur, list):
+                cur[int(key)] = ["PROBE"]
+            elif isinstance(cur, dict):
+                cur[key] = "PROBE"
+            else:
+                probes_caught += 1
+                continue
+            if row["seal"] in SEAL.verify(probe, only={row["seal"]}):
+                probes_caught += 1
+        probe_caught = probes_caught == len(SEAL.rows)
+        disk_broken = SEAL.verify(back)
+        back_text = read_text(tmp_t)
+        head_ok = (back_text.split("\n")[:40] == R["transcript_head"])
+        text_ok = digest(back_text) == SEAL.text_sha
+        text_lines = len(back_text.split("\n"))
+        chained_ok = (back.get("payload_sha256_12") == SEAL.payload_sha
+                      and back.get("seal_manifest", {}).get("rows")
+                      == SEAL.rows)
+        ran = {g["gate"] for g in LD.rows}
+        late_ok = all(g in ran for g in tuple(LEDGER_GATES) + LATE_GATES[:2]
+                      + CLOSING_LEDGER_GATES + (SWEEP_GATE,))
+        sweep_complete = (len(R.get("mutant_sweep") or []) == len(MUTANTS)
+                          and all(k.get("on_target")
+                                  for k in R.get("mutant_sweep") or []))
+        parsed_ok = not back.get("unparseable_staged_payload")
+        LD.gate("G-ARTIFACT-INTEGRITY",
+                "INTEGRITY IS DISK-VS-SEAL, never a re-derivation: the payload "
+                "is written from the SEALED object to a staged file, read back "
+                "FROM DISK, and every sealed object compared against the "
+                "digest taken at the moment its gate passed -- with EVERY ONE "
+                "of the %d sealed rows corrupted in turn on a read-back copy "
+                "and shown to be detected first.  A staged payload that does "
+                "not parse fails HERE rather than raising out of the writer.  "
+                "THE PERIMETER IS CLOSED IN BOTH ARTIFACTS: the transcript is "
+                "compared IN FULL, %d of %d lines by digest, and the two "
+                "DECLARED-UNSEALED keys are CHAINED here against the live seal "
+                "object.  The staged bytes are moved into place by os.replace "
+                "ONLY after this gate passes, and a run that does not reach it "
+                "leaves no staged file behind"
+                % (len(SEAL.rows), text_lines, SEAL.text_lines),
+                parsed_ok and probe_caught and not disk_broken and head_ok
+                and text_ok and chained_ok and late_ok and sweep_complete,
+                "staged payload parses %s, corrupted probes detected %d of %d, "
+                "sealed objects broken on disk %s, transcript head matches %s, "
+                "transcript matches in full %s (%d of %d lines), "
+                "declared-unsealed keys chained %s, every declared-later gate "
+                "actually evaluated %s, sweep complete and on target %s"
+                % (parsed_ok, probes_caught, len(SEAL.rows),
+                   disk_broken or "none", head_ok, text_ok, text_lines,
+                   SEAL.text_lines, chained_ok, late_ok, sweep_complete))
+        os.replace(tmp_j, OUT_JSON)
+        os.replace(tmp_t, OUT_TXT)
+        promoted = True
+    finally:
+        if not promoted:
+            for p in (tmp_j, tmp_t):
+                if os.path.exists(p):
+                    os.unlink(p)
     return payload, text
 
 
@@ -3889,24 +5635,30 @@ class _Sink:
 def run_mutant(name, paper_text):
     """run the pipeline with the named mutant active, IN PROCESS.  The census
     is cached, so a falsifier costs a gate layer rather than a rebuilt
-    ensemble."""
+    ensemble.  THE EVIDENCE STRING THE GATE ACTUALLY RAISED IS RETURNED with
+    the gate name, and the execution counter is incremented HERE: the sweep
+    gate binds both, so a fabricated sweep cannot pass."""
     global MUT, QUIET, LINES
+    MUTANT_RUNS[0] += 1
     MUT, QUIET = name, True
     keep, keep_out = LINES, sys.stdout
     sys.stdout = _Sink()
     LINES = []
     killed_at = None
+    evidence = ""
     try:
         LD, SEAL, R, verdict, _c = full_run(paper_text=paper_text)
         cli_gates(LD)
         finish(LD, SEAL, R, verdict, write=False)
     except GateFail as e:
-        killed_at = str(e).split(" ::")[0]
+        evidence = str(e)
+        killed_at = evidence.split(" ::")[0]
     except Exception as e:                             # pragma: no cover
         killed_at = "UNEXPECTED:%s" % type(e).__name__
+        evidence = "%s :: %s" % (killed_at, e)
     MUT, QUIET, LINES = None, False, keep
     sys.stdout = keep_out
-    return killed_at
+    return killed_at, evidence
 
 
 FLAGS = ("--no-write", "--numbers", "--selftest", "--mutant",
@@ -3975,12 +5727,19 @@ def cli_selftest():
                  ["--numbers", "--zzz"],
                  ["--verify-paper", "--mutant", sorted(MUTANT_NAMES)[0]],
                  ["--numbers", "--no-write"], ["--selftest", "--list-gates"])
+    codes = []
     for argv in malformed:
+        # THE EXIT CODE IS MEASURED, not asserted (K3 MINOR-6): `main` maps a
+        # CliError to 2 and returns before touching the census, so the gate can
+        # observe the code it claims for free.
+        codes.append(main(list(argv)))
         try:
             parse_args(argv)
             bad.append(argv)
         except CliError:
             pass
+    if any(c != 2 for c in codes):
+        bad.append(["EXIT-CODE-NOT-2"])
     ok_shapes = 0
     for argv in ([], ["--no-write"], ["--numbers"], ["--selftest"],
                  ["--mutant", sorted(MUTANT_NAMES)[0]],
@@ -3989,7 +5748,7 @@ def cli_selftest():
         parse_args(argv)
         ok_shapes += 1
     permissive = parse_args_permissive(["--nope"])["mode"] == "nope"
-    return bad, ok_shapes, permissive, len(malformed)
+    return bad, ok_shapes, permissive, len(malformed), codes
 
 
 def selftest_shape():
@@ -4008,19 +5767,21 @@ def selftest_shape():
 
 
 def cli_gates(LD):
-    bad, ok_shapes, permissive, nmal = cli_selftest()
-    if mut("MUT-CLI-PERMISSIVE"):
-        bad = [["--nope"]]
+    bad, ok_shapes, permissive, nmal, codes = cli_selftest()
+    bad = pick("MUT-CLI-PERMISSIVE", bad, [["--nope"]])
     LD.gate("G-CLI-WHITELIST",
             "the #82 CLI contract, exercised in this run: %d malformed "
-            "argument vectors are all rejected with exit code 2 -- the last "
-            "three of them SECOND-MODE vectors -- %d legal shapes parse, and "
-            "the registered PERMISSIVE shape, present in this file only as "
-            "this gate's own falsifier, accepts an unknown flag"
-            % (nmal, ok_shapes),
+            "argument vectors are all rejected AND THE EXIT CODE IS OBSERVED "
+            "RATHER THAN ASSERTED -- `main` is called on every one of them and "
+            "every call returns %d -- the last three of them SECOND-MODE "
+            "vectors; %d legal shapes parse, and the registered PERMISSIVE "
+            "shape, present in this file only as this gate's own falsifier, "
+            "accepts an unknown flag"
+            % (nmal, 2, ok_shapes),
             not bad and permissive,
-            "malformed vectors accepted %s, legal shapes %d, permissive shape "
-            "accepts unknown flags %s" % (bad or "none", ok_shapes, permissive))
+            "malformed vectors accepted %s, observed exit codes %s, legal "
+            "shapes %d, permissive shape accepts unknown flags %s"
+            % (bad or "none", sorted(set(codes)), ok_shapes, permissive))
     st_ok = pick("MUT-SELFTEST-WRITES", selftest_shape(), False)
     LD.gate("G-SELFTEST-WRITES-NOTHING",
             "the --selftest path corrupts an anchor in memory, dies at "
@@ -4061,9 +5822,10 @@ def main(argv=None):
     if opt["mode"] == "mutant":
         name = opt["mutant"]
         gate = [m[1] for m in MUTANTS if m[0] == name][0]
-        got = run_mutant(name, paper_text)
+        got, ev = run_mutant(name, paper_text)
         print("[MUTANT] %s -> declared gate %s -> died at %s"
               % (name, gate, got))
+        print("[MUTANT] evidence: %s" % ev)
         return 1 if got == gate else 0
     try:
         LD, SEAL, R, verdict, _c = full_run(
@@ -4080,9 +5842,10 @@ def main(argv=None):
             return 0
         kills, misses = [], []
         for name, gate, _why, _mv, _to in MUTANTS:
-            got = run_mutant(name, paper_text)
+            got, ev = run_mutant(name, paper_text)
             kills.append({"mutant": name, "declared_gate": gate,
-                          "died_at": got, "on_target": got == gate})
+                          "died_at": got, "on_target": got == gate,
+                          "evidence": ev})
             if got != gate:
                 misses.append("%s died at %s, declared %s"
                               % (name, got, gate))

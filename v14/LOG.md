@@ -7395,3 +7395,47 @@ CONTROL, never spent as derived; the 207/639 frame; the
 cheap falsifier = a narrower-range functional); OCC/FCK
 doubly-stochastic connection CHECKED-AND-EMPTY.  →
 adjudication when K1+K3 land.
+
+## 2026-08-11 — GDL REPAIR LANDED: V1–V13 EXECUTED; THE MOD-3 CHANNEL MEASURED — PRESENT AND NOT EXERCISED; COMMIT-AS-IS (v14 LEDGER #238)
+
+The GDL repair delivered.  V1 the head →
+GDL-DECOUPLED-AT-THE-GRAVITATIONAL-BAR with a GENUINELY
+two-way selector (G-OUTCOME-REACHABILITY runs 4 witness
+configurations through the same selector+comparator in the
+plain run — 4/4 arms emitted); V2 the frozen grid published
+(1/38/6; the 26-of-28 fact) + the TOTAL-FAILURE stamp census
+(2/17/11/15 beside 2/28/15 — nothing moved, a census added);
+V3 Theorems A/B/C at the correct hypotheses (site-dependent
+demo: D2 moves 54,641; symbolic 39,366 coefficient checks 0
+mismatches); **V4 THE MOD-3 CHANNEL:
+THIRD-CHANNEL-PRESENT-AND-NOT-EXERCISED — the channel is
+REAL and one-sided (on congruent-but-different fields the
+state-internal functionals move 0, the record-reading one
+moves 21,856 of 65,724) but the wraparound, though WRITTEN
+inside the horizon (all 1,316 over-3 cells congruent to the
+welded value), is READ by zero objects — the first reading
+step is 6, one beyond the declared horizon.  K2's premise
+reproduced; its consequence does not hold inside this unit**
+[the GDL-1a/GDL-2 successors inherit the horizon-6 read as
+their first measurement]; V5 both occupancy predicates (3
+single-site / 4 pair) in the sealed digest; V6 the digest
+moved BY ORDER (da4248b1a55b → e78a2f782896, thresholds now
+inside; the coin-relative counts 16/24/33; GDL-PRED-1a/1b
+registered with falsification conditions); V7 K1's per-pair
+census (1,971,720) and G5-blindness in-code — the
+doubly-blind cell the exclusion's stated ground; V8 the
+kernel classes stamped DEFINITIONAL + one CONTINGENT; V9 the
+VACUOUS clause closed (270 recounted numbers); V10 true
+multiset + all 8 tables (58 rows); V11 E-23 three-legged
+semantic; V12 the allowlist from MEASURED_KEYS only (556
+numerals 0 unregistered); V13 the inventory 11→16 rows.
+INJECTION REPLAY 9/9 die at named gates (one reviewer-spec
+correction disclosed: the truthful-permutation variant
+correctly survives; the actual value-exchange dies).
+Battery: plain ×2 byte (76/76 gates); selftest exit 1 tree
+identical by hash/size/mtime; 70/70 mutants twice; 25/25
+argv; off-tree git-less two seeds; forced-failure leaves no
+tmp and promotes nothing.  Shas: paper cd1775184249, code
+55963dcbe4b4, output 62400cbf47db, receipt 0ea47d0ec827.
+Committed AS-IS; orchestrator battery next; on green:
+TERMINAL.

@@ -20,6 +20,9 @@ GDL -- THE GRAVITATIONAL-DECOHERENCE LAW  (v14 paper-25)
   .. the delivered configuration: coin GROVER, reading A
   .. the relation grid
   .. the blindness census on the declared foreign count fields
+  .. THEOREM A isolated: the same census under a site-DEPENDENT coin
+  .. THEOREM B as algebra: the cancellation, coefficient by coefficient
+  .. THE THIRD CHANNEL: the mod-3 residue reading and its wraparound
   .. the coin fiber (6 members) and the reading fiber (2 members)
   [PASS] G-PARENT-REPRODUCED
          THE REBUILD IS ANCHORED AT THE PARENT'S OWN COMMITTED BYTES.  paper-20's driver is read as a SPEC and never imported and never subprocessed; the walk, the emission law and the update semantics are re-implemented here, and 14 published values of the parent's committed receipt -- the branch ladders of three arms, both inverse participations, three exit probabilities, the link-class marginal, both site distributions, the maximum-cell ladder and both branch-step counts -- are required to come back out of THIS implementation at EQUALITY, row by row (#87)
@@ -39,14 +42,17 @@ GDL -- THE GRAVITATIONAL-DECOHERENCE LAW  (v14 paper-25)
   [PASS] G-LAW-KERNEL
          the LAW-NATIVE normaliser is re-derived on this arena rather than assumed: G(x,0) = 1 terminal, G(x,1) = M(x), and the kernel k_1 = q/M entry by entry, at 1,479,176 per-object checks
          evidence: violations: 0
+  [PASS] G-LAW-CHECK-CLASSES
+         AND THE COMPOSITE IS STAMPED RATHER THAN LEFT TO READ AS EVIDENCE (the paper-20 precedent).  The 1,479,176 kernel checks split exactly as 296,784 law_native + 295,598 kernel + 886,794 kernel_entry and EVERY ONE OF THE THREE CLASSES IS AN IDENTITY IN THE DEFINITION OF THE KERNEL: none of them is a row that could have failed for any coin, menu or record.  The class stamps and the split are published, and the split is required to sum to the composite.  The contentful sibling -- 296,784 site-branch-step unitarity checks -- is stamped CONTINGENT beside them
+         evidence: classes not stamped DEFINITIONAL or a split that does not sum: none (split 1,479,176 against composite 1,479,176)
   [PASS] G-FUNCTIONALS-DECLARED
-         the 3 DECLARED decoherence functionals each carry a full specification in this file and each is re-derived here from its own published formula on a probe object: D1 from the Born menu's site masses, D2 from the exact purity split, D3 from its own per-site rows.  None is privileged and all three are run everywhere
+         the 3 DECLARED decoherence functionals each carry a full specification in this file and each is re-derived from its own published formula AT EVERY OBJECT OF BOTH DELIVERED ARMS (#87: 32,877 comparisons, not a one-object probe): D1 from the Born menu's site masses, D2 from the exact purity split, D3 from its own per-site rows.  None is privileged and all three are run everywhere
          evidence: functionals whose value disagrees with their published specification: none
   [PASS] G-FUNCTIONALS-EXACT
          every decoherence value at every one of the 10,959 objects of the two delivered arms is an exact Fraction -- there is no float and no rounding anywhere in the functional layer
          evidence: non-exact values: 0
   [PASS] G-L1-PRICED
-         THE l_1 DECLARATION IS PRICED, NOT WAVED THROUGH.  D2 is carried in SQUARED-MODULUS units because the exact l_1 form is not computable in Q on this arena, and that is MEASURED rather than asserted: of the 388,024 off-diagonal |rho_xy|^2 entries this run produces, 109,706 are perfect squares and 278,318 are not, so 278,318 exact moduli are irrational and outside this unit's arithmetic
+         THE l_1 DECLARATION IS PRICED, NOT WAVED THROUGH.  D2 is carried in SQUARED-MODULUS units because the exact l_1 form is not computable in Q on this arena, and that is MEASURED rather than asserted: of the 388,024 off-diagonal |rho_xy|^2 entries this run produces, 109,706 are perfect squares and 278,318 are not, so 278,318 exact moduli are irrational and outside this unit's arithmetic.  THE HONEST DENOMINATOR IS THE FULL POPULATION: 394,344 unordered off-diagonal entries over 10,954 objects, of which 6,320 are exact zeros and therefore rational, so 116,026 of 394,344 moduli are rational
          evidence: irrational moduli: 278318 of 388024
   [PASS] G-PURITY-SPLIT
          the exact split D1 + D2 = Tr(rho^2) holds at every object of both delivered arms -- the inverse participation IS the diagonal of the site-basis purity and the coherence mass IS its complement
@@ -61,14 +67,20 @@ GDL -- THE GRAVITATIONAL-DECOHERENCE LAW  (v14 paper-25)
          THE FROZEN CONTROL'S RECORD NEVER GROWS, and that is a per-object measurement rather than a definition read back: not one of the 5 distinct frozen objects carries a record different from the welded one, so the ACTUAL growth functionals G1..G4 are identically constant there while the LAW's rate G5 is not
          evidence: frozen objects whose record moved: 0
   [PASS] G-RELATION-CENSUS
-         THE RELATION IS MEASURED, NOT FITTED.  45 cells per arm -- 3 decoherence functionals x 5 growth functionals x 3 resolutions -- are decided by EQUALITY inside a growth class and by nothing else, on both arms, and every cell's published verdict word is required to agree with its own censused counts (#87: the predicate is per cell, never on the tally)
+         THE RELATION IS MEASURED, NOT FITTED.  45 cells per arm -- 3 decoherence functionals x 5 growth functionals x 3 resolutions -- are decided by EQUALITY inside a growth class and by nothing else, on both arms, and every cell's published verdict word is required to agree with its own censused counts (#87: the predicate is per cell, never on the tally).  ON THE DELIVERED ARM 2 EXACT, 28 PARTIAL, 15 VACUOUS; ON THE FROZEN CONTROL 1 EXACT, 38 PARTIAL, 6 VACUOUS -- both censuses are published and neither stands for the other
          evidence: cells whose word disagrees with their census: none
   [PASS] G-VACUITY-DECLARED
-         A TEST WITH NO NON-SINGLETON CLASS DECIDES NOTHING and is stamped VACUOUS rather than EXACT -- the honest denominator of this whole section.  15 of the 45 coupled cells and the RES-STEP row of every column are vacuous by construction, and the stamp is checked per cell
+         A TEST WITH NO NON-SINGLETON CLASS DECIDES NOTHING and is stamped VACUOUS rather than EXACT -- the honest denominator of this whole section.  15 of the 45 coupled cells and the RES-STEP row of every column are vacuous by construction, and the stamp is checked per cell against BOTH conjuncts: no non-singleton class AND no failing class
          evidence: cells published EXACT with no non-singleton class: 0
   [PASS] G-FAILURE-CENSUS
-         every PARTIAL cell reports its FAILURE SET exactly -- the failing classes, the objects inside them and the distinct D-values those classes carry -- and each census is RECOUNTED by a second pass that shares no intermediate with the first, over all 90 cells of both arms
+         every PARTIAL cell reports its FAILURE SET exactly -- the failing classes, the objects inside them and the distinct D-values those classes carry -- and THREE numbers per cell are RECOUNTED by a second pass that shares no intermediate with the first: the failing classes, the objects inside them, AND THE NON-SINGLETON COUNT THE VACUOUS STAMP RESTS ON, over all 90 cells of both arms at 270 recounted numbers
          evidence: cells whose recount disagrees: 0
+  [PASS] G-TOTAL-FAILURE-STAMP
+         THE VERDICT GRAMMAR HAS NO WORD FOR A CELL IN WHICH EVERY NON-SINGLETON CLASS FAILS, so this unit publishes a STAMP beside the equality-gated word rather than letting PARTIAL absorb it: 11 of the 28 coupled PARTIAL cells carry NO partial relation at all and are stamped TOTAL-FAILURE, and the honest stamp census of the delivered arm is 2 EXACT, 17 PARTIAL, 11 TOTAL-FAILURE, 15 VACUOUS against the verdict census 2 EXACT, 28 PARTIAL, 15 VACUOUS.  The best passing fraction anywhere in the partial cells is 2 of 4
+         evidence: cells whose stamp or passing count disagrees with their own census: none
+  [PASS] G-FROZEN-GRID-CENSUS
+         AND THE CONTROL'S OWN GRID IS PUBLISHED, not summarised away: 1 EXACT, 38 PARTIAL, 6 VACUOUS of its 45 cells, and 26 of the 28 coupled PARTIAL cells carry the IDENTICAL verdict word on the control (2 do not: ['RES-BRANCH/G5-RATE-SITE/D2-OFFDIAG-SITE-MASS -> VACUOUS', 'RES-BRANCH/G5-RATE-SITE/D3-RECORD-BORN-DIVERGENCE -> VACUOUS']).  A head word the null control earns at most of its own cells is not reporting a finding, which is exactly why no PARTIAL cell is adjudicated gravitational by any gate
+         evidence: frozen grid rows censused 45 of 45; coupled PARTIAL cells accounted 28 of 28
   [PASS] G-NO-FITTED-FORM
          FITTED FORMS ARE BARRED by the pin and the bar is a scan, not a promise: this unit's whole relation layer is searched for the vocabulary of fitting -- fit, regression, approximation, correlation, estimation, residual -- and the only verdict words it carries are the equality-gated EXACT, PARTIAL, VACUOUS
          evidence: fitted-form needles found in the relation layer: 0
@@ -76,7 +88,7 @@ GDL -- THE GRAVITATIONAL-DECOHERENCE LAW  (v14 paper-25)
          every member of the declared coin fiber is verified EXACTLY unitary (3C . 3C* = 9I in Z[w], entry by entry) and EXACTLY S_3-covariant against all six permutation matrices, per member and per entry (#87) -- 7 members
          evidence: members failing admissibility: none
   [PASS] G-COIN-FIBER
-         FORCEDNESS IS MEASURED ACROSS THE WHOLE DECLARED FIBER.  All 6 coin classes -- +/- Grover and the four hidden S_3-covariant members, paper-20's own witnesses -- are run to the full horizon on BOTH arms, and each is required to reproduce the delivered member's ENTIRE relation signature: all 15 grid cells' verdict words on both arms, the separation ladder, and every identity
+         FORCEDNESS IS MEASURED ACROSS THE WHOLE DECLARED FIBER.  All 6 coin classes -- +/- Grover and the four hidden S_3-covariant members, paper-20's own witnesses -- are run to the full horizon on BOTH arms, and each is required to reproduce the delivered member's ENTIRE relation signature: all 15 grid cells' verdict words on both arms, the separation ladder, every identity, AND BOTH OCCUPANCY THRESHOLDS ON BOTH ARMS -- the digest carries the threshold because the prediction row claims it across the fiber.  The threshold is invariant (4 on both arms at every member) while the co-occupancy COUNT is not: the control's own step-5 object carries 16 / 24 / 33 pairs depending on the coin
          evidence: fiber members whose verdict shape differs: none
   [PASS] G-FIBER-EXECUTED
          and the execution is bound by SET EQUALITY against the declared member ids rather than by a cardinality: 8 ids declared, 8 executed
@@ -88,7 +100,7 @@ GDL -- THE GRAVITATIONAL-DECOHERENCE LAW  (v14 paper-25)
          THE MANDATORY FROZEN CONTROL IS EXECUTED, not declared: the same walk, the same emission rule and the same branching on counts that never update, through THE SAME FUNCTION as the coupled arm, at 9,751 branch-steps that collapse to 5 distinct measurements -- one per level, because on a frozen stage every branch of a level carries the same state on the same record
          evidence: frozen control executed: True
   [PASS] G-FROZEN-EXCLUSION
-         THE EXCLUSION IS A GATE.  Every EXACT cell of the coupled arm is re-evaluated on the control and excluded if it survives there: 2 exact cells tested, 2 excluded as holding identically frozen, 0 surviving as gravitational-decoherence relations
+         THE EXCLUSION IS A GATE.  Every EXACT cell of the coupled arm is re-evaluated on the control and excluded if it survives there: 2 exact cells tested, 2 excluded as holding identically frozen, 0 surviving as gravitational-decoherence relations.  AND THE ZERO IS FORCED, NOT CONTINGENT: the one exact cell relates a record-blind decoherence functional to a record-blind growth functional -- D1 moves 0 times and G5 moves 0 times over the same 54,770 object-and-field pairs -- so it could not have failed on the control from either side, and the 4 genuine record functionals G1..G4 produce no exact cell at any resolution.  THE BAR'S SCOPE IS DECLARED (F12): it is applied to EXACT cells only, so the PARTIAL cells are adjudicated gravitational by no gate
          evidence: tested 2, excluded 2, gravitational 0
   [PASS] G-SEPARATION-LADDER
          THE SEPARATION LADDER is a PER-OBJECT statement, not an average: for each functional the first step at which its VALUE SET on the coupled arm differs from the control's, recomputed inside the gate from the per-step rows -- D1 at 4, D2 at 4, D3 at 3
@@ -98,7 +110,7 @@ GDL -- THE GRAVITATIONAL-DECOHERENCE LAW  (v14 paper-25)
          evidence: domination rows published without their witness: 0
   [PASS] G-BLINDNESS-D1
          THE INHERITED DECOHERENCE OBSERVABLE IS RECORD-BLIND, MEASURED.  The site-basis inverse participation of the Born menu is re-evaluated on 5 DECLARED FOREIGN count fields -- fields this run never generates, two of them not even admissible -- at every one of the 10,954 coupled objects, and it does not move once.  The coin's record-dependent phases are diagonal and unitary, so they cannot change a site's own mass; the record enters D1 only through the walk's history, with a delay
-         evidence: D1 movements in 164,310 checks: 0
+         evidence: D1 movements in 54,770 object-and-field pairs -- D1's OWN denominator, of 164,310 checks over the three functionals: 0
   [PASS] G-BLINDNESS-D3
          THE INSTRUMENT IS TWO-WAY, which is what makes the blindness a measurement rather than a property of the census: on the same fields and the same objects the record-reading functional D3 moves 54,700 times.  A census in which nothing moved would decide nothing
          evidence: D3 movements: 54700
@@ -108,9 +120,33 @@ GDL -- THE GRAVITATIONAL-DECOHERENCE LAW  (v14 paper-25)
   [PASS] G-COOCCUPANCY-THRESHOLD
          and the co-occupancy threshold is located by measuring EVERY step rather than by assertion: the first step of the coupled arm carrying a co-occupancy pair is 4, and the frozen control's is 4 -- the threshold is a property of the WALK, not of the coupling
          evidence: coupled threshold 4, frozen threshold 4
+  [PASS] G-OCCUPANCY-PREDICATES
+         TWO OCCUPANCY PREDICATES GOVERN THIS UNIT AND THEY DIFFER BY ONE STEP, and both are measured rather than one being described while the other is counted.  A SITE occupied on two links first appears at step 3: from there the record moves the cell masses, so the arms' states differ from the next step and D1 and D2 separate at exactly 4.  A PAIR of sites sharing two occupied links first appears at step 4: that is the predicate D2's off-diagonal blindness turns on and the one the census above measures.  Both are identical on the two arms, and the gate binds the one-step gap
+         evidence: single-site threshold coupled 3 frozen 3; pair threshold coupled 4 frozen 4; the gap is one step True
+  [PASS] G-PAIR-MECHANISM
+         THE MECHANISM AT THE GRAIN ITS OWN ALGEBRA PREDICTS, 36x the per-object evidence.  THEOREM B says |rho_xy|^2 is record-independent for EVERY site pair meeting in at most one occupied link, whatever the rest of the object does.  Measured over 10,954 objects x 5 fields x 36 site pairs = 1,971,720 pair-checks: 452,745 checks at overlap <= 1 with 0 moved, and 1,518,975 checks at co-occupancy with 840,889 moved and 678,086 static -- so co-occupancy is NECESSARY AND NOT SUFFICIENT at the finest grain too
+         evidence: site pairs meeting in at most one occupied link whose |rho_xy|^2 moved: 0
+  [PASS] G-BLINDNESS-G5
+         AND THE GROWTH FUNCTIONAL OF THE ONE EXACT CELL IS RECORD-BLIND TOO.  The LAW's own rate eps(x) is re-read on the same 5 foreign fields at every one of the 10,954 coupled objects and does not move once in 54,770 object-and-field pairs: under both readings eps(x) is the post-coin site mass, so THEOREM A applies to G5 verbatim.  THE SINGLE EXACT CELL OF THE WHOLE GRID THEREFORE RELATES A RECORD-BLIND DECOHERENCE FUNCTIONAL TO A RECORD-BLIND GROWTH FUNCTIONAL, which is the sharpest ground the frozen exclusion has
+         evidence: G5 movements: 0
+  [PASS] G-THEOREM-A
+         THEOREM A'S HYPOTHESIS IS ISOLATED AND MEASURED, not assumed: the same objects and the same foreign fields are re-read under a coin that is BLOCK-DIAGONAL IN THE SITE INDEX and exactly unitary on every block but NOT THE SAME AT EVERY SITE.  The site marginal moves 0 times and D1 moves 0 times in 54,770 object-and-field pairs, while D2 moves 54,641 -- so the diagonal blindness survives site-variation and the correct hypothesis is BLOCK-DIAGONALITY, not site-uniformity.  The demonstration coin is not a member of this unit's fiber and nothing about this arena is claimed from it
+         evidence: site-uniform False, every block unitary True, site marginal moved 0, D1 moved 0, D2 moved 54641
+  [PASS] G-THEOREM-B
+         AND THE CANCELLATION IS VERIFIED AS ALGEBRA, not as a sample.  With M = 3C the coin numerator, rho_xy = 9 . sum_j w^{n_j(x) - n_j(y)} psi(x,j) conj(psi(y,j)) is checked COEFFICIENT BY COEFFICIENT in Z[w] over all 729 residue pairs across the 6 declared coins -- 4,374 identities at 39,366 coefficient checks -- and because both sides are bilinear in (psi_x, conj psi_y) the 9 monomial pairs verified span the form, so the check is a PROOF for every psi rather than a sample of them
+         evidence: coefficient mismatches: 0
+  [PASS] G-FOREIGN-FIELDS-FOREIGN
+         and the fields ARE foreign, measured rather than asserted: none of the 5 declared count fields is among the 6,856 records this run generates on the coupled arm, and 2 of them are not even admissible
+         evidence: declared foreign fields this run actually generates: none
+  [PASS] G-RESIDUE-CHANNEL
+         THE THIRD GEOMETRY-TO-MATTER CHANNEL, MEASURED AND TWO-WAY.  The record the machine WRITES is unbounded; the record the coin READS is Z/3.  2 declared CONGRUENT-BUT-DIFFERENT record fields -- the same residue at every one of the 27 cells, a different record at every object -- are run against all three functionals at 65,724 checks: the two state-internal functionals move 0 times and the record-reading one moves 21,856.  A functional that saw the metric rather than its residue would move here, and two of the three cannot
+         evidence: state-internal moves on congruent records 0; record-reading moves 21856
+  [PASS] G-RESIDUE-WRAPAROUND
+         AND THE WRAPAROUND IS CENSUSED AT BOTH GRAINS, which is where the finding is.  WRITTEN: the anchored maximum-cell ladder reaches 4 at level 5 and 1,316 cells there carry a count above 3, EVERY ONE of them congruent to the welded value n = 1.  READ: an object of step t reads the record of level t-1, so 0 wrapped cells are read anywhere inside the declared horizon and the first step that would read one is 6 -- one step beyond it.  The channel is present and NOT EXERCISED, and the difference between the two grains is exactly one step
+         evidence: wrapped cells written 1316 (congruent to the welded value 1316), read 0; written first at 5, readable first at 6
   [PASS] G-PREDICTION-ROW
-         THE PREDICTION ROW IS ENTERED ONLY IF ITS OWN FIBER CENSUS CARRIES IT: the separation ladder must be IDENTICAL across all 7 executed fiber members and every functional must actually separate at a finite step -- 1 distinct ladders measured
-         evidence: distinct ladders 1 across 7 members; census carries the row True; published forced flag True
+         THE PREDICTION ROW IS ENTERED ONLY IF ITS OWN FIBER CENSUS CARRIES IT, and it is REGISTERED IN TWO ROWS because its two clauses had different standing: GDL-PRED-1a, the separation ladder, must be IDENTICAL across all 7 executed fiber members with every functional separating at a finite step (1 distinct ladders measured); GDL-PRED-1b, the co-occupancy threshold, must be censused ON BOTH ARMS ACROSS THE SAME FIBER (1 distinct threshold pairs measured) rather than carried on the delivered member alone.  Each row publishes what falsifies it and what does not, and 1b publishes the stronger form already known to fail -- the COUNT is coin-relative
+         evidence: distinct ladders 1 and distinct threshold pairs 1 across 7 members; census carries the row True; published forced flag True
   [PASS] G-PREDICTION-RENDERED
          and the row is RENDERED FROM THE RECEIPT rather than typed: every number in it is the measured value, and the sentence is required to carry them and to name no unit that is not a count or a step index
          evidence: rendered row: At this arena, at the declared horizon 5 and for every member of the declared coin and reading fibers, the record-reading decoherence functional separates the coupled stage from the frozen control at step 3, exactly one step before either state-internal functional, which separate at step 4; and the co-occupancy threshold that governs the middle functional's blindness is step 4 on BOTH arms.
@@ -141,58 +177,64 @@ GDL -- THE GRAVITATIONAL-DECOHERENCE LAW  (v14 paper-25)
   [PASS] G-MEASURE-DECLARED
          E-24: NO COUNT BECOMES A PROBABILITY WITHOUT A DECLARED MEASURE.  Every published key whose values include a fraction over a configuration space is required to name its measure or to carry the COUNTING-ONLY stamp; the probability-bearing keys all declare THE BRANCH MEASURE and the relation, forcedness and mechanism layers are stamped COUNTING-ONLY, since a failing-class count is not a probability of anything.  3 keys carry fractions
          evidence: keys carrying a fraction with no declared measure: none
+  [PASS] G-CHOICE-INVENTORY
+         THE CHOICE INVENTORY IS A RENDERED TABLE, NOT PROSE: 16 declared items, each with its status, its fiber size and its note, every fiber size re-derived here from the declaration it names, and THE VERDICT-DETERMINING ROW NAMED -- F12-BAR-SCOPE, the scope of the frozen bar, which the first delivery of this unit did not declare at all
+         evidence: items whose published fiber disagrees with the declaration it names, or a missing verdict-determining row: none
+  [PASS] G-OUTCOME-REACHABILITY
+         EVERY ARM OF THE DECLARED OUTCOME GRAMMAR IS REACHABLE, AND THE CONTROL ARM RUNS RATHER THAN ADVERTISING IT.  The pin's four outcome arms are handed to the SAME selector and the SAME comparator on witness copies of this run's own measured blocks -- one patched primitive each -- and each is required to emit its named word: THE-DELIVERED-MEASUREMENT -> GDL-DECOUPLED-AT-THE-GRAVITATIONAL-BAR; ONE-EXACT-CELL-SURVIVES-THE-BAR -> GDL-LAW-FORCED; IT-SURVIVES-BUT-THE-FIBER-DISAGREES -> GDL-LAW-COIN-RELATIVE; THE-FROZEN-CONTROL-DID-NOT-RUN -> GDL-BLOCKED-AT-THE-FROZEN-CONTROL.  4 of 4 arms are reached and the delivered word, GDL-DECOUPLED-AT-THE-GRAVITATIONAL-BAR, is the one this arena's own measurement selects.  A head word whose alternatives are gate-forbidden is a DEFAULT and not a finding; this gate is what makes the difference measurable
+         evidence: witnesses on target True; arms reached ['GDL-BLOCKED-AT-THE-FROZEN-CONTROL', 'GDL-DECOUPLED-AT-THE-GRAVITATIONAL-BAR', 'GDL-LAW-COIN-RELATIVE', 'GDL-LAW-FORCED']; the delivered word matches the selector True
   [PASS] G-VERDICT-RECONSTRUCTED
-         the verdict is DERIVED A SECOND TIME by a comparator that shares no code, no input and no typed literal with the builder: it is handed the receipt's own measured blocks as JSON, TYPES ITS OWN TEMPLATES, re-derives the outcome word from the exclusion and relation rows, and the three segments must match string for string
-         evidence: segments matching: {'arena': True, 'functionals': True, 'gates': True}
+         the verdict is DERIVED A SECOND TIME by a comparator that shares no code, no input and no typed literal with the builder: it is handed the receipt's own measured blocks as JSON, TYPES ITS OWN TEMPLATES, and RE-DERIVES THE OUTCOME WORD FROM THE PRIMITIVES -- whether the mandatory control ran, how many exact cells survived the bar, and whether every executed fiber member carries the delivered signature -- rather than reading a word the builder published.  All 4 segments must match string for string
+         evidence: segments matching: {'arena': True, 'functionals': True, 'gates': True, 'third_channel': True}
   [PASS] G-PAPER-CLAIMS
-         every load-bearing claim of the paper is ASSEMBLED FROM THE RECEIPT and then located in the object under test -- 14 claims, no number typed twice
+         every load-bearing claim of the paper is ASSEMBLED FROM THE RECEIPT and then located in the object under test -- 23 claims, no number typed twice
          evidence: claims not located: none
   [PASS] G-PAPER-TABLES
-         the paper's tables RENDER FROM THE RECEIPT: 16 rows are built from measured values and each is required to appear in the object under test
+         the paper's tables RENDER FROM THE RECEIPT: 58 rows are built from measured values and each is required to appear in the object under test
          evidence: table rows not located: none
   [PASS] G-PAPER-NUMERAL-COVERAGE
-         #20 WITH THE FENCED-BLOCK AND INLINE-SPAN ADDENDA (E-22): the coverage scan reads ALL of the paper's text -- 313 prose-and-other numerals of which 49 live in 3 fenced blocks and 137 in 221 inline code spans -- and every numeral must be a value this run computed and registered
+         #20 WITH THE FENCED-BLOCK AND INLINE-SPAN ADDENDA (E-22): the coverage scan reads ALL of the paper's text -- 556 prose-and-other numerals of which 104 live in 4 fenced blocks and 261 in 376 inline code spans -- and every numeral must be a value this run computed and registered
          evidence: unregistered numerals: none
   [PASS] G-PAPER-HEAD-VERBATIM
-         the paper's verdict block is the DERIVED head, rendered from the receipt: all 3 segments are located verbatim, and the fenced blocks are gated by MULTISET EQUALITY (E-22) rather than by containment, so a duplicated block cannot shadow a forged twin
-         evidence: segments not located none; multiset mismatches 0
+         the paper's verdict block is the DERIVED head, rendered from the receipt: all 4 segments are located verbatim, and the fenced blocks are gated by MULTISET EQUALITY IN BOTH DIRECTIONS (E-22) rather than by containment -- the paper's fenced blocks must BE the head's segments, one for one, so neither a duplicated block shadowing a forged twin nor an extra fence of any kind survives
+         evidence: segments not located none; multiset mismatches 0 (4 fenced blocks in the paper against 4 head segments)
   [PASS] G-PAPER-CLAIM-POLARITY
-         every load-bearing claim is checked for POLARITY: the positive form must be present and its negation absent, on 4 pairs, so a paper carrying the opposite of what was measured dies here
+         every load-bearing claim is checked for POLARITY: the positive form must be present and its negation absent, on 6 pairs, so a paper carrying the opposite of what was measured dies here
          evidence: polarity rows failing: none
   [PASS] G-CLI-WHITELIST
-         the #82 CLI contract, exercised in this run: 10 malformed argument vectors are all rejected with exit code 2 -- the last three of them SECOND-MODE vectors -- 9 legal shapes parse, and the registered PERMISSIVE shape, present in this file only as this gate's own falsifier, accepts an unknown flag
-         evidence: malformed vectors accepted none, legal shapes 9, permissive shape accepts unknown flags True
+         the #82 CLI contract, exercised in this run: 10 malformed argument vectors are all rejected AND THE EXIT CODE IS OBSERVED RATHER THAN ASSERTED -- `main` is called on every one of them and every call returns 2 -- the last three of them SECOND-MODE vectors; 9 legal shapes parse, and the registered PERMISSIVE shape, present in this file only as this gate's own falsifier, accepts an unknown flag
+         evidence: malformed vectors accepted none, observed exit codes [2], legal shapes 9, permissive shape accepts unknown flags True
   [PASS] G-SELFTEST-WRITES-NOTHING
          the --selftest path corrupts an anchor in memory, dies at G-PROVENANCE and reaches no writer: the writer is called from exactly one place in this file and the self-test path does not reach it -- and the predicate is the AST probe's own value
          evidence: the writer-shape probe reports the self-test path clean: True
   [PASS] G-MUTANTS-ON-TARGET
-         all 56 declared mutants are run IN PROCESS and each dies at the gate it names, with the artifacts untouched
-         evidence: on target 56 of 56; misses none
+         all 70 declared mutants are run IN PROCESS and each dies at the gate it names, with the artifacts untouched
+         evidence: on target 70 of 70; misses none
   [PASS] G-COVERAGE
-         #34 WITH AN HONEST DENOMINATOR: of the 63 gates this delivery run evaluates, 52 are falsified by at least one declared mutant and 11 are WAIVED with a forcing that says why they cannot fail.  The denominator is the gate count of THIS run, and the registry --list-gates prints is required to be EXACTLY that set
-         evidence: uncovered gates: none; declared registry 63 vs evaluated 63, drift none
+         #34 WITH AN HONEST DENOMINATOR: of the 76 gates this delivery run evaluates, 65 are falsified by at least one declared mutant and 11 are WAIVED with a forcing that says why they cannot fail.  The denominator is the gate count of THIS run, and the registry --list-gates prints is required to be EXACTLY that set
+         evidence: uncovered gates: none; declared registry 76 vs evaluated 76, drift none
   [PASS] G-FALSIFIER-HONESTY
-         E-23: A FALSIFIER'S PUBLISHED DESCRIPTION IS PART OF THE SEALED SURFACE.  Each of the 56 declared falsifiers names THE SYMBOL IT MOVES and THE VALUE IT MOVES IT TO; both are re-derived from THIS FILE's own AST -- the innermost statement enclosing its hook -- and compared against the declaration, and the published prose is required to name both.  56 hook sites are located, and every hook in the file names a declared falsifier
-         evidence: declarations not matching their code: none; descriptions not naming their symbol and value: none; hooks naming an undeclared falsifier: none
+         E-23 IS SEMANTIC HERE, NOT A SUBSTRING SEARCH.  Each of the 70 declared falsifiers names THE SYMBOL IT MOVES and THE VALUE IT MOVES IT TO, and three legs bind the declaration to the code: the SYMBOL must be an ASSIGNMENT TARGET of the hook's own statement, re-derived from this file's AST; the VALUE must occur as a WHOLE TOKEN in the source of the CORRUPTING expression -- the third argument of its `pick` -- which must itself differ from the honest one; and the published prose must carry, contiguously, THE CLAUSE THE AST ASSEMBLES from those two.  A declaration that names a value its code does not write, and a description that keeps the symbol and the value while saying the opposite of what the hook does, both die here.  70 hook sites are located, and every hook in the file names a declared falsifier
+         evidence: declarations not matching their code: none; descriptions not carrying their assembled clause: none; hooks naming an undeclared falsifier: none
   [PASS] G-WRITER-SHAPE
          THE SHAPE OF THE WRITER IS SEALED, AND SEALED BEFORE THE GATE LEDGER IS SNAPSHOTTED -- the one guard a post-snapshot gate's own removal cannot evade.  finish() calls 9 gates in source order, the terminal integrity gate appears exactly once among them, there are 2 os.replace calls, and every one sits BELOW that gate's own line
          evidence: gates called in finish ['G-COVERAGE', 'G-FALSIFIER-HONESTY', 'G-WRITER-SHAPE', 'G-SWEEP-BOUND', 'G-ANCHOR-CONSUMERS', 'G-REACHABILITY', 'G-PAPER-COVERAGE-FINAL', 'G-SEAL-COMPLETE', 'G-ARTIFACT-INTEGRITY']; terminal gate present exactly once True; os.replace calls 2, all after the terminal gate True
   [PASS] G-SWEEP-BOUND
-         THE SWEEP'S EXECUTION IS BOUND, NOT DECLARED: a delivery-level run must carry one sweep row per declared mutant (56), every row ON TARGET, and must have evaluated the sweep gate itself.  This run is delivery-level
-         evidence: sweep rows 56 of 56; sweep gate evaluated True
+         THE SWEEP'S EXECUTION IS BOUND, NOT DECLARED: a delivery-level run must carry one sweep row per declared mutant (70), every row ON TARGET, EVERY ROW CARRYING THE EVIDENCE STRING ITS GATE ACTUALLY RAISED AND NAMING ITS OWN GATE, at least 70 executions counted inside the harness itself, and it must have evaluated the sweep gate.  A run that publishes a complete on-target sweep without executing a single falsifier dies here.  This run is delivery-level and counted 70 executions
+         evidence: sweep rows 70 of 70; rows with no or mismatched gate evidence none; harness executions 70; sweep gate evaluated True
   [PASS] G-ANCHOR-CONSUMERS
          #62's consumer binding: every verbatim anchor names a gate, and each named gate is required to be in the DECLARED registry AND in THIS RUN's own evaluated ledger -- 11 distinct consumer gates
          evidence: consumers not registered-and-evaluated: none
   [PASS] G-REACHABILITY
-         #34 WITH REACHABILITY: every declared falsifier is checked to REACH its gate -- 56 falsifiers, 0 dead
+         #34 WITH REACHABILITY: every declared falsifier is checked to REACH its gate -- 70 falsifiers, 0 dead
          evidence: dead falsifiers: none
   [PASS] G-PAPER-COVERAGE-FINAL
-         the payload closes.  THE THREE GATE CARDINALITIES ARE NAMED RATHER THAN CONFLATED: 63 gates in the DECLARED REGISTRY, 61 evaluated and carried into the SEALED SNAPSHOT (this gate included), and 2 evaluated AFTER the snapshot.  All passed, and a RECURSIVE TYPE SCAN of the receipt finds no float anywhere
-         evidence: registry 63, snapshot 61, post-snapshot 2, snapshot names equal the registry True (delivery-level), float-valued receipt paths none
+         the payload closes.  THE THREE GATE CARDINALITIES ARE NAMED RATHER THAN CONFLATED: 76 gates in the DECLARED REGISTRY, 74 evaluated and carried into the SEALED SNAPSHOT (this gate included), and 2 evaluated AFTER the snapshot.  All passed, and a RECURSIVE TYPE SCAN of the receipt finds no float anywhere
+         evidence: registry 76, snapshot 74, post-snapshot 2, snapshot names equal the registry True (delivery-level), float-valued receipt paths none
   [PASS] G-SEAL-COMPLETE
-         THE TOTAL SEAL.  EVERY published receipt key is either sealed at the gate that certified it or listed as DECLARED-UNSEALED, and this gate compares the manifest against the DECLARED seal set rather than against the seals that happened to be taken.  The vouching layer is inside the seal: schema, provenance, paper claims, polarity, coverage, reachability, gates, totals and the transcript head
-         evidence: declared seals 34, taken 34, missing none, extra none, receipt keys not covered none, seals broken at close none, unsealed list frozen True and measurement-free True
+         THE TOTAL SEAL.  EVERY published receipt key is either sealed at the gate that certified it or listed as DECLARED-UNSEALED, and this gate compares the manifest against the DECLARED seal set rather than against the seals that happened to be taken.  The vouching layer is inside the seal: schema, provenance, paper claims, polarity, coverage, reachability, gates, totals and the transcript head.  AND EVERY ROW'S PUBLISHED `sealed_at_gate` IS RE-DERIVED FROM THIS FILE'S AST -- the nearest preceding LD.gate of each SEAL.take site -- so a block seal taken after a block of gates says which gate it was actually taken at
+         evidence: declared seals 37, taken 37, missing none, extra none, receipt keys not covered none, seals broken at close none, unsealed list frozen True and measurement-free True, rows whose declared gate is not their AST window none
 
 ------------------------------------------------------------------------------
-TOTALS: 11 sources, 12 verbatim anchors, 63 gates in the registry (61 in the sealed snapshot, 2 after it), 56 mutants, 34 seals, 45 relation cells per arm, 7 fiber rows, horizon 5, 164,310 blindness checks
+TOTALS: 11 sources, 12 verbatim anchors, 76 gates in the registry (74 in the sealed snapshot, 2 after it), 70 mutants, 37 seals, 45 relation cells per arm, 7 fiber rows, horizon 5, 164,310 blindness checks
 ------------------------------------------------------------------------------
