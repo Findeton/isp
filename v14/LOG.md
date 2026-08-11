@@ -7166,3 +7166,42 @@ delay-law-shape inheritance.  NO new engraving (E-22/E-23/
 #34 family's sharpest instance to date).  Repair worker
 launched (Opus).  After repair + battery: paper-25 TERMINAL
 + the prediction-ledger update.
+
+## 2026-08-11 — PAPER-21 REPAIR LANDED: S1–S12 EXECUTED; THE R=6 DOOR COMPUTED AND GATED; 20/20 INJECTIONS DIE; COMMIT-AS-IS (v14 LEDGER #231)
+
+The R=4 unit's repair delivered.  S1 the impossibility scoped
+(structurally-live) w/ the ANT contrast; **S2 THE R=6 DOOR as
+new gated computation (G-R6-DOOR): all 72 R=3 triples at
+field ≡ 1 → any two concatenate to (2,2,2); ≥5,184 ordered
+witnesses; all 6 rounds saturating, zero foreign pairs;
+through this unit's own detector 1296 isomorphisms, fibers
+1/1/1 = ZERO FREE ITEMS; paper-04's dyadic raw fiber 1;
+CR-B cited at its committed anchor — (2,2,2) the ONLY
+pinned-transitive vector of 361; only paper-09 fails; the
+two-rung LOR register with LOR-A first**; S3 fences by
+multiset over all copies (FENCE_COPIES=2 declared); S4
+paper_tables renders 33 rows over 9 tables, each bound
+exactly once; S5 the hand list pruned 42→6 DECLARED
+exemptions each gated to fire; the 12→13 exploit now dies at
+G-PAPER-CLAIMS; S6 the seven constant-False falsifiers now
+corrupt OBJECTS + G-FALSIFIER-HONEST verifies all 58
+descriptions against AST-located source in-run (0
+constant-boolean remain); S7 **q DERIVED at all three sites
+from I7's committed row; G-COMPARATOR-DISJOINT: builder 4
+constants vs comparator 129, disjoint**; S8 the price-row
+binding named + gated; S9 the sequence-closes/slack-census
+reframing (no number moved); S10 G-DIA-COMPULSORY (276/276,
+12/12, the collinear orbit); S11 all 21 minors; S12
+G-MEASURE-STABILITY with the three measures DECLARED
+(79.03/79.08/98.57 + COUNTING-ONLY stamps).  INJECTION
+REPLAY 20/20 die at named gates.  Battery: plain ×2 byte;
+off-tree git-less at two seeds equal to repo runs; selftest
+by sha256; 58/58 mutants; 18/18 break-anchor; 27/27 argv;
+failing writing run leaves NO staged tmp; **all four verdict
+segments byte-identical to the pre-repair receipt; zero
+shared measured values changed** (66 gates / 58 mutants / 28
+seals).  One cold-run-caught bug fixed and disclosed (the
+delivery sweep's 3-tuple unpack).  Shas: paper ef4a8c35a0c4,
+code 1958a8cdfe28, output 6b30d85131db, receipt a4538c7019e6.
+Committed AS-IS; orchestrator battery next; on green:
+TERMINAL (the nineteenth) → THE PIN VOLLEY (SIG, PER-R, LOR).

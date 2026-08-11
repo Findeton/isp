@@ -31,7 +31,7 @@ Between delivery and adjudication every headline reading here is a
 
 Paper-19 drove a schedule the committed grammar admits, welded the record it
 induces onto I7's record space at both readings of "a map", and landed on
-(1,1,1) — admissible by I7's own Sylvester criterion, inside I7's own
+(1, 1, 1) — admissible by I7's own Sylvester criterion, inside I7's own
 361-point declared count box, and outside its list of eleven declared records.
 Its own rigidity theorem said why, and the sentence is this unit's starting
 point:
@@ -122,7 +122,10 @@ together with d66's own committed R = 4 point. Those 600 schedules span
 
 **Every other column below is exhaustive over an object the window does not
 cap** — including the stage-4 census, which quantifies over all 6,146,560,000
-ordered grouping quadruples. What licenses that is the same equality paper-19
+ordered grouping quadruples — and those columns are exhaustive because they
+*enumerate*, not because of anything the window does. What the equality below
+licenses is the reading of a combinatorial column as a statement about
+**driven** records. It is the same equality paper-19
 used, re-measured here: for every one of the 600 driven records the link field
 read off the DRIVEN record — the footprints taken from the layer's own
 `regs_of` — equals, cell by cell, the field the combinatorial route computes
@@ -149,7 +152,11 @@ statement about all **6,146,560,000**.
 
 ### 3.2 The census, counted twice
 
-Two routes that share no code, no packing and no typed target:
+Two routes that share no code and no packing: route 1 types the target field
+and compares packed integers, route 2 derives the target from I7's own
+committed row and compares 27-vectors entry by entry, so no typed target is
+shared. What binds the number against an error common to *both* is paper-19's
+committed register row, carried inside the same gate.
 
 | route | what it does | count |
 |---|---|---|
@@ -283,22 +290,48 @@ I7 does not declare, and it is STRUCT-DEAD for that reason.
 A clean R = 4 arena therefore spreads **36** incidences over **27** cells, and
 36 is not a multiple of 27.
 
-> **A link-constant field is arithmetically impossible at R = 4, while at
-> R = 3 the 27 incidences over 27 cells force one.**
+> **A link-constant field is arithmetically impossible at R = 4 in any
+> structurally live arena: a foreign-pair-free quadruple deposits 36
+> incidences over 27 cells and 36 is not a multiple of 27. At R = 3 the 27
+> incidences over 27 cells force one.**
+
+The premise is not vacuous and this unit measures why. The one R = 4 quadruple
+in this census that does carry a link-constant field — ROW/COL/DIA/ANT, the
+control above, whose field is identically **1** — buys it with 27 incidences
+rather than 36 and nine foreign pairs, and dies at *structure*, not at
+arithmetic. The same arithmetic covers the 20,160 covering quadruples of §6.3
+that induce (1, 1, 1) without this unit having to census them: four rounds
+deposit 36 pairs in all, so a link-constant field of 27 incidences leaves nine
+of them foreign, and a realised pair outside I7's incidence is exactly what
+STRUCT-DEAD means.
+
+And the trade is not a property of this budget. A homogeneous record
+(n_1, n_2, n_3) is reachable by a structurally live schedule at exactly one
+budget, R = n_1 + n_2 + n_3 — measured here on all **9** of I7's declared
+records — while zero free items needs n_1 = n_2 = n_3 by §4.5's theorem. So a
+live weld can be *motivated* only at the budgets R = 3, 6, 9, 12, 15, 18,
+where its record is (m, m, m): the **6** link-constant points of I7's own
+declared box, none of them declared. R = 4 is not one of them, and neither is
+any budget at which I7 declares a record.
 
 ### 4.4 The census
 
 Six declared arenas at both readings — twelve rows; each row's fate compared
-against the fate declared for its own cell before the run.
+against the fate declared for its own cell before the run. The arenas are
+named here exactly as the instrument names them, and every cell of the table
+is rendered from the receipt's own rows:
 
 | arena | @EMBEDDING | @QUOTIENT |
 |---|---|---|
-| **R4-FLAT** (the driven G-FLAT record) | **UNMOTIVATED** | **UNMOTIVATED** |
-| **R3-SAT** (the same constructor, one round shorter) | **FOUND** | **FOUND** |
-| R4-ONE-ANT (field identically 1, nine foreign pairs) | STRUCT-DEAD | STRUCT-DEAD |
-| R4-COMMITTED-GRID(3,4) — d66's own R = 4 point | STRUCT-DEAD | COUNT-DEAD |
-| R4-FLAT-FALSIFIER (one division withheld) | STRUCT-DEAD | COUNT-DEAD |
-| R4-FLAT-RESTRICTED-TO-8 (declared probe) | ARITY-DEAD | ARITY-DEAD |
+| **R4-FLAT** | **UNMOTIVATED** | **UNMOTIVATED** |
+| **R3-SAT(the same constructor, one round shorter)** | **FOUND** | **FOUND** |
+| R4-ONE-ANT(field identically 1) | STRUCT-DEAD | STRUCT-DEAD |
+| R4-COMMITTED-GRID(3,4) | STRUCT-DEAD | COUNT-DEAD |
+| R4-FLAT-FALSIFIER(one division withheld) | STRUCT-DEAD | COUNT-DEAD |
+| R4-FLAT-RESTRICTED-TO-8(declared probe) | ARITY-DEAD | ARITY-DEAD |
+
+The R4-FLAT row is the driven G-FLAT record; R4-COMMITTED-GRID(3,4) is d66's
+own R = 4 point; the ONE-ANT row is the nine-foreign-pair quadruple of §4.3.
 
 At the G-FLAT arena the structural test passes at both readings: **1296**
 isomorphisms and **1296** quotient maps, the two readings meeting at equality,
@@ -321,7 +354,9 @@ The choice inventory is weld 2's, with
 | `I-ORIENT` | **1** | **1** |
 
 At the R = 4 G-FLAT arena the three read **I-SITE-ASSIGNMENT 36,
-I-DIRECTION-LABEL 3, I-ORIENT 1**; at the driven R = 3 arena all three read 1.
+I-DIRECTION-LABEL 3, I-ORIENT 1** — the first read at every base map, and the
+other two at the enumeration's first, which is why the spreads below are the
+invariant statement; at the driven R = 3 arena all three read 1.
 
 Paper-19 could report
 
@@ -361,6 +396,12 @@ this unit inherits — the driven record induces exactly I7's committed G-FLAT
 row at every one of the nine sites, with the direction labels taken in I7's own
 declared order.
 
+Measured, and the honest price of that reading: the identity parse is itself
+one of the 1296 isomorphisms, and at that parse the label item still produces
+**3** distinct fields. So this reading fixes *two* inventory items — the site
+carrier and I7's declared link order — and it is the second that selects
+(1, 1, 2) from {(1, 1, 2), (1, 2, 1), (2, 1, 1)}.
+
 Measured: **of the 36 count fields the free assignment produces, 3 are
 homogeneous and exactly one is a declared record** — the three homogeneous ones
 being (1, 1, 2), (1, 2, 1) and (2, 1, 1), the other 33 inhomogeneous, and every
@@ -382,6 +423,15 @@ quadruple and on this unit's declared falsifier, **COUNT-DEAD** on d66's own
 committed R = 4 point and on the falsifier under the quotient reading, and
 **ARITY-DEAD** on a declared eight-actor restriction probe.
 
+The row that carries the requirement's weight is stamped with its coordinate.
+FOUND is exhibited at the declared counterfactual of choice-inventory item 6
+(R = 3), not at R = 4, and it **could not** have been exhibited at R = 4: by
+§4.5's theorem zero free items requires a link-constant field, and by §4.3 a
+structurally live R = 4 arena cannot carry one. Four of the detector's five
+values are exhibited inside the declared R = 4 arena; the fifth is excluded by
+theorem rather than by absence, and that exclusion is this section's third
+result rather than a shortfall in its controls.
+
 ## 5. Stage 3 — the splittable question
 
 ### 5.1 The split fiber, interval by interval
@@ -393,8 +443,8 @@ n − 1 places for one interior boundary, and that
 
 | record | intervals with split fiber > 0 | raw product over all 27 |
 |---|---|---|
-| paper-19's (1,1,1) | **0** of 27 | 0 |
-| this unit's (1,1,2) | **9** of 27 | **0** |
+| paper-19's (1, 1, 1) | **0** of 27 | 0 |
+| this unit's (1, 1, 2) | **9** of 27 | **0** |
 
 Measured: **split fiber 1 at 9 of its 27 intervals and 0 at the other 18.**
 The nine are
@@ -450,6 +500,19 @@ probability zero. R6b′ also excludes G-FLAT on the earlier ground —
 kernel does collapse the fiber at count ≥ 4. The welded record's maximum count
 is 2. The emptiness is double, and neither half is paper-04's.
 
+**The two emptinesses meet.** The one law that becomes non-empty here is
+*per-interval*, and the only per-interval move the grammar has is refused at
+this arena shape, while the only other move — DYADIC — needs a product that is
+0. So at R = 4 no admissible refinement move exists on this record at all: the
+law that becomes non-empty is non-empty **and inert**, with nothing to act on.
+
+**And the head's verb is per-interval, not record-level.** `R4-SPLITTABLE-YES`
+means the split fiber is positive at 9 of the 27 intervals; at the record level
+CR-B's committed verdict — G-FLAT "admit[s] no subdivision at all" — stands
+unmoved, which is why the head's own bracket carries `RAW PRODUCT 0`. Nothing
+here supersedes a terminal paper's row; the two verbs are about different
+objects and both are true.
+
 > **The door opens exactly one crack.** The R = 4 welded record is splittable,
 > and the one law that becomes non-empty on it is non-empty at its degenerate
 > end: a one-point fiber, a single orbit and simplex dim 0.
@@ -469,6 +532,45 @@ that can carry it is R = 8** — it is reachable there by construction, since
 concatenating any two of the 276 G-FLAT quadruples doubles the field, which
 gives at least **76,176** ordered witnesses before any interleaving is counted.
 G-DIAG2 is also the one record on which R6b′ reports a complete derived law.
+
+That is the first refinable member **of this record's own scale family**. It
+is not the first budget at which the weld reaches a refinement law, and the
+next section measures the rung below it.
+
+### 5.4 The ladder's next rung, measured here rather than predicted
+
+The scale family is one ladder; §4.3's budget law is another, and the two do
+not agree on where to go next. A structurally live schedule reaches a
+homogeneous record only at R = n_1 + n_2 + n_3, and zero free items needs
+n_1 = n_2 = n_3, so the first budget above this one at which a live weld can be
+*motivated at all* is **R = 6**, at the link-constant record (2, 2, 2). This
+unit measures that rung rather than asserting it:
+
+- **it is reachable by concatenation.** All **72** of the R = 3 I7-STRICT
+  triples this unit re-counts at §6.4 carry the field identically 1 at all 27
+  cells, so any two of them concatenate to (2, 2, 2) at every site, with all
+  **6** rounds saturating and no foreign pair anywhere: at least **5,184**
+  ordered witnesses before any interleaving is counted;
+- **the weld there is MOTIVATED.** Run through this unit's own detector the
+  concatenation's co-division arena returns 1296 isomorphisms and fibers
+  **1 / 1 / 1** — zero free items, the value R = 4 provably cannot return;
+- **paper-04's move is live.** Every interval of (2, 2, 2) carries count 2, so
+  the DYADIC raw fiber is **1** — a single point, the split forced — against 0
+  here;
+- **paper-06 is unique there at the record level**, and that is cited rather
+  than re-run: CR-B's committed lattice census makes (2, 2, 2) the *only*
+  pinned-transitive vector in its whole **361**-point box, of which 261 are
+  splittable;
+- **only paper-09 stays empty**: every count is 2, so all **27** intervals sit
+  inside the same measured support hole;
+- **the price is that (2, 2, 2) is undeclared.** It is admissible by I7's own
+  criterion and it is not one of I7's records, so the rung buys the motivated
+  map at exactly the cost this unit's budget buys the declared record.
+
+So the two rungs are complementary and neither dominates: R = 6 buys the
+motivated map at an undeclared record, R = 8 buys a declared record at a weld
+that §4.5's theorem says cannot be motivated. Nothing at six or eight rounds is
+driven here.
 
 ## 6. Stage 4 — the price-law row
 
@@ -491,6 +593,22 @@ Read against the two budgets below it, that is the price law's third row:
 | 3 | 27 | **the perfect matching**: 27 = 27 | 72 of 21,952,000 |
 | 4 | 36 | **the cover**: 36 > 27, slack 9 | 100,080 of 6,146,560,000 |
 
+**The sequence closes here.** The three rows are the three branches of one
+comparison, 9R against 27, so for every R ≥ 4 the cover binds, with slack
+9(R − 3). What changes above R = 4 is not *what binds* but *what the slack
+buys* — and the slack is the whole content of the R-ladder: it is what grows
+the reachable code space (54 at R = 3, 105 here), what would have to lift the
+covering class's maximum cell count above 2, and what would have to admit a
+covered site at determinant 0 or below. A successor's fourth row is therefore
+a **slack census**, not a fourth binding condition; there is no fourth
+condition to find.
+
+Every fraction this unit publishes is **COUNTING-ONLY** — the cardinality of a
+subset of an exhaustively enumerated finite set, never a rate, and no
+typicality claim rests on any of them — with exactly one exception: the
+majority claim of §6.3, which is published with its measure and measured under
+three.
+
 ### 6.2 The sitewise identity, and where it breaks
 
 Paper-19's sitewise identity — positive definite at a site iff all three link
@@ -505,6 +623,16 @@ the 100,080 covering quadruples** — 0 occurrences. The identity survives on th
 family while failing on the code space, and the reason the covering class and
 the positive-definite class still coincide at R = 4 is that empty cell rather
 than the theorem that carried them at R = 3.
+
+The empty cell has a measured mechanism, and it is block quantisation. Across
+the whole covering class the maximum cell count is **2**: the class occupies
+exactly **7** site codes, all of them inside {1, 2}³, while every one of the
+three breaking codes needs a cell at 4. A round deposits nine pairs in one
+partition-structured block, and four such blocks cannot lift a cell to 4 and
+still cover — which is also why the determinant spectrum of §6.1 has exactly
+three values: it is the image of {1, 2}³ less the unaffordable (2, 2, 2). What
+remains open is not the absence but its persistence: whether the maximum cell
+count stays at 2 when the slack grows.
 
 ### 6.3 The first inhomogeneous covering class
 
@@ -522,7 +650,28 @@ part runs over four records only:
 
 Exactly one of the four is a declared I7 record, and it is reached at 276 — the
 pin's own number, arrived at a second time from a census that never mentions
-G-FLAT.
+G-FLAT. Inside those 276 one round is compulsory: **the full diagonal
+line-partition occurs in all 276 of the G-FLAT quadruples and in all 12 of
+their grouping multisets**, and only the collinear multiset repeats a round —
+12 of the 276, exactly its 12 orderings, because the 36 saturating partitions
+carry 36 distinct incidence masks. The diagonal is not one round among four but
+the one every G-FLAT quadruple must spend, and it is the same direction the
+induced record counts twice — a coincidence this unit measures and does not
+read further.
+
+"Mostly inhomogeneous" is a majority claim over a configuration space, so it is
+published with its measure, and measured under three invariant measures on the
+same covering class:
+
+| measure on the covering class | homogeneous | inhomogeneous | total |
+|---|---|---|---|
+| uniform on ORDERED GROUPING QUADRUPLES (this unit's own census) | 20,988 (20.97%) | 79,092 (79.03%) | 100,080 |
+| uniform on GROUPING MULTISETS (the quotient by round order) | 876 (20.92%) | 3,312 (79.08%) | 4,188 |
+| uniform on DISTINCT INDUCED FIELDS (the quotient by the field) | 4 (1.43%) | 276 (98.57%) | 280 |
+
+The majority is inhomogeneous under every one, and under two of the three by a
+wider margin than the head's own measure gives. Every other fraction this unit
+publishes is stamped COUNTING-ONLY.
 
 ### 6.4 The pipeline, validated one and two rounds down
 
@@ -532,8 +681,10 @@ answers are already committed: **run at R = 3 it returns the I7-STRICT class at
 with 747 pairs non-degenerate at all nine sites.** The R = 3 column is
 paper-19's committed row and is exhaustive over all 21,952,000 triples by the
 same budget theorem; the R = 2 ceiling is attained at **252** of the 78,400
-ordered pairs against a wall of 18 // 3 = **6**, with I7-STRICT empty, and it is
-U4b's committed row read from paper-19's receipt rather than re-typed here.
+ordered pairs against a wall of 18 // 3 = **6**, with I7-STRICT empty. The
+wall, the ceiling, the 747 and the empty I7-STRICT are U4b's committed row read
+from paper-19's receipt rather than re-typed here; the **252** at which the
+ceiling is attained is this unit's own number.
 
 ## 7. The walls
 
@@ -553,22 +704,23 @@ sides, so a line-wrapped or blockquoted injection dies too.
 records that a Poisson sprinkling admits **no Lorentz-invariant finite-valency
 graph**, and these schedules are finite-valency by construction, so running the
 test would manufacture a false negative. None is run, and the abstention is
-measured rather than asserted: the gate scans this run's whole measurement
-layer — every measured receipt key together with the statement and evidence of
-every non-wall gate evaluated — and its falsifier writes a sprinkling-grade
-reading into that layer and dies there.
+measured rather than asserted: the gate scans this run's **declared
+measurement surface** — every measured receipt key together with the statement
+and evidence of every non-wall gate evaluated, which is the scope the gate
+states and no wider — and its falsifier writes a sprinkling-grade reading into
+that surface and dies there.
 
 **Kleitman–Rothschild — every dimension reading carries a height control.** This
 unit takes no dimension reading at all: no chart width, no Myrheim–Meyer
 estimate, no max-shatter reading. The height control is therefore not owed and
-not manufactured, and that too is a scan of the same measurement layer rather
+not manufactured, and that too is a scan of the same declared surface rather
 than a declaration.
 
 **The diagonal — measured here, and read no further.** The (1,1) link is the one
 this budget populates twice, and that is exactly what carries the induced form
 from paper-19's `[[1, -1/2], [-1/2, 1]]` to the identity. It is read as a
 direction on a nine-site lattice and as nothing else. Cosmological and continuum
-readings stay barred, again measured on the same surface.
+readings stay barred, again measured on that same declared surface.
 
 **The Lorentzian resonance, NAMED.** A reader arriving from the relativity line
 will hear "signature" in a determinant that has just gone positive, and at this
@@ -600,9 +752,9 @@ counts.
 | 7 | the driven window W4 | **declared** | 1 | §2.3, disclosed in the head |
 | 8 | the seed menu: one canonical transversal, plus the declared fan | **declared** | 1 | §2.3; the exhaustive columns do not use it |
 | 9 | the reading axis (EMBEDDING / QUOTIENT) | **declared** | 2 | weld 2's, carried unchanged; every row stamped |
-| 10 | `I-SITE-ASSIGNMENT` | **measured** | **36** | §4.5 |
-| 11 | `I-DIRECTION-LABEL` | **measured** | **3** | §4.5 |
-| 12 | `I-ORIENT` | **measured** | **1** | §4.5 |
+| 10 | `I-SITE-ASSIGNMENT` | **measured** | **36** | §4.5, base-map invariant |
+| 11 | `I-DIRECTION-LABEL` | **measured** | **3** | §4.5, at the forced base map; spread [3, 6] across the 1296 — not base-map invariant |
+| 12 | `I-ORIENT` | **measured** | **1** | §4.5, at the forced base map; spread [1, 2] across the 1296 — not base-map invariant |
 | 13 | the declared falsifier (one division withheld) | **free** | — | this unit's; the minimal edit on the record |
 | 14 | the declared arity probe (eight actors) | **free** | — | this unit's; two-way coverage only |
 
@@ -641,24 +793,35 @@ carrier the induced record is exactly G-FLAT, one of I7's eleven; at the free
 site assignment the detector returns UNMOTIVATED with fibers 36/3/1, and the
 theorem behind that is not a property of R = 4 alone: zero free items holds
 exactly at the link-constant records, I7 declares none of them, and at R = 4 a
-link-constant field is arithmetically impossible anyway, because 36 incidences
-do not spread constantly over 27 cells. What R = 3 got for nothing it got from
-homogeneity, not from its map.
+*structurally live* arena's 36 incidences cannot spread constantly over 27
+cells — the R = 4 quadruples that do carry a link-constant field pay 9 foreign
+pairs for it and die at structure. What R = 3 got for nothing it got from
+homogeneity, not from its map; and the budget law under both says a live weld
+is motivated only at R = 3, 6, 9, …, where the record is (m, m, m) and I7
+declares nothing.
 
 The third stage opens the door one crack. The welded record is splittable at 9
 of its 27 intervals — the first welded record with a positive split fiber
 anywhere — and exactly one of the three terminal refinement laws becomes
-non-empty on it, at a one-point fiber. Paper-04 stays empty at the record level
-and refuses the per-interval move on arena shape; paper-09 stays empty inside
-its own measured support hole. The budget at which the door opens fully is
-named: R = 8, where (2, 2, 4) = G-DIAG2 becomes affordable.
+non-empty on it, at a one-point fiber, with no admissible move to consume it.
+Paper-04 stays empty at the record level and refuses the per-interval move on
+arena shape; paper-09 stays empty inside its own measured support hole. Two
+budgets above this one are measured and neither dominates: R = 6, where the
+link-constant (2, 2, 2) is reachable by concatenating two of the R = 3
+I7-STRICT triples and the weld would be MOTIVATED at an undeclared record, and
+R = 8, where (2, 2, 4) = G-DIAG2 becomes affordable and all three laws are
+non-empty at a declared record the weld cannot motivate.
 
-The fourth stage gives the price law its third row. At R = 2 the budget bound;
-at R = 3 the perfect matching bound; at R = 4 the cover binds, and the covering
-class is 100,080 of 6,146,560,000 — still coinciding with the positive-definite
-class, but now for a different reason: three site codes break the sitewise
-identity and simply never occur. And R = 4 is the first budget whose covering
-class is mostly inhomogeneous.
+The fourth stage gives the price law its third row, and closes the sequence. At
+R = 2 the budget bound; at R = 3 the perfect matching bound; at R = 4 the cover
+binds, and for every budget above it the cover goes on binding with slack
+9(R − 3), so what a successor measures is the slack rather than a fourth
+condition. The covering class is 100,080 of 6,146,560,000 — still coinciding
+with the positive-definite class, but now for a different reason: three site
+codes break the sitewise identity and simply never occur, because no covering
+quadruple lifts a cell above 2. And R = 4 is the first budget whose covering
+class is mostly inhomogeneous — under all three of the invariant measures §6.3
+reports.
 
 ## 10. Deviations, priced
 
@@ -680,7 +843,10 @@ class is mostly inhomogeneous.
    of all 6,146,560,000 quadruples one at a time.** The pruning is the budget
    theorem and nothing else — a quadruple is discarded only when the cells it
    still has to cover outnumber what its remaining rounds can deposit — so no
-   covering quadruple can be missed. Price: the *non-covering* part of the
+   covering quadruple can be missed, and the search is bound at its own gate:
+   the census's G-FLAT row is compared there against the 276 stage 1 computes
+   by two other routes, so an unsound prune cannot reach the artifacts. Price:
+   the *non-covering* part of the
    family is not profiled, so this unit publishes no positive-definite
    distribution below 9 sites at R = 4, where paper-19 published a full one at
    R = 3.
@@ -701,9 +867,15 @@ class is mostly inhomogeneous.
    zero here; weld 2's own qualifier applies and this unit does not repeat the
    number.
 
-7. **The R = 8 row is registered, not claimed.** §5.3 gives the budget, the
-   record, its declared name and a constructive lower bound on the witnesses.
-   Nothing at eight rounds is driven and no constructibility is claimed there.
+7. **The R = 6 and R = 8 rows are registered, not claimed.** §5.3 gives the
+   R = 8 budget, its record, its declared name and a constructive lower bound
+   on the witnesses; §5.4 measures the R = 6 rung — the concatenation
+   witnesses, the weld's fibers on the concatenated arena, the dyadic fiber —
+   from the combinatorial route alone. **Nothing at six or eight rounds is
+   driven**, no constructibility through the committed grammar is claimed at
+   either, and the R = 6 arena is built from the groupings rather than from a
+   drive: whether the layer drives a concatenation is exactly what the
+   successor must ask.
 
 ## 11. The instrument
 
@@ -717,26 +889,42 @@ Arithmetic is exact end to end: an AST scan of the file finds no float literal
 and no true division, and a recursive type scan of the emitted receipt finds no
 float. Counts are computed, never typed. Gates bind objects rather than
 aggregates: the unit-grade, equality, forcedness, census-row, split-fiber and
-sitewise gates each evaluate every object against its own invariant. Provenance
-is by pinned sha with the products gated: 18 sources are read at run time, the
-set of reads is required to be exactly the declared set, and no subprocess of
-any kind is invoked, so the run is correct off-tree and with no version control
-present. The 21 verbatim anchors each clear a length floor and each name the
+sitewise gates each evaluate every object against its own invariant. The
+stage-4 total is the one published number with no committed predecessor to
+check it against, so what binds it is the census's own G-FLAT row, compared
+inside the price gate itself against the 276 that stage 1 computes by two other
+routes and reads from paper-19's committed register: an error in the search's
+pruning cannot survive to the artifacts. Provenance is by pinned sha with the
+products gated: 18 sources are read at run time, the set of reads is required
+to be exactly the declared set, and every reader in the file records its
+category at the call — SOURCE, OBJECT-UNDER-TEST, SELF or the run's own staged
+artifacts — so that the gate holds all four categories and not the pinned
+sources alone. No subprocess of any kind is invoked, so the run is correct
+off-tree and with no version control present. The 21 verbatim anchors each clear a length floor and each name the
 gate that consumes them, and each named gate is required to be in the declared
 registry **and** in this run's own evaluated ledger. Every text gate
-whitespace-normalises, ASCII-folds **and strips markdown line prefixes**.
+whitespace-normalises, ASCII-folds **and strips markdown line prefixes**, and
+compares a whitespace-stripped form of both sides as well, so a needle broken
+by a line wrap inside a word matches too.
 
 The four inherited walls are measurements rather than declarations. The two
 that read the paper — the retracted L-1 sentence's absence and the naming
 sentence's presence — carry falsifiers that edit the paper under test rather
-than the gate's boolean. The three abstention walls scan this run's whole
-measurement layer.
+than the gate's boolean, and the form inside the naming sentence is derived
+from I7's own committed row rather than typed. The three abstention walls scan
+a declared surface: every measured receipt key together with the statement and
+evidence of every non-wall gate evaluated in the run.
 
 The coverage ledger is honest: every gate is either falsified by a declared
 mutant or waived with a forcing that says why it cannot fail, the denominator
 is the gate count of the run rather than a hand-kept number, the declared gate
 registry and the set actually evaluated must agree exactly, and every declared
-falsifier is checked to reach its gate. The mutant sweep's *execution* is bound:
+falsifier is checked to reach its gate. **Every falsifier is also checked
+against its own code**: each declares the object it corrupts, the run locates
+every hook by AST, publishes the source of the statement carrying it, requires
+the declared object to appear there, and rejects outright any falsifier whose
+corruption is a constant boolean — the class that cannot fail and whose
+description therefore inverts its code. The mutant sweep's *execution* is bound:
 a delivery-level run must carry one sweep row per declared mutant, every row on
 target, and the same conjunction is re-taken at the terminal integrity gate, so
 the only writer in this file is downstream of a sweep that actually ran.
@@ -753,31 +941,68 @@ gate compares the bytes on disk against the gate-time seal after a deliberately
 corrupted probe has been shown to be detected; a run that fails a gate writes
 nothing.
 
-The head is derived a second time by a comparator that shares neither code nor
-input nor typed literal with the builder: it reads the serialized receipt,
-types all four verdict templates itself — the weld segment included, which
-carries the outcome word — and re-derives that word from the receipt's own fate
-rows, cross-checked against the published fate multiset. The paper under test is
-checked in the same run for claim rendering, numeral coverage **including the
-fenced verdict blocks**, head-verbatim rendering and claim polarity; each of the
-four derived segments is matched into the paper character for character, so the
-blocks a reader will quote are bound to the receipt as strings and not merely as
-numbers. The delivery run is byte-reproducible.
+The head is derived a second time by a comparator that shares no code, no input
+and no typed value with the builder, and that independence is gated rather than
+asserted: an AST scan reads the string constants of both routines and requires
+them to be disjoint **and** requires neither side to type a value at all — no
+numeral, no fraction, no matrix and no number-word survives in either once the
+six declared object names are removed. Every number in every segment, the
+induced form q included, is interpolated from the receipt on both sides. The
+comparator reads the serialized receipt, types all four verdict templates
+itself — the weld segment included, which carries the outcome word — and
+re-derives that word from the receipt's own fate rows, cross-checked against
+the published fate multiset.
+
+The paper under test is checked in the same run for claim rendering, table
+rendering, numeral coverage and claim polarity. Every headline sentence and
+every cell of the paper's measurement tables are rendered from the receipt and
+matched into the paper, each table row required to occur exactly once, so a
+forged cell dies even when every numeral in it is receipt-backed. Coverage
+itself is an allow-list gate and not a position gate — a numeral the receipt
+publishes anywhere may appear anywhere, and such a list is strong exactly
+where this unit's large numbers live and weak on small ones — which is why
+every headline number is *also* bound as a rendered claim or as a table cell.
+Numeral coverage scans the whole paper — prose, tables, inline spans and the
+fenced verdict blocks — against exactly three declared lists: this run's registered
+numbers, the receipt it publishes, and a declared exemption table published
+with a reason per literal, every one of which must fire and none of which may
+be a numeral the receipt could have supplied; the spelled-out numbers are
+scanned on the same terms. The fenced blocks are gated by **multiset
+equality** against the declared copy count rather than by containment, so
+forging either copy of a verdict block, deleting one, or appending a forged
+third all die. The delivery run is byte-reproducible.
 
 ## 12. The successor register
 
 Registered, not claimed.
 
-**S-1 — the R = 8 rung, and it is the sharpest question this unit creates.**
-The welded record is at the count floor of its own scale family. The first
-refinable member is (2, 2, 4) = `G-DIAG2` at budget 72, which is R = 8 at this
-generator, and it is reachable by concatenation. At that budget R6a's dyadic
-move is admissible on the record for the first time, CR-B's record-level
-splittability holds for the first time, and R6b′'s kernel has a complete
-derived law on exactly that record. **The first budget at which the weld can
-reach a law over records, rather than a record, is therefore R = 8** — and
-whether the committed grammar drives one of the quadruple-concatenations, with
-the supply question re-asked four rounds wider, is the successor's to measure.
+**S-1 — the law-over-records unit, and it takes two rungs.** Within G-FLAT's
+own scale family the first refinable member is (2, 2, 4) = `G-DIAG2` at budget
+72, which is R = 8 at this generator, and R = 8 is the first budget at which
+all three terminal laws are simultaneously non-empty. It is **not** the first
+budget at which the weld reaches any of them. The register therefore carries
+two rungs, and the cheaper one first:
+
+- **LOR-A, R = 6, record (2, 2, 2)** — §5.4's measured rung: reachable by
+  concatenating any two of paper-19's own 72 I7-STRICT triples, at least 5,184
+  ordered witnesses, all six rounds saturating; paper-04's dyadic move
+  admissible at raw fiber 1 with the split forced; CR-B's unique
+  pinned-transitive vector at the record level; a **ZERO-FREE-ITEMS** weld by
+  §4.5's theorem, measured here at fibers 1/1/1. Its price: the record is
+  undeclared and R6b′'s kernel is empty on it.
+- **LOR-B, R = 8, record (2, 2, 4) = `G-DIAG2`** — a **declared** record with
+  all three laws non-empty and at least 76,176 ordered witnesses; but (2, 2, 4)
+  is not link-constant, so by §4.5's theorem the weld there returns
+  UNMOTIVATED exactly as it does here. R = 8 buys the law and cannot buy the
+  map.
+
+The two are complementary and the successor should measure the cheaper one
+first. What neither paper has done is the thing that decides both: whether the
+committed grammar *drives* a concatenation, with the conflict-supply question
+re-asked two (resp. four) rounds wider, and whether any admissible refinement
+**move** consumes the law that becomes non-empty — a unit reporting a non-empty
+law without a move that consumes it has reproduced this unit's crack rather
+than opened the door.
 
 **S-2 — the standard, or the list.** §4.5's theorem says the RSQ zero-free-items
 standard selects exactly the link-constant records and that I7 declares none of
@@ -794,19 +1019,29 @@ spectrum is published, their identity as I7 records is not, and whether any of
 them is in the chart orbit of `G-CURVED` or `G-CURVOFF` — I7's two declared
 site-dependent records — is one census away and is not run here.
 
-**S-4 — the empty cell with teeth.** (1, 1, 4), (1, 4, 1) and (4, 1, 1) are
-reachable at a site and never occur inside a covering quadruple. That is
-measured, not explained. A proof would say whether the sitewise identity
-survives at R = 5 and beyond, or whether R = 4 is the last budget at which
-coverage still implies positive definiteness.
+**S-4 — the empty cell, now with a mechanism.** (1, 1, 4), (1, 4, 1) and
+(4, 1, 1) are reachable at a site and never occur inside a covering quadruple,
+and §6.2 says why: the covering class's maximum cell count is 2, over seven
+site codes inside {1, 2}³, while every breaking code needs a cell at 4. What is
+open is whether that survives the slack — whether four blocks are the reason or
+four *rounds* are, and at which budget a covering quadruple first lifts a cell
+above 2. That is the same census a signature question would need, and it is a
+slack census rather than a fourth binding condition.
 
 **S-5 — the eleven non-collinear multisets, one round on.** As at R = 3, exactly
-one of the twelve grouping multisets is collinear. Whether the twelve are
+one of the twelve grouping multisets is collinear, and §6.3 sharpens the shape:
+the diagonal class is compulsory in all 276 and in all 12 multisets, and the
+collinear multiset is the only one that repeats a round. Whether the twelve are
 identical *as processes* — record length, event count, supply profile — is open
 and cheap; the length spectrum of §3.4 already shows the window is not uniform.
 
 **What may not be inherited**, as a standing row: the window as a family
 statement; UNMOTIVATED as a defeat rather than a priced choice; the 36 as a
-count of *maps* rather than of distinct count fields; the R = 8 row as anything
-but a budget arithmetic with a constructive witness; and any dynamics,
-signature, dimension, cosmological or continuum reading whatever.
+count of *maps* rather than of distinct count fields; the R = 6 and R = 8 rows
+as anything but budget arithmetic with a constructive witness; "the first law
+over records" for a law that is per-interval and inert; the price sequence as
+an open ladder; and any dynamics, signature, dimension, cosmological or
+continuum reading whatever. One instrument row travels with them: the stage-4
+total is bound by a single comparison, the census's own G-FLAT row against
+stage 1's 276, and a successor that weakens or re-scopes that comparison
+silently unbinds the price row.
