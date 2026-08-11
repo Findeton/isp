@@ -1,0 +1,5876 @@
+{
+ "alphabet_rebuilt": {
+  "elements": [
+   "0",
+   "1",
+   "1/2",
+   "1/2*z^1+1/2*z^3-1/2*z^5",
+   "1*z^3",
+   "1/2*z^3",
+   "1/2+1/2*z^6",
+   "1*z^6",
+   "1/2*z^6",
+   "-1/2*z^1+1/2*z^3+1/2*z^5",
+   "-1*z^1+1*z^5",
+   "-1/2*z^1+1/2*z^5",
+   "-1/2+1/2*z^6",
+   "-1",
+   "-1/2",
+   "-1/2*z^1-1/2*z^3+1/2*z^5",
+   "-1*z^3",
+   "-1/2*z^3",
+   "-1/2-1/2*z^6",
+   "-1*z^6",
+   "-1/2*z^6",
+   "1/2*z^1-1/2*z^3-1/2*z^5",
+   "1*z^1-1*z^5",
+   "1/2*z^1-1/2*z^5",
+   "1/2-1/2*z^6"
+  ],
+  "size": 25
+ },
+ "arena_declaration": {
+  "alphabet": 25,
+  "band_sizes": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14
+  ],
+  "connective": "MAX-NORM",
+  "control_rung": 3,
+  "dds_subset_window": 12,
+  "dimension": 2,
+  "family_generalisation_rule": "R4's construction applied verbatim at each rung: axes = every nonzero offset modulo sign (exhaustive); stencil = the parent's 3-term {0, a, -a}; alphabet = the parent's 25, fixed; quotient = the parent's global-phase gauge.  Fiber: the axis count at that rung, every instance run.",
+  "forcing_link": "(1,1)",
+  "fourth_direction": [
+   1,
+   2
+  ],
+  "ladder": [
+   4,
+   6,
+   8
+  ],
+  "link_set": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "parent_rung": 4,
+  "plaquette_stencils": [
+   "S1-ONE",
+   "S2-EDGE",
+   "S2-CORNER",
+   "S2-APART",
+   "S3-ROW",
+   "S4-BLOCK"
+  ],
+  "probe_alphabets": [
+   "R4-25",
+   "UNIT-7",
+   "THIRDS-19"
+  ],
+  "stencil": "3-TERM-AXIS",
+  "widths": [
+   1,
+   2,
+   3
+  ]
+ },
+ "arithmetic": "exact: Q(zeta_24) as 8-tuples of Fraction over the basis (1, x, ..., x^7) reduced modulo Phi_24 COMPUTED as 1x^0+-1x^4+1x^8; tuple equality is field equality",
+ "axis_census": [
+  {
+   "L": 4,
+   "axes": 9,
+   "by_order": {
+    "2": 3,
+    "4": 6
+   },
+   "local": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "local_axes": 4,
+   "local_orders": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  {
+   "L": 6,
+   "axes": 19,
+   "by_order": {
+    "2": 3,
+    "3": 4,
+    "6": 12
+   },
+   "local": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "local_axes": 4,
+   "local_orders": [
+    6,
+    6,
+    6,
+    6
+   ]
+  },
+  {
+   "L": 8,
+   "axes": 33,
+   "by_order": {
+    "2": 3,
+    "4": 6,
+    "8": 24
+   },
+   "local": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     7
+    ]
+   ],
+   "local_axes": 4,
+   "local_orders": [
+    8,
+    8,
+    8,
+    8
+   ]
+  }
+ ],
+ "band_law": {
+  "by_width": [
+   {
+    "L": null,
+    "admitted_set": [
+     4
+    ],
+    "law_holds": true,
+    "predicted_set": [
+     4
+    ],
+    "r": 1
+   },
+   {
+    "L": null,
+    "admitted_set": [
+     6,
+     8
+    ],
+    "law_holds": true,
+    "predicted_set": [
+     6,
+     8
+    ],
+    "r": 2
+   },
+   {
+    "L": null,
+    "admitted_set": [
+     8,
+     10,
+     12
+    ],
+    "law_holds": true,
+    "predicted_set": [
+     8,
+     10,
+     12
+    ],
+    "r": 3
+   }
+  ],
+  "law": "at window width r the sizes carrying BOTH locality and a witnessed local non-monomial unitary are exactly the even L with 2r+2 <= L <= 4r",
+  "one_sided_at_width_above_one": "the presence half is constructive and verified at every listed size; the absence half is FORCED only at width 1, where the difference-doubled subset census over the nine-offset ball is exhaustive -- at wider windows the complement is declared open",
+  "parent_row": [
+   4
+  ],
+  "rows": [
+   {
+    "L": 2,
+    "admitted": false,
+    "locality": false,
+    "non_monomial_witness": true,
+    "r": 1,
+    "witness": {
+     "coefficients": [
+      "1/2*z^1+1/2*z^3-1/2*z^5",
+      "-1/2*z^1+1/2*z^3+1/2*z^5"
+     ],
+     "pair": [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "radius": 1,
+     "support": 2
+    }
+   },
+   {
+    "L": 3,
+    "admitted": false,
+    "locality": false,
+    "non_monomial_witness": false,
+    "r": 1,
+    "witness": null
+   },
+   {
+    "L": 4,
+    "admitted": true,
+    "locality": true,
+    "non_monomial_witness": true,
+    "r": 1,
+    "witness": {
+     "coefficients": [
+      "1/2*z^1+1/2*z^3-1/2*z^5",
+      "-1/2*z^1+1/2*z^3+1/2*z^5"
+     ],
+     "pair": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ]
+     ],
+     "radius": 1,
+     "support": 2
+    }
+   },
+   {
+    "L": 5,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 1,
+    "witness": null
+   },
+   {
+    "L": 6,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 1,
+    "witness": null
+   },
+   {
+    "L": 7,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 1,
+    "witness": null
+   },
+   {
+    "L": 8,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 1,
+    "witness": null
+   },
+   {
+    "L": 9,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 1,
+    "witness": null
+   },
+   {
+    "L": 10,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 1,
+    "witness": null
+   },
+   {
+    "L": 11,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 1,
+    "witness": null
+   },
+   {
+    "L": 12,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 1,
+    "witness": null
+   },
+   {
+    "L": 13,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 1,
+    "witness": null
+   },
+   {
+    "L": 14,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 1,
+    "witness": null
+   },
+   {
+    "L": 2,
+    "admitted": false,
+    "locality": false,
+    "non_monomial_witness": true,
+    "r": 2,
+    "witness": {
+     "coefficients": [
+      "1/2*z^1+1/2*z^3-1/2*z^5",
+      "-1/2*z^1+1/2*z^3+1/2*z^5"
+     ],
+     "pair": [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "radius": 1,
+     "support": 2
+    }
+   },
+   {
+    "L": 3,
+    "admitted": false,
+    "locality": false,
+    "non_monomial_witness": false,
+    "r": 2,
+    "witness": null
+   },
+   {
+    "L": 4,
+    "admitted": false,
+    "locality": false,
+    "non_monomial_witness": true,
+    "r": 2,
+    "witness": {
+     "coefficients": [
+      "1/2*z^1+1/2*z^3-1/2*z^5",
+      "-1/2*z^1+1/2*z^3+1/2*z^5"
+     ],
+     "pair": [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ]
+     ],
+     "radius": 2,
+     "support": 2
+    }
+   },
+   {
+    "L": 5,
+    "admitted": false,
+    "locality": false,
+    "non_monomial_witness": false,
+    "r": 2,
+    "witness": null
+   },
+   {
+    "L": 6,
+    "admitted": true,
+    "locality": true,
+    "non_monomial_witness": true,
+    "r": 2,
+    "witness": {
+     "coefficients": [
+      "1/2*z^1+1/2*z^3-1/2*z^5",
+      "-1/2*z^1+1/2*z^3+1/2*z^5"
+     ],
+     "pair": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       4
+      ]
+     ],
+     "radius": 2,
+     "support": 2
+    }
+   },
+   {
+    "L": 7,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 2,
+    "witness": null
+   },
+   {
+    "L": 8,
+    "admitted": true,
+    "locality": true,
+    "non_monomial_witness": true,
+    "r": 2,
+    "witness": {
+     "coefficients": [
+      "1/2*z^1+1/2*z^3-1/2*z^5",
+      "-1/2*z^1+1/2*z^3+1/2*z^5"
+     ],
+     "pair": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       6
+      ]
+     ],
+     "radius": 2,
+     "support": 2
+    }
+   },
+   {
+    "L": 9,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 2,
+    "witness": null
+   },
+   {
+    "L": 10,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 2,
+    "witness": null
+   },
+   {
+    "L": 11,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 2,
+    "witness": null
+   },
+   {
+    "L": 12,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 2,
+    "witness": null
+   },
+   {
+    "L": 13,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 2,
+    "witness": null
+   },
+   {
+    "L": 14,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 2,
+    "witness": null
+   },
+   {
+    "L": 2,
+    "admitted": false,
+    "locality": false,
+    "non_monomial_witness": true,
+    "r": 3,
+    "witness": {
+     "coefficients": [
+      "1/2*z^1+1/2*z^3-1/2*z^5",
+      "-1/2*z^1+1/2*z^3+1/2*z^5"
+     ],
+     "pair": [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "radius": 1,
+     "support": 2
+    }
+   },
+   {
+    "L": 3,
+    "admitted": false,
+    "locality": false,
+    "non_monomial_witness": false,
+    "r": 3,
+    "witness": null
+   },
+   {
+    "L": 4,
+    "admitted": false,
+    "locality": false,
+    "non_monomial_witness": true,
+    "r": 3,
+    "witness": {
+     "coefficients": [
+      "1/2*z^1+1/2*z^3-1/2*z^5",
+      "-1/2*z^1+1/2*z^3+1/2*z^5"
+     ],
+     "pair": [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ]
+     ],
+     "radius": 2,
+     "support": 2
+    }
+   },
+   {
+    "L": 5,
+    "admitted": false,
+    "locality": false,
+    "non_monomial_witness": false,
+    "r": 3,
+    "witness": null
+   },
+   {
+    "L": 6,
+    "admitted": false,
+    "locality": false,
+    "non_monomial_witness": true,
+    "r": 3,
+    "witness": {
+     "coefficients": [
+      "1/2*z^1+1/2*z^3-1/2*z^5",
+      "-1/2*z^1+1/2*z^3+1/2*z^5"
+     ],
+     "pair": [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       3
+      ]
+     ],
+     "radius": 3,
+     "support": 2
+    }
+   },
+   {
+    "L": 7,
+    "admitted": false,
+    "locality": false,
+    "non_monomial_witness": false,
+    "r": 3,
+    "witness": null
+   },
+   {
+    "L": 8,
+    "admitted": true,
+    "locality": true,
+    "non_monomial_witness": true,
+    "r": 3,
+    "witness": {
+     "coefficients": [
+      "1/2*z^1+1/2*z^3-1/2*z^5",
+      "-1/2*z^1+1/2*z^3+1/2*z^5"
+     ],
+     "pair": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       5
+      ]
+     ],
+     "radius": 3,
+     "support": 2
+    }
+   },
+   {
+    "L": 9,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 3,
+    "witness": null
+   },
+   {
+    "L": 10,
+    "admitted": true,
+    "locality": true,
+    "non_monomial_witness": true,
+    "r": 3,
+    "witness": {
+     "coefficients": [
+      "1/2*z^1+1/2*z^3-1/2*z^5",
+      "-1/2*z^1+1/2*z^3+1/2*z^5"
+     ],
+     "pair": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       7
+      ]
+     ],
+     "radius": 3,
+     "support": 2
+    }
+   },
+   {
+    "L": 11,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 3,
+    "witness": null
+   },
+   {
+    "L": 12,
+    "admitted": true,
+    "locality": true,
+    "non_monomial_witness": true,
+    "r": 3,
+    "witness": {
+     "coefficients": [
+      "1/2*z^1+1/2*z^3-1/2*z^5",
+      "-1/2*z^1+1/2*z^3+1/2*z^5"
+     ],
+     "pair": [
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       9
+      ]
+     ],
+     "radius": 3,
+     "support": 2
+    }
+   },
+   {
+    "L": 13,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 3,
+    "witness": null
+   },
+   {
+    "L": 14,
+    "admitted": false,
+    "locality": true,
+    "non_monomial_witness": false,
+    "r": 3,
+    "witness": null
+   }
+  ]
+ },
+ "byte_anchors": [
+  {
+   "anchor": "A-R4-PAPER",
+   "expected": "1063401c7bb5",
+   "matches": true,
+   "measured": "1063401c7bb5",
+   "note": "PARENT 1, terminal at commit 583cae7: the stage, the 3-term axis stencil, the 25-element alphabet, the order-collapse theorem, the admissible-scale precheck.",
+   "path": "v14/paper-10-defect-on-the-stage.md"
+  },
+  {
+   "anchor": "A-R4-RECEIPT",
+   "expected": "3dc1393b0df8",
+   "matches": true,
+   "measured": "3dc1393b0df8",
+   "note": "THE ARENA'S SOURCE: L, d, the alphabet, the 58 circulants, the ord census, the locality thresholds, the admissible-scale set.",
+   "path": "v14/code/r4_defect_stage_receipt.json"
+  },
+  {
+   "anchor": "A-R4B-PAPER",
+   "expected": "89c636906061",
+   "matches": true,
+   "measured": "89c636906061",
+   "note": "PARENT 2, terminal at commit 6d32993: the dispersions, the even-L theorem VMAX = diameter, the interior-radius register.",
+   "path": "v14/paper-15-momentum.md"
+  },
+  {
+   "anchor": "A-R4B-RECEIPT",
+   "expected": "562e2a3d4d85",
+   "matches": true,
+   "measured": "562e2a3d4d85",
+   "note": "the momentum receipt: VMAX, the diameter, the interior radii and the 3-at-L-8 register claim this unit tests.  NO transport number is inherited from it -- the R4b scope stamp travels.",
+   "path": "v14/code/r4b_momentum_receipt.json"
+  },
+  {
+   "anchor": "A-R5-PAPER",
+   "expected": "62cfe5689d2c",
+   "matches": true,
+   "measured": "62cfe5689d2c",
+   "note": "PARENT 3, terminal at commit 987cd73: the 640-coin family, the six declared plaquette stencils and the (order, support) profile.",
+   "path": "v14/paper-18-gauge-rung.md"
+  },
+  {
+   "anchor": "A-R5-RECEIPT",
+   "expected": "0c02b7684e5b",
+   "matches": true,
+   "measured": "0c02b7684e5b",
+   "note": "the gauge receipt: the coin sectors, the local profile string, the global supports at L = 4 and L = 8.",
+   "path": "v14/code/r5_gauge_receipt.json"
+  },
+  {
+   "anchor": "A-R2-PAPER",
+   "expected": "1a80a5bf1a1b",
+   "matches": true,
+   "measured": "1a80a5bf1a1b",
+   "note": "PARENT 4, terminal: theorem R2-W, the window-width locality law, cited and applied -- its own census is NOT re-run here.",
+   "path": "v14/paper-02-manifold-rung.md"
+  },
+  {
+   "anchor": "A-R2-RECEIPT",
+   "expected": "08b2140f46ae",
+   "matches": true,
+   "measured": "08b2140f46ae",
+   "note": "the manifold receipt: the locality criterion this unit ports verbatim, and the 14-of-109 census it is cited from.",
+   "path": "v14/code/r2_manifold_receipt.json"
+  },
+  {
+   "anchor": "A-COUP-ADJ",
+   "expected": "bacf0af964ae",
+   "matches": true,
+   "measured": "bacf0af964ae",
+   "note": "THE PREDICTION UNDER TEST: paper-20's adjudication, SUCCESSOR REGISTER -- the monomial theorem as a Sidon property.",
+   "path": "v14/note-coup-adjudication.md"
+  },
+  {
+   "anchor": "A-PIN-PERL",
+   "expected": "973b160d52ed",
+   "matches": true,
+   "measured": "973b160d52ed",
+   "note": "this unit's pin, frozen at v14 ledger #196.",
+   "path": "v14/note-perl-pin.md"
+  }
+ ],
+ "choice_inventory": [
+  {
+   "choice": "the spatial dimension",
+   "class": "FORCED (anchored)",
+   "fibre": 1,
+   "instances": 1
+  },
+  {
+   "choice": "the coefficient alphabet",
+   "class": "FORCED (anchored)",
+   "fibre": 1,
+   "instances": 1,
+   "why": "inherited from the parent and held fixed along L: a moving alphabet would make the ladder incomparable"
+  },
+  {
+   "choice": "the stencil",
+   "class": "FORCED (anchored)",
+   "fibre": 1,
+   "instances": 1,
+   "why": "the parent's 3-term axis stencil"
+  },
+  {
+   "choice": "the connective",
+   "class": "FORCED (anchored)",
+   "fibre": 1,
+   "instances": 1
+  },
+  {
+   "choice": "the link set",
+   "class": "FORCED (anchored)",
+   "fibre": 1,
+   "instances": 1
+  },
+  {
+   "choice": "the axis set at each rung",
+   "class": "FORCED (exhaustive)",
+   "fibre": 61,
+   "instances": "all"
+  },
+  {
+   "choice": "the global phase",
+   "class": "STABILIZER-FIXED",
+   "fibre": 8,
+   "instances": 8
+  },
+  {
+   "choice": "the rungs of the ladder",
+   "class": "GENUINELY-FREE",
+   "fibre": "UNBOUNDED",
+   "instances": 3,
+   "why": "the pin declares L = 6 and L = 8; the parent rung is run as the reproduction control"
+  },
+  {
+   "choice": "the fourth direction",
+   "class": "GENUINELY-FREE",
+   "fibre": "UNBOUNDED",
+   "instances": 1,
+   "why": "paper-20's own declared fourth direction, carried verbatim so the control is the registered one"
+  },
+  {
+   "choice": "the probe alphabets at the control rung",
+   "class": "GENUINELY-FREE",
+   "fibre": "UNBOUNDED",
+   "instances": 3,
+   "why": "the registered count is alphabet-relative and this unit measures the relativity rather than hiding it"
+  },
+  {
+   "choice": "the window widths",
+   "class": "GENUINELY-FREE",
+   "fibre": "UNBOUNDED",
+   "instances": 3
+  },
+  {
+   "choice": "the plaquette stencils",
+   "class": "FORCED (anchored)",
+   "fibre": 1,
+   "instances": 6,
+   "why": "the parent's own six, carried verbatim"
+  },
+  {
+   "choice": "the DDS subset window",
+   "class": "DECLARED-WINDOW",
+   "fibre": 1,
+   "instances": 1,
+   "why": "the subset census is exhaustive at |S| <= 12 and the absence half of the band law is claimed only where it runs"
+  }
+ ],
+ "coin_sectors": {
+  "L_independent": true,
+  "coins": 640,
+  "note": "a coin is a 2x2 unitary over the parents' coefficient alphabet; nothing in its definition mentions L",
+  "sectors": {
+   "ANTIDIAGONAL": 64,
+   "BALANCED": 512,
+   "DIAGONAL": 64
+  }
+ },
+ "counts": {
+  "L": 4,
+  "alphabet": 25,
+  "arenas": 18,
+  "arenas_dds_free": 13,
+  "arenas_monomial_only": 13,
+  "arenas_sidon": 3,
+  "band_rows": 39,
+  "breaks": 5,
+  "circulants_L4": 58,
+  "circulants_L6": 42,
+  "circulants_L8": 106,
+  "coins": 640,
+  "connective_tag": "MAX-NORM",
+  "control_reproduced": 54,
+  "d": 2,
+  "dispersion_cells": 9224,
+  "field": "Q(ZETA-24)",
+  "forcing_link": "(1,1)",
+  "interior_L4": 1,
+  "interior_L6": 2,
+  "interior_L8": 3,
+  "lag_objects": 2940,
+  "maps_scanned": 1952424,
+  "mutants": 48,
+  "necessity_failures": 10,
+  "path_value_anchors": 38,
+  "persists": 11,
+  "profile_rows": 18,
+  "rungs": 3,
+  "sources": 10,
+  "table_rows": 24,
+  "transforms": 8,
+  "verbatim_anchors": 9,
+  "vmax_L4": "2",
+  "vmax_L6": "3",
+  "vmax_L8": "4",
+  "window_rows": 9
+ },
+ "dds_law": {
+  "arenas_dds_carrying": 5,
+  "arenas_dds_carrying_with_a_non_monomial": 5,
+  "arenas_dds_free": 13,
+  "arenas_dds_free_and_monomial_only": 13,
+  "sidon_arenas": 3,
+  "sidon_but_not_the_only_forced": 10,
+  "subset_window": 12,
+  "theorem": "if no subset of the offset set of size >= 2 is difference-doubled, every unitary map on it is monomial, over any field closed under conjugation"
+ },
+ "declared_fractions": [
+  {
+   "measure": "COUNTING-ONLY",
+   "name": "arenas that are Sidon",
+   "value": "3 of 18",
+   "why": "a count over this unit's own declared arena list, which is not a sample of any population and carries no measure"
+  },
+  {
+   "measure": "COUNTING-ONLY",
+   "name": "arenas that are DDS-free",
+   "value": "13 of 18",
+   "why": "the same declared list; the criterion's soundness is a theorem, and this count is a coverage report, not a rate"
+  }
+ ],
+ "dispersion_census": [
+  {
+   "L": 4,
+   "aliased_cells": 320,
+   "aliased_families": 19,
+   "cells": 928,
+   "distinct_reduced_dispersions": 58,
+   "eigenphase_lattice": 8,
+   "eigenphase_modulus_at_the_pool_gauge": 4,
+   "families": 58,
+   "momenta": 16,
+   "moving": 57,
+   "static": 1
+  },
+  {
+   "L": 6,
+   "aliased_cells": 432,
+   "aliased_families": 11,
+   "cells": 1512,
+   "distinct_reduced_dispersions": 42,
+   "eigenphase_lattice": 24,
+   "eigenphase_modulus_at_the_pool_gauge": 12,
+   "families": 42,
+   "momenta": 36,
+   "moving": 41,
+   "static": 1
+  },
+  {
+   "L": 8,
+   "aliased_cells": 1792,
+   "aliased_families": 27,
+   "cells": 6784,
+   "distinct_reduced_dispersions": 106,
+   "eigenphase_lattice": 8,
+   "eigenphase_modulus_at_the_pool_gauge": 8,
+   "families": 106,
+   "momenta": 64,
+   "moving": 105,
+   "static": 1
+  }
+ ],
+ "falsifier_descriptions": [
+  {
+   "description": "corrupts one pinned source digest before the byte anchors are checked",
+   "guarded_source_sha256_12": "7e6cd1e223bc",
+   "mutant": "MUT-SOURCE-DIGEST",
+   "switch_present": true,
+   "target": "G-SOURCES-PINNED"
+  },
+  {
+   "description": "moves one path-value anchor's read value away from its declaration",
+   "guarded_source_sha256_12": "d50a99ba4ddb",
+   "mutant": "MUT-PATH-VALUE",
+   "switch_present": true,
+   "target": "G-PATH-VALUE-ANCHORS"
+  },
+  {
+   "description": "admits a verbatim window shorter than the declared length floor",
+   "guarded_source_sha256_12": "405c1952166d",
+   "mutant": "MUT-VERBATIM-FRAGMENT",
+   "switch_present": true,
+   "target": "G-VERBATIM-ANCHORS"
+  },
+  {
+   "description": "appends an undeclared path to the runtime read list",
+   "guarded_source_sha256_12": "ae026afba831",
+   "mutant": "MUT-EXTRA-READ",
+   "switch_present": true,
+   "target": "G-RUNTIME-INPUTS-ENUMERATED"
+  },
+  {
+   "description": "injects a float into the receipt before the type scan",
+   "guarded_source_sha256_12": "f627494873b9",
+   "mutant": "MUT-FLOAT",
+   "switch_present": true,
+   "target": "G-NO-FLOATS"
+  },
+  {
+   "description": "drops one element from the rebuilt coefficient alphabet",
+   "guarded_source_sha256_12": "0077707563e6",
+   "mutant": "MUT-ALPHABET",
+   "switch_present": true,
+   "target": "G-ALPHABET-REBUILT"
+  },
+  {
+   "description": "drops one axis from the axis set at the parent rung",
+   "guarded_source_sha256_12": "d37401db9e6f",
+   "mutant": "MUT-AXIS-DROP",
+   "switch_present": true,
+   "target": "G-AXIS-SET-EXHAUSTIVE"
+  },
+  {
+   "description": "declares one lag outside the difference table to be empty when it is not",
+   "guarded_source_sha256_12": "be114659153a",
+   "mutant": "MUT-LAG",
+   "switch_present": true,
+   "target": "G-LAG-SUPPORT-STRUCTURAL"
+  },
+  {
+   "description": "shortens the rebuilt pool at the parent rung by one generator",
+   "guarded_source_sha256_12": "5cb9bd82e0dc",
+   "mutant": "MUT-POOL",
+   "switch_present": true,
+   "target": "G-POOL-REPRODUCES-THE-PARENT"
+  },
+  {
+   "description": "shrinks one recorded global-phase orbit below the group's size",
+   "guarded_source_sha256_12": "ad5c75b6f924",
+   "mutant": "MUT-GAUGE-ORBIT",
+   "switch_present": true,
+   "target": "G-GAUGE-ORBITS-FREE"
+  },
+  {
+   "description": "perturbs the second, whole-torus pool route's count at the parent rung",
+   "guarded_source_sha256_12": "c7bb87ab0b2b",
+   "mutant": "MUT-TWO-ROUTE",
+   "switch_present": true,
+   "target": "G-TWO-ROUTE-POOL"
+  },
+  {
+   "description": "moves one order-census non-monomial count away from the parent's",
+   "guarded_source_sha256_12": "4f12fff3a44d",
+   "mutant": "MUT-ORD",
+   "switch_present": true,
+   "target": "G-ORD-CENSUS-REPRODUCED"
+  },
+  {
+   "description": "reports one arena as Sidon whose difference multiset is not",
+   "guarded_source_sha256_12": "406d09d44b69",
+   "mutant": "MUT-SIDON",
+   "switch_present": true,
+   "target": "G-SIDON-MEASURED"
+  },
+  {
+   "description": "reports a DDS-free arena as carrying a non-monomial unitary",
+   "guarded_source_sha256_12": "fa514afb73cd",
+   "mutant": "MUT-DDS",
+   "switch_present": true,
+   "target": "G-DDS-CRITERION-SOUND"
+  },
+  {
+   "description": "flips one arena's prediction verdict away from its own two measured legs",
+   "guarded_source_sha256_12": "c1cb0df8a47c",
+   "mutant": "MUT-SIDON-VERDICT",
+   "switch_present": true,
+   "target": "G-SIDON-PREDICTION-TESTED"
+  },
+  {
+   "description": "moves the reproduced non-monomial count at the control arena",
+   "guarded_source_sha256_12": "628ab9dbf735",
+   "mutant": "MUT-CONTROL",
+   "switch_present": true,
+   "target": "G-FOURTH-DIRECTION-CONTROL"
+  },
+  {
+   "description": "marks one dispersion cell as lying off the root-of-unity lattice",
+   "guarded_source_sha256_12": "c9419d7326eb",
+   "mutant": "MUT-EIGEN",
+   "switch_present": true,
+   "target": "G-EIGENVALUES-ROOTS-OF-UNITY"
+  },
+  {
+   "description": "reports the eigenphase lattice at one rung as the parent rung's",
+   "guarded_source_sha256_12": "c34f96b0e092",
+   "mutant": "MUT-EIGENLATTICE",
+   "switch_present": true,
+   "target": "G-EIGENPHASE-LATTICE"
+  },
+  {
+   "description": "moves the measured maximal group speed at one rung",
+   "guarded_source_sha256_12": "2e755ecf25d6",
+   "mutant": "MUT-VMAX",
+   "switch_present": true,
+   "target": "G-VMAX-IS-DIAMETER"
+  },
+  {
+   "description": "removes the antipodal monomial witness at one rung",
+   "guarded_source_sha256_12": "be8559e4afe2",
+   "mutant": "MUT-ATTAINED",
+   "switch_present": true,
+   "target": "G-VMAX-ATTAINED-BY-THE-ANTIPODE"
+  },
+  {
+   "description": "moves the interior-radius count at the rung the register names",
+   "guarded_source_sha256_12": "1e6f8bc54e40",
+   "mutant": "MUT-INTERIOR",
+   "switch_present": true,
+   "target": "G-INTERIOR-RADII"
+  },
+  {
+   "description": "hides the non-integer velocity witness at the rung that carries it",
+   "guarded_source_sha256_12": "51b8c6f568cd",
+   "mutant": "MUT-VELOCITY",
+   "switch_present": true,
+   "target": "G-INTEGER-VELOCITY-CENSUS"
+  },
+  {
+   "description": "drops one coin from the derived coin family",
+   "guarded_source_sha256_12": "26c5dc528091",
+   "mutant": "MUT-COIN",
+   "switch_present": true,
+   "target": "G-COIN-ALPHABET-DERIVED"
+  },
+  {
+   "description": "reports one parity stratum as covering a site twice",
+   "guarded_source_sha256_12": "9adf674d9d2f",
+   "mutant": "MUT-STRATA",
+   "switch_present": true,
+   "target": "G-STRATA-PERFECT-MATCHINGS"
+  },
+  {
+   "description": "reports a declared plaquette stencil as wrapping when it does not",
+   "guarded_source_sha256_12": "9ca644b963d8",
+   "mutant": "MUT-WRAP",
+   "switch_present": true,
+   "target": "G-NON-WRAPPING"
+  },
+  {
+   "description": "moves one measured group order in the (order, support) profile",
+   "guarded_source_sha256_12": "2e932572ac4d",
+   "mutant": "MUT-PROFILE",
+   "switch_present": true,
+   "target": "G-PROFILE-PERSISTS"
+  },
+  {
+   "description": "breaks the alternating certificate by moving one predicted order",
+   "guarded_source_sha256_12": "f0ebbd90ffbb",
+   "mutant": "MUT-ALT",
+   "switch_present": true,
+   "target": "G-ALTERNATING-ON-ORBITS"
+  },
+  {
+   "description": "reports the global stencil's support as smaller than the volume",
+   "guarded_source_sha256_12": "adea165eabd2",
+   "mutant": "MUT-GLOBAL",
+   "switch_present": true,
+   "target": "G-GLOBAL-SUPPORT-IS-THE-VOLUME"
+  },
+  {
+   "description": "flips one window's locality flag away from its own completeness test",
+   "guarded_source_sha256_12": "097c4cabbc3a",
+   "mutant": "MUT-LOCALITY",
+   "switch_present": true,
+   "target": "G-LOCALITY-WINDOWS"
+  },
+  {
+   "description": "moves the count of locality-admitting widths at one rung",
+   "guarded_source_sha256_12": "c194decde42c",
+   "mutant": "MUT-WIDTH",
+   "switch_present": true,
+   "target": "G-WIDTH-COUNT-EQUALS-INTERIOR-RADII"
+  },
+  {
+   "description": "reports a blockwise cell as non-complete",
+   "guarded_source_sha256_12": "0334d2ed3e02",
+   "mutant": "MUT-PARTITION",
+   "switch_present": true,
+   "target": "G-PARTITION-COROLLARY"
+  },
+  {
+   "description": "moves one admitted size out of the measured band at one width",
+   "guarded_source_sha256_12": "545d40d23413",
+   "mutant": "MUT-BAND",
+   "switch_present": true,
+   "target": "G-BAND-LAW"
+  },
+  {
+   "description": "rewrites one persistence verdict away from its own measured cells",
+   "guarded_source_sha256_12": "aaed360df6ab",
+   "mutant": "MUT-TABLE",
+   "switch_present": true,
+   "target": "G-PERSISTENCE-TABLE-BOUND"
+  },
+  {
+   "description": "publishes a fraction with neither a measure nor the COUNTING-ONLY stamp",
+   "guarded_source_sha256_12": "595dba0a8a61",
+   "mutant": "MUT-FRACTION",
+   "switch_present": true,
+   "target": "G-FRACTIONS-STAMPED"
+  },
+  {
+   "description": "edits the verdict string after its segments are derived",
+   "guarded_source_sha256_12": "57be912094ab",
+   "mutant": "MUT-VERDICT",
+   "switch_present": true,
+   "target": "G-VERDICT-RECONSTRUCTED"
+  },
+  {
+   "description": "emits a head that is not one of the pre-registered forms",
+   "guarded_source_sha256_12": "15569405a56a",
+   "mutant": "MUT-HEAD",
+   "switch_present": true,
+   "target": "G-VERDICT-PREREGISTERED"
+  },
+  {
+   "description": "inserts a continuum claim into the scope segment",
+   "guarded_source_sha256_12": "7926bd22ab66",
+   "mutant": "MUT-WALLS",
+   "switch_present": true,
+   "target": "G-WALLS"
+  },
+  {
+   "description": "inverts one published mutant description relative to its code",
+   "guarded_source_sha256_12": "78107caf5d10",
+   "mutant": "MUT-DESCRIPTION",
+   "switch_present": true,
+   "target": "G-FALSIFIER-DESCRIPTIONS"
+  },
+  {
+   "description": "edits a sealed object after its gate-time digest was taken",
+   "guarded_source_sha256_12": "d42045395a60",
+   "mutant": "MUT-SEAL-BROKEN",
+   "switch_present": true,
+   "target": "G-SEAL-COMPLETE"
+  },
+  {
+   "description": "publishes a receipt key that is neither sealed nor declared unsealed",
+   "guarded_source_sha256_12": "c0e4d175463a",
+   "mutant": "MUT-SEAL-MANIFEST",
+   "switch_present": true,
+   "target": "G-SEAL-MANIFEST-TOTAL"
+  },
+  {
+   "description": "edits the detail of a closed gate row after its digest entered the chain",
+   "guarded_source_sha256_12": "ebd45f64db48",
+   "mutant": "MUT-GATE-CHAIN",
+   "switch_present": true,
+   "target": "G-GATE-ROWS-SEALED"
+  },
+  {
+   "description": "adds a measured claim the paper does not make",
+   "guarded_source_sha256_12": "58896be0bf3a",
+   "mutant": "MUT-PAPER-CLAIM",
+   "switch_present": true,
+   "target": "G-PAPER-CLAIMS"
+  },
+  {
+   "description": "adds an unlicensed numeral to the paper's scanned set",
+   "guarded_source_sha256_12": "9c5e9329aa19",
+   "mutant": "MUT-PAPER-NUMERAL",
+   "switch_present": true,
+   "target": "G-PAPER-NUMERAL-COVERAGE"
+  },
+  {
+   "description": "adds an unlicensed numeral inside an inline code span",
+   "guarded_source_sha256_12": "8b56e9af27b6",
+   "mutant": "MUT-PAPER-SPAN",
+   "switch_present": true,
+   "target": "G-PAPER-INLINE-SPANS"
+  },
+  {
+   "description": "drops one copy of a duplicated fenced block from the rendered multiset",
+   "guarded_source_sha256_12": "0e215bbc25b9",
+   "mutant": "MUT-PAPER-FENCE",
+   "switch_present": true,
+   "target": "G-PAPER-FENCED-MULTISET"
+  },
+  {
+   "description": "moves one rendered table row away from the paper's",
+   "guarded_source_sha256_12": "a4b73c675b9d",
+   "mutant": "MUT-PAPER-TABLE",
+   "switch_present": true,
+   "target": "G-PAPER-TABLES-AS-CLAIMS"
+  },
+  {
+   "description": "returns an unmoved claim after its receipt key was perturbed",
+   "guarded_source_sha256_12": "cf996157a909",
+   "mutant": "MUT-PAPER-POLARITY",
+   "switch_present": true,
+   "target": "G-PAPER-CLAIM-POLARITY"
+  },
+  {
+   "description": "truncates the verdict string the paper is required to quote",
+   "guarded_source_sha256_12": "495fbfc6e9d2",
+   "mutant": "MUT-PAPER-VERDICT",
+   "switch_present": true,
+   "target": "G-PAPER-VERDICT-BLOCK"
+  }
+ ],
+ "fourth_direction_control": {
+  "alphabet_relativity": "at the control rung the same fourth direction carries 54 non-monomial unitaries over the 19-value probe and 0 over the parents' own 25-element alphabet",
+  "control_rung_rows": [
+   {
+    "L": 3,
+    "alphabet": "R4-25",
+    "alphabet_size": 25,
+    "arena": "LINK",
+    "maps": 15625,
+    "monomial": 24,
+    "non_monomial": 0,
+    "unitary": 24,
+    "witnesses": []
+   },
+   {
+    "L": 3,
+    "alphabet": "UNIT-7",
+    "alphabet_size": 7,
+    "arena": "LINK",
+    "maps": 343,
+    "monomial": 18,
+    "non_monomial": 0,
+    "unitary": 18,
+    "witnesses": []
+   },
+   {
+    "L": 3,
+    "alphabet": "THIRDS-19",
+    "alphabet_size": 19,
+    "arena": "LINK",
+    "maps": 6859,
+    "monomial": 18,
+    "non_monomial": 0,
+    "unitary": 18,
+    "witnesses": []
+   },
+   {
+    "L": 3,
+    "alphabet": "R4-25",
+    "alphabet_size": 25,
+    "arena": "LINK-PLUS-4TH",
+    "maps": 390625,
+    "monomial": 32,
+    "non_monomial": 0,
+    "unitary": 32,
+    "witnesses": []
+   },
+   {
+    "L": 3,
+    "alphabet": "UNIT-7",
+    "alphabet_size": 7,
+    "arena": "LINK-PLUS-4TH",
+    "maps": 2401,
+    "monomial": 24,
+    "non_monomial": 0,
+    "unitary": 24,
+    "witnesses": []
+   },
+   {
+    "L": 3,
+    "alphabet": "THIRDS-19",
+    "alphabet_size": 19,
+    "arena": "LINK-PLUS-4TH",
+    "maps": 130321,
+    "monomial": 24,
+    "non_monomial": 54,
+    "unitary": 78,
+    "witnesses": [
+     {
+      "coefficients": [
+       [
+        [
+         1,
+         0
+        ],
+        "1/3"
+       ],
+       [
+        [
+         1,
+         1
+        ],
+        "-2/3"
+       ],
+       [
+        [
+         1,
+         2
+        ],
+        "-2/3"
+       ]
+      ],
+      "support": 3
+     },
+     {
+      "coefficients": [
+       [
+        [
+         1,
+         0
+        ],
+        "1/3"
+       ],
+       [
+        [
+         1,
+         1
+        ],
+        "2/3-2/3*z^4"
+       ],
+       [
+        [
+         1,
+         2
+        ],
+        "2/3*z^4"
+       ]
+      ],
+      "support": 3
+     }
+    ]
+   }
+  ],
+  "death_absent": [
+   6,
+   8
+  ],
+  "death_transports": [
+   4
+  ],
+  "ladder_rows": [
+   {
+    "L": 4,
+    "dds_free": false,
+    "non_monomial": 48
+   },
+   {
+    "L": 6,
+    "dds_free": true,
+    "non_monomial": 0
+   },
+   {
+    "L": 8,
+    "dds_free": true,
+    "non_monomial": 0
+   }
+  ],
+  "registered_count_declared": 54,
+  "registered_count_reproduced": 54
+ },
+ "gate_digests": [
+  "f410c50a0bd6",
+  "207e38e62f8b",
+  "d2e82c6f9af3",
+  "f54928c2bcee",
+  "d552a32590aa",
+  "b76675ea2e4f",
+  "52cfc8140136",
+  "0689bdf16aaa",
+  "cba08141c995",
+  "383405cacf62",
+  "ac2749bdc5c7",
+  "b61ef73ad3ba",
+  "dfd4c9c724b2",
+  "35724054fd66",
+  "4f6dae5e2b26",
+  "415ac7cdee94",
+  "8be7a67cad4f",
+  "0345a8a0722f",
+  "553b9dad17e6",
+  "6338c9c1998e",
+  "efc424699426",
+  "72f98d11ccb1",
+  "8ee48cc69d01",
+  "5956ddfd7e99",
+  "ad1edd7b6325",
+  "6726a47bd6e9",
+  "dc9588c4c7e2",
+  "5911dd17200c",
+  "7cca724f44ce",
+  "712ffa2912fe",
+  "a6804b606753",
+  "628001ac77b9",
+  "5da779aaadf6",
+  "85c8da81ae98",
+  "5ea04ea5fcb8",
+  "4fa1f641a954",
+  "6e1ee2353c41",
+  "d88b9f4be420",
+  "5388e416705a",
+  "2714bd525da8",
+  "fbee14747b05",
+  "74ba28c2f52f",
+  "e8d81089d13c",
+  "ed3cb61441e3",
+  "c6e98c0926da",
+  "122df67904f5",
+  "31e579d29c24",
+  "f9e4e9a8197a",
+  "2fa686e5bedb",
+  "e96aa79d95da",
+  "857298c03e1a",
+  "c581a3d24733",
+  "c37882110030",
+  "e3c682e9db36",
+  "eaaa0fb71a25",
+  "d62d6055cc77",
+  "e72b610fc755",
+  "f192e4a0c2ac",
+  "08b9349eeb9f",
+  "405ef77390f9"
+ ],
+ "gates": [
+  {
+   "claim": "every runtime input is read at a hash-pinned path and its bytes match the digest this unit froze; a drifted parent dies here before a single number is computed",
+   "detail": "10 sources, mismatched: none",
+   "gate": "G-SOURCES-PINNED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every value this unit inherits is read from a pinned receipt at a named path and equals the value frozen beside it: the arena is taken, never typed",
+   "detail": "38 path-value anchors, mismatched: none",
+   "gate": "G-PATH-VALUE-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every quoted window is present in its pinned source as written (whitespace and markdown prefixes normalised on both sides), is at least the declared length floor, and names the gate that consumes it",
+   "detail": "9 windows, floor 60 chars, failing: none",
+   "gate": "G-VERBATIM-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the arena is data: the ladder, the stencils, the widths, the alphabet and the generalisation rule are declared before a measurement is taken, and every one of them is either anchored or a frozen literal named here",
+   "detail": "ladder [4, 6, 8] at d=2 over an alphabet of 25",
+   "gate": "G-ARENA-DECLARED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the pin's five stages are the ones run, and the pin's own sentence requiring a per-arena PASS/FAIL is quoted from it",
+   "detail": "the pin's prediction-ledger sentence is present at VB-PIN-STAGES",
+   "gate": "G-STAGES-DECLARED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the coefficient alphabet is rebuilt from the parent's own definition and has exactly the anchored size",
+   "detail": "rebuilt 25 elements against the anchored 25",
+   "gate": "G-ALPHABET-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the axis set is every nonzero offset modulo sign at every rung, and at the parent rung it reproduces the parent's own axis and local-axis counts",
+   "detail": "L=4: 9 axes (4 local) against the anchored 9 (4)",
+   "gate": "G-AXIS-SET-EXHAUSTIVE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "for every axis at every rung and EVERY lag of the group, the pairs the unitarity condition receives at that lag are exactly the ordered pairs of the stencil realising it -- so a lag outside the difference table receives nothing, and the structural route is the whole condition rather than a sample",
+   "detail": "2940 (axis, lag) objects checked, 0 disagreeing",
+   "gate": "G-LAG-SUPPORT-STRUCTURAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the family-generalisation rule, run at the parent rung, returns the parent's own circulant pool exactly -- the rule is therefore the parent's rule and not a new one",
+   "detail": "rebuilt 58 circulants at L=4 against the anchored 58",
+   "gate": "G-POOL-REPRODUCES-THE-PARENT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the declared global-phase gauge acts freely on the solution set at every rung: every orbit has the full group's size",
+   "detail": "orbit sizes by rung: {4: [8], 6: [8], 8: [8]}",
+   "gate": "G-GAUGE-ORBITS-FREE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the pool at the parent rung is built a second time by the parent's own criterion written over the WHOLE torus -- every lag of the group, no structural shortcut -- and the two routes agree generator for generator",
+   "detail": "whole-torus route 58, structural route 58, identical member sets",
+   "gate": "G-TWO-ROUTE-POOL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the order census is reproduced from the parent's own sweep rule and agrees with the parent's anchored rows at every anchored order; the collapse theorem it confirms is quoted from the parent's paper",
+   "detail": "orders 2/3/4/8 non-monomial = [16, 0, 48, 0] against the anchored [16, 0, 48, 0]",
+   "gate": "G-ORD-CENSUS-REPRODUCED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "each arena's Sidon status is computed from its own difference multiset -- every nonzero difference realised exactly once -- and not from any label",
+   "detail": "18 arenas, 0 whose flag disagrees with their own multiset",
+   "gate": "G-SIDON-MEASURED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the difference-doubled criterion is sound on every arena measured: wherever no subset of size at least two is difference-doubled, the exhaustive scan finds no non-monomial unitary at all",
+   "detail": "13 DDS-free arenas, 13 of them monomial-only, counterexamples: none",
+   "gate": "G-DDS-CRITERION-SOUND",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the registered Sidon prediction is quoted from the pinned adjudication and tested on every arena in BOTH directions -- Sidon implies monomial-only, and monomial-only implies Sidon -- with each arena's verdict computed from its own two measured legs and from nothing else",
+   "detail": "18 arenas: sufficiency holds everywhere=True, 10 necessity failures (L=6 AXIS-0-1, L=6 AXIS-1-0, L=6 AXIS-1-1, L=6 AXIS-1-5, L=6 LINK-PLUS-4TH, L=8 AXIS-0-1, L=8 AXIS-1-0, L=8 AXIS-1-1, L=8 AXIS-1-7, L=8 LINK-PLUS-4TH)",
+   "gate": "G-SIDON-PREDICTION-TESTED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the registered fourth-direction death is reproduced independently at the control rung, over the probe alphabet that produces it, at the registered count -- and then run at every rung of the ladder",
+   "detail": "control rung, 19-value probe: 54 non-monomial against the registered 54; the death is present at rungs [4] and absent at [6, 8]",
+   "gate": "G-FOURTH-DIRECTION-CONTROL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every symbol at every (family, momentum) cell of every rung is a root of unity of the unit's own field -- the eigenphase is an exact integer, per cell, not a convention",
+   "detail": "9224 cells over 3 rungs, 0 off the lattice",
+   "gate": "G-EIGENVALUES-ROOTS-OF-UNITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the eigenphase lattice is measured, not assumed: at each rung it is the least common multiple of the orders of every eigenvalue over the whole declared gauge orbit, and it comes out as the least common multiple of the gauge group's order and the rung",
+   "detail": "eigenphase lattices Z/8, Z/24, Z/8 against lcm(8, L) = [8, 24, 8]; at the pool's own gauge representative they read [4, 12, 8]",
+   "gate": "G-EIGENPHASE-LATTICE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "at the parent rung the dispersion census reproduces the parent's own cell count, its moving and static counts and its separation datum",
+   "detail": "cells 928/928, moving 57/57, static 1/1, distinct 58/58",
+   "gate": "G-DISPERSION-REPRODUCES-THE-PARENT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the maximal group speed equals the max-norm diameter at every rung of the ladder, and the parent's even-L argument for it is quoted from the parent's paper",
+   "detail": "VMAX by rung {4: '2', 6: '3', 8: '4'} against diameters {4: 2, 6: 3, 8: 4}",
+   "gate": "G-VMAX-IS-DIAMETER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the ceiling is ATTAINED and not merely bounded: the monomial shift by the antipodal offset is a unitary member of the family at every rung and a family of the built pool reaches L/2 there",
+   "detail": "attaining families by rung: {4: 7, 6: 11, 8: 15}",
+   "gate": "G-VMAX-ATTAINED-BY-THE-ANTIPODE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the interior-radius count is measured at every rung, and the register's own claim -- three at L = 8, quoted from the parent's paper -- is confirmed against the anchored value",
+   "detail": "interior radii by rung {4: 1, 6: 2, 8: 3}; the L=8 count is 3 against the anchored 3",
+   "gate": "G-INTERIOR-RADII",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parent's integer-velocity property is re-measured at every rung, per family and per cell, and the count of non-integer cells is recomputed by a second route -- the divisibility of the lift by the eigenphase lattice -- and compared rung by rung",
+   "detail": "L=4: 1856 velocity cells, all integer, against the anchored 1856; the property fails at rungs [6]; second-route non-integer cell counts {4: 0, 6: 288, 8: 0}, disagreeing at none",
+   "gate": "G-INTEGER-VELOCITY-CENSUS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the coin family is derived from the parents' coefficient alphabet alone and reproduces the anchored family and its three sector sizes; it carries no L, so it is the same family at every rung",
+   "detail": "640 coins = 64 diagonal + 64 antidiagonal + 512 balanced",
+   "gate": "G-COIN-ALPHABET-DERIVED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "each of the four parity strata is a PERFECT MATCHING of the site set at every rung -- eight-to-a-side dominoes covering every site exactly once -- which is what makes a stratum operator a product of commuting link operators",
+   "detail": "12 (rung, stratum) objects, 0 failing",
+   "gate": "G-STRATA-PERFECT-MATCHINGS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the (order, support) profile is measured at every rung, at every declared plaquette stencil, on every coin of the antidiagonal sector, and compared row by row against the profile the parent published and this unit quotes",
+   "detail": "18 (rung, stencil) rows, 0 differing from the parent's; the rebuilt profile string matches the anchored one: True",
+   "gate": "G-PROFILE-PERSISTS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "at every rung and every declared stencil the measured group order equals the product of the alternating groups on its own orbits -- containment plus equal cardinality is equality, per object, never a fingerprint",
+   "detail": "18 rows certified, 0 failing",
+   "gate": "G-ALTERNATING-ON-ORBITS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "no declared local stencil wraps at any rung of the ladder: every plaquette of every declared patch has four distinct corners, which is why the local groups can be compared at all",
+   "detail": "18 (rung, stencil) patches, 0 wrapping",
+   "gate": "G-NON-WRAPPING",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "at the global stencil every plaquette holonomy is a three-cycle and the family is transitive on the whole site set, so the classical theorem gives the full alternating group on a support that is exactly the volume -- reproduced at the two rungs the parent anchored and measured at the new one",
+   "detail": "supports by rung {4: 16, 6: 36, 8: 64} against the anchored 16 at L=4 and 64 at L=8",
+   "gate": "G-GLOBAL-SUPPORT-IS-THE-VOLUME",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "R2's criterion is applied verbatim at a coordinate the parent did not sweep -- the window width -- and every window's locality flag is derived from its own completeness test; R2's own width law is quoted, and R2's census is cited and not re-run",
+   "detail": "9 (rung, width) windows, 0 whose flag disagrees with its own test",
+   "gate": "G-LOCALITY-WINDOWS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the number of window widths that admit locality equals the interior-radius count at every rung -- the parent's successor parameter and the ported locality criterion are the same number",
+   "detail": "by rung: {4: (1, 1), 6: (2, 2), 8: (3, 3)}",
+   "gate": "G-WIDTH-COUNT-EQUALS-INTERIOR-RADII",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "R2's partition corollary transports: every blockwise atlas of this stage is clique-only at every rung, so locality here is carried by the SLIDING window and by nothing else",
+   "detail": "5 blockwise atlases, 0 producing a non-complete component",
+   "gate": "G-PARTITION-COROLLARY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parent's admitted-scale set is re-derived at its own window width and then at wider ones: at every declared width the admitted sizes are exactly the even sizes between 2r+2 and 4r, each carrying a constructive non-monomial witness verified unitary by the whole-torus criterion",
+   "detail": "admitted sets by width {1: [4], 2: [6, 8], 3: [8, 10, 12]}; the width-1 row reproduces the anchored [4]",
+   "gate": "G-BAND-LAW",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every persistence verdict is bound to its own row's measured cells: PERSISTS requires the three cells to agree, BREAKS and TRANSFORMS require them not to, per row and never in aggregate",
+   "detail": "24 rows, 0 whose verdict contradicts its own cells: none",
+   "gate": "G-PERSISTENCE-TABLE-BOUND",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every fraction this unit publishes declares its measure or is stamped COUNTING-ONLY; no count becomes a probability here",
+   "detail": "2 fractions, 0 unstamped: none",
+   "gate": "G-FRACTIONS-STAMPED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every construction choice is inventoried with its class, its fibre and the number of instances run, and the one declared window is named as a window",
+   "detail": "13 choices inventoried",
+   "gate": "G-CHOICES-INVENTORIED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every path read at run time is one of the ten declared sources or the object under test; no ledger, no STATUS, no other unit's working file, and no subprocess",
+   "detail": "10 reads, 0 undeclared: none",
+   "gate": "G-RUNTIME-INPUTS-ENUMERATED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the head is one of the forms pre-registered in the pin before any measurement was taken",
+   "detail": "head PERL-SIDON-SUFFICIENT-NOT-NECESSARY among 5 pre-registered forms",
+   "gate": "G-VERDICT-PREREGISTERED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the head and every segment key of the verdict string are re-derived from the receipt's own primitive tables by a comparator that shares no literal and no helper with the builder, and the string is parsed back into its segments",
+   "detail": "head PERL-SIDON-SUFFICIENT-NOT-NECESSARY, 10 segments, keys ['BREAKS', 'CONTROL', 'FINGERPRINT', 'INTERIOR-RADII', 'LAW', 'SCALE', 'SCOPE', 'SIDON', 'TABLE', 'VMAX']",
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the four walls stand in the verdict itself: no continuum claim, no limit claim, no inherited transport number, and the pin's own scope sentence is quoted from it",
+   "detail": "banned fragments present: none",
+   "gate": "G-WALLS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every published mutant description names a switch that exists in this file, so a description cannot be a false waiver wearing a green badge",
+   "detail": "48 descriptions, 0 without a switch in source: none",
+   "gate": "G-FALSIFIER-DESCRIPTIONS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every gate is FALSIFIABLE with a named mutant, WAIVED with a named forcing, or STRUCTURAL -- a two-route identity that cannot pass unless its two routes agree; none is unguarded, and the ledger is built over every gate the run will reach rather than only the ones already closed",
+   "detail": "62 gates: 48 falsifiable, 7 waived, 7 structural",
+   "gate": "G-WAIVERS-VERIFIED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "nothing declared was left unexecuted",
+   "detail": "0 entries",
+   "gate": "G-NOT-EXECUTED-EMPTY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every claim the paper makes about a measured quantity renders from a receipt key and is present in the paper as written",
+   "detail": "21 claims, 0 missing: none",
+   "gate": "G-PAPER-CLAIMS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "EVERY numeral in the paper -- prose, tables, fenced blocks and inline code spans alike -- is licensed by a receipt value or is one of the declared structural numerals",
+   "detail": "83 distinct numerals, 0 unlicensed: none",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the inline code spans are scanned in their own right under the fenced rule: a backticked numeral is a claim like any other, and a scanner that strips spans is blind exactly where the paper puts its sharpest numbers",
+   "detail": "15 inline spans carrying 3 distinct numerals, 0 unlicensed: none",
+   "gate": "G-PAPER-INLINE-SPANS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the paper's fenced blocks are gated by MULTISET equality against blocks rendered from the receipt, not by containment: a duplicated block cannot shadow a forged twin",
+   "detail": "2 blocks in the paper, 2 rendered, 1 distinct, multiset equal: True",
+   "gate": "G-PAPER-FENCED-MULTISET",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the paper's tables render as claims: every row of the persistence table and of the arena table is generated from the receipt and required to be present in the paper as written",
+   "detail": "42 table rows rendered, 0 missing: none",
+   "gate": "G-PAPER-TABLES-AS-CLAIMS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every claim has POLARITY: perturbing the receipt key it renders from moves the claim, and the moved claim is no longer found in the paper -- so no claim can be satisfied by accident",
+   "detail": "21 claims, 0 without polarity: none",
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the paper quotes the COMPLETE verdict string the instrument emits, character for character, so the paper's verdict block cannot go stale behind the receipt",
+   "detail": "1697 characters of verdict quoted",
+   "gate": "G-PAPER-VERDICT-BLOCK",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the published totals are re-derived from the objects that produce them rather than typed",
+   "detail": "61 gates predicted, 48 mutants, 41 seals",
+   "gate": "G-TOTALS-REDERIVED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "there is no float anywhere: an AST scan of this file finds no float literal, and a recursive type scan of the receipt finds no float value",
+   "detail": "0 float literals in source, receipt clean: True",
+   "gate": "G-NO-FLOATS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every gate-time seal still verifies against the object it was taken from, in run, before the payload is built",
+   "detail": "37 seals, broken: none",
+   "gate": "G-SEAL-COMPLETE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every published receipt key is sealed at the gate that produced it or named in the declared-unsealed manifest with the reason it cannot be; the predicted final key set is used, so the keys the post-sweep stage adds are covered here too, and a key that is neither dies",
+   "detail": "51 keys predicted, 41 sealed paths, 12 declared unsealed, uncovered: none",
+   "gate": "G-SEAL-MANIFEST-TOTAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the gate ledger is CHAINED: every row's digest folds in its predecessor, so a row edited after its gate closed breaks the chain from that point onward and the whole ledger is re-derived here from the rows as they now stand",
+   "detail": "54 rows re-chained against their gate-time digests",
+   "gate": "G-GATE-ROWS-SEALED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every declared mutant is killed, and killed by the gate it was declared to falsify: a mutant that dies elsewhere is a gate boundary this unit does not understand",
+   "detail": "killed 48 of 48; off target none",
+   "gate": "G-MUTANTS-ON-TARGET",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the key set actually published matches the one the in-run manifest gate predicted: no key arrived late that the manifest does not cover",
+   "detail": "51 published keys, uncovered: none",
+   "gate": "G-PUBLISHED-KEYS-COVERED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every gate row the run published has an entry in the closed waiver ledger: a gate that ran after the ledger was built is not thereby unguarded",
+   "detail": "62 ledger entries against 59 gate rows, uncovered: none",
+   "gate": "G-GATE-LEDGER-COVERS-THE-RUN",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the ledger closes at exactly the number of gates the totals predicted before the last ten of them ran; a gate added or dropped anywhere in the pipeline moves the count and dies here",
+   "detail": "60 rows closed against the predicted 60",
+   "gate": "G-GATES-CLOSED-AS-PREDICTED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the paper instrument is re-run once the totals close, so the paper's own instrument section is covered too; a failure here exits 1 and writes nothing",
+   "detail": "21 claims, 83 numerals, 0 unlicensed, 15 spans, 2 fenced blocks, 42 table rows",
+   "gate": "G-PAPER-COVERAGE-FINAL",
+   "kind": "MEASURED",
+   "passed": true
+  }
+ ],
+ "gauge_profile": [
+  {
+   "L": 4,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    3
+   ],
+   "order": 3,
+   "position_class": "A3",
+   "stencil": "S1-ONE",
+   "support": 3
+  },
+  {
+   "L": 4,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    5
+   ],
+   "order": 60,
+   "position_class": "A5",
+   "stencil": "S2-EDGE",
+   "support": 5
+  },
+  {
+   "L": 4,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    3,
+    3
+   ],
+   "order": 9,
+   "position_class": "A3xA3",
+   "stencil": "S2-CORNER",
+   "support": 6
+  },
+  {
+   "L": 4,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    3,
+    3
+   ],
+   "order": 9,
+   "position_class": "A3xA3",
+   "stencil": "S2-APART",
+   "support": 6
+  },
+  {
+   "L": 4,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    7
+   ],
+   "order": 2520,
+   "position_class": "A7",
+   "stencil": "S3-ROW",
+   "support": 7
+  },
+  {
+   "L": 4,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    8
+   ],
+   "order": 20160,
+   "position_class": "A8",
+   "stencil": "S4-BLOCK",
+   "support": 8
+  },
+  {
+   "L": 6,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    3
+   ],
+   "order": 3,
+   "position_class": "A3",
+   "stencil": "S1-ONE",
+   "support": 3
+  },
+  {
+   "L": 6,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    5
+   ],
+   "order": 60,
+   "position_class": "A5",
+   "stencil": "S2-EDGE",
+   "support": 5
+  },
+  {
+   "L": 6,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    3,
+    3
+   ],
+   "order": 9,
+   "position_class": "A3xA3",
+   "stencil": "S2-CORNER",
+   "support": 6
+  },
+  {
+   "L": 6,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    3,
+    3
+   ],
+   "order": 9,
+   "position_class": "A3xA3",
+   "stencil": "S2-APART",
+   "support": 6
+  },
+  {
+   "L": 6,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    7
+   ],
+   "order": 2520,
+   "position_class": "A7",
+   "stencil": "S3-ROW",
+   "support": 7
+  },
+  {
+   "L": 6,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    8
+   ],
+   "order": 20160,
+   "position_class": "A8",
+   "stencil": "S4-BLOCK",
+   "support": 8
+  },
+  {
+   "L": 8,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    3
+   ],
+   "order": 3,
+   "position_class": "A3",
+   "stencil": "S1-ONE",
+   "support": 3
+  },
+  {
+   "L": 8,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    5
+   ],
+   "order": 60,
+   "position_class": "A5",
+   "stencil": "S2-EDGE",
+   "support": 5
+  },
+  {
+   "L": 8,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    3,
+    3
+   ],
+   "order": 9,
+   "position_class": "A3xA3",
+   "stencil": "S2-CORNER",
+   "support": 6
+  },
+  {
+   "L": 8,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    3,
+    3
+   ],
+   "order": 9,
+   "position_class": "A3xA3",
+   "stencil": "S2-APART",
+   "support": 6
+  },
+  {
+   "L": 8,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    7
+   ],
+   "order": 2520,
+   "position_class": "A7",
+   "stencil": "S3-ROW",
+   "support": 7
+  },
+  {
+   "L": 8,
+   "alternating_certified": true,
+   "classes_seen": 1,
+   "coins": 64,
+   "generators_are_three_cycles": true,
+   "orbit_sizes": [
+    8
+   ],
+   "order": 20160,
+   "position_class": "A8",
+   "stencil": "S4-BLOCK",
+   "support": 8
+  }
+ ],
+ "global_stencil": [
+  {
+   "L": 4,
+   "class": "A16",
+   "generators_are_three_cycles": true,
+   "orbits": 1,
+   "support": 16,
+   "support_is_the_volume": true,
+   "volume": 16
+  },
+  {
+   "L": 6,
+   "class": "A36",
+   "generators_are_three_cycles": true,
+   "orbits": 1,
+   "support": 36,
+   "support_is_the_volume": true,
+   "volume": 36
+  },
+  {
+   "L": 8,
+   "class": "A64",
+   "generators_are_three_cycles": true,
+   "orbits": 1,
+   "support": 64,
+   "support_is_the_volume": true,
+   "volume": 64
+  }
+ ],
+ "interior_radii": [
+  {
+   "L": 4,
+   "diameter": 2,
+   "interior_count": 1,
+   "interior_radii": [
+    1
+   ],
+   "radius_classes": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "L": 6,
+   "diameter": 3,
+   "interior_count": 2,
+   "interior_radii": [
+    1,
+    2
+   ],
+   "radius_classes": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "L": 8,
+   "diameter": 4,
+   "interior_count": 3,
+   "interior_radii": [
+    1,
+    2,
+    3
+   ],
+   "radius_classes": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "locality_windows": [
+  {
+   "L": 4,
+   "b1": 49,
+   "complete": false,
+   "edges": 64,
+   "locality": true,
+   "neighbours": 8,
+   "offsets": 15,
+   "r": 1
+  },
+  {
+   "L": 4,
+   "b1": 105,
+   "complete": true,
+   "edges": 120,
+   "locality": false,
+   "neighbours": 15,
+   "offsets": 15,
+   "r": 2
+  },
+  {
+   "L": 6,
+   "b1": 109,
+   "complete": false,
+   "edges": 144,
+   "locality": true,
+   "neighbours": 8,
+   "offsets": 35,
+   "r": 1
+  },
+  {
+   "L": 6,
+   "b1": 397,
+   "complete": false,
+   "edges": 432,
+   "locality": true,
+   "neighbours": 24,
+   "offsets": 35,
+   "r": 2
+  },
+  {
+   "L": 6,
+   "b1": 595,
+   "complete": true,
+   "edges": 630,
+   "locality": false,
+   "neighbours": 35,
+   "offsets": 35,
+   "r": 3
+  },
+  {
+   "L": 8,
+   "b1": 193,
+   "complete": false,
+   "edges": 256,
+   "locality": true,
+   "neighbours": 8,
+   "offsets": 63,
+   "r": 1
+  },
+  {
+   "L": 8,
+   "b1": 705,
+   "complete": false,
+   "edges": 768,
+   "locality": true,
+   "neighbours": 24,
+   "offsets": 63,
+   "r": 2
+  },
+  {
+   "L": 8,
+   "b1": 1473,
+   "complete": false,
+   "edges": 1536,
+   "locality": true,
+   "neighbours": 48,
+   "offsets": 63,
+   "r": 3
+  },
+  {
+   "L": 8,
+   "b1": 1953,
+   "complete": true,
+   "edges": 2016,
+   "locality": false,
+   "neighbours": 63,
+   "offsets": 63,
+   "r": 4
+  }
+ ],
+ "mutants": [
+  {
+   "killed": true,
+   "killed_at": "G-SOURCES-PINNED",
+   "mutant": "MUT-SOURCE-DIGEST",
+   "note": "corrupts one pinned source digest before the byte anchors are checked",
+   "on_target": true,
+   "target": "G-SOURCES-PINNED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PATH-VALUE-ANCHORS",
+   "mutant": "MUT-PATH-VALUE",
+   "note": "moves one path-value anchor's read value away from its declaration",
+   "on_target": true,
+   "target": "G-PATH-VALUE-ANCHORS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VERBATIM-ANCHORS",
+   "mutant": "MUT-VERBATIM-FRAGMENT",
+   "note": "admits a verbatim window shorter than the declared length floor",
+   "on_target": true,
+   "target": "G-VERBATIM-ANCHORS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-RUNTIME-INPUTS-ENUMERATED",
+   "mutant": "MUT-EXTRA-READ",
+   "note": "appends an undeclared path to the runtime read list",
+   "on_target": true,
+   "target": "G-RUNTIME-INPUTS-ENUMERATED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-NO-FLOATS",
+   "mutant": "MUT-FLOAT",
+   "note": "injects a float into the receipt before the type scan",
+   "on_target": true,
+   "target": "G-NO-FLOATS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-ALPHABET-REBUILT",
+   "mutant": "MUT-ALPHABET",
+   "note": "drops one element from the rebuilt coefficient alphabet",
+   "on_target": true,
+   "target": "G-ALPHABET-REBUILT"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-AXIS-SET-EXHAUSTIVE",
+   "mutant": "MUT-AXIS-DROP",
+   "note": "drops one axis from the axis set at the parent rung",
+   "on_target": true,
+   "target": "G-AXIS-SET-EXHAUSTIVE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-LAG-SUPPORT-STRUCTURAL",
+   "mutant": "MUT-LAG",
+   "note": "declares one lag outside the difference table to be empty when it is not",
+   "on_target": true,
+   "target": "G-LAG-SUPPORT-STRUCTURAL"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-POOL-REPRODUCES-THE-PARENT",
+   "mutant": "MUT-POOL",
+   "note": "shortens the rebuilt pool at the parent rung by one generator",
+   "on_target": true,
+   "target": "G-POOL-REPRODUCES-THE-PARENT"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-GAUGE-ORBITS-FREE",
+   "mutant": "MUT-GAUGE-ORBIT",
+   "note": "shrinks one recorded global-phase orbit below the group's size",
+   "on_target": true,
+   "target": "G-GAUGE-ORBITS-FREE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-TWO-ROUTE-POOL",
+   "mutant": "MUT-TWO-ROUTE",
+   "note": "perturbs the second, whole-torus pool route's count at the parent rung",
+   "on_target": true,
+   "target": "G-TWO-ROUTE-POOL"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-ORD-CENSUS-REPRODUCED",
+   "mutant": "MUT-ORD",
+   "note": "moves one order-census non-monomial count away from the parent's",
+   "on_target": true,
+   "target": "G-ORD-CENSUS-REPRODUCED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SIDON-MEASURED",
+   "mutant": "MUT-SIDON",
+   "note": "reports one arena as Sidon whose difference multiset is not",
+   "on_target": true,
+   "target": "G-SIDON-MEASURED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-DDS-CRITERION-SOUND",
+   "mutant": "MUT-DDS",
+   "note": "reports a DDS-free arena as carrying a non-monomial unitary",
+   "on_target": true,
+   "target": "G-DDS-CRITERION-SOUND"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SIDON-PREDICTION-TESTED",
+   "mutant": "MUT-SIDON-VERDICT",
+   "note": "flips one arena's prediction verdict away from its own two measured legs",
+   "on_target": true,
+   "target": "G-SIDON-PREDICTION-TESTED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-FOURTH-DIRECTION-CONTROL",
+   "mutant": "MUT-CONTROL",
+   "note": "moves the reproduced non-monomial count at the control arena",
+   "on_target": true,
+   "target": "G-FOURTH-DIRECTION-CONTROL"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-EIGENVALUES-ROOTS-OF-UNITY",
+   "mutant": "MUT-EIGEN",
+   "note": "marks one dispersion cell as lying off the root-of-unity lattice",
+   "on_target": true,
+   "target": "G-EIGENVALUES-ROOTS-OF-UNITY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-EIGENPHASE-LATTICE",
+   "mutant": "MUT-EIGENLATTICE",
+   "note": "reports the eigenphase lattice at one rung as the parent rung's",
+   "on_target": true,
+   "target": "G-EIGENPHASE-LATTICE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VMAX-IS-DIAMETER",
+   "mutant": "MUT-VMAX",
+   "note": "moves the measured maximal group speed at one rung",
+   "on_target": true,
+   "target": "G-VMAX-IS-DIAMETER"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VMAX-ATTAINED-BY-THE-ANTIPODE",
+   "mutant": "MUT-ATTAINED",
+   "note": "removes the antipodal monomial witness at one rung",
+   "on_target": true,
+   "target": "G-VMAX-ATTAINED-BY-THE-ANTIPODE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-INTERIOR-RADII",
+   "mutant": "MUT-INTERIOR",
+   "note": "moves the interior-radius count at the rung the register names",
+   "on_target": true,
+   "target": "G-INTERIOR-RADII"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-INTEGER-VELOCITY-CENSUS",
+   "mutant": "MUT-VELOCITY",
+   "note": "hides the non-integer velocity witness at the rung that carries it",
+   "on_target": true,
+   "target": "G-INTEGER-VELOCITY-CENSUS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-COIN-ALPHABET-DERIVED",
+   "mutant": "MUT-COIN",
+   "note": "drops one coin from the derived coin family",
+   "on_target": true,
+   "target": "G-COIN-ALPHABET-DERIVED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-STRATA-PERFECT-MATCHINGS",
+   "mutant": "MUT-STRATA",
+   "note": "reports one parity stratum as covering a site twice",
+   "on_target": true,
+   "target": "G-STRATA-PERFECT-MATCHINGS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-NON-WRAPPING",
+   "mutant": "MUT-WRAP",
+   "note": "reports a declared plaquette stencil as wrapping when it does not",
+   "on_target": true,
+   "target": "G-NON-WRAPPING"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PROFILE-PERSISTS",
+   "mutant": "MUT-PROFILE",
+   "note": "moves one measured group order in the (order, support) profile",
+   "on_target": true,
+   "target": "G-PROFILE-PERSISTS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-ALTERNATING-ON-ORBITS",
+   "mutant": "MUT-ALT",
+   "note": "breaks the alternating certificate by moving one predicted order",
+   "on_target": true,
+   "target": "G-ALTERNATING-ON-ORBITS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-GLOBAL-SUPPORT-IS-THE-VOLUME",
+   "mutant": "MUT-GLOBAL",
+   "note": "reports the global stencil's support as smaller than the volume",
+   "on_target": true,
+   "target": "G-GLOBAL-SUPPORT-IS-THE-VOLUME"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-LOCALITY-WINDOWS",
+   "mutant": "MUT-LOCALITY",
+   "note": "flips one window's locality flag away from its own completeness test",
+   "on_target": true,
+   "target": "G-LOCALITY-WINDOWS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-WIDTH-COUNT-EQUALS-INTERIOR-RADII",
+   "mutant": "MUT-WIDTH",
+   "note": "moves the count of locality-admitting widths at one rung",
+   "on_target": true,
+   "target": "G-WIDTH-COUNT-EQUALS-INTERIOR-RADII"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PARTITION-COROLLARY",
+   "mutant": "MUT-PARTITION",
+   "note": "reports a blockwise cell as non-complete",
+   "on_target": true,
+   "target": "G-PARTITION-COROLLARY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-BAND-LAW",
+   "mutant": "MUT-BAND",
+   "note": "moves one admitted size out of the measured band at one width",
+   "on_target": true,
+   "target": "G-BAND-LAW"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PERSISTENCE-TABLE-BOUND",
+   "mutant": "MUT-TABLE",
+   "note": "rewrites one persistence verdict away from its own measured cells",
+   "on_target": true,
+   "target": "G-PERSISTENCE-TABLE-BOUND"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-FRACTIONS-STAMPED",
+   "mutant": "MUT-FRACTION",
+   "note": "publishes a fraction with neither a measure nor the COUNTING-ONLY stamp",
+   "on_target": true,
+   "target": "G-FRACTIONS-STAMPED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VERDICT-RECONSTRUCTED",
+   "mutant": "MUT-VERDICT",
+   "note": "edits the verdict string after its segments are derived",
+   "on_target": true,
+   "target": "G-VERDICT-RECONSTRUCTED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VERDICT-PREREGISTERED",
+   "mutant": "MUT-HEAD",
+   "note": "emits a head that is not one of the pre-registered forms",
+   "on_target": true,
+   "target": "G-VERDICT-PREREGISTERED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-WALLS",
+   "mutant": "MUT-WALLS",
+   "note": "inserts a continuum claim into the scope segment",
+   "on_target": true,
+   "target": "G-WALLS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-FALSIFIER-DESCRIPTIONS",
+   "mutant": "MUT-DESCRIPTION",
+   "note": "inverts one published mutant description relative to its code",
+   "on_target": true,
+   "target": "G-FALSIFIER-DESCRIPTIONS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SEAL-COMPLETE",
+   "mutant": "MUT-SEAL-BROKEN",
+   "note": "edits a sealed object after its gate-time digest was taken",
+   "on_target": true,
+   "target": "G-SEAL-COMPLETE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SEAL-MANIFEST-TOTAL",
+   "mutant": "MUT-SEAL-MANIFEST",
+   "note": "publishes a receipt key that is neither sealed nor declared unsealed",
+   "on_target": true,
+   "target": "G-SEAL-MANIFEST-TOTAL"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-GATE-ROWS-SEALED",
+   "mutant": "MUT-GATE-CHAIN",
+   "note": "edits the detail of a closed gate row after its digest entered the chain",
+   "on_target": true,
+   "target": "G-GATE-ROWS-SEALED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PAPER-CLAIMS",
+   "mutant": "MUT-PAPER-CLAIM",
+   "note": "adds a measured claim the paper does not make",
+   "on_target": true,
+   "target": "G-PAPER-CLAIMS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PAPER-NUMERAL-COVERAGE",
+   "mutant": "MUT-PAPER-NUMERAL",
+   "note": "adds an unlicensed numeral to the paper's scanned set",
+   "on_target": true,
+   "target": "G-PAPER-NUMERAL-COVERAGE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PAPER-INLINE-SPANS",
+   "mutant": "MUT-PAPER-SPAN",
+   "note": "adds an unlicensed numeral inside an inline code span",
+   "on_target": true,
+   "target": "G-PAPER-INLINE-SPANS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PAPER-FENCED-MULTISET",
+   "mutant": "MUT-PAPER-FENCE",
+   "note": "drops one copy of a duplicated fenced block from the rendered multiset",
+   "on_target": true,
+   "target": "G-PAPER-FENCED-MULTISET"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PAPER-TABLES-AS-CLAIMS",
+   "mutant": "MUT-PAPER-TABLE",
+   "note": "moves one rendered table row away from the paper's",
+   "on_target": true,
+   "target": "G-PAPER-TABLES-AS-CLAIMS"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PAPER-CLAIM-POLARITY",
+   "mutant": "MUT-PAPER-POLARITY",
+   "note": "returns an unmoved claim after its receipt key was perturbed",
+   "on_target": true,
+   "target": "G-PAPER-CLAIM-POLARITY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PAPER-VERDICT-BLOCK",
+   "mutant": "MUT-PAPER-VERDICT",
+   "note": "truncates the verdict string the paper is required to quote",
+   "on_target": true,
+   "target": "G-PAPER-VERDICT-BLOCK"
+  }
+ ],
+ "non_wrapping": [
+  {
+   "L": 4,
+   "stencil": "S1-ONE",
+   "wraps": false
+  },
+  {
+   "L": 4,
+   "stencil": "S2-EDGE",
+   "wraps": false
+  },
+  {
+   "L": 4,
+   "stencil": "S2-CORNER",
+   "wraps": false
+  },
+  {
+   "L": 4,
+   "stencil": "S2-APART",
+   "wraps": false
+  },
+  {
+   "L": 4,
+   "stencil": "S3-ROW",
+   "wraps": false
+  },
+  {
+   "L": 4,
+   "stencil": "S4-BLOCK",
+   "wraps": false
+  },
+  {
+   "L": 6,
+   "stencil": "S1-ONE",
+   "wraps": false
+  },
+  {
+   "L": 6,
+   "stencil": "S2-EDGE",
+   "wraps": false
+  },
+  {
+   "L": 6,
+   "stencil": "S2-CORNER",
+   "wraps": false
+  },
+  {
+   "L": 6,
+   "stencil": "S2-APART",
+   "wraps": false
+  },
+  {
+   "L": 6,
+   "stencil": "S3-ROW",
+   "wraps": false
+  },
+  {
+   "L": 6,
+   "stencil": "S4-BLOCK",
+   "wraps": false
+  },
+  {
+   "L": 8,
+   "stencil": "S1-ONE",
+   "wraps": false
+  },
+  {
+   "L": 8,
+   "stencil": "S2-EDGE",
+   "wraps": false
+  },
+  {
+   "L": 8,
+   "stencil": "S2-CORNER",
+   "wraps": false
+  },
+  {
+   "L": 8,
+   "stencil": "S2-APART",
+   "wraps": false
+  },
+  {
+   "L": 8,
+   "stencil": "S3-ROW",
+   "wraps": false
+  },
+  {
+   "L": 8,
+   "stencil": "S4-BLOCK",
+   "wraps": false
+  }
+ ],
+ "not_executed": [],
+ "ord_census": {
+  "2": {
+   "distinct_generators": 32,
+   "monomial": 16,
+   "non_monomial": 16,
+   "triples_swept": 15625
+  },
+  "3": {
+   "distinct_generators": 24,
+   "monomial": 24,
+   "non_monomial": 0,
+   "triples_swept": 15625
+  },
+  "4": {
+   "distinct_generators": 72,
+   "monomial": 24,
+   "non_monomial": 48,
+   "triples_swept": 15625
+  },
+  "5": {
+   "distinct_generators": 24,
+   "monomial": 24,
+   "non_monomial": 0,
+   "triples_swept": 15625
+  },
+  "6": {
+   "distinct_generators": 24,
+   "monomial": 24,
+   "non_monomial": 0,
+   "triples_swept": 15625
+  },
+  "8": {
+   "distinct_generators": 24,
+   "monomial": 24,
+   "non_monomial": 0,
+   "triples_swept": 15625
+  }
+ },
+ "paper_claims": [
+  {
+   "id": "CL-SUFFICIENCY",
+   "path": "counts/arenas",
+   "text": "the sufficiency direction holds at every one of the 18 declared arenas"
+  },
+  {
+   "id": "CL-NECESSITY",
+   "path": "counts/necessity_failures",
+   "text": "the converse fails at 10 of them"
+  },
+  {
+   "id": "CL-LINK6",
+   "path": "sidon_arenas/6/unitary",
+   "text": "the link stencil is Sidon at every rung, and its scan returns 24 unitary maps of which 0 are non-monomial at L = 6"
+  },
+  {
+   "id": "CL-LINK8",
+   "path": "sidon_arenas/12/unitary",
+   "text": "at L = 8 the same stencil returns 24 unitary maps and 0 non-monomial"
+  },
+  {
+   "id": "CL-AXIS4",
+   "path": "sidon_arenas/1/non_monomial",
+   "text": "the local axis stencil carries 48 non-monomial unitaries at the parent rung"
+  },
+  {
+   "id": "CL-AXIS68",
+   "path": "sidon_arenas/7/non_monomial",
+   "text": "and 0 at L = 6 and 0 at L = 8, with the same non-Sidon difference multiplicities [2, 2, 1, 1]"
+  },
+  {
+   "id": "CL-CONTROL",
+   "path": "fourth_direction_control/registered_count_reproduced",
+   "text": "the registered count is reproduced exactly: 54 non-monomial unitary maps"
+  },
+  {
+   "id": "CL-CONTROL-LADDER",
+   "path": "sidon_arenas/5/non_monomial",
+   "text": "the same fourth direction carries 48 non-monomial unitaries at L = 4 and 0 at L = 6 and 0 at L = 8"
+  },
+  {
+   "id": "CL-POOL",
+   "path": "counts/circulants_L6",
+   "text": "the pool carries 58 circulant families at L = 4, 42 at L = 6 and 106 at L = 8"
+  },
+  {
+   "id": "CL-VMAX",
+   "path": "counts/vmax_L8",
+   "text": "the maximal group speed is 2, 3 and 4, and the max-norm diameter is the same number at each rung"
+  },
+  {
+   "id": "CL-RADII",
+   "path": "counts/interior_L8",
+   "text": "the interior-radius count is 1, 2 and 3"
+  },
+  {
+   "id": "CL-WIDTHS",
+   "path": "width_count/2/locality_admitting_widths",
+   "text": "the number of window widths admitting locality is 1, 2 and 3"
+  },
+  {
+   "id": "CL-VELOCITY",
+   "path": "velocity_census/1/non_integer_families",
+   "text": "6 families at L = 6 carry a velocity that is not an integer"
+  },
+  {
+   "id": "CL-COINS",
+   "path": "counts/coins",
+   "text": "the derived coin family has 640 members at every rung"
+  },
+  {
+   "id": "CL-PROFILE",
+   "path": "counts/profile_rows",
+   "text": "the profile is measured at 18 rung-and-stencil rows and is identical at all three rungs"
+  },
+  {
+   "id": "CL-GLOBAL",
+   "path": "global_stencil/1/support",
+   "text": "the global support is 16, 36 and 64, which is the volume at each rung"
+  },
+  {
+   "id": "CL-BAND1",
+   "path": "band_law/by_width/0/admitted_set",
+   "text": "at window width 1 the admitted set is [4]"
+  },
+  {
+   "id": "CL-BAND2",
+   "path": "band_law/by_width/1/admitted_set",
+   "text": "at window width 2 it is [6, 8], and at width 3 it is [8, 10, 12]"
+  },
+  {
+   "id": "CL-TABLE",
+   "path": "counts/table_rows",
+   "text": "the persistence table carries 24 rows: 11 persist, 5 break and 8 transform"
+  },
+  {
+   "id": "CL-MAPS",
+   "path": "counts/maps_scanned",
+   "text": "1952424 coefficient maps are scanned in all"
+  },
+  {
+   "id": "CL-LAGS",
+   "path": "counts/lag_objects",
+   "text": "2940 axis-and-lag objects are bound"
+  }
+ ],
+ "paper_coverage": {
+  "claims": 21,
+  "fenced_blocks": 2,
+  "fenced_multiset_equal": true,
+  "missing": 0,
+  "numerals": 83,
+  "paper": "paper-28-perl.md",
+  "polarity_failures": 0,
+  "span_numerals": 3,
+  "spans": 15,
+  "table_missing": 0,
+  "table_rows": 42,
+  "unlicensed": 0
+ },
+ "paper_fences": {
+  "blocks_in_paper": 2,
+  "blocks_rendered": 2,
+  "distinct": 1,
+  "multiset_equal": true
+ },
+ "paper_polarity": {
+  "claims": 21,
+  "failing": [],
+  "polarity_failures": 0
+ },
+ "partition_control": [
+  {
+   "L": 4,
+   "block": 2,
+   "cells": 4,
+   "clique_only": true,
+   "locality": false
+  },
+  {
+   "L": 6,
+   "block": 2,
+   "cells": 9,
+   "clique_only": true,
+   "locality": false
+  },
+  {
+   "L": 6,
+   "block": 3,
+   "cells": 4,
+   "clique_only": true,
+   "locality": false
+  },
+  {
+   "L": 8,
+   "block": 2,
+   "cells": 16,
+   "clique_only": true,
+   "locality": false
+  },
+  {
+   "L": 8,
+   "block": 4,
+   "cells": 4,
+   "clique_only": true,
+   "locality": false
+  }
+ ],
+ "path_value_anchors": [
+  {
+   "anchor": "PV-L",
+   "declared": 4,
+   "matches": true,
+   "note": "the parent rung's lattice size: the ladder's first step",
+   "path": "counts/L",
+   "read": 4,
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-D",
+   "declared": 2,
+   "matches": true,
+   "note": "the anchored spatial dimension, held fixed along the ladder",
+   "path": "counts/d",
+   "read": 2,
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-ALPHABET",
+   "declared": 25,
+   "matches": true,
+   "note": "the coefficient alphabet, rebuilt here and held fixed along L",
+   "path": "counts/alphabet",
+   "read": 25,
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-FIELD",
+   "declared": "Q(ZETA-8)",
+   "matches": true,
+   "note": "the parents' field; this unit works in Q(zeta_24), which contains it",
+   "path": "counts/field",
+   "read": "Q(ZETA-8)",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-CIRC",
+   "declared": 58,
+   "matches": true,
+   "note": "THE REBUILD TARGET: the parent's circulant pool at L = 4",
+   "path": "counts/circulants",
+   "read": 58,
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-CONNECTIVE",
+   "declared": "MAX-NORM",
+   "matches": true,
+   "note": "the FORCED connective, inherited verbatim into SCOPE",
+   "path": "counts/connective_tag",
+   "read": "MAX-NORM",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-FORCING-LINK",
+   "declared": "(1,1)",
+   "matches": true,
+   "note": "the anchored link that forces it",
+   "path": "counts/forcing_link",
+   "read": "(1,1)",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-STENCIL",
+   "declared": "3-TERM-AXIS",
+   "matches": true,
+   "note": "the declared stencil the family generalisation rule extends",
+   "path": "counts/stencil",
+   "read": "3-TERM-AXIS",
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-ADMISSIBLE",
+   "declared": [
+    4
+   ],
+   "matches": true,
+   "note": "THE UNIQUENESS CLAIM UNDER TEST: the parent's admitted scale set",
+   "path": "admissible_scales",
+   "read": [
+    4
+   ],
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-SCALE-LOCALITY",
+   "declared": 4,
+   "matches": true,
+   "note": "the parent's locality threshold at its own window width",
+   "path": "scale_precheck/locality_iff_L_at_least",
+   "read": 4,
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-SCALE-COLLAPSE",
+   "declared": 4,
+   "matches": true,
+   "note": "the parent's collapse bound at its own window width",
+   "path": "scale_precheck/non_monomial_local_only_if_L_at_most",
+   "read": 4,
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-SCALE-PRESENT",
+   "declared": [
+    2,
+    4
+   ],
+   "matches": true,
+   "note": "the parent's measured presence set -- the L = 3 gap is the alphabet-relative row this unit explains",
+   "path": "scale_precheck/non_monomial_local_present_at",
+   "read": [
+    2,
+    4
+   ],
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-ORD2",
+   "declared": 16,
+   "matches": true,
+   "note": "the parent's order-2 non-monomial count, reproduced here",
+   "path": "ord_census/2/non_monomial",
+   "read": 16,
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-ORD3",
+   "declared": 0,
+   "matches": true,
+   "note": "the parent's order-3 emptiness -- alphabet-relative, and this unit says why",
+   "path": "ord_census/3/non_monomial",
+   "read": 0,
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-ORD4",
+   "declared": 48,
+   "matches": true,
+   "note": "the parent's order-4 non-monomial count, reproduced here",
+   "path": "ord_census/4/non_monomial",
+   "read": 48,
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-ORD8",
+   "declared": 0,
+   "matches": true,
+   "note": "the parent's order-8 collapse, reproduced here",
+   "path": "ord_census/8/non_monomial",
+   "read": 0,
+   "source": "A-R4-RECEIPT"
+  },
+  {
+   "anchor": "PV-AXES",
+   "declared": 9,
+   "matches": true,
+   "note": "the parent's axis count at L = 4: the generalisation rule must reproduce it",
+   "path": "pool_counts/axes",
+   "read": 9,
+   "source": "A-R4B-RECEIPT"
+  },
+  {
+   "anchor": "PV-LOCAL-AXES",
+   "declared": 4,
+   "matches": true,
+   "note": "the parent's local-axis count at L = 4",
+   "path": "pool_counts/local_axes",
+   "read": 4,
+   "source": "A-R4B-RECEIPT"
+  },
+  {
+   "anchor": "PV-VMAX",
+   "declared": "2",
+   "matches": true,
+   "note": "THE VMAX CLAIM AT THE PARENT RUNG",
+   "path": "counts/vmax",
+   "read": "2",
+   "source": "A-R4B-RECEIPT"
+  },
+  {
+   "anchor": "PV-DIAMETER",
+   "declared": 2,
+   "matches": true,
+   "note": "the max-norm diameter at the parent rung",
+   "path": "counts/diameter",
+   "read": 2,
+   "source": "A-R4B-RECEIPT"
+  },
+  {
+   "anchor": "PV-INTERIOR",
+   "declared": [
+    1
+   ],
+   "matches": true,
+   "note": "the interior-radius set at L = 4",
+   "path": "counts/interior_radii",
+   "read": [
+    1
+   ],
+   "source": "A-R4B-RECEIPT"
+  },
+  {
+   "anchor": "PV-INTERIOR-L8",
+   "declared": 3,
+   "matches": true,
+   "note": "THE REGISTER CLAIM UNDER TEST: 3 interior radii at L = 8",
+   "path": "counts/interior_radii_at_l8",
+   "read": 3,
+   "source": "A-R4B-RECEIPT"
+  },
+  {
+   "anchor": "PV-CELLS",
+   "declared": 928,
+   "matches": true,
+   "note": "the parent's (family, momentum) cell count at L = 4",
+   "path": "counts/cells",
+   "read": 928,
+   "source": "A-R4B-RECEIPT"
+  },
+  {
+   "anchor": "PV-MOVING",
+   "declared": 57,
+   "matches": true,
+   "note": "the parent's moving-family count",
+   "path": "counts/moving",
+   "read": 57,
+   "source": "A-R4B-RECEIPT"
+  },
+  {
+   "anchor": "PV-STATIC",
+   "declared": 1,
+   "matches": true,
+   "note": "the parent's static family: the identity",
+   "path": "counts/static",
+   "read": 1,
+   "source": "A-R4B-RECEIPT"
+  },
+  {
+   "anchor": "PV-PROFILES",
+   "declared": 58,
+   "matches": true,
+   "note": "the parent's separation datum: the symbol separates families",
+   "path": "counts/distinct_profiles",
+   "read": 58,
+   "source": "A-R4B-RECEIPT"
+  },
+  {
+   "anchor": "PV-MU8",
+   "declared": 928,
+   "matches": true,
+   "note": "the parent's eigenphase lattice: every eigenvalue an 8th root of unity",
+   "path": "counts/in_mu8",
+   "read": 928,
+   "source": "A-R4B-RECEIPT"
+  },
+  {
+   "anchor": "PV-INTVEL",
+   "declared": 1856,
+   "matches": true,
+   "note": "THE INTEGER-VELOCITY CLAIM: all 1856 cells at L = 4",
+   "path": "counts/integer_velocities",
+   "read": 1856,
+   "source": "A-R4B-RECEIPT"
+  },
+  {
+   "anchor": "PV-COINS",
+   "declared": 640,
+   "matches": true,
+   "note": "the derived coin family: 2x2 unitaries over the parents' alphabet",
+   "path": "counts/coins",
+   "read": 640,
+   "source": "A-R5-RECEIPT"
+  },
+  {
+   "anchor": "PV-COINS-ANTI",
+   "declared": 64,
+   "matches": true,
+   "note": "the antidiagonal sector, on which the profile is measured",
+   "path": "counts/coins_antidiagonal",
+   "read": 64,
+   "source": "A-R5-RECEIPT"
+  },
+  {
+   "anchor": "PV-COINS-DIAG",
+   "declared": 64,
+   "matches": true,
+   "note": "the diagonal sector",
+   "path": "counts/coins_diagonal",
+   "read": 64,
+   "source": "A-R5-RECEIPT"
+  },
+  {
+   "anchor": "PV-COINS-BAL",
+   "declared": 512,
+   "matches": true,
+   "note": "the balanced sector",
+   "path": "counts/coins_balanced",
+   "read": 512,
+   "source": "A-R5-RECEIPT"
+  },
+  {
+   "anchor": "PV-PROFILE",
+   "declared": "S1-ONE=A3;S2-EDGE=A5;S2-CORNER=A3 x A3;S2-APART=A3 x A3;S3-ROW=A7;S4-BLOCK=A8",
+   "matches": true,
+   "note": "THE GAUGE FINGERPRINT UNDER TEST: the (order, support) profile",
+   "path": "counts/local_profile",
+   "read": "S1-ONE=A3;S2-EDGE=A5;S2-CORNER=A3 x A3;S2-APART=A3 x A3;S3-ROW=A7;S4-BLOCK=A8",
+   "source": "A-R5-RECEIPT"
+  },
+  {
+   "anchor": "PV-GLOBAL-4",
+   "declared": 16,
+   "matches": true,
+   "note": "the global support at L = 4: the volume",
+   "path": "counts/global_support_small",
+   "read": 16,
+   "source": "A-R5-RECEIPT"
+  },
+  {
+   "anchor": "PV-GLOBAL-8",
+   "declared": 64,
+   "matches": true,
+   "note": "the global support at L = 8: the volume",
+   "path": "counts/global_support_large",
+   "read": 64,
+   "source": "A-R5-RECEIPT"
+  },
+  {
+   "anchor": "PV-R2-RULES",
+   "declared": 109,
+   "matches": true,
+   "note": "R2's grid size: cited, never re-run here",
+   "path": "locality_census/rules_measured",
+   "read": 109,
+   "source": "A-R2-RECEIPT"
+  },
+  {
+   "anchor": "PV-R2-LOCAL",
+   "declared": 14,
+   "matches": true,
+   "note": "R2's locality census: cited, never re-run here",
+   "path": "locality_census/count_locality_B",
+   "read": 14,
+   "source": "A-R2-RECEIPT"
+  },
+  {
+   "anchor": "PV-R2-CRITERION",
+   "declared": "locality exists at a rule iff SOME connected component of that rule's overlap graph is NOT complete (the R1 adjudication's criterion, section 6)",
+   "matches": true,
+   "note": "THE CRITERION, PORTED VERBATIM: this unit applies it at a new window coordinate and at nothing else",
+   "path": "locality_census/criterion",
+   "read": "locality exists at a rule iff SOME connected component of that rule's overlap graph is NOT complete (the R1 adjudication's criterion, section 6)",
+   "source": "A-R2-RECEIPT"
+  }
+ ],
+ "persistence_table": [
+  {
+   "cells": {
+    "4": true,
+    "6": true,
+    "8": true
+   },
+   "invariant": "the LINK stencil is Sidon",
+   "law": "",
+   "verdict": "PERSISTS"
+  },
+  {
+   "cells": {
+    "4": 0,
+    "6": 0,
+    "8": 0
+   },
+   "invariant": "monomial-only on the LINK stencil",
+   "law": "",
+   "verdict": "PERSISTS"
+  },
+  {
+   "cells": {
+    "4": false,
+    "6": false,
+    "8": false
+   },
+   "invariant": "the local AXIS stencil is Sidon",
+   "law": "",
+   "verdict": "PERSISTS"
+  },
+  {
+   "cells": {
+    "4": 48,
+    "6": 0,
+    "8": 0
+   },
+   "invariant": "non-monomial generators on a local AXIS stencil",
+   "law": "48 at the parent rung, 0 at both new rungs: the local family collapses to shifts",
+   "verdict": "BREAKS-AT-L=6"
+  },
+  {
+   "cells": {
+    "4": false,
+    "6": true,
+    "8": true
+   },
+   "invariant": "the local AXIS stencil is DDS-free",
+   "law": "the criterion turns on at L = 6 and stays on",
+   "verdict": "BREAKS-AT-L=6"
+  },
+  {
+   "cells": {
+    "4": 48,
+    "6": 0,
+    "8": 0
+   },
+   "invariant": "the fourth-direction death",
+   "law": "the same declared fourth direction kills at L = 4 and does not kill at L = 6 or L = 8",
+   "verdict": "BREAKS-AT-L=6"
+  },
+  {
+   "cells": {
+    "4": 58,
+    "6": 42,
+    "8": 106
+   },
+   "invariant": "circulant families in the pool",
+   "law": "58, 42, 106: not monotone in L; the count is the sum of per-axis gauge classes less the shared identity",
+   "verdict": "TRANSFORMS"
+  },
+  {
+   "cells": {
+    "4": 42,
+    "6": 6,
+    "8": 42
+   },
+   "invariant": "non-monomial families in the pool",
+   "law": "carried only by axes of order 2 and 4, never by a local axis above the parent rung",
+   "verdict": "TRANSFORMS"
+  },
+  {
+   "cells": {
+    "4": 24,
+    "6": 0,
+    "8": 0
+   },
+   "invariant": "local non-monomial families in the pool",
+   "law": "the parent's headline family is empty at both new rungs",
+   "verdict": "BREAKS-AT-L=6"
+  },
+  {
+   "cells": {
+    "4": "2",
+    "6": "3",
+    "8": "4"
+   },
+   "invariant": "VMAX",
+   "law": "VMAX = L/2 at every rung",
+   "verdict": "TRANSFORMS"
+  },
+  {
+   "cells": {
+    "4": true,
+    "6": true,
+    "8": true
+   },
+   "invariant": "VMAX equals the max-norm diameter",
+   "law": "",
+   "verdict": "PERSISTS"
+  },
+  {
+   "cells": {
+    "4": 1,
+    "6": 2,
+    "8": 3
+   },
+   "invariant": "interior radii",
+   "law": "L/2 - 1 at every rung; the register's 3 at L = 8 is confirmed",
+   "verdict": "TRANSFORMS"
+  },
+  {
+   "cells": {
+    "4": 1,
+    "6": 2,
+    "8": 3
+   },
+   "invariant": "locality-admitting window widths",
+   "law": "equal to the interior-radius count at every rung",
+   "verdict": "TRANSFORMS"
+  },
+  {
+   "cells": {
+    "4": 1,
+    "6": 1,
+    "8": 1
+   },
+   "invariant": "static families",
+   "law": "one at every rung: the identity",
+   "verdict": "PERSISTS"
+  },
+  {
+   "cells": {
+    "4": true,
+    "6": true,
+    "8": true
+   },
+   "invariant": "the reduced dispersion separates families",
+   "law": "",
+   "verdict": "PERSISTS"
+  },
+  {
+   "cells": {
+    "4": true,
+    "6": true,
+    "8": true
+   },
+   "invariant": "every eigenvalue is a root of unity",
+   "law": "",
+   "verdict": "PERSISTS"
+  },
+  {
+   "cells": {
+    "4": 8,
+    "6": 24,
+    "8": 8
+   },
+   "invariant": "the eigenphase lattice",
+   "law": "Z/lcm(8, L): the gauge group's order joined to the rung",
+   "verdict": "TRANSFORMS"
+  },
+  {
+   "cells": {
+    "4": true,
+    "6": false,
+    "8": true
+   },
+   "invariant": "all group velocities are integers",
+   "law": "an order-2 axis at L = 6 carries speed 3/2",
+   "verdict": "BREAKS-AT-L=6"
+  },
+  {
+   "cells": {
+    "4": "640=64+64+512",
+    "6": "640=64+64+512",
+    "8": "640=64+64+512"
+   },
+   "invariant": "the coin family and its sector split",
+   "law": "the coin carries no L",
+   "verdict": "PERSISTS"
+  },
+  {
+   "cells": {
+    "4": true,
+    "6": true,
+    "8": true
+   },
+   "invariant": "the parity strata are perfect matchings",
+   "law": "at every even rung",
+   "verdict": "PERSISTS"
+  },
+  {
+   "cells": {
+    "4": "S1-ONE=3/3;S2-EDGE=60/5;S2-CORNER=9/6;S2-APART=9/6;S3-ROW=2520/7;S4-BLOCK=20160/8",
+    "6": "S1-ONE=3/3;S2-EDGE=60/5;S2-CORNER=9/6;S2-APART=9/6;S3-ROW=2520/7;S4-BLOCK=20160/8",
+    "8": "S1-ONE=3/3;S2-EDGE=60/5;S2-CORNER=9/6;S2-APART=9/6;S3-ROW=2520/7;S4-BLOCK=20160/8"
+   },
+   "invariant": "the (order, support) profile",
+   "law": "identical at all three rungs, on all 64 antidiagonal coins",
+   "verdict": "PERSISTS"
+  },
+  {
+   "cells": {
+    "4": true,
+    "6": true,
+    "8": true
+   },
+   "invariant": "the holonomy is alternating on each of its orbits",
+   "law": "",
+   "verdict": "PERSISTS"
+  },
+  {
+   "cells": {
+    "4": 16,
+    "6": 36,
+    "8": 64
+   },
+   "invariant": "the global support",
+   "law": "the volume L^2 at every rung",
+   "verdict": "TRANSFORMS"
+  },
+  {
+   "cells": {
+    "4": [
+     1
+    ],
+    "6": [
+     2
+    ],
+    "8": [
+     2,
+     3
+    ]
+   },
+   "invariant": "the window widths at which this size is admitted",
+   "law": "the parent's uniqueness is the width-1 section of a band that widens with the window: {4} at width 1, {6, 8} at width 2, {8, 10, 12} at width 3",
+   "verdict": "TRANSFORMS"
+  }
+ ],
+ "pin": "v14/note-perl-pin.md",
+ "pin_sha256_prefix": "973b160d52ed",
+ "pool_census": [
+  {
+   "L": 4,
+   "by_axis_order": {
+    "2": {
+     "generators": 9,
+     "non_monomial": 6
+    },
+    "4": {
+     "generators": 49,
+     "non_monomial": 36
+    }
+   },
+   "circulants": 58,
+   "local_non_monomial": 24,
+   "monomial": 16,
+   "non_monomial": 42,
+   "orbit_sizes": [
+    8
+   ]
+  },
+  {
+   "L": 6,
+   "by_axis_order": {
+    "2": {
+     "generators": 9,
+     "non_monomial": 6
+    },
+    "3": {
+     "generators": 8,
+     "non_monomial": 0
+    },
+    "6": {
+     "generators": 25,
+     "non_monomial": 0
+    }
+   },
+   "circulants": 42,
+   "local_non_monomial": 0,
+   "monomial": 36,
+   "non_monomial": 6,
+   "orbit_sizes": [
+    8
+   ]
+  },
+  {
+   "L": 8,
+   "by_axis_order": {
+    "2": {
+     "generators": 9,
+     "non_monomial": 6
+    },
+    "4": {
+     "generators": 48,
+     "non_monomial": 36
+    },
+    "8": {
+     "generators": 49,
+     "non_monomial": 0
+    }
+   },
+   "circulants": 106,
+   "local_non_monomial": 0,
+   "monomial": 64,
+   "non_monomial": 42,
+   "orbit_sizes": [
+    8
+   ]
+  }
+ ],
+ "preregistered_heads": [
+  "PERL-SIDON-SUFFICIENT-NOT-NECESSARY",
+  "PERL-SIDON-CONFIRMED-BOTH-WAYS",
+  "PERL-SIDON-REFUTED",
+  "PERL-BLOCKED-AT-THE-FAMILY-GENERALISATION",
+  "PERL-BLOCKED-AT-THE-EIGENPHASE-LATTICE"
+ ],
+ "runtime_inputs": {
+  "object_under_test": "v14/paper-28-perl.md",
+  "reads": [
+   "v14/code/r2_manifold_receipt.json",
+   "v14/code/r4_defect_stage_receipt.json",
+   "v14/code/r4b_momentum_receipt.json",
+   "v14/code/r5_gauge_receipt.json",
+   "v14/note-coup-adjudication.md",
+   "v14/note-perl-pin.md",
+   "v14/paper-02-manifold-rung.md",
+   "v14/paper-10-defect-on-the-stage.md",
+   "v14/paper-15-momentum.md",
+   "v14/paper-18-gauge-rung.md"
+  ],
+  "sources": [
+   "v14/paper-10-defect-on-the-stage.md",
+   "v14/code/r4_defect_stage_receipt.json",
+   "v14/paper-15-momentum.md",
+   "v14/code/r4b_momentum_receipt.json",
+   "v14/paper-18-gauge-rung.md",
+   "v14/code/r5_gauge_receipt.json",
+   "v14/paper-02-manifold-rung.md",
+   "v14/code/r2_manifold_receipt.json",
+   "v14/note-coup-adjudication.md",
+   "v14/note-perl-pin.md"
+  ]
+ },
+ "schema": "isp/v14/perl/1",
+ "seal_manifest": [
+  {
+   "path": "byte_anchors",
+   "seal": "SEAL-BYTE-ANCHORS",
+   "sealed_at_gate": "G-SOURCES-PINNED",
+   "sha256_12": "529adf41a785"
+  },
+  {
+   "path": "source_sha256",
+   "seal": "SEAL-PROVENANCE",
+   "sealed_at_gate": "G-SOURCES-PINNED",
+   "sha256_12": "e9c3eff31aef"
+  },
+  {
+   "path": "path_value_anchors",
+   "seal": "SEAL-PATH-ANCHORS",
+   "sealed_at_gate": "G-PATH-VALUE-ANCHORS",
+   "sha256_12": "9eb8ee6ed506"
+  },
+  {
+   "path": "verbatim_anchors",
+   "seal": "SEAL-VERBATIM",
+   "sealed_at_gate": "G-VERBATIM-ANCHORS",
+   "sha256_12": "082e28c55dd3"
+  },
+  {
+   "path": "alphabet_rebuilt",
+   "seal": "SEAL-ALPHABET",
+   "sealed_at_gate": "G-ALPHABET-REBUILT",
+   "sha256_12": "2a98e7a240d9"
+  },
+  {
+   "path": "axis_census",
+   "seal": "SEAL-AXES",
+   "sealed_at_gate": "G-AXIS-SET-EXHAUSTIVE",
+   "sha256_12": "baaf38e01d92"
+  },
+  {
+   "path": "pool_census",
+   "seal": "SEAL-POOL",
+   "sealed_at_gate": "G-POOL-REPRODUCES-THE-PARENT",
+   "sha256_12": "861559ea61e0"
+  },
+  {
+   "path": "ord_census",
+   "seal": "SEAL-ORD",
+   "sealed_at_gate": "G-ORD-CENSUS-REPRODUCED",
+   "sha256_12": "5f8a65f7d734"
+  },
+  {
+   "path": "dds_law",
+   "seal": "SEAL-DDS",
+   "sealed_at_gate": "G-DDS-CRITERION-SOUND",
+   "sha256_12": "f44ba96232c9"
+  },
+  {
+   "path": "sidon_arenas",
+   "seal": "SEAL-ARENAS",
+   "sealed_at_gate": "G-SIDON-PREDICTION-TESTED",
+   "sha256_12": "d8dd9aef1961"
+  },
+  {
+   "path": "sidon_prediction",
+   "seal": "SEAL-PREDICTION",
+   "sealed_at_gate": "G-SIDON-PREDICTION-TESTED",
+   "sha256_12": "400b1d7072f5"
+  },
+  {
+   "path": "fourth_direction_control",
+   "seal": "SEAL-CONTROL",
+   "sealed_at_gate": "G-FOURTH-DIRECTION-CONTROL",
+   "sha256_12": "ce7e54b48946"
+  },
+  {
+   "path": "dispersion_census",
+   "seal": "SEAL-DISPERSION",
+   "sealed_at_gate": "G-EIGENVALUES-ROOTS-OF-UNITY",
+   "sha256_12": "b9aa956ced12"
+  },
+  {
+   "path": "vmax_census",
+   "seal": "SEAL-VMAX",
+   "sealed_at_gate": "G-VMAX-IS-DIAMETER",
+   "sha256_12": "ff7a22453c67"
+  },
+  {
+   "path": "interior_radii",
+   "seal": "SEAL-RADII",
+   "sealed_at_gate": "G-INTERIOR-RADII",
+   "sha256_12": "358399a7d86e"
+  },
+  {
+   "path": "velocity_census",
+   "seal": "SEAL-VELOCITY",
+   "sealed_at_gate": "G-INTEGER-VELOCITY-CENSUS",
+   "sha256_12": "2a735e05c9ee"
+  },
+  {
+   "path": "coin_sectors",
+   "seal": "SEAL-COINS",
+   "sealed_at_gate": "G-COIN-ALPHABET-DERIVED",
+   "sha256_12": "0154a0ecd5dd"
+  },
+  {
+   "path": "strata",
+   "seal": "SEAL-STRATA",
+   "sealed_at_gate": "G-STRATA-PERFECT-MATCHINGS",
+   "sha256_12": "0fa5bb045c30"
+  },
+  {
+   "path": "gauge_profile",
+   "seal": "SEAL-PROFILE",
+   "sealed_at_gate": "G-PROFILE-PERSISTS",
+   "sha256_12": "993ee4b9a096"
+  },
+  {
+   "path": "non_wrapping",
+   "seal": "SEAL-WRAP",
+   "sealed_at_gate": "G-NON-WRAPPING",
+   "sha256_12": "2fbbad94cbe2"
+  },
+  {
+   "path": "global_stencil",
+   "seal": "SEAL-GLOBAL",
+   "sealed_at_gate": "G-GLOBAL-SUPPORT-IS-THE-VOLUME",
+   "sha256_12": "7a1e1c3274f6"
+  },
+  {
+   "path": "locality_windows",
+   "seal": "SEAL-WINDOWS",
+   "sealed_at_gate": "G-LOCALITY-WINDOWS",
+   "sha256_12": "7741e8c48eb6"
+  },
+  {
+   "path": "width_count",
+   "seal": "SEAL-WIDTHCOUNT",
+   "sealed_at_gate": "G-WIDTH-COUNT-EQUALS-INTERIOR-RADII",
+   "sha256_12": "e621df5e2335"
+  },
+  {
+   "path": "partition_control",
+   "seal": "SEAL-PARTITION",
+   "sealed_at_gate": "G-PARTITION-COROLLARY",
+   "sha256_12": "b3bdd5b35a80"
+  },
+  {
+   "path": "band_law",
+   "seal": "SEAL-BAND",
+   "sealed_at_gate": "G-BAND-LAW",
+   "sha256_12": "b749a54880ce"
+  },
+  {
+   "path": "persistence_table",
+   "seal": "SEAL-TABLE",
+   "sealed_at_gate": "G-PERSISTENCE-TABLE-BOUND",
+   "sha256_12": "948624d0534b"
+  },
+  {
+   "path": "declared_fractions",
+   "seal": "SEAL-FRACTIONS",
+   "sealed_at_gate": "G-FRACTIONS-STAMPED",
+   "sha256_12": "cf4a9f567e01"
+  },
+  {
+   "path": "choice_inventory",
+   "seal": "SEAL-CHOICES",
+   "sealed_at_gate": "G-CHOICES-INVENTORIED",
+   "sha256_12": "f7738345ff03"
+  },
+  {
+   "path": "preregistered_heads",
+   "seal": "SEAL-PREREGISTERED",
+   "sealed_at_gate": "G-VERDICT-PREREGISTERED",
+   "sha256_12": "9dffb012afd7"
+  },
+  {
+   "path": "verdict/string",
+   "seal": "SEAL-VERDICT-STRING",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "f06ac5dc4996"
+  },
+  {
+   "path": "verdict/head",
+   "seal": "SEAL-VERDICT-HEAD",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "fe541adf729e"
+  },
+  {
+   "path": "counts",
+   "seal": "SEAL-COUNTS",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "38957d906e51"
+  },
+  {
+   "path": "falsifier_descriptions",
+   "seal": "SEAL-FALSIFIERS",
+   "sealed_at_gate": "G-FALSIFIER-DESCRIPTIONS",
+   "sha256_12": "d3e5c67ea034"
+  },
+  {
+   "path": "waiver_ledger",
+   "seal": "SEAL-WAIVERS",
+   "sealed_at_gate": "G-WAIVERS-VERIFIED",
+   "sha256_12": "44feb738fe27"
+  },
+  {
+   "path": "paper_claims",
+   "seal": "SEAL-PAPER-CLAIMS",
+   "sealed_at_gate": "G-PAPER-CLAIMS",
+   "sha256_12": "a5848f62fbeb"
+  },
+  {
+   "path": "paper_fences",
+   "seal": "SEAL-PAPER-FENCES",
+   "sealed_at_gate": "G-PAPER-FENCED-MULTISET",
+   "sha256_12": "36f6d6f77f80"
+  },
+  {
+   "path": "paper_polarity",
+   "seal": "SEAL-PAPER-POLARITY",
+   "sealed_at_gate": "G-PAPER-CLAIM-POLARITY",
+   "sha256_12": "5e2d02efa9c6"
+  },
+  {
+   "path": "mutants",
+   "seal": "SEAL-MUTANTS",
+   "sealed_at_gate": "G-MUTANTS-ON-TARGET",
+   "sha256_12": "47d7586650f8"
+  },
+  {
+   "path": "gates",
+   "seal": "SEAL-GATES",
+   "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+   "sha256_12": "16f572e60914"
+  },
+  {
+   "path": "totals",
+   "seal": "SEAL-TOTALS",
+   "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+   "sha256_12": "d04a48b6b677"
+  },
+  {
+   "path": "paper_coverage",
+   "seal": "SEAL-COVERAGE",
+   "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+   "sha256_12": "e2e96890a8c8"
+  }
+ ],
+ "sidon_arenas": [
+  {
+   "L": 4,
+   "arena": "LINK",
+   "dds_free": true,
+   "difference_multiplicities": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "doubled_subsets": [],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": true,
+   "non_monomial": 0,
+   "offsets": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "sidon": true,
+   "unitary": 24,
+   "witnesses": []
+  },
+  {
+   "L": 4,
+   "arena": "AXIS-0-1",
+   "dds_free": false,
+   "difference_multiplicities": [
+    2,
+    2,
+    2
+   ],
+   "doubled_subsets": [
+    [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ]
+    ]
+   ],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": false,
+   "non_monomial": 48,
+   "offsets": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "sidon": false,
+   "unitary": 72,
+   "witnesses": [
+    {
+     "coefficients": [
+      [
+       [
+        0,
+        1
+       ],
+       "1/2*z^1+1/2*z^3-1/2*z^5"
+      ],
+      [
+       [
+        0,
+        3
+       ],
+       "-1/2*z^1+1/2*z^3+1/2*z^5"
+      ]
+     ],
+     "support": 2
+    },
+    {
+     "coefficients": [
+      [
+       [
+        0,
+        1
+       ],
+       "1/2*z^1+1/2*z^3-1/2*z^5"
+      ],
+      [
+       [
+        0,
+        3
+       ],
+       "1/2*z^1-1/2*z^3-1/2*z^5"
+      ]
+     ],
+     "support": 2
+    }
+   ]
+  },
+  {
+   "L": 4,
+   "arena": "AXIS-1-0",
+   "dds_free": false,
+   "difference_multiplicities": [
+    2,
+    2,
+    2
+   ],
+   "doubled_subsets": [
+    [
+     [
+      1,
+      0
+     ],
+     [
+      3,
+      0
+     ]
+    ],
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      3,
+      0
+     ]
+    ]
+   ],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": false,
+   "non_monomial": 48,
+   "offsets": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     3,
+     0
+    ]
+   ],
+   "sidon": false,
+   "unitary": 72,
+   "witnesses": [
+    {
+     "coefficients": [
+      [
+       [
+        1,
+        0
+       ],
+       "1/2*z^1+1/2*z^3-1/2*z^5"
+      ],
+      [
+       [
+        3,
+        0
+       ],
+       "-1/2*z^1+1/2*z^3+1/2*z^5"
+      ]
+     ],
+     "support": 2
+    },
+    {
+     "coefficients": [
+      [
+       [
+        1,
+        0
+       ],
+       "1/2*z^1+1/2*z^3-1/2*z^5"
+      ],
+      [
+       [
+        3,
+        0
+       ],
+       "1/2*z^1-1/2*z^3-1/2*z^5"
+      ]
+     ],
+     "support": 2
+    }
+   ]
+  },
+  {
+   "L": 4,
+   "arena": "AXIS-1-1",
+   "dds_free": false,
+   "difference_multiplicities": [
+    2,
+    2,
+    2
+   ],
+   "doubled_subsets": [
+    [
+     [
+      1,
+      1
+     ],
+     [
+      3,
+      3
+     ]
+    ],
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      3,
+      3
+     ]
+    ]
+   ],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": false,
+   "non_monomial": 48,
+   "offsets": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "sidon": false,
+   "unitary": 72,
+   "witnesses": [
+    {
+     "coefficients": [
+      [
+       [
+        1,
+        1
+       ],
+       "1/2*z^1+1/2*z^3-1/2*z^5"
+      ],
+      [
+       [
+        3,
+        3
+       ],
+       "-1/2*z^1+1/2*z^3+1/2*z^5"
+      ]
+     ],
+     "support": 2
+    },
+    {
+     "coefficients": [
+      [
+       [
+        1,
+        1
+       ],
+       "1/2*z^1+1/2*z^3-1/2*z^5"
+      ],
+      [
+       [
+        3,
+        3
+       ],
+       "1/2*z^1-1/2*z^3-1/2*z^5"
+      ]
+     ],
+     "support": 2
+    }
+   ]
+  },
+  {
+   "L": 4,
+   "arena": "AXIS-1-3",
+   "dds_free": false,
+   "difference_multiplicities": [
+    2,
+    2,
+    2
+   ],
+   "doubled_subsets": [
+    [
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      1
+     ]
+    ]
+   ],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": false,
+   "non_monomial": 48,
+   "offsets": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "sidon": false,
+   "unitary": 72,
+   "witnesses": [
+    {
+     "coefficients": [
+      [
+       [
+        1,
+        3
+       ],
+       "1/2*z^1+1/2*z^3-1/2*z^5"
+      ],
+      [
+       [
+        3,
+        1
+       ],
+       "-1/2*z^1+1/2*z^3+1/2*z^5"
+      ]
+     ],
+     "support": 2
+    },
+    {
+     "coefficients": [
+      [
+       [
+        1,
+        3
+       ],
+       "1/2*z^1+1/2*z^3-1/2*z^5"
+      ],
+      [
+       [
+        3,
+        1
+       ],
+       "1/2*z^1-1/2*z^3-1/2*z^5"
+      ]
+     ],
+     "support": 2
+    }
+   ]
+  },
+  {
+   "L": 4,
+   "arena": "LINK-PLUS-4TH",
+   "dds_free": false,
+   "difference_multiplicities": [
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "doubled_subsets": [
+    [
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ]
+    ]
+   ],
+   "maps": 390625,
+   "monomial": 32,
+   "monomial_only": false,
+   "non_monomial": 48,
+   "offsets": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "sidon": false,
+   "unitary": 80,
+   "witnesses": [
+    {
+     "coefficients": [
+      [
+       [
+        1,
+        0
+       ],
+       "1/2"
+      ],
+      [
+       [
+        1,
+        1
+       ],
+       "1/2+1/2*z^6"
+      ],
+      [
+       [
+        1,
+        2
+       ],
+       "-1/2*z^6"
+      ]
+     ],
+     "support": 3
+    },
+    {
+     "coefficients": [
+      [
+       [
+        1,
+        0
+       ],
+       "1/2"
+      ],
+      [
+       [
+        1,
+        1
+       ],
+       "-1/2+1/2*z^6"
+      ],
+      [
+       [
+        1,
+        2
+       ],
+       "1/2*z^6"
+      ]
+     ],
+     "support": 3
+    }
+   ]
+  },
+  {
+   "L": 6,
+   "arena": "LINK",
+   "dds_free": true,
+   "difference_multiplicities": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "doubled_subsets": [],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": true,
+   "non_monomial": 0,
+   "offsets": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "sidon": true,
+   "unitary": 24,
+   "witnesses": []
+  },
+  {
+   "L": 6,
+   "arena": "AXIS-0-1",
+   "dds_free": true,
+   "difference_multiplicities": [
+    2,
+    2,
+    1,
+    1
+   ],
+   "doubled_subsets": [],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": true,
+   "non_monomial": 0,
+   "offsets": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     5
+    ]
+   ],
+   "sidon": false,
+   "unitary": 24,
+   "witnesses": []
+  },
+  {
+   "L": 6,
+   "arena": "AXIS-1-0",
+   "dds_free": true,
+   "difference_multiplicities": [
+    2,
+    2,
+    1,
+    1
+   ],
+   "doubled_subsets": [],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": true,
+   "non_monomial": 0,
+   "offsets": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "sidon": false,
+   "unitary": 24,
+   "witnesses": []
+  },
+  {
+   "L": 6,
+   "arena": "AXIS-1-1",
+   "dds_free": true,
+   "difference_multiplicities": [
+    2,
+    2,
+    1,
+    1
+   ],
+   "doubled_subsets": [],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": true,
+   "non_monomial": 0,
+   "offsets": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     5,
+     5
+    ]
+   ],
+   "sidon": false,
+   "unitary": 24,
+   "witnesses": []
+  },
+  {
+   "L": 6,
+   "arena": "AXIS-1-5",
+   "dds_free": true,
+   "difference_multiplicities": [
+    2,
+    2,
+    1,
+    1
+   ],
+   "doubled_subsets": [],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": true,
+   "non_monomial": 0,
+   "offsets": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     5,
+     1
+    ]
+   ],
+   "sidon": false,
+   "unitary": 24,
+   "witnesses": []
+  },
+  {
+   "L": 6,
+   "arena": "LINK-PLUS-4TH",
+   "dds_free": true,
+   "difference_multiplicities": [
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "doubled_subsets": [],
+   "maps": 390625,
+   "monomial": 32,
+   "monomial_only": true,
+   "non_monomial": 0,
+   "offsets": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "sidon": false,
+   "unitary": 32,
+   "witnesses": []
+  },
+  {
+   "L": 8,
+   "arena": "LINK",
+   "dds_free": true,
+   "difference_multiplicities": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "doubled_subsets": [],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": true,
+   "non_monomial": 0,
+   "offsets": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "sidon": true,
+   "unitary": 24,
+   "witnesses": []
+  },
+  {
+   "L": 8,
+   "arena": "AXIS-0-1",
+   "dds_free": true,
+   "difference_multiplicities": [
+    2,
+    2,
+    1,
+    1
+   ],
+   "doubled_subsets": [],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": true,
+   "non_monomial": 0,
+   "offsets": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     7
+    ]
+   ],
+   "sidon": false,
+   "unitary": 24,
+   "witnesses": []
+  },
+  {
+   "L": 8,
+   "arena": "AXIS-1-0",
+   "dds_free": true,
+   "difference_multiplicities": [
+    2,
+    2,
+    1,
+    1
+   ],
+   "doubled_subsets": [],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": true,
+   "non_monomial": 0,
+   "offsets": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     7,
+     0
+    ]
+   ],
+   "sidon": false,
+   "unitary": 24,
+   "witnesses": []
+  },
+  {
+   "L": 8,
+   "arena": "AXIS-1-1",
+   "dds_free": true,
+   "difference_multiplicities": [
+    2,
+    2,
+    1,
+    1
+   ],
+   "doubled_subsets": [],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": true,
+   "non_monomial": 0,
+   "offsets": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "sidon": false,
+   "unitary": 24,
+   "witnesses": []
+  },
+  {
+   "L": 8,
+   "arena": "AXIS-1-7",
+   "dds_free": true,
+   "difference_multiplicities": [
+    2,
+    2,
+    1,
+    1
+   ],
+   "doubled_subsets": [],
+   "maps": 15625,
+   "monomial": 24,
+   "monomial_only": true,
+   "non_monomial": 0,
+   "offsets": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "sidon": false,
+   "unitary": 24,
+   "witnesses": []
+  },
+  {
+   "L": 8,
+   "arena": "LINK-PLUS-4TH",
+   "dds_free": true,
+   "difference_multiplicities": [
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "doubled_subsets": [],
+   "maps": 390625,
+   "monomial": 32,
+   "monomial_only": true,
+   "non_monomial": 0,
+   "offsets": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "sidon": false,
+   "unitary": 32,
+   "witnesses": []
+  }
+ ],
+ "sidon_prediction": {
+  "necessity_failure_arenas": [
+   "L=6 AXIS-0-1",
+   "L=6 AXIS-1-0",
+   "L=6 AXIS-1-1",
+   "L=6 AXIS-1-5",
+   "L=6 LINK-PLUS-4TH",
+   "L=8 AXIS-0-1",
+   "L=8 AXIS-1-0",
+   "L=8 AXIS-1-1",
+   "L=8 AXIS-1-7",
+   "L=8 LINK-PLUS-4TH"
+  ],
+  "necessity_failures": 10,
+  "quoted": "7d4b0e261299",
+  "rows": [
+   {
+    "L": 4,
+    "arena": "LINK",
+    "monomial_only": true,
+    "necessity_holds": true,
+    "sidon": true,
+    "sufficiency_holds": true,
+    "verdict": "PASSES"
+   },
+   {
+    "L": 4,
+    "arena": "AXIS-0-1",
+    "monomial_only": false,
+    "necessity_holds": true,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "PASSES"
+   },
+   {
+    "L": 4,
+    "arena": "AXIS-1-0",
+    "monomial_only": false,
+    "necessity_holds": true,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "PASSES"
+   },
+   {
+    "L": 4,
+    "arena": "AXIS-1-1",
+    "monomial_only": false,
+    "necessity_holds": true,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "PASSES"
+   },
+   {
+    "L": 4,
+    "arena": "AXIS-1-3",
+    "monomial_only": false,
+    "necessity_holds": true,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "PASSES"
+   },
+   {
+    "L": 4,
+    "arena": "LINK-PLUS-4TH",
+    "monomial_only": false,
+    "necessity_holds": true,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "PASSES"
+   },
+   {
+    "L": 6,
+    "arena": "LINK",
+    "monomial_only": true,
+    "necessity_holds": true,
+    "sidon": true,
+    "sufficiency_holds": true,
+    "verdict": "PASSES"
+   },
+   {
+    "L": 6,
+    "arena": "AXIS-0-1",
+    "monomial_only": true,
+    "necessity_holds": false,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "FAILS-CONVERSE"
+   },
+   {
+    "L": 6,
+    "arena": "AXIS-1-0",
+    "monomial_only": true,
+    "necessity_holds": false,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "FAILS-CONVERSE"
+   },
+   {
+    "L": 6,
+    "arena": "AXIS-1-1",
+    "monomial_only": true,
+    "necessity_holds": false,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "FAILS-CONVERSE"
+   },
+   {
+    "L": 6,
+    "arena": "AXIS-1-5",
+    "monomial_only": true,
+    "necessity_holds": false,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "FAILS-CONVERSE"
+   },
+   {
+    "L": 6,
+    "arena": "LINK-PLUS-4TH",
+    "monomial_only": true,
+    "necessity_holds": false,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "FAILS-CONVERSE"
+   },
+   {
+    "L": 8,
+    "arena": "LINK",
+    "monomial_only": true,
+    "necessity_holds": true,
+    "sidon": true,
+    "sufficiency_holds": true,
+    "verdict": "PASSES"
+   },
+   {
+    "L": 8,
+    "arena": "AXIS-0-1",
+    "monomial_only": true,
+    "necessity_holds": false,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "FAILS-CONVERSE"
+   },
+   {
+    "L": 8,
+    "arena": "AXIS-1-0",
+    "monomial_only": true,
+    "necessity_holds": false,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "FAILS-CONVERSE"
+   },
+   {
+    "L": 8,
+    "arena": "AXIS-1-1",
+    "monomial_only": true,
+    "necessity_holds": false,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "FAILS-CONVERSE"
+   },
+   {
+    "L": 8,
+    "arena": "AXIS-1-7",
+    "monomial_only": true,
+    "necessity_holds": false,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "FAILS-CONVERSE"
+   },
+   {
+    "L": 8,
+    "arena": "LINK-PLUS-4TH",
+    "monomial_only": true,
+    "necessity_holds": false,
+    "sidon": false,
+    "sufficiency_holds": true,
+    "verdict": "FAILS-CONVERSE"
+   }
+  ],
+  "sufficiency_holds_everywhere": true,
+  "verdict": "SUFFICIENT-NOT-NECESSARY"
+ },
+ "source_sha256": {
+  "v14/code/r2_manifold_receipt.json": "08b2140f46ae",
+  "v14/code/r4_defect_stage_receipt.json": "3dc1393b0df8",
+  "v14/code/r4b_momentum_receipt.json": "562e2a3d4d85",
+  "v14/code/r5_gauge_receipt.json": "0c02b7684e5b",
+  "v14/note-coup-adjudication.md": "bacf0af964ae",
+  "v14/note-perl-pin.md": "973b160d52ed",
+  "v14/paper-02-manifold-rung.md": "1a80a5bf1a1b",
+  "v14/paper-10-defect-on-the-stage.md": "1063401c7bb5",
+  "v14/paper-15-momentum.md": "89c636906061",
+  "v14/paper-18-gauge-rung.md": "62cfe5689d2c"
+ },
+ "strata": [
+  {
+   "L": 4,
+   "links": 32,
+   "plaquettes": 16,
+   "strata": [
+    {
+     "covers_every_site_once": true,
+     "links": 8,
+     "stratum": "X-EVEN"
+    },
+    {
+     "covers_every_site_once": true,
+     "links": 8,
+     "stratum": "X-ODD"
+    },
+    {
+     "covers_every_site_once": true,
+     "links": 8,
+     "stratum": "Y-EVEN"
+    },
+    {
+     "covers_every_site_once": true,
+     "links": 8,
+     "stratum": "Y-ODD"
+    }
+   ]
+  },
+  {
+   "L": 6,
+   "links": 72,
+   "plaquettes": 36,
+   "strata": [
+    {
+     "covers_every_site_once": true,
+     "links": 18,
+     "stratum": "X-EVEN"
+    },
+    {
+     "covers_every_site_once": true,
+     "links": 18,
+     "stratum": "X-ODD"
+    },
+    {
+     "covers_every_site_once": true,
+     "links": 18,
+     "stratum": "Y-EVEN"
+    },
+    {
+     "covers_every_site_once": true,
+     "links": 18,
+     "stratum": "Y-ODD"
+    }
+   ]
+  },
+  {
+   "L": 8,
+   "links": 128,
+   "plaquettes": 64,
+   "strata": [
+    {
+     "covers_every_site_once": true,
+     "links": 32,
+     "stratum": "X-EVEN"
+    },
+    {
+     "covers_every_site_once": true,
+     "links": 32,
+     "stratum": "X-ODD"
+    },
+    {
+     "covers_every_site_once": true,
+     "links": 32,
+     "stratum": "Y-EVEN"
+    },
+    {
+     "covers_every_site_once": true,
+     "links": 32,
+     "stratum": "Y-ODD"
+    }
+   ]
+  }
+ ],
+ "sweep_totals": {
+  "gates_passed_in_receipt": 60,
+  "mutants_killed": 48,
+  "mutants_on_target": 48
+ },
+ "totals": {
+  "claims": 21,
+  "gates": 61,
+  "gates_in_receipt": 60,
+  "mutants": 48,
+  "numerals": 83,
+  "path_value_anchors": 38,
+  "seals": 41,
+  "sources": 10,
+  "verbatim_anchors": 9
+ },
+ "unit": "PER-L -- the L-ladder persistence census",
+ "velocity_census": [
+  {
+   "L": 4,
+   "all_integer": true,
+   "non_integer_cells": 0,
+   "non_integer_families": 0,
+   "velocity_cells": 1856,
+   "witness": null
+  },
+  {
+   "L": 6,
+   "all_integer": false,
+   "non_integer_cells": 288,
+   "non_integer_families": 6,
+   "velocity_cells": 3024,
+   "witness": {
+    "axis": [
+     0,
+     3
+    ],
+    "axis_order": 2,
+    "direction": 1,
+    "momentum": [
+     0,
+     0
+    ],
+    "speed": "-3/2",
+    "support": 2
+   }
+  },
+  {
+   "L": 8,
+   "all_integer": true,
+   "non_integer_cells": 0,
+   "non_integer_families": 0,
+   "velocity_cells": 13568,
+   "witness": null
+  }
+ ],
+ "verbatim_anchors": [
+  {
+   "anchor": "VB-SIDON",
+   "chars": 162,
+   "consumer_gate": "G-SIDON-PREDICTION-TESTED",
+   "floor": 60,
+   "long_enough": true,
+   "present": true,
+   "sha256_12": "7d4b0e261299",
+   "source": "A-COUP-ADJ"
+  },
+  {
+   "anchor": "VB-INTERIOR",
+   "chars": 107,
+   "consumer_gate": "G-INTERIOR-RADII",
+   "floor": 60,
+   "long_enough": true,
+   "present": true,
+   "sha256_12": "565e1d0e7262",
+   "source": "A-R4B-PAPER"
+  },
+  {
+   "anchor": "VB-VMAX",
+   "chars": 236,
+   "consumer_gate": "G-VMAX-IS-DIAMETER",
+   "floor": 60,
+   "long_enough": true,
+   "present": true,
+   "sha256_12": "84ba7af4a2c1",
+   "source": "A-R4B-PAPER"
+  },
+  {
+   "anchor": "VB-COLLAPSE",
+   "chars": 188,
+   "consumer_gate": "G-ORD-CENSUS-REPRODUCED",
+   "floor": 60,
+   "long_enough": true,
+   "present": true,
+   "sha256_12": "a25b9a666e6b",
+   "source": "A-R4-PAPER"
+  },
+  {
+   "anchor": "VB-UNIQUE",
+   "chars": 94,
+   "consumer_gate": "G-BAND-LAW",
+   "floor": 60,
+   "long_enough": true,
+   "present": true,
+   "sha256_12": "dd689163ff05",
+   "source": "A-R4-PAPER"
+  },
+  {
+   "anchor": "VB-R2W",
+   "chars": 194,
+   "consumer_gate": "G-LOCALITY-WINDOWS",
+   "floor": 60,
+   "long_enough": true,
+   "present": true,
+   "sha256_12": "f99797854863",
+   "source": "A-R2-PAPER"
+  },
+  {
+   "anchor": "VB-PROFILE",
+   "chars": 143,
+   "consumer_gate": "G-PROFILE-PERSISTS",
+   "floor": 60,
+   "long_enough": true,
+   "present": true,
+   "sha256_12": "1f7d74eabd68",
+   "source": "A-R5-PAPER"
+  },
+  {
+   "anchor": "VB-PIN-STAGES",
+   "chars": 80,
+   "consumer_gate": "G-STAGES-DECLARED",
+   "floor": 60,
+   "long_enough": true,
+   "present": true,
+   "sha256_12": "9baf456a8650",
+   "source": "A-PIN-PERL"
+  },
+  {
+   "anchor": "VB-PIN-SCOPE",
+   "chars": 123,
+   "consumer_gate": "G-WALLS",
+   "floor": 60,
+   "long_enough": true,
+   "present": true,
+   "sha256_12": "35870019e7ef",
+   "source": "A-PIN-PERL"
+  }
+ ],
+ "verdict": {
+  "head": "PERL-SIDON-SUFFICIENT-NOT-NECESSARY",
+  "segments": 10,
+  "string": "PERL-SIDON-SUFFICIENT-NOT-NECESSARY<SIDON=SUFFICIENCY-HOLDS-AT-18-OF-18-ARENAS;LINK-STENCIL-SIDON-AND-MONOMIAL-ONLY-AT-L-6-AND-8(0-AND-0-NON-MONOMIAL-OF-24-AND-24-UNITARY);NECESSITY-FAILS-AT-10-ARENAS(FIRST=L-6-AXIS-0-1)|CONTROL=THE-FOURTH-DIRECTION-DEATH-DOES-NOT-TRANSPORT(REGISTERED-54-REPRODUCED-AT-THE-CONTROL-RUNG;48-AT-L-4;0-AT-L-6-AND-L-8;ALPHABET-RELATIVE-0-OF-25-OVER-THE-PARENTS-OWN-ALPHABET)|LAW=DDS-FREE-FORCES-MONOMIAL-OVER-ANY-FIELD(NO-DIFFERENCE-DOUBLED-SUBSET;13-OF-18-ARENAS-DDS-FREE-AND-ALL-MONOMIAL-ONLY;SIDON-STRICTLY-STRONGER-AT-10-ARENAS)|VMAX=DIAMETER-AT-EVERY-RUNG(2;3;4=L/2)|INTERIOR-RADII=1;2;3(THE-3-AT-L-8-REGISTER-CLAIM-CONFIRMED;EQUAL-TO-THE-LOCALITY-ADMITTING-WIDTH-COUNT-AT-EVERY-RUNG)|FINGERPRINT=(ORDER,SUPPORT)-PROFILE-IDENTICAL-AT-ALL-THREE-RUNGS-ON-ALL-64-ANTIDIAGONAL-COINS(S1-ONE=A3;S2-EDGE=A5;S2-CORNER=A3 x A3;S2-APART=A3 x A3;S3-ROW=A7;S4-BLOCK=A8);GLOBAL-SUPPORT-IS-THE-VOLUME-16;36;64;NO-GROUP-SELECTION-LAW-CLAIMED|SCALE=THE-PARENTS-UNIQUE-SIZE-IS-WINDOW-RELATIVE(ADMITTED-SIZES-AT-WIDTH-r-ARE-THE-EVEN-L-IN-[2r+2,4r];WIDTH-1={4};WIDTH-2={6,8};WIDTH-3={8,10,12};PRESENCE-CONSTRUCTIVE-ABSENCE-FORCED-ONLY-AT-WIDTH-1)|BREAKS=LOCAL-NON-MONOMIAL-FAMILY-EMPTY-FROM-L-6;INTEGER-VELOCITIES-FAIL-AT-L-6(SPEED-3/2-ON-AN-ORDER-2-AXIS);EIGENPHASE-LATTICE-TRANSFORMS-Z/lcm(8,L)|TABLE=24-ROWS(11-PERSIST;5-BREAK;8-TRANSFORM)|SCOPE=D=2;RUNGS=L-IN-{4,6,8};FIELD=Q(ZETA-24);ALPHABET=25;STENCIL=3-TERM-AXIS-AND-THE-ANCHORED-LINK-SET;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));SECTOR=SINGLE-OCCUPATION;INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-TRANSPORT-NUMBER-INHERITED;PERSISTENCE-AT-DECLARED-FINITE-RUNGS-ONLY>"
+ },
+ "vmax_census": [
+  {
+   "L": 4,
+   "antipodal_offset": [
+    2,
+    2
+   ],
+   "antipodal_unitary": true,
+   "bound": "L/2 = 2",
+   "diameter": 2,
+   "families_attaining": 7,
+   "vmax": "2",
+   "vmax_equals_diameter": true
+  },
+  {
+   "L": 6,
+   "antipodal_offset": [
+    3,
+    3
+   ],
+   "antipodal_unitary": true,
+   "bound": "L/2 = 3",
+   "diameter": 3,
+   "families_attaining": 11,
+   "vmax": "3",
+   "vmax_equals_diameter": true
+  },
+  {
+   "L": 8,
+   "antipodal_offset": [
+    4,
+    4
+   ],
+   "antipodal_unitary": true,
+   "bound": "L/2 = 4",
+   "diameter": 4,
+   "families_attaining": 15,
+   "vmax": "4",
+   "vmax_equals_diameter": true
+  }
+ ],
+ "waiver_ledger": [
+  {
+   "falsifier": "MUT-ALPHABET",
+   "gate": "G-ALPHABET-REBUILT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-ALT",
+   "gate": "G-ALTERNATING-ON-ORBITS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "forcing": "a rebuild identity: it compares two independently computed objects, or evaluates a per-object predicate over a table it did not build, and cannot pass unless they agree",
+   "gate": "G-ARENA-DECLARED",
+   "status": "STRUCTURAL"
+  },
+  {
+   "forcing": "evaluated only in the writing path, which no diagnostic run reaches; it is two-way by construction -- a deliberately corrupted payload is written to a probe path, re-read and required to be detected -- and its reference is the GATE-TIME SEAL, whose in-run half G-SEAL-COMPLETE carries the injection falsifier MUT-SEAL-BROKEN",
+   "gate": "G-ARTIFACT-INTEGRITY",
+   "status": "WAIVED"
+  },
+  {
+   "falsifier": "MUT-AXIS-DROP",
+   "gate": "G-AXIS-SET-EXHAUSTIVE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-BAND",
+   "gate": "G-BAND-LAW",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "forcing": "a rebuild identity: it compares two independently computed objects, or evaluates a per-object predicate over a table it did not build, and cannot pass unless they agree",
+   "gate": "G-CHOICES-INVENTORIED",
+   "status": "STRUCTURAL"
+  },
+  {
+   "falsifier": "MUT-COIN",
+   "gate": "G-COIN-ALPHABET-DERIVED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-DDS",
+   "gate": "G-DDS-CRITERION-SOUND",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "forcing": "a rebuild identity: it compares two independently computed objects, or evaluates a per-object predicate over a table it did not build, and cannot pass unless they agree",
+   "gate": "G-DISPERSION-REPRODUCES-THE-PARENT",
+   "status": "STRUCTURAL"
+  },
+  {
+   "falsifier": "MUT-EIGENLATTICE",
+   "gate": "G-EIGENPHASE-LATTICE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-EIGEN",
+   "gate": "G-EIGENVALUES-ROOTS-OF-UNITY",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-DESCRIPTION",
+   "gate": "G-FALSIFIER-DESCRIPTIONS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-CONTROL",
+   "gate": "G-FOURTH-DIRECTION-CONTROL",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-FRACTION",
+   "gate": "G-FRACTIONS-STAMPED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "forcing": "evaluated after the mutant sweep, so no in-process mutant can reach it; it is a coverage identity over the CLOSED ledger and the closed gate rows, and it cannot pass unless the two sets agree",
+   "gate": "G-GATE-LEDGER-COVERS-THE-RUN",
+   "status": "WAIVED"
+  },
+  {
+   "falsifier": "MUT-GATE-CHAIN",
+   "gate": "G-GATE-ROWS-SEALED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "forcing": "evaluated after the mutant sweep, so no in-process mutant can reach it; its falsifier is every mutant that adds or removes a gate -- the sweep runs 48 of them and the ledger closes at the predicted number on the delivery run alone",
+   "gate": "G-GATES-CLOSED-AS-PREDICTED",
+   "status": "WAIVED"
+  },
+  {
+   "falsifier": "MUT-GAUGE-ORBIT",
+   "gate": "G-GAUGE-ORBITS-FREE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-GLOBAL",
+   "gate": "G-GLOBAL-SUPPORT-IS-THE-VOLUME",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-VELOCITY",
+   "gate": "G-INTEGER-VELOCITY-CENSUS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-INTERIOR",
+   "gate": "G-INTERIOR-RADII",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-LAG",
+   "gate": "G-LAG-SUPPORT-STRUCTURAL",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-LOCALITY",
+   "gate": "G-LOCALITY-WINDOWS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "forcing": "the gate that adjudicates the mutant sweep cannot itself be a mutant's target; its falsifier is the sweep, and every surviving or off-target injection fails it -- exercised by all declared mutants on every run",
+   "gate": "G-MUTANTS-ON-TARGET",
+   "status": "WAIVED"
+  },
+  {
+   "falsifier": "MUT-FLOAT",
+   "gate": "G-NO-FLOATS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-WRAP",
+   "gate": "G-NON-WRAPPING",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "forcing": "a rebuild identity: it compares two independently computed objects, or evaluates a per-object predicate over a table it did not build, and cannot pass unless they agree",
+   "gate": "G-NOT-EXECUTED-EMPTY",
+   "status": "STRUCTURAL"
+  },
+  {
+   "falsifier": "MUT-ORD",
+   "gate": "G-ORD-CENSUS-REPRODUCED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-PAPER-POLARITY",
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-PAPER-CLAIM",
+   "gate": "G-PAPER-CLAIMS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "forcing": "evaluated after the mutant sweep closes the instrument's totals, so no in-process mutant can reach it; its in-run twins G-PAPER-CLAIMS, G-PAPER-NUMERAL-COVERAGE, G-PAPER-INLINE-SPANS, G-PAPER-FENCED-MULTISET and G-PAPER-CLAIM-POLARITY carry the injection falsifiers and die on every sweep",
+   "gate": "G-PAPER-COVERAGE-FINAL",
+   "status": "WAIVED"
+  },
+  {
+   "falsifier": "MUT-PAPER-FENCE",
+   "gate": "G-PAPER-FENCED-MULTISET",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-PAPER-SPAN",
+   "gate": "G-PAPER-INLINE-SPANS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-PAPER-NUMERAL",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-PAPER-TABLE",
+   "gate": "G-PAPER-TABLES-AS-CLAIMS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-PAPER-VERDICT",
+   "gate": "G-PAPER-VERDICT-BLOCK",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-PARTITION",
+   "gate": "G-PARTITION-COROLLARY",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-PATH-VALUE",
+   "gate": "G-PATH-VALUE-ANCHORS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-TABLE",
+   "gate": "G-PERSISTENCE-TABLE-BOUND",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-POOL",
+   "gate": "G-POOL-REPRODUCES-THE-PARENT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-PROFILE",
+   "gate": "G-PROFILE-PERSISTS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "forcing": "evaluated after the mutant sweep adds the post-sweep keys, so no in-process mutant can reach it; its in-run twin G-SEAL-MANIFEST-TOTAL carries the injection falsifier MUT-SEAL-MANIFEST and evaluates the same predicate over the predicted key set on every sweep",
+   "gate": "G-PUBLISHED-KEYS-COVERED",
+   "status": "WAIVED"
+  },
+  {
+   "falsifier": "MUT-EXTRA-READ",
+   "gate": "G-RUNTIME-INPUTS-ENUMERATED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-SEAL-BROKEN",
+   "gate": "G-SEAL-COMPLETE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-SEAL-MANIFEST",
+   "gate": "G-SEAL-MANIFEST-TOTAL",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-SIDON",
+   "gate": "G-SIDON-MEASURED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-SIDON-VERDICT",
+   "gate": "G-SIDON-PREDICTION-TESTED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-SOURCE-DIGEST",
+   "gate": "G-SOURCES-PINNED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "forcing": "evaluated before any gate ledger exists, as the loud clean abort a provisioning failure earns; its falsifier is the off-tree battery, which runs the instrument from a copy with a source removed and requires exit 1 with nothing written",
+   "gate": "G-SOURCES-PRESENT",
+   "status": "WAIVED"
+  },
+  {
+   "forcing": "a rebuild identity: it compares two independently computed objects, or evaluates a per-object predicate over a table it did not build, and cannot pass unless they agree",
+   "gate": "G-STAGES-DECLARED",
+   "status": "STRUCTURAL"
+  },
+  {
+   "falsifier": "MUT-STRATA",
+   "gate": "G-STRATA-PERFECT-MATCHINGS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "forcing": "a rebuild identity: it compares two independently computed objects, or evaluates a per-object predicate over a table it did not build, and cannot pass unless they agree",
+   "gate": "G-TOTALS-REDERIVED",
+   "status": "STRUCTURAL"
+  },
+  {
+   "falsifier": "MUT-TWO-ROUTE",
+   "gate": "G-TWO-ROUTE-POOL",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-VERBATIM-FRAGMENT",
+   "gate": "G-VERBATIM-ANCHORS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-HEAD",
+   "gate": "G-VERDICT-PREREGISTERED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-VERDICT",
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-ATTAINED",
+   "gate": "G-VMAX-ATTAINED-BY-THE-ANTIPODE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-VMAX",
+   "gate": "G-VMAX-IS-DIAMETER",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "forcing": "a rebuild identity: it compares two independently computed objects, or evaluates a per-object predicate over a table it did not build, and cannot pass unless they agree",
+   "gate": "G-WAIVERS-VERIFIED",
+   "status": "STRUCTURAL"
+  },
+  {
+   "falsifier": "MUT-WALLS",
+   "gate": "G-WALLS",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-WIDTH",
+   "gate": "G-WIDTH-COUNT-EQUALS-INTERIOR-RADII",
+   "status": "FALSIFIABLE"
+  }
+ ],
+ "width_count": [
+  {
+   "L": 4,
+   "equal": true,
+   "interior_radii": 1,
+   "locality_admitting_widths": 1,
+   "widths": [
+    1
+   ]
+  },
+  {
+   "L": 6,
+   "equal": true,
+   "interior_radii": 2,
+   "locality_admitting_widths": 2,
+   "widths": [
+    1,
+    2
+   ]
+  },
+  {
+   "L": 8,
+   "equal": true,
+   "interior_radii": 3,
+   "locality_admitting_widths": 3,
+   "widths": [
+    1,
+    2,
+    3
+   ]
+  }
+ ]
+}

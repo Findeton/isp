@@ -1,0 +1,123 @@
+==============================================================================
+v14 PER-L -- THE L-LADDER PERSISTENCE CENSUS
+==============================================================================
+
+running 48 declared mutants
+    mutants: 48 declared, 48 killed, 48 killed by their declared target
+==============================================================================
+PER-L -- THE L-LADDER PERSISTENCE CENSUS
+
+STAGE 1  THE SIDON TEST
+  L    arena          sidon  dds-free  difference mults         maps   unit  non-m
+  4    LINK           True   True      [1, 1, 1, 1, 1, 1]      15625     24      0
+  4    AXIS-0-1       False  False     [2, 2, 2]               15625     72     48
+  4    AXIS-1-0       False  False     [2, 2, 2]               15625     72     48
+  4    AXIS-1-1       False  False     [2, 2, 2]               15625     72     48
+  4    AXIS-1-3       False  False     [2, 2, 2]               15625     72     48
+  4    LINK-PLUS-4TH  False  False     [2, 2, 2, 1, 1, 1, 1, 1, 1] 390625     80     48
+  6    LINK           True   True      [1, 1, 1, 1, 1, 1]      15625     24      0
+  6    AXIS-0-1       False  True      [2, 2, 1, 1]            15625     24      0
+  6    AXIS-1-0       False  True      [2, 2, 1, 1]            15625     24      0
+  6    AXIS-1-1       False  True      [2, 2, 1, 1]            15625     24      0
+  6    AXIS-1-5       False  True      [2, 2, 1, 1]            15625     24      0
+  6    LINK-PLUS-4TH  False  True      [2, 2, 1, 1, 1, 1, 1, 1, 1, 1] 390625     32      0
+  8    LINK           True   True      [1, 1, 1, 1, 1, 1]      15625     24      0
+  8    AXIS-0-1       False  True      [2, 2, 1, 1]            15625     24      0
+  8    AXIS-1-0       False  True      [2, 2, 1, 1]            15625     24      0
+  8    AXIS-1-1       False  True      [2, 2, 1, 1]            15625     24      0
+  8    AXIS-1-7       False  True      [2, 2, 1, 1]            15625     24      0
+  8    LINK-PLUS-4TH  False  True      [2, 2, 1, 1, 1, 1, 1, 1, 1, 1] 390625     32      0
+  the prediction: sufficiency holds everywhere=True; necessity fails at 10 arenas (L=6 AXIS-0-1, L=6 AXIS-1-0, L=6 AXIS-1-1, L=6 AXIS-1-5, L=6 LINK-PLUS-4TH, L=8 AXIS-0-1, L=8 AXIS-1-0, L=8 AXIS-1-1, L=8 AXIS-1-7, L=8 LINK-PLUS-4TH)
+  the control, at the control rung:
+    LINK           alphabet R4-25      (25) maps=15625   unitary=24   non-monomial=0
+    LINK           alphabet UNIT-7     ( 7) maps=343     unitary=18   non-monomial=0
+    LINK           alphabet THIRDS-19  (19) maps=6859    unitary=18   non-monomial=0
+    LINK-PLUS-4TH  alphabet R4-25      (25) maps=390625  unitary=32   non-monomial=0
+    LINK-PLUS-4TH  alphabet UNIT-7     ( 7) maps=2401    unitary=24   non-monomial=0
+    LINK-PLUS-4TH  alphabet THIRDS-19  (19) maps=130321  unitary=78   non-monomial=54
+    registered count reproduced: 54
+
+STAGE 2  VMAX = DIAMETER, AND THE INTERIOR RADII
+  L    families cells     VMAX      diameter  interior 
+  4    58       928       2         2         1        
+  6    42       1512      3         3         2        
+  8    106      6784      4         4         3        
+  L=4 velocity cells 1856, non-integer families 0 
+  L=6 velocity cells 3024, non-integer families 6 witness: axis [0, 3] of order 2 at speed -3/2
+  L=8 velocity cells 13568, non-integer families 0 
+
+STAGE 3  THE GAUGE FINGERPRINT
+  coins 640 = {'ANTIDIAGONAL': 64, 'DIAGONAL': 64, 'BALANCED': 512}
+  L    stencil    class        order    support  certified
+  4    S1-ONE     A3           3        3        True
+  4    S2-EDGE    A5           60       5        True
+  4    S2-CORNER  A3xA3        9        6        True
+  4    S2-APART   A3xA3        9        6        True
+  4    S3-ROW     A7           2520     7        True
+  4    S4-BLOCK   A8           20160    8        True
+  6    S1-ONE     A3           3        3        True
+  6    S2-EDGE    A5           60       5        True
+  6    S2-CORNER  A3xA3        9        6        True
+  6    S2-APART   A3xA3        9        6        True
+  6    S3-ROW     A7           2520     7        True
+  6    S4-BLOCK   A8           20160    8        True
+  8    S1-ONE     A3           3        3        True
+  8    S2-EDGE    A5           60       5        True
+  8    S2-CORNER  A3xA3        9        6        True
+  8    S2-APART   A3xA3        9        6        True
+  8    S3-ROW     A7           2520     7        True
+  8    S4-BLOCK   A8           20160    8        True
+  L=4 S-ALL orbits 1 support 16 volume 16 class A16
+  L=6 S-ALL orbits 1 support 36 volume 36 class A36
+  L=8 S-ALL orbits 1 support 64 volume 64 class A64
+
+STAGE 4  LOCALITY WINDOWS
+  L    r    neighbours  offsets   complete  locality b1
+  4    1    8           15        False     True     49
+  4    2    15          15        True      False    105
+  6    1    8           35        False     True     109
+  6    2    24          35        False     True     397
+  6    3    35          35        True      False    595
+  8    1    8           63        False     True     193
+  8    2    24          63        False     True     705
+  8    3    48          63        False     True     1473
+  8    4    63          63        True      False    1953
+  L=4 locality-admitting widths 1 = interior radii 1
+  L=6 locality-admitting widths 2 = interior radii 2
+  L=8 locality-admitting widths 3 = interior radii 3
+  width r=1 admitted sizes [4]; predicted [4]
+  width r=2 admitted sizes [6, 8]; predicted [6, 8]
+  width r=3 admitted sizes [8, 10, 12]; predicted [8, 10, 12]
+
+STAGE 5  THE PERSISTENCE TABLE
+  the LINK stencil is Sidon                            True               True               True               PERSISTS
+  monomial-only on the LINK stencil                    0                  0                  0                  PERSISTS
+  the local AXIS stencil is Sidon                      False              False              False              PERSISTS
+  non-monomial generators on a local AXIS stencil      48                 0                  0                  BREAKS-AT-L=6
+  the local AXIS stencil is DDS-free                   False              True               True               BREAKS-AT-L=6
+  the fourth-direction death                           48                 0                  0                  BREAKS-AT-L=6
+  circulant families in the pool                       58                 42                 106                TRANSFORMS
+  non-monomial families in the pool                    42                 6                  42                 TRANSFORMS
+  local non-monomial families in the pool              24                 0                  0                  BREAKS-AT-L=6
+  VMAX                                                 2                  3                  4                  TRANSFORMS
+  VMAX equals the max-norm diameter                    True               True               True               PERSISTS
+  interior radii                                       1                  2                  3                  TRANSFORMS
+  locality-admitting window widths                     1                  2                  3                  TRANSFORMS
+  static families                                      1                  1                  1                  PERSISTS
+  the reduced dispersion separates families            True               True               True               PERSISTS
+  every eigenvalue is a root of unity                  True               True               True               PERSISTS
+  the eigenphase lattice                               8                  24                 8                  TRANSFORMS
+  all group velocities are integers                    True               False              True               BREAKS-AT-L=6
+  the coin family and its sector split                 640=64+64+512      640=64+64+512      640=64+64+512      PERSISTS
+  the parity strata are perfect matchings              True               True               True               PERSISTS
+  the (order, support) profile                         S1-ONE=3/3;S2-EDGE S1-ONE=3/3;S2-EDGE S1-ONE=3/3;S2-EDGE PERSISTS
+  the holonomy is alternating on each of its orbits    True               True               True               PERSISTS
+  the global support                                   16                 36                 64                 TRANSFORMS
+  the window widths at which this size is admitted     [1]                [2]                [2, 3]             TRANSFORMS
+
+  24 rows: 11 persist, 5 break, 8 transform
+  1952424 coefficient maps scanned; 2940 axis-and-lag objects bound
+  gates 61 (60 in the receipt); mutants 48
+
+PERL-SIDON-SUFFICIENT-NOT-NECESSARY
+PERL-SIDON-SUFFICIENT-NOT-NECESSARY<SIDON=SUFFICIENCY-HOLDS-AT-18-OF-18-ARENAS;LINK-STENCIL-SIDON-AND-MONOMIAL-ONLY-AT-L-6-AND-8(0-AND-0-NON-MONOMIAL-OF-24-AND-24-UNITARY);NECESSITY-FAILS-AT-10-ARENAS(FIRST=L-6-AXIS-0-1)|CONTROL=THE-FOURTH-DIRECTION-DEATH-DOES-NOT-TRANSPORT(REGISTERED-54-REPRODUCED-AT-THE-CONTROL-RUNG;48-AT-L-4;0-AT-L-6-AND-L-8;ALPHABET-RELATIVE-0-OF-25-OVER-THE-PARENTS-OWN-ALPHABET)|LAW=DDS-FREE-FORCES-MONOMIAL-OVER-ANY-FIELD(NO-DIFFERENCE-DOUBLED-SUBSET;13-OF-18-ARENAS-DDS-FREE-AND-ALL-MONOMIAL-ONLY;SIDON-STRICTLY-STRONGER-AT-10-ARENAS)|VMAX=DIAMETER-AT-EVERY-RUNG(2;3;4=L/2)|INTERIOR-RADII=1;2;3(THE-3-AT-L-8-REGISTER-CLAIM-CONFIRMED;EQUAL-TO-THE-LOCALITY-ADMITTING-WIDTH-COUNT-AT-EVERY-RUNG)|FINGERPRINT=(ORDER,SUPPORT)-PROFILE-IDENTICAL-AT-ALL-THREE-RUNGS-ON-ALL-64-ANTIDIAGONAL-COINS(S1-ONE=A3;S2-EDGE=A5;S2-CORNER=A3 x A3;S2-APART=A3 x A3;S3-ROW=A7;S4-BLOCK=A8);GLOBAL-SUPPORT-IS-THE-VOLUME-16;36;64;NO-GROUP-SELECTION-LAW-CLAIMED|SCALE=THE-PARENTS-UNIQUE-SIZE-IS-WINDOW-RELATIVE(ADMITTED-SIZES-AT-WIDTH-r-ARE-THE-EVEN-L-IN-[2r+2,4r];WIDTH-1={4};WIDTH-2={6,8};WIDTH-3={8,10,12};PRESENCE-CONSTRUCTIVE-ABSENCE-FORCED-ONLY-AT-WIDTH-1)|BREAKS=LOCAL-NON-MONOMIAL-FAMILY-EMPTY-FROM-L-6;INTEGER-VELOCITIES-FAIL-AT-L-6(SPEED-3/2-ON-AN-ORDER-2-AXIS);EIGENPHASE-LATTICE-TRANSFORMS-Z/lcm(8,L)|TABLE=24-ROWS(11-PERSIST;5-BREAK;8-TRANSFORM)|SCOPE=D=2;RUNGS=L-IN-{4,6,8};FIELD=Q(ZETA-24);ALPHABET=25;STENCIL=3-TERM-AXIS-AND-THE-ANCHORED-LINK-SET;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));SECTOR=SINGLE-OCCUPATION;INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-TRANSPORT-NUMBER-INHERITED;PERSISTENCE-AT-DECLARED-FINITE-RUNGS-ONLY>

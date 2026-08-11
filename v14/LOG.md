@@ -6571,3 +6571,57 @@ finding depending on them; routed to the repair battery.  The
 four MAJORs and twelve MINORs unchanged.  Review re-frozen at
 its updated sha (v2); the #212 entry's findings stand
 verbatim.
+
+## 2026-08-11 — PER-L (PAPER-28) DELIVERED: THE SIDON PREDICTION HALF RIGHT — SUFFICIENT-NOT-NECESSARY, THE DDS THEOREM REPLACES IT; 11 PERSIST / 5 BREAK / 8 TRANSFORM; COMMIT-AS-IS (v14 LEDGER #214)
+
+The persistence worker delivered; all candidate readings.
+**THE SIDON VERDICT — PERL-SIDON-SUFFICIENT-NOT-NECESSARY:**
+sufficiency PASSES 18/18 arenas (the anchored LINK stencil
+Sidon at every rung; 24 unitary / 0 non-monomial at L=6 AND
+L=8 — the prediction's direction at rungs its author never
+ran); **necessity FAILS at 10 arenas** (the AXIS stencil at
+L=6/8 is NOT Sidon — multiplicities [2,2,1,1] — yet
+monomial-only exhaustively: 48 non-monomial at L=4 → 0 at
+L=6 → 0 at L=8; first counterexample L=6 AXIS-0-1); **the
+control does NOT transport** (paper-20's 54 REPRODUCED
+EXACTLY by independent rebuild, then shown ALPHABET-RELATIVE:
+the same declared fourth direction gives 48/0/0 across rungs
+and 0 at the control rung over the parents' own 25-element
+alphabet — "dies at any declared fourth direction" is FALSE
+AS STATED); **THE REPLACEMENT IS A THEOREM, field-free,
+proved + gated: the support of any unitary map is
+difference-doubled ⟹ NO DIFFERENCE-DOUBLED SUBSET ⟹
+MONOMIAL-ONLY, over any field** — Sidon ⊊ DDS-free; subsumes
+R4's order-collapse, the alphabet-relative order-3 gap, and
+the coset mechanism as ONE criterion (13/18 arenas DDS-free,
+all monomial-only, zero counterexamples).  VMAX = 2,3,4 =
+diameter = L/2 at all rungs, ATTAINED; **interior radii 1,2,3
+— the register's 3-at-L-8 CONFIRMED**.  FINGERPRINT PERSISTS
+(640 = 64+64+512 L-independent; the (order,support) profile
+IDENTICAL at all three rungs; alternating certified; support
+= volume).  LOCALITY: admitting widths 1,2,3 = THE
+INTERIOR-RADIUS COUNT at every rung (gated join — a new
+cross-instrument identity); every blockwise atlas clique-only
+— SLIDING-only, R2's shape.  **THE PERSISTENCE TABLE — 24
+rows: 11 PERSIST, 5 BREAK, 8 TRANSFORM; all five breaks at
+L=6** (four = one failure, the DDS criterion turning on; the
+fifth independent: **INTEGER VELOCITIES BREAK at L=6 — an
+order-2 axis at speed 3/2**); the eigenphase lattice
+TRANSFORMS as Z/lcm(8,L) — **R4's Z/8 was the coincidence
+lcm(8,4)=8**.  THE BIGGEST SURPRISE: **R4's unique admissible
+size is WINDOW-RELATIVE** — width 1 → {4} (reproducing the
+anchored [4] by a different argument), width 2 → {6,8},
+width 3 → {8,10,12}; presence constructive (explicit unitary
+verified by the parent's own criterion); absence forced only
+at width 1; the worker itself flags this row as most wanting
+a second look (it reverses a parent headline with a one-sided
+argument above the parent's width) [panel: attack this row
+first].  Windows/fibers declared incl. the DDS census at
+|S|≤12; two fractions COUNTING-ONLY.  Counts: 1,952,424 maps
+scanned; 60 gates; 48/48 mutants; 41 seals; E-22 coverage
+(15 spans, 2 fences multiset, 42 table rows rendered); byte
+×2 + off-tree git-less; loud clean abort.  Shas: paper
+bd0298e2a482, code 976d5b9e4ac8, output e4ff37a7a13e,
+receipt 54ec5a9e9b72.  Committed AS-IS; battery next; panel
+after.  PREDICTION-LEDGER UPDATE (entry g): tested —
+HALF-RIGHT; successor entry: the DDS-free criterion.
