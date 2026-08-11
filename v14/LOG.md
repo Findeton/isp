@@ -6868,3 +6868,50 @@ incl. arity; byte ×2 across seeds; loud abort.  Reviewers →
 v14/review-gdl-{operator,effectus,instrument}.md.  Objects at
 4c85ca4: e98003841378 / 81595d600575 / 39128fafc7bf /
 b87016e96285; pin fe9533371046.
+
+## 2026-08-11 — PER-L EFFECTUS REVIEW LANDED (K2): AWF — THE BAND'S HEAD SENTENCE FALSE AT AN ODD-L WITNESS; FIVE BREAKS ARE ONE MECHANISM; THE LEDGER RECORDS THREE PARTS (v14 LEDGER #223)
+
+v14/review-perl-effectus.md (d4945b1b5e3f) frozen.  **Grade
+AWF; ~300 independent recomputations (own Q(ζ₂₄), own
+autocorrelation scan; the 90-cell table, the band identity +
+6 witnesses, 1,952,424 maps — every one exact); ZERO delivered
+numbers moved — every finding a reading, attribution, or
+scope stamp.**  FIVE MAJORS: **M1 (the band, the attack
+landing where the unit did not defend): the head's
+"ADMITTED-SIZES ARE the even L in [2r+2,4r]" is FALSE under
+the parent's meaning of admitted — measured counterexample
+L=9, WIDTH 3, ODD: locality holds, the radius-3 ball carries
+the coset, c=(1/3,−2/3,−2/3) unitary at all 81 lags by R4's
+own criterion, non-monomial; over THIRDS-19 the coset carries
+54 — the unit's own control number.  The evenness clause is
+ALPHABET-RELATIVE — R4's order-3 gap recurring one width up.
+The absence half above width 1 stays honestly open.**  M2:
+R4 §3 already proved the field-free Moore-ball collapse
+(uncited) — DDS subsumes FOUR prior results and this is a
+SECOND relativity, not a reversal.  **M3: the "unrelated"
+fifth break is the SAME mechanism — the 6 non-integer-
+velocity families at L=6 are exactly the 6 non-monomial
+families (monomial ⟹ integer velocity, one line): five
+breaks are ONE mechanism with a residue — stronger than
+delivered.**  M4: NO successor register; the logged successor
+"DDS-free ⟹ no interference" is a THEOREM not a prediction —
+the falsifiable converse (DDS-carrying ⟹ interference) is
+measured 5/5 in the receipt UNREPORTED and already falsified
+alphabet-relatively by M1's witness.  M5: two of three
+fingerprint rungs are R5's own published table (only L=6
+new; attribution).  DECISIVE ROWS: **the prediction ledger
+records THREE PARTS, not a fraction — mechanism CONFIRMED;
+transport to R=4 CLOSED BY THEOREM (LINK is Sidon at every
+L≥3 ⟹ DDS-free ⟹ monomial-only over ANY field incl.
+(1/3)Z[ω] — no R-ladder run needed, A GIFT TO PER-R);
+control REFUTED-AS-STATED** (the universal "any" entered at
+the compression step — named); **R4 NEEDS A SCOPE-ANNOTATION
+NOTE** (body self-scopes to radius one twice, head does not;
+LOCALITY-IFF-L≥4 false at width 2; the register row written
+verbatim; the trichotomies gain a fourth branch WIDEN-THE-
+WINDOW); paper-20 needs NO edit (both rows correct as
+written; 78-vs-72 reconciled); four BREAKS earned, the DDS
+row renamed (11/5/8 preserved); **the width=interior-radius
+join is FORCED (both = {1,…,diam−1}, any connective, any L)
+— a theorem, not a coincidence**; VMAX intact, no R4b
+collision.  15 MINORs.  → adjudication when K1+K3 land.
