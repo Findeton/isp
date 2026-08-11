@@ -6489,3 +6489,30 @@ excused; E-22/E-23 consequences stand as MAJOR only because
 M3/M5 NOT excused.  Two reviewer self-corrections recorded
 in-review (a shell-pipe rc bug; INJ-18 withdrawn).  → THE
 ADJUDICATION (all three seats in).
+
+## 2026-08-11 — PAPER-21 ADJUDICATION: ALL FOUR HEADS STAND-STRENGTHENED; TWELVE ORDERS; THE SIG BINDING AND PER-R INHERITANCE ADOPTED; REPAIR LAUNCHED (v14 LEDGER #211)
+
+v14/note-r4dec-adjudication.md frozen.  Three seats AWF (~871
+recomputations incl. a clean-room rebuild; K1 ZERO MAJORS),
+zero delivered numbers moved.  ALL FOUR STAGE HEADS
+STAND-STRENGTHENED (saturation gap 2; the
+no-in-arena-control theorem; THE LADDER LAW R≡0-mod-3 —
+weld-3 the first rung of the only ladder; G-SINGULAR by block
+quantisation; W4 under-claims; E-24 measure-stable).
+RULINGS: the LOR door at R=6 GOVERNS THE PLAN (LOR-A first);
+**the SIG binding adopted verbatim (reachability before
+polarity; floors R=5/R=8/horizon≥6)**; the PER-R inheritance
+adopted (saturation-as-schema; three falsifiable
+predictions; the price sequence CLOSES at R=4 — R=5 is the
+slack census); DIA-COMPULSORY adopted (the diagonal's third
+appearance); no new engraving (E-22/E-23/comparator third
+recurrence noted; birth-date rulings accepted).  TWELVE
+repair orders S1–S12 (the scoped impossibility; the R=6
+door in-code; multiset fences; tables as claims; the honest
+coverage statement; the seven constant-False falsifiers
+replaced by shadow-object mutants; the comparator
+de-literaled with q DERIVED at all three sites; the
+census-total conjunct; the slack-census framing; the DIA
+gate; the MINOR sweep; the three-measure stamps).  Repair
+worker launched (Opus).  After repair + battery: paper-21
+TERMINAL (the nineteenth) → SIG + PER-R pins unlock.
