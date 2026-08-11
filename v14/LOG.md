@@ -4885,3 +4885,42 @@ G-ADMISSIBLE, artifacts unchanged.  The unit stands verified at
 the #82 contract at my own hands; the panel (#163) carries the
 era audit, the FOUND rebuild, the meaning calibration, and the
 #91 settlement.
+
+## 2026-08-10 — PAPER-19 OPERATOR FROZEN (1 OF 3): FOUND STANDS (v14 LEDGER #165)
+
+review-r3w-operator.md frozen.  Grade AWF; 190 recomputations;
+**everything rebuilt from nothing** (own d42b1 slicer, picker,
+generalized conflict-grid driver anchored event-for-event
+against d66's own routines, own detector, a geometry census on
+two routes neither the unit's — incl. a separable-convolution
+det spectrum that never enumerates a triple); ALL REPRODUCED
+incl. the 18 census rows, 5 controls, the 1296/1296 with fibers
+1/1/1, the full posdef distribution WITH THE EMPTY CELL AT 8,
+and the fragility contrast; plain run byte-identical off-tree.
+**THE ATTACKS ALL FAILED AGAINST FOUND:** (a) the window
+smuggles nothing — "one arena" is a THEOREM (any I7-STRICT
+triple forces the realised relation to be exactly the 27
+non-ANT pairs), so FOUND holds at ALL 72 / ALL 12 multisets
+without driving; (b) the detector naming-blind, verified by
+relabelling, fibers measured at EVERY base map; (d) two
+readings the unit didn't run — **the strictest available
+(site-carrier-fixed) STILL leaves FOUND: the primary result
+does not need the free site assignment at all.**  FREE
+STRENGTHENINGS: posdef ⟺ I7-STRICT holds SITEWISE over all 64
+reachable codes (the rigidity a corollary of a sitewise
+identity); **1296 = |Aut(K₃,₃,₃)|** — the map count is the
+automorphism group of the tripartite conflict structure, making
+FOUND stratum-wide rather than exhibited.  **MAJOR-1 (the one
+kill, on a sub-claim): §5.7's count-sufficiency is FALSE AS
+WORDED** — the committed R=3 grid deposits 27 incidences on 18
+DISTINCT CELLS; "27 incidences force field≡1" has 46,584
+counterexamples of 46,656 (one of them the unit's own
+COUNT-DEAD row); the true statement is §4.2's
+"27 incidences spread over ALL 27 cells"; the 18 was a typed
+literal in an evidence string no gate could catch — **the
+register's 11th false paper claim (prose)**; exact repairs
+given; FOUND and necessity unaffected.  Three MINORs.
+HOUSEKEEPING FLAG for the adjudication: another panel process
+ran the delivery with cwd inside v14/code (in-tree, against
+protocol; byte-identical so nothing moved) — identify and rule.
+Two seats pending.
