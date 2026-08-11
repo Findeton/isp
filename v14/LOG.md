@@ -5822,3 +5822,40 @@ no-chart-reversal fact measured-published-UNGATED (no mutant);
 stochastic kernel on a domino [= K2's title-sentence kill,
 independently].  Not charged: 56 = the sealed-snapshot count
 with late_gates:2 disclosed.  → adjudication when K3 lands.
+
+## 2026-08-11 — PAPER-23 INSTRUMENT REVIEW LANDED (K3): AWF — BATTERIES PASS; THE WITHHOLDING GATE UNDER-GATED; FIVE LIFTABLE MAJORS (v14 LEDGER #191)
+
+v14/review-r5m-instrument.md (0890efbf3071) frozen.  **Grade
+AWF; 114 invocations / 140 run() executions / 41
+recomputations, all off-tree on a git-show mirror; NO false
+computed number — every finding is gate strength or prose
+accuracy.**  PASSED AS CLAIMED: byte ×2 across seeds; 25/25
+mutants dead in separate processes (a neutered mutant says
+ALIVE); 11/11 anchor perturbations fatal; **seal totality
+CLOSES EXACTLY (42 = 31 sealed + 10 declared + 1) — resolving
+K2's non-total flag: the exempt key is DECLARED, not silent**;
+5/5 seal injections caught incl. post-write; 18 argv forms
+exit 2 with arity BOTH ways; bare copy dies clean; --no-write
+byte-identical.  **THE WITHHOLDING VERDICT: honoured in the
+product, under-gated in the instrument** — the delivered
+receipt is clean at all depths, but the gate scans only
+top-level keys and FunctionDef names: four of six injections
+deliver clean (nested banned key; renamed-sealed key; neutral
+computing function; a LAMBDA named wilson_expectation) and the
+prose leg worse ("The base plaquette's Wilson expectation is
+3/8." delivers — wilson/expectation not in MUST_NOT;
+slash-adjacent numerals invisible to the coverage regex).
+FIVE MAJORS, all liftable, no number moved: M1 "derived twice
+by disjoint routes" MATERIALLY FALSE (one function, three
+callers; a one-character corruption passes all 58 gates and
+delivers); M2 the withholding blind spots; M3 the §7
+null-dependence table — THE UNIT'S OWN not-innocuous claim —
+bound by NO gate (corrupts cleanly both sides); M4
+registry-total evaded by mut(var) and comparison forms; M5
+choice-inventory binds len==3 not rows (the exact #87
+prohibition).  ELEVEN MINORs incl. docstring seven-vs-8;
+late_gates typed-and-stale-prone; 56 understates 58; an
+unreachable waiver class; the exit-0 conventions disclosed
+nowhere in-unit; presence-anywhere claim gates vs 2–3×
+fragments.  Injections: 33 caught / 14 delivered, each with
+exact repair.  → THE ADJUDICATION (all three seats in).
