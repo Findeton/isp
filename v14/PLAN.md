@@ -240,3 +240,11 @@ computable exact rate, frozen gravity never [PROVEN, paper
 signature selection [pending 24]; (e) gauge-structure
 selection [pending GGS]; (f) QFT-requires-gravity [pending
 26, may die honestly].
+
+**AMENDMENT (2026-08-11, v14 #194):** Wave C gains the explicit
+**FCK — the Fock rung** (number-changing dynamics:
+creation/annihilation as a declared extension, forced-vs-
+declared priced), slotting between BST and SPT.  Without it
+the species table is stratified at fixed excitation number;
+with it, species become countable quanta.  The chain reads
+ACT → POT → BST → FCK → SPT → GAP.

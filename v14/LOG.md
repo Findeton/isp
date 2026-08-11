@@ -5916,3 +5916,11 @@ Wave-A/B parents are mid-repair or mid-flight; each pin
 freezes THE MOMENT its parent goes terminal (the pin
 obligation is the record).  Current flight unchanged: paper-20
 repair, paper-23 repair, papers 21/22 constructions.
+
+## 2026-08-11 — CHARTER AMENDMENT: THE FOCK RUNG (FCK) ADDED TO WAVE C (v14 LEDGER #194)
+
+Prompted by the user's particle-catalogue question: the
+recorded Wave C lacked the number-changing rung.  FCK added
+between BST and SPT (creation/annihilation as a declared
+extension, fiber priced; species become countable quanta).
+The chain: ACT → POT → BST → FCK → SPT → GAP.
