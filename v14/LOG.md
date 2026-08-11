@@ -6749,3 +6749,27 @@ writes nothing.  Reviewers →
 v14/review-perl-{operator,effectus,instrument}.md.  Objects
 at 9fcc081: bd0298e2a482 / 976d5b9e4ac8 / e4ff37a7a13e /
 54ec5a9e9b72; pin 973b160d52ed.
+
+## 2026-08-11 — PAPER-22 K3 REVIEW v4 (FINAL): MAJOR-3 UPGRADED — THE CACHE GATE INERT AGAINST REAL POLLUTION; HASH DISCIPLINE EXEMPLARY (v14 LEDGER #219)
+
+The instrument reviewer's final form (1007 lines).  **MAJOR-3
+UPGRADED: G-CACHE-UNPOLLUTED is INERT against real pollution
+— five in-place cache injections: svals and rows SURVIVE at
+exit 0, the other three die at OTHER gates; the gate fired on
+none** (previously the fingerprint sweep showed no
+spontaneous pollution — both true: the caches don't move on
+their own, and the gate wouldn't notice if they did).  Also:
+46/56 out-of-process mutants 46/46 on target; reversed-order
+in-process 56/56; the u-is-v census 0/136,704; one
+self-correction (G-HEAD-LAW-EXERCISED does bind; only
+G-CLI-WHITELIST lacks a demonstrated falsifier).  **HASH
+DISCIPLINE EXEMPLARY: the reviewer detected the repair
+worker's live working-tree edit (14:29:23, e36191a2af4a —
+visibly answering this review, quoting INJ-11 verbatim),
+verified all 45 out-of-process results predate it, STOPPED
+the residual sweep rather than mix objects, and measured
+everything against the pinned deb0c1c83a76** — the
+no-moving-refs discipline working from the reviewer's side.
+Re-frozen (v4, final).  Mid-flight advisory sent to the
+repair worker: T11 must kill the svals/rows injections
+specifically; G-CLI-WHITELIST gains a falsifier.

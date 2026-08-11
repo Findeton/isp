@@ -11,22 +11,40 @@ generators`, sealed, at exit 0, with every gate green.
 
 ## 0. Hash discipline
 
-| object | declared at #200 | at start | at end |
-|---|---|---|---|
-| `v14/paper-22-multi.md` | 1b4ac134e727 | 1b4ac134e727 | 1b4ac134e727 |
-| `v14/code/r4c_multi_exact.py` | deb0c1c83a76 | deb0c1c83a76 | deb0c1c83a76 |
-| `v14/code/r4c_multi_output.txt` | 45866a3ed5e3 | 45866a3ed5e3 | 45866a3ed5e3 |
-| `v14/code/r4c_multi_receipt.json` | 5c058006db78 | 5c058006db78 | 5c058006db78 |
-| `v14/note-r4c-pin.md` (pin) | 162553b03ca9 | 162553b03ca9 | 162553b03ca9 |
+| object | declared at #200 | at start | committed, at end | worktree, at end |
+|---|---|---|---|---|
+| `v14/paper-22-multi.md` | 1b4ac134e727 | 1b4ac134e727 | 1b4ac134e727 | 1b4ac134e727 |
+| `v14/code/r4c_multi_exact.py` | deb0c1c83a76 | deb0c1c83a76 | deb0c1c83a76 | **e36191a2af4a** |
+| `v14/code/r4c_multi_output.txt` | 45866a3ed5e3 | 45866a3ed5e3 | 45866a3ed5e3 | 45866a3ed5e3 |
+| `v14/code/r4c_multi_receipt.json` | 5c058006db78 | 5c058006db78 | 5c058006db78 | 5c058006db78 |
+| `v14/note-r4c-pin.md` (pin) | 162553b03ca9 | 162553b03ca9 | 162553b03ca9 | 162553b03ca9 |
 
-All five match. Every execution below ran read-only against the repo or
-inside `…/scratchpad/r4c-in/`; the repo objects are byte-identical after
-the review. Files belonging to concurrent siblings are disclaimed.
+**All five committed objects are unchanged** at `4f89135` and at `HEAD`,
+and I wrote to none of them. **But the instrument's working-tree copy
+moved while I was writing this review**, at 14:29:23, to
+`e36191a2af4a` — a repair, by another seat, that visibly answers findings
+from this review: it adds `G-SEAL-PROVENANCE` (my MAJOR-4 repair, under
+the name I proposed), a literal #62 consumer binding for the pin's four
+walls (MAJOR-1), a `LATE_GATES` register with `G-CLI-WHITELIST` added to
+`FORCINGS` (MINOR-2), and parse-time rejection of a non-existent
+`--verify-paper` path (MINOR-6). Its own source comment cites this
+review's INJ-11 verbatim — *"one silently failed restore() deliver a
+sealed receipt asserting 65 of 64 generators at exit 0"*.
 
-**Counts.** Executions: **118 separate processes** — 1 full `--no-write`
-delivery run, 41 out-of-process `--mutant` runs, 48 `--break-anchor`
+**This review is of the pinned object `deb0c1c83a76`, and nothing in it
+was measured against the successor.** I checked: all 45 out-of-process
+mutant results were written before 14:29:23, zero after; every other
+execution had completed earlier; and I stopped the residual sweep the
+moment I noticed the change rather than let it mix two objects. Any
+re-measurement against `e36191a2af4a` is the next seat's work, not this
+one's. Every execution below ran read-only against the repo or inside
+`…/scratchpad/r4c-in/`. Files belonging to concurrent siblings are
+disclaimed.
+
+**Counts.** Executions: **122 separate processes** — 1 full `--no-write`
+delivery run, 45 out-of-process `--mutant` runs, 48 `--break-anchor`
 runs, 16 hostile-argv runs, 3 off-tree mirror runs, 2 further `--mutant`
-timing runs (one of them, `MUT-PAPER-NUMERAL`, is the 42nd distinct
+timing runs (one of them, `MUT-PAPER-NUMERAL`, is the 46th distinct
 mutant verified out of process), 2 source-edit falsifications, 1
 `--selftest`, 1 bare-copy, 1 real byte-drift, 1 path-drift, 1 helper —
 plus **6 in-process probe scripts**
@@ -86,21 +104,39 @@ separate findings, all MAJOR-3:
    pollutes the cache; it hands the gate a canned answer. The gate's
    *detection capability* is therefore not exercised by any declared
    falsifier — an E-23 "green badge for a capability never demonstrated".
-2. **`census_digest` covers 7 of the 11 cached fields.** It digests
-   `single_nz, wedge_nz, sym_nz, tensor_nz, differing, len(deriv_fail),
-   len(fold_fail)`. It does **not** digest `rows`, `wvals`, `svals`,
-   `onevals` — and `wvals/svals/onevals` are published verbatim as
-   `defect_values`. A count-preserving-cardinality pollution of `svals`
-   moves a published table and is invisible to this gate (`wvals` would
-   be caught downstream by `G-SECOND-CODE-PATH`, `onevals` by
-   `G-PARENT-VALUE-MULTISET`; `svals` is caught by nothing, because
-   `G-DEFECT-RATIONAL` tests only the keys and the paper's `CL-VALUES`
-   claim tests only `len`).
-3. **The gate inspects one cache entry.** Its predicate filters
+2. **`census_digest` covers 7 of the 11 cached fields, and I injected
+   real in-place pollution into five of them to find out what happens.**
+   It digests `single_nz, wedge_nz, sym_nz, tensor_nz, differing,
+   len(deriv_fail), len(fold_fail)`; it does **not** digest `rows`,
+   `wvals`, `svals`, `onevals` — and `wvals/svals/onevals` are published
+   verbatim as `defect_values`. Writing into the cached object in place,
+   then running:
+
+   | field polluted | digested? | outcome |
+   |---|---|---|
+   | `wedge_nz` | yes | DIED at **`G-TWO-EXCITATION-PREDICATE`** |
+   | `wvals` | no | DIED at `G-SECOND-CODE-PATH` |
+   | `onevals` | no | DIED at `G-PARENT-VALUE-MULTISET` |
+   | `svals` | no | **SURVIVED — exit 0** |
+   | `rows` | no | **SURVIVED — exit 0** |
+
+   Two of the five deliver at exit 0 with a polluted cache, and `svals`
+   is a *published* table (`defect_values/symmetric`): nothing catches
+   it, because `G-DEFECT-RATIONAL` tests only the keys and the paper's
+   `CL-VALUES` claim tests only `len`.
+
+   **And note which gate never appears in that column.**
+   `G-CACHE-UNPOLLUTED` did not fire on a single one of the five. The
+   three that die, die at earlier measurement gates; the two that live,
+   live. The gate sits near the end of `build_state`, after every gate
+   that would have caught the pollution anyway, so on this instrument it
+   is inert against real pollution — its only trigger is its own
+   synthetic mutant.
+3. **The gate inspects one cache entry of seven.** Its predicate filters
    `if k == pk`, and `CENSUS_DIGESTS` is written only in
    `raw_defect_census`. The receipt's own detail line says so:
-   `"1 cached censuses, 0 polluted"` — while the run's cache holds six
-   further families.
+   `"1 cached censuses, 0 polluted"` — while the run's cache holds
+   **seven** entries, measured.
 
 The paper's §11 sentence — *"the cache hands back defensive copies and a
 gate re-checks the cached census's digest on every build, so no
@@ -382,11 +418,11 @@ Every mutant was run in its own cold process, `--mutant NAME`, against
 the repo, with the three artifacts hashed before and after each run and a
 check for stray `.tmp`/`.probe` files.
 
-**Result on the 42 completed: 42 of 42 — every one killed, every death at
+**Result on the 46 completed: 46 of 46 — every one killed, every death at
 its declared target gate, `rc=1`, the three artifacts byte-UNCHANGED
 after each run, zero stray `.tmp`/`.probe` files, zero off-target, zero
 survivors.** The raising gate was parsed out of each run's own
-`MUTANT … died at …` line and compared to the registry row. The 42 span
+`MUTANT … died at …` line and compared to the registry row. The 46 span
 every stage of the pipeline: the anchor phase (`MUT-VERBATIM-FRAGMENT`,
 `MUT-PATH-ANCHOR`, `MUT-ARENA-SIZE`, `MUT-SHELL-IMPORT`), the rebuild
 (`MUT-GAUGE-ORBIT`, `MUT-ALPHABET`, `MUT-REBUILD-DROP`,
@@ -401,24 +437,27 @@ every stage of the pipeline: the anchor phase (`MUT-VERBATIM-FRAGMENT`,
 (`MUT-COIN-ALPHABET`, `MUT-THREE-SITE`, `MUT-OVERLAP-LAW`,
 `MUT-COIN-PAIR`, `MUT-OVERLAP-BITE`), motion (`MUT-EIGENPHASE`,
 `MUT-ADDITIVITY`, `MUT-SPECTRUM-SPLIT`, `MUT-R4B-REPRO`,
-`MUT-VELOCITY-ADD`, `MUT-SPEED-CEILING`), the third route (`MUT-THIRD-PATH`) and the paper
-gates (`MUT-PAPER-NUMERAL`).
+`MUT-VELOCITY-ADD`, `MUT-SPEED-CEILING`), the contact handle
+(`MUT-CONTACT-BLIND`, `MUT-CONTACT-SET`), the third route
+(`MUT-THIRD-PATH`), the stamps and waivers (`MUT-STAMP-DROP`,
+`MUT-WAIVER-UNFORCED`) and the paper gates (`MUT-PAPER-NUMERAL`).
 
-**The remaining 14 did not finish inside the review window** — this
+**The remaining 10 did not finish inside the review window** — this
 machine was carrying a load average above 200 from the concurrent seats
 throughout, and a single cold `--mutant` run that reaches the paper gates
 costs about eight CPU-minutes. They are:
-`MUT-CACHE-DIRTY, MUT-CONTACT-BLIND, MUT-CONTACT-SET, MUT-HEAD-PRENAME,
-MUT-HEAD-TYPED, MUT-PAPER-CLAIM, MUT-PAPER-POLARITY, MUT-PAPER-VERDICT,
-MUT-PAYLOAD-PATH, MUT-RECEIPT-FLOAT, MUT-SEAL-BROKEN, MUT-SEAL-TOTAL,
-MUT-STAMP-DROP, MUT-WAIVER-UNFORCED`.
+`MUT-CACHE-DIRTY, MUT-HEAD-PRENAME, MUT-HEAD-TYPED, MUT-PAPER-CLAIM, MUT-PAPER-POLARITY, MUT-PAPER-VERDICT, MUT-PAYLOAD-PATH, MUT-RECEIPT-FLOAT, MUT-SEAL-BROKEN, MUT-SEAL-TOTAL`.
 **This is a disclosed protocol shortfall, not a
-finding**: all 14 are covered in-process four times over — by the committed
+finding**: all 10 are covered in-process four times over — by the committed
 receipt's own sweep and by my independent full `--no-write` delivery run
 (21 m 45 s, from the committed source), which reported
 `ALL GATES PASSED (63/63); ALL MUTANTS DEAD (56/56)` at exit 0 with the
-repo artifacts untouched. Nothing in the 42 that did run gives any reason
-to expect the other 14 to behave differently out of process; the sweep
+repo artifacts untouched, and by both off-tree mirror runs.
+**Order-independence checked separately:** running the whole in-process
+sweep in REVERSED registry order also put **56/56 on target**, so no
+mutant's verdict depends on what ran before it.
+Nothing in the 46 that did run gives any reason
+to expect the other 10 to behave differently out of process; the sweep
 should nonetheless be completed before terminal.
 
 **`--list` is not a flag this unit ships**, so ledger row #24's registry
@@ -463,11 +502,15 @@ I falsified three of them myself, so they do bind:
   source kills it at that gate.
 - `G-MUTANT-SWITCH-CLEAN` — putting `mut("MUT-NOPE")` inside a gate
   predicate kills it at that gate.
-- `G-HEAD-LAW-EXERCISED` and `G-CLI-WHITELIST` have **no demonstrated
-  falsifier at all**. The head-law gate is the unit's #34 reachability
-  discharge — the claim that four measured arenas return four different
-  pre-registered names — and nothing tests it; the three arena mutants
-  all die earlier, at `G-ARENA-TWO-WAY`/`G-A4-NEITHER-REACHED`.
+- `G-HEAD-LAW-EXERCISED` — **it binds, and I demonstrated it**: I
+  collapsed `head_law` so that two of the four arenas return the same
+  pre-registered name, and the run died at `G-HEAD-LAW-EXERCISED`. It is
+  the unit's #34 reachability discharge and it works; what it lacks is a
+  *registered* falsifier, because the three arena mutants all die
+  earlier at `G-ARENA-TWO-WAY`/`G-A4-NEITHER-REACHED`. One-line repair:
+  add `MUT-HEAD-LAW-FLAT` targeting it.
+- `G-CLI-WHITELIST` is the only gate for which I have **no demonstrated
+  falsifier at all**, and it is also missing from `FORCINGS`.
 
 **The `FORCINGS` register is incomplete.** It declares three gates as
 unreachable-by-mutant (`G-MUTANTS-ON-TARGET`, `G-ARTIFACT-INTEGRITY`,
@@ -573,8 +616,9 @@ that no invariance across windows is measured.
 - **MINOR-10:** `defect_crossterm` skips its diagonal by *object
   identity* (`if u is v: continue`) rather than by index. It is correct
   here only because every product is a freshly allocated tuple (`ZERO` is
-  filtered out before the list is built). One index loop removes the
-  fragility.
+  filtered out before the list is built) — which I measured: over
+  **136,704** accumulator cells, **zero** carry a duplicate object
+  identity. One index loop removes the fragility.
 
 ---
 
@@ -812,10 +856,12 @@ its presence; and add the coin-axis sample stamp to the 42840 headline in
 ### MINOR
 
 1. *(promoted to MAJOR-4.)*
-2. Five gates carry no registered falsifier; `G-HEAD-LAW-EXERCISED` (the
-   #34 reachability discharge) and `G-CLI-WHITELIST` have none at all,
-   and `G-CLI-WHITELIST` is missing from the `FORCINGS` register though
-   it is as unreachable as the three that are in it.
+2. Five gates carry no *registered* falsifier. Four of them I falsified
+   myself (`G-BYTE-ANCHORS`, `G-NO-FLOAT`, `G-MUTANT-SWITCH-CLEAN`,
+   `G-HEAD-LAW-EXERCISED`), so they bind. `G-CLI-WHITELIST` alone has no
+   demonstrated falsifier, and it is missing from the `FORCINGS`
+   register though it is as unreachable by an in-process mutant as the
+   three that are in it.
 3. `MUT-SPEED-CEILING`'s published description is inverted.
 4. `G-HARDCORE-ANTISYMMETRIC-CLOSED` publishes the typed constant `True`
    on all 64 rows; its forcing is machine-checkable in one line
@@ -834,12 +880,18 @@ its presence; and add the coin-axis sample stamp to the 42840 headline in
 9. `pool_key` omits `D` and `L` (unlike `full_pool_key`) — a latent
    cross-arena cache collision, unreachable today only because
    `G-ARENA-ANCHORED` precedes every census.
-10. `defect_crossterm` skips its diagonal by object identity, not index.
+10. `defect_crossterm` skips its diagonal by object identity (`u is v`),
+    not index. Measured: over 136,704 accumulator cells, **zero** carry
+    a duplicate object identity, so the shortcut is correct here — but
+    it is correct by allocation accident, and one index loop removes the
+    fragility.
 11. The third path's 144-pair window is declared and lively but no
     invariance across window choices is measured (§15).
 12. `G-TWO-EXCITATION-PREDICATE`'s per-object clause (`not mism`) has no
     falsifier: `MUT-PREDICATE` sets `mism = []` and is killed by the
-    count clause instead.
+    count clause instead. (This one I established by reading the mutant
+    body, not by injection — my source-variant probe for it did not
+    build.)
 13. A gate failure on the plain path is a traceback, not the mutant
     path's `died at …` line. Also: `provenance.runtime_inputs` lists 12
     of the 13 files actually read — the paper is missing, because
@@ -924,29 +976,32 @@ cache gate's own reach.
 This machine carried a load average between 170 and 230 for the whole
 review, from the concurrent K1/K2 seats running the same instrument. A
 single cold run of this unit costs about twenty CPU-minutes. Four items
-ran long; **two of them landed before I closed and are now reported in
+ran long; **three of the four landed before I closed and are reported in
 full** — the byte reproduction ×2 across hash seeds (§8, confirmed three
-ways against the committed bytes) and the post-write corruption
-injection (§5, `rc=2`, and it demonstrated MINOR-5 into the bargain).
-Two remain unfinished. Neither is a finding; each is an unfinished
-confirmation, and I am naming them rather than reporting a marathon I did
-not run:
+ways against the committed bytes), the post-write corruption injection
+(§5, `rc=2`, which demonstrated MINOR-5 into the bargain), and the whole
+cache-probe battery (§1a, which turned MAJOR-3 from a reading into a
+measurement). One item remains, and it is a protocol shortfall rather
+than a finding:
 
-1. **Fourteen of the fifty-six out-of-process `--mutant` runs** (§4);
-   forty-two completed, 42/42 on target with artifacts unchanged.
-2. **Two of the four cache probes.** The fingerprint sweep *did* finish
-   and is reported in §1a (7 entries, none moved across all 56 in-process
-   mutant runs). Still running at close: the reversed-order sweep, and
-   five real in-place pollution probes against `wedge_nz` (digested) and
-   `wvals`/`svals`/`onevals`/`rows` (not digested) — the probes that
-   would quantify exactly how much of a real pollution
-   `G-CACHE-UNPOLLUTED` catches. MAJOR-3 does not depend on them: it
-   rests on reading the gate's predicate and `census_digest`'s field
-   list, both of which are plain in the source.
+**10 of the fifty-six out-of-process `--mutant` runs** did not finish
+(§4): 46 completed, **46/46 on target**, artifacts byte-unchanged after
+every one, zero stray files. All 10 are covered in-process four times
+over — the committed receipt's sweep, my own `--no-write` delivery run,
+and both mirror runs — plus a fifth, order-independent pass: a
+reversed-registry in-process sweep put **56/56 on target**.
 
-Everything else in this review ran to completion. In particular the four
-MAJOR findings are each demonstrated, not inferred: MAJOR-1 by reading
-the sealed receipt against the run's own gate ledger and by INJ-16/INJ-1;
-MAJOR-2 by seventeen paper injections through the instrument's own
-`verify_paper`; MAJOR-3 by reading every cache and every mutant body;
-MAJOR-4 by INJ-11, which delivered `65 of 64 generators` sealed at exit 0.
+Everything else launched during this review finished and is reported
+above, including the items that landed after I first closed: the byte
+reproduction ×2 (§8), the post-write corruption injection (§5), the cache
+fingerprint sweep and the five real in-place pollution probes (§1a), the
+reversed-order sweep, the head-law tamper (§4b) and the `u is v` identity
+census (§6).
+
+The four MAJOR findings are each **demonstrated, not inferred**: MAJOR-1
+by reading the sealed receipt against the run's own gate ledger and by
+INJ-16/INJ-1; MAJOR-2 by seventeen paper injections through the
+instrument's own `verify_paper`; MAJOR-3 by five real in-place cache
+pollutions, two of which deliver at exit 0 while `G-CACHE-UNPOLLUTED`
+fires on none of the five; MAJOR-4 by INJ-11, which delivered
+`65 of 64 generators` sealed at exit 0.
