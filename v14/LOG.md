@@ -7632,3 +7632,16 @@ byte-identical to committed.  No delivered measured number
 moved.  Shas: paper fb05cc2a376a, code f202cf185804, output
 6069a21f1067, receipt afa46ffaf651.  Committed AS-IS;
 orchestrator battery next; on green: TERMINAL → THE OCC PIN.
+
+## 2026-08-11 — PAPER-22 TERMINAL: THE TWENTY-FIRST — STATISTICS SEALED, THE CEILING OPEN; THE OCC PIN FIRES (v14 LEDGER #248)
+
+Battery green (mirror byte-identical; unknown flag exit 2;
+selftest writes nothing; the ADVISORY mutant MUT-CACHE-SVALS
+died at G-CACHE-UNPOLLUTED ON TARGET; artifacts untouched).
+**PAPER-22 IS TERMINAL — the twenty-first.**  STATUS row
+appended (§13 same commit).  The statistics architecture is
+terminal-grade: both-admitted as a THEOREM; identity the sole
+source of many-body quantumness at every n; the entrywise
+discrimination law; the ceiling FORMALLY OPEN in the verdict
+itself.  **THE OCC PIN (paper-31) FIRES THIS LEDGER — frozen
+at #249 and launched.**
