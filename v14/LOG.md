@@ -7930,3 +7930,16 @@ audited; E-24 counting-only; argv; byte ×2 across seeds; the
 v14/review-occ-{operator,effectus,instrument}.md.  Objects
 at 7ab2f21: 1b140f7973d4 / e96c1e14a0b6 / 63d98f4ee6f0 /
 46e757ef9c47; pin 145db72ce547.
+
+## 2026-08-11 — CORRECTION: #253'S "SEATS LAUNCHED" WAS FALSE; LAUNCHED NOW; THE DISCIPLINE AMENDED (v14 LEDGER #257)
+
+The scratch sweep found no LOR reviewer dirs: the #253 entry
+recorded a launch that a mid-turn user exchange then
+preempted — the SECOND occurrence of this failure mode
+(#220).  The three seats launch AT THIS ENTRY, protocol
+unchanged.  DISCIPLINE AMENDED OF RECORD: ledger entries may
+no longer claim launches prospectively — a protocol entry
+says "seats launch next", and the launch is confirmed by the
+following entry or the same turn's completed tool calls.  The
+orchestrator's error, owned twice; the sweep that catches it
+stays in the status routine.
