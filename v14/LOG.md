@@ -9671,3 +9671,38 @@ numerals + 200 spelled, 0 unbacked; 0 typed counts.
 Instrument growth: gates 52→64, mutants 47→64, walls 4→5,
 claims 14→28.  **Orchestrator battery launches next;
 terminal seal on green.**
+
+## 2026-08-12 — AID IS TERMINAL: TWENTY-SIX — STRATIFIED AT THE ADMISSIBILITY AXIS; THE SPLIT IS BY TEST, NOT BY OBSERVABLE; NAMING FORCED, FACTORIZATION HANDED TO FAC (v14 LEDGER #304)
+
+**Orchestrator battery on the repaired object, ALL GREEN:**
+artifacts deleted → plain run exit 0 → output AND receipt
+byte-identical vs committed → byte-stable ×2 →
+PYTHONHASHSEED=13579 seed-invariant → unknown flag exit 2 →
+selftest exit 0 (corrupted anchor A-PIN died at
+G-PROVENANCE, artifacts unchanged) → registry-named
+MUT-BACKVAL died at its declared target G-BACK-VALIDATION,
+artifacts unchanged → unknown mutant exit 2 → artifacts
+untouched throughout.
+
+**THE TERMINAL PICTURE.**  Head
+AID-STRATIFIED-AT-THE-ADMISSIBILITY-AXIS.  One entity's
+history, read at the granted nine-actor grain: (1) NAMING
+IS FORCED wherever the history is admissible — 5,852 of
+5,856 histories pin every label (the Young-subgroup
+theorem; the stabilizer a function of the event SET; order
+moves only the crystallization TIME).  (2) The
+matter/space identity asymmetry is DEAD — SPLIT-BY-TEST-
+NOT-BY-OBSERVABLE; what survives is an ordering by DEPTH,
+itself coin-order-relative until both orders are published
+(both now are; the invariant is 58 from depth three).  (3)
+Crystallization is TWO OBJECTS: schedule time 5 (robust on
+all 15,552 orderings) and information floor 4 (a counting
+theorem, attained; the fifth position is a provably
+redundant event).  (4) The factorization question — is the
+nine-fold division itself forced? — is explicitly NOT
+answered here and is FAC's charter (#300), with the
+DECOMPOSITION grain registered as owed.  STATUS row
+appended in this commit; memory sealed next.
+
+**Programme count: TWENTY-SIX terminals; zero false
+computed numbers surviving anywhere in v14.**
