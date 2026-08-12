@@ -10266,3 +10266,26 @@ held under attack: the four corpus indices, all 18 ladder
 rows, all 8 triangle rows, the walls, the falsifier
 accounting.  **K3 still out; adjudication after all
 three.**
+
+## 2026-08-12 — FREEZE AMENDMENT TO #314: SEC K2's FINALIZED REVIEW (959 → 987 LINES) — THE FREE-ITEM INSTABILITY IS ASYMMETRIC, "FORCED 16 OF 16" SURVIVES (v14 LEDGER #317)
+
+The K2 seat finalized its review after the #314 freeze;
+the FINAL text (abe22bd94788, 987 lines) supersedes the
+frozen 244c74bb38e2 and is committed here.  Deltas of
+substance: (1) **the free-item finding refined into an
+ASYMMETRY** — HP-1 (125 drives): the first-rule fate flips
+inside the type at 2 of 5 tested; HP-3 (75 drives): the
+shared-rule fate does NOT move, 0 of 15 — so "REFUSED 6 OF
+16" is gluing-relative while **"FORCED 16 OF 16"
+SURVIVES**, and the asymmetry is what §3.2's own mechanism
+predicts (reported as a point FOR the paper).  (2) §14's
+"every data row is a rendered claim" false at 56 of 131
+rows including the whole §5.1 compatibility census.  (3)
+CONFIRMS-R1 ruled an ANALOGY (Theorem B's hypothesis not
+instantiated; |Aut| multiplicative; 7 of 10 rows
+non-contingent).  (4) "A shared actor has twice the degree"
+false at exactly the 6 doubled types.  (5) One extension
+probe (HP-2) disclosed still-running; no ruling depends on
+it.  All #314 headline rulings stand (the leak backwards →
+SEAM-CONFINED; the 12-not-16 arenas; the half-multi-way
+selector; the direct-sum ruling stronger than delivered).
