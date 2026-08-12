@@ -10216,3 +10216,53 @@ SEC sentence depends on LOR content** (paper-30 absent from
 the read set); SEC's cited LOR digest predates the LOR
 repair — expected, covered by the abstention note.
 **K3 still out; adjudication after all three.**
+
+## 2026-08-12 — FAC K1 (OPERATOR SEAT) FROZEN: AWF; ZERO DISAGREEMENTS IN ~230 RECOMPUTATIONS; THE LEG-4 IMAGE FIBER UNDECLARED AND NON-INERT (5,852/4 → 5,854/2 AT THE PAIRWISE IMAGE); WHICH-LEG-BINDS IS GRAIN-STRATIFIED (v14 LEDGER #316)
+
+**Review:** v14/review-fac-operator.md (948bad6bf969, 616
+lines), sole write; all five hashes verified unchanged.
+**Grade AWF.**  ~230 published quantities recomputed from
+scratch across 8 independent programs (own cell indexing,
+partition enumerator, shift, Z[ω] arithmetic, coherence
+DP); ZERO disagreements; both closed-form theorems
+re-proved; the criterion digest reproduces; **the extreme
+carrier stabilizer is exactly 27!**.
+
+**THREE MAJORS (all prose, no number moves):**
+- **M1 — THE LEG-4 IMAGE FIBER, undeclared and NON-INERT:**
+  the actor grain evaluates LEG-4 on the DIRECTIONWISE
+  induced image, never disclosed; on the PAIRWISE image —
+  the other member §2 itself declares, and the one the
+  unit's own gate G-CELL-IS-A-CO-DIVISION-PAIR certifies —
+  the census returns **5,854/2 instead of 5,852/4**, the
+  non-unique inventory loses DIA and ANT, and the R=4 rung
+  moves 596→598.  Killing leg isolated: LEG-4, both coin
+  orders, 2 of 2.  **The head WORD survives; the head
+  FIELDS do not** — the exception set is image-relative.
+  (The #293 fiber duty applies: both images published or
+  the fiber stamped.)
+- **M2 — §5's two objects:** the ladder counts families
+  from the full Sym(footprint) (proof: R-EMPTY = 6^T); the
+  isotropy 1/3/6 belongs to the ARROW groupoid, whose
+  family product would be 3⁹ = 19,683 vs the published
+  10,077,696; §5's closing sentence is false of the object
+  its numbers are about (CONVERGES with K2 major 1).
+- **M3 — which-leg-binds omits LEG-4 and is
+  GRAIN-STRATIFIED:** at the actor grain LEG-4 kills 0 rows
+  (the 5,852 headline is LEG-1 ∧ LEG-2 alone — the
+  directionwise image reading); at the carrier grain it
+  kills 306 (5,810 → 5,478 unique when removed)
+  (CONVERGES with K2 major 3).
+
+**Seven MINORs** incl.: the implemented LEG-4 predicate
+strictly finer than the stated Z[ω]-sum criterion
+(coincident on all ~92.5k evaluations — disclosed, gated);
+**the corpus wedge value 0 is a TYPED LITERAL** (true, and
+forced by measured site-constancy — but typed; the #267
+disease); the carrier-grain wedge is 44, not 0; R-COMPLETE
+= |Stab| is a one-line theorem, not a measurement.  Exact
+licensed replacements supplied throughout.  Everything else
+held under attack: the four corpus indices, all 18 ladder
+rows, all 8 triangle rows, the walls, the falsifier
+accounting.  **K3 still out; adjudication after all
+three.**
