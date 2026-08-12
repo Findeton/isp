@@ -8372,3 +8372,29 @@ I7's count incl. two records this unit never carries
 T=5 while publishing a T=6 row — sound, the warrant now the
 theorem via the full recomputation.  → adjudication when K3
 lands.
+
+## 2026-08-11 — SIG INSTRUMENT REVIEW LANDED (K3): AWF — THE MEASUREMENTS SOUND, THE INSTRUMENT'S SELF-ACCOUNT NOT; BOTH PRUNES PROVEN (v14 LEDGER #273)
+
+v14/review-sig-instrument.md (6d0b7e73279a) frozen.  **Grade
+AWF; 89 executions, 175 recomputations, zero disagreements;
+the horizon-6 extension reproduced ROW FOR ROW and BOTH
+prunes proven theorems** (the static exhaustively — 0 unsound
+over 5,832 states; the dynamic need = the true minimum);
+byte ×2 at two seeds in two provisionings; 17/17 cold
+out-of-harness falsifiers.  **18 injections, 12 SURVIVE — one
+defect kind repeated: gates that NAME a discipline they do
+not enforce**: the E-23 constant-boolean clause reads the
+normal arg (cannot fire); the comparator IS the builder's
+prose (a 2,086-char contiguous substring, ratio 0.9424); 2/5
+tables ungated (incl. the verdict-determining row); the
+allow-list contaminated by sha digit-runs (18 numerals backed
+by nothing); ALL 10 verbatim consumer gates are unread labels;
+**only 1 of the pin's 5 outcomes is deliverable and
+G-STAGE0-DYNAMIC's sealed statement says the opposite of what
+it does** [= K2's Row-1 from the instrument side]; the
+object-under-test has no path or hash in the receipt.  Twelve
+MINORs.  Seam ruling: the seam is between the measurements
+(sound, exhaustive, independently reproduced) and the
+instrument's account of itself; "45/45 PASS" is a
+reproduction statement, not confirmation.  → THE ADJUDICATION
+(all three seats in).
