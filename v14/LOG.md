@@ -8339,3 +8339,36 @@ received and acted on).  The user lifted the limit
 ("that's lifted, pick it up and continue").  ALL EIGHT
 resumed via SendMessage inventory-first.  The protocol's
 fifth full exercise; no committed state at risk.
+
+## 2026-08-11 — SIG OPERATOR REVIEW LANDED (K1): AWF — ZERO MAJORS; 342/342; THE PRUNE AUDIT CLOSED BY FULL RECOMPUTATION (v14 LEDGER #272)
+
+v14/review-sig-operator.md frozen.  **Grade AWF; ZERO MAJOR,
+four MINOR; 342 published values recomputed row by row, zero
+disagreements** — the era's third zero-major content seat;
+the reviewer never executed the delivered code.  Landed: the
+five parent anchor rows + three unasked ones; the deposit
+theorem STRENGTHENED (commutes with the order-108 symmetry
+group, 30,240 checks); **R=5 non-attainment by TWO
+independent routes** (12.1M-subset branch-and-bound + an
+exact union-closure DP; min uncovered 2; the 2,210,000
+re-derived in closed form); **THE PRUNE AUDIT CLOSED
+DECISIVELY — the FULL unpruned horizon-6 tree run at
+7,666,574 branches: identical masses; the retained-109210
+exactly the max-cell≥4 count; no pruned branch could have
+reached the region earlier or at all**; the polarity
+fractions/ratios/arena-invariance; the coin fiber 5/5 both
+ways all 20 numbers; the mod-3 12/12-vs-0/12 path by path;
+constraint B with mass-1 shown a theorem; a THIRD route (LDL
+pivots) on the 2,197.  MINORs: (1) §9 item 3 carries four
+inherited paper-20 fibers as forced-fiber-1 — incl. F6,
+paper-20's own VERDICT-RELEVANT coin order — while
+out-of-harness mutants show the MASSES MOVE under D·G
+(the word and first-occupancy step stay) [= K2's finding,
+independent; the repair STRENGTHENS the claim]; (2) §7.2's
+"differ by three at every cell" false of A4/A7 (right form:
+"agree modulo three"); (3) §1's "nine positive definite" is
+I7's count incl. two records this unit never carries
+(receipt says 7); (4) G-PRUNE-SOUND's cross-checks sit at
+T=5 while publishing a T=6 row — sound, the warrant now the
+theorem via the full recomputation.  → adjudication when K3
+lands.
