@@ -7998,3 +7998,33 @@ survives 0/6; **the leak census RECORD-BLIND across all 3²⁷
 count fields — the head's scope retired by theorem**; the A2
 refutation.  Walls clean; numeral sweep clean.  14 repairs
 tabled.  → adjudication when K1+K3 land.
+
+## 2026-08-11 — OCC OPERATOR REVIEW LANDED (K1): AWF — 341/341 CLEAN; THE SAME-SITE ERROR AND THE CAN'T-FAIL GATE FOUND INDEPENDENTLY; P3'S LEG MEASURED THE WRONG FIELD (v14 LEDGER #260)
+
+v14/review-occ-operator.md (654dd7e38771) frozen.  **Grade
+AWF; 341 recomputations (own Z[ω] twice, cross-checked at
+6,561 products; a THIRD leak route 48/48); zero false
+numbers; byte-identical off-tree.**  Everything reproduced
+incl. the verbatim anchor located at coupling_exact.py:761-6,
+the P2 census with a deliberately wider reading (5,416/0),
+and C1/C2/C3 → three distinct words.  FOUR MAJORS, all
+names/quantifiers/gates, none touching the verdict: M1 the
+grain-equality is with SAME-SITE (27) not SAME-ACTOR (135) —
+source = the 27 at 5/5, = the 135 at 0/5 [= K2's M1,
+INDEPENDENT — the false claim confirmed twice]; M2 the 53,460
+gate CANNOT FAIL (mutant K1-M1: a zero-ceiling declaration
+still reports 53,460/0/True; the claim true, the support not)
+[= K2's M3, independent]; **M3 (new content): P3's blindness
+leg measured the PRE-STEP occupation field, which is NOT what
+the committed rule reads — under the parent's own reading A
+the emission weights SEPARATE the pair (k(P)=(½,½,0) vs
+k(Q)=(1,0,0)); the reading is a declared parent fiber (F10)
+OCC never declares; P3's word survives on its other two
+legs**; M4 "every one of the 216 admissible configurations
+leaks" is FALSE at the monomial coin (81/216 — the head
+published a pool-max as a universal; the delivered per-coin
+row itself agrees).  Five MINORs (two typed P1 constants; an
+asserted-not-measured constructor claim; a vacuous
+antisymmetric-0 predicate; P3's word typed; a licensing
+looseness costing nothing here).  → adjudication when K3
+lands.
