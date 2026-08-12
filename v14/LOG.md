@@ -8247,3 +8247,29 @@ panel-protocol disease list grows four entries
 (paper-scanning walls; full-table rendering; typed
 totals-counts; transcript-full-integrity + digest-token
 whitelists).**  → THE ADJUDICATION (all three seats in).
+
+## 2026-08-11 — AID (PAPER-33) PINNED AND LAUNCHED BY USER ORDER; LOR ADJUDICATED AND ITS REPAIR LAUNCHED (v14 LEDGER #268)
+
+Both workers were launched BEFORE this entry (the #257
+discipline).  **AID (note-aid-pin.md, 294ffe6c9deb):** the
+identity-reconstruction census — stabilizers of committed
+histories under S₉ relabelling (the 72 triples; the 5,184
+concatenations; a declared schedule window); the
+crystallization time; THE PHYSICS-INVARIANCE CENSUS (is any
+committed observable sensitive to the un-forced part of
+identity); the groupoid grain registered as successor;
+referent-bound gates and the #267 checklist required.  The
+Barandes-orthodox question of record: is the actor
+factorization forced by the law or a chart?  **LOR
+ADJUDICATED (note-lor-adjudication.md, 0c0b2886bf0e):
+REFINEMENT-ACTS STANDS** (~534 recomps; no measured quantity
+wrong; the extended-carrier weld clause-by-clause); the
+licensed sentences installed (links witness-independent;
+relationships as stamped paraphrase; the slogan INVERTED —
+places R²-cheap, depth exponential; the 3/4 landing a forced
+identity; the 792-pass-FOUND fact; the co-incidence row);
+K2's LIVE-CUT LAW (9m−17) adopted in-code, closing the
+unit's own successor question; twelve orders Y1–Y12 incl.
+the three paper-scanning walls, all 40 tables rendered, the
+three false counts derived, full-transcript integrity.
+Repair worker in flight.
