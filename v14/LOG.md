@@ -9206,3 +9206,34 @@ own parity law makes R=7 declared-record-empty by theorem;
 R=8 is the first declared indefinite record).  S-1
 half-closed (drive yes, move no).  **PANEL COMPLETE (K1
 #282 / K3 #287 / K2 here); adjudication next.**
+
+## 2026-08-12 — PER-R ADJUDICATION: REPAIR ORDERED (Z1–Z13); THE CLASS-BINDING ENGRAVING; LOR §7 CORRECTED BY ANNOTATION; PER-R2 RE-AIMED AT R=8 (v14 LEDGER #295)
+
+**note-perr-adjudication.md + note-paper30-correction.md
+committed.**  Three AWF → repair, no REJECT; ~1,010 seat
+recomputations, zero delivered values moved; two false
+prose sentences (§6.2's W5 decomposition, §3.7's
+live-records-at-R=5 sentence), both non-numeric, both
+ordered repaired.  Central ruling: the class-substitution
+disease recurred INSIDE the #270-ordered table because the
+advisory ordered words, not a gate — **ENGRAVED: a
+class-explicit row must be gate-bound to its computed
+predicate; a class-word swap must die at a named gate**
+(the SIG repair advised mid-flight at #294).  The
+convergent base-map major (K1 = K2 M3) becomes qualifier-
+everywhere + spreads-persist strengthening.  K3's six
+template-shaped instrument majors adopted as ordered
+repairs and confirmed as the corpus-sweep target list.
+Promotions adopted for in-unit measurement: the DIA law's
+seven new rows (incl. (1,1,1) at R=3 — "vanishes where the
+weld turns motivated" now a two-instance phenomenon), the
+ceiling sequence 1,2,4,5, the locking obstruction's general
+form with boundary R=7.  **LOR §7's uniqueness clause
+FALSIFIED (28 homogeneous records at R=6, ten covering) —
+prose-only; note-paper30-correction.md is the correction of
+record; paper-30 stays terminal, budget_law untouched.**
+Successor: PER-R2 at R=8 (the parity law empties R=7); S-1
+half-closed.  Ownership: the #270 advisory's
+insufficiency; the pin's unregistered class predicates —
+engraved for future ladder pins.  **The repair worker
+launches next.**
