@@ -10,9 +10,42 @@
  },
  "anchor_classes": {
   "file_bytes": 11,
-  "path_value": 34,
-  "total": 64,
+  "path_value": 37,
+  "total": 67,
   "verbatim_text": 19
+ },
+ "anchored_closed_forms": {
+  "non_singleton_classes": 72,
+  "rows": [
+   {
+    "agrees": true,
+    "chart_stabilizer_order": 2,
+    "grain": "PLAQUETTE",
+    "row": "PLAQUETTE-ANCHORED",
+    "the_census_orbit_count": 265121344,
+    "the_closed_form": 265121344,
+    "the_closed_form_is_the_coupling_count_plus_one": true,
+    "the_coset_fixed_point_average": 23680,
+    "the_delivered_coupling_count": 265121343,
+    "the_gauge_only_count": 530219008
+   },
+   {
+    "agrees": true,
+    "chart_stabilizer_order": 2,
+    "grain": "SITE",
+    "row": "SITE-ANCHORED",
+    "the_census_orbit_count": 171060256,
+    "the_closed_form": 171060256,
+    "the_closed_form_is_the_coupling_count_plus_one": true,
+    "the_coset_fixed_point_average": 18496,
+    "the_delivered_coupling_count": 171060255,
+    "the_gauge_only_count": 342102016
+   }
+  ],
+  "the_plaquette_form": "(THE-TWIST-CLASS-COUNT^4-PLUS-7-TIMES-THE-NON-SINGLETON-COUNT^4-PLUS-THE-COSET-CONSTANT)/2",
+  "the_site_form": "(THE-TWIST-CLASS-COUNT^4-PLUS-ITS-SQUARE)/2",
+  "twist_classes": 136,
+  "what_this_replaces": "THE-MACHINERY-ONLY-DISCLOSURE-THE-TWO-LARGE-ANCHORED-COUNTS-NOW-CARRY-A-SECOND-ROUTE-AT-FULL-SIZE"
  },
  "arena": {
   "L": 4,
@@ -42,24 +75,115 @@
   "the_action": "CARRIED-MULTIPLICATIVELY-S-IS-NOMINAL-ONLY-NO-LOGS",
   "weights": "fractions.Fraction, strictly positive"
  },
+ "carrier": {
+  "size": 640,
+  "the_carrier": "THE-PARENTS-640-UNIFORM-CONFIGURATIONS",
+  "the_full_configuration_space_is_not_a_carrier_here": "640^32",
+  "the_parents_published_uniform_slice": 640,
+  "why_this_carrier": "IT-IS-THE-CHART-FIXED-LOCUS-THE-PARENT-MEASURED-SO-THE-TWO-UNITS-WEIGH-THE-SAME-PARTITION"
+ },
+ "census_scope": {
+  "of_those_measured_in_the_controls_fibre": [
+   "LAW-NATIVE-021",
+   "LAW-NATIVE-102",
+   "LAW-NATIVE-120",
+   "LAW-NATIVE-201",
+   "LAW-NATIVE-210"
+  ],
+  "of_those_not_measured_here_at_all": [
+   "METROPOLIS-AT-A-NON-INVARIANT-TARGET"
+  ],
+  "targets_run_here": 6,
+  "targets_that_are_not_the_parents": [
+   "MONOMIAL-HAAR",
+   "ODD-TWIST-GRADED"
+  ],
+  "the_declared_correspondence": [
+   [
+    "COUNTING",
+    "COUNTING"
+   ],
+   [
+    "ORBIT-UNIFORM-ANCHORED",
+    "ORBIT-UNIFORM-CHART-32"
+   ],
+   [
+    "ORBIT-UNIFORM-EXTENSION",
+    "ORBIT-UNIFORM-CHART-128"
+   ],
+   [
+    "LAW-NATIVE-PI",
+    "LAW-NATIVE-012"
+   ],
+   [
+    "MONOMIAL-HAAR",
+    null
+   ],
+   [
+    "ODD-TWIST-GRADED",
+    null
+   ]
+  ],
+  "the_parents_distinct_named_measures_on_this_carrier": 10,
+  "the_parents_measures_not_run_here_as_a_census_row": 6,
+  "the_parents_measures_run_here_as_a_census_row": [
+   "COUNTING",
+   "LAW-NATIVE-012",
+   "ORBIT-UNIFORM-CHART-128",
+   "ORBIT-UNIFORM-CHART-32"
+  ],
+  "verdict": "THE-CENSUS-IS-A-COUNT-OVER-A-DECLARED-TARGET-LIST-AND-THE-LIST-IS-NOT-EVERY-MEASURE-THE-CORPUS-HAS"
+ },
  "chart": {
   "anchored_order": 32,
   "extension_order": 128,
   "link_orbits_anchored": 1,
-  "plaquette_orbits_anchored": 1
+  "plaquette_orbits_anchored": 1,
+  "site_orbits_anchored": 1
  },
  "closing_gates": [
   "G-SEAL-INTEGRITY",
   "G-ARTIFACT-INTEGRITY"
  ],
- "code_sha256_12": "02df3f00f788",
+ "code_sha256_12": "a90559ee0e0f",
+ "consumer_register": {
+  "anchors": 56,
+  "consumers_that_did_not_pass": 0,
+  "consumers_that_do_not_exist": 0,
+  "distinct_consumer_gates": 23,
+  "the_consumer_gates": [
+   "G-ARENA-REBUILT",
+   "G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER",
+   "G-CHART-GROUPS-REBUILT",
+   "G-FALSIFIER-CENSUS",
+   "G-FORM-CENSUS-COMPLETE",
+   "G-GIBBS-ROW-SUPPLIED",
+   "G-GRAIN-DEGENERACY-ON-THE-CARRIER",
+   "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
+   "G-MUST-NOT-VOCABULARY",
+   "G-OBSERVABLES-ARE-GAUGE-INVARIANT",
+   "G-POT-HANDOFF",
+   "G-PRICE-REDUCED-NOT-EVADED",
+   "G-RANK-IS-ORBITS-MINUS-ONE",
+   "G-REACHABLE-SET-IS-A-SUBSIMPLEX",
+   "G-RESIDUAL-GAUGE-REBUILT",
+   "G-TARGET-CENSUS",
+   "G-THE-CONTROLS-FIBRE-IS-MEASURED",
+   "G-THE-ODD-TWIST-IS-NOT-REALISABLE",
+   "G-THE-TARGET-CENSUS-SCOPE",
+   "G-WEIGHTS-ARE-POSITIVE-RATIONALS",
+   "G-WILSON-IS-NOT-MINIMAL-SUPPORT",
+   "G-WILSON-OBSERVABLE-REBUILT",
+   "G-WILSON-RANGE-OVER-THE-SIMPLEX"
+  ]
+ },
  "declared_unsealed": {
-  "closing_gates": "the two gates that close after the snapshot",
+  "closing_gates": "the two gates that close last of all; the receipt wall closes after the snapshot too and is counted in the totals",
   "code_sha256_12": "this instrument's own digest, which cannot seal itself",
   "declared_unsealed": "this declaration",
   "exit_conventions": "the disclosed exit conventions, a constant",
   "gate_digests": "the CHAINED per-row digests of that ledger",
-  "gates": "the gate ledger, snapshotted before the two closing gates -- a seal cannot be inside the object it seals",
+  "gates": "the gate ledger, snapshotted before the receipt wall and the two closing gates -- a seal cannot be inside the object it seals",
   "mutants": "the falsifier registry, checked TOTAL against the syntax tree at G-MUTANT-REGISTRY-IS-TOTAL and published as this instrument's description of itself",
   "paper_sha256_12": "the paper's digest, taken at the paper gates",
   "pin_sha256_prefix": "the pin digest, verified at G-SOURCE-BYTES",
@@ -71,11 +195,58 @@
   "unit": "the unit's own name, a constant of this source"
  },
  "density_witness": {
-  "consequence": "THE-CONTROL-LIES-IN-THE-CLOSURE-OF-THE-IMAGE-AND-NOT-IN-THE-IMAGE",
+  "consequence": "THE-CONTROL-IS-OUTSIDE-THE-IMAGE-AND-THE-IMAGE-APPROACHES-IT-ALONG-A-MEASURED-MONOTONE-FAMILY",
   "error_below_one_over_ten_to_the": 4,
   "exponent": 32,
   "is_an_exact_power": false,
+  "the_family_is_strictly_decreasing": true,
+  "the_monotone_family": [
+   {
+    "denominator": 10,
+    "error_below_one_over_ten_to_the": 0,
+    "in_lowest_terms": "1",
+    "numerator": 10,
+    "row": "DENOMINATOR-10^1",
+    "the_error": "1/2"
+   },
+   {
+    "denominator": 100,
+    "error_below_one_over_ten_to_the": 0,
+    "in_lowest_terms": "101/100",
+    "numerator": 101,
+    "row": "DENOMINATOR-10^2",
+    "the_error": "1250593214689029458377086494288959550435821679506190639035036799/10000000000000000000000000000000000000000000000000000000000000000"
+   },
+   {
+    "denominator": 1000,
+    "error_below_one_over_ten_to_the": 1,
+    "in_lowest_terms": "253/250",
+    "numerator": 1012,
+    "row": "DENOMINATOR-10^3",
+    "the_error": "1908548920908555671322381279936769000304249907163580340952272114724170572159/54210108624275221700372640043497085571289062500000000000000000000000000000000"
+   },
+   {
+    "denominator": 10000,
+    "error_below_one_over_ten_to_the": 2,
+    "in_lowest_terms": "10127/10000",
+    "numerator": 10127,
+    "row": "DENOMINATOR-10^4",
+    "the_error": "243417985279616883187518299917422988417560913315096391404701415438907711928539394061362909113905774324611099598047226494190079/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+   },
+   {
+    "denominator": 100000,
+    "error_below_one_over_ten_to_the": 4,
+    "in_lowest_terms": "4051/4000",
+    "numerator": 101275,
+    "row": "DENOMINATOR-10^5",
+    "the_error": "1223237995886698132893770763731119034453039719903954349253877477702696387659952821564115081139496297023694230399/18446744073709551616000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+   }
+  ],
   "the_required_ratio": "3/2",
+  "the_search_denominator_is_not_the_witnesses_own": true,
+  "the_witness_in_lowest_terms": "4051/4000",
+  "what_carries_the_limit": "A-THEOREM-THE-E-TH-POWERS-OF-THE-POSITIVE-RATIONALS-ARE-DENSE-IN-THE-POSITIVE-REALS-STATED-AS-A-THEOREM-AND-NOT-MEASURED-HERE",
+  "what_the_family_establishes": "THE-IMAGE-COMES-WITHIN-EVERY-BOUND-THE-DECLARED-FAMILY-REACHES",
   "witness_denominator": 100000,
   "witness_numerator": 101275
  },
@@ -150,6 +321,10 @@
     "observable": "WILSON-BLOCK-TRACE-RATIONAL-PART",
     "pinned_to_a_point": false,
     "pinned_to_a_proper_sub_range": false,
+    "range_of_the_observable_itself": [
+     "0",
+     "4"
+    ],
     "range_over_the_invariant_simplex": [
      "0",
      "4"
@@ -160,6 +335,7 @@
     ],
     "reading": "ANCHORED",
     "row": "WILSON-BLOCK-TRACE-RATIONAL-PART-ANCHORED",
+    "the_covariance_reading_narrows_it": false,
     "verdict": "UNPINNED",
     "what": "the rational part of the loop trace, an exact rational component of the observable SMU published"
    },
@@ -168,6 +344,10 @@
     "observable": "WILSON-BLOCK-TRACE-SURD-PART",
     "pinned_to_a_point": false,
     "pinned_to_a_proper_sub_range": false,
+    "range_of_the_observable_itself": [
+     "-1",
+     "1"
+    ],
     "range_over_the_invariant_simplex": [
      "-1",
      "1"
@@ -178,6 +358,7 @@
     ],
     "reading": "ANCHORED",
     "row": "WILSON-BLOCK-TRACE-SURD-PART-ANCHORED",
+    "the_covariance_reading_narrows_it": false,
     "verdict": "UNPINNED",
     "what": "its surd part, so the pair carries the whole observable exactly without leaving the rationals"
    },
@@ -186,6 +367,10 @@
     "observable": "OFF-DIAGONAL-QUARTIC-SIGN",
     "pinned_to_a_point": true,
     "pinned_to_a_proper_sub_range": true,
+    "range_of_the_observable_itself": [
+     "-2",
+     "2"
+    ],
     "range_over_the_invariant_simplex": [
      "-2",
      "2"
@@ -196,6 +381,7 @@
     ],
     "reading": "ANCHORED",
     "row": "OFF-DIAGONAL-QUARTIC-SIGN-ANCHORED",
+    "the_covariance_reading_narrows_it": false,
     "verdict": "PINNED",
     "what": "the sign of the fourth power of the two off-diagonal entries, added: invariant under the even twist and under the swap, and REVERSED by the odd twist"
    },
@@ -204,6 +390,10 @@
     "observable": "DIAGONAL-SECTOR-INDICATOR",
     "pinned_to_a_point": false,
     "pinned_to_a_proper_sub_range": false,
+    "range_of_the_observable_itself": [
+     "0",
+     "1"
+    ],
     "range_over_the_invariant_simplex": [
      "0",
      "1"
@@ -214,6 +404,7 @@
     ],
     "reading": "ANCHORED",
     "row": "DIAGONAL-SECTOR-INDICATOR-ANCHORED",
+    "the_covariance_reading_narrows_it": false,
     "verdict": "UNPINNED",
     "what": "the abelian arm's own indicator"
    },
@@ -222,6 +413,10 @@
     "observable": "DEFECT-INDICATOR",
     "pinned_to_a_point": false,
     "pinned_to_a_proper_sub_range": false,
+    "range_of_the_observable_itself": [
+     "0",
+     "1"
+    ],
     "range_over_the_invariant_simplex": [
      "0",
      "1"
@@ -232,6 +427,7 @@
     ],
     "reading": "ANCHORED",
     "row": "DEFECT-INDICATOR-ANCHORED",
+    "the_covariance_reading_narrows_it": false,
     "verdict": "UNPINNED",
     "what": "the composition defect's indicator, rebuilt from the seed's definition"
    },
@@ -240,6 +436,10 @@
     "observable": "FLAT-INDICATOR",
     "pinned_to_a_point": false,
     "pinned_to_a_proper_sub_range": false,
+    "range_of_the_observable_itself": [
+     "0",
+     "1"
+    ],
     "range_over_the_invariant_simplex": [
      "0",
      "1"
@@ -250,6 +450,7 @@
     ],
     "reading": "ANCHORED",
     "row": "FLAT-INDICATOR-ANCHORED",
+    "the_covariance_reading_narrows_it": false,
     "verdict": "UNPINNED",
     "what": "the indicator of a trivial holonomy"
    },
@@ -258,6 +459,10 @@
     "observable": "WILSON-BLOCK-TRACE-RATIONAL-PART",
     "pinned_to_a_point": false,
     "pinned_to_a_proper_sub_range": false,
+    "range_of_the_observable_itself": [
+     "0",
+     "4"
+    ],
     "range_over_the_invariant_simplex": [
      "0",
      "4"
@@ -268,6 +473,7 @@
     ],
     "reading": "EXTENSION",
     "row": "WILSON-BLOCK-TRACE-RATIONAL-PART-EXTENSION",
+    "the_covariance_reading_narrows_it": false,
     "verdict": "UNPINNED",
     "what": "the rational part of the loop trace, an exact rational component of the observable SMU published"
    },
@@ -276,6 +482,10 @@
     "observable": "WILSON-BLOCK-TRACE-SURD-PART",
     "pinned_to_a_point": false,
     "pinned_to_a_proper_sub_range": false,
+    "range_of_the_observable_itself": [
+     "-1",
+     "1"
+    ],
     "range_over_the_invariant_simplex": [
      "-1",
      "1"
@@ -286,6 +496,7 @@
     ],
     "reading": "EXTENSION",
     "row": "WILSON-BLOCK-TRACE-SURD-PART-EXTENSION",
+    "the_covariance_reading_narrows_it": false,
     "verdict": "UNPINNED",
     "what": "its surd part, so the pair carries the whole observable exactly without leaving the rationals"
    },
@@ -294,6 +505,10 @@
     "observable": "OFF-DIAGONAL-QUARTIC-SIGN",
     "pinned_to_a_point": true,
     "pinned_to_a_proper_sub_range": true,
+    "range_of_the_observable_itself": [
+     "-2",
+     "2"
+    ],
     "range_over_the_invariant_simplex": [
      "-2",
      "2"
@@ -304,6 +519,7 @@
     ],
     "reading": "EXTENSION",
     "row": "OFF-DIAGONAL-QUARTIC-SIGN-EXTENSION",
+    "the_covariance_reading_narrows_it": false,
     "verdict": "PINNED",
     "what": "the sign of the fourth power of the two off-diagonal entries, added: invariant under the even twist and under the swap, and REVERSED by the odd twist"
    },
@@ -312,6 +528,10 @@
     "observable": "DIAGONAL-SECTOR-INDICATOR",
     "pinned_to_a_point": false,
     "pinned_to_a_proper_sub_range": false,
+    "range_of_the_observable_itself": [
+     "0",
+     "1"
+    ],
     "range_over_the_invariant_simplex": [
      "0",
      "1"
@@ -322,6 +542,7 @@
     ],
     "reading": "EXTENSION",
     "row": "DIAGONAL-SECTOR-INDICATOR-EXTENSION",
+    "the_covariance_reading_narrows_it": false,
     "verdict": "UNPINNED",
     "what": "the abelian arm's own indicator"
    },
@@ -330,6 +551,10 @@
     "observable": "DEFECT-INDICATOR",
     "pinned_to_a_point": false,
     "pinned_to_a_proper_sub_range": false,
+    "range_of_the_observable_itself": [
+     "0",
+     "1"
+    ],
     "range_over_the_invariant_simplex": [
      "0",
      "1"
@@ -340,6 +565,7 @@
     ],
     "reading": "EXTENSION",
     "row": "DEFECT-INDICATOR-EXTENSION",
+    "the_covariance_reading_narrows_it": false,
     "verdict": "UNPINNED",
     "what": "the composition defect's indicator, rebuilt from the seed's definition"
    },
@@ -348,6 +574,10 @@
     "observable": "FLAT-INDICATOR",
     "pinned_to_a_point": false,
     "pinned_to_a_proper_sub_range": false,
+    "range_of_the_observable_itself": [
+     "0",
+     "1"
+    ],
     "range_over_the_invariant_simplex": [
      "0",
      "1"
@@ -358,18 +588,25 @@
     ],
     "reading": "EXTENSION",
     "row": "FLAT-INDICATOR-EXTENSION",
+    "the_covariance_reading_narrows_it": false,
     "verdict": "UNPINNED",
     "what": "the indicator of a trivial holonomy"
    }
   ],
+  "rows_at_which_the_covariance_reading_narrows_the_range": 0,
+  "rows_measured_at_the_covariance_reading": 12,
+  "the_action_route_verdict": "HIT",
+  "the_covariance_reading_verdict": "NOT-HIT-AT-12-OF-12-ROWS-EVERY-RANGE-OVER-THE-INVARIANT-SIMPLEX-IS-THE-OBSERVABLES-OWN-FULL-RANGE",
   "the_mechanism": "AN-OBSERVABLE-IS-PINNED-EXACTLY-WHEN-IT-SEPARATES-TWO-GAUGE-ORBITS-INSIDE-ONE-CLASS",
-  "verdict": "HIT"
+  "the_pins_own_wording": "IS-THERE-ANY-GAUGE-OBSERVABLE-WHOSE-EXPECTATION-THE-COVARIANCE-CONSTRAINTS-PIN-TO-A-PROPER-SUB-RANGE",
+  "verdict": "HIT-ON-THE-ACTION-ROUTE-NOT-AT-COVARIANCE",
+  "what_does_the_pinning": "THE-LOCALITY-DECLARATION-AT-A-DECLARED-GRAIN-OVER-THE-DECLARED-FIELD-NOT-THE-ARENAS-OWN-SYMMETRY"
  },
  "falsifier_totals": {
-  "declared_falsifiers": 49,
-  "distinct_target_gates": 46,
-  "functions_declared": 118,
-  "switches_in_the_syntax_tree": 49,
+  "declared_falsifiers": 68,
+  "distinct_target_gates": 61,
+  "functions_declared": 134,
+  "switches_in_the_syntax_tree": 68,
   "the_sweep_result": "AN-EXTERNAL-BATTERY-RESULT-THE-DELIVERY-RUN-DOES-NOT-PRODUCE-IT"
  },
  "fibre": {
@@ -479,6 +716,13 @@
     "why": "only the published error bound moves with it; the unreachability it accompanies is decided by factorisation"
    }
   ],
+  "the_flag_is_measured_at_this_many_rows": 9,
+  "the_flag_is_not_measured_at": [
+   "THE-CARRIER",
+   "THE-COIN-FAMILY",
+   "THE-GAUGE-ACTION-AND-THE-CHART-GROUPS",
+   "THE-LATTICE-AND-ITS-SIZE"
+  ],
   "the_price_of_a_declaration": {
    "numbers_forbidden_anchored": 72,
    "numbers_forbidden_extension": 40,
@@ -492,7 +736,8 @@
    "the_parents_price_without_covariance": 639,
    "verdict": "REDUCED-NOT-EVADED"
   },
-  "verdict_determining": 5
+  "verdict_determining": 5,
+  "why_it_is_not_measured_there": "THEIR-ALTERNATIVES-ARE-OUT-OF-REACH-BY-COST-SO-THE-COUNT-IS-A-LOWER-BOUND-OVER-THE-ROWS-WHERE-IT-WAS-MEASURED"
  },
  "form_census": {
   "grains": [
@@ -661,49 +906,63 @@
  "gate_digests": [
   "df0fe12b03d7",
   "0ec7aa1e28d1",
-  "7c72412cac52",
-  "efa07496f8ab",
-  "28fa5959a89f",
-  "251bb7bdf264",
-  "0d2e28375895",
-  "7fdf371a3608",
-  "1b11ead0ebde",
-  "fb4061160c9f",
-  "94d36bfaa93d",
-  "5b7ab9b9d9df",
-  "354a1807d5ed",
-  "b041a71b2146",
-  "82b06b253375",
-  "aa4d37f9bb35",
-  "6c3f068ddcb1",
-  "41fa0f54f098",
-  "ac280b189b2c",
-  "11778277bfef",
-  "25c4b6ceaafe",
-  "b3d05effb2c2",
-  "a09ad5bb2339",
-  "e60267974752",
-  "b87109538a30",
-  "78cd0f219a73",
-  "7c68402a541a",
-  "47719a5e4bc7",
-  "107b7134b77d",
-  "db62b4ab33e1",
-  "2a4295db079e",
-  "dc21f5ae28e1",
-  "482e2d9766a8",
-  "7ee9b2589a0c",
-  "d396a65d04f2",
-  "b518d0dfdf40",
-  "2c72360fab1f",
-  "ac8467d77bd4",
-  "238bcd3e4ff3",
-  "f3cafcf247ee",
-  "181181f7ffec",
-  "83e09be5f206",
-  "d9a282be529a",
-  "9181a868f012",
-  "f37c7b6f9621"
+  "245924e975af",
+  "dd56278832fd",
+  "69a30cf36ad9",
+  "cba964fa50c3",
+  "de23c71b7301",
+  "cef1dd81d247",
+  "8fb2f5fe4c4a",
+  "c969f155fb13",
+  "de6ff245ecac",
+  "04498f8f2843",
+  "cd853ea85a51",
+  "b0ea218af67b",
+  "f7d12c141e8c",
+  "28d765d40093",
+  "00b621f4b11b",
+  "08eba965be02",
+  "526b5361d0bf",
+  "905e58bdb2ad",
+  "02259116e996",
+  "2764d2535737",
+  "6b6145378f57",
+  "3911ed25aa01",
+  "f2000c3052e6",
+  "39e73c595e27",
+  "c5e4a4f26aee",
+  "81f74f9ab8f8",
+  "2c8de9e2b96d",
+  "96ee51e2fd65",
+  "e64d632c5def",
+  "74f8fa56e6c1",
+  "3b853ebde310",
+  "6621a7e0740a",
+  "c46064309187",
+  "1308e5d9534a",
+  "fff38b85513d",
+  "959d67b7122c",
+  "1b446ff28299",
+  "7f84045e8a9a",
+  "091572e83889",
+  "58fede6f0218",
+  "9e8d3a7365c8",
+  "64071180bac6",
+  "d40464f2b68d",
+  "92ee44774949",
+  "59d7d5a57538",
+  "2cdba7e14f67",
+  "0bd2089cb22d",
+  "581a3157b202",
+  "5f3b7a548b5f",
+  "4618e888b2ab",
+  "1c5a25969d70",
+  "ea026f6b8e5f",
+  "b1c7e7f629d6",
+  "b0476fd57a87",
+  "504e0ed6c9bd",
+  "064febc6b1f6",
+  "d3c28e571ecb"
  ],
  "gates": [
   {
@@ -722,7 +981,7 @@
   },
   {
    "claim": "every inherited quantity is a (path, value) pair: the path must resolve in the pinned receipt AND the value there must be the one this instrument declares, and each is bound to the gate that consumes it -- so a parent that moved a number under a surviving key stops this run",
-   "detail": "34 of 34 path-value anchors resolve; failing []",
+   "detail": "37 of 37 path-value anchors resolve; failing []",
    "gate": "G-PATH-VALUE-ANCHORS",
    "kind": "MEASURED",
    "passed": true
@@ -742,6 +1001,13 @@
    "passed": true
   },
   {
+   "claim": "the carrier this unit weighs is the PARENT'S OWN primary carrier and not a rebuild of it: the uniform configurations, one coin repeated on every link, whose size is measured here and required to equal paper-23's published uniform slice at a named receipt path -- so the two units weigh the same partition of the same set",
+   "detail": "the rebuilt carrier carries 640 uniform configurations against the parent's published 640",
+   "gate": "G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "the coin-map group GAMMA -- generated by the elementary gauge twist and the swap conjugation, as permutations of the coin family -- is closed, its multiplication table is exact, and the elementary twist has order 8, which is the fact every later orbit count rests on",
    "detail": "|GAMMA| = 16, the elementary twist has order 8, fixed-coin profile [16, 32, 64, 640]",
    "gate": "G-GAMMA-GROUP-BUILT",
@@ -749,8 +1015,8 @@
    "passed": true
   },
   {
-   "claim": "both declared chart readings are rebuilt and their action is MEASURED rather than quoted: the anchored group has the parent's own order at a named receipt path, and the group is measured TRANSITIVE on the links and on the plaquettes -- which is what makes a covariant weight system the transport of one function on one stencil, so the orbit count of that stencil's datum is a complete description of the allowed space",
-   "detail": "chart orders 32 and 128; 1 link orbit(s) and 1 plaquette orbit(s) at the anchored reading",
+   "claim": "both declared chart readings are rebuilt and their action is MEASURED rather than quoted: the anchored group has the parent's own order at a named receipt path, and the group is measured TRANSITIVE on the links, on the plaquettes AND on the sites -- one published count per declared grain, since the site-grain census leans on transitivity exactly as the other two do -- which is what makes a covariant weight system the transport of one function on one stencil, so the orbit count of that stencil's datum is a complete description of the allowed space",
+   "detail": "chart orders 32 and 128; 1 link orbit(s), 1 plaquette orbit(s) and 1 site orbit(s) at the anchored reading",
    "gate": "G-CHART-GROUPS-REBUILT",
    "kind": "MEASURED",
    "passed": true
@@ -770,6 +1036,13 @@
    "passed": true
   },
   {
+   "claim": "the mechanism this unit's price, prohibition and pinned observable all rest on is measured to be a property of THIS lattice size, and the dependence is published as a law rather than left implicit: the residual gauge group on the torus has order gcd(L, 8) -- measured by propagating the phase at each declared L and checked against the greatest common divisor -- while the link stencil's gauge image is the full 8 at every L, so the merging index is 8/gcd(L, 8): two at the anchored L = 4, four at L = 2, and ONE at every L divisible by eight, where the odd twist IS a gauge transformation, nothing merges and nothing is pinned.  No census is run at any size but the anchored one; what is measured here is the twist closure alone",
+   "detail": "4 declared sizes; residual orders [2, 4, 8, 8] against gcd [2, 4, 8, 8]; merging indices [4, 2, 1, 1]; the odd twist is a gauge transformation at [8, 16]",
+   "gate": "G-THE-MERGING-INDEX-LAW",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "the form census is COMPLETE along its declared axes: three locality grains against two chart readings, six of six run, none sampled.  At every row the acting group is enumerated and checked closed, the Burnside sum is required to divide the group order AND to be re-derived from the published count -- the orbit count times the group order must be the sum itself -- and the orbit count is confirmed by a SECOND route -- brute-force union-find and an orbit-stabiliser sum at the link grain where the datum space is 640, and an exhaustive brute-force enumeration on the declared reduced arena at every grain, which validates the Burnside machinery against a different computation at the very groups it is used on",
    "detail": "6 rows; failing []",
    "gate": "G-FORM-CENSUS-COMPLETE",
@@ -780,6 +1053,13 @@
    "claim": "the two large gauge-only orbit counts carry a THIRD route: the character formula on Z_8, evaluated in integers, which returns the plaquette count as the fourth power of the twist-class count plus seven times the fourth power of the non-singleton count, and the site count as that fourth power alone -- the difference being the ONE relation the four plaquette twists satisfy and the star's four twists do not",
    "detail": "plaquette: Burnside 530219008 against the character route 530219008; site: 342102016 against 342102016; the two constants are 136 and 72",
    "gate": "G-ANALYTIC-CROSSCHECK",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the two large ANCHORED counts -- the ones the census computes by a Burnside sum over a group of order 1024 and 8192 on a datum space of 640^4 -- carry an exact closed form over the FULL acting group at full size, and not merely a reduced-arena validation of the machinery: the anchored group is the gauge image together with one coset of it, so the orbit count is the mean of the gauge-only count and that coset's fixed-point average, giving the site count as the fourth power of the twist-class count plus its square, all halved, and the plaquette count as the gauge-only closed form plus its own coset constant, halved.  Each is required to equal the census's orbit count AND the delivered coupling count plus one",
+   "detail": "site: closed form 171060256 against the census 171060256; plaquette: 265121344 against 265121344; coset constants [23680, 18496]; the site coset constant is the square of the twist-class count 136: True",
+   "gate": "G-THE-ANCHORED-CLOSED-FORMS",
    "kind": "MEASURED",
    "passed": true
   },
@@ -798,8 +1078,8 @@
    "passed": true
   },
   {
-   "claim": "at the plaquette grain the weak condition is STRICTLY weaker, and the witness is exhibited rather than asserted: every link is measured to lie in exactly two plaquettes, so a weight system built from ANY per-link function entering one of them with exponent plus one and the other with minus one has configuration weight identically one -- product-invariant whatever the function, and not locally invariant when the function is not.  Verified exhaustively on the carrier and on a declared deterministic sample of non-uniform configurations",
-   "detail": "every link in exactly two plaquettes: True; 640 carrier configurations and 64 declared non-uniform configurations at product one: 640 and 64",
+   "claim": "at the plaquette grain AND at the site grain the weak condition is STRICTLY weaker, and the witness is exhibited rather than asserted: every link is measured to lie in exactly two plaquettes and in exactly two stars, so a weight system built from ANY per-link function entering one of them with exponent plus one and the other with minus one has configuration weight identically one -- product-invariant whatever the function, and not locally invariant when the function is not.  Both grains are verified exhaustively on the carrier and on a declared deterministic sample of non-uniform configurations, so the section covers three of the three declared grains",
+   "detail": "every link in exactly two plaquettes: True, and in exactly two stars: True; 640 carrier configurations and 64 declared non-uniform configurations at product one: 640 and 64 at the plaquette grain, 640 and 64 at the site grain",
    "gate": "G-LOCALITY-GAP-AT-THE-PLAQUETTE-GRAIN",
    "kind": "MEASURED",
    "passed": true
@@ -826,9 +1106,23 @@
    "passed": true
   },
   {
-   "claim": "the parent disclosed that its carrier cannot see locality -- one coin serves every link -- and this unit measures exactly what that costs: the coupling counts differ between grains by six orders of magnitude, and yet the measures the three grains can reach on this carrier are the SAME set.  The whole difference sits in the fibre, which the carrier cannot see",
-   "detail": "induced classes [136] against coupling counts [135, 171060255, 265121343], anchored reading",
+   "claim": "the clause that keeps this unit's REDUCED-NOT-EVADED from colliding with the parent's CONSERVED-NOT-PAID is MEASURED and not argued: the parent's conservation is stated at a RETAINED symmetry declaration, and this unit does not retain it.  The link stencil's acting group is measured strictly larger than the residual gauge group the parent's carrier actually carries -- at both chart readings -- and the extra elements are named: the constant twists the torus does not close.  A discount bought by demanding MORE symmetry is what the parent's own law predicts, and the parent's own 639 records what dropping a symmetry costs",
+   "detail": "acting group 8 against the carrier's residual 4 at the anchored reading (index 2) and 16 against 8 at the extension (index 2); the extra elements are the twists [1, 3, 5, 7]",
+   "gate": "G-THE-PRICE-CARVE-OUT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parent disclosed that its carrier cannot see locality -- one coin serves every link -- and this unit measures exactly what that costs: the coupling counts differ between grains by six orders of magnitude, and yet the DIMENSION the three grains can reach on this carrier, and the partition they induce on it, are the same at every grain.  The whole difference in the COUNT sits in the fibre, which the carrier cannot see.  The reachable SETS are not identical, and that is measured separately at G-THE-REACHABLE-SETS-DIFFER-BETWEEN-GRAINS rather than asserted here: this gate's claim is exactly its predicate",
+   "detail": "induced classes [136] and reachable dimensions [135] against coupling counts [135, 171060255, 265121343], anchored reading",
    "gate": "G-GRAIN-DEGENERACY-ON-THE-CARRIER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the reachable SET is measured, not inferred from the reachable dimension: an exhibited class-constant probability measure on the carrier -- one class of size 8 raised by 2^16, everything else at one, summing exactly to one -- is required to be in the image at some declared grain and OUT of it at another.  It is an exact 16th power and not an exact 32nd, so it is reachable at the plaquette and site grains and unreachable at the link grain: the dimension and the partition are grain-invariant, the set is not, and the falsifiable half of the degeneracy finding is now the one this gate tests",
+   "detail": "the witness raises one class of size 8 by 65536 against a normalisation of 524920; its class ratio 65536 is an exact power at ['16']; reachable at ['PLAQUETTE', 'SITE'] and not at ['LINK']",
+   "gate": "G-THE-REACHABLE-SETS-DIFFER-BETWEEN-GRAINS",
    "kind": "MEASURED",
    "passed": true
   },
@@ -840,9 +1134,16 @@
    "passed": true
   },
   {
-   "claim": "the Wilson shape IS a member of the allowed space at the plaquette grain: the trace of the holonomy is invariant under every element of the plaquette's own gauge image, which is what makes any positive-rational function of it an admissible weight system.  The theorem is cyclicity of the trace under conjugation by the corner phases; the measurement is a declared sample of plaquette data against EVERY gauge element",
+   "claim": "the Wilson shape passes the GAUGE leg of the allowed space's own definition at the plaquette grain: the trace of the holonomy is invariant under every element of the plaquette's own gauge image, so any positive-rational function of it is invariant under that image.  The theorem is cyclicity of the trace under conjugation by the corner phases; the measurement is a declared sample of plaquette data against EVERY gauge element.  This gate closes the gauge leg ONLY: the allowed space is cut out by the whole stencil group, whose second leg -- the chart stabiliser -- is measured separately at G-WILSON-COVARIANCE-LEG and is NOT passed by the raw trace",
    "detail": "8192 checks over 16 declared data against 512 gauge elements, 0 failures",
    "gate": "G-WILSON-IS-IN-THE-ALLOWED-SPACE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the membership row is measured against BOTH legs of the allowed space's own definition, at every declared row, and the positive arm is COMPUTED rather than typed.  The raw trace fails the chart leg: the anchored stabiliser's one non-identity element reverses the boundary loop and carries the trace to its complex conjugate, which differs from it wherever the trace is not real -- so the raw trace is admissible at NO declared row.  Its conjugation-symmetric part is admissible at exactly one row, the anchored plaquette, and at no other; on the carrier, where every trace is real, that restriction costs nothing.  The two legs are the whole group: the element built as stabiliser after gauge is measured to act as the stabiliser after the gauge element does, at every pair and every declared datum, and the full acting group is evaluated directly on one declared datum and required to return exactly the gauge image order times the chart leg's own count",
+   "detail": "grains admitting the shape ['PLAQUETTE']; rows admitting the raw trace []; rows admitting the conjugation-symmetric part ['PLAQUETTE-ANCHORED']; chart-leg failures [13, 95] of [32, 128] checks; composition mismatches 0; the direct full-group evaluation on one datum [(1024, 0, 0), (4096, 2048, 2048)]",
+   "gate": "G-WILSON-COVARIANCE-LEG",
    "kind": "MEASURED",
    "passed": true
   },
@@ -861,7 +1162,7 @@
    "passed": true
   },
   {
-   "claim": "every named measure this corpus has on this carrier is run against the Gibbs map, and each failure is attributed to a MEASURED species rather than to a single verdict: a target that separates two orbits inside one class fails by SYMMETRY, a target with a zero fails by SUPPORT because positive weights force full support, and a target whose mass ratios are not exact powers fails by ARITHMETIC.  The reachable arm is REACHED, by the null and by an exhibited non-counting weight system whose measure is computed exactly",
+   "claim": "six DECLARED targets are run against the Gibbs map -- the corpus's three reached nulls, one member of the law-native family, the parent's handed-over monomial Haar and one target this unit constructs to populate the symmetry arm; the declared list is not every measure the corpus holds, and how much of it the list covers is counted at G-THE-TARGET-CENSUS-SCOPE.  Each failure is attributed to a MEASURED species rather than to a single verdict: a target that separates two orbits inside one class fails by SYMMETRY, a target with a zero fails by SUPPORT because positive weights force full support, and a target whose mass ratios are not exact powers fails by ARITHMETIC.  The reachable arm is REACHED, by the null and by an exhibited non-counting weight system whose measure is computed exactly",
    "detail": "6 targets, 1 reachable, 3 obstruction species ['UNREACHABLE-BY-ARITHMETIC', 'UNREACHABLE-BY-SUPPORT', 'UNREACHABLE-BY-SYMMETRY']; the exhibited non-counting witness lands on a class-constant measure summing to one: True",
    "gate": "G-TARGET-CENSUS",
    "kind": "MEASURED",
@@ -875,9 +1176,30 @@
    "passed": true
   },
   {
+   "claim": "the control's stamp names an UNPINNED IDENTIFICATION, and this gate measures the fibre that stamp is about rather than reporting one member of it: the transport law's three positions against this arena's three coin sectors is a fibre of six, all six members are built and run through the same reachability predicate, every one is class-constant and of full support, every one requires a different mass ratio between the two equal-sized sectors, and NOT ONE is reachable at either declared exponent -- so the census verdict on the control is measured to be independent of the identification, which is the only form in which a control carrying that stamp can be reported.  The member this unit builds as its census row is required to return the census row's own verdict",
+   "detail": "6 fibre members; 0 reachable; ratios ['3/2', '15/13', '2/3', '10/13', '13/15', '13/10']; the built member LAW-NATIVE-012 returns UNREACHABLE-BY-ARITHMETIC against the census row's UNREACHABLE-BY-ARITHMETIC",
+   "gate": "G-THE-CONTROLS-FIBRE-IS-MEASURED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the census's own coverage is COUNTED and not claimed: the parent's terminal publishes how many distinct named measures it holds on this carrier, at a named receipt path; a declared correspondence says which of this unit's six targets are among them; and every one of the parent's that is not run here as a census row is accounted for by name -- the other members of the control's identification fibre, which ARE measured by the same reachability predicate, and the non-invariant control, which is not measured here at all.  The accounting is required to close exactly",
+   "detail": "6 targets run here, 4 of them the parent's own ['COUNTING', 'LAW-NATIVE-012', 'ORBIT-UNIFORM-CHART-128', 'ORBIT-UNIFORM-CHART-32']; the parent holds 10, so 6 are not run as a census row: 5 of them are measured in the control's fibre ['LAW-NATIVE-021', 'LAW-NATIVE-102', 'LAW-NATIVE-120', 'LAW-NATIVE-201', 'LAW-NATIVE-210'] and 1 is not measured here METROPOLIS-AT-A-NON-INVARIANT-TARGET",
+   "gate": "G-THE-TARGET-CENSUS-SCOPE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "the parent's Gibbs row is SUPPLIED and priced: the action functional it needed is exactly a weight system at a declared grain, the coupling it needed is exactly a coordinate of the allowed space, and both are now counted rather than named absent.  What the row costs is published as a rank, and that the route reaches anything at all is measured rather than assumed",
    "detail": "the allowed space at the link grain has rank 135; 1 named target(s) reachable",
    "gate": "G-GIBBS-ROW-SUPPLIED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the approach to the control target is measured as a FAMILY and not as a single point: at each of five declared denominators the largest numerator whose e-th power stays below the required ratio is found by integer bisection, and the errors are required to be STRICTLY DECREASING along the family, each witness exact and no float or root extraction computed anywhere.  What the family establishes is that the image comes within every bound the family reaches; that the target lies in the CLOSURE is a theorem about the density of the e-th powers of the positive rationals, and this unit states it as a theorem rather than as a measurement of its own",
+   "detail": "5 declared denominators; errors [0, 0, 1, 2, 4]; strictly decreasing: True",
+   "gate": "G-THE-MONOTONE-WITNESS-FAMILY",
    "kind": "MEASURED",
    "passed": true
   },
@@ -892,6 +1214,13 @@
    "claim": "the pin's cheap falsifier is RUN, and it is decided by a census with both arms populated: an observable's expectation range over the parent's invariant simplex is the convex hull of its orbit values, over the reachable set it is the convex hull of its class averages, and the two are compared exactly.  At least one declared observable is PINNED -- to a single value -- and the loop trace is measured NOT to be, so the finding is a measurement about which observables the constraints reach and not a blanket verdict",
    "detail": "12 observable rows, 2 pinned, 2 of them to a point; the loop trace pinned at 0 of 4 readings; orbit-indicator families [('ANCHORED', 144), ('EXTENSION', 80)]",
    "gate": "G-FALSIFIER-CENSUS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the falsifier AS THE PIN WORDS IT -- is there any gauge observable whose expectation THE COVARIANCE CONSTRAINTS pin to a proper sub-range -- is measured, and the answer is NO at every declared row: the expectation's range over the parent's invariant simplex is compared against the observable's OWN full range over the carrier, and the two are equal at every row, so covariance narrows nothing.  That is the parent's own COVARIANCE-PINS-THE-EXPECTATION-NOWHERE, reproduced and extended from one observable to six at two readings.  The hit this unit does report is at the ACTION route -- the locality declaration -- and this gate is what keeps the two apart",
+   "detail": "12 observable rows measured at the covariance reading, 0 narrowed by it []",
+   "gate": "G-THE-COVARIANCE-READING-IS-NOT-HIT",
    "kind": "MEASURED",
    "passed": true
   },
@@ -924,29 +1253,43 @@
    "passed": true
   },
   {
-   "claim": "each of the four pre-registered outcomes is emitted by THE ONE head law, handed a synthetic census built to select it, and by the second law too -- and the four strings are required to be distinct, so a head law that had collapsed to a constant, or a second law that had drifted into agreement by returning the same string always, dies inside the delivery run",
-   "detail": "4 pre-registered outcomes, 4 reached by both laws, 4 distinct strings",
+   "claim": "the control arm's arenas are MEASURED and not asserted: each declared synthetic coin family is checked closed -- or measured NOT closed, which is the point of the third one -- and every row of every closed one is required to have its Burnside orbit count confirmed by an exhaustive brute-force enumeration AND to re-derive its own Burnside sum, exactly as the delivered census rows are.  The refusing arena is required to refuse where it says it does: at a Burnside sum that does not divide",
+   "detail": "3 synthetic arenas; closure declared [True, True, False] and measured [True, True, False]; every route agrees [True, True, True]; orbit counts [[1, 1, 1, 1, 1, 1], [1, 1, 5, 5, 1, 1], [None, None, None, None, None, None]]",
+   "gate": "G-THE-SYNTHETIC-ARENAS-ARE-MEASURED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "each of the four pre-registered outcomes is emitted by THE ONE head law, and by the second law too, from a census the real pricing function MEASURED: three declared synthetic arenas -- a single-orbit family on which the stencil group is transitive, a twist orbit that is transitive on the carrier and not on the plaquette datum, and a family that does not close, on which the Burnside sum does not divide -- and the delivered arena itself for the fourth.  The four strings are required to be distinct, so a head law that had collapsed to a constant, or a second law that had drifted into agreement by returning the same string always, dies inside the delivery run",
+   "detail": "4 pre-registered outcomes, 4 reached by both laws from a measured census, 4 distinct strings; the arenas are [('SINGLETON-I', 'ACT-FORM-FORCED'), ('TWIST-ORBIT-X', 'ACT-GIBBS'), ('NOT-CLOSED-I-AND-X', 'ACT-BLOCKED-AT'), ('THE-DELIVERED-ARENA', 'ACT-FORM-RELATIVE')]",
    "gate": "G-HEAD-LAW-REACHABILITY",
    "kind": "MEASURED",
    "passed": true
   },
   {
+   "claim": "which pre-registered outcomes THIS arena could ever have emitted is measured rather than left to look open: an orbit count is at least the datum space divided by the acting group's order, and that floor is computed at every declared row, checked against the measurement, and required to exceed one -- so ACT-FORM-FORCED, which needs one orbit at every row, was closed by counting before the instrument ran.  The same pigeonhole on the 640-coin carrier closes ACT-GIBBS, which needs one induced class.  ACT-BLOCKED-AT fires only on an instrument fault.  One outcome was live at this arena, and the instrument's job was to name it -- which is why the control arm prices synthetic arenas where the other three ARE live",
+   "detail": "the smallest orbit count this arena can produce at any declared row is 40 and the smallest induced class count is 40; 6 census rows and 6 carrier rows at or above their own floor",
+   "gate": "G-OUTCOME-FEASIBILITY-AT-THIS-ARENA",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "the set of functions this source defines is required to EQUAL a declared inventory, so a neutrally-named helper computing something this unit does not publish cannot exist unnoticed",
-   "detail": "118 functions defined; undeclared []; declared but absent []",
+   "detail": "134 functions defined; undeclared []; declared but absent []",
    "gate": "G-FUNCTION-INVENTORY-IS-TOTAL",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the falsifier registry is checked TOTAL against this instrument's own syntax tree: every switch in the source is declared, every declared falsifier has a branch to fire, and a switch the scan cannot read -- a computed name, or a bare comparison outside mut's own body -- is fatal rather than forgiven",
-   "detail": "49 switches in the tree, 49 declared; undeclared []; declared without a branch []; unreadable switch present False",
+   "detail": "68 switches in the tree, 68 declared; undeclared []; declared without a branch []; unreadable switch present False",
    "gate": "G-MUTANT-REGISTRY-IS-TOTAL",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "E-23: each falsifier's PUBLISHED description names the exact source token it plants, and that token is located in this instrument's own source text -- so a description-inverted mutant dies here rather than in a reader's trust",
-   "detail": "49 falsifiers, 0 whose published token is not in the source []",
+   "detail": "68 falsifiers, 0 whose published token is not in the source []",
    "gate": "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST",
    "kind": "MEASURED",
    "passed": true
@@ -960,35 +1303,42 @@
   },
   {
    "claim": "the complete verdict string is compared for equality against an INDEPENDENT reconstruction that reads only the SERIALIZED receipt, derives the head by a second head law, and re-renders every segment from the primitive measured tables -- reading neither the builder's segments nor the builder's aggregates and sharing no format string with it, so 'the same concatenation written twice' cannot pass",
-   "detail": "builder 3236 characters, reconstruction 3236, equal: True",
+   "detail": "builder 4663 characters, reconstruction 4663, equal: True",
    "gate": "G-VERDICT-RECONSTRUCTION",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the coverage is published at an honest denominator (#34): every gate this run closes is either the declared target of a falsifier that REACHES it, or carries a registered forcing stating why no falsifier can, and the remainder is named rather than folded into the first class",
-   "detail": "37 gates closed, 37 carry a declared falsifier, 1 a registered forcing, 0 uncovered []",
+   "claim": "the coverage is published at an honest denominator (#34), and the denominator is EVERY gate on the clean path and not only the ones already closed when this ledger is taken: each is either the declared target of a falsifier that REACHES it or carries a registered forcing stating why no falsifier can, the late gates are listed one by one with which of the two covers them, and the remainder is named rather than folded into the first class.  The gate that exists only to refuse, and the external battery's own adjudication, are named in registries of their own so that no row of this one can never fire",
+   "detail": "49 gates closed here and 62 on the clean path; 49 carry a declared falsifier, 1 a registered forcing, 0 uncovered []; late gates 13, each covered: ['FALSIFIER:MUT-CHAIN', 'FALSIFIER:MUT-CLAIM,MUT-TABLE-ROW', 'FALSIFIER:MUT-CONSUMER', 'FALSIFIER:MUT-COVERAGE,MUT-SPELLED-NUMERAL', 'FALSIFIER:MUT-LEDGER-SHAPE', 'FALSIFIER:MUT-MUST-NOT', 'FALSIFIER:MUT-MUST-NOT-RECEIPT', 'FALSIFIER:MUT-POLARITY', 'FALSIFIER:MUT-QUOTE-FIDELITY,MUT-TABLE-BINDING,MUT-TABLE-HEADER', 'FALSIFIER:MUT-SEAL', 'FALSIFIER:MUT-VERDICT-TWIN', 'FALSIFIER:MUT-WAIVER', 'FORCING']",
    "gate": "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
    "kind": "MEASURED",
    "passed": true
   },
   {
+   "claim": "the chained ledger is VERIFIED and not merely built: every published per-row digest is recomputed here from its own predecessor and its own row and compared element by element, so the sentence 'a row edited after its gate closed no longer matches the digest of its own predecessor' is arithmetic this instrument performs rather than a property a reader is asked to trust.  The same chain is recomputed at the disk boundary from the bytes that were read back",
+   "detail": "50 chained rows recomputed, 0 mismatching []",
+   "gate": "G-LEDGER-CHAIN-VERIFIED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "the ledger's own published shape is a MEASUREMENT of the ledger and not a description of it: the sealed-object count is recounted from the manifest itself, the paper-gate count from the declared list, and the gate total includes this gate",
-   "detail": "29 sealed objects published against a manifest of 29; 39 gates closed including this one; 6 paper gates declared",
+   "detail": "36 sealed objects published against a manifest of 36; 52 gates closed including this one; 7 paper gates and 1 receipt-wall gates declared",
    "gate": "G-LEDGER-SHAPE-IS-CONSISTENT",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "every load-bearing sentence of the paper is RENDERED FROM THE RECEIPT and located in the delivered bytes at its exact occurrence count, under whitespace and markdown-prefix normalisation (#125) -- so a number corrupted at one of its several occurrences dies, and a paper whose prose drifted from the run that produced it cannot be delivered",
-   "detail": "85 rendered claims, 0 not located at their counts: []",
+   "detail": "141 rendered claims, 0 not located at their counts: []",
    "gate": "G-PAPER-CLAIMS",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the paper's verdict block is compared for EQUALITY against the string this run emits, under whitespace normalisation, and the paper's fenced blocks are gated by MULTISET EQUALITY against the single block this run licenses (E-22) -- so neither a stale verdict nor a forged twin riding along beside the clean one can be delivered",
-   "detail": "1 fenced blocks; 1 equal to this run's verdict of 3236 characters",
+   "detail": "1 fenced blocks; 1 equal to this run's verdict of 4663 characters",
    "gate": "G-PAPER-VERDICT-EQUALITY",
    "kind": "MEASURED",
    "passed": true
@@ -1002,22 +1352,29 @@
   },
   {
    "claim": "the direction-bearing claims are checked for POLARITY as well as presence -- each must occur and must not sit inside a window carrying a declared negator -- which closes the direction-blindness of a fragment gate",
-   "detail": "4 polarity rows, 0 failing",
+   "detail": "14 polarity rows, 0 failing",
    "gate": "G-PAPER-POLARITY",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "E-22's 'tables render as claims' is enforced structurally: every DATA row of every delivered table that carries a numeral must be covered by a claim rendered from the receipt, and every BLOCKQUOTE must lie inside one of the pinned verbatim windows -- so a paper that misquotes, or inverts, a parent's own definition dies here even though the anchor on the parent's bytes passes.  Header rows are the declared exception and are counted and published rather than silently skipped",
-   "detail": "26 table data rows carrying a numeral, 0 unbound []; 5 header rows excluded; 19 blockquotes, 0 not inside a pinned window []",
+   "claim": "E-22's 'tables render as claims' is enforced structurally: every DATA row of every delivered table that carries a numeral must be covered by a claim rendered from the receipt, and every BLOCKQUOTE must lie inside one of the pinned verbatim windows -- so a paper that misquotes, or inverts, a parent's own definition dies here even though the anchor on the parent's bytes passes.  EVERY HEADER ROW IS BOUND THE SAME WAY: each is rendered from the receipt keys its own columns are, so two semantically opposed columns exchanged in the paper stop matching the header this run licenses.  There is no declared exception left",
+   "detail": "66 table data rows, 0 unbound []; 12 header rows, 0 unbound []; 19 blockquotes, 0 not inside a pinned window []",
    "gate": "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "EVERY numeral of the paper is matched against a value this run computed -- fenced blocks, verdict block, inline code spans and both sides of every fraction included (E-22, #20) -- with only a published list of structural literals forgiven, so a number invented in prose, or moved from one claim to another, dies inside the delivery run",
-   "detail": "343 numerals scanned, 36 inline code spans carrying a numeral, 2 fence markers, 0 unmatched: []",
+   "claim": "EVERY numeral of the paper is matched against a value this run computed -- fenced blocks, verdict block, inline code spans and both sides of every fraction included (E-22, #20) -- with only a published list of structural literals forgiven, so a number invented in prose, or moved from one claim to another, dies inside the delivery run.  SPELLED NUMERALS ARE SCANNED THE SAME WAY (#267): every number-word above twelve, hyphenated compounds included, is mapped to its integer and matched against the same pool, and the two spelled counts this paper delivers are additionally rendered as claims from the receipt",
+   "detail": "566 numerals scanned, 4 spelled numerals above twelve, 37 inline code spans carrying a numeral, 2 fence markers, 0 unmatched: []; unmatched spelled: []",
    "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every anchor's declared CONSUMER is a gate that exists in this run's own ledger and that passed: the register is checked against the ledger rather than published beside it, so an anchor bound to a gate this instrument does not have -- the phantom-consumer disease -- stops the delivery run instead of being vouched by prose",
+   "detail": "56 anchors naming 23 distinct consumer gates; 0 naming a gate that does not exist []; 0 naming a gate that did not pass []",
+   "gate": "G-CONSUMERS-ARE-REAL",
    "kind": "MEASURED",
    "passed": true
   }
@@ -1232,8 +1589,11 @@
   "induced_classes_anchored": [
    136
   ],
+  "reachable_dimensions_anchored": [
+   135
+  ],
   "readings": 2,
-  "verdict": "THE-COUPLING-COUNT-IS-GRAIN-RELATIVE-THE-REACHABLE-MEASURES-ARE-NOT"
+  "verdict": "THE-COUPLING-COUNT-IS-GRAIN-RELATIVE-THE-REACHABLE-DIMENSION-AND-THE-INDUCED-PARTITION-ARE-NOT"
  },
  "law_native_control": {
   "class_constant": true,
@@ -1248,16 +1608,127 @@
    "13/38"
   ],
   "stamp": "LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION",
-  "the_honest_use": "A-CONTROL-THE-DISTANCE-IS-REPORTED-AND-THE-AGREEMENT-IS-NOT-CLAIMED"
+  "the_declared_fibre": 6,
+  "the_fibre_rows": [
+   {
+    "class_constant": true,
+    "full_support": true,
+    "obstruction_over_the_declared_field": "UNREACHABLE-BY-ARITHMETIC",
+    "reachable": false,
+    "reachable_at_exponent": {
+     "16": false,
+     "32": false
+    },
+    "row": "LAW-NATIVE-012",
+    "the_identification": [
+     "DIAGONAL<-0",
+     "ANTIDIAGONAL<-1",
+     "BALANCED<-2"
+    ],
+    "the_ratio_between_the_two_equal_sized_sectors": "3/2"
+   },
+   {
+    "class_constant": true,
+    "full_support": true,
+    "obstruction_over_the_declared_field": "UNREACHABLE-BY-ARITHMETIC",
+    "reachable": false,
+    "reachable_at_exponent": {
+     "16": false,
+     "32": false
+    },
+    "row": "LAW-NATIVE-021",
+    "the_identification": [
+     "DIAGONAL<-0",
+     "ANTIDIAGONAL<-2",
+     "BALANCED<-1"
+    ],
+    "the_ratio_between_the_two_equal_sized_sectors": "15/13"
+   },
+   {
+    "class_constant": true,
+    "full_support": true,
+    "obstruction_over_the_declared_field": "UNREACHABLE-BY-ARITHMETIC",
+    "reachable": false,
+    "reachable_at_exponent": {
+     "16": false,
+     "32": false
+    },
+    "row": "LAW-NATIVE-102",
+    "the_identification": [
+     "DIAGONAL<-1",
+     "ANTIDIAGONAL<-0",
+     "BALANCED<-2"
+    ],
+    "the_ratio_between_the_two_equal_sized_sectors": "2/3"
+   },
+   {
+    "class_constant": true,
+    "full_support": true,
+    "obstruction_over_the_declared_field": "UNREACHABLE-BY-ARITHMETIC",
+    "reachable": false,
+    "reachable_at_exponent": {
+     "16": false,
+     "32": false
+    },
+    "row": "LAW-NATIVE-120",
+    "the_identification": [
+     "DIAGONAL<-1",
+     "ANTIDIAGONAL<-2",
+     "BALANCED<-0"
+    ],
+    "the_ratio_between_the_two_equal_sized_sectors": "10/13"
+   },
+   {
+    "class_constant": true,
+    "full_support": true,
+    "obstruction_over_the_declared_field": "UNREACHABLE-BY-ARITHMETIC",
+    "reachable": false,
+    "reachable_at_exponent": {
+     "16": false,
+     "32": false
+    },
+    "row": "LAW-NATIVE-201",
+    "the_identification": [
+     "DIAGONAL<-2",
+     "ANTIDIAGONAL<-0",
+     "BALANCED<-1"
+    ],
+    "the_ratio_between_the_two_equal_sized_sectors": "13/15"
+   },
+   {
+    "class_constant": true,
+    "full_support": true,
+    "obstruction_over_the_declared_field": "UNREACHABLE-BY-ARITHMETIC",
+    "reachable": false,
+    "reachable_at_exponent": {
+     "16": false,
+     "32": false
+    },
+    "row": "LAW-NATIVE-210",
+    "the_identification": [
+     "DIAGONAL<-2",
+     "ANTIDIAGONAL<-1",
+     "BALANCED<-0"
+    ],
+    "the_ratio_between_the_two_equal_sized_sectors": "13/10"
+   }
+  ],
+  "the_honest_use": "A-CONTROL-THE-DISTANCE-IS-REPORTED-AND-THE-AGREEMENT-IS-NOT-CLAIMED",
+  "the_member_built_as_the_census_row": "LAW-NATIVE-012",
+  "the_unpinned_step": "THE-IDENTIFICATION-OF-THE-TRANSPORT-LAWS-THREE-POSITIONS-WITH-THIS-ARENAS-THREE-COIN-SECTORS",
+  "the_verdict_is_independent_of_the_identification": true
  },
  "ledger_shape": {
   "closing_gates": 2,
-  "gates_closed_before_the_paper_gates": 39,
-  "objects_sealed_before_the_paper_gates": 29,
-  "paper_gates": 6
+  "gates_closed_before_the_paper_gates": 52,
+  "objects_sealed_before_the_paper_gates": 36,
+  "paper_gates": 7,
+  "receipt_gates": 1
  },
  "locality": {
   "every_link_lies_in_this_many_plaquettes": 2,
+  "every_link_lies_in_this_many_stars": 2,
+  "grains_covered": 3,
   "link_grain_elementary_systems": 640,
   "link_grain_invariant_detected": 0,
   "link_grain_locally_invariant": 64,
@@ -1268,7 +1739,92 @@
   "plaquette_grain_declared_sample": 64,
   "plaquette_grain_sample_at_product_one": 64,
   "plaquette_grain_verdict": "THE-PRODUCT-INVARIANT-SPACE-IS-STRICTLY-LARGER-BY-A-COBOUNDARY",
+  "site_grain_carrier_configurations_at_product_one": 640,
+  "site_grain_sample_at_product_one": 64,
+  "site_grain_verdict": "THE-PRODUCT-INVARIANT-SPACE-IS-STRICTLY-LARGER-BY-A-COBOUNDARY",
   "what_the_coboundary_does_to_the_measure": "NOTHING-ITS-PRODUCT-IS-IDENTICALLY-ONE"
+ },
+ "merging_index_law": {
+  "rows": [
+   {
+    "L": 2,
+    "gcd_of_L_and_the_phase_order": 2,
+    "orbits_merge_in_groups_of": 4,
+    "realisable_constant_twists": [
+     0,
+     4
+    ],
+    "row": "L=2",
+    "the_link_stencils_gauge_image": 8,
+    "the_merging_index": 4,
+    "the_odd_twist_is_a_gauge_transformation_here": false,
+    "the_residual_order_on_the_torus": 2
+   },
+   {
+    "L": 4,
+    "gcd_of_L_and_the_phase_order": 4,
+    "orbits_merge_in_groups_of": 2,
+    "realisable_constant_twists": [
+     0,
+     2,
+     4,
+     6
+    ],
+    "row": "L=4",
+    "the_link_stencils_gauge_image": 8,
+    "the_merging_index": 2,
+    "the_odd_twist_is_a_gauge_transformation_here": false,
+    "the_residual_order_on_the_torus": 4
+   },
+   {
+    "L": 8,
+    "gcd_of_L_and_the_phase_order": 8,
+    "orbits_merge_in_groups_of": 1,
+    "realisable_constant_twists": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "row": "L=8",
+    "the_link_stencils_gauge_image": 8,
+    "the_merging_index": 1,
+    "the_odd_twist_is_a_gauge_transformation_here": true,
+    "the_residual_order_on_the_torus": 8
+   },
+   {
+    "L": 16,
+    "gcd_of_L_and_the_phase_order": 8,
+    "orbits_merge_in_groups_of": 1,
+    "realisable_constant_twists": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "row": "L=16",
+    "the_link_stencils_gauge_image": 8,
+    "the_merging_index": 1,
+    "the_odd_twist_is_a_gauge_transformation_here": true,
+    "the_residual_order_on_the_torus": 8
+   }
+  ],
+  "sizes_at_which_nothing_merges": [
+   8,
+   16
+  ],
+  "the_anchored_index": 2,
+  "the_boundary_pot_inherits": "EVERY-STATEMENT-THIS-UNIT-MAKES-ABOUT-THE-ODD-TWIST-IS-A-STATEMENT-ABOUT-LATTICES-WHOSE-SIZE-THE-PHASE-ORDER-DOES-NOT-DIVIDE",
+  "the_law": "THE-MERGING-INDEX-IS-8-OVER-GCD-L-8",
+  "what_is_measured_at_the_other_sizes": "THE-TWIST-CLOSURE-ALONE-NO-CENSUS-IS-RUN-THERE"
  },
  "mutants": [
   {
@@ -1375,7 +1931,7 @@
   },
   {
    "mutant": "MUT-TARGET-CENSUS",
-   "plants": "rows[3][\"obstruction\"] = \"REACHABLE\"",
+   "plants": "rows[3][\"obstruction_over_the_declared_field\"] = \"REACHABLE\"",
    "target": "G-TARGET-CENSUS",
    "what": "declares the law-native control reachable"
   },
@@ -1564,6 +2120,120 @@
    "plants": "\"MOVED-AFTER-THE-GATE\"",
    "target": "G-SEAL-INTEGRITY",
    "what": "edits a sealed object after its gate closed"
+  },
+  {
+   "mutant": "MUT-CARRIER",
+   "plants": "carrier = carrier - 1",
+   "target": "G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER",
+   "what": "drops one configuration from the rebuilt carrier before it is compared with the parent's own published uniform slice"
+  },
+  {
+   "mutant": "MUT-MERGING-INDEX",
+   "plants": "ctw = ctw[:-1]",
+   "target": "G-THE-MERGING-INDEX-LAW",
+   "what": "drops one realisable constant twist at one declared lattice size, so the measured residual order stops matching the greatest common divisor"
+  },
+  {
+   "mutant": "MUT-CLOSED-FORM",
+   "plants": "tot = tot + len(gi)",
+   "target": "G-THE-ANCHORED-CLOSED-FORMS",
+   "what": "moves the site grain's coset fixed-point sum by one group order, so the closed form no longer reproduces the census count"
+  },
+  {
+   "mutant": "MUT-SITE-COBOUNDARY",
+   "plants": "sexps[lat.links[0]] = {sorder[lat.links[0]][0]: 1,",
+   "target": "G-LOCALITY-GAP-AT-THE-PLAQUETTE-GRAIN",
+   "what": "gives one link the same exponent in both of its stars, so the site grain's coboundary product is no longer one"
+  },
+  {
+   "mutant": "MUT-SET-EQUALITY",
+   "plants": "ratio = Fraction(2) ** max(exps)",
+   "target": "G-THE-REACHABLE-SETS-DIFFER-BETWEEN-GRAINS",
+   "what": "makes the exhibited witness an exact power at every declared exponent, so the reachable sets stop differing"
+  },
+  {
+   "mutant": "MUT-CARVE-OUT",
+   "plants": "fca = resa",
+   "target": "G-THE-PRICE-CARVE-OUT",
+   "what": "sets the link stencil's acting group equal to the carrier's own residual gauge group, so the index that buys the discount disappears"
+  },
+  {
+   "mutant": "MUT-WILSON-COVARIANCE",
+   "plants": "craw = 0",
+   "target": "G-WILSON-COVARIANCE-LEG",
+   "what": "reports the raw trace as passing the anchored chart leg, so the positive arm is asserted again instead of measured"
+  },
+  {
+   "mutant": "MUT-CONTROL-FIBRE",
+   "plants": "fib[2][\"obstruction_over_the_declared_field\"] = \"REACHABLE\"",
+   "target": "G-THE-CONTROLS-FIBRE-IS-MEASURED",
+   "what": "declares one member of the control's identification fibre reachable"
+  },
+  {
+   "mutant": "MUT-CENSUS-SCOPE",
+   "plants": "notrun = notrun - 1",
+   "target": "G-THE-TARGET-CENSUS-SCOPE",
+   "what": "loses one of the parent's named measures from the accounting, so the coverage no longer closes"
+  },
+  {
+   "mutant": "MUT-MONOTONE-WITNESS",
+   "plants": "fam[2] = dict(fam[2], the_error=fam[1][\"the_error\"])",
+   "target": "G-THE-MONOTONE-WITNESS-FAMILY",
+   "what": "repeats one witness's error, so the declared family stops being strictly decreasing"
+  },
+  {
+   "mutant": "MUT-COVARIANCE-READING",
+   "plants": "narrowed = [obsrows[0][\"row\"]]",
+   "target": "G-THE-COVARIANCE-READING-IS-NOT-HIT",
+   "what": "reports one observable's range over the invariant simplex as narrower than its own, so covariance would be pinning something"
+  },
+  {
+   "mutant": "MUT-SYNTHETIC-ROUTES",
+   "plants": "brute_force_orbits=fc[2][\"orbits\"] + 1",
+   "target": "G-THE-SYNTHETIC-ARENAS-ARE-MEASURED",
+   "what": "moves one synthetic arena's brute-force orbit count off its Burnside count"
+  },
+  {
+   "mutant": "MUT-SYNTHETIC-ARENA",
+   "plants": "(ONE, ZERO, ZERO, fneg(ONE))",
+   "target": "G-HEAD-LAW-REACHABILITY",
+   "what": "adds a second coin-map orbit to the transitive synthetic arena, so the control arm stops emitting the forced outcome"
+  },
+  {
+   "mutant": "MUT-TABLE-HEADER",
+   "plants": "theads[0].strip(\"|\").split(\"|\")",
+   "target": "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
+   "what": "exchanges the column names of a delivered table's header row in the scanned text, so the header no longer renders from its own receipt keys"
+  },
+  {
+   "mutant": "MUT-SPELLED-NUMERAL",
+   "plants": "an uncovered spelled numeral: eighty-eight",
+   "target": "G-PAPER-NUMERAL-COVERAGE",
+   "what": "plants a spelled numeral above twelve that no value this run computed can license"
+  },
+  {
+   "mutant": "MUT-CONSUMER",
+   "plants": "consumer=\"G-DOES-NOT-EXIST\"",
+   "target": "G-CONSUMERS-ARE-REAL",
+   "what": "points one anchor's declared consumer at a gate this instrument does not have"
+  },
+  {
+   "mutant": "MUT-CHAIN",
+   "plants": "LD.digests[0] = \"000000000000\"",
+   "target": "G-LEDGER-CHAIN-VERIFIED",
+   "what": "corrupts one published chain digest after its row closed, so the recomputed chain no longer matches the published one"
+  },
+  {
+   "mutant": "MUT-MUST-NOT-RECEIPT",
+   "plants": "a string tension in the receipt",
+   "target": "G-MUST-NOT-OVER-THE-RECEIPT",
+   "what": "plants a must-not word into the serialized receipt the wall sweeps"
+  },
+  {
+   "mutant": "MUT-FEASIBILITY",
+   "plants": "the_smallest_orbit_count_possible_here=1",
+   "target": "G-OUTCOME-FEASIBILITY-AT-THIS-ARENA",
+   "what": "sets one row's pigeonhole floor to one, so the floor stops bounding the measurement it is computed from"
   }
  ],
  "odd_twist": {
@@ -1582,12 +2252,131 @@
    7
   ]
  },
+ "outcome_feasibility": {
+  "ACT-BLOCKED-AT": "FIRES-ONLY-ON-AN-INSTRUMENT-FAULT-NOT-ON-ANY-PROPERTY-OF-AN-ARENA",
+  "carrier_rows": [
+   {
+    "carrier": 640,
+    "row": "LINK-ANCHORED",
+    "the_group_that_acts_on_a_constant_datum": 16,
+    "the_measured_class_count": 136,
+    "the_measurement_is_at_or_above_the_floor": true,
+    "the_smallest_class_count_possible_here": 40,
+    "why": "THE-SLOT-PERMUTATION-DROPS-OUT-OF-A-CONSTANT-DATUM-SO-WHAT-IDENTIFIES-TWO-COINS-IS-AN-ELEMENT-OF-THE-COIN-MAP-GROUP"
+   },
+   {
+    "carrier": 640,
+    "row": "LINK-EXTENSION",
+    "the_group_that_acts_on_a_constant_datum": 16,
+    "the_measured_class_count": 80,
+    "the_measurement_is_at_or_above_the_floor": true,
+    "the_smallest_class_count_possible_here": 40,
+    "why": "THE-SLOT-PERMUTATION-DROPS-OUT-OF-A-CONSTANT-DATUM-SO-WHAT-IDENTIFIES-TWO-COINS-IS-AN-ELEMENT-OF-THE-COIN-MAP-GROUP"
+   },
+   {
+    "carrier": 640,
+    "row": "PLAQUETTE-ANCHORED",
+    "the_group_that_acts_on_a_constant_datum": 16,
+    "the_measured_class_count": 136,
+    "the_measurement_is_at_or_above_the_floor": true,
+    "the_smallest_class_count_possible_here": 40,
+    "why": "THE-SLOT-PERMUTATION-DROPS-OUT-OF-A-CONSTANT-DATUM-SO-WHAT-IDENTIFIES-TWO-COINS-IS-AN-ELEMENT-OF-THE-COIN-MAP-GROUP"
+   },
+   {
+    "carrier": 640,
+    "row": "PLAQUETTE-EXTENSION",
+    "the_group_that_acts_on_a_constant_datum": 16,
+    "the_measured_class_count": 80,
+    "the_measurement_is_at_or_above_the_floor": true,
+    "the_smallest_class_count_possible_here": 40,
+    "why": "THE-SLOT-PERMUTATION-DROPS-OUT-OF-A-CONSTANT-DATUM-SO-WHAT-IDENTIFIES-TWO-COINS-IS-AN-ELEMENT-OF-THE-COIN-MAP-GROUP"
+   },
+   {
+    "carrier": 640,
+    "row": "SITE-ANCHORED",
+    "the_group_that_acts_on_a_constant_datum": 16,
+    "the_measured_class_count": 136,
+    "the_measurement_is_at_or_above_the_floor": true,
+    "the_smallest_class_count_possible_here": 40,
+    "why": "THE-SLOT-PERMUTATION-DROPS-OUT-OF-A-CONSTANT-DATUM-SO-WHAT-IDENTIFIES-TWO-COINS-IS-AN-ELEMENT-OF-THE-COIN-MAP-GROUP"
+   },
+   {
+    "carrier": 640,
+    "row": "SITE-EXTENSION",
+    "the_group_that_acts_on_a_constant_datum": 16,
+    "the_measured_class_count": 80,
+    "the_measurement_is_at_or_above_the_floor": true,
+    "the_smallest_class_count_possible_here": 40,
+    "why": "THE-SLOT-PERMUTATION-DROPS-OUT-OF-A-CONSTANT-DATUM-SO-WHAT-IDENTIFIES-TWO-COINS-IS-AN-ELEMENT-OF-THE-COIN-MAP-GROUP"
+   }
+  ],
+  "outcomes_closed_by_counting_before_the_run": [
+   "ACT-FORM-FORCED",
+   "ACT-GIBBS"
+  ],
+  "rows": [
+   {
+    "acting_group_order": 8,
+    "datum_space_size": 640,
+    "row": "LINK-ANCHORED",
+    "the_measured_orbit_count": 136,
+    "the_measurement_is_at_or_above_the_floor": true,
+    "the_smallest_orbit_count_possible_here": 80
+   },
+   {
+    "acting_group_order": 16,
+    "datum_space_size": 640,
+    "row": "LINK-EXTENSION",
+    "the_measured_orbit_count": 80,
+    "the_measurement_is_at_or_above_the_floor": true,
+    "the_smallest_orbit_count_possible_here": 40
+   },
+   {
+    "acting_group_order": 1024,
+    "datum_space_size": 167772160000,
+    "row": "PLAQUETTE-ANCHORED",
+    "the_measured_orbit_count": 265121344,
+    "the_measurement_is_at_or_above_the_floor": true,
+    "the_smallest_orbit_count_possible_here": 163840000
+   },
+   {
+    "acting_group_order": 4096,
+    "datum_space_size": 167772160000,
+    "row": "PLAQUETTE-EXTENSION",
+    "the_measured_orbit_count": 66311040,
+    "the_measurement_is_at_or_above_the_floor": true,
+    "the_smallest_orbit_count_possible_here": 40960000
+   },
+   {
+    "acting_group_order": 8192,
+    "datum_space_size": 167772160000,
+    "row": "SITE-ANCHORED",
+    "the_measured_orbit_count": 171060256,
+    "the_measurement_is_at_or_above_the_floor": true,
+    "the_smallest_orbit_count_possible_here": 20480000
+   },
+   {
+    "acting_group_order": 32768,
+    "datum_space_size": 167772160000,
+    "row": "SITE-EXTENSION",
+    "the_measured_orbit_count": 43398586,
+    "the_measurement_is_at_or_above_the_floor": true,
+    "the_smallest_orbit_count_possible_here": 5120000
+   }
+  ],
+  "the_outcome_that_was_live": "ACT-FORM-RELATIVE",
+  "the_smallest_induced_class_count_this_arena_can_produce": 40,
+  "the_smallest_orbit_count_this_arena_can_produce": 40,
+  "where_the_other_three_are_live": "THE-DECLARED-SYNTHETIC-ARENAS-PRICED-THROUGH-THE-REAL-CENSUS"
+ },
  "paper_binding": {
   "blockquotes": 19,
   "blockquotes_outside_a_pinned_verbatim_window": 0,
-  "table_data_rows_carrying_a_numeral": 26,
-  "table_header_rows_excluded": 5,
+  "table_data_rows": 66,
+  "table_header_rows": 12,
+  "table_header_rows_unbound": 0,
   "table_rows_unbound": 0,
+  "tables_rendered_from_the_receipt": 12,
   "verbatim_windows_available": 19
  },
  "paper_claims": [
@@ -1608,27 +2397,315 @@
    "occurrences": 1
   },
   {
-   "claim": "link | anchored | 8 | 1 | 8 | 136 | 135",
+   "claim": "outcome | arena | reached | both laws agree",
    "occurrences": 1
   },
   {
-   "claim": "link | extension | 8 | 4 | 16 | 80 | 79",
+   "claim": "ACT-FORM-FORCED | SINGLETON-I | yes | yes",
    "occurrences": 1
   },
   {
-   "claim": "plaquette | anchored | 512 | 2 | 1024 | 265121344 | 265121343",
+   "claim": "ACT-GIBBS | TWIST-ORBIT-X | yes | yes",
    "occurrences": 1
   },
   {
-   "claim": "plaquette | extension | 512 | 8 | 4096 | 66311040 | 66311039",
+   "claim": "ACT-BLOCKED-AT | NOT-CLOSED-I-AND-X | yes | yes",
    "occurrences": 1
   },
   {
-   "claim": "site | anchored | 4096 | 2 | 8192 | 171060256 | 171060255",
+   "claim": "ACT-FORM-RELATIVE | THE-DELIVERED-ARENA | yes | yes",
    "occurrences": 1
   },
   {
-   "claim": "site | extension | 4096 | 8 | 32768 | 43398586 | 43398585",
+   "claim": "row | coins | measured closed | every route agrees | the outcome word",
+   "occurrences": 1
+  },
+  {
+   "claim": "SINGLETON-I | 1 | yes | yes | ACT-FORM-FORCED",
+   "occurrences": 1
+  },
+  {
+   "claim": "TWIST-ORBIT-X | 8 | yes | yes | ACT-GIBBS",
+   "occurrences": 1
+  },
+  {
+   "claim": "NOT-CLOSED-I-AND-X | 2 | no | yes | ACT-BLOCKED-AT",
+   "occurrences": 1
+  },
+  {
+   "claim": "row | datum space size | acting group order | the smallest orbit count possible here | the measured orbit count",
+   "occurrences": 1
+  },
+  {
+   "claim": "LINK-ANCHORED | 640 | 8 | 80 | 136",
+   "occurrences": 1
+  },
+  {
+   "claim": "LINK-EXTENSION | 640 | 16 | 40 | 80",
+   "occurrences": 1
+  },
+  {
+   "claim": "PLAQUETTE-ANCHORED | 167772160000 | 1024 | 163840000 | 265121344",
+   "occurrences": 1
+  },
+  {
+   "claim": "PLAQUETTE-EXTENSION | 167772160000 | 4096 | 40960000 | 66311040",
+   "occurrences": 1
+  },
+  {
+   "claim": "SITE-ANCHORED | 167772160000 | 8192 | 20480000 | 171060256",
+   "occurrences": 1
+  },
+  {
+   "claim": "SITE-EXTENSION | 167772160000 | 32768 | 5120000 | 43398586",
+   "occurrences": 1
+  },
+  {
+   "claim": "row | the residual order on the torus | the link stencils gauge image | the merging index | the odd twist is a gauge transformation here",
+   "occurrences": 1
+  },
+  {
+   "claim": "L=2 | 2 | 8 | 4 | no",
+   "occurrences": 1
+  },
+  {
+   "claim": "L=4 | 4 | 8 | 2 | no",
+   "occurrences": 1
+  },
+  {
+   "claim": "L=8 | 8 | 8 | 1 | yes",
+   "occurrences": 1
+  },
+  {
+   "claim": "L=16 | 8 | 8 | 1 | yes",
+   "occurrences": 1
+  },
+  {
+   "claim": "grain | reading | gauge image order | chart stabilizer order | acting group order | orbits | coupling count",
+   "occurrences": 1
+  },
+  {
+   "claim": "LINK | ANCHORED | 8 | 1 | 8 | 136 | 135",
+   "occurrences": 1
+  },
+  {
+   "claim": "LINK | EXTENSION | 8 | 4 | 16 | 80 | 79",
+   "occurrences": 1
+  },
+  {
+   "claim": "PLAQUETTE | ANCHORED | 512 | 2 | 1024 | 265121344 | 265121343",
+   "occurrences": 1
+  },
+  {
+   "claim": "PLAQUETTE | EXTENSION | 512 | 8 | 4096 | 66311040 | 66311039",
+   "occurrences": 1
+  },
+  {
+   "claim": "SITE | ANCHORED | 4096 | 2 | 8192 | 171060256 | 171060255",
+   "occurrences": 1
+  },
+  {
+   "claim": "SITE | EXTENSION | 4096 | 8 | 32768 | 43398586 | 43398585",
+   "occurrences": 1
+  },
+  {
+   "claim": "row | the gauge only count | the coset fixed point average | the closed form | the census orbit count",
+   "occurrences": 1
+  },
+  {
+   "claim": "PLAQUETTE-ANCHORED | 530219008 | 23680 | 265121344 | 265121344",
+   "occurrences": 1
+  },
+  {
+   "claim": "SITE-ANCHORED | 342102016 | 18496 | 171060256 | 171060256",
+   "occurrences": 1
+  },
+  {
+   "claim": "row | a function of this stencils datum | chart leg checks | chart leg failures raw trace | chart leg failures conjugation symmetric | admits the conjugation symmetric part",
+   "occurrences": 1
+  },
+  {
+   "claim": "LINK-ANCHORED | no | 0 | 0 | 0 | no",
+   "occurrences": 1
+  },
+  {
+   "claim": "LINK-EXTENSION | no | 0 | 0 | 0 | no",
+   "occurrences": 1
+  },
+  {
+   "claim": "PLAQUETTE-ANCHORED | yes | 32 | 13 | 0 | yes",
+   "occurrences": 1
+  },
+  {
+   "claim": "PLAQUETTE-EXTENSION | yes | 128 | 95 | 76 | no",
+   "occurrences": 1
+  },
+  {
+   "claim": "SITE-ANCHORED | no | 0 | 0 | 0 | no",
+   "occurrences": 1
+  },
+  {
+   "claim": "SITE-EXTENSION | no | 0 | 0 | 0 | no",
+   "occurrences": 1
+  },
+  {
+   "claim": "row | the ratio between the two equal sized sectors | class constant | full support | obstruction over the declared field",
+   "occurrences": 1
+  },
+  {
+   "claim": "LAW-NATIVE-012 | 3/2 | yes | yes | UNREACHABLE-BY-ARITHMETIC",
+   "occurrences": 1
+  },
+  {
+   "claim": "LAW-NATIVE-021 | 15/13 | yes | yes | UNREACHABLE-BY-ARITHMETIC",
+   "occurrences": 1
+  },
+  {
+   "claim": "LAW-NATIVE-102 | 2/3 | yes | yes | UNREACHABLE-BY-ARITHMETIC",
+   "occurrences": 1
+  },
+  {
+   "claim": "LAW-NATIVE-120 | 10/13 | yes | yes | UNREACHABLE-BY-ARITHMETIC",
+   "occurrences": 1
+  },
+  {
+   "claim": "LAW-NATIVE-201 | 13/15 | yes | yes | UNREACHABLE-BY-ARITHMETIC",
+   "occurrences": 1
+  },
+  {
+   "claim": "LAW-NATIVE-210 | 13/10 | yes | yes | UNREACHABLE-BY-ARITHMETIC",
+   "occurrences": 1
+  },
+  {
+   "claim": "row | numerator | in lowest terms | error below one over ten to the",
+   "occurrences": 1
+  },
+  {
+   "claim": "DENOMINATOR-10^1 | 10 | 1 | 0",
+   "occurrences": 1
+  },
+  {
+   "claim": "DENOMINATOR-10^2 | 101 | 101/100 | 0",
+   "occurrences": 1
+  },
+  {
+   "claim": "DENOMINATOR-10^3 | 1012 | 253/250 | 1",
+   "occurrences": 1
+  },
+  {
+   "claim": "DENOMINATOR-10^4 | 10127 | 10127/10000 | 2",
+   "occurrences": 1
+  },
+  {
+   "claim": "DENOMINATOR-10^5 | 101275 | 4051/4000 | 4",
+   "occurrences": 1
+  },
+  {
+   "claim": "grain | reading | exponent | induced classes on the carrier | reachable dimension | orbit pairs merged | fibre dimension",
+   "occurrences": 1
+  },
+  {
+   "claim": "LINK | ANCHORED | 32 | 136 | 135 | 72 | 0",
+   "occurrences": 1
+  },
+  {
+   "claim": "LINK | EXTENSION | 32 | 80 | 79 | 40 | 0",
+   "occurrences": 1
+  },
+  {
+   "claim": "PLAQUETTE | ANCHORED | 16 | 136 | 135 | 72 | 265121208",
+   "occurrences": 1
+  },
+  {
+   "claim": "PLAQUETTE | EXTENSION | 16 | 80 | 79 | 40 | 66310960",
+   "occurrences": 1
+  },
+  {
+   "claim": "SITE | ANCHORED | 16 | 136 | 135 | 72 | 171060120",
+   "occurrences": 1
+  },
+  {
+   "claim": "SITE | EXTENSION | 16 | 80 | 79 | 40 | 43398506",
+   "occurrences": 1
+  },
+  {
+   "claim": "row | class constant | full support | obstruction over the declared field",
+   "occurrences": 1
+  },
+  {
+   "claim": "COUNTING | yes | yes | REACHABLE",
+   "occurrences": 1
+  },
+  {
+   "claim": "ORBIT-UNIFORM-ANCHORED | yes | yes | UNREACHABLE-BY-ARITHMETIC",
+   "occurrences": 1
+  },
+  {
+   "claim": "ORBIT-UNIFORM-EXTENSION | yes | yes | UNREACHABLE-BY-ARITHMETIC",
+   "occurrences": 1
+  },
+  {
+   "claim": "LAW-NATIVE-PI | yes | yes | UNREACHABLE-BY-ARITHMETIC",
+   "occurrences": 1
+  },
+  {
+   "claim": "MONOMIAL-HAAR | yes | no | UNREACHABLE-BY-SUPPORT",
+   "occurrences": 1
+  },
+  {
+   "claim": "ODD-TWIST-GRADED | no | yes | UNREACHABLE-BY-SYMMETRY",
+   "occurrences": 1
+  },
+  {
+   "claim": "observable | reading | range of the observable itself | range over the invariant simplex | range over the reachable set | verdict",
+   "occurrences": 1
+  },
+  {
+   "claim": "WILSON-BLOCK-TRACE-RATIONAL-PART | ANCHORED | [0, 4] | [0, 4] | [0, 4] | UNPINNED",
+   "occurrences": 1
+  },
+  {
+   "claim": "WILSON-BLOCK-TRACE-SURD-PART | ANCHORED | [-1, 1] | [-1, 1] | [-1, 1] | UNPINNED",
+   "occurrences": 1
+  },
+  {
+   "claim": "OFF-DIAGONAL-QUARTIC-SIGN | ANCHORED | [-2, 2] | [-2, 2] | [0, 0] | PINNED",
+   "occurrences": 1
+  },
+  {
+   "claim": "DIAGONAL-SECTOR-INDICATOR | ANCHORED | [0, 1] | [0, 1] | [0, 1] | UNPINNED",
+   "occurrences": 1
+  },
+  {
+   "claim": "DEFECT-INDICATOR | ANCHORED | [0, 1] | [0, 1] | [0, 1] | UNPINNED",
+   "occurrences": 1
+  },
+  {
+   "claim": "FLAT-INDICATOR | ANCHORED | [0, 1] | [0, 1] | [0, 1] | UNPINNED",
+   "occurrences": 1
+  },
+  {
+   "claim": "WILSON-BLOCK-TRACE-RATIONAL-PART | EXTENSION | [0, 4] | [0, 4] | [0, 4] | UNPINNED",
+   "occurrences": 1
+  },
+  {
+   "claim": "WILSON-BLOCK-TRACE-SURD-PART | EXTENSION | [-1, 1] | [-1, 1] | [-1, 1] | UNPINNED",
+   "occurrences": 1
+  },
+  {
+   "claim": "OFF-DIAGONAL-QUARTIC-SIGN | EXTENSION | [-2, 2] | [-2, 2] | [0, 0] | PINNED",
+   "occurrences": 1
+  },
+  {
+   "claim": "DIAGONAL-SECTOR-INDICATOR | EXTENSION | [0, 1] | [0, 1] | [0, 1] | UNPINNED",
+   "occurrences": 1
+  },
+  {
+   "claim": "DEFECT-INDICATOR | EXTENSION | [0, 1] | [0, 1] | [0, 1] | UNPINNED",
+   "occurrences": 1
+  },
+  {
+   "claim": "FLAT-INDICATOR | EXTENSION | [0, 1] | [0, 1] | [0, 1] | UNPINNED",
    "occurrences": 1
   },
   {
@@ -1665,30 +2742,6 @@
   },
   {
    "claim": "product one at all 640 carrier configurations and at all 64 declared non-uniform ones",
-   "occurrences": 1
-  },
-  {
-   "claim": "link | anchored | 32 | 136 | 135 | 72 | 0",
-   "occurrences": 1
-  },
-  {
-   "claim": "link | extension | 32 | 80 | 79 | 40 | 0",
-   "occurrences": 1
-  },
-  {
-   "claim": "plaquette | anchored | 16 | 136 | 135 | 72 | 265121208",
-   "occurrences": 1
-  },
-  {
-   "claim": "plaquette | extension | 16 | 80 | 79 | 40 | 66310960",
-   "occurrences": 1
-  },
-  {
-   "claim": "site | anchored | 16 | 136 | 135 | 72 | 171060120",
-   "occurrences": 1
-  },
-  {
-   "claim": "site | extension | 16 | 80 | 79 | 40 | 43398506",
    "occurrences": 1
   },
   {
@@ -1740,31 +2793,7 @@
    "occurrences": 1
   },
   {
-   "claim": "COUNTING | yes | yes | REACHABLE",
-   "occurrences": 1
-  },
-  {
-   "claim": "ORBIT-UNIFORM-ANCHORED | yes | yes | UNREACHABLE-BY-ARITHMETIC",
-   "occurrences": 1
-  },
-  {
-   "claim": "ORBIT-UNIFORM-EXTENSION | yes | yes | UNREACHABLE-BY-ARITHMETIC",
-   "occurrences": 1
-  },
-  {
-   "claim": "LAW-NATIVE-PI | yes | yes | UNREACHABLE-BY-ARITHMETIC",
-   "occurrences": 1
-  },
-  {
-   "claim": "MONOMIAL-HAAR | yes | no | UNREACHABLE-BY-SUPPORT",
-   "occurrences": 1
-  },
-  {
-   "claim": "ODD-TWIST-GRADED | no | yes | UNREACHABLE-BY-SYMMETRY",
-   "occurrences": 1
-  },
-  {
-   "claim": "1 of the 6 named targets",
+   "claim": "1 of the 6 declared targets",
    "occurrences": 1
   },
   {
@@ -1777,54 +2806,6 @@
   },
   {
    "claim": "at denominator 100000 the error is below 1/10^4",
-   "occurrences": 1
-  },
-  {
-   "claim": "wilson block trace rational part | anchored | [0, 4] | [0, 4] | unpinned",
-   "occurrences": 1
-  },
-  {
-   "claim": "wilson block trace surd part | anchored | [-1, 1] | [-1, 1] | unpinned",
-   "occurrences": 1
-  },
-  {
-   "claim": "off diagonal quartic sign | anchored | [-2, 2] | [0, 0] | pinned",
-   "occurrences": 1
-  },
-  {
-   "claim": "diagonal sector indicator | anchored | [0, 1] | [0, 1] | unpinned",
-   "occurrences": 1
-  },
-  {
-   "claim": "defect indicator | anchored | [0, 1] | [0, 1] | unpinned",
-   "occurrences": 1
-  },
-  {
-   "claim": "flat indicator | anchored | [0, 1] | [0, 1] | unpinned",
-   "occurrences": 1
-  },
-  {
-   "claim": "wilson block trace rational part | extension | [0, 4] | [0, 4] | unpinned",
-   "occurrences": 1
-  },
-  {
-   "claim": "wilson block trace surd part | extension | [-1, 1] | [-1, 1] | unpinned",
-   "occurrences": 1
-  },
-  {
-   "claim": "off diagonal quartic sign | extension | [-2, 2] | [0, 0] | pinned",
-   "occurrences": 1
-  },
-  {
-   "claim": "diagonal sector indicator | extension | [0, 1] | [0, 1] | unpinned",
-   "occurrences": 1
-  },
-  {
-   "claim": "defect indicator | extension | [0, 1] | [0, 1] | unpinned",
-   "occurrences": 1
-  },
-  {
-   "claim": "flat indicator | extension | [0, 1] | [0, 1] | unpinned",
    "occurrences": 1
   },
   {
@@ -1852,11 +2833,11 @@
    "occurrences": 1
   },
   {
-   "claim": "39 gates close before the paper gates, and 6 paper gates and 2 closing gates follow",
+   "claim": "52 gates close before the paper gates, and 7 paper gates, 1 receipt-wall gate and 2 closing gates follow",
    "occurrences": 1
   },
   {
-   "claim": "29 objects are sealed before the paper gates",
+   "claim": "36 objects are sealed before the paper gates",
    "occurrences": 1
   },
   {
@@ -1864,11 +2845,11 @@
    "occurrences": 1
   },
   {
-   "claim": "11 file-bytes anchors, 34 path-value anchors and 19 verbatim-text anchors, 64 anchors in all",
+   "claim": "11 file-bytes anchors, 37 path-value anchors and 19 verbatim-text anchors, 67 anchors in all",
    "occurrences": 2
   },
   {
-   "claim": "49 declared mutants",
+   "claim": "68 declared mutants",
    "occurrences": 1
   },
   {
@@ -1916,19 +2897,51 @@
    "occurrences": 1
   },
   {
-   "claim": "`ACT-FORM-FORCED` | the allowed space is a point at every declared row | not the case: the smallest coupling count measured is 79",
+   "claim": "at every L divisible by eight it is 1",
    "occurrences": 1
   },
   {
-   "claim": "`ACT-GIBBS` | the image is one measure | not the case: the reachable set has dimension 135 at the link grain",
+   "claim": "the merging index is 2 here at the anchored size, 4 at L = 2, and 1 at every L divisible by eight",
    "occurrences": 1
   },
   {
-   "claim": "`ACT-BLOCKED-AT` | an object that cannot be evaluated | every declared row is evaluated and its Burnside sum divides",
+   "claim": "the smallest orbit count this arena can produce at any declared row is 40",
    "occurrences": 1
   },
   {
-   "claim": "`ACT-FORM-RELATIVE` | the allowed space has positive rank | **this is what is measured**",
+   "claim": "raises one class of size 8 by 65536 against a normalisation of 524920",
+   "occurrences": 1
+  },
+  {
+   "claim": "order 8 where the residual gauge group on the carrier has order 4",
+   "occurrences": 1
+  },
+  {
+   "claim": "4 of the parent's 10 named measures are run here as census rows",
+   "occurrences": 1
+  },
+  {
+   "claim": "a declared fibre of 6",
+   "occurrences": 1
+  },
+  {
+   "claim": "(136^4 + 136^2)/2 = 171060256",
+   "occurrences": 1
+  },
+  {
+   "claim": "(136^4 + 7 x 72^4 + 23680)/2 = 265121344",
+   "occurrences": 1
+  },
+  {
+   "claim": "32 chart-leg checks at the anchored plaquette, 13 of them failing for the raw trace and 0 for its conjugation-symmetric part",
+   "occurrences": 1
+  },
+  {
+   "claim": "returns twenty-five elements",
+   "occurrences": 1
+  },
+  {
+   "claim": "a ten-dimensional sliver",
    "occurrences": 1
   }
  ],
@@ -1942,12 +2955,14 @@
    "pinned"
   ],
   "fence_markers": 2,
-  "inline_spans_with_a_numeral": 36,
-  "numerals_scanned": 343,
+  "inline_spans_with_a_numeral": 37,
+  "numerals_scanned": 566,
   "published_objects_excluded_from_the_pool": [
    "mutants"
   ],
   "removed_from_the_scan_and_bound_as_claims": "THE-PARENTHESISED-ENGRAVING-REFERENCES-AND-THE-BACKTICKED-TWELVE-HEX-DIGESTS",
+  "spelled_numerals_above_twelve_scanned": 4,
+  "spelled_numerals_unmatched": 0,
   "structural_literals_forgiven": [
    "1",
    "1.0",
@@ -2132,6 +3147,7 @@
    "9.8",
    "9.9"
   ],
+  "the_number_word_alphabet": "EVERY-ENGLISH-NUMBER-WORD-BELOW-ONE-HUNDRED-HYPHENATED-COMPOUNDS-INCLUDED",
   "unmatched": 0
  },
  "paper_polarity": [
@@ -2162,9 +3178,79 @@
    "fragment": "the coupling count is grain-relative",
    "negated": false,
    "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "The form is not forced.",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "the gauge group is measured **not** transitive on a single link's coin",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "The falsifier as the pin words it is measured not to hit",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "The hit is at the action route, and only there.",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "the raw trace is admissible at no declared row",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 2,
+   "found": 2,
+   "fragment": "the set of reachable measures is not",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "no orbits merge, the price is not reduced and no observable is pinned",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "the Wilson family's dimension is reported **on the carrier**",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "the reduction is neither a saving nor a violation",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "three of the four were closed before the instrument ran",
+   "negated": false,
+   "ok": true
   }
  ],
- "paper_sha256_12": "3fbf109f0d9b",
+ "paper_sha256_12": "d933221780ed",
  "path_value_anchors": [
   {
    "anchor": "PV-COINS",
@@ -2487,6 +3573,36 @@
    "what": "the third sector"
   },
   {
+   "anchor": "PV-SMU-DISTINCT",
+   "consumer": "G-THE-TARGET-CENSUS-SCOPE",
+   "declared": 10,
+   "measured": 10,
+   "ok": true,
+   "path": "census/distinct_stationary_vectors",
+   "source": "S-SMU-RECEIPT",
+   "what": "how many distinct named measures the parent's own terminal holds on this carrier -- the denominator this unit's target census is a fraction of"
+  },
+  {
+   "anchor": "PV-SMU-PRIVILEGE",
+   "consumer": "G-THE-CONTROLS-FIBRE-IS-MEASURED",
+   "declared": 6,
+   "measured": 6,
+   "ok": true,
+   "path": "privilege/instances",
+   "source": "S-SMU-RECEIPT",
+   "what": "the control's own declared fibre: the number of members the parent's unpinned identification carries"
+  },
+  {
+   "anchor": "PV-SMU-UNPINNED",
+   "consumer": "G-THE-CONTROLS-FIBRE-IS-MEASURED",
+   "declared": "THE-IDENTIFICATION-OF-THE-TRANSPORT-LAWS-THREE-POSITIONS-WITH-THIS-ARENAS-THREE-COIN-SECTORS",
+   "measured": "THE-IDENTIFICATION-OF-THE-TRANSPORT-LAWS-THREE-POSITIONS-WITH-THIS-ARENAS-THREE-COIN-SECTORS",
+   "ok": true,
+   "path": "privilege/the_unpinned_step",
+   "source": "S-SMU-RECEIPT",
+   "what": "what the control's stamp says is unpinned, read at the parent's own receipt rather than paraphrased here"
+  },
+  {
    "anchor": "PV-GI-LAW1",
    "consumer": "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
    "declared": "15/38",
@@ -2544,30 +3660,194 @@
   ],
   "probes": [
    {
-    "both_laws_agree": true,
-    "emitted": "ACT-BLOCKED-AT-THE-ORBIT-COUNT",
-    "outcome": "ACT-BLOCKED-AT",
-    "reached": true
-   },
-   {
+    "arena": "SINGLETON-I",
     "both_laws_agree": true,
     "emitted": "ACT-FORM-FORCED-THE-ALLOWED-SPACE-IS-A-POINT-AT-ALL-6-DECLAR",
     "outcome": "ACT-FORM-FORCED",
+    "priced_by": "THE-REAL-CENSUS-FUNCTIONS-NO-FIELD-IS-OVERWRITTEN",
     "reached": true
    },
    {
+    "arena": "TWIST-ORBIT-X",
     "both_laws_agree": true,
     "emitted": "ACT-GIBBS-THE-IMAGE-IS-A-SINGLE-MEASURE-AT-ALL-6-DECLARED-RO",
     "outcome": "ACT-GIBBS",
+    "priced_by": "THE-REAL-CENSUS-FUNCTIONS-NO-FIELD-IS-OVERWRITTEN",
     "reached": true
    },
    {
+    "arena": "NOT-CLOSED-I-AND-X",
+    "both_laws_agree": true,
+    "emitted": "ACT-BLOCKED-AT-THE-ORBIT-COUNT",
+    "outcome": "ACT-BLOCKED-AT",
+    "priced_by": "THE-REAL-CENSUS-FUNCTIONS-NO-FIELD-IS-OVERWRITTEN",
+    "reached": true
+   },
+   {
+    "arena": "THE-DELIVERED-ARENA",
     "both_laws_agree": true,
     "emitted": "ACT-FORM-RELATIVE-THE-COUPLING-COUNT-IS-GRAIN-RELATIVE-AND-N",
     "outcome": "ACT-FORM-RELATIVE",
+    "priced_by": "THE-REAL-CENSUS-FUNCTIONS-NO-FIELD-IS-OVERWRITTEN",
     "reached": true
    }
-  ]
+  ],
+  "synthetic_arenas": [
+   {
+    "brute_force_orbits": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "coins": 1,
+    "coupling_counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "declared_closed_under_the_coin_map_group": true,
+    "every_route_agrees": true,
+    "induced_classes": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "measured_closed": true,
+    "orbit_counts": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "reachable_dimensions": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "row": "SINGLETON-I",
+    "the_outcome_this_arena_emits": "ACT-FORM-FORCED-THE-ALLOWED-SPACE-IS-A-POINT-AT-ALL-6-DECLAR",
+    "the_outcome_word": "ACT-FORM-FORCED",
+    "what": "THE-IDENTITY-COIN-ALONE",
+    "why": "one coin-map orbit of size one, so the stencil group is transitive on every grain's datum space and every orbit count is one"
+   },
+   {
+    "brute_force_orbits": [
+     1,
+     1,
+     5,
+     5,
+     1,
+     1
+    ],
+    "coins": 8,
+    "coupling_counts": [
+     0,
+     0,
+     4,
+     4,
+     0,
+     0
+    ],
+    "declared_closed_under_the_coin_map_group": true,
+    "every_route_agrees": true,
+    "induced_classes": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "measured_closed": true,
+    "orbit_counts": [
+     1,
+     1,
+     5,
+     5,
+     1,
+     1
+    ],
+    "reachable_dimensions": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "row": "TWIST-ORBIT-X",
+    "the_outcome_this_arena_emits": "ACT-GIBBS-THE-IMAGE-IS-A-SINGLE-MEASURE-AT-ALL-6-DECLARED-RO",
+    "the_outcome_word": "ACT-GIBBS",
+    "what": "THE-ANTIDIAGONAL-COINS-WHOLE-TWIST-ORBIT",
+    "why": "transitive on the carrier at every grain, so the reachable dimension is zero everywhere, and NOT transitive on the plaquette or site datum space, so the coupling count is not"
+   },
+   {
+    "brute_force_orbits": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "coins": 2,
+    "coupling_counts": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "declared_closed_under_the_coin_map_group": false,
+    "every_route_agrees": true,
+    "induced_classes": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "measured_closed": false,
+    "orbit_counts": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "reachable_dimensions": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "row": "NOT-CLOSED-I-AND-X",
+    "the_outcome_this_arena_emits": "ACT-BLOCKED-AT-THE-ORBIT-COUNT",
+    "the_outcome_word": "ACT-BLOCKED-AT",
+    "what": "TWO-COINS-THAT-DO-NOT-CLOSE-UNDER-THE-COIN-MAP-GROUP",
+    "why": "the family is measured not closed, so the Burnside sum fails to divide the group order -- the one condition on which this census refuses"
+   }
+  ],
+  "the_control_arm": "A-SYNTHETIC-ARENA-THROUGH-THE-REAL-PRICING-FUNCTION"
  },
  "price": {
   "numbers_forbidden_anchored": 72,
@@ -2581,6 +3861,24 @@
   "the_parents_price_extension": 119,
   "the_parents_price_without_covariance": 639,
   "verdict": "REDUCED-NOT-EVADED"
+ },
+ "price_carve_out": {
+  "the_carve_out": "THE-PARENTS-PRICE-IS-CONSERVED-ONLY-UNDER-A-RETAINED-SYMMETRY-DECLARATION-AND-THIS-UNIT-DEMANDS-INVARIANCE-UNDER-A-STRICTLY-LARGER-GROUP-SO-REDUCED-NOT-EVADED-AND-CONSERVED-NOT-PAID-DO-NOT-COLLIDE",
+  "the_extra_elements": [
+   1,
+   3,
+   5,
+   7
+  ],
+  "the_index_anchored": 2,
+  "the_index_extension": 2,
+  "the_link_stencils_acting_group_anchored": 8,
+  "the_link_stencils_acting_group_extension": 16,
+  "the_parents_price_without_the_covariance_declaration": 639,
+  "the_reduction_is_not_a_saving": true,
+  "the_residual_gauge_group_on_the_carrier_anchored": 4,
+  "the_residual_gauge_group_on_the_carrier_extension": 8,
+  "what_the_extra_element_is": "THE-ODD-TWIST-A-BIJECTION-OF-THE-CARRIER-THAT-NO-GAUGE-TRANSFORMATION-OF-THIS-TORUS-PERFORMS"
  },
  "provenance": {
   "python": "3.13",
@@ -2673,7 +3971,10 @@
     "pinned": "42255f50328a",
     "what": "the Gamma-iteration terminal's receipt: the law-native positional law, which is the CONTROL target and is never spent as derived"
    }
-  ]
+  ],
+  "the_paper": "v14/paper-34-act.md",
+  "the_receipt": "v14/code/act_receipt.json",
+  "the_transcript": "v14/code/act_output.txt"
  },
  "python": "3.13",
  "rank": {
@@ -2739,7 +4040,7 @@
  "schema": "act-form-census-1",
  "seal_manifest": [
   {
-   "digest": "06a121502814",
+   "digest": "cca49e138b9d",
    "gate": "G-SOURCE-BYTES",
    "object": "THE PINNED SOURCES",
    "omitted_and_sealed_separately": [],
@@ -2753,7 +4054,7 @@
    "receipt_key": "arithmetic"
   },
   {
-   "digest": "8ef1596c2e35",
+   "digest": "8b83f7393a4b",
    "gate": "G-PATH-VALUE-ANCHORS",
    "object": "THE PATH-VALUE ANCHORS",
    "omitted_and_sealed_separately": [],
@@ -2767,7 +4068,7 @@
    "receipt_key": "verbatim_anchors"
   },
   {
-   "digest": "7657f807c102",
+   "digest": "0ea21d0b0d5c",
    "gate": "G-VERBATIM-ANCHORS",
    "object": "THE ANCHOR CLASSES",
    "omitted_and_sealed_separately": [],
@@ -2781,6 +4082,13 @@
    "receipt_key": "arena"
   },
   {
+   "digest": "e2585fbb56bd",
+   "gate": "G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER",
+   "object": "THE CARRIER",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "carrier"
+  },
+  {
    "digest": "491e7fcbf5be",
    "gate": "G-GAMMA-GROUP-BUILT",
    "object": "THE COIN-MAP GROUP",
@@ -2788,7 +4096,7 @@
    "receipt_key": "gamma"
   },
   {
-   "digest": "62cf0d4114bc",
+   "digest": "90fd47b2b112",
    "gate": "G-CHART-GROUPS-REBUILT",
    "object": "THE CHART GROUPS",
    "omitted_and_sealed_separately": [],
@@ -2809,6 +4117,13 @@
    "receipt_key": "odd_twist"
   },
   {
+   "digest": "aa562b434a7d",
+   "gate": "G-THE-MERGING-INDEX-LAW",
+   "object": "THE MERGING INDEX LAW",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "merging_index_law"
+  },
+  {
    "digest": "00a88faa6740",
    "gate": "G-FORM-CENSUS-COMPLETE",
    "object": "THE FORM CENSUS",
@@ -2823,6 +4138,13 @@
    "receipt_key": "analytic_crosscheck"
   },
   {
+   "digest": "9d3e156641c6",
+   "gate": "G-THE-ANCHORED-CLOSED-FORMS",
+   "object": "THE ANCHORED CLOSED FORMS",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "anchored_closed_forms"
+  },
+  {
    "digest": "335bebeef988",
    "gate": "G-RANK-IS-ORBITS-MINUS-ONE",
    "object": "THE RANK",
@@ -2830,7 +4152,7 @@
    "receipt_key": "rank"
   },
   {
-   "digest": "63303c95c40f",
+   "digest": "8c5956ef326d",
    "gate": "G-LOCALITY-GAP-AT-THE-PLAQUETTE-GRAIN",
    "object": "LOCALITY",
    "omitted_and_sealed_separately": [],
@@ -2851,32 +4173,53 @@
    "receipt_key": "price"
   },
   {
-   "digest": "1d6320ad90e8",
+   "digest": "85a6578e7585",
+   "gate": "G-THE-PRICE-CARVE-OUT",
+   "object": "THE PRICE CARVE-OUT",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "price_carve_out"
+  },
+  {
+   "digest": "e85d6f10b399",
    "gate": "G-GRAIN-DEGENERACY-ON-THE-CARRIER",
    "object": "THE GRAIN DEGENERACY",
    "omitted_and_sealed_separately": [],
    "receipt_key": "grain_degeneracy"
   },
   {
-   "digest": "285211579ff2",
+   "digest": "cceb0d1f30e8",
+   "gate": "G-THE-REACHABLE-SETS-DIFFER-BETWEEN-GRAINS",
+   "object": "THE SET-EQUALITY LEG",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "set_equality"
+  },
+  {
+   "digest": "972f3fcbe473",
    "gate": "G-WILSON-IS-NOT-MINIMAL-SUPPORT",
    "object": "THE WILSON ROW",
    "omitted_and_sealed_separately": [],
    "receipt_key": "wilson"
   },
   {
-   "digest": "ff0e017587bc",
+   "digest": "e52c8539229f",
    "gate": "G-TARGET-CENSUS",
    "object": "THE TARGET CENSUS",
    "omitted_and_sealed_separately": [],
    "receipt_key": "target_census"
   },
   {
-   "digest": "32e459d82c98",
+   "digest": "3d09a1753153",
    "gate": "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
    "object": "THE LAW-NATIVE CONTROL",
    "omitted_and_sealed_separately": [],
    "receipt_key": "law_native_control"
+  },
+  {
+   "digest": "dc1bdcafdd52",
+   "gate": "G-THE-TARGET-CENSUS-SCOPE",
+   "object": "THE CENSUS SCOPE",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "census_scope"
   },
   {
    "digest": "15873f91bb8b",
@@ -2886,14 +4229,14 @@
    "receipt_key": "supplied_row"
   },
   {
-   "digest": "fb60cad1a15b",
+   "digest": "281a873c65ae",
    "gate": "G-DENSITY-WITNESS",
    "object": "THE DENSITY WITNESS",
    "omitted_and_sealed_separately": [],
    "receipt_key": "density_witness"
   },
   {
-   "digest": "77863530b031",
+   "digest": "2019acbc8a49",
    "gate": "G-FALSIFIER-CENSUS",
    "object": "THE FALSIFIER",
    "omitted_and_sealed_separately": [],
@@ -2914,70 +4257,84 @@
    "receipt_key": "pot_handoff"
   },
   {
-   "digest": "0cd5e6d3f971",
+   "digest": "c905b50f8efa",
    "gate": "G-CHOICE-INVENTORY",
    "object": "THE CHOICE INVENTORY",
    "omitted_and_sealed_separately": [],
    "receipt_key": "fibre"
   },
   {
-   "digest": "f5e088ad2e0d",
+   "digest": "fb085693da8e",
    "gate": "G-HEAD-LAW-REACHABILITY",
    "object": "THE PRE-REGISTERED HEADS",
    "omitted_and_sealed_separately": [],
    "receipt_key": "preregistered_heads"
   },
   {
-   "digest": "a64e879971f5",
+   "digest": "d9908ba83402",
+   "gate": "G-OUTCOME-FEASIBILITY-AT-THIS-ARENA",
+   "object": "THE OUTCOME FEASIBILITY",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "outcome_feasibility"
+  },
+  {
+   "digest": "f63b708ca1c6",
    "gate": "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST",
    "object": "THE FALSIFIER TOTALS",
    "omitted_and_sealed_separately": [],
    "receipt_key": "falsifier_totals"
   },
   {
-   "digest": "317c88f6a37d",
+   "digest": "20ae7fc54757",
    "gate": "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
    "object": "THE WAIVER LEDGER",
    "omitted_and_sealed_separately": [],
    "receipt_key": "waiver_ledger"
   },
   {
-   "digest": "72f0eca95762",
+   "digest": "bfcb141e652e",
    "gate": "G-LEDGER-SHAPE-IS-CONSISTENT",
    "object": "THE LEDGER SHAPE",
    "omitted_and_sealed_separately": [],
    "receipt_key": "ledger_shape"
   },
   {
-   "digest": "521182e6d650",
+   "digest": "95594783a56f",
    "gate": "G-PAPER-CLAIMS",
    "object": "THE PAPER CLAIMS",
    "omitted_and_sealed_separately": [],
    "receipt_key": "paper_claims"
   },
   {
-   "digest": "04c8078820eb",
+   "digest": "542ba696b219",
    "gate": "G-PAPER-POLARITY",
    "object": "THE PAPER POLARITY",
    "omitted_and_sealed_separately": [],
    "receipt_key": "paper_polarity"
   },
   {
-   "digest": "1076f901c5a2",
+   "digest": "cb10bef745b8",
    "gate": "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
    "object": "THE PAPER BINDING",
    "omitted_and_sealed_separately": [],
    "receipt_key": "paper_binding"
   },
   {
-   "digest": "e75746f13bce",
+   "digest": "01964874ecff",
    "gate": "G-PAPER-NUMERAL-COVERAGE",
    "object": "THE PAPER COVERAGE",
    "omitted_and_sealed_separately": [],
    "receipt_key": "paper_coverage"
   },
   {
-   "digest": "d2acc5bff303",
+   "digest": "8b62b120d442",
+   "gate": "G-CONSUMERS-ARE-REAL",
+   "object": "THE CONSUMER REGISTER",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "consumer_register"
+  },
+  {
+   "digest": "779da1dead71",
    "gate": "G-VERDICT-RECONSTRUCTION",
    "object": "THE VERDICT STRING",
    "omitted_and_sealed_separately": [],
@@ -2991,6 +4348,28 @@
    "receipt_key": "verdict_head"
   }
  ],
+ "set_equality": {
+  "in_the_image_at_grains": [
+   "PLAQUETTE",
+   "SITE"
+  ],
+  "is_an_exact_power_at_exponent": {
+   "16": true,
+   "32": false
+  },
+  "mass_elsewhere": "1/524920",
+  "mass_on_the_raised_class": "8192/65615",
+  "outside_the_image_at_grains": [
+   "LINK"
+  ],
+  "sums_to_one": true,
+  "the_class_ratio": "65536",
+  "the_normalisation": 524920,
+  "the_raise": 65536,
+  "the_raised_class_size": 8,
+  "the_witness": "ONE-CLASS-OF-SIZE-8-RAISED-BY-2^16-AND-ONE-ELSEWHERE",
+  "verdict": "THE-REACHABLE-DIMENSION-IS-GRAIN-INVARIANT-AND-THE-REACHABLE-SET-IS-NOT"
+ },
  "supplied_row": {
   "the_coupling_count_at_the_link_grain": 135,
   "the_parents_price": 2,
@@ -3022,7 +4401,7 @@
    {
     "class_constant": true,
     "full_support": true,
-    "obstruction": "REACHABLE",
+    "obstruction_over_the_declared_field": "REACHABLE",
     "reachable": true,
     "reachable_at_exponent": {
      "16": true,
@@ -3034,7 +4413,7 @@
    {
     "class_constant": true,
     "full_support": true,
-    "obstruction": "UNREACHABLE-BY-ARITHMETIC",
+    "obstruction_over_the_declared_field": "UNREACHABLE-BY-ARITHMETIC",
     "reachable": false,
     "reachable_at_exponent": {
      "16": false,
@@ -3046,7 +4425,7 @@
    {
     "class_constant": true,
     "full_support": true,
-    "obstruction": "UNREACHABLE-BY-ARITHMETIC",
+    "obstruction_over_the_declared_field": "UNREACHABLE-BY-ARITHMETIC",
     "reachable": false,
     "reachable_at_exponent": {
      "16": false,
@@ -3058,7 +4437,7 @@
    {
     "class_constant": true,
     "full_support": true,
-    "obstruction": "UNREACHABLE-BY-ARITHMETIC",
+    "obstruction_over_the_declared_field": "UNREACHABLE-BY-ARITHMETIC",
     "reachable": false,
     "reachable_at_exponent": {
      "16": false,
@@ -3070,7 +4449,7 @@
    {
     "class_constant": true,
     "full_support": false,
-    "obstruction": "UNREACHABLE-BY-SUPPORT",
+    "obstruction_over_the_declared_field": "UNREACHABLE-BY-SUPPORT",
     "reachable": false,
     "reachable_at_exponent": {
      "16": false,
@@ -3082,7 +4461,7 @@
    {
     "class_constant": false,
     "full_support": true,
-    "obstruction": "UNREACHABLE-BY-SYMMETRY",
+    "obstruction_over_the_declared_field": "UNREACHABLE-BY-SYMMETRY",
     "reachable": false,
     "reachable_at_exponent": {
      "16": false,
@@ -3095,18 +4474,25 @@
   "the_null": "W-IDENTICALLY-ONE-GIVES-THE-COUNTING-MEASURE"
  },
  "totals": {
-  "anchors": 64,
+  "anchors": 67,
   "census_rows": 6,
   "closing_gates": 2,
-  "gates": 47,
-  "gates_in_the_sealed_ledger": 45,
-  "mutants": 49,
-  "path_value_anchors": 34,
-  "sealed_objects": 36,
+  "gates": 62,
+  "gates_in_the_sealed_ledger": 59,
+  "gates_possible_including_the_refusal_only_gate": 63,
+  "gates_that_close_after_this_snapshot": 3,
+  "mutants": 68,
+  "paper_gates": 7,
+  "path_value_anchors": 37,
+  "receipt_gates": 1,
+  "sealed_objects": 44,
   "sources": 11,
+  "the_refusal_only_gate": [
+   "G-PAPER-PRESENT"
+  ],
   "verbatim_anchors": 19
  },
- "transcript_head": "746eaf0fa7f2",
+ "transcript_head": "de736f42cc7f",
  "unit": "ACT / paper-34 -- the action unit: the form census",
  "verbatim_anchors": [
   {
@@ -3338,13 +4724,31 @@
    "what": "the three objects, of which this unit supplies one"
   }
  ],
- "verdict": "ACT-FORM-RELATIVE-THE-COUPLING-COUNT-IS-GRAIN-RELATIVE-AND-NOTHING-IS-FORCED-135/265121343/171060255-ANCHORED-AND-79/66311039/43398585-AT-THE-EXTENSION-<CENSUS=3-DECLARED-GRAINS-x-2-CHART-READINGS-6-OF-6-RUN -- THE-ALLOWED-SPACE=EXACTLY-THE-ORBIT-CONSTANT-POSITIVE-RATIONAL-FUNCTIONS-ON-THE-STENCIL-DATUM-A-FREE-MODULE-OF-RANK-ORBITS-MINUS-ONE;ORBITS=136/265121344/171060256-ANCHORED-AND-80/66311040/43398586-AT-THE-EXTENSION;ROUTES=BURNSIDE-PLUS-BRUTE-FORCE-AND-ORBIT-STABILIZER-AT-THE-LINK-GRAIN-PLUS-AN-EXHAUSTIVE-19-COIN-REDUCED-ARENA-AT-EVERY-GRAIN -- LOCALITY=PRODUCT-INVARIANCE-IS-LOCAL-INVARIANCE-AT-THE-LINK-GRAIN-576-OF-576-NON-INVARIANT-ELEMENTARY-SYSTEMS-DETECTED-AND-0-OF-64-INVARIANT-ONES-NOT;AT-THE-PLAQUETTE-GRAIN-IT-IS-STRICTLY-WEAKER-EVERY-LINK-LIES-IN-EXACTLY-2-PLAQUETTES-SO-A-COBOUNDARY-SYSTEM-HAS-PRODUCT-ONE-AT-640-CARRIER-AND-64-DECLARED-NON-UNIFORM-CONFIGURATIONS -- (a)WILSON-SHAPE=IN-THE-ALLOWED-SPACE-AT-EXACTLY-1-OF-3-DECLARED-GRAINS-THE-PLAQUETTE-ONE-AT-8192-CHECKS-0-FAILURES;ON-THE-CARRIER-IT-SPANS-10-OF-135-COUPLINGS-AT-11-DISTINCT-TRACE-VALUES;NOT-MINIMAL-SUPPORT-136-SINGLE-LINK-INVARIANT-CLASSES-EXIST-BECAUSE-THE-GAUGE-GROUP-IS-NOT-TRANSITIVE-ON-A-LINKS-OWN-DATUM -- (b)LAW-NATIVE-CONTROL=LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION-CARRIED-VERBATIM-AND-NEVER-SPENT-AS-DERIVED;THE-TARGET-IS-CLASS-CONSTANT-AND-FULL-SUPPORT-AND-UNREACHABLE-BY-ARITHMETIC-BECAUSE-3/2-IS-NOT-AN-EXACT-POWER-AT-ANY-DECLARED-EXPONENT-16,32;IT-LIES-IN-THE-CLOSURE-EXACT-WITNESS-AT-DENOMINATOR-100000-WITH-ERROR-BELOW-1/10^4 -- (c)NULL=W-IDENTICALLY-ONE-GIVES-THE-COUNTING-MEASURE-WHICH-IS-1-OF-THE-6-NAMED-TARGETS-REACHABLE;THE-OTHERS-FAIL-AT-3-MEASURED-SPECIES-UNREACHABLE-BY-ARITHMETIC,UNREACHABLE-BY-SUPPORT,UNREACHABLE-BY-SYMMETRY -- GIBBS=THE-IMAGE-IS-THE-E-TH-POWER-SUBLATTICE-OF-THE-CLASS-CONSTANT-MEASURES-WITH-E=32/16/16-AT-THE-THREE-GRAINS-AND-FULL-SUPPORT-FORCED-BY-POSITIVITY;THE-INDUCED-PARTITION-IS-THE-SAME-136-CLASSES-AT-ALL-3-GRAINS;THE-FIBRE-IS-EXACTLY-THE-NORMALISATION-AT-THE-LINK-GRAIN-DIMENSION-0-AND-265121208-AT-THE-PLAQUETTE-GRAIN -- PRICE=REDUCED-NOT-EVADED-207-TO-135-AT-THE-ANCHORED-READING-AND-119-TO-79-AT-THE-EXTENSION-AGAINST-639-WITH-COVARIANCE-DROPPED;72-AND-40-PAIRS-OF-GAUGE-ORBITS-ARE-IDENTIFIED-BY-EVERY-LOCAL-WEIGHT-SYSTEM-THE-ODD-TWIST-THE-TORUS-DOES-NOT-CLOSE -- FALSIFIER=HIT:THE-OFF-DIAGONAL-QUARTIC-SIGN-IS-A-GAUGE-OBSERVABLE-EVERY-ADMISSIBLE-WEIGHT-SYSTEM-PINS-TO-THE-SINGLE-VALUE-[0,0]-AGAINST-[-2,2]-OVER-THE-INVARIANT-SIMPLEX;144-OF-208-ORBIT-INDICATORS-PINNED-AT-THE-ANCHORED-READING-AND-80-OF-120-AT-THE-EXTENSION;THE-LOOP-TRACE-IS-NOT-PINNED-[0,4]-AT-BOTH -- WILSON=STAMPED-CONDITIONAL-ON-THE-DECLARED-WEIGHTS-AT-3-OF-3-ROWS|VALUES=13/10@THE-NULL,4294967399/4294967375@THE-EXHIBITED-WITNESS,262244/65615@THE-WILSON-SHAPE-AT-A-DECLARED-COUPLING|RANGE-OF-THE-OBSERVABLE=[0,4]|NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM-AND-0-LOOP-FAMILIES-GROWN -- SCOPE=D=2;L=4;FIELD=Q(zeta_8);COINS=640;LINKS=32;PLAQUETTES=16;CARRIER=THE-PARENTS-640-UNIFORM-CONFIGURATIONS;FULL-CONFIGURATION-SPACE=640^32-NOT-A-CARRIER-HERE;WEIGHTS=POSITIVE-EXACT-RATIONALS-NO-LOGS-NO-FLOATS;THE-ACTION-IS-DECLARED-NOT-DERIVED;NO-COUPLING-IS-SELECTED;NOT-QCD;NO-CONFINEMENT-CLAIM>",
+ "verdict": "ACT-FORM-RELATIVE-THE-COUPLING-COUNT-IS-GRAIN-RELATIVE-AND-NOTHING-IS-FORCED-135/265121343/171060255-ANCHORED-AND-79/66311039/43398585-AT-THE-EXTENSION-<CENSUS=3-DECLARED-GRAINS-x-2-CHART-READINGS-6-OF-6-RUN -- THE-ALLOWED-SPACE=EXACTLY-THE-ORBIT-CONSTANT-POSITIVE-RATIONAL-FUNCTIONS-ON-THE-STENCIL-DATUM-THE-DIRECT-POWER-OF-THE-POSITIVE-RATIONALS-WITH-ONE-FACTOR-PER-ORBIT-WHOSE-FREE-PARAMETERS-MODULO-NORMALISATION-NUMBER-ORBITS-MINUS-ONE;ORBITS=136/265121344/171060256-ANCHORED-AND-80/66311040/43398586-AT-THE-EXTENSION;ROUTES=BURNSIDE-PLUS-BRUTE-FORCE-AND-ORBIT-STABILIZER-AT-THE-LINK-GRAIN-PLUS-AN-EXHAUSTIVE-19-COIN-REDUCED-ARENA-AT-EVERY-GRAIN-PLUS-EXACT-CLOSED-FORMS-AT-FULL-SIZE-FOR-BOTH-LARGE-ANCHORED-COUNTS-265121344-AND-171060256 -- LOCALITY=PRODUCT-INVARIANCE-IS-LOCAL-INVARIANCE-AT-THE-LINK-GRAIN-576-OF-576-NON-INVARIANT-ELEMENTARY-SYSTEMS-DETECTED-AND-0-OF-64-INVARIANT-ONES-NOT;AT-THE-PLAQUETTE-GRAIN-IT-IS-STRICTLY-WEAKER-EVERY-LINK-LIES-IN-EXACTLY-2-PLAQUETTES-SO-A-COBOUNDARY-SYSTEM-HAS-PRODUCT-ONE-AT-640-CARRIER-AND-64-DECLARED-NON-UNIFORM-CONFIGURATIONS;AT-THE-SITE-GRAIN-THE-SAME-EVERY-LINK-LIES-IN-EXACTLY-2-STARS-PRODUCT-ONE-AT-640-AND-64;3-OF-3-GRAINS-COVERED -- (a)WILSON-SHAPE=GAUGE-ADMISSIBLE-AT-EXACTLY-1-OF-3-DECLARED-GRAINS-THE-PLAQUETTE-ONE-AT-8192-CHECKS-0-FAILURES-AND-COVARIANT-ONLY-IN-ITS-CONJUGATION-SYMMETRIC-PART-AT-1-OF-6-ROWS-PLAQUETTE-ANCHORED-THE-RAW-TRACE-AT-NONE;ON-THE-CARRIER-IT-SPANS-10-OF-135-COUPLINGS-AT-11-DISTINCT-TRACE-VALUES;NOT-MINIMAL-SUPPORT-136-SINGLE-LINK-INVARIANT-CLASSES-EXIST-BECAUSE-THE-GAUGE-GROUP-IS-NOT-TRANSITIVE-ON-A-LINKS-OWN-DATUM -- (b)LAW-NATIVE-CONTROL=LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION-CARRIED-VERBATIM-AND-NEVER-SPENT-AS-DERIVED;ALL-6-MEMBERS-OF-THE-UNPINNED-IDENTIFICATIONS-FIBRE-ARE-RUN-AND-EVERY-ONE-IS-CLASS-CONSTANT-AND-FULL-SUPPORT-AND-UNREACHABLE-BY-ARITHMETIC-BECAUSE-ITS-REQUIRED-SECTOR-RATIO-3/2,15/13,2/3,10/13,13/15,13/10-IS-NOT-AN-EXACT-POWER-AT-ANY-DECLARED-EXPONENT-16,32;THE-IMAGE-APPROACHES-IT-ALONG-A-MONOTONE-FAMILY-OF-5-EXACT-WITNESSES-BEST-AT-DENOMINATOR-100000-WITH-ERROR-BELOW-1/10^4 -- (c)NULL=W-IDENTICALLY-ONE-GIVES-THE-COUNTING-MEASURE-WHICH-IS-1-OF-THE-6-DECLARED-TARGETS-REACHABLE;THE-OTHERS-FAIL-AT-3-MEASURED-SPECIES-UNREACHABLE-BY-ARITHMETIC,UNREACHABLE-BY-SUPPORT,UNREACHABLE-BY-SYMMETRY;SCOPE=4-OF-THE-PARENTS-10-NAMED-MEASURES-ARE-RUN-AS-CENSUS-ROWS-5-MORE-IN-THE-CONTROLS-FIBRE-AND-METROPOLIS-AT-A-NON-INVARIANT-TARGET-IS-NOT-MEASURED-HERE -- GIBBS=THE-IMAGE-IS-THE-E-TH-POWER-SUBLATTICE-OF-THE-CLASS-CONSTANT-MEASURES-WITH-E=32/16/16-AT-THE-THREE-GRAINS-AND-FULL-SUPPORT-FORCED-BY-POSITIVITY;THE-INDUCED-PARTITION-IS-THE-SAME-136-CLASSES-AT-ALL-3-GRAINS;THE-FIBRE-IS-EXACTLY-THE-NORMALISATION-AT-THE-LINK-GRAIN-DIMENSION-0-AND-265121208-AT-THE-PLAQUETTE-GRAIN;THE-REACHABLE-DIMENSION-AND-THE-INDUCED-PARTITION-ARE-GRAIN-INVARIANT-AND-THE-REACHABLE-SET-IS-NOT-THE-WITNESS-RAISING-ONE-CLASS-BY-65536-IS-IN-THE-IMAGE-AT-PLAQUETTE,SITE-AND-OUT-OF-IT-AT-LINK -- PRICE=REDUCED-NOT-EVADED-207-TO-135-AT-THE-ANCHORED-READING-AND-119-TO-79-AT-THE-EXTENSION-AGAINST-639-WITH-COVARIANCE-DROPPED;72-AND-40-PAIRS-OF-GAUGE-ORBITS-ARE-IDENTIFIED-BY-EVERY-LOCAL-WEIGHT-SYSTEM-THE-ODD-TWIST-THE-TORUS-DOES-NOT-CLOSE;THE-DISCOUNT-IS-BOUGHT-BY-DEMANDING-INVARIANCE-UNDER-A-STRICTLY-LARGER-GROUP-8-AGAINST-THE-CARRIERS-OWN-4-AT-THE-ANCHORED-READING-AND-16-AGAINST-8-AT-THE-EXTENSION-SO-REDUCED-NOT-EVADED-AND-THE-PARENTS-CONSERVED-NOT-PAID-DO-NOT-COLLIDE -- FALSIFIER=NOT-HIT-AT-THE-PINS-WORDING-COVARIANCE-PINS-NOTHING-12-OF-12-ROWS-AT-FULL-RANGE;HIT-ON-THE-ACTION-ROUTE-NOT-AT-COVARIANCE:THE-OFF-DIAGONAL-QUARTIC-SIGN-IS-A-GAUGE-OBSERVABLE-EVERY-ADMISSIBLE-WEIGHT-SYSTEM-PINS-TO-THE-SINGLE-VALUE-[0,0]-AGAINST-[-2,2]-OVER-THE-INVARIANT-SIMPLEX;144-OF-208-ORBIT-INDICATORS-PINNED-AT-THE-ANCHORED-READING-AND-80-OF-120-AT-THE-EXTENSION;THE-LOOP-TRACE-IS-NOT-PINNED-[0,4]-AT-BOTH -- WILSON=STAMPED-CONDITIONAL-ON-THE-DECLARED-WEIGHTS-AT-3-OF-3-ROWS|VALUES=13/10@THE-NULL,4294967399/4294967375@THE-EXHIBITED-WITNESS,262244/65615@THE-WILSON-SHAPE-AT-A-DECLARED-COUPLING|RANGE-OF-THE-OBSERVABLE=[0,4]|NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM-AND-0-LOOP-FAMILIES-GROWN -- SCOPE=D=2;L=4;FIELD=Q(zeta_8);COINS=640;LINKS=32;PLAQUETTES=16;CARRIER=THE-PARENTS-640-UNIFORM-CONFIGURATIONS;FULL-CONFIGURATION-SPACE=640^32-NOT-A-CARRIER-HERE;WEIGHTS=POSITIVE-EXACT-RATIONALS-NO-LOGS-NO-FLOATS;THE-ACTION-IS-DECLARED-NOT-DERIVED;NO-COUPLING-IS-SELECTED;THE-ODD-TWIST-MECHANISM-IS-L-CONTINGENT-THE-MERGING-INDEX-IS-8/GCD(L,8)-WHICH-IS-2-HERE-AND-1-AT-EVERY-L-DIVISIBLE-BY-8-WHERE-NOTHING-MERGES-AND-NOTHING-IS-PINNED;NOT-QCD;NO-CONFINEMENT-CLAIM>",
  "verdict_head": "ACT-FORM-RELATIVE-THE-COUPLING-COUNT-IS-GRAIN-RELATIVE-AND-NOTHING-IS-FORCED-135/265121343/171060255-ANCHORED-AND-79/66311039/43398585-AT-THE-EXTENSION",
  "waiver_ledger": {
-  "covered_by_a_declared_falsifier": 37,
-  "gates_closed": 37,
+  "covered_by_a_declared_falsifier": 49,
+  "gates_closed": 49,
+  "gates_closed_when_this_ledger_is_taken": 49,
+  "gates_on_the_clean_path": 62,
+  "late_gate_coverage": {
+   "G-ARTIFACT-INTEGRITY": "FORCING",
+   "G-CONSUMERS-ARE-REAL": "FALSIFIER:MUT-CONSUMER",
+   "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR": "FALSIFIER:MUT-WAIVER",
+   "G-LEDGER-CHAIN-VERIFIED": "FALSIFIER:MUT-CHAIN",
+   "G-LEDGER-SHAPE-IS-CONSISTENT": "FALSIFIER:MUT-LEDGER-SHAPE",
+   "G-MUST-NOT-OVER-THE-RECEIPT": "FALSIFIER:MUT-MUST-NOT-RECEIPT",
+   "G-MUST-NOT-VOCABULARY": "FALSIFIER:MUT-MUST-NOT",
+   "G-PAPER-CLAIMS": "FALSIFIER:MUT-CLAIM,MUT-TABLE-ROW",
+   "G-PAPER-NUMERAL-COVERAGE": "FALSIFIER:MUT-COVERAGE,MUT-SPELLED-NUMERAL",
+   "G-PAPER-POLARITY": "FALSIFIER:MUT-POLARITY",
+   "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND": "FALSIFIER:MUT-QUOTE-FIDELITY,MUT-TABLE-BINDING,MUT-TABLE-HEADER",
+   "G-PAPER-VERDICT-EQUALITY": "FALSIFIER:MUT-VERDICT-TWIN",
+   "G-SEAL-INTEGRITY": "FALSIFIER:MUT-SEAL"
+  },
   "late_gates_declared": [
    "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+   "G-LEDGER-CHAIN-VERIFIED",
    "G-LEDGER-SHAPE-IS-CONSISTENT",
    "G-PAPER-CLAIMS",
    "G-PAPER-VERDICT-EQUALITY",
@@ -3352,14 +4756,38 @@
    "G-PAPER-POLARITY",
    "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
    "G-PAPER-NUMERAL-COVERAGE",
+   "G-CONSUMERS-ARE-REAL",
+   "G-MUST-NOT-OVER-THE-RECEIPT",
    "G-SEAL-INTEGRITY",
    "G-ARTIFACT-INTEGRITY"
   ],
-  "the_forcings": {
-   "G-ARTIFACT-INTEGRITY": "evaluated only in the writing path, which no diagnostic run reaches; its reference value is the GATE-TIME SEAL, whose in-run twin G-SEAL-INTEGRITY carries the injection falsifier MUT-SEAL",
+  "late_gates_not_yet_closed_when_this_ledger_is_taken": [
+   "G-ARTIFACT-INTEGRITY",
+   "G-CONSUMERS-ARE-REAL",
+   "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+   "G-LEDGER-CHAIN-VERIFIED",
+   "G-LEDGER-SHAPE-IS-CONSISTENT",
+   "G-MUST-NOT-OVER-THE-RECEIPT",
+   "G-MUST-NOT-VOCABULARY",
+   "G-PAPER-CLAIMS",
+   "G-PAPER-NUMERAL-COVERAGE",
+   "G-PAPER-POLARITY",
+   "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
+   "G-PAPER-VERDICT-EQUALITY",
+   "G-SEAL-INTEGRITY"
+  ],
+  "refusal_only_gates": {
+   "G-PAPER-PRESENT": "a constant refusal reached only when the paper is absent, so it never closes on a clean run and appears in no total of closed gates"
+  },
+  "the_denominator": "EVERY-GATE-ON-THE-CLEAN-PATH-INCLUDING-THE-LATE-ONES-THIS-LEDGER-IS-TAKEN-BEFORE",
+  "the_external_battery": {
    "G-MUTANTS-ON-TARGET": "no such gate exists in this instrument; the sweep is adjudicated by the CLI harness and every surviving or off-target injection fails it, which is an external-battery result"
   },
+  "the_forcings": {
+   "G-ARTIFACT-INTEGRITY": "evaluated only in the writing path, which no diagnostic run reaches; its reference value is the GATE-TIME SEAL, whose in-run twin G-SEAL-INTEGRITY carries the injection falsifier MUT-SEAL, and whose unsealed-key leg is a total byte comparison of the receipt against the string this run built"
+  },
   "uncovered": [],
+  "uncovered_over_every_gate_on_the_clean_path": [],
   "under_a_registered_forcing": 1
  },
  "wilson": {
@@ -3375,14 +4803,122 @@
   ],
   "in_the_real_subfield": true,
   "loop_families_grown": 0,
+  "membership_rows": [
+   {
+    "a_function_of_this_stencils_datum": false,
+    "admits_the_conjugation_symmetric_part": false,
+    "admits_the_raw_trace": false,
+    "chart_leg_checks": 0,
+    "chart_leg_failures_conjugation_symmetric": 0,
+    "chart_leg_failures_raw_trace": 0,
+    "gauge_leg_checks": 0,
+    "gauge_leg_failures": 0,
+    "grain": "LINK",
+    "reading": "ANCHORED",
+    "row": "LINK-ANCHORED",
+    "why": "TWO-CONFIGURATIONS-AGREEING-ON-THIS-STENCILS-DATUM-CARRY-DIFFERENT-LOOP-TRACES"
+   },
+   {
+    "a_function_of_this_stencils_datum": false,
+    "admits_the_conjugation_symmetric_part": false,
+    "admits_the_raw_trace": false,
+    "chart_leg_checks": 0,
+    "chart_leg_failures_conjugation_symmetric": 0,
+    "chart_leg_failures_raw_trace": 0,
+    "gauge_leg_checks": 0,
+    "gauge_leg_failures": 0,
+    "grain": "LINK",
+    "reading": "EXTENSION",
+    "row": "LINK-EXTENSION",
+    "why": "TWO-CONFIGURATIONS-AGREEING-ON-THIS-STENCILS-DATUM-CARRY-DIFFERENT-LOOP-TRACES"
+   },
+   {
+    "a_function_of_this_stencils_datum": true,
+    "admits_the_conjugation_symmetric_part": true,
+    "admits_the_raw_trace": false,
+    "chart_leg_checks": 32,
+    "chart_leg_failures_conjugation_symmetric": 0,
+    "chart_leg_failures_raw_trace": 13,
+    "composition_mismatches": 0,
+    "full_acting_group_checks_on_the_first_declared_datum": 1024,
+    "full_acting_group_failures_conjugation_symmetric": 0,
+    "full_acting_group_failures_raw_trace": 0,
+    "gauge_leg_checks": 8192,
+    "gauge_leg_failures": 0,
+    "grain": "PLAQUETTE",
+    "reading": "ANCHORED",
+    "row": "PLAQUETTE-ANCHORED",
+    "the_acting_group_order": 1024,
+    "the_chart_stabilizer_order": 2,
+    "the_full_group_count_is_the_gauge_image_order_times_the_chart_leg_count": true,
+    "the_gauge_image_order": 512,
+    "why": "THE-LOOP-TRACE-IS-A-FUNCTION-OF-THE-PLAQUETTES-OWN-FOUR-LINK-DATUM"
+   },
+   {
+    "a_function_of_this_stencils_datum": true,
+    "admits_the_conjugation_symmetric_part": false,
+    "admits_the_raw_trace": false,
+    "chart_leg_checks": 128,
+    "chart_leg_failures_conjugation_symmetric": 76,
+    "chart_leg_failures_raw_trace": 95,
+    "composition_mismatches": 0,
+    "full_acting_group_checks_on_the_first_declared_datum": 4096,
+    "full_acting_group_failures_conjugation_symmetric": 2048,
+    "full_acting_group_failures_raw_trace": 2048,
+    "gauge_leg_checks": 8192,
+    "gauge_leg_failures": 0,
+    "grain": "PLAQUETTE",
+    "reading": "EXTENSION",
+    "row": "PLAQUETTE-EXTENSION",
+    "the_acting_group_order": 4096,
+    "the_chart_stabilizer_order": 8,
+    "the_full_group_count_is_the_gauge_image_order_times_the_chart_leg_count": true,
+    "the_gauge_image_order": 512,
+    "why": "THE-LOOP-TRACE-IS-A-FUNCTION-OF-THE-PLAQUETTES-OWN-FOUR-LINK-DATUM"
+   },
+   {
+    "a_function_of_this_stencils_datum": false,
+    "admits_the_conjugation_symmetric_part": false,
+    "admits_the_raw_trace": false,
+    "chart_leg_checks": 0,
+    "chart_leg_failures_conjugation_symmetric": 0,
+    "chart_leg_failures_raw_trace": 0,
+    "gauge_leg_checks": 0,
+    "gauge_leg_failures": 0,
+    "grain": "SITE",
+    "reading": "ANCHORED",
+    "row": "SITE-ANCHORED",
+    "why": "TWO-CONFIGURATIONS-AGREEING-ON-THIS-STENCILS-DATUM-CARRY-DIFFERENT-LOOP-TRACES"
+   },
+   {
+    "a_function_of_this_stencils_datum": false,
+    "admits_the_conjugation_symmetric_part": false,
+    "admits_the_raw_trace": false,
+    "chart_leg_checks": 0,
+    "chart_leg_failures_conjugation_symmetric": 0,
+    "chart_leg_failures_raw_trace": 0,
+    "gauge_leg_checks": 0,
+    "gauge_leg_failures": 0,
+    "grain": "SITE",
+    "reading": "EXTENSION",
+    "row": "SITE-EXTENSION",
+    "why": "TWO-CONFIGURATIONS-AGREEING-ON-THIS-STENCILS-DATUM-CARRY-DIFFERENT-LOOP-TRACES"
+   }
+  ],
   "minimal_support": false,
   "must_not": "NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM-AND-NO-LOOP-FAMILY-IS-GROWN",
   "normalisation_fibre": 2,
   "observable": "THE-TRACE-OF-THE-PLAQUETTE-HOLONOMY-ON-ITS-OWN-FOUR-CORNER-BLOCK",
   "plaquette_independent": true,
   "plaquettes_checked": 16,
+  "rows_admitting_the_conjugation_symmetric_part": [
+   "PLAQUETTE-ANCHORED"
+  ],
+  "rows_admitting_the_raw_trace": [],
   "single_link_invariant_classes": 136,
+  "the_admissible_wilson_weights": "EXACTLY-THE-CONJUGATION-SYMMETRIC-POSITIVE-RATIONAL-FUNCTIONS-OF-THE-TRACE",
   "the_allowed_space_on_the_carrier": 135,
+  "the_restriction_costs_nothing_on_the_carrier": true,
   "values": [
    "0",
    "1/4",

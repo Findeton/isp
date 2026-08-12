@@ -212,6 +212,32 @@ def qs_less(x, y):
     return p > 0 and p * p > 2 * q * q
 
 
+UNITS_IN_WORDS = ("zero", "one", "two", "three", "four", "five", "six",
+                  "seven", "eight", "nine", "ten", "eleven", "twelve",
+                  "thirteen", "fourteen", "fifteen", "sixteen", "seventeen",
+                  "eighteen", "nineteen")
+TENS_IN_WORDS = ("", "", "twenty", "thirty", "forty", "fifty", "sixty",
+                 "seventy", "eighty", "ninety")
+
+
+def numword(k):
+    """a non-negative integer below one hundred, spelled.  Every spelled
+    numeral this paper delivers is RENDERED through this function from a
+    measured value, so a spelled count cannot drift from the run that
+    produced it any more than a digit one can (#267)."""
+    if k < len(UNITS_IN_WORDS):
+        return UNITS_IN_WORDS[k]
+    if k % 10 == 0:
+        return TENS_IN_WORDS[k // 10]
+    return TENS_IN_WORDS[k // 10] + "-" + UNITS_IN_WORDS[k % 10]
+
+
+NUMBER_WORDS = {}
+for _k in range(100):
+    NUMBER_WORDS[numword(_k)] = _k
+del _k
+
+
 INV_SQRT2 = (0, 1, 0, -1, 2)          # (z - z^3)/2 = 1/sqrt(2)
 
 
@@ -474,6 +500,20 @@ PATH_VALUES = [
      "G-LAW-NATIVE-CONTROL-STAMP-CARRIED", "the second sector"),
     ("PV-SMU-LAW3", "S-SMU-RECEIPT", "law_native_rates/values/2", "13/38",
      "G-LAW-NATIVE-CONTROL-STAMP-CARRIED", "the third sector"),
+    ("PV-SMU-DISTINCT", "S-SMU-RECEIPT", "census/distinct_stationary_vectors",
+     10, "G-THE-TARGET-CENSUS-SCOPE",
+     "how many distinct named measures the parent's own terminal holds on "
+     "this carrier -- the denominator this unit's target census is a "
+     "fraction of"),
+    ("PV-SMU-PRIVILEGE", "S-SMU-RECEIPT", "privilege/instances", 6,
+     "G-THE-CONTROLS-FIBRE-IS-MEASURED",
+     "the control's own declared fibre: the number of members the parent's "
+     "unpinned identification carries"),
+    ("PV-SMU-UNPINNED", "S-SMU-RECEIPT", "privilege/the_unpinned_step",
+     "THE-IDENTIFICATION-OF-THE-TRANSPORT-LAWS-THREE-POSITIONS-WITH-THIS-"
+     "ARENAS-THREE-COIN-SECTORS", "G-THE-CONTROLS-FIBRE-IS-MEASURED",
+     "what the control's stamp says is unpinned, read at the parent's own "
+     "receipt rather than paraphrased here"),
     ("PV-GI-LAW1", "S-GI-RECEIPT", "targets/law_value_leg1/0", "15/38",
      "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
      "the same law value at its own source, read independently"),
@@ -1050,27 +1090,10 @@ def induced_classes_on_the_carrier(GA, G, ncoins):
     are identified exactly when some element of the stencil group carries the
     constant datum at one to the constant datum at the other.  The slot
     permutation drops out of a constant datum, so what decides is the tuple
-    of coin-maps alone."""
-    par = list(range(ncoins))
-
-    def find(a):
-        while par[a] != a:
-            par[a] = par[par[a]]
-            a = par[a]
-        return a
-
-    for cm in {g[1] for g in G}:
-        maps = [GA.elems[c] for c in cm]
-        for u in range(ncoins):
-            v = maps[0][u]
-            if all(m[u] == v for m in maps):
-                ra, rb = find(u), find(v)
-                if ra != rb:
-                    par[ra] = rb
-    out = {}
-    for i in range(ncoins):
-        out.setdefault(find(i), []).append(i)
-    return sorted(out.values())
+    of coin-maps alone.  The identification itself is written once, in
+    induced_classes_on_a_family, so the carrier and a synthetic arena are
+    partitioned by the same code and not by two copies of it."""
+    return induced_classes_on_a_family(GA, G, list(range(ncoins)))
 
 
 # ===========================================================================
@@ -1090,7 +1113,8 @@ def measure_provenance(S):
             "a directory with no version control (#91, #46)",
             not bad, "%d of %d source digests match; failing %s"
             % (len(rows) - len(bad), len(rows), [b["name"] for b in bad]))
-    S["provenance"] = {"sources": rows,
+    S["provenance"] = {"sources": rows, "the_paper": PAPER_REL,
+                       "the_transcript": OUT_REL, "the_receipt": RECEIPT_REL,
                        "python": "%d.%d" % sys.version_info[:2]}
     SEAL.take("THE PINNED SOURCES", "provenance", "G-SOURCE-BYTES",
               S["provenance"])
@@ -1246,6 +1270,28 @@ def build_arena(S, pv):
         "carrier": "THE-640-UNIFORM-CONFIGURATIONS",
         "unitary_by_a_second_route": len(coins) if unit_ok else 0}
     SEAL.take("THE ARENA", "arena", "G-ARENA-REBUILT", S["arena"])
+    carrier = len(coins)
+    if mut("MUT-CARRIER"):
+        carrier = carrier - 1
+    LD.gate("G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER",
+            "the carrier this unit weighs is the PARENT'S OWN primary "
+            "carrier and not a rebuild of it: the uniform configurations, "
+            "one coin repeated on every link, whose size is measured here "
+            "and required to equal paper-23's published uniform slice at a "
+            "named receipt path -- so the two units weigh the same partition "
+            "of the same set",
+            carrier == pv["PV-P23-SLICE"],
+            "the rebuilt carrier carries %d uniform configurations against "
+            "the parent's published %d" % (carrier, pv["PV-P23-SLICE"]))
+    S["carrier"] = {
+        "the_carrier": "THE-PARENTS-640-UNIFORM-CONFIGURATIONS",
+        "size": carrier,
+        "the_parents_published_uniform_slice": pv["PV-P23-SLICE"],
+        "why_this_carrier": "IT-IS-THE-CHART-FIXED-LOCUS-THE-PARENT-MEASURED-"
+                            "SO-THE-TWO-UNITS-WEIGH-THE-SAME-PARTITION",
+        "the_full_configuration_space_is_not_a_carrier_here": "640^32"}
+    SEAL.take("THE CARRIER", "carrier",
+              "G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER", S["carrier"])
     S["_lat"] = lat
     S["_coins"] = coins
     S["_cidx"] = cidx
@@ -1293,22 +1339,30 @@ def measure_chart_and_gauge(S, pv):
         len(lat.plaquettes),
         [tuple(lat.plaquettes.index(
             _plaq_image(lat, p, e)) for p in lat.plaquettes) for e in ch32]))
+    sorb32 = len(group_orbits(
+        len(lat.sites),
+        [tuple(lat.sites.index(lat.addv(apply_point(g, s, lat.L), v))
+               for s in lat.sites) for (v, g) in ch32]))
     LD.gate("G-CHART-GROUPS-REBUILT",
             "both declared chart readings are rebuilt and their action is "
             "MEASURED rather than quoted: the anchored group has the "
             "parent's own order at a named receipt path, and the group is "
-            "measured TRANSITIVE on the links and on the plaquettes -- which "
-            "is what makes a covariant weight system the transport of one "
-            "function on one stencil, so the orbit count of that stencil's "
-            "datum is a complete description of the allowed space",
+            "measured TRANSITIVE on the links, on the plaquettes AND on the "
+            "sites -- one published count per declared grain, since the "
+            "site-grain census leans on transitivity exactly as the other "
+            "two do -- which is what makes a covariant weight system the "
+            "transport of one function on one stencil, so the orbit count of "
+            "that stencil's datum is a complete description of the allowed "
+            "space",
             len(ch32) == pv["PV-CHART"] and len(ch128) == 4 * len(ch32)
-            and len(lorb32) == 1 and porb32 == 1,
-            "chart orders %d and %d; %d link orbit(s) and %d plaquette "
-            "orbit(s) at the anchored reading"
-            % (len(ch32), len(ch128), len(lorb32), porb32))
+            and len(lorb32) == 1 and porb32 == 1 and sorb32 == 1,
+            "chart orders %d and %d; %d link orbit(s), %d plaquette orbit(s) "
+            "and %d site orbit(s) at the anchored reading"
+            % (len(ch32), len(ch128), len(lorb32), porb32, sorb32))
     S["chart"] = {"anchored_order": len(ch32), "extension_order": len(ch128),
                   "link_orbits_anchored": len(lorb32),
-                  "plaquette_orbits_anchored": porb32}
+                  "plaquette_orbits_anchored": porb32,
+                  "site_orbits_anchored": sorb32}
     SEAL.take("THE CHART GROUPS", "chart", "G-CHART-GROUPS-REBUILT",
               S["chart"])
 
@@ -1428,6 +1482,89 @@ def realisable_constant_twists(lat):
     return ok
 
 
+DECLARED_LATTICE_SIZES = (2, 4, 8, 16)
+
+
+def measure_the_merging_index_law(S):
+    """THE MECHANISM'S OWN LATTICE-DEPENDENCE, in closed form and measured.
+    A constant twist t closes around a cycle of length L exactly when 8
+    divides Lt, so the residual gauge group on the carrier has order
+    gcd(L, 8) while the LINK STENCIL's gauge image is the full 8 at every L
+    -- a single link has two distinct endpoints and no closure constraint.
+    The index by which the stencil group exceeds the arena's own residual
+    gauge group IS the merging: 8/gcd(L, 8).  It is 2 here at L = 4, 4 at
+    L = 2 where the merges would come in fours and not in pairs, and ONE at
+    every L divisible by eight, where the odd twist becomes a gauge
+    transformation of the torus, no orbits merge, no price is reduced and
+    no observable is pinned.  NO CENSUS IS RUN AT ANY L BUT THE ANCHORED
+    ONE: what is measured here is the twist closure alone."""
+    GA = S["_GA"]
+    rows = []
+    for L in DECLARED_LATTICE_SIZES:
+        latL = Lattice(L)
+        ctw = realisable_constant_twists(latL)
+        if mut("MUT-MERGING-INDEX") and L == 8:
+            ctw = ctw[:-1]
+        img = len(gauge_image(latL, GA, stencil_of(latL, "LINK")))
+        res = len(ctw)
+        rows.append({
+            "row": "L=%d" % L, "L": L,
+            "realisable_constant_twists": ctw,
+            "the_residual_order_on_the_torus": res,
+            "gcd_of_L_and_the_phase_order": _g(L, 8),
+            "the_link_stencils_gauge_image": img,
+            "the_merging_index": img // res if res and img % res == 0 else None,
+            "the_odd_twist_is_a_gauge_transformation_here": 1 in ctw,
+            "orbits_merge_in_groups_of": img // res
+            if res and img % res == 0 else None})
+    anch = [r for r in rows if r["L"] == L_ANCHORED][0]
+    ok = (all(r["the_residual_order_on_the_torus"]
+              == r["gcd_of_L_and_the_phase_order"] for r in rows)
+          and all(r["the_link_stencils_gauge_image"] == 8 for r in rows)
+          and all(r["the_merging_index"] is not None for r in rows)
+          and anch["realisable_constant_twists"]
+          == S["odd_twist"]["realisable_constant_twists"]
+          and anch["the_merging_index"] == 2
+          and all(r["the_merging_index"] == 1 for r in rows if r["L"] % 8 == 0)
+          and all(r["the_odd_twist_is_a_gauge_transformation_here"]
+                  == (r["L"] % 8 == 0) for r in rows))
+    LD.gate("G-THE-MERGING-INDEX-LAW",
+            "the mechanism this unit's price, prohibition and pinned "
+            "observable all rest on is measured to be a property of THIS "
+            "lattice size, and the dependence is published as a law rather "
+            "than left implicit: the residual gauge group on the torus has "
+            "order gcd(L, 8) -- measured by propagating the phase at each "
+            "declared L and checked against the greatest common divisor -- "
+            "while the link stencil's gauge image is the full 8 at every L, "
+            "so the merging index is 8/gcd(L, 8): two at the anchored L = 4, "
+            "four at L = 2, and ONE at every L divisible by eight, where the "
+            "odd twist IS a gauge transformation, nothing merges and nothing "
+            "is pinned.  No census is run at any size but the anchored one; "
+            "what is measured here is the twist closure alone",
+            ok,
+            "%d declared sizes; residual orders %s against gcd %s; merging "
+            "indices %s; the odd twist is a gauge transformation at %s"
+            % (len(rows), [r["the_residual_order_on_the_torus"] for r in rows],
+               [r["gcd_of_L_and_the_phase_order"] for r in rows],
+               [r["the_merging_index"] for r in rows],
+               [r["L"] for r in rows
+                if r["the_odd_twist_is_a_gauge_transformation_here"]]))
+    S["merging_index_law"] = {
+        "rows": rows,
+        "the_law": "THE-MERGING-INDEX-IS-8-OVER-GCD-L-8",
+        "the_anchored_index": anch["the_merging_index"],
+        "sizes_at_which_nothing_merges": [r["L"] for r in rows
+                                          if r["the_merging_index"] == 1],
+        "what_is_measured_at_the_other_sizes": "THE-TWIST-CLOSURE-ALONE-NO-"
+                                               "CENSUS-IS-RUN-THERE",
+        "the_boundary_pot_inherits": "EVERY-STATEMENT-THIS-UNIT-MAKES-ABOUT-"
+                                     "THE-ODD-TWIST-IS-A-STATEMENT-ABOUT-"
+                                     "LATTICES-WHOSE-SIZE-THE-PHASE-ORDER-"
+                                     "DOES-NOT-DIVIDE"}
+    SEAL.take("THE MERGING INDEX LAW", "merging_index_law",
+              "G-THE-MERGING-INDEX-LAW", S["merging_index_law"])
+
+
 # ===========================================================================
 # SECTION 8.  THE FORM CENSUS -- THE HEART
 # ===========================================================================
@@ -1482,11 +1619,13 @@ def run_form_census(S, pv):
     redfix = [GA.fix_in(i, red) for i in range(len(GA.elems))]
     rows = []
     S["_stencil_groups"] = {}
+    S["_stencil_data"] = {}
     for grain in GRAINS:
         st = stencil_of(lat, grain)
         for reading in READINGS:
             G, gi, stb, fails, gens = stencil_group(lat, GA, st,
                                                     reading == "EXTENSION")
+            S["_stencil_data"][(grain, reading)] = (G, gi, stb, fails, gens)
             if mut("MUT-GROUP-NOT-CLOSED") and grain == "PLAQUETTE":
                 G = G[:-1]
                 fails = 1
@@ -1597,6 +1736,94 @@ def verify_the_analytic_crosscheck(S):
                             "RELATION-AND-THE-STARS-FOUR-DO-NOT"}
     SEAL.take("THE ANALYTIC CROSS-CHECK", "analytic_crosscheck",
               "G-ANALYTIC-CROSSCHECK", S["analytic_crosscheck"])
+    verify_the_anchored_closed_forms(S, hat0 // 8, hatk // 8, bp, bs)
+
+
+def verify_the_anchored_closed_forms(S, twist_classes, non_singleton, bp, bs):
+    """THE TWO LARGE ANCHORED COUNTS, IN CLOSED FORM OVER THE FULL ACTING
+    GROUP.  The gauge-only route covers the gauge image alone; the anchored
+    acting group is that image together with its coset under the anchored
+    chart stabiliser's one non-identity element, so the anchored orbit count
+    is the mean of the gauge-only count and the coset's own fixed-point
+    average C.  Evaluated in integers this gives the site count as
+    (136^4 + 136^2)/2 and the plaquette count as (136^4 + 7*72^4 + C)/2,
+    both written in the same two constants the character route uses, and
+    both compared against the census's own full-size Burnside count -- so
+    the two large FULL counts carry a second route at full size and not only
+    a reduced-arena validation of the machinery."""
+    lat, GA = S["_lat"], S["_GA"]
+    rows = []
+    for grain, gauge_only in (("PLAQUETTE", bp), ("SITE", bs)):
+        st = stencil_of(lat, grain)
+        _G, gi, stb, _f, _gens = S["_stencil_data"][(grain, "ANCHORED")]
+        idg = (tuple(range(len(st))), tuple([GA.identity] * len(st)))
+        sigma = [e for e in stb if e != idg]
+        tot = 0
+        for g in gi:
+            tot += fixed_data(GA, elem_mul(GA, sigma[0], g), GA.fix)
+        if mut("MUT-CLOSED-FORM") and grain == "SITE":
+            tot = tot + len(gi)
+        coset = tot // len(gi) if tot % len(gi) == 0 else None
+        closed = ((gauge_only + coset) // 2
+                  if coset is not None and (gauge_only + coset) % 2 == 0
+                  else None)
+        census = [r for r in S["form_census"]["rows"]
+                  if r["row"] == "%s-ANCHORED" % grain][0]
+        rows.append({
+            "row": "%s-ANCHORED" % grain, "grain": grain,
+            "chart_stabilizer_order": len(stb),
+            "the_gauge_only_count": gauge_only,
+            "the_coset_fixed_point_average": coset,
+            "the_closed_form": closed,
+            "the_census_orbit_count": census["orbits"],
+            "the_delivered_coupling_count": census["coupling_count"],
+            "the_closed_form_is_the_coupling_count_plus_one":
+                closed is not None
+                and closed == census["coupling_count"] + 1,
+            "agrees": closed == census["orbits"]})
+    site = [r for r in rows if r["grain"] == "SITE"][0]
+    plaq = [r for r in rows if r["grain"] == "PLAQUETTE"][0]
+    ok = (all(r["agrees"] for r in rows)
+          and all(r["the_closed_form_is_the_coupling_count_plus_one"]
+                  for r in rows)
+          and all(r["chart_stabilizer_order"] == 2 for r in rows)
+          and site["the_coset_fixed_point_average"] == twist_classes ** 2
+          and plaq["the_gauge_only_count"]
+          == twist_classes ** 4 + 7 * non_singleton ** 4)
+    LD.gate("G-THE-ANCHORED-CLOSED-FORMS",
+            "the two large ANCHORED counts -- the ones the census computes by "
+            "a Burnside sum over a group of order 1024 and 8192 on a datum "
+            "space of 640^4 -- carry an exact closed form over the FULL "
+            "acting group at full size, and not merely a reduced-arena "
+            "validation of the machinery: the anchored group is the gauge "
+            "image together with one coset of it, so the orbit count is the "
+            "mean of the gauge-only count and that coset's fixed-point "
+            "average, giving the site count as the fourth power of the "
+            "twist-class count plus its square, all halved, and the "
+            "plaquette count as the gauge-only closed form plus its own "
+            "coset constant, halved.  Each is required to equal the census's "
+            "orbit count AND the delivered coupling count plus one",
+            ok,
+            "site: closed form %s against the census %s; plaquette: %s "
+            "against %s; coset constants %s; the site coset constant is the "
+            "square of the twist-class count %d: %s"
+            % (site["the_closed_form"], site["the_census_orbit_count"],
+               plaq["the_closed_form"], plaq["the_census_orbit_count"],
+               [r["the_coset_fixed_point_average"] for r in rows],
+               twist_classes,
+               site["the_coset_fixed_point_average"] == twist_classes ** 2))
+    S["anchored_closed_forms"] = {
+        "rows": rows,
+        "the_site_form": "(THE-TWIST-CLASS-COUNT^4-PLUS-ITS-SQUARE)/2",
+        "the_plaquette_form": "(THE-TWIST-CLASS-COUNT^4-PLUS-7-TIMES-THE-NON-"
+                              "SINGLETON-COUNT^4-PLUS-THE-COSET-CONSTANT)/2",
+        "twist_classes": twist_classes,
+        "non_singleton_classes": non_singleton,
+        "what_this_replaces": "THE-MACHINERY-ONLY-DISCLOSURE-THE-TWO-LARGE-"
+                              "ANCHORED-COUNTS-NOW-CARRY-A-SECOND-ROUTE-AT-"
+                              "FULL-SIZE"}
+    SEAL.take("THE ANCHORED CLOSED FORMS", "anchored_closed_forms",
+              "G-THE-ANCHORED-CLOSED-FORMS", S["anchored_closed_forms"])
 
 
 def verify_the_rank(S):
@@ -1725,9 +1952,17 @@ def measure_locality(S):
         for l, _o in lat.boundary(p):
             inc.setdefault(l, []).append(p)
     two = all(len(v) == 2 for v in inc.values())
+    sinc = {}
+    for x in lat.sites:
+        for l in lat.star(x):
+            sinc.setdefault(l, []).append(x)
+    stwo = all(len(v) == 2 for v in sinc.values())
     order = {}
     for l, ps in inc.items():
         order[l] = (lat.plaquettes.index(ps[0]), lat.plaquettes.index(ps[1]))
+    sorder = {}
+    for l, xs in sinc.items():
+        sorder[l] = (lat.sites.index(xs[0]), lat.sites.index(xs[1]))
     # the coboundary weight system: h on the link's coin, entering the
     # earlier plaquette with exponent +1 and the later one with -1.  Its
     # product over the plaquettes is the empty product at every
@@ -1738,40 +1973,60 @@ def measure_locality(S):
     exps = {}
     for l, (p1, p2) in order.items():
         exps[l] = {p1: 1, p2: -1}
-    checked = []
+    sexps = {}
+    for l, (x1, x2) in sorder.items():
+        sexps[l] = {x1: 1, x2: -1}
+    pcells = [(p, [l for l, _o in lat.boundary(p)]) for p in lat.plaquettes]
+    scells = [(x, lat.star(x)) for x in lat.sites]
+    checked, schecked = [], []
     for k in range(len(coins)):
         cfg = {l: coins[k] for l in lat.links}
-        checked.append(coboundary_product(lat, cfg, exps, hset, coins))
-    sample = []
+        checked.append(coboundary_product(lat, cfg, exps, hset, coins, pcells))
+        schecked.append(coboundary_product(lat, cfg, sexps, hset, coins,
+                                           scells))
+    sample, ssample = [], []
     for k in range(64):
         cfg = {l: coins[(k * 13 + 29 * i) % len(coins)]
                for i, l in enumerate(lat.links)}
-        sample.append(coboundary_product(lat, cfg, exps, hset, coins))
+        sample.append(coboundary_product(lat, cfg, exps, hset, coins, pcells))
+        ssample.append(coboundary_product(lat, cfg, sexps, hset, coins,
+                                          scells))
     if mut("MUT-COBOUNDARY"):
         exps[lat.links[0]] = {order[lat.links[0]][0]: 1,
                               order[lat.links[0]][1]: 1}
         checked[0] = coboundary_product(
-            lat, {l: coins[0] for l in lat.links}, exps, hset, coins)
+            lat, {l: coins[0] for l in lat.links}, exps, hset, coins, pcells)
+    if mut("MUT-SITE-COBOUNDARY"):
+        sexps[lat.links[0]] = {sorder[lat.links[0]][0]: 1,
+                               sorder[lat.links[0]][1]: 1}
+        schecked[0] = coboundary_product(
+            lat, {l: coins[0] for l in lat.links}, sexps, hset, coins, scells)
     one = Fraction(1)
     gap = (all(x == one for x in checked) and all(x == one for x in sample)
-           and two)
+           and all(x == one for x in schecked)
+           and all(x == one for x in ssample) and two and stwo)
     LD.gate("G-LOCALITY-GAP-AT-THE-PLAQUETTE-GRAIN",
-            "at the plaquette grain the weak condition is STRICTLY weaker, "
-            "and the witness is exhibited rather than asserted: every link "
-            "is measured to lie in exactly two plaquettes, so a weight "
-            "system built from ANY per-link function entering one of them "
-            "with exponent plus one and the other with minus one has "
-            "configuration weight identically one -- product-invariant "
-            "whatever the function, and not locally invariant when the "
-            "function is not.  Verified exhaustively on the carrier and on a "
-            "declared deterministic sample of non-uniform configurations",
+            "at the plaquette grain AND at the site grain the weak condition "
+            "is STRICTLY weaker, and the witness is exhibited rather than "
+            "asserted: every link is measured to lie in exactly two "
+            "plaquettes and in exactly two stars, so a weight system built "
+            "from ANY per-link function entering one of them with exponent "
+            "plus one and the other with minus one has configuration weight "
+            "identically one -- product-invariant whatever the function, and "
+            "not locally invariant when the function is not.  Both grains "
+            "are verified exhaustively on the carrier and on a declared "
+            "deterministic sample of non-uniform configurations, so the "
+            "section covers three of the three declared grains",
             gap,
-            "every link in exactly two plaquettes: %s; %d carrier "
-            "configurations and %d declared non-uniform configurations at "
-            "product one: %d and %d"
-            % (two, len(checked), len(sample),
+            "every link in exactly two plaquettes: %s, and in exactly two "
+            "stars: %s; %d carrier configurations and %d declared "
+            "non-uniform configurations at product one: %d and %d at the "
+            "plaquette grain, %d and %d at the site grain"
+            % (two, stwo, len(checked), len(sample),
                sum(1 for x in checked if x == one),
-               sum(1 for x in sample if x == one)))
+               sum(1 for x in sample if x == one),
+               sum(1 for x in schecked if x == one),
+               sum(1 for x in ssample if x == one)))
     S["locality"] = {
         "link_grain_elementary_systems": len(rows),
         "link_grain_locally_invariant": len(inv),
@@ -1782,30 +2037,39 @@ def measure_locality(S):
                                              if r["detected"]),
         "link_grain_verdict": "PRODUCT-INVARIANCE-EQUALS-LOCAL-INVARIANCE",
         "every_link_lies_in_this_many_plaquettes": 2,
+        "every_link_lies_in_this_many_stars": 2,
         "plaquette_grain_carrier_configurations_at_product_one":
             sum(1 for x in checked if x == one),
         "plaquette_grain_declared_sample": len(sample),
         "plaquette_grain_sample_at_product_one":
             sum(1 for x in sample if x == one),
+        "site_grain_carrier_configurations_at_product_one":
+            sum(1 for x in schecked if x == one),
+        "site_grain_sample_at_product_one":
+            sum(1 for x in ssample if x == one),
         "plaquette_grain_verdict":
             "THE-PRODUCT-INVARIANT-SPACE-IS-STRICTLY-LARGER-BY-A-COBOUNDARY",
+        "site_grain_verdict":
+            "THE-PRODUCT-INVARIANT-SPACE-IS-STRICTLY-LARGER-BY-A-COBOUNDARY",
+        "grains_covered": len(GRAINS),
         "what_the_coboundary_does_to_the_measure": "NOTHING-ITS-PRODUCT-IS-"
                                                    "IDENTICALLY-ONE"}
     SEAL.take("LOCALITY", "locality", "G-LOCALITY-GAP-AT-THE-PLAQUETTE-GRAIN",
               S["locality"])
 
 
-def coboundary_product(lat, cfg, exps, hset, coins):
+def coboundary_product(lat, cfg, exps, hset, coins, cells):
     """the configuration weight of the exhibited coboundary system: the
-    product over plaquettes of the local weights, each of which is a product
-    of per-link factors carrying the plaquette's own exponent."""
+    product over the grain's cells -- plaquettes or stars -- of the local
+    weights, each of which is a product of per-link factors carrying that
+    cell's own exponent."""
     tot = Fraction(1)
     two = Fraction(2)
-    for p in lat.plaquettes:
+    for ci, (_cell, links) in enumerate(cells):
         v = Fraction(1)
-        for l, _o in lat.boundary(p):
+        for l in links:
             h = two if cfg[l] in hset_members(hset, coins) else Fraction(1)
-            v = v * (h ** exps[l][lat.plaquettes.index(p)])
+            v = v * (h ** exps[l][ci])
         tot = tot * v
     return tot
 
@@ -1967,6 +2231,62 @@ def measure_the_gibbs_map(S, pv):
                          "TWIST-WHICH-THE-TORUS-DOES-NOT-CLOSE"}
     SEAL.take("THE PRICE", "price", "G-PRICE-REDUCED-NOT-EVADED", S["price"])
 
+    fca = [r for r in S["form_census"]["rows"]
+           if r["row"] == "LINK-ANCHORED"][0]["acting_group_order"]
+    fce = [r for r in S["form_census"]["rows"]
+           if r["row"] == "LINK-EXTENSION"][0]["acting_group_order"]
+    resa = S["residual_gauge"]["order_anchored"]
+    rese = S["residual_gauge"]["order_extension"]
+    if mut("MUT-CARVE-OUT"):
+        fca = resa
+    carve = {
+        "the_link_stencils_acting_group_anchored": fca,
+        "the_residual_gauge_group_on_the_carrier_anchored": resa,
+        "the_index_anchored": fca // resa if resa and fca % resa == 0 else None,
+        "the_link_stencils_acting_group_extension": fce,
+        "the_residual_gauge_group_on_the_carrier_extension": rese,
+        "the_index_extension": fce // rese if rese and fce % rese == 0
+        else None,
+        "the_extra_elements": S["odd_twist"]["unrealisable_constant_twists"],
+        "what_the_extra_element_is": "THE-ODD-TWIST-A-BIJECTION-OF-THE-"
+                                     "CARRIER-THAT-NO-GAUGE-TRANSFORMATION-"
+                                     "OF-THIS-TORUS-PERFORMS",
+        "the_parents_price_without_the_covariance_declaration":
+            pv["PV-SMU-PRICE639"],
+        "the_carve_out": "THE-PARENTS-PRICE-IS-CONSERVED-ONLY-UNDER-A-"
+                         "RETAINED-SYMMETRY-DECLARATION-AND-THIS-UNIT-"
+                         "DEMANDS-INVARIANCE-UNDER-A-STRICTLY-LARGER-GROUP-"
+                         "SO-REDUCED-NOT-EVADED-AND-CONSERVED-NOT-PAID-DO-"
+                         "NOT-COLLIDE",
+        "the_reduction_is_not_a_saving": True}
+    ok = (carve["the_index_anchored"] is not None
+          and carve["the_index_anchored"] > 1
+          and carve["the_index_extension"] is not None
+          and carve["the_index_extension"] > 1
+          and fca > resa and fce > rese
+          and len(carve["the_extra_elements"]) > 0)
+    LD.gate("G-THE-PRICE-CARVE-OUT",
+            "the clause that keeps this unit's REDUCED-NOT-EVADED from "
+            "colliding with the parent's CONSERVED-NOT-PAID is MEASURED and "
+            "not argued: the parent's conservation is stated at a RETAINED "
+            "symmetry declaration, and this unit does not retain it.  The "
+            "link stencil's acting group is measured strictly larger than "
+            "the residual gauge group the parent's carrier actually carries "
+            "-- at both chart readings -- and the extra elements are named: "
+            "the constant twists the torus does not close.  A discount "
+            "bought by demanding MORE symmetry is what the parent's own law "
+            "predicts, and the parent's own 639 records what dropping a "
+            "symmetry costs",
+            ok,
+            "acting group %d against the carrier's residual %d at the "
+            "anchored reading (index %s) and %d against %d at the extension "
+            "(index %s); the extra elements are the twists %s"
+            % (fca, resa, carve["the_index_anchored"], fce, rese,
+               carve["the_index_extension"], carve["the_extra_elements"]))
+    S["price_carve_out"] = carve
+    SEAL.take("THE PRICE CARVE-OUT", "price_carve_out",
+              "G-THE-PRICE-CARVE-OUT", S["price_carve_out"])
+
     if mut("MUT-GRAIN-DEGENERACY"):
         S["form_census"]["rows"][4]["coupling_count"] = \
             S["form_census"]["rows"][0]["coupling_count"]
@@ -1974,15 +2294,24 @@ def measure_the_gibbs_map(S, pv):
             "the parent disclosed that its carrier cannot see locality -- "
             "one coin serves every link -- and this unit measures exactly "
             "what that costs: the coupling counts differ between grains by "
-            "six orders of magnitude, and yet the measures the three grains "
-            "can reach on this carrier are the SAME set.  The whole "
-            "difference sits in the fibre, which the carrier cannot see",
+            "six orders of magnitude, and yet the DIMENSION the three grains "
+            "can reach on this carrier, and the partition they induce on it, "
+            "are the same at every grain.  The whole difference in the COUNT "
+            "sits in the fibre, which the carrier cannot see.  The reachable "
+            "SETS are not identical, and that is measured separately at "
+            "G-THE-REACHABLE-SETS-DIFFER-BETWEEN-GRAINS rather than asserted "
+            "here: this gate's claim is exactly its predicate",
             len({r["induced_classes_on_the_carrier"] for r in rows
                  if r["reading"] == "ANCHORED"}) == 1
+            and len({r["reachable_dimension"] for r in rows
+                     if r["reading"] == "ANCHORED"}) == 1
             and len({r["coupling_count"] for r in S["form_census"]["rows"]
                      if r["reading"] == "ANCHORED"}) == len(GRAINS),
-            "induced classes %s against coupling counts %s, anchored reading"
+            "induced classes %s and reachable dimensions %s against coupling "
+            "counts %s, anchored reading"
             % (sorted({r["induced_classes_on_the_carrier"] for r in rows
+                       if r["reading"] == "ANCHORED"}),
+               sorted({r["reachable_dimension"] for r in rows
                        if r["reading"] == "ANCHORED"}),
                sorted({r["coupling_count"] for r in S["form_census"]["rows"]
                        if r["reading"] == "ANCHORED"})))
@@ -1991,18 +2320,107 @@ def measure_the_gibbs_map(S, pv):
         "induced_classes_anchored": sorted(
             {r["induced_classes_on_the_carrier"] for r in rows
              if r["reading"] == "ANCHORED"}),
+        "reachable_dimensions_anchored": sorted(
+            {r["reachable_dimension"] for r in rows
+             if r["reading"] == "ANCHORED"}),
         "coupling_counts_anchored": sorted(
             {r["coupling_count"] for r in S["form_census"]["rows"]
              if r["reading"] == "ANCHORED"}),
         "verdict": "THE-COUPLING-COUNT-IS-GRAIN-RELATIVE-THE-REACHABLE-"
-                   "MEASURES-ARE-NOT"}
+                   "DIMENSION-AND-THE-INDUCED-PARTITION-ARE-NOT"}
     SEAL.take("THE GRAIN DEGENERACY", "grain_degeneracy",
               "G-GRAIN-DEGENERACY-ON-THE-CARRIER", S["grain_degeneracy"])
+    measure_the_set_equality_leg(S, rows)
+
+
+def measure_the_set_equality_leg(S, rows):
+    """THE HALF THE DEGENERACY GATE DOES NOT CARRY, MEASURED.  The image at a
+    grain is the e-th power sublattice of the class-constant measures, and
+    the exponent is 32 at the link grain against 16 at the other two.  A
+    32nd power is a 16th power and not conversely, so the reachable SETS are
+    not equal even though their dimension and their partition are.  The
+    witness is exhibited and priced exactly: the class-constant measure that
+    raises ONE class of size 8 by 2^16 and leaves the rest at one."""
+    cls = S["_induced"][("LINK", "ANCHORED")]
+    exps = sorted({r["exponent"] for r in rows})
+    raise_by = 2 ** min(exps)
+    big = next(c for c in cls if len(c) > 1)
+    Z = len(big) * raise_by + (sum(len(c) for c in cls) - len(big))
+    mass_hi = Fraction(raise_by, Z)
+    mass_lo = Fraction(1, Z)
+    ratio = mass_hi / mass_lo
+    if mut("MUT-SET-EQUALITY"):
+        ratio = Fraction(2) ** max(exps)
+    per_e = {}
+    for e in exps:
+        per_e[str(e)] = is_exact_power(ratio, e)
+    reach = sorted({r["grain"] for r in rows
+                    if per_e[str(r["exponent"])]})
+    notreach = sorted({r["grain"] for r in rows
+                       if not per_e[str(r["exponent"])]})
+    sums_to_one = (len(big) * mass_hi
+                   + (sum(len(c) for c in cls) - len(big)) * mass_lo) == 1
+    ok = (sums_to_one and reach and notreach
+          and len({r["reachable_dimension"] for r in rows
+                   if r["reading"] == "ANCHORED"}) == 1)
+    LD.gate("G-THE-REACHABLE-SETS-DIFFER-BETWEEN-GRAINS",
+            "the reachable SET is measured, not inferred from the reachable "
+            "dimension: an exhibited class-constant probability measure on "
+            "the carrier -- one class of size 8 raised by 2^16, everything "
+            "else at one, summing exactly to one -- is required to be in the "
+            "image at some declared grain and OUT of it at another.  It is "
+            "an exact 16th power and not an exact 32nd, so it is reachable "
+            "at the plaquette and site grains and unreachable at the link "
+            "grain: the dimension and the partition are grain-invariant, the "
+            "set is not, and the falsifiable half of the degeneracy finding "
+            "is now the one this gate tests",
+            ok,
+            "the witness raises one class of size %d by %d against a "
+            "normalisation of %d; its class ratio %s is an exact power at "
+            "%s; reachable at %s and not at %s"
+            % (len(big), raise_by, Z, ratio,
+               sorted(e for e in per_e if per_e[e]), reach, notreach))
+    S["set_equality"] = {
+        "the_witness": "ONE-CLASS-OF-SIZE-8-RAISED-BY-2^16-AND-ONE-ELSEWHERE",
+        "the_raised_class_size": len(big),
+        "the_raise": raise_by,
+        "the_normalisation": Z,
+        "the_class_ratio": str(ratio),
+        "mass_on_the_raised_class": str(mass_hi),
+        "mass_elsewhere": str(mass_lo),
+        "sums_to_one": sums_to_one,
+        "is_an_exact_power_at_exponent": per_e,
+        "in_the_image_at_grains": reach,
+        "outside_the_image_at_grains": notreach,
+        "verdict": "THE-REACHABLE-DIMENSION-IS-GRAIN-INVARIANT-AND-THE-"
+                   "REACHABLE-SET-IS-NOT"}
+    SEAL.take("THE SET-EQUALITY LEG", "set_equality",
+              "G-THE-REACHABLE-SETS-DIFFER-BETWEEN-GRAINS",
+              S["set_equality"])
 
 
 # ===========================================================================
 # SECTION 11.  THE CANDIDATE ROWS
 # ===========================================================================
+
+def sym_trace(t):
+    """THE CONJUGATION-SYMMETRIC INVARIANT of a trace: the pair (t + conj t,
+    t * conj t).  Both entries lie in the fixed field of the conjugation, so
+    two traces have the same invariant exactly when they are equal or
+    conjugate.  A weight system is a conjugation-symmetric function of the
+    trace exactly when it is a function of this pair -- and on the carrier,
+    where every trace is real, the restriction costs nothing."""
+    return (fadd(t, fconj(t)), fmul(t, fconj(t)))
+
+
+def act_on_datum(GA, el, d):
+    """the action of a stencil-group element on a datum, carried as coin
+    INDICES: slot j of the image carries slot perm[j] of the datum under
+    that slot's own coin map.  This is the same action the orbit routes
+    take, written once."""
+    perm, cm = el
+    return tuple(GA.elems[cm[j]][d[perm[j]]] for j in range(len(perm)))
+
 
 def measure_wilson_row(S, pv):
     """(a) THE WILSON SHAPE: weights that are functions of the plaquette
@@ -2062,13 +2480,17 @@ def measure_wilson_row(S, pv):
     if mut("MUT-WILSON-INVARIANCE"):
         bad = 1
     LD.gate("G-WILSON-IS-IN-THE-ALLOWED-SPACE",
-            "the Wilson shape IS a member of the allowed space at the "
-            "plaquette grain: the trace of the holonomy is invariant under "
-            "every element of the plaquette's own gauge image, which is what "
-            "makes any positive-rational function of it an admissible weight "
-            "system.  The theorem is cyclicity of the trace under "
-            "conjugation by the corner phases; the measurement is a declared "
-            "sample of plaquette data against EVERY gauge element",
+            "the Wilson shape passes the GAUGE leg of the allowed space's "
+            "own definition at the plaquette grain: the trace of the "
+            "holonomy is invariant under every element of the plaquette's "
+            "own gauge image, so any positive-rational function of it is "
+            "invariant under that image.  The theorem is cyclicity of the "
+            "trace under conjugation by the corner phases; the measurement "
+            "is a declared sample of plaquette data against EVERY gauge "
+            "element.  This gate closes the gauge leg ONLY: the allowed "
+            "space is cut out by the whole stencil group, whose second leg "
+            "-- the chart stabiliser -- is measured separately at "
+            "G-WILSON-COVARIANCE-LEG and is NOT passed by the raw trace",
             bad == 0,
             "%d checks over %d declared data against %d gauge elements, %d "
             "failures" % (checks, len(data), len(gi), bad))
@@ -2099,7 +2521,158 @@ def measure_wilson_row(S, pv):
 
     sep_link, wl_pair = separates(stl)
     sep_site, ws_pair = separates(sts)
-    grains_admitting = ["PLAQUETTE"]
+
+    # ------------------------------------------------------------------
+    # THE SECOND LEG OF THE ALLOWED SPACE'S OWN DEFINITION.  The allowed
+    # space is the set of functions constant on the orbits of the STENCIL
+    # GROUP -- the gauge image AND the chart stabiliser.  The gauge leg
+    # above is one of the two.  Here the other leg is applied, at every
+    # declared row, to the raw trace and to its conjugation-symmetric part;
+    # the two legs together are the whole group, which is measured rather
+    # than assumed by checking that the element built as "stabiliser after
+    # gauge" acts as the stabiliser after the gauge element does.
+    # ------------------------------------------------------------------
+    didx = [tuple(cidx[c] for c in d) for d in data]
+    _trc = {}
+
+    def trace_of_datum(dt):
+        got = _trc.get(dt)
+        if got is None:
+            got = block_trace(holonomy_block(
+                lat, lat.sites[0],
+                lambda l, dd=dt: coins[dd[st.index(l)]]))
+            _trc[dt] = got
+        return got
+
+    memb = []
+    for grain in GRAINS:
+        for reading in READINGS:
+            crow = [r for r in S["form_census"]["rows"]
+                    if r["row"] == "%s-%s" % (grain, reading)][0]
+            if grain != "PLAQUETTE":
+                memb.append({
+                    "row": "%s-%s" % (grain, reading), "grain": grain,
+                    "reading": reading,
+                    "a_function_of_this_stencils_datum": False,
+                    "why": "TWO-CONFIGURATIONS-AGREEING-ON-THIS-STENCILS-"
+                           "DATUM-CARRY-DIFFERENT-LOOP-TRACES",
+                    "gauge_leg_checks": 0, "gauge_leg_failures": 0,
+                    "chart_leg_checks": 0,
+                    "chart_leg_failures_raw_trace": 0,
+                    "chart_leg_failures_conjugation_symmetric": 0,
+                    "admits_the_raw_trace": False,
+                    "admits_the_conjugation_symmetric_part": False})
+                continue
+            G, gix, stbx, _fx, _gx = S["_stencil_data"][(grain, reading)]
+            craw = csym = cchk = 0
+            comp_bad = 0
+            for dt in didx:
+                bt = trace_of_datum(dt)
+                bs = sym_trace(bt)
+                for s in stbx:
+                    cchk += 1
+                    t2 = trace_of_datum(act_on_datum(GA, s, dt))
+                    if t2 != bt:
+                        craw += 1
+                    if sym_trace(t2) != bs:
+                        csym += 1
+                for s in stbx:
+                    for gx in gix:
+                        if act_on_datum(GA, elem_mul(GA, s, gx), dt) \
+                                != act_on_datum(GA, s,
+                                                act_on_datum(GA, gx, dt)):
+                            comp_bad += 1
+            if mut("MUT-WILSON-COVARIANCE") and reading == "ANCHORED":
+                craw = 0
+            # a direct full-acting-group evaluation on the first declared
+            # datum, so the composition argument is confirmed and not only
+            # relied upon.
+            d0 = didx[0]
+            b0 = trace_of_datum(d0)
+            s0 = sym_trace(b0)
+            fullchk = fullraw = fullsym = 0
+            for el in G:
+                fullchk += 1
+                t2 = trace_of_datum(act_on_datum(GA, el, d0))
+                if t2 != b0:
+                    fullraw += 1
+                if sym_trace(t2) != s0:
+                    fullsym += 1
+            d0raw = sum(1 for s in stbx
+                        if trace_of_datum(act_on_datum(GA, s, d0)) != b0)
+            d0sym = sum(1 for s in stbx
+                        if sym_trace(trace_of_datum(
+                            act_on_datum(GA, s, d0))) != s0)
+            memb.append({
+                "row": "%s-%s" % (grain, reading), "grain": grain,
+                "reading": reading,
+                "a_function_of_this_stencils_datum": True,
+                "why": "THE-LOOP-TRACE-IS-A-FUNCTION-OF-THE-PLAQUETTES-OWN-"
+                       "FOUR-LINK-DATUM",
+                "gauge_leg_checks": checks, "gauge_leg_failures": bad,
+                "the_gauge_image_order": crow["gauge_image_order"],
+                "the_chart_stabilizer_order": crow["chart_stabilizer_order"],
+                "the_acting_group_order": crow["acting_group_order"],
+                "chart_leg_checks": cchk,
+                "chart_leg_failures_raw_trace": craw,
+                "chart_leg_failures_conjugation_symmetric": csym,
+                "composition_mismatches": comp_bad,
+                "full_acting_group_checks_on_the_first_declared_datum":
+                    fullchk,
+                "full_acting_group_failures_raw_trace": fullraw,
+                "full_acting_group_failures_conjugation_symmetric": fullsym,
+                "the_full_group_count_is_the_gauge_image_order_times_the_"
+                "chart_leg_count":
+                    fullraw == len(gix) * d0raw
+                    and fullsym == len(gix) * d0sym,
+                "admits_the_raw_trace": bad == 0 and craw == 0,
+                "admits_the_conjugation_symmetric_part": bad == 0
+                and csym == 0})
+    grains_admitting = [gr for gr in GRAINS
+                        if any(m["a_function_of_this_stencils_datum"]
+                               and m["gauge_leg_failures"] == 0
+                               for m in memb if m["grain"] == gr)]
+    covariant_rows = [m["row"] for m in memb
+                      if m["admits_the_conjugation_symmetric_part"]]
+    raw_rows = [m["row"] for m in memb if m["admits_the_raw_trace"]]
+    plaq_rows = [m for m in memb if m["grain"] == "PLAQUETTE"]
+    ok = (len(grains_admitting) == 1
+          and all(m["composition_mismatches"] == 0 for m in plaq_rows)
+          and all(m["the_full_group_count_is_the_gauge_image_order_times_"
+                    "the_chart_leg_count"] for m in plaq_rows)
+          and not raw_rows
+          and len(covariant_rows) == 1)
+    LD.gate("G-WILSON-COVARIANCE-LEG",
+            "the membership row is measured against BOTH legs of the allowed "
+            "space's own definition, at every declared row, and the positive "
+            "arm is COMPUTED rather than typed.  The raw trace fails the "
+            "chart leg: the anchored stabiliser's one non-identity element "
+            "reverses the boundary loop and carries the trace to its complex "
+            "conjugate, which differs from it wherever the trace is not "
+            "real -- so the raw trace is admissible at NO declared row.  Its "
+            "conjugation-symmetric part is admissible at exactly one row, "
+            "the anchored plaquette, and at no other; on the carrier, where "
+            "every trace is real, that restriction costs nothing.  The two "
+            "legs are the whole group: the element built as stabiliser after "
+            "gauge is measured to act as the stabiliser after the gauge "
+            "element does, at every pair and every declared datum, and the "
+            "full acting group is evaluated directly on one declared datum "
+            "and required to return exactly the gauge image order times the "
+            "chart leg's own count",
+            ok,
+            "grains admitting the shape %s; rows admitting the raw trace %s; "
+            "rows admitting the conjugation-symmetric part %s; chart-leg "
+            "failures %s of %s checks; composition mismatches %d; the direct "
+            "full-group evaluation on one datum %s"
+            % (grains_admitting, raw_rows, covariant_rows,
+               [m["chart_leg_failures_raw_trace"] for m in plaq_rows],
+               [m["chart_leg_checks"] for m in plaq_rows],
+               sum(m["composition_mismatches"] for m in plaq_rows),
+               [(m["full_acting_group_checks_on_the_first_declared_datum"],
+                 m["full_acting_group_failures_raw_trace"],
+                 m["full_acting_group_failures_conjugation_symmetric"])
+                for m in plaq_rows]))
+
     if mut("MUT-WILSON-GRAIN"):
         sep_link = False
     LD.gate("G-WILSON-GRAIN-SELECTION",
@@ -2151,6 +2724,13 @@ def measure_wilson_row(S, pv):
         "grains_declared": len(GRAINS),
         "gauge_invariance_checks": checks,
         "gauge_invariance_failures": bad,
+        "membership_rows": memb,
+        "rows_admitting_the_raw_trace": raw_rows,
+        "rows_admitting_the_conjugation_symmetric_part": covariant_rows,
+        "the_admissible_wilson_weights": "EXACTLY-THE-CONJUGATION-SYMMETRIC-"
+                                         "POSITIVE-RATIONAL-FUNCTIONS-OF-THE-"
+                                         "TRACE",
+        "the_restriction_costs_nothing_on_the_carrier": inq,
         "dimension_of_the_wilson_family_on_the_carrier": len(distinct) - 1,
         "the_allowed_space_on_the_carrier": len(cls) - 1,
         "constant_on_the_induced_classes": trace_const_on_classes,
@@ -2272,10 +2852,11 @@ def measure_targets(S, pv):
                      "class_constant": classconst,
                      "reachable_at_exponent": {str(e): powers[e]
                                                for e in exps},
-                     "reachable": any(powers.values()), "obstruction": why})
+                     "reachable": any(powers.values()),
+                     "obstruction_over_the_declared_field": why})
     if mut("MUT-TARGET-CENSUS"):
         rows[3]["reachable"] = True
-        rows[3]["obstruction"] = "REACHABLE"
+        rows[3]["obstruction_over_the_declared_field"] = "REACHABLE"
 
     # the REACHABLE arm is REACHED, not merely licensed: an exhibited
     # non-counting weight system and the exact measure it produces.
@@ -2292,14 +2873,19 @@ def measure_targets(S, pv):
                   and mu[cls[1][0]] != mu[cls[0][0]]
                   and all(len({mu[j] for j in c}) == 1 for c in cls))
     n_reach = sum(1 for r in rows if r["reachable"])
-    species = sorted({r["obstruction"] for r in rows
+    species = sorted({r["obstruction_over_the_declared_field"] for r in rows
                       if not r["reachable"]})
     ok = (witness_ok and n_reach >= 1
           and rows[0]["reachable"] and not rows[3]["reachable"]
           and len(species) == 3)
     LD.gate("G-TARGET-CENSUS",
-            "every named measure this corpus has on this carrier is run "
-            "against the Gibbs map, and each failure is attributed to a "
+            "six DECLARED targets are run against the Gibbs map -- the "
+            "corpus's three reached nulls, one member of the law-native "
+            "family, the parent's handed-over monomial Haar and one target "
+            "this unit constructs to populate the symmetry arm; the declared "
+            "list is not every measure the corpus holds, and how much of it "
+            "the list covers is counted at G-THE-TARGET-CENSUS-SCOPE.  Each "
+            "failure is attributed to a "
             "MEASURED species rather than to a single verdict: a target that "
             "separates two orbits inside one class fails by SYMMETRY, a "
             "target with a zero fails by SUPPORT because positive weights "
@@ -2423,15 +3009,18 @@ def measure_falsifier(S, pv):
             cv = [sum(vals[j] for j in c) / Fraction(len(c)) for c in cls]
             simplex = (min(ov), max(ov))
             reach = (min(cv), max(cv))
+            own = (min(vals), max(vals))
             pinned = reach != simplex
             rows.append({
                 "row": "%s-%s" % (name, reading), "observable": name,
                 "reading": reading, "is_a_gauge_observable": True,
                 "what": what,
+                "range_of_the_observable_itself": [str(own[0]), str(own[1])],
                 "range_over_the_invariant_simplex":
                     [str(simplex[0]), str(simplex[1])],
                 "range_over_the_reachable_set": [str(reach[0]),
                                                  str(reach[1])],
+                "the_covariance_reading_narrows_it": simplex != own,
                 "pinned_to_a_proper_sub_range": pinned,
                 "pinned_to_a_point": reach[0] == reach[1],
                 "verdict": "PINNED" if pinned else "UNPINNED"})
@@ -2479,15 +3068,51 @@ def measure_falsifier(S, pv):
             % (len(rows), len(hits), len(points),
                sum(1 for r in wil if r["pinned_to_a_proper_sub_range"]),
                len(wil), [(f["reading"], f["pinned"]) for f in fam]))
+    obsrows = [r for r in rows if r.get("is_a_gauge_observable")]
+    narrowed = [r["row"] for r in obsrows
+                if r["the_covariance_reading_narrows_it"]]
+    if mut("MUT-COVARIANCE-READING"):
+        narrowed = [obsrows[0]["row"]]
     S["falsifier"] = {
         "rows": rows, "orbit_indicator_families": fam,
         "declared_observables": len(obs),
         "pinned_rows": len(hits), "pinned_to_a_point": len(points),
-        "verdict": "HIT" if hits else "NULL",
+        "the_pins_own_wording": "IS-THERE-ANY-GAUGE-OBSERVABLE-WHOSE-"
+                                "EXPECTATION-THE-COVARIANCE-CONSTRAINTS-PIN-"
+                                "TO-A-PROPER-SUB-RANGE",
+        "rows_at_which_the_covariance_reading_narrows_the_range":
+            len(narrowed),
+        "rows_measured_at_the_covariance_reading": len(obsrows),
+        "the_covariance_reading_verdict":
+            "NOT-HIT-AT-%d-OF-%d-ROWS-EVERY-RANGE-OVER-THE-INVARIANT-SIMPLEX-"
+            "IS-THE-OBSERVABLES-OWN-FULL-RANGE"
+            % (len(obsrows) - len(narrowed), len(obsrows)),
+        "the_action_route_verdict": "HIT" if hits else "NULL",
+        "what_does_the_pinning": "THE-LOCALITY-DECLARATION-AT-A-DECLARED-"
+                                 "GRAIN-OVER-THE-DECLARED-FIELD-NOT-THE-"
+                                 "ARENAS-OWN-SYMMETRY",
+        "verdict": "HIT-ON-THE-ACTION-ROUTE-NOT-AT-COVARIANCE" if hits
+                   else "NULL",
         "the_mechanism": "AN-OBSERVABLE-IS-PINNED-EXACTLY-WHEN-IT-SEPARATES-"
                          "TWO-GAUGE-ORBITS-INSIDE-ONE-CLASS"}
     SEAL.take("THE FALSIFIER", "falsifier", "G-FALSIFIER-CENSUS",
               S["falsifier"])
+    LD.gate("G-THE-COVARIANCE-READING-IS-NOT-HIT",
+            "the falsifier AS THE PIN WORDS IT -- is there any gauge "
+            "observable whose expectation THE COVARIANCE CONSTRAINTS pin to "
+            "a proper sub-range -- is measured, and the answer is NO at "
+            "every declared row: the expectation's range over the parent's "
+            "invariant simplex is compared against the observable's OWN full "
+            "range over the carrier, and the two are equal at every row, so "
+            "covariance narrows nothing.  That is the parent's own "
+            "COVARIANCE-PINS-THE-EXPECTATION-NOWHERE, reproduced and "
+            "extended from one observable to six at two readings.  The hit "
+            "this unit does report is at the ACTION route -- the locality "
+            "declaration -- and this gate is what keeps the two apart",
+            not narrowed and len(obsrows) == len(obs) * len(READINGS),
+            "%d observable rows measured at the covariance reading, %d "
+            "narrowed by it %s"
+            % (len(obsrows), len(narrowed), narrowed[:3]))
 
     orbc = all(r.get("is_a_gauge_observable", True) for r in rows
                if r["reading"] == "ANCHORED")
@@ -2617,21 +3242,52 @@ def measure_density_witness(S):
     ai = next(i for i, m in enumerate(coins)
               if coin_sector(m) == "ANTIDIAGONAL")
     ratio = pi[di] / pi[ai]
-    b = 10 ** 5
-    lo, hi = 1, 10 * b
-    while lo < hi:
-        mid = (lo + hi + 1) // 2
-        if mid ** e * ratio.denominator <= ratio.numerator * b ** e:
-            lo = mid
-        else:
-            hi = mid - 1
+    fam = []
+    for k in range(1, 6):
+        bk = 10 ** k
+        lo, hi = 1, 10 * bk
+        while lo < hi:
+            mid = (lo + hi + 1) // 2
+            if mid ** e * ratio.denominator <= ratio.numerator * bk ** e:
+                lo = mid
+            else:
+                hi = mid - 1
+        qk = Fraction(lo, bk)
+        ek = abs(qk ** e - ratio)
+        jk = 0
+        while ek < Fraction(1, 10 ** (jk + 1)):
+            jk += 1
+        fam.append({"row": "DENOMINATOR-10^%d" % k, "denominator": bk,
+                    "numerator": lo, "in_lowest_terms": str(qk),
+                    "the_error": str(ek),
+                    "error_below_one_over_ten_to_the": jk})
+    if mut("MUT-MONOTONE-WITNESS"):
+        fam[2] = dict(fam[2], the_error=fam[1]["the_error"])
+    b = fam[-1]["denominator"]
+    lo = fam[-1]["numerator"]
     q = Fraction(lo, b)
     err = abs(q ** e - ratio)
-    j = 0
-    while err < Fraction(1, 10 ** (j + 1)):
-        j += 1
+    j = fam[-1]["error_below_one_over_ten_to_the"]
     if mut("MUT-DENSITY"):
         j = j + 3
+    errs = [Fraction(r["the_error"]) for r in fam]
+    monotone = all(errs[i + 1] < errs[i] for i in range(len(errs) - 1))
+    LD.gate("G-THE-MONOTONE-WITNESS-FAMILY",
+            "the approach to the control target is measured as a FAMILY and "
+            "not as a single point: at each of five declared denominators "
+            "the largest numerator whose e-th power stays below the required "
+            "ratio is found by integer bisection, and the errors are "
+            "required to be STRICTLY DECREASING along the family, each "
+            "witness exact and no float or root extraction computed "
+            "anywhere.  What the family establishes is that the image comes "
+            "within every bound the family reaches; that the target lies in "
+            "the CLOSURE is a theorem about the density of the e-th powers "
+            "of the positive rationals, and this unit states it as a theorem "
+            "rather than as a measurement of its own",
+            monotone and len(fam) == 5,
+            "%d declared denominators; errors %s; strictly decreasing: %s"
+            % (len(fam), [r["error_below_one_over_ten_to_the"] for r in fam],
+               monotone))
     ok = (not is_exact_power(ratio, e) and err < Fraction(1, 10 ** j)
           and j >= 1)
     LD.gate("G-DENSITY-WITNESS",
@@ -2651,9 +3307,19 @@ def measure_density_witness(S):
         "the_required_ratio": str(ratio), "exponent": e,
         "is_an_exact_power": is_exact_power(ratio, e),
         "witness_denominator": b, "witness_numerator": lo,
+        "the_witness_in_lowest_terms": str(q),
+        "the_search_denominator_is_not_the_witnesses_own": str(q) != str(
+            Fraction(lo)) and q.denominator != b,
         "error_below_one_over_ten_to_the": j,
-        "consequence": "THE-CONTROL-LIES-IN-THE-CLOSURE-OF-THE-IMAGE-AND-"
-                       "NOT-IN-THE-IMAGE"}
+        "the_monotone_family": fam,
+        "the_family_is_strictly_decreasing": monotone,
+        "what_the_family_establishes": "THE-IMAGE-COMES-WITHIN-EVERY-BOUND-"
+                                       "THE-DECLARED-FAMILY-REACHES",
+        "what_carries_the_limit": "A-THEOREM-THE-E-TH-POWERS-OF-THE-POSITIVE-"
+                                  "RATIONALS-ARE-DENSE-IN-THE-POSITIVE-REALS-"
+                                  "STATED-AS-A-THEOREM-AND-NOT-MEASURED-HERE",
+        "consequence": "THE-CONTROL-IS-OUTSIDE-THE-IMAGE-AND-THE-IMAGE-"
+                       "APPROACHES-IT-ALONG-A-MEASURED-MONOTONE-FAMILY"}
     SEAL.take("THE DENSITY WITNESS", "density_witness", "G-DENSITY-WITNESS",
               S["density_witness"])
 
@@ -2675,7 +3341,8 @@ def measure_the_control_row(S, pv):
                    "IDENTIFICATION"
           and not row["reachable"]
           and row["class_constant"] and row["full_support"]
-          and row["obstruction"] == "UNREACHABLE-BY-ARITHMETIC"
+          and row["obstruction_over_the_declared_field"]
+          == "UNREACHABLE-BY-ARITHMETIC"
           and pv["PV-SMU-LAW1"] == pv["PV-GI-LAW1"]
           and pv["PV-SMU-LAW3"] == pv["PV-GI-LAW3"])
     LD.gate("G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
@@ -2691,22 +3358,183 @@ def measure_the_control_row(S, pv):
             "stamp %r; class-constant %s, full support %s, reachable %s, "
             "obstruction %s; the sector law agrees at both sources: %s"
             % (stamp, row["class_constant"], row["full_support"],
-               row["reachable"], row["obstruction"],
+               row["reachable"],
+               row["obstruction_over_the_declared_field"],
                pv["PV-SMU-LAW1"] == pv["PV-GI-LAW1"]))
+    # THE STAMP'S OWN CONTENT: the unpinned identification is a SIX-member
+    # fibre -- the six ways the transport law's three positions can be
+    # identified with this arena's three coin sectors.  The unit builds one
+    # of them as its census row; here all six are run through the same
+    # reachability predicate, so the verdict is reported in the only form a
+    # control carrying that stamp can be reported in: independent of the
+    # identification.
+    coins, n = S["_coins"], len(S["_coins"])
+    cls = S["_induced"][("LINK", "ANCHORED")]
+    exps = S["target_census"]["exponents_tested"]
+    lawv = [Fraction(pv["PV-SMU-LAW1"]), Fraction(pv["PV-SMU-LAW2"]),
+            Fraction(pv["PV-SMU-LAW3"])]
+    sect = {}
+    for i, m in enumerate(coins):
+        sect.setdefault(coin_sector(m), []).append(i)
+    order = ["DIAGONAL", "ANTIDIAGONAL", "BALANCED"]
+    fib = []
+    for p in [q for q in product(range(3), repeat=3) if len(set(q)) == 3]:
+        t = [None] * n
+        for k, name in enumerate(order):
+            for j in sect[name]:
+                t[j] = lawv[p[k]] / len(sect[name])
+        full = all(x > 0 for x in t)
+        classconst = all(len({t[j] for j in c}) == 1 for c in cls)
+        base = next((t[i] for i in range(n) if t[i] > 0), Fraction(1))
+        powers = {str(e): (full and classconst
+                           and all(is_exact_power(t[i] / base, e)
+                                   for i in range(n))) for e in exps}
+        why = "REACHABLE"
+        if not classconst:
+            why = "UNREACHABLE-BY-SYMMETRY"
+        elif not full:
+            why = "UNREACHABLE-BY-SUPPORT"
+        elif not any(powers.values()):
+            why = "UNREACHABLE-BY-ARITHMETIC"
+        fib.append({
+            "row": "LAW-NATIVE-%d%d%d" % p,
+            "the_identification": [order[k] + "<-" + str(p[k])
+                                   for k in range(3)],
+            "the_ratio_between_the_two_equal_sized_sectors":
+                str(lawv[p[0]] / lawv[p[1]]),
+            "class_constant": classconst, "full_support": full,
+            "reachable_at_exponent": powers,
+            "reachable": any(powers.values()),
+            "obstruction_over_the_declared_field": why})
+    if mut("MUT-CONTROL-FIBRE"):
+        fib[2]["reachable"] = True
+        fib[2]["obstruction_over_the_declared_field"] = "REACHABLE"
+    built = "LAW-NATIVE-012"
+    fok = (len(fib) == pv["PV-SMU-PRIVILEGE"]
+           and not any(r["reachable"] for r in fib)
+           and all(r["class_constant"] and r["full_support"] for r in fib)
+           and len({r["the_ratio_between_the_two_equal_sized_sectors"]
+                    for r in fib}) == 6
+           and [r for r in fib if r["row"] == built][0][
+               "obstruction_over_the_declared_field"]
+           == row["obstruction_over_the_declared_field"])
+    LD.gate("G-THE-CONTROLS-FIBRE-IS-MEASURED",
+            "the control's stamp names an UNPINNED IDENTIFICATION, and this "
+            "gate measures the fibre that stamp is about rather than "
+            "reporting one member of it: the transport law's three positions "
+            "against this arena's three coin sectors is a fibre of six, all "
+            "six members are built and run through the same reachability "
+            "predicate, every one is class-constant and of full support, "
+            "every one requires a different mass ratio between the two "
+            "equal-sized sectors, and NOT ONE is reachable at either "
+            "declared exponent -- so the census verdict on the control is "
+            "measured to be independent of the identification, which is the "
+            "only form in which a control carrying that stamp can be "
+            "reported.  The member this unit builds as its census row is "
+            "required to return the census row's own verdict",
+            fok,
+            "%d fibre members; %d reachable; ratios %s; the built member %s "
+            "returns %s against the census row's %s"
+            % (len(fib), sum(1 for r in fib if r["reachable"]),
+               [r["the_ratio_between_the_two_equal_sized_sectors"]
+                for r in fib], built,
+               [r for r in fib if r["row"] == built][0][
+                   "obstruction_over_the_declared_field"],
+               row["obstruction_over_the_declared_field"]))
     S["law_native_control"] = {
         "stamp": stamp,
         "sector_law": [pv["PV-SMU-LAW1"], pv["PV-SMU-LAW2"],
                        pv["PV-SMU-LAW3"]],
+        "the_unpinned_step": pv["PV-SMU-UNPINNED"],
+        "the_declared_fibre": len(fib),
+        "the_fibre_rows": fib,
+        "the_member_built_as_the_census_row": built,
+        "the_verdict_is_independent_of_the_identification":
+            not any(r["reachable"] for r in fib),
         "read_at_two_independent_sources": True,
         "class_constant": row["class_constant"],
         "full_support": row["full_support"],
         "reachable": row["reachable"],
-        "obstruction": row["obstruction"],
+        "obstruction": row["obstruction_over_the_declared_field"],
         "never_spent_as_derived": True,
         "the_honest_use": "A-CONTROL-THE-DISTANCE-IS-REPORTED-AND-THE-"
                           "AGREEMENT-IS-NOT-CLAIMED"}
     SEAL.take("THE LAW-NATIVE CONTROL", "law_native_control",
               "G-LAW-NATIVE-CONTROL-STAMP-CARRIED", S["law_native_control"])
+    measure_the_census_scope(S, pv, fib, built)
+
+
+# the declared correspondence between this unit's target names and the
+# parent's own instance names, so "how much of the corpus is run here" is a
+# COUNT over a published map and not a claim.  A None means the target is
+# not one of the parent's ten.
+PARENT_MEASURE_NAMES = (
+    ("COUNTING", "COUNTING"),
+    ("ORBIT-UNIFORM-ANCHORED", "ORBIT-UNIFORM-CHART-32"),
+    ("ORBIT-UNIFORM-EXTENSION", "ORBIT-UNIFORM-CHART-128"),
+    ("LAW-NATIVE-PI", "LAW-NATIVE-012"),
+    ("MONOMIAL-HAAR", None),
+    ("ODD-TWIST-GRADED", None),
+)
+THE_PARENTS_MEASURE_NOT_MEASURED_HERE = "METROPOLIS-AT-A-NON-INVARIANT-TARGET"
+
+
+def measure_the_census_scope(S, pv, fib, built):
+    """HOW MUCH OF THE CORPUS THIS CENSUS COVERS, counted rather than
+    claimed.  The parent's terminal holds a published number of distinct
+    named measures on this carrier; this unit runs six targets, of which a
+    declared correspondence says how many are the parent's; the rest of the
+    parent's are accounted for one by one -- five inside the control's own
+    measured fibre and one, the non-invariant control, not measured here at
+    all."""
+    tc = S["target_census"]
+    names = {a: b for a, b in PARENT_MEASURE_NAMES}
+    run = sorted({names[r["row"]] for r in tc["rows"]
+                  if names.get(r["row"])})
+    total = pv["PV-SMU-DISTINCT"]
+    infibre = sorted({r["row"] for r in fib if r["row"] != built})
+    notrun = total - len(run)
+    if mut("MUT-CENSUS-SCOPE"):
+        notrun = notrun - 1
+    ok = (len(tc["rows"]) == len(PARENT_MEASURE_NAMES)
+          and all(r["row"] in names for r in tc["rows"])
+          and notrun == len(infibre) + 1
+          and built in {r["row"] for r in fib}
+          and len(run) + notrun == total)
+    LD.gate("G-THE-TARGET-CENSUS-SCOPE",
+            "the census's own coverage is COUNTED and not claimed: the "
+            "parent's terminal publishes how many distinct named measures it "
+            "holds on this carrier, at a named receipt path; a declared "
+            "correspondence says which of this unit's six targets are among "
+            "them; and every one of the parent's that is not run here as a "
+            "census row is accounted for by name -- the other members of the "
+            "control's identification fibre, which ARE measured by the same "
+            "reachability predicate, and the non-invariant control, which is "
+            "not measured here at all.  The accounting is required to close "
+            "exactly",
+            ok,
+            "%d targets run here, %d of them the parent's own %s; the "
+            "parent holds %d, so %d are not run as a census row: %d of them "
+            "are measured in the control's fibre %s and %d is not measured "
+            "here %s"
+            % (len(tc["rows"]), len(run), run, total, notrun, len(infibre),
+               infibre, 1, THE_PARENTS_MEASURE_NOT_MEASURED_HERE))
+    S["census_scope"] = {
+        "targets_run_here": len(tc["rows"]),
+        "the_parents_distinct_named_measures_on_this_carrier": total,
+        "the_parents_measures_run_here_as_a_census_row": run,
+        "the_parents_measures_not_run_here_as_a_census_row": notrun,
+        "of_those_measured_in_the_controls_fibre": infibre,
+        "of_those_not_measured_here_at_all":
+            [THE_PARENTS_MEASURE_NOT_MEASURED_HERE],
+        "targets_that_are_not_the_parents": sorted(
+            {a for a, b in PARENT_MEASURE_NAMES if b is None}),
+        "the_declared_correspondence": [list(x)
+                                        for x in PARENT_MEASURE_NAMES],
+        "verdict": "THE-CENSUS-IS-A-COUNT-OVER-A-DECLARED-TARGET-LIST-AND-"
+                   "THE-LIST-IS-NOT-EVERY-MEASURE-THE-CORPUS-HAS"}
+    SEAL.take("THE CENSUS SCOPE", "census_scope", "G-THE-TARGET-CENSUS-SCOPE",
+              S["census_scope"])
 
 
 def measure_the_supplied_row(S):
@@ -2850,49 +3678,300 @@ def second_head_law(rows, gibbs_rows, blocked):
                     "-AT-THE-EXTENSION"])
 
 
+def induced_classes_on_a_family(GA, G, members):
+    """the carrier's own identification, restricted to a declared coin
+    family: two coins are identified exactly when some element of the
+    stencil group carries the constant datum at one to the constant datum at
+    the other.  Written once and used both for the arena's own carrier and
+    for a synthetic one."""
+    par = {u: u for u in members}
+
+    def find(a):
+        while par[a] != a:
+            par[a] = par[par[a]]
+            a = par[a]
+        return a
+
+    for cm in {g[1] for g in G}:
+        maps = [GA.elems[c] for c in cm]
+        for u in members:
+            v = maps[0][u]
+            if v in par and all(m[u] == v for m in maps):
+                ra, rb = find(u), find(v)
+                if ra != rb:
+                    par[ra] = rb
+    out = {}
+    for u in members:
+        out.setdefault(find(u), []).append(u)
+    return sorted(out.values())
+
+
+def synthetic_family(GA, cidx, seeds, closed):
+    """a declared synthetic coin family: the union of the coin-map orbits of
+    the named seeds when it is to be closed, and the bare seeds when it is
+    declared NOT closed -- the third arena exists precisely to be the one
+    the census refuses on."""
+    mem = set()
+    for m in seeds:
+        i = cidx[m]
+        if closed:
+            for p in GA.elems:
+                mem.add(p[i])
+        else:
+            mem.add(i)
+    return sorted(mem)
+
+
+def price_a_synthetic_arena(S, members):
+    """THE CONTROL ARM AT THE DEPTH THE PRECEDENT REQUIRES: a synthetic
+    arena driven through the REAL pricing function.  Not one field is
+    overwritten: the stencil groups, the Burnside sums, the brute-force
+    orbit enumeration and the induced partition are the same functions the
+    delivered census runs, applied to a different coin family."""
+    GA = S["_GA"]
+    memset = set(members)
+    is_closed = all(GA.elems[c][u] in memset
+                    for c in range(len(GA.elems)) for u in members)
+    memfix = [GA.fix_in(i, members) for i in range(len(GA.elems))]
+    fc, gb = [], []
+    for grain in GRAINS:
+        for reading in READINGS:
+            G, _gi, _stb, fails, gens = S["_stencil_data"][(grain, reading)]
+            orb, tot = burnside(GA, G, memfix)
+            brute = (datum_orbits_bruteforce(GA, gens, members)
+                     if is_closed else None)
+            cls = induced_classes_on_a_family(GA, G, members)
+            fc.append({
+                "row": "%s-%s" % (grain, reading), "grain": grain,
+                "reading": reading, "acting_group_order": len(G),
+                "orbits": orb, "burnside_sum": tot,
+                "closure_failures": fails,
+                "coupling_count": (orb - 1) if orb is not None else None,
+                "brute_force_orbits": brute,
+                "routes_agree": ((orb is not None and brute == orb
+                                  and orb * len(G) == tot) if is_closed
+                                 else orb is None)})
+            gb.append({
+                "row": "%s-%s" % (grain, reading), "grain": grain,
+                "reading": reading,
+                "induced_classes_on_the_carrier": len(cls),
+                "reachable_dimension": len(cls) - 1})
+    return fc, gb, is_closed
+
+
+SYNTHETIC_ARENAS = (
+    ("SINGLETON-I", "THE-IDENTITY-COIN-ALONE", True, "ACT-FORM-FORCED",
+     "one coin-map orbit of size one, so the stencil group is transitive on "
+     "every grain's datum space and every orbit count is one"),
+    ("TWIST-ORBIT-X", "THE-ANTIDIAGONAL-COINS-WHOLE-TWIST-ORBIT", True,
+     "ACT-GIBBS",
+     "transitive on the carrier at every grain, so the reachable dimension "
+     "is zero everywhere, and NOT transitive on the plaquette or site datum "
+     "space, so the coupling count is not"),
+    ("NOT-CLOSED-I-AND-X", "TWO-COINS-THAT-DO-NOT-CLOSE-UNDER-THE-COIN-MAP-"
+     "GROUP", False, "ACT-BLOCKED-AT",
+     "the family is measured not closed, so the Burnside sum fails to divide "
+     "the group order -- the one condition on which this census refuses"),
+)
+
+
 def demonstrate_reachability(S):
-    """every pre-registered outcome is REACHABLE BY THE ONE HEAD LAW, and the
-    demonstration is run inside the delivery run on synthetic censuses, so a
-    head law that had collapsed to a constant dies here."""
-    synth = [
-        ("ACT-BLOCKED-AT", [dict(r) for r in S["form_census"]["rows"]],
-         [dict(r) for r in S["gibbs"]["rows"]], "THE-ORBIT-COUNT"),
-        ("ACT-FORM-FORCED",
-         [dict(r, coupling_count=0) for r in S["form_census"]["rows"]],
-         [dict(r) for r in S["gibbs"]["rows"]], None),
-        ("ACT-GIBBS", [dict(r) for r in S["form_census"]["rows"]],
-         [dict(r, reachable_dimension=0) for r in S["gibbs"]["rows"]], None),
-        ("ACT-FORM-RELATIVE", [dict(r) for r in S["form_census"]["rows"]],
-         [dict(r) for r in S["gibbs"]["rows"]], None)]
-    got = []
-    for want, rw, gw, bl in synth:
-        h1 = head_law(rw, gw, bl)
-        h2 = second_head_law(rw, gw, bl)
-        got.append({"outcome": want, "reached": h1.startswith(want),
+    """EVERY PRE-REGISTERED OUTCOME IS EMITTED FROM A MEASUREMENT.  Three
+    declared synthetic arenas are priced through the real census functions
+    and the delivered arena supplies the fourth; the head law is handed what
+    those measurements return and nothing is overwritten anywhere."""
+    GA, cidx = S["_GA"], S["_cidx"]
+    seeds = {
+        "SINGLETON-I": [(ONE, ZERO, ZERO, ONE)],
+        "TWIST-ORBIT-X": [(ZERO, ONE, ONE, ZERO)],
+        "NOT-CLOSED-I-AND-X": [(ONE, ZERO, ZERO, ONE),
+                               (ZERO, ONE, ONE, ZERO)],
+    }
+    got, arenas = [], []
+    for name, what, closed, want, why in SYNTHETIC_ARENAS:
+        members = synthetic_family(GA, cidx, seeds[name], closed)
+        if mut("MUT-SYNTHETIC-ARENA") and name == "SINGLETON-I":
+            members = sorted(set(members) | set(synthetic_family(
+                GA, cidx, [(ONE, ZERO, ZERO, fneg(ONE))], True)))
+        fc, gb, is_closed = price_a_synthetic_arena(S, members)
+        if mut("MUT-SYNTHETIC-ROUTES") and name == "TWIST-ORBIT-X":
+            fc[2] = dict(fc[2], brute_force_orbits=fc[2]["orbits"] + 1,
+                         routes_agree=False)
+        bl = None
+        for r in fc:
+            if r["orbits"] is None or r["closure_failures"]:
+                bl = "THE-ORBIT-COUNT"
+        h1 = head_law(fc, gb, bl)
+        h2 = second_head_law(fc, gb, bl)
+        got.append({"outcome": want, "arena": name,
+                    "priced_by": "THE-REAL-CENSUS-FUNCTIONS-NO-FIELD-IS-"
+                                 "OVERWRITTEN",
+                    "reached": h1.startswith(want),
                     "both_laws_agree": h1 == h2, "emitted": h1[:60]})
+        arenas.append({
+            "row": name, "what": what, "why": why,
+            "declared_closed_under_the_coin_map_group": closed,
+            "measured_closed": is_closed, "coins": len(members),
+            "orbit_counts": [r["orbits"] for r in fc],
+            "coupling_counts": [r["coupling_count"] for r in fc],
+            "brute_force_orbits": [r["brute_force_orbits"] for r in fc],
+            "induced_classes": [r["induced_classes_on_the_carrier"]
+                                for r in gb],
+            "reachable_dimensions": [r["reachable_dimension"] for r in gb],
+            "every_route_agrees": all(r["routes_agree"] for r in fc),
+            "the_outcome_word": want,
+            "the_outcome_this_arena_emits": h1[:60]})
+    fc0, gb0 = S["form_census"]["rows"], S["gibbs"]["rows"]
+    bl0 = None
+    for r in fc0:
+        if r["orbits"] is None or r["closure_failures"]:
+            bl0 = "THE-ORBIT-COUNT"
+    hr1, hr2 = head_law(fc0, gb0, bl0), second_head_law(fc0, gb0, bl0)
+    got.append({"outcome": "ACT-FORM-RELATIVE", "arena": "THE-DELIVERED-ARENA",
+                "priced_by": "THE-REAL-CENSUS-FUNCTIONS-NO-FIELD-IS-"
+                             "OVERWRITTEN",
+                "reached": hr1.startswith("ACT-FORM-RELATIVE"),
+                "both_laws_agree": hr1 == hr2, "emitted": hr1[:60]})
+    aok = (all(a["measured_closed"]
+               == a["declared_closed_under_the_coin_map_group"]
+               for a in arenas)
+           and all(a["every_route_agrees"] for a in arenas))
+    LD.gate("G-THE-SYNTHETIC-ARENAS-ARE-MEASURED",
+            "the control arm's arenas are MEASURED and not asserted: each "
+            "declared synthetic coin family is checked closed -- or measured "
+            "NOT closed, which is the point of the third one -- and every "
+            "row of every closed one is required to have its Burnside orbit "
+            "count confirmed by an exhaustive brute-force enumeration AND to "
+            "re-derive its own Burnside sum, exactly as the delivered census "
+            "rows are.  The refusing arena is required to refuse where it "
+            "says it does: at a Burnside sum that does not divide",
+            aok,
+            "%d synthetic arenas; closure declared %s and measured %s; every "
+            "route agrees %s; orbit counts %s"
+            % (len(arenas),
+               [a["declared_closed_under_the_coin_map_group"] for a in arenas],
+               [a["measured_closed"] for a in arenas],
+               [a["every_route_agrees"] for a in arenas],
+               [a["orbit_counts"] for a in arenas]))
     if mut("MUT-REACHABILITY"):
         got = [dict(g, reached=True, emitted=got[-1]["emitted"])
                for g in got]
         got[0]["emitted"] = got[-1]["emitted"]
     ok = (all(g["reached"] and g["both_laws_agree"] for g in got)
-          and len({g["emitted"] for g in got}) == len(synth))
+          and len({g["emitted"] for g in got}) == len(got)
+          and len({g["outcome"] for g in got}) == len(PREREGISTERED))
     LD.gate("G-HEAD-LAW-REACHABILITY",
             "each of the four pre-registered outcomes is emitted by THE ONE "
-            "head law, handed a synthetic census built to select it, and by "
-            "the second law too -- and the four strings are required to be "
-            "distinct, so a head law that had collapsed to a constant, or a "
-            "second law that had drifted into agreement by returning the "
-            "same string always, dies inside the delivery run",
+            "head law, and by the second law too, from a census the real "
+            "pricing function MEASURED: three declared synthetic arenas -- a "
+            "single-orbit family on which the stencil group is transitive, a "
+            "twist orbit that is transitive on the carrier and not on the "
+            "plaquette datum, and a family that does not close, on which the "
+            "Burnside sum does not divide -- and the delivered arena itself "
+            "for the fourth.  The four strings are required to be distinct, "
+            "so a head law that had collapsed to a constant, or a second law "
+            "that had drifted into agreement by returning the same string "
+            "always, dies inside the delivery run",
             ok,
-            "%d pre-registered outcomes, %d reached by both laws, %d "
-            "distinct strings"
-            % (len(synth), sum(1 for g in got if g["reached"]
-                               and g["both_laws_agree"]),
-               len({g["emitted"] for g in got})))
+            "%d pre-registered outcomes, %d reached by both laws from a "
+            "measured census, %d distinct strings; the arenas are %s"
+            % (len(PREREGISTERED), sum(1 for g in got if g["reached"]
+                                       and g["both_laws_agree"]),
+               len({g["emitted"] for g in got}),
+               [(g["arena"], g["outcome"]) for g in got]))
     S["preregistered_heads"] = {"outcomes": list(PREREGISTERED),
-                                "probes": got}
+                                "probes": got,
+                                "synthetic_arenas": arenas,
+                                "the_control_arm": "A-SYNTHETIC-ARENA-"
+                                                   "THROUGH-THE-REAL-PRICING-"
+                                                   "FUNCTION"}
     SEAL.take("THE PRE-REGISTERED HEADS", "preregistered_heads",
               "G-HEAD-LAW-REACHABILITY", S["preregistered_heads"])
+    measure_outcome_feasibility(S)
+
+
+def measure_outcome_feasibility(S):
+    """WHAT THE ARENA CLOSED BEFORE THE INSTRUMENT RAN.  An orbit count is at
+    least the datum space divided by the group order, so the smallest orbit
+    count this arena can produce at any declared row is a measured floor --
+    and where that floor exceeds one, ACT-FORM-FORCED was arithmetically
+    unreachable HERE before a single measurement.  The same pigeonhole on
+    the carrier closes ACT-GIBBS.  The outcome words remain reachable by the
+    pricing function, which the synthetic arenas demonstrate; what is priced
+    here is which of them this arena could ever have emitted."""
+    rows = []
+    for r in S["form_census"]["rows"]:
+        n = S["arena"]["coins"]
+        d = n ** r["stencil_links"]
+        g = r["acting_group_order"]
+        floor = -(-d // g)
+        rows.append({"row": r["row"], "datum_space_size": d,
+                     "acting_group_order": g,
+                     "the_smallest_orbit_count_possible_here": floor,
+                     "the_measured_orbit_count": r["orbits"],
+                     "the_measurement_is_at_or_above_the_floor":
+                         r["orbits"] >= floor})
+    car = []
+    gam = len(S["_GA"].elems)
+    for r in S["gibbs"]["rows"]:
+        floor = -(-S["arena"]["coins"] // gam)
+        car.append({"row": r["row"], "carrier": S["arena"]["coins"],
+                    "the_group_that_acts_on_a_constant_datum": gam,
+                    "why": "THE-SLOT-PERMUTATION-DROPS-OUT-OF-A-CONSTANT-"
+                           "DATUM-SO-WHAT-IDENTIFIES-TWO-COINS-IS-AN-ELEMENT-"
+                           "OF-THE-COIN-MAP-GROUP",
+                    "the_smallest_class_count_possible_here": floor,
+                    "the_measured_class_count":
+                        r["induced_classes_on_the_carrier"],
+                    "the_measurement_is_at_or_above_the_floor":
+                        r["induced_classes_on_the_carrier"] >= floor})
+    if mut("MUT-FEASIBILITY"):
+        rows[1] = dict(rows[1],
+                       the_smallest_orbit_count_possible_here=1)
+    least = min(r["the_smallest_orbit_count_possible_here"] for r in rows)
+    lclass = min(r["the_smallest_class_count_possible_here"] for r in car)
+    ok = (all(r["the_measurement_is_at_or_above_the_floor"] for r in rows)
+          and all(r["the_measurement_is_at_or_above_the_floor"] for r in car)
+          and least > 1 and lclass > 1
+          and all(r["the_smallest_orbit_count_possible_here"]
+                  * r["acting_group_order"] >= r["datum_space_size"]
+                  for r in rows))
+    LD.gate("G-OUTCOME-FEASIBILITY-AT-THIS-ARENA",
+            "which pre-registered outcomes THIS arena could ever have "
+            "emitted is measured rather than left to look open: an orbit "
+            "count is at least the datum space divided by the acting group's "
+            "order, and that floor is computed at every declared row, "
+            "checked against the measurement, and required to exceed one -- "
+            "so ACT-FORM-FORCED, which needs one orbit at every row, was "
+            "closed by counting before the instrument ran.  The same "
+            "pigeonhole on the 640-coin carrier closes ACT-GIBBS, which "
+            "needs one induced class.  ACT-BLOCKED-AT fires only on an "
+            "instrument fault.  One outcome was live at this arena, and the "
+            "instrument's job was to name it -- which is why the control arm "
+            "prices synthetic arenas where the other three ARE live",
+            ok,
+            "the smallest orbit count this arena can produce at any declared "
+            "row is %d and the smallest induced class count is %d; %d census "
+            "rows and %d carrier rows at or above their own floor"
+            % (least, lclass,
+               sum(1 for r in rows
+                   if r["the_measurement_is_at_or_above_the_floor"]),
+               sum(1 for r in car
+                   if r["the_measurement_is_at_or_above_the_floor"])))
+    S["outcome_feasibility"] = {
+        "rows": rows, "carrier_rows": car,
+        "the_smallest_orbit_count_this_arena_can_produce": least,
+        "the_smallest_induced_class_count_this_arena_can_produce": lclass,
+        "outcomes_closed_by_counting_before_the_run":
+            ["ACT-FORM-FORCED", "ACT-GIBBS"],
+        "ACT-BLOCKED-AT": "FIRES-ONLY-ON-AN-INSTRUMENT-FAULT-NOT-ON-ANY-"
+                          "PROPERTY-OF-AN-ARENA",
+        "the_outcome_that_was_live": "ACT-FORM-RELATIVE",
+        "where_the_other_three_are_live": "THE-DECLARED-SYNTHETIC-ARENAS-"
+                                          "PRICED-THROUGH-THE-REAL-CENSUS"}
+    SEAL.take("THE OUTCOME FEASIBILITY", "outcome_feasibility",
+              "G-OUTCOME-FEASIBILITY-AT-THIS-ARENA",
+              S["outcome_feasibility"])
 
 
 def build_verdict(S):
@@ -2906,6 +3985,7 @@ def build_verdict(S):
     ar, wl, pr = S["arena"], S["wilson"], S["price"]
     lo, tc, fa = S["locality"], S["target_census"], S["falsifier"]
     dw, ex = S["density_witness"], S["expectations"]
+    se, co, cs = S["set_equality"], S["price_carve_out"], S["census_scope"]
     g = {r["row"]: r for r in gb}
     f = {r["row"]: r for r in fc}
     fam = {x["reading"]: x for x in fa["orbit_indicator_families"]}
@@ -2920,22 +4000,29 @@ def build_verdict(S):
                 % (len(GRAINS), len(READINGS), len(fc),
                    len(GRAINS) * len(READINGS)))
     segs.append("THE-ALLOWED-SPACE=EXACTLY-THE-ORBIT-CONSTANT-POSITIVE-"
-                "RATIONAL-FUNCTIONS-ON-THE-STENCIL-DATUM-A-FREE-MODULE-OF-"
-                "RANK-ORBITS-MINUS-ONE;ORBITS=%s-ANCHORED-AND-%s-AT-THE-"
+                "RATIONAL-FUNCTIONS-ON-THE-STENCIL-DATUM-THE-DIRECT-POWER-"
+                "OF-THE-POSITIVE-RATIONALS-WITH-ONE-FACTOR-PER-ORBIT-WHOSE-"
+                "FREE-PARAMETERS-MODULO-NORMALISATION-NUMBER-ORBITS-MINUS-"
+                "ONE;ORBITS=%s-ANCHORED-AND-%s-AT-THE-"
                 "EXTENSION;ROUTES=BURNSIDE-PLUS-BRUTE-FORCE-AND-ORBIT-"
                 "STABILIZER-AT-THE-LINK-GRAIN-PLUS-AN-EXHAUSTIVE-%d-COIN-"
-                "REDUCED-ARENA-AT-EVERY-GRAIN"
+                "REDUCED-ARENA-AT-EVERY-GRAIN-PLUS-EXACT-CLOSED-FORMS-AT-"
+                "FULL-SIZE-FOR-BOTH-LARGE-ANCHORED-COUNTS-%s"
                 % ("/".join(str(f["%s-ANCHORED" % gr]["orbits"])
                             for gr in GRAINS),
                    "/".join(str(f["%s-EXTENSION" % gr]["orbits"])
                             for gr in GRAINS),
-                   S["form_census"]["reduced_arena_coins"]))
+                   S["form_census"]["reduced_arena_coins"],
+                   "-AND-".join(str(r["the_closed_form"])
+                                for r in S["anchored_closed_forms"]["rows"])))
     segs.append("LOCALITY=PRODUCT-INVARIANCE-IS-LOCAL-INVARIANCE-AT-THE-LINK-"
                 "GRAIN-%d-OF-%d-NON-INVARIANT-ELEMENTARY-SYSTEMS-DETECTED-"
                 "AND-%d-OF-%d-INVARIANT-ONES-NOT;AT-THE-PLAQUETTE-GRAIN-IT-"
                 "IS-STRICTLY-WEAKER-EVERY-LINK-LIES-IN-EXACTLY-%d-"
                 "PLAQUETTES-SO-A-COBOUNDARY-SYSTEM-HAS-PRODUCT-ONE-AT-%d-"
-                "CARRIER-AND-%d-DECLARED-NON-UNIFORM-CONFIGURATIONS"
+                "CARRIER-AND-%d-DECLARED-NON-UNIFORM-CONFIGURATIONS;AT-THE-"
+                "SITE-GRAIN-THE-SAME-EVERY-LINK-LIES-IN-EXACTLY-%d-STARS-"
+                "PRODUCT-ONE-AT-%d-AND-%d;%d-OF-%d-GRAINS-COVERED"
                 % (lo["link_grain_not_invariant_detected"],
                    lo["link_grain_not_invariant"],
                    lo["link_grain_invariant_detected"],
@@ -2943,66 +4030,107 @@ def build_verdict(S):
                    lo["every_link_lies_in_this_many_plaquettes"],
                    lo["plaquette_grain_carrier_configurations_at_product_"
                       "one"],
-                   lo["plaquette_grain_sample_at_product_one"]))
-    segs.append("(a)WILSON-SHAPE=IN-THE-ALLOWED-SPACE-AT-EXACTLY-%d-OF-%d-"
-                "DECLARED-GRAINS-THE-PLAQUETTE-ONE-AT-%d-CHECKS-0-FAILURES;"
+                   lo["plaquette_grain_sample_at_product_one"],
+                   lo["every_link_lies_in_this_many_stars"],
+                   lo["site_grain_carrier_configurations_at_product_one"],
+                   lo["site_grain_sample_at_product_one"],
+                   lo["grains_covered"], len(GRAINS)))
+    segs.append("(a)WILSON-SHAPE=GAUGE-ADMISSIBLE-AT-EXACTLY-%d-OF-%d-"
+                "DECLARED-GRAINS-THE-PLAQUETTE-ONE-AT-%d-CHECKS-0-FAILURES-"
+                "AND-COVARIANT-ONLY-IN-ITS-CONJUGATION-SYMMETRIC-PART-AT-%d-"
+                "OF-%d-ROWS-%s-THE-RAW-TRACE-AT-NONE;"
                 "ON-THE-CARRIER-IT-SPANS-%d-OF-%d-COUPLINGS-AT-%d-DISTINCT-"
                 "TRACE-VALUES;NOT-MINIMAL-SUPPORT-%d-SINGLE-LINK-INVARIANT-"
                 "CLASSES-EXIST-BECAUSE-THE-GAUGE-GROUP-IS-NOT-TRANSITIVE-ON-"
                 "A-LINKS-OWN-DATUM"
                 % (len(wl["in_the_allowed_space_at_grains"]),
                    wl["grains_declared"], wl["gauge_invariance_checks"],
+                   len(wl["rows_admitting_the_conjugation_symmetric_part"]),
+                   len(wl["membership_rows"]),
+                   ",".join(wl["rows_admitting_the_conjugation_symmetric_"
+                               "part"]),
                    wl["dimension_of_the_wilson_family_on_the_carrier"],
                    wl["the_allowed_space_on_the_carrier"],
                    wl["distinct_values_over_the_carrier"],
                    wl["single_link_invariant_classes"]))
     segs.append("(b)LAW-NATIVE-CONTROL=%s-CARRIED-VERBATIM-AND-NEVER-SPENT-"
-                "AS-DERIVED;THE-TARGET-IS-CLASS-CONSTANT-AND-FULL-SUPPORT-"
-                "AND-%s-BECAUSE-%s-IS-NOT-AN-EXACT-POWER-AT-ANY-DECLARED-"
-                "EXPONENT-%s;IT-LIES-IN-THE-CLOSURE-EXACT-WITNESS-AT-"
-                "DENOMINATOR-%d-WITH-ERROR-BELOW-1/10^%d"
+                "AS-DERIVED;ALL-%d-MEMBERS-OF-THE-UNPINNED-IDENTIFICATIONS-"
+                "FIBRE-ARE-RUN-AND-EVERY-ONE-IS-CLASS-CONSTANT-AND-FULL-"
+                "SUPPORT-AND-%s-BECAUSE-ITS-REQUIRED-SECTOR-RATIO-%s-IS-NOT-"
+                "AN-EXACT-POWER-AT-ANY-DECLARED-EXPONENT-%s;THE-IMAGE-"
+                "APPROACHES-IT-ALONG-A-MONOTONE-FAMILY-OF-%d-EXACT-WITNESSES-"
+                "BEST-AT-DENOMINATOR-%d-WITH-ERROR-BELOW-1/10^%d"
                 % (S["law_native_control"]["stamp"],
+                   S["law_native_control"]["the_declared_fibre"],
                    S["law_native_control"]["obstruction"],
-                   dw["the_required_ratio"],
+                   ",".join(r["the_ratio_between_the_two_equal_sized_sectors"]
+                            for r in
+                            S["law_native_control"]["the_fibre_rows"]),
                    ",".join(str(e) for e in tc["exponents_tested"]),
+                   len(dw["the_monotone_family"]),
                    dw["witness_denominator"],
                    dw["error_below_one_over_ten_to_the"]))
     segs.append("(c)NULL=W-IDENTICALLY-ONE-GIVES-THE-COUNTING-MEASURE-WHICH-"
-                "IS-%d-OF-THE-%d-NAMED-TARGETS-REACHABLE;THE-OTHERS-FAIL-AT-"
-                "%d-MEASURED-SPECIES-%s"
+                "IS-%d-OF-THE-%d-DECLARED-TARGETS-REACHABLE;THE-OTHERS-FAIL-"
+                "AT-%d-MEASURED-SPECIES-%s;SCOPE=%d-OF-THE-PARENTS-%d-NAMED-"
+                "MEASURES-ARE-RUN-AS-CENSUS-ROWS-%d-MORE-IN-THE-CONTROLS-"
+                "FIBRE-AND-%s-IS-NOT-MEASURED-HERE"
                 % (tc["reachable"], len(tc["rows"]),
                    len(tc["obstruction_species"]),
-                   ",".join(tc["obstruction_species"])))
+                   ",".join(tc["obstruction_species"]),
+                   len(cs["the_parents_measures_run_here_as_a_census_row"]),
+                   cs["the_parents_distinct_named_measures_on_this_carrier"],
+                   len(cs["of_those_measured_in_the_controls_fibre"]),
+                   ",".join(cs["of_those_not_measured_here_at_all"])))
     segs.append("GIBBS=THE-IMAGE-IS-THE-E-TH-POWER-SUBLATTICE-OF-THE-CLASS-"
                 "CONSTANT-MEASURES-WITH-E=%s-AT-THE-THREE-GRAINS-AND-FULL-"
                 "SUPPORT-FORCED-BY-POSITIVITY;THE-INDUCED-PARTITION-IS-THE-"
                 "SAME-%d-CLASSES-AT-ALL-%d-GRAINS;THE-FIBRE-IS-EXACTLY-THE-"
                 "NORMALISATION-AT-THE-LINK-GRAIN-DIMENSION-%d-AND-%d-AT-THE-"
-                "PLAQUETTE-GRAIN"
+                "PLAQUETTE-GRAIN;THE-REACHABLE-DIMENSION-AND-THE-INDUCED-"
+                "PARTITION-ARE-GRAIN-INVARIANT-AND-THE-REACHABLE-SET-IS-NOT-"
+                "THE-WITNESS-RAISING-ONE-CLASS-BY-%d-IS-IN-THE-IMAGE-AT-%s-"
+                "AND-OUT-OF-IT-AT-%s"
                 % ("/".join(str(g["%s-ANCHORED" % gr]["exponent"])
                             for gr in GRAINS),
                    g["LINK-ANCHORED"]["induced_classes_on_the_carrier"],
                    len(GRAINS), g["LINK-ANCHORED"]["fibre_dimension"],
-                   g["PLAQUETTE-ANCHORED"]["fibre_dimension"]))
+                   g["PLAQUETTE-ANCHORED"]["fibre_dimension"],
+                   se["the_raise"], ",".join(se["in_the_image_at_grains"]),
+                   ",".join(se["outside_the_image_at_grains"])))
     segs.append("PRICE=REDUCED-NOT-EVADED-%d-TO-%d-AT-THE-ANCHORED-READING-"
                 "AND-%d-TO-%d-AT-THE-EXTENSION-AGAINST-%d-WITH-COVARIANCE-"
                 "DROPPED;%d-AND-%d-PAIRS-OF-GAUGE-ORBITS-ARE-IDENTIFIED-BY-"
                 "EVERY-LOCAL-WEIGHT-SYSTEM-THE-ODD-TWIST-THE-TORUS-DOES-NOT-"
-                "CLOSE"
+                "CLOSE;THE-DISCOUNT-IS-BOUGHT-BY-DEMANDING-INVARIANCE-"
+                "UNDER-A-STRICTLY-LARGER-GROUP-%d-AGAINST-THE-CARRIERS-OWN-"
+                "%d-AT-THE-ANCHORED-READING-AND-%d-AGAINST-%d-AT-THE-"
+                "EXTENSION-SO-REDUCED-NOT-EVADED-AND-THE-PARENTS-CONSERVED-"
+                "NOT-PAID-DO-NOT-COLLIDE"
                 % (pr["the_parents_price_anchored"],
                    pr["the_action_route_supplies_anchored"],
                    pr["the_parents_price_extension"],
                    pr["the_action_route_supplies_extension"],
                    pr["the_parents_price_without_covariance"],
                    pr["orbit_pairs_merged_anchored"],
-                   pr["orbit_pairs_merged_extension"]))
-    segs.append("FALSIFIER=%s:THE-OFF-DIAGONAL-QUARTIC-SIGN-IS-A-GAUGE-"
+                   pr["orbit_pairs_merged_extension"],
+                   co["the_link_stencils_acting_group_anchored"],
+                   co["the_residual_gauge_group_on_the_carrier_anchored"],
+                   co["the_link_stencils_acting_group_extension"],
+                   co["the_residual_gauge_group_on_the_carrier_extension"]))
+    segs.append("FALSIFIER=NOT-HIT-AT-THE-PINS-WORDING-COVARIANCE-PINS-"
+                "NOTHING-%d-OF-%d-ROWS-AT-FULL-RANGE;%s:THE-OFF-DIAGONAL-"
+                "QUARTIC-SIGN-IS-A-GAUGE-"
                 "OBSERVABLE-EVERY-ADMISSIBLE-WEIGHT-SYSTEM-PINS-TO-THE-"
                 "SINGLE-VALUE-[%s,%s]-AGAINST-[%s,%s]-OVER-THE-INVARIANT-"
                 "SIMPLEX;%d-OF-%d-ORBIT-INDICATORS-PINNED-AT-THE-ANCHORED-"
                 "READING-AND-%d-OF-%d-AT-THE-EXTENSION;THE-LOOP-TRACE-IS-"
                 "NOT-PINNED-[%s,%s]-AT-BOTH"
-                % (fa["verdict"], sig["range_over_the_reachable_set"][0],
+                % (fa["rows_measured_at_the_covariance_reading"]
+                   - fa["rows_at_which_the_covariance_reading_narrows_the_"
+                        "range"],
+                   fa["rows_measured_at_the_covariance_reading"],
+                   fa["verdict"], sig["range_over_the_reachable_set"][0],
                    sig["range_over_the_reachable_set"][1],
                    sig["range_over_the_invariant_simplex"][0],
                    sig["range_over_the_invariant_simplex"][1],
@@ -3028,10 +4156,13 @@ def build_verdict(S):
                 "CARRIER=THE-PARENTS-%d-UNIFORM-CONFIGURATIONS;FULL-"
                 "CONFIGURATION-SPACE=%s-NOT-A-CARRIER-HERE;WEIGHTS=POSITIVE-"
                 "EXACT-RATIONALS-NO-LOGS-NO-FLOATS;THE-ACTION-IS-DECLARED-"
-                "NOT-DERIVED;NO-COUPLING-IS-SELECTED;NOT-QCD;NO-CONFINEMENT-"
-                "CLAIM"
+                "NOT-DERIVED;NO-COUPLING-IS-SELECTED;THE-ODD-TWIST-MECHANISM-"
+                "IS-L-CONTINGENT-THE-MERGING-INDEX-IS-8/GCD(L,8)-WHICH-IS-%d-"
+                "HERE-AND-1-AT-EVERY-L-DIVISIBLE-BY-8-WHERE-NOTHING-MERGES-"
+                "AND-NOTHING-IS-PINNED;NOT-QCD;NO-CONFINEMENT-CLAIM"
                 % (ar["d"], ar["L"], ar["field"], ar["coins"], ar["links"],
-                   ar["plaquettes"], ar["coins"], ar["configuration_space"]))
+                   ar["plaquettes"], ar["coins"], ar["configuration_space"],
+                   S["merging_index_law"]["the_anchored_index"]))
     return head + "-<" + " -- ".join(segs) + ">"
 
 
@@ -3063,7 +4194,9 @@ def reconstruct_verdict(P):
 
     body.append("".join([
         "THE-ALLOWED-SPACE=EXACTLY-THE-ORBIT-CONSTANT-POSITIVE-RATIONAL-",
-        "FUNCTIONS-ON-THE-STENCIL-DATUM-A-FREE-MODULE-OF-RANK-ORBITS-MINUS-",
+        "FUNCTIONS-ON-THE-STENCIL-DATUM-THE-DIRECT-POWER-OF-THE-POSITIVE-",
+        "RATIONALS-WITH-ONE-FACTOR-PER-ORBIT-WHOSE-FREE-PARAMETERS-MODULO-",
+        "NORMALISATION-NUMBER-ORBITS-MINUS-",
         "ONE;ORBITS=",
         "/".join([str(by(x + "-ANCHORED")["orbits"]) for x in GRAINS]),
         "-ANCHORED-AND-",
@@ -3071,7 +4204,10 @@ def reconstruct_verdict(P):
         "-AT-THE-EXTENSION;ROUTES=BURNSIDE-PLUS-BRUTE-FORCE-AND-ORBIT-",
         "STABILIZER-AT-THE-LINK-GRAIN-PLUS-AN-EXHAUSTIVE-",
         str(P["form_census"]["reduced_arena_coins"]),
-        "-COIN-REDUCED-ARENA-AT-EVERY-GRAIN"]))
+        "-COIN-REDUCED-ARENA-AT-EVERY-GRAIN-PLUS-EXACT-CLOSED-FORMS-AT-",
+        "FULL-SIZE-FOR-BOTH-LARGE-ANCHORED-COUNTS-",
+        "-AND-".join([str(r["the_closed_form"])
+                      for r in P["anchored_closed_forms"]["rows"]])]))
     lo = P["locality"]
     body.append("".join([
         "LOCALITY=PRODUCT-INVARIANCE-IS-LOCAL-INVARIANCE-AT-THE-LINK-GRAIN-",
@@ -3087,14 +4223,26 @@ def reconstruct_verdict(P):
         str(lo["plaquette_grain_carrier_configurations_at_product_one"]),
         "-CARRIER-AND-",
         str(lo["plaquette_grain_sample_at_product_one"]),
-        "-DECLARED-NON-UNIFORM-CONFIGURATIONS"]))
+        "-DECLARED-NON-UNIFORM-CONFIGURATIONS;AT-THE-SITE-GRAIN-THE-SAME-",
+        "EVERY-LINK-LIES-IN-EXACTLY-",
+        str(lo["every_link_lies_in_this_many_stars"]),
+        "-STARS-PRODUCT-ONE-AT-",
+        str(lo["site_grain_carrier_configurations_at_product_one"]), "-AND-",
+        str(lo["site_grain_sample_at_product_one"]), ";",
+        str(lo["grains_covered"]), "-OF-", str(len(GRAINS)),
+        "-GRAINS-COVERED"]))
     wl = P["wilson"]
     body.append("".join([
-        "(a)WILSON-SHAPE=IN-THE-ALLOWED-SPACE-AT-EXACTLY-",
+        "(a)WILSON-SHAPE=GAUGE-ADMISSIBLE-AT-EXACTLY-",
         str(len(wl["in_the_allowed_space_at_grains"])), "-OF-",
         str(wl["grains_declared"]), "-DECLARED-GRAINS-THE-PLAQUETTE-ONE-AT-",
         str(wl["gauge_invariance_checks"]),
-        "-CHECKS-0-FAILURES;ON-THE-CARRIER-IT-SPANS-",
+        "-CHECKS-0-FAILURES-AND-COVARIANT-ONLY-IN-ITS-CONJUGATION-SYMMETRIC-",
+        "PART-AT-",
+        str(len(wl["rows_admitting_the_conjugation_symmetric_part"])), "-OF-",
+        str(len(wl["membership_rows"])), "-ROWS-",
+        ",".join(wl["rows_admitting_the_conjugation_symmetric_part"]),
+        "-THE-RAW-TRACE-AT-NONE;ON-THE-CARRIER-IT-SPANS-",
         str(wl["dimension_of_the_wilson_family_on_the_carrier"]), "-OF-",
         str(wl["the_allowed_space_on_the_carrier"]), "-COUPLINGS-AT-",
         str(wl["distinct_values_over_the_carrier"]),
@@ -3106,21 +4254,40 @@ def reconstruct_verdict(P):
         P["target_census"]
     body.append("".join([
         "(b)LAW-NATIVE-CONTROL=", lc["stamp"],
-        "-CARRIED-VERBATIM-AND-NEVER-SPENT-AS-DERIVED;THE-TARGET-IS-CLASS-",
-        "CONSTANT-AND-FULL-SUPPORT-AND-", lc["obstruction"], "-BECAUSE-",
-        dw["the_required_ratio"], "-IS-NOT-AN-EXACT-POWER-AT-ANY-DECLARED-",
+        "-CARRIED-VERBATIM-AND-NEVER-SPENT-AS-DERIVED;ALL-",
+        str(lc["the_declared_fibre"]),
+        "-MEMBERS-OF-THE-UNPINNED-IDENTIFICATIONS-FIBRE-ARE-RUN-AND-EVERY-",
+        "ONE-IS-CLASS-CONSTANT-AND-FULL-SUPPORT-AND-", lc["obstruction"],
+        "-BECAUSE-ITS-REQUIRED-SECTOR-RATIO-",
+        ",".join([r["the_ratio_between_the_two_equal_sized_sectors"]
+                  for r in lc["the_fibre_rows"]]),
+        "-IS-NOT-AN-EXACT-POWER-AT-ANY-DECLARED-",
         "EXPONENT-", ",".join([str(e) for e in tc["exponents_tested"]]),
-        ";IT-LIES-IN-THE-CLOSURE-EXACT-WITNESS-AT-DENOMINATOR-",
+        ";THE-IMAGE-APPROACHES-IT-ALONG-A-MONOTONE-FAMILY-OF-",
+        str(len(dw["the_monotone_family"])),
+        "-EXACT-WITNESSES-BEST-AT-DENOMINATOR-",
         str(dw["witness_denominator"]), "-WITH-ERROR-BELOW-1/10^",
         str(dw["error_below_one_over_ten_to_the"])]))
+    cs = P["census_scope"]
     body.append("".join([
         "(c)NULL=W-IDENTICALLY-ONE-GIVES-THE-COUNTING-MEASURE-WHICH-IS-",
         str(len([r for r in tc["rows"] if r["reachable"]])), "-OF-THE-",
-        str(len(tc["rows"])), "-NAMED-TARGETS-REACHABLE;THE-OTHERS-FAIL-AT-",
-        str(len(sorted({r["obstruction"] for r in tc["rows"]
+        str(len(tc["rows"])),
+        "-DECLARED-TARGETS-REACHABLE;THE-OTHERS-FAIL-AT-",
+        str(len(sorted({r["obstruction_over_the_declared_field"]
+                        for r in tc["rows"]
                         if not r["reachable"]}))), "-MEASURED-SPECIES-",
-        ",".join(sorted({r["obstruction"] for r in tc["rows"]
-                         if not r["reachable"]}))]))
+        ",".join(sorted({r["obstruction_over_the_declared_field"]
+                         for r in tc["rows"]
+                         if not r["reachable"]})), ";SCOPE=",
+        str(len(cs["the_parents_measures_run_here_as_a_census_row"])),
+        "-OF-THE-PARENTS-",
+        str(cs["the_parents_distinct_named_measures_on_this_carrier"]),
+        "-NAMED-MEASURES-ARE-RUN-AS-CENSUS-ROWS-",
+        str(len(cs["of_those_measured_in_the_controls_fibre"])),
+        "-MORE-IN-THE-CONTROLS-FIBRE-AND-",
+        ",".join(cs["of_those_not_measured_here_at_all"]),
+        "-IS-NOT-MEASURED-HERE"]))
     body.append("".join([
         "GIBBS=THE-IMAGE-IS-THE-E-TH-POWER-SUBLATTICE-OF-THE-CLASS-",
         "CONSTANT-MEASURES-WITH-E=",
@@ -3132,7 +4299,13 @@ def reconstruct_verdict(P):
         "-GRAINS;THE-FIBRE-IS-EXACTLY-THE-NORMALISATION-AT-THE-LINK-GRAIN-",
         "DIMENSION-", str(gby("LINK-ANCHORED")["fibre_dimension"]), "-AND-",
         str(gby("PLAQUETTE-ANCHORED")["fibre_dimension"]),
-        "-AT-THE-PLAQUETTE-GRAIN"]))
+        "-AT-THE-PLAQUETTE-GRAIN;THE-REACHABLE-DIMENSION-AND-THE-INDUCED-",
+        "PARTITION-ARE-GRAIN-INVARIANT-AND-THE-REACHABLE-SET-IS-NOT-THE-",
+        "WITNESS-RAISING-ONE-CLASS-BY-", str(P["set_equality"]["the_raise"]),
+        "-IS-IN-THE-IMAGE-AT-",
+        ",".join(P["set_equality"]["in_the_image_at_grains"]),
+        "-AND-OUT-OF-IT-AT-",
+        ",".join(P["set_equality"]["outside_the_image_at_grains"])]))
     pr = P["price"]
     body.append("".join([
         "PRICE=REDUCED-NOT-EVADED-", str(pr["the_parents_price_anchored"]),
@@ -3146,7 +4319,19 @@ def reconstruct_verdict(P):
         str(pr["orbit_pairs_merged_anchored"]), "-AND-",
         str(pr["orbit_pairs_merged_extension"]),
         "-PAIRS-OF-GAUGE-ORBITS-ARE-IDENTIFIED-BY-EVERY-LOCAL-WEIGHT-",
-        "SYSTEM-THE-ODD-TWIST-THE-TORUS-DOES-NOT-CLOSE"]))
+        "SYSTEM-THE-ODD-TWIST-THE-TORUS-DOES-NOT-CLOSE;THE-DISCOUNT-IS-",
+        "BOUGHT-BY-DEMANDING-INVARIANCE-UNDER-A-STRICTLY-LARGER-GROUP-",
+        str(P["price_carve_out"]["the_link_stencils_acting_group_anchored"]),
+        "-AGAINST-THE-CARRIERS-OWN-",
+        str(P["price_carve_out"][
+            "the_residual_gauge_group_on_the_carrier_anchored"]),
+        "-AT-THE-ANCHORED-READING-AND-",
+        str(P["price_carve_out"]["the_link_stencils_acting_group_extension"]),
+        "-AGAINST-",
+        str(P["price_carve_out"][
+            "the_residual_gauge_group_on_the_carrier_extension"]),
+        "-AT-THE-EXTENSION-SO-REDUCED-NOT-EVADED-AND-THE-PARENTS-CONSERVED-",
+        "NOT-PAID-DO-NOT-COLLIDE"]))
     fa = P["falsifier"]
     sg = [r for r in fa["rows"] if r["row"]
           == "OFF-DIAGONAL-QUARTIC-SIGN-ANCHORED"][0]
@@ -3154,7 +4339,11 @@ def reconstruct_verdict(P):
           == "WILSON-BLOCK-TRACE-RATIONAL-PART-ANCHORED"][0]
     fm = {x["reading"]: x for x in fa["orbit_indicator_families"]}
     body.append("".join([
-        "FALSIFIER=", fa["verdict"],
+        "FALSIFIER=NOT-HIT-AT-THE-PINS-WORDING-COVARIANCE-PINS-NOTHING-",
+        str(fa["rows_measured_at_the_covariance_reading"]
+            - fa["rows_at_which_the_covariance_reading_narrows_the_range"]),
+        "-OF-", str(fa["rows_measured_at_the_covariance_reading"]),
+        "-ROWS-AT-FULL-RANGE;", fa["verdict"],
         ":THE-OFF-DIAGONAL-QUARTIC-SIGN-IS-A-GAUGE-OBSERVABLE-EVERY-",
         "ADMISSIBLE-WEIGHT-SYSTEM-PINS-TO-THE-SINGLE-VALUE-[",
         sg["range_over_the_reachable_set"][0], ",",
@@ -3190,7 +4379,11 @@ def reconstruct_verdict(P):
         ar["configuration_space"],
         "-NOT-A-CARRIER-HERE;WEIGHTS=POSITIVE-EXACT-RATIONALS-NO-LOGS-NO-",
         "FLOATS;THE-ACTION-IS-DECLARED-NOT-DERIVED;NO-COUPLING-IS-SELECTED;",
-        "NOT-QCD;NO-CONFINEMENT-CLAIM"]))
+        "THE-ODD-TWIST-MECHANISM-IS-L-CONTINGENT-THE-MERGING-INDEX-IS-8/",
+        "GCD(L,8)-WHICH-IS-",
+        str(P["merging_index_law"]["the_anchored_index"]),
+        "-HERE-AND-1-AT-EVERY-L-DIVISIBLE-BY-8-WHERE-NOTHING-MERGES-AND-",
+        "NOTHING-IS-PINNED;NOT-QCD;NO-CONFINEMENT-CLAIM"]))
     parts.append(" -- ".join(body))
     parts.append(">")
     return "".join(parts)
@@ -3302,6 +4495,17 @@ def price_the_choices(S):
             % (len(rows), len(bad), [b["choice"] for b in bad], len(vd)))
     S["fibre"] = {"rows": rows,
                   "verdict_determining": len(vd),
+                  "the_flag_is_measured_at_this_many_rows":
+                      sum(1 for r in rows
+                          if isinstance(r["verdict_determining"], bool)),
+                  "the_flag_is_not_measured_at": sorted(
+                      r["choice"] for r in rows
+                      if not isinstance(r["verdict_determining"], bool)),
+                  "why_it_is_not_measured_there": "THEIR-ALTERNATIVES-ARE-"
+                                                  "OUT-OF-REACH-BY-COST-SO-"
+                                                  "THE-COUNT-IS-A-LOWER-"
+                                                  "BOUND-OVER-THE-ROWS-WHERE-"
+                                                  "IT-WAS-MEASURED",
                   "the_price_of_a_declaration": S["price"]}
     SEAL.take("THE CHOICE INVENTORY", "fibre", "G-CHOICE-INVENTORY",
               S["fibre"])
@@ -3311,36 +4515,43 @@ def price_the_choices(S):
 # frozen so that a neutrally-named helper computing something this unit
 # does not publish cannot exist unnoticed (G-FUNCTION-INVENTORY-IS-TOTAL).
 FUNCTION_INVENTORY = [
-    "__init__", "_g", "_plaq_image", "add", "addv", "apply_point",
-    "bdigest", "block_trace", "bm", "boundary", "build_alphabet",
-    "build_arena", "build_claims", "build_coins", "build_verdict",
-    "build_waiver_ledger", "burnside", "by", "carries_defect",
-    "chart_elements", "chart_stabilizer", "check_the_registry",
-    "close_perm_group", "coboundary_product", "coin_sector",
-    "coin_unitary_second_route", "compose", "datum_orbit_partition",
-    "datum_orbits_bruteforce", "declared_function_names",
-    "demonstrate_reachability", "dig", "digest", "elem_mul",
-    "elementary_gauge_generators", "ends", "expect", "fadd", "fconj",
-    "find", "fix_in", "fixed_data", "fmul", "fneg", "fnorm", "fnormsq",
-    "fscal", "gate", "gauge_image", "gauge_twist", "gby", "group_orbits",
-    "harvest", "head_law", "holonomy_block", "hset_members", "in_q_sqrt2",
+    "__init__", "_g", "_plaq_image", "act_on_datum", "add", "addv",
+    "apply_point", "bdigest", "block_trace", "bm", "boundary",
+    "build_alphabet", "build_arena", "build_claims", "build_coins",
+    "build_verdict", "build_waiver_ledger", "burnside", "by",
+    "carries_defect", "chart_elements", "chart_stabilizer",
+    "check_the_registry", "close_perm_group", "coboundary_product",
+    "coin_sector", "coin_unitary_second_route", "compose",
+    "datum_orbit_partition", "datum_orbits_bruteforce",
+    "declared_function_names", "demonstrate_reachability", "dig", "digest",
+    "elem_mul", "elementary_gauge_generators", "ends", "expect", "fadd",
+    "fconj", "find", "fix_in", "fixed_data", "fmul", "fneg", "fnorm",
+    "fnormsq", "fscal", "gate", "gauge_image", "gauge_twist", "gby",
+    "group_orbits", "harvest", "head_law", "holonomy_block",
+    "hset_members", "in_q_sqrt2", "induced_classes_on_a_family",
     "induced_classes_on_the_carrier", "is_exact_power", "is_rational",
     "load_sources", "main", "measure_chart_and_gauge",
-    "measure_density_witness", "measure_expectations",
-    "measure_falsifier", "measure_locality", "measure_path_values",
-    "measure_pot_handoff", "measure_provenance", "measure_targets",
+    "measure_density_witness", "measure_expectations", "measure_falsifier",
+    "measure_locality", "measure_outcome_feasibility",
+    "measure_path_values", "measure_pot_handoff", "measure_provenance",
+    "measure_targets", "measure_the_census_scope",
     "measure_the_control_row", "measure_the_gibbs_map",
+    "measure_the_merging_index_law", "measure_the_set_equality_leg",
     "measure_the_supplied_row", "measure_verbatim", "measure_wilson_row",
-    "mm", "mnorm", "mut", "observable_table", "orbit_stabilizer_sum",
-    "own_source", "point_on_dir", "point_symmetries", "price_the_choices",
+    "mm", "mnorm", "mut", "numword", "observable_table",
+    "orbit_stabilizer_sum", "own_source", "point_on_dir",
+    "point_symmetries", "price_a_synthetic_arena", "price_the_choices",
     "prime_exponents", "project", "qs_less", "qs_str", "qsqrt2_pair",
     "qsqrt2_pair_from_str", "quartic_sign", "read_bytes",
     "realisable_constant_twists", "reconstruct_verdict", "reduced_family",
-    "resolve", "reverify", "run", "run_form_census", "say",
-    "seal_and_write", "second_head_law", "selftest", "separates", "star",
-    "stencil_group", "stencil_of", "swap_conjugate", "take",
-    "to_fraction", "trace_of", "transported_link", "verify_paper",
-    "verify_the_analytic_crosscheck", "verify_the_rank", "wsnorm", "zpow"]
+    "render_cell", "render_table", "resolve", "reverify", "run",
+    "run_form_census", "say", "seal_and_write", "second_head_law",
+    "selftest", "separates", "star", "stencil_group", "stencil_of",
+    "swap_conjugate", "sym_trace", "synthetic_family", "table_rows",
+    "take", "to_fraction", "trace_of", "trace_of_datum",
+    "transported_link", "verify_paper", "verify_the_analytic_crosscheck",
+    "verify_the_anchored_closed_forms", "verify_the_consumers",
+    "verify_the_rank", "wsnorm", "zpow"]
 
 
 def declared_function_names(tree):
@@ -3419,15 +4630,30 @@ def check_the_registry(S):
 
 
 FORCINGS = {
-    "G-MUTANTS-ON-TARGET": "no such gate exists in this instrument; the "
-                           "sweep is adjudicated by the CLI harness and "
-                           "every surviving or off-target injection fails "
-                           "it, which is an external-battery result",
     "G-ARTIFACT-INTEGRITY": "evaluated only in the writing path, which no "
                             "diagnostic run reaches; its reference value is "
                             "the GATE-TIME SEAL, whose in-run twin "
                             "G-SEAL-INTEGRITY carries the injection "
-                            "falsifier MUT-SEAL",
+                            "falsifier MUT-SEAL, and whose unsealed-key leg "
+                            "is a total byte comparison of the receipt "
+                            "against the string this run built",
+}
+
+# NOT a forcing and NOT a gate of this instrument: the external battery's
+# own adjudication, named here so that a reader of the waiver ledger does
+# not meet a registry row that can never fire (K3 MINOR-4).
+EXTERNAL_BATTERY = {
+    "G-MUTANTS-ON-TARGET": "no such gate exists in this instrument; the "
+                           "sweep is adjudicated by the CLI harness and "
+                           "every surviving or off-target injection fails "
+                           "it, which is an external-battery result",
+}
+
+# the one gate that exists only to REFUSE, and closes on no clean path.
+REFUSAL_ONLY_GATES = {
+    "G-PAPER-PRESENT": "a constant refusal reached only when the paper is "
+                       "absent, so it never closes on a clean run and "
+                       "appears in no total of closed gates",
 }
 
 
@@ -3436,37 +4662,85 @@ def build_waiver_ledger(S):
     covered = sorted({m[1] for m in MUTANTS} & set(closed))
     if mut("MUT-WAIVER"):
         covered = covered[:-1]
+    late = sorted(set(LATE_GATES) - set(closed))
+    lcov = {}
+    for gx in LATE_GATES:
+        hit = sorted({m[0] for m in MUTANTS if m[1] == gx})
+        if hit:
+            lcov[gx] = "FALSIFIER:" + ",".join(hit)
+        elif gx in FORCINGS:
+            lcov[gx] = "FORCING"
+        else:
+            lcov[gx] = "UNCOVERED"
     forced = sorted(set(FORCINGS) & set(closed + list(LATE_GATES)))
     uncovered = [g for g in closed
                  if g not in covered and g not in FORCINGS]
+    allg = sorted(set(closed) | set(LATE_GATES) | set(FORCINGS))
+    unc_all = [g for g in allg
+               if g not in {m[1] for m in MUTANTS} and g not in FORCINGS]
     S["waiver_ledger"] = {
+        "gates_closed_when_this_ledger_is_taken": len(closed),
         "gates_closed": len(closed),
+        "gates_on_the_clean_path": len(allg),
         "covered_by_a_declared_falsifier": len(covered),
         "under_a_registered_forcing": len(forced),
         "the_forcings": FORCINGS,
         "uncovered": uncovered,
-        "late_gates_declared": list(LATE_GATES)}
+        "uncovered_over_every_gate_on_the_clean_path": unc_all,
+        "late_gates_declared": list(LATE_GATES),
+        "late_gates_not_yet_closed_when_this_ledger_is_taken": late,
+        "late_gate_coverage": lcov,
+        "the_denominator": "EVERY-GATE-ON-THE-CLEAN-PATH-INCLUDING-THE-LATE-"
+                           "ONES-THIS-LEDGER-IS-TAKEN-BEFORE",
+        "the_external_battery": EXTERNAL_BATTERY,
+        "refusal_only_gates": REFUSAL_ONLY_GATES}
     LD.gate("G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
-            "the coverage is published at an honest denominator (#34): every "
-            "gate this run closes is either the declared target of a "
-            "falsifier that REACHES it, or carries a registered forcing "
-            "stating why no falsifier can, and the remainder is named rather "
-            "than folded into the first class",
-            not uncovered,
-            "%d gates closed, %d carry a declared falsifier, %d a registered "
-            "forcing, %d uncovered %s"
-            % (len(closed), len(covered), len(forced), len(uncovered),
-               uncovered[:5]))
+            "the coverage is published at an honest denominator (#34), and "
+            "the denominator is EVERY gate on the clean path and not only "
+            "the ones already closed when this ledger is taken: each is "
+            "either the declared target of a falsifier that REACHES it or "
+            "carries a registered forcing stating why no falsifier can, the "
+            "late gates are listed one by one with which of the two covers "
+            "them, and the remainder is named rather than folded into the "
+            "first class.  The gate that exists only to refuse, and the "
+            "external battery's own adjudication, are named in registries of "
+            "their own so that no row of this one can never fire",
+            not uncovered and not unc_all,
+            "%d gates closed here and %d on the clean path; %d carry a "
+            "declared falsifier, %d a registered forcing, %d uncovered %s; "
+            "late gates %d, each covered: %s"
+            % (len(closed), len(allg), len(covered), len(forced),
+               len(unc_all), unc_all[:5], len(LATE_GATES),
+               sorted(set(lcov.values()))))
     SEAL.take("THE WAIVER LEDGER", "waiver_ledger",
               "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
               S["waiver_ledger"])
+    chain = [digest({"prev": "GENESIS" if i == 0 else LD.digests[i - 1],
+                     "row": r}) for i, r in enumerate(LD.rows)]
+    if mut("MUT-CHAIN"):
+        LD.digests[0] = "000000000000"
+    bad = [i for i in range(len(chain)) if chain[i] != LD.digests[i]]
+    LD.gate("G-LEDGER-CHAIN-VERIFIED",
+            "the chained ledger is VERIFIED and not merely built: every "
+            "published per-row digest is recomputed here from its own "
+            "predecessor and its own row and compared element by element, so "
+            "the sentence 'a row edited after its gate closed no longer "
+            "matches the digest of its own predecessor' is arithmetic this "
+            "instrument performs rather than a property a reader is asked to "
+            "trust.  The same chain is recomputed at the disk boundary from "
+            "the bytes that were read back",
+            not bad,
+            "%d chained rows recomputed, %d mismatching %s"
+            % (len(chain), len(bad), bad[:4]))
 
 
 LATE_GATES = ("G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+              "G-LEDGER-CHAIN-VERIFIED",
               "G-LEDGER-SHAPE-IS-CONSISTENT", "G-PAPER-CLAIMS",
               "G-PAPER-VERDICT-EQUALITY", "G-MUST-NOT-VOCABULARY",
               "G-PAPER-POLARITY", "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
-              "G-PAPER-NUMERAL-COVERAGE", "G-SEAL-INTEGRITY",
+              "G-PAPER-NUMERAL-COVERAGE", "G-CONSUMERS-ARE-REAL",
+              "G-MUST-NOT-OVER-THE-RECEIPT", "G-SEAL-INTEGRITY",
               "G-ARTIFACT-INTEGRITY")
 
 
@@ -3476,6 +4750,10 @@ LATE_GATES = ("G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
 
 DIGEST_KEYS = {"pinned", "measured", "digest", "code_sha256_12",
                "paper_sha256_12", "pin_sha256_prefix"}
+# a twelve-character hexadecimal run carrying at least one letter: a digest,
+# never a count.  A twelve-DIGIT decimal number is deliberately not matched.
+DIGEST_RE = re.compile(r"\b(?=[0-9a-f]{12}\b)(?=[0-9a-f]*[a-f])"
+                       r"[0-9a-f]{12}\b")
 POOL_EXCLUDED = {"mutants"}
 
 # THE MUST-NOT, INHERITED VERBATIM FROM PAPER-23's REPAIRED GATE.
@@ -3495,6 +4773,93 @@ DECLARING = [
     "the confinement vocabulary REMAINS BEHIND POT'S GATE",
     "A confinement analog would need three objects this arena does not have",
     "no loop family is grown",
+]
+
+
+# THE DELIVERED TABLES, each named by the receipt object it renders and by
+# the receipt KEYS its columns are.  The header is rendered from those keys
+# and bound as a claim exactly like every data row, so a column swapped in
+# the paper stops matching the header this run licenses (K3 R-ACT-1).
+PAPER_TABLES = (
+    ("THE-PRE-REGISTERED-OUTCOMES", "preregistered_heads/probes",
+     ("outcome", "arena", "reached", "both_laws_agree")),
+    ("THE-SYNTHETIC-ARENAS", "preregistered_heads/synthetic_arenas",
+     ("row", "coins", "measured_closed", "every_route_agrees",
+      "the_outcome_word")),
+    ("THE-OUTCOME-FEASIBILITY", "outcome_feasibility/rows",
+     ("row", "datum_space_size", "acting_group_order",
+      "the_smallest_orbit_count_possible_here", "the_measured_orbit_count")),
+    ("THE-MERGING-INDEX-LAW", "merging_index_law/rows",
+     ("row", "the_residual_order_on_the_torus",
+      "the_link_stencils_gauge_image", "the_merging_index",
+      "the_odd_twist_is_a_gauge_transformation_here")),
+    ("THE-FORM-CENSUS", "form_census/rows",
+     ("grain", "reading", "gauge_image_order", "chart_stabilizer_order",
+      "acting_group_order", "orbits", "coupling_count")),
+    ("THE-ANCHORED-CLOSED-FORMS", "anchored_closed_forms/rows",
+     ("row", "the_gauge_only_count", "the_coset_fixed_point_average",
+      "the_closed_form", "the_census_orbit_count")),
+    ("THE-WILSON-MEMBERSHIP", "wilson/membership_rows",
+     ("row", "a_function_of_this_stencils_datum", "chart_leg_checks",
+      "chart_leg_failures_raw_trace",
+      "chart_leg_failures_conjugation_symmetric",
+      "admits_the_conjugation_symmetric_part")),
+    ("THE-CONTROLS-FIBRE", "law_native_control/the_fibre_rows",
+     ("row", "the_ratio_between_the_two_equal_sized_sectors",
+      "class_constant", "full_support",
+      "obstruction_over_the_declared_field")),
+    ("THE-MONOTONE-WITNESS-FAMILY", "density_witness/the_monotone_family",
+     ("row", "numerator", "in_lowest_terms",
+      "error_below_one_over_ten_to_the")),
+    ("THE-GIBBS-MAP", "gibbs/rows",
+     ("grain", "reading", "exponent", "induced_classes_on_the_carrier",
+      "reachable_dimension", "orbit_pairs_merged", "fibre_dimension")),
+    ("THE-TARGET-CENSUS", "target_census/rows",
+     ("row", "class_constant", "full_support",
+      "obstruction_over_the_declared_field")),
+    ("THE-FALSIFIER-CENSUS", "falsifier/rows",
+     ("observable", "reading", "range_of_the_observable_itself",
+      "range_over_the_invariant_simplex", "range_over_the_reachable_set",
+      "verdict")),
+)
+
+
+def table_rows(S, path):
+    cur = S
+    for part in path.split("/"):
+        cur = cur[part]
+    return cur
+
+
+def render_cell(v):
+    if isinstance(v, bool):
+        return "yes" if v else "no"
+    if isinstance(v, list):
+        return "[" + ", ".join(str(x) for x in v) + "]"
+    return str(v)
+
+
+def render_table(S, path, keys):
+    """the header from the receipt KEYS and every data row from the receipt
+    VALUES, rendered by one function so that a header and its column cannot
+    drift apart."""
+    out = [" | ".join(k.replace("_", " ") for k in keys)]
+    for r in table_rows(S, path):
+        if not all(k in r for k in keys):
+            continue
+        out.append(" | ".join(render_cell(r[k]) for k in keys))
+    return out
+
+
+# the withholding strings the RECEIPT sweep may remove.  As with the paper's
+# declaring sentences, every entry must be located, so an exemption carried
+# and never used is a hole rather than a courtesy.
+RECEIPT_WITHHOLDING = [
+    "NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM-AND-NO-LOOP-FAMILY-IS-"
+    "GROWN",
+    "NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM",
+    "NO-CONFINEMENT-CLAIM",
+    "ANY-STATEMENT-ON-THE-FAR-SIDE-OF-POTS-GATE",
 ]
 
 
@@ -3520,13 +4885,10 @@ def build_claims(S):
     c.append(("residual gauge group is of order %d at the anchored reading "
               "and %d at the extension" % (rg["order_anchored"],
                                            rg["order_extension"]), 1))
-    # the form-census table, cell by cell
-    for r in fc:
-        c.append(("%s | %s | %d | %d | %d | %d | %d"
-                  % (r["grain"].lower(), r["reading"].lower(),
-                     r["gauge_image_order"], r["chart_stabilizer_order"],
-                     r["acting_group_order"], r["orbits"],
-                     r["coupling_count"]), 1))
+    # every delivered table, header row included, rendered from the receipt
+    for _tname, _tpath, _tkeys in PAPER_TABLES:
+        for line in render_table(S, _tpath, _tkeys):
+            c.append((line, 1))
     c.append(("the coupling count is %d at the link grain, %d at the "
               "plaquette grain and %d at the site grain"
               % (f["LINK-ANCHORED"]["coupling_count"],
@@ -3557,13 +4919,6 @@ def build_claims(S):
               "declared non-uniform ones"
               % (lo["plaquette_grain_carrier_configurations_at_product_one"],
                  lo["plaquette_grain_sample_at_product_one"]), 1))
-    # the Gibbs table
-    for r in gb:
-        c.append(("%s | %s | %d | %d | %d | %d | %d"
-                  % (r["grain"].lower(), r["reading"].lower(),
-                     r["exponent"], r["induced_classes_on_the_carrier"],
-                     r["reachable_dimension"], r["orbit_pairs_merged"],
-                     r["fibre_dimension"]), 1))
     c.append(("%d of the reachable set's extreme points are vertices of the "
               "parent's simplex and the other %d are midpoints of its edges"
               % (g["LINK-ANCHORED"][
@@ -3600,14 +4955,8 @@ def build_claims(S):
                  wl["the_allowed_space_on_the_carrier"]), 1))
     c.append(("%d single-link invariant classes"
               % wl["single_link_invariant_classes"], 1))
-    # the target census table
-    for r in tc["rows"]:
-        c.append(("%s | %s | %s | %s"
-                  % (r["row"], "yes" if r["class_constant"] else "no",
-                     "yes" if r["full_support"] else "no",
-                     r["obstruction"]), 1))
-    c.append(("%d of the %d named targets" % (tc["reachable"],
-                                              len(tc["rows"])), 1))
+    c.append(("%d of the %d declared targets" % (tc["reachable"],
+                                                len(tc["rows"])), 1))
     c.append(("%d measured obstruction species"
               % len(tc["obstruction_species"]), 1))
     c.append(("the ratio %s is not an exact power at either declared "
@@ -3615,18 +4964,6 @@ def build_claims(S):
     c.append(("at denominator %d the error is below %s"
               % (dw["witness_denominator"],
                  "1/10^%d" % dw["error_below_one_over_ten_to_the"]), 1))
-    # the falsifier table
-    for r in fa["rows"]:
-        if not r.get("is_a_gauge_observable"):
-            continue
-        c.append(("%s | %s | [%s, %s] | [%s, %s] | %s"
-                  % (r["observable"].lower().replace("-", " "),
-                     r["reading"].lower(),
-                     r["range_over_the_invariant_simplex"][0],
-                     r["range_over_the_invariant_simplex"][1],
-                     r["range_over_the_reachable_set"][0],
-                     r["range_over_the_reachable_set"][1],
-                     r["verdict"].lower()), 1))
     for x in fa["orbit_indicator_families"]:
         c.append(("%d of the %d orbit indicators are pinned at the %s "
                   "reading" % (x["pinned"], x["observables"],
@@ -3636,10 +4973,10 @@ def build_claims(S):
         c.append(("%s under %s" % (r["expectation"], r["row"]), 1))
     c.append(("%d loop families are grown" % ex["loop_families_grown"], 1))
     # the instrument
-    c.append(("%d gates close before the paper gates, and %d paper gates and "
-              "%d closing gates follow"
+    c.append(("%d gates close before the paper gates, and %d paper gates, %d "
+              "receipt-wall gate and %d closing gates follow"
               % (ls["gates_closed_before_the_paper_gates"], ls["paper_gates"],
-                 ls["closing_gates"]), 1))
+                 ls["receipt_gates"], ls["closing_gates"]), 1))
     c.append(("%d objects are sealed before the paper gates"
               % ls["objects_sealed_before_the_paper_gates"], 1))
     c.append(("%d construction choices are inventoried, of which %d are "
@@ -3658,25 +4995,86 @@ def build_claims(S):
             c.append(("`%s` (sha256-12 `%s`)" % (rel_path, sha), 1))
         else:
             c.append(("`%s` (`%s`)" % (rel_path, sha), 1))
-    # the pre-registered outcome table
-    c.append(("`ACT-FORM-FORCED` | the allowed space is a point at every "
-              "declared row | not the case: the smallest coupling count "
-              "measured is %d" % min(r["coupling_count"] for r in fc), 1))
-    c.append(("`ACT-GIBBS` | the image is one measure | not the case: the "
-              "reachable set has dimension %d at the link grain"
-              % g["LINK-ANCHORED"]["reachable_dimension"], 1))
-    c.append(("`ACT-BLOCKED-AT` | an object that cannot be evaluated | every "
-              "declared row is evaluated and its Burnside sum divides", 1))
-    c.append(("`ACT-FORM-RELATIVE` | the allowed space has positive rank | "
-              "**this is what is measured**", 1))
+    # the new measurements, in prose
+    ml = S["merging_index_law"]
+    of = S["outcome_feasibility"]
+    se, co, cs = S["set_equality"], S["price_carve_out"], S["census_scope"]
+    lc, ac = S["law_native_control"], S["anchored_closed_forms"]
+    c.append(("at every L divisible by eight it is %d"
+              % [r["the_merging_index"] for r in ml["rows"]
+                 if r["L"] == 8][0], 1))
+    c.append(("the merging index is %d here at the anchored size, %d at "
+              "L = 2, and %d at every L divisible by eight"
+              % (ml["the_anchored_index"],
+                 [r["the_merging_index"] for r in ml["rows"]
+                  if r["L"] == 2][0],
+                 [r["the_merging_index"] for r in ml["rows"]
+                  if r["L"] == 8][0]), 1))
+    c.append(("the smallest orbit count this arena can produce at any "
+              "declared row is %d"
+              % of["the_smallest_orbit_count_this_arena_can_produce"], 1))
+    c.append(("raises one class of size %d by %d against a normalisation of "
+              "%d" % (se["the_raised_class_size"], se["the_raise"],
+                      se["the_normalisation"]), 1))
+    c.append(("order %d where the residual gauge group on the carrier has "
+              "order %d"
+              % (co["the_link_stencils_acting_group_anchored"],
+                 co["the_residual_gauge_group_on_the_carrier_anchored"]), 1))
+    c.append(("%d of the parent's %d named measures are run here as census "
+              "rows"
+              % (len(cs["the_parents_measures_run_here_as_a_census_row"]),
+                 cs["the_parents_distinct_named_measures_on_this_carrier"]),
+              1))
+    c.append(("a declared fibre of %d" % lc["the_declared_fibre"], 1))
+    c.append(("(%d^4 + %d^2)/2 = %d"
+              % (ac["twist_classes"], ac["twist_classes"],
+                 [r["the_closed_form"] for r in ac["rows"]
+                  if r["grain"] == "SITE"][0]), 1))
+    c.append(("(%d^4 + 7 x %d^4 + %d)/2 = %d"
+              % (ac["twist_classes"], ac["non_singleton_classes"],
+                 [r["the_coset_fixed_point_average"] for r in ac["rows"]
+                  if r["grain"] == "PLAQUETTE"][0],
+                 [r["the_closed_form"] for r in ac["rows"]
+                  if r["grain"] == "PLAQUETTE"][0]), 1))
+    c.append(("%d chart-leg checks at the anchored plaquette, %d of them "
+              "failing for the raw trace and %d for its conjugation-"
+              "symmetric part"
+              % ([m["chart_leg_checks"] for m in wl["membership_rows"]
+                  if m["row"] == "PLAQUETTE-ANCHORED"][0],
+                 [m["chart_leg_failures_raw_trace"]
+                  for m in wl["membership_rows"]
+                  if m["row"] == "PLAQUETTE-ANCHORED"][0],
+                 [m["chart_leg_failures_conjugation_symmetric"]
+                  for m in wl["membership_rows"]
+                  if m["row"] == "PLAQUETTE-ANCHORED"][0]), 1))
+    # the two spelled numerals, rendered from the receipt like every other
+    c.append(("returns %s elements" % numword(ar["alphabet"]), 1))
+    c.append(("a %s-dimensional sliver"
+              % numword(wl["dimension_of_the_wilson_family_on_the_carrier"]),
+              1))
     return c
 
 
+# EVERY DIRECTION-BEARING HEADLINE, bound by presence AND by polarity, so a
+# claim inverted in the paper stops being located rather than passing under
+# a fragment gate that cannot read direction (K3 MAJOR-4).
 POLARITY = [
     ("the price is REDUCED, not evaded", 1),
     ("the Wilson shape is not forced", 1),
     ("the odd twist is not realisable on this torus", 1),
     ("the coupling count is grain-relative", 1),
+    ("The form is not forced.", 1),
+    ("the gauge group is measured **not** transitive on a single link's "
+     "coin", 1),
+    ("The falsifier as the pin words it is measured not to hit", 1),
+    ("The hit is at the action route, and only there.", 1),
+    ("the raw trace is admissible at no declared row", 1),
+    ("the set of reachable measures is not", 2),
+    ("no orbits merge, the price is not reduced and no observable is "
+     "pinned", 1),
+    ("the Wilson family's dimension is reported **on the carrier**", 1),
+    ("the reduction is neither a saving nor a violation", 1),
+    ("three of the four were closed before the instrument ran", 1),
 ]
 
 
@@ -3689,8 +5087,10 @@ def verify_paper(S, paper_text):
             % S["wilson"]["single_link_invariant_classes"],
             "137 single-link invariant classes", 1)
     if mut("MUT-TABLE-ROW"):
-        a = re.search(r"^(\|\s*link\s*\|\s*anchored\s*\|)(.*)$", ptext, re.M)
-        b = re.search(r"^(\|\s*site\s*\|\s*anchored\s*\|)(.*)$", ptext, re.M)
+        a = re.search(r"^(\|\s*link\s*\|\s*anchored\s*\|)(.*)$", ptext,
+                      re.M | re.I)
+        b = re.search(r"^(\|\s*site\s*\|\s*anchored\s*\|)(.*)$", ptext,
+                      re.M | re.I)
         if a and b:
             ptext = ptext.replace(a.group(0), a.group(1) + b.group(2), 1)
             ptext = ptext.replace(b.group(0), b.group(1) + a.group(2), 1)
@@ -3798,11 +5198,15 @@ def verify_paper(S, paper_text):
         if re.match(sep, nxt):
             theads.append(st)
             continue
-        if re.search(r"\d", st):
-            trows.append(st)
+        trows.append(st)
+    if mut("MUT-TABLE-HEADER"):
+        _cols = theads[0].strip("|").split("|")
+        theads = ["|" + "|".join(_cols[::-1]) + "|"] + theads[1:]
     claim_texts = [mnorm(fr) for fr, _w in claims]
     unbound_rows = [r[:70] for r in trows
                     if not any(ct and ct in mnorm(r) for ct in claim_texts)]
+    unbound_heads = [r[:70] for r in theads
+                     if not any(ct and ct in mnorm(r) for ct in claim_texts)]
     quotes, blk = [], []
     for line in plines:
         st = line.strip()
@@ -3824,17 +5228,23 @@ def verify_paper(S, paper_text):
             "BLOCKQUOTE must lie inside one of the pinned verbatim windows "
             "-- so a paper that misquotes, or inverts, a parent's own "
             "definition dies here even though the anchor on the parent's "
-            "bytes passes.  Header rows are the declared exception and are "
-            "counted and published rather than silently skipped",
-            not unbound_rows and not unbound_quotes,
-            "%d table data rows carrying a numeral, %d unbound %s; %d header "
-            "rows excluded; %d blockquotes, %d not inside a pinned window %s"
+            "bytes passes.  EVERY HEADER ROW IS BOUND THE SAME WAY: each is "
+            "rendered from the receipt keys its own columns are, so two "
+            "semantically opposed columns exchanged in the paper stop "
+            "matching the header this run licenses.  There is no declared "
+            "exception left",
+            not unbound_rows and not unbound_quotes and not unbound_heads,
+            "%d table data rows, %d unbound %s; %d header rows, %d unbound "
+            "%s; %d blockquotes, %d not inside a pinned window %s"
             % (len(trows), len(unbound_rows), unbound_rows[:2], len(theads),
+               len(unbound_heads), unbound_heads[:2],
                len(quotes), len(unbound_quotes), unbound_quotes[:2]))
     S["paper_binding"] = {
-        "table_data_rows_carrying_a_numeral": len(trows),
+        "table_data_rows": len(trows),
         "table_rows_unbound": len(unbound_rows),
-        "table_header_rows_excluded": len(theads),
+        "table_header_rows": len(theads),
+        "table_header_rows_unbound": len(unbound_heads),
+        "tables_rendered_from_the_receipt": len(PAPER_TABLES),
         "blockquotes": len(quotes),
         "blockquotes_outside_a_pinned_verbatim_window": len(unbound_quotes),
         "verbatim_windows_available": len(VERBATIM)}
@@ -3869,7 +5279,12 @@ def verify_paper(S, paper_text):
         elif isinstance(o, int):
             add(o)
         elif isinstance(o, str):
-            for m in re.findall(r"\d+(?:/\d+)?", o):
+            # a twelve-hex digest is not a measurement, and the digit runs
+            # inside one must not widen the pool the paper is checked
+            # against: they are removed here exactly as the paper-side scan
+            # removes them, and only where a hex LETTER is present, so a
+            # twelve-digit decimal count is never mistaken for a digest.
+            for m in re.findall(r"\d+(?:/\d+)?", DIGEST_RE.sub(" ", o)):
                 add(m)
     harvest({k: v for k, v in S.items()
              if not k.startswith("_") and k not in POOL_EXCLUDED})
@@ -3886,6 +5301,14 @@ def verify_paper(S, paper_text):
         if "/" in x and all(p in allowed for p in x.split("/")):
             continue
         unmatched.append(x)
+    wre = r"\b(" + "|".join(sorted(NUMBER_WORDS, key=len, reverse=True)) \
+        + r")\b"
+    wscan = scan.lower()
+    if mut("MUT-SPELLED-NUMERAL"):
+        wscan = wscan + " an uncovered spelled numeral: eighty-eight "
+    words = [w for w in re.findall(wre, wscan) if NUMBER_WORDS[w] >= 13]
+    unmatched_words = sorted({w for w in words
+                              if str(NUMBER_WORDS[w]) not in allowed})
     spans = len(re.findall(r"`[^`]*\d[^`]*`", ptext))
     fenced = len(re.findall(r"```", ptext))
     LD.gate("G-PAPER-NUMERAL-COVERAGE",
@@ -3894,12 +5317,23 @@ def verify_paper(S, paper_text):
             "both sides of every fraction included (E-22, #20) -- with only "
             "a published list of structural literals forgiven, so a number "
             "invented in prose, or moved from one claim to another, dies "
-            "inside the delivery run",
-            not unmatched, "%d numerals scanned, %d inline code spans "
-            "carrying a numeral, %d fence markers, %d unmatched: %s"
-            % (len(nums), spans, fenced, len(unmatched), unmatched[:8]))
+            "inside the delivery run.  SPELLED NUMERALS ARE SCANNED THE SAME "
+            "WAY (#267): every number-word above twelve, hyphenated "
+            "compounds included, is mapped to its integer and matched "
+            "against the same pool, and the two spelled counts this paper "
+            "delivers are additionally rendered as claims from the receipt",
+            not unmatched and not unmatched_words,
+            "%d numerals scanned, %d spelled numerals above twelve, %d "
+            "inline code spans carrying a numeral, %d fence markers, %d "
+            "unmatched: %s; unmatched spelled: %s"
+            % (len(nums), len(words), spans, fenced, len(unmatched),
+               unmatched[:8], unmatched_words[:4]))
     S["paper_coverage"] = {
         "numerals_scanned": len(nums),
+        "spelled_numerals_above_twelve_scanned": len(words),
+        "spelled_numerals_unmatched": len(unmatched_words),
+        "the_number_word_alphabet": "EVERY-ENGLISH-NUMBER-WORD-BELOW-ONE-"
+                                    "HUNDRED-HYPHENATED-COMPOUNDS-INCLUDED",
         "inline_spans_with_a_numeral": spans,
         "fence_markers": fenced, "unmatched": len(unmatched),
         "removed_from_the_scan_and_bound_as_claims":
@@ -3910,6 +5344,41 @@ def verify_paper(S, paper_text):
         "structural_literals_forgiven": sorted(STRUCTURAL)}
     SEAL.take("THE PAPER COVERAGE", "paper_coverage",
               "G-PAPER-NUMERAL-COVERAGE", S["paper_coverage"])
+    verify_the_consumers(S)
+
+
+def verify_the_consumers(S):
+    """THE CONSUMER REGISTER, MADE REAL.  Every anchor names the gate that
+    consumes it; this checks that the named gate EXISTS in this run's ledger
+    and that it PASSED.  Run last, after every gate that any anchor names
+    has closed, so a consumer pointing at a gate that does not exist stops
+    the run rather than riding into the receipt."""
+    rows = S["path_value_anchors"] + S["verbatim_anchors"]
+    if mut("MUT-CONSUMER"):
+        rows = [dict(rows[0], consumer="G-DOES-NOT-EXIST")] + rows[1:]
+    names = sorted({r["consumer"] for r in rows})
+    missing = [g for g in names if g not in LD.ids]
+    passed = {r["gate"]: r["passed"] for r in LD.rows}
+    failed = [g for g in names if passed.get(g) is False]
+    LD.gate("G-CONSUMERS-ARE-REAL",
+            "every anchor's declared CONSUMER is a gate that exists in this "
+            "run's own ledger and that passed: the register is checked "
+            "against the ledger rather than published beside it, so an "
+            "anchor bound to a gate this instrument does not have -- the "
+            "phantom-consumer disease -- stops the delivery run instead of "
+            "being vouched by prose",
+            not missing and not failed,
+            "%d anchors naming %d distinct consumer gates; %d naming a gate "
+            "that does not exist %s; %d naming a gate that did not pass %s"
+            % (len(rows), len(names), len(missing), missing[:3], len(failed),
+               failed[:3]))
+    S["consumer_register"] = {
+        "anchors": len(rows), "distinct_consumer_gates": len(names),
+        "consumers_that_do_not_exist": len(missing),
+        "consumers_that_did_not_pass": len(failed),
+        "the_consumer_gates": names}
+    SEAL.take("THE CONSUMER REGISTER", "consumer_register",
+              "G-CONSUMERS-ARE-REAL", S["consumer_register"])
 
 
 # ===========================================================================
@@ -3971,7 +5440,7 @@ MUTANTS = [
      "finding is no longer exhibited", "sep_link = False"),
     ("MUT-TARGET-CENSUS", "G-TARGET-CENSUS",
      "declares the law-native control reachable",
-     'rows[3]["obstruction"] = "REACHABLE"'),
+     'rows[3]["obstruction_over_the_declared_field"] = "REACHABLE"'),
     ("MUT-CONTROL-SPENT", "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
      "spends the control as a derived row by marking it reachable",
      'row = dict(row, reachable=True, obstruction="REACHABLE")'),
@@ -4066,6 +5535,74 @@ MUTANTS = [
      "uncovered", "covered = covered[:-1]"),
     ("MUT-SEAL", "G-SEAL-INTEGRITY",
      "edits a sealed object after its gate closed", '"MOVED-AFTER-THE-GATE"'),
+    ("MUT-CARRIER", "G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER",
+     "drops one configuration from the rebuilt carrier before it is compared "
+     "with the parent's own published uniform slice", "carrier = carrier - 1"),
+    ("MUT-MERGING-INDEX", "G-THE-MERGING-INDEX-LAW",
+     "drops one realisable constant twist at one declared lattice size, so "
+     "the measured residual order stops matching the greatest common divisor",
+     "ctw = ctw[:-1]"),
+    ("MUT-CLOSED-FORM", "G-THE-ANCHORED-CLOSED-FORMS",
+     "moves the site grain's coset fixed-point sum by one group order, so "
+     "the closed form no longer reproduces the census count",
+     "tot = tot + len(gi)"),
+    ("MUT-SITE-COBOUNDARY", "G-LOCALITY-GAP-AT-THE-PLAQUETTE-GRAIN",
+     "gives one link the same exponent in both of its stars, so the site "
+     "grain's coboundary product is no longer one",
+     "sexps[lat.links[0]] = {sorder[lat.links[0]][0]: 1,"),
+    ("MUT-SET-EQUALITY", "G-THE-REACHABLE-SETS-DIFFER-BETWEEN-GRAINS",
+     "makes the exhibited witness an exact power at every declared exponent, "
+     "so the reachable sets stop differing",
+     "ratio = Fraction(2) ** max(exps)"),
+    ("MUT-CARVE-OUT", "G-THE-PRICE-CARVE-OUT",
+     "sets the link stencil's acting group equal to the carrier's own "
+     "residual gauge group, so the index that buys the discount disappears",
+     "fca = resa"),
+    ("MUT-WILSON-COVARIANCE", "G-WILSON-COVARIANCE-LEG",
+     "reports the raw trace as passing the anchored chart leg, so the "
+     "positive arm is asserted again instead of measured", "craw = 0"),
+    ("MUT-CONTROL-FIBRE", "G-THE-CONTROLS-FIBRE-IS-MEASURED",
+     "declares one member of the control's identification fibre reachable",
+     'fib[2]["obstruction_over_the_declared_field"] = "REACHABLE"'),
+    ("MUT-CENSUS-SCOPE", "G-THE-TARGET-CENSUS-SCOPE",
+     "loses one of the parent's named measures from the accounting, so the "
+     "coverage no longer closes", "notrun = notrun - 1"),
+    ("MUT-MONOTONE-WITNESS", "G-THE-MONOTONE-WITNESS-FAMILY",
+     "repeats one witness's error, so the declared family stops being "
+     "strictly decreasing",
+     'fam[2] = dict(fam[2], the_error=fam[1]["the_error"])'),
+    ("MUT-COVARIANCE-READING", "G-THE-COVARIANCE-READING-IS-NOT-HIT",
+     "reports one observable's range over the invariant simplex as narrower "
+     "than its own, so covariance would be pinning something",
+     'narrowed = [obsrows[0]["row"]]'),
+    ("MUT-SYNTHETIC-ROUTES", "G-THE-SYNTHETIC-ARENAS-ARE-MEASURED",
+     "moves one synthetic arena's brute-force orbit count off its Burnside "
+     "count", 'brute_force_orbits=fc[2]["orbits"] + 1'),
+    ("MUT-SYNTHETIC-ARENA", "G-HEAD-LAW-REACHABILITY",
+     "adds a second coin-map orbit to the transitive synthetic arena, so the "
+     "control arm stops emitting the forced outcome",
+     "(ONE, ZERO, ZERO, fneg(ONE))"),
+    ("MUT-TABLE-HEADER", "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
+     "exchanges the column names of a delivered table's header row in the "
+     "scanned text, so the header no longer renders from its own receipt "
+     "keys", 'theads[0].strip("|").split("|")'),
+    ("MUT-SPELLED-NUMERAL", "G-PAPER-NUMERAL-COVERAGE",
+     "plants a spelled numeral above twelve that no value this run computed "
+     "can license", "an uncovered spelled numeral: eighty-eight"),
+    ("MUT-CONSUMER", "G-CONSUMERS-ARE-REAL",
+     "points one anchor's declared consumer at a gate this instrument does "
+     "not have", 'consumer="G-DOES-NOT-EXIST"'),
+    ("MUT-CHAIN", "G-LEDGER-CHAIN-VERIFIED",
+     "corrupts one published chain digest after its row closed, so the "
+     "recomputed chain no longer matches the published one",
+     'LD.digests[0] = "000000000000"'),
+    ("MUT-MUST-NOT-RECEIPT", "G-MUST-NOT-OVER-THE-RECEIPT",
+     "plants a must-not word into the serialized receipt the wall sweeps",
+     "a string tension in the receipt"),
+    ("MUT-FEASIBILITY", "G-OUTCOME-FEASIBILITY-AT-THIS-ARENA",
+     "sets one row's pigeonhole floor to one, so the floor stops bounding "
+     "the measurement it is computed from",
+     "the_smallest_orbit_count_possible_here=1"),
 ]
 
 
@@ -4076,7 +5613,8 @@ MUTANTS = [
 PAPER_GATE_IDS = ("G-PAPER-CLAIMS", "G-PAPER-VERDICT-EQUALITY",
                   "G-MUST-NOT-VOCABULARY", "G-PAPER-POLARITY",
                   "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
-                  "G-PAPER-NUMERAL-COVERAGE")
+                  "G-PAPER-NUMERAL-COVERAGE", "G-CONSUMERS-ARE-REAL")
+RECEIPT_GATE_IDS = ("G-MUST-NOT-OVER-THE-RECEIPT",)
 CLOSING_GATE_IDS = ("G-SEAL-INTEGRITY", "G-ARTIFACT-INTEGRITY")
 
 DECLARED_UNSEALED = {
@@ -4087,11 +5625,14 @@ DECLARED_UNSEALED = {
     "paper_sha256_12": "the paper's digest, taken at the paper gates",
     "code_sha256_12": "this instrument's own digest, which cannot seal "
                       "itself",
-    "gates": "the gate ledger, snapshotted before the two closing gates -- a "
-             "seal cannot be inside the object it seals",
+    "gates": "the gate ledger, snapshotted before the receipt wall and the "
+             "two closing gates -- a seal cannot be inside the object it "
+             "seals",
     "gate_digests": "the CHAINED per-row digests of that ledger",
     "seal_manifest": "the manifest itself",
-    "closing_gates": "the two gates that close after the snapshot",
+    "closing_gates": "the two gates that close last of all; the receipt "
+                     "wall closes after the snapshot too and is counted in "
+                     "the totals",
     "declared_unsealed": "this declaration",
     "exit_conventions": "the disclosed exit conventions, a constant",
     "mutants": "the falsifier registry, checked TOTAL against the syntax "
@@ -4127,14 +5668,22 @@ def seal_and_write(S, write, paper_bytes):
     payload["declared_unsealed"] = DECLARED_UNSEALED
     payload["closing_gates"] = list(CLOSING_GATE_IDS)
     payload["totals"] = {
-        "gates": len(LD.rows) + 2,
+        "gates": len(LD.rows) + len(RECEIPT_GATE_IDS) + len(CLOSING_GATE_IDS),
         "gates_in_the_sealed_ledger": len(LD.rows),
+        "gates_that_close_after_this_snapshot":
+            len(RECEIPT_GATE_IDS) + len(CLOSING_GATE_IDS),
         "closing_gates": len(payload["closing_gates"]),
         "mutants": len(MUTANTS), "sources": len(SOURCES),
         "path_value_anchors": len(PATH_VALUES),
         "verbatim_anchors": len(VERBATIM),
         "anchors": len(SOURCES) + len(PATH_VALUES) + len(VERBATIM),
         "sealed_objects": len(SEAL.man),
+        "paper_gates": len(PAPER_GATE_IDS),
+        "receipt_gates": len(RECEIPT_GATE_IDS),
+        "gates_possible_including_the_refusal_only_gate":
+            len(LD.rows) + len(RECEIPT_GATE_IDS) + len(CLOSING_GATE_IDS)
+            + len(REFUSAL_ONLY_GATES),
+        "the_refusal_only_gate": sorted(REFUSAL_ONLY_GATES),
         "census_rows": len(S["form_census"]["rows"])}
     if mut("MUT-SEAL"):
         payload["arena"] = dict(payload["arena"])
@@ -4143,12 +5692,38 @@ def seal_and_write(S, write, paper_bytes):
     unsealed = [k for k in payload
                 if k not in SEAL.by_key and k not in DECLARED_UNSEALED]
     moved = SEAL.reverify(payload)
+
+    rtext = json.dumps({k: v for k, v in payload.items()
+                        if k not in POOL_EXCLUDED},
+                       sort_keys=True, default=str)
+    if mut("MUT-MUST-NOT-RECEIPT"):
+        rtext = rtext + " a string tension in the receipt"
+    rlow = mnorm(rtext)
+    rinert = [d[:40] for d in RECEIPT_WITHHOLDING if mnorm(d) not in rlow]
+    for d in RECEIPT_WITHHOLDING:
+        rlow = rlow.replace(mnorm(d), " ")
+    rhits = [w for w in MUST_NOT if mnorm(w) in rlow]
+    LD.gate("G-MUST-NOT-OVER-THE-RECEIPT",
+            "the must-not vocabulary is swept over the SERIALIZED RECEIPT as "
+            "well as over the paper, with the withholding strings this unit "
+            "publishes removed first and the falsifier registry -- which "
+            "describes its own injections -- excluded by key.  Every "
+            "withholding string the sweep may remove must itself be LOCATED "
+            "in the receipt, so an exemption that is carried and never used "
+            "is a hole rather than a courtesy.  The wall is therefore a "
+            "guarantee about the delivered bytes and not a fact about "
+            "today's run",
+            not rhits and not rinert,
+            "must-not vocabulary in the receipt: %s; %d withholding strings, "
+            "%d not located %s"
+            % (rhits, len(RECEIPT_WITHHOLDING), len(rinert), rinert[:3]))
     ids = [r["gate"] for r in LD.rows]
     ls = S.get("ledger_shape", {})
     shape_ok = ("paper_coverage" not in S) or (
         all(gx in ids for gx in PAPER_GATE_IDS)
+        and all(gx in ids for gx in RECEIPT_GATE_IDS)
         and len(LD.rows) == ls.get("gates_closed_before_the_paper_gates", 0)
-        + ls.get("paper_gates", 0))
+        + ls.get("paper_gates", 0) + ls.get("receipt_gates", 0))
     LD.gate("G-SEAL-INTEGRITY",
             "the manifest is TOTAL and the seal is checked before anything "
             "reaches the disk: every published top-level key is either "
@@ -4179,10 +5754,15 @@ def seal_and_write(S, write, paper_bytes):
         with open(tmp, "w") as fh:
             fh.write(data)
         tmps.append((tmp, p))
-    back = json.loads(open(tmps[1][0]).read())
+    raw_receipt = open(tmps[1][0]).read()
+    back = json.loads(raw_receipt)
     disk_bad = SEAL.reverify(back)
     txt_ok = open(tmps[0][0]).read() == outtxt
-    if disk_bad or not txt_ok:
+    blob_ok = raw_receipt == blob
+    chain_ok = back["gate_digests"] == [
+        digest({"prev": "GENESIS" if i == 0 else back["gate_digests"][i - 1],
+                "row": r}) for i, r in enumerate(back["gates"])]
+    if disk_bad or not txt_ok or not blob_ok or not chain_ok:
         for tmp, _p in tmps:
             if os.path.exists(tmp):
                 os.remove(tmp)
@@ -4192,14 +5772,25 @@ def seal_and_write(S, write, paper_bytes):
             "promotion: both files are written as temporaries, the receipt "
             "is read back from the filesystem and every sealed object must "
             "still carry its gate-time digest, the transcript must be "
-            "byte-identical to the string this run emitted -- and only a "
-            "passing check promotes them.  A refusal removes the temporaries "
-            "and leaves the published artifacts untouched",
-            not disk_bad and txt_ok,
+            "byte-identical to the string this run emitted, THE RECEIPT MUST "
+            "BE BYTE-IDENTICAL TOO -- which covers the declared-unsealed "
+            "keys, the gate ledger and its chain among them, that a "
+            "seal-only comparison cannot reach -- and the chain is "
+            "recomputed from the bytes read back.  Only a passing check "
+            "promotes, and what is promoted is the verified string itself, "
+            "rewritten to the temporary immediately before the rename, so "
+            "the invariant is structural and not positional.  A refusal "
+            "removes the temporaries and leaves the published artifacts "
+            "untouched",
+            not disk_bad and txt_ok and blob_ok and chain_ok,
             "%d sealed objects moved on the way to disk %s; transcript "
-            "byte-identical: %s; promoted only after this check passed"
-            % (len(disk_bad), disk_bad[:3], txt_ok))
-    for tmp, p in tmps:
+            "byte-identical: %s; receipt byte-identical: %s; chained ledger "
+            "verified from the bytes read back: %s; promoted only after this "
+            "check passed"
+            % (len(disk_bad), disk_bad[:3], txt_ok, blob_ok, chain_ok))
+    for (tmp, p), data in zip(tmps, (outtxt, blob)):
+        with open(tmp, "w") as fh:
+            fh.write(data)
         os.replace(tmp, p)
     return payload, 2
 
@@ -4216,10 +5807,15 @@ def run(write=True, paper_gates=True):
         % (len(SOURCES), len(PATH_VALUES), len(VERBATIM)))
     build_arena(S, pv)
     measure_chart_and_gauge(S, pv)
+    measure_the_merging_index_law(S)
     say("  arena: %d coins, %d links, %d plaquettes; gauge orbits %d and %d"
         % (S["arena"]["coins"], S["arena"]["links"], S["arena"]["plaquettes"],
            S["residual_gauge"]["orbits_anchored"],
            S["residual_gauge"]["orbits_extension"]))
+    say("  the merging index 8/gcd(L,8): %s at the declared sizes %s -- one "
+        "wherever eight divides L, where nothing merges"
+        % ([r["the_merging_index"] for r in S["merging_index_law"]["rows"]],
+           [r["L"] for r in S["merging_index_law"]["rows"]]))
     rows = run_form_census(S, pv)
     for r in rows:
         say("    %-22s group %-6d orbits %-12d couplings %d"
@@ -4313,6 +5909,7 @@ def run(write=True, paper_gates=True):
     S["code_sha256_12"] = bdigest(open(os.path.abspath(__file__), "rb").read())
     ls = {"gates_closed_before_the_paper_gates": len(LD.rows) + 1,
           "paper_gates": len(PAPER_GATE_IDS),
+          "receipt_gates": len(RECEIPT_GATE_IDS),
           "closing_gates": len(CLOSING_GATE_IDS),
           "objects_sealed_before_the_paper_gates": len(SEAL.man)}
     if mut("MUT-LEDGER-SHAPE"):
@@ -4324,11 +5921,14 @@ def run(write=True, paper_gates=True):
             "the declared list, and the gate total includes this gate",
             ls["objects_sealed_before_the_paper_gates"] == len(SEAL.man)
             and ls["gates_closed_before_the_paper_gates"] == len(LD.rows) + 1
-            and ls["paper_gates"] == len(PAPER_GATE_IDS),
+            and ls["paper_gates"] == len(PAPER_GATE_IDS)
+            and ls["receipt_gates"] == len(RECEIPT_GATE_IDS),
             "%d sealed objects published against a manifest of %d; %d gates "
-            "closed including this one; %d paper gates declared"
+            "closed including this one; %d paper gates and %d receipt-wall "
+            "gates declared"
             % (ls["objects_sealed_before_the_paper_gates"], len(SEAL.man),
-               ls["gates_closed_before_the_paper_gates"], ls["paper_gates"]))
+               ls["gates_closed_before_the_paper_gates"], ls["paper_gates"],
+               ls["receipt_gates"]))
     S["ledger_shape"] = ls
     SEAL.take("THE LEDGER SHAPE", "ledger_shape",
               "G-LEDGER-SHAPE-IS-CONSISTENT", S["ledger_shape"])
@@ -4342,13 +5942,13 @@ def run(write=True, paper_gates=True):
         LD.gate("G-PAPER-PRESENT", "the paper must exist to be gated", False,
                 "missing %s" % PAPER_REL)
 
-    payload, closing = seal_and_write(S, write, paper_bytes)
-    say("")
-    say(verdict)
     say("")
     say("GATES %d (+%d closing) :: MUTANTS %d :: ANCHORS %d :: SEALED %d"
-        % (len(LD.rows) - closing, closing, len(MUTANTS),
+        % (len(LD.rows), len(CLOSING_GATE_IDS), len(MUTANTS),
            len(SOURCES) + len(PATH_VALUES) + len(VERBATIM), len(SEAL.man)))
+    payload, _closing = seal_and_write(S, write, paper_bytes)
+    say("")
+    say(verdict)
     return payload
 
 
@@ -4410,6 +6010,11 @@ EXIT CONVENTIONS (they invert the usual reading):
   --mutant NAME   0 = the mutant DIED ON ITS DECLARED TARGET GATE
   --all-mutants   0 = every mutant died on target
   unknown flag    2
+
+--list-gates runs the pipeline WITHOUT WRITING and lists the gates that
+actually closed, followed by the two that close after the ledger snapshot
+and the one that exists only to refuse -- so the listing is the ledger and
+not the set of mutant targets.
 """
 
 
@@ -4438,8 +6043,19 @@ def main(argv):
         return 0
     QUIET = bool(args.get("quiet"))
     if args.get("list-gates"):
-        for gx in sorted({m[1] for m in MUTANTS}):
+        globals()["QUIET"] = True
+        try:
+            run(write=False, paper_gates=True)
+        except GateFail as e:                        # pragma: no cover
+            sys.stderr.write("REFUSED :: %s\n" % e)
+            return 1
+        for gx in sorted(LD.ids):
             print(gx)
+        for gx in sorted(CLOSING_GATE_IDS):
+            if gx not in LD.ids:
+                print("%s   (closes after the ledger snapshot)" % gx)
+        for gx in sorted(REFUSAL_ONLY_GATES):
+            print("%s   (refusal only; closes on no clean path)" % gx)
         return 0
     if args.get("list-mutants"):
         for nm, tg, wh, _p in MUTANTS:

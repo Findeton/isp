@@ -9737,3 +9737,81 @@ this commit; memory sealed next.
 
 **Programme count: TWENTY-SEVEN terminals; zero false
 computed numbers surviving anywhere in v14.**
+
+## 2026-08-12 — ACT REPAIR DELIVERED, COMMITTED AS-IS: Z1–Z12 COMPLETE; THE FOUR OUTCOME WORDS DEMONSTRATED THROUGH THE REAL CENSUS; THE MERGING-INDEX LAW MEASURED 4/2/1/1; A DISK-INCIDENT DISCLOSED, RESTORATION VERIFIED BY THE ORCHESTRATOR (v14 LEDGER #306)
+
+**Files (committed as delivered, pre-battery):**
+v14/paper-34-act.md (d933221780ed); v14/code/act_exact.py
+(a90559ee0e0f); v14/code/act_output.txt (a3785567e6eb);
+v14/code/act_receipt.json (7fd1267bddc7).  Delivered word
+ACT-FORM-RELATIVE stands.
+
+**NO DELIVERED MEASURED NUMBER MOVED:** key-by-key receipt
+diff — 3 changed values are exactly the 3 ORDERED verdict
+words (falsifier → HIT-ON-THE-ACTION-ROUTE-NOT-AT-
+COVARIANCE; grain_degeneracy → REACHABLE-DIMENSION-AND-
+INDUCED-PARTITION-ARE-NOT; density_witness → the
+monotone-family wording); 6 keys renamed
+obstruction→obstruction_over_the_declared_field with
+identical values; every delivered numeral survives at ≥ its
+old multiplicity.
+
+**The twelve orders (highlights):** Z1 the synthetic-arena
+control drives three declared coin families through the
+REAL census functions — SINGLETON-I → ACT-FORM-FORCED,
+TWIST-ORBIT-X → ACT-GIBBS, NOT-CLOSED → ACT-BLOCKED-AT, the
+delivered arena → ACT-FORM-RELATIVE; all four words
+emitted; G-OUTCOME-FEASIBILITY (pigeonhole floors: least
+orbit count 40 — FORCED/GIBBS were closed by counting
+before the run, now measured in-unit).  Z2 the Wilson
+covariance leg exhaustive: raw trace fails 13/32 anchored
+(95/128 extension), the conjugation-symmetric part 0
+failures; grains_admitting COMPUTED (the typed literal
+gone).  Z3 the reachable-sets gate (the 2¹⁶ raise, Z =
+524920, 16th-not-32nd power: in at PLAQUETTE+SITE, out at
+LINK).  Z4 the falsifier head two-part (NOT-HIT at the
+pin's wording 12/12 full-range; HIT on the action route);
+"first quantity free" deleted.  **Z5 THE MERGING-INDEX LAW
+MEASURED: L = 2/4/8/16 → index 4/2/1/1, residual checked
+against gcd(L,8); the odd-twist lattice-sensitivity in §10;
+the POT boundary stated.**  Z6 the SMU carve-out (8 vs 4,
+index 2).  Z7 the target census counted (4 of 10 run, 5 in
+the fibre, one named unrun); **the control's fibre ALL SIX
+members measured — none reachable.**  Z8 THE-NAMED-TARGETS
+priced; the closure claim a gated monotone family (5
+denominators, strictly decreasing, best 1/10⁴).  Z9 12
+header rows rendered from receipt keys and bound; POLARITY
+4→14 fragments; spelled numerals scanned.  Z10 artifact
+integrity = total byte equality + chain recomputation,
+promoting the VERIFIED string; 23 consumers real.  Z11 the
+closed forms verified (= census orbit counts = coupling+1).
+Z12 all 22 minors.  Instrument: 63 gates, 68 mutants, 67
+anchors, 44 sealed.
+
+**Worker battery:** plain ×2; off-tree git-less at seeds
+0/99991; 14/14 hostile argv; selftest fatal ×3 classes;
+**68/68 out-of-harness dead-on-target**; 47 of 48
+injections die at named gates (the 48th survives BY DESIGN
+— the promoted receipt is the verified object, checked);
+566+4 numerals 0 unmatched; 9 totals from live registries.
+**FOUR extra defects fixed:** a LIVE phantom consumer in
+the delivered object (PV-P23-SLICE → the gate now BUILT +
+MUT-CARRIER); digest hex-runs leaking into the numeral
+pool; an inert case-sensitive falsifier; a totals
+undercount.
+
+**INCIDENT (disclosed by the worker, verified by the
+orchestrator):** during the machine-wide disk exhaustion
+the injection harness's cd failed and three injections ran
+against the repo — smu_receipt.json deleted,
+r5_gauge_receipt.json appended, paper-34-act.md deleted.
+The worker restored both parents from HEAD, verified all
+ten pinned parents against their digests, rebuilt the
+paper, re-ran the entire battery from scratch; the harness
+rewritten to absolute-path single-slot trees.  **Orchestrator
+verification: git diff vs HEAD for smu_receipt.json /
+r5_gauge_receipt.json / paper-27-smu.md EMPTY; git status
+shows only the four ACT files (plus the live PER-R
+worker's and FAC's own deliverables).  Restoration
+CONFIRMED.**  Orchestrator battery launches next; terminal
+seal on green.
