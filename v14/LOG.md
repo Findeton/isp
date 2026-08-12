@@ -8028,3 +8028,42 @@ asserted-not-measured constructor claim; a vacuous
 antisymmetric-0 predicate; P3's word typed; a licensing
 looseness costing nothing here).  → adjudication when K3
 lands.
+
+## 2026-08-11 — LOR EFFECTUS REVIEW LANDED (K2): AWF — THE SLOGAN INVERTED (PLACES ARE QUADRATIC-CHEAP, DEPTH EXPONENTIAL); THE LINKS SENTENCE LICENSED-AND-STRONGER; THE LIVE-CUT LAW FOUND (v14 LEDGER #261)
+
+v14/review-lor-effectus.md frozen.  **Grade AWF; 50
+recomputations, 0 disagreements, no false number** (the whole
+arena from nothing; Aut=432 by backtracking; the I7 box
+361/261; conventions surfaced: the 72 are ORDERED schedules;
+the box is n₁,n₂≤6, n₃≤12).  THREE MAJORS, all licensure:
+**M1 "places are logarithmically expensive" INVERTS the
+measured scaling — places = L² = R² at dyadic budgets
+(9/36/144/576): QUADRATIC, CHEAP; what is logarithmic is
+DEPTH, which costs R = 3·2^k — exponential.  [ORCHESTRATOR
+CORRECTION OF RECORD: my #252 bracket carried the inverted
+slogan.]**  M2 COMPOSE-AND-AGREE is FORCED, not
+discriminating (04's fiber a single point at all 27; 06's
+support inside it — stage 4 a corollary of stage 1; R=12
+named as the first arena with teeth).  M3 the extended
+carrier — the verdict's own object — missing from the choice
+inventory (necessity forced ARITY-DEAD; the choice declared
+and uncensused; row 14 drafted).  RULINGS: **"the new places
+are the old LINKS" is LICENSED and STRONGER than claimed
+(witness-independent — I7-STRICTness fixes the same 27 pairs
+at every witness); "relationships" licensed ONLY as a stamped
+process-side paraphrase** (the bare form invites
+"places-are-relations", which this arena refutes);
+**LOR↔OCC: one committed clause (CO-DIVISION-ACTOR-PAIR→LINK)
+proving load-bearing in two directions — not two independent
+confirmations** [= OCC-K2's demotion, converging]; the 3/4
+landing a FORCED RECORD-VECTOR IDENTITY (not self-similarity,
+not coincidence-pending); **864-vs-72 UNDERSTATED: the 792
+pass the RSQ standard's own FOUND verdict — structure never
+was the dictionary; weld-2's blade seen from the other
+side.**  ★ CONTRIBUTIONS: the abstract census done per
+witness (864/864 — the stamp was the only gap); the R=9
+control witness-independent (1,728/1,728); **THE LIVE-CUT LAW:
+at R = 3m the live cut count is 9m − 17 — closing the unit's
+own fourth successor question**; the synthesis: every forced
+result at R=6 is the same smallness (n=2 twice, m=2 once).
+→ adjudication when K1+K3 land.
