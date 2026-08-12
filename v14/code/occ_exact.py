@@ -68,10 +68,14 @@ CLI CONTRACT (the #82 minimum: argv parsed against a WHITELIST)
     --numbers       the census only; no paper gate, no sweep, nothing written
     --selftest      corrupts one declared anchor IN MEMORY, confirms the run
                     is refused, writes nothing, exits 1 (2 if it survives)
-    --mutant NAME   one declared falsifier, artifacts untouched
-    --break-anchor NAME     corrupts that source's expected digest
-    --verify-paper [PATH]   the paper gates against PATH
-    --list-gates / --list-mutants
+    --mutant NAME   one declared falsifier, artifacts untouched; EXITS 1 when
+                    the falsifier dies at the gate it names (on target) and 0
+                    when it does not, so a green exit is the finding
+    --break-anchor NAME     corrupts that source's expected digest; the run
+                    dies at G-PROVENANCE and EXITS 1
+    --verify-paper [PATH]   the paper gates against PATH; exits 0 when every
+                    gate passes and 1 at the first that does not
+    --list-gates / --list-mutants   print the registry and exit 0
     Any other argument, any unknown flag argument, any missing flag argument
     and any SECOND MODE FLAG exits 2.  Modes do not compose.
 
@@ -543,6 +547,38 @@ def walk_operator(A, B):
     return tuple(tuple(row) for row in W)
 
 
+WPOW = ((1, 0), (0, 1), (-1, -1))          # w^0, w^1, w^2 = -1 - w
+RECORD_PROBES = (
+    ("N-ALL-ZERO", tuple(0 for _c in range(NCELL))),
+    ("N-ALL-TWO", tuple(2 for _c in range(NCELL))),
+    ("N-CELL-INDEX-MOD-3", tuple(_c % 3 for _c in range(NCELL))),
+    ("N-SITE-INDEX-MOD-3", tuple(CELL_SITE[_c] % 3 for _c in range(NCELL))),
+)
+
+
+def walk_operator_at(A, B, nfield):
+    """THE COMMITTED WALK AT AN ARBITRARY COUNT FIELD.  The record enters the
+    walk only as D(n) = diag(w^{n(c)}) on the SOURCE cell, so W(n) = W_shift .
+    D(n) with D(n) a diagonal of unit-modulus ring elements.  This is the
+    object the record-blindness theorem is about (K2 R1/S-E2): a unit-modulus
+    diagonal cannot turn a zero into a nonzero, so the whole leak census is a
+    function of the walk's ZERO PATTERN and the record cannot move it."""
+    M = coin_matrix(A, B)
+    W = [[Z0] * NCELL for _ in range(NCELL)]
+    for s in range(9):
+        for l in range(3):
+            t = SITE_INDEX[vadd(SITES[s], LINKS[l])]
+            for lp in range(3):
+                src = cell(s, lp)
+                W[cell(t, l)][src] = zmul(WPOW[nfield[src] % 3], M[l][lp])
+    return tuple(tuple(row) for row in W)
+
+
+def support_pattern(W):
+    return tuple(tuple(1 if W[i][j] != Z0 else 0 for j in range(NCELL))
+                 for i in range(NCELL))
+
+
 def is_unitary(W, den2=9):
     """W* W = I exactly, at the declared denominator: per COLUMN PAIR."""
     bad = 0
@@ -606,25 +642,45 @@ def all_configs():
     return distinct, doubled
 
 
+GRAINS = ("CARRIER", "SITE", "ACTOR")
+
+
+def declared_load(grain, cells):
+    """THE LOAD A CONFIGURATION PUTS ON THE HEAVIEST OBJECT OF ITS DECLARED
+    GRAIN.  A grain is a map from the carrier into the objects a ceiling
+    counts: the CARRIER's own cells (the identity), the base SITE (a function
+    of the cell) or the ACTOR (a relation -- every cell has two).  Nothing is
+    special-cased here: a declaration is the predicate `load <= ceiling` and
+    both of its coordinates are parameters (K1 MAJOR-2, K2 MAJOR-3)."""
+    load = Counter()
+    for c in cells:
+        if grain == "CARRIER":
+            load[("CELL", c)] += 1
+        elif grain == "SITE":
+            load[("SITE", CELL_SITE[c])] += 1
+        else:
+            for a in CELL_PAIR[c]:
+                load[("ACTOR", a)] += 1
+    return max(load.values()) if load else 0
+
+
+def config_cells(cfg):
+    """the two excitations of a configuration, as cells with multiplicity."""
+    return [min(cfg), min(cfg)] if len(cfg) == 1 else sorted(cfg)
+
+
+def admits(grain, ceiling, cfg):
+    return declared_load(grain, config_cells(cfg)) <= ceiling
+
+
 def admissible_configs(grain, ceiling, shape):
-    """the configurations a declaration admits, per shape.  The antisymmetric
-    shape never carries a doubly occupied CELL at any ceiling -- that is the
-    wedge's own structure and not a declaration."""
+    """the configurations a declaration admits, per shape, BY EVALUATING THE
+    DECLARATION'S OWN PREDICATE.  The antisymmetric shape never carries a
+    doubly occupied CELL at any ceiling -- that is the wedge's own structure
+    and not a declaration."""
     distinct, doubled = all_configs()
-    out = []
-    for cfg in distinct:
-        c, d = sorted(cfg)
-        if grain == "ACTOR" and ceiling == 1 and share_an_actor(c, d):
-            continue
-        out.append(cfg)
-    if shape == "SYMMETRIC":
-        for cfg in doubled:
-            if ceiling >= 2:
-                out.append(cfg)
-            # a CARRIER ceiling of 1 forbids the doubled cell; an ACTOR
-            # ceiling of 1 forbids it a fortiori (both excitations would sit
-            # on both of the cell's two actors)
-    return out
+    universe = distinct + (doubled if shape == "SYMMETRIC" else [])
+    return [cfg for cfg in universe if admits(grain, ceiling, cfg)]
 
 
 def sector_element(W, shape, t, s):
@@ -687,16 +743,34 @@ def leak_census(W, grain, ceiling, shape):
             "target_set": sorted(tuple(sorted(t)) for t in targets)}
 
 
-def one_excitation_object(W):
+def one_excitation_space(grain, ceiling):
+    """the cells a declaration's own admissible two-excitation configurations
+    occupy -- the carrier of its one-excitation restriction, and a function of
+    the DECLARATION alone."""
+    space = set()
+    for sh in SHAPES:
+        for cfg in admissible_configs(grain, ceiling, sh):
+            space |= set(cfg)
+    return tuple(sorted(space))
+
+
+def one_excitation_object(W, grain, ceiling):
     """the ONE-EXCITATION restriction of a declared two-excitation theory, as
     an OBJECT: the configuration set, the transition matrix and the Born
-    shadow.  Every declaration restricts to this, which is why no
-    one-excitation measurement can tell them apart."""
-    configs = tuple(range(NCELL))
-    matrix = tuple(tuple(W[i][j] for j in range(NCELL)) for i in range(NCELL))
-    born = tuple(tuple(absq(W[i][j]) for j in range(NCELL))
-                 for i in range(NCELL))
-    return {"configs": configs, "matrix": matrix, "born": born}
+    shadow -- DERIVED FROM THE DECLARATION and not from the walk alone.
+
+    The configuration set is the set of cells the declaration's own admissible
+    two-excitation configurations occupy, so a declaration that forbids a cell
+    outright, or a ceiling of zero, produces a DIFFERENT object and the
+    comparison below has a way to fail.  (All three seats: K1 MAJOR-2, K2
+    MAJOR-3, K3 MAJOR-3 -- the defect paper-22 had already repaired at its own
+    K1 MINOR-3, reintroduced here and now repaired the same way.)  On the four
+    DECLARED declarations every restriction is the same 27-cell object, which
+    is the measured content of the row and not its construction."""
+    cs = one_excitation_space(grain, ceiling)
+    matrix = tuple(tuple(W[i][j] for j in cs) for i in cs)
+    born = tuple(tuple(absq(W[i][j]) for j in cs) for i in cs)
+    return {"configs": cs, "matrix": matrix, "born": born}
 
 
 # ===========================================================================
@@ -739,8 +813,17 @@ def p1_carrier():
         "actor_site_bijection": inj and sur,
         "pair_link_bijection": pair_bijection,
         "carrier_is_the_pair_leg": pair_bijection,
-        "actor_leg_covers_the_carrier": False,
-        "actor_leg_image_in_the_carrier": 9,
+        # COUNTED, never typed (K1 MINOR-1).  The ACTOR->SITE leg's image is a
+        # set of SITES and the carrier is a set of CELLS: the two are objects
+        # of different KIND, so what is published is the cardinality of the
+        # leg's image against the cardinality of the carrier, and not a
+        # covering.
+        "actor_leg_image_cardinality": len(set(actor_site.values())),
+        "carrier_cardinality": NCELL,
+        "actor_leg_image_and_the_carrier_are_the_same_kind": False,
+        "actor_leg_covers_the_carrier":
+            len(set(actor_site.values())) >= NCELL,
+        "actor_leg_image_in_the_carrier": len(set(actor_site.values())),
         "cell_to_actor_valence": inc,
         "actor_to_cell_valence": val,
         "cells_with_exactly_two_actors": cells_with_two_actors,
@@ -866,13 +949,52 @@ def p2_state_space(coupsrc):
                                       for t in OCCUPANCY_TOKENS))
     declared_dim = dims.get("DIM")
     declared_cells = dims.get("NCELL")
+    # THE CONSTRUCTOR CENSUS, MEASURED RATHER THAN ASSERTED (K1 MINOR-2).
+    # Every sequence constructor of the form [x] * N is read: the ones whose
+    # declared length is the carrier size are the state-carrying vectors, and
+    # a PAIR object would have to be built either over a product of the cells
+    # or at a length that is not the carrier's.  Both are counted.
+    dim_vectors, cell_vectors, other_vectors = 0, 0, []
+    pair_over_carrier, pair_elsewhere = [], []
+    PAIRING = ("combinations", "combinations_with_replacement", "product",
+               "permutations")
+    for n in ast.walk(tree):
+        if isinstance(n, ast.BinOp) and isinstance(n.op, ast.Mult):
+            for a, b in ((n.left, n.right), (n.right, n.left)):
+                if isinstance(a, (ast.List, ast.Tuple)) and len(a.elts) == 1 \
+                        and isinstance(b, ast.Name):
+                    if b.id == "DIM":
+                        dim_vectors += 1
+                    elif b.id == "NCELL":
+                        cell_vectors += 1
+                    else:
+                        other_vectors.append(b.id)
+        if isinstance(n, ast.Call) and isinstance(n.func, ast.Name) \
+                and n.func.id in PAIRING and n.args:
+            arg = ast.unparse(n.args[0])
+            row = "%s(%s)" % (n.func.id, arg)
+            if any(t in arg for t in ("DIM", "NCELL", "cell", "CELL")):
+                pair_over_carrier.append(row)
+            else:
+                pair_elsewhere.append(row)
     return {"functions": funcs, "parameters": len(params),
             "declared_DIM": declared_dim, "declared_NCELL": declared_cells,
             "carrier_matches_the_rebuild": declared_dim == NCELL
                                            and declared_cells == NCELL,
             "excitation_number_parameters": excitation_params,
-            "two_excitation_constructor_present": bool(excitation_params),
-            "verdict": ("NOT-AVAILABLE" if not excitation_params
+            "state_vectors_at_the_carrier_dimension": dim_vectors,
+            "sequence_constructors_at_the_carrier_size": cell_vectors,
+            "sequence_constructors_at_another_declared_length":
+                sorted(set(other_vectors)),
+            "pair_constructors_over_the_carrier": sorted(set(pair_over_carrier)),
+            "pair_constructors_over_other_objects":
+                len(set(pair_elsewhere)),
+            "pair_constructor_examples_elsewhere":
+                sorted(set(pair_elsewhere))[:4],
+            "two_excitation_constructor_present":
+                bool(excitation_params) or bool(pair_over_carrier),
+            "verdict": ("NOT-AVAILABLE"
+                        if not excitation_params and not pair_over_carrier
                         else "PRESENT")}
 
 
@@ -895,10 +1017,15 @@ def p2_fiber(pool):
     collapsed = ["|".join(sorted(v)) for v in distinct_spaces.values()]
     comparisons = 0
     disagreements = []
+    restriction_sizes = {}
+    distinct_objects = 0
     for name, W in pool:
         objs = {}
-        for did in DECLARATION_IDS:
-            objs[did] = one_excitation_object(W)
+        for did, grain, ceiling, _why in DECLARATIONS:
+            objs[did] = one_excitation_object(W, grain, ceiling)
+            restriction_sizes[did] = len(objs[did]["configs"])
+        distinct_objects = max(distinct_objects,
+                               len({digest(objs[d]) for d in DECLARATION_IDS}))
         for a, b in combinations(DECLARATION_IDS, 2):
             oa, ob = objs[a], objs[b]
             for k in ("configs", "matrix", "born"):
@@ -908,10 +1035,12 @@ def p2_fiber(pool):
                     if va != vb:
                         disagreements.append((name, a, b, k))
                 else:
-                    comparisons += len(va) * len(va[0])
+                    comparisons += len(va) * (len(va[0]) if va else 0)
                     if va != vb:
                         disagreements.append((name, a, b, k))
     return {"declarations": len(DECLARATIONS),
+            "one_excitation_restriction_sizes": restriction_sizes,
+            "distinct_one_excitation_objects": distinct_objects,
             "distinct_two_excitation_theories": len(distinct_spaces),
             "collapsed_pairs": sorted(collapsed),
             "configuration_counts": {
@@ -937,17 +1066,56 @@ def site_field(o):
     return [sum(o[cell(s, l)] for l in range(3)) for s in range(9)]
 
 
-def p3_closure(W):
+# THE COMMITTED EMISSION RULE'S DECLARED FIBER, inherited from the parent.
+# paper-20 declares F10-EMISSION-READING at fiber 2 -- "the Born menu against
+# the record menu; both run" -- and the committed rule is
+# emission_weights(reading, Jn, n, den) with the kernel k = q/M taken at each
+# site by law_transport_at(q).  Reading A takes q from the BORN vector PER
+# CELL; reading B takes q from the RECORD counts.  OCC declares the fiber
+# rather than inheriting it silently (K1 MAJOR-3).
+EMISSION_READINGS = (
+    ("A", "THE BORN MENU: q(l|x) is the state's own per-cell weight at the "
+          "site, so the state enters the kernel PER CELL.  This is the "
+          "reading the parent's coupled ensemble runs"),
+    ("B", "THE RECORD MENU: q(l|x) is the record's own count on the cell, so "
+          "the state does not enter the kernel at all"),
+)
+
+
+def emission_kernel(reading, field, record, s):
+    """ONE SITE'S EMISSION KERNEL, by the committed rule's own formula:
+    q = the declared menu at the site, M = sum(q), k = q/M (undefined when the
+    menu has no mass, exactly as law_transport_at returns k = None).  Exact
+    Fractions; the state-side input is the per-cell field under reading A and
+    the record under reading B."""
+    q = [Fraction(field[cell(s, i)]) if reading == "A"
+         else Fraction(record[cell(s, i)]) for i in range(3)]
+    M = sum(q)
+    if M == 0:
+        return None
+    return tuple(qi / M for qi in q)
+
+
+def kernel_str(k):
+    return "NONE" if k is None else ",".join(str(x) for x in k)
+
+
+def p3_closure(W, no_occupancy_coordinate_below):
     """P3 -- CLOSURE.  Can an actor carrying two excitations still divide?
 
     Three measurements, none of them a reading of the grammar's prose.
 
-    (a) THE BLINDNESS PAIR.  Two two-excitation configurations are built: P,
-        with two excitations on two DIFFERENT cells of one actor, and Q, with
-        two excitations on ONE cell.  They differ in cell occupation and they
-        agree, site for site, in the only state-side quantity the committed
-        emission rule reads.  So the committed rule cannot tell a doubly
-        occupied carrier from two singly occupied ones.
+    (a) THE BLINDNESS PAIR AND ITS CENSUS, PER DECLARED READING.  Two
+        two-excitation configurations are built: P, with two excitations on
+        two DIFFERENT cells of one actor, and Q, with two excitations on ONE
+        cell.  Their SITE fields agree; their CELL occupations differ.  The
+        committed emission rule's two declared readings are then applied to
+        them, and they do NOT agree with each other: under the RECORD menu the
+        state does not enter the kernel at all, so the rule is blind; under
+        the BORN menu the state enters PER CELL and the rule SEPARATES them.
+        Both are measured, over a census of every doubly occupied
+        configuration against every same-site partner, rather than asserted on
+        one witness (K1 MAJOR-3, K2 MINOR-5).
 
     (b) THE COMPLETION FIBER.  The committed emission rule is a rule for ONE
         excitation.  Three completions to two are constructed and all three
@@ -957,9 +1125,10 @@ def p3_closure(W):
         mass exactly 1 -- so the declaration the grammar is missing is
         verdict-relevant rather than cosmetic.
 
-    (c) DIVISION IS NEVER REFUSED.  Under every completion, a state whose
-        excitations sit on one carrier still has a nonempty emission menu.
-        The grammar has nothing with which to refuse it."""
+    (c) DIVISION IS NEVER REFUSED, PER COMPLETION.  Each completion's own
+        field is built FOR THE DOUBLY OCCUPIED STATE and its support measured,
+        so the published refusal count is a per-object read and not a
+        predicate that never sees the object (K3 MAJOR-6, #87)."""
     c0 = cell(SITE_INDEX[(0, 0)], 0)
     c1 = cell(SITE_INDEX[(0, 0)], 1)
     P = frozenset([c0, c1])
@@ -969,82 +1138,152 @@ def p3_closure(W):
     site_agree = sum(1 for i in range(9) if sP[i] == sQ[i])
     cell_agree = sum(1 for i in range(NCELL) if oP[i] == oQ[i])
 
-    # one step of the symmetric lift from the declared start configuration
+    # (a) THE TWO DECLARED READINGS, on the witness pair and then as a census.
+    # The record is the welded landing record, count one at every cell.
+    record = [1] * NCELL
+    s0 = CELL_SITE[c0]
+    readings = []
+    for rid, why in EMISSION_READINGS:
+        kP = emission_kernel(rid, oP, record, s0)
+        kQ = emission_kernel(rid, oQ, record, s0)
+        readings.append({"reading": rid, "why": why,
+                         "kernel_on_P": kernel_str(kP),
+                         "kernel_on_Q": kernel_str(kQ),
+                         "separates_the_witness_pair": kP != kQ})
+    # the census: every doubly occupied configuration against every one of its
+    # same-site partners -- the pairs the ceiling's question turns on
+    census_rows = 0
+    site_blind = 0
+    sep = {rid: 0 for rid, _w in EMISSION_READINGS}
+    for c in range(NCELL):
+        s = CELL_SITE[c]
+        oq = occupation_field(frozenset([c]))
+        for d, e in combinations([cell(s, i) for i in range(3)], 2):
+            op = occupation_field(frozenset([d, e]))
+            census_rows += 1
+            if site_field(op) == site_field(oq):
+                site_blind += 1
+            for rid, _w in EMISSION_READINGS:
+                if emission_kernel(rid, op, record, s) != \
+                        emission_kernel(rid, oq, record, s):
+                    sep[rid] += 1
+    blindness_census = {
+        "pairs": census_rows,
+        "site_field_cannot_separate": site_blind,
+        "rows": [{"reading": rid, "separates": sep[rid], "pairs": census_rows}
+                 for rid, _w in EMISSION_READINGS],
+        "readings": len(EMISSION_READINGS)}
+
+    # one step of the symmetric lift from each declared start configuration
     distinct, doubled = all_configs()
     universe = distinct + doubled
-    amps = {}
-    for t in universe:
-        v = sector_element(W, "SYMMETRIC", t, P)
-        if v != Z0:
-            amps[t] = v
-    total = sum(absq(v) for v in amps.values())
-    occ = [0] * NCELL
-    for t, v in amps.items():
-        w = absq(v)
-        if len(t) == 1:
-            occ[min(t)] += 2 * w
-        else:
-            a, b = sorted(t)
-            occ[a] += w
-            occ[b] += w
+
+    def step(start):
+        amps = {}
+        for t in universe:
+            v = sector_element(W, "SYMMETRIC", t, start)
+            if v != Z0:
+                amps[t] = v
+        tot = sum(absq(v) for v in amps.values())
+        occf = [0] * NCELL
+        for t, v in amps.items():
+            w = absq(v)
+            if len(t) == 1:
+                occf[min(t)] += 2 * w
+            else:
+                a, b = sorted(t)
+                occf[a] += w
+                occf[b] += w
+        return tot, occf
+
     # E1 per excitation; E2 per configuration, one event; E3 site then record
-    E1 = [Fraction(o, total) for o in occ]
-    E2 = [Fraction(o, 2 * total) for o in occ]
-    smass = [sum(E2[cell(s, l)] for l in range(3)) for s in range(9)]
-    E3 = [smass[c // 3] * Fraction(1, 3) for c in range(NCELL)]
-    completions = [
-        ("E1-PER-EXCITATION", E1,
+    def complete(occf, tot):
+        """the three completions, as ONE function of a state's own weight
+        field, so the SAME construction runs on P and on Q (K3 MAJOR-6)."""
+        e1 = [Fraction(o, tot) for o in occf]
+        e2 = [Fraction(o, 2 * tot) for o in occf]
+        sm = [sum(e2[cell(s, l)] for l in range(3)) for s in range(9)]
+        e3 = [sm[c // 3] * Fraction(1, 3) for c in range(NCELL)]
+        return [e1, e2, e3]
+
+    COMPLETION_IDS = [
+        ("E1-PER-EXCITATION",
          "each excitation emits through the committed one-excitation rule"),
-        ("E2-PER-CONFIGURATION", E2,
+        ("E2-PER-CONFIGURATION",
          "one event per step, drawn from the pair's own joint weight"),
-        ("E3-SITE-THEN-RECORD", E3,
+        ("E3-SITE-THEN-RECORD",
          "the site from the marginal, the link from the record menu"),
     ]
+    total, occ = step(P)
+    qtotal, qocc = step(Q)
+    fields = complete(occ, total)
+    qfields = complete(qocc, qtotal)
+    completions = [(cid, fields[i], why)
+                   for i, (cid, why) in enumerate(COMPLETION_IDS)]
     rows = []
-    for cid, field, why in completions:
-        tot = sum(field)
+    for i, (cid, why) in enumerate(COMPLETION_IDS):
+        tot = sum(fields[i])
+        qtot = sum(qfields[i])
         rows.append({"completion": cid, "why": why,
                      "emission_total": str(tot),
                      "preserves_the_parent_identity": tot == 1,
-                     "support": sum(1 for f in field if f != 0)})
+                     "support": sum(1 for f in fields[i] if f != 0),
+                     # THE Q-SIDE, built for the doubly occupied state itself
+                     "emission_total_on_the_doubly_occupied_state": str(qtot),
+                     "support_on_the_doubly_occupied_state":
+                         sum(1 for f in qfields[i] if f != 0),
+                     "refuses_a_division_to_the_doubly_occupied_state":
+                         all(f == 0 for f in qfields[i])})
     diffs = []
     for (ai, (an, af, _w1)), (bi, (bn, bf, _w2)) in combinations(
             list(enumerate(completions)), 2):
         diffs.append({"pair": "%s|%s" % (an, bn),
                       "cells_differing":
                           sum(1 for i in range(NCELL) if af[i] != bf[i])})
-    # (c) the doubly occupied carrier still emits, under every completion
-    qamps = {}
-    for t in universe:
-        v = sector_element(W, "SYMMETRIC", t, Q)
-        if v != Z0:
-            qamps[t] = v
-    qtotal = sum(absq(v) for v in qamps.values())
-    qocc = [0] * NCELL
-    for t, v in qamps.items():
-        w = absq(v)
-        if len(t) == 1:
-            qocc[min(t)] += 2 * w
-        else:
-            a, b = sorted(t)
-            qocc[a] += w
-            qocc[b] += w
-    refusals = sum(1 for cid, field, _why in completions
-                   if sum(qocc) == 0)
+    # (c) the doubly occupied carrier still emits, PER COMPLETION
+    refusals = sum(1 for r in rows
+                   if r["refuses_a_division_to_the_doubly_occupied_state"])
+    menus_nonempty = sum(
+        1 for r in rows if r["support_on_the_doubly_occupied_state"] > 0)
+    # P3's WORD IS DERIVED FROM ITS THREE LEGS, never typed (K1 MINOR-4,
+    # K3 MINOR-7).  The legs are: the grammar has no occupancy coordinate to
+    # condition on (P2's own vocabulary census, handed in); no completion
+    # refuses a division to the doubly occupied state; and every completion
+    # leaves that state's emission menu nonempty.
+    legs = {"no_occupancy_coordinate_to_condition_on":
+                bool(no_occupancy_coordinate_below),
+            "completions_that_refuse": refusals,
+            "completions_whose_menu_is_nonempty": menus_nonempty,
+            "completions": len(rows)}
+    if refusals > 0:
+        derived = "CLOSURE-REQUIRED"
+    elif legs["no_occupancy_coordinate_to_condition_on"] \
+            and menus_nonempty == len(rows):
+        derived = "SILENT-AND-VACUOUSLY-SATISFIED"
+    else:
+        derived = "CLOSURE-AVAILABLE"
     return {
         "blindness_pair": {
             "P": sorted(P), "Q": sorted(Q),
-            "site_fields_agree_at": site_agree, "sites": 9,
+            # COUNTED, never typed: the site field's own length
+            "site_fields_agree_at": site_agree, "sites": len(sP),
             "cell_occupations_agree_at": cell_agree, "cells": NCELL,
-            "the_committed_rule_can_separate_them": site_agree != 9},
+            "the_site_field_can_separate_them": site_agree != 9},
+        "emission_readings": readings,
+        "emission_reading_fiber": len(EMISSION_READINGS),
+        "readings_that_separate_the_witness_pair":
+            sum(1 for r in readings if r["separates_the_witness_pair"]),
+        "blindness_census": blindness_census,
         "completions": rows,
-        "completion_fiber": len(completions),
+        "completion_fiber": len(rows),
         "completions_preserving_the_parent_identity":
             sum(1 for r in rows if r["preserves_the_parent_identity"]),
         "pairwise_field_differences": diffs,
-        "doubly_occupied_carrier_emits": qtotal > 0 and sum(qocc) > 0,
+        "doubly_occupied_carrier_emits": qtotal > 0 and menus_nonempty > 0,
+        "completions_whose_menu_is_nonempty": menus_nonempty,
         "completions_that_refuse_a_division": refusals,
-        "verdict": "SILENT-AND-VACUOUSLY-SATISFIED",
+        "legs": legs,
+        "verdict": derived,
     }
 
 
@@ -1458,6 +1697,7 @@ def build_census(texts, receipts):
             "unitarity_violations": is_unitary(W),
             "monomial": is_monomial(W),
             "row_supports": sorted(set(row_supports(W)))})
+    p2voc = p2_no_occupancy_coordinate(texts, receipts)
     p4 = p4_pool(pool, receipts["A-P22REC"])
     sel = selection_census(p4["rows"])
     # the two SET EQUALITIES, per coin
@@ -1468,20 +1708,41 @@ def build_census(texts, receipts):
     same_site_cfgs = sorted(
         tuple(sorted((a, b))) for a, b in combinations(range(NCELL), 2)
         if CELL_SITE[a] == CELL_SITE[b])
+    same_actor_set = {tuple(x) for x in same_actor_cfgs}
     seteq = []
     for name, W in pool:
         r_carrier = leak_census(W, "CARRIER", 1, "SYMMETRIC")
         r_actor_a = leak_census(W, "ACTOR", 1, "ANTISYMMETRIC")
         r_actor_s = leak_census(W, "ACTOR", 1, "SYMMETRIC")
+        srcs = [tuple(s) for s in r_carrier["source_set"]]
+        leaks_here = bool(r_carrier["leak_cells"])
         seteq.append({
             "coin": name,
             "carrier_grain_leak_sources": len(r_carrier["source_set"]),
-            "carrier_grain_sources_are_the_same_actor_configurations":
+            # THE SET EQUALITY IS WITH THE SAME-SITE SET (27), and the
+            # relation to the same-ACTOR set (135) is a STRICT CONTAINMENT --
+            # both named, both published with their cardinalities, and the
+            # key names the object it holds (all three seats: K1 MAJOR-1,
+            # K2 MAJOR-1, K3 MAJOR-4).
+            "carrier_grain_sources_are_the_same_site_configurations":
                 (r_carrier["source_set"] == same_site_cfgs
-                 if r_carrier["leak_cells"] else None),
+                 if leaks_here else None),
+            "carrier_grain_sources_are_the_same_actor_configurations":
+                (r_carrier["source_set"] == same_actor_cfgs
+                 if leaks_here else None),
+            "carrier_grain_sources_inside_the_same_actor_set":
+                sum(1 for s in srcs if s in same_actor_set),
+            "same_actor_configurations": len(same_actor_cfgs),
+            "carrier_grain_sources_are_actor_grain_forbidden":
+                (all(s in same_actor_set for s in srcs) if leaks_here
+                 else None),
+            "carrier_grain_containment_is_strict":
+                ((len(srcs) < len(same_actor_cfgs)) if leaks_here else None),
+            "same_actor_configurations_excluded":
+                (len(same_actor_cfgs) - len(srcs) if leaks_here else None),
             "carrier_grain_sources_share_an_actor":
-                all(list(s) in [list(x) for x in same_actor_cfgs]
-                    for s in r_carrier["source_set"]),
+                (all(s in same_actor_set for s in srcs) if leaks_here
+                 else None),
             "actor_grain_shape_leak_sets_coincide":
                 (r_actor_a["source_set"] == r_actor_s["source_set"]
                  and r_actor_a["target_set"] == r_actor_s["target_set"]
@@ -1494,6 +1755,83 @@ def build_census(texts, receipts):
     controls = [control_arena("C1-SUBSET-CARRIER", 9, "SUBSET"),
                 control_arena("C2-MULTISET-CARRIER", 9, "MULTISET"),
                 control_arena("C3-ONE-CARRIER", 1, "SUBSET")]
+
+    # ---- K2's THREE STRENGTHENINGS, adopted and measured here -------------
+    # (i) THE MECHANISM THEOREM.  Under a hard core at grain G the
+    # ANTISYMMETRIC sector's forbidden set is {distinct pairs colliding under
+    # G}, which is EMPTY IF AND ONLY IF G is the carrier's own grain.  That is
+    # why the automatic closure which makes exclusion SELECTIVE can live at
+    # the carrier's grain and structurally nowhere else.  Measured over the
+    # three grains the arena admits, per object.
+    n_distinct = len(all_configs()[0])
+    wedge = []
+    for g in GRAINS:
+        adm_a = admissible_configs(g, 1, "ANTISYMMETRIC")
+        adm_s = admissible_configs(g, 1, "SYMMETRIC")
+        wedge.append({
+            "grain": g,
+            "is_the_carrier_grain": g == "CARRIER",
+            "antisymmetric_admissible": len(adm_a),
+            "antisymmetric_forbidden": n_distinct - len(adm_a),
+            "antisymmetric_forbidden_set_is_empty":
+                n_distinct - len(adm_a) == 0,
+            "symmetric_admissible": len(adm_s)})
+    wedge_theorem_holds = all(
+        r["antisymmetric_forbidden_set_is_empty"] == r["is_the_carrier_grain"]
+        for r in wedge)
+    # (ii) THE THIRD GRAIN.  CELL_SITE is a genuine FUNCTION from cells to
+    # nine objects -- unlike the ACTOR "grain", which is a relation -- so it
+    # is a declarable grain the delivered two-point menu did not carry.  The
+    # head's ONLY is tested against it: does a hard core at the site grain
+    # select a shape?
+    site_rows = []
+    for name, W in pool:
+        rs = leak_census(W, "SITE", 1, "SYMMETRIC")
+        ra = leak_census(W, "SITE", 1, "ANTISYMMETRIC")
+        closed = [sh for sh, r in (("SYMMETRIC", rs), ("ANTISYMMETRIC", ra))
+                  if r["closed"]]
+        site_rows.append({
+            "coin": name, "admissible": rs["admissible"],
+            "symmetric_leak_cells": rs["leak_cells"],
+            "antisymmetric_leak_cells": ra["leak_cells"],
+            "shapes_closed": closed, "selects": len(closed) == 1,
+            "no_shape_closes": len(closed) == 0})
+    # (iii) RECORD BLINDNESS.  The count field enters the walk only as a
+    # unit-modulus DIAGONAL on the source cell, so it cannot turn a zero into
+    # a nonzero: the whole leak census is a function of the walk's zero
+    # pattern.  Measured, not argued -- the support pattern and every one of
+    # the 48 leak rows are recomputed at each declared probe field.
+    probe_rows = []
+    for pname, nfield in RECORD_PROBES:
+        support_same = 0
+        rows_same = 0
+        rows_total = 0
+        for (name, W), meta in zip(pool, pool_meta):
+            A = tuple(meta["a_numerator"])
+            B = tuple(meta["b_numerator"])
+            Wn = walk_operator_at(A, B, nfield)
+            if support_pattern(Wn) == support_pattern(W):
+                support_same += 1
+            base = [r for r in p4["rows"] if r["coin"] == name][0]
+            for did, grain, ceiling, _why in DECLARATIONS:
+                for sh in SHAPES:
+                    rows_total += 1
+                    rn = leak_census(Wn, grain, ceiling, sh)
+                    b = base["%s|%s" % (did, sh)]
+                    if (rn["leak_cells"] == b["leak_cells"]
+                            and rn["leaking_sources"] == b["leaking_sources"]
+                            and rn["targets_reached"] == b["targets_reached"]
+                            and rn["both_products_nonzero"]
+                            == b["both_products_nonzero"]):
+                        rows_same += 1
+        probe_rows.append({
+            "count_field": pname, "coins": len(pool),
+            "support_patterns_identical": support_same,
+            "leak_rows_identical": rows_same, "leak_rows": rows_total})
+    landing_identity = all(
+        walk_operator_at(tuple(m["a_numerator"]), tuple(m["b_numerator"]),
+                         tuple(1 for _c in range(NCELL))) == W
+        for (name, W), m in zip(pool, pool_meta))
     return {
         "coin_census": {"alphabet": len(alpha), "units": len(units),
                         "ring_solutions": len(sols),
@@ -1508,12 +1846,44 @@ def build_census(texts, receipts):
         "same_actor_configurations": len(same_actor_cfgs),
         "same_site_configurations": len(same_site_cfgs),
         "p1": p1_carrier(),
-        "p2_vocabulary": p2_no_occupancy_coordinate(texts, receipts),
+        "p2_vocabulary": p2voc,
         "p2_state_space": p2_state_space(texts["A-COUPSRC"]),
         "p2_fiber": p2_fiber(pool),
-        "p3": p3_closure(pool[[m["coin"] for m in pool_meta].index(
-            [m["coin"] for m in pool_meta if m["is_grover"]][0])][1]),
+        "p3": p3_closure(
+            pool[[m["coin"] for m in pool_meta].index(
+                [m["coin"] for m in pool_meta if m["is_grover"]][0])][1],
+            p2voc["occupancy_shaped_names"] == 0),
         "controls": controls,
+        "wedge_theorem": {
+            "rows": wedge, "grains": len(GRAINS),
+            "empty_iff_the_carrier_grain": wedge_theorem_holds,
+            "statement": "under a hard core at grain G the antisymmetric "
+                         "sector's forbidden set is the set of distinct-cell "
+                         "pairs that collide under G, and it is empty if and "
+                         "only if G is the carrier's own grain -- so the "
+                         "automatic closure that makes exclusion SELECTIVE "
+                         "exists at the carrier's grain and structurally "
+                         "nowhere else"},
+        "site_grain_arm": {
+            "grain": "SITE", "ceiling": 1, "rows": site_rows,
+            "coins": len(site_rows),
+            "admissible": site_rows[0]["admissible"],
+            "coins_that_select": sum(1 for r in site_rows if r["selects"]),
+            "coins_where_no_shape_closes":
+                sum(1 for r in site_rows if r["no_shape_closes"]),
+            "why": "CELL_SITE is a FUNCTION from the 27 cells onto nine "
+                   "objects, unlike the actor relation, so it is a third "
+                   "declarable grain; the head's ONLY is tested against it "
+                   "rather than left as a two-point census (K2 R1)"},
+        "record_blindness": {
+            "probes": probe_rows, "probe_fields": len(probe_rows),
+            "landing_record_identity": landing_identity,
+            "family_size": "3^%d" % NCELL,
+            "why": "the count field enters the walk only as D(n) = "
+                   "diag(w^{n(c)}), a unit-modulus diagonal on the source "
+                   "cell, so it cannot turn a zero into a nonzero and the "
+                   "leak census is a function of the zero pattern alone; the "
+                   "measured probes are the theorem's instances (K2 S-E2)"},
     }
 
 
@@ -1538,14 +1908,24 @@ def thesis_carrier(p1):
             else "T-CARRIER-PAIR")
 
 
-def thesis_grain(asym):
+def thesis_grain(asym, site_arm):
+    """the grain thesis is SELECTED by the measured selection census at every
+    grain coarser than the carrier -- the actor grain of the declared menu and
+    the site grain K2's review added -- and not typed."""
     return ("T-GRAIN-ANY"
-            if asym["exclusion_at_the_actor_grain_selects"] > 0
+            if (asym["exclusion_at_the_actor_grain_selects"] > 0
+                or site_arm["coins_that_select"] > 0)
             else "T-GRAIN-CARRIER")
 
 
 def pair(a, b):
     return "%s-OF-%s" % (a, b)
+
+
+def versus(a, b):
+    """two cardinalities of DIFFERENT KIND, compared as cardinalities and not
+    as a covering (K1 MINOR-1)."""
+    return "%s-VS-%s" % (a, b)
 
 
 def field_spec(R):
@@ -1569,8 +1949,9 @@ def field_spec(R):
             ("CO-DIVISION-PAIRS", p1["co_division_pairs"]),
             ("CELL-IS-A-CO-DIVISION-PAIR", p1["pair_link_bijection"]),
             ("ACTOR-SITE-BIJECTION", pair(p1["actors"], p1["actors"])),
-            ("ACTOR-LEG-COVERS-OF-THE-CARRIER",
-             pair(p1["actor_leg_image_in_the_carrier"], p1["carrier_cells"])),
+            ("ACTOR-LEG-IMAGE-CARDINALITY-AGAINST-THE-CARRIER",
+             versus(p1["actor_leg_image_cardinality"],
+                    p1["carrier_cardinality"])),
             ("CELLS-WITH-EXACTLY-TWO-ACTORS",
              pair(p1["cells_with_exactly_two_actors"], p1["carrier_cells"])),
             ("ACTORS-IN-EXACTLY-SIX-CELLS",
@@ -1580,7 +1961,8 @@ def field_spec(R):
             ("P1", p1["verdict"]),
         ]),
         ("OCC-POOL-AND-GRAIN", [
-            ("THESIS", THESIS_VOCABULARY[thesis_grain(aw)]),
+            ("THESIS", THESIS_VOCABULARY[thesis_grain(
+                aw, lk["site_grain_arm"])]),
             ("COIN-CLASSES", po["classes_up_to_phase"]),
             ("RING-SOLUTIONS", po["ring_solutions"]),
             ("NON-MONOMIAL-COINS", pair(po["non_monomial"], po["coins"])),
@@ -1590,9 +1972,22 @@ def field_spec(R):
              pair(lk["carrier_grain_symmetric_coins_leaking"], po["coins"])),
             ("CARRIER-GRAIN-ANTISYMMETRIC-LEAK-CELLS",
              lk["carrier_grain_antisymmetric_leak_cells"]),
-            ("CARRIER-GRAIN-LEAK-SOURCES-ARE-THE-SAME-ACTOR-CONFIGURATIONS",
+            ("CARRIER-GRAIN-ANTISYMMETRIC-FORBIDDEN-CONFIGURATIONS",
+             lk["carrier_grain_antisymmetric_forbidden_configurations"]),
+            ("CARRIER-GRAIN-LEAK-SOURCES-ARE-THE-SAME-SITE-CONFIGURATIONS",
              pair(lk["carrier_grain_set_equality_coins"],
                   lk["carrier_grain_symmetric_coins_leaking"])),
+            ("CARRIER-GRAIN-LEAK-SOURCES-ARE-THE-SAME-ACTOR-CONFIGURATIONS",
+             pair(lk["carrier_grain_same_actor_equality_coins"],
+                  lk["carrier_grain_symmetric_coins_leaking"])),
+            ("CARRIER-GRAIN-LEAK-SOURCES-ARE-ACTOR-GRAIN-FORBIDDEN",
+             pair(lk["carrier_grain_leak_sources"],
+                  lk["same_actor_configurations"])),
+            ("CARRIER-GRAIN-CONTAINMENT-IS-STRICT",
+             pair(lk["carrier_grain_strict_containment_coins"],
+                  lk["carrier_grain_symmetric_coins_leaking"])),
+            ("SAME-ACTOR-CONFIGURATIONS-EXCLUDED",
+             lk["same_actor_configurations_excluded"]),
             ("ACTOR-GRAIN-COINS-WHERE-BOTH-SHAPES-LEAK",
              pair(lk["actor_grain_both_shapes_leak_coins"], po["coins"])),
             ("ACTOR-GRAIN-LEAK-CELLS-NON-MONOMIAL",
@@ -1603,12 +1998,39 @@ def field_spec(R):
              pair(lk["actor_grain_shape_sets_coincide_coins"], po["coins"])),
             ("ACTOR-GRAIN-CANCELLATION-CELLS",
              lk["actor_grain_cancellation_cells"]),
-            ("ACTOR-GRAIN-SOURCES-LEAKING",
-             pair(lk["actor_grain_sources_leaking"],
+            ("ACTOR-GRAIN-SOURCES-LEAKING-MAX",
+             pair(lk["actor_grain_sources_leaking_max"],
                   lk["actor_grain_admissible"])),
-            ("ACTOR-GRAIN-TARGETS-REACHED",
-             pair(lk["actor_grain_targets_reached"],
+            ("ACTOR-GRAIN-SOURCES-LEAKING-MIN",
+             pair(lk["actor_grain_sources_leaking_min"],
+                  lk["actor_grain_admissible"])),
+            ("ACTOR-GRAIN-TARGETS-REACHED-MAX",
+             pair(lk["actor_grain_targets_reached_max"],
                   lk["actor_grain_forbidden"])),
+            ("ACTOR-GRAIN-TARGETS-REACHED-MIN",
+             pair(lk["actor_grain_targets_reached_min"],
+                  lk["actor_grain_forbidden"])),
+            ("ACTOR-GRAIN-COINS-WHERE-EVERY-ADMISSIBLE-SOURCE-LEAKS",
+             pair(lk["actor_grain_coins_where_every_admissible_source_leaks"],
+                  po["coins"])),
+            ("ACTOR-GRAIN-COINS-WHERE-EVERY-FORBIDDEN-TARGET-IS-REACHED",
+             pair(lk["actor_grain_coins_where_every_forbidden_target_is_"
+                     "reached"], po["coins"])),
+            ("WEDGE-FORBIDDEN-SET-EMPTY-IFF-THE-CARRIER-GRAIN",
+             pair(sum(1 for r in lk["wedge_theorem"]["rows"]
+                      if r["antisymmetric_forbidden_set_is_empty"]
+                      == r["is_the_carrier_grain"]),
+                  lk["wedge_theorem"]["grains"])),
+            ("SITE-GRAIN-COINS-THAT-SELECT",
+             pair(lk["site_grain_arm"]["coins_that_select"],
+                  lk["site_grain_arm"]["coins"])),
+            ("SITE-GRAIN-COINS-WHERE-NO-SHAPE-CLOSES",
+             pair(lk["site_grain_arm"]["coins_where_no_shape_closes"],
+                  lk["site_grain_arm"]["coins"])),
+            ("P4-IS-RECORD-BLIND-AT-THE-PROBED-COUNT-FIELDS",
+             pair(sum(1 for r in lk["record_blindness"]["probes"]
+                      if r["leak_rows_identical"] == r["leak_rows"]),
+                  lk["record_blindness"]["probe_fields"])),
             ("LEAK-ROUTES-AGREE",
              pair(lk["route_rows_agreeing"], lk["route_rows"])),
             ("PARENT-SPLIT-CITED",
@@ -1625,12 +2047,25 @@ def field_spec(R):
              pair(p2["fiber"]["distinct_two_excitation_theories"],
                   p2["fiber"]["declarations"])),
             ("P2-ONE-EXCITATION-RESTRICTIONS-AGREE",
-             pair(p2["fiber"]["one_excitation_comparisons"],
+             pair(p2["fiber"]["one_excitation_comparisons"]
+                  - p2["fiber"]["one_excitation_disagreements"],
                   p2["fiber"]["one_excitation_comparisons"])),
             ("P3", p3["verdict"]),
+            ("P3-EMISSION-READING-FIBER", p3["emission_reading_fiber"]),
             ("P3-BLINDNESS-PAIR-SITE-FIELDS-AGREE",
              pair(p3["blindness_pair"]["site_fields_agree_at"],
                   p3["blindness_pair"]["sites"])),
+            ("P3-SITE-FIELD-CANNOT-SEPARATE",
+             pair(p3["blindness_census"]["site_field_cannot_separate"],
+                  p3["blindness_census"]["pairs"])),
+            ("P3-RECORD-MENU-READING-SEPARATES",
+             pair([r for r in p3["blindness_census"]["rows"]
+                   if r["reading"] == "B"][0]["separates"],
+                  p3["blindness_census"]["pairs"])),
+            ("P3-BORN-MENU-READING-SEPARATES",
+             pair([r for r in p3["blindness_census"]["rows"]
+                   if r["reading"] == "A"][0]["separates"],
+                  p3["blindness_census"]["pairs"])),
             ("P3-COMPLETIONS-PRESERVING-THE-PARENT-IDENTITY",
              pair(p3["completions_preserving_the_parent_identity"],
                   p3["completion_fiber"])),
@@ -1648,13 +2083,22 @@ def field_spec(R):
             ("ARMS", pair(R["counts"]["distinct_outcome_words"], len(ar))),
             ("CONTROL-CAN-FIRE", R["counts"]["control_fires"]),
             ("CONTROL-CAN-FAIL", R["counts"]["control_fails"]),
+            ("SEED-CONDITIONAL", R["counts"]["seed_conditional"]),
             ("FIBER-PRICED", R["counts"]["fiber_priced"]),
             ("SCOPE", SCOPE_ROW),
         ]),
     ]
 
 
+# THE SEED CONDITIONAL'S OWN VERDICT, in the adjudicated words (K2 R2): it
+# does not denote at the carrier, AND when its injection premise is supplied
+# as a declaration at the grain it typed -- arm A2 -- its conclusion fails.
+SEED_CONDITIONAL_WORD = ("MISTYPED-AT-THE-CARRIER;"
+                         "REFUTED-AT-THE-GRAIN-IT-TYPED")
+
 SCOPE_ROW = ("TWO-EXCITATIONS-ONLY;ONE-RECORD;THE-WELDED-LANDING-RECORD;"
+             "P4-IS-RECORD-BLIND-OVER-THE-COUNT-FIELD-FAMILY;"
+             "FREE-LIFT-ONLY(U-TENSOR-U);GRAIN-MENU-AS-DECLARED;"
              "SHAPE-WORDS-ONLY;NO-PARTICLE-CLAIM;NO-BRAID-CLAIM;"
              "NO-GENERAL-N-CLAIM;NO-CONFIGURATION-MEASURE;"
              "COUNTS-ARE-COUNTING-ONLY;NO-CONTINUUM-CLAIM;"
@@ -1720,7 +2164,8 @@ def reconstruct(serialized, segs):
             if p1["excitation_to_actor_is_a_function"]
             else "THE-EXCITATION-RIDES-THE-CO-DIVISION-PAIR-NOT-THE-ACTOR")
     th_g = ("EXCLUSION-SELECTS-AT-EVERY-GRAIN"
-            if aw["exclusion_at_the_actor_grain_selects"] > 0
+            if (aw["exclusion_at_the_actor_grain_selects"] > 0
+                or lk["site_grain_arm"]["coins_that_select"] > 0)
             else "EXCLUSION-SELECTS-ONLY-AT-THE-CARRIER-S-OWN-GRAIN")
     # --- the label map, typed HERE and nowhere else
     want = {
@@ -1731,9 +2176,9 @@ def reconstruct(serialized, segs):
             "CELL-IS-A-CO-DIVISION-PAIR":
                 "YES" if p1["pair_link_bijection"] else "NO",
             "ACTOR-SITE-BIJECTION": "%d-OF-%d" % (p1["actors"], p1["actors"]),
-            "ACTOR-LEG-COVERS-OF-THE-CARRIER":
-                "%d-OF-%d" % (p1["actor_leg_image_in_the_carrier"],
-                              p1["carrier_cells"]),
+            "ACTOR-LEG-IMAGE-CARDINALITY-AGAINST-THE-CARRIER":
+                "%d-VS-%d" % (p1["actor_leg_image_cardinality"],
+                              p1["carrier_cardinality"]),
             "CELLS-WITH-EXACTLY-TWO-ACTORS":
                 "%d-OF-%d" % (p1["cells_with_exactly_two_actors"],
                               p1["carrier_cells"]),
@@ -1756,9 +2201,22 @@ def reconstruct(serialized, segs):
                               po["coins"]),
             "CARRIER-GRAIN-ANTISYMMETRIC-LEAK-CELLS":
                 lk["carrier_grain_antisymmetric_leak_cells"],
-            "CARRIER-GRAIN-LEAK-SOURCES-ARE-THE-SAME-ACTOR-CONFIGURATIONS":
+            "CARRIER-GRAIN-ANTISYMMETRIC-FORBIDDEN-CONFIGURATIONS":
+                lk["carrier_grain_antisymmetric_forbidden_configurations"],
+            "CARRIER-GRAIN-LEAK-SOURCES-ARE-THE-SAME-SITE-CONFIGURATIONS":
                 "%d-OF-%d" % (lk["carrier_grain_set_equality_coins"],
                               lk["carrier_grain_symmetric_coins_leaking"]),
+            "CARRIER-GRAIN-LEAK-SOURCES-ARE-THE-SAME-ACTOR-CONFIGURATIONS":
+                "%d-OF-%d" % (lk["carrier_grain_same_actor_equality_coins"],
+                              lk["carrier_grain_symmetric_coins_leaking"]),
+            "CARRIER-GRAIN-LEAK-SOURCES-ARE-ACTOR-GRAIN-FORBIDDEN":
+                "%d-OF-%d" % (lk["carrier_grain_leak_sources"],
+                              lk["same_actor_configurations"]),
+            "CARRIER-GRAIN-CONTAINMENT-IS-STRICT":
+                "%d-OF-%d" % (lk["carrier_grain_strict_containment_coins"],
+                              lk["carrier_grain_symmetric_coins_leaking"]),
+            "SAME-ACTOR-CONFIGURATIONS-EXCLUDED":
+                lk["same_actor_configurations_excluded"],
             "ACTOR-GRAIN-COINS-WHERE-BOTH-SHAPES-LEAK":
                 "%d-OF-%d" % (lk["actor_grain_both_shapes_leak_coins"],
                               po["coins"]),
@@ -1771,12 +2229,44 @@ def reconstruct(serialized, segs):
                               po["coins"]),
             "ACTOR-GRAIN-CANCELLATION-CELLS":
                 lk["actor_grain_cancellation_cells"],
-            "ACTOR-GRAIN-SOURCES-LEAKING":
-                "%d-OF-%d" % (lk["actor_grain_sources_leaking"],
+            "ACTOR-GRAIN-SOURCES-LEAKING-MAX":
+                "%d-OF-%d" % (lk["actor_grain_sources_leaking_max"],
                               lk["actor_grain_admissible"]),
-            "ACTOR-GRAIN-TARGETS-REACHED":
-                "%d-OF-%d" % (lk["actor_grain_targets_reached"],
+            "ACTOR-GRAIN-SOURCES-LEAKING-MIN":
+                "%d-OF-%d" % (lk["actor_grain_sources_leaking_min"],
+                              lk["actor_grain_admissible"]),
+            "ACTOR-GRAIN-TARGETS-REACHED-MAX":
+                "%d-OF-%d" % (lk["actor_grain_targets_reached_max"],
                               lk["actor_grain_forbidden"]),
+            "ACTOR-GRAIN-TARGETS-REACHED-MIN":
+                "%d-OF-%d" % (lk["actor_grain_targets_reached_min"],
+                              lk["actor_grain_forbidden"]),
+            "ACTOR-GRAIN-COINS-WHERE-EVERY-ADMISSIBLE-SOURCE-LEAKS":
+                "%d-OF-%d" % (
+                    lk["actor_grain_coins_where_every_admissible_source_"
+                       "leaks"], po["coins"]),
+            "ACTOR-GRAIN-COINS-WHERE-EVERY-FORBIDDEN-TARGET-IS-REACHED":
+                "%d-OF-%d" % (
+                    lk["actor_grain_coins_where_every_forbidden_target_is_"
+                       "reached"], po["coins"]),
+            "WEDGE-FORBIDDEN-SET-EMPTY-IFF-THE-CARRIER-GRAIN":
+                "%d-OF-%d" % (
+                    sum(1 for r in lk["wedge_theorem"]["rows"]
+                        if r["antisymmetric_forbidden_set_is_empty"]
+                        == r["is_the_carrier_grain"]),
+                    lk["wedge_theorem"]["grains"]),
+            "SITE-GRAIN-COINS-THAT-SELECT":
+                "%d-OF-%d" % (lk["site_grain_arm"]["coins_that_select"],
+                              lk["site_grain_arm"]["coins"]),
+            "SITE-GRAIN-COINS-WHERE-NO-SHAPE-CLOSES":
+                "%d-OF-%d" % (
+                    lk["site_grain_arm"]["coins_where_no_shape_closes"],
+                    lk["site_grain_arm"]["coins"]),
+            "P4-IS-RECORD-BLIND-AT-THE-PROBED-COUNT-FIELDS":
+                "%d-OF-%d" % (
+                    sum(1 for r in lk["record_blindness"]["probes"]
+                        if r["leak_rows_identical"] == r["leak_rows"]),
+                    lk["record_blindness"]["probe_fields"]),
             "LEAK-ROUTES-AGREE": "%d-OF-%d" % (lk["route_rows_agreeing"],
                                                lk["route_rows"]),
             "PARENT-SPLIT-CITED":
@@ -1791,12 +2281,26 @@ def reconstruct(serialized, segs):
                 "%d-OF-%d" % (p2["fiber"]["distinct_two_excitation_theories"],
                               p2["fiber"]["declarations"]),
             "P2-ONE-EXCITATION-RESTRICTIONS-AGREE":
-                "%d-OF-%d" % (p2["fiber"]["one_excitation_comparisons"],
+                "%d-OF-%d" % (p2["fiber"]["one_excitation_comparisons"]
+                              - p2["fiber"]["one_excitation_disagreements"],
                               p2["fiber"]["one_excitation_comparisons"]),
             "P3": p3["verdict"],
+            "P3-EMISSION-READING-FIBER": p3["emission_reading_fiber"],
             "P3-BLINDNESS-PAIR-SITE-FIELDS-AGREE":
                 "%d-OF-%d" % (p3["blindness_pair"]["site_fields_agree_at"],
                               p3["blindness_pair"]["sites"]),
+            "P3-SITE-FIELD-CANNOT-SEPARATE":
+                "%d-OF-%d" % (
+                    p3["blindness_census"]["site_field_cannot_separate"],
+                    p3["blindness_census"]["pairs"]),
+            "P3-RECORD-MENU-READING-SEPARATES":
+                "%d-OF-%d" % ([r for r in p3["blindness_census"]["rows"]
+                               if r["reading"] == "B"][0]["separates"],
+                              p3["blindness_census"]["pairs"]),
+            "P3-BORN-MENU-READING-SEPARATES":
+                "%d-OF-%d" % ([r for r in p3["blindness_census"]["rows"]
+                               if r["reading"] == "A"][0]["separates"],
+                              p3["blindness_census"]["pairs"]),
             "P3-COMPLETIONS-PRESERVING-THE-PARENT-IDENTITY":
                 "%d-OF-%d" % (
                     p3["completions_preserving_the_parent_identity"],
@@ -1818,6 +2322,7 @@ def reconstruct(serialized, segs):
                                   len(D["arms"])),
             "CONTROL-CAN-FIRE": D["counts"]["control_fires"],
             "CONTROL-CAN-FAIL": D["counts"]["control_fails"],
+            "SEED-CONDITIONAL": D["counts"]["seed_conditional"],
             "FIBER-PRICED": D["counts"]["fiber_priced"],
             "SCOPE": D["counts"]["scope_row"]},
     }
@@ -1885,10 +2390,13 @@ def paper_claims(R):
                 "actor lies in exactly six cells at %d of %d"
                 % (p1["cells_with_exactly_two_actors"], p1["carrier_cells"],
                    p1["actors_in_exactly_six_cells"], p1["actors"])),
-        ("C03", "the weld's ACTOR->SITE leg is a bijection at %d of %d and "
-                "covers %d of the %d carriers the excitation uses"
+        ("C03", "the weld's ACTOR->SITE leg is a bijection at %d of %d, and "
+                "its image has %d members against the carrier's %d -- two "
+                "cardinalities of different kind, since the leg's image is a "
+                "set of sites and the carrier is a set of cells"
                 % (p1["actors"], p1["actors"],
-                   p1["actor_leg_image_in_the_carrier"], p1["carrier_cells"])),
+                   p1["actor_leg_image_cardinality"],
+                   p1["carrier_cardinality"])),
         ("C04", "%d published names across the %d committed layers beneath "
                 "the excitations, and none of them is occupancy-shaped, while "
                 "the same scan fires at %d names on the one layer that "
@@ -1903,11 +2411,15 @@ def paper_claims(R):
                    p2["fiber"]["distinct_two_excitation_theories"],
                    com(p2["fiber"]["one_excitation_comparisons"]),
                    com(p2["fiber"]["one_excitation_comparisons"]))),
-        ("C06", "the committed emission rule reads a site field, and the two "
-                "states agree on it at %d of %d sites while their cell "
-                "occupations differ"
-                % (p3["blindness_pair"]["site_fields_agree_at"],
-                   p3["blindness_pair"]["sites"])),
+        ("C06", "under the record-menu reading the state does not enter the "
+                "committed emission rule's kernel at all and the rule cannot "
+                "separate any of the %d pairs, while under the Born-menu "
+                "reading -- the one the parent's coupled ensemble runs -- it "
+                "enters per cell and separates %d of %d"
+                % (p3["blindness_census"]["pairs"],
+                   [r for r in p3["blindness_census"]["rows"]
+                    if r["reading"] == "A"][0]["separates"],
+                   p3["blindness_census"]["pairs"])),
         ("C07", "%d of the %d completions preserve the parent's own emission "
                 "identity, and %d of %d refuse a division to a doubly "
                 "occupied carrier"
@@ -1922,17 +2434,31 @@ def paper_claims(R):
                    lk["carrier_grain_symmetric_coins_leaking"], po["coins"],
                    lk["carrier_grain_antisymmetric_leak_cells"])),
         ("C09", "the configurations that leak are exactly the %d whose two "
-                "excitations sit on cells sharing an actor, by set equality "
-                "at %d of %d leaking coin classes"
+                "excitations sit on two of the three cells of one site -- a "
+                "set equality at %d of %d leaking coin classes -- and every "
+                "one of them is among the %d configurations the actor-grain "
+                "declaration forbids, a containment that is strict at %d of "
+                "%d and excludes %d of them"
                 % (R["counts"]["same_site_configurations"],
                    lk["carrier_grain_set_equality_coins"],
-                   lk["carrier_grain_symmetric_coins_leaking"])),
+                   lk["carrier_grain_symmetric_coins_leaking"],
+                   lk["same_actor_configurations"],
+                   lk["carrier_grain_strict_containment_coins"],
+                   lk["carrier_grain_symmetric_coins_leaking"],
+                   lk["same_actor_configurations_excluded"])),
         ("C10", "at the actor's grain both shapes leak at %d of %d coin "
-                "classes, every one of the %d admissible configurations "
-                "leaks, and every one of the %d forbidden configurations is "
-                "reached"
+                "classes; at the %d non-monomial classes every one of the %d "
+                "admissible configurations leaks and every one of the %d "
+                "forbidden configurations is reached, and at the monomial "
+                "class %d of %d leak and %d of %d are reached"
                 % (lk["actor_grain_both_shapes_leak_coins"], po["coins"],
-                   lk["actor_grain_admissible"], lk["actor_grain_forbidden"])),
+                   lk["actor_grain_coins_where_every_admissible_source_"
+                      "leaks"],
+                   lk["actor_grain_admissible"], lk["actor_grain_forbidden"],
+                   lk["actor_grain_sources_leaking_min"],
+                   lk["actor_grain_admissible"],
+                   lk["actor_grain_targets_reached_min"],
+                   lk["actor_grain_forbidden"])),
         ("C11", "the two shapes' leak sets coincide cell for cell at %d of %d "
                 "coin classes, and no cell of either carries two nonzero "
                 "products, at %d"
@@ -1951,6 +2477,59 @@ def paper_claims(R):
                    R["p4"]["parent_split"]["generators"])),
         ("C15", "the two routes agree at %d of %d leak rows"
                 % (lk["route_rows_agreeing"], lk["route_rows"])),
+        # THE ABSTRACT AND THE ARENA SECTION, BROUGHT INSIDE THE INSTRUMENT
+        # (K3 MAJOR-2).  The four sentences a reader quotes were the four a
+        # reviewer could corrupt at exit 0, because the abstract paraphrases
+        # the body: each is now assembled from this run and required to occur
+        # exactly once, so the numbers it carries are bound where they are
+        # read rather than only where they were derived.
+        ("C16", "they give %d distinct two-excitation theories, and their "
+                "one-excitation restrictions agree, as objects, at %s of %s "
+                "comparisons"
+                % (p2["fiber"]["distinct_two_excitation_theories"],
+                   com(p2["fiber"]["one_excitation_comparisons"]
+                       - p2["fiber"]["one_excitation_disagreements"]),
+                   com(p2["fiber"]["one_excitation_comparisons"]))),
+        ("C17", "the symmetric shape leaks at %d cells at %d of the %d coin "
+                "classes and the antisymmetric shape leaks at %d, so a hard "
+                "core there would select"
+                % (lk["carrier_grain_symmetric_leak_cells"],
+                   lk["carrier_grain_symmetric_coins_leaking"], po["coins"],
+                   lk["carrier_grain_antisymmetric_leak_cells"])),
+        ("C18", "is a sentence -- both shapes leak at %d of %d coin classes, "
+                "and at the %d non-monomial classes every one of the %d "
+                "admissible configurations leaks and every one of the %d "
+                "forbidden configurations is reached"
+                % (lk["actor_grain_both_shapes_leak_coins"], po["coins"],
+                   lk["actor_grain_coins_where_every_admissible_source_"
+                      "leaks"], lk["actor_grain_admissible"],
+                   lk["actor_grain_forbidden"])),
+        ("C19", "%d solutions over the ring, %d classes up to a global phase"
+                % (po["ring_solutions"], po["classes_up_to_phase"])),
+        ("C20", "the ACTOR->SITE leg is a bijection at %d of %d and its image "
+                "has %d members against the carrier's %d"
+                % (p1["actors"], p1["actors"],
+                   p1["actor_leg_image_cardinality"],
+                   p1["carrier_cardinality"])),
+        ("C21", "the antisymmetric sector's forbidden set is empty at exactly "
+                "%d of the %d grains this arena admits, and it is the "
+                "carrier's own"
+                % (sum(1 for r in lk["wedge_theorem"]["rows"]
+                       if r["antisymmetric_forbidden_set_is_empty"]),
+                   lk["wedge_theorem"]["grains"])),
+        ("C22", "at the site grain a hard core admits %d configurations and "
+                "selects at %d of %d coin classes, with no shape closing at "
+                "%d of %d"
+                % (lk["site_grain_arm"]["admissible"],
+                   lk["site_grain_arm"]["coins_that_select"],
+                   lk["site_grain_arm"]["coins"],
+                   lk["site_grain_arm"]["coins_where_no_shape_closes"],
+                   lk["site_grain_arm"]["coins"])),
+        ("C23", "the whole leak census is identical at every one of the %d "
+                "declared probe fields, at %d of %d rows each"
+                % (lk["record_blindness"]["probe_fields"],
+                   lk["record_blindness"]["probes"][0]["leak_rows_identical"],
+                   lk["record_blindness"]["probes"][0]["leak_rows"])),
     ]
 
 
@@ -1985,13 +2564,14 @@ def paper_tables(R):
     return rows
 
 
-STRUCTURAL_NUMERALS = {
-    "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
-    "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25",
-    "26", "27", "28", "29", "30", "31", "32", "33", "34", "46", "62", "82",
-    "87", "91", "119", "125", "148", "168", "187", "192", "204", "206", "217",
-    "248", "249", "2026", "1296", "1/3",
-}
+# THE STRUCTURAL WHITELIST, TRIMMED TO WHAT THIS OBJECT USES (K3 MINOR-5).
+# What is left is the set of numerals that name a PART OF THE DOCUMENT rather
+# than a measurement: the three section numbers no measured value happens to
+# carry, and this paper's own number.  Every other numeral in the object --
+# including every exact rational -- is licensed by a measured receipt value,
+# and the gate fails on a declared entry the object does not use, so this set
+# cannot grow silently.
+STRUCTURAL_NUMERALS = {"7", "10", "11", "31"}
 FENCE_RE = re.compile(r"```.*?```", re.S)
 INLINE_RE = re.compile(r"`[^`]*`")
 NUM_PROSE_RE = re.compile(r"(?<![\w.\-/])\d[\d,]*(?:/\d+)?(?![\w])")
@@ -1999,21 +2579,34 @@ NUM_FENCED_RE = re.compile(r"(?<![\w./])\d[\d,]*(?:/\d+)?(?![\w])")
 DIGEST_RE = re.compile(r"^[0-9a-f]{12}$")
 
 
-def licensed_numerals(obj, acc):
-    """the licensed set is the MEASURED values.  Digest strings are excluded:
-    a numeral licensed by a sha256 prefix is licensed by noise (paper-22's K3
-    MAJOR-2)."""
+# the receipt keys whose values are the instrument's SELF-DESCRIPTION rather
+# than a measurement: byte lengths, character counts and digests.  A physics
+# numeral licensed by a source's byte length is licensed by noise, exactly as
+# one licensed by a hash prefix is (K3 MINOR-6).
+UNLICENSING_KEYS = ("sha256_12", "payload_sha256_12", "fingerprint",
+                    "expected", "digest", "bytes", "chars", "text_sha")
+# the few published values that are EXACT RATIONALS carried as strings; they
+# are declared by key, so prose can never license a numeral (K1 MINOR-5).
+RATIONAL_KEYS = ("emission_total", "emission_total_on_the_doubly_occupied_"
+                 "state", "kernel_on_P", "kernel_on_Q")
+
+
+def licensed_numerals(obj, acc, key=None):
+    """the licensed set is the MEASURED values, and ONLY the measured values:
+    integers, plus the declared exact-rational rows.  Prose is not a licence
+    -- a numeral typed into a gate statement or a ledger number embedded in a
+    provenance sentence licensed a paper numeral before this repair (K1
+    MINOR-5, K3 MINOR-6) -- and neither is a digest or a byte count."""
     if isinstance(obj, dict):
         for k, v in obj.items():
-            if k in ("sha256_12", "payload_sha256_12", "fingerprint",
-                     "expected", "digest"):
+            if k in UNLICENSING_KEYS:
                 continue
-            licensed_numerals(v, acc)
+            licensed_numerals(v, acc, k)
     elif isinstance(obj, list):
         for v in obj:
-            licensed_numerals(v, acc)
+            licensed_numerals(v, acc, key)
     elif isinstance(obj, str):
-        if DIGEST_RE.match(obj):
+        if key not in RATIONAL_KEYS or DIGEST_RE.match(obj):
             return acc
         for t in re.findall(r"\d[\d,]*(?:/\d+)?", obj):
             acc.add(t.replace(",", ""))
@@ -2022,6 +2615,40 @@ def licensed_numerals(obj, acc):
     elif isinstance(obj, int):
         acc.add(str(obj))
     return acc
+
+
+# E-22, the advisory's fourth check: SPELLED numerals above twelve are claims
+# too.  House style writes small counts as words, so the scan that stops at
+# digits is blind exactly where a paper says "nine of the twenty-seven".
+SPELLED = {
+    "thirteen": 13, "fourteen": 14, "fifteen": 15, "sixteen": 16,
+    "seventeen": 17, "eighteen": 18, "nineteen": 19, "twenty": 20,
+    "twenty-one": 21, "twenty-two": 22, "twenty-three": 23,
+    "twenty-four": 24, "twenty-five": 25, "twenty-six": 26,
+    "twenty-seven": 27, "twenty-eight": 28, "twenty-nine": 29, "thirty": 30,
+    "forty": 40, "fifty": 50, "sixty": 60, "seventy": 70, "eighty": 80,
+    "ninety": 90, "hundred": 100, "thousand": 1000,
+}
+
+
+def spelled_numerals(text):
+    """every spelled numeral above twelve in the object under test, with the
+    value it names -- scanned on word boundaries after normalisation."""
+    body = canon(text).lower()
+    out = []
+    for word in sorted(SPELLED, key=len, reverse=True):
+        for m in re.finditer(r"(?<![\w-])%s(?![\w])" % re.escape(word), body):
+            out.append((word, SPELLED[word], m.start()))
+    # a hyphenated compound also matches its own prefix ("twenty" inside
+    # "twenty-seven"); keep the longest match at each position
+    keep, taken = [], set()
+    for word, val, pos in sorted(out, key=lambda r: (-len(r[0]), r[2])):
+        span = range(pos, pos + len(word))
+        if any(p in taken for p in span):
+            continue
+        taken |= set(span)
+        keep.append({"word": word, "value": val})
+    return keep
 
 
 def paper_coverage(R, text, segs):
@@ -2033,8 +2660,8 @@ def paper_coverage(R, text, segs):
     blocks = FENCE_RE.findall(text)
     spans = INLINE_RE.findall(without_fences)
     prose = INLINE_RE.sub(" ", without_fences)
-    known = licensed_numerals(R, set()) | STRUCTURAL_NUMERALS \
-        | head_numerals(segs)
+    measured = licensed_numerals(R, set())
+    known = measured | STRUCTURAL_NUMERALS | head_numerals(segs)
     scanned = fenced = inline = 0
     unreg = []
     targets = [(canon(prose), NUM_PROSE_RE, "prose")]
@@ -2050,9 +2677,34 @@ def paper_coverage(R, text, segs):
                 inline += 1
             if tok not in known:
                 unreg.append(tok)
+    # the spelled numerals above twelve, licensed the same way
+    spelled = spelled_numerals(text)
+    for row in spelled:
+        row["licensed"] = str(row["value"]) in known
+        if not row["licensed"]:
+            unreg.append(str(row["value"]))
+    # the structural whitelist is itself measured: which of its entries the
+    # object actually NEEDS, and whether any is digest-shaped (K3 MINOR-5)
+    needed = sorted(t for t in STRUCTURAL_NUMERALS
+                    if t not in measured and t not in head_numerals(segs))
+    used = set()
+    for body, rx, _kind in targets:
+        for rawtok in rx.findall(body):
+            tok = rawtok.replace(",", "")
+            if tok in needed:
+                used.add(tok)
     return {"scanned": scanned, "fenced_blocks": len(blocks),
             "fenced_numerals": fenced, "inline_spans": len(spans),
             "inline_numerals": inline, "licensed_values": len(known),
+            "licensed_by_a_measured_value": len(measured),
+            "spelled_numerals_scanned": len(spelled),
+            "spelled_numerals": spelled,
+            "structural_numerals_declared": len(STRUCTURAL_NUMERALS),
+            "structural_numerals_the_object_needs": sorted(used),
+            "structural_numerals_declared_and_unused":
+                sorted(set(needed) - used),
+            "structural_numerals_that_are_digest_shaped":
+                sorted(t for t in STRUCTURAL_NUMERALS if DIGEST_RE.match(t)),
             "unregistered": sorted(set(unreg))}
 
 
@@ -2186,8 +2838,9 @@ MUTANTS = [
      "census", "grain_bad", "K-2+0w"),
     ("MUT-SET-EQUALITY", "G-P4-SET-EQUALITY",
      "moves `seteq_bad` to ['FORGED'], reporting the carrier-grain leak's "
-     "source set as something other than the same-actor configurations -- "
-     "must die at the set-equality gate", "seteq_bad", "FORGED"),
+     "source set as something other than the same-site configurations, or as "
+     "something other than a strict subset of the same-actor ones -- must "
+     "die at the set-equality gate", "seteq_bad", "FORGED"),
     ("MUT-SHAPES-COINCIDE", "G-P4-SHAPES-COINCIDE",
      "moves `coincide_bad` to ['FORGED'], reporting the two shapes' "
      "actor-grain leak sets as distinct -- must die at the coincidence gate",
@@ -2301,9 +2954,9 @@ MUTANTS = [
      "moves `swept` to True in a sub-pipeline that carries no sweep rows -- "
      "must die at the sweep-binding gate", "swept", "True"),
     ("MUT-SEAL-DROP", "G-SEAL-COMPLETE",
-     "moves `SEAL-COVERAGE` out of the seal manifest by returning from "
-     "Seal.take before the row is appended -- must die at the totality gate",
-     "SEAL-COVERAGE", "return"),
+     "moves `SEAL-COVERAGE` out of the seal manifest by taking a bare "
+     "return from Seal.take before the row is appended -- must die at the "
+     "totality gate", "SEAL-COVERAGE", "return"),
     ("MUT-SEAL-BROKEN", "G-SEAL-COMPLETE",
      "moves `outcome_word` to BROKEN after that key was sealed, so the "
      "payload no longer matches its gate-time digest -- must die at the seal "
@@ -2665,7 +3318,18 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                              "agrees": leaks_here == predicted})
         if leaks_here != predicted:
             theorem_bad.append(r["coin"])
-    theorem_bad = pick("MUT-LEAK-THEOREM", theorem_bad, ["K+0+0w"])
+    # THE RECORD-BLINDNESS THEOREM, MEASURED (K2 R1/S-E2).  The count field
+    # enters the walk only as a unit-modulus diagonal on the source cell, so
+    # it cannot turn a zero into a nonzero: the leak census is a function of
+    # the walk's zero pattern alone.  Every declared probe field rebuilds the
+    # walk and re-runs all 48 leak rows.
+    rb = C["record_blindness"]
+    rb_bad = [p["count_field"] for p in rb["probes"]
+              if p["leak_rows_identical"] != p["leak_rows"]
+              or p["support_patterns_identical"] != p["coins"]]
+    if not rb["landing_record_identity"]:
+        rb_bad.append("THE-LANDING-RECORD-IDENTITY")
+    theorem_bad = pick("MUT-LEAK-THEOREM", theorem_bad + rb_bad, ["K+0+0w"])
     LD.gate("G-LEAK-THEOREM",
             "PAPER-22'S LEAK THEOREM, TRANSPORTED AND VERIFIED PER COIN.  In "
             "the normalised symmetric square the only cell from a hard-core "
@@ -2674,9 +3338,23 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "carrier-grain hard core exactly when some row of the operator "
             "carries two nonzero entries.  The gate binds COINS, not the "
             "tally: each of the %d classes is checked against its own "
-            "monomiality predicate, in both directions" % len(pool_rows),
+            "monomiality predicate, in both directions.  AND THE CENSUS IS "
+            "RECORD-BLIND, BY THEOREM AND BY MEASUREMENT: the count field "
+            "enters the walk only as D(n) = diag(w^{n(c)}), a unit-modulus "
+            "diagonal on the source cell, so it cannot turn a zero into a "
+            "nonzero and the whole leak layer is a function of the zero "
+            "pattern alone.  The walk is rebuilt at %d declared probe fields "
+            "of the %s family -- the all-zero and all-two records and two "
+            "non-constant ones -- and at every one of them the support "
+            "pattern is identical at %d of %d coins and all %d leak rows are "
+            "identical; the landing record n = 1 is recovered as the rebuild "
+            "at that field"
+            % (len(pool_rows), rb["probe_fields"], rb["family_size"],
+               rb["probes"][0]["support_patterns_identical"],
+               rb["probes"][0]["coins"], rb["probes"][0]["leak_rows"]),
             not theorem_bad, "coins whose leak and whose monomiality "
-            "disagree: %s" % (theorem_bad or "none"))
+            "disagree, or probe fields whose census moves: %s"
+            % (theorem_bad or "none"))
 
     route_rows = route_ok = 0
     route_bad = []
@@ -2702,10 +3380,29 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             sum(1 for r in pool_rows if r["carrier_grain_symmetric_leak"] > 0),
         "carrier_grain_antisymmetric_leak_cells":
             max(r["carrier_grain_antisymmetric_leak"] for r in pool_rows),
+        "carrier_grain_antisymmetric_forbidden_configurations":
+            C["leaks"][0]["D-CARRIER-1|ANTISYMMETRIC"]["forbidden"],
         "carrier_grain_set_equality_coins":
+            sum(1 for r in ag
+                if r["carrier_grain_sources_are_the_same_site_"
+                     "configurations"] is True),
+        "carrier_grain_same_actor_equality_coins":
             sum(1 for r in ag
                 if r["carrier_grain_sources_are_the_same_actor_"
                      "configurations"] is True),
+        "carrier_grain_containment_coins":
+            sum(1 for r in ag
+                if r["carrier_grain_sources_are_actor_grain_forbidden"]
+                is True),
+        "carrier_grain_strict_containment_coins":
+            sum(1 for r in ag
+                if r["carrier_grain_containment_is_strict"] is True),
+        "carrier_grain_leak_sources": max(r["carrier_grain_leak_sources"]
+                                          for r in ag),
+        "same_actor_configurations": C["same_actor_configurations"],
+        "same_actor_configurations_excluded":
+            C["same_actor_configurations"] - max(
+                r["carrier_grain_leak_sources"] for r in ag),
         "actor_grain_both_shapes_leak_coins":
             sum(1 for r in pool_rows
                 if r["actor_grain_symmetric_leak"] > 0
@@ -2718,15 +3415,34 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             sum(1 for r in ag if r["actor_grain_shape_leak_sets_coincide"]),
         "actor_grain_cancellation_cells":
             sum(r["actor_grain_both_products_nonzero"] for r in ag),
-        "actor_grain_sources_leaking":
+        # THE POOL-MAX IS LABELLED A MAX, and the per-coin minimum is
+        # published beside it: the universal "every one of the 216 admissible
+        # configurations leaks" is FALSE at the monomial class, where 81 of
+        # 216 leak and 81 of 135 are reached (K1 MAJOR-4).
+        "actor_grain_sources_leaking_max":
             max(r["actor_grain_sources_leaking"] for r in ag),
-        "actor_grain_targets_reached":
+        "actor_grain_sources_leaking_min":
+            min(r["actor_grain_sources_leaking"] for r in ag),
+        "actor_grain_targets_reached_max":
             max(r["actor_grain_targets_reached"] for r in ag),
+        "actor_grain_targets_reached_min":
+            min(r["actor_grain_targets_reached"] for r in ag),
         "actor_grain_admissible":
             C["leaks"][0]["D-ACTOR-1|ANTISYMMETRIC"]["admissible"],
         "actor_grain_forbidden":
             C["leaks"][0]["D-ACTOR-1|ANTISYMMETRIC"]["forbidden"],
+        "actor_grain_coins_where_every_admissible_source_leaks":
+            sum(1 for r in ag
+                if r["actor_grain_sources_leaking"]
+                == C["leaks"][0]["D-ACTOR-1|ANTISYMMETRIC"]["admissible"]),
+        "actor_grain_coins_where_every_forbidden_target_is_reached":
+            sum(1 for r in ag
+                if r["actor_grain_targets_reached"]
+                == C["leaks"][0]["D-ACTOR-1|ANTISYMMETRIC"]["forbidden"]),
         "set_equalities": ag,
+        "wedge_theorem": C["wedge_theorem"],
+        "site_grain_arm": C["site_grain_arm"],
+        "record_blindness": C["record_blindness"],
     }
     LD.gate("G-LEAK-ROUTES",
             "THE LEAK IS MEASURED BY TWO INDEPENDENT ROUTES at every one of "
@@ -2819,22 +3535,32 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "THE CEILING IS INVISIBLE FROM BELOW, and this is the premise's "
             "failure made a measurement.  %d declarations are constructed; "
             "they give %d DISTINCT two-excitation theories, with %d, %d and "
-            "%d symmetric configurations.  Their ONE-EXCITATION restrictions "
-            "are compared AS OBJECTS -- configuration set, transition matrix "
-            "and Born shadow, entry by entry, at every coin class -- and "
-            "agree at %s of %s comparisons.  No measurement at one excitation "
-            "can reach the ceiling, which is why no committed layer could "
-            "have declared it by accident"
+            "%d symmetric configurations.  Each one's ONE-EXCITATION "
+            "restriction is BUILT FROM ITS OWN DECLARATION -- the cells its "
+            "own admissible configurations occupy, the matrix and the Born "
+            "shadow restricted to them -- and the four are then compared AS "
+            "OBJECTS, entry by entry, at every coin class: %s of %s "
+            "comparisons agree.  A declaration that forbade a cell outright, "
+            "or a ceiling of zero, would build a different object and this "
+            "row would move, which is what makes it a measurement rather "
+            "than a comparison of a thing with itself"
             % (fib["declarations"], fib["distinct_two_excitation_theories"],
                fiber_rows[0]["symmetric_configurations"],
                fiber_rows[1]["symmetric_configurations"],
                fiber_rows[2]["symmetric_configurations"],
-               com(fib["one_excitation_comparisons"]),
+               com(fib["one_excitation_comparisons"]
+                   - fib["one_excitation_disagreements"]),
                com(fib["one_excitation_comparisons"])),
-            fiber_disagreements == 0 and fib["restrictions_agree_as_objects"],
-            "disagreements %s over %s comparisons; distinct theories %d"
+            fiber_disagreements == 0 and fib["restrictions_agree_as_objects"]
+            and fib["distinct_one_excitation_objects"] == 1
+            and all(n == NCELL for n in
+                    fib["one_excitation_restriction_sizes"].values()),
+            "disagreements %s over %s comparisons; distinct theories %d; "
+            "distinct one-excitation objects %d; restriction sizes %s"
             % (fiber_disagreements, com(fib["one_excitation_comparisons"]),
-               fib["distinct_two_excitation_theories"]))
+               fib["distinct_two_excitation_theories"],
+               fib["distinct_one_excitation_objects"],
+               sorted(set(fib["one_excitation_restriction_sizes"].values()))))
 
     # P2's verdict is DERIVED from its three legs; the mutant then detaches
     # the published word from the derivation, which is what the gate catches
@@ -2869,24 +3595,48 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     p3 = C["p3"]
     site_agree = pick("MUT-BLINDNESS",
                       p3["blindness_pair"]["site_fields_agree_at"], 8)
+    bc = p3["blindness_census"]
+    read_A = [r for r in bc["rows"] if r["reading"] == "A"][0]
+    read_B = [r for r in bc["rows"] if r["reading"] == "B"][0]
     LD.gate("G-P3-BLINDNESS",
-            "THE COMMITTED EMISSION RULE CANNOT SEE THE DISTINCTION THE "
-            "CEILING TURNS ON.  Two two-excitation configurations are built: "
-            "one with its excitations on two different cells of a single "
-            "actor, one with both on a single cell.  They differ in cell "
-            "occupation at %d of %d cells and they agree, at %d of %d sites, "
-            "on the only state-side quantity the committed rule reads"
+            "WHAT THE COMMITTED RULE READS, PER DECLARED READING -- AND THE "
+            "BLINDNESS IS THE RECORD MENU'S, NOT THE RULE'S.  Two "
+            "two-excitation configurations are built: one with its "
+            "excitations on two different cells of a single actor, one with "
+            "both on a single cell.  They differ in cell occupation at %d of "
+            "%d cells and their SITE fields agree at %d of %d.  The parent "
+            "declares the emission reading at fiber %d (F10: the Born menu "
+            "against the record menu; both run), so BOTH are applied here, "
+            "over a census of every doubly occupied configuration against "
+            "every same-site partner: the site field cannot separate %d of "
+            "%d such pairs, the RECORD menu separates %d of %d -- the state "
+            "does not enter its kernel at all -- and the BORN menu, which is "
+            "the reading the parent's own coupled ensemble runs, separates "
+            "%d of %d, per cell.  The published blindness is therefore "
+            "READING-SCOPED, and the leg that carries P3 is the absent "
+            "occupancy coordinate rather than an undifferentiated rule"
             % (p3["blindness_pair"]["cells"]
                - p3["blindness_pair"]["cell_occupations_agree_at"],
                p3["blindness_pair"]["cells"], site_agree,
-               p3["blindness_pair"]["sites"]),
+               p3["blindness_pair"]["sites"],
+               p3["emission_reading_fiber"],
+               bc["site_field_cannot_separate"], bc["pairs"],
+               read_B["separates"], bc["pairs"],
+               read_A["separates"], bc["pairs"]),
             (site_agree == p3["blindness_pair"]["sites"]
-             and not p3["blindness_pair"][
-                 "the_committed_rule_can_separate_them"]),
+             and not p3["blindness_pair"]["the_site_field_can_separate_them"]
+             and bc["site_field_cannot_separate"] == bc["pairs"]
+             and read_B["separates"] == 0
+             and read_A["separates"] == bc["pairs"]
+             and p3["readings_that_separate_the_witness_pair"] == 1),
             "site fields agree at %d of %d; cell occupations agree at %d of "
-            "%d" % (site_agree, p3["blindness_pair"]["sites"],
-                    p3["blindness_pair"]["cell_occupations_agree_at"],
-                    p3["blindness_pair"]["cells"]))
+            "%d; census pairs %d, site-blind %d, reading B separates %d, "
+            "reading A separates %d"
+            % (site_agree, p3["blindness_pair"]["sites"],
+               p3["blindness_pair"]["cell_occupations_agree_at"],
+               p3["blindness_pair"]["cells"], bc["pairs"],
+               bc["site_field_cannot_separate"], read_B["separates"],
+               read_A["separates"]))
 
     comp_bad = [r["completion"] for r in p3["completions"]
                 if r["preserves_the_parent_identity"]
@@ -2912,18 +3662,42 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "total: %s" % (comp_bad or "none"))
 
     refusals = pick("MUT-REFUSAL", p3["completions_that_refuse_a_division"], 1)
+    # P3's WORD IS DERIVED FROM ITS LEGS AND COMPARED AGAINST THE PUBLISHED
+    # ONE, exactly as P2's is (K1 MINOR-4, K3 MINOR-7).  The refusal count is
+    # a PER-COMPLETION read: each completion's own field is built for the
+    # doubly occupied state and its support measured (K3 MAJOR-6).
+    if refusals > 0:
+        p3_derived = "CLOSURE-REQUIRED"
+    elif (p3["legs"]["no_occupancy_coordinate_to_condition_on"]
+          and p3["completions_whose_menu_is_nonempty"]
+          == p3["completion_fiber"]):
+        p3_derived = "SILENT-AND-VACUOUSLY-SATISFIED"
+    else:
+        p3_derived = "CLOSURE-AVAILABLE"
     R["p3"] = p3
     LD.gate("G-P3-NEVER-REFUSED",
-            "P3 IS SILENT AND VACUOUSLY SATISFIED: under every one of the %d "
-            "completions a state whose two excitations sit on ONE carrier "
-            "still has a nonempty emission menu, so %d of %d completions "
-            "refuse a division event to a doubly occupied carrier.  The "
-            "closure premise cannot supply an exclusion the grammar has no "
-            "vocabulary to state" % (p3["completion_fiber"], refusals,
-                                     p3["completion_fiber"]),
-            refusals == 0 and p3["doubly_occupied_carrier_emits"],
+            "P3 IS SILENT AND VACUOUSLY SATISFIED, AND ITS WORD IS DERIVED "
+            "FROM ITS THREE LEGS RATHER THAN TYPED: the committed grammar has "
+            "no occupancy coordinate to condition on (%s), every one of the "
+            "%d completions is evaluated ON THE DOUBLY OCCUPIED STATE ITSELF "
+            "-- its own field built from that state's own weights -- and %d "
+            "of %d leave that state's emission menu nonempty, so %d of %d "
+            "refuse a division event to it.  The closure premise cannot "
+            "supply an exclusion the grammar has no vocabulary to state"
+            % (p3["legs"]["no_occupancy_coordinate_to_condition_on"],
+               p3["completion_fiber"],
+               p3["completions_whose_menu_is_nonempty"],
+               p3["completion_fiber"], refusals, p3["completion_fiber"]),
+            (refusals == 0 and p3["doubly_occupied_carrier_emits"]
+             and p3["verdict"] == p3_derived
+             and all(r["support_on_the_doubly_occupied_state"] > 0
+                     for r in p3["completions"])),
             "completions that refuse: %d; the doubly occupied carrier emits: "
-            "%s" % (refusals, p3["doubly_occupied_carrier_emits"]))
+            "%s; P3 = %s against the value its legs derive, %s; per-completion "
+            "Q-side supports %s"
+            % (refusals, p3["doubly_occupied_carrier_emits"], p3["verdict"],
+               p3_derived, [r["support_on_the_doubly_occupied_state"]
+                            for r in p3["completions"]]))
     SEAL.take("SEAL-P3", R)
 
     # -- SEC 9  P4 -----------------------------------------------------------
@@ -2935,34 +3709,80 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                 cellrow = row["%s|%s" % (did, sh)]
                 if cellrow["closed"] != (cellrow["leak_cells"] == 0):
                     grain_bad.append(row["coin"])
-    grain_bad = pick("MUT-GRAIN-CENSUS", grain_bad, ["K-2+0w"])
+    # THE UNIVERSAL IS BOUND PER COIN, and it is NOT universal: at the
+    # actor's grain every admissible source leaks and every forbidden target
+    # is reached EXACTLY at the non-monomial classes, and the monomial class
+    # carries its own 81-of-216 and 81-of-135 predicate (K1 MAJOR-4).
+    full_leak_bad = []
+    for r in ag:
+        mono = [p for p in pool_rows if p["coin"] == r["coin"]][0]["monomial"]
+        full = (r["actor_grain_sources_leaking"]
+                == R["leaks"]["actor_grain_admissible"]
+                and r["actor_grain_targets_reached"]
+                == R["leaks"]["actor_grain_forbidden"])
+        if full == mono:
+            full_leak_bad.append(r["coin"])
+        if mono and not (r["actor_grain_sources_leaking"]
+                         == R["leaks"]["actor_grain_sources_leaking_min"]
+                         and r["actor_grain_targets_reached"]
+                         == R["leaks"]["actor_grain_targets_reached_min"]):
+            full_leak_bad.append(r["coin"])
+    grain_bad = pick("MUT-GRAIN-CENSUS", grain_bad + full_leak_bad,
+                     ["K-2+0w"])
     R["selection"] = sel
     LD.gate("G-P4-GRAIN-CENSUS",
             "P4, AND THE GATE BINDS COINS RATHER THAN THE TALLY: every one of "
             "the %d coin classes carries its own leak row at every one of the "
-            "%d declarations and in both shapes, and every row's closure "
-            "predicate is evaluated against its own measured leak.  %d "
-            "(coin, declaration) selection rows are published"
-            % (len(pool_rows), len(DECLARATIONS), len(sel)),
+            "%d declarations and in both shapes, every row's closure "
+            "predicate is evaluated against its own measured leak, and the "
+            "actor grain's COMPLETENESS is bound per coin in both directions "
+            "-- every admissible source leaks and every forbidden target is "
+            "reached at exactly the NON-MONOMIAL classes (%d of %d), while "
+            "the monomial class carries its own %d-of-%d and %d-of-%d row.  "
+            "%d (coin, declaration) selection rows are published"
+            % (len(pool_rows), len(DECLARATIONS),
+               R["leaks"]["actor_grain_coins_where_every_admissible_source_"
+                          "leaks"], len(pool_rows),
+               R["leaks"]["actor_grain_sources_leaking_min"],
+               R["leaks"]["actor_grain_admissible"],
+               R["leaks"]["actor_grain_targets_reached_min"],
+               R["leaks"]["actor_grain_forbidden"], len(sel)),
             not grain_bad, "rows whose closure verdict is detached from "
-            "their leak: %s" % (grain_bad or "none"))
+            "their leak, or whose completeness does not track monomiality: %s"
+            % (grain_bad or "none"))
     SEAL.take("SEAL-SELECTION", R)
 
     seteq_bad = [r["coin"] for r in ag
                  if r["carrier_grain_leak_sources"]
-                 and r["carrier_grain_sources_are_the_same_actor_"
-                       "configurations"] is not True]
+                 and not (r["carrier_grain_sources_are_the_same_site_"
+                            "configurations"] is True
+                          and r["carrier_grain_sources_are_the_same_actor_"
+                                "configurations"] is False
+                          and r["carrier_grain_sources_are_actor_grain_"
+                                "forbidden"] is True
+                          and r["carrier_grain_containment_is_strict"] is True
+                          and r["same_actor_configurations_excluded"]
+                          == R["leaks"]["same_actor_configurations_excluded"])]
     seteq_bad = pick("MUT-SET-EQUALITY", seteq_bad, ["FORGED"])
     LD.gate("G-P4-SET-EQUALITY",
             "THE TWO GRAINS ARE NOT INDEPENDENT, AND THE LINK IS A SET "
-            "EQUALITY.  At the carrier's own grain the symmetric shape leaks "
-            "from exactly %d configurations, and that set IS the set of "
-            "configurations whose two excitations sit at one actor -- gated "
-            "as a set equality, element for element, at every leaking coin "
-            "class rather than as a count"
-            % R["arena"]["same_site_configurations"],
-            not seteq_bad, "coins whose leak source set is not the "
-            "same-actor set: %s" % (seteq_bad or "none"))
+            "EQUALITY WITH THE SAME-SITE SET AND A STRICT CONTAINMENT IN THE "
+            "SAME-ACTOR ONE.  At the carrier's own grain the symmetric shape "
+            "leaks from exactly %d configurations, and that set IS the set of "
+            "configurations whose two excitations sit on two of the three "
+            "cells of ONE SITE -- and it is NOT the set of configurations "
+            "whose cells share an ACTOR, which has %d members.  BOTH set "
+            "equalities are evaluated element for element at every leaking "
+            "coin class, the containment 27-in-135 is evaluated element by "
+            "element, and its strictness is published with the %d "
+            "configurations it excludes.  Every side of every equality names "
+            "the object it holds"
+            % (R["arena"]["same_site_configurations"],
+               R["arena"]["same_actor_configurations"],
+               R["leaks"]["same_actor_configurations_excluded"]),
+            not seteq_bad, "coins whose leak source set is not the same-site "
+            "set, or not strictly inside the same-actor set: %s"
+            % (seteq_bad or "none"))
 
     coincide_bad = [r["coin"] for r in ag
                     if not r["actor_grain_shape_leak_sets_coincide"]]
@@ -3006,16 +3826,40 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     words_seen = sorted({a["word"] for a in arms})
     words_seen = pick("MUT-ARMS", words_seen,
                       [w for w in words_seen if w != "OCC-CEILING-FORCED"])
+    # THE SEED CONDITIONAL'S OWN VERDICT, DERIVED FROM TWO MEASURED CLAUSES
+    # and compared here against the adjudicated word (K2 R2).  Clause one is
+    # a TYPE measurement (the injection premise names actors and the
+    # excitation-to-actor relation is not a function); clause two is a LEAK
+    # measurement (supply that injection as a declaration at the grain it
+    # typed -- arm A2 -- and the conclusion fails).
+    a2_arm = [a for a in arms
+              if a["arm"] == "A2-DECLARED-EXCLUSION-AT-THE-ACTOR-GRAIN"][0]
+    seed_clauses = []
+    if not p1["excitation_to_actor_is_a_function"]:
+        seed_clauses.append("MISTYPED-AT-THE-CARRIER")
+    if (a2_arm["p2"] == "DECLARED-EXCLUSION"
+            and a2_arm["p4"] == "NO-SHAPE-CLOSES"
+            and a2_arm["word"] != "OCC-CEILING-FORCED"):
+        seed_clauses.append("REFUTED-AT-THE-GRAIN-IT-TYPED")
+    seed_word = ";".join(seed_clauses)
     LD.gate("G-ARMS-REACHABILITY",
             "#34 WITH REACHABILITY, AT THE HEAD LAW: the head is derived from "
             "the four premise verdicts and is exercised on %d arenas, on "
-            "which it returns %d DIFFERENT pre-registered outcome words.  "
-            "Every branch of the law is reached on a CONSTRUCTED arena rather "
-            "than on a synthetic census, and the verdict arena is the "
-            "committed one" % (len(arms), len(words_seen)),
-            len(words_seen) >= 4 and all(w.split("-<")[0] in OUTCOMES
-                                         for w in words_seen),
-            "words returned: %s" % words_seen)
+            "which it returns %d DIFFERENT pre-registered outcome words -- "
+            "the whole pre-registered outcome set, compared AS A SET rather "
+            "than by cardinality.  Every branch of the law is reached on a "
+            "CONSTRUCTED arena rather than on a synthetic census, and the "
+            "verdict arena is the committed one.  The seed conditional's own "
+            "verdict is derived here from two measured clauses -- the type "
+            "measurement at the carrier and arm A2's leak measurement at the "
+            "grain it typed -- and compared against the adjudicated word"
+            % (len(arms), len(words_seen)),
+            set(words_seen) == set(OUTCOMES)
+            and seed_word == SEED_CONDITIONAL_WORD,
+            "words returned: %s; outcome set matches %s; seed conditional "
+            "derived %s against the adjudicated %s"
+            % (words_seen, set(words_seen) == set(OUTCOMES), seed_word,
+               SEED_CONDITIONAL_WORD))
     SEAL.take("SEAL-ARMS", R)
 
     c1 = [c for c in controls if c["arena"] == "C1-SUBSET-CARRIER"][0]
@@ -3038,6 +3882,19 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     SEAL.take("SEAL-CONTROLS", R)
 
     asym = asymmetry_row(sel)
+    wedge = R["leaks"]["wedge_theorem"]
+    site_arm = R["leaks"]["site_grain_arm"]
+    asym["mechanism_theorem"] = {
+        "grains_tested": wedge["grains"],
+        "rows": wedge["rows"],
+        "empty_iff_the_carrier_grain": wedge["empty_iff_the_carrier_grain"],
+        "statement": wedge["statement"]}
+    asym["third_grain_residual"] = {
+        "grain": site_arm["grain"], "coins": site_arm["coins"],
+        "coins_that_select": site_arm["coins_that_select"],
+        "coins_where_no_shape_closes":
+            site_arm["coins_where_no_shape_closes"],
+        "admissible": site_arm["admissible"]}
     perm_selects = pick("MUT-ASYMMETRY",
                         asym["permission_rows_that_select"], 1)
     R["asymmetry"] = asym
@@ -3054,16 +3911,44 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                asym["exclusion_rows_that_select"], asym["exclusion_rows"],
                asym["exclusion_at_the_actor_grain_selects"],
                asym["exclusion_at_the_actor_grain_rows"],
-               asym["actor_grain_rows_where_no_shape_closes"]),
+               asym["actor_grain_rows_where_no_shape_closes"])
+            + ".  THE 'ONLY' IS A THEOREM PLUS A RESIDUAL, not a two-point "
+              "census: under a hard core at grain G the antisymmetric "
+              "sector's forbidden set is the set of distinct-cell pairs that "
+              "collide under G, and it is EMPTY IF AND ONLY IF G is the "
+              "carrier's own grain -- measured per object over the %d grains "
+              "this arena admits, at %d, %d and %d forbidden configurations "
+              "-- so the automatic closure that makes exclusion selective "
+              "exists at the carrier's grain and structurally nowhere else.  "
+              "The residual is then one census per coarser grain, and the "
+              "SITE grain -- a genuine function of the cell, unlike the "
+              "actor relation -- selects at %d of %d coins, with no shape "
+              "closing at %d of %d"
+            % (wedge["grains"],
+               wedge["rows"][0]["antisymmetric_forbidden"],
+               wedge["rows"][1]["antisymmetric_forbidden"],
+               wedge["rows"][2]["antisymmetric_forbidden"],
+               site_arm["coins_that_select"], site_arm["coins"],
+               site_arm["coins_where_no_shape_closes"], site_arm["coins"]),
             (perm_selects == 0
              and asym["exclusion_at_the_actor_grain_selects"] == 0
-             and asym["exclusion_rows_that_select"] > 0),
+             and asym["exclusion_rows_that_select"] > 0
+             and wedge["empty_iff_the_carrier_grain"]
+             and all(r["antisymmetric_forbidden_set_is_empty"]
+                     == r["is_the_carrier_grain"] for r in wedge["rows"])
+             and site_arm["coins_that_select"] == 0
+             and site_arm["coins_where_no_shape_closes"] == site_arm["coins"]),
             "permission selects %d of %d; exclusion %d of %d; at the actor "
-            "grain %d of %d"
+            "grain %d of %d; wedge forbidden sets %s (empty iff the carrier "
+            "grain: %s); the site grain selects %d of %d"
             % (perm_selects, asym["permission_rows"],
                asym["exclusion_rows_that_select"], asym["exclusion_rows"],
                asym["exclusion_at_the_actor_grain_selects"],
-               asym["exclusion_at_the_actor_grain_rows"]))
+               asym["exclusion_at_the_actor_grain_rows"],
+               [(r["grain"], r["antisymmetric_forbidden"])
+                for r in wedge["rows"]],
+               wedge["empty_iff_the_carrier_grain"],
+               site_arm["coins_that_select"], site_arm["coins"]))
     SEAL.take("SEAL-ASYMMETRY", R)
 
     # -- THE COUNTS, assembled before anything renders from them ------------
@@ -3071,6 +3956,8 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     verdict_arm = [a for a in arms if a["role"] == "THE VERDICT ARENA"][0]
     R["counts"] = {
         "outcome_word": verdict_arm["word"],
+        "seed_conditional": seed_word,
+        "seed_conditional_clauses": len(seed_clauses),
         "p4_word": p4_committed,
         "distinct_outcome_words": len({a["word"] for a in arms}),
         "arms": len(arms),
@@ -3115,26 +4002,130 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             % (stamp_bad or "none"))
     SEAL.take("SEAL-STAMPS", R)
 
-    # E-24: every published ratio's denominator is checked AGAINST THE
-    # MEASURED COUNT it claims to enumerate -- a per-object check, not a
-    # constant boolean beside a stamp
-    enums = [
-        {"ratio": "coins leaking of coins", "denominator": len(pool_rows),
-         "measured": R["pool"]["coins"],
-         "enumeration": "the S_3-covariant coin classes up to a global phase"},
-        {"ratio": "leaking sources of admissible configurations",
-         "denominator": R["leaks"]["actor_grain_admissible"],
-         "measured": len(admissible_configs("ACTOR", 1, "ANTISYMMETRIC")),
-         "enumeration": "the two-excitation configurations the actor-grain "
-                        "hard core admits"},
-        {"ratio": "targets reached of forbidden configurations",
-         "denominator": R["leaks"]["actor_grain_forbidden"],
-         "measured": len(all_configs()[0])
-                     - len(admissible_configs("ACTOR", 1, "ANTISYMMETRIC")),
-         "enumeration": "the two-excitation configurations it forbids"},
-        {"ratio": "selection rows", "denominator": len(sel),
-         "measured": len(pool_rows) * len(DECLARATIONS),
-         "enumeration": "coin classes times declarations"}]
+    # E-24: EVERY published ratio's denominator is re-counted from the
+    # construction it claims to enumerate -- a per-object check over the head
+    # itself, not four hand-picked rows beside a stamp (K3 MAJOR-5).  Each
+    # entry names a re-count that is built HERE from the construction, never
+    # read from the row it certifies.
+    recount = {
+        "coins": (len(pool_rows), "the S_3-covariant coin classes up to a "
+                                  "global phase, re-counted from the ring "
+                                  "census"),
+        "actors": (len(SITES), "the arena's actors, re-counted from the "
+                               "rebuilt site set"),
+        "cells": (len(CELL_PAIR), "the carrier's cells, re-counted from the "
+                                  "rebuilt cell-to-pair map"),
+        "carrier_grain_coins_leaking":
+            (sum(1 for r in pool_rows
+                 if r["carrier_grain_symmetric_leak"] > 0),
+             "the coins whose carrier-grain symmetric leak is nonzero"),
+        "same_actor_configurations":
+            (len([1 for a, b in combinations(range(NCELL), 2)
+                  if share_an_actor(a, b)]),
+             "the two-excitation configurations whose cells share an actor"),
+        "actor_grain_admissible":
+            (len(admissible_configs("ACTOR", 1, "ANTISYMMETRIC")),
+             "the two-excitation configurations the actor-grain hard core "
+             "admits"),
+        "actor_grain_forbidden":
+            (len(all_configs()[0])
+             - len(admissible_configs("ACTOR", 1, "ANTISYMMETRIC")),
+             "the two-excitation configurations it forbids"),
+        "grains": (len(GRAINS), "the grains the arena admits, re-counted "
+                                "from the declared grain map"),
+        "site_grain_coins": (len(pool_rows),
+                             "the coin classes, re-counted for the site-grain "
+                             "residual"),
+        "record_probe_fields": (len(RECORD_PROBES),
+                                "the declared count-field probes"),
+        "leak_rows": (len(pool_rows) * len(DECLARATIONS) * len(SHAPES),
+                      "coin classes times declarations times shapes"),
+        "parent_generators": (len(receipts["A-P22REC"]["occupancy"]["rows"]),
+                              "paper-22's own committed generator rows"),
+        "declarations": (len(DECLARATIONS),
+                         "the declarations this unit constructs"),
+        "one_excitation_comparisons":
+            (len(pool_rows) * sum(
+                (lambda k: k + 2 * k * k)(len(one_excitation_space(
+                    DECLARATIONS[DECLARATION_IDS.index(a)][1],
+                    DECLARATIONS[DECLARATION_IDS.index(a)][2])))
+                for a, _b in combinations(DECLARATION_IDS, 2)),
+             "over every coin and every declaration pair, the first "
+             "declaration's own restriction: its configuration set once and "
+             "its matrix and its Born shadow entry by entry"),
+        "sites": (len(site_field([0] * NCELL)),
+                  "the arena's sites, re-counted from the site field the "
+                  "committed rule reads"),
+        "blindness_census_pairs":
+            (NCELL * len(list(combinations(range(3), 2))),
+             "every doubly occupied configuration against every one of its "
+             "same-site partners"),
+        "completions": (p3["completion_fiber"],
+                        "the declared emission completions, all run"),
+        "permission_rows": (len(pool_rows) * len(
+            [d for d in DECLARATIONS if d[2] == 2]),
+            "coin classes times the permission declarations"),
+        "exclusion_rows": (len(pool_rows) * len(
+            [d for d in DECLARATIONS if d[2] == 1]),
+            "coin classes times the exclusion declarations"),
+        "actor_grain_exclusion_rows": (len(pool_rows),
+                                       "coin classes times the actor-grain "
+                                       "exclusion declaration"),
+        "arms": (len(arms), "the arenas the head law is exercised on"),
+    }
+    # every X-OF-Y field of the head, bound to its own re-count
+    RATIO_DENOMINATORS = {
+        "ACTOR-SITE-BIJECTION": "actors",
+        "CELLS-WITH-EXACTLY-TWO-ACTORS": "cells",
+        "ACTORS-IN-EXACTLY-SIX-CELLS": "actors",
+        "NON-MONOMIAL-COINS": "coins",
+        "CARRIER-GRAIN-COINS-LEAKING": "coins",
+        "CARRIER-GRAIN-LEAK-SOURCES-ARE-THE-SAME-SITE-CONFIGURATIONS":
+            "carrier_grain_coins_leaking",
+        "CARRIER-GRAIN-LEAK-SOURCES-ARE-THE-SAME-ACTOR-CONFIGURATIONS":
+            "carrier_grain_coins_leaking",
+        "CARRIER-GRAIN-LEAK-SOURCES-ARE-ACTOR-GRAIN-FORBIDDEN":
+            "same_actor_configurations",
+        "CARRIER-GRAIN-CONTAINMENT-IS-STRICT": "carrier_grain_coins_leaking",
+        "ACTOR-GRAIN-COINS-WHERE-BOTH-SHAPES-LEAK": "coins",
+        "ACTOR-GRAIN-SHAPE-LEAK-SETS-COINCIDE": "coins",
+        "ACTOR-GRAIN-SOURCES-LEAKING-MAX": "actor_grain_admissible",
+        "ACTOR-GRAIN-SOURCES-LEAKING-MIN": "actor_grain_admissible",
+        "ACTOR-GRAIN-TARGETS-REACHED-MAX": "actor_grain_forbidden",
+        "ACTOR-GRAIN-TARGETS-REACHED-MIN": "actor_grain_forbidden",
+        "ACTOR-GRAIN-COINS-WHERE-EVERY-ADMISSIBLE-SOURCE-LEAKS": "coins",
+        "ACTOR-GRAIN-COINS-WHERE-EVERY-FORBIDDEN-TARGET-IS-REACHED": "coins",
+        "WEDGE-FORBIDDEN-SET-EMPTY-IFF-THE-CARRIER-GRAIN": "grains",
+        "SITE-GRAIN-COINS-THAT-SELECT": "site_grain_coins",
+        "SITE-GRAIN-COINS-WHERE-NO-SHAPE-CLOSES": "site_grain_coins",
+        "P4-IS-RECORD-BLIND-AT-THE-PROBED-COUNT-FIELDS": "record_probe_fields",
+        "LEAK-ROUTES-AGREE": "leak_rows",
+        "PARENT-SPLIT-CITED": "parent_generators",
+        "P2-DECLARATION-FIBER": "declarations",
+        "P2-ONE-EXCITATION-RESTRICTIONS-AGREE": "one_excitation_comparisons",
+        "P3-BLINDNESS-PAIR-SITE-FIELDS-AGREE": "sites",
+        "P3-SITE-FIELD-CANNOT-SEPARATE": "blindness_census_pairs",
+        "P3-RECORD-MENU-READING-SEPARATES": "blindness_census_pairs",
+        "P3-BORN-MENU-READING-SEPARATES": "blindness_census_pairs",
+        "P3-COMPLETIONS-PRESERVING-THE-PARENT-IDENTITY": "completions",
+        "P3-COMPLETIONS-THAT-REFUSE-A-DIVISION": "completions",
+        "ASYMMETRY-PERMISSION-ROWS-THAT-SELECT": "permission_rows",
+        "ASYMMETRY-EXCLUSION-ROWS-THAT-SELECT": "exclusion_rows",
+        "ASYMMETRY-AT-THE-ACTOR-GRAIN": "actor_grain_exclusion_rows",
+        "ARMS": "arms",
+    }
+    enums = []
+    for seg, fields in field_spec(R):
+        for lab, val in fields:
+            m = re.match(r"^(\d+)-OF-(\d+)$", render_field(val))
+            if not m:
+                continue
+            key = RATIO_DENOMINATORS.get(lab)
+            got, why = recount.get(key, (None, "NO RE-COUNT DECLARED"))
+            enums.append({"ratio": "%s/%s" % (seg, lab),
+                          "denominator": int(m.group(2)),
+                          "measured": got, "enumeration": why,
+                          "recount_key": key})
     for e in enums:
         e["denominator_matches_its_enumeration"] = (e["denominator"]
                                                     == e["measured"])
@@ -3152,22 +4143,29 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     LD.gate("G-COUNTING-ONLY",
             "E-24: no count becomes a probability without a declared measure. "
             "Every ratio this unit publishes is a COUNT over a declared "
-            "enumeration, and the check binds OBJECTS: each of the %d "
-            "enumerations is re-counted from the construction it names and "
-            "its denominator compared with that count, so a ratio taken over "
-            "a set other than the one it claims dies here.  No enumeration "
-            "carries a measure, and the receipt is stamped COUNTING-ONLY"
-            % len(enums),
-            not measure_declared and not enum_bad,
-            "measure declared: %s; enumerations whose denominator does not "
-            "match their own re-count: %s; stamp %s"
-            % (measure_declared, enum_bad or "none",
+            "enumeration, and the check binds OBJECTS AND IS TOTAL: the head "
+            "is walked field by field, every one of the %d X-OF-Y ratios in "
+            "it is picked up, and each one's DENOMINATOR is re-counted from "
+            "the construction it claims to enumerate -- %d distinct "
+            "re-counts, each built here from the construction and never read "
+            "from the row it certifies -- so a ratio taken over a set other "
+            "than the one it claims dies here, and a new ratio with no "
+            "declared re-count dies here too.  No enumeration carries a "
+            "measure, and the receipt is stamped COUNTING-ONLY"
+            % (len(enums), len({e["recount_key"] for e in enums})),
+            not measure_declared and not enum_bad and len(enums) > 0,
+            "ratios re-counted %d over %d distinct enumerations; measure "
+            "declared: %s; ratios whose denominator does not match their own "
+            "re-count: %s; stamp %s"
+            % (len(enums), len({e["recount_key"] for e in enums}),
+               measure_declared, enum_bad or "none",
                R["counting_only"]["stamp"]))
     SEAL.take("SEAL-COUNTING", R)
 
     lifts = ("FREE(U-TENSOR-U)", "CONTACT", "DISTINGUISHABLE")
     choices = [
-        {"item": "the grain a ceiling is declared at",
+        {"item": "the grain a ceiling is declared at (DECLARED MENU; the "
+                 "space is larger -- the site grain is run as a residual)",
          "fiber": len({d[1] for d in DECLARATIONS}), "class": "MEASURED-BOTH",
          "verdict_determining": "YES"},
         {"item": "the ceiling value",
@@ -3179,6 +4177,9 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
          "class": "MEASURED-ALL", "verdict_determining": "no"},
         {"item": "the emission completion", "fiber": p3["completion_fiber"],
          "class": "DECLARED-AND-ALL-RUN", "verdict_determining": "no"},
+        {"item": "the emission reading (the parent's own F10 fiber)",
+         "fiber": p3["emission_reading_fiber"], "class": "MEASURED-BOTH",
+         "verdict_determining": "no"},
         {"item": "the control arenas", "fiber": len(controls),
          "class": "DECLARED-CONTROL", "verdict_determining": "no"},
         {"item": "the record, the carrier, the links, the coin order",
@@ -3301,15 +4302,44 @@ def run_paper_gates(LD, SEAL, R, segs, text):
     for tid, row in trows:
         if canon(text).count(canon(row)) != 1:
             tbad.append(tid)
-    R["paper_tables"] = [{"id": t, "row": r} for t, r in trows]
+    # TOTAL COVERAGE, IN BOTH DIRECTIONS: every DATA row of every markdown
+    # table in the object under test must be one of the rows this run
+    # rendered.  A table the instrument does not render is a table nothing
+    # binds, so an unrendered row is a finding and not a licence.
+    rendered = {canon(r) for _t, r in trows}
+    header_like = re.compile(r"^\|[\s:|-]*\|$")
+    lines = [ln.strip() for ln in mdstrip(text).split("\n")]
+    paper_rows, headers, unrendered = 0, 0, []
+    for i, s in enumerate(lines):
+        if not (s.startswith("|") and s.endswith("|")):
+            continue
+        if header_like.match(s):
+            continue                                   # the separator row
+        nxt = lines[i + 1] if i + 1 < len(lines) else ""
+        if header_like.match(nxt):
+            headers += 1
+            continue                                   # a column header
+        paper_rows += 1
+        if canon(s) not in rendered:
+            unrendered.append(s[:60])
+    R["paper_tables"] = {
+        "rows": [{"id": t, "row": r} for t, r in trows],
+        "rendered_rows": len(trows), "column_headers": headers,
+        "data_rows_in_the_paper": paper_rows,
+        "rows_no_gate_renders": unrendered}
     LD.gate("G-PAPER-TABLES",
-            "E-22: TABLES RENDER AS CLAIMS.  Every one of the %d rows of the "
-            "three load-bearing tables -- the pool at both grains, the six "
-            "arms, and the four declarations -- is rendered from this run and "
-            "required to occur in the paper exactly once, so a moved cell or "
-            "an inverted closure verdict dies inside the run" % len(trows),
-            not tbad, "table rows not occurring exactly once: %s"
-            % (tbad or "none"))
+            "E-22: TABLES RENDER AS CLAIMS, AND THE COVERAGE IS TOTAL IN BOTH "
+            "DIRECTIONS.  Every one of the %d rows of the FOUR load-bearing "
+            "tables -- the pool at both grains, the six arms, the four "
+            "declarations and the choice inventory -- is rendered from this "
+            "run and required to occur in the paper exactly once, so a moved "
+            "cell or an inverted closure verdict dies inside the run; and "
+            "every one of the %d data rows the object under test carries is "
+            "required to BE one of them, so a table row no gate renders "
+            "cannot be smuggled in beside them" % (len(trows), paper_rows),
+            not tbad and not unrendered,
+            "table rows not occurring exactly once: %s; paper rows no gate "
+            "renders: %s" % (tbad or "none", unrendered or "none"))
     SEAL.take("SEAL-PAPER-TABLES", R)
 
     cov = paper_coverage(R, text, segs)
@@ -3320,16 +4350,33 @@ def run_paper_gates(LD, SEAL, R, segs, text):
     LD.gate("G-PAPER-NUMERAL-COVERAGE",
             "#20 WITH THE FENCED-BLOCK ADDENDUM AND E-22's INLINE-SPAN "
             "ADDENDUM: %d numerals are scanned -- %d in prose, %d inside the "
-            "%d fenced blocks and %d inside the %d inline code spans -- and "
-            "every one must be licensed by a MEASURED receipt value or by a "
-            "declared structural numeral.  Digest strings are excluded from "
-            "the licensed set, so no numeral can be licensed by a hash"
+            "%d fenced blocks and %d inside the %d inline code spans -- "
+            "together with the %d SPELLED numerals above twelve, which house "
+            "style writes as words and a digit scan is blind to.  Every one "
+            "must be licensed by a MEASURED receipt value or by a declared "
+            "structural numeral, and the licensed set is now the measured "
+            "INTEGERS plus the declared exact-rational rows: prose is not a "
+            "licence, and neither is a digest, a source's byte length or an "
+            "anchor's character count.  The structural whitelist is itself "
+            "measured -- %d declared, %d needed by this object, %d declared "
+            "and unused, %d digest-shaped -- so it cannot grow silently"
             % (cov["scanned"],
                cov["scanned"] - cov["fenced_numerals"] - cov["inline_numerals"],
                cov["fenced_numerals"], cov["fenced_blocks"],
-               cov["inline_numerals"], cov["inline_spans"]),
-            not unregistered, "unlicensed numerals: %s"
-            % (unregistered[:8] or "none"))
+               cov["inline_numerals"], cov["inline_spans"],
+               cov["spelled_numerals_scanned"],
+               cov["structural_numerals_declared"],
+               len(cov["structural_numerals_the_object_needs"]),
+               len(cov["structural_numerals_declared_and_unused"]),
+               len(cov["structural_numerals_that_are_digest_shaped"])),
+            not unregistered
+            and not cov["structural_numerals_declared_and_unused"]
+            and not cov["structural_numerals_that_are_digest_shaped"],
+            "unlicensed numerals: %s; structural numerals declared and "
+            "unused: %s; digest-shaped: %s"
+            % (unregistered[:8] or "none",
+               cov["structural_numerals_declared_and_unused"] or "none",
+               cov["structural_numerals_that_are_digest_shaped"] or "none"))
 
     hbad = []
     for name, seg in sorted(segs.items()):
@@ -3340,7 +4387,11 @@ def run_paper_gates(LD, SEAL, R, segs, text):
     dropped = Counter(dict(list(blockmap.items())[:-1]))
     blockmap = pick("MUT-PAPER-BLOCK", blockmap, dropped)
     want = Counter(canon(s) for s in segs.values())
-    multiset_ok = all(blockmap.get(k, 0) == v for k, v in want.items())
+    # E-22 AS WRITTEN: MULTISET EQUALITY, not containment-with-counts.  A
+    # paper carrying a clean copy and a forged twin satisfies containment
+    # with the clean one, and an EXTRA forged verdict block satisfies it
+    # too; equality of the two multisets kills both (K3 MAJOR-1).
+    multiset_ok = (blockmap == want)
     R["paper_coverage"]["fenced_multiset"] = {
         "blocks_in_the_paper": sum(blockmap.values()),
         "distinct_blocks": len(blockmap),
@@ -3465,6 +4516,22 @@ def falsifier_hooks():
     return out
 
 
+def falsifier_values():
+    """E-23, THE VALUE HALF: the value a falsifier moves its symbol TO, read
+    off the THIRD ARGUMENT of its own pick() call by unparsing that argument
+    from this file's AST -- not by a substring test over the hook's source,
+    which a description declaring `to 4` while the code moves to `47`
+    survives (K3 MINOR-1)."""
+    tree = ast.parse(read_text(SELF))
+    out = defaultdict(list)
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) \
+                and node.func.id == "pick" and len(node.args) == 3 \
+                and isinstance(node.args[0], ast.Constant):
+            out[node.args[0].value].append(ast.unparse(node.args[2]))
+    return out
+
+
 def waiver_ledger():
     return {
         "G-PROVENANCE": ("FALSIFIED-BY-A-FLAG",
@@ -3550,7 +4617,8 @@ def finish(LD, SEAL, R, segs, write=True, swept=False):
     SEAL.take("SEAL-WAIVERS", R)
 
     hooks = falsifier_hooks()
-    hook_rows, desc_bad, hook_bad = [], [], []
+    values = falsifier_values()
+    hook_rows, desc_bad, hook_bad, value_bad = [], [], [], []
     for name, gate, why, moves, to in MUTANTS:
         declared = (moves, to)
         if mut("MUT-FALSIFIER-DESC") and name == "MUT-MEMO":
@@ -3558,14 +4626,29 @@ def finish(LD, SEAL, R, segs, write=True, swept=False):
         segs_here = hooks.get(name, [])
         code_ok = any(declared[0] in s and declared[1] in s
                       for s in segs_here)
-        prose_ok = moves in why and to in why
+        # THE VALUE LEG, ON THE UNPARSED THIRD ARGUMENT rather than on a
+        # substring of the hook (K3 MINOR-1): the declared value must occur
+        # as a WHOLE TOKEN of the expression the pick() actually moves to.
+        argv_here = values.get(name, [])
+        value_ok = (not argv_here) or any(
+            re.search(r"(?<![\w.])%s(?![\w.])" % re.escape(str(declared[1])),
+                      expr) for expr in argv_here)
+        # THE PROSE LEG, ON WORD BOUNDARIES rather than as a substring
+        prose_ok = bool(re.search(r"(?<![\w-])%s(?![\w])"
+                                  % re.escape(str(moves)), why)) and \
+            bool(re.search(r"(?<![\w-])%s(?![\w])" % re.escape(str(to)), why))
         hook_rows.append({"mutant": name, "gate": gate, "what_it_does": why,
                           "moves": declared[0], "to": declared[1],
                           "hook_sites": len(segs_here),
+                          "pick_argument_expressions": argv_here,
                           "matches_its_code": code_ok,
+                          "declared_value_is_the_picks_own_argument":
+                              value_ok,
                           "named_in_its_description": prose_ok})
         if not code_ok:
             hook_bad.append(name)
+        if not value_ok:
+            value_bad.append(name)
         if not prose_ok:
             desc_bad.append(name)
     undeclared_hooks = sorted(set(hooks) - MUTANT_NAMES)
@@ -3575,15 +4658,22 @@ def finish(LD, SEAL, R, segs, write=True, swept=False):
             "SURFACE.  Each of the %d declared falsifiers names THE SYMBOL IT "
             "MOVES and THE VALUE IT MOVES IT TO; both are re-derived from "
             "THIS FILE's own AST -- the innermost statement enclosing its "
-            "hook -- and compared against the declaration, and the published "
-            "prose is required to name both.  %d hook sites are located, and "
-            "every hook in the file names a declared falsifier"
-            % (len(MUTANTS), sum(len(v) for v in hooks.values())),
-            not hook_bad and not desc_bad and not undeclared_hooks,
-            "declarations not matching their code: %s; descriptions not "
-            "naming their symbol and value: %s; hooks naming an undeclared "
-            "falsifier: %s" % (hook_bad or "none", desc_bad or "none",
-                               undeclared_hooks or "none"))
+            "hook -- and compared against the declaration.  THE VALUE LEG "
+            "READS THE PICK'S OWN THIRD ARGUMENT, unparsed from the AST and "
+            "matched as a whole token (%d such arguments located), so a "
+            "falsifier declaring that it moves a symbol `to 4` while its code "
+            "moves it to `47` dies here; and the published prose is required "
+            "to name both, ON WORD BOUNDARIES.  %d hook sites are located, "
+            "and every hook in the file names a declared falsifier"
+            % (len(MUTANTS), sum(len(v) for v in values.values()),
+               sum(len(v) for v in hooks.values())),
+            not hook_bad and not desc_bad and not value_bad
+            and not undeclared_hooks,
+            "declarations not matching their code: %s; declared values that "
+            "are not the pick's own argument: %s; descriptions not naming "
+            "their symbol and value: %s; hooks naming an undeclared "
+            "falsifier: %s" % (hook_bad or "none", value_bad or "none",
+                               desc_bad or "none", undeclared_hooks or "none"))
     SEAL.take("SEAL-MUTANTS", R)
 
     ws = writer_shape()
@@ -3773,60 +4863,70 @@ def finish(LD, SEAL, R, segs, write=True, swept=False):
         return payload, text
     tmp_j, tmp_t = OUT_JSON + ".tmp", OUT_TXT + ".tmp"
     final = json.dumps(R, indent=1, sort_keys=True, default=str)
-    with open(tmp_j, "w", encoding="utf-8") as fh:
-        fh.write(final + "\n")
-    with open(tmp_t, "w", encoding="utf-8") as fh:
-        fh.write(text)
-    back = json.loads(read_text(tmp_j))
-    probes_caught = 0
-    for row in SEAL.rows:
-        probe = json.loads(json.dumps(back))
-        cur = probe
-        parts = row["path"].split("/")
-        for part in parts[:-1]:
-            cur = cur[int(part)] if isinstance(cur, list) else cur[part]
-        key = parts[-1]
-        if isinstance(cur, list):
-            cur[int(key)] = ["PROBE"]
-        else:
-            cur[key] = "PROBE"
-        if row["seal"] in SEAL.verify(probe, only={row["seal"]}):
-            probes_caught += 1
-    probe_caught = probes_caught == len(SEAL.rows)
-    disk_broken = SEAL.verify(back)
-    back_text = read_text(tmp_t)
-    head_ok = (back_text.split("\n")[:40] == R["transcript_head"])
-    text_ok = digest(back_text) == SEAL.text_sha
-    text_lines = len(back_text.split("\n"))
-    chained_ok = (back.get("payload_sha256_12") == SEAL.payload_sha
-                  and back.get("seal_manifest", {}).get("rows") == SEAL.rows)
-    ran = {g["gate"] for g in LD.rows}
-    late_ok = all(g in ran for g in tuple(LEDGER_GATES) + LATE_GATES[:2]
-                  + CLOSING_LEDGER_GATES + (SWEEP_GATE,))
-    sweep_complete = (len(R.get("mutant_sweep") or []) == len(MUTANTS)
-                      and all(k.get("on_target")
-                              for k in R.get("mutant_sweep") or []))
-    LD.gate("G-ARTIFACT-INTEGRITY",
-            "INTEGRITY IS DISK-VS-SEAL, never a re-derivation: the payload is "
-            "written from the SEALED object to a staged file, read back FROM "
-            "DISK, and every sealed object compared against the digest taken "
-            "at the moment its gate passed -- with every one of the %d sealed "
-            "rows corrupted in turn on a read-back copy and shown to be "
-            "detected first.  The transcript is compared IN FULL, %d of %d "
-            "lines by digest, and the two DECLARED-UNSEALED keys are CHAINED "
-            "here against the live seal object.  The staged bytes are moved "
-            "into place by os.replace ONLY after this gate passes, so a run "
-            "that fails any gate leaves the delivered artifacts untouched"
-            % (len(SEAL.rows), text_lines, SEAL.text_lines),
-            probe_caught and not disk_broken and head_ok and text_ok
-            and chained_ok and late_ok and sweep_complete,
-            "corrupted probes detected %d of %d, sealed objects broken on "
-            "disk %s, transcript head matches %s, transcript matches in full "
-            "%s (%d of %d lines), declared-unsealed keys chained %s, every "
-            "declared-later gate evaluated %s, sweep complete and on target %s"
-            % (probes_caught, len(SEAL.rows), disk_broken or "none", head_ok,
-               text_ok, text_lines, SEAL.text_lines, chained_ok, late_ok,
-               sweep_complete))
+    try:
+        with open(tmp_j, "w", encoding="utf-8") as fh:
+            fh.write(final + "\n")
+        with open(tmp_t, "w", encoding="utf-8") as fh:
+            fh.write(text)
+        back = json.loads(read_text(tmp_j))
+        probes_caught = 0
+        for row in SEAL.rows:
+            probe = json.loads(json.dumps(back))
+            cur = probe
+            parts = row["path"].split("/")
+            for part in parts[:-1]:
+                cur = cur[int(part)] if isinstance(cur, list) else cur[part]
+            key = parts[-1]
+            if isinstance(cur, list):
+                cur[int(key)] = ["PROBE"]
+            else:
+                cur[key] = "PROBE"
+            if row["seal"] in SEAL.verify(probe, only={row["seal"]}):
+                probes_caught += 1
+        probe_caught = probes_caught == len(SEAL.rows)
+        disk_broken = SEAL.verify(back)
+        back_text = read_text(tmp_t)
+        head_ok = (back_text.split("\n")[:40] == R["transcript_head"])
+        text_ok = digest(back_text) == SEAL.text_sha
+        text_lines = len(back_text.split("\n"))
+        chained_ok = (back.get("payload_sha256_12") == SEAL.payload_sha
+                      and back.get("seal_manifest", {}).get("rows") == SEAL.rows)
+        ran = {g["gate"] for g in LD.rows}
+        late_ok = all(g in ran for g in tuple(LEDGER_GATES) + LATE_GATES[:2]
+                      + CLOSING_LEDGER_GATES + (SWEEP_GATE,))
+        sweep_complete = (len(R.get("mutant_sweep") or []) == len(MUTANTS)
+                          and all(k.get("on_target")
+                                  for k in R.get("mutant_sweep") or []))
+        LD.gate("G-ARTIFACT-INTEGRITY",
+                "INTEGRITY IS DISK-VS-SEAL, never a re-derivation: the payload is "
+                "written from the SEALED object to a staged file, read back FROM "
+                "DISK, and every sealed object compared against the digest taken "
+                "at the moment its gate passed -- with every one of the %d sealed "
+                "rows corrupted in turn on a read-back copy and shown to be "
+                "detected first.  The transcript is compared IN FULL, %d of %d "
+                "lines by digest, and the two DECLARED-UNSEALED keys are CHAINED "
+                "here against the live seal object.  The staged bytes are moved "
+                "into place by os.replace ONLY after this gate passes, so a run "
+                "that fails any gate leaves the delivered artifacts untouched"
+                % (len(SEAL.rows), text_lines, SEAL.text_lines),
+                probe_caught and not disk_broken and head_ok and text_ok
+                and chained_ok and late_ok and sweep_complete,
+                "corrupted probes detected %d of %d, sealed objects broken on "
+                "disk %s, transcript head matches %s, transcript matches in full "
+                "%s (%d of %d lines), declared-unsealed keys chained %s, every "
+                "declared-later gate evaluated %s, sweep complete and on target %s"
+                % (probes_caught, len(SEAL.rows), disk_broken or "none", head_ok,
+                   text_ok, text_lines, SEAL.text_lines, chained_ok, late_ok,
+                   sweep_complete))
+    except GateFail:
+        # A FAILING RUN LEAVES NOTHING ON DISK -- STAGED OR PROMOTED (K3
+        # MINOR-2).  The staged files are removed before the failure
+        # propagates, so "writes nothing" is true of the file system and not
+        # only of the two delivered artifacts.
+        for _tmp in (tmp_j, tmp_t):
+            if os.path.exists(_tmp):
+                os.remove(_tmp)
+        raise
     os.replace(tmp_j, OUT_JSON)
     os.replace(tmp_t, OUT_TXT)
     return payload, text
@@ -3848,6 +4948,11 @@ def emit_report(R, LD):
            R["totals"]["declarations"], R["totals"]["leak_rows"],
            R["totals"]["arms"]))
     say("VERDICT: %s" % R["counts"]["outcome_word"])
+    # THE HEAD IS EMITTED INTO THE TRANSCRIPT TOO (K3 MINOR-3): the paper
+    # says the head is quoted exactly as the instrument emits it, and the
+    # transcript is the artifact a reader opens.
+    for name in sorted(R["verdict"]):
+        say(R["verdict"][name])
     say("-" * 78)
 
 

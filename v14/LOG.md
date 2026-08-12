@@ -8426,3 +8426,41 @@ cross-checks; the sweep).  Successors: the emission-reading
 question to the description-layer line; SIG-2 registered
 unchartered; the Barandes-orthodox tie-break noted of
 record, not adopted.
+
+## 2026-08-11 — OCC REPAIR LANDED: X1–X12 EXECUTED; THE REFERENTS BOUND; 24/24 INJECTIONS DEAD; COMMIT-AS-IS (v14 LEDGER #275)
+
+The OCC repair delivered.  X1 the SAME-SITE correction
+measured BOTH ways (SAME-SITE=5-OF-5; SAME-ACTOR=0-OF-5;
+strict containment 27-OF-135 element-by-element; 108
+excluded; the grain-unification wording grep-clean-dead); X2
+the 53,460 declaration-dependent (the zero-ceiling AND
+one-cell-forbidden injections produce 54 disagreements; the
+clean arena unmoved); X3 the never-names sentence corrected
+(the layer NAMES the pair leg, equips no occupancy
+coordinate); X4 the F10 fiber declared + P3 re-aimed (reading
+A separates 81/81; reading B blind 0/81; the site field blind
+81/81 — P3's word now DERIVED from its legs); X5 the maxima
+labelled (216-MAX/81-MIN; 135-MAX/81-MIN; 5-OF-6 both
+universals); X6 true multiset (the fully-licensed forged twin
+dies on this leg); X7 claims 15→23; X8 E-24 walks the head
+(35 ratios, 21 independent recounts); X9 the Q-side fields
+per completion; X10 the wedge theorem (empty iff carrier
+grain 3/3) + the SITE-grain arm (selects 0/6; no shape
+closes 6/6) + record-blindness over the 3²⁷ family (4 probe
+fields × 48/48) + the SEED-CONDITIONAL stamp derived from
+two measured clauses; X11 the S-7/S-8/S-9 register rows
+(the blindness schema; the co-incidence as candidate² with
+one shared premise; the successor inherits the PRICE, not a
+ceiling); X12 the full sweep (the structural whitelist
+54→4).  **No delivered computed number moved** — 5-OF-5
+moved to its true name; the universals survive as labelled
+maxima.  INJECTIONS 24/24 DEAD incl. the three
+previously-surviving pollution cases and both mid-window
+forgeries (one now caught EARLIER by X8's totality).
+Battery: plain ×2 byte; 50/50 mutants in separate
+processes, whole-tree hash identical; 25/25 argv; 12/12
+break-anchors; off-tree git-less two seeds (one from / as
+CWD); transcript 177/177; 292+2 numerals 0 unlicensed.
+Shas: paper 0092caa4d9ad, code 49b739cecac1, output
+6241127e4e83, receipt 455ddec78dda.  Committed AS-IS;
+orchestrator battery next; on green: TERMINAL.
