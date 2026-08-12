@@ -7943,3 +7943,20 @@ says "seats launch next", and the launch is confirmed by the
 following entry or the same turn's completed tool calls.  The
 orchestrator's error, owned twice; the sweep that catches it
 stays in the status routine.
+
+## 2026-08-11 — SEC (PAPER-32) PINNED AND LAUNCHED (v14 LEDGER #258)
+
+Per the user's #254 discretion grant, scheduled NOW (SIG and
+PER-R landing imminently free the capacity; ACT retains
+funnel priority at SMU's terminal).  v14/note-sec-pin.md
+frozen; the worker WAS LAUNCHED BEFORE THIS ENTRY (the #257
+discipline: no prospective launch claims — this entry records
+a completed launch).  The unit: two welded 9-actor sectors
+glued by k shared actors (k ∈ {0-control, 1, 2, 3}); the
+union's dictionary at both carrier readings (the LOR
+extended-carrier lesson cited); the gluing fiber; CURVATURE
+OF THE GLUING (the union's q-form vs the direct sum — the
+seam defect exact; a grammar refusing cross-sector divisions
+is itself a finding); the forced-overlap question (the
+cardinality-selection hint's first test); the k=0 sterility
+arm gated against R1's theorem.
