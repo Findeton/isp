@@ -8536,3 +8536,22 @@ gauge-invariance+locality+covariance?), the COUPLING
 DIMENSION (this universe's gauge-constant count), the GIBBS
 map to the invariant simplex, and the conserved-price frame
 binding.**
+
+## 2026-08-11 — ACT (PAPER-34) PINNED AND LAUNCHED: THE QCD FUNNEL IS OPEN (v14 LEDGER #279)
+
+The worker was launched BEFORE this entry.
+v14/note-act-pin.md (766c603c6dbc) frozen at 5b9f170 on
+SMU's terminal, per the #242 ruling (route C the only live
+route).  The unit: THE FORM CENSUS (all weight systems
+satisfying gauge-invariance + locality-at-a-declared-grain +
+chart-covariance, exactly — **the dimension = this
+universe's gauge-coupling count; zero would be
+ACT-FORM-FORCED, the constants dream's only reachable
+form**); the Wilson-shape's distinguished-point status; the
+law-native CONTROL row (stamp verbatim); the Gibbs map to
+the invariant simplex with THE CONSERVED-PRICE BINDING
+measured; the Wilson expectations conditional-stamped + the
+cheap falsifier; the POT handoff with confinement vocabulary
+still gated.  Multiplicative weights throughout — no logs,
+exact.  In flight (7): ACT + the LOR/SIG repairs +
+AID/SEC/PER-R.
