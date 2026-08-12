@@ -9303,3 +9303,68 @@ field, four places); walls PASS (26 terms swept, 0 loop
 families); Wilson minimality applies paper-23's criterion
 correctly one grain down.  Six minors.  **K1/K3 still out;
 adjudication after all three.**
+
+## 2026-08-12 — ACT K1 (OPERATOR SEAT) FROZEN: AWF; ZERO FALSE NUMBERS IN 187 RECOMPUTATIONS; TWO MAJORS — WILSON MEMBERSHIP TESTED ON ONE LEG ONLY (AND THE ADMITTING-GRAINS LIST A TYPED LITERAL); THE FIBRE SENTENCE REFUTED BY WITNESS (v14 LEDGER #297)
+
+**Review:** v14/review-act-operator.md (60f84ccfcfdd, 492
+lines), sole write; five object hashes verified unchanged at
+close.  **Grade AWF.**  187 independent recomputations from
+primitives sharing nothing with act_exact.py (different
+field representation, column-factorised coin enumeration,
+slot-permutation groups, union-find orbits) — **every census
+row reproduced exactly**: all coupling counts (135 /
+265,121,343 / 171,060,255 and 79 / 66,311,039 /
+43,398,585); both gauge-only counts by an independently
+derived character route (530,219,008 = 136⁴+7·72⁴;
+342,102,016 = 136⁴); 208/120 orbits; 136/80 classes at all
+three grains; 72/40 merged pairs; 64+72 extreme points; the
+11 trace values verbatim; span 10 of 135; all twelve
+falsifier rows including [−2,2]→[0,0]; all three
+expectations; the SAME closure witness numerator 101275 by
+independent integer bisection.  Numeral sweep 87 distinct /
+403 occurrences / 0 unbacked.
+
+**MAJOR-1 (Wilson membership one-legged):** the 8,192
+checks are 512 GAUGE elements × 16 data — **no chart
+element is ever applied**.  Applying them: the trace is NOT
+constant on the acting group's orbits — 29,184 of 61,440
+checks fail at PLAQUETTE-ANCHORED (193,536 of 245,760 at
+the extension); the anchored stabiliser's one non-identity
+element (the diagonal reflection, no link reversals)
+reverses the boundary loop and sends tr W → conj(tr W),
+differing on 279 of 300 data with 0 exceptions; the trace
+is real only on the carrier (376 of 400 random plaquette
+data lie outside ℚ(√2)).  Compounding: grains_admitting =
+["PLAQUETTE"] is a TYPED LITERAL (act_exact.py:2102) — the
+positive arm asserted, not computed; the gate's len==1
+clause vacuous.  Downstream survives (the trace IS
+class-constant at both readings); repair = restrict to
+conjugation-symmetric functions of the trace, free on the
+carrier.
+**MAJOR-2 (the fibre sentence false):** "the reachable
+measures are not grain-relative / the entire difference
+sits in the fibre" is REFUTED by the unit's own e =
+32/16/16 — witness: the class-constant full-support measure
+raising one size-8 class by 2¹⁶ is in the image at
+plaquette and site and NOT at link (2¹⁶ is a 16th power,
+not a 32nd).  The sealed gate tests class counts and
+coupling counts, never set equality — the false half
+un-gated.  **NOTE THE K1/K2 SEAM for adjudication:** K2's
+ruling (the carrier-visible DIMENSION grain-invariant at
+135/79) stands untouched; K1's witness shows the reachable
+measure SET is genuinely grain-relative ON THE CARRIER —
+dimension invariant, set not; the delivered sentence
+overclaimed the set.
+
+**Seven minors** (incl. §4 covering 2 of 3 grains;
+site-grain chart transitivity unpublished; the Wilson row
+collapsing the reading axis; a waiver-ledger denominator
+oddity handed to K3).  Four binding repair orders
+R-ACT-OP-1..4 with liftable sentences in-file.
+**STRENGTHENING OFFERED:** closed forms over the FULL
+acting group at full size — site anchored (136⁴+136²)/2 =
+171,060,256 and plaquette anchored (136⁴+7·72⁴+23,680)/2 =
+265,121,344 (raw orbit counts; delivered coupling counts =
+these − 1) — removing the §13 machinery-only disclosure.
+**K3 (instrument) still out; adjudication after its
+freeze.**
