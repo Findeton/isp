@@ -9105,3 +9105,35 @@ measurement and prose.**
 Five MINORs, each with a liftable repair.  **No physics
 number moved.  THE PANEL IS COMPLETE (K1 #289 / K2 #288 /
 K3 here); adjudication next.**
+
+## 2026-08-12 — AID ADJUDICATION: REPAIR ORDERED (Z1–Z14); THE ARCHITECTURE SENTENCE FORMALLY REPLACED; THE FIVE/FOUR RECONCILED; THE RESONANCE DEMOTED TO REFUSED; THE COIN-ORDER AXIS PROMOTED (v14 LEDGER #293)
+
+**note-aid-adjudication.md committed.**  Three AWF → repair,
+no REJECT; ~401 seat recomputations, zero physics numbers
+moved.  Decisive rulings: (1) K2 MAJOR-1 ADOPTED — the
+delivered SPLIT compared two tests, not two observables;
+"actors are ontology for matter and chart for space" and the
+relayed "space identity-blind, matter identity-sighted" are
+REFUSED as misreadings, the adjudicator owning both relays;
+the licensed replacement is K2 §10.4 (the invariance census
+— the surviving ordering is DEPTH, itself coin-order-
+relative until both orders are published).  (2) K1 MAJOR-1
+ADOPTED — the stabilizer acts on the event SET; order's real
+role is the crystallization TIME.  (3) FIVE/FOUR
+RECONCILED as two objects: time 5 (STRENGTHENED to all
+15,552 full-axis histories) and information floor 4 (2^k ≥
+9 + the provably redundant third event); the
+crystallization-5/horizon-5 resonance DEMOTED from
+registered observation to REFUSED (the 404≠404 control),
+the adjudicator owning the #283-era registration.  (4) The
+three-seat convergent false prefix relation repaired with
+sentence-level referent binding; the E-24 universes named
+in-paper.  (5) K3's five instrument majors adopted
+(two-way binding, phantom gate, died-at-declared-gate,
+read-back-before-replace, the four unartifacted verdicts).
+(6) PIN-DESIGN OWNED: the Barandes row invited the
+naming/factorization conflation; the coin order was not
+declared an axis — **PROMOTED: any successor unit touching
+the walk declares its coin order and publishes both, or
+stamps the fiber.**  Repair order Z1–Z14; no delivered
+number may move; the repair worker launches next.
