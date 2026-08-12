@@ -1,0 +1,3744 @@
+{
+ "anchors": [
+  {
+   "expected": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "found": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "id": "P-I7-LINKS",
+   "matches": true,
+   "path": "declarations/links_d2",
+   "source": "A-I7",
+   "why": "the declared link set: the two axis links and the one positive diagonal -- this unit's three cell directions"
+  },
+  {
+   "expected": {
+    "G-ANISO": [
+     1,
+     4,
+     5
+    ],
+    "G-ANISO2": [
+     4,
+     9,
+     13
+    ],
+    "G-DIAG2": [
+     2,
+     2,
+     4
+    ],
+    "G-FLAT": [
+     1,
+     1,
+     2
+    ],
+    "G-INDEF": [
+     1,
+     1,
+     6
+    ],
+    "G-OFFDIAG": [
+     2,
+     2,
+     6
+    ],
+    "G-OFFDIAG2": [
+     3,
+     5,
+     12
+    ],
+    "G-OFFNEG": [
+     3,
+     5,
+     4
+    ],
+    "G-SINGULAR": [
+     1,
+     1,
+     4
+    ]
+   },
+   "found": {
+    "G-ANISO": [
+     1,
+     4,
+     5
+    ],
+    "G-ANISO2": [
+     4,
+     9,
+     13
+    ],
+    "G-DIAG2": [
+     2,
+     2,
+     4
+    ],
+    "G-FLAT": [
+     1,
+     1,
+     2
+    ],
+    "G-INDEF": [
+     1,
+     1,
+     6
+    ],
+    "G-OFFDIAG": [
+     2,
+     2,
+     6
+    ],
+    "G-OFFDIAG2": [
+     3,
+     5,
+     12
+    ],
+    "G-OFFNEG": [
+     3,
+     5,
+     4
+    ],
+    "G-SINGULAR": [
+     1,
+     1,
+     4
+    ]
+   },
+   "id": "P-I7-RECORDS",
+   "matches": true,
+   "path": "declarations/records_d2",
+   "source": "A-I7",
+   "why": "the declared homogeneous record family: G-FLAT is this unit's clearing arena, G-SINGULAR and G-INDEF are the two non-admissible declared records whose budgets this unit measures"
+  },
+  {
+   "expected": {
+    "0": 1,
+    "4": 27,
+    "6": 54,
+    "7": 162,
+    "9": 36
+   },
+   "found": {
+    "0": 1,
+    "4": 27,
+    "6": 54,
+    "7": 162,
+    "9": 36
+   },
+   "id": "P-P21-SPECTRUM",
+   "matches": true,
+   "path": "family/incidence_spectrum",
+   "source": "A-P21REC",
+   "why": "paper-21's committed incidence spectrum over the 280 partitions -- recomputed here from the deposit map"
+  },
+  {
+   "expected": {
+    "1": 386640,
+    "3/4": 437184,
+    "7/4": 76896
+   },
+   "found": {
+    "1": 386640,
+    "3/4": 437184,
+    "7/4": 76896
+   },
+   "id": "P-P21-DET",
+   "matches": true,
+   "path": "price/det_spectrum",
+   "source": "A-P21REC",
+   "why": "paper-21's committed R = 4 determinant spectrum: three POSITIVE values, no zero and no negative one -- the static R = 4 row this unit extends"
+  },
+  {
+   "expected": "927415552/847288609443",
+   "found": "927415552/847288609443",
+   "id": "P-P20-EXIT",
+   "matches": true,
+   "path": "ladder/rows/4/coupled_exit",
+   "source": "A-P20REC",
+   "why": "paper-20's committed Born-menu exit probability at horizon 5 on the welded record -- reproduced here by an independent rebuild"
+  },
+  {
+   "expected": "37440224/5811307335",
+   "found": "37440224/5811307335",
+   "id": "P-P20-EXITB",
+   "matches": true,
+   "path": "ladder/rows/9/coupled_exit",
+   "source": "A-P20REC",
+   "why": "paper-20's committed RECORD-menu exit probability at horizon 5 -- the second independent anchor on the rebuilt walk"
+  },
+  {
+   "expected": 284078,
+   "found": 284078,
+   "id": "P-P20-BRANCHES",
+   "matches": true,
+   "path": "ensemble/arms/A-COUPLED/levels/4/branches",
+   "source": "A-P20REC",
+   "why": "paper-20's committed Born-menu branch count at horizon 5"
+  },
+  {
+   "expected": 314928,
+   "found": 314928,
+   "id": "P-P20-BRANCHESB",
+   "matches": true,
+   "path": "ensemble/arms/B-COUPLED/levels/4/branches",
+   "source": "A-P20REC",
+   "why": "paper-20's committed record-menu branch count at horizon 5"
+  },
+  {
+   "expected": {
+    "1,1,4": 466,
+    "1,4,1": 471,
+    "4,1,1": 379
+   },
+   "found": {
+    "1,1,4": 466,
+    "1,4,1": 471,
+    "4,1,1": 379
+   },
+   "id": "P-P20-EXITCENSUS",
+   "matches": true,
+   "path": "exit_census/count_vectors",
+   "source": "A-P20REC",
+   "why": "paper-20's committed exit census: every inadmissible leaf carries one site at a SINGULAR code, three-fold degenerate across the link classes -- and no indefinite one"
+  },
+  {
+   "expected": 5,
+   "found": 5,
+   "id": "P-P20-THIRD",
+   "matches": true,
+   "path": "exit_census/schedule/earliest_third_visit",
+   "source": "A-P20REC",
+   "why": "paper-20's committed return-time row: the earliest third visit to a site is step 5 -- the datum that fixes both dynamic floors"
+  }
+ ],
+ "arena": {
+  "cells": 27,
+  "code_box": 12,
+  "codes_checked": 2197,
+  "declared_records": {
+   "G-ANISO": [
+    1,
+    4,
+    5
+   ],
+   "G-ANISO2": [
+    4,
+    9,
+    13
+   ],
+   "G-DIAG2": [
+    2,
+    2,
+    4
+   ],
+   "G-FLAT": [
+    1,
+    1,
+    2
+   ],
+   "G-INDEF": [
+    1,
+    1,
+    6
+   ],
+   "G-OFFDIAG": [
+    2,
+    2,
+    6
+   ],
+   "G-OFFDIAG2": [
+    3,
+    5,
+    12
+   ],
+   "G-OFFNEG": [
+    3,
+    5,
+    4
+   ],
+   "G-SINGULAR": [
+    1,
+    1,
+    4
+   ]
+  },
+  "declared_region": {
+   "G-ANISO": "POSDEF",
+   "G-ANISO2": "POSDEF",
+   "G-DIAG2": "POSDEF",
+   "G-FLAT": "POSDEF",
+   "G-INDEF": "INDEFINITE",
+   "G-OFFDIAG": "POSDEF",
+   "G-OFFDIAG2": "POSDEF",
+   "G-OFFNEG": "POSDEF",
+   "G-SINGULAR": "SINGULAR"
+  },
+  "links": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "readout": "q11 = n_1, q22 = n_2, q12 = (n_3 - n_1 - n_2)/2",
+  "region_names": [
+   "POSDEF",
+   "SINGULAR",
+   "INDEFINITE"
+  ],
+  "route_disagreements": 0,
+  "sites": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    2,
+    2
+   ]
+  ]
+ },
+ "arithmetic": "exact: Python int, fractions.Fraction, Z[w] as pairs",
+ "clearing": {
+  "R": 4,
+  "alt_R": 5,
+  "alt_arena": "A5",
+  "alt_horizon": 3,
+  "arena": "A4",
+  "cost_incidences": 41,
+  "cost_order": "declared: STATIC-FIRST (R, then horizon), STEPS (R + T) and INCIDENCES (9R + T), all three reported",
+  "cost_static_first": [
+   4,
+   5
+  ],
+  "cost_steps": 9,
+  "declared_name": "G-FLAT",
+  "first_indefinite": 5,
+  "first_singular": 3,
+  "horizon": 5,
+  "horizon_is_declared": true,
+  "indefinite_A": "146623744/847288609443",
+  "indefinite_B": "5072320/1162261467",
+  "measured_at_extension": false,
+  "no_new_declaration": true,
+  "pairs": [
+   {
+    "R": 3,
+    "arena": "A3",
+    "cost_incidences": 33,
+    "cost_static_first": [
+     3,
+     6
+    ],
+    "cost_steps": 9,
+    "declared_name": "-",
+    "horizon": 6,
+    "horizon_is_declared": false,
+    "measured_at_extension": true,
+    "no_new_declaration": false,
+    "record": [
+     1,
+     1,
+     1
+    ],
+    "record_is_declared": false
+   },
+   {
+    "R": 4,
+    "arena": "A4",
+    "cost_incidences": 41,
+    "cost_static_first": [
+     4,
+     5
+    ],
+    "cost_steps": 9,
+    "declared_name": "G-FLAT",
+    "horizon": 5,
+    "horizon_is_declared": true,
+    "measured_at_extension": false,
+    "no_new_declaration": true,
+    "record": [
+     1,
+     1,
+     2
+    ],
+    "record_is_declared": true
+   },
+   {
+    "R": 5,
+    "arena": "A5",
+    "cost_incidences": 48,
+    "cost_static_first": [
+     5,
+     3
+    ],
+    "cost_steps": 8,
+    "declared_name": "-",
+    "horizon": 3,
+    "horizon_is_declared": true,
+    "measured_at_extension": false,
+    "no_new_declaration": false,
+    "record": [
+     1,
+     1,
+     3
+    ],
+    "record_is_declared": false
+   }
+  ],
+  "record": [
+   1,
+   1,
+   2
+  ],
+  "record_is_declared": true,
+  "selection": "THE PAIR THAT COSTS NO NEW DECLARATION: a record I7 itself declares, at a horizon paper-20 itself declared.  The three cost orders below do NOT agree, and that disagreement is published rather than resolved by fiat",
+  "winners": {
+   "INCIDENCES": "A3",
+   "STATIC-FIRST": "A3",
+   "STEPS": "A5"
+  }
+ },
+ "closing_gates": {
+  "names": [
+   "G-SEAL-COMPLETE",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "warrant": "these two are evaluated after the gate ledger is snapshotted and sealed -- G-SEAL-COMPLETE cannot be inside the object it seals, and G-ARTIFACT-INTEGRITY runs after the bytes are on disk; a run that fails any gate writes nothing, so the artifacts themselves record that verdict"
+ },
+ "constraint_b": {
+  "carrier": "THE RECORD (the count field n)",
+  "cited": {
+   "commit": "4c85ca4",
+   "quotation": "a decoherence functional built from the state at a single time, in a basis the coin acts on site-locally, is blind to the record it is supposed to be a function of",
+   "source": "v14/paper-25-gdl.md",
+   "why_not_read": "the working-tree copy is held dirty by a concurrent sibling and a committed-sha read would require a subprocess, which #91 forbids"
+  },
+  "forbidden_arguments_present": [],
+  "indefinite_x": "146623744/847288609443",
+  "indefinite_y": "1",
+  "observable_signatures": {
+   "det4_of": [
+    "n1",
+    "n2",
+    "n3"
+   ],
+   "q_of": [
+    "nvec"
+   ],
+   "record_region": [
+    "n"
+   ],
+   "region_of": [
+    "nvec"
+   ]
+  },
+  "site_marginal_identical": true,
+  "site_marginal_x": "A4",
+  "site_marginal_y": "A7"
+ },
+ "counts": {
+  "arenas": 6,
+  "branches_at_horizon": 284078,
+  "clearing_R": 4,
+  "clearing_horizon": 5,
+  "coins": 5,
+  "covering_floor": 6,
+  "extension": 6,
+  "fullsite_multisets": 2210000,
+  "horizon": 5,
+  "live_floor": 7,
+  "memo_hits": 16,
+  "memo_misses": 47,
+  "partitions": 280,
+  "path_anchors": 10,
+  "r5_multisets": 16108764,
+  "sources": 10,
+  "verbatim_anchors": 10
+ },
+ "coverage": {
+  "denominator": "the gate count of THIS run, not a hand-kept number",
+  "gates_evaluated": 45,
+  "gates_waived": 11,
+  "gates_with_a_declared_mutant": 34,
+  "registry_drift": [],
+  "uncovered": []
+ },
+ "dynamic": {
+  "floors": [
+   {
+    "R": 3,
+    "arena": "A3",
+    "declared_name": "-",
+    "events_to_indefinite": 4,
+    "events_to_singular": 3,
+    "first_indefinite": null,
+    "first_indefinite_A": null,
+    "first_indefinite_B": null,
+    "first_singular": 5,
+    "first_singular_A": 5,
+    "first_singular_B": 5,
+    "indefinite_A": "0",
+    "indefinite_B": "0",
+    "record": [
+     1,
+     1,
+     1
+    ],
+    "why": "the welded R = 3 record, paper-20's own arena"
+   },
+   {
+    "R": 4,
+    "arena": "A4",
+    "declared_name": "G-FLAT",
+    "events_to_indefinite": 3,
+    "events_to_singular": 2,
+    "first_indefinite": 5,
+    "first_indefinite_A": 5,
+    "first_indefinite_B": 5,
+    "first_singular": 3,
+    "first_singular_A": 3,
+    "first_singular_B": 3,
+    "indefinite_A": "146623744/847288609443",
+    "indefinite_B": "5072320/1162261467",
+    "record": [
+     1,
+     1,
+     2
+    ],
+    "why": "I7's DECLARED G-FLAT, paper-21's driven record"
+   },
+   {
+    "R": 5,
+    "arena": "A5",
+    "declared_name": "-",
+    "events_to_indefinite": 2,
+    "events_to_singular": 1,
+    "first_indefinite": 3,
+    "first_indefinite_A": 3,
+    "first_indefinite_B": 3,
+    "first_singular": 1,
+    "first_singular_A": 1,
+    "first_singular_B": 1,
+    "indefinite_A": "367635432032/7625597484987",
+    "indefinite_B": "269625780848/1016978783625",
+    "record": [
+     1,
+     1,
+     3
+    ],
+    "why": "the cheapest live record one round above G-FLAT"
+   }
+  ],
+  "horizon": 5,
+  "measure": "the Born branch measure of the coupled emission tree, exhaustive at every level",
+  "profiles": {
+   "A3/A": [
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 3,
+     "max_cell": 2,
+     "null": {
+      "POSDEF": "1"
+     },
+     "reading": "A",
+     "t": 1
+    },
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 27,
+     "max_cell": 2,
+     "null": {
+      "POSDEF": "1"
+     },
+     "reading": "A",
+     "t": 2
+    },
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 486,
+     "max_cell": 3,
+     "null": {
+      "POSDEF": "1"
+     },
+     "reading": "A",
+     "t": 3
+    },
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 10527,
+     "max_cell": 3,
+     "null": {
+      "POSDEF": "1"
+     },
+     "reading": "A",
+     "t": 4
+    },
+    {
+     "born": {
+      "POSDEF": "846361193891/847288609443",
+      "SINGULAR": "927415552/847288609443"
+     },
+     "branches": 284078,
+     "max_cell": 4,
+     "null": {
+      "POSDEF": "45106386043/45316170900",
+      "SINGULAR": "209784857/45316170900"
+     },
+     "reading": "A",
+     "t": 5
+    }
+   ],
+   "A3/B": [
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 3,
+     "max_cell": 2,
+     "null": {
+      "POSDEF": "1"
+     },
+     "reading": "B",
+     "t": 1
+    },
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 27,
+     "max_cell": 2,
+     "null": {
+      "POSDEF": "1"
+     },
+     "reading": "B",
+     "t": 2
+    },
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 486,
+     "max_cell": 3,
+     "null": {
+      "POSDEF": "1"
+     },
+     "reading": "B",
+     "t": 3
+    },
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 11664,
+     "max_cell": 3,
+     "null": {
+      "POSDEF": "1"
+     },
+     "reading": "B",
+     "t": 4
+    },
+    {
+     "born": {
+      "POSDEF": "5773867111/5811307335",
+      "SINGULAR": "37440224/5811307335"
+     },
+     "branches": 314928,
+     "max_cell": 4,
+     "null": {
+      "POSDEF": "11611/11664",
+      "SINGULAR": "53/11664"
+     },
+     "reading": "B",
+     "t": 5
+    }
+   ],
+   "A4/A": [
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 3,
+     "max_cell": 3,
+     "null": {
+      "POSDEF": "1"
+     },
+     "reading": "A",
+     "t": 1
+    },
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 27,
+     "max_cell": 3,
+     "null": {
+      "POSDEF": "1"
+     },
+     "reading": "A",
+     "t": 2
+    },
+    {
+     "born": {
+      "POSDEF": "58985/59049",
+      "SINGULAR": "64/59049"
+     },
+     "branches": 486,
+     "max_cell": 4,
+     "null": {
+      "POSDEF": "161/162",
+      "SINGULAR": "1/162"
+     },
+     "reading": "A",
+     "t": 3
+    },
+    {
+     "born": {
+      "POSDEF": "1146312331/1162261467",
+      "SINGULAR": "15949136/1162261467"
+     },
+     "branches": 10527,
+     "max_cell": 4,
+     "null": {
+      "POSDEF": "4934717/5164236",
+      "SINGULAR": "229519/5164236"
+     },
+     "reading": "A",
+     "t": 4
+    },
+    {
+     "born": {
+      "INDEFINITE": "146623744/847288609443",
+      "POSDEF": "7257962052955/7625597484987",
+      "SINGULAR": "366315818336/7625597484987"
+     },
+     "branches": 284078,
+     "max_cell": 5,
+     "null": {
+      "INDEFINITE": "148895641/90632341800",
+      "POSDEF": "1666120693/1812646836",
+      "SINGULAR": "2392470503/30210780600"
+     },
+     "reading": "A",
+     "t": 5
+    }
+   ],
+   "A4/B": [
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 3,
+     "max_cell": 3,
+     "null": {
+      "POSDEF": "1"
+     },
+     "reading": "B",
+     "t": 1
+    },
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 27,
+     "max_cell": 3,
+     "null": {
+      "POSDEF": "1"
+     },
+     "reading": "B",
+     "t": 2
+    },
+    {
+     "born": {
+      "POSDEF": "235/243",
+      "SINGULAR": "8/243"
+     },
+     "branches": 486,
+     "max_cell": 4,
+     "null": {
+      "POSDEF": "161/162",
+      "SINGULAR": "1/162"
+     },
+     "reading": "B",
+     "t": 3
+    },
+    {
+     "born": {
+      "POSDEF": "108395/118098",
+      "SINGULAR": "9703/118098"
+     },
+     "branches": 11664,
+     "max_cell": 4,
+     "null": {
+      "POSDEF": "2797/2916",
+      "SINGULAR": "119/2916"
+     },
+     "reading": "B",
+     "t": 4
+    },
+    {
+     "born": {
+      "INDEFINITE": "5072320/1162261467",
+      "POSDEF": "92917243541/116226146700",
+      "SINGULAR": "7600557053/38742048900"
+     },
+     "branches": 314928,
+     "max_cell": 5,
+     "null": {
+      "INDEFINITE": "53/34992",
+      "POSDEF": "145321/157464",
+      "SINGULAR": "23809/314928"
+     },
+     "reading": "B",
+     "t": 5
+    }
+   ],
+   "A5/A": [
+    {
+     "born": {
+      "POSDEF": "5/9",
+      "SINGULAR": "4/9"
+     },
+     "branches": 3,
+     "max_cell": 4,
+     "null": {
+      "POSDEF": "2/3",
+      "SINGULAR": "1/3"
+     },
+     "reading": "A",
+     "t": 1
+    },
+    {
+     "born": {
+      "POSDEF": "95/243",
+      "SINGULAR": "148/243"
+     },
+     "branches": 27,
+     "max_cell": 4,
+     "null": {
+      "POSDEF": "4/9",
+      "SINGULAR": "5/9"
+     },
+     "reading": "A",
+     "t": 2
+    },
+    {
+     "born": {
+      "INDEFINITE": "64/59049",
+      "POSDEF": "169145/531441",
+      "SINGULAR": "361720/531441"
+     },
+     "branches": 486,
+     "max_cell": 5,
+     "null": {
+      "INDEFINITE": "1/162",
+      "POSDEF": "76/243",
+      "SINGULAR": "331/486"
+     },
+     "reading": "A",
+     "t": 3
+    },
+    {
+     "born": {
+      "INDEFINITE": "15949136/1162261467",
+      "POSDEF": "251499943/1162261467",
+      "SINGULAR": "298270796/387420489"
+     },
+     "branches": 10527,
+     "max_cell": 5,
+     "null": {
+      "INDEFINITE": "229519/5164236",
+      "POSDEF": "344647/1291059",
+      "SINGULAR": "3556129/5164236"
+     },
+     "reading": "A",
+     "t": 4
+    },
+    {
+     "born": {
+      "INDEFINITE": "367635432032/7625597484987",
+      "POSDEF": "5196761360473/22876792454961",
+      "SINGULAR": "16577124798392/22876792454961"
+     },
+     "branches": 284078,
+     "max_cell": 6,
+     "null": {
+      "INDEFINITE": "146526143/1812646836",
+      "POSDEF": "52193863/215791290",
+      "SINGULAR": "558041929/823930380"
+     },
+     "reading": "A",
+     "t": 5
+    }
+   ],
+   "A5/B": [
+    {
+     "born": {
+      "POSDEF": "2/5",
+      "SINGULAR": "3/5"
+     },
+     "branches": 3,
+     "max_cell": 4,
+     "null": {
+      "POSDEF": "2/3",
+      "SINGULAR": "1/3"
+     },
+     "reading": "B",
+     "t": 1
+    },
+    {
+     "born": {
+      "POSDEF": "4/25",
+      "SINGULAR": "21/25"
+     },
+     "branches": 27,
+     "max_cell": 4,
+     "null": {
+      "POSDEF": "4/9",
+      "SINGULAR": "5/9"
+     },
+     "reading": "B",
+     "t": 2
+    },
+    {
+     "born": {
+      "INDEFINITE": "32/729",
+      "POSDEF": "7592/91125",
+      "SINGULAR": "8837/10125"
+     },
+     "branches": 486,
+     "max_cell": 5,
+     "null": {
+      "INDEFINITE": "1/162",
+      "POSDEF": "76/243",
+      "SINGULAR": "331/486"
+     },
+     "reading": "B",
+     "t": 3
+    },
+    {
+     "born": {
+      "INDEFINITE": "487726/4428675",
+      "POSDEF": "4939268/110716875",
+      "SINGULAR": "3466091/4100625"
+     },
+     "branches": 11664,
+     "max_cell": 5,
+     "null": {
+      "INDEFINITE": "119/2916",
+      "POSDEF": "22/81",
+      "SINGULAR": "2005/2916"
+     },
+     "reading": "B",
+     "t": 4
+    },
+    {
+     "born": {
+      "INDEFINITE": "269625780848/1016978783625",
+      "POSDEF": "959263641562/25424469590625",
+      "SINGULAR": "218821746023/313882340625"
+     },
+     "branches": 314928,
+     "max_cell": 6,
+     "null": {
+      "INDEFINITE": "12143/157464",
+      "POSDEF": "9691/39366",
+      "SINGULAR": "35519/52488"
+     },
+     "reading": "B",
+     "t": 5
+    }
+   ]
+  }
+ },
+ "forcedness": {
+  "frozen_static_half": "paper-20's frozen control cannot leave the region it starts in at any horizon: its record never changes and the region is a function of the record alone -- measured 0 here",
+  "members": 5,
+  "readings_agree": false,
+  "rows": [
+   {
+    "born_A": "146623744/847288609443",
+    "born_B": "5072320/1162261467",
+    "branches_A": 284078,
+    "branches_B": 314928,
+    "coin": "GROVER",
+    "null_A": "148895641/90632341800",
+    "null_B": "53/34992",
+    "unitary": true,
+    "why": "b/a = -2/3, the delivered member",
+    "word_A": "AVOIDED",
+    "word_B": "SELECTED"
+   },
+   {
+    "born_A": "170531816/847288609443",
+    "born_B": "365607521/92980917360",
+    "branches_A": 314627,
+    "branches_B": 314928,
+    "coin": "W",
+    "null_A": "94739/62775648",
+    "null_B": "53/34992",
+    "unitary": true,
+    "why": "b/a = w/3",
+    "word_A": "AVOIDED",
+    "word_B": "SELECTED"
+   },
+   {
+    "born_A": "392/531441",
+    "born_B": "13789/1574640",
+    "branches_A": 214772,
+    "branches_B": 290520,
+    "coin": "MW",
+    "null_A": "10273973819/7653397752000",
+    "null_B": "13805/8817984",
+    "unitary": true,
+    "why": "b/a = (-1+w)/3",
+    "word_A": "AVOIDED",
+    "word_B": "SELECTED"
+   },
+   {
+    "born_A": "85264186/847288609443",
+    "born_B": "359609459/92980917360",
+    "branches_A": 313842,
+    "branches_B": 314928,
+    "coin": "MMW",
+    "null_A": "74201/49043475",
+    "null_B": "53/34992",
+    "unitary": true,
+    "why": "b/a = (-1-w)/3",
+    "word_A": "AVOIDED",
+    "word_B": "SELECTED"
+   },
+   {
+    "born_A": "478/531441",
+    "born_B": "4573/524880",
+    "branches_A": 192258,
+    "branches_B": 290160,
+    "coin": "M2W",
+    "null_A": "156109153/150124340520",
+    "null_B": "6917/4408992",
+    "unitary": true,
+    "why": "b/a = (-2-w)/3",
+    "word_A": "AVOIDED",
+    "word_B": "SELECTED"
+   }
+  ],
+  "verdict": "INVARIANT",
+  "word_A": "AVOIDED",
+  "word_B": "SELECTED"
+ },
+ "gates": [
+  {
+   "evidence": "sources 10, mismatched none",
+   "gate": "G-PROVENANCE",
+   "passed": true,
+   "statement": "EVERY SOURCE IS READ AT ITS PINNED sha256-12 (#46/#62/#91).  10 files enter this run as SOURCES, each hash-verified against this unit's own frozen declaration before a single byte of it is used; --break-anchor corrupts any one of them and the run dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "anchors 10, mismatched none",
+   "gate": "G-ANCHORS-READ",
+   "passed": true,
+   "statement": "THE PATH-VALUE ANCHORS BIND THE PAIR, NOT THE BYTES (#62).  10 rows name a source, a path INTO that source and the value that must stand there; a path drift that leaves the file's hash intact but moves the arena or a parent's committed number dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "anchors 10, not found none",
+   "gate": "G-VERBATIM",
+   "passed": true,
+   "statement": "QUOTE FIDELITY (#62 as amended at v14 #62).  10 quotations are matched against their source's COMMITTED BYTES under the #125 normalisation -- markdown prefixes stripped, ASCII folded, whitespace collapsed, and compared whitespace-stripped as well -- each clearing the 30-character floor and each naming the gate that consumes it",
+   "waiver": null
+  },
+  {
+   "evidence": "float literals none, true divisions none",
+   "gate": "G-NO-FLOAT",
+   "passed": true,
+   "statement": "EXACT ARITHMETIC, AS A SOURCE-LEVEL FACT.  An AST scan of this file finds no float literal and no true division: every number this run computes is a Python int, a Fraction, or an element of Z[w] carried as an integer pair",
+   "waiver": null
+  },
+  {
+   "evidence": "forbidden imports none",
+   "gate": "G-NO-SUBPROCESS",
+   "passed": true,
+   "statement": "NO SUBPROCESS OF ANY KIND (#91 off-tree and git-less).  The import and attribute sets are scanned: no subprocess, no shutil, no socket, no urllib.  This is also why the GDL delivery is CITED from a frozen quotation carrying its commit 4c85ca4 rather than read: its working-tree copy is held dirty by a concurrent sibling and a committed-sha read would need one",
+   "waiver": null
+  },
+  {
+   "evidence": "falsifiers 38, unhooked none, constant-boolean none, description unmatched none",
+   "gate": "G-FALSIFIER-HONEST",
+   "passed": true,
+   "statement": "E-23: A FALSIFIER'S PUBLISHED DESCRIPTION IS PART OF THE SEALED SURFACE.  Each of the 38 declared falsifiers names the OBJECT it corrupts; this gate locates every hook by AST, publishes the source of the statement carrying it, requires the named object to occur there, and REJECTS any falsifier whose corruption is a constant boolean",
+   "waiver": null
+  },
+  {
+   "evidence": "codes 2197, disagreements 0, declared records by region {'G-ANISO': 'POSDEF', 'G-ANISO2': 'POSDEF', 'G-DIAG2': 'POSDEF', 'G-FLAT': 'POSDEF', 'G-INDEF': 'INDEFINITE', 'G-OFFDIAG': 'POSDEF', 'G-OFFDIAG2': 'POSDEF', 'G-OFFNEG': 'POSDEF', 'G-SINGULAR': 'SINGULAR'}",
+   "gate": "G-REGION-ARITHMETIC",
+   "passed": true,
+   "statement": "THE REGION TRICHOTOMY, BY TWO ROUTES THAT SHARE NO EXPRESSION.  Route 1 is I7's readout as written, in exact Fractions; route 2 is the symmetric integer form 2(n1n2+n1n3+n2n3) - (n1^2+n2^2+n3^2), which is 4 det q.  All 2197 codes of the declared box are compared entry by entry, and I7's own criterion -- nonsingular and positive definite by the exact Sylvester test -- names the three regions",
+   "waiver": null
+  },
+  {
+   "evidence": "probe values 1 2 1, distinct True, repeat hit True",
+   "gate": "G-MEMO-LIVE",
+   "passed": true,
+   "statement": "THE INPUT MEMO IS KEYED ON ITS COMPLETE INPUT, NOT ON A LABEL (RUNBOOK 14 addendum, v13 #185).  Two probes with DIFFERENT keys must return different values and a third with a repeated key must return the first one's: a memo keyed on a label collapses them and dies here, before any measurement depends on it.  Every walk and every census below is keyed on its complete input tuple, so a falsifier that moves an input MISSES the cache and recomputes",
+   "waiver": null
+  },
+  {
+   "evidence": "max per cell 1, max per site 2, spectrum [(0, 1), (4, 27), (6, 54), (7, 162), (9, 36)], matches paper-21's committed row True",
+   "gate": "G-DEPOSIT-THEOREM",
+   "passed": true,
+   "statement": "THE DEPOSIT THEOREM, EXHAUSTIVE OVER ALL 280 PARTITIONS: a round deposits AT MOST ONE incidence on any one cell and at most two on any one site, so after R rounds every cell count is at most R.  The recomputed incidence spectrum is compared cell for cell against paper-21's committed row, which is where this unit's arithmetic meets its parent's",
+   "waiver": null
+  },
+  {
+   "evidence": "linear maps 12, orbit 27 of 27",
+   "gate": "G-CELL-TRANSITIVE",
+   "passed": true,
+   "statement": "THE SINGLE-CELL CENSUSES ARE LICENSED BY A MEASURED SYMMETRY.  The 12 linear maps of AG(2,3) that preserve the declared link SET, together with the nine translations, act on the 27 cells with a single orbit; every census below that fixes one cell is therefore a statement about all of them, and a shrunken orbit removes the licence here rather than silently downstream",
+   "waiver": null
+  },
+  {
+   "evidence": "rungs [([1, 1, 1], 3, 'POSDEF', '-'), ([1, 1, 2], 4, 'POSDEF', 'G-FLAT'), ([1, 1, 3], 5, 'POSDEF', '-'), ([1, 1, 4], 6, 'SINGULAR', 'G-SINGULAR'), ([1, 1, 5], 7, 'INDEFINITE', '-'), ([1, 1, 6], 8, 'INDEFINITE', 'G-INDEF'), ([2, 2, 2], 6, 'POSDEF', '-')]",
+   "gate": "G-COLLINEAR-LADDER",
+   "passed": true,
+   "statement": "THE ARENA LADDER IS CONSTRUCTED, NOT ASSUMED.  ROW^a COL^b DIA^c induces the homogeneous record (a, b, c) at R = a+b+c, covering and foreign-pair-free at every rung; the rungs carry I7's own G-FLAT at R = 4, G-SINGULAR at R = 6 and G-INDEF at R = 8, and each rung's region is read by the criterion of the gate above",
+   "waiver": null
+  },
+  {
+   "evidence": "singular floor 4 at code [1, 1, 4], indefinite floor 5 at code [1, 1, 5]",
+   "gate": "G-STATIC-FLOOR",
+   "passed": true,
+   "statement": "THE FLOOR THEOREM.  At a site whose three cells are all at least one, the cheapest SINGULAR code has a cell at 4 and the cheapest INDEFINITE code has a cell at 5 -- measured over the whole declared box.  With the deposit theorem this is a BUDGET floor: a covered indefinite site needs R >= 5.  That floor is NECESSARY; whether it is ATTAINED is the next gate's question and the answer is no",
+   "waiver": null
+  },
+  {
+   "evidence": "pool 70 partitions, multisets 16108764, min uncovered 2, covering floor R = 6, rows [(4, 'ALL', False), (4, 'LIVE', False), (5, 'ALL', False), (5, 'LIVE', False), (6, 'ALL', True), (6, 'LIVE', False), (7, 'ALL', True), (7, 'LIVE', True)]",
+   "gate": "G-STATIC-LADDER",
+   "passed": true,
+   "statement": "THE INHERITED FLOOR IS NECESSARY AND NOT ATTAINED.  At R = 5 an indefinite site needs a cell at 5, so ALL FIVE rounds must hit that one cell; over every one of the 16,108,764 such multisets the least number of cells left uncovered is 2.  A covering record with an indefinite site therefore first exists at R = 6, not at 5 -- and paper-21's own block-quantisation row is the R = 4 end of the same fact",
+   "waiver": null
+  },
+  {
+   "evidence": "live floor R = 7, saturating partitions 36 all foreign-free True, live rows [(4, False), (5, False), (6, False), (7, True)]",
+   "gate": "G-STATIC-LADDER-LIVE",
+   "passed": true,
+   "statement": "THE STRUCTURALLY LIVE FLOOR IS ONE ROUND DEARER STILL.  Restricted to the 36 saturating (foreign-pair-free) partitions -- paper-21's own structurally live class -- no covering record carries an indefinite site at R = 6 either; the live floor is R = 7, where the collinear arrangement ROW COL DIA^5 induces the homogeneous (1, 1, 5).  I7's own declared G-INDEF costs R = 8",
+   "waiver": null
+  },
+  {
+   "evidence": "exit A 927415552/847288609443 vs 927415552/847288609443, exit B 37440224/5811307335 vs 37440224/5811307335, branches 284078/314928 vs 284078/314928, census {'4,1,1': 379, '1,4,1': 471, '1,1,4': 466} vs {'1,1,4': 466, '1,4,1': 471, '4,1,1': 379}, third visit 5 vs 5, one site out per leaf True",
+   "gate": "G-WALK-ANCHORED",
+   "passed": true,
+   "statement": "THE REBUILT WALK IS PAPER-20'S WALK, AT FIVE INDEPENDENT ROWS.  This file re-implements the coupled machine from the parent's declared machinery and never imports it; the rebuild is bound by reproducing, from its own arithmetic, the committed exit probability at BOTH emission readings, the branch counts at both, the exit census code by code, and the return-time row -- and by measuring, as the parent did, that every inadmissible leaf has exactly one site out",
+   "waiver": null
+  },
+  {
+   "evidence": "checks 23225, violations 0",
+   "gate": "G-WALK-STOCHASTIC",
+   "passed": true,
+   "statement": "THE EMISSION LAW IS A PROBABILITY DISTRIBUTION AT EVERY BRANCH OF EVERY STEP (#87: per object, never in aggregate).  The law-native kernel's weights are summed on each branch separately and required to be exactly one; 23225 such checks are taken on the two anchored arms alone",
+   "waiver": null
+  },
+  {
+   "evidence": "members [('GROVER', True), ('W', True), ('MW', True), ('MMW', True), ('M2W', True)]",
+   "gate": "G-COIN-FAMILY",
+   "passed": true,
+   "statement": "THE DECLARED COIN FIBER IS EXACTLY UNITARY, MEMBER BY MEMBER.  Paper-20's S_3-covariant family 3C = 3a I + 3b J is rebuilt here and each of its 5 classes is verified by C C* = I in Z[w] -- per member, never by a count",
+   "waiver": null
+  },
+  {
+   "evidence": "arenas [('A3', 3, 3, 5, 4, None), ('A4', 4, 2, 3, 3, 5), ('A5', 5, 1, 1, 2, 3)]",
+   "gate": "G-STAGE0-DYNAMIC",
+   "passed": true,
+   "statement": "STAGE 0's DYNAMIC HALF, AND THE LICENCE EVERY POLARITY SENTENCE BELOW DEPENDS ON.  The region masses are measured at every horizon of the declared ladder on 3 arenas at both emission readings; the indefinite region is occupied with POSITIVE exact mass at 2 of them, and paper-20's own open question -- whether the indefinite region is reached at all -- is answered here rather than assumed.  Had this gate found no arena, the head would read SIG-BLOCKED-AT-REACHABILITY and no polarity word would be emitted",
+   "waiver": null
+  },
+  {
+   "evidence": "cross-checks 20, mismatches none, first indefinite step 6, mass 5526190575616/150094635296999121",
+   "gate": "G-PRUNE-SOUND",
+   "passed": true,
+   "statement": "THE HORIZON EXTENSION IS PRUNED BY A THEOREM AND THE THEOREM IS CHECKED.  A branch that cannot raise any cell to the region floor within its remaining steps stays positive definite with its whole subtree, so its mass is carried in aggregate; the pruned engine is required to reproduce the FULL engine's singular and indefinite masses at every step of the horizon they share, on two arenas, before its extension to horizon 6 is read.  That extension answers the inherited #211 dynamic floor: on paper-20's own arena the indefinite region is first occupied at step 6",
+   "waiver": null
+  },
+  {
+   "evidence": "pairs [('A3', 3, 6), ('A4', 4, 5), ('A5', 5, 3)], winners {'STATIC-FIRST': 'A3', 'STEPS': 'A5', 'INCIDENCES': 'A3'}, no-new-declaration pairs ['A4'], chosen A4 (R=4, T=5), indefinite A 146623744/847288609443 B 5072320/1162261467",
+   "gate": "G-CLEARING",
+   "passed": true,
+   "statement": "STAGE 1, AND THE CHEAPEST PAIR IS ORDER-RELATIVE (RUNBOOK 15).  3 pairs clear.  Under the three declared cost orders the winners are {'STATIC-FIRST': 'A3', 'STEPS': 'A5', 'INCIDENCES': 'A3'} -- they do not agree, so no pair is 'the' cheapest and this unit says so.  What IS unique is the pair that costs NO NEW DECLARATION: A4 is I7's own declared G-FLAT at paper-20's own declared horizon 5, and it is selected on that measured property.  The gate requires the selected pair to carry POSITIVE indefinite mass at BOTH declared emission readings",
+   "waiver": null
+  },
+  {
+   "evidence": "steps checked 10, failures none",
+   "gate": "G-NULL-MEASURE",
+   "passed": true,
+   "statement": "BOTH DECLARED MEASURES ARE PROBABILITY MEASURES AT EVERY STEP (E-24).  The Born branch measure and the uniform-on-support counting measure are each required to sum to one at every step of every reading, per object rather than in aggregate, so no ratio below is a fraction of an unnormalised total",
+   "waiver": null
+  },
+  {
+   "evidence": "born 146623744/847288609443, null 148895641/90632341800, ratio 675143691622400/6409469116243161, word AVOIDED, stage-frozen 34816/129140163, per-arena words [('A3', None), ('A4', 'AVOIDED'), ('A5', 'AVOIDED')] (invariant True)",
+   "gate": "G-POLARITY-A",
+   "passed": true,
+   "statement": "THE BORN MENU'S POLARITY, AGAINST A DECLARED NULL ON THE SAME TREE.  The indefinite mass is 146623744/847288609443 against 148895641/90632341800, so the coupled dynamics is measured AVOIDED toward the indefinite region at this arena under this reading; the word is DERIVED from the two masses and typed nowhere",
+   "waiver": null
+  },
+  {
+   "evidence": "born 5072320/1162261467, null 53/34992, ratio 81157120/28166373, word SELECTED, frozen control 0, per-arena words [('A3', None), ('A4', 'SELECTED'), ('A5', 'SELECTED')] (invariant True)",
+   "gate": "G-POLARITY-B",
+   "passed": true,
+   "statement": "THE RECORD MENU'S POLARITY, AND IT HAS THE OPPOSITE SIGN.  Under paper-20's second declared emission reading the same arena, the same walk and the same null give 5072320/1162261467 against 53/34992: SELECTED.  Both readings are the parent's own declared fiber and neither is privileged by anything measured here, which is what the outcome word below records",
+   "waiver": null
+  },
+  {
+   "evidence": "pairs [('A3', 'A6'), ('A4', 'A7'), ('A5', 'A8')], identical A 12 of 12, record-menu levels identical [0, 0, 0]",
+   "gate": "G-MOD3-THEOREM",
+   "passed": true,
+   "statement": "THE MOD-3 THEOREM, MACHINE-CHECKED AND TWO-WAY.  The coin reads the record only through w^{n mod 3}, so two arenas whose records differ by three at every cell generate the SAME Born branch measure: 3 pairs are compared path by path at 12 branch-weight maps and agree at 12.  The same comparison under the RECORD menu DISAGREES at every level, which is what makes this a measurement rather than a restatement -- and the consequence is the scope of every absolute mass in this unit: the same measure carries different signature censuses",
+   "waiver": null
+  },
+  {
+   "evidence": "carrier THE RECORD (the count field n), observable arguments {'det4_of': ['n1', 'n2', 'n3'], 'q_of': ['nvec'], 'region_of': ['nvec'], 'record_region': ['n']}, forbidden arguments none, marginals identical True, indefinite masses 146623744/847288609443 vs 1",
+   "gate": "G-CONSTRAINT-B",
+   "passed": true,
+   "statement": "NO SITE-MARGINAL OBSERVABLE (the pin's constraint B, from the GDL blindness theorem at commit 4c85ca4).  Two checks, one structural and one measured.  Structural: every observable this unit reads the region with takes the RECORD and nothing else -- an AST scan of their argument lists finds no state and no marginal.  Measured: the ensemble site marginal is IDENTICAL at A4 and A7, whose records agree modulo three, while their indefinite masses are 146623744/847288609443 and 1 -- so a site-marginal observable provably cannot carry this unit's verdict, and the blindness the parent proved is exhibited here on the very quantity in question",
+   "waiver": null
+  },
+  {
+   "evidence": "verdict INVARIANT, Born words ['AVOIDED'], record words ['SELECTED'], readings agree False",
+   "gate": "G-FORCEDNESS",
+   "passed": true,
+   "statement": "STAGE 3.  The polarity is censused across paper-20's whole declared coin fiber -- 5 S_3-covariant classes, every member run to the full horizon at BOTH readings.  The sign is INVARIANT across the fiber and OPPOSITE across the readings, so what is forced at this arena is the coin-independence, and what is not forced is the polarity itself",
+   "waiver": null
+  },
+  {
+   "evidence": "window ARENAS-6-OF-THE-COLLINEAR-FAMILY+HORIZON-5(LADDER-1..5;EXTENSION-6-ON-A3)+COIN-FIBER-5",
+   "gate": "G-WINDOW-DISCLOSED",
+   "passed": true,
+   "statement": "THE WINDOW IS DECLARED IN THE HEAD'S OWN STRING.  6 arenas of the collinear family, horizon 5 with the whole ladder published, one extension to 6, 5 coins; every exhaustive column below is exhaustive over an object the window does not cap",
+   "waiver": null
+  },
+  {
+   "evidence": "retracted sentence present False",
+   "gate": "G-WALL-L1",
+   "passed": true,
+   "statement": "L-1, ARGUED AND DECLINED.  Order-level covariance is a fourth form outside paper 8's three; admissibility would need a group declared to act on the generated causal order and a reason to read it as a covariance group.  This arena supplies finite records and a translation action on a nine-site lattice, and this unit constructs no bridge to any boost.  THE FOURTH FORM IS NOT TESTED HERE, and the sentence retracted in 2026 is absent from the object under test under the #125 normalisation",
+   "waiver": null
+  },
+  {
+   "evidence": "sprinkling-grade hits none",
+   "gate": "G-WALL-BHS",
+   "passed": true,
+   "statement": "BHS.  The catalog records that a Poisson sprinkling admits no Lorentz-invariant finite-valency graph, and this arena is finite-valency by construction, so a sprinkling-grade test would manufacture a false negative.  None is run, and the abstention is MEASURED: this run's whole declared measurement surface (32316 characters) is scanned for a sprinkling-grade reading",
+   "waiver": null
+  },
+  {
+   "evidence": "dimension-reading hits none",
+   "gate": "G-WALL-KR",
+   "passed": true,
+   "statement": "KLEITMAN-ROTHSCHILD.  Every dimension reading owes a height control; this unit takes NO dimension reading -- no chart width, no Myrheim-Meyer estimate, no max-shatter reading -- so none is owed and none is manufactured.  The same surface is scanned",
+   "waiver": null
+  },
+  {
+   "evidence": "naming sentence present True :: The indefinite region is NAMED AND NOT READ: a site whose co",
+   "gate": "G-WALL-SIGNATURE-NAMED",
+   "passed": true,
+   "statement": "THE SIGNATURE RESONANCE, NAMED AND NOT READ -- the sharpest wall this line has faced, because a determinant has now gone NEGATIVE.  The mandatory sentence is DERIVED from the measured floor code rather than typed, and it is required to be present in the object under test; a falsifier deletes it from that object and dies here.  Paper-21's own naming sentence is carried as a verbatim anchor beside it",
+   "waiver": null
+  },
+  {
+   "evidence": "segments 4, drift none, outcome SIG-BLOCKED-AT-THE-EMISSION-READING vs comparator SIG-BLOCKED-AT-THE-EMISSION-READING, shared numeric literals none",
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "passed": true,
+   "statement": "THE HEAD IS DERIVED TWICE, BY ROUTINES THAT SHARE NO TYPED NUMBER.  The comparator re-parses the SERIALIZED receipt, types all 4 templates itself, and re-derives the OUTCOME WORD from the receipt's own reachability and polarity rows through its own conditional -- so a forged word moves the builder alone and dies here.  An AST scan requires the two routines to share no string constant containing a numeral",
+   "waiver": null
+  },
+  {
+   "evidence": "claims 13, not found none",
+   "gate": "G-PAPER-CLAIMS",
+   "passed": true,
+   "statement": "EVERY HEADLINE SENTENCE RENDERS FROM THE RECEIPT.  13 claims are assembled from this run's measured values and required to occur in the object under test under the #125 normalisation, so a paper numeral that drifts from the receipt cannot survive",
+   "waiver": null
+  },
+  {
+   "evidence": "rows 16, occurrence spectrum {1: 16}, wrong none",
+   "gate": "G-PAPER-TABLES",
+   "passed": true,
+   "statement": "THE LOAD-BEARING TABLES RENDER AS CLAIMS (E-22).  16 rows of the reachability, floor and coin-fiber tables are assembled from this run and each required to occur in the paper EXACTLY ONCE, so a forged cell dies even when every numeral in it is receipt-backed",
+   "waiver": null
+  },
+  {
+   "evidence": "scanned 558 numerals (162 fenced in 8 blocks, 152 spelled), unbacked none, fenced unbacked none, spelled unbacked none, dead exemptions none, fence multiset matches True (8 of 8)",
+   "gate": "G-PAPER-COVERAGE",
+   "passed": true,
+   "statement": "NUMERAL COVERAGE OVER THE WHOLE PAPER (#20 + E-22): prose, tables, INLINE CODE SPANS and the fenced verdict blocks, against exactly three declared lists -- this run's registered numbers, the receipt it publishes, and a declared exemption table with a reason per literal, every one of which must fire.  The fenced blocks are matched by MULTISET against the declared copy count, and the scan is required to be NON-VACUOUS on the fences: a scanner that strips them is blind exactly where the highest-stakes numerals live (#168)",
+   "waiver": null
+  },
+  {
+   "evidence": "rows [('PL-REACH', True, True), ('PL-STATIC-R5', False, False), ('PL-FORCED-READING', False, False), ('PL-FORCED-COIN', True, True), ('PL-FROZEN', False, False)]",
+   "gate": "G-PAPER-POLARITY",
+   "passed": true,
+   "statement": "THE PRE-REGISTERED POLARITY OF 5 LOAD-BEARING CLAIMS.  Each was declared TRUE or FALSE before the run and is measured from the receipt here; the reachability row is the one the pin's first constraint turns on, and the two forcedness rows are where this unit's negative lives",
+   "waiver": null
+  },
+  {
+   "evidence": "falsifiers 38, off target none",
+   "gate": "G-MUTANTS-ON-TARGET",
+   "passed": true,
+   "statement": "EVERY DECLARED FALSIFIER IS RUN IN-PROCESS AND DIES AT THE GATE IT NAMES.  38 falsifiers, each a real corruption of a measured value or of the object under test, each required to be killed BY ITS OWN NAMED GATE rather than by whichever gate fires first",
+   "waiver": null
+  },
+  {
+   "evidence": "gates 45, with a mutant 34, waived 11, uncovered none, registry drift none",
+   "gate": "G-COVERAGE",
+   "passed": true,
+   "statement": "THE COVERAGE LEDGER IS HONEST AND ITS DENOMINATOR IS THIS RUN'S OWN.  Every gate evaluated anywhere in this run is either falsified by a declared mutant or waived with a machine-readable forcing; the declared registry and the set actually evaluated must agree exactly, so a gate removed from the file or added without a registry row dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "delivery-level True, sweep rows 38 of 38, on target 38",
+   "gate": "G-SWEEP-BOUND",
+   "passed": true,
+   "statement": "THE MUTANT SWEEP'S EXECUTION IS BOUND, NOT MERELY DECLARED.  A delivery-level run must carry one sweep row per declared falsifier (38), every row ON TARGET, and the same conjunction is re-taken at the terminal integrity gate, so the only writer in this file is downstream of a sweep that actually ran",
+   "waiver": null
+  },
+  {
+   "evidence": "anchors 10, consumers not registered-and-evaluated none",
+   "gate": "G-ANCHOR-CONSUMERS",
+   "passed": true,
+   "statement": "EVERY VERBATIM ANCHOR'S NAMED CONSUMER IS A REAL GATE THAT REALLY RAN.  All 10 anchors name the gate that consumes them, and each named gate is required here to be in the declared registry AND in this run's own evaluated ledger",
+   "waiver": null
+  },
+  {
+   "evidence": "falsifiers 38, gates unreached none",
+   "gate": "G-REACHABILITY",
+   "passed": true,
+   "statement": "EVERY DECLARED FALSIFIER DEMONSTRABLY REACHES ITS GATE (#34).  2 of them name gates evaluated after this point in this same function, and their presence is verified at G-ARTIFACT-INTEGRITY rather than assumed here",
+   "waiver": null
+  },
+  {
+   "evidence": "gates 41, float-valued receipt paths none",
+   "gate": "G-PAYLOAD-CLOSES",
+   "passed": true,
+   "statement": "THE PAYLOAD CLOSES: 41 gates evaluated, all passed, and a RECURSIVE TYPE SCAN of the receipt finds no float anywhere -- every published number is an int or a string carrying an exact Fraction",
+   "waiver": null
+  }
+ ],
+ "memo": {
+  "kinds": [
+   "probe"
+  ],
+  "probe_distinct": true,
+  "probe_hit": true
+ },
+ "mod3": {
+  "checked": 3,
+  "horizon": 4,
+  "identical": 12,
+  "maps": 12,
+  "pairs": [
+   {
+    "identical_A": 4,
+    "identical_B": 0,
+    "indefinite_x": "0",
+    "indefinite_y": "17724218463896/22876792454961",
+    "levels": 4,
+    "marginal_identical": true,
+    "record_x": [
+     1,
+     1,
+     1
+    ],
+    "record_y": [
+     1,
+     1,
+     4
+    ],
+    "x": "A3",
+    "y": "A6"
+   },
+   {
+    "identical_A": 4,
+    "identical_B": 0,
+    "indefinite_x": "146623744/847288609443",
+    "indefinite_y": "1",
+    "levels": 4,
+    "marginal_identical": true,
+    "record_x": [
+     1,
+     1,
+     2
+    ],
+    "record_y": [
+     1,
+     1,
+     5
+    ],
+    "x": "A4",
+    "y": "A7"
+   },
+   {
+    "identical_A": 4,
+    "identical_B": 0,
+    "indefinite_x": "367635432032/7625597484987",
+    "indefinite_y": "1",
+    "levels": 4,
+    "marginal_identical": true,
+    "record_x": [
+     1,
+     1,
+     3
+    ],
+    "record_y": [
+     1,
+     1,
+     6
+    ],
+    "x": "A5",
+    "y": "A8"
+   }
+  ],
+  "statement": "the Born branch measure is a function of the record MODULO THREE, because the coin's only record input is w^{n mod 3}; the signature is a function of the record itself"
+ },
+ "mutant_sweep": [
+  {
+   "died_at": "G-ANCHORS-READ",
+   "killed": true,
+   "mutant": "MUT-ANCHOR-VALUE",
+   "on_target": true,
+   "target": "G-ANCHORS-READ"
+  },
+  {
+   "died_at": "G-VERBATIM",
+   "killed": true,
+   "mutant": "MUT-VERBATIM",
+   "on_target": true,
+   "target": "G-VERBATIM"
+  },
+  {
+   "died_at": "G-ANCHOR-CONSUMERS",
+   "killed": true,
+   "mutant": "MUT-CONSUMER-BINDING",
+   "on_target": true,
+   "target": "G-ANCHOR-CONSUMERS"
+  },
+  {
+   "died_at": "G-FALSIFIER-HONEST",
+   "killed": true,
+   "mutant": "MUT-FALSIFIER-DESC",
+   "on_target": true,
+   "target": "G-FALSIFIER-HONEST"
+  },
+  {
+   "died_at": "G-REGION-ARITHMETIC",
+   "killed": true,
+   "mutant": "MUT-HERON",
+   "on_target": true,
+   "target": "G-REGION-ARITHMETIC"
+  },
+  {
+   "died_at": "G-DEPOSIT-THEOREM",
+   "killed": true,
+   "mutant": "MUT-SPECTRUM",
+   "on_target": true,
+   "target": "G-DEPOSIT-THEOREM"
+  },
+  {
+   "died_at": "G-DEPOSIT-THEOREM",
+   "killed": true,
+   "mutant": "MUT-DEPOSIT-MAX",
+   "on_target": true,
+   "target": "G-DEPOSIT-THEOREM"
+  },
+  {
+   "died_at": "G-CELL-TRANSITIVE",
+   "killed": true,
+   "mutant": "MUT-TRANSITIVE",
+   "on_target": true,
+   "target": "G-CELL-TRANSITIVE"
+  },
+  {
+   "died_at": "G-COLLINEAR-LADDER",
+   "killed": true,
+   "mutant": "MUT-COLLINEAR",
+   "on_target": true,
+   "target": "G-COLLINEAR-LADDER"
+  },
+  {
+   "died_at": "G-STATIC-FLOOR",
+   "killed": true,
+   "mutant": "MUT-FLOOR",
+   "on_target": true,
+   "target": "G-STATIC-FLOOR"
+  },
+  {
+   "died_at": "G-STATIC-LADDER",
+   "killed": true,
+   "mutant": "MUT-R5",
+   "on_target": true,
+   "target": "G-STATIC-LADDER"
+  },
+  {
+   "died_at": "G-STATIC-LADDER-LIVE",
+   "killed": true,
+   "mutant": "MUT-R6LIVE",
+   "on_target": true,
+   "target": "G-STATIC-LADDER-LIVE"
+  },
+  {
+   "died_at": "G-WALK-ANCHORED",
+   "killed": true,
+   "mutant": "MUT-WALK-ANCHOR",
+   "on_target": true,
+   "target": "G-WALK-ANCHORED"
+  },
+  {
+   "died_at": "G-WALK-ANCHORED",
+   "killed": true,
+   "mutant": "MUT-WALK-BRANCH",
+   "on_target": true,
+   "target": "G-WALK-ANCHORED"
+  },
+  {
+   "died_at": "G-COIN-FAMILY",
+   "killed": true,
+   "mutant": "MUT-COIN",
+   "on_target": true,
+   "target": "G-COIN-FAMILY"
+  },
+  {
+   "died_at": "G-STAGE0-DYNAMIC",
+   "killed": true,
+   "mutant": "MUT-FIRST-INDEF",
+   "on_target": true,
+   "target": "G-STAGE0-DYNAMIC"
+  },
+  {
+   "died_at": "G-PRUNE-SOUND",
+   "killed": true,
+   "mutant": "MUT-PRUNE",
+   "on_target": true,
+   "target": "G-PRUNE-SOUND"
+  },
+  {
+   "died_at": "G-CLEARING",
+   "killed": true,
+   "mutant": "MUT-CLEARING",
+   "on_target": true,
+   "target": "G-CLEARING"
+  },
+  {
+   "died_at": "G-NULL-MEASURE",
+   "killed": true,
+   "mutant": "MUT-NULL",
+   "on_target": true,
+   "target": "G-NULL-MEASURE"
+  },
+  {
+   "died_at": "G-POLARITY-A",
+   "killed": true,
+   "mutant": "MUT-POLARITY-A",
+   "on_target": true,
+   "target": "G-POLARITY-A"
+  },
+  {
+   "died_at": "G-POLARITY-B",
+   "killed": true,
+   "mutant": "MUT-POLARITY-B",
+   "on_target": true,
+   "target": "G-POLARITY-B"
+  },
+  {
+   "died_at": "G-CONSTRAINT-B",
+   "killed": true,
+   "mutant": "MUT-CONSTRAINT-B",
+   "on_target": true,
+   "target": "G-CONSTRAINT-B"
+  },
+  {
+   "died_at": "G-MOD3-THEOREM",
+   "killed": true,
+   "mutant": "MUT-MOD3",
+   "on_target": true,
+   "target": "G-MOD3-THEOREM"
+  },
+  {
+   "died_at": "G-FORCEDNESS",
+   "killed": true,
+   "mutant": "MUT-FORCEDNESS",
+   "on_target": true,
+   "target": "G-FORCEDNESS"
+  },
+  {
+   "died_at": "G-MEMO-LIVE",
+   "killed": true,
+   "mutant": "MUT-MEMO",
+   "on_target": true,
+   "target": "G-MEMO-LIVE"
+  },
+  {
+   "died_at": "G-WINDOW-DISCLOSED",
+   "killed": true,
+   "mutant": "MUT-WINDOW",
+   "on_target": true,
+   "target": "G-WINDOW-DISCLOSED"
+  },
+  {
+   "died_at": "G-WALL-L1",
+   "killed": true,
+   "mutant": "MUT-WALL-L1",
+   "on_target": true,
+   "target": "G-WALL-L1"
+  },
+  {
+   "died_at": "G-WALL-SIGNATURE-NAMED",
+   "killed": true,
+   "mutant": "MUT-WALL-NAMED",
+   "on_target": true,
+   "target": "G-WALL-SIGNATURE-NAMED"
+  },
+  {
+   "died_at": "G-WALL-BHS",
+   "killed": true,
+   "mutant": "MUT-WALL-BHS",
+   "on_target": true,
+   "target": "G-WALL-BHS"
+  },
+  {
+   "died_at": "G-WALL-KR",
+   "killed": true,
+   "mutant": "MUT-WALL-KR",
+   "on_target": true,
+   "target": "G-WALL-KR"
+  },
+  {
+   "died_at": "G-VERDICT-RECONSTRUCTED",
+   "killed": true,
+   "mutant": "MUT-VERDICT",
+   "on_target": true,
+   "target": "G-VERDICT-RECONSTRUCTED"
+  },
+  {
+   "died_at": "G-PAPER-CLAIMS",
+   "killed": true,
+   "mutant": "MUT-PAPER-CLAIM",
+   "on_target": true,
+   "target": "G-PAPER-CLAIMS"
+  },
+  {
+   "died_at": "G-PAPER-TABLES",
+   "killed": true,
+   "mutant": "MUT-PAPER-TABLE",
+   "on_target": true,
+   "target": "G-PAPER-TABLES"
+  },
+  {
+   "died_at": "G-PAPER-COVERAGE",
+   "killed": true,
+   "mutant": "MUT-COVERAGE-SCAN",
+   "on_target": true,
+   "target": "G-PAPER-COVERAGE"
+  },
+  {
+   "died_at": "G-PAPER-COVERAGE",
+   "killed": true,
+   "mutant": "MUT-EXEMPTION-DEAD",
+   "on_target": true,
+   "target": "G-PAPER-COVERAGE"
+  },
+  {
+   "died_at": "G-PAPER-COVERAGE",
+   "killed": true,
+   "mutant": "MUT-PAPER-FENCE",
+   "on_target": true,
+   "target": "G-PAPER-COVERAGE"
+  },
+  {
+   "died_at": "G-PAPER-POLARITY",
+   "killed": true,
+   "mutant": "MUT-POLARITY-FLIP",
+   "on_target": true,
+   "target": "G-PAPER-POLARITY"
+  },
+  {
+   "died_at": "G-SEAL-COMPLETE",
+   "killed": true,
+   "mutant": "MUT-SEAL-DROP",
+   "on_target": true,
+   "target": "G-SEAL-COMPLETE"
+  }
+ ],
+ "mutants": [
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "want",
+   "description_matches_code": true,
+   "gate": "G-ANCHORS-READ",
+   "hook_lines": [
+    1942
+   ],
+   "hook_source": "if mut(MUT-ANCHOR-VALUE) and aid == P-P20-THIRD: want = want + 1",
+   "name": "MUT-ANCHOR-VALUE",
+   "what": "moves one path-value anchor's expected value away from the bytes it anchors"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "needle",
+   "description_matches_code": true,
+   "gate": "G-VERBATIM",
+   "hook_lines": [
+    1964
+   ],
+   "hook_source": "if mut(MUT-VERBATIM) and vid == V-P21-BUDGET: nd = needle.replace(9, 8)",
+   "name": "MUT-VERBATIM",
+   "what": "perturbs one verbatim needle at a content-bearing token"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "vcons",
+   "description_matches_code": true,
+   "gate": "G-ANCHOR-CONSUMERS",
+   "hook_lines": [
+    3099
+   ],
+   "hook_source": "if mut(MUT-CONSUMER-BINDING): vcons = vcons[:-1] + [(vcons[-1][0], G-NO-SUCH-GATE)]",
+   "name": "MUT-CONSUMER-BINDING",
+   "what": "points one verbatim anchor's consumer at a gate that does not exist"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "mrows[0][corrupts]",
+   "description_matches_code": true,
+   "gate": "G-FALSIFIER-HONEST",
+   "hook_lines": [
+    2024
+   ],
+   "hook_source": "mrows[0][corrupts] = pick(MUT-FALSIFIER-DESC, mrows[0][corrupts], NO-SUCH-OBJECT-IN-THIS-FILE)",
+   "name": "MUT-FALSIFIER-DESC",
+   "what": "points one falsifier's declared corrupted object at an object its code does not touch"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "d4",
+   "description_matches_code": true,
+   "gate": "G-REGION-ARITHMETIC",
+   "hook_lines": [
+    2063
+   ],
+   "hook_source": "if mut(MUT-HERON) and (a, b, c) == (1, 1, 5): d4 = -d4",
+   "name": "MUT-HERON",
+   "what": "corrupts the symmetric route's determinant so the two routes disagree"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "spec",
+   "description_matches_code": true,
+   "gate": "G-DEPOSIT-THEOREM",
+   "hook_lines": [
+    2115
+   ],
+   "hook_source": "if mut(MUT-SPECTRUM): spec[9] = spec[9] + 1",
+   "name": "MUT-SPECTRUM",
+   "what": "moves one entry of the recomputed incidence spectrum"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "percell",
+   "description_matches_code": true,
+   "gate": "G-DEPOSIT-THEOREM",
+   "hook_lines": [
+    2117
+   ],
+   "hook_source": "percell = pick(MUT-DEPOSIT-MAX, ST[max_per_cell_per_round], 0)",
+   "name": "MUT-DEPOSIT-MAX",
+   "what": "lowers the measured maximum deposit per cell per round"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "orbit",
+   "description_matches_code": true,
+   "gate": "G-CELL-TRANSITIVE",
+   "hook_lines": [
+    2132
+   ],
+   "hook_source": "orbit = pick(MUT-TRANSITIVE, ST[cell_orbit], 9)",
+   "name": "MUT-TRANSITIVE",
+   "what": "shrinks the measured cell orbit so the single-cell census loses its licence"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "ladder",
+   "description_matches_code": true,
+   "gate": "G-COLLINEAR-LADDER",
+   "hook_lines": [
+    2144
+   ],
+   "hook_source": "if mut(MUT-COLLINEAR): ladder[1][homogeneous] = False",
+   "name": "MUT-COLLINEAR",
+   "what": "corrupts one rung of the collinear ladder's induced record"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "fi",
+   "description_matches_code": true,
+   "gate": "G-STATIC-FLOOR",
+   "hook_lines": [
+    2160
+   ],
+   "hook_source": "if mut(MUT-FLOOR): fi[max_cell] = fi[max_cell] - 1",
+   "name": "MUT-FLOOR",
+   "what": "moves the measured indefinite floor's maximum cell"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "mu",
+   "description_matches_code": true,
+   "gate": "G-STATIC-LADDER",
+   "hook_lines": [
+    2176
+   ],
+   "hook_source": "mu = pick(MUT-R5, ST[r5_min_uncovered], 0)",
+   "name": "MUT-R5",
+   "what": "reports the R = 5 covering scan as fully covered"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "rows",
+   "description_matches_code": true,
+   "gate": "G-STATIC-LADDER-LIVE",
+   "hook_lines": [
+    2195
+   ],
+   "hook_source": "if mut(MUT-R6LIVE): rows = [dict(x, exists=True) if (x[R] == 6 and x[pool] == LIVE) else x for x in rows]",
+   "name": "MUT-R6LIVE",
+   "what": "asserts a structurally live covering witness where the search found none"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "exitA",
+   "description_matches_code": true,
+   "gate": "G-WALK-ANCHORED",
+   "hook_lines": [
+    2301
+   ],
+   "hook_source": "if mut(MUT-WALK-ANCHOR): exitA = str(Fraction(exitA) * Fraction(1, 2))",
+   "name": "MUT-WALK-ANCHOR",
+   "what": "moves the rebuilt walk's exit probability away from paper-20's committed row"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "branches",
+   "description_matches_code": true,
+   "gate": "G-WALK-ANCHORED",
+   "hook_lines": [
+    2303
+   ],
+   "hook_source": "if mut(MUT-WALK-BRANCH): branches = branches + 1",
+   "name": "MUT-WALK-BRANCH",
+   "what": "moves the rebuilt walk's branch count at the anchored horizon"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "M",
+   "description_matches_code": true,
+   "gate": "G-COIN-FAMILY",
+   "hook_lines": [
+    2359
+   ],
+   "hook_source": "if mut(MUT-COIN) and nm == MW: M = coin_matrix(a3v, (b3v[0], b3v[1] + 1))",
+   "name": "MUT-COIN",
+   "what": "breaks one coin of the declared fiber so it is no longer unitary"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "floors",
+   "description_matches_code": true,
+   "gate": "G-STAGE0-DYNAMIC",
+   "hook_lines": [
+    2394
+   ],
+   "hook_source": "if mut(MUT-FIRST-INDEF): floors = [dict(f) for f in floors] floors[1][first_indefinite] = 1",
+   "name": "MUT-FIRST-INDEF",
+   "what": "moves the first horizon at which the indefinite region is occupied"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "ext",
+   "description_matches_code": true,
+   "gate": "G-PRUNE-SOUND",
+   "hook_lines": [
+    2435
+   ],
+   "hook_source": "if mut(MUT-PRUNE): ext = [dict(r) for r in ext] ext[-1][INDEFINITE] = 0",
+   "name": "MUT-PRUNE",
+   "what": "zeroes the pruned engine's extension row so the horizon floor moves"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "chosen",
+   "description_matches_code": true,
+   "gate": "G-CLEARING",
+   "hook_lines": [
+    2498
+   ],
+   "hook_source": "chosen = pick(MUT-CLEARING, free[0] if free else pairs[0], pairs[-1])",
+   "name": "MUT-CLEARING",
+   "what": "selects a clearing arena whose indefinite mass is zero"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "ntot",
+   "description_matches_code": true,
+   "gate": "G-NULL-MEASURE",
+   "hook_lines": [
+    2565
+   ],
+   "hook_source": "if mut(MUT-NULL) and row[t] == 1: ntot = ntot + 1",
+   "name": "MUT-NULL",
+   "what": "corrupts the uniform-on-support measure's total mass"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "word",
+   "description_matches_code": true,
+   "gate": "G-POLARITY-A",
+   "hook_lines": [
+    2570
+   ],
+   "hook_source": "if mut(MUT-POLARITY-A) and rd == A: word = SELECTED",
+   "name": "MUT-POLARITY-A",
+   "what": "swaps the Born-menu polarity word for its opposite"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "born",
+   "description_matches_code": true,
+   "gate": "G-POLARITY-B",
+   "hook_lines": [
+    2560
+   ],
+   "hook_source": "if mut(MUT-POLARITY-B) and rd == B: born = null * Fraction(1, 2)",
+   "name": "MUT-POLARITY-B",
+   "what": "moves the record-menu indefinite mass so its ratio inverts"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "carrier",
+   "description_matches_code": true,
+   "gate": "G-CONSTRAINT-B",
+   "hook_lines": [
+    2726
+   ],
+   "hook_source": "carrier = pick(MUT-CONSTRAINT-B, THE RECORD (the count field n), THE SITE MARGINAL p(x))",
+   "name": "MUT-CONSTRAINT-B",
+   "what": "declares a site-marginal observable as the polarity's carrier"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "my",
+   "description_matches_code": true,
+   "gate": "G-MOD3-THEOREM",
+   "hook_lines": [
+    2680
+   ],
+   "hook_source": "if mut(MUT-MOD3) and x == A4: my = [dict(d) for d in my] k = sorted(my[-1])[0] my[-1][k] = str(Fraction(my[-1][k]) * Fraction(1, 2))",
+   "name": "MUT-MOD3",
+   "what": "corrupts one residue partner's branch-weight map"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "frows",
+   "description_matches_code": true,
+   "gate": "G-FORCEDNESS",
+   "hook_lines": [
+    2789
+   ],
+   "hook_source": "if mut(MUT-FORCEDNESS): frows = [dict(x) for x in frows] frows[2][word_A] = SELECTED",
+   "name": "MUT-FORCEDNESS",
+   "what": "reports the coin fiber as invariant while one member disagrees"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "k",
+   "description_matches_code": true,
+   "gate": "G-MEMO-LIVE",
+   "hook_lines": [
+    187
+   ],
+   "hook_source": "k = pick(MUT-MEMO, (kind, key), (kind, LABEL))",
+   "name": "MUT-MEMO",
+   "what": "keys the memo on a label instead of on its complete input"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "label",
+   "description_matches_code": true,
+   "gate": "G-WINDOW-DISCLOSED",
+   "hook_lines": [
+    2818
+   ],
+   "hook_source": "label = pick(MUT-WINDOW, ARENAS-%d-OF-THE-COLLINEAR-FAMILY+HORIZON-%d(LADDER-1..%d; EXTENSION-%d-ON-A3)+COIN-FIBER-%d % (len(ARENAS), HORIZON, HORIZON, LADDER_T, len(COIN_FIBER)), NO-WINDOW)",
+   "name": "MUT-WINDOW",
+   "what": "drops the declared window from the head's own arena string"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "ptext",
+   "description_matches_code": true,
+   "gate": "G-WALL-L1",
+   "hook_lines": [
+    2845
+   ],
+   "hook_source": "if mut(MUT-WALL-L1): ptext = ptext + \\n + BANNED_L1 + \\n",
+   "name": "MUT-WALL-L1",
+   "what": "moves the object under test to a copy carrying the retracted L-1 sentence"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "ptext",
+   "description_matches_code": true,
+   "gate": "G-WALL-SIGNATURE-NAMED",
+   "hook_lines": [
+    2849
+   ],
+   "hook_source": "if mut(MUT-WALL-NAMED): ptext = ptext.replace(is NAMED AND NOT READ, is unremarkable)",
+   "name": "MUT-WALL-NAMED",
+   "what": "deletes the mandatory naming sentence from the object under test"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "surface",
+   "description_matches_code": true,
+   "gate": "G-WALL-BHS",
+   "hook_lines": [
+    2854
+   ],
+   "hook_source": "if mut(MUT-WALL-BHS): surface = surface +  this record is a Poisson sprinkling into  \\ Minkowski and is statistically Lorentz invariant",
+   "name": "MUT-WALL-BHS",
+   "what": "writes a sprinkling-grade reading into the declared measurement surface"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "surface",
+   "description_matches_code": true,
+   "gate": "G-WALL-KR",
+   "hook_lines": [
+    2857
+   ],
+   "hook_source": "if mut(MUT-WALL-KR): surface = surface +  the Myrheim-Meyer dimension estimate of this  \\ order is 4 and the height control is not owed",
+   "name": "MUT-WALL-KR",
+   "what": "writes a dimension reading into the declared measurement surface"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "segs",
+   "description_matches_code": true,
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "hook_lines": [
+    2931
+   ],
+   "hook_source": "if mut(MUT-VERDICT): segs = [s.replace(SIG-BLOCKED-AT-THE-EMISSION-READING, SIG-AVOIDED) for s in segs]",
+   "name": "MUT-VERDICT",
+   "what": "forges the outcome word in the builder's own segment"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "claims",
+   "description_matches_code": true,
+   "gate": "G-PAPER-CLAIMS",
+   "hook_lines": [
+    2967
+   ],
+   "hook_source": "if mut(MUT-PAPER-CLAIM): claims[0][claim] = claims[0][claim].replace(at most, at least)",
+   "name": "MUT-PAPER-CLAIM",
+   "what": "corrupts one rendered claim so it no longer occurs in the paper"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "trows",
+   "description_matches_code": true,
+   "gate": "G-PAPER-TABLES",
+   "hook_lines": [
+    2970
+   ],
+   "hook_source": "if mut(MUT-PAPER-TABLE): trows[0] = trows[0].replace(NO, YES)",
+   "name": "MUT-PAPER-TABLE",
+   "what": "forges one rendered table row"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "body",
+   "description_matches_code": true,
+   "gate": "G-PAPER-COVERAGE",
+   "hook_lines": [
+    1489
+   ],
+   "hook_source": "body = text if not mut(MUT-COVERAGE-SCAN) else FENCE.sub(, text)",
+   "name": "MUT-COVERAGE-SCAN",
+   "what": "strips the fenced blocks from the coverage scan"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "exempt",
+   "description_matches_code": true,
+   "gate": "G-PAPER-COVERAGE",
+   "hook_lines": [
+    1486
+   ],
+   "hook_source": "if mut(MUT-EXEMPTION-DEAD): exempt = exempt + [[4242, a literal that occurs nowhere]]",
+   "name": "MUT-EXEMPTION-DEAD",
+   "what": "adds a declared exemption that fires nowhere"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "text",
+   "description_matches_code": true,
+   "gate": "G-PAPER-COVERAGE",
+   "hook_lines": [
+    1513
+   ],
+   "hook_source": "if mut(MUT-PAPER-FENCE): seg = R[verdict][segments][0] text = text.replace(seg, seg.replace(STATIC, STAIIC), 1)",
+   "name": "MUT-PAPER-FENCE",
+   "what": "forges one copy of a fenced verdict block"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "measured",
+   "description_matches_code": true,
+   "gate": "G-PAPER-POLARITY",
+   "hook_lines": [
+    1568
+   ],
+   "hook_source": "if mut(MUT-POLARITY-FLIP): measured[PL-REACH] = not measured[PL-REACH]",
+   "name": "MUT-POLARITY-FLIP",
+   "what": "inverts one pre-registered claim's measured polarity"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "sid",
+   "description_matches_code": true,
+   "gate": "G-SEAL-COMPLETE",
+   "hook_lines": [
+    1634
+   ],
+   "hook_source": "if mut(MUT-SEAL-DROP) and sid == SEAL-COVERAGE: return",
+   "name": "MUT-SEAL-DROP",
+   "what": "drops one seal row so the manifest is no longer total"
+  }
+ ],
+ "outcome": "SIG-BLOCKED-AT-THE-EMISSION-READING",
+ "paper_claims": [
+  {
+   "claim": "A round deposits at most 1 incidence on any one cell, measured exhaustively over all 280 partitions, so a cell's count after R rounds is at most R.",
+   "id": "C-DEPOSIT"
+  },
+  {
+   "claim": "At a site whose three cells are all at least one, SINGULAR needs a cell at 4 and INDEFINITE needs a cell at 5.",
+   "id": "C-FLOOR"
+  },
+  {
+   "claim": "One round of the ROW parallel class induces the code (1, 0, 0) at every one of the nine sites, with 4 det q = -1: the indefinite region is occupied at R = 1.",
+   "id": "C-R1"
+  },
+  {
+   "claim": "No covering record at R = 5 carries an indefinite site: over all 16,108,764 multisets of five rounds that all hit one cell the least number of uncovered cells is 2.",
+   "id": "C-R5"
+  },
+  {
+   "claim": "The full-site class is attained at R = 5: 2,210,000 multisets of five rounds induce the code (1, 1, 5) at the target site, and the witness this unit exhibits leaves 13 of its 27 cells at zero.",
+   "id": "C-FULLSITE"
+  },
+  {
+   "claim": "The covering floor is R = 6, and the structurally live covering floor is R = 7.",
+   "id": "C-COVERING"
+  },
+  {
+   "claim": "The clearing pair is (A4, horizon 5): I7's own declared G-FLAT at R = 4, driven by paper-21, walked at paper-20's own declared horizon.",
+   "id": "C-CLEARING"
+  },
+  {
+   "claim": "At the clearing arena the coupled walk puts exact mass 146623744/847288609443 on records with an indefinite site at the Born menu, first positive at step 5.",
+   "id": "C-INDEF-A"
+  },
+  {
+   "claim": "Under the Born menu the indefinite mass is 146623744/847288609443 against 148895641/90632341800 under the uniform-on-support counting measure on the same tree: AVOIDED.",
+   "id": "C-POLARITY-A"
+  },
+  {
+   "claim": "Under the record menu the indefinite mass is 5072320/1162261467 against 53/34992: SELECTED.",
+   "id": "C-POLARITY-B"
+  },
+  {
+   "claim": "All 5 members of the S_3-covariant coin fiber are exactly unitary, and all 5 return AVOIDED at the Born menu and SELECTED at the record menu.",
+   "id": "C-FIBER"
+  },
+  {
+   "claim": "The Born branch measure is a function of the record modulo three: 3 arena pairs compared path by path agree at 12 of 12 branch-weight maps.",
+   "id": "C-MOD3"
+  },
+  {
+   "claim": "The walk reaches at R = 4 and horizon 5 a region the grammar cannot reach below R = 6.",
+   "id": "C-GRAMMAR-GAP"
+  }
+ ],
+ "paper_coverage": {
+  "declared_exemptions": [
+   {
+    "literal": "2,3",
+    "occurrences": 2,
+    "reason": "the affine plane AG(2,3), named in the parents and in this paper's arena section; the scanner reads its comma as a thousands separator"
+   },
+   {
+    "literal": "256",
+    "occurrences": 1,
+    "reason": "the sha256-12 convention in the provenance sentences"
+   },
+   {
+    "literal": "19",
+    "occurrences": 1,
+    "reason": "paper-19, the weld this arena family descends from, named once in the arena section"
+   },
+   {
+    "literal": "82",
+    "occurrences": 1,
+    "reason": "the CLI-contract engraving, named once in the instrument section"
+   }
+  ],
+  "exemptions_that_never_fire": [],
+  "fence_copies_declared": 2,
+  "fenced_block_multiset_matches": true,
+  "fenced_blocks_expected": 8,
+  "fenced_blocks_found": 8,
+  "fenced_blocks_scanned": 8,
+  "fenced_numerals_scanned": 162,
+  "fenced_unbacked": [],
+  "numerals_scanned": 558,
+  "registry_size": 236,
+  "section_headings": [
+   "## 1.",
+   "## 10.",
+   "## 11.",
+   "## 12.",
+   "## 13.",
+   "## 2.",
+   "## 3.",
+   "## 4.",
+   "## 5.",
+   "## 6.",
+   "## 7.",
+   "## 8.",
+   "## 9.",
+   "### 2.1",
+   "### 2.2",
+   "### 3.1",
+   "### 3.2",
+   "### 3.3",
+   "### 4.1",
+   "### 4.2",
+   "### 6.1",
+   "### 6.2",
+   "### 6.3",
+   "### 7.1",
+   "### 7.2",
+   "### 7.3"
+  ],
+  "unbacked": [],
+  "word_numerals_scanned": 152,
+  "word_numerals_unbacked": []
+ },
+ "paper_tables": [
+  "| 4 | ALL | NO |",
+  "| 4 | LIVE | NO |",
+  "| 5 | ALL | NO |",
+  "| 5 | LIVE | NO |",
+  "| 6 | ALL | YES |",
+  "| 6 | LIVE | NO |",
+  "| 7 | ALL | YES |",
+  "| 7 | LIVE | YES |",
+  "| A3 | 1, 1, 1 | 3 | 4 | 5 | 6 at the extension |",
+  "| A4 | 1, 1, 2 | 4 | 3 | 3 | 5 |",
+  "| A5 | 1, 1, 3 | 5 | 2 | 1 | 3 |",
+  "| `GROVER` | 146623744/847288609443 | 148895641/90632341800 | AVOIDED | SELECTED |",
+  "| `W` | 170531816/847288609443 | 94739/62775648 | AVOIDED | SELECTED |",
+  "| `MW` | 392/531441 | 10273973819/7653397752000 | AVOIDED | SELECTED |",
+  "| `MMW` | 85264186/847288609443 | 74201/49043475 | AVOIDED | SELECTED |",
+  "| `M2W` | 478/531441 | 156109153/150124340520 | AVOIDED | SELECTED |"
+ ],
+ "payload_sha256_12": "36f18c208f78",
+ "polarity": {
+  "A": {
+   "born": "146623744/847288609443",
+   "frozen": "0",
+   "null": "148895641/90632341800",
+   "ratio": "675143691622400/6409469116243161",
+   "stage_frozen": "34816/129140163",
+   "steps": [
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 3,
+     "max_cell": 3,
+     "null": {
+      "POSDEF": "1"
+     },
+     "t": 1
+    },
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 27,
+     "max_cell": 3,
+     "null": {
+      "POSDEF": "1"
+     },
+     "t": 2
+    },
+    {
+     "born": {
+      "POSDEF": "58985/59049",
+      "SINGULAR": "64/59049"
+     },
+     "branches": 486,
+     "max_cell": 4,
+     "null": {
+      "POSDEF": "161/162",
+      "SINGULAR": "1/162"
+     },
+     "t": 3
+    },
+    {
+     "born": {
+      "POSDEF": "1146312331/1162261467",
+      "SINGULAR": "15949136/1162261467"
+     },
+     "branches": 10527,
+     "max_cell": 4,
+     "null": {
+      "POSDEF": "4934717/5164236",
+      "SINGULAR": "229519/5164236"
+     },
+     "t": 4
+    },
+    {
+     "born": {
+      "INDEFINITE": "146623744/847288609443",
+      "POSDEF": "7257962052955/7625597484987",
+      "SINGULAR": "366315818336/7625597484987"
+     },
+     "branches": 284078,
+     "max_cell": 5,
+     "null": {
+      "INDEFINITE": "148895641/90632341800",
+      "POSDEF": "1666120693/1812646836",
+      "SINGULAR": "2392470503/30210780600"
+     },
+     "t": 5
+    }
+   ],
+   "word": "AVOIDED"
+  },
+  "B": {
+   "born": "5072320/1162261467",
+   "frozen": "0",
+   "null": "53/34992",
+   "ratio": "81157120/28166373",
+   "stage_frozen": "325184/71744535",
+   "steps": [
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 3,
+     "max_cell": 3,
+     "null": {
+      "POSDEF": "1"
+     },
+     "t": 1
+    },
+    {
+     "born": {
+      "POSDEF": "1"
+     },
+     "branches": 27,
+     "max_cell": 3,
+     "null": {
+      "POSDEF": "1"
+     },
+     "t": 2
+    },
+    {
+     "born": {
+      "POSDEF": "235/243",
+      "SINGULAR": "8/243"
+     },
+     "branches": 486,
+     "max_cell": 4,
+     "null": {
+      "POSDEF": "161/162",
+      "SINGULAR": "1/162"
+     },
+     "t": 3
+    },
+    {
+     "born": {
+      "POSDEF": "108395/118098",
+      "SINGULAR": "9703/118098"
+     },
+     "branches": 11664,
+     "max_cell": 4,
+     "null": {
+      "POSDEF": "2797/2916",
+      "SINGULAR": "119/2916"
+     },
+     "t": 4
+    },
+    {
+     "born": {
+      "INDEFINITE": "5072320/1162261467",
+      "POSDEF": "92917243541/116226146700",
+      "SINGULAR": "7600557053/38742048900"
+     },
+     "branches": 314928,
+     "max_cell": 5,
+     "null": {
+      "INDEFINITE": "53/34992",
+      "POSDEF": "145321/157464",
+      "SINGULAR": "23809/314928"
+     },
+     "t": 5
+    }
+   ],
+   "word": "SELECTED"
+  },
+  "arena_invariant_A": true,
+  "arena_invariant_B": true,
+  "arena_rows": [
+   {
+    "R": 3,
+    "arena": "A3",
+    "born_A": "5526190575616/150094635296999121",
+    "horizon": 6,
+    "null_A": null,
+    "priced": "the extension horizon carries the Born mass only: the uniform-on-support comparator needs the whole unpruned tree, which the pruning theorem is precisely what avoids",
+    "record": [
+     1,
+     1,
+     1
+    ],
+    "word_A": null,
+    "word_B": null
+   },
+   {
+    "R": 4,
+    "arena": "A4",
+    "born_A": "146623744/847288609443",
+    "born_B": "5072320/1162261467",
+    "horizon": 5,
+    "null_A": "148895641/90632341800",
+    "null_B": "53/34992",
+    "record": [
+     1,
+     1,
+     2
+    ],
+    "word_A": "AVOIDED",
+    "word_B": "SELECTED"
+   },
+   {
+    "R": 5,
+    "arena": "A5",
+    "born_A": "367635432032/7625597484987",
+    "born_B": "269625780848/1016978783625",
+    "horizon": 5,
+    "null_A": "146526143/1812646836",
+    "null_B": "12143/157464",
+    "record": [
+     1,
+     1,
+     3
+    ],
+    "word_A": "AVOIDED",
+    "word_B": "SELECTED"
+   }
+  ],
+  "frozen_leaves": false,
+  "measures": {
+   "BORN": "the coupled emission tree's own branch measure",
+   "FROZEN": "paper-20's own control: the record never changes",
+   "NULL": "the UNIFORM-ON-SUPPORT counting measure on the SAME tree: every branch of a node gets equal weight, so the two measures differ only in the weights and never in the branches (E-24: the comparison is measure-declared)",
+   "STAGE-FROZEN": "the same walk on phases that never update, with the record still accumulating -- the arm that isolates the back-reaction from the accumulation"
+  }
+ },
+ "polarity_rows": [
+  {
+   "agrees": true,
+   "declared": true,
+   "id": "PL-REACH",
+   "measured": true,
+   "statement": "the indefinite region is REACHED by the coupled dynamics at the clearing arena"
+  },
+  {
+   "agrees": true,
+   "declared": false,
+   "id": "PL-STATIC-R5",
+   "measured": false,
+   "statement": "a covering record with an indefinite site exists at R = 5"
+  },
+  {
+   "agrees": true,
+   "declared": false,
+   "id": "PL-FORCED-READING",
+   "measured": false,
+   "statement": "the polarity sign is invariant across the declared emission readings"
+  },
+  {
+   "agrees": true,
+   "declared": true,
+   "id": "PL-FORCED-COIN",
+   "measured": true,
+   "statement": "the polarity sign is invariant across the declared coin fiber"
+  },
+  {
+   "agrees": true,
+   "declared": false,
+   "id": "PL-FROZEN",
+   "measured": false,
+   "statement": "paper-20's frozen control ever leaves the positive-definite region"
+  }
+ ],
+ "provenance": [
+  {
+   "expected": "ab73239daff5",
+   "found": "ab73239daff5",
+   "id": "A-PIN",
+   "matches": true,
+   "path": "v14/note-sig-pin.md",
+   "why": "THIS UNIT'S PIN (ledger #233): the stages, the two binding constraints, the pre-registered outcome names."
+  },
+  {
+   "expected": "ef4a8c35a0c4",
+   "found": "ef4a8c35a0c4",
+   "id": "A-P21",
+   "matches": true,
+   "path": "v14/paper-21-r4dec.md",
+   "why": "PAPER 21 (terminal): the R = 4 arena, the covering machinery, the incidence spectrum, block quantisation, the det spectrum, the naming wall this unit inherits."
+  },
+  {
+   "expected": "a4538c7019e6",
+   "found": "a4538c7019e6",
+   "id": "A-P21REC",
+   "matches": true,
+   "path": "v14/code/r4dec_receipt.json",
+   "why": "PAPER 21's COMMITTED RECEIPT: the incidence spectrum and the R = 4 determinant spectrum, READ as data and reproduced here."
+  },
+  {
+   "expected": "4824d190af73",
+   "found": "4824d190af73",
+   "id": "A-P20",
+   "matches": true,
+   "path": "v14/paper-20-coupling.md",
+   "why": "PAPER 20 (terminal): the coupled machine, the emission law, the coin fiber, the admissibility ladder and the exit census this unit rebuilds and anchors against."
+  },
+  {
+   "expected": "55273f6b6068",
+   "found": "55273f6b6068",
+   "id": "A-P20REC",
+   "matches": true,
+   "path": "v14/code/coupling_receipt.json",
+   "why": "PAPER 20's COMMITTED RECEIPT: the branch ladder, the exit probabilities at both readings, the exit census and the visit schedule -- the five rows this unit's rebuilt walk must reproduce."
+  },
+  {
+   "expected": "72e7b299f66e",
+   "found": "72e7b299f66e",
+   "id": "A-P20CODE",
+   "matches": true,
+   "path": "v14/code/coupling_exact.py",
+   "why": "PAPER 20's INSTRUMENT: the declared machinery this unit re-implements independently -- coin, shift, emission readings, update semantics."
+  },
+  {
+   "expected": "f286ba10d2d9",
+   "found": "f286ba10d2d9",
+   "id": "A-HA",
+   "matches": true,
+   "path": "v13/paper-ha-successor.md",
+   "why": "I7 / HA: the declared readout and the admissibility criterion."
+  },
+  {
+   "expected": "542b8735daf0",
+   "found": "542b8735daf0",
+   "id": "A-I7",
+   "matches": true,
+   "path": "v13/code/ha_successor_receipt.json",
+   "why": "I7's ARENA AS DATA: the declared link set and the declared record family, including G-SINGULAR and G-INDEF, read and never re-typed."
+  },
+  {
+   "expected": "93ea24591c3c",
+   "found": "93ea24591c3c",
+   "id": "A-L1",
+   "matches": true,
+   "path": "v11/note-L1-lorentz-no-go-lemma.md",
+   "why": "L-1: the fourth-form clause argued before any test, and the sentence retracted in 2026 that no paper of this line may reproduce."
+  },
+  {
+   "expected": "0cebe543e814",
+   "found": "0cebe543e814",
+   "id": "A-CAT",
+   "matches": true,
+   "path": "v11/note-v11p0a-reproduction-catalog.md",
+   "why": "the reproduction catalog: the BHS block and the Kleitman-Rothschild height-control warning."
+  }
+ ],
+ "prune": {
+  "arena": "A3",
+  "checked_against_full_engine": 20,
+  "first_indefinite": 6,
+  "horizon": 6,
+  "indefinite_at_extension": "5526190575616/150094635296999121",
+  "mismatches": [],
+  "rows": [
+   {
+    "INDEFINITE": "0",
+    "SINGULAR": "0",
+    "region_floor_events": 3,
+    "retained": 3,
+    "t": 1
+   },
+   {
+    "INDEFINITE": "0",
+    "SINGULAR": "0",
+    "region_floor_events": 3,
+    "retained": 27,
+    "t": 2
+   },
+   {
+    "INDEFINITE": "0",
+    "SINGULAR": "0",
+    "region_floor_events": 3,
+    "retained": 486,
+    "t": 3
+   },
+   {
+    "INDEFINITE": "0",
+    "SINGULAR": "0",
+    "region_floor_events": 3,
+    "retained": 10527,
+    "t": 4
+   },
+   {
+    "INDEFINITE": "0",
+    "SINGULAR": "927415552/847288609443",
+    "region_floor_events": 3,
+    "retained": 72199,
+    "t": 5
+   },
+   {
+    "INDEFINITE": "5526190575616/150094635296999121",
+    "SINGULAR": "5219452727662592/450283905890997363",
+    "region_floor_events": 3,
+    "retained": 109210,
+    "t": 6
+   }
+  ]
+ },
+ "python": "3.13.2",
+ "reachability": [
+  {
+   "gate": "G-ANCHORS-READ",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-ANCHOR-VALUE"
+  },
+  {
+   "gate": "G-VERBATIM",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-VERBATIM"
+  },
+  {
+   "gate": "G-ANCHOR-CONSUMERS",
+   "gate_evaluated_in_this_run": true,
+   "late": true,
+   "mutant": "MUT-CONSUMER-BINDING"
+  },
+  {
+   "gate": "G-FALSIFIER-HONEST",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-FALSIFIER-DESC"
+  },
+  {
+   "gate": "G-REGION-ARITHMETIC",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-HERON"
+  },
+  {
+   "gate": "G-DEPOSIT-THEOREM",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-SPECTRUM"
+  },
+  {
+   "gate": "G-DEPOSIT-THEOREM",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-DEPOSIT-MAX"
+  },
+  {
+   "gate": "G-CELL-TRANSITIVE",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-TRANSITIVE"
+  },
+  {
+   "gate": "G-COLLINEAR-LADDER",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-COLLINEAR"
+  },
+  {
+   "gate": "G-STATIC-FLOOR",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-FLOOR"
+  },
+  {
+   "gate": "G-STATIC-LADDER",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-R5"
+  },
+  {
+   "gate": "G-STATIC-LADDER-LIVE",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-R6LIVE"
+  },
+  {
+   "gate": "G-WALK-ANCHORED",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-WALK-ANCHOR"
+  },
+  {
+   "gate": "G-WALK-ANCHORED",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-WALK-BRANCH"
+  },
+  {
+   "gate": "G-COIN-FAMILY",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-COIN"
+  },
+  {
+   "gate": "G-STAGE0-DYNAMIC",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-FIRST-INDEF"
+  },
+  {
+   "gate": "G-PRUNE-SOUND",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-PRUNE"
+  },
+  {
+   "gate": "G-CLEARING",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-CLEARING"
+  },
+  {
+   "gate": "G-NULL-MEASURE",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-NULL"
+  },
+  {
+   "gate": "G-POLARITY-A",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-POLARITY-A"
+  },
+  {
+   "gate": "G-POLARITY-B",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-POLARITY-B"
+  },
+  {
+   "gate": "G-CONSTRAINT-B",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-CONSTRAINT-B"
+  },
+  {
+   "gate": "G-MOD3-THEOREM",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-MOD3"
+  },
+  {
+   "gate": "G-FORCEDNESS",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-FORCEDNESS"
+  },
+  {
+   "gate": "G-MEMO-LIVE",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-MEMO"
+  },
+  {
+   "gate": "G-WINDOW-DISCLOSED",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-WINDOW"
+  },
+  {
+   "gate": "G-WALL-L1",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-WALL-L1"
+  },
+  {
+   "gate": "G-WALL-SIGNATURE-NAMED",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-WALL-NAMED"
+  },
+  {
+   "gate": "G-WALL-BHS",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-WALL-BHS"
+  },
+  {
+   "gate": "G-WALL-KR",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-WALL-KR"
+  },
+  {
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-VERDICT"
+  },
+  {
+   "gate": "G-PAPER-CLAIMS",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-PAPER-CLAIM"
+  },
+  {
+   "gate": "G-PAPER-TABLES",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-PAPER-TABLE"
+  },
+  {
+   "gate": "G-PAPER-COVERAGE",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-COVERAGE-SCAN"
+  },
+  {
+   "gate": "G-PAPER-COVERAGE",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-EXEMPTION-DEAD"
+  },
+  {
+   "gate": "G-PAPER-COVERAGE",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-PAPER-FENCE"
+  },
+  {
+   "gate": "G-PAPER-POLARITY",
+   "gate_evaluated_in_this_run": true,
+   "late": false,
+   "mutant": "MUT-POLARITY-FLIP"
+  },
+  {
+   "gate": "G-SEAL-COMPLETE",
+   "gate_evaluated_in_this_run": true,
+   "late": true,
+   "mutant": "MUT-SEAL-DROP"
+  }
+ ],
+ "schema": "isp/v14/sig-signature-selection/1",
+ "seal_manifest": {
+  "declared_seals": [
+   "SEAL-SCHEMA",
+   "SEAL-PROVENANCE",
+   "SEAL-ANCHORS",
+   "SEAL-VERBATIM",
+   "SEAL-ARENA",
+   "SEAL-STATIC",
+   "SEAL-WALK",
+   "SEAL-DYNAMIC",
+   "SEAL-PRUNE",
+   "SEAL-CLEARING",
+   "SEAL-POLARITY-CENSUS",
+   "SEAL-CONSTRAINT-B",
+   "SEAL-MOD3",
+   "SEAL-FORCEDNESS",
+   "SEAL-WINDOW",
+   "SEAL-WALLS",
+   "SEAL-VERDICT",
+   "SEAL-OUTCOME",
+   "SEAL-COUNTS",
+   "SEAL-MEMO",
+   "SEAL-PAPER-CLAIMS",
+   "SEAL-PAPER-TABLES",
+   "SEAL-PAPER-COVERAGE",
+   "SEAL-POLARITY",
+   "SEAL-COVERAGE",
+   "SEAL-WAIVERS",
+   "SEAL-MUTANTS",
+   "SEAL-MUTANT-SWEEP",
+   "SEAL-REACHABILITY",
+   "SEAL-GATES",
+   "SEAL-CLOSING",
+   "SEAL-TOTALS",
+   "SEAL-TRANSCRIPT"
+  ],
+  "declared_unsealed": [
+   "arithmetic",
+   "python",
+   "seal_manifest",
+   "payload_sha256_12"
+  ],
+  "declared_unsealed_carries_no_measurement": true,
+  "declared_unsealed_frozen": true,
+  "rows": [
+   {
+    "path": "schema",
+    "seal": "SEAL-SCHEMA",
+    "sealed_at_gate": "G-PROVENANCE",
+    "sha256_12": "a455f3d435d1"
+   },
+   {
+    "path": "provenance",
+    "seal": "SEAL-PROVENANCE",
+    "sealed_at_gate": "G-PROVENANCE",
+    "sha256_12": "2592122c69b9"
+   },
+   {
+    "path": "anchors",
+    "seal": "SEAL-ANCHORS",
+    "sealed_at_gate": "G-ANCHORS-READ",
+    "sha256_12": "018b80daa56c"
+   },
+   {
+    "path": "verbatim_anchors",
+    "seal": "SEAL-VERBATIM",
+    "sealed_at_gate": "G-VERBATIM",
+    "sha256_12": "e38dff967407"
+   },
+   {
+    "path": "arena",
+    "seal": "SEAL-ARENA",
+    "sealed_at_gate": "G-REGION-ARITHMETIC",
+    "sha256_12": "7ef67dba3382"
+   },
+   {
+    "path": "memo",
+    "seal": "SEAL-MEMO",
+    "sealed_at_gate": "G-MEMO-LIVE",
+    "sha256_12": "84f9611e5e71"
+   },
+   {
+    "path": "static",
+    "seal": "SEAL-STATIC",
+    "sealed_at_gate": "G-STATIC-LADDER-LIVE",
+    "sha256_12": "6ca2dd3e150b"
+   },
+   {
+    "path": "walk",
+    "seal": "SEAL-WALK",
+    "sealed_at_gate": "G-WALK-ANCHORED",
+    "sha256_12": "737349a8222f"
+   },
+   {
+    "path": "dynamic",
+    "seal": "SEAL-DYNAMIC",
+    "sealed_at_gate": "G-STAGE0-DYNAMIC",
+    "sha256_12": "2d11629a42f2"
+   },
+   {
+    "path": "prune",
+    "seal": "SEAL-PRUNE",
+    "sealed_at_gate": "G-PRUNE-SOUND",
+    "sha256_12": "655b90f6c874"
+   },
+   {
+    "path": "clearing",
+    "seal": "SEAL-CLEARING",
+    "sealed_at_gate": "G-CLEARING",
+    "sha256_12": "489c509fc180"
+   },
+   {
+    "path": "polarity",
+    "seal": "SEAL-POLARITY-CENSUS",
+    "sealed_at_gate": "G-POLARITY-B",
+    "sha256_12": "b4b4879851d8"
+   },
+   {
+    "path": "mod3",
+    "seal": "SEAL-MOD3",
+    "sealed_at_gate": "G-MOD3-THEOREM",
+    "sha256_12": "e90b0ebd8073"
+   },
+   {
+    "path": "constraint_b",
+    "seal": "SEAL-CONSTRAINT-B",
+    "sealed_at_gate": "G-CONSTRAINT-B",
+    "sha256_12": "43a2a135104f"
+   },
+   {
+    "path": "forcedness",
+    "seal": "SEAL-FORCEDNESS",
+    "sealed_at_gate": "G-FORCEDNESS",
+    "sha256_12": "6681cef38733"
+   },
+   {
+    "path": "window",
+    "seal": "SEAL-WINDOW",
+    "sealed_at_gate": "G-WINDOW-DISCLOSED",
+    "sha256_12": "3a6515376228"
+   },
+   {
+    "path": "walls",
+    "seal": "SEAL-WALLS",
+    "sealed_at_gate": "G-WALL-SIGNATURE-NAMED",
+    "sha256_12": "6e6a96e05f92"
+   },
+   {
+    "path": "verdict",
+    "seal": "SEAL-VERDICT",
+    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+    "sha256_12": "2cf591bdd937"
+   },
+   {
+    "path": "outcome",
+    "seal": "SEAL-OUTCOME",
+    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+    "sha256_12": "be8544595e1b"
+   },
+   {
+    "path": "counts",
+    "seal": "SEAL-COUNTS",
+    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+    "sha256_12": "3d4c0b621921"
+   },
+   {
+    "path": "paper_claims",
+    "seal": "SEAL-PAPER-CLAIMS",
+    "sealed_at_gate": "G-PAPER-CLAIMS",
+    "sha256_12": "970d0457926d"
+   },
+   {
+    "path": "paper_tables",
+    "seal": "SEAL-PAPER-TABLES",
+    "sealed_at_gate": "G-PAPER-TABLES",
+    "sha256_12": "f302c7378004"
+   },
+   {
+    "path": "paper_coverage",
+    "seal": "SEAL-PAPER-COVERAGE",
+    "sealed_at_gate": "G-PAPER-COVERAGE",
+    "sha256_12": "e5c5d225b585"
+   },
+   {
+    "path": "polarity_rows",
+    "seal": "SEAL-POLARITY",
+    "sealed_at_gate": "G-PAPER-POLARITY",
+    "sha256_12": "a3e6a9fda121"
+   },
+   {
+    "path": "coverage",
+    "seal": "SEAL-COVERAGE",
+    "sealed_at_gate": "G-COVERAGE",
+    "sha256_12": "03ee80ae1e51"
+   },
+   {
+    "path": "waiver_ledger",
+    "seal": "SEAL-WAIVERS",
+    "sealed_at_gate": "G-COVERAGE",
+    "sha256_12": "193c6ca6c9d7"
+   },
+   {
+    "path": "mutants",
+    "seal": "SEAL-MUTANTS",
+    "sealed_at_gate": "G-COVERAGE",
+    "sha256_12": "819c35d5db4d"
+   },
+   {
+    "path": "mutant_sweep",
+    "seal": "SEAL-MUTANT-SWEEP",
+    "sealed_at_gate": "G-SWEEP-BOUND",
+    "sha256_12": "d0312a410776"
+   },
+   {
+    "path": "reachability",
+    "seal": "SEAL-REACHABILITY",
+    "sealed_at_gate": "G-REACHABILITY",
+    "sha256_12": "6fe0362c1358"
+   },
+   {
+    "path": "gates",
+    "seal": "SEAL-GATES",
+    "sealed_at_gate": "G-PAYLOAD-CLOSES",
+    "sha256_12": "447752b0570b"
+   },
+   {
+    "path": "closing_gates",
+    "seal": "SEAL-CLOSING",
+    "sealed_at_gate": "G-PAYLOAD-CLOSES",
+    "sha256_12": "b80d7ab2b05b"
+   },
+   {
+    "path": "totals",
+    "seal": "SEAL-TOTALS",
+    "sealed_at_gate": "G-PAYLOAD-CLOSES",
+    "sha256_12": "08bc6009de60"
+   },
+   {
+    "path": "transcript_head",
+    "seal": "SEAL-TRANSCRIPT",
+    "sealed_at_gate": "G-PAYLOAD-CLOSES",
+    "sha256_12": "8d592ab2834f"
+   }
+  ]
+ },
+ "static": {
+  "cell_orbit": 27,
+  "collinear_ladder": [
+   {
+    "R": 3,
+    "covering": true,
+    "det4": 3,
+    "foreign": 0,
+    "homogeneous": true,
+    "incidences": 27,
+    "record": [
+     1,
+     1,
+     1
+    ],
+    "region": "POSDEF"
+   },
+   {
+    "R": 4,
+    "covering": true,
+    "det4": 4,
+    "foreign": 0,
+    "homogeneous": true,
+    "incidences": 36,
+    "record": [
+     1,
+     1,
+     2
+    ],
+    "region": "POSDEF"
+   },
+   {
+    "R": 5,
+    "covering": true,
+    "det4": 3,
+    "foreign": 0,
+    "homogeneous": true,
+    "incidences": 45,
+    "record": [
+     1,
+     1,
+     3
+    ],
+    "region": "POSDEF"
+   },
+   {
+    "R": 6,
+    "covering": true,
+    "det4": 0,
+    "foreign": 0,
+    "homogeneous": true,
+    "incidences": 54,
+    "record": [
+     1,
+     1,
+     4
+    ],
+    "region": "SINGULAR"
+   },
+   {
+    "R": 7,
+    "covering": true,
+    "det4": -5,
+    "foreign": 0,
+    "homogeneous": true,
+    "incidences": 63,
+    "record": [
+     1,
+     1,
+     5
+    ],
+    "region": "INDEFINITE"
+   },
+   {
+    "R": 8,
+    "covering": true,
+    "det4": -12,
+    "foreign": 0,
+    "homogeneous": true,
+    "incidences": 72,
+    "record": [
+     1,
+     1,
+     6
+    ],
+    "region": "INDEFINITE"
+   },
+   {
+    "R": 6,
+    "covering": true,
+    "det4": 12,
+    "foreign": 0,
+    "homogeneous": true,
+    "incidences": 54,
+    "record": [
+     2,
+     2,
+     2
+    ],
+    "region": "POSDEF"
+   }
+  ],
+  "covering": {
+   "R": 6
+  },
+  "covering_rows": [
+   {
+    "R": 4,
+    "exists": false,
+    "pool": "ALL",
+    "witness_code": null,
+    "witness_total": null
+   },
+   {
+    "R": 4,
+    "exists": false,
+    "pool": "LIVE",
+    "witness_code": null,
+    "witness_total": null
+   },
+   {
+    "R": 5,
+    "exists": false,
+    "pool": "ALL",
+    "witness_code": null,
+    "witness_total": null
+   },
+   {
+    "R": 5,
+    "exists": false,
+    "pool": "LIVE",
+    "witness_code": null,
+    "witness_total": null
+   },
+   {
+    "R": 6,
+    "exists": true,
+    "pool": "ALL",
+    "witness_code": [
+     1,
+     5,
+     1
+    ],
+    "witness_total": 49
+   },
+   {
+    "R": 6,
+    "exists": false,
+    "pool": "LIVE",
+    "witness_code": null,
+    "witness_total": null
+   },
+   {
+    "R": 7,
+    "exists": true,
+    "pool": "ALL",
+    "witness_code": [
+     1,
+     5,
+     1
+    ],
+    "witness_total": 63
+   },
+   {
+    "R": 7,
+    "exists": true,
+    "pool": "LIVE",
+    "witness_code": [
+     1,
+     5,
+     1
+    ],
+    "witness_total": 63
+   }
+  ],
+  "floor_indefinite": {
+   "code": [
+    1,
+    1,
+    5
+   ],
+   "max_cell": 5,
+   "sum": 7
+  },
+  "floor_singular": {
+   "code": [
+    1,
+    1,
+    4
+   ],
+   "max_cell": 4,
+   "sum": 6
+  },
+  "fullsite": {
+   "R": 5,
+   "cells_covered": 14,
+   "code": [
+    1,
+    1,
+    5
+   ],
+   "multisets": 2210000
+  },
+  "fullsite_r5_cells_covered": 14,
+  "fullsite_r5_code": [
+   1,
+   1,
+   5
+  ],
+  "fullsite_r5_multisets": 2210000,
+  "fullsite_r5_witness": [
+   20,
+   80,
+   80,
+   80,
+   130
+  ],
+  "incidence_spectrum": {
+   "0": 1,
+   "4": 27,
+   "6": 54,
+   "7": 162,
+   "9": 36
+  },
+  "linear_maps": 12,
+  "live": {
+   "R": 7
+  },
+  "max_per_cell_per_round": 1,
+  "max_per_site_per_round": 2,
+  "partitions": 280,
+  "r1": {
+   "R": 1,
+   "code": [
+    1,
+    0,
+    0
+   ],
+   "det4": -1,
+   "region": "INDEFINITE",
+   "sites": 9
+  },
+  "r1_codes": [
+   [
+    1,
+    0,
+    0
+   ]
+  ],
+  "r1_regions": [
+   "INDEFINITE"
+  ],
+  "r1_rounds": 1,
+  "r1_sites_indefinite": 9,
+  "r5": {
+   "min_uncovered": 2,
+   "multisets": 16108764,
+   "pool": 70
+  },
+  "r5_min_uncovered": 2,
+  "r5_multisets": 16108764,
+  "r5_pool": 70,
+  "saturating": 36,
+  "saturating_foreign_free": 36
+ },
+ "totals": {
+  "declared_unsealed": 4,
+  "gates": 41,
+  "gates_snapshot_instant": "the gate ledger AT THE MOMENT THE PAYLOAD CLOSED: the two closing gates are evaluated after this snapshot, which is why coverage counts more gates than this",
+  "memo_entries": 48,
+  "mutants": 38,
+  "path_anchors": 10,
+  "seals": 33,
+  "sources": 10,
+  "verbatim_anchors": 10,
+  "waivers": 11
+ },
+ "transcript_head": [
+  "",
+  "[SEC 1] PROVENANCE -- 10 pinned sources",
+  "  [PASS] G-PROVENANCE",
+  "         EVERY SOURCE IS READ AT ITS PINNED sha256-12 (#46/#62/#91).  10 files enter this run as SOURCES, each hash-verified against this unit's own frozen declaration before a single byte of it is used; --break-anchor corrupts any one of them and the run dies here",
+  "         evidence: sources 10, mismatched none",
+  "  [PASS] G-ANCHORS-READ",
+  "         THE PATH-VALUE ANCHORS BIND THE PAIR, NOT THE BYTES (#62).  10 rows name a source, a path INTO that source and the value that must stand there; a path drift that leaves the file's hash intact but moves the arena or a parent's committed number dies here",
+  "         evidence: anchors 10, mismatched none",
+  "  [PASS] G-VERBATIM",
+  "         QUOTE FIDELITY (#62 as amended at v14 #62).  10 quotations are matched against their source's COMMITTED BYTES under the #125 normalisation -- markdown prefixes stripped, ASCII folded, whitespace collapsed, and compared whitespace-stripped as well -- each clearing the 30-character floor and each naming the gate that consumes it",
+  "         evidence: anchors 10, not found none",
+  "  [PASS] G-NO-FLOAT",
+  "         EXACT ARITHMETIC, AS A SOURCE-LEVEL FACT.  An AST scan of this file finds no float literal and no true division: every number this run computes is a Python int, a Fraction, or an element of Z[w] carried as an integer pair",
+  "         evidence: float literals none, true divisions none",
+  "  [PASS] G-NO-SUBPROCESS",
+  "         NO SUBPROCESS OF ANY KIND (#91 off-tree and git-less).  The import and attribute sets are scanned: no subprocess, no shutil, no socket, no urllib.  This is also why the GDL delivery is CITED from a frozen quotation carrying its commit 4c85ca4 rather than read: its working-tree copy is held dirty by a concurrent sibling and a committed-sha read would need one",
+  "         evidence: forbidden imports none",
+  "  [PASS] G-FALSIFIER-HONEST",
+  "         E-23: A FALSIFIER'S PUBLISHED DESCRIPTION IS PART OF THE SEALED SURFACE.  Each of the 38 declared falsifiers names the OBJECT it corrupts; this gate locates every hook by AST, publishes the source of the statement carrying it, requires the named object to occur there, and REJECTS any falsifier whose corruption is a constant boolean",
+  "         evidence: falsifiers 38, unhooked none, constant-boolean none, description unmatched none",
+  "  [PASS] G-REGION-ARITHMETIC",
+  "         THE REGION TRICHOTOMY, BY TWO ROUTES THAT SHARE NO EXPRESSION.  Route 1 is I7's readout as written, in exact Fractions; route 2 is the symmetric integer form 2(n1n2+n1n3+n2n3) - (n1^2+n2^2+n3^2), which is 4 det q.  All 2197 codes of the declared box are compared entry by entry, and I7's own criterion -- nonsingular and positive definite by the exact Sylvester test -- names the three regions",
+  "         evidence: codes 2197, disagreements 0, declared records by region {'G-ANISO': 'POSDEF', 'G-ANISO2': 'POSDEF', 'G-DIAG2': 'POSDEF', 'G-FLAT': 'POSDEF', 'G-INDEF': 'INDEFINITE', 'G-OFFDIAG': 'POSDEF', 'G-OFFDIAG2': 'POSDEF', 'G-OFFNEG': 'POSDEF', 'G-SINGULAR': 'SINGULAR'}",
+  "  [PASS] G-MEMO-LIVE",
+  "         THE INPUT MEMO IS KEYED ON ITS COMPLETE INPUT, NOT ON A LABEL (RUNBOOK 14 addendum, v13 #185).  Two probes with DIFFERENT keys must return different values and a third with a repeated key must return the first one's: a memo keyed on a label collapses them and dies here, before any measurement depends on it.  Every walk and every census below is keyed on its complete input tuple, so a falsifier that moves an input MISSES the cache and recomputes",
+  "         evidence: probe values 1 2 1, distinct True, repeat hit True",
+  "",
+  "[SEC 2] STAGE 0A -- THE STATIC CENSUS",
+  "  [PASS] G-DEPOSIT-THEOREM",
+  "         THE DEPOSIT THEOREM, EXHAUSTIVE OVER ALL 280 PARTITIONS: a round deposits AT MOST ONE incidence on any one cell and at most two on any one site, so after R rounds every cell count is at most R.  The recomputed incidence spectrum is compared cell for cell against paper-21's committed row, which is where this unit's arithmetic meets its parent's",
+  "         evidence: max per cell 1, max per site 2, spectrum [(0, 1), (4, 27), (6, 54), (7, 162), (9, 36)], matches paper-21's committed row True",
+  "  [PASS] G-CELL-TRANSITIVE",
+  "         THE SINGLE-CELL CENSUSES ARE LICENSED BY A MEASURED SYMMETRY.  The 12 linear maps of AG(2,3) that preserve the declared link SET, together with the nine translations, act on the 27 cells with a single orbit; every census below that fixes one cell is therefore a statement about all of them, and a shrunken orbit removes the licence here rather than silently downstream",
+  "         evidence: linear maps 12, orbit 27 of 27",
+  "  [PASS] G-COLLINEAR-LADDER",
+  "         THE ARENA LADDER IS CONSTRUCTED, NOT ASSUMED.  ROW^a COL^b DIA^c induces the homogeneous record (a, b, c) at R = a+b+c, covering and foreign-pair-free at every rung; the rungs carry I7's own G-FLAT at R = 4, G-SINGULAR at R = 6 and G-INDEF at R = 8, and each rung's region is read by the criterion of the gate above",
+  "         evidence: rungs [([1, 1, 1], 3, 'POSDEF', '-'), ([1, 1, 2], 4, 'POSDEF', 'G-FLAT'), ([1, 1, 3], 5, 'POSDEF', '-'), ([1, 1, 4], 6, 'SINGULAR', 'G-SINGULAR'), ([1, 1, 5], 7, 'INDEFINITE', '-'), ([1, 1, 6], 8, 'INDEFINITE', 'G-INDEF'), ([2, 2, 2], 6, 'POSDEF', '-')]",
+  "  [PASS] G-STATIC-FLOOR",
+  "         THE FLOOR THEOREM.  At a site whose three cells are all at least one, the cheapest SINGULAR code has a cell at 4 and the cheapest INDEFINITE code has a cell at 5 -- measured over the whole declared box.  With the deposit theorem this is a BUDGET floor: a covered indefinite site needs R >= 5.  That floor is NECESSARY; whether it is ATTAINED is the next gate's question and the answer is no",
+  "         evidence: singular floor 4 at code [1, 1, 4], indefinite floor 5 at code [1, 1, 5]"
+ ],
+ "verbatim_anchors": [
+  {
+   "canon_len": 110,
+   "consumer_gate": "G-WALK-ANCHORED",
+   "found": true,
+   "id": "V-P20-EXIT",
+   "needle": "the coupled record leaves I7's admissible class with exact probability 927415552/847288609443 at the Born menu",
+   "source": "A-P20"
+  },
+  {
+   "canon_len": 84,
+   "consumer_gate": "G-WALK-ANCHORED",
+   "found": true,
+   "id": "V-P20-CENSUS",
+   "needle": "all 1,316 inadmissible leaves carry the excess pattern (0, 0, 3) at exactly one site",
+   "source": "A-P20"
+  },
+  {
+   "canon_len": 196,
+   "consumer_gate": "G-STAGE0-DYNAMIC",
+   "found": true,
+   "id": "V-P20-OPEN",
+   "needle": "Whether the probability grows, whether the indefinite region is reached at all, and whether a halt-on-inadmissibility semantics changes any verdict are three separate measurements, none taken here",
+   "source": "A-P20"
+  },
+  {
+   "canon_len": 58,
+   "consumer_gate": "G-MOD3-THEOREM",
+   "found": true,
+   "id": "V-P20-MOD3",
+   "needle": "the walk consumes the count residue n mod 3, not the count",
+   "source": "A-P20"
+  },
+  {
+   "canon_len": 114,
+   "consumer_gate": "G-REGION-ARITHMETIC",
+   "found": true,
+   "id": "V-P20-SYLVESTER",
+   "needle": "a record is admissible when q is nonsingular and positive definite at every site, by the exact Sylvester criterion",
+   "source": "A-P20"
+  },
+  {
+   "canon_len": 48,
+   "consumer_gate": "G-DEPOSIT-THEOREM",
+   "found": true,
+   "id": "V-P21-BUDGET",
+   "needle": "no round can deposit more than 9 link incidences",
+   "source": "A-P21"
+  },
+  {
+   "canon_len": 59,
+   "consumer_gate": "G-STATIC-LADDER",
+   "found": true,
+   "id": "V-P21-BLOCK",
+   "needle": "Across the whole covering class the maximum cell count is 2",
+   "source": "A-P21"
+  },
+  {
+   "canon_len": 88,
+   "consumer_gate": "G-COLLINEAR-LADDER",
+   "found": true,
+   "id": "V-P21-COLLINEAR",
+   "needle": "the three link-direction parallel classes of AG(2,3) with the diagonal class taken twice",
+   "source": "A-P21"
+  },
+  {
+   "canon_len": 120,
+   "consumer_gate": "G-WALL-SIGNATURE-NAMED",
+   "found": true,
+   "id": "V-P21-NAMED",
+   "needle": "is a positive definite Euclidean form on a nine-site lattice, it is not a signature, it is not a metric on any continuum",
+   "source": "A-P21"
+  },
+  {
+   "canon_len": 69,
+   "consumer_gate": "G-WALL-BHS",
+   "found": true,
+   "id": "V-CAT-BHS",
+   "needle": "a Poisson sprinkling admits no Lorentz-invariant finite-valency graph",
+   "source": "A-CAT"
+  }
+ ],
+ "verdict": {
+  "segments": [
+   "SIG-STAGE-0-REACHABILITY-[STATIC: THE INDEFINITE REGION IS OCCUPIED AT R=1 UNRESTRICTED (INDEFINITE AT 9 OF 9 SITES), AT R=5 AT A FULL SITE (1,1,5), AT R=6 IN A COVERING RECORD AND AT R=7 IN A STRUCTURALLY LIVE ONE -- THE INHERITED #211 FLOOR R=5 IS NECESSARY AND NOT ATTAINED (16,108,764 MULTISETS SCANNED, MINIMUM UNCOVERED 2) | DEPOSIT THEOREM: 1 PER CELL PER ROUND OVER ALL 280 PARTITIONS, SPECTRUM 0:1,4:27,6:54,7:162,9:36 | DYNAMIC: THE COUPLED WALK OCCUPIES IT AT (A3=1,1,1 AT R=3, T=6) AND (A4=1,1,2 AT R=4, T=5) AND (A5=1,1,3 AT R=5, T=3)]@ARENAS-6-OF-THE-COLLINEAR-FAMILY+HORIZON-5(LADDER-1..5;EXTENSION-6-ON-A3)+COIN-FIBER-5",
+   "SIG-CLEARING-[3 PAIRS CLEAR AND THE CHEAPEST IS ORDER-RELATIVE (WINNERS INCIDENCES:A3,STATIC-FIRST:A3,STEPS:A5); THE UNIQUE PAIR THAT COSTS NO NEW DECLARATION IS A4 = 1,1,2 = G-FLAT AT R=4, HORIZON 5 -- I7'S OWN DECLARED RECORD, PAPER-21'S DRIVEN ARENA, AT PAPER-20'S OWN DECLARED HORIZON; INDEFINITE MASS 146623744/847288609443 AT THE BORN MENU AND 5072320/1162261467 AT THE RECORD MENU; SINGULAR FIRST AT T=3; THE GRAMMAR CANNOT REACH THE REGION BELOW R=6 AT ALL (LIVE R=7) AND THE MECHANISM IS THE DEPOSIT THEOREM THE EMISSION CHANNEL IS FREE OF]",
+   "SIG-POLARITY-[BORN MENU AVOIDED: INDEFINITE MASS 146623744/847288609443 AGAINST 148895641/90632341800 UNDER THE UNIFORM-ON-SUPPORT COUNTING MEASURE ON THE SAME TREE, RATIO 675143691622400/6409469116243161 | RECORD MENU SELECTED: 5072320/1162261467 AGAINST 53/34992, RATIO 81157120/28166373 | BOTH SIGNS ARENA-INVARIANT ACROSS THE ARENAS THAT CLEAR INSIDE THE HORIZON | THE STAGE-FROZEN ARM (NO BACK-REACTION, THE RECORD STILL ACCUMULATING) GIVES 34816/129140163 AND 325184/71744535 | PAPER-20'S FROZEN CONTROL GIVES 0 BY THEOREM AT EVERY HORIZON] -- OBSERVABLES=RECORD-READING(CONSTRAINT B: THE SITE MARGINAL IS SIGNATURE-BLIND, MEASURED IDENTICAL AT A4 AND A7 WHILE THEIR INDEFINITE MASSES ARE 146623744/847288609443 AND 1)",
+   "SIG-BLOCKED-AT-THE-EMISSION-READING-<COIN-FIBER=INVARIANT: ALL 5 S_3-COVARIANT CLASSES EXACTLY UNITARY, ALL 5 AVOIDED AT THE BORN MENU AND ALL 5 SELECTED AT THE RECORD MENU -- THE SIGN IS A FUNCTION OF THE EMISSION READING ALONE AND OF NOTHING ELSE MEASURED HERE | MOD-3 THEOREM=MACHINE-CHECKED(3 ARENA PAIRS AT 12 BRANCH-WEIGHT MAPS COMPARED PATH BY PATH, IDENTICAL AT 12 OF 12 UNDER THE BORN MENU AND AT NONE UNDER THE RECORD MENU: THE BORN BRANCH MEASURE IS A FUNCTION OF n0 mod 3 WHILE THE SIGNATURE IS A FUNCTION OF n0, SO THE ABSOLUTE MASSES ARE REPRESENTATIVE-RELATIVE AND ONLY THE RELATIVE POLARITY CAN BE FORCED) | SCOPE=THIS UNIT MEASURES A REGION OF RECORD SPACE, NOT A SPACETIME SIGNATURE>"
+  ]
+ },
+ "waiver_ledger": {
+  "G-ARTIFACT-INTEGRITY": {
+   "class": "TERMINAL",
+   "forcing": "a mutant sub-run returns before the write; the gate corrupts a written byte on a read-back copy and shows the corruption detected before it passes"
+  },
+  "G-COVERAGE": {
+   "class": "LEDGER",
+   "forcing": "the coverage ledger's own denominator is this run's gate set; MUT-SEAL-DROP and every other mutant pass through it"
+  },
+  "G-MUTANTS-ON-TARGET": {
+   "class": "SWEEP",
+   "forcing": "this gate IS the sweep; a mutant cannot target the instrument that runs it"
+  },
+  "G-NO-FLOAT": {
+   "class": "ANALYTIC",
+   "forcing": "an AST scan of this file for float literals and true division; a violation is a source-level fact, not a value this run can move"
+  },
+  "G-NO-SUBPROCESS": {
+   "class": "ANALYTIC",
+   "forcing": "an import and attribute scan; the same class"
+  },
+  "G-PAYLOAD-CLOSES": {
+   "class": "LEDGER",
+   "forcing": "a conjunction over the gate ledger and a recursive type scan; any mutant that fails earlier never reaches it"
+  },
+  "G-PROVENANCE": {
+   "class": "ANCHORED",
+   "forcing": "--break-anchor NAME corrupts any source's expected digest and the run dies here; the mode is part of the CLI contract and the self-test exercises it"
+  },
+  "G-REACHABILITY": {
+   "class": "LEDGER",
+   "forcing": "every declared falsifier's gate is required to be in this run's own evaluated ledger"
+  },
+  "G-READS-DECLARED": {
+   "class": "STRUCTURAL",
+   "forcing": "the read categories are a closed tuple and an undeclared category raises inside the reader itself, before any gate"
+  },
+  "G-SWEEP-BOUND": {
+   "class": "LEDGER",
+   "forcing": "a mutant sub-run declares itself un-swept and is held to that; the delivery run's conjunction is re-taken at G-ARTIFACT-INTEGRITY"
+  },
+  "G-WALK-STOCHASTIC": {
+   "class": "ANALYTIC",
+   "forcing": "the emission weights are the branch's own post-coin Born weights over their own sum, so the check raises inside the walk itself"
+  }
+ },
+ "walk": {
+  "arena": "A3",
+  "branches_A": [
+   3,
+   27,
+   486,
+   10527,
+   284078
+  ],
+  "branches_B": [
+   3,
+   27,
+   486,
+   11664,
+   314928
+  ],
+  "earliest_third_visit": 5,
+  "exit_A": "927415552/847288609443",
+  "exit_B": "37440224/5811307335",
+  "exit_census": {
+   "1,1,4": 466,
+   "1,4,1": 471,
+   "4,1,1": 379
+  },
+  "horizon": 5,
+  "indefinite_at_horizon_5": "0",
+  "leaves_out": 1316,
+  "one_site_out_per_leaf": true,
+  "record": [
+   1,
+   1,
+   1
+  ],
+  "stochastic_checks": 23225,
+  "stochastic_violations": 0,
+  "visits": {
+   "00": [
+    1,
+    4,
+    5
+   ],
+   "01": [
+    2,
+    4,
+    5
+   ],
+   "02": [
+    3,
+    4,
+    5
+   ],
+   "10": [
+    2,
+    4,
+    5
+   ],
+   "11": [
+    2,
+    3,
+    5
+   ],
+   "12": [
+    3,
+    4,
+    5
+   ],
+   "20": [
+    3,
+    4,
+    5
+   ],
+   "21": [
+    3,
+    4,
+    5
+   ],
+   "22": [
+    3,
+    4,
+    5
+   ]
+  }
+ },
+ "walls": {
+  "L1_banned_present": false,
+  "bhs_hits": [],
+  "kr_hits": [],
+  "naming_present": true,
+  "naming_sentence": "The indefinite region is NAMED AND NOT READ: a site whose counts are (1, 1, 5) has 4 det q = -5 < 0, which is a sign of a two-by-two form built from division counts on a nine-site lattice; it is not a spacetime signature, not a light cone, not a metric on any continuum, and no Lorentzian, causal, signature-change or cosmological reading of it is taken here or licensed by anything measured here.",
+  "scope": "every wall is a scan of THIS RUN's declared measurement surface -- every measured receipt key together with the statement and evidence of every gate evaluated -- and not a declaration",
+  "surface_chars": 32316
+ },
+ "window": {
+  "arenas": 6,
+  "coins": 5,
+  "extension": 6,
+  "horizon": 5,
+  "label": "ARENAS-6-OF-THE-COLLINEAR-FAMILY+HORIZON-5(LADDER-1..5;EXTENSION-6-ON-A3)+COIN-FIBER-5",
+  "priced": "the dynamic census is exhaustive at every level of every arm it runs -- no sampling, no pruning by weight -- and capped only by the declared horizon; the static census is exhaustive over the objects it quantifies over, by enumeration or by the deposit theorem, and never by the window"
+ }
+}

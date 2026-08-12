@@ -8067,3 +8067,48 @@ at R = 3m the live cut count is 9m − 17 — closing the unit's
 own fourth successor question**; the synthesis: every forced
 result at R=6 is the same smallness (n=2 twice, m=2 once).
 → adjudication when K1+K3 land.
+
+## 2026-08-11 — SIG (PAPER-24) DELIVERED: REACHABILITY GRANTED WITH A FLOOR CORRECTED; THE POLARITY IS THE EMISSION-READING'S; THE MOD-3 THEOREM; COMMIT-AS-IS (v14 LEDGER #262)
+
+The SIG worker delivered; all candidate readings.  **STAGE 0
+— NOT BLOCKED, the license granted, and the inherited #211
+floor CORRECTED: "R=5 statically" is NECESSARY AND NOT
+ATTAINED** (at R=5 an indefinite site forces all five rounds
+onto one cell; over all 16,108,764 such multisets the minimum
+uncovered is 2; mechanism = the DEPOSIT THEOREM, ≤1 incidence
+per cell per round, exhaustive over 280 partitions with
+paper-21's committed spectrum).  The static classes are FOUR,
+nested: indefinite-anywhere at R=1 (4·det=−1 free);
+full-site at R=5; covering at R=6; structurally-live at R=7;
+I7's G-INDEF at R=8.  DYNAMIC: A3→T=6 (the #211 dynamic
+floor ATTAINED via a gated pruning theorem); A4=G-FLAT→T=5;
+A5→T=3 — **THE WALK REACHES AT R=4+T=5 A REGION THE GRAMMAR
+CANNOT REACH BELOW R=6: the emission channel concentrates
+where the round structure cannot.**  THE CLEARING ARENA:
+cheapest is ORDER-RELATIVE (published, not resolved by
+fiat); A4 unique on a measured property (the only pair
+costing no new declaration).  **THE POLARITY: Born menu
+AVOIDED (ratio ≈0.105 vs the uniform-on-support counting
+measure); record menu SELECTED (≈2.88); back-reaction pushes
+AWAY under both vs the stage-frozen arm; both signs
+arena-invariant; coin fiber INVARIANT 5/5 both ways — BUT
+NOT invariant across paper-20's own emission-reading fiber:
+the head is SIG-BLOCKED-AT-THE-EMISSION-READING** — the
+polarity's SIGN is a pure function of which face of emission
+is read.  **THE MOD-3 THEOREM (machine-checked two-way): the
+Born branch measure is a function of n₀ mod 3** — absolute
+masses representative-relative (A4 and A7 share the measure
+exactly while their indefinite masses are
+146623744/847288609443 vs 1); the mod-3 motif's THIRD
+independent appearance [the weld ladder; GDL's residue
+channel; now the branch measure].  **Constraint B discharged
+BY MEASUREMENT** (identical site marginals, opposite censuses
+— a site-marginal observable provably cannot carry the
+verdict).  Windows/fibers: 6 arenas of the collinear family;
+horizon ladder 1..5 (+6 on A3); coin fiber 5; the emission
+reading the verdict-determining fiber of 2.  Counts: 45
+gates; 38 falsifiers on target; 33 seals; 2,197 codes
+two-routed; byte ×2 + off-tree git-less; anchored to
+paper-20 at five independent rows.  Shas: paper 72175d6fa85b,
+code a41b6d549e14, output f28b550c151e, receipt ca9cd4ceb387.
+Committed AS-IS; battery next; panel queued.

@@ -1,0 +1,197 @@
+
+[SEC 1] PROVENANCE -- 10 pinned sources
+  [PASS] G-PROVENANCE
+         EVERY SOURCE IS READ AT ITS PINNED sha256-12 (#46/#62/#91).  10 files enter this run as SOURCES, each hash-verified against this unit's own frozen declaration before a single byte of it is used; --break-anchor corrupts any one of them and the run dies here
+         evidence: sources 10, mismatched none
+  [PASS] G-ANCHORS-READ
+         THE PATH-VALUE ANCHORS BIND THE PAIR, NOT THE BYTES (#62).  10 rows name a source, a path INTO that source and the value that must stand there; a path drift that leaves the file's hash intact but moves the arena or a parent's committed number dies here
+         evidence: anchors 10, mismatched none
+  [PASS] G-VERBATIM
+         QUOTE FIDELITY (#62 as amended at v14 #62).  10 quotations are matched against their source's COMMITTED BYTES under the #125 normalisation -- markdown prefixes stripped, ASCII folded, whitespace collapsed, and compared whitespace-stripped as well -- each clearing the 30-character floor and each naming the gate that consumes it
+         evidence: anchors 10, not found none
+  [PASS] G-NO-FLOAT
+         EXACT ARITHMETIC, AS A SOURCE-LEVEL FACT.  An AST scan of this file finds no float literal and no true division: every number this run computes is a Python int, a Fraction, or an element of Z[w] carried as an integer pair
+         evidence: float literals none, true divisions none
+  [PASS] G-NO-SUBPROCESS
+         NO SUBPROCESS OF ANY KIND (#91 off-tree and git-less).  The import and attribute sets are scanned: no subprocess, no shutil, no socket, no urllib.  This is also why the GDL delivery is CITED from a frozen quotation carrying its commit 4c85ca4 rather than read: its working-tree copy is held dirty by a concurrent sibling and a committed-sha read would need one
+         evidence: forbidden imports none
+  [PASS] G-FALSIFIER-HONEST
+         E-23: A FALSIFIER'S PUBLISHED DESCRIPTION IS PART OF THE SEALED SURFACE.  Each of the 38 declared falsifiers names the OBJECT it corrupts; this gate locates every hook by AST, publishes the source of the statement carrying it, requires the named object to occur there, and REJECTS any falsifier whose corruption is a constant boolean
+         evidence: falsifiers 38, unhooked none, constant-boolean none, description unmatched none
+  [PASS] G-REGION-ARITHMETIC
+         THE REGION TRICHOTOMY, BY TWO ROUTES THAT SHARE NO EXPRESSION.  Route 1 is I7's readout as written, in exact Fractions; route 2 is the symmetric integer form 2(n1n2+n1n3+n2n3) - (n1^2+n2^2+n3^2), which is 4 det q.  All 2197 codes of the declared box are compared entry by entry, and I7's own criterion -- nonsingular and positive definite by the exact Sylvester test -- names the three regions
+         evidence: codes 2197, disagreements 0, declared records by region {'G-ANISO': 'POSDEF', 'G-ANISO2': 'POSDEF', 'G-DIAG2': 'POSDEF', 'G-FLAT': 'POSDEF', 'G-INDEF': 'INDEFINITE', 'G-OFFDIAG': 'POSDEF', 'G-OFFDIAG2': 'POSDEF', 'G-OFFNEG': 'POSDEF', 'G-SINGULAR': 'SINGULAR'}
+  [PASS] G-MEMO-LIVE
+         THE INPUT MEMO IS KEYED ON ITS COMPLETE INPUT, NOT ON A LABEL (RUNBOOK 14 addendum, v13 #185).  Two probes with DIFFERENT keys must return different values and a third with a repeated key must return the first one's: a memo keyed on a label collapses them and dies here, before any measurement depends on it.  Every walk and every census below is keyed on its complete input tuple, so a falsifier that moves an input MISSES the cache and recomputes
+         evidence: probe values 1 2 1, distinct True, repeat hit True
+
+[SEC 2] STAGE 0A -- THE STATIC CENSUS
+  [PASS] G-DEPOSIT-THEOREM
+         THE DEPOSIT THEOREM, EXHAUSTIVE OVER ALL 280 PARTITIONS: a round deposits AT MOST ONE incidence on any one cell and at most two on any one site, so after R rounds every cell count is at most R.  The recomputed incidence spectrum is compared cell for cell against paper-21's committed row, which is where this unit's arithmetic meets its parent's
+         evidence: max per cell 1, max per site 2, spectrum [(0, 1), (4, 27), (6, 54), (7, 162), (9, 36)], matches paper-21's committed row True
+  [PASS] G-CELL-TRANSITIVE
+         THE SINGLE-CELL CENSUSES ARE LICENSED BY A MEASURED SYMMETRY.  The 12 linear maps of AG(2,3) that preserve the declared link SET, together with the nine translations, act on the 27 cells with a single orbit; every census below that fixes one cell is therefore a statement about all of them, and a shrunken orbit removes the licence here rather than silently downstream
+         evidence: linear maps 12, orbit 27 of 27
+  [PASS] G-COLLINEAR-LADDER
+         THE ARENA LADDER IS CONSTRUCTED, NOT ASSUMED.  ROW^a COL^b DIA^c induces the homogeneous record (a, b, c) at R = a+b+c, covering and foreign-pair-free at every rung; the rungs carry I7's own G-FLAT at R = 4, G-SINGULAR at R = 6 and G-INDEF at R = 8, and each rung's region is read by the criterion of the gate above
+         evidence: rungs [([1, 1, 1], 3, 'POSDEF', '-'), ([1, 1, 2], 4, 'POSDEF', 'G-FLAT'), ([1, 1, 3], 5, 'POSDEF', '-'), ([1, 1, 4], 6, 'SINGULAR', 'G-SINGULAR'), ([1, 1, 5], 7, 'INDEFINITE', '-'), ([1, 1, 6], 8, 'INDEFINITE', 'G-INDEF'), ([2, 2, 2], 6, 'POSDEF', '-')]
+  [PASS] G-STATIC-FLOOR
+         THE FLOOR THEOREM.  At a site whose three cells are all at least one, the cheapest SINGULAR code has a cell at 4 and the cheapest INDEFINITE code has a cell at 5 -- measured over the whole declared box.  With the deposit theorem this is a BUDGET floor: a covered indefinite site needs R >= 5.  That floor is NECESSARY; whether it is ATTAINED is the next gate's question and the answer is no
+         evidence: singular floor 4 at code [1, 1, 4], indefinite floor 5 at code [1, 1, 5]
+  [PASS] G-STATIC-LADDER
+         THE INHERITED FLOOR IS NECESSARY AND NOT ATTAINED.  At R = 5 an indefinite site needs a cell at 5, so ALL FIVE rounds must hit that one cell; over every one of the 16,108,764 such multisets the least number of cells left uncovered is 2.  A covering record with an indefinite site therefore first exists at R = 6, not at 5 -- and paper-21's own block-quantisation row is the R = 4 end of the same fact
+         evidence: pool 70 partitions, multisets 16108764, min uncovered 2, covering floor R = 6, rows [(4, 'ALL', False), (4, 'LIVE', False), (5, 'ALL', False), (5, 'LIVE', False), (6, 'ALL', True), (6, 'LIVE', False), (7, 'ALL', True), (7, 'LIVE', True)]
+  [PASS] G-STATIC-LADDER-LIVE
+         THE STRUCTURALLY LIVE FLOOR IS ONE ROUND DEARER STILL.  Restricted to the 36 saturating (foreign-pair-free) partitions -- paper-21's own structurally live class -- no covering record carries an indefinite site at R = 6 either; the live floor is R = 7, where the collinear arrangement ROW COL DIA^5 induces the homogeneous (1, 1, 5).  I7's own declared G-INDEF costs R = 8
+         evidence: live floor R = 7, saturating partitions 36 all foreign-free True, live rows [(4, False), (5, False), (6, False), (7, True)]
+
+[SEC 3] THE WALK, REBUILT AND ANCHORED
+  [PASS] G-WALK-ANCHORED
+         THE REBUILT WALK IS PAPER-20'S WALK, AT FIVE INDEPENDENT ROWS.  This file re-implements the coupled machine from the parent's declared machinery and never imports it; the rebuild is bound by reproducing, from its own arithmetic, the committed exit probability at BOTH emission readings, the branch counts at both, the exit census code by code, and the return-time row -- and by measuring, as the parent did, that every inadmissible leaf has exactly one site out
+         evidence: exit A 927415552/847288609443 vs 927415552/847288609443, exit B 37440224/5811307335 vs 37440224/5811307335, branches 284078/314928 vs 284078/314928, census {'4,1,1': 379, '1,4,1': 471, '1,1,4': 466} vs {'1,1,4': 466, '1,4,1': 471, '4,1,1': 379}, third visit 5 vs 5, one site out per leaf True
+  [PASS] G-WALK-STOCHASTIC
+         THE EMISSION LAW IS A PROBABILITY DISTRIBUTION AT EVERY BRANCH OF EVERY STEP (#87: per object, never in aggregate).  The law-native kernel's weights are summed on each branch separately and required to be exactly one; 23225 such checks are taken on the two anchored arms alone
+         evidence: checks 23225, violations 0
+  [PASS] G-COIN-FAMILY
+         THE DECLARED COIN FIBER IS EXACTLY UNITARY, MEMBER BY MEMBER.  Paper-20's S_3-covariant family 3C = 3a I + 3b J is rebuilt here and each of its 5 classes is verified by C C* = I in Z[w] -- per member, never by a count
+         evidence: members [('GROVER', True), ('W', True), ('MW', True), ('MMW', True), ('M2W', True)]
+
+[SEC 4] STAGE 0B -- THE DYNAMIC REACHABILITY CENSUS
+  [PASS] G-STAGE0-DYNAMIC
+         STAGE 0's DYNAMIC HALF, AND THE LICENCE EVERY POLARITY SENTENCE BELOW DEPENDS ON.  The region masses are measured at every horizon of the declared ladder on 3 arenas at both emission readings; the indefinite region is occupied with POSITIVE exact mass at 2 of them, and paper-20's own open question -- whether the indefinite region is reached at all -- is answered here rather than assumed.  Had this gate found no arena, the head would read SIG-BLOCKED-AT-REACHABILITY and no polarity word would be emitted
+         evidence: arenas [('A3', 3, 3, 5, 4, None), ('A4', 4, 2, 3, 3, 5), ('A5', 5, 1, 1, 2, 3)]
+  [PASS] G-PRUNE-SOUND
+         THE HORIZON EXTENSION IS PRUNED BY A THEOREM AND THE THEOREM IS CHECKED.  A branch that cannot raise any cell to the region floor within its remaining steps stays positive definite with its whole subtree, so its mass is carried in aggregate; the pruned engine is required to reproduce the FULL engine's singular and indefinite masses at every step of the horizon they share, on two arenas, before its extension to horizon 6 is read.  That extension answers the inherited #211 dynamic floor: on paper-20's own arena the indefinite region is first occupied at step 6
+         evidence: cross-checks 20, mismatches none, first indefinite step 6, mass 5526190575616/150094635296999121
+
+[SEC 5] STAGE 1 -- THE CLEARING
+  [PASS] G-CLEARING
+         STAGE 1, AND THE CHEAPEST PAIR IS ORDER-RELATIVE (RUNBOOK 15).  3 pairs clear.  Under the three declared cost orders the winners are {'STATIC-FIRST': 'A3', 'STEPS': 'A5', 'INCIDENCES': 'A3'} -- they do not agree, so no pair is 'the' cheapest and this unit says so.  What IS unique is the pair that costs NO NEW DECLARATION: A4 is I7's own declared G-FLAT at paper-20's own declared horizon 5, and it is selected on that measured property.  The gate requires the selected pair to carry POSITIVE indefinite mass at BOTH declared emission readings
+         evidence: pairs [('A3', 3, 6), ('A4', 4, 5), ('A5', 5, 3)], winners {'STATIC-FIRST': 'A3', 'STEPS': 'A5', 'INCIDENCES': 'A3'}, no-new-declaration pairs ['A4'], chosen A4 (R=4, T=5), indefinite A 146623744/847288609443 B 5072320/1162261467
+
+[SEC 6] STAGE 2 -- THE POLARITY CENSUS
+  [PASS] G-NULL-MEASURE
+         BOTH DECLARED MEASURES ARE PROBABILITY MEASURES AT EVERY STEP (E-24).  The Born branch measure and the uniform-on-support counting measure are each required to sum to one at every step of every reading, per object rather than in aggregate, so no ratio below is a fraction of an unnormalised total
+         evidence: steps checked 10, failures none
+  [PASS] G-POLARITY-A
+         THE BORN MENU'S POLARITY, AGAINST A DECLARED NULL ON THE SAME TREE.  The indefinite mass is 146623744/847288609443 against 148895641/90632341800, so the coupled dynamics is measured AVOIDED toward the indefinite region at this arena under this reading; the word is DERIVED from the two masses and typed nowhere
+         evidence: born 146623744/847288609443, null 148895641/90632341800, ratio 675143691622400/6409469116243161, word AVOIDED, stage-frozen 34816/129140163, per-arena words [('A3', None), ('A4', 'AVOIDED'), ('A5', 'AVOIDED')] (invariant True)
+  [PASS] G-POLARITY-B
+         THE RECORD MENU'S POLARITY, AND IT HAS THE OPPOSITE SIGN.  Under paper-20's second declared emission reading the same arena, the same walk and the same null give 5072320/1162261467 against 53/34992: SELECTED.  Both readings are the parent's own declared fiber and neither is privileged by anything measured here, which is what the outcome word below records
+         evidence: born 5072320/1162261467, null 53/34992, ratio 81157120/28166373, word SELECTED, frozen control 0, per-arena words [('A3', None), ('A4', 'SELECTED'), ('A5', 'SELECTED')] (invariant True)
+
+[SEC 7] THE MOD-3 THEOREM
+  [PASS] G-MOD3-THEOREM
+         THE MOD-3 THEOREM, MACHINE-CHECKED AND TWO-WAY.  The coin reads the record only through w^{n mod 3}, so two arenas whose records differ by three at every cell generate the SAME Born branch measure: 3 pairs are compared path by path at 12 branch-weight maps and agree at 12.  The same comparison under the RECORD menu DISAGREES at every level, which is what makes this a measurement rather than a restatement -- and the consequence is the scope of every absolute mass in this unit: the same measure carries different signature censuses
+         evidence: pairs [('A3', 'A6'), ('A4', 'A7'), ('A5', 'A8')], identical A 12 of 12, record-menu levels identical [0, 0, 0]
+  [PASS] G-CONSTRAINT-B
+         NO SITE-MARGINAL OBSERVABLE (the pin's constraint B, from the GDL blindness theorem at commit 4c85ca4).  Two checks, one structural and one measured.  Structural: every observable this unit reads the region with takes the RECORD and nothing else -- an AST scan of their argument lists finds no state and no marginal.  Measured: the ensemble site marginal is IDENTICAL at A4 and A7, whose records agree modulo three, while their indefinite masses are 146623744/847288609443 and 1 -- so a site-marginal observable provably cannot carry this unit's verdict, and the blindness the parent proved is exhibited here on the very quantity in question
+         evidence: carrier THE RECORD (the count field n), observable arguments {'det4_of': ['n1', 'n2', 'n3'], 'q_of': ['nvec'], 'region_of': ['nvec'], 'record_region': ['n']}, forbidden arguments none, marginals identical True, indefinite masses 146623744/847288609443 vs 1
+
+[SEC 8] STAGE 3 -- FORCEDNESS ACROSS THE COIN FIBER
+  [PASS] G-FORCEDNESS
+         STAGE 3.  The polarity is censused across paper-20's whole declared coin fiber -- 5 S_3-covariant classes, every member run to the full horizon at BOTH readings.  The sign is INVARIANT across the fiber and OPPOSITE across the readings, so what is forced at this arena is the coin-independence, and what is not forced is the polarity itself
+         evidence: verdict INVARIANT, Born words ['AVOIDED'], record words ['SELECTED'], readings agree False
+  [PASS] G-WINDOW-DISCLOSED
+         THE WINDOW IS DECLARED IN THE HEAD'S OWN STRING.  6 arenas of the collinear family, horizon 5 with the whole ladder published, one extension to 6, 5 coins; every exhaustive column below is exhaustive over an object the window does not cap
+         evidence: window ARENAS-6-OF-THE-COLLINEAR-FAMILY+HORIZON-5(LADDER-1..5;EXTENSION-6-ON-A3)+COIN-FIBER-5
+
+[SEC 9] THE WALLS
+  [PASS] G-WALL-L1
+         L-1, ARGUED AND DECLINED.  Order-level covariance is a fourth form outside paper 8's three; admissibility would need a group declared to act on the generated causal order and a reason to read it as a covariance group.  This arena supplies finite records and a translation action on a nine-site lattice, and this unit constructs no bridge to any boost.  THE FOURTH FORM IS NOT TESTED HERE, and the sentence retracted in 2026 is absent from the object under test under the #125 normalisation
+         evidence: retracted sentence present False
+  [PASS] G-WALL-BHS
+         BHS.  The catalog records that a Poisson sprinkling admits no Lorentz-invariant finite-valency graph, and this arena is finite-valency by construction, so a sprinkling-grade test would manufacture a false negative.  None is run, and the abstention is MEASURED: this run's whole declared measurement surface (32316 characters) is scanned for a sprinkling-grade reading
+         evidence: sprinkling-grade hits none
+  [PASS] G-WALL-KR
+         KLEITMAN-ROTHSCHILD.  Every dimension reading owes a height control; this unit takes NO dimension reading -- no chart width, no Myrheim-Meyer estimate, no max-shatter reading -- so none is owed and none is manufactured.  The same surface is scanned
+         evidence: dimension-reading hits none
+  [PASS] G-WALL-SIGNATURE-NAMED
+         THE SIGNATURE RESONANCE, NAMED AND NOT READ -- the sharpest wall this line has faced, because a determinant has now gone NEGATIVE.  The mandatory sentence is DERIVED from the measured floor code rather than typed, and it is required to be present in the object under test; a falsifier deletes it from that object and dies here.  Paper-21's own naming sentence is carried as a verbatim anchor beside it
+         evidence: naming sentence present True :: The indefinite region is NAMED AND NOT READ: a site whose co
+
+[SEC 10] THE VERDICT
+  [PASS] G-VERDICT-RECONSTRUCTED
+         THE HEAD IS DERIVED TWICE, BY ROUTINES THAT SHARE NO TYPED NUMBER.  The comparator re-parses the SERIALIZED receipt, types all 4 templates itself, and re-derives the OUTCOME WORD from the receipt's own reachability and polarity rows through its own conditional -- so a forged word moves the builder alone and dies here.  An AST scan requires the two routines to share no string constant containing a numeral
+         evidence: segments 4, drift none, outcome SIG-BLOCKED-AT-THE-EMISSION-READING vs comparator SIG-BLOCKED-AT-THE-EMISSION-READING, shared numeric literals none
+
+SIG-STAGE-0-REACHABILITY-[STATIC: THE INDEFINITE REGION IS OCCUPIED AT R=1 UNRESTRICTED (INDEFINITE AT 9 OF 9 SITES), AT R=5 AT A FULL SITE (1,1,5), AT R=6 IN A COVERING RECORD AND AT R=7 IN A STRUCTURALLY LIVE ONE -- THE INHERITED #211 FLOOR R=5 IS NECESSARY AND NOT ATTAINED (16,108,764 MULTISETS SCANNED, MINIMUM UNCOVERED 2) | DEPOSIT THEOREM: 1 PER CELL PER ROUND OVER ALL 280 PARTITIONS, SPECTRUM 0:1,4:27,6:54,7:162,9:36 | DYNAMIC: THE COUPLED WALK OCCUPIES IT AT (A3=1,1,1 AT R=3, T=6) AND (A4=1,1,2 AT R=4, T=5) AND (A5=1,1,3 AT R=5, T=3)]@ARENAS-6-OF-THE-COLLINEAR-FAMILY+HORIZON-5(LADDER-1..5;EXTENSION-6-ON-A3)+COIN-FIBER-5
+
+SIG-CLEARING-[3 PAIRS CLEAR AND THE CHEAPEST IS ORDER-RELATIVE (WINNERS INCIDENCES:A3,STATIC-FIRST:A3,STEPS:A5); THE UNIQUE PAIR THAT COSTS NO NEW DECLARATION IS A4 = 1,1,2 = G-FLAT AT R=4, HORIZON 5 -- I7'S OWN DECLARED RECORD, PAPER-21'S DRIVEN ARENA, AT PAPER-20'S OWN DECLARED HORIZON; INDEFINITE MASS 146623744/847288609443 AT THE BORN MENU AND 5072320/1162261467 AT THE RECORD MENU; SINGULAR FIRST AT T=3; THE GRAMMAR CANNOT REACH THE REGION BELOW R=6 AT ALL (LIVE R=7) AND THE MECHANISM IS THE DEPOSIT THEOREM THE EMISSION CHANNEL IS FREE OF]
+
+SIG-POLARITY-[BORN MENU AVOIDED: INDEFINITE MASS 146623744/847288609443 AGAINST 148895641/90632341800 UNDER THE UNIFORM-ON-SUPPORT COUNTING MEASURE ON THE SAME TREE, RATIO 675143691622400/6409469116243161 | RECORD MENU SELECTED: 5072320/1162261467 AGAINST 53/34992, RATIO 81157120/28166373 | BOTH SIGNS ARENA-INVARIANT ACROSS THE ARENAS THAT CLEAR INSIDE THE HORIZON | THE STAGE-FROZEN ARM (NO BACK-REACTION, THE RECORD STILL ACCUMULATING) GIVES 34816/129140163 AND 325184/71744535 | PAPER-20'S FROZEN CONTROL GIVES 0 BY THEOREM AT EVERY HORIZON] -- OBSERVABLES=RECORD-READING(CONSTRAINT B: THE SITE MARGINAL IS SIGNATURE-BLIND, MEASURED IDENTICAL AT A4 AND A7 WHILE THEIR INDEFINITE MASSES ARE 146623744/847288609443 AND 1)
+
+SIG-BLOCKED-AT-THE-EMISSION-READING-<COIN-FIBER=INVARIANT: ALL 5 S_3-COVARIANT CLASSES EXACTLY UNITARY, ALL 5 AVOIDED AT THE BORN MENU AND ALL 5 SELECTED AT THE RECORD MENU -- THE SIGN IS A FUNCTION OF THE EMISSION READING ALONE AND OF NOTHING ELSE MEASURED HERE | MOD-3 THEOREM=MACHINE-CHECKED(3 ARENA PAIRS AT 12 BRANCH-WEIGHT MAPS COMPARED PATH BY PATH, IDENTICAL AT 12 OF 12 UNDER THE BORN MENU AND AT NONE UNDER THE RECORD MENU: THE BORN BRANCH MEASURE IS A FUNCTION OF n0 mod 3 WHILE THE SIGNATURE IS A FUNCTION OF n0, SO THE ABSOLUTE MASSES ARE REPRESENTATIVE-RELATIVE AND ONLY THE RELATIVE POLARITY CAN BE FORCED) | SCOPE=THIS UNIT MEASURES A REGION OF RECORD SPACE, NOT A SPACETIME SIGNATURE>
+  [PASS] G-PAPER-CLAIMS
+         EVERY HEADLINE SENTENCE RENDERS FROM THE RECEIPT.  13 claims are assembled from this run's measured values and required to occur in the object under test under the #125 normalisation, so a paper numeral that drifts from the receipt cannot survive
+         evidence: claims 13, not found none
+  [PASS] G-PAPER-TABLES
+         THE LOAD-BEARING TABLES RENDER AS CLAIMS (E-22).  16 rows of the reachability, floor and coin-fiber tables are assembled from this run and each required to occur in the paper EXACTLY ONCE, so a forged cell dies even when every numeral in it is receipt-backed
+         evidence: rows 16, occurrence spectrum {1: 16}, wrong none
+  [PASS] G-PAPER-COVERAGE
+         NUMERAL COVERAGE OVER THE WHOLE PAPER (#20 + E-22): prose, tables, INLINE CODE SPANS and the fenced verdict blocks, against exactly three declared lists -- this run's registered numbers, the receipt it publishes, and a declared exemption table with a reason per literal, every one of which must fire.  The fenced blocks are matched by MULTISET against the declared copy count, and the scan is required to be NON-VACUOUS on the fences: a scanner that strips them is blind exactly where the highest-stakes numerals live (#168)
+         evidence: scanned 558 numerals (162 fenced in 8 blocks, 152 spelled), unbacked none, fenced unbacked none, spelled unbacked none, dead exemptions none, fence multiset matches True (8 of 8)
+  [PASS] G-PAPER-POLARITY
+         THE PRE-REGISTERED POLARITY OF 5 LOAD-BEARING CLAIMS.  Each was declared TRUE or FALSE before the run and is measured from the receipt here; the reachability row is the one the pin's first constraint turns on, and the two forcedness rows are where this unit's negative lives
+         evidence: rows [('PL-REACH', True, True), ('PL-STATIC-R5', False, False), ('PL-FORCED-READING', False, False), ('PL-FORCED-COIN', True, True), ('PL-FROZEN', False, False)]
+
+[SEC 11] THE MUTANT SWEEP, IN-PROCESS
+    MUT-ANCHOR-VALUE       -> G-ANCHORS-READ               ON TARGET
+    MUT-VERBATIM           -> G-VERBATIM                   ON TARGET
+    MUT-CONSUMER-BINDING   -> G-ANCHOR-CONSUMERS           ON TARGET
+    MUT-FALSIFIER-DESC     -> G-FALSIFIER-HONEST           ON TARGET
+    MUT-HERON              -> G-REGION-ARITHMETIC          ON TARGET
+    MUT-SPECTRUM           -> G-DEPOSIT-THEOREM            ON TARGET
+    MUT-DEPOSIT-MAX        -> G-DEPOSIT-THEOREM            ON TARGET
+    MUT-TRANSITIVE         -> G-CELL-TRANSITIVE            ON TARGET
+    MUT-COLLINEAR          -> G-COLLINEAR-LADDER           ON TARGET
+    MUT-FLOOR              -> G-STATIC-FLOOR               ON TARGET
+    MUT-R5                 -> G-STATIC-LADDER              ON TARGET
+    MUT-R6LIVE             -> G-STATIC-LADDER-LIVE         ON TARGET
+    MUT-WALK-ANCHOR        -> G-WALK-ANCHORED              ON TARGET
+    MUT-WALK-BRANCH        -> G-WALK-ANCHORED              ON TARGET
+    MUT-COIN               -> G-COIN-FAMILY                ON TARGET
+    MUT-FIRST-INDEF        -> G-STAGE0-DYNAMIC             ON TARGET
+    MUT-PRUNE              -> G-PRUNE-SOUND                ON TARGET
+    MUT-CLEARING           -> G-CLEARING                   ON TARGET
+    MUT-NULL               -> G-NULL-MEASURE               ON TARGET
+    MUT-POLARITY-A         -> G-POLARITY-A                 ON TARGET
+    MUT-POLARITY-B         -> G-POLARITY-B                 ON TARGET
+    MUT-CONSTRAINT-B       -> G-CONSTRAINT-B               ON TARGET
+    MUT-MOD3               -> G-MOD3-THEOREM               ON TARGET
+    MUT-FORCEDNESS         -> G-FORCEDNESS                 ON TARGET
+    MUT-MEMO               -> G-MEMO-LIVE                  ON TARGET
+    MUT-WINDOW             -> G-WINDOW-DISCLOSED           ON TARGET
+    MUT-WALL-L1            -> G-WALL-L1                    ON TARGET
+    MUT-WALL-NAMED         -> G-WALL-SIGNATURE-NAMED       ON TARGET
+    MUT-WALL-BHS           -> G-WALL-BHS                   ON TARGET
+    MUT-WALL-KR            -> G-WALL-KR                    ON TARGET
+    MUT-VERDICT            -> G-VERDICT-RECONSTRUCTED      ON TARGET
+    MUT-PAPER-CLAIM        -> G-PAPER-CLAIMS               ON TARGET
+    MUT-PAPER-TABLE        -> G-PAPER-TABLES               ON TARGET
+    MUT-COVERAGE-SCAN      -> G-PAPER-COVERAGE             ON TARGET
+    MUT-EXEMPTION-DEAD     -> G-PAPER-COVERAGE             ON TARGET
+    MUT-PAPER-FENCE        -> G-PAPER-COVERAGE             ON TARGET
+    MUT-POLARITY-FLIP      -> G-PAPER-POLARITY             ON TARGET
+    MUT-SEAL-DROP          -> G-SEAL-COMPLETE              ON TARGET
+  [PASS] G-MUTANTS-ON-TARGET
+         EVERY DECLARED FALSIFIER IS RUN IN-PROCESS AND DIES AT THE GATE IT NAMES.  38 falsifiers, each a real corruption of a measured value or of the object under test, each required to be killed BY ITS OWN NAMED GATE rather than by whichever gate fires first
+         evidence: falsifiers 38, off target none
+  [PASS] G-COVERAGE
+         THE COVERAGE LEDGER IS HONEST AND ITS DENOMINATOR IS THIS RUN'S OWN.  Every gate evaluated anywhere in this run is either falsified by a declared mutant or waived with a machine-readable forcing; the declared registry and the set actually evaluated must agree exactly, so a gate removed from the file or added without a registry row dies here
+         evidence: gates 45, with a mutant 34, waived 11, uncovered none, registry drift none
+  [PASS] G-SWEEP-BOUND
+         THE MUTANT SWEEP'S EXECUTION IS BOUND, NOT MERELY DECLARED.  A delivery-level run must carry one sweep row per declared falsifier (38), every row ON TARGET, and the same conjunction is re-taken at the terminal integrity gate, so the only writer in this file is downstream of a sweep that actually ran
+         evidence: delivery-level True, sweep rows 38 of 38, on target 38
+  [PASS] G-ANCHOR-CONSUMERS
+         EVERY VERBATIM ANCHOR'S NAMED CONSUMER IS A REAL GATE THAT REALLY RAN.  All 10 anchors name the gate that consumes them, and each named gate is required here to be in the declared registry AND in this run's own evaluated ledger
+         evidence: anchors 10, consumers not registered-and-evaluated none
+  [PASS] G-REACHABILITY
+         EVERY DECLARED FALSIFIER DEMONSTRABLY REACHES ITS GATE (#34).  2 of them name gates evaluated after this point in this same function, and their presence is verified at G-ARTIFACT-INTEGRITY rather than assumed here
+         evidence: falsifiers 38, gates unreached none
+  [PASS] G-PAYLOAD-CLOSES
+         THE PAYLOAD CLOSES: 41 gates evaluated, all passed, and a RECURSIVE TYPE SCAN of the receipt finds no float anywhere -- every published number is an int or a string carrying an exact Fraction
+         evidence: gates 41, float-valued receipt paths none
+  [PASS] G-SEAL-COMPLETE
+         THE TOTAL GATE-TO-DISK SEAL (#119 + the #148 totality addendum).  EVERY published receipt key is either sealed at the moment its gate passed or listed as DECLARED-UNSEALED, and this gate compares the manifest against the DECLARED seal set rather than against the seals that happened to be taken.  The vouching layer is inside the seal: schema, provenance, paper claims, polarity, coverage, reachability, gates, totals and the transcript head.  The unsealed list is frozen by content and by length and names no key that carries a measurement
+         evidence: declared seals 33, taken 33, missing none, extra none, receipt keys not covered none, broken at close none, unsealed frozen True and measurement-free True
