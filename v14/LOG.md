@@ -10342,3 +10342,32 @@ and provably inert both directions; probe 8 ABSENT — the
 strongest part of the unit).  **PANEL COMPLETE (K1 #316 /
 K2 #313 / K3 here): ~533 recomputations, zero numbers
 moved.  Adjudication next.**
+
+## 2026-08-12 — FAC ADJUDICATION: REPAIR ORDERED (Z1–Z12); THE IMAGE FIBER MADE HEAD-CARRYING WITH THE ROBUST ≥5,852 COROLLARY; THE MECHANISM STRATIFICATION RENDERED; THE PIN'S FEASIBILITY ENGRAVING SHARPENED (v14 LEDGER #319)
+
+**note-fac-adjudication.md committed.**  Three AWF →
+repair, no REJECT; ~533 seat recomputations, zero numbers
+moved; both closed-form theorems re-proved.  Central
+rulings: (1) the LEG-4 IMAGE FIBER (K1 M1) made
+head-carrying per the #293 duty — both images published;
+**under EITHER image the division is forced at ≥ 5,852 of
+5,856; the fiber moves only which degenerate histories
+tie.**  (2) WHICH-LEG-BINDS is grain-stratified (K1 M3 =
+K2 M3): the actor headline is a geometry+history theorem
+(dynamics-blind); the carrier verdict is dynamics-borne —
+a stratification of MECHANISM, better than the delivered
+prose.  (3) §5's two objects named apart (K1 M2 = K2 M1);
+the width-vs-span conversion named.  (4) The thesis ruled
+one-directional at both grains (348-vs-4 extensions; the
+paper-23 iff lesson's third instance).  (5) **The pin
+OWNED (K2 M8): FORCED's feasibility line argued against
+the arena's abstract ranges instead of the committed
+corpus — the #299 engraving gains the clause: feasibility
+must be argued against the committed corpus.**  (6) K3's
+five one-directional majors adopted (whitelist AST +
+bound digest; referent totality + mdstrip; polarity axes
+incl. the atom-word; the ACT disease killed by sealing
+the four-statement window; two-directional tables/fences)
++ the corpus-multiset disclosure (5,856 slots / 5,784
+distinct) and the transcript-ledger reconciliation.
+Repair order Z1–Z12; **the repair worker launches next.**
