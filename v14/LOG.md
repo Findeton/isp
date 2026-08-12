@@ -8137,3 +8137,27 @@ Q-side fields never built).**  Three of the six are one
 defect in three coats (a predicate that cannot fail; the
 conclusion true, the evidence circular).  → THE ADJUDICATION
 (all three seats in).
+
+## 2026-08-11 — OCC ADJUDICATION: CEILING-OPEN STANDS; TWO ERRORS OWNED; TWELVE ORDERS; REPAIR LAUNCHES NEXT (v14 LEDGER #264)
+
+v14/note-occ-adjudication.md frozen.  Three seats AWF (~681
+recomputations; the physics rebuilt three independent ways),
+every computed number correct.  **OCC-CEILING-OPEN STANDS
+UNMOVED.**  TWO ERRORS OWNED OF RECORD: the pin's P1 framing
+(the orchestrator's — MISTYPED-AT-THE-CARRIER;
+REFUTED-AT-THE-GRAIN-IT-TYPED adopted) and the delivered
+SAME-SITE/SAME-ACTOR false claim (thrice-confirmed;
+"the two grains are one phenomenon" DIES, strict containment
+survives; the referent-binding mechanism named).  RULINGS:
+the LOR↔OCC link a REGISTERED CO-INCIDENCE (both K2 seats
+independent — one committed clause load-bearing twice); the
+unified blindness theorem PREMATURE (the schema registered);
+K3's report card 7-absent/6-present — the closed diseases
+stay closed.  TWELVE orders X1–X12 (the same-site renaming +
+strict containment gated; the declaration-dependent 53,460;
+the F10 fiber declared + P3 re-aimed; the 216-max labeled;
+true-multiset fences; the abstract inside the instrument;
+all 22 E-24 recounts; the completion-reading predicate; the
+mechanism/site-grain/3²⁷ strengthenings; the co-incidence +
+schema + FCK rows; the MINOR sweep).  Repair worker launches
+with this turn's tool calls; confirmation next entry.
