@@ -8286,3 +8286,40 @@ adjudication's Y8 already orders the paper-scanning walls —
 the caveat routed to the repair as a replay requirement (the
 wall plants must die ON THE PAPER LEG specifically).
 Re-frozen (v2, c90b0231a147).
+
+## 2026-08-11 — SIG EFFECTUS REVIEW LANDED (K2): AWF — BLOCKED NOT LICENSED (THE PLAN'S OWN OUTCOME MEMBER DROPPED BY THE PIN); THE FLOOR CORRECTION ITSELF CLASS-SUBSTITUTED (v14 LEDGER #270)
+
+v14/review-sig-effectus.md frozen.  **Grade AWF; 78/78
+recomputations agree, zero numbers moved; a from-scratch
+coupled-walk rebuild anchored on six parent rows at first
+attempt; three of the five MAJORs make the sentences
+STRONGER.**  ROW 1 (decisive): **BLOCKED IS NOT LICENSED —
+four grounds: the head refutes itself (segment 4 claims a
+block one fence below segment 3 emitting both polarities);
+the corpus census — 10/10 delivered BLOCKED-ATs name a
+missing/empty/zero-admitting object while THE-EMISSION-READING
+is present, declared, and exhausted; PLAN.md pre-registers
+SIGNATURE-DECLARATION-RELATIVE for paper-24 and THE PIN
+SILENTLY DROPPED THAT MEMBER [the orchestrator's pin error,
+to be owned]; the W2/R4b precedents.  Recommended head:
+SIG-DECLARATION-RELATIVE-AT-THE-EMISSION-READING, content
+verbatim.**  ROW 2: **the floor "correction" is a CLASS
+SUBSTITUTION and its clause is false — the origin claim named
+the covered-SITE class, which SIG's own §3.3 measures
+ATTAINED at R=5 (2,210,000 multisets, reproduced); the
+not-attained holds only of the COVERING class the inherited
+claim never named.  Nothing outside SIG is false; the
+annotation is owed FORWARD to PER-R, whose pin row 4 carries
+the identical class-implicit phrasing [the orchestrator's pin
+again — advisory sent].**  ROW 4: the walk-beats-grammar
+MECHANISM refuted by the unit's own 70-pool (emission also
+deposits ≤1/step; the grammar CAN stack one cell; priced in
+one currency the grammar arrives first) — the TRUE mechanism
+is COUPLING, not rate: better and fully measured.  ALSO:
+inventory item 3 absorbs five inherited declared fibers incl.
+paper-20's VERDICT-RELEVANT coin order (unrun, undisclosed);
+**the mod-3 instrument confounded — the Born path measure is
+identical across the WHOLE homogeneous locus (differences of
+one included; A4's singular mass = A5's indefinite mass =
+64/59049): the conclusion STRENGTHENS, the evidence moves.**
+Seven MINORs.  → adjudication when K1+K3 land.
