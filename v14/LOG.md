@@ -9606,3 +9606,68 @@ PYTHONHASHSEED 0/987654.  **No delivered measurement moved**
 (masses, censuses, floors, spectra unchanged; instrument
 bookkeeping grew).  **Orchestrator battery launches next;
 terminal seal on green.**
+
+## 2026-08-12 — AID REPAIR DELIVERED, COMMITTED AS-IS: Z1–Z14 COMPLETE; 3 OF 403 RECEIPT LEAVES CHANGED, NONE A PHYSICS NUMBER; SEVEN SELF-FOUND DEFECTS FIXED; HEAD RENAMED AID-STRATIFIED-AT-THE-ADMISSIBILITY-AXIS (v14 LEDGER #303)
+
+**Files (committed as delivered, pre-battery):**
+v14/paper-33-aid.md (ecdd3fbf1d06); v14/code/aid_exact.py
+(b4419b0d1daa); v14/code/aid_output.txt (3ca626ea4bef);
+v14/code/aid_receipt.json (2dd2a9879984).
+
+**NO DELIVERED MEASURED NUMBER MOVED:** 403 receipt leaves
+compared leaf-by-leaf against cd938d7ae9be — three differ,
+all declarations (windows 7→12; a K2-ordered prose note; a
+list-index shift as measures grew 2→3); 28 headline
+quantities re-checked explicitly, 0 moved.
+
+**The fourteen orders executed** (highlights): Z1 the
+architecture sentence replaced everywhere, G-INVARIANCE-
+SPLIT made REAL measuring the licensed text (weld ≡ record
+at identity 703/703; attribution 111 at all 12 parses;
+transported reading 0/121,152 on record AND Born; head
+segment 3 = SPLIT-BY-TEST-NOT-BY-OBSERVABLE).  Z2 the five
+sequence→set sites + G-STABILIZER-READS-THE-SET (0 order
+changes over 41,347) and G-TIME-READS-THE-ORDER (the time
+moves at 42 of 600).  Z3 G-COIN-ORDER publishes both
+ladders (G·D 134/58/58/58/58; D·G 703/128/58/58/58);
+two-order invariant 58 from depth three.  Z4 G-ORDER-AXIS
+(all 15,552 histories, time 5, one profile) +
+G-INFORMATION-FLOOR (4 = ⌈log₂9⌉ attained 72/72 and
+596/596; the redundant third event 72/72; moved-to-end → 4
+at all 72).  Z5 G-TWO-FOURS-ARE-NOT-ONE (the 404s: 266
+both, 138/138 one-sided).  Z6 G-PREFIX-FAMILIES
+(101,160/39,747 and 118,656/41,347; fan-only 1,600) +
+sentence referent binding + the E-24 universes in-paper
+(the measure effect separated from the family effect, new
+32/161).  Z8 head AID-STRATIFIED-AT-THE-ADMISSIBILITY-AXIS
+(0 of 404 covering / 0 of 276 G-FLAT is chart).  Z9 the
+Barandes row split; DECOMPOSITION registered owed (→ FAC).
+Z10 two-way table binding incl. headers; contradiction scan
++ noun binding; walls 51 banned forms + A POSITIVE LEG.
+Z11 the phantom made real; sweep gains
+at_the_declared_gate; MUT-PAPER-FENCE-MULTISET re-pointed.
+Z12 read-back BEFORE os.replace; gate accounting reaches
+both artifacts (61+2+1=64).  Z13 G-WELD-TWELVE-PARSES
+(1,453,824/0, exactly K1's number) + G-GAUGE-DECLARATION
+(ANT-for-DIA identical entry-for-entry).  Z14 comparator
+de-twinned at all 13 quantities; the rest of the minors.
+
+**SEVEN DEFECTS FOUND BEYOND THE ORDERS, fixed and gated:**
+(1) the digest-free whitelist defeatable by comma-stripping
+(the D·G ladder entered as a 12-char token that would
+whitelist arbitrary 12-digit numerals — THOUSANDS-grouping
+now required); (2) the phantom check ran too early (moved
+to G-SEAL-TOTALITY); (3) the contradiction anchor was
+case-sensitive; (4) two ambiguous openings in the repair's
+own prose (every fraction now names its universe); (5) a
+wall statement contained its own banned form; (6) a typed
+spelled numeral in the head template (now counted from the
+entire-flag, 8 of 12); (7) the positive wall leg scoped to
+prose.  **Worker battery:** 64/64 out-of-harness at
+declared gates; all K3 injections die (INJ06b caught by the
+positive leg ALONE — no banned literal); selftest fatal at
+all 13 anchor classes; byte ×2 off-tree at two seeds; 830
+numerals + 200 spelled, 0 unbacked; 0 typed counts.
+Instrument growth: gates 52→64, mutants 47→64, walls 4→5,
+claims 14→28.  **Orchestrator battery launches next;
+terminal seal on green.**
