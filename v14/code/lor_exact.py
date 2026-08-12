@@ -15,7 +15,7 @@ those laws produces, and whether the process-to-space dictionary survives it.
            saturating groupings, the 72 triples and the 5,184 ordered
            concatenations rebuilt from nothing; the (2, 2, 2) field at 27 of
            27 cells; the weld re-verified zero-free on this unit's own
-           detector; a DECLARED DRIVEN WINDOW W6 of 13 schedules driven
+           detector; a DECLARED DRIVEN WINDOW W6 of 16 schedules driven
            through the committed grammar (the first driven R = 6 records);
            the splittable census at n = 2.
   STAGE 2  PAPER-06'S LAW APPLIED.  Non-empty and unique at 27 of 27
@@ -174,6 +174,49 @@ SOURCE_IDS = [s[0] for s in SOURCES]
 BANNED_L1 = ("precisely the form U4 tests, and precisely the form the "
              "corpus's strongest relativity result took")
 
+# THE READING WALLS, AS A DECLARED NEEDLE TABLE SCANNED ON TWO LEGS.  The
+# earlier form of this instrument scanned only the DECLARED MEASUREMENT
+# SURFACE (the measured receipt keys and the gates' own statements), so a
+# banned reading written into the OBJECT UNDER TEST -- the artifact a reader
+# actually reads -- passed at exit 0.  Both legs are now scanned with the same
+# needles, and the declared falsifiers inject into the PAPER leg.
+WALL_NEEDLES = {
+    "BHS": ("lorentz invariant", "lorentz-invariant", "poisson sprinkling",
+            "sprinkling"),
+    "KR": ("myrheim", "dimension estimate", "max-shatter", "height control"),
+    "COSMO": ("universe expands", "new space is created", "cosmological",
+              "expansion of space", "big bang"),
+}
+# THE ABSTENTION WINDOWS.  A wall's own denial necessarily names the topic it
+# declines; those sentences -- and only those -- are declared here, each one
+# REQUIRED to be present in the object under test and REQUIRED to fire, and
+# they are the only text removed before the paper leg is scanned.  This is a
+# declared, verified, must-fire exemption table and not a blanket strip.
+WALL_ABSTENTIONS = [
+    ("BHS", "BHS -- no sprinkling-grade Lorentz-invariance test. A Poisson "
+            "sprinkling admits no Lorentz-invariant finite-valency graph and "
+            "these records are finite-valency by construction, so running the "
+            "test would manufacture a false negative."),
+    ("KR", "Kleitman-Rothschild -- no dimension reading, so no height control "
+           "is owed. No chart width, no Myrheim-Meyer estimate, no "
+           "max-shatter reading is taken"),
+    ("COSMO", "No cosmological reading. Refinement here is a measured "
+              "operation on a pinned record. It is not an expansion "
+              "narrative, and nothing about the growth of the place-count "
+              "licenses one."),
+    ("COSMO", "No cosmological or expansion reading of the place-count "
+              "growth."),
+]
+
+# E-24, as a scan of what the paper PUBLISHES rather than of what this unit
+# chose to list.  Every `N of M` over a declared configuration space must be
+# covered by a stamped row, and no typicality word may be asserted.
+E24_SPACES = ("5,184", "5184", "864")
+E24_FRACTION = re.compile(r"(\d[\d,]*)\s+of\s+(?:the\s+)?(5,184|5184|864)"
+                          r"(?![\d])")
+E24_TYPICALITY = ("typical", "typically", "generic", "probability", "likely",
+                  "probable", "most witnesses", "most of the witnesses")
+
 # THE DECLARED DRIVEN WINDOW.  Disclosed in the head; every other column is
 # exhaustive over an object the window does not cap.
 WINDOW_NAME = "W6"
@@ -257,7 +300,7 @@ SEALED_PATHS = [
     ("SEAL-COMPAT", "compatibility", "G-COMPATIBILITY"),
     ("SEAL-STATUS", "refined_status", "G-REFINED-ADMISSIBLE"),
     ("SEAL-DICT", "dictionary", "G-TWO-WAY"),
-    ("SEAL-SUPPLY", "process_supply", "G-CUT-UNIQUE"),
+    ("SEAL-SUPPLY", "process_supply", "G-CUT-LAW"),
     ("SEAL-SIG", "sig", "G-SIG"),
     ("SEAL-CEILING", "ceiling", "G-CEILING"),
     ("SEAL-DIA", "dia", "G-DIA"),
@@ -265,6 +308,7 @@ SEALED_PATHS = [
     ("SEAL-VERDICT", "verdict", "G-VERDICT-RECONSTRUCTED"),
     ("SEAL-COUNTS", "counts", "G-VERDICT-RECONSTRUCTED"),
     ("SEAL-MEASURE", "measure_stamps", "G-MEASURE-STAMP"),
+    ("SEAL-MEASURE-SCAN", "measure_scan", "G-MEASURE-STAMP"),
     ("SEAL-PAPER-CLAIMS", "paper_claims", "G-PAPER-CLAIMS"),
     ("SEAL-PAPER-TABLES", "paper_tables", "G-PAPER-TABLES"),
     ("SEAL-PAPER-COVERAGE", "paper_coverage", "G-PAPER-HEAD-VERBATIM"),
@@ -274,9 +318,12 @@ SEALED_PATHS = [
     ("SEAL-WAIVERS", "waiver_ledger", "G-COVERAGE"),
     ("SEAL-MUTANTS", "mutants", "G-COVERAGE"),
     ("SEAL-MUTANT-SWEEP", "mutant_sweep", "G-SWEEP-BOUND"),
+    ("SEAL-READS", "reads", "G-READS-DECLARED-FINAL"),
     ("SEAL-GATES", "gates", "G-PAPER-COVERAGE-FINAL"),
+    ("SEAL-GATES-UNPUBLISHED", "gates_unpublished",
+     "G-PAPER-COVERAGE-FINAL"),
     ("SEAL-TOTALS", "totals", "G-PAPER-COVERAGE-FINAL"),
-    ("SEAL-TRANSCRIPT", "transcript_head", "G-PAPER-COVERAGE-FINAL"),
+    ("SEAL-TRANSCRIPT", "transcript", "G-PAPER-COVERAGE-FINAL"),
 ]
 DECLARED_UNSEALED = ("arithmetic", "python", "unit", "question",
                      "seal_manifest", "payload_sha256_12")
@@ -438,9 +485,33 @@ def img(x):
 
 
 NUMWORDS = ("ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN",
-            "EIGHT", "NINE", "TEN", "ELEVEN", "TWELVE")
+            "EIGHT", "NINE", "TEN", "ELEVEN", "TWELVE", "THIRTEEN",
+            "FOURTEEN", "FIFTEEN", "SIXTEEN", "SEVENTEEN", "EIGHTEEN",
+            "NINETEEN", "TWENTY")
+# E-22, third rule: the spelled numerals ABOVE TWELVE are scanned too, and the
+# hyphenated compounds the paper actually uses (twenty-seven, seventy-two,
+# thirty-six) are resolved to their value BEFORE the single words are read.
+TENWORDS = {"twenty": 20, "thirty": 30, "forty": 40, "fifty": 50,
+            "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90}
 WORDNUM = dict({w.lower(): i for i, w in enumerate(NUMWORDS)},
-               twice=2, thrice=3, hundred=100)
+               twice=2, thrice=3, hundred=100, thousand=1000, **TENWORDS)
+COMPOUNDNUM = re.compile(
+    r"(?<![a-z])(twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)"
+    r"[- ](one|two|three|four|five|six|seven|eight|nine)(?![a-z])")
+
+
+def word_of(n):
+    """the spelled form of a small count, so a rendered claim can carry the
+    paper's own spelled numerals and a forged spelling cannot survive."""
+    if n < len(NUMWORDS):
+        return NUMWORDS[n].lower()
+    tens, units = divmod(n, 10)
+    inv = {v: k for k, v in TENWORDS.items()}
+    if tens * 10 in inv and units:
+        return "%s-%s" % (inv[tens * 10], NUMWORDS[units].lower())
+    if tens * 10 in inv:
+        return inv[tens * 10]
+    return str(n)
 
 
 def exdiv(a, b):
@@ -792,6 +863,51 @@ def graph_isomorphisms(S, rel_set, X, links, Lmod, directed=False,
     return out
 
 
+def first_isomorphism(S, rel_set, X, links, Lmod):
+    """EXISTENCE ONLY: the same backtracking as `graph_isomorphisms`, stopped
+    at the first success.  Used for the per-witness ABSTRACT-SHAPE census,
+    where the question is `is this relation isomorphic to the refined lattice`
+    and not `how many isomorphisms are there`."""
+    tgt = set()
+    for x in X:
+        for lk in links:
+            y = tuple((x[i] + lk[i]) % Lmod for i in range(len(lk)))
+            tgt.add((x, y))
+            tgt.add((y, x))
+    src = set()
+    for (u, v) in rel_set:
+        if u != v:
+            src.add((u, v))
+            src.add((v, u))
+    Ss = connected_order(S, src)
+    Xs = sorted(X)
+    phi, used = {}, set()
+
+    def bt(k):
+        if k == len(Ss):
+            return True
+        u = Ss[k]
+        for x in Xs:
+            if x in used:
+                continue
+            ok = True
+            for j in range(k):
+                w = Ss[j]
+                if ((u, w) in src) != ((x, phi[w]) in tgt) or \
+                   ((w, u) in src) != ((phi[w], x) in tgt):
+                    ok = False
+                    break
+            if ok:
+                phi[u] = x
+                used.add(x)
+                if bt(k + 1):
+                    return True
+                used.discard(x)
+                del phi[u]
+        return False
+    return bt(0) if len(Ss) == len(Xs) else False
+
+
 def quotient_bijections(S, rel_set, X, links, Lmod):
     """THE QUOTIENT READING: a surjection of the realised objects onto the
     sites -- here necessarily a bijection -- under which EVERY realised edge
@@ -922,7 +1038,11 @@ def detect(name, objs, rel, X, links, Lmod, reading):
     ori_i = [len({fkey(fields[(i, tuple(range(nlab)), o)])
                   for o in (False, True)}) for i in range(len(maps))]
     row["label_fiber_spread"] = sorted(set(lab_i))
+    row["label_fiber_histogram"] = {str(k): v for k, v
+                                    in sorted(Counter(lab_i).items())}
     row["orient_fiber_spread"] = sorted(set(ori_i))
+    row["orient_fiber_histogram"] = {str(k): v for k, v
+                                     in sorted(Counter(ori_i).items())}
     row["fibers_base_map_invariant"] = (set(lab_i) == {fib_label}
                                         and set(ori_i) == {fib_orient})
     row["free_items_at_every_base_map"] = min(
@@ -1151,6 +1271,8 @@ PATH_ANCHORS = [
      "G-LAW-09"),
     ("A-P21REC", "split/r6_door/crb_pinned_transitive", [[2, 2, 2]],
      "G-LAW-06"),
+    ("A-P21REC", "split/law_06/intervals", 9, "G-LAW-06"),
+    ("A-P21REC", "split/law_06/record_level_splittable", False, "G-LAW-06"),
     ("A-P21REC", "counts/partitions", 280, "G-PARTITION-COUNT"),
     ("A-P19REC", "counts/i7_strict_triples", 72, "G-72-TRIPLES"),
     ("A-P19REC", "counts/isomorphisms", 1296, "G-WELD-COARSE"),
@@ -1185,13 +1307,15 @@ GATE_REGISTRY = (
     "G-SPLIT-FIBER",
     "G-LAW-06", "G-LAW-04", "G-LAW-09", "G-REFINED-BUILD", "G-NEW-PLACES",
     "G-COMPATIBILITY", "G-REFINED-ADMISSIBLE", "G-DICTIONARY-CARRIER",
-    "G-PROCESS-SUPPLY", "G-CUT-UNIQUE", "G-WELD-REFINED", "G-TWO-WAY",
+    "G-PROCESS-SUPPLY", "G-CUT-UNIQUE", "G-CUT-LAW", "G-WELD-REFINED",
+    "G-ABSTRACT-CENSUS", "G-TWO-WAY",
     "G-SIG", "G-CEILING", "G-DIA",
     "G-WALL-L1", "G-WALL-BHS", "G-WALL-KR", "G-WALL-COSMO",
     "G-WALL-LORENTZ-NAMED",
     "G-MEASURE-STAMP", "G-FALSIFIER-HONEST", "G-VERDICT-RECONSTRUCTED",
     "G-PAPER-CLAIMS", "G-PAPER-TABLES", "G-PAPER-COVERAGE",
     "G-PAPER-HEAD-VERBATIM", "G-PAPER-CLAIM-POLARITY",
+    "G-READS-DECLARED-FINAL", "G-TOTALS-COMPUTED",
     "G-COVERAGE", "G-REACHABILITY", "G-MUTANTS-ON-TARGET", "G-SWEEP-BOUND",
     "G-SEAL-COMPLETE", "G-PAPER-COVERAGE-FINAL", "G-ARTIFACT-INTEGRITY",
 )
@@ -1221,12 +1345,19 @@ def reg(*vals):
 # ===========================================================================
 
 def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
-             do_paper=True):
+             do_paper=True, paper_path=None):
     # THE READ REGISTRY IS PER-RUN.  A module-level registry that accumulated
     # across in-process sub-runs would make the second run's G-READS-DECLARED
     # a statement about the first run's reads.
     READS_BY_CATEGORY.clear()
     del READS[:]
+    # THE OBJECT UNDER TEST IS READ *INSIDE* THE RUN.  Read in main -- as it
+    # was -- the per-run clear erased it, so the OBJECT-UNDER-TEST category
+    # never reached any gate and the read registry was a statement about the
+    # 19 sources alone.
+    if paper_path is not None:
+        paper_text = read_text(paper_path, "OBJECT-UNDER-TEST")
+        paper_rel = os.path.relpath(paper_path, REPO)
     LD, SEAL, R = Ledger(), Seal(), {}
     R["schema"] = SCHEMA
     R["unit"] = "v14 LOR-A -- the law over records at R = 6"
@@ -1276,6 +1407,10 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                len(READS_BY_CATEGORY.get("SOURCE", set())), len(SOURCES)))
 
     tree = ast.parse(read_text(SELF, "SELF"))
+    # the #46/R3-M1 probe, DECLARED: a read added AFTER the early gate is
+    # invisible to it -- which is why the category set is re-taken in finish().
+    if mut("MUT-READ-LATE"):
+        read_text(os.path.join(REPO, PAPER_REL), "SOURCE")
     floats = [n for n in ast.walk(tree)
               if isinstance(n, ast.Constant) and isinstance(n.value, float)]
     divs = [n for n in ast.walk(tree) if isinstance(n, ast.BinOp)
@@ -1325,13 +1460,14 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     R["path_value_anchors"] = pv
     pvbad = [a["path"] for a in pv if not a["match"]]
     pvgates = sorted({a["consumer_gate"] for a in pv})
+    n_anchor_receipts = len({a[0] for a in PATH_ANCHORS})
     LD.gate("G-ANCHORS-READ",
             "THE PREDECESSORS ARE READ AT (PATH, VALUE), NOT ONLY AT BYTES.  "
-            "%d rows are read out of five committed receipts by path and "
+            "%d rows are read out of %d committed receipts by path and "
             "compared against this unit's frozen declaration, each row naming "
             "the gate it licenses; a path drift that changed the arena or the "
             "verdict while preserving a file hash dies here"
-            % len(PATH_ANCHORS),
+            % (len(PATH_ANCHORS), n_anchor_receipts),
             not pvbad and all(g in GATE_REGISTRY for g in pvgates),
             "path-value anchors %d, mismatched %s, consumer gates %d"
             % (len(pv), pvbad or "none", len(pvgates)))
@@ -1647,7 +1783,7 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     if mut("MUT-WINDOW"):
         window = window[1:]
 
-    drows, mism, nomaxhits = [], [], []
+    drows, mism, nomaxhits, foots = [], [], [], []
     for (nm, a, b, k) in window:
         sch = schedule_of(triples[a] + triples[b], seed_k=k)
         rec = driven(G, sch)
@@ -1659,6 +1795,7 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         gs = groups_of[a] + groups_of[b]
         foot_as_sites = [frozenset(ACTOR_SITE[u] for u in f)
                          for f in rec["footprints"]]
+        foots.append((nm, foot_as_sites))
         foot_ok = Counter(foot_as_sites) == Counter(gs)
         if cells_ok != 27 or not foot_ok:
             mism.append(nm)
@@ -1776,7 +1913,14 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         "simplex_dim_at_count_2": p06rows[2]["pinned_simplex_dim"],
         "pinned_transitive_at_count_2": p06rows[2]["pinned_transitive"],
         "record_level_unique": len(law06_cells) == 27,
-        "at_r4_intervals_unique": 9,
+        # READ, not typed: paper-21's committed receipt carries this unit's
+        # R = 4 counterfactual at (path, value), so a drift in the predecessor
+        # that moved it would die by anchor -- which is the whole purpose of
+        # the (path, value) layer.
+        "at_r4_intervals_unique": jpath(jsons["A-P21REC"],
+                                        "split/law_06/intervals"),
+        "at_r4_record_level_splittable": jpath(
+            jsons["A-P21REC"], "split/law_06/record_level_splittable"),
         "the_only_pinned_transitive_vector": jpath(
             jsons["A-P21REC"], "split/r6_door/crb_pinned_transitive"),
         "support": [[1, 1]],
@@ -1862,10 +2006,17 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "of 27, paper-21's committed row %d"
             % (holes, law09["counts_carried_by_this_record"], hole_n,
                law09["committed_intervals_in_the_hole"]))
+    # DERIVED from the predecessors' own committed rows, not typed: 06 is
+    # non-empty at R = 4 iff its committed interval count is positive, 04 is
+    # non-empty iff its committed R = 4 raw fiber is, and 09 is non-empty iff
+    # count 1 is outside its committed support hole.
+    laws_r4 = ((1 if law06["at_r4_intervals_unique"] > 0 else 0)
+               + (1 if split_row["raw_product_at_r4_flat"] > 0 else 0)
+               + (0 if 1 in holes else 1))
     R["laws"] = {"law_04": law04, "law_06": law06, "law_09": law09,
                  "laws_considered": 3, "laws_non_empty": 2,
-                 "laws_non_empty_at_r4": 1}
-    reg(3, 2, 1)
+                 "laws_non_empty_at_r4": laws_r4}
+    reg(3, 2, laws_r4)
     SEAL.take("SEAL-LAWS", R)
 
     # ---------------------------------------------------------------- SEC 6
@@ -2059,6 +2210,27 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     det_vals = {cts[img(x)][l] for (x, l) in CELLS} | \
                {cts[radd(img(x), l)][l] for (x, l) in CELLS}
     status["determined_half_values"] = sorted(det_vals)
+    # PAPER-04'S OWN DESIGN, MEASURED RATHER THAN REPORTED.  Its minimal
+    # completion is written to put each completed refined site on the DIAGONAL
+    # LOCUS q12 = 0.  At this arena the rule reaches the locus at 18 of the 27
+    # sites it completes: at the nine diagonal-midpoint sites the known count
+    # IS the diagonal one, so the rule's own branch returns (2, 2, 1) and
+    # c = a + b is arithmetically unreachable -- a and b would sum to 1.
+    p04_completed = sorted({z for (z, _l) in free_p04})
+    p04_codes = {}
+    for z in p04_completed:
+        nv = tuple(p04row["counts"][z][l] for l in I7_LINKS)
+        p04_codes.setdefault((site_class(z), str(list(nv)),
+                              str(q_of(nv)[2])), 0)
+        p04_codes[(site_class(z), str(list(nv)), str(q_of(nv)[2]))] += 1
+    p04_locus_hits = sum(1 for z in p04_completed
+                         if q_of(tuple(p04row["counts"][z][l]
+                                       for l in I7_LINKS))[2] == 0)
+    status["paper04_minimal_sites_completed"] = len(p04_completed)
+    status["paper04_minimal_sites_on_the_diagonal_locus"] = p04_locus_hits
+    status["paper04_minimal_completed_site_classes"] = {
+        "%s|code-%s|q12-%s" % k: v for k, v in sorted(p04_codes.items())}
+    reg(len(p04_completed), p04_locus_hits)
     R["refined_status"] = status
     reg(prow["admissible_sites"], p04row["admissible_sites"])
     LD.gate("G-REFINED-ADMISSIBLE",
@@ -2068,16 +2240,23 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "process-supplied completion gives the link-constant record "
             "(1, 1, 1) at every site -- paper-19's own landing vector, "
             "admissible inside I7's declared count box and, like it, not one "
-            "of I7's declared records",
+            "of I7's declared records.  Paper-04's declared minimal "
+            "completion is written to put each completed site on the diagonal "
+            "locus q12 = 0; whether it DOES is measured here per site rather "
+            "than reported, and it reaches the locus at 18 of the 27 sites it "
+            "completes",
             prow["admissible_sites"] == 36 and p04row["admissible_sites"] == 36
             and prow["link_constant"] and not p04row["link_constant"]
-            and sorted(det_vals) == [1],
+            and sorted(det_vals) == [1]
+            and len(p04_completed) == 27 and p04_locus_hits == 18,
             "admissible refined sites: process-supplied %d of 36, "
             "paper-04-minimal %d of 36; link-constant %s / %s; determined "
-            "half values %s"
+            "half values %s; paper-04-minimal completes %d sites and reaches "
+            "the diagonal locus at %d of them, by class %s"
             % (prow["admissible_sites"], p04row["admissible_sites"],
                prow["link_constant"], p04row["link_constant"],
-               sorted(det_vals)))
+               sorted(det_vals), len(p04_completed), p04_locus_hits,
+               status["paper04_minimal_completed_site_classes"]))
     SEAL.take("SEAL-STATUS", R)
 
     # ---- THE CARRIER: 9 actors + 27 co-division pairs = 36 refined sites
@@ -2108,6 +2287,7 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             ax = (aimg[0][0] // 2, aimg[0][1] // 2)
             if ax in MID_PAIR[amid[0]]:
                 inc_ok += 1
+    inc_ok = mutate("MUT-INCIDENCE", inc_ok, inc_ok - 1)
     tri_ok = sum(1 for s in FREE_SLOTS if SLOT_TRIANGLE[s] in set(TRIANGLES))
     per_tri = Counter(SLOT_TRIANGLE[s] for s in FREE_SLOTS)
     dict_row = {
@@ -2343,7 +2523,116 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "raw split fiber of %d"
             % (cutrow["loci"], n_live, live_at_arena, dict(splits_at_cut),
                len(triples) ** 2, dict(cutc), len(ctrl_live), ctrl_raw))
-    R["process_supply"] = {"supply": supply, "cut": cutrow}
+    # ---- THE LIVE-CUT LAW AT BUDGET R = 3m, COMPUTED BY TWO ROUTES
+    # The uniqueness at R = 6 is a boundary effect of the smallest
+    # non-degenerate arena, not a determination property of the process: the
+    # live loci are the integers in [9, 9(m-1)] and their number is 9m - 17,
+    # so 9m - 17 = 1 has the single solution m = 2.
+    inc_per_event = sorted({sum(1 for p in PAIRS if p <= g)
+                            for gsx in groups_of for g in gsx})
+
+    def cut_bound(n_count):
+        """ROUTE 2, incidence counting: each division event deposits three cell
+        incidences, so a cut after k events distributes 3k over the 27
+        intervals and strict positivity at an all-count-n record forces
+        27 <= 3k <= 27(n - 1)."""
+        return [k for k in range(1, 9 * n_count)
+                if 27 <= 3 * k <= 27 * (n_count - 1)]
+
+    res_of = {}
+    for _i, _t in enumerate(triples):
+        res_of.setdefault(frozenset(_t), []).append(_i)
+    canon_res = [sorted(v)[0] for v in sorted(res_of.values(),
+                                              key=lambda v: sorted(v)[0])]
+    m3_live = Counter()
+    for i3 in canon_res:
+        for j3 in canon_res:
+            for k3 in canon_res:
+                m3_live[tuple(cut_row(groups_of[i3] + groups_of[j3]
+                                      + groups_of[k3]))] += 1
+    ladder_cut = []
+    for mm in range(2, 7):
+        fam, agree = 0, 0
+        for i3 in canon_res:
+            for j3 in canon_res:
+                gs_m = list(groups_of[i3])
+                for _ in range(mm - 2):
+                    gs_m = gs_m + groups_of[canon_res[0]]
+                gs_m = gs_m + groups_of[j3]
+                live_m = cut_row(gs_m)
+                fam += 1
+                if (live_m == list(range(9, 9 * (mm - 1) + 1))
+                        and len(live_m) == 9 * mm - 17):
+                    agree += 1
+        ladder_cut.append({"m": mm, "R": 3 * mm, "schedules": fam,
+                           "agree_with_9m_minus_17": agree,
+                           "live_loci_predicted": 9 * mm - 17,
+                           "live_locus_interval": [9, 9 * (mm - 1)]})
+    m3_total = sum(m3_live.values())
+    m3_agree = m3_live[tuple(range(9, 19))]
+    law_ok = mutate("MUT-CUT-LAW", 9 * 2 - 17, 2)
+    cut_law = {
+        "law": "at budget R = 3m the live cut loci are the integers in "
+               "[9, 9(m - 1)], so their number is 9m - 17",
+        "route_1_block_structure": "fewer than 9 groups cover 3k < 27 distinct "
+                                   "declared pairs, so a cut before the first "
+                                   "block closes leaves an empty interval on "
+                                   "the left, and symmetrically on the right; "
+                                   "the live loci are exactly [9, 9(m - 1)]",
+        "route_2_incidence_counting": "each division event deposits 3 cell "
+                                      "incidences, so a cut after k events "
+                                      "distributes 3k over the 27 intervals "
+                                      "and strict positivity at an "
+                                      "all-count-n record forces "
+                                      "27 <= 3k <= 27(n - 1)",
+        "incidences_per_event": inc_per_event,
+        "bound_at_n_2": cut_bound(2),
+        "bound_at_n_3": cut_bound(3),
+        "m2_exhaustive_witnesses": len(triples) ** 2,
+        "m2_live_loci": n_live,
+        "m3_control_schedules": m3_total,
+        "m3_live_sets": {str(list(k)): v for k, v in sorted(m3_live.items())},
+        "m3_schedules_at_the_ten_loci": m3_agree,
+        "ladder": ladder_cut,
+        "closes": "the unit's fourth successor question: there is no interior "
+                  "(m is an integer), the block structure carries it entirely "
+                  "and the count plays no role.  9m - 17 = 1 has the single "
+                  "solution m = 2, so R = 6 is the ONLY arena at which the "
+                  "process-supplied cut determines rather than selects",
+    }
+    reg(m3_total, m3_agree, *[r["live_loci_predicted"] for r in ladder_cut])
+    reg(*[r["schedules"] for r in ladder_cut])
+    LD.gate("G-CUT-LAW",
+            "THE LIVE-CUT COUNT IS A LAW OF THE BUDGET, DERIVED TWICE AND "
+            "MEASURED.  At R = 3m the live loci are the integers in "
+            "[9, 9(m - 1)] and their number is 9m - 17.  Route one is the "
+            "block structure; route two counts incidences -- every conflict "
+            "group is a declared triple, so each event deposits exactly 3 "
+            "cell incidences and strict positivity at an all-count-n record "
+            "forces 27 <= 3k <= 27(n - 1), which is k = 9 alone at n = 2 and "
+            "the ten loci 9..18 at n = 3.  The R = 9 control is then run "
+            "across a declared family of %d three-block schedules rather than "
+            "at one witness, and the ladder m = 2..6 is checked against the "
+            "formula" % m3_total,
+            inc_per_event == [3] and cut_bound(2) == [9]
+            and cut_bound(3) == list(range(9, 19))
+            and law_ok == n_live and m3_agree == m3_total
+            and set(m3_live) == {tuple(range(9, 19))}
+            and all(r["agree_with_9m_minus_17"] == r["schedules"]
+                    for r in ladder_cut)
+            and [r["live_loci_predicted"] for r in ladder_cut]
+                == [1, 10, 19, 28, 37],
+            "incidences per event %s, bound at n = 2 %s, at n = 3 %s (%d "
+            "loci), R = 9 control %d of %d schedules at the ten loci "
+            "9..18, ladder 9m - 17 at m = 2..6 %s, agreeing at %s of %s "
+            "schedules"
+            % (inc_per_event, cut_bound(2), cut_bound(3), len(cut_bound(3)),
+               m3_agree, m3_total,
+               [r["live_loci_predicted"] for r in ladder_cut],
+               [r["agree_with_9m_minus_17"] for r in ladder_cut],
+               [r["schedules"] for r in ladder_cut]))
+    R["process_supply"] = {"supply": supply, "cut": cutrow,
+                           "cut_law": cut_law}
     SEAL.take("SEAL-SUPPLY", R)
 
     # ---- the weld detector at the refined arena
@@ -2362,6 +2651,15 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         return rel
 
     rel_proc = process_relation(foot_w)
+    # THE SCOPE OF THE REFINED WELD, MEASURED RATHER THAN LEFT AT n = 1.  The
+    # detector below is run at one witness; here every driven surviving-stratum
+    # schedule is checked to induce the SAME process-side relation and the SAME
+    # completion, so the verdict is a statement about the whole driven stratum
+    # and not about supplied[0].
+    sup_foots = [f for nm_f, f in foots if nm_f == "W6-SUPPLIED"]
+    same_rel = sum(1 for f in sup_foots if process_relation(f) == rel_proc)
+    same_comp = sum(1 for f in sup_foots
+                    if completion_from_process(f) == free_process)
     rel_p04 = carrier_rel(p04row["counts"])
     wrefined = []
     for nm, rel_ in (("R6-REFINED@PROCESS-SUPPLIED", rel_proc),
@@ -2407,12 +2705,35 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         "fate_process_supplied": proc_row["fate"],
         "fate_paper04_minimal": p04_det["fate"],
         "fate_unextended_carrier": arity_row["fate"],
+        # THE HONEST FIBER READING at paper-04's declared completion: the
+        # site-assignment fiber 24 is a count over all base maps, the orient
+        # fiber is 2 at every one, and the LABEL fiber is base-map-VARIANT.
+        # What is base-map-invariant is the FATE: all three items are free at
+        # every base map, so UNMOTIVATED does not depend on the reading map.
+        "base_maps_read_paper04_minimal": p04_det["base_maps_read"],
+        "label_fiber_spread_paper04_minimal": p04_det["label_fiber_spread"],
+        "label_fiber_histogram_paper04_minimal":
+            p04_det["label_fiber_histogram"],
+        "orient_fiber_spread_paper04_minimal": p04_det["orient_fiber_spread"],
+        "fibers_base_map_invariant_paper04_minimal":
+            p04_det["fibers_base_map_invariant"],
+        "free_items_at_every_base_map_paper04_minimal":
+            p04_det["free_items_at_every_base_map"],
+        "base_maps_read_process_supplied": proc_row["base_maps_read"],
+        "fibers_base_map_invariant_process_supplied":
+            proc_row["fibers_base_map_invariant"],
+        "driven_surviving_stratum_schedules": len(sup_foots),
+        "schedules_inducing_the_same_process_relation": same_rel,
+        "schedules_inducing_the_same_completion": same_comp,
         "fates_exhibited": sorted(fates),
         "abstractly_isomorphic_dead_arenas": sorted(
             {r["arena"] for r in dead_rows
              if r.get("isomorphisms", 0) > 0}),
     }
     reg(proc_row.get("isomorphisms"), *sorted(p04_det["inventory"].values()))
+    reg(p04_det["base_maps_read"], *p04_det["label_fiber_spread"])
+    reg(*[int(v) for v in p04_det["label_fiber_histogram"].values()])
+    reg(p04_det["free_items_at_every_base_map"])
     LD.gate("G-WELD-REFINED",
             "THE DICTIONARY SURVIVES THE STEP, AND ITS SURVIVAL IS "
             "COMPLETION-RELATIVE.  The refined arena's relation is built "
@@ -2423,24 +2744,150 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "individually against 1, so the refined weld carries ZERO FREE "
             "ITEMS.  Under paper-04's own declared minimal completion the "
             "same carrier and the same edge set give a record that is not "
-            "link-constant and the detector returns free items"
-            % proc_row.get("isomorphisms"),
-            proc_row["fate"] == "FOUND-candidate"
+            "link-constant and the detector returns free items.  BOTH SIDES "
+            "ARE RE-READ AT EVERY BASE MAP: on the process-supplied side the "
+            "fibers are base-map-invariant; on paper-04's the LABEL fiber is "
+            "NOT, and what is invariant there is the FATE -- all three "
+            "inventory items are free at every one of the %d base maps, so "
+            "UNMOTIVATED does not depend on the reading map.  THE SCOPE IS "
+            "MEASURED, not left at one witness: all %d driven "
+            "surviving-stratum schedules induce the same process-side "
+            "relation and the same completion, so this verdict is a statement "
+            "about the driven stratum and not about one schedule"
+            % (proc_row.get("isomorphisms"), p04_det["base_maps_read"],
+               len(sup_foots)),
+            same_rel == same_comp == len(sup_foots) == 6
+            and proc_row["fate"] == "FOUND-candidate"
             and all(v == 1 for v in proc_row["inventory"].values())
+            and proc_row["fibers_base_map_invariant"]
             and cf_arena["is_an_isomorphism"]
             and cf_arena["zero_cells"] == 0
             and cf_arena["coarse_restored_cells"] == 27
             and p04_det["fate"] == "UNMOTIVATED"
             and len(p04_det["free_items"]) >= 1
+            and not p04_det["fibers_base_map_invariant"]
+            and len(p04_det["free_items"]) == 3
+            and p04_det["free_items_at_every_base_map"] == 3
+            and sum(p04_det["label_fiber_histogram"].values())
+                == p04_det["base_maps_read"]
             and arity_row["fate"] == "ARITY-DEAD",
-            "process-supplied: fate %s, isomorphisms %s, fibers %s, "
-            "canonical carrier iso %s with %d zero cells and %d of 27 coarse "
-            "cells restored; paper-04-minimal: fate %s fibers %s; "
-            "un-extended carrier %s"
+            "process-supplied: fate %s, isomorphisms %s, fibers %s "
+            "(base-map-invariant %s), canonical carrier iso %s with %d zero "
+            "cells and %d of 27 coarse cells restored; paper-04-minimal: fate "
+            "%s fibers %s, base-map-invariant %s, label-fiber spread %s over "
+            "%d base maps %s, free items at EVERY base map %d; the same "
+            "relation at %d of %d driven surviving-stratum schedules and the "
+            "same completion at %d; un-extended carrier %s"
             % (proc_row["fate"], proc_row.get("isomorphisms"),
-               proc_row["inventory"], cf_arena["is_an_isomorphism"],
+               proc_row["inventory"], proc_row["fibers_base_map_invariant"],
+               cf_arena["is_an_isomorphism"],
                cf_arena["zero_cells"], cf_arena["coarse_restored_cells"],
-               p04_det["fate"], p04_det["inventory"], arity_row["fate"]))
+               p04_det["fate"], p04_det["inventory"],
+               p04_det["fibers_base_map_invariant"],
+               p04_det["label_fiber_spread"], p04_det["base_maps_read"],
+               p04_det["label_fiber_histogram"],
+               p04_det["free_items_at_every_base_map"], same_rel,
+               len(sup_foots), same_comp, arity_row["fate"]))
+
+    # ---- THE ABSTRACT-SHAPE CENSUS, PER WITNESS (not per representative)
+    # The delivered run measured the abstract shape at ONE representative of
+    # each dead class and counted the edge count exhaustively; an edge count
+    # is necessary and not sufficient for isomorphism.  Here every one of the
+    # right-shaped witnesses is accounted for: the abstract relation depends
+    # only on WHICH declared triangles and lines the schedule realises, so the
+    # 864 fall into a measured number of distinct shapes and each shape is
+    # searched for an isomorphism onto the refined lattice.
+    shape_reps, shape_counts = {}, Counter()
+    for a in range(len(triples)):
+        for b in range(len(triples)):
+            gs = groups_of[a] + groups_of[b]
+            tri_s = frozenset(g for g in gs if g in TRISET)
+            lin_s = frozenset(g for g in gs if g in LINESET)
+            if (len(COVERED) + 3 * len(tri_s) + 3 * len(lin_s)
+                    != len(SITES6) * len(I7_LINKS)):
+                continue
+            shape_counts[(tri_s, lin_s)] += 1
+            shape_reps.setdefault((tri_s, lin_s), (a, b))
+    abstract_ok, abstract_shapes = 0, 0
+    for key in sorted(shape_reps, key=lambda k: shape_reps[k]):
+        a_s, b_s = shape_reps[key]
+        rel_s = process_relation(groups_of[a_s] + groups_of[b_s])
+        abstract_shapes += 1
+        if first_isomorphism(OBJS, {e for e, n in rel_s.items() if n > 0},
+                             SITES6, I7_LINKS, LREF):
+            abstract_ok += shape_counts[key]
+    abstract_ok = mutate("MUT-ABSTRACT", abstract_ok, abstract_ok - 1)
+    right_classes = [k for k in sorted(supply_rows)
+                     if (len(COVERED) + 3 * k[0] + 3 * k[1]
+                         == len(SITES6) * len(I7_LINKS))
+                     and k != (len(TRIANGLES), 0)]
+    rsq_names = ["R6-REFINED@DEAD-triangles%d-lines%d" % k
+                 for k in right_classes]
+    rsq_rows = [r for r in dead_rows if r["arena"] in rsq_names]
+    n_right = sum(shape_counts.values())
+    n_792 = n_right - canon_true
+    abstract_row = {
+        "witnesses_with_the_refined_lattices_edge_count": n_right,
+        "distinct_abstract_shapes": abstract_shapes,
+        "abstractly_isomorphic_to_the_refined_lattice": abstract_ok,
+        "right_shaped_without_the_carrier": n_792,
+        "classes_right_shaped_without_the_carrier": {
+            "triangles-%d|lines-%d" % k: len(supply_rows[k])
+            for k in right_classes},
+        "rsq_standard_verdicts": sorted({r["fate"] for r in rsq_rows}),
+        "rsq_maps": sorted({r.get("isomorphisms", r.get("quotient_maps"))
+                            for r in rsq_rows}),
+        "rsq_fibers": sorted({str(sorted(r["inventory"].values()))
+                              for r in rsq_rows}),
+        "rsq_free_items": sorted({str(r["free_items"]) for r in rsq_rows}),
+        "canonical_carrier_zero_cells": {
+            r["arena"].split("@")[1]: r["canonical_carrier"]["zero_cells"]
+            for r in rsq_rows},
+        "canonical_carrier_is_an_isomorphism": sorted(
+            {r["canonical_carrier"]["is_an_isomorphism"] for r in rsq_rows}),
+        "reading": ("structural adequacy is not carrier adequacy: the RSQ "
+                   "standard's own verdict -- FOUND, fibers 1/1/1, zero free "
+                   "items -- is attained by relations whose canonical "
+                   "process-supplied carrier is not an isomorphism at all.  "
+                   "COUNTING-ONLY: no measure on the witness space is "
+                   "declared"),
+    }
+    R["dictionary"]["abstract_census"] = abstract_row
+    reg(n_right, n_792, abstract_ok, abstract_shapes,
+        *sorted(abstract_row["canonical_carrier_zero_cells"].values()))
+    LD.gate("G-ABSTRACT-CENSUS",
+            "THE ABSTRACT SHAPE IS CENSUSED PER WITNESS, AND THE 792 PASS THE "
+            "RSQ STANDARD'S OWN VERDICT.  The abstract relation is a function "
+            "of the realised triangle and line sets alone, so the %d witnesses "
+            "carrying the refined lattice's edge count fall into %d distinct "
+            "shapes; each shape is searched for an isomorphism onto the "
+            "refined lattice and every witness is accounted for.  The %d that "
+            "are NOT canonical-carrier isomorphisms are then run through the "
+            "detector at the RSQ standard: they must return FOUND-candidate "
+            "with zero free items and fibers 1/1/1 while the canonical "
+            "carrier on them is not an isomorphism -- the structure the corpus "
+            "declares dictionaries by does not separate them from the real one"
+            % (n_right, abstract_shapes, n_792),
+            abstract_ok == n_right == right_shape
+            and n_792 == n_right - canon_true
+            and sum(len(supply_rows[k]) for k in right_classes) == n_792
+            and abstract_row["rsq_standard_verdicts"] == ["FOUND-candidate"]
+            and abstract_row["rsq_free_items"] == ["[]"]
+            and abstract_row["rsq_fibers"] == ["[1, 1, 1]"]
+            and abstract_row["canonical_carrier_is_an_isomorphism"] == [False]
+            and all(v > 0 for v in
+                    abstract_row["canonical_carrier_zero_cells"].values()),
+            "right-shaped witnesses %d in %d distinct shapes, abstractly "
+            "isomorphic %d, right-shaped without the carrier %d (classes %s), "
+            "RSQ verdicts %s with maps %s, fibers %s, free items %s; "
+            "canonical carrier an isomorphism %s with zero cells %s"
+            % (n_right, abstract_shapes, abstract_ok, n_792,
+               abstract_row["classes_right_shaped_without_the_carrier"],
+               abstract_row["rsq_standard_verdicts"],
+               abstract_row["rsq_maps"], abstract_row["rsq_fibers"],
+               abstract_row["rsq_free_items"],
+               abstract_row["canonical_carrier_is_an_isomorphism"],
+               abstract_row["canonical_carrier_zero_cells"]))
 
     # ---- the two-way rule, and the order-independence comparator
     plain = len(graph_isomorphisms(ACTORS, {k for k, n in crel.items()
@@ -2530,6 +2977,13 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     # ---- the iteration ceiling, as an arena theorem
     minn = min(field.values())
     ceil_here = minn.bit_length() - 1          # floor(log2 minn), exact
+    # MEASURED, not typed: the ceiling AFTER the step is read off the refined
+    # record's own minimum count, and the number of steps taken is read off
+    # the two lattices actually built (side 3 -> side 6 is one doubling).
+    refined_min = min(cts[z][l] for z in SITES6 for l in I7_LINKS)
+    ceil_after = refined_min.bit_length() - 1
+    side_coarse = max(x[0] for x in SITES) + 1
+    steps_taken = (LREF // side_coarse).bit_length() - 1
     ladder = []
     for m in range(1, 9):
         k = m.bit_length() - 1
@@ -2540,7 +2994,9 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     ceil_row = {
         "min_count": minn,
         "ceiling_here": ceil_here,
-        "steps_taken": 1,
+        "steps_taken": steps_taken,
+        "coarse_side": side_coarse,
+        "refined_side": LREF,
         "law": "no record admits more than floor(log2(min n_l)) consecutive "
                "dyadic steps, because after k steps an interval of count n has "
                "been partitioned into 2^k strictly positive parts",
@@ -2549,13 +3005,20 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         "budget_law": "a structurally live schedule reaches the link-constant "
                       "record (m, m, m) at exactly R = 3m",
         "ladder": ladder,
-        "refined_min_count_after_the_step": min(cts[z][l] for z in SITES6
-                                                for l in I7_LINKS),
-        "ceiling_after_the_step": 0,
+        "refined_min_count_after_the_step": refined_min,
+        "ceiling_after_the_step": ceil_after,
         "dyadic_budgets": [r["R"] for r in ladder if r["L_equals_R"]],
+        "dyadic_m": [r["m"] for r in ladder if r["L_equals_R"]],
+        "places_are_quadratic_in_the_budget": [
+            r["m"] for r in ladder if r["places"] == r["R"] ** 2],
     }
     R["ceiling"] = ceil_row
-    reg(minn, ceil_here, 4, 12, *[r["R"] for r in ladder])
+    reg(minn, ceil_here, 4, 12, steps_taken, side_coarse, LREF, refined_min,
+        ceil_after, *[r["R"] for r in ladder])
+    reg(*[r["m"] for r in ladder])
+    reg(*[r["ceiling"] for r in ladder])
+    reg(*[r["refined_L"] for r in ladder])
+    reg(*[r["places"] for r in ladder])
     ch = mutate("MUT-CEILING", ceil_here, 2)
     LD.gate("G-CEILING",
             "EXACTLY ONE STEP IS POSSIBLE HERE, AND THE LADDER IS COMPUTED "
@@ -2565,20 +3028,27 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "the refined record's own minimum count is 1, so its ceiling is "
             "0 and no second step exists.  A second step needs a minimum "
             "count of 4, and by the budget law the link-constant record "
-            "(4, 4, 4) is reachable only at R = 12",
-            ch == 1 and ceil_row["refined_min_count_after_the_step"] == 1
-            and ceil_row["ceiling_after_the_step"] == 0
+            "(4, 4, 4) is reachable only at R = 12.  THE SCALING IS READ OFF "
+            "THE LADDER RATHER THAN GLOSSED: the reachable side is at most R "
+            "with equality exactly at the dyadic budgets, so DEPTH is "
+            "exponential in the budget (k levels need R = 3.2^k) while PLACES "
+            "are quadratic -- exactly R^2 at the dyadic budgets",
+            ch == 1 and refined_min == 1 and ceil_after == 0
+            and steps_taken == 1 and LREF == side_coarse * 2 ** steps_taken
             and [r for r in ladder if r["m"] == 4][0]["R"] == 12
             and [r for r in ladder if r["m"] == 4][0]["ceiling"] == 2
-            and all(r["places"] == (3 * 2 ** r["ceiling"]) ** 2
-                    for r in ladder),
-            "min count %d, ceiling here %d, steps taken 1, refined min count "
-            "%d, ceiling after the step %d, a second step needs min count 4 "
-            "at R = %d, dyadic budgets %s"
-            % (minn, ch, ceil_row["refined_min_count_after_the_step"],
-               ceil_row["ceiling_after_the_step"],
-               [r for r in ladder if r["m"] == 4][0]["R"],
-               ceil_row["dyadic_budgets"]))
+            and all(r["refined_L"] <= r["R"] for r in ladder)
+            and ([r["m"] for r in ladder if r["L_equals_R"]]
+                 == ceil_row["places_are_quadratic_in_the_budget"]
+                 == [1, 2, 4, 8]),
+            "min count %d, ceiling here %d, steps taken %d (side %d -> %d), "
+            "refined min count %d, ceiling after the step %d, a second step "
+            "needs min count 4 at R = %d, dyadic budgets %s at m %s, places = "
+            "R^2 exactly at m %s"
+            % (minn, ch, steps_taken, side_coarse, LREF, refined_min,
+               ceil_after, [r for r in ladder if r["m"] == 4][0]["R"],
+               ceil_row["dyadic_budgets"], ceil_row["dyadic_m"],
+               ceil_row["places_are_quadratic_in_the_budget"]))
     SEAL.take("SEAL-CEILING", R)
 
     # ---- the DIA row
@@ -2633,18 +3103,52 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                          sort_keys=True, default=str)
     surface = surface + " ".join(g["statement"] + " " + g["evidence"]
                                  for g in LD.rows)
-    if mut("MUT-WALL-BHS"):
-        surface = surface + (" the sprinkling is Lorentz invariant at this "
-                             "arena and the Poisson process is the measure")
-    if mut("MUT-WALL-KR"):
-        surface = surface + (" the Myrheim-Meyer dimension estimate of this "
-                             "record is 2 and no height control is taken")
-    if mut("MUT-WALL-COSMO"):
+    if mut("MUT-WALL-SURFACE"):
         surface = surface + (" the universe expands as the record refines "
                              "and new space is created by the process")
     ptxt = paper_text if paper_text is not None else ""
-    walls = {}
-    l1_hits = [BANNED_L1] if match_needle(ptxt, BANNED_L1) else []
+    # THE SECOND LEG: THE OBJECT UNDER TEST ITSELF.  A wall that scans only
+    # the declared measurement surface is a constraint on the receipt, and the
+    # pin's walls are constraints on the PAPER.  The declared abstention
+    # windows -- the walls' own denials, which necessarily name the topic they
+    # decline -- are the only text removed, each one required to be PRESENT
+    # word for word and required to FIRE, so this is a declared, verified,
+    # must-fire exemption table and not a blanket strip.
+    ptxt_wall = canon(ptxt).lower()
+    abstentions = []
+    for _wname, _wsent in WALL_ABSTENTIONS:
+        _wc = canon(_wsent).lower()
+        _occ = ptxt_wall.count(_wc)
+        abstentions.append({"wall": _wname, "sentence": _wsent,
+                            "chars": len(_wc), "occurrences": _occ})
+        ptxt_wall = ptxt_wall.replace(_wc, " ")
+    if mut("MUT-WALL-BHS"):
+        ptxt_wall = ptxt_wall + (" the sprinkling here is lorentz invariant "
+                                 "at this arena")
+    if mut("MUT-WALL-KR"):
+        ptxt_wall = ptxt_wall + (" the myrheim-meyer dimension estimate of "
+                                 "this record is 2 and no height control is "
+                                 "taken")
+    if mut("MUT-WALL-COSMO"):
+        ptxt_wall = ptxt_wall + (" the universe expands as the record refines "
+                                 "and new space is created by the process")
+    surf = canon(surface).lower()
+    abst_missing = [r["wall"] for r in abstentions if r["occurrences"] < 1]
+
+    def wall_leg(nm):
+        """the SAME declared needles on both legs."""
+        return ([w for w in WALL_NEEDLES[nm] if w in surf],
+                [w for w in WALL_NEEDLES[nm] if w in ptxt_wall]
+                if paper_text is not None else [])
+
+    walls = {"abstention_windows": abstentions,
+             "needles": {k: list(v) for k, v in sorted(WALL_NEEDLES.items())},
+             "legs": ["THE-DECLARED-MEASUREMENT-SURFACE",
+                      "THE-OBJECT-UNDER-TEST"],
+             "abstention_windows_missing": abst_missing}
+    # the L-1 ban is a FORBIDDEN string, so it case-folds on both sides too
+    l1_hits = [BANNED_L1] if match_needle(ptxt.lower(),
+                                          BANNED_L1.lower()) else []
     if mut("MUT-WALL-L1"):
         l1_hits = l1_hits + ["injected"]
     walls["L1"] = {
@@ -2660,59 +3164,74 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     LD.gate("G-WALL-L1",
             "L-1 IS ARGUED BEFORE ANY TEST AND THEN DECLINED.  The sentence "
             "retracted in 2026 is not reproduced anywhere in the object under "
-            "test -- the gate whitespace-normalises, ASCII-folds and strips "
-            "markdown prefixes from both sides, so a line-wrapped or "
-            "blockquoted injection dies too -- and no order-level covariance "
-            "test is run",
+            "test -- the gate whitespace-normalises, ASCII-folds, case-folds "
+            "and strips markdown prefixes from both sides, so a line-wrapped, "
+            "blockquoted or re-capitalised injection dies too -- and no "
+            "order-level covariance test is run",
             not l1_hits, "banned-sentence hits %d" % len(l1_hits))
 
-    bhs = [w for w in ("lorentz invariant", "lorentz-invariant",
-                       "poisson sprinkling", "sprinkling")
-           if w in canon(surface).lower()]
-    walls["BHS"] = {"hits": bhs, "abstention": (
+    bhs_s, bhs_p = wall_leg("BHS")
+    walls["BHS"] = {"surface_hits": bhs_s, "paper_hits": bhs_p,
+                    "abstention": (
         "a Poisson sprinkling admits no Lorentz-invariant finite-valency "
         "graph and these records are finite-valency by construction, so "
         "running the test would manufacture a false negative; none is run")}
     LD.gate("G-WALL-BHS",
-            "NO SPRINKLING-GRADE LORENTZ-INVARIANCE READING.  The abstention "
-            "is measured rather than asserted: this run's DECLARED "
-            "MEASUREMENT SURFACE -- every measured receipt key together with "
-            "the statement and evidence of every gate evaluated -- is scanned "
-            "for a sprinkling-grade reading, and the declared falsifier "
-            "writes one into that surface and dies here",
-            not bhs, "sprinkling-grade hits in the declared surface: %s"
-            % (bhs or "none"))
+            "NO SPRINKLING-GRADE LORENTZ-INVARIANCE READING, ON BOTH LEGS.  "
+            "The abstention is measured rather than asserted, and it is "
+            "measured where a reader would find a violation: this run's "
+            "DECLARED MEASUREMENT SURFACE -- every measured receipt key "
+            "together with the statement and evidence of every gate evaluated "
+            "-- AND the OBJECT UNDER TEST itself, scanned with the same "
+            "declared needles after the declared abstention windows (the "
+            "wall's own denials, each required present and required to fire) "
+            "are removed.  The declared falsifier writes a sprinkling-grade "
+            "reading into the paper leg and dies here; the surface leg runs "
+            "the same scanner and is falsified at G-WALL-COSMO",
+            not bhs_s and not bhs_p,
+            "sprinkling-grade hits -- declared surface: %s; object under "
+            "test: %s" % (bhs_s or "none", bhs_p or "none"))
 
-    kr = [w for w in ("myrheim", "dimension estimate", "max-shatter",
-                      "height control")
-          if w in canon(surface).lower()]
-    walls["KR"] = {"hits": kr, "dimension_readings_taken": 0}
+    kr_s, kr_p = wall_leg("KR")
+    walls["KR"] = {"surface_hits": kr_s, "paper_hits": kr_p,
+                   "dimension_readings_taken": 0}
     LD.gate("G-WALL-KR",
-            "NO DIMENSION READING, SO NO HEIGHT CONTROL IS OWED.  This unit "
-            "takes no chart width, no Myrheim-Meyer estimate and no "
-            "max-shatter reading; the same declared surface is scanned for "
-            "one, and the declared falsifier writes one in and dies here",
-            not kr, "dimension-reading hits in the declared surface: %s"
-            % (kr or "none"))
+            "NO DIMENSION READING, SO NO HEIGHT CONTROL IS OWED, ON BOTH "
+            "LEGS.  This unit takes no chart width, no Myrheim-Meyer estimate "
+            "and no max-shatter reading; the declared surface AND the object "
+            "under test are both scanned for one with the same needles, and "
+            "the declared falsifier writes one into the paper leg and dies "
+            "here",
+            not kr_s and not kr_p,
+            "dimension-reading hits -- declared surface: %s; object under "
+            "test: %s" % (kr_s or "none", kr_p or "none"))
 
-    cosmo = [w for w in ("universe expands", "new space is created",
-                         "cosmological", "expansion of space", "big bang")
-             if w in canon(surface).lower()]
+    cosmo_s, cosmo_p = wall_leg("COSMO")
     stamp_ok = match_needle(
         ptxt, "the new places are refined intervals of the declared record")
-    walls["COSMO"] = {"hits": cosmo, "description_stamp_present": stamp_ok,
+    walls["COSMO"] = {"surface_hits": cosmo_s, "paper_hits": cosmo_p,
+                      "description_stamp_present": stamp_ok,
                       "stamp": places["description_stamp"]}
     LD.gate("G-WALL-COSMO",
-            "NO COSMOLOGICAL READING, AND THE NEW-PLACES LANGUAGE IS "
-            "CONFINED.  Refinement here is a measured operation on a pinned "
-            "record, never an expansion narrative: the declared measurement "
-            "surface is scanned for an expansion reading and the declared "
-            "falsifier writes one in and dies here; and the paper must carry, "
-            "word for word, the stamp confining the new places to the "
-            "measured interval and site structure",
-            not cosmo and (stamp_ok or paper_text is None),
-            "cosmological hits %s, description stamp present in the object "
-            "under test %s" % (cosmo or "none", stamp_ok))
+            "NO COSMOLOGICAL READING, ON BOTH LEGS, AND THE NEW-PLACES "
+            "LANGUAGE IS CONFINED.  Refinement here is a measured operation "
+            "on a pinned record, never an expansion narrative: the declared "
+            "measurement surface AND the object under test are both scanned "
+            "for an expansion reading, one declared falsifier writes one into "
+            "the paper and another writes one into the surface, and both die "
+            "here; every declared abstention window must be present in the "
+            "object under test and must fire; and the paper must carry, word "
+            "for word, the stamp confining the new places to the measured "
+            "interval and site structure",
+            not cosmo_s and not cosmo_p
+            and (not abst_missing or paper_text is None)
+            and (stamp_ok or paper_text is None),
+            "cosmological hits -- declared surface: %s; object under test: "
+            "%s; abstention windows %d, occurrences %s, missing %s; "
+            "description stamp present in the object under test %s"
+            % (cosmo_s or "none", cosmo_p or "none", len(abstentions),
+               [r["occurrences"] for r in abstentions],
+               abst_missing or "none", stamp_ok))
 
     named = ("The induced form is NAMED AND NOT READ: q = [[1, -1/2], "
              "[-1/2, 1]] is a positive definite Euclidean form on a "
@@ -2751,6 +3270,14 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         {"quantity": "determined refined intervals",
          "value": "%d of %d" % (len(COVERED), places["refined_intervals"]),
          "stamp": "COUNTING-ONLY", "reason": "same"},
+        {"quantity": "right-shaped witnesses abstractly isomorphic to the "
+                     "refined lattice",
+         "value": "%d of %d" % (abstract_ok, n_right),
+         "stamp": "COUNTING-ONLY", "reason": "same"},
+        {"quantity": "right-shaped witnesses whose canonical carrier is not "
+                     "an isomorphism",
+         "value": "%d of %d" % (n_792, n_right),
+         "stamp": "COUNTING-ONLY", "reason": "same"},
     ]
     if mut("MUT-MEASURE"):
         stamps = stamps + [{"quantity": "an unstamped fraction",
@@ -2758,16 +3285,54 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     R["measure_stamps"] = stamps
     unstamped = [s["quantity"] for s in stamps
                  if s["stamp"] not in ("COUNTING-ONLY", "MEASURE-DECLARED")]
+    # E-24 IS A SCAN OF WHAT THE PAPER PUBLISHES, NOT A SELF-LIST.  The gate
+    # used to check only the rows this unit had typed into its own table, so
+    # an unstamped witness-space fraction and an explicit typicality claim
+    # written into the paper both survived at exit 0.
+    stamped_pairs = {(mm.group(1).replace(",", ""),
+                      mm.group(2).replace(",", ""))
+                     for s in stamps
+                     for mm in re.finditer(r"(\d[\d,]*)\s+of\s+(\d[\d,]*)",
+                                           s["value"])}
+    ptxt_e24 = canon(ptxt).lower() if paper_text is not None else ""
+    if mut("MUT-TYPICALITY"):
+        ptxt_e24 = ptxt_e24 + (" six triangles and three lines occur at 324 "
+                               "of the 5,184 witnesses, so that class is "
+                               "typical")
+    e24_hits = [(a.replace(",", ""), b.replace(",", ""))
+                for a, b in E24_FRACTION.findall(ptxt_e24)]
+    e24_unstamped = sorted({"%s of %s" % h for h in e24_hits
+                            if h not in stamped_pairs})
+    typ = sorted({w for w in E24_TYPICALITY
+                  if re.search(r"(?<![a-z])%s(?![a-z])" % re.escape(w),
+                               ptxt_e24)})
+    R["measure_scan"] = {
+        "declared_configuration_spaces": list(E24_SPACES),
+        "fractions_found_in_the_object_under_test": sorted(
+            {"%s of %s" % h for h in e24_hits}),
+        "fractions_not_covered_by_a_stamped_row": e24_unstamped,
+        "typicality_probes": list(E24_TYPICALITY),
+        "typicality_violations": typ,
+    }
     LD.gate("G-MEASURE-STAMP",
             "NO COUNT BECOMES A PROBABILITY WITHOUT A DECLARED MEASURE "
-            "(E-24).  Every fraction over a configuration space this unit "
-            "publishes is listed with its own stamp and reason; a row without "
-            "one dies here.  This unit declares no measure on the witness "
-            "space, so every one of its fractions is COUNTING-ONLY and no "
-            "typicality claim rests on any of them",
-            not unstamped, "stamped rows %d, unstamped %s"
-            % (len(stamps), unstamped or "none"))
+            "(E-24), AND THE RULE IS ENFORCED ON THE OBJECT UNDER TEST RATHER "
+            "THAN ON A SELF-LIST.  Every fraction over a configuration space "
+            "this unit publishes is listed with its own stamp and reason; and "
+            "the object under test is then SCANNED for every `N of M` over a "
+            "declared configuration space (%s) with each hit required to be "
+            "covered by a stamped row, and for every assertive typicality "
+            "word.  This unit declares no measure on the witness space, so "
+            "every one of its fractions is COUNTING-ONLY and no typicality "
+            "claim rests on any of them" % ", ".join(E24_SPACES),
+            not unstamped and not e24_unstamped and not typ,
+            "stamped rows %d, unstamped %s; fractions found in the object "
+            "under test %s, uncovered %s; typicality violations %s"
+            % (len(stamps), unstamped or "none",
+               R["measure_scan"]["fractions_found_in_the_object_under_test"]
+               or "none", e24_unstamped or "none", typ or "none"))
     SEAL.take("SEAL-MEASURE", R)
+    SEAL.take("SEAL-MEASURE-SCAN", R)
 
     # --------------------------------------------------------------- SEC 11
     say("\n[SEC 11] THE VERDICT, THE FALSIFIER CENSUS AND THE PAPER GATES")
@@ -2827,9 +3392,19 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         "carrier_isomorphism_witnesses": canon_true,
         "right_edge_count_witnesses": right_shape,
         "live_cut_loci": n_live, "ceiling": ceil_here,
-        "laws_non_empty": 2, "gates": len(LD.rows) + 1,
+        "abstractly_isomorphic_witnesses": abstract_ok,
+        "right_shaped_without_the_carrier": n_792,
+        # DERIVED FROM THE REGISTRIES THEMSELVES, never typed and never a
+        # typed offset from a partial ledger: G-COVERAGE forces the declared
+        # gate registry to equal the set this run actually evaluates, and
+        # G-TOTALS-COMPUTED holds every published total against its own
+        # registry's length.
+        "laws_non_empty": 2, "gates": len(GATE_REGISTRY),
+        "seals": len(SEALED_PATHS),
         "mutants": len(MUTANTS), "verbatim_anchors": len(VERBATIM),
-        "path_value_anchors": len(PATH_ANCHORS), "sources": len(SOURCES),
+        "path_value_anchors": len(PATH_ANCHORS),
+        "path_value_anchor_receipts": len({a[0] for a in PATH_ANCHORS}),
+        "sources": len(SOURCES),
     }
     reg(*[v for v in R["counts"].values() if isinstance(v, int)])
     payload_probe = json.dumps(R, indent=1, sort_keys=True, default=str)
@@ -2865,7 +3440,11 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         SEAL.take("SEAL-PAPER-CLAIMS", R)
 
         rows = paper_tables(R)
-        R["paper_tables"] = {"rendered": rows}
+        R["paper_tables"] = {
+            "rendered": rows, "tables": 6,
+            "choice_inventory": [
+                {"n": n, "item": it, "class": kl, "fiber": fb, "binds": bd}
+                for n, it, kl, fb, bd in choice_inventory(R)]}
         trow = [r for r in rows if canon(r) not in canon(paper_text)]
         LD.gate("G-PAPER-TABLES",
                 "TABLES RENDER AS CLAIMS (E-22).  Every published table row is "
@@ -2880,27 +3459,41 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         LD.gate("G-PAPER-COVERAGE",
                 "EVERY NUMERAL IN THE PAPER IS BACKED, FENCES AND INLINE "
                 "SPANS INCLUDED (#20 + E-22).  The scan covers the WHOLE "
-                "object under test -- prose, tables, inline code spans and the "
-                "fenced verdict blocks -- against this run's registered "
-                "numbers, the receipt it publishes and a declared exemption "
-                "table every row of which must fire; and the fenced blocks are "
-                "gated by MULTISET equality against the declared copy count, "
-                "so a second forged copy of a verdict fence cannot hide behind "
-                "a clean one",
+                "object under test -- prose, tables, inline code spans, "
+                "section references, heading numbers and the fenced verdict "
+                "blocks -- against this run's registered numbers, the receipt "
+                "it publishes and a declared exemption table every row of "
+                "which must fire; the fenced blocks are gated by MULTISET "
+                "equality against the declared copy count, so a second forged "
+                "copy of a verdict fence cannot hide behind a clean one; the "
+                "spelled numerals are read through nineteen AND through the "
+                "hyphenated compounds; and NO BLANKET WHITELIST REMAINS -- "
+                "the only text removed before the scan is the backticked "
+                "sha256-12 spans, every one of which must be one of this "
+                "unit's declared source digests",
                 not cov["unbacked"] and not cov["word_numerals_unbacked"]
                 and not cov["exemptions_that_never_fire"]
+                and not cov["undeclared_digest_spans"]
                 and cov["fenced_block_multiset_matches"]
                 and cov["fenced_blocks_scanned"] == cov["fenced_blocks_found"]
                 and cov["fenced_numerals_scanned"] > 0
-                and cov["inline_span_numerals_scanned"] > 0,
-                "numerals scanned %d (fenced %d, inline spans %d, words %d), "
-                "unbacked %s, word-unbacked %s, dead exemptions %s, fence "
-                "multiset matches %s (%d of %d)"
-                % (cov["numerals_scanned"], cov["fenced_numerals_scanned"],
+                and cov["inline_span_numerals_scanned"] > 0
+                and cov["digest_spans_found"] > 0,
+                "numerals scanned %d of %d raw (fenced %d, inline spans %d, "
+                "words %d; removed %d, all of them digest spans), unbacked "
+                "%s, word-unbacked %s, dead exemptions %s, digest spans %d "
+                "all declared %s, fence multiset matches %s (%d of %d)"
+                % (cov["numerals_scanned"],
+                   cov["raw_numeral_tokens_in_the_object"],
+                   cov["fenced_numerals_scanned"],
                    cov["inline_span_numerals_scanned"],
-                   cov["word_numerals_scanned"], cov["unbacked"] or "none",
+                   cov["word_numerals_scanned"],
+                   cov["tokens_removed_before_the_scan"],
+                   cov["unbacked"] or "none",
                    cov["word_numerals_unbacked"] or "none",
                    cov["exemptions_that_never_fire"] or "none",
+                   cov["digest_spans_found"],
+                   not cov["undeclared_digest_spans"],
                    cov["fenced_block_multiset_matches"],
                    cov["fenced_blocks_found"], cov["fenced_blocks_expected"]))
 
@@ -2919,18 +3512,26 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         LD.gate("G-PAPER-CLAIM-POLARITY",
                 "THE PAPER DOES NOT ASSERT THE OPPOSITE OF A MEASURED FATE.  "
                 "%d polarity probes, each the negation of a fate this run "
-                "measured, are searched for in the object under test; the "
-                "declared falsifier appends one and dies here"
-                % len(pol["probes"]),
+                "measured, are searched for in the object under test, "
+                "case-folded on both sides because the probe is a FORBIDDEN "
+                "string and a sentence-initial capital would otherwise evade "
+                "it; the declared falsifier appends a capitalised one and "
+                "dies here" % len(pol["probes"]),
                 not pol["violations"], "probes %d, violations %s"
                 % (len(pol["probes"]), pol["violations"] or "none"))
         SEAL.take("SEAL-POLARITY", R)
     else:
         R["paper_claims"] = {"rendered": paper_claims(R),
                              "object_under_test": None}
-        R["paper_tables"] = {"rendered": paper_tables(R)}
+        R["paper_tables"] = {
+            "rendered": paper_tables(R), "tables": 6,
+            "choice_inventory": [
+                {"n": n, "item": it, "class": kl, "fiber": fb, "binds": bd}
+                for n, it, kl, fb, bd in choice_inventory(R)]}
         R["paper_coverage"] = {"numerals_scanned": 0, "unbacked": [],
                                "declared_exemptions": [],
+                               "undeclared_digest_spans": [],
+                               "blanket_strips": [],
                                "fenced_block_multiset_matches": True}
         R["polarity"] = {"probes": [], "violations": []}
         for sid in ("SEAL-PAPER-CLAIMS", "SEAL-PAPER-TABLES",
@@ -3032,14 +3633,20 @@ MUTANTS = [
      "adds a hit to the L-1 banned-sentence list l1_hits, so the retracted "
      "sentence reads as present", "l1_hits"),
     ("MUT-WALL-BHS", "G-WALL-BHS",
-     "writes a sprinkling-grade Lorentz-invariance reading into the declared "
-     "measurement surface", "surface"),
+     "writes a sprinkling-grade Lorentz-invariance reading into the copy of "
+     "the OBJECT UNDER TEST the wall scans, ptxt_wall -- the leg a reader "
+     "actually reads", "ptxt_wall"),
     ("MUT-WALL-KR", "G-WALL-KR",
      "writes a Myrheim-Meyer dimension reading with no height control into "
-     "the declared measurement surface", "surface"),
+     "the copy of the OBJECT UNDER TEST the wall scans, ptxt_wall",
+     "ptxt_wall"),
     ("MUT-WALL-COSMO", "G-WALL-COSMO",
-     "writes an expansion-of-space reading into the declared measurement "
-     "surface", "surface"),
+     "writes an expansion-of-space reading into the copy of the OBJECT UNDER "
+     "TEST the wall scans, ptxt_wall", "ptxt_wall"),
+    ("MUT-WALL-SURFACE", "G-WALL-COSMO",
+     "writes an expansion-of-space reading into the DECLARED MEASUREMENT "
+     "SURFACE, so the second leg of the same scanner is falsified too",
+     "surface"),
     ("MUT-WALL-LORENTZ", "G-WALL-LORENTZ-NAMED",
      "deletes the mandatory naming sentence from the copy of the object under "
      "test the gate reads, ptxt_named", "ptxt_named"),
@@ -3084,8 +3691,40 @@ MUTANTS = [
      "perturbs the head string compared against the paper, headtxt",
      "headtxt"),
     ("MUT-POLARITY", "G-PAPER-CLAIM-POLARITY",
-     "appends a sentence asserting the opposite of a measured fate to the "
-     "text under test, hay", "hay"),
+     "appends a CAPITALISED sentence asserting the opposite of a measured "
+     "fate to the text under test, hay -- the form a sentence-initial "
+     "injection takes, which a case-sensitive probe does not see", "hay"),
+    ("MUT-CUT-LAW", "G-CUT-LAW",
+     "replaces the live-cut law's own prediction at m = 2 by 2, so the "
+     "formula 9m - 17 no longer agrees with the exhaustively measured live "
+     "locus count", "9 * 2 - 17"),
+    ("MUT-ABSTRACT", "G-ABSTRACT-CENSUS",
+     "drops one witness from the per-witness abstract-isomorphism count "
+     "abstract_ok, so the census no longer accounts for every right-shaped "
+     "witness", "abstract_ok"),
+    ("MUT-INCIDENCE", "G-DICTIONARY-CARRIER",
+     "puts the count of determined refined links verified to be "
+     "actor-in-pair incidences, inc_ok, off by one, so the carrier's first "
+     "edge class is no longer a bijection", "inc_ok"),
+    ("MUT-READ-LATE", "G-READS-DECLARED-FINAL",
+     "reads a further file into the SOURCE category AFTER the early "
+     "read-registry gate has passed, which is the read a mutable-state "
+     "injection makes", "read_text(os.path.join(REPO, PAPER_REL), \"SOURCE\")"),
+    ("MUT-TOTALS", "G-TOTALS-COMPUTED",
+     "adds one to the published gate total, so a typed total no longer equals "
+     "its own registry's length", "R[\"totals\"][\"gates\"]"),
+    ("MUT-TYPICALITY", "G-MEASURE-STAMP",
+     "writes an unstamped witness-space fraction and an explicit typicality "
+     "claim into the copy of the object under test E-24 scans, ptxt_e24",
+     "ptxt_e24"),
+    ("MUT-DIGEST", "G-PAPER-COVERAGE",
+     "adds an undeclared backticked sha256-12 span to the scanned body, so a "
+     "digest the frozen declaration does not carry would launder its digit "
+     "runs into the paper", "body"),
+    ("MUT-TABLE-LADDER", "G-PAPER-TABLES",
+     "swaps the arena theorem's ceiling column between the m = 4 and m = 3 "
+     "rows in the rendered ladder, rows, which is the forgery an unrendered "
+     "table could not catch", "rows"),
 ]
 MUTANT_NAMES = [m[0] for m in MUTANTS]
 
@@ -3132,11 +3771,16 @@ def mutant_hooks(src):
 
 NUMTOK = re.compile(r"\d[\d,]*")
 FENCE = re.compile(r"```(.*?)```", re.S)
-HEADNUM = re.compile(r"^#{1,6}\s*[\d.]+", re.M)
-SECREF = re.compile(r"§\s*[\d.]+")
+DIGEST_SPAN = re.compile(r"`([0-9a-f]{12})`")
 WORDTOK = re.compile(r"[a-z]+")
 FENCE_COPIES = 2       # DECLARED: the head and the verdict section, once each
 
+# E-22's THIRD rule: NO BLANKET WHITELISTS.  The delivered scanner stripped
+# section references and markdown heading numbers before scanning -- 47 of the
+# paper's 818 numeral tokens removed with nothing declared -- so a forged
+# section reference and a forged heading number both survived.  Neither strip
+# survives here: the ONLY text removed is the backticked sha256-12 digest
+# spans, and each of those must be one of this unit's declared source digests.
 NUMERAL_EXEMPTIONS = [
     ("30", "this paper's own number"),
     ("256", "the digest width inside the label sha256-12"),
@@ -3165,10 +3809,20 @@ def receipt_numbers(R):
                 walk(v)
     for key in MEASURED_KEYS + ("laws", "refined_status", "new_places",
                                 "compatibility", "provenance", "walls",
-                                "measure_stamps", "refinement_step",
+                                "measure_stamps", "measure_scan",
+                                "refinement_step",
                                 "process_supply", "splittable", "i7",
                                 "weld_coarse", "dictionary"):
-        if key in R:
+        if key not in R:
+            continue
+        if key == "provenance":
+            # A DIGEST IS NOT A MEASUREMENT.  Walking the 12-hex `declared`
+            # and `measured` fields put 32 digit runs into the allow list for
+            # no other reason, and a false measured number backed only by a
+            # digest's digits passed at exit 0.
+            walk([{k: v for k, v in p.items()
+                   if k not in ("declared", "measured")} for p in R[key]])
+        else:
             walk(R[key])
     return out
 
@@ -3229,7 +3883,8 @@ def verdict_segments(R):
         "STRUCTURE-IS-CHEAPER-THAN-THE-DICTIONARY -- REFINED-WELD=%s@"
         "EMBEDDING+QUOTIENT<AUT-%d|FIBERS-%d/%d/%d|ZERO-FREE-ITEMS> -- "
         "COMPLETION-RELATIVE:PAPER-04S-OWN-DECLARED-MINIMAL-COMPLETION-IS-"
-        "ADMISSIBLE-%d-OF-%d-BUT-%s(FIBERS-%d/%d/%d)>"
+        "ADMISSIBLE-%d-OF-%d-BUT-%s(FIBERS-%d/%s/%d:LABEL-FIBER-BASE-MAP-"
+        "VARIANT-SPREAD-%s;FREE-AT-EVERY-BASE-MAP-%d)>"
         % (dc["carrier"]["actors"], dc["carrier"]["pairs"],
            dc["carrier"]["carrier_size"],
            dc["carrier"]["determined_links_that_are_actor_in_pair_incidences"],
@@ -3248,8 +3903,11 @@ def verdict_segments(R):
            R["refined_status"]["admissible_sites_paper04_minimal"],
            R["new_places"]["refined_sites"], dc["fate_paper04_minimal"],
            dc["fibers_paper04_minimal"]["I-SITE-ASSIGNMENT"],
-           dc["fibers_paper04_minimal"]["I-DIRECTION-LABEL"],
-           dc["fibers_paper04_minimal"]["I-ORIENT"]))
+           "-OR-".join(str(v) for v
+                       in dc["label_fiber_spread_paper04_minimal"]),
+           dc["fibers_paper04_minimal"]["I-ORIENT"],
+           dc["label_fiber_spread_paper04_minimal"],
+           dc["free_items_at_every_base_map_paper04_minimal"]))
     segs.append(
         "LOR-A-CEILING-EXACTLY-%d-STEP<FLOOR-LOG2-MIN-N=FLOOR-LOG2-%d=%d;"
         "AFTER-THE-STEP-MIN-N-%d-CEILING-%d -- A-SECOND-STEP-NEEDS-MIN-N-%d-"
@@ -3361,8 +4019,13 @@ def reconstruct_from_serialized(text):
              + "-OF-" + str(pl["refined_sites"]) + "-BUT-"
              + dc["fate_paper04_minimal"] + "(FIBERS-"
              + str(dc["fibers_paper04_minimal"]["I-SITE-ASSIGNMENT"]) + "/"
-             + str(dc["fibers_paper04_minimal"]["I-DIRECTION-LABEL"]) + "/"
-             + str(dc["fibers_paper04_minimal"]["I-ORIENT"]) + ")>")
+             + "-OR-".join([str(v) for v
+                            in dc["label_fiber_spread_paper04_minimal"]])
+             + "/" + str(dc["fibers_paper04_minimal"]["I-ORIENT"])
+             + ":LABEL-FIBER-BASE-MAP-VARIANT-SPREAD-"
+             + str(dc["label_fiber_spread_paper04_minimal"])
+             + ";FREE-AT-EVERY-BASE-MAP-"
+             + str(dc["free_items_at_every_base_map_paper04_minimal"]) + ")>")
     o.append("LOR-A-CEILING-EXACTLY-" + str(cl["steps_taken"]) + "-STEP<"
              "FLOOR-LOG2-MIN-N=FLOOR-LOG2-" + str(cl["min_count"]) + "="
              + str(cl["ceiling_here"]) + ";AFTER-THE-STEP-MIN-N-"
@@ -3395,6 +4058,13 @@ def paper_claims(R):
     lw, cp, dc = R["laws"], R["compatibility"], R["dictionary"]
     ps, sg, cl, di = R["process_supply"], R["sig"], R["ceiling"], R["dia"]
     sp, dv, wc = R["splittable"], R["driven"], R["weld_coarse"]
+    rs, ab = R["refined_status"], dc["abstract_census"]
+    lab = sorted((int(k), v) for k, v
+                 in dc["label_fiber_histogram_paper04_minimal"].items())
+    if len(lab) != 2:
+        raise GateFail("G-PAPER-CLAIMS :: the label-fiber histogram is not "
+                       "two-valued: %s" % lab)
+    lab = [(str(a), str(b)) for a, b in lab]
     out = {
         "arena": "the concatenated six-round record carries count 2 at each "
                  "of the %d (site, link) cells individually, and its weld is "
@@ -3498,16 +4168,166 @@ def paper_claims(R):
                "at all"
                % (di["diagonal_new_sites"], pl["new_sites"],
                   di["unreached_without_the_diagonal"]),
+        # the declared window, RENDERED WITH ITS SPELLED NUMERALS: the paper
+        # spells this sentence out, and a spelled numeral above twelve was
+        # unscannable, so a forged window survived at exit 0.
+        "window": "**%s**, %s six-round schedules, %s at the surviving "
+                  "stratum, %s one per measured dead class, %s at the "
+                  "declared seed fan"
+                  % (dv["window_name"], word_of(dv["schedules_driven"]),
+                     word_of(dv["stratum_counts"]["W6-SUPPLIED"]),
+                     word_of(dv["dead_classes_declared"]),
+                     word_of(dv["stratum_counts"]["W6-SEEDFAN-k1"]
+                             + dv["stratum_counts"]["W6-SEEDFAN-k2"])),
+        "cut_law": "at budget R = 3m the live cut loci are the integers in "
+                   "[9, 9(m - 1)], so their number is 9m - 17: %s at m = 2, "
+                   "%s at m = 3 and %s at m = 4"
+                   % tuple(word_of(r["live_loci_predicted"])
+                           for r in ps["cut_law"]["ladder"][:3]),
+        "abstract": "all %d of the right-shaped witnesses are abstractly "
+                    "isomorphic to the refined lattice, and the %d whose "
+                    "canonical carrier is not an isomorphism return the RSQ "
+                    "standard's own verdict -- %s, %d isomorphisms, fibers "
+                    "1/1/1, zero free items"
+                    % (ab["abstractly_isomorphic_to_the_refined_lattice"],
+                       ab["right_shaped_without_the_carrier"],
+                       ab["rsq_standard_verdicts"][0], ab["rsq_maps"][0]),
+        "label_fiber": "the label fiber is base-map-variant, %s at %s of the "
+                       "%d base maps and %s at the other %s"
+                       % (lab[0][0], lab[0][1], dc[
+                           "base_maps_read_paper04_minimal"],
+                          lab[1][0], lab[1][1]),
+        "free_items": "the weld on it carries %s free items, and all %s are "
+                      "free at every one of the %d base maps"
+                      % (word_of(len(dc["free_items_paper04_minimal"])),
+                         word_of(dc[
+                             "free_items_at_every_base_map_paper04_minimal"]),
+                         dc["base_maps_read_paper04_minimal"]),
+        "p04_locus": "measured here it reaches it at %d of the %d sites it "
+                     "completes"
+                     % (rs["paper04_minimal_sites_on_the_diagonal_locus"],
+                        rs["paper04_minimal_sites_completed"]),
+        "scaling": "each further level of refinement costs a doubling of the "
+                   "process -- k levels need R = 3 x 2^k rounds -- while at "
+                   "the dyadic budgets the reachable place-count is exactly "
+                   "R^2: %s"
+                   % ", ".join("%d at R = %d" % (r["places"], r["R"])
+                               for r in cl["ladder"]
+                               if r["L_equals_R"] and r["m"] in (1, 2, 4, 8)),
+        "landing": "the step's output is the record vector (1, 1, 1) on %d "
+                   "places -- the same vector paper-19 committed on %d "
+                   "places, hence necessarily the same determinant %s"
+                   % (pl["refined_sites"], pl["coarse_sites"],
+                      sg["paper19_committed_det"]),
     }
     if mut("MUT-CLAIM"):
         out["places"] = out["places"].replace("grows", "does not grow")
     return out
 
 
+def choice_inventory(R):
+    """THE CHOICE INVENTORY AS RECEIPT DATA (E-22: tables render as claims).
+    The RSQ standard's own instrument was unrendered prose; every row is now a
+    receipt cell, including the row the verdict is entirely about -- the
+    EXTENDED CARRIER, which the delivered inventory did not carry."""
+    pl, dc = R["new_places"], R["dictionary"]
+    ps, cl = R["process_supply"], R["ceiling"]
+    c = dc["carrier"]
+    return [
+        (1, "the base object: `CONFLICT-GRID(3, R)`", "**forced**", "1",
+         "the committed constructor"),
+        (2, "the per-round budget: 3 groups of 3", "**forced**", "1",
+         "the committed cycle, driven"),
+        (3, "the site carrier: actors to the coarse sites", "**forced**", "1",
+         "the constructor's own actor naming"),
+        (4, "admissibility: the layer's own menu", "**forced**", "1",
+         "d42b1 driven directly"),
+        (5, "I7's readout and criterion", "**forced**", "1",
+         "HA, matched verbatim and recomputed"),
+        (6, "the split", "**forced**", "1",
+         "three independent routes agree: paper-04's arithmetic, paper-06's "
+         "symmetry, the process's own seam"),
+        (7, "R = 6 rather than R = 4", "**declared, VERDICT-DETERMINING**",
+         "1", "the pin; the R = 4 counterfactual is carried in every law row"),
+        (8, "the driven window W6", "**declared**", "1",
+         "§2, disclosed in the head; the exhaustive columns do not use "
+         "it"),
+        (9, "the seed rule", "**declared**", "3",
+         "the canonical transversals; the seed fan measures the record "
+         "invariant across them"),
+        (10, "the reading axis (EMBEDDING / QUOTIENT)", "**declared**", "2",
+         "weld 2's, carried unchanged; every row stamped"),
+        (11, "**the completion of the %d free links**"
+             % pl["refined_intervals_free"], "**measured**", "**2 declared**",
+         "§6.5 -- the process-supplied one is link-constant and keeps "
+         "the weld motivated; paper-04's own declared minimal one is "
+         "admissible at %d of %d and does not, and its label fiber is "
+         "base-map-variant with spread %s while all %d inventory items are "
+         "free at every one of the %d base maps"
+         % (R["refined_status"]["admissible_sites_paper04_minimal"],
+            pl["refined_sites"],
+            dc["label_fiber_spread_paper04_minimal"],
+            dc["free_items_at_every_base_map_paper04_minimal"],
+            dc["base_maps_read_paper04_minimal"])),
+        (12, "the R = 9 cut control", "**declared**", "1",
+         "§6.3 -- run across %s three-block schedules, outside the arena"
+         % com(ps["cut_law"]["m3_control_schedules"])),
+        (13, "the declared falsifier (one pair's divisions withheld)",
+         "**free**", "—",
+         "this unit's; supplies STRUCT-DEAD and COUNT-DEAD"),
+        (14, "**the extended carrier `SITE <- ACTOR (+) CO-DIVISION-PAIR`**",
+         "**declared, VERDICT-DETERMINING**",
+         "**1 tried; alternative %d-object carriers uncensused**"
+         % c["carrier_size"],
+         "§6.2 -- the necessity is forced (the %d-actor carrier is "
+         "ARITY-DEAD against %d sites); the objects are the committed "
+         "dictionary's second clause re-typed, not invented"
+         % (c["actors"], pl["refined_sites"])),
+    ]
+
+
 def paper_tables(R):
-    """the tables, RENDERED FROM THE RECEIPT: a table cell is a claim."""
+    """the tables, RENDERED FROM THE RECEIPT: a table cell is a claim.  ALL
+    SIX of the paper's tables render here.  The delivered instrument rendered
+    two of them, and four table forgeries -- a swapped arena-theorem ceiling
+    column, a swapped places column, a swapped law-census row and a false
+    provenance row -- all passed at exit 0."""
     pl, dc, ps = R["new_places"], R["dictionary"], R["process_supply"]
+    lw, cl, sp = R["laws"], R["ceiling"], R["splittable"]
+    a = R["arena"]
     rows = []
+    # (a) the declared arena, RUNBOOK section 15
+    rows.append("| boundary | the %d (site, link) cells of $(\\mathbb Z_3)^2$ "
+                "with links $e_1$, $e_2$, $e_1+e_2$, and the %d refined slots "
+                "the dyadic move creates |"
+                % (a["cells"], pl["refined_intervals"]))
+    rows.append("| family | the %s ordered concatenations of two of the %d "
+                "R = 3 I7-STRICT triples |"
+                % (com(a["ordered_witnesses"]), R["counts"]
+                   ["i7_strict_triples"]))
+    rows.append("| law | paper-06's per-interval invariant split law and "
+                "paper-04's DYADIC move, applied once |")
+    rows.append("| state | the split, and the completion of the free refined "
+                "links |")
+    rows.append("| arena | the co-division relation on actors, and its "
+                "extension to actor pairs |")
+    rows.append("| provenance | %d hash-pinned sources; %d (path, value) "
+                "anchors read out of %d committed receipts; %d verbatim "
+                "anchors |"
+                % (R["counts"]["sources"], R["counts"]["path_value_anchors"],
+                   R["counts"]["path_value_anchor_receipts"],
+                   R["counts"]["verbatim_anchors"]))
+    # (b) the three laws at R = 4 and at R = 6
+    rows.append("| paper-06, the per-interval invariant split law | "
+                "non-empty, unique at %d of %d intervals; empty at the record "
+                "level | **unique at %d of %d, and so at the record level** |"
+                % (lw["law_06"]["at_r4_intervals_unique"], sp["intervals"],
+                   lw["law_06"]["intervals_unique"], sp["intervals"]))
+    rows.append("| paper-04, the DYADIC move | empty (raw fiber 0) | **live, "
+                "raw fiber %d** |" % lw["law_04"]["raw_fiber_here"])
+    rows.append("| paper-09, the renewal-grain kernel | empty | **empty**, "
+                "all counts inside the hole |")
+    # (c) the new places
     rows.append("| sites | %d | %d |" % (pl["coarse_sites"],
                                          pl["refined_sites"]))
     rows.append("| intervals | %d | %d |" % (pl["coarse_intervals"],
@@ -3517,10 +4337,27 @@ def paper_tables(R):
                    pl["refined_intervals_determined_by_the_step"]))
     rows.append("| intervals left free | 0 | %d |"
                 % pl["refined_intervals_free"])
+    # (d) the completion census
     for k, v in sorted(ps["supply"]["census_by_class"].items()):
         rows.append("| %s | %d |" % (k, v))
+    # (e) the arena theorem's ladder
+    for r in cl["ladder"]:
+        if r["m"] not in (1, 2, 3, 4, 8):
+            continue
+        rows.append("| %d | %d | (%d, %d, %d) | %d | %d | %d |"
+                    % (r["m"], r["R"], r["m"], r["m"], r["m"], r["ceiling"],
+                       r["refined_L"], r["places"]))
+    # (f) the choice inventory
+    for n, item, klass, fiber, binds in choice_inventory(R):
+        rows.append("| %d | %s | %s | %s | %s |"
+                    % (n, item, klass, fiber, binds))
     if mut("MUT-TABLE"):
-        rows[0] = rows[0].replace("| 36 |", "| 35 |")
+        rows = [r.replace("| sites | 9 | 36 |", "| sites | 9 | 35 |")
+                for r in rows]
+    if mut("MUT-TABLE-LADDER"):
+        rows = [r.replace("| 4 | 12 | (4, 4, 4) | 2 | 12 | 144 |",
+                          "| 4 | 12 | (4, 4, 4) | 1 | 12 | 144 |")
+                for r in rows]
     return rows
 
 
@@ -3540,10 +4377,17 @@ def paper_coverage(R, text):
     exempt_lits = {e[0] for e in exempt}
     body = text if not mut("MUT-COVERAGE-SCAN") else \
         FENCE.sub("", re.sub(r"`[^`]*`", "", text))
+    if mut("MUT-DIGEST"):
+        body = body + " and the pinned source `deadbeefdead` says so. "
     fenced = [t for blk in FENCE.findall(body) for t in NUMTOK.findall(blk)]
     spans = [t for blk in re.findall(r"`[^`]*`", body)
              for t in NUMTOK.findall(blk)]
-    body2 = SECREF.sub(" ", HEADNUM.sub("#### ", body))
+    # the ONLY removal, declared and verified: a sha256-12 span is not a
+    # numeral of this paper, and every one of them must be a declared digest.
+    declared_digests = {s[2] for s in SOURCES}
+    found_digests = DIGEST_SPAN.findall(body)
+    undeclared_digests = sorted(set(found_digests) - declared_digests)
+    body2 = DIGEST_SPAN.sub(" ", body)
     scanned, unbacked, fired = 0, [], Counter()
     for tok in NUMTOK.findall(body2):
         scanned += 1
@@ -3553,8 +4397,16 @@ def paper_coverage(R, text):
             fired[tok] += 1
             continue
         unbacked.append(tok)
+    # the spelled numerals, COMPOUNDS FIRST: `thirty-six` is one numeral and
+    # two word tokens, and the delivered scanner stopped at `twelve`.
+    wtext = canon(body2).lower()
     words, word_unbacked = 0, []
-    for wd in WORDTOK.findall(canon(body2).lower()):
+    for mm in COMPOUNDNUM.finditer(wtext):
+        words += 1
+        if str(WORDNUM[mm.group(1)] + WORDNUM[mm.group(2)]) not in allow:
+            word_unbacked.append(mm.group(0))
+    wtext = COMPOUNDNUM.sub(" ", wtext)
+    for wd in WORDTOK.findall(wtext):
         if wd not in WORDNUM:
             continue
         words += 1
@@ -3568,6 +4420,13 @@ def paper_coverage(R, text):
                     for seg in R["verdict"]["segments"]})
     got = Counter(canon(b) for b in FENCE.findall(text))
     return {"numerals_scanned": scanned,
+            "raw_numeral_tokens_in_the_object": len(NUMTOK.findall(body)),
+            "tokens_removed_before_the_scan":
+                len(NUMTOK.findall(body)) - scanned,
+            "digest_spans_found": len(found_digests),
+            "digest_spans_declared": len(declared_digests),
+            "undeclared_digest_spans": undeclared_digests,
+            "blanket_strips": [],
             "unbacked": sorted(set(unbacked)),
             "fenced_blocks_scanned": len(FENCE.findall(body)),
             "fenced_numerals_scanned": len(fenced),
@@ -3601,10 +4460,17 @@ def paper_polarity(R, text):
         ("paper-09's kernel is empty here",
          "the renewal kernel speaks on the refined record"),
     ]
-    hay = text + (" the place-count is unchanged by the refinement"
+    hay = text + (" The place-count is unchanged by the refinement."
                   if mut("MUT-POLARITY") else "")
-    viol = [neg for _pos, neg in probes if canon(neg) in canon(hay)]
-    return {"probes": [p[0] for p in probes], "violations": viol}
+    # CASE-FOLDED ON BOTH SIDES (#125's rule, applied to a FORBIDDEN string).
+    # A probe that compares case-sensitively is evaded by the same sentence
+    # written where a sentence begins: the negation injected with a capital
+    # letter passed this gate at exit 0.  The required-string gates -- claims,
+    # tables, the head, the mandatory stamps -- stay word for word.
+    hayc = canon(hay).lower()
+    viol = [neg for _pos, neg in probes if canon(neg).lower() in hayc]
+    return {"probes": [p[0] for p in probes], "violations": viol,
+            "case_folded": True}
 
 
 # ===========================================================================
@@ -3645,12 +4511,6 @@ def waiver_ledger():
                              "schedules from the same window and dies one "
                              "gate earlier, and no corruption of a v10 "
                              "internal is available to this file"),
-        "G-DICTIONARY-CARRIER": ("SHARED-TARGET",
-                                 "MUT-CARRIER corrupts the carrier census the "
-                                 "same construction feeds and is killed at "
-                                 "G-PROCESS-SUPPLY, one gate later; the "
-                                 "bijection itself is a construction whose "
-                                 "failure would kill G-NEW-PLACES first"),
         "G-REFINED-ADMISSIBLE": ("SHARED-TARGET",
                                  "MUT-ADDITIVITY corrupts the refined counts "
                                  "this gate reads and is killed at "
@@ -3668,9 +4528,13 @@ def waiver_ledger():
                           "its failing branch; the same conjunction is "
                           "re-taken at G-ARTIFACT-INTEGRITY"),
         "G-ARTIFACT-INTEGRITY": ("EXERCISED-IN-RUN",
-                                 "the run corrupts a written byte and shows "
-                                 "the check detects it before comparing the "
-                                 "real artifacts"),
+                                 "the run corrupts a written byte of the "
+                                 "receipt AND a written line of the "
+                                 "transcript body, and shows the check "
+                                 "detects both before comparing the real "
+                                 "artifacts; no in-process mutant can reach "
+                                 "this gate because mutant sub-runs never "
+                                 "write"),
         "G-PAPER-COVERAGE-FINAL": ("AGGREGATE",
                                    "it closes over gates each of which is "
                                    "separately falsified"),
@@ -3681,13 +4545,121 @@ LATE_GATES = ("G-PAPER-COVERAGE-FINAL", "G-SEAL-COMPLETE",
               "G-ARTIFACT-INTEGRITY")
 SWEEP_GATE = "G-MUTANTS-ON-TARGET"
 LEDGER_GATES = ("G-COVERAGE", "G-REACHABILITY")
-CLOSING_GATES = ("G-SWEEP-BOUND",)
+CLOSING_GATES = ("G-SWEEP-BOUND", "G-READS-DECLARED-FINAL",
+                 "G-TOTALS-COMPUTED")
+# the gates whose own rows a receipt structurally cannot carry, DECLARED
+UNPUBLISHABLE_GATES = ("G-ARTIFACT-INTEGRITY", "G-SEAL-COMPLETE")
+# the gates whose transcript lines fall AFTER the sealed prefix, DECLARED:
+# they are re-rendered from the ledger and compared to the file's tail, so
+# the whole transcript is covered and not only its first forty lines.
+CLOSING_TRANSCRIPT = ("G-PAPER-COVERAGE-FINAL", "G-SEAL-COMPLETE")
 
 
 def finish(LD, SEAL, R, write=True, swept=False):
+    # THE READ REGISTRY, RE-TAKEN WITH THE WHOLE CATEGORY SET.  The early
+    # G-READS-DECLARED fires as gate two, before this file reads itself and
+    # before the object under test is opened, so its scope was the 19 source
+    # reads and nothing else: a read of mutable repository state inserted one
+    # line after it passed at exit 0.  Here every declared category is held
+    # against its own declared set, at the end of the run.
+    rel_of = (lambda p: os.path.relpath(p, REPO)
+              if p.startswith(REPO + os.sep) else p)
+    want_reads = {
+        "SOURCE": sorted(s[1] for s in SOURCES),
+        "SELF": [rel_of(SELF)],
+        "OBJECT-UNDER-TEST": sorted(
+            {rel_of(p) for p
+             in READS_BY_CATEGORY.get("OBJECT-UNDER-TEST", set())}),
+        "ARTIFACT-STAGED": sorted(rel_of(p) for p
+                                  in (OUT_JSON + ".tmp", OUT_TXT + ".tmp")),
+    }
+    got_reads = {k: sorted(rel_of(p) for p in v)
+                 for k, v in sorted(READS_BY_CATEGORY.items())}
+    read_bad = []
+    if got_reads.get("SOURCE", []) != want_reads["SOURCE"]:
+        read_bad.append("SOURCE")
+    if got_reads.get("SELF", []) != want_reads["SELF"]:
+        read_bad.append("SELF")
+    if len(got_reads.get("OBJECT-UNDER-TEST", [])) > 1:
+        read_bad.append("OBJECT-UNDER-TEST")
+    if not set(got_reads.get("ARTIFACT-STAGED", [])) <= set(
+            want_reads["ARTIFACT-STAGED"]):
+        read_bad.append("ARTIFACT-STAGED")
+    if set(got_reads) - set(READ_CATEGORIES):
+        read_bad.append("UNDECLARED-CATEGORY")
+    R["reads"] = {"by_category": got_reads, "declared": want_reads,
+                  "categories": sorted(READ_CATEGORIES),
+                  "distinct_files": len({p for v in
+                                         READS_BY_CATEGORY.values()
+                                         for p in v}),
+                  "offending_categories": read_bad}
+    LD.gate("G-READS-DECLARED-FINAL",
+            "NO UNANCHORED RUNTIME INPUT, HELD AT THE END OF THE RUN AND OVER "
+            "EVERY CATEGORY.  The SOURCE category must equal the declared 19 "
+            "exactly, SELF must be this file alone, OBJECT-UNDER-TEST at most "
+            "the one paper this run was pointed at, ARTIFACT-STAGED a subset "
+            "of the two staged paths, and no undeclared category may appear "
+            "-- so a read of mutable repository state added ANYWHERE in this "
+            "file, including after the early gate, cannot survive",
+            not read_bad,
+            "categories %s, source reads %d of %d declared, object under test "
+            "%s, self %s, staged %s, offending %s"
+            % (sorted(got_reads), len(got_reads.get("SOURCE", [])),
+               len(SOURCES), got_reads.get("OBJECT-UNDER-TEST", []),
+               got_reads.get("SELF", []),
+               got_reads.get("ARTIFACT-STAGED", []), read_bad or "none"))
+    SEAL.take("SEAL-READS", R)
     gate_names = sorted({g["gate"] for g in LD.rows} | set(LATE_GATES)
                         | set(LEDGER_GATES) | set(CLOSING_GATES)
                         | {SWEEP_GATE})
+
+    # EVERY PUBLISHED TOTAL IS ITS OWN REGISTRY'S LENGTH.  The delivered run
+    # published `seals: len(SEAL.rows) + 4` (37 against 36 taken and 36
+    # declared) and `gates: len(LD.rows) + 1` (41 against 53 evaluated), both
+    # typed offsets against a partial ledger, both sealed and vouched, and no
+    # gate compared either against its own data.
+    R["totals"] = {"gates": len(GATE_REGISTRY), "mutants": len(MUTANTS),
+                   "sources": len(SOURCES), "verbatim": len(VERBATIM),
+                   "path_value": len(PATH_ANCHORS),
+                   "path_value_receipts": len({a[0] for a in PATH_ANCHORS}),
+                   "seals": len(SEALED_PATHS),
+                   "gates_evaluated": len(gate_names)}
+    tot_gates = mutate("MUT-TOTALS", R["totals"]["gates"],
+                       R["totals"]["gates"] + 1)
+    R["totals"]["gates"] = tot_gates
+    totals_bad = [k for k, v, w in
+                  (("gates", tot_gates, len(GATE_REGISTRY)),
+                   ("gates_evaluated", R["totals"]["gates_evaluated"],
+                    len(gate_names)),
+                   ("mutants", R["totals"]["mutants"], len(MUTANTS)),
+                   ("sources", R["totals"]["sources"], len(SOURCES)),
+                   ("verbatim", R["totals"]["verbatim"], len(VERBATIM)),
+                   ("path_value", R["totals"]["path_value"],
+                    len(PATH_ANCHORS)),
+                   ("path_value_receipts", R["totals"]["path_value_receipts"],
+                    len({a[0] for a in PATH_ANCHORS})),
+                   ("seals", R["totals"]["seals"], len(SEALED_PATHS)),
+                   ("counts.gates", R["counts"]["gates"], len(GATE_REGISTRY)),
+                   ("counts.seals", R["counts"]["seals"], len(SEALED_PATHS)),
+                   ("counts.mutants", R["counts"]["mutants"], len(MUTANTS)))
+                  if v != w]
+    LD.gate("G-TOTALS-COMPUTED",
+            "EVERY PUBLISHED TOTAL IS HELD AGAINST ITS OWN REGISTRY'S LENGTH.  "
+            "Counts are computed, never typed and never a typed offset from a "
+            "ledger that is still growing: the gate total must equal the "
+            "declared registry's length (which G-COVERAGE forces to equal the "
+            "set actually evaluated), the seal total the declared seal set's, "
+            "and the source, verbatim, mutant and (path, value) totals their "
+            "own declarations' -- in `totals` and in `counts` alike",
+            not totals_bad,
+            "totals %s against the declared registries "
+            "(gates %d, seals %d, sources %d, verbatim %d, path-value %d in "
+            "%d receipts, mutants %d); mismatched %s"
+            % ({k: v for k, v in sorted(R["totals"].items())},
+               len(GATE_REGISTRY), len(SEALED_PATHS), len(SOURCES),
+               len(VERBATIM), len(PATH_ANCHORS),
+               len({a[0] for a in PATH_ANCHORS}), len(MUTANTS),
+               totals_bad or "none"))
     targeted = Counter(m[1] for m in MUTANTS)
     waivers = waiver_ledger()
     uncovered = [g for g in gate_names
@@ -3747,16 +4719,35 @@ def finish(LD, SEAL, R, write=True, swept=False):
             % (swept, len(sweep_rows), len(MUTANTS),
                sum(1 for k in sweep_rows if k.get("on_target"))))
     SEAL.take("SEAL-MUTANT-SWEEP", R)
-    # a SNAPSHOT: the live ledger still gains the closing gates below, and a
-    # seal over a list that is still being appended to is not a seal.
-    R["gates"] = [dict(g) for g in LD.rows]
-    R["totals"] = {"gates": len(LD.rows) + 3, "mutants": len(MUTANTS),
-                   "sources": len(SOURCES), "verbatim": len(VERBATIM),
-                   "path_value": len(PATH_ANCHORS),
-                   "seals": len(SEAL.rows) + 4}
+    # the snapshot is taken as LATE as a seal permits (below, after the paper
+    # layer closes).  The two gates that CANNOT publish their own rows -- the
+    # one that closes the seal and the one that checks the bytes it produced
+    # -- are declared, and the difference is held against that declaration.
+    R["gates_unpublished"] = {
+        "gates": sorted(UNPUBLISHABLE_GATES),
+        "reason": "a receipt cannot contain the row of the gate that seals it "
+                  "nor of the gate that checks the bytes it became; every "
+                  "other evaluated gate publishes its row, and the difference "
+                  "is held against this declaration",
+    }
     # the head is the first 40 LINES OF THE TRANSCRIPT AS WRITTEN: a say()
-    # whose argument itself contains a newline is two lines on disk.
-    R["transcript_head"] = "\n".join(LINES).split("\n")[:40]
+    # whose argument itself contains a newline is two lines on disk.  THE
+    # WHOLE BODY is sealed too: the delivered integrity check compared 40 of
+    # the transcript's 221 lines, and a forged line 121 -- a wall's own
+    # testimony -- reached disk at exit 0 beside a byte-perfect receipt.
+    prefix = "\n".join(LINES)
+    R["transcript"] = {
+        "head": prefix.split("\n")[:40],
+        "head_lines": 40,
+        "sealed_prefix_lines": len(prefix.split("\n")),
+        "sealed_prefix_sha256_12": digest(prefix),
+        "closing_gates_rendered_from_the_ledger": list(CLOSING_TRANSCRIPT),
+        "integrity": "the staged transcript is read back from disk and split "
+                     "at the sealed prefix: the prefix must match the "
+                     "gate-time digest and the remainder must equal the "
+                     "closing gates' lines re-rendered from the ledger, so "
+                     "every line of the file is covered",
+    }
     LD.gate("G-PAPER-COVERAGE-FINAL",
             "THE PAPER LAYER CLOSES.  Claim rendering, table rendering, "
             "numeral coverage including fenced blocks and inline spans, "
@@ -3769,7 +4760,9 @@ def finish(LD, SEAL, R, write=True, swept=False):
             % (all(k in R for k in ("paper_claims", "paper_tables",
                                     "paper_coverage", "polarity")),
                R["paper_coverage"]["fenced_block_multiset_matches"]))
+    R["gates"] = [dict(g) for g in LD.rows]
     SEAL.take("SEAL-GATES", R)
+    SEAL.take("SEAL-GATES-UNPUBLISHED", R)
     SEAL.take("SEAL-TOTALS", R)
     SEAL.take("SEAL-TRANSCRIPT", R)
     missing, extra = SEAL.totality()
@@ -3778,20 +4771,34 @@ def finish(LD, SEAL, R, write=True, swept=False):
     sealed_paths = {p for _s, p, _g in SEALED_PATHS}
     unaccounted = [k for k in keys_now
                    if k not in sealed_paths and k not in declared]
+    # in a delivery run the sweep gate is taken before finish(); in a
+    # verification or mutant sub-run it is not, and that is declared too.
+    want_unpublished = sorted(set(UNPUBLISHABLE_GATES)
+                              | (set() if swept else {SWEEP_GATE}))
+    unpublished = sorted(set(gate_names) - {g["gate"] for g in R["gates"]})
     R["seal_manifest"] = {"rows": SEAL.rows,
                           "declared_unsealed": declared,
-                          "unaccounted_keys": unaccounted}
+                          "unaccounted_keys": unaccounted,
+                          "gates_unpublished_measured": unpublished}
     LD.gate("G-SEAL-COMPLETE",
-            "THE SEAL MANIFEST IS TOTAL (#119 + #148).  Every published "
-            "receipt key is either sealed at the moment its own gate passed "
-            "or listed DECLARED-UNSEALED; the manifest is compared against "
-            "the DECLARED seal set rather than against the seals that "
-            "happened to be taken, so a dropped seal row dies here",
-            not missing and not extra and not unaccounted,
+            "THE SEAL MANIFEST IS TOTAL (#119 + #148), AND SO IS THE GATE "
+            "ROSTER.  Every published receipt key is either sealed at the "
+            "moment its own gate passed or listed DECLARED-UNSEALED; the "
+            "manifest is compared against the DECLARED seal set rather than "
+            "against the seals that happened to be taken, so a dropped seal "
+            "row dies here.  And every gate this run evaluates publishes its "
+            "own row except the two that structurally cannot -- this one and "
+            "the integrity gate that checks the bytes this receipt becomes -- "
+            "which are declared and held against the measurement",
+            not missing and not extra and not unaccounted
+            and unpublished == want_unpublished,
             "seals taken %d, declared %d, missing %s, extra %s, unaccounted "
-            "receipt keys %s" % (len(SEAL.rows), len(SEALED_PATHS),
-                                 missing or "none", extra or "none",
-                                 unaccounted or "none"))
+            "receipt keys %s; gate rows published %d of %d evaluated, "
+            "unpublished %s against the declared %s"
+            % (len(SEAL.rows), len(SEALED_PATHS),
+               missing or "none", extra or "none", unaccounted or "none",
+               len(R["gates"]), len(gate_names), unpublished,
+               want_unpublished))
     payload = json.dumps(R, indent=1, sort_keys=True, default=str)
     SEAL.close(R, payload)
     R["payload_sha256_12"] = SEAL.payload_sha
@@ -3820,8 +4827,30 @@ def _write(LD, SEAL, R, payload, text, tmp_j, tmp_t):
     probe["counts"]["new_sites"] = probe["counts"]["new_sites"] + 1
     probe_caught = bool(SEAL.verify(probe))
     disk_broken = SEAL.verify(back)
-    head_ok = (read_text(tmp_t, "ARTIFACT-STAGED").split("\n")[:40]
-               == R["transcript_head"])
+    # THE TRANSCRIPT, DISK-VERSUS-SEAL OVER EVERY LINE.  Leg one is the
+    # 40-line head compare.  Leg two splits the file at the sealed prefix: its
+    # digest must equal the gate-time seal, and the remainder must equal the
+    # declared closing gates' lines RE-RENDERED FROM THE LEDGER -- so no line
+    # of the file is outside the check.  A corrupted probe over the body is
+    # shown to be detected first, exactly as for the receipt.
+    disk_t = read_text(tmp_t, "ARTIFACT-STAGED")
+    tr = R["transcript"]
+    dlines = disk_t.split("\n")
+    head_ok = dlines[:40] == tr["head"]
+    npre = tr["sealed_prefix_lines"]
+    disk_prefix = "\n".join(dlines[:npre])
+    prefix_ok = digest(disk_prefix) == tr["sealed_prefix_sha256_12"]
+    tail_want = []
+    for g in LD.rows:
+        if g["gate"] in CLOSING_TRANSCRIPT:
+            tail_want.append("  [%s] %s" % ("PASS" if g["passed"] else "FAIL",
+                                            g["gate"]))
+            tail_want.append("         %s" % g["statement"])
+            tail_want.append("         evidence: %s" % g["evidence"])
+    tail_ok = dlines[npre:] == tail_want + [""]
+    body_probe = disk_prefix.replace("evidence:", "evidence: FORGED", 1)
+    body_probe_caught = digest(body_probe) != tr["sealed_prefix_sha256_12"]
+    lines_covered = len(dlines) if (prefix_ok and tail_ok) else 0
     ran = {g["gate"] for g in LD.rows}
     late_ok = all(g in ran for g in tuple(LEDGER_GATES) + LATE_GATES[:2]
                   + (SWEEP_GATE,))
@@ -3836,14 +4865,29 @@ def _write(LD, SEAL, R, payload, text, tmp_j, tmp_t):
             "probe shown to be detected first, so the check is known to be "
             "live.  The staged bytes are moved into place by os.replace ONLY "
             "after this gate passes, so a run that fails any gate leaves the "
-            "delivered artifacts untouched",
+            "delivered artifacts untouched.  THE TRANSCRIPT IS COVERED LINE "
+            "BY LINE and not only at its head: the staged file is split at "
+            "the sealed prefix, whose digest must equal the gate-time seal, "
+            "and its remainder must equal the declared closing gates' lines "
+            "re-rendered from the ledger -- with a corrupted body probe shown "
+            "to be detected first.  The staged reads are the only two paths "
+            "in the ARTIFACT-STAGED category",
             probe_caught and not disk_broken and head_ok and late_ok
-            and sweep_complete,
-            "corrupted probe detected %s, sealed objects broken on disk %s, "
-            "transcript head matches %s, declared-later gates evaluated %s, "
-            "sweep complete and on target %s"
-            % (probe_caught, disk_broken or "none", head_ok, late_ok,
-               sweep_complete))
+            and sweep_complete and prefix_ok and tail_ok
+            and body_probe_caught
+            and lines_covered == len(dlines)
+            and {os.path.abspath(p) for p
+                 in READS_BY_CATEGORY.get("ARTIFACT-STAGED", set())}
+            == {os.path.abspath(tmp_j), os.path.abspath(tmp_t)},
+            "corrupted receipt probe detected %s, sealed objects broken on "
+            "disk %s, transcript head matches %s, sealed prefix matches %s "
+            "over %d lines, closing lines re-rendered and matched %s, "
+            "corrupted body probe detected %s, transcript lines covered %d "
+            "of %d, declared-later gates evaluated %s, sweep complete and on "
+            "target %s"
+            % (probe_caught, disk_broken or "none", head_ok, prefix_ok, npre,
+               tail_ok, body_probe_caught, lines_covered, len(dlines),
+               late_ok, sweep_complete))
     os.replace(tmp_j, OUT_JSON)
     os.replace(tmp_t, OUT_TXT)
     return payload, text
@@ -3853,12 +4897,12 @@ def _write(LD, SEAL, R, payload, text, tmp_j, tmp_t):
 # SECTION 13.  THE CLI (#82)
 # ===========================================================================
 
-def run_mutant(name, paper_text):
+def run_mutant(name, paper_path):
     global MUT, QUIET
     old, MUT, QUIET = MUT, name, True
     del LINES[:]
     try:
-        LD, SEAL, R = full_run(paper_text=paper_text)
+        LD, SEAL, R = full_run(paper_path=paper_path)
         finish(LD, SEAL, R, write=False, swept=False)
         out = (False, None)
     except GateFail as exc:
@@ -3982,9 +5026,7 @@ def main(argv=None):
             print("[CLI] --verify-paper: %r is not a file" % path)
             return 2
         try:
-            LD, SEAL, R = full_run(
-                paper_text=read_text(path, "OBJECT-UNDER-TEST"),
-                paper_rel=os.path.relpath(path, REPO))
+            LD, SEAL, R = full_run(paper_path=path)
             finish(LD, SEAL, R, write=False)
         except GateFail as exc:
             print("[VERIFY-PAPER] DRIFT :: %s" % exc)
@@ -3992,8 +5034,7 @@ def main(argv=None):
         print("[VERIFY-PAPER] clean: %s" % path)
         return 0
     if mode == "--mutant":
-        killed, where = run_mutant(
-            arg, read_text(os.path.join(REPO, PAPER_REL), "OBJECT-UNDER-TEST"))
+        killed, where = run_mutant(arg, os.path.join(REPO, PAPER_REL))
         target = [m[1] for m in MUTANTS if m[0] == arg][0]
         print("[MUTANT %s] killed=%s at %s (target %s) -> %s"
               % (arg, killed, where, target,
@@ -4006,12 +5047,12 @@ def main(argv=None):
             print()
             print(seg)
         return 0
-    ptext = read_text(os.path.join(REPO, PAPER_REL), "OBJECT-UNDER-TEST")
-    LD, SEAL, R = full_run(paper_text=ptext)
+    ppath = os.path.join(REPO, PAPER_REL)
+    LD, SEAL, R = full_run(paper_path=ppath)
     say("\n[SEC 13] THE MUTANT SWEEP, IN-PROCESS")
     sweep, keep = [], list(LINES)
     for name, gate, _what, _obj in MUTANTS:
-        killed, where = run_mutant(name, ptext)
+        killed, where = run_mutant(name, ppath)
         sweep.append({"mutant": name, "target": gate, "killed": killed,
                       "died_at": where,
                       "on_target": bool(killed and where == gate)})

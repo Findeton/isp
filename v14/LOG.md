@@ -8691,3 +8691,46 @@ stripped-env; E-24 counting-only stamps; the groupoid grain
 registered-not-run.  Shas: paper 507da54ae871, code
 edf3a540cd57, output 48fe931bfcdc, receipt cd938d7ae9be.
 Committed AS-IS; battery next; panel queued.
+
+## 2026-08-12 — LOR REPAIR LANDED: Y1–Y12 EXECUTED; THE WALLS ON THE PAPER LEG; TWO ROUND-MISSED DEFECTS SELF-CAUGHT; COMMIT-AS-IS (v14 LEDGER #284)
+
+The LOR repair delivered.  Y1 the label-fiber variance
+stamped (head + §6.5 + inventory row 11); Y2 the
+diagonal-design sentence MEASURED (18/27 by class); Y3 the
+counting theorem + **THE LIVE-CUT LAW gated (live loci =
+[9, 9(m−1)], count 9m−17; the ladder 1/10/19/28/37 at
+144/144 schedules per rung; the R=9 control 1,728/1,728)**;
+Y4 the slogan inverted as a RENDERED CLAIM; Y5 the FORCED
+stamp on compatibility (R=12 named); Y6 inventory row 14;
+Y7 the licensed sentences verbatim + the 864/864 and
+1,728/1,728 censuses in-code + the 792-pass-FOUND gated; Y8
+**the three walls scan TWO LEGS on one needle table — all
+three plants DIE ON THE PAPER LEG** (G-WALL-COSMO/BHS/KR;
+four abstention windows firing; MUT-WALL-SURFACE keeping the
+surface leg falsified); Y9 all 41 table rows rendered; Y10
+EVERY total derived (seals 39; gates 57; six receipts;
+G-TOTALS-COMPUTED); Y11 the transcript FULL (243/243 —
+sealed prefix + ledger-re-rendered closing; the corrupted-
+body probe live); Y12 the blanket strips DELETED (999/1,059
+scanned; spelled numerals through nineteen; E-24 scans the
+paper).  **TWO ROUND-MISSED DEFECTS SELF-CAUGHT AND FIXED:
+(1) a FALSE PUBLISHED NUMBER — §6.5's "two free items" vs
+the receipt's THREE (now corrected, rendered, gated:
+len==3); (2) the polarity probe and L-1 ban were
+CASE-SENSITIVE — the worker's own capitalised-negation
+injection survived; both now case-fold with MUT-POLARITY
+guarding.**  [The prose-carried false number the panel
+missed and the repair caught — the false-claim ledger
+increments; the numbers gate held, the prose leg was the
+hole, as always.]  INJECTION REPLAY: the three wall plants
+die on the paper leg; CINJ01/02/04 write nothing with both
+artifacts ABSENT; the table forgeries and coverage exploits
+die (verified on the prior object; the only delta to final
+is the case-fold).  Battery: plain ×2 byte; off-tree
+git-less two seeds; 12/12 argv; in-process 50/50 twice;
+out-of-harness 50/50 on the prior object and 32/50-and-
+running on the final (load 90–270; my battery covers the
+leg).  Shas: paper 0a08203b7e99, code e8bd6214bbff, output
+d9c8b7833ca1, receipt 63118012fbb5.  Committed AS-IS;
+orchestrator battery next; on green: TERMINAL (the
+twenty-fifth).
