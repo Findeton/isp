@@ -9060,3 +9060,48 @@ instrument (the claimed 47/49/64/36/13/85/343/26/19 counts
 from registries; **the PER-R six-major target list probed
 one-by-one with live injections**; the #267 checklist; the
 49-mutant out-of-harness sweep; ≥8 novel corruptions).
+
+## 2026-08-12 — AID K3 (INSTRUMENT SEAT) FROZEN: AWF; THE CENSUS RIGHT (68/68), THE BINDING ONE-WAY — FIVE MAJORS INCLUDING THE THIRD INDEPENDENT CATCH OF THE FALSE PREFIX RELATION (v14 LEDGER #292)
+
+**Review:** v14/review-aid-instrument.md (b333a08ba565, 319
+lines), sole write; objects verified unchanged at open and
+close.  **Grade AWF.**  94 executions, 114 recomputations
+(68 of 68 published values agree, from an own-route rebuild:
+own partition enumeration, own stabilizer inside Stab(F₁),
+own orbit closure, own Z[w] walk).  47/47 falsifiers die
+out-of-harness with fresh trees byte-unchanged; byte ×2
+off-tree git-less at seeds 0/987654; CLI/selftest/bare-copy/
+544-numeral sweep/fence multiset/inline spans clean.  **The
+physics is right; what fails is the binding between
+measurement and prose.**
+
+- **MAJOR-1:** CLAIM-PREFIXES false relation — 101,160
+  (three corpora) paired with 41,347 (four).  Truth:
+  39,747 distinct of the 101,160; 118,656 four-corpora
+  total.  **ALL THREE SEATS caught this independently**
+  (K1 MINOR-1, K2 MAJOR-3, K3 MAJOR-1) — nothing binds two
+  numerals of one sentence to one referent.
+- **MAJOR-2:** the E-24 pair CONFOUNDED by the same family
+  switch — at one family the record's blind fraction is
+  32/161 (distinct) vs 1235/6008 (multiplicity): measure
+  effect +3.4%, family effect −20.6%; the paper never names
+  the universes (the receipt does).
+- **MAJOR-3:** the paper-binding surface ONE-WAY — four
+  exit-0 demonstrations: forged extra table row (gate prints
+  "required 69, paper 80" and passes); forged sentence
+  contradicting a measured one; §9's instrument counts
+  swapped onto the wrong nouns with byte-identical receipt;
+  the reality/scope walls defeated by paraphrase ("truly
+  real threads").
+- **MAJOR-4:** phantom consumer gate — G-INVARIANCE-SPLIT
+  named by anchor V03 and SEAL-INVARIANCE but absent from
+  the 52 gates; the sweep never checks death at the
+  DECLARED gate, and 1 of 47 fails it (MUT-PAPER-FENCE-
+  MULTISET dies at G-PAPER-HEAD-VERBATIM).
+- **MAJOR-5:** os.replace precedes read-back; four of 52
+  gate verdicts — including the two artifact-certifying
+  ones — appear in neither artifact.
+
+Five MINORs, each with a liftable repair.  **No physics
+number moved.  THE PANEL IS COMPLETE (K1 #289 / K2 #288 /
+K3 here); adjudication next.**
