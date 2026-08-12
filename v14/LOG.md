@@ -9137,3 +9137,72 @@ declared an axis — **PROMOTED: any successor unit touching
 the walk declares its coin order and publishes both, or
 stamps the fiber.**  Repair order Z1–Z14; no delivered
 number may move; the repair worker launches next.
+
+## 2026-08-12 — PER-R K2 (EFFECTUS SEAT) FROZEN: AWF; SIX MAJORS — THE CLASS-SUBSTITUTION DISEASE INSIDE THE #270 TABLE; ONE SURVIVING INJECTION; LOR §7's UNIQUENESS CLAUSE FALSIFIED (PROSE-ONLY); THE PANEL IS COMPLETE (v14 LEDGER #294)
+
+**Review:** v14/review-perr-effectus.md (3de7cf332e70, 677
+lines), sole write; objects verified unchanged at open and
+close.  **Grade AWF.**  210 published values recomputed from
+a from-scratch arena rebuilt out of I7's own links_d2 —
+ZERO disagreed (incl. the locking mechanism with min
+uncovered 2, NUMERICALLY IDENTICAL to SIG's independent 2;
+the stratum 1,842,120/619,092; the R=6 door 48,600/1,350;
+the parity apparatus 361=181+180; all thirteen DIA rows).
+
+**SIX MAJORS, none moving a number:**
+1. **The ladder's third class defined as one class, computed
+   as another** — §3.6 prints "live"; the code computes
+   live ∧ covering.  Floors 6/7 right for the COMPUTED
+   class; under the PRINTED words they are 4/5, and §3.7's
+   operational sentence ("live records at R=5 can see
+   neither") is FALSE — an explicit 5-round all-saturating
+   record with a singular (1,1,4) site exhibited.  The
+   class-substitution disease recurring INSIDE the table
+   the #270 advisory ordered.
+2. "3 BREAKS" is one mechanism + its corollary + its own
+   theorem (cover=posdef is a corollary of the cell
+   ceiling; the declared-yield row is the unit's parity law
+   and already counted as prediction (a)).
+3. The base-map relativity of fibers 3 and 1 DROPPED —
+   paper-21 discloses spreads [3,6]/[1,2]; PER-R's rows say
+   only "§6".  Repair strengthens persistence: the spreads
+   persist too.
+4. The head's @EXHAUSTIVE-OVER-1,721,036,800,000 stamp
+   covers record floors at R=6/R=8 no quintuple census
+   reaches.
+5. The seed menu absorbed into the window row.
+6. **One injection SURVIVES:** a forged support sentence
+   ("…{0,3,4,7,8,11,12,15} over 72 classes") passes every
+   paper gate — 72 is a real value from another census; the
+   47 control dies.  Template-shaped.
+
+**Compliance real:** four foreign wall plants each die on
+the paper leg — #267 M1 and LOR #269's caveat genuinely
+discharged.  **Promotions:** DIA law verified 20/20 (seven
+unpublished rows added, incl. (1,1,1) at R=3 — the ladder's
+OTHER link-constant record, no class compulsory, so
+"vanishes where the weld turns motivated" now has two
+instances); the ceiling sequence continued to 1,2,4,5 (R=6
+covering class 72 codes, max cell 5); the locking
+obstruction's general form derived, boundary at R=7.
+
+**ROUTED OUT — LOR §7 (terminal #285):** PER-R's own R=6
+census (28 homogeneous records, ten covering) FALSIFIES the
+uniqueness clause "and no other homogeneous record" in
+LOR's committed §7.  LOR's code-sealed budget_law never
+contained it — PROSE-ONLY; handled at adjudication via the
+correction-annotation category.
+
+**SIG HANDOFF (verdict-relevant to the in-flight repair):**
+the four shared tiers agree exactly with #274's ladder;
+PER-R's four columns are SIG's five minus the "anywhere"
+tier (trivially 1 for both polarities, discriminates
+nothing); **tier 3 must travel in M1's repaired form or SIG
+will publish 7 for a class whose floor is 5** — advisory to
+the SIG repair worker follows this entry.
+
+**Successor:** PER-R2 belongs at R=8, not R=7 (the unit's
+own parity law makes R=7 declared-record-empty by theorem;
+R=8 is the first declared indefinite record).  S-1
+half-closed (drive yes, move no).  **PANEL COMPLETE (K1
+#282 / K3 #287 / K2 here); adjudication next.**
