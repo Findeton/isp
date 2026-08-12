@@ -8648,3 +8648,46 @@ answered); the DIA law on 55 rows by a fourth route.**  Two
 out-of-registry mutants both killed (with the honest note
 that one died at a different gate than §13 claims carries
 it).  → adjudication when K2+K3 land.
+
+## 2026-08-12 — AID (PAPER-33) DELIVERED: IDENTITY FORCED ON 5,852 OF 5,856 — CRYSTALLIZING AT EXACTLY FIVE; THE INVARIANCE SPLIT; COMMIT-AS-IS (v14 LEDGER #283)
+
+The AID worker delivered; all candidate readings.  **THE
+STABILIZER CENSUS: identity FORCED on 5,852/5,856 committed
+histories** (C1 72/72 trivial; the seed fan 1,944/1,944; C2
+5,184/5,184; C3 596/600 — the 4 CHART cases exactly the
+constant-class quadruples ROW⁴/COL⁴/DIA⁴/ANT⁴ at order 216);
+two routes agreeing at order on all 41,347 distinct prefixes
+and at element set on the 703 nontrivial ones.  **THE
+THEOREM: Stab(H) = the Young subgroup of the atom partition
+— identity crystallizes iff every actor's participation
+pattern is unique.**  **CRYSTALLIZATION AT EXACTLY FIVE,
+uniformly, on C1/C1FAN/C2 — a CONSTANT, not a distribution**
+(the route [4320, 216, 216, 8, 1, 1] at every history; the
+third event adds nothing; events four and five are
+transversals of round one); C3 {5:404, 7:36, 8:144, 11:12,
+never:4}; 0 stabilizer-growth events anywhere.  **THE
+INVARIANCE VERDICT — SPLIT: the co-division relation and
+EVERY weld-dictionary reading are BLIND BY THEOREM (121,152
+comparisons, 0 differences, no cap — identity contributes
+NOTHING to space); the record's ATTRIBUTION is NOT blind
+(orbit-constant at 111/703; naming-dependent at 592) — THE
+RECORD IS WELL DEFINED AS A FIELD OVER THE ARENA AND ILL
+DEFINED AS A PROPERTY OF A THREAD; THE WALK SEES MORE THAN
+THE RECORD (53 objects the record cannot separate and the
+walk can); walk-symmetries inside a stabilizer are EXACTLY
+the translations (813; shift-commuting ⟺ translation).**
+SURPRISES: **THE RELATION FORGETS WHAT THE SEQUENCE
+REMEMBERS** (at the 24 all-four-class histories the
+co-division relation is the complete graph, |Aut| = 362,880,
+while the ordered stabilizer is TRIVIAL — the weld reads
+through the forgetful relation); |Aut(co-division)| = 1,296
+vs |Stab| = 1 on every R=3/diagonal-R=6 history — the weld's
+declared freedom and identity's freedom are DISJOINT.
+Instrument: 52 gates; 47/47 falsifiers (one real defect
+self-caught mid-build — the coverage gate now binds scan
+TOTALITY 544/544); 4 walls scanning the paper's characters;
+10 tables rendered; byte ×2 seeds + off-tree git-less
+stripped-env; E-24 counting-only stamps; the groupoid grain
+registered-not-run.  Shas: paper 507da54ae871, code
+edf3a540cd57, output 48fe931bfcdc, receipt cd938d7ae9be.
+Committed AS-IS; battery next; panel queued.

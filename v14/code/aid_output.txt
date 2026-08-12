@@ -1,0 +1,175 @@
+==============================================================================
+AID (paper-33) -- ARE ACTORS DERIVED?  THE IDENTITY-RECONSTRUCTION CENSUS
+==============================================================================
+
+SECTION 1.  PROVENANCE -- THE PINNED SOURCES
+  [PASS] G-PROVENANCE
+         THE 13 RUNTIME SOURCES ARE PINNED BY CONTENT (#46/#91).  Every source is read as bytes, its sha256-12 recomputed from those bytes and compared with this unit's frozen declaration; the declaration also names the COMMIT each pinned digest belongs to, so a worktree byte that is not the committed object cannot be read.  One mismatch and the run dies here
+         evidence: mismatches none
+  [PASS] G-VERBATIM
+         QUOTE FIDELITY (#62, as amended).  Every sentence this unit quotes from a parent is matched against that parent's committed bytes under the #125 normalisation with a 30-character floor, and each anchor names the CONSUMER GATE that reads it -- 10 anchors over 10 consumer gates, none of them a label
+         evidence: anchors 10, misses none
+  [PASS] G-WINDOWS-DISCLOSED
+         EVERY WINDOW IS DECLARED IN-STRING AND LICENSED (section 15).  The 7 declarations below are published in the receipt, in the head and in the paper; four of them are ENTIRE classes and carry no sampling at all, and each of the other three names the property that licenses it
+         evidence: windows 7, all named and non-trivial
+
+SECTION 2.  THE ARENA AND THE COMBINATORIAL SUBSTRATE
+  [PASS] G-BACK-VALIDATION
+         THE SUBSTRATE IS RECOMPUTED HERE AND MEASURED AGAINST THE PARENTS' COMMITTED RECEIPTS, OBJECT BY OBJECT (#87).  Each of the 9 rows is an independently computed quantity of this run compared with the value the parent's own receipt bytes carry: 280 groupings, 36 saturating, 72 I7-STRICT triples at R = 3, 276 G-FLAT quadruples, a 600-schedule window, 9 and 12 division events per R = 3 and R = 4 record, and 5,184 ordered R = 6 concatenations.  A single disagreement kills the run
+         evidence: rows 9, disagreements none
+  [PASS] G-PARTITION-ROUTE
+         THE ROUND FAMILY, COUNTED TWICE BY ROUTES THAT SHARE NO CODE.  The recursive enumeration returns 280 groupings; the closed form 9!/((3!)^3 . 3!) returns 280.  The enumeration is what everything downstream uses
+         evidence: enumerated 280, closed form 280
+
+SECTION 3.  THE THREE COMMITTED CORPORA
+  [PASS] G-CORPORA-SHAPE
+         EVERY HISTORY IN EVERY CORPUS HAS THE SHAPE THE CONSTRUCTOR FORCES, PER OBJECT.  A schedule of R rounds carries exactly 3R division events -- one arbitration per conflict group per round -- and every event is a three-actor subset: [(9, 72)] at 72 histories, [(18, 5184)] at 5,184, [(12, 600)] at 600.  The event sizes measured are [3]
+         evidence: shapes {'C1-R3-TRIPLES': [(9, 72)], 'C2-R6-CONCATENATIONS': [(18, 5184)], 'C3-R4-WINDOW': [(12, 600)]}; event sizes {'C1-R3-TRIPLES': [3], 'C2-R6-CONCATENATIONS': [3], 'C3-R4-WINDOW': [3]}
+  [PASS] G-EVENT-SHAPE
+         THE EVENT IS THE CONFLICT GROUP AND THE HISTORY IS ORDERED.  Within a round the three groups enter in ascending order of their seed's site index -- d66's own order -- so the history is a SEQUENCE and not a set; the 1944 histories of the seed fan W-C1FAN realise 432 distinct orderings of the same 12 event sets
+         evidence: fan histories 1944, distinct sequences 432, distinct event sets 12
+
+SECTION 4.  THE DRIVEN LEG -- THE COMMITTED LAYERS, DRIVEN DIRECTLY
+  [PASS] G-FOOTPRINT-RULE
+         THE FOOTPRINT RULE IS READ OFF THE COMMITTED GRAMMAR'S OWN SOURCE, NOT ASSUMED.  d42b1's `regs_of` is parsed and its arbitration branch returns the union of the PROPOSER names in the conflict key with one derived value name; the proposers of an arbitration are exactly the conflict group, and paper-19's `record_of` cuts the value name away by restricting to the nine actor objects.  So the driven footprint IS the group -- a structural leg, gated before any drive runs
+         evidence: proposer union True, props+vname return True
+  [PASS] G-DRIVEN-EQUALS-COMBINATORIAL
+         THE LICENSE FOR EVERY EXHAUSTIVE COLUMN, TAKEN AT THE FOOTPRINT SEQUENCE ITSELF.  For each of the 17 schedules of the declared drive set W-DRIVE the committed layers are driven and the register footprints of the division events -- taken from the layer's own `regs_of` and cut to the nine actor objects -- are compared EVENT BY EVENT, IN ORDER, with the combinatorial history.  This is strictly stronger than paper-21's licence, which compared the summed link FIELD; here the sequence itself is the object
+         evidence: schedules 17, mismatches none
+  [PASS] G-MAXHITS-IMMUNITY
+         THE v10-LAYER TIE-BREAK IS NEVER CONSULTED (#160, as a gate).  Every event of every driven schedule is specified by its FULL TUPLE, so at most one menu candidate can match; the builder's own `maxhits` is read at every schedule and is 1 at all 17 of them.  d60's `pick` breaks ties with sorted(key=repr), which is hash-seed dependent -- this unit is immune because the tie-break is unreachable, and says so rather than pricing it
+         evidence: maxhits [1], refusals ['None']
+  [PASS] G-CTRL-REFUSED
+         THE NEGATIVE FATE IS REACHABLE AND THE DRIVER SEES IT.  The collinear arrangement is re-driven with its FIRST conflict-supply delivery withheld; the committed layer then refuses the first proposal by an actor that does not hold the base, and the refusal is RECORDED rather than patched -- so 'no refusals' above is a measurement and not a property of the instrument
+         evidence: refusal ('propose G10', 14)
+  [PASS] G-LAYERS-CANNOT-EXIT
+         THE COMMITTED LAYERS ENTER AS SINGLE SOURCES AND CANNOT EXIT.  d42b1's module slice is cut before its first print and carries no exit call; d60 and d66 enter through an AST extraction that keeps only function and class definitions, so no module-level statement of theirs can run and no `sys.exit` of theirs is reachable
+         evidence: slice exit-free True, extracted bodies exit-free True
+
+SECTION 5.  THE STABILIZER CENSUS -- TWO ROUTES, ELEMENT BY ELEMENT
+  [PASS] G-STAB-ROUTES
+         THE STABILIZER, COMPUTED TWICE BY ROUTES THAT SHARE NO CODE AND NO LITERAL, PER OBJECT (#87).  ROUTE A filters the 362,880 elements of S_9 explicitly, event by event, and knows nothing about signatures; ROUTE B builds the Young subgroup of the participation-signature partition and never touches S_9.  The two are compared at ORDER on all 41,347 distinct prefixes of the four corpora and at ELEMENT SET on the 703 of them where the group is nontrivial or the prefix is a single event
+         evidence: prefixes 41347, order mismatches 0, element-set comparisons 703, element-set mismatches 0
+  [PASS] G-FORCED-PER-HISTORY
+         FORCEDNESS IS DECIDED PER HISTORY, NEVER AS AN AGGREGATE (#87).  Each of the 5,856 committed histories carries its own stabilizer and its own verdict: 5,852 are FORCED (trivial stabilizer) and 4 are CHART (nontrivial).  The 4 chart histories all carry order [216] and orbit shape [(3, 3, 3)]
+         evidence: forced 5852, chart 4, forced-iff-crystallized on all 5856
+
+SECTION 6.  THE CRYSTALLIZATION TIME
+  [PASS] G-CRYSTALLIZATION
+         THE CRYSTALLIZATION TIME IS MEASURED PER HISTORY AND IT IS A CONSTANT ON TWO OF THE THREE CORPORA.  Every one of the 72 R = 3 triples forces identity at its FIFTH division event -- not the third, not the ninth -- and so does every one of the 5,184 R = 6 concatenations and every one of the 1,944 seed-fan variants; the R = 4 window is the stratified one, at [('11', 12), ('5', 404), ('7', 36), ('8', 144), ('None', 4)]
+         evidence: C1 [5], C2 [5], C1FAN [5], C3 [('11', 12), ('5', 404), ('7', 36), ('8', 144), ('None', 4)]
+  [PASS] G-PREFIX-LAW
+         CRYSTALLIZATION IS A PREFIX PROPERTY, MEASURED RATHER THAN ASSUMED.  A stabilizer can only shrink as events are appended, so the time is decided by the earliest prefix that reaches triviality: each of the 5,184 ordered concatenations crystallizes exactly when its FIRST factor does, and nothing the second factor contributes can move it.  This is why the R = 6 corpus adds 0 new crystallization values and not one more
+         evidence: concatenations 5184, disagreements with the first factor 0
+  [PASS] G-MONOTONE
+         THE STABILIZER NEVER GROWS.  Route A builds each prefix's group by FILTERING its predecessor's, so containment is structural; it is measured anyway on the first 2000 distinct prefixes in non-decreasing length order -- an appended event can only remove elements
+         evidence: prefixes checked 2000, growth events 0
+  [PASS] G-PREFIX-PROFILE
+         THE WHOLE ROUTE TO CRYSTALLIZATION IS THE SAME AT EVERY R = 3 HISTORY, AND IT IS THE ROUTE AND NOT A GEOMETRIC ACCIDENT THAT EXPLAINS THE CONSTANT.  The stabilizer order by prefix length is (4320, 216, 216, 8, 1, 1) at all 72 of them and at all 5,184 R = 6 concatenations: the first event leaves the (3, 6) Young subgroup; the second cuts it to the three-block 216; the THIRD ADDS NOTHING, because a round's last group is the complement of its first two; the fourth leaves three singletons and three pairs; the fifth splits all three pairs at once.  The mechanism is measured: each of the fourth and fifth events meets every first-round group exactly once -- they are transversals of the first round -- at every history of the corpus
+         evidence: C1 profiles 1, C2 profiles 1, profile (4320, 216, 216, 8, 1, 1), transversal at events four and five True
+  [PASS] G-NEVER-CRYSTALLIZING
+         THE HISTORIES THAT NEVER FORCE IDENTITY ARE CHARACTERISED, NOT MERELY COUNTED.  Exactly 4 of the 5,856 committed histories leave identity un-forced to the last event, and they are precisely the CONSTANT-CLASS quadruples ['ANT|ANT|ANT|ANT', 'COL|COL|COL|COL', 'DIA|DIA|DIA|DIA', 'ROW|ROW|ROW|ROW']: a schedule that repeats one parallel class every round can never separate two sites that lie on a common line of that class, so the three lines survive as orbits and the stabilizer stays at order 216
+         evidence: never-crystallizing 4, arrangements ['ANT|ANT|ANT|ANT', 'COL|COL|COL|COL', 'DIA|DIA|DIA|DIA', 'ROW|ROW|ROW|ROW']
+
+SECTION 7.  THE PHYSICS-INVARIANCE CENSUS
+  [PASS] G-CODIVISION-BLIND
+         THE WELD'S LINK GENERATOR IS BLIND TO THE UN-FORCED PART OF IDENTITY -- A THEOREM, VERIFIED PER OBJECT.  A stabilizer element fixes every event SETWISE, so an actor belongs to an event exactly when its image does; the co-division count of a pair is therefore carried unchanged.  Measured on all 703 nontrivial-stabilizer objects over all 121,152 stabilizer elements: the relation is preserved everywhere
+         evidence: objects 703, elements 121,152, violations 0
+  [PASS] G-WELD-DICTIONARY
+         EVERY READING THE WELD DICTIONARY PUBLISHES IS BLIND TOO.  Paper-19's induced count field reads the co-division relation through a parse; precomposing that parse with a stabilizer element leaves the field entry for entry, because the element is an automorphism of the relation the field reads.  Measured at 121,152 parse comparisons over 703 objects -- EVERY stabilizer element of every object, with no cap -- and 0 differences.  The stabilizer contributes NOTHING to the weld's site-assignment fiber
+         evidence: comparisons 121152, differences 0
+  [PASS] G-RECORD-ATTRIBUTION
+         THE RECORD IS A FIELD OVER THE ARENA AND NOT A PROPERTY OF A THREAD -- MEASURED.  Two namings that differ by a stabilizer element produce the SAME labelled history, so the field n_l(x) is literally the same object; what differs is WHICH THREAD sits at which site.  The record's value is well defined on a thread exactly when x -> (n_l(x)) is constant on the stabilizer's orbits, and it is NOT: constant at 111 of the 703 nontrivial-stabilizer objects, so at 592 of them the record assigns different count vectors to actors the history cannot tell apart
+         evidence: orbit-constant 111 of 703; naming-dependent 592
+  [PASS] G-SHIFT-IS-TRANSLATION
+         THE SHIFT'S SYMMETRIES ARE EXACTLY THE TRANSLATIONS -- A THEOREM, MEASURED BOTH WAYS.  A relabelling commutes with paper-20's shift exactly when it carries x + l to sigma(x) + l for all three declared links, which forces sigma to be a translation of AG(2,3).  Both sides are computed independently on all 121,152 stabilizer elements -- the shift test cell by cell, the translation test against the nine translations -- and they agree at every one
+         evidence: elements 121152, shift-commuting 813, translations in the stabilizers 813, disagreements 0
+  [PASS] G-BORN-MENU
+         THE WALK SEES WHAT THE RECORD CANNOT.  Paper-20's coupled step -- the site-block-diagonal coin C(x) = G.D(x) with D(x) = diag(w^{n_l(x)}), then the shift -- is re-implemented here over Z[w] and run from the S_9-symmetric all-ones start, so every asymmetry in the published Born menu is carried by the record and the shift and never by the start.  The menu is orbit-constant at [134, 58, 58, 58, 58] objects by depth, against the record's 111: the one-step menu is blind at MORE objects than the record, and from depth two it is blind at FEWER.  A stabilizer element is a symmetry of the whole coupled step exactly when it is a translation AND preserves the record: 813 of 121,152 elements
+         evidence: born-invariant by depth [134, 58, 58, 58, 58]; record-invariant 111; walk symmetries 813 of 121152; record-preserving elements 51769
+  [PASS] G-AUT-SHORTCUT
+         THE CONSTANT-WEIGHT SHORTCUT IS A MACHINE-CHECKED FORCING, NOT A WAIVER (#34).  When every off-diagonal co-division weight is equal, every permutation preserves the relation and the automorphism group is all of S_9; the closed value is confirmed by ENUMERATING one such object's automorphisms explicitly, at 362,880 of them
+         evidence: enumerated 362,880, closed 362,880
+  [PASS] G-CODIVISION-FORGETS
+         THE RELATION FORGETS WHAT THE SEQUENCE REMEMBERS.  At 24 of the 600 R = 4 window histories -- exactly the schedules that use all four parallel classes once each -- every pair of actors co-divides exactly once, so the co-division relation is the CONSTANT COMPLETE GRAPH and its automorphism group is the whole of S_9 at 362,880 elements; yet the stabilizer of the ordered history is TRIVIAL at every one of them.  The weld reads through that relation, so at these histories the dictionary's site freedom is total while the identity the history forces is complete
+         evidence: complete-relation histories 24, all with trivial stabilizer True, complete-relation iff all four classes used True
+  [PASS] G-WALK-ARENA
+         THE WALK IS RE-IMPLEMENTED, NEVER IMPORTED, AND ITS ARENA IS GATED.  The 27 cells, the three declared link directions, the Grover numerators over 3 and the shift table are rebuilt here from the arena's own definitions; the shift is a permutation of the cells (a bijection, checked), the coin is site-block-diagonal by construction, and the Born weights are RATIONAL INTEGERS because |a + bw|^2 = a^2 - ab + b^2
+         evidence: cells 27, shift a bijection True, integer Born weights True
+  [PASS] G-BORN-DEPTH-ONE-LAW
+         THE DEPTH-ONE MENU IS A FUNCTION OF THE SITE'S OWN RECORD ROW MODULO THREE, MEASURED RATHER THAN ASSERTED.  The coin is site-block-diagonal and the start is the all-ones state, so the post-coin weight at a site depends on that site's three counts only through w to those powers.  Over every site of every one of the 703 nontrivial objects the map from the residue triple to the menu row is single-valued: 18 distinct residue triples, 0 collisions
+         evidence: residue triples 18, collisions 0
+
+SECTION 8.  THE MEASURE-RELATIVITY OF THE HEADLINE COUNTS (E-24)
+  [PASS] G-E24-MEASURE
+         NO COUNT BECOMES A PROBABILITY WITHOUT A DECLARED MEASURE (E-24), AND THIS UNIT'S HEADLINE FRACTION MOVES WHEN THE MEASURE DOES.  The record's blindness is 3/19 of the distinct nontrivial-stabilizer objects and 1235/6008 of them counted with corpus multiplicity; the walk's is 58/703 and 2065/24032.  The two measures DISAGREE, so every fraction this unit publishes is stamped COUNTING-ONLY and carries the measure it was taken under.  The two measures are named in the receipt: distinct prefixes over the four declared corpora, and prefixes counted with corpus multiplicity over the three primary ones
+         evidence: distinct 3/19 vs multiplicity 1235/6008 (record); 58/703 vs 2065/24032 (walk)
+
+SECTION 9.  THE GRAIN -- WHAT RAN AND WHAT IS REGISTERED
+  [PASS] G-GRAIN-REGISTERED
+         THE SCOPE IS THE STABILIZER GRAIN AND THE SUCCESSOR IS NAMED RATHER THAN ESTIMATED.  The pin confines this unit to global relabelling; the mid-history thread-swap grain is registered as the successor question with its object named, and no verdict segment of this unit quantifies over it
+         evidence: successor registered, 671 characters, no verdict segment depends on it
+
+SECTION 10.  THE VERDICT
+  [PASS] G-VERDICT-RECONSTRUCTED
+         THE HEAD IS DERIVED A SECOND TIME BY A COMPARATOR THAT SHARES NOTHING WITH THE BUILDER (#82, strengthened).  The comparator recomputes 13 load-bearing quantities from the corpora themselves -- its own loops, its own route, no receipt read and no typed literal in common -- and requires each to equal the value the receipt publishes AND to occur in the head string.  Every number in the verdict is therefore twice-derived
+         evidence: recomputed 13, absent from the head none, disagreements none
+
+AID-STRATIFIED-AT-THE-ROUND-MEET-[IDENTITY FORCED ON 5,852 OF 5,856 COMMITTED HISTORIES, CHART ON 4] -- CENSUS=C1 72 OF 72 TRIVIAL | C2 5,184 OF 5,184 TRIVIAL | C3 596 TRIVIAL AND 4 AT ORDER 216 WITH ORBIT SHAPE 3+3+3 -- ROUTES=THE S_9 FILTER AND THE YOUNG SUBGROUP AGREE AT ORDER ON ALL 41,347 DISTINCT PREFIXES AND AT ELEMENT SET ON 703, 0 MISMATCHES
+CRYSTALLIZATION=EXACTLY 5 ON C1, C2 AND THE 1,944-HISTORY SEED FAN (UNIFORM, NOT AN AVERAGE) | C3 STRATIFIED 5:404|7:36|8:144|11:12|never:4 | NEVER 4 = THE CONSTANT-CLASS QUADRUPLES ANT|ANT|ANT|ANT,COL|COL|COL|COL,DIA|DIA|DIA|DIA,ROW|ROW|ROW|ROW -- PREFIX-LAW=A CONCATENATION CRYSTALLIZES EXACTLY WHEN ITS FIRST FACTOR DOES, 0 DISAGREEMENTS OF 5,184; THE STABILIZER NEVER GROWS, 0 GROWTH EVENTS IN 2,000 PREFIXES
+INVARIANCE=SPLIT -- BLIND-BY-THEOREM: THE CO-DIVISION RELATION (0 VIOLATIONS OVER 121,152 STABILIZER ELEMENTS AT 703 OBJECTS) AND EVERY WELD-DICTIONARY READING (121,152 PARSE COMPARISONS, 0 DIFFERENCES) -- NOT-BLIND-BY-MEASUREMENT: THE RECORD'S ATTRIBUTION (ORBIT-CONSTANT AT 111 OF 703, NAMING-DEPENDENT AT 592) AND THE WALK'S BORN MENU (134,58,58,58,58 BY DEPTH) -- THE WALK STRICTLY REFINES THE RECORD FROM DEPTH TWO: 53 OBJECTS THE RECORD CANNOT SEPARATE AND THE WALK CAN, 23 THE RECORD SEPARATES AND THE ONE-STEP MENU CANNOT
+WALK-SYMMETRIES=EXACTLY THE TRANSLATIONS (813 OF 121,152 ELEMENTS; SHIFT-COMMUTING EQUALS TRANSLATION AT EVERY ONE, 0 DISAGREEMENTS; RECORD-PRESERVING 51,769) -- DEGENERACY=THE RELATION FORGETS WHAT THE SEQUENCE REMEMBERS: AT 24 OF 600 R = 4 HISTORIES THE CO-DIVISION RELATION IS THE CONSTANT COMPLETE GRAPH WITH AUTOMORPHISM GROUP 362,880 WHILE THE STABILIZER OF THE ORDERED HISTORY IS TRIVIAL
+SCOPE=THE GLOBAL-RELABELLING GRAIN ONLY; THE GROUPOID GRAIN REGISTERED AND NOT RUN -- MEASURE=COUNTING-ONLY UNDER TWO DECLARED MEASURES (E-24): THE RECORD'S BLIND FRACTION IS 3/19 BY DISTINCT PREFIX AND 1235/6008 BY CORPUS MULTIPLICITY, THE WALK'S 58/703 AND 2065/24032 -- WINDOWS=W-C1,W-C1FAN,W-C2,W-C3,W-DRIVE,W-AUTC2,W-WALK, FOUR OF THEM ENTIRE CLASSES -- LANGUAGE=FORCED/CHART/STRATIFIED NAME THE STABILIZER AND THE INVARIANCE DATA AND NOTHING ELSE
+
+SECTION 11.  THE PAPER INSTRUMENT AND THE CLOSING BATTERY
+  [PASS] G-PAPER-CLAIMS
+         EVERY LOAD-BEARING SENTENCE OF THE PAPER IS RENDERED FROM THE RECEIPT, NOT TYPED (#267 order).  The 14 claims below are built from measured values in this run and each is required to occur in the paper under the #125 normalisation; a claim the paper does not carry kills the run
+         evidence: claims 14, missing none
+  [PASS] G-PAPER-TABLES
+         ALL 10 TABLES RENDER, ROW BY ROW AND CELL BY CELL (#267 order).  Every row of every receipt table is required to appear as a markdown table row of the paper with every one of its cells present; the paper carries 79 table rows and 0 of the 69 required rows are unrendered
+         evidence: required rows 69, paper rows 79, unrendered 0
+  [PASS] G-PAPER-HEAD-VERBATIM
+         THE PAPER'S VERDICT BLOCK IS THIS RUN'S HEAD, BYTE FOR BYTE.  Every one of the 5 segments is matched against the paper as written, the whole head is matched as one string, and the fenced blocks are compared as a MULTISET against the declared 2 copies (E-22) -- a second forged copy cannot hide behind a clean one
+         evidence: segments matched True, multiset matched True, fenced blocks 10
+  [PASS] G-PAPER-COVERAGE
+         EVERY NUMERAL IN THE PAPER IS BACKED -- PROSE, TABLES, INLINE CODE SPANS AND FENCED BLOCKS ALIKE (#20 + E-22).  544 numerals scanned of which 4 inside 7 inline spans and 136 inside 10 fenced blocks, 61 spelled numerals scanned, against a registry of 167 tokens plus 0 declared exemptions each of which must fire.  THE SCAN'S OWN COVERAGE IS GATED: the count is compared with a reference taken over the whole paper with nothing removed, so a scanner that strips fences or spans fails by arithmetic.  Unbacked: none
+         evidence: scanned 544 of 544 (total True), unbacked [], fenced [], inline [], spelled [], dead exemptions [], suppliable [], dangling refs []
+  [PASS] G-WHITELIST-DIGEST-FREE
+         THE NUMERAL WHITELIST CARRIES NO DIGEST TOKENS (#267 order).  A twelve-character hexadecimal that exists only inside a sha256 is not a published number, and allowing it would let any 12-digit numeral through; the receipt walk skips digest strings and the resulting registry of 167 tokens is checked to contain none
+         evidence: registry 167 tokens, digest-free True
+  [PASS] G-SPELLED-NUMERALS
+         SPELLED NUMERALS ARE SCANNED ON THE SAME TERMS, INCLUDING ABOVE TWELVE (#267 order).  The word list carries 23 entries and 61 spelled numerals were read out of the paper; every one is backed by the run's own registry or by a declared exemption
+         evidence: word list 23, scanned 61, unbacked none
+  [PASS] G-PAPER-CLAIM-POLARITY
+         THE PAPER NEVER ASSERTS THE OPPOSITE OF A MEASURED FATE.  5 probes, each the negation of a measurement this run published, are searched for in the paper under the #125 normalisation
+         evidence: probes 5, violations none
+  [PASS] G-WALLS-SCAN-THE-PAPER
+         THE READING WALLS SCAN THE PAPER ITSELF (#267 MAJOR-1).  Each of the 4 walls holds a list of BANNED FORMS and is evaluated against the 24,506 characters of the paper under test, not against a label and not against this file; a wall that reads nothing is not a wall.  A declared mutant inserts a banned sentence and every wall fires on it
+         evidence: walls 4, characters scanned 24506, violations none
+  [PASS] G-NO-TYPED-COUNTS
+         NO COUNT THIS UNIT PUBLISHES IS TYPED (#267 MAJOR-3).  The string constants of the three functions that write the head, the claims and the tables are scanned by AST; every multi-digit literal found there would be a count the receipt could have supplied, and there are 0 of them
+         evidence: typed literals none
+  [PASS] G-FALSIFIER-HONEST
+         EVERY FALSIFIER'S PUBLISHED DESCRIPTION IS VERIFIED AGAINST ITS OWN CODE (E-23).  Each of the 47 mutants names the object it corrupts; the hook is located by AST, its statement's source is published in the receipt, and the named object is required to occur in that source.  A description-inverted mutant is a false waiver wearing a green badge, and this gate is what stops one
+         evidence: mutants 47, descriptions not matching code none
+  [PASS] G-COVERAGE
+         THE COVERAGE LEDGER IS TAKEN AGAINST AN HONEST DENOMINATOR (#34).  This run evaluated 47 gates (47 distinct); 45 of them carry a declared falsifier and 2 carry a named waiver; every mutant names a gate this run actually reaches, so no falsifier points at dead code
+         evidence: uncovered none, mutants naming unreachable gates none
+  [PASS] G-REACHABILITY
+         EVERY FALSIFIER REACHES ITS GATE (#34 with reachability).  Each of the 47 mutants names a gate that this plain run evaluates; the sweep below runs every one of them and requires it to die at the gate it names, with the artifacts unchanged
+         evidence: mutants 47, gates reached 45, unreachable none
+  [PASS] G-EXACT-ARITHMETIC
+         EXACT ARITHMETIC, SCANNED RATHER THAN PROMISED.  An AST scan of this file finds no float literal and no true division anywhere; every quotient is a Fraction or an integer floor division, and the Born weights are rational integers by construction
+         evidence: float literals 0, true divisions 0
+  [PASS] G-NO-SUBPROCESS
+         NO SUBPROCESS OF ANY KIND (#91 off-tree/git-less).  The import set is scanned: no `subprocess`, no `shutil`, no `socket`, no `urllib`.  A run inside a mirror holding only the pinned sources and no version control produces the same bytes
+         evidence: imports ['ast', 'collections', 'fractions', 'hashlib', 'itertools', 'json', 'math', 'os', 're', 'sys']
+  [PASS] G-READS-DECLARED
+         EVERY RUNTIME READ IS DECLARED, BY VALUE AND NOT BY POSITION (#46/#91).  The SOURCE category is compared as a SET OF ABSOLUTE PATHS against the frozen declaration -- 13 against 13 -- and the only other reads are this file itself and the paper under test.  No ledger, no STATUS file and no other unit's working file is read
+         evidence: source reads 13, declared 13, categories ['PAPER-UNDER-TEST', 'SELF', 'SOURCE']
+  [PASS] G-PAPER-COVERAGE-FINAL
+         THE PAPER INSTRUMENT RAN INSIDE THIS RUN (#20).  The coverage, polarity, claim and table ledgers above were produced by the plain run and are sealed here, so no separate verification pass can drift from the artifacts this run writes: 544 numerals, 14 claims and 69 table rows
+         evidence: numerals 544, claims 14, rows 69
+  [PASS] G-SWEEP-BOUND
+         THE MUTANT SWEEP IS EXECUTION-BOUND, NOT A LIST (E-23).  The sweep row published here is the record of runs this process actually performed: 47 mutants declared, 0 executed in this process, 0 survivors.  A plain run publishes an empty execution list rather than a claim, and the --sweep run publishes the rows themselves
+         evidence: declared 47, executed 0, survivors none

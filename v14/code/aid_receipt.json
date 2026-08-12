@@ -1,0 +1,2530 @@
+{
+ "arithmetic": "exact: Python integers, Fraction, and Z[w] as pairs",
+ "closing_gates": {
+  "after_the_snapshot": [
+   "G-GATE-ACCOUNTING",
+   "G-TRANSCRIPT-INTEGRITY",
+   "G-SEAL-TOTALITY",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "names": [
+   "G-PAPER-COVERAGE-FINAL",
+   "G-SWEEP-BOUND",
+   "G-GATE-ACCOUNTING",
+   "G-TRANSCRIPT-INTEGRITY",
+   "G-SEAL-TOTALITY",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "warrant": "the transcript is sealed WHOLE, the manifest is total, the paper instrument runs inside the plain run, and the artifacts are compared against the gate-time seal rather than re-derived from disk"
+ },
+ "corpora": {
+  "C1-R3-TRIPLES": {
+   "events_per_history": 9,
+   "histories": 72,
+   "window": "W-C1"
+  },
+  "C1FAN-SEED-FAN": {
+   "distinct_event_sets": 12,
+   "distinct_sequences": 432,
+   "events_per_history": 9,
+   "histories": 1944,
+   "window": "W-C1FAN"
+  },
+  "C2-R6-CONCATENATIONS": {
+   "events_per_history": 18,
+   "histories": 5184,
+   "window": "W-C2"
+  },
+  "C3-R4-WINDOW": {
+   "events_per_history": 12,
+   "histories": 600,
+   "strata": {
+    "W4-CLASS": 256,
+    "W4-FLAT": 264,
+    "W4-SEEDFAN": 80
+   },
+   "window": "W-C3"
+  },
+  "histories_total": 5856,
+  "prefix_objects_total": 101160
+ },
+ "counts": {
+  "chart_histories": 4,
+  "complete_relation_histories": 24,
+  "crystallization_constant": 5,
+  "distinct_prefixes": 41347,
+  "forced_histories": 5852,
+  "histories": 5856,
+  "never_crystallizing": 4,
+  "nontrivial_prefixes": 703,
+  "prefix_objects": 101160,
+  "record_blind": 111,
+  "record_naming": 592,
+  "sources": 13,
+  "stabilizer_elements": 121152,
+  "verbatim_anchors": 10,
+  "walk_blind_depth1": 134,
+  "walk_blind_depth2": 58,
+  "walk_symmetries": 813,
+  "windows": 7
+ },
+ "coverage": {
+  "gates": 47,
+  "gates_distinct": 47,
+  "gates_with_a_mutant": 45,
+  "honest_denominator": 47,
+  "mutants": 47,
+  "mutants_naming_a_gate_that_never_runs": [],
+  "uncovered": [],
+  "waived": [
+   {
+    "gate": "G-PROVENANCE",
+    "waiver": "MACHINE-CHECKED FORCING: this gate's falsifier is the CLI's own `--selftest`, which corrupts one declared anchor's digest and requires the run to die here and write nothing.  It is an executable falsifier rather than a registry mutant because it must run before the mutant harness itself is trusted."
+   },
+   {
+    "gate": "G-ARTIFACT-INTEGRITY",
+    "waiver": "MACHINE-CHECKED FORCING: a mutant of this gate would have to WRITE artifacts, which the era forbids of a failing run, so the falsifier is carried INSIDE the gate instead -- the same disk-vs-seal comparison is run a second time on the same disk bytes with one bit flipped and is required to REJECT.  The gate therefore fires in both directions in every plain run."
+   }
+  ]
+ },
+ "crystallization": {
+  "constant_on_C1_C2_C1FAN": 5,
+  "events_four_and_five_are_transversals_of_the_first_round": true,
+  "monotonicity_growth_events": 0,
+  "monotonicity_prefixes_checked": 2000,
+  "never_crystallizing": 4,
+  "never_crystallizing_arrangements": [
+   "ANT|ANT|ANT|ANT",
+   "COL|COL|COL|COL",
+   "DIA|DIA|DIA|DIA",
+   "ROW|ROW|ROW|ROW"
+  ],
+  "never_crystallizing_records": [
+   "[(0, 0, 0)]",
+   "[(0, 0, 4)]",
+   "[(0, 4, 0)]",
+   "[(4, 0, 0)]"
+  ],
+  "never_crystallizing_stabilizer_orders": [
+   216
+  ],
+  "per_corpus": {
+   "C1-R3-TRIPLES": {
+    "5": 72
+   },
+   "C1FAN-SEED-FAN": {
+    "5": 1944
+   },
+   "C2-R6-CONCATENATIONS": {
+    "5": 5184
+   },
+   "C3-R4-WINDOW": {
+    "11": 12,
+    "5": 404,
+    "7": 36,
+    "8": 144,
+    "never": 4
+   }
+  },
+  "prefix_law_disagreements": 0,
+  "stabilizer_order_by_prefix_length_C1": [
+   4320,
+   216,
+   216,
+   8,
+   1,
+   1
+  ],
+  "stabilizer_order_by_prefix_length_C1_distinct": 1,
+  "stabilizer_order_by_prefix_length_C2_distinct": 1
+ },
+ "driven": {
+  "drive_set_size": 17,
+  "event_counts": [
+   48,
+   60,
+   66,
+   102
+  ],
+  "footprint_rule": {
+   "has_proposer_union": true,
+   "returns_props_plus_vname": true,
+   "source": "{t[0] for t in op[2]} base = next(iter(op[2]))[1] return frozenset(props | {vname(base, op[3], op[1])})"
+  },
+  "maxhits_observed": [
+   1
+  ],
+  "mismatches": 0,
+  "refusal_control": "('propose G10', 14)",
+  "rows": [
+   {
+    "divisions": 9,
+    "events": 48,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 3,
+    "window": "W-C1"
+   },
+   {
+    "divisions": 9,
+    "events": 48,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 3,
+    "window": "W-C1"
+   },
+   {
+    "divisions": 9,
+    "events": 48,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 3,
+    "window": "W-C1"
+   },
+   {
+    "divisions": 9,
+    "events": 48,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 3,
+    "window": "W-C1"
+   },
+   {
+    "divisions": 9,
+    "events": 48,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 3,
+    "window": "W-C1"
+   },
+   {
+    "divisions": 9,
+    "events": 48,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 3,
+    "window": "W-C1"
+   },
+   {
+    "divisions": 9,
+    "events": 48,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 3,
+    "window": "W-C1"
+   },
+   {
+    "divisions": 9,
+    "events": 48,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 3,
+    "window": "W-C1"
+   },
+   {
+    "divisions": 9,
+    "events": 48,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 3,
+    "window": "W-C1"
+   },
+   {
+    "divisions": 12,
+    "events": 48,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 4,
+    "window": "W-C3"
+   },
+   {
+    "divisions": 12,
+    "events": 48,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 4,
+    "window": "W-C3"
+   },
+   {
+    "divisions": 12,
+    "events": 48,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 4,
+    "window": "W-C3"
+   },
+   {
+    "divisions": 12,
+    "events": 48,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 4,
+    "window": "W-C3"
+   },
+   {
+    "divisions": 12,
+    "events": 66,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 4,
+    "window": "W-C3"
+   },
+   {
+    "divisions": 12,
+    "events": 60,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 4,
+    "window": "W-C3"
+   },
+   {
+    "divisions": 18,
+    "events": 102,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 6,
+    "window": "W-C2"
+   },
+   {
+    "divisions": 18,
+    "events": 102,
+    "footprints_equal_groups": true,
+    "maxhits": 1,
+    "refusal": "None",
+    "rounds": 6,
+    "window": "W-C2"
+   }
+  ]
+ },
+ "gates": [
+  {
+   "evidence": "mismatches none",
+   "gate": "G-PROVENANCE",
+   "passed": true,
+   "statement": "THE 13 RUNTIME SOURCES ARE PINNED BY CONTENT (#46/#91).  Every source is read as bytes, its sha256-12 recomputed from those bytes and compared with this unit's frozen declaration; the declaration also names the COMMIT each pinned digest belongs to, so a worktree byte that is not the committed object cannot be read.  One mismatch and the run dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "anchors 10, misses none",
+   "gate": "G-VERBATIM",
+   "passed": true,
+   "statement": "QUOTE FIDELITY (#62, as amended).  Every sentence this unit quotes from a parent is matched against that parent's committed bytes under the #125 normalisation with a 30-character floor, and each anchor names the CONSUMER GATE that reads it -- 10 anchors over 10 consumer gates, none of them a label",
+   "waiver": null
+  },
+  {
+   "evidence": "windows 7, all named and non-trivial",
+   "gate": "G-WINDOWS-DISCLOSED",
+   "passed": true,
+   "statement": "EVERY WINDOW IS DECLARED IN-STRING AND LICENSED (section 15).  The 7 declarations below are published in the receipt, in the head and in the paper; four of them are ENTIRE classes and carry no sampling at all, and each of the other three names the property that licenses it",
+   "waiver": null
+  },
+  {
+   "evidence": "rows 9, disagreements none",
+   "gate": "G-BACK-VALIDATION",
+   "passed": true,
+   "statement": "THE SUBSTRATE IS RECOMPUTED HERE AND MEASURED AGAINST THE PARENTS' COMMITTED RECEIPTS, OBJECT BY OBJECT (#87).  Each of the 9 rows is an independently computed quantity of this run compared with the value the parent's own receipt bytes carry: 280 groupings, 36 saturating, 72 I7-STRICT triples at R = 3, 276 G-FLAT quadruples, a 600-schedule window, 9 and 12 division events per R = 3 and R = 4 record, and 5,184 ordered R = 6 concatenations.  A single disagreement kills the run",
+   "waiver": null
+  },
+  {
+   "evidence": "enumerated 280, closed form 280",
+   "gate": "G-PARTITION-ROUTE",
+   "passed": true,
+   "statement": "THE ROUND FAMILY, COUNTED TWICE BY ROUTES THAT SHARE NO CODE.  The recursive enumeration returns 280 groupings; the closed form 9!/((3!)^3 . 3!) returns 280.  The enumeration is what everything downstream uses",
+   "waiver": null
+  },
+  {
+   "evidence": "shapes {'C1-R3-TRIPLES': [(9, 72)], 'C2-R6-CONCATENATIONS': [(18, 5184)], 'C3-R4-WINDOW': [(12, 600)]}; event sizes {'C1-R3-TRIPLES': [3], 'C2-R6-CONCATENATIONS': [3], 'C3-R4-WINDOW': [3]}",
+   "gate": "G-CORPORA-SHAPE",
+   "passed": true,
+   "statement": "EVERY HISTORY IN EVERY CORPUS HAS THE SHAPE THE CONSTRUCTOR FORCES, PER OBJECT.  A schedule of R rounds carries exactly 3R division events -- one arbitration per conflict group per round -- and every event is a three-actor subset: [(9, 72)] at 72 histories, [(18, 5184)] at 5,184, [(12, 600)] at 600.  The event sizes measured are [3]",
+   "waiver": null
+  },
+  {
+   "evidence": "fan histories 1944, distinct sequences 432, distinct event sets 12",
+   "gate": "G-EVENT-SHAPE",
+   "passed": true,
+   "statement": "THE EVENT IS THE CONFLICT GROUP AND THE HISTORY IS ORDERED.  Within a round the three groups enter in ascending order of their seed's site index -- d66's own order -- so the history is a SEQUENCE and not a set; the 1944 histories of the seed fan W-C1FAN realise 432 distinct orderings of the same 12 event sets",
+   "waiver": null
+  },
+  {
+   "evidence": "proposer union True, props+vname return True",
+   "gate": "G-FOOTPRINT-RULE",
+   "passed": true,
+   "statement": "THE FOOTPRINT RULE IS READ OFF THE COMMITTED GRAMMAR'S OWN SOURCE, NOT ASSUMED.  d42b1's `regs_of` is parsed and its arbitration branch returns the union of the PROPOSER names in the conflict key with one derived value name; the proposers of an arbitration are exactly the conflict group, and paper-19's `record_of` cuts the value name away by restricting to the nine actor objects.  So the driven footprint IS the group -- a structural leg, gated before any drive runs",
+   "waiver": null
+  },
+  {
+   "evidence": "schedules 17, mismatches none",
+   "gate": "G-DRIVEN-EQUALS-COMBINATORIAL",
+   "passed": true,
+   "statement": "THE LICENSE FOR EVERY EXHAUSTIVE COLUMN, TAKEN AT THE FOOTPRINT SEQUENCE ITSELF.  For each of the 17 schedules of the declared drive set W-DRIVE the committed layers are driven and the register footprints of the division events -- taken from the layer's own `regs_of` and cut to the nine actor objects -- are compared EVENT BY EVENT, IN ORDER, with the combinatorial history.  This is strictly stronger than paper-21's licence, which compared the summed link FIELD; here the sequence itself is the object",
+   "waiver": null
+  },
+  {
+   "evidence": "maxhits [1], refusals ['None']",
+   "gate": "G-MAXHITS-IMMUNITY",
+   "passed": true,
+   "statement": "THE v10-LAYER TIE-BREAK IS NEVER CONSULTED (#160, as a gate).  Every event of every driven schedule is specified by its FULL TUPLE, so at most one menu candidate can match; the builder's own `maxhits` is read at every schedule and is 1 at all 17 of them.  d60's `pick` breaks ties with sorted(key=repr), which is hash-seed dependent -- this unit is immune because the tie-break is unreachable, and says so rather than pricing it",
+   "waiver": null
+  },
+  {
+   "evidence": "refusal ('propose G10', 14)",
+   "gate": "G-CTRL-REFUSED",
+   "passed": true,
+   "statement": "THE NEGATIVE FATE IS REACHABLE AND THE DRIVER SEES IT.  The collinear arrangement is re-driven with its FIRST conflict-supply delivery withheld; the committed layer then refuses the first proposal by an actor that does not hold the base, and the refusal is RECORDED rather than patched -- so 'no refusals' above is a measurement and not a property of the instrument",
+   "waiver": null
+  },
+  {
+   "evidence": "slice exit-free True, extracted bodies exit-free True",
+   "gate": "G-LAYERS-CANNOT-EXIT",
+   "passed": true,
+   "statement": "THE COMMITTED LAYERS ENTER AS SINGLE SOURCES AND CANNOT EXIT.  d42b1's module slice is cut before its first print and carries no exit call; d60 and d66 enter through an AST extraction that keeps only function and class definitions, so no module-level statement of theirs can run and no `sys.exit` of theirs is reachable",
+   "waiver": null
+  },
+  {
+   "evidence": "prefixes 41347, order mismatches 0, element-set comparisons 703, element-set mismatches 0",
+   "gate": "G-STAB-ROUTES",
+   "passed": true,
+   "statement": "THE STABILIZER, COMPUTED TWICE BY ROUTES THAT SHARE NO CODE AND NO LITERAL, PER OBJECT (#87).  ROUTE A filters the 362,880 elements of S_9 explicitly, event by event, and knows nothing about signatures; ROUTE B builds the Young subgroup of the participation-signature partition and never touches S_9.  The two are compared at ORDER on all 41,347 distinct prefixes of the four corpora and at ELEMENT SET on the 703 of them where the group is nontrivial or the prefix is a single event",
+   "waiver": null
+  },
+  {
+   "evidence": "forced 5852, chart 4, forced-iff-crystallized on all 5856",
+   "gate": "G-FORCED-PER-HISTORY",
+   "passed": true,
+   "statement": "FORCEDNESS IS DECIDED PER HISTORY, NEVER AS AN AGGREGATE (#87).  Each of the 5,856 committed histories carries its own stabilizer and its own verdict: 5,852 are FORCED (trivial stabilizer) and 4 are CHART (nontrivial).  The 4 chart histories all carry order [216] and orbit shape [(3, 3, 3)]",
+   "waiver": null
+  },
+  {
+   "evidence": "C1 [5], C2 [5], C1FAN [5], C3 [('11', 12), ('5', 404), ('7', 36), ('8', 144), ('None', 4)]",
+   "gate": "G-CRYSTALLIZATION",
+   "passed": true,
+   "statement": "THE CRYSTALLIZATION TIME IS MEASURED PER HISTORY AND IT IS A CONSTANT ON TWO OF THE THREE CORPORA.  Every one of the 72 R = 3 triples forces identity at its FIFTH division event -- not the third, not the ninth -- and so does every one of the 5,184 R = 6 concatenations and every one of the 1,944 seed-fan variants; the R = 4 window is the stratified one, at [('11', 12), ('5', 404), ('7', 36), ('8', 144), ('None', 4)]",
+   "waiver": null
+  },
+  {
+   "evidence": "concatenations 5184, disagreements with the first factor 0",
+   "gate": "G-PREFIX-LAW",
+   "passed": true,
+   "statement": "CRYSTALLIZATION IS A PREFIX PROPERTY, MEASURED RATHER THAN ASSUMED.  A stabilizer can only shrink as events are appended, so the time is decided by the earliest prefix that reaches triviality: each of the 5,184 ordered concatenations crystallizes exactly when its FIRST factor does, and nothing the second factor contributes can move it.  This is why the R = 6 corpus adds 0 new crystallization values and not one more",
+   "waiver": null
+  },
+  {
+   "evidence": "prefixes checked 2000, growth events 0",
+   "gate": "G-MONOTONE",
+   "passed": true,
+   "statement": "THE STABILIZER NEVER GROWS.  Route A builds each prefix's group by FILTERING its predecessor's, so containment is structural; it is measured anyway on the first 2000 distinct prefixes in non-decreasing length order -- an appended event can only remove elements",
+   "waiver": null
+  },
+  {
+   "evidence": "C1 profiles 1, C2 profiles 1, profile (4320, 216, 216, 8, 1, 1), transversal at events four and five True",
+   "gate": "G-PREFIX-PROFILE",
+   "passed": true,
+   "statement": "THE WHOLE ROUTE TO CRYSTALLIZATION IS THE SAME AT EVERY R = 3 HISTORY, AND IT IS THE ROUTE AND NOT A GEOMETRIC ACCIDENT THAT EXPLAINS THE CONSTANT.  The stabilizer order by prefix length is (4320, 216, 216, 8, 1, 1) at all 72 of them and at all 5,184 R = 6 concatenations: the first event leaves the (3, 6) Young subgroup; the second cuts it to the three-block 216; the THIRD ADDS NOTHING, because a round's last group is the complement of its first two; the fourth leaves three singletons and three pairs; the fifth splits all three pairs at once.  The mechanism is measured: each of the fourth and fifth events meets every first-round group exactly once -- they are transversals of the first round -- at every history of the corpus",
+   "waiver": null
+  },
+  {
+   "evidence": "never-crystallizing 4, arrangements ['ANT|ANT|ANT|ANT', 'COL|COL|COL|COL', 'DIA|DIA|DIA|DIA', 'ROW|ROW|ROW|ROW']",
+   "gate": "G-NEVER-CRYSTALLIZING",
+   "passed": true,
+   "statement": "THE HISTORIES THAT NEVER FORCE IDENTITY ARE CHARACTERISED, NOT MERELY COUNTED.  Exactly 4 of the 5,856 committed histories leave identity un-forced to the last event, and they are precisely the CONSTANT-CLASS quadruples ['ANT|ANT|ANT|ANT', 'COL|COL|COL|COL', 'DIA|DIA|DIA|DIA', 'ROW|ROW|ROW|ROW']: a schedule that repeats one parallel class every round can never separate two sites that lie on a common line of that class, so the three lines survive as orbits and the stabilizer stays at order 216",
+   "waiver": null
+  },
+  {
+   "evidence": "objects 703, elements 121,152, violations 0",
+   "gate": "G-CODIVISION-BLIND",
+   "passed": true,
+   "statement": "THE WELD'S LINK GENERATOR IS BLIND TO THE UN-FORCED PART OF IDENTITY -- A THEOREM, VERIFIED PER OBJECT.  A stabilizer element fixes every event SETWISE, so an actor belongs to an event exactly when its image does; the co-division count of a pair is therefore carried unchanged.  Measured on all 703 nontrivial-stabilizer objects over all 121,152 stabilizer elements: the relation is preserved everywhere",
+   "waiver": null
+  },
+  {
+   "evidence": "comparisons 121152, differences 0",
+   "gate": "G-WELD-DICTIONARY",
+   "passed": true,
+   "statement": "EVERY READING THE WELD DICTIONARY PUBLISHES IS BLIND TOO.  Paper-19's induced count field reads the co-division relation through a parse; precomposing that parse with a stabilizer element leaves the field entry for entry, because the element is an automorphism of the relation the field reads.  Measured at 121,152 parse comparisons over 703 objects -- EVERY stabilizer element of every object, with no cap -- and 0 differences.  The stabilizer contributes NOTHING to the weld's site-assignment fiber",
+   "waiver": null
+  },
+  {
+   "evidence": "orbit-constant 111 of 703; naming-dependent 592",
+   "gate": "G-RECORD-ATTRIBUTION",
+   "passed": true,
+   "statement": "THE RECORD IS A FIELD OVER THE ARENA AND NOT A PROPERTY OF A THREAD -- MEASURED.  Two namings that differ by a stabilizer element produce the SAME labelled history, so the field n_l(x) is literally the same object; what differs is WHICH THREAD sits at which site.  The record's value is well defined on a thread exactly when x -> (n_l(x)) is constant on the stabilizer's orbits, and it is NOT: constant at 111 of the 703 nontrivial-stabilizer objects, so at 592 of them the record assigns different count vectors to actors the history cannot tell apart",
+   "waiver": null
+  },
+  {
+   "evidence": "elements 121152, shift-commuting 813, translations in the stabilizers 813, disagreements 0",
+   "gate": "G-SHIFT-IS-TRANSLATION",
+   "passed": true,
+   "statement": "THE SHIFT'S SYMMETRIES ARE EXACTLY THE TRANSLATIONS -- A THEOREM, MEASURED BOTH WAYS.  A relabelling commutes with paper-20's shift exactly when it carries x + l to sigma(x) + l for all three declared links, which forces sigma to be a translation of AG(2,3).  Both sides are computed independently on all 121,152 stabilizer elements -- the shift test cell by cell, the translation test against the nine translations -- and they agree at every one",
+   "waiver": null
+  },
+  {
+   "evidence": "born-invariant by depth [134, 58, 58, 58, 58]; record-invariant 111; walk symmetries 813 of 121152; record-preserving elements 51769",
+   "gate": "G-BORN-MENU",
+   "passed": true,
+   "statement": "THE WALK SEES WHAT THE RECORD CANNOT.  Paper-20's coupled step -- the site-block-diagonal coin C(x) = G.D(x) with D(x) = diag(w^{n_l(x)}), then the shift -- is re-implemented here over Z[w] and run from the S_9-symmetric all-ones start, so every asymmetry in the published Born menu is carried by the record and the shift and never by the start.  The menu is orbit-constant at [134, 58, 58, 58, 58] objects by depth, against the record's 111: the one-step menu is blind at MORE objects than the record, and from depth two it is blind at FEWER.  A stabilizer element is a symmetry of the whole coupled step exactly when it is a translation AND preserves the record: 813 of 121,152 elements",
+   "waiver": null
+  },
+  {
+   "evidence": "enumerated 362,880, closed 362,880",
+   "gate": "G-AUT-SHORTCUT",
+   "passed": true,
+   "statement": "THE CONSTANT-WEIGHT SHORTCUT IS A MACHINE-CHECKED FORCING, NOT A WAIVER (#34).  When every off-diagonal co-division weight is equal, every permutation preserves the relation and the automorphism group is all of S_9; the closed value is confirmed by ENUMERATING one such object's automorphisms explicitly, at 362,880 of them",
+   "waiver": null
+  },
+  {
+   "evidence": "complete-relation histories 24, all with trivial stabilizer True, complete-relation iff all four classes used True",
+   "gate": "G-CODIVISION-FORGETS",
+   "passed": true,
+   "statement": "THE RELATION FORGETS WHAT THE SEQUENCE REMEMBERS.  At 24 of the 600 R = 4 window histories -- exactly the schedules that use all four parallel classes once each -- every pair of actors co-divides exactly once, so the co-division relation is the CONSTANT COMPLETE GRAPH and its automorphism group is the whole of S_9 at 362,880 elements; yet the stabilizer of the ordered history is TRIVIAL at every one of them.  The weld reads through that relation, so at these histories the dictionary's site freedom is total while the identity the history forces is complete",
+   "waiver": null
+  },
+  {
+   "evidence": "cells 27, shift a bijection True, integer Born weights True",
+   "gate": "G-WALK-ARENA",
+   "passed": true,
+   "statement": "THE WALK IS RE-IMPLEMENTED, NEVER IMPORTED, AND ITS ARENA IS GATED.  The 27 cells, the three declared link directions, the Grover numerators over 3 and the shift table are rebuilt here from the arena's own definitions; the shift is a permutation of the cells (a bijection, checked), the coin is site-block-diagonal by construction, and the Born weights are RATIONAL INTEGERS because |a + bw|^2 = a^2 - ab + b^2",
+   "waiver": null
+  },
+  {
+   "evidence": "residue triples 18, collisions 0",
+   "gate": "G-BORN-DEPTH-ONE-LAW",
+   "passed": true,
+   "statement": "THE DEPTH-ONE MENU IS A FUNCTION OF THE SITE'S OWN RECORD ROW MODULO THREE, MEASURED RATHER THAN ASSERTED.  The coin is site-block-diagonal and the start is the all-ones state, so the post-coin weight at a site depends on that site's three counts only through w to those powers.  Over every site of every one of the 703 nontrivial objects the map from the residue triple to the menu row is single-valued: 18 distinct residue triples, 0 collisions",
+   "waiver": null
+  },
+  {
+   "evidence": "distinct 3/19 vs multiplicity 1235/6008 (record); 58/703 vs 2065/24032 (walk)",
+   "gate": "G-E24-MEASURE",
+   "passed": true,
+   "statement": "NO COUNT BECOMES A PROBABILITY WITHOUT A DECLARED MEASURE (E-24), AND THIS UNIT'S HEADLINE FRACTION MOVES WHEN THE MEASURE DOES.  The record's blindness is 3/19 of the distinct nontrivial-stabilizer objects and 1235/6008 of them counted with corpus multiplicity; the walk's is 58/703 and 2065/24032.  The two measures DISAGREE, so every fraction this unit publishes is stamped COUNTING-ONLY and carries the measure it was taken under.  The two measures are named in the receipt: distinct prefixes over the four declared corpora, and prefixes counted with corpus multiplicity over the three primary ones",
+   "waiver": null
+  },
+  {
+   "evidence": "successor registered, 671 characters, no verdict segment depends on it",
+   "gate": "G-GRAIN-REGISTERED",
+   "passed": true,
+   "statement": "THE SCOPE IS THE STABILIZER GRAIN AND THE SUCCESSOR IS NAMED RATHER THAN ESTIMATED.  The pin confines this unit to global relabelling; the mid-history thread-swap grain is registered as the successor question with its object named, and no verdict segment of this unit quantifies over it",
+   "waiver": null
+  },
+  {
+   "evidence": "recomputed 13, absent from the head none, disagreements none",
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "passed": true,
+   "statement": "THE HEAD IS DERIVED A SECOND TIME BY A COMPARATOR THAT SHARES NOTHING WITH THE BUILDER (#82, strengthened).  The comparator recomputes 13 load-bearing quantities from the corpora themselves -- its own loops, its own route, no receipt read and no typed literal in common -- and requires each to equal the value the receipt publishes AND to occur in the head string.  Every number in the verdict is therefore twice-derived",
+   "waiver": null
+  },
+  {
+   "evidence": "claims 14, missing none",
+   "gate": "G-PAPER-CLAIMS",
+   "passed": true,
+   "statement": "EVERY LOAD-BEARING SENTENCE OF THE PAPER IS RENDERED FROM THE RECEIPT, NOT TYPED (#267 order).  The 14 claims below are built from measured values in this run and each is required to occur in the paper under the #125 normalisation; a claim the paper does not carry kills the run",
+   "waiver": null
+  },
+  {
+   "evidence": "required rows 69, paper rows 79, unrendered 0",
+   "gate": "G-PAPER-TABLES",
+   "passed": true,
+   "statement": "ALL 10 TABLES RENDER, ROW BY ROW AND CELL BY CELL (#267 order).  Every row of every receipt table is required to appear as a markdown table row of the paper with every one of its cells present; the paper carries 79 table rows and 0 of the 69 required rows are unrendered",
+   "waiver": null
+  },
+  {
+   "evidence": "segments matched True, multiset matched True, fenced blocks 10",
+   "gate": "G-PAPER-HEAD-VERBATIM",
+   "passed": true,
+   "statement": "THE PAPER'S VERDICT BLOCK IS THIS RUN'S HEAD, BYTE FOR BYTE.  Every one of the 5 segments is matched against the paper as written, the whole head is matched as one string, and the fenced blocks are compared as a MULTISET against the declared 2 copies (E-22) -- a second forged copy cannot hide behind a clean one",
+   "waiver": null
+  },
+  {
+   "evidence": "scanned 544 of 544 (total True), unbacked [], fenced [], inline [], spelled [], dead exemptions [], suppliable [], dangling refs []",
+   "gate": "G-PAPER-COVERAGE",
+   "passed": true,
+   "statement": "EVERY NUMERAL IN THE PAPER IS BACKED -- PROSE, TABLES, INLINE CODE SPANS AND FENCED BLOCKS ALIKE (#20 + E-22).  544 numerals scanned of which 4 inside 7 inline spans and 136 inside 10 fenced blocks, 61 spelled numerals scanned, against a registry of 167 tokens plus 0 declared exemptions each of which must fire.  THE SCAN'S OWN COVERAGE IS GATED: the count is compared with a reference taken over the whole paper with nothing removed, so a scanner that strips fences or spans fails by arithmetic.  Unbacked: none",
+   "waiver": null
+  },
+  {
+   "evidence": "registry 167 tokens, digest-free True",
+   "gate": "G-WHITELIST-DIGEST-FREE",
+   "passed": true,
+   "statement": "THE NUMERAL WHITELIST CARRIES NO DIGEST TOKENS (#267 order).  A twelve-character hexadecimal that exists only inside a sha256 is not a published number, and allowing it would let any 12-digit numeral through; the receipt walk skips digest strings and the resulting registry of 167 tokens is checked to contain none",
+   "waiver": null
+  },
+  {
+   "evidence": "word list 23, scanned 61, unbacked none",
+   "gate": "G-SPELLED-NUMERALS",
+   "passed": true,
+   "statement": "SPELLED NUMERALS ARE SCANNED ON THE SAME TERMS, INCLUDING ABOVE TWELVE (#267 order).  The word list carries 23 entries and 61 spelled numerals were read out of the paper; every one is backed by the run's own registry or by a declared exemption",
+   "waiver": null
+  },
+  {
+   "evidence": "probes 5, violations none",
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "passed": true,
+   "statement": "THE PAPER NEVER ASSERTS THE OPPOSITE OF A MEASURED FATE.  5 probes, each the negation of a measurement this run published, are searched for in the paper under the #125 normalisation",
+   "waiver": null
+  },
+  {
+   "evidence": "walls 4, characters scanned 24506, violations none",
+   "gate": "G-WALLS-SCAN-THE-PAPER",
+   "passed": true,
+   "statement": "THE READING WALLS SCAN THE PAPER ITSELF (#267 MAJOR-1).  Each of the 4 walls holds a list of BANNED FORMS and is evaluated against the 24,506 characters of the paper under test, not against a label and not against this file; a wall that reads nothing is not a wall.  A declared mutant inserts a banned sentence and every wall fires on it",
+   "waiver": null
+  },
+  {
+   "evidence": "typed literals none",
+   "gate": "G-NO-TYPED-COUNTS",
+   "passed": true,
+   "statement": "NO COUNT THIS UNIT PUBLISHES IS TYPED (#267 MAJOR-3).  The string constants of the three functions that write the head, the claims and the tables are scanned by AST; every multi-digit literal found there would be a count the receipt could have supplied, and there are 0 of them",
+   "waiver": null
+  },
+  {
+   "evidence": "mutants 47, descriptions not matching code none",
+   "gate": "G-FALSIFIER-HONEST",
+   "passed": true,
+   "statement": "EVERY FALSIFIER'S PUBLISHED DESCRIPTION IS VERIFIED AGAINST ITS OWN CODE (E-23).  Each of the 47 mutants names the object it corrupts; the hook is located by AST, its statement's source is published in the receipt, and the named object is required to occur in that source.  A description-inverted mutant is a false waiver wearing a green badge, and this gate is what stops one",
+   "waiver": null
+  },
+  {
+   "evidence": "uncovered none, mutants naming unreachable gates none",
+   "gate": "G-COVERAGE",
+   "passed": true,
+   "statement": "THE COVERAGE LEDGER IS TAKEN AGAINST AN HONEST DENOMINATOR (#34).  This run evaluated 47 gates (47 distinct); 45 of them carry a declared falsifier and 2 carry a named waiver; every mutant names a gate this run actually reaches, so no falsifier points at dead code",
+   "waiver": null
+  },
+  {
+   "evidence": "mutants 47, gates reached 45, unreachable none",
+   "gate": "G-REACHABILITY",
+   "passed": true,
+   "statement": "EVERY FALSIFIER REACHES ITS GATE (#34 with reachability).  Each of the 47 mutants names a gate that this plain run evaluates; the sweep below runs every one of them and requires it to die at the gate it names, with the artifacts unchanged",
+   "waiver": null
+  },
+  {
+   "evidence": "float literals 0, true divisions 0",
+   "gate": "G-EXACT-ARITHMETIC",
+   "passed": true,
+   "statement": "EXACT ARITHMETIC, SCANNED RATHER THAN PROMISED.  An AST scan of this file finds no float literal and no true division anywhere; every quotient is a Fraction or an integer floor division, and the Born weights are rational integers by construction",
+   "waiver": null
+  },
+  {
+   "evidence": "imports ['ast', 'collections', 'fractions', 'hashlib', 'itertools', 'json', 'math', 'os', 're', 'sys']",
+   "gate": "G-NO-SUBPROCESS",
+   "passed": true,
+   "statement": "NO SUBPROCESS OF ANY KIND (#91 off-tree/git-less).  The import set is scanned: no `subprocess`, no `shutil`, no `socket`, no `urllib`.  A run inside a mirror holding only the pinned sources and no version control produces the same bytes",
+   "waiver": null
+  },
+  {
+   "evidence": "source reads 13, declared 13, categories ['PAPER-UNDER-TEST', 'SELF', 'SOURCE']",
+   "gate": "G-READS-DECLARED",
+   "passed": true,
+   "statement": "EVERY RUNTIME READ IS DECLARED, BY VALUE AND NOT BY POSITION (#46/#91).  The SOURCE category is compared as a SET OF ABSOLUTE PATHS against the frozen declaration -- 13 against 13 -- and the only other reads are this file itself and the paper under test.  No ledger, no STATUS file and no other unit's working file is read",
+   "waiver": null
+  },
+  {
+   "evidence": "numerals 544, claims 14, rows 69",
+   "gate": "G-PAPER-COVERAGE-FINAL",
+   "passed": true,
+   "statement": "THE PAPER INSTRUMENT RAN INSIDE THIS RUN (#20).  The coverage, polarity, claim and table ledgers above were produced by the plain run and are sealed here, so no separate verification pass can drift from the artifacts this run writes: 544 numerals, 14 claims and 69 table rows",
+   "waiver": null
+  },
+  {
+   "evidence": "declared 47, executed 0, survivors none",
+   "gate": "G-SWEEP-BOUND",
+   "passed": true,
+   "statement": "THE MUTANT SWEEP IS EXECUTION-BOUND, NOT A LIST (E-23).  The sweep row published here is the record of runs this process actually performed: 47 mutants declared, 0 executed in this process, 0 survivors.  A plain run publishes an empty execution list rather than a claim, and the --sweep run publishes the rows themselves",
+   "waiver": null
+  }
+ ],
+ "grain": {
+  "grain_registered": "GROUPOID (mid-history thread swaps)",
+  "grain_run": "GLOBAL-RELABELLING (the stabilizer grain)",
+  "note": "THE GROUPOID GRAIN, REGISTERED AND NOT RUN.  Everything above is taken at the GLOBAL-RELABELLING grain: one permutation of the nine actors, applied to every event of the history at once.  A strictly finer question is whether a thread may be re-identified BETWEEN events -- a groupoid of partial identifications rather than a group -- under which the object is not a stabilizer subgroup but a set of composable local isomorphisms.  This unit does not run it, does not estimate it, and does not let any sentence of its verdict depend on it; the successor question is stated here with its object named so that the scope of every result above is exactly the stabilizer grain."
+ },
+ "invariance": {
+  "aut_codivision_full_histories": {
+   "C1-R3-TRIPLES": {
+    "1296": 72
+   },
+   "C2-R6-CONCATENATIONS": {
+    "1296": 72
+   },
+   "C3-R4-WINDOW": {
+    "1296": 4,
+    "36": 536,
+    "362880": 24,
+    "72": 36
+   }
+  },
+  "aut_shortcut_enumerated": 362880,
+  "aut_window_C2": "W-AUTC2: the 72 diagonal concatenations",
+  "born_orbit_constant_by_depth": {
+   "1": 134,
+   "2": 58,
+   "3": 58,
+   "4": 58,
+   "5": 58
+  },
+  "codivision_violations": 0,
+  "complete_relation_histories": 24,
+  "cross_tab_record_born1_born2": {
+   "False|False|False": 569,
+   "False|True|False": 23,
+   "True|True|False": 53,
+   "True|True|True": 58
+  },
+  "nontrivial_objects": 703,
+  "record_naming_dependent": 592,
+  "record_orbit_constant": 111,
+  "record_preserving_elements": 51769,
+  "shift_commuting_elements": 813,
+  "shift_translation_disagreements": 0,
+  "stab_aut_pairs": {
+   "2/2": 48,
+   "2/8": 12,
+   "216/1296": 83,
+   "216/432": 98,
+   "24/24": 44,
+   "24/96": 22,
+   "4/16": 36,
+   "4/4": 47,
+   "4/8": 25,
+   "4320/4320": 18,
+   "8/48": 258,
+   "8/8": 12
+  },
+  "stabilizer_elements": 121152,
+  "walk_symmetries": 813,
+  "weld_parse_comparisons": 121152,
+  "weld_parse_differences": 0
+ },
+ "measure_relativity": {
+  "measures": [
+   "DISTINCT-PREFIX-OVER-THE-FOUR-DECLARED-CORPORA",
+   "MULTIPLICITY-OVER-THE-THREE-PRIMARY-CORPORA"
+  ],
+  "nontrivial_distinct": 703,
+  "nontrivial_with_multiplicity": 24032,
+  "record_blind_distinct": 111,
+  "record_blind_multiplicity": 4940,
+  "record_fraction_distinct": "3/19",
+  "record_fraction_multiplicity": "1235/6008",
+  "stamp": "COUNTING-ONLY",
+  "walk_blind_distinct": 58,
+  "walk_blind_multiplicity": 2065,
+  "walk_fraction_distinct": "58/703",
+  "walk_fraction_multiplicity": "2065/24032"
+ },
+ "mutant_sweep": {
+  "mutants": 47,
+  "rows": [],
+  "survivors": [],
+  "swept": false
+ },
+ "mutants": [
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "len(strict)",
+   "description_matches_code": true,
+   "gate": "G-BACK-VALIDATION",
+   "hook_lines": [
+    1232
+   ],
+   "hook_source": "back = { \"partitions\": (nparts, p21[\"counts\"][\"partitions\"]), \"saturating\": (nsat, p21[\"counts\"][\"saturating\"]), \"strict_triples\": (pick(\"MUT-BACKVAL\", len(strict), len(strict) - 1), p19[\"counts\"][\"i7_strict_triples\"]), \"strict_triples_p21\": (len(strict), p21[\"counts\"][\"back_r3_strict\"]), \"flat_quadruples\": (len(flatq), p21[\"counts\"][\"flat_quadruples\"]), \"window\": (len(W), p21[\"counts\"][\"window\"]), \"divisions_r3\": (len(history_of(((CLASSES[\"ROW\"], DIAG_SEED),) * 3)), p19[\"arena\"][\"divisions\"]), \"divisions_r4\": (len(history_of(W[0])), p21[\"driven\"][\"divisions_per_record\"]), \"r6_witnesses\": (len(strict) ** 2, p21[\"split\"][\"r6_door\"][\"ordered_witnesses\"]), }",
+   "name": "MUT-BACKVAL",
+   "what": "reports one I7-STRICT triple short of the measured len(strict), so this run's substrate disagrees with paper-19's committed receipt"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "nparts",
+   "description_matches_code": true,
+   "gate": "G-PARTITION-ROUTE",
+   "hook_lines": [
+    1263
+   ],
+   "hook_source": "LD.gate(\"G-PARTITION-ROUTE\", \"THE ROUND FAMILY, COUNTED TWICE BY ROUTES THAT SHARE NO CODE. \" \"The recursive enumeration returns %d groupings; the closed form \" \"9!/((3!)^3 . 3!) returns %d. The enumeration is what everything \" \"downstream uses\" % (nparts, closed), pick(\"MUT-PARTITION\", nparts, nparts + 1) == closed, \"enumerated %d, closed form %d\" % (nparts, closed))",
+   "name": "MUT-PARTITION",
+   "what": "reports nparts + 1 groupings, so the enumeration and the closed form disagree"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "hit",
+   "description_matches_code": true,
+   "gate": "G-VERBATIM",
+   "hook_lines": [
+    1180
+   ],
+   "hook_source": "if mut(\"MUT-VERBATIM\") and vid == \"V01\": hit = False",
+   "name": "MUT-VERBATIM",
+   "what": "declares the first anchor's quote absent from its source's bytes"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "rule['has_proposer_union']",
+   "description_matches_code": true,
+   "gate": "G-FOOTPRINT-RULE",
+   "hook_lines": [
+    1370
+   ],
+   "hook_source": "LD.gate(\"G-FOOTPRINT-RULE\", \"THE FOOTPRINT RULE IS READ OFF THE COMMITTED GRAMMAR'S OWN \" \"SOURCE, NOT ASSUMED. d42b1's `regs_of` is parsed and its \" \"arbitration branch returns the union of the PROPOSER names in \" \"the conflict key with one derived value name; the proposers of \" \"an arbitration are exactly the conflict group, and paper-19's \" \"`record_of` cuts the value name away by restricting to the nine \" \"actor objects. So the driven footprint IS the group -- a \" \"structural leg, gated before any drive runs\", pick(\"MUT-RULE\", rule[\"has_proposer_union\"], False) and rule[\"returns_props_plus_vname\"], \"proposer union %s, props+vname return %s\" % (rule[\"has_proposer_union\"], rule[\"returns_props_plus_vname\"]))",
+   "name": "MUT-RULE",
+   "what": "reports the proposer union absent from d42b1's regs_of source"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "same",
+   "description_matches_code": true,
+   "gate": "G-DRIVEN-EQUALS-COMBINATORIAL",
+   "hook_lines": [
+    1389
+   ],
+   "hook_source": "if mut(\"MUT-DRIVEN\") and not drows: same = False",
+   "name": "MUT-DRIVEN",
+   "what": "declares the first driven footprint sequence unequal to its combinatorial history"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "r['maxhits']",
+   "description_matches_code": true,
+   "gate": "G-MAXHITS-IMMUNITY",
+   "hook_lines": [
+    1418
+   ],
+   "hook_source": "LD.gate(\"G-MAXHITS-IMMUNITY\", \"THE v10-LAYER TIE-BREAK IS NEVER CONSULTED (#160, as a gate). \" \"Every event of every driven schedule is specified by its FULL \" \"TUPLE, so at most one menu candidate can match; the builder's \" \"own `maxhits` is read at every schedule and is 1 at all %d of \" \"them. d60's `pick` breaks ties with sorted(key=repr), which is \" \"hash-seed dependent -- this unit is immune because the tie-break \" \"is unreachable, and says so rather than pricing it\" % len(drows), all(pick(\"MUT-MAXHITS\", r[\"maxhits\"], 2) == 1 for r in drows) and all(r[\"refusal\"] == \"None\" for r in drows), \"maxhits %s, refusals %s\" % (sorted({r[\"maxhits\"] for r in drows}), sorted({r[\"refusal\"] for r in drows})))",
+   "name": "MUT-MAXHITS",
+   "what": "reports a driven maxhits of 2, so the v10 tie-break would be reachable"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "b_ref.refusal",
+   "description_matches_code": true,
+   "gate": "G-CTRL-REFUSED",
+   "hook_lines": [
+    1432
+   ],
+   "hook_source": "LD.gate(\"G-CTRL-REFUSED\", \"THE NEGATIVE FATE IS REACHABLE AND THE DRIVER SEES IT. The \" \"collinear arrangement is re-driven with its FIRST conflict-supply \" \"delivery withheld; the committed layer then refuses the first \" \"proposal by an actor that does not hold the base, and the \" \"refusal is RECORDED rather than patched -- so 'no refusals' \" \"above is a measurement and not a property of the instrument\", pick(\"MUT-REFUSED\", b_ref.refusal, None) is not None, \"refusal %s\" % (b_ref.refusal,))",
+   "name": "MUT-REFUSED",
+   "what": "reports no refusal from the supply-starved control drive"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "G.slice_exit_free",
+   "description_matches_code": true,
+   "gate": "G-LAYERS-CANNOT-EXIT",
+   "hook_lines": [
+    1441
+   ],
+   "hook_source": "LD.gate(\"G-LAYERS-CANNOT-EXIT\", \"THE COMMITTED LAYERS ENTER AS SINGLE SOURCES AND CANNOT EXIT. \" \"d42b1's module slice is cut before its first print and carries \" \"no exit call; d60 and d66 enter through an AST extraction that \" \"keeps only function and class definitions, so no module-level \" \"statement of theirs can run and no `sys.exit` of theirs is \" \"reachable\", pick(\"MUT-EXIT\", G.slice_exit_free, False) and G.bodies_exit_free, \"slice exit-free %s, extracted bodies exit-free %s\" % (G.slice_exit_free, G.bodies_exit_free))",
+   "name": "MUT-EXIT",
+   "what": "declares d42b1's module slice not exit-free"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "len(routes_bad)",
+   "description_matches_code": true,
+   "gate": "G-STAB-ROUTES",
+   "hook_lines": [
+    1484
+   ],
+   "hook_source": "nb = pick(\"MUT-ROUTES\", len(routes_bad), 1)",
+   "name": "MUT-ROUTES",
+   "what": "reports one order mismatch between the S_9 filter and the Young subgroup"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "chart_hist",
+   "description_matches_code": true,
+   "gate": "G-FORCED-PER-HISTORY",
+   "hook_lines": [
+    1531
+   ],
+   "hook_source": "LD.gate(\"G-FORCED-PER-HISTORY\", \"FORCEDNESS IS DECIDED PER HISTORY, NEVER AS AN AGGREGATE (#87). \" \"Each of the %s committed histories carries its own stabilizer \" \"and its own verdict: %s are FORCED (trivial stabilizer) and %d \" \"are CHART (nontrivial). The %d chart histories all carry order \" \"%s and orbit shape %s\" % (com(forced_hist + chart_hist), com(forced_hist), chart_hist, chart_hist, sorted({young_order(H) for nm, HS, _s in CORPORA for H in HS if young_order(H) > 1}), sorted({tuple(sorted(len(b) for b in signature_blocks(H))) for nm, HS, _s in CORPORA for H in HS if young_order(H) > 1})), all((young_order(H) == 1) == (crystallization(H) is not None) for nm, HS, _s in CORPORA for H in HS) and pick(\"MUT-CHART\", chart_hist, chart_hist + 1) == sum(1 for nm, HS, _s in CORPORA for H in HS if young_order(H) > 1), \"forced %d, chart %d, forced-iff-crystallized on all %d\" % (forced_hist, chart_hist, forced_hist + chart_hist))",
+   "name": "MUT-CHART",
+   "what": "adds one to the chart-history count, so the per-history verdict and the recount disagree"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "c1t[0]",
+   "description_matches_code": true,
+   "gate": "G-CRYSTALLIZATION",
+   "hook_lines": [
+    1587
+   ],
+   "hook_source": "LD.gate(\"G-CRYSTALLIZATION\", \"THE CRYSTALLIZATION TIME IS MEASURED PER HISTORY AND IT IS A \" \"CONSTANT ON TWO OF THE THREE CORPORA. Every one of the %d R = 3 \" \"triples forces identity at its FIFTH division event -- not the \" \"third, not the ninth -- and so does every one of the %s R = 6 \" \"concatenations and every one of the %s seed-fan variants; the \" \"R = 4 window is the stratified one, at %s\" % (len(C1), com(len(C2)), com(len(C1FAN)), sorted((str(k), v) for k, v in crys[\"C3-R4-WINDOW\"].items())), c1t == c2t == fant and len(c1t) == 1 and pick(\"MUT-CRYS\", c1t[0], 4) == 5, \"C1 %s, C2 %s, C1FAN %s, C3 %s\" % (c1t, c2t, fant, sorted((str(k), v) for k, v in crys[\"C3-R4-WINDOW\"].items())))",
+   "name": "MUT-CRYS",
+   "what": "reports the constant crystallization time as 4 rather than the measured value"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "pref_bad",
+   "description_matches_code": true,
+   "gate": "G-PREFIX-LAW",
+   "hook_lines": [
+    1604
+   ],
+   "hook_source": "LD.gate(\"G-PREFIX-LAW\", \"CRYSTALLIZATION IS A PREFIX PROPERTY, MEASURED RATHER THAN \" \"ASSUMED. A stabilizer can only shrink as events are appended, \" \"so the time is decided by the earliest prefix that reaches \" \"triviality: each of the %s ordered concatenations crystallizes \" \"exactly when its FIRST factor does, and nothing the second \" \"factor contributes can move it. This is why the R = 6 corpus \" \"adds %d new crystallization values and not one more\" % (com(len(C2)), len(set(crys[\"C2-R6-CONCATENATIONS\"]) - set(crys[\"C1-R3-TRIPLES\"]))), not pick(\"MUT-PREFIX\", pref_bad, [0]), \"concatenations %d, disagreements with the first factor %d\" % (len(C2), len(pref_bad)))",
+   "name": "MUT-PREFIX",
+   "what": "declares one concatenation's crystallization time different from its first factor's"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "len(nev_names)",
+   "description_matches_code": true,
+   "gate": "G-NEVER-CRYSTALLIZING",
+   "hook_lines": [
+    1662
+   ],
+   "hook_source": "LD.gate(\"G-NEVER-CRYSTALLIZING\", \"THE HISTORIES THAT NEVER FORCE IDENTITY ARE CHARACTERISED, NOT \" \"MERELY COUNTED. Exactly %d of the %s committed histories leave \" \"identity un-forced to the last event, and they are precisely the \" \"CONSTANT-CLASS quadruples %s: a schedule that repeats one \" \"parallel class every round can never separate two sites that lie \" \"on a common line of that class, so the three lines survive as \" \"orbits and the stabilizer stays at order %d\" % (len(never), com(forced_hist + chart_hist), nev_names, young_order(never[0][1]) if never else 0), len(never) == chart_hist and all(len({P for P, _q in s}) == 1 for _nm, _H, s in never) and pick(\"MUT-NEVER\", len(nev_names), len(nev_names) + 1) == len(CLASS_NAMES), \"never-crystallizing %d, arrangements %s\" % (len(never), nev_names))",
+   "name": "MUT-NEVER",
+   "what": "adds one to the count of never-crystallizing arrangements"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "len(cod_bad)",
+   "description_matches_code": true,
+   "gate": "G-CODIVISION-BLIND",
+   "hook_lines": [
+    1707
+   ],
+   "hook_source": "ncod = pick(\"MUT-CODIV\", len(cod_bad), 1)",
+   "name": "MUT-CODIV",
+   "what": "reports one co-division violation under a stabilizer element"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "cf_bad",
+   "description_matches_code": true,
+   "gate": "G-WELD-DICTIONARY",
+   "hook_lines": [
+    1731
+   ],
+   "hook_source": "cf_bad = pick(\"MUT-WELDREAD\", cf_bad, 1)",
+   "name": "MUT-WELDREAD",
+   "what": "reports one count-field difference under precomposition"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "rec_ok",
+   "description_matches_code": true,
+   "gate": "G-RECORD-ATTRIBUTION",
+   "hook_lines": [
+    1756
+   ],
+   "hook_source": "rec_ok_m = pick(\"MUT-RECINV\", rec_ok, len(NTP))",
+   "name": "MUT-RECINV",
+   "what": "raises the record's orbit-constant count to the whole object set, so the measured non-invariance vanishes"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "sym_bad",
+   "description_matches_code": true,
+   "gate": "G-SHIFT-IS-TRANSLATION",
+   "hook_lines": [
+    1797
+   ],
+   "hook_source": "LD.gate(\"G-SHIFT-IS-TRANSLATION\", \"THE SHIFT'S SYMMETRIES ARE EXACTLY THE TRANSLATIONS -- A \" \"THEOREM, MEASURED BOTH WAYS. A relabelling commutes with \" \"paper-20's shift exactly when it carries x + l to sigma(x) + l \" \"for all three declared links, which forces sigma to be a \" \"translation of AG(2,3). Both sides are computed independently \" \"on all %s stabilizer elements -- the shift test cell by cell, \" \"the translation test against the nine translations -- and they \" \"agree at every one\" % com(nelem), not pick(\"MUT-SHIFT\", sym_bad, [(0, 0)]), \"elements %d, shift-commuting %d, translations in the \" \"stabilizers %d, disagreements %d\" % (nelem, ntr, sum(1 for P in NTP for p in stab_elements(P) if p in TRANSL_SET), len(sym_bad)))",
+   "name": "MUT-SHIFT",
+   "what": "injects one disagreement between the shift test and the translation test"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "nsym",
+   "description_matches_code": true,
+   "gate": "G-BORN-MENU",
+   "hook_lines": [
+    1818
+   ],
+   "hook_source": "LD.gate(\"G-BORN-MENU\", \"THE WALK SEES WHAT THE RECORD CANNOT. Paper-20's coupled step \" \"-- the site-block-diagonal coin C(x) = G.D(x) with D(x) = \" \"diag(w^{n_l(x)}), then the shift -- is re-implemented here over \" \"Z[w] and run from the S_9-symmetric all-ones start, so every \" \"asymmetry in the published Born menu is carried by the record \" \"and the shift and never by the start. The menu is orbit-\" \"constant at %s objects by depth, against the record's %d: the \" \"one-step menu is blind at MORE objects than the record, and \" \"from depth two it is blind at FEWER. A stabilizer element is a \" \"symmetry of the whole coupled step exactly when it is a \" \"translation AND preserves the record: %d of %s elements\" % ([born_ok[t] for t in range(1, WALK_DEPTH + 1)], rec_ok, nsym, com(nelem)), born_ok[1] > rec_ok and born_ok[2] < rec_ok and pick(\"MUT-BORN\", nsym, nelem) < nelem and nsym > 0, \"born-invariant by depth %s; record-invariant %d; walk \" \"symmetries %d of %d; record-preserving elements %d\" % ([born_ok[t] for t in range(1, WALK_DEPTH + 1)], rec_ok, nsym, nelem, nrecpres))",
+   "name": "MUT-BORN",
+   "what": "reports every stabilizer element a symmetry of the coupled step"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "deg",
+   "description_matches_code": true,
+   "gate": "G-CODIVISION-FORGETS",
+   "hook_lines": [
+    1868
+   ],
+   "hook_source": "LD.gate(\"G-CODIVISION-FORGETS\", \"THE RELATION FORGETS WHAT THE SEQUENCE REMEMBERS. At %d of the \" \"%d R = 4 window histories -- exactly the schedules that use all \" \"four parallel classes once each -- every pair of actors \" \"co-divides exactly once, so the co-division relation is the \" \"CONSTANT COMPLETE GRAPH and its automorphism group is the whole \" \"of S_9 at %s elements; yet the stabilizer of the ordered history \" \"is TRIVIAL at every one of them. The weld reads through that \" \"relation, so at these histories the dictionary's site freedom is \" \"total while the identity the history forces is complete\" % (deg, len(C3), com(math.factorial(NACT))), deg > 0 and all(young_order(H) == 1 for H in C3 if aut_codivision(H) == math.factorial(NACT)) and all((aut_codivision(history_of(sch)) == math.factorial(NACT)) == (len({CLASS_OF.get(P) for P, _q in sch}) == len(CLASS_NAMES)) for sch in W) and pick(\"MUT-DEGENERACY\", deg, 0) == math.factorial(len(CLASS_NAMES)), \"complete-relation histories %d, all with trivial stabilizer %s, \" \"complete-relation iff all four classes used %s\" % (deg, all(young_order(H) == 1 for H in C3 if aut_codivision(H) == math.factorial(NACT)), all((aut_codivision(history_of(sch)) == math.factorial(NACT)) == (len({CLASS_OF.get(P) for P, _q in sch}) == len(CLASS_NAMES)) for sch in W)))",
+   "name": "MUT-DEGENERACY",
+   "what": "reports zero complete-relation histories"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "DIM",
+   "description_matches_code": true,
+   "gate": "G-WALK-ARENA",
+   "hook_lines": [
+    1928
+   ],
+   "hook_source": "LD.gate(\"G-WALK-ARENA\", \"THE WALK IS RE-IMPLEMENTED, NEVER IMPORTED, AND ITS ARENA IS \" \"GATED. The %d cells, the three declared link directions, the \" \"Grover numerators over 3 and the shift table are rebuilt here \" \"from the arena's own definitions; the shift is a permutation of \" \"the cells (a bijection, checked), the coin is site-block-\" \"diagonal by construction, and the Born weights are RATIONAL \" \"INTEGERS because |a + bw|^2 = a^2 - ab + b^2\" % DIM, sorted(SHIFT_T) == list(range(DIM)) and all(isinstance(v, int) for J in born_menus(C1[0], 1) for v in J) and pick(\"MUT-WALK\", DIM, DIM + 1) == len(CELLS), \"cells %d, shift a bijection %s, integer Born weights %s\" % (DIM, sorted(SHIFT_T) == list(range(DIM)), True))",
+   "name": "MUT-WALK",
+   "what": "reports DIM + 1 walk cells, so the arena and the cell list disagree"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "f_dist",
+   "description_matches_code": true,
+   "gate": "G-E24-MEASURE",
+   "hook_lines": [
+    2003
+   ],
+   "hook_source": "LD.gate(\"G-E24-MEASURE\", \"NO COUNT BECOMES A PROBABILITY WITHOUT A DECLARED MEASURE \" \"(E-24), AND THIS UNIT'S HEADLINE FRACTION MOVES WHEN THE MEASURE \" \"DOES. The record's blindness is %s of the distinct \" \"nontrivial-stabilizer objects and %s of them counted with corpus \" \"multiplicity; the walk's is %s and %s. The two measures \" \"DISAGREE, so every fraction this unit publishes is stamped \" \"COUNTING-ONLY and carries the measure it was taken under. The \" \"two measures are named in the receipt: distinct prefixes over \" \"the four declared corpora, and prefixes counted with corpus \" \"multiplicity over the three primary ones\" % (f_dist, f_mult, g_dist, g_mult), pick(\"MUT-E24\", f_dist, f_mult) != f_mult and g_dist != g_mult, \"distinct %s vs multiplicity %s (record); %s vs %s (walk)\" % (f_dist, f_mult, g_dist, g_mult))",
+   "name": "MUT-E24",
+   "what": "makes the distinct-prefix fraction equal the multiplicity fraction, so measure-relativity would be unmeasured"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "'groupoid' in groupoid_note",
+   "description_matches_code": true,
+   "gate": "G-GRAIN-REGISTERED",
+   "hook_lines": [
+    2045
+   ],
+   "hook_source": "LD.gate(\"G-GRAIN-REGISTERED\", \"THE SCOPE IS THE STABILIZER GRAIN AND THE SUCCESSOR IS NAMED \" \"RATHER THAN ESTIMATED. The pin confines this unit to global \" \"relabelling; the mid-history thread-swap grain is registered as \" \"the successor question with its object named, and no verdict \" \"segment of this unit quantifies over it\", pick(\"MUT-GRAIN\", \"groupoid\" in groupoid_note, False) and \"REGISTERED AND NOT RUN\" in groupoid_note and len(groupoid_note) > 400, \"successor registered, %d characters, no verdict segment depends \" \"on it\" % len(groupoid_note))",
+   "name": "MUT-GRAIN",
+   "what": "declares the groupoid successor absent from the registered note"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "disagree",
+   "description_matches_code": true,
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "hook_lines": [
+    2091
+   ],
+   "hook_source": "if mut(\"MUT-COMPARATOR\"): disagree = [\"FORGED\"]",
+   "name": "MUT-COMPARATOR",
+   "what": "injects a comparator disagreement, so the twice-derived head fails"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "claims[0]['claim']",
+   "description_matches_code": true,
+   "gate": "G-PAPER-CLAIMS",
+   "hook_lines": [
+    2902
+   ],
+   "hook_source": "if mut(\"MUT-CLAIM\") and claims: claims = [dict(c) for c in claims] claims[0][\"claim\"] = claims[0][\"claim\"] + \" -- forged\"",
+   "name": "MUT-CLAIM",
+   "what": "corrupts the first rendered claim's text before the paper is searched for it"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "want_rows[0]",
+   "description_matches_code": true,
+   "gate": "G-PAPER-TABLES",
+   "hook_lines": [
+    2917
+   ],
+   "hook_source": "if mut(\"MUT-TABLE\") and want_rows: want_rows = [list(r) for r in want_rows] want_rows[0] = want_rows[0][:-1] + [\"forged\"]",
+   "name": "MUT-TABLE",
+   "what": "corrupts one cell of one rendered table row before the paper is searched for it"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "head",
+   "description_matches_code": true,
+   "gate": "G-PAPER-HEAD-VERBATIM",
+   "hook_lines": [
+    2936
+   ],
+   "hook_source": "if mut(\"MUT-HEAD\"): head = head.replace(\"FORCED\", \"FORGED\", 1)",
+   "name": "MUT-HEAD",
+   "what": "corrupts the head string the paper is required to carry verbatim"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "text",
+   "description_matches_code": true,
+   "gate": "G-PAPER-COVERAGE",
+   "hook_lines": [
+    2515
+   ],
+   "hook_source": "body = text if not mut(\"MUT-COVERAGE-SCAN\") else FENCE.sub(\"\", text)",
+   "name": "MUT-COVERAGE-SCAN",
+   "what": "strips fenced blocks before the numeral scan, the #20 defect this era closed"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "text",
+   "description_matches_code": true,
+   "gate": "G-PAPER-COVERAGE",
+   "hook_lines": [
+    2551
+   ],
+   "hook_source": "if mut(\"MUT-PAPER-FENCE-MULTISET\"): seg = R[\"verdict\"][\"segments\"][0] text = text.replace(seg, seg.replace(\"FORCED\", \"FORGED\"), 1)",
+   "name": "MUT-PAPER-FENCE-MULTISET",
+   "what": "forges one copy of the verdict fence, which a containment test would pass and the multiset test catches"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "exempt",
+   "description_matches_code": true,
+   "gate": "G-PAPER-COVERAGE",
+   "hook_lines": [
+    2512
+   ],
+   "hook_source": "if mut(\"MUT-EXEMPTION-DEAD\"): exempt = exempt + [[\"4242\", \"a literal that occurs nowhere\"]]",
+   "name": "MUT-EXEMPTION-DEAD",
+   "what": "adds a declared numeral exemption that occurs nowhere in the paper"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "mutated",
+   "description_matches_code": true,
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "hook_lines": [
+    3006
+   ],
+   "hook_source": "R[\"polarity\"] = paper_polarity(R, paper_text, mutated=mut(\"MUT-POLARITY\"))",
+   "name": "MUT-POLARITY",
+   "what": "appends a sentence asserting the opposite of a measured fate to the text the polarity probes read"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "wall_text",
+   "description_matches_code": true,
+   "gate": "G-WALLS-SCAN-THE-PAPER",
+   "hook_lines": [
+    3017
+   ],
+   "hook_source": "if mut(\"MUT-WALL\"): wall_text = wall_text + \"\\n\\nWe measure the groupoid census here.\\n\"",
+   "name": "MUT-WALL",
+   "what": "inserts a banned wall sentence into the text the walls scan"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "typed",
+   "description_matches_code": true,
+   "gate": "G-NO-TYPED-COUNTS",
+   "hook_lines": [
+    3042
+   ],
+   "hook_source": "if mut(\"MUT-TYPED\"): typed = typed + [(\"verdict_segments\", \"4242\")]",
+   "name": "MUT-TYPED",
+   "what": "adds a typed count to the scanned template constants"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "staged",
+   "description_matches_code": true,
+   "gate": "G-TRANSCRIPT-INTEGRITY",
+   "hook_lines": [
+    3238
+   ],
+   "hook_source": "if mut(\"MUT-TRANSCRIPT\"): staged = staged[:-1] + [staged[-1] + \" forged\"]",
+   "name": "MUT-TRANSCRIPT",
+   "what": "alters one staged transcript line after the seal is taken"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "self.rows",
+   "description_matches_code": true,
+   "gate": "G-SEAL-TOTALITY",
+   "hook_lines": [
+    320
+   ],
+   "hook_source": "if mut(\"MUT-SEAL-DROP\") and sid == \"SEAL-COVERAGE\": return # the row never reaches self.rows or the manifest",
+   "name": "MUT-SEAL-DROP",
+   "what": "drops the coverage seal from the manifest, so the manifest is no longer total"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "len({w[0] for w in WINDOW_DECL})",
+   "description_matches_code": true,
+   "gate": "G-WINDOWS-DISCLOSED",
+   "hook_lines": [
+    1207
+   ],
+   "hook_source": "LD.gate(\"G-WINDOWS-DISCLOSED\", \"EVERY WINDOW IS DECLARED IN-STRING AND LICENSED (section 15). \" \"The %d declarations below are published in the receipt, in the \" \"head and in the paper; four of them are ENTIRE classes and carry \" \"no sampling at all, and each of the other three names the \" \"property that licenses it\" % len(WINDOW_DECL), pick(\"MUT-WINDOW\", len({w[0] for w in WINDOW_DECL}), len(WINDOW_DECL) - 1) == len(WINDOW_DECL) and all(len(w[1]) > 80 for w in WINDOW_DECL), \"windows %d, all named and non-trivial\" % len(WINDOW_DECL))",
+   "name": "MUT-WINDOW",
+   "what": "reports one fewer distinct window name than declared, so the window list would carry a duplicate"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "all(len(H) == 3 * (len(s))",
+   "description_matches_code": true,
+   "gate": "G-CORPORA-SHAPE",
+   "hook_lines": [
+    1314
+   ],
+   "hook_source": "LD.gate(\"G-CORPORA-SHAPE\", \"EVERY HISTORY IN EVERY CORPUS HAS THE SHAPE THE CONSTRUCTOR \" \"FORCES, PER OBJECT. A schedule of R rounds carries exactly 3R \" \"division events -- one arbitration per conflict group per \" \"round -- and every event is a three-actor subset: %s at %d \" \"histories, %s at %s, %s at %d. The event sizes measured are %s\" % (shapes[\"C1-R3-TRIPLES\"], len(C1), shapes[\"C2-R6-CONCATENATIONS\"], com(len(C2)), shapes[\"C3-R4-WINDOW\"], len(C3), sorted({v for vs in ev.values() for v in vs})), pick(\"MUT-CORPUS-SHAPE\", all(len(H) == 3 * (len(s)) for nm, HS, SS in CORPORA for H, s in zip(HS, SS)), False) and all(len(F) == 3 for nm, HS, _s in CORPORA for H in HS for F in H), \"shapes %s; event sizes %s\" % (shapes, {k: v for k, v in sorted(ev.items())}))",
+   "name": "MUT-CORPUS-SHAPE",
+   "what": "declares the 3R division-event shape false at some history"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "len({H for H in C1FAN})",
+   "description_matches_code": true,
+   "gate": "G-EVENT-SHAPE",
+   "hook_lines": [
+    1329
+   ],
+   "hook_source": "LD.gate(\"G-EVENT-SHAPE\", \"THE EVENT IS THE CONFLICT GROUP AND THE HISTORY IS ORDERED. \" \"Within a round the three groups enter in ascending order of \" \"their seed's site index -- d66's own order -- so the history is \" \"a SEQUENCE and not a set; the %d histories of the seed fan \" \"W-C1FAN realise %d distinct orderings of the same %d event sets\" % (len(C1FAN), len({H for H in C1FAN}), len({frozenset(H) for H in C1FAN})), pick(\"MUT-ORDER\", len({H for H in C1FAN}), 0) > len(C1) and len({frozenset(H) for H in C1FAN}) < len({H for H in C1FAN}), \"fan histories %d, distinct sequences %d, distinct event sets %d\" % (len(C1FAN), len({H for H in C1FAN}), len({frozenset(H) for H in C1FAN})))",
+   "name": "MUT-ORDER",
+   "what": "reports zero distinct seed-fan orderings, so the history would be a set rather than a sequence"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "mono_bad",
+   "description_matches_code": true,
+   "gate": "G-MONOTONE",
+   "hook_lines": [
+    1615
+   ],
+   "hook_source": "LD.gate(\"G-MONOTONE\", \"THE STABILIZER NEVER GROWS. Route A builds each prefix's group \" \"by FILTERING its predecessor's, so containment is structural; it \" \"is measured anyway on the first %d distinct prefixes in \" \"non-decreasing length order -- an appended event can only remove \" \"elements\" % len(ordered[:2000]), not pick(\"MUT-MONOTONE\", mono_bad, [0]), \"prefixes checked %d, growth events %d\" % (len(ordered[:2000]), len(mono_bad)))",
+   "name": "MUT-MONOTONE",
+   "what": "injects one stabilizer-growth event into the monotonicity scan"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "shortcut_ok",
+   "description_matches_code": true,
+   "gate": "G-AUT-SHORTCUT",
+   "hook_lines": [
+    1844
+   ],
+   "hook_source": "LD.gate(\"G-AUT-SHORTCUT\", \"THE CONSTANT-WEIGHT SHORTCUT IS A MACHINE-CHECKED FORCING, NOT A \" \"WAIVER (#34). When every off-diagonal co-division weight is \" \"equal, every permutation preserves the relation and the \" \"automorphism group is all of S_9; the closed value is confirmed \" \"by ENUMERATING one such object's automorphisms explicitly, at \" \"%s of them\" % com(shortcut_ok or 0), pick(\"MUT-SHORTCUT\", shortcut_ok, 1) == math.factorial(NACT), \"enumerated %s, closed %s\" % (com(shortcut_ok or 0), com(math.factorial(NACT))))",
+   "name": "MUT-SHORTCUT",
+   "what": "reports the enumerated automorphism count as 1, so the constant-weight forcing would be unconfirmed"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "pc['registry_digest_free']",
+   "description_matches_code": true,
+   "gate": "G-WHITELIST-DIGEST-FREE",
+   "hook_lines": [
+    2992
+   ],
+   "hook_source": "LD.gate(\"G-WHITELIST-DIGEST-FREE\", \"THE NUMERAL WHITELIST CARRIES NO DIGEST TOKENS (#267 order). A \" \"twelve-character hexadecimal that exists only inside a sha256 \" \"is not a published number, and allowing it would let any \" \"12-digit numeral through; the receipt walk skips digest strings \" \"and the resulting registry of %s tokens is checked to contain \" \"none\" % com(pc[\"registry_size\"]), pick(\"MUT-DIGEST-WHITELIST\", pc[\"registry_digest_free\"], False), \"registry %d tokens, digest-free %s\" % (pc[\"registry_size\"], pc[\"registry_digest_free\"]))",
+   "name": "MUT-DIGEST-WHITELIST",
+   "what": "declares the numeral registry to contain digest tokens"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "pc['word_numerals_scanned']",
+   "description_matches_code": true,
+   "gate": "G-SPELLED-NUMERALS",
+   "hook_lines": [
+    3001
+   ],
+   "hook_source": "LD.gate(\"G-SPELLED-NUMERALS\", \"SPELLED NUMERALS ARE SCANNED ON THE SAME TERMS, INCLUDING ABOVE \" \"TWELVE (#267 order). The word list carries %d entries and %s \" \"spelled numerals were read out of the paper; every one is backed \" \"by the run's own registry or by a declared exemption\" % (len(WORDNUM), com(pc[\"word_numerals_scanned\"])), pick(\"MUT-SPELLED\", pc[\"word_numerals_scanned\"], 0) > 0 and not pc[\"word_numerals_unbacked\"] and len(WORDNUM) > 12, \"word list %d, scanned %d, unbacked %s\" % (len(WORDNUM), pc[\"word_numerals_scanned\"], pc[\"word_numerals_unbacked\"] or \"none\"))",
+   "name": "MUT-SPELLED",
+   "what": "reports zero spelled numerals scanned, the blindness this order closes"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "R['paper_coverage']['numerals_scanned']",
+   "description_matches_code": true,
+   "gate": "G-PAPER-COVERAGE-FINAL",
+   "hook_lines": [
+    3201
+   ],
+   "hook_source": "LD.gate(\"G-PAPER-COVERAGE-FINAL\", \"THE PAPER INSTRUMENT RAN INSIDE THIS RUN (#20). The coverage, \" \"polarity, claim and table ledgers above were produced by the \" \"plain run and are sealed here, so no separate verification pass \" \"can drift from the artifacts this run writes: %s numerals, %d \" \"claims and %d table rows\" % (com(R[\"paper_coverage\"][\"numerals_scanned\"]), len(R[\"paper_claims\"]), R[\"totals\"][\"paper_table_rows\"]), pick(\"MUT-FINAL\", R[\"paper_coverage\"][\"numerals_scanned\"], 0) > 0 and len(R[\"paper_claims\"]) > 0, \"numerals %d, claims %d, rows %d\" % (R[\"paper_coverage\"][\"numerals_scanned\"], len(R[\"paper_claims\"]), R[\"totals\"][\"paper_table_rows\"]))",
+   "name": "MUT-FINAL",
+   "what": "reports zero numerals scanned by the in-run paper instrument"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "R['mutant_sweep']['survivors']",
+   "description_matches_code": true,
+   "gate": "G-SWEEP-BOUND",
+   "hook_lines": [
+    3218
+   ],
+   "hook_source": "LD.gate(\"G-SWEEP-BOUND\", \"THE MUTANT SWEEP IS EXECUTION-BOUND, NOT A LIST (E-23). The \" \"sweep row published here is the record of runs this process \" \"actually performed: %d mutants declared, %d executed in this \" \"process, %d survivors. A plain run publishes an empty execution \" \"list rather than a claim, and the --sweep run publishes the \" \"rows themselves\" % (len(MUTANTS), len(SWEEP_ROWS), len(R[\"mutant_sweep\"][\"survivors\"])), not pick(\"MUT-SWEEP\", R[\"mutant_sweep\"][\"survivors\"], [\"FORGED\"]) and len(SWEEP_ROWS) in (0, len(MUTANTS)), \"declared %d, executed %d, survivors %s\" % (len(MUTANTS), len(SWEEP_ROWS), R[\"mutant_sweep\"][\"survivors\"] or \"none\"))",
+   "name": "MUT-SWEEP",
+   "what": "injects a survivor into the sweep's execution record"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "transversal",
+   "description_matches_code": true,
+   "gate": "G-PREFIX-PROFILE",
+   "hook_lines": [
+    1642
+   ],
+   "hook_source": "LD.gate(\"G-PREFIX-PROFILE\", \"THE WHOLE ROUTE TO CRYSTALLIZATION IS THE SAME AT EVERY R = 3 \" \"HISTORY, AND IT IS THE ROUTE AND NOT A GEOMETRIC ACCIDENT THAT \" \"EXPLAINS THE CONSTANT. The stabilizer order by prefix length is \" \"%s at all %d of them and at all %s R = 6 concatenations: the \" \"first event leaves the (3, 6) Young subgroup; the second cuts it \" \"to the three-block %d; the THIRD ADDS NOTHING, because a round's \" \"last group is the complement of its first two; the fourth leaves \" \"three singletons and three pairs; the fifth splits all three \" \"pairs at once. The mechanism is measured: each of the fourth \" \"and fifth events meets every first-round group exactly once -- \" \"they are transversals of the first round -- at every history of \" \"the corpus\" % (str(profile), len(C1), com(len(C2)), profile[1] if profile else 0), profile is not None and len(prof2) == 1 and sorted(prof2)[0] == profile and pick(\"MUT-PROFILE\", transversal, False) and profile[2] == profile[1] and profile[4] == 1, \"C1 profiles %d, C2 profiles %d, profile %s, transversal at \" \"events four and five %s\" % (len(prof), len(prof2), profile, transversal))",
+   "name": "MUT-PROFILE",
+   "what": "declares the fourth and fifth events not transversals of the first round, so the measured mechanism would be unbacked"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "modbad",
+   "description_matches_code": true,
+   "gate": "G-BORN-DEPTH-ONE-LAW",
+   "hook_lines": [
+    1950
+   ],
+   "hook_source": "LD.gate(\"G-BORN-DEPTH-ONE-LAW\", \"THE DEPTH-ONE MENU IS A FUNCTION OF THE SITE'S OWN RECORD ROW \" \"MODULO THREE, MEASURED RATHER THAN ASSERTED. The coin is \" \"site-block-diagonal and the start is the all-ones state, so the \" \"post-coin weight at a site depends on that site's three counts \" \"only through w to those powers. Over every site of every one of \" \"the %d nontrivial objects the map from the residue triple to the \" \"menu row is single-valued: %d distinct residue triples, %d \" \"collisions\" % (len(NTP), len(modmap), modbad), pick(\"MUT-BORNLAW\", modbad, 1) == 0 and len(modmap) > 1, \"residue triples %d, collisions %d\" % (len(modmap), modbad))",
+   "name": "MUT-BORNLAW",
+   "what": "reports one collision in the residue-to-menu map, so the depth-one law would fail"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "R['totals']['gates_after_the_ledger_snapshot']",
+   "description_matches_code": true,
+   "gate": "G-GATE-ACCOUNTING",
+   "hook_lines": [
+    3274
+   ],
+   "hook_source": "LD.gate(\"G-GATE-ACCOUNTING\", \"THE GATE COUNT IS ONE NUMBER WITH ONE DEFINITION (#267 \" \"MAJOR-3). The ledger is sealed at a snapshot, so the published \" \"total is the snapshot's %d rows plus the %d declared closing \" \"gates that necessarily run after it -- %d in all -- and no \" \"other gate count appears anywhere in this unit's receipt, \" \"transcript or paper\" % (R[\"totals\"][\"gates_in_the_sealed_ledger\"], R[\"totals\"][\"gates_after_the_ledger_snapshot\"], R[\"totals\"][\"gates_total\"]), R[\"totals\"][\"gates_total\"] == R[\"totals\"][\"gates_in_the_sealed_ledger\"] + R[\"totals\"][\"gates_after_the_ledger_snapshot\"] and pick(\"MUT-GATECOUNT\", R[\"totals\"][\"gates_after_the_ledger_snapshot\"], 0) > 0, \"sealed %d, after %d, total %d\" % (R[\"totals\"][\"gates_in_the_sealed_ledger\"], R[\"totals\"][\"gates_after_the_ledger_snapshot\"], R[\"totals\"][\"gates_total\"]))",
+   "name": "MUT-GATECOUNT",
+   "what": "reports zero gates after the ledger snapshot, so the published total would silently drop the closing gates"
+  },
+  {
+   "constant_boolean_falsifier": false,
+   "corrupts": "mrows[0]['corrupts']",
+   "description_matches_code": true,
+   "gate": "G-FALSIFIER-HONEST",
+   "hook_lines": [
+    3055
+   ],
+   "hook_source": "mrows[0][\"corrupts\"] = pick(\"MUT-FALSIFIER-DESC\", mrows[0][\"corrupts\"], \"NO-SUCH-OBJECT-IN-THIS-FILE\")",
+   "name": "MUT-FALSIFIER-DESC",
+   "what": "replaces the first mutant's declared corrupted object by a name that occurs nowhere in this file"
+  }
+ ],
+ "paper_claims": [
+  {
+   "claim": "the three committed corpora carry 72, 5,184 and 600 histories",
+   "id": "CLAIM-CORPORA"
+  },
+  {
+   "claim": "101,160 prefix objects, 41,347 of them distinct",
+   "id": "CLAIM-PREFIXES"
+  },
+  {
+   "claim": "the two stabilizer routes disagree at 0 objects",
+   "id": "CLAIM-ROUTES"
+  },
+  {
+   "claim": "identity is forced on 5,852 histories and chart on 4",
+   "id": "CLAIM-FORCED"
+  },
+  {
+   "claim": "the crystallization time is exactly 5 on C1, C2 and the seed fan",
+   "id": "CLAIM-CRYSTAL"
+  },
+  {
+   "claim": "4 histories never crystallize, and they are the constant-class quadruples ANT|ANT|ANT|ANT, COL|COL|COL|COL, DIA|DIA|DIA|DIA, ROW|ROW|ROW|ROW",
+   "id": "CLAIM-NEVER"
+  },
+  {
+   "claim": "the co-division relation is preserved by every one of the 121,152 stabilizer elements, at 0 violations",
+   "id": "CLAIM-CODIVISION"
+  },
+  {
+   "claim": "the weld dictionary's readings agree under precomposition at 121,152 comparisons with 0 differences",
+   "id": "CLAIM-WELD"
+  },
+  {
+   "claim": "the record's attribution is orbit-constant at 111 of 703 objects and naming-dependent at 592",
+   "id": "CLAIM-RECORD"
+  },
+  {
+   "claim": "the Born menu is orbit-constant at 134,58,58,58,58 objects by depth",
+   "id": "CLAIM-BORN"
+  },
+  {
+   "claim": "813 of the 121,152 stabilizer elements are symmetries of the coupled step, exactly the translations",
+   "id": "CLAIM-SYMMETRY"
+  },
+  {
+   "claim": "at 24 of the 600 R = 4 histories the co-division relation is the constant complete graph while the stabilizer is trivial",
+   "id": "CLAIM-DEGENERACY"
+  },
+  {
+   "claim": "the record's blind fraction is 3/19 by distinct prefix and 1235/6008 by corpus multiplicity",
+   "id": "CLAIM-MEASURE"
+  },
+  {
+   "claim": "the groupoid grain is registered and not run",
+   "id": "CLAIM-GRAIN"
+  }
+ ],
+ "paper_coverage": {
+  "declared_exemptions": [],
+  "exemptions_that_never_fire": [],
+  "exemptions_the_receipt_could_supply": [],
+  "fence_copies_declared": 2,
+  "fenced_block_multiset_matches": true,
+  "fenced_blocks_expected": 10,
+  "fenced_blocks_scanned": 10,
+  "fenced_numerals_scanned": 136,
+  "fenced_unbacked": [],
+  "inline_span_numerals_scanned": 4,
+  "inline_span_unbacked": [],
+  "inline_spans_scanned": 7,
+  "numerals_in_the_whole_paper": 544,
+  "numerals_scanned": 544,
+  "registry_digest_free": true,
+  "registry_size": 167,
+  "scan_is_total": true,
+  "section_headings": [
+   "1",
+   "10",
+   "2",
+   "2.1",
+   "2.2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "6.1",
+   "6.2",
+   "6.3",
+   "6.4",
+   "7",
+   "8",
+   "9"
+  ],
+  "section_references": 0,
+  "section_references_dangling": [],
+  "unbacked": [],
+  "word_numerals_scanned": 61,
+  "word_numerals_unbacked": []
+ },
+ "paper_tables": {
+  "T1-CORPORA": {
+   "columns": [
+    "corpus",
+    "histories",
+    "events per history",
+    "window"
+   ],
+   "rows": [
+    [
+     "C1-R3-TRIPLES",
+     "72",
+     "9",
+     "W-C1"
+    ],
+    [
+     "C1FAN-SEED-FAN",
+     "1,944",
+     "9",
+     "W-C1FAN"
+    ],
+    [
+     "C2-R6-CONCATENATIONS",
+     "5,184",
+     "18",
+     "W-C2"
+    ],
+    [
+     "C3-R4-WINDOW",
+     "600",
+     "12",
+     "W-C3"
+    ]
+   ]
+  },
+  "T10-MEASURE": {
+   "columns": [
+    "quantity",
+    "distinct-prefix measure",
+    "corpus-multiplicity measure"
+   ],
+   "rows": [
+    [
+     "nontrivial-stabilizer objects",
+     "703",
+     "24,032"
+    ],
+    [
+     "record blind",
+     "111",
+     "4,940"
+    ],
+    [
+     "walk blind at depth 2",
+     "58",
+     "2,065"
+    ],
+    [
+     "fraction, record",
+     "3/19",
+     "1235/6008"
+    ]
+   ]
+  },
+  "T2-STABILIZER-ORDERS": {
+   "columns": [
+    "order",
+    "distinct prefixes"
+   ],
+   "rows": [
+    [
+     "2",
+     "60"
+    ],
+    [
+     "4",
+     "108"
+    ],
+    [
+     "8",
+     "270"
+    ],
+    [
+     "24",
+     "66"
+    ],
+    [
+     "216",
+     "181"
+    ],
+    [
+     "4320",
+     "18"
+    ]
+   ]
+  },
+  "T3-ORBIT-SHAPES": {
+   "columns": [
+    "orbit shape",
+    "distinct prefixes"
+   ],
+   "rows": [
+    [
+     "1+1+1+1+1+1+1+2",
+     "60"
+    ],
+    [
+     "1+1+1+1+1+2+2",
+     "108"
+    ],
+    [
+     "1+1+1+2+2+2",
+     "270"
+    ],
+    [
+     "1+1+2+2+3",
+     "66"
+    ],
+    [
+     "3+3+3",
+     "181"
+    ],
+    [
+     "3+6",
+     "18"
+    ]
+   ]
+  },
+  "T4-CRYSTALLIZATION": {
+   "columns": [
+    "corpus",
+    "5",
+    "7",
+    "8",
+    "11",
+    "never"
+   ],
+   "rows": [
+    [
+     "C1-R3-TRIPLES",
+     "72",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "C1FAN-SEED-FAN",
+     "1,944",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "C2-R6-CONCATENATIONS",
+     "5,184",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "C3-R4-WINDOW",
+     "404",
+     "36",
+     "144",
+     "12",
+     "4"
+    ]
+   ]
+  },
+  "T5-INVARIANCE": {
+   "columns": [
+    "observable",
+    "verdict",
+    "blind at",
+    "of",
+    "basis"
+   ],
+   "rows": [
+    [
+     "co-division relation",
+     "BLIND BY THEOREM",
+     "703",
+     "703",
+     "121,152 element checks"
+    ],
+    [
+     "weld dictionary readings",
+     "BLIND BY THEOREM",
+     "703",
+     "703",
+     "121,152 parse comparisons"
+    ],
+    [
+     "record attribution n_l(x)",
+     "NAMES",
+     "111",
+     "703",
+     "orbit-constancy per object"
+    ],
+    [
+     "Born menu, depth 1",
+     "NAMES",
+     "134",
+     "703",
+     "exact Z[w], symmetric start"
+    ],
+    [
+     "Born menu, depth 2",
+     "NAMES",
+     "58",
+     "703",
+     "exact Z[w], symmetric start"
+    ]
+   ]
+  },
+  "T6-CROSS-TAB": {
+   "columns": [
+    "record blind",
+    "menu blind at depth 1",
+    "menu blind at depth 2",
+    "objects"
+   ],
+   "rows": [
+    [
+     "False",
+     "False",
+     "False",
+     "569"
+    ],
+    [
+     "False",
+     "True",
+     "False",
+     "23"
+    ],
+    [
+     "True",
+     "True",
+     "False",
+     "53"
+    ],
+    [
+     "True",
+     "True",
+     "True",
+     "58"
+    ]
+   ]
+  },
+  "T7-STAB-VS-AUT": {
+   "columns": [
+    "stabilizer order",
+    "co-division automorphism order",
+    "index",
+    "objects"
+   ],
+   "rows": [
+    [
+     "2",
+     "2",
+     "1",
+     "48"
+    ],
+    [
+     "2",
+     "8",
+     "4",
+     "12"
+    ],
+    [
+     "4",
+     "4",
+     "1",
+     "47"
+    ],
+    [
+     "4",
+     "8",
+     "2",
+     "25"
+    ],
+    [
+     "4",
+     "16",
+     "4",
+     "36"
+    ],
+    [
+     "8",
+     "8",
+     "1",
+     "12"
+    ],
+    [
+     "8",
+     "48",
+     "6",
+     "258"
+    ],
+    [
+     "24",
+     "24",
+     "1",
+     "44"
+    ],
+    [
+     "24",
+     "96",
+     "4",
+     "22"
+    ],
+    [
+     "216",
+     "432",
+     "2",
+     "98"
+    ],
+    [
+     "216",
+     "1,296",
+     "6",
+     "83"
+    ],
+    [
+     "4,320",
+     "4,320",
+     "1",
+     "18"
+    ]
+   ]
+  },
+  "T8-WINDOWS": {
+   "columns": [
+    "window",
+    "declaration"
+   ],
+   "rows": [
+    [
+     "W-C1",
+     "THE 72 R = 3 I7-STRICT TRIPLES, ENTIRE.  Every ordered triple of saturating groupings whose summed link field covers all 27 cells; driven at the FIRST canonical transversal of each round.  No sampling: the corpus is the whole class."
+    ],
+    [
+     "W-C1FAN",
+     "THE SEED FAN OVER W-C1, ENTIRE.  The same 72 triples at ALL 27 canonical transversal triples, so the seed axis -- the only coordinate that moves the WITHIN-ROUND event order -- is exhausted rather than fixed."
+    ],
+    [
+     "W-C2",
+     "THE 5,184 ORDERED R = 6 CONCATENATIONS, ENTIRE.  Every ordered pair of W-C1 triples, concatenated -- paper-21's own R = 6 door, at its own ordered-witness count."
+    ],
+    [
+     "W-C3",
+     "PAPER-21's DRIVEN WINDOW W4, ENTIRE.  All 600 committed schedules -- W4-CLASS, W4-FLAT, W4-SEEDFAN and W4-CTRL -- reconstructed here by paper-21's own constructor and gated against its committed window size."
+    ],
+    [
+     "W-DRIVE",
+     "THE DRIVEN VERIFICATION SET.  The committed v10 layers are expensive to drive, so the driven leg is taken on a DECLARED set: the first 9 W-C1 triples in enumeration order, the four constant-class W-C3 quadruples together with d66's own committed R = 4 point and the collinear arrangement, and the first 2 W-C2 concatenations.  Each is compared event by event against the combinatorial route, and the structural leg carries the rest."
+    ],
+    [
+     "W-AUTC2",
+     "THE AUTOMORPHISM WINDOW OVER W-C2.  The co-division automorphism group is enumerated on the 72 DIAGONAL concatenations (T, T) -- paper-21's own R = 6 witness form -- rather than on all 5,184."
+    ],
+    [
+     "W-WALK",
+     "THE WALK'S DEPTH.  Paper-20's coupled step is re-implemented here and run to depth 5 from the S_9-symmetric start; every depth is published, so the depth is not a hidden cap."
+    ]
+   ]
+  },
+  "T9-DRIVEN": {
+   "columns": [
+    "window",
+    "rounds",
+    "events",
+    "divisions",
+    "maxhits",
+    "footprints equal groups"
+   ],
+   "rows": [
+    [
+     "W-C1",
+     "3",
+     "48",
+     "9",
+     "1",
+     "True"
+    ],
+    [
+     "W-C1",
+     "3",
+     "48",
+     "9",
+     "1",
+     "True"
+    ],
+    [
+     "W-C1",
+     "3",
+     "48",
+     "9",
+     "1",
+     "True"
+    ],
+    [
+     "W-C1",
+     "3",
+     "48",
+     "9",
+     "1",
+     "True"
+    ],
+    [
+     "W-C1",
+     "3",
+     "48",
+     "9",
+     "1",
+     "True"
+    ],
+    [
+     "W-C1",
+     "3",
+     "48",
+     "9",
+     "1",
+     "True"
+    ],
+    [
+     "W-C1",
+     "3",
+     "48",
+     "9",
+     "1",
+     "True"
+    ],
+    [
+     "W-C1",
+     "3",
+     "48",
+     "9",
+     "1",
+     "True"
+    ],
+    [
+     "W-C1",
+     "3",
+     "48",
+     "9",
+     "1",
+     "True"
+    ],
+    [
+     "W-C3",
+     "4",
+     "48",
+     "12",
+     "1",
+     "True"
+    ],
+    [
+     "W-C3",
+     "4",
+     "48",
+     "12",
+     "1",
+     "True"
+    ],
+    [
+     "W-C3",
+     "4",
+     "48",
+     "12",
+     "1",
+     "True"
+    ],
+    [
+     "W-C3",
+     "4",
+     "48",
+     "12",
+     "1",
+     "True"
+    ],
+    [
+     "W-C3",
+     "4",
+     "66",
+     "12",
+     "1",
+     "True"
+    ],
+    [
+     "W-C3",
+     "4",
+     "60",
+     "12",
+     "1",
+     "True"
+    ],
+    [
+     "W-C2",
+     "6",
+     "102",
+     "18",
+     "1",
+     "True"
+    ],
+    [
+     "W-C2",
+     "6",
+     "102",
+     "18",
+     "1",
+     "True"
+    ]
+   ]
+  }
+ },
+ "payload_sha256_12": "543f8e319911",
+ "polarity": {
+  "never_crystallizing": 4,
+  "probes": [
+   "the record's attribution is naming-dependent",
+   "identity is forced on all but four committed histories",
+   "the co-division relation is stabilizer-blind",
+   "the walk refines the record from depth two",
+   "the groupoid grain is registered and not run"
+  ],
+  "record_naming_dependent": 592,
+  "violations": []
+ },
+ "provenance": {
+  "commits": {
+   "A-D42B1": "f1e9fbf",
+   "A-P19": "559e162",
+   "A-P20": "1196ad6",
+   "A-P21": "7d675c1",
+   "A-PIN": "f1e9fbf"
+  },
+  "no_subprocess": true,
+  "paper_under_test": "v14/paper-33-aid.md",
+  "sources": [
+   {
+    "id": "A-PIN",
+    "path": "v14/note-aid-pin.md",
+    "sha256_12": "294ffe6c9deb",
+    "why": "THIS UNIT'S PIN (ledger #268, commit f1e9fbf): the formal object, the three corpora, the five stages, the outcome names and the grain note."
+   },
+   {
+    "id": "A-P19",
+    "path": "v14/paper-19-r3-weld.md",
+    "sha256_12": "50bb81e67942",
+    "why": "PAPER 19 (terminal, commit 559e162): the R = 3 arena, the weld dictionary -- site from ACTOR, link from the CO-DIVISION ACTOR PAIR, count from the division count -- and the 72 I7-STRICT triples."
+   },
+   {
+    "id": "A-P19REC",
+    "path": "v14/code/r3_weld_receipt.json",
+    "sha256_12": "dfea664f2408",
+    "why": "PAPER 19's COMMITTED RECEIPT (commit 559e162): the R = 3 arena as data -- divisions per record, the isomorphism count, the strict-triple count -- read from these bytes and reproduced here."
+   },
+   {
+    "id": "A-P19SRC",
+    "path": "v14/code/r3_weld_exact.py",
+    "sha256_12": "f95a26a1764b",
+    "why": "PAPER 19's COMMITTED DRIVER (commit 559e162): the schedule driver this unit re-implements, and the `record_of` footprint rule it inherits."
+   },
+   {
+    "id": "A-P21",
+    "path": "v14/paper-21-r4dec.md",
+    "sha256_12": "ef4a8c35a0c4",
+    "why": "PAPER 21 (terminal, commit 7d675c1): the R = 4 window of 600 driven schedules, the R = 6 door -- 72 triples, 5,184 ordered concatenations -- and the driven-equals-combinatorial licence."
+   },
+   {
+    "id": "A-P21REC",
+    "path": "v14/code/r4dec_receipt.json",
+    "sha256_12": "a4538c7019e6",
+    "why": "PAPER 21's COMMITTED RECEIPT (commit 7d675c1): the window size, the division count per record, the saturating and flat-quadruple counts, and the R = 6 door's own ordered-witness count, read as data."
+   },
+   {
+    "id": "A-P21SRC",
+    "path": "v14/code/r4dec_exact.py",
+    "sha256_12": "1958a8cdfe28",
+    "why": "PAPER 21's COMMITTED CODE (commit 7d675c1): the window constructor and the driver whose event order this unit reproduces."
+   },
+   {
+    "id": "A-P20",
+    "path": "v14/paper-20-coupling.md",
+    "sha256_12": "4824d190af73",
+    "why": "PAPER 20 (terminal, commit 1196ad6): the coupled walk -- the Born menu reading, the site-block-diagonal coin C(x) = G.D(x) and the shift."
+   },
+   {
+    "id": "A-P20REC",
+    "path": "v14/code/coupling_receipt.json",
+    "sha256_12": "55273f6b6068",
+    "why": "PAPER 20's COMMITTED RECEIPT (commit 1196ad6): the walk's declared arena -- cells, links, coin -- read as data."
+   },
+   {
+    "id": "A-P20SRC",
+    "path": "v14/code/coupling_exact.py",
+    "sha256_12": "72e7b299f66e",
+    "why": "PAPER 20's COMMITTED CODE (commit 1196ad6): the Z[w] arithmetic, the Grover coin numerators and the shift table this unit re-implements rather than imports."
+   },
+   {
+    "id": "A-D42B1",
+    "path": "v10/code/d42b1_transport_exact.py",
+    "sha256_12": "576275d55ecf",
+    "why": "THE COMMITTED TRANSPORT GRAMMAR (commit f1e9fbf): `regs_of` -- the single source of the footprint rule -- and the admissibility menu."
+   },
+   {
+    "id": "A-D60",
+    "path": "v10/code/d60_crystal_exact.py",
+    "sha256_12": "684cdb76552b",
+    "why": "D60 (commit f1e9fbf): the Builder `B`, AST-extracted and driven."
+   },
+   {
+    "id": "A-D66",
+    "path": "v10/code/d66_arbitration_crystal_exact.py",
+    "sha256_12": "3d0516ab106e",
+    "why": "D66 (commit f1e9fbf): CONFLICT-GRID(g, R), the committed constructor whose group and member order this unit's driver reproduces."
+   }
+  ]
+ },
+ "python": "3.13",
+ "reachability": {
+  "every_mutant_reaches_its_gate": true,
+  "gates_reached_by_a_mutant": 45,
+  "mutants": 47,
+  "note": "a gate no execution path evaluates is dead code and may not appear as waived (#34 with reachability)"
+ },
+ "schema": "isp/v14/aid-identity-reconstruction/1",
+ "seal_manifest": [
+  {
+   "path": "schema",
+   "seal": "SEAL-SCHEMA",
+   "sealed_at_gate": "G-PROVENANCE",
+   "sha256_12": "148f2da177f0"
+  },
+  {
+   "path": "provenance",
+   "seal": "SEAL-PROVENANCE",
+   "sealed_at_gate": "G-PROVENANCE",
+   "sha256_12": "bf35367ea3ea"
+  },
+  {
+   "path": "verbatim_anchors",
+   "seal": "SEAL-VERBATIM",
+   "sealed_at_gate": "G-VERBATIM",
+   "sha256_12": "67f903ce9ff4"
+  },
+  {
+   "path": "windows",
+   "seal": "SEAL-WINDOWS",
+   "sealed_at_gate": "G-WINDOWS-DISCLOSED",
+   "sha256_12": "963b58217a26"
+  },
+  {
+   "path": "substrate",
+   "seal": "SEAL-SUBSTRATE",
+   "sealed_at_gate": "G-BACK-VALIDATION",
+   "sha256_12": "7056ef3f3f26"
+  },
+  {
+   "path": "corpora",
+   "seal": "SEAL-CORPORA",
+   "sealed_at_gate": "G-CORPORA-SHAPE",
+   "sha256_12": "055bf0466ead"
+  },
+  {
+   "path": "driven",
+   "seal": "SEAL-DRIVEN",
+   "sealed_at_gate": "G-DRIVEN-EQUALS-COMBINATORIAL",
+   "sha256_12": "f30c4b5a0171"
+  },
+  {
+   "path": "stabilizer",
+   "seal": "SEAL-STABILIZER",
+   "sealed_at_gate": "G-STAB-ROUTES",
+   "sha256_12": "697ec9136f83"
+  },
+  {
+   "path": "crystallization",
+   "seal": "SEAL-CRYSTAL",
+   "sealed_at_gate": "G-CRYSTALLIZATION",
+   "sha256_12": "8586d9012722"
+  },
+  {
+   "path": "invariance",
+   "seal": "SEAL-INVARIANCE",
+   "sealed_at_gate": "G-INVARIANCE-SPLIT",
+   "sha256_12": "60af8a38cb1f"
+  },
+  {
+   "path": "walk",
+   "seal": "SEAL-WALK",
+   "sealed_at_gate": "G-BORN-MENU",
+   "sha256_12": "59c2dd5089b1"
+  },
+  {
+   "path": "measure_relativity",
+   "seal": "SEAL-MEASURE",
+   "sealed_at_gate": "G-E24-MEASURE",
+   "sha256_12": "2826a76f59cb"
+  },
+  {
+   "path": "grain",
+   "seal": "SEAL-GRAIN",
+   "sealed_at_gate": "G-GRAIN-REGISTERED",
+   "sha256_12": "d113d2534063"
+  },
+  {
+   "path": "verdict",
+   "seal": "SEAL-VERDICT",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "4361ffb9d9e5"
+  },
+  {
+   "path": "counts",
+   "seal": "SEAL-COUNTS",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "c12c5f0d8c0c"
+  },
+  {
+   "path": "walls",
+   "seal": "SEAL-WALLS",
+   "sealed_at_gate": "G-WALLS-SCAN-THE-PAPER",
+   "sha256_12": "50fe94dd9b5e"
+  },
+  {
+   "path": "paper_claims",
+   "seal": "SEAL-PAPER-CLAIMS",
+   "sealed_at_gate": "G-PAPER-CLAIMS",
+   "sha256_12": "1777adccc90c"
+  },
+  {
+   "path": "paper_tables",
+   "seal": "SEAL-PAPER-TABLES",
+   "sealed_at_gate": "G-PAPER-TABLES",
+   "sha256_12": "3e1fd365971e"
+  },
+  {
+   "path": "paper_coverage",
+   "seal": "SEAL-PAPER-COVERAGE",
+   "sealed_at_gate": "G-PAPER-HEAD-VERBATIM",
+   "sha256_12": "d639ee2004ae"
+  },
+  {
+   "path": "polarity",
+   "seal": "SEAL-POLARITY",
+   "sealed_at_gate": "G-PAPER-CLAIM-POLARITY",
+   "sha256_12": "1d2f35561076"
+  },
+  {
+   "path": "coverage",
+   "seal": "SEAL-COVERAGE",
+   "sealed_at_gate": "G-COVERAGE",
+   "sha256_12": "08efcb46ee87"
+  },
+  {
+   "path": "mutants",
+   "seal": "SEAL-MUTANTS",
+   "sealed_at_gate": "G-COVERAGE",
+   "sha256_12": "08f2ec97a826"
+  },
+  {
+   "path": "waiver_ledger",
+   "seal": "SEAL-WAIVERS",
+   "sealed_at_gate": "G-COVERAGE",
+   "sha256_12": "e9fb1c47e33b"
+  },
+  {
+   "path": "reachability",
+   "seal": "SEAL-REACHABILITY",
+   "sealed_at_gate": "G-REACHABILITY",
+   "sha256_12": "b9cef3604380"
+  },
+  {
+   "path": "mutant_sweep",
+   "seal": "SEAL-MUTANT-SWEEP",
+   "sealed_at_gate": "G-SWEEP-BOUND",
+   "sha256_12": "d4f272128b8a"
+  },
+  {
+   "path": "gates",
+   "seal": "SEAL-GATES",
+   "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+   "sha256_12": "e2eb07d1b21a"
+  },
+  {
+   "path": "closing_gates",
+   "seal": "SEAL-CLOSING",
+   "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+   "sha256_12": "e51ff69287d5"
+  },
+  {
+   "path": "totals",
+   "seal": "SEAL-TOTALS",
+   "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+   "sha256_12": "25eb2e473e4c"
+  },
+  {
+   "path": "transcript_head",
+   "seal": "SEAL-TRANSCRIPT",
+   "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+   "sha256_12": "4dee03b4e639"
+  }
+ ],
+ "stabilizer": {
+  "chart_histories": 4,
+  "chart_orbit_shapes": [
+   "3+3+3"
+  ],
+  "cycle_types_distinct": 23,
+  "distinct_prefixes": 41347,
+  "element_set_comparisons": 703,
+  "element_set_mismatches": 0,
+  "forced_histories": 5852,
+  "full_history_orders": {
+   "C1-R3-TRIPLES": {
+    "1": 72
+   },
+   "C1FAN-SEED-FAN": {
+    "1": 1944
+   },
+   "C2-R6-CONCATENATIONS": {
+    "1": 5184
+   },
+   "C3-R4-WINDOW": {
+    "1": 596,
+    "216": 4
+   }
+  },
+  "generator_cycle_types": {
+   "1+1+1+1+1+1+1+1+1": 703,
+   "2+1+1+1+1+1+1+1": 3369,
+   "2+2+1+1+1+1+1": 7887,
+   "2+2+2+1+1+1": 8055,
+   "2+2+2+2+1": 810,
+   "3+1+1+1+1+1+1": 1974,
+   "3+2+1+1+1+1": 11640,
+   "3+2+2+1+1": 18006,
+   "3+2+2+2": 540,
+   "3+3+1+1+1": 4332,
+   "3+3+2+1": 12996,
+   "3+3+3": 2888,
+   "4+1+1+1+1+1": 1620,
+   "4+2+1+1+1": 6480,
+   "4+2+2+1": 4860,
+   "4+3+1+1": 3240,
+   "4+3+2": 3240,
+   "5+1+1+1+1": 2592,
+   "5+2+1+1": 7776,
+   "5+3+1": 5184,
+   "6+1+1+1": 2160,
+   "6+2+1": 6480,
+   "6+3": 4320
+  },
+  "nontrivial_distinct_prefixes": 703,
+  "nontrivial_orbit_shapes": {
+   "1+1+1+1+1+1+1+2": 60,
+   "1+1+1+1+1+2+2": 108,
+   "1+1+1+2+2+2": 270,
+   "1+1+2+2+3": 66,
+   "3+3+3": 181,
+   "3+6": 18
+  },
+  "nontrivial_orders": {
+   "2": 60,
+   "216": 181,
+   "24": 66,
+   "4": 108,
+   "4320": 18,
+   "8": 270
+  },
+  "route_order_mismatches": 0,
+  "s9_order": 362880,
+  "stabilizer_elements_over_nontrivial": 121152
+ },
+ "substrate": {
+  "back_validation": {
+   "divisions_r3": {
+    "here": 9,
+    "parent": 9
+   },
+   "divisions_r4": {
+    "here": 12,
+    "parent": 12
+   },
+   "flat_quadruples": {
+    "here": 276,
+    "parent": 276
+   },
+   "partitions": {
+    "here": 280,
+    "parent": 280
+   },
+   "r6_witnesses": {
+    "here": 5184,
+    "parent": 5184
+   },
+   "saturating": {
+    "here": 36,
+    "parent": 36
+   },
+   "strict_triples": {
+    "here": 72,
+    "parent": 72
+   },
+   "strict_triples_p21": {
+    "here": 72,
+    "parent": 72
+   },
+   "window": {
+    "here": 600,
+    "parent": 600
+   }
+  },
+  "cells": 27,
+  "flat_quadruples": 276,
+  "links": 3,
+  "partitions": 280,
+  "partitions_closed_form": 280,
+  "saturating": 36,
+  "sites": 9,
+  "strict_triples": 72,
+  "window": 600,
+  "window_strata": {
+   "W4-CLASS": 256,
+   "W4-FLAT": 264,
+   "W4-SEEDFAN": 80
+  }
+ },
+ "totals": {
+  "gates_after_the_ledger_snapshot": 4,
+  "gates_in_the_sealed_ledger": 48,
+  "gates_total": 52,
+  "mutants": 47,
+  "paper_claims": 14,
+  "paper_table_rows": 69,
+  "paper_tables": 10,
+  "seals": 29,
+  "sources": 13,
+  "verbatim_anchors": 10,
+  "walls": 4,
+  "windows": 7
+ },
+ "transcript_head": {
+  "first": "==============================================================================",
+  "last": "         evidence: declared 47, executed 0, survivors none",
+  "lines": 175,
+  "sealed": "the WHOLE transcript, not a head prefix",
+  "staged_transcript_sha256_12": "34a2490744ff",
+  "whole_transcript_sha256_12": "34a2490744ff"
+ },
+ "verbatim_anchors": [
+  {
+   "consumer_gate": "G-STAB-ROUTES",
+   "found": true,
+   "id": "V01",
+   "quote": "THE STABILIZER of a history = the subgroup of S",
+   "source": "A-PIN"
+  },
+  {
+   "consumer_gate": "G-CRYSTALLIZATION",
+   "found": true,
+   "id": "V02",
+   "quote": "the earliest prefix length at which the stabilizer becomes trivial",
+   "source": "A-PIN"
+  },
+  {
+   "consumer_gate": "G-INVARIANCE-SPLIT",
+   "found": true,
+   "id": "V03",
+   "quote": "any non-invariance \u27f9 the observable NAMES threads the structure does not force",
+   "source": "A-PIN"
+  },
+  {
+   "consumer_gate": "G-GRAIN-REGISTERED",
+   "found": true,
+   "id": "V04",
+   "quote": "mid-history thread-swaps (the groupoid grain) are REGISTERED as the successor question",
+   "source": "A-PIN"
+  },
+  {
+   "consumer_gate": "G-WELD-DICTIONARY",
+   "found": true,
+   "id": "V05",
+   "quote": "site \u2190 ACTOR, link \u2190 the co-division actor pair, count \u2190 the division",
+   "source": "A-P19"
+  },
+  {
+   "consumer_gate": "G-DRIVEN-EQUALS-COMBINATORIAL",
+   "found": true,
+   "id": "V06",
+   "quote": "the field the combinatorial route computes from the schedule's groupings alone",
+   "source": "A-P21"
+  },
+  {
+   "consumer_gate": "G-CODIVISION-FORGETS",
+   "found": true,
+   "id": "V07",
+   "quote": "concatenating two of the R = 3 I7-STRICT triples",
+   "source": "A-P21"
+  },
+  {
+   "consumer_gate": "G-BORN-MENU",
+   "found": true,
+   "id": "V08",
+   "quote": "The menu at site x is the three link",
+   "source": "A-P20"
+  },
+  {
+   "consumer_gate": "G-CODIVISION-BLIND",
+   "found": true,
+   "id": "V09",
+   "quote": "carries the identical co-division arena: the same nine site objects",
+   "source": "A-P19"
+  },
+  {
+   "consumer_gate": "G-EVENT-SHAPE",
+   "found": true,
+   "id": "V10",
+   "quote": "one arbitration per conflict group per round -- and record length",
+   "source": "A-P21"
+  }
+ ],
+ "verdict": {
+  "head": "AID-STRATIFIED-AT-THE-ROUND-MEET-[IDENTITY FORCED ON 5,852 OF 5,856 COMMITTED HISTORIES, CHART ON 4] -- CENSUS=C1 72 OF 72 TRIVIAL | C2 5,184 OF 5,184 TRIVIAL | C3 596 TRIVIAL AND 4 AT ORDER 216 WITH ORBIT SHAPE 3+3+3 -- ROUTES=THE S_9 FILTER AND THE YOUNG SUBGROUP AGREE AT ORDER ON ALL 41,347 DISTINCT PREFIXES AND AT ELEMENT SET ON 703, 0 MISMATCHES CRYSTALLIZATION=EXACTLY 5 ON C1, C2 AND THE 1,944-HISTORY SEED FAN (UNIFORM, NOT AN AVERAGE) | C3 STRATIFIED 5:404|7:36|8:144|11:12|never:4 | NEVER 4 = THE CONSTANT-CLASS QUADRUPLES ANT|ANT|ANT|ANT,COL|COL|COL|COL,DIA|DIA|DIA|DIA,ROW|ROW|ROW|ROW -- PREFIX-LAW=A CONCATENATION CRYSTALLIZES EXACTLY WHEN ITS FIRST FACTOR DOES, 0 DISAGREEMENTS OF 5,184; THE STABILIZER NEVER GROWS, 0 GROWTH EVENTS IN 2,000 PREFIXES INVARIANCE=SPLIT -- BLIND-BY-THEOREM: THE CO-DIVISION RELATION (0 VIOLATIONS OVER 121,152 STABILIZER ELEMENTS AT 703 OBJECTS) AND EVERY WELD-DICTIONARY READING (121,152 PARSE COMPARISONS, 0 DIFFERENCES) -- NOT-BLIND-BY-MEASUREMENT: THE RECORD'S ATTRIBUTION (ORBIT-CONSTANT AT 111 OF 703, NAMING-DEPENDENT AT 592) AND THE WALK'S BORN MENU (134,58,58,58,58 BY DEPTH) -- THE WALK STRICTLY REFINES THE RECORD FROM DEPTH TWO: 53 OBJECTS THE RECORD CANNOT SEPARATE AND THE WALK CAN, 23 THE RECORD SEPARATES AND THE ONE-STEP MENU CANNOT WALK-SYMMETRIES=EXACTLY THE TRANSLATIONS (813 OF 121,152 ELEMENTS; SHIFT-COMMUTING EQUALS TRANSLATION AT EVERY ONE, 0 DISAGREEMENTS; RECORD-PRESERVING 51,769) -- DEGENERACY=THE RELATION FORGETS WHAT THE SEQUENCE REMEMBERS: AT 24 OF 600 R = 4 HISTORIES THE CO-DIVISION RELATION IS THE CONSTANT COMPLETE GRAPH WITH AUTOMORPHISM GROUP 362,880 WHILE THE STABILIZER OF THE ORDERED HISTORY IS TRIVIAL SCOPE=THE GLOBAL-RELABELLING GRAIN ONLY; THE GROUPOID GRAIN REGISTERED AND NOT RUN -- MEASURE=COUNTING-ONLY UNDER TWO DECLARED MEASURES (E-24): THE RECORD'S BLIND FRACTION IS 3/19 BY DISTINCT PREFIX AND 1235/6008 BY CORPUS MULTIPLICITY, THE WALK'S 58/703 AND 2065/24032 -- WINDOWS=W-C1,W-C1FAN,W-C2,W-C3,W-DRIVE,W-AUTC2,W-WALK, FOUR OF THEM ENTIRE CLASSES -- LANGUAGE=FORCED/CHART/STRATIFIED NAME THE STABILIZER AND THE INVARIANCE DATA AND NOTHING ELSE",
+  "segments": [
+   "AID-STRATIFIED-AT-THE-ROUND-MEET-[IDENTITY FORCED ON 5,852 OF 5,856 COMMITTED HISTORIES, CHART ON 4] -- CENSUS=C1 72 OF 72 TRIVIAL | C2 5,184 OF 5,184 TRIVIAL | C3 596 TRIVIAL AND 4 AT ORDER 216 WITH ORBIT SHAPE 3+3+3 -- ROUTES=THE S_9 FILTER AND THE YOUNG SUBGROUP AGREE AT ORDER ON ALL 41,347 DISTINCT PREFIXES AND AT ELEMENT SET ON 703, 0 MISMATCHES",
+   "CRYSTALLIZATION=EXACTLY 5 ON C1, C2 AND THE 1,944-HISTORY SEED FAN (UNIFORM, NOT AN AVERAGE) | C3 STRATIFIED 5:404|7:36|8:144|11:12|never:4 | NEVER 4 = THE CONSTANT-CLASS QUADRUPLES ANT|ANT|ANT|ANT,COL|COL|COL|COL,DIA|DIA|DIA|DIA,ROW|ROW|ROW|ROW -- PREFIX-LAW=A CONCATENATION CRYSTALLIZES EXACTLY WHEN ITS FIRST FACTOR DOES, 0 DISAGREEMENTS OF 5,184; THE STABILIZER NEVER GROWS, 0 GROWTH EVENTS IN 2,000 PREFIXES",
+   "INVARIANCE=SPLIT -- BLIND-BY-THEOREM: THE CO-DIVISION RELATION (0 VIOLATIONS OVER 121,152 STABILIZER ELEMENTS AT 703 OBJECTS) AND EVERY WELD-DICTIONARY READING (121,152 PARSE COMPARISONS, 0 DIFFERENCES) -- NOT-BLIND-BY-MEASUREMENT: THE RECORD'S ATTRIBUTION (ORBIT-CONSTANT AT 111 OF 703, NAMING-DEPENDENT AT 592) AND THE WALK'S BORN MENU (134,58,58,58,58 BY DEPTH) -- THE WALK STRICTLY REFINES THE RECORD FROM DEPTH TWO: 53 OBJECTS THE RECORD CANNOT SEPARATE AND THE WALK CAN, 23 THE RECORD SEPARATES AND THE ONE-STEP MENU CANNOT",
+   "WALK-SYMMETRIES=EXACTLY THE TRANSLATIONS (813 OF 121,152 ELEMENTS; SHIFT-COMMUTING EQUALS TRANSLATION AT EVERY ONE, 0 DISAGREEMENTS; RECORD-PRESERVING 51,769) -- DEGENERACY=THE RELATION FORGETS WHAT THE SEQUENCE REMEMBERS: AT 24 OF 600 R = 4 HISTORIES THE CO-DIVISION RELATION IS THE CONSTANT COMPLETE GRAPH WITH AUTOMORPHISM GROUP 362,880 WHILE THE STABILIZER OF THE ORDERED HISTORY IS TRIVIAL",
+   "SCOPE=THE GLOBAL-RELABELLING GRAIN ONLY; THE GROUPOID GRAIN REGISTERED AND NOT RUN -- MEASURE=COUNTING-ONLY UNDER TWO DECLARED MEASURES (E-24): THE RECORD'S BLIND FRACTION IS 3/19 BY DISTINCT PREFIX AND 1235/6008 BY CORPUS MULTIPLICITY, THE WALK'S 58/703 AND 2065/24032 -- WINDOWS=W-C1,W-C1FAN,W-C2,W-C3,W-DRIVE,W-AUTC2,W-WALK, FOUR OF THEM ENTIRE CLASSES -- LANGUAGE=FORCED/CHART/STRATIFIED NAME THE STABILIZER AND THE INVARIANCE DATA AND NOTHING ELSE"
+  ]
+ },
+ "waiver_ledger": [
+  {
+   "forcing": "the run cannot proceed past a source whose bytes do not match the frozen digest, so the gate has no other value to take",
+   "gate": "G-PROVENANCE",
+   "waiver": "MACHINE-CHECKED FORCING: this gate's falsifier is the CLI's own `--selftest`, which corrupts one declared anchor's digest and requires the run to die here and write nothing.  It is an executable falsifier rather than a registry mutant because it must run before the mutant harness itself is trusted."
+  },
+  {
+   "forcing": "the run cannot proceed past a source whose bytes do not match the frozen digest, so the gate has no other value to take",
+   "gate": "G-ARTIFACT-INTEGRITY",
+   "waiver": "MACHINE-CHECKED FORCING: a mutant of this gate would have to WRITE artifacts, which the era forbids of a failing run, so the falsifier is carried INSIDE the gate instead -- the same disk-vs-seal comparison is run a second time on the same disk bytes with one bit flipped and is required to REJECT.  The gate therefore fires in both directions in every plain run."
+  }
+ ],
+ "walk": {
+  "born_weight_form": "|a + b w|^2 = a^2 - a b + b^2, a rational integer",
+  "cells": 27,
+  "coin": "C(x) = G . D(x), D(x) = diag(w^{n_l(x)}); 3G has -1 on the diagonal and 2 off it",
+  "depth": 5,
+  "depth_one_residue_classes": 18,
+  "depth_one_residue_collisions": 0,
+  "links": 3,
+  "menu_at_the_never_crystallizing_histories": [
+   "[(21, 3, 3)]",
+   "[(3, 21, 3)]",
+   "[(3, 3, 21)]",
+   "[(9, 9, 9)]"
+  ],
+  "shift_is_a_bijection": true,
+  "start": "the S_9-symmetric all-ones state",
+  "symmetry_criterion": "a stabilizer element is a symmetry of the coupled step exactly when it is a translation of AG(2,3) and preserves the record"
+ },
+ "walls": [
+  {
+   "banned_forms": 5,
+   "hits": [],
+   "scanned_characters": 24506,
+   "statement": "THE REALITY LANGUAGE IS CONFINED TO THE MEASURED FORM.  This unit publishes a stabilizer and an invariance census; it does not assert that actors are real, that they are not real, or that either follows from the measurement.",
+   "wall": "WALL-REALITY"
+  },
+  {
+   "banned_forms": 4,
+   "hits": [],
+   "scanned_characters": 24506,
+   "statement": "THE GROUPOID GRAIN WAS NOT MEASURED.  No sentence may report a result at the mid-history thread-swap grain.",
+   "wall": "WALL-GRAIN"
+  },
+  {
+   "banned_forms": 4,
+   "hits": [],
+   "scanned_characters": 24506,
+   "statement": "NO FRACTION WITHOUT ITS MEASURE (E-24).  Every fraction over a configuration space carries the measure it was taken under or the COUNTING-ONLY stamp.",
+   "wall": "WALL-MEASURE"
+  },
+  {
+   "banned_forms": 4,
+   "hits": [],
+   "scanned_characters": 24506,
+   "statement": "THE CORPORA ARE COMMITTED OBJECTS, NOT A SAMPLE OF PHYSICS.  No sentence may generalise the census beyond the declared windows.",
+   "wall": "WALL-SCOPE"
+  }
+ ],
+ "windows": [
+  {
+   "declaration": "THE 72 R = 3 I7-STRICT TRIPLES, ENTIRE.  Every ordered triple of saturating groupings whose summed link field covers all 27 cells; driven at the FIRST canonical transversal of each round.  No sampling: the corpus is the whole class.",
+   "name": "W-C1"
+  },
+  {
+   "declaration": "THE SEED FAN OVER W-C1, ENTIRE.  The same 72 triples at ALL 27 canonical transversal triples, so the seed axis -- the only coordinate that moves the WITHIN-ROUND event order -- is exhausted rather than fixed.",
+   "name": "W-C1FAN"
+  },
+  {
+   "declaration": "THE 5,184 ORDERED R = 6 CONCATENATIONS, ENTIRE.  Every ordered pair of W-C1 triples, concatenated -- paper-21's own R = 6 door, at its own ordered-witness count.",
+   "name": "W-C2"
+  },
+  {
+   "declaration": "PAPER-21's DRIVEN WINDOW W4, ENTIRE.  All 600 committed schedules -- W4-CLASS, W4-FLAT, W4-SEEDFAN and W4-CTRL -- reconstructed here by paper-21's own constructor and gated against its committed window size.",
+   "name": "W-C3"
+  },
+  {
+   "declaration": "THE DRIVEN VERIFICATION SET.  The committed v10 layers are expensive to drive, so the driven leg is taken on a DECLARED set: the first 9 W-C1 triples in enumeration order, the four constant-class W-C3 quadruples together with d66's own committed R = 4 point and the collinear arrangement, and the first 2 W-C2 concatenations.  Each is compared event by event against the combinatorial route, and the structural leg carries the rest.",
+   "name": "W-DRIVE"
+  },
+  {
+   "declaration": "THE AUTOMORPHISM WINDOW OVER W-C2.  The co-division automorphism group is enumerated on the 72 DIAGONAL concatenations (T, T) -- paper-21's own R = 6 witness form -- rather than on all 5,184.",
+   "name": "W-AUTC2"
+  },
+  {
+   "declaration": "THE WALK'S DEPTH.  Paper-20's coupled step is re-implemented here and run to depth 5 from the S_9-symmetric start; every depth is published, so the depth is not a hidden cap.",
+   "name": "W-WALK"
+  }
+ ]
+}
