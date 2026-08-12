@@ -8398,3 +8398,31 @@ MINORs.  Seam ruling: the seam is between the measurements
 instrument's account of itself; "45/45 PASS" is a
 reproduction statement, not confirmation.  → THE ADJUDICATION
 (all three seats in).
+
+## 2026-08-11 — SIG ADJUDICATED: THE HEAD MOVES TO DECLARATION-RELATIVE; TWO ORCHESTRATOR ERRORS OWNED; TWELVE ORDERS; REPAIR IN FLIGHT (v14 LEDGER #274)
+
+v14/note-sig-adjudication.md (1be347e8dfa7) frozen at d9c4c2f;
+the repair worker launched BEFORE this entry.  Three seats
+AWF (~595 recomputations; K1 ZERO MAJORS with the full
+7,666,574-branch unpruned tree; zero wrong numbers).  **THE
+CONTENT STANDS ENTIRE; THE HEAD MOVES:
+SIG-DECLARATION-RELATIVE-AT-THE-EMISSION-READING** (K2's four
+grounds + K3's instrument-side confirmation that only one of
+five outcomes was deliverable).  TWO ORCHESTRATOR ERRORS
+OWNED: the pin dropped the plan's pre-registered
+DECLARATION-RELATIVE member; the class-implicit floor
+phrasing (SIG's own "correction" was a class substitution —
+the covered-site class IS attained at R=5; the annotation
+routed forward to PER-R at #270).  PROMOTIONS: the deposit
+theorem symmetry-strengthened; the mod-3 identity across the
+whole homogeneous locus; **the TRUE mechanism = COUPLING,
+not rate**; the four-class ladder canonical.  Twelve orders
+Z1–Z12 (the five-way selector w/ control arms; the
+class-explicit ladder; the coupling section; the
+un-collapsed fibers w/ masses-move measurements; the
+comparator's substring broken; all tables gated; the
+allow-list purged; the consumer gates made READ; the T=6
+cross-checks; the sweep).  Successors: the emission-reading
+question to the description-layer line; SIG-2 registered
+unchartered; the Barandes-orthodox tie-break noted of
+record, not adopted.
