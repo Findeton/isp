@@ -7834,3 +7834,54 @@ actors; the union's dictionary; the gluing fiber; curvature
 of the gluing; whether weldability forces an overlap size.
 Queued at orchestrator discretion behind the current flight;
 ACT retains funnel priority.
+
+## 2026-08-11 — OCC (PAPER-31) DELIVERED: CEILING-OPEN — THE CARRIER IS A PAIR OF ACTORS; THE SEED CONDITIONAL MISTYPED-NOT-FALSE; COMMIT-AS-IS (v14 LEDGER #255)
+
+The OCC worker delivered; all candidate readings.  **Verdict:
+OCC-CEILING-OPEN — the named premise is P2; the priced fiber
+is 4 declarations → 3 distinct two-excitation theories → 3
+emission completions.  The licensed sentence: no committed
+layer forces the occupancy ceiling, and fermionic-shape is
+NOT a theorem of the coupled theory here — it is a
+declaration with TWO coordinates, a value AND a grain.**
+Per-premise: **P1 HOLDS-ON-THE-PAIR-LEG with the pin's
+framing corrected by measurement — THE COUPLED MACHINE'S
+CARRIER IS THE UNORDERED CO-DIVISION PAIR (27 cells; the
+committed instrument's own verbatim words); ACTOR→SITE is a
+bijection but covers 9 of 27 carriers; every cell has exactly
+2 actors, every actor lies in 6 cells — excitation→actor IS
+NOT A FUNCTION; the seed conditional was MISTYPED at this
+arena, not false** [orchestrator: this convergences EXACTLY
+with LOR's SITE ← ACTOR ⊕ PAIR delivered the same hour — the
+refined sites are pairs AND the coupled matter already rides
+pairs: two independent units, one grain; for both
+adjudications].  P2 NOT-AVAILABLE (4,945 names censused, 0
+occupancy-shaped, with paper-22's own receipt as the positive
+control at 19; the state space has no excitation-number
+parameter — double occupancy NEITHER constructible NOR
+excluded; INEXPRESSIBILITY IS NOT EXCLUSION; the 3 theories'
+one-excitation restrictions agree as objects 53,460/53,460).
+P3 SILENT-AND-VACUOUSLY-SATISFIED (the blindness pair 9/9;
+2/3 completions preserve the emission identity; 0/3 refuse a
+doubly-occupied division — the grammar cannot forbid what it
+cannot see).  P4 NO-SHAPE-CLOSES at the actor grain (both
+shapes leak 6/6; 216/216 admissible leak) while at the
+CARRIER grain the antisymmetric never leaks and the symmetric
+leaks 81 cells at 5/6 coin classes (paper-22's theorem
+transported per coin).  THE CONTROL: six arms return 4
+distinct pre-registered words (C1-SUBSET-CARRIER → FORCED;
+C2-MULTISET → OPEN) — genuinely two-way.  **THE ASYMMETRY
+SHARPENED: exclusion selects a shape ONLY at the carrier's
+own grain — a grain the record layer never names; at the
+actor grain exclusion DESTROYS rather than selects (the two
+shapes' leak sets coincide cell-for-cell, 0 cancellation — a
+theorem: disjoint source pairs).  THE TWO GRAINS ARE ONE
+PHENOMENON (the carrier-grain leak's source set = exactly the
+27 same-actor configurations, set equality at 5/5).**
+Windows: two excitations; the free lift; one-step
+completions; counts COUNTING-ONLY.  Counts: 56 gates (54+2);
+50/50 mutants; 40 seals; 48 leak rows by two routes 48/48;
+212 numerals 0 unlicensed; fences multiset; byte ×2 +
+off-tree git-less.  Shas: paper 1b140f7973d4, code
+e96c1e14a0b6, output 63d98f4ee6f0, receipt 46e757ef9c47.
+Committed AS-IS; battery next; panel queued.

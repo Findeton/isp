@@ -1,0 +1,173 @@
+==============================================================================
+OCC -- THE OCCUPANCY-CEILING FORCING UNIT
+==============================================================================
+  [PASS] G-PROVENANCE
+         the 12 declared sources are read at run time by path resolved from this file's own location and verified by sha256-12; a corrupted anchor kills the run here and --break-anchor NAME exercises exactly that
+         evidence: anchors not matching: none
+  [PASS] G-EXACT-ARITHMETIC
+         an AST scan of this file finds no float literal and no call to float(): every amplitude is an integer pair over Z[w] and every ratio is a Fraction
+         evidence: float literals none, float() calls none
+  [PASS] G-NO-SUBPROCESS
+         no subprocess, socket or version-control call of any kind: the scan reads imports AND attribute names, so the run is correct off-tree and on a machine with no git
+         evidence: forbidden names: none
+  [PASS] G-READS-DECLARED
+         the read set is exactly the declared set: 12 pinned sources by path and hash, plus the SECOND declared set -- this file and the object under test -- which is named here rather than left out of the accounting
+         evidence: declared 12, read 12, difference none
+  [PASS] G-VERBATIM
+         #62 with #125's normalisation: 8 verbatim anchors are located in their pinned sources after markdown-prefix stripping, ASCII folding and whitespace normalisation, and each is PERTURBED at a content-bearing token and required not to locate, so every row carries its own falsifier
+         evidence: anchors failing: none
+  [PASS] G-PATH-VALUES
+         #91's path-value stability: 16 values are READ OUT of the parents' own committed receipts at declared json paths and each is consumed by a named gate -- the carrier, the links, the realised co-division pairs, the coin census, and paper-22's own occupancy rows
+         evidence: path values failing: none
+  [PASS] G-QUESTION-ANCHORED
+         the question and its four pre-registered outcome words are read from the PIN's own bytes rather than typed here, and paper-22's head clause FORCING-THE-CEILING=OPEN together with its measured ceiling_is_anchored = false are what makes this unit's question a live one
+         evidence: outcome words located in the pin: 4 of 4; the parent's ceiling_is_anchored is False
+  [PASS] G-MEMO-CLEAN
+         the heavy census is built once and handed back as a DEFENSIVE COPY, and its whole contents are fingerprinted at creation and re-checked on every hand-back, so no injection -- this run's or an earlier run's -- can reach the next run through it.  The falsifiers act on the GATE layer above it, which is what makes the mutant sweep a sequence of independent runs
+         evidence: fingerprint 67c105ad4f82, builds 1, hits 0
+  [PASS] G-P1-CARRIER
+         THE ARENA THE EXCITATIONS USE, REBUILT AND GATED AGAINST THE COUPLED MACHINE'S OWN RECEIPT.  The coupled machine's state is a vector on its 27 cells; this unit rebuilds the carrier from the 9 actors and the 3 declared link directions and compares the rebuild with the committed receipt's own arena rows
+         evidence: rebuilt carrier 27 against the receipt's 27; actors 9 against 9; links [[1, 0], [0, 1], [1, 1]]
+  [PASS] G-P1-DICTIONARY
+         P1, MEASURED ON THE ARENA THE EXCITATIONS USE.  The weld's forced dictionary has two legs.  ACTOR->SITE is a bijection at 9 of 9 -- and it covers 9 of the 27 objects the excitation's own coordinate ranges over.  The leg that welds THAT set is the second one: a cell IS an unordered co-division pair of actors, and the rebuilt map between them is a bijection in both directions.  The incidence is measured per object: every cell carries exactly two actors at 27 of 27 and every actor lies in exactly six cells at 9 of 9, so the excitation-to-actor relation is NOT A FUNCTION and the seed conditional's injection premise is not a statement about this carrier
+         evidence: pair bijection True; incidence rows True; ACTOR->SITE bijection True; excitation->actor is a function False
+  [PASS] G-POOL-REBUILT
+         THE POOL IS THIS ARENA'S OWN.  The S_3-covariant unitary coins over the arena's own 37-value alphabet (1/3)Z[w] are rebuilt from the definitions -- not imported -- and the census is gated against the coupled machine's committed one: 36 solutions, 6 classes up to a global phase, of which 1 is +/- Grover
+         evidence: classes 6, ring solutions 36, grover classes 1, alphabet 37 -- all against the committed receipt
+  [PASS] G-POOL-UNITARY
+         every walk operator in the pool is EXACTLY unitary, checked per COLUMN PAIR rather than by a norm: 6 operators, 729 column pairs each, over Z[w] at the common denominator 3
+         evidence: unitarity violations across the pool: 0
+  [PASS] G-LEAK-THEOREM
+         PAPER-22'S LEAK THEOREM, TRANSPORTED AND VERIFIED PER COIN.  In the normalised symmetric square the only cell from a hard-core configuration into a doubly occupied one is a single product of two amplitudes, so the symmetric shape leaks out of the carrier-grain hard core exactly when some row of the operator carries two nonzero entries.  The gate binds COINS, not the tally: each of the 6 classes is checked against its own monomiality predicate, in both directions
+         evidence: coins whose leak and whose monomiality disagree: none
+  [PASS] G-LEAK-ROUTES
+         THE LEAK IS MEASURED BY TWO INDEPENDENT ROUTES at every one of the 48 (coin, declaration, shape) rows.  Route 1 forms the lifted matrix element and tests it against zero in the ring; route 2 never forms it and counts the cells at which at least one of the two products is nonzero.  They can differ only where BOTH products are nonzero and cancel, and that census is published beside them: 405 such cells in the whole run
+         evidence: rows agreeing 48 of 48; disagreements none
+  [PASS] G-P2-NO-OCCUPANCY-KEY
+         THE COMMITTED DEEPER LAYERS DECLARE NO OCCUPANCY COORDINATE, and that is a census with a POSITIVE CONTROL rather than a claim.  The published key sets and declared name sets of the 6 committed layers beneath the excitations -- the coupled machine, the weld and the transport grammar, 4945 names in all -- are scanned token by token against a declared occupancy vocabulary of 10 tokens, and NONE of them is occupancy-shaped.  The same scan is run on the one layer that DID declare a ceiling, paper-22's own receipt, and fires there at 19 names, so the instrument is known live rather than assumed.  Paper-22 measured 27 declaration keys and none occupancy-shaped on the RECORD layer; this extends the same measurement to the DYNAMICAL layer that carries the excitations
+         evidence: occupancy-shaped names in the deeper layers: none; in the declared control: 19 (antisymmetric_hardcore_closed, antisymmetric_hardcore_leak_cells, entrywise_set_is_the_two_excitation_nonzero_set)
+  [PASS] G-P2-HOMONYM
+         THE HOMONYM IS MEASURED, NOT SUPPRESSED.  The word `ceiling` does occur in the committed layers -- 4 sources carry it -- and every occurrence is required to match a DECLARED non-occupancy referent: the weld's positive-definiteness ceiling on division counts, d60's engineered search ceiling and d66's arbitration budget.  A new referent would fail here
+         evidence: sources whose `ceiling` hits have no declared referent: none
+  [PASS] G-P2-STATE-SPACE
+         THE TURNING PREMISE, MEASURED ON THE CONSTRUCTION AND NOT ON THE USAGE.  The committed instrument's own abstract syntax tree is read: its declared carrier is 27 and 27, which is this unit's rebuilt carrier; none of its 102 functions takes an excitation-number parameter, and no constructor in it is indexed by anything but a cell.  A doubly occupied state is therefore NEITHER CONSTRUCTIBLE NOR EXCLUDED there -- the representation has no occupancy coordinate to carry the question
+         evidence: declared DIM 27 / NCELL 27 against the rebuild 27; excitation-number parameters none
+  [PASS] G-P2-INVISIBLE-FROM-BELOW
+         THE CEILING IS INVISIBLE FROM BELOW, and this is the premise's failure made a measurement.  4 declarations are constructed; they give 3 DISTINCT two-excitation theories, with 378, 351 and 216 symmetric configurations.  Their ONE-EXCITATION restrictions are compared AS OBJECTS -- configuration set, transition matrix and Born shadow, entry by entry, at every coin class -- and agree at 53,460 of 53,460 comparisons.  No measurement at one excitation can reach the ceiling, which is why no committed layer could have declared it by accident
+         evidence: disagreements 0 over 53,460 comparisons; distinct theories 3
+  [PASS] G-P2-TURNING
+         P2's verdict is DERIVED from its three legs and not typed: the vocabulary census (no occupancy-shaped name), the state-space construction (no excitation-number coordinate) and the declaration fiber (every declaration restricts to the same one-excitation object).  A representation that EXCLUDED double occupancy would have to forbid it; this one cannot express it, and inexpressibility is not exclusion
+         evidence: P2 = NOT-AVAILABLE against the value its legs derive, NOT-AVAILABLE (legs: occupancy names 0, excitation parameters 0, restrictions agree True)
+  [PASS] G-P3-BLINDNESS
+         THE COMMITTED EMISSION RULE CANNOT SEE THE DISTINCTION THE CEILING TURNS ON.  Two two-excitation configurations are built: one with its excitations on two different cells of a single actor, one with both on a single cell.  They differ in cell occupation at 2 of 27 cells and they agree, at 9 of 9 sites, on the only state-side quantity the committed rule reads
+         evidence: site fields agree at 9 of 9; cell occupations agree at 25 of 27
+  [PASS] G-P3-COMPLETIONS
+         THE DECLARATION THE GRAMMAR IS MISSING IS PRICED.  The committed emission rule is a rule for ONE excitation; 3 completions to two are constructed and all 3 are run.  Their emission totals are ['2', '1', '1'], so exactly 2 of them preserve the parent's own consistency identity -- total emission mass exactly 1 -- and their fields differ pairwise at [3, 9, 9] cells.  The missing declaration is verdict-relevant, not cosmetic
+         evidence: completions whose published identity row contradicts their total: none
+  [PASS] G-P3-NEVER-REFUSED
+         P3 IS SILENT AND VACUOUSLY SATISFIED: under every one of the 3 completions a state whose two excitations sit on ONE carrier still has a nonempty emission menu, so 0 of 3 completions refuse a division event to a doubly occupied carrier.  The closure premise cannot supply an exclusion the grammar has no vocabulary to state
+         evidence: completions that refuse: 0; the doubly occupied carrier emits: True
+  [PASS] G-P4-GRAIN-CENSUS
+         P4, AND THE GATE BINDS COINS RATHER THAN THE TALLY: every one of the 6 coin classes carries its own leak row at every one of the 4 declarations and in both shapes, and every row's closure predicate is evaluated against its own measured leak.  24 (coin, declaration) selection rows are published
+         evidence: rows whose closure verdict is detached from their leak: none
+  [PASS] G-P4-SET-EQUALITY
+         THE TWO GRAINS ARE NOT INDEPENDENT, AND THE LINK IS A SET EQUALITY.  At the carrier's own grain the symmetric shape leaks from exactly 27 configurations, and that set IS the set of configurations whose two excitations sit at one actor -- gated as a set equality, element for element, at every leaking coin class rather than as a count
+         evidence: coins whose leak source set is not the same-actor set: none
+  [PASS] G-P4-SHAPES-COINCIDE
+         AT THE ACTOR'S GRAIN THE TWO SHAPES LEAK AT THE SAME CELLS.  For a target pair of cells sharing an actor the two products of the lifted element are supported on disjoint source pairs -- measured at 0 cells in the whole run where both are nonzero -- so no cancellation is available to either shape and the wedge and the symmetric square leak at identical source sets, identical target sets and identical counts, at every coin class
+         evidence: coins whose two shapes' leak sets differ: none
+  [PASS] G-P4-PARENT-SPLIT
+         PAPER-22'S SPLIT IS CITED FROM ITS OWN COMMITTED ROWS AND NEVER RETYPED: its 64 generators split 48 leaking against 16 closed in the symmetric shape, with 0 leaking in the antisymmetric one, and this unit RECOMPUTES that split from the parent's receipt rather than reading its prose
+         evidence: cited split 48 + 16 = 64; antisymmetric leaking 0
+  [PASS] G-ARMS-REACHABILITY
+         #34 WITH REACHABILITY, AT THE HEAD LAW: the head is derived from the four premise verdicts and is exercised on 6 arenas, on which it returns 4 DIFFERENT pre-registered outcome words.  Every branch of the law is reached on a CONSTRUCTED arena rather than on a synthetic census, and the verdict arena is the committed one
+         evidence: words returned: ['OCC-BLOCKED-AT', 'OCC-CEILING-FORCED', 'OCC-CEILING-OPEN', 'OCC-CEILING-PARTIAL']
+  [PASS] G-CONTROL-TWO-WAY
+         THE TWO-WAY CONTROL THE PIN REQUIRES.  On a carrier whose configurations are SUBSETS -- double occupancy not expressible -- exactly one shape closes and the conditional FIRES.  On the same carrier with MULTISET configurations -- double occupancy constructible -- both shapes close and it FAILS.  The two arms differ in the configuration rule and in nothing else: same carrier size, same generator, same lift, same census code
+         evidence: subset arm selects True (shapes closed ['ANTISYMMETRIC']); multiset arm selects False (shapes closed ['ANTISYMMETRIC', 'SYMMETRIC'])
+  [PASS] G-ASYMMETRY
+         THE ONE-WAY ASYMMETRY, RESTATED AT THE MEASURED VERDICT AND GATED AGAINST BOTH ARMS.  A declaration that PERMITS selects a shape at 0 of 12 rows.  A declaration that FORBIDS selects at 5 of 12 -- and every one of those is at the carrier's own grain: at the actor's grain exclusion selects at 0 of 6 rows, because at 6 of them NO shape closes at all.  Exclusion can select a shape and permission cannot, and exclusion selects only at the grain the excitation's own coordinate has
+         evidence: permission selects 0 of 12; exclusion 5 of 12; at the actor grain 0 of 6
+  [PASS] G-DESCRIPTION-STAMPS
+         every published claim carries a DESCRIPTION STAMP naming the sector, the lift, the grain, the ceiling, the coin class and the arena it was measured on: 15 claims, 15 stamps.  No claim about a quantum-layer quantity is published without the description that individuates it
+         evidence: claims without a stamp: none
+  [PASS] G-COUNTING-ONLY
+         E-24: no count becomes a probability without a declared measure. Every ratio this unit publishes is a COUNT over a declared enumeration, and the check binds OBJECTS: each of the 4 enumerations is re-counted from the construction it names and its denominator compared with that count, so a ratio taken over a set other than the one it claims dies here.  No enumeration carries a measure, and the receipt is stamped COUNTING-ONLY
+         evidence: measure declared: False; enumerations whose denominator does not match their own re-count: none; stamp COUNTING-ONLY
+  [PASS] G-CHOICE-INVENTORY
+         the choice inventory is published AS DATA at the RSQ standard, with every fiber a COUNTED value rather than a typed one: 7 items, of which 2 are verdict-determining -- the grain and the ceiling value, which are the two halves of the one declaration no committed layer makes
+         evidence: items with an uncounted fiber: none; verdict-determining items: ['the grain a ceiling is declared at', 'the ceiling value']
+  [PASS] G-WALL-L1
+         THE WALL IS AN INSTRUMENT, NOT A LABEL: this run's whole measurement layer -- every measured receipt key together with the statement and evidence of every gate evaluated -- is scanned for the reading this wall bars.  L-1's fourth form is not tested here and no order-level covariance claim is made.  The falsifier writes the forbidden reading INTO that layer and dies here
+         evidence: the barred reading is present in the measurement layer: False (34564 chars scanned)
+  [PASS] G-WALL-BHS
+         THE WALL IS AN INSTRUMENT, NOT A LABEL: this run's whole measurement layer -- every measured receipt key together with the statement and evidence of every gate evaluated -- is scanned for the reading this wall bars.  no sprinkling-grade or BHS-class reading is taken.  The falsifier writes the forbidden reading INTO that layer and dies here
+         evidence: the barred reading is present in the measurement layer: False (34564 chars scanned)
+  [PASS] G-WALL-KR
+         THE WALL IS AN INSTRUMENT, NOT A LABEL: this run's whole measurement layer -- every measured receipt key together with the statement and evidence of every gate evaluated -- is scanned for the reading this wall bars.  no dimension estimator and no height control is owed.  The falsifier writes the forbidden reading INTO that layer and dies here
+         evidence: the barred reading is present in the measurement layer: False (34564 chars scanned)
+  [PASS] G-WALL-COSMO
+         THE WALL IS AN INSTRUMENT, NOT A LABEL: this run's whole measurement layer -- every measured receipt key together with the statement and evidence of every gate evaluated -- is scanned for the reading this wall bars.  no continuum, cosmological or infinite-volume reading is taken.  The falsifier writes the forbidden reading INTO that layer and dies here
+         evidence: the barred reading is present in the measurement layer: False (34564 chars scanned)
+  [PASS] G-VERDICT-RECONSTRUCTED
+         THE COMPARATOR IS DE-TWINNED (the SMU lesson: two routes that TYPE THE SAME TEMPLATE audit the template and not the measurement).  The head is not prose with numbers in it: it is a sequence of LABEL=VALUE fields built from a declared field spec, and the audit route types NO COPY of it.  It PARSES the delivered segments, looks every label up in its own independently typed map from label to receipt path, compares 46 fields against the serialized receipt, re-derives each segment's thesis from the predicate that selects it, and re-derives the outcome word from the premise rows by its own copy of the head law
+         evidence: mismatches none; word re-derived OCC-CEILING-OPEN against OCC-CEILING-OPEN
+  [PASS] G-VERDICT-NO-TYPED-LITERAL
+         no numeral in the head is a typed literal: every one of them is required to occur as a MEASURED value in the receipt's own measurement layer, so a number that was written rather than computed has nowhere to hide
+         evidence: head numerals not occurring among the measured values: none
+  [PASS] G-PAPER-CLAIMS
+         every one of the 15 load-bearing claims is ASSEMBLED FROM THIS RUN's measurements and required to occur in the object under test EXACTLY ONCE -- an occurrence count, not a containment test
+         evidence: claims not occurring exactly once: none
+  [PASS] G-PAPER-TABLES
+         E-22: TABLES RENDER AS CLAIMS.  Every one of the 23 rows of the three load-bearing tables -- the pool at both grains, the six arms, and the four declarations -- is rendered from this run and required to occur in the paper exactly once, so a moved cell or an inverted closure verdict dies inside the run
+         evidence: table rows not occurring exactly once: none
+  [PASS] G-PAPER-NUMERAL-COVERAGE
+         #20 WITH THE FENCED-BLOCK ADDENDUM AND E-22's INLINE-SPAN ADDENDUM: 212 numerals are scanned -- 144 in prose, 58 inside the 3 fenced blocks and 10 inside the 39 inline code spans -- and every one must be licensed by a MEASURED receipt value or by a declared structural numeral.  Digest strings are excluded from the licensed set, so no numeral can be licensed by a hash
+         evidence: unlicensed numerals: none
+  [PASS] G-PAPER-HEAD-VERBATIM
+         the paper's fenced verdict blocks are compared with the DERIVED head as a MULTISET and not by containment -- a paper carrying a clean copy and a forged twin satisfies containment with the clean one -- and each of the 3 derived segments is additionally matched verbatim into the object under test after the full text normalisation
+         evidence: segments not located verbatim: none; multiset of 3 fenced blocks matches the 3 derived segments: True
+  [PASS] G-PAPER-CLAIM-POLARITY
+         the 4 load-bearing sentences carry POLARITY: each is required present in its positive form and ABSENT in its negation, so an inverted headline -- the excitation riding the actor, a forced ceiling, an exclusion that selects at every grain, or a fermionic-shape theorem -- dies here
+         evidence: rows failing: none
+  [PASS] G-NO-PARTICLE-NAMING
+         THE NO-PARTICLE WALL AS AN INSTRUMENT (paper-22's pattern, inherited): the object under test is scanned WORD BY WORD against a declared list of 24 banned words, and the shape words survive only as the compounds the pin licenses -- fermionic-shape and bosonic-shape.  No particle noun, no spin and no bare shape adjective occurs anywhere in it
+         evidence: banned words found: none
+  [PASS] G-CLI-WHITELIST
+         the #82 CLI contract, exercised in this run: 10 malformed argument vectors are all rejected with exit code 2 -- the last three of them SECOND-MODE vectors, since a mode flag silently overwriting an earlier one would make the earlier flag a no-op -- 9 legal shapes parse, and the registered PERMISSIVE shape, present in this file only as this gate's own falsifier, accepts an unknown flag
+         evidence: malformed vectors accepted none, legal shapes 9, permissive shape accepts unknown flags True
+  [PASS] G-SELFTEST-WRITES-NOTHING
+         the --selftest path corrupts an anchor in memory, dies at G-PROVENANCE and reaches no writer: the writer is called from exactly one place in this file and the self-test path does not reach it -- and the predicate is the AST probe's own value
+         evidence: the writer-shape probe reports the self-test path clean: True
+  [PASS] G-MUTANTS-ON-TARGET
+         all 50 declared mutants are run IN PROCESS and each dies at the gate it names, with the artifacts untouched
+         evidence: on target 50 of 50; misses none
+  [PASS] G-COVERAGE
+         #34 WITH AN HONEST DENOMINATOR: of the 56 gates this delivery run evaluates, 45 are falsified by at least one declared mutant and 11 are WAIVED with a forcing that says why they cannot fail. The denominator is THIS run's gate count, and the registry --list-gates prints is required to be exactly that set
+         evidence: uncovered gates: none; declared registry 56 vs evaluated 56, drift none
+  [PASS] G-FALSIFIER-HONESTY
+         E-23: A FALSIFIER'S PUBLISHED DESCRIPTION IS PART OF THE SEALED SURFACE.  Each of the 50 declared falsifiers names THE SYMBOL IT MOVES and THE VALUE IT MOVES IT TO; both are re-derived from THIS FILE's own AST -- the innermost statement enclosing its hook -- and compared against the declaration, and the published prose is required to name both.  50 hook sites are located, and every hook in the file names a declared falsifier
+         evidence: declarations not matching their code: none; descriptions not naming their symbol and value: none; hooks naming an undeclared falsifier: none
+  [PASS] G-WRITER-SHAPE
+         THE SHAPE OF THE WRITER IS SEALED, AND SEALED BEFORE THE GATE LEDGER IS SNAPSHOTTED, which is what makes it the one guard a post-snapshot gate's own removal cannot evade: finish() calls 9 gates in source order, the terminal integrity gate appears exactly once among them, there are 2 os.replace calls and every one sits BELOW that gate's own line
+         evidence: gates called in finish ['G-COVERAGE', 'G-FALSIFIER-HONESTY', 'G-WRITER-SHAPE', 'G-SWEEP-BOUND', 'G-ANCHOR-CONSUMERS', 'G-REACHABILITY', 'G-PAPER-COVERAGE-FINAL', 'G-SEAL-COMPLETE', 'G-ARTIFACT-INTEGRITY']; terminal gate exactly once True; os.replace calls 2, all after it True
+  [PASS] G-SWEEP-BOUND
+         THE SWEEP'S EXECUTION IS BOUND, NOT DECLARED: a delivery-level run must carry one sweep row per declared mutant (50), every row ON TARGET, and must have evaluated the sweep gate itself.  This run is delivery-level
+         evidence: sweep rows 50 of 50; sweep gate evaluated True
+  [PASS] G-ANCHOR-CONSUMERS
+         #62's consumer binding, with no phantom consumers: every verbatim anchor and every path-value anchor names a gate, and each named gate is required to be in the DECLARED registry AND in THIS RUN's own evaluated ledger -- 10 distinct consumer gates
+         evidence: consumers not registered-and-evaluated: none
+  [PASS] G-REACHABILITY
+         #34 WITH REACHABILITY: every declared falsifier is checked to REACH its gate -- the gate must be registered and must either have been evaluated in this run or be one of the gates this same function evaluates after the census, which are NAMED rather than assumed.  50 falsifiers, 0 dead
+         evidence: dead falsifiers: none
+  [PASS] G-PAPER-COVERAGE-FINAL
+         the payload closes.  THE THREE GATE CARDINALITIES ARE NAMED RATHER THAN CONFLATED: 56 gates in the DECLARED REGISTRY, 54 evaluated and carried into the SEALED SNAPSHOT (this gate included), and 2 evaluated AFTER it -- G-SEAL-COMPLETE, which cannot be inside the object it seals, and G-ARTIFACT-INTEGRITY, which runs after the bytes are on disk and whose existence is sealed by G-WRITER-SHAPE.  A RECURSIVE TYPE SCAN of the receipt finds no float anywhere
+         evidence: registry 56, snapshot 54, post-snapshot 2, snapshot names equal the registry True (delivery-level), float-valued receipt paths none
+  [PASS] G-SEAL-COMPLETE
+         THE TOTAL SEAL: every published receipt key is either sealed at the gate that certified it or listed as DECLARED-UNSEALED with a forcing, and this gate compares the manifest against the DECLARED seal set rather than against the seals that happened to be taken.  The vouching layer is inside the seal: schema, provenance, paper claims, tables, polarity, coverage, reachability, gates, totals and the transcript head
+         evidence: declared seals 40, taken 40, missing none, extra none, receipt keys not covered none, seals broken at close none, unsealed list frozen True and measurement-free True
+
+------------------------------------------------------------------------------
+TOTALS: 12 sources, 8 verbatim anchors, 16 path-value anchors, 56 gates in the registry (54 in the sealed snapshot, 2 after it), 50 mutants, 40 seals, 6 coin classes, 4 declarations, 48 leak rows, 6 arms
+VERDICT: OCC-CEILING-OPEN
+------------------------------------------------------------------------------

@@ -1,0 +1,3882 @@
+{
+ "arena": {
+  "actors": 9,
+  "cells": 27,
+  "co_division_pairs": 27,
+  "links": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "record": "the welded landing record, n = 1 at all 27 cells",
+  "same_actor_configurations": 135,
+  "same_site_configurations": 27,
+  "undeclared_direction": [
+   1,
+   2
+  ]
+ },
+ "arithmetic": {
+  "float_calls": 0,
+  "float_literals": 0,
+  "representation": "Z[w] as integer pairs over the common denominator 3; Fraction for the emission fields; no float"
+ },
+ "arms": [
+  {
+   "arm": "A0-COMMITTED-COUPLED-MACHINE",
+   "p1": "HOLDS-ON-THE-PAIR-LEG",
+   "p2": "NOT-AVAILABLE",
+   "p3": "SILENT-AND-VACUOUSLY-SATISFIED",
+   "p4": "NO-SHAPE-CLOSES",
+   "posable": true,
+   "role": "THE VERDICT ARENA",
+   "why": "the committed layers as they stand: no declaration is added and the premise chain is measured on them",
+   "word": "OCC-CEILING-OPEN"
+  },
+  {
+   "arm": "A1-DECLARED-EXCLUSION-AT-THE-CARRIER-GRAIN",
+   "p1": "HOLDS-ON-THE-PAIR-LEG",
+   "p2": "DECLARED-EXCLUSION",
+   "p3": "SILENT-AND-VACUOUSLY-SATISFIED",
+   "p4": "SELECTS",
+   "posable": true,
+   "role": "declared",
+   "why": "the hard core declared at the grain the excitation's own coordinate has",
+   "word": "OCC-CEILING-PARTIAL"
+  },
+  {
+   "arm": "A2-DECLARED-EXCLUSION-AT-THE-ACTOR-GRAIN",
+   "p1": "HOLDS-ON-THE-PAIR-LEG",
+   "p2": "DECLARED-EXCLUSION",
+   "p3": "SILENT-AND-VACUOUSLY-SATISFIED",
+   "p4": "NO-SHAPE-CLOSES",
+   "posable": true,
+   "role": "declared",
+   "why": "the hard core declared at the grain the weld's ACTOR->SITE leg speaks",
+   "word": "OCC-CEILING-PARTIAL"
+  },
+  {
+   "arm": "A3-C1-SUBSET-CARRIER",
+   "p1": "HOLDS-BY-CONSTRUCTION",
+   "p2": "STRUCTURAL-EXCLUSION",
+   "p3": "CLOSURE-AVAILABLE",
+   "p4": "SELECTS",
+   "posable": true,
+   "role": "CONTROL: IT CAN FIRE",
+   "why": "a carrier whose configurations are SUBSETS: double occupancy is not expressible, and exactly one shape closes",
+   "word": "OCC-CEILING-FORCED"
+  },
+  {
+   "arm": "A4-C2-MULTISET-CARRIER",
+   "p1": "HOLDS-BY-CONSTRUCTION",
+   "p2": "CONSTRUCTIBLE",
+   "p3": "CLOSURE-AVAILABLE",
+   "p4": "DOES-NOT-SELECT",
+   "posable": true,
+   "role": "CONTROL: IT CAN FAIL",
+   "why": "the same carrier with MULTISET configurations: double occupancy is constructible and both shapes close",
+   "word": "OCC-CEILING-OPEN"
+  },
+  {
+   "arm": "A5-C3-ONE-CARRIER",
+   "p1": "HOLDS-BY-CONSTRUCTION",
+   "p2": "STRUCTURAL-EXCLUSION",
+   "p3": "CLOSURE-AVAILABLE",
+   "p4": "DOES-NOT-SELECT",
+   "posable": false,
+   "role": "CONTROL: DEGENERATE",
+   "why": "one carrier: the antisymmetric shape is empty and the comparison is not posable",
+   "word": "OCC-BLOCKED-AT"
+  }
+ ],
+ "asymmetry": {
+  "actor_grain_rows_where_no_shape_closes": 6,
+  "exclusion_at_the_actor_grain_rows": 6,
+  "exclusion_at_the_actor_grain_selects": 0,
+  "exclusion_at_the_carrier_grain_rows": 6,
+  "exclusion_at_the_carrier_grain_selects": 5,
+  "exclusion_rows": 12,
+  "exclusion_rows_that_select": 5,
+  "permission_rows": 12,
+  "permission_rows_that_select": 0,
+  "selected_shapes": [
+   "ANTISYMMETRIC"
+  ],
+  "statement": "exclusion can select a shape and permission cannot -- and exclusion selects only at the carrier's own grain"
+ },
+ "choice_inventory": [
+  {
+   "class": "MEASURED-BOTH",
+   "fiber": 2,
+   "item": "the grain a ceiling is declared at",
+   "verdict_determining": "YES"
+  },
+  {
+   "class": "MEASURED-BOTH",
+   "fiber": 2,
+   "item": "the ceiling value",
+   "verdict_determining": "YES"
+  },
+  {
+   "class": "INHERITED-AS-DECLARED",
+   "fiber": 3,
+   "item": "the two-excitation lift",
+   "verdict_determining": "no"
+  },
+  {
+   "class": "MEASURED-ALL",
+   "fiber": 6,
+   "item": "the coin class",
+   "verdict_determining": "no"
+  },
+  {
+   "class": "DECLARED-AND-ALL-RUN",
+   "fiber": 3,
+   "item": "the emission completion",
+   "verdict_determining": "no"
+  },
+  {
+   "class": "DECLARED-CONTROL",
+   "fiber": 3,
+   "item": "the control arenas",
+   "verdict_determining": "no"
+  },
+  {
+   "class": "FORCED",
+   "fiber": 1,
+   "item": "the record, the carrier, the links, the coin order",
+   "verdict_determining": "no"
+  }
+ ],
+ "closing_gates": {
+  "gates_after_the_snapshot": 2,
+  "gates_in_the_registry": 56,
+  "gates_in_the_sealed_snapshot": 54,
+  "names": [
+   "G-SEAL-COMPLETE",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "warrant": "these two are evaluated after the gate ledger is snapshotted and sealed -- G-SEAL-COMPLETE cannot be inside the object it seals, and G-ARTIFACT-INTEGRITY runs after the bytes are on disk.  That gate's existence is witnessed by G-WRITER-SHAPE, which reads this file's AST before the snapshot and seals the gate names finish() calls together with the line of every write."
+ },
+ "controls": [
+  {
+   "arena": "C1-SUBSET-CARRIER",
+   "carriers": 9,
+   "monomial": false,
+   "no_shape_closes": false,
+   "posable": true,
+   "rule": "SUBSET",
+   "selects": true,
+   "shapes": {
+    "ANTISYMMETRIC": {
+     "admissible": 36,
+     "closed": true,
+     "dimension": 36,
+     "forbidden": 0,
+     "leak_cells": 0
+    },
+    "SYMMETRIC": {
+     "admissible": 36,
+     "closed": false,
+     "dimension": 36,
+     "forbidden": 9,
+     "leak_cells": 324
+    }
+   },
+   "shapes_closed": [
+    "ANTISYMMETRIC"
+   ],
+   "unitarity_violations": 0
+  },
+  {
+   "arena": "C2-MULTISET-CARRIER",
+   "carriers": 9,
+   "monomial": false,
+   "no_shape_closes": false,
+   "posable": true,
+   "rule": "MULTISET",
+   "selects": false,
+   "shapes": {
+    "ANTISYMMETRIC": {
+     "admissible": 36,
+     "closed": true,
+     "dimension": 36,
+     "forbidden": 0,
+     "leak_cells": 0
+    },
+    "SYMMETRIC": {
+     "admissible": 45,
+     "closed": true,
+     "dimension": 45,
+     "forbidden": 0,
+     "leak_cells": 0
+    }
+   },
+   "shapes_closed": [
+    "ANTISYMMETRIC",
+    "SYMMETRIC"
+   ],
+   "unitarity_violations": 0
+  },
+  {
+   "arena": "C3-ONE-CARRIER",
+   "carriers": 1,
+   "monomial": true,
+   "no_shape_closes": false,
+   "posable": false,
+   "rule": "SUBSET",
+   "selects": false,
+   "shapes": {
+    "ANTISYMMETRIC": {
+     "admissible": 0,
+     "closed": true,
+     "dimension": 0,
+     "forbidden": 0,
+     "leak_cells": 0
+    },
+    "SYMMETRIC": {
+     "admissible": 0,
+     "closed": true,
+     "dimension": 0,
+     "forbidden": 1,
+     "leak_cells": 0
+    }
+   },
+   "shapes_closed": [],
+   "unitarity_violations": 0
+  }
+ ],
+ "counting_only": {
+  "enumerations": [
+   {
+    "denominator": 6,
+    "denominator_matches_its_enumeration": true,
+    "enumeration": "the S_3-covariant coin classes up to a global phase",
+    "measured": 6,
+    "ratio": "coins leaking of coins"
+   },
+   {
+    "denominator": 216,
+    "denominator_matches_its_enumeration": true,
+    "enumeration": "the two-excitation configurations the actor-grain hard core admits",
+    "measured": 216,
+    "ratio": "leaking sources of admissible configurations"
+   },
+   {
+    "denominator": 135,
+    "denominator_matches_its_enumeration": true,
+    "enumeration": "the two-excitation configurations it forbids",
+    "measured": 135,
+    "ratio": "targets reached of forbidden configurations"
+   },
+   {
+    "denominator": 24,
+    "denominator_matches_its_enumeration": true,
+    "enumeration": "coin classes times declarations",
+    "measured": 24,
+    "ratio": "selection rows"
+   }
+  ],
+  "measure_declared": false,
+  "note": "no measure on configurations, coins, declarations or arenas is declared anywhere in this unit, so every fraction is a count over its declared enumeration and none is a probability",
+  "stamp": "COUNTING-ONLY"
+ },
+ "counts": {
+  "arms": 6,
+  "coins": 6,
+  "control_fails": "C2-MULTISET-CARRIER",
+  "control_fires": "C1-SUBSET-CARRIER",
+  "declarations": 4,
+  "distinct_outcome_words": 4,
+  "fiber_priced": "4-DECLARATIONS-3-THEORIES-3-EMISSION-COMPLETIONS",
+  "gates": 29,
+  "leak_rows": 48,
+  "outcome_word": "OCC-CEILING-OPEN",
+  "p4_word": "NO-SHAPE-CLOSES",
+  "same_actor_configurations": 135,
+  "same_site_configurations": 27,
+  "scope_row": "TWO-EXCITATIONS-ONLY;ONE-RECORD;THE-WELDED-LANDING-RECORD;SHAPE-WORDS-ONLY;NO-PARTICLE-CLAIM;NO-BRAID-CLAIM;NO-GENERAL-N-CLAIM;NO-CONFIGURATION-MEASURE;COUNTS-ARE-COUNTING-ONLY;NO-CONTINUUM-CLAIM;THE-CEILING-IS-NOT-DECLARED-BY-THIS-UNIT-EITHER",
+  "selection_rows": 24
+ },
+ "coverage": {
+  "declared_registry": 56,
+  "gates": 56,
+  "gates_with_a_mutant": 45,
+  "honest_denominator": 56,
+  "late_gates": [
+   "G-PAPER-COVERAGE-FINAL",
+   "G-SEAL-COMPLETE",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "mutants": 50,
+  "registry_drift": [],
+  "uncovered": [],
+  "waived": [
+   "G-ANCHOR-CONSUMERS",
+   "G-ARTIFACT-INTEGRITY",
+   "G-COVERAGE",
+   "G-EXACT-ARITHMETIC",
+   "G-MUTANTS-ON-TARGET",
+   "G-NO-SUBPROCESS",
+   "G-PAPER-COVERAGE-FINAL",
+   "G-PROVENANCE",
+   "G-QUESTION-ANCHORED",
+   "G-REACHABILITY",
+   "G-READS-DECLARED"
+  ]
+ },
+ "description_stamps": [
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C01",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  },
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C02",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  },
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C03",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  },
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C04",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  },
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C05",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  },
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C06",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  },
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C07",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  },
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C08",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  },
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C09",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  },
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C10",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  },
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C11",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  },
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C12",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  },
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C13",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  },
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C14",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  },
+  {
+   "arena": "THE-WELDED-LANDING-RECORD",
+   "ceiling": "DECLARED-BY-THIS-UNIT-IN-BOTH-VALUES",
+   "claim": "C15",
+   "coin": "ALL-6-CLASSES",
+   "excitations": 2,
+   "grain": "CARRIER-AND-ACTOR-BOTH-MEASURED",
+   "lift": "FREE(U-TENSOR-U)",
+   "sector": "BOTH-EXCHANGE-SHAPES"
+  }
+ ],
+ "gates": [
+  {
+   "evidence": "anchors not matching: none",
+   "gate": "G-PROVENANCE",
+   "passed": true,
+   "statement": "the 12 declared sources are read at run time by path resolved from this file's own location and verified by sha256-12; a corrupted anchor kills the run here and --break-anchor NAME exercises exactly that",
+   "waiver": null
+  },
+  {
+   "evidence": "float literals none, float() calls none",
+   "gate": "G-EXACT-ARITHMETIC",
+   "passed": true,
+   "statement": "an AST scan of this file finds no float literal and no call to float(): every amplitude is an integer pair over Z[w] and every ratio is a Fraction",
+   "waiver": null
+  },
+  {
+   "evidence": "forbidden names: none",
+   "gate": "G-NO-SUBPROCESS",
+   "passed": true,
+   "statement": "no subprocess, socket or version-control call of any kind: the scan reads imports AND attribute names, so the run is correct off-tree and on a machine with no git",
+   "waiver": null
+  },
+  {
+   "evidence": "declared 12, read 12, difference none",
+   "gate": "G-READS-DECLARED",
+   "passed": true,
+   "statement": "the read set is exactly the declared set: 12 pinned sources by path and hash, plus the SECOND declared set -- this file and the object under test -- which is named here rather than left out of the accounting",
+   "waiver": null
+  },
+  {
+   "evidence": "anchors failing: none",
+   "gate": "G-VERBATIM",
+   "passed": true,
+   "statement": "#62 with #125's normalisation: 8 verbatim anchors are located in their pinned sources after markdown-prefix stripping, ASCII folding and whitespace normalisation, and each is PERTURBED at a content-bearing token and required not to locate, so every row carries its own falsifier",
+   "waiver": null
+  },
+  {
+   "evidence": "path values failing: none",
+   "gate": "G-PATH-VALUES",
+   "passed": true,
+   "statement": "#91's path-value stability: 16 values are READ OUT of the parents' own committed receipts at declared json paths and each is consumed by a named gate -- the carrier, the links, the realised co-division pairs, the coin census, and paper-22's own occupancy rows",
+   "waiver": null
+  },
+  {
+   "evidence": "outcome words located in the pin: 4 of 4; the parent's ceiling_is_anchored is False",
+   "gate": "G-QUESTION-ANCHORED",
+   "passed": true,
+   "statement": "the question and its four pre-registered outcome words are read from the PIN's own bytes rather than typed here, and paper-22's head clause FORCING-THE-CEILING=OPEN together with its measured ceiling_is_anchored = false are what makes this unit's question a live one",
+   "waiver": null
+  },
+  {
+   "evidence": "fingerprint 67c105ad4f82, builds 1, hits 0",
+   "gate": "G-MEMO-CLEAN",
+   "passed": true,
+   "statement": "the heavy census is built once and handed back as a DEFENSIVE COPY, and its whole contents are fingerprinted at creation and re-checked on every hand-back, so no injection -- this run's or an earlier run's -- can reach the next run through it.  The falsifiers act on the GATE layer above it, which is what makes the mutant sweep a sequence of independent runs",
+   "waiver": null
+  },
+  {
+   "evidence": "rebuilt carrier 27 against the receipt's 27; actors 9 against 9; links [[1, 0], [0, 1], [1, 1]]",
+   "gate": "G-P1-CARRIER",
+   "passed": true,
+   "statement": "THE ARENA THE EXCITATIONS USE, REBUILT AND GATED AGAINST THE COUPLED MACHINE'S OWN RECEIPT.  The coupled machine's state is a vector on its 27 cells; this unit rebuilds the carrier from the 9 actors and the 3 declared link directions and compares the rebuild with the committed receipt's own arena rows",
+   "waiver": null
+  },
+  {
+   "evidence": "pair bijection True; incidence rows True; ACTOR->SITE bijection True; excitation->actor is a function False",
+   "gate": "G-P1-DICTIONARY",
+   "passed": true,
+   "statement": "P1, MEASURED ON THE ARENA THE EXCITATIONS USE.  The weld's forced dictionary has two legs.  ACTOR->SITE is a bijection at 9 of 9 -- and it covers 9 of the 27 objects the excitation's own coordinate ranges over.  The leg that welds THAT set is the second one: a cell IS an unordered co-division pair of actors, and the rebuilt map between them is a bijection in both directions.  The incidence is measured per object: every cell carries exactly two actors at 27 of 27 and every actor lies in exactly six cells at 9 of 9, so the excitation-to-actor relation is NOT A FUNCTION and the seed conditional's injection premise is not a statement about this carrier",
+   "waiver": null
+  },
+  {
+   "evidence": "classes 6, ring solutions 36, grover classes 1, alphabet 37 -- all against the committed receipt",
+   "gate": "G-POOL-REBUILT",
+   "passed": true,
+   "statement": "THE POOL IS THIS ARENA'S OWN.  The S_3-covariant unitary coins over the arena's own 37-value alphabet (1/3)Z[w] are rebuilt from the definitions -- not imported -- and the census is gated against the coupled machine's committed one: 36 solutions, 6 classes up to a global phase, of which 1 is +/- Grover",
+   "waiver": null
+  },
+  {
+   "evidence": "unitarity violations across the pool: 0",
+   "gate": "G-POOL-UNITARY",
+   "passed": true,
+   "statement": "every walk operator in the pool is EXACTLY unitary, checked per COLUMN PAIR rather than by a norm: 6 operators, 729 column pairs each, over Z[w] at the common denominator 3",
+   "waiver": null
+  },
+  {
+   "evidence": "coins whose leak and whose monomiality disagree: none",
+   "gate": "G-LEAK-THEOREM",
+   "passed": true,
+   "statement": "PAPER-22'S LEAK THEOREM, TRANSPORTED AND VERIFIED PER COIN.  In the normalised symmetric square the only cell from a hard-core configuration into a doubly occupied one is a single product of two amplitudes, so the symmetric shape leaks out of the carrier-grain hard core exactly when some row of the operator carries two nonzero entries.  The gate binds COINS, not the tally: each of the 6 classes is checked against its own monomiality predicate, in both directions",
+   "waiver": null
+  },
+  {
+   "evidence": "rows agreeing 48 of 48; disagreements none",
+   "gate": "G-LEAK-ROUTES",
+   "passed": true,
+   "statement": "THE LEAK IS MEASURED BY TWO INDEPENDENT ROUTES at every one of the 48 (coin, declaration, shape) rows.  Route 1 forms the lifted matrix element and tests it against zero in the ring; route 2 never forms it and counts the cells at which at least one of the two products is nonzero.  They can differ only where BOTH products are nonzero and cancel, and that census is published beside them: 405 such cells in the whole run",
+   "waiver": null
+  },
+  {
+   "evidence": "occupancy-shaped names in the deeper layers: none; in the declared control: 19 (antisymmetric_hardcore_closed, antisymmetric_hardcore_leak_cells, entrywise_set_is_the_two_excitation_nonzero_set)",
+   "gate": "G-P2-NO-OCCUPANCY-KEY",
+   "passed": true,
+   "statement": "THE COMMITTED DEEPER LAYERS DECLARE NO OCCUPANCY COORDINATE, and that is a census with a POSITIVE CONTROL rather than a claim.  The published key sets and declared name sets of the 6 committed layers beneath the excitations -- the coupled machine, the weld and the transport grammar, 4945 names in all -- are scanned token by token against a declared occupancy vocabulary of 10 tokens, and NONE of them is occupancy-shaped.  The same scan is run on the one layer that DID declare a ceiling, paper-22's own receipt, and fires there at 19 names, so the instrument is known live rather than assumed.  Paper-22 measured 27 declaration keys and none occupancy-shaped on the RECORD layer; this extends the same measurement to the DYNAMICAL layer that carries the excitations",
+   "waiver": null
+  },
+  {
+   "evidence": "sources whose `ceiling` hits have no declared referent: none",
+   "gate": "G-P2-HOMONYM",
+   "passed": true,
+   "statement": "THE HOMONYM IS MEASURED, NOT SUPPRESSED.  The word `ceiling` does occur in the committed layers -- 4 sources carry it -- and every occurrence is required to match a DECLARED non-occupancy referent: the weld's positive-definiteness ceiling on division counts, d60's engineered search ceiling and d66's arbitration budget.  A new referent would fail here",
+   "waiver": null
+  },
+  {
+   "evidence": "declared DIM 27 / NCELL 27 against the rebuild 27; excitation-number parameters none",
+   "gate": "G-P2-STATE-SPACE",
+   "passed": true,
+   "statement": "THE TURNING PREMISE, MEASURED ON THE CONSTRUCTION AND NOT ON THE USAGE.  The committed instrument's own abstract syntax tree is read: its declared carrier is 27 and 27, which is this unit's rebuilt carrier; none of its 102 functions takes an excitation-number parameter, and no constructor in it is indexed by anything but a cell.  A doubly occupied state is therefore NEITHER CONSTRUCTIBLE NOR EXCLUDED there -- the representation has no occupancy coordinate to carry the question",
+   "waiver": null
+  },
+  {
+   "evidence": "disagreements 0 over 53,460 comparisons; distinct theories 3",
+   "gate": "G-P2-INVISIBLE-FROM-BELOW",
+   "passed": true,
+   "statement": "THE CEILING IS INVISIBLE FROM BELOW, and this is the premise's failure made a measurement.  4 declarations are constructed; they give 3 DISTINCT two-excitation theories, with 378, 351 and 216 symmetric configurations.  Their ONE-EXCITATION restrictions are compared AS OBJECTS -- configuration set, transition matrix and Born shadow, entry by entry, at every coin class -- and agree at 53,460 of 53,460 comparisons.  No measurement at one excitation can reach the ceiling, which is why no committed layer could have declared it by accident",
+   "waiver": null
+  },
+  {
+   "evidence": "P2 = NOT-AVAILABLE against the value its legs derive, NOT-AVAILABLE (legs: occupancy names 0, excitation parameters 0, restrictions agree True)",
+   "gate": "G-P2-TURNING",
+   "passed": true,
+   "statement": "P2's verdict is DERIVED from its three legs and not typed: the vocabulary census (no occupancy-shaped name), the state-space construction (no excitation-number coordinate) and the declaration fiber (every declaration restricts to the same one-excitation object).  A representation that EXCLUDED double occupancy would have to forbid it; this one cannot express it, and inexpressibility is not exclusion",
+   "waiver": null
+  },
+  {
+   "evidence": "site fields agree at 9 of 9; cell occupations agree at 25 of 27",
+   "gate": "G-P3-BLINDNESS",
+   "passed": true,
+   "statement": "THE COMMITTED EMISSION RULE CANNOT SEE THE DISTINCTION THE CEILING TURNS ON.  Two two-excitation configurations are built: one with its excitations on two different cells of a single actor, one with both on a single cell.  They differ in cell occupation at 2 of 27 cells and they agree, at 9 of 9 sites, on the only state-side quantity the committed rule reads",
+   "waiver": null
+  },
+  {
+   "evidence": "completions whose published identity row contradicts their total: none",
+   "gate": "G-P3-COMPLETIONS",
+   "passed": true,
+   "statement": "THE DECLARATION THE GRAMMAR IS MISSING IS PRICED.  The committed emission rule is a rule for ONE excitation; 3 completions to two are constructed and all 3 are run.  Their emission totals are ['2', '1', '1'], so exactly 2 of them preserve the parent's own consistency identity -- total emission mass exactly 1 -- and their fields differ pairwise at [3, 9, 9] cells.  The missing declaration is verdict-relevant, not cosmetic",
+   "waiver": null
+  },
+  {
+   "evidence": "completions that refuse: 0; the doubly occupied carrier emits: True",
+   "gate": "G-P3-NEVER-REFUSED",
+   "passed": true,
+   "statement": "P3 IS SILENT AND VACUOUSLY SATISFIED: under every one of the 3 completions a state whose two excitations sit on ONE carrier still has a nonempty emission menu, so 0 of 3 completions refuse a division event to a doubly occupied carrier.  The closure premise cannot supply an exclusion the grammar has no vocabulary to state",
+   "waiver": null
+  },
+  {
+   "evidence": "rows whose closure verdict is detached from their leak: none",
+   "gate": "G-P4-GRAIN-CENSUS",
+   "passed": true,
+   "statement": "P4, AND THE GATE BINDS COINS RATHER THAN THE TALLY: every one of the 6 coin classes carries its own leak row at every one of the 4 declarations and in both shapes, and every row's closure predicate is evaluated against its own measured leak.  24 (coin, declaration) selection rows are published",
+   "waiver": null
+  },
+  {
+   "evidence": "coins whose leak source set is not the same-actor set: none",
+   "gate": "G-P4-SET-EQUALITY",
+   "passed": true,
+   "statement": "THE TWO GRAINS ARE NOT INDEPENDENT, AND THE LINK IS A SET EQUALITY.  At the carrier's own grain the symmetric shape leaks from exactly 27 configurations, and that set IS the set of configurations whose two excitations sit at one actor -- gated as a set equality, element for element, at every leaking coin class rather than as a count",
+   "waiver": null
+  },
+  {
+   "evidence": "coins whose two shapes' leak sets differ: none",
+   "gate": "G-P4-SHAPES-COINCIDE",
+   "passed": true,
+   "statement": "AT THE ACTOR'S GRAIN THE TWO SHAPES LEAK AT THE SAME CELLS.  For a target pair of cells sharing an actor the two products of the lifted element are supported on disjoint source pairs -- measured at 0 cells in the whole run where both are nonzero -- so no cancellation is available to either shape and the wedge and the symmetric square leak at identical source sets, identical target sets and identical counts, at every coin class",
+   "waiver": null
+  },
+  {
+   "evidence": "cited split 48 + 16 = 64; antisymmetric leaking 0",
+   "gate": "G-P4-PARENT-SPLIT",
+   "passed": true,
+   "statement": "PAPER-22'S SPLIT IS CITED FROM ITS OWN COMMITTED ROWS AND NEVER RETYPED: its 64 generators split 48 leaking against 16 closed in the symmetric shape, with 0 leaking in the antisymmetric one, and this unit RECOMPUTES that split from the parent's receipt rather than reading its prose",
+   "waiver": null
+  },
+  {
+   "evidence": "words returned: ['OCC-BLOCKED-AT', 'OCC-CEILING-FORCED', 'OCC-CEILING-OPEN', 'OCC-CEILING-PARTIAL']",
+   "gate": "G-ARMS-REACHABILITY",
+   "passed": true,
+   "statement": "#34 WITH REACHABILITY, AT THE HEAD LAW: the head is derived from the four premise verdicts and is exercised on 6 arenas, on which it returns 4 DIFFERENT pre-registered outcome words.  Every branch of the law is reached on a CONSTRUCTED arena rather than on a synthetic census, and the verdict arena is the committed one",
+   "waiver": null
+  },
+  {
+   "evidence": "subset arm selects True (shapes closed ['ANTISYMMETRIC']); multiset arm selects False (shapes closed ['ANTISYMMETRIC', 'SYMMETRIC'])",
+   "gate": "G-CONTROL-TWO-WAY",
+   "passed": true,
+   "statement": "THE TWO-WAY CONTROL THE PIN REQUIRES.  On a carrier whose configurations are SUBSETS -- double occupancy not expressible -- exactly one shape closes and the conditional FIRES.  On the same carrier with MULTISET configurations -- double occupancy constructible -- both shapes close and it FAILS.  The two arms differ in the configuration rule and in nothing else: same carrier size, same generator, same lift, same census code",
+   "waiver": null
+  },
+  {
+   "evidence": "permission selects 0 of 12; exclusion 5 of 12; at the actor grain 0 of 6",
+   "gate": "G-ASYMMETRY",
+   "passed": true,
+   "statement": "THE ONE-WAY ASYMMETRY, RESTATED AT THE MEASURED VERDICT AND GATED AGAINST BOTH ARMS.  A declaration that PERMITS selects a shape at 0 of 12 rows.  A declaration that FORBIDS selects at 5 of 12 -- and every one of those is at the carrier's own grain: at the actor's grain exclusion selects at 0 of 6 rows, because at 6 of them NO shape closes at all.  Exclusion can select a shape and permission cannot, and exclusion selects only at the grain the excitation's own coordinate has",
+   "waiver": null
+  },
+  {
+   "evidence": "claims without a stamp: none",
+   "gate": "G-DESCRIPTION-STAMPS",
+   "passed": true,
+   "statement": "every published claim carries a DESCRIPTION STAMP naming the sector, the lift, the grain, the ceiling, the coin class and the arena it was measured on: 15 claims, 15 stamps.  No claim about a quantum-layer quantity is published without the description that individuates it",
+   "waiver": null
+  },
+  {
+   "evidence": "measure declared: False; enumerations whose denominator does not match their own re-count: none; stamp COUNTING-ONLY",
+   "gate": "G-COUNTING-ONLY",
+   "passed": true,
+   "statement": "E-24: no count becomes a probability without a declared measure. Every ratio this unit publishes is a COUNT over a declared enumeration, and the check binds OBJECTS: each of the 4 enumerations is re-counted from the construction it names and its denominator compared with that count, so a ratio taken over a set other than the one it claims dies here.  No enumeration carries a measure, and the receipt is stamped COUNTING-ONLY",
+   "waiver": null
+  },
+  {
+   "evidence": "items with an uncounted fiber: none; verdict-determining items: ['the grain a ceiling is declared at', 'the ceiling value']",
+   "gate": "G-CHOICE-INVENTORY",
+   "passed": true,
+   "statement": "the choice inventory is published AS DATA at the RSQ standard, with every fiber a COUNTED value rather than a typed one: 7 items, of which 2 are verdict-determining -- the grain and the ceiling value, which are the two halves of the one declaration no committed layer makes",
+   "waiver": null
+  },
+  {
+   "evidence": "the barred reading is present in the measurement layer: False (34564 chars scanned)",
+   "gate": "G-WALL-L1",
+   "passed": true,
+   "statement": "THE WALL IS AN INSTRUMENT, NOT A LABEL: this run's whole measurement layer -- every measured receipt key together with the statement and evidence of every gate evaluated -- is scanned for the reading this wall bars.  L-1's fourth form is not tested here and no order-level covariance claim is made.  The falsifier writes the forbidden reading INTO that layer and dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "the barred reading is present in the measurement layer: False (34564 chars scanned)",
+   "gate": "G-WALL-BHS",
+   "passed": true,
+   "statement": "THE WALL IS AN INSTRUMENT, NOT A LABEL: this run's whole measurement layer -- every measured receipt key together with the statement and evidence of every gate evaluated -- is scanned for the reading this wall bars.  no sprinkling-grade or BHS-class reading is taken.  The falsifier writes the forbidden reading INTO that layer and dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "the barred reading is present in the measurement layer: False (34564 chars scanned)",
+   "gate": "G-WALL-KR",
+   "passed": true,
+   "statement": "THE WALL IS AN INSTRUMENT, NOT A LABEL: this run's whole measurement layer -- every measured receipt key together with the statement and evidence of every gate evaluated -- is scanned for the reading this wall bars.  no dimension estimator and no height control is owed.  The falsifier writes the forbidden reading INTO that layer and dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "the barred reading is present in the measurement layer: False (34564 chars scanned)",
+   "gate": "G-WALL-COSMO",
+   "passed": true,
+   "statement": "THE WALL IS AN INSTRUMENT, NOT A LABEL: this run's whole measurement layer -- every measured receipt key together with the statement and evidence of every gate evaluated -- is scanned for the reading this wall bars.  no continuum, cosmological or infinite-volume reading is taken.  The falsifier writes the forbidden reading INTO that layer and dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "mismatches none; word re-derived OCC-CEILING-OPEN against OCC-CEILING-OPEN",
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "passed": true,
+   "statement": "THE COMPARATOR IS DE-TWINNED (the SMU lesson: two routes that TYPE THE SAME TEMPLATE audit the template and not the measurement).  The head is not prose with numbers in it: it is a sequence of LABEL=VALUE fields built from a declared field spec, and the audit route types NO COPY of it.  It PARSES the delivered segments, looks every label up in its own independently typed map from label to receipt path, compares 46 fields against the serialized receipt, re-derives each segment's thesis from the predicate that selects it, and re-derives the outcome word from the premise rows by its own copy of the head law",
+   "waiver": null
+  },
+  {
+   "evidence": "head numerals not occurring among the measured values: none",
+   "gate": "G-VERDICT-NO-TYPED-LITERAL",
+   "passed": true,
+   "statement": "no numeral in the head is a typed literal: every one of them is required to occur as a MEASURED value in the receipt's own measurement layer, so a number that was written rather than computed has nowhere to hide",
+   "waiver": null
+  },
+  {
+   "evidence": "claims not occurring exactly once: none",
+   "gate": "G-PAPER-CLAIMS",
+   "passed": true,
+   "statement": "every one of the 15 load-bearing claims is ASSEMBLED FROM THIS RUN's measurements and required to occur in the object under test EXACTLY ONCE -- an occurrence count, not a containment test",
+   "waiver": null
+  },
+  {
+   "evidence": "table rows not occurring exactly once: none",
+   "gate": "G-PAPER-TABLES",
+   "passed": true,
+   "statement": "E-22: TABLES RENDER AS CLAIMS.  Every one of the 23 rows of the three load-bearing tables -- the pool at both grains, the six arms, and the four declarations -- is rendered from this run and required to occur in the paper exactly once, so a moved cell or an inverted closure verdict dies inside the run",
+   "waiver": null
+  },
+  {
+   "evidence": "unlicensed numerals: none",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "passed": true,
+   "statement": "#20 WITH THE FENCED-BLOCK ADDENDUM AND E-22's INLINE-SPAN ADDENDUM: 212 numerals are scanned -- 144 in prose, 58 inside the 3 fenced blocks and 10 inside the 39 inline code spans -- and every one must be licensed by a MEASURED receipt value or by a declared structural numeral.  Digest strings are excluded from the licensed set, so no numeral can be licensed by a hash",
+   "waiver": null
+  },
+  {
+   "evidence": "segments not located verbatim: none; multiset of 3 fenced blocks matches the 3 derived segments: True",
+   "gate": "G-PAPER-HEAD-VERBATIM",
+   "passed": true,
+   "statement": "the paper's fenced verdict blocks are compared with the DERIVED head as a MULTISET and not by containment -- a paper carrying a clean copy and a forged twin satisfies containment with the clean one -- and each of the 3 derived segments is additionally matched verbatim into the object under test after the full text normalisation",
+   "waiver": null
+  },
+  {
+   "evidence": "rows failing: none",
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "passed": true,
+   "statement": "the 4 load-bearing sentences carry POLARITY: each is required present in its positive form and ABSENT in its negation, so an inverted headline -- the excitation riding the actor, a forced ceiling, an exclusion that selects at every grain, or a fermionic-shape theorem -- dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "banned words found: none",
+   "gate": "G-NO-PARTICLE-NAMING",
+   "passed": true,
+   "statement": "THE NO-PARTICLE WALL AS AN INSTRUMENT (paper-22's pattern, inherited): the object under test is scanned WORD BY WORD against a declared list of 24 banned words, and the shape words survive only as the compounds the pin licenses -- fermionic-shape and bosonic-shape.  No particle noun, no spin and no bare shape adjective occurs anywhere in it",
+   "waiver": null
+  },
+  {
+   "evidence": "malformed vectors accepted none, legal shapes 9, permissive shape accepts unknown flags True",
+   "gate": "G-CLI-WHITELIST",
+   "passed": true,
+   "statement": "the #82 CLI contract, exercised in this run: 10 malformed argument vectors are all rejected with exit code 2 -- the last three of them SECOND-MODE vectors, since a mode flag silently overwriting an earlier one would make the earlier flag a no-op -- 9 legal shapes parse, and the registered PERMISSIVE shape, present in this file only as this gate's own falsifier, accepts an unknown flag",
+   "waiver": null
+  },
+  {
+   "evidence": "the writer-shape probe reports the self-test path clean: True",
+   "gate": "G-SELFTEST-WRITES-NOTHING",
+   "passed": true,
+   "statement": "the --selftest path corrupts an anchor in memory, dies at G-PROVENANCE and reaches no writer: the writer is called from exactly one place in this file and the self-test path does not reach it -- and the predicate is the AST probe's own value",
+   "waiver": null
+  },
+  {
+   "evidence": "on target 50 of 50; misses none",
+   "gate": "G-MUTANTS-ON-TARGET",
+   "passed": true,
+   "statement": "all 50 declared mutants are run IN PROCESS and each dies at the gate it names, with the artifacts untouched",
+   "waiver": null
+  },
+  {
+   "evidence": "uncovered gates: none; declared registry 56 vs evaluated 56, drift none",
+   "gate": "G-COVERAGE",
+   "passed": true,
+   "statement": "#34 WITH AN HONEST DENOMINATOR: of the 56 gates this delivery run evaluates, 45 are falsified by at least one declared mutant and 11 are WAIVED with a forcing that says why they cannot fail. The denominator is THIS run's gate count, and the registry --list-gates prints is required to be exactly that set",
+   "waiver": null
+  },
+  {
+   "evidence": "declarations not matching their code: none; descriptions not naming their symbol and value: none; hooks naming an undeclared falsifier: none",
+   "gate": "G-FALSIFIER-HONESTY",
+   "passed": true,
+   "statement": "E-23: A FALSIFIER'S PUBLISHED DESCRIPTION IS PART OF THE SEALED SURFACE.  Each of the 50 declared falsifiers names THE SYMBOL IT MOVES and THE VALUE IT MOVES IT TO; both are re-derived from THIS FILE's own AST -- the innermost statement enclosing its hook -- and compared against the declaration, and the published prose is required to name both.  50 hook sites are located, and every hook in the file names a declared falsifier",
+   "waiver": null
+  },
+  {
+   "evidence": "gates called in finish ['G-COVERAGE', 'G-FALSIFIER-HONESTY', 'G-WRITER-SHAPE', 'G-SWEEP-BOUND', 'G-ANCHOR-CONSUMERS', 'G-REACHABILITY', 'G-PAPER-COVERAGE-FINAL', 'G-SEAL-COMPLETE', 'G-ARTIFACT-INTEGRITY']; terminal gate exactly once True; os.replace calls 2, all after it True",
+   "gate": "G-WRITER-SHAPE",
+   "passed": true,
+   "statement": "THE SHAPE OF THE WRITER IS SEALED, AND SEALED BEFORE THE GATE LEDGER IS SNAPSHOTTED, which is what makes it the one guard a post-snapshot gate's own removal cannot evade: finish() calls 9 gates in source order, the terminal integrity gate appears exactly once among them, there are 2 os.replace calls and every one sits BELOW that gate's own line",
+   "waiver": null
+  },
+  {
+   "evidence": "sweep rows 50 of 50; sweep gate evaluated True",
+   "gate": "G-SWEEP-BOUND",
+   "passed": true,
+   "statement": "THE SWEEP'S EXECUTION IS BOUND, NOT DECLARED: a delivery-level run must carry one sweep row per declared mutant (50), every row ON TARGET, and must have evaluated the sweep gate itself.  This run is delivery-level",
+   "waiver": null
+  },
+  {
+   "evidence": "consumers not registered-and-evaluated: none",
+   "gate": "G-ANCHOR-CONSUMERS",
+   "passed": true,
+   "statement": "#62's consumer binding, with no phantom consumers: every verbatim anchor and every path-value anchor names a gate, and each named gate is required to be in the DECLARED registry AND in THIS RUN's own evaluated ledger -- 10 distinct consumer gates",
+   "waiver": null
+  },
+  {
+   "evidence": "dead falsifiers: none",
+   "gate": "G-REACHABILITY",
+   "passed": true,
+   "statement": "#34 WITH REACHABILITY: every declared falsifier is checked to REACH its gate -- the gate must be registered and must either have been evaluated in this run or be one of the gates this same function evaluates after the census, which are NAMED rather than assumed.  50 falsifiers, 0 dead",
+   "waiver": null
+  },
+  {
+   "evidence": "registry 56, snapshot 54, post-snapshot 2, snapshot names equal the registry True (delivery-level), float-valued receipt paths none",
+   "gate": "G-PAPER-COVERAGE-FINAL",
+   "passed": true,
+   "statement": "the payload closes.  THE THREE GATE CARDINALITIES ARE NAMED RATHER THAN CONFLATED: 56 gates in the DECLARED REGISTRY, 54 evaluated and carried into the SEALED SNAPSHOT (this gate included), and 2 evaluated AFTER it -- G-SEAL-COMPLETE, which cannot be inside the object it seals, and G-ARTIFACT-INTEGRITY, which runs after the bytes are on disk and whose existence is sealed by G-WRITER-SHAPE.  A RECURSIVE TYPE SCAN of the receipt finds no float anywhere",
+   "waiver": null
+  }
+ ],
+ "leaks": {
+  "actor_grain_admissible": 216,
+  "actor_grain_both_shapes_leak_coins": 6,
+  "actor_grain_cancellation_cells": 0,
+  "actor_grain_forbidden": 135,
+  "actor_grain_leak_cells_monomial": 81,
+  "actor_grain_leak_cells_non_monomial": 864,
+  "actor_grain_shape_sets_coincide_coins": 6,
+  "actor_grain_sources_leaking": 216,
+  "actor_grain_targets_reached": 135,
+  "cancellation_cells_total": 405,
+  "carrier_grain_antisymmetric_leak_cells": 0,
+  "carrier_grain_set_equality_coins": 5,
+  "carrier_grain_symmetric_coins_leaking": 5,
+  "carrier_grain_symmetric_leak_cells": 81,
+  "route_rows": 48,
+  "route_rows_agreeing": 48,
+  "set_equalities": [
+   {
+    "actor_grain_both_products_nonzero": 0,
+    "actor_grain_leak_cells": 864,
+    "actor_grain_shape_leak_sets_coincide": true,
+    "actor_grain_sources_leaking": 216,
+    "actor_grain_targets_reached": 135,
+    "carrier_grain_leak_sources": 27,
+    "carrier_grain_sources_are_the_same_actor_configurations": true,
+    "carrier_grain_sources_share_an_actor": true,
+    "coin": "K-2-1w"
+   },
+   {
+    "actor_grain_both_products_nonzero": 0,
+    "actor_grain_leak_cells": 864,
+    "actor_grain_shape_leak_sets_coincide": true,
+    "actor_grain_sources_leaking": 216,
+    "actor_grain_targets_reached": 135,
+    "carrier_grain_leak_sources": 27,
+    "carrier_grain_sources_are_the_same_actor_configurations": true,
+    "carrier_grain_sources_share_an_actor": true,
+    "coin": "K-2+0w"
+   },
+   {
+    "actor_grain_both_products_nonzero": 0,
+    "actor_grain_leak_cells": 864,
+    "actor_grain_shape_leak_sets_coincide": true,
+    "actor_grain_sources_leaking": 216,
+    "actor_grain_targets_reached": 135,
+    "carrier_grain_leak_sources": 27,
+    "carrier_grain_sources_are_the_same_actor_configurations": true,
+    "carrier_grain_sources_share_an_actor": true,
+    "coin": "K-1-1w"
+   },
+   {
+    "actor_grain_both_products_nonzero": 0,
+    "actor_grain_leak_cells": 864,
+    "actor_grain_shape_leak_sets_coincide": true,
+    "actor_grain_sources_leaking": 216,
+    "actor_grain_targets_reached": 135,
+    "carrier_grain_leak_sources": 27,
+    "carrier_grain_sources_are_the_same_actor_configurations": true,
+    "carrier_grain_sources_share_an_actor": true,
+    "coin": "K-1+1w"
+   },
+   {
+    "actor_grain_both_products_nonzero": 0,
+    "actor_grain_leak_cells": 81,
+    "actor_grain_shape_leak_sets_coincide": true,
+    "actor_grain_sources_leaking": 81,
+    "actor_grain_targets_reached": 81,
+    "carrier_grain_leak_sources": 0,
+    "carrier_grain_sources_are_the_same_actor_configurations": null,
+    "carrier_grain_sources_share_an_actor": true,
+    "coin": "K+0+0w"
+   },
+   {
+    "actor_grain_both_products_nonzero": 0,
+    "actor_grain_leak_cells": 864,
+    "actor_grain_shape_leak_sets_coincide": true,
+    "actor_grain_sources_leaking": 216,
+    "actor_grain_targets_reached": 135,
+    "carrier_grain_leak_sources": 27,
+    "carrier_grain_sources_are_the_same_actor_configurations": true,
+    "carrier_grain_sources_share_an_actor": true,
+    "coin": "K+0+1w"
+   }
+  ]
+ },
+ "memo": {
+  "builds": 1,
+  "defensive_copy": true,
+  "fingerprint": "67c105ad4f82",
+  "hits": 0
+ },
+ "mutant_sweep": [
+  {
+   "declared_gate": "G-VERBATIM",
+   "died_at": "G-VERBATIM",
+   "mutant": "MUT-VERBATIM",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PATH-VALUES",
+   "died_at": "G-PATH-VALUES",
+   "mutant": "MUT-PATH-VALUE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P1-CARRIER",
+   "died_at": "G-P1-CARRIER",
+   "mutant": "MUT-CARRIER-COUNT",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P1-DICTIONARY",
+   "died_at": "G-P1-DICTIONARY",
+   "mutant": "MUT-PAIR-BIJECTION",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P1-DICTIONARY",
+   "died_at": "G-P1-DICTIONARY",
+   "mutant": "MUT-VALENCE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-POOL-REBUILT",
+   "died_at": "G-POOL-REBUILT",
+   "mutant": "MUT-POOL-CLASSES",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-POOL-UNITARY",
+   "died_at": "G-POOL-UNITARY",
+   "mutant": "MUT-POOL-UNITARY",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-LEAK-THEOREM",
+   "died_at": "G-LEAK-THEOREM",
+   "mutant": "MUT-LEAK-THEOREM",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-LEAK-ROUTES",
+   "died_at": "G-LEAK-ROUTES",
+   "mutant": "MUT-LEAK-ROUTES",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P2-NO-OCCUPANCY-KEY",
+   "died_at": "G-P2-NO-OCCUPANCY-KEY",
+   "mutant": "MUT-OCC-KEY",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P2-HOMONYM",
+   "died_at": "G-P2-HOMONYM",
+   "mutant": "MUT-HOMONYM",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P2-STATE-SPACE",
+   "died_at": "G-P2-STATE-SPACE",
+   "mutant": "MUT-STATE-SPACE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P2-INVISIBLE-FROM-BELOW",
+   "died_at": "G-P2-INVISIBLE-FROM-BELOW",
+   "mutant": "MUT-FIBER",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P2-TURNING",
+   "died_at": "G-P2-TURNING",
+   "mutant": "MUT-TURNING",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P3-BLINDNESS",
+   "died_at": "G-P3-BLINDNESS",
+   "mutant": "MUT-BLINDNESS",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P3-COMPLETIONS",
+   "died_at": "G-P3-COMPLETIONS",
+   "mutant": "MUT-COMPLETIONS",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P3-NEVER-REFUSED",
+   "died_at": "G-P3-NEVER-REFUSED",
+   "mutant": "MUT-REFUSAL",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P4-GRAIN-CENSUS",
+   "died_at": "G-P4-GRAIN-CENSUS",
+   "mutant": "MUT-GRAIN-CENSUS",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P4-SET-EQUALITY",
+   "died_at": "G-P4-SET-EQUALITY",
+   "mutant": "MUT-SET-EQUALITY",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P4-SHAPES-COINCIDE",
+   "died_at": "G-P4-SHAPES-COINCIDE",
+   "mutant": "MUT-SHAPES-COINCIDE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-P4-PARENT-SPLIT",
+   "died_at": "G-P4-PARENT-SPLIT",
+   "mutant": "MUT-PARENT-SPLIT",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-ARMS-REACHABILITY",
+   "died_at": "G-ARMS-REACHABILITY",
+   "mutant": "MUT-ARMS",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-CONTROL-TWO-WAY",
+   "died_at": "G-CONTROL-TWO-WAY",
+   "mutant": "MUT-CONTROL",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-ASYMMETRY",
+   "died_at": "G-ASYMMETRY",
+   "mutant": "MUT-ASYMMETRY",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-DESCRIPTION-STAMPS",
+   "died_at": "G-DESCRIPTION-STAMPS",
+   "mutant": "MUT-STAMPS",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-COUNTING-ONLY",
+   "died_at": "G-COUNTING-ONLY",
+   "mutant": "MUT-COUNTING",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-CHOICE-INVENTORY",
+   "died_at": "G-CHOICE-INVENTORY",
+   "mutant": "MUT-CHOICES",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WALL-L1",
+   "died_at": "G-WALL-L1",
+   "mutant": "MUT-WALL-L1",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WALL-BHS",
+   "died_at": "G-WALL-BHS",
+   "mutant": "MUT-WALL-BHS",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WALL-KR",
+   "died_at": "G-WALL-KR",
+   "mutant": "MUT-WALL-KR",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WALL-COSMO",
+   "died_at": "G-WALL-COSMO",
+   "mutant": "MUT-WALL-COSMO",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-NO-PARTICLE-NAMING",
+   "died_at": "G-NO-PARTICLE-NAMING",
+   "mutant": "MUT-PAPER-WALL",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-VERDICT-RECONSTRUCTED",
+   "died_at": "G-VERDICT-RECONSTRUCTED",
+   "mutant": "MUT-VERDICT-WORD",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-VERDICT-RECONSTRUCTED",
+   "died_at": "G-VERDICT-RECONSTRUCTED",
+   "mutant": "MUT-VERDICT-VALUE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-VERDICT-RECONSTRUCTED",
+   "died_at": "G-VERDICT-RECONSTRUCTED",
+   "mutant": "MUT-VERDICT-CLAUSE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-VERDICT-NO-TYPED-LITERAL",
+   "died_at": "G-VERDICT-NO-TYPED-LITERAL",
+   "mutant": "MUT-HEAD-LITERAL",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-CLAIMS",
+   "died_at": "G-PAPER-CLAIMS",
+   "mutant": "MUT-PAPER-CLAIM",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-TABLES",
+   "died_at": "G-PAPER-TABLES",
+   "mutant": "MUT-PAPER-TABLE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-NUMERAL-COVERAGE",
+   "died_at": "G-PAPER-NUMERAL-COVERAGE",
+   "mutant": "MUT-PAPER-NUMERAL",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-HEAD-VERBATIM",
+   "died_at": "G-PAPER-HEAD-VERBATIM",
+   "mutant": "MUT-PAPER-HEAD",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-HEAD-VERBATIM",
+   "died_at": "G-PAPER-HEAD-VERBATIM",
+   "mutant": "MUT-PAPER-BLOCK",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-PAPER-CLAIM-POLARITY",
+   "died_at": "G-PAPER-CLAIM-POLARITY",
+   "mutant": "MUT-PAPER-POLARITY",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-CLI-WHITELIST",
+   "died_at": "G-CLI-WHITELIST",
+   "mutant": "MUT-CLI-PERMISSIVE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-SELFTEST-WRITES-NOTHING",
+   "died_at": "G-SELFTEST-WRITES-NOTHING",
+   "mutant": "MUT-SELFTEST-WRITES",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-MEMO-CLEAN",
+   "died_at": "G-MEMO-CLEAN",
+   "mutant": "MUT-MEMO",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-FALSIFIER-HONESTY",
+   "died_at": "G-FALSIFIER-HONESTY",
+   "mutant": "MUT-FALSIFIER-DESC",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-WRITER-SHAPE",
+   "died_at": "G-WRITER-SHAPE",
+   "mutant": "MUT-WRITER-SHAPE",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-SWEEP-BOUND",
+   "died_at": "G-SWEEP-BOUND",
+   "mutant": "MUT-SWEEP-UNBOUND",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-SEAL-COMPLETE",
+   "died_at": "G-SEAL-COMPLETE",
+   "mutant": "MUT-SEAL-DROP",
+   "on_target": true
+  },
+  {
+   "declared_gate": "G-SEAL-COMPLETE",
+   "died_at": "G-SEAL-COMPLETE",
+   "mutant": "MUT-SEAL-BROKEN",
+   "on_target": true
+  }
+ ],
+ "mutants": [
+  {
+   "gate": "G-VERBATIM",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "anchor_bad",
+   "mutant": "MUT-VERBATIM",
+   "named_in_its_description": true,
+   "to": "FORGED",
+   "what_it_does": "moves `anchor_bad` to the one-element list ['FORGED'], reporting a located anchor as missing -- must die at the verbatim gate"
+  },
+  {
+   "gate": "G-PATH-VALUES",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "pv_bad",
+   "mutant": "MUT-PATH-VALUE",
+   "named_in_its_description": true,
+   "to": "PV-CELLS",
+   "what_it_does": "moves `pv_bad` to ['PV-CELLS'], detaching a path-value anchor from the committed receipt it is read from -- must die at the path-value gate"
+  },
+  {
+   "gate": "G-P1-CARRIER",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "carrier_cells",
+   "mutant": "MUT-CARRIER-COUNT",
+   "named_in_its_description": true,
+   "to": "26",
+   "what_it_does": "moves `carrier_cells` to 26, one short of the rebuilt carrier -- must die at the gate that compares the rebuild with the coupled machine's own receipt"
+  },
+  {
+   "gate": "G-P1-DICTIONARY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "pair_bij",
+   "mutant": "MUT-PAIR-BIJECTION",
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `pair_bij` to False: reports the cell-to-co-division-pair map as not a bijection -- must die at the dictionary gate"
+  },
+  {
+   "gate": "G-P1-DICTIONARY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "valence_ok",
+   "mutant": "MUT-VALENCE",
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `valence_ok` to False while every per-object row still holds, detaching the published incidence verdict from its measurement -- must die at the same gate"
+  },
+  {
+   "gate": "G-POOL-REBUILT",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "classes_here",
+   "mutant": "MUT-POOL-CLASSES",
+   "named_in_its_description": true,
+   "to": "5",
+   "what_it_does": "moves `classes_here` to 5, hiding one of the six coin classes the arena's own ring admits -- must die against the coupled machine's committed census"
+  },
+  {
+   "gate": "G-POOL-UNITARY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "uviol",
+   "mutant": "MUT-POOL-UNITARY",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `uviol` to 1: one walk operator is reported non-unitary -- must die at the per-column-pair unitarity gate"
+  },
+  {
+   "gate": "G-LEAK-THEOREM",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "theorem_bad",
+   "mutant": "MUT-LEAK-THEOREM",
+   "named_in_its_description": true,
+   "to": "K+0+0w",
+   "what_it_does": "moves `theorem_bad` to ['K+0+0w'], reporting a coin whose monomiality and whose carrier-grain leak disagree -- must die at the leak theorem's own per-coin check"
+  },
+  {
+   "gate": "G-LEAK-ROUTES",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "route_bad",
+   "mutant": "MUT-LEAK-ROUTES",
+   "named_in_its_description": true,
+   "to": "FORGED",
+   "what_it_does": "moves `route_bad` to ['FORGED'], reporting the two independent leak routes as disagreeing -- must die at the two-route gate"
+  },
+  {
+   "gate": "G-P2-NO-OCCUPANCY-KEY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "occ_hits",
+   "mutant": "MUT-OCC-KEY",
+   "named_in_its_description": true,
+   "to": "occupancy_ceiling",
+   "what_it_does": "moves `occ_hits` to [['A-COUPREC', 'occupancy_ceiling']], reporting an occupancy-shaped name in a committed layer -- must die at the vocabulary census"
+  },
+  {
+   "gate": "G-P2-HOMONYM",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "hom_undeclared",
+   "mutant": "MUT-HOMONYM",
+   "named_in_its_description": true,
+   "to": "A-D66",
+   "what_it_does": "moves `hom_undeclared` to ['A-D66'], leaving a `ceiling` occurrence without a declared referent -- must die at the homonym gate"
+  },
+  {
+   "gate": "G-P2-STATE-SPACE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "carrier_ok",
+   "mutant": "MUT-STATE-SPACE",
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `carrier_ok` to False: the committed instrument's declared carrier size stops matching the rebuild -- must die at the state-space gate"
+  },
+  {
+   "gate": "G-P2-INVISIBLE-FROM-BELOW",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "fiber_disagreements",
+   "mutant": "MUT-FIBER",
+   "named_in_its_description": true,
+   "to": "7",
+   "what_it_does": "moves `fiber_disagreements` to 7, reporting one-excitation restrictions that differ across the declarations -- must die at the invisibility gate"
+  },
+  {
+   "gate": "G-P2-TURNING",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "p2_verdict",
+   "mutant": "MUT-TURNING",
+   "named_in_its_description": true,
+   "to": "STRUCTURAL-EXCLUSION",
+   "what_it_does": "moves `p2_verdict` to STRUCTURAL-EXCLUSION, promoting a representation that has no occupancy coordinate to one that forbids double occupancy -- must die at the turning-premise gate"
+  },
+  {
+   "gate": "G-P3-BLINDNESS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "site_agree",
+   "mutant": "MUT-BLINDNESS",
+   "named_in_its_description": true,
+   "to": "8",
+   "what_it_does": "moves `site_agree` to 8: the two states are reported separable by the committed rule's own site field -- must die at the blindness gate"
+  },
+  {
+   "gate": "G-P3-COMPLETIONS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "comp_bad",
+   "mutant": "MUT-COMPLETIONS",
+   "named_in_its_description": true,
+   "to": "E1-PER-EXCITATION",
+   "what_it_does": "moves `comp_bad` to ['E1-PER-EXCITATION'], reporting a completion's emission total as preserving the parent identity when it does not -- must die at the completion gate"
+  },
+  {
+   "gate": "G-P3-NEVER-REFUSED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "refusals",
+   "mutant": "MUT-REFUSAL",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `refusals` to 1: a completion is reported refusing a division to a doubly occupied carrier -- must die at the never-refused gate"
+  },
+  {
+   "gate": "G-P4-GRAIN-CENSUS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "grain_bad",
+   "mutant": "MUT-GRAIN-CENSUS",
+   "named_in_its_description": true,
+   "to": "K-2+0w",
+   "what_it_does": "moves `grain_bad` to ['K-2+0w'], detaching one coin's per-declaration leak row from its own closure predicate -- must die at the per-coin census"
+  },
+  {
+   "gate": "G-P4-SET-EQUALITY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "seteq_bad",
+   "mutant": "MUT-SET-EQUALITY",
+   "named_in_its_description": true,
+   "to": "FORGED",
+   "what_it_does": "moves `seteq_bad` to ['FORGED'], reporting the carrier-grain leak's source set as something other than the same-actor configurations -- must die at the set-equality gate"
+  },
+  {
+   "gate": "G-P4-SHAPES-COINCIDE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "coincide_bad",
+   "mutant": "MUT-SHAPES-COINCIDE",
+   "named_in_its_description": true,
+   "to": "FORGED",
+   "what_it_does": "moves `coincide_bad` to ['FORGED'], reporting the two shapes' actor-grain leak sets as distinct -- must die at the coincidence gate"
+  },
+  {
+   "gate": "G-P4-PARENT-SPLIT",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "leaking_cited",
+   "mutant": "MUT-PARENT-SPLIT",
+   "named_in_its_description": true,
+   "to": "47",
+   "what_it_does": "moves `leaking_cited` to 47, one away from the split computed from paper-22's own committed rows -- must die at the citation gate"
+  },
+  {
+   "gate": "G-ARMS-REACHABILITY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "words_seen",
+   "mutant": "MUT-ARMS",
+   "named_in_its_description": true,
+   "to": "OCC-CEILING-FORCED",
+   "what_it_does": "moves `words_seen` to the same set with OCC-CEILING-FORCED removed, so an outcome the head law is claimed to reach is unreached -- must die at the reachability gate"
+  },
+  {
+   "gate": "G-CONTROL-TWO-WAY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "fires",
+   "mutant": "MUT-CONTROL",
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `fires` to False: the control arena that must demonstrate the conditional CAN fire is reported not firing -- must die at the two-way control gate"
+  },
+  {
+   "gate": "G-ASYMMETRY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "perm_selects",
+   "mutant": "MUT-ASYMMETRY",
+   "named_in_its_description": true,
+   "to": "1",
+   "what_it_does": "moves `perm_selects` to 1, reporting a permission declaration that selects a shape -- must die at the asymmetry gate"
+  },
+  {
+   "gate": "G-DESCRIPTION-STAMPS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "stamp_bad",
+   "mutant": "MUT-STAMPS",
+   "named_in_its_description": true,
+   "to": "C08",
+   "what_it_does": "moves `stamp_bad` to ['C08'], leaving a published claim without its description stamp -- must die at the stamp gate"
+  },
+  {
+   "gate": "G-COUNTING-ONLY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "measure_declared",
+   "mutant": "MUT-COUNTING",
+   "named_in_its_description": true,
+   "to": "True",
+   "what_it_does": "moves `measure_declared` to True, publishing a fraction as a probability with no measure -- must die at the E-24 gate"
+  },
+  {
+   "gate": "G-CHOICE-INVENTORY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "choice_bad",
+   "mutant": "MUT-CHOICES",
+   "named_in_its_description": true,
+   "to": "the coin class",
+   "what_it_does": "moves `choice_bad` to ['the coin class'], reporting a published choice whose fiber was not counted -- must die at the choice-inventory gate"
+  },
+  {
+   "gate": "G-WALL-L1",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "layer",
+   "mutant": "MUT-WALL-L1",
+   "named_in_its_description": true,
+   "to": "order-level covariance is established",
+   "what_it_does": "moves `layer` to one carrying the sentence order-level covariance is established -- must die at the L-1 wall"
+  },
+  {
+   "gate": "G-WALL-BHS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "layer",
+   "mutant": "MUT-WALL-BHS",
+   "named_in_its_description": true,
+   "to": "boosted rest frame",
+   "what_it_does": "moves `layer` to one carrying a sprinkling-grade boosted rest frame reading -- must die at the BHS abstention scan"
+  },
+  {
+   "gate": "G-WALL-KR",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "layer",
+   "mutant": "MUT-WALL-KR",
+   "named_in_its_description": true,
+   "to": "myrheim-meyer",
+   "what_it_does": "moves `layer` to one carrying a myrheim-meyer dimension estimate with no height control -- must die at the Kleitman-Rothschild scan"
+  },
+  {
+   "gate": "G-WALL-COSMO",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "layer",
+   "mutant": "MUT-WALL-COSMO",
+   "named_in_its_description": true,
+   "to": "cosmological expansion",
+   "what_it_does": "moves `layer` to one carrying a cosmological expansion reading -- must die at the continuum and cosmological scan"
+  },
+  {
+   "gate": "G-NO-PARTICLE-NAMING",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "bad_words",
+   "mutant": "MUT-PAPER-WALL",
+   "named_in_its_description": true,
+   "to": "fermion",
+   "what_it_does": "moves `bad_words` to the found list with 'fermion' appended, so a bare particle noun is reported in the object under test -- must die at the shape-word wall"
+  },
+  {
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "segs",
+   "mutant": "MUT-VERDICT-WORD",
+   "named_in_its_description": true,
+   "to": "OCC-CEILING-FORCED",
+   "what_it_does": "moves `segs`, in the builder alone, to one whose outcome segment reads OCC-CEILING-FORCED -- must die at the comparator, which re-derives the word from the premise rows"
+  },
+  {
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "segs",
+   "mutant": "MUT-VERDICT-VALUE",
+   "named_in_its_description": true,
+   "to": "CARRIER-CELLS=26",
+   "what_it_does": "moves `segs` by retyping one measured value inside a segment, CARRIER-CELLS=27 to CARRIER-CELLS=26 -- must die at the same comparator, field by field"
+  },
+  {
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "segs",
+   "mutant": "MUT-VERDICT-CLAUSE",
+   "named_in_its_description": true,
+   "to": "ACTOR-GRAIN-CANCELLATION-CELLS",
+   "what_it_does": "moves `segs` by truncating a segment at ACTOR-GRAIN-CANCELLATION-CELLS, so a clause the head must carry is silently dropped -- must die at the comparator's label-set leg"
+  },
+  {
+   "gate": "G-VERDICT-NO-TYPED-LITERAL",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "head_unmeasured",
+   "mutant": "MUT-HEAD-LITERAL",
+   "named_in_its_description": true,
+   "to": "4242",
+   "what_it_does": "moves `head_unmeasured` to ['4242'], a head numeral that occurs in no measured receipt value -- must die at the typed-literal gate"
+  },
+  {
+   "gate": "G-PAPER-CLAIMS",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "sent",
+   "mutant": "MUT-PAPER-CLAIM",
+   "named_in_its_description": true,
+   "to": "26 cells",
+   "what_it_does": "moves `sent`, an assembled claim, to one reading 26 cells -- must die at the claim gate"
+  },
+  {
+   "gate": "G-PAPER-TABLES",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "trows",
+   "mutant": "MUT-PAPER-TABLE",
+   "named_in_its_description": true,
+   "to": "FORGED",
+   "what_it_does": "moves `trows`, the rendered table rows, to the list with its last row dropped and a FORGED one appended -- must die at the table gate"
+  },
+  {
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "unregistered",
+   "mutant": "MUT-PAPER-NUMERAL",
+   "named_in_its_description": true,
+   "to": "123456789",
+   "what_it_does": "moves `unregistered` to ['123456789'], an unlicensed numeral -- must die at the #20 coverage scan"
+  },
+  {
+   "gate": "G-PAPER-HEAD-VERBATIM",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "probe",
+   "mutant": "MUT-PAPER-HEAD",
+   "named_in_its_description": true,
+   "to": "Z",
+   "what_it_does": "moves `probe`, a derived verdict segment, by one character to seg[:-1] + Z before matching it into the paper -- must die at the head-verbatim gate"
+  },
+  {
+   "gate": "G-PAPER-HEAD-VERBATIM",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "blockmap",
+   "mutant": "MUT-PAPER-BLOCK",
+   "named_in_its_description": true,
+   "to": "dropped",
+   "what_it_does": "moves `blockmap`, the paper's own fenced-block multiset, to the same multiset with one block dropped, so a duplicated head could shadow a forged twin -- must die at the same gate's MULTISET leg"
+  },
+  {
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "mutated",
+   "mutant": "MUT-PAPER-POLARITY",
+   "named_in_its_description": true,
+   "to": "True",
+   "what_it_does": "moves `mutated` to True, swapping every load-bearing claim for its negation in the object under test -- must die at the polarity gate"
+  },
+  {
+   "gate": "G-CLI-WHITELIST",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "bad",
+   "mutant": "MUT-CLI-PERMISSIVE",
+   "named_in_its_description": true,
+   "to": "--nope",
+   "what_it_does": "moves `bad` to the one-element list [['--nope']], so the argv whitelist is reported accepting an unknown flag -- must die at the CLI gate"
+  },
+  {
+   "gate": "G-SELFTEST-WRITES-NOTHING",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "st_ok",
+   "mutant": "MUT-SELFTEST-WRITES",
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `st_ok` to False: the AST probe reports the self-test path reaching the writer -- must die at the self-test shape gate"
+  },
+  {
+   "gate": "G-MEMO-CLEAN",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "memo_ok",
+   "mutant": "MUT-MEMO",
+   "named_in_its_description": true,
+   "to": "False",
+   "what_it_does": "moves `memo_ok` to False: the memo's fingerprint is reported moving between runs -- must die at the memo gate"
+  },
+  {
+   "gate": "G-FALSIFIER-HONESTY",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "declared",
+   "mutant": "MUT-FALSIFIER-DESC",
+   "named_in_its_description": true,
+   "to": "FORGED",
+   "what_it_does": "moves `declared` to ('FORGED', 'FORGED') for MUT-MEMO, so a falsifier's published symbol and value stop matching its own code -- must die at the falsifier-honesty gate"
+  },
+  {
+   "gate": "G-WRITER-SHAPE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "ws",
+   "mutant": "MUT-WRITER-SHAPE",
+   "named_in_its_description": true,
+   "to": "gate_names_in_finish",
+   "what_it_does": "moves `ws` by truncating its gate_names_in_finish list, so the terminal integrity gate goes missing from finish() -- must die at the writer-shape gate"
+  },
+  {
+   "gate": "G-SWEEP-BOUND",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "swept",
+   "mutant": "MUT-SWEEP-UNBOUND",
+   "named_in_its_description": true,
+   "to": "True",
+   "what_it_does": "moves `swept` to True in a sub-pipeline that carries no sweep rows -- must die at the sweep-binding gate"
+  },
+  {
+   "gate": "G-SEAL-COMPLETE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "SEAL-COVERAGE",
+   "mutant": "MUT-SEAL-DROP",
+   "named_in_its_description": true,
+   "to": "return",
+   "what_it_does": "moves `SEAL-COVERAGE` out of the seal manifest by returning from Seal.take before the row is appended -- must die at the totality gate"
+  },
+  {
+   "gate": "G-SEAL-COMPLETE",
+   "hook_sites": 1,
+   "matches_its_code": true,
+   "moves": "outcome_word",
+   "mutant": "MUT-SEAL-BROKEN",
+   "named_in_its_description": true,
+   "to": "BROKEN",
+   "what_it_does": "moves `outcome_word` to BROKEN after that key was sealed, so the payload no longer matches its gate-time digest -- must die at the seal verification"
+  }
+ ],
+ "object_reads": {
+  "declared": [
+   "PAPER",
+   "SELF"
+  ],
+  "source_reads": 12,
+  "why": {
+   "PAPER": "the object under test, read once by main and handed to the paper gates",
+   "SELF": "this file, AST-parsed by its own float scan, import scan, falsifier-hook probe and writer-shape probe"
+  }
+ },
+ "p1": {
+  "actor_leg_covers_the_carrier": false,
+  "actor_leg_image_in_the_carrier": 9,
+  "actor_site_bijection": true,
+  "actor_site_injective": true,
+  "actor_site_surjective": true,
+  "actor_to_cell_valence": [
+   6
+  ],
+  "actors": 9,
+  "actors_in_exactly_six_cells": 9,
+  "carrier_cells": 27,
+  "carrier_is_the_pair_leg": true,
+  "cell_to_actor_valence": [
+   2
+  ],
+  "cells_with_exactly_two_actors": 27,
+  "co_division_pairs": 27,
+  "excitation_to_actor_is_a_function": false,
+  "pair_link_bijection": true,
+  "verdict": "HOLDS-ON-THE-PAIR-LEG"
+ },
+ "p2": {
+  "fiber": {
+   "collapsed_pairs": [
+    "D-ACTOR-1",
+    "D-ACTOR-2|D-CARRIER-2",
+    "D-CARRIER-1"
+   ],
+   "configuration_counts": {
+    "D-ACTOR-1": {
+     "ANTISYMMETRIC": 216,
+     "SYMMETRIC": 216
+    },
+    "D-ACTOR-2": {
+     "ANTISYMMETRIC": 351,
+     "SYMMETRIC": 378
+    },
+    "D-CARRIER-1": {
+     "ANTISYMMETRIC": 351,
+     "SYMMETRIC": 351
+    },
+    "D-CARRIER-2": {
+     "ANTISYMMETRIC": 351,
+     "SYMMETRIC": 378
+    }
+   },
+   "declarations": 4,
+   "distinct_two_excitation_theories": 3,
+   "one_excitation_comparisons": 53460,
+   "one_excitation_disagreements": 0,
+   "restrictions_agree_as_objects": true,
+   "rows": [
+    {
+     "antisymmetric_configurations": 351,
+     "ceiling": 2,
+     "declaration": "D-CARRIER-2",
+     "grain": "CARRIER",
+     "symmetric_configurations": 378,
+     "why": "two excitations may share a cell: the free lift, unrestricted"
+    },
+    {
+     "antisymmetric_configurations": 351,
+     "ceiling": 1,
+     "declaration": "D-CARRIER-1",
+     "grain": "CARRIER",
+     "symmetric_configurations": 351,
+     "why": "at most one excitation per cell -- the hard core AT THE CARRIER'S OWN GRAIN, which is the grain paper-22's arena had"
+    },
+    {
+     "antisymmetric_configurations": 216,
+     "ceiling": 1,
+     "declaration": "D-ACTOR-1",
+     "grain": "ACTOR",
+     "symmetric_configurations": 216,
+     "why": "at most one excitation per ACTOR: no two excitations on cells that share an actor -- the hard core at the grain the weld's ACTOR->SITE leg speaks"
+    },
+    {
+     "antisymmetric_configurations": 351,
+     "ceiling": 2,
+     "declaration": "D-ACTOR-2",
+     "grain": "ACTOR",
+     "symmetric_configurations": 378,
+     "why": "at most two excitations per actor, which at two excitations forbids nothing"
+    }
+   ]
+  },
+  "reading": "the committed representation neither constructs nor forbids a doubly occupied carrier: it has no occupancy coordinate at all, and the excitation's own coordinate is a co-division pair rather than an actor",
+  "state_space": {
+   "carrier_matches_the_rebuild": true,
+   "declared_DIM": 27,
+   "declared_NCELL": 27,
+   "excitation_number_parameters": [],
+   "functions": 102,
+   "parameters": 89,
+   "two_excitation_constructor_present": false,
+   "verdict": "NOT-AVAILABLE"
+  },
+  "verdict": "NOT-AVAILABLE",
+  "vocabulary": {
+   "control_examples": [
+    "antisymmetric_hardcore_closed",
+    "antisymmetric_hardcore_leak_cells",
+    "entrywise_set_is_the_two_excitation_nonzero_set",
+    "moved_set_is_the_single_excitation_set",
+    "occupancy",
+    "one_excitation_configurations"
+   ],
+   "control_names_censused": 362,
+   "control_occupancy_shaped_names": 19,
+   "control_source": "A-P22REC",
+   "deeper_sources": 6,
+   "homonym": {
+    "rows": [
+     {
+      "count": 5,
+      "declared_referent": "the weld's POSITIVE-DEFINITENESS ceiling -- the largest count triple its Sylvester scan attains -- which is a bound on DIVISION COUNTS on a link, not on excitations at a site",
+      "hits": [
+       "attained_ceiling",
+       "committed_wall_and_ceiling",
+       "posdef_at_ceiling",
+       "posdef_ceiling",
+       "triples_at_ceiling"
+      ],
+      "source": "A-W3REC"
+     },
+     {
+      "count": 4,
+      "declared_referent": "d60's ENGINEERED ceiling on its crystal search",
+      "hits": [
+       "    engineered ceiling = ",
+       " < ceiling ",
+       " < the engineered ceiling ",
+       "); engineered ceiling = "
+      ],
+      "source": "A-D60"
+     },
+     {
+      "count": 5,
+      "declared_referent": "d66's k*Bl budget ceiling on arbitration",
+      "hits": [
+       "    (Bl = 2).  The true ceiling is the refinement |D_e(2)| <= SUM_y b(y) <=",
+       "    two-proposer conflict ring is held to the delivery ceiling 4 at d = 2, and",
+       "  which is <= k^2 = W4c's own ceiling for a k-proposer arbitration.  A3b",
+       " \u2014 past the delivery grammar's d = 2 ceiling of 4 for the first time.",
+       ", k*Bl ceiling = "
+      ],
+      "source": "A-D66"
+     },
+     {
+      "count": 6,
+      "declared_referent": "the OCCUPANCY ceiling paper-22 DECLARED -- the one referent in the census that is occupancy-shaped, which is exactly why that source is this scan's positive control and not one of the deeper layers",
+      "hits": [
+       "A1-FREE-LIFT-CEILING-2",
+       "A2-FREE-LIFT-CEILING-1-HARD-CORE",
+       "ceiling_is_anchored",
+       "ceiling_status",
+       "configurations_ceiling_1",
+       "configurations_ceiling_2"
+      ],
+      "source": "A-P22REC"
+     }
+    ],
+    "token": "ceiling",
+    "undeclared_referents": []
+   },
+   "names_censused": 4945,
+   "occupancy_hits": [],
+   "occupancy_shaped_names": 0,
+   "rows": [
+    {
+     "arm": "DEEPER",
+     "examples": [],
+     "homonym_hits": 0,
+     "kind": "receipt",
+     "names": 418,
+     "occupancy_shaped": 0,
+     "source": "A-COUPREC"
+    },
+    {
+     "arm": "DEEPER",
+     "examples": [],
+     "homonym_hits": 5,
+     "kind": "receipt",
+     "names": 343,
+     "occupancy_shaped": 0,
+     "source": "A-W3REC"
+    },
+    {
+     "arm": "DEEPER",
+     "examples": [],
+     "homonym_hits": 0,
+     "kind": "source",
+     "names": 2040,
+     "occupancy_shaped": 0,
+     "source": "A-COUPSRC"
+    },
+    {
+     "arm": "DEEPER",
+     "examples": [],
+     "homonym_hits": 0,
+     "kind": "source",
+     "names": 433,
+     "occupancy_shaped": 0,
+     "source": "A-D42B1"
+    },
+    {
+     "arm": "DEEPER",
+     "examples": [],
+     "homonym_hits": 4,
+     "kind": "source",
+     "names": 372,
+     "occupancy_shaped": 0,
+     "source": "A-D60"
+    },
+    {
+     "arm": "DEEPER",
+     "examples": [],
+     "homonym_hits": 5,
+     "kind": "source",
+     "names": 1339,
+     "occupancy_shaped": 0,
+     "source": "A-D66"
+    },
+    {
+     "arm": "DECLARED-CONTROL",
+     "examples": [
+      "antisymmetric_hardcore_closed",
+      "antisymmetric_hardcore_leak_cells",
+      "entrywise_set_is_the_two_excitation_nonzero_set",
+      "moved_set_is_the_single_excitation_set"
+     ],
+     "homonym_hits": 6,
+     "kind": "receipt",
+     "names": 362,
+     "occupancy_shaped": 19,
+     "source": "A-P22REC"
+    }
+   ],
+   "tokens": [
+    "occupan",
+    "excitat",
+    "doubly",
+    "hard_core",
+    "hardcore",
+    "fermion",
+    "boson",
+    "pauli",
+    "multiply_occupied",
+    "exclusion_principle"
+   ]
+  }
+ },
+ "p3": {
+  "blindness_pair": {
+   "P": [
+    0,
+    1
+   ],
+   "Q": [
+    0
+   ],
+   "cell_occupations_agree_at": 25,
+   "cells": 27,
+   "site_fields_agree_at": 9,
+   "sites": 9,
+   "the_committed_rule_can_separate_them": false
+  },
+  "completion_fiber": 3,
+  "completions": [
+   {
+    "completion": "E1-PER-EXCITATION",
+    "emission_total": "2",
+    "preserves_the_parent_identity": false,
+    "support": 3,
+    "why": "each excitation emits through the committed one-excitation rule"
+   },
+   {
+    "completion": "E2-PER-CONFIGURATION",
+    "emission_total": "1",
+    "preserves_the_parent_identity": true,
+    "support": 3,
+    "why": "one event per step, drawn from the pair's own joint weight"
+   },
+   {
+    "completion": "E3-SITE-THEN-RECORD",
+    "emission_total": "1",
+    "preserves_the_parent_identity": true,
+    "support": 9,
+    "why": "the site from the marginal, the link from the record menu"
+   }
+  ],
+  "completions_preserving_the_parent_identity": 2,
+  "completions_that_refuse_a_division": 0,
+  "doubly_occupied_carrier_emits": true,
+  "pairwise_field_differences": [
+   {
+    "cells_differing": 3,
+    "pair": "E1-PER-EXCITATION|E2-PER-CONFIGURATION"
+   },
+   {
+    "cells_differing": 9,
+    "pair": "E1-PER-EXCITATION|E3-SITE-THEN-RECORD"
+   },
+   {
+    "cells_differing": 9,
+    "pair": "E2-PER-CONFIGURATION|E3-SITE-THEN-RECORD"
+   }
+  ],
+  "verdict": "SILENT-AND-VACUOUSLY-SATISFIED"
+ },
+ "p4": {
+  "declarations": 4,
+  "parent_split": {
+   "antisymmetric_leaking": 0,
+   "cited_from": "A-P22REC occupancy/rows",
+   "generators": 64,
+   "symmetric_closed": 16,
+   "symmetric_leaking": 48
+  },
+  "rows": 6
+ },
+ "paper_claims": [
+  {
+   "claim": "the coupled machine's carrier is 27 cells, and a cell IS an unordered co-division pair of actors: the two sets are in bijection at 27 of 27",
+   "id": "C01",
+   "occurrences": 1
+  },
+  {
+   "claim": "every cell carries exactly two actors at 27 of 27, and every actor lies in exactly six cells at 9 of 9",
+   "id": "C02",
+   "occurrences": 1
+  },
+  {
+   "claim": "the weld's ACTOR->SITE leg is a bijection at 9 of 9 and covers 9 of the 27 carriers the excitation uses",
+   "id": "C03",
+   "occurrences": 1
+  },
+  {
+   "claim": "4945 published names across the 6 committed layers beneath the excitations, and none of them is occupancy-shaped, while the same scan fires at 19 names on the one layer that declared a ceiling",
+   "id": "C04",
+   "occurrences": 1
+  },
+  {
+   "claim": "4 declarations give 3 distinct two-excitation theories, and their one-excitation restrictions agree as objects at 53,460 of 53,460 comparisons",
+   "id": "C05",
+   "occurrences": 1
+  },
+  {
+   "claim": "the committed emission rule reads a site field, and the two states agree on it at 9 of 9 sites while their cell occupations differ",
+   "id": "C06",
+   "occurrences": 1
+  },
+  {
+   "claim": "2 of the 3 completions preserve the parent's own emission identity, and 0 of 3 refuse a division to a doubly occupied carrier",
+   "id": "C07",
+   "occurrences": 1
+  },
+  {
+   "claim": "at the carrier's own grain the symmetric shape leaks at 81 cells at 5 of the 6 coin classes and the antisymmetric shape leaks at 0",
+   "id": "C08",
+   "occurrences": 1
+  },
+  {
+   "claim": "the configurations that leak are exactly the 27 whose two excitations sit on cells sharing an actor, by set equality at 5 of 5 leaking coin classes",
+   "id": "C09",
+   "occurrences": 1
+  },
+  {
+   "claim": "at the actor's grain both shapes leak at 6 of 6 coin classes, every one of the 216 admissible configurations leaks, and every one of the 135 forbidden configurations is reached",
+   "id": "C10",
+   "occurrences": 1
+  },
+  {
+   "claim": "the two shapes' leak sets coincide cell for cell at 6 of 6 coin classes, and no cell of either carries two nonzero products, at 0",
+   "id": "C11",
+   "occurrences": 1
+  },
+  {
+   "claim": "permission selects a shape at 0 of 12 rows and exclusion at 5 of 12, all of them at the carrier's own grain",
+   "id": "C12",
+   "occurrences": 1
+  },
+  {
+   "claim": "the head law returns 4 different pre-registered outcome words across the 6 arenas",
+   "id": "C13",
+   "occurrences": 1
+  },
+  {
+   "claim": "paper-22's split is cited from its own rows: the symmetric shape leaks at 48 of its 64 generators",
+   "id": "C14",
+   "occurrences": 1
+  },
+  {
+   "claim": "the two routes agree at 48 of 48 leak rows",
+   "id": "C15",
+   "occurrences": 1
+  }
+ ],
+ "paper_coverage": {
+  "fenced_blocks": 3,
+  "fenced_multiset": {
+   "blocks_in_the_paper": 3,
+   "derived_segments": 3,
+   "distinct_blocks": 3,
+   "multiset_matches": true
+  },
+  "fenced_numerals": 58,
+  "inline_numerals": 10,
+  "inline_spans": 39,
+  "licensed_values": 113,
+  "scanned": 212,
+  "unregistered": []
+ },
+ "paper_tables": [
+  {
+   "id": "T-POOL-K-2-1w",
+   "row": "| `K-2-1w` | no | 81 | 864 | 864 |"
+  },
+  {
+   "id": "T-POOL-K-2+0w",
+   "row": "| `K-2+0w` | no | 81 | 864 | 864 |"
+  },
+  {
+   "id": "T-POOL-K-1-1w",
+   "row": "| `K-1-1w` | no | 81 | 864 | 864 |"
+  },
+  {
+   "id": "T-POOL-K-1+1w",
+   "row": "| `K-1+1w` | no | 81 | 864 | 864 |"
+  },
+  {
+   "id": "T-POOL-K+0+0w",
+   "row": "| `K+0+0w` | yes | 0 | 81 | 81 |"
+  },
+  {
+   "id": "T-POOL-K+0+1w",
+   "row": "| `K+0+1w` | no | 81 | 864 | 864 |"
+  },
+  {
+   "id": "T-ARM-A0-COMMITTED-COUPLED-MACHINE",
+   "row": "| `A0-COMMITTED-COUPLED-MACHINE` | HOLDS-ON-THE-PAIR-LEG | NOT-AVAILABLE | SILENT-AND-VACUOUSLY-SATISFIED | NO-SHAPE-CLOSES | `OCC-CEILING-OPEN` |"
+  },
+  {
+   "id": "T-ARM-A1-DECLARED-EXCLUSION-AT-THE-CARRIER-GRAIN",
+   "row": "| `A1-DECLARED-EXCLUSION-AT-THE-CARRIER-GRAIN` | HOLDS-ON-THE-PAIR-LEG | DECLARED-EXCLUSION | SILENT-AND-VACUOUSLY-SATISFIED | SELECTS | `OCC-CEILING-PARTIAL` |"
+  },
+  {
+   "id": "T-ARM-A2-DECLARED-EXCLUSION-AT-THE-ACTOR-GRAIN",
+   "row": "| `A2-DECLARED-EXCLUSION-AT-THE-ACTOR-GRAIN` | HOLDS-ON-THE-PAIR-LEG | DECLARED-EXCLUSION | SILENT-AND-VACUOUSLY-SATISFIED | NO-SHAPE-CLOSES | `OCC-CEILING-PARTIAL` |"
+  },
+  {
+   "id": "T-ARM-A3-C1-SUBSET-CARRIER",
+   "row": "| `A3-C1-SUBSET-CARRIER` | HOLDS-BY-CONSTRUCTION | STRUCTURAL-EXCLUSION | CLOSURE-AVAILABLE | SELECTS | `OCC-CEILING-FORCED` |"
+  },
+  {
+   "id": "T-ARM-A4-C2-MULTISET-CARRIER",
+   "row": "| `A4-C2-MULTISET-CARRIER` | HOLDS-BY-CONSTRUCTION | CONSTRUCTIBLE | CLOSURE-AVAILABLE | DOES-NOT-SELECT | `OCC-CEILING-OPEN` |"
+  },
+  {
+   "id": "T-ARM-A5-C3-ONE-CARRIER",
+   "row": "| `A5-C3-ONE-CARRIER` | HOLDS-BY-CONSTRUCTION | STRUCTURAL-EXCLUSION | CLOSURE-AVAILABLE | DOES-NOT-SELECT | `OCC-BLOCKED-AT` |"
+  },
+  {
+   "id": "T-DECL-D-CARRIER-2",
+   "row": "| `D-CARRIER-2` | CARRIER | 2 | 378 | 351 |"
+  },
+  {
+   "id": "T-DECL-D-CARRIER-1",
+   "row": "| `D-CARRIER-1` | CARRIER | 1 | 351 | 351 |"
+  },
+  {
+   "id": "T-DECL-D-ACTOR-1",
+   "row": "| `D-ACTOR-1` | ACTOR | 1 | 216 | 216 |"
+  },
+  {
+   "id": "T-DECL-D-ACTOR-2",
+   "row": "| `D-ACTOR-2` | ACTOR | 2 | 378 | 351 |"
+  },
+  {
+   "id": "T-CHOICE-the grain a ceilin",
+   "row": "| the grain a ceiling is declared at | 2 | MEASURED-BOTH | YES |"
+  },
+  {
+   "id": "T-CHOICE-the ceiling value",
+   "row": "| the ceiling value | 2 | MEASURED-BOTH | YES |"
+  },
+  {
+   "id": "T-CHOICE-the two-excitation",
+   "row": "| the two-excitation lift | 3 | INHERITED-AS-DECLARED | no |"
+  },
+  {
+   "id": "T-CHOICE-the coin class",
+   "row": "| the coin class | 6 | MEASURED-ALL | no |"
+  },
+  {
+   "id": "T-CHOICE-the emission compl",
+   "row": "| the emission completion | 3 | DECLARED-AND-ALL-RUN | no |"
+  },
+  {
+   "id": "T-CHOICE-the control arenas",
+   "row": "| the control arenas | 3 | DECLARED-CONTROL | no |"
+  },
+  {
+   "id": "T-CHOICE-the record, the ca",
+   "row": "| the record, the carrier, the links, the coin order | 1 | FORCED | no |"
+  }
+ ],
+ "path_value_anchors": [
+  {
+   "consumer": "G-P1-CARRIER",
+   "expected": 9,
+   "id": "PV-SITES",
+   "matches": true,
+   "path": "arena/sites",
+   "source": "A-COUPREC",
+   "value": 9
+  },
+  {
+   "consumer": "G-P1-CARRIER",
+   "expected": 27,
+   "id": "PV-CELLS",
+   "matches": true,
+   "path": "arena/cells",
+   "source": "A-COUPREC",
+   "value": 27
+  },
+  {
+   "consumer": "G-P1-CARRIER",
+   "expected": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "id": "PV-LINKS",
+   "matches": true,
+   "path": "arena/links",
+   "source": "A-COUPREC",
+   "value": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ]
+  },
+  {
+   "consumer": "G-P1-DICTIONARY",
+   "expected": 27,
+   "id": "PV-PAIRS",
+   "matches": true,
+   "path": "arena/realised_pairs",
+   "source": "A-COUPREC",
+   "value": 27
+  },
+  {
+   "consumer": "G-P1-DICTIONARY",
+   "expected": true,
+   "id": "PV-INCID",
+   "matches": true,
+   "path": "arena/relation_is_target_incidence",
+   "source": "A-COUPREC",
+   "value": true
+  },
+  {
+   "consumer": "G-P1-CARRIER",
+   "expected": 27,
+   "id": "PV-WELDED",
+   "matches": true,
+   "path": "arena/cells_at_one",
+   "source": "A-COUPREC",
+   "value": 27
+  },
+  {
+   "consumer": "G-POOL-REBUILT",
+   "expected": 36,
+   "id": "PV-COIN-RING",
+   "matches": true,
+   "path": "walk/coin_census/ring_solutions",
+   "source": "A-COUPREC",
+   "value": 36
+  },
+  {
+   "consumer": "G-POOL-REBUILT",
+   "expected": 6,
+   "id": "PV-COIN-CLASSES",
+   "matches": true,
+   "path": "walk/coin_census/classes_up_to_phase",
+   "source": "A-COUPREC",
+   "value": 6
+  },
+  {
+   "consumer": "G-POOL-REBUILT",
+   "expected": 1,
+   "id": "PV-COIN-GROVER",
+   "matches": true,
+   "path": "walk/coin_census/grover_classes_up_to_phase",
+   "source": "A-COUPREC",
+   "value": 1
+  },
+  {
+   "consumer": "G-POOL-REBUILT",
+   "expected": 37,
+   "id": "PV-ALPHABET",
+   "matches": true,
+   "path": "walk/scalar_shape/alphabet",
+   "source": "A-COUPREC",
+   "value": 37
+  },
+  {
+   "consumer": "G-P1-DICTIONARY",
+   "expected": 27,
+   "id": "PV-W3-CELLS",
+   "matches": true,
+   "path": "arena/cells",
+   "source": "A-W3REC",
+   "value": 27
+  },
+  {
+   "consumer": "G-P1-DICTIONARY",
+   "expected": 27,
+   "id": "PV-W3-INCID",
+   "matches": true,
+   "path": "arena/incidences",
+   "source": "A-W3REC",
+   "value": 27
+  },
+  {
+   "consumer": "G-QUESTION-ANCHORED",
+   "expected": false,
+   "id": "PV-P22-CEILING",
+   "matches": true,
+   "path": "occupancy/ceiling_is_anchored",
+   "source": "A-P22REC",
+   "value": false
+  },
+  {
+   "consumer": "G-P2-NO-OCCUPANCY-KEY",
+   "expected": 27,
+   "id": "PV-P22-KEYS",
+   "matches": true,
+   "path": "occupancy/stage_declaration_keys",
+   "source": "A-P22REC",
+   "value": 27
+  },
+  {
+   "consumer": "G-P2-NO-OCCUPANCY-KEY",
+   "expected": 0,
+   "id": "PV-P22-OCCKEYS",
+   "matches": true,
+   "path": "occupancy/stage_occupancy_shaped_keys",
+   "source": "A-P22REC",
+   "value": 0
+  },
+  {
+   "consumer": "G-P2-INVISIBLE-FROM-BELOW",
+   "expected": 64,
+   "id": "PV-P22-AGREE",
+   "matches": true,
+   "path": "occupancy/one_excitation_restrictions_agree_as_objects",
+   "source": "A-P22REC",
+   "value": 64
+  }
+ ],
+ "payload_sha256_12": "b0cb42f6de8a",
+ "polarity": [
+  {
+   "id": "P1",
+   "negative": "the excitation rides the actor",
+   "negative_present": false,
+   "ok": true,
+   "positive": "the excitation rides the co-division pair",
+   "positive_present": true
+  },
+  {
+   "id": "P2",
+   "negative": "the committed layers force the occupancy ceiling",
+   "negative_present": false,
+   "ok": true,
+   "positive": "no committed layer forces the occupancy ceiling",
+   "positive_present": true
+  },
+  {
+   "id": "P3",
+   "negative": "exclusion selects at every grain",
+   "negative_present": false,
+   "ok": true,
+   "positive": "exclusion selects only at the carrier's own grain",
+   "positive_present": true
+  },
+  {
+   "id": "P4",
+   "negative": "fermionic-shape is a theorem of the coupled theory",
+   "negative_present": false,
+   "ok": true,
+   "positive": "fermionic-shape is not a theorem of the coupled theory",
+   "positive_present": true
+  }
+ ],
+ "pool": {
+  "alphabet": 37,
+  "classes_up_to_phase": 6,
+  "coins": 6,
+  "grover_classes": 1,
+  "non_monomial": 5,
+  "ring_solutions": 36,
+  "rows": [
+   {
+    "a_numerator": [
+     3,
+     0
+    ],
+    "actor_grain_antisymmetric_leak": 864,
+    "actor_grain_symmetric_leak": 864,
+    "b_numerator": [
+     -2,
+     -1
+    ],
+    "carrier_grain_antisymmetric_leak": 0,
+    "carrier_grain_symmetric_leak": 81,
+    "coin": "K-2-1w",
+    "is_grover": false,
+    "members_in_the_solution_set": 6,
+    "monomial": false,
+    "row_supports": [
+     3
+    ],
+    "unitarity_violations": 0
+   },
+   {
+    "a_numerator": [
+     3,
+     0
+    ],
+    "actor_grain_antisymmetric_leak": 864,
+    "actor_grain_symmetric_leak": 864,
+    "b_numerator": [
+     -2,
+     0
+    ],
+    "carrier_grain_antisymmetric_leak": 0,
+    "carrier_grain_symmetric_leak": 81,
+    "coin": "K-2+0w",
+    "is_grover": true,
+    "members_in_the_solution_set": 6,
+    "monomial": false,
+    "row_supports": [
+     3
+    ],
+    "unitarity_violations": 0
+   },
+   {
+    "a_numerator": [
+     3,
+     0
+    ],
+    "actor_grain_antisymmetric_leak": 864,
+    "actor_grain_symmetric_leak": 864,
+    "b_numerator": [
+     -1,
+     -1
+    ],
+    "carrier_grain_antisymmetric_leak": 0,
+    "carrier_grain_symmetric_leak": 81,
+    "coin": "K-1-1w",
+    "is_grover": false,
+    "members_in_the_solution_set": 6,
+    "monomial": false,
+    "row_supports": [
+     3
+    ],
+    "unitarity_violations": 0
+   },
+   {
+    "a_numerator": [
+     3,
+     0
+    ],
+    "actor_grain_antisymmetric_leak": 864,
+    "actor_grain_symmetric_leak": 864,
+    "b_numerator": [
+     -1,
+     1
+    ],
+    "carrier_grain_antisymmetric_leak": 0,
+    "carrier_grain_symmetric_leak": 81,
+    "coin": "K-1+1w",
+    "is_grover": false,
+    "members_in_the_solution_set": 6,
+    "monomial": false,
+    "row_supports": [
+     3
+    ],
+    "unitarity_violations": 0
+   },
+   {
+    "a_numerator": [
+     3,
+     0
+    ],
+    "actor_grain_antisymmetric_leak": 81,
+    "actor_grain_symmetric_leak": 81,
+    "b_numerator": [
+     0,
+     0
+    ],
+    "carrier_grain_antisymmetric_leak": 0,
+    "carrier_grain_symmetric_leak": 0,
+    "coin": "K+0+0w",
+    "is_grover": false,
+    "members_in_the_solution_set": 6,
+    "monomial": true,
+    "row_supports": [
+     1
+    ],
+    "unitarity_violations": 0
+   },
+   {
+    "a_numerator": [
+     3,
+     0
+    ],
+    "actor_grain_antisymmetric_leak": 864,
+    "actor_grain_symmetric_leak": 864,
+    "b_numerator": [
+     0,
+     1
+    ],
+    "carrier_grain_antisymmetric_leak": 0,
+    "carrier_grain_symmetric_leak": 81,
+    "coin": "K+0+1w",
+    "is_grover": false,
+    "members_in_the_solution_set": 6,
+    "monomial": false,
+    "row_supports": [
+     3
+    ],
+    "unitarity_violations": 0
+   }
+  ]
+ },
+ "provenance": {
+  "count": 12,
+  "sources": [
+   {
+    "anchor": "A-PIN",
+    "bytes": 3888,
+    "expected": "145db72ce547",
+    "matches": true,
+    "path": "v14/note-occ-pin.md",
+    "sha256_12": "145db72ce547",
+    "why": "THIS UNIT'S PIN (ledger #249): the four premises, the pre-registered outcomes, the two-way control and the walls."
+   },
+   {
+    "anchor": "A-P22",
+    "bytes": 47750,
+    "expected": "fb05cc2a376a",
+    "matches": true,
+    "path": "v14/paper-22-multi.md",
+    "sha256_12": "fb05cc2a376a",
+    "why": "PAPER-22 (terminal, #248): the leak theorem, the two ceilings compared as objects, the one-way asymmetry, and the head clause FORCING-THE-CEILING=OPEN this unit inherits as its question."
+   },
+   {
+    "anchor": "A-P22REC",
+    "bytes": 167083,
+    "expected": "afa46ffaf651",
+    "matches": true,
+    "path": "v14/code/r4c_multi_receipt.json",
+    "sha256_12": "afa46ffaf651",
+    "why": "PAPER-22'S COMMITTED RECEIPT: the 48/16 leak split and the stage's 27 declaration keys, CITED from its own rows and never retyped."
+   },
+   {
+    "anchor": "A-P22SRC",
+    "bytes": 251794,
+    "expected": "f202cf185804",
+    "matches": true,
+    "path": "v14/code/r4c_multi_exact.py",
+    "sha256_12": "f202cf185804",
+    "why": "PAPER-22'S INSTRUMENT, read for its digest only: never imported and never executed."
+   },
+   {
+    "anchor": "A-W3",
+    "bytes": 57688,
+    "expected": "50bb81e67942",
+    "matches": true,
+    "path": "v14/paper-19-r3-weld.md",
+    "sha256_12": "50bb81e67942",
+    "why": "THE WELD (paper-19, terminal): the FORCED DICTIONARY and its fibers 1/1/1 -- the premise P1 asks about."
+   },
+   {
+    "anchor": "A-W3REC",
+    "bytes": 137192,
+    "expected": "dfea664f2408",
+    "matches": true,
+    "path": "v14/code/r3_weld_receipt.json",
+    "sha256_12": "dfea664f2408",
+    "why": "THE WELD'S COMMITTED RECEIPT: the arena's cells and incidences, read as data."
+   },
+   {
+    "anchor": "A-COUP",
+    "bytes": 55684,
+    "expected": "4824d190af73",
+    "matches": true,
+    "path": "v14/paper-20-coupling.md",
+    "sha256_12": "4824d190af73",
+    "why": "THE COUPLED MACHINE (paper-20, terminal): the walk, the coin family, the emission grammar and the law transport."
+   },
+   {
+    "anchor": "A-COUPREC",
+    "bytes": 157137,
+    "expected": "55273f6b6068",
+    "matches": true,
+    "path": "v14/code/coupling_receipt.json",
+    "sha256_12": "55273f6b6068",
+    "why": "THE COUPLED MACHINE'S COMMITTED RECEIPT: the carrier, the coin census and the arena rows this unit rebuilds and gates against."
+   },
+   {
+    "anchor": "A-COUPSRC",
+    "bytes": 268056,
+    "expected": "72e7b299f66e",
+    "matches": true,
+    "path": "v14/code/coupling_exact.py",
+    "sha256_12": "72e7b299f66e",
+    "why": "THE COUPLED MACHINE'S INSTRUMENT: read as TEXT for its own statement of what a cell is, and AST-parsed for its state-space construction. Never imported and never executed."
+   },
+   {
+    "anchor": "A-D42B1",
+    "bytes": 40884,
+    "expected": "576275d55ecf",
+    "matches": true,
+    "path": "v10/code/d42b1_transport_exact.py",
+    "sha256_12": "576275d55ecf",
+    "why": "THE COMMITTED TRANSPORT GRAMMAR: the division-event layer whose vocabulary premise P3 censuses."
+   },
+   {
+    "anchor": "A-D60",
+    "bytes": 24729,
+    "expected": "684cdb76552b",
+    "matches": true,
+    "path": "v10/code/d60_crystal_exact.py",
+    "sha256_12": "684cdb76552b",
+    "why": "D60: the committed builder the grammar runs on."
+   },
+   {
+    "anchor": "A-D66",
+    "bytes": 134508,
+    "expected": "3d0516ab106e",
+    "matches": true,
+    "path": "v10/code/d66_arbitration_crystal_exact.py",
+    "sha256_12": "3d0516ab106e",
+    "why": "D66: the committed conflict-grid constructor."
+   }
+  ]
+ },
+ "python": {
+  "version": "3.13"
+ },
+ "reachability": {
+  "dead_falsifiers": [],
+  "rows": [
+   {
+    "gate": "G-VERBATIM",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-VERBATIM"
+   },
+   {
+    "gate": "G-PATH-VALUES",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PATH-VALUE"
+   },
+   {
+    "gate": "G-P1-CARRIER",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-CARRIER-COUNT"
+   },
+   {
+    "gate": "G-P1-DICTIONARY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAIR-BIJECTION"
+   },
+   {
+    "gate": "G-P1-DICTIONARY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-VALENCE"
+   },
+   {
+    "gate": "G-POOL-REBUILT",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-POOL-CLASSES"
+   },
+   {
+    "gate": "G-POOL-UNITARY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-POOL-UNITARY"
+   },
+   {
+    "gate": "G-LEAK-THEOREM",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-LEAK-THEOREM"
+   },
+   {
+    "gate": "G-LEAK-ROUTES",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-LEAK-ROUTES"
+   },
+   {
+    "gate": "G-P2-NO-OCCUPANCY-KEY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-OCC-KEY"
+   },
+   {
+    "gate": "G-P2-HOMONYM",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-HOMONYM"
+   },
+   {
+    "gate": "G-P2-STATE-SPACE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-STATE-SPACE"
+   },
+   {
+    "gate": "G-P2-INVISIBLE-FROM-BELOW",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-FIBER"
+   },
+   {
+    "gate": "G-P2-TURNING",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-TURNING"
+   },
+   {
+    "gate": "G-P3-BLINDNESS",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-BLINDNESS"
+   },
+   {
+    "gate": "G-P3-COMPLETIONS",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-COMPLETIONS"
+   },
+   {
+    "gate": "G-P3-NEVER-REFUSED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-REFUSAL"
+   },
+   {
+    "gate": "G-P4-GRAIN-CENSUS",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-GRAIN-CENSUS"
+   },
+   {
+    "gate": "G-P4-SET-EQUALITY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-SET-EQUALITY"
+   },
+   {
+    "gate": "G-P4-SHAPES-COINCIDE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-SHAPES-COINCIDE"
+   },
+   {
+    "gate": "G-P4-PARENT-SPLIT",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PARENT-SPLIT"
+   },
+   {
+    "gate": "G-ARMS-REACHABILITY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-ARMS"
+   },
+   {
+    "gate": "G-CONTROL-TWO-WAY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-CONTROL"
+   },
+   {
+    "gate": "G-ASYMMETRY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-ASYMMETRY"
+   },
+   {
+    "gate": "G-DESCRIPTION-STAMPS",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-STAMPS"
+   },
+   {
+    "gate": "G-COUNTING-ONLY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-COUNTING"
+   },
+   {
+    "gate": "G-CHOICE-INVENTORY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-CHOICES"
+   },
+   {
+    "gate": "G-WALL-L1",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WALL-L1"
+   },
+   {
+    "gate": "G-WALL-BHS",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WALL-BHS"
+   },
+   {
+    "gate": "G-WALL-KR",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WALL-KR"
+   },
+   {
+    "gate": "G-WALL-COSMO",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WALL-COSMO"
+   },
+   {
+    "gate": "G-NO-PARTICLE-NAMING",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-WALL"
+   },
+   {
+    "gate": "G-VERDICT-RECONSTRUCTED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-VERDICT-WORD"
+   },
+   {
+    "gate": "G-VERDICT-RECONSTRUCTED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-VERDICT-VALUE"
+   },
+   {
+    "gate": "G-VERDICT-RECONSTRUCTED",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-VERDICT-CLAUSE"
+   },
+   {
+    "gate": "G-VERDICT-NO-TYPED-LITERAL",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-HEAD-LITERAL"
+   },
+   {
+    "gate": "G-PAPER-CLAIMS",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-CLAIM"
+   },
+   {
+    "gate": "G-PAPER-TABLES",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-TABLE"
+   },
+   {
+    "gate": "G-PAPER-NUMERAL-COVERAGE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-NUMERAL"
+   },
+   {
+    "gate": "G-PAPER-HEAD-VERBATIM",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-HEAD"
+   },
+   {
+    "gate": "G-PAPER-HEAD-VERBATIM",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-BLOCK"
+   },
+   {
+    "gate": "G-PAPER-CLAIM-POLARITY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-PAPER-POLARITY"
+   },
+   {
+    "gate": "G-CLI-WHITELIST",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-CLI-PERMISSIVE"
+   },
+   {
+    "gate": "G-SELFTEST-WRITES-NOTHING",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-SELFTEST-WRITES"
+   },
+   {
+    "gate": "G-MEMO-CLEAN",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-MEMO"
+   },
+   {
+    "gate": "G-FALSIFIER-HONESTY",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-FALSIFIER-DESC"
+   },
+   {
+    "gate": "G-WRITER-SHAPE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-WRITER-SHAPE"
+   },
+   {
+    "gate": "G-SWEEP-BOUND",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-SWEEP-UNBOUND"
+   },
+   {
+    "gate": "G-SEAL-COMPLETE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-SEAL-DROP"
+   },
+   {
+    "gate": "G-SEAL-COMPLETE",
+    "gate_evaluated_or_declared_later": true,
+    "gate_registered": true,
+    "mutant": "MUT-SEAL-BROKEN"
+   }
+  ]
+ },
+ "schema": {
+  "paper": "v14/paper-31-occ.md",
+  "question": "does any committed deeper layer FORCE the occupancy ceiling that selects statistics?",
+  "schema": "isp/v14/occ/1",
+  "unit": "OCC"
+ },
+ "seal_manifest": {
+  "declared_seals": [
+   "SEAL-SCHEMA",
+   "SEAL-PROVENANCE",
+   "SEAL-ARITHMETIC",
+   "SEAL-PYTHON",
+   "SEAL-OBJECT-READS",
+   "SEAL-VERBATIM",
+   "SEAL-PATH-VALUES",
+   "SEAL-ARENA",
+   "SEAL-P1",
+   "SEAL-POOL",
+   "SEAL-LEAKS",
+   "SEAL-P2",
+   "SEAL-P3",
+   "SEAL-P4",
+   "SEAL-SELECTION",
+   "SEAL-ARMS",
+   "SEAL-CONTROLS",
+   "SEAL-ASYMMETRY",
+   "SEAL-STAMPS",
+   "SEAL-COUNTING",
+   "SEAL-CHOICES",
+   "SEAL-WALLS",
+   "SEAL-MEMO",
+   "SEAL-VERDICT",
+   "SEAL-VERDICT-AUDIT",
+   "SEAL-COUNTS",
+   "SEAL-PAPER-CLAIMS",
+   "SEAL-PAPER-TABLES",
+   "SEAL-PAPER-COVERAGE",
+   "SEAL-POLARITY",
+   "SEAL-COVERAGE",
+   "SEAL-REACHABILITY",
+   "SEAL-WAIVERS",
+   "SEAL-MUTANTS",
+   "SEAL-WRITER-SHAPE",
+   "SEAL-MUTANT-SWEEP",
+   "SEAL-GATES",
+   "SEAL-CLOSING",
+   "SEAL-TOTALS",
+   "SEAL-TRANSCRIPT"
+  ],
+  "declared_unsealed": [
+   "seal_manifest",
+   "payload_sha256_12"
+  ],
+  "declared_unsealed_are_chained_on_read_back": true,
+  "declared_unsealed_carries_no_measurement": true,
+  "declared_unsealed_forcings": [
+   {
+    "forcing": "carries the seal rows themselves; sealing it would seal a digest of its own digest.  CHAINED: compared against SEAL.rows after read-back from disk.",
+    "key": "seal_manifest"
+   },
+   {
+    "forcing": "is the digest of the payload the seal closes over and is assigned after that close.  CHAINED: compared against SEAL.payload_sha after read-back.",
+    "key": "payload_sha256_12"
+   }
+  ],
+  "declared_unsealed_frozen": true,
+  "rows": [
+   {
+    "path": "schema",
+    "seal": "SEAL-SCHEMA",
+    "sealed_at_gate": "G-PROVENANCE",
+    "sha256_12": "da34680d0c10"
+   },
+   {
+    "path": "provenance",
+    "seal": "SEAL-PROVENANCE",
+    "sealed_at_gate": "G-PROVENANCE",
+    "sha256_12": "d0210d6ca9db"
+   },
+   {
+    "path": "arithmetic",
+    "seal": "SEAL-ARITHMETIC",
+    "sealed_at_gate": "G-EXACT-ARITHMETIC",
+    "sha256_12": "f3be6e749c83"
+   },
+   {
+    "path": "python",
+    "seal": "SEAL-PYTHON",
+    "sealed_at_gate": "G-EXACT-ARITHMETIC",
+    "sha256_12": "c3ccdbd2792b"
+   },
+   {
+    "path": "object_reads",
+    "seal": "SEAL-OBJECT-READS",
+    "sealed_at_gate": "G-READS-DECLARED",
+    "sha256_12": "fd5f06cbeab4"
+   },
+   {
+    "path": "verbatim_anchors",
+    "seal": "SEAL-VERBATIM",
+    "sealed_at_gate": "G-VERBATIM",
+    "sha256_12": "6494a6f74ac6"
+   },
+   {
+    "path": "path_value_anchors",
+    "seal": "SEAL-PATH-VALUES",
+    "sealed_at_gate": "G-PATH-VALUES",
+    "sha256_12": "9660687961ef"
+   },
+   {
+    "path": "memo",
+    "seal": "SEAL-MEMO",
+    "sealed_at_gate": "G-MEMO-CLEAN",
+    "sha256_12": "52019db0914d"
+   },
+   {
+    "path": "arena",
+    "seal": "SEAL-ARENA",
+    "sealed_at_gate": "G-P1-CARRIER",
+    "sha256_12": "488783cdec5f"
+   },
+   {
+    "path": "p1",
+    "seal": "SEAL-P1",
+    "sealed_at_gate": "G-P1-DICTIONARY",
+    "sha256_12": "d50b73fcb818"
+   },
+   {
+    "path": "pool",
+    "seal": "SEAL-POOL",
+    "sealed_at_gate": "G-POOL-UNITARY",
+    "sha256_12": "bf68334120ce"
+   },
+   {
+    "path": "leaks",
+    "seal": "SEAL-LEAKS",
+    "sealed_at_gate": "G-LEAK-ROUTES",
+    "sha256_12": "e98b0fce8a27"
+   },
+   {
+    "path": "p2",
+    "seal": "SEAL-P2",
+    "sealed_at_gate": "G-P2-TURNING",
+    "sha256_12": "4aa58343b8eb"
+   },
+   {
+    "path": "p3",
+    "seal": "SEAL-P3",
+    "sealed_at_gate": "G-P3-NEVER-REFUSED",
+    "sha256_12": "42bd0bf1e7aa"
+   },
+   {
+    "path": "selection",
+    "seal": "SEAL-SELECTION",
+    "sealed_at_gate": "G-P4-GRAIN-CENSUS",
+    "sha256_12": "ea92fc9e42e3"
+   },
+   {
+    "path": "p4",
+    "seal": "SEAL-P4",
+    "sealed_at_gate": "G-P4-PARENT-SPLIT",
+    "sha256_12": "4d985f12226e"
+   },
+   {
+    "path": "arms",
+    "seal": "SEAL-ARMS",
+    "sealed_at_gate": "G-ARMS-REACHABILITY",
+    "sha256_12": "09a679752f6f"
+   },
+   {
+    "path": "controls",
+    "seal": "SEAL-CONTROLS",
+    "sealed_at_gate": "G-CONTROL-TWO-WAY",
+    "sha256_12": "514ad590d57c"
+   },
+   {
+    "path": "asymmetry",
+    "seal": "SEAL-ASYMMETRY",
+    "sealed_at_gate": "G-ASYMMETRY",
+    "sha256_12": "6e6c714c7017"
+   },
+   {
+    "path": "description_stamps",
+    "seal": "SEAL-STAMPS",
+    "sealed_at_gate": "G-DESCRIPTION-STAMPS",
+    "sha256_12": "3afd81c2506e"
+   },
+   {
+    "path": "counting_only",
+    "seal": "SEAL-COUNTING",
+    "sealed_at_gate": "G-COUNTING-ONLY",
+    "sha256_12": "08d09a778f29"
+   },
+   {
+    "path": "choice_inventory",
+    "seal": "SEAL-CHOICES",
+    "sealed_at_gate": "G-CHOICE-INVENTORY",
+    "sha256_12": "945d69782247"
+   },
+   {
+    "path": "verdict",
+    "seal": "SEAL-VERDICT",
+    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+    "sha256_12": "625684974701"
+   },
+   {
+    "path": "verdict_audit",
+    "seal": "SEAL-VERDICT-AUDIT",
+    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+    "sha256_12": "778aa5c3d7ea"
+   },
+   {
+    "path": "counts",
+    "seal": "SEAL-COUNTS",
+    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+    "sha256_12": "50d978a11963"
+   },
+   {
+    "path": "paper_claims",
+    "seal": "SEAL-PAPER-CLAIMS",
+    "sealed_at_gate": "G-PAPER-CLAIMS",
+    "sha256_12": "c238dc4da2c1"
+   },
+   {
+    "path": "paper_tables",
+    "seal": "SEAL-PAPER-TABLES",
+    "sealed_at_gate": "G-PAPER-TABLES",
+    "sha256_12": "4abea9354565"
+   },
+   {
+    "path": "paper_coverage",
+    "seal": "SEAL-PAPER-COVERAGE",
+    "sealed_at_gate": "G-PAPER-HEAD-VERBATIM",
+    "sha256_12": "bcd48e99d3e5"
+   },
+   {
+    "path": "polarity",
+    "seal": "SEAL-POLARITY",
+    "sealed_at_gate": "G-PAPER-CLAIM-POLARITY",
+    "sha256_12": "719d4cc41a2d"
+   },
+   {
+    "path": "walls",
+    "seal": "SEAL-WALLS",
+    "sealed_at_gate": "G-NO-PARTICLE-NAMING",
+    "sha256_12": "3e6c44365969"
+   },
+   {
+    "path": "coverage",
+    "seal": "SEAL-COVERAGE",
+    "sealed_at_gate": "G-COVERAGE",
+    "sha256_12": "ca3855dc0ab9"
+   },
+   {
+    "path": "waiver_ledger",
+    "seal": "SEAL-WAIVERS",
+    "sealed_at_gate": "G-COVERAGE",
+    "sha256_12": "142286f04dee"
+   },
+   {
+    "path": "mutants",
+    "seal": "SEAL-MUTANTS",
+    "sealed_at_gate": "G-FALSIFIER-HONESTY",
+    "sha256_12": "48152a935546"
+   },
+   {
+    "path": "writer_shape",
+    "seal": "SEAL-WRITER-SHAPE",
+    "sealed_at_gate": "G-WRITER-SHAPE",
+    "sha256_12": "907f3a346e20"
+   },
+   {
+    "path": "mutant_sweep",
+    "seal": "SEAL-MUTANT-SWEEP",
+    "sealed_at_gate": "G-SWEEP-BOUND",
+    "sha256_12": "23260cccfe1b"
+   },
+   {
+    "path": "reachability",
+    "seal": "SEAL-REACHABILITY",
+    "sealed_at_gate": "G-REACHABILITY",
+    "sha256_12": "1ae4ea4158d2"
+   },
+   {
+    "path": "gates",
+    "seal": "SEAL-GATES",
+    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+    "sha256_12": "388895dde84b"
+   },
+   {
+    "path": "closing_gates",
+    "seal": "SEAL-CLOSING",
+    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+    "sha256_12": "0aa405937de4"
+   },
+   {
+    "path": "totals",
+    "seal": "SEAL-TOTALS",
+    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+    "sha256_12": "5e2ff498386d"
+   },
+   {
+    "path": "transcript_head",
+    "seal": "SEAL-TRANSCRIPT",
+    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
+    "sha256_12": "c46e9521d53b"
+   }
+  ]
+ },
+ "selection": [
+  {
+   "coin": "K-2-1w",
+   "declaration": "D-CARRIER-2",
+   "no_shape_closes": false,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": [
+    "ANTISYMMETRIC",
+    "SYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K-2-1w",
+   "declaration": "D-CARRIER-1",
+   "no_shape_closes": false,
+   "selected": "ANTISYMMETRIC",
+   "selects": true,
+   "shapes_closed": [
+    "ANTISYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K-2-1w",
+   "declaration": "D-ACTOR-1",
+   "no_shape_closes": true,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": []
+  },
+  {
+   "coin": "K-2-1w",
+   "declaration": "D-ACTOR-2",
+   "no_shape_closes": false,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": [
+    "ANTISYMMETRIC",
+    "SYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K-2+0w",
+   "declaration": "D-CARRIER-2",
+   "no_shape_closes": false,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": [
+    "ANTISYMMETRIC",
+    "SYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K-2+0w",
+   "declaration": "D-CARRIER-1",
+   "no_shape_closes": false,
+   "selected": "ANTISYMMETRIC",
+   "selects": true,
+   "shapes_closed": [
+    "ANTISYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K-2+0w",
+   "declaration": "D-ACTOR-1",
+   "no_shape_closes": true,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": []
+  },
+  {
+   "coin": "K-2+0w",
+   "declaration": "D-ACTOR-2",
+   "no_shape_closes": false,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": [
+    "ANTISYMMETRIC",
+    "SYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K-1-1w",
+   "declaration": "D-CARRIER-2",
+   "no_shape_closes": false,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": [
+    "ANTISYMMETRIC",
+    "SYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K-1-1w",
+   "declaration": "D-CARRIER-1",
+   "no_shape_closes": false,
+   "selected": "ANTISYMMETRIC",
+   "selects": true,
+   "shapes_closed": [
+    "ANTISYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K-1-1w",
+   "declaration": "D-ACTOR-1",
+   "no_shape_closes": true,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": []
+  },
+  {
+   "coin": "K-1-1w",
+   "declaration": "D-ACTOR-2",
+   "no_shape_closes": false,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": [
+    "ANTISYMMETRIC",
+    "SYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K-1+1w",
+   "declaration": "D-CARRIER-2",
+   "no_shape_closes": false,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": [
+    "ANTISYMMETRIC",
+    "SYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K-1+1w",
+   "declaration": "D-CARRIER-1",
+   "no_shape_closes": false,
+   "selected": "ANTISYMMETRIC",
+   "selects": true,
+   "shapes_closed": [
+    "ANTISYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K-1+1w",
+   "declaration": "D-ACTOR-1",
+   "no_shape_closes": true,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": []
+  },
+  {
+   "coin": "K-1+1w",
+   "declaration": "D-ACTOR-2",
+   "no_shape_closes": false,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": [
+    "ANTISYMMETRIC",
+    "SYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K+0+0w",
+   "declaration": "D-CARRIER-2",
+   "no_shape_closes": false,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": [
+    "ANTISYMMETRIC",
+    "SYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K+0+0w",
+   "declaration": "D-CARRIER-1",
+   "no_shape_closes": false,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": [
+    "ANTISYMMETRIC",
+    "SYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K+0+0w",
+   "declaration": "D-ACTOR-1",
+   "no_shape_closes": true,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": []
+  },
+  {
+   "coin": "K+0+0w",
+   "declaration": "D-ACTOR-2",
+   "no_shape_closes": false,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": [
+    "ANTISYMMETRIC",
+    "SYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K+0+1w",
+   "declaration": "D-CARRIER-2",
+   "no_shape_closes": false,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": [
+    "ANTISYMMETRIC",
+    "SYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K+0+1w",
+   "declaration": "D-CARRIER-1",
+   "no_shape_closes": false,
+   "selected": "ANTISYMMETRIC",
+   "selects": true,
+   "shapes_closed": [
+    "ANTISYMMETRIC"
+   ]
+  },
+  {
+   "coin": "K+0+1w",
+   "declaration": "D-ACTOR-1",
+   "no_shape_closes": true,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": []
+  },
+  {
+   "coin": "K+0+1w",
+   "declaration": "D-ACTOR-2",
+   "no_shape_closes": false,
+   "selected": null,
+   "selects": false,
+   "shapes_closed": [
+    "ANTISYMMETRIC",
+    "SYMMETRIC"
+   ]
+  }
+ ],
+ "totals": {
+  "arms": 6,
+  "coins": 6,
+  "declarations": 4,
+  "declared_unsealed": 2,
+  "gates_after_the_snapshot": 2,
+  "gates_evaluated_before_the_snapshot": 54,
+  "gates_in_the_registry": 56,
+  "leak_rows": 48,
+  "mutants": 50,
+  "path_value_anchors": 16,
+  "seals": 40,
+  "sources": 12,
+  "verbatim_anchors": 8,
+  "waivers": 11
+ },
+ "transcript_head": [
+  "==============================================================================",
+  "OCC -- THE OCCUPANCY-CEILING FORCING UNIT",
+  "==============================================================================",
+  "  [PASS] G-PROVENANCE",
+  "         the 12 declared sources are read at run time by path resolved from this file's own location and verified by sha256-12; a corrupted anchor kills the run here and --break-anchor NAME exercises exactly that",
+  "         evidence: anchors not matching: none",
+  "  [PASS] G-EXACT-ARITHMETIC",
+  "         an AST scan of this file finds no float literal and no call to float(): every amplitude is an integer pair over Z[w] and every ratio is a Fraction",
+  "         evidence: float literals none, float() calls none",
+  "  [PASS] G-NO-SUBPROCESS",
+  "         no subprocess, socket or version-control call of any kind: the scan reads imports AND attribute names, so the run is correct off-tree and on a machine with no git",
+  "         evidence: forbidden names: none",
+  "  [PASS] G-READS-DECLARED",
+  "         the read set is exactly the declared set: 12 pinned sources by path and hash, plus the SECOND declared set -- this file and the object under test -- which is named here rather than left out of the accounting",
+  "         evidence: declared 12, read 12, difference none",
+  "  [PASS] G-VERBATIM",
+  "         #62 with #125's normalisation: 8 verbatim anchors are located in their pinned sources after markdown-prefix stripping, ASCII folding and whitespace normalisation, and each is PERTURBED at a content-bearing token and required not to locate, so every row carries its own falsifier",
+  "         evidence: anchors failing: none",
+  "  [PASS] G-PATH-VALUES",
+  "         #91's path-value stability: 16 values are READ OUT of the parents' own committed receipts at declared json paths and each is consumed by a named gate -- the carrier, the links, the realised co-division pairs, the coin census, and paper-22's own occupancy rows",
+  "         evidence: path values failing: none",
+  "  [PASS] G-QUESTION-ANCHORED",
+  "         the question and its four pre-registered outcome words are read from the PIN's own bytes rather than typed here, and paper-22's head clause FORCING-THE-CEILING=OPEN together with its measured ceiling_is_anchored = false are what makes this unit's question a live one",
+  "         evidence: outcome words located in the pin: 4 of 4; the parent's ceiling_is_anchored is False",
+  "  [PASS] G-MEMO-CLEAN",
+  "         the heavy census is built once and handed back as a DEFENSIVE COPY, and its whole contents are fingerprinted at creation and re-checked on every hand-back, so no injection -- this run's or an earlier run's -- can reach the next run through it.  The falsifiers act on the GATE layer above it, which is what makes the mutant sweep a sequence of independent runs",
+  "         evidence: fingerprint 67c105ad4f82, builds 1, hits 0",
+  "  [PASS] G-P1-CARRIER",
+  "         THE ARENA THE EXCITATIONS USE, REBUILT AND GATED AGAINST THE COUPLED MACHINE'S OWN RECEIPT.  The coupled machine's state is a vector on its 27 cells; this unit rebuilds the carrier from the 9 actors and the 3 declared link directions and compares the rebuild with the committed receipt's own arena rows",
+  "         evidence: rebuilt carrier 27 against the receipt's 27; actors 9 against 9; links [[1, 0], [0, 1], [1, 1]]",
+  "  [PASS] G-P1-DICTIONARY",
+  "         P1, MEASURED ON THE ARENA THE EXCITATIONS USE.  The weld's forced dictionary has two legs.  ACTOR->SITE is a bijection at 9 of 9 -- and it covers 9 of the 27 objects the excitation's own coordinate ranges over.  The leg that welds THAT set is the second one: a cell IS an unordered co-division pair of actors, and the rebuilt map between them is a bijection in both directions.  The incidence is measured per object: every cell carries exactly two actors at 27 of 27 and every actor lies in exactly six cells at 9 of 9, so the excitation-to-actor relation is NOT A FUNCTION and the seed conditional's injection premise is not a statement about this carrier",
+  "         evidence: pair bijection True; incidence rows True; ACTOR->SITE bijection True; excitation->actor is a function False",
+  "  [PASS] G-POOL-REBUILT",
+  "         THE POOL IS THIS ARENA'S OWN.  The S_3-covariant unitary coins over the arena's own 37-value alphabet (1/3)Z[w] are rebuilt from the definitions -- not imported -- and the census is gated against the coupled machine's committed one: 36 solutions, 6 classes up to a global phase, of which 1 is +/- Grover",
+  "         evidence: classes 6, ring solutions 36, grover classes 1, alphabet 37 -- all against the committed receipt",
+  "  [PASS] G-POOL-UNITARY",
+  "         every walk operator in the pool is EXACTLY unitary, checked per COLUMN PAIR rather than by a norm: 6 operators, 729 column pairs each, over Z[w] at the common denominator 3",
+  "         evidence: unitarity violations across the pool: 0",
+  "  [PASS] G-LEAK-THEOREM"
+ ],
+ "verbatim_anchors": [
+  {
+   "chars": 95,
+   "consumer": "G-QUESTION-ANCHORED",
+   "id": "VB-SEED",
+   "located": true,
+   "perturbed_needle_absent": true,
+   "source": "A-PIN"
+  },
+  {
+   "chars": 47,
+   "consumer": "G-P2-TURNING",
+   "id": "VB-TURN",
+   "located": true,
+   "perturbed_needle_absent": true,
+   "source": "A-PIN"
+  },
+  {
+   "chars": 24,
+   "consumer": "G-QUESTION-ANCHORED",
+   "id": "VB-OPEN",
+   "located": true,
+   "perturbed_needle_absent": true,
+   "source": "A-P22"
+  },
+  {
+   "chars": 48,
+   "consumer": "G-ASYMMETRY",
+   "id": "VB-ASYM",
+   "located": true,
+   "perturbed_needle_absent": true,
+   "source": "A-P22"
+  },
+  {
+   "chars": 116,
+   "consumer": "G-LEAK-THEOREM",
+   "id": "VB-LEAK",
+   "located": true,
+   "perturbed_needle_absent": true,
+   "source": "A-P22"
+  },
+  {
+   "chars": 77,
+   "consumer": "G-P1-DICTIONARY",
+   "id": "VB-DICT",
+   "located": true,
+   "perturbed_needle_absent": true,
+   "source": "A-W3"
+  },
+  {
+   "chars": 97,
+   "consumer": "G-P1-CARRIER",
+   "id": "VB-CELL",
+   "located": true,
+   "perturbed_needle_absent": true,
+   "source": "A-COUPSRC"
+  },
+  {
+   "chars": 58,
+   "consumer": "G-P2-STATE-SPACE",
+   "id": "VB-RESIDUE",
+   "located": true,
+   "perturbed_needle_absent": true,
+   "source": "A-COUP"
+  }
+ ],
+ "verdict": {
+  "OCC-CARRIER": "OCC-CARRIER<THESIS=THE-EXCITATION-RIDES-THE-CO-DIVISION-PAIR-NOT-THE-ACTOR; CARRIER-CELLS=27; CO-DIVISION-PAIRS=27; CELL-IS-A-CO-DIVISION-PAIR=YES; ACTOR-SITE-BIJECTION=9-OF-9; ACTOR-LEG-COVERS-OF-THE-CARRIER=9-OF-27; CELLS-WITH-EXACTLY-TWO-ACTORS=27-OF-27; ACTORS-IN-EXACTLY-SIX-CELLS=9-OF-9; EXCITATION-TO-ACTOR-IS-A-FUNCTION=NO; P1=HOLDS-ON-THE-PAIR-LEG>",
+  "OCC-CEILING-OPEN": "OCC-CEILING-OPEN<P1=HOLDS-ON-THE-PAIR-LEG; P2=NOT-AVAILABLE; P2-NAMES-CENSUSED=4945; P2-OCCUPANCY-SHAPED-NAMES=0; P2-DECLARATION-FIBER=3-OF-4; P2-ONE-EXCITATION-RESTRICTIONS-AGREE=53460-OF-53460; P3=SILENT-AND-VACUOUSLY-SATISFIED; P3-BLINDNESS-PAIR-SITE-FIELDS-AGREE=9-OF-9; P3-COMPLETIONS-PRESERVING-THE-PARENT-IDENTITY=2-OF-3; P3-COMPLETIONS-THAT-REFUSE-A-DIVISION=0-OF-3; P4=NO-SHAPE-CLOSES; ASYMMETRY-PERMISSION-ROWS-THAT-SELECT=0-OF-12; ASYMMETRY-EXCLUSION-ROWS-THAT-SELECT=5-OF-12; ASYMMETRY-AT-THE-ACTOR-GRAIN=0-OF-6; ARMS=4-OF-6; CONTROL-CAN-FIRE=C1-SUBSET-CARRIER; CONTROL-CAN-FAIL=C2-MULTISET-CARRIER; FIBER-PRICED=4-DECLARATIONS-3-THEORIES-3-EMISSION-COMPLETIONS; SCOPE=TWO-EXCITATIONS-ONLY;ONE-RECORD;THE-WELDED-LANDING-RECORD;SHAPE-WORDS-ONLY;NO-PARTICLE-CLAIM;NO-BRAID-CLAIM;NO-GENERAL-N-CLAIM;NO-CONFIGURATION-MEASURE;COUNTS-ARE-COUNTING-ONLY;NO-CONTINUUM-CLAIM;THE-CEILING-IS-NOT-DECLARED-BY-THIS-UNIT-EITHER>",
+  "OCC-POOL-AND-GRAIN": "OCC-POOL-AND-GRAIN<THESIS=EXCLUSION-SELECTS-ONLY-AT-THE-CARRIER-S-OWN-GRAIN; COIN-CLASSES=6; RING-SOLUTIONS=36; NON-MONOMIAL-COINS=5-OF-6; CARRIER-GRAIN-SYMMETRIC-LEAK-CELLS=81; CARRIER-GRAIN-COINS-LEAKING=5-OF-6; CARRIER-GRAIN-ANTISYMMETRIC-LEAK-CELLS=0; CARRIER-GRAIN-LEAK-SOURCES-ARE-THE-SAME-ACTOR-CONFIGURATIONS=5-OF-5; ACTOR-GRAIN-COINS-WHERE-BOTH-SHAPES-LEAK=6-OF-6; ACTOR-GRAIN-LEAK-CELLS-NON-MONOMIAL=864; ACTOR-GRAIN-LEAK-CELLS-MONOMIAL=81; ACTOR-GRAIN-SHAPE-LEAK-SETS-COINCIDE=6-OF-6; ACTOR-GRAIN-CANCELLATION-CELLS=0; ACTOR-GRAIN-SOURCES-LEAKING=216-OF-216; ACTOR-GRAIN-TARGETS-REACHED=135-OF-135; LEAK-ROUTES-AGREE=48-OF-48; PARENT-SPLIT-CITED=48-OF-64>"
+ },
+ "verdict_audit": {
+  "field_mismatches": [],
+  "fields_checked": 46,
+  "outcome_word_rederived": "OCC-CEILING-OPEN",
+  "segments_parsed": [
+   "OCC-CARRIER",
+   "OCC-CEILING-OPEN",
+   "OCC-POOL-AND-GRAIN"
+  ]
+ },
+ "waiver_ledger": [
+  {
+   "class": "STRUCTURAL",
+   "gate": "G-ANCHOR-CONSUMERS",
+   "reason": "the gate compares two registries this file owns; a mutant on it would move the accounting rather than a measurement"
+  },
+  {
+   "class": "EXERCISED-IN-RUN-AND-GUARDED-BY-THE-WRITER-SHAPE",
+   "gate": "G-ARTIFACT-INTEGRITY",
+   "reason": "a mutant on this gate is UNREACHABLE by construction -- run_mutant calls finish(write=False), which returns before it -- so the waiver states the two things that do guard it.  (i) EXERCISED: the run corrupts a read-back copy of EVERY sealed row in turn and requires each corruption to be detected before the real artifacts are compared.  (ii) EXISTENCE: G-WRITER-SHAPE reads this file's AST BEFORE the gate ledger is snapshotted and publishes the gate names finish() calls together with the line of every os.replace, so dropping or renaming this gate, or lifting a write above it, moves a SEALED published value"
+  },
+  {
+   "class": "SELF-REFERENTIAL",
+   "gate": "G-COVERAGE",
+   "reason": "the gate IS the coverage ledger"
+  },
+  {
+   "class": "SELF-SCANNING",
+   "gate": "G-EXACT-ARITHMETIC",
+   "reason": "the gate parses this file; a float literal introduced anywhere in it fails the gate by construction"
+  },
+  {
+   "class": "SELF-REFERENTIAL",
+   "gate": "G-MUTANTS-ON-TARGET",
+   "reason": "the gate IS the mutant sweep"
+  },
+  {
+   "class": "SELF-SCANNING",
+   "gate": "G-NO-SUBPROCESS",
+   "reason": "the same, over this file's own imports and attribute names"
+  },
+  {
+   "class": "AGGREGATE",
+   "gate": "G-PAPER-COVERAGE-FINAL",
+   "reason": "it closes over gates each of which is separately falsified"
+  },
+  {
+   "class": "FALSIFIED-BY-A-FLAG",
+   "gate": "G-PROVENANCE",
+   "reason": "--break-anchor NAME corrupts any source's expected digest and the run dies here; a mutant would be a second, weaker copy of the same falsifier"
+  },
+  {
+   "class": "SOURCE-FORCED",
+   "gate": "G-QUESTION-ANCHORED",
+   "reason": "its two legs are the pin's own bytes and a committed receipt value; corrupting either corrupts a pinned source and dies at G-PROVENANCE first"
+  },
+  {
+   "class": "SELF-REFERENTIAL",
+   "gate": "G-REACHABILITY",
+   "reason": "the same"
+  },
+  {
+   "class": "STRUCTURAL",
+   "gate": "G-READS-DECLARED",
+   "reason": "the read list is appended by read_bytes, the only reader of a SOURCE in this file; the second reader, read_text, reads only the two files of the declared OBJECT set, which this same gate names and binds"
+  }
+ ],
+ "walls": {
+  "banned_words": [
+   "fermion",
+   "fermions",
+   "fermionic",
+   "boson",
+   "bosons",
+   "bosonic",
+   "anyon",
+   "anyons",
+   "anyonic",
+   "parastatistics",
+   "spin",
+   "spins",
+   "electron",
+   "electrons",
+   "photon",
+   "photons",
+   "quark",
+   "quarks",
+   "atom",
+   "atoms",
+   "molecule",
+   "molecules",
+   "particle",
+   "particles"
+  ],
+  "banned_words_found": [],
+  "licensed_compounds": [
+   "fermionic-shape",
+   "bosonic-shape",
+   "no-particle",
+   "particle-shaped"
+  ],
+  "measurement_layer_chars": 34564,
+  "rows": [
+   {
+    "abstention": "L-1's fourth form is not tested here and no order-level covariance claim is made",
+    "gate": "G-WALL-L1",
+    "needle": "order-level covariance is established",
+    "present_in_the_measurement_layer": false
+   },
+   {
+    "abstention": "no sprinkling-grade or BHS-class reading is taken",
+    "gate": "G-WALL-BHS",
+    "needle": "boosted rest frame",
+    "present_in_the_measurement_layer": false
+   },
+   {
+    "abstention": "no dimension estimator and no height control is owed",
+    "gate": "G-WALL-KR",
+    "needle": "myrheim-meyer",
+    "present_in_the_measurement_layer": false
+   },
+   {
+    "abstention": "no continuum, cosmological or infinite-volume reading is taken",
+    "gate": "G-WALL-COSMO",
+    "needle": "cosmological expansion",
+    "present_in_the_measurement_layer": false
+   }
+  ]
+ },
+ "writer_shape": {
+  "every_replace_after_the_terminal_gate": true,
+  "finish_found": true,
+  "gate_names_in_finish": [
+   "G-COVERAGE",
+   "G-FALSIFIER-HONESTY",
+   "G-WRITER-SHAPE",
+   "G-SWEEP-BOUND",
+   "G-ANCHOR-CONSUMERS",
+   "G-REACHABILITY",
+   "G-PAPER-COVERAGE-FINAL",
+   "G-SEAL-COMPLETE",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "os_replace_calls": 2,
+  "terminal_gate": "G-ARTIFACT-INTEGRITY",
+  "terminal_gate_present_exactly_once": true
+ }
+}
