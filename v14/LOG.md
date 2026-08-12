@@ -9815,3 +9815,31 @@ shows only the four ACT files (plus the live PER-R
 worker's and FAC's own deliverables).  Restoration
 CONFIRMED.**  Orchestrator battery launches next; terminal
 seal on green.
+
+## 2026-08-12 — ACT IS TERMINAL: TWENTY-EIGHT — THE ACTION IS FORM-RELATIVE, THE COUPLING INVENTORY IS 135, THE PRICE REDUCED-NOT-EVADED, THE ACTION-ROUTE PINNING STANDS WITH ITS LATTICE LAW; POT UNLOCKS (v14 LEDGER #307)
+
+**Orchestrator battery on the repaired object, ALL GREEN:**
+plain run from deleted artifacts byte-identical vs
+committed; byte-stable ×2; PYTHONHASHSEED=86420
+seed-invariant; unknown flag exit 2; selftest FATAL AT
+EVERY ANCHOR CLASS (FILE-BYTES/PATH-VALUE/VERBATIM) writing
+nothing; registry-named MUT-ARENA died at G-ARENA-REBUILT
+DEAD-ON-TARGET; unknown mutant exit 2; artifacts untouched.
+
+**THE TERMINAL PICTURE.**  The QCD funnel's first rung is
+sealed: this universe's gauge action is NOT forced — the
+symmetry-allowed space is a 135-coupling family at the link
+grain (dimension grain-invariant, reachable set not), the
+gravitational price is reduced-not-evaded (207→135, the
+deficit a prohibition carried by the odd twist), the Wilson
+form is a member-not-chosen (and only its
+conjugation-symmetric part), and every admissible action
+pins the off-diagonal quartic sign to exactly 0 — a
+family-invariant prediction whose lattice scope is now a
+measured law (8/gcd(L,8); dead at L ≡ 0 mod 8).  **The
+confinement gate — unaskable since paper-23 — becomes
+askable: POT pins next.**  STATUS row appended in this
+commit; memory sealed next.
+
+**Programme count: TWENTY-EIGHT terminals; zero false
+computed numbers surviving anywhere in v14.**
