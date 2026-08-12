@@ -10109,3 +10109,63 @@ no sentence asserts or denies that actors are threads; the
 exact licensed replacement paragraph supplied with the
 width-vs-span correction.  **K1/K3 still out; adjudication
 after all three.**
+
+## 2026-08-12 — SEC K2 (EFFECTUS SEAT) FROZEN: AWF AT THE TOP OF ITS BAND; ZERO FALSE NUMBERS IN 546 RECOMPUTATIONS; ELEVEN MAJORS — THE LEAK CLAIM RULED BACKWARDS (SEAM-CONFINED, NOT A LEAK); THE ARENA COUNT 12-NOT-16; ALL FOUR HEAD SEGMENTS CARRY REPAIR ORDERS (v14 LEDGER #314)
+
+**Review:** v14/review-sec-effectus.md (244c74bb38e2, 959
+lines), sole write; all object hashes verified unchanged.
+**Grade AWF at the top of its severity band.**  546
+published quantities recomputed from own primitives + 2
+exhaustive 45,010-gluing sweeps + 125 records re-driven;
+ZERO published numbers false (the 16-row census, all 16
+automorphism orders — 8 re-derived a third time by hand as
+wreath orders — all three seam systems, 4,186/45,010,
+3,359,232 = 1296²×2).  The arithmetic is clean; the reading
+layer is not.
+
+**THE FIVE DECISIVE MAJORS:**
+1. **THE LEAK CLAIM IS BACKWARDS.**  "A sector's own
+   geometry is changed by an event in the other sector" —
+   measured: every differing cell has BOTH endpoints
+   shared, at 16 of 16 types; **0 pairs carrying count ≠ 1
+   touch an unshared actor at any type.  No sector-private
+   link ever moves.**  Repaired, the finding becomes a
+   COMPOSITIONALITY statement (SEAM-CONFINED): the union
+   changes geometry only on links both sectors own.  The
+   TEST-DECLARATION DUTY is undischarged (0 occurrences of
+   transported/fixed-attribution language).  [Candidate —
+   one seat; the orchestrator's relays of "gluing leaks"
+   stand to be corrected at adjudication if confirmed.]
+2. **A free item moves a head number's referent:** the
+   first-rule FORCED/REFUSED fate is NOT a property of the
+   type (window rep FORCED with 17 of 25 siblings REFUSING
+   at one type; 21 of 25 at another); "REFUSED 6 OF 16" is
+   6 of 16 CHOSEN GLUINGS, not types.
+3. **EXT-INCIDENCE-REPAIRS-EVERY-TYPE has nothing behind
+   it:** fates identical to EXT-PAIR at all 32 rows;
+   §4.3's stated mechanism ("the induced field becomes
+   identically 1") CONTRADICTED by the run's own receipt
+   (field_values [1,2] on those rows).
+4. **The selector was only half multi-way:** segment 2
+   genuinely comparator-derived; segment 4's
+   TYPE-SELECTED-NOT-k-SELECTED is a TYPED LITERAL — the
+   declination of SEC-K-SELECTED asserted, not measured
+   (though the FINDING that k does not select is verified:
+   the alignment criterion at 0 mismatches over all
+   45,010).
+5. **The exhaustiveness licence is ungated and the arena
+   count is wrong: the 45,010 gluings collapse onto 12
+   union arenas, not 16** — four A↔B mirror pairs, visible
+   in the delivered census's own identical rows.  (The
+   seat verified the arena-function-of-type claim IS true —
+   WL-constant over all 45,010, constructive at 210/210 —
+   but the instrument never makes the check.)
+
+Plus six further majors and the minors, each with exact
+liftable licensed sentences.  **SURVIVES UNAMENDED:** "the
+direct sum is a declaration, not a measurement" — licensed
+exactly as written and STRONGER than the paper knows (rank
+6 / kernel 4 verified at all 39 shared sites,
+count-independent); the NAMED-AND-NOT-READ paragraph; the
+alignment criterion; k-does-not-select as a finding.
+**K1/K3 still out; adjudication after all three.**
