@@ -9237,3 +9237,69 @@ half-closed.  Ownership: the #270 advisory's
 insufficiency; the pin's unregistered class predicates —
 engraved for future ladder pins.  **The repair worker
 launches next.**
+
+## 2026-08-12 — ACT K2 (EFFECTUS SEAT) FROZEN: AWF; ZERO FALSE NUMBERS (119 EXACT RECOMPUTATIONS); TEN MAJORS — THE SELECTOR PIGEONHOLE-DECIDED BEFORE THE RUN, THE MECHANISM L=4-CONTINGENT UNDISCLOSED, THE PIN-WORDED FALSIFIER NOT-HIT AT 12/12 (v14 LEDGER #296)
+
+**Review:** v14/review-act-effectus.md (bdc9b01a354b, 879
+lines), sole write; five object hashes + all ten
+inheritance digests verified unchanged at close.  **Grade
+AWF.**  179 checks, 119 exact recomputations, ZERO false
+computed numbers — both non-null expectations rebuilt from
+scratch (4294967399/4294967375 and 262244/65615 recovered
+exactly).  Eight prose defects, zero numerical ones.
+
+**THE TWO STRUCTURAL MAJORS:**
+1. **The selector was not multi-way AT THIS ARENA:** by
+   pigeonhole (|datum|/|G|) the smallest orbit count any
+   declared row can produce is 40 — ACT-FORM-FORCED
+   (orbits=1) was impossible BEFORE the run; ACT-GIBBS
+   needs transitivity on 640 coins under a group of order
+   8/16 — impossible; ACT-BLOCKED fires only on instrument
+   fault.  ONE OUTCOME WAS LIVE FROM THE MOMENT THE ARENA
+   WAS DECLARED.  The control arm forges rows
+   (coupling_count=0 injected into the head law) where
+   paper-23's precedent prices a SYNTHETIC ARENA through
+   the REAL pricing function.  Cheap repair: the 19-coin
+   reduced-arena machinery exists.
+2. **The mechanism is L=4-CONTINGENT, undisclosed:** the
+   merging index is 8/gcd(L,8) — 2 at L=4, 4 at L=2, and 1
+   at every L divisible by eight, where the price is NOT
+   reduced and NO observable is pinned.  §10 flags only the
+   arithmetic obstruction's lattice-sensitivity, not the
+   odd twist's — which carries the price, the falsifier,
+   and the headline.
+
+**THE OTHER EIGHT:** the pin-worded falsifier measured
+NOT-HIT at 12/12 rows (every invariant-simplex range = the
+observable's full range; HIT licensed for the action route
+only — the head's word must carry the route); "135
+independent numbers" false at 4 of 6 rows; "the cost is
+negative" contradicts "the deficit is not a saving"; §7's
+completeness false (SMU names ten measures, ACT runs four);
+the control's fibre is SIX members (the seat verified all
+six unreachable — the verdict robust but unmeasured
+in-unit); the fifth verdict-determining choice
+(THE-NAMED-TARGETS) unnamed in the paper; "lies in the
+closure" a limit claim on one witness (6.63×10⁻⁵); "the
+first quantity this arena hands over free"
+self-contradicted; the POT handoff misnames "the action
+functional" as one of R5's three objects (R5's first is a
+MEASURE on configurations).
+
+**RULINGS DELIVERED:** REDUCED-NOT-EVADED **compatible**
+with SMU's CONSERVED-NOT-PAID under SMU's own carve-out
+(ACT demands invariance under a strictly larger group,
+order 8 vs 4, the extra element a bijection the torus
+cannot perform) — the missing clause ordered in.
+Grain-relativity **RULED E-24 measure-relativity, honestly
+priced, NOT ontology** — with the licensed emphasis: the
+carrier-visible dimension is grain-INVARIANT (135/79 at 3
+of 3 grains); the six-order spread lies entirely in a fibre
+the carrier cannot see.  "Locality buys numbers by
+forbidding them" LICENSED (207−135=72=the merged pairs)
+once the negative-cost clause goes.  Stamp discipline PASS;
+UNREACHABLE-BY-ARITHMETIC PASS (property of the declared
+field, four places); walls PASS (26 terms swept, 0 loop
+families); Wilson minimality applies paper-23's criterion
+correctly one grain down.  Six minors.  **K1/K3 still out;
+adjudication after all three.**
