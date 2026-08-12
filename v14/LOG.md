@@ -7960,3 +7960,41 @@ seam defect exact; a grammar refusing cross-sector divisions
 is itself a finding); the forced-overlap question (the
 cardinality-selection hint's first test); the k=0 sterility
 arm gated against R1's theorem.
+
+## 2026-08-11 — OCC EFFECTUS REVIEW LANDED (K2): AWF — A FALSE PUBLISHED CLAIM (SAME-SITE ≠ SAME-ACTOR); THE GRAIN-UNIFICATION DIES; THE CONVERGENCE DEMOTED TO CO-INCIDENCE (v14 LEDGER #259)
+
+v14/review-occ-effectus.md frozen.  **Grade AWF; 58
+recomputations; EVERY COMPUTED NUMBER CORRECT; the verdict
+OCC-CEILING-OPEN stands unmoved.**  MAJOR-1 — **a false
+published claim: C09's "the leaking configurations are
+exactly the 27 SAME-ACTOR" is FALSE — the code tested
+SAME-SITE (27); same-actor is 135; verified 5/5 coins
+(=same-site TRUE; =same-actor FALSE; ⊂same-actor TRUE and
+STRICT, 108 excluded).  "THE TWO GRAINS ARE ONE PHENOMENON"
+DIES; strict containment survives.  [ORCHESTRATOR CORRECTION
+OF RECORD: my #255 entry relayed the false wording — the
+truth is same-SITE.]**  The miss's mechanism: every layer
+value-bound or label-bound, never REFERENT-bound (27 licensed
+from three paths).  MAJOR-2 — "a grain the record layer never
+names" refuted by the unit's OWN anchor (the dictionary names
+CO-DIVISION-ACTOR-PAIR); the P2 census measures no occupancy
+COORDINATE, not no NAME; §8's wording adopted.  MAJOR-3 — the
+53,460 comparison CANNOT FAIL (declaration-argument-free;
+invariant under identical declarations) — a closed era
+disease reopened (paper-22 had implemented the exact repair
+OCC's own anchor cites).  RULINGS: the pin error is the
+orchestrator's (coupling_exact declares DIM=27; owned at the
+adjudication); **"mistyped-not-false" upgraded:
+MISTYPED-AT-THE-CARRIER; REFUTED-AT-THE-GRAIN-IT-TYPED** (arm
+A2 measures the actor-grain injection FAILING 6/6); **the
+LOR↔OCC convergence is NOT two blind hits — both units read
+paper-19's pair leg; only a REGISTERED CO-INCIDENCE is
+licensed now** (both ledger rows drafted); the unified
+blindness theorem PREMATURE (three instances, three probe
+classes; register the schema).  FOUR STRENGTHENINGS: the
+mechanism THEOREM (the wedge's forbidden set empty iff the
+grain is the carrier's); the SITE grain built — the "only"
+survives 0/6; **the leak census RECORD-BLIND across all 3²⁷
+count fields — the head's scope retired by theorem**; the A2
+refutation.  Walls clean; numeral sweep clean.  14 repairs
+tabled.  → adjudication when K1+K3 land.
