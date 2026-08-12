@@ -8897,3 +8897,61 @@ pass the architecture sentence untouched.  Seven MINORs.
 
 **K1 (operator) and K3 (instrument) still out; adjudication
 after all three freezes.**
+
+## 2026-08-12 — AID K1 (OPERATOR SEAT) FROZEN: AWF; ZERO FALSE NUMBERS IN 136 RECOMPUTATIONS; ONE MAJOR — THE STABILIZER ACTS ON THE EVENT SET, NOT THE SEQUENCE; TWO FREE STRENGTHENINGS (v14 LEDGER #289)
+
+**Review:** v14/review-aid-operator.md (4361b34ff4e8, 446
+lines), sole write; objects verified unchanged at close.
+**Grade AWF.**  136 independent recomputations from a
+rebuild sharing no code with aid_exact.py (Route A filters
+all 362,880 elements of S₉ per event; the driven leg
+re-drives the v10 layers by own AST extraction; the walk
+re-implemented from paper-20's committed source).  **Every
+measured value reproduced exactly** — substrate
+280/36/72/276/600; corpora 72/1,944/5,184/600 with strata
+256/264/80; 41,347 distinct prefixes, 703 comparisons 0
+mismatches; the order histogram summing to 121,152;
+5,852/4; crystallization 5 on C1/C1FAN/C2 and
+{5:404,7:36,8:144,11:12,never:4} on C3 with the unique
+profile; 0 co-division violations in 121,152; 111 vs 592;
+[134,58,58,58,58]; all 9 back-validation rows; all 17
+driven rows.  **The Young-subgroup theorem is sound with no
+gap.**  (The seat's two run-time mismatches were its own
+cache bug, owned in-review.)
+
+**MAJOR-1 (the sequence/set misattribution):** Stab(H) =
+⋂ᵢStab(Eᵢ) is a function of the event SET; §3's "the
+sequence is what a stabilizer acts on" is a FALSE
+PROPOSITION, and verdict segment 4's "THE STABILIZER OF THE
+ORDERED HISTORY IS TRIVIAL" / "WHAT THE SEQUENCE REMEMBERS"
+draws the contrast at the wrong level.  Measured: 840
+reshuffles → 0 stabilizer changes; at all 24
+complete-relation histories the UNORDERED set already
+forces the labelling.  Order IS a real variable — but for
+the crystallization TIME (moves at 9 of 50 sampled C3
+histories), not the stabilizer.  Five repair sites named;
+no number moves.
+
+**FIVE MINORs** — the first IS K2's MAJOR-3 (the
+101,160/41,347 base mismatch; correct pairs 118,656/41,347
+or 101,160/39,747) — CROSS-SEAT CONVERGENCE on the false
+relation.  Also: "every weld-dictionary reading" measured at
+1 parse of 12 — the seat swept all twelve, 1,453,824
+comparisons, 0 differences, CLAIM HOLDS.
+
+**TWO FREE STRENGTHENINGS (out-of-harness):** M1 — the full
+order axis does not dent the constant: crystallization = 5
+with the same profile on ALL 15,552 histories (vs the
+canonical 3-of-27 menu).  M2 — the link declaration (ANT in
+place of DIA) returns every substrate and census number
+identically: A GAUGE CHOICE, not an artifact.  (Note the
+K1/K2 tension to reconcile at adjudication: K1 strengthens
+TIME=5 across the full axis; K2 rules the transportable
+CONTENT four with the fifth event provably redundant —
+compatible if 5 is schedule-packing and 4 is information;
+the adjudication owns the reconciliation.)
+
+Numeral sweep clean: 566 tokens / 89 distinct literals all
+backed; head 2 byte-identical copies × 5 segments; 13/13
+pin digests verified.  **K3 (instrument) still out;
+adjudication after its freeze.**
