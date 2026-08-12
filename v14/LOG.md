@@ -8955,3 +8955,80 @@ Numeral sweep clean: 566 tokens / 89 distinct literals all
 backed; head 2 byte-identical copies × 5 segments; 13/13
 pin digests verified.  **K3 (instrument) still out;
 adjudication after its freeze.**
+
+## 2026-08-12 — ACT (PAPER-34) DELIVERED, COMMITTED AS-IS: ACT-FORM-RELATIVE — THE COUPLING COUNT IS GRAIN-RELATIVE (135 AT LINK); PRICE REDUCED-NOT-EVADED (207→135); THE CHEAP FALSIFIER HIT (v14 LEDGER #290)
+
+**Files (committed as delivered, pre-battery):**
+v14/paper-34-act.md (3fbf109f0d9b, 678 lines);
+v14/code/act_exact.py (02df3f00f788, 4,519 lines);
+v14/code/act_output.txt (9299f80db2d8);
+v14/code/act_receipt.json (f0617d1687a0).  Pin
+294ffe6c9deb-era authority: note-act-pin.md 766c603c6dbc,
+frozen #279.  ALL HEADLINES CANDIDATE READINGS UNTIL
+ADJUDICATION.
+
+**THE FORM CENSUS — ACT-FORM-RELATIVE:** the allowed space
+is EXACTLY the orbit-constant positive-rational functions on
+the declared stencil datum — a free module; rank modulo
+normalisation = THE COUPLING COUNT, and it is
+GRAIN-RELATIVE: link 135 (ext 79) / plaquette 265,121,343
+(ext 66,311,039) / site 171,060,255 (ext 43,398,585).
+Nothing is forced.  Six of six declared rows run; every
+count double-routed (Burnside divide-and-rederive;
+union-find + orbit-stabiliser at link; exhaustive 19-coin
+reduced arena at every grain; independent character-route
+closed form for the two large gauge-only counts,
+530,219,008 both ways).
+
+**CANDIDATE ROWS:** Wilson-shape IN at exactly 1 of 3
+grains (the plaquette; 8,192 gauge checks 0 failures),
+excluded at link and site by witness pairs; spans 10 of 135
+couplings; **NOT distinguished by minimality — the gauge
+group is measured NOT TRANSITIVE on a single link's datum
+(136 single-link invariant classes), paper-23's own
+transitivity criterion applied one grain down.**  Law-native
+CONTROL: stamp carried verbatim, never spent; class-constant
+and full-support — inside the symmetry-allowed set — yet
+UNREACHABLE-BY-ARITHMETIC (the required ratio 3/2 is not an
+exact 16th or 32nd power); lies in the CLOSURE (exact
+bisection witness at denominator 10^5, no floats).  Null
+w≡1 → counting: 1 of 6 named targets reachable, failures at
+3 measured species.
+
+**GIBBS/PRICE:** image = the e-th-power sublattice of the
+class-constant measures (e = 32/16/16); positivity forces
+full support.  The induced partition on the carrier is THE
+SAME 136 CLASSES AT ALL THREE GRAINS (80 at the extension)
+while the coupling counts differ by six orders of magnitude
+— the whole difference sits in the fibre (0 at link,
+265,121,208 at plaquette).  **PRICE = REDUCED-NOT-EVADED:
+207 → 135 and 119 → 79; the deficit is a PROHIBITION — 72
+(40) pairs of gauge orbits identified by EVERY local weight
+system (the odd twist, a carrier bijection the torus does
+not close).**  64 reachable extreme points are parent
+vertices; 72 are edge midpoints.
+
+**THE CHEAP FALSIFIER — HIT:** the off-diagonal quartic
+sign is a gauge observable at both readings whose
+expectation EVERY admissible weight system pins to the
+single value 0, against [−2,2] over the invariant simplex —
+pinned to a point, the first quantity this arena hands over
+free.  144/208 and 80/120 orbit indicators pinned to half
+range.  The Wilson trace NOT pinned ([0,4] both) — its
+extremes sit on singleton classes.
+
+**POT HANDOFF:** two of R5's three named objects priced
+(action functional = a weight system at a grain; coupling =
+a coordinate of the allowed space); the growable loop
+family recorded STILL ABSENT; no confinement vocabulary, 0
+loop families grown, must-not swept.
+
+**Windows:** parent's uniform carrier only; the arithmetic
+obstruction is a property of the pin's declared field —
+flagged verdict-determining, disclosed with closure witness.
+**Instrument counts (claimed; battery verifies):** 47 gates,
+49 mutants 49/49 on target, 64 anchors, 36 sealed, 13
+choices (5 verdict-determining), 85 claims, 343 numerals 0
+unmatched, 26 table rows, 19 blockquotes in pinned windows.
+
+**Orchestrator battery launches next; panel after green.**

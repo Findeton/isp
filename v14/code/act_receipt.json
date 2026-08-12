@@ -1,0 +1,3401 @@
+{
+ "analytic_crosscheck": {
+  "non_singleton_classes": 72,
+  "plaquette_gauge_only_burnside": 530219008,
+  "plaquette_gauge_only_character_route": 530219008,
+  "site_gauge_only_burnside": 342102016,
+  "site_gauge_only_character_route": 342102016,
+  "the_one_relation": "THE-FOUR-PLAQUETTE-TWISTS-SATISFY-ONE-LINEAR-RELATION-AND-THE-STARS-FOUR-DO-NOT",
+  "twist_classes": 136
+ },
+ "anchor_classes": {
+  "file_bytes": 11,
+  "path_value": 34,
+  "total": 64,
+  "verbatim_text": 19
+ },
+ "arena": {
+  "L": 4,
+  "admissible_rows": 80,
+  "alphabet": 25,
+  "carrier": "THE-640-UNIFORM-CONFIGURATIONS",
+  "coins": 640,
+  "configuration_space": "640^32",
+  "d": 2,
+  "field": "Q(zeta_8)",
+  "links": 32,
+  "plaquettes": 16,
+  "sectors": {
+   "ANTIDIAGONAL": 64,
+   "BALANCED": 512,
+   "DIAGONAL": 64
+  },
+  "sites": 16,
+  "unitary_by_a_second_route": 640
+ },
+ "arithmetic": {
+  "banned_calls": [],
+  "banned_imports": [],
+  "field": "Q(zeta_8) as integer 5-tuples over (1, z, z^2, z^3) mod z^4+1",
+  "float_literals": 0,
+  "orbit_counts": "exact integers from a Burnside sum that divides",
+  "the_action": "CARRIED-MULTIPLICATIVELY-S-IS-NOMINAL-ONLY-NO-LOGS",
+  "weights": "fractions.Fraction, strictly positive"
+ },
+ "chart": {
+  "anchored_order": 32,
+  "extension_order": 128,
+  "link_orbits_anchored": 1,
+  "plaquette_orbits_anchored": 1
+ },
+ "closing_gates": [
+  "G-SEAL-INTEGRITY",
+  "G-ARTIFACT-INTEGRITY"
+ ],
+ "code_sha256_12": "02df3f00f788",
+ "declared_unsealed": {
+  "closing_gates": "the two gates that close after the snapshot",
+  "code_sha256_12": "this instrument's own digest, which cannot seal itself",
+  "declared_unsealed": "this declaration",
+  "exit_conventions": "the disclosed exit conventions, a constant",
+  "gate_digests": "the CHAINED per-row digests of that ledger",
+  "gates": "the gate ledger, snapshotted before the two closing gates -- a seal cannot be inside the object it seals",
+  "mutants": "the falsifier registry, checked TOTAL against the syntax tree at G-MUTANT-REGISTRY-IS-TOTAL and published as this instrument's description of itself",
+  "paper_sha256_12": "the paper's digest, taken at the paper gates",
+  "pin_sha256_prefix": "the pin digest, verified at G-SOURCE-BYTES",
+  "python": "the interpreter's major.minor, environmental",
+  "schema": "the receipt schema tag, a constant of this source",
+  "seal_manifest": "the manifest itself",
+  "totals": "the closing tallies, derived from sealed objects",
+  "transcript_head": "the transcript digest, taken at the disk boundary",
+  "unit": "the unit's own name, a constant of this source"
+ },
+ "density_witness": {
+  "consequence": "THE-CONTROL-LIES-IN-THE-CLOSURE-OF-THE-IMAGE-AND-NOT-IN-THE-IMAGE",
+  "error_below_one_over_ten_to_the": 4,
+  "exponent": 32,
+  "is_an_exact_power": false,
+  "the_required_ratio": "3/2",
+  "witness_denominator": 100000,
+  "witness_numerator": 101275
+ },
+ "exit_conventions": "the delivery run exits 0 on success and 1 on any refusal, writing nothing; --selftest exits 0 when every anchor class is fatal; --mutant exits 0 when the named mutant dies on its declared target; an unknown flag exits 2",
+ "expectations": {
+  "loop_families_grown": 0,
+  "must_not": "NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM",
+  "range_of_the_observable": [
+   "0",
+   "4"
+  ],
+  "rows": [
+   {
+    "expectation": "13/10",
+    "exponent": 32,
+    "grain": "LINK",
+    "row": "THE-NULL",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-WEIGHTS",
+    "the_measure": "COUNTING",
+    "weight_system": "W-IDENTICALLY-ONE"
+   },
+   {
+    "expectation": "4294967399/4294967375",
+    "exponent": 32,
+    "grain": "LINK",
+    "row": "THE-EXHIBITED-WITNESS",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-WEIGHTS",
+    "the_measure": "NEW",
+    "weight_system": "TWO-ON-ONE-CLASS-AND-ONE-ELSEWHERE"
+   },
+   {
+    "expectation": "262244/65615",
+    "exponent": 16,
+    "grain": "PLAQUETTE",
+    "row": "THE-WILSON-SHAPE-AT-A-DECLARED-COUPLING",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-WEIGHTS",
+    "the_measure": "NEW",
+    "weight_system": "TWO-AT-THE-TOP-TRACE-VALUE-AND-ONE-ELSEWHERE"
+   }
+  ],
+  "stamp": "CONDITIONAL-ON-THE-DECLARED-WEIGHTS"
+ },
+ "falsifier": {
+  "declared_observables": 6,
+  "orbit_indicator_families": [
+   {
+    "observables": 208,
+    "pinned": 144,
+    "reading": "ANCHORED",
+    "row": "ORBIT-INDICATORS-ANCHORED",
+    "the_pinned_range_top": [
+     "1/2"
+    ],
+    "unpinned": 64
+   },
+   {
+    "observables": 120,
+    "pinned": 80,
+    "reading": "EXTENSION",
+    "row": "ORBIT-INDICATORS-EXTENSION",
+    "the_pinned_range_top": [
+     "1/2"
+    ],
+    "unpinned": 40
+   }
+  ],
+  "pinned_rows": 2,
+  "pinned_to_a_point": 2,
+  "rows": [
+   {
+    "is_a_gauge_observable": true,
+    "observable": "WILSON-BLOCK-TRACE-RATIONAL-PART",
+    "pinned_to_a_point": false,
+    "pinned_to_a_proper_sub_range": false,
+    "range_over_the_invariant_simplex": [
+     "0",
+     "4"
+    ],
+    "range_over_the_reachable_set": [
+     "0",
+     "4"
+    ],
+    "reading": "ANCHORED",
+    "row": "WILSON-BLOCK-TRACE-RATIONAL-PART-ANCHORED",
+    "verdict": "UNPINNED",
+    "what": "the rational part of the loop trace, an exact rational component of the observable SMU published"
+   },
+   {
+    "is_a_gauge_observable": true,
+    "observable": "WILSON-BLOCK-TRACE-SURD-PART",
+    "pinned_to_a_point": false,
+    "pinned_to_a_proper_sub_range": false,
+    "range_over_the_invariant_simplex": [
+     "-1",
+     "1"
+    ],
+    "range_over_the_reachable_set": [
+     "-1",
+     "1"
+    ],
+    "reading": "ANCHORED",
+    "row": "WILSON-BLOCK-TRACE-SURD-PART-ANCHORED",
+    "verdict": "UNPINNED",
+    "what": "its surd part, so the pair carries the whole observable exactly without leaving the rationals"
+   },
+   {
+    "is_a_gauge_observable": true,
+    "observable": "OFF-DIAGONAL-QUARTIC-SIGN",
+    "pinned_to_a_point": true,
+    "pinned_to_a_proper_sub_range": true,
+    "range_over_the_invariant_simplex": [
+     "-2",
+     "2"
+    ],
+    "range_over_the_reachable_set": [
+     "0",
+     "0"
+    ],
+    "reading": "ANCHORED",
+    "row": "OFF-DIAGONAL-QUARTIC-SIGN-ANCHORED",
+    "verdict": "PINNED",
+    "what": "the sign of the fourth power of the two off-diagonal entries, added: invariant under the even twist and under the swap, and REVERSED by the odd twist"
+   },
+   {
+    "is_a_gauge_observable": true,
+    "observable": "DIAGONAL-SECTOR-INDICATOR",
+    "pinned_to_a_point": false,
+    "pinned_to_a_proper_sub_range": false,
+    "range_over_the_invariant_simplex": [
+     "0",
+     "1"
+    ],
+    "range_over_the_reachable_set": [
+     "0",
+     "1"
+    ],
+    "reading": "ANCHORED",
+    "row": "DIAGONAL-SECTOR-INDICATOR-ANCHORED",
+    "verdict": "UNPINNED",
+    "what": "the abelian arm's own indicator"
+   },
+   {
+    "is_a_gauge_observable": true,
+    "observable": "DEFECT-INDICATOR",
+    "pinned_to_a_point": false,
+    "pinned_to_a_proper_sub_range": false,
+    "range_over_the_invariant_simplex": [
+     "0",
+     "1"
+    ],
+    "range_over_the_reachable_set": [
+     "0",
+     "1"
+    ],
+    "reading": "ANCHORED",
+    "row": "DEFECT-INDICATOR-ANCHORED",
+    "verdict": "UNPINNED",
+    "what": "the composition defect's indicator, rebuilt from the seed's definition"
+   },
+   {
+    "is_a_gauge_observable": true,
+    "observable": "FLAT-INDICATOR",
+    "pinned_to_a_point": false,
+    "pinned_to_a_proper_sub_range": false,
+    "range_over_the_invariant_simplex": [
+     "0",
+     "1"
+    ],
+    "range_over_the_reachable_set": [
+     "0",
+     "1"
+    ],
+    "reading": "ANCHORED",
+    "row": "FLAT-INDICATOR-ANCHORED",
+    "verdict": "UNPINNED",
+    "what": "the indicator of a trivial holonomy"
+   },
+   {
+    "is_a_gauge_observable": true,
+    "observable": "WILSON-BLOCK-TRACE-RATIONAL-PART",
+    "pinned_to_a_point": false,
+    "pinned_to_a_proper_sub_range": false,
+    "range_over_the_invariant_simplex": [
+     "0",
+     "4"
+    ],
+    "range_over_the_reachable_set": [
+     "0",
+     "4"
+    ],
+    "reading": "EXTENSION",
+    "row": "WILSON-BLOCK-TRACE-RATIONAL-PART-EXTENSION",
+    "verdict": "UNPINNED",
+    "what": "the rational part of the loop trace, an exact rational component of the observable SMU published"
+   },
+   {
+    "is_a_gauge_observable": true,
+    "observable": "WILSON-BLOCK-TRACE-SURD-PART",
+    "pinned_to_a_point": false,
+    "pinned_to_a_proper_sub_range": false,
+    "range_over_the_invariant_simplex": [
+     "-1",
+     "1"
+    ],
+    "range_over_the_reachable_set": [
+     "-1",
+     "1"
+    ],
+    "reading": "EXTENSION",
+    "row": "WILSON-BLOCK-TRACE-SURD-PART-EXTENSION",
+    "verdict": "UNPINNED",
+    "what": "its surd part, so the pair carries the whole observable exactly without leaving the rationals"
+   },
+   {
+    "is_a_gauge_observable": true,
+    "observable": "OFF-DIAGONAL-QUARTIC-SIGN",
+    "pinned_to_a_point": true,
+    "pinned_to_a_proper_sub_range": true,
+    "range_over_the_invariant_simplex": [
+     "-2",
+     "2"
+    ],
+    "range_over_the_reachable_set": [
+     "0",
+     "0"
+    ],
+    "reading": "EXTENSION",
+    "row": "OFF-DIAGONAL-QUARTIC-SIGN-EXTENSION",
+    "verdict": "PINNED",
+    "what": "the sign of the fourth power of the two off-diagonal entries, added: invariant under the even twist and under the swap, and REVERSED by the odd twist"
+   },
+   {
+    "is_a_gauge_observable": true,
+    "observable": "DIAGONAL-SECTOR-INDICATOR",
+    "pinned_to_a_point": false,
+    "pinned_to_a_proper_sub_range": false,
+    "range_over_the_invariant_simplex": [
+     "0",
+     "1"
+    ],
+    "range_over_the_reachable_set": [
+     "0",
+     "1"
+    ],
+    "reading": "EXTENSION",
+    "row": "DIAGONAL-SECTOR-INDICATOR-EXTENSION",
+    "verdict": "UNPINNED",
+    "what": "the abelian arm's own indicator"
+   },
+   {
+    "is_a_gauge_observable": true,
+    "observable": "DEFECT-INDICATOR",
+    "pinned_to_a_point": false,
+    "pinned_to_a_proper_sub_range": false,
+    "range_over_the_invariant_simplex": [
+     "0",
+     "1"
+    ],
+    "range_over_the_reachable_set": [
+     "0",
+     "1"
+    ],
+    "reading": "EXTENSION",
+    "row": "DEFECT-INDICATOR-EXTENSION",
+    "verdict": "UNPINNED",
+    "what": "the composition defect's indicator, rebuilt from the seed's definition"
+   },
+   {
+    "is_a_gauge_observable": true,
+    "observable": "FLAT-INDICATOR",
+    "pinned_to_a_point": false,
+    "pinned_to_a_proper_sub_range": false,
+    "range_over_the_invariant_simplex": [
+     "0",
+     "1"
+    ],
+    "range_over_the_reachable_set": [
+     "0",
+     "1"
+    ],
+    "reading": "EXTENSION",
+    "row": "FLAT-INDICATOR-EXTENSION",
+    "verdict": "UNPINNED",
+    "what": "the indicator of a trivial holonomy"
+   }
+  ],
+  "the_mechanism": "AN-OBSERVABLE-IS-PINNED-EXACTLY-WHEN-IT-SEPARATES-TWO-GAUGE-ORBITS-INSIDE-ONE-CLASS",
+  "verdict": "HIT"
+ },
+ "falsifier_totals": {
+  "declared_falsifiers": 49,
+  "distinct_target_gates": 46,
+  "functions_declared": 118,
+  "switches_in_the_syntax_tree": 49,
+  "the_sweep_result": "AN-EXTERNAL-BATTERY-RESULT-THE-DELIVERY-RUN-DOES-NOT-PRODUCE-IT"
+ },
+ "fibre": {
+  "rows": [
+   {
+    "choice": "THE-LATTICE-AND-ITS-SIZE",
+    "fibre": 1,
+    "instances_built": 1,
+    "status": "FORCED",
+    "verdict_determining": "NOT-MEASURED",
+    "why": "inherited from R5 at an anchored receipt path"
+   },
+   {
+    "choice": "THE-COIN-FAMILY",
+    "fibre": 1,
+    "instances_built": 1,
+    "status": "FORCED",
+    "verdict_determining": "NOT-MEASURED",
+    "why": "enumerated exhaustively from the declared alphabet"
+   },
+   {
+    "choice": "THE-GAUGE-ACTION-AND-THE-CHART-GROUPS",
+    "fibre": 1,
+    "instances_built": 1,
+    "status": "FORCED",
+    "verdict_determining": "NOT-MEASURED",
+    "why": "both are the parents' own declared objects, rebuilt"
+   },
+   {
+    "choice": "THE-CARRIER",
+    "fibre": 2,
+    "instances_built": 1,
+    "status": "DECLARED-AND-DISCLOSED",
+    "verdict_determining": "NOT-MEASURED",
+    "why": "the parent's primary carrier; the full configuration space is named in the scope segment and is out of reach by cost"
+   },
+   {
+    "choice": "THE-LOCALITY-GRAIN",
+    "fibre": 3,
+    "instances_built": 3,
+    "status": "DECLARED-AND-SWEPT",
+    "verdict_determining": true,
+    "why": "every declared member is RUN, and the coupling count is measured to move between them"
+   },
+   {
+    "choice": "WHICH-CHART-READING",
+    "fibre": 2,
+    "instances_built": 2,
+    "status": "DECLARED-AND-SWEPT",
+    "verdict_determining": true,
+    "why": "both declared readings are RUN, and the orbit count moves"
+   },
+   {
+    "choice": "THE-INVARIANCE-FORM-LOCAL-OR-PRODUCT",
+    "fibre": 2,
+    "instances_built": 2,
+    "status": "DECLARED-AND-SWEPT",
+    "verdict_determining": true,
+    "why": "both forms are run at both relevant grains, and they are measured to differ at one of them"
+   },
+   {
+    "choice": "THE-FIELD-THE-WEIGHTS-LIVE-IN",
+    "fibre": 2,
+    "instances_built": 1,
+    "status": "DECLARED-BY-THE-PIN",
+    "verdict_determining": true,
+    "why": "the pin binds positive exact rationals; over the positive reals the arithmetic obstruction disappears and the unreachable rows become reachable, which is disclosed rather than absorbed"
+   },
+   {
+    "choice": "THE-NAMED-TARGETS",
+    "fibre": "UNBOUNDED",
+    "instances_built": 6,
+    "status": "DECLARED-AND-DISCLOSED",
+    "verdict_determining": true,
+    "why": "the census verdict is a count over the declared targets, so declaring another moves it"
+   },
+   {
+    "choice": "THE-DECLARED-OBSERVABLES",
+    "fibre": "UNBOUNDED",
+    "instances_built": 6,
+    "status": "DECLARED-AND-DISCLOSED",
+    "verdict_determining": false,
+    "why": "the falsifier verdict is EXISTENTIAL -- one pinned observable settles it -- so adding observables cannot remove the hit; the per-observable rows are what a further declaration would extend"
+   },
+   {
+    "choice": "THE-REDUCED-ARENA-FOR-THE-VALIDATION",
+    "fibre": "UNBOUNDED",
+    "instances_built": 1,
+    "status": "DECLARED-AND-DISCLOSED",
+    "verdict_determining": false,
+    "why": "it validates the machinery against a second route and carries no published physical quantity"
+   },
+   {
+    "choice": "THE-DECLARED-NON-UNIFORM-SAMPLE",
+    "fibre": "UNBOUNDED",
+    "instances_built": 64,
+    "status": "DECLARED-AND-SAMPLED",
+    "verdict_determining": false,
+    "why": "the coboundary identity is a theorem about the incidence count, and the sample exhibits it rather than establishing it"
+   },
+   {
+    "choice": "THE-WITNESS-DENOMINATOR",
+    "fibre": "UNBOUNDED",
+    "instances_built": 1,
+    "status": "DECLARED-AND-DISCLOSED",
+    "verdict_determining": false,
+    "why": "only the published error bound moves with it; the unreachability it accompanies is decided by factorisation"
+   }
+  ],
+  "the_price_of_a_declaration": {
+   "numbers_forbidden_anchored": 72,
+   "numbers_forbidden_extension": 40,
+   "orbit_pairs_merged_anchored": 72,
+   "orbit_pairs_merged_extension": 40,
+   "the_action_route_supplies_anchored": 135,
+   "the_action_route_supplies_extension": 79,
+   "the_mechanism": "EVERY-LOCAL-WEIGHT-SYSTEM-IS-BLIND-TO-THE-ODD-TWIST-WHICH-THE-TORUS-DOES-NOT-CLOSE",
+   "the_parents_price_anchored": 207,
+   "the_parents_price_extension": 119,
+   "the_parents_price_without_covariance": 639,
+   "verdict": "REDUCED-NOT-EVADED"
+  },
+  "verdict_determining": 5
+ },
+ "form_census": {
+  "grains": [
+   "LINK",
+   "PLAQUETTE",
+   "SITE"
+  ],
+  "readings": [
+   "ANCHORED",
+   "EXTENSION"
+  ],
+  "reduced_arena_coins": 19,
+  "reduced_arena_named_coins": [
+   "DIAG-I",
+   "DIAG-Z",
+   "ANTI-X",
+   "BAL-F"
+  ],
+  "rows": [
+   {
+    "acting_group_order": 8,
+    "burnside_sum": 1088,
+    "chart_stabilizer_order": 1,
+    "closure_failures": 0,
+    "coupling_count": 135,
+    "datum_space": "640^1",
+    "gauge_image_order": 8,
+    "grain": "LINK",
+    "orbit_count_times_the_group_order_equals_the_sum": true,
+    "orbits": 136,
+    "reading": "ANCHORED",
+    "reduced_arena_coins": 19,
+    "reduced_arena_orbits_brute_force": 5,
+    "reduced_arena_orbits_burnside": 5,
+    "routes_agree": true,
+    "routes_at_full_size": {
+     "BRUTE-FORCE-UNION-FIND": 136,
+     "BURNSIDE": 136,
+     "ORBIT-STABILIZER-SUM": 136
+    },
+    "row": "LINK-ANCHORED",
+    "stencil_links": 1
+   },
+   {
+    "acting_group_order": 16,
+    "burnside_sum": 1280,
+    "chart_stabilizer_order": 4,
+    "closure_failures": 0,
+    "coupling_count": 79,
+    "datum_space": "640^1",
+    "gauge_image_order": 8,
+    "grain": "LINK",
+    "orbit_count_times_the_group_order_equals_the_sum": true,
+    "orbits": 80,
+    "reading": "EXTENSION",
+    "reduced_arena_coins": 19,
+    "reduced_arena_orbits_brute_force": 4,
+    "reduced_arena_orbits_burnside": 4,
+    "routes_agree": true,
+    "routes_at_full_size": {
+     "BRUTE-FORCE-UNION-FIND": 80,
+     "BURNSIDE": 80,
+     "ORBIT-STABILIZER-SUM": 80
+    },
+    "row": "LINK-EXTENSION",
+    "stencil_links": 1
+   },
+   {
+    "acting_group_order": 1024,
+    "burnside_sum": 271484256256,
+    "chart_stabilizer_order": 2,
+    "closure_failures": 0,
+    "coupling_count": 265121343,
+    "datum_space": "640^4",
+    "gauge_image_order": 512,
+    "grain": "PLAQUETTE",
+    "orbit_count_times_the_group_order_equals_the_sum": true,
+    "orbits": 265121344,
+    "reading": "ANCHORED",
+    "reduced_arena_coins": 19,
+    "reduced_arena_orbits_brute_force": 383,
+    "reduced_arena_orbits_burnside": 383,
+    "routes_agree": true,
+    "routes_at_full_size": {
+     "BURNSIDE": 265121344
+    },
+    "row": "PLAQUETTE-ANCHORED",
+    "stencil_links": 4
+   },
+   {
+    "acting_group_order": 4096,
+    "burnside_sum": 271610019840,
+    "chart_stabilizer_order": 8,
+    "closure_failures": 0,
+    "coupling_count": 66311039,
+    "datum_space": "640^4",
+    "gauge_image_order": 512,
+    "grain": "PLAQUETTE",
+    "orbit_count_times_the_group_order_equals_the_sum": true,
+    "orbits": 66311040,
+    "reading": "EXTENSION",
+    "reduced_arena_coins": 19,
+    "reduced_arena_orbits_brute_force": 124,
+    "reduced_arena_orbits_burnside": 124,
+    "routes_agree": true,
+    "routes_at_full_size": {
+     "BURNSIDE": 66311040
+    },
+    "row": "PLAQUETTE-EXTENSION",
+    "stencil_links": 4
+   },
+   {
+    "acting_group_order": 8192,
+    "burnside_sum": 1401325617152,
+    "chart_stabilizer_order": 2,
+    "closure_failures": 0,
+    "coupling_count": 171060255,
+    "datum_space": "640^4",
+    "gauge_image_order": 4096,
+    "grain": "SITE",
+    "orbit_count_times_the_group_order_equals_the_sum": true,
+    "orbits": 171060256,
+    "reading": "ANCHORED",
+    "reduced_arena_coins": 19,
+    "reduced_arena_orbits_brute_force": 325,
+    "reduced_arena_orbits_burnside": 325,
+    "routes_agree": true,
+    "routes_at_full_size": {
+     "BURNSIDE": 171060256
+    },
+    "row": "SITE-ANCHORED",
+    "stencil_links": 4
+   },
+   {
+    "acting_group_order": 32768,
+    "burnside_sum": 1422084866048,
+    "chart_stabilizer_order": 8,
+    "closure_failures": 0,
+    "coupling_count": 43398585,
+    "datum_space": "640^4",
+    "gauge_image_order": 4096,
+    "grain": "SITE",
+    "orbit_count_times_the_group_order_equals_the_sum": true,
+    "orbits": 43398586,
+    "reading": "EXTENSION",
+    "reduced_arena_coins": 19,
+    "reduced_arena_orbits_brute_force": 120,
+    "reduced_arena_orbits_burnside": 120,
+    "routes_agree": true,
+    "routes_at_full_size": {
+     "BURNSIDE": 43398586
+    },
+    "row": "SITE-EXTENSION",
+    "stencil_links": 4
+   }
+  ],
+  "the_allowed_space": "EXACTLY-THE-ORBIT-CONSTANT-POSITIVE-RATIONAL-FUNCTIONS-ON-THE-STENCIL-DATUM"
+ },
+ "gamma": {
+  "coins_fixed_by_a_nonzero_twist": 64,
+  "coins_fixed_by_the_identity": 640,
+  "elementary_twist_order": 8,
+  "generators": "THE-ELEMENTARY-GAUGE-TWIST-AND-THE-SWAP-CONJUGATION",
+  "order": 16
+ },
+ "gate_digests": [
+  "df0fe12b03d7",
+  "0ec7aa1e28d1",
+  "7c72412cac52",
+  "efa07496f8ab",
+  "28fa5959a89f",
+  "251bb7bdf264",
+  "0d2e28375895",
+  "7fdf371a3608",
+  "1b11ead0ebde",
+  "fb4061160c9f",
+  "94d36bfaa93d",
+  "5b7ab9b9d9df",
+  "354a1807d5ed",
+  "b041a71b2146",
+  "82b06b253375",
+  "aa4d37f9bb35",
+  "6c3f068ddcb1",
+  "41fa0f54f098",
+  "ac280b189b2c",
+  "11778277bfef",
+  "25c4b6ceaafe",
+  "b3d05effb2c2",
+  "a09ad5bb2339",
+  "e60267974752",
+  "b87109538a30",
+  "78cd0f219a73",
+  "7c68402a541a",
+  "47719a5e4bc7",
+  "107b7134b77d",
+  "db62b4ab33e1",
+  "2a4295db079e",
+  "dc21f5ae28e1",
+  "482e2d9766a8",
+  "7ee9b2589a0c",
+  "d396a65d04f2",
+  "b518d0dfdf40",
+  "2c72360fab1f",
+  "ac8467d77bd4",
+  "238bcd3e4ff3",
+  "f3cafcf247ee",
+  "181181f7ffec",
+  "83e09be5f206",
+  "d9a282be529a",
+  "9181a868f012",
+  "f37c7b6f9621"
+ ],
+ "gates": [
+  {
+   "claim": "every pinned source is read at its declared relative path and its sha256-12 measured against the value frozen in this instrument, so a parent edited after this unit was built stops this run; the repository is read at NO moving reference at all -- no ledger, no STATUS board, no worktree scan, no version-control call -- so this run is correct off-tree and in a directory with no version control (#91, #46)",
+   "detail": "11 of 11 source digests match; failing []",
+   "gate": "G-SOURCE-BYTES",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the pin's multiplicative framing is a property of this source and not a promise about it: the syntax tree carries NO float literal, no banned import and -- the clause this unit adds -- no call to a logarithm, an exponential or a square root, so 'the action is carried multiplicatively, no logs' is checked rather than asserted.  Every weight is a Fraction, every field element an integer 5-tuple, and every orbit count an exact integer",
+   "detail": "0 float literals, banned imports [], banned calls []",
+   "gate": "G-WEIGHTS-ARE-POSITIVE-RATIONALS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every inherited quantity is a (path, value) pair: the path must resolve in the pinned receipt AND the value there must be the one this instrument declares, and each is bound to the gate that consumes it -- so a parent that moved a number under a surviving key stops this run",
+   "detail": "34 of 34 path-value anchors resolve; failing []",
+   "gate": "G-PATH-VALUE-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every quotation this paper makes of a parent is located EXACTLY ONCE in that parent's pinned bytes under whitespace and markdown-prefix normalisation (#125), is pinned by its own digest and its own character count against a declared floor, stops being locatable when a content-bearing token is perturbed, and is bound to the gate that consumes it -- so the anchor binds QUOTE FIDELITY and not mere existence (#62)",
+   "detail": "19 of 19 verbatim windows located exactly once and falsified under perturbation; failing []",
+   "gate": "G-VERBATIM-ANCHORS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the arena is REBUILT from the parents' declared definitions and not imported: the alphabet from its declared shape, the coin family exhaustively over the alphabet's fourth power pruned by the row conditions, the links and plaquettes derived from the lattice -- and every cardinality is measured against the parent's own receipt at a named path, with unitarity confirmed by a second route on every coin",
+   "detail": "alphabet 25, coins 640 (64 diagonal, 64 antidiagonal, 512 balanced), 16 sites, 32 links, 16 plaquettes; unitary by the second route: True",
+   "gate": "G-ARENA-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the coin-map group GAMMA -- generated by the elementary gauge twist and the swap conjugation, as permutations of the coin family -- is closed, its multiplication table is exact, and the elementary twist has order 8, which is the fact every later orbit count rests on",
+   "detail": "|GAMMA| = 16, the elementary twist has order 8, fixed-coin profile [16, 32, 64, 640]",
+   "gate": "G-GAMMA-GROUP-BUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "both declared chart readings are rebuilt and their action is MEASURED rather than quoted: the anchored group has the parent's own order at a named receipt path, and the group is measured TRANSITIVE on the links and on the plaquettes -- which is what makes a covariant weight system the transport of one function on one stencil, so the orbit count of that stencil's datum is a complete description of the allowed space",
+   "detail": "chart orders 32 and 128; 1 link orbit(s) and 1 plaquette orbit(s) at the anchored reading",
+   "gate": "G-CHART-GROUPS-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the residual gauge group ON THE CARRIER is rebuilt by propagating the site phase around the torus -- a constant twist is realisable exactly where the assignment closes after L steps -- and its orbits are enumerated exactly.  Both readings land on BOTH parents' own counts at named receipt paths, so the partition this unit's reachable set is compared against is the parent's partition and not a rebuild of it",
+   "detail": "realisable constant twists [0, 2, 4, 6]; residual orders 4 and 8; orbits 208 and 120, covering 640 coins",
+   "gate": "G-RESIDUAL-GAUGE-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the ODD constant twist is measured NOT to be realisable by any gauge transformation on this torus -- the phase fails to close after L steps -- while it IS a bijection of the carrier and is invisible to every local weight system, because a single link's twist is unconstrained by the torus.  That one measured asymmetry is the mechanism behind everything this unit reports about the price",
+   "detail": "realisable [0, 2, 4, 6]; not realisable [1, 3, 5, 7]",
+   "gate": "G-THE-ODD-TWIST-IS-NOT-REALISABLE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the form census is COMPLETE along its declared axes: three locality grains against two chart readings, six of six run, none sampled.  At every row the acting group is enumerated and checked closed, the Burnside sum is required to divide the group order AND to be re-derived from the published count -- the orbit count times the group order must be the sum itself -- and the orbit count is confirmed by a SECOND route -- brute-force union-find and an orbit-stabiliser sum at the link grain where the datum space is 640, and an exhaustive brute-force enumeration on the declared reduced arena at every grain, which validates the Burnside machinery against a different computation at the very groups it is used on",
+   "detail": "6 rows; failing []",
+   "gate": "G-FORM-CENSUS-COMPLETE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the two large gauge-only orbit counts carry a THIRD route: the character formula on Z_8, evaluated in integers, which returns the plaquette count as the fourth power of the twist-class count plus seven times the fourth power of the non-singleton count, and the site count as that fourth power alone -- the difference being the ONE relation the four plaquette twists satisfy and the star's four twists do not",
+   "detail": "plaquette: Burnside 530219008 against the character route 530219008; site: 342102016 against 342102016; the two constants are 136 and 72",
+   "gate": "G-ANALYTIC-CROSSCHECK",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the coupling count is the allowed space's rank MODULO NORMALISATION, and it is exhibited rather than asserted: at the link grain the elementary generators are built, one per orbit but the declared base, every one of them is measured to be non-constant -- so none is a scalar and none is redundant with the normalisation -- they are pairwise distinct as functions, and their number is the orbit count less one",
+   "detail": "136 orbits, 135 generators exhibited, 135 distinct, none a scalar: True",
+   "gate": "G-RANK-IS-ORBITS-MINUS-ONE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "at the link grain PRODUCT-invariance and LOCAL invariance are the same condition, and the identity is exhausted rather than argued: for every coin the elementary weight system that singles it out is built, and the two products over a configuration and its gauge image are compared.  Every system that is not locally invariant is DETECTED, every system that is invariant is NOT -- both arms populated, at the full family.  The proof behind it is that the configuration weight factorises over independent link coordinates and the twist has finite order, so the per-link ratio is a positive rational root of unity and hence one",
+   "detail": "640 elementary systems; 64 locally invariant, 0 of those detected (must be 0); 576 not invariant, 576 of those detected (must be all)",
+   "gate": "G-LOCALITY-AT-THE-LINK-GRAIN",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "at the plaquette grain the weak condition is STRICTLY weaker, and the witness is exhibited rather than asserted: every link is measured to lie in exactly two plaquettes, so a weight system built from ANY per-link function entering one of them with exponent plus one and the other with minus one has configuration weight identically one -- product-invariant whatever the function, and not locally invariant when the function is not.  Verified exhaustively on the carrier and on a declared deterministic sample of non-uniform configurations",
+   "detail": "every link in exactly two plaquettes: True; 640 carrier configurations and 64 declared non-uniform configurations at product one: 640 and 64",
+   "gate": "G-LOCALITY-GAP-AT-THE-PLAQUETTE-GRAIN",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the partition a grain induces on the CARRIER is measured, and it is measured to COARSEN the parent's gauge orbits at every row -- so the measures an action can reach are exactly the measures constant on those classes, and they form a sub-simplex of the parent's invariant simplex rather than a different object.  The three grains induce the SAME partition, which is the exact form of the parent's own disclosure that this carrier cannot see locality",
+   "detail": "6 rows, 0 failing to coarsen; induced classes by grain at the anchored reading [('LINK', 136), ('PLAQUETTE', 136), ('SITE', 136)]",
+   "gate": "G-REACHABLE-SET-IS-A-SUBSIMPLEX",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the reachable sub-simplex is described by its own extreme points and not only by its dimension: every class is measured either to BE a single gauge orbit -- whose class-uniform measure is a vertex of the parent's simplex -- or to merge exactly two orbits OF EQUAL SIZE, whose class-uniform measure is the midpoint of the edge joining those two vertices, and the two counts are required to exhaust the class list at every row",
+   "detail": "6 rows; 0 whose vertex and midpoint counts do not exhaust the classes []",
+   "gate": "G-THE-REACHABLE-SIMPLEX-IS-EXHIBITED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the pin's price question is answered on the objects and not by argument: an action does NOT evade the parent's price, and it does not pay it either.  The reachable set is a proper sub-simplex of the invariant simplex at both chart readings -- strictly fewer independent numbers than the parent's declaration supplies -- and the deficit is exactly the number of gauge-orbit pairs that every local weight system identifies, which is the odd twist the torus does not close",
+   "detail": "anchored: 135 reachable against the parent's 207, 72 orbit pairs merged; extension: 79 against 119, 40 merged",
+   "gate": "G-PRICE-REDUCED-NOT-EVADED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parent disclosed that its carrier cannot see locality -- one coin serves every link -- and this unit measures exactly what that costs: the coupling counts differ between grains by six orders of magnitude, and yet the measures the three grains can reach on this carrier are the SAME set.  The whole difference sits in the fibre, which the carrier cannot see",
+   "detail": "induced classes [136] against coupling counts [135, 171060255, 265121343], anchored reading",
+   "gate": "G-GRAIN-DEGENERACY-ON-THE-CARRIER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the loop observable is REBUILT from R5's own definition -- the ordered product of the four link operators around the boundary, each inverted where the boundary runs against the link's own direction, restricted to the four corners it lives on -- and measured to be plaquette-independent on the carrier, to lie in the real subfield, to take the parent's own number of distinct values, and to be constant on the residual gauge orbits",
+   "detail": "plaquette-independent True at 16 plaquettes; in the real subfield True; 11 distinct values; orbit-constant True",
+   "gate": "G-WILSON-OBSERVABLE-REBUILT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the Wilson shape IS a member of the allowed space at the plaquette grain: the trace of the holonomy is invariant under every element of the plaquette's own gauge image, which is what makes any positive-rational function of it an admissible weight system.  The theorem is cyclicity of the trace under conjugation by the corner phases; the measurement is a declared sample of plaquette data against EVERY gauge element",
+   "detail": "8192 checks over 16 declared data against 512 gauge elements, 0 failures",
+   "gate": "G-WILSON-IS-IN-THE-ALLOWED-SPACE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the Wilson shape is expressible at EXACTLY ONE of the three declared grains, and the other two are excluded by an exhibited pair rather than by a remark: two configurations agreeing on a link's own datum, and two agreeing on a site's whole star, carry different loop traces -- so no per-link and no per-site weight system is a function of the trace",
+   "detail": "link grain separated True by the pair [0, 0, 20]; site grain separated True by the pair [80, 0, 80]; grains admitting the Wilson shape ['PLAQUETTE']",
+   "gate": "G-WILSON-GRAIN-SELECTION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the Wilson shape is NOT the minimal-support member of the allowed space, and the reason is the parent's own criterion applied one grain down: a canonical object of smaller support exists exactly where the group acts transitively on that support's datum, and here the gauge group is measured NOT transitive on a single link's coin -- it leaves as many classes as the carrier has couplings.  Single-link invariants therefore abound, and the plaquette is not forced",
+   "detail": "136 classes on a single link's datum against the 1 transitivity would require; the trace is constant on the induced classes: True",
+   "gate": "G-WILSON-IS-NOT-MINIMAL-SUPPORT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every named measure this corpus has on this carrier is run against the Gibbs map, and each failure is attributed to a MEASURED species rather than to a single verdict: a target that separates two orbits inside one class fails by SYMMETRY, a target with a zero fails by SUPPORT because positive weights force full support, and a target whose mass ratios are not exact powers fails by ARITHMETIC.  The reachable arm is REACHED, by the null and by an exhibited non-counting weight system whose measure is computed exactly",
+   "detail": "6 targets, 1 reachable, 3 obstruction species ['UNREACHABLE-BY-ARITHMETIC', 'UNREACHABLE-BY-SUPPORT', 'UNREACHABLE-BY-SYMMETRY']; the exhibited non-counting witness lands on a class-constant measure summing to one: True",
+   "gate": "G-TARGET-CENSUS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the law-native measure enters this unit AS A CONTROL and its stamp is carried VERBATIM from the parent's own receipt, never re-derived and never spent: the row is published with the parent's stamp, its three sector values are read at TWO independent sources and required to agree, and the census verdict on it is the one the measurement returns -- it lies inside the symmetry-allowed set and outside the image, and the unit says which of the two facts is doing the work",
+   "detail": "stamp 'LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION'; class-constant True, full support True, reachable False, obstruction UNREACHABLE-BY-ARITHMETIC; the sector law agrees at both sources: True",
+   "gate": "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parent's Gibbs row is SUPPLIED and priced: the action functional it needed is exactly a weight system at a declared grain, the coupling it needed is exactly a coordinate of the allowed space, and both are now counted rather than named absent.  What the row costs is published as a rank, and that the route reaches anything at all is measured rather than assumed",
+   "detail": "the allowed space at the link grain has rank 135; 1 named target(s) reachable",
+   "gate": "G-GIBBS-ROW-SUPPLIED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the control target's unreachability is measured to be ARITHMETIC and not structural, and the distinction is made exact: the ratio the target requires is not an exact power, so no weight system over the declared field reaches it -- and yet an explicit rational found by integer bisection drives that ratio inside a published error bound, so the target lies in the closure of the image.  No float and no root extraction is computed anywhere in the witness",
+   "detail": "the required ratio 3/2 is an exact 32-th power: False; the witness at denominator 10^5 is 4051/4000 and its error is below 1/10^4",
+   "gate": "G-DENSITY-WITNESS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the pin's cheap falsifier is RUN, and it is decided by a census with both arms populated: an observable's expectation range over the parent's invariant simplex is the convex hull of its orbit values, over the reachable set it is the convex hull of its class averages, and the two are compared exactly.  At least one declared observable is PINNED -- to a single value -- and the loop trace is measured NOT to be, so the finding is a measurement about which observables the constraints reach and not a blanket verdict",
+   "detail": "12 observable rows, 2 pinned, 2 of them to a point; the loop trace pinned at 0 of 4 readings; orbit-indicator families [('ANCHORED', 144), ('EXTENSION', 80)]",
+   "gate": "G-FALSIFIER-CENSUS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every observable entering the falsifier census at the anchored reading is measured to be a genuine gauge observable -- constant on the residual gauge orbits, so its expectation is defined under every measure compared -- and the defect indicator's own count is checked against the parent's receipt at a named path, so the census weighs the parent's object",
+   "detail": "anchored-reading observables all orbit-constant: True; defect coins 384 against the parent's 384",
+   "gate": "G-OBSERVABLES-ARE-GAUGE-INVARIANT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the loop trace's own range is recomputed by exact ordering on the real subfield and lands on the parent's published endpoints at named receipt paths; every expectation this unit publishes is required to lie inside that range and to carry the stamp CONDITIONAL-ON-THE-DECLARED-WEIGHTS on its own row, so an unstamped expectation dies on the delivery run",
+   "detail": "range [0, 4]; 3 rows, all stamped True, all inside True",
+   "gate": "G-WILSON-RANGE-OVER-THE-SIMPLEX",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the handoff to POT names the objects and their prices and NOTHING on the far side of POT's gate: the allowed space, the coupling inventory, the distinguished points, the reachable measures and the pinned observable are handed over; no loop family is grown; and the parent's second object -- a family of loops whose size can grow -- is recorded as still absent rather than quietly supplied",
+   "detail": "3 items withheld by name; 0 loop families grown",
+   "gate": "G-POT-HANDOFF",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every construction choice is inventoried with its fibre and the number of instances this unit built; every axis declared SWEPT is required to have built its whole fibre, so no member of a declared fibre is left unrun; and the verdict-determining flag is bound to each row by its OWN measured predicate rather than asserted -- an axis carrying one instance is stamped NOT-MEASURED rather than reported as a measured false",
+   "detail": "13 rows, 0 swept axes short of their fibre [], 5 verdict-determining",
+   "gate": "G-CHOICE-INVENTORY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "each of the four pre-registered outcomes is emitted by THE ONE head law, handed a synthetic census built to select it, and by the second law too -- and the four strings are required to be distinct, so a head law that had collapsed to a constant, or a second law that had drifted into agreement by returning the same string always, dies inside the delivery run",
+   "detail": "4 pre-registered outcomes, 4 reached by both laws, 4 distinct strings",
+   "gate": "G-HEAD-LAW-REACHABILITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the set of functions this source defines is required to EQUAL a declared inventory, so a neutrally-named helper computing something this unit does not publish cannot exist unnoticed",
+   "detail": "118 functions defined; undeclared []; declared but absent []",
+   "gate": "G-FUNCTION-INVENTORY-IS-TOTAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the falsifier registry is checked TOTAL against this instrument's own syntax tree: every switch in the source is declared, every declared falsifier has a branch to fire, and a switch the scan cannot read -- a computed name, or a bare comparison outside mut's own body -- is fatal rather than forgiven",
+   "detail": "49 switches in the tree, 49 declared; undeclared []; declared without a branch []; unreadable switch present False",
+   "gate": "G-MUTANT-REGISTRY-IS-TOTAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "E-23: each falsifier's PUBLISHED description names the exact source token it plants, and that token is located in this instrument's own source text -- so a description-inverted mutant dies here rather than in a reader's trust",
+   "detail": "49 falsifiers, 0 whose published token is not in the source []",
+   "gate": "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the head is derived TWICE, by two laws: the builder computes it from the live census, and an independent law written from the same pre-registered outcomes with a different branch structure and no shared format string returns the same string -- so a head typed rather than computed, or computed by a law that had drifted from its own measurements, dies here",
+   "detail": "builder 'ACT-FORM-RELATIVE-THE-COUPLING-COUNT-IS-GRAIN-RELATIVE-AND-N'; second law 'ACT-FORM-RELATIVE-THE-COUPLING-COUNT-IS-GRAIN-RELATIVE-AND-N'",
+   "gate": "G-HEAD-DERIVED-TWICE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the complete verdict string is compared for equality against an INDEPENDENT reconstruction that reads only the SERIALIZED receipt, derives the head by a second head law, and re-renders every segment from the primitive measured tables -- reading neither the builder's segments nor the builder's aggregates and sharing no format string with it, so 'the same concatenation written twice' cannot pass",
+   "detail": "builder 3236 characters, reconstruction 3236, equal: True",
+   "gate": "G-VERDICT-RECONSTRUCTION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the coverage is published at an honest denominator (#34): every gate this run closes is either the declared target of a falsifier that REACHES it, or carries a registered forcing stating why no falsifier can, and the remainder is named rather than folded into the first class",
+   "detail": "37 gates closed, 37 carry a declared falsifier, 1 a registered forcing, 0 uncovered []",
+   "gate": "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the ledger's own published shape is a MEASUREMENT of the ledger and not a description of it: the sealed-object count is recounted from the manifest itself, the paper-gate count from the declared list, and the gate total includes this gate",
+   "detail": "29 sealed objects published against a manifest of 29; 39 gates closed including this one; 6 paper gates declared",
+   "gate": "G-LEDGER-SHAPE-IS-CONSISTENT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every load-bearing sentence of the paper is RENDERED FROM THE RECEIPT and located in the delivered bytes at its exact occurrence count, under whitespace and markdown-prefix normalisation (#125) -- so a number corrupted at one of its several occurrences dies, and a paper whose prose drifted from the run that produced it cannot be delivered",
+   "detail": "85 rendered claims, 0 not located at their counts: []",
+   "gate": "G-PAPER-CLAIMS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the paper's verdict block is compared for EQUALITY against the string this run emits, under whitespace normalisation, and the paper's fenced blocks are gated by MULTISET EQUALITY against the single block this run licenses (E-22) -- so neither a stale verdict nor a forged twin riding along beside the clean one can be delivered",
+   "detail": "1 fenced blocks; 1 equal to this run's verdict of 3236 characters",
+   "gate": "G-PAPER-VERDICT-EQUALITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the must-not vocabulary -- inherited VERBATIM from paper-23's repaired gate, the bare words included -- is swept over this paper's own text with the declaring sentences removed first and inline emphasis stripped, so a claim under asterisks is still the same claim.  Every declaring sentence the sweep may remove must itself be LOCATED in this paper: an exemption carried from a parent and never used is a latent hole",
+   "detail": "must-not vocabulary found: []; 6 declaring sentences, 0 not located []",
+   "gate": "G-MUST-NOT-VOCABULARY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the direction-bearing claims are checked for POLARITY as well as presence -- each must occur and must not sit inside a window carrying a declared negator -- which closes the direction-blindness of a fragment gate",
+   "detail": "4 polarity rows, 0 failing",
+   "gate": "G-PAPER-POLARITY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "E-22's 'tables render as claims' is enforced structurally: every DATA row of every delivered table that carries a numeral must be covered by a claim rendered from the receipt, and every BLOCKQUOTE must lie inside one of the pinned verbatim windows -- so a paper that misquotes, or inverts, a parent's own definition dies here even though the anchor on the parent's bytes passes.  Header rows are the declared exception and are counted and published rather than silently skipped",
+   "detail": "26 table data rows carrying a numeral, 0 unbound []; 5 header rows excluded; 19 blockquotes, 0 not inside a pinned window []",
+   "gate": "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "EVERY numeral of the paper is matched against a value this run computed -- fenced blocks, verdict block, inline code spans and both sides of every fraction included (E-22, #20) -- with only a published list of structural literals forgiven, so a number invented in prose, or moved from one claim to another, dies inside the delivery run",
+   "detail": "343 numerals scanned, 36 inline code spans carrying a numeral, 2 fence markers, 0 unmatched: []",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "kind": "MEASURED",
+   "passed": true
+  }
+ ],
+ "gibbs": {
+  "every_integer_here_is_a_count_stamp": "COUNTING-ONLY-E-24-NO-COUNT-BECOMES-A-PROBABILITY-WITHOUT-A-DECLARED-MEASURE",
+  "positivity_forces_full_support": true,
+  "rows": [
+   {
+    "class_size_profile": [
+     [
+      1,
+      64
+     ],
+     [
+      8,
+      72
+     ]
+    ],
+    "every_integer_in_this_row_is_a_count": "COUNTING-ONLY",
+    "exponent": 32,
+    "extreme_points_that_are_edge_midpoints_of_it": 72,
+    "extreme_points_that_are_vertices_of_the_parents_simplex": 64,
+    "fibre_dimension": 0,
+    "grain": "LINK",
+    "induced_classes_on_the_carrier": 136,
+    "orbit_pairs_merged": 72,
+    "reachable_dimension": 135,
+    "reading": "ANCHORED",
+    "row": "LINK-ANCHORED",
+    "the_classes_coarsen_the_parents_orbits": true,
+    "the_parents_orbits": 208,
+    "the_parents_simplex_dimension": 207,
+    "weight_space_rank": 135,
+    "why_the_exponent": "THE-NUMBER-OF-STENCIL-COPIES-THE-LATTICE-CARRIES"
+   },
+   {
+    "class_size_profile": [
+     [
+      1,
+      8
+     ],
+     [
+      2,
+      28
+     ],
+     [
+      8,
+      16
+     ],
+     [
+      16,
+      28
+     ]
+    ],
+    "every_integer_in_this_row_is_a_count": "COUNTING-ONLY",
+    "exponent": 32,
+    "extreme_points_that_are_edge_midpoints_of_it": 40,
+    "extreme_points_that_are_vertices_of_the_parents_simplex": 40,
+    "fibre_dimension": 0,
+    "grain": "LINK",
+    "induced_classes_on_the_carrier": 80,
+    "orbit_pairs_merged": 40,
+    "reachable_dimension": 79,
+    "reading": "EXTENSION",
+    "row": "LINK-EXTENSION",
+    "the_classes_coarsen_the_parents_orbits": true,
+    "the_parents_orbits": 120,
+    "the_parents_simplex_dimension": 119,
+    "weight_space_rank": 79,
+    "why_the_exponent": "THE-NUMBER-OF-STENCIL-COPIES-THE-LATTICE-CARRIES"
+   },
+   {
+    "class_size_profile": [
+     [
+      1,
+      64
+     ],
+     [
+      8,
+      72
+     ]
+    ],
+    "every_integer_in_this_row_is_a_count": "COUNTING-ONLY",
+    "exponent": 16,
+    "extreme_points_that_are_edge_midpoints_of_it": 72,
+    "extreme_points_that_are_vertices_of_the_parents_simplex": 64,
+    "fibre_dimension": 265121208,
+    "grain": "PLAQUETTE",
+    "induced_classes_on_the_carrier": 136,
+    "orbit_pairs_merged": 72,
+    "reachable_dimension": 135,
+    "reading": "ANCHORED",
+    "row": "PLAQUETTE-ANCHORED",
+    "the_classes_coarsen_the_parents_orbits": true,
+    "the_parents_orbits": 208,
+    "the_parents_simplex_dimension": 207,
+    "weight_space_rank": 265121343,
+    "why_the_exponent": "THE-NUMBER-OF-STENCIL-COPIES-THE-LATTICE-CARRIES"
+   },
+   {
+    "class_size_profile": [
+     [
+      1,
+      8
+     ],
+     [
+      2,
+      28
+     ],
+     [
+      8,
+      16
+     ],
+     [
+      16,
+      28
+     ]
+    ],
+    "every_integer_in_this_row_is_a_count": "COUNTING-ONLY",
+    "exponent": 16,
+    "extreme_points_that_are_edge_midpoints_of_it": 40,
+    "extreme_points_that_are_vertices_of_the_parents_simplex": 40,
+    "fibre_dimension": 66310960,
+    "grain": "PLAQUETTE",
+    "induced_classes_on_the_carrier": 80,
+    "orbit_pairs_merged": 40,
+    "reachable_dimension": 79,
+    "reading": "EXTENSION",
+    "row": "PLAQUETTE-EXTENSION",
+    "the_classes_coarsen_the_parents_orbits": true,
+    "the_parents_orbits": 120,
+    "the_parents_simplex_dimension": 119,
+    "weight_space_rank": 66311039,
+    "why_the_exponent": "THE-NUMBER-OF-STENCIL-COPIES-THE-LATTICE-CARRIES"
+   },
+   {
+    "class_size_profile": [
+     [
+      1,
+      64
+     ],
+     [
+      8,
+      72
+     ]
+    ],
+    "every_integer_in_this_row_is_a_count": "COUNTING-ONLY",
+    "exponent": 16,
+    "extreme_points_that_are_edge_midpoints_of_it": 72,
+    "extreme_points_that_are_vertices_of_the_parents_simplex": 64,
+    "fibre_dimension": 171060120,
+    "grain": "SITE",
+    "induced_classes_on_the_carrier": 136,
+    "orbit_pairs_merged": 72,
+    "reachable_dimension": 135,
+    "reading": "ANCHORED",
+    "row": "SITE-ANCHORED",
+    "the_classes_coarsen_the_parents_orbits": true,
+    "the_parents_orbits": 208,
+    "the_parents_simplex_dimension": 207,
+    "weight_space_rank": 171060255,
+    "why_the_exponent": "THE-NUMBER-OF-STENCIL-COPIES-THE-LATTICE-CARRIES"
+   },
+   {
+    "class_size_profile": [
+     [
+      1,
+      8
+     ],
+     [
+      2,
+      28
+     ],
+     [
+      8,
+      16
+     ],
+     [
+      16,
+      28
+     ]
+    ],
+    "every_integer_in_this_row_is_a_count": "COUNTING-ONLY",
+    "exponent": 16,
+    "extreme_points_that_are_edge_midpoints_of_it": 40,
+    "extreme_points_that_are_vertices_of_the_parents_simplex": 40,
+    "fibre_dimension": 43398506,
+    "grain": "SITE",
+    "induced_classes_on_the_carrier": 80,
+    "orbit_pairs_merged": 40,
+    "reachable_dimension": 79,
+    "reading": "EXTENSION",
+    "row": "SITE-EXTENSION",
+    "the_classes_coarsen_the_parents_orbits": true,
+    "the_parents_orbits": 120,
+    "the_parents_simplex_dimension": 119,
+    "weight_space_rank": 43398585,
+    "why_the_exponent": "THE-NUMBER-OF-STENCIL-COPIES-THE-LATTICE-CARRIES"
+   }
+  ],
+  "the_fibre_at_the_link_grain": "EXACTLY-THE-NORMALISATION",
+  "the_image": "THE-E-TH-POWER-SUBLATTICE-OF-THE-CLASS-CONSTANT-MEASURES-WITH-E-THE-STENCIL-COUNT"
+ },
+ "grain_degeneracy": {
+  "coupling_counts_anchored": [
+   135,
+   171060255,
+   265121343
+  ],
+  "grains": 3,
+  "induced_classes_anchored": [
+   136
+  ],
+  "readings": 2,
+  "verdict": "THE-COUPLING-COUNT-IS-GRAIN-RELATIVE-THE-REACHABLE-MEASURES-ARE-NOT"
+ },
+ "law_native_control": {
+  "class_constant": true,
+  "full_support": true,
+  "never_spent_as_derived": true,
+  "obstruction": "UNREACHABLE-BY-ARITHMETIC",
+  "reachable": false,
+  "read_at_two_independent_sources": true,
+  "sector_law": [
+   "15/38",
+   "5/19",
+   "13/38"
+  ],
+  "stamp": "LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION",
+  "the_honest_use": "A-CONTROL-THE-DISTANCE-IS-REPORTED-AND-THE-AGREEMENT-IS-NOT-CLAIMED"
+ },
+ "ledger_shape": {
+  "closing_gates": 2,
+  "gates_closed_before_the_paper_gates": 39,
+  "objects_sealed_before_the_paper_gates": 29,
+  "paper_gates": 6
+ },
+ "locality": {
+  "every_link_lies_in_this_many_plaquettes": 2,
+  "link_grain_elementary_systems": 640,
+  "link_grain_invariant_detected": 0,
+  "link_grain_locally_invariant": 64,
+  "link_grain_not_invariant": 576,
+  "link_grain_not_invariant_detected": 576,
+  "link_grain_verdict": "PRODUCT-INVARIANCE-EQUALS-LOCAL-INVARIANCE",
+  "plaquette_grain_carrier_configurations_at_product_one": 640,
+  "plaquette_grain_declared_sample": 64,
+  "plaquette_grain_sample_at_product_one": 64,
+  "plaquette_grain_verdict": "THE-PRODUCT-INVARIANT-SPACE-IS-STRICTLY-LARGER-BY-A-COBOUNDARY",
+  "what_the_coboundary_does_to_the_measure": "NOTHING-ITS-PRODUCT-IS-IDENTICALLY-ONE"
+ },
+ "mutants": [
+  {
+   "mutant": "MUT-SOURCE-DRIFT",
+   "plants": "\"000000000000\"",
+   "target": "G-SOURCE-BYTES",
+   "what": "replaces one pinned source's measured digest with zeros"
+  },
+  {
+   "mutant": "MUT-AST-BLIND",
+   "plants": "_TOLERANCE_FLOAT = 1e-9",
+   "target": "G-WEIGHTS-ARE-POSITIVE-RATIONALS",
+   "what": "plants a real float literal into the source text the AST gate parses"
+  },
+  {
+   "mutant": "MUT-PATH-VALUE",
+   "plants": "got = 999",
+   "target": "G-PATH-VALUE-ANCHORS",
+   "what": "moves one inherited path-value to 999"
+  },
+  {
+   "mutant": "MUT-VERBATIM",
+   "plants": "window.replace(\"must not\", \"may\")",
+   "target": "G-VERBATIM-ANCHORS",
+   "what": "inverts one verbatim window's own meaning, so it stops locating in the parent's pinned bytes"
+  },
+  {
+   "mutant": "MUT-ARENA",
+   "plants": "coins = coins[:-1]",
+   "target": "G-ARENA-REBUILT",
+   "what": "drops one coin from the rebuilt family"
+  },
+  {
+   "mutant": "MUT-RESIDUAL",
+   "plants": "o32 = o32[:-1]",
+   "target": "G-RESIDUAL-GAUGE-REBUILT",
+   "what": "drops one residual gauge orbit before the comparison with both parents' counts"
+  },
+  {
+   "mutant": "MUT-GROUP-NOT-CLOSED",
+   "plants": "G = G[:-1]",
+   "target": "G-FORM-CENSUS-COMPLETE",
+   "what": "removes one element from the acting group at the plaquette grain, so the closure check fails"
+  },
+  {
+   "mutant": "MUT-BURNSIDE",
+   "plants": "orb = orb + 1 if orb else orb",
+   "target": "G-FORM-CENSUS-COMPLETE",
+   "what": "adds one to the site grain's published orbit count, so it no longer re-derives its own Burnside sum"
+  },
+  {
+   "mutant": "MUT-ANALYTIC",
+   "plants": "plaq_closed = plaq_closed + 1",
+   "target": "G-ANALYTIC-CROSSCHECK",
+   "what": "moves the character route's plaquette count by one"
+  },
+  {
+   "mutant": "MUT-RANK",
+   "plants": "gens = gens[:-1]",
+   "target": "G-RANK-IS-ORBITS-MINUS-ONE",
+   "what": "drops one exhibited generator, so the rank no longer equals the orbit count less one"
+  },
+  {
+   "mutant": "MUT-LOCALITY-THEOREM",
+   "plants": "non[0] = dict(non[0], detected=False)",
+   "target": "G-LOCALITY-AT-THE-LINK-GRAIN",
+   "what": "flips one detected and one undetected elementary system, so the two-sided census is no longer two-sided"
+  },
+  {
+   "mutant": "MUT-COBOUNDARY",
+   "plants": "exps[lat.links[0]] = {order[lat.links[0]][0]: 1,",
+   "target": "G-LOCALITY-GAP-AT-THE-PLAQUETTE-GRAIN",
+   "what": "gives one link the same exponent in both of its plaquettes, so the coboundary's product is no longer one"
+  },
+  {
+   "mutant": "MUT-GEOMETRY",
+   "plants": "singletons = singletons - 1",
+   "target": "G-THE-REACHABLE-SIMPLEX-IS-EXHIBITED",
+   "what": "drops one singleton class from the vertex count, so the two counts no longer exhaust the class list"
+  },
+  {
+   "mutant": "MUT-INDUCED",
+   "plants": "cls = cls[:-2] + [cls[-2] + cls[-1]]",
+   "target": "G-REACHABLE-SET-IS-A-SUBSIMPLEX",
+   "what": "merges two induced classes at the site grain, so the three grains no longer induce the same partition"
+  },
+  {
+   "mutant": "MUT-WILSON-OBSERVABLE",
+   "plants": "vals[0] = fadd(vals[0], ONE)",
+   "target": "G-WILSON-OBSERVABLE-REBUILT",
+   "what": "perturbs one configuration's trace at one plaquette, so the observable stops being plaquette-independent"
+  },
+  {
+   "mutant": "MUT-WILSON-INVARIANCE",
+   "plants": "bad = 1",
+   "target": "G-WILSON-IS-IN-THE-ALLOWED-SPACE",
+   "what": "reports a gauge-invariance failure for the loop trace"
+  },
+  {
+   "mutant": "MUT-WILSON-GRAIN",
+   "plants": "sep_link = False",
+   "target": "G-WILSON-GRAIN-SELECTION",
+   "what": "declares the link grain not to separate, so the grain-selection finding is no longer exhibited"
+  },
+  {
+   "mutant": "MUT-TARGET-CENSUS",
+   "plants": "rows[3][\"obstruction\"] = \"REACHABLE\"",
+   "target": "G-TARGET-CENSUS",
+   "what": "declares the law-native control reachable"
+  },
+  {
+   "mutant": "MUT-CONTROL-SPENT",
+   "plants": "row = dict(row, reachable=True, obstruction=\"REACHABLE\")",
+   "target": "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
+   "what": "spends the control as a derived row by marking it reachable"
+  },
+  {
+   "mutant": "MUT-DENSITY",
+   "plants": "j = j + 3",
+   "target": "G-DENSITY-WITNESS",
+   "what": "overstates the witness's error bound by three decades"
+  },
+  {
+   "mutant": "MUT-FALSIFIER",
+   "plants": "verdict=\"UNPINNED\")",
+   "target": "G-FALSIFIER-CENSUS",
+   "what": "declares every observable unpinned, so the falsifier reports no hit"
+  },
+  {
+   "mutant": "MUT-EXPECTATION-UNSTAMPED",
+   "plants": "rows[1][\"stamp\"] = \"PLAIN\"",
+   "target": "G-WILSON-RANGE-OVER-THE-SIMPLEX",
+   "what": "strips the conditional stamp from one published expectation"
+  },
+  {
+   "mutant": "MUT-POT-HANDOFF",
+   "plants": "hand[\"what_is_NOT_handed_over\"] = []",
+   "target": "G-POT-HANDOFF",
+   "what": "empties the list of objects the handoff withholds by name"
+  },
+  {
+   "mutant": "MUT-CHOICE-INVENTORY",
+   "plants": "rows[4][\"instances_built\"] = rows[4][\"fibre\"] - 1",
+   "target": "G-CHOICE-INVENTORY",
+   "what": "leaves one member of a swept axis's fibre unbuilt"
+  },
+  {
+   "mutant": "MUT-REACHABILITY",
+   "plants": "got[0][\"emitted\"] = got[-1][\"emitted\"]",
+   "target": "G-HEAD-LAW-REACHABILITY",
+   "what": "collapses the head law's synthetic probes to one string"
+  },
+  {
+   "mutant": "MUT-HEAD",
+   "plants": "\"ACT-FORM-FORCED-EVERYTHING\"",
+   "target": "G-HEAD-DERIVED-TWICE",
+   "what": "types the head instead of computing it"
+  },
+  {
+   "mutant": "MUT-VERDICT-COMPARATOR",
+   "plants": "verdict.replace(\"ACT-\", \"ACT-X-\", 1)",
+   "target": "G-VERDICT-RECONSTRUCTION",
+   "what": "corrupts the builder's verdict string after it is built"
+  },
+  {
+   "mutant": "MUT-LEDGER-SHAPE",
+   "plants": "ls[\"paper_gates\"] = ls[\"paper_gates\"] + 1",
+   "target": "G-LEDGER-SHAPE-IS-CONSISTENT",
+   "what": "inflates the published paper-gate count by one"
+  },
+  {
+   "mutant": "MUT-GHOST-FUNCTION",
+   "plants": "def ghost_helper",
+   "target": "G-FUNCTION-INVENTORY-IS-TOTAL",
+   "what": "defines an undeclared function in this instrument's own source text"
+  },
+  {
+   "mutant": "MUT-REGISTRY-EVASION",
+   "plants": "'MUT-' + 'GHOST'",
+   "target": "G-MUTANT-REGISTRY-IS-TOTAL",
+   "what": "hides a mutant switch behind a computed name the AST scan cannot read"
+  },
+  {
+   "mutant": "MUT-FALSIFIER-DESCRIPTION",
+   "plants": "\"\".join(reversed(token))",
+   "target": "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST",
+   "what": "replaces one falsifier's published token with a token no source can contain -- built at run time by reversing the real one, so the falsifier cannot defeat itself by planting its own literal"
+  },
+  {
+   "mutant": "MUT-CLAIM",
+   "plants": "\"137 single-link invariant classes\"",
+   "target": "G-PAPER-CLAIMS",
+   "what": "corrupts a load-bearing count in the paper text the claim gate scans"
+  },
+  {
+   "mutant": "MUT-TABLE-ROW",
+   "plants": "a.group(1) + b.group(2)",
+   "target": "G-PAPER-CLAIMS",
+   "what": "swaps two table rows under their own labels in the scanned text"
+  },
+  {
+   "mutant": "MUT-QUOTE-FIDELITY",
+   "plants": "\"the unordered sum of the four link\"",
+   "target": "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
+   "what": "inverts a quoted definition in the scanned paper text"
+  },
+  {
+   "mutant": "MUT-TABLE-BINDING",
+   "plants": "\"\\n\\n| a | b |\\n|---|---|\\n| planted | 4242 |\\n\"",
+   "target": "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
+   "what": "adds an unbound table carrying a numeral to the scanned text"
+  },
+  {
+   "mutant": "MUT-VERDICT-TWIN",
+   "plants": "\"XCT-\"",
+   "target": "G-PAPER-VERDICT-EQUALITY",
+   "what": "adds a forged twin of the verdict fence beside the clean one"
+  },
+  {
+   "mutant": "MUT-MUST-NOT",
+   "plants": "follows an area law",
+   "target": "G-MUST-NOT-VOCABULARY",
+   "what": "plants an area-law and string-tension sentence into the scanned text"
+  },
+  {
+   "mutant": "MUT-POLARITY",
+   "plants": "\"it is false that \"",
+   "target": "G-PAPER-POLARITY",
+   "what": "plants a declared negator immediately before a direction-bearing claim"
+  },
+  {
+   "mutant": "MUT-COVERAGE",
+   "plants": "an uncovered numeral 987654321",
+   "target": "G-PAPER-NUMERAL-COVERAGE",
+   "what": "plants a numeral no value this run computed can license"
+  },
+  {
+   "mutant": "MUT-GAMMA",
+   "plants": "GA.elems = GA.elems[:-1]",
+   "target": "G-GAMMA-GROUP-BUILT",
+   "what": "drops one element from the coin-map group before its order is measured"
+  },
+  {
+   "mutant": "MUT-CHART",
+   "plants": "ch32 = ch32[:1]",
+   "target": "G-CHART-GROUPS-REBUILT",
+   "what": "restricts the anchored chart group to its identity element, so transitivity on the links fails"
+  },
+  {
+   "mutant": "MUT-ODD-TWIST",
+   "plants": "odd = []",
+   "target": "G-THE-ODD-TWIST-IS-NOT-REALISABLE",
+   "what": "empties the set of unrealisable constant twists"
+  },
+  {
+   "mutant": "MUT-PRICE",
+   "plants": "reachable_dimension=a[\"the_parents_simplex_dimension\"]",
+   "target": "G-PRICE-REDUCED-NOT-EVADED",
+   "what": "raises the reachable dimension to the parent's own price, so the reduction is no longer strict"
+  },
+  {
+   "mutant": "MUT-GRAIN-DEGENERACY",
+   "plants": "S[\"form_census\"][\"rows\"][4][\"coupling_count\"]",
+   "target": "G-GRAIN-DEGENERACY-ON-THE-CARRIER",
+   "what": "gives two grains the same coupling count, so the grain-relativity the gate measures disappears"
+  },
+  {
+   "mutant": "MUT-MINIMAL-SUPPORT",
+   "plants": "single_link_invariants = 1",
+   "target": "G-WILSON-IS-NOT-MINIMAL-SUPPORT",
+   "what": "declares the gauge group transitive on a single link's datum"
+  },
+  {
+   "mutant": "MUT-SUPPLIED",
+   "plants": "a = dict(a, coupling_count=0)",
+   "target": "G-GIBBS-ROW-SUPPLIED",
+   "what": "zeroes the coupling count the supplied row publishes"
+  },
+  {
+   "mutant": "MUT-OBSERVABLE-NOT-INVARIANT",
+   "plants": "dcount = dcount - 1",
+   "target": "G-OBSERVABLES-ARE-GAUGE-INVARIANT",
+   "what": "drops one defect-carrying coin from the count the parent's receipt anchors"
+  },
+  {
+   "mutant": "MUT-WAIVER",
+   "plants": "covered = covered[:-1]",
+   "target": "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+   "what": "removes one gate from the covered set, so a closed gate is left uncovered"
+  },
+  {
+   "mutant": "MUT-SEAL",
+   "plants": "\"MOVED-AFTER-THE-GATE\"",
+   "target": "G-SEAL-INTEGRITY",
+   "what": "edits a sealed object after its gate closed"
+  }
+ ],
+ "odd_twist": {
+  "it_is_a_bijection_of_the_carrier": true,
+  "no_local_weight_system_can_see_it": true,
+  "realisable_constant_twists": [
+   0,
+   2,
+   4,
+   6
+  ],
+  "unrealisable_constant_twists": [
+   1,
+   3,
+   5,
+   7
+  ]
+ },
+ "paper_binding": {
+  "blockquotes": 19,
+  "blockquotes_outside_a_pinned_verbatim_window": 0,
+  "table_data_rows_carrying_a_numeral": 26,
+  "table_header_rows_excluded": 5,
+  "table_rows_unbound": 0,
+  "verbatim_windows_available": 19
+ },
+ "paper_claims": [
+  {
+   "claim": "16 sites, 32 links and 16 plaquettes",
+   "occurrences": 1
+  },
+  {
+   "claim": "640 coins, splitting into 64 diagonal, 64 antidiagonal and 512 balanced",
+   "occurrences": 1
+  },
+  {
+   "claim": "208 orbits at the anchored reading and 120 at the extension",
+   "occurrences": 1
+  },
+  {
+   "claim": "residual gauge group is of order 4 at the anchored reading and 8 at the extension",
+   "occurrences": 1
+  },
+  {
+   "claim": "link | anchored | 8 | 1 | 8 | 136 | 135",
+   "occurrences": 1
+  },
+  {
+   "claim": "link | extension | 8 | 4 | 16 | 80 | 79",
+   "occurrences": 1
+  },
+  {
+   "claim": "plaquette | anchored | 512 | 2 | 1024 | 265121344 | 265121343",
+   "occurrences": 1
+  },
+  {
+   "claim": "plaquette | extension | 512 | 8 | 4096 | 66311040 | 66311039",
+   "occurrences": 1
+  },
+  {
+   "claim": "site | anchored | 4096 | 2 | 8192 | 171060256 | 171060255",
+   "occurrences": 1
+  },
+  {
+   "claim": "site | extension | 4096 | 8 | 32768 | 43398586 | 43398585",
+   "occurrences": 1
+  },
+  {
+   "claim": "the coupling count is 135 at the link grain, 265121343 at the plaquette grain and 171060255 at the site grain",
+   "occurrences": 1
+  },
+  {
+   "claim": "79, 66311039 and 43398585 at the extension reading",
+   "occurrences": 1
+  },
+  {
+   "claim": "the declared reduced arena carries 19 coins",
+   "occurrences": 1
+  },
+  {
+   "claim": "136 and 72, the two constants the character route is written in",
+   "occurrences": 1
+  },
+  {
+   "claim": "530219008 against the character route's 530219008",
+   "occurrences": 1
+  },
+  {
+   "claim": "135 generators are exhibited",
+   "occurrences": 1
+  },
+  {
+   "claim": "576 of 576 elementary systems that are not locally invariant are detected, and 0 of the 64 that are",
+   "occurrences": 1
+  },
+  {
+   "claim": "every link lies in exactly 2 plaquettes",
+   "occurrences": 1
+  },
+  {
+   "claim": "product one at all 640 carrier configurations and at all 64 declared non-uniform ones",
+   "occurrences": 1
+  },
+  {
+   "claim": "link | anchored | 32 | 136 | 135 | 72 | 0",
+   "occurrences": 1
+  },
+  {
+   "claim": "link | extension | 32 | 80 | 79 | 40 | 0",
+   "occurrences": 1
+  },
+  {
+   "claim": "plaquette | anchored | 16 | 136 | 135 | 72 | 265121208",
+   "occurrences": 1
+  },
+  {
+   "claim": "plaquette | extension | 16 | 80 | 79 | 40 | 66310960",
+   "occurrences": 1
+  },
+  {
+   "claim": "site | anchored | 16 | 136 | 135 | 72 | 171060120",
+   "occurrences": 1
+  },
+  {
+   "claim": "site | extension | 16 | 80 | 79 | 40 | 43398506",
+   "occurrences": 1
+  },
+  {
+   "claim": "64 of the reachable set's extreme points are vertices of the parent's simplex and the other 72 are midpoints of its edges",
+   "occurrences": 1
+  },
+  {
+   "claim": "the same 136 classes at all three grains",
+   "occurrences": 1
+  },
+  {
+   "claim": "135 independent numbers where the parent's declaration supplies 207",
+   "occurrences": 1
+  },
+  {
+   "claim": "79 and 119 at the extension reading",
+   "occurrences": 1
+  },
+  {
+   "claim": "72 pairs of gauge orbits at the anchored reading and 40 at the extension",
+   "occurrences": 1
+  },
+  {
+   "claim": "639 numbers instead",
+   "occurrences": 1
+  },
+  {
+   "claim": "fibre of dimension 0 at the link grain and 265121208 at the plaquette grain",
+   "occurrences": 1
+  },
+  {
+   "claim": "1 of the 3 declared grains",
+   "occurrences": 1
+  },
+  {
+   "claim": "8192 checks against every one of the plaquette's gauge elements, 0 failures",
+   "occurrences": 1
+  },
+  {
+   "claim": "11 distinct values",
+   "occurrences": 1
+  },
+  {
+   "claim": "10 of the 135 couplings the carrier admits",
+   "occurrences": 1
+  },
+  {
+   "claim": "136 single-link invariant classes",
+   "occurrences": 1
+  },
+  {
+   "claim": "COUNTING | yes | yes | REACHABLE",
+   "occurrences": 1
+  },
+  {
+   "claim": "ORBIT-UNIFORM-ANCHORED | yes | yes | UNREACHABLE-BY-ARITHMETIC",
+   "occurrences": 1
+  },
+  {
+   "claim": "ORBIT-UNIFORM-EXTENSION | yes | yes | UNREACHABLE-BY-ARITHMETIC",
+   "occurrences": 1
+  },
+  {
+   "claim": "LAW-NATIVE-PI | yes | yes | UNREACHABLE-BY-ARITHMETIC",
+   "occurrences": 1
+  },
+  {
+   "claim": "MONOMIAL-HAAR | yes | no | UNREACHABLE-BY-SUPPORT",
+   "occurrences": 1
+  },
+  {
+   "claim": "ODD-TWIST-GRADED | no | yes | UNREACHABLE-BY-SYMMETRY",
+   "occurrences": 1
+  },
+  {
+   "claim": "1 of the 6 named targets",
+   "occurrences": 1
+  },
+  {
+   "claim": "3 measured obstruction species",
+   "occurrences": 1
+  },
+  {
+   "claim": "the ratio 3/2 is not an exact power at either declared exponent",
+   "occurrences": 1
+  },
+  {
+   "claim": "at denominator 100000 the error is below 1/10^4",
+   "occurrences": 1
+  },
+  {
+   "claim": "wilson block trace rational part | anchored | [0, 4] | [0, 4] | unpinned",
+   "occurrences": 1
+  },
+  {
+   "claim": "wilson block trace surd part | anchored | [-1, 1] | [-1, 1] | unpinned",
+   "occurrences": 1
+  },
+  {
+   "claim": "off diagonal quartic sign | anchored | [-2, 2] | [0, 0] | pinned",
+   "occurrences": 1
+  },
+  {
+   "claim": "diagonal sector indicator | anchored | [0, 1] | [0, 1] | unpinned",
+   "occurrences": 1
+  },
+  {
+   "claim": "defect indicator | anchored | [0, 1] | [0, 1] | unpinned",
+   "occurrences": 1
+  },
+  {
+   "claim": "flat indicator | anchored | [0, 1] | [0, 1] | unpinned",
+   "occurrences": 1
+  },
+  {
+   "claim": "wilson block trace rational part | extension | [0, 4] | [0, 4] | unpinned",
+   "occurrences": 1
+  },
+  {
+   "claim": "wilson block trace surd part | extension | [-1, 1] | [-1, 1] | unpinned",
+   "occurrences": 1
+  },
+  {
+   "claim": "off diagonal quartic sign | extension | [-2, 2] | [0, 0] | pinned",
+   "occurrences": 1
+  },
+  {
+   "claim": "diagonal sector indicator | extension | [0, 1] | [0, 1] | unpinned",
+   "occurrences": 1
+  },
+  {
+   "claim": "defect indicator | extension | [0, 1] | [0, 1] | unpinned",
+   "occurrences": 1
+  },
+  {
+   "claim": "flat indicator | extension | [0, 1] | [0, 1] | unpinned",
+   "occurrences": 1
+  },
+  {
+   "claim": "144 of the 208 orbit indicators are pinned at the anchored reading",
+   "occurrences": 1
+  },
+  {
+   "claim": "80 of the 120 orbit indicators are pinned at the extension reading",
+   "occurrences": 1
+  },
+  {
+   "claim": "13/10 under THE-NULL",
+   "occurrences": 1
+  },
+  {
+   "claim": "4294967399/4294967375 under THE-EXHIBITED-WITNESS",
+   "occurrences": 1
+  },
+  {
+   "claim": "262244/65615 under THE-WILSON-SHAPE-AT-A-DECLARED-COUPLING",
+   "occurrences": 1
+  },
+  {
+   "claim": "0 loop families are grown",
+   "occurrences": 1
+  },
+  {
+   "claim": "39 gates close before the paper gates, and 6 paper gates and 2 closing gates follow",
+   "occurrences": 1
+  },
+  {
+   "claim": "29 objects are sealed before the paper gates",
+   "occurrences": 1
+  },
+  {
+   "claim": "13 construction choices are inventoried, of which 5 are measured verdict-determining",
+   "occurrences": 1
+  },
+  {
+   "claim": "11 file-bytes anchors, 34 path-value anchors and 19 verbatim-text anchors, 64 anchors in all",
+   "occurrences": 2
+  },
+  {
+   "claim": "49 declared mutants",
+   "occurrences": 1
+  },
+  {
+   "claim": "`v14/note-act-pin.md` (sha256-12 `766c603c6dbc`)",
+   "occurrences": 1
+  },
+  {
+   "claim": "`v14/paper-27-smu.md` (`6df0db523d32`)",
+   "occurrences": 1
+  },
+  {
+   "claim": "`v14/code/smu_exact.py` (`126912ae7142`)",
+   "occurrences": 1
+  },
+  {
+   "claim": "`v14/code/smu_receipt.json` (`0d6fbadd756d`)",
+   "occurrences": 1
+  },
+  {
+   "claim": "`v14/paper-23-measure.md` (`79cc67b4f6cd`)",
+   "occurrences": 1
+  },
+  {
+   "claim": "`v14/code/r5m_measure_exact.py` (`faf353385905`)",
+   "occurrences": 1
+  },
+  {
+   "claim": "`v14/code/r5m_measure_receipt.json` (`c9edf97a5533`)",
+   "occurrences": 1
+  },
+  {
+   "claim": "`v14/paper-18-gauge-rung.md` (`62cfe5689d2c`)",
+   "occurrences": 1
+  },
+  {
+   "claim": "`v14/code/r5_gauge_exact.py` (`0d98de793b79`)",
+   "occurrences": 1
+  },
+  {
+   "claim": "`v14/code/r5_gauge_receipt.json` (`0c02b7684e5b`)",
+   "occurrences": 1
+  },
+  {
+   "claim": "`v14/code/giter_receipt.json` (`42255f50328a`)",
+   "occurrences": 1
+  },
+  {
+   "claim": "`ACT-FORM-FORCED` | the allowed space is a point at every declared row | not the case: the smallest coupling count measured is 79",
+   "occurrences": 1
+  },
+  {
+   "claim": "`ACT-GIBBS` | the image is one measure | not the case: the reachable set has dimension 135 at the link grain",
+   "occurrences": 1
+  },
+  {
+   "claim": "`ACT-BLOCKED-AT` | an object that cannot be evaluated | every declared row is evaluated and its Burnside sum divides",
+   "occurrences": 1
+  },
+  {
+   "claim": "`ACT-FORM-RELATIVE` | the allowed space has positive rank | **this is what is measured**",
+   "occurrences": 1
+  }
+ ],
+ "paper_coverage": {
+  "digest_valued_keys_excluded_from_the_pool": [
+   "code_sha256_12",
+   "digest",
+   "measured",
+   "paper_sha256_12",
+   "pin_sha256_prefix",
+   "pinned"
+  ],
+  "fence_markers": 2,
+  "inline_spans_with_a_numeral": 36,
+  "numerals_scanned": 343,
+  "published_objects_excluded_from_the_pool": [
+   "mutants"
+  ],
+  "removed_from_the_scan_and_bound_as_claims": "THE-PARENTHESISED-ENGRAVING-REFERENCES-AND-THE-BACKTICKED-TWELVE-HEX-DIGESTS",
+  "structural_literals_forgiven": [
+   "1",
+   "1.0",
+   "1.1",
+   "1.10",
+   "1.11",
+   "1.12",
+   "1.2",
+   "1.3",
+   "1.4",
+   "1.5",
+   "1.6",
+   "1.7",
+   "1.8",
+   "1.9",
+   "10",
+   "10.0",
+   "10.1",
+   "10.10",
+   "10.11",
+   "10.12",
+   "10.2",
+   "10.3",
+   "10.4",
+   "10.5",
+   "10.6",
+   "10.7",
+   "10.8",
+   "10.9",
+   "11",
+   "11.0",
+   "11.1",
+   "11.10",
+   "11.11",
+   "11.12",
+   "11.2",
+   "11.3",
+   "11.4",
+   "11.5",
+   "11.6",
+   "11.7",
+   "11.8",
+   "11.9",
+   "12",
+   "12.0",
+   "12.1",
+   "12.10",
+   "12.11",
+   "12.12",
+   "12.2",
+   "12.3",
+   "12.4",
+   "12.5",
+   "12.6",
+   "12.7",
+   "12.8",
+   "12.9",
+   "13",
+   "13.0",
+   "13.1",
+   "13.10",
+   "13.11",
+   "13.12",
+   "13.2",
+   "13.3",
+   "13.4",
+   "13.5",
+   "13.6",
+   "13.7",
+   "13.8",
+   "13.9",
+   "2",
+   "2.0",
+   "2.1",
+   "2.10",
+   "2.11",
+   "2.12",
+   "2.2",
+   "2.3",
+   "2.4",
+   "2.5",
+   "2.6",
+   "2.7",
+   "2.8",
+   "2.9",
+   "3",
+   "3.0",
+   "3.1",
+   "3.10",
+   "3.11",
+   "3.12",
+   "3.2",
+   "3.3",
+   "3.4",
+   "3.5",
+   "3.6",
+   "3.7",
+   "3.8",
+   "3.9",
+   "4",
+   "4.0",
+   "4.1",
+   "4.10",
+   "4.11",
+   "4.12",
+   "4.2",
+   "4.3",
+   "4.4",
+   "4.5",
+   "4.6",
+   "4.7",
+   "4.8",
+   "4.9",
+   "5",
+   "5.0",
+   "5.1",
+   "5.10",
+   "5.11",
+   "5.12",
+   "5.2",
+   "5.3",
+   "5.4",
+   "5.5",
+   "5.6",
+   "5.7",
+   "5.8",
+   "5.9",
+   "6",
+   "6.0",
+   "6.1",
+   "6.10",
+   "6.11",
+   "6.12",
+   "6.2",
+   "6.3",
+   "6.4",
+   "6.5",
+   "6.6",
+   "6.7",
+   "6.8",
+   "6.9",
+   "7",
+   "7.0",
+   "7.1",
+   "7.10",
+   "7.11",
+   "7.12",
+   "7.2",
+   "7.3",
+   "7.4",
+   "7.5",
+   "7.6",
+   "7.7",
+   "7.8",
+   "7.9",
+   "8",
+   "8.0",
+   "8.1",
+   "8.10",
+   "8.11",
+   "8.12",
+   "8.2",
+   "8.3",
+   "8.4",
+   "8.5",
+   "8.6",
+   "8.7",
+   "8.8",
+   "8.9",
+   "9",
+   "9.0",
+   "9.1",
+   "9.10",
+   "9.11",
+   "9.12",
+   "9.2",
+   "9.3",
+   "9.4",
+   "9.5",
+   "9.6",
+   "9.7",
+   "9.8",
+   "9.9"
+  ],
+  "unmatched": 0
+ },
+ "paper_polarity": [
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "the price is REDUCED, not evaded",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "the Wilson shape is not forced",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "the odd twist is not realisable on this torus",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "the coupling count is grain-relative",
+   "negated": false,
+   "ok": true
+  }
+ ],
+ "paper_sha256_12": "3fbf109f0d9b",
+ "path_value_anchors": [
+  {
+   "anchor": "PV-COINS",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 640,
+   "measured": 640,
+   "ok": true,
+   "path": "counts/coins",
+   "source": "S-R5-RECEIPT",
+   "what": "the derived coin family's size"
+  },
+  {
+   "anchor": "PV-DIAG",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 64,
+   "measured": 64,
+   "ok": true,
+   "path": "counts/coins_diagonal",
+   "source": "S-R5-RECEIPT",
+   "what": "the diagonal sector"
+  },
+  {
+   "anchor": "PV-ANTI",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 64,
+   "measured": 64,
+   "ok": true,
+   "path": "counts/coins_antidiagonal",
+   "source": "S-R5-RECEIPT",
+   "what": "the antidiagonal sector"
+  },
+  {
+   "anchor": "PV-BAL",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 512,
+   "measured": 512,
+   "ok": true,
+   "path": "counts/coins_balanced",
+   "source": "S-R5-RECEIPT",
+   "what": "the balanced sector"
+  },
+  {
+   "anchor": "PV-ALPH",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 25,
+   "measured": 25,
+   "ok": true,
+   "path": "counts/alphabet",
+   "source": "S-R5-RECEIPT",
+   "what": "the coefficient alphabet"
+  },
+  {
+   "anchor": "PV-SITES",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 16,
+   "measured": 16,
+   "ok": true,
+   "path": "counts/sites",
+   "source": "S-R5-RECEIPT",
+   "what": "the site count at the anchored size"
+  },
+  {
+   "anchor": "PV-LINKS",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 32,
+   "measured": 32,
+   "ok": true,
+   "path": "counts/links",
+   "source": "S-R5-RECEIPT",
+   "what": "the link count"
+  },
+  {
+   "anchor": "PV-PLAQ",
+   "consumer": "G-ARENA-REBUILT",
+   "declared": 16,
+   "measured": 16,
+   "ok": true,
+   "path": "counts/plaquettes",
+   "source": "S-R5-RECEIPT",
+   "what": "the plaquette count"
+  },
+  {
+   "anchor": "PV-CHART",
+   "consumer": "G-CHART-GROUPS-REBUILT",
+   "declared": 32,
+   "measured": 32,
+   "ok": true,
+   "path": "counts/chart_group",
+   "source": "S-R5-RECEIPT",
+   "what": "the anchored chart group's order"
+  },
+  {
+   "anchor": "PV-DEFECT",
+   "consumer": "G-OBSERVABLES-ARE-GAUGE-INVARIANT",
+   "declared": 384,
+   "measured": 384,
+   "ok": true,
+   "path": "counts/defect_carrying_coins",
+   "source": "S-R5-RECEIPT",
+   "what": "the parent's defect census, one declared observable's own count"
+  },
+  {
+   "anchor": "PV-P23-ORB32",
+   "consumer": "G-RESIDUAL-GAUGE-REBUILT",
+   "declared": 208,
+   "measured": 208,
+   "ok": true,
+   "path": "candidate_invariance/uniqueness/CHART-32/orbits",
+   "source": "S-P23-RECEIPT",
+   "what": "paper-23's orbit count at the anchored chart reading"
+  },
+  {
+   "anchor": "PV-P23-SIMP32",
+   "consumer": "G-PRICE-REDUCED-NOT-EVADED",
+   "declared": 207,
+   "measured": 207,
+   "ok": true,
+   "path": "candidate_invariance/uniqueness/CHART-32/simplex_dimension",
+   "source": "S-P23-RECEIPT",
+   "what": "paper-23's invariant simplex dimension, the price this unit reduces"
+  },
+  {
+   "anchor": "PV-P23-ORB128",
+   "consumer": "G-RESIDUAL-GAUGE-REBUILT",
+   "declared": 120,
+   "measured": 120,
+   "ok": true,
+   "path": "candidate_invariance/uniqueness/CHART-128/orbits",
+   "source": "S-P23-RECEIPT",
+   "what": "paper-23's orbit count at the extension reading"
+  },
+  {
+   "anchor": "PV-P23-SIMP128",
+   "consumer": "G-PRICE-REDUCED-NOT-EVADED",
+   "declared": 119,
+   "measured": 119,
+   "ok": true,
+   "path": "candidate_invariance/uniqueness/CHART-128/simplex_dimension",
+   "source": "S-P23-RECEIPT",
+   "what": "paper-23's invariant simplex dimension at the extension"
+  },
+  {
+   "anchor": "PV-P23-SLICE",
+   "consumer": "G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER",
+   "declared": 640,
+   "measured": 640,
+   "ok": true,
+   "path": "arena/uniform_slice",
+   "source": "S-P23-RECEIPT",
+   "what": "paper-23's primary carrier, which is this unit's carrier"
+  },
+  {
+   "anchor": "PV-P23-MONO",
+   "consumer": "G-TARGET-CENSUS",
+   "declared": 128,
+   "measured": 128,
+   "ok": true,
+   "path": "candidate_group_haar/monomial_coins",
+   "source": "S-P23-RECEIPT",
+   "what": "the parent's one canonical measure's carrier, one declared target"
+  },
+  {
+   "anchor": "PV-SMU-ORB32",
+   "consumer": "G-RESIDUAL-GAUGE-REBUILT",
+   "declared": 208,
+   "measured": 208,
+   "ok": true,
+   "path": "gauge/orbits_chart_32",
+   "source": "S-SMU-RECEIPT",
+   "what": "SMU's own reproduction of the anchored orbit count"
+  },
+  {
+   "anchor": "PV-SMU-ORB128",
+   "consumer": "G-RESIDUAL-GAUGE-REBUILT",
+   "declared": 120,
+   "measured": 120,
+   "ok": true,
+   "path": "gauge/orbits_chart_128",
+   "source": "S-SMU-RECEIPT",
+   "what": "SMU's own reproduction of the extension orbit count"
+  },
+  {
+   "anchor": "PV-SMU-RES4",
+   "consumer": "G-RESIDUAL-GAUGE-REBUILT",
+   "declared": 4,
+   "measured": 4,
+   "ok": true,
+   "path": "gauge/residual_group_order_chart_32",
+   "source": "S-SMU-RECEIPT",
+   "what": "the residual gauge group on the carrier"
+  },
+  {
+   "anchor": "PV-SMU-RES8",
+   "consumer": "G-RESIDUAL-GAUGE-REBUILT",
+   "declared": 8,
+   "measured": 8,
+   "ok": true,
+   "path": "gauge/residual_group_order_chart_128",
+   "source": "S-SMU-RECEIPT",
+   "what": "the same at the extension reading"
+  },
+  {
+   "anchor": "PV-SMU-TWIST",
+   "consumer": "G-THE-ODD-TWIST-IS-NOT-REALISABLE",
+   "declared": 2,
+   "measured": 2,
+   "ok": true,
+   "path": "gauge/realisable_constant_twists/1",
+   "source": "S-SMU-RECEIPT",
+   "what": "the first non-identity constant twist the torus DOES close, which is even -- the fact the whole price reduction turns on"
+  },
+  {
+   "anchor": "PV-SMU-SIMP32",
+   "consumer": "G-PRICE-REDUCED-NOT-EVADED",
+   "declared": 207,
+   "measured": 207,
+   "ok": true,
+   "path": "welds/gauge_simplex_dimension_chart_32",
+   "source": "S-SMU-RECEIPT",
+   "what": "SMU's own reproduction of the anchored simplex dimension"
+  },
+  {
+   "anchor": "PV-SMU-SIMP128",
+   "consumer": "G-PRICE-REDUCED-NOT-EVADED",
+   "declared": 119,
+   "measured": 119,
+   "ok": true,
+   "path": "welds/gauge_simplex_dimension_chart_128",
+   "source": "S-SMU-RECEIPT",
+   "what": "SMU's own reproduction of the extension simplex dimension"
+  },
+  {
+   "anchor": "PV-SMU-PRICE639",
+   "consumer": "G-PRICE-REDUCED-NOT-EVADED",
+   "declared": 639,
+   "measured": 639,
+   "ok": true,
+   "path": "surjection/dropped_covariance/price_without_the_covariance_declaration",
+   "source": "S-SMU-RECEIPT",
+   "what": "the price with the covariance declaration dropped"
+  },
+  {
+   "anchor": "PV-SMU-WILSON-N",
+   "consumer": "G-WILSON-OBSERVABLE-REBUILT",
+   "declared": 11,
+   "measured": 11,
+   "ok": true,
+   "path": "wilson/distinct_values_over_the_carrier",
+   "source": "S-SMU-RECEIPT",
+   "what": "the number of distinct loop-trace values on the carrier"
+  },
+  {
+   "anchor": "PV-SMU-WILSON-MIN",
+   "consumer": "G-WILSON-RANGE-OVER-THE-SIMPLEX",
+   "declared": "0",
+   "measured": "0",
+   "ok": true,
+   "path": "wilson/range_over_the_invariant_simplex/minimum",
+   "source": "S-SMU-RECEIPT",
+   "what": "the minimum of the loop trace over the carrier"
+  },
+  {
+   "anchor": "PV-SMU-WILSON-MAX",
+   "consumer": "G-WILSON-RANGE-OVER-THE-SIMPLEX",
+   "declared": "4",
+   "measured": "4",
+   "ok": true,
+   "path": "wilson/range_over_the_invariant_simplex/maximum",
+   "source": "S-SMU-RECEIPT",
+   "what": "the maximum, and the top of the range SMU measured"
+  },
+  {
+   "anchor": "PV-SMU-FIBRE",
+   "consumer": "G-WILSON-OBSERVABLE-REBUILT",
+   "declared": 2,
+   "measured": 2,
+   "ok": true,
+   "path": "wilson/normalisation_fibre",
+   "source": "S-SMU-RECEIPT",
+   "what": "the observable's declared normalisation fibre"
+  },
+  {
+   "anchor": "PV-SMU-STAMP",
+   "consumer": "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
+   "declared": "LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION",
+   "measured": "LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION",
+   "ok": true,
+   "path": "privilege/stamp",
+   "source": "S-SMU-RECEIPT",
+   "what": "the control row's stamp, carried here VERBATIM and never spent"
+  },
+  {
+   "anchor": "PV-SMU-LAW1",
+   "consumer": "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
+   "declared": "15/38",
+   "measured": "15/38",
+   "ok": true,
+   "path": "law_native_rates/values/0",
+   "source": "S-SMU-RECEIPT",
+   "what": "the law-native sector law"
+  },
+  {
+   "anchor": "PV-SMU-LAW2",
+   "consumer": "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
+   "declared": "5/19",
+   "measured": "5/19",
+   "ok": true,
+   "path": "law_native_rates/values/1",
+   "source": "S-SMU-RECEIPT",
+   "what": "the second sector"
+  },
+  {
+   "anchor": "PV-SMU-LAW3",
+   "consumer": "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
+   "declared": "13/38",
+   "measured": "13/38",
+   "ok": true,
+   "path": "law_native_rates/values/2",
+   "source": "S-SMU-RECEIPT",
+   "what": "the third sector"
+  },
+  {
+   "anchor": "PV-GI-LAW1",
+   "consumer": "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
+   "declared": "15/38",
+   "measured": "15/38",
+   "ok": true,
+   "path": "targets/law_value_leg1/0",
+   "source": "S-GI-RECEIPT",
+   "what": "the same law value at its own source, read independently"
+  },
+  {
+   "anchor": "PV-GI-LAW3",
+   "consumer": "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
+   "declared": "13/38",
+   "measured": "13/38",
+   "ok": true,
+   "path": "targets/law_value_leg1/2",
+   "source": "S-GI-RECEIPT",
+   "what": "the third position at its own source"
+  }
+ ],
+ "pin_sha256_prefix": "766c603c6dbc",
+ "pot_handoff": {
+  "the_allowed_space": "ORBIT-CONSTANT-POSITIVE-RATIONAL-FUNCTIONS-ON-THE-STENCIL-DATUM",
+  "the_coupling_inventory": {
+   "LINK-ANCHORED": 135,
+   "LINK-EXTENSION": 79,
+   "PLAQUETTE-ANCHORED": 265121343,
+   "PLAQUETTE-EXTENSION": 66311039,
+   "SITE-ANCHORED": 171060255,
+   "SITE-EXTENSION": 43398585
+  },
+  "the_distinguished_points": {
+   "THE-LAW-NATIVE-CONTROL": "UNREACHABLE-BY-ARITHMETIC",
+   "THE-NULL": "W-IDENTICALLY-ONE-REACHES-THE-COUNTING-MEASURE",
+   "THE-WILSON-SHAPE": "AT-THE-PLAQUETTE-GRAIN-ONLY-SPANNING-10-OF-135-COUPLINGS-ON-THE-CARRIER"
+  },
+  "the_pinned_observable": "THE-OFF-DIAGONAL-QUARTIC-SIGN-IS-PINNED-TO-A-POINT-BY-EVERY-ADMISSIBLE-WEIGHT-SYSTEM",
+  "the_reachable_measures": {
+   "anchored": 135,
+   "extension": 79
+  },
+  "the_second_of_the_three_objects_is_still_absent": true,
+  "what_is_NOT_handed_over": [
+   "ANY-LOOP-FAMILY-WHOSE-SIZE-CAN-GROW-0-GROWN-HERE",
+   "ANY-STATEMENT-ON-THE-FAR-SIDE-OF-POTS-GATE",
+   "ANY-SELECTION-AMONG-THE-COUPLINGS-THE-FORM-IS-NOT-FORCED"
+  ]
+ },
+ "preregistered_heads": {
+  "outcomes": [
+   "ACT-FORM-FORCED",
+   "ACT-FORM-RELATIVE",
+   "ACT-GIBBS",
+   "ACT-BLOCKED-AT"
+  ],
+  "probes": [
+   {
+    "both_laws_agree": true,
+    "emitted": "ACT-BLOCKED-AT-THE-ORBIT-COUNT",
+    "outcome": "ACT-BLOCKED-AT",
+    "reached": true
+   },
+   {
+    "both_laws_agree": true,
+    "emitted": "ACT-FORM-FORCED-THE-ALLOWED-SPACE-IS-A-POINT-AT-ALL-6-DECLAR",
+    "outcome": "ACT-FORM-FORCED",
+    "reached": true
+   },
+   {
+    "both_laws_agree": true,
+    "emitted": "ACT-GIBBS-THE-IMAGE-IS-A-SINGLE-MEASURE-AT-ALL-6-DECLARED-RO",
+    "outcome": "ACT-GIBBS",
+    "reached": true
+   },
+   {
+    "both_laws_agree": true,
+    "emitted": "ACT-FORM-RELATIVE-THE-COUPLING-COUNT-IS-GRAIN-RELATIVE-AND-N",
+    "outcome": "ACT-FORM-RELATIVE",
+    "reached": true
+   }
+  ]
+ },
+ "price": {
+  "numbers_forbidden_anchored": 72,
+  "numbers_forbidden_extension": 40,
+  "orbit_pairs_merged_anchored": 72,
+  "orbit_pairs_merged_extension": 40,
+  "the_action_route_supplies_anchored": 135,
+  "the_action_route_supplies_extension": 79,
+  "the_mechanism": "EVERY-LOCAL-WEIGHT-SYSTEM-IS-BLIND-TO-THE-ODD-TWIST-WHICH-THE-TORUS-DOES-NOT-CLOSE",
+  "the_parents_price_anchored": 207,
+  "the_parents_price_extension": 119,
+  "the_parents_price_without_covariance": 639,
+  "verdict": "REDUCED-NOT-EVADED"
+ },
+ "provenance": {
+  "python": "3.13",
+  "sources": [
+   {
+    "measured": "766c603c6dbc",
+    "name": "S-PIN",
+    "ok": true,
+    "path": "v14/note-act-pin.md",
+    "pinned": "766c603c6dbc",
+    "what": "THE PIN, frozen before this instrument existed"
+   },
+   {
+    "measured": "6df0db523d32",
+    "name": "S-SMU-PAPER",
+    "ok": true,
+    "path": "v14/paper-27-smu.md",
+    "pinned": "6df0db523d32",
+    "what": "PARENT 1, SMU terminal: the dynamics census, the invariant simplexes, the conserved price, the law-native measure and its stamp, and the inheritance row this unit discharges"
+   },
+   {
+    "measured": "126912ae7142",
+    "name": "S-SMU-CODE",
+    "ok": true,
+    "path": "v14/code/smu_exact.py",
+    "pinned": "126912ae7142",
+    "what": "PARENT 1's instrument -- read for its declared definitions only; nothing is imported from it"
+   },
+   {
+    "measured": "0d6fbadd756d",
+    "name": "S-SMU-RECEIPT",
+    "ok": true,
+    "path": "v14/code/smu_receipt.json",
+    "pinned": "0d6fbadd756d",
+    "what": "PARENT 1's receipt: the law-native rates, the simplex dimensions, the gauge orbit census and the Wilson range this unit re-reads"
+   },
+   {
+    "measured": "79cc67b4f6cd",
+    "name": "S-P23-PAPER",
+    "ok": true,
+    "path": "v14/paper-23-measure.md",
+    "pinned": "79cc67b4f6cd",
+    "what": "PARENT 2, paper-23 terminal: the 640-configuration space, the withholding machinery, the transitivity criterion and the Gibbs row this unit supplies"
+   },
+   {
+    "measured": "faf353385905",
+    "name": "S-P23-CODE",
+    "ok": true,
+    "path": "v14/code/r5m_measure_exact.py",
+    "pinned": "faf353385905",
+    "what": "PARENT 2's instrument -- read for its declared definitions only"
+   },
+   {
+    "measured": "c9edf97a5533",
+    "name": "S-P23-RECEIPT",
+    "ok": true,
+    "path": "v14/code/r5m_measure_receipt.json",
+    "pinned": "c9edf97a5533",
+    "what": "PARENT 2's receipt: the orbit counts and the invariant simplex dimensions this unit's reachable set sits inside"
+   },
+   {
+    "measured": "62cfe5689d2c",
+    "name": "S-R5-PAPER",
+    "ok": true,
+    "path": "v14/paper-18-gauge-rung.md",
+    "pinned": "62cfe5689d2c",
+    "what": "PARENT 3, R5 terminal: the 16 plaquettes, the four-corner holonomy, the chart group, the gauge action and the 640-coin family"
+   },
+   {
+    "measured": "0d98de793b79",
+    "name": "S-R5-CODE",
+    "ok": true,
+    "path": "v14/code/r5_gauge_exact.py",
+    "pinned": "0d98de793b79",
+    "what": "PARENT 3's instrument -- read for its declared definitions only"
+   },
+   {
+    "measured": "0c02b7684e5b",
+    "name": "S-R5-RECEIPT",
+    "ok": true,
+    "path": "v14/code/r5_gauge_receipt.json",
+    "pinned": "0c02b7684e5b",
+    "what": "PARENT 3's receipt: the anchored arena cardinalities"
+   },
+   {
+    "measured": "42255f50328a",
+    "name": "S-GI-RECEIPT",
+    "ok": true,
+    "path": "v14/code/giter_receipt.json",
+    "pinned": "42255f50328a",
+    "what": "the Gamma-iteration terminal's receipt: the law-native positional law, which is the CONTROL target and is never spent as derived"
+   }
+  ]
+ },
+ "python": "3.13",
+ "rank": {
+  "coupling_count": 135,
+  "generator_shape": "ONE-DECLARED-VALUE-ON-A-SINGLE-ORBIT-AND-ONE-ELSEWHERE",
+  "generators_exhibited": 135,
+  "grain": "LINK",
+  "orbit_size_profile": [
+   [
+    1,
+    64
+   ],
+   [
+    8,
+    72
+   ]
+  ],
+  "orbits": 136,
+  "reading": "ANCHORED"
+ },
+ "residual_gauge": {
+  "invariant_simplex_dimension_anchored": 207,
+  "invariant_simplex_dimension_extension": 119,
+  "orbit_size_profile_anchored": [
+   [
+    1,
+    64
+   ],
+   [
+    4,
+    144
+   ]
+  ],
+  "orbit_size_profile_extension": [
+   [
+    1,
+    8
+   ],
+   [
+    2,
+    28
+   ],
+   [
+    4,
+    24
+   ],
+   [
+    8,
+    60
+   ]
+  ],
+  "orbits_anchored": 208,
+  "orbits_extension": 120,
+  "order_anchored": 4,
+  "order_extension": 8,
+  "realisable_constant_twists": [
+   0,
+   2,
+   4,
+   6
+  ]
+ },
+ "schema": "act-form-census-1",
+ "seal_manifest": [
+  {
+   "digest": "06a121502814",
+   "gate": "G-SOURCE-BYTES",
+   "object": "THE PINNED SOURCES",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "provenance"
+  },
+  {
+   "digest": "e24eed9d219a",
+   "gate": "G-WEIGHTS-ARE-POSITIVE-RATIONALS",
+   "object": "THE ARITHMETIC",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "arithmetic"
+  },
+  {
+   "digest": "8ef1596c2e35",
+   "gate": "G-PATH-VALUE-ANCHORS",
+   "object": "THE PATH-VALUE ANCHORS",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "path_value_anchors"
+  },
+  {
+   "digest": "66dbefa16dd8",
+   "gate": "G-VERBATIM-ANCHORS",
+   "object": "THE VERBATIM ANCHORS",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "verbatim_anchors"
+  },
+  {
+   "digest": "7657f807c102",
+   "gate": "G-VERBATIM-ANCHORS",
+   "object": "THE ANCHOR CLASSES",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "anchor_classes"
+  },
+  {
+   "digest": "09a059d78501",
+   "gate": "G-ARENA-REBUILT",
+   "object": "THE ARENA",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "arena"
+  },
+  {
+   "digest": "491e7fcbf5be",
+   "gate": "G-GAMMA-GROUP-BUILT",
+   "object": "THE COIN-MAP GROUP",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "gamma"
+  },
+  {
+   "digest": "62cf0d4114bc",
+   "gate": "G-CHART-GROUPS-REBUILT",
+   "object": "THE CHART GROUPS",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "chart"
+  },
+  {
+   "digest": "e029c4789ea7",
+   "gate": "G-RESIDUAL-GAUGE-REBUILT",
+   "object": "THE RESIDUAL GAUGE GROUP",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "residual_gauge"
+  },
+  {
+   "digest": "6adea7360104",
+   "gate": "G-THE-ODD-TWIST-IS-NOT-REALISABLE",
+   "object": "THE ODD TWIST",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "odd_twist"
+  },
+  {
+   "digest": "00a88faa6740",
+   "gate": "G-FORM-CENSUS-COMPLETE",
+   "object": "THE FORM CENSUS",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "form_census"
+  },
+  {
+   "digest": "46b454bb855d",
+   "gate": "G-ANALYTIC-CROSSCHECK",
+   "object": "THE ANALYTIC CROSS-CHECK",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "analytic_crosscheck"
+  },
+  {
+   "digest": "335bebeef988",
+   "gate": "G-RANK-IS-ORBITS-MINUS-ONE",
+   "object": "THE RANK",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "rank"
+  },
+  {
+   "digest": "63303c95c40f",
+   "gate": "G-LOCALITY-GAP-AT-THE-PLAQUETTE-GRAIN",
+   "object": "LOCALITY",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "locality"
+  },
+  {
+   "digest": "a72d3f0629cb",
+   "gate": "G-REACHABLE-SET-IS-A-SUBSIMPLEX",
+   "object": "THE GIBBS MAP",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "gibbs"
+  },
+  {
+   "digest": "57926af1b5d0",
+   "gate": "G-PRICE-REDUCED-NOT-EVADED",
+   "object": "THE PRICE",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "price"
+  },
+  {
+   "digest": "1d6320ad90e8",
+   "gate": "G-GRAIN-DEGENERACY-ON-THE-CARRIER",
+   "object": "THE GRAIN DEGENERACY",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "grain_degeneracy"
+  },
+  {
+   "digest": "285211579ff2",
+   "gate": "G-WILSON-IS-NOT-MINIMAL-SUPPORT",
+   "object": "THE WILSON ROW",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "wilson"
+  },
+  {
+   "digest": "ff0e017587bc",
+   "gate": "G-TARGET-CENSUS",
+   "object": "THE TARGET CENSUS",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "target_census"
+  },
+  {
+   "digest": "32e459d82c98",
+   "gate": "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
+   "object": "THE LAW-NATIVE CONTROL",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "law_native_control"
+  },
+  {
+   "digest": "15873f91bb8b",
+   "gate": "G-GIBBS-ROW-SUPPLIED",
+   "object": "THE SUPPLIED ROW",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "supplied_row"
+  },
+  {
+   "digest": "fb60cad1a15b",
+   "gate": "G-DENSITY-WITNESS",
+   "object": "THE DENSITY WITNESS",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "density_witness"
+  },
+  {
+   "digest": "77863530b031",
+   "gate": "G-FALSIFIER-CENSUS",
+   "object": "THE FALSIFIER",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "falsifier"
+  },
+  {
+   "digest": "1739961fd6b1",
+   "gate": "G-WILSON-RANGE-OVER-THE-SIMPLEX",
+   "object": "THE EXPECTATIONS",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "expectations"
+  },
+  {
+   "digest": "a3fb720b22ff",
+   "gate": "G-POT-HANDOFF",
+   "object": "THE POT HANDOFF",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "pot_handoff"
+  },
+  {
+   "digest": "0cd5e6d3f971",
+   "gate": "G-CHOICE-INVENTORY",
+   "object": "THE CHOICE INVENTORY",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "fibre"
+  },
+  {
+   "digest": "f5e088ad2e0d",
+   "gate": "G-HEAD-LAW-REACHABILITY",
+   "object": "THE PRE-REGISTERED HEADS",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "preregistered_heads"
+  },
+  {
+   "digest": "a64e879971f5",
+   "gate": "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST",
+   "object": "THE FALSIFIER TOTALS",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "falsifier_totals"
+  },
+  {
+   "digest": "317c88f6a37d",
+   "gate": "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+   "object": "THE WAIVER LEDGER",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "waiver_ledger"
+  },
+  {
+   "digest": "72f0eca95762",
+   "gate": "G-LEDGER-SHAPE-IS-CONSISTENT",
+   "object": "THE LEDGER SHAPE",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "ledger_shape"
+  },
+  {
+   "digest": "521182e6d650",
+   "gate": "G-PAPER-CLAIMS",
+   "object": "THE PAPER CLAIMS",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "paper_claims"
+  },
+  {
+   "digest": "04c8078820eb",
+   "gate": "G-PAPER-POLARITY",
+   "object": "THE PAPER POLARITY",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "paper_polarity"
+  },
+  {
+   "digest": "1076f901c5a2",
+   "gate": "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
+   "object": "THE PAPER BINDING",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "paper_binding"
+  },
+  {
+   "digest": "e75746f13bce",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "object": "THE PAPER COVERAGE",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "paper_coverage"
+  },
+  {
+   "digest": "d2acc5bff303",
+   "gate": "G-VERDICT-RECONSTRUCTION",
+   "object": "THE VERDICT STRING",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "verdict"
+  },
+  {
+   "digest": "fa05cccec8bf",
+   "gate": "G-VERDICT-RECONSTRUCTION",
+   "object": "THE VERDICT HEAD",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "verdict_head"
+  }
+ ],
+ "supplied_row": {
+  "the_coupling_count_at_the_link_grain": 135,
+  "the_parents_price": 2,
+  "the_parents_row": "GIBBS-FROM-AN-ACTION",
+  "verdict": "SUPPLIED-AND-PRICED-NOT-DERIVED",
+  "what_the_action_functional_is": "A-WEIGHT-SYSTEM-AT-A-DECLARED-GRAIN",
+  "what_the_coupling_is": "A-COORDINATE-OF-THE-ALLOWED-SPACE"
+ },
+ "target_census": {
+  "exhibited_non_counting_witness": {
+   "distinct_masses": 2,
+   "exponent": 32,
+   "mass_elsewhere": "1/34359739000",
+   "mass_on_the_raised_class": "536870912/4294967375",
+   "sums_to_one": true,
+   "weight_system": "TWO-ON-ONE-CLASS-AND-ONE-ELSEWHERE"
+  },
+  "exponents_tested": [
+   16,
+   32
+  ],
+  "obstruction_species": [
+   "UNREACHABLE-BY-ARITHMETIC",
+   "UNREACHABLE-BY-SUPPORT",
+   "UNREACHABLE-BY-SYMMETRY"
+  ],
+  "reachable": 1,
+  "rows": [
+   {
+    "class_constant": true,
+    "full_support": true,
+    "obstruction": "REACHABLE",
+    "reachable": true,
+    "reachable_at_exponent": {
+     "16": true,
+     "32": true
+    },
+    "row": "COUNTING",
+    "what": "paper-23's declared null, and SMU's one derivation in the full sense"
+   },
+   {
+    "class_constant": true,
+    "full_support": true,
+    "obstruction": "UNREACHABLE-BY-ARITHMETIC",
+    "reachable": false,
+    "reachable_at_exponent": {
+     "16": false,
+     "32": false
+    },
+    "row": "ORBIT-UNIFORM-ANCHORED",
+    "what": "the parent's orbit-uniform null at the anchored reading"
+   },
+   {
+    "class_constant": true,
+    "full_support": true,
+    "obstruction": "UNREACHABLE-BY-ARITHMETIC",
+    "reachable": false,
+    "reachable_at_exponent": {
+     "16": false,
+     "32": false
+    },
+    "row": "ORBIT-UNIFORM-EXTENSION",
+    "what": "the same at the extension reading"
+   },
+   {
+    "class_constant": true,
+    "full_support": true,
+    "obstruction": "UNREACHABLE-BY-ARITHMETIC",
+    "reachable": false,
+    "reachable_at_exponent": {
+     "16": false,
+     "32": false
+    },
+    "row": "LAW-NATIVE-PI",
+    "what": "SMU's law-native measure, entering HERE AS A CONTROL and never as a derived object"
+   },
+   {
+    "class_constant": true,
+    "full_support": false,
+    "obstruction": "UNREACHABLE-BY-SUPPORT",
+    "reachable": false,
+    "reachable_at_exponent": {
+     "16": false,
+     "32": false
+    },
+    "row": "MONOMIAL-HAAR",
+    "what": "the one canonical measure paper-23 measured this arena to hand over"
+   },
+   {
+    "class_constant": false,
+    "full_support": true,
+    "obstruction": "UNREACHABLE-BY-SYMMETRY",
+    "reachable": false,
+    "reachable_at_exponent": {
+     "16": false,
+     "32": false
+    },
+    "row": "ODD-TWIST-GRADED",
+    "what": "a DECLARED invariant target built to separate the two orbits inside one class -- the control arm for the symmetry obstruction"
+   }
+  ],
+  "the_null": "W-IDENTICALLY-ONE-GIVES-THE-COUNTING-MEASURE"
+ },
+ "totals": {
+  "anchors": 64,
+  "census_rows": 6,
+  "closing_gates": 2,
+  "gates": 47,
+  "gates_in_the_sealed_ledger": 45,
+  "mutants": 49,
+  "path_value_anchors": 34,
+  "sealed_objects": 36,
+  "sources": 11,
+  "verbatim_anchors": 19
+ },
+ "transcript_head": "746eaf0fa7f2",
+ "unit": "ACT / paper-34 -- the action unit: the form census",
+ "verbatim_anchors": [
+  {
+   "anchor": "VB-PIN-FORM",
+   "chars": 67,
+   "consumer": "G-FORM-CENSUS-COMPLETE",
+   "digest": "afc42ce24b60",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-PIN",
+   "what": "the pin's own statement of stage one"
+  },
+  {
+   "anchor": "VB-PIN-MULT",
+   "chars": 156,
+   "consumer": "G-WEIGHTS-ARE-POSITIVE-RATIONALS",
+   "digest": "556eb21f487c",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-PIN",
+   "what": "the binding multiplicative framing"
+  },
+  {
+   "anchor": "VB-PIN-GRAIN",
+   "chars": 96,
+   "consumer": "G-FORM-CENSUS-COMPLETE",
+   "digest": "0fa73460c755",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-PIN",
+   "what": "the declared locality axis, every member run"
+  },
+  {
+   "anchor": "VB-PIN-COUPLING",
+   "chars": 55,
+   "consumer": "G-RANK-IS-ORBITS-MINUS-ONE",
+   "digest": "843f244c7839",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-PIN",
+   "what": "what the allowed space's rank is declared to mean"
+  },
+  {
+   "anchor": "VB-PIN-PRICE",
+   "chars": 79,
+   "consumer": "G-PRICE-REDUCED-NOT-EVADED",
+   "digest": "2a4a55a525f5",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-PIN",
+   "what": "the price question, put by the pin"
+  },
+  {
+   "anchor": "VB-PIN-FALSIFIER",
+   "chars": 126,
+   "consumer": "G-FALSIFIER-CENSUS",
+   "digest": "4b6eaa136835",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-PIN",
+   "what": "the cheap falsifier, put by the pin"
+  },
+  {
+   "anchor": "VB-PIN-POT",
+   "chars": 118,
+   "consumer": "G-MUST-NOT-VOCABULARY",
+   "digest": "fa67d0d7abb8",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-PIN",
+   "what": "the must-not this unit is held to"
+  },
+  {
+   "anchor": "VB-SMU-CONTROL",
+   "chars": 72,
+   "consumer": "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
+   "digest": "d9f8d30010cb",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-SMU-PAPER",
+   "what": "the inheritance order this unit obeys"
+  },
+  {
+   "anchor": "VB-SMU-STAMP",
+   "chars": 153,
+   "consumer": "G-LAW-NATIVE-CONTROL-STAMP-CARRIED",
+   "digest": "1c4d86797b6c",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-SMU-PAPER",
+   "what": "the stamp in its own sentence, so the anchor binds meaning"
+  },
+  {
+   "anchor": "VB-SMU-FALSIFIER",
+   "chars": 110,
+   "consumer": "G-FALSIFIER-CENSUS",
+   "digest": "577c1f9754c2",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-SMU-PAPER",
+   "what": "the falsifier as the parent set it"
+  },
+  {
+   "anchor": "VB-SMU-PRICE",
+   "chars": 233,
+   "consumer": "G-PRICE-REDUCED-NOT-EVADED",
+   "digest": "a2c1612bff12",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-SMU-PAPER",
+   "what": "the parent's price, which this unit's route does not pay"
+  },
+  {
+   "anchor": "VB-SMU-LOCALITY",
+   "chars": 119,
+   "consumer": "G-GRAIN-DEGENERACY-ON-THE-CARRIER",
+   "digest": "1ec5c371933d",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-SMU-PAPER",
+   "what": "the parent's own disclosure, which this unit measures exactly"
+  },
+  {
+   "anchor": "VB-P23-GIBBS",
+   "chars": 71,
+   "consumer": "G-GIBBS-ROW-SUPPLIED",
+   "digest": "01f12c72f96d",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-P23-PAPER",
+   "what": "the census row this unit supplies the missing ingredient for"
+  },
+  {
+   "anchor": "VB-P23-NOACTION",
+   "chars": 105,
+   "consumer": "G-GIBBS-ROW-SUPPLIED",
+   "digest": "1e2de0f5ead3",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-P23-PAPER",
+   "what": "R5's own declaration, quoted by paper-23"
+  },
+  {
+   "anchor": "VB-P23-TRANSITIVE",
+   "chars": 163,
+   "consumer": "G-WILSON-IS-NOT-MINIMAL-SUPPORT",
+   "digest": "d88779ffe24a",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-P23-PAPER",
+   "what": "the parent's criterion, applied here to the single-link datum"
+  },
+  {
+   "anchor": "VB-P23-INVARIANT",
+   "chars": 104,
+   "consumer": "G-REACHABLE-SET-IS-A-SUBSIMPLEX",
+   "digest": "a5211ef58db1",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-P23-PAPER",
+   "what": "the characterisation the reachable set is measured against"
+  },
+  {
+   "anchor": "VB-R5-PLAQ",
+   "chars": 154,
+   "consumer": "G-WILSON-OBSERVABLE-REBUILT",
+   "digest": "72ecc8f75bfa",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-R5-PAPER",
+   "what": "the loop observable's definition, rebuilt here from these words"
+  },
+  {
+   "anchor": "VB-R5-BLOCK",
+   "chars": 48,
+   "consumer": "G-WILSON-OBSERVABLE-REBUILT",
+   "digest": "345ef7fefab1",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-R5-PAPER",
+   "what": "why the observable is a block trace"
+  },
+  {
+   "anchor": "VB-R5-THREE",
+   "chars": 163,
+   "consumer": "G-POT-HANDOFF",
+   "digest": "df986f7cacdd",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-R5-PAPER",
+   "what": "the three objects, of which this unit supplies one"
+  }
+ ],
+ "verdict": "ACT-FORM-RELATIVE-THE-COUPLING-COUNT-IS-GRAIN-RELATIVE-AND-NOTHING-IS-FORCED-135/265121343/171060255-ANCHORED-AND-79/66311039/43398585-AT-THE-EXTENSION-<CENSUS=3-DECLARED-GRAINS-x-2-CHART-READINGS-6-OF-6-RUN -- THE-ALLOWED-SPACE=EXACTLY-THE-ORBIT-CONSTANT-POSITIVE-RATIONAL-FUNCTIONS-ON-THE-STENCIL-DATUM-A-FREE-MODULE-OF-RANK-ORBITS-MINUS-ONE;ORBITS=136/265121344/171060256-ANCHORED-AND-80/66311040/43398586-AT-THE-EXTENSION;ROUTES=BURNSIDE-PLUS-BRUTE-FORCE-AND-ORBIT-STABILIZER-AT-THE-LINK-GRAIN-PLUS-AN-EXHAUSTIVE-19-COIN-REDUCED-ARENA-AT-EVERY-GRAIN -- LOCALITY=PRODUCT-INVARIANCE-IS-LOCAL-INVARIANCE-AT-THE-LINK-GRAIN-576-OF-576-NON-INVARIANT-ELEMENTARY-SYSTEMS-DETECTED-AND-0-OF-64-INVARIANT-ONES-NOT;AT-THE-PLAQUETTE-GRAIN-IT-IS-STRICTLY-WEAKER-EVERY-LINK-LIES-IN-EXACTLY-2-PLAQUETTES-SO-A-COBOUNDARY-SYSTEM-HAS-PRODUCT-ONE-AT-640-CARRIER-AND-64-DECLARED-NON-UNIFORM-CONFIGURATIONS -- (a)WILSON-SHAPE=IN-THE-ALLOWED-SPACE-AT-EXACTLY-1-OF-3-DECLARED-GRAINS-THE-PLAQUETTE-ONE-AT-8192-CHECKS-0-FAILURES;ON-THE-CARRIER-IT-SPANS-10-OF-135-COUPLINGS-AT-11-DISTINCT-TRACE-VALUES;NOT-MINIMAL-SUPPORT-136-SINGLE-LINK-INVARIANT-CLASSES-EXIST-BECAUSE-THE-GAUGE-GROUP-IS-NOT-TRANSITIVE-ON-A-LINKS-OWN-DATUM -- (b)LAW-NATIVE-CONTROL=LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION-CARRIED-VERBATIM-AND-NEVER-SPENT-AS-DERIVED;THE-TARGET-IS-CLASS-CONSTANT-AND-FULL-SUPPORT-AND-UNREACHABLE-BY-ARITHMETIC-BECAUSE-3/2-IS-NOT-AN-EXACT-POWER-AT-ANY-DECLARED-EXPONENT-16,32;IT-LIES-IN-THE-CLOSURE-EXACT-WITNESS-AT-DENOMINATOR-100000-WITH-ERROR-BELOW-1/10^4 -- (c)NULL=W-IDENTICALLY-ONE-GIVES-THE-COUNTING-MEASURE-WHICH-IS-1-OF-THE-6-NAMED-TARGETS-REACHABLE;THE-OTHERS-FAIL-AT-3-MEASURED-SPECIES-UNREACHABLE-BY-ARITHMETIC,UNREACHABLE-BY-SUPPORT,UNREACHABLE-BY-SYMMETRY -- GIBBS=THE-IMAGE-IS-THE-E-TH-POWER-SUBLATTICE-OF-THE-CLASS-CONSTANT-MEASURES-WITH-E=32/16/16-AT-THE-THREE-GRAINS-AND-FULL-SUPPORT-FORCED-BY-POSITIVITY;THE-INDUCED-PARTITION-IS-THE-SAME-136-CLASSES-AT-ALL-3-GRAINS;THE-FIBRE-IS-EXACTLY-THE-NORMALISATION-AT-THE-LINK-GRAIN-DIMENSION-0-AND-265121208-AT-THE-PLAQUETTE-GRAIN -- PRICE=REDUCED-NOT-EVADED-207-TO-135-AT-THE-ANCHORED-READING-AND-119-TO-79-AT-THE-EXTENSION-AGAINST-639-WITH-COVARIANCE-DROPPED;72-AND-40-PAIRS-OF-GAUGE-ORBITS-ARE-IDENTIFIED-BY-EVERY-LOCAL-WEIGHT-SYSTEM-THE-ODD-TWIST-THE-TORUS-DOES-NOT-CLOSE -- FALSIFIER=HIT:THE-OFF-DIAGONAL-QUARTIC-SIGN-IS-A-GAUGE-OBSERVABLE-EVERY-ADMISSIBLE-WEIGHT-SYSTEM-PINS-TO-THE-SINGLE-VALUE-[0,0]-AGAINST-[-2,2]-OVER-THE-INVARIANT-SIMPLEX;144-OF-208-ORBIT-INDICATORS-PINNED-AT-THE-ANCHORED-READING-AND-80-OF-120-AT-THE-EXTENSION;THE-LOOP-TRACE-IS-NOT-PINNED-[0,4]-AT-BOTH -- WILSON=STAMPED-CONDITIONAL-ON-THE-DECLARED-WEIGHTS-AT-3-OF-3-ROWS|VALUES=13/10@THE-NULL,4294967399/4294967375@THE-EXHIBITED-WITNESS,262244/65615@THE-WILSON-SHAPE-AT-A-DECLARED-COUPLING|RANGE-OF-THE-OBSERVABLE=[0,4]|NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM-AND-0-LOOP-FAMILIES-GROWN -- SCOPE=D=2;L=4;FIELD=Q(zeta_8);COINS=640;LINKS=32;PLAQUETTES=16;CARRIER=THE-PARENTS-640-UNIFORM-CONFIGURATIONS;FULL-CONFIGURATION-SPACE=640^32-NOT-A-CARRIER-HERE;WEIGHTS=POSITIVE-EXACT-RATIONALS-NO-LOGS-NO-FLOATS;THE-ACTION-IS-DECLARED-NOT-DERIVED;NO-COUPLING-IS-SELECTED;NOT-QCD;NO-CONFINEMENT-CLAIM>",
+ "verdict_head": "ACT-FORM-RELATIVE-THE-COUPLING-COUNT-IS-GRAIN-RELATIVE-AND-NOTHING-IS-FORCED-135/265121343/171060255-ANCHORED-AND-79/66311039/43398585-AT-THE-EXTENSION",
+ "waiver_ledger": {
+  "covered_by_a_declared_falsifier": 37,
+  "gates_closed": 37,
+  "late_gates_declared": [
+   "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+   "G-LEDGER-SHAPE-IS-CONSISTENT",
+   "G-PAPER-CLAIMS",
+   "G-PAPER-VERDICT-EQUALITY",
+   "G-MUST-NOT-VOCABULARY",
+   "G-PAPER-POLARITY",
+   "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
+   "G-PAPER-NUMERAL-COVERAGE",
+   "G-SEAL-INTEGRITY",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "the_forcings": {
+   "G-ARTIFACT-INTEGRITY": "evaluated only in the writing path, which no diagnostic run reaches; its reference value is the GATE-TIME SEAL, whose in-run twin G-SEAL-INTEGRITY carries the injection falsifier MUT-SEAL",
+   "G-MUTANTS-ON-TARGET": "no such gate exists in this instrument; the sweep is adjudicated by the CLI harness and every surviving or off-target injection fails it, which is an external-battery result"
+  },
+  "uncovered": [],
+  "under_a_registered_forcing": 1
+ },
+ "wilson": {
+  "constant_on_the_induced_classes": true,
+  "constant_on_the_residual_gauge_orbits": true,
+  "dimension_of_the_wilson_family_on_the_carrier": 10,
+  "distinct_values_over_the_carrier": 11,
+  "gauge_invariance_checks": 8192,
+  "gauge_invariance_failures": 0,
+  "grains_declared": 3,
+  "in_the_allowed_space_at_grains": [
+   "PLAQUETTE"
+  ],
+  "in_the_real_subfield": true,
+  "loop_families_grown": 0,
+  "minimal_support": false,
+  "must_not": "NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM-AND-NO-LOOP-FAMILY-IS-GROWN",
+  "normalisation_fibre": 2,
+  "observable": "THE-TRACE-OF-THE-PLAQUETTE-HOLONOMY-ON-ITS-OWN-FOUR-CORNER-BLOCK",
+  "plaquette_independent": true,
+  "plaquettes_checked": 16,
+  "single_link_invariant_classes": 136,
+  "the_allowed_space_on_the_carrier": 135,
+  "values": [
+   "0",
+   "1/4",
+   "1",
+   "5/4+-1/2*sqrt2",
+   "5/4",
+   "5/4+1/2*sqrt2",
+   "2+-1*sqrt2",
+   "2",
+   "2+1*sqrt2",
+   "9/4",
+   "4"
+  ],
+  "why": "THE-GAUGE-GROUP-IS-NOT-TRANSITIVE-ON-A-SINGLE-LINKS-DATUM"
+ }
+}
