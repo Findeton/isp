@@ -8758,3 +8758,76 @@ exactly their named gates (the three wall mutants on the
 PAPER leg; MUT-TABLE-LADDER at G-PAPER-TABLES).  The
 warrant chain recorded at #285 is now replaced by the
 measurement it predicted.
+
+## 2026-08-12 — PER-R K3 (INSTRUMENT SEAT) FROZEN: AWF; SEVEN PERIMETER MAJORS, SIX TEMPLATE-SHAPED; THE EXHAUSTIVENESS LICENSES INDEPENDENTLY RE-PROVED (v14 LEDGER #287)
+
+**Review:** v14/review-perr-instrument.md (802071ab4c91, 616
+lines), sole write of the seat; objects verified unchanged at
+open and close (7d1d6ca3c5bc / d2f8fdac143d / 6dad652f81fe /
+ac424c8a7bdd / pin 6339ba42f354).  **Grade AWF.**  71
+executions, ~300 independent recomputations, 41 injections
+(410 gate evaluations).  **No measured quantity is wrong.**
+
+**SEVEN MAJORS — all perimeter:**
+- **M1 (referent-binding, present-tense):** paper_tables
+  renders DATA ROWS ONLY — every table's COLUMN HEADERS are
+  unbound.  7/7 header swaps survive, including swapping
+  "covered site code" ↔ "covering record" in the SIG-feed
+  ladder — which inverts the headline AND the feed handed to
+  SIG.  Data cells sound (4/4 controls die).
+- **M2 (PER-R's own — the unit's only false sentence):**
+  §6.2's W5 decomposition contradicts driven.window.  "All
+  nine" seed-fan choices double-counts (0,0) (absorbed into
+  W5-LADDER; 8 tagged SEEDFAN measured), and W4-ANCHOR — the
+  only budget-4 member — is never named though the head says
+  BUDGETS 4/5/6.  The errors cancel at 19, so no gate sees
+  them; the code docstring repeats both.
+- **M3 (transcript integrity):** tail_ok whitelists any
+  9-space-indented line and any line CONTAINING a
+  closing-gate name — two forged lines promoted into the
+  delivered artifact at exit 0 with both integrity gates
+  PASS.
+- **M4 (phantom consumer):** READS is producer-only; §13's
+  "reads required to be exactly the declared set" has no gate
+  and no receipt key.
+- **M5 (honest denominator):** G-COVERAGE-HONEST says 47;
+  the sealed ledger has 49, the artifact 50; the three
+  omitted gates (incl. G-SWEEP-EXECUTED) have neither mutant
+  nor waiver; plus a dead G-INTEGRITY-PRE waiver.
+- **M6 (wall surface):** 34/53 receipt keys and 32/49 gate
+  rows covered, not "every published key" — verdict (the
+  head) is OUTSIDE; unmeetable as worded.
+- **M7 (sealed closing_gates warrant false in both clauses):**
+  transcript carries 1 of 3 closing rows; post-os.replace
+  corruption leaves corrupt bytes on disk beside an all-PASS
+  transcript.
+
+**11 MINORS** incl. two typed §13 prose counts drifting
+freely; G-ANCHORS' consumer binding vacuous; E-24 a
+self-list (0 COUNTING-ONLY stamps); --list-gates lists 40 of
+49.  **LEDGER CORRECTION (owned here):** #280's spelled-
+numeral figure was 119; the true count is **121**.
+
+**CLEAN/ABSENT:** the #267 paper-scanning walls genuinely
+fixed (4 plants die on the paper leg — LOR #269's caveat
+discharged); E-22 multiset fences 4/4; E-23 15/15; 43/43
+out-of-harness sweep on target, tree byte-unchanged; byte ×2
+across hash seeds off-tree; 16/16 hostile argv.
+
+**THE HARD ROWS BOTH SOUND:** the 280⁵ local-type reduction
+validated by FULL BRUTE FORCE at R=3 over 3,697,960
+multisets (exact agreement; buckets sum to 280 so no class
+can drop); the 36⁵ schema rebuilt nibble-free end-to-end
+(total/cover/fields, six homogeneous counts, the R=6 door
+48,600/1,350 — all match).  **The locking theorem
+independently re-proved and STRENGTHENED: exact set cover
+and level-BFS both give minimum 7 locked rounds at all three
+links.**  The singular witness rebuilt coordinate-by-
+coordinate: 27/27 cover, 41 incidences, [7,7,9,9,9], one
+singular site at (1,1,4), det 0.
+
+**Seam ruling:** M1/M3/M4/M5/M6/M7 are template-shaped — the
+#267 corpus sweep should sweep for exactly these six.  M2 is
+PER-R's own and repairs regardless.  Nothing touches a
+verdict or a licensed reading.  K2 (effectus) still out;
+adjudication after its freeze.
