@@ -9368,3 +9368,54 @@ acting group at full size — site anchored (136⁴+136²)/2 =
 these − 1) — removing the §13 machinery-only disclosure.
 **K3 (instrument) still out; adjudication after its
 freeze.**
+
+## 2026-08-12 — ACT K3 (INSTRUMENT SEAT) FROZEN: AWF; ~265 RECOMPUTATIONS ZERO DISAGREEMENTS; THE SIX PER-R PROBES ANSWERED 2 PRESENT / 4 ABSENT; THE HEADLINE DIRECTION-FLIP SURVIVES; THE PANEL IS COMPLETE (v14 LEDGER #298)
+
+**Review:** v14/review-act-instrument.md (49045aa82b90, 506
+lines), sole write; five objects re-verified clean at close.
+**Grade AWF.**  128 instrument executions, 93 corruption
+events (44 novel + 49 registry), ~265 independent
+recomputations ZERO disagreements; the 49-mutant
+out-of-harness sweep 49/49 dead on target, artifacts
+byte-unchanged; byte-reproducible off-tree git-less at two
+hash seeds; selftest/--no-write proved write-nothing by
+subtree hash; 12/12 hostile argv exit 2.  Independent arena
+rebuild in a different field representation reproduces
+25/640/64-64-512, the 11 trace values, [0,4]/[−1,1], and
+E_counting = 13/10 EXACTLY; **the falsifier's mechanism
+re-derived by hand and confirmed** (odd twists reverse the
+off-diagonal quartic sign; the torus closes only at even
+twists).
+
+**THE SIX PER-R PROBES:** (1) unbound table headers PRESENT
+(MAJOR-1: 5/5 semantically-opposed header swaps survive at
+exit 0, incl. "over the invariant simplex"↔"over the
+reachable set" — inverting the headline falsifier; 34/34
+data rows bound, 0/5 headers); (2) transcript whitelist
+ABSENT (full byte equality; the forged line dies at
+G-ARTIFACT-INTEGRITY); (3) phantom consumers PRESENT
+(MAJOR-3: all 53 consumer fields rewritten to
+G-DOES-NOT-EXIST → exit 0; the chained ledger built,
+published, never verified); (4) honest denominator ABSENT
+(47 gates, 46 covered + 1 forcing, all 10 omissions named
+— the PER-R disease pre-fixed); (5) wall surface ABSENT
+(5/5 plants die across all rendering forms); (6)
+closing-gates warrant ABSENT (integrity raises BEFORE
+os.replace; forged sealed keys and a forged verdict die
+with artifacts untouched).
+
+**OWN MAJORS:** MAJOR-2 — the disk check covers the 36
+SEALED keys only; forging the unsealed gates/totals in the
+staged receipt delivers totals.gates=4242 and a false
+gates[0].passed at exit 0 beside a clean transcript
+(one-line fix).  MAJOR-4 — headline direction claims
+outside the 4-fragment polarity list are FREE: "The form is
+not forced"→"is forced" SURVIVES (the unit's headline!),
+"measured not transitive"→"transitive", "the falsifier
+hits"→"misses", a §13 scope inversion.  MAJOR-5 — spelled
+numerals unscanned though the wall is PIN-NAMED
+("twenty-five"→"twenty-six" and "ten-dimensional"→
+"fourteen-dimensional" survive).  Nine minors, all
+liftable.  **PANEL COMPLETE (K1 #297 / K2 #296 / K3 here):
+~571 seat recomputations, zero false computed numbers.
+Adjudication next.**
