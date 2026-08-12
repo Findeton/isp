@@ -9419,3 +9419,39 @@ numerals unscanned though the wall is PIN-NAMED
 liftable.  **PANEL COMPLETE (K1 #297 / K2 #296 / K3 here):
 ~571 seat recomputations, zero false computed numbers.
 Adjudication next.**
+
+## 2026-08-12 — ACT ADJUDICATION: REPAIR ORDERED (Z1–Z12); THE REACHABLE-OUTCOMES ENGRAVING; THE FIBRE SEAM RECONCILED (DIMENSION INVARIANT, SET RELATIVE); THE FALSIFIER RE-SCOPED TO THE ACTION ROUTE; THE L-CONTINGENCY LAW DISCLOSED (v14 LEDGER #299)
+
+**note-act-adjudication.md committed.**  Three AWF →
+repair, no REJECT; ~571 seat recomputations, zero false
+computed numbers.  Rulings: (1) the selector was
+pigeonhole-decided before the run — **PIN OWNED** (FORCED
+pre-registered though unreachable; ENGRAVED: every
+pre-registered outcome word must be shown reachable at the
+declared arena by a feasibility line in the pin);
+repair = synthetic arena through the real pricing function.
+(2) Wilson membership two-legged with the
+conjugation-symmetric object; the typed grains_admitting
+literal computed.  (3) THE FIBRE SEAM RECONCILED: the
+carrier-visible DIMENSION is grain-invariant (135/79 at 3
+of 3 grains, K2's E-24 ruling stands — measure-relativity,
+not ontology); the reachable measure SET is grain-relative
+on the carrier (K1's 2¹⁶ witness); the sentence carries
+both halves, the gate gains a set-equality leg.  (4) The
+falsifier's mechanism REAL (K3 hand-derivation); the word
+re-scoped: FALSIFIER-HIT-ON-THE-ACTION-ROUTE, the
+pin-worded covariance reading NOT-HIT beside it; **the L=4
+contingency disclosed as a law — merging index 8/gcd(L,8),
+nothing pinned at L ≡ 0 mod 8; POT inherits the boundary.**
+(5) Price compatible with SMU under the larger-group
+carve-out, clause written in.  (6) K3's instrument majors
+adopted (headers bound incl. the headline-falsifier
+inversion; the polarity list extended to the direction
+flips — "not forced"→"forced" must die; spelled numerals
+scanned, and the ORCHESTRATOR BATTERY gains that leg too;
+unsealed keys covered; consumers real; the chained ledger
+verified).  (7) K1's closed forms ADOPTED into the unit
+(site (136⁴+136²)/2, plaquette (136⁴+7·72⁴+23,680)/2).
+Ownership: the pin's FORCED and falsifier wording; the
+#290 HIT relay corrected to action-route scope.  Repair
+order Z1–Z12; **the repair worker launches next.**
