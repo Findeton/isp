@@ -8601,3 +8601,17 @@ unbacked; byte ×2 + off-tree git-less.  Shas: paper
 7d1d6ca3c5bc, code d2f8fdac143d, output 6dad652f81fe,
 receipt ac424c8a7bdd.  Committed AS-IS; battery next; panel
 queued.
+
+## 2026-08-12 — PER-R BATTERY GREEN; THE UNIT VERIFIED; PANEL NEXT (v14 LEDGER #281)
+
+Battery complete: mirror plain BYTE-IDENTICAL both artifacts;
+unknown flag exit 2; selftest died at G-SOURCES writing
+nothing; M-ANCHOR (the registry's M-prefix — the fourth
+name-format lesson, now learned: read the registry dict
+directly) killed exit 1, artifacts untouched.  PER-R stands
+DELIVERED-AND-VERIFIED; the STATUS row records the arc so
+far (§13; the terminal row follows its panel+repair).  The
+three seats launch with this turn's tool calls; the protocol
+follows the established K1/K2/K3 pattern with the current
+disease list (referent-binding; template diseases;
+class-explicitness now itself an auditable property).
