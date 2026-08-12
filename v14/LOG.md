@@ -8215,3 +8215,35 @@ harness; E-22/E-23/E-24; the two-route independence.
 Reviewers → v14/review-sig-{operator,effectus,instrument}.md.
 Objects at 025c4a6: 72175d6fa85b / a41b6d549e14 /
 f28b550c151e / ca9cd4ceb387; pin ab73239daff5.
+
+## 2026-08-11 — LOR INSTRUMENT REVIEW LANDED (K3): AWF — SEVEN PERIMETER MAJORS, TEMPLATE-SHAPED; THE CORPUS-SWEEP RECOMMENDATION (v14 LEDGER #267)
+
+v14/review-lor-instrument.md (676d635e92b3) frozen.  **Grade
+AWF; 85 executions, 258 recomputations, 32 injections; NO
+measured quantity wrong; the era's closed diseases hold**
+(byte ×2 two seeds; E-23 41/41 clean; no phantom consumers;
+selftest tree-hashed).  SEVEN MAJORS: M1 the three
+reading-walls NEVER SCAN THE PAPER (expansion/sprinkling-
+Lorentz/Myrheim-Meyer readings all pass); M2 27/40 table rows
+unrendered (four forgeries survive incl. a swapped ceiling
+column in the unit's own theorem); M3 **three false published
+COUNTS (typed, ungated, self-contradicted): seals 37→36,
+gates 41→53, five-vs-six receipts**; M4 G-READS-DECLARED
+positionally vacuous (a LOG.md read passes; the registry fix
+over-corrected); M5 the transcript integrity 40/221 — a
+forged staged line PROMOTED beside a byte-perfect receipt;
+M6 four undeclared numeral whitelists (32 allow-tokens exist
+only inside sha digests; spelled numerals above twelve
+unscanned); M7 E-24 a self-list.  NINE MINORs incl. ONE
+UNTRUE WAIVER FORCING (CINJ02 kills the waived gate on its
+own object).  Sweep 36/41 outside the harness all ON TARGET
+(the remainder disclosed in-flight on a load-198 box; one
+honest injection limit registered).  **THE SEAM RULING:
+MAJOR-1/2/5/6 are TEMPLATE-SHAPED, not LOR-shaped — the
+corpus sweep of sibling units recommended before engraving.
+ROUTED: advisories to the in-flight workers (SEC, PER-R, the
+OCC repair) naming the four template diseases; the standing
+panel-protocol disease list grows four entries
+(paper-scanning walls; full-table rendering; typed
+totals-counts; transcript-full-integrity + digest-token
+whitelists).**  → THE ADJUDICATION (all three seats in).
