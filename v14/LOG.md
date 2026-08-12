@@ -8747,3 +8747,14 @@ refinement architecture is sealed: lawful growth of places
 dictionary surviving on the extended carrier; the live-cut
 law; the walls on the paper leg.  LOR-B registered at R=12;
 SEC and AID inherit the carrier lesson at terminal grade.
+
+## 2026-08-12 — FOOTNOTE TO #285: THE LOR OUT-OF-HARNESS SWEEP CLOSED 50/50 ON THE FINAL OBJECT (v14 LEDGER #286)
+
+The residual noted at #285 is discharged by direct evidence:
+the sweep completed at 50/50 on the final object, zero
+off-target, zero survivors, mirror artifacts byte-unchanged
+throughout; all fourteen added/re-pointed falsifiers die at
+exactly their named gates (the three wall mutants on the
+PAPER leg; MUT-TABLE-LADDER at G-PAPER-TABLES).  The
+warrant chain recorded at #285 is now replaced by the
+measurement it predicted.
