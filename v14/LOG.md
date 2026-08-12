@@ -10440,3 +10440,37 @@ majors template-shaped; M2/M4 SEC's own.
 **PANEL COMPLETE (K1 #315 / K2 #314+#317+#320 / K3 here):
 ~1,506 recomputations, zero false numbers, twenty majors
 total.  Adjudication next.**
+
+## 2026-08-12 — SEC ADJUDICATION: REPAIR ORDERED (Z1–Z11); THE LEAK FORMALLY REVERSED TO SEAM-CONFINED COMPOSITIONALITY; THE HEAD RE-SCOPED SEGMENT BY SEGMENT; THE PAPER LEG ORDERED TO BIND; PIN OWNED (v14 LEDGER #322)
+
+**note-sec-adjudication.md committed.**  Three AWF →
+repair, no REJECT; ~1,506 seat recomputations, zero
+published numbers false; twenty majors adjudicated.
+Headline rulings: (1) **THE LEAK REVERSED — SEAM-CONFINED
+COMPOSITIONALITY** (every differing cell has both endpoints
+shared, 16/16 types; no sector-private link ever moves; a
+locality theorem, not a leak); the adjudicator owns the
+"gluing leaks" relays; the SEC×SPC successor framing
+corrected.  (2) Segment 1 re-scoped: FORCED-16/16-AT-THE-
+SHARED-RULE is the stable clause (301/301); the first-rule
+clause window-scoped with its instability published
+(fate moves inside type at 10/16; 244/301 refuse; choice 16
+reclassified VERDICT-DETERMINING); the asymmetry = §3.2's
+own mechanism, rendered FOR the paper.  (3) TWO free items
+(I-ORIENT free at 5 of 6 doubled types).  (4) Segment 3
+STRONGER: rank 6/kernel 4 by RHS-independence PROOF; the
+direct-sum ruling licensed as written.  (5) Segment 4's
+finding stands, the word becomes comparator-derived;
+SEC-K-SELECTED's declination measured.  (6) THE 12-ARENA
+RENDERING (mirror pairs) + the exhaustiveness gate.  (7)
+EXT-INCIDENCE-REPAIRS-EVERY-TYPE: compute-or-delete
+(three-seat convergent; deletion default).  (8)
+representative-vs-type typing of every row.  (9) K3's six
+instrument majors adopted whole — the paper leg BINDS (131
+rows + 13 headers; the ```txt1 hideout dies; NUM_RE
+period-fix; POLARITY to the direction axes), the read set
+REAL (the LOR abstention becomes provable), gate-time
+seals verified, anchors quote-side, waivers true.  (10)
+PIN OWNED: pre-#299, no feasibility lines; SEC-K-SELECTED
+registered without a comparator duty.  Repair order
+Z1–Z11; **the repair worker launches next.**
