@@ -9706,3 +9706,34 @@ appended in this commit; memory sealed next.
 
 **Programme count: TWENTY-SIX terminals; zero false
 computed numbers surviving anywhere in v14.**
+
+## 2026-08-12 — SIG IS TERMINAL: TWENTY-SEVEN — DECLARATION-RELATIVE AT THE EMISSION READING, NOW WITH THE CLASS-EXPLICIT LADDER AND THE LIVE FIVE-WAY SELECTOR (v14 LEDGER #305)
+
+**Orchestrator battery on the repaired object, ALL GREEN:**
+artifacts deleted → plain run exit 0 → output AND receipt
+byte-identical vs committed → byte-stable ×2 →
+PYTHONHASHSEED=24680 seed-invariant → unknown flag exit 2 →
+--selftest exit 1 (corrupted anchor A-P20REC died at
+G-PROVENANCE, the memo CLEARED first and reached 0 times,
+artifacts unchanged by sha256) → **the registry-named
+MUT-CLASS-WORDS — the #294 advisory's own falsifier — died
+at its declared target G-STATIC-LADDER-LIVE, ON TARGET** →
+unknown mutant exit 2 → --verify-paper exit 0 → artifacts
+untouched throughout.
+
+**THE TERMINAL PICTURE.**  Head
+SIG-DECLARATION-RELATIVE-AT-THE-EMISSION-READING: what the
+signature is depends on the declared reading at emission,
+and the unit now says so with every class-word gate-bound
+to its computed predicate (the #295 engraving's first
+sealed exemplar), the five-way selector demonstrated
+genuinely live through two independently-written selectors,
+both coin orders' fibers published, and the mod-3 theorem
+machine-checked on the homogeneous locus.  The signature
+question that began as "Born avoids / record selects" is
+closed at its honest form: DECLARATION-RELATIVE, with the
+discriminating cell exhibited.  STATUS row appended in
+this commit; memory sealed next.
+
+**Programme count: TWENTY-SEVEN terminals; zero false
+computed numbers surviving anywhere in v14.**
