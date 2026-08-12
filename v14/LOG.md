@@ -10393,3 +10393,50 @@ prediction, reported FOR the paper.  The window
 representative reproduced its committed fate 16/16 in every
 probe (the probes are the instrument).  All prior headline
 rulings stand.  **Awaiting K3; adjudication after it.**
+
+## 2026-08-12 — SEC K3 (INSTRUMENT SEAT) FROZEN: AWF; NO MEASURED QUANTITY WRONG (118 RECOMPUTATIONS, 30/30 SWEEP) — BUT TWELVE SIMULTANEOUS FORGERIES PASS 37/37 AT EXIT 0; THE PAPER LEG DOES NOT BIND; THE PANEL IS COMPLETE (v14 LEDGER #321)
+
+**Review:** v14/review-sec-instrument.md (d872435e6064, 615
+lines), sole write; objects verified unchanged.  **Grade
+AWF.**  84 processes, 141 full_run evaluations, 93
+injections, 118 recomputations, 28 novel corruptions.
+**What holds:** every measured quantity reproduced (45,010;
+all 16 populations; 4,186; 2,970 by two routes; 3,359,232;
+62,208; rank 6/kernel 4; both minor sequences; the
+(4,3,2,1,0) ladder); byte-identical ×3 at two seeds
+off-tree; out-of-harness 30/30 on target; the ledger chain
+recomputed row-by-row; E-23 30/30 accurate; selftest
+write-nothing tree-proved.
+
+**THE DECISIVE MEASUREMENT:** one paper carrying TWELVE
+independent forgeries — §4.1's central table INVERTED
+(doubled-free ↔ doubled fates), a forged SEC-NEVER-WELDS
+head hidden in a ```txt1 fence, R1's quoted copy-forcing
+theorem inverted, the alignment criterion inverted, the
+sterility |Aut| forged — **passes --verify-paper at 37/37,
+exit 0, tree unchanged.  63 of 71 paper injections
+survive.**
+
+**SIX MAJORS:** (1) the paper leg does not bind — 75/131
+data rows and 0/13 headers are claims; the fence regex
+blind to non-letter info strings (E-22's disease back);
+NUM_RE cannot see numeral+period (62208.→62209. survives);
+POLARITY has 3 rows, 7 headline flips survive.  (2) §4.3's
+EXT-INCIDENCE mechanism contradicted by the receipt
+(field_values [1,2] at all six doubled types; the head's
+EXT contrast exhibited by NO measured row) — THIRD-SEAT
+CONVERGENT.  (3) the read set SELF-DECLARED — G-SOURCES
+true by construction; a real LOR read passes at exit 0 (the
+abstention HELD IN FACT but the gate proves none of it).
+(4) a gate-time seal published and never verified — 424242
+ships into both artifacts at ok=True.  (5) five verbatim
+anchors verified on the WRONG SIDE — all five block
+quotations invert freely.  (6) six untrue waiver forcings
+(five name mutants dying earlier; G-SWEEP-EXECUTED's
+re-taking never happens — swept:true with no sweep passes).
+Nine minors.  Probes: 7 PRESENT / 2 ABSENT.  Five of six
+majors template-shaped; M2/M4 SEC's own.
+
+**PANEL COMPLETE (K1 #315 / K2 #314+#317+#320 / K3 here):
+~1,506 recomputations, zero false numbers, twenty majors
+total.  Adjudication next.**
