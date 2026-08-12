@@ -9869,3 +9869,26 @@ sentences carrying their measured discriminator values —
 the withholding machinery inverted from ban to
 license-with-teeth.**  The construction worker launches
 next.
+
+## 2026-08-12 — SPC (PAPER-37) PINNED: THE SPECIES TABLE, KINEMATIC HALF — THE QUANTUM-NUMBER INVENTORY (v14 LEDGER #309)
+
+**note-spc-pin.md frozen.**  The particle-list question in
+its first honest form, on terminal parents only (ACT #307 /
+AID #304 / OCC #276 / SMU #278 / R5): the exact irrep
+census of every measured symmetry group (character tables
+two-route gated); THE CARRIER DECOMPOSITION as the heart —
+which species the 136 carrier classes can host, which
+abstract irreps are carrier-homeless; the identity layer
+(S₉ irreps branched along the sealed stabilizer lattice);
+selection rules (exact tensor tables, counting-only); the
+statistics tie-in (OCC's exclusion-at-the-pair-grain
+compatibility census).  SCOPE DECLARED: kinematic only —
+realized species/masses are SPC-D's, behind POT's spectral
+door.  Walls: no dynamic vocabulary; NO SM-IDENTIFICATION
+(analogies stamped ANALOGY only).  Five outcome words each
+with a feasibility line (#299).  SUCCESSOR REGISTERED, not
+measured: the glued-world species question (SEC's k=0
+|Aut| = 1296²×2 implies an exchange parity at the irrep
+level; shared-actor unions imply species
+splitting/merging) — chartered as SEC×SPC after both
+panels.  **The construction worker launches next.**
