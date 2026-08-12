@@ -9843,3 +9843,29 @@ commit; memory sealed next.
 
 **Programme count: TWENTY-EIGHT terminals; zero false
 computed numbers surviving anywhere in v14.**
+
+## 2026-08-12 — POT (PAPER-36) PINNED: THE CONFINEMENT GATE OPENS (v14 LEDGER #308)
+
+**note-pot-pin.md frozen.**  The unit paper-23 held shut
+and SMU/ACT built the road to: the static potential on the
+record-borne arena.  The loop family (R5's missing object)
+constructed first; loop expectations in TWO quantifier
+modes (conditional-on-declared-weights: the
+conjugation-symmetric Wilson row, the law-native control
+stamped verbatim, the null; family-swept: the 64 vertices +
+72 edge midpoints — which observables are FAMILY-INVARIANT);
+the discriminator (exact Creutz-ratio analogue + the
+winding loop) defined and gated BEFORE any row runs, with
+its own well-definedness a measurement; the L-boundary
+stated (8/gcd(L,8) — family pinning dies at L ≡ 0 mod 8);
+the price binding (does the potential partition the 135?);
+the spectral door named (the transfer gap at declared
+weights = the mass-gap question's finite form; measured if
+the window affords it, else priced honestly).  **Five
+outcome words, each with a feasibility line (#299) and a
+control arm through the real machinery.  Confinement
+vocabulary licensed FOR THIS UNIT ONLY, and only in
+sentences carrying their measured discriminator values —
+the withholding machinery inverted from ban to
+license-with-teeth.**  The construction worker launches
+next.
