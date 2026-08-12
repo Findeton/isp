@@ -8161,3 +8161,32 @@ all 22 E-24 recounts; the completion-reading predicate; the
 mechanism/site-grain/3²⁷ strengthenings; the co-incidence +
 schema + FCK rows; the MINOR sweep).  Repair worker launches
 with this turn's tool calls; confirmation next entry.
+
+## 2026-08-11 — LOR OPERATOR REVIEW LANDED (K1): AWF — ZERO MAJORS; THE EXTENDED-CARRIER WELD SURVIVES CLAUSE BY CLAUSE (v14 LEDGER #265)
+
+v14/review-lor-operator.md frozen.  **Grade AWF; 226
+recomputations, zero false numbers, NO MAJOR** — the era's
+second zero-major content seat.  Everything rebuilt from the
+parents' committed definitions (paper-19's detector
+re-implemented from its committed semantics; an
+independently-chosen 16-schedule window landing on the same
+canonical schedules); **the extended-carrier weld survives
+clause by clause** (the 36-bijection; 54 = actor-in-pair
+incidences; 54 free = 3 per triangle; Aut 432; fibers 1/1/1;
+the bare carrier ARITY-DEAD); byte-identical from a clean
+19-source mirror.  FOUR MINORS: M1 (required, head-bearing)
+the I-DIRECTION-LABEL fiber is BASE-MAP-VARIANT (6 at 360/432
+maps, 3 at 72) — the head publishes FIBERS-24/3/2 unstamped
+while the receipt is honest and paper-19 was made to state
+this by ITS own round; verdict unaffected (UNMOTIVATED at
+every base map, 3 free items at every one); M2 the
+diagonal-design sentence contradicted by the unit's own
+spectrum (the rule reaches the locus at 18/27, arithmetically
+unreachable at the 9 midpoints); M3 the cut-locus results are
+COUNTING THEOREMS (27 ≤ 3k ≤ 27(n−1) — k=9 forced at n=2,
+ten loci at n=3) — stating it makes them forced; M4 a
+dangling "respectively".  TWO DERIVED MECHANISMS making the
+census forced: the closed edge form 54+3T+3L over all nine
+classes; the 12 resolutions = 2 all-triangle + 1 all-line +
+9 mixed (72/72/36 falling out).  → adjudication when K3
+lands.
