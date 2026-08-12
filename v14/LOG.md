@@ -8734,3 +8734,16 @@ leg).  Shas: paper 0a08203b7e99, code e8bd6214bbff, output
 d9c8b7833ca1, receipt 63118012fbb5.  Committed AS-IS;
 orchestrator battery next; on green: TERMINAL (the
 twenty-fifth).
+
+## 2026-08-12 — LOR TERMINAL: THE TWENTY-FIFTH — REFINEMENT SEALED (v14 LEDGER #285)
+
+Battery green on the final object (mirror byte-identical;
+unknown flag exit 2; selftest sha-proved; MUT-POLARITY —
+the case-fold repair's own falsifier — killed ON TARGET;
+artifacts untouched).  **PAPER-30 IS TERMINAL — the
+twenty-fifth.**  STATUS row appended (§13 same commit).  The
+refinement architecture is sealed: lawful growth of places
+(quadratic-cheap) vs history-priced depth (exponential); the
+dictionary surviving on the extended carrier; the live-cut
+law; the walls on the paper leg.  LOR-B registered at R=12;
+SEC and AID inherit the carrier lesson at terminal grade.
