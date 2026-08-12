@@ -9032,3 +9032,31 @@ choices (5 verdict-determining), 85 claims, 343 numerals 0
 unmatched, 26 table rows, 19 blockquotes in pinned windows.
 
 **Orchestrator battery launches next; panel after green.**
+
+## 2026-08-12 — ACT BATTERY GREEN; THREE-SEAT PANEL LAUNCHED (v14 LEDGER #291)
+
+**Orchestrator battery (git-less mirror, PATH=/usr/bin:/bin,
+python3.13), ALL GREEN:** artifacts deleted → plain run exit
+0 → output AND receipt byte-identical vs committed → second
+plain run byte-stable ×2 → PYTHONHASHSEED=31337 run
+seed-invariant → unknown flag exit 2 → --selftest exit 0
+with FATAL AT EVERY ANCHOR CLASS (FILE-BYTES / PATH-VALUE /
+VERBATIM) writing nothing → registry-named MUT-ARENA died at
+its declared target G-ARENA-REBUILT, artifacts unchanged →
+unknown mutant name exit 2 → artifacts untouched by all
+probes.  (Registry read from source: 4-tuples with plant
+strings; --selftest 0 = every anchor class fatal; --mutant 0
+= died on declared target.)
+
+**Panel launched (all three seats confirmed in flight before
+this entry):** K1 operator (census counts rebuilt from
+scratch — Burnside/character-route/orbit-stabiliser; the
+non-transitivity 136; the odd twist; the quartic-sign
+pinning; the 3/2-not-a-power obstruction), K2 effectus (the
+outcome selector's control arms; the price sentence vs
+SMU's frame; the control stamp never spent; grain-relativity
+vs E-24; the falsifier's licensed word; the POT walls), K3
+instrument (the claimed 47/49/64/36/13/85/343/26/19 counts
+from registries; **the PER-R six-major target list probed
+one-by-one with live injections**; the #267 checklist; the
+49-mutant out-of-harness sweep; ≥8 novel corruptions).
