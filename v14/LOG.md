@@ -7824,3 +7824,13 @@ sweep.  Reviewers →
 v14/review-lor-{operator,effectus,instrument}.md.  Objects at
 2369290: f3e9e9df2c70 / 878e6007b785 / 427a5da397aa /
 8b4ca74d954c; pin 5239c4671f1a.
+
+## 2026-08-11 — USER ORDER: SEC (THE SECTOR/ATLAS UNIT) REGISTERED (v14 LEDGER #254)
+
+By the user's word ("register it and investigate it when you
+see fit") — charter amended (#254 in PLAN.md).  SEC = the
+breadth-growth question: welded sectors glued by shared
+actors; the union's dictionary; the gluing fiber; curvature
+of the gluing; whether weldability forces an overlap size.
+Queued at orchestrator discretion behind the current flight;
+ACT retains funnel priority.

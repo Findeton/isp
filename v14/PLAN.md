@@ -306,3 +306,24 @@ in-alphabet question open).  "DDS-free ⟹ no interference"
 moves to the THEOREM column (field-free; nine characteristics
 exercised).  Entry (c) closed at GDL's terminal as the
 separation ladder (threshold-invariant form).
+
+**AMENDMENT (2026-08-11, v14 #254, USER ORDER): SEC — THE
+SECTOR/ATLAS UNIT registered.**  The user's proposal ("9 or n
+actors per sector"), sharpened: the universe as an atlas of
+small welded arenas glued by SHARED ACTORS (the only
+non-sterile coupling — R1's copy theorem bars disjoint
+sectors).  The unit: two 9-actor arenas sharing k boundary
+actors (k a declared axis, k=3 the lead); the weld detector
+on the union — does a forced dictionary exist for the UNION;
+do the sector geometries GLUE consistently (the gluing fiber
+priced); does a cross-sector division event write geometry in
+both (curvature OF the gluing); is any overlap size k FORCED
+by weldability (the 9-works/16-failed selection pattern's
+first test).  Failure informative (never-welds ⟹ geography
+irreducibly single-sector, a theorem).  BREADTH growth,
+orthogonal to LOR's depth growth; feeds the limit program;
+the cross-chart open (paper-0's registered residue) is its
+ancestor.  Pin parents: paper-19 terminal + paper-21 terminal
+(+ LOR's terminal when sealed, for the extended-carrier
+lesson).  LAUNCH AT THE ORCHESTRATOR'S DISCRETION as capacity
+frees; ACT keeps priority as the QCD funnel.
