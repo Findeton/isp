@@ -9892,3 +9892,46 @@ measured: the glued-world species question (SEC's k=0
 level; shared-actor unions imply species
 splitting/merging) — chartered as SEC×SPC after both
 panels.  **The construction worker launches next.**
+
+## 2026-08-12 — SEC BATTERY GREEN; THREE-SEAT PANEL LAUNCHED; NDEP REGISTERED (v14 LEDGER #310)
+
+**Orchestrator battery (git-less mirror), ALL GREEN:**
+regeneration from deleted artifacts byte-identical vs
+committed; byte-stable ×2; PYTHONHASHSEED=54321
+seed-invariant; unknown flag exit 2; --selftest exit 1
+dying at G-SOURCES with the read set proved exactly the
+declared set, artifacts unchanged; registry-named
+MUT-TYPE-COUNT killed at its declared gate G-GLUING-CENSUS;
+unknown mutant exit 2; --verify-paper exit 0; artifacts
+untouched.
+
+**Panel launched (all three seats confirmed in flight
+before this entry):** K1 operator (the 45,010/16-type
+census, the union dictionaries both readings, the seam
+rank-6/kernel-4 form with the indefinite completion, the
+|Aut| routes incl. 1296²×2, the alignment theorem, the
+leak's count field, both seed rules re-run); K2 effectus
+(the four-segment head's licensure; the declined
+SEC-K-SELECTED; the seam and leak sentences scoped — the
+TEST-DECLARATION DUTY enforced; the paper-21 and R1 claims
+checked against their committed statements; the window's
+licensure; the #299 control-arm gap reported honestly since
+the pin predates the engraving); K3 instrument (the
+nine-probe target list incl. header binding,
+direction-flip polarity, unsealed-key forgery, spelled
+numerals, sentence referent binding; the 30-mutant
+out-of-harness sweep; ≥8 novel corruptions; the LOR
+#91-abstention verified real via G-SOURCES).
+
+**REGISTERED (user-raised, unscheduled): NDEP — the
+n-dependence unit.**  Whether the arena's actor count is a
+lab declaration only or structurally selected: re-run the
+core laws at n ≠ 9 (the crystallization floor already
+carries its general form ⌈log₂ n⌉ per AID's panel; the
+mod-3 motif's tie to the 3-structure is the live suspect;
+AID K2's crystallization-mechanism successor row is the
+natural vehicle).  Queued behind the current wave with
+SEC-2 (the dynamics of gluing: seam freedoms priced-or-
+selected; the dictionary extended so seam-spanning events
+become lawful) — both charter after their parent panels
+rule.
