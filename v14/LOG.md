@@ -8190,3 +8190,28 @@ census forced: the closed edge form 54+3T+3L over all nine
 classes; the 12 resolutions = 2 all-triangle + 1 all-line +
 9 mixed (72/72/36 falling out).  → adjudication when K3
 lands.
+
+## 2026-08-11 — SIG BATTERY GREEN; PANEL LAUNCHED (SEATS RUNNING AS OF THIS ENTRY) (v14 LEDGER #266)
+
+Battery: mirror plain BYTE-IDENTICAL both artifacts; unknown
+flag exit 2; selftest exit 1 writing nothing (the memo
+CLEARED first, the corrupted run reaching it 0 times — a
+disciplined selftest design); MUT-ANCHOR-VALUE ON TARGET;
+artifacts untouched.  The three seats were launched BEFORE
+this entry (the #257 discipline).  K1: the static ladder +
+THE DEPOSIT THEOREM + the R=5 non-attainment; the dynamic
+ladder with THE PRUNING THEOREM AUDITED HARDEST; the polarity
+fractions; the coin fiber; the mod-3 theorem two-way; the
+constraint-B discharge; a third route on the 2,197.  K2: THE
+HEAD'S GRAMMAR (BLOCKED vs READING-STRATIFIED — rule against
+the pin and the carrier-relativity precedents); the floor
+correction's ROUTING (where the R=5-static claim lives; what
+needs annotating); the mod-3 meaning + THE REGISTERED MOTIF
+row; the walk-beats-grammar licensure; successors (who
+inherits the emission-reading question).  K3: the disease
+sweep incl. REFERENT-BINDING (the OCC lesson); the pruning
+gate's license hardest; the 38 falsifiers outside the
+harness; E-22/E-23/E-24; the two-route independence.
+Reviewers → v14/review-sig-{operator,effectus,instrument}.md.
+Objects at 025c4a6: 72175d6fa85b / a41b6d549e14 /
+f28b550c151e / ca9cd4ceb387; pin ab73239daff5.
