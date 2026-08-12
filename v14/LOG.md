@@ -10474,3 +10474,73 @@ seals verified, anchors quote-side, waivers true.  (10)
 PIN OWNED: pre-#299, no feasibility lines; SEC-K-SELECTED
 registered without a comparator duty.  Repair order
 Z1–Z11; **the repair worker launches next.**
+
+## 2026-08-12 — SPC (PAPER-37) DELIVERED, COMMITTED AS-IS: 22 GROUPS / 220 SPECIES; CARRIER SELECTS 156 OF 246; SELECTION OPEN; STATISTICS SPLITS 192|14|9|31 — AND THE PRICE IS ONE SPECIES (v14 LEDGER #323)
+
+**Files (committed as delivered, pre-battery):**
+v14/paper-37-spc.md (1555d049d558); v14/code/spc_exact.py
+(6b399487f286); v14/code/spc_output.txt (dc6410c72036);
+v14/code/spc_receipt.json (3958fe51495b).  Pin
+7f0b1e9d5071 (#309).  ALL HEADLINES CANDIDATE UNTIL
+ADJUDICATION.
+
+**HEAD (four words compounded, derived twice by two laws,
+the 2,755-char verdict reconstructed from the receipt):**
+SPC-INVENTORY-22-GROUPS-220-CLASSES-220-SPECIES ·
+SPC-CARRIER-SELECTS-156-OF-246 · SPC-SELECTION-OPEN ·
+SPC-STATISTICS-SPLITS-192|14|9|31.
+
+**THE INVENTORY:** 22 groups (18 full exact tables, 4 above
+the declared cap 128), orders 1…362,880 each re-derived 3–4
+ways; ACT's four published orders re-reproduced at named
+receipt paths.  **Scope-closer:** at all six (grain,
+reading) rows the uniform-configuration coin-maps form the
+SAME closed group (8 anchored / 16 extension) inducing
+exactly the whole acting group's partition (136/80) — the
+carrier census complete despite the cap, and **ACT's
+grain-invariance explained mechanically.**
+
+**THE CARRIER DECOMPOSITION (the heart):** 19 rows / 7
+carriers; 156 of 246 species hosted; 9 rows leave species
+homeless; ACT's carrier numbers return as trivial-species
+multiplicities (208/136/120/80, character inner product AND
+union-find).  The coin carrier hosts everything; **actor-9
+under S₉ hosts 2 of 30 (28 homeless)**.
+
+**THE SHARPEST RESULT — THE PRICE IS ONE SPECIES:** exactly
+one species on which the odd twist acts by −1 while every
+torus-realisable twist acts trivially; its multiplicity is
+72 anchored / 40 extension = 208−136 / 120−80 = **ACT's
+identified orbit pairs.  ACT's pinned observable lies in
+that species and no other** (all 7 other isotypic
+components identically zero; 136/136 orbit sums vanish) —
+**the PINNED [0,0] derived from orthogonality.**  The
+conserved-price deficit and the free prediction are one
+representation-theoretic object.
+
+**BRANCHING (the identity layer):** species carrying an
+invariant vector along AID's exhibited chain: 4, 12, 12,
+26, 30, 30 — **crystallization RESTORES the inventory,
+complete at prefix five**; 2,610 multiplicities by two
+routes + 210 tableau counts as a third, 0 disagreements.
+**SELECTION:** 2,154 composite rules; 10 rows close, 9 exit
+(closure exactly where the hosted set is complete);
+standard ⊗ standard reaches unhosted species → OPEN.
+**STATISTICS:** OCC's selected shape DERIVED antisymmetric
+(0-against-81); split 192/14/9/31; the gauge arena pays no
+label anywhere; **the trivial species is incompatible with
+the selected shape on the actor row.**
+
+**Instrument (claimed; battery verifies):** 49 gates; 55
+falsifiers 55/55 on named gates; 74 anchors; 223 claims;
+165+15 table rows bound; 1,244+10 numerals 0 unmatched; 4
+walls with positive legs; waiver coverage 49/49; #91
+off-tree at two seeds byte-identical; scratch peak 3.1 MB.
+**Disclosures:** a real instrument defect self-found and
+repaired pre-delivery (the table row/class loop conflation
+— the two-route independence now demonstrated by
+MUT-DROP-SPECIES); six off-target falsifiers repaired and
+the whole sweep re-run; SPC-BLOCKED-AT declared unreachable
+at this arena (instrument-fault only), the other seven arms
+each carrying a delivered witness.  **Orchestrator battery
+launches next; panel after green.**
