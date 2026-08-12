@@ -8323,3 +8323,19 @@ identical across the WHOLE homogeneous locus (differences of
 one included; A4's singular mass = A5's indefinite mass =
 64/59049): the conclusion STRENGTHENS, the evidence moves.**
 Seven MINORs.  → adjudication when K1+K3 land.
+
+## 2026-08-11 — SECOND SESSION-LIMIT INTERRUPTION: EIGHT AGENTS KILLED AND RESUMED (v14 LEDGER #271)
+
+The session limit (reset 22:20 America/Bogota) killed all
+eight in-flight agents: the SIG operator (at its
+out-of-harness fiber mutants) and instrument (battery 2
+after 15 injections); the SMU repair (entering its full
+final battery — "the fix holds"), the LOR repair (at Y10's
+anchor-count derivation), the OCC repair (MID-DELIVERY into
+the repo); SEC (isolating a compute bottleneck), AID
+(entering its census sections), PER-R (adding the CLASS
+LADDER as a gated census — the #270 advisory visibly
+received and acted on).  The user lifted the limit
+("that's lifted, pick it up and continue").  ALL EIGHT
+resumed via SendMessage inventory-first.  The protocol's
+fifth full exercise; no committed state at risk.
