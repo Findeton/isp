@@ -10169,3 +10169,50 @@ exactly as written and STRONGER than the paper knows (rank
 count-independent); the NAMED-AND-NOT-READ paragraph; the
 alignment criterion; k-does-not-select as a finding.
 **K1/K3 still out; adjudication after all three.**
+
+## 2026-08-12 — SEC K1 (OPERATOR SEAT) FROZEN: AWF; ZERO FALSE NUMBERS IN 842 RECOMPUTATIONS; THREE MAJORS — TWO FREE ITEMS WHERE ONE IS CLAIMED; REPRESENTATIVE-NOT-TYPE ROWS; THE CENSUS HEADLINES UNTOUCHED (v14 LEDGER #315)
+
+**Review:** v14/review-sec-operator.md (516070f91255, 409
+lines), sole write; all hashes verified unchanged; all 15
+runtime sources re-hashed.  **Grade AWF.**  842
+recomputations from scratch — the 45,010-gluing census and
+all 16 type populations; the whole |Aut| column by TWO own
+routes (leaf-counting + an amalgam formula), |Aut_w| = |Aut|
+so site fiber 1 at 16/16; the k=0 swap factor isolated as
+two cosets of 1296²; the seam at all seven shared sites
+(rank 6, kernel 4, minors, Q(2,1,−1,−2) = −2/−1); the
+alignment criterion at 45,010/45,010; the compatibility
+census; the three cross-sector arms end-to-end; the
+sterility control.  **Zero false numbers.**
+
+**THREE MAJORS (scope/wording; no number moves):**
+1. **TWO free items measured where the head claims one:**
+   I-ORIENT is free at five of the six doubled types; the
+   receipt's own free_items lists both [I-DIRECTION-LABEL,
+   I-ORIENT]; the head's THE-FREE-ITEM-IS-ALWAYS-I-
+   DIRECTION-LABEL asserts a false uniqueness; §11's
+   cross-reference dangles.
+2. **Representative-not-type rows:** walking all 45,010
+   gluings, the published (label, orient) pair is wrong at
+   25,434; the triangle's seam profile holds at 486 of
+   4,374; drivability under first is not type-fixed
+   (converging with K2's major 2).  Mechanism identified:
+   two gluings of one type are related by Aut(K₃,₃,₃)²,
+   which is not the affine group.  **The abstract arena IS
+   a type invariant (verified 50/type), so the census, the
+   10-of-16, and the 4,186-of-45,010 headlines are
+   untouched.**
+3. §4.3's "induced field becomes identically 1"
+   CONTRADICTED by the unit's own EXT-INCIDENCE rows
+   (field_values [1,2]) — the THIRD-SEAT-INDEPENDENT catch
+   of K2's major 3.
+
+**Eleven minors incl. TWO STRENGTHENINGS under-claimed:**
+the arrangement fiber is 1 by exhaustion over all 72
+admissible saturating triples (paper-19 already a theorem);
+rank-6/kernel-4 is RHS-INDEPENDENT, so "at every shared
+site" is safe by proof, not by witnesses.  **Verified: no
+SEC sentence depends on LOR content** (paper-30 absent from
+the read set); SEC's cited LOR digest predates the LOR
+repair — expected, covered by the abstention note.
+**K3 still out; adjudication after all three.**
