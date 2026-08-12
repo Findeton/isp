@@ -10008,3 +10008,36 @@ in-delivery, incl. the shared leg predicates (de-twinned by
 the closed-form gates instead), the partition-only scope,
 and the w*-near-4 non-claim (the AID refusal respected).
 **Orchestrator battery launches next; panel after green.**
+
+## 2026-08-12 — FAC BATTERY GREEN; THREE-SEAT PANEL LAUNCHED (v14 LEDGER #312)
+
+**Orchestrator battery, ALL GREEN:** regeneration from
+deleted artifacts byte-identical vs committed; byte-stable
+×2; PYTHONHASHSEED=11223 seed-invariant; unknown flag exit
+2; --selftest exit 0 with corrupted anchors dying at their
+gates (A-PIN → G-PROVENANCE-SHA-PINNED; V01 →
+G-VERBATIM-ANCHORS-IN-SOURCE; A-RUNBOOK →
+G-PROVENANCE-SHA-PINNED) writing nothing; registry-named
+MUT-PARTITION died at its declared gate G-ARENA-SHAPE on
+target; unknown mutant exit 2; artifacts untouched.
+
+**Panel launched (all three seats confirmed in flight
+before this entry):** K1 operator (the complete Bell(9)
+census by own route; the two closed-form theorems re-proved;
+the carrier window rebuilt; LEG-4 lumpability re-implemented
+from the parent at both coin orders; the groupoid by own
+construction — the 5,852 set-identity with AID's, w*
+distribution, the concatenation range; the grain triangle
+with extreme stabilizer spot-checks; the persistence rungs;
+the control arms through the real criterion), K2 effectus
+(the head's derivation and corpus-level multi-wayness; the
+thesis sentence's direction — the paper-23 iff lesson; the
+atom word's exact licensed content and the thread-question
+ruling; the AID not-licensed WALL swept; the w*-vs-4
+non-claim verified everywhere; the criterion's declaration
+priced; window universalization; the duties), K3 instrument
+(registries vs prose; the target list incl. header swaps,
+direction flips, the two self-repaired holes re-probed, the
+criterion-leak AST gate attacked, the pin-vocabulary parse
+corrupted; the full 36-falsifier out-of-harness sweep; ≥8
+novel corruptions; byte ×2 off-tree).
