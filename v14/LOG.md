@@ -10371,3 +10371,25 @@ the four-statement window; two-directional tables/fences)
 + the corpus-multiset disclosure (5,856 slots / 5,784
 distinct) and the transcript-ledger reconciliation.
 Repair order Z1–Z12; **the repair worker launches next.**
+
+## 2026-08-12 — SECOND FREEZE AMENDMENT (FINAL): SEC K2 AT 1002 LINES — HP-2 (602 DRIVES) MAKES THE FATE-INSTABILITY DECISIVE AT THE first RULE AND CONFIRMS FORCED 16/16 AT THE shared RULE (v14 LEDGER #320)
+
+The K2 seat's final probe landed; the FINAL review
+(79a4fc95da82, 1002 lines) supersedes #317's 987-line
+version and is committed here.  **HP-2 (602 driven
+records, total 802):** at paper-19's canonical first rule
+the FORCED/REFUSED fate moves INSIDE the type at **10 of 16
+types, in both directions** (nine committed-FORCED types
+have refusing siblings; the committed-REFUSED type has 2 of
+20 driving; every FORCED-window type with >1 gluing is
+mixed, 9 of 9); over 301 sampled records **244 REFUSE** vs
+the committed window's 6-of-16 — the committed number
+understates refusal by more than 2×; **choice-inventory
+item 16, classed free, is verdict-determining for that head
+clause.**  At the shared rule NOTHING moves (0 of 16;
+301/301 FORCED) — **the head's FORCED 16 OF 16 survives
+intact**, the asymmetry exactly §3.2's own mechanism's
+prediction, reported FOR the paper.  The window
+representative reproduced its committed fate 16/16 in every
+probe (the probes are the instrument).  All prior headline
+rulings stand.  **Awaiting K3; adjudication after it.**

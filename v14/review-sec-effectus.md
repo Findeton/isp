@@ -28,7 +28,7 @@ paper-19 §-quotes; RUNBOOK E-22/E-23/E-24. Sibling in-flight object files
 
 **Zero published numbers are false.** I recomputed 546 published or
 head-carried quantities from my own primitives, plus two exhaustive sweeps
-over all 45,010 gluings and 200 driven records re-driven on the unit's own
+over all 45,010 gluings and 802 driven records re-driven on the unit's own
 instrument, and every one reproduced exactly — the whole 16-row
 type census (gluings/carriers/pairs/doubled), all 16 automorphism orders, all
 three seam systems with their exact minors and indefinite witnesses, the
@@ -77,7 +77,7 @@ construction, sharing no code, no import and no typed literal with
 | R-18 | k-by-k doubled-free table | 8 | reproduces |
 | R-19 | headline scalars 2970, 4186, 62208, 1296, 3359232 | 5 | reproduces |
 
-**Total: 546 quantities + 2 exhaustive 45,010-gluing sweeps + 200 driven
+**Total: 546 quantities + 2 exhaustive 45,010-gluing sweeps + 802 driven
 records re-driven on the unit's own instrument.**
 
 Three **hostile probes run on the unit's own instrument** (labelled as such —
@@ -86,21 +86,17 @@ the question can be posed):
 
 | probe | what | result |
 |---|---|---|
-| HP-1 | the `first`-rule fate at 25 representatives each of 5 types — **125 driven records** | **the fate moves inside the type at 2 of the 5 tested** — MAJOR-3 |
-| HP-3 | the `shared`-rule fate at 5 representatives of each of the 15 types with k > 0 — **75 driven records** | **the fate does not move: 0 of 15 types, 75 of 75 FORCED** — MAJOR-3's counter-measurement, and it defends the paper's other fate clause |
-| HP-2 | the same at 20 representatives × 16 types × both rules | **still running at close; not relied on by any ruling** |
+| HP-1 | the `first`-rule fate at 25 representatives each of 5 types — **125 driven records** | the fate moves inside the type at 2 of the 5 tested |
+| HP-3 | the `shared`-rule fate at 5 representatives of each of the 15 types with k > 0 — **75 driven records** | the fate does not move: 0 of 15 types, 75 of 75 FORCED |
+| HP-2 | **both rules at 20 representatives of every one of the 16 types — 602 driven records** | **`first`: the fate moves at 10 of 16 types, 244 of 301 records REFUSED against the committed 6 of 16. `shared`: 0 of 16 types move, 301 of 301 FORCED** — MAJOR-3 |
 
-MAJOR-3 rests on HP-1 and HP-3, both landed. In each the fate of the *window's
-own* representative reproduced the committed table (5 of 5 in HP-1, 15 of 15 in
-HP-3), so the probes are faithful to the instrument; the HP-1 flips are then
-flips of the same instrument on other members of the same type. HP-2 would only
-widen the counts and is disclosed rather than waited on (a disclosed anomaly
-beats an undisclosed marathon).
-
-**200 driven records re-driven in total.** The two probes disagree in the way
-that matters: the free representative moves the canonical-rule fate and leaves
-the shared-rule fate alone, which is the asymmetry §3.2's own mechanism
-predicts.
+**802 driven records re-driven in total.** In every probe the fate of the
+*window's own* representative reproduced the committed table (5 of 5, 15 of 15,
+16 of 16), so the probes are faithful to the instrument; the flips are then
+flips of the same instrument on other members of the same type. The three
+probes agree, and they disagree with the paper in exactly one direction: the
+free representative moves the **canonical-rule** fate and leaves the
+**shared-rule** fate alone — the asymmetry §3.2's own mechanism predicts.
 
 ---
 
@@ -208,36 +204,53 @@ each conflict group (sec_exact.py 784–803) and the group order is by
 `repr(seed)`, under which a shared actor's name `('S', i)` sorts after every
 `('A', …)` and `('B', …)`.
 
-**Establishing measurement (HP-1, the unit's own driver, 125 driven records).**
+**Establishing measurement (HP-2, the unit's own driver, 602 driven records —
+20 representatives of every type, both rules; HP-1 and HP-3 agree).**
 
-| type | window rep's fate at `first` | over 25 representatives |
-|---|---|---|
-| `(2, (0,0,1), (1,0,1))` | REFUSED | REFUSED 25 |
-| `(2, (0,0,2))` | REFUSED | REFUSED 25 |
-| `(3, (0,0,3))` | REFUSED | REFUSED 25 |
-| `(2, (0,0,1), (0,1,1))` | **FORCED** | **FORCED 8, REFUSED 17** |
-| `(3, (0,0,1), (1,1,2))` | **FORCED** | **FORCED 4, REFUSED 21** |
+| type | rep @ `first` | `first` over 20 reps | rep @ `shared` | `shared` over 20 |
+|---|---|---|---|---|
+| `(0,)` | FORCED | F 1 *(only one gluing exists)* | FORCED | F 1 |
+| `(1,(0,0,1))` | FORCED | **F 7, R 13** | FORCED | F 20 |
+| `(2,(0,0,1),(0,1,1))` | FORCED | **F 8, R 12** | FORCED | F 20 |
+| `(2,(0,0,1),(1,0,1))` | REFUSED | R 20 | FORCED | F 20 |
+| `(2,(0,0,1),(1,1,1))` | FORCED | **F 7, R 13** | FORCED | F 20 |
+| `(2,(0,0,2))` | REFUSED | R 20 | FORCED | F 20 |
+| `(3,(0,0,1),(0,1,1),(0,2,1))` | FORCED | **F 8, R 12** | FORCED | F 20 |
+| `(3,(0,0,1),(0,1,1),(1,0,1))` | REFUSED | **R 18, F 2** | FORCED | F 20 |
+| `(3,(0,0,1),(0,1,1),(1,2,1))` | FORCED | **F 7, R 13** | FORCED | F 20 |
+| `(3,(0,0,1),(0,1,2))` | FORCED | **F 6, R 14** | FORCED | F 20 |
+| `(3,(0,0,1),(1,0,1),(2,0,1))` | REFUSED | R 20 | FORCED | F 20 |
+| `(3,(0,0,1),(1,0,1),(2,1,1))` | FORCED | **F 2, R 18** | FORCED | F 20 |
+| `(3,(0,0,1),(1,0,2))` | REFUSED | R 20 | FORCED | F 20 |
+| `(3,(0,0,1),(1,1,1),(2,2,1))` | FORCED | **F 8, R 12** | FORCED | F 20 |
+| `(3,(0,0,1),(1,1,2))` | FORCED | **F 1, R 19** | FORCED | F 20 |
+| `(3,(0,0,3))` | REFUSED | R 20 | FORCED | F 20 |
 
-The window's representative reproduces the committed fate at 5 of 5, so the
-probe is faithful; and at 2 of the 5 types the same type's other
-representatives flip. One flip suffices to defeat the type-level reading; two
-of five suggests it is common. **Note the direction: both flips are FORCED
-window representatives whose siblings mostly REFUSE**, so the committed
-"REFUSED 6 of 16" is if anything an *under*-count of the refusal rate under
-paper-19's rule — the repair does not soften the paper's result, it re-scopes
-it.
+Four readings of this table, each sharper than the last:
 
-**The counter-measurement, which defends the other clause (HP-3, 75 driven
-records).** Under the **shared** rule the fate does **not** move: at all 15
-types with k > 0, the window's representative and four further representatives
-each drive to FORCED — **0 of 15 types move, 75 of 75 records FORCED**. So the
-head's `FORCED 16 OF 16 … AT THE SHARED-SEED RULE` is stable across the free
-item at this sample and needs no re-scoping beyond naming its objects records;
-only the `REFUSED 6 OF 16 AT PAPER-19'S CANONICAL RULE` clause is
+1. **The window's representative reproduces the committed fate at 16 of 16.**
+   The probe is the instrument.
+2. **At `first` the fate moves inside the type at 10 of the 16 types**, and it
+   moves in **both** directions: nine committed-FORCED types have REFUSING
+   siblings, and the committed-REFUSED type `(3,(0,0,1),(0,1,1),(1,0,1))` has
+   2 of 20 siblings that drive. Only 5 types are uniformly REFUSED and only the
+   k = 0 singleton is uniformly FORCED — and it has one gluing, so it cannot
+   move. **Every type with more than one gluing whose window representative is
+   FORCED turns out to be mixed: 9 of 9.**
+3. **The committed number understates the refusal rate by more than a factor of
+   two.** Over the 301 sampled `first`-rule records, **244 REFUSE** — against
+   the committed window's 6 of 16.
+4. **At `shared` nothing moves: 0 of 16 types, 301 of 301 records FORCED.**
+
+**The counter-measurement defends the paper's other clause, and I report it as
+such.** The head's `FORCED 16 OF 16 … AT THE SHARED-SEED RULE` is stable across
+the free item at 301 of 301 records and needs no re-scoping beyond naming its
+objects *records*; only `REFUSED 6 OF 16 AT PAPER-19'S CANONICAL RULE` is
 representative-relative. The asymmetry is exactly what §3.2's mechanism
-predicts — under the `shared` rule a shared actor always seeds when the group
-holds one, so the shared actors always carry the base rather than receive it —
-which is a point *for* the paper's mechanism and should be reported as such.
+predicts — under the `shared` rule a shared actor seeds wherever a group holds
+one, so the shared actors always carry the base rather than receive it. **That
+is a measured point *for* the paper's mechanism** and belongs in the repaired
+text.
 
 **Consequence.** The head's
 `FORCED 16 OF 16 WINDOW RECORDS AT THE SHARED-SEED RULE, REFUSED 6 OF 16 AT
@@ -246,13 +259,14 @@ passes `len(typerep)`), and §3.2 reads it that way: "Under paper-19's canonical
 rule it REFUSES at **6** of them" — them being the 16 types. For the second
 clause that referent is wrong: the measured object is 16 **chosen gluings**,
 one per type, and a different choice of representative — the free item —
-returns a different number. G-SEED-RULE inherits the defect on the same side:
-its statement says the grammar "REFUSES at some **types**", while its predicate
-ranges over the 16 representatives and the type-level reading is false.
+returns a different number, anywhere from about 1 to about 15 on the measured
+rates. G-SEED-RULE inherits the defect on the same side: its statement says the
+grammar "REFUSES at some **types**", while its predicate ranges over the 16
+representatives and the type-level reading is false at 10 of 16.
 
 §3.2's closing generalisation is separately unlicensed: "**A union is drivable
 exactly when the shared actors carry the base into the second sector rather
-than receive one.**" HP-3 is consistent with it and is real support — 75 of 75
+than receive one.**" HP-2/HP-3 are consistent with it and are real support — 376 of 376
 drivable under the rule that always makes the shared actor carry — but "exactly
 when" is a universal drawn from 6 refusals that are all literally the same
 event (`propose ('B',(1,0))` at prefix 49 — verified at all 6 rows of the
@@ -287,10 +301,11 @@ Head segment 1, replacing the two fate clauses:
 **Repair order.** Either (a) re-scope every fate statement to "driven window
 records" and add the sentences above, or (b) drive the FORCED/REFUSED census
 over a declared representative sample per type and publish both fractions. (a)
-is the cheap and honest route; (b) is the strong one, and HP-1/HP-3 show it is
-cheap enough to run. Reclassify item 16 from **free** to **free,
-VERDICT-DETERMINING for the canonical-rule fate clause; measured inert for the
-shared-rule clause at 5 representatives × 15 types**.
+is the cheap and honest route; (b) is the strong one, and HP-2 shows it is
+cheap enough to run — 602 records in one pass. Reclassify item 16 from **free**
+to **free, VERDICT-DETERMINING for the canonical-rule fate clause (the fate
+moves at 10 of 16 types); measured inert for the shared-rule clause (301 of 301
+records FORCED)**.
 
 ## MAJOR-4 — `EXT-INCIDENCE-REPAIRS-EVERY-TYPE` has no measurement behind it, and its stated mechanism is contradicted by the receipt
 
@@ -969,7 +984,7 @@ A hostile seat should say what it could not break.
 |---|---|---|
 | MAJOR-1 | segment-4 word `TYPE-SELECTED-NOT-k-SELECTED`; §13.3 declination | **not measured** — word typed, no comparator, k-claim unbound by any predicate |
 | MAJOR-2 | §14 "types all four templates itself" | **false about the instrument** |
-| MAJOR-3 | "REFUSED 6 OF 16" / "6 of them" as a type statement | **wrong referent** — the canonical-rule fate moves with the free representative (HP-1); the shared-rule clause survives (HP-3, 0 of 15) |
+| MAJOR-3 | "REFUSED 6 OF 16" / "6 of them" as a type statement | **wrong referent** — the canonical-rule fate moves with the free representative at **10 of 16 types**, 244 of 301 sampled records REFUSE; the shared-rule clause survives intact (0 of 16, 301 of 301) |
 | MAJOR-4 | `EXT-INCIDENCE-REPAIRS-EVERY-TYPE`; "the induced field becomes identically 1" | **unmeasured; mechanism contradicted by the receipt** |
 | MAJOR-5 | "a sector's own geometry is changed by an event in the OTHER sector" | **not licensed** — deformation confined to shared-shared cells; no test declared |
 | MAJOR-6 | "geometry at the seam is available ONLY by leaving the target" | **"only" not licensed**; contradicts S-3. Forward half upgradable to a theorem |
