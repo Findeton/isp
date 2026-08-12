@@ -14,15 +14,20 @@ adjudication every headline below is a **candidate reading**.
 **Artifacts:** `v14/code/smu_output.txt`, `v14/code/smu_receipt.json`.
 **Inheritance, hash-verified at run time and by no other route:** the
 obligation, the criterion, the invariant simplexes and the withholding
-machinery come from paper-23, `v14/paper-23-measure.md` (`79cc67b4f6cd`) with
-its instrument (`faf353385905`) and receipt (`c9edf97a5533`), terminal at
+machinery come from paper-23, `v14/paper-23-measure.md` (`79cc67b4f6cd`),
+with its instrument `v14/code/r5m_measure_exact.py` (`faf353385905`) and its
+receipt `v14/code/r5m_measure_receipt.json` (`c9edf97a5533`), terminal at
 commit bb26ca4; the arena — the 640-coin family, the link-indexed
 configurations, the chart group, the gauge action, the plaquette loops —
-comes from R5, `v14/paper-18-gauge-rung.md` (`62cfe5689d2c`) with its
-instrument (`0d98de793b79`) and receipt (`0c02b7684e5b`), terminal at commit
+comes from R5, `v14/paper-18-gauge-rung.md` (`62cfe5689d2c`), with its
+instrument `v14/code/r5_gauge_exact.py` (`0d98de793b79`) and its receipt
+`v14/code/r5_gauge_receipt.json` (`0c02b7684e5b`), terminal at commit
 987cd73; the rate source for one declared family is the Γ-iteration terminal,
-`v14/paper-16-gamma-iteration.md` (`5c1df50673d4`) with its receipt
-(`42255f50328a`), at commit 2895a9a. Every object below is **reimplemented**
+`v14/paper-16-gamma-iteration.md` (`5c1df50673d4`), with its receipt
+`v14/code/giter_receipt.json` (`42255f50328a`), at commit 2895a9a. Each
+digest is bound to its own path, so a pair of them exchanged between two
+sources dies on the delivery run rather than reading as two digests that are
+both still present. Every object below is **reimplemented**
 from those definitions; nothing is imported from any other unit's program.
 **Anchors are (path, value) pairs and (context, consumer) pairs, not only file
 bytes:** 9 file-bytes anchors, 30 path-value anchors and 12 verbatim-text
@@ -30,6 +35,9 @@ anchors, 51 anchors in all — each verbatim window pinned by the digest of its
 exact bytes, by its own frozen character count and by a declared length floor,
 each located exactly once, each perturbed at a content-bearing token and
 required to stop being locatable, and each bound to the gate that consumes it.
+Every quotation this paper makes of a parent is additionally required to lie
+**inside** one of those windows, so a paper that misquotes — or inverts — a
+definition it attributes to a parent dies on the delivery run.
 **Exact arithmetic only:** the field is $\mathbb{Q}(\zeta_8)$ carried as
 integer 5-tuples over the basis $(1,z,z^2,z^3)$ reduced modulo $z^4+1$ in
 lowest terms, so tuple equality is field equality; every probability is an
@@ -39,27 +47,35 @@ by iteration, never by a rank estimate and never by a tolerance. An AST scan
 of the instrument's own syntax tree is a gate: no float literal, no banned
 import, no banned call and no moving reference anywhere, so the run is correct
 off-tree and in a directory with no version control at all (#91).
-**The seal (#119), native from birth and total:** every published object is
-digested at the moment its gate passes; every top-level key of the receipt is
-either sealed that way or named in the declaration with the reason it cannot
-be; the artifacts are written from the sealed payload through temporaries
-moved into place only after the bytes on disk match the gate-time digests.
+**The seal (#119), native from birth, total, and taken at value-close:** every
+published object is digested at the moment the gate that vouches *its own
+values* passes — each of the 18 instance records at its own gate, each
+sub-object at the gate that measured it, with every omission declared in its
+manifest row; every top-level key of the receipt is either sealed that way or
+named in the declaration with the reason it cannot be; and the artifacts are
+written to temporaries, read back and compared against the gate-time digests
+**before** either is moved into place, so a refusing integrity gate promotes
+nothing.
 
 **The verdict, quoted exactly as the instrument emits it.** Every value is
 derived inside a gate from a measured receipt field; the complete string —
 head included — is compared for equality against an *independent
 reconstruction* that derives the head **by a second head law of its own**,
 written from the same pre-registered outcomes with a different branch
-structure and sharing no format string and no helper with the builder's, and
-that re-renders **every segment** from the primitive measured tables, reading
-neither the builder's segments nor the builder's counts; and the block below
-is compared, character for character under whitespace normalisation, against
-the string this run emits — and the paper's fenced blocks are compared as a
-**multiset** against the single block this run licenses, so neither a stale
-verdict nor a forged twin beside the clean one can be delivered:
+structure, sharing no format string and no helper with the builder's, and
+**de-twinned from it**: the second law accepts neither of the builder's
+aggregates, recounting the covariant deriving population from the instance
+records one by one and re-taking the widest spread as a maximum over the
+published rows, so an edit to one head law alone cannot survive. It re-renders
+**every segment** from the primitive measured tables, reading neither the
+builder's segments nor the builder's counts; and the block below is compared,
+character for character under whitespace normalisation, against the string
+this run emits — and the paper's fenced blocks are compared as a **multiset**
+against the single block this run licenses, so neither a stale verdict nor a
+forged twin beside the clean one can be delivered:
 
 ```
-SMU-DYNAMICS-RELATIVE-SPREAD-153/380-OVER-12-DERIVING-INSTANCES-<CENSUS=6-FAMILIES-18-INSTANCES-ALL-RUN-12-DERIVE-6-REDUCIBLE|CRITERION=A-COVARIANT-CHAIN-DERIVES-IFF-IT-HAS-EXACTLY-ONE-CLOSED-COMMUNICATING-CLASS|THE-INHERITED-FORM-IS-SUFFICIENT-NOT-NECESSARY-WITNESS-AT-3-STATES-2-CLASSES-1-CLOSED -- (a)CHART-WALK=THE-ANCHORED-CHART-ACTS-TRIVIALLY-32-OF-32-ELEMENTS-INDUCE-THE-IDENTITY-SO-640-CLOSED-CLASSES-AND-THE-WHOLE-639-SIMPLEX-IS-STATIONARY;THE-EXTENSION-DOES-NOT-ACT-ON-THIS-CARRIER-AT-ALL-64-OF-128-ELEMENTS-CARRY-A-UNIFORM-CONFIGURATION-OFF-IT-AND-ITS-CLOSURE-IS-1248-STATES-WITH-336-CLOSED-CLASSES -- (b)GAUGE-WALK=REDUCIBLE-AT-BOTH-READINGS-208-AND-120-CLOSED-CLASSES-IDENTICAL-AS-SETS-TO-THE-PARENTS-ORBITS-AND-ITS-STATIONARY-SIMPLEX-IS-THE-PARENTS-INVARIANT-SIMPLEX-DIMENSION-207-AND-119 -- (c)LAW-NATIVE-RESAMPLING=IRREDUCIBLE-AND-DERIVES-AT-ALL-6-MEMBERS-OF-ITS-DECLARED-FIBRE;THE-MEASURE-IS-NEW-SECTOR-GRADED-AT-15/38-5/19-13/38-AND-INVARIANT-SO-IT-IS-A-POINT-OF-THE-PARENTS-SIMPLEX -- (d)COMPOSITION-WALK=IRREDUCIBLE-ON-BOTH-SIDES-AND-DERIVES-THE-COUNTING-MEASURE-BECAUSE-THE-FAMILY-IS-CLOSED-UNDER-INVERSE-640-OF-640-SO-THE-WALK-IS-DOUBLY-STOCHASTIC-WITH-278528-OF-409600-PRODUCTS-STAYING -- (e)MONOMIAL-HAAR-WALK=REDUCIBLE-5-CLOSED-CLASSES-OF-128-AND-ONE-OF-THEM-IS-EXACTLY-THE-PARENTS-HAAR-CARRIER-SO-THE-CORPUS-ONE-HANDED-OVER-MEASURE-IS-ONE-EXTREME-POINT-HERE -- (f)COVARIANT-METROPOLIS=EVERY-DECLARED-INVARIANT-TARGET-IS-REACHED-EXACTLY-3-OF-3-AND-THE-NON-INVARIANT-CONTROL-LANDS-OUTSIDE-THE-SIMPLEX-ORBIT-CONSTANT=FALSE;EXHAUSTIVE-ARM-55-TARGETS-0-FAILURES -- MEASURES=10-DISTINCT-STATIONARY-VECTORS-OVER-12-DERIVING-INSTANCES|NAMED-NULLS-REACHED=COUNTING,ORBIT-UNIFORM-CHART-128,ORBIT-UNIFORM-CHART-32|NEW=7 -- RELATIVITY=THE-MEASURE-MOVES|WIDEST-SPREAD-OVER-THE-11-GAUGE-COVARIANT-DERIVING-INSTANCES=153/380-ATTAINED-ON-1-OF-4-SETS(DEFECT-CARRYING)|OVER-ALL-12-DERIVING-INSTANCES-THE-DECLARED-NON-COVARIANT-CONTROL-INCLUDED=1701/3800|AGAINST-THE-PARENTS-WIDEST-OVER-INVARIANT-MEASURES-27/130-SO-DECLARING-A-DYNAMICS-MOVES-THE-PARENTS-OWN-HEADLINE-SETS-FURTHER|QUASI-DERIVATION-ARM-REACHABLE-AND-MEASURED-TO-FAIL -- PRICE=CONSERVED-NOT-PAID:THE-COVARIANT-DYNAMICS-FIBRE-SURJECTS-ONTO-THE-INVARIANT-SIMPLEX-SO-A-DECLARATION-STILL-SUPPLIES-207-INDEPENDENT-NUMBERS-AT-THE-ANCHORED-READING-AND-119-AT-THE-EXTENSION-EXACTLY-THE-PARENTS-COUNTS|WHAT-MOVED-IS-WHERE-THE-DECLARATION-IS-MADE-NOT-HOW-MUCH-IT-COSTS -- WILSON=LICENSED-BY-THE-PIN-AND-STAMPED-CONDITIONAL-ON-THE-DECLARED-DYNAMICS-AT-12-OF-12-ROWS|OBSERVABLE=THE-TRACE-OF-THE-PLAQUETTE-HOLONOMY-ON-ITS-OWN-FOUR-CORNER-BLOCK-PLAQUETTE-INDEPENDENT-AT-16-PLAQUETTES-AND-GAUGE-INVARIANT|VALUES=107/76@NEW,111/76@NEW,13/10@COUNTING,19/13@ORBIT-UNIFORM-CHART-32,205/152@NEW,207/152@NEW,219/152@NEW,225/152@NEW,263/200@NEW,29/20@ORBIT-UNIFORM-CHART-128|RANGE-OVER-THE-INVARIANT-SIMPLEX=[0,4]-BOTH-ENDPOINTS-ATTAINED-AT-EXTREME-POINTS-SO-COVARIANCE-PINS-THE-EXPECTATION-NOWHERE|NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM-AND-0-LOOP-FAMILIES-GROWN -- SCOPE=D=2;L=4;FIELD=Q(zeta_8);COINS=640;LINKS=32;PLAQUETTES=16;CARRIER=THE-PARENTS-PRIMARY-CARRIER-THE-640-UNIFORM-CONFIGURATIONS(PLUS-THE-EXTENSIONS-1248-STATE-CLOSURE-WHERE-THE-EXTENSION-IS-DECLARED);FULL-CONFIGURATION-SPACE=640^32-NOT-A-CARRIER-HERE;ELIMINATION-CAP=208-EVERY-EXACT-SOLVE-AT-OR-BELOW-IT;LOCALITY-IS-DEGENERATE-ON-THIS-CARRIER-ONE-COIN-SERVES-ALL-32-LINKS;THE-DYNAMICS-ARE-DECLARED-NOT-DERIVED;NO-ACTION;NO-COUPLING;NOT-QCD;NO-CONFINEMENT-CLAIM>
+SMU-DYNAMICS-RELATIVE-SPREAD-153/380-OVER-THE-11-GAUGE-COVARIANT-DERIVING-INSTANCES-<CENSUS=6-FAMILIES-18-INSTANCES-ALL-RUN-12-DERIVE-6-REDUCIBLE|CRITERION=A-COVARIANT-CHAIN-DERIVES-IFF-IT-HAS-EXACTLY-ONE-CLOSED-COMMUNICATING-CLASS|THE-INHERITED-FORM-IS-SUFFICIENT-NOT-NECESSARY-WITNESS-AT-3-STATES-2-CLASSES-1-CLOSED -- (a)CHART-WALK=THE-ANCHORED-CHART-ACTS-TRIVIALLY-32-OF-32-ELEMENTS-INDUCE-THE-IDENTITY-SO-640-CLOSED-CLASSES-AND-THE-WHOLE-639-SIMPLEX-IS-STATIONARY;THE-EXTENSION-DOES-NOT-ACT-ON-THIS-CARRIER-AT-ALL-64-OF-128-ELEMENTS-CARRY-A-UNIFORM-CONFIGURATION-OFF-IT-AND-ITS-CLOSURE-IS-1248-STATES-WITH-336-CLOSED-CLASSES -- (b)GAUGE-WALK=REDUCIBLE-AT-BOTH-READINGS-208-AND-120-CLOSED-CLASSES-IDENTICAL-AS-SETS-TO-THE-PARENTS-ORBITS-AND-ITS-STATIONARY-SIMPLEX-IS-THE-PARENTS-INVARIANT-SIMPLEX-DIMENSION-207-AND-119 -- (c)LAW-NATIVE-RESAMPLING=IRREDUCIBLE-AND-DERIVES-AT-ALL-6-MEMBERS-OF-ITS-DECLARED-FIBRE;THE-MEASURE-IS-NEW-SECTOR-GRADED-AT-15/38-5/19-13/38-AND-INVARIANT-SO-IT-IS-A-POINT-OF-THE-PARENTS-SIMPLEX;BUT-ITS-KERNEL-IS-RANK-ONE-EVERY-ROW-OF-THE-LAW-IS-THE-SAME-VECTOR-AT-6-OF-6-INSTANCES-SO-THE-DERIVED-MEASURE-IS-THE-DECLARED-DRAW-LAW-READ-BACK-AND-THE-ROW-IS-STAMPED-LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION -- (d)COMPOSITION-WALK=IRREDUCIBLE-ON-BOTH-SIDES-AND-DERIVES-THE-COUNTING-MEASURE-BECAUSE-THE-FAMILY-IS-CLOSED-UNDER-INVERSE-640-OF-640-SO-THE-WALK-IS-DOUBLY-STOCHASTIC-WITH-278528-OF-409600-PRODUCTS-STAYING -- (e)MONOMIAL-HAAR-WALK=REDUCIBLE-5-CLOSED-CLASSES-OF-128-AND-ONE-OF-THEM-IS-EXACTLY-THE-PARENTS-HAAR-CARRIER-SO-THE-CORPUS-ONE-HANDED-OVER-MEASURE-IS-ONE-EXTREME-POINT-HERE -- (f)COVARIANT-METROPOLIS=EVERY-DECLARED-INVARIANT-TARGET-IS-REACHED-EXACTLY-3-OF-3-AND-THE-NON-INVARIANT-CONTROL-LANDS-OUTSIDE-THE-SIMPLEX-ORBIT-CONSTANT=FALSE;EXHAUSTIVE-ARM-55-TARGETS-0-FAILURES -- MEASURES=10-DISTINCT-STATIONARY-VECTORS-OVER-12-DERIVING-INSTANCES|NAMED-NULLS-REACHED=COUNTING,ORBIT-UNIFORM-CHART-128,ORBIT-UNIFORM-CHART-32|NEW=7 -- RELATIVITY=THE-MEASURE-MOVES|WIDEST-SPREAD-OVER-THE-11-GAUGE-COVARIANT-DERIVING-INSTANCES=153/380-ATTAINED-ON-1-OF-4-SETS(DEFECT-CARRYING)|OVER-ALL-12-DERIVING-INSTANCES-THE-DECLARED-NON-COVARIANT-CONTROL-INCLUDED=1701/3800|AT-THE-PARENTS-OWN-THREE-MEASURES-ALL-3-OF-3-PRESENT-HERE-THIS-CENSUS-REPRODUCES-27/130-EXACTLY|THE-RISE-TO-153/380-IS-THE-6-NEW-LAW-NATIVE-MEASURES-ENTERING-THE-SAME-COMPARISON-NOT-A-DYNAMICS-EFFECT|OVER-THE-WHOLE-COVARIANT-FIBRE-THE-RANGE-OF-EVERY-HEADLINE-SET-IS-[0,1]-BY-THE-SURJECTION|QUASI-DERIVATION-ARM-REACHABLE-AND-MEASURED-TO-FAIL -- ENUMERATION=THE-CONTROLS-TARGET-IS-DECLARED-ON-CONTIGUOUS-BLOCKS-OF-THE-COIN-INDEX-SO-ITS-TWO-NUMBERS-ARE-ENUMERATION-RELATIVE:UNDER-A-SECOND-ADMISSIBLE-READING-OF-THE-PARENTS-ALPHABET-THE-CONTROL-EXPECTATION-IS-127/100-NOT-263/200-AND-THE-SPREAD-OVER-ALL-DERIVING-INSTANCES-IS-234/475-NOT-1701/3800|THE-LIKE-FOR-LIKE-HEADLINE-153/380-IS-IDENTICAL-UNDER-BOTH-ENUMERATIONS-BECAUSE-THE-COVARIANT-MEASURES-ARE-FUNCTIONS-OF-SECTOR-AND-ORBIT-MEMBERSHIP-ALONE -- PRICE=CONSERVED-NOT-PAID:THE-COVARIANT-DYNAMICS-FIBRE-SURJECTS-ONTO-THE-CLOSED-INVARIANT-SIMPLEX-BOUNDARY-INCLUDED-38-OF-38-BOUNDARY-TARGETS-AT-THE-DECLARED-SMALL-CARRIERS-AND-3-OF-3-AT-THE-ARENA-SO-A-DECLARATION-STILL-SUPPLIES-207-INDEPENDENT-NUMBERS-AT-THE-ANCHORED-READING-AND-119-AT-THE-EXTENSION-READING-MEASURED-HERE-UNDER-THE-ORDER-8-GROUP-EXACTLY-THE-PARENTS-COUNTS|DROPPED-COVARIANCE-THE-SAME-MOVE-COSTS-639|WHAT-MOVED-IS-WHERE-THE-DECLARATION-IS-MADE-NOT-HOW-MUCH-IT-COSTS -- WILSON=LICENSED-BY-THE-PIN-AND-STAMPED-CONDITIONAL-ON-THE-DECLARED-DYNAMICS-AT-12-OF-12-ROWS|OBSERVABLE=THE-TRACE-OF-THE-PLAQUETTE-HOLONOMY-ON-ITS-OWN-FOUR-CORNER-BLOCK-PLAQUETTE-INDEPENDENT-AT-16-PLAQUETTES-AND-GAUGE-INVARIANT|VALUES=107/76@NEW,111/76@NEW,13/10@COUNTING,19/13@ORBIT-UNIFORM-CHART-32,205/152@NEW,207/152@NEW,219/152@NEW,225/152@NEW,263/200@NEW,29/20@ORBIT-UNIFORM-CHART-128|RANGE-OVER-THE-INVARIANT-SIMPLEX=[0,4]-BOTH-ENDPOINTS-ATTAINED-AT-EXTREME-POINTS-SO-COVARIANCE-PINS-THE-EXPECTATION-NOWHERE|NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM-AND-0-LOOP-FAMILIES-GROWN -- SCOPE=D=2;L=4;FIELD=Q(zeta_8);COINS=640;LINKS=32;PLAQUETTES=16;CARRIER=THE-PARENTS-PRIMARY-CARRIER-THE-640-UNIFORM-CONFIGURATIONS(PLUS-THE-EXTENSIONS-1248-STATE-CLOSURE-WHERE-THE-EXTENSION-IS-DECLARED);FULL-CONFIGURATION-SPACE=640^32-NOT-A-CARRIER-HERE;ELIMINATION-CAP=208-EVERY-EXACT-SOLVE-AT-OR-BELOW-IT;LOCALITY-IS-DEGENERATE-ON-THIS-CARRIER-ONE-COIN-SERVES-ALL-32-LINKS;THE-DYNAMICS-ARE-DECLARED-NOT-DERIVED;NO-ACTION;NO-COUPLING;NOT-QCD;NO-CONFINEMENT-CLAIM>
 ```
 
 (The string is one line; the gate compares that complete string.)
@@ -82,12 +98,14 @@ owe:
 > when **irreducibility** supplies the transitivity the symmetry group does
 > not
 
-This unit declares the dynamics. Six families, 18 declared instances, every
-one of them run; 6 families and 18 declared instances is the whole census and
-not a sample of it, because every declared axis is swept to the bottom.
-12 of them derive and 6 are reducible. And the question the pin exists for is
-then asked on the objects: **the stationary measure MOVES across the
-declared-dynamics fibre.**
+This unit declares the dynamics. 6 families and 18 declared instances, every
+one of them run; that is the whole census and not a sample of it along every
+axis with a finite fibre, because each of those is swept to the bottom — and
+the two axes whose fibre is the invariant simplex itself are **sampled**, at
+three points and at one, with a theorem standing in for the sweep and the
+substitution disclosed rather than absorbed. 12 of them derive and 6 are
+reducible. And the question the pin exists for is then asked on the objects:
+**the stationary measure MOVES across the declared-dynamics fibre.**
 
 **What could have answered the other way.** Five outcomes were pre-registered
 in the pin, and the head law that chooses between them is handed synthetic
@@ -122,22 +140,29 @@ unitary by a second route.
 
 **The carrier is the parent's own primary carrier**: the 640 uniform
 configurations, one coin repeated on every link, which paper-23 measured to
-be exactly the chart-fixed locus of the anchored chart. Two things follow and
-both are disclosed rather than discovered by a reader. First, this is where
-the parent's simplex lives, so the two units weigh the same partition and are
-comparable object for object. Second, **link-locality is degenerate here**:
-one coin serves all 32 links, so a "local" resampling and a global one are
-the same chain, and no claim about locality is available at this carrier. The
-full configuration space is $640^{32}$ and is not a carrier of this unit; it
-is named in the scope segment and again in section 12.
+be exactly the chart-fixed locus of the anchored chart. That identity is
+re-established here element-wise rather than by cardinality: the anchored
+chart group is measured **transitive on the link set** and measured to reverse
+no link, and a configuration fixed by a group transitive on the links and
+reversing none of them is constant — so the chart-fixed locus of the full
+configuration space is exactly the uniform configurations, one per coin. Two
+things follow and both are disclosed rather than discovered by a reader.
+First, this is where the parent's simplex lives, so the two units weigh the
+same partition and are comparable object for object. Second, **link-locality
+is degenerate here**: one coin serves all 32 links, so a "local" resampling
+and a global one are the same chain, and no claim about locality is available
+at this carrier. The full configuration space is $640^{32}$ and is not a
+carrier of this unit; it is named in the scope segment and again in section 12.
 
 **The two measured symmetries.** The residual gauge group on the carrier is
 measured by propagation — which constant link twists a site-diagonal gauge
 can realise on the torus — and returns the even twists, of order 4 at the
 anchored chart reading and of order 8 once the extension's swap conjugation
 is admitted. Its orbits are 208 and 120, landing on paper-23's own orbit
-counts at named receipt paths. The chart group's action is measured
-separately, and section 4.1 reports what that measurement found.
+counts at named receipt paths. Covariance is tested against **both** groups at
+every instance living on this carrier; section 7 reports what that second
+column found. The chart group's action is measured separately, and section 4.1
+reports what that measurement found.
 
 ## 3. The criterion, and the one place the inherited form is loose
 
@@ -156,12 +181,17 @@ dimension zero, computed by the same exact elimination every instance of the
 census uses. It derives. And the identity the reducible verdicts are read
 through is verified **exhaustively** on a declared family of small chains,
 every one of them solved by the same elimination, with the kernel dimension
-and the closed-class count agreeing at every member.
+and the closed-class count agreeing at every member: 50968 chains enumerated
+exhaustively over the 3-state and 4-state layers, at zero mismatches.
 
 On this census the distinction does not bite — no declared instance has a
 transient class at all — which is itself worth recording, because it is the
 reason the two readings return the same twelve deriving instances here. The
-correction is to the *law*, not to the parent's verdict.
+correction is to the *law*, not to the parent's verdict, and it is registered
+against paper-23 as a standing correction annotation in
+`v14/note-paper23-correction.md`; paper-23 itself is untouched. It is not a
+correction without consequences, either: section 7's price theorem reaches the
+*closed* simplex only because the sharp form licenses the boundary arm.
 
 ## 4. The declared-dynamics census
 
@@ -174,12 +204,12 @@ None is privileged.
 
 | # | family | fibre axis | fibre | irreducible | closed classes | the stationary measure |
 |---|---|---|---|---|---|---|
-| (a) | the chart-group walk | which chart | 2 | no | 640 / 336 | the whole simplex / orbit-uniform combinations |
+| (a) | the chart-group walk | which chart group | 2 | no | 640 / 336 | the whole simplex / orbit-uniform combinations |
 | (b) | the gauge-action walk | which residual reading | 2 | no | 208 / 120 | exactly paper-23's invariant simplex |
 | (c) | the law-native resampling | which sector carries which position | 6 | yes | 1 | NEW, sector-graded, and invariant |
 | (d) | the composition walk | which side composes | 2 | yes | 1 | the counting measure |
 | (e) | the monomial-Haar walk | which side multiplies | 2 | no | 5 | paper-23's Haar, and four classes it does not reach |
-| (f) | the covariant Metropolis family | which invariant target | the simplex itself | yes | 1 | the declared target, exactly |
+| (f) | the covariant Metropolis family | which invariant target | the invariant simplex itself | yes | 1 | the declared target, exactly |
 
 ### 4.1 (a) The chart-group walk — and the first surprise
 
@@ -203,7 +233,10 @@ links reversed, others not — and the image assigns one coin to one direction
 class and its swap conjugate to the other. A walk cannot be declared there
 without enlarging the carrier, so the instrument computes the smallest carrier
 on which the extension does act, as an orbit closure taken to a fixed point:
-the closure is 1248 states, and on it the walk has 336 closed classes.
+the closure is 1248 states, and on it the walk has 336 closed classes. That
+the closure really is closed is measured state by state against the four
+declared generators of the extension, every image required to be constant on
+each direction class and to lie in the set.
 
 The mechanism is worth one sentence, because it explains why this is not an
 error in the parent. The carrier is the *fixed locus* of the anchored chart,
@@ -228,6 +261,10 @@ exactly an orbit-constant one; a group walk's stationary measures are exactly
 the invariant ones; so **the gauge walk's stationary simplex IS paper-23's
 invariant simplex**, of dimension 207 at the anchored reading and 119 at the
 extension. The dynamics did not shrink the parent's simplex by one number.
+Those two dimensions are certified by an **exhibited basis** rather than by a
+class count already forced equal upstream: every extreme point is solved by
+exact elimination, verified against its own chain at full size, and measured
+to have a support disjoint from every other, hence independent.
 
 ### 4.3 (c) The law-native resampling — the candidate the pin named
 
@@ -252,6 +289,20 @@ different between them. It is also **invariant**, because the sectors are
 unions of orbits, so it is a point of paper-23's simplex — the first point of
 that simplex anything in this corpus has supplied.
 
+**And here is what the dynamics contributes, measured on the object: nothing.**
+Every row of the transition law is the same vector at 6 of 6 instances — a
+chain that discards its state has a rank-one kernel — so the "derived" measure
+is the declared draw law read back, and the exact solve at 640 states recovers
+a vector written down before the solve began. Three of its numbers came from a
+confirmed law and nobody chose them as a measure, which is real; but the route
+that put them onto *this* carrier — the identification of the transport law's
+three positions with this arena's three coin sectors — is not pinned, and
+paper-23's own census is where that identification was looked for and not
+found. The row is therefore stamped
+`LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION`: a
+**transported law value**, not a measure derived by a dynamics. Section 9
+prices it beside the Metropolis family rather than counting it as evidence.
+
 ### 4.4 (d) The composition walk — the one that lands on a named null
 
 One step composes the current coin with a uniformly drawn member of the family
@@ -268,7 +319,9 @@ solve returns.
 
 So the counting measure — paper-23's declared null, the one it called the
 least informative measure the arena admits — is *derived* here, given a
-declared dynamics built only out of the family's own multiplication.
+declared dynamics built only out of the family's own multiplication. This row
+is the census's cleanest: nothing about it was chosen to make it land where it
+did.
 
 ### 4.5 (e) The monomial-Haar walk — where the corpus's one canonical measure lands
 
@@ -301,6 +354,11 @@ measured not to be orbit-constant, and the chain itself is measured not to be
 gauge-covariant. So it is covariance, and not dynamics, that confines the
 answer to the parent's object.
 
+The control's target is declared on four contiguous blocks of the **coin
+index**, which is an artifact of this instrument's enumeration and not an
+object of the arena. That is disclosed rather than left for a reader to find,
+and section 6 prices it.
+
 ## 5. The exact solve, and how uniqueness is gated
 
 Every stationary vector this unit publishes is the exact kernel of an exact
@@ -315,7 +373,8 @@ is measured block by block, the blocks are the orbits of a group measured
 transitive on each of them, the quotient is solved by the same elimination,
 and the within-block distribution follows. The cap is not a free number: it is
 set to the parent's own orbit count, so every exact solve this unit performs
-is at or below the size of the parent's simplex.
+is at or below the size of the parent's simplex — and that is a gate, record
+by record, rather than a claim published beside an unchecked constant.
 
 Uniqueness is never asserted. It is the closed-class count, computed from the
 chain's own support, read through an identity verified exhaustively on small
@@ -338,22 +397,55 @@ headline sets, rebuilt here from their definitions rather than quoted.
 | DEFECT-CARRYING | 384 | 3/5 | 39/152 | 6/13 | 7/15 |
 | DIAGONAL | 64 | 1/10 | 15/38 | 4/13 | 3/10 |
 
-Two of those columns reproduce paper-23's published masses exactly, at named
-receipt paths, which is what makes the new columns comparable at all.
+Three of those columns reproduce paper-23's published masses exactly — the
+composition walk's column *is* the parent's counting measure, and both
+orbit-uniform columns are its own nulls — and two of those cells are
+additionally checked against named paths in the parent's receipt. That is what
+makes the new column comparable at all.
 
 The widest spread over the 11 gauge-covariant deriving instances is 153/380,
 attained on DEFECT-CARRYING; over all 12 deriving instances it is 1701/3800,
-the declared non-covariant control included. Both are to be read against the
-number the parent measured over its own invariant measures: the parent's
-widest spread over invariant measures was 27/130.
+the declared non-covariant control included.
 
-So **declaring a dynamics moves the parent's own headline sets further than
-declaring a measure did.** That is the measurement, and it is the opposite of
-what a reader might expect from a unit whose job was to supply the missing
-object: supplying it did not narrow the answer, it widened the reachable
-range. The quasi-derivation arm — the pin's strongest honest outcome — is
-decided by comparing the deriving vectors entry by entry rather than inferred
-from this table, and it fails.
+**What that is not.** It is not a measurement of what declaring a dynamics
+does to the parent's sets, and the paper does not read it that way. The
+parent's comparison class is a *subset* of this one: all 3 of 3 of the
+parent's compared measures are in this census, reached by the composition
+walks, by Metropolis at counting and by the two orbit-uniform Metropolis
+instances — and restricted to those same three the widest spread is 27/130,
+which is exactly the number the parent published. The parent's widest spread
+over its own three named nulls was 27/130, and held at a fixed comparison
+class this census reproduces it and moves nothing. A maximum over a superset
+can only be at least a maximum over the subset, so the *direction* of any
+comparison between them is arithmetic; what is real is the size of the
+increment, and it is produced by the six new law-native measures entering the
+same comparison, not by the dynamics-versus-measure distinction.
+
+**And what the theorem says instead.** Each headline set contains a whole
+gauge orbit and its complement contains a whole gauge orbit, so the two orbit
+point masses are invariant measures — extreme points of the parent's simplex —
+and the set's mass at them is measured to be exactly 1 and exactly 0. The
+reachable range of every headline set's mass over the invariant simplex is
+therefore the whole unit interval. How far a declaration can move these sets
+is: all the way. Any particular spread, this one included, is a fact about the
+declared census and not about what declaring buys.
+
+**The enumeration, priced.** The control's target is index-block-declared, so
+its two numbers are enumeration-relative and are labelled so. A second
+admissible reading of the parents' own alphabet declaration — enumerating it
+modulus-major rather than power-major, with the coin family still exhaustive
+over its fourth power — returns the same 640 coins as a set in a different
+order; the control is rebuilt on it and its chain is measured to have one
+closed class and to land on its own target. There the expectation is 127/100
+rather than 263/200 and the spread over all deriving instances is 234/475
+rather than 1701/3800. The like-for-like headline is unaffected: it is
+computed over the covariant instances only, whose measures are functions of
+sector and orbit membership alone, and it is measured identical under both
+enumerations.
+
+The quasi-derivation arm — the pin's strongest honest outcome — is decided by
+comparing the deriving vectors entry by entry rather than inferred from this
+table, and it fails.
 
 ## 7. The price is conserved, not paid
 
@@ -376,21 +468,46 @@ verified **exhaustively** on a declared small carrier, where every invariant
 target at a declared denominator is enumerated — 55 targets at a declared
 denominator, 0 failures, every one reached exactly.
 
-The full-support restriction is the honest edge of the statement: a target
-with a zero is the stationary measure of a chain irreducible on its support
-and therefore reducible on the carrier, so the reach is onto the simplex's
-interior and onto its boundary only through the reducible arm this census
-already reports.
+**The boundary is reached too, and that is the sharp criterion of section 3
+earning its keep.** A target with a zero is still reached exactly: the
+Metropolis chain at it has its zeros as transient states and exactly one
+closed class, so by the sharp criterion it derives and the target is its
+unique stationary measure. What the boundary costs is irreducibility, not
+derivation. Every zero pattern with at least two supported states is
+enumerated on the declared small carriers — 38 boundary targets, 38 reached
+exactly, 38 with exactly one closed class, 0 irreducible — and the arm is
+repeated on the real 640-state carrier with 1, 5 and 100 whole gauge orbits
+set to mass zero, where each chain is additionally measured gauge-covariant
+and $\pi P = \pi$ is verified at full size: 3 of 3 at the arena. The reach is
+onto the **closed** simplex, boundary included.
 
 The covariant-dynamics fibre therefore surjects onto the invariant simplex, so
 declaring a covariant irreducible dynamics on this carrier still supplies
 exactly 207 independent numbers at the anchored reading and 119 at the
-extension — paper-23's own counts, unchanged. What moved is *where* the
-declaration is made, not how much it costs. A programme that hoped to buy the
-measure by declaring a dynamics has bought the same object under a different
-name, at the same price, with one thing added: a dynamics is more data than
-the measure it produces, so the move is not free even where it is not
-expensive.
+extension — paper-23's own counts, unchanged. The extension half of that
+sentence is measured here rather than inherited: covariance is tested against
+the order-8 residual group at every instance on this carrier, and the two
+populations coincide — 11 covariant deriving instances under the order-4 group
+and 11 under the order-8 group — with the Metropolis chain at the
+orbit-uniform chart-128 target measured covariant under the order-8 group,
+which is what licenses the second number. (A *dynamics* at the extension
+reading is a different question again, and lives on the 1248-state closure of
+section 4.1, not here.)
+
+**And the price is conserved only under a retained covariance declaration.**
+The construction is silent about invariance except through covariance: at any
+full-support target, invariant or not, it returns a chain with that target as
+its unique stationary measure. The control is that witness — measured full
+support, measured to land on its own non-invariant target, measured not
+gauge-covariant — so dropping the covariance declaration lets the fibre reach
+the whole simplex over this carrier, and the same move costs 639 numbers
+instead of 207.
+
+What moved is *where* the declaration is made, not how much it costs. A
+programme that hoped to buy the measure by declaring a dynamics has bought the
+same object under a different name, at the same price, with one thing added: a
+dynamics is more data than the measure it produces, so the move is not free
+even where it is not expensive.
 
 That is the sentence this unit was built to be able to say, and it is the one
 the pin's fourth stage was for.
@@ -444,15 +561,20 @@ on orbits, its expectation under an invariant measure is a convex combination
 of its orbit values, so the range of the expectation over the invariant
 simplex is exactly [0, 4] — the full range of the observable itself, both
 endpoints attained at single-point orbits, which are extreme points of the
-simplex. Covariance pins the expectation nowhere. An expectation on this arena
-is not a number the arena has; it is a coordinate of the declaration, and the
-declaration can put it anywhere the observable goes.
+simplex. That is a gate and not a remark: the endpoints are taken by exact
+ordering on the real subfield, each endpoint orbit is measured constant and
+measured to have size one, and every published expectation is required to lie
+inside the interval. Covariance pins the expectation nowhere. An expectation
+on this arena is not a number the arena has; it is a coordinate of the
+declaration, and the declaration can put it anywhere the observable goes.
 
 This unit therefore reports expectations as expectations. It grows no loop
 family and makes no claim about how any expectation would behave as a loop
 grows: 0 loop families are grown, and the pin's inherited must-not — no
 area-law, string-tension, or potential claim — is swept over this paper's own
-text on the delivery run with the declaring sentences removed first.
+text on the delivery run with the declaring sentences removed first, and every
+declaring sentence the sweep may remove is itself required to be located here,
+so an exemption carried from a parent and never used cannot sit latent.
 
 ## 9. What this decides, and what it does not
 
@@ -468,15 +590,24 @@ text on the delivery run with the declaring sentences removed first.
 - **The extension does not act on the parent's carrier**, and the smallest
   carrier on which it does is computed.
 - **A named null is derived from the arena's own multiplication** — the
-  counting measure, by the composition walk on both sides — and **a new
-  measure is derived** by the law-native resampling at all six members of its
-  fibre. Both orbit-uniform nulls are also reached, but by chains built *from*
-  those measures: that is the surjection of section 7 and not a second
-  derivation, and the paper counts it as pricing rather than as evidence.
-- **The measure moves**, and the movement is priced on the parent's own sets,
-  wider than the parent's own spread over invariant measures.
+  counting measure, by the composition walk on both sides. That row is the
+  census's one derivation in the full sense: the chain is built from the coin
+  family's own product and its closure under inverse, and nothing about the
+  measure it returns was put in by hand.
+- **A law-valued point of the parent's simplex is supplied for the first
+  time**, by the law-native resampling at all six members of its fibre —
+  **by transport, not by dynamics**, at the stamp of section 4.3. Both
+  orbit-uniform nulls are also reached, but by chains built *from* those
+  measures. Neither family is evidence: a chain whose rows are the target, and
+  a chain reversible with respect to the target, are the same species, and the
+  paper counts both as pricing rather than as evidence.
+- **The measure moves**, and the movement is priced on the parent's own sets —
+  wider than the parent's own spread over its own three named nulls, narrower
+  than the whole unit interval the surjection licenses, and exactly equal to
+  the parent's number when the comparison class is held fixed.
 - **The price is not reduced by the move**: the covariant-dynamics fibre
-  surjects onto the invariant simplex.
+  surjects onto the closed invariant simplex, and it does so at the same price
+  only because covariance is declared again on the far side.
 
 **Not decided, and named.**
 
@@ -492,6 +623,11 @@ text on the delivery run with the declaring sentences removed first.
   make it. The census shows the fibre is as large as the simplex, so a pin
   that declares one owes an argument this arena does not supply — the same
   debt paper-23 recorded, relocated but not discharged.
+- **The identification behind the law-native family.** Forcing the
+  sector-to-position assignment is the shallower question; the deeper one is
+  whether the transport law's positions may be identified with this arena's
+  sectors at all. Nothing here pins that, and paper-23's own census is where it
+  was looked for and not found.
 - **Convergence.** Nothing here is a claim about approach to stationarity.
   Uniqueness of the stationary measure needs one closed class and not
   aperiodicity, so no mixing statement is made or needed; aperiodicity is
@@ -504,29 +640,38 @@ minimum (#82): a delivery run that is the only writer, a `--no-write` twin, a
 falsification self-test that corrupts one anchor class in memory and must die
 writing nothing, a per-mutant runner, an all-mutants sweep, gate and mutant
 listings, and a `--verify-paper` mode. Unknown flags exit 2. No flag is a
-no-op and no flag is mutant-only. The exit conventions invert the usual
+no-op, no flag is mutant-only, and no flag changes the delivered bytes:
+`--quiet` suppresses the terminal echo alone, because a flag that quietly
+published a different transcript would be a byte-reproducibility hazard
+wearing a convenience label. The exit conventions invert the usual
 reading and are therefore disclosed in the usage string, in the receipt and
 here: the delivery run exits 0 on success and 1 on any refusal, writing
 nothing; `--selftest` exits 0 when every anchor class is fatal; `--mutant`
-exits 0 when the named mutant *dies* on its declared target.
+exits 0 when the named mutant *dies* on its declared target. A missing pinned
+source is a named gate failure rather than an uncaught traceback, so the
+convention holds for a bare copy of the file too.
 
 The gate ledger is chained row by row, so that a row edited after its gate
-closed no longer matches the digest of its own predecessor. 52 gates close
-before the paper gates, 18 of them binding one declared instance each, and 5
+closed no longer matches the digest of its own predecessor. 62 gates close
+before the paper gates, 18 of them binding one declared instance each, and 6
 paper gates and 2 closing gates follow — the last two being the seal and the
 artifact integrity check, which cannot be inside the ledger they close over.
 The per-instance gates exist because a census gate that binds only the total
-is vacuous at the per-object level (#87). 42 declared mutants, all dead, each at
-the gate it was declared to falsify — and the registry is checked TOTAL
+is vacuous at the per-object level (#87). 57 declared mutants, all dead, each
+at the gate it was declared to falsify — that sweep is an external-battery
+result and the receipt says so rather than implying the delivery run produced
+it. The registry is checked TOTAL
 against the instrument's own syntax tree, so a falsifier cannot exist as an
 unswept branch, none can be declared without a branch to fire, and a switch
 the scan cannot read is fatal rather than forgiven. Each mutant's published
 description names the exact token it plants and that token is located in the
 source text of that mutant's own branch, so a description-inverted mutant
-dies here rather than in a reader's trust (E-23). The coverage is published at
-an honest denominator (#34): of the gates this run closes, 34 are the declared
-targets of falsifiers, 16 are the per-instance gates under one registered
-forcing, and 0 are uncovered — the forcing being machine-checked rather than
+dies here rather than in a reader's trust (E-23); and every falsifier corrupts
+an **object** the gate measures rather than the gate's own verdict variable,
+so a green badge is evidence that the gate can detect a corrupted object and
+not merely that a boolean can be set. The coverage is published at
+an honest denominator (#34): of the gates this run closes, 43 are the declared
+targets of falsifiers, 16 are the per-instance gates under one registered forcing, and 0 are uncovered — the forcing being machine-checked rather than
 asserted, since the per-instance gate's predicate is verified to name no
 instance, so the two falsifiers that fire it at two different instances fire
 the identical predicate every instance is judged by. The two gates no
@@ -537,21 +682,31 @@ declared floor, each located exactly once under whitespace and markdown-prefix
 normalisation (#125), each perturbed at a content-bearing token and required
 to stop being locatable, and each bound to the gate that consumes it.
 
-The paper gates run in five legs, in the plain delivery run and not in a
+The paper gates run in six legs, in the plain delivery run and not in a
 separate mode (#20): claim rendering at exact occurrence counts, the complete
 verdict string by equality, the must-not vocabulary sweep with the declaring
-sentences removed first, claim polarity, and numeral coverage over every
-numeral including the fenced verdict block, the inline code spans and both
-sides of every fraction (E-22). The fenced blocks are compared as a multiset,
-so a forged twin beside the clean one dies. The structural literals the
-coverage gate is permitted to forgive — section numbers and the engraving
-references — are published in the receipt, so a reader can see exactly what it
-was allowed to forgive.
+sentences removed first, claim polarity, the structural binding of tables and
+quotations, and numeral coverage over every numeral including the fenced
+verdict block, the inline code spans and both sides of every fraction (E-22).
+The fenced blocks are compared as a multiset, so a forged twin beside the
+clean one dies. Every data row of every delivered table that carries a numeral
+must be covered by a claim rendered from the receipt — so a row swap that
+leaves both labels in place dies, and a table added later cannot arrive
+unbound — and every blockquote must lie inside one of the pinned verbatim
+windows, which is what stops the paper from attributing to a parent a sentence
+that parent does not contain. Header rows are the declared exception and are
+counted and published rather than silently skipped. The provenance digests are
+bound as claims rather than licensed as numeral fragments, and the structural
+literals the coverage gate is permitted to forgive are now this paper's own
+section numbers and nothing else: the engraving references are forgiven only in
+their parenthesised form, so a delivered number that happens to equal an
+engraving reference is still gated.
 
 Every published object carries the gate-to-disk seal, and the manifest — each
-object, the receipt key it was taken at, the gate whose passing took it, and
-the digest — is published in the receipt. The manifest is **total**: 23 objects are
-sealed before the paper gates, more are sealed by the paper gates themselves,
+object, the receipt key it was taken at, the gate whose passing took it, the
+digest, and any sub-object sealed separately — is published in the receipt.
+The manifest is **total**: 47 objects are sealed before the paper gates,
+more are sealed by the paper gates themselves,
 and every other top-level key is named in the declaration with the reason it
 cannot be sealed. The gate ledger is snapshotted before the two
 closing gates and the snapshot is what is sealed and written — a seal cannot
@@ -561,12 +716,19 @@ be inside the object it seals.
 are measured verdict-determining, each with its fibre and its instances. The
 lattice and the coin family are FORCED with fibre 1; the elimination cap is
 FORCED-BY-COST and set to the parent's orbit count; the carrier is
-DECLARED-AND-DISCLOSED at fibre 2, both instances built; and every declared
-dynamics axis is DECLARED-AND-SWEPT, with the number of instances built equal
-to the fibre at every one of them, so no member of a declared fibre is left
-unrun. The verdict-determining flag binds each row by its own measured
-predicate — re-running that axis at another instance moves a published vector
-— and not the total, which is what makes the two axes that are *not*
+DECLARED-AND-DISCLOSED at fibre 2, both instances built; five declared
+dynamics axes have a finite fibre and are DECLARED-AND-SWEPT, with the number
+of instances built equal to the fibre at every one of them, so along those
+axes no member of a declared fibre is left unrun; and the two Metropolis
+axes — the invariant target and the control target — have the invariant
+simplex itself as their fibre, cannot be swept, and are stamped
+DECLARED-AND-SAMPLED, each carrying the licence that names the theorem and the
+exhaustive arms standing in for the sweep. Every row is evaluated by the
+gate; none is skipped by a type test. The verdict-determining flag binds each
+row by its own measured predicate where the axis carries two or more
+instances — re-running that axis at another instance moves a published
+vector — and is stamped NOT-MEASURED where the axis carries one, rather than
+reported as a measured false. That is what makes the two axes that are *not*
 verdict-determining informative: composing on the left and composing on the
 right give the same measure, so that side is a free choice with no
 consequence, while multiplying by the monomial group on the left and on the
@@ -574,33 +736,52 @@ right does not.
 
 ## 11. The successor register
 
+- **ACT inherits the law-native π as the leading candidate, and inherits it
+  stamped.** `LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION`,
+  sector-graded, invariant, a point of paper-23's simplex — the first point of
+  that simplex anything in the corpus has supplied, and supplied by transport,
+  not by dynamics. Inside the conserved-price frame it is one declared point
+  of a simplex every point of which is reachable by a covariant irreducible
+  chain; its privilege over the other coordinates is that three of its numbers
+  came from a confirmed law, and its debt is the identification that put them
+  here. **ACT must not treat it as a derived measure and must not spend it as
+  one.** The honest use is as a *control*: whatever measure an action supplies,
+  compare it to the law-native point and report the distance. If they agree,
+  that agreement is the first real evidence in this arena; if the action route
+  dies, the law-native point is what the programme has, at its stamp. ACT also
+  inherits the price frame — the invariant count with covariance retained, the
+  whole-simplex count without it — and the warning that no expectation on this
+  arena has content until a measure arrives by a route that is not a
+  declaration.
+- **The cheap falsifier, and it is cheap.** Search for a gauge-invariant
+  functional whose range over the invariant simplex is *narrower* than its own
+  range. This unit computes one loop observable and reports that covariance
+  pins its expectation nowhere; a functional whose range were a point would be
+  the first quantity this arena hands over free, and the outcome is decisive
+  either way.
 - **The full-space dynamics.** Every family declared here has an obvious
   analogue on $640^{32}$, and the interesting question — whether locality
   changes any of these answers — cannot be posed on this carrier at all. The
   first tractable step is the 1248-state closure this unit built, where
-  configurations already differ direction to direction.
+  configurations already differ direction to direction, and where the
+  extension genuinely acts.
 - **The declaration itself, with its pin.** The fibre is now measured to be
   the whole invariant simplex. A unit that wants one measure must argue for
   one point, and section 7 is the exact statement of what that argument owes.
-- **The law-native family, pressed.** Its rates are law values and its measure
-  is a point of the parent's simplex, which makes it the only candidate in
-  this census with a claim to be more than a declaration. Whether the
-  sector-to-position assignment can be forced — the axis this unit measures a
-  fibre of 6 on — is open, and it is the one place a genuinely derived measure
-  could still come from.
+- **The correspondence question, promoted.** Whether a pinned correspondence
+  exists from the transport law's carrier to R5's configurations is no longer
+  only a measure-source question: it is the gate on whether "law-native
+  dynamics" can mean anything in this arena at all. Forcing the
+  sector-to-position assignment stays open but is demoted — even fully forced
+  it yields a transported measure, not a derived dynamics.
 - **The extension's carrier.** That the parent's carrier is not closed under
   the parent's own declared extension deserves a unit of its own: the census
   questions paper-23 answered at the fixed locus can be re-asked at the
   closure, where the simplex is a different object.
-- **Expectations at a second observable.** This unit computes one loop
-  observable and reports that covariance pins its expectation nowhere. Whether
-  some *other* gauge-invariant functional on this carrier has a narrower range
-  over the invariant simplex is not decided here, and a functional whose range
-  were a point would be the first quantity this arena hands over free.
 
 ## 12. Deviations, and the register of scope
 
-The pin's arena, gates and must-nots are followed as written. Four points are
+The pin's arena, gates and must-nots are followed as written. Five points are
 recorded as scope rather than deviation.
 
 First, the pin names three candidate dynamics and this unit runs those three
@@ -617,13 +798,21 @@ below the cap. Both legs are exact linear algebra and every vector is verified
 against its own chain at full size; what the cap costs is not correctness but
 a direct 640-dimensional elimination, which is out of reach by time alone.
 
-Third, the relativity spread is published twice — over the gauge-covariant
-deriving instances and over all of them — because only the first is
-like-for-like with the parent's number, and a single figure would have
-flattered or exaggerated depending on which was chosen. The head carries the
-like-for-like one.
+Third, the relativity spread is published three times — over the
+gauge-covariant deriving instances, over all of them, and over the parent's own
+three measures — because only the last is like-for-like with the parent's
+number, and a single figure would have flattered or exaggerated depending on
+which was chosen. The head carries the covariant one and states the restricted
+one beside it.
 
-Fourth, the Wilson segment is reported as expectations and nothing else. Every
+Fourth, two published numbers depend on the order in which this instrument
+enumerates the coin family, because the declared control's target is built on
+contiguous blocks of the coin index. Both are stamped enumeration-relative and
+both are re-measured under a second admissible reading of the parents' own
+alphabet declaration, so a reader is told what changes and what does not. The
+headline is enumeration-free by construction and is measured to be so.
+
+Fifth, the Wilson segment is reported as expectations and nothing else. Every
 value is conditional on a declared dynamics and says so in its own row; the
 range measurement in section 8 is the honest summary of how much the arena
 constrains any of them, which is: not at all.

@@ -8478,3 +8478,42 @@ selection possible only at the pair grain; the price a
 two-coordinate declaration FCK now inherits.  The
 S-7/S-8/S-9 register rows stand (the blindness schema; the
 co-incidence; the price-inheritance).
+
+## 2026-08-11 — SMU REPAIR LANDED: W1–W12 EXECUTED; THE HEAD DE-TWINNED; THE PAPER-23 CORRECTION NOTE WRITTEN; COMMIT-AS-IS (v14 LEDGER #277)
+
+The SMU repair delivered.  W1 the head laws DE-TWINNED
+(second_head_law recounts the covariant population from
+instance records one by one — MUT-K1-A now DIES at
+G-HEAD-DERIVED-TWICE, the gate that structurally could not
+fire); W2 the moves-further clause deleted + the restricted
+comparison gated (27/130 = 27/130; the [0,1] indicator
+range); W3 the surjection at FULL strength (the CLOSED
+simplex — 38/38 boundary targets + 3/3 at the arena; the
+639-vs-207 covariance-dropped corollary gated); W4 the
+rank-one kernel gated (6/6 identical rows) + the row
+restamped LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-
+IDENTIFICATION + the ACT inheritance row heading §11; W5 the
+extension covariance MEASURED (11 under order-4 = 11 under
+order-8 as sets; 119 licensed); W6 the exemptions removed
+(every row evaluated; the control axis honestly stamped); W7
+the enumeration sensitivity DISCLOSED (127/100 vs 263/200;
+234/475 vs 1701/3800; the headline 153/380 measured
+enumeration-free); W8 tables + the 12 quotations bound —
+**INJ18 and INJ19 (the misquote and the inverted R5
+definition) DIE at the new gate**; W9 the 18 instance seals
+at value-close; W10 read-back before replace (INJ14 promotes
+NOTHING); W11 the 15 falsifiers object-corrupting + the two
+tautologies given real predicates (transitivity element-wise;
+the simplex dimension by an EXHIBITED independent basis); W12
+the sweep + **v14/note-paper23-correction.md (K2's four
+clauses verbatim; paper-23 untouched)**.  Corrected head:
+...OVER-THE-11-GAUGE-COVARIANT-DERIVING-INSTANCES.  9/9
+injections die.  **Two repair-introduced defects self-caught
+and fixed, disclosed** (the plants-token licensing loop; the
+digest-exchange blindness — digests now bound as (path,
+digest) pairs).  Battery: plain ×2 + --quiet byte-identical;
+57/57 mutants; 20/20 argv; off-tree git-less two seeds; 68+2
+gates; 388 numerals 0 unmatched.  Shas: paper 6df0db523d32,
+code 126912ae7142, output 4990d340f7c6, receipt 0d6fbadd756d,
+note 9c8237235c94.  Committed AS-IS; orchestrator battery
+next; **on green: TERMINAL (the twenty-fourth) → ACT PINS.**

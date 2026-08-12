@@ -59,8 +59,12 @@ LOG = []
 
 
 def say(msg=""):
+    """--quiet suppresses the TERMINAL ECHO ONLY.  The transcript is the
+    published artifact, so it is accumulated whatever the flag says: a flag
+    that changed the delivered bytes would be a byte-reproducibility hazard
+    wearing a convenience label."""
+    LOG.append(msg)
     if not QUIET:
-        LOG.append(msg)
         print(msg, flush=True)
 
 
@@ -88,6 +92,8 @@ def own_source():
         src = src + "\n\ndef ghost_helper(S):\n    return Fraction(3, 8)\n"
     if mut("MUT-REGISTRY-EVASION"):
         src = src + "\n\n_gn = 'MUT-' + 'GHOST'\nif mut(_gn):\n    pass\n"
+    if mut("MUT-AST-BLIND"):
+        src = src + "\n\n_TOLERANCE_FLOAT = 1e-9\n"
     return src
 
 
@@ -235,18 +241,51 @@ class Ledger:
 
 
 class Seal:
-    """gate-to-disk (#119): digest at gate time; the manifest is TOTAL --
-    every published top-level key is either sealed at the gate that produced
-    it or named in the declaration with the reason it cannot be."""
+    """gate-to-disk (#119): digest AT VALUE-CLOSE -- the moment the gate that
+    vouches the values passes, not the moment the enclosing object is
+    finished.  The manifest is TOTAL -- every published top-level key is
+    either sealed at the gate that produced it or named in the declaration
+    with the reason it cannot be -- and an object whose sub-objects are
+    sealed separately declares the omission in its own manifest row, so no
+    published field is left inside a gate-to-seal window."""
 
     def __init__(self):
         self.man = []
         self.by_key = {}
 
-    def take(self, name, key, gate, obj):
-        d = digest(obj)
+    @staticmethod
+    def project(obj, omit):
+        if not omit:
+            return obj
+        return {k: v for k, v in obj.items() if k not in omit}
+
+    @staticmethod
+    def resolve(payload, key):
+        """the receipt key may be a PATH: a list step is resolved by the
+        element's own 'instance' name, never by position, so a reordering
+        cannot satisfy a seal taken on a different record."""
+        cur = payload
+        for part in key.split("/"):
+            if isinstance(cur, list):
+                hit = None
+                for e in cur:
+                    if isinstance(e, dict) and e.get("instance") == part:
+                        hit = e
+                        break
+                if hit is None:
+                    return None, False
+                cur = hit
+            elif isinstance(cur, dict) and part in cur:
+                cur = cur[part]
+            else:
+                return None, False
+        return cur, True
+
+    def take(self, name, key, gate, obj, omit=None):
+        d = digest(self.project(obj, omit))
         self.man.append({"object": name, "receipt_key": key, "gate": gate,
-                         "digest": d})
+                         "digest": d,
+                         "omitted_and_sealed_separately": sorted(omit or [])})
         self.by_key[key] = (d, obj)
         return d
 
@@ -254,10 +293,12 @@ class Seal:
         bad = []
         for row in self.man:
             k = row["receipt_key"]
-            if k not in payload:
+            cur, found = self.resolve(payload, k)
+            if not found:
                 bad.append((k, "absent"))
                 continue
-            if digest(payload[k]) != row["digest"]:
+            if digest(self.project(
+                    cur, row["omitted_and_sealed_separately"])) != row["digest"]:
                 bad.append((k, "moved"))
         return bad
 
@@ -312,7 +353,12 @@ BANNED_CALLS = ["system", "popen", "check_output", "urlopen"]
 
 
 def read_bytes(rel):
+    """a pinned source that is ABSENT is a gate failure with its path named,
+    not an uncaught traceback: the disclosed exit convention has to be true
+    for a bare copy of this file too."""
     p = os.path.join(REPO, rel)
+    if not os.path.exists(p):
+        return None
     with open(p, "rb") as fh:
         return fh.read()
 
@@ -322,7 +368,7 @@ def load_sources():
     rows = []
     for name, rel, sha, what in SOURCES:
         b = read_bytes(rel)
-        d = bdigest(b)
+        d = bdigest(b) if b is not None else "ABSENT-AT-ITS-PINNED-PATH"
         if mut("MUT-SOURCE-DRIFT") and name == "S-P23-RECEIPT":
             d = "000000000000"
         rows.append({"name": name, "path": rel, "pinned": sha, "measured": d,
@@ -628,6 +674,13 @@ def point_on_dir(g, d):
 def chart_elements(lat, extended):
     pts = point_symmetries() if extended else [(False, 1, 1), (True, 1, 1)]
     return [(v, g) for v in lat.sites for g in pts]
+
+
+# the four declared generators of the extension: the two lattice
+# translations, the diagonal swap and one axis reflection.  They generate the
+# whole order-128 chart group, and closure is measured against them.
+EXT_GENERATORS = [((1, 0), (False, 1, 1)), ((0, 1), (False, 1, 1)),
+                  ((0, 0), (True, 1, 1)), ((0, 0), (False, -1, 1))]
 
 
 def transported_link(lat, l, elem):
@@ -1035,9 +1088,6 @@ def measure_provenance(S):
             nm = getattr(f, "attr", None) or getattr(f, "id", None)
             if nm in BANNED_CALLS:
                 calls.append(nm)
-    if mut("MUT-AST-BLIND"):
-        floats = []
-        badimp = ["planted"]
     LD.gate("G-EXACT-ARITHMETIC-BY-AST",
             "the instrument's own syntax tree carries NO float literal, no "
             "banned import and no banned call, so 'exact arithmetic only' is "
@@ -1092,6 +1142,8 @@ def measure_verbatim(S, src):
     rows = []
     for aid, sname, window, consumer, what in VERBATIM:
         hay = mnorm(src[sname].decode())
+        if mut("MUT-VERBATIM") and aid == "VB-P23-LAW":
+            window = window.replace("irreducibility", "reducibility")
         needle = mnorm(window)
         n = hay.count(needle)
         # the perturbation: a content-bearing token is altered and the window
@@ -1100,8 +1152,6 @@ def measure_verbatim(S, src):
         pert = window.replace(toks[-1], toks[-1] + "X", 1) if toks else window
         pn = hay.count(mnorm(pert))
         ok = (n == 1 and pn == 0 and len(needle) >= 40)
-        if mut("MUT-VERBATIM") and aid == "VB-P23-LAW":
-            ok = False
         rows.append({"anchor": aid, "source": sname, "chars": len(needle),
                      "floor": 40, "located": n, "perturbed_located": pn,
                      "ok": ok, "consumer": consumer, "what": what,
@@ -1175,22 +1225,64 @@ def build_arena(S, pv):
     }
     SEAL.take("THE ARENA", "arena", "G-ARENA-REBUILT", S["arena"])
 
-    # the carrier: paper-23's primary carrier, which is the chart-fixed locus
-    carrier_ok = (len(coins) == pv["PV-SLICE"] == pv["PV-FIXLOC"])
+    # the carrier: paper-23's primary carrier, which is the chart-fixed locus.
+    # The identity is established ELEMENT-WISE, on an object this run derives,
+    # and not by a cardinality two upstream gates have already forced equal:
+    # the anchored chart group is measured TRANSITIVE on the link set and
+    # measured to reverse no link, and a configuration fixed by a group
+    # transitive on the links and reversing none of them is constant -- so the
+    # chart-fixed locus of the FULL configuration space is exactly the uniform
+    # configurations, one per coin.
+    els32 = chart_elements(lat, False)
     if mut("MUT-CARRIER"):
-        carrier_ok = False
+        els32 = [e for e in els32 if e == ((0, 0), (False, 1, 1))]
+    reach = {lat.links[0]}
+    frontier = [lat.links[0]]
+    revs = 0
+    while frontier:
+        nxt = []
+        for l in frontier:
+            for e in els32:
+                im, rev = transported_link(lat, l, e)
+                if rev:
+                    revs += 1
+                if im not in reach:
+                    reach.add(im)
+                    nxt.append(im)
+        frontier = nxt
+    link_transitive = (len(reach) == len(lat.links))
+    carrier_ok = (link_transitive and revs == 0
+                  and len(coins) == pv["PV-SLICE"] == pv["PV-FIXLOC"])
     LD.gate("G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER",
             "the carrier of this unit is the parent's own primary carrier -- "
             "the uniform configurations, one coin repeated on every link, "
             "which paper-23 measured to be exactly the chart-fixed locus of "
             "the anchored chart -- so this unit's dynamics act where the "
             "parent's simplex lives and the two are comparable object for "
-            "object.  The full configuration space is not a carrier here and "
-            "is named as scope",
+            "object.  The identity is measured ELEMENT-WISE rather than by "
+            "cardinality: the anchored chart group is transitive on the link "
+            "set and reverses no link, so a chart-fixed configuration is "
+            "constant and the fixed locus of the full configuration space is "
+            "exactly the uniform ones.  The full configuration space is not a "
+            "carrier here and is named as scope",
             carrier_ok,
-            "carrier %d states; parent's uniform slice %d; parent's "
-            "chart-fixed locus %d"
-            % (len(coins), pv["PV-SLICE"], pv["PV-FIXLOC"]))
+            "the chart group reaches %d of %d links from one, with %d "
+            "reversals; carrier %d states; parent's uniform slice %d; "
+            "parent's chart-fixed locus %d"
+            % (len(reach), len(lat.links), revs, len(coins), pv["PV-SLICE"],
+               pv["PV-FIXLOC"]))
+    S["carrier"] = {
+        "states": len(coins),
+        "links_reached_from_one_by_the_chart_group": len(reach),
+        "links": len(lat.links),
+        "chart_reversals_on_the_link_set": revs,
+        "the_chart_group_is_transitive_on_the_links": link_transitive,
+        "why_the_fixed_locus_is_exactly_the_uniform_configurations":
+            "A-GROUP-TRANSITIVE-ON-THE-LINKS-AND-REVERSING-NONE-FIXES-ONLY-"
+            "THE-CONSTANT-CONFIGURATIONS",
+    }
+    SEAL.take("THE CARRIER", "carrier",
+              "G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER", S["carrier"])
     return lat, coins
 
 
@@ -1260,19 +1352,41 @@ def measure_chart_action(S, pv):
                     nxt.append(t)
         frontier = nxt
     states = sorted(states)
-    per_dir_closed = all(True for _ in states)
     if mut("MUT-ENLARGEMENT"):
         states = states[:len(coins)]
+    # closure is MEASURED, state by state, against the four declared
+    # generators of the extension -- not asserted from the fixed-point loop
+    # that built it
+    sset = set(states)
+    escapes = 0
+    for e in EXT_GENERATORS:
+        tmap = {l: transported_link(lat, l, e) for l in lat.links}
+        for st in states:
+            img = {}
+            broke = False
+            for l in lat.links:
+                im, rev = tmap[l]
+                srcm = coins[st[0]] if l[1] == 0 else coins[st[1]]
+                v = swap_conjugate(srcm) if rev else srcm
+                prev = img.setdefault(im[1], v)
+                if prev != v:
+                    broke = True
+            if broke or (cidx[img[0]], cidx[img[1]]) not in sset:
+                escapes += 1
     LD.gate("G-CHART-128-ENLARGEMENT",
             "the smallest carrier on which the extension DOES act is "
             "computed as an orbit closure of the parent's carrier rather "
             "than declared: every image of a uniform configuration is "
             "constant on each direction class, so the closure is a set of "
-            "two-coin configurations, and it is closed by construction "
-            "because the closure is taken to a fixed point",
-            len(states) > len(coins) and per_dir_closed,
-            "the extension's closure of the %d-state carrier is %d states"
-            % (len(coins), len(states)))
+            "two-coin configurations -- and its closure is MEASURED state by "
+            "state against the four declared generators of the extension, "
+            "every image required to be constant on each direction class and "
+            "to lie in the set, rather than asserted from the loop that "
+            "built it",
+            len(states) > len(coins) and escapes == 0,
+            "the extension's closure of the %d-state carrier is %d states; "
+            "%d escapes over %d generators"
+            % (len(coins), len(states), escapes, len(EXT_GENERATORS)))
     S["_chart128_states"] = states
     out["CHART-128"]["enlarged_carrier"] = len(states)
     S["chart_action"] = out
@@ -1574,6 +1688,8 @@ def solve_instance(S, rec, P, n, blocks, bid, gperms, nulls):
         Q, fails = lump(P, n, blocks, bid)
         rec["lumpability_failures"] = fails
         rec["quotient_size"] = len(blocks)
+        if mut("MUT-CAP"):
+            rec["quotient_size"] = ELIMINATION_CAP + 1
         if fails == 0:
             bas, rk = stationary_by_elimination(Q, len(blocks))
             rec["quotient_rank"] = rk
@@ -1586,6 +1702,8 @@ def solve_instance(S, rec, P, n, blocks, bid, gperms, nulls):
                         v[x] = bas[0][b] / len(blk)
                 vectors.append(v)
     rec["routes"] = routes
+    rec["largest_exact_solve"] = max(rec.get("quotient_size", 0),
+                                     rec.get("largest_class_solved", 0))
     rec["closed_classes_with_a_non_unique_kernel"] = bad_kernels
 
     ver = [verify_stationary(P, v, n) for v in vectors]
@@ -1677,9 +1795,7 @@ def build_dynamics_census(S, pv):
             p[sidx[s]] = sidx[(cidx[img[0]], cidx[img[1]])]
         perms128.append(tuple(p))
     Pb = group_walk(len(st), perms128)
-    genels = [((1, 0), (False, 1, 1)), ((0, 1), (False, 1, 1)),
-              ((0, 0), (True, 1, 1)), ((0, 0), (False, -1, 1))]
-    gens128 = [perms128[els.index(e)] for e in genels]
+    gens128 = [perms128[els.index(e)] for e in EXT_GENERATORS]
     rows.append(dict(
         family="(a) THE CHART-GROUP WALK", instance="CHART-128",
         carrier="THE-EXTENSIONS-CLOSURE-OF-THE-UNIFORM-SLICE",
@@ -1713,8 +1829,13 @@ def build_dynamics_census(S, pv):
     for a in perms_of_three:
         tgt = [Fraction(0)] * n
         for k, s in enumerate(SECT_ORDER):
-            for i in sect_members[s]:
-                tgt[i] = law[a[k]] / len(sect_members[s])
+            mem = sect_members[s]
+            for q, i in enumerate(mem):
+                tgt[i] = law[a[k]] / len(mem)
+            if mut("MUT-K1-B"):
+                wsum = sum(1 + (t % 3) for t in range(len(mem)))
+                for q, i in enumerate(mem):
+                    tgt[i] = law[a[k]] * Fraction(1 + (q % 3), wsum)
         P = [dict(enumerate(tgt)) for _ in range(n)]
         P = [{j: v for j, v in row.items() if v} for row in P]
         rows.append(dict(
@@ -1859,9 +1980,21 @@ def run_the_census(S, rows, pv):
             gf = covariance_failures(P, n, S["_G4"])
             rec["gauge_covariance_failures"] = gf
             rec["gauge_covariant"] = (gf == 0)
+            # K2's second column: covariance under the ORDER-8 residual
+            # group -- the extension reading -- MEASURED at every instance on
+            # this carrier rather than inherited from the parent's receipt
+            P8 = P
+            if mut("MUT-G8-COVARIANCE") and rec["instance"].endswith("-128"):
+                P8 = [dict(r) for r in P]
+                P8[0] = {0: Fraction(1)}
+            gf8 = covariance_failures(P8, n, S["_G8"])
+            rec["gauge_covariance_failures_chart_128"] = gf8
+            rec["gauge_covariant_chart_128"] = (gf8 == 0)
         else:
             rec["gauge_covariance_failures"] = None
             rec["gauge_covariant"] = None
+            rec["gauge_covariance_failures_chart_128"] = None
+            rec["gauge_covariant_chart_128"] = None
         trans = True
         if blocks is not None:
             G = gen_perm_group(n, gens)
@@ -1892,6 +2025,12 @@ def run_the_census(S, rows, pv):
                    rec["covariance_generators"], trans,
                    rec["closed_classes"], rec["published_vectors"],
                    rec["vectors_verified_at_full_size"]))
+        # #119 AT VALUE-CLOSE: this record is digested at the gate that
+        # vouches ITS values, not fifteen gates later when the enclosing
+        # census object is finished
+        SEAL.take("INSTANCE RECORD " + rec["instance"],
+                  "census/instances/" + rec["instance"],
+                  "G-INSTANCE-" + rec["instance"], rec)
         published.append(rec)
         say("    %-42s %-11s classes=%-4d closed=%-4d %s"
             % (rec["instance"], rec["verdict"], rec["communicating_classes"],
@@ -1939,6 +2078,120 @@ def run_the_census(S, rows, pv):
             "transient classes across the census: %d"
             % (len(der), len(irr), len(red),
                sum(r["transient_classes"] for r in published)))
+
+    # ---- the declared elimination cap, ENFORCED per record (not published
+    # as a claim and left ungated)
+    over = [r["instance"] for r in published
+            if r["largest_exact_solve"] > ELIMINATION_CAP]
+    LD.gate("G-ELIMINATION-CAP-IS-ENFORCED",
+            "the declared elimination cap is a GATE and not a remark: every "
+            "instance's own largest exact solve -- the size of the quotient "
+            "it lumped to, or of the largest closed class it solved directly "
+            "-- is compared against the cap record by record (#87), so the "
+            "published claim that every exact solve in this unit is at or "
+            "below the parent's own orbit count is measured rather than "
+            "asserted",
+            not over,
+            "cap %d; largest exact solve over the census %d; %d instances "
+            "above the cap %s"
+            % (ELIMINATION_CAP,
+               max(r["largest_exact_solve"] for r in published), len(over),
+               over[:3]))
+
+    # ---- K2's second covariance column: the EXTENSION reading, measured
+    on_carrier = [r for r in published
+                  if r["gauge_covariant_chart_128"] is not None]
+    cov4 = sorted(r["instance"] for r in on_carrier
+                  if r["verdict"] == "DERIVES" and r["gauge_covariant"])
+    cov8 = sorted(r["instance"] for r in on_carrier
+                  if r["verdict"] == "DERIVES"
+                  and r["gauge_covariant_chart_128"])
+    ou128 = [r for r in published
+             if r["instance"] == "METROPOLIS-AT-ORBIT-UNIFORM-CHART-128"][0]
+    LD.gate("G-EXTENSION-COVARIANCE-IS-MEASURED-NOT-INHERITED",
+            "the extension half of the price sentence is MEASURED here and "
+            "not inherited: covariance is tested against the ORDER-8 residual "
+            "group at every instance living on the parent's carrier, row by "
+            "row and generator by generator, and the extension's price may "
+            "be quoted only because a covariant irreducible chain was built "
+            "at that reading and measured covariant under that group -- the "
+            "Metropolis chain at the orbit-uniform chart-128 target.  The "
+            "covariant deriving population is reported at both readings, so "
+            "a count that was reading-relative could not pass unlabelled",
+            ou128["gauge_covariant_chart_128"] and cov4 == cov8,
+            "%d instances on the parent's carrier; covariant deriving under "
+            "the order-4 group %d, under the order-8 group %d, identical as "
+            "sets: %s; the chart-128 target's chain is covariant under the "
+            "order-8 group: %s (failures %s)"
+            % (len(on_carrier), len(cov4), len(cov8), cov4 == cov8,
+               ou128["gauge_covariant_chart_128"],
+               ou128["gauge_covariance_failures_chart_128"]))
+    S["extension_covariance"] = {
+        "instances_tested_on_the_parents_carrier": len(on_carrier),
+        "covariant_deriving_under_the_order_4_group": len(cov4),
+        "covariant_deriving_under_the_order_8_group": len(cov8),
+        "the_two_populations_are_identical_as_sets": cov4 == cov8,
+        "chart_128_target_chain_is_covariant_under_the_order_8_group":
+            ou128["gauge_covariant_chart_128"],
+        "the_control_fails_both": [
+            r["gauge_covariance_failures"] for r in published
+            if "NON-INVARIANT" in r["instance"]] + [
+            r["gauge_covariance_failures_chart_128"] for r in published
+            if "NON-INVARIANT" in r["instance"]],
+    }
+    SEAL.take("THE EXTENSION COVARIANCE", "extension_covariance",
+              "G-EXTENSION-COVARIANCE-IS-MEASURED-NOT-INHERITED",
+              S["extension_covariance"])
+
+    # ---- K2's privilege ruling, measured on the object: the law-native
+    # chain's kernel is RANK ONE
+    lawi = [r for r in published if r["family"].startswith("(c)")]
+    same_rows, draw_law = 0, 0
+    for r in lawi:
+        Pl, m = S["_P"][r["instance"]]
+        rows_of_P = Pl
+        if mut("MUT-RANK-ONE") and r["instance"] == "LAW-NATIVE-012":
+            rows_of_P = [dict(x) for x in Pl]
+            rows_of_P[0] = {0: Fraction(1)}
+        if all(rows_of_P[i] == rows_of_P[0] for i in range(1, m)):
+            same_rows += 1
+        draw = [rows_of_P[0].get(j, Fraction(0)) for j in range(m)]
+        if draw == S["_pi"][r["instance"]]:
+            draw_law += 1
+    LD.gate("G-THE-LAW-NATIVE-KERNEL-IS-RANK-ONE",
+            "the privilege question is settled ON THE OBJECT and published "
+            "rather than left to a reader: every row of the law-native "
+            "chain's transition law is the SAME vector, so its kernel is "
+            "rank one and its unique stationary measure is the declared draw "
+            "law read back -- the dynamics does no work.  What the family "
+            "contributes is a transported LAW VALUE, not a measure derived "
+            "by a dynamics, and the row is stamped accordingly",
+            same_rows == len(lawi) and draw_law == len(lawi) and lawi,
+            "%d law-native instances; %d with every row identical; %d whose "
+            "stationary measure is exactly the declared draw law"
+            % (len(lawi), same_rows, draw_law))
+    S["privilege"] = {
+        "family": "(c) THE LAW-NATIVE RESAMPLING",
+        "instances": len(lawi),
+        "every_row_of_the_transition_law_is_the_same_vector":
+            same_rows == len(lawi),
+        "instances_whose_stationary_measure_is_the_declared_draw_law":
+            draw_law,
+        "what_the_dynamics_contributes":
+            "NOTHING-THE-DERIVED-MEASURE-IS-THE-DECLARED-DRAW-LAW-READ-BACK",
+        "what_the_law_contributes":
+            "THREE-RATES-CONFIRMED-LAW-NATIVE-BY-THE-GAMMA-ITERATION-TERMINAL",
+        "the_unpinned_step":
+            "THE-IDENTIFICATION-OF-THE-TRANSPORT-LAWS-THREE-POSITIONS-WITH-"
+            "THIS-ARENAS-THREE-COIN-SECTORS",
+        "stamp": "LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-"
+                 "IDENTIFICATION",
+        "pricing_not_evidence": "A-CHAIN-BUILT-FROM-THE-MEASURE-IT-SELECTS-"
+                                "IS-PRICING-AND-NOT-EVIDENCE-AND-THIS-FAMILY-"
+                                "IS-COUNTED-BESIDE-THE-METROPOLIS-FAMILY",
+    }
+    SEAL.take("THE PRIVILEGE RULING", "privilege",
+              "G-THE-LAW-NATIVE-KERNEL-IS-RANK-ONE", S["privilege"])
     return published
 
 
@@ -1986,25 +2239,32 @@ def verify_the_dimension_theorem(S):
     """the theorem the reducible instances rest on -- the stationary simplex
     has dimension (closed classes - 1) -- verified EXHAUSTIVELY on a declared
     family of small chains, by the same exact elimination."""
-    rowset = [(1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, 0), (1, 0, 1),
-              (0, 1, 1), (1, 1, 1)]
     tot = bad = 0
-    for r0 in rowset:
-        for r1 in rowset:
-            for r2 in rowset:
-                P, adj = [], []
-                for r in (r0, r1, r2):
-                    s = sum(r)
-                    P.append({j: Fraction(r[j], s) for j in range(3) if r[j]})
-                    adj.append([j for j in range(3) if r[j]])
-                comps = sccs(3, adj)
-                closed, _cid = closed_classes(3, adj, comps)
-                bas, _rk = stationary_by_elimination(P, 3)
-                tot += 1
-                if len(bas) != len(closed):
-                    bad += 1
-    if mut("MUT-DIMENSION-THEOREM"):
-        bad = 0 if bad else 1
+    layers = []
+    for m in (3, 4):
+        rowset = [tuple((k >> j) & 1 for j in range(m))
+                  for k in range(1, 2 ** m)]
+        R = len(rowset)
+        for code in range(R ** m):
+            combo, c = [], code
+            for _ in range(m):
+                combo.append(rowset[c % R])
+                c //= R
+            P, adj = [], []
+            for r in combo:
+                s = sum(r)
+                P.append({j: Fraction(r[j], s) for j in range(m) if r[j]})
+                adj.append([j for j in range(m) if r[j]])
+            if mut("MUT-DIMENSION-THEOREM") and tot == 0:
+                P = [{i: Fraction(1)} for i in range(m)]
+            comps = sccs(m, adj)
+            closed, _cid = closed_classes(m, adj, comps)
+            bas, _rk = stationary_by_elimination(P, m)
+            tot += 1
+            if len(bas) != len(closed):
+                bad += 1
+        layers.append({"carrier_states": m, "row_alphabet": R,
+                       "chains": R ** m})
     LD.gate("G-SIMPLEX-DIMENSION-THEOREM",
             "the identity the reducible verdicts are read through -- the "
             "stationary simplex's dimension is one less than the number of "
@@ -2013,12 +2273,15 @@ def verify_the_dimension_theorem(S):
             "the same exact elimination this unit uses at scale, so the "
             "bridge from a class count to a simplex dimension is measured "
             "and not quoted",
-            bad == 0, "%d chains enumerated exhaustively, %d mismatches "
-            "between the kernel dimension and the closed-class count"
-            % (tot, bad))
+            bad == 0, "%d chains enumerated exhaustively over the %d-state "
+            "and %d-state layers, %d mismatches between the kernel dimension "
+            "and the closed-class count"
+            % (tot, layers[0]["carrier_states"], layers[1]["carrier_states"],
+               bad))
     S["dimension_theorem"] = {"chains_enumerated": tot, "mismatches": bad,
-                              "carrier_states": 3,
-                              "row_alphabet": len(rowset)}
+                              "carrier_states": [ly["carrier_states"]
+                                                 for ly in layers],
+                              "layers": layers}
     SEAL.take("THE DIMENSION THEOREM", "dimension_theorem",
               "G-SIMPLEX-DIMENSION-THEOREM", S["dimension_theorem"])
 
@@ -2032,10 +2295,10 @@ def measure_the_welds(S, published, pv):
     cls32 = sorted(sorted(c) for c in _closed_class_sets(S, "GAUGE-CHART-32"))
     cls128 = sorted(sorted(c) for c in
                     _closed_class_sets(S, "GAUGE-CHART-128"))
+    if mut("MUT-WELD"):
+        cls32 = [c[:-1] if i == 0 else c for i, c in enumerate(cls32)]
     same32 = cls32 == sorted(sorted(o) for o in O4)
     same128 = cls128 == sorted(sorted(o) for o in O8)
-    if mut("MUT-WELD"):
-        same32 = False
     LD.gate("G-GAUGE-WALK-CLASSES-ARE-THE-PARENTS-ORBITS",
             "the gauge walk's closed communicating classes are compared with "
             "paper-23's orbits AS SETS, class by class and not by "
@@ -2047,29 +2310,62 @@ def measure_the_welds(S, published, pv):
             "chart-128: %d against %d, identical %s"
             % (len(cls32), pv["PV-ORB32"], same32, len(cls128),
                pv["PV-ORB128"], same128))
-    ok = (g32["simplex_dimension"] == pv["PV-SIMP32"]
-          and g128["simplex_dimension"] == pv["PV-SIMP128"])
-    if mut("MUT-SIMPLEX-DIM"):
-        ok = not ok
+    # the dimension is certified by an EXHIBITED BASIS -- the extreme points
+    # this run solved, each verified at full size, their supports measured
+    # pairwise disjoint and therefore linearly independent -- and not by a
+    # class count two earlier gates have already forced equal to the
+    # parent's orbit count
+    dim_rows = []
+    for inst, want in (("GAUGE-CHART-32", pv["PV-SIMP32"]),
+                       ("GAUGE-CHART-128", pv["PV-SIMP128"])):
+        r = by[inst]
+        vecs = S["_simplex"][inst]
+        sup = [{i for i, x in enumerate(v) if x} for v in vecs]
+        if mut("MUT-SIMPLEX-DIM") and inst == "GAUGE-CHART-32":
+            sup[1] = set(sup[0])
+        union = set()
+        for s in sup:
+            union |= s
+        indep = (sum(len(s) for s in sup) == len(union))
+        dim_rows.append({
+            "instance": inst,
+            "extreme_points_exhibited": len(vecs),
+            "supports_are_pairwise_disjoint_hence_independent": indep,
+            "vectors_verified_at_full_size":
+                r["vectors_verified_at_full_size"],
+            "simplex_dimension_from_the_exhibited_basis": len(vecs) - 1,
+            "the_parents_dimension": want,
+            "ok": (indep and r["vectors_verified_at_full_size"] == len(vecs)
+                   and len(vecs) - 1 == want
+                   and r["simplex_dimension"] == want)})
+    ok = all(d["ok"] for d in dim_rows)
     LD.gate("G-GAUGE-WALK-SIMPLEX-IS-THE-PARENTS-SIMPLEX",
             "and the gauge walk's stationary simplex IS paper-23's invariant "
             "simplex: an invariant measure is exactly an orbit-constant one, "
             "a group walk's stationary measures are exactly the invariant "
-            "ones, and the dimensions this run computes by exact elimination "
-            "land on the parent's published dimensions at named receipt "
-            "paths.  The dynamics did not shrink the parent's simplex by one "
-            "number",
-            ok, "chart-32 simplex dimension %d against the parent's %d; "
-            "chart-128 %d against %d"
-            % (g32["simplex_dimension"], pv["PV-SIMP32"],
-               g128["simplex_dimension"], pv["PV-SIMP128"]))
+            "ones, and the dimension is certified by an EXHIBITED BASIS -- "
+            "every extreme point solved by exact elimination, verified at "
+            "full size against its own chain, and measured to have a support "
+            "disjoint from every other, hence independent -- which lands on "
+            "the parent's published dimensions at named receipt paths.  The "
+            "dynamics did not shrink the parent's simplex by one number",
+            ok, "chart-32: %d independent extreme points exhibited, "
+            "dimension %d against the parent's %d; chart-128: %d, dimension "
+            "%d against %d; supports disjoint %s"
+            % (dim_rows[0]["extreme_points_exhibited"],
+               dim_rows[0]["simplex_dimension_from_the_exhibited_basis"],
+               pv["PV-SIMP32"], dim_rows[1]["extreme_points_exhibited"],
+               dim_rows[1]["simplex_dimension_from_the_exhibited_basis"],
+               pv["PV-SIMP128"],
+               [d["supports_are_pairwise_disjoint_hence_independent"]
+                for d in dim_rows]))
 
     mono = by["MONOMIAL-LEFT"]
     monoset = set(S["_mono"])
+    if mut("MUT-MONOMIAL"):
+        monoset = set(sorted(monoset)[:-1])
     cls = _closed_class_sets(S, "MONOMIAL-LEFT")
     carries = any(set(c) == monoset for c in cls)
-    if mut("MUT-MONOMIAL"):
-        carries = False
     LD.gate("G-MONOMIAL-WALK-CARRIES-THE-PARENTS-HAAR",
             "the monomial walk's decomposition is compared with paper-23's "
             "one canonical measure AS A SET: one of its closed classes is "
@@ -2086,6 +2382,7 @@ def measure_the_welds(S, published, pv):
         "gauge_classes_equal_the_parents_orbits_chart_128": same128,
         "gauge_simplex_dimension_chart_32": g32["simplex_dimension"],
         "gauge_simplex_dimension_chart_128": g128["simplex_dimension"],
+        "simplex_dimension_certified_by_an_exhibited_basis": dim_rows,
         "monomial_walk_carries_the_parents_haar": carries,
         "monomial_closed_classes": mono["closed_classes"],
     }
@@ -2160,7 +2457,94 @@ def measure_relativity(S, published, pv):
     if mut("MUT-SPREAD"):
         widest = Fraction(0)
     moves = widest > 0
-    wider = widest > parent_widest
+
+    # ---- K2's MAJOR-1, measured: HELD AT THE PARENT'S OWN COMPARISON CLASS
+    # this census reproduces the parent's number exactly.  max over a
+    # superset >= max over a subset is arithmetic, so the rise is priced to
+    # the six new measures entering the comparison and not to the dynamics.
+    PARENT_THREE = ["COUNTING", "ORBIT-UNIFORM-CHART-32",
+                    "ORBIT-UNIFORM-CHART-128"]
+    rep = {}
+    for r in der:
+        if r["measure_name"] in PARENT_THREE and r["measure_name"] not in rep:
+            rep[r["measure_name"]] = (r["instance"], S["_pi"][r["instance"]])
+    if mut("MUT-RESTRICTED"):
+        rep["COUNTING"] = ("PLANTED", S["_pi"]["LAW-NATIVE-012"])
+    restricted = Fraction(0)
+    restricted_on = []
+    for r in rows:
+        memb = sets[r["set"]]
+        ms = [sum(v[i] for i in memb)
+              for _nm, (_inst, v) in sorted(rep.items())]
+        sp = max(ms) - min(ms) if ms else Fraction(0)
+        r["spread_at_the_parents_own_three_measures"] = str(sp)
+        if sp > restricted:
+            restricted, restricted_on = sp, [r["set"]]
+        elif sp == restricted and sp > 0:
+            restricted_on.append(r["set"])
+    rest_ok = (len(rep) == len(PARENT_THREE) and restricted == parent_widest)
+    LD.gate("G-THE-RESTRICTED-COMPARISON-REPRODUCES-THE-PARENTS-NUMBER",
+            "the parent's comparison class is a SUBSET of this one, so the "
+            "two spreads are not like for like and the comparison is made at "
+            "a fixed comparison class instead: all three of the parent's own "
+            "named measures are present in this census, and restricted to "
+            "exactly those three the widest spread over the parent's own "
+            "headline sets is measured and must reproduce the parent's "
+            "published number EXACTLY.  Held at fixed comparison class, "
+            "declaring a dynamics moved the parent's sets by nothing; the "
+            "rise is the new measures entering the same comparison",
+            rest_ok,
+            "%d of %d of the parent's measures present in this census; "
+            "restricted widest spread %s against the parent's published %s, "
+            "attained on %s"
+            % (len(rep), len(PARENT_THREE), restricted, parent_widest,
+               restricted_on))
+
+    # ---- and the theorem-level answer to 'how far can a declaration move
+    # these sets?': every headline set contains a whole orbit and its
+    # complement contains a whole orbit, so the two orbit point masses are
+    # invariant measures -- extreme points of the parent's simplex -- at
+    # which the set's mass is 1 and 0.  The reachable range is [0, 1].
+    ranges = []
+    for nm, memb in sorted(sets.items()):
+        inside = [o for o in O4 if all(i in memb for i in o)]
+        outside = [o for o in O4 if all(i not in memb for i in o)]
+        row = {"set": nm, "an_orbit_inside_the_set": len(inside),
+               "an_orbit_in_the_complement": len(outside)}
+        for tag, pick in (("inside", inside), ("outside", outside)):
+            if not pick:
+                row["mass_at_the_point_mass_" + tag] = "NO-WITNESS"
+                continue
+            w = [Fraction(0)] * n
+            for i in pick[0]:
+                w[i] = Fraction(1, len(pick[0]))
+            if mut("MUT-INDICATOR-RANGE") and nm == "DIAGONAL":
+                w = [Fraction(1, n)] * n
+            row["mass_at_the_point_mass_" + tag] = str(sum(w[i] for i in memb))
+            row["point_mass_" + tag + "_is_invariant"] = all(
+                len({w[i] for i in o}) == 1 for o in O4)
+        row["reachable_range_over_the_invariant_simplex"] = "[0,1]"
+        ranges.append(row)
+    rng_ok = all(r.get("mass_at_the_point_mass_inside") == "1"
+                 and r.get("mass_at_the_point_mass_outside") == "0"
+                 and r.get("point_mass_inside_is_invariant")
+                 and r.get("point_mass_outside_is_invariant")
+                 for r in ranges)
+    LD.gate("G-HEADLINE-SET-RANGE-IS-THE-WHOLE-UNIT-INTERVAL",
+            "how far a declaration CAN move these sets is answered at the "
+            "theorem level and measured on the objects: each headline set "
+            "contains a whole gauge orbit and its complement contains a "
+            "whole gauge orbit, so the two orbit point masses are invariant "
+            "measures -- extreme points of the parent's simplex -- and the "
+            "set's mass at them is measured to be exactly 1 and exactly 0.  "
+            "The reachable range of every headline set's mass over the "
+            "invariant simplex is therefore the whole unit interval, which "
+            "is what makes any particular spread a fact about the declared "
+            "census and not about what declaring buys",
+            rng_ok, "%d sets; masses at the two witness point masses %s"
+            % (len(ranges),
+               [(r["set"], r.get("mass_at_the_point_mass_inside"),
+                 r.get("mass_at_the_point_mass_outside")) for r in ranges]))
     # the parent's own two columns, reproduced here
     nc = [r for r in rows if r["set"] == "NON-COMMUTING"][0]
     cnt_ok = (nc["mass_by_declared_dynamics"].get(
@@ -2171,25 +2555,28 @@ def measure_relativity(S, published, pv):
             "the pin's fourth stage, answered on the objects: the stationary "
             "measure MOVES across the declared-dynamics fibre, and the "
             "movement is priced on the parent's own headline sets rather "
-            "than on sets chosen to make it large.  Two of the columns "
-            "reproduce paper-23's published masses exactly at named receipt "
-            "paths, which is what makes the new columns comparable; and the "
-            "widest spread is compared with the parent's own widest spread "
-            "over INVARIANT measures, so the reader can see whether "
-            "declaring a dynamics costs more or less than declaring a "
-            "measure did",
+            "than on sets chosen to make it large.  Three of the columns are "
+            "the parent's own measures -- the composition walk's column IS "
+            "the counting measure and both orbit-uniform columns are its own "
+            "nulls -- and two of those cells are additionally checked "
+            "against named paths in the parent's receipt, which is what "
+            "makes the new columns comparable.  The spread is published at "
+            "both populations and at the parent's own comparison class, and "
+            "no comparison between populations of different size is drawn "
+            "from it",
             moves and cnt_ok,
             "widest spread %s over the %d GAUGE-COVARIANT deriving "
-            "instances on "
-            "%s, against the parent's %s over invariant measures (wider: "
-            "%s); over all %d deriving instances, the declared "
-            "non-covariant control included, it is %s; %d sets weighed"
-            % (widest, len(cov), argmax_sets, parent_widest, wider, len(der),
-               widest_all, len(rows)))
+            "instances on %s; over all %d deriving instances, the declared "
+            "non-covariant control included, it is %s; at the parent's own "
+            "three measures it is %s against the parent's published %s; "
+            "%d sets weighed"
+            % (widest, len(cov), argmax_sets, len(der), widest_all,
+               restricted, parent_widest, len(rows)))
 
-    agree = len({tuple(S["_pi"][r["instance"]]) for r in der}) == 1
+    pis = {r["instance"]: S["_pi"][r["instance"]] for r in der}
     if mut("MUT-QUASI"):
-        agree = True
+        pis = {k: S["_pi"][der[0]["instance"]] for k in pis}
+    agree = len({tuple(v) for v in pis.values()}) == 1
     LD.gate("G-QUASI-DERIVATION-ARM-IS-DECIDED-NOT-ASSUMED",
             "the pin's strongest honest outcome -- all candidates agree, so "
             "the measure is quasi-derived -- is DECIDED by comparing the "
@@ -2209,8 +2596,18 @@ def measure_relativity(S, published, pv):
         "widest_spread_over_every_deriving_instance": str(widest_all),
         "widest_attained_on": argmax_sets,
         "widest_attained_count": len(argmax_sets),
-        "parent_widest_spread_over_invariant_measures": str(parent_widest),
-        "this_fibre_is_wider_than_the_parents": wider,
+        "parent_widest_spread_over_its_own_three_named_nulls":
+            str(parent_widest),
+        "this_census_restricted_to_the_parents_own_three_measures":
+            str(restricted),
+        "restricted_comparison_attained_on": restricted_on,
+        "parent_measures_contained_in_this_census":
+            "%d of %d" % (len(rep), len(PARENT_THREE)),
+        "the_representative_instances": sorted(
+            (k, v[0]) for k, v in rep.items()),
+        "new_law_native_measures_entering_the_comparison":
+            sum(1 for r in der if r["family"].startswith("(c)")),
+        "headline_set_range_over_the_invariant_simplex": ranges,
         "deriving_instances": len(der),
         "all_deriving_instances_agree": agree,
         "measure_labels": "EVERY MASS IS LABELLED WITH THE DECLARED DYNAMICS "
@@ -2260,12 +2657,12 @@ def measure_the_surjection(S, published, pv):
             t = [Fraction(a, 2 * D), Fraction(a, 2 * D), Fraction(b, D),
                  Fraction(c, D)]
             P = metropolis(t, 4)
+            if mut("MUT-SURJECTION") and tot == 0:
+                P = metropolis([Fraction(1, 4)] * 4, 4)
             bas, _rk = stationary_by_elimination(P, 4)
             tot += 1
             if len(bas) != 1 or bas[0] != t:
                 bad += 1
-    if mut("MUT-SURJECTION"):
-        bad = 1 if bad == 0 else 0
     ok = (all(h["derives"] and h["stationary_equals_the_target"]
               and h["covariant"] and h["detailed_balance_failures"] == 0
               for h in hits)
@@ -2297,13 +2694,147 @@ def measure_the_surjection(S, published, pv):
         "exhaustive_small_carrier_targets": tot,
         "exhaustive_small_carrier_failures": bad,
         "exhaustive_small_carrier_states": 4,
+        "exhaustive_small_carrier_orbits": orbs,
         "exhaustive_small_carrier_denominator": D,
         "consequence": "THE-COVARIANT-DYNAMICS-FIBRE-SURJECTS-ONTO-THE-"
                        "INVARIANT-SIMPLEX",
         "price_chart_32": pv["PV-SIMP32"], "price_chart_128": pv["PV-SIMP128"],
     }
     SEAL.take("THE SURJECTION", "surjection", "G-PRICE-IS-CONSERVED",
-              S["surjection"])
+              S["surjection"],
+              omit={"closed_simplex", "dropped_covariance"})
+
+    # ---- THE CLOSED SIMPLEX.  A target with a zero is still reached
+    # exactly: the Metropolis chain at it has its zeros as TRANSIENT states
+    # and exactly ONE closed class, so by this unit's own sharp criterion it
+    # DERIVES and the boundary target is its unique stationary measure.  What
+    # the boundary costs is irreducibility, not derivation -- so the reach is
+    # onto the CLOSED simplex and not onto its interior only.
+    btot = breached = bone = birr = 0
+    for m in (3, 4, 5):
+        for code in range(1, (1 << m) - 1):
+            Zs = [i for i in range(m) if (code >> i) & 1]
+            if len(Zs) > m - 2:
+                continue
+            sup = [i for i in range(m) if i not in Zs]
+            t = [Fraction(0)] * m
+            for i in sup:
+                t[i] = Fraction(1, len(sup))
+            P = metropolis(t, m)
+            if mut("MUT-BOUNDARY") and btot == 0:
+                P = metropolis([Fraction(1, m)] * m, m)
+            adj = support_adj(P, m)
+            comps = sccs(m, adj)
+            closed, _c = closed_classes(m, adj, comps)
+            bas, _r = stationary_by_elimination(P, m)
+            btot += 1
+            if len(closed) == 1:
+                bone += 1
+            if len(comps) == 1:
+                birr += 1
+            if len(bas) == 1 and bas[0] == t:
+                breached += 1
+    big = []
+    for k in (1, 5, 100):
+        live = S["_O4"][k:]
+        t = [Fraction(0)] * n
+        for o in live:
+            for i in o:
+                t[i] = Fraction(1, len(live) * len(o))
+        Pb = metropolis(t, n)
+        adj = support_adj(Pb, n)
+        comps = sccs(n, adj)
+        closed, _c = closed_classes(n, adj, comps)
+        big.append({"whole_orbits_at_mass_zero": k,
+                    "states_at_mass_zero": sum(len(o) for o in S["_O4"][:k]),
+                    "communicating_classes": len(comps),
+                    "closed_classes": len(closed),
+                    "irreducible": len(comps) == 1,
+                    "stationary_equals_the_target":
+                        verify_stationary(Pb, t, n),
+                    "gauge_covariance_failures":
+                        covariance_failures(Pb, n, S["_G4"])})
+    bok = (btot > 0 and breached == btot and bone == btot and birr == 0
+           and all(b["closed_classes"] == 1 and not b["irreducible"]
+                   and b["stationary_equals_the_target"]
+                   and b["gauge_covariance_failures"] == 0 for b in big))
+    LD.gate("G-THE-SURJECTION-REACHES-THE-CLOSED-SIMPLEX",
+            "the surjection is stated at FULL strength, and the boundary arm "
+            "is measured rather than conceded: at a target with zeros the "
+            "same construction returns a chain whose zero states are "
+            "TRANSIENT and which has exactly ONE closed class, so by this "
+            "unit's own sharp criterion it DERIVES and the boundary target is "
+            "its unique stationary measure.  Every zero pattern with at "
+            "least two supported states is enumerated exhaustively on the "
+            "declared small carriers, and the arm is repeated on the REAL "
+            "640-state carrier with whole gauge orbits set to mass zero, "
+            "where the chain is additionally measured gauge-covariant and "
+            "the identity pi P = pi is verified at full size.  What the "
+            "boundary costs is irreducibility, not derivation",
+            bok,
+            "%d boundary targets enumerated over the small carriers, %d "
+            "reached exactly, %d with exactly one closed class, %d "
+            "irreducible; at the arena: %s"
+            % (btot, breached, bone, birr,
+               [(b["whole_orbits_at_mass_zero"], b["communicating_classes"],
+                 b["closed_classes"], b["stationary_equals_the_target"],
+                 b["gauge_covariance_failures"]) for b in big]))
+    S["surjection"]["closed_simplex"] = {
+        "small_carrier_boundary_targets": btot,
+        "small_carrier_reached_exactly": breached,
+        "small_carrier_with_exactly_one_closed_class": bone,
+        "small_carrier_irreducible": birr,
+        "small_carrier_states": [3, 4, 5],
+        "at_the_arena": big,
+        "consequence": "THE-COVARIANT-DYNAMICS-FIBRE-SURJECTS-ONTO-THE-"
+                       "CLOSED-INVARIANT-SIMPLEX-BOUNDARY-INCLUDED",
+    }
+    SEAL.take("THE CLOSED-SIMPLEX ARM", "surjection/closed_simplex",
+              "G-THE-SURJECTION-REACHES-THE-CLOSED-SIMPLEX",
+              S["surjection"]["closed_simplex"])
+
+    # ---- and the free corollary the theorem carries: the construction is
+    # silent about invariance except through covariance, so at ANY
+    # full-support target the same chain returns that target.  Dropped
+    # covariance, the same move costs the WHOLE simplex.
+    ctrl_sup = list(S["_ctrl_target"])
+    if mut("MUT-DROPPED-COVARIANCE"):
+        ctrl_sup[0] = Fraction(0)
+    ctrl_full_support = all(x > 0 for x in ctrl_sup)
+    price_nocov = n - 1
+    dok = (price_nocov > pv["PV-SIMP32"] and ctrl_hits and ctrl_full_support
+           and not ctrl_invariant and not ctrl_gauge_covariant)
+    LD.gate("G-DROPPED-COVARIANCE-COSTS-THE-WHOLE-SIMPLEX",
+            "the price is conserved ONLY under a retained covariance "
+            "declaration, and the corollary is stated with its number: the "
+            "Metropolis construction is uniform in its target and silent "
+            "about invariance except through covariance, so at any "
+            "FULL-SUPPORT target -- invariant or not -- it returns a chain "
+            "with that target as its unique stationary measure.  The control "
+            "is that witness, measured full support, measured to land on its "
+            "own non-invariant target and measured NOT gauge-covariant.  "
+            "Without the covariance declaration the dynamics fibre reaches "
+            "the whole simplex over this carrier and the declaration costs "
+            "its full dimension instead of the invariant one",
+            dok,
+            "the control's target is full support: %s, reached exactly: %s, "
+            "orbit-constant: %s, gauge-covariant: %s; price with covariance "
+            "%d, price without it %d"
+            % (ctrl_full_support, ctrl_hits, ctrl_invariant,
+               ctrl_gauge_covariant, pv["PV-SIMP32"], price_nocov))
+    S["surjection"]["dropped_covariance"] = {
+        "price_with_the_covariance_declaration": pv["PV-SIMP32"],
+        "price_without_the_covariance_declaration": price_nocov,
+        "the_controls_target_is_full_support": ctrl_full_support,
+        "the_control_lands_on_its_own_non_invariant_target": ctrl_hits,
+        "the_control_is_gauge_covariant": ctrl_gauge_covariant,
+        "what_covariance_buys":
+            "THE-DIFFERENCE-BETWEEN-THE-WHOLE-SIMPLEX-AND-THE-INVARIANT-ONE",
+    }
+    SEAL.take("THE DROPPED-COVARIANCE COROLLARY",
+              "surjection/dropped_covariance",
+              "G-DROPPED-COVARIANCE-COSTS-THE-WHOLE-SIMPLEX",
+              S["surjection"]["dropped_covariance"])
     return hits
 
 
@@ -2372,6 +2903,8 @@ def measure_wilson(S, published, pv):
         for i in range(ns):
             s2 = fadd(s2, W.get((i, i), ZERO))
         tf.append(s2)
+    if mut("MUT-WILSON-OBSERVABLE"):
+        tb[0] = fadd(tb[0], ONE)
     # plaquette independence, on EVERY plaquette and EVERY configuration
     dep = 0
     for j, m in enumerate(coins):
@@ -2386,8 +2919,6 @@ def measure_wilson(S, published, pv):
     inq = sum(1 for x in tb if in_q_sqrt2(x))
     offset_ok = all(fadd(tb[i], (ns - 4, 0, 0, 0, 1)) == tf[i]
                     for i in range(len(coins)))
-    if mut("MUT-WILSON-OBSERVABLE"):
-        dep = 1
     LD.gate("G-WILSON-OBSERVABLE-REBUILT",
             "the loop observable is REBUILT from R5's own definition, quoted "
             "at a verbatim anchor: the ordered product around the plaquette "
@@ -2407,9 +2938,11 @@ def measure_wilson(S, published, pv):
             % (dep, len(coins) * len(lat.plaqs), inq, len(coins), offset_ok))
 
     O4 = S["_O4"]
-    gauge_inv = all(len({tb[i] for i in o}) == 1 for o in O4)
+    tbg = list(tb)
     if mut("MUT-WILSON-GAUGE-INVARIANCE"):
-        gauge_inv = False
+        big4 = [o for o in O4 if len(o) > 1][0]
+        tbg[big4[1]] = fadd(tbg[big4[1]], ONE)
+    gauge_inv = all(len({tbg[i] for i in o}) == 1 for o in O4)
     LD.gate("G-WILSON-OBSERVABLE-IS-GAUGE-INVARIANT",
             "the observable is constant on every orbit of the residual gauge "
             "group -- checked orbit by orbit -- which is what makes its "
@@ -2421,12 +2954,14 @@ def measure_wilson(S, published, pv):
     der = [r for r in published if r["verdict"] == "DERIVES"]
     licensed = [r for r in der if r["covariant"]]
     rows = []
+    exps = []
     for r in sorted(der, key=lambda x: x["instance"]):
         pi = S["_pi"][r["instance"]]
         acc = ZERO
         for i, w in enumerate(pi):
             if w:
                 acc = fadd(acc, fscal(tb[i], w.numerator, w.denominator))
+        exps.append(acc)
         rows.append({
             "declared_dynamics": r["instance"],
             "family": r["family"],
@@ -2447,13 +2982,81 @@ def measure_wilson(S, published, pv):
         rows[0] = dict(rows[0])
         rows[0]["stamp"] = "PLAIN"
 
+    # the range over the invariant simplex: the convex hull of the orbit
+    # values, whose endpoints are attained at extreme points.  This carried
+    # section 8's headline and carried it with no gate and a typed flag; it
+    # is measured here, the extreme-point flag DERIVED from the measured
+    # orbit sizes, and every published expectation required to lie inside it.
+    vals = []
+    for o in O4:
+        vals.append((qsqrt2_pair(tb[o[0]]), o))
+    lo = hi = vals[0]
+    for v in vals[1:]:
+        if qs_less(v[0], lo[0]):
+            lo = v
+        if qs_less(hi[0], v[0]):
+            hi = v
+    if mut("MUT-WILSON-RANGE"):
+        lo = (lo[0], lo[1] + [i for i in range(len(coins))
+                              if i not in lo[1]][:1])
+    lo_r = all(qsqrt2_pair(tb[i])[1] == 0 for i in lo[1])
+    hi_r = all(qsqrt2_pair(tb[i])[1] == 0 for i in hi[1])
+    both_extreme = (len(lo[1]) == 1 and len(hi[1]) == 1)
+    inside = sum(1 for a in exps
+                 if not qs_less(qsqrt2_pair(a), lo[0])
+                 and not qs_less(hi[0], qsqrt2_pair(a)))
+    lo_const = all(tb[i] == tb[lo[1][0]] for i in lo[1])
+    hi_const = all(tb[i] == tb[hi[1][0]] for i in hi[1])
+    LD.gate("G-WILSON-RANGE-IS-MEASURED",
+            "section 8's headline -- that covariance pins the expectation "
+            "nowhere -- rests on the range of the expectation over the "
+            "invariant simplex, so the range is a GATE and its extreme-point "
+            "flag is DERIVED from measured orbit sizes rather than typed: "
+            "the minimum and maximum are taken over the orbit values by "
+            "exact ordering on the real subfield, each endpoint orbit is "
+            "measured to be constant and measured to have size one -- so its "
+            "point mass is an extreme point of the invariant simplex -- and "
+            "every published expectation is required to lie inside the "
+            "interval",
+            both_extreme and lo_const and hi_const and inside == len(exps),
+            "range [%s, %s]; endpoint orbit sizes %d and %d; both endpoints "
+            "at extreme points: %s; %d of %d published expectations inside "
+            "the interval"
+            % (str(lo[0][0]) if lo_r else qsqrt2_str(tb[lo[1][0]]),
+               str(hi[0][0]) if hi_r else qsqrt2_str(tb[hi[1][0]]),
+               len(lo[1]), len(hi[1]), both_extreme, inside, len(exps)))
+
+    S["wilson"] = {
+        "observable": "THE-TRACE-OF-THE-PLAQUETTE-HOLONOMY-ON-ITS-OWN-"
+                      "FOUR-CORNER-BLOCK",
+        "normalisation_fibre": 2,
+        "loop_families_grown": 0,
+        "plaquettes_checked": len(lat.plaqs),
+        "distinct_values_over_the_carrier": len(set(tb)),
+        "rows": rows,
+        "licensed_rows": len(rows),
+        "covariant_licensed_rows": len(licensed),
+        "range_over_the_invariant_simplex": {
+            "minimum": str(lo[0][0]) if lo_r else qsqrt2_str(tb[lo[1][0]]),
+            "maximum": str(hi[0][0]) if hi_r else qsqrt2_str(tb[hi[1][0]]),
+            "minimum_attained_on_an_orbit_of_size": len(lo[1]),
+            "maximum_attained_on_an_orbit_of_size": len(hi[1]),
+            "both_endpoints_are_extreme_points_of_the_simplex": both_extreme,
+            "published_expectations_inside_the_interval": inside,
+            "stamp": STAMP,
+        },
+        "must_not": "NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM-AND-"
+                    "NO-LOOP-FAMILY-IS-GROWN",
+    }
+
     verdicts = {r["instance"]: r["verdict"] for r in published}
     unlicensed = [r["declared_dynamics"] for r in rows
                   if verdicts.get(r["declared_dynamics"]) != "DERIVES"]
     unstamped = [r["declared_dynamics"] for r in rows
                  if r.get("stamp") != STAMP]
     # the payload is walked to the BOTTOM for an expectation-valued key at
-    # any depth; every one must sit under this unit's single registered key
+    # any depth -- the assembled wilson object included -- and every one must
+    # sit under this unit's single registered key
     everywhere = registered_keys_at_every_depth(
         {k: v for k, v in S.items() if not k.startswith("_")})
     stray = [k for k in everywhere if not k.startswith("/wilson")]
@@ -2474,42 +3077,121 @@ def measure_wilson(S, published, pv):
             % (len(rows), len(unlicensed), unlicensed[:3], len(unstamped),
                unstamped[:3], len(everywhere), len(stray), stray[:3]))
 
-    # the range over the invariant simplex: the convex hull of the orbit
-    # values, whose endpoints are attained at extreme points
-    vals = []
-    for o in O4:
-        vals.append((qsqrt2_pair(tb[o[0]]), o))
-    lo = hi = vals[0]
-    for v in vals[1:]:
-        if qs_less(v[0], lo[0]):
-            lo = v
-        if qs_less(hi[0], v[0]):
-            hi = v
-    lo_r = all(qsqrt2_pair(tb[i])[1] == 0 for i in lo[1])
-    hi_r = all(qsqrt2_pair(tb[i])[1] == 0 for i in hi[1])
-    S["wilson"] = {
-        "observable": "THE-TRACE-OF-THE-PLAQUETTE-HOLONOMY-ON-ITS-OWN-"
-                      "FOUR-CORNER-BLOCK",
-        "normalisation_fibre": 2,
-        "loop_families_grown": 0,
-        "plaquettes_checked": len(lat.plaqs),
-        "distinct_values_over_the_carrier": len(set(tb)),
-        "rows": rows,
-        "licensed_rows": len(rows),
-        "covariant_licensed_rows": len(licensed),
-        "range_over_the_invariant_simplex": {
-            "minimum": str(lo[0][0]) if lo_r else qsqrt2_str(tb[lo[1][0]]),
-            "maximum": str(hi[0][0]) if hi_r else qsqrt2_str(tb[hi[1][0]]),
-            "minimum_attained_on_an_orbit_of_size": len(lo[1]),
-            "maximum_attained_on_an_orbit_of_size": len(hi[1]),
-            "both_endpoints_are_extreme_points_of_the_simplex": True,
-            "stamp": STAMP,
-        },
-        "must_not": "NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM-AND-"
-                    "NO-LOOP-FAMILY-IS-GROWN",
-    }
     SEAL.take("THE WILSON SEGMENT", "wilson", "G-WILSON-LICENCE", S["wilson"])
     S["_wilson_range"] = (lo[0][0], hi[0][0])
+
+    # =======================================================================
+    # THE CONTROL'S ENUMERATION, DISCLOSED AND PRICED
+    #
+    # The declared non-covariant control's target is built on CONTIGUOUS
+    # BLOCKS OF THE COIN INDEX.  Those blocks are not an arena object: they
+    # are an artifact of the order in which this instrument enumerates the
+    # coin family.  R5's declaration -- exhaustive over the alphabet's fourth
+    # power -- admits a second literal reading of the ALPHABET's own order
+    # (modulus-major rather than power-major), which returns the same 640
+    # coins as a SET in a different order.  The two order-dependent numbers
+    # are re-measured there and published as a sensitivity row; the
+    # like-for-like headline, computed over the covariant instances only, is
+    # measured to be unchanged, because those measures are functions of
+    # sector and orbit membership alone.
+    # =======================================================================
+    alt_alph = [ZERO]
+    for t in range(8):
+        alt_alph.append(zpow(t))
+    for t in range(8):
+        alt_alph.append(fscal(zpow(t), 1, 2))
+    for t in range(8):
+        alt_alph.append(fmul(zpow(t), INV_SQRT2))
+    if mut("MUT-ENUMERATION"):
+        alt_alph = list(S["_alph"])
+    alt_coins, _alt_rows = build_coins(alt_alph)
+    same_set = (len(alt_coins) == len(coins)
+                and set(alt_coins) == set(coins)
+                and len(alt_alph) == len(S["_alph"])
+                and set(alt_alph) == set(S["_alph"]))
+    orders_differ = (alt_coins != coins)
+    cidx = S["_cidx"]
+    alt_idx = [cidx[m] for m in alt_coins] if same_set else []
+    nb = len(S["_ctrl_blocks"])
+    bs = len(coins) // nb
+    wts = [Fraction(b + 1, 10) for b in range(nb)]
+    alt_t = [Fraction(0)] * len(coins)
+    for b in range(nb):
+        for p in range(b * bs, (b + 1) * bs):
+            alt_t[alt_idx[p]] = wts[b] / bs
+    Pa = metropolis(alt_t, len(coins))
+    adj = support_adj(Pa, len(coins))
+    comps = sccs(len(coins), adj)
+    closed, _c = closed_classes(len(coins), adj, comps)
+    alt_ok = (len(closed) == 1
+              and verify_stationary(Pa, alt_t, len(coins)))
+    acc = ZERO
+    for i, w in enumerate(alt_t):
+        if w:
+            acc = fadd(acc, fscal(tb[i], w.numerator, w.denominator))
+    alt_exp = qsqrt2_str(acc)
+    delivered_exp = [r["block_trace_value"] for r in rows
+                     if "NON-INVARIANT" in r["declared_dynamics"]][0]
+    # and the two spreads, re-measured with the alternative control in place
+    cov_pis = [S["_pi"][r["instance"]] for r in der
+               if r["gauge_covariant"]]
+    all_pis_alt = cov_pis + [alt_t]
+    wid_cov = wid_alt = Fraction(0)
+    for nm, memb in sorted(S["_sets"].items()):
+        ms = [sum(v[i] for i in memb) for v in cov_pis]
+        wid_cov = max(wid_cov, max(ms) - min(ms))
+        ms2 = [sum(v[i] for i in memb) for v in all_pis_alt]
+        wid_alt = max(wid_alt, max(ms2) - min(ms2))
+    rel = S["relativity"]
+    headline_free = (str(wid_cov) == rel["widest_spread"])
+    LD.gate("G-CONTROL-TARGET-ENUMERATION-SENSITIVITY",
+            "the declared control's target is defined on contiguous blocks "
+            "of the coin INDEX, which is an artifact of this instrument's "
+            "enumeration and not an object of the arena -- so the two "
+            "numbers that depend on it are DISCLOSED and PRICED rather than "
+            "published bare.  A second literal reading of the parents' own "
+            "alphabet declaration is built here, measured to return the same "
+            "640 coins as a set in a different order, and the control is "
+            "rebuilt on it: its expectation and the spread over all deriving "
+            "instances are re-measured there and published as a sensitivity "
+            "row.  The like-for-like headline -- the spread over the "
+            "GAUGE-COVARIANT deriving instances -- is measured to be "
+            "identical under both enumerations, because those measures are "
+            "functions of sector and orbit membership alone",
+            same_set and orders_differ and alt_ok and headline_free,
+            "the alternative enumeration returns the same set: %s, in a "
+            "different order: %s; its control chain has one closed class and "
+            "lands on its own target: %s; expectation %s against the "
+            "delivered %s; spread over all deriving instances %s against the "
+            "delivered %s; the covariant headline %s is enumeration-free: %s"
+            % (same_set, orders_differ, alt_ok, alt_exp, delivered_exp,
+               wid_alt, rel["widest_spread_over_every_deriving_instance"],
+               wid_cov, headline_free))
+    S["enumeration_sensitivity"] = {
+        "the_declared_control_target_is":
+            "FOUR-CONTIGUOUS-BLOCKS-OF-THE-COIN-INDEX-AT-MASSES-1-2-3-4-"
+            "TENTHS-WHICH-IS-AN-ENUMERATION-ARTIFACT-NOT-AN-ARENA-OBJECT",
+        "the_alternative_reading":
+            "THE-ALPHABET-ENUMERATED-MODULUS-MAJOR-RATHER-THAN-POWER-MAJOR-"
+            "WITH-THE-COIN-FAMILY-EXHAUSTIVE-OVER-ITS-FOURTH-POWER",
+        "same_coin_family_as_a_set": same_set,
+        "a_different_order": orders_differ,
+        "the_alternative_control_chain_derives": alt_ok,
+        "control_expectation_delivered": delivered_exp,
+        "control_expectation_alternative": alt_exp,
+        "widest_spread_over_every_deriving_instance_delivered":
+            rel["widest_spread_over_every_deriving_instance"],
+        "widest_spread_over_every_deriving_instance_alternative":
+            str(wid_alt),
+        "widest_spread_over_the_covariant_deriving_instances":
+            str(wid_cov),
+        "the_covariant_headline_is_enumeration_free": headline_free,
+        "stamp": "THE-TWO-CONTROL-DEPENDENT-NUMBERS-ARE-"
+                 "ENUMERATION-RELATIVE-AND-ARE-LABELLED-SO",
+    }
+    SEAL.take("THE ENUMERATION SENSITIVITY", "enumeration_sensitivity",
+              "G-CONTROL-TARGET-ENUMERATION-SENSITIVITY",
+              S["enumeration_sensitivity"])
     return rows
 
 
@@ -2553,39 +3235,76 @@ def price_the_fibre(S, published, pv):
          "why": "set to the parent's own orbit count, which is the size of "
                 "every quotient this unit solves"},
     ]
+    licence = ("THE-FIBRE-IS-THE-SIMPLEX-ITSELF-AND-CANNOT-BE-SWEPT; WHAT "
+               "STANDS IN FOR A SWEEP IS THE SURJECTION THEOREM, "
+               "INSTANTIATED AT THE DECLARED POINTS, VERIFIED EXHAUSTIVELY "
+               "AT %d TARGETS ON A DECLARED SMALL CARRIER AT %d FAILURES, "
+               "AND EXTENDED TO THE CLOSED SIMPLEX AT %d BOUNDARY TARGETS"
+               % (S["surjection"]["exhaustive_small_carrier_targets"],
+                  S["surjection"]["exhaustive_small_carrier_failures"],
+                  S["surjection"]["closed_simplex"][
+                      "small_carrier_boundary_targets"]))
     for a in sorted(axes.values(), key=lambda x: x["axis"]):
-        rows.append({"choice": a["axis"], "status": "DECLARED-AND-SWEPT",
-                     "fibre": a["fibre"], "instances_built": a["instances_run"],
-                     "distinct_outcomes": a["distinct_outcomes_along_this_axis"],
-                     "verdict_determining": a["verdict_determining"],
-                     "why": "every declared instance of this axis is RUN and "
-                            "its outcome published"})
+        sampled = not isinstance(a["fibre"], int)
+        row = {"choice": a["axis"],
+               "status": "DECLARED-AND-SAMPLED" if sampled
+                         else "DECLARED-AND-SWEPT",
+               "fibre": a["fibre"], "instances_built": a["instances_run"],
+               "distinct_outcomes": a["distinct_outcomes_along_this_axis"],
+               "verdict_determining": ("NOT-MEASURED-FIBRE-SAMPLED-AT-1"
+                                       if a["instances_run"] < 2
+                                       else a["verdict_determining"]),
+               "why": ("this axis's fibre is the simplex itself; it is "
+                       "SAMPLED at the declared points and the rest is "
+                       "covered by a theorem, and that is disclosed rather "
+                       "than absorbed" if sampled else
+                       "every declared instance of this axis is RUN and its "
+                       "outcome published")}
+        if sampled:
+            row["sampling_licence"] = licence
+        rows.append(row)
     if mut("MUT-FIBRE"):
         rows[-1]["fibre"] = 99
-    free_with_fibre_one = [r for r in rows
-                           if r["fibre"] == 1 and r["status"].startswith(
-                               "GENUINELY")]
-    swept_ok = all(r["instances_built"] == r["fibre"] for r in rows
-                   if isinstance(r["fibre"], int)
-                   and r["status"] == "DECLARED-AND-SWEPT")
+    # EVERY row is evaluated.  A row with an integer fibre must have built
+    # every member of it; a row whose fibre is not a finite number must be
+    # stamped SAMPLED and must carry the licence naming the arm that stands
+    # in for the sweep.  No row is skipped by a type test.
+    unswept = [r["choice"] for r in rows
+               if isinstance(r["fibre"], int)
+               and r["instances_built"] != r["fibre"]]
+    unlicensed_rows = [r["choice"] for r in rows
+                       if not isinstance(r["fibre"], int)
+                       and not (r["status"] == "DECLARED-AND-SAMPLED"
+                                and r.get("sampling_licence"))]
+    swept_ok = not unswept and not unlicensed_rows
     LD.gate("G-FIBRE-INVENTORY",
             "every construction choice is inventoried with its fibre and its "
-            "instances, and every DECLARED axis is swept to the bottom -- "
-            "the number of instances built equals the fibre, so no member of "
-            "a declared fibre is left unrun and the census cannot be a "
-            "sample of its own declaration.  The verdict-determining flag "
-            "binds each row by its own measured predicate: re-running the "
-            "axis at another instance moves a published vector",
-            swept_ok and not free_with_fibre_one,
-            "%d inventory rows; %d declared axes all swept to the bottom: %s"
-            % (len(rows), sum(1 for r in rows
-                              if r["status"] == "DECLARED-AND-SWEPT"),
-               swept_ok))
+            "instances, and EVERY row is evaluated -- none is skipped by a "
+            "type test.  A row with a finite fibre must have built every "
+            "member of it, so along those axes no member of a declared fibre "
+            "is left unrun; a row whose fibre is the invariant simplex "
+            "itself cannot be swept and is stamped DECLARED-AND-SAMPLED, "
+            "carrying the licence that names the theorem and the exhaustive "
+            "arm standing in for the sweep, so the census's one sampled "
+            "direction is disclosed rather than absorbed.  The "
+            "verdict-determining flag binds each row by its own measured "
+            "predicate where the axis carries two or more instances, and is "
+            "stamped NOT-MEASURED where it carries one",
+            swept_ok,
+            "%d inventory rows; %d swept with instances equal to fibre, %d "
+            "sampled under a declared licence; unswept %s; unlicensed %s"
+            % (len(rows),
+               sum(1 for r in rows if r["status"] == "DECLARED-AND-SWEPT"),
+               sum(1 for r in rows if r["status"] == "DECLARED-AND-SAMPLED"),
+               unswept, unlicensed_rows))
     S["fibre"] = {"rows": rows,
                   "price_of_a_covariant_declaration_chart_32":
                       pv["PV-SIMP32"],
                   "price_of_a_covariant_declaration_chart_128":
                       pv["PV-SIMP128"],
+                  "price_without_the_covariance_declaration":
+                      S["surjection"]["dropped_covariance"][
+                          "price_without_the_covariance_declaration"],
                   "what_a_declaration_must_supply":
                       "ONE-POINT-OF-THE-INVARIANT-SIMPLEX-OVER-THE-CARRIERS-"
                       "ORBITS-EXACTLY-AS-BEFORE"}
@@ -2601,35 +3320,53 @@ PREREGISTERED = ["SMU-DERIVED", "SMU-QUASI-DERIVED", "SMU-REDUCIBLE",
                  "SMU-DYNAMICS-RELATIVE", "SMU-BLOCKED-AT"]
 
 
-def head_law(published, agree, widest, blocked):
-    """the builder's head law."""
+def head_law(published, agree, widest, blocked, rel):
+    """the builder's head law.  The spread's POPULATION is taken from the
+    same measured field the spread itself came from -- the covariant deriving
+    count -- and never from the deriving count, because those are different
+    numbers and the head must name the one it measured."""
     if blocked:
         return "SMU-BLOCKED-AT-%s" % blocked
     der = [r for r in published if r["verdict"] == "DERIVES"]
     red = [r for r in published if r["verdict"] == "REDUCIBLE"]
+    n_cov = rel["gauge_covariant_deriving_instances"]
+    if mut("MUT-K1-A"):
+        n_cov = len(der)
     if not der:
         return "SMU-REDUCIBLE-%d-INSTANCES-0-DERIVE" % len(red)
     if agree:
         return "SMU-QUASI-DERIVED-ALL-%d-DERIVING-INSTANCES-AGREE" % len(der)
     if widest > 0:
-        return ("SMU-DYNAMICS-RELATIVE-SPREAD-%s-OVER-%d-DERIVING-INSTANCES"
-                % (widest, len(der)))
+        return ("SMU-DYNAMICS-RELATIVE-SPREAD-%s-OVER-THE-%d-GAUGE-"
+                "COVARIANT-DERIVING-INSTANCES" % (widest, n_cov))
     return "SMU-DERIVED-%d" % len(der)
 
 
-def second_head_law(published, agree, widest, blocked):
-    """an INDEPENDENT reconstruction: a different branch structure, written
-    from the same pre-registered outcomes, sharing no format string and no
-    helper with the builder's."""
+def second_head_law(published, agree, widest, blocked, rel):
+    """an INDEPENDENT reconstruction -- and DE-TWINNED from the builder's.
+    It accepts neither of the builder's aggregates: it recounts the covariant
+    deriving population from the instance records one by one, and it re-takes
+    the widest spread as a maximum over the published relativity rows.  Two
+    head laws that read the same aggregate through the same template cannot
+    disagree about it however wrong it is; these two can, so an edit to one
+    side alone dies at G-HEAD-DERIVED-TWICE."""
     if blocked is not None and blocked != "":
         return "SMU-BLOCKED-AT-" + str(blocked)
     n_der = sum(1 for r in published if r["verdict"] == "DERIVES")
     n_red = sum(1 for r in published if r["verdict"] != "DERIVES")
+    n_cov = 0
+    for r in published:
+        if (r["verdict"] == "DERIVES"
+                and r["gauge_covariant"] in (True, "True")):
+            n_cov += 1
+    spreads = [Fraction(str(row["spread_over_the_covariant_instances"]))
+               for row in rel["rows"]]
+    w2 = max(spreads) if spreads else Fraction(0)
     if n_der == 0:
         return "SMU-REDUCIBLE-" + str(n_red) + "-INSTANCES-0-DERIVE"
-    if not agree and widest > 0:
-        return ("SMU-DYNAMICS-RELATIVE-SPREAD-" + str(widest) + "-OVER-"
-                + str(n_der) + "-DERIVING-INSTANCES")
+    if not agree and w2 > 0:
+        return ("SMU-DYNAMICS-RELATIVE-SPREAD-" + str(w2) + "-OVER-THE-"
+                + str(n_cov) + "-GAUGE-COVARIANT-DERIVING-INSTANCES")
     if agree:
         return ("SMU-QUASI-DERIVED-ALL-" + str(n_der)
                 + "-DERIVING-INSTANCES-AGREE")
@@ -2640,19 +3377,20 @@ def demonstrate_reachability(S, published):
     """the other pre-registered outcomes are REACHABLE, and the reachability
     is RUN rather than advertised: the same head law is handed synthetic
     census tables and must return them."""
+    rel = S["relativity"]
     probes = []
     one = [dict(published[0])]
     one[0] = dict(one[0])
     one[0]["verdict"] = "DERIVES"
     probes.append(("SMU-QUASI-DERIVED", head_law(one, True, Fraction(0),
-                                                 None)))
+                                                 None, rel)))
     allred = [dict(r, verdict="REDUCIBLE") for r in published]
     probes.append(("SMU-REDUCIBLE", head_law(allred, False, Fraction(0),
-                                             None)))
+                                             None, rel)))
     probes.append(("SMU-BLOCKED-AT",
-                   head_law(published, False, Fraction(1), "AN-OBJECT")))
+                   head_law(published, False, Fraction(1), "AN-OBJECT", rel)))
     probes.append(("SMU-DYNAMICS-RELATIVE",
-                   head_law(published, False, Fraction(1, 2), None)))
+                   head_law(published, False, Fraction(1, 2), None, rel)))
     if mut("MUT-REACHABILITY"):
         probes = [(w, "SMU-DYNAMICS-RELATIVE") for w, _g in probes]
     ok = all(got.startswith(want) for want, got in probes)
@@ -2682,6 +3420,9 @@ def build_verdict(S):
     ca = S["chart_action"]
     ga = S["gauge"]
     lr = S["law_refinement"]
+    pr = S["privilege"]
+    en = S["enumeration_sensitivity"]
+    cs = sur["closed_simplex"]
     inst = {r["instance"]: r for r in cen["instances"]}
 
     head = cen["head"]
@@ -2716,9 +3457,13 @@ def build_verdict(S):
     seg.append("(c)LAW-NATIVE-RESAMPLING=IRREDUCIBLE-AND-DERIVES-AT-ALL-%d-"
                "MEMBERS-OF-ITS-DECLARED-FIBRE;THE-MEASURE-IS-%s-SECTOR-"
                "GRADED-AT-%s-AND-INVARIANT-SO-IT-IS-A-POINT-OF-THE-PARENTS-"
-               "SIMPLEX"
+               "SIMPLEX;BUT-ITS-KERNEL-IS-RANK-ONE-EVERY-ROW-OF-THE-LAW-IS-"
+               "THE-SAME-VECTOR-AT-%d-OF-%d-INSTANCES-SO-THE-DERIVED-MEASURE-"
+               "IS-THE-DECLARED-DRAW-LAW-READ-BACK-AND-THE-ROW-IS-STAMPED-%s"
                % (cen["law_native_instances"], cen["law_native_measure_name"],
-                  "-".join(S["law_native_rates"]["values"])))
+                  "-".join(S["law_native_rates"]["values"]),
+                  pr["instances_whose_stationary_measure_is_the_declared_"
+                     "draw_law"], pr["instances"], pr["stamp"]))
     seg.append("(d)COMPOSITION-WALK=IRREDUCIBLE-ON-BOTH-SIDES-AND-DERIVES-"
                "THE-COUNTING-MEASURE-BECAUSE-THE-FAMILY-IS-CLOSED-UNDER-"
                "INVERSE-%d-OF-%d-SO-THE-WALK-IS-DOUBLY-STOCHASTIC-WITH-%d-"
@@ -2750,25 +3495,56 @@ def build_verdict(S):
                "GAUGE-COVARIANT-DERIVING-INSTANCES=%s-ATTAINED-ON-%d-OF-%d-"
                "SETS(%s)"
                "|OVER-ALL-%d-DERIVING-INSTANCES-THE-DECLARED-NON-COVARIANT-"
-               "CONTROL-INCLUDED=%s|AGAINST-THE-PARENTS-WIDEST-OVER-"
-               "INVARIANT-MEASURES-%s-SO-DECLARING-A-DYNAMICS-MOVES-THE-"
-               "PARENTS-OWN-HEADLINE-SETS-%s|QUASI-DERIVATION-ARM-REACHABLE-"
-               "AND-MEASURED-TO-FAIL"
+               "CONTROL-INCLUDED=%s|AT-THE-PARENTS-OWN-THREE-MEASURES-ALL-%s-"
+               "PRESENT-HERE-THIS-CENSUS-REPRODUCES-%s-EXACTLY|THE-RISE-TO-"
+               "%s-IS-THE-%d-NEW-LAW-NATIVE-MEASURES-ENTERING-THE-SAME-"
+               "COMPARISON-NOT-A-DYNAMICS-EFFECT|OVER-THE-WHOLE-COVARIANT-"
+               "FIBRE-THE-RANGE-OF-EVERY-HEADLINE-SET-IS-%s-BY-THE-"
+               "SURJECTION|QUASI-DERIVATION-ARM-REACHABLE-AND-MEASURED-TO-"
+               "FAIL"
                % (rel["gauge_covariant_deriving_instances"], rel["widest_spread"],
                   rel["widest_attained_count"], len(rel["rows"]),
                   ",".join(rel["widest_attained_on"]),
                   rel["deriving_instances"],
                   rel["widest_spread_over_every_deriving_instance"],
-                  rel["parent_widest_spread_over_invariant_measures"],
-                  "FURTHER" if rel["this_fibre_is_wider_than_the_parents"]
-                  else "LESS-FAR"))
+                  rel["parent_measures_contained_in_this_census"].upper(
+                  ).replace(" ", "-"),
+                  rel["this_census_restricted_to_the_parents_own_three_"
+                      "measures"],
+                  rel["widest_spread"],
+                  rel["new_law_native_measures_entering_the_comparison"],
+                  rel["headline_set_range_over_the_invariant_simplex"][0][
+                      "reachable_range_over_the_invariant_simplex"]))
+    seg.append("ENUMERATION=THE-CONTROLS-TARGET-IS-DECLARED-ON-CONTIGUOUS-"
+               "BLOCKS-OF-THE-COIN-INDEX-SO-ITS-TWO-NUMBERS-ARE-ENUMERATION-"
+               "RELATIVE:UNDER-A-SECOND-ADMISSIBLE-READING-OF-THE-PARENTS-"
+               "ALPHABET-THE-CONTROL-EXPECTATION-IS-%s-NOT-%s-AND-THE-SPREAD-"
+               "OVER-ALL-DERIVING-INSTANCES-IS-%s-NOT-%s|THE-LIKE-FOR-LIKE-"
+               "HEADLINE-%s-IS-IDENTICAL-UNDER-BOTH-ENUMERATIONS-BECAUSE-THE-"
+               "COVARIANT-MEASURES-ARE-FUNCTIONS-OF-SECTOR-AND-ORBIT-"
+               "MEMBERSHIP-ALONE"
+               % (en["control_expectation_alternative"],
+                  en["control_expectation_delivered"],
+                  en["widest_spread_over_every_deriving_instance_alternative"],
+                  en["widest_spread_over_every_deriving_instance_delivered"],
+                  en["widest_spread_over_the_covariant_deriving_instances"]))
     seg.append("PRICE=CONSERVED-NOT-PAID:THE-COVARIANT-DYNAMICS-FIBRE-"
-               "SURJECTS-ONTO-THE-INVARIANT-SIMPLEX-SO-A-DECLARATION-STILL-"
+               "SURJECTS-ONTO-THE-CLOSED-INVARIANT-SIMPLEX-BOUNDARY-"
+               "INCLUDED-%d-OF-%d-BOUNDARY-TARGETS-AT-THE-DECLARED-SMALL-"
+               "CARRIERS-AND-%d-OF-%d-AT-THE-ARENA-SO-A-DECLARATION-STILL-"
                "SUPPLIES-%d-INDEPENDENT-NUMBERS-AT-THE-ANCHORED-READING-AND-"
-               "%d-AT-THE-EXTENSION-EXACTLY-THE-PARENTS-COUNTS|WHAT-MOVED-IS-"
-               "WHERE-THE-DECLARATION-IS-MADE-NOT-HOW-MUCH-IT-COSTS"
-               % (fib["price_of_a_covariant_declaration_chart_32"],
-                  fib["price_of_a_covariant_declaration_chart_128"]))
+               "%d-AT-THE-EXTENSION-READING-MEASURED-HERE-UNDER-THE-ORDER-8-"
+               "GROUP-EXACTLY-THE-PARENTS-COUNTS|DROPPED-COVARIANCE-THE-SAME-"
+               "MOVE-COSTS-%d|WHAT-MOVED-IS-WHERE-THE-DECLARATION-IS-MADE-"
+               "NOT-HOW-MUCH-IT-COSTS"
+               % (cs["small_carrier_reached_exactly"],
+                  cs["small_carrier_boundary_targets"],
+                  sum(1 for b in cs["at_the_arena"]
+                      if b["stationary_equals_the_target"]),
+                  len(cs["at_the_arena"]),
+                  fib["price_of_a_covariant_declaration_chart_32"],
+                  fib["price_of_a_covariant_declaration_chart_128"],
+                  fib["price_without_the_covariance_declaration"]))
     seg.append("WILSON=LICENSED-BY-THE-PIN-AND-STAMPED-%s-AT-%d-OF-%d-ROWS|"
                "OBSERVABLE=%s-PLAQUETTE-INDEPENDENT-AT-%d-PLAQUETTES-AND-"
                "GAUGE-INVARIANT|VALUES=%s|RANGE-OVER-THE-INVARIANT-SIMPLEX="
@@ -2823,7 +3599,7 @@ def reconstruct_verdict(S):
 
     agree = rel["all_deriving_instances_agree"]
     widest = Fraction(rel["widest_spread"])
-    head = second_head_law(ins, agree, widest, None)
+    head = second_head_law(ins, agree, widest, None, rel)
 
     parts = []
     parts.append("CENSUS=" + str(len(fams)) + "-FAMILIES-" + str(len(ins))
@@ -2857,11 +3633,19 @@ def reconstruct_verdict(S):
                  "SIMPLEX-DIMENSION-" + str(b1["simplex_dimension"]) + "-AND-"
                  + str(b2["simplex_dimension"]))
     lawi = [r for r in ins if r["family"].startswith("(c)")]
+    pr = payload["privilege"]
     parts.append("(c)LAW-NATIVE-RESAMPLING=IRREDUCIBLE-AND-DERIVES-AT-ALL-"
                  + str(len(lawi)) + "-MEMBERS-OF-ITS-DECLARED-FIBRE;THE-"
                  "MEASURE-IS-" + lawi[0]["measure_name"] + "-SECTOR-GRADED-"
                  "AT-" + "-".join(payload["law_native_rates"]["values"])
-                 + "-AND-INVARIANT-SO-IT-IS-A-POINT-OF-THE-PARENTS-SIMPLEX")
+                 + "-AND-INVARIANT-SO-IT-IS-A-POINT-OF-THE-PARENTS-SIMPLEX;"
+                 "BUT-ITS-KERNEL-IS-RANK-ONE-EVERY-ROW-OF-THE-LAW-IS-THE-"
+                 "SAME-VECTOR-AT-" + str(pr["instances_whose_stationary_"
+                                            "measure_is_the_declared_draw_"
+                                            "law"])
+                 + "-OF-" + str(pr["instances"]) + "-INSTANCES-SO-THE-"
+                 "DERIVED-MEASURE-IS-THE-DECLARED-DRAW-LAW-READ-BACK-AND-"
+                 "THE-ROW-IS-STAMPED-" + pr["stamp"])
     parts.append("(d)COMPOSITION-WALK=IRREDUCIBLE-ON-BOTH-SIDES-AND-DERIVES-"
                  "THE-COUNTING-MEASURE-BECAUSE-THE-FAMILY-IS-CLOSED-UNDER-"
                  "INVERSE-" + str(comp["inverse_closed"]) + "-OF-"
@@ -2906,20 +3690,57 @@ def reconstruct_verdict(S):
                  + ")|OVER-ALL-" + str(rel["deriving_instances"])
                  + "-DERIVING-INSTANCES-THE-DECLARED-NON-COVARIANT-CONTROL-"
                  "INCLUDED=" + rel["widest_spread_over_every_deriving_instance"]
-                 + "|AGAINST-THE-PARENTS-WIDEST-OVER-INVARIANT-MEASURES-"
-                 + rel["parent_widest_spread_over_invariant_measures"]
-                 + "-SO-DECLARING-A-DYNAMICS-MOVES-THE-PARENTS-OWN-HEADLINE-"
-                 "SETS-" + ("FURTHER" if widest > Fraction(
-                     rel["parent_widest_spread_over_invariant_measures"])
-                     else "LESS-FAR")
+                 + "|AT-THE-PARENTS-OWN-THREE-MEASURES-ALL-"
+                 + rel["parent_measures_contained_in_this_census"].upper(
+                 ).replace(" ", "-")
+                 + "-PRESENT-HERE-THIS-CENSUS-REPRODUCES-"
+                 + rel["this_census_restricted_to_the_parents_own_three_"
+                       "measures"]
+                 + "-EXACTLY|THE-RISE-TO-" + rel["widest_spread"] + "-IS-THE-"
+                 + str(rel["new_law_native_measures_entering_the_comparison"])
+                 + "-NEW-LAW-NATIVE-MEASURES-ENTERING-THE-SAME-COMPARISON-"
+                 "NOT-A-DYNAMICS-EFFECT|OVER-THE-WHOLE-COVARIANT-FIBRE-THE-"
+                 "RANGE-OF-EVERY-HEADLINE-SET-IS-"
+                 + rel["headline_set_range_over_the_invariant_simplex"][0][
+                     "reachable_range_over_the_invariant_simplex"]
+                 + "-BY-THE-SURJECTION"
                  + "|QUASI-DERIVATION-ARM-REACHABLE-AND-MEASURED-TO-FAIL")
+    en = payload["enumeration_sensitivity"]
+    parts.append("ENUMERATION=THE-CONTROLS-TARGET-IS-DECLARED-ON-CONTIGUOUS-"
+                 "BLOCKS-OF-THE-COIN-INDEX-SO-ITS-TWO-NUMBERS-ARE-"
+                 "ENUMERATION-RELATIVE:UNDER-A-SECOND-ADMISSIBLE-READING-OF-"
+                 "THE-PARENTS-ALPHABET-THE-CONTROL-EXPECTATION-IS-"
+                 + en["control_expectation_alternative"] + "-NOT-"
+                 + en["control_expectation_delivered"]
+                 + "-AND-THE-SPREAD-OVER-ALL-DERIVING-INSTANCES-IS-"
+                 + en["widest_spread_over_every_deriving_instance_"
+                      "alternative"] + "-NOT-"
+                 + en["widest_spread_over_every_deriving_instance_delivered"]
+                 + "|THE-LIKE-FOR-LIKE-HEADLINE-"
+                 + en["widest_spread_over_the_covariant_deriving_instances"]
+                 + "-IS-IDENTICAL-UNDER-BOTH-ENUMERATIONS-BECAUSE-THE-"
+                 "COVARIANT-MEASURES-ARE-FUNCTIONS-OF-SECTOR-AND-ORBIT-"
+                 "MEMBERSHIP-ALONE")
+    cs = sur["closed_simplex"]
     parts.append("PRICE=CONSERVED-NOT-PAID:THE-COVARIANT-DYNAMICS-FIBRE-"
-                 "SURJECTS-ONTO-THE-INVARIANT-SIMPLEX-SO-A-DECLARATION-"
-                 "STILL-SUPPLIES-" + str(sur["price_chart_32"])
+                 "SURJECTS-ONTO-THE-CLOSED-INVARIANT-SIMPLEX-BOUNDARY-"
+                 "INCLUDED-" + str(cs["small_carrier_reached_exactly"])
+                 + "-OF-" + str(cs["small_carrier_boundary_targets"])
+                 + "-BOUNDARY-TARGETS-AT-THE-DECLARED-SMALL-CARRIERS-AND-"
+                 + str(sum(1 for b in cs["at_the_arena"]
+                           if b["stationary_equals_the_target"]
+                           in (True, "True")))
+                 + "-OF-" + str(len(cs["at_the_arena"]))
+                 + "-AT-THE-ARENA-SO-A-DECLARATION-STILL-SUPPLIES-"
+                 + str(sur["price_chart_32"])
                  + "-INDEPENDENT-NUMBERS-AT-THE-ANCHORED-READING-AND-"
                  + str(sur["price_chart_128"])
-                 + "-AT-THE-EXTENSION-EXACTLY-THE-PARENTS-COUNTS|WHAT-MOVED-"
-                 "IS-WHERE-THE-DECLARATION-IS-MADE-NOT-HOW-MUCH-IT-COSTS")
+                 + "-AT-THE-EXTENSION-READING-MEASURED-HERE-UNDER-THE-ORDER-"
+                 "8-GROUP-EXACTLY-THE-PARENTS-COUNTS|DROPPED-COVARIANCE-THE-"
+                 "SAME-MOVE-COSTS-" + str(sur["dropped_covariance"][
+                     "price_without_the_covariance_declaration"])
+                 + "|WHAT-MOVED-IS-WHERE-THE-DECLARATION-IS-MADE-NOT-HOW-"
+                 "MUCH-IT-COSTS")
     vals = set()
     for r in wil["rows"]:
         vals.add(r["block_trace_value"] + "@" + r["the_measure"])
@@ -2976,9 +3797,9 @@ def summarise_census(S, published, agree, widest):
         "law_native_instances": len(lawi),
         "law_native_measure_name": lawi[0]["measure_name"] if lawi else "NONE",
         "instances": published,
-        "head": head_law(published, agree, widest, None),
+        "head": head_law(published, agree, widest, None, S["relativity"]),
     }
-    h2 = second_head_law(published, agree, widest, None)
+    h2 = second_head_law(published, agree, widest, None, S["relativity"])
     if mut("MUT-HEAD"):
         S["census"]["head"] = "SMU-DERIVED-EVERYTHING"
     LD.gate("G-HEAD-DERIVED-TWICE",
@@ -3002,25 +3823,36 @@ def summarise_census(S, published, agree, widest):
 # ones included.  What is NOT on this list -- wilson, expectation, loop
 # average -- is what the pin licenses here and paper-23 withheld, and it is
 # gated on the product instead, per row, in G-WILSON-LICENCE.
+# receipt keys whose values are DIGESTS -- identifiers, not values this run
+# computed.  Their digits do not license a paper numeral; the digests
+# themselves are bound as rendered claims instead.
+DIGEST_KEYS = {"pinned", "measured", "digest", "code_sha256_12",
+               "paper_sha256_12", "pin_sha256_prefix"}
+
+# and one whole published object is excluded for the same reason: the
+# falsifier registry DESCRIBES this instrument -- it publishes the exact
+# source token each mutant plants -- so harvesting it would let a falsifier
+# license the very numeral it plants, and the coverage gate would forgive a
+# corruption because the corruption was declared.  Measured: without this
+# exclusion MUT-COVERAGE survives.
+POOL_EXCLUDED = {"mutants"}
+
 MUST_NOT = [
     "area law", "area-law", "the law of the area",
     "string tension", "string-tension",
     "confining", "confinement", "quark", "potential",
 ]
+# the declaring sentences the sweep may remove.  The list is EXACTLY the
+# sentences this paper contains -- an exemption inherited from a parent and
+# never used here is a latent hole, so the gate requires every entry to be
+# located and the eight inherited-but-inert entries were dropped rather than
+# carried.
 DECLARING = [
     "no area-law, string-tension, or potential claim",
     "NO-AREA-LAW-NO-STRING-TENSION-NO-POTENTIAL-CLAIM",
     "NO-CONFINEMENT-CLAIM",
-    "the confinement vocabulary stays behind its gate",
-    "The confinement vocabulary stays behind its gate",
-    "makes no area-law, string-tension or potential claim",
-    "no area-law claim, no string-tension claim and no potential claim",
-    "A confinement analog would need three objects this arena does not have",
-    "the words this unit does not use",
     "grows no loop family and makes no claim about how any expectation "
     "would behave as a loop grows",
-    "the confinement vocabulary is barred outright",
-    "what a confinement-shaped follow-on would need",
 ]
 
 
@@ -3042,7 +3874,11 @@ def build_claims(S):
     c.append(("%d of %d extension elements carry a uniform configuration off "
               "the carrier" % (ca["CHART-128"]["mixed_reversal"],
                                ca["CHART-128"]["order"]), 1))
-    c.append(("closure is %d states" % ca["CHART-128"]["enlarged_carrier"], 1))
+    c.append(("closure is %d states, and on it the walk has %d closed "
+              "classes" % (ca["CHART-128"]["enlarged_carrier"],
+                           ix["CHART-128"]["closed_classes"]), 1))
+    c.append(("%d sites, %d links and %d plaquettes"
+              % (ar["sites"], ar["links"], ar["plaquettes"]), 1))
     c.append(("%d closed classes" % ix["CHART-32"]["closed_classes"], 1))
     c.append(("%d and %d closed classes" %
               (ix["GAUGE-CHART-32"]["closed_classes"],
@@ -3064,8 +3900,10 @@ def build_claims(S):
     c.append(("over all %d deriving instances it is %s"
               % (rel["deriving_instances"],
                  rel["widest_spread_over_every_deriving_instance"]), 1))
-    c.append(("the parent's widest spread over invariant measures was %s" %
-              rel["parent_widest_spread_over_invariant_measures"], 1))
+    c.append(("the parent's widest spread over its own three named nulls "
+              "was %s"
+              % rel["parent_widest_spread_over_its_own_three_named_nulls"],
+              1))
     c.append(("%d targets at a declared denominator, %d failures" %
               (sur["exhaustive_small_carrier_targets"],
                sur["exhaustive_small_carrier_failures"]), 1))
@@ -3091,7 +3929,7 @@ def build_claims(S):
               "measured verdict-determining"
               % (len(S["fibre"]["rows"]),
                  sum(1 for r in S["fibre"]["rows"]
-                     if r.get("verdict_determining"))), 1))
+                     if r.get("verdict_determining") is True)), 1))
     wl = S["waiver_ledger"]
     c.append(("%d are the declared targets of falsifiers, %d are the "
               "per-instance gates under one registered forcing, and %d are "
@@ -3101,8 +3939,118 @@ def build_claims(S):
     for r in wil["rows"]:
         c.append(("%s under %s" % (r["block_trace_value"],
                                    r["declared_dynamics"]), 1))
+
+    # ---- the repaired numbers, each bound where the paper states it
+    c.append(("restricted to those same three the widest spread is %s"
+              % rel["this_census_restricted_to_the_parents_own_three_"
+                    "measures"], 1))
+    c.append(("all %s of the parent's compared measures are in this census"
+              % rel["parent_measures_contained_in_this_census"], 1))
+    cs = sur["closed_simplex"]
+    c.append(("%d boundary targets, %d reached exactly, %d with exactly one "
+              "closed class, %d irreducible"
+              % (cs["small_carrier_boundary_targets"],
+                 cs["small_carrier_reached_exactly"],
+                 cs["small_carrier_with_exactly_one_closed_class"],
+                 cs["small_carrier_irreducible"]), 1))
+    c.append(("%d of %d at the arena"
+              % (sum(1 for b in cs["at_the_arena"]
+                     if b["stationary_equals_the_target"]),
+                 len(cs["at_the_arena"])), 1))
+    c.append(("costs %d numbers instead of %d"
+              % (sur["dropped_covariance"][
+                  "price_without_the_covariance_declaration"],
+                 sur["dropped_covariance"][
+                     "price_with_the_covariance_declaration"]), 1))
+    pri = S["privilege"]
+    c.append(("every row of the transition law is the same vector at %d of "
+              "%d instances"
+              % (pri["instances_whose_stationary_measure_is_the_declared_"
+                     "draw_law"], pri["instances"]), 1))
+    exc = S["extension_covariance"]
+    c.append(("%d covariant deriving instances under the order-4 group and "
+              "%d under the order-8 group"
+              % (exc["covariant_deriving_under_the_order_4_group"],
+                 exc["covariant_deriving_under_the_order_8_group"]), 1))
+    en = S["enumeration_sensitivity"]
+    c.append(("the expectation is %s rather than %s and the spread over all "
+              "deriving instances is %s rather than %s"
+              % (en["control_expectation_alternative"],
+                 en["control_expectation_delivered"],
+                 en["widest_spread_over_every_deriving_instance_alternative"],
+                 en["widest_spread_over_every_deriving_instance_delivered"]),
+              1))
+    dt = S["dimension_theorem"]
+    c.append(("%d chains enumerated exhaustively over the %d-state and "
+              "%d-state layers" % (dt["chains_enumerated"],
+                                   dt["carrier_states"][0],
+                                   dt["carrier_states"][1]), 1))
+
+    # ---- THE PROVENANCE DIGESTS, bound as claims rather than licensed as
+    # numeral fragments (E-22's spirit: an identifier is a claim too)
+    # each digest is bound to ITS OWN PATH and not merely to its existence:
+    # two digests exchanged between two sources leave both occurrence counts
+    # at one, so an existence claim cannot see the exchange.  Measured: the
+    # (path, digest) form kills it and the bare form does not.
+    for _nm, rel_path, sha, _what in SOURCES:
+        if sha == PIN_SHA12:
+            c.append(("`%s` (sha256-12 `%s`)" % (rel_path, sha), 1))
+        else:
+            c.append(("`%s` (`%s`)" % (rel_path, sha), 1))
+
+    # ---- THE DELIVERED TABLES, RENDERED AS CLAIMS (E-22)
+    # section 1: the pre-registered outcomes
+    c.append(("`SMU-DERIVED` | a census in which every deriving instance "
+              "carried the same vector, with the reducible ones absent | not "
+              "the case: the deriving instances carry %d distinct stationary "
+              "vectors" % cen["distinct_stationary_vectors"], 1))
+    c.append(("`SMU-QUASI-DERIVED` | all deriving instances agree — "
+              "decided by comparing their vectors entry by entry, not "
+              "inferred | the vectors are compared and disagree", 1))
+    c.append(("`SMU-REDUCIBLE` | no declared dynamics has a single closed "
+              "class | %d do" % cen["derive"], 1))
+    c.append(("`SMU-DYNAMICS-RELATIVE` | the deriving instances disagree and "
+              "the spread is positive | **this is what is measured**", 1))
+    c.append(("`SMU-BLOCKED-AT` | an object that cannot be evaluated at all "
+              "| every declared instance is evaluable and is evaluated", 1))
+    # section 4: the census table, every cell from the receipt
+    fam_order = []
+    for r in cen["instances"]:
+        if r["family"] not in fam_order:
+            fam_order.append(r["family"])
+    for fam in fam_order:
+        mem = [r for r in cen["instances"] if r["family"] == fam]
+        tag, name = fam.split(" ", 1)
+        fibv = mem[0]["fibre"]
+        fibc = (str(fibv) if isinstance(fibv, int)
+                else fibv.lower().replace("-", " "))
+        cols = []
+        for key in ("irreducible", "closed_classes"):
+            seq = []
+            for r in mem:
+                v = ("yes" if r[key] else "no") if key == "irreducible" \
+                    else str(r[key])
+                if not seq or seq[-1] != v:
+                    seq.append(v)
+            cols.append(" / ".join(seq))
+        c.append(("%s | %s | %s | %s | %s | %s"
+                  % (tag, name.lower(),
+                     mem[0]["fibre_axis"].lower().replace("-", " "), fibc,
+                     cols[0], cols[1]), 1))
+    # section 6: the dynamics-relativity table, every cell from the receipt
+    for r in rel["rows"]:
+        cells = [r["set"], str(r["configurations_COUNTING_ONLY"])]
+        for k in RELATIVITY_COLUMNS:
+            cells.append(r["mass_by_declared_dynamics"][k])
+        c.append((" | ".join(cells), 1))
     return c
 
+
+# the four columns of the section-6 table, named by the declared instance
+# whose stationary measure produces each one
+RELATIVITY_COLUMNS = ["COMPOSITION-LEFT", "LAW-NATIVE-012",
+                      "METROPOLIS-AT-ORBIT-UNIFORM-CHART-32",
+                      "METROPOLIS-AT-ORBIT-UNIFORM-CHART-128"]
 
 POLARITY = [
     ("the stationary measure MOVES across the declared-dynamics fibre", 1),
@@ -3120,14 +4068,33 @@ def verify_paper(S, paper_text):
     fenced blocks, inline code spans and both sides of every fraction."""
     LDx = LD
     claims = build_claims(S)
-    hay = mnorm(paper_text)
+    ptext = paper_text
+    if mut("MUT-CLAIM"):
+        ptext = ptext.replace("%d of them derive" % S["census"]["derive"],
+                              "11 of them derive", 1)
+    if mut("MUT-TABLE-ROW"):
+        a = re.search(r"^(\|\s*NON-COMMUTING\s*\|)(.*)$", ptext, re.M)
+        b = re.search(r"^(\|\s*DEFECT-CARRYING\s*\|)(.*)$", ptext, re.M)
+        if a and b:
+            ptext = ptext.replace(a.group(0), a.group(1) + b.group(2), 1)
+            ptext = ptext.replace(b.group(0), b.group(1) + a.group(2), 1)
+    if mut("MUT-QUOTE-FIDELITY"):
+        ptext = ptext.replace("the ordered product of the four link",
+                              "the unordered sum of the four link", 1)
+    if mut("MUT-TABLE-BINDING"):
+        ptext = ptext + "\n\n| a | b |\n|---|---|\n| planted | 4242 |\n"
+    if mut("MUT-MUST-NOT"):
+        ptext = ptext + "\n\nThe expectation follows an area law and the "
+        ptext = ptext + "string tension is its coefficient.\n"
+    if mut("MUT-COVERAGE"):
+        ptext = ptext + "\n\nan uncovered numeral 987654321\n"
+    hay = mnorm(ptext)
     miss = []
     for frag, want in claims:
         got = hay.count(mnorm(frag))
         if got != want:
             miss.append({"claim": frag, "expected": want, "found": got})
-    if mut("MUT-CLAIM"):
-        miss = [{"claim": "planted", "expected": 1, "found": 0}]
+    S["paper_claims"] = [{"claim": f, "occurrences": w} for f, w in claims]
     LDx.gate("G-PAPER-CLAIMS",
             "every load-bearing sentence of the paper is RENDERED FROM THE "
             "RECEIPT and located in the delivered bytes at its exact "
@@ -3137,10 +4104,12 @@ def verify_paper(S, paper_text):
             "the run that produced it cannot be delivered",
             not miss, "%d rendered claims, %d not located at their counts: %s"
             % (len(claims), len(miss), miss[:3]))
+    SEAL.take("THE PAPER CLAIMS", "paper_claims", "G-PAPER-CLAIMS",
+              S["paper_claims"])
 
     verdict = S["verdict"]
     blocks = [wsnorm(b) for b in
-              re.findall(r"```(?:[a-z]*)\n(.*?)```", paper_text, re.S)]
+              re.findall(r"```(?:[a-z]*)\n(.*?)```", ptext, re.S)]
     if mut("MUT-VERDICT-TWIN"):
         blocks = blocks + [wsnorm(verdict).replace("SMU-", "XMU-")]
     LDx.gate("G-PAPER-VERDICT-EQUALITY",
@@ -3156,23 +4125,32 @@ def verify_paper(S, paper_text):
                             sum(1 for b in blocks if b == wsnorm(verdict)),
                             len(verdict)))
 
-    sw = mnorm(paper_text)
+    sw = mnorm(ptext)
+    inert = [d[:40] for d in DECLARING if mnorm(d) not in sw]
     for d in DECLARING:
         sw = sw.replace(mnorm(d), " ")
     hits = [w for w in MUST_NOT if mnorm(w) in sw]
-    if mut("MUT-MUST-NOT"):
-        hits = ["planted"]
     LDx.gate("G-MUST-NOT-VOCABULARY",
             "the pin's must-not vocabulary -- inherited VERBATIM from "
             "paper-23's repaired gate, the bare words included -- is swept "
             "over this paper's own text with the declaring sentences removed "
             "first and inline emphasis stripped, so a claim under asterisks "
             "is still the same claim and a paragraph that made an area-law, "
-            "string-tension or potential claim would die on the delivery run",
-            not hits, "must-not vocabulary found: %s" % hits)
+            "string-tension or potential claim would die on the delivery "
+            "run.  Every declaring sentence the sweep is allowed to remove "
+            "must itself be LOCATED in this paper: an exemption carried from "
+            "a parent and never used is a latent hole, so the declaring list "
+            "is required to be exactly the sentences this text contains",
+            not hits and not inert,
+            "must-not vocabulary found: %s; %d declaring sentences, %d of "
+            "them not located in this paper: %s"
+            % (hits, len(DECLARING), len(inert), inert[:3]))
 
     pol = []
-    low = mnorm(paper_text)
+    low = mnorm(ptext)
+    if mut("MUT-POLARITY"):
+        low = low.replace(mnorm(POLARITY[0][0]),
+                          "it is false that " + mnorm(POLARITY[0][0]), 1)
     for frag, want in POLARITY:
         nfound = low.count(mnorm(frag))
         i = low.find(mnorm(frag))
@@ -3183,8 +4161,7 @@ def verify_paper(S, paper_text):
                                          "does not follow that"))
         pol.append({"fragment": frag, "expected": want, "found": nfound,
                     "negated": bad, "ok": nfound == want and not bad})
-    if mut("MUT-POLARITY"):
-        pol[0]["ok"] = False
+    S["paper_polarity"] = pol
     LDx.gate("G-PAPER-POLARITY",
             "the direction-bearing claims are checked for POLARITY as well "
             "as presence -- each must occur and must not sit inside a window "
@@ -3193,6 +4170,70 @@ def verify_paper(S, paper_text):
             all(p["ok"] for p in pol),
             "%d polarity rows, %d failing"
             % (len(pol), sum(1 for p in pol if not p["ok"])))
+    SEAL.take("THE PAPER POLARITY", "paper_polarity", "G-PAPER-POLARITY",
+              S["paper_polarity"])
+
+    # ---- E-22 at full strength: TABLES AND QUOTATIONS ARE BOUND.  The
+    # instrument's grip on its own prose was 33 rendered sentences and nil
+    # over three tables and twelve quotations; both are closed here.
+    plines = ptext.split("\n")
+    sep = r"^\|[\s:\-|]+\|$"
+    trows, theads = [], []
+    for i, line in enumerate(plines):
+        st = line.strip()
+        if not st.startswith("|"):
+            continue
+        if re.match(sep, st):
+            continue
+        nxt = plines[i + 1].strip() if i + 1 < len(plines) else ""
+        if re.match(sep, nxt):
+            theads.append(st)
+            continue
+        if re.search(r"\d", st):
+            trows.append(st)
+    claim_texts = [mnorm(f) for f, _w in claims]
+    unbound_rows = [r[:70] for r in trows
+                    if not any(ct and ct in mnorm(r) for ct in claim_texts)]
+    quotes, blk = [], []
+    for line in plines:
+        st = line.strip()
+        if st.startswith(">"):
+            blk.append(st[1:].strip())
+        elif blk:
+            quotes.append(" ".join(blk))
+            blk = []
+    if blk:
+        quotes.append(" ".join(blk))
+    needles = [mnorm(w) for _a, _s, w, _c, _wh in VERBATIM]
+    unbound_quotes = [q[:70] for q in quotes
+                      if len(mnorm(q)) < 30
+                      or not any(mnorm(q) in nd for nd in needles)]
+    LDx.gate("G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
+            "E-22's 'tables render as claims' is enforced structurally, so a "
+            "table added later cannot arrive unbound: every DATA row of "
+            "every delivered table that carries a numeral must be covered by "
+            "a claim rendered from the receipt, and every BLOCKQUOTE in this "
+            "paper must lie inside one of the pinned verbatim windows -- so "
+            "a paper that misquotes, or inverts, a parent's own definition "
+            "dies here even though the anchor on the parent's bytes passes.  "
+            "Header rows are the declared exception and are counted and "
+            "published rather than silently skipped",
+            not unbound_rows and not unbound_quotes,
+            "%d table data rows carrying a numeral, %d unbound %s; %d header "
+            "rows excluded; %d blockquotes, %d not located inside a pinned "
+            "verbatim window %s"
+            % (len(trows), len(unbound_rows), unbound_rows[:2], len(theads),
+               len(quotes), len(unbound_quotes), unbound_quotes[:2]))
+    S["paper_binding"] = {
+        "table_data_rows_carrying_a_numeral": len(trows),
+        "table_rows_unbound": len(unbound_rows),
+        "table_header_rows_excluded": len(theads),
+        "blockquotes": len(quotes),
+        "blockquotes_outside_a_pinned_verbatim_window": len(unbound_quotes),
+        "verbatim_windows_available": len(VERBATIM),
+    }
+    SEAL.take("THE PAPER BINDING", "paper_binding",
+              "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND", S["paper_binding"])
 
     allowed = set()
 
@@ -3211,6 +4252,8 @@ def verify_paper(S, paper_text):
                 if isinstance(k, str):
                     for m in re.findall(r"\d+(?:/\d+)?", k):
                         add(m)
+                if isinstance(k, str) and k in DIGEST_KEYS:
+                    continue
                 harvest(v)
         elif isinstance(o, list):
             for v in o:
@@ -3222,16 +4265,22 @@ def verify_paper(S, paper_text):
         elif isinstance(o, str):
             for m in re.findall(r"\d+(?:/\d+)?", o):
                 add(m)
-    harvest({k: v for k, v in S.items() if not k.startswith("_")})
-    # the ONLY literals the coverage gate may forgive: section numbers up
-    # to this paper's own length, and the corpus engraving references.  The
-    # list is published in the receipt so a reader can see exactly what was
-    # forgiven.
-    STRUCTURAL = ({str(k) for k in range(0, 28)}
+    harvest({k: v for k, v in S.items()
+             if not k.startswith("_") and k not in POOL_EXCLUDED})
+    # the ONLY literals the coverage gate may forgive: this paper's own
+    # SECTION NUMBERS.  The engraving references are forgiven only in their
+    # parenthesised (#NNN) / (E-NN) form, which is removed from the scan
+    # rather than whitelisted as a bare numeral -- so a delivered number that
+    # happens to equal an engraving reference is still gated (119 is the
+    # extension's price as well as the seal engraving).  The pinned digests
+    # are removed from the scan too, because they are bound as CLAIMS above
+    # and are identifiers rather than values this run computed; their digits
+    # are correspondingly excluded from the licensing pool.
+    STRUCTURAL = ({str(k) for k in range(1, 13)}
                   | {"%d.%d" % (a, b) for a in range(1, 13)
-                     for b in range(0, 13)}
-                  | {"34", "46", "62", "82", "87", "91", "119", "125"})
-    scan = paper_text
+                     for b in range(0, 13)})
+    scan = re.sub(r"\((?:#\d+|E-\d+)(?:,\s*(?:#\d+|E-\d+))*\)", " ", ptext)
+    scan = re.sub(r"`[0-9a-f]{12}`", " ", scan)
     nums = re.findall(r"\d+(?:/\d+)?(?:\.\d+)?", scan)
     unmatched = []
     for x in nums:
@@ -3240,10 +4289,8 @@ def verify_paper(S, paper_text):
         if "/" in x and all(p in allowed for p in x.split("/")):
             continue
         unmatched.append(x)
-    if mut("MUT-COVERAGE"):
-        unmatched = ["planted"]
-    spans = len(re.findall(r"`[^`]*\d[^`]*`", paper_text))
-    fenced = len(re.findall(r"```", paper_text))
+    spans = len(re.findall(r"`[^`]*\d[^`]*`", ptext))
+    fenced = len(re.findall(r"```", ptext))
     LDx.gate("G-PAPER-NUMERAL-COVERAGE",
             "EVERY numeral of the paper is matched against a value this run "
             "computed -- fenced blocks, verdict block, inline code spans and "
@@ -3258,16 +4305,17 @@ def verify_paper(S, paper_text):
                            "inline_spans_with_a_numeral": spans,
                            "fence_markers": fenced,
                            "unmatched": len(unmatched),
+                           "removed_from_the_scan_and_bound_as_claims":
+                               "THE-PARENTHESISED-ENGRAVING-REFERENCES-AND-"
+                               "THE-BACKTICKED-TWELVE-HEX-DIGESTS",
+                           "digest_valued_keys_excluded_from_the_pool":
+                               sorted(DIGEST_KEYS),
+                           "published_objects_excluded_from_the_pool":
+                               sorted(POOL_EXCLUDED),
                            "structural_literals_forgiven":
                                sorted(STRUCTURAL)}
-    S["paper_claims"] = [{"claim": f, "occurrences": w} for f, w in claims]
-    S["paper_polarity"] = pol
     SEAL.take("THE PAPER COVERAGE", "paper_coverage",
               "G-PAPER-NUMERAL-COVERAGE", S["paper_coverage"])
-    SEAL.take("THE PAPER CLAIMS", "paper_claims", "G-PAPER-CLAIMS",
-              S["paper_claims"])
-    SEAL.take("THE PAPER POLARITY", "paper_polarity", "G-PAPER-POLARITY",
-              S["paper_polarity"])
 
 
 # ===========================================================================
@@ -3279,12 +4327,13 @@ MUTANTS = [
      "replaces one pinned source's measured digest with zeros",
      '"000000000000"'),
     ("MUT-AST-BLIND", "G-EXACT-ARITHMETIC-BY-AST",
-     "empties the float-literal list and plants a banned import",
-     'badimp = ["planted"]'),
+     "plants a real float literal into the source text the AST gate parses",
+     "_TOLERANCE_FLOAT = 1e-9"),
     ("MUT-PATH-VALUE", "G-PATH-VALUE-ANCHORS",
      "moves one inherited path-value to 999", "got = 999"),
     ("MUT-VERBATIM", "G-VERBATIM-ANCHORS",
-     "fails one verbatim window's locate-and-perturb test", "ok = False"),
+     "perturbs one verbatim window's own text so it stops locating in "
+     "the parent's pinned bytes", '"reducibility"'),
     ("MUT-ARENA", "G-ARENA-REBUILT",
      "drops one coin from the rebuilt family", "coins = coins[:-1]"),
     ("MUT-CHART-ACTION", "G-CHART-ACTION-MEASURED",
@@ -3313,27 +4362,34 @@ MUTANTS = [
      "truncates the synthetic witness's class list so the gap is not "
      "exhibited", "comps = comps[:1]"),
     ("MUT-DIMENSION-THEOREM", "G-SIMPLEX-DIMENSION-THEOREM",
-     "inverts the exhaustive theorem check's mismatch count",
-     "bad = 0 if bad else 1"),
+     "replaces the first enumerated chain with an identity chain, whose "
+     "kernel dimension disagrees with its own closed-class count",
+     "P = [{i: Fraction(1)} for i in range(m)]"),
     ("MUT-WELD", "G-GAUGE-WALK-CLASSES-ARE-THE-PARENTS-ORBITS",
-     "denies the set-level identity between the gauge walk's classes and "
-     "the parent's orbits", "same32 = False"),
+     "drops one element from one closed class of the gauge walk before "
+     "the set-level comparison with the parent's orbits",
+     "c[:-1] if i == 0"),
     ("MUT-MONOMIAL", "G-MONOMIAL-WALK-CARRIES-THE-PARENTS-HAAR",
-     "denies that one closed class is the parent's Haar carrier",
-     "carries = False"),
+     "drops one coin from the parent's Haar carrier before the set-level "
+     "comparison with the monomial walk's classes",
+     "sorted(monoset)[:-1]"),
     ("MUT-ORBIT-CLOSURE", "G-SETS-ARE-UNIONS-OF-ORBITS",
      "declares one re-weighed set not to be a union of orbits",
      '"orbit_closed_chart_32"'),
     ("MUT-SPREAD", "G-RELATIVITY-CENSUS",
      "zeroes the widest measured spread", "widest = Fraction(0)"),
     ("MUT-QUASI", "G-QUASI-DERIVATION-ARM-IS-DECIDED-NOT-ASSUMED",
-     "declares the deriving instances to agree when they do not",
-     "agree = True"),
+     "replaces every deriving instance's stationary vector with the "
+     "first one's, so the compared table really does agree",
+     'pis = {k: S["_pi"][der[0]'),
     ("MUT-SURJECTION", "G-PRICE-IS-CONSERVED",
-     "inverts the exhaustive surjection arm's failure count",
-     "bad = 1 if bad == 0"),
+     "replaces the first enumerated target's chain with the chain at the "
+     "uniform target, so that target is not reached",
+     "P = metropolis([Fraction(1, 4)] * 4, 4)"),
     ("MUT-WILSON-OBSERVABLE", "G-WILSON-OBSERVABLE-REBUILT",
-     "plants a plaquette-dependent cell in the loop observable", "dep = 1"),
+     "perturbs one configuration's block-trace value, so the observable "
+     "stops being plaquette-independent at that configuration",
+     "tb[0] = fadd(tb[0], ONE)"),
     ("MUT-WILSON-UNLICENSED", "G-WILSON-LICENCE",
      "publishes an expectation under a REDUCIBLE dynamics",
      '"derives_given_the_declared_dynamics": False'),
@@ -3349,17 +4405,20 @@ MUTANTS = [
      "corrupts the builder's verdict string after it is built",
      "verdict.replace("),
     ("MUT-CLAIM", "G-PAPER-CLAIMS",
-     "plants a rendered claim that the paper does not carry",
-     '"claim": "planted"'),
+     "corrupts a load-bearing count in the paper text the claim gate "
+     "scans", '"11 of them derive"'),
     ("MUT-VERDICT-TWIN", "G-PAPER-VERDICT-EQUALITY",
      "adds a forged twin of the verdict fence beside the clean one",
      '"XMU-"'),
     ("MUT-MUST-NOT", "G-MUST-NOT-VOCABULARY",
-     "plants a must-not vocabulary hit", 'hits = ["planted"]'),
+     "plants an area-law and string-tension sentence into the paper text "
+     "the sweep scans", "follows an area law"),
     ("MUT-POLARITY", "G-PAPER-POLARITY",
-     "fails one polarity row", 'pol[0]["ok"] = False'),
+     "plants a declared negator immediately before a direction-bearing "
+     "claim in the scanned text", '"it is false that "'),
     ("MUT-COVERAGE", "G-PAPER-NUMERAL-COVERAGE",
-     "plants an unmatched numeral", 'unmatched = ["planted"]'),
+     "plants a numeral into the paper text that no value this run "
+     "computed can license", "an uncovered numeral 987654321"),
     ("MUT-GHOST-FUNCTION", "G-FUNCTION-INVENTORY-IS-TOTAL",
      "defines an undeclared function in this instrument's own source text",
      "def ghost_helper"),
@@ -3369,17 +4428,19 @@ MUTANTS = [
     ("MUT-SEAL", "G-SEAL-INTEGRITY",
      "edits a sealed object after its gate closed", '"MOVED-AFTER-THE-GATE"'),
     ("MUT-CARRIER", "G-CARRIER-IS-THE-PARENTS-PRIMARY-CARRIER",
-     "denies that this unit's carrier is the parent's primary carrier",
-     "carrier_ok = False"),
+     "restricts the chart group to its identity element before its "
+     "action on the link set is measured, so transitivity fails",
+     "if e == ((0, 0), (False, 1, 1))"),
     ("MUT-ENLARGEMENT", "G-CHART-128-ENLARGEMENT",
      "truncates the extension's orbit closure back to the parent's carrier",
      "states = states[:len(coins)]"),
     ("MUT-SIMPLEX-DIM", "G-GAUGE-WALK-SIMPLEX-IS-THE-PARENTS-SIMPLEX",
-     "inverts the comparison of the gauge walk's simplex dimensions with "
-     "the parent's", "ok = not ok"),
+     "makes two exhibited extreme points share a support, so the "
+     "exhibited basis is no longer independent",
+     "sup[1] = set(sup[0])"),
     ("MUT-WILSON-GAUGE-INVARIANCE", "G-WILSON-OBSERVABLE-IS-GAUGE-INVARIANT",
-     "denies that the loop observable is constant on the gauge orbits",
-     "gauge_inv = False"),
+     "perturbs one observable value inside a gauge orbit of size greater "
+     "than one", "tbg[big4[1]] = fadd("),
     ("MUT-REACHABILITY", "G-HEAD-LAW-REACHABILITY",
      "collapses the head law's synthetic probes to one outcome",
      '"SMU-DYNAMICS-RELATIVE") for w, _g in probes'),
@@ -3390,13 +4451,72 @@ MUTANTS = [
     ("MUT-FALSIFIER-DESCRIPTION", "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST",
      "replaces one falsifier's published planted-token with a token its "
      "branch does not contain", '"a token it never plants"'),
+    # ---- the falsifiers the review round bought
+    ("MUT-K1-A", "G-HEAD-DERIVED-TWICE",
+     "re-plants the twin-template population label in the BUILDER's head law "
+     "alone, so the head names the deriving count where the spread it "
+     "carries was measured over the covariant one -- the live defect, which "
+     "the de-twinned second law now contradicts", "n_cov = len(der)"),
+    ("MUT-K1-B", "G-INSTANCE-LAW-NATIVE-012",
+     "draws NON-UNIFORMLY inside each sector while leaving the declared "
+     "sector law untouched -- an undeclared change to a declared "
+     "construction that preserves every sector mass",
+     "Fraction(1 + (q % 3), wsum)"),
+    ("MUT-CAP", "G-ELIMINATION-CAP-IS-ENFORCED",
+     "records one instance's exact solve as larger than the declared "
+     "elimination cap", "ELIMINATION_CAP + 1"),
+    ("MUT-G8-COVARIANCE", "G-EXTENSION-COVARIANCE-IS-MEASURED-NOT-INHERITED",
+     "corrupts one row of the chain whose covariance under the ORDER-8 "
+     "residual group is measured", "P8[0] = {0: Fraction(1)}"),
+    ("MUT-RANK-ONE", "G-THE-LAW-NATIVE-KERNEL-IS-RANK-ONE",
+     "replaces one row of the law-native transition law, so its rows are no "
+     "longer the same vector", "rows_of_P[0] = {0: Fraction(1)}"),
+    ("MUT-RESTRICTED",
+     "G-THE-RESTRICTED-COMPARISON-REPRODUCES-THE-PARENTS-NUMBER",
+     "substitutes a law-native vector for one of the parent's own three "
+     "measures in the restricted comparison table",
+     'rep["COUNTING"] = ("PLANTED"'),
+    ("MUT-INDICATOR-RANGE", "G-HEADLINE-SET-RANGE-IS-THE-WHOLE-UNIT-INTERVAL",
+     "replaces one witness orbit point mass with the counting measure, so "
+     "the set's mass there is no longer the endpoint",
+     "w = [Fraction(1, n)] * n"),
+    ("MUT-BOUNDARY", "G-THE-SURJECTION-REACHES-THE-CLOSED-SIMPLEX",
+     "replaces the first boundary target's chain with the chain at the "
+     "uniform target, so the boundary target is not reached",
+     "P = metropolis([Fraction(1, m)] * m, m)"),
+    ("MUT-DROPPED-COVARIANCE", "G-DROPPED-COVARIANCE-COSTS-THE-WHOLE-SIMPLEX",
+     "zeroes one entry of the control's target, so the full-support witness "
+     "the corollary needs is no longer full support",
+     "ctrl_sup[0] = Fraction(0)"),
+    ("MUT-WILSON-RANGE", "G-WILSON-RANGE-IS-MEASURED",
+     "enlarges the minimising orbit, so the endpoint is no longer attained "
+     "at an extreme point of the simplex",
+     "lo = (lo[0], lo[1] + [i for i in range(len(coins))"),
+    ("MUT-ENUMERATION", "G-CONTROL-TARGET-ENUMERATION-SENSITIVITY",
+     "replaces the alternative alphabet with the delivered one, so the "
+     "sensitivity probe is no longer a different enumeration",
+     'alt_alph = list(S["_alph"])'),
+    ("MUT-LEDGER-SHAPE", "G-LEDGER-SHAPE-IS-CONSISTENT",
+     "inflates the published instance-gate count above the rows the ledger "
+     "actually carries", 'ls["instance_gates"] = ls["instance_gates"] + 1'),
+    ("MUT-TABLE-ROW", "G-PAPER-CLAIMS",
+     "exchanges the mass cells of two rows of the delivered section-6 table "
+     "in the paper text, leaving both row labels in place",
+     "a.group(1) + b.group(2)"),
+    ("MUT-QUOTE-FIDELITY", "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
+     "inverts a parent's own definition inside a blockquote the paper "
+     "attributes to it", '"the unordered sum of the four link"'),
+    ("MUT-TABLE-BINDING", "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
+     "plants a table data row carrying a numeral that no rendered claim "
+     "covers", "| planted | 4242 |"),
 ]
 
 FUNCTIONS = [
     "say", "mut", "digest", "bdigest", "own_source", "_g", "fnorm", "fadd",
     "fneg", "fmul", "fconj", "zpow", "fscal", "fnormsq", "is_rational",
     "to_fraction", "in_q_sqrt2", "qsqrt2_pair", "qsqrt2_str", "qs_less",
-    "gate", "__init__", "take", "reverify", "read_bytes", "load_sources",
+    "gate", "__init__", "project", "resolve", "take", "reverify",
+    "read_bytes", "load_sources",
     "dig", "wsnorm", "mnorm", "build_alphabet", "build_coins", "coin_sector",
     "coin_unitary_second_route", "cmul", "cdag", "is_monomial", "addv",
     "ends", "boundary", "point_symmetries", "apply_point", "point_on_dir",
@@ -3482,6 +4602,8 @@ def check_the_registry(S):
             bad_desc.append(name)
     if mut("MUT-GHOST-FUNCTION"):
         pass
+    S["mutants"] = [{"name": n, "target_gate": t, "description": w,
+                     "plants": p} for n, t, w, p in MUTANTS]
     LD.gate("G-FALSIFIER-DESCRIPTIONS-ARE-HONEST",
             "E-23: a falsifier's published description is part of the sealed "
             "surface, so each one names the exact token it plants and that "
@@ -3491,20 +4613,34 @@ def check_the_registry(S):
             not bad_desc, "%d declared falsifiers, %d whose planted token is "
             "not found in their own branch: %s"
             % (len(MUTANTS), len(bad_desc), bad_desc[:4]))
+    SEAL.take("THE MUTANT REGISTRY", "mutants",
+              "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST", S["mutants"])
 
     fnames = declared_function_names(tree)
     extra_f = sorted(fnames - set(FUNCTIONS))
     missing_f = sorted(set(FUNCTIONS) - fnames)
+    S["falsifier_totals"] = {
+        "declared_falsifiers": len(MUTANTS),
+        "distinct_target_gates": len({m[1] for m in MUTANTS}),
+        "switches_in_the_syntax_tree": len(names),
+        "functions_declared": len(FUNCTIONS),
+        "the_sweep_result": "ALL-MUTANTS-IS-AN-EXTERNAL-BATTERY-RESULT-NOT-A-"
+                            "PRODUCT-OF-THIS-RUN-AND-IS-REPORTED-AS-ONE"}
     LD.gate("G-FUNCTION-INVENTORY-IS-TOTAL",
             "the set of functions this source defines must equal the "
             "declared inventory exactly, so a function added to this "
             "instrument under any name -- neutral or not -- dies here, and a "
-            "declared name deleted dies here too",
-            not extra_f and not missing_f,
+            "declared name deleted dies here too; and the published "
+            "falsifier totals are checked against the same two scans that "
+            "produced them, so no tally reaches the receipt unvouched",
+            not extra_f and not missing_f
+            and S["falsifier_totals"]["functions_declared"] == len(fnames)
+            and S["falsifier_totals"]["switches_in_the_syntax_tree"]
+            == len(names),
             "%d functions defined, %d declared; undeclared %s, missing %s"
             % (len(fnames), len(FUNCTIONS), extra_f[:4], missing_f[:4]))
-    S["mutants"] = [{"name": n, "target_gate": t, "description": w,
-                     "plants": p} for n, t, w, p in MUTANTS]
+    SEAL.take("THE FALSIFIER TOTALS", "falsifier_totals",
+              "G-FUNCTION-INVENTORY-IS-TOTAL", S["falsifier_totals"])
     # #34 / E-23: HONEST DENOMINATORS.  Every gate closed in this run is
     # either the declared target of a falsifier, or carries a registered
     # forcing, or is named with the reason no falsifier reaches it.
@@ -3538,6 +4674,18 @@ def check_the_registry(S):
                      if '"%s"' % r["instance"] in pred]
     inst_falsified = sorted({m[1] for m in MUTANTS
                              if m[1].startswith("G-INSTANCE-")})
+    S["waiver_ledger"] = {
+        "gates_closed": len(closed_gates),
+        "covered_by_a_declared_falsifier": len(covered),
+        "per_instance_gates_under_the_registered_forcing": len(inst_gates),
+        "named_unreachable": named,
+        "uncovered": uncovered,
+        "the_forcing": "THE-PER-INSTANCE-GATE-PREDICATE-NAMES-NO-INSTANCE-"
+                       "SO-ONE-FALSIFIER-AT-ONE-INSTANCE-FALSIFIES-THE-"
+                       "PREDICATE-AT-ALL-OF-THEM",
+        "instances_named_inside_the_predicate": named_in_pred,
+        "per_instance_gates_carrying_their_own_falsifier": inst_falsified,
+    }
     LD.gate("G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
             "the falsifier ledger is published at an honest denominator "
             "(#34): every gate this run closed is either the declared "
@@ -3556,35 +4704,20 @@ def check_the_registry(S):
             % (len(closed_gates), len(covered), len(inst_gates), len(named),
                len(uncovered), uncovered[:3], len(named_in_pred),
                len(inst_falsified)))
-    S["waiver_ledger"] = {
-        "gates_closed": len(closed_gates),
-        "covered_by_a_declared_falsifier": len(covered),
-        "per_instance_gates_under_the_registered_forcing": len(inst_gates),
-        "named_unreachable": named,
-        "uncovered": uncovered,
-        "the_forcing": "THE-PER-INSTANCE-GATE-PREDICATE-NAMES-NO-INSTANCE-"
-                       "SO-ONE-FALSIFIER-AT-ONE-INSTANCE-FALSIFIES-THE-"
-                       "PREDICATE-AT-ALL-OF-THEM",
-        "instances_named_inside_the_predicate": named_in_pred,
-        "per_instance_gates_carrying_their_own_falsifier": inst_falsified,
-    }
     SEAL.take("THE WAIVER LEDGER", "waiver_ledger",
               "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
               S["waiver_ledger"])
-    S["falsifier_totals"] = {
-        "declared_falsifiers": len(MUTANTS),
-        "distinct_target_gates": len({m[1] for m in MUTANTS}),
-        "switches_in_the_syntax_tree": len(names),
-        "functions_declared": len(FUNCTIONS)}
-    SEAL.take("THE MUTANT REGISTRY", "mutants",
-              "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST", S["mutants"])
-    SEAL.take("THE FALSIFIER TOTALS", "falsifier_totals",
-              "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST", S["falsifier_totals"])
 
 
 # ===========================================================================
 # SECTION 14.  THE SEAL, THE ARTIFACTS, THE CLI
 # ===========================================================================
+
+PAPER_GATE_IDS = ("G-PAPER-CLAIMS", "G-PAPER-VERDICT-EQUALITY",
+                  "G-MUST-NOT-VOCABULARY", "G-PAPER-POLARITY",
+                  "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
+                  "G-PAPER-NUMERAL-COVERAGE")
+CLOSING_GATE_IDS = ("G-SEAL-INTEGRITY", "G-ARTIFACT-INTEGRITY")
 
 DECLARED_UNSEALED = {
     "unit": "the unit's own name, a constant of this source",
@@ -3628,7 +4761,7 @@ def seal_and_write(S, write, paper_bytes):
     payload["gate_digests"] = LD.digests[:]
     payload["seal_manifest"] = SEAL.man
     payload["declared_unsealed"] = DECLARED_UNSEALED
-    payload["closing_gates"] = ["G-SEAL-INTEGRITY", "G-ARTIFACT-INTEGRITY"]
+    payload["closing_gates"] = list(CLOSING_GATE_IDS)
     payload["totals"] = {
         "gates": len(LD.rows) + 2,
         "gates_in_the_sealed_ledger": len(LD.rows),
@@ -3648,6 +4781,12 @@ def seal_and_write(S, write, paper_bytes):
     unsealed = [k for k in payload
                 if k not in SEAL.by_key and k not in DECLARED_UNSEALED]
     moved = SEAL.reverify(payload)
+    ids = [r["gate"] for r in LD.rows]
+    ls = S.get("ledger_shape", {})
+    shape_ok = ("paper_coverage" not in S) or (
+        all(g in ids for g in PAPER_GATE_IDS)
+        and len(LD.rows) == ls.get("gates_closed_before_the_paper_gates", 0)
+        + ls.get("paper_gates", 0))
     LD.gate("G-SEAL-INTEGRITY",
             "the manifest is TOTAL and the seal is checked before anything "
             "reaches the disk: every published top-level key is either "
@@ -3655,12 +4794,20 @@ def seal_and_write(S, write, paper_bytes):
             "declaration with the reason it cannot be, and every sealed "
             "object still matches its gate-time digest -- so an object "
             "edited after its gate closed dies here rather than being "
-            "re-derived from disk and pronounced consistent (#119)",
-            not unsealed and not moved,
+            "re-derived from disk and pronounced consistent (#119).  The "
+            "seals are taken AT VALUE-CLOSE -- each instance record at its "
+            "own gate, each sub-object at the gate that vouches it, with "
+            "every omission declared in the manifest row -- so there is no "
+            "window between a gate and its seal for a published field to be "
+            "edited in; and the ledger's own published shape is checked "
+            "against the ledger it describes",
+            not unsealed and not moved and shape_ok,
             "%d published keys, %d sealed, %d declared unsealed, %d "
-            "undeclared %s, %d moved since their gate %s"
+            "undeclared %s, %d moved since their gate %s; ledger shape "
+            "consistent with the %d rows closed: %s"
             % (len(payload), len(SEAL.by_key), len(DECLARED_UNSEALED),
-               len(unsealed), unsealed[:4], len(moved), moved[:4]))
+               len(unsealed), unsealed[:4], len(moved), moved[:4],
+               len(LD.rows), shape_ok))
 
     transcript = "\n".join(LOG) + "\n" + verdict + "\n"
     payload["transcript_head"] = digest(transcript)
@@ -3668,24 +4815,41 @@ def seal_and_write(S, write, paper_bytes):
     outtxt = transcript
     if not write:
         return payload, 0
+    # THE PROMOTION ORDER: both temporaries are written, both are READ BACK
+    # from the filesystem and compared against the gate-time seals, and only
+    # then is either moved into place.  A refusing integrity gate therefore
+    # promotes NOTHING and leaves no temporary behind -- the disclosed
+    # convention 'exits 1 on any refusal, writing nothing' is true at the one
+    # gate built for the disk boundary too.
+    tmps = []
     for rel, data in ((OUT_REL, outtxt), (RECEIPT_REL, blob)):
         p = os.path.join(REPO, rel)
         tmp = p + ".tmp"
         with open(tmp, "w") as fh:
             fh.write(data)
-        os.replace(tmp, p)
-    back = json.loads(open(os.path.join(REPO, RECEIPT_REL)).read())
+        tmps.append((tmp, p))
+    back = json.loads(open(tmps[1][0]).read())
     disk_bad = SEAL.reverify(back)
-    txt_ok = open(os.path.join(REPO, OUT_REL)).read() == outtxt
+    txt_ok = open(tmps[0][0]).read() == outtxt
+    if disk_bad or not txt_ok:
+        for tmp, _p in tmps:
+            if os.path.exists(tmp):
+                os.remove(tmp)
     LD.gate("G-ARTIFACT-INTEGRITY",
-            "the artifacts on disk are compared against the GATE-TIME seals "
-            "and not against a re-derivation: the receipt is read back from "
-            "the filesystem and every sealed object must still carry its "
-            "gate-time digest, and the transcript must be byte-identical to "
-            "the string this run emitted",
+            "the artifacts are compared against the GATE-TIME seals and not "
+            "against a re-derivation, and the comparison happens BEFORE "
+            "promotion: both files are written as temporaries, the receipt "
+            "is read back from the filesystem and every sealed object must "
+            "still carry its gate-time digest, the transcript must be "
+            "byte-identical to the string this run emitted -- and only a "
+            "passing check promotes them into place.  A refusal removes the "
+            "temporaries and leaves the published artifacts untouched",
             not disk_bad and txt_ok,
             "%d sealed objects moved on the way to disk %s; transcript "
-            "byte-identical: %s" % (len(disk_bad), disk_bad[:3], txt_ok))
+            "byte-identical: %s; promoted only after this check passed"
+            % (len(disk_bad), disk_bad[:3], txt_ok))
+    for tmp, p in tmps:
+        os.replace(tmp, p)
     return payload, 2
 
 
@@ -3746,13 +4910,34 @@ def run(write=True, paper_gates=True):
 
     S["code_sha256_12"] = bdigest(
         open(os.path.abspath(__file__), "rb").read())
-    S["ledger_shape"] = {
-        "gates_closed_before_the_paper_gates": len(LD.rows),
-        "instance_gates": S["census"]["instances_run"],
-        "paper_gates": 5, "closing_gates": 2,
-        "objects_sealed_before_the_paper_gates": len(SEAL.man)}
-    SEAL.take("THE LEDGER SHAPE", "ledger_shape", "G-HEAD-DERIVED-TWICE",
-              S["ledger_shape"])
+    ls = {"gates_closed_before_the_paper_gates": len(LD.rows) + 1,
+          "instance_gates": S["census"]["instances_run"],
+          "paper_gates": len(PAPER_GATE_IDS),
+          "closing_gates": len(CLOSING_GATE_IDS),
+          "objects_sealed_before_the_paper_gates": len(SEAL.man)}
+    if mut("MUT-LEDGER-SHAPE"):
+        ls["instance_gates"] = ls["instance_gates"] + 1
+    inst_rows = len([r for r in LD.rows if r["gate"].startswith("G-INSTANCE-")])
+    LD.gate("G-LEDGER-SHAPE-IS-CONSISTENT",
+            "the ledger's own published shape is a MEASUREMENT of the ledger "
+            "and not a description of it: the instance-gate count is "
+            "recounted from the rows themselves, the sealed-object count "
+            "from the manifest itself, and the gate total includes this gate "
+            "-- so a shape row that drifted from the ledger it describes "
+            "dies here rather than being read as a summary a reader can "
+            "trust",
+            ls["instance_gates"] == inst_rows
+            and ls["objects_sealed_before_the_paper_gates"] == len(SEAL.man)
+            and ls["gates_closed_before_the_paper_gates"] == len(LD.rows) + 1,
+            "%d instance gates published against %d rows; %d sealed objects "
+            "published against a manifest of %d; %d gates closed including "
+            "this one"
+            % (ls["instance_gates"], inst_rows,
+               ls["objects_sealed_before_the_paper_gates"], len(SEAL.man),
+               ls["gates_closed_before_the_paper_gates"]))
+    S["ledger_shape"] = ls
+    SEAL.take("THE LEDGER SHAPE", "ledger_shape",
+              "G-LEDGER-SHAPE-IS-CONSISTENT", S["ledger_shape"])
     paper_path = os.path.join(REPO, PAPER_REL)
     paper_bytes = b""
     if paper_gates and os.path.exists(paper_path):
