@@ -8831,3 +8831,69 @@ singular site at (1,1,4), det 0.
 PER-R's own and repairs regardless.  Nothing touches a
 verdict or a licensed reading.  K2 (effectus) still out;
 adjudication after its freeze.
+
+## 2026-08-12 — AID K2 (EFFECTUS SEAT) FROZEN: AWF; THE ARCHITECTURE SENTENCE REFUSED AS A MISREADING — THE SPLIT IS BETWEEN TWO TESTS, NOT TWO OBSERVABLES; CRYSTALLIZATION'S TRANSPORTABLE CONTENT IS FOUR; THE HORIZON-5 RESONANCE REFUSED EVEN AS OBSERVATION (v14 LEDGER #288)
+
+**Review:** v14/review-aid-effectus.md (505a0624b6d5, 637
+lines), sole write; objects verified unchanged at open and
+close (507da54ae871 / edf3a540cd57 / 48fe931bfcdc /
+cd938d7ae9be / pin 294ffe6c9deb).  **Grade AWF.**  151
+recomputations — 121 delivered values re-derived from
+scratch (own arena, own enumeration, own group code), ZERO
+delivered numbers moved — plus 30 new measurements.  Seven
+MAJOR, seven MINOR.
+
+**MAJOR-1 (decisive): the architecture sentence REFUSED.**
+Three new measurements: (a) the weld's count field at the
+identity parse IS the record, literally, 703/703; (b) under
+the record's own attribution test the weld is blind at 111
+of 703 at all twelve parses — the record's exact number; (c)
+under the weld's covariance test the record and the Born
+menu are blind at 0 violations in 121,152 — the weld's exact
+result.  The delivered SPLIT is a split between two TESTS,
+not two observables; swap the tests and the verdicts swap.
+"Actors are ontology for matter and chart for space" — and
+the ledger's "space identity-blind, matter identity-sighted"
+— is not an overclaim but a MISREADING: the space side is
+exactly as sighted as the matter side.  What survives is a
+real ordering by DEPTH.  (Candidate ruling — one seat; K1/K3
+out; adjudication decides.)
+
+**MAJOR-2 (the undisclosed fiber, verdict-relevant):** "the
+walk strictly refines the record from depth two" REVERSES at
+paper-20's other declared coin order D·G — blind at
+703/128/58/58/58 vs 134/58/58/58/58: at depth two the menu
+is COARSER (128 > 111).  Repair strengthens: 58 becomes a
+two-order invariant.
+
+**MAJOR-3 (the LOR lesson exactly):** CLAIM-PREFIXES
+("101,160 prefix objects, 41,347 distinct") is a FALSE
+RELATION rendered by the instrument — the bases differ (3
+corpora vs 4).  Correct pairs: 118,656/41,347 or
+101,160/39,747.  Every number individually backed; the
+relation was the hole.
+
+**MAJOR-7 + the resonance ruling: crystallization's
+transportable content is FOUR** — a counting theorem
+(⌈log₂9⌉, attained by the minimal event subset at 72/72 and
+596/596); the fifth position is round one's PROVABLY
+REDUNDANT third event (move it to the end: time 4 at all
+72).  **The horizon-5 resonance REFUSED even as an
+observation:** different units (events vs steps), AID's five
+link-blind by construction vs paper-20's link-generated,
+informative counts differ; the unit's own control — 404
+covering schedules and 404 five-crystallizers are NOT the
+same 404 (266/138/138/58).  (The #283-era registered
+observation stands demoted if adjudication confirms.)
+
+**Also:** -AT-THE-ROUND-MEET names the wrong object (the
+axis is admissibility; all 4 CHART cases are constant-class
+controls); the field-not-thread sentence stated outside its
+scope (contradicts the unit's own 5,852/5,856); the Barandes
+row answers NAMING, not FACTORIZATION, and a third grain
+(decomposition/carrier, per OCC's 27-cell typing) is
+unregistered and owed; WALL-REALITY's five-literal ban would
+pass the architecture sentence untouched.  Seven MINORs.
+
+**K1 (operator) and K3 (instrument) still out; adjudication
+after all three freezes.**
