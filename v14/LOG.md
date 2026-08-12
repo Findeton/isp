@@ -9455,3 +9455,24 @@ verified).  (7) K1's closed forms ADOPTED into the unit
 Ownership: the pin's FORCED and falsifier wording; the
 #290 HIT relay corrected to action-route scope.  Repair
 order Z1–Z12; **the repair worker launches next.**
+
+## 2026-08-12 — FAC (PAPER-35) PINNED: THE FACTORIZATION UNIT — ARE ACTORS THREADS, AND IS THE NINE-FOLD DIVISION FORCED? (v14 LEDGER #300)
+
+**note-fac-pin.md frozen.**  The question AID licensed but
+did not measure, at the two grains its successor register
+names: the DECOMPOSITION CENSUS (admissible factorizations
+under a declared law-compatibility criterion, at the actor
+grain B₉ and OCC's 27-cell carrier grain — cardinality 1 =
+forced, > 1 = declared-with-inventory; "the grain Barandes'
+worry actually names") and the GROUPOID CRYSTALLIZATION
+(the atom theorem the object to break; the 5,852 re-earned
+or lost).  Plus the grain triangle (S₂₇ vs site vs S₉) and
+the persistence presupposition posed as a question for the
+first time.  Standing duties inherited: the
+test-declaration duty (AID MAJOR-1), the coin-order duty
+(#293), sentence-level referent binding, class/predicate
+binding (#295).  **First pin written under the #299
+engraving: every pre-registered outcome word carries its
+feasibility line** (no pigeonhole pre-decides the census;
+both atom outcomes decidable by the same enumeration).
+**The construction worker launches next.**
