@@ -1,0 +1,5848 @@
+{
+ "anchors": [
+  {
+   "chars": 49,
+   "gate": "G-STERILITY",
+   "id": "V01",
+   "ok": true,
+   "source": "A-PIN"
+  },
+  {
+   "chars": 50,
+   "gate": "G-DICT",
+   "id": "V02",
+   "ok": true,
+   "source": "A-PIN"
+  },
+  {
+   "chars": 68,
+   "gate": "G-SECTOR-WELD",
+   "id": "V03",
+   "ok": true,
+   "source": "A-P19"
+  },
+  {
+   "chars": 109,
+   "gate": "G-FORCED-OVERLAP",
+   "id": "V04",
+   "ok": true,
+   "source": "A-P21"
+  },
+  {
+   "chars": 98,
+   "gate": "G-DICT",
+   "id": "V05",
+   "ok": true,
+   "source": "A-PIN"
+  },
+  {
+   "chars": 89,
+   "gate": "G-STERILITY",
+   "id": "V06",
+   "ok": true,
+   "source": "A-R1"
+  },
+  {
+   "chars": 71,
+   "gate": "G-SEAM-RANK",
+   "id": "V07",
+   "ok": true,
+   "source": "A-HA"
+  },
+  {
+   "chars": 41,
+   "gate": "G-WALL-SCAN",
+   "id": "V08",
+   "ok": true,
+   "source": "A-CAT"
+  }
+ ],
+ "arrangement_free": {
+  "alt_events": 48,
+  "alt_pairs": 27,
+  "isomorphic": true,
+  "saturating_partitions": 36
+ },
+ "cited_not_read": [
+  {
+   "id": "A-LOR",
+   "path": "v14/paper-30-lor.md",
+   "pinned_at_ledger": 252,
+   "pinned_sha256_12": "f3e9e9df2c70",
+   "why": "PAPER-30 / LOR (delivered, NOT terminal): the extended-carrier lesson that this unit runs three carriers because of.  Its delivered text is under concurrent rewrite in the working tree, so rule #91 forbids reading it here; the lesson is anchored on this unit's own frozen pin instead, and no sentence of LOR is quoted anywhere in this unit."
+  }
+ ],
+ "contrast": {
+  "k0_new_pairs": 0,
+  "k3_aligned_new_structure": {
+   "aut": 62208,
+   "carriers": 15,
+   "seam_undetermined_entries": 12,
+   "shared_actors": 3
+  },
+  "k3_triangle_new_structure": {
+   "doubled_pairs": 3,
+   "field_values": [
+    1,
+    2
+   ]
+  }
+ },
+ "coverage": {
+  "gates": [
+   "G-SOURCES",
+   "G-CITED-NOT-READ",
+   "G-ANCHORS",
+   "G-EXACT",
+   "G-GRAMMAR-ANCHOR",
+   "G-SECTOR",
+   "G-SECTOR-WELD",
+   "G-AUT-ROUTES",
+   "G-ARRANGEMENT-FREE",
+   "G-GLUING-CENSUS",
+   "G-CLEAN-CRITERION",
+   "G-FIBER-ROUTES",
+   "G-AUT-ROUTES-UNION",
+   "G-DRIVEN-EQUALS-COMBINATORIAL",
+   "G-MAXHITS",
+   "G-MENU-PURE",
+   "G-SEED-RULE",
+   "G-DICT",
+   "G-CONTROLS",
+   "G-GLUING-FIBER",
+   "G-SEAM-RANK",
+   "G-SEAM-WITNESS",
+   "G-SEAM-CROSS-ALGEBRA",
+   "G-CROSS",
+   "G-FORCED-OVERLAP",
+   "G-STERILITY",
+   "G-CONTRAST",
+   "G-WALL-L1",
+   "G-WALL-NAMED",
+   "G-WALL-SCAN",
+   "G-VERDICT-RECON",
+   "G-PAPER-CLAIMS",
+   "G-PAPER-COVERAGE",
+   "G-PAPER-FENCE",
+   "G-PAPER-POLARITY",
+   "G-PAPER-SPELLED"
+  ],
+  "mutant_map": [
+   {
+    "declared_later": false,
+    "description": "corrupts the A-P19 source digest",
+    "gate": "G-SOURCES",
+    "gate_reached": true,
+    "mutant": "MUT-ANCHOR-DIGEST"
+   },
+   {
+    "declared_later": false,
+    "description": "corrupts one verbatim anchor's needle",
+    "gate": "G-ANCHORS",
+    "gate_reached": true,
+    "mutant": "MUT-ANCHOR-TEXT"
+   },
+   {
+    "declared_later": false,
+    "description": "drops one event from the driver's anchor record",
+    "gate": "G-GRAMMAR-ANCHOR",
+    "gate_reached": true,
+    "mutant": "MUT-GRAMMAR-ANCHOR"
+   },
+   {
+    "declared_later": false,
+    "description": "withholds arbitrations from the UN-memoised menu, so the memo-disabled re-drive disagrees with the memoised record",
+    "gate": "G-MENU-PURE",
+    "gate_reached": true,
+    "mutant": "MUT-MENU-MEMO"
+   },
+   {
+    "declared_later": false,
+    "description": "moves one cell of the single-sector count field",
+    "gate": "G-SECTOR",
+    "gate_reached": true,
+    "mutant": "MUT-SECTOR-CELL"
+   },
+   {
+    "declared_later": false,
+    "description": "inflates the single-sector isomorphism count",
+    "gate": "G-SECTOR-WELD",
+    "gate_reached": true,
+    "mutant": "MUT-SECTOR-WELD"
+   },
+   {
+    "declared_later": false,
+    "description": "poisons the second automorphism route",
+    "gate": "G-AUT-ROUTES",
+    "gate_reached": true,
+    "mutant": "MUT-AUT-ROUTE"
+   },
+   {
+    "declared_later": false,
+    "description": "drops one gluing from the type census",
+    "gate": "G-GLUING-CENSUS",
+    "gate_reached": true,
+    "mutant": "MUT-TYPE-COUNT"
+   },
+   {
+    "declared_later": false,
+    "description": "flips one driven pair count",
+    "gate": "G-DRIVEN-EQUALS-COMBINATORIAL",
+    "gate_reached": true,
+    "mutant": "MUT-DRIVEN-EQ"
+   },
+   {
+    "declared_later": false,
+    "description": "inverts the doubled-free criterion",
+    "gate": "G-CLEAN-CRITERION",
+    "gate_reached": true,
+    "mutant": "MUT-CLEAN-CRIT"
+   },
+   {
+    "declared_later": false,
+    "description": "forges one dictionary row's fate",
+    "gate": "G-DICT",
+    "gate_reached": true,
+    "mutant": "MUT-DICT-FATE"
+   },
+   {
+    "declared_later": false,
+    "description": "poisons the orbit route for the site fiber",
+    "gate": "G-FIBER-ROUTES",
+    "gate_reached": true,
+    "mutant": "MUT-FIBER-ROUTE"
+   },
+   {
+    "declared_later": false,
+    "description": "misreports the seam system's rank",
+    "gate": "G-SEAM-RANK",
+    "gate_reached": true,
+    "mutant": "MUT-SEAM-RANK"
+   },
+   {
+    "declared_later": false,
+    "description": "corrupts the indefinite witness vector",
+    "gate": "G-SEAM-WITNESS",
+    "gate_reached": true,
+    "mutant": "MUT-SEAM-WITNESS"
+   },
+   {
+    "declared_later": false,
+    "description": "forges the cross-sector event's fate",
+    "gate": "G-CROSS",
+    "gate_reached": true,
+    "mutant": "MUT-CROSS-FATE"
+   },
+   {
+    "declared_later": false,
+    "description": "breaks the k = 0 direct-sum identity",
+    "gate": "G-STERILITY",
+    "gate_reached": true,
+    "mutant": "MUT-STERILITY"
+   },
+   {
+    "declared_later": false,
+    "description": "forges one forced-overlap row",
+    "gate": "G-FORCED-OVERLAP",
+    "gate_reached": true,
+    "mutant": "MUT-OVERLAP"
+   },
+   {
+    "declared_later": false,
+    "description": "forges one gluing-compatibility row",
+    "gate": "G-GLUING-FIBER",
+    "gate_reached": true,
+    "mutant": "MUT-COMPAT"
+   },
+   {
+    "declared_later": false,
+    "description": "injects the retracted L-1 sentence into the paper",
+    "gate": "G-WALL-L1",
+    "gate_reached": true,
+    "mutant": "MUT-L1-INJECT"
+   },
+   {
+    "declared_later": false,
+    "description": "deletes the seam-naming sentence from the paper",
+    "gate": "G-WALL-NAMED",
+    "gate_reached": true,
+    "mutant": "MUT-NAMING-DELETE"
+   },
+   {
+    "declared_later": false,
+    "description": "writes a boost reading into the measurement layer",
+    "gate": "G-WALL-SCAN",
+    "gate_reached": true,
+    "mutant": "MUT-WALL-SCAN"
+   },
+   {
+    "declared_later": false,
+    "description": "writes a banned dimension reading into the paper",
+    "gate": "G-WALL-SCAN",
+    "gate_reached": true,
+    "mutant": "MUT-WALL-PAPER"
+   },
+   {
+    "declared_later": false,
+    "description": "inverts the cited-and-not-read abstention",
+    "gate": "G-CITED-NOT-READ",
+    "gate_reached": true,
+    "mutant": "MUT-CITED-READ"
+   },
+   {
+    "declared_later": false,
+    "description": "swaps two data cells of a published table row",
+    "gate": "G-PAPER-CLAIMS",
+    "gate_reached": true,
+    "mutant": "MUT-PAPER-TABLE"
+   },
+   {
+    "declared_later": false,
+    "description": "moves a spelled numeral in the paper from fifty-four to a thousand",
+    "gate": "G-PAPER-SPELLED",
+    "gate_reached": true,
+    "mutant": "MUT-PAPER-SPELLED"
+   },
+   {
+    "declared_later": false,
+    "description": "forges the outcome word in the builder's head",
+    "gate": "G-VERDICT-RECON",
+    "gate_reached": true,
+    "mutant": "MUT-HEAD-FORGE"
+   },
+   {
+    "declared_later": false,
+    "description": "moves a number in the paper under test",
+    "gate": "G-PAPER-COVERAGE",
+    "gate_reached": true,
+    "mutant": "MUT-PAPER-NUMBER"
+   },
+   {
+    "declared_later": false,
+    "description": "forges a twin of the verdict fence",
+    "gate": "G-PAPER-FENCE",
+    "gate_reached": true,
+    "mutant": "MUT-PAPER-FENCE"
+   },
+   {
+    "declared_later": false,
+    "description": "inverts the direct-sum claim's polarity in the paper",
+    "gate": "G-PAPER-POLARITY",
+    "gate_reached": true,
+    "mutant": "MUT-PAPER-POLARITY"
+   },
+   {
+    "declared_later": true,
+    "description": "drops one key from the seal manifest",
+    "gate": "G-SEAL-COMPLETE",
+    "gate_reached": false,
+    "mutant": "MUT-SEAL-DROP"
+   }
+  ],
+  "waivers": {
+   "G-ANCHORS": "falsified by MUT-ANCHOR-TEXT",
+   "G-ARRANGEMENT-FREE": "waived with a forcing: the alternative arrangement is SEARCHED FOR rather than typed, so a run in which no non-collinear saturating triple exists fails at the search rather than at the gate",
+   "G-AUT-ROUTES-UNION": "falsified by MUT-AUT-ROUTE, which poisons the second automorphism route the gate compares",
+   "G-CONTRAST": "falsified by MUT-STERILITY, which breaks the direct-sum identity the contrast is taken against",
+   "G-CONTROLS": "falsified by MUT-DICT-FATE, which forges a fate in the same detector these rows come from",
+   "G-COVERAGE": "waived with a forcing: a mutant of the coverage gate would be a mutant of the mutant registry, and the registry is compared against the run's own evaluated ledger",
+   "G-DECLARED-LATER": "waived with a forcing: the gate discharges the coverage gate's own declared-later promise, and a mutant of it would be a mutant of the ledger it reads",
+   "G-DRIVEN-EQUALS-COMBINATORIAL": "falsified by MUT-DRIVEN-EQ",
+   "G-EXACT": "a mutant that introduced a float would have to be a float, and the AST scan is the falsifier of its own object; the gate's other value is exercised by G-EXACT's own scan of the receipt's types",
+   "G-GLUING-CENSUS": "falsified by MUT-TYPE-COUNT",
+   "G-INTEGRITY": "waived with a forcing: the integrity gate compares disk bytes against the gate-time seal after a deliberately corrupted probe has been shown to be detected in the same run",
+   "G-MAXHITS": "waived with a forcing: every event is specified by its full tuple, at most one candidate can match, and the under-specified control is paper-19's committed measurement (maxhits 7) which this unit cites and does not re-run",
+   "G-MENU-PURE": "falsified by MUT-MENU-MEMO",
+   "G-PAPER-CLAIMS": "falsified by MUT-PAPER-TABLE, which swaps two data cells of a published table row in the object under test",
+   "G-SEAM-CROSS-ALGEBRA": "falsified by MUT-SEAM-RANK, which misreports the rank of the same exact system",
+   "G-SEED-RULE": "falsified by MUT-MENU-MEMO, which changes what the committed menu offers and so moves the refusal set",
+   "G-SOURCES": "falsified by MUT-ANCHOR-DIGEST and by --break-anchor",
+   "G-SWEEP-EXECUTED": "waived with a forcing: the sweep gate is the binding itself; it is re-taken at the integrity gate, so a run reaching the writer without a sweep dies twice"
+  }
+ },
+ "cross_sector": [
+  {
+   "dictionary_after": "STRUCT-DEAD",
+   "dictionary_reason": "0 of the 15! bijections carry the site incidence onto the target's link structure",
+   "divisions": 19,
+   "fate": "ADMITTED",
+   "foreign_pairs": 1,
+   "group": [
+    "('A', (1, 1))",
+    "('B', (1, 1))",
+    "('S', 0)"
+   ],
+   "new_pairs": 1,
+   "refusal": null,
+   "seed": "('S', 0)",
+   "spec": "SHARED-SEEDED"
+  },
+  {
+   "divisions": 18,
+   "fate": "REFUSED",
+   "foreign_pairs": 0,
+   "group": [
+    "('A', (1, 1))",
+    "('B', (1, 1))",
+    "('S', 0)"
+   ],
+   "new_pairs": 0,
+   "refusal": [
+    "propose",
+    104
+   ],
+   "seed": "('A', (1, 1))",
+   "spec": "A-SEEDED"
+  },
+  {
+   "dictionary_after": "STRUCT-DEAD",
+   "dictionary_reason": "0 of the 15! bijections carry the site incidence onto the target's link structure",
+   "divisions": 19,
+   "fate": "ADMITTED",
+   "foreign_pairs": 2,
+   "group": [
+    "('A', (1, 1))",
+    "('B', (1, 1))",
+    "('B', (1, 0))"
+   ],
+   "new_pairs": 2,
+   "refusal": null,
+   "seed": "('B', (1, 1))",
+   "spec": "B-SEEDED-PURE"
+  }
+ ],
+ "dead_arms": [
+  {
+   "arena": "SEC-UNION(3,aligned)@I7-SINGLE",
+   "carrier": "BARE",
+   "count_gen": "DIVISION-COUNT",
+   "fate": "ARITY-DEAD",
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 0,
+   "reading": "EMBEDDING",
+   "reason": "15 site objects against the target's 9; no repair is declared and a declared restriction can only shrink a site set",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "I7",
+   "target_arity": 9
+  },
+  {
+   "arena": "SEC-UNION(3,aligned)@T(0)",
+   "carrier": "BARE",
+   "count_gen": "DIVISION-COUNT",
+   "fate": "ARITY-DEAD",
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 0,
+   "reading": "EMBEDDING",
+   "reason": "15 site objects against the target's 18; no repair is declared and a declared restriction can only shrink a site set",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(0,DISJOINT)",
+   "target_arity": 18
+  },
+  {
+   "arena": "SEC-UNION(3,triangle)@T(3,ALIGNED)",
+   "carrier": "BARE",
+   "count_gen": "DIVISION-COUNT",
+   "fate": "STRUCT-DEAD",
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 0,
+   "reading": "EMBEDDING",
+   "reason": "0 of the 15! bijections carry the site incidence onto the target's link structure",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(3,ALIGNED)",
+   "target_arity": 15
+  },
+  {
+   "arena": "SEC-UNION(3,aligned)-FALSIFIER",
+   "carrier": "BARE",
+   "count_gen": "DIVISION-COUNT",
+   "fate": "STRUCT-DEAD",
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 0,
+   "reading": "EMBEDDING",
+   "reason": "0 of the 15! bijections carry the site incidence onto the target's link structure",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(3,ALIGNED)",
+   "target_arity": 15
+  },
+  {
+   "arena": "SEC-UNION(3,aligned)-FALSIFIER",
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 0,
+   "fate": "COUNT-DEAD",
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "reading": "QUOTIENT",
+   "reason": "n_l(x) must lie in Z_>0 (HA 3.1); the induced count is 0 at 48 of 54 cells",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(3,ALIGNED)",
+   "target_arity": 15,
+   "zero_cells": 48
+  }
+ ],
+ "dictionary": [
+  {
+   "arena": "SEC-UNION(0,)",
+   "aut_weighted": 3359232,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 0,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 3359232,
+   "maps_route2": null,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 18,
+   "site_gen": "ACTOR",
+   "target": "T(k=0,())@SIMPLE",
+   "target_arity": 18,
+   "type": "(0,)"
+  },
+  {
+   "arena": "SEC-UNION(0,)",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 0,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 72 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 72,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=0,())@SIMPLE",
+   "target_arity": 72,
+   "type": "(0,)"
+  },
+  {
+   "arena": "SEC-UNION(0,)",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 0,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 72 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 72,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=0,())@CHARTED",
+   "target_arity": 72,
+   "type": "(0,)"
+  },
+  {
+   "arena": "SEC-UNION(0,)",
+   "aut_weighted": 3359232,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 0,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 3359232,
+   "maps_route2": null,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 18,
+   "site_gen": "ACTOR",
+   "target": "T(k=0,())@SIMPLE",
+   "target_arity": 18,
+   "type": "(0,)"
+  },
+  {
+   "arena": "SEC-UNION(0,)",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 0,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 72 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 72,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=0,())@SIMPLE",
+   "target_arity": 72,
+   "type": "(0,)"
+  },
+  {
+   "arena": "SEC-UNION(0,)",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 0,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 72 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 72,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=0,())@CHARTED",
+   "target_arity": 72,
+   "type": "(0,)"
+  },
+  {
+   "arena": "SEC-UNION(1, (0, 0, 1))",
+   "aut_weighted": 41472,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 1,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 41472,
+   "maps_route2": null,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 17,
+   "site_gen": "ACTOR",
+   "target": "T(k=1,((0, 0, 1),))@SIMPLE",
+   "target_arity": 17,
+   "type": "(1, (0, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(1, (0, 0, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 1,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 71 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 71,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=1,((0, 0, 1),))@SIMPLE",
+   "target_arity": 71,
+   "type": "(1, (0, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(1, (0, 0, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 1,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 71 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 71,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=1,((0, 0, 1),))@CHARTED",
+   "target_arity": 71,
+   "type": "(1, (0, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(1, (0, 0, 1))",
+   "aut_weighted": 41472,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 1,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 41472,
+   "maps_route2": null,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 17,
+   "site_gen": "ACTOR",
+   "target": "T(k=1,((0, 0, 1),))@SIMPLE",
+   "target_arity": 17,
+   "type": "(1, (0, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(1, (0, 0, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 1,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 71 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 71,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=1,((0, 0, 1),))@SIMPLE",
+   "target_arity": 71,
+   "type": "(1, (0, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(1, (0, 0, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 1,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 71 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 71,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=1,((0, 0, 1),))@CHARTED",
+   "target_arity": 71,
+   "type": "(1, (0, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (0, 1, 1))",
+   "aut_weighted": 3456,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 3456,
+   "maps_route2": 3456,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 16,
+   "site_gen": "ACTOR",
+   "target": "T(k=2,((0, 0, 1), (0, 1, 1)))@SIMPLE",
+   "target_arity": 16,
+   "type": "(2, (0, 0, 1), (0, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (0, 1, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 70 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 70,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 1), (0, 1, 1)))@SIMPLE",
+   "target_arity": 70,
+   "type": "(2, (0, 0, 1), (0, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (0, 1, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 70 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 70,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 1), (0, 1, 1)))@CHARTED",
+   "target_arity": 70,
+   "type": "(2, (0, 0, 1), (0, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (0, 1, 1))",
+   "aut_weighted": 3456,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 3456,
+   "maps_route2": 3456,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 16,
+   "site_gen": "ACTOR",
+   "target": "T(k=2,((0, 0, 1), (0, 1, 1)))@SIMPLE",
+   "target_arity": 16,
+   "type": "(2, (0, 0, 1), (0, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (0, 1, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 70 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 70,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 1), (0, 1, 1)))@SIMPLE",
+   "target_arity": 70,
+   "type": "(2, (0, 0, 1), (0, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (0, 1, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 70 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 70,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 1), (0, 1, 1)))@CHARTED",
+   "target_arity": 70,
+   "type": "(2, (0, 0, 1), (0, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (1, 0, 1))",
+   "aut_weighted": 3456,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 3456,
+   "maps_route2": 3456,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 16,
+   "site_gen": "ACTOR",
+   "target": "T(k=2,((0, 0, 1), (1, 0, 1)))@SIMPLE",
+   "target_arity": 16,
+   "type": "(2, (0, 0, 1), (1, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (1, 0, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 70 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 70,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 1), (1, 0, 1)))@SIMPLE",
+   "target_arity": 70,
+   "type": "(2, (0, 0, 1), (1, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (1, 0, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 70 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 70,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 1), (1, 0, 1)))@CHARTED",
+   "target_arity": 70,
+   "type": "(2, (0, 0, 1), (1, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (1, 0, 1))",
+   "aut_weighted": 3456,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 3456,
+   "maps_route2": 3456,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 16,
+   "site_gen": "ACTOR",
+   "target": "T(k=2,((0, 0, 1), (1, 0, 1)))@SIMPLE",
+   "target_arity": 16,
+   "type": "(2, (0, 0, 1), (1, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (1, 0, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 70 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 70,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 1), (1, 0, 1)))@SIMPLE",
+   "target_arity": 70,
+   "type": "(2, (0, 0, 1), (1, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (1, 0, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 70 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 70,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 1), (1, 0, 1)))@CHARTED",
+   "target_arity": 70,
+   "type": "(2, (0, 0, 1), (1, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (1, 1, 1))",
+   "aut_weighted": 2304,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "UNMOTIVATED",
+   "doubled_free": false,
+   "fate": "UNMOTIVATED",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1,
+    2
+   ],
+   "free_items": [
+    "I-DIRECTION-LABEL",
+    "I-ORIENT"
+   ],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 9,
+    "I-ORIENT": 4,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 2304,
+   "maps_route2": 2304,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "2 genuinely free item(s): I-DIRECTION-LABEL fiber 9, I-ORIENT fiber 4",
+   "site_arity": 16,
+   "site_gen": "ACTOR",
+   "target": "T(k=2,((0, 0, 1), (1, 1, 1)))@SIMPLE",
+   "target_arity": 16,
+   "type": "(2, (0, 0, 1), (1, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (1, 1, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 1), (1, 1, 1)))@SIMPLE",
+   "target_arity": 69,
+   "type": "(2, (0, 0, 1), (1, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (1, 1, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 70 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 70,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 1), (1, 1, 1)))@CHARTED",
+   "target_arity": 70,
+   "type": "(2, (0, 0, 1), (1, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (1, 1, 1))",
+   "aut_weighted": 2304,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "UNMOTIVATED",
+   "doubled_free": false,
+   "fate": "UNMOTIVATED",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1,
+    2
+   ],
+   "free_items": [
+    "I-DIRECTION-LABEL",
+    "I-ORIENT"
+   ],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 9,
+    "I-ORIENT": 4,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 2304,
+   "maps_route2": 2304,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "2 genuinely free item(s): I-DIRECTION-LABEL fiber 9, I-ORIENT fiber 4",
+   "site_arity": 16,
+   "site_gen": "ACTOR",
+   "target": "T(k=2,((0, 0, 1), (1, 1, 1)))@SIMPLE",
+   "target_arity": 16,
+   "type": "(2, (0, 0, 1), (1, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (1, 1, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 1), (1, 1, 1)))@SIMPLE",
+   "target_arity": 69,
+   "type": "(2, (0, 0, 1), (1, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 1), (1, 1, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 70 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 70,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 1), (1, 1, 1)))@CHARTED",
+   "target_arity": 70,
+   "type": "(2, (0, 0, 1), (1, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 2))",
+   "aut_weighted": 20736,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 20736,
+   "maps_route2": null,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 16,
+   "site_gen": "ACTOR",
+   "target": "T(k=2,((0, 0, 2),))@SIMPLE",
+   "target_arity": 16,
+   "type": "(2, (0, 0, 2))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 2))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 70 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 70,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 2),))@SIMPLE",
+   "target_arity": 70,
+   "type": "(2, (0, 0, 2))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 2))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 70 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 70,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 2),))@CHARTED",
+   "target_arity": 70,
+   "type": "(2, (0, 0, 2))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 2))",
+   "aut_weighted": 20736,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 20736,
+   "maps_route2": null,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 16,
+   "site_gen": "ACTOR",
+   "target": "T(k=2,((0, 0, 2),))@SIMPLE",
+   "target_arity": 16,
+   "type": "(2, (0, 0, 2))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 2))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 70 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 70,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 2),))@SIMPLE",
+   "target_arity": 70,
+   "type": "(2, (0, 0, 2))"
+  },
+  {
+   "arena": "SEC-UNION(2, (0, 0, 2))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 2,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 70 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 70,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=2,((0, 0, 2),))@CHARTED",
+   "target_arity": 70,
+   "type": "(2, (0, 0, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+   "aut_weighted": 3456,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 3456,
+   "maps_route2": 3456,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (0, 2, 1)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (0, 2, 1)))@SIMPLE",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (0, 2, 1)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+   "aut_weighted": 3456,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 3456,
+   "maps_route2": 3456,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (0, 2, 1)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (0, 2, 1)))@SIMPLE",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (0, 2, 1)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+   "aut_weighted": 288,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "UNMOTIVATED",
+   "doubled_free": false,
+   "fate": "UNMOTIVATED",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1,
+    2
+   ],
+   "free_items": [
+    "I-DIRECTION-LABEL",
+    "I-ORIENT"
+   ],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 9,
+    "I-ORIENT": 4,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 288,
+   "maps_route2": 288,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "2 genuinely free item(s): I-DIRECTION-LABEL fiber 9, I-ORIENT fiber 4",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (1, 0, 1)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 68 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 68,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (1, 0, 1)))@SIMPLE",
+   "target_arity": 68,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (1, 0, 1)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+   "aut_weighted": 288,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "UNMOTIVATED",
+   "doubled_free": false,
+   "fate": "UNMOTIVATED",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1,
+    2
+   ],
+   "free_items": [
+    "I-DIRECTION-LABEL",
+    "I-ORIENT"
+   ],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 9,
+    "I-ORIENT": 4,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 288,
+   "maps_route2": 288,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "2 genuinely free item(s): I-DIRECTION-LABEL fiber 9, I-ORIENT fiber 4",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (1, 0, 1)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 68 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 68,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (1, 0, 1)))@SIMPLE",
+   "target_arity": 68,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (1, 0, 1)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+   "aut_weighted": 192,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "UNMOTIVATED",
+   "doubled_free": false,
+   "fate": "UNMOTIVATED",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1,
+    2
+   ],
+   "free_items": [
+    "I-DIRECTION-LABEL",
+    "I-ORIENT"
+   ],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 9,
+    "I-ORIENT": 4,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 192,
+   "maps_route2": 192,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "2 genuinely free item(s): I-DIRECTION-LABEL fiber 9, I-ORIENT fiber 4",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (1, 2, 1)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 67 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 67,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (1, 2, 1)))@SIMPLE",
+   "target_arity": 67,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (1, 2, 1)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+   "aut_weighted": 192,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "UNMOTIVATED",
+   "doubled_free": false,
+   "fate": "UNMOTIVATED",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1,
+    2
+   ],
+   "free_items": [
+    "I-DIRECTION-LABEL",
+    "I-ORIENT"
+   ],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 9,
+    "I-ORIENT": 4,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 192,
+   "maps_route2": 192,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "2 genuinely free item(s): I-DIRECTION-LABEL fiber 9, I-ORIENT fiber 4",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (1, 2, 1)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 67 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 67,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (1, 2, 1)))@SIMPLE",
+   "target_arity": 67,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 1), (1, 2, 1)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 2))",
+   "aut_weighted": 1728,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 1728,
+   "maps_route2": 1728,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 2)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (0, 1, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 2))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 2)))@SIMPLE",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (0, 1, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 2))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 2)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (0, 1, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 2))",
+   "aut_weighted": 1728,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 1728,
+   "maps_route2": 1728,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 2)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (0, 1, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 2))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 2)))@SIMPLE",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (0, 1, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (0, 1, 2))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (0, 1, 2)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (0, 1, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+   "aut_weighted": 3456,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 3456,
+   "maps_route2": 3456,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 1), (2, 0, 1)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 1), (2, 0, 1)))@SIMPLE",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 1), (2, 0, 1)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+   "aut_weighted": 3456,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 3456,
+   "maps_route2": 3456,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 1), (2, 0, 1)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 1), (2, 0, 1)))@SIMPLE",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 1), (2, 0, 1)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+   "aut_weighted": 192,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "UNMOTIVATED",
+   "doubled_free": false,
+   "fate": "UNMOTIVATED",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1,
+    2
+   ],
+   "free_items": [
+    "I-DIRECTION-LABEL",
+    "I-ORIENT"
+   ],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 9,
+    "I-ORIENT": 4,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 192,
+   "maps_route2": 192,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "2 genuinely free item(s): I-DIRECTION-LABEL fiber 9, I-ORIENT fiber 4",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 1), (2, 1, 1)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 67 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 67,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 1), (2, 1, 1)))@SIMPLE",
+   "target_arity": 67,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 1), (2, 1, 1)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+   "aut_weighted": 192,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "UNMOTIVATED",
+   "doubled_free": false,
+   "fate": "UNMOTIVATED",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1,
+    2
+   ],
+   "free_items": [
+    "I-DIRECTION-LABEL",
+    "I-ORIENT"
+   ],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 9,
+    "I-ORIENT": 4,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 192,
+   "maps_route2": 192,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "2 genuinely free item(s): I-DIRECTION-LABEL fiber 9, I-ORIENT fiber 4",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 1), (2, 1, 1)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 67 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 67,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 1), (2, 1, 1)))@SIMPLE",
+   "target_arity": 67,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 1), (2, 1, 1)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 2))",
+   "aut_weighted": 1728,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 1728,
+   "maps_route2": 1728,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 2)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (1, 0, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 2))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 2)))@SIMPLE",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (1, 0, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 2))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 2)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (1, 0, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 2))",
+   "aut_weighted": 1728,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 1728,
+   "maps_route2": 1728,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 2)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (1, 0, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 2))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 2)))@SIMPLE",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (1, 0, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 0, 2))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 0, 2)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (1, 0, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+   "aut_weighted": 768,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "UNMOTIVATED",
+   "doubled_free": false,
+   "fate": "UNMOTIVATED",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1,
+    2
+   ],
+   "free_items": [
+    "I-DIRECTION-LABEL"
+   ],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 9,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 768,
+   "maps_route2": 768,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "1 genuinely free item(s): I-DIRECTION-LABEL fiber 9",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (1, 1, 1), (2, 2, 1)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 66 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 66,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 1, 1), (2, 2, 1)))@SIMPLE",
+   "target_arity": 66,
+   "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 1, 1), (2, 2, 1)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+   "aut_weighted": 768,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "UNMOTIVATED",
+   "doubled_free": false,
+   "fate": "UNMOTIVATED",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1,
+    2
+   ],
+   "free_items": [
+    "I-DIRECTION-LABEL"
+   ],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 9,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 768,
+   "maps_route2": 768,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "1 genuinely free item(s): I-DIRECTION-LABEL fiber 9",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (1, 1, 1), (2, 2, 1)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 66 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 66,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 1, 1), (2, 2, 1)))@SIMPLE",
+   "target_arity": 66,
+   "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 1, 1), (2, 2, 1)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 1, 2))",
+   "aut_weighted": 576,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "UNMOTIVATED",
+   "doubled_free": false,
+   "fate": "UNMOTIVATED",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1,
+    2
+   ],
+   "free_items": [
+    "I-DIRECTION-LABEL",
+    "I-ORIENT"
+   ],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 9,
+    "I-ORIENT": 4,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 576,
+   "maps_route2": 576,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "2 genuinely free item(s): I-DIRECTION-LABEL fiber 9, I-ORIENT fiber 4",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (1, 1, 2)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (1, 1, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 1, 2))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 67 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 67,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 1, 2)))@SIMPLE",
+   "target_arity": 67,
+   "type": "(3, (0, 0, 1), (1, 1, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 1, 2))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 1, 2)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (1, 1, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 1, 2))",
+   "aut_weighted": 576,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "UNMOTIVATED",
+   "doubled_free": false,
+   "fate": "UNMOTIVATED",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1,
+    2
+   ],
+   "free_items": [
+    "I-DIRECTION-LABEL",
+    "I-ORIENT"
+   ],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 9,
+    "I-ORIENT": 4,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 576,
+   "maps_route2": 576,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "2 genuinely free item(s): I-DIRECTION-LABEL fiber 9, I-ORIENT fiber 4",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 1), (1, 1, 2)))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 1), (1, 1, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 1, 2))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 67 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 67,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 1, 2)))@SIMPLE",
+   "target_arity": 67,
+   "type": "(3, (0, 0, 1), (1, 1, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 1), (1, 1, 2))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 2,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": false,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1,
+    2
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 1), (1, 1, 2)))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 1), (1, 1, 2))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 3))",
+   "aut_weighted": 62208,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 62208,
+   "maps_route2": null,
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 3),))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 3))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 3))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 3),))@SIMPLE",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 3))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 3))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "EMBEDDING",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 3),))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 3))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 3))",
+   "aut_weighted": 62208,
+   "carrier": "BARE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-candidate",
+   "doubled_free": true,
+   "fate": "FOUND-candidate",
+   "fiber_site_routeA": 1,
+   "fiber_site_routeB": 1,
+   "fibers_base_map_invariant": true,
+   "field_values": [
+    1
+   ],
+   "free_items": [],
+   "individuation": "SIMPLE",
+   "inventory": {
+    "I-DIRECTION-LABEL": 1,
+    "I-ORIENT": 1,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": 62208,
+   "maps_route2": null,
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "zero free items at the RSQ standard",
+   "site_arity": 15,
+   "site_gen": "ACTOR",
+   "target": "T(k=3,((0, 0, 3),))@SIMPLE",
+   "target_arity": 15,
+   "type": "(3, (0, 0, 3))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 3))",
+   "carrier": "EXT-PAIR",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "SIMPLE",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the SIMPLE link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 3),))@SIMPLE",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 3))"
+  },
+  {
+   "arena": "SEC-UNION(3, (0, 0, 3))",
+   "carrier": "EXT-INCIDENCE",
+   "count_cells": 54,
+   "count_gen": "DIVISION-COUNT",
+   "count_max": 1,
+   "count_min": 1,
+   "declared_cell": "FOUND-STRUCTURAL",
+   "doubled_free": true,
+   "fate": "FOUND-STRUCTURAL",
+   "field_values": [
+    1
+   ],
+   "individuation": "CHARTED",
+   "inventory": "READ-AT-BARE",
+   "k": 3,
+   "link_gen": "CO-DIVISION-ACTOR-PAIR",
+   "maps": "READ-AT-BARE",
+   "on_declared_cell": true,
+   "reading": "QUOTIENT",
+   "reason": "the carrier's incidence structure matches the target's subdivision at 69 objects under the CHARTED link individuation, and the counts are strictly positive",
+   "scope": "STRUCTURE-AND-COUNT-ONLY",
+   "site_arity": 69,
+   "site_gen": "ACTOR-PLUS-CO-DIVISION-PAIR",
+   "target": "T(k=3,((0, 0, 3),))@CHARTED",
+   "target_arity": 69,
+   "type": "(3, (0, 0, 3))"
+  }
+ ],
+ "driver_anchor": {
+  "bodies_exit_free": true,
+  "committed_arbs": 12,
+  "committed_deliveries": 18,
+  "committed_n": 66,
+  "d66_row": "GRID(g=3,R=4)                          n=  66 arbs= 12 (k_min=3, k_conflict=3) deliveries= 18",
+  "driven_arbs": 12,
+  "driven_deliveries": 18,
+  "driven_n": 66,
+  "events": 66,
+  "identical": true,
+  "slice_exit_free": true
+ },
+ "forced_overlap": {
+  "k_with_a_non_welding_type": [
+   2,
+   3
+  ],
+  "k_with_a_welding_type": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "rows": [
+   {
+    "bare_fate": "FOUND-candidate",
+    "doubled": 0,
+    "doubled_free": true,
+    "gluings": 1,
+    "k": 0,
+    "type": "(0,)",
+    "welds": true
+   },
+   {
+    "bare_fate": "FOUND-candidate",
+    "doubled": 0,
+    "doubled_free": true,
+    "gluings": 81,
+    "k": 1,
+    "type": "(1, (0, 0, 1))",
+    "welds": true
+   },
+   {
+    "bare_fate": "FOUND-candidate",
+    "doubled": 0,
+    "doubled_free": true,
+    "gluings": 486,
+    "k": 2,
+    "type": "(2, (0, 0, 1), (0, 1, 1))",
+    "welds": true
+   },
+   {
+    "bare_fate": "FOUND-candidate",
+    "doubled": 0,
+    "doubled_free": true,
+    "gluings": 486,
+    "k": 2,
+    "type": "(2, (0, 0, 1), (1, 0, 1))",
+    "welds": true
+   },
+   {
+    "bare_fate": "UNMOTIVATED",
+    "doubled": 1,
+    "doubled_free": false,
+    "gluings": 1458,
+    "k": 2,
+    "type": "(2, (0, 0, 1), (1, 1, 1))",
+    "welds": false
+   },
+   {
+    "bare_fate": "FOUND-candidate",
+    "doubled": 0,
+    "doubled_free": true,
+    "gluings": 162,
+    "k": 2,
+    "type": "(2, (0, 0, 2))",
+    "welds": true
+   },
+   {
+    "bare_fate": "FOUND-candidate",
+    "doubled": 0,
+    "doubled_free": true,
+    "gluings": 486,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+    "welds": true
+   },
+   {
+    "bare_fate": "UNMOTIVATED",
+    "doubled": 1,
+    "doubled_free": false,
+    "gluings": 11664,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+    "welds": false
+   },
+   {
+    "bare_fate": "UNMOTIVATED",
+    "doubled": 2,
+    "doubled_free": false,
+    "gluings": 8748,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+    "welds": false
+   },
+   {
+    "bare_fate": "FOUND-candidate",
+    "doubled": 0,
+    "doubled_free": true,
+    "gluings": 972,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (0, 1, 2))",
+    "welds": true
+   },
+   {
+    "bare_fate": "FOUND-candidate",
+    "doubled": 0,
+    "doubled_free": true,
+    "gluings": 486,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+    "welds": true
+   },
+   {
+    "bare_fate": "UNMOTIVATED",
+    "doubled": 2,
+    "doubled_free": false,
+    "gluings": 8748,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+    "welds": false
+   },
+   {
+    "bare_fate": "FOUND-candidate",
+    "doubled": 0,
+    "doubled_free": true,
+    "gluings": 972,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (1, 0, 2))",
+    "welds": true
+   },
+   {
+    "bare_fate": "UNMOTIVATED",
+    "doubled": 3,
+    "doubled_free": false,
+    "gluings": 4374,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+    "welds": false
+   },
+   {
+    "bare_fate": "UNMOTIVATED",
+    "doubled": 2,
+    "doubled_free": false,
+    "gluings": 5832,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (1, 1, 2))",
+    "welds": false
+   },
+   {
+    "bare_fate": "FOUND-candidate",
+    "doubled": 0,
+    "doubled_free": true,
+    "gluings": 54,
+    "k": 3,
+    "type": "(3, (0, 0, 3))",
+    "welds": true
+   }
+  ],
+  "total_gluings": 45010,
+  "welding_gluings": 4186
+ },
+ "gate_count": 37,
+ "gluing_fiber": {
+  "compatibility": [
+   {
+    "cells_where_union_differs_from_sector": 0,
+    "compatible": true,
+    "k": 0,
+    "shared_cells": 0,
+    "type": "(0,)"
+   },
+   {
+    "cells_where_union_differs_from_sector": 0,
+    "compatible": true,
+    "k": 1,
+    "shared_cells": 6,
+    "type": "(1, (0, 0, 1))"
+   },
+   {
+    "cells_where_union_differs_from_sector": 0,
+    "compatible": true,
+    "k": 2,
+    "shared_cells": 12,
+    "type": "(2, (0, 0, 1), (0, 1, 1))"
+   },
+   {
+    "cells_where_union_differs_from_sector": 0,
+    "compatible": true,
+    "k": 2,
+    "shared_cells": 12,
+    "type": "(2, (0, 0, 1), (1, 0, 1))"
+   },
+   {
+    "cells_where_union_differs_from_sector": 2,
+    "compatible": false,
+    "k": 2,
+    "shared_cells": 12,
+    "type": "(2, (0, 0, 1), (1, 1, 1))"
+   },
+   {
+    "cells_where_union_differs_from_sector": 0,
+    "compatible": true,
+    "k": 2,
+    "shared_cells": 12,
+    "type": "(2, (0, 0, 2))"
+   },
+   {
+    "cells_where_union_differs_from_sector": 0,
+    "compatible": true,
+    "k": 3,
+    "shared_cells": 18,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+   },
+   {
+    "cells_where_union_differs_from_sector": 2,
+    "compatible": false,
+    "k": 3,
+    "shared_cells": 18,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+   },
+   {
+    "cells_where_union_differs_from_sector": 4,
+    "compatible": false,
+    "k": 3,
+    "shared_cells": 18,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+   },
+   {
+    "cells_where_union_differs_from_sector": 0,
+    "compatible": true,
+    "k": 3,
+    "shared_cells": 18,
+    "type": "(3, (0, 0, 1), (0, 1, 2))"
+   },
+   {
+    "cells_where_union_differs_from_sector": 0,
+    "compatible": true,
+    "k": 3,
+    "shared_cells": 18,
+    "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+   },
+   {
+    "cells_where_union_differs_from_sector": 4,
+    "compatible": false,
+    "k": 3,
+    "shared_cells": 18,
+    "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+   },
+   {
+    "cells_where_union_differs_from_sector": 0,
+    "compatible": true,
+    "k": 3,
+    "shared_cells": 18,
+    "type": "(3, (0, 0, 1), (1, 0, 2))"
+   },
+   {
+    "cells_where_union_differs_from_sector": 6,
+    "compatible": false,
+    "k": 3,
+    "shared_cells": 18,
+    "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+   },
+   {
+    "cells_where_union_differs_from_sector": 4,
+    "compatible": false,
+    "k": 3,
+    "shared_cells": 18,
+    "type": "(3, (0, 0, 1), (1, 1, 2))"
+   },
+   {
+    "cells_where_union_differs_from_sector": 0,
+    "compatible": true,
+    "k": 3,
+    "shared_cells": 18,
+    "type": "(3, (0, 0, 3))"
+   }
+  ],
+  "gluings_per_type": {
+   "(0,)": 1,
+   "(1, (0, 0, 1))": 81,
+   "(2, (0, 0, 1), (0, 1, 1))": 486,
+   "(2, (0, 0, 1), (1, 0, 1))": 486,
+   "(2, (0, 0, 1), (1, 1, 1))": 1458,
+   "(2, (0, 0, 2))": 162,
+   "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))": 486,
+   "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))": 11664,
+   "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))": 8748,
+   "(3, (0, 0, 1), (0, 1, 2))": 972,
+   "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))": 486,
+   "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))": 8748,
+   "(3, (0, 0, 1), (1, 0, 2))": 972,
+   "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))": 4374,
+   "(3, (0, 0, 1), (1, 1, 2))": 5832,
+   "(3, (0, 0, 3))": 54
+  },
+  "total_gluings": 45010,
+  "types": 16
+ },
+ "gluing_totals": {
+  "by_k": {
+   "0": 1,
+   "1": 81,
+   "2": 2592,
+   "3": 42336
+  },
+  "closed_form": 45010,
+  "doubled_free_by_k": {
+   "0": 1,
+   "1": 81,
+   "2": 1134,
+   "3": 2970
+  },
+  "doubled_free_total": 4186,
+  "total": 45010,
+  "types": 16
+ },
+ "ledger": [
+  {
+   "chain": "7203ce45ced7c482",
+   "gate": "G-SOURCES",
+   "ok": true
+  },
+  {
+   "chain": "be2d66e69fc7c856",
+   "gate": "G-CITED-NOT-READ",
+   "ok": true
+  },
+  {
+   "chain": "7daa5b0bdb265c35",
+   "gate": "G-ANCHORS",
+   "ok": true
+  },
+  {
+   "chain": "c27294b03d5ea2cd",
+   "gate": "G-EXACT",
+   "ok": true
+  },
+  {
+   "chain": "0402546caa922d21",
+   "gate": "G-GRAMMAR-ANCHOR",
+   "ok": true
+  },
+  {
+   "chain": "93c10dc4415786a1",
+   "gate": "G-SECTOR",
+   "ok": true
+  },
+  {
+   "chain": "5c5db0d74b57a7d9",
+   "gate": "G-SECTOR-WELD",
+   "ok": true
+  },
+  {
+   "chain": "db8ee05e29e25b88",
+   "gate": "G-AUT-ROUTES",
+   "ok": true
+  },
+  {
+   "chain": "1158ee38b20960ae",
+   "gate": "G-ARRANGEMENT-FREE",
+   "ok": true
+  },
+  {
+   "chain": "8c6eedc20f4828b6",
+   "gate": "G-GLUING-CENSUS",
+   "ok": true
+  },
+  {
+   "chain": "c4227a72d94a59ed",
+   "gate": "G-CLEAN-CRITERION",
+   "ok": true
+  },
+  {
+   "chain": "1f3f8ad277fe096c",
+   "gate": "G-FIBER-ROUTES",
+   "ok": true
+  },
+  {
+   "chain": "794a505ccecf79ff",
+   "gate": "G-AUT-ROUTES-UNION",
+   "ok": true
+  },
+  {
+   "chain": "67891349926da576",
+   "gate": "G-DRIVEN-EQUALS-COMBINATORIAL",
+   "ok": true
+  },
+  {
+   "chain": "954baa22566fbca0",
+   "gate": "G-MAXHITS",
+   "ok": true
+  },
+  {
+   "chain": "cb82820de77f656a",
+   "gate": "G-MENU-PURE",
+   "ok": true
+  },
+  {
+   "chain": "7b96138bec12cb7e",
+   "gate": "G-SEED-RULE",
+   "ok": true
+  },
+  {
+   "chain": "cf7148e87326ddd7",
+   "gate": "G-DICT",
+   "ok": true
+  },
+  {
+   "chain": "0e43004487da4cf6",
+   "gate": "G-CONTROLS",
+   "ok": true
+  },
+  {
+   "chain": "fe56776ff3bb9178",
+   "gate": "G-GLUING-FIBER",
+   "ok": true
+  },
+  {
+   "chain": "d234667014a9eb31",
+   "gate": "G-SEAM-RANK",
+   "ok": true
+  },
+  {
+   "chain": "e6b270e560dd94d9",
+   "gate": "G-SEAM-WITNESS",
+   "ok": true
+  },
+  {
+   "chain": "6a1683a8d17fdd6a",
+   "gate": "G-SEAM-CROSS-ALGEBRA",
+   "ok": true
+  },
+  {
+   "chain": "bbec91dde2c52dda",
+   "gate": "G-CROSS",
+   "ok": true
+  },
+  {
+   "chain": "48b9d370edce37c8",
+   "gate": "G-FORCED-OVERLAP",
+   "ok": true
+  },
+  {
+   "chain": "2d02c5ece62d9e4b",
+   "gate": "G-STERILITY",
+   "ok": true
+  },
+  {
+   "chain": "c50b57d626226cd1",
+   "gate": "G-CONTRAST",
+   "ok": true
+  },
+  {
+   "chain": "f2b639fbfa719b99",
+   "gate": "G-WALL-L1",
+   "ok": true
+  },
+  {
+   "chain": "8e9e1a56463707ab",
+   "gate": "G-WALL-NAMED",
+   "ok": true
+  },
+  {
+   "chain": "e5c67dae22a39f6c",
+   "gate": "G-WALL-SCAN",
+   "ok": true
+  },
+  {
+   "chain": "8e8c7d493c38924f",
+   "gate": "G-VERDICT-RECON",
+   "ok": true
+  },
+  {
+   "chain": "37132b46393f473e",
+   "gate": "G-PAPER-CLAIMS",
+   "ok": true
+  },
+  {
+   "chain": "1b008eee4768d709",
+   "gate": "G-PAPER-COVERAGE",
+   "ok": true
+  },
+  {
+   "chain": "fbb4d072d9f7018b",
+   "gate": "G-PAPER-FENCE",
+   "ok": true
+  },
+  {
+   "chain": "771dc7f8c792d240",
+   "gate": "G-PAPER-POLARITY",
+   "ok": true
+  },
+  {
+   "chain": "556212913191fb87",
+   "gate": "G-PAPER-SPELLED",
+   "ok": true
+  },
+  {
+   "chain": "f9594edb93b89943",
+   "gate": "G-COVERAGE",
+   "ok": true
+  }
+ ],
+ "ledger_chain": "bbfdfb9f2112f96b",
+ "measure_stamp": {
+  "declared_measure_on_the_gluing_family": null,
+  "note": "each is a count over an exhaustive enumeration with its denominator published; none is a probability, and this unit declares no measure under which it could be read as one",
+  "ratios_published": [
+   "welding types of types",
+   "welding gluings of gluings",
+   "doubled-free gluings of gluings by k",
+   "FORCED window records of window records",
+   "admitted cross specifications of specifications"
+  ],
+  "stamp": "COUNTING-ONLY"
+ },
+ "mutant_sweep": [
+  {
+   "declared": "G-SOURCES",
+   "died_at": "G-SOURCES",
+   "mutant": "MUT-ANCHOR-DIGEST",
+   "on_target": true
+  },
+  {
+   "declared": "G-ANCHORS",
+   "died_at": "G-ANCHORS",
+   "mutant": "MUT-ANCHOR-TEXT",
+   "on_target": true
+  },
+  {
+   "declared": "G-GRAMMAR-ANCHOR",
+   "died_at": "G-GRAMMAR-ANCHOR",
+   "mutant": "MUT-GRAMMAR-ANCHOR",
+   "on_target": true
+  },
+  {
+   "declared": "G-MENU-PURE",
+   "died_at": "G-MENU-PURE",
+   "mutant": "MUT-MENU-MEMO",
+   "on_target": true
+  },
+  {
+   "declared": "G-SECTOR",
+   "died_at": "G-SECTOR",
+   "mutant": "MUT-SECTOR-CELL",
+   "on_target": true
+  },
+  {
+   "declared": "G-SECTOR-WELD",
+   "died_at": "G-SECTOR-WELD",
+   "mutant": "MUT-SECTOR-WELD",
+   "on_target": true
+  },
+  {
+   "declared": "G-AUT-ROUTES",
+   "died_at": "G-AUT-ROUTES",
+   "mutant": "MUT-AUT-ROUTE",
+   "on_target": true
+  },
+  {
+   "declared": "G-GLUING-CENSUS",
+   "died_at": "G-GLUING-CENSUS",
+   "mutant": "MUT-TYPE-COUNT",
+   "on_target": true
+  },
+  {
+   "declared": "G-DRIVEN-EQUALS-COMBINATORIAL",
+   "died_at": "G-DRIVEN-EQUALS-COMBINATORIAL",
+   "mutant": "MUT-DRIVEN-EQ",
+   "on_target": true
+  },
+  {
+   "declared": "G-CLEAN-CRITERION",
+   "died_at": "G-CLEAN-CRITERION",
+   "mutant": "MUT-CLEAN-CRIT",
+   "on_target": true
+  },
+  {
+   "declared": "G-DICT",
+   "died_at": "G-DICT",
+   "mutant": "MUT-DICT-FATE",
+   "on_target": true
+  },
+  {
+   "declared": "G-FIBER-ROUTES",
+   "died_at": "G-FIBER-ROUTES",
+   "mutant": "MUT-FIBER-ROUTE",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEAM-RANK",
+   "died_at": "G-SEAM-RANK",
+   "mutant": "MUT-SEAM-RANK",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEAM-WITNESS",
+   "died_at": "G-SEAM-WITNESS",
+   "mutant": "MUT-SEAM-WITNESS",
+   "on_target": true
+  },
+  {
+   "declared": "G-CROSS",
+   "died_at": "G-CROSS",
+   "mutant": "MUT-CROSS-FATE",
+   "on_target": true
+  },
+  {
+   "declared": "G-STERILITY",
+   "died_at": "G-STERILITY",
+   "mutant": "MUT-STERILITY",
+   "on_target": true
+  },
+  {
+   "declared": "G-FORCED-OVERLAP",
+   "died_at": "G-FORCED-OVERLAP",
+   "mutant": "MUT-OVERLAP",
+   "on_target": true
+  },
+  {
+   "declared": "G-GLUING-FIBER",
+   "died_at": "G-GLUING-FIBER",
+   "mutant": "MUT-COMPAT",
+   "on_target": true
+  },
+  {
+   "declared": "G-WALL-L1",
+   "died_at": "G-WALL-L1",
+   "mutant": "MUT-L1-INJECT",
+   "on_target": true
+  },
+  {
+   "declared": "G-WALL-NAMED",
+   "died_at": "G-WALL-NAMED",
+   "mutant": "MUT-NAMING-DELETE",
+   "on_target": true
+  },
+  {
+   "declared": "G-WALL-SCAN",
+   "died_at": "G-WALL-SCAN",
+   "mutant": "MUT-WALL-SCAN",
+   "on_target": true
+  },
+  {
+   "declared": "G-WALL-SCAN",
+   "died_at": "G-WALL-SCAN",
+   "mutant": "MUT-WALL-PAPER",
+   "on_target": true
+  },
+  {
+   "declared": "G-CITED-NOT-READ",
+   "died_at": "G-CITED-NOT-READ",
+   "mutant": "MUT-CITED-READ",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-CLAIMS",
+   "died_at": "G-PAPER-CLAIMS",
+   "mutant": "MUT-PAPER-TABLE",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-SPELLED",
+   "died_at": "G-PAPER-SPELLED",
+   "mutant": "MUT-PAPER-SPELLED",
+   "on_target": true
+  },
+  {
+   "declared": "G-VERDICT-RECON",
+   "died_at": "G-VERDICT-RECON",
+   "mutant": "MUT-HEAD-FORGE",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-COVERAGE",
+   "died_at": "G-PAPER-COVERAGE",
+   "mutant": "MUT-PAPER-NUMBER",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-FENCE",
+   "died_at": "G-PAPER-FENCE",
+   "mutant": "MUT-PAPER-FENCE",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-POLARITY",
+   "died_at": "G-PAPER-POLARITY",
+   "mutant": "MUT-PAPER-POLARITY",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEAL-COMPLETE",
+   "died_at": "G-SEAL-COMPLETE",
+   "mutant": "MUT-SEAL-DROP",
+   "on_target": true
+  }
+ ],
+ "paper": "v14/paper-32-sec.md",
+ "paper_claims": [
+  {
+   "id": "C01",
+   "text": "the family is 45010 gluings in 16 combinatorial types"
+  },
+  {
+   "id": "C02",
+   "text": "the union welds at 10 of the 16 types"
+  },
+  {
+   "id": "C03",
+   "text": "the site-assignment fiber is 1 at every one of the 16 types"
+  },
+  {
+   "id": "C04",
+   "text": "at k = 0 the automorphism group is 3359232, which is |Aut(sector)|^2 times 2"
+  },
+  {
+   "id": "C05",
+   "text": "the seam system has rank 6 on 10 unknowns, so its kernel is 4"
+  },
+  {
+   "id": "C06",
+   "text": "2 of the 3 cross-sector specifications are ADMITTED by the committed grammar"
+  },
+  {
+   "id": "C07",
+   "text": "the doubled-free gluings number 4186 of 45010"
+  },
+  {
+   "id": "C08",
+   "text": "at k = 3 the aligned type carries 2970 of the 42336 gluings"
+  },
+  {
+   "id": "T-CENSUS-(0,)",
+   "text": "| `(0,)` | 1 | 18 | 54 | 0 | 3359232 | 3359232 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(1, (0, 0, 1))",
+   "text": "| `(1, (0, 0, 1))` | 81 | 17 | 54 | 0 | 41472 | 41472 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(2, (0, 0, 1), (0, 1, 1))",
+   "text": "| `(2, (0, 0, 1), (0, 1, 1))` | 486 | 16 | 54 | 0 | 3456 | 3456 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(2, (0, 0, 1), (1, 0, 1))",
+   "text": "| `(2, (0, 0, 1), (1, 0, 1))` | 486 | 16 | 54 | 0 | 3456 | 3456 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(2, (0, 0, 1), (1, 1, 1))",
+   "text": "| `(2, (0, 0, 1), (1, 1, 1))` | 1458 | 16 | 53 | 1 | 2304 | 2304 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(2, (0, 0, 2))",
+   "text": "| `(2, (0, 0, 2))` | 162 | 16 | 54 | 0 | 20736 | 20736 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))` | 486 | 15 | 54 | 0 | 3456 | 3456 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))` | 11664 | 15 | 53 | 1 | 288 | 288 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))` | 8748 | 15 | 52 | 2 | 192 | 192 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(3, (0, 0, 1), (0, 1, 2))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 2))` | 972 | 15 | 54 | 0 | 1728 | 1728 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+   "text": "| `(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))` | 486 | 15 | 54 | 0 | 3456 | 3456 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+   "text": "| `(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))` | 8748 | 15 | 52 | 2 | 192 | 192 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(3, (0, 0, 1), (1, 0, 2))",
+   "text": "| `(3, (0, 0, 1), (1, 0, 2))` | 972 | 15 | 54 | 0 | 1728 | 1728 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+   "text": "| `(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))` | 4374 | 15 | 51 | 3 | 768 | 768 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(3, (0, 0, 1), (1, 1, 2))",
+   "text": "| `(3, (0, 0, 1), (1, 1, 2))` | 5832 | 15 | 52 | 2 | 576 | 576 | 1 |"
+  },
+  {
+   "id": "T-CENSUS-(3, (0, 0, 3))",
+   "text": "| `(3, (0, 0, 3))` | 54 | 15 | 54 | 0 | 62208 | 62208 | 1 |"
+  },
+  {
+   "id": "T-OVERLAP-(0,)",
+   "text": "| `(0,)` | 0 | 1 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(1, (0, 0, 1))",
+   "text": "| `(1, (0, 0, 1))` | 1 | 81 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(2, (0, 0, 1), (0, 1, 1))",
+   "text": "| `(2, (0, 0, 1), (0, 1, 1))` | 2 | 486 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(2, (0, 0, 1), (1, 0, 1))",
+   "text": "| `(2, (0, 0, 1), (1, 0, 1))` | 2 | 486 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(2, (0, 0, 1), (1, 1, 1))",
+   "text": "| `(2, (0, 0, 1), (1, 1, 1))` | 2 | 1458 | 1 | UNMOTIVATED | no |"
+  },
+  {
+   "id": "T-OVERLAP-(2, (0, 0, 2))",
+   "text": "| `(2, (0, 0, 2))` | 2 | 162 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))` | 3 | 486 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))` | 3 | 11664 | 1 | UNMOTIVATED | no |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))` | 3 | 8748 | 2 | UNMOTIVATED | no |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (0, 1, 2))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 2))` | 3 | 972 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+   "text": "| `(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))` | 3 | 486 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+   "text": "| `(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))` | 3 | 8748 | 2 | UNMOTIVATED | no |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 0, 2))",
+   "text": "| `(3, (0, 0, 1), (1, 0, 2))` | 3 | 972 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+   "text": "| `(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))` | 3 | 4374 | 3 | UNMOTIVATED | no |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 1, 2))",
+   "text": "| `(3, (0, 0, 1), (1, 1, 2))` | 3 | 5832 | 2 | UNMOTIVATED | no |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 3))",
+   "text": "| `(3, (0, 0, 3))` | 3 | 54 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-WINDOW-(0,)-first",
+   "text": "| `(0,)` | first | FORCED | 96 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(0,)-shared",
+   "text": "| `(0,)` | shared | FORCED | 96 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(1, (0, 0, 1))-first",
+   "text": "| `(1, (0, 0, 1))` | first | FORCED | 98 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(1, (0, 0, 1))-shared",
+   "text": "| `(1, (0, 0, 1))` | shared | FORCED | 98 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(2, (0, 0, 1), (0, 1, 1))-first",
+   "text": "| `(2, (0, 0, 1), (0, 1, 1))` | first | FORCED | 98 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(2, (0, 0, 1), (0, 1, 1))-shared",
+   "text": "| `(2, (0, 0, 1), (0, 1, 1))` | shared | FORCED | 98 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(2, (0, 0, 1), (1, 0, 1))-first",
+   "text": "| `(2, (0, 0, 1), (1, 0, 1))` | first | REFUSED | 49 | 9 | -- |"
+  },
+  {
+   "id": "T-WINDOW-(2, (0, 0, 1), (1, 0, 1))-shared",
+   "text": "| `(2, (0, 0, 1), (1, 0, 1))` | shared | FORCED | 100 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(2, (0, 0, 1), (1, 1, 1))-first",
+   "text": "| `(2, (0, 0, 1), (1, 1, 1))` | first | FORCED | 98 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(2, (0, 0, 1), (1, 1, 1))-shared",
+   "text": "| `(2, (0, 0, 1), (1, 1, 1))` | shared | FORCED | 98 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(2, (0, 0, 2))-first",
+   "text": "| `(2, (0, 0, 2))` | first | REFUSED | 49 | 9 | -- |"
+  },
+  {
+   "id": "T-WINDOW-(2, (0, 0, 2))-shared",
+   "text": "| `(2, (0, 0, 2))` | shared | FORCED | 100 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))-first",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))` | first | FORCED | 98 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))-shared",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))` | shared | FORCED | 98 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))-first",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))` | first | REFUSED | 49 | 9 | -- |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))-shared",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))` | shared | FORCED | 100 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))-first",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))` | first | FORCED | 98 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))-shared",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))` | shared | FORCED | 98 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (0, 1, 2))-first",
+   "text": "| `(3, (0, 0, 1), (0, 1, 2))` | first | FORCED | 100 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (0, 1, 2))-shared",
+   "text": "| `(3, (0, 0, 1), (0, 1, 2))` | shared | FORCED | 100 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))-first",
+   "text": "| `(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))` | first | REFUSED | 49 | 9 | -- |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))-shared",
+   "text": "| `(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))` | shared | FORCED | 102 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))-first",
+   "text": "| `(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))` | first | FORCED | 100 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))-shared",
+   "text": "| `(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))` | shared | FORCED | 100 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (1, 0, 2))-first",
+   "text": "| `(3, (0, 0, 1), (1, 0, 2))` | first | REFUSED | 49 | 9 | -- |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (1, 0, 2))-shared",
+   "text": "| `(3, (0, 0, 1), (1, 0, 2))` | shared | FORCED | 102 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))-first",
+   "text": "| `(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))` | first | FORCED | 98 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))-shared",
+   "text": "| `(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))` | shared | FORCED | 98 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (1, 1, 2))-first",
+   "text": "| `(3, (0, 0, 1), (1, 1, 2))` | first | FORCED | 100 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 1), (1, 1, 2))-shared",
+   "text": "| `(3, (0, 0, 1), (1, 1, 2))` | shared | FORCED | 100 | 18 | yes |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 3))-first",
+   "text": "| `(3, (0, 0, 3))` | first | REFUSED | 49 | 9 | -- |"
+  },
+  {
+   "id": "T-WINDOW-(3, (0, 0, 3))-shared",
+   "text": "| `(3, (0, 0, 3))` | shared | FORCED | 102 | 18 | yes |"
+  },
+  {
+   "id": "T-SEAM-ALIGNED(k=3)",
+   "text": "| ALIGNED(k=3) | [1, 1, 1] | [1, 1, 1] | 6 | 10 | 6 | 4 | -2 |"
+  },
+  {
+   "id": "T-SEAM-TRIANGLE(k=3)",
+   "text": "| TRIANGLE(k=3) | [1, 2, 1] | [1, 2, 1] | 6 | 10 | 6 | 4 | -1 |"
+  },
+  {
+   "id": "T-SEAM-k=1",
+   "text": "| k=1 | [1, 1, 1] | [1, 1, 1] | 6 | 10 | 6 | 4 | -2 |"
+  },
+  {
+   "id": "T-CROSS-SHARED-SEEDED",
+   "text": "| SHARED-SEEDED | ('S', 0) | ADMITTED | 1 | 1 | STRUCT-DEAD |"
+  },
+  {
+   "id": "T-CROSS-A-SEEDED",
+   "text": "| A-SEEDED | ('A', (1, 1)) | REFUSED | 0 | 0 | -- |"
+  },
+  {
+   "id": "T-CROSS-B-SEEDED-PURE",
+   "text": "| B-SEEDED-PURE | ('B', (1, 1)) | ADMITTED | 2 | 2 | STRUCT-DEAD |"
+  },
+  {
+   "id": "T-XALG-0",
+   "text": "| 0 | 6 | 4 |"
+  },
+  {
+   "id": "T-XALG-1",
+   "text": "| 1 | 7 | 3 |"
+  },
+  {
+   "id": "T-XALG-2",
+   "text": "| 2 | 8 | 2 |"
+  },
+  {
+   "id": "T-XALG-3",
+   "text": "| 3 | 9 | 1 |"
+  },
+  {
+   "id": "T-XALG-4",
+   "text": "| 4 | 10 | 0 |"
+  }
+ ],
+ "paper_gates": {
+  "claims": 83,
+  "coverage": 1169,
+  "fences": {
+   "blocks": 8,
+   "distinct_blocks": 4,
+   "missing": [],
+   "ok": true,
+   "stray": [],
+   "verdict_segments": 4
+  },
+  "polarity": {
+   "bad": [],
+   "checked": 3,
+   "ok": true,
+   "rows": [
+    {
+     "id": "P1",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P2",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P3",
+     "negation_present": false,
+     "positive_present": true
+    }
+   ]
+  },
+  "registry_size": 121,
+  "spelled": {
+   "ok": true,
+   "spelled_found": [
+    "fifty-four"
+   ],
+   "unbacked": []
+  }
+ },
+ "pin": {
+  "ledger": 258,
+  "paper_number": 32,
+  "path": "v14/note-sec-pin.md"
+ },
+ "provenance": [
+  {
+   "declared": "c46a9927f2a8",
+   "id": "A-PIN",
+   "ok": true,
+   "path": "v14/note-sec-pin.md",
+   "sha256_12": "c46a9927f2a8",
+   "why": "THIS UNIT'S PIN (ledger #258): the six stages, the mandatory k = 0 sterility control, the walls and the pre-registered outcome names."
+  },
+  {
+   "declared": "50bb81e67942",
+   "id": "A-P19",
+   "ok": true,
+   "path": "v14/paper-19-r3-weld.md",
+   "sha256_12": "50bb81e67942",
+   "why": "PAPER-19 (terminal): the forced dictionary [ACTOR->SITE | CO-DIVISION-ACTOR-PAIR->LINK | DIVISION-COUNT->n_l(x)], the (1,1,1) record, the 1296 = |Aut(K333)| map count and the 1/1/1 fibers this unit reproduces as its single-sector control."
+  },
+  {
+   "declared": "dfea664f2408",
+   "id": "A-P19REC",
+   "ok": true,
+   "path": "v14/code/r3_weld_receipt.json",
+   "sha256_12": "dfea664f2408",
+   "why": "PAPER-19's COMMITTED RECEIPT: the single-sector numbers -- events, divisions, cells, isomorphism count and fibers -- are READ from these bytes at run time and reproduced, never re-typed."
+  },
+  {
+   "declared": "ef4a8c35a0c4",
+   "id": "A-P21",
+   "ok": true,
+   "path": "v14/paper-21-r4dec.md",
+   "sha256_12": "ef4a8c35a0c4",
+   "why": "PAPER-21 (terminal): the detector at R = 4, the budget law R = n1 + n2 + n3, block quantisation, and the theorem that zero free items holds exactly at the link-constant records -- the statement this unit tests one level up, on a carrier that is not edge-transitive."
+  },
+  {
+   "declared": "a4538c7019e6",
+   "id": "A-P21REC",
+   "ok": true,
+   "path": "v14/code/r4dec_receipt.json",
+   "sha256_12": "a4538c7019e6",
+   "why": "PAPER-21's COMMITTED RECEIPT: its R = 3 back-validation row (the I7-STRICT class at 72 triples) is read from these bytes."
+  },
+  {
+   "declared": "c4c8880874bf",
+   "id": "A-R1",
+   "ok": true,
+   "path": "v14/paper-01-continuum-rung.md",
+   "sha256_12": "c4c8880874bf",
+   "why": "R1 / paper-01 (terminal): the copy-forcing theorem and the sterility prescription -- the prediction this unit's k = 0 arm gates."
+  },
+  {
+   "declared": "1a80a5bf1a1b",
+   "id": "A-R2",
+   "ok": true,
+   "path": "v14/paper-02-manifold-rung.md",
+   "sha256_12": "1a80a5bf1a1b",
+   "why": "R2 / paper-02 (terminal): locality is DECLARABLE, at 14 of 109 rules -- the ancestry of the shared-participation question."
+  },
+  {
+   "declared": "f286ba10d2d9",
+   "id": "A-HA",
+   "ok": true,
+   "path": "v13/paper-ha-successor.md",
+   "sha256_12": "f286ba10d2d9",
+   "why": "I7 / HA: the declared readout, the admissibility criterion, and requirement 3 -- the two-way rule this unit's controls discharge."
+  },
+  {
+   "declared": "542b8735daf0",
+   "id": "A-I7",
+   "ok": true,
+   "path": "v13/code/ha_successor_receipt.json",
+   "sha256_12": "542b8735daf0",
+   "why": "I7's ARENA AS DATA: sites, links and the declared count box.  The target lattices of this unit are built from these bytes."
+  },
+  {
+   "declared": "576275d55ecf",
+   "id": "A-D42B1",
+   "ok": true,
+   "path": "v10/code/d42b1_transport_exact.py",
+   "sha256_12": "576275d55ecf",
+   "why": "THE COMMITTED TRANSPORT GRAMMAR, driven directly: this unit's only source of admissibility."
+  },
+  {
+   "declared": "684cdb76552b",
+   "id": "A-D60",
+   "ok": true,
+   "path": "v10/code/d60_crystal_exact.py",
+   "sha256_12": "684cdb76552b",
+   "why": "D60: the Builder `B` and the delivery helper `dl`, AST-extracted."
+  },
+  {
+   "declared": "3d0516ab106e",
+   "id": "A-D66",
+   "ok": true,
+   "path": "v10/code/d66_arbitration_crystal_exact.py",
+   "sha256_12": "3d0516ab106e",
+   "why": "D66: CONFLICT-GRID(g, R), the committed constructor, AST-extracted and re-run as this unit's driver anchor."
+  },
+  {
+   "declared": "e252529d2586",
+   "id": "A-D66OUT",
+   "ok": true,
+   "path": "v10/data/d66_arbitration_crystal_exact.out",
+   "sha256_12": "e252529d2586",
+   "why": "D66's COMMITTED OUTPUT: the GRID(g=3,R=3) row is READ from this file at run time and reproduced, never re-typed."
+  },
+  {
+   "declared": "93ea24591c3c",
+   "id": "A-L1",
+   "ok": true,
+   "path": "v11/note-L1-lorentz-no-go-lemma.md",
+   "sha256_12": "93ea24591c3c",
+   "why": "L-1: the fourth-form clause argued before any test, and the sentence retracted on 2026-07-28 that no paper of this line may reproduce."
+  },
+  {
+   "declared": "0cebe543e814",
+   "id": "A-CAT",
+   "ok": true,
+   "path": "v11/note-v11p0a-reproduction-catalog.md",
+   "sha256_12": "0cebe543e814",
+   "why": "the reproduction catalog 1.6/1.7: the BHS block and the Kleitman-Rothschild height-control warning."
+  }
+ ],
+ "reconstruction": {
+  "motivated_types": 10,
+  "seam_kernel_4": true,
+  "sterile": true,
+  "word": "SEC-COMPOSES"
+ },
+ "schema": "isp/v14/sec/1",
+ "schema_version": "isp/v14/sec/1",
+ "seal_manifest": {
+  "declared_unsealed": {
+   "ledger_chain": "the chained ledger head is the seal of every gate row and is emitted after the manifest is closed",
+   "mutant_sweep": "the sweep rows are produced by the delivery caller after this run returns and are sealed there",
+   "seal_manifest": "the manifest cannot digest itself",
+   "swept": "the sweep flag is set by the caller after the mutant sweep runs; it is bound by G-SWEEP-EXECUTED in the delivery path rather than sealed here"
+  },
+  "order": [
+   "schema",
+   "pin",
+   "unit",
+   "paper",
+   "provenance",
+   "cited_not_read",
+   "anchors",
+   "driver_anchor",
+   "sector",
+   "sector_weld",
+   "arrangement_free",
+   "type_census",
+   "gluing_totals",
+   "window",
+   "seed_rule",
+   "dictionary",
+   "dead_arms",
+   "gluing_fiber",
+   "seam",
+   "seam_cross_algebra",
+   "cross_sector",
+   "forced_overlap",
+   "sterility",
+   "contrast",
+   "walls",
+   "verdict",
+   "reconstruction",
+   "standards",
+   "totals",
+   "paper_claims",
+   "paper_gates",
+   "coverage",
+   "ledger",
+   "gate_count",
+   "measure_stamp",
+   "schema_version",
+   "mutant_sweep"
+  ],
+  "sealed": {
+   "anchors": "61a10da233f6c8fc0644d06a6d0ddb906b577e193f049d1593224df2288976f2",
+   "arrangement_free": "3165bd2152bd2e3fef85ffcb43ade0420140c45166e92d7b97caa12debf74e46",
+   "cited_not_read": "d18af9ddf9d9fae66f4748003d883ece03ba9b4933b2e8bd02542de777e1d1b7",
+   "contrast": "ac1818f59f4e1954dd308f157225d748618cac1774bf40476b206ac820dcf1a0",
+   "coverage": "7aab717315b74094d43b3d09f658199508b53806c69bc12056ccb2f5f2075117",
+   "cross_sector": "ce6b1427d337e538f4c4d2cd83d284ae8642676b76bf43151f7baab375362fef",
+   "dead_arms": "2af99646e91d2aee36f2e2849aa13787e045e84300690bf285c43e2d5fbd3734",
+   "dictionary": "33ec30311113fd95aa61960f48e68cd5c07fe4384d9ff75010990e17bf204c5c",
+   "driver_anchor": "43de158dc63bc60075b35fd8be9bae4a6dfe18ea3d1c2c50edcbeaefc62f48ee",
+   "forced_overlap": "03e26aacc32b25a14ce1ca00ba544e10eee2b3e09045398cccd1f7d415814a6d",
+   "gate_count": "7a61b53701befdae0eeeffaecc73f14e20b537bb0f8b91ad7c2936dc63562b25",
+   "gluing_fiber": "71dc18827457044547422b919e0ba037bcd95ed3fac8b65cadd825e79cae46b9",
+   "gluing_totals": "8b549e492e1ba2b8e17a0101907f76fe39c0f462fc9e0893f801d2c6fbd8f7a0",
+   "ledger": "764cdd2a471010a6ba17143a332a87def90aa9ab7f7ece15e46c4acee84aa49c",
+   "measure_stamp": "81d7a0579e38d1196b2fc4aa1b2a014ae0896ed0a8633f748403597908093209",
+   "mutant_sweep": "b019dd67e96d200038a359e8a3bee993482af77aac9bb7d548cc9ea0d3484d29",
+   "paper": "e1010d11261b0a63debf5e2b4067f4d1ae823ade183e4b0f514a5afd741347bb",
+   "paper_claims": "8d25d9be8363b4109902bf67de345d7e237910d9261cb824073ebed400a7d5a9",
+   "paper_gates": "83ffc58b349e8df472dc497fd5076b2ed75f717d93b7abec025e9f4c294fd274",
+   "pin": "41c1c0076eb9536410b063666fa727daba587db50a5d9ad92ffe1ff8db63ccc8",
+   "provenance": "686fadccdec271aa4edcfba314f2db63b74538d5ff6f2c5fd08be62336b534be",
+   "reconstruction": "77c9be2b80847064e334f3fcaa3dbf06af1c143eeda4d8e3e4fd6bb41980a499",
+   "schema": "be996881b26957349c5926cc20f91c7d2426a8269eb774fcdccaadebe6d6b1bd",
+   "schema_version": "be996881b26957349c5926cc20f91c7d2426a8269eb774fcdccaadebe6d6b1bd",
+   "seam": "ca9bc44d4f69370f8abb4f7f95a1edef415e17c4fac3c897dd3419df3b124832",
+   "seam_cross_algebra": "efaa634a8bbef11a3df88a0dbc8ba627da93b87f38a3b88bfe5d7e24a3de8e87",
+   "sector": "886548ef79c46a7178b3110075ff214d46f8d820cd7375c17094c831f4e5c277",
+   "sector_weld": "d627f8a637223ed30fe93b56c2851e03dc39ffb0a3d3aa91819398ac2c7e3173",
+   "seed_rule": "b13673322dad20909459a95d21b6144c14b9b4017e5566b1ecf8e59efbda7f2d",
+   "standards": "84f2012aad7293f94ff8d41f571829108249887c9012815234fb5e1e004b2b60",
+   "sterility": "d0ae80a7c2a1510c66a788e04724ba4e3d5941ce1776a57022935837a536641f",
+   "totals": "8283eb8bd2d12424a1762229a89af90678a807c7e065a785ba3703ae60bd64d6",
+   "type_census": "985fcca129f7218a13b5c277bfcf220f3314c282eb9fa922f9f1f05ea4cc36c3",
+   "unit": "c5e33bd2ef71d281bbaec56af7836c6ee4bc83abd4a7ee432d0c1d224c046437",
+   "verdict": "7cf6c6194457a09d601df5e3e6ca7ae0e8515c891b2ff837cf683085f252b87e",
+   "walls": "7830ad9d54e70d4602b2e0e159a3c182a8b45a68596f7fef349964b57e4ea32e",
+   "window": "c606df84e3a1ce7eaa2f7064588df3ba591af0e65c7d82aa14812790e3898d6e"
+  }
+ },
+ "seam": [
+  {
+   "direct_sum_minors": [
+    "1",
+    "3/4",
+    "3/4",
+    "9/16"
+   ],
+   "direct_sum_posdef": true,
+   "equations": 6,
+   "gluing": "ALIGNED(k=3)",
+   "indefinite_witness": {
+    "completion": [
+     "1",
+     "-1/2",
+     "0",
+     "1",
+     "1",
+     "0",
+     "0",
+     "1",
+     "-1/2",
+     "1"
+    ],
+    "kernel_direction": [
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "value": "-2",
+    "vector": [
+     2,
+     1,
+     -1,
+     -2
+    ]
+   },
+   "kernel_dim": 4,
+   "nA": [
+    1,
+    1,
+    1
+   ],
+   "nB": [
+    1,
+    1,
+    1
+   ],
+   "rank": 6,
+   "unknowns": 10,
+   "witness_reproduces_counts": true
+  },
+  {
+   "direct_sum_minors": [
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "direct_sum_posdef": true,
+   "equations": 6,
+   "gluing": "TRIANGLE(k=3)",
+   "indefinite_witness": {
+    "completion": [
+     "1",
+     "-1",
+     "0",
+     "1",
+     "2",
+     "0",
+     "0",
+     "1",
+     "-1",
+     "2"
+    ],
+    "kernel_direction": [
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "value": "-1",
+    "vector": [
+     2,
+     1,
+     -1,
+     -2
+    ]
+   },
+   "kernel_dim": 4,
+   "nA": [
+    1,
+    2,
+    1
+   ],
+   "nB": [
+    1,
+    2,
+    1
+   ],
+   "rank": 6,
+   "unknowns": 10,
+   "witness_reproduces_counts": true
+  },
+  {
+   "direct_sum_minors": [
+    "1",
+    "3/4",
+    "3/4",
+    "9/16"
+   ],
+   "direct_sum_posdef": true,
+   "equations": 6,
+   "gluing": "k=1",
+   "indefinite_witness": {
+    "completion": [
+     "1",
+     "-1/2",
+     "0",
+     "1",
+     "1",
+     "0",
+     "0",
+     "1",
+     "-1/2",
+     "1"
+    ],
+    "kernel_direction": [
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "value": "-2",
+    "vector": [
+     2,
+     1,
+     -1,
+     -2
+    ]
+   },
+   "kernel_dim": 4,
+   "nA": [
+    1,
+    1,
+    1
+   ],
+   "nB": [
+    1,
+    1,
+    1
+   ],
+   "rank": 6,
+   "unknowns": 10,
+   "witness_reproduces_counts": true
+  }
+ ],
+ "seam_cross_algebra": [
+  {
+   "cross_links": 0,
+   "kernel_dim": 4,
+   "rank": 6
+  },
+  {
+   "cross_links": 1,
+   "kernel_dim": 3,
+   "rank": 7
+  },
+  {
+   "cross_links": 2,
+   "kernel_dim": 2,
+   "rank": 8
+  },
+  {
+   "cross_links": 3,
+   "kernel_dim": 1,
+   "rank": 9
+  },
+  {
+   "cross_links": 4,
+   "kernel_dim": 0,
+   "rank": 10
+  }
+ ],
+ "sector": {
+  "cells": 27,
+  "cells_at_one": 27,
+  "det": "3/4",
+  "divisions": 9,
+  "events": 48,
+  "maxhits": 1,
+  "posdef": 9,
+  "refusal": null
+ },
+ "sector_weld": {
+  "arena": "R3-SAT(one sector)",
+  "aut_weighted": 1296,
+  "carrier": "BARE",
+  "count_cells": 27,
+  "count_gen": "DIVISION-COUNT",
+  "count_max": 1,
+  "count_min": 1,
+  "fate": "FOUND-candidate",
+  "fiber_site_routeA": 1,
+  "fiber_site_routeB": 1,
+  "fibers_base_map_invariant": true,
+  "field_values": [
+   1
+  ],
+  "free_items": [],
+  "inventory": {
+   "I-DIRECTION-LABEL": 1,
+   "I-ORIENT": 1,
+   "I-SITE-ASSIGNMENT": 1
+  },
+  "link_gen": "CO-DIVISION-ACTOR-PAIR",
+  "maps": 1296,
+  "maps_route2": 1296,
+  "reading": "EMBEDDING",
+  "reason": "zero free items at the RSQ standard",
+  "site_arity": 9,
+  "site_gen": "ACTOR",
+  "target": "I7",
+  "target_arity": 9
+ },
+ "seed_rule": {
+  "n_types": 16,
+  "refused_under_first": [
+   "(2, (0, 0, 1), (1, 0, 1))",
+   "(2, (0, 0, 2))",
+   "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+   "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+   "(3, (0, 0, 1), (1, 0, 2))",
+   "(3, (0, 0, 3))"
+  ],
+  "refused_under_shared": []
+ },
+ "standards": {
+  "cli_contract": 82,
+  "declared_arena": 15,
+  "era": [
+   "E-22",
+   "E-23",
+   "E-24"
+  ],
+  "gate_to_disk_seal": 119,
+  "gates_bind_objects": 87,
+  "honest_denominators": 34,
+  "no_moving_refs": 91,
+  "paper_coverage": 20,
+  "text_gates_as_written": 125
+ },
+ "sterility": {
+  "aut": 3359232,
+  "aut_components_route": 3359232,
+  "aut_equals_direct_sum": true,
+  "carriers": 18,
+  "dictionary_fate": "FOUND-candidate",
+  "direct_sum_prediction": 3359232,
+  "doubled": 0,
+  "fiber_site": 1,
+  "field_values": [
+   1
+  ],
+  "new_pairs_beyond_the_two_sectors": 0,
+  "pairs": 54,
+  "seam_cells": 0,
+  "sector_aut": 1296,
+  "shared_actors": 0
+ },
+ "swept": true,
+ "totals": {
+  "cited_not_read": 1,
+  "cross_specs": 3,
+  "dead_arms": 5,
+  "dictionary_rows": 96,
+  "gluings": 45010,
+  "mutants": 30,
+  "seams": 3,
+  "sources": 15,
+  "types": 16,
+  "verdict_segments": 4,
+  "window": 32
+ },
+ "type_census": [
+  {
+   "aut": 3359232,
+   "aut_components": 3359232,
+   "aut_enum": null,
+   "aut_weighted": 3359232,
+   "carriers": 18,
+   "doubled": 0,
+   "doubled_free": true,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1
+   ],
+   "gluings": 1,
+   "k": 0,
+   "pairs": 54,
+   "type": "(0,)"
+  },
+  {
+   "aut": 41472,
+   "aut_components": null,
+   "aut_enum": null,
+   "aut_weighted": 41472,
+   "carriers": 17,
+   "doubled": 0,
+   "doubled_free": true,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1
+   ],
+   "gluings": 81,
+   "k": 1,
+   "pairs": 54,
+   "type": "(1, (0, 0, 1))"
+  },
+  {
+   "aut": 3456,
+   "aut_components": null,
+   "aut_enum": 3456,
+   "aut_weighted": 3456,
+   "carriers": 16,
+   "doubled": 0,
+   "doubled_free": true,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1
+   ],
+   "gluings": 486,
+   "k": 2,
+   "pairs": 54,
+   "type": "(2, (0, 0, 1), (0, 1, 1))"
+  },
+  {
+   "aut": 3456,
+   "aut_components": null,
+   "aut_enum": 3456,
+   "aut_weighted": 3456,
+   "carriers": 16,
+   "doubled": 0,
+   "doubled_free": true,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1
+   ],
+   "gluings": 486,
+   "k": 2,
+   "pairs": 54,
+   "type": "(2, (0, 0, 1), (1, 0, 1))"
+  },
+  {
+   "aut": 2304,
+   "aut_components": null,
+   "aut_enum": 2304,
+   "aut_weighted": 2304,
+   "carriers": 16,
+   "doubled": 1,
+   "doubled_free": false,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1,
+    2
+   ],
+   "gluings": 1458,
+   "k": 2,
+   "pairs": 53,
+   "type": "(2, (0, 0, 1), (1, 1, 1))"
+  },
+  {
+   "aut": 20736,
+   "aut_components": null,
+   "aut_enum": null,
+   "aut_weighted": 20736,
+   "carriers": 16,
+   "doubled": 0,
+   "doubled_free": true,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1
+   ],
+   "gluings": 162,
+   "k": 2,
+   "pairs": 54,
+   "type": "(2, (0, 0, 2))"
+  },
+  {
+   "aut": 3456,
+   "aut_components": null,
+   "aut_enum": 3456,
+   "aut_weighted": 3456,
+   "carriers": 15,
+   "doubled": 0,
+   "doubled_free": true,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1
+   ],
+   "gluings": 486,
+   "k": 3,
+   "pairs": 54,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+  },
+  {
+   "aut": 288,
+   "aut_components": null,
+   "aut_enum": 288,
+   "aut_weighted": 288,
+   "carriers": 15,
+   "doubled": 1,
+   "doubled_free": false,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1,
+    2
+   ],
+   "gluings": 11664,
+   "k": 3,
+   "pairs": 53,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+  },
+  {
+   "aut": 192,
+   "aut_components": null,
+   "aut_enum": 192,
+   "aut_weighted": 192,
+   "carriers": 15,
+   "doubled": 2,
+   "doubled_free": false,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1,
+    2
+   ],
+   "gluings": 8748,
+   "k": 3,
+   "pairs": 52,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+  },
+  {
+   "aut": 1728,
+   "aut_components": null,
+   "aut_enum": 1728,
+   "aut_weighted": 1728,
+   "carriers": 15,
+   "doubled": 0,
+   "doubled_free": true,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1
+   ],
+   "gluings": 972,
+   "k": 3,
+   "pairs": 54,
+   "type": "(3, (0, 0, 1), (0, 1, 2))"
+  },
+  {
+   "aut": 3456,
+   "aut_components": null,
+   "aut_enum": 3456,
+   "aut_weighted": 3456,
+   "carriers": 15,
+   "doubled": 0,
+   "doubled_free": true,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1
+   ],
+   "gluings": 486,
+   "k": 3,
+   "pairs": 54,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+  },
+  {
+   "aut": 192,
+   "aut_components": null,
+   "aut_enum": 192,
+   "aut_weighted": 192,
+   "carriers": 15,
+   "doubled": 2,
+   "doubled_free": false,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1,
+    2
+   ],
+   "gluings": 8748,
+   "k": 3,
+   "pairs": 52,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+  },
+  {
+   "aut": 1728,
+   "aut_components": null,
+   "aut_enum": 1728,
+   "aut_weighted": 1728,
+   "carriers": 15,
+   "doubled": 0,
+   "doubled_free": true,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1
+   ],
+   "gluings": 972,
+   "k": 3,
+   "pairs": 54,
+   "type": "(3, (0, 0, 1), (1, 0, 2))"
+  },
+  {
+   "aut": 768,
+   "aut_components": null,
+   "aut_enum": 768,
+   "aut_weighted": 768,
+   "carriers": 15,
+   "doubled": 3,
+   "doubled_free": false,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1,
+    2
+   ],
+   "gluings": 4374,
+   "k": 3,
+   "pairs": 51,
+   "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+  },
+  {
+   "aut": 576,
+   "aut_components": null,
+   "aut_enum": 576,
+   "aut_weighted": 576,
+   "carriers": 15,
+   "doubled": 2,
+   "doubled_free": false,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1,
+    2
+   ],
+   "gluings": 5832,
+   "k": 3,
+   "pairs": 52,
+   "type": "(3, (0, 0, 1), (1, 1, 2))"
+  },
+  {
+   "aut": 62208,
+   "aut_components": null,
+   "aut_enum": null,
+   "aut_weighted": 62208,
+   "carriers": 15,
+   "doubled": 0,
+   "doubled_free": true,
+   "fiber_site_A": 1,
+   "fiber_site_B": 1,
+   "field_values": [
+    1
+   ],
+   "gluings": 54,
+   "k": 3,
+   "pairs": 54,
+   "type": "(3, (0, 0, 3))"
+  }
+ ],
+ "unit": "SEC",
+ "verdict": [
+  "SEC-ARENA-[TWO DRIVEN R=3 SATURATING SECTORS; 45010 GLUINGS IN 16 COMBINATORIAL TYPES OVER k IN {0,1,2,3}; UNION CARRIERS 15..18; FORCED 16 OF 16 WINDOW RECORDS AT THE SHARED-SEED RULE, REFUSED 6 OF 16 AT PAPER-19'S CANONICAL RULE; DRIVEN=COMBINATORIAL AT 26 OF 26]@WINDOW-32-OF-45010-GLUINGS",
+  "SEC-COMPOSES-[ACTOR->SITE|CO-DIVISION-ACTOR-PAIR->LINK|DIVISION-COUNT->n_l(x)]@EMBEDDING+QUOTIENT<THE-UNION-DICTIONARY-EXISTS-AT-EVERY-TYPE:STRUCT-ALIVE-16-OF-16,COUNT-POSITIVE-16-OF-16|MOTIVATED-AT-10-OF-16-TYPES(4186-OF-45010-GLUINGS)|SITE-FIBER=1-AT-16-OF-16-TWO-ROUTES:THE-GLUING-BREAKS-EDGE-TRANSITIVITY-SO-THE-SEAM-IS-VISIBLE-IN-THE-STRUCTURE-ALONE|THE-FREE-ITEM-IS-ALWAYS-I-DIRECTION-LABEL|EXTENDED-CARRIERS:EXT-PAIR-AGREES-WITH-BARE,EXT-INCIDENCE-REPAIRS-EVERY-TYPE(FOUND-16-OF-16)-BECAUSE-THE-DOUBLED-PAIR-SPLITS-INTO-TWO-SITES>",
+  "SEC-SEAM-CURVATURE-[THE-DIRECT-SUM-IS-A-DECLARATION-NOT-A-MEASUREMENT: AT EVERY SHARED SITE THE SIX DECLARED LINKS GIVE RANK 6 ON THE 10 ENTRIES OF Sym^2(Q^4), KERNEL 4; THE DIRECT SUM IS THE CHOICE C=0 AND IS POSITIVE DEFINITE, AND AN EXACT RATIONAL COMPLETION REPRODUCING ALL SIX COUNTS IS NEGATIVE ON AN EXHIBITED VECTOR] -- CROSS-SECTOR DIVISION EVENTS ARE ADMITTED BY THE COMMITTED GRAMMAR (2 OF 3 SPECIFICATIONS DRIVEN, THE OTHERS REFUSED ON THE VERSION LINEAGE) AND EACH CROSS LINK REMOVES EXACTLY ONE UNDETERMINED ENTRY (4,3,2,1,0) -- BUT EVERY ADMITTED ONE REALISES A FOREIGN PAIR AND THE DICTIONARY DIES AT STRUCTURE: THE SEAM'S GEOMETRY IS AVAILABLE ONLY BY LEAVING THE TARGET",
+  "SEC-OVERLAP-TYPE-SELECTED-NOT-k-SELECTED-[EVERY k IN {1,2,3} CARRIES BOTH A WELDING AND A NON-WELDING TYPE EXCEPT k=1 WHICH HAS NO PAIR TO DOUBLE; THE CRITERION IS ALIGNMENT: THE UNION WELDS IFF NO SHARED PAIR IS ADJACENT IN BOTH SECTORS, i.e. IFF EVERY SHARED PAIR SHARES A TRIPARTITE CLASS ON AT LEAST ONE SIDE; AT k=3 THIS IS 'ALL THREE IN ONE CLASS ON ONE SIDE', 2970 OF 42336 GLUINGS] -- STERILITY-CONTROL=k=0-CONFIRMS-R1: |Aut|=3359232=|Aut(SECTOR)|^2 x 2 BY TWO ROUTES, 0 NEW PAIRS, 0 DOUBLED, 0 SEAM CELLS, THE DICTIONARY THE DIRECT SUM OF THE TWO -- AGAINST k=3-ALIGNED WHERE |Aut|=62208 AND THE SEAM CARRIES 12 UNDETERMINED ENTRIES"
+ ],
+ "walls": {
+  "citation_keys_excluded": [
+   "provenance"
+  ],
+  "l1_absent": true,
+  "naming_present": true,
+  "paper_hits": [],
+  "receipt_hits": [],
+  "scanned_terms": [
+   "boost",
+   "rapidity",
+   "sprinkl",
+   "myrheim",
+   "meyer",
+   "shatter",
+   "cosmolog",
+   "continuum",
+   "horizon",
+   "redshift",
+   "expansion",
+   "universe",
+   "big bang",
+   "spacetime"
+  ]
+ },
+ "window": [
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 96,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "first",
+   "type": "(0,)"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 96,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(0,)"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "first",
+   "type": "(1, (0, 0, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(1, (0, 0, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "first",
+   "type": "(2, (0, 0, 1), (0, 1, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(2, (0, 0, 1), (0, 1, 1))"
+  },
+  {
+   "divisions": 9,
+   "driven_equals_combinatorial": null,
+   "events": 49,
+   "fate": "REFUSED",
+   "maxhits": 1,
+   "pairs": 27,
+   "refusal": [
+    "propose ('B', (1, 0))",
+    49
+   ],
+   "seed_rule": "first",
+   "type": "(2, (0, 0, 1), (1, 0, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 100,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(2, (0, 0, 1), (1, 0, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 53,
+   "refusal": null,
+   "seed_rule": "first",
+   "type": "(2, (0, 0, 1), (1, 1, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 53,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(2, (0, 0, 1), (1, 1, 1))"
+  },
+  {
+   "divisions": 9,
+   "driven_equals_combinatorial": null,
+   "events": 49,
+   "fate": "REFUSED",
+   "maxhits": 1,
+   "pairs": 27,
+   "refusal": [
+    "propose ('B', (1, 0))",
+    49
+   ],
+   "seed_rule": "first",
+   "type": "(2, (0, 0, 2))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 100,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(2, (0, 0, 2))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "first",
+   "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+  },
+  {
+   "divisions": 9,
+   "driven_equals_combinatorial": null,
+   "events": 49,
+   "fate": "REFUSED",
+   "maxhits": 1,
+   "pairs": 27,
+   "refusal": [
+    "propose ('B', (1, 0))",
+    49
+   ],
+   "seed_rule": "first",
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 100,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 53,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 52,
+   "refusal": null,
+   "seed_rule": "first",
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 52,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 100,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "first",
+   "type": "(3, (0, 0, 1), (0, 1, 2))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 100,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(3, (0, 0, 1), (0, 1, 2))"
+  },
+  {
+   "divisions": 9,
+   "driven_equals_combinatorial": null,
+   "events": 49,
+   "fate": "REFUSED",
+   "maxhits": 1,
+   "pairs": 27,
+   "refusal": [
+    "propose ('B', (1, 0))",
+    49
+   ],
+   "seed_rule": "first",
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 102,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 100,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 52,
+   "refusal": null,
+   "seed_rule": "first",
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 100,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 52,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+  },
+  {
+   "divisions": 9,
+   "driven_equals_combinatorial": null,
+   "events": 49,
+   "fate": "REFUSED",
+   "maxhits": 1,
+   "pairs": 27,
+   "refusal": [
+    "propose ('B', (1, 0))",
+    49
+   ],
+   "seed_rule": "first",
+   "type": "(3, (0, 0, 1), (1, 0, 2))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 102,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(3, (0, 0, 1), (1, 0, 2))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 51,
+   "refusal": null,
+   "seed_rule": "first",
+   "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 51,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 100,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 52,
+   "refusal": null,
+   "seed_rule": "first",
+   "type": "(3, (0, 0, 1), (1, 1, 2))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 100,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 52,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(3, (0, 0, 1), (1, 1, 2))"
+  },
+  {
+   "divisions": 9,
+   "driven_equals_combinatorial": null,
+   "events": 49,
+   "fate": "REFUSED",
+   "maxhits": 1,
+   "pairs": 27,
+   "refusal": [
+    "propose ('B', (1, 0))",
+    49
+   ],
+   "seed_rule": "first",
+   "type": "(3, (0, 0, 3))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 102,
+   "fate": "FORCED",
+   "maxhits": 1,
+   "pairs": 54,
+   "refusal": null,
+   "seed_rule": "shared",
+   "type": "(3, (0, 0, 3))"
+  }
+ ]
+}

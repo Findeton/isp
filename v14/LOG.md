@@ -9476,3 +9476,71 @@ engraving: every pre-registered outcome word carries its
 feasibility line** (no pigeonhole pre-decides the census;
 both atom outcomes decidable by the same enumeration).
 **The construction worker launches next.**
+
+## 2026-08-12 — SEC (PAPER-32) DELIVERED, COMMITTED AS-IS: THE DICTIONARY SURVIVES AT ALL 16 GLUING TYPES — SECTORS COMPOSE; THE SEAM'S GEOMETRY IS A DECLARATION; WELDING IS ALIGNMENT-SELECTED, NOT k-SELECTED (v14 LEDGER #301)
+
+**Files (committed as delivered, pre-battery):**
+v14/paper-32-sec.md (cfe0825d67b2, 732 lines);
+v14/code/sec_exact.py (6481a8706503, 3,465 lines);
+v14/code/sec_output.txt (e80d2f08a257);
+v14/code/sec_receipt.json (fdf66d990dbf).  Pin:
+note-sec-pin.md (c46a9927f2a8, #258).  ALL HEADLINES
+CANDIDATE UNTIL ADJUDICATION.
+
+**ARENA:** two driven R=3 saturating sectors; 45,010
+gluings collapsing onto 16 combinatorial types over k ∈
+{0,1,2,3} shared actors; union carriers 15–18; window
+32-of-45,010 declared in-head; DRIVEN=COMBINATORIAL at
+26/26; the seed rule priced (refuses 6/16 types under
+paper-19's canonical rule, 0 under shared-seed).
+
+**THE COMPOSITION VERDICT:** the union dictionary EXISTS AT
+ALL 16 TYPES (struct alive 16/16, count positive 16/16),
+BOTH readings (EMBEDDING and QUOTIENT) agreeing at every
+row — k=0 FOUND / k=1 FOUND / k=2 FOUND 3 + UNMOTIVATED 1
+/ k=3 FOUND 5 + UNMOTIVATED 5; motivated at 10 of 16 types
+(4,186 of 45,010 gluings); site fiber 1 at 16/16 by two
+routes; extended carriers EXT-PAIR and EXT-INCIDENCE
+FOUND-STRUCTURAL 32/32.
+
+**THE SEAM:** at every shared site the six declared links
+give RANK 6 ON 10 UNKNOWNS, KERNEL 4 — **the direct sum
+(C=0) is a DECLARATION, not a measurement** (an exact
+rational completion reproducing all six counts is NEGATIVE
+on v=(2,1,−1,−2): Q(v)=−2 aligned, −1 triangle); each
+cross-sector link removes exactly one undetermined entry
+(kernel 4→3→2→1→0); cross-sector division events ARE
+admitted by the committed grammar (2 of 3 specs driven) —
+**and every admitted one kills the dictionary
+(STRUCT-DEAD, foreign pair): geometry at the seam is
+available only by leaving the target.**
+
+**THE SELECTOR:** OVERLAP-TYPE-SELECTED-NOT-k-SELECTED —
+welds iff no shared pair is adjacent in BOTH sectors;
+welding gluings 4,186/45,010 (by k: 1/81/1,134/2,970); the
+pre-registered SEC-K-SELECTED outcome DECLINED BY
+MEASUREMENT.  k=0 sterility control: |Aut| = 3,359,232 =
+1296²×2 by two routes, 0 new pairs — R1 CONFIRMED.
+
+**SURPRISES:** (1) paper-21's theorem does NOT extend —
+site fiber 1 even at non-link-constant fields; the gluing
+destroys edge-transitivity, so the seam is visible in bare
+structure; the free item moves from the map to the
+labelling (I-DIRECTION-LABEL 9).  (2) Drivability decided
+by the VERSION LINEAGE, not geography.  (3) **A sector's
+own geometry is changed by an event in the other sector**
+(union count 2 where the owning sector says 1).  (4) The
+extended carrier repairs the seam only by declaring the two
+charts' links distinct — declaring away what the seam
+measures.  (5) The unit's own sweep caught 7 ineffective/
+mistargeted falsifiers + a cache-inert mutant, all repaired
+in-construction (caches reset per run).
+
+**Instrument (claimed; battery verifies):** 37 gates pass;
+30/30 mutants on target; 15 runtime sources clean + 1
+cited-and-not-read (paper-30, #91-abstained during its
+then-concurrent repair; no LOR sentence quoted); 96
+dictionary rows; 83 rendered claims; 37 sealed + 4
+declared-unsealed; E-24 stamp COUNTING-ONLY (no measure on
+the gluing family).  **Orchestrator battery launches next;
+panel after green.**

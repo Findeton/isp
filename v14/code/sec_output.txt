@@ -1,0 +1,308 @@
+==============================================================================
+v14 SEC -- THE SECTOR/ATLAS UNIT: GLUED WELDED WORLDS
+instrument for v14/paper-32-sec.md   schema isp/v14/sec/1
+==============================================================================
+
+PROVENANCE: 15 sources, all sha256-12 verified.
+  A-PIN      v14/note-sec-pin.md                          c46a9927f2a8
+  A-P19      v14/paper-19-r3-weld.md                      50bb81e67942
+  A-P19REC   v14/code/r3_weld_receipt.json                dfea664f2408
+  A-P21      v14/paper-21-r4dec.md                        ef4a8c35a0c4
+  A-P21REC   v14/code/r4dec_receipt.json                  a4538c7019e6
+  A-R1       v14/paper-01-continuum-rung.md               c4c8880874bf
+  A-R2       v14/paper-02-manifold-rung.md                1a80a5bf1a1b
+  A-HA       v13/paper-ha-successor.md                    f286ba10d2d9
+  A-I7       v13/code/ha_successor_receipt.json           542b8735daf0
+  A-D42B1    v10/code/d42b1_transport_exact.py            576275d55ecf
+  A-D60      v10/code/d60_crystal_exact.py                684cdb76552b
+  A-D66      v10/code/d66_arbitration_crystal_exact.py    3d0516ab106e
+  A-D66OUT   v10/data/d66_arbitration_crystal_exact.out   e252529d2586
+  A-L1       v11/note-L1-lorentz-no-go-lemma.md           93ea24591c3c
+  A-CAT      v11/note-v11p0a-reproduction-catalog.md      0cebe543e814
+
+-- STAGE 1: THE ARENA FAMILY ------------------------------------------------
+  the driven sector: 48 events, 9 divisions, 27 of 27 cells at n = 1, det = 3/4, posdef 9 of 9
+  the family: 45010 gluings (closed form 45010) in 16 combinatorial types
+  by k: k=0:1  k=1:81  k=2:2592  k=3:42336
+  doubled-free: k=0:1  k=1:81  k=2:1134  k=3:2970   total 4186
+
+  type                       gluings    n    E  dbl     |Aut|   |Aut_w|  fiber
+  (0,)                             1   18   54    0   3359232   3359232      1
+  (1, (0, 0, 1))                  81   17   54    0     41472     41472      1
+  (2, (0, 0, 1), (0, 1, 1))      486   16   54    0      3456      3456      1
+  (2, (0, 0, 1), (1, 0, 1))      486   16   54    0      3456      3456      1
+  (2, (0, 0, 1), (1, 1, 1))     1458   16   53    1      2304      2304      1
+  (2, (0, 0, 2))                 162   16   54    0     20736     20736      1
+  (3, (0, 0, 1), (0, 1, 1), (0, 2, 1))     486   15   54    0      3456      3456      1
+  (3, (0, 0, 1), (0, 1, 1), (1, 0, 1))   11664   15   53    1       288       288      1
+  (3, (0, 0, 1), (0, 1, 1), (1, 2, 1))    8748   15   52    2       192       192      1
+  (3, (0, 0, 1), (0, 1, 2))      972   15   54    0      1728      1728      1
+  (3, (0, 0, 1), (1, 0, 1), (2, 0, 1))     486   15   54    0      3456      3456      1
+  (3, (0, 0, 1), (1, 0, 1), (2, 1, 1))    8748   15   52    2       192       192      1
+  (3, (0, 0, 1), (1, 0, 2))      972   15   54    0      1728      1728      1
+  (3, (0, 0, 1), (1, 1, 1), (2, 2, 1))    4374   15   51    3       768       768      1
+  (3, (0, 0, 1), (1, 1, 2))     5832   15   52    2       576       576      1
+  (3, (0, 0, 3))                  54   15   54    0     62208     62208      1
+
+  the driven window: 32 records
+    (0,)                       first   FORCED   ev=96   div=18  eq=True
+    (0,)                       shared  FORCED   ev=96   div=18  eq=True
+    (1, (0, 0, 1))             first   FORCED   ev=98   div=18  eq=True
+    (1, (0, 0, 1))             shared  FORCED   ev=98   div=18  eq=True
+    (2, (0, 0, 1), (0, 1, 1))  first   FORCED   ev=98   div=18  eq=True
+    (2, (0, 0, 1), (0, 1, 1))  shared  FORCED   ev=98   div=18  eq=True
+    (2, (0, 0, 1), (1, 0, 1))  first   REFUSED  ev=49   div=9   eq=None
+    (2, (0, 0, 1), (1, 0, 1))  shared  FORCED   ev=100  div=18  eq=True
+    (2, (0, 0, 1), (1, 1, 1))  first   FORCED   ev=98   div=18  eq=True
+    (2, (0, 0, 1), (1, 1, 1))  shared  FORCED   ev=98   div=18  eq=True
+    (2, (0, 0, 2))             first   REFUSED  ev=49   div=9   eq=None
+    (2, (0, 0, 2))             shared  FORCED   ev=100  div=18  eq=True
+    (3, (0, 0, 1), (0, 1, 1), (0, 2, 1)) first   FORCED   ev=98   div=18  eq=True
+    (3, (0, 0, 1), (0, 1, 1), (0, 2, 1)) shared  FORCED   ev=98   div=18  eq=True
+    (3, (0, 0, 1), (0, 1, 1), (1, 0, 1)) first   REFUSED  ev=49   div=9   eq=None
+    (3, (0, 0, 1), (0, 1, 1), (1, 0, 1)) shared  FORCED   ev=100  div=18  eq=True
+    (3, (0, 0, 1), (0, 1, 1), (1, 2, 1)) first   FORCED   ev=98   div=18  eq=True
+    (3, (0, 0, 1), (0, 1, 1), (1, 2, 1)) shared  FORCED   ev=98   div=18  eq=True
+    (3, (0, 0, 1), (0, 1, 2))  first   FORCED   ev=100  div=18  eq=True
+    (3, (0, 0, 1), (0, 1, 2))  shared  FORCED   ev=100  div=18  eq=True
+    (3, (0, 0, 1), (1, 0, 1), (2, 0, 1)) first   REFUSED  ev=49   div=9   eq=None
+    (3, (0, 0, 1), (1, 0, 1), (2, 0, 1)) shared  FORCED   ev=102  div=18  eq=True
+    (3, (0, 0, 1), (1, 0, 1), (2, 1, 1)) first   FORCED   ev=100  div=18  eq=True
+    (3, (0, 0, 1), (1, 0, 1), (2, 1, 1)) shared  FORCED   ev=100  div=18  eq=True
+    (3, (0, 0, 1), (1, 0, 2))  first   REFUSED  ev=49   div=9   eq=None
+    (3, (0, 0, 1), (1, 0, 2))  shared  FORCED   ev=102  div=18  eq=True
+    (3, (0, 0, 1), (1, 1, 1), (2, 2, 1)) first   FORCED   ev=98   div=18  eq=True
+    (3, (0, 0, 1), (1, 1, 1), (2, 2, 1)) shared  FORCED   ev=98   div=18  eq=True
+    (3, (0, 0, 1), (1, 1, 2))  first   FORCED   ev=100  div=18  eq=True
+    (3, (0, 0, 1), (1, 1, 2))  shared  FORCED   ev=100  div=18  eq=True
+    (3, (0, 0, 3))             first   REFUSED  ev=49   div=9   eq=None
+    (3, (0, 0, 3))             shared  FORCED   ev=102  div=18  eq=True
+
+-- STAGE 2: THE UNION'S DICTIONARY ------------------------------------------
+  type                       reading    carrier        fate               inventory
+  (0,)                       EMBEDDING  BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (0,)                       EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (0,)                       EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (0,)                       QUOTIENT   BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (0,)                       QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (0,)                       QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (1, (0, 0, 1))             EMBEDDING  BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (1, (0, 0, 1))             EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (1, (0, 0, 1))             EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (1, (0, 0, 1))             QUOTIENT   BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (1, (0, 0, 1))             QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (1, (0, 0, 1))             QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 1), (0, 1, 1))  EMBEDDING  BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (2, (0, 0, 1), (0, 1, 1))  EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 1), (0, 1, 1))  EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 1), (0, 1, 1))  QUOTIENT   BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (2, (0, 0, 1), (0, 1, 1))  QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 1), (0, 1, 1))  QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 1), (1, 0, 1))  EMBEDDING  BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (2, (0, 0, 1), (1, 0, 1))  EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 1), (1, 0, 1))  EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 1), (1, 0, 1))  QUOTIENT   BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (2, (0, 0, 1), (1, 0, 1))  QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 1), (1, 0, 1))  QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 1), (1, 1, 1))  EMBEDDING  BARE           UNMOTIVATED        {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 9, 'I-ORIENT': 4}
+  (2, (0, 0, 1), (1, 1, 1))  EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 1), (1, 1, 1))  EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 1), (1, 1, 1))  QUOTIENT   BARE           UNMOTIVATED        {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 9, 'I-ORIENT': 4}
+  (2, (0, 0, 1), (1, 1, 1))  QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 1), (1, 1, 1))  QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 2))             EMBEDDING  BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (2, (0, 0, 2))             EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 2))             EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 2))             QUOTIENT   BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (2, (0, 0, 2))             QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (2, (0, 0, 2))             QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 1), (0, 2, 1)) EMBEDDING  BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (3, (0, 0, 1), (0, 1, 1), (0, 2, 1)) EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 1), (0, 2, 1)) EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 1), (0, 2, 1)) QUOTIENT   BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (3, (0, 0, 1), (0, 1, 1), (0, 2, 1)) QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 1), (0, 2, 1)) QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 1), (1, 0, 1)) EMBEDDING  BARE           UNMOTIVATED        {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 9, 'I-ORIENT': 4}
+  (3, (0, 0, 1), (0, 1, 1), (1, 0, 1)) EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 1), (1, 0, 1)) EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 1), (1, 0, 1)) QUOTIENT   BARE           UNMOTIVATED        {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 9, 'I-ORIENT': 4}
+  (3, (0, 0, 1), (0, 1, 1), (1, 0, 1)) QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 1), (1, 0, 1)) QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 1), (1, 2, 1)) EMBEDDING  BARE           UNMOTIVATED        {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 9, 'I-ORIENT': 4}
+  (3, (0, 0, 1), (0, 1, 1), (1, 2, 1)) EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 1), (1, 2, 1)) EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 1), (1, 2, 1)) QUOTIENT   BARE           UNMOTIVATED        {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 9, 'I-ORIENT': 4}
+  (3, (0, 0, 1), (0, 1, 1), (1, 2, 1)) QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 1), (1, 2, 1)) QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 2))  EMBEDDING  BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (3, (0, 0, 1), (0, 1, 2))  EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 2))  EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 2))  QUOTIENT   BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (3, (0, 0, 1), (0, 1, 2))  QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (0, 1, 2))  QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 0, 1), (2, 0, 1)) EMBEDDING  BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (3, (0, 0, 1), (1, 0, 1), (2, 0, 1)) EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 0, 1), (2, 0, 1)) EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 0, 1), (2, 0, 1)) QUOTIENT   BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (3, (0, 0, 1), (1, 0, 1), (2, 0, 1)) QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 0, 1), (2, 0, 1)) QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 0, 1), (2, 1, 1)) EMBEDDING  BARE           UNMOTIVATED        {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 9, 'I-ORIENT': 4}
+  (3, (0, 0, 1), (1, 0, 1), (2, 1, 1)) EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 0, 1), (2, 1, 1)) EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 0, 1), (2, 1, 1)) QUOTIENT   BARE           UNMOTIVATED        {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 9, 'I-ORIENT': 4}
+  (3, (0, 0, 1), (1, 0, 1), (2, 1, 1)) QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 0, 1), (2, 1, 1)) QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 0, 2))  EMBEDDING  BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (3, (0, 0, 1), (1, 0, 2))  EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 0, 2))  EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 0, 2))  QUOTIENT   BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (3, (0, 0, 1), (1, 0, 2))  QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 0, 2))  QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 1, 1), (2, 2, 1)) EMBEDDING  BARE           UNMOTIVATED        {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 9, 'I-ORIENT': 1}
+  (3, (0, 0, 1), (1, 1, 1), (2, 2, 1)) EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 1, 1), (2, 2, 1)) EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 1, 1), (2, 2, 1)) QUOTIENT   BARE           UNMOTIVATED        {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 9, 'I-ORIENT': 1}
+  (3, (0, 0, 1), (1, 1, 1), (2, 2, 1)) QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 1, 1), (2, 2, 1)) QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 1, 2))  EMBEDDING  BARE           UNMOTIVATED        {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 9, 'I-ORIENT': 4}
+  (3, (0, 0, 1), (1, 1, 2))  EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 1, 2))  EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 1, 2))  QUOTIENT   BARE           UNMOTIVATED        {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 9, 'I-ORIENT': 4}
+  (3, (0, 0, 1), (1, 1, 2))  QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 1), (1, 1, 2))  QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 3))             EMBEDDING  BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (3, (0, 0, 3))             EMBEDDING  EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 3))             EMBEDDING  EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 3))             QUOTIENT   BARE           FOUND-candidate    {'I-SITE-ASSIGNMENT': 1, 'I-DIRECTION-LABEL': 1, 'I-ORIENT': 1}
+  (3, (0, 0, 3))             QUOTIENT   EXT-PAIR       FOUND-STRUCTURAL   READ-AT-BARE
+  (3, (0, 0, 3))             QUOTIENT   EXT-INCIDENCE  FOUND-STRUCTURAL   READ-AT-BARE
+
+  the declared dead arms:
+    SEC-UNION(3,aligned)@I7-SINGLE             EMBEDDING  ARITY-DEAD   15 site objects against the target's 9; no repair is declare
+    SEC-UNION(3,aligned)@T(0)                  EMBEDDING  ARITY-DEAD   15 site objects against the target's 18; no repair is declar
+    SEC-UNION(3,triangle)@T(3,ALIGNED)         EMBEDDING  STRUCT-DEAD  0 of the 15! bijections carry the site incidence onto the ta
+    SEC-UNION(3,aligned)-FALSIFIER             EMBEDDING  STRUCT-DEAD  0 of the 15! bijections carry the site incidence onto the ta
+    SEC-UNION(3,aligned)-FALSIFIER             QUOTIENT   COUNT-DEAD   n_l(x) must lie in Z_>0 (HA 3.1); the induced count is 0 at 
+
+-- STAGE 3: THE GLUING FIBER ------------------------------------------------
+    (0,)                       shared cells 0    union differs at 0    COMPATIBLE
+    (1, (0, 0, 1))             shared cells 6    union differs at 0    COMPATIBLE
+    (2, (0, 0, 1), (0, 1, 1))  shared cells 12   union differs at 0    COMPATIBLE
+    (2, (0, 0, 1), (1, 0, 1))  shared cells 12   union differs at 0    COMPATIBLE
+    (2, (0, 0, 1), (1, 1, 1))  shared cells 12   union differs at 2    SEAM-DEFORMED
+    (2, (0, 0, 2))             shared cells 12   union differs at 0    COMPATIBLE
+    (3, (0, 0, 1), (0, 1, 1), (0, 2, 1)) shared cells 18   union differs at 0    COMPATIBLE
+    (3, (0, 0, 1), (0, 1, 1), (1, 0, 1)) shared cells 18   union differs at 2    SEAM-DEFORMED
+    (3, (0, 0, 1), (0, 1, 1), (1, 2, 1)) shared cells 18   union differs at 4    SEAM-DEFORMED
+    (3, (0, 0, 1), (0, 1, 2))  shared cells 18   union differs at 0    COMPATIBLE
+    (3, (0, 0, 1), (1, 0, 1), (2, 0, 1)) shared cells 18   union differs at 0    COMPATIBLE
+    (3, (0, 0, 1), (1, 0, 1), (2, 1, 1)) shared cells 18   union differs at 4    SEAM-DEFORMED
+    (3, (0, 0, 1), (1, 0, 2))  shared cells 18   union differs at 0    COMPATIBLE
+    (3, (0, 0, 1), (1, 1, 1), (2, 2, 1)) shared cells 18   union differs at 6    SEAM-DEFORMED
+    (3, (0, 0, 1), (1, 1, 2))  shared cells 18   union differs at 4    SEAM-DEFORMED
+    (3, (0, 0, 3))             shared cells 18   union differs at 0    COMPATIBLE
+
+-- STAGE 4: CURVATURE OF THE GLUING -----------------------------------------
+    ALIGNED(k=3)   nA=[1, 1, 1] nB=[1, 1, 1]  unknowns=10 equations=6 rank=6 kernel=4  direct-sum minors ['1', '3/4', '3/4', '9/16'] posdef=True
+      indefinite completion: Q([2, 1, -1, -2]) = -2, all six counts reproduced = True
+    TRIANGLE(k=3)  nA=[1, 2, 1] nB=[1, 2, 1]  unknowns=10 equations=6 rank=6 kernel=4  direct-sum minors ['1', '1', '1', '1'] posdef=True
+      indefinite completion: Q([2, 1, -1, -2]) = -1, all six counts reproduced = True
+    k=1            nA=[1, 1, 1] nB=[1, 1, 1]  unknowns=10 equations=6 rank=6 kernel=4  direct-sum minors ['1', '3/4', '3/4', '9/16'] posdef=True
+      indefinite completion: Q([2, 1, -1, -2]) = -2, all six counts reproduced = True
+    cross-link algebra: 0 links -> kernel 4, 1 links -> kernel 3, 2 links -> kernel 2, 3 links -> kernel 1, 4 links -> kernel 0
+
+    cross spec SHARED-SEEDED    seed ('S', 0)     ADMITTED  new pairs 1 foreign 1  dictionary after: STRUCT-DEAD
+    cross spec A-SEEDED         seed ('A', (1, 1)) REFUSED   new pairs 0 foreign 0  dictionary after: -
+    cross spec B-SEEDED-PURE    seed ('B', (1, 1)) ADMITTED  new pairs 2 foreign 2  dictionary after: STRUCT-DEAD
+
+-- STAGE 5: THE FORCED-OVERLAP QUESTION -------------------------------------
+    (0,)                       k=0 gluings=1      doubled=0  FOUND-candidate    welds=True
+    (1, (0, 0, 1))             k=1 gluings=81     doubled=0  FOUND-candidate    welds=True
+    (2, (0, 0, 1), (0, 1, 1))  k=2 gluings=486    doubled=0  FOUND-candidate    welds=True
+    (2, (0, 0, 1), (1, 0, 1))  k=2 gluings=486    doubled=0  FOUND-candidate    welds=True
+    (2, (0, 0, 1), (1, 1, 1))  k=2 gluings=1458   doubled=1  UNMOTIVATED        welds=False
+    (2, (0, 0, 2))             k=2 gluings=162    doubled=0  FOUND-candidate    welds=True
+    (3, (0, 0, 1), (0, 1, 1), (0, 2, 1)) k=3 gluings=486    doubled=0  FOUND-candidate    welds=True
+    (3, (0, 0, 1), (0, 1, 1), (1, 0, 1)) k=3 gluings=11664  doubled=1  UNMOTIVATED        welds=False
+    (3, (0, 0, 1), (0, 1, 1), (1, 2, 1)) k=3 gluings=8748   doubled=2  UNMOTIVATED        welds=False
+    (3, (0, 0, 1), (0, 1, 2))  k=3 gluings=972    doubled=0  FOUND-candidate    welds=True
+    (3, (0, 0, 1), (1, 0, 1), (2, 0, 1)) k=3 gluings=486    doubled=0  FOUND-candidate    welds=True
+    (3, (0, 0, 1), (1, 0, 1), (2, 1, 1)) k=3 gluings=8748   doubled=2  UNMOTIVATED        welds=False
+    (3, (0, 0, 1), (1, 0, 2))  k=3 gluings=972    doubled=0  FOUND-candidate    welds=True
+    (3, (0, 0, 1), (1, 1, 1), (2, 2, 1)) k=3 gluings=4374   doubled=3  UNMOTIVATED        welds=False
+    (3, (0, 0, 1), (1, 1, 2))  k=3 gluings=5832   doubled=2  UNMOTIVATED        welds=False
+    (3, (0, 0, 3))             k=3 gluings=54     doubled=0  FOUND-candidate    welds=True
+    k with a welding type: [0, 1, 2, 3] ; k with a non-welding type: [2, 3]
+
+-- STAGE 6: THE k = 0 STERILITY CONTROL -------------------------------------
+    aut                                    3359232
+    aut_components_route                   3359232
+    aut_equals_direct_sum                  True
+    carriers                               18
+    dictionary_fate                        FOUND-candidate
+    direct_sum_prediction                  3359232
+    doubled                                0
+    fiber_site                             1
+    field_values                           [1]
+    new_pairs_beyond_the_two_sectors       0
+    pairs                                  54
+    seam_cells                             0
+    sector_aut                             1296
+    shared_actors                          0
+
+-- THE WALLS ----------------------------------------------------------------
+    scan: 14 terms; receipt hits [] ; paper hits []
+
+-- GATES --------------------------------------------------------------------
+    G-SOURCES                        PASS 7203ce45ced7c482
+    G-CITED-NOT-READ                 PASS be2d66e69fc7c856
+    G-ANCHORS                        PASS 7daa5b0bdb265c35
+    G-EXACT                          PASS c27294b03d5ea2cd
+    G-GRAMMAR-ANCHOR                 PASS 0402546caa922d21
+    G-SECTOR                         PASS 93c10dc4415786a1
+    G-SECTOR-WELD                    PASS 5c5db0d74b57a7d9
+    G-AUT-ROUTES                     PASS db8ee05e29e25b88
+    G-ARRANGEMENT-FREE               PASS 1158ee38b20960ae
+    G-GLUING-CENSUS                  PASS 8c6eedc20f4828b6
+    G-CLEAN-CRITERION                PASS c4227a72d94a59ed
+    G-FIBER-ROUTES                   PASS 1f3f8ad277fe096c
+    G-AUT-ROUTES-UNION               PASS 794a505ccecf79ff
+    G-DRIVEN-EQUALS-COMBINATORIAL    PASS 67891349926da576
+    G-MAXHITS                        PASS 954baa22566fbca0
+    G-MENU-PURE                      PASS cb82820de77f656a
+    G-SEED-RULE                      PASS 7b96138bec12cb7e
+    G-DICT                           PASS cf7148e87326ddd7
+    G-CONTROLS                       PASS 0e43004487da4cf6
+    G-GLUING-FIBER                   PASS fe56776ff3bb9178
+    G-SEAM-RANK                      PASS d234667014a9eb31
+    G-SEAM-WITNESS                   PASS e6b270e560dd94d9
+    G-SEAM-CROSS-ALGEBRA             PASS 6a1683a8d17fdd6a
+    G-CROSS                          PASS bbec91dde2c52dda
+    G-FORCED-OVERLAP                 PASS 48b9d370edce37c8
+    G-STERILITY                      PASS 2d02c5ece62d9e4b
+    G-CONTRAST                       PASS c50b57d626226cd1
+    G-WALL-L1                        PASS f2b639fbfa719b99
+    G-WALL-NAMED                     PASS 8e9e1a56463707ab
+    G-WALL-SCAN                      PASS e5c67dae22a39f6c
+    G-VERDICT-RECON                  PASS 8e8c7d493c38924f
+    G-PAPER-CLAIMS                   PASS 37132b46393f473e
+    G-PAPER-COVERAGE                 PASS 1b008eee4768d709
+    G-PAPER-FENCE                    PASS fbb4d072d9f7018b
+    G-PAPER-POLARITY                 PASS 771dc7f8c792d240
+    G-PAPER-SPELLED                  PASS 556212913191fb87
+    G-COVERAGE                       PASS f9594edb93b89943
+    G-SWEEP-EXECUTED                 PASS 0ac6b245e40f484e
+    G-SEAL-COMPLETE                  PASS 25f88cfe16795f8f
+    G-DECLARED-LATER                 PASS bbfdfb9f2112f96b
+
+-- VERDICT ------------------------------------------------------------------
+
+SEC-ARENA-[TWO DRIVEN R=3 SATURATING SECTORS; 45010 GLUINGS IN 16 COMBINATORIAL TYPES OVER k IN {0,1,2,3}; UNION CARRIERS 15..18; FORCED 16 OF 16 WINDOW RECORDS AT THE SHARED-SEED RULE, REFUSED 6 OF 16 AT PAPER-19'S CANONICAL RULE; DRIVEN=COMBINATORIAL AT 26 OF 26]@WINDOW-32-OF-45010-GLUINGS
+
+SEC-COMPOSES-[ACTOR->SITE|CO-DIVISION-ACTOR-PAIR->LINK|DIVISION-COUNT->n_l(x)]@EMBEDDING+QUOTIENT<THE-UNION-DICTIONARY-EXISTS-AT-EVERY-TYPE:STRUCT-ALIVE-16-OF-16,COUNT-POSITIVE-16-OF-16|MOTIVATED-AT-10-OF-16-TYPES(4186-OF-45010-GLUINGS)|SITE-FIBER=1-AT-16-OF-16-TWO-ROUTES:THE-GLUING-BREAKS-EDGE-TRANSITIVITY-SO-THE-SEAM-IS-VISIBLE-IN-THE-STRUCTURE-ALONE|THE-FREE-ITEM-IS-ALWAYS-I-DIRECTION-LABEL|EXTENDED-CARRIERS:EXT-PAIR-AGREES-WITH-BARE,EXT-INCIDENCE-REPAIRS-EVERY-TYPE(FOUND-16-OF-16)-BECAUSE-THE-DOUBLED-PAIR-SPLITS-INTO-TWO-SITES>
+
+SEC-SEAM-CURVATURE-[THE-DIRECT-SUM-IS-A-DECLARATION-NOT-A-MEASUREMENT: AT EVERY SHARED SITE THE SIX DECLARED LINKS GIVE RANK 6 ON THE 10 ENTRIES OF Sym^2(Q^4), KERNEL 4; THE DIRECT SUM IS THE CHOICE C=0 AND IS POSITIVE DEFINITE, AND AN EXACT RATIONAL COMPLETION REPRODUCING ALL SIX COUNTS IS NEGATIVE ON AN EXHIBITED VECTOR] -- CROSS-SECTOR DIVISION EVENTS ARE ADMITTED BY THE COMMITTED GRAMMAR (2 OF 3 SPECIFICATIONS DRIVEN, THE OTHERS REFUSED ON THE VERSION LINEAGE) AND EACH CROSS LINK REMOVES EXACTLY ONE UNDETERMINED ENTRY (4,3,2,1,0) -- BUT EVERY ADMITTED ONE REALISES A FOREIGN PAIR AND THE DICTIONARY DIES AT STRUCTURE: THE SEAM'S GEOMETRY IS AVAILABLE ONLY BY LEAVING THE TARGET
+
+SEC-OVERLAP-TYPE-SELECTED-NOT-k-SELECTED-[EVERY k IN {1,2,3} CARRIES BOTH A WELDING AND A NON-WELDING TYPE EXCEPT k=1 WHICH HAS NO PAIR TO DOUBLE; THE CRITERION IS ALIGNMENT: THE UNION WELDS IFF NO SHARED PAIR IS ADJACENT IN BOTH SECTORS, i.e. IFF EVERY SHARED PAIR SHARES A TRIPARTITE CLASS ON AT LEAST ONE SIDE; AT k=3 THIS IS 'ALL THREE IN ONE CLASS ON ONE SIDE', 2970 OF 42336 GLUINGS] -- STERILITY-CONTROL=k=0-CONFIRMS-R1: |Aut|=3359232=|Aut(SECTOR)|^2 x 2 BY TWO ROUTES, 0 NEW PAIRS, 0 DOUBLED, 0 SEAM CELLS, THE DICTIONARY THE DIRECT SUM OF THE TWO -- AGAINST k=3-ALIGNED WHERE |Aut|=62208 AND THE SEAM CARRIES 12 UNDETERMINED ENTRIES
+
+==============================================================================
