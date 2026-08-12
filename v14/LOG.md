@@ -8555,3 +8555,49 @@ cheap falsifier; the POT handoff with confinement vocabulary
 still gated.  Multiplicative weights throughout — no logs,
 exact.  In flight (7): ACT + the LOR/SIG repairs +
 AID/SEC/PER-R.
+
+## 2026-08-12 — PER-R (PAPER-29) DELIVERED: 3/3 PREDICTIONS PASS; THE PARITY LAW; THE CLASS-EXPLICIT SIG FEED; COVER=POSDEF BREAKS; COMMIT-AS-IS (v14 LEDGER #280)
+
+The R-ladder worker delivered; all candidate readings.  **THE
+SIG FEED, class-explicit per the #270 advisory — FOUR
+different floors per polarity** (covered-site / covering /
+structurally-live / declared: SINGULAR 4/5/6/6; INDEFINITE
+5/6/7/8), with **THE LOCKING THEOREM** (at R=5
+covering-records, indefinite UNREACHABLE — a count-5 cell
+locks two sites and demands 7 distinct third members against
+5 rounds; exhaustive at all three links) and the R=5
+covered-site opening (90 codes = 84/3/3, indefinite at
+4·det=−5); the census exhaustive over 280⁵ ≈ 1.72×10¹²
+quintuples via local types.  **PREDICTIONS 3/3 PASS: (a)
+STRENGTHENED by THE PARITY LAW — all 9 declared homogeneous
+records have EVEN Σn (⟺ q₁₂ ∈ ℤ) while the box splits
+181/180: every odd budget is declared-record-empty** [a new
+law about I7's catalogue nobody had noticed]; (b) proved
+in-arena (live ⟹ 9R over 27 ⟹ R≡0 mod 3; the R=5
+link-constant control dies STRUCT-DEAD on 18 foreign pairs);
+(c) scoped (declared yield 276→0→1,350; R=5 strictly RICHER
+in every slack column).  SLACK 18 = 9(R−3) VERIFIED; the
+cover still binds (45>27); **the headline break: COVER=POSDEF
+true at R=3/4, BREAKS at R=5**; block quantisation BREAKS
+(max cell 2→4).  **THE DICTIONARY ROW: fibers 1/1/1 → 36/3/1
+→ 36/3/1 → 1/1/1 — FOUND exactly at link-constant records;
+R=5's imperfection = R=4's exactly (2 free items, slack-
+independent); THE R=6 DOOR CENSUSED EXACTLY — (2,2,2) at
+48,600 (the parent bounded ≥5,184) and G-SINGULAR at 1,350
+DRIVEN: a DECLARED record at R=6, one rung below LOR-B.**
+**DIA: the law AND its boundary — compulsory ⟺ some link
+multi-counted AND some link counted exactly once (13/13);
+falsified at (2,2,2): COMPULSION IS CARRIED BY THE SCARCE
+LINK AND VANISHES EXACTLY WHERE THE WELD TURNS MOTIVATED.**
+SURPRISES: **the grammar DRIVES R=5 and R=6** (paper-21's S-1
+answered; anchored at d66's committed rows); the parity law;
+G-SINGULAR driven at R=6.  Persistence tally: 4 PERSISTS / 1
+TRANSFORMS / 3 BREAKS.  The interference census cited closed
+(the gate scans surface AND paper body).  W5 = 19 driven
+schedules declared; everything else exhaustive (the schema
+re-proved at R=5 over 36⁵).  Counts: 49 gates; 43/43
+mutants; 54 rendered rows; 825+119 numerals/words 0
+unbacked; byte ×2 + off-tree git-less.  Shas: paper
+7d1d6ca3c5bc, code d2f8fdac143d, output 6dad652f81fe,
+receipt ac424c8a7bdd.  Committed AS-IS; battery next; panel
+queued.
