@@ -8112,3 +8112,28 @@ two-routed; byte ×2 + off-tree git-less; anchored to
 paper-20 at five independent rows.  Shas: paper 72175d6fa85b,
 code a41b6d549e14, output f28b550c151e, receipt ca9cd4ceb387.
 Committed AS-IS; battery next; panel queued.
+
+## 2026-08-11 — OCC INSTRUMENT REVIEW LANDED (K3): AWF — SEVEN DISEASES ABSENT, SIX PRESENT; THE SAME-SITE ERROR CONFIRMED A THIRD TIME (v14 LEDGER #263)
+
+v14/review-occ-instrument.md (49e66c63db89) frozen.  **Grade
+AWF; 163 executions, 282 recomputations incl. a from-scratch
+leak rebuild at 441,774 exact Z[ω] evaluations — the physics
+stands (48/48 rows, zero mismatches).**  DISEASE SWEEP: ABSENT
+7/13 (phantom consumers 64/64; seal windows all 40 at
+value-close with 3 mid-window forgeries dying;
+read-back-before-replace; verbatim anchors 8/8; the 50-mutant
+sweep 50/50; CLI 25/25; byte ×3 seeds) — the era's closed
+diseases STAY closed here.  PRESENT 6: **M1 the fence gate is
+containment-with-counts (the named E-22 disease survives —
+one-line repair verified); M2 THE ABSTRACT IS OUTSIDE THE
+INSTRUMENT (69/212 numerals merely licensed; five
+load-bearing corruptions survive incl. 216↔135 — repair
+verified); M3 the 53,460 self-comparison (third independent
+finding; repair verified: 54 disagreements under injection);
+M4 the SAME-SITE error (third independent finding — the
+sealed head field must change); M5 E-24 recounts 4/22; M6 the
+completions predicate ignores the completion (#87 — the
+Q-side fields never built).**  Three of the six are one
+defect in three coats (a predicate that cannot fail; the
+conclusion true, the evidence circular).  → THE ADJUDICATION
+(all three seats in).
