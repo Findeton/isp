@@ -8273,3 +8273,16 @@ unit's own successor question; twelve orders Y1–Y12 incl.
 the three paper-scanning walls, all 40 tables rendered, the
 three false counts derived, full-transcript integrity.
 Repair worker in flight.
+
+## 2026-08-11 — LOR K3 REVIEW v2 (FINAL): THE SWEEP COMPLETE 41/41; ONE CAVEAT OF RECORD (v14 LEDGER #269)
+
+The seat's residual discharged: the 41-mutant out-of-harness
+sweep COMPLETE, 41/41 on target, zero survivors, mirror
+byte-unchanged.  **The caveat of record: the three wall
+mutants die honestly — ON THE SURFACE LEG, which is not the
+leg the wall is owed.  A green sweep is not evidence a wall
+holds.**  Findings otherwise verbatim-unchanged; the #268
+adjudication's Y8 already orders the paper-scanning walls —
+the caveat routed to the repair as a replay requirement (the
+wall plants must die ON THE PAPER LEG specifically).
+Re-frozen (v2, c90b0231a147).

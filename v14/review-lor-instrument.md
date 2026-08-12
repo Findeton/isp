@@ -54,13 +54,13 @@ Nothing needs re-measuring.
 | `--verify-paper` on the pristine paper | 1 | exit 0, clean (the baseline for every injection) |
 | paper injections (object under test) | 26 | 11 died at their predicted gates, **15 survived at exit 0** |
 | code injections (the instrument itself) | 7 | 4 died, **2 survived at exit 0** |
-| the 41-mutant sweep OUTSIDE the harness, one process each | 31 of 41 | see §4 |
+| the 41-mutant sweep OUTSIDE the harness, one process each | 41 | see §4 — **41/41 ON TARGET** |
 | CLI hostile argv + the two registries | 14 | 12/12 rejections exit 2; registries exit 0 |
 | `--selftest`, whole-tree hash before and after | 1 | exit 1 at `G-PROVENANCE`; **tree hash identical** |
 | `--verify-paper` on a foreign paper (`paper-29-perr.md`) | 1 | exit 1, DRIFT — no false "clean" |
 | bare copy (code alone, no sources), plain and `--selftest` | 2 | exit 1, `[CLI] missing source: ...`, **nothing written** |
 
-**85 executions completed. 258 recomputations** independent of the unit's
+**95 executions completed. 258 recomputations** independent of the unit's
 code: seal and gate accounting (10), anchors (13), the numeral sweep (11), the
 substrate and census (23), the refined arena (14), the ladder (24), the cut
 (4), the paper's table map (16), the falsifier census's three legs at 41
@@ -385,44 +385,42 @@ Each mutant re-invoked in **its own process** against an off-tree mirror; exit
 code and death gate captured from stdout; the mirror's artifacts hashed before
 and after the whole sweep.
 
-**31 of 41 completed at close, every one ON TARGET, every one exit 1, and the
-mirror's `lor_output.txt` / `lor_receipt.json` byte-unchanged across the whole
-sweep (`427a5da397aa` / `8b4ca74d954c`).** Zero off-target, zero crashes, zero
-survivors.
+**ALL 41 COMPLETED. Every one ON TARGET, every one exit 1, zero survivors,
+zero crashes, zero off-target — and the mirror's `lor_output.txt` /
+`lor_receipt.json` byte-unchanged across the entire sweep (`427a5da397aa` /
+`8b4ca74d954c`).** The in-harness result the delivery run reports is therefore
+independently confirmed, not relayed.
 
 ```
-MUT-72                    -> G-72-TRIPLES              MUT-LAW09     -> G-LAW-09
-MUT-ADDITIVITY            -> G-REFINED-BUILD           MUT-MEASURE   -> G-MEASURE-STAMP
-MUT-ANCHOR-VALUE          -> G-ANCHORS-READ            MUT-NEWPLACES -> G-NEW-PLACES
-MUT-BUDGET                -> G-BUDGET-THEOREM          MUT-PARTITION -> G-PARTITION-COUNT
-MUT-CARRIER               -> G-PROCESS-SUPPLY          MUT-POLARITY  -> G-PAPER-CLAIM-POLARITY
-MUT-CEILING               -> G-CEILING                 MUT-SEAL-DROP -> G-SEAL-COMPLETE
-MUT-CLAIM                 -> G-PAPER-CLAIMS            MUT-SIG       -> G-SIG
-MUT-COMPAT                -> G-COMPATIBILITY           MUT-SPLITFIBER-> G-SPLIT-FIBER
-MUT-CONSUMER-BINDING      -> G-ANCHOR-CONSUMERS        MUT-SUPPLY    -> G-PROCESS-SUPPLY
-MUT-COVERAGE-SCAN         -> G-PAPER-COVERAGE          MUT-VERBATIM  -> G-VERBATIM
-MUT-CUT                   -> G-CUT-UNIQUE              MUT-WINDOW    -> G-DRIVEN-WINDOW
-MUT-DIA                   -> G-DIA                     MUT-WITNESSES -> G-WITNESSES
-MUT-EXEMPTION-DEAD        -> G-PAPER-COVERAGE          MUT-FIELD     -> G-R6-FIELD
-MUT-FALSIFIER-HONEST      -> G-FALSIFIER-HONEST        MUT-LAW04     -> G-LAW-04
-MUT-HEAD                  -> G-PAPER-HEAD-VERBATIM     MUT-LAW06     -> G-LAW-06
-MUT-PAPER-FENCE-MULTISET  -> G-PAPER-COVERAGE
+MUT-72                   -> G-72-TRIPLES            MUT-PARTITION        -> G-PARTITION-COUNT
+MUT-ADDITIVITY           -> G-REFINED-BUILD         MUT-POLARITY         -> G-PAPER-CLAIM-POLARITY
+MUT-ANCHOR-VALUE         -> G-ANCHORS-READ          MUT-SEAL-DROP        -> G-SEAL-COMPLETE
+MUT-BUDGET               -> G-BUDGET-THEOREM        MUT-SIG              -> G-SIG
+MUT-CARRIER              -> G-PROCESS-SUPPLY        MUT-SPLITFIBER       -> G-SPLIT-FIBER
+MUT-CEILING              -> G-CEILING               MUT-SUPPLY           -> G-PROCESS-SUPPLY
+MUT-CLAIM                -> G-PAPER-CLAIMS          MUT-TABLE            -> G-PAPER-TABLES
+MUT-COMPAT               -> G-COMPATIBILITY         MUT-TWOWAY           -> G-TWO-WAY
+MUT-CONSUMER-BINDING     -> G-ANCHOR-CONSUMERS      MUT-VERBATIM         -> G-VERBATIM
+MUT-COVERAGE-SCAN        -> G-PAPER-COVERAGE        MUT-VERDICT          -> G-VERDICT-RECONSTRUCTED
+MUT-CUT                  -> G-CUT-UNIQUE            MUT-WALL-BHS         -> G-WALL-BHS
+MUT-DIA                  -> G-DIA                   MUT-WALL-COSMO       -> G-WALL-COSMO
+MUT-EXEMPTION-DEAD       -> G-PAPER-COVERAGE        MUT-WALL-KR          -> G-WALL-KR
+MUT-FALSIFIER-HONEST     -> G-FALSIFIER-HONEST      MUT-WALL-L1          -> G-WALL-L1
+MUT-FIELD                -> G-R6-FIELD              MUT-WALL-LORENTZ     -> G-WALL-LORENTZ-NAMED
+MUT-HEAD                 -> G-PAPER-HEAD-VERBATIM   MUT-WELD             -> G-WELD-COARSE
+MUT-LAW04                -> G-LAW-04                MUT-WELDREF          -> G-WELD-REFINED
+MUT-LAW06                -> G-LAW-06                MUT-WINDOW           -> G-DRIVEN-WINDOW
+MUT-LAW09                -> G-LAW-09                MUT-WITNESSES        -> G-WITNESSES
+MUT-MEASURE              -> G-MEASURE-STAMP         MUT-PAPER-FENCE-MULTISET -> G-PAPER-COVERAGE
+MUT-NEWPLACES            -> G-NEW-PLACES
 ```
 
-**DISCLOSED, not concealed:** ten mutants — `MUT-TABLE`, `MUT-TWOWAY`,
-`MUT-VERDICT`, `MUT-WALL-BHS`, `MUT-WALL-COSMO`, `MUT-WALL-KR`, `MUT-WALL-L1`,
-`MUT-WALL-LORENTZ`, `MUT-WELD`, `MUT-WELDREF` — were still executing at close
-on a shared box whose load average had risen to 198 from other work; each
-out-of-harness run costs ~97 s of CPU and was receiving roughly 5% of a core.
-All ten are late-dying mutants that traverse essentially the whole pipeline.
-Three of them were nevertheless exercised here by other means and behaved
-correctly: `MUT-WALL-L1` is corroborated by INJ13 (the retracted sentence,
-blockquoted and line-wrapped, dies at `G-WALL-L1`), `MUT-WALL-LORENTZ` by
-INJ14, and `MUT-VERDICT`/`MUT-HEAD` by INJ21/INJ22 (both fence copies forged,
-both die). The delivery run's own in-process sweep reports all 41 ON TARGET,
-and I reproduced that run byte-identically twice under different hash seeds —
-so the in-harness result is corroborated, not merely relayed. **The residual
-obligation is ten out-of-harness confirmations, no more.**
+Note the standing of the three wall mutants in this list against MAJOR-1:
+`MUT-WALL-BHS`, `MUT-WALL-KR` and `MUT-WALL-COSMO` each die exactly as
+declared — because each writes its banned reading into `surface`. That is the
+point of MAJOR-1: the falsifiers are honest and on target, and they falsify a
+leg that is not the one the wall is owed. A green mutant sweep is not evidence
+that a wall holds against the paper.
 
 ---
 
@@ -493,7 +491,7 @@ as such.
 | 5 | E-22 — fences by TRUE multiset; ALL tables as claims; 343 inline spans; NO blanket whitelists | **PRESENT (2 of 4 legs fail)** | fences: multiset live at all four segments (INJ07/21/22 die). inline spans: live (INJ06 dies on a corrupted backticked numeral). tables: 13 of 40 data rows rendered; four table forgeries survive (**MAJOR-2**). whitelists: four undeclared channels; five forgeries survive (**MAJOR-6**) |
 | 6 | vacuous clauses | **PRESENT (minor)** | `G-CEILING` carries two tautologies over values typed or defined a few lines above (**MINOR-2**). `G-SWEEP-BOUND`'s `not swept` short-circuit and the `paper_text is None` guards are declared and re-taken elsewhere — not vacuous |
 | 7 | E-24 — the 72/5,184 COUNTING-ONLY stamp; denominators re-counted | **PARTIAL** | the stamp is present and correct, and every denominator recomputes independently (5,184 = 72² by census; 17; 27; 108; 216 anchored; 864 by an independent edge count; 792 = 864 − 72). But the gate polices only the unit's own four-row list — INJ10 survives with an unstamped witness-space fraction and an explicit typicality claim. **MAJOR-7** |
-| 8 | the FULL 41-mutant sweep OUTSIDE the harness, raising gate parsed, artifacts unchanged | **CLEAN at 31 of 41; ten disclosed in flight** | zero off-target, zero survivors, zero crashes; mirror artifacts byte-unchanged across the sweep. §4 |
+| 8 | the FULL 41-mutant sweep OUTSIDE the harness, raising gate parsed, artifacts unchanged | **CLEAN — 41 of 41** | every mutant in its own process: 41/41 ON TARGET, 41/41 exit 1, zero survivors, zero crashes, zero off-target; mirror artifacts byte-unchanged across the whole sweep. §4. Caveat of record: the three wall mutants die honestly on the `surface` leg, which is not the leg the wall is owed (MAJOR-1) |
 | 9 | CLI hostile argv incl. arity; `--verify-paper` on a foreign paper; selftest write-nothing by tree hash | **CLEAN** | 12/12 hostile forms exit 2 (unknown flag, bare word, empty string, missing NAME, unknown NAME, trailing extra arg, two modes, duplicated mode, `-h`, missing file); both registries exit 0; foreign paper exit 1 DRIFT at `G-WALL-COSMO`; selftest exit 1 at `G-PROVENANCE` with the **whole mirror tree hash identical** before and after |
 | 10 | byte x2 across two `PYTHONHASHSEED`s, off-tree provisioned; bare-copy loud abort writes nothing | **CLEAN** | seeds 0 and 31337 in two separate off-tree git-less mirrors both reproduce `427a5da397aa` / `8b4ca74d954c` exactly; bare copy exits 1 with `[CLI] missing source: ...`, plain and `--selftest`, writing nothing |
 | 11 | the 771-numeral sweep (218 fenced, 343 inline, 111 words); the scanner's own coverage per E-22's inline rule | **RECONFIRMED — with 47 tokens outside it** | independent recount reproduces 771 / 218 / 343 / 111 / 8 blocks / 2 exemptions fired exactly; the raw paper carries **818** tokens, 47 removed by two undeclared strips before anything is checked. **MAJOR-6** |
@@ -544,7 +542,7 @@ hits.
 
 ---
 
-*Reviewer executions completed: 85, all off-tree; ten further out-of-harness
-mutant runs disclosed in flight at close. Recomputations: 258. Repo writes:
-this file only. Git: read-only. The LOR objects' hashes at close are identical
-to those at start.*
+*Reviewer executions: 95, all off-tree, including the complete 41-mutant sweep
+outside the harness (41/41 ON TARGET). Recomputations: 258. Repo writes: this
+file only. Git: read-only. The LOR objects' hashes at close are identical to
+those at start.*
