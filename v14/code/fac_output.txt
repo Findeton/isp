@@ -1,0 +1,146 @@
+==============================================================================
+FAC (PAPER-35) -- THE FACTORIZATION UNIT
+==============================================================================
+
+SECTION 1.  PROVENANCE
+  [PASS] G-PROVENANCE-SHA-PINNED
+         EVERY SOURCE IS READ AT A PINNED DIGEST (#46/#91).  This run reads exactly 10 committed files as sources and one file as the object under test; each source's bytes are digested and compared with the declaration frozen in this file, and every source's product is consumed by a gate below.  No subprocess is invoked and no repository state outside these paths is read, so the run is correct off-tree and with no version control present
+         evidence: sources 10, matched 10, mismatched none
+  [PASS] G-VERBATIM-ANCHORS-IN-SOURCE
+         EVERY VERBATIM ANCHOR IS PRESENT IN ITS SOURCE'S BYTES (#62 + #125).  13 anchors, each above the length floor of 30 characters, each matched after markdown-prefix, emphasis and ASCII-fold normalisation and again with whitespace removed, and each NAMED WITH THE GATE THAT CONSUMES IT -- an anchor no gate consumes is decoration
+         evidence: anchors 13, present 13, absent none
+  [PASS] G-OUTCOMES-PARSED-FROM-THE-PIN
+         THE OUTCOME VOCABULARY IS THE PIN'S, NOT THIS FILE'S.  The 5 pre-registered outcome strings are extracted from the pin's bytes at the digest gated above and reduced to 5 families; the head law below is required to return words from this set and from no other, so a head that invents a word cannot pass
+         evidence: raw 5, families 5: FAC-ATOM, FAC-BLOCKED-AT, FAC-FACTORIZATION-DECLARED, FAC-FACTORIZATION-FORCED, FAC-STRATIFIED
+
+SECTION 2.  THE ARENA, THE CARRIER AND THE CORPORA
+  [PASS] G-ARENA-SHAPE
+         THE ARENA IS THE PARENTS' ARENA, REBUILT HERE FROM ITS OWN DEFINITIONS.  AG(2,3) with 9 sites and 3 declared link directions of the 4 parallel classes; 280 groupings of the nine sites into three triples, 36 of them saturating; 72 I7-STRICT triples at R = 3 and 276 G-FLAT quadruples; paper-21's driven window at 600 schedules; and the arena's own automorphism group -- the affine maps permuting the declared directions -- at order 108.  Every one of these is enumerated by this file's own constructor and none is typed
+         evidence: groupings 280, saturating 36, triples 72, quadruples 276, schedules 600, |Aut| 108
+  [PASS] G-CELL-IS-A-CO-DIVISION-PAIR
+         THE CARRIER IS OCC'S CARRIER, VERIFIED HERE AS A BIJECTION.  The 27 cells this unit factorizes are exactly the 27 unordered co-division pairs of the declared links: each cell carries 2 actors at 27 of 27 cells, and each of the 9 actors sits in 6 cells.  The map cell -> pair is injective and surjective, measured pair by pair, so a partition of the cells IS a partition of the co-division pairs
+         evidence: cells 27, pairs 27, two-actor cells 27, cells per actor [6]
+  [PASS] G-CORPORA-SHAPE
+         THE HISTORY CORPUS IS THE PARENTS' CORPUS, PER OBJECT.  72 I7-STRICT triples, their 5,184 ordered concatenations and the 600 driven-window schedules give 5,856 committed histories; every one is checked to be a sequence of three-actor division events whose rounds partition the nine actors, and the event counts found are 9, 12, 18 -- one per round per group, no other shape present
+         evidence: C1 72, C2 5184, C3 600, total 5856, distinct 5784
+
+SECTION 3.  THE CRITERION, FROZEN BEFORE THE FIRST CENSUS ROW
+  [PASS] G-CRITERION-FROZEN-BEFORE-THE-CENSUS
+         THE CRITERION IS DECLARED AND DIGESTED BEFORE ANY CENSUS ROW RUNS.  Its 10 functions -- 107 lines in all -- are located by AST in this file's own source and digested here, at a point in the run where not one admissible set has yet been computed; and the free names each leg references are extracted and required to contain no census product, so a leg cannot consult the answer it is deciding.  The four legs are LEG-1-GEOMETRY, LEG-2-HISTORY, LEG-3-RECORD, LEG-4-DYNAMICS
+         evidence: functions 10 of 10 declared, combined digest 0019d84588bb, leaked names none
+  [PASS] G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS
+         EVERY WINDOW IS NAMED IN-STRING WITH ITS BOUND.  6 windows are declared; the actor lattice is COMPLETE at 21,147 of Bell(9) = 21,147, and the carrier window is a declared 42,295 of Bell(27) = 545,717,047,936,059,989,389, which is the whole reason it is a window at all.  No census below is truncated silently: the coherence ladder searches upward until it meets the complete relation, and the per-leg sweep publishes its sub-window and its complement
+         evidence: windows 6, actor lattice 21147 of 21147, carrier window 42295 of 545717047936059989389
+
+SECTION 4.  MEASUREMENT ONE -- THE DECOMPOSITION CENSUS
+  [PASS] G-LEG1-IS-THE-SUBGROUP-COSET-THEOREM
+         THE GEOMETRY LEG HAS A CLOSED FORM, AND IT IS MEASURED AGAINST IT.  Of the 21,147 partitions of the nine actors exactly 6 survive LEG-1, and the set they form is compared -- as a set of partitions, not as a count -- with the coset partitions of the 6 subgroups of the translation group of AG(2,3), independently constructed.  The two agree, so the geometry leg admits the trivial partition, the four parallel classes and the discrete partition and nothing else
+         evidence: lattice 21147, survivors 6, coset partitions 6, set-equal True
+  [PASS] G-ACTOR-GRAIN-ADMISSIBLE-PER-HISTORY
+         THE ACTOR-GRAIN ADMISSIBLE SET IS COUNTED PER HISTORY, NOT IN AGGREGATE (#87).  At each of the 5,856 committed histories the criterion is evaluated on every LEG-1 survivor and the admissible set is listed by name: cardinality one at 5,852 histories and greater than one at 4.  The discrete nine-block partition is admissible at every history -- checked history by history -- so the count is never zero and the question is always whether anything JOINS it
+         evidence: unique 5852, non-unique 4, cardinalities [1, 2]
+  [PASS] G-CARRIER-GRAIN-ADMISSIBLE-PER-HISTORY
+         THE CARRIER-GRAIN ADMISSIBLE SET IS COUNTED PER HISTORY ON A DECLARED WINDOW.  The 42,295-member carrier window is reduced by the geometry leg to 10 survivors, and those are evaluated at every history: cardinality one at 5,810 and greater than one at 46, with cardinalities [1, 2, 3, 9].  The window is a declared 42,295 of Bell(27) and the count is a COUNT over that window, not a measure over the carrier's partitions
+         evidence: unique 5810, non-unique 46, cardinalities [1, 2, 3, 9], window 42295
+  [PASS] G-CROSS-GRAIN-CONTAINMENT
+         THE TWO GRAINS ARE COMPARED AS SETS OF HISTORIES, NOT AS COUNTS.  The histories at which the actor grain admits more than one factorization and the histories at which the carrier grain does are compared element by element: 4 against 46, containment True, equality False, with 42 histories non-unique at the carrier and unique at the actor grain and 0 the other way round.  A count-only comparison would have missed the direction
+         evidence: actor 4, carrier 46, subset True, equal False
+  [PASS] G-BOTH-COIN-ORDERS-PUBLISHED
+         THE COIN-ORDER DUTY IS DISCHARGED BY RUNNING BOTH, NOT BY CHOOSING ONE (#293).  Every LEG-4 evaluation in both censuses is performed at G.D and at D.G; the pass counts are G.D=11,799, D.G=11,799 and the number of rows at which the two orders disagree is 0, so the fiber is published rather than stamped away
+         evidence: orders ['G.D', 'D.G'], passes {'D.G': 11799, 'G.D': 11799}, disagreements 0
+
+SECTION 5.  WHICH LEG BINDS -- THE COMPLETE LATTICE ON A SUB-WINDOW
+  [PASS] G-LEG2-IS-THE-SIGNATURE-REFINEMENT-THEOREM
+         THE HISTORY LEG HAS A CLOSED FORM AND IT IS THE NAMING GRAIN'S OWN OBJECT.  A partition passes LEG-2 exactly when it refines the participation-signature partition -- the same partition whose Young subgroup is the history's stabilizer -- so the count of LEG-2 survivors must be the product of the Bell numbers of the signature's block sizes.  Measured against the enumeration at every one of the 76 histories of the sub-window: 0 mismatches
+         evidence: sub-window 76, mismatches 0
+  [PASS] G-WHICH-LEG-BINDS
+         THE LEGS ARE REPORTED SEPARATELY, INCLUDING THE ONE THAT DOES NOT BIND.  On the declared sub-window of 76 histories (the complement is 5,780 and is named, not hidden) the complete lattice of 21,147 actor partitions is run leg by leg.  The record field of this corpus is site-constant at 5,856 of 5,856 histories -- measured, not assumed -- so LEG-3 admits the whole lattice here and the binding is done by LEG-1-GEOMETRY and LEG-2-HISTORY.  A leg that never fails on a corpus is declared non-binding ON THAT CORPUS and is exercised on the control arm instead
+         evidence: sub-window 76, profiles 2, non-binding ['LEG-3-RECORD']
+
+SECTION 6.  MEASUREMENT TWO -- THE GROUPOID CRYSTALLIZATION
+  [PASS] G-GROUPOID-LADDER-PER-HISTORY
+         THE COHERENCE LADDER IS RUN AT EVERY HISTORY, AND THE COMPLETE RELATION IS MEASURED AGAINST THE GLOBAL GROUP RATHER THAN ASSUMED EQUAL TO IT.  At each of the 5,856 histories the number of coherent families is counted exactly at 6 declared coherence relations by two disjoint routes -- a dynamic programme for the sliding windows and a backtracking enumeration for the round-local and complete relations.  The complete relation returns the global stabilizer's order at 5,856 of 5,856 histories, with 0 mismatches: gluing pairwise-coherent local identifications recovers a global relabelling, and the corpus says so history by history
+         evidence: histories 5856, complete==stab 5856, mismatches 0, thresholds [3, 4, 5]
+  [PASS] G-ATOM-THEOREM-AT-THE-GROUPOID-GRAIN
+         THE ATOM THEOREM IS PUT AT RISK AND THE OUTCOME IS DERIVED.  Of the 5,852 histories whose global stabilizer is trivial, 5,852 carry a coherent family other than the identity at the adjacent-overlap relation; the word this unit emits, FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN, is computed from that count and from whether the complete relation still returns the group, and BOTH outcome words are reachable from the same enumeration -- a corpus in which no history broke would return the other one
+         evidence: trivial-stabilizer histories 5852, breaks 5852, word FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN
+
+SECTION 7.  MEASUREMENT THREE -- THE GRAIN TRIANGLE
+  [PASS] G-GRAIN-TRIANGLE-BOTH-TESTS
+         BOTH DECLARED TESTS RUN AT ALL THREE GRAINS (the AID test-declaration duty).  TEST-RAW takes the stabilizer inside the grain's full symmetric group; TEST-REALIZABLE intersects it with the order-108 group the arena itself realizes.  On the declared sub-window of 672 histories (complement 5,184, named) the carrier's raw stabilizer is nontrivial at 672 of 672 rows and ranges up to 10,888,869,450,418,352,160,768,000,000, while the two tests agree at the actor grain at 668 rows and at the carrier grain at 0.  The raw route is checked against an explicit filtration of the symmetric group at 24 histories, 0 mismatches
+         evidence: rows 8, brute-checked 24, mismatches 0, raw-vs-realizable agreement actor 668 of 672 carrier 0 of 672
+
+SECTION 8.  MEASUREMENT FOUR -- THE PERSISTENCE PRESUPPOSITION
+  [PASS] G-PERSISTENCE-PRESUPPOSITION
+         THE PRESUPPOSITION IS STATED AS A MEASUREMENT, NOT AS A READING.  The global grain quantifies over one permutation of a persistent actor set; the groupoid grain replaces it with a family and a declared coherence relation.  Identity is forced at the complete relation at 5,852 histories and at the adjacent relation at 0, and the coherence depth at which the two meet is 3, 4, 5 -- derived per history by searching upward, never capped
+         evidence: forced at complete 5852, at adjacent 0, thresholds [3, 4, 5]
+  [PASS] G-TRANSPORT-ALONG-THE-R-LADDER
+         THE MEASUREMENT IS REPORTED AT EVERY RUNG THE CORPUS CARRIES.  The three rungs are R3-C1, R4-C3, R6-C2; at each one the admissible cardinality, the atom outcome and the collapse threshold are taken from that rung's OWN histories rather than from the corpus aggregate, and the break-at-the-adjacent-relation result is checked to coincide with the actor grain's uniqueness rung by rung: True
+         evidence: rungs ['R3-C1', 'R4-C3', 'R6-C2'], transports True
+
+SECTION 9.  THE CONTROL ARM -- EVERY OUTCOME WORD, EMITTED
+  [PASS] G-EVERY-OUTCOME-WORD-EMITTABLE
+         EVERY PRE-REGISTERED OUTCOME WORD IS SHOWN EMITTABLE ON A DECLARED ARENA (#299).  The head law returns FAC-FACTORIZATION-FORCED on the strict triples, FAC-FACTORIZATION-DECLARED on the non-unique histories and FAC-STRATIFIED on the whole corpus; the atom law returns both of its substantive words on declared synthetic histories -- the overlapping chain forces the identification at the adjacent relation and the corpus does not -- and its blocked word is reachable only from an instrument fault, which is what that word is for.  5 of the pin's 5 families are reached by an arena: none unreached
+         evidence: head words ['FAC-FACTORIZATION-DECLARED', 'FAC-FACTORIZATION-FORCED', 'FAC-STRATIFIED'], atom words ['FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN', 'FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN'], unreached families none
+  [PASS] G-THE-RECORD-LEG-IS-EXERCISED-SOMEWHERE
+         A LEG THAT NEVER FAILS ON THE CORPUS IS EXERCISED ON THE CONTROL.  LEG-3 admits the whole lattice at every committed history because this corpus's record field is site-constant there; on the declared synthetic histories it binds at 3 of 5 arenas, and the record-versus-dynamics wedge -- partitions the coin cannot tell apart because it reads the record only modulo three, while the record itself differs -- is empty on the committed corpus and fires 4 times on the control.  The leg is therefore non-binding HERE, not vacuous
+         evidence: arenas where LEG-3 binds 3 of 5, wedge fires 4
+
+SECTION 10.  MEASURE RELATIVITY, CLASS BINDING AND THE HEAD
+  [PASS] G-E24-COUNTING-ONLY
+         EVERY PUBLISHED FRACTION CARRIES ITS WINDOW AND ITS STAMP (E-24).  6 ratios are published; each names its numerator, its denominator AND the declared window the denominator ranges over, and each is stamped COUNTING-ONLY because this unit declares no measure on partition lattices.  A ratio whose window is absent, or whose numerator and denominator come from different windows, fails here
+         evidence: ratios 6, all windowed True, all stamped COUNTING-ONLY
+  [PASS] G-CLASS-WORDS-BOUND-TO-PREDICATES
+         EVERY PRINTED CLASS-WORD IS RECOMPUTED FROM ITS PREDICATE (#295).  38 rows carry a class word -- the census rows' uniqueness, the survivors' referent-bound names, each corpus's event shape, the coin fiber, the atom word and the head word -- and each is recomputed here from the object it describes and compared with the string that will be published.  A class-word swap dies at this gate rather than travelling into the paper
+         evidence: rows 38, mismatches 0
+  [PASS] G-VERDICT-RECONSTRUCTED-BY-A-SECOND-ROUTE
+         THE HEAD IS DERIVED TWICE, BY ROUTES THAT SHARE NO DISPATCHER AND NO CENSUS LOOP.  The second route calls neither admissible_actor nor admissible_cell and reads none of the first route's rows: it rebuilds every admissible set from the raw leg predicates, recounts the atom breaks from the coherence relation directly rather than from the ladder's cache, and re-applies the head law to its own numbers.  What the two routes DO share is the four leg predicates themselves, which are the object under test and are de-twinned by their own closed-form gates above, not by duplication.  The two agree on the head word, the atom word and all three counts: True
+         evidence: route A head FAC-STRATIFIED atom FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN unique 5852/5810; route B head FAC-STRATIFIED atom FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN unique 5852/5810
+  [PASS] G-HEAD-WORDS-COME-FROM-THE-PIN
+         THE HEAD'S WORDS ARE THE PIN'S WORDS.  Both derived words are required to begin with one of the 5 families parsed out of the pin's bytes, so a head that invented a vocabulary -- or a repair that quietly widened one -- fails here rather than in review
+         evidence: head FAC-STRATIFIED, atom FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN, families ['FAC-ATOM', 'FAC-BLOCKED-AT', 'FAC-FACTORIZATION-DECLARED', 'FAC-FACTORIZATION-FORCED', 'FAC-STRATIFIED']
+
+FAC-DECOMPOSITION<THESIS=THE-LAW-ADMITS-MORE-THAN-ONE-FACTORIZATION-ONLY-WHERE-THE-HISTORY-REPEATS-A-PARALLEL-CLASS; HISTORIES=5,856; ACTOR-LATTICE=21,147; ACTOR-GRAIN-LAW-COMPATIBLE-PARTITIONS=6; ACTOR-GRAIN-UNIQUE-FACTORIZATION=5,852-OF-5,856; CARRIER-WINDOW=42,295; CARRIER-GRAIN-LAW-COMPATIBLE-PARTITIONS=10; CARRIER-GRAIN-UNIQUE-FACTORIZATION=5,810-OF-5,856; COIN-ORDER-DISAGREEMENTS=0>
+FAC-GROUPOID<ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; ATOM-BREAKS=5,852-OF-5,856; COLLAPSE-THRESHOLDS=3,4,5; ARENA-GROUP-ORDER=108>
+FAC-STRATIFIED<BY-GRAIN=ACTOR-5852-OF-5856-UNIQUE-vs-CARRIER-5810-OF-5856-UNIQUE; ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; SCOPE=TWO-GRAINS-AS-DECLARED;COUNTS-ARE-COUNTING-ONLY;THE-CARRIER-WINDOW-IS-DECLARED-NOT-COMPLETE;NO-CLAIM-BEYOND-THE-MEASURED-COHERENCE-DEPTH>
+
+SECTION 11.  THE PAPER INSTRUMENT AND THE CLOSING BATTERY
+  [PASS] G-WALLS-SCAN-THE-PAPER
+         THE WALLS SCAN THE PAPER, WHICH IS THE LEG THEY ARE OWED.  5 walls carrying 15 banned assertive sentences between them are matched against 25,353 characters of the paper under test after full normalisation; the not-licensed list of the AID adjudication is the source of the first three.  The falsifier for this gate plants every banned sentence into the same text, so a green sweep here is evidence about the paper and not about the scanner
+         evidence: walls 5, clean 5, hits none
+  [PASS] G-PAPER-CLAIMS
+         EVERY REQUIRED CLAIM SENTENCE IS RENDERED FROM THE RECEIPT AND FOUND IN THE PAPER, AS AN EQUALITY (#293 Z10).  10 sentences are built from the run's own numbers and matched against the paper's bytes; the count required and the count matched are compared by EQUALITY, so dropping a sentence fails here rather than reducing a denominator
+         evidence: required 10, matched 10, missing none, dropped 0
+  [PASS] G-PAPER-TABLES-WITH-HEADERS
+         EVERY TABLE IS RENDERED FROM THE RECEIPT, HEADERS INCLUDED (PER-R Z7).  7 tables with 42 data rows and 7 header rows are built here and each is required to appear in the paper cell by cell; a column header is a claim, so a header swap that leaves every number correct dies at this gate
+         evidence: tables 7, rows 42, missing none
+  [PASS] G-PAPER-NUMERAL-COVERAGE
+         EVERY NUMERAL OF THE PAPER IS BACKED BY THIS RUN (#20 + E-22).  403 numerals are scanned -- prose, tables, inline code spans and the fenced verdict blocks alike -- against the run's registry and its own receipt, with 0 declared exemptions; 97 spelled numerals are scanned on the same terms; the scan's own totality is checked by arithmetic against the whole paper, and the verdict fences are gated by MULTISET equality so a forged twin beside a clean copy cannot pass
+         evidence: scanned 403 of 403, unbacked none, spelled 97 unbacked none, fences True
+  [PASS] G-SENTENCE-REFERENT-BINDING
+         NO SENTENCE PAIRS NUMERALS FROM DIFFERENT UNIVERSES (#293 Z6).  5 published ratios of the form `N of M` are resolved against the receipt and both members are required to be carried by one common member of the 18 DECLARED REFERENT UNIVERSES; the three aggregate keys are excluded by declaration, since a universe that carries every number binds nothing.  The LOR disease -- every numeral true, the relation false -- dies here
+         evidence: checked 5, unbound none
+  [PASS] G-PAPER-CLAIM-POLARITY
+         THE PAPER IS SCANNED FOR THE INVERSE OF EVERY LOAD-BEARING WORD.  5 polarity axes -- the head word, the atom word, the transport direction, the binding direction and the E-24 stamp -- are checked in BOTH forms, and the presence of an inverted form is a failure even when the asserted form is present too
+         evidence: axes 5, inverted present 0
+  [PASS] G-NO-TYPED-COUNTS
+         NO COUNT IS TYPED IN THE NAMING CODE (#267 MAJOR-3).  The string constants of the 5 functions that build this unit's prose, tables and head are read out of this file by AST and scanned for numerals; only the arena's own small constants are allowed, and every published total is derived from a live registry
+         evidence: offending literals none
+  [PASS] G-NO-FLOATS
+         THE ARITHMETIC IS EXACT, CHECKED TWICE.  This file's own source is walked by AST for float constants and the receipt about to be written is walked recursively for float values; the Z[w] coefficients of the coupled step are integer pairs and the lumpability comparison is an exact comparison of integer maps
+         evidence: float sites none
+  [PASS] G-READS-DECLARED
+         THE RUN'S READS ARE EXACTLY THE DECLARED ONES (#91).  Every read in this file passes through one of two categorised readers; the SOURCE set is compared with the declaration as a SET OF ABSOLUTE PATHS, the paper under test is the only PAPER-UNDER-TEST read, and this file itself is the only SELF read.  No subprocess is invoked anywhere
+         evidence: sources 10 declared 10, extra none, missing none
+  [PASS] G-FALSIFIER-COVERAGE
+         EVERY FALSIFIER'S DESCRIPTION IS VERIFIED AGAINST ITS CODE (E-23).  36 falsifiers are declared; each names the gate it must die at, and each carries a source fragment that is located in this file by AST and matched against the statement that actually carries the hook.  A description-inverted falsifier -- a false waiver wearing a green badge -- fails here, and every gate named is required to exist
+         evidence: falsifiers 36, hooked 36, description mismatches none, missing gates none
+  [PASS] G-FALSIFIER-REACHABILITY
+         THE GATES WITHOUT A FALSIFIER ARE NAMED, NOT HIDDEN (#34).  34 of the gates this run raises carry a named falsifier; the remaining 9 are listed in the receipt by name so a reader can see exactly which surfaces are guarded by construction and which by argument
+         evidence: with falsifier 34, without 9
+  [PASS] G-PAPER-INSTRUMENT-RAN-IN-THE-PLAIN-RUN
+         THE PAPER INSTRUMENT RAN INSIDE THIS RUN (#20).  The coverage, polarity, claim, table and referent ledgers above were produced by the plain run and are sealed here, so no separate verification pass can drift from the artifacts this run writes: 403 numerals, 10 claims and 42 table rows
+         evidence: numerals 403, claims 10, rows 42
+  [PASS] G-SWEEP-IS-EXECUTION-BOUND
+         THE FALSIFIER SWEEP IS A RECORD OF RUNS, NOT A LIST (E-23).  36 falsifiers are declared, 0 were executed in this process and 0 survived; a plain run publishes an empty execution list rather than a claim, and the sweep run publishes the rows it actually produced
+         evidence: declared 36, executed 0, survivors none

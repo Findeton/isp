@@ -9935,3 +9935,76 @@ SEC-2 (the dynamics of gluing: seam freedoms priced-or-
 selected; the dictionary extended so seam-spanning events
 become lawful) — both charter after their parent panels
 rule.
+
+## 2026-08-12 — FAC (PAPER-35) DELIVERED, COMMITTED AS-IS: STRATIFIED — THE DIVISION FORCED PER-HISTORY AT THE ACTOR GRAIN (COMPLETE LATTICE), THE ATOM BREAKS AT THE GROUPOID GRAIN; THE DECOMPOSITION AND NAMING QUESTIONS MEET IN ONE OBJECT (v14 LEDGER #311)
+
+**Files (committed as delivered, pre-battery):**
+v14/paper-35-fac.md (2e9cbae8a83e); v14/code/fac_exact.py
+(53e1e2683937); v14/code/fac_output.txt (43212e390250);
+v14/code/fac_receipt.json (240bad74217a); receipt payload
+71dfa0e509ea; pin verified 11380265fcf3.  ALL HEADLINES
+CANDIDATE UNTIL ADJUDICATION.
+
+**THE HEAD (three derived segments):** FAC-DECOMPOSITION
+(thesis: THE LAW ADMITS MORE THAN ONE FACTORIZATION ONLY
+WHERE THE HISTORY REPEATS A PARALLEL CLASS; actor lattice
+COMPLETE at Bell(9) = 21,147, law-compatible partitions 6,
+unique factorization 5,852 of 5,856; carrier window 42,295,
+compatible 10, unique 5,810 of 5,856; coin-order
+disagreements 0) · FAC-GROUPOID (ATOM-BREAKS at 5,852 of
+5,856; collapse thresholds {3,4,5}; arena group order 108)
+· FAC-STRATIFIED (by grain; counting-only; the carrier
+window declared-not-complete; no claim beyond the measured
+coherence depth).
+
+**THE CRITERION:** four legs (geometry / history / record /
+dynamics-lumpability in Z[ω] at BOTH coin orders), ten
+functions, digest 0019d84588bb, AST-verified leak-free,
+gated before the first census row.
+
+**TWO CLOSED-FORM THEOREMS, MEASURED NOT TRUSTED:** (1) the
+6 admissible actor-grain partitions are SET-EQUAL to the
+coset partitions of AG(2,3)'s translation subgroups
+(trivial + four parallel classes + discrete); the 4
+non-unique histories are exactly the constant-class W4
+quadruples, inventory {parallel class, discrete}.  (2)
+**LEG-2 ⟺ refines the participation-signature partition —
+the decomposition question and AID's naming question MEET
+IN ONE OBJECT** (0 mismatches against ∏Bell(|block|)).
+LEG-3 measured non-binding on this corpus (the record
+site-constant 5,856/5,856), exercised on the controls.
+
+**THE GROUPOID:** R-COMPLETE recovers the global stabilizer
+5,856/5,856 by two disjoint routes (gluing is a
+measurement); the ATOM BREAKS at exactly AID's
+trivial-stabilizer set (5,852); collapse threshold w*
+derived uncapped: 4 at all 72 C1 and all 5,184 C2; 3/4/5 at
+4/521/75 of C3.  **THE GRAIN TRIANGLE:** the two tests
+agree at the actor grain 668/672 and at the carrier grain
+0/672 — the carrier's raw-S₂₇ excess (stabilizers up to
+~1.09×10²⁸) is UNREALIZABLE by any arena transformation
+(|Aut| = 108); stated narrowly.  **PERSISTENCE:** identity
+forced at R-COMPLETE at 5,852 and at R-ADJACENT at 0 —
+crystallized identity does NOT transport below w*; verified
+rung-by-rung at R=3/4/6, the break coinciding with
+actor-grain uniqueness at every rung.
+
+**CONTROL ARMS (the first from-scratch #299 unit):** all
+words emitted through the REAL criterion (FORCED on C1;
+DECLARED on the four; STRATIFIED on C3; both atom words on
+X4/X5); the record-vs-dynamics wedge empty on the corpus,
+fires 4× on X3; link-parameterised arenas 1-direction → 42
+survivors vs 2/4-direction → 6.  **Instrument:** 43 gates /
+39 seals / 36 falsifiers / 7 tables with header rows bound
+/ 38 class-binding rows / 403 + 97 numerals 0 unbacked /
+18 referent universes / 5 polarity axes both ways; the
+unit's own sweep found and repaired TWO holes (a vacuous
+referent gate; a dead numeral exemption).  **Worker
+battery:** plain ×3 byte-identical across seeds; off-tree
+git-less env-i byte-identical; selftest 4 anchor classes
+fatal writing nothing; hostile argv exit 2; --sweep 36/36
+at declared gates.  **Known limits for the panel** listed
+in-delivery, incl. the shared leg predicates (de-twinned by
+the closed-form gates instead), the partition-only scope,
+and the w*-near-4 non-claim (the AID refusal respected).
+**Orchestrator battery launches next; panel after green.**

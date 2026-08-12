@@ -1,0 +1,5563 @@
+{
+ "actor_census": {
+  "cardinality_distribution": {
+   "1": 5852,
+   "2": 4
+  },
+  "histories": 5856,
+  "inventory": {
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ANT": 1,
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL": 1,
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-DIA": 1,
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ROW": 1,
+   "AP-9-BLOCKS-9x1": 5856
+  },
+  "lattice": 21147,
+  "leg1_equals_the_subgroup_cosets": true,
+  "leg1_geometry_survivors": 6,
+  "leg1_survivor_names": [
+   "AP-9-BLOCKS-9x1",
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ROW",
+   "AP-1-BLOCKS-1x9",
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL",
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-DIA",
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ANT"
+  ],
+  "non_unique_at": 4,
+  "non_unique_rows": [
+   {
+    "admissible": [
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ROW",
+     "AP-9-BLOCKS-9x1"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5256
+   },
+   {
+    "admissible": [
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL",
+     "AP-9-BLOCKS-9x1"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5341
+   },
+   {
+    "admissible": [
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-DIA",
+     "AP-9-BLOCKS-9x1"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5426
+   },
+   {
+    "admissible": [
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ANT",
+     "AP-9-BLOCKS-9x1"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5511
+   }
+  ],
+  "subgroup_coset_partitions": 6,
+  "unique_at": 5852
+ },
+ "arena": {
+  "actor_lattice": 21147,
+  "arena_automorphism_order": 108,
+  "carrier_lattice": 545717047936059989389,
+  "declared_links": 3,
+  "flat_quadruples": 276,
+  "groupings": 280,
+  "link_directions": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "parallel_classes": 4,
+  "saturating_groupings": 36,
+  "sites": 9,
+  "strict_triples": 72,
+  "window_schedules": 600
+ },
+ "arithmetic": "exact integers and Z[w] pairs; no float anywhere",
+ "atom": {
+  "atom_word": "FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN",
+  "histories_with_a_trivial_global_stabilizer": 5852,
+  "of_those_carrying_a_nontrivial_adjacent_coherent_family": 5852,
+  "reading": "group-level triviality does not imply groupoid-level rigidity at this arena: the histories that force the labelling globally do not force it when the identification is required to cohere only between neighbouring events"
+ },
+ "carrier": {
+  "actors_in_that_many_cells": 9,
+  "cell_to_pair_is_a_bijection": true,
+  "cells": 27,
+  "cells_per_actor": [
+   6
+  ],
+  "cells_with_exactly_two_actors": 27,
+  "distinct_co_division_pairs": 27
+ },
+ "cell_census": {
+  "ambient": 545717047936059989389,
+  "cardinality_distribution": {
+   "1": 5810,
+   "2": 15,
+   "3": 30,
+   "9": 1
+  },
+  "families": {
+   "DIRECTIONWISE": 6,
+   "PAIRWISE": 4,
+   "S-BY-AG-LINE": 1,
+   "S-BY-DIRECTION": 1,
+   "S-BY-SHIFT-ORBIT": 1,
+   "S-DISCRETE-27": 1,
+   "S-TRANSL-ORBIT-H0": 1,
+   "S-TRANSL-ORBIT-HANT": 1,
+   "S-TRANSL-ORBIT-HCOL": 1,
+   "S-TRANSL-ORBIT-HDIA": 1,
+   "S-TRANSL-ORBIT-HFULL": 1,
+   "S-TRANSL-ORBIT-HROW": 1,
+   "S-TRIVIAL-1": 1
+  },
+  "histories": 5856,
+  "inventory": {
+   "CP-1-BLOCKS-1x27-ACROSS-DIRECTIONS-ACROSS-SITES": 1,
+   "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE": 5856,
+   "CP-3-BLOCKS-3x9-WITHIN-ONE-DIRECTION-ACROSS-SITES": 1,
+   "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES": 32,
+   "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES": 49
+  },
+  "leg1_geometry_survivors": 10,
+  "leg1_survivor_names": [
+   "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+   "CP-1-BLOCKS-1x27-ACROSS-DIRECTIONS-ACROSS-SITES",
+   "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+   "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+   "CP-3-BLOCKS-3x9-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+   "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+   "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+   "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+   "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+   "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+  ],
+  "non_unique_at": 46,
+  "non_unique_rows": [
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5256
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5259
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5268
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5271
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5304
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5307
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5316
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5319
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5341
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5343
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5349
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5351
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5373
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5375
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5381
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5383
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5426
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5427
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5430
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5431
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5442
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5443
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5446
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5447
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5448
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5451
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5460
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5463
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5469
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5471
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5477
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5479
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5490
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5491
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5494
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5495
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5496
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5499
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5501
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5503
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5506
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5507
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5508
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 3,
+    "corpus": "C3",
+    "index": 5509
+   },
+   {
+    "admissible": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5510
+   },
+   {
+    "admissible": [
+     "CP-1-BLOCKS-1x27-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-3-BLOCKS-3x9-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "cardinality": 9,
+    "corpus": "C3",
+    "index": 5511
+   }
+  ],
+  "unique_at": 5810,
+  "window": 42295
+ },
+ "class_binding": {
+  "checked": 38,
+  "mismatches": 0,
+  "rows": [
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "actor-census/5256"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "actor-census/5341"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "actor-census/5426"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "actor-census/5511"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "carrier-census/5256"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "carrier-census/5259"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "carrier-census/5268"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "carrier-census/5271"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "carrier-census/5304"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "carrier-census/5307"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "carrier-census/5316"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "carrier-census/5319"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "carrier-census/5341"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "carrier-census/5343"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "carrier-census/5349"
+   },
+   {
+    "match": true,
+    "printed": "NON-UNIQUE",
+    "recomputed": "NON-UNIQUE",
+    "row": "carrier-census/5351"
+   },
+   {
+    "match": true,
+    "printed": "AP-9-BLOCKS-9x1",
+    "recomputed": "AP-9-BLOCKS-9x1",
+    "row": "leg1-survivor/0"
+   },
+   {
+    "match": true,
+    "printed": "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ROW",
+    "recomputed": "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ROW",
+    "row": "leg1-survivor/1"
+   },
+   {
+    "match": true,
+    "printed": "AP-1-BLOCKS-1x9",
+    "recomputed": "AP-1-BLOCKS-1x9",
+    "row": "leg1-survivor/2"
+   },
+   {
+    "match": true,
+    "printed": "AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL",
+    "recomputed": "AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL",
+    "row": "leg1-survivor/3"
+   },
+   {
+    "match": true,
+    "printed": "AP-3-BLOCKS-3x3-PARALLEL-CLASS-DIA",
+    "recomputed": "AP-3-BLOCKS-3x3-PARALLEL-CLASS-DIA",
+    "row": "leg1-survivor/4"
+   },
+   {
+    "match": true,
+    "printed": "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ANT",
+    "recomputed": "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ANT",
+    "row": "leg1-survivor/5"
+   },
+   {
+    "match": true,
+    "printed": "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+    "recomputed": "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+    "row": "carrier-survivor/0"
+   },
+   {
+    "match": true,
+    "printed": "CP-1-BLOCKS-1x27-ACROSS-DIRECTIONS-ACROSS-SITES",
+    "recomputed": "CP-1-BLOCKS-1x27-ACROSS-DIRECTIONS-ACROSS-SITES",
+    "row": "carrier-survivor/1"
+   },
+   {
+    "match": true,
+    "printed": "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+    "recomputed": "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+    "row": "carrier-survivor/2"
+   },
+   {
+    "match": true,
+    "printed": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "recomputed": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "row": "carrier-survivor/3"
+   },
+   {
+    "match": true,
+    "printed": "CP-3-BLOCKS-3x9-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "recomputed": "CP-3-BLOCKS-3x9-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "row": "carrier-survivor/4"
+   },
+   {
+    "match": true,
+    "printed": "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+    "recomputed": "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+    "row": "carrier-survivor/5"
+   },
+   {
+    "match": true,
+    "printed": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "recomputed": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "row": "carrier-survivor/6"
+   },
+   {
+    "match": true,
+    "printed": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "recomputed": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "row": "carrier-survivor/7"
+   },
+   {
+    "match": true,
+    "printed": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "recomputed": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "row": "carrier-survivor/8"
+   },
+   {
+    "match": true,
+    "printed": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "recomputed": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "row": "carrier-survivor/9"
+   },
+   {
+    "match": true,
+    "printed": "C1-HAS-9-EVENTS",
+    "recomputed": "C1-HAS-9-EVENTS",
+    "row": "corpus/C1"
+   },
+   {
+    "match": true,
+    "printed": "C2-HAS-18-EVENTS",
+    "recomputed": "C2-HAS-18-EVENTS",
+    "row": "corpus/C2"
+   },
+   {
+    "match": true,
+    "printed": "C3-HAS-12-EVENTS",
+    "recomputed": "C3-HAS-12-EVENTS",
+    "row": "corpus/C3"
+   },
+   {
+    "match": true,
+    "printed": "INERT-ON-EVERY-CENSUS-ROW",
+    "recomputed": "INERT-ON-EVERY-CENSUS-ROW",
+    "row": "coin/fiber"
+   },
+   {
+    "match": true,
+    "printed": "FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN",
+    "recomputed": "FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN",
+    "row": "atom/word"
+   },
+   {
+    "match": true,
+    "printed": "FAC-STRATIFIED",
+    "recomputed": "FAC-STRATIFIED",
+    "row": "head/word"
+   }
+  ]
+ },
+ "closing_gates": {
+  "after_the_snapshot": [
+   "G-TRANSCRIPT-SEALED-WHOLE",
+   "G-GATE-ACCOUNTING",
+   "G-SEAL-TOTALITY",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "names": [
+   "G-WALLS-SCAN-THE-PAPER",
+   "G-PAPER-CLAIMS",
+   "G-PAPER-TABLES-WITH-HEADERS",
+   "G-PAPER-NUMERAL-COVERAGE",
+   "G-SENTENCE-REFERENT-BINDING",
+   "G-PAPER-CLAIM-POLARITY",
+   "G-NO-TYPED-COUNTS",
+   "G-NO-FLOATS",
+   "G-READS-DECLARED",
+   "G-FALSIFIER-COVERAGE",
+   "G-FALSIFIER-REACHABILITY",
+   "G-PAPER-INSTRUMENT-RAN-IN-THE-PLAIN-RUN",
+   "G-SWEEP-IS-EXECUTION-BOUND",
+   "G-TRANSCRIPT-SEALED-WHOLE",
+   "G-GATE-ACCOUNTING",
+   "G-SEAL-TOTALITY",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "warrant": "the transcript is sealed WHOLE, the manifest is total, the paper instrument runs inside the plain run, and the staged bytes are read back and compared with the gate-time seal BEFORE anything is promoted"
+ },
+ "coin_order": {
+  "declared_orders": [
+   "G.D",
+   "D.G"
+  ],
+  "duty": "paper-20 declares the coin order a verdict-relevant fiber (#293); both members are run on every LEG-4 evaluation and both counts are published here",
+  "fiber": "INERT-ON-EVERY-CENSUS-ROW",
+  "leg4_passes_per_order": {
+   "D.G": 11799,
+   "G.D": 11799
+  },
+  "rows_where_the_orders_disagree": 0
+ },
+ "controls": {
+  "alternative_link_sets": [
+   {
+    "arena": "L1-ONE-DIRECTION",
+    "declared_links": 1,
+    "leg1_survivors": 42
+   },
+   {
+    "arena": "L2-TWO-DIRECTIONS",
+    "declared_links": 2,
+    "leg1_survivors": 6
+   },
+   {
+    "arena": "L4-EVERY-DIRECTION",
+    "declared_links": 4,
+    "leg1_survivors": 6
+   }
+  ],
+  "declared_sub_arenas": [
+   {
+    "actor_non_unique": 0,
+    "arena": "CTRL-C1-THE-STRICT-TRIPLES",
+    "carrier_non_unique": 0,
+    "head_word": "FAC-FACTORIZATION-FORCED",
+    "histories": 72
+   },
+   {
+    "actor_non_unique": 4,
+    "arena": "CTRL-THE-NON-UNIQUE-HISTORIES",
+    "carrier_non_unique": 4,
+    "head_word": "FAC-FACTORIZATION-DECLARED",
+    "histories": 4
+   },
+   {
+    "actor_non_unique": 4,
+    "arena": "CTRL-C3-THE-DRIVEN-WINDOW",
+    "carrier_non_unique": 46,
+    "head_word": "FAC-STRATIFIED",
+    "histories": 600
+   },
+   {
+    "actor_non_unique": 4,
+    "arena": "CTRL-THE-WHOLE-CORPUS",
+    "carrier_non_unique": 46,
+    "head_word": "FAC-STRATIFIED",
+    "histories": 5856
+   }
+  ],
+  "families_no_arena_reached": [],
+  "note": "every row above is a genuine evaluation of the SAME criterion and the SAME head law on a declared datum; no control row is typed and none is forged",
+  "pre_registered_families": [
+   "FAC-ATOM",
+   "FAC-BLOCKED-AT",
+   "FAC-FACTORIZATION-DECLARED",
+   "FAC-FACTORIZATION-FORCED",
+   "FAC-STRATIFIED"
+  ],
+  "record_dynamics_wedge_on_the_committed_corpus": 0,
+  "record_dynamics_wedge_on_the_control": 4,
+  "synthetic_histories": [
+   {
+    "adjacent_coherent_families": 6,
+    "arena": "X1-ONE-DIVISION-EVENT",
+    "atom_word": "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN",
+    "distinct_record_rows": 2,
+    "events": 1,
+    "global_stabilizer": 4320,
+    "leg3_passers_of_the_lattice": 1015,
+    "record_binds": true,
+    "record_dynamics_wedge": 0
+   },
+   {
+    "adjacent_coherent_families": 216,
+    "arena": "X2-ONE-FULL-ROW-ROUND",
+    "atom_word": "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN",
+    "distinct_record_rows": 1,
+    "events": 3,
+    "global_stabilizer": 216,
+    "leg3_passers_of_the_lattice": 21147,
+    "record_binds": false,
+    "record_dynamics_wedge": 0
+   },
+   {
+    "adjacent_coherent_families": 216,
+    "arena": "X3-ROW-MULTIPLICITIES-CONGRUENT-MOD-THREE",
+    "atom_word": "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN",
+    "distinct_record_rows": 3,
+    "events": 12,
+    "global_stabilizer": 216,
+    "leg3_passers_of_the_lattice": 125,
+    "record_binds": true,
+    "record_dynamics_wedge": 4
+   },
+   {
+    "adjacent_coherent_families": 1,
+    "arena": "X4-THE-OVERLAPPING-CHAIN",
+    "atom_word": "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN",
+    "distinct_record_rows": 4,
+    "events": 7,
+    "global_stabilizer": 1,
+    "leg3_passers_of_the_lattice": 104,
+    "record_binds": true,
+    "record_dynamics_wedge": 0
+   },
+   {
+    "adjacent_coherent_families": 5184,
+    "arena": "X5-A-ROW-ROUND-THEN-A-COLUMN-ROUND",
+    "atom_word": "FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN",
+    "distinct_record_rows": 1,
+    "events": 6,
+    "global_stabilizer": 1,
+    "leg3_passers_of_the_lattice": 21147,
+    "record_binds": false,
+    "record_dynamics_wedge": 0
+   }
+  ],
+  "words_emitted": [
+   "FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN",
+   "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN",
+   "FAC-BLOCKED-AT-THE-GROUPOID-COMPLETE-RELATION",
+   "FAC-FACTORIZATION-DECLARED",
+   "FAC-FACTORIZATION-FORCED",
+   "FAC-STRATIFIED"
+  ]
+ },
+ "corpora": {
+  "C1_strict_triples": 72,
+  "C2_concatenations": 5184,
+  "C3_tags": {
+   "W4-CLASS": 256,
+   "W4-FLAT": 264,
+   "W4-SEEDFAN": 80
+  },
+  "C3_window_schedules": 600,
+  "distinct_histories": 5784,
+  "events_per_history": {
+   "12": 600,
+   "18": 5184,
+   "9": 72
+  },
+  "total_histories": 5856
+ },
+ "counts": {
+  "actor_lattice": 21147,
+  "actor_leg1": 6,
+  "actor_non_unique": 4,
+  "actor_unique": 5852,
+  "arena_group_order": 108,
+  "atom_breaks": 5852,
+  "carrier_leg1": 10,
+  "carrier_non_unique": 46,
+  "carrier_unique": 5810,
+  "carrier_window": 42295,
+  "coin_disagreements": 0,
+  "collapse_thresholds": [
+   3,
+   4,
+   5
+  ],
+  "histories": 5856
+ },
+ "coverage": {
+  "descriptions_not_matching_their_code": [],
+  "gates_named_that_do_not_exist": [],
+  "hooked": 36,
+  "mutants": 36,
+  "rows": [
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-PARTITION\"",
+    "description": "reports 0 groupings from the closed comparison, so the enumeration and the re-enumeration disagree",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-ARENA-SHAPE",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-PARTITION"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-CARRIER\"",
+    "description": "declares the cell-to-co-division-pair map not a bijection",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-CELL-IS-A-CO-DIVISION-PAIR",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-CARRIER"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "parsed = [\"FAC-FACTORIZATION-FORCED-<witness>\"]",
+    "description": "replaces the outcome words parsed from the pin with a single typed literal, so the vocabulary stops being the pin's",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-OUTCOMES-PARSED-FROM-THE-PIN",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-OUTCOME-TYPED"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-CRITERION-LEAK\"",
+    "description": "reports the criterion's legs referencing a census product, which is the thing the gate forbids",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-CRITERION-FROZEN-BEFORE-THE-CENSUS",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-CRITERION-LEAK"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-WINDOW\"",
+    "description": "reports the actor lattice at 0 members, so the window's claim to be complete in Bell(9) fails",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-WINDOW"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-LEG1-THEOREM\"",
+    "description": "declares the geometry leg's survivors unequal to the subgroup coset partitions",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-LEG1-IS-THE-SUBGROUP-COSET-THEOREM",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-LEG1-THEOREM"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-ACTOR-CENSUS\"",
+    "description": "reports 0 unique-factorization histories at the actor grain, so the unique and non-unique counts no longer partition the corpus",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-ACTOR-GRAIN-ADMISSIBLE-PER-HISTORY",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-ACTOR-CENSUS"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-CELL-CENSUS\"",
+    "description": "reports 0 unique-factorization histories at the carrier grain",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-CARRIER-GRAIN-ADMISSIBLE-PER-HISTORY",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-CELL-CENSUS"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-CROSS\"",
+    "description": "declares the actor grain's non-unique set not contained in the carrier grain's",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-CROSS-GRAIN-CONTAINMENT",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-CROSS"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-COIN\"",
+    "description": "reports one coin-order disagreement where the run measured none, so the published fiber and the measurement part company",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-BOTH-COIN-ORDERS-PUBLISHED",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-COIN"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-LEG2-THEOREM\"",
+    "description": "reports one mismatch between the history leg's enumeration and its closed form",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-LEG2-IS-THE-SIGNATURE-REFINEMENT-THEOREM",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-LEG2-THEOREM"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-LEGBIND\"",
+    "description": "reports one history with a record that is not site-constant, contradicting the measured non-binding claim",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-WHICH-LEG-BINDS",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-LEGBIND"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-GAMMA-COMPLETE\"",
+    "description": "reports one history at which the complete coherence relation does not return the global stabilizer",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-GROUPOID-LADDER-PER-HISTORY",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-GAMMA-COMPLETE"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-ATOM\"",
+    "description": "substitutes a forged atom word for the derived one",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-ATOM-THEOREM-AT-THE-GROUPOID-GRAIN",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-ATOM"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-TRIANGLE\"",
+    "description": "reports one mismatch between the Young-order route and the explicit filtration of the symmetric group",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-GRAIN-TRIANGLE-BOTH-TESTS",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-TRIANGLE"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-PERSIST\"",
+    "description": "reports no collapse-threshold values at all",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-PERSISTENCE-PRESUPPOSITION",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-PERSIST"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-TRANSPORT\"",
+    "description": "declares the result not to transport across the rungs",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-TRANSPORT-ALONG-THE-R-LADDER",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-TRANSPORT"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-CONTROLS\"",
+    "description": "reports one pre-registered family that no declared arena reaches",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-EVERY-OUTCOME-WORD-EMITTABLE",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-CONTROLS"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-WEDGE\"",
+    "description": "reports the record-versus-dynamics wedge never firing on the control, which is what would make the record leg vacuous",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-THE-RECORD-LEG-IS-EXERCISED-SOMEWHERE",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-WEDGE"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-E24\"",
+    "description": "stamps the published ratios as probabilities instead of counts",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-E24-COUNTING-ONLY",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-E24"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "cb[0][\"printed\"]",
+    "description": "swaps the first census row's printed class word from NON-UNIQUE to UNIQUE while the predicate is unchanged",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-CLASS-WORDS-BOUND-TO-PREDICATES",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-CLASSWORD"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-HEAD-TWICE\"",
+    "description": "declares the two independent head routes to disagree",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-VERDICT-RECONSTRUCTED-BY-A-SECOND-ROUTE",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-HEAD-TWICE"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-HEADFAM\"",
+    "description": "declares the derived words not to belong to the pin's families",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-HEAD-WORDS-COME-FROM-THE-PIN",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-HEADFAM"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "if mut(\"MUT-SEAL-DROP\") and sid",
+    "description": "silently omits the coverage seal from the manifest, so a published key travels unsealed",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-SEAL-TOTALITY",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-SEAL-DROP"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "body = body + \" and 5,852 of 42,295",
+    "description": "appends a ratio joining a census numerator to a window denominator, the LOR disease exactly",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-SENTENCE-REFERENT-BINDING",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-REFERENT"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "exempt = exempt + ",
+    "description": "declares a numeral exemption that never fires",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-PAPER-NUMERAL-COVERAGE",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-EXEMPTION-DEAD"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "FENCE.sub(\"\", text)",
+    "description": "strips the fenced blocks before scanning, so the verdict's own numerals go unscanned",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-PAPER-NUMERAL-COVERAGE",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-COVERAGE-SCAN"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "seg.replace(\"ACTOR\", \"FORGED\")",
+    "description": "forges one copy of the first verdict fence, leaving its twin clean",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-PAPER-NUMERAL-COVERAGE",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-PAPER-FENCE-MULTISET"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "texts_for_claims[:-1]",
+    "description": "drops one required claim sentence from the paper before matching",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-PAPER-CLAIMS",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-PAPER-CLAIM"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "hdr[1], hdr[2] = hdr[2], hdr[1]",
+    "description": "swaps two column headers of the census table, leaving every data cell correct",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-PAPER-TABLES-WITH-HEADERS",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-PAPER-TABLE"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "paper_polarity(R, paper_text, mut(\"MUT-POLARITY\"))",
+    "description": "passes the mutated flag into the polarity scanner, which then reports the inverted form of the atom axis present in the paper",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-PAPER-CLAIM-POLARITY",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-POLARITY"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-WALL-PLANT\", paper_text, paper_text",
+    "description": "appends every banned assertive sentence of every wall to the paper text the wall gate scans",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-WALLS-SCAN-THE-PAPER",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-WALL-PLANT"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "staged = staged[:-1]",
+    "description": "forges the last staged transcript line after the whole-transcript digest is taken",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-TRANSCRIPT-SEALED-WHOLE",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-TRANSCRIPT"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-FINAL\"",
+    "description": "reports zero numerals scanned, so the paper instrument would be claimed to have run while measuring nothing",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-PAPER-INSTRUMENT-RAN-IN-THE-PLAIN-RUN",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-FINAL"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-SWEEP\"",
+    "description": "publishes a forged survivor row in the sweep ledger",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-SWEEP-IS-EXECUTION-BOUND",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-SWEEP"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-GATECOUNT\"",
+    "description": "reports zero closing gates after the ledger snapshot, so the published total stops being the sum of its parts",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-GATE-ACCOUNTING",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-GATECOUNT"
+   }
+  ]
+ },
+ "criterion": {
+  "census_products_referenced": [],
+  "coin_orders": [
+   "G.D",
+   "D.G"
+  ],
+  "combined_sha256_12": "0019d84588bb",
+  "free_names": {
+   "admissible_actor": [
+    "bool",
+    "induced_cell_partition",
+    "leg1_actor",
+    "leg2_actor",
+    "leg3_actor",
+    "leg4_cell"
+   ],
+   "admissible_cell": [
+    "bool",
+    "leg1_cell",
+    "leg2_cell",
+    "leg3_cell",
+    "leg4_cell"
+   ],
+   "induced_cell_partition": [
+    "CELLS",
+    "I7_LINKS",
+    "block_map",
+    "canonical_cell_partition"
+   ],
+   "leg1_actor": [
+    "I7_LINKS",
+    "SITES",
+    "block_map",
+    "vadd"
+   ],
+   "leg1_cell": [
+    "DIM",
+    "SHIFT_T",
+    "enumerate",
+    "range"
+   ],
+   "leg2_actor": [
+    "len",
+    "sum"
+   ],
+   "leg2_cell": [
+    "len",
+    "sum"
+   ],
+   "leg3_actor": [
+    "SITE_INDEX",
+    "len",
+    "range"
+   ],
+   "leg3_cell": [
+    "len"
+   ],
+   "leg4_cell": [
+    "DIM",
+    "coupled_columns",
+    "enumerate",
+    "len",
+    "range",
+    "sorted",
+    "tuple"
+   ]
+  },
+  "functions": {
+   "admissible_actor": {
+    "lines": 11,
+    "sha256_12": "39279020d1d4"
+   },
+   "admissible_cell": {
+    "lines": 10,
+    "sha256_12": "f4ebd8abe28f"
+   },
+   "induced_cell_partition": {
+    "lines": 7,
+    "sha256_12": "9a812ceeffb8"
+   },
+   "leg1_actor": {
+    "lines": 13,
+    "sha256_12": "6e3d1da057d0"
+   },
+   "leg1_cell": {
+    "lines": 12,
+    "sha256_12": "34cbf73b5e6c"
+   },
+   "leg2_actor": {
+    "lines": 9,
+    "sha256_12": "e47574683024"
+   },
+   "leg2_cell": {
+    "lines": 9,
+    "sha256_12": "9d5b66cdc634"
+   },
+   "leg3_actor": {
+    "lines": 8,
+    "sha256_12": "2b1a3d4a924b"
+   },
+   "leg3_cell": {
+    "lines": 6,
+    "sha256_12": "36c58b999caa"
+   },
+   "leg4_cell": {
+    "lines": 22,
+    "sha256_12": "20814624b395"
+   }
+  },
+  "legs": [
+   "LEG-1-GEOMETRY",
+   "LEG-2-HISTORY",
+   "LEG-3-RECORD",
+   "LEG-4-DYNAMICS"
+  ],
+  "statement": "a partition is LAW-COMPATIBLE at a history exactly when the committed link/shift structure, the division events, the record field and paper-20's one-step operator all DESCEND along the identifications the partition induces"
+ },
+ "cross_grain": {
+  "actor_non_unique": 4,
+  "actor_only": 0,
+  "actor_subset_of_carrier": true,
+  "carrier_non_unique": 46,
+  "carrier_only": 42,
+  "sets_equal": false
+ },
+ "gates": [
+  {
+   "evidence": "sources 10, matched 10, mismatched none",
+   "gate": "G-PROVENANCE-SHA-PINNED",
+   "passed": true,
+   "statement": "EVERY SOURCE IS READ AT A PINNED DIGEST (#46/#91).  This run reads exactly 10 committed files as sources and one file as the object under test; each source's bytes are digested and compared with the declaration frozen in this file, and every source's product is consumed by a gate below.  No subprocess is invoked and no repository state outside these paths is read, so the run is correct off-tree and with no version control present",
+   "waiver": null
+  },
+  {
+   "evidence": "anchors 13, present 13, absent none",
+   "gate": "G-VERBATIM-ANCHORS-IN-SOURCE",
+   "passed": true,
+   "statement": "EVERY VERBATIM ANCHOR IS PRESENT IN ITS SOURCE'S BYTES (#62 + #125).  13 anchors, each above the length floor of 30 characters, each matched after markdown-prefix, emphasis and ASCII-fold normalisation and again with whitespace removed, and each NAMED WITH THE GATE THAT CONSUMES IT -- an anchor no gate consumes is decoration",
+   "waiver": null
+  },
+  {
+   "evidence": "raw 5, families 5: FAC-ATOM, FAC-BLOCKED-AT, FAC-FACTORIZATION-DECLARED, FAC-FACTORIZATION-FORCED, FAC-STRATIFIED",
+   "gate": "G-OUTCOMES-PARSED-FROM-THE-PIN",
+   "passed": true,
+   "statement": "THE OUTCOME VOCABULARY IS THE PIN'S, NOT THIS FILE'S.  The 5 pre-registered outcome strings are extracted from the pin's bytes at the digest gated above and reduced to 5 families; the head law below is required to return words from this set and from no other, so a head that invents a word cannot pass",
+   "waiver": null
+  },
+  {
+   "evidence": "groupings 280, saturating 36, triples 72, quadruples 276, schedules 600, |Aut| 108",
+   "gate": "G-ARENA-SHAPE",
+   "passed": true,
+   "statement": "THE ARENA IS THE PARENTS' ARENA, REBUILT HERE FROM ITS OWN DEFINITIONS.  AG(2,3) with 9 sites and 3 declared link directions of the 4 parallel classes; 280 groupings of the nine sites into three triples, 36 of them saturating; 72 I7-STRICT triples at R = 3 and 276 G-FLAT quadruples; paper-21's driven window at 600 schedules; and the arena's own automorphism group -- the affine maps permuting the declared directions -- at order 108.  Every one of these is enumerated by this file's own constructor and none is typed",
+   "waiver": null
+  },
+  {
+   "evidence": "cells 27, pairs 27, two-actor cells 27, cells per actor [6]",
+   "gate": "G-CELL-IS-A-CO-DIVISION-PAIR",
+   "passed": true,
+   "statement": "THE CARRIER IS OCC'S CARRIER, VERIFIED HERE AS A BIJECTION.  The 27 cells this unit factorizes are exactly the 27 unordered co-division pairs of the declared links: each cell carries 2 actors at 27 of 27 cells, and each of the 9 actors sits in 6 cells.  The map cell -> pair is injective and surjective, measured pair by pair, so a partition of the cells IS a partition of the co-division pairs",
+   "waiver": null
+  },
+  {
+   "evidence": "C1 72, C2 5184, C3 600, total 5856, distinct 5784",
+   "gate": "G-CORPORA-SHAPE",
+   "passed": true,
+   "statement": "THE HISTORY CORPUS IS THE PARENTS' CORPUS, PER OBJECT.  72 I7-STRICT triples, their 5,184 ordered concatenations and the 600 driven-window schedules give 5,856 committed histories; every one is checked to be a sequence of three-actor division events whose rounds partition the nine actors, and the event counts found are 9, 12, 18 -- one per round per group, no other shape present",
+   "waiver": null
+  },
+  {
+   "evidence": "functions 10 of 10 declared, combined digest 0019d84588bb, leaked names none",
+   "gate": "G-CRITERION-FROZEN-BEFORE-THE-CENSUS",
+   "passed": true,
+   "statement": "THE CRITERION IS DECLARED AND DIGESTED BEFORE ANY CENSUS ROW RUNS.  Its 10 functions -- 107 lines in all -- are located by AST in this file's own source and digested here, at a point in the run where not one admissible set has yet been computed; and the free names each leg references are extracted and required to contain no census product, so a leg cannot consult the answer it is deciding.  The four legs are LEG-1-GEOMETRY, LEG-2-HISTORY, LEG-3-RECORD, LEG-4-DYNAMICS",
+   "waiver": null
+  },
+  {
+   "evidence": "windows 6, actor lattice 21147 of 21147, carrier window 42295 of 545717047936059989389",
+   "gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
+   "passed": true,
+   "statement": "EVERY WINDOW IS NAMED IN-STRING WITH ITS BOUND.  6 windows are declared; the actor lattice is COMPLETE at 21,147 of Bell(9) = 21,147, and the carrier window is a declared 42,295 of Bell(27) = 545,717,047,936,059,989,389, which is the whole reason it is a window at all.  No census below is truncated silently: the coherence ladder searches upward until it meets the complete relation, and the per-leg sweep publishes its sub-window and its complement",
+   "waiver": null
+  },
+  {
+   "evidence": "lattice 21147, survivors 6, coset partitions 6, set-equal True",
+   "gate": "G-LEG1-IS-THE-SUBGROUP-COSET-THEOREM",
+   "passed": true,
+   "statement": "THE GEOMETRY LEG HAS A CLOSED FORM, AND IT IS MEASURED AGAINST IT.  Of the 21,147 partitions of the nine actors exactly 6 survive LEG-1, and the set they form is compared -- as a set of partitions, not as a count -- with the coset partitions of the 6 subgroups of the translation group of AG(2,3), independently constructed.  The two agree, so the geometry leg admits the trivial partition, the four parallel classes and the discrete partition and nothing else",
+   "waiver": null
+  },
+  {
+   "evidence": "unique 5852, non-unique 4, cardinalities [1, 2]",
+   "gate": "G-ACTOR-GRAIN-ADMISSIBLE-PER-HISTORY",
+   "passed": true,
+   "statement": "THE ACTOR-GRAIN ADMISSIBLE SET IS COUNTED PER HISTORY, NOT IN AGGREGATE (#87).  At each of the 5,856 committed histories the criterion is evaluated on every LEG-1 survivor and the admissible set is listed by name: cardinality one at 5,852 histories and greater than one at 4.  The discrete nine-block partition is admissible at every history -- checked history by history -- so the count is never zero and the question is always whether anything JOINS it",
+   "waiver": null
+  },
+  {
+   "evidence": "unique 5810, non-unique 46, cardinalities [1, 2, 3, 9], window 42295",
+   "gate": "G-CARRIER-GRAIN-ADMISSIBLE-PER-HISTORY",
+   "passed": true,
+   "statement": "THE CARRIER-GRAIN ADMISSIBLE SET IS COUNTED PER HISTORY ON A DECLARED WINDOW.  The 42,295-member carrier window is reduced by the geometry leg to 10 survivors, and those are evaluated at every history: cardinality one at 5,810 and greater than one at 46, with cardinalities [1, 2, 3, 9].  The window is a declared 42,295 of Bell(27) and the count is a COUNT over that window, not a measure over the carrier's partitions",
+   "waiver": null
+  },
+  {
+   "evidence": "actor 4, carrier 46, subset True, equal False",
+   "gate": "G-CROSS-GRAIN-CONTAINMENT",
+   "passed": true,
+   "statement": "THE TWO GRAINS ARE COMPARED AS SETS OF HISTORIES, NOT AS COUNTS.  The histories at which the actor grain admits more than one factorization and the histories at which the carrier grain does are compared element by element: 4 against 46, containment True, equality False, with 42 histories non-unique at the carrier and unique at the actor grain and 0 the other way round.  A count-only comparison would have missed the direction",
+   "waiver": null
+  },
+  {
+   "evidence": "orders ['G.D', 'D.G'], passes {'D.G': 11799, 'G.D': 11799}, disagreements 0",
+   "gate": "G-BOTH-COIN-ORDERS-PUBLISHED",
+   "passed": true,
+   "statement": "THE COIN-ORDER DUTY IS DISCHARGED BY RUNNING BOTH, NOT BY CHOOSING ONE (#293).  Every LEG-4 evaluation in both censuses is performed at G.D and at D.G; the pass counts are G.D=11,799, D.G=11,799 and the number of rows at which the two orders disagree is 0, so the fiber is published rather than stamped away",
+   "waiver": null
+  },
+  {
+   "evidence": "sub-window 76, mismatches 0",
+   "gate": "G-LEG2-IS-THE-SIGNATURE-REFINEMENT-THEOREM",
+   "passed": true,
+   "statement": "THE HISTORY LEG HAS A CLOSED FORM AND IT IS THE NAMING GRAIN'S OWN OBJECT.  A partition passes LEG-2 exactly when it refines the participation-signature partition -- the same partition whose Young subgroup is the history's stabilizer -- so the count of LEG-2 survivors must be the product of the Bell numbers of the signature's block sizes.  Measured against the enumeration at every one of the 76 histories of the sub-window: 0 mismatches",
+   "waiver": null
+  },
+  {
+   "evidence": "sub-window 76, profiles 2, non-binding ['LEG-3-RECORD']",
+   "gate": "G-WHICH-LEG-BINDS",
+   "passed": true,
+   "statement": "THE LEGS ARE REPORTED SEPARATELY, INCLUDING THE ONE THAT DOES NOT BIND.  On the declared sub-window of 76 histories (the complement is 5,780 and is named, not hidden) the complete lattice of 21,147 actor partitions is run leg by leg.  The record field of this corpus is site-constant at 5,856 of 5,856 histories -- measured, not assumed -- so LEG-3 admits the whole lattice here and the binding is done by LEG-1-GEOMETRY and LEG-2-HISTORY.  A leg that never fails on a corpus is declared non-binding ON THAT CORPUS and is exercised on the control arm instead",
+   "waiver": null
+  },
+  {
+   "evidence": "histories 5856, complete==stab 5856, mismatches 0, thresholds [3, 4, 5]",
+   "gate": "G-GROUPOID-LADDER-PER-HISTORY",
+   "passed": true,
+   "statement": "THE COHERENCE LADDER IS RUN AT EVERY HISTORY, AND THE COMPLETE RELATION IS MEASURED AGAINST THE GLOBAL GROUP RATHER THAN ASSUMED EQUAL TO IT.  At each of the 5,856 histories the number of coherent families is counted exactly at 6 declared coherence relations by two disjoint routes -- a dynamic programme for the sliding windows and a backtracking enumeration for the round-local and complete relations.  The complete relation returns the global stabilizer's order at 5,856 of 5,856 histories, with 0 mismatches: gluing pairwise-coherent local identifications recovers a global relabelling, and the corpus says so history by history",
+   "waiver": null
+  },
+  {
+   "evidence": "trivial-stabilizer histories 5852, breaks 5852, word FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN",
+   "gate": "G-ATOM-THEOREM-AT-THE-GROUPOID-GRAIN",
+   "passed": true,
+   "statement": "THE ATOM THEOREM IS PUT AT RISK AND THE OUTCOME IS DERIVED.  Of the 5,852 histories whose global stabilizer is trivial, 5,852 carry a coherent family other than the identity at the adjacent-overlap relation; the word this unit emits, FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN, is computed from that count and from whether the complete relation still returns the group, and BOTH outcome words are reachable from the same enumeration -- a corpus in which no history broke would return the other one",
+   "waiver": null
+  },
+  {
+   "evidence": "rows 8, brute-checked 24, mismatches 0, raw-vs-realizable agreement actor 668 of 672 carrier 0 of 672",
+   "gate": "G-GRAIN-TRIANGLE-BOTH-TESTS",
+   "passed": true,
+   "statement": "BOTH DECLARED TESTS RUN AT ALL THREE GRAINS (the AID test-declaration duty).  TEST-RAW takes the stabilizer inside the grain's full symmetric group; TEST-REALIZABLE intersects it with the order-108 group the arena itself realizes.  On the declared sub-window of 672 histories (complement 5,184, named) the carrier's raw stabilizer is nontrivial at 672 of 672 rows and ranges up to 10,888,869,450,418,352,160,768,000,000, while the two tests agree at the actor grain at 668 rows and at the carrier grain at 0.  The raw route is checked against an explicit filtration of the symmetric group at 24 histories, 0 mismatches",
+   "waiver": null
+  },
+  {
+   "evidence": "forced at complete 5852, at adjacent 0, thresholds [3, 4, 5]",
+   "gate": "G-PERSISTENCE-PRESUPPOSITION",
+   "passed": true,
+   "statement": "THE PRESUPPOSITION IS STATED AS A MEASUREMENT, NOT AS A READING.  The global grain quantifies over one permutation of a persistent actor set; the groupoid grain replaces it with a family and a declared coherence relation.  Identity is forced at the complete relation at 5,852 histories and at the adjacent relation at 0, and the coherence depth at which the two meet is 3, 4, 5 -- derived per history by searching upward, never capped",
+   "waiver": null
+  },
+  {
+   "evidence": "rungs ['R3-C1', 'R4-C3', 'R6-C2'], transports True",
+   "gate": "G-TRANSPORT-ALONG-THE-R-LADDER",
+   "passed": true,
+   "statement": "THE MEASUREMENT IS REPORTED AT EVERY RUNG THE CORPUS CARRIES.  The three rungs are R3-C1, R4-C3, R6-C2; at each one the admissible cardinality, the atom outcome and the collapse threshold are taken from that rung's OWN histories rather than from the corpus aggregate, and the break-at-the-adjacent-relation result is checked to coincide with the actor grain's uniqueness rung by rung: True",
+   "waiver": null
+  },
+  {
+   "evidence": "head words ['FAC-FACTORIZATION-DECLARED', 'FAC-FACTORIZATION-FORCED', 'FAC-STRATIFIED'], atom words ['FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN', 'FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN'], unreached families none",
+   "gate": "G-EVERY-OUTCOME-WORD-EMITTABLE",
+   "passed": true,
+   "statement": "EVERY PRE-REGISTERED OUTCOME WORD IS SHOWN EMITTABLE ON A DECLARED ARENA (#299).  The head law returns FAC-FACTORIZATION-FORCED on the strict triples, FAC-FACTORIZATION-DECLARED on the non-unique histories and FAC-STRATIFIED on the whole corpus; the atom law returns both of its substantive words on declared synthetic histories -- the overlapping chain forces the identification at the adjacent relation and the corpus does not -- and its blocked word is reachable only from an instrument fault, which is what that word is for.  5 of the pin's 5 families are reached by an arena: none unreached",
+   "waiver": null
+  },
+  {
+   "evidence": "arenas where LEG-3 binds 3 of 5, wedge fires 4",
+   "gate": "G-THE-RECORD-LEG-IS-EXERCISED-SOMEWHERE",
+   "passed": true,
+   "statement": "A LEG THAT NEVER FAILS ON THE CORPUS IS EXERCISED ON THE CONTROL.  LEG-3 admits the whole lattice at every committed history because this corpus's record field is site-constant there; on the declared synthetic histories it binds at 3 of 5 arenas, and the record-versus-dynamics wedge -- partitions the coin cannot tell apart because it reads the record only modulo three, while the record itself differs -- is empty on the committed corpus and fires 4 times on the control.  The leg is therefore non-binding HERE, not vacuous",
+   "waiver": null
+  },
+  {
+   "evidence": "ratios 6, all windowed True, all stamped COUNTING-ONLY",
+   "gate": "G-E24-COUNTING-ONLY",
+   "passed": true,
+   "statement": "EVERY PUBLISHED FRACTION CARRIES ITS WINDOW AND ITS STAMP (E-24).  6 ratios are published; each names its numerator, its denominator AND the declared window the denominator ranges over, and each is stamped COUNTING-ONLY because this unit declares no measure on partition lattices.  A ratio whose window is absent, or whose numerator and denominator come from different windows, fails here",
+   "waiver": null
+  },
+  {
+   "evidence": "rows 38, mismatches 0",
+   "gate": "G-CLASS-WORDS-BOUND-TO-PREDICATES",
+   "passed": true,
+   "statement": "EVERY PRINTED CLASS-WORD IS RECOMPUTED FROM ITS PREDICATE (#295).  38 rows carry a class word -- the census rows' uniqueness, the survivors' referent-bound names, each corpus's event shape, the coin fiber, the atom word and the head word -- and each is recomputed here from the object it describes and compared with the string that will be published.  A class-word swap dies at this gate rather than travelling into the paper",
+   "waiver": null
+  },
+  {
+   "evidence": "route A head FAC-STRATIFIED atom FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN unique 5852/5810; route B head FAC-STRATIFIED atom FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN unique 5852/5810",
+   "gate": "G-VERDICT-RECONSTRUCTED-BY-A-SECOND-ROUTE",
+   "passed": true,
+   "statement": "THE HEAD IS DERIVED TWICE, BY ROUTES THAT SHARE NO DISPATCHER AND NO CENSUS LOOP.  The second route calls neither admissible_actor nor admissible_cell and reads none of the first route's rows: it rebuilds every admissible set from the raw leg predicates, recounts the atom breaks from the coherence relation directly rather than from the ladder's cache, and re-applies the head law to its own numbers.  What the two routes DO share is the four leg predicates themselves, which are the object under test and are de-twinned by their own closed-form gates above, not by duplication.  The two agree on the head word, the atom word and all three counts: True",
+   "waiver": null
+  },
+  {
+   "evidence": "head FAC-STRATIFIED, atom FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN, families ['FAC-ATOM', 'FAC-BLOCKED-AT', 'FAC-FACTORIZATION-DECLARED', 'FAC-FACTORIZATION-FORCED', 'FAC-STRATIFIED']",
+   "gate": "G-HEAD-WORDS-COME-FROM-THE-PIN",
+   "passed": true,
+   "statement": "THE HEAD'S WORDS ARE THE PIN'S WORDS.  Both derived words are required to begin with one of the 5 families parsed out of the pin's bytes, so a head that invented a vocabulary -- or a repair that quietly widened one -- fails here rather than in review",
+   "waiver": null
+  },
+  {
+   "evidence": "walls 5, clean 5, hits none",
+   "gate": "G-WALLS-SCAN-THE-PAPER",
+   "passed": true,
+   "statement": "THE WALLS SCAN THE PAPER, WHICH IS THE LEG THEY ARE OWED.  5 walls carrying 15 banned assertive sentences between them are matched against 25,353 characters of the paper under test after full normalisation; the not-licensed list of the AID adjudication is the source of the first three.  The falsifier for this gate plants every banned sentence into the same text, so a green sweep here is evidence about the paper and not about the scanner",
+   "waiver": null
+  },
+  {
+   "evidence": "required 10, matched 10, missing none, dropped 0",
+   "gate": "G-PAPER-CLAIMS",
+   "passed": true,
+   "statement": "EVERY REQUIRED CLAIM SENTENCE IS RENDERED FROM THE RECEIPT AND FOUND IN THE PAPER, AS AN EQUALITY (#293 Z10).  10 sentences are built from the run's own numbers and matched against the paper's bytes; the count required and the count matched are compared by EQUALITY, so dropping a sentence fails here rather than reducing a denominator",
+   "waiver": null
+  },
+  {
+   "evidence": "tables 7, rows 42, missing none",
+   "gate": "G-PAPER-TABLES-WITH-HEADERS",
+   "passed": true,
+   "statement": "EVERY TABLE IS RENDERED FROM THE RECEIPT, HEADERS INCLUDED (PER-R Z7).  7 tables with 42 data rows and 7 header rows are built here and each is required to appear in the paper cell by cell; a column header is a claim, so a header swap that leaves every number correct dies at this gate",
+   "waiver": null
+  },
+  {
+   "evidence": "scanned 403 of 403, unbacked none, spelled 97 unbacked none, fences True",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "passed": true,
+   "statement": "EVERY NUMERAL OF THE PAPER IS BACKED BY THIS RUN (#20 + E-22).  403 numerals are scanned -- prose, tables, inline code spans and the fenced verdict blocks alike -- against the run's registry and its own receipt, with 0 declared exemptions; 97 spelled numerals are scanned on the same terms; the scan's own totality is checked by arithmetic against the whole paper, and the verdict fences are gated by MULTISET equality so a forged twin beside a clean copy cannot pass",
+   "waiver": null
+  },
+  {
+   "evidence": "checked 5, unbound none",
+   "gate": "G-SENTENCE-REFERENT-BINDING",
+   "passed": true,
+   "statement": "NO SENTENCE PAIRS NUMERALS FROM DIFFERENT UNIVERSES (#293 Z6).  5 published ratios of the form `N of M` are resolved against the receipt and both members are required to be carried by one common member of the 18 DECLARED REFERENT UNIVERSES; the three aggregate keys are excluded by declaration, since a universe that carries every number binds nothing.  The LOR disease -- every numeral true, the relation false -- dies here",
+   "waiver": null
+  },
+  {
+   "evidence": "axes 5, inverted present 0",
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "passed": true,
+   "statement": "THE PAPER IS SCANNED FOR THE INVERSE OF EVERY LOAD-BEARING WORD.  5 polarity axes -- the head word, the atom word, the transport direction, the binding direction and the E-24 stamp -- are checked in BOTH forms, and the presence of an inverted form is a failure even when the asserted form is present too",
+   "waiver": null
+  },
+  {
+   "evidence": "offending literals none",
+   "gate": "G-NO-TYPED-COUNTS",
+   "passed": true,
+   "statement": "NO COUNT IS TYPED IN THE NAMING CODE (#267 MAJOR-3).  The string constants of the 5 functions that build this unit's prose, tables and head are read out of this file by AST and scanned for numerals; only the arena's own small constants are allowed, and every published total is derived from a live registry",
+   "waiver": null
+  },
+  {
+   "evidence": "float sites none",
+   "gate": "G-NO-FLOATS",
+   "passed": true,
+   "statement": "THE ARITHMETIC IS EXACT, CHECKED TWICE.  This file's own source is walked by AST for float constants and the receipt about to be written is walked recursively for float values; the Z[w] coefficients of the coupled step are integer pairs and the lumpability comparison is an exact comparison of integer maps",
+   "waiver": null
+  },
+  {
+   "evidence": "sources 10 declared 10, extra none, missing none",
+   "gate": "G-READS-DECLARED",
+   "passed": true,
+   "statement": "THE RUN'S READS ARE EXACTLY THE DECLARED ONES (#91).  Every read in this file passes through one of two categorised readers; the SOURCE set is compared with the declaration as a SET OF ABSOLUTE PATHS, the paper under test is the only PAPER-UNDER-TEST read, and this file itself is the only SELF read.  No subprocess is invoked anywhere",
+   "waiver": null
+  },
+  {
+   "evidence": "falsifiers 36, hooked 36, description mismatches none, missing gates none",
+   "gate": "G-FALSIFIER-COVERAGE",
+   "passed": true,
+   "statement": "EVERY FALSIFIER'S DESCRIPTION IS VERIFIED AGAINST ITS CODE (E-23).  36 falsifiers are declared; each names the gate it must die at, and each carries a source fragment that is located in this file by AST and matched against the statement that actually carries the hook.  A description-inverted falsifier -- a false waiver wearing a green badge -- fails here, and every gate named is required to exist",
+   "waiver": null
+  },
+  {
+   "evidence": "with falsifier 34, without 9",
+   "gate": "G-FALSIFIER-REACHABILITY",
+   "passed": true,
+   "statement": "THE GATES WITHOUT A FALSIFIER ARE NAMED, NOT HIDDEN (#34).  34 of the gates this run raises carry a named falsifier; the remaining 9 are listed in the receipt by name so a reader can see exactly which surfaces are guarded by construction and which by argument",
+   "waiver": null
+  },
+  {
+   "evidence": "numerals 403, claims 10, rows 42",
+   "gate": "G-PAPER-INSTRUMENT-RAN-IN-THE-PLAIN-RUN",
+   "passed": true,
+   "statement": "THE PAPER INSTRUMENT RAN INSIDE THIS RUN (#20).  The coverage, polarity, claim, table and referent ledgers above were produced by the plain run and are sealed here, so no separate verification pass can drift from the artifacts this run writes: 403 numerals, 10 claims and 42 table rows",
+   "waiver": null
+  },
+  {
+   "evidence": "declared 36, executed 0, survivors none",
+   "gate": "G-SWEEP-IS-EXECUTION-BOUND",
+   "passed": true,
+   "statement": "THE FALSIFIER SWEEP IS A RECORD OF RUNS, NOT A LIST (E-23).  36 falsifiers are declared, 0 were executed in this process and 0 survived; a plain run publishes an empty execution list rather than a claim, and the sweep run publishes the rows it actually produced",
+   "waiver": null
+  }
+ ],
+ "grain_triangle": {
+  "arena_group_order": 108,
+  "brute_force_checked": 24,
+  "brute_force_mismatches": 0,
+  "carrier_stabilizer_is_nontrivial_at": 672,
+  "complement": 5184,
+  "grains": [
+   "ACTOR-S9",
+   "SITE-ARENA-GROUP",
+   "CARRIER-S27"
+  ],
+  "max_raw_carrier_stabilizer": 10888869450418352160768000000,
+  "min_raw_carrier_stabilizer": 512,
+  "raw_and_realizable_agree_at_the_actor_grain": 668,
+  "raw_and_realizable_agree_at_the_carrier_grain": 0,
+  "rows": [
+   {
+    "TEST-RAW-at-ACTOR-S9": 1,
+    "TEST-RAW-at-CARRIER-S27": 10077696,
+    "TEST-REALIZABLE-at-CARRIER": 1,
+    "TEST-REALIZABLE-at-SITE": 1,
+    "corpus": "C1",
+    "histories": 72
+   },
+   {
+    "TEST-RAW-at-ACTOR-S9": 1,
+    "TEST-RAW-at-CARRIER-S27": 512,
+    "TEST-REALIZABLE-at-CARRIER": 1,
+    "TEST-REALIZABLE-at-SITE": 1,
+    "corpus": "C3",
+    "histories": 48
+   },
+   {
+    "TEST-RAW-at-ACTOR-S9": 1,
+    "TEST-RAW-at-CARRIER-S27": 13824,
+    "TEST-REALIZABLE-at-CARRIER": 1,
+    "TEST-REALIZABLE-at-SITE": 1,
+    "corpus": "C3",
+    "histories": 216
+   },
+   {
+    "TEST-RAW-at-ACTOR-S9": 1,
+    "TEST-RAW-at-CARRIER-S27": 10077696,
+    "TEST-REALIZABLE-at-CARRIER": 1,
+    "TEST-REALIZABLE-at-SITE": 1,
+    "corpus": "C3",
+    "histories": 140
+   },
+   {
+    "TEST-RAW-at-ACTOR-S9": 1,
+    "TEST-RAW-at-CARRIER-S27": 16930529280,
+    "TEST-REALIZABLE-at-CARRIER": 1,
+    "TEST-REALIZABLE-at-SITE": 1,
+    "corpus": "C3",
+    "histories": 150
+   },
+   {
+    "TEST-RAW-at-ACTOR-S9": 1,
+    "TEST-RAW-at-CARRIER-S27": 1382912720437248000,
+    "TEST-REALIZABLE-at-CARRIER": 6,
+    "TEST-REALIZABLE-at-SITE": 1,
+    "corpus": "C3",
+    "histories": 42
+   },
+   {
+    "TEST-RAW-at-ACTOR-S9": 216,
+    "TEST-RAW-at-CARRIER-S27": 1382912720437248000,
+    "TEST-REALIZABLE-at-CARRIER": 6,
+    "TEST-REALIZABLE-at-SITE": 6,
+    "corpus": "C3",
+    "histories": 3
+   },
+   {
+    "TEST-RAW-at-ACTOR-S9": 216,
+    "TEST-RAW-at-CARRIER-S27": 10888869450418352160768000000,
+    "TEST-REALIZABLE-at-CARRIER": 108,
+    "TEST-REALIZABLE-at-SITE": 18,
+    "corpus": "C3",
+    "histories": 1
+   }
+  ],
+  "sub_window": 672,
+  "tests": [
+   "TEST-RAW",
+   "TEST-REALIZABLE"
+  ]
+ },
+ "groupoid": {
+  "arrow_profiles": [
+   {
+    "connected_components": 1,
+    "histories": 12,
+    "isotropy_orders": [
+     1
+    ],
+    "objects": 9
+   },
+   {
+    "connected_components": 5,
+    "histories": 54,
+    "isotropy_orders": [
+     1,
+     3
+    ],
+    "objects": 9
+   },
+   {
+    "connected_components": 3,
+    "histories": 6,
+    "isotropy_orders": [
+     3
+    ],
+    "objects": 9
+   },
+   {
+    "connected_components": 2,
+    "histories": 48,
+    "isotropy_orders": [
+     1,
+     3
+    ],
+    "objects": 12
+   },
+   {
+    "connected_components": 5,
+    "histories": 216,
+    "isotropy_orders": [
+     1,
+     3
+    ],
+    "objects": 12
+   },
+   {
+    "connected_components": 1,
+    "histories": 3,
+    "isotropy_orders": [
+     3
+    ],
+    "objects": 12
+   },
+   {
+    "connected_components": 2,
+    "histories": 42,
+    "isotropy_orders": [
+     3
+    ],
+    "objects": 12
+   },
+   {
+    "connected_components": 3,
+    "histories": 116,
+    "isotropy_orders": [
+     3
+    ],
+    "objects": 12
+   },
+   {
+    "connected_components": 2,
+    "histories": 42,
+    "isotropy_orders": [
+     3,
+     6
+    ],
+    "objects": 12
+   },
+   {
+    "connected_components": 3,
+    "histories": 108,
+    "isotropy_orders": [
+     3,
+     6
+    ],
+    "objects": 12
+   },
+   {
+    "connected_components": 4,
+    "histories": 24,
+    "isotropy_orders": [
+     3,
+     6
+    ],
+    "objects": 12
+   },
+   {
+    "connected_components": 1,
+    "histories": 1,
+    "isotropy_orders": [
+     6
+    ],
+    "objects": 12
+   }
+  ],
+  "arrow_sub_window": 672,
+  "by_relation": [
+   {
+    "corpus": "C1",
+    "distinct_values": 1,
+    "histories": 72,
+    "maximum": 124416,
+    "minimum": 124416,
+    "relation": "R-ADJACENT"
+   },
+   {
+    "corpus": "C1",
+    "distinct_values": 1,
+    "histories": 72,
+    "maximum": 1,
+    "minimum": 1,
+    "relation": "R-COMPLETE"
+   },
+   {
+    "corpus": "C1",
+    "distinct_values": 1,
+    "histories": 72,
+    "maximum": 10077696,
+    "minimum": 10077696,
+    "relation": "R-EMPTY"
+   },
+   {
+    "corpus": "C1",
+    "distinct_values": 1,
+    "histories": 72,
+    "maximum": 10077696,
+    "minimum": 10077696,
+    "relation": "R-ROUND"
+   },
+   {
+    "corpus": "C1",
+    "distinct_values": 2,
+    "histories": 72,
+    "maximum": 288,
+    "minimum": 144,
+    "relation": "R-WINDOW-2"
+   },
+   {
+    "corpus": "C1",
+    "distinct_values": 1,
+    "histories": 72,
+    "maximum": 4,
+    "minimum": 4,
+    "relation": "R-WINDOW-3"
+   },
+   {
+    "corpus": "C2",
+    "distinct_values": 3,
+    "histories": 5184,
+    "maximum": 15479341056,
+    "minimum": 859963392,
+    "relation": "R-ADJACENT"
+   },
+   {
+    "corpus": "C2",
+    "distinct_values": 1,
+    "histories": 5184,
+    "maximum": 1,
+    "minimum": 1,
+    "relation": "R-COMPLETE"
+   },
+   {
+    "corpus": "C2",
+    "distinct_values": 1,
+    "histories": 5184,
+    "maximum": 101559956668416,
+    "minimum": 101559956668416,
+    "relation": "R-EMPTY"
+   },
+   {
+    "corpus": "C2",
+    "distinct_values": 1,
+    "histories": 5184,
+    "maximum": 101559956668416,
+    "minimum": 101559956668416,
+    "relation": "R-ROUND"
+   },
+   {
+    "corpus": "C2",
+    "distinct_values": 13,
+    "histories": 5184,
+    "maximum": 41472,
+    "minimum": 144,
+    "relation": "R-WINDOW-2"
+   },
+   {
+    "corpus": "C2",
+    "distinct_values": 2,
+    "histories": 5184,
+    "maximum": 8,
+    "minimum": 4,
+    "relation": "R-WINDOW-3"
+   },
+   {
+    "corpus": "C3",
+    "distinct_values": 7,
+    "histories": 600,
+    "maximum": 2176782336,
+    "minimum": 1492992,
+    "relation": "R-ADJACENT"
+   },
+   {
+    "corpus": "C3",
+    "distinct_values": 2,
+    "histories": 600,
+    "maximum": 216,
+    "minimum": 1,
+    "relation": "R-COMPLETE"
+   },
+   {
+    "corpus": "C3",
+    "distinct_values": 1,
+    "histories": 600,
+    "maximum": 2176782336,
+    "minimum": 2176782336,
+    "relation": "R-EMPTY"
+   },
+   {
+    "corpus": "C3",
+    "distinct_values": 1,
+    "histories": 600,
+    "maximum": 2176782336,
+    "minimum": 2176782336,
+    "relation": "R-ROUND"
+   },
+   {
+    "corpus": "C3",
+    "distinct_values": 22,
+    "histories": 600,
+    "maximum": 2176782336,
+    "minimum": 144,
+    "relation": "R-WINDOW-2"
+   },
+   {
+    "corpus": "C3",
+    "distinct_values": 9,
+    "histories": 600,
+    "maximum": 216,
+    "minimum": 2,
+    "relation": "R-WINDOW-3"
+   }
+  ],
+  "coherence_rows": [
+   "R-EMPTY",
+   "R-ADJACENT",
+   "R-WINDOW-2",
+   "R-WINDOW-3",
+   "R-ROUND",
+   "R-COMPLETE"
+  ],
+  "collapse_thresholds": {
+   "C1-T9-w4": 72,
+   "C2-T18-w4": 5184,
+   "C3-T12-w3": 4,
+   "C3-T12-w4": 521,
+   "C3-T12-w5": 75
+  },
+  "complete_equals_the_global_stabilizer": 5856,
+  "complete_mismatches": 0,
+  "ladder": [
+   {
+    "R-ADJACENT": 124416,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 10077696,
+    "R-ROUND": 10077696,
+    "R-WINDOW-2": 144,
+    "R-WINDOW-3": 4,
+    "corpus": "C1",
+    "events": 9,
+    "global_stabilizer": 1,
+    "histories": 48
+   },
+   {
+    "R-ADJACENT": 124416,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 10077696,
+    "R-ROUND": 10077696,
+    "R-WINDOW-2": 288,
+    "R-WINDOW-3": 4,
+    "corpus": "C1",
+    "events": 9,
+    "global_stabilizer": 1,
+    "histories": 24
+   },
+   {
+    "R-ADJACENT": 859963392,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 76
+   },
+   {
+    "R-ADJACENT": 859963392,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 8,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 76
+   },
+   {
+    "R-ADJACENT": 859963392,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 1152,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 168
+   },
+   {
+    "R-ADJACENT": 859963392,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 1152,
+    "R-WINDOW-3": 8,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 96
+   },
+   {
+    "R-ADJACENT": 859963392,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 2304,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 116
+   },
+   {
+    "R-ADJACENT": 859963392,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 2304,
+    "R-WINDOW-3": 8,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 20
+   },
+   {
+    "R-ADJACENT": 859963392,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 4608,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 24
+   },
+   {
+    "R-ADJACENT": 1719926784,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 144,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 192
+   },
+   {
+    "R-ADJACENT": 1719926784,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 288,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 364
+   },
+   {
+    "R-ADJACENT": 1719926784,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 596
+   },
+   {
+    "R-ADJACENT": 1719926784,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 1152,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 564
+   },
+   {
+    "R-ADJACENT": 1719926784,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 2304,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 364
+   },
+   {
+    "R-ADJACENT": 1719926784,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 4608,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 192
+   },
+   {
+    "R-ADJACENT": 1719926784,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 9216,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 32
+   },
+   {
+    "R-ADJACENT": 15479341056,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 144,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 24
+   },
+   {
+    "R-ADJACENT": 15479341056,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 288,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 148
+   },
+   {
+    "R-ADJACENT": 15479341056,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 428
+   },
+   {
+    "R-ADJACENT": 15479341056,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 1152,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 508
+   },
+   {
+    "R-ADJACENT": 15479341056,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 1728,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 64
+   },
+   {
+    "R-ADJACENT": 15479341056,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 2304,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 276
+   },
+   {
+    "R-ADJACENT": 15479341056,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 216
+   },
+   {
+    "R-ADJACENT": 15479341056,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 4608,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 24
+   },
+   {
+    "R-ADJACENT": 15479341056,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 6912,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 376
+   },
+   {
+    "R-ADJACENT": 15479341056,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 13824,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 96
+   },
+   {
+    "R-ADJACENT": 15479341056,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 20736,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 48
+   },
+   {
+    "R-ADJACENT": 15479341056,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 101559956668416,
+    "R-ROUND": 101559956668416,
+    "R-WINDOW-2": 41472,
+    "R-WINDOW-3": 4,
+    "corpus": "C2",
+    "events": 18,
+    "global_stabilizer": 1,
+    "histories": 96
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 3
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 24,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 3
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 48,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 864,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 864,
+    "R-WINDOW-3": 16,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1152,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1728,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1728,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 6
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1728,
+    "R-WINDOW-3": 16,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 2304,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 24,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 6912,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 5
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 6912,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 6912,
+    "R-WINDOW-3": 24,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 10368,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 3
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 10368,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 13824,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 13824,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 13824,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 20736,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 41472,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 1492992,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 41472,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 144,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 52
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 144,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 144,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 144,
+    "R-WINDOW-3": 24,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 288,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 53
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 288,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 288,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 22
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 24,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 864,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 6
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 864,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 4
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1152,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 7
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1152,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1152,
+    "R-WINDOW-3": 24,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1728,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 3
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1728,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 5
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1728,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 2304,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 2304,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 6
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 6912,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 6
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 6912,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 13824,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 2985984,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 13824,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 3
+   },
+   {
+    "R-ADJACENT": 4478976,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 5184,
+    "R-WINDOW-3": 144,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 18
+   },
+   {
+    "R-ADJACENT": 4478976,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 10368,
+    "R-WINDOW-3": 144,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 9
+   },
+   {
+    "R-ADJACENT": 13436928,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1152,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 13436928,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1152,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 13436928,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1152,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 13436928,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1728,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 13436928,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 2304,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 3
+   },
+   {
+    "R-ADJACENT": 13436928,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 13436928,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 13436928,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 4608,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 13436928,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 6912,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 4
+   },
+   {
+    "R-ADJACENT": 13436928,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 6912,
+    "R-WINDOW-3": 24,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 13436928,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 13824,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 13436928,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 20736,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 13436928,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 20736,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 13436928,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 41472,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 144,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 288,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 3
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 288,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 3
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 288,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 6
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 8
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 6
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 864,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 864,
+    "R-WINDOW-3": 24,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 18
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1152,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 5
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1152,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1152,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1728,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 1728,
+    "R-WINDOW-3": 24,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 10
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 2304,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 2304,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 2592,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 3
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 7
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 24,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 4608,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 4608,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 4608,
+    "R-WINDOW-3": 12,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 5184,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 4
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 5184,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 6912,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 6
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 6912,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 3
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 6912,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 9216,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 10368,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 4
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 13824,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 20736,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 4
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 20736,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 40
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 27648,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 31104,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 65
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 41472,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 26873856,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 62208,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 33
+   },
+   {
+    "R-ADJACENT": 241864704,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 241864704,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 576,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 241864704,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 864,
+    "R-WINDOW-3": 24,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 241864704,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 2304,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 2
+   },
+   {
+    "R-ADJACENT": 241864704,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 2304,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 241864704,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 2,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 241864704,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 3456,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 241864704,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 4608,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 241864704,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 5184,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 241864704,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 10368,
+    "R-WINDOW-3": 8,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 1
+   },
+   {
+    "R-ADJACENT": 241864704,
+    "R-COMPLETE": 1,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 6718464,
+    "R-WINDOW-3": 4,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 1,
+    "histories": 36
+   },
+   {
+    "R-ADJACENT": 2176782336,
+    "R-COMPLETE": 216,
+    "R-EMPTY": 2176782336,
+    "R-ROUND": 2176782336,
+    "R-WINDOW-2": 2176782336,
+    "R-WINDOW-3": 216,
+    "corpus": "C3",
+    "events": 12,
+    "global_stabilizer": 216,
+    "histories": 4
+   }
+  ],
+  "threshold_values": [
+   3,
+   4,
+   5
+  ]
+ },
+ "leg_binding": {
+  "binding_legs": [
+   "LEG-1-GEOMETRY",
+   "LEG-2-HISTORY"
+  ],
+  "complement": 5780,
+  "lattice": 21147,
+  "leg2_closed_form_mismatches": 0,
+  "non_binding_legs": [
+   "LEG-3-RECORD"
+  ],
+  "profiles": [
+   {
+    "all_three": 1,
+    "histories": 72,
+    "leg1": 6,
+    "leg2": 1,
+    "leg3": 21147
+   },
+   {
+    "all_three": 2,
+    "histories": 4,
+    "leg1": 6,
+    "leg2": 125,
+    "leg3": 21147
+   }
+  ],
+  "record_non_site_constant_histories": 0,
+  "sub_window": 76
+ },
+ "measure_relativity": {
+  "declared_measure": null,
+  "rows": [
+   {
+    "denominator": 5856,
+    "numerator": 5852,
+    "quantity": "actor-grain histories with a unique factorization",
+    "stamp": "COUNTING-ONLY",
+    "window": "W-CORPUS-C1-C2-C3"
+   },
+   {
+    "denominator": 5856,
+    "numerator": 5810,
+    "quantity": "carrier-grain histories with a unique factorization",
+    "stamp": "COUNTING-ONLY",
+    "window": "W-CORPUS-C1-C2-C3"
+   },
+   {
+    "denominator": 21147,
+    "numerator": 6,
+    "quantity": "actor partitions surviving the geometry leg",
+    "stamp": "COUNTING-ONLY",
+    "window": "W-ACTOR-LATTICE-COMPLETE"
+   },
+   {
+    "denominator": 42295,
+    "numerator": 10,
+    "quantity": "carrier-window partitions surviving the geometry leg",
+    "stamp": "COUNTING-ONLY",
+    "window": "W-CELL-INDUCED-PLUS-STRATA"
+   },
+   {
+    "denominator": 545717047936059989389,
+    "numerator": 42295,
+    "quantity": "carrier-window members against the carrier's whole lattice",
+    "stamp": "COUNTING-ONLY",
+    "window": "W-CELL-INDUCED-PLUS-STRATA"
+   },
+   {
+    "denominator": 5856,
+    "numerator": 5852,
+    "quantity": "histories whose global stabilizer is trivial and whose adjacent groupoid is not",
+    "stamp": "COUNTING-ONLY",
+    "window": "W-CORPUS-C1-C2-C3"
+   }
+  ],
+  "stamp": "COUNTING-ONLY",
+  "warrant": "no fraction in this unit is a probability: each is a count over a declared window and carries that window's name beside it (E-24)"
+ },
+ "mutant_sweep": {
+  "mutants": 36,
+  "rows": [],
+  "survivors": [],
+  "swept": false
+ },
+ "mutants": [
+  {
+   "description": "reports 0 groupings from the closed comparison, so the enumeration and the re-enumeration disagree",
+   "gate": "G-ARENA-SHAPE",
+   "mutant": "MUT-PARTITION"
+  },
+  {
+   "description": "declares the cell-to-co-division-pair map not a bijection",
+   "gate": "G-CELL-IS-A-CO-DIVISION-PAIR",
+   "mutant": "MUT-CARRIER"
+  },
+  {
+   "description": "replaces the outcome words parsed from the pin with a single typed literal, so the vocabulary stops being the pin's",
+   "gate": "G-OUTCOMES-PARSED-FROM-THE-PIN",
+   "mutant": "MUT-OUTCOME-TYPED"
+  },
+  {
+   "description": "reports the criterion's legs referencing a census product, which is the thing the gate forbids",
+   "gate": "G-CRITERION-FROZEN-BEFORE-THE-CENSUS",
+   "mutant": "MUT-CRITERION-LEAK"
+  },
+  {
+   "description": "reports the actor lattice at 0 members, so the window's claim to be complete in Bell(9) fails",
+   "gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
+   "mutant": "MUT-WINDOW"
+  },
+  {
+   "description": "declares the geometry leg's survivors unequal to the subgroup coset partitions",
+   "gate": "G-LEG1-IS-THE-SUBGROUP-COSET-THEOREM",
+   "mutant": "MUT-LEG1-THEOREM"
+  },
+  {
+   "description": "reports 0 unique-factorization histories at the actor grain, so the unique and non-unique counts no longer partition the corpus",
+   "gate": "G-ACTOR-GRAIN-ADMISSIBLE-PER-HISTORY",
+   "mutant": "MUT-ACTOR-CENSUS"
+  },
+  {
+   "description": "reports 0 unique-factorization histories at the carrier grain",
+   "gate": "G-CARRIER-GRAIN-ADMISSIBLE-PER-HISTORY",
+   "mutant": "MUT-CELL-CENSUS"
+  },
+  {
+   "description": "declares the actor grain's non-unique set not contained in the carrier grain's",
+   "gate": "G-CROSS-GRAIN-CONTAINMENT",
+   "mutant": "MUT-CROSS"
+  },
+  {
+   "description": "reports one coin-order disagreement where the run measured none, so the published fiber and the measurement part company",
+   "gate": "G-BOTH-COIN-ORDERS-PUBLISHED",
+   "mutant": "MUT-COIN"
+  },
+  {
+   "description": "reports one mismatch between the history leg's enumeration and its closed form",
+   "gate": "G-LEG2-IS-THE-SIGNATURE-REFINEMENT-THEOREM",
+   "mutant": "MUT-LEG2-THEOREM"
+  },
+  {
+   "description": "reports one history with a record that is not site-constant, contradicting the measured non-binding claim",
+   "gate": "G-WHICH-LEG-BINDS",
+   "mutant": "MUT-LEGBIND"
+  },
+  {
+   "description": "reports one history at which the complete coherence relation does not return the global stabilizer",
+   "gate": "G-GROUPOID-LADDER-PER-HISTORY",
+   "mutant": "MUT-GAMMA-COMPLETE"
+  },
+  {
+   "description": "substitutes a forged atom word for the derived one",
+   "gate": "G-ATOM-THEOREM-AT-THE-GROUPOID-GRAIN",
+   "mutant": "MUT-ATOM"
+  },
+  {
+   "description": "reports one mismatch between the Young-order route and the explicit filtration of the symmetric group",
+   "gate": "G-GRAIN-TRIANGLE-BOTH-TESTS",
+   "mutant": "MUT-TRIANGLE"
+  },
+  {
+   "description": "reports no collapse-threshold values at all",
+   "gate": "G-PERSISTENCE-PRESUPPOSITION",
+   "mutant": "MUT-PERSIST"
+  },
+  {
+   "description": "declares the result not to transport across the rungs",
+   "gate": "G-TRANSPORT-ALONG-THE-R-LADDER",
+   "mutant": "MUT-TRANSPORT"
+  },
+  {
+   "description": "reports one pre-registered family that no declared arena reaches",
+   "gate": "G-EVERY-OUTCOME-WORD-EMITTABLE",
+   "mutant": "MUT-CONTROLS"
+  },
+  {
+   "description": "reports the record-versus-dynamics wedge never firing on the control, which is what would make the record leg vacuous",
+   "gate": "G-THE-RECORD-LEG-IS-EXERCISED-SOMEWHERE",
+   "mutant": "MUT-WEDGE"
+  },
+  {
+   "description": "stamps the published ratios as probabilities instead of counts",
+   "gate": "G-E24-COUNTING-ONLY",
+   "mutant": "MUT-E24"
+  },
+  {
+   "description": "swaps the first census row's printed class word from NON-UNIQUE to UNIQUE while the predicate is unchanged",
+   "gate": "G-CLASS-WORDS-BOUND-TO-PREDICATES",
+   "mutant": "MUT-CLASSWORD"
+  },
+  {
+   "description": "declares the two independent head routes to disagree",
+   "gate": "G-VERDICT-RECONSTRUCTED-BY-A-SECOND-ROUTE",
+   "mutant": "MUT-HEAD-TWICE"
+  },
+  {
+   "description": "declares the derived words not to belong to the pin's families",
+   "gate": "G-HEAD-WORDS-COME-FROM-THE-PIN",
+   "mutant": "MUT-HEADFAM"
+  },
+  {
+   "description": "silently omits the coverage seal from the manifest, so a published key travels unsealed",
+   "gate": "G-SEAL-TOTALITY",
+   "mutant": "MUT-SEAL-DROP"
+  },
+  {
+   "description": "appends a ratio joining a census numerator to a window denominator, the LOR disease exactly",
+   "gate": "G-SENTENCE-REFERENT-BINDING",
+   "mutant": "MUT-REFERENT"
+  },
+  {
+   "description": "declares a numeral exemption that never fires",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "mutant": "MUT-EXEMPTION-DEAD"
+  },
+  {
+   "description": "strips the fenced blocks before scanning, so the verdict's own numerals go unscanned",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "mutant": "MUT-COVERAGE-SCAN"
+  },
+  {
+   "description": "forges one copy of the first verdict fence, leaving its twin clean",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "mutant": "MUT-PAPER-FENCE-MULTISET"
+  },
+  {
+   "description": "drops one required claim sentence from the paper before matching",
+   "gate": "G-PAPER-CLAIMS",
+   "mutant": "MUT-PAPER-CLAIM"
+  },
+  {
+   "description": "swaps two column headers of the census table, leaving every data cell correct",
+   "gate": "G-PAPER-TABLES-WITH-HEADERS",
+   "mutant": "MUT-PAPER-TABLE"
+  },
+  {
+   "description": "passes the mutated flag into the polarity scanner, which then reports the inverted form of the atom axis present in the paper",
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "mutant": "MUT-POLARITY"
+  },
+  {
+   "description": "appends every banned assertive sentence of every wall to the paper text the wall gate scans",
+   "gate": "G-WALLS-SCAN-THE-PAPER",
+   "mutant": "MUT-WALL-PLANT"
+  },
+  {
+   "description": "forges the last staged transcript line after the whole-transcript digest is taken",
+   "gate": "G-TRANSCRIPT-SEALED-WHOLE",
+   "mutant": "MUT-TRANSCRIPT"
+  },
+  {
+   "description": "reports zero numerals scanned, so the paper instrument would be claimed to have run while measuring nothing",
+   "gate": "G-PAPER-INSTRUMENT-RAN-IN-THE-PLAIN-RUN",
+   "mutant": "MUT-FINAL"
+  },
+  {
+   "description": "publishes a forged survivor row in the sweep ledger",
+   "gate": "G-SWEEP-IS-EXECUTION-BOUND",
+   "mutant": "MUT-SWEEP"
+  },
+  {
+   "description": "reports zero closing gates after the ledger snapshot, so the published total stops being the sum of its parts",
+   "gate": "G-GATE-ACCOUNTING",
+   "mutant": "MUT-GATECOUNT"
+  }
+ ],
+ "paper_claims": [
+  {
+   "id": "C01",
+   "sentence": "the geometry leg admits 6 of the 21,147 partitions of the nine actors"
+  },
+  {
+   "id": "C02",
+   "sentence": "the actor-grain factorization is unique at 5,852 of 5,856 committed histories"
+  },
+  {
+   "id": "C03",
+   "sentence": "the carrier-grain factorization is unique at 5,810 of 5,856 committed histories"
+  },
+  {
+   "id": "C04",
+   "sentence": "the declared carrier window carries 42,295 partitions and the geometry leg admits 10 of them"
+  },
+  {
+   "id": "C05",
+   "sentence": "the two declared coin orders disagree on 0 census rows"
+  },
+  {
+   "id": "C06",
+   "sentence": "the global stabilizer is trivial and the adjacent-coherence groupoid is not at 5,852 histories"
+  },
+  {
+   "id": "C07",
+   "sentence": "the collapse thresholds this corpus carries are 3, 4, 5"
+  },
+  {
+   "id": "C08",
+   "sentence": "the arena's own automorphism group has order 108"
+  },
+  {
+   "id": "C09",
+   "sentence": "the complete coherence relation returns the global stabilizer at 5,856 of 5,856 histories"
+  },
+  {
+   "id": "C10",
+   "sentence": "the record field is site-constant at 5,856 of 5,856 committed histories"
+  }
+ ],
+ "paper_coverage": {
+  "exemptions_declared": 0,
+  "exemptions_fired": {},
+  "exemptions_that_never_fired": [],
+  "fence_multiset_equal": true,
+  "numerals_in_the_whole_paper": 403,
+  "numerals_scanned": 403,
+  "scan_is_total": true,
+  "section_heads": 10,
+  "spelled_numerals_scanned": 97,
+  "spelled_unbacked": [],
+  "unbacked": [],
+  "verdict_fences_found": {
+   "FAC-DECOMPOSITION<THESIS=THE-LAW-ADMITS-MORE-THAN-ONE-FACTORIZATION-ONLY-WHERE-THE-HISTORY-REPEATS-A-PARALLEL-CLASS; HISTORIES=5,856; ACTOR-LATTICE=21,147; ACTOR-GRAIN-LAW-COMPATIBLE-PARTITIONS=6; ACTOR-GRAIN-UNIQUE-FACTORIZATION=5,852-OF-5,856; CARRIER-WINDOW=42,295; CARRIER-GRAIN-LAW-COMPATIBLE-PARTITIONS=10; CARRIER-GRAIN-UNIQUE-FACTORIZATION=5,810-OF-5,856; COIN-ORDER-DISAGREEMENTS=0>": 2,
+   "FAC-GROUPOID<ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; ATOM-BREAKS=5,852-OF-5,856; COLLAPSE-THRESHOLDS=3,4,5; ARENA-GROUP-ORDER=108>": 2,
+   "FAC-STRATIFIED<BY-GRAIN=ACTOR-5852-OF-5856-UNIQUE-vs-CARRIER-5810-OF-5856-UNIQUE; ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; SCOPE=TWO-GRAINS-AS-DECLARED;COUNTS-ARE-COUNTING-ONLY;THE-CARRIER-WINDOW-IS-DECLARED-NOT-COMPLETE;NO-CLAIM-BEYOND-THE-MEASURED-COHERENCE-DEPTH>": 2
+  },
+  "verdict_fences_required": {
+   "FAC-DECOMPOSITION<THESIS=THE-LAW-ADMITS-MORE-THAN-ONE-FACTORIZATION-ONLY-WHERE-THE-HISTORY-REPEATS-A-PARALLEL-CLASS; HISTORIES=5,856; ACTOR-LATTICE=21,147; ACTOR-GRAIN-LAW-COMPATIBLE-PARTITIONS=6; ACTOR-GRAIN-UNIQUE-FACTORIZATION=5,852-OF-5,856; CARRIER-WINDOW=42,295; CARRIER-GRAIN-LAW-COMPATIBLE-PARTITIONS=10; CARRIER-GRAIN-UNIQUE-FACTORIZATION=5,810-OF-5,856; COIN-ORDER-DISAGREEMENTS=0>": 2,
+   "FAC-GROUPOID<ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; ATOM-BREAKS=5,852-OF-5,856; COLLAPSE-THRESHOLDS=3,4,5; ARENA-GROUP-ORDER=108>": 2,
+   "FAC-STRATIFIED<BY-GRAIN=ACTOR-5852-OF-5856-UNIQUE-vs-CARRIER-5810-OF-5856-UNIQUE; ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; SCOPE=TWO-GRAINS-AS-DECLARED;COUNTS-ARE-COUNTING-ONLY;THE-CARRIER-WINDOW-IS-DECLARED-NOT-COMPLETE;NO-CLAIM-BEYOND-THE-MEASURED-COHERENCE-DEPTH>": 2
+  }
+ },
+ "paper_tables": {
+  "T1-THE-GEOMETRY-LEG": {
+   "header": [
+    "grain",
+    "candidate set",
+    "geometry-leg survivors"
+   ],
+   "rows": [
+    [
+     "actor",
+     "21,147",
+     "6"
+    ],
+    [
+     "carrier",
+     "42,295",
+     "10"
+    ]
+   ]
+  },
+  "T2-THE-CENSUS": {
+   "header": [
+    "grain",
+    "unique",
+    "non-unique",
+    "histories"
+   ],
+   "rows": [
+    [
+     "actor",
+     "5,852",
+     "4",
+     "5,856"
+    ],
+    [
+     "carrier",
+     "5,810",
+     "46",
+     "5,856"
+    ]
+   ]
+  },
+  "T3-THE-COHERENCE-LADDER": {
+   "header": [
+    "corpus",
+    "coherence relation",
+    "distinct values",
+    "minimum",
+    "maximum",
+    "histories"
+   ],
+   "rows": [
+    [
+     "C1",
+     "R-ADJACENT",
+     "1",
+     "124,416",
+     "124,416",
+     "72"
+    ],
+    [
+     "C1",
+     "R-COMPLETE",
+     "1",
+     "1",
+     "1",
+     "72"
+    ],
+    [
+     "C1",
+     "R-EMPTY",
+     "1",
+     "10,077,696",
+     "10,077,696",
+     "72"
+    ],
+    [
+     "C1",
+     "R-ROUND",
+     "1",
+     "10,077,696",
+     "10,077,696",
+     "72"
+    ],
+    [
+     "C1",
+     "R-WINDOW-2",
+     "2",
+     "144",
+     "288",
+     "72"
+    ],
+    [
+     "C1",
+     "R-WINDOW-3",
+     "1",
+     "4",
+     "4",
+     "72"
+    ],
+    [
+     "C2",
+     "R-ADJACENT",
+     "3",
+     "859,963,392",
+     "15,479,341,056",
+     "5,184"
+    ],
+    [
+     "C2",
+     "R-COMPLETE",
+     "1",
+     "1",
+     "1",
+     "5,184"
+    ],
+    [
+     "C2",
+     "R-EMPTY",
+     "1",
+     "101,559,956,668,416",
+     "101,559,956,668,416",
+     "5,184"
+    ],
+    [
+     "C2",
+     "R-ROUND",
+     "1",
+     "101,559,956,668,416",
+     "101,559,956,668,416",
+     "5,184"
+    ],
+    [
+     "C2",
+     "R-WINDOW-2",
+     "13",
+     "144",
+     "41,472",
+     "5,184"
+    ],
+    [
+     "C2",
+     "R-WINDOW-3",
+     "2",
+     "4",
+     "8",
+     "5,184"
+    ],
+    [
+     "C3",
+     "R-ADJACENT",
+     "7",
+     "1,492,992",
+     "2,176,782,336",
+     "600"
+    ],
+    [
+     "C3",
+     "R-COMPLETE",
+     "2",
+     "1",
+     "216",
+     "600"
+    ],
+    [
+     "C3",
+     "R-EMPTY",
+     "1",
+     "2,176,782,336",
+     "2,176,782,336",
+     "600"
+    ],
+    [
+     "C3",
+     "R-ROUND",
+     "1",
+     "2,176,782,336",
+     "2,176,782,336",
+     "600"
+    ],
+    [
+     "C3",
+     "R-WINDOW-2",
+     "22",
+     "144",
+     "2,176,782,336",
+     "600"
+    ],
+    [
+     "C3",
+     "R-WINDOW-3",
+     "9",
+     "2",
+     "216",
+     "600"
+    ]
+   ]
+  },
+  "T4-THE-GRAIN-TRIANGLE": {
+   "header": [
+    "corpus",
+    "TEST-RAW at ACTOR-S9",
+    "TEST-RAW at CARRIER-S27",
+    "TEST-REALIZABLE at SITE",
+    "TEST-REALIZABLE at CARRIER",
+    "histories"
+   ],
+   "rows": [
+    [
+     "C1",
+     "1",
+     "10,077,696",
+     "1",
+     "1",
+     "72"
+    ],
+    [
+     "C3",
+     "1",
+     "512",
+     "1",
+     "1",
+     "48"
+    ],
+    [
+     "C3",
+     "1",
+     "13,824",
+     "1",
+     "1",
+     "216"
+    ],
+    [
+     "C3",
+     "1",
+     "10,077,696",
+     "1",
+     "1",
+     "140"
+    ],
+    [
+     "C3",
+     "1",
+     "16,930,529,280",
+     "1",
+     "1",
+     "150"
+    ],
+    [
+     "C3",
+     "1",
+     "1,382,912,720,437,248,000",
+     "1",
+     "6",
+     "42"
+    ],
+    [
+     "C3",
+     "216",
+     "1,382,912,720,437,248,000",
+     "6",
+     "6",
+     "3"
+    ],
+    [
+     "C3",
+     "216",
+     "10,888,869,450,418,352,160,768,000,000",
+     "18",
+     "108",
+     "1"
+    ]
+   ]
+  },
+  "T5-THE-CONTROL-ARM": {
+   "header": [
+    "declared arena",
+    "histories",
+    "actor non-unique",
+    "carrier non-unique",
+    "head word"
+   ],
+   "rows": [
+    [
+     "CTRL-C1-THE-STRICT-TRIPLES",
+     "72",
+     "0",
+     "0",
+     "FAC-FACTORIZATION-FORCED"
+    ],
+    [
+     "CTRL-THE-NON-UNIQUE-HISTORIES",
+     "4",
+     "4",
+     "4",
+     "FAC-FACTORIZATION-DECLARED"
+    ],
+    [
+     "CTRL-C3-THE-DRIVEN-WINDOW",
+     "600",
+     "4",
+     "46",
+     "FAC-STRATIFIED"
+    ],
+    [
+     "CTRL-THE-WHOLE-CORPUS",
+     "5,856",
+     "4",
+     "46",
+     "FAC-STRATIFIED"
+    ]
+   ]
+  },
+  "T6-THE-SYNTHETIC-CONTROLS": {
+   "header": [
+    "synthetic history",
+    "events",
+    "distinct record rows",
+    "LEG-3 passers",
+    "wedge",
+    "global stabilizer",
+    "adjacent families",
+    "atom word"
+   ],
+   "rows": [
+    [
+     "X1-ONE-DIVISION-EVENT",
+     "1",
+     "2",
+     "1,015",
+     "0",
+     "4,320",
+     "6",
+     "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN"
+    ],
+    [
+     "X2-ONE-FULL-ROW-ROUND",
+     "3",
+     "1",
+     "21,147",
+     "0",
+     "216",
+     "216",
+     "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN"
+    ],
+    [
+     "X3-ROW-MULTIPLICITIES-CONGRUENT-MOD-THREE",
+     "12",
+     "3",
+     "125",
+     "4",
+     "216",
+     "216",
+     "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN"
+    ],
+    [
+     "X4-THE-OVERLAPPING-CHAIN",
+     "7",
+     "4",
+     "104",
+     "0",
+     "1",
+     "1",
+     "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN"
+    ],
+    [
+     "X5-A-ROW-ROUND-THEN-A-COLUMN-ROUND",
+     "6",
+     "1",
+     "21,147",
+     "0",
+     "1",
+     "5,184",
+     "FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN"
+    ]
+   ]
+  },
+  "T7-THE-ALTERNATIVE-LINK-SETS": {
+   "header": [
+    "synthetic arena",
+    "declared links",
+    "geometry-leg survivors"
+   ],
+   "rows": [
+    [
+     "L1-ONE-DIRECTION",
+     "1",
+     "42"
+    ],
+    [
+     "L2-TWO-DIRECTIONS",
+     "2",
+     "6"
+    ],
+    [
+     "L4-EVERY-DIRECTION",
+     "4",
+     "6"
+    ]
+   ]
+  }
+ },
+ "payload_sha256_12": "71dfa0e509ea",
+ "persistence": {
+  "coherence_is_a_declared_coordinate": true,
+  "collapse_threshold_distribution": {
+   "C1-T9-w4": 72,
+   "C2-T18-w4": 5184,
+   "C3-T12-w3": 4,
+   "C3-T12-w4": 521,
+   "C3-T12-w5": 75
+  },
+  "collapse_threshold_values": [
+   3,
+   4,
+   5
+  ],
+  "identity_forced_at_the_adjacent_relation": 0,
+  "identity_forced_at_the_complete_relation": 5852,
+  "presupposition": "a global relabelling is definable only on a persistent actor set; the coherence relation of the groupoid grain is exactly how much of that persistence a census assumes, and it is a declaration",
+  "reading": "crystallized identity does not transport below the measured coherence depth: at every history of this corpus the groupoid count meets the group's only once the identification is required to cohere across at least that many events"
+ },
+ "polarity": {
+  "inverted_forms_present": 0,
+  "rows": [
+   {
+    "asserted_form_present": true,
+    "axis": "head-word",
+    "inverted_form_present": false
+   },
+   {
+    "asserted_form_present": true,
+    "axis": "atom-word",
+    "inverted_form_present": false
+   },
+   {
+    "asserted_form_present": true,
+    "axis": "transport-direction",
+    "inverted_form_present": false
+   },
+   {
+    "asserted_form_present": true,
+    "axis": "binding-direction",
+    "inverted_form_present": false
+   },
+   {
+    "asserted_form_present": true,
+    "axis": "measure-stamp",
+    "inverted_form_present": false
+   }
+  ]
+ },
+ "pre_registered_outcomes": {
+  "families": [
+   "FAC-ATOM",
+   "FAC-BLOCKED-AT",
+   "FAC-FACTORIZATION-DECLARED",
+   "FAC-FACTORIZATION-FORCED",
+   "FAC-STRATIFIED"
+  ],
+  "raw": [
+   "FAC-ATOM-<HOLDS/BREAKS>-AT-THE-GROUPOID-GRAIN",
+   "FAC-BLOCKED-AT-<object>",
+   "FAC-FACTORIZATION-DECLARED-<inventory>",
+   "FAC-FACTORIZATION-FORCED-<witness>",
+   "FAC-STRATIFIED-<by-grain>"
+  ],
+  "route": "parsed out of the pin's own bytes by a regular expression; this file types no outcome word of its own"
+ },
+ "provenance": [
+  {
+   "anchor": "A-PIN",
+   "bytes": 6048,
+   "declared": "11380265fcf3",
+   "match": true,
+   "measured": "11380265fcf3",
+   "path": "v14/note-fac-pin.md",
+   "role": "the frozen charter: the four measurements, the outcome families and the walls"
+  },
+  {
+   "anchor": "A-AID-ADJ",
+   "bytes": 10087,
+   "declared": "04cd41ed858b",
+   "match": true,
+   "measured": "04cd41ed858b",
+   "path": "v14/note-aid-adjudication.md",
+   "role": "the licensed architecture sentence and the not-licensed wall list"
+  },
+  {
+   "anchor": "A-AID-EFF",
+   "bytes": 33420,
+   "declared": "505a0624b6d5",
+   "match": true,
+   "measured": "505a0624b6d5",
+   "path": "v14/review-aid-effectus.md",
+   "role": "the licensed claims (section 10) and the successor register rows 1-2"
+  },
+  {
+   "anchor": "A-OCC",
+   "bytes": 44207,
+   "declared": "0092caa4d9ad",
+   "match": true,
+   "measured": "0092caa4d9ad",
+   "path": "v14/paper-31-occ.md",
+   "role": "the 27-cell carrier typing: a cell IS a co-division pair"
+  },
+  {
+   "anchor": "A-OCC-ADJ",
+   "bytes": 5345,
+   "declared": "3eaa4c0db85d",
+   "match": true,
+   "measured": "3eaa4c0db85d",
+   "path": "v14/note-occ-adjudication.md",
+   "role": "MISTYPED-AT-THE-CARRIER as the live grain precedent"
+  },
+  {
+   "anchor": "A-PERL",
+   "bytes": 5776,
+   "declared": "08bec11d8466",
+   "match": true,
+   "measured": "08bec11d8466",
+   "path": "v14/note-perl-adjudication.md",
+   "role": "the L-ladder persistence rulings, panel-verified"
+  },
+  {
+   "anchor": "A-PERR",
+   "bytes": 7943,
+   "declared": "e016015ad170",
+   "match": true,
+   "measured": "e016015ad170",
+   "path": "v14/note-perr-adjudication.md",
+   "role": "the R-ladder persistence rulings and the class-binding engraving"
+  },
+  {
+   "anchor": "A-P20",
+   "bytes": 55684,
+   "declared": "4824d190af73",
+   "match": true,
+   "measured": "4824d190af73",
+   "path": "v14/paper-20-coupling.md",
+   "role": "the coupled step and the coin-order fiber declared verdict-relevant"
+  },
+  {
+   "anchor": "A-ACT",
+   "bytes": 9654,
+   "declared": "cc45d8447bc7",
+   "match": true,
+   "measured": "cc45d8447bc7",
+   "path": "v14/note-act-adjudication.md",
+   "role": "the reachable-outcomes engraving and the control-arm pattern"
+  },
+  {
+   "anchor": "A-RUNBOOK",
+   "bytes": 112968,
+   "declared": "b3832c2b88bb",
+   "match": true,
+   "measured": "b3832c2b88bb",
+   "path": "RUNBOOK.md",
+   "role": "the standing engravings, E-24 among them"
+  }
+ ],
+ "python": "3.13",
+ "reachability": {
+  "gates_total_named_by_falsifiers": 34,
+  "gates_with_a_falsifier": [
+   "G-ACTOR-GRAIN-ADMISSIBLE-PER-HISTORY",
+   "G-ARENA-SHAPE",
+   "G-ATOM-THEOREM-AT-THE-GROUPOID-GRAIN",
+   "G-BOTH-COIN-ORDERS-PUBLISHED",
+   "G-CARRIER-GRAIN-ADMISSIBLE-PER-HISTORY",
+   "G-CELL-IS-A-CO-DIVISION-PAIR",
+   "G-CLASS-WORDS-BOUND-TO-PREDICATES",
+   "G-CRITERION-FROZEN-BEFORE-THE-CENSUS",
+   "G-CROSS-GRAIN-CONTAINMENT",
+   "G-E24-COUNTING-ONLY",
+   "G-EVERY-OUTCOME-WORD-EMITTABLE",
+   "G-GATE-ACCOUNTING",
+   "G-GRAIN-TRIANGLE-BOTH-TESTS",
+   "G-GROUPOID-LADDER-PER-HISTORY",
+   "G-HEAD-WORDS-COME-FROM-THE-PIN",
+   "G-LEG1-IS-THE-SUBGROUP-COSET-THEOREM",
+   "G-LEG2-IS-THE-SIGNATURE-REFINEMENT-THEOREM",
+   "G-OUTCOMES-PARSED-FROM-THE-PIN",
+   "G-PAPER-CLAIM-POLARITY",
+   "G-PAPER-CLAIMS",
+   "G-PAPER-INSTRUMENT-RAN-IN-THE-PLAIN-RUN",
+   "G-PAPER-NUMERAL-COVERAGE",
+   "G-PAPER-TABLES-WITH-HEADERS",
+   "G-PERSISTENCE-PRESUPPOSITION",
+   "G-SEAL-TOTALITY",
+   "G-SENTENCE-REFERENT-BINDING",
+   "G-SWEEP-IS-EXECUTION-BOUND",
+   "G-THE-RECORD-LEG-IS-EXERCISED-SOMEWHERE",
+   "G-TRANSCRIPT-SEALED-WHOLE",
+   "G-TRANSPORT-ALONG-THE-R-LADDER",
+   "G-VERDICT-RECONSTRUCTED-BY-A-SECOND-ROUTE",
+   "G-WALLS-SCAN-THE-PAPER",
+   "G-WHICH-LEG-BINDS",
+   "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS"
+  ],
+  "gates_without_a_falsifier": [
+   "G-ARTIFACT-INTEGRITY",
+   "G-CORPORA-SHAPE",
+   "G-FALSIFIER-COVERAGE",
+   "G-FALSIFIER-REACHABILITY",
+   "G-NO-FLOATS",
+   "G-NO-TYPED-COUNTS",
+   "G-PROVENANCE-SHA-PINNED",
+   "G-READS-DECLARED",
+   "G-VERBATIM-ANCHORS-IN-SOURCE"
+  ],
+  "rule": "#34: every falsifier must REACH its gate, and every gate without one is named rather than left implicit"
+ },
+ "referent_binding": {
+  "aggregates_excluded": [
+   "counts",
+   "verdict",
+   "measure_relativity"
+  ],
+  "relations_checked": 5,
+  "rule": "the numerator and the denominator of every published ratio must be carried by one common DECLARED REFERENT UNIVERSE of this run's receipt; the aggregate keys, which carry numbers from every measurement at once, are excluded by declaration so the test is not vacuous",
+  "unbound": [],
+  "universes": [
+   "arena",
+   "carrier",
+   "corpora",
+   "criterion",
+   "leg_binding",
+   "actor_census",
+   "cell_census",
+   "cross_grain",
+   "coin_order",
+   "groupoid",
+   "atom",
+   "grain_triangle",
+   "persistence",
+   "transport",
+   "controls",
+   "class_binding",
+   "provenance",
+   "windows"
+  ]
+ },
+ "schema": {
+  "cites": {
+   "engravings": [
+    "E-22",
+    "E-23",
+    "E-24"
+   ],
+   "programme": [
+    14
+   ],
+   "runbook_and_ledger_rules": [
+    20,
+    34,
+    46,
+    62,
+    82,
+    87,
+    91,
+    119,
+    125,
+    267,
+    269,
+    293,
+    295,
+    299,
+    300
+   ],
+   "sibling_papers": [
+    19,
+    20,
+    21,
+    28,
+    29,
+    31,
+    33,
+    35
+   ]
+  },
+  "ledger": 300,
+  "paper": "paper-35-fac",
+  "pin": "v14/note-fac-pin.md",
+  "unit": "FAC"
+ },
+ "seal_manifest": [
+  {
+   "path": "schema",
+   "seal": "SEAL-SCHEMA",
+   "sealed_at_gate": "G-PROVENANCE-SHA-PINNED",
+   "sha256_12": "2e43983413f8"
+  },
+  {
+   "path": "provenance",
+   "seal": "SEAL-PROVENANCE",
+   "sealed_at_gate": "G-PROVENANCE-SHA-PINNED",
+   "sha256_12": "038fa6dd1ce8"
+  },
+  {
+   "path": "verbatim_anchors",
+   "seal": "SEAL-VERBATIM",
+   "sealed_at_gate": "G-VERBATIM-ANCHORS-IN-SOURCE",
+   "sha256_12": "f4e35975d173"
+  },
+  {
+   "path": "pre_registered_outcomes",
+   "seal": "SEAL-OUTCOMES",
+   "sealed_at_gate": "G-OUTCOMES-PARSED-FROM-THE-PIN",
+   "sha256_12": "17750a3192d5"
+  },
+  {
+   "path": "arena",
+   "seal": "SEAL-ARENA",
+   "sealed_at_gate": "G-ARENA-SHAPE",
+   "sha256_12": "8364a825fb79"
+  },
+  {
+   "path": "carrier",
+   "seal": "SEAL-CARRIER",
+   "sealed_at_gate": "G-CELL-IS-A-CO-DIVISION-PAIR",
+   "sha256_12": "f1c5b29d819f"
+  },
+  {
+   "path": "corpora",
+   "seal": "SEAL-CORPORA",
+   "sealed_at_gate": "G-CORPORA-SHAPE",
+   "sha256_12": "b7999bb3027e"
+  },
+  {
+   "path": "criterion",
+   "seal": "SEAL-CRITERION",
+   "sealed_at_gate": "G-CRITERION-FROZEN-BEFORE-THE-CENSUS",
+   "sha256_12": "b539cda27790"
+  },
+  {
+   "path": "windows",
+   "seal": "SEAL-WINDOWS",
+   "sealed_at_gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
+   "sha256_12": "d122c16ce787"
+  },
+  {
+   "path": "actor_census",
+   "seal": "SEAL-ACTOR",
+   "sealed_at_gate": "G-ACTOR-GRAIN-ADMISSIBLE-PER-HISTORY",
+   "sha256_12": "e73b36c04b00"
+  },
+  {
+   "path": "cell_census",
+   "seal": "SEAL-CELL",
+   "sealed_at_gate": "G-CARRIER-GRAIN-ADMISSIBLE-PER-HISTORY",
+   "sha256_12": "c06a2c8538ca"
+  },
+  {
+   "path": "cross_grain",
+   "seal": "SEAL-CROSS",
+   "sealed_at_gate": "G-CROSS-GRAIN-CONTAINMENT",
+   "sha256_12": "b8fa99402c31"
+  },
+  {
+   "path": "coin_order",
+   "seal": "SEAL-COIN",
+   "sealed_at_gate": "G-BOTH-COIN-ORDERS-PUBLISHED",
+   "sha256_12": "90c03d1a5512"
+  },
+  {
+   "path": "leg_binding",
+   "seal": "SEAL-LEGBIND",
+   "sealed_at_gate": "G-WHICH-LEG-BINDS",
+   "sha256_12": "aa9ec722b016"
+  },
+  {
+   "path": "groupoid",
+   "seal": "SEAL-GROUPOID",
+   "sealed_at_gate": "G-GROUPOID-LADDER-PER-HISTORY",
+   "sha256_12": "a47c57cd44c7"
+  },
+  {
+   "path": "atom",
+   "seal": "SEAL-ATOM",
+   "sealed_at_gate": "G-ATOM-THEOREM-AT-THE-GROUPOID-GRAIN",
+   "sha256_12": "2b5cf71c251a"
+  },
+  {
+   "path": "grain_triangle",
+   "seal": "SEAL-TRIANGLE",
+   "sealed_at_gate": "G-GRAIN-TRIANGLE-BOTH-TESTS",
+   "sha256_12": "3059ae90b88e"
+  },
+  {
+   "path": "persistence",
+   "seal": "SEAL-PERSIST",
+   "sealed_at_gate": "G-PERSISTENCE-PRESUPPOSITION",
+   "sha256_12": "1e72d1c16d84"
+  },
+  {
+   "path": "transport",
+   "seal": "SEAL-TRANSPORT",
+   "sealed_at_gate": "G-TRANSPORT-ALONG-THE-R-LADDER",
+   "sha256_12": "5de31ec0c33f"
+  },
+  {
+   "path": "controls",
+   "seal": "SEAL-CONTROLS",
+   "sealed_at_gate": "G-EVERY-OUTCOME-WORD-EMITTABLE",
+   "sha256_12": "2a6a66dcf2ec"
+  },
+  {
+   "path": "measure_relativity",
+   "seal": "SEAL-MEASURE",
+   "sealed_at_gate": "G-E24-COUNTING-ONLY",
+   "sha256_12": "01ce868dbded"
+  },
+  {
+   "path": "class_binding",
+   "seal": "SEAL-CLASSBIND",
+   "sealed_at_gate": "G-CLASS-WORDS-BOUND-TO-PREDICATES",
+   "sha256_12": "5a1248a7e0dc"
+  },
+  {
+   "path": "counts",
+   "seal": "SEAL-COUNTS",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED-BY-A-SECOND-ROUTE",
+   "sha256_12": "c2d2594411cc"
+  },
+  {
+   "path": "verdict",
+   "seal": "SEAL-VERDICT",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED-BY-A-SECOND-ROUTE",
+   "sha256_12": "7d9319da81e5"
+  },
+  {
+   "path": "walls",
+   "seal": "SEAL-WALLS",
+   "sealed_at_gate": "G-WALLS-SCAN-THE-PAPER",
+   "sha256_12": "81db64a54f57"
+  },
+  {
+   "path": "paper_claims",
+   "seal": "SEAL-PAPER-CLAIMS",
+   "sealed_at_gate": "G-PAPER-CLAIMS",
+   "sha256_12": "d02bfa41af74"
+  },
+  {
+   "path": "paper_tables",
+   "seal": "SEAL-PAPER-TABLES",
+   "sealed_at_gate": "G-PAPER-TABLES-WITH-HEADERS",
+   "sha256_12": "55ddcc5c8a2a"
+  },
+  {
+   "path": "paper_coverage",
+   "seal": "SEAL-PAPER-COVERAGE",
+   "sealed_at_gate": "G-PAPER-NUMERAL-COVERAGE",
+   "sha256_12": "8143ac801545"
+  },
+  {
+   "path": "referent_binding",
+   "seal": "SEAL-REFERENT",
+   "sealed_at_gate": "G-SENTENCE-REFERENT-BINDING",
+   "sha256_12": "1136070e4397"
+  },
+  {
+   "path": "polarity",
+   "seal": "SEAL-POLARITY",
+   "sealed_at_gate": "G-PAPER-CLAIM-POLARITY",
+   "sha256_12": "ffaafb807f9f"
+  },
+  {
+   "path": "coverage",
+   "seal": "SEAL-COVERAGE",
+   "sealed_at_gate": "G-FALSIFIER-COVERAGE",
+   "sha256_12": "bba746e06660"
+  },
+  {
+   "path": "mutants",
+   "seal": "SEAL-MUTANTS",
+   "sealed_at_gate": "G-FALSIFIER-COVERAGE",
+   "sha256_12": "f3671a19fc07"
+  },
+  {
+   "path": "waiver_ledger",
+   "seal": "SEAL-WAIVERS",
+   "sealed_at_gate": "G-FALSIFIER-COVERAGE",
+   "sha256_12": "4f53cda18c2b"
+  },
+  {
+   "path": "reachability",
+   "seal": "SEAL-REACHABILITY",
+   "sealed_at_gate": "G-FALSIFIER-REACHABILITY",
+   "sha256_12": "d2906472a59d"
+  },
+  {
+   "path": "mutant_sweep",
+   "seal": "SEAL-MUTANT-SWEEP",
+   "sealed_at_gate": "G-SWEEP-IS-EXECUTION-BOUND",
+   "sha256_12": "75e02d23ebca"
+  },
+  {
+   "path": "gates",
+   "seal": "SEAL-GATES",
+   "sealed_at_gate": "G-PAPER-INSTRUMENT-RAN-IN-THE-PLAIN-RUN",
+   "sha256_12": "c92d08558c2a"
+  },
+  {
+   "path": "closing_gates",
+   "seal": "SEAL-CLOSING",
+   "sealed_at_gate": "G-PAPER-INSTRUMENT-RAN-IN-THE-PLAIN-RUN",
+   "sha256_12": "e22e1a6f74a6"
+  },
+  {
+   "path": "totals",
+   "seal": "SEAL-TOTALS",
+   "sealed_at_gate": "G-PAPER-INSTRUMENT-RAN-IN-THE-PLAIN-RUN",
+   "sha256_12": "b6ef5e631d7e"
+  },
+  {
+   "path": "transcript_head",
+   "seal": "SEAL-TRANSCRIPT",
+   "sealed_at_gate": "G-TRANSCRIPT-SEALED-WHOLE",
+   "sha256_12": "9782921b6605"
+  }
+ ],
+ "totals": {
+  "coherence_rows": 6,
+  "criterion_legs": 4,
+  "falsifiers": 36,
+  "gates_after_the_ledger_snapshot": 4,
+  "gates_in_the_sealed_ledger": 39,
+  "gates_total": 43,
+  "grains": 3,
+  "numerals_registered": 190,
+  "paper_claims": 10,
+  "paper_table_rows": 42,
+  "paper_tables": 7,
+  "seals": 39,
+  "sources": 10,
+  "tests": 2,
+  "verbatim_anchors": 13,
+  "wall_needles": 15,
+  "walls": 5,
+  "windows": 6
+ },
+ "transcript_head": {
+  "first": "==============================================================================",
+  "last": "         evidence: declared 36, executed 0, survivors none",
+  "lines": 146,
+  "sealed": "the WHOLE transcript, not a head prefix",
+  "staged_transcript_sha256_12": "d32e128c6249",
+  "whole_transcript_sha256_12": "d32e128c6249"
+ },
+ "transport": {
+  "atom_break_transports_across_every_rung": true,
+  "ladder_rows": {
+   "R3-C1": {
+    "atom_breaks": 72,
+    "collapse_thresholds": [
+     4
+    ],
+    "histories": 72,
+    "rounds": 3,
+    "unique_at_the_actor_grain": 72,
+    "unique_at_the_carrier_grain": 72
+   },
+   "R4-C3": {
+    "atom_breaks": 596,
+    "collapse_thresholds": [
+     3,
+     4,
+     5
+    ],
+    "histories": 600,
+    "rounds": 4,
+    "unique_at_the_actor_grain": 596,
+    "unique_at_the_carrier_grain": 554
+   },
+   "R6-C2": {
+    "atom_breaks": 5184,
+    "collapse_thresholds": [
+     4
+    ],
+    "histories": 5184,
+    "rounds": 6,
+    "unique_at_the_actor_grain": 5184,
+    "unique_at_the_carrier_grain": 5184
+   }
+  },
+  "scope": "the R-ladder rows this corpus carries are R = 3, R = 4 and R = 6; PER-L closed the L-ladder transport by theorem and PER-R places its own successor at R = 8, so nothing here is claimed beyond the rungs measured"
+ },
+ "verbatim_anchors": [
+  {
+   "chars": 119,
+   "consumer_gate": "G-CRITERION-FROZEN-BEFORE-THE-CENSUS",
+   "id": "V01",
+   "path": "v14/note-fac-pin.md",
+   "present": true,
+   "source": "A-PIN"
+  },
+  {
+   "chars": 102,
+   "consumer_gate": "G-ATOM-THEOREM-AT-THE-GROUPOID-GRAIN",
+   "id": "V02",
+   "path": "v14/note-fac-pin.md",
+   "present": true,
+   "source": "A-PIN"
+  },
+  {
+   "chars": 84,
+   "consumer_gate": "G-CRITERION-FROZEN-BEFORE-THE-CENSUS",
+   "id": "V03",
+   "path": "v14/note-fac-pin.md",
+   "present": true,
+   "source": "A-PIN"
+  },
+  {
+   "chars": 48,
+   "consumer_gate": "G-WALLS-SCAN-THE-PAPER",
+   "id": "V04",
+   "path": "v14/note-aid-adjudication.md",
+   "present": true,
+   "source": "A-AID-ADJ"
+  },
+  {
+   "chars": 126,
+   "consumer_gate": "G-PERSISTENCE-PRESUPPOSITION",
+   "id": "V05",
+   "path": "v14/review-aid-effectus.md",
+   "present": true,
+   "source": "A-AID-EFF"
+  },
+  {
+   "chars": 58,
+   "consumer_gate": "G-ACTOR-GRAIN-ADMISSIBLE-PER-HISTORY",
+   "id": "V06",
+   "path": "v14/review-aid-effectus.md",
+   "present": true,
+   "source": "A-AID-EFF"
+  },
+  {
+   "chars": 30,
+   "consumer_gate": "G-CELL-IS-A-CO-DIVISION-PAIR",
+   "id": "V07",
+   "path": "v14/paper-31-occ.md",
+   "present": true,
+   "source": "A-OCC"
+  },
+  {
+   "chars": 54,
+   "consumer_gate": "G-GRAIN-TRIANGLE-BOTH-TESTS",
+   "id": "V08",
+   "path": "v14/note-occ-adjudication.md",
+   "present": true,
+   "source": "A-OCC-ADJ"
+  },
+  {
+   "chars": 56,
+   "consumer_gate": "G-BOTH-COIN-ORDERS-PUBLISHED",
+   "id": "V09",
+   "path": "v14/paper-20-coupling.md",
+   "present": true,
+   "source": "A-P20"
+  },
+  {
+   "chars": 73,
+   "consumer_gate": "G-EVERY-OUTCOME-WORD-EMITTABLE",
+   "id": "V10",
+   "path": "v14/note-act-adjudication.md",
+   "present": true,
+   "source": "A-ACT"
+  },
+  {
+   "chars": 57,
+   "consumer_gate": "G-E24-COUNTING-ONLY",
+   "id": "V11",
+   "path": "RUNBOOK.md",
+   "present": true,
+   "source": "A-RUNBOOK"
+  },
+  {
+   "chars": 65,
+   "consumer_gate": "G-CLASS-WORDS-BOUND-TO-PREDICATES",
+   "id": "V12",
+   "path": "v14/note-perr-adjudication.md",
+   "present": true,
+   "source": "A-PERR"
+  },
+  {
+   "chars": 43,
+   "consumer_gate": "G-TRANSPORT-ALONG-THE-R-LADDER",
+   "id": "V13",
+   "path": "v14/note-perl-adjudication.md",
+   "present": true,
+   "source": "A-PERL"
+  }
+ ],
+ "verdict": {
+  "atom_word": "FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN",
+  "field_spec": [
+   [
+    "FAC-DECOMPOSITION",
+    [
+     [
+      "THESIS",
+      null
+     ],
+     [
+      "HISTORIES",
+      "counts/histories"
+     ],
+     [
+      "ACTOR-LATTICE",
+      "counts/actor_lattice"
+     ],
+     [
+      "ACTOR-GRAIN-LAW-COMPATIBLE-PARTITIONS",
+      "counts/actor_leg1"
+     ],
+     [
+      "ACTOR-GRAIN-UNIQUE-FACTORIZATION",
+      "counts/actor_unique|counts/histories"
+     ],
+     [
+      "CARRIER-WINDOW",
+      "counts/carrier_window"
+     ],
+     [
+      "CARRIER-GRAIN-LAW-COMPATIBLE-PARTITIONS",
+      "counts/carrier_leg1"
+     ],
+     [
+      "CARRIER-GRAIN-UNIQUE-FACTORIZATION",
+      "counts/carrier_unique|counts/histories"
+     ],
+     [
+      "COIN-ORDER-DISAGREEMENTS",
+      "counts/coin_disagreements"
+     ]
+    ]
+   ],
+   [
+    "FAC-GROUPOID",
+    [
+     [
+      "ATOM",
+      null
+     ],
+     [
+      "ATOM-BREAKS",
+      "counts/atom_breaks|counts/histories"
+     ],
+     [
+      "COLLAPSE-THRESHOLDS",
+      "counts/collapse_thresholds"
+     ],
+     [
+      "ARENA-GROUP-ORDER",
+      "counts/arena_group_order"
+     ]
+    ]
+   ]
+  ],
+  "head_word": "FAC-STRATIFIED",
+  "second_route": {
+   "actor_unique": 5852,
+   "atom_breaks": 5852,
+   "atom_word": "FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN",
+   "carrier_unique": 5810,
+   "head_word": "FAC-STRATIFIED"
+  },
+  "segments": [
+   "FAC-DECOMPOSITION<THESIS=THE-LAW-ADMITS-MORE-THAN-ONE-FACTORIZATION-ONLY-WHERE-THE-HISTORY-REPEATS-A-PARALLEL-CLASS; HISTORIES=5,856; ACTOR-LATTICE=21,147; ACTOR-GRAIN-LAW-COMPATIBLE-PARTITIONS=6; ACTOR-GRAIN-UNIQUE-FACTORIZATION=5,852-OF-5,856; CARRIER-WINDOW=42,295; CARRIER-GRAIN-LAW-COMPATIBLE-PARTITIONS=10; CARRIER-GRAIN-UNIQUE-FACTORIZATION=5,810-OF-5,856; COIN-ORDER-DISAGREEMENTS=0>",
+   "FAC-GROUPOID<ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; ATOM-BREAKS=5,852-OF-5,856; COLLAPSE-THRESHOLDS=3,4,5; ARENA-GROUP-ORDER=108>",
+   "FAC-STRATIFIED<BY-GRAIN=ACTOR-5852-OF-5856-UNIQUE-vs-CARRIER-5810-OF-5856-UNIQUE; ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; SCOPE=TWO-GRAINS-AS-DECLARED;COUNTS-ARE-COUNTING-ONLY;THE-CARRIER-WINDOW-IS-DECLARED-NOT-COMPLETE;NO-CLAIM-BEYOND-THE-MEASURED-COHERENCE-DEPTH>"
+  ],
+  "slot": "BY-GRAIN=ACTOR-5852-OF-5856-UNIQUE-vs-CARRIER-5810-OF-5856-UNIQUE"
+ },
+ "waiver_ledger": [],
+ "walls": {
+  "leg": "THE PAPER'S OWN BYTES",
+  "rows": [
+   {
+    "clean": true,
+    "hits": [],
+    "needles": 3,
+    "wall": "W-NO-FORCED-ACTOR-FACTORIZATION",
+    "warrant": "the AID adjudication's not-licensed list, paraphrase-hardened"
+   },
+   {
+    "clean": true,
+    "hits": [],
+    "needles": 3,
+    "wall": "W-NO-IDENTITY-TO-MATTER",
+    "warrant": "the refused architecture sentence"
+   },
+   {
+    "clean": true,
+    "hits": [],
+    "needles": 2,
+    "wall": "W-NO-UNSCOPED-RECORD-THREAD",
+    "warrant": "the unscoped slogan the AID adjudication refuses"
+   },
+   {
+    "clean": true,
+    "hits": [],
+    "needles": 4,
+    "wall": "W-NO-REALITY-SLOGAN",
+    "warrant": "no unscoped reality language about actors"
+   },
+   {
+    "clean": true,
+    "hits": [],
+    "needles": 3,
+    "wall": "W-NO-FIVE-RESONANCE",
+    "warrant": "the resonance the AID adjudication demoted to refused"
+   }
+  ],
+  "scanned_chars": 25353,
+  "warrant": "each wall scans the object under test, not the instrument's surface (#269's caveat); the MUT-WALL-PLANT falsifier plants every banned sentence into exactly this text"
+ },
+ "windows": [
+  {
+   "ambient_universe": null,
+   "complete_in_its_universe": false,
+   "declaration": "the history corpus: paper-21's R = 3 I7-STRICT triples (C1), their pairwise concatenations (C2) and the driven window W4 (C3).  The space of all histories over this arena is unbounded; the corpus is the parents' own declared window and is enumerated COMPLETE inside it.",
+   "members": 5856,
+   "window": "W-CORPUS-C1-C2-C3"
+  },
+  {
+   "ambient_universe": 21147,
+   "complete_in_its_universe": true,
+   "declaration": "the actor-grain candidate set: EVERY partition of the nine actors.  The lattice is enumerated complete -- Bell(9) members, no cap, no sampling.",
+   "members": 21147,
+   "window": "W-ACTOR-LATTICE-COMPLETE"
+  },
+  {
+   "ambient_universe": 545717047936059989389,
+   "complete_in_its_universe": false,
+   "declaration": "the carrier-grain candidate set: the DIRECTIONWISE image of every actor partition, the PAIRWISE image of every actor partition, and a declared list of OCC-typed natural strata (the discrete and trivial carrier partitions, by-direction, by-anchor-site, by-AG-line, the shift orbits and the six translation-subgroup orbit partitions), deduplicated as partitions.  Bell(27) is astronomically larger and the ratio is published with the window; nothing is silently capped.",
+   "members": 42295,
+   "window": "W-CELL-INDUCED-PLUS-STRATA"
+  },
+  {
+   "ambient_universe": null,
+   "complete_in_its_universe": false,
+   "declaration": "the groupoid coherence relations censused: the sliding windows |t - s| <= w for w = 0, 1, 2, 3, the round-local relation, and the complete relation.  The collapse threshold is derived per history by increasing w until the count meets the complete relation's, so the ladder is not truncated below the answer.",
+   "members": 6,
+   "window": "W-COHERENCE-LADDER"
+  },
+  {
+   "ambient_universe": null,
+   "complete_in_its_universe": false,
+   "declaration": "the per-leg binding sweep runs the COMPLETE actor lattice against a declared history sub-window -- C1 in full plus every history the actor census found non-unique -- because the product of the two complete sets is larger than this unit's declared cost budget; the sub-window's size and its complement are both published.",
+   "members": 0,
+   "window": "W-FULL-LATTICE-PER-LEG"
+  },
+  {
+   "ambient_universe": null,
+   "complete_in_its_universe": false,
+   "declaration": "the control arm: declared sub-corpora and synthetic link-sets driven through the REAL criterion and the REAL head law.  No control row is forged; each is a genuine evaluation of the same code on a declared datum.",
+   "members": 0,
+   "window": "W-CONTROL-ARENAS"
+  }
+ ]
+}
