@@ -7885,3 +7885,48 @@ completions; counts COUNTING-ONLY.  Counts: 56 gates (54+2);
 off-tree git-less.  Shas: paper 1b140f7973d4, code
 e96c1e14a0b6, output 63d98f4ee6f0, receipt 46e757ef9c47.
 Committed AS-IS; battery next; panel queued.
+
+## 2026-08-11 — OCC BATTERY GREEN; PANEL PROTOCOL FROZEN; THREE SEATS LAUNCHED (v14 LEDGER #256)
+
+Battery: mirror plain BYTE-IDENTICAL; unknown flag exit 2;
+selftest writes nothing; MUT-ARMS died at
+G-ARMS-REACHABILITY; artifacts untouched.  **PROTOCOL.  K1
+OPERATOR** — rebuild: the 27-cell PAIR-carrier identification
+(the verbatim coupling anchor; incidence 2-actors-per-cell
+27/27, 6-cells-per-actor 9/9); the P2 census (4,945 names / 0
+occupancy-shaped with the 19-hit positive control on
+paper-22's receipt); the THREE two-excitation theories
+(378/351/216; one-excitation agreement AS OBJECTS
+53,460/53,460); the blindness pair; the completion fiber
+(2/3 preserve, 0/3 refuse); the P4 leak censuses at BOTH
+grains (carrier: symmetric 81 at 5/6 coins, antisymmetric 0;
+actor: both leak 6/6, 216/216 admissible, 135/135 forbidden
+reached); **the leak-set coincidence THEOREM (disjoint
+source pairs, 0 cancellation) and the grain-unification SET
+EQUALITY (source = the 27 same-actor configurations, 5/5)**;
+the six control arms' four distinct words; the asymmetry
+rows (0/12; 5/12; 0/6); mutants outside the harness.  **K2
+EFFECTUS** — the head's licensure (CEILING-OPEN as a
+TWO-COORDINATE declaration — value AND grain); **the
+MISTYPED-NOT-FALSE ruling** (the pin's P1 framing was the
+orchestrator's — corrected by measurement; what the
+adjudication must own); **THE LOR CONVERGENCE** (the
+pair-grain identity found by two same-hour independent units
+— what cross-unit sentence is licensed NOW vs after LOR's
+panel; read LOR's committed reviews if present); the
+licensed asymmetry sentence ("exclusion selects only at the
+carrier's grain — a grain the record layer never names");
+FCK's inheritance row (the priced two-coordinate
+declaration); the INEXPRESSIBILITY-IS-NOT-EXCLUSION
+principle's register row; walls; the choice inventory;
+successors.  **K3 INSTRUMENT** — the era disease sweep (all
+current entries); 50 mutants outside the harness; the 40
+seals at value-close + post-write promotes-nothing; the 8
+verbatim anchors perturbed-and-must-not-locate; injections
+(the head; the leak tables; the control-arm table; the grain
+tables); the two-route leak agreement's INDEPENDENCE
+audited; E-24 counting-only; argv; byte ×2 across seeds; the
+212-numeral sweep.  Reviewers →
+v14/review-occ-{operator,effectus,instrument}.md.  Objects
+at 7ab2f21: 1b140f7973d4 / e96c1e14a0b6 / 63d98f4ee6f0 /
+46e757ef9c47; pin 145db72ce547.
