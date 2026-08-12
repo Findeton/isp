@@ -10041,3 +10041,71 @@ direction flips, the two self-repaired holes re-probed, the
 criterion-leak AST gate attacked, the pin-vocabulary parse
 corrupted; the full 36-falsifier out-of-harness sweep; ≥8
 novel corruptions; byte ×2 off-tree).
+
+## 2026-08-12 — FAC K2 (EFFECTUS SEAT) FROZEN: AWF; ZERO NUMBERS MOVED IN 128 RECOMPUTATIONS; EIGHT MAJORS ALL SENTENCE/SCOPE-LEVEL — THE THESIS RULED ONE-DIRECTIONAL; THE PIN'S FORCED FEASIBILITY OVERCLAIMED (ADJUDICATOR-OWNED-IN-PART) (v14 LEDGER #313)
+
+**Review:** v14/review-fac-effectus.md (594e03c93740, 686
+lines), sole write; objects verified unchanged at close.
+**Grade AWF, repair ordered, no REJECT.**  Two full
+independent re-runs of the 5,856-history census reproduce
+EVERY headline (5,852/4 actor; 5,810/46 carrier;
+cardinalities [1,2,3,9]; 6 of 21,147; 10 of 42,295; 11,799
+LEG-4 passes; 0 coin disagreements; 5,852 atom breaks;
+thresholds 3/4/5 at 4/521/75; |Aut| = 108).  head_law is a
+genuine set comparison — STRATIFIED derived; the vocabulary
+really parsed from the pin's bytes; the AID §2 wall holds
+everywhere including the refused five-resonance.
+
+**EIGHT MAJORS (all repairs are sentences, scopes, or
+tables the receipt already knows):**
+1. §5's coherence ladder draws from ALL 6 footprint
+   permutations (γ(w=0) = 6^T exactly) while §5 calls the
+   arrows "structure-preserving" (isotropy 3 per event,
+   free product 3^T) — an inference across two objects.
+2. §3's "precisely when" FALSE at the delivered numbers:
+   125 LEG-2 survivors vs 2 admissible at each non-unique
+   history.
+3. **LEG-4's binding split by grain, unmeasured in-paper:
+   actor 5,860 evaluations / 0 failures (the actor headline
+   is DYNAMICS-BLIND — LEG-1∧LEG-2 carry it); carrier
+   6,317 / 378 (LEG-4 is THE LOAD-BEARING LEG exactly where
+   STRATIFIED comes from).**  §4's closing sentence false
+   at the carrier grain.
+4. The 672-history sub-window used twice, declared nowhere;
+   its complement is ALL of C2 — 5,184 histories, 88.5% of
+   the corpus.
+5. The carrier inventory — the substance of STRATIFIED —
+   never enumerated: {1:5,810, 2:15, 3:30, 9:1}; the 9-row
+   is the ANT-constant schedule whose nine admissibles
+   include the ONE-BLOCK partition of all 27 cells; the 42
+   carrier-only histories fall 3 profiles × 14; the 10
+   carrier survivors carry only 5 distinct names.
+6. R=6 is theorem-forced by R=3 — AID's adopted disclosure
+   repeated undischarged.
+7. "Three to five events of coherence" converts a window
+   WIDTH into an event COUNT without naming the conversion.
+8. **FORCED was far less reachable at the corpus than the
+   pin's feasibility line claims** — the 4 class-constant
+   schedules are in-window by construction and admitted by
+   both closed forms with LEG-3 unable to fire; only a
+   LEG-4 failure could have returned FORCED.  PARTLY THE
+   ADJUDICATOR'S PIN-DESIGN ITEM — owned at adjudication.
+
+**13 MINORs** incl.: route B hard-codes atom_law(ab, True);
+the output's "5 of 5 families reached by an arena" is false
+for BLOCKED (reached by a direct law call); the published
+ladder stops below the collapse for 5,256 of 5,856; **the
+max carrier stabilizer is exactly 27! and the paper never
+says so**; AID's 5th not-licensed item unwalled.
+
+**THE TWO RULINGS:** (1) the thesis LICENSED AS STATED,
+ONE-DIRECTIONAL, at both grains — all 4 actor and all 46
+carrier non-uniques repeat a parallel class, but 348
+histories repeat one (necessary, far from sufficient); the
+tight biconditional is measured ONLY at the actor grain;
+§3's binding of the 348-extension field to the 4-extension
+description not licensed.  (2) the thread wall RESPECTED —
+no sentence asserts or denies that actors are threads; the
+exact licensed replacement paragraph supplied with the
+width-vs-span correction.  **K1/K3 still out; adjudication
+after all three.**
