@@ -8464,3 +8464,17 @@ CWD); transcript 177/177; 292+2 numerals 0 unlicensed.
 Shas: paper 0092caa4d9ad, code 49b739cecac1, output
 6241127e4e83, receipt 455ddec78dda.  Committed AS-IS;
 orchestrator battery next; on green: TERMINAL.
+
+## 2026-08-11 — OCC TERMINAL: THE TWENTY-THIRD — THE CEILING PRICED, NOT FORCED (v14 LEDGER #276)
+
+Battery green (mirror byte-identical; unknown flag exit 2;
+selftest writes nothing; MUT-ARMS died at
+G-ARMS-REACHABILITY; artifacts untouched).  **PAPER-31 IS
+TERMINAL — the twenty-third.**  STATUS row appended (§13
+same commit).  The statistics arc closes at three terminals
+(22, 31, with 14/15 behind them): statistics selected by the
+occupancy rule; the rule forced by NO committed layer; the
+selection possible only at the pair grain; the price a
+two-coordinate declaration FCK now inherits.  The
+S-7/S-8/S-9 register rows stand (the blindness schema; the
+co-incidence; the price-inheritance).
