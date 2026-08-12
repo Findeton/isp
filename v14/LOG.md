@@ -9544,3 +9544,65 @@ dictionary rows; 83 rendered claims; 37 sealed + 4
 declared-unsealed; E-24 stamp COUNTING-ONLY (no measure on
 the gluing family).  **Orchestrator battery launches next;
 panel after green.**
+
+## 2026-08-12 — SIG REPAIR DELIVERED, COMMITTED AS-IS: ALL TWELVE ORDERS + THE #294 CLASS-BINDING ADVISORY EXECUTED; THE FIVE-WAY SELECTOR LIVE; NO DELIVERED MEASUREMENT MOVED (v14 LEDGER #302)
+
+**Files (committed as delivered, pre-battery):**
+v14/paper-24-sig.md (4fcc0517cc5e); v14/code/sig_exact.py
+(720487178b75); v14/code/sig_output.txt (0fcc7b1c35f4);
+v14/code/sig_receipt.json (41177b001e09).
+
+**The twelve orders all executed** (per the #274
+adjudication + the #270/#294 advisories): Z1 head
+SIG-DECLARATION-RELATIVE-AT-THE-EMISSION-READING with the
+plan's dropped member restored in §SCOPE; the self-refuting
+blocked-sentence removed; answer-encoding conjuncts
+replaced by per-object derivation + independent-census
+agreement.  Z2 the class-explicit five-tier ladder with
+R=5 covered-site attainment promoted (PL-STATIC-R5-COVERED
+TRUE beside PL-STATIC-R5 FALSE).  Z3 coupling-not-rate: the
+currency object (round carries 8 deposits it does not
+choose, emission 0; no exchange rate declared, a declared
+one dies).  Z4 the four inherited fibers F6–F9 un-collapsed
+and each run at one further member (D·G
+270801152/847288609443; init-coin-2
+1783653376/2541865828329 — both reproducing K1's
+independent table exactly); word + first-occupancy
+invariant 4/4, masses move 2/4.  Z5 G-MOD3-ISOLATED (the
+first discriminating cell found: +1 changes, +3 identical);
+the record menu published as 0 of 12; A4-singular =
+A5-indefinite (64/59049) gated.  Z6 "agree modulo three"
+everywhere; the 9-of-11 admissible records rendered as
+C-I7-RECORDS.  Z7 E-23 made real (MUT-CONST-BOOL rejects a
+handed constant); the comparator rebuilt from primitives
+(longest shared run 45 chars vs cap 64, was 2,086).  Z8 six
+tables gated in rendered order (whole-row swaps die).  Z9
+digests out of the allow-list; SECREF deleted; heading
+numerals structurally checked.  Z10 all ten anchors READ by
+consumers (needle-swap-for-true-sentence dies at the
+consumer).  Z11 the prune licence exhaustive (27 growth
+vectors, 0 violations); the extension engine cross-checked
+(30 checks); every seal inside its gate.  Z12
+object_under_test sealed; closing gates computed; all
+remaining MINORs.  **#294 advisory:** the live tier
+computed AND printed as live ∧ covering ("AT R=7 IN ONE
+THAT IS COVERING AND STRUCTURALLY LIVE AT ONCE");
+G-STATIC-LADDER-LIVE requires every imposed conjunct's word
+in the printed words; MUT-CLASS-WORDS dies there; tier 1
+stamped NON-DISCRIMINATING.
+
+**The five-way selector run live in the delivery run** —
+all five control arms through BOTH the builder's selector
+and the comparator's independently-written one; THIS-RUN
+lands in the fifth (DECLARATION-RELATIVE).  **Injection
+replay 18/18 dead writing nothing** (a first-pass
+memoisation-ordering artifact owned and re-run clean —
+harness note of record: memoised-producer injections run
+last with the cache cleared).  **Worker battery:** plain ×2
+byte-identical (51 gates, 56 falsifiers, in-process 56/56);
+cold out-of-harness sweep 56/56 each at its own named gate;
+20 hostile argv exit 2; off-tree git-less byte-identical at
+PYTHONHASHSEED 0/987654.  **No delivered measurement moved**
+(masses, censuses, floors, spectra unchanged; instrument
+bookkeeping grew).  **Orchestrator battery launches next;
+terminal seal on green.**
