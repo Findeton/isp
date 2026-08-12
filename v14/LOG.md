@@ -10289,3 +10289,56 @@ probe (HP-2) disclosed still-running; no ruling depends on
 it.  All #314 headline rulings stand (the leak backwards →
 SEAM-CONFINED; the 12-not-16 arenas; the half-multi-way
 selector; the direct-sum ruling stronger than delivered).
+
+## 2026-08-12 — FAC K3 (INSTRUMENT SEAT) FROZEN: AWF; ~175 RECOMPUTATIONS ZERO DISAGREED; FIVE MAJORS OF ONE SHAPE (ONE-DIRECTIONAL CHECKS); THE CORPUS IS AN UNDISCLOSED MULTISET; THE PANEL IS COMPLETE (v14 LEDGER #318)
+
+**Review:** v14/review-fac-instrument.md (b328a819d752,
+737 lines), sole write; all five hashes verified unchanged.
+**Grade AWF.**  ~175 recomputations zero disagreed; 101
+process launches, 93 full 43-gate evaluations, 46 distinct
+injections.  **What holds:** all 36 falsifiers died at
+declared gates out-of-harness one process each; byte ×2
+off-tree git-less at two seeds FROM ARTIFACT-DELETED trees;
+selftest write-nothing proven by full-tree hash; read-back
+before os.replace REAL (I8a dies, 0 tmp left; the
+one-bit-flip control a live conjunct); all 43 counts from
+live registries; six of nine falsifier-less gates
+hand-exercised, all with teeth; the pin-vocabulary parse
+LIVE (a renamed family kills the run).
+
+**FIVE MAJORS, one shape — one-directional / blacklist /
+one-statement-too-early; none touches a measured quantity:**
+1. The criterion-leak gate is a BLACKLIST — defeated by
+   module-global alias, globals(), and default-arg at exit
+   0; the digest silently moves with
+   census_products_referenced []; the paper's stated digest
+   bound by nothing (forging it redeploys byte-identical).
+2. The referent gate: no totality reference; canon()'s
+   mdstrip eats line-initial numerals — destroying one of
+   the paper's own ratios ("0 of 672") and weaponizable to
+   smuggle a false cross-universe ratio; residual
+   multi-quantity universes pass "5,852 of 21,147".
+3. Prose POLARITY unguarded including the declared
+   atom-word axis — §5's emitted word flips
+   BREAKS→HOLDS at exit 0.
+4. THE ACT DISEASE PRESENT: a forged top-level key inserted
+   after G-SEAL-TOTALITY publishes unsealed at exit 0 (the
+   one-statement-earlier control dies; window = four
+   statements).
+5. Table/fence checks one-directional: a forged control row
+   asserting FORCED on the whole corpus and a forged fourth
+   verdict fence with the grains EXCHANGED both survive.
+
+**ELEVEN MINORS** incl.: **the corpus is a MULTISET the
+paper never discloses — 5,856 slots vs 5,784 distinct
+(C3's 600 schedules are 528 histories, 9 appearing nine
+times each; no headline corrupted)**; the §5/§6 672-history
+sub-window not among the six declared windows (CONVERGES
+with K2 major 4); the transcript sealed but never
+reconciled with the gate ledger (a forged PASS line rides
+into the promoted transcript).  **Nine probes answered**
+(notable: probe 3b ABSENT — the exemption repair complete
+and provably inert both directions; probe 8 ABSENT — the
+strongest part of the unit).  **PANEL COMPLETE (K1 #316 /
+K2 #313 / K3 here): ~533 recomputations, zero numbers
+moved.  Adjudication next.**
