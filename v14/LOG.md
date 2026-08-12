@@ -8615,3 +8615,36 @@ three seats launch with this turn's tool calls; the protocol
 follows the established K1/K2/K3 pattern with the current
 disease list (referent-binding; template diseases;
 class-explicitness now itself an auditable property).
+
+## 2026-08-12 — PER-R OPERATOR REVIEW LANDED (K1): AWF — ~500/500 CLEAN; THE PARITY LAW AN ALGEBRAIC IDENTITY; THE LICENSE SOUND THREE WAYS; ONE MAJOR (v14 LEDGER #282)
+
+v14/review-perr-operator.md frozen.  **Grade AWF; ~500
+quantities recomputed from nothing across 11 own programs;
+ZERO disagreements; no false theorem.**  Reproduced:
+**the parity law — and it is an ALGEBRAIC IDENTITY (verified
+over 64,000 points), stronger than the paper claims**; all 3
+predictions; the SIG feed incl. the locking theorem rebuilt
+WITH NO PRUNING and the floors 4/5/6/6 + 5/6/7/8; **the R=6
+door by THREE independent routes (48,600; 1,350)**; the DIA
+table cell-for-cell; the fibers and 1296 isos; **THE
+EXHAUSTIVENESS LICENSE SOUND, audited three ways** (full
+brute force over 21,952,000 ordered triples; raw enumeration
+at R=4; all 28 R=5 negatives with the prune off).  **ONE
+MAJOR: the weld fibers' base-map qualifier DROPPED — two of
+36/3/1 are read at one base map (spreads [3,6] and [1,2];
+I-ORIENT free at some maps); the receipt records it, the
+parent disclosed it in three places, the paper contains no
+occurrence of "base map"** (exact 5-item repair, no re-run).
+SIX MINORs (the structurally-live wording omitting its
+covering condition; a stratum/subset attribution; **the R=8
+declared floor arithmetic-not-censused — the reviewer
+censused it: G-INDEF realizable at 3,752 witnesses**; the
+exhaustive tag's landing; the ANT sentence forced-not-
+measured; cover=posdef naming an equality where a one-way
+inclusion is measured).  FREE STRENGTHENINGS: **the locking
+bound EXACTLY TIGHT (a locked R-tuple misses exactly 7−R
+cells; R=7 the first covering budget — part of S-3
+answered); the DIA law on 55 rows by a fourth route.**  Two
+out-of-registry mutants both killed (with the honest note
+that one died at a different gate than §13 claims carries
+it).  → adjudication when K2+K3 land.
