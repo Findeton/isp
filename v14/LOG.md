@@ -8517,3 +8517,22 @@ gates; 388 numerals 0 unmatched.  Shas: paper 6df0db523d32,
 code 126912ae7142, output 4990d340f7c6, receipt 0d6fbadd756d,
 note 9c8237235c94.  Committed AS-IS; orchestrator battery
 next; **on green: TERMINAL (the twenty-fourth) → ACT PINS.**
+
+## 2026-08-11 — SMU TERMINAL: THE TWENTY-FOURTH — THE CONSERVED PRICE SEALED; THE ACT GATE OPENS (v14 LEDGER #278)
+
+Battery green (mirror byte-identical; unknown flag exit 2;
+selftest fatal at every anchor class writing nothing;
+MUT-K1-A died at G-HEAD-DERIVED-TWICE — the de-twinning
+verified live; artifacts untouched).  **PAPER-27 IS TERMINAL
+— the twenty-fourth.**  STATUS row appended (§13 same
+commit).  The probability-origin arc closes: the price
+conserved on the CLOSED simplex; symmetry a discount, never
+payment; the one "derived" measure a rank-one declaration;
+the correction-annotation category created for paper-23.
+**THE ACT PIN (paper-34) FIRES — frozen and launched at
+#279, the QCD road's funnel: the action unit, with the FORM
+CENSUS (is the Wilson-shape forced by
+gauge-invariance+locality+covariance?), the COUPLING
+DIMENSION (this universe's gauge-constant count), the GIBBS
+map to the invariant simplex, and the conserved-price frame
+binding.**
