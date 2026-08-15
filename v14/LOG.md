@@ -10718,3 +10718,31 @@ EPR-CRITERION-INAPPLICABLE arm (whether EPR's separation
 premise even EXISTS at R=3 is itself the first
 measurement, with the multi-sector route as successor if
 not).  **The construction worker launches next.**
+
+## 2026-08-15 — POT K2 (EFFECTUS) FROZEN: ACCEPT-WITH-FIXES; 10,151 RECOMPUTATIONS ZERO FALSE; THE AREA-BLINDNESS UNIVERSAL RULED LICENSED ON A STRONGER GROUND (v14 LEDGER #329)
+
+**Review:** v14/review-pot-effectus.md (a3c081700444, 462
+lines).  **Grade ACCEPT-WITH-FIXES — no headline
+reverses.**  THREE MAJORS: (M1) §7/§14's "the 24 χ=1
+points are exactly the single-mode points" is FALSE (24 vs
+32; the 8 exceptions are (0,2,0) points); the TRUE
+characterization never stated: **the 24 are exactly the
+CONSTANT-IN-PERIMETER ladders** — the DECONFINES tally is
+entirely flat ladders; licensed replacements supplied.
+(M2) the licence wall lacks the pin's teeth — 8 of 10
+plants survive (self-licensing; any-numeral substring;
+synonyms unswept) — **but the delivered paper exploits none
+of the holes** (all 10 licensed sentences verified; 34
+synonym patterns swept clean).  (M3) §14's 5,760 includes
+3,200 self-comparisons; same-basis 1,280 vs 44,800; the
+L=4 thinness (2 comparisons) absent where the finding is
+claimed.  **THE BIGGEST SENTENCE STANDS STRONGER:** the
+per-configuration identity licenses area-blindness under
+EVERY measure on the carrier (no polytope argument needed);
+independently witnessed at 1,500 random interior measures
++ all 640 Diracs, 0 mismatches.  Cleared: head multi-way
+5/5 through the real classifier; gap correctly scoped; the
+orientation row fully clean; stamps clean.  Five minors
+incl. DISCRIMINATOR-DEGENERATE ruled a re-scope needing
+disclosure (MINOR — the head never spends it).  K1/K3
+still out.
