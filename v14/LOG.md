@@ -10651,3 +10651,19 @@ battery-green requirement protects against half-applied
 state.  Then: POT + SPC orchestrator batteries → panels;
 the armed queue (SEC×SPC, NDEP, SEC-2, R4) unchanged.
 Ledger #325.
+
+## 2026-08-15 — RESUME EXECUTED: THREE CONTINUATION REPAIR WORKERS LAUNCHED (FAC / SEC / PER-R); POT+SPC BATTERIES MID-RUN LOCALLY (v14 LEDGER #326)
+
+Quota reset confirmed by the user.  Per the #325 plan,
+three CONTINUATION workers launched, each ordered to
+reconcile the uncommitted worktree partials against its
+order sheet before completing the remaining Z's, with the
+full era battery as sole acceptance: FAC (orders
+6a97c67c4391; prior worker died pre-paper-write), SEC
+(orders 7a82ffe7168a; died at Z1; the twelve-forgery
+acceptance test standing), PER-R (died mid falsifier
+calibration; its staged deliv2.txt report handed to the
+continuation as the reconciliation source).  POT's
+orchestrator battery is past plain ×2 (both artifacts
+byte-identical vs committed) and grinding the seed leg;
+SPC's queued behind it; panels launch on green.
