@@ -11295,3 +11295,22 @@ walled; the Young-table gate closed; promotion-time
 totality (the ACT disease) closed with the #119 addendum
 ENGRAVED; head feasibility at the declared row list — the
 #299 extension ENGRAVED.  Repair workers launch next.
+
+## 2026-08-15 — EPR + NDEP ADJUDICATED: BOTH REPAIRS ORDERED; THE SHADOW-ZERO PROMOTED TO A THEOREM; THE FLOOR CORRECTION RE-SCOPED TO PROTECT AID'S SEALED BOUND; ALL FOUR PANELS DIGESTED (v14 LEDGER #349)
+
+Both adjudication notes committed.  EPR: the shadow-zero a
+THEOREM (every menu partition coarsens the carrying-nothing
+residue partition); the analytic legs said in-paper; the
+selector honestly 2-way with the PIN OWNED (third
+instance); the 1935 sufficient-not-necessary caveat
+restored as anchor E7; the Bell wall semantic and
+self-sealed; K3's instrument list whole.  NDEP: the
+aggregate two-levelled (3-of-5 statement / 7-of-7 numeral
+with the uniform offset rule applied); "does not
+transport" → THE FORM WAS UNDISCRIMINATED AT n=9 (AID's
+bound protected); the ladder-modulus-is-L claim STANDS
+with the confound closed; the coin-modulus freedom claim
+replaced (paper-20 cited; m=2-at-AG(2,2) the successor
+test); windows declared; K3's ten whole; the #267 sweep
+OWED as its own unit.  Repair workers launch next; the
+board runs four repairs + SEC-2.
