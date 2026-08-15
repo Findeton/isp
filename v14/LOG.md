@@ -10544,3 +10544,76 @@ the whole sweep re-run; SPC-BLOCKED-AT declared unreachable
 at this arena (instrument-fault only), the other seven arms
 each carrying a delivered witness.  **Orchestrator battery
 launches next; panel after green.**
+
+## 2026-08-15 — POT (PAPER-36) DELIVERED, COMMITTED AS-IS: SPLIT-BY-WEIGHT — THE AREA LEG FAMILY-INVARIANT AREA-BLIND AT 149/149; THE PERIMETER CLOSED FORM W = A + B·P + C·2^(−P) AT ALL 640 COINS; THE GAP 1/2 EXACT AND FAMILY-INVARIANT; THE ORIENTATION ROW FOLDED IN (v14 LEDGER #324)
+
+**Files (committed as delivered, pre-battery):**
+v14/paper-36-pot.md (173a88d8755f); v14/code/pot_exact.py
+(8c11f16002d1); v14/code/pot_output.txt (50f295f31b67);
+v14/code/pot_receipt.json (5b5f731fb615).  Pin
+df2f15efa7b0; all parents verified at pinned digests.  ALL
+HEADLINES CANDIDATE UNTIL ADJUDICATION.
+
+**HEAD:** POT-SPLIT-BY-WEIGHT — the WINDING leg splits the
+family (96 nonzero / 40 zero of 136 extreme points; 1 of 4
+declared rows) while **THE AREA LEG IS FAMILY-INVARIANT
+AREA-BLIND AT 149 OF 149 MEASURED ROWS.**
+
+**THE LOOP FAMILY (R5's missing object, built):** 192
+loops (144 contractible + 48 winding); 11 orbits, closed
+at the anchored standard, NOT closed at the extension (16
+staircase escapes, published); base-point blindness
+111,360/111,360; the declared observable = ACT's
+conjugation-symmetric part (forced: the winding nine have
+complex raw traces).  **THE DEEPEST RESULT:** the loop
+observable is a function of PERIMETER ALONE at every
+carrier configuration (5,760 equal-perimeter comparisons,
+0 disagreements); exact closed form W = A + B·P + C·2^(−P)
+verified at all 640 coins; **C is the indicator of the
+balanced sector** (512/128).  Creutz χ ≠ 1 with area-word
+DEGENERATE at all four declared rows; the DECONFINES tally
+(24 extreme points) is a machine tally with its mechanism
+stated (single-active-mode ladders), not a physical claim.
+
+**PRICE PARTITION (9 legs over the 135):** AREA partitions
+NOTHING (carrier-level blindness); winding 96/40; mode-C
+(the gap mode) 64 present / 72 absent = the
+monomial/balanced split; the order parameter NOT pinned by
+the action route (range [−4,4] everywhere — ACT's
+falsifier put to the winding expectation).  **THE SPECTRAL
+DOOR (SPC's inheritance):** the full transfer named + priced
+out of window (2.8×10²² entries); the measured finite form:
+spectrum {1, 1, 1/2}, **GAP 1/2 EXACT, family-invariant at
+every declared row**; the winding holonomy unitary at
+640/640 (self-inversive char. polynomial) — NO decaying
+direction.  **THE L-BOUNDARY RUN, NOT PROJECTED:** merging
+index measured 4/2/1/1; at L=8: 44,800 checks 0
+disagreements, the closed form with IDENTICAL coefficients
+640/640, 0-merges-against-72 (208→136 collapses to
+136=136); area-blindness, the closed form, and the gap
+SURVIVE the boundary.
+
+**THE ORIENTATION ROW (the user-raised #313-era advisory,
+FOLDED IN):** stamped DECLARATION-RELATIVE-AT-THE-
+ORIENTATION-READING; price = INDEX 2 AND ZERO COUPLINGS at
+both readings (135→135, 79→79); the odd part negates under
+reversal 11,520/11,520 (why it is unlawful at the full
+standard), lives EXACTLY on the winding family (3,760
+nonzero traces at 9 of 18 shapes; contractible rectangles
+carry none), and is INVISIBLE to every declared row while
+96 of 136 extreme points carry it — sector-constancy sums
+it to zero.
+
+**Instrument:** 50 gates; 53 anchors; 49 mutants 49/49
+dead-on-target; 589+17 numerals 0 uncovered; 252 sentences,
+10 licensed confinement uses, 0 unlicensed; foreign-route
+recomputation of 15 headline quantities exact; two
+battery-found defects repaired and disclosed (selftest
+isolation; four falsifiers redesigned); soft spots for the
+panel named (the DECONFINES branch semantics; the thin L=4
+area leg — 2 comparisons, L=8's 70 the strength; the
+window/extension escapes; **the uniform-carrier premise —
+the perimeter-only mechanism's premise is one-coin-per-
+link; the non-uniform carrier registered as the first
+successor**).  **Battery + panel deferred to the post-reset
+resume (see #325).**

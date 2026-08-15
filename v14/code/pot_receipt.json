@@ -1,0 +1,5512 @@
+{
+ "arena": {
+  "L": 4,
+  "admissible_rows": 80,
+  "alphabet": 25,
+  "carrier": "THE-640-UNIFORM-CONFIGURATIONS",
+  "coins": 640,
+  "configuration_space": "640^32",
+  "d": 2,
+  "field": "Q(zeta_8)",
+  "links": 32,
+  "plaquettes": 16,
+  "sectors": {
+   "ANTIDIAGONAL": 64,
+   "BALANCED": 512,
+   "DIAGONAL": 64
+  },
+  "sites": 16,
+  "the_carrier_is_the_parents": true,
+  "unitary_by_a_second_route": 640
+ },
+ "arithmetic": {
+  "banned_calls_present": [],
+  "banned_names_present": [],
+  "field": "Q(zeta_8)-AS-INTEGER-FOUR-TUPLES-WITH-A-PER-ROW-POWER-OF-TWO-SCALE",
+  "float_literals": 0,
+  "functions": 114,
+  "mutant_switches": 49,
+  "no_logarithm_no_exponential_no_square_root_no_power": true
+ },
+ "boundary_lattice": {
+  "L": 8,
+  "area_disagreements": 0,
+  "area_discriminating_comparisons": 70,
+  "classes": 136,
+  "closed_form_failures": 0,
+  "coins_with_identical_coefficients": 640,
+  "comparison_by_coin_checks": 44800,
+  "ladder_perimeters": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14
+  ],
+  "orbit_pairs_merged": 0,
+  "parent_orbits": 136,
+  "simple_rectangle_shapes": 49,
+  "what_does_not": "THE-CLASS-MERGING-AND-EVERY-COUNT-BUILT-ON-IT",
+  "what_survives": "AREA-BLINDNESS-AND-THE-CLOSED-FORM-AND-THE-GAP",
+  "why_this_size": "THE-SMALLEST-L-DIVISIBLE-BY-EIGHT-WHERE-THE-MERGING-INDEX-IS-ONE"
+ },
+ "classes": {
+  "class_size_profile": [
+   [
+    1,
+    64
+   ],
+   [
+    8,
+    72
+   ]
+  ],
+  "classes": 136,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "extreme_points": 136,
+  "extreme_points_that_are_edge_midpoints": 72,
+  "extreme_points_that_are_vertices": 64,
+  "orbit_pairs_merged": 72,
+  "parent_orbits": 208,
+  "realisable_constant_twists": [
+   0,
+   2,
+   4,
+   6
+  ],
+  "the_classes_coarsen_the_parents_orbits": true,
+  "the_couplings_the_parent_hands_over": 135
+ },
+ "closed_form": {
+  "closed_form_failures": 0,
+  "coefficient_profile": {
+   "A": {
+    "0": 72,
+    "1": 192,
+    "1+-1/2*sqrt2": 128,
+    "1+1/2*sqrt2": 128,
+    "2": 80,
+    "2+-1*sqrt2": 16,
+    "2+1*sqrt2": 16,
+    "4": 8
+   },
+   "B": {
+    "-1": 64,
+    "-2": 8,
+    "0": 208,
+    "0+-1*sqrt2": 16,
+    "0+-1/2*sqrt2": 128,
+    "0+1*sqrt2": 16,
+    "0+1/2*sqrt2": 128,
+    "1": 64,
+    "2": 8
+   },
+   "C": {
+    "0": 128,
+    "1": 512
+   }
+  },
+  "equal_perimeter_comparisons": 5760,
+  "equal_perimeter_disagreements": 0,
+  "perimeters": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "the_form": "W(A,B)=A+B*(A+B)+C*2^-(A+B)",
+  "the_gap": "1/2",
+  "the_halving_mode_by_sector": {
+   "ANTIDIAGONAL/0": 64,
+   "BALANCED/1": 512,
+   "DIAGONAL/0": 64
+  },
+  "the_ladder_is_a_function_of_the_perimeter_alone": true,
+  "the_transfer_spectrum": "{1,1,1/2}",
+  "verification_points_per_coin": 2,
+  "why_the_eigenvalue_one_appears_twice": "THE-TERM-PROPORTIONAL-TO-THE-PERIMETER-IS-A-TWO-BLOCK-AT-EIGENVALUE-ONE"
+ },
+ "code_sha256_12": "8c11f16002d1",
+ "conditional_rows": {
+  "ladder_word_tally": {
+   "DISCRIMINATOR-DEGENERATE": 4
+  },
+  "mode": "(a)-CONDITIONAL-AT-THE-DECLARED-ROWS",
+  "rows": [
+   {
+    "area_comparisons": 2,
+    "area_seen": false,
+    "closed_form_holds": true,
+    "creutz": {
+     "2-2": "299/288",
+     "2-3": "540/529",
+     "3-2": "540/529",
+     "3-3": "2047/2025"
+    },
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "creutz_rungs": 4,
+    "creutz_zero_denominators": 0,
+    "exponent": 32,
+    "grain": "LINK",
+    "ladder": {
+     "2": "13/10",
+     "3": "6/5",
+     "4": "23/20",
+     "5": "9/8",
+     "6": "89/80"
+    },
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "missing_shapes": 0,
+    "mode_A": "11/10",
+    "mode_B": "0",
+    "mode_C": "4/5",
+    "plaquette_expectation": "13/10",
+    "row": "THE-NULL",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-WEIGHTS",
+    "the_measure": "COUNTING",
+    "weight_system": "W-IDENTICALLY-ONE",
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "area_comparisons": 2,
+    "area_seen": false,
+    "closed_form_holds": true,
+    "creutz": {
+     "2-2": "34378352692/38672402409",
+     "2-3": "16111780290/17185374649",
+     "3-2": "16111780290/17185374649",
+     "3-3": "103105824337/107400398400"
+    },
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "creutz_rungs": 4,
+    "creutz_zero_denominators": 0,
+    "exponent": 16,
+    "grain": "PLAQUETTE",
+    "ladder": {
+     "2": "262244/65615",
+     "3": "393306/65615",
+     "4": "524372/65615",
+     "5": "131088/13123",
+     "6": "786509/65615"
+    },
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "missing_shapes": 0,
+    "mode_A": "8/5965",
+    "mode_B": "26214/13123",
+    "mode_C": "64/65615",
+    "plaquette_expectation": "262244/65615",
+    "row": "THE-WILSON-CONJUGATION-SYMMETRIC",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-WEIGHTS",
+    "the_measure": "NEW",
+    "weight_system": "TWO-AT-THE-TOP-TRACE-VALUE-AND-ONE-ELSEWHERE",
+    "winding": "52428/13123",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "area_comparisons": 2,
+    "area_seen": false,
+    "closed_form_holds": true,
+    "creutz": {
+     "2-2": "18446744906933216413/18446744889753346881",
+     "2-3": "18446744863983542535/18446744855393607769",
+     "3-2": "18446744863983542535/18446744855393607769",
+     "3-3": "18446744842508705608/18446744838213738225"
+    },
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "creutz_rungs": 4,
+    "creutz_zero_denominators": 0,
+    "exponent": 32,
+    "grain": "LINK",
+    "ladder": {
+     "2": "4294967399/4294967375",
+     "3": "4294967391/4294967375",
+     "4": "4294967387/4294967375",
+     "5": "858993477/858993475",
+     "6": "4294967384/4294967375"
+    },
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "missing_shapes": 0,
+    "mode_A": "4294967383/4294967375",
+    "mode_B": "0",
+    "mode_C": "64/4294967375",
+    "plaquette_expectation": "4294967399/4294967375",
+    "row": "THE-EXHIBITED-WITNESS",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-WEIGHTS",
+    "the_measure": "NEW",
+    "weight_system": "TWO-ON-ONE-CLASS-AND-ONE-ELSEWHERE",
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "area_comparisons": 2,
+    "area_seen": false,
+    "closed_form_holds": true,
+    "creutz": {
+     "2-2": "193725/190969",
+     "2-3": "746833/741321",
+     "3-2": "746833/741321",
+     "3-3": "2931705/2920681"
+    },
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "creutz_rungs": 4,
+    "creutz_zero_denominators": 0,
+    "exponent": 1,
+    "grain": "SECTOR",
+    "ladder": {
+     "2": "225/152",
+     "3": "23/16",
+     "4": "861/608",
+     "5": "1709/1216",
+     "6": "3405/2432"
+    },
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "missing_shapes": 0,
+    "mode_A": "53/38",
+    "mode_B": "0",
+    "mode_C": "13/38",
+    "plaquette_expectation": "225/152",
+    "row": "THE-LAW-NATIVE-CONTROL",
+    "stamp": "CONDITIONAL-ON-THE-DECLARED-WEIGHTS",
+    "the_measure": "TRANSPORTED-NOT-DERIVED",
+    "weight_system": "THE-TRANSPORTED-SECTOR-LAW",
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   }
+  ],
+  "stamp": "CONDITIONAL-ON-THE-DECLARED-WEIGHTS",
+  "the_control_is_never_spent_as_derived": true,
+  "the_control_stamp": "LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION",
+  "the_wilson_weight_is_conjugation_symmetric": true,
+  "winding_word_tally": {
+   "WINDING-ORDER-NONZERO": 1,
+   "WINDING-ORDER-ZERO": 3
+  }
+ },
+ "consumer_register": {
+  "all_present": true,
+  "missing": [],
+  "named": [
+   "G-ARENA-REBUILT",
+   "G-PLAQUETTE-ROW-REPRODUCED",
+   "G-THE-CLASSES-REBUILT",
+   "G-THE-CONFINEMENT-LICENCE-WALL",
+   "G-THE-CONTROL-STAMP-CARRIED",
+   "G-THE-DECLARED-ROWS-BUILT",
+   "G-THE-DISCRIMINATOR-IS-WELL-DEFINED",
+   "G-THE-EXTREME-POINTS-REBUILT",
+   "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP",
+   "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
+   "G-THE-MERGING-INDEX-LAW-REPRODUCED",
+   "G-THE-ORIENTATION-READING-IS-PRICED",
+   "G-THE-PRICE-BINDING"
+  ]
+ },
+ "control_arms": {
+  "arms": [
+   {
+    "agrees": true,
+    "area_seen": true,
+    "arm": "SYN-AREA-LAW",
+    "creutz": {
+     "2-2": "1/2",
+     "2-3": "1/2",
+     "3-2": "1/2",
+     "3-3": "1/2"
+    },
+    "expected_head_word": "POT-CONFINES-AT",
+    "expected_ladder_word": "CONFINES",
+    "head_word": "POT-CONFINES-AT",
+    "ladder_word": "CONFINES",
+    "the_synthetic_law": "A-LAW-GEOMETRIC-IN-THE-AREA"
+   },
+   {
+    "agrees": true,
+    "area_seen": false,
+    "arm": "SYN-PERIMETER-LAW",
+    "creutz": {
+     "2-2": "1",
+     "2-3": "1",
+     "3-2": "1",
+     "3-3": "1"
+    },
+    "expected_head_word": "POT-DECONFINES-AT",
+    "expected_ladder_word": "DECONFINES",
+    "head_word": "POT-DECONFINES-AT",
+    "ladder_word": "DECONFINES",
+    "the_synthetic_law": "A-LAW-GEOMETRIC-IN-THE-PERIMETER"
+   },
+   {
+    "agrees": true,
+    "area_seen": false,
+    "arm": "SYN-ZERO-DENOMINATOR",
+    "creutz": {
+     "2-3": "0",
+     "3-2": "1",
+     "3-3": "1"
+    },
+    "expected_head_word": "POT-DISCRIMINATOR-DEGENERATE-AT",
+    "expected_ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "head_word": "POT-DISCRIMINATOR-DEGENERATE-AT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "the_synthetic_law": "A-LADDER-WITH-A-VANISHING-RUNG"
+   },
+   {
+    "agrees": true,
+    "area_seen": null,
+    "arm": "SYN-MISSING-SHAPE",
+    "creutz": {},
+    "expected_head_word": "POT-BLOCKED-AT",
+    "expected_ladder_word": "BLOCKED-AT-THE-LADDER",
+    "head_word": "POT-BLOCKED-AT",
+    "ladder_word": "BLOCKED-AT-THE-LADDER",
+    "the_synthetic_law": "A-LADDER-THE-FAMILY-DOES-NOT-COVER"
+   },
+   {
+    "agrees": true,
+    "area_seen": null,
+    "arm": "SYN-TWO-ROWS-THAT-DISAGREE",
+    "creutz": {},
+    "expected_head_word": "POT-SPLIT-BY-WEIGHT",
+    "expected_ladder_word": "CONFINES|DECONFINES",
+    "head_word": "POT-SPLIT-BY-WEIGHT",
+    "ladder_word": "CONFINES|DECONFINES",
+    "the_synthetic_law": "ONE-AREA-ROW-BESIDE-ONE-PERIMETER-ROW"
+   }
+  ],
+  "every_word_reached": [
+   "POT-BLOCKED-AT",
+   "POT-CONFINES-AT",
+   "POT-DECONFINES-AT",
+   "POT-DISCRIMINATOR-DEGENERATE-AT",
+   "POT-SPLIT-BY-WEIGHT"
+  ],
+  "preregistered_words": [
+   "POT-CONFINES-AT",
+   "POT-DECONFINES-AT",
+   "POT-SPLIT-BY-WEIGHT",
+   "POT-DISCRIMINATOR-DEGENERATE-AT",
+   "POT-BLOCKED-AT"
+  ],
+  "the_pattern": "SYNTHETIC-LADDERS-THROUGH-THE-REAL-DISCRIMINATOR-AND-THE-REAL-HEAD-LAW"
+ },
+ "coverage": {
+  "clean_path_gates": [
+   "G-SOURCES-AT-THEIR-PINNED-DIGESTS",
+   "G-PATH-VALUE-ANCHORS",
+   "G-VERBATIM-ANCHORS",
+   "G-THE-ARITHMETIC-IS-EXACT",
+   "G-THE-MUTANT-REGISTRY-IS-TOTAL",
+   "G-THE-FUNCTION-INVENTORY-IS-TOTAL",
+   "G-EVERY-MUTANT-DESCRIPTION-IS-TRUE",
+   "G-ARENA-REBUILT",
+   "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
+   "G-THE-LOOP-FAMILY-IS-A-FAMILY-OF-LOOPS",
+   "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP",
+   "G-THE-CLASSES-REBUILT",
+   "G-THE-EXTREME-POINTS-REBUILT",
+   "G-THE-LOOP-OBSERVABLE-IS-BASE-POINT-BLIND",
+   "G-THE-LOOP-OBSERVABLE-IS-REVERSAL-BLIND",
+   "G-PLAQUETTE-ROW-REPRODUCED",
+   "G-THE-DISCRIMINATOR-IS-WELL-DEFINED",
+   "G-THE-MERGING-INDEX-LAW-REPRODUCED",
+   "G-THE-LADDER-IS-A-FUNCTION-OF-THE-PERIMETER-ALONE",
+   "G-THE-LADDER-CLOSED-FORM",
+   "G-THE-DECLARED-ROWS-BUILT",
+   "G-THE-CONTROL-STAMP-CARRIED",
+   "G-THE-FAMILY-SWEEP-IS-TOTAL",
+   "G-THE-FAMILY-SLICES",
+   "G-THE-PRICE-BINDING",
+   "G-THE-ORDER-PARAMETER-RANGE",
+   "G-THE-SPECTRAL-DOOR",
+   "G-THE-ORIENTATION-READING-IS-PRICED",
+   "G-THE-CONJUGATION-SPLIT-IS-EXACT",
+   "G-THE-ODD-PART-IS-ORIENTATION-ODD",
+   "G-THE-ODD-OBSERVABLES-CARRY-THEIR-DECLARATION",
+   "G-THE-BOUNDARY-LATTICE-RUN",
+   "G-EVERY-PREREGISTERED-WORD-IS-EMITTABLE",
+   "G-THE-HEAD-IS-DERIVED",
+   "G-THE-TWO-HEAD-LAWS-AGREE",
+   "G-THE-LEDGER-CHAIN-VERIFIES",
+   "G-THE-SEAL-IS-TOTAL",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "falsifier_targets": [
+   "G-ARENA-REBUILT",
+   "G-CONSUMER-REGISTER-IS-REAL",
+   "G-EVERY-MUTANT-DESCRIPTION-IS-TRUE",
+   "G-EVERY-PREREGISTERED-WORD-IS-EMITTABLE",
+   "G-PAPER-CLAIMS-RENDERED",
+   "G-PAPER-HEADERS-BOUND",
+   "G-PAPER-MUST-NOT",
+   "G-PAPER-NUMERALS-COVERED",
+   "G-PAPER-POLARITY",
+   "G-PAPER-SPELLED-NUMERALS",
+   "G-PAPER-TABLE-ROWS-COVERED",
+   "G-PAPER-VERDICT-BLOCK",
+   "G-PATH-VALUE-ANCHORS",
+   "G-PLAQUETTE-ROW-REPRODUCED",
+   "G-SOURCES-AT-THEIR-PINNED-DIGESTS",
+   "G-THE-ARITHMETIC-IS-EXACT",
+   "G-THE-BOUNDARY-LATTICE-RUN",
+   "G-THE-CLASSES-REBUILT",
+   "G-THE-CONFINEMENT-LICENCE-WALL",
+   "G-THE-CONJUGATION-SPLIT-IS-EXACT",
+   "G-THE-CONTROL-STAMP-CARRIED",
+   "G-THE-DECLARED-ROWS-BUILT",
+   "G-THE-DISCRIMINATOR-IS-WELL-DEFINED",
+   "G-THE-EXTREME-POINTS-REBUILT",
+   "G-THE-FAMILY-SLICES",
+   "G-THE-FAMILY-SWEEP-IS-TOTAL",
+   "G-THE-FUNCTION-INVENTORY-IS-TOTAL",
+   "G-THE-HEAD-IS-DERIVED",
+   "G-THE-LADDER-CLOSED-FORM",
+   "G-THE-LADDER-IS-A-FUNCTION-OF-THE-PERIMETER-ALONE",
+   "G-THE-LEDGER-CHAIN-VERIFIES",
+   "G-THE-LOOP-FAMILY-IS-A-FAMILY-OF-LOOPS",
+   "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP",
+   "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
+   "G-THE-LOOP-OBSERVABLE-IS-BASE-POINT-BLIND",
+   "G-THE-LOOP-OBSERVABLE-IS-REVERSAL-BLIND",
+   "G-THE-MERGING-INDEX-LAW-REPRODUCED",
+   "G-THE-MUTANT-REGISTRY-IS-TOTAL",
+   "G-THE-ODD-OBSERVABLES-CARRY-THEIR-DECLARATION",
+   "G-THE-ODD-PART-IS-ORIENTATION-ODD",
+   "G-THE-ORDER-PARAMETER-RANGE",
+   "G-THE-ORIENTATION-READING-IS-PRICED",
+   "G-THE-PRICE-BINDING",
+   "G-THE-SEAL-IS-TOTAL",
+   "G-THE-SPECTRAL-DOOR",
+   "G-THE-TWO-HEAD-LAWS-AGREE",
+   "G-VERBATIM-ANCHORS"
+  ],
+  "uncovered": []
+ },
+ "declared_unsealed": {
+  "code_sha256_12": "the instrument's own digest, taken over its bytes",
+  "coverage": "computed from the ledger after the snapshot",
+  "declared_unsealed": "this declaration",
+  "exit_conventions": "a constant",
+  "gate_digests": "derived from the ledger after the snapshot",
+  "gates": "the ledger rows themselves; sealing them would seal the object that records the seal",
+  "ledger_shape": "derived from the ledger after the snapshot",
+  "paper_sha256_12": "the paper's digest, taken over its bytes",
+  "pin_sha256_prefix": "the pin's digest, verified at G-SOURCES-AT-THEIR-PINNED-DIGESTS",
+  "preregistered_heads": "the pin's own list",
+  "provenance": "verified at G-SOURCES-AT-THEIR-PINNED-DIGESTS",
+  "python": "the interpreter's own version string",
+  "schema": "a constant",
+  "seal_manifest": "the manifest cannot seal itself",
+  "totals": "closes over the ledger and is verified at the disk boundary by total byte comparison instead",
+  "transcript_head": "the transcript is compared byte for byte at the disk boundary",
+  "unit": "a constant",
+  "verdict": "compared by string equality against the comparator's reconstruction at G-THE-TWO-HEAD-LAWS-AGREE",
+  "verdict_head": "the head word, derived at G-THE-HEAD-IS-DERIVED",
+  "waiver_ledger": "a static registry, verified by G-COVERAGE-AT-AN-HONEST-DENOMINATOR"
+ },
+ "discriminator": {
+  "area_discriminating_comparisons": 2,
+  "creutz_rungs": 4,
+  "definition": "AREA-AGAINST-PERIMETER-IN-THREE-LEGS-ALL-EXACT",
+  "family_level_pinning_dies_at": "L-DIVISIBLE-BY-EIGHT",
+  "ladder_extents": [
+   1,
+   2,
+   3
+  ],
+  "ladder_shapes": 9,
+  "leg_area": "AT-EQUAL-PERIMETER-DOES-THE-EXPECTATION-MOVE-WITH-THE-AREA",
+  "leg_creutz": "CHI(A,B)=W(A,B)W(A-1,B-1)/(W(A,B-1)W(A-1,B))-ONE-FOR-A-LAW-GEOMETRIC-IN-THE-PERIMETER",
+  "leg_winding": "THE-WINDING-CYCLE-EXPECTATION-AS-THE-ORDER-PARAMETER-ANALOGUE",
+  "perimeter_classes": {
+   "2": 1,
+   "3": 2,
+   "4": 3,
+   "5": 2,
+   "6": 1
+  },
+  "the_L_boundary": [
+   {
+    "L": 2,
+    "residual_order_on_the_torus": 2,
+    "the_link_stencils_gauge_image": 8,
+    "the_merging_index": 4,
+    "the_odd_twist_is_a_gauge_transformation_here": false
+   },
+   {
+    "L": 4,
+    "residual_order_on_the_torus": 4,
+    "the_link_stencils_gauge_image": 8,
+    "the_merging_index": 2,
+    "the_odd_twist_is_a_gauge_transformation_here": false
+   },
+   {
+    "L": 8,
+    "residual_order_on_the_torus": 8,
+    "the_link_stencils_gauge_image": 8,
+    "the_merging_index": 1,
+    "the_odd_twist_is_a_gauge_transformation_here": true
+   },
+   {
+    "L": 16,
+    "residual_order_on_the_torus": 8,
+    "the_link_stencils_gauge_image": 8,
+    "the_merging_index": 1,
+    "the_odd_twist_is_a_gauge_transformation_here": true
+   }
+  ],
+  "the_L_boundary_law": "THE-MERGING-INDEX-IS-8/GCD(L,8)",
+  "the_comparisons": [
+   "1-3/2-2",
+   "2-2/3-1"
+  ],
+  "the_rungs": [
+   "2-2",
+   "2-3",
+   "3-2",
+   "3-3"
+  ],
+  "well_defined_at_the_declared_L": true
+ },
+ "exit_conventions": {
+  "delivery": "0 on success, 1 on any refusal, writing nothing",
+  "mutant": "0 when the named mutant DIES on its declared target with the artifacts unchanged",
+  "selftest": "0 when every anchor class is fatal and nothing is written",
+  "unknown_flag": "2"
+ },
+ "family_slices": {
+  "rows": [
+   {
+    "area_seen": false,
+    "class": 0,
+    "coupling": "1/2",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "plaquette_expectation": "442381631489/339302416385",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "area_seen": false,
+    "class": 0,
+    "coupling": "2",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "plaquette_expectation": "4294967399/4294967375",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "area_seen": false,
+    "class": 0,
+    "coupling": "4",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "plaquette_expectation": "18446744073709551719/18446744073709551695",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "area_seen": false,
+    "class": 1,
+    "coupling": "1/2",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "plaquette_expectation": "442381631489/339302416385",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "area_seen": false,
+    "class": 1,
+    "coupling": "2",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "plaquette_expectation": "4294967399/4294967375",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "area_seen": false,
+    "class": 1,
+    "coupling": "4",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "plaquette_expectation": "18446744073709551719/18446744073709551695",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "area_seen": false,
+    "class": 2,
+    "coupling": "1/2",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "plaquette_expectation": "442381631489/339302416385",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "area_seen": false,
+    "class": 2,
+    "coupling": "2",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "plaquette_expectation": "4294967399/4294967375",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "area_seen": false,
+    "class": 2,
+    "coupling": "4",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "plaquette_expectation": "18446744073709551719/18446744073709551695",
+    "winding_word": "WINDING-ORDER-ZERO"
+   }
+  ],
+  "slices": 9,
+  "the_coupling_values": [
+   "1/2",
+   "2",
+   "4"
+  ]
+ },
+ "family_sweep": {
+  "active_mode_tally": {
+   "1": 32,
+   "2": 64,
+   "3": 40
+  },
+  "area_seen_tally": {
+   "False": 136
+  },
+  "coupling_dependent_observables": [
+   "ladder_word",
+   "creutz_is_unit",
+   "winding_word",
+   "mode_A",
+   "mode_B",
+   "mode_C",
+   "active_modes"
+  ],
+  "edge_midpoints": 72,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24-NO-MEASURE-OVER-THE-FAMILY-IS-DECLARED",
+  "extreme_points": 136,
+  "family_invariant_observables": [
+   "area_seen"
+  ],
+  "ladder_word_tally": {
+   "DECONFINES": 24,
+   "DISCRIMINATOR-DEGENERATE": 112
+  },
+  "mode": "(b)-FAMILY-SWEPT-OVER-THE-EXTREME-POINTS",
+  "rows": [
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 0,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DECONFINES",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 1,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DECONFINES",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 2,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DECONFINES",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 3,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DECONFINES",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 4,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DECONFINES",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 5,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DECONFINES",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 6,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DECONFINES",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 7,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DECONFINES",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 8,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 9,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 10,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 11,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 12,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "4",
+    "mode_B": "-2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "-4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 13,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 14,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 15,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 16,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2",
+    "mode_B": "-1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "-2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 17,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 18,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 19,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 20,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 21,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 22,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 23,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 24,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 25,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 26,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 27,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "4",
+    "mode_B": "-2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "-4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 28,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 29,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 30,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 31,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 32,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2",
+    "mode_B": "-1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "-2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 33,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 34,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 35,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 36,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 37,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 38,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 39,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 40,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 41,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 42,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "4",
+    "mode_B": "-2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "-4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 43,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 44,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 45,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 46,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 47,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 48,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2",
+    "mode_B": "-1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "-2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 49,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 50,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 51,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 52,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 53,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 54,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 55,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 56,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 57,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "4",
+    "mode_B": "-2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "-4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 58,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 59,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 60,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 61,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 62,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 63,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 64,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2",
+    "mode_B": "-1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "-2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 65,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 66,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 67,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 68,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 69,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 70,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 71,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 72,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "4",
+    "mode_B": "-2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "-4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 73,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 74,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 75,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 76,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 77,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 78,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 79,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 80,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2",
+    "mode_B": "-1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "-2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 81,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 82,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 83,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 84,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 85,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 86,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 87,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 88,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 89,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 90,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 91,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 92,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 93,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 94,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 95,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "4",
+    "mode_B": "-2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "-4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 96,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2",
+    "mode_B": "-1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "-2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 97,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 98,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 99,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 100,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 101,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 102,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 103,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 104,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 105,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 106,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 107,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 108,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 109,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 110,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "4",
+    "mode_B": "-2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "-4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 111,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 112,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2",
+    "mode_B": "-1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "-2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 113,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 114,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 115,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 116,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 117,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 118,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 119,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 120,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 121,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 122,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+-1*sqrt2",
+    "mode_B": "0+1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 123,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 124,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 125,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "4",
+    "mode_B": "-2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "-4",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 126,
+    "kind": "VERTEX",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2+1*sqrt2",
+    "mode_B": "0+-1*sqrt2",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0+-2*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 1,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": true,
+    "creutz_is_unit": true,
+    "extreme_point": 127,
+    "kind": "VERTEX",
+    "ladder_word": "DECONFINES",
+    "mode_A": "2",
+    "mode_B": "0",
+    "mode_C": "0",
+    "size": 1,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 128,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "2",
+    "mode_B": "-1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "-2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 129,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 130,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 131,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 132,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "0",
+    "mode_B": "1",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 133,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+-1/2*sqrt2",
+    "mode_B": "0+1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   },
+   {
+    "active_modes": 2,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 134,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1",
+    "mode_B": "0",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0",
+    "winding_word": "WINDING-ORDER-ZERO"
+   },
+   {
+    "active_modes": 3,
+    "area_seen": false,
+    "creutz_defined": true,
+    "creutz_is_constant": false,
+    "creutz_is_unit": false,
+    "extreme_point": 135,
+    "kind": "EDGE-MIDPOINT",
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "mode_A": "1+1/2*sqrt2",
+    "mode_B": "0+-1/2*sqrt2",
+    "mode_C": "1",
+    "size": 8,
+    "winding": "0+-1*sqrt2",
+    "winding_word": "WINDING-ORDER-NONZERO"
+   }
+  ],
+  "vertices": 64,
+  "winding_word_tally": {
+   "WINDING-ORDER-NONZERO": 96,
+   "WINDING-ORDER-ZERO": 40
+  }
+ },
+ "gate_digests": {
+  "G-ARENA-REBUILT": "8af95935bbb0",
+  "G-CONSUMER-REGISTER-IS-REAL": "92bd5a7923a9",
+  "G-COVERAGE-AT-AN-HONEST-DENOMINATOR": "f62742e5bbad",
+  "G-EVERY-MUTANT-DESCRIPTION-IS-TRUE": "f3e3f2eccadb",
+  "G-EVERY-PREREGISTERED-WORD-IS-EMITTABLE": "60a27d432173",
+  "G-PAPER-CLAIMS-RENDERED": "6d6ab181edf2",
+  "G-PAPER-HEADERS-BOUND": "62b629101eb9",
+  "G-PAPER-MUST-NOT": "c9543b48ba75",
+  "G-PAPER-NUMERALS-COVERED": "f2e2e4683fcc",
+  "G-PAPER-POLARITY": "7e047adef784",
+  "G-PAPER-QUOTES-INSIDE-THE-WINDOWS": "6d36b0b38004",
+  "G-PAPER-SPELLED-NUMERALS": "731ae7bbc9f0",
+  "G-PAPER-TABLE-ROWS-COVERED": "f81aec45f4a7",
+  "G-PAPER-VERDICT-BLOCK": "e0347feac9ac",
+  "G-PATH-VALUE-ANCHORS": "aab45bd3b464",
+  "G-PLAQUETTE-ROW-REPRODUCED": "79336a5c6d2f",
+  "G-SOURCES-AT-THEIR-PINNED-DIGESTS": "6b418bcb4e77",
+  "G-THE-ARITHMETIC-IS-EXACT": "ea2d929a2f84",
+  "G-THE-BOUNDARY-LATTICE-RUN": "d633b7e76726",
+  "G-THE-CLASSES-REBUILT": "62785c817c3a",
+  "G-THE-CONFINEMENT-LICENCE-WALL": "cd73250e9868",
+  "G-THE-CONJUGATION-SPLIT-IS-EXACT": "2674757414ea",
+  "G-THE-CONTROL-STAMP-CARRIED": "76f04d86ea3a",
+  "G-THE-DECLARED-ROWS-BUILT": "f536df79a7fa",
+  "G-THE-DISCRIMINATOR-IS-WELL-DEFINED": "eea69e0f14d8",
+  "G-THE-EXTREME-POINTS-REBUILT": "f9e9f0a85e62",
+  "G-THE-FAMILY-SLICES": "25bc38998deb",
+  "G-THE-FAMILY-SWEEP-IS-TOTAL": "7df7f59407f9",
+  "G-THE-FUNCTION-INVENTORY-IS-TOTAL": "53c94e2a8ae9",
+  "G-THE-HEAD-IS-DERIVED": "c3449b0ae781",
+  "G-THE-LADDER-CLOSED-FORM": "c4e2f252c4a6",
+  "G-THE-LADDER-IS-A-FUNCTION-OF-THE-PERIMETER-ALONE": "4c54b11f9c9d",
+  "G-THE-LEDGER-CHAIN-VERIFIES": "986fe23340f5",
+  "G-THE-LOOP-FAMILY-IS-A-FAMILY-OF-LOOPS": "1769e74a73cf",
+  "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP": "6c3b5dee917c",
+  "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT": "e80cc869dff9",
+  "G-THE-LOOP-OBSERVABLE-IS-BASE-POINT-BLIND": "f4d2be97e509",
+  "G-THE-LOOP-OBSERVABLE-IS-REVERSAL-BLIND": "456a9b67f9ca",
+  "G-THE-MERGING-INDEX-LAW-REPRODUCED": "9e3445f25cbf",
+  "G-THE-MUTANT-REGISTRY-IS-TOTAL": "7fb20b898184",
+  "G-THE-ODD-OBSERVABLES-CARRY-THEIR-DECLARATION": "9dca66244e2d",
+  "G-THE-ODD-PART-IS-ORIENTATION-ODD": "9f1de2f8c159",
+  "G-THE-ORDER-PARAMETER-RANGE": "2c9faf7fae92",
+  "G-THE-ORIENTATION-READING-IS-PRICED": "784dc227ebd8",
+  "G-THE-PRICE-BINDING": "f34bc06e94f5",
+  "G-THE-SPECTRAL-DOOR": "b1761112acfb",
+  "G-THE-TWO-HEAD-LAWS-AGREE": "65b1da9d358f",
+  "G-VERBATIM-ANCHORS": "33cf8e56bf35"
+ },
+ "gates": [
+  {
+   "claim": "every parent this unit reads is verified BY ITS OWN PATH against a digest frozen in the pin, so a pair of sources exchanged between two paths stops matching and the delivery run refuses; a source absent at its pinned path is a named gate failure and not an uncaught traceback",
+   "detail": "9 sources, 9 at their pinned digests",
+   "gate": "G-SOURCES-AT-THEIR-PINNED-DIGESTS",
+   "kind": "MEASURED",
+   "link": "6b418bcb4e77",
+   "passed": true,
+   "prev": "GENESIS"
+  },
+  {
+   "claim": "every number this unit inherits is read at a NAMED PATH inside a named parent's receipt and required to equal the value the pin froze, and every anchor names the gate that consumes it, so a parent field that moved -- or an anchor no consumer reads -- stops the delivery run",
+   "detail": "29 path-value anchors, 29 agreeing",
+   "gate": "G-PATH-VALUE-ANCHORS",
+   "kind": "MEASURED",
+   "link": "aab45bd3b464",
+   "passed": true,
+   "prev": "6b418bcb4e77"
+  },
+  {
+   "claim": "every window this unit quotes from a parent is pinned by the digest of its exact bytes, by its own character count against a declared floor, is located EXACTLY ONCE under whitespace and markdown-prefix normalisation, is perturbed at a content-bearing token and required to stop being locatable, and is bound to the gate that consumes it",
+   "detail": "15 windows, 15 located exactly once, 15 above their floors",
+   "gate": "G-VERBATIM-ANCHORS",
+   "kind": "MEASURED",
+   "link": "33cf8e56bf35",
+   "passed": true,
+   "prev": "aab45bd3b464"
+  },
+  {
+   "claim": "an AST scan of this instrument's own syntax tree is a gate, and it carries the clause the pin's multiplicative framing needs: no call to a logarithm, an exponential, a square root or a power exists in this source at all, no floating-point literal occurs anywhere, and no banned module is named -- so exact arithmetic is a property of the instrument rather than a promise about it",
+   "detail": "114 functions; banned calls []; banned names []; float literals 0",
+   "gate": "G-THE-ARITHMETIC-IS-EXACT",
+   "kind": "MEASURED",
+   "link": "ea2d929a2f84",
+   "passed": true,
+   "prev": "33cf8e56bf35"
+  },
+  {
+   "claim": "the mutant registry is checked TOTAL against the instrument's own syntax tree: every switch the scan can read is declared and every declared mutant is present in the source, and a switch the scan CANNOT read is fatal rather than forgiven, so a falsifier cannot exist as an unswept branch",
+   "detail": "49 switches in the tree, 49 declared; unregistered []; unused []",
+   "gate": "G-THE-MUTANT-REGISTRY-IS-TOTAL",
+   "kind": "MEASURED",
+   "link": "7fb20b898184",
+   "passed": true,
+   "prev": "ea2d929a2f84"
+  },
+  {
+   "claim": "the function inventory is checked total the same way, so a helper that appeared after the inventory was written -- or one that vanished from it -- stops the delivery run",
+   "detail": "114 functions in the tree, 112 declared; undeclared []; missing []",
+   "gate": "G-THE-FUNCTION-INVENTORY-IS-TOTAL",
+   "kind": "MEASURED",
+   "link": "53c94e2a8ae9",
+   "passed": true,
+   "prev": "7fb20b898184"
+  },
+  {
+   "claim": "E-23: each mutant's published description names the exact token it plants or changes, and that token is located in this instrument's own source text -- a description that has drifted from the code it describes stops the run",
+   "detail": "49 mutants, 49 with their named token located, none missing",
+   "gate": "G-EVERY-MUTANT-DESCRIPTION-IS-TRUE",
+   "kind": "MEASURED",
+   "link": "f3e3f2eccadb",
+   "passed": true,
+   "prev": "53c94e2a8ae9"
+  },
+  {
+   "claim": "the alphabet, the coin family, the lattice, the link set and the plaquette set are REBUILT here from the parents' own declarations -- nothing is imported -- and every cardinality is required to equal the parent's published one at a named receipt path, with unitarity confirmed by a second route on every coin",
+   "detail": "alphabet 25, coins 640 (ANTIDIAGONAL 64, BALANCED 512, DIAGONAL 64), unitary by a second route 640, sites 16, links 32, plaquettes 16",
+   "gate": "G-ARENA-REBUILT",
+   "kind": "MEASURED",
+   "link": "8af95935bbb0",
+   "passed": true,
+   "prev": "f3e3f2eccadb"
+  },
+  {
+   "claim": "the parent's own receipt records ZERO loop families grown, and its paper names the family of loops whose size can grow as the gate on everything beyond; this unit reads that field at its named path and builds the object rather than quoting the gap",
+   "detail": "the parent grew 0 loop families; this unit builds the family and gates it",
+   "gate": "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
+   "kind": "MEASURED",
+   "link": "e80cc869dff9",
+   "passed": true,
+   "prev": "8af95935bbb0"
+  },
+  {
+   "claim": "the declared family is enumerated with no silent cap -- the rectangle extents are swept to the lattice period itself and the SIMPLE ones are measured rather than assumed -- every member closes, every step is an adjacency, every placement carries a distinct canonical name, and the winding arm is populated as well as the contractible one",
+   "detail": "192 placements, 192 distinct loops, 144 contractible and 48 winding, simple extents [1, 2, 3] at 9 of 16 swept sizes",
+   "gate": "G-THE-LOOP-FAMILY-IS-A-FAMILY-OF-LOOPS",
+   "kind": "MEASURED",
+   "link": "1769e74a73cf",
+   "passed": true,
+   "prev": "e80cc869dff9"
+  },
+  {
+   "claim": "distinctness is measured under the acting group at both declared readings: the anchored chart group is the parent's own, the declared family is required to be CLOSED under it, and the orbit count -- which is how many loops this arena really has, as against how many placements -- is computed, not typed.  The extension reading's escape count is published rather than absorbed",
+   "detail": "ANCHORED: order 32, 192 loops, 11 orbits, sizes [8, 16, 32], escapes 0; EXTENSION: order 128, 192 loops, 11 orbits, sizes [8, 16, 32], escapes 16",
+   "gate": "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP",
+   "kind": "MEASURED",
+   "link": "6c3b5dee917c",
+   "passed": true,
+   "prev": "1769e74a73cf"
+  },
+  {
+   "claim": "the induced classes on the carrier are rebuilt from the twist action alone and required to land on the parent's published counts: the residual gauge group of the torus gives the parent's orbits, the full link-stencil gauge image gives the classes, the classes are measured to COARSEN the orbits, and the number of merged pairs is the parent's own",
+   "detail": "136 classes with size profile [(1, 64), (8, 72)], 208 parent orbits, coarsening True, 72 pairs merged",
+   "gate": "G-THE-CLASSES-REBUILT",
+   "kind": "MEASURED",
+   "link": "62785c817c3a",
+   "passed": true,
+   "prev": "6c3b5dee917c"
+  },
+  {
+   "claim": "the extreme points of the reachable set are the uniform measures on the classes: a class the odd twist fixes is a VERTEX of the parent's simplex and a class it merges is a MIDPOINT of one of its edges, and the split is required to equal the parent's published one",
+   "detail": "136 extreme points: 64 vertices and 72 edge midpoints",
+   "gate": "G-THE-EXTREME-POINTS-REBUILT",
+   "kind": "MEASURED",
+   "link": "f9e9f0a85e62",
+   "passed": true,
+   "prev": "62785c817c3a"
+  },
+  {
+   "claim": "the loop observable is rebuilt from R5's own definition and is the parent's own admissible object -- the CONJUGATION-SYMMETRIC part of the loop trace, which lies in the real subfield by construction -- measured on the whole carrier at EVERY placement of every declared shape: the value at one base point equals the value at every other, which is what makes an expectation over the family a function of the shape and not of where the loop was put, and how many shapes have an already real raw trace is published rather than assumed",
+   "detail": "18 shapes, 111360 placement-by-coin comparisons, 0 mismatches, 0 values outside the real subfield, 9 of 18 shapes whose raw trace is already real at every coin (7760 of 11520 shape-by-coin traces)",
+   "gate": "G-THE-LOOP-OBSERVABLE-IS-BASE-POINT-BLIND",
+   "kind": "MEASURED",
+   "link": "f4d2be97e509",
+   "passed": true,
+   "prev": "f9e9f0a85e62"
+  },
+  {
+   "claim": "the canonical name of a loop admits its reversal, and that admission is EARNED rather than declared: the reversed loop's holonomy is the inverse, whose trace is the conjugate, and on this carrier every trace is real -- so the reversed loop's trace is measured equal at every shape and every coin",
+   "detail": "11520 reversed-loop comparisons, 0 disagreements",
+   "gate": "G-THE-LOOP-OBSERVABLE-IS-REVERSAL-BLIND",
+   "kind": "MEASURED",
+   "link": "456a9b67f9ca",
+   "passed": true,
+   "prev": "f4d2be97e509"
+  },
+  {
+   "claim": "the one member of this family the parents already measured is reproduced from these primitives before anything new is said: the plaquette's trace takes the parent's own number of distinct values on the carrier, its counting-measure expectation is the parent's published number, and the count of non-flat diagonal coins is the grandparent's",
+   "detail": "11 distinct values, counting expectation 13/10, 56 non-flat diagonal coins, 8 flat coins",
+   "gate": "G-PLAQUETTE-ROW-REPRODUCED",
+   "kind": "MEASURED",
+   "link": "79336a5c6d2f",
+   "passed": true,
+   "prev": "456a9b67f9ca"
+  },
+  {
+   "claim": "the discriminator's own well-definedness at the declared lattice is a MEASUREMENT taken before any row runs: the ladder must carry at least one comparison at equal perimeter and unequal area, and at least one Creutz rung; if it carried neither, the honest verdict would be that the discriminator is degenerate at this lattice and no row could rescue it",
+   "detail": "9 ladder shapes over extents [1, 2, 3]; 2 area-discriminating comparisons ['1-3/2-2', '2-2/3-1']; 4 Creutz rungs ['2-2', '2-3', '3-2', '3-3']",
+   "gate": "G-THE-DISCRIMINATOR-IS-WELL-DEFINED",
+   "kind": "MEASURED",
+   "link": "eea69e0f14d8",
+   "passed": true,
+   "prev": "79336a5c6d2f"
+  },
+  {
+   "claim": "the L-boundary is stated as a measured law and not as a quoted one: the merging index is eight over the greatest common divisor of L and eight, it is the parent's own value at the declared size, and it is one at every L divisible by eight -- where no class merges, so every claim this unit makes about the class structure carries its lattice scope",
+   "detail": "the link stencil's gauge image is measured at 8 distinct actions and the phase order is 8; L=2 index 4; L=4 index 2; L=8 index 1; L=16 index 1",
+   "gate": "G-THE-MERGING-INDEX-LAW-REPRODUCED",
+   "kind": "MEASURED",
+   "link": "9e3445f25cbf",
+   "passed": true,
+   "prev": "eea69e0f14d8"
+  },
+  {
+   "claim": "at every coin of the carrier and at every pair of ladder shapes of equal perimeter, the loop observable takes the SAME value -- the area does not enter it.  This is measured per-configuration, not per-expectation, so it holds under every measure on this carrier without a second census",
+   "detail": "5760 shape-by-coin comparisons at equal perimeter, 0 disagreements",
+   "gate": "G-THE-LADDER-IS-A-FUNCTION-OF-THE-PERIMETER-ALONE",
+   "kind": "MEASURED",
+   "link": "4c54b11f9c9d",
+   "passed": true,
+   "prev": "9e3445f25cbf"
+  },
+  {
+   "claim": "the ladder's dependence on the perimeter is fitted EXACTLY from three points to a constant, a term proportional to the perimeter and a term halving with it, and then VERIFIED at every remaining point of the ladder at every coin -- an over-determined test, not a fit",
+   "detail": "640 coins, ladder over perimeters [2, 3, 4, 5, 6], 2 verification points each, 0 failures",
+   "gate": "G-THE-LADDER-CLOSED-FORM",
+   "kind": "MEASURED",
+   "link": "c4e2f252c4a6",
+   "passed": true,
+   "prev": "4c54b11f9c9d"
+  },
+  {
+   "claim": "each declared weight system is rebuilt here and its plaquette expectation is required to equal the parent's own published number at a named receipt path before any larger loop is believed; the Wilson weight is measured to be a function of the trace's conjugation-symmetric invariant; every row carries the stamp CONDITIONAL-ON-THE-DECLARED-WEIGHTS on its own row, so an unstamped expectation stops the run",
+   "detail": "4 rows, all stamped True, conjugation-symmetric True; plaquette expectations [('THE-EXHIBITED-WITNESS', '4294967399/4294967375'), ('THE-LAW-NATIVE-CONTROL', '225/152'), ('THE-NULL', '13/10'), ('THE-WILSON-CONJUGATION-SYMMETRIC', '262244/65615')]",
+   "gate": "G-THE-DECLARED-ROWS-BUILT",
+   "kind": "MEASURED",
+   "link": "f536df79a7fa",
+   "passed": true,
+   "prev": "c4e2f252c4a6"
+  },
+  {
+   "claim": "the law-native row enters this unit AS A CONTROL: its stamp is carried VERBATIM from the parent's receipt, its three sector masses are read at a named path and required to normalise, and its row is published as a TRANSPORTED law value and never as a derived measure -- a row that called it derived would stop the run",
+   "detail": "stamp 'LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION'; the row's measure field is TRANSPORTED-NOT-DERIVED; the sector law ['15/38', '5/19', '13/38'] sums to 1",
+   "gate": "G-THE-CONTROL-STAMP-CARRIED",
+   "kind": "MEASURED",
+   "link": "76f04d86ea3a",
+   "passed": true,
+   "prev": "f536df79a7fa"
+  },
+  {
+   "claim": "the sweep runs EVERY extreme point of the reachable set, not a sample: each observable is then classified FAMILY-INVARIANT or coupling-dependent by whether its value moves across those extreme points, and both arms are required to be populated so that neither classification is vacuous",
+   "detail": "136 extreme points swept; area-seen tally {'False': 136}; ladder tally {'DECONFINES': 24, 'DISCRIMINATOR-DEGENERATE': 112}; winding tally {'WINDING-ORDER-NONZERO': 96, 'WINDING-ORDER-ZERO': 40}; 1 family-invariant and 7 coupling-dependent observables",
+   "gate": "G-THE-FAMILY-SWEEP-IS-TOTAL",
+   "kind": "MEASURED",
+   "link": "7df7f59407f9",
+   "passed": true,
+   "prev": "76f04d86ea3a"
+  },
+  {
+   "claim": "the interior of the allowed space is sampled by exact one-parameter slices as well as its corners -- one class raised to three declared exact rational couplings -- and the area leg's verdict is required to be the same there, while the expectations themselves are required to MOVE, so the slice is not a constant row wearing a parameter",
+   "detail": "9 slices; distinct plaquette expectations 3; area-seen at 0 of them",
+   "gate": "G-THE-FAMILY-SLICES",
+   "kind": "MEASURED",
+   "link": "25bc38998deb",
+   "passed": true,
+   "prev": "7df7f59407f9"
+  },
+  {
+   "claim": "the partition question is answered LEG BY LEG and by counting, never by argument: the inventory the parent handed over is one coupling per class after the normalisation base is fixed, each coupling's strong limit is the extreme point on its own class, and each leg of the discriminator is asked how many couplings fall on each side.  A leg whose value never moves is FAMILY-INVARIANT and a leg whose value moves partitions the inventory exactly",
+   "detail": "135 couplings against 136 extreme points; 9 legs, 7 of them partitioning; the area leg is FAMILY-INVARIANT",
+   "gate": "G-THE-PRICE-BINDING",
+   "kind": "MEASURED",
+   "link": "f34bc06e94f5",
+   "passed": true,
+   "prev": "25bc38998deb"
+  },
+  {
+   "claim": "the parent's falsifier is put to the order-parameter analogue: the winding expectation's range is measured three times -- over its own values on the carrier, over the parent's invariant simplex where it is the hull of the orbit averages, and over the reachable set where it is the hull of the CLASS averages -- and an observable is pinned by the action route exactly when the third is narrower than the second",
+   "detail": "own range [-4, 4]; over the invariant simplex [-4, 4]; over the reachable set [-4, 4]; pinned False",
+   "gate": "G-THE-ORDER-PARAMETER-RANGE",
+   "kind": "MEASURED",
+   "link": "2c9faf7fae92",
+   "passed": true,
+   "prev": "f34bc06e94f5"
+  },
+  {
+   "claim": "the transfer object's own spectrum is measured rather than assumed: the winding cycle's power-sum ladder gives the characteristic polynomial of the winding holonomy by Newton's identities in exact arithmetic, its determinant is required to have modulus one and its coefficient sequence to be self-inversive -- the signature of a matrix whose spectrum lies on the unit circle, which is what settles WHERE the ladder's decay can and cannot live",
+   "detail": "640 holonomies; determinant of modulus one at 640; self-inversive at 640; the ladder spectrum {1,1,1/2} with gap 1/2",
+   "gate": "G-THE-SPECTRAL-DOOR",
+   "kind": "MEASURED",
+   "link": "b1761112acfb",
+   "passed": true,
+   "prev": "2c9faf7fae92"
+  },
+  {
+   "claim": "the oriented chart subgroup is DECLARED as an alternative symmetry standard and never derived, and its price is measured rather than argued: the index of the oriented subgroup in the chart group is the convention purchased, and the form census at the link grain is re-run at all four readings so that what the smaller covariance group costs -- or fails to cost -- in couplings is a number.  Every row carries the declaration stamp",
+   "detail": "ANCHORED: chart 32, stabiliser 1, acting 8, orbits 136, couplings 135, index 2; ANCHORED-ORIENTED: chart 16, stabiliser 1, acting 8, orbits 136, couplings 135, index 2; EXTENSION: chart 128, stabiliser 4, acting 16, orbits 80, couplings 79, index 2; EXTENSION-ORIENTED: chart 64, stabiliser 2, acting 16, orbits 80, couplings 79, index 2",
+   "gate": "G-THE-ORIENTATION-READING-IS-PRICED",
+   "kind": "MEASURED",
+   "link": "784dc227ebd8",
+   "passed": true,
+   "prev": "b1761112acfb"
+  },
+  {
+   "claim": "every loop trace is split exactly into its conjugation-symmetric and conjugation-odd parts and the two are required to reconstruct it in the full field at every shape and every coin, so the odd part this reading makes lawful is the parent's own trace minus the parent's own admissible object and not a new quantity",
+   "detail": "11520 shape-by-coin traces split, 0 reconstruction failures, 3760 carrying a non-zero odd part at 9 of 18 shapes",
+   "gate": "G-THE-CONJUGATION-SPLIT-IS-EXACT",
+   "kind": "MEASURED",
+   "link": "2674757414ea",
+   "passed": true,
+   "prev": "784dc227ebd8"
+  },
+  {
+   "claim": "the odd part is measured to change sign under the reversal a reflection performs, at every shape and every coin -- which is exactly why it is unlawful at the full chart standard and lawful at the oriented one, and it makes the declaration's content a measurement rather than a definition",
+   "detail": "11520 reversed comparisons, 0 that did not negate",
+   "gate": "G-THE-ODD-PART-IS-ORIENTATION-ODD",
+   "kind": "MEASURED",
+   "link": "9f1de2f8c159",
+   "passed": true,
+   "prev": "2674757414ea"
+  },
+  {
+   "claim": "what the oriented declaration buys is published as values, and every one of them carries the stamp DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING on its own row: an odd-part value rendered without its declaration stops the delivery run, because outside that declaration it is not an observable of this arena at all",
+   "detail": "4 declared rows carry odd observables at [0, 0, 0, 0] of the family's shapes; 96 of 136 extreme points carry at least one",
+   "gate": "G-THE-ODD-OBSERVABLES-CARRY-THEIR-DECLARATION",
+   "kind": "MEASURED",
+   "link": "9dca66244e2d",
+   "passed": true,
+   "prev": "9f1de2f8c159"
+  },
+  {
+   "claim": "the L-boundary is RUN and not projected: at the smallest lattice size where the merging index is one, the ladder is still a function of the perimeter alone across every area-discriminating comparison, the closed form still holds over a strictly longer ladder with the SAME coefficients coin by coin, and the class structure loses its merges entirely -- so the two halves of this unit's findings are measured to carry different lattice scopes",
+   "detail": "L=8: 49 simple shapes, 70 area-discriminating comparisons against 2 here, 44800 comparison-by-coin checks with 0 disagreements, closed-form failures 0, identical coefficients at 640 of 640 coins, 136 parent orbits and 136 classes with 0 merges",
+   "gate": "G-THE-BOUNDARY-LATTICE-RUN",
+   "kind": "MEASURED",
+   "link": "d633b7e76726",
+   "passed": true,
+   "prev": "9dca66244e2d"
+  },
+  {
+   "claim": "the head law is measured multi-way rather than declared so: each pre-registered word is produced by driving a DECLARED synthetic ladder -- a law geometric in the area, a law geometric in the perimeter, a ladder with a vanishing rung, a ladder the family does not cover, and two rows that disagree -- through the same discriminator and the same head law the delivered rows go through, with no delivered field overwritten and no row forged",
+   "detail": "5 control arms, 5 agreeing; 5 distinct head words against 5 pre-registered",
+   "gate": "G-EVERY-PREREGISTERED-WORD-IS-EMITTABLE",
+   "kind": "MEASURED",
+   "link": "60a27d432173",
+   "passed": true,
+   "prev": "d633b7e76726"
+  },
+  {
+   "claim": "the head word is DERIVED by the selector from the leg verdicts of every declared row and every extreme point, and it is required to be one of the words the pin pre-registered -- so a head that is not the measurement's own is not utterable here",
+   "detail": "the head law returns POT-SPLIT-BY-WEIGHT from 4 declared rows and 136 extreme points; row tally {'DISCRIMINATOR-DEGENERATE': 4}; sweep tally {'DECONFINES': 24, 'DISCRIMINATOR-DEGENERATE': 112}",
+   "gate": "G-THE-HEAD-IS-DERIVED",
+   "kind": "MEASURED",
+   "link": "c3449b0ae781",
+   "passed": true,
+   "prev": "60a27d432173"
+  },
+  {
+   "claim": "the complete verdict string -- head included -- is compared for equality against an INDEPENDENT reconstruction that reads only the serialized receipt, derives the head by a second head law of its own over the tallies rather than the rows, and re-renders every segment with its own format strings, sharing no helper with the builder",
+   "detail": "the builder's string and the comparator's string agree: True (3063 characters)",
+   "gate": "G-THE-TWO-HEAD-LAWS-AGREE",
+   "kind": "MEASURED",
+   "link": "65b1da9d358f",
+   "passed": true,
+   "prev": "c3449b0ae781"
+  },
+  {
+   "claim": "the gate ledger is chained row by row and the chain is VERIFIED rather than published beside an unperformed claim, so a row edited after its gate closed no longer matches the digest of its own predecessor",
+   "detail": "35 ledger rows, chain verifies True",
+   "gate": "G-THE-LEDGER-CHAIN-VERIFIES",
+   "kind": "MEASURED",
+   "link": "986fe23340f5",
+   "passed": true,
+   "prev": "65b1da9d358f"
+  },
+  {
+   "claim": "the falsifier coverage is published at an honest denominator (#34): the denominator is EVERY gate on the clean path and not only the ones already closed, each is either a declared falsifier's target or carries a registered forcing, and the late gates are listed one by one with which of the two covers them",
+   "detail": "38 gates on the clean path, 47 falsifier targets, 3 registered forcings, 0 uncovered []",
+   "gate": "G-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+   "kind": "MEASURED",
+   "link": "f62742e5bbad",
+   "passed": true,
+   "prev": "986fe23340f5"
+  },
+  {
+   "claim": "every number the paper states is RENDERED FROM THE RECEIPT and located in the delivered text at its declared occurrence count, so no count is typed and a paper that drifted from the measurement stops the delivery run",
+   "detail": "39 claims, 39 located, missing []",
+   "gate": "G-PAPER-CLAIMS-RENDERED",
+   "kind": "MEASURED",
+   "link": "6d6ab181edf2",
+   "passed": true,
+   "prev": "f62742e5bbad"
+  },
+  {
+   "claim": "the paper's fenced blocks are compared as a MULTISET against the single verdict block this run licenses, so neither a stale verdict nor a forged twin beside the clean one can be delivered, and the licensed string is itself required to equal an independent reconstruction that reads only the receipt",
+   "detail": "1 fenced blocks in the paper, 1 licensed, equal as multisets True",
+   "gate": "G-PAPER-VERDICT-BLOCK",
+   "kind": "MEASURED",
+   "link": "e0347feac9ac",
+   "passed": true,
+   "prev": "6d6ab181edf2"
+  },
+  {
+   "claim": "every direction-bearing headline is bound by a polarity list: the sentence as measured must be present and its inverse must be absent, so a headline inverted in the paper stops being locatable and the run refuses",
+   "detail": "9 polarity pairs, 9 clean",
+   "gate": "G-PAPER-POLARITY",
+   "kind": "MEASURED",
+   "link": "7e047adef784",
+   "passed": true,
+   "prev": "e0347feac9ac"
+  },
+  {
+   "claim": "column headers are bound AS CLAIMS: every header row of every delivered table is rendered from the receipt keys its own columns are, and the paper's header rows are compared as a multiset against that rendering, so two semantically opposed columns exchanged in the paper stop matching",
+   "detail": "9 header rows in the paper, 9 licensed, equal as multisets True",
+   "gate": "G-PAPER-HEADERS-BOUND",
+   "kind": "MEASURED",
+   "link": "62b629101eb9",
+   "passed": true,
+   "prev": "7e047adef784"
+  },
+  {
+   "claim": "the numeral sweep covers EVERY numeral in the delivered text including the fenced verdict block, the inline code spans and both sides of every fraction, against a registry built from the receipt's own values -- section numbers alone are stripped from headings, and that stripping is declared here rather than silently applied",
+   "detail": "591 numerals scanned, 0 uncovered []",
+   "gate": "G-PAPER-NUMERALS-COVERED",
+   "kind": "MEASURED",
+   "link": "f2e2e4683fcc",
+   "passed": true,
+   "prev": "62b629101eb9"
+  },
+  {
+   "claim": "spelled numerals above twelve are scanned too, so a count written in words cannot slip past the numeral gate: every spelled number-word the paper uses must have its value in the receipt's registry, and the scan is required to be TOTAL over the declared word list, so a truncated scan is fatal rather than permissive",
+   "detail": "17 number-words scanned of 17 declared, 0 unbacked []",
+   "gate": "G-PAPER-SPELLED-NUMERALS",
+   "kind": "MEASURED",
+   "link": "731ae7bbc9f0",
+   "passed": true,
+   "prev": "f2e2e4683fcc"
+  },
+  {
+   "claim": "the confinement vocabulary is licensed FOR THIS UNIT ONLY and only inside measured sentences: every sentence of the delivered text that uses one of the licensed words must also carry a value this run measured, the sentences that declare the wall itself are required to be located rather than assumed, and an unmeasured confinement sentence stops the delivery run",
+   "detail": "258 sentences scanned, 10 carrying a licensed word, 1 declaring the wall, 0 unlicensed []",
+   "gate": "G-THE-CONFINEMENT-LICENCE-WALL",
+   "kind": "MEASURED",
+   "link": "cd73250e9868",
+   "passed": true,
+   "prev": "731ae7bbc9f0"
+  },
+  {
+   "claim": "the pin's must-nots are swept over this paper's own text with the declaring sentences removed first, and every declaring sentence is required to be located here: no SI number and no continuum claim survives the sweep",
+   "detail": "25 forbidden tokens scanned over 257 sentences, 0 present [], 1 declaring sentences located",
+   "gate": "G-PAPER-MUST-NOT",
+   "kind": "MEASURED",
+   "link": "c9543b48ba75",
+   "passed": true,
+   "prev": "cd73250e9868"
+  },
+  {
+   "claim": "every data row of every delivered table is covered by the receipt: each numeral in each cell is required to be a value this run measured, so a table row invented in prose stops the delivery run",
+   "detail": "55 data rows, 55 covered",
+   "gate": "G-PAPER-TABLE-ROWS-COVERED",
+   "kind": "MEASURED",
+   "link": "f81aec45f4a7",
+   "passed": true,
+   "prev": "c9543b48ba75"
+  },
+  {
+   "claim": "every quotation the paper makes of a parent is required to lie INSIDE one of the pinned verbatim windows, so a paper that misquotes -- or inverts -- a definition it attributes to a parent dies on the delivery run",
+   "detail": "9 quoted lines, 0 outside every pinned window []",
+   "gate": "G-PAPER-QUOTES-INSIDE-THE-WINDOWS",
+   "kind": "MEASURED",
+   "link": "6d36b0b38004",
+   "passed": true,
+   "prev": "f81aec45f4a7"
+  },
+  {
+   "claim": "every gate named as an anchor's consumer is checked against THIS RUN'S OWN closed-gate ledger; an anchor naming a gate this instrument does not have stops the run",
+   "detail": "13 named consumers, 0 missing",
+   "gate": "G-CONSUMER-REGISTER-IS-REAL",
+   "kind": "MEASURED",
+   "link": "92bd5a7923a9",
+   "passed": true,
+   "prev": "6d36b0b38004"
+  }
+ ],
+ "ledger_shape": {
+  "head": "92bd5a7923a9",
+  "rows": 48
+ },
+ "loop_family": {
+  "contractible": 144,
+  "distinct_loops": 192,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "homology_classes": {
+   "(0, 0)": 144,
+   "(0, 1)": 4,
+   "(0, 2)": 4,
+   "(0, 3)": 4,
+   "(0, 4)": 4,
+   "(1, 0)": 4,
+   "(1, 1)": 16,
+   "(2, 0)": 4,
+   "(3, 0)": 4,
+   "(4, 0)": 4
+  },
+  "kinds": {
+   "RECTANGLE-CIRCUIT": 144,
+   "STAIRCASE-WINDING-CYCLE": 16,
+   "STRAIGHT-WINDING-CYCLE": 32
+  },
+  "orbit_rows": [
+   {
+    "chart_order": 32,
+    "closed_under_the_acting_group": true,
+    "distinct_loops": 192,
+    "images_outside_the_declared_family": 0,
+    "orbit_sizes": [
+     8,
+     16,
+     32
+    ],
+    "orbits": 11,
+    "reading": "ANCHORED"
+   },
+   {
+    "chart_order": 128,
+    "closed_under_the_acting_group": false,
+    "distinct_loops": 192,
+    "images_outside_the_declared_family": 16,
+    "orbit_sizes": [
+     8,
+     16,
+     32
+    ],
+    "orbits": 11,
+    "reading": "EXTENSION"
+   }
+  ],
+  "placements": 192,
+  "rectangle_sizes_swept": 16,
+  "simple_rectangle_extents": [
+   1,
+   2,
+   3
+  ],
+  "simple_rectangle_shapes": 9,
+  "simplicity_rows": [
+   {
+    "a": 1,
+    "b": 1,
+    "closes": true,
+    "distinct_links": 4,
+    "distinct_sites": 4,
+    "simple": true,
+    "steps": 4
+   },
+   {
+    "a": 1,
+    "b": 2,
+    "closes": true,
+    "distinct_links": 6,
+    "distinct_sites": 6,
+    "simple": true,
+    "steps": 6
+   },
+   {
+    "a": 1,
+    "b": 3,
+    "closes": true,
+    "distinct_links": 8,
+    "distinct_sites": 8,
+    "simple": true,
+    "steps": 8
+   },
+   {
+    "a": 1,
+    "b": 4,
+    "closes": true,
+    "distinct_links": 9,
+    "distinct_sites": 8,
+    "simple": false,
+    "steps": 10
+   },
+   {
+    "a": 2,
+    "b": 1,
+    "closes": true,
+    "distinct_links": 6,
+    "distinct_sites": 6,
+    "simple": true,
+    "steps": 6
+   },
+   {
+    "a": 2,
+    "b": 2,
+    "closes": true,
+    "distinct_links": 8,
+    "distinct_sites": 8,
+    "simple": true,
+    "steps": 8
+   },
+   {
+    "a": 2,
+    "b": 3,
+    "closes": true,
+    "distinct_links": 10,
+    "distinct_sites": 10,
+    "simple": true,
+    "steps": 10
+   },
+   {
+    "a": 2,
+    "b": 4,
+    "closes": true,
+    "distinct_links": 10,
+    "distinct_sites": 9,
+    "simple": false,
+    "steps": 12
+   },
+   {
+    "a": 3,
+    "b": 1,
+    "closes": true,
+    "distinct_links": 8,
+    "distinct_sites": 8,
+    "simple": true,
+    "steps": 8
+   },
+   {
+    "a": 3,
+    "b": 2,
+    "closes": true,
+    "distinct_links": 10,
+    "distinct_sites": 10,
+    "simple": true,
+    "steps": 10
+   },
+   {
+    "a": 3,
+    "b": 3,
+    "closes": true,
+    "distinct_links": 12,
+    "distinct_sites": 12,
+    "simple": true,
+    "steps": 12
+   },
+   {
+    "a": 3,
+    "b": 4,
+    "closes": true,
+    "distinct_links": 11,
+    "distinct_sites": 10,
+    "simple": false,
+    "steps": 14
+   },
+   {
+    "a": 4,
+    "b": 1,
+    "closes": true,
+    "distinct_links": 9,
+    "distinct_sites": 8,
+    "simple": false,
+    "steps": 10
+   },
+   {
+    "a": 4,
+    "b": 2,
+    "closes": true,
+    "distinct_links": 10,
+    "distinct_sites": 9,
+    "simple": false,
+    "steps": 12
+   },
+   {
+    "a": 4,
+    "b": 3,
+    "closes": true,
+    "distinct_links": 11,
+    "distinct_sites": 10,
+    "simple": false,
+    "steps": 14
+   },
+   {
+    "a": 4,
+    "b": 4,
+    "closes": true,
+    "distinct_links": 8,
+    "distinct_sites": 7,
+    "simple": false,
+    "steps": 16
+   }
+  ],
+  "the_missing_object": "ACT-RECORDED-THE-LOOP-FAMILY-STILL-ABSENT-AND-THIS-UNIT-BUILDS-IT",
+  "the_window": "RECTANGLE-CIRCUITS-PLUS-STRAIGHT-AND-STAIRCASE-WINDING-CYCLES-NOT-ALL-CLOSED-PATHS",
+  "winding": 48
+ },
+ "loop_observable": {
+  "base_point_rows": [
+   {
+    "coins": 640,
+    "length": 4,
+    "mismatches": 0,
+    "placements": 16,
+    "shape": "RECTANGLE-CIRCUIT-1-1",
+    "support": 4
+   },
+   {
+    "coins": 640,
+    "length": 6,
+    "mismatches": 0,
+    "placements": 16,
+    "shape": "RECTANGLE-CIRCUIT-1-2",
+    "support": 6
+   },
+   {
+    "coins": 640,
+    "length": 8,
+    "mismatches": 0,
+    "placements": 16,
+    "shape": "RECTANGLE-CIRCUIT-1-3",
+    "support": 8
+   },
+   {
+    "coins": 640,
+    "length": 6,
+    "mismatches": 0,
+    "placements": 16,
+    "shape": "RECTANGLE-CIRCUIT-2-1",
+    "support": 6
+   },
+   {
+    "coins": 640,
+    "length": 8,
+    "mismatches": 0,
+    "placements": 16,
+    "shape": "RECTANGLE-CIRCUIT-2-2",
+    "support": 8
+   },
+   {
+    "coins": 640,
+    "length": 10,
+    "mismatches": 0,
+    "placements": 16,
+    "shape": "RECTANGLE-CIRCUIT-2-3",
+    "support": 10
+   },
+   {
+    "coins": 640,
+    "length": 8,
+    "mismatches": 0,
+    "placements": 16,
+    "shape": "RECTANGLE-CIRCUIT-3-1",
+    "support": 8
+   },
+   {
+    "coins": 640,
+    "length": 10,
+    "mismatches": 0,
+    "placements": 16,
+    "shape": "RECTANGLE-CIRCUIT-3-2",
+    "support": 10
+   },
+   {
+    "coins": 640,
+    "length": 12,
+    "mismatches": 0,
+    "placements": 16,
+    "shape": "RECTANGLE-CIRCUIT-3-3",
+    "support": 12
+   },
+   {
+    "coins": 640,
+    "length": 8,
+    "mismatches": 0,
+    "placements": 16,
+    "shape": "STAIRCASE-WINDING-CYCLE-1-1",
+    "support": 7
+   },
+   {
+    "coins": 640,
+    "length": 4,
+    "mismatches": 0,
+    "placements": 4,
+    "shape": "STRAIGHT-WINDING-CYCLE-0-1",
+    "support": 4
+   },
+   {
+    "coins": 640,
+    "length": 8,
+    "mismatches": 0,
+    "placements": 4,
+    "shape": "STRAIGHT-WINDING-CYCLE-0-2",
+    "support": 4
+   },
+   {
+    "coins": 640,
+    "length": 12,
+    "mismatches": 0,
+    "placements": 4,
+    "shape": "STRAIGHT-WINDING-CYCLE-0-3",
+    "support": 4
+   },
+   {
+    "coins": 640,
+    "length": 16,
+    "mismatches": 0,
+    "placements": 4,
+    "shape": "STRAIGHT-WINDING-CYCLE-0-4",
+    "support": 4
+   },
+   {
+    "coins": 640,
+    "length": 4,
+    "mismatches": 0,
+    "placements": 4,
+    "shape": "STRAIGHT-WINDING-CYCLE-1-0",
+    "support": 4
+   },
+   {
+    "coins": 640,
+    "length": 8,
+    "mismatches": 0,
+    "placements": 4,
+    "shape": "STRAIGHT-WINDING-CYCLE-2-0",
+    "support": 4
+   },
+   {
+    "coins": 640,
+    "length": 12,
+    "mismatches": 0,
+    "placements": 4,
+    "shape": "STRAIGHT-WINDING-CYCLE-3-0",
+    "support": 4
+   },
+   {
+    "coins": 640,
+    "length": 16,
+    "mismatches": 0,
+    "placements": 4,
+    "shape": "STRAIGHT-WINDING-CYCLE-4-0",
+    "support": 4
+   }
+  ],
+  "observable": "THE-TRACE-OF-THE-LOOP-HOLONOMY-ON-ITS-OWN-SITE-BLOCK",
+  "plaquette_counting_expectation": "13/10",
+  "plaquette_distinct_values": 11,
+  "plaquette_flat_coins": 8,
+  "plaquette_nonflat_diagonal_coins": 56,
+  "rebuilt_from": "R5-ORDERED-PRODUCT-EACH-INVERTED-AGAINST-ITS-OWN-DIRECTION",
+  "reversal_comparisons": 11520,
+  "reversal_disagreements": 0,
+  "shape_by_coin_traces_already_real": 7760,
+  "shapes_whose_raw_trace_is_already_real": 9,
+  "the_declared_observable": "THE-CONJUGATION-SYMMETRIC-PART-OF-THE-TRACE",
+  "the_reference_value_at_a_flat_configuration": "THE-BLOCK-DIMENSION-WHICH-IS-THE-LOOPS-OWN-SITE-COUNT",
+  "values_outside_the_real_subfield": 0
+ },
+ "mutants": {
+  "declared": 49,
+  "rows": [
+   {
+    "mutant": "MUT-ARENA",
+    "target": "G-ARENA-REBUILT",
+    "token": "coins = coins[:-1]",
+    "token_in_source": true,
+    "what": "drops one coin from the derived family"
+   },
+   {
+    "mutant": "MUT-SOURCE-SWAP",
+    "target": "G-SOURCES-AT-THEIR-PINNED-DIGESTS",
+    "token": "bdigest(read_bytes(\"v14/paper-34-act.md\")",
+    "token_in_source": true,
+    "what": "reads one parent's digest from another parent's path"
+   },
+   {
+    "mutant": "MUT-PATH-VALUE",
+    "target": "G-PATH-VALUE-ANCHORS",
+    "token": "val = 134",
+    "token_in_source": true,
+    "what": "moves an inherited coupling count by one"
+   },
+   {
+    "mutant": "MUT-VERBATIM",
+    "target": "G-VERBATIM-ANCHORS",
+    "token": "needle.replace(\"inverted\", \"conjugated\")",
+    "token_in_source": true,
+    "what": "inverts a word inside a quoted definition"
+   },
+   {
+    "mutant": "MUT-CONSUMER-GHOST",
+    "target": "G-CONSUMER-REGISTER-IS-REAL",
+    "token": "\"G-A-GATE-THIS-INSTRUMENT-DOES-NOT-HAVE\"",
+    "token_in_source": true,
+    "what": "names a consumer gate this instrument does not have"
+   },
+   {
+    "mutant": "MUT-SIMPLICITY",
+    "target": "G-THE-LOOP-FAMILY-IS-A-FAMILY-OF-LOOPS",
+    "token": "simple_rows[0][\"simple\"] = False",
+    "token_in_source": true,
+    "what": "calls a simple rectangle circuit non-simple"
+   },
+   {
+    "mutant": "MUT-CANON",
+    "target": "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP",
+    "token": "return min(rotations(c))",
+    "token_in_source": true,
+    "what": "drops the reversal from a loop's canonical name"
+   },
+   {
+    "mutant": "MUT-FAMILY-CLOSURE",
+    "target": "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP",
+    "token": "orbit_rows[0][\"closed_under_the_acting_group\"] = False",
+    "token_in_source": true,
+    "what": "declares the closed family unclosed"
+   },
+   {
+    "mutant": "MUT-CLASSES",
+    "target": "G-THE-CLASSES-REBUILT",
+    "token": "classes[-1] + classes[-2]",
+    "token_in_source": true,
+    "what": "fuses two induced classes into one"
+   },
+   {
+    "mutant": "MUT-BASEPOINT",
+    "target": "G-THE-LOOP-OBSERVABLE-IS-BASE-POINT-BLIND",
+    "token": "if mut(\"MUT-BASEPOINT\") and key == (\"RECTANGLE-CIRCUIT\", 1, 1)",
+    "token_in_source": true,
+    "what": "reports a base-point disagreement on the plaquette"
+   },
+   {
+    "mutant": "MUT-REVERSAL",
+    "target": "G-THE-LOOP-OBSERVABLE-IS-REVERSAL-BLIND",
+    "token": "if mut(\"MUT-REVERSAL\"):",
+    "token_in_source": true,
+    "what": "reports a reversal disagreement"
+   },
+   {
+    "mutant": "MUT-PLAQUETTE",
+    "target": "G-PLAQUETTE-ROW-REPRODUCED",
+    "token": "distinct = distinct[:-1]",
+    "token_in_source": true,
+    "what": "drops one distinct plaquette trace value"
+   },
+   {
+    "mutant": "MUT-DISCRIMINATOR-RUNGS",
+    "target": "G-THE-DISCRIMINATOR-IS-WELL-DEFINED",
+    "token": "rungs = []",
+    "token_in_source": true,
+    "what": "empties the Creutz rung list before the well-definedness gate"
+   },
+   {
+    "mutant": "MUT-MERGING-LAW",
+    "target": "G-THE-MERGING-INDEX-LAW-REPRODUCED",
+    "token": "lrows[1][\"the_merging_index\"] = 1",
+    "token_in_source": true,
+    "what": "sets the merging index at the declared size to one"
+   },
+   {
+    "mutant": "MUT-PERIMETER-ONLY",
+    "target": "G-THE-LADDER-IS-A-FUNCTION-OF-THE-PERIMETER-ALONE",
+    "token": "perim_only = 1",
+    "token_in_source": true,
+    "what": "reports an equal-perimeter disagreement"
+   },
+   {
+    "mutant": "MUT-CLOSED-FORM",
+    "target": "G-THE-LADDER-CLOSED-FORM",
+    "token": "if mut(\"MUT-CLOSED-FORM\"):",
+    "token_in_source": true,
+    "what": "reports a closed-form verification failure"
+   },
+   {
+    "mutant": "MUT-ROW-UNSTAMPED",
+    "target": "G-THE-DECLARED-ROWS-BUILT",
+    "token": "rows[2][\"stamp\"] = \"PLAIN\"",
+    "token_in_source": true,
+    "what": "strips the conditional stamp from one declared row"
+   },
+   {
+    "mutant": "MUT-CONTROL-SPENT",
+    "target": "G-THE-CONTROL-STAMP-CARRIED",
+    "token": "the_measure=\"DERIVED\"",
+    "token_in_source": true,
+    "what": "spends the law-native control as a derived measure"
+   },
+   {
+    "mutant": "MUT-SWEEP-TRUNCATED",
+    "target": "G-THE-FAMILY-SWEEP-IS-TOTAL",
+    "token": "rows = rows[:-1]",
+    "token_in_source": true,
+    "what": "drops one extreme point from the total sweep"
+   },
+   {
+    "mutant": "MUT-SLICES",
+    "target": "G-THE-FAMILY-SLICES",
+    "token": "rows[0][\"area_seen\"] = True",
+    "token_in_source": true,
+    "what": "reports an area-dependent slice"
+   },
+   {
+    "mutant": "MUT-PRICE-PARTITION",
+    "target": "G-THE-PRICE-BINDING",
+    "token": "legs[0][\"verdict\"] = \"PARTITIONS-THE-INVENTORY\"",
+    "token_in_source": true,
+    "what": "claims the area leg partitions the inventory"
+   },
+   {
+    "mutant": "MUT-ORDER-RANGE",
+    "target": "G-THE-ORDER-PARAMETER-RANGE",
+    "token": "pinned = True",
+    "token_in_source": true,
+    "what": "claims the order parameter is pinned by the action route"
+   },
+   {
+    "mutant": "MUT-SPECTRAL-UNITARY",
+    "target": "G-THE-SPECTRAL-DOOR",
+    "token": "modone -= 1",
+    "token_in_source": true,
+    "what": "breaks one holonomy's unit determinant"
+   },
+   {
+    "mutant": "MUT-ORIENTATION-STAMP",
+    "target": "G-THE-ORIENTATION-READING-IS-PRICED",
+    "token": "dec[1][\"declaration_status\"] = \"DERIVED\"",
+    "token_in_source": true,
+    "what": "calls the oriented declaration a derivation"
+   },
+   {
+    "mutant": "MUT-ORIENTATION-UNSTAMPED",
+    "target": "G-THE-ORIENTATION-READING-IS-PRICED",
+    "token": "dec[3][\"stamp\"] = \"PLAIN\"",
+    "token_in_source": true,
+    "what": "strips the declaration stamp from an orientation row"
+   },
+   {
+    "mutant": "MUT-ODD-SPLIT",
+    "target": "G-THE-CONJUGATION-SPLIT-IS-EXACT",
+    "token": "split_bad = 1",
+    "token_in_source": true,
+    "what": "reports a conjugation split that does not reconstruct its trace"
+   },
+   {
+    "mutant": "MUT-ODD-UNSTAMPED",
+    "target": "G-THE-ODD-OBSERVABLES-CARRY-THEIR-DECLARATION",
+    "token": "rowvals[0][\"stamp\"] = \"PLAIN\"",
+    "token_in_source": true,
+    "what": "renders an odd-part value without its declaration stamp"
+   },
+   {
+    "mutant": "MUT-ORIENTATION-ODDNESS",
+    "target": "G-THE-ODD-PART-IS-ORIENTATION-ODD",
+    "token": "rev_odd_bad = 1",
+    "token_in_source": true,
+    "what": "reports an odd part that does not negate under reversal"
+   },
+   {
+    "mutant": "MUT-BOUNDARY-AREA",
+    "target": "G-THE-BOUNDARY-LATTICE-RUN",
+    "token": "viol = 1",
+    "token_in_source": true,
+    "what": "reports an area disagreement at the boundary lattice"
+   },
+   {
+    "mutant": "MUT-CONTROL-ARM",
+    "target": "G-EVERY-PREREGISTERED-WORD-IS-EMITTABLE",
+    "token": "rows[0][\"head_word\"] = \"POT-DECONFINES-AT\"",
+    "token_in_source": true,
+    "what": "forges agreement on a control arm whose head word it also changes"
+   },
+   {
+    "mutant": "MUT-HEAD",
+    "target": "G-THE-TWO-HEAD-LAWS-AGREE",
+    "token": "rw = [(\"DECONFINES\", \"WINDING-ORDER-NONZERO\")]",
+    "token_in_source": true,
+    "what": "feeds the head law a row list that is not the measurement's"
+   },
+   {
+    "mutant": "MUT-MUTANT-DESCRIPTION",
+    "target": "G-EVERY-MUTANT-DESCRIPTION-IS-TRUE",
+    "token": "token = token + \"-DRIFTED\"",
+    "token_in_source": true,
+    "what": "drifts one mutant's published token away from the code it names"
+   },
+   {
+    "mutant": "MUT-LOOPFAM-FIELD",
+    "target": "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
+    "token": "ok_missing = False",
+    "token_in_source": true,
+    "what": "claims the parent already grew a loop family"
+   },
+   {
+    "mutant": "MUT-EXTREME-SPLIT",
+    "target": "G-THE-EXTREME-POINTS-REBUILT",
+    "token": "midpoints = midpoints[1:]",
+    "token_in_source": true,
+    "what": "moves one extreme point from the midpoints to the vertices"
+   },
+   {
+    "mutant": "MUT-HEAD-WORD",
+    "target": "G-THE-HEAD-IS-DERIVED",
+    "token": "word = \"POT-A-WORD-THE-PIN-NEVER-PREREGISTERED\"",
+    "token_in_source": true,
+    "what": "returns a head word the pin never pre-registered"
+   },
+   {
+    "mutant": "MUT-GHOST-FUNCTION",
+    "target": "G-THE-FUNCTION-INVENTORY-IS-TOTAL",
+    "token": "def ghost_helper(S):",
+    "token_in_source": true,
+    "what": "plants a function the inventory does not declare"
+   },
+   {
+    "mutant": "MUT-REGISTRY-EVASION",
+    "target": "G-THE-MUTANT-REGISTRY-IS-TOTAL",
+    "token": "_gn = 'MUT-' + 'GHOST'",
+    "token_in_source": true,
+    "what": "plants a mutant switch built from a computed name"
+   },
+   {
+    "mutant": "MUT-AST-BLIND",
+    "target": "G-THE-ARITHMETIC-IS-EXACT",
+    "token": "_EPSILON_FLOAT = 1e-12",
+    "token_in_source": true,
+    "what": "plants a floating-point literal in the source"
+   },
+   {
+    "mutant": "MUT-PAPER-CLAIM",
+    "target": "G-PAPER-CLAIMS-RENDERED",
+    "token": "c[\"text\"] = c[\"text\"] + \"X\"",
+    "token_in_source": true,
+    "what": "renders one paper claim at a value the receipt does not carry"
+   },
+   {
+    "mutant": "MUT-PAPER-VERDICT",
+    "target": "G-PAPER-VERDICT-BLOCK",
+    "token": "lic = lic + \"-TWIN\"",
+    "token_in_source": true,
+    "what": "licenses a verdict block the paper does not carry"
+   },
+   {
+    "mutant": "MUT-PAPER-POLARITY",
+    "target": "G-PAPER-POLARITY",
+    "token": "flips = flips[:-1]",
+    "token_in_source": true,
+    "what": "admits a direction-bearing headline and its inverse together"
+   },
+   {
+    "mutant": "MUT-PAPER-HEADER",
+    "target": "G-PAPER-HEADERS-BOUND",
+    "token": "heads = heads[:-1]",
+    "token_in_source": true,
+    "what": "drops a header row from the bound set"
+   },
+   {
+    "mutant": "MUT-PAPER-NUMERAL",
+    "target": "G-PAPER-NUMERALS-COVERED",
+    "token": "reg.discard(\"640\")",
+    "token_in_source": true,
+    "what": "drops a measured numeral from the registry so a real one goes uncovered"
+   },
+   {
+    "mutant": "MUT-PAPER-SPELLED",
+    "target": "G-PAPER-SPELLED-NUMERALS",
+    "token": "words = words[:-1]",
+    "token_in_source": true,
+    "what": "leaves a spelled numeral out of the scan"
+   },
+   {
+    "mutant": "MUT-LICENCE-WALL",
+    "target": "G-THE-CONFINEMENT-LICENCE-WALL",
+    "token": "unlicensed = []",
+    "token_in_source": true,
+    "what": "admits a confinement word in a sentence carrying no measured value"
+   },
+   {
+    "mutant": "MUT-MUSTNOT",
+    "target": "G-PAPER-MUST-NOT",
+    "token": "decl = []",
+    "token_in_source": true,
+    "what": "empties the declaring-sentence register the sweep is taken against"
+   },
+   {
+    "mutant": "MUT-SEAL",
+    "target": "G-THE-SEAL-IS-TOTAL",
+    "token": "declared = declared[:-1]",
+    "token_in_source": true,
+    "what": "leaves a published key out of the seal manifest"
+   },
+   {
+    "mutant": "MUT-LEDGER-CHAIN",
+    "target": "G-THE-LEDGER-CHAIN-VERIFIES",
+    "token": "rows[1][\"detail\"] = rows[1][\"detail\"] + \" \"",
+    "token_in_source": true,
+    "what": "edits a ledger row after its gate closed"
+   },
+   {
+    "mutant": "MUT-TABLE-ROW",
+    "target": "G-PAPER-TABLE-ROWS-COVERED",
+    "token": "covered = covered - 1",
+    "token_in_source": true,
+    "what": "leaves a delivered table row uncovered by any claim"
+   }
+  ],
+  "swept_by": "THE-EXTERNAL-ALL-MUTANTS-BATTERY-NOT-THE-DELIVERY-RUN"
+ },
+ "order_parameter_range": {
+  "observable": "THE-WINDING-CYCLE-EXPECTATION",
+  "pinned_by_the_action_route": false,
+  "range_of_the_observable_itself": [
+   "-4",
+   "4"
+  ],
+  "range_over_the_invariant_simplex": [
+   "-4",
+   "4"
+  ],
+  "range_over_the_reachable_set": [
+   "-4",
+   "4"
+  ],
+  "the_reading": "THE-ORDER-PARAMETER-IS-NOT-PINNED-THE-LOCALITY-DECLARATION-DOES-NOT-NARROW-ITS-RANGE"
+ },
+ "orientation_reading": {
+  "extreme_points": 136,
+  "extreme_points_carrying_an_odd_observable": 96,
+  "readings": [
+   {
+    "chart_group_order": 32,
+    "coupling_count": 135,
+    "declaration_status": "DECLARED-NEVER-DERIVED",
+    "index_of_the_oriented_subgroup": 2,
+    "orbits": 136,
+    "orientation_reversing_elements": 16,
+    "reading": "ANCHORED",
+    "stamp": "DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING",
+    "the_acting_group_order": 8,
+    "the_link_stencils_chart_stabilizer": 1
+   },
+   {
+    "chart_group_order": 16,
+    "coupling_count": 135,
+    "declaration_status": "DECLARED-NEVER-DERIVED",
+    "index_of_the_oriented_subgroup": 2,
+    "orbits": 136,
+    "orientation_reversing_elements": 16,
+    "reading": "ANCHORED-ORIENTED",
+    "stamp": "DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING",
+    "the_acting_group_order": 8,
+    "the_link_stencils_chart_stabilizer": 1
+   },
+   {
+    "chart_group_order": 128,
+    "coupling_count": 79,
+    "declaration_status": "DECLARED-NEVER-DERIVED",
+    "index_of_the_oriented_subgroup": 2,
+    "orbits": 80,
+    "orientation_reversing_elements": 64,
+    "reading": "EXTENSION",
+    "stamp": "DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING",
+    "the_acting_group_order": 16,
+    "the_link_stencils_chart_stabilizer": 4
+   },
+   {
+    "chart_group_order": 64,
+    "coupling_count": 79,
+    "declaration_status": "DECLARED-NEVER-DERIVED",
+    "index_of_the_oriented_subgroup": 2,
+    "orbits": 80,
+    "orientation_reversing_elements": 64,
+    "reading": "EXTENSION-ORIENTED",
+    "stamp": "DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING",
+    "the_acting_group_order": 16,
+    "the_link_stencils_chart_stabilizer": 2
+   }
+  ],
+  "reversed_comparisons": 11520,
+  "stamp": "DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING",
+  "status": "DECLARED-NEVER-DERIVED-NEITHER-STANDARD-IS-CLAIMED-TRUE",
+  "the_conjugation_split": {
+   "reconstruction_failures": 0,
+   "shape_by_coin_traces_with_a_non_zero_odd_part": 3760,
+   "shapes": [
+    {
+     "coins_with_a_non_zero_odd_part": 432,
+     "shape": "STAIRCASE-WINDING-CYCLE-1-1"
+    },
+    {
+     "coins_with_a_non_zero_odd_part": 432,
+     "shape": "STRAIGHT-WINDING-CYCLE-0-1"
+    },
+    {
+     "coins_with_a_non_zero_odd_part": 416,
+     "shape": "STRAIGHT-WINDING-CYCLE-0-2"
+    },
+    {
+     "coins_with_a_non_zero_odd_part": 432,
+     "shape": "STRAIGHT-WINDING-CYCLE-0-3"
+    },
+    {
+     "coins_with_a_non_zero_odd_part": 384,
+     "shape": "STRAIGHT-WINDING-CYCLE-0-4"
+    },
+    {
+     "coins_with_a_non_zero_odd_part": 432,
+     "shape": "STRAIGHT-WINDING-CYCLE-1-0"
+    },
+    {
+     "coins_with_a_non_zero_odd_part": 416,
+     "shape": "STRAIGHT-WINDING-CYCLE-2-0"
+    },
+    {
+     "coins_with_a_non_zero_odd_part": 432,
+     "shape": "STRAIGHT-WINDING-CYCLE-3-0"
+    },
+    {
+     "coins_with_a_non_zero_odd_part": 384,
+     "shape": "STRAIGHT-WINDING-CYCLE-4-0"
+    }
+   ],
+   "shapes_carrying_an_odd_part": 9,
+   "traces_split": 11520
+  },
+  "the_declaration": "THE-ORIENTED-CHART-SUBGROUP-AS-AN-ALTERNATIVE-SYMMETRY-STANDARD",
+  "the_odd_part_is_orientation_odd": true,
+  "the_price_in_convention": "ONE-BINARY-CHOICE-THE-INDEX-IS-2-AT-BOTH-READINGS",
+  "the_price_in_couplings": "UNCHANGED-AT-EVERY-READING",
+  "what_becomes_lawful": [
+   {
+    "non_zero_odd_observables": 0,
+    "row": "THE-NULL",
+    "stamp": "DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING",
+    "values": {}
+   },
+   {
+    "non_zero_odd_observables": 0,
+    "row": "THE-WILSON-CONJUGATION-SYMMETRIC",
+    "stamp": "DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING",
+    "values": {}
+   },
+   {
+    "non_zero_odd_observables": 0,
+    "row": "THE-EXHIBITED-WITNESS",
+    "stamp": "DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING",
+    "values": {}
+   },
+   {
+    "non_zero_odd_observables": 0,
+    "row": "THE-LAW-NATIVE-CONTROL",
+    "stamp": "DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING",
+    "values": {}
+   }
+  ]
+ },
+ "paper_binding": {
+  "claims": [
+   {
+    "claim": "C-FAMILY",
+    "covered": true,
+    "hits": 2,
+    "need": 1,
+    "text": "192 placements and 192 distinct loops"
+   },
+   {
+    "claim": "C-FAMILY-SPLIT",
+    "covered": true,
+    "hits": 2,
+    "need": 1,
+    "text": "144 contractible and 48 winding"
+   },
+   {
+    "claim": "C-EXTENTS",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "simple at 9 of the 16 sizes swept"
+   },
+   {
+    "claim": "C-ORBITS",
+    "covered": true,
+    "hits": 2,
+    "need": 1,
+    "text": "11 orbits under a chart group of order 32"
+   },
+   {
+    "claim": "C-ESCAPES",
+    "covered": true,
+    "hits": 3,
+    "need": 1,
+    "text": "16 images outside the declared family"
+   },
+   {
+    "claim": "C-COMPARISONS",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "2 area-discriminating comparisons and 4 Creutz rungs"
+   },
+   {
+    "claim": "C-PERIM-ONLY",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "5760 shape-by-coin comparisons at equal perimeter and 0 disagreements"
+   },
+   {
+    "claim": "C-CLOSED-FORM",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "0 closed-form failures over 640 coins"
+   },
+   {
+    "claim": "C-SPECTRUM",
+    "covered": true,
+    "hits": 3,
+    "need": 1,
+    "text": "spectrum {1,1,1/2} and gap 1/2"
+   },
+   {
+    "claim": "C-CLASSES",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "136 classes against 208 parent orbits, 72 pairs merged"
+   },
+   {
+    "claim": "C-EXTREME",
+    "covered": true,
+    "hits": 2,
+    "need": 1,
+    "text": "64 vertices and 72 edge midpoints"
+   },
+   {
+    "claim": "C-ROW-THE-NULL",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "13/10 at THE-NULL"
+   },
+   {
+    "claim": "C-ROW-THE-WILSON-CONJUGATION-SYMMETRIC",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "262244/65615 at THE-WILSON-CONJUGATION-SYMMETRIC"
+   },
+   {
+    "claim": "C-ROW-THE-EXHIBITED-WITNESS",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "4294967399/4294967375 at THE-EXHIBITED-WITNESS"
+   },
+   {
+    "claim": "C-ROW-THE-LAW-NATIVE-CONTROL",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "225/152 at THE-LAW-NATIVE-CONTROL"
+   },
+   {
+    "claim": "C-ROW-WINDING",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "1 of the 4 declared rows carries a non-zero winding expectation"
+   },
+   {
+    "claim": "C-SWEEP",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "136 extreme points swept, 64 vertices and 72 edge midpoints"
+   },
+   {
+    "claim": "C-SWEEP-WIND",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "96 with a non-zero winding expectation and 40 with zero"
+   },
+   {
+    "claim": "C-SWEEP-UNIT",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "24 of the 136 extreme points where the ratio is one"
+   },
+   {
+    "claim": "C-PRICE",
+    "covered": true,
+    "hits": 3,
+    "need": 1,
+    "text": "the inventory of 135 couplings"
+   },
+   {
+    "claim": "C-PRICE-C",
+    "covered": true,
+    "hits": 2,
+    "need": 1,
+    "text": "absent at 72 of the 136"
+   },
+   {
+    "claim": "C-PRICE-B",
+    "covered": true,
+    "hits": 2,
+    "need": 1,
+    "text": "absent at 40 of them"
+   },
+   {
+    "claim": "C-PRICE-UNDEF",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "undefined at 0 of them"
+   },
+   {
+    "claim": "C-DOOR",
+    "covered": true,
+    "hits": 2,
+    "need": 1,
+    "text": "167772160000 states per time slice"
+   },
+   {
+    "claim": "C-DOOR-UNITARY",
+    "covered": true,
+    "hits": 2,
+    "need": 1,
+    "text": "640 of 640 holonomies"
+   },
+   {
+    "claim": "C-BOUNDARY",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "44800 comparison-by-coin checks at L = 8 with 0 disagreements"
+   },
+   {
+    "claim": "C-BOUNDARY-MODES",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "640 of the 640 coins carry identical coefficients"
+   },
+   {
+    "claim": "C-BOUNDARY-MERGE",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "0 merges at L = 8 against 72 here"
+   },
+   {
+    "claim": "C-ARMS",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "5 control arms"
+   },
+   {
+    "claim": "C-SLICES",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "9 exact one-parameter slices"
+   },
+   {
+    "claim": "C-ORIENT-INDEX",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "the index of the oriented subgroup is 2 at both readings"
+   },
+   {
+    "claim": "C-ORIENT-PRICE",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "135 couplings at the anchored reading and 135 at the oriented one"
+   },
+   {
+    "claim": "C-ORIENT-ODD",
+    "covered": true,
+    "hits": 2,
+    "need": 1,
+    "text": "3760 of 11520 shape-by-coin traces carry a non-zero odd part at 9 of the 18 shapes"
+   },
+   {
+    "claim": "C-ORIENT-POINTS",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "96 of the 136 extreme points carry at least one"
+   },
+   {
+    "claim": "C-ORIENT-ROWS",
+    "covered": true,
+    "hits": 2,
+    "need": 1,
+    "text": "0 non-zero odd observables at every declared row"
+   },
+   {
+    "claim": "C-ANCHORS",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "9 file-bytes anchors, 29 path-value anchors and 15 verbatim-text anchors, 53 anchors in all"
+   },
+   {
+    "claim": "C-GATES",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "37 gates close before the paper gates"
+   },
+   {
+    "claim": "C-SEALED",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "19 objects are sealed before the paper gates"
+   },
+   {
+    "claim": "C-MUTANTS",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "49 declared mutants"
+   }
+  ],
+  "confinement_sentences": 10,
+  "fenced_blocks": 1,
+  "header_rows": 9,
+  "licensed_headers": 9,
+  "must_not_hits": 0,
+  "must_not_tokens": 25,
+  "numerals_scanned": 591,
+  "numerals_uncovered": 0,
+  "polarity": [
+   {
+    "flip": "the area enters it",
+    "flip_absent": true,
+    "kept": "the area does not enter it",
+    "kept_present": true
+   },
+   {
+    "flip": "is a function of the area",
+    "flip_absent": true,
+    "kept": "is a function of the perimeter alone",
+    "kept_present": true
+   },
+   {
+    "flip": "partitions the inventory at the area leg",
+    "flip_absent": true,
+    "kept": "FAMILY-INVARIANT",
+    "kept_present": true
+   },
+   {
+    "flip": "partitions none of the inventory",
+    "flip_absent": true,
+    "kept": "partitions the inventory",
+    "kept_present": true
+   },
+   {
+    "flip": "carries a decaying direction",
+    "flip_absent": true,
+    "kept": "carries no decaying direction",
+    "kept_present": true
+   },
+   {
+    "flip": "is run and not named",
+    "flip_absent": true,
+    "kept": "is named and not run",
+    "kept_present": true
+   },
+   {
+    "flip": "die at the boundary",
+    "flip_absent": true,
+    "kept": "survive the boundary",
+    "kept_present": true
+   },
+   {
+    "flip": "is spent as derived",
+    "flip_absent": true,
+    "kept": "never spent as derived",
+    "kept_present": true
+   },
+   {
+    "flip": "a silent cap",
+    "flip_absent": true,
+    "kept": "no silent cap",
+    "kept_present": true
+   }
+  ],
+  "quoted_lines": 9,
+  "quotes_outside_windows": 0,
+  "sentences": 258,
+  "spelled_numerals_scanned": 17,
+  "table_data_rows": 55,
+  "table_rows_covered": 55,
+  "unlicensed_confinement_sentences": 0,
+  "wall_declaring_sentences": 1
+ },
+ "paper_sha256_12": "173a88d8755f",
+ "path_value_anchors": [
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-COINS",
+   "consumer": "G-ARENA-REBUILT",
+   "expected": 640,
+   "measured": 640,
+   "path": "arena/coins",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-LINKS",
+   "consumer": "G-ARENA-REBUILT",
+   "expected": 32,
+   "measured": 32,
+   "path": "arena/links",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-PLAQ",
+   "consumer": "G-ARENA-REBUILT",
+   "expected": 16,
+   "measured": 16,
+   "path": "arena/plaquettes",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-SITES",
+   "consumer": "G-ARENA-REBUILT",
+   "expected": 16,
+   "measured": 16,
+   "path": "arena/sites",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-L",
+   "consumer": "G-ARENA-REBUILT",
+   "expected": 4,
+   "measured": 4,
+   "path": "arena/L",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-ALPHABET",
+   "consumer": "G-ARENA-REBUILT",
+   "expected": 25,
+   "measured": 25,
+   "path": "arena/alphabet",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-WILSON-N",
+   "consumer": "G-PLAQUETTE-ROW-REPRODUCED",
+   "expected": 11,
+   "measured": 11,
+   "path": "wilson/distinct_values_over_the_carrier",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-ORBITS",
+   "consumer": "G-THE-CLASSES-REBUILT",
+   "expected": 136,
+   "measured": 136,
+   "path": "form_census/rows/0/orbits",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-COUPLINGS",
+   "consumer": "G-THE-CLASSES-REBUILT",
+   "expected": 135,
+   "measured": 135,
+   "path": "form_census/rows/0/coupling_count",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-COUPLINGS-EXT",
+   "consumer": "G-THE-ORIENTATION-READING-IS-PRICED",
+   "expected": 79,
+   "measured": 79,
+   "path": "form_census/rows/1/coupling_count",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-PARENT-ORBITS",
+   "consumer": "G-THE-CLASSES-REBUILT",
+   "expected": 208,
+   "measured": 208,
+   "path": "gibbs/rows/0/the_parents_orbits",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-VERTICES",
+   "consumer": "G-THE-EXTREME-POINTS-REBUILT",
+   "expected": 64,
+   "measured": 64,
+   "path": "gibbs/rows/0/extreme_points_that_are_vertices_of_the_parents_simplex",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-MIDPOINTS",
+   "consumer": "G-THE-EXTREME-POINTS-REBUILT",
+   "expected": 72,
+   "measured": 72,
+   "path": "gibbs/rows/0/extreme_points_that_are_edge_midpoints_of_it",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-MERGED",
+   "consumer": "G-THE-EXTREME-POINTS-REBUILT",
+   "expected": 72,
+   "measured": 72,
+   "path": "price/orbit_pairs_merged_anchored",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-EXPONENT",
+   "consumer": "G-THE-DECLARED-ROWS-BUILT",
+   "expected": 32,
+   "measured": 32,
+   "path": "gibbs/rows/0/exponent",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-NULL",
+   "consumer": "G-PLAQUETTE-ROW-REPRODUCED",
+   "expected": "13/10",
+   "measured": "13/10",
+   "path": "expectations/rows/0/expectation",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-WITNESS",
+   "consumer": "G-THE-DECLARED-ROWS-BUILT",
+   "expected": "4294967399/4294967375",
+   "measured": "4294967399/4294967375",
+   "path": "expectations/rows/1/expectation",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-WILSONEXP",
+   "consumer": "G-THE-DECLARED-ROWS-BUILT",
+   "expected": "262244/65615",
+   "measured": "262244/65615",
+   "path": "expectations/rows/2/expectation",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-STAMP",
+   "consumer": "G-THE-CONTROL-STAMP-CARRIED",
+   "expected": "LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION",
+   "measured": "LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION",
+   "path": "law_native_control/stamp",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-LAW1",
+   "consumer": "G-THE-CONTROL-STAMP-CARRIED",
+   "expected": "15/38",
+   "measured": "15/38",
+   "path": "law_native_control/sector_law/0",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-LAW2",
+   "consumer": "G-THE-CONTROL-STAMP-CARRIED",
+   "expected": "5/19",
+   "measured": "5/19",
+   "path": "law_native_control/sector_law/1",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-LAW3",
+   "consumer": "G-THE-CONTROL-STAMP-CARRIED",
+   "expected": "13/38",
+   "measured": "13/38",
+   "path": "law_native_control/sector_law/2",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-LOOPFAM",
+   "consumer": "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
+   "expected": 0,
+   "measured": 0,
+   "path": "wilson/loop_families_grown",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-ACT-MERGEIDX",
+   "consumer": "G-THE-MERGING-INDEX-LAW-REPRODUCED",
+   "expected": 2,
+   "measured": 2,
+   "path": "merging_index_law/rows/1/the_merging_index",
+   "source": "S-ACT-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-R5-NONFLAT-DIAG",
+   "consumer": "G-PLAQUETTE-ROW-REPRODUCED",
+   "expected": 56,
+   "measured": 56,
+   "path": "curvature_census/DIAGONAL/nonflat",
+   "source": "S-R5-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-R5-COINS-BAL",
+   "consumer": "G-ARENA-REBUILT",
+   "expected": 512,
+   "measured": 512,
+   "path": "coin_sectors/BALANCED",
+   "source": "S-R5-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-R5-COINS-DIAG",
+   "consumer": "G-ARENA-REBUILT",
+   "expected": 64,
+   "measured": 64,
+   "path": "coin_sectors/DIAGONAL",
+   "source": "S-R5-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-R5-COINS-ANTI",
+   "consumer": "G-ARENA-REBUILT",
+   "expected": 64,
+   "measured": 64,
+   "path": "coin_sectors/ANTIDIAGONAL",
+   "source": "S-R5-RECEIPT"
+  },
+  {
+   "agrees": true,
+   "anchor": "PV-R5-CHART",
+   "consumer": "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP",
+   "expected": 32,
+   "measured": 32,
+   "path": "counts/chart_group",
+   "source": "S-R5-RECEIPT"
+  }
+ ],
+ "pin_sha256_prefix": "df2f15efa7b0",
+ "preregistered_heads": [
+  "POT-CONFINES-AT",
+  "POT-DECONFINES-AT",
+  "POT-SPLIT-BY-WEIGHT",
+  "POT-DISCRIMINATOR-DEGENERATE-AT",
+  "POT-BLOCKED-AT"
+ ],
+ "price_binding": {
+  "couplings_counted": 135,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "extreme_points_where_the_creutz_ratio_is_undefined": 0,
+  "extreme_points_with_a_zero_winding_expectation": 40,
+  "extreme_points_with_no_halving_mode": 72,
+  "extreme_points_with_no_perimeter_mode": 40,
+  "legs": [
+   {
+    "distinct_values_over_the_extreme_points": 1,
+    "field": "area_seen",
+    "leg": "LEG-AREA",
+    "partitions": false,
+    "tally_over_the_136_extreme_points": {
+     "False": 136
+    },
+    "tally_over_the_couplings": {
+     "False": 135
+    },
+    "verdict": "FAMILY-INVARIANT"
+   },
+   {
+    "distinct_values_over_the_extreme_points": 2,
+    "field": "ladder_word",
+    "leg": "LEG-CREUTZ-WORD",
+    "partitions": true,
+    "tally_over_the_136_extreme_points": {
+     "DECONFINES": 24,
+     "DISCRIMINATOR-DEGENERATE": 112
+    },
+    "tally_over_the_couplings": {
+     "DECONFINES": 23,
+     "DISCRIMINATOR-DEGENERATE": 112
+    },
+    "verdict": "PARTITIONS-THE-INVENTORY"
+   },
+   {
+    "distinct_values_over_the_extreme_points": 2,
+    "field": "creutz_is_unit",
+    "leg": "LEG-CREUTZ-UNIT",
+    "partitions": true,
+    "tally_over_the_136_extreme_points": {
+     "False": 112,
+     "True": 24
+    },
+    "tally_over_the_couplings": {
+     "False": 112,
+     "True": 23
+    },
+    "verdict": "PARTITIONS-THE-INVENTORY"
+   },
+   {
+    "distinct_values_over_the_extreme_points": 1,
+    "field": "creutz_defined",
+    "leg": "LEG-CREUTZ-DEFINED",
+    "partitions": false,
+    "tally_over_the_136_extreme_points": {
+     "True": 136
+    },
+    "tally_over_the_couplings": {
+     "True": 135
+    },
+    "verdict": "FAMILY-INVARIANT"
+   },
+   {
+    "distinct_values_over_the_extreme_points": 2,
+    "field": "winding_word",
+    "leg": "LEG-WINDING",
+    "partitions": true,
+    "tally_over_the_136_extreme_points": {
+     "WINDING-ORDER-NONZERO": 96,
+     "WINDING-ORDER-ZERO": 40
+    },
+    "tally_over_the_couplings": {
+     "WINDING-ORDER-NONZERO": 96,
+     "WINDING-ORDER-ZERO": 39
+    },
+    "verdict": "PARTITIONS-THE-INVENTORY"
+   },
+   {
+    "distinct_values_over_the_extreme_points": 8,
+    "field": "mode_A",
+    "leg": "MODE-A-CONSTANT",
+    "partitions": true,
+    "tally_over_the_136_extreme_points": {
+     "0": 16,
+     "1": 24,
+     "1+-1/2*sqrt2": 16,
+     "1+1/2*sqrt2": 16,
+     "2": 24,
+     "2+-1*sqrt2": 16,
+     "2+1*sqrt2": 16,
+     "4": 8
+    },
+    "tally_over_the_couplings": {
+     "0": 16,
+     "1": 23,
+     "1+-1/2*sqrt2": 16,
+     "1+1/2*sqrt2": 16,
+     "2": 24,
+     "2+-1*sqrt2": 16,
+     "2+1*sqrt2": 16,
+     "4": 8
+    },
+    "verdict": "PARTITIONS-THE-INVENTORY"
+   },
+   {
+    "distinct_values_over_the_extreme_points": 9,
+    "field": "mode_B",
+    "leg": "MODE-B-PERIMETER",
+    "partitions": true,
+    "tally_over_the_136_extreme_points": {
+     "-1": 8,
+     "-2": 8,
+     "0": 40,
+     "0+-1*sqrt2": 16,
+     "0+-1/2*sqrt2": 16,
+     "0+1*sqrt2": 16,
+     "0+1/2*sqrt2": 16,
+     "1": 8,
+     "2": 8
+    },
+    "tally_over_the_couplings": {
+     "-1": 8,
+     "-2": 8,
+     "0": 39,
+     "0+-1*sqrt2": 16,
+     "0+-1/2*sqrt2": 16,
+     "0+1*sqrt2": 16,
+     "0+1/2*sqrt2": 16,
+     "1": 8,
+     "2": 8
+    },
+    "verdict": "PARTITIONS-THE-INVENTORY"
+   },
+   {
+    "distinct_values_over_the_extreme_points": 2,
+    "field": "mode_C",
+    "leg": "MODE-C-HALVING",
+    "partitions": true,
+    "tally_over_the_136_extreme_points": {
+     "0": 72,
+     "1": 64
+    },
+    "tally_over_the_couplings": {
+     "0": 71,
+     "1": 64
+    },
+    "verdict": "PARTITIONS-THE-INVENTORY"
+   },
+   {
+    "distinct_values_over_the_extreme_points": 3,
+    "field": "active_modes",
+    "leg": "ACTIVE-MODES",
+    "partitions": true,
+    "tally_over_the_136_extreme_points": {
+     "1": 32,
+     "2": 64,
+     "3": 40
+    },
+    "tally_over_the_couplings": {
+     "1": 31,
+     "2": 64,
+     "3": 40
+    },
+    "verdict": "PARTITIONS-THE-INVENTORY"
+   }
+  ],
+  "the_extreme_points": 136,
+  "the_inventory": 135,
+  "the_normalisation_base": "THE-FIRST-CLASS-IN-THE-COIN-FAMILYS-OWN-ENUMERATION-ORDER",
+  "the_reading": "THE-AREA-LEG-IS-FAMILY-INVARIANT-AND-THE-OTHER-LEGS-PARTITION"
+ },
+ "provenance": [
+  {
+   "agrees": true,
+   "anchor": "S-PIN",
+   "expected": "df2f15efa7b0",
+   "measured": "df2f15efa7b0",
+   "path": "v14/note-pot-pin.md",
+   "what": "THE PIN, frozen before this instrument existed"
+  },
+  {
+   "agrees": true,
+   "anchor": "S-ACT-PAPER",
+   "expected": "d933221780ed",
+   "measured": "d933221780ed",
+   "path": "v14/paper-34-act.md",
+   "what": "PARENT 1, ACT terminal: the allowed weight systems, the coupling inventory, the extreme points, the odd twist, the merging-index law and the loop-family obligation this unit discharges"
+  },
+  {
+   "agrees": true,
+   "anchor": "S-ACT-CODE",
+   "expected": "a90559ee0e0f",
+   "measured": "a90559ee0e0f",
+   "path": "v14/code/act_exact.py",
+   "what": "PARENT 1's instrument -- read for its declared definitions only; nothing is imported from it"
+  },
+  {
+   "agrees": true,
+   "anchor": "S-ACT-RECEIPT",
+   "expected": "7fd1267bddc7",
+   "measured": "7fd1267bddc7",
+   "path": "v14/code/act_receipt.json",
+   "what": "PARENT 1's receipt: the census counts, the class profile, the extreme point split, the expectations and the law-native stamp"
+  },
+  {
+   "agrees": true,
+   "anchor": "S-SMU-PAPER",
+   "expected": "6df0db523d32",
+   "measured": "6df0db523d32",
+   "path": "v14/paper-27-smu.md",
+   "what": "PARENT 2, SMU terminal: the conserved price frame and the law-native control whose stamp is carried verbatim and never spent"
+  },
+  {
+   "agrees": true,
+   "anchor": "S-P23-PAPER",
+   "expected": "79cc67b4f6cd",
+   "measured": "79cc67b4f6cd",
+   "path": "v14/paper-23-measure.md",
+   "what": "PARENT 3, paper-23 terminal: the withholding machinery this unit inverts, and the transitivity criterion"
+  },
+  {
+   "agrees": true,
+   "anchor": "S-R5-PAPER",
+   "expected": "62cfe5689d2c",
+   "measured": "62cfe5689d2c",
+   "path": "v14/paper-18-gauge-rung.md",
+   "what": "PARENT 4, R5 terminal: the lattice, the link operator, the holonomy definition this unit rebuilds, and the loop family it named absent"
+  },
+  {
+   "agrees": true,
+   "anchor": "S-R5-CODE",
+   "expected": "0d98de793b79",
+   "measured": "0d98de793b79",
+   "path": "v14/code/r5_gauge_exact.py",
+   "what": "PARENT 4's instrument -- read for its declared definitions only"
+  },
+  {
+   "agrees": true,
+   "anchor": "S-R5-RECEIPT",
+   "expected": "0c02b7684e5b",
+   "measured": "0c02b7684e5b",
+   "path": "v14/code/r5_gauge_receipt.json",
+   "what": "PARENT 4's receipt: the curvature census and the arena cardinalities"
+  }
+ ],
+ "python": "3.13",
+ "schema": "POT-V1",
+ "seal_manifest": [
+  {
+   "digest": "a870b86d2b6d",
+   "object": "THE PATH-VALUE ANCHORS",
+   "receipt_key": "path_value_anchors",
+   "vouching_gate": "G-PATH-VALUE-ANCHORS"
+  },
+  {
+   "digest": "576c9c0823a4",
+   "object": "THE VERBATIM ANCHORS",
+   "receipt_key": "verbatim_anchors",
+   "vouching_gate": "G-VERBATIM-ANCHORS"
+  },
+  {
+   "digest": "dedbea497f43",
+   "object": "THE ARITHMETIC",
+   "receipt_key": "arithmetic",
+   "vouching_gate": "G-THE-ARITHMETIC-IS-EXACT"
+  },
+  {
+   "digest": "9dede9b31ab5",
+   "object": "THE MUTANTS",
+   "receipt_key": "mutants",
+   "vouching_gate": "G-EVERY-MUTANT-DESCRIPTION-IS-TRUE"
+  },
+  {
+   "digest": "b27ad9e8cfd6",
+   "object": "THE ARENA",
+   "receipt_key": "arena",
+   "vouching_gate": "G-ARENA-REBUILT"
+  },
+  {
+   "digest": "ee02e1bebfd2",
+   "object": "THE LOOP FAMILY",
+   "receipt_key": "loop_family",
+   "vouching_gate": "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP"
+  },
+  {
+   "digest": "84e9b341f468",
+   "object": "THE CLASSES",
+   "receipt_key": "classes",
+   "vouching_gate": "G-THE-EXTREME-POINTS-REBUILT"
+  },
+  {
+   "digest": "6b5fb39772f3",
+   "object": "THE LOOP OBSERVABLE",
+   "receipt_key": "loop_observable",
+   "vouching_gate": "G-PLAQUETTE-ROW-REPRODUCED"
+  },
+  {
+   "digest": "8b0030a9a720",
+   "object": "THE DISCRIMINATOR",
+   "receipt_key": "discriminator",
+   "vouching_gate": "G-THE-MERGING-INDEX-LAW-REPRODUCED"
+  },
+  {
+   "digest": "cf297e9049fe",
+   "object": "THE CLOSED FORM",
+   "receipt_key": "closed_form",
+   "vouching_gate": "G-THE-LADDER-CLOSED-FORM"
+  },
+  {
+   "digest": "c46772707c89",
+   "object": "THE CONDITIONAL ROWS",
+   "receipt_key": "conditional_rows",
+   "vouching_gate": "G-THE-CONTROL-STAMP-CARRIED"
+  },
+  {
+   "digest": "6c7942805ef5",
+   "object": "THE FAMILY SWEEP",
+   "receipt_key": "family_sweep",
+   "vouching_gate": "G-THE-FAMILY-SWEEP-IS-TOTAL"
+  },
+  {
+   "digest": "e42f8cf8c24b",
+   "object": "THE FAMILY SLICES",
+   "receipt_key": "family_slices",
+   "vouching_gate": "G-THE-FAMILY-SLICES"
+  },
+  {
+   "digest": "b13a0955d0d9",
+   "object": "THE PRICE BINDING",
+   "receipt_key": "price_binding",
+   "vouching_gate": "G-THE-PRICE-BINDING"
+  },
+  {
+   "digest": "3630f50d106d",
+   "object": "THE ORDER PARAMETER RANGE",
+   "receipt_key": "order_parameter_range",
+   "vouching_gate": "G-THE-ORDER-PARAMETER-RANGE"
+  },
+  {
+   "digest": "85554cd2176e",
+   "object": "THE SPECTRAL DOOR",
+   "receipt_key": "spectral_door",
+   "vouching_gate": "G-THE-SPECTRAL-DOOR"
+  },
+  {
+   "digest": "082e18f56543",
+   "object": "THE ORIENTATION READING",
+   "receipt_key": "orientation_reading",
+   "vouching_gate": "G-THE-ODD-OBSERVABLES-CARRY-THEIR-DECLARATION"
+  },
+  {
+   "digest": "342fcd83007e",
+   "object": "THE BOUNDARY LATTICE",
+   "receipt_key": "boundary_lattice",
+   "vouching_gate": "G-THE-BOUNDARY-LATTICE-RUN"
+  },
+  {
+   "digest": "96c31ba49711",
+   "object": "THE CONTROL ARMS",
+   "receipt_key": "control_arms",
+   "vouching_gate": "G-EVERY-PREREGISTERED-WORD-IS-EMITTABLE"
+  },
+  {
+   "digest": "32f94a1e0672",
+   "object": "THE PAPER BINDING",
+   "receipt_key": "paper_binding",
+   "vouching_gate": "G-PAPER-QUOTES-INSIDE-THE-WINDOWS"
+  },
+  {
+   "digest": "94d151016799",
+   "object": "THE CONSUMER REGISTER",
+   "receipt_key": "consumer_register",
+   "vouching_gate": "G-CONSUMER-REGISTER-IS-REAL"
+  }
+ ],
+ "spectral_door": {
+  "SPC_inherits": "THE-GAP-1/2-IS-THE-MASS-GAP-QUESTIONS-FINITE-FORM-AT-THIS-ARENA-AND-IT-IS-FAMILY-INVARIANT",
+  "the_door_named": {
+   "a_time_slice_is": "THE-4-LINKS-OF-ONE-ROW",
+   "entries_in_the_matrix": "28147497671065600000000",
+   "in_the_window": false,
+   "states_per_slice": "167772160000",
+   "the_object": "THE-TRANSFER-MATRIX-ON-A-TIME-SLICE-OF-THE-FULL-CONFIGURATION-SPACE",
+   "why": "OUT-OF-REACH-BY-COST-AT-THIS-ARENA-AND-NAMED-RATHER-THAN-APPROXIMATED"
+  },
+  "the_finite_form_measured": {
+   "eigenvalue_one_carries_a_two_block": true,
+   "rows": [
+    {
+     "closed_form_holds": true,
+     "mode_A": "11/10",
+     "mode_B": "0",
+     "mode_C": "4/5",
+     "row": "THE-NULL",
+     "the_gap": "1/2",
+     "the_spectrum": "{1,1,1/2}"
+    },
+    {
+     "closed_form_holds": true,
+     "mode_A": "8/5965",
+     "mode_B": "26214/13123",
+     "mode_C": "64/65615",
+     "row": "THE-WILSON-CONJUGATION-SYMMETRIC",
+     "the_gap": "1/2",
+     "the_spectrum": "{1,1,1/2}"
+    },
+    {
+     "closed_form_holds": true,
+     "mode_A": "4294967383/4294967375",
+     "mode_B": "0",
+     "mode_C": "64/4294967375",
+     "row": "THE-EXHIBITED-WITNESS",
+     "the_gap": "1/2",
+     "the_spectrum": "{1,1,1/2}"
+    },
+    {
+     "closed_form_holds": true,
+     "mode_A": "53/38",
+     "mode_B": "0",
+     "mode_C": "13/38",
+     "row": "THE-LAW-NATIVE-CONTROL",
+     "the_gap": "1/2",
+     "the_spectrum": "{1,1,1/2}"
+    }
+   ],
+   "the_gap": "1/2",
+   "the_object": "THE-LADDERS-OWN-TRANSFER-SPECTRUM-READ-OFF-ITS-EXACT-CLOSED-FORM",
+   "the_spectrum": "{1,1,1/2}",
+   "universal_on_the_carrier": true
+  },
+  "the_holonomys_own_spectrum": {
+   "determinant_of_modulus_one": 640,
+   "holonomies_tested": 640,
+   "self_inversive_characteristic_polynomial": 640,
+   "the_reading": "THE-WINDING-HOLONOMY-IS-UNITARY-SO-ITS-SPECTRUM-LIES-ON-THE-UNIT-CIRCLE-AND-CARRIES-NO-DECAYING-DIRECTION"
+  }
+ },
+ "totals": {
+  "anchors": 53,
+  "closing_gates": 2,
+  "gates_closed": 37,
+  "gates_failed": 0,
+  "mutants_declared": 49,
+  "path_value_anchors": 29,
+  "sealed_objects": 19,
+  "sources": 9,
+  "the_ledger_chain_verifies": true,
+  "the_two_head_laws_agree": true,
+  "verbatim_anchors": 15,
+  "verdict_characters": 3063
+ },
+ "transcript_head": "POT (paper-36) :: the potential unit -- the loop family, the discriminator, the price binding and the spectral door",
+ "unit": "POT-PAPER-36",
+ "verbatim_anchors": [
+  {
+   "anchor": "VB-R5-HOLONOMY",
+   "chars": 154,
+   "consumer": "G-PLAQUETTE-ROW-REPRODUCED",
+   "digest": "72ecc8f75bfa",
+   "floor": 60,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-R5-PAPER"
+  },
+  {
+   "anchor": "VB-R5-BLOCK",
+   "chars": 48,
+   "consumer": "G-PLAQUETTE-ROW-REPRODUCED",
+   "digest": "345ef7fefab1",
+   "floor": 30,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-R5-PAPER"
+  },
+  {
+   "anchor": "VB-R5-LINKOP",
+   "chars": 104,
+   "consumer": "G-ARENA-REBUILT",
+   "digest": "12333a1ffaf0",
+   "floor": 50,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-R5-PAPER"
+  },
+  {
+   "anchor": "VB-R5-NEEDS",
+   "chars": 37,
+   "consumer": "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
+   "digest": "f3d699d9ad2b",
+   "floor": 25,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-R5-PAPER"
+  },
+  {
+   "anchor": "VB-ACT-ABSENT",
+   "chars": 108,
+   "consumer": "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
+   "digest": "b89f27c069ac",
+   "floor": 60,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-ACT-PAPER"
+  },
+  {
+   "anchor": "VB-ACT-ALLOWED",
+   "chars": 104,
+   "consumer": "G-THE-CLASSES-REBUILT",
+   "digest": "219d09a2dd15",
+   "floor": 60,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-ACT-PAPER"
+  },
+  {
+   "anchor": "VB-ACT-EXTREME",
+   "chars": 121,
+   "consumer": "G-THE-EXTREME-POINTS-REBUILT",
+   "digest": "01d13c50a486",
+   "floor": 60,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-ACT-PAPER"
+  },
+  {
+   "anchor": "VB-ACT-BOUNDARY",
+   "chars": 170,
+   "consumer": "G-THE-MERGING-INDEX-LAW-REPRODUCED",
+   "digest": "982fe0c3b42b",
+   "floor": 60,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-ACT-PAPER"
+  },
+  {
+   "anchor": "VB-ACT-STAMP",
+   "chars": 67,
+   "consumer": "G-THE-CONTROL-STAMP-CARRIED",
+   "digest": "5195014b0046",
+   "floor": 40,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-ACT-PAPER"
+  },
+  {
+   "anchor": "VB-ACT-GATE",
+   "chars": 52,
+   "consumer": "G-THE-CONFINEMENT-LICENCE-WALL",
+   "digest": "468c2019c5e3",
+   "floor": 40,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-ACT-PAPER"
+  },
+  {
+   "anchor": "VB-PIN-LICENCE",
+   "chars": 96,
+   "consumer": "G-THE-CONFINEMENT-LICENCE-WALL",
+   "digest": "582a788f57da",
+   "floor": 50,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-PIN"
+  },
+  {
+   "anchor": "VB-PIN-LBOUND",
+   "chars": 79,
+   "consumer": "G-THE-MERGING-INDEX-LAW-REPRODUCED",
+   "digest": "7c7d8a1e9f3a",
+   "floor": 40,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-PIN"
+  },
+  {
+   "anchor": "VB-PIN-DISCRIM",
+   "chars": 132,
+   "consumer": "G-THE-DISCRIMINATOR-IS-WELL-DEFINED",
+   "digest": "a793e709bbec",
+   "floor": 60,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-PIN"
+  },
+  {
+   "anchor": "VB-P23-TRANSITIVE",
+   "chars": 33,
+   "consumer": "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP",
+   "digest": "c701bce29791",
+   "floor": 25,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-P23-PAPER"
+  },
+  {
+   "anchor": "VB-SMU-PRICE",
+   "chars": 74,
+   "consumer": "G-THE-PRICE-BINDING",
+   "digest": "dd0dbf792824",
+   "floor": 50,
+   "hits": 1,
+   "located_exactly_once": true,
+   "long_enough": true,
+   "perturbation_is_lost": true,
+   "source": "S-SMU-PAPER"
+  }
+ ],
+ "verdict": "POT-SPLIT-BY-WEIGHT-THE-WINDING-LEG-SPLITS-96-NONZERO-AND-40-ZERO-OF-136-EXTREME-POINTS-AND-1-OF-4-DECLARED-ROWS-WHILE-THE-AREA-LEG-IS-FAMILY-INVARIANT-AREA-BLIND-AT-149-OF-149-MEASURED-ROWS -- LOOP-FAMILY=192-PLACEMENTS-192-DISTINCT-LOOPS-144-CONTRACTIBLE-AND-48-WINDING;RECTANGLE-EXTENTS=1-2-3-MEASURED-SIMPLE-AT-9-OF-16-SWEPT-SIZES;ORBITS-UNDER-THE-ANCHORED-CHART-GROUP-OF-ORDER-32=11-CLOSED-TRUE;THE-WINDOW=RECTANGLE-CIRCUITS-PLUS-STRAIGHT-AND-STAIRCASE-WINDING-CYCLES-NOT-ALL-CLOSED-PATHS -- DISCRIMINATOR=WELL-DEFINED-AT-L-4-WITH-2-AREA-DISCRIMINATING-COMPARISONS-AND-4-CREUTZ-RUNGS;LEG-AREA=BLIND-EVERYWHERE;LEG-CREUTZ=DEFINED-AT-136-OF-136-EXTREME-POINTS-AND-EQUAL-TO-ONE-AT-24;LEG-WINDING=THE-ORDER-PARAMETER-ANALOGUE -- (a)CONDITIONAL=4-ROWS-ALL-STAMPED-CONDITIONAL-ON-THE-DECLARED-WEIGHTS;PLAQUETTE-EXPECTATIONS=13/10@THE-NULL,262244/65615@THE-WILSON-CONJUGATION-SYMMETRIC,4294967399/4294967375@THE-EXHIBITED-WITNESS,225/152@THE-LAW-NATIVE-CONTROL;WINDING=3-ZERO-AND-1-NONZERO;THE-CONTROL-CARRIES-LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION-AND-IS-NEVER-SPENT-AS-DERIVED -- (b)FAMILY-SWEPT=136-EXTREME-POINTS-64-VERTICES-AND-72-EDGE-MIDPOINTS-ALL-RUN;FAMILY-INVARIANT=area_seen;COUPLING-DEPENDENT=ladder_word+creutz_is_unit+winding_word+mode_A+mode_B+mode_C+active_modes;SLICES=9-EXACT-ONE-PARAMETER-ROWS-AGREE-AT-THE-AREA-LEG -- PRICE=THE-INVENTORY-IS-135-COUPLINGS-AND-THE-AREA-LEG-PARTITIONS-NONE-OF-THEM;THE-WINDING-LEG-PARTITIONS-96-AGAINST-40;THE-HALVING-MODE-IS-ABSENT-AT-72-OF-136;THE-PERIMETER-MODE-IS-ABSENT-AT-40-OF-136;THE-CREUTZ-RATIO-IS-UNDEFINED-AT-0-OF-136 -- SPECTRAL-DOOR=THE-TRANSFER-MATRIX-ON-A-TIME-SLICE-IS-NAMED-NOT-RUN-AT-167772160000-STATES-PER-SLICE;THE-FINITE-FORM-IS-MEASURED=W=A+B*P+C*2^-P-WITH-SPECTRUM-{1,1,1/2}-AND-GAP-1/2-AT-640-OF-640-COINS;THE-WINDING-HOLONOMY-IS-UNITARY-AT-640-OF-640-SO-ITS-SPECTRUM-CARRIES-NO-DECAY;SPC-INHERITS-THE-GAP -- ORIENTATION=DECLARED-NEVER-DERIVED-NEITHER-STANDARD-IS-CLAIMED-TRUE-DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING;THE-ORIENTED-SUBGROUP-HAS-INDEX-2-AT-BOTH-READINGS;COUPLINGS=135-AT-ANCHORED-AND-135-AT-ANCHORED-ORIENTED-AND-79-AT-THE-EXTENSION-AND-79-AT-EXTENSION-ORIENTED-SO-THE-DECLARATION-BUYS-OBSERVABLES-AND-COSTS-NO-COUPLING;THE-ODD-PART-IS-LAWFUL-ONLY-THERE-AND-IS-NON-ZERO-AT-3760-OF-11520-SHAPE-BY-COIN-TRACES-AT-9-OF-18-SHAPES-AND-AT-96-OF-136-EXTREME-POINTS -- L-BOUNDARY=THE-MERGING-INDEX-IS-8/GCD(L,8)-WHICH-IS-2-HERE-AND-1-AT-L-8;AREA-BLINDNESS-AND-THE-CLOSED-FORM-AND-THE-GAP-SURVIVE-THE-BOUNDARY-0-DISAGREEMENTS-OVER-44800-CHECKS-AND-640-OF-640-COINS-CARRY-IDENTICAL-COEFFICIENTS;THE-CLASS-MERGING-DOES-NOT-0-MERGES-AT-L-8-AGAINST-72-HERE -- SCOPE=D=2;L=4;BOUNDARY-L=8;FIELD=Q(zeta_8);COINS=640;LINKS=32;PLAQUETTES=16;CARRIER=THE-640-UNIFORM-CONFIGURATIONS;FULL-CONFIGURATION-SPACE=640^32-NOT-A-CARRIER-HERE;WEIGHTS=POSITIVE-EXACT-RATIONALS-NO-LOGS-NO-FLOATS;THE-POTENTIAL-IS-NOMINAL-AND-CARRIED-MULTIPLICATIVELY;CONFINEMENT-VOCABULARY-IS-LICENSED-FOR-THIS-UNIT-ONLY-AND-ONLY-IN-MEASURED-SENTENCES;NO-CONTINUUM-CLAIM;NO-SI-NUMBERS;NOT-QCD",
+ "verdict_head": "POT-SPLIT-BY-WEIGHT",
+ "waiver_ledger": {
+  "refusal_only_gates": [
+   "G-THE-LOOP-FAMILY-IS-A-FAMILY-OF-LOOPS-STEP-CHECK"
+  ],
+  "registered_forcings": {
+   "G-ARTIFACT-INTEGRITY": "closes at the disk boundary after the ledger is serialized",
+   "G-THE-LEDGER-CHAIN-VERIFIES": "verifies the chain the other gates wrote, and a falsifier for it is MUT-LEDGER-CHAIN, which edits a row after its gate closed",
+   "G-THE-SEAL-IS-TOTAL": "closes over the manifest the ledger snapshot is taken from, so it cannot be inside the ledger it closes"
+  }
+ }
+}
