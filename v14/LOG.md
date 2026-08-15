@@ -11248,3 +11248,32 @@ template-shaped — the #267-owed ruling reinforced from a
 second panel.  THE EPR PANEL IS COMPLETE (K1 #345 / K2
 #343 / K3 here): ~468 recomputations, zero false numbers.
 Adjudication queues with POT's and SPC's; NDEP K1 out.**
+
+## 2026-08-15 — NDEP K1 (OPERATOR) FROZEN: AWF; 124 RECOMPUTATIONS ZERO FALSE; NINE INSTRUMENTAL MAJORS (TWO MOVE HEADLINES); ALL FOUR OPEN PANELS NOW COMPLETE (v14 LEDGER #347)
+
+**Review:** v14/review-ndep-operator.md (2de168c364a0, 510
+lines).  Grade AWF.  From-scratch rebuild (own GF(4), own
+constructor/routes/legs/transport) reproduced EVERY
+substantive numeral; both FAC and AID provenances verified;
+the seat ran all 27 falsifiers itself — 27/27 on target.
+NINE MAJORS, all instrumental: (1) G-LAW4-COIN CANNOT FAIL
+(rec % m stored — an identity; 120 random vectors 0
+mismatches); (2) **the four-leg census is TWO legs (legs
+3/4 pass everywhere) — "blind to m" is FORCED, not found**;
+(3) law 1 re-measures a set identity AID already proves —
+one of the three portable verdicts vacuous; (4) the 6-OF-6
+denominator typed, omitting the offset the paper itself
+prints; (5) **the offset table bypasses the declared
+uniform rule (hard-coded 1/1/1); applying the rule yields
+NEEDS-3 → 7 of 7**; (6) the n=16 route window is ONE
+history of 24, undisclosed — the seat measured the FULL
+window: 505,920 / 0 / 49,536; (7) the attained floor
+anchored at the BOUND's JSON path; (8) multiset-vs-set
+counts (12→7 event sets; 53→87 sequences axis); (9) two
+typed counts.  Nine minors.  **TWO RESULTS CLOSED FURTHER
+IN THE UNIT'S FAVOUR: the L-vs-saturating confound
+separated (q=3 with all 36 saturating groupings gives
+{3,6} — the L-claim TRUE and now measured); the full n=16
+window.  The sharpened floor correct and attained at all
+three points.**  ALL FOUR OPEN PANELS COMPLETE — POT, SPC,
+EPR, NDEP; four adjudications owed.
