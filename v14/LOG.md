@@ -10746,3 +10746,37 @@ orientation row fully clean; stamps clean.  Five minors
 incl. DISCRIMINATOR-DEGENERATE ruled a re-scope needing
 disclosure (MINOR — the head never spends it).  K1/K3
 still out.
+
+## 2026-08-15 — SPC K2 (EFFECTUS) FROZEN: ACCEPT-WITH-FIXES; 166 RECOMPUTATIONS ZERO MOVED; SEVEN MAJORS — THE 246 REFERENT CROSSES UNIVERSES; THE STATISTICS SPLIT SITS OFF THE PARENT'S GRAIN (v14 LEDGER #330)
+
+**Review:** v14/review-spc-effectus.md (b0de2ee0c5ec, 866
+lines).  Grade ACCEPT-WITH-FIXES; the whole nine-actor
+layer rebuilt by a foreign route (Kostka inversion vs rim
+hooks), every published number reproduced.  SEVEN MAJORS:
+(1) head feasibility discharged at ROW level while §1
+claims ARENA level — once ACTOR-9-UNDER-S9 was declared all
+four words were determined; a #299 extension recommended
+(compounded heads must show feasibility at the declared
+row LIST).  (2) **THE 246 REFERENT: a row-sum over 19
+(group,carrier) pairs, named at none of its three uses; 133
+distinct species stand behind it, at most 90 hosted — "156
+of 246 SPECIES" exceeds its own species universe; the head
+pairs 220-SPECIES and 156-OF-246 across different universes
+three tokens apart.**  (3) the statistics split transported
+off OCC's selection grain FROM THE PARENT'S OWN VACUOUS
+ZERO — at the three CELL-27 rows (the parent's grain) the
+split is EMPTY (0,0,0); §8's closing scope sentence false.
+(4) "the price is one species" is INDEX-TWO-FORCED generic
+(300/300 on random G-sets); the measured content is WHICH
+character + the observable's residence; §5 never writes the
+zero or cites ACT's [0,0].  (5) "crystallization RESTORES"
+not licensed — monotone nesting, nothing lost, no process;
+six head numbers ride an EXHIBITED/UNBOUNDED flag.  (6)
+"hosted" undefined in-paper and NO wall leg stops the
+hosted→REALIZED upgrade (the pin's named missing word).
+(7) the cap scope-closer proves partition-invariance of the
+hosted set, NOT census completeness — |Irr(G)| unmeasured
+at the four capped groups, exactly what word 2 counts.
+Eleven minors.  **HELD: the SM wall clean (fermion/boson
+appear nowhere), the head character-identical everywhere,
+all sums reproduce.**  K1/K3 still out.
