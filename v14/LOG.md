@@ -10780,3 +10780,27 @@ at the four capped groups, exactly what word 2 counts.
 Eleven minors.  **HELD: the SM wall clean (fermion/boson
 appear nowhere), the head character-identical everywhere,
 all sums reproduce.**  K1/K3 still out.
+
+## 2026-08-15 — POT K1 (OPERATOR) FROZEN: AWF; 2,349 VALUES REBUILT FROM FOREIGN PRIMITIVES, ZERO DISAGREEMENTS; TWO MAJORS, BOTH FALSE SENTENCES ABOUT CORRECT NUMBERS (v14 LEDGER #331)
+
+**Review:** v14/review-pot-operator.md (f911283c02d5, 464
+lines).  Grade AWF.  ~293,000 elementary exact comparisons
+(Q(ζ₈) as Fraction 4-tuples, own scale handling); the full
+136-row sweep compared FIELD FOR FIELD (1,768 comparisons,
+0 differences); the L=8 coefficient tuples LITERALLY equal
+at 640/640 across lattice sizes; the spectral door and all
+four orientation readings reproduced.  MAJORS: (1) the
+24-vs-32 set identity false (CONVERGENT with K2 M1);
+mechanism supplied — pure-B ladders give χ = P(P−2)/(P−1)².
+(2) **the TITLE overstates the perimeter theorem: the
+LADDER is perimeter-only, not "the loop observable" — over
+the 18-shape family equal length does not determine the
+value (568/640 disagreements at length 4; the 1×1
+rectangle vs the wrap-1 cycle witness).**  Five minors
+incl. the gap caveat: "spectrum {1,1,1/2} at 640/640" is
+the ansatz's — the halving mode is ABSENT at 128 coins/72
+corners, which matters for SPC-INHERITS-THE-GAP.  Eight
+hostile probes came back empty; §5's mechanism checked AS A
+PROOF, sound and L-independent.  The seat's own first
+rebuild error (11/20 plaquette) caught by the parents'
+13/10 and disclosed.  POT K3 + SPC K1/K3 remain.
