@@ -11192,3 +11192,30 @@ CORPUS SWEEP IS OWED, not merely recommended; one #119
 addendum candidate: a seal manifest is total only if
 totality is recomputed at promotion time.**  NDEP K1
 still out; adjudication after it.
+
+## 2026-08-15 — EPR K1 (OPERATOR) FROZEN: AWF; 145 RECOMPUTATIONS ZERO FALSE; THE SHADOW-ZERO UPGRADED TO A THEOREM; THE ANALYTIC LEGS NAMED (v14 LEDGER #345)
+
+**Review:** v14/review-epr-operator.md (49a1fba03205, 384
+lines).  Grade AWF.  A from-scratch instrument on different
+primitives reproduced EVERY mandated number (the 490/19/0
+lattice, the 72/72 multipartite theorem, all census arms
+cell-for-cell incl. two unprinted columns, the fibres, the
+E5 zeros, 1,080/1,080 probes); the six E-anchors verified
+against the print PAGE BY PAGE (image-only PDF); an
+undisclosed corpus datum (the seed-fan stratum's parallel
+class) RECOVERED from the delivered numbers alone.  FIVE
+MAJORS, none moving a number: (1) RECORD-COMPLETE is
+ANALYTIC (d ∈ db by construction — the pin knew, the paper
+doesn't say); (2) the shadow census equals the §4 ceiling
+re-counted; (3) "not at a strawman" fails at the parent's
+full 37-value alphabet (the ceiling of 9 menus attained at
+34,992 of 50,653 states) — **BUT the licensed
+STRENGTHENING: the shadow carries 0 at EVERY state BY
+THEOREM (every menu partition coarsens the residue
+partition, which carries nothing) — the 64-state sweep
+upgraded to a theorem**; (4) E3's operator leg measures
+residue degeneracy, not EPR's antecedent; (5) E5's zero is
+forced by the formalisation (a reading is a function on
+records; the falsifier tests plumbing).  Six minors.  **The
+head word STANDS and is state-invariant.**  K3 out; NDEP
+K1 out.
