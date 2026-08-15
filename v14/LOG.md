@@ -10693,3 +10693,28 @@ statistics DERIVED licensure), SPC K3 (the independence
 re-probe of the two-route table gates; the six repaired
 falsifiers; full 55-sweep).  Board: three continuation
 repairs + six seats.
+
+## 2026-08-15 — EPR (PAPER-38) PINNED, USER-ORDERED: THE COMPLETENESS AUDIT — EPR 1935 READ IN THE ORIGINAL AND RUN INSIDE THE THEORY (v14 LEDGER #328)
+
+**note-epr-pin.md frozen; the original stored at
+v14/sources/epr-1935-physrev-47-777.pdf (66b5deb150c4) and
+read by the orchestrator (all four pages).**  Six verbatim
+anchors E1–E6 pinned (the completeness condition, the
+reality criterion, the dilemma, the two-reductions
+sentence, the refused objection, the closing).  The unit
+formalizes EPR-REALITY (predict-with-certainty-without-
+disturbance, the disturbance clause instantiated by SEC's
+adjudicated SEAM-CONFINED separation) and EPR-COMPLETE as
+exact predicates; audits TWO descriptions (D-RECORD, the
+theory's own state, vs D-SHADOW, the declared Born-menu
+reading); rebuilds E4's two-reductions phenomenon as the
+measured non-injectivity of the record→shadow map; decides
+E3's dilemma inside the theory; runs the E5 audit under
+the test-declaration duty; and carries the BELL WALL
+(v5 paper-14's verdict: no local-realism or Bell-evasion
+sentence).  Five outcome words with corpus-argued
+feasibility, including the honest
+EPR-CRITERION-INAPPLICABLE arm (whether EPR's separation
+premise even EXISTS at R=3 is itself the first
+measurement, with the multi-sector route as successor if
+not).  **The construction worker launches next.**
