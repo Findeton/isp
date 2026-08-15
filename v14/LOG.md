@@ -11014,3 +11014,30 @@ frozen commit f4172ea (worktree under repair).  Panel
 pressure points named in-delivery (floor attainment beyond
 three points; the q=4 representative choice; corpus
 smallness).  **Battery next.**
+
+## 2026-08-15 — EPR + NDEP BATTERIES GREEN; BOTH THREE-SEAT PANELS LAUNCHED (v14 LEDGER #339)
+
+Both orchestrator batteries fully green (byte-identical
+regeneration from deleted artifacts; ×2; seed-invariant;
+selftests dying at their gates writing nothing; EPR's
+MUT-E5-LEAK and NDEP's MUT-ANCHOR-VALUE dead at declared
+gates — the latter run singly after the script's guessed
+name correctly drew exit 2; artifacts untouched).  Six
+seats launched before this entry: EPR K1 (the separation
+theorem + the walk-arm censuses + the shadow ceiling
+rebuilt from scratch; the six E-anchors verified against
+the 1935 PDF), EPR K2 (completeness-sentence licensure —
+complete-for-the-censused-elements, not simpliciter; the
+Bell wall swept with synonyms; 1935 fidelity in context),
+EPR K3 (the POT-hole probe — verbatim anchors actually
+subscripted; ACT disease both forms; the cross-universe
+referent plant), NDEP K1 (the n=4 arena rebuilt by own
+constructor + fidelity gate; the L-sweep re-derived; the
+floor-formula divergence at n=16), NDEP K2 (the
+floor-correction's FAIRNESS against AID's actual sentence;
+the mod-motif scope — the ladder modulus vs the WHOLE
+mod-3 fingerprint, no overgeneralization; per-law word
+honesty in the 3-OF-5 aggregate), NDEP K3 (the eight
+strengthened gates re-probed; the fidelity-gate corruption;
+full 27-sweep).  Board: 6 seats + 3 continuation repairs +
+SEC-2; the POT/SPC adjudications queued next.
