@@ -10840,3 +10840,25 @@ readings); the [0,0] pinning FORCED pointwise (obs∘τ₁ =
 −obs at 640/640); a new Σm² = ordered-pair-orbits route
 added, 19/19.**  Caveat: the 55-mutant sweep unverified by
 this seat (K3's business).  POT K3 + SPC K3 remain.
+
+## 2026-08-15 — SPC K3 (INSTRUMENT) FROZEN: ACCEPT-WITH-FIXES; THE SPC PANEL IS COMPLETE (v14 LEDGER #334)
+
+**Review:** v14/review-spc-instrument.md (c18b16c76992,
+366 lines).  131 invocations, 56 corruptions, ~750
+recomputed items 0 discrepancies.  MAJORS: (1) THE ACT
+DISEASE PRESENT — a forged top-level key inserted AFTER the
+totality leg survives at rc 0 (before-leg twin dies;
+MUT-SEAL covers edits, nothing covers ADDS).  (2) NO
+REFERENT-BINDING GATE — "host 2 of 30" inverted to "30 of
+30" delivers green with the corrupted paper's digest
+SEALED; verdict-fence and table twins die.  HELD: the
+disclosed two-route repair GENUINE (row-drop dies at
+column gate, column-drop at row gate); **55/55 falsifiers
+dead-on-target at 48 distinct gates**; byte ×2 off-tree at
+two seeds from artifact-deleted trees; 0 float literals by
+independent AST; headers bound; 62 anchors → 19 consumer
+gates all real; selftest 3/3.  Twelve minors, eight named
+fixes.  **PANEL COMPLETE (K1 #333 / K2 #330 / K3 here):
+~2,360 checks, zero false numbers, the repairs all
+sentence/scope/instrument-direction.  Adjudication next;
+POT K3 still out.**
