@@ -10804,3 +10804,16 @@ hostile probes came back empty; §5's mechanism checked AS A
 PROOF, sound and L-independent.  The seat's own first
 rebuild error (11/20 plaquette) caught by the parents'
 13/10 and disclosed.  POT K3 + SPC K1/K3 remain.
+
+## 2026-08-15 — NDEP (PAPER-39) + SEC-2 (PAPER-40) PINNED AND LAUNCHED, USER-ORDERED AHEAD OF EPR (v14 LEDGER #332)
+
+Both pins frozen (note-ndep-pin.md, note-sec2-pin.md).
+NDEP: five core laws re-run at n=4 (n=16 windowed) —
+naming, crystallization pair, coset menu, the mod-3 motif
+(mod-q or bust), division forcing; per-law
+LAW-IN-N/NEEDS-3/BREAKS.  SEC-2: seam selection over the
+4-parameter completion space; THE DICTIONARY EXTENSION
+(gluing as a lawful event, priced) ;the composite price;
+sources = the #301 objects via git-show (worktree under
+repair) + the #322 adjudication.  Constructions launch on
+commit.
