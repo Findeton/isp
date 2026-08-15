@@ -10667,3 +10667,29 @@ continuation as the reconciliation source).  POT's
 orchestrator battery is past plain ×2 (both artifacts
 byte-identical vs committed) and grinding the seed leg;
 SPC's queued behind it; panels launch on green.
+
+## 2026-08-15 — POT + SPC BATTERIES GREEN; BOTH THREE-SEAT PANELS LAUNCHED (v14 LEDGER #327)
+
+Both orchestrator batteries fully green (regeneration from
+deleted artifacts byte-identical; ×2; seed-invariant;
+selftests fatal at their own gates writing nothing;
+MUT-ARENA → G-ARENA-REBUILT and MUT-DROP-SPECIES →
+G-CHARACTER-TABLE-COLUMN-ORTHOGONALITY dead-on-target;
+artifacts untouched).  Six seats launched and confirmed in
+flight before this entry: POT K1 (loop family, the
+perimeter-only theorem + closed form at 640/640, the four
+rows' exact rationals, the 136-sweep, gap 1/2, L=8,
+orientation row), POT K2 (the DEGENERATE word's scope vs
+the pin's registration; the DECONFINES tally semantics;
+the license-with-teeth wall; the area-universal's
+linearity/scope; the uniform-carrier premise at headline),
+POT K3 (the 20 declared-unsealed keys; the license wall
+plants; the two disclosed repairs re-probed; full
+49-sweep), SPC K1 (own character engine; the one-species
+price theorem's isotypic projection recomputed; branching
+by three routes), SPC K2 (the 246 referent; hosted ≠
+realized; "restores" vs nesting; the fermion/SM wall; the
+statistics DERIVED licensure), SPC K3 (the independence
+re-probe of the two-route table gates; the six repaired
+falsifiers; full 55-sweep).  Board: three continuation
+repairs + six seats.
