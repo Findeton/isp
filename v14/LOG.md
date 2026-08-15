@@ -11041,3 +11041,40 @@ honesty in the 3-OF-5 aggregate), NDEP K3 (the eight
 strengthened gates re-probed; the fidelity-gate corruption;
 full 27-sweep).  Board: 6 seats + 3 continuation repairs +
 SEC-2; the POT/SPC adjudications queued next.
+
+## 2026-08-15 — FAC REPAIR (CONTINUATION) DELIVERED AND COMMITTED: Z1–Z12 COMPLETE; THE SECOND IMAGE CONFIRMED (5,854/2, DIA+ANT LEAVE, R=4→598); NO DELIVERED NUMBER MOVED (v14 LEDGER #340)
+
+**Files:** paper-35-fac.md 281289a615ad; fac_exact.py
+f7df0fad29e5; fac_output.txt 11474a8d2f27;
+fac_receipt.json c7135ba5884c.  Orders 6a97c67c4391.  51
+gates / 47 seals / 54 falsifiers.  Head word unchanged
+(FAC-STRATIFIED / ATOM-BREAKS).
+
+**Continuation:** the prior worker's partial (~95%, died at
+a polarity-axis article mismatch with output/receipt still
+at HEAD) KEPT after full independent re-derivation;
+**eight further defects fixed**, incl. the G-NO-FLOATS
+merged-accumulator (the exact K3 MAJOR-4 shape), the
+missing 125-vs-2 rendering, the unbound pin digest (K3
+I11d), and a single-threaded-style violation.  **Z1's
+pairwise image independently confirmed by a foreign
+rebuild: 5,854/2 at slots 5256/5341 (inventory ROW+COL;
+DIA and ANT leave — pairwise LEG-4 fails at BOTH coin
+orders); R=4 → 598; the robust corollary ≥ 5,852 under
+either image.**  Ordered numbers reproduced throughout
+(carrier wedge 44; LEG-4 kills 0 actor / 306 distinct with
+the 72=378−306 repeated-slot identity; 5,810→5,478;
+5,784 distinct / C3 600→528 / 9×9).  **No delivered number
+moved:** 1,977 receipt leaves compared, 38 moved ALL
+instrument-side, physics subtrees diff to zero.
+
+**Worker battery:** plain ×2 byte-identical from
+artifact-deleted trees; off-tree git-less seeds 0 and
+987654321; 10 hostile argv; selftest write-nothing by
+full-tree hash, four anchor classes; **54/54 falsifiers on
+target; 30 of 31 injections dead** at named gates incl.
+all three whitelist-defeat routes, the mdstrip smuggle, the
+atom-word flip, the post-seal key, the forged transcript
+PASS — the one survivor correct-by-design (a genuinely
+backed integer; the compound route closed, 5,853 dies).
+**Orchestrator battery next; terminal on green.**

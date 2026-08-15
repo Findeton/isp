@@ -5,6 +5,7 @@
    "2": 4
   },
   "histories": 5856,
+  "induced_image": "DIRECTIONWISE",
   "inventory": {
    "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ANT": 1,
    "AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL": 1,
@@ -65,6 +66,49 @@
   "subgroup_coset_partitions": 6,
   "unique_at": 5852
  },
+ "actor_census_pairwise": {
+  "cardinality_distribution": {
+   "1": 5854,
+   "2": 2
+  },
+  "declaration": "the SECOND member of the induced-image fiber, run entire on the same criterion, the same corpus and the same LEG-1 survivors; only the map that carries an actor partition to the carrier differs",
+  "histories": 5856,
+  "induced_image": "PAIRWISE",
+  "inventory": {
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL": 1,
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ROW": 1,
+   "AP-9-BLOCKS-9x1": 5856
+  },
+  "lattice": 21147,
+  "leg1_geometry_survivors": 6,
+  "leg4_passes_per_order": {
+   "D.G": 5858,
+   "G.D": 5858
+  },
+  "non_unique_at": 2,
+  "non_unique_rows": [
+   {
+    "admissible": [
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ROW",
+     "AP-9-BLOCKS-9x1"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5256
+   },
+   {
+    "admissible": [
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL",
+     "AP-9-BLOCKS-9x1"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5341
+   }
+  ],
+  "rows_where_the_orders_disagree": 0,
+  "unique_at": 5854
+ },
  "arena": {
   "actor_lattice": 21147,
   "arena_automorphism_order": 108,
@@ -92,12 +136,27 @@
   "strict_triples": 72,
   "window_schedules": 600
  },
- "arithmetic": "exact integers and Z[w] pairs; no float anywhere",
+ "arithmetic": "exact integers and Z[w] pairs; 0 float constants in this file's source and 0 float values in this receipt, each counted by its own leg of the scan this gate raises",
  "atom": {
   "atom_word": "FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN",
   "histories_with_a_trivial_global_stabilizer": 5852,
   "of_those_carrying_a_nontrivial_adjacent_coherent_family": 5852,
-  "reading": "group-level triviality does not imply groupoid-level rigidity at this arena: the histories that force the labelling globally do not force it when the identification is required to cohere only between neighbouring events"
+  "reading": "group-level triviality does not imply groupoid-level rigidity at this arena: the histories that force the labelling globally do not force it when the identification is required to cohere only between neighbouring events",
+  "three_predicates_one_split": {
+   "actor_grain_non_unique": 4,
+   "no_atom_break": 4,
+   "nontrivial_global_stabilizer": 4,
+   "reading": "at every history the global stabilizer is trivial exactly when the actor-grain factorization is unique and exactly when the atom breaks -- three predicates, one split of the corpus, verified element by element, so at the actor grain this unit's answer is extensionally the naming census's",
+   "sets_coincide_element_by_element": true
+  }
+ },
+ "canonization": {
+  "gained": [],
+  "lost": [],
+  "multisets_equal": true,
+  "numerals_after_canonization": 617,
+  "numerals_in_the_reference_body": 617,
+  "probe": "a declared fixture carrying the pathology itself: a wrapped sentence whose continuation line begins with a numeral and a period.  A markdown normaliser that treats that as an ordered-list marker eats the numeral, and the ratio it belonged to is then never scanned at all"
  },
  "carrier": {
   "actors_in_that_many_cells": 9,
@@ -117,6 +176,11 @@
    "3": 30,
    "9": 1
   },
+  "colliding_names": {
+   "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES": 2,
+   "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES": 5
+  },
+  "distinct_leg1_survivor_names": 5,
   "families": {
    "DIRECTIONWISE": 6,
    "PAIRWISE": 4,
@@ -140,6 +204,59 @@
    "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES": 32,
    "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES": 49
   },
+  "inventory_by_admissible_set": [
+   {
+    "admissible_partitions": [
+     0,
+     2,
+     3
+    ],
+    "block_counts": [
+     27,
+     6,
+     9
+    ],
+    "histories": 14,
+    "names": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ]
+   },
+   {
+    "admissible_partitions": [
+     0,
+     5,
+     7
+    ],
+    "block_counts": [
+     27,
+     6,
+     9
+    ],
+    "histories": 14,
+    "names": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ]
+   },
+   {
+    "admissible_partitions": [
+     0,
+     8
+    ],
+    "block_counts": [
+     27,
+     9
+    ],
+    "histories": 14,
+    "names": [
+     "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+     "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ]
+   }
+  ],
   "leg1_geometry_survivors": 10,
   "leg1_survivor_names": [
    "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
@@ -153,6 +270,633 @@
    "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
    "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
   ],
+  "leg1_survivors": [
+   {
+    "block_sizes": [
+     [
+      1,
+      27
+     ]
+    ],
+    "blocks": 27,
+    "families": [
+     "DIRECTIONWISE",
+     "PAIRWISE",
+     "S-DISCRETE-27",
+     "S-TRANSL-ORBIT-H0"
+    ],
+    "index": 0,
+    "name": "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+    "partition": [
+     [
+      0
+     ],
+     [
+      1
+     ],
+     [
+      2
+     ],
+     [
+      3
+     ],
+     [
+      4
+     ],
+     [
+      5
+     ],
+     [
+      6
+     ],
+     [
+      7
+     ],
+     [
+      8
+     ],
+     [
+      9
+     ],
+     [
+      10
+     ],
+     [
+      11
+     ],
+     [
+      12
+     ],
+     [
+      13
+     ],
+     [
+      14
+     ],
+     [
+      15
+     ],
+     [
+      16
+     ],
+     [
+      17
+     ],
+     [
+      18
+     ],
+     [
+      19
+     ],
+     [
+      20
+     ],
+     [
+      21
+     ],
+     [
+      22
+     ],
+     [
+      23
+     ],
+     [
+      24
+     ],
+     [
+      25
+     ],
+     [
+      26
+     ]
+    ]
+   },
+   {
+    "block_sizes": [
+     [
+      27,
+      1
+     ]
+    ],
+    "blocks": 1,
+    "families": [
+     "PAIRWISE",
+     "S-TRIVIAL-1"
+    ],
+    "index": 1,
+    "name": "CP-1-BLOCKS-1x27-ACROSS-DIRECTIONS-ACROSS-SITES",
+    "partition": [
+     [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+     ]
+    ]
+   },
+   {
+    "block_sizes": [
+     [
+      3,
+      3
+     ],
+     [
+      6,
+      3
+     ]
+    ],
+    "blocks": 6,
+    "families": [
+     "PAIRWISE"
+    ],
+    "index": 2,
+    "name": "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+    "partition": [
+     [
+      0,
+      2,
+      3,
+      5,
+      6,
+      8
+     ],
+     [
+      1,
+      4,
+      7
+     ],
+     [
+      9,
+      11,
+      12,
+      14,
+      15,
+      17
+     ],
+     [
+      10,
+      13,
+      16
+     ],
+     [
+      18,
+      20,
+      21,
+      23,
+      24,
+      26
+     ],
+     [
+      19,
+      22,
+      25
+     ]
+    ]
+   },
+   {
+    "block_sizes": [
+     [
+      3,
+      9
+     ]
+    ],
+    "blocks": 9,
+    "families": [
+     "DIRECTIONWISE",
+     "S-TRANSL-ORBIT-HROW"
+    ],
+    "index": 3,
+    "name": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "partition": [
+     [
+      0,
+      3,
+      6
+     ],
+     [
+      1,
+      4,
+      7
+     ],
+     [
+      2,
+      5,
+      8
+     ],
+     [
+      9,
+      12,
+      15
+     ],
+     [
+      10,
+      13,
+      16
+     ],
+     [
+      11,
+      14,
+      17
+     ],
+     [
+      18,
+      21,
+      24
+     ],
+     [
+      19,
+      22,
+      25
+     ],
+     [
+      20,
+      23,
+      26
+     ]
+    ]
+   },
+   {
+    "block_sizes": [
+     [
+      9,
+      3
+     ]
+    ],
+    "blocks": 3,
+    "families": [
+     "DIRECTIONWISE",
+     "S-BY-DIRECTION",
+     "S-TRANSL-ORBIT-HFULL"
+    ],
+    "index": 4,
+    "name": "CP-3-BLOCKS-3x9-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "partition": [
+     [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      24
+     ],
+     [
+      1,
+      4,
+      7,
+      10,
+      13,
+      16,
+      19,
+      22,
+      25
+     ],
+     [
+      2,
+      5,
+      8,
+      11,
+      14,
+      17,
+      20,
+      23,
+      26
+     ]
+    ]
+   },
+   {
+    "block_sizes": [
+     [
+      3,
+      3
+     ],
+     [
+      6,
+      3
+     ]
+    ],
+    "blocks": 6,
+    "families": [
+     "PAIRWISE"
+    ],
+    "index": 5,
+    "name": "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+    "partition": [
+     [
+      0,
+      9,
+      18
+     ],
+     [
+      1,
+      2,
+      10,
+      11,
+      19,
+      20
+     ],
+     [
+      3,
+      12,
+      21
+     ],
+     [
+      4,
+      5,
+      13,
+      14,
+      22,
+      23
+     ],
+     [
+      6,
+      15,
+      24
+     ],
+     [
+      7,
+      8,
+      16,
+      17,
+      25,
+      26
+     ]
+    ]
+   },
+   {
+    "block_sizes": [
+     [
+      3,
+      9
+     ]
+    ],
+    "blocks": 9,
+    "families": [
+     "S-BY-AG-LINE",
+     "S-BY-SHIFT-ORBIT"
+    ],
+    "index": 6,
+    "name": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "partition": [
+     [
+      0,
+      9,
+      18
+     ],
+     [
+      1,
+      4,
+      7
+     ],
+     [
+      2,
+      14,
+      26
+     ],
+     [
+      3,
+      12,
+      21
+     ],
+     [
+      5,
+      17,
+      20
+     ],
+     [
+      6,
+      15,
+      24
+     ],
+     [
+      8,
+      11,
+      23
+     ],
+     [
+      10,
+      13,
+      16
+     ],
+     [
+      19,
+      22,
+      25
+     ]
+    ]
+   },
+   {
+    "block_sizes": [
+     [
+      3,
+      9
+     ]
+    ],
+    "blocks": 9,
+    "families": [
+     "DIRECTIONWISE",
+     "S-TRANSL-ORBIT-HCOL"
+    ],
+    "index": 7,
+    "name": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "partition": [
+     [
+      0,
+      9,
+      18
+     ],
+     [
+      1,
+      10,
+      19
+     ],
+     [
+      2,
+      11,
+      20
+     ],
+     [
+      3,
+      12,
+      21
+     ],
+     [
+      4,
+      13,
+      22
+     ],
+     [
+      5,
+      14,
+      23
+     ],
+     [
+      6,
+      15,
+      24
+     ],
+     [
+      7,
+      16,
+      25
+     ],
+     [
+      8,
+      17,
+      26
+     ]
+    ]
+   },
+   {
+    "block_sizes": [
+     [
+      3,
+      9
+     ]
+    ],
+    "blocks": 9,
+    "families": [
+     "DIRECTIONWISE",
+     "S-TRANSL-ORBIT-HDIA"
+    ],
+    "index": 8,
+    "name": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "partition": [
+     [
+      0,
+      12,
+      24
+     ],
+     [
+      1,
+      13,
+      25
+     ],
+     [
+      2,
+      14,
+      26
+     ],
+     [
+      3,
+      15,
+      18
+     ],
+     [
+      4,
+      16,
+      19
+     ],
+     [
+      5,
+      17,
+      20
+     ],
+     [
+      6,
+      9,
+      21
+     ],
+     [
+      7,
+      10,
+      22
+     ],
+     [
+      8,
+      11,
+      23
+     ]
+    ]
+   },
+   {
+    "block_sizes": [
+     [
+      3,
+      9
+     ]
+    ],
+    "blocks": 9,
+    "families": [
+     "DIRECTIONWISE",
+     "S-TRANSL-ORBIT-HANT"
+    ],
+    "index": 9,
+    "name": "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "partition": [
+     [
+      0,
+      15,
+      21
+     ],
+     [
+      1,
+      16,
+      22
+     ],
+     [
+      2,
+      17,
+      23
+     ],
+     [
+      3,
+      9,
+      24
+     ],
+     [
+      4,
+      10,
+      25
+     ],
+     [
+      5,
+      11,
+      26
+     ],
+     [
+      6,
+      12,
+      18
+     ],
+     [
+      7,
+      13,
+      19
+     ],
+     [
+      8,
+      14,
+      20
+     ]
+    ]
+   }
+  ],
   "non_unique_at": 46,
   "non_unique_rows": [
    {
@@ -160,6 +904,11 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     2,
+     3
     ],
     "cardinality": 3,
     "corpus": "C3",
@@ -171,6 +920,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     2,
+     3
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5259
@@ -180,6 +934,11 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     2,
+     3
     ],
     "cardinality": 3,
     "corpus": "C3",
@@ -191,6 +950,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     2,
+     3
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5271
@@ -200,6 +964,11 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     2,
+     3
     ],
     "cardinality": 3,
     "corpus": "C3",
@@ -211,6 +980,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     2,
+     3
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5307
@@ -220,6 +994,11 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     2,
+     3
     ],
     "cardinality": 3,
     "corpus": "C3",
@@ -231,6 +1010,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     2,
+     3
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5319
@@ -240,6 +1024,11 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     5,
+     7
     ],
     "cardinality": 3,
     "corpus": "C3",
@@ -251,6 +1040,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     5,
+     7
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5343
@@ -260,6 +1054,11 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     5,
+     7
     ],
     "cardinality": 3,
     "corpus": "C3",
@@ -271,6 +1070,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     5,
+     7
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5351
@@ -280,6 +1084,11 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     5,
+     7
     ],
     "cardinality": 3,
     "corpus": "C3",
@@ -291,6 +1100,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     5,
+     7
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5375
@@ -300,6 +1114,11 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     5,
+     7
     ],
     "cardinality": 3,
     "corpus": "C3",
@@ -311,6 +1130,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     5,
+     7
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5383
@@ -319,6 +1143,10 @@
     "admissible": [
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     8
     ],
     "cardinality": 2,
     "corpus": "C3",
@@ -329,6 +1157,10 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     8
+    ],
     "cardinality": 2,
     "corpus": "C3",
     "index": 5427
@@ -337,6 +1169,10 @@
     "admissible": [
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     8
     ],
     "cardinality": 2,
     "corpus": "C3",
@@ -347,6 +1183,10 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     8
+    ],
     "cardinality": 2,
     "corpus": "C3",
     "index": 5431
@@ -355,6 +1195,10 @@
     "admissible": [
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     8
     ],
     "cardinality": 2,
     "corpus": "C3",
@@ -365,6 +1209,10 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     8
+    ],
     "cardinality": 2,
     "corpus": "C3",
     "index": 5443
@@ -374,6 +1222,10 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     8
+    ],
     "cardinality": 2,
     "corpus": "C3",
     "index": 5446
@@ -382,6 +1234,10 @@
     "admissible": [
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     8
     ],
     "cardinality": 2,
     "corpus": "C3",
@@ -393,6 +1249,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     2,
+     3
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5448
@@ -402,6 +1263,11 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     2,
+     3
     ],
     "cardinality": 3,
     "corpus": "C3",
@@ -413,6 +1279,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     2,
+     3
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5460
@@ -422,6 +1293,11 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     2,
+     3
     ],
     "cardinality": 3,
     "corpus": "C3",
@@ -433,6 +1309,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     5,
+     7
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5469
@@ -442,6 +1323,11 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     5,
+     7
     ],
     "cardinality": 3,
     "corpus": "C3",
@@ -453,6 +1339,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     5,
+     7
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5477
@@ -463,6 +1354,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     5,
+     7
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5479
@@ -471,6 +1367,10 @@
     "admissible": [
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     8
     ],
     "cardinality": 2,
     "corpus": "C3",
@@ -481,6 +1381,10 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     8
+    ],
     "cardinality": 2,
     "corpus": "C3",
     "index": 5491
@@ -490,6 +1394,10 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     8
+    ],
     "cardinality": 2,
     "corpus": "C3",
     "index": 5494
@@ -498,6 +1406,10 @@
     "admissible": [
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     8
     ],
     "cardinality": 2,
     "corpus": "C3",
@@ -509,6 +1421,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     2,
+     3
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5496
@@ -518,6 +1435,11 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     2,
+     3
     ],
     "cardinality": 3,
     "corpus": "C3",
@@ -529,6 +1451,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     5,
+     7
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5501
@@ -539,6 +1466,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     5,
+     7
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5503
@@ -548,6 +1480,10 @@
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     8
+    ],
     "cardinality": 2,
     "corpus": "C3",
     "index": 5506
@@ -556,6 +1492,10 @@
     "admissible": [
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     8
     ],
     "cardinality": 2,
     "corpus": "C3",
@@ -567,6 +1507,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     2,
+     3
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5508
@@ -577,6 +1522,11 @@
      "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     5,
+     7
+    ],
     "cardinality": 3,
     "corpus": "C3",
     "index": 5509
@@ -585,6 +1535,10 @@
     "admissible": [
      "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+    ],
+    "admissible_indices": [
+     0,
+     8
     ],
     "cardinality": 2,
     "corpus": "C3",
@@ -602,12 +1556,106 @@
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
      "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
     ],
+    "admissible_indices": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9
+    ],
     "cardinality": 9,
     "corpus": "C3",
     "index": 5511
    }
   ],
+  "sub_window_censuses": [
+   {
+    "cardinality_distribution": {
+     "1": 5810,
+     "2": 45,
+     "7": 1
+    },
+    "sub_window": "THE-STRATA",
+    "survivors": 8,
+    "unique_at": 5810
+   },
+   {
+    "cardinality_distribution": {
+     "1": 5810,
+     "2": 45,
+     "6": 1
+    },
+    "sub_window": "DIRECTIONWISE-IMAGES",
+    "survivors": 6,
+    "unique_at": 5810
+   },
+   {
+    "cardinality_distribution": {
+     "1": 5825,
+     "2": 30,
+     "4": 1
+    },
+    "sub_window": "PAIRWISE-IMAGES",
+    "survivors": 4,
+    "unique_at": 5825
+   },
+   {
+    "cardinality_distribution": {
+     "1": 5810,
+     "2": 15,
+     "3": 30,
+     "9": 1
+    },
+    "sub_window": "THE-DECLARED-WINDOW",
+    "survivors": 10,
+    "unique_at": 5810
+   }
+  ],
   "unique_at": 5810,
+  "widest_row": {
+   "admissible_partitions": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9
+   ],
+   "block_counts": [
+    27,
+    1,
+    6,
+    9,
+    3,
+    6,
+    9,
+    9,
+    9
+   ],
+   "cardinality": 9,
+   "corpus": "C3",
+   "includes_the_one_block_partition_of_the_whole_carrier": true,
+   "index": 5511,
+   "names": [
+    "CP-1-BLOCKS-1x27-ACROSS-DIRECTIONS-ACROSS-SITES",
+    "CP-27-BLOCKS-27x1-WITHIN-ONE-DIRECTION-WITHIN-ONE-SITE",
+    "CP-3-BLOCKS-3x9-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+    "CP-6-BLOCKS-3x6-3x3-ACROSS-DIRECTIONS-ACROSS-SITES",
+    "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES",
+    "CP-9-BLOCKS-9x3-WITHIN-ONE-DIRECTION-ACROSS-SITES"
+   ],
+   "reading": "at this one history the committed structure descends to a quotient with a single object: the one-block partition of all the cells is admissible"
+  },
   "window": 42295
  },
  "class_binding": {
@@ -847,7 +1895,9 @@
  "closing_gates": {
   "after_the_snapshot": [
    "G-TRANSCRIPT-SEALED-WHOLE",
+   "G-TRANSCRIPT-MATCHES-THE-GATE-LEDGER",
    "G-GATE-ACCOUNTING",
+   "G-NAMED-GATES-EXIST",
    "G-SEAL-TOTALITY",
    "G-ARTIFACT-INTEGRITY"
   ],
@@ -856,6 +1906,7 @@
    "G-PAPER-CLAIMS",
    "G-PAPER-TABLES-WITH-HEADERS",
    "G-PAPER-NUMERAL-COVERAGE",
+   "G-CANONIZATION-PRESERVES-NUMERALS",
    "G-SENTENCE-REFERENT-BINDING",
    "G-PAPER-CLAIM-POLARITY",
    "G-NO-TYPED-COUNTS",
@@ -866,7 +1917,9 @@
    "G-PAPER-INSTRUMENT-RAN-IN-THE-PLAIN-RUN",
    "G-SWEEP-IS-EXECUTION-BOUND",
    "G-TRANSCRIPT-SEALED-WHOLE",
+   "G-TRANSCRIPT-MATCHES-THE-GATE-LEDGER",
    "G-GATE-ACCOUNTING",
+   "G-NAMED-GATES-EXIST",
    "G-SEAL-TOTALITY",
    "G-ARTIFACT-INTEGRITY"
   ],
@@ -877,8 +1930,11 @@
    "G.D",
    "D.G"
   ],
+  "denominator": "a pass count alone cannot say whether the leg ever fired, because LEG-4 is evaluated only on the rows the first three legs admit; the evaluation count and the failure count are published beside it",
   "duty": "paper-20 declares the coin order a verdict-relevant fiber (#293); both members are run on every LEG-4 evaluation and both counts are published here",
   "fiber": "INERT-ON-EVERY-CENSUS-ROW",
+  "leg4_evaluations_per_order": 12177,
+  "leg4_failures_per_order": 378,
   "leg4_passes_per_order": {
    "D.G": 11799,
    "G.D": 11799
@@ -933,7 +1989,10 @@
     "histories": 5856
    }
   ],
-  "families_no_arena_reached": [],
+  "families_no_declared_arena_reached": [
+   "FAC-BLOCKED-AT"
+  ],
+  "families_unreached_by_arena_or_law": [],
   "note": "every row above is a genuine evaluation of the SAME criterion and the SAME head law on a declared datum; no control row is typed and none is forged",
   "pre_registered_families": [
    "FAC-ATOM",
@@ -942,12 +2001,16 @@
    "FAC-FACTORIZATION-FORCED",
    "FAC-STRATIFIED"
   ],
-  "record_dynamics_wedge_on_the_committed_corpus": 0,
+  "record_dynamics_wedge_on_the_committed_corpus": {
+   "actor": 0,
+   "carrier": 44
+  },
   "record_dynamics_wedge_on_the_control": 4,
   "synthetic_histories": [
    {
     "adjacent_coherent_families": 6,
     "arena": "X1-ONE-DIVISION-EVENT",
+    "atom_row_is": "VACUOUS-STABILIZER-NONTRIVIAL",
     "atom_word": "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN",
     "distinct_record_rows": 2,
     "events": 1,
@@ -959,6 +2022,7 @@
    {
     "adjacent_coherent_families": 216,
     "arena": "X2-ONE-FULL-ROW-ROUND",
+    "atom_row_is": "VACUOUS-STABILIZER-NONTRIVIAL",
     "atom_word": "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN",
     "distinct_record_rows": 1,
     "events": 3,
@@ -970,6 +2034,7 @@
    {
     "adjacent_coherent_families": 216,
     "arena": "X3-ROW-MULTIPLICITIES-CONGRUENT-MOD-THREE",
+    "atom_row_is": "VACUOUS-STABILIZER-NONTRIVIAL",
     "atom_word": "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN",
     "distinct_record_rows": 3,
     "events": 12,
@@ -981,6 +2046,7 @@
    {
     "adjacent_coherent_families": 1,
     "arena": "X4-THE-OVERLAPPING-CHAIN",
+    "atom_row_is": "DECISIVE",
     "atom_word": "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN",
     "distinct_record_rows": 4,
     "events": 7,
@@ -992,6 +2058,7 @@
    {
     "adjacent_coherent_families": 5184,
     "arena": "X5-A-ROW-ROUND-THEN-A-COLUMN-ROUND",
+    "atom_row_is": "DECISIVE",
     "atom_word": "FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN",
     "distinct_record_rows": 1,
     "events": 6,
@@ -1008,6 +2075,16 @@
    "FAC-FACTORIZATION-DECLARED",
    "FAC-FACTORIZATION-FORCED",
    "FAC-STRATIFIED"
+  ],
+  "words_emitted_by_a_declared_arena": [
+   "FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN",
+   "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN",
+   "FAC-FACTORIZATION-DECLARED",
+   "FAC-FACTORIZATION-FORCED",
+   "FAC-STRATIFIED"
+  ],
+  "words_reached_only_by_evaluating_the_law": [
+   "FAC-BLOCKED-AT-THE-GROUPOID-COMPLETE-RELATION"
   ]
  },
  "corpora": {
@@ -1027,11 +2104,51 @@
   },
   "total_histories": 5856
  },
+ "corpus_multiset": {
+  "distinct": 5784,
+  "duplicate_slots": 72,
+  "histories_appearing_more_than_once": 9,
+  "largest_multiplicity": 9,
+  "multiplicities": {
+   "1": 5775,
+   "9": 9
+  },
+  "reading": "the corpus is the parents' window and it is a MULTISET: counts published as `of 5,856' are counts over corpus SLOTS, not over distinct histories, and the two differ wherever the driven window reaches a history more than once",
+  "rows": [
+   {
+    "corpus": "C1",
+    "distinct": 72,
+    "multiplicities": {
+     "1": 72
+    },
+    "slots": 72
+   },
+   {
+    "corpus": "C2",
+    "distinct": 5184,
+    "multiplicities": {
+     "1": 5184
+    },
+    "slots": 5184
+   },
+   {
+    "corpus": "C3",
+    "distinct": 528,
+    "multiplicities": {
+     "1": 519,
+     "9": 9
+    },
+    "slots": 600
+   }
+  ],
+  "slots": 5856
+ },
  "counts": {
   "actor_lattice": 21147,
   "actor_leg1": 6,
   "actor_non_unique": 4,
   "actor_unique": 5852,
+  "actor_unique_at_the_pairwise_image": 5854,
   "arena_group_order": 108,
   "atom_breaks": 5852,
   "carrier_leg1": 10,
@@ -1044,13 +2161,14 @@
    4,
    5
   ],
+  "forced_under_either_image": 5852,
   "histories": 5856
  },
  "coverage": {
   "descriptions_not_matching_their_code": [],
   "gates_named_that_do_not_exist": [],
-  "hooked": 36,
-  "mutants": 36,
+  "hooked": 54,
+  "mutants": 54,
   "rows": [
    {
     "constant_boolean": false,
@@ -1411,16 +2529,224 @@
     "gate_exists": true,
     "hooks": 1,
     "mutant": "MUT-GATECOUNT"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "img_rows[0][\"induced_image\"], img_rows[1][\"induced_image\"]",
+    "description": "exchanges the two induced images' labels, so each image's census is published under the other image's name",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-BOTH-INDUCED-IMAGES-CENSUSED",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-IMAGE-SWAP"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-IMAGE-STAMP\"",
+    "description": "stamps the induced-image fiber INERT while the two censuses differ, which is the disclosure the fiber exists to make",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-BOTH-INDUCED-IMAGES-CENSUSED",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-IMAGE-STAMP"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-LEG4-BY-GRAIN\"",
+    "description": "declares the leg-binding answer NOT to be stratified by grain while the two grains' binding sets differ",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-WHICH-LEG-BINDS-BY-GRAIN",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-LEG4-BY-GRAIN"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-THESIS\"",
+    "description": "declares the thesis condition not necessary at both grains, which is the only direction the head asserts",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-THESIS-IS-ONE-DIRECTIONAL",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-THESIS"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-MULTISET\"",
+    "description": "declares the per-corpus slot counts not to sum to the corpus total, so the multiplicity table stops accounting for the corpus",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-THE-CORPUS-IS-A-MULTISET",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-MULTISET"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-FREE-PRODUCT\"",
+    "description": "reports one history at which the empty coherence relation does not return the free product of the full footprint symmetric groups, which is what identifies the object the ladder counts",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-THE-LADDER-AND-THE-ARROW-GROUPOID-ARE-TWO-OBJECTS",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-FREE-PRODUCT"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-THREE-PREDICATES\"",
+    "description": "declares the three coinciding predicates -- actor-grain non-uniqueness, nontrivial stabilizer, no atom break -- not to coincide",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-ATOM-THEOREM-AT-THE-GROUPOID-GRAIN",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-THREE-PREDICATES"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-R6-FORCED\"",
+    "description": "declares the R = 6 rung not forced by the R = 3 rung, so the theorem-forced stamp and the measurement part company",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-TRANSPORT-ALONG-THE-R-LADDER",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-R6-FORCED"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "canon_numeric(canon_src, mut(\"MUT-CANON-NUMERALS\"))",
+    "description": "routes the numeral-bearing normaliser back through the markdown stripper that eats a line-initial numeral, which is how a false ratio went unscanned",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-CANONIZATION-PRESERVES-NUMERALS",
+    "gate_exists": true,
+    "hooks": 2,
+    "mutant": "MUT-CANON-NUMERALS"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "R[\"measure_relativity\"][\"rows\"][0][\"stamp\"] = \"PROBABILITY\"",
+    "description": "stamps ONE ratio row as a probability while the top-level stamp stays COUNTING-ONLY",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-E24-COUNTING-ONLY",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-E24-ROW"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "R[\"a_key_forged_after_the_seal_manifest\"]",
+    "description": "forges a top-level receipt key AFTER the seal manifest is assembled, in the window the delivered ordering left open",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-SEAL-TOTALITY",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-POST-SEAL-KEY"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "rendered = rendered[:-1]",
+    "description": "drops one rendered table row, so the paper carries a table row no route rendered -- the additive direction containment cannot see",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-PAPER-TABLES-WITH-HEADERS",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-TABLE-SURPLUS"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "text = text + \"\\n```\\nA FOURTH FENCE",
+    "description": "appends a fourth fenced block to the paper text the fence multiset is taken over",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-PAPER-NUMERAL-COVERAGE",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-FENCE-SURPLUS"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "LINES.append(\"  [PASS] G-FORGED-BY-THE-FALSIFIER\")",
+    "description": "appends a forged PASS line for a gate that never ran to the transcript before it is staged and digested",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-TRANSCRIPT-MATCHES-THE-GATE-LEDGER",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-GATELINE"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "pick(\"MUT-NAMED-GATE\"",
+    "description": "renames every verbatim anchor's consumer gate to a gate that does not exist",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-NAMED-GATES-EXIST",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-NAMED-GATE"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "if mut(\"MUT-SPELLED-COMPOUND\")",
+    "description": "plants a spelled COMPOUND numeral built entirely from backed atoms, which a per-word scan cannot see",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-PAPER-NUMERAL-COVERAGE",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-SPELLED-COMPOUND"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "if mut(\"MUT-POLARITY-ABSENT\") and nm",
+    "description": "removes the asserted form of the head-word axis, so the axis passes on a silence instead of on an assertion",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-PAPER-CLAIM-POLARITY",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-POLARITY-ABSENT"
+   },
+   {
+    "constant_boolean": false,
+    "declared_fragment": "body = RATIO_PAT.sub(\" \", body, count=1)",
+    "description": "deletes one published relation from the body the referent scan reads, so a relation the scanner never saw would pass as one that bound",
+    "fragment_found_in_the_hook_source": true,
+    "gate": "G-SENTENCE-REFERENT-BINDING",
+    "gate_exists": true,
+    "hooks": 1,
+    "mutant": "MUT-REFERENT-TOTALITY"
    }
   ]
  },
  "criterion": {
+  "allowed_names": [
+   "CELLS",
+   "DIM",
+   "I7_LINKS",
+   "SHIFT_T",
+   "SITES",
+   "SITE_INDEX",
+   "block_map",
+   "bool",
+   "canonical_cell_partition",
+   "coupled_columns",
+   "enumerate",
+   "induced_cell_partition",
+   "leg1_actor",
+   "leg1_cell",
+   "leg2_actor",
+   "leg2_cell",
+   "leg3_actor",
+   "leg3_cell",
+   "leg4_cell",
+   "len",
+   "pairwise_cell_partition",
+   "range",
+   "sorted",
+   "sum",
+   "tuple",
+   "vadd"
+  ],
   "census_products_referenced": [],
   "coin_orders": [
    "G.D",
    "D.G"
   ],
-  "combined_sha256_12": "0019d84588bb",
+  "combined_sha256_12": "fde02cc2ed0c",
   "free_names": {
    "admissible_actor": [
     "bool",
@@ -1479,20 +2805,28 @@
     "range",
     "sorted",
     "tuple"
+   ],
+   "pairwise_cell_partition": [
+    "CELLS",
+    "block_map",
+    "canonical_cell_partition",
+    "sorted",
+    "tuple",
+    "vadd"
    ]
   },
   "functions": {
    "admissible_actor": {
-    "lines": 11,
-    "sha256_12": "39279020d1d4"
+    "lines": 18,
+    "sha256_12": "86475322f367"
    },
    "admissible_cell": {
     "lines": 10,
     "sha256_12": "f4ebd8abe28f"
    },
    "induced_cell_partition": {
-    "lines": 7,
-    "sha256_12": "9a812ceeffb8"
+    "lines": 8,
+    "sha256_12": "5804a3c3442b"
    },
    "leg1_actor": {
     "lines": 13,
@@ -1521,15 +2855,26 @@
    "leg4_cell": {
     "lines": 22,
     "sha256_12": "20814624b395"
+   },
+   "pairwise_cell_partition": {
+    "lines": 9,
+    "sha256_12": "03f78aa7586d"
    }
   },
+  "induced_images": [
+   "induced_cell_partition (DIRECTIONWISE)",
+   "pairwise_cell_partition (PAIRWISE)"
+  ],
+  "leak_test": "WHITELIST -- every free name of every criterion function must appear in the declared allow list; a blacklist of spellings is defeated by an alias, by globals() and by a default argument, and was",
   "legs": [
    "LEG-1-GEOMETRY",
    "LEG-2-HISTORY",
    "LEG-3-RECORD",
    "LEG-4-DYNAMICS"
   ],
-  "statement": "a partition is LAW-COMPATIBLE at a history exactly when the committed link/shift structure, the division events, the record field and paper-20's one-step operator all DESCEND along the identifications the partition induces"
+  "names_outside_the_whitelist": [],
+  "statement": "a partition is LAW-COMPATIBLE at a history exactly when the committed link/shift structure, the division events, the record field and paper-20's one-step operator all DESCEND along the identifications the partition induces",
+  "whitelist_excludes_every_forbidden_spelling": true
  },
  "cross_grain": {
   "actor_non_unique": 4,
@@ -1583,17 +2928,17 @@
    "waiver": null
   },
   {
-   "evidence": "functions 10 of 10 declared, combined digest 0019d84588bb, leaked names none",
-   "gate": "G-CRITERION-FROZEN-BEFORE-THE-CENSUS",
+   "evidence": "slots 5856, distinct 5784, duplicates 72, multiplicities {'1': 5775, '9': 9}",
+   "gate": "G-THE-CORPUS-IS-A-MULTISET",
    "passed": true,
-   "statement": "THE CRITERION IS DECLARED AND DIGESTED BEFORE ANY CENSUS ROW RUNS.  Its 10 functions -- 107 lines in all -- are located by AST in this file's own source and digested here, at a point in the run where not one admissible set has yet been computed; and the free names each leg references are extracted and required to contain no census product, so a leg cannot consult the answer it is deciding.  The four legs are LEG-1-GEOMETRY, LEG-2-HISTORY, LEG-3-RECORD, LEG-4-DYNAMICS",
+   "statement": "THE CORPUS'S OWN MULTIPLICITIES ARE PUBLISHED (K3 m4).  The 5,856 committed histories are 5,856 SLOTS carrying 5,784 distinct histories: C1 and C2 are duplicate-free, and the 600 driven-window schedules yield 528 distinct histories, 9 of them appearing 9 times each.  Every `N of 5,856' in this unit is therefore a count over slots, and the conversion is published rather than left to a reader",
    "waiver": null
   },
   {
-   "evidence": "windows 6, actor lattice 21147 of 21147, carrier window 42295 of 545717047936059989389",
-   "gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
+   "evidence": "functions 11 of 11 declared, combined digest fde02cc2ed0c, names outside the whitelist none, forbidden spellings none",
+   "gate": "G-CRITERION-FROZEN-BEFORE-THE-CENSUS",
    "passed": true,
-   "statement": "EVERY WINDOW IS NAMED IN-STRING WITH ITS BOUND.  6 windows are declared; the actor lattice is COMPLETE at 21,147 of Bell(9) = 21,147, and the carrier window is a declared 42,295 of Bell(27) = 545,717,047,936,059,989,389, which is the whole reason it is a window at all.  No census below is truncated silently: the coherence ladder searches upward until it meets the complete relation, and the per-leg sweep publishes its sub-window and its complement",
+   "statement": "THE CRITERION IS DECLARED AND DIGESTED BEFORE ANY CENSUS ROW RUNS, AND ITS FREE NAMES ARE A WHITELIST.  Its 11 functions -- 124 lines in all -- are located by AST in this file's own source and digested here, at a point in the run where not one admissible set has yet been computed.  Every free name each leg references is then required to lie in the declared list of 26 allowed names -- the arena's constants, the folding helpers, the criterion's own members and the builtins it uses -- so an alias, a globals() lookup and a default-argument smuggle all fail here, which a blacklist of spellings does not.  The whitelist is part of the combined digest, so widening it moves the digest the paper states.  The four legs are LEG-1-GEOMETRY, LEG-2-HISTORY, LEG-3-RECORD, LEG-4-DYNAMICS",
    "waiver": null
   },
   {
@@ -1604,10 +2949,17 @@
    "waiver": null
   },
   {
-   "evidence": "unique 5852, non-unique 4, cardinalities [1, 2]",
+   "evidence": "unique 5852, non-unique 4, cardinalities [1, 2], image DIRECTIONWISE",
    "gate": "G-ACTOR-GRAIN-ADMISSIBLE-PER-HISTORY",
    "passed": true,
-   "statement": "THE ACTOR-GRAIN ADMISSIBLE SET IS COUNTED PER HISTORY, NOT IN AGGREGATE (#87).  At each of the 5,856 committed histories the criterion is evaluated on every LEG-1 survivor and the admissible set is listed by name: cardinality one at 5,852 histories and greater than one at 4.  The discrete nine-block partition is admissible at every history -- checked history by history -- so the count is never zero and the question is always whether anything JOINS it",
+   "statement": "THE ACTOR-GRAIN ADMISSIBLE SET IS COUNTED PER HISTORY, NOT IN AGGREGATE (#87), AND IT CARRIES THE IMAGE IT WAS TAKEN AT.  At each of the 5,856 committed histories the criterion is evaluated on every LEG-1 survivor at the DIRECTIONWISE induced image and the admissible set is listed by name: cardinality one at 5,852 histories and greater than one at 4.  The discrete nine-block partition is admissible at every history -- checked history by history -- so the count is never zero and the question is always whether anything JOINS it",
+   "waiver": null
+  },
+  {
+   "evidence": "directionwise 5852 of 5856, pairwise 5854 of 5856, fiber LIVE, forced at least at 5852, class partitions that leave ['AP-3-BLOCKS-3x3-PARALLEL-CLASS-ANT', 'AP-3-BLOCKS-3x3-PARALLEL-CLASS-DIA']",
+   "gate": "G-BOTH-INDUCED-IMAGES-CENSUSED",
+   "passed": true,
+   "statement": "LEG-4 AT THE ACTOR GRAIN CARRIES AN IMAGE, AND BOTH DECLARED IMAGES ARE RUN (#293's duty, applied to the second free item of the same leg).  LEG-4 is a predicate on a CARRIER partition, so an actor partition reaches it through a map, and this unit's own window declares two: the DIRECTIONWISE image and the PAIRWISE image the carrier's typing suggests.  Both are censused entire on the same corpus and the same LEG-1 survivors: 5,852 of 5,856 unique at the directionwise image and 5,854 of 5,856 at the pairwise one, so the fiber is LIVE -- and each image's census is compared here with the census published under its own name, so an image-label swap fails.  The robust reading is the minimum: under either image the division is forced at at least 5,852 of 5,856",
    "waiver": null
   },
   {
@@ -1625,10 +2977,17 @@
    "waiver": null
   },
   {
-   "evidence": "orders ['G.D', 'D.G'], passes {'D.G': 11799, 'G.D': 11799}, disagreements 0",
+   "evidence": "condition holds at 348, necessary True, sufficient False, actor biconditional True, carrier biconditional False",
+   "gate": "G-THESIS-IS-ONE-DIRECTIONAL",
+   "passed": true,
+   "statement": "THE HEAD'S THESIS FIELD IS MEASURED IN BOTH DIRECTIONS AND ASSERTED IN ONE (the paper-23 iff lesson).  The condition it names -- the history repeats a parallel class -- holds at 348 of the 5,856 committed histories, and every history at which the criterion admits more than one factorization satisfies it: 4 of 4 at the actor grain and 46 of 46 at the carrier grain, 0 exceptions.  The converse is FALSE at both grains, so the field is an ONLY-WHERE and the gate refuses to let it be read as a biconditional.  The tight biconditional this corpus does carry is the stronger class-constant predicate at the actor grain alone: 4 histories use one parallel class in every round and they are exactly the actor grain's non-unique ones, while 4 of the carrier grain's 46 are class-constant",
+   "waiver": null
+  },
+  {
+   "evidence": "orders ['G.D', 'D.G'], evaluations 12177, passes {'D.G': 11799, 'G.D': 11799}, failures 378, disagreements 0",
    "gate": "G-BOTH-COIN-ORDERS-PUBLISHED",
    "passed": true,
-   "statement": "THE COIN-ORDER DUTY IS DISCHARGED BY RUNNING BOTH, NOT BY CHOOSING ONE (#293).  Every LEG-4 evaluation in both censuses is performed at G.D and at D.G; the pass counts are G.D=11,799, D.G=11,799 and the number of rows at which the two orders disagree is 0, so the fiber is published rather than stamped away",
+   "statement": "THE COIN-ORDER DUTY IS DISCHARGED BY RUNNING BOTH, NOT BY CHOOSING ONE (#293), AND THE PASS COUNT IS PUBLISHED WITH ITS DENOMINATOR.  Every LEG-4 evaluation in both censuses is performed at G.D and at D.G: 12,177 evaluations per order, of which G.D=11,799, D.G=11,799 pass and 378 fail, and the number of rows at which the two orders disagree is 0 -- on failures as on passes -- so the fiber is published rather than stamped away",
    "waiver": null
   },
   {
@@ -1646,6 +3005,13 @@
    "waiver": null
   },
   {
+   "evidence": "actor: leg4 0 of 5860 fail, unique 5852 -> 5852; carrier: leg4 378 of 6317 fail, unique 5478 -> 5810; fineness 0 of 24354 disagree",
+   "gate": "G-WHICH-LEG-BINDS-BY-GRAIN",
+   "passed": true,
+   "statement": "THE FOURTH LEG IS REPORTED TOO, AND THE ANSWER IS ITSELF STRATIFIED.  LEG-4 is a predicate on the induced carrier partition, so it is separated at BOTH grains over the whole corpus, twice: by counting its failures among the rows the earlier legs admit, and by re-taking each census with the leg DELETED.  At the actor grain it fails 0 times in 5,860 evaluations and the cardinality profile is unchanged when it is deleted, so the actor-grain headline is carried by geometry and history alone; at the carrier grain it fails 378 times in 6,317 evaluations -- 306 of them at distinct histories -- and deleting it moves the carrier census from 5,810 unique to 5,478.  The record leg fails 0 times at either grain.  By this unit's own rule a leg that never fails on a corpus is declared non-binding ON THAT CORPUS, and the declaration now carries its grain: actor: LEG-3-RECORD, LEG-4-DYNAMICS non-binding; carrier: LEG-3-RECORD non-binding.  The implemented LEG-4 is strictly finer than the stated one and the two are compared on every evaluation of both censuses: 24,354 comparisons, 0 disagreements",
+   "waiver": null
+  },
+  {
    "evidence": "histories 5856, complete==stab 5856, mismatches 0, thresholds [3, 4, 5]",
    "gate": "G-GROUPOID-LADDER-PER-HISTORY",
    "passed": true,
@@ -1653,7 +3019,14 @@
    "waiver": null
   },
   {
-   "evidence": "trivial-stabilizer histories 5852, breaks 5852, word FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN",
+   "evidence": "free-product mismatches 0, arrow sub-window 672, arrow products [19683, 531441] against ladder R-EMPTY [10077696, 2176782336]",
+   "gate": "G-THE-LADDER-AND-THE-ARROW-GROUPOID-ARE-TWO-OBJECTS",
+   "passed": true,
+   "statement": "TWO OBJECTS, KEPT APART AND BOTH MEASURED (K1 MAJOR-2 = K2 MAJOR-1).  The coherence ladder's local identifications are the FULL symmetric group of each event's three-actor footprint, with no structure condition -- which is the groupoid-grain relaxation of the global test, itself a quantifier over all of S9, and is why the empty relation returns 6^T exactly: checked at every one of the 5,856 histories, 0 mismatches.  The ARROW groupoid, whose arrows preserve the events' internal declared cells with their directions, is a DIFFERENT object measured on the declared sub-window of 672 histories: its isotropy orders are 1, 3, 6 and its free product at the sampled histories is 19,683, 531,441, not the ladder's count.  No ladder row counts arrows, and substituting them would not return the global stabilizer at the complete relation",
+   "waiver": null
+  },
+  {
+   "evidence": "trivial-stabilizer histories 5852, breaks 5852, word FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN, three predicates coincide True",
    "gate": "G-ATOM-THEOREM-AT-THE-GROUPOID-GRAIN",
    "passed": true,
    "statement": "THE ATOM THEOREM IS PUT AT RISK AND THE OUTCOME IS DERIVED.  Of the 5,852 histories whose global stabilizer is trivial, 5,852 carry a coherent family other than the identity at the adjacent-overlap relation; the word this unit emits, FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN, is computed from that count and from whether the complete relation still returns the group, and BOTH outcome words are reachable from the same enumeration -- a corpus in which no history broke would return the other one",
@@ -1663,7 +3036,7 @@
    "evidence": "rows 8, brute-checked 24, mismatches 0, raw-vs-realizable agreement actor 668 of 672 carrier 0 of 672",
    "gate": "G-GRAIN-TRIANGLE-BOTH-TESTS",
    "passed": true,
-   "statement": "BOTH DECLARED TESTS RUN AT ALL THREE GRAINS (the AID test-declaration duty).  TEST-RAW takes the stabilizer inside the grain's full symmetric group; TEST-REALIZABLE intersects it with the order-108 group the arena itself realizes.  On the declared sub-window of 672 histories (complement 5,184, named) the carrier's raw stabilizer is nontrivial at 672 of 672 rows and ranges up to 10,888,869,450,418,352,160,768,000,000, while the two tests agree at the actor grain at 668 rows and at the carrier grain at 0.  The raw route is checked against an explicit filtration of the symmetric group at 24 histories, 0 mismatches",
+   "statement": "BOTH DECLARED TESTS RUN AT ALL THREE GRAINS (the AID test-declaration duty).  TEST-RAW takes the stabilizer inside the grain's full symmetric group; TEST-REALIZABLE intersects it with the order-108 group the arena itself realizes.  On the declared sub-window of 672 histories (complement 5,184, named) the carrier's raw stabilizer is nontrivial at 672 of 672 rows and ranges up to 10,888,869,450,418,352,160,768,000,000, while the two tests agree at the actor grain at 668 rows and at the carrier grain at 0.  The top of that range is the FULL symmetric group on the cells -- the extreme row's raw carrier stabilizer is exactly 27 factorial, so at that one history the raw carrier test is vacuous.  The raw route is checked against an explicit filtration of the symmetric group at 24 histories, 0 mismatches",
    "waiver": null
   },
   {
@@ -1674,31 +3047,38 @@
    "waiver": null
   },
   {
-   "evidence": "rungs ['R3-C1', 'R4-C3', 'R6-C2'], transports True",
+   "evidence": "rungs ['R3-C1', 'R4-C3', 'R6-C2'], transports True, R6 forced by R3 True (C1 leg2-one 72 of 72, stab-one 72 of 72)",
    "gate": "G-TRANSPORT-ALONG-THE-R-LADDER",
    "passed": true,
-   "statement": "THE MEASUREMENT IS REPORTED AT EVERY RUNG THE CORPUS CARRIES.  The three rungs are R3-C1, R4-C3, R6-C2; at each one the admissible cardinality, the atom outcome and the collapse threshold are taken from that rung's OWN histories rather than from the corpus aggregate, and the break-at-the-adjacent-relation result is checked to coincide with the actor grain's uniqueness rung by rung: True",
+   "statement": "THE MEASUREMENT IS REPORTED AT EVERY RUNG THE CORPUS CARRIES.  The three rungs are R3-C1, R4-C3, R6-C2; at each one the admissible cardinality, the atom outcome and the collapse threshold are taken from that rung's OWN histories rather than from the corpus aggregate, and the break-at-the-adjacent-relation result is checked to coincide with the actor grain's uniqueness rung by rung: True.  The R = 6 rung is stamped THEOREM-FORCED: its histories are the ordered pairs of the R = 3 rung's, and all 72 of those already carry exactly one history-leg survivor and a trivial stabilizer, so uniqueness and triviality at R = 6 are checked and not discovered; the adjacent-relation count and the collapse threshold are what that rung measures independently",
    "waiver": null
   },
   {
-   "evidence": "head words ['FAC-FACTORIZATION-DECLARED', 'FAC-FACTORIZATION-FORCED', 'FAC-STRATIFIED'], atom words ['FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN', 'FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN'], unreached families none",
+   "evidence": "arena words ['FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN', 'FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN', 'FAC-FACTORIZATION-DECLARED', 'FAC-FACTORIZATION-FORCED', 'FAC-STRATIFIED'], law-only words ['FAC-BLOCKED-AT-THE-GROUPOID-COMPLETE-RELATION'], families no arena reached ['FAC-BLOCKED-AT'], unreached none",
    "gate": "G-EVERY-OUTCOME-WORD-EMITTABLE",
    "passed": true,
-   "statement": "EVERY PRE-REGISTERED OUTCOME WORD IS SHOWN EMITTABLE ON A DECLARED ARENA (#299).  The head law returns FAC-FACTORIZATION-FORCED on the strict triples, FAC-FACTORIZATION-DECLARED on the non-unique histories and FAC-STRATIFIED on the whole corpus; the atom law returns both of its substantive words on declared synthetic histories -- the overlapping chain forces the identification at the adjacent relation and the corpus does not -- and its blocked word is reachable only from an instrument fault, which is what that word is for.  5 of the pin's 5 families are reached by an arena: none unreached",
+   "statement": "EVERY PRE-REGISTERED OUTCOME WORD IS SHOWN EMITTABLE, AND THE TWO WAYS OF REACHING ONE ARE KEPT APART (#299).  The head law returns FAC-FACTORIZATION-FORCED on the strict triples, FAC-FACTORIZATION-DECLARED on the non-unique histories and FAC-STRATIFIED on the whole corpus; the atom law returns both of its substantive words on declared synthetic histories -- the overlapping chain forces the identification at the adjacent relation and the corpus does not.  So 4 of the pin's 5 families are reached BY A DECLARED ARENA, and the remaining one -- FAC-BLOCKED-AT-THE-GROUPOID-COMPLETE-RELATION -- is reached only by EVALUATING the law at a state the ladder gate excludes at every history of this corpus, which is what an instrument-fault word is for.  Families reached by neither route: none",
    "waiver": null
   },
   {
-   "evidence": "arenas where LEG-3 binds 3 of 5, wedge fires 4",
+   "evidence": "arenas where LEG-3 binds 3 of 5, wedge fires 4 on the control, 0 at the actor grain and 44 at the carrier grain on the corpus",
    "gate": "G-THE-RECORD-LEG-IS-EXERCISED-SOMEWHERE",
    "passed": true,
-   "statement": "A LEG THAT NEVER FAILS ON THE CORPUS IS EXERCISED ON THE CONTROL.  LEG-3 admits the whole lattice at every committed history because this corpus's record field is site-constant there; on the declared synthetic histories it binds at 3 of 5 arenas, and the record-versus-dynamics wedge -- partitions the coin cannot tell apart because it reads the record only modulo three, while the record itself differs -- is empty on the committed corpus and fires 4 times on the control.  The leg is therefore non-binding HERE, not vacuous",
+   "statement": "A LEG THAT NEVER FAILS ON THE CORPUS IS EXERCISED ON THE CONTROL, AND THE WEDGE IS MEASURED AT BOTH GRAINS RATHER THAN TYPED.  LEG-3 admits the whole lattice at every committed history because this corpus's record field is site-constant there; on the declared synthetic histories it binds at 3 of 5 arenas.  The record-versus-dynamics wedge -- partitions the coin cannot tell apart because it reads the record only modulo three, while the record itself differs -- is COMPUTED on the committed corpus at both grains in the census's own loop: 0 times at the actor grain and 44 times at the carrier grain, where every one of them sits on a row the history leg has already removed; and it fires 4 times on the control.  The leg is therefore non-binding HERE, not vacuous",
    "waiver": null
   },
   {
-   "evidence": "ratios 6, all windowed True, all stamped COUNTING-ONLY",
+   "evidence": "windows 7, sizes [5856, 21147, 42295, 6, 76, 672, 12], actor lattice 21147 of 21147, carrier window 42295 of 545717047936059989389",
+   "gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
+   "passed": true,
+   "statement": "EVERY WINDOW IS NAMED IN-STRING WITH ITS BOUND, AND NO BOUND IS A PLACEHOLDER.  7 windows are declared in this file's frozen source and each publishes the size this run measured: the actor lattice is COMPLETE at 21,147 of Bell(9) = 21,147, and the carrier window is a declared 42,295 of Bell(27) = 545,717,047,936,059,989,389, which is the whole reason it is a window at all.  The three sub-windows of the corpus publish their complements: the per-leg sweep runs on 76 histories with 5,780 named as its complement, and the stabilizer and arrow measurements run on 672 with 5,184 -- all of C2 -- named as theirs.  No census below is truncated silently: the coherence ladder searches upward until it meets the complete relation",
+   "waiver": null
+  },
+  {
+   "evidence": "ratios 14, all windowed True, windows matched True, rows stamped 14 of 14, top-level stamp COUNTING-ONLY",
    "gate": "G-E24-COUNTING-ONLY",
    "passed": true,
-   "statement": "EVERY PUBLISHED FRACTION CARRIES ITS WINDOW AND ITS STAMP (E-24).  6 ratios are published; each names its numerator, its denominator AND the declared window the denominator ranges over, and each is stamped COUNTING-ONLY because this unit declares no measure on partition lattices.  A ratio whose window is absent, or whose numerator and denominator come from different windows, fails here",
+   "statement": "EVERY PUBLISHED FRACTION CARRIES ITS WINDOW AND ITS STAMP, AND THE STAMP IS CHECKED ROW BY ROW (E-24).  14 ratios are published; each names its numerator, its denominator AND the declared window EACH member ranges over, and each row carries its own COUNTING-ONLY stamp because this unit declares no measure on partition lattices.  A ratio whose window is absent, whose numerator and denominator come from different declared windows, or whose own row is stamped anything else, fails here -- the top-level stamp is not taken as evidence about the rows",
    "waiver": null
   },
   {
@@ -1712,7 +3092,7 @@
    "evidence": "route A head FAC-STRATIFIED atom FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN unique 5852/5810; route B head FAC-STRATIFIED atom FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN unique 5852/5810",
    "gate": "G-VERDICT-RECONSTRUCTED-BY-A-SECOND-ROUTE",
    "passed": true,
-   "statement": "THE HEAD IS DERIVED TWICE, BY ROUTES THAT SHARE NO DISPATCHER AND NO CENSUS LOOP.  The second route calls neither admissible_actor nor admissible_cell and reads none of the first route's rows: it rebuilds every admissible set from the raw leg predicates, recounts the atom breaks from the coherence relation directly rather than from the ladder's cache, and re-applies the head law to its own numbers.  What the two routes DO share is the four leg predicates themselves, which are the object under test and are de-twinned by their own closed-form gates above, not by duplication.  The two agree on the head word, the atom word and all three counts: True",
+   "statement": "THE HEAD IS DERIVED TWICE, BY ROUTES THAT SHARE NO DISPATCHER AND NO CENSUS LOOP.  The second route calls neither admissible_actor nor admissible_cell and reads none of the first route's rows: it rebuilds every admissible set from the raw leg predicates, recounts the atom breaks from the coherence relation directly rather than from the ladder's cache, re-derives BOTH inputs of the atom law -- the break count and the complete-relation comparison, neither carried in as a literal -- and re-applies both laws to its own numbers.  What the two routes DO share is the four leg predicates themselves, which are the object under test and are de-twinned by their own closed-form gates above, not by duplication.  The two agree on the head word, the atom word and all four counts: True",
    "waiver": null
   },
   {
@@ -1723,45 +3103,52 @@
    "waiver": null
   },
   {
-   "evidence": "walls 5, clean 5, hits none",
+   "evidence": "walls 6, clean 6, hits none",
    "gate": "G-WALLS-SCAN-THE-PAPER",
    "passed": true,
-   "statement": "THE WALLS SCAN THE PAPER, WHICH IS THE LEG THEY ARE OWED.  5 walls carrying 15 banned assertive sentences between them are matched against 25,353 characters of the paper under test after full normalisation; the not-licensed list of the AID adjudication is the source of the first three.  The falsifier for this gate plants every banned sentence into the same text, so a green sweep here is evidence about the paper and not about the scanner",
+   "statement": "THE WALLS SCAN THE PAPER, WHICH IS THE LEG THEY ARE OWED.  6 walls carrying 20 banned assertive sentences between them are matched against 44,737 characters of the paper under test after full normalisation; the not-licensed list of the AID adjudication is the source of the first three.  The falsifier for this gate plants every banned sentence into the same text, so a green sweep here is evidence about the paper and not about the scanner",
    "waiver": null
   },
   {
-   "evidence": "required 10, matched 10, missing none, dropped 0",
+   "evidence": "required 20, matched 20, missing none, dropped 0",
    "gate": "G-PAPER-CLAIMS",
    "passed": true,
-   "statement": "EVERY REQUIRED CLAIM SENTENCE IS RENDERED FROM THE RECEIPT AND FOUND IN THE PAPER, AS AN EQUALITY (#293 Z10).  10 sentences are built from the run's own numbers and matched against the paper's bytes; the count required and the count matched are compared by EQUALITY, so dropping a sentence fails here rather than reducing a denominator",
+   "statement": "EVERY REQUIRED CLAIM SENTENCE IS RENDERED FROM THE RECEIPT AND FOUND IN THE PAPER, AS AN EQUALITY (#293 Z10).  20 sentences are built from the run's own numbers and matched against the paper's bytes; the count required and the count matched are compared by EQUALITY, so dropping a sentence fails here rather than reducing a denominator",
    "waiver": null
   },
   {
-   "evidence": "tables 7, rows 42, missing none",
+   "evidence": "tables 12, rendered rows 69, paper rows 69, missing none, surplus none",
    "gate": "G-PAPER-TABLES-WITH-HEADERS",
    "passed": true,
-   "statement": "EVERY TABLE IS RENDERED FROM THE RECEIPT, HEADERS INCLUDED (PER-R Z7).  7 tables with 42 data rows and 7 header rows are built here and each is required to appear in the paper cell by cell; a column header is a claim, so a header swap that leaves every number correct dies at this gate",
+   "statement": "EVERY TABLE IS RENDERED FROM THE RECEIPT, HEADERS INCLUDED, AND THE BINDING RUNS BOTH WAYS (PER-R Z7 + K3 MAJOR-5).  12 tables with 57 data rows and 12 header rows are built here; each is required to appear in the paper cell by cell, and the MULTISET of the paper's own markdown table rows is required to equal the multiset rendered -- 69 against 69.  A column header is a claim, so a header swap that leaves every number correct dies here; and so does a forged surplus row, a restated table with its headers exchanged, and a duplicated row, none of which containment alone can see",
    "waiver": null
   },
   {
-   "evidence": "scanned 403 of 403, unbacked none, spelled 97 unbacked none, fences True",
+   "evidence": "scanned 588 of 588, unbacked none, spelled 194 unbacked none, fences True",
    "gate": "G-PAPER-NUMERAL-COVERAGE",
    "passed": true,
-   "statement": "EVERY NUMERAL OF THE PAPER IS BACKED BY THIS RUN (#20 + E-22).  403 numerals are scanned -- prose, tables, inline code spans and the fenced verdict blocks alike -- against the run's registry and its own receipt, with 0 declared exemptions; 97 spelled numerals are scanned on the same terms; the scan's own totality is checked by arithmetic against the whole paper, and the verdict fences are gated by MULTISET equality so a forged twin beside a clean copy cannot pass",
+   "statement": "EVERY NUMERAL OF THE PAPER IS BACKED BY THIS RUN (#20 + E-22).  588 numerals are scanned -- prose, tables, inline code spans and the fenced verdict blocks alike -- against the run's registry and its own receipt, with 0 declared exemptions; 194 spelled numerals are scanned on the same terms; the scan's own totality is checked by arithmetic against the whole paper, and the verdict fences are gated by MULTISET equality so a forged twin beside a clean copy cannot pass",
    "waiver": null
   },
   {
-   "evidence": "checked 5, unbound none",
+   "evidence": "reference 617, after canonization 617, lost none, gained none",
+   "gate": "G-CANONIZATION-PRESERVES-NUMERALS",
+   "passed": true,
+   "statement": "THE NORMALISER THAT FEEDS THE NUMERAL SCANS LOSES NO NUMERAL (K3 MAJOR-2b).  The paper, with a declared fixture appended that carries the pathology itself, is normalised twice: once with nothing removed but unicode and whitespace, and once through the normaliser the ratio scan actually uses.  The two numeral MULTISETS are required to be equal -- 617 against 617 -- so a normaliser that swallows a line-initial numeral fails by arithmetic here instead of hiding a ratio downstream",
+   "waiver": null
+  },
+  {
+   "evidence": "checked 15, found 18, in the paper 18, unbound none, empty axis paths none",
    "gate": "G-SENTENCE-REFERENT-BINDING",
    "passed": true,
-   "statement": "NO SENTENCE PAIRS NUMERALS FROM DIFFERENT UNIVERSES (#293 Z6).  5 published ratios of the form `N of M` are resolved against the receipt and both members are required to be carried by one common member of the 18 DECLARED REFERENT UNIVERSES; the three aggregate keys are excluded by declaration, since a universe that carries every number binds nothing.  The LOR disease -- every numeral true, the relation false -- dies here",
+   "statement": "NO SENTENCE PAIRS NUMERALS FROM DIFFERENT QUANTITY AXES (#293 Z6), AND THE SCAN'S OWN TOTALITY IS CHECKED.  15 published relations of the forms `N of M` and `N against M` are resolved against the receipt and both members are required to be carried by one common member of the 10 DECLARED QUANTITY AXES -- an axis is a list of receipt paths whose values count the same kind of thing, because a top-level key that carries two kinds binds a false relation between them.  The aggregate keys are excluded by declaration, since a universe that carries every number binds nothing.  The number of relations the scan SAW is compared with the number the paper's own bytes carry (18 against 18), so a relation the scanner missed is a failure and not a silent pass, and every declared axis path is required to resolve.  The LOR disease -- every numeral true, the relation false -- dies here",
    "waiver": null
   },
   {
-   "evidence": "axes 5, inverted present 0",
+   "evidence": "axes 9, inverted present 0, asserted absent 0",
    "gate": "G-PAPER-CLAIM-POLARITY",
    "passed": true,
-   "statement": "THE PAPER IS SCANNED FOR THE INVERSE OF EVERY LOAD-BEARING WORD.  5 polarity axes -- the head word, the atom word, the transport direction, the binding direction and the E-24 stamp -- are checked in BOTH forms, and the presence of an inverted form is a failure even when the asserted form is present too",
+   "statement": "THE PAPER IS SCANNED FOR THE INVERSE OF EVERY LOAD-BEARING WORD, IN BOTH DIRECTIONS AND AT A DECLARED SCOPE.  9 polarity axes -- the head word, the atom word in the verdict AND in the prose that claims it, the thesis direction, the control arm's forced word, the induced-image fiber, the transport direction, the binding direction and the E-24 stamp -- are checked in BOTH forms.  The presence of an inverted form is a failure even when the asserted form is present too, and the ABSENCE of an asserted form is a failure too, so an inversion that deletes the original cannot pass as a silence.  1 axes are scanned over the paper's prose alone, where the opposite word is legitimate data inside a table",
    "waiver": null
   },
   {
@@ -1775,7 +3162,7 @@
    "evidence": "float sites none",
    "gate": "G-NO-FLOATS",
    "passed": true,
-   "statement": "THE ARITHMETIC IS EXACT, CHECKED TWICE.  This file's own source is walked by AST for float constants and the receipt about to be written is walked recursively for float values; the Z[w] coefficients of the coupled step are integer pairs and the lumpability comparison is an exact comparison of integer maps",
+   "statement": "THE ARITHMETIC IS EXACT, CHECKED TWICE, AND THE RECEIPT'S OWN ARITHMETIC LINE IS RENDERED FROM THE CHECK.  This file's own source is walked by AST for float constants and the receipt about to be written is walked recursively for float values; the Z[w] coefficients of the coupled step are integer pairs and the lumpability comparison is an exact comparison of integer maps.  The `arithmetic` key is written from this scan's result and sealed, so it cannot assert one thing while the scan measures another",
    "waiver": null
   },
   {
@@ -1786,31 +3173,31 @@
    "waiver": null
   },
   {
-   "evidence": "falsifiers 36, hooked 36, description mismatches none, missing gates none",
+   "evidence": "falsifiers 54, hooked 54, description mismatches none, missing gates none",
    "gate": "G-FALSIFIER-COVERAGE",
    "passed": true,
-   "statement": "EVERY FALSIFIER'S DESCRIPTION IS VERIFIED AGAINST ITS CODE (E-23).  36 falsifiers are declared; each names the gate it must die at, and each carries a source fragment that is located in this file by AST and matched against the statement that actually carries the hook.  A description-inverted falsifier -- a false waiver wearing a green badge -- fails here, and every gate named is required to exist",
+   "statement": "EVERY FALSIFIER'S DESCRIPTION IS VERIFIED AGAINST ITS CODE (E-23).  54 falsifiers are declared; each names the gate it must die at, and each carries a source fragment that is located in this file by AST and matched against the statement that actually carries the hook.  A description-inverted falsifier -- a false waiver wearing a green badge -- fails here, and every gate named is required to exist",
    "waiver": null
   },
   {
-   "evidence": "with falsifier 34, without 9",
+   "evidence": "with falsifier 42, without 9",
    "gate": "G-FALSIFIER-REACHABILITY",
    "passed": true,
-   "statement": "THE GATES WITHOUT A FALSIFIER ARE NAMED, NOT HIDDEN (#34).  34 of the gates this run raises carry a named falsifier; the remaining 9 are listed in the receipt by name so a reader can see exactly which surfaces are guarded by construction and which by argument",
+   "statement": "THE GATES WITHOUT A FALSIFIER ARE NAMED, NOT HIDDEN (#34).  42 of the gates this run raises carry a named falsifier; the remaining 9 are listed in the receipt by name so a reader can see exactly which surfaces are guarded by construction and which by argument",
    "waiver": null
   },
   {
-   "evidence": "numerals 403, claims 10, rows 42",
+   "evidence": "numerals 588, claims 20, rows 57",
    "gate": "G-PAPER-INSTRUMENT-RAN-IN-THE-PLAIN-RUN",
    "passed": true,
-   "statement": "THE PAPER INSTRUMENT RAN INSIDE THIS RUN (#20).  The coverage, polarity, claim, table and referent ledgers above were produced by the plain run and are sealed here, so no separate verification pass can drift from the artifacts this run writes: 403 numerals, 10 claims and 42 table rows",
+   "statement": "THE PAPER INSTRUMENT RAN INSIDE THIS RUN (#20).  The coverage, polarity, claim, table and referent ledgers above were produced by the plain run and are sealed here, so no separate verification pass can drift from the artifacts this run writes: 588 numerals, 20 claims and 57 table rows",
    "waiver": null
   },
   {
-   "evidence": "declared 36, executed 0, survivors none",
+   "evidence": "declared 54, executed 0, survivors none",
    "gate": "G-SWEEP-IS-EXECUTION-BOUND",
    "passed": true,
-   "statement": "THE FALSIFIER SWEEP IS A RECORD OF RUNS, NOT A LIST (E-23).  36 falsifiers are declared, 0 were executed in this process and 0 survived; a plain run publishes an empty execution list rather than a claim, and the sweep run publishes the rows it actually produced",
+   "statement": "THE FALSIFIER SWEEP IS A RECORD OF RUNS, NOT A LIST (E-23).  54 falsifiers are declared, 0 were executed in this process and 0 survived; a plain run publishes an empty execution list rather than a claim, and the sweep run publishes the rows it actually produced",
    "waiver": null
   }
  ],
@@ -1819,6 +3206,7 @@
   "brute_force_checked": 24,
   "brute_force_mismatches": 0,
   "carrier_stabilizer_is_nontrivial_at": 672,
+  "cells_factorial": 10888869450418352160768000000,
   "complement": 5184,
   "grains": [
    "ACTOR-S9",
@@ -1899,9 +3287,32 @@
   "tests": [
    "TEST-RAW",
    "TEST-REALIZABLE"
-  ]
+  ],
+  "the_extreme_row_is_the_whole_symmetric_group": true
  },
  "groupoid": {
+  "arrow_isotropy_products": [
+   {
+    "connected_components": 3,
+    "corpus": "C1",
+    "events": 9,
+    "history_index": 0,
+    "isotropy_orders_present": [
+     3
+    ],
+    "isotropy_product": 19683
+   },
+   {
+    "connected_components": 1,
+    "corpus": "C3",
+    "events": 12,
+    "history_index": 5256,
+    "isotropy_orders_present": [
+     3
+    ],
+    "isotropy_product": 531441
+   }
+  ],
   "arrow_profiles": [
    {
     "connected_components": 1,
@@ -2007,6 +3418,7 @@
    }
   ],
   "arrow_sub_window": 672,
+  "arrow_sub_window_complement": 5184,
   "by_relation": [
    {
     "corpus": "C1",
@@ -2170,6 +3582,11 @@
   },
   "complete_equals_the_global_stabilizer": 5856,
   "complete_mismatches": 0,
+  "complete_relation_identity": "a family coherent on every pair determines one map on the actors restricting to a permutation of every event, and conversely; the equality is a THEOREM of the construction and the two-route agreement is a code check, not a corpus measurement",
+  "empty_relation_is_the_free_product": true,
+  "free_product_mismatches": 0,
+  "histories": 5856,
+  "histories_whose_threshold_exceeds_the_tabulated_ladder": 5852,
   "ladder": [
    {
     "R-ADJACENT": 124416,
@@ -3960,23 +5377,149 @@
     "histories": 4
    }
   ],
+  "of_those_in_C1_and_C2": 5256,
+  "tabulated_ladder_top": 3,
   "threshold_values": [
    3,
    4,
    5
+  ],
+  "two_objects": "the LADDER's local identifications are the FULL symmetric group of each event's footprint -- which is why the empty relation returns 6^T exactly -- while the ARROW groupoid's arrows preserve the events' internal declared cell directions.  The arrow groupoid is measured separately and no ladder row counts it"
+ },
+ "image_fiber": {
+  "class_partitions_that_leave_the_inventory": [
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ANT",
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-DIA"
+  ],
+  "declared_members": 2,
+  "division_is_forced_at_least_at": 5852,
+  "duty": "the coin-order precedent (#293) applied to a second free item of the same leg: both declared members are run and both are published, and the head's actor-grain fields carry the image they were taken at",
+  "fiber": "LIVE",
+  "histories": 5856,
+  "robust_corollary": "under EITHER image the division is forced at at least 5,852 of 5,856 committed histories; the fiber moves only which degenerate histories tie",
+  "rows": [
+   {
+    "histories": 5856,
+    "induced_image": "DIRECTIONWISE",
+    "inventory_at_the_non_unique": [
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ANT",
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL",
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-DIA",
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ROW"
+    ],
+    "leg4_passes_per_order": {
+     "D.G": 11799,
+     "G.D": 11799
+    },
+    "map": "(x, l) ~ (y, l) whenever x ~ y",
+    "non_unique": 4,
+    "unique": 5852
+   },
+   {
+    "histories": 5856,
+    "induced_image": "PAIRWISE",
+    "inventory_at_the_non_unique": [
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL",
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ROW"
+    ],
+    "leg4_passes_per_order": {
+     "D.G": 5858,
+     "G.D": 5858
+    },
+    "map": "{x, x + l} ~ {y, y + m} whenever the block pairs agree",
+    "non_unique": 2,
+    "unique": 5854
+   }
   ]
  },
  "leg_binding": {
+  "binding_is_itself_stratified": true,
   "binding_legs": [
    "LEG-1-GEOMETRY",
    "LEG-2-HISTORY"
   ],
+  "binding_legs_by_grain": {
+   "actor": [
+    "LEG-1-GEOMETRY",
+    "LEG-2-HISTORY"
+   ],
+   "carrier": [
+    "LEG-1-GEOMETRY",
+    "LEG-2-HISTORY",
+    "LEG-4-DYNAMICS"
+   ]
+  },
+  "by_grain": [
+   {
+    "cardinality_profile_with_leg4": {
+     "1": 5852,
+     "2": 4
+    },
+    "cardinality_profile_without_leg4": {
+     "1": 5852,
+     "2": 4
+    },
+    "grain": "actor",
+    "leg3_binds_here": false,
+    "leg3_evaluations_after_leg2": 5860,
+    "leg3_failures": 0,
+    "leg4_binds_here": false,
+    "leg4_evaluations": 5860,
+    "leg4_failures": 0,
+    "leg4_failures_over_distinct_histories": 0,
+    "record_dynamics_wedge": 0,
+    "unique_with_leg4": 5852,
+    "unique_without_leg4": 5852
+   },
+   {
+    "cardinality_profile_with_leg4": {
+     "1": 5810,
+     "2": 15,
+     "3": 30,
+     "9": 1
+    },
+    "cardinality_profile_without_leg4": {
+     "1": 5478,
+     "10": 1,
+     "2": 332,
+     "3": 15,
+     "4": 30
+    },
+    "grain": "carrier",
+    "leg3_binds_here": false,
+    "leg3_evaluations_after_leg2": 6317,
+    "leg3_failures": 0,
+    "leg4_binds_here": true,
+    "leg4_evaluations": 6317,
+    "leg4_failures": 378,
+    "leg4_failures_over_distinct_histories": 306,
+    "record_dynamics_wedge": 44,
+    "unique_with_leg4": 5810,
+    "unique_without_leg4": 5478
+   }
+  ],
   "complement": 5780,
   "lattice": 21147,
   "leg2_closed_form_mismatches": 0,
+  "leg4_fineness": {
+   "comparisons": 24354,
+   "disagreements": 0,
+   "implemented": "the per-exponent integer tallies of the column's entries falling into each block",
+   "relation": "the implemented predicate is STRICTLY FINER in general, because 1 + w + w^2 = 0",
+   "stated": "the block sums, summed first and compared in Z[w]"
+  },
   "non_binding_legs": [
    "LEG-3-RECORD"
   ],
+  "non_binding_legs_by_grain": {
+   "actor": [
+    "LEG-3-RECORD",
+    "LEG-4-DYNAMICS"
+   ],
+   "carrier": [
+    "LEG-3-RECORD"
+   ]
+  },
   "profiles": [
    {
     "all_three": 1,
@@ -4001,43 +5544,127 @@
   "rows": [
    {
     "denominator": 5856,
+    "denominator_window": "W-CORPUS-C1-C2-C3",
     "numerator": 5852,
-    "quantity": "actor-grain histories with a unique factorization",
+    "numerator_window": "W-CORPUS-C1-C2-C3",
+    "quantity": "actor-grain histories with a unique factorization, at the directionwise image",
     "stamp": "COUNTING-ONLY",
     "window": "W-CORPUS-C1-C2-C3"
    },
    {
     "denominator": 5856,
+    "denominator_window": "W-CORPUS-C1-C2-C3",
+    "numerator": 5854,
+    "numerator_window": "W-CORPUS-C1-C2-C3",
+    "quantity": "actor-grain histories with a unique factorization, at the pairwise image",
+    "stamp": "COUNTING-ONLY",
+    "window": "W-CORPUS-C1-C2-C3"
+   },
+   {
+    "denominator": 5856,
+    "denominator_window": "W-CORPUS-C1-C2-C3",
     "numerator": 5810,
+    "numerator_window": "W-CORPUS-C1-C2-C3",
     "quantity": "carrier-grain histories with a unique factorization",
     "stamp": "COUNTING-ONLY",
     "window": "W-CORPUS-C1-C2-C3"
    },
    {
     "denominator": 21147,
+    "denominator_window": "W-ACTOR-LATTICE-COMPLETE",
     "numerator": 6,
+    "numerator_window": "W-ACTOR-LATTICE-COMPLETE",
     "quantity": "actor partitions surviving the geometry leg",
     "stamp": "COUNTING-ONLY",
     "window": "W-ACTOR-LATTICE-COMPLETE"
    },
    {
     "denominator": 42295,
+    "denominator_window": "W-CELL-INDUCED-PLUS-STRATA",
     "numerator": 10,
+    "numerator_window": "W-CELL-INDUCED-PLUS-STRATA",
     "quantity": "carrier-window partitions surviving the geometry leg",
     "stamp": "COUNTING-ONLY",
     "window": "W-CELL-INDUCED-PLUS-STRATA"
    },
    {
     "denominator": 545717047936059989389,
+    "denominator_window": "W-CELL-INDUCED-PLUS-STRATA",
     "numerator": 42295,
+    "numerator_window": "W-CELL-INDUCED-PLUS-STRATA",
     "quantity": "carrier-window members against the carrier's whole lattice",
     "stamp": "COUNTING-ONLY",
     "window": "W-CELL-INDUCED-PLUS-STRATA"
    },
    {
     "denominator": 5856,
+    "denominator_window": "W-CORPUS-C1-C2-C3",
     "numerator": 5852,
+    "numerator_window": "W-CORPUS-C1-C2-C3",
     "quantity": "histories whose global stabilizer is trivial and whose adjacent groupoid is not",
+    "stamp": "COUNTING-ONLY",
+    "window": "W-CORPUS-C1-C2-C3"
+   },
+   {
+    "denominator": 672,
+    "denominator_window": "W-STABILIZER-AND-ARROW-SUB-WINDOW",
+    "numerator": 668,
+    "numerator_window": "W-STABILIZER-AND-ARROW-SUB-WINDOW",
+    "quantity": "rows of the stabilizer sub-window where the raw and realizable tests agree at the actor grain",
+    "stamp": "COUNTING-ONLY",
+    "window": "W-STABILIZER-AND-ARROW-SUB-WINDOW"
+   },
+   {
+    "denominator": 672,
+    "denominator_window": "W-STABILIZER-AND-ARROW-SUB-WINDOW",
+    "numerator": 0,
+    "numerator_window": "W-STABILIZER-AND-ARROW-SUB-WINDOW",
+    "quantity": "rows of the stabilizer sub-window where the raw and realizable tests agree at the carrier grain",
+    "stamp": "COUNTING-ONLY",
+    "window": "W-STABILIZER-AND-ARROW-SUB-WINDOW"
+   },
+   {
+    "denominator": 600,
+    "denominator_window": "W-CORPUS-C1-C2-C3",
+    "numerator": 596,
+    "numerator_window": "W-CORPUS-C1-C2-C3",
+    "quantity": "driven-window histories unique at the actor grain, directionwise",
+    "stamp": "COUNTING-ONLY",
+    "window": "W-CORPUS-C1-C2-C3"
+   },
+   {
+    "denominator": 600,
+    "denominator_window": "W-CORPUS-C1-C2-C3",
+    "numerator": 598,
+    "numerator_window": "W-CORPUS-C1-C2-C3",
+    "quantity": "driven-window histories unique at the actor grain, pairwise",
+    "stamp": "COUNTING-ONLY",
+    "window": "W-CORPUS-C1-C2-C3"
+   },
+   {
+    "denominator": 5856,
+    "denominator_window": "W-CORPUS-C1-C2-C3",
+    "numerator": 5184,
+    "numerator_window": "W-CORPUS-C1-C2-C3",
+    "quantity": "committed histories outside the stabilizer sub-window",
+    "stamp": "COUNTING-ONLY",
+    "window": "W-CORPUS-C1-C2-C3"
+   },
+   {
+    "denominator": 5856,
+    "denominator_window": "W-CORPUS-C1-C2-C3",
+    "numerator": 5256,
+    "numerator_window": "W-CORPUS-C1-C2-C3",
+    "quantity": "committed histories of C1 and C2 whose collapse threshold exceeds the tabulated ladder",
+    "stamp": "COUNTING-ONLY",
+    "window": "W-CORPUS-C1-C2-C3"
+   },
+   {
+    "denominator": 5856,
+    "denominator_window": "W-CORPUS-C1-C2-C3",
+    "numerator": 5784,
+    "numerator_window": "W-CORPUS-C1-C2-C3",
+    "quantity": "distinct histories carried by the corpus's slots",
     "stamp": "COUNTING-ONLY",
     "window": "W-CORPUS-C1-C2-C3"
    }
@@ -4046,7 +5673,7 @@
   "warrant": "no fraction in this unit is a probability: each is a count over a declared window and carries that window's name beside it (E-24)"
  },
  "mutant_sweep": {
-  "mutants": 36,
+  "mutants": 54,
   "rows": [],
   "survivors": [],
   "swept": false
@@ -4231,8 +5858,105 @@
    "description": "reports zero closing gates after the ledger snapshot, so the published total stops being the sum of its parts",
    "gate": "G-GATE-ACCOUNTING",
    "mutant": "MUT-GATECOUNT"
+  },
+  {
+   "description": "exchanges the two induced images' labels, so each image's census is published under the other image's name",
+   "gate": "G-BOTH-INDUCED-IMAGES-CENSUSED",
+   "mutant": "MUT-IMAGE-SWAP"
+  },
+  {
+   "description": "stamps the induced-image fiber INERT while the two censuses differ, which is the disclosure the fiber exists to make",
+   "gate": "G-BOTH-INDUCED-IMAGES-CENSUSED",
+   "mutant": "MUT-IMAGE-STAMP"
+  },
+  {
+   "description": "declares the leg-binding answer NOT to be stratified by grain while the two grains' binding sets differ",
+   "gate": "G-WHICH-LEG-BINDS-BY-GRAIN",
+   "mutant": "MUT-LEG4-BY-GRAIN"
+  },
+  {
+   "description": "declares the thesis condition not necessary at both grains, which is the only direction the head asserts",
+   "gate": "G-THESIS-IS-ONE-DIRECTIONAL",
+   "mutant": "MUT-THESIS"
+  },
+  {
+   "description": "declares the per-corpus slot counts not to sum to the corpus total, so the multiplicity table stops accounting for the corpus",
+   "gate": "G-THE-CORPUS-IS-A-MULTISET",
+   "mutant": "MUT-MULTISET"
+  },
+  {
+   "description": "reports one history at which the empty coherence relation does not return the free product of the full footprint symmetric groups, which is what identifies the object the ladder counts",
+   "gate": "G-THE-LADDER-AND-THE-ARROW-GROUPOID-ARE-TWO-OBJECTS",
+   "mutant": "MUT-FREE-PRODUCT"
+  },
+  {
+   "description": "declares the three coinciding predicates -- actor-grain non-uniqueness, nontrivial stabilizer, no atom break -- not to coincide",
+   "gate": "G-ATOM-THEOREM-AT-THE-GROUPOID-GRAIN",
+   "mutant": "MUT-THREE-PREDICATES"
+  },
+  {
+   "description": "declares the R = 6 rung not forced by the R = 3 rung, so the theorem-forced stamp and the measurement part company",
+   "gate": "G-TRANSPORT-ALONG-THE-R-LADDER",
+   "mutant": "MUT-R6-FORCED"
+  },
+  {
+   "description": "routes the numeral-bearing normaliser back through the markdown stripper that eats a line-initial numeral, which is how a false ratio went unscanned",
+   "gate": "G-CANONIZATION-PRESERVES-NUMERALS",
+   "mutant": "MUT-CANON-NUMERALS"
+  },
+  {
+   "description": "stamps ONE ratio row as a probability while the top-level stamp stays COUNTING-ONLY",
+   "gate": "G-E24-COUNTING-ONLY",
+   "mutant": "MUT-E24-ROW"
+  },
+  {
+   "description": "forges a top-level receipt key AFTER the seal manifest is assembled, in the window the delivered ordering left open",
+   "gate": "G-SEAL-TOTALITY",
+   "mutant": "MUT-POST-SEAL-KEY"
+  },
+  {
+   "description": "drops one rendered table row, so the paper carries a table row no route rendered -- the additive direction containment cannot see",
+   "gate": "G-PAPER-TABLES-WITH-HEADERS",
+   "mutant": "MUT-TABLE-SURPLUS"
+  },
+  {
+   "description": "appends a fourth fenced block to the paper text the fence multiset is taken over",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "mutant": "MUT-FENCE-SURPLUS"
+  },
+  {
+   "description": "appends a forged PASS line for a gate that never ran to the transcript before it is staged and digested",
+   "gate": "G-TRANSCRIPT-MATCHES-THE-GATE-LEDGER",
+   "mutant": "MUT-GATELINE"
+  },
+  {
+   "description": "renames every verbatim anchor's consumer gate to a gate that does not exist",
+   "gate": "G-NAMED-GATES-EXIST",
+   "mutant": "MUT-NAMED-GATE"
+  },
+  {
+   "description": "plants a spelled COMPOUND numeral built entirely from backed atoms, which a per-word scan cannot see",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "mutant": "MUT-SPELLED-COMPOUND"
+  },
+  {
+   "description": "removes the asserted form of the head-word axis, so the axis passes on a silence instead of on an assertion",
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "mutant": "MUT-POLARITY-ABSENT"
+  },
+  {
+   "description": "deletes one published relation from the body the referent scan reads, so a relation the scanner never saw would pass as one that bound",
+   "gate": "G-SENTENCE-REFERENT-BINDING",
+   "mutant": "MUT-REFERENT-TOTALITY"
   }
  ],
+ "named_gates": {
+  "anchors_naming_a_gate_that_does_not_exist": [],
+  "falsifiers_naming_a_gate_that_does_not_exist": [],
+  "gates_that_ran_or_are_declared_closing": 51,
+  "rule": "every gate NAMED anywhere in this receipt -- by a verbatim anchor as its consumer, by a seal as the gate that established it, or by a falsifier as the gate it must die at -- is required to EXIST.  Non-emptiness is not existence: a phantom consumer passed the delivered check",
+  "seals_naming_a_gate_that_does_not_exist": []
+ },
  "paper_claims": [
   {
    "id": "C01",
@@ -4273,6 +5997,46 @@
   {
    "id": "C10",
    "sentence": "the record field is site-constant at 5,856 of 5,856 committed histories"
+  },
+  {
+   "id": "C11",
+   "sentence": "the head law returns FAC-FACTORIZATION-FORCED on the strict triples, FAC-FACTORIZATION-DECLARED on the four class-repeating histories and FAC-STRATIFIED on the whole corpus"
+  },
+  {
+   "id": "C12",
+   "sentence": "the criterion's combined digest is fde02cc2ed0c"
+  },
+  {
+   "id": "C13",
+   "sentence": "at the pairwise image the actor-grain factorization is unique at 5,854 of 5,856 committed histories"
+  },
+  {
+   "id": "C14",
+   "sentence": "under either image the division is forced at at least 5,852 of 5,856 committed histories"
+  },
+  {
+   "id": "C15",
+   "sentence": "the dynamics leg removes no partition the other legs admit at the actor grain and removes 378 partition-history rows at the carrier grain"
+  },
+  {
+   "id": "C16",
+   "sentence": "348 of the 5,856 committed histories repeat a parallel class"
+  },
+  {
+   "id": "C17",
+   "sentence": "the 5,856 committed histories are slots carrying 5,784 distinct histories"
+  },
+  {
+   "id": "C18",
+   "sentence": "the largest raw carrier stabilizer this corpus carries is 10,888,869,450,418,352,160,768,000,000, which is 27 factorial"
+  },
+  {
+   "id": "C19",
+   "sentence": "all 72 strict triples carry exactly one history-leg survivor and a trivial stabilizer"
+  },
+  {
+   "id": "C20",
+   "sentence": "v14/note-fac-pin.md, sha256-12 11380265fcf3"
   }
  ],
  "paper_coverage": {
@@ -4280,23 +6044,34 @@
   "exemptions_fired": {},
   "exemptions_that_never_fired": [],
   "fence_multiset_equal": true,
-  "numerals_in_the_whole_paper": 403,
-  "numerals_scanned": 403,
+  "fenced_blocks_in_the_paper": 6,
+  "numerals_in_the_whole_paper": 588,
+  "numerals_scanned": 588,
   "scan_is_total": true,
-  "section_heads": 10,
-  "spelled_numerals_scanned": 97,
+  "section_heads": 11,
+  "spelled_compounds": [],
+  "spelled_numerals_in_the_whole_paper": 194,
+  "spelled_numerals_scanned": 194,
+  "spelled_scan_is_total": true,
   "spelled_unbacked": [],
   "unbacked": [],
   "verdict_fences_found": {
-   "FAC-DECOMPOSITION<THESIS=THE-LAW-ADMITS-MORE-THAN-ONE-FACTORIZATION-ONLY-WHERE-THE-HISTORY-REPEATS-A-PARALLEL-CLASS; HISTORIES=5,856; ACTOR-LATTICE=21,147; ACTOR-GRAIN-LAW-COMPATIBLE-PARTITIONS=6; ACTOR-GRAIN-UNIQUE-FACTORIZATION=5,852-OF-5,856; CARRIER-WINDOW=42,295; CARRIER-GRAIN-LAW-COMPATIBLE-PARTITIONS=10; CARRIER-GRAIN-UNIQUE-FACTORIZATION=5,810-OF-5,856; COIN-ORDER-DISAGREEMENTS=0>": 2,
+   "FAC-DECOMPOSITION<THESIS=THE-LAW-ADMITS-MORE-THAN-ONE-FACTORIZATION-ONLY-WHERE-THE-HISTORY-REPEATS-A-PARALLEL-CLASS; HISTORIES=5,856; ACTOR-LATTICE=21,147; ACTOR-GRAIN-LAW-COMPATIBLE-PARTITIONS=6; ACTOR-GRAIN-UNIQUE-FACTORIZATION=5,852-OF-5,856-AT-THE-DIRECTIONWISE-IMAGE; ACTOR-GRAIN-UNIQUE-FACTORIZATION-AT-THE-PAIRWISE-IMAGE=5,854-OF-5,856; DIVISION-FORCED-UNDER-EITHER-IMAGE-AT-LEAST=5,852-OF-5,856; CARRIER-WINDOW=42,295; CARRIER-GRAIN-LAW-COMPATIBLE-PARTITIONS=10; CARRIER-GRAIN-UNIQUE-FACTORIZATION=5,810-OF-5,856; COIN-ORDER-DISAGREEMENTS=0>": 2,
    "FAC-GROUPOID<ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; ATOM-BREAKS=5,852-OF-5,856; COLLAPSE-THRESHOLDS=3,4,5; ARENA-GROUP-ORDER=108>": 2,
-   "FAC-STRATIFIED<BY-GRAIN=ACTOR-5852-OF-5856-UNIQUE-vs-CARRIER-5810-OF-5856-UNIQUE; ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; SCOPE=TWO-GRAINS-AS-DECLARED;COUNTS-ARE-COUNTING-ONLY;THE-CARRIER-WINDOW-IS-DECLARED-NOT-COMPLETE;NO-CLAIM-BEYOND-THE-MEASURED-COHERENCE-DEPTH>": 2
+   "FAC-STRATIFIED<BY-GRAIN=ACTOR-5852-OF-5856-UNIQUE-AT-THE-DIRECTIONWISE-IMAGE-vs-CARRIER-5810-OF-5856-UNIQUE; ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; SCOPE=TWO-GRAINS-AS-DECLARED;COUNTS-ARE-COUNTING-ONLY;THE-CARRIER-WINDOW-IS-DECLARED-NOT-COMPLETE;NO-CLAIM-BEYOND-THE-MEASURED-COHERENCE-DEPTH>": 2
   },
   "verdict_fences_required": {
-   "FAC-DECOMPOSITION<THESIS=THE-LAW-ADMITS-MORE-THAN-ONE-FACTORIZATION-ONLY-WHERE-THE-HISTORY-REPEATS-A-PARALLEL-CLASS; HISTORIES=5,856; ACTOR-LATTICE=21,147; ACTOR-GRAIN-LAW-COMPATIBLE-PARTITIONS=6; ACTOR-GRAIN-UNIQUE-FACTORIZATION=5,852-OF-5,856; CARRIER-WINDOW=42,295; CARRIER-GRAIN-LAW-COMPATIBLE-PARTITIONS=10; CARRIER-GRAIN-UNIQUE-FACTORIZATION=5,810-OF-5,856; COIN-ORDER-DISAGREEMENTS=0>": 2,
+   "FAC-DECOMPOSITION<THESIS=THE-LAW-ADMITS-MORE-THAN-ONE-FACTORIZATION-ONLY-WHERE-THE-HISTORY-REPEATS-A-PARALLEL-CLASS; HISTORIES=5,856; ACTOR-LATTICE=21,147; ACTOR-GRAIN-LAW-COMPATIBLE-PARTITIONS=6; ACTOR-GRAIN-UNIQUE-FACTORIZATION=5,852-OF-5,856-AT-THE-DIRECTIONWISE-IMAGE; ACTOR-GRAIN-UNIQUE-FACTORIZATION-AT-THE-PAIRWISE-IMAGE=5,854-OF-5,856; DIVISION-FORCED-UNDER-EITHER-IMAGE-AT-LEAST=5,852-OF-5,856; CARRIER-WINDOW=42,295; CARRIER-GRAIN-LAW-COMPATIBLE-PARTITIONS=10; CARRIER-GRAIN-UNIQUE-FACTORIZATION=5,810-OF-5,856; COIN-ORDER-DISAGREEMENTS=0>": 2,
    "FAC-GROUPOID<ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; ATOM-BREAKS=5,852-OF-5,856; COLLAPSE-THRESHOLDS=3,4,5; ARENA-GROUP-ORDER=108>": 2,
-   "FAC-STRATIFIED<BY-GRAIN=ACTOR-5852-OF-5856-UNIQUE-vs-CARRIER-5810-OF-5856-UNIQUE; ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; SCOPE=TWO-GRAINS-AS-DECLARED;COUNTS-ARE-COUNTING-ONLY;THE-CARRIER-WINDOW-IS-DECLARED-NOT-COMPLETE;NO-CLAIM-BEYOND-THE-MEASURED-COHERENCE-DEPTH>": 2
+   "FAC-STRATIFIED<BY-GRAIN=ACTOR-5852-OF-5856-UNIQUE-AT-THE-DIRECTIONWISE-IMAGE-vs-CARRIER-5810-OF-5856-UNIQUE; ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; SCOPE=TWO-GRAINS-AS-DECLARED;COUNTS-ARE-COUNTING-ONLY;THE-CARRIER-WINDOW-IS-DECLARED-NOT-COMPLETE;NO-CLAIM-BEYOND-THE-MEASURED-COHERENCE-DEPTH>": 2
   }
+ },
+ "paper_table_binding": {
+  "bijective": true,
+  "missing_from_the_paper": [],
+  "paper_rows": 69,
+  "rendered_rows": 69,
+  "surplus_in_the_paper": []
  },
  "paper_tables": {
   "T1-THE-GEOMETRY-LEG": {
@@ -4315,6 +6090,83 @@
      "carrier",
      "42,295",
      "10"
+    ]
+   ]
+  },
+  "T10-THE-CARRIER-INVENTORY": {
+   "header": [
+    "admissible factorizations",
+    "histories"
+   ],
+   "rows": [
+    [
+     "1",
+     "5,810"
+    ],
+    [
+     "2",
+     "15"
+    ],
+    [
+     "3",
+     "30"
+    ],
+    [
+     "9",
+     "1"
+    ]
+   ]
+  },
+  "T11-THE-CARRIER-SUB-WINDOWS": {
+   "header": [
+    "declared sub-window",
+    "geometry-leg survivors",
+    "carrier-grain unique"
+   ],
+   "rows": [
+    [
+     "THE-STRATA",
+     "8",
+     "5,810"
+    ],
+    [
+     "DIRECTIONWISE-IMAGES",
+     "6",
+     "5,810"
+    ],
+    [
+     "PAIRWISE-IMAGES",
+     "4",
+     "5,825"
+    ],
+    [
+     "THE-DECLARED-WINDOW",
+     "10",
+     "5,810"
+    ]
+   ]
+  },
+  "T12-THE-CORPUS-AS-A-MULTISET": {
+   "header": [
+    "corpus",
+    "slots",
+    "distinct histories"
+   ],
+   "rows": [
+    [
+     "C1",
+     "72",
+     "72"
+    ],
+    [
+     "C2",
+     "5,184",
+     "5,184"
+    ],
+    [
+     "C3",
+     "600",
+     "528"
     ]
    ]
   },
@@ -4620,7 +6472,8 @@
     "wedge",
     "global stabilizer",
     "adjacent families",
-    "atom word"
+    "atom word",
+    "atom row"
    ],
    "rows": [
     [
@@ -4631,7 +6484,8 @@
      "0",
      "4,320",
      "6",
-     "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN"
+     "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN",
+     "VACUOUS-STABILIZER-NONTRIVIAL"
     ],
     [
      "X2-ONE-FULL-ROW-ROUND",
@@ -4641,7 +6495,8 @@
      "0",
      "216",
      "216",
-     "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN"
+     "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN",
+     "VACUOUS-STABILIZER-NONTRIVIAL"
     ],
     [
      "X3-ROW-MULTIPLICITIES-CONGRUENT-MOD-THREE",
@@ -4651,7 +6506,8 @@
      "4",
      "216",
      "216",
-     "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN"
+     "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN",
+     "VACUOUS-STABILIZER-NONTRIVIAL"
     ],
     [
      "X4-THE-OVERLAPPING-CHAIN",
@@ -4661,7 +6517,8 @@
      "0",
      "1",
      "1",
-     "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN"
+     "FAC-ATOM-HOLDS-AT-THE-GROUPOID-GRAIN",
+     "DECISIVE"
     ],
     [
      "X5-A-ROW-ROUND-THEN-A-COLUMN-ROUND",
@@ -4671,7 +6528,8 @@
      "0",
      "1",
      "5,184",
-     "FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN"
+     "FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN",
+     "DECISIVE"
     ]
    ]
   },
@@ -4698,9 +6556,62 @@
      "6"
     ]
    ]
+  },
+  "T8-THE-INDUCED-IMAGE-FIBER": {
+   "header": [
+    "induced image",
+    "unique",
+    "non-unique",
+    "histories",
+    "class partitions that join the discrete one"
+   ],
+   "rows": [
+    [
+     "DIRECTIONWISE",
+     "5,852",
+     "4",
+     "5,856",
+     "ANT, COL, DIA, ROW"
+    ],
+    [
+     "PAIRWISE",
+     "5,854",
+     "2",
+     "5,856",
+     "COL, ROW"
+    ]
+   ]
+  },
+  "T9-WHICH-LEG-BINDS-BY-GRAIN": {
+   "header": [
+    "grain",
+    "LEG-3 failures",
+    "LEG-4 evaluations",
+    "LEG-4 failures",
+    "unique with LEG-4",
+    "unique without LEG-4"
+   ],
+   "rows": [
+    [
+     "actor",
+     "0",
+     "5,860",
+     "0",
+     "5,852",
+     "5,852"
+    ],
+    [
+     "carrier",
+     "0",
+     "6,317",
+     "378",
+     "5,810",
+     "5,478"
+    ]
+   ]
   }
  },
- "payload_sha256_12": "71dfa0e509ea",
+ "payload_sha256_12": "53e4253a679f",
  "persistence": {
   "coherence_is_a_declared_coordinate": true,
   "collapse_threshold_distribution": {
@@ -4721,32 +6632,62 @@
   "reading": "crystallized identity does not transport below the measured coherence depth: at every history of this corpus the groupoid count meets the group's only once the identification is required to cohere across at least that many events"
  },
  "polarity": {
+  "asserted_forms_absent": 0,
   "inverted_forms_present": 0,
   "rows": [
    {
     "asserted_form_present": true,
     "axis": "head-word",
-    "inverted_form_present": false
+    "inverted_form_present": false,
+    "scope": "PAPER"
    },
    {
     "asserted_form_present": true,
     "axis": "atom-word",
-    "inverted_form_present": false
+    "inverted_form_present": false,
+    "scope": "PAPER"
+   },
+   {
+    "asserted_form_present": true,
+    "axis": "atom-word-in-prose",
+    "inverted_form_present": false,
+    "scope": "PROSE"
+   },
+   {
+    "asserted_form_present": true,
+    "axis": "thesis-direction",
+    "inverted_form_present": false,
+    "scope": "PAPER"
+   },
+   {
+    "asserted_form_present": true,
+    "axis": "control-arm-word",
+    "inverted_form_present": false,
+    "scope": "PAPER"
+   },
+   {
+    "asserted_form_present": true,
+    "axis": "image-fiber-direction",
+    "inverted_form_present": false,
+    "scope": "PAPER"
    },
    {
     "asserted_form_present": true,
     "axis": "transport-direction",
-    "inverted_form_present": false
+    "inverted_form_present": false,
+    "scope": "PAPER"
    },
    {
     "asserted_form_present": true,
     "axis": "binding-direction",
-    "inverted_form_present": false
+    "inverted_form_present": false,
+    "scope": "PAPER"
    },
    {
     "asserted_form_present": true,
     "axis": "measure-stamp",
-    "inverted_form_present": false
+    "inverted_form_present": false,
+    "scope": "PAPER"
    }
   ]
  },
@@ -4861,12 +6802,14 @@
  ],
  "python": "3.13",
  "reachability": {
-  "gates_total_named_by_falsifiers": 34,
+  "gates_total_named_by_falsifiers": 42,
   "gates_with_a_falsifier": [
    "G-ACTOR-GRAIN-ADMISSIBLE-PER-HISTORY",
    "G-ARENA-SHAPE",
    "G-ATOM-THEOREM-AT-THE-GROUPOID-GRAIN",
    "G-BOTH-COIN-ORDERS-PUBLISHED",
+   "G-BOTH-INDUCED-IMAGES-CENSUSED",
+   "G-CANONIZATION-PRESERVES-NUMERALS",
    "G-CARRIER-GRAIN-ADMISSIBLE-PER-HISTORY",
    "G-CELL-IS-A-CO-DIVISION-PAIR",
    "G-CLASS-WORDS-BOUND-TO-PREDICATES",
@@ -4880,6 +6823,7 @@
    "G-HEAD-WORDS-COME-FROM-THE-PIN",
    "G-LEG1-IS-THE-SUBGROUP-COSET-THEOREM",
    "G-LEG2-IS-THE-SIGNATURE-REFINEMENT-THEOREM",
+   "G-NAMED-GATES-EXIST",
    "G-OUTCOMES-PARSED-FROM-THE-PIN",
    "G-PAPER-CLAIM-POLARITY",
    "G-PAPER-CLAIMS",
@@ -4890,12 +6834,17 @@
    "G-SEAL-TOTALITY",
    "G-SENTENCE-REFERENT-BINDING",
    "G-SWEEP-IS-EXECUTION-BOUND",
+   "G-THE-CORPUS-IS-A-MULTISET",
+   "G-THE-LADDER-AND-THE-ARROW-GROUPOID-ARE-TWO-OBJECTS",
    "G-THE-RECORD-LEG-IS-EXERCISED-SOMEWHERE",
+   "G-THESIS-IS-ONE-DIRECTIONAL",
+   "G-TRANSCRIPT-MATCHES-THE-GATE-LEDGER",
    "G-TRANSCRIPT-SEALED-WHOLE",
    "G-TRANSPORT-ALONG-THE-R-LADDER",
    "G-VERDICT-RECONSTRUCTED-BY-A-SECOND-ROUTE",
    "G-WALLS-SCAN-THE-PAPER",
    "G-WHICH-LEG-BINDS",
+   "G-WHICH-LEG-BINDS-BY-GRAIN",
    "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS"
   ],
   "gates_without_a_falsifier": [
@@ -4915,31 +6864,80 @@
   "aggregates_excluded": [
    "counts",
    "verdict",
-   "measure_relativity"
+   "measure_relativity",
+   "windows",
+   "class_binding"
   ],
-  "relations_checked": 5,
-  "rule": "the numerator and the denominator of every published ratio must be carried by one common DECLARED REFERENT UNIVERSE of this run's receipt; the aggregate keys, which carry numbers from every measurement at once, are excluded by declaration so the test is not vacuous",
-  "unbound": [],
-  "universes": [
-   "arena",
-   "carrier",
-   "corpora",
-   "criterion",
-   "leg_binding",
-   "actor_census",
-   "cell_census",
-   "cross_grain",
-   "coin_order",
-   "groupoid",
-   "atom",
-   "grain_triangle",
-   "persistence",
-   "transport",
-   "controls",
-   "class_binding",
-   "provenance",
-   "windows"
-  ]
+  "axes": [
+   {
+    "axis": "AXIS-COMMITTED-HISTORIES",
+    "integers_carried": 74,
+    "paths": 90,
+    "quantity": "counts of committed history SLOTS and of sub-windows of them"
+   },
+   {
+    "axis": "AXIS-ACTOR-PARTITIONS",
+    "integers_carried": 8,
+    "paths": 13,
+    "quantity": "counts of partitions of the nine actors"
+   },
+   {
+    "axis": "AXIS-CARRIER-PARTITIONS",
+    "integers_carried": 8,
+    "paths": 7,
+    "quantity": "counts of partitions of the twenty-seven cells"
+   },
+   {
+    "axis": "AXIS-LEG-EVALUATION-ROWS",
+    "integers_carried": 11,
+    "paths": 17,
+    "quantity": "counts of partition-history rows a leg was evaluated on"
+   },
+   {
+    "axis": "AXIS-COHERENT-FAMILIES",
+    "integers_carried": 51,
+    "paths": 11,
+    "quantity": "counts of coherent families of local identifications"
+   },
+   {
+    "axis": "AXIS-STABILIZER-ORDERS",
+    "integers_carried": 12,
+    "paths": 11,
+    "quantity": "orders of stabilizer groups and of the arena's own group"
+   },
+   {
+    "axis": "AXIS-ARENA-SHAPE",
+    "integers_carried": 11,
+    "paths": 14,
+    "quantity": "the arena's and the carrier's own cardinalities"
+   },
+   {
+    "axis": "AXIS-COHERENCE-WIDTHS",
+    "integers_carried": 3,
+    "paths": 3,
+    "quantity": "sliding-window widths in event index"
+   },
+   {
+    "axis": "AXIS-EVENTS-PER-HISTORY",
+    "integers_carried": 7,
+    "paths": 4,
+    "quantity": "numbers of division events in a history"
+   },
+   {
+    "axis": "AXIS-CRITERION-SURFACE",
+    "integers_carried": 8,
+    "paths": 1,
+    "quantity": "line counts of the criterion's own functions"
+   }
+  ],
+  "axis_paths_that_resolved_to_nothing": [],
+  "relations_checked": 15,
+  "relations_found_in_the_scanned_body": 18,
+  "relations_in_the_paper": 18,
+  "relations_skipped_as_trivial": 3,
+  "rule": "the numerator and the denominator of every published relation must be carried by one common DECLARED QUANTITY AXIS of this run's receipt -- an axis is a list of receipt paths whose values count the same kind of thing, not a top-level key, because a key carrying two axes binds a false relation between them",
+  "scan_is_total": true,
+  "unbound": []
  },
  "schema": {
   "cites": {
@@ -5028,28 +7026,40 @@
    "sha256_12": "b7999bb3027e"
   },
   {
+   "path": "corpus_multiset",
+   "seal": "SEAL-MULTISET",
+   "sealed_at_gate": "G-THE-CORPUS-IS-A-MULTISET",
+   "sha256_12": "37d6d6942d67"
+  },
+  {
    "path": "criterion",
    "seal": "SEAL-CRITERION",
    "sealed_at_gate": "G-CRITERION-FROZEN-BEFORE-THE-CENSUS",
-   "sha256_12": "b539cda27790"
-  },
-  {
-   "path": "windows",
-   "seal": "SEAL-WINDOWS",
-   "sealed_at_gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
-   "sha256_12": "d122c16ce787"
+   "sha256_12": "ddd1199964f9"
   },
   {
    "path": "actor_census",
    "seal": "SEAL-ACTOR",
    "sealed_at_gate": "G-ACTOR-GRAIN-ADMISSIBLE-PER-HISTORY",
-   "sha256_12": "e73b36c04b00"
+   "sha256_12": "7a974bc328fe"
+  },
+  {
+   "path": "actor_census_pairwise",
+   "seal": "SEAL-PAIRWISE",
+   "sealed_at_gate": "G-BOTH-INDUCED-IMAGES-CENSUSED",
+   "sha256_12": "9ff8756ef9c4"
+  },
+  {
+   "path": "image_fiber",
+   "seal": "SEAL-IMAGE",
+   "sealed_at_gate": "G-BOTH-INDUCED-IMAGES-CENSUSED",
+   "sha256_12": "a00bf627b3da"
   },
   {
    "path": "cell_census",
    "seal": "SEAL-CELL",
    "sealed_at_gate": "G-CARRIER-GRAIN-ADMISSIBLE-PER-HISTORY",
-   "sha256_12": "c06a2c8538ca"
+   "sha256_12": "781807aa1f7a"
   },
   {
    "path": "cross_grain",
@@ -5058,34 +7068,40 @@
    "sha256_12": "b8fa99402c31"
   },
   {
+   "path": "thesis",
+   "seal": "SEAL-THESIS",
+   "sealed_at_gate": "G-THESIS-IS-ONE-DIRECTIONAL",
+   "sha256_12": "28f4248aa105"
+  },
+  {
    "path": "coin_order",
    "seal": "SEAL-COIN",
    "sealed_at_gate": "G-BOTH-COIN-ORDERS-PUBLISHED",
-   "sha256_12": "90c03d1a5512"
+   "sha256_12": "ce94ffa62837"
   },
   {
    "path": "leg_binding",
    "seal": "SEAL-LEGBIND",
-   "sealed_at_gate": "G-WHICH-LEG-BINDS",
-   "sha256_12": "aa9ec722b016"
+   "sealed_at_gate": "G-WHICH-LEG-BINDS-BY-GRAIN",
+   "sha256_12": "83cc3be878b0"
   },
   {
    "path": "groupoid",
    "seal": "SEAL-GROUPOID",
    "sealed_at_gate": "G-GROUPOID-LADDER-PER-HISTORY",
-   "sha256_12": "a47c57cd44c7"
+   "sha256_12": "eefe41e68845"
   },
   {
    "path": "atom",
    "seal": "SEAL-ATOM",
    "sealed_at_gate": "G-ATOM-THEOREM-AT-THE-GROUPOID-GRAIN",
-   "sha256_12": "2b5cf71c251a"
+   "sha256_12": "677f4cc7b113"
   },
   {
    "path": "grain_triangle",
    "seal": "SEAL-TRIANGLE",
    "sealed_at_gate": "G-GRAIN-TRIANGLE-BOTH-TESTS",
-   "sha256_12": "3059ae90b88e"
+   "sha256_12": "4d0e4eb9ac65"
   },
   {
    "path": "persistence",
@@ -5097,19 +7113,25 @@
    "path": "transport",
    "seal": "SEAL-TRANSPORT",
    "sealed_at_gate": "G-TRANSPORT-ALONG-THE-R-LADDER",
-   "sha256_12": "5de31ec0c33f"
+   "sha256_12": "992cf1a7f956"
   },
   {
    "path": "controls",
    "seal": "SEAL-CONTROLS",
    "sealed_at_gate": "G-EVERY-OUTCOME-WORD-EMITTABLE",
-   "sha256_12": "2a6a66dcf2ec"
+   "sha256_12": "1febbfab0fb8"
+  },
+  {
+   "path": "windows",
+   "seal": "SEAL-WINDOWS",
+   "sealed_at_gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
+   "sha256_12": "d39ec40c8f35"
   },
   {
    "path": "measure_relativity",
    "seal": "SEAL-MEASURE",
    "sealed_at_gate": "G-E24-COUNTING-ONLY",
-   "sha256_12": "01ce868dbded"
+   "sha256_12": "d1a0c7641f3d"
   },
   {
    "path": "class_binding",
@@ -5121,61 +7143,79 @@
    "path": "counts",
    "seal": "SEAL-COUNTS",
    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED-BY-A-SECOND-ROUTE",
-   "sha256_12": "c2d2594411cc"
+   "sha256_12": "e91ef381c245"
   },
   {
    "path": "verdict",
    "seal": "SEAL-VERDICT",
    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED-BY-A-SECOND-ROUTE",
-   "sha256_12": "7d9319da81e5"
+   "sha256_12": "8eee6360528a"
   },
   {
    "path": "walls",
    "seal": "SEAL-WALLS",
    "sealed_at_gate": "G-WALLS-SCAN-THE-PAPER",
-   "sha256_12": "81db64a54f57"
+   "sha256_12": "aa2a62e10af2"
   },
   {
    "path": "paper_claims",
    "seal": "SEAL-PAPER-CLAIMS",
    "sealed_at_gate": "G-PAPER-CLAIMS",
-   "sha256_12": "d02bfa41af74"
+   "sha256_12": "24f9a779ef3c"
   },
   {
    "path": "paper_tables",
    "seal": "SEAL-PAPER-TABLES",
    "sealed_at_gate": "G-PAPER-TABLES-WITH-HEADERS",
-   "sha256_12": "55ddcc5c8a2a"
+   "sha256_12": "3cb10ec144c7"
+  },
+  {
+   "path": "paper_table_binding",
+   "seal": "SEAL-TABLE-BINDING",
+   "sealed_at_gate": "G-PAPER-TABLES-WITH-HEADERS",
+   "sha256_12": "99056295a9a0"
   },
   {
    "path": "paper_coverage",
    "seal": "SEAL-PAPER-COVERAGE",
    "sealed_at_gate": "G-PAPER-NUMERAL-COVERAGE",
-   "sha256_12": "8143ac801545"
+   "sha256_12": "2ecd72776a36"
   },
   {
    "path": "referent_binding",
    "seal": "SEAL-REFERENT",
    "sealed_at_gate": "G-SENTENCE-REFERENT-BINDING",
-   "sha256_12": "1136070e4397"
+   "sha256_12": "5cdd5db7eec5"
+  },
+  {
+   "path": "canonization",
+   "seal": "SEAL-CANON",
+   "sealed_at_gate": "G-CANONIZATION-PRESERVES-NUMERALS",
+   "sha256_12": "d2e19a28913f"
   },
   {
    "path": "polarity",
    "seal": "SEAL-POLARITY",
    "sealed_at_gate": "G-PAPER-CLAIM-POLARITY",
-   "sha256_12": "ffaafb807f9f"
+   "sha256_12": "30fa815139ea"
+  },
+  {
+   "path": "arithmetic",
+   "seal": "SEAL-ARITHMETIC",
+   "sealed_at_gate": "G-NO-FLOATS",
+   "sha256_12": "7e62c8d0b05e"
   },
   {
    "path": "coverage",
    "seal": "SEAL-COVERAGE",
    "sealed_at_gate": "G-FALSIFIER-COVERAGE",
-   "sha256_12": "bba746e06660"
+   "sha256_12": "8eb7e2a1cda4"
   },
   {
    "path": "mutants",
    "seal": "SEAL-MUTANTS",
    "sealed_at_gate": "G-FALSIFIER-COVERAGE",
-   "sha256_12": "f3671a19fc07"
+   "sha256_12": "ffd62b0411da"
   },
   {
    "path": "waiver_ledger",
@@ -5187,68 +7227,106 @@
    "path": "reachability",
    "seal": "SEAL-REACHABILITY",
    "sealed_at_gate": "G-FALSIFIER-REACHABILITY",
-   "sha256_12": "d2906472a59d"
+   "sha256_12": "a89029d0862e"
   },
   {
    "path": "mutant_sweep",
    "seal": "SEAL-MUTANT-SWEEP",
    "sealed_at_gate": "G-SWEEP-IS-EXECUTION-BOUND",
-   "sha256_12": "75e02d23ebca"
+   "sha256_12": "cd4283843b7b"
   },
   {
    "path": "gates",
    "seal": "SEAL-GATES",
    "sealed_at_gate": "G-PAPER-INSTRUMENT-RAN-IN-THE-PLAIN-RUN",
-   "sha256_12": "c92d08558c2a"
+   "sha256_12": "90904a6270c9"
   },
   {
    "path": "closing_gates",
    "seal": "SEAL-CLOSING",
    "sealed_at_gate": "G-PAPER-INSTRUMENT-RAN-IN-THE-PLAIN-RUN",
-   "sha256_12": "e22e1a6f74a6"
+   "sha256_12": "366be049c377"
   },
   {
    "path": "totals",
    "seal": "SEAL-TOTALS",
    "sealed_at_gate": "G-PAPER-INSTRUMENT-RAN-IN-THE-PLAIN-RUN",
-   "sha256_12": "b6ef5e631d7e"
+   "sha256_12": "367551ba23da"
   },
   {
    "path": "transcript_head",
    "seal": "SEAL-TRANSCRIPT",
    "sealed_at_gate": "G-TRANSCRIPT-SEALED-WHOLE",
-   "sha256_12": "9782921b6605"
+   "sha256_12": "a81805f5f8a3"
+  },
+  {
+   "path": "named_gates",
+   "seal": "SEAL-NAMED-GATES",
+   "sealed_at_gate": "G-NAMED-GATES-EXIST",
+   "sha256_12": "3a85292a6404"
   }
  ],
+ "thesis": {
+  "actor_non_unique": 4,
+  "actor_non_unique_inside_the_condition": 4,
+  "carrier_non_unique": 46,
+  "carrier_non_unique_inside_the_condition": 46,
+  "class_constant_inside_the_carrier_non_unique": 4,
+  "direction": "ONE-DIRECTIONAL -- a necessary condition, measured in both directions and asserted in one",
+  "field": "THE-LAW-ADMITS-MORE-THAN-ONE-FACTORIZATION-ONLY-WHERE-THE-HISTORY-REPEATS-A-PARALLEL-CLASS",
+  "histories_that_repeat_a_parallel_class": 348,
+  "histories_that_use_one_class_in_every_round": 4,
+  "necessary_at_both_grains": true,
+  "reading": "every history at which the criterion admits more than one factorization repeats a parallel class, at BOTH grains; the converse fails badly, so the condition is necessary and far from sufficient.  The tight biconditional is measured only at the actor grain, against the stronger class-constant predicate",
+  "sufficient": false,
+  "tight_biconditional_at_the_actor_grain": true,
+  "tight_biconditional_at_the_carrier_grain": false
+ },
  "totals": {
   "coherence_rows": 6,
   "criterion_legs": 4,
-  "falsifiers": 36,
-  "gates_after_the_ledger_snapshot": 4,
-  "gates_in_the_sealed_ledger": 39,
-  "gates_total": 43,
+  "falsifiers": 54,
+  "gates_after_the_ledger_snapshot": 6,
+  "gates_in_the_sealed_ledger": 45,
+  "gates_total": 51,
   "grains": 3,
-  "numerals_registered": 190,
-  "paper_claims": 10,
-  "paper_table_rows": 42,
-  "paper_tables": 7,
-  "seals": 39,
+  "numerals_registered": 226,
+  "paper_claims": 20,
+  "paper_table_rows": 57,
+  "paper_tables": 12,
+  "seals": 47,
   "sources": 10,
   "tests": 2,
   "verbatim_anchors": 13,
-  "wall_needles": 15,
-  "walls": 5,
-  "windows": 6
+  "wall_needles": 20,
+  "walls": 6,
+  "windows": 7
  },
  "transcript_head": {
   "first": "==============================================================================",
-  "last": "         evidence: declared 36, executed 0, survivors none",
-  "lines": 146,
+  "gate_lines_in_the_transcript": 45,
+  "gate_lines_not_in_the_ledger": [],
+  "gates_in_the_sealed_ledger": 45,
+  "last": "         evidence: declared 54, executed 0, survivors none",
+  "ledger_gates_without_a_line": [],
+  "lines": 164,
+  "reconciled": true,
   "sealed": "the WHOLE transcript, not a head prefix",
-  "staged_transcript_sha256_12": "d32e128c6249",
-  "whole_transcript_sha256_12": "d32e128c6249"
+  "staged_transcript_sha256_12": "4b04740c0ecf",
+  "whole_transcript_sha256_12": "4b04740c0ecf"
  },
  "transport": {
+  "R6_is_forced_by_R3": {
+   "C1_histories": 72,
+   "C1_histories_with_a_trivial_stabilizer": 72,
+   "C1_histories_with_exactly_one_leg2_survivor": 72,
+   "forced": true,
+   "independent_at_R6": [
+    "the adjacent-relation family count",
+    "the collapse threshold"
+   ],
+   "statement": "C2 is the set of ordered pairs of C1 histories; a concatenation's history-leg survivors are the intersection of its parts' and its stabilizer is the intersection of its parts' stabilizers, so uniqueness and trivial stabilizer at all of C2 FOLLOW from the C1 row by theorem and are checked here rather than discovered"
+  },
   "atom_break_transports_across_every_rung": true,
   "ladder_rows": {
    "R3-C1": {
@@ -5259,6 +7337,7 @@
     "histories": 72,
     "rounds": 3,
     "unique_at_the_actor_grain": 72,
+    "unique_at_the_actor_grain_at_the_pairwise_image": 72,
     "unique_at_the_carrier_grain": 72
    },
    "R4-C3": {
@@ -5271,6 +7350,7 @@
     "histories": 600,
     "rounds": 4,
     "unique_at_the_actor_grain": 596,
+    "unique_at_the_actor_grain_at_the_pairwise_image": 598,
     "unique_at_the_carrier_grain": 554
    },
    "R6-C2": {
@@ -5281,6 +7361,7 @@
     "histories": 5184,
     "rounds": 6,
     "unique_at_the_actor_grain": 5184,
+    "unique_at_the_actor_grain_at_the_pairwise_image": 5184,
     "unique_at_the_carrier_grain": 5184
    }
   },
@@ -5400,39 +7481,58 @@
     [
      [
       "THESIS",
-      null
+      null,
+      ""
      ],
      [
       "HISTORIES",
-      "counts/histories"
+      "counts/histories",
+      ""
      ],
      [
       "ACTOR-LATTICE",
-      "counts/actor_lattice"
+      "counts/actor_lattice",
+      ""
      ],
      [
       "ACTOR-GRAIN-LAW-COMPATIBLE-PARTITIONS",
-      "counts/actor_leg1"
+      "counts/actor_leg1",
+      ""
      ],
      [
       "ACTOR-GRAIN-UNIQUE-FACTORIZATION",
-      "counts/actor_unique|counts/histories"
+      "counts/actor_unique|counts/histories",
+      "-AT-THE-DIRECTIONWISE-IMAGE"
+     ],
+     [
+      "ACTOR-GRAIN-UNIQUE-FACTORIZATION-AT-THE-PAIRWISE-IMAGE",
+      "counts/actor_unique_at_the_pairwise_image|counts/histories",
+      ""
+     ],
+     [
+      "DIVISION-FORCED-UNDER-EITHER-IMAGE-AT-LEAST",
+      "counts/forced_under_either_image|counts/histories",
+      ""
      ],
      [
       "CARRIER-WINDOW",
-      "counts/carrier_window"
+      "counts/carrier_window",
+      ""
      ],
      [
       "CARRIER-GRAIN-LAW-COMPATIBLE-PARTITIONS",
-      "counts/carrier_leg1"
+      "counts/carrier_leg1",
+      ""
      ],
      [
       "CARRIER-GRAIN-UNIQUE-FACTORIZATION",
-      "counts/carrier_unique|counts/histories"
+      "counts/carrier_unique|counts/histories",
+      ""
      ],
      [
       "COIN-ORDER-DISAGREEMENTS",
-      "counts/coin_disagreements"
+      "counts/coin_disagreements",
+      ""
      ]
     ]
    ],
@@ -5441,19 +7541,23 @@
     [
      [
       "ATOM",
-      null
+      null,
+      ""
      ],
      [
       "ATOM-BREAKS",
-      "counts/atom_breaks|counts/histories"
+      "counts/atom_breaks|counts/histories",
+      ""
      ],
      [
       "COLLAPSE-THRESHOLDS",
-      "counts/collapse_thresholds"
+      "counts/collapse_thresholds",
+      ""
      ],
      [
       "ARENA-GROUP-ORDER",
-      "counts/arena_group_order"
+      "counts/arena_group_order",
+      ""
      ]
     ]
    ]
@@ -5464,14 +7568,16 @@
    "atom_breaks": 5852,
    "atom_word": "FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN",
    "carrier_unique": 5810,
-   "head_word": "FAC-STRATIFIED"
+   "complete_relation_returns_the_group_at": 5856,
+   "head_word": "FAC-STRATIFIED",
+   "histories": 5856
   },
   "segments": [
-   "FAC-DECOMPOSITION<THESIS=THE-LAW-ADMITS-MORE-THAN-ONE-FACTORIZATION-ONLY-WHERE-THE-HISTORY-REPEATS-A-PARALLEL-CLASS; HISTORIES=5,856; ACTOR-LATTICE=21,147; ACTOR-GRAIN-LAW-COMPATIBLE-PARTITIONS=6; ACTOR-GRAIN-UNIQUE-FACTORIZATION=5,852-OF-5,856; CARRIER-WINDOW=42,295; CARRIER-GRAIN-LAW-COMPATIBLE-PARTITIONS=10; CARRIER-GRAIN-UNIQUE-FACTORIZATION=5,810-OF-5,856; COIN-ORDER-DISAGREEMENTS=0>",
+   "FAC-DECOMPOSITION<THESIS=THE-LAW-ADMITS-MORE-THAN-ONE-FACTORIZATION-ONLY-WHERE-THE-HISTORY-REPEATS-A-PARALLEL-CLASS; HISTORIES=5,856; ACTOR-LATTICE=21,147; ACTOR-GRAIN-LAW-COMPATIBLE-PARTITIONS=6; ACTOR-GRAIN-UNIQUE-FACTORIZATION=5,852-OF-5,856-AT-THE-DIRECTIONWISE-IMAGE; ACTOR-GRAIN-UNIQUE-FACTORIZATION-AT-THE-PAIRWISE-IMAGE=5,854-OF-5,856; DIVISION-FORCED-UNDER-EITHER-IMAGE-AT-LEAST=5,852-OF-5,856; CARRIER-WINDOW=42,295; CARRIER-GRAIN-LAW-COMPATIBLE-PARTITIONS=10; CARRIER-GRAIN-UNIQUE-FACTORIZATION=5,810-OF-5,856; COIN-ORDER-DISAGREEMENTS=0>",
    "FAC-GROUPOID<ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; ATOM-BREAKS=5,852-OF-5,856; COLLAPSE-THRESHOLDS=3,4,5; ARENA-GROUP-ORDER=108>",
-   "FAC-STRATIFIED<BY-GRAIN=ACTOR-5852-OF-5856-UNIQUE-vs-CARRIER-5810-OF-5856-UNIQUE; ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; SCOPE=TWO-GRAINS-AS-DECLARED;COUNTS-ARE-COUNTING-ONLY;THE-CARRIER-WINDOW-IS-DECLARED-NOT-COMPLETE;NO-CLAIM-BEYOND-THE-MEASURED-COHERENCE-DEPTH>"
+   "FAC-STRATIFIED<BY-GRAIN=ACTOR-5852-OF-5856-UNIQUE-AT-THE-DIRECTIONWISE-IMAGE-vs-CARRIER-5810-OF-5856-UNIQUE; ATOM=FAC-ATOM-BREAKS-AT-THE-GROUPOID-GRAIN; SCOPE=TWO-GRAINS-AS-DECLARED;COUNTS-ARE-COUNTING-ONLY;THE-CARRIER-WINDOW-IS-DECLARED-NOT-COMPLETE;NO-CLAIM-BEYOND-THE-MEASURED-COHERENCE-DEPTH>"
   ],
-  "slot": "BY-GRAIN=ACTOR-5852-OF-5856-UNIQUE-vs-CARRIER-5810-OF-5856-UNIQUE"
+  "slot": "BY-GRAIN=ACTOR-5852-OF-5856-UNIQUE-AT-THE-DIRECTIONWISE-IMAGE-vs-CARRIER-5810-OF-5856-UNIQUE"
  },
  "waiver_ledger": [],
  "walls": {
@@ -5480,9 +7586,9 @@
    {
     "clean": true,
     "hits": [],
-    "needles": 3,
+    "needles": 4,
     "wall": "W-NO-FORCED-ACTOR-FACTORIZATION",
-    "warrant": "the AID adjudication's not-licensed list, paraphrase-hardened"
+    "warrant": "the AID adjudication's not-licensed list, four declared forms"
    },
    {
     "clean": true,
@@ -5501,7 +7607,7 @@
    {
     "clean": true,
     "hits": [],
-    "needles": 4,
+    "needles": 5,
     "wall": "W-NO-REALITY-SLOGAN",
     "warrant": "no unscoped reality language about actors"
    },
@@ -5511,21 +7617,30 @@
     "needles": 3,
     "wall": "W-NO-FIVE-RESONANCE",
     "warrant": "the resonance the AID adjudication demoted to refused"
+   },
+   {
+    "clean": true,
+    "hits": [],
+    "needles": 3,
+    "wall": "W-NO-DISJOINT-FREEDOMS",
+    "warrant": "AID's not-licensed item 5, carried here as INAPPLICABLE-BUT-WALLED: this unit welds nothing, but its central structure has that item's shape -- 4 inside 46 is containment with an index, and the paper renders it as containment with its index named"
    }
   ],
-  "scanned_chars": 25353,
+  "scanned_chars": 44737,
   "warrant": "each wall scans the object under test, not the instrument's surface (#269's caveat); the MUT-WALL-PLANT falsifier plants every banned sentence into exactly this text"
  },
  "windows": [
   {
-   "ambient_universe": null,
-   "complete_in_its_universe": false,
+   "ambient_universe": 5856,
+   "complement_in_the_corpus": null,
+   "complete_in_its_universe": true,
    "declaration": "the history corpus: paper-21's R = 3 I7-STRICT triples (C1), their pairwise concatenations (C2) and the driven window W4 (C3).  The space of all histories over this arena is unbounded; the corpus is the parents' own declared window and is enumerated COMPLETE inside it.",
    "members": 5856,
    "window": "W-CORPUS-C1-C2-C3"
   },
   {
    "ambient_universe": 21147,
+   "complement_in_the_corpus": null,
    "complete_in_its_universe": true,
    "declaration": "the actor-grain candidate set: EVERY partition of the nine actors.  The lattice is enumerated complete -- Bell(9) members, no cap, no sampling.",
    "members": 21147,
@@ -5533,6 +7648,7 @@
   },
   {
    "ambient_universe": 545717047936059989389,
+   "complement_in_the_corpus": null,
    "complete_in_its_universe": false,
    "declaration": "the carrier-grain candidate set: the DIRECTIONWISE image of every actor partition, the PAIRWISE image of every actor partition, and a declared list of OCC-typed natural strata (the discrete and trivial carrier partitions, by-direction, by-anchor-site, by-AG-line, the shift orbits and the six translation-subgroup orbit partitions), deduplicated as partitions.  Bell(27) is astronomically larger and the ratio is published with the window; nothing is silently capped.",
    "members": 42295,
@@ -5540,23 +7656,34 @@
   },
   {
    "ambient_universe": null,
+   "complement_in_the_corpus": null,
    "complete_in_its_universe": false,
    "declaration": "the groupoid coherence relations censused: the sliding windows |t - s| <= w for w = 0, 1, 2, 3, the round-local relation, and the complete relation.  The collapse threshold is derived per history by increasing w until the count meets the complete relation's, so the ladder is not truncated below the answer.",
    "members": 6,
    "window": "W-COHERENCE-LADDER"
   },
   {
-   "ambient_universe": null,
+   "ambient_universe": 5856,
+   "complement_in_the_corpus": 5780,
    "complete_in_its_universe": false,
    "declaration": "the per-leg binding sweep runs the COMPLETE actor lattice against a declared history sub-window -- C1 in full plus every history the actor census found non-unique -- because the product of the two complete sets is larger than this unit's declared cost budget; the sub-window's size and its complement are both published.",
-   "members": 0,
+   "members": 76,
    "window": "W-FULL-LATTICE-PER-LEG"
   },
   {
+   "ambient_universe": 5856,
+   "complement_in_the_corpus": 5184,
+   "complete_in_its_universe": false,
+   "declaration": "the grain triangle, the arrow groupoid and the raw-versus-realizable agreement run on C1 and C3 -- the strict triples and the driven window -- because a concatenation's stabilizer is the intersection of its parts' and its arrow groupoid is their disjoint union, so C2 carries no independent row.  The complement is named: all of C2.",
+   "members": 672,
+   "window": "W-STABILIZER-AND-ARROW-SUB-WINDOW"
+  },
+  {
    "ambient_universe": null,
+   "complement_in_the_corpus": null,
    "complete_in_its_universe": false,
    "declaration": "the control arm: declared sub-corpora and synthetic link-sets driven through the REAL criterion and the REAL head law.  No control row is forged; each is a genuine evaluation of the same code on a declared datum.",
-   "members": 0,
+   "members": 12,
    "window": "W-CONTROL-ARENAS"
   }
  ]
