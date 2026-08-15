@@ -11165,3 +11165,30 @@ FIDELITY: EPR's sufficient-not-necessary caveat (p.777–778)
 absent from pin and paper; §9 attributes to EPR a premise
 they disclaimed.**  Seven minors (one typed count,
 computed 0).  Liftable replacements supplied.  K1/K3 out.
+
+## 2026-08-15 — NDEP K3 (INSTRUMENT) FROZEN: AWF; NO MEASURED QUANTITY WRONG (23/23 FOREIGN-ROUTE); TEN TEMPLATE-SHAPED MAJORS; THE #267 SWEEP RULED OWED (v14 LEDGER #344)
+
+**Review:** v14/review-ndep-instrument.md (1133b154ff8d,
+454 lines).  Grade AWF.  175 executions, 112 own
+injections, ~340 recomputations — 23/23 load-bearing
+numbers on a foreign route incl. the sharpened floor 2|4|6
+reimplemented from prose.  All registry counts verified.
+TEN MAJORS: the ACT disease LIVE (post-seal key at exit 0,
+"missing none"); the transcript UNBOUND to the receipt
+(unique 99 beside unique 45, integrity PASS; 40 of 177
+lines sealed); the head comparator catches 2 of 22 (both
+routes read the same keys); ALL SIX verbatim anchors
+phantom consumers; 5 of 23 table rows unbound (the §2.1
+corpus table); walls literal-phrase traps (4 of 5 natural
+violations pass); G-PAPER-CLAIMS never scans the paper; a
+forged extra verdict fence admitted; E-23 two defects
+(MUT-TABLE description inverted; MUT-SEAL-GATE constant).
+HOLDS: byte ×2 off-tree two seeds; 27/27 on target; 21/21
+argv; the fidelity leg three-legged 15/15; FAC's 6 and
+rung 3 genuinely computed (two OTHER frozen constants
+ungated).  **SEAM RULING: eight of ten majors are
+template recurrences (LOR M2/#269/M4 shapes) — THE #267
+CORPUS SWEEP IS OWED, not merely recommended; one #119
+addendum candidate: a seal manifest is total only if
+totality is recomputed at promotion time.**  NDEP K1
+still out; adjudication after it.
