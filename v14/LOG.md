@@ -10875,3 +10875,30 @@ out-of-harness 55/55 dead-on-target (#334).  All #333
 rulings stand (the Young-table gating gap; the
 strengthened price theorem; the pointwise-forced [0,0]).
 SPC panel remains COMPLETE; adjudication follows POT K3.
+
+## 2026-08-15 — POT K3 (INSTRUMENT) FROZEN: AWF; NO FALSE PHYSICS NUMBER (29/29 FOREIGN-ROUTE); TEN INSTRUMENT MAJORS; THE POT PANEL IS COMPLETE (v14 LEDGER #336)
+
+**Review:** v14/review-pot-instrument.md (6ffa7681fb94, 478
+lines).  125 executions, 51 own injections + the 49
+declared mutants swept out-of-harness (49/49 dead-on-target,
+tree byte-unchanged), 134 recomputations; foreign-route
+Q(ζ₈) re-implementation reproduced 29/29 published
+quantities.  TEN MAJORS (each a live exit-0 injection):
+the licence wall SELF-LICENSES (CONFINES both policed and
+licence token) and accepts wrong discriminator values; the
+numeral registry holds all 1–2 digit tokens (teeth only
+≥3 digits); claim rendering a floor not exact (a gap-1/2
+site flips to 1/4 and survives); TABLE CELLS UNBOUND
+(fabricated rows pass); THE ACT DISEASE at 9 of 20
+declared-unsealed keys (insertion guarded, the 21 sealed
+protected); the transcript forgeable (a fabricated PASS
+line delivers); the honest denominator covers 38 of 50
+gates; **0 of 15 verbatim anchors consumed by their named
+gates** (all 29 path-value are); staging temporaries
+survive refusal.  Ten minors.  Both disclosed repairs
+re-probed (selftest isolation LOAD-BEARING).  Four paper
+sentences false-about-the-instrument, liftable repairs in
+§6.  **BOTH PANELS NOW COMPLETE — POT (#329/#331/#336) and
+SPC (#330/#333+#335/#334): combined ~15,000 checks, zero
+false physics numbers.  Both adjudications + repair
+launches are the next mechanical step.**
