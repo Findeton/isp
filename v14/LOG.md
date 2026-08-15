@@ -11136,3 +11136,32 @@ dissolved (§6 dissolves only the pin's dichotomy; the coin
 registered open).  FREE STRENGTHENING: the sharpened floor
 = 2(q−1) at q=2..7, the offset 1 at every q by
 subtraction.  K1/K3 still out.
+
+## 2026-08-15 — EPR K2 (EFFECTUS) FROZEN: ACCEPT-WITH-FIXES; 84 RECOMPUTATIONS ZERO FALSE; EIGHT MAJORS — THE SELECTOR 2-WAY ANALYTICALLY, THE PIN OWNED TWICE MORE, THE 1935 SUFFICIENT-NOT-NECESSARY CAVEAT MISSING (v14 LEDGER #343)
+
+**Review:** v14/review-epr-effectus.md (eed65dd384c1, 512
+lines).  Grade AWF-class ACCEPT-WITH-FIXES; byte-identical
+off-tree; 30/30 falsifiers on target.  MAJORS: (1) the
+selector is 2-WAY — RECORD-ALSO-INCOMPLETE unreachable
+ANALYTICALLY (qs ⊆ db at 132/132 specs) and BOTH-COMPLETE
+unreachable by a pin-time pigeonhole (36 records / 9
+classes; all 64 states swept, minimum uncarried > 0):
+the delivered words STAND but the pin's feasibility lines
+argued abstract conditions — the exact #319 failure, PIN
+OWNED.  (2) the LOC-PAIR/LOC-WALK axis absent from the pin
+(instrument-supplied; the word-FORM registered; the pin's
+own worked example refuted — 105,408 link-disjoint pairs
+exist), PIN OWNED.  (3) E6 upgraded to completeness
+simpliciter ("this corpus has one" vs EPR's "such a
+theory").  (4) §11's element-of-reality self-certification
+false — an own-voice use at line 34, no gate; a planted
+own-voice assertion passed.  (5) the Bell wall a LITERAL
+7-string match — six semantic variants all passed; **the
+delivered paper itself swept CLEAN**; v5 rendering
+byte-exact.  (6) the E5 zero partly ANALYTIC (rd bound
+only in the mutant branch; the duty runs one leg).  (7)
+one unmeasured modal-causal sentence.  (8) **1935
+FIDELITY: EPR's sufficient-not-necessary caveat (p.777–778)
+absent from pin and paper; §9 attributes to EPR a premise
+they disclaimed.**  Seven minors (one typed count,
+computed 0).  Liftable replacements supplied.  K1/K3 out.
