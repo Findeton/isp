@@ -11219,3 +11219,32 @@ forced by the formalisation (a reading is a function on
 records; the falsifier tests plumbing).  Six minors.  **The
 head word STANDS and is state-invariant.**  K3 out; NDEP
 K1 out.
+
+## 2026-08-15 — EPR K3 (INSTRUMENT) FROZEN: AWF; NO MEASURED QUANTITY WRONG (239 RECOMPUTATIONS); SEVEN MAJORS, FOUR TEMPLATE-SHAPED; THE EPR PANEL IS COMPLETE (v14 LEDGER #346)
+
+**Review:** v14/review-epr-instrument.md (30950725b61a,
+628 lines).  Grade AWF.  All 24 published counts verified
+zero-mismatch; the AST digest re-derived; the apparent
+1,265,112 anomaly resolved exactly (421,632×3 + 24×9).
+SEVEN MAJORS: the §9 Bell-desiderata table UNRENDERED
+(header swaps and flipped Bell-constrained flags pass);
+the three verdict fences never matched against the receipt
+(striking ;NO-LOCAL-REALISM-CLAIM passes); claims
+containment-gated with five duplicated (the C02-twin
+forgery plants the head's exact inverse); a
+description-inverted falsifier passes (hook_carriers
+matches names only); ACT DISEASE BOTH FORMS + the shipped
+receipt already naming a phantom gate
+(G-TRANSCRIPT-SEALED-WHOLE); the transcript seal
+recomputed at promotion (a forged PASS
+G-LOCAL-REALISM-RESTORED line promoted); the Bell wall a
+seven-string blacklist and the wall sentence deletable.
+CLEAN: 30/30 sweep on target; byte ×2 off-tree two seeds;
+selftest write-nothing; read-back/staging ABSENT-clean;
+referent binding mostly clean incl. in-fence; one
+disclosed defect closed, the coverage-census one STILL
+PRESENT (35/40; 7/14 waivers dead).  **Four of seven
+template-shaped — the #267-owed ruling reinforced from a
+second panel.  THE EPR PANEL IS COMPLETE (K1 #345 / K2
+#343 / K3 here): ~468 recomputations, zero false numbers.
+Adjudication queues with POT's and SPC's; NDEP K1 out.**
