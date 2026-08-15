@@ -10964,3 +10964,53 @@ headline; two battery-found defects fixed and disclosed;
 FAC/SEC candidate-under-repair stamps carried, FAC's
 consumed values re-derived 30/30 against both copies.
 **Orchestrator battery next; panel after green.**
+
+## 2026-08-15 — NDEP (PAPER-39) DELIVERED, COMMITTED AS-IS: PORTABLE-3-OF-5 — THE LAWS TRANSPORT ON n, THEIR NUMBERS NEVER DO; THE MOD-3 MOTIF IS NOT ABOUT 9 AT ALL (v14 LEDGER #338)
+
+**Files:** v14/paper-39-ndep.md (25bea1eddd3a);
+v14/code/ndep_exact.py (d83df6c1e07d); ndep_output.txt
+(efa2987ef6a7); ndep_receipt.json (3f5639a9146d).  Pin
+2ff14505f18f.  CANDIDATE UNTIL ADJUDICATION.
+
+**HEAD:** NDEP-PORTABLE-3-OF-5 — n=4 (AG(2,2)) built by the
+parent's own grammar (fidelity-gated at q=3: all five
+substrate counts 280/36/72/276/600 reproduced), 48 driven
+histories, the COMPLETE 15-partition lattice, whole-S₄
+filtering; n=16 a declared window; **every one of the 6
+tested numerals is q-carried — what transports on n alone
+is the LAWS and never their NUMBERS.**
+
+**Per-law:** (1) NAMING LAW-IN-N — the Young-subgroup
+theorem verbatim at n=4 (53 prefixes, 0 mismatches; 21,080
+at n=16) with forced 45/48 and the chart = exactly the
+constant-class histories (count q+1).  (2) CRYSTALLIZATION:
+schedule time = 2q−1 (3|5|7); **the published floor
+⌈log₂n⌉ does NOT transport (attained 2|4|6; the bound
+reads 4 at n=16) — AID's floor was numerically right at
+n=9 by coincidence of forms; NDEP supplies the successor
+formula (kq vs n distinct k-signatures) matching all three
+points**; the redundant round-one event reproduces 2/2.
+(3) COSET-MENU LAW-IN-N at prime q (count q+3; set
+equality 5/5 at n=4); the theorem's hypothesis honestly
+FAILS at q=4 (links generate the prime subfield; row
+carried unscored).  (4) **THE MOD-MOTIF SPLITS — the
+sharpest result: the ladder's modulus is the DECLARED LINK
+COUNT L, not √n and not the characteristic.  L-sweep at
+FIXED n=4: L=1→{1..7}, L=2→{2,4,6}, L=3→{3,6} — MOD-3
+REAPPEARS AT FOUR ACTORS.  The corpus's mod-3 fingerprint
+was never about 9; it is about the declaration L=q.**  The
+coin's phase modulus m free (144,991 pairs both
+directions; the census blind at m=2..5).  (5)
+DIVISION-FORCING LAW-IN-N — 45/48 unique; the non-uniques
+are exactly ROW|COL|DIA constant-class; FAC's thesis holds
+verbatim.  Secondary: saturating = maximal at q≤3 only.
+
+**Instrument:** 42 gates; 27 falsifiers 27/27 (eight
+first-sweep off-targets were INSTRUMENT HOLES, fixed by
+strengthening gates); 13 control arms through the real
+transport procedure; 355+104 numerals 0 unbacked; head
+derived twice; byte ×3 + off-tree env-i ×1; FAC carried at
+frozen commit f4172ea (worktree under repair).  Panel
+pressure points named in-delivery (floor attainment beyond
+three points; the q=4 representative choice; corpus
+smallness).  **Battery next.**

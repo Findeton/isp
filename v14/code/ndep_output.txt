@@ -1,0 +1,177 @@
+==============================================================================
+NDEP (paper-39) -- THE n-DEPENDENCE UNIT
+==============================================================================
+
+SECTION 1.  PROVENANCE
+  [PASS] G-PROVENANCE
+         EVERY PINNED SOURCE IS PRESENT AND ITS BYTES ARE THE DECLARED ONES (#91).  Three files are read as sources at run time and each carries a sha256-12 fixed in this unit's frozen declaration; a fourth parent (FAC) is carried by COMMIT and digest and is deliberately NOT read, because its worktree copy is under repair.  No subprocess is invoked and no repository state outside the declaration is touched
+         evidence: sources 3, mismatches none, fac carried at commit f4172ea
+  [PASS] G-PARENT-ANCHORS
+         THE PARENT'S VALUES ARE READ BY PATH AND THE (PATH, VALUE) PAIR IS ANCHORED (#20).  Ten rows of AID's committed receipt are read at declared JSON paths and compared with the values this unit froze; a path drift that silently substitutes another number dies here.  Every row names the gate that CONSUMES it, and every named consumer is a gate this run evaluates (checked at G-SEAL-TOTALITY)
+         evidence: anchors 10, mismatches none, consumers 4
+  [PASS] G-VERBATIM
+         THE QUOTATIONS ARE THE PARENT'S OWN BYTES (#62 as amended).  Six quotations carry the parent laws into this unit; each is matched against the pinned source's bytes under the full text normalisation with a length floor, and each is bound to a NAMED consumer gate that reads the quotation's content rather than its existence.  This gate is evaluated BEFORE the byte anchors are consumed anywhere downstream
+         evidence: quotes 6, failures none, shortest 52 chars
+  [PASS] G-ARENA-DECLARED
+         THE ARENA IS DECLARED AS DATA, AXIS BY AXIS (RUNBOOK section 15).  Six axes -- boundary, family, law, state, arena, provenance -- are published as rows of the receipt, and the two FREE axes this unit sweeps (the declared link count L and the coin's phase modulus m) are named as free in the declaration itself rather than discovered later
+         evidence: axes 6, free axes named in-declaration ['ARENA', 'STATE']
+  [PASS] G-WINDOWS-DISCLOSED
+         EVERY WINDOW IS DECLARED, AND WHETHER IT IS ENTIRE IS PART OF THE DECLARATION.  Nine windows; the six marked entire are whole classes with no sampling, and the three that are not carry the reason in their own text -- the q = 4 saturating census, S_16, and the q = 3 fidelity leg
+         evidence: windows 9, entire 6, partial ['W-N16-CLASS', 'W-N16-PERM', 'W-Q3']
+
+SECTION 2.  THE CONSTRUCTOR-FIDELITY LEG (q = 3, W-Q3)
+  q = 3 substrate: groupings 280 (parent 280), saturating 36 (parent 36), strict_tuples 72 (parent 72), flat_tuples 276 (parent 276), window 600 (parent 600)
+  [PASS] G-CONSTRUCTOR-FIDELITY
+         THE PARAMETERISED CONSTRUCTOR REPRODUCES THE PARENT'S SUBSTRATE AT q = 3, ROW BY ROW.  The same code that builds the n = 4 arena is run at q = 3 and its five substrate counts are compared -- each against the value read at its own anchored path in AID's committed receipt, per object and never as a total.  This is what licenses 'the same grammar' for the n = 4 build; it is a FIDELITY LEG and not a finding, and the receipt row says so
+         evidence: rows agreeing 5 of 5 (groupings, saturating, strict_tuples, flat_tuples, window); disagreeing none
+
+SECTION 3.  THE n = 4 ARENA AND ITS DRIVEN CORPUS (W-N4, ENTIRE)
+  groupings 3, saturating 2 (max incidence 4 = n), corpora {'C1': 2, 'C1FAN': 8, 'C2': 4, 'C3': 34}, histories 48
+  [PASS] G-CORPUS-SHAPE
+         THE n = 4 CORPUS IS THE CONSTRUCTOR'S PRODUCT, AND ITS SHAPE IS MEASURED PER CORPUS.  Each of the four corpora publishes its schedule count, its round count and its events-per-history, and the total is the sum of the four rather than a separately typed number; every event of every history is a conflict group of a grouping of the four sites into two pairs, and the published total is compared with the CONSTRUCTOR's own product, so a corpus row dropped after the build dies here.  No sampling: the class is entire
+         evidence: sum of corpora 48, histories 48, constructor product 48, events = rounds x q at 4 of 4
+
+SECTION 4.  LAW 1 -- THE YOUNG-SUBGROUP NAMING THEOREM
+  routes: 53 distinct prefixes, 0 mismatches; forced 45 of 48, chart 3
+  [PASS] G-LAW1-ROUTES
+         THE NAMING THEOREM IS TESTED AS A THEOREM AND NOT ASSUMED, PER OBJECT.  Route A holds the whole of S_4 and keeps the elements that fix EVERY division event setwise; route B builds the Young subgroup of the participation-signature partition from the blocks and knows nothing of route A.  The two are compared as SETS OF PERMUTATIONS at every distinct prefix of the corpus.  This is the gate the parent's quotation V-YOUNG names: the stabilizer IS that Young subgroup, its order the product of the block factorials
+         evidence: prefixes 53, mismatches 0, |S_4| = 24 filtered per prefix
+  [PASS] G-LAW1-CHART
+         THE CHART SET IS CHARACTERISED, NOT COUNTED (#87).  Each history is tested individually for two properties -- a nontrivial stabilizer, and repeating one parallel class in every round -- and the two SETS OF HISTORIES are compared, not their sizes.  The parent's own characterisation (V-CHART: the constant-class quadruples, one per parallel class) is the statement under test, and at n = 4 the count that follows is the number of parallel classes
+         evidence: chart 3, constant-class 3, sets equal True, parallel classes 3
+  [PASS] G-LAW1-WORD
+         LAW 1's OUTCOME WORD IS DERIVED FROM THE MEASUREMENTS AND IS ONE OF THE THREE PRE-REGISTERED NAMES.  The word is LAW-IN-N exactly when both legs pass -- the two routes agree at every prefix, and the chart SET is exactly the constant-class SET -- and BREAKS otherwise; the chart COUNT's own transport is decided separately by the same procedure the other four laws use, so the law and its numeral are never conflated
+         evidence: word LAW-IN-N (chart-count word NEEDS-3, DISCRIMINATED), routes 53/53, chart set exact True
+
+SECTION 5.  THE n = 16 WINDOW (W-N16-CLASS / W-N16-PERM, DECLARED)
+  n = 16: 256 class tuples, 24 covering; crystallization {7: 24}; attained floor {6: 24}; counting floor 4
+  n = 16 routes: 21080 comparisons, 0 mismatches, 2064 positive
+  [PASS] G-N16-WINDOW
+         THE n = 16 WINDOW IS BUILT, AND ITS LIMITS ARE MEASURED RATHER THAN ASSERTED.  The window's own arithmetic is published beside it: S_16 has 20,922,789,888,000 elements and is not filtered, so route A runs on a declared permutation window of transpositions and 3-cycles at every prefix -- and that window is exercised in BOTH polarities, with permutations inside the stabilizer and permutations outside it.  A window whose positive count were zero would be a gate that cannot fail
+         evidence: comparisons 21080, mismatches 0, positive 2064, negative 19016, covering histories 24
+  [PASS] G-LAW1-TRANSPORT
+         THE NAMING THEOREM'S TRANSPORT IS MEASURED AT BOTH NEW ARENA POINTS.  At n = 4 the theorem is checked exhaustively (whole symmetric group, every distinct prefix); at n = 16 it is checked on the declared permutation window.  The parent's own numbers -- 5,852 forced of 5,856, 4 chart -- enter ONLY as anchored reads of its committed receipt and are never recomputed here
+         evidence: n = 4 mismatches 0 of 53, n = 16 mismatches 0 of 21080, parent anchors 5852 + 4 = 5856
+
+SECTION 6.  LAW 2 -- THE CRYSTALLIZATION PAIR
+  time: n=4 3 (constant on C1,C1FAN,C2), n=16 7, parent n=9 5 -> NEEDS-3
+  floor: attained n=4 2, n=16 6, parent n=9 4; counting floor at n=16 is 4 -> NEEDS-3
+  offset: 1, 1, 1 -> LAW-IN-N
+  [PASS] G-LAW2-TIME
+         THE SCHEDULE'S CRYSTALLIZATION TIME IS MEASURED AT EVERY HISTORY AND ITS TRANSPORT DECIDED.  The parent's V-TIME quotation fixes the n = 9 value at 5 on C1, C2 and the seed fan; the same quantity is measured here at n = 4 (constant across three corpora) and at n = 16 (constant across the covering class tuples), and the three points are handed to the transport procedure with all three candidate readings
+         evidence: word NEEDS-3 (DISCRIMINATED); n = 4 time 3 is a measured value True; constant on C1,C1FAN,C2; n = 16 time 7; parent 5; rows discriminating q from n: 1
+  [PASS] G-LAW2-FLOOR
+         THE INFORMATION FLOOR IS MEASURED AS AN ATTAINED VALUE, NOT TAKEN FROM ITS BOUND.  The parent's V-FLOOR and V-ATTAINED quotations state a counting bound -- k events supply at most 2^k signatures -- AND that it is attained.  Here the attained value is the smallest event SUBSET whose stabilizer is trivial, searched by increasing size at every history; it is compared with the counting bound and with the sharpened bound this unit supplies, in which each event's fixed size q enters
+         evidence: word NEEDS-3 (DISCRIMINATED); attained 4:2 9:4 16:6; counting bound 16:4; sharpened bound 4:2 9:4 16:6
+  [PASS] G-LAW2-OFFSET
+         THE REDUNDANT-EVENT OFFSET IS COMPUTED FROM THE TWO MEASURED OBJECTS AT EVERY ARENA POINT, AND ITS MECHANISM IS MEASURED TOO.  The offset is the schedule time minus the ATTAINED floor -- never minus the bound -- and the parent's V-OFFSET quotation names the mechanism: one structurally redundant event.  Here the last event of round one is dropped at every C1 history and the signature partition is checked unchanged, then the event is moved to the end and the crystallization time re-measured
+         evidence: word LAW-IN-N (UNDISCRIMINATED); offsets 4:1 9:1 16:1; round-one last event redundant at 2 of 2; time when moved to the end ['2']
+  [PASS] G-LAW2-WORD
+         LAW 2's WORD IS DERIVED FROM ITS THREE LEGS BY A STATED RULE.  The pair's word is BREAKS when the floor leg breaks, NEEDS-3 when a surviving leg needs the square root, and LAW-IN-N only when every leg transports on n alone; each leg's own word is published beside it so the aggregation can be checked rather than believed
+         evidence: legs time NEEDS-3 / floor NEEDS-3 / offset LAW-IN-N -> pair NEEDS-3
+
+SECTION 7.  LAW 3 -- FAC's COSET-MENU THEOREM
+  lattice 15, subgroups 5, coset partitions 5, LEG-1 survivors 5, set-equal True
+  declared links generate: {'2': 4, '3': 9, '4': 8}
+  [PASS] G-LAW3-SET-EQUALITY
+         THE COSET MENU IS COMPARED AS A SET OF PARTITIONS, NOT AS A COUNT.  The geometry leg is evaluated on every one of the Bell(4) partitions of the four actors -- the COMPLETE lattice, no window -- and the survivors are compared element by element with the coset partitions of every subgroup of the translation group, each subgroup obtained by closure of a generator set.  Two sets that merely have the same size do not pass this gate
+         evidence: lattice 15, survivors 5, coset partitions 5, set equality True, block-size profiles [(1, 1), (2, 3), (4, 1)]
+  [PASS] G-LAW3-HYPOTHESIS
+         THE THEOREM'S HYPOTHESIS IS MEASURED AT EVERY q, AND ITS FAILURE AT q = 4 IS A MEASUREMENT.  The closed form needs the DECLARED links to generate the whole translation group, since only then does every block become a single coset.  The generated subgroup is computed by closure at q = 2, 3 and 4 and its order compared with the group's: transitive at the two prime orders, of index two at q = 4 -- which is why the q = 4 row of the transport table is carried unscored rather than guessed
+         evidence: generated/order: {'2': '4/4', '3': '9/9', '4': '8/16'}
+  [PASS] G-LAW3-PARENT
+         THE FROZEN PARENT CONSTANT IS CROSS-CHECKED AGAINST A VALUE THIS UNIT COMPUTES.  FAC's worktree copy is under repair, so its 6 is carried as a declared constant at commit f4172ea; the same number is independently produced here by enumerating the subgroups of the translation group of AG(2,3) by closure, so the declaration is checked rather than trusted
+         evidence: declared 6, enumerated at q = 3 6, q + 3 6
+  [PASS] G-LAW3-WORD
+         LAW 3's WORD IS DERIVED FROM THE SET EQUALITY AND THE TRANSPORT TABLE.  The theorem transports when the set equality holds at the new arena point; its count is decided separately by the transport procedure, and the infeasible q = 4 row is excluded from scoring by the procedure itself rather than by hand
+         evidence: word LAW-IN-N, count word NEEDS-3 (DISCRIMINATED), feasible rows 2 of 3, set equality True
+
+SECTION 8.  LAW 4 -- THE MOD-3 MOTIF, SPLIT
+  ladder by L at n = 4: {'1': [1, 2, 3, 4, 5, 6, 7], '2': [2, 4, 6], '3': [3, 6]}
+  n = 16 ladder (L = 4): [4, 8]
+  coin channel: {'2': (0, 144991), '3': (0, 144991)}
+  census by coin modulus: {'2': 45, '3': 45, '4': 45, '5': 45}
+  [PASS] G-LAW4-LADDER
+         THE LADDER'S MODULUS IS MEASURED, AND ITS CARRIER IS SEPARATED FROM sqrt(n) AND FROM THE CHARACTERISTIC BY A SWEEP AT FIXED n.  For each declared link count L = 1, 2, 3 the achievable budgets are found by exhaustive search over multisets of saturating groupings -- which R admit a summed link field constant on every cell -- and the achievable set is checked to be EXACTLY the multiples of the first rung.  n, q and the characteristic are all held at their n = 4 values throughout the sweep, so a modulus that moves with L cannot be a function of any of them
+         evidence: first rungs by L {'1': 1, '2': 2, '3': 3}; achievable sets {'1': [1, 2, 3, 4, 5, 6, 7], '2': [2, 4, 6], '3': [3, 6]}; modulus equals L at every row True; modulus equals q at every row False; the frozen parent rung 3 equals the parent arena's own link count 3
+  [PASS] G-LAW4-COIN
+         THE COIN'S RESIDUE CHANNEL IS MEASURED IN BOTH DIRECTIONS AND ITS MODULUS SHOWN FREE.  Over a declared record family every unordered pair is classified twice -- congruent modulo m or not, and carrying identical one-step operators or not -- and the two classifications are required to agree on every pair, at m = 2 and at m = 3.  The freedom is then measured rather than argued: the whole division-forcing census is re-run at m = 2, 3, 4 and 5 and its counts compared
+         evidence: pairs {'2': 144991, '3': 144991}; mismatches {'2': 0, '3': 0}; census by m {'2': 45, '3': 45, '4': 45, '5': 45}; blind True
+  [PASS] G-LAW4-WORD
+         LAW 4's WORD IS DERIVED FROM THE LADDER'S TRANSPORT TABLE, AND THE SPLIT IS PUBLISHED WITH IT.  The pin pre-registered a dichotomy -- mod-q or mod-3 forever -- and the measurement dissolves it: the derived leg becomes mod-L, which is mod-q at the corpus's own declaration, while the declared leg stays wherever it is put.  Both halves are in the receipt and neither is allowed to stand for the other
+         evidence: word NEEDS-3 (DISCRIMINATED); ladder rows feasible 3; derived leg carrier L True; declared leg free True
+
+SECTION 9.  LAW 5 -- THE DIVISION-FORCING FRACTION
+  unique 45, non-unique 3 of 48; union of admissible 4; thesis True
+  [PASS] G-LAW5-CENSUS
+         THE DIVISION-FORCING CENSUS RUNS THE COMPLETE ACTOR LATTICE THROUGH THE FOUR-LEG CRITERION AT EVERY HISTORY, AND THE DISCRETE PARTITION IS CHECKED ADMISSIBLE AT EVERY ONE OF THEM SEPARATELY.  The count can therefore never be zero by construction, and the question is always whether anything JOINS the four-fold division -- which is the parent's own question, asked of a lattice with no window in it
+         evidence: unique 45, non-unique 3, histories 48, discrete admissible everywhere True, leg pass counts {'leg1': 240, 'leg2': 57, 'leg3': 720}, histories whose admissible set escapes a leg none
+  [PASS] G-LAW5-PARENT
+         THE THESIS UNDER TEST IS THE PARENT'S OWN SENTENCE, AND IT IS TESTED PER HISTORY.  Each non-unique history is examined individually for the property the parent's thesis names -- that it repeats a single parallel class in every round -- rather than the set being compared with a count.  The parent's own counts are frozen declared constants at commit f4172ea and are cross-checked for internal consistency
+         evidence: non-unique class tuples ['COL,COL,COL', 'DIA,DIA,DIA', 'ROW,ROW,ROW']; thesis holds True; parent 5852 + 4
+  [PASS] G-LAW5-WORD
+         LAW 5's WORD IS DERIVED FROM THE THESIS TEST, AND ITS FRACTION IS STAMPED COUNTING-ONLY (E-24).  The word records whether the parent's characterisation survives; the fraction 45 of 48 is a count over this corpus and is not converted into a probability anywhere, because no measure over histories is declared
+         evidence: word LAW-IN-N, count word NEEDS-3 (DISCRIMINATED), measure stamp present True
+
+SECTION 10.  THE CONTROL ARMS -- EVERY WORD FORCED THROUGH THE REAL TESTERS
+  transport arms: [('CTRL-LAW-IN-N', 'LAW-IN-N'), ('CTRL-NEEDS-3', 'NEEDS-3'), ('CTRL-BREAKS', 'BREAKS'), ('CTRL-UNDISCRIMINATED', 'LAW-IN-N'), ('CTRL-NO-FEASIBLE', 'BREAKS')]
+  leg arms forced: 8 of 8
+  [PASS] G-CONTROL-ARMS
+         EVERY PRE-REGISTERED WORD IS EMITTED BY THE REAL TESTER ON A SYNTHETIC LAW BUILT TO FORCE IT, AND EVERY LEG FIRES IN BOTH DIRECTIONS.  The three outcome words are produced by the same transport procedure that decides the five real laws -- nothing is stubbed -- and the two degenerate cases (a blind test and a wholly infeasible table) are exercised too.  Each of the four criterion legs is then driven to True and to False on declared objects, so no leg is a branch that never executes
+         evidence: transport arms forced 5 of 5, words emitted ['BREAKS', 'LAW-IN-N', 'NEEDS-3'], leg arms forced 8 of 8
+  [PASS] G-E24-MEASURE
+         NO COUNT BECOMES A PROBABILITY (E-24).  Every published fraction is stamped COUNTING-ONLY with its denominator's family named, and the corpus's own multiplicity is disclosed: the schedule count and the distinct-event-set count are different families and the receipt publishes both rather than letting one stand for the other
+         evidence: schedules 48, distinct event sets 12, rows 3
+
+SECTION 12.  THE VERDICT
+  NDEP-PORTABLE-3-OF-5<n=4 BUILT AND RUN ENTIRE -- AG(2,2), 48 DRIVEN HISTORIES, ACTOR LATTICE 15 COMPLETE, SYMMETRIC GROUP FILTERED WHOLE; n=16 A DECLARED WINDOW; EVERY ONE OF THE 6 TESTED NUMERALS IS q-CARRIED (6 OF 6), SO WHAT TRANSPORTS ON n ALONE IS THE LAWS AND NEVER THEIR NUMBERS>
+  NDEP-LAW-IN-N-NAMING<ROUTES=0 MISMATCHES OVER 53 DISTINCT PREFIXES AT n=4, ELEMENT SET AGAINST ELEMENT SET, THE WHOLE OF S_4 FILTERED PER PREFIX | n=16 21,080 COMPARISONS 0 MISMATCHES ON THE DECLARED PERMUTATION WINDOW, 2,064 POSITIVE | FORCED 45 OF 48, CHART 3 = THE CONSTANT-CLASS HISTORIES, ONE PER PARALLEL CLASS -- THE PARENT'S CHARACTERISATION VERBATIM | THE COUNT IS NEEDS-3>
+  NDEP-NEEDS-3-CRYSTALLIZATION<THE PAIR SURVIVES AS A STRUCTURE AND ITS FLOOR FORMULA DOES NOT: SCHEDULE TIME 3|5|7 AT n=4|9|16 = 2q-1 (NEEDS-3) | ATTAINED FLOOR 2|4|6 WHILE THE COUNTING BOUND ceil(log2 n) READS 4 AT n=16 (NEEDS-3) | THE SUCCESSOR FORMULA, IN WHICH THE EVENT SIZE q ENTERS, READS 2|4|6 AND MATCHES ALL THREE | OFFSET ONE AT ALL THREE (LAW-IN-N), ROUND ONE'S LAST EVENT REDUNDANT AT 2 OF 2>
+  NDEP-LAW-IN-N-COSET-MENU<SET-EQUAL AT n=4: THE GEOMETRY LEG'S 5 SURVIVORS OVER THE COMPLETE LATTICE OF 15 ARE EXACTLY THE 5 COSET PARTITIONS OF THE 5 TRANSLATION SUBGROUPS | THE COUNT IS q+3 AT PRIME q (NEEDS-3) | THE HYPOTHESIS FAILS AT q=4: THE DECLARED LINKS GENERATE 8 OF 16, SO THE q=4 ROW IS CARRIED UNSCORED AND THE TWO READINGS THERE (67 ABSTRACT SUBGROUPS, 7 F_q-SUBSPACES) ARE NAMED AND NOT CHOSEN>
+  NDEP-NEEDS-3-MOD-MOTIF<THE MOTIF SPLITS IN TWO. THE LADDER'S MODULUS IS DERIVED AND IS THE DECLARED LINK COUNT L: AT FIXED n=4 THE SWEEP L=1|2|3 RETURNS ACHIEVABLE BUDGETS {1,2,3,4,5,6,7}|{2,4,6}|{3,6}, SO MOD-3 REAPPEARS AT FOUR ACTORS AND THE MODULUS IS NEITHER sqrt(n) NOR THE CHARACTERISTIC, BOTH FIXED AT 2 THROUGHOUT; n=16 RETURNS {4,8}. THE COIN'S MODULUS IS A FREE DECLARATION: THE RECORD ENTERS EXACTLY MOD m (0 MISMATCHES OVER 144,991 PAIRS AT EACH OF m=2 AND m=3) WHILE THE CENSUS IS BLIND TO m (45 UNIQUE AND 3 NON-UNIQUE AT m=2,3,4,5)>
+  NDEP-LAW-IN-N-DIVISION-FORCING<UNIQUE FACTORIZATION 45 OF 48 OVER THE COMPLETE ACTOR LATTICE OF 15, THE DISCRETE PARTITION CHECKED ADMISSIBLE AT EVERY HISTORY SEPARATELY | THE 3 NON-UNIQUE ARE EXACTLY THE CONSTANT-CLASS HISTORIES AND THE PARENT'S THESIS HOLDS VERBATIM | UNION OF ADMISSIBLE PARTITIONS 4 = THE DISCRETE ONE PLUS ONE PER PARALLEL CLASS | THE COUNT IS NEEDS-3 | COUNTING-ONLY>
+  SCOPE=n=4 ENTIRE AND COMPLETE; n=16 A DECLARED WINDOW (CLASS TUPLES ONLY -- THE 2,627,625 GROUPINGS OF SIXTEEN SITES ARE OUT OF SCOPE, S_16 IS NOT FILTERED); q=3 ENTERS ONLY AS THE CONSTRUCTOR-FIDELITY LEG AND NO n=9 NUMBER IS RE-DERIVED HERE -- ALL TEN ARE ANCHORED READS OF THE PARENT'S COMMITTED RECEIPT OR FROZEN DECLARED CONSTANTS | SATURATION IS MAXIMAL AT q=2 AND q=3 AND IS NOT AT q=4, WHERE A WITNESS GROUPING REACHES 48 AGAINST THE BUDGET 16 | MEASURE=COUNTING-ONLY (E-24) | LANGUAGE=LAW-IN-N, NEEDS-3 AND BREAKS NAME THE TRANSPORT OF A PUBLISHED LAW AND NOTHING ELSE
+  [PASS] G-VERDICT-RECONSTRUCTED
+         THE HEAD IS DERIVED TWICE BY DISJOINT CODE AND COMPARED AS COMPLETE STRINGS (#10: containment is not equality).  The publishing path builds the segments from the receipt's own objects; the comparator rebuilds every segment from the measured primitives, sharing no code, no inputs and no typed literal with the builder, and the two are compared for string EQUALITY segment by segment.  The aggregate count is derived from the five emitted words and never typed
+         evidence: segments 7, byte-equal True, portable 3 of 5 derived from the word list ['LAW-IN-N', 'NEEDS-3', 'LAW-IN-N', 'NEEDS-3', 'LAW-IN-N']
+
+SECTION 15.  THE CLOSING BATTERY
+  [PASS] G-PAPER-HEAD-VERBATIM
+         THE PAPER'S HEAD IS THIS RUN'S HEAD, CHARACTER FOR CHARACTER.  The derived head string is looked for in the paper under the full text normalisation, so a paper whose verdict block has gone stale against the measurement cannot pass
+         evidence: paper present True, head found True
+  [PASS] G-PAPER-COVERAGE
+         EVERY NUMERAL OF THE PAPER IS BACKED, INCLUDING THOSE IN FENCED BLOCKS, INLINE CODE SPANS AND TABLES (#20 + E-22).  The allow list is this run's own registry plus the receipt it publishes; the declared exemption table is EMPTY and an exemption that fires on nothing is itself a failure; spelled numerals are scanned on the same terms; and the verdict fences are gated by MULTISET equality rather than containment.  The scan's own coverage is measured against a reference count taken over the whole paper
+         evidence: scanned 355 of 355 reference, unbacked [], spelled 104 unbacked [], fenced 95, inline spans 4, fences multiset-equal True, exemptions 0 declared / 0 fired, dangling refs []
+  [PASS] G-PAPER-CLAIMS
+         EVERY LOAD-BEARING SENTENCE OF THE PAPER IS SUPPORTED BY A MEASURED VALUE, AND THE SUPPORT IS EVALUATED HERE RATHER THAN ASSERTED IN THE PROSE.  Thirteen claims, each a predicate over the receipt's own objects; a claim whose predicate is false kills the run before anything is written
+         evidence: claims 13, unsupported none
+  [PASS] G-PAPER-TABLES
+         EVERY PUBLISHED TABLE IS BOUND TO THE PAPER ROW BY ROW, HEADER INCLUDED.  A table whose header row were renamed would be a different table making a different claim, so the header is bound on the same terms as the data rows
+         evidence: tables 4, rows bound 18, missing none
+  [PASS] G-PAPER-CLAIM-POLARITY
+         EVERY POLARITY AXIS IS CHECKED IN BOTH DIRECTIONS AND EVERY AXIS IS LIVE.  The licensed word must be present AND its forbidden partner absent; an axis whose negative could not have occurred is disclosed as such rather than counted as a pass
+         evidence: axes 5, failing none, dead axes none
+  [PASS] G-WALLS-SCAN-THE-PAPER
+         THE READING WALLS SCAN THE PAPER AND ARE THEMSELVES EXERCISED.  Five forbidden readings; each pattern is run against the paper (zero hits required) AND against a probe sentence built to trip it (a hit required), so a wall that could never fire is caught by its own positive control
+         evidence: walls 5, hits none, probes firing 5 of 5
+  [PASS] G-NOUN-BINDING
+         EVERY HEADLINE COUNT IS BOUND TO ITS REFERENT IN THE PAPER, ADJACENT.  A numeral that appears anywhere in the paper does not discharge the obligation; the gate requires the numeral within three words of the noun it counts, so a count silently attached to the wrong universe fails
+         evidence: bindings 5, unbound none
+  [PASS] G-NO-FLOATS
+         THE ARITHMETIC IS EXACT, AND BOTH THE SOURCE AND THE EMITTED OBJECT ARE SCANNED.  An AST walk of this file finds no float literal, and a recursive type scan of the receipt finds no float value: the two scans catch different diseases and both are run
+         evidence: float literals in source 0, float values in receipt 0
+  [PASS] G-REACHABILITY
+         EVERY DECLARED FALSIFIER HAS A HOOK IN THIS SOURCE AND EVERY PUBLISHED WAIVER IS A DISCLOSURE WITH A MECHANISM (#34, E-23).  A mutant named in the registry but absent from the code is dead text; a waiver with no forcing is a false badge.  Three rows are carried and none of them is a never-falsified pass
+         evidence: mutants 27, hooks present 27, waiver rows 3
+  [PASS] G-SWEEP-BOUND
+         THE MUTANT SWEEP, WHEN RUN, IS BOUND TO ITS DECLARED TARGETS.  Every mutant must die at the gate its registry row NAMES -- 'died' and 'died where it said it would' are two different facts -- and must leave both artifacts untouched
+         evidence: sweep rows 0, off-target none
+  [PASS] G-COVERAGE
+         THE INSTRUMENT'S OWN CENSUS IS PUBLISHED AND CHECKED FOR EMPTINESS.  Gates, seals, falsifiers, windows, the three anchor kinds, walls, referent bindings, polarity axes, control arms, tables and claims are counted from the live objects rather than typed, and every category is required non-empty -- a category with no members is an instrument that is not there
+         evidence: census {'gates': 39, 'seals_taken_before_this_gate': 18, 'falsifiers': 27, 'windows': 9, 'byte_anchors': 3, 'path_value_anchors': 10, 'verbatim_anchors': 6, 'walls': 5, 'noun_bindings': 5, 'polarity_axes': 5, 'control_arms': 13, 'tables': 4, 'claims': 13}
+  [PASS] G-GATE-ACCOUNTING
+         THE GATE LEDGER IS COMPLETE AND EVERY DECLARED CLOSING GATE RAN.  The totals are computed from the live ledger rather than typed, and every gate named in the closing list is a gate this run evaluated
+         evidence: gates 40, closing gates declared 15, absent none
+  [PASS] G-SEAL-TOTALITY
+         THE SEAL MANIFEST IS TOTAL AND EVERY SEAL'S DECLARED GATE ACTUALLY RAN (#119 + #148).  Every published receipt key is either sealed at the gate that established it or named in the declared-unsealed list, and every gate name that a seal, a verbatim anchor or a path-value anchor attributes itself to is a gate this run evaluated -- a seal naming a gate that never runs publishes a false provenance over a real object
+         evidence: seals 34 over 35 published keys, missing none, extra none, declared-unsealed that were sealed none, phantom gate names none, manifest gaps none; CLOSED FIGURES: gates 42 all passed, seals 34
