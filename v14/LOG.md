@@ -11277,3 +11277,21 @@ separated (q=3 with all 36 saturating groupings gives
 window.  The sharpened floor correct and attained at all
 three points.**  ALL FOUR OPEN PANELS COMPLETE — POT, SPC,
 EPR, NDEP; four adjudications owed.
+
+## 2026-08-15 — POT + SPC ADJUDICATED: BOTH REPAIRS ORDERED; THE #299 ROW-LIST EXTENSION AND THE #119 PROMOTION-TOTALITY ADDENDUM ENGRAVED (v14 LEDGER #348)
+
+Both adjudication notes committed (see files for the full
+rulings).  POT: the DECONFINES tally re-characterized
+(constant-in-perimeter, both seats convergent); the title
+re-scoped to the ladder observable; area-blindness
+RE-GROUNDED STRONGER (every measure); the licence wall
+rebuilt with teeth; K3's ten adopted whole.  SPC: the 246
+renamed ROW-SLOTS with the distinct ledger beside it; the
+statistics split re-run ON-GRAIN with the off-grain rows
+declared extensions; the price sentence graded
+(index-two-generic disclosed; the stronger unique-species
+reading and pointwise [0,0] rendered); hosted defined and
+walled; the Young-table gate closed; promotion-time
+totality (the ACT disease) closed with the #119 addendum
+ENGRAVED; head feasibility at the declared row list — the
+#299 extension ENGRAVED.  Repair workers launch next.
