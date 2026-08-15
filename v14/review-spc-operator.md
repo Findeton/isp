@@ -338,10 +338,11 @@ bears on the mathematics.
 * The registry contains no falsifier that plants a wrong value into a
   Young-subgroup character table; see M2.
 * I launched the full `--all-mutants` sweep (55 complete pipeline runs, each
-  about 22 s of CPU). It was still running at close — roughly 8.5 minutes of
-  CPU consumed on a contended machine — and its output buffer had not flushed,
-  so I have **no partial result to report either way**. The receipt is honest
-  that the sweep is
+  about 22 s of CPU). It reached roughly 8.5 minutes of CPU on a contended
+  machine and was then **terminated by the harness before completing**, with
+  its stdout buffer unflushed, so I have **no partial result to report either
+  way**; it wrote nothing, and the three SPC artifacts were byte-unchanged
+  before and after. The receipt is honest that the sweep is
   `AN-EXTERNAL-BATTERY-RESULT-THE-DELIVERY-RUN-DOES-NOT-PRODUCE-IT`, so this
   seat records it as **not independently completed here** and defers it to the
   instrument seat. Nothing in my findings depends on it, and the paper's

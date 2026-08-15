@@ -10862,3 +10862,16 @@ fixes.  **PANEL COMPLETE (K1 #333 / K2 #330 / K3 here):
 ~2,360 checks, zero false numbers, the repairs all
 sentence/scope/instrument-direction.  Adjudication next;
 POT K3 still out.**
+
+## 2026-08-15 — FREEZE AMENDMENT TO #333: SPC K1's FINAL REVIEW (v14 LEDGER #335)
+
+The K1 seat finalized after the #333 freeze; the FINAL text
+(e32304cd63da, 673 lines) supersedes be0fcb3eb394 and is
+committed here.  Sole delta of substance: the seat's
+--all-mutants sweep was terminated by the harness before
+completing (nothing written), so K1's sweep verification is
+explicitly DEFERRED — covered independently by K3's
+out-of-harness 55/55 dead-on-target (#334).  All #333
+rulings stand (the Young-table gating gap; the
+strengthened price theorem; the pointwise-forced [0,0]).
+SPC panel remains COMPLETE; adjudication follows POT K3.
