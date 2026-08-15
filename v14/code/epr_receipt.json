@@ -1,0 +1,2790 @@
+{
+ "arena": {
+  "declared_link_directions": 3,
+  "degree_of_every_site": 6,
+  "degrees_distinct": 1,
+  "link_directions": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "link_graph_is_complete_multipartite_with_the_undeclared_class_as_parts": true,
+  "note": "the link graph is MEASURED, pair by ordered pair, against the undeclared class's own lines; nothing here is inherited",
+  "ordered_site_pairs_checked": 72,
+  "parallel_classes": 4,
+  "part_size": 3,
+  "parts": [
+   [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  ],
+  "sites": 9,
+  "the_undeclared_class": "ANT",
+  "the_undeclared_direction": [
+   1,
+   2
+  ]
+ },
+ "arithmetic": "exact integers, fractions.Fraction and Z[w] as integer pairs; no float anywhere",
+ "bell": {
+  "banned_count": 7,
+  "banned_sentences": [
+   "local realism is restored",
+   "this evades Bell",
+   "Bell nonlocality is evaded",
+   "locality is restored by the record",
+   "hidden variables are vindicated",
+   "the corpus satisfies Bell local causality",
+   "a local hidden-variable completion exists"
+  ],
+  "desiderata": [
+   {
+    "D-RECORD": "MET on the measured arms",
+    "D-SHADOW": "NOT MET: 316224 certified elements, none carried",
+    "bell_constrained": "no",
+    "desideratum": "E1 -- every element of reality has a counterpart"
+   },
+   {
+    "D-RECORD": "INSTANTIABLE only in the state's localization",
+    "D-SHADOW": "NEVER: the shadow certifies nothing here",
+    "bell_constrained": "no",
+    "desideratum": "E2 -- prediction with certainty without disturbing"
+   },
+   {
+    "D-RECORD": "HELD: both members carried at every history",
+    "D-SHADOW": "REFUSED: no single menu carries both",
+    "bell_constrained": "YES -- any joint assignment across blocks is outcome-dependent in v5 paper-14's sense",
+    "desideratum": "E3 -- simultaneous reality for a conjugate pair"
+   },
+   {
+    "D-RECORD": "one record throughout",
+    "D-SHADOW": "up to five assignments at one record",
+    "bell_constrained": "no",
+    "desideratum": "E4 -- one reality, several assigned descriptions"
+   },
+   {
+    "D-RECORD": "MET: zero moves measured",
+    "D-SHADOW": "the ASSIGNED description moves; B's own does not",
+    "bell_constrained": "no",
+    "desideratum": "E5 -- no dependence of B's reality on A's choice"
+   },
+   {
+    "D-RECORD": "one exists on the measured arms, AT THIS ARENA and under this corpus's site-constancy",
+    "D-SHADOW": "not applicable",
+    "bell_constrained": "YES -- it is not a local-realist theory; the corpus is Bell-nonlocal by v5 paper-14 and this unit claims nothing against that",
+    "desideratum": "E6 -- such a theory is possible"
+   }
+  ],
+  "not_claimed": [
+   "local realism",
+   "Bell evasion",
+   "a vindicated hidden-variable completion",
+   "any statement about spacelike separation"
+  ],
+  "standing_verdict": "v5 paper-14: ISP is Bell-nonlocal (E1 false), no-signalling and parameter-independent (E2 true); outcome independence is what fails",
+  "the_locality_finding": "at this arena EPR's criterion is instantiable only in the localization the quantum state uses, where the quantity attributed to a block has as its referent a co-division pair straddling that block's own boundary; so the element the criterion certifies is not local to the block it is certified for"
+ },
+ "blocks": {
+  "agreements_with_FAC": [
+   {
+    "FAC": 6,
+    "agrees": true,
+    "here": 6,
+    "quantity": "leg1_geometry_survivors"
+   },
+   {
+    "FAC": 5852,
+    "agrees": true,
+    "here": 5852,
+    "quantity": "unique_at"
+   },
+   {
+    "FAC": 4,
+    "agrees": true,
+    "here": 4,
+    "quantity": "non_unique_at"
+   },
+   {
+    "FAC": 5856,
+    "agrees": true,
+    "here": 5856,
+    "quantity": "histories"
+   },
+   {
+    "FAC": 5852,
+    "agrees": true,
+    "here": 5852,
+    "quantity": "cardinality_1"
+   },
+   {
+    "FAC": 4,
+    "agrees": true,
+    "here": 4,
+    "quantity": "cardinality_2"
+   },
+   {
+    "FAC": 1,
+    "agrees": true,
+    "here": 1,
+    "quantity": "inventory_AP-3-BLOCKS-3x3-PARALLEL-CLASS-ANT"
+   },
+   {
+    "FAC": 1,
+    "agrees": true,
+    "here": 1,
+    "quantity": "inventory_AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL"
+   },
+   {
+    "FAC": 1,
+    "agrees": true,
+    "here": 1,
+    "quantity": "inventory_AP-3-BLOCKS-3x3-PARALLEL-CLASS-DIA"
+   },
+   {
+    "FAC": 1,
+    "agrees": true,
+    "here": 1,
+    "quantity": "inventory_AP-3-BLOCKS-3x3-PARALLEL-CLASS-ROW"
+   },
+   {
+    "FAC": 5856,
+    "agrees": true,
+    "here": 5856,
+    "quantity": "inventory_AP-9-BLOCKS-9x1"
+   }
+  ],
+  "forced_at": 5852,
+  "geometry_survivors": 6,
+  "inventory": {
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ANT": 1,
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL": 1,
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-DIA": 1,
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ROW": 1,
+   "AP-9-BLOCKS-9x1": 5856
+  },
+  "legs_cited_from_FAC": [
+   "LEG-3 RECORD (non-binding on this corpus)",
+   "LEG-4 DYNAMICS (no census row differs)"
+  ],
+  "legs_rebuilt_here": [
+   "LEG-1 GEOMETRY",
+   "LEG-2 HISTORY"
+  ],
+  "non_unique_at": 4,
+  "non_unique_rows": [
+   {
+    "admissible": [
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ROW",
+     "AP-9-BLOCKS-9x1"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5256
+   },
+   {
+    "admissible": [
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL",
+     "AP-9-BLOCKS-9x1"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5341
+   },
+   {
+    "admissible": [
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-DIA",
+     "AP-9-BLOCKS-9x1"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5426
+   },
+   {
+    "admissible": [
+     "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ANT",
+     "AP-9-BLOCKS-9x1"
+    ],
+    "cardinality": 2,
+    "corpus": "C3",
+    "index": 5511
+   }
+  ],
+  "of_histories": 5856,
+  "row_disagreements": [],
+  "source": "FAC (paper-35), forced per-history decomposition",
+  "the_forced_decomposition": "AP-9-BLOCKS-9x1, the nine singleton blocks, admissible at every committed history and alone at 5,852 of them"
+ },
+ "carrier": {
+  "cell_to_pair_is_a_bijection": true,
+  "cells": 27,
+  "cells_per_actor": 6,
+  "cells_with_exactly_two_actors": 27,
+  "distinct_co_division_pairs": 27,
+  "the_quantity_referent": "a record entry n_l(x) is indexed by a CELL, and the cell IS the unordered co-division pair {x, x+l}: its referent is a PAIR of actors, not one of them"
+ },
+ "certainty": {
+  "arms": [
+   {
+    "certainty_elements": 0,
+    "certainty_elements_certified_by_D_SHADOW": 0,
+    "localization": "LOC-PAIR",
+    "object": "THE-PAIR-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 0,
+    "quantities": 0,
+    "separation": "SEP-LINK-DISJOINT",
+    "shadow_self_certified_and_carried": 0,
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 0,
+    "word": "EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY"
+   },
+   {
+    "certainty_elements": 54,
+    "certainty_elements_certified_by_D_SHADOW": 0,
+    "localization": "LOC-PAIR",
+    "object": "THE-PAIR-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 18,
+    "quantities": 54,
+    "separation": "SEP-ACTOR-DISJOINT",
+    "shadow_self_certified_and_carried": 0,
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 54,
+    "word": "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+   },
+   {
+    "certainty_elements": 316224,
+    "certainty_elements_certified_by_D_SHADOW": 0,
+    "localization": "LOC-WALK",
+    "object": "THE-WALK-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 105408,
+    "quantities": 316224,
+    "separation": "SEP-LINK-DISJOINT",
+    "shadow_self_certified_and_carried": 0,
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 316224,
+    "word": "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+   },
+   {
+    "certainty_elements": 1265112,
+    "certainty_elements_certified_by_D_SHADOW": 0,
+    "localization": "LOC-WALK",
+    "object": "THE-WALK-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 421656,
+    "quantities": 1265112,
+    "separation": "SEP-ACTOR-DISJOINT",
+    "shadow_self_certified_and_carried": 0,
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 1265112,
+    "word": "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+   }
+  ],
+  "certifier": "D-RECORD, the theory's own state: an element of reality is certified when the record's content on the separated region fixes the quantity's value",
+  "counterpart_reading": "the description's own content AT THE BLOCK determines the value",
+  "self_certified_arm": "the shadow's own certainty elements are counted too, and are carried by the shadow wherever they exist -- a coarse description is complete about what it can itself predict, which is why the cross-description reading is the contentful one",
+  "window": "COUNTING-ONLY over the declared corpus (E-24)"
+ },
+ "class_binding": {
+  "count": 8,
+  "rows": [
+   {
+    "class_word": "EPR-CRITERION-INAPPLICABLE-AT-",
+    "emitted_by_the_law_at": 2,
+    "predicate": "the head law's first branch: the arm's premise instances are zero",
+    "recomputed": true
+   },
+   {
+    "class_word": "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE",
+    "emitted_by_the_law_at": 5,
+    "predicate": "the head law's fourth branch: certified elements exist, none lacks a record counterpart, some lack a shadow counterpart",
+    "recomputed": true
+   },
+   {
+    "class_word": "EPR-BOTH-COMPLETE",
+    "emitted_by_the_law_at": 1,
+    "predicate": "the head law's last branch: no certified element lacks a counterpart in either description",
+    "recomputed": true
+   },
+   {
+    "class_word": "EPR-RECORD-ALSO-INCOMPLETE",
+    "emitted_by_the_law_at": 1,
+    "predicate": "the head law's third branch",
+    "recomputed": true
+   },
+   {
+    "class_word": "EPR-BLOCKED-AT-",
+    "emitted_by_the_law_at": 1,
+    "predicate": "the head law's zeroth branch: a predicate is not total",
+    "recomputed": true
+   },
+   {
+    "class_word": "SEAM-CONFINED",
+    "emitted_by_the_law_at": 0,
+    "predicate": "SEC's adjudicated ruling, the source of the no-disturbance clause",
+    "recomputed": true
+   },
+   {
+    "class_word": "COUNTING-ONLY",
+    "emitted_by_the_law_at": 0,
+    "predicate": "E-24: no count here is a probability",
+    "recomputed": true
+   },
+   {
+    "class_word": "NOT-JOINTLY-DECLARABLE",
+    "emitted_by_the_law_at": 0,
+    "predicate": "neither reading's fibres refine the other's",
+    "recomputed": true
+   }
+  ],
+  "unbound": []
+ },
+ "closing_gates": {
+  "declared_to_run_after_the_snapshot": [
+   "G-TRANSCRIPT-SEALED-AT-THE-SNAPSHOT",
+   "G-RECEIPT-IS-EXACT",
+   "G-SEAL-TOTALITY",
+   "G-ARTIFACT-INTEGRITY"
+  ],
+  "in_the_sealed_ledger": [
+   "G-PROVENANCE-SHA-PINNED",
+   "G-VERBATIM-ANCHORS-IN-SOURCE",
+   "G-OUTCOMES-PARSED-FROM-THE-PIN",
+   "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
+   "G-LINK-GRAPH-MEASURED",
+   "G-CELL-IS-A-CO-DIVISION-PAIR",
+   "G-CORPUS-AGREES-WITH-FAC",
+   "G-RECORD-SITE-CONSTANT",
+   "G-BLOCKS-AGREE-WITH-FAC",
+   "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
+   "G-SEPARATION-PREMISE-CENSUS",
+   "G-NO-DISTURBANCE-DYNAMICAL",
+   "G-SHADOW-CEILING",
+   "G-READINGS-PARTITION-MEASURED",
+   "G-CERTAINTY-CENSUS-PER-ARM",
+   "G-CERTAINTY-POLARITY",
+   "G-E4-TWO-REDUCTIONS",
+   "G-CONJUGATE-PAIR-MEASURED",
+   "G-E5-RECORD-DOES-NOT-MOVE",
+   "G-BELL-DESIDERATA-BOUND",
+   "G-EVERY-OUTCOME-WORD-EMITTABLE",
+   "G-PROBABILITY-EXACTLY-ONE",
+   "G-HEAD-DERIVED-TWICE",
+   "G-CLASS-WORDS-BOUND-TO-PREDICATES",
+   "G-NO-FLOAT-IN-SOURCE",
+   "G-FALSIFIER-COVERAGE",
+   "G-FALSIFIER-REACHABILITY",
+   "G-READS-DECLARED",
+   "G-PAPER-CLAIMS",
+   "G-PAPER-TABLES-WITH-HEADERS",
+   "G-PAPER-NUMERAL-COVERAGE",
+   "G-PAPER-CLAIM-POLARITY",
+   "G-SENTENCE-REFERENT-BINDING",
+   "G-WALLS-SCAN-THE-PAPER",
+   "G-SWEEP-IS-EXECUTION-BOUND",
+   "G-CLOSING-BATTERY-RAN"
+  ]
+ },
+ "conjugacy": {
+  "all_not_jointly_declarable_pairs": [
+   "READ-BORN-GD|READ-RECORD-MENU",
+   "READ-BORN-GD|READ-CURVATURE",
+   "READ-CURVATURE|READ-RECORD-MENU"
+  ],
+  "bell_stamp": "this is not a local-realism claim: the joint values live at the outcome-dependence level the corpus already owns (v5 paper-14), and section 13 states which desideratum is met by which description",
+  "decision": "the dilemma is decided per description: the wave-function analogue takes horn one, the record refutes horn two",
+  "histories_where_D_RECORD_carries_both": 5856,
+  "horn_1_for_D_SHADOW": "HOLDS -- the shadow is measured incomplete in section 9",
+  "horn_2_for_D_RECORD": "FAILS -- the record carries both members of a pair that no single shadow carries, at every committed history",
+  "of_histories": 5856,
+  "operator_leg": "the two declared coin orders are the two orders of the same pair of matrices: G . D(x) against D(x) . G, compared exactly in Z[w]",
+  "pair_is_not_jointly_declarable": true,
+  "reading_pair": "READ-BORN-GD | READ-RECORD-MENU",
+  "records": 36,
+  "records_where_the_Born_menu_carries_the_record_menu": 0,
+  "records_where_the_record_menu_carries_the_Born_menu": 24,
+  "records_where_the_two_orders_differ": 30
+ },
+ "controls": {
+  "count": 6,
+  "distinct_words": [
+   "EPR-BLOCKED-AT-THE-PREDICATE-TOTALITY",
+   "EPR-BOTH-COMPLETE",
+   "EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY",
+   "EPR-RECORD-ALSO-INCOMPLETE",
+   "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+  ],
+  "families_declared": 5,
+  "families_demonstrated": 5,
+  "families_not_demonstrated": [],
+  "note": "the head law returns a different word on the declared arms, so no pigeonhole decided the verdict before the run",
+  "rows": [
+   {
+    "arm": "CTRL-COMMITTED-LOC-PAIR",
+    "certainty_elements": 0,
+    "declared_datum": "the committed corpus",
+    "object": "THE-PAIR-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 0,
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 0,
+    "word": "EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY"
+   },
+   {
+    "arm": "CTRL-COMMITTED-LOC-WALK",
+    "certainty_elements": 316224,
+    "declared_datum": "the committed corpus",
+    "object": "THE-WALK-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 105408,
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 316224,
+    "word": "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+   },
+   {
+    "arm": "CTRL-D-SHADOW-SYNTH-INJECTIVE",
+    "certainty_elements": 316224,
+    "declared_datum": "the committed corpus with a declared synthetic description",
+    "object": "THE-WALK-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 105408,
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 0,
+    "word": "EPR-BOTH-COMPLETE"
+   },
+   {
+    "arm": "CTRL-D-RECORD-SYNTH-PUNCTURED",
+    "certainty_elements": 316224,
+    "declared_datum": "the committed corpus with a declared synthetic description",
+    "object": "THE-WALK-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 105408,
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 105228,
+    "without_counterpart_in_D_SHADOW": 316224,
+    "word": "EPR-RECORD-ALSO-INCOMPLETE"
+   },
+   {
+    "arm": "CTRL-PREDICATE-PARTIAL",
+    "certainty_elements": 316224,
+    "declared_datum": "the committed corpus with a declared synthetic description",
+    "object": "THE-WALK-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 105408,
+    "totality_failures": 1,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 316224,
+    "word": "EPR-BLOCKED-AT-THE-PREDICATE-TOTALITY"
+   },
+   {
+    "arm": "CTRL-ARENA-ONE-DECLARED-DIRECTION",
+    "certainty_elements": 105408,
+    "declared_datum": "the same predicate forms with a single declared link direction (FAC's L1 synthetic arena), at the two named decompositions of every committed history",
+    "link_disjoint_pairs": 351360,
+    "object": "THE-PAIR-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 35136,
+    "quantities": 105408,
+    "quantity_bearing_at_LOC_PAIR": 35136,
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 105408,
+    "word": "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+   }
+  ],
+  "unmatched_words": []
+ },
+ "corpora": {
+  "C1_strict_triples": 72,
+  "C2_concatenations": 5184,
+  "C3_window_schedules": 600,
+  "FAC_status": "candidate-under-repair (SEC/FAC repairs in flight at delivery); the receipt is read at its pinned digest 240bad74217a and every shared quantity is re-derived here rather than imported",
+  "agreements_with_FAC": [
+   {
+    "FAC": 9,
+    "agrees": true,
+    "here": 9,
+    "quantity": "sites"
+   },
+   {
+    "FAC": 3,
+    "agrees": true,
+    "here": 3,
+    "quantity": "declared_links"
+   },
+   {
+    "FAC": 27,
+    "agrees": true,
+    "here": 27,
+    "quantity": "cells"
+   },
+   {
+    "FAC": 72,
+    "agrees": true,
+    "here": 72,
+    "quantity": "strict_triples"
+   },
+   {
+    "FAC": 276,
+    "agrees": true,
+    "here": 276,
+    "quantity": "flat_quadruples"
+   },
+   {
+    "FAC": 600,
+    "agrees": true,
+    "here": 600,
+    "quantity": "window_schedules"
+   },
+   {
+    "FAC": 280,
+    "agrees": true,
+    "here": 280,
+    "quantity": "groupings"
+   },
+   {
+    "FAC": 36,
+    "agrees": true,
+    "here": 36,
+    "quantity": "saturating_groupings"
+   },
+   {
+    "FAC": 72,
+    "agrees": true,
+    "here": 72,
+    "quantity": "C1"
+   },
+   {
+    "FAC": 5184,
+    "agrees": true,
+    "here": 5184,
+    "quantity": "C2"
+   },
+   {
+    "FAC": 600,
+    "agrees": true,
+    "here": 600,
+    "quantity": "C3"
+   },
+   {
+    "FAC": 5856,
+    "agrees": true,
+    "here": 5856,
+    "quantity": "total_histories"
+   },
+   {
+    "FAC": 5784,
+    "agrees": true,
+    "here": 5784,
+    "quantity": "distinct_histories"
+   },
+   {
+    "FAC": 72,
+    "agrees": true,
+    "here": 72,
+    "quantity": "events_9"
+   },
+   {
+    "FAC": 600,
+    "agrees": true,
+    "here": 600,
+    "quantity": "events_12"
+   },
+   {
+    "FAC": 5184,
+    "agrees": true,
+    "here": 5184,
+    "quantity": "events_18"
+   },
+   {
+    "FAC": 256,
+    "agrees": true,
+    "here": 256,
+    "quantity": "tag_W4-CLASS"
+   },
+   {
+    "FAC": 264,
+    "agrees": true,
+    "here": 264,
+    "quantity": "tag_W4-FLAT"
+   },
+   {
+    "FAC": 80,
+    "agrees": true,
+    "here": 80,
+    "quantity": "tag_W4-SEEDFAN"
+   }
+  ],
+  "distinct_histories": 5784,
+  "distinct_record_fields": 36,
+  "distinct_site_rows": 36,
+  "events_per_history": {
+   "12": 600,
+   "18": 5184,
+   "9": 72
+  },
+  "histories": 5856,
+  "largest_count_in_the_corpus": 4,
+  "of_histories": 5856,
+  "record_is_site_constant_at": 5856
+ },
+ "counts": {
+  "arms_route_one": [
+   {
+    "certainty_elements": 0,
+    "certainty_elements_certified_by_D_SHADOW": 0,
+    "localization": "LOC-PAIR",
+    "object": "THE-PAIR-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 0,
+    "quantities": 0,
+    "separation": "SEP-LINK-DISJOINT",
+    "shadow_self_certified_and_carried": 0,
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 0,
+    "word": "EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY"
+   },
+   {
+    "certainty_elements": 54,
+    "certainty_elements_certified_by_D_SHADOW": 0,
+    "localization": "LOC-PAIR",
+    "object": "THE-PAIR-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 18,
+    "quantities": 54,
+    "separation": "SEP-ACTOR-DISJOINT",
+    "shadow_self_certified_and_carried": 0,
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 54,
+    "word": "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+   },
+   {
+    "certainty_elements": 316224,
+    "certainty_elements_certified_by_D_SHADOW": 0,
+    "localization": "LOC-WALK",
+    "object": "THE-WALK-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 105408,
+    "quantities": 316224,
+    "separation": "SEP-LINK-DISJOINT",
+    "shadow_self_certified_and_carried": 0,
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 316224,
+    "word": "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+   },
+   {
+    "certainty_elements": 1265112,
+    "certainty_elements_certified_by_D_SHADOW": 0,
+    "localization": "LOC-WALK",
+    "object": "THE-WALK-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 421656,
+    "quantities": 1265112,
+    "separation": "SEP-ACTOR-DISJOINT",
+    "shadow_self_certified_and_carried": 0,
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 1265112,
+    "word": "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+   }
+  ],
+  "arms_route_two": [
+   {
+    "certainty_elements": 0,
+    "certainty_elements_certified_by_D_SHADOW": 0,
+    "localization": "LOC-PAIR",
+    "object": "THE-PAIR-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 0,
+    "quantities": 0,
+    "separation": "SEP-LINK-DISJOINT",
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 0,
+    "word": "EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY"
+   },
+   {
+    "certainty_elements": 54,
+    "certainty_elements_certified_by_D_SHADOW": 0,
+    "localization": "LOC-PAIR",
+    "object": "THE-PAIR-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 18,
+    "quantities": 54,
+    "separation": "SEP-ACTOR-DISJOINT",
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 54,
+    "word": "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+   },
+   {
+    "certainty_elements": 316224,
+    "certainty_elements_certified_by_D_SHADOW": 0,
+    "localization": "LOC-WALK",
+    "object": "THE-WALK-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 105408,
+    "quantities": 316224,
+    "separation": "SEP-LINK-DISJOINT",
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 316224,
+    "word": "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+   },
+   {
+    "certainty_elements": 1265112,
+    "certainty_elements_certified_by_D_SHADOW": 0,
+    "localization": "LOC-WALK",
+    "object": "THE-WALK-LOCALIZED-BLOCK-QUANTITY",
+    "premise_instances": 421656,
+    "quantities": 1265112,
+    "separation": "SEP-ACTOR-DISJOINT",
+    "totality_failures": 0,
+    "without_counterpart_in_D_RECORD": 0,
+    "without_counterpart_in_D_SHADOW": 1265112,
+    "word": "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+   }
+  ],
+  "route_disagreements": [],
+  "route_two_method": "aggregation by distinct record with corpus multiplicities; no pair-spec list, no cache, no shared loop with section 9"
+ },
+ "coverage": {
+  "gates_declared_to_run_after_this_census": 10,
+  "gates_run": 35,
+  "gates_with_a_falsifier": 28,
+  "gates_with_a_waiver": 7,
+  "unwaived": []
+ },
+ "descriptions": {
+  "D_RECORD": "the committed history and its record field n_l(x) -- the theory's own state",
+  "D_SHADOW": "paper-20's Reading A, the Born menu k_1(l|x) read off the coin at the record -- the wave-function analogue",
+  "best_distinct_menus_over_the_sweep": 4,
+  "ceiling": "the coin reads w^{n mod 3}, so two committed records with equal residues have the SAME menu at every state: measured at 0 separations over the whole sweep",
+  "coin_order_DG_distinct_menus": 1,
+  "declared_states": [
+   {
+    "distinct_menus": 4,
+    "largest_fibre": 12,
+    "state": "PSI-FLAT"
+   },
+   {
+    "distinct_menus": 1,
+    "largest_fibre": 36,
+    "state": "PSI-BASIS"
+   },
+   {
+    "distinct_menus": 4,
+    "largest_fibre": 12,
+    "state": "PSI-W"
+   }
+  ],
+  "distinct_records_in_the_corpus": 36,
+  "largest_residue_class": 6,
+  "primary_attains_the_sweep_maximum": true,
+  "primary_distinct_menus": 4,
+  "primary_largest_fibre": 12,
+  "primary_state": "PSI-FLAT",
+  "residue_classes_up_to_the_site_phase": 9,
+  "state_sweep_distinct_menu_counts": {
+   "1": 10,
+   "2": 27,
+   "4": 27
+  },
+  "state_sweep_size": 64,
+  "states_separating_two_records_of_one_residue_class": 0,
+  "window": "COUNTING-ONLY; the state family is declared and its bounds published (E-24)"
+ },
+ "e5_audit": {
+  "arm": "LOC-WALK x SEP-LINK-DISJOINT, the arm where EPR's own criterion is instantiable here",
+  "probes": 105408,
+  "probes_where_B_s_own_shadow_moves": 0,
+  "probes_where_B_s_record_moves_with_the_reading_at_A": 0,
+  "probes_where_the_description_ASSIGNED_to_B_moves": 105408,
+  "reading": "nothing declared at A moves anything B has.  What moves is the description an observer at A assigns to B, at every probe -- which is E4, not a disturbance",
+  "seam_confinement": "this is SEC's adjudicated ruling seen from the other side: no sector-private link ever moves",
+  "test_declaration": "THE PROBE IS SIGHTED: the falsifier MUT-E5-LEAK routes the index of the reading declared at A into B's own record and into B's own shadow, and it dies at this gate; so the zero below is a measurement and not a blind spot"
+ },
+ "gates": [
+  {
+   "evidence": "sources 6, disagreements none",
+   "gate": "G-PROVENANCE-SHA-PINNED",
+   "passed": true,
+   "statement": "EVERY SOURCE IS READ AT A FROZEN DIGEST (#91).  The committed files are declared with their sha256-12 prefixes and each is verified against the bytes actually read, per file; the source of record is the 1935 print itself, and the one parent under repair is cited rather than read",
+   "waiver": null
+  },
+  {
+   "evidence": "anchors 14, missing none",
+   "gate": "G-VERBATIM-ANCHORS-IN-SOURCE",
+   "passed": true,
+   "statement": "THE WALL QUOTES ARE MATCHED IN THEIR SOURCES' BYTES.  Fourteen anchors, each above the #62 length floor, each naming the gate that consumes it; the six EPR quotes are matched in the pin, where they were transcribed from the 1935 print",
+   "waiver": null
+  },
+  {
+   "evidence": "words ['EPR-BLOCKED-AT-<object>', 'EPR-BOTH-COMPLETE', 'EPR-CRITERION-INAPPLICABLE-AT-<object>', 'EPR-RECORD-ALSO-INCOMPLETE', 'EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE']",
+   "gate": "G-OUTCOMES-PARSED-FROM-THE-PIN",
+   "passed": true,
+   "statement": "THE OUTCOME VOCABULARY IS THE PIN'S, NOT THE INSTRUMENT'S.  The pre-registered words are parsed out of the pin's bytes and reduced to families; five words are expected and every one of them must be shown emittable by the real head law",
+   "waiver": null
+  },
+  {
+   "evidence": "windows 6",
+   "gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
+   "passed": true,
+   "statement": "EVERY WINDOW THIS UNIT COUNTS OVER IS DECLARED WITH ITS BOUND (\u00a715).  Six windows; the subset lattice is complete and says so, and every other is named with the parent that fixed it",
+   "waiver": null
+  },
+  {
+   "evidence": "ordered pairs 72, all agree True, degrees [6]",
+   "gate": "G-LINK-GRAPH-MEASURED",
+   "passed": true,
+   "statement": "THE ARENA'S SEPARATION STRUCTURE IS A MEASUREMENT (#87).  Every one of the 72 ordered site pairs is tested: two sites are UNLINKED exactly when they lie on a common line of the one parallel class the arena does not declare, so the link graph is complete multipartite with those three lines as its parts and every site has degree six",
+   "waiver": null
+  },
+  {
+   "evidence": "cells 27, pairs 27, two-actor cells 27, cells per actor [6]",
+   "gate": "G-CELL-IS-A-CO-DIVISION-PAIR",
+   "passed": true,
+   "statement": "THE QUANTITY'S REFERENT IS RE-VERIFIED, NOT INHERITED.  The 27 cells are in bijection with the 27 unordered co-division pairs, every cell carries exactly two actors and every actor sits in exactly six cells -- this is what makes a record entry a quantity OF A PAIR, which is the whole hinge of measurement one",
+   "waiver": null
+  },
+  {
+   "evidence": "cross-checks 19, disagreements none; site-constant 5856 of 5856",
+   "gate": "G-CORPUS-AGREES-WITH-FAC",
+   "passed": true,
+   "statement": "THE COMMITTED CORPUS IS REBUILT AND CROSS-CHECKED PER QUANTITY (#87).  Every structural count of the arena and of the three corpora is derived by this instrument's own constructors and compared, one by one, with FAC's delivered receipt; the record field is then measured SITE-CONSTANT at every committed history, which is the fact the certainty census will live on",
+   "waiver": null
+  },
+  {
+   "evidence": "site-constant 5856 of 5856 histories",
+   "gate": "G-RECORD-SITE-CONSTANT",
+   "passed": true,
+   "statement": "THE RECORD FIELD IS SITE-CONSTANT AT EVERY COMMITTED HISTORY, PER HISTORY.  n_l(x) does not depend on x: the nine site rows of a history are equal at all 5,856 of them.  This is a property of the committed window, not a law, and it is what makes separated prediction possible at all here",
+   "waiver": null
+  },
+  {
+   "evidence": "cross-checks 11, disagreements none; exception rows 4, disagreements none",
+   "gate": "G-BLOCKS-AGREE-WITH-FAC",
+   "passed": true,
+   "statement": "THE BLOCKS ARE THE PARENT'S, REBUILT AND GATED ROW BY ROW (#87).  The two binding legs are re-implemented here; the resulting per-history admissible sets reproduce FAC's cardinality distribution, its whole inventory and its four named exceptions at their own corpus indices, each compared individually",
+   "waiver": null
+  },
+  {
+   "evidence": "predicates 12, missing none, leaks none, totality probes 210 failures 0, combined digest f791c8dc0877",
+   "gate": "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
+   "passed": true,
+   "statement": "THE TWO CRITERIA ARE DECLARED, LOCATED IN SOURCE, DIGESTED AND TOTAL BEFORE A CENSUS ROW RUNS.  Twelve predicate functions are found by AST in this file, digested individually and jointly, and their upper-case free names are required to contain no census product, so no predicate can consult the answer it decides; every predicate is then exercised on every argument combination of a declared probe set and required to return a boolean or a declared value at each",
+   "waiver": null
+  },
+  {
+   "evidence": "512-subset census: quantity-bearing 490, far-nonempty 19, both 0; theorem probes 512 failures 0; block pairs 421656, link-disjoint 105408, premise at LOC-PAIR 0, at LOC-WALK 105408",
+   "gate": "G-SEPARATION-PREMISE-CENSUS",
+   "passed": true,
+   "statement": "EPR'S PREMISE IS MEASURED BEFORE IT IS USED, AT EVERY OBJECT (#87).  The complete lattice of 512 subsets is censused for a record quantity and for a nonempty far region, and every ordered block pair of every admissible decomposition of every committed history is tested for link-disjointness against the block's own quantities in both declared localizations.  At the record's own localization the two requirements never hold together; at the state's localization they hold at 105,408 pairs, and the difference is the localization, not the arena",
+   "waiver": null
+  },
+  {
+   "evidence": "event shapes 84, confined events 24, cell probes 54, disturbances 0, events that do reach a block quantity 342",
+   "gate": "G-NO-DISTURBANCE-DYNAMICAL",
+   "passed": true,
+   "statement": "THE OTHER READING OF EPR'S CLAUSE IS MEASURED TOO, AND THE PROBE IS SIGHTED.  Over every event shape this arena admits, no event confined to an actor-disjoint region changes any record entry the other block owns -- so actor-disjointness alone already secures the dynamical form of 'without in any way disturbing'.  The test-declaration duty is discharged by the positive control in the same census: events that are NOT so confined DO reach a block's quantities, and are counted",
+   "waiver": null
+  },
+  {
+   "evidence": "records 36, residue classes 9, sweep 64 states, best 4, primary 4, separations 0",
+   "gate": "G-SHADOW-CEILING",
+   "passed": true,
+   "statement": "THE SHADOW'S BLINDNESS IS A THEOREM ABOUT THE COIN, AND IT IS MEASURED AT EVERY STATE OF A DECLARED FAMILY.  Sixty-four states are swept; not one separates two committed records that share a residue class, so the shadow's ceiling is the residue class and no state can raise it.  The primary state is required to attain the sweep's maximum, so the audit gives the shadow its best case rather than a strawman",
+   "waiver": null
+  },
+  {
+   "evidence": "readings 5, conjugate pairs 3, DG cells 1",
+   "gate": "G-READINGS-PARTITION-MEASURED",
+   "passed": true,
+   "statement": "THE FIVE DECLARED READINGS ARE MEASURED AS PARTITIONS, NOT ASSERTED.  Each reading's fibres over the committed records are enumerated, the refinement relation is computed in both directions for all twenty-five ordered pairs, and the pairs where neither refines the other are the corpus's conjugate pairs.  paper-20's other coin order is measured record-blind: one cell, every record in it",
+   "waiver": null
+  },
+  {
+   "evidence": "arms 4; primary arm pairs 0; walk arm certified 316224, without a record counterpart 0, without a shadow counterpart 316224",
+   "gate": "G-CERTAINTY-CENSUS-PER-ARM",
+   "passed": true,
+   "statement": "EVERY ARM IS CENSUSED QUANTITY BY QUANTITY THROUGH THE FROZEN PREDICATES (#87).  EPR's completeness condition -- every element of the physical reality must have a counterpart in the physical theory -- is applied to both descriptions on all four arms; the record certifies and carries, the shadow certifies nothing and carries none of the record's",
+   "waiver": null
+  },
+  {
+   "evidence": "shadow-certified totals [0, 0, 0, 0]; record-certified totals [0, 54, 316224, 1265112]",
+   "gate": "G-CERTAINTY-POLARITY",
+   "passed": true,
+   "statement": "THE CENSUS IS CHECKED IN BOTH DIRECTIONS.  A predicate that returned certainty everywhere would make the shadow certify as much as the record; the measured counts differ by arm and the shadow's own certified count is zero at every one of them, so the two predicates are not the same predicate wearing two names",
+   "waiver": null
+  },
+  {
+   "evidence": "primary arm probes 105408, probes with more than one assignment 105408, largest fibre 5",
+   "gate": "G-E4-TWO-REDUCTIONS",
+   "passed": true,
+   "statement": "THE TWO-REDUCTIONS PHENOMENON IS REBUILT AS A COUNT, PER PROBE (#87).  For one and the same committed record, the five declared readings on the separated block assign more than one description to this block at every probe of the primary arm, and the fibre's size is published as a distribution rather than as an average",
+   "waiver": null
+  },
+  {
+   "evidence": "records where the orders differ 30 of 36; pair not jointly declarable True; histories where the record carries both 5856 of 5856; Born menu carries the record menu at 0 of 36 records",
+   "gate": "G-CONJUGATE-PAIR-MEASURED",
+   "passed": true,
+   "statement": "E3'S SECOND HORN IS PUT AT RISK AND MEASURED.  The corpus's own conjugate pair -- paper-20's Born menu against its record menu -- is verified NOT JOINTLY DECLARABLE by computing the refinement relation in both directions; the operator leg is taken exactly in Z[w], where the two declared coin orders differ at 30 of the 36 committed records; and the record is measured to carry both members at every committed history while no single Born menu carries both",
+   "waiver": null
+  },
+  {
+   "evidence": "probes 105408, record moves 0, own-shadow moves 0, assigned description moves 105408",
+   "gate": "G-E5-RECORD-DOES-NOT-MOVE",
+   "passed": true,
+   "statement": "B'S RECORD IS MEASURED NOT TO MOVE WITH THE READING DECLARED AT A, PROBE BY PROBE, WITH THE TEST DECLARED.  B's own record and B's own shadow are recomputed under every declared reading through a reading-parameterised path; neither moves at any of the 105,408 probes, while the description assigned to B moves at all of them",
+   "waiver": null
+  },
+  {
+   "evidence": "desiderata 6, Bell-constrained 2",
+   "gate": "G-BELL-DESIDERATA-BOUND",
+   "passed": true,
+   "statement": "EVERY EPR DESIDERATUM IS BOUND TO A MEASURED ROW AND TO ITS BELL STATUS.  Six rows, each naming what each description does with that desideratum and whether the corpus's standing Bell verdict constrains it; the two rows that are constrained say so in their own text",
+   "waiver": null
+  },
+  {
+   "evidence": "arms 6, distinct words ['EPR-BLOCKED-AT-THE-PREDICATE-TOTALITY', 'EPR-BOTH-COMPLETE', 'EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY', 'EPR-RECORD-ALSO-INCOMPLETE', 'EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE'], families not demonstrated none",
+   "gate": "G-EVERY-OUTCOME-WORD-EMITTABLE",
+   "passed": true,
+   "statement": "EVERY PRE-REGISTERED WORD IS EMITTED BY THE REAL HEAD LAW ON DECLARED DATA (#34 reachability).  Six arms run the same predicates: the two committed localizations, two synthetic descriptions with forced injectivity and a forced puncture, a declared partial predicate, and the same predicate forms on a synthetic arena with one declared link direction -- where the premise EXISTS, which is how the arena-relativity of the head is demonstrated rather than asserted",
+   "waiver": null
+  },
+  {
+   "evidence": "probes 1080, agreements 1080",
+   "gate": "G-PROBABILITY-EXACTLY-ONE",
+   "passed": true,
+   "statement": "EPR'S 'PROBABILITY EQUAL TO UNITY' IS TAKEN LITERALLY AND EXACTLY.  Under two declared measures of full support the conditional probability of the predicted value is computed as an exact rational at every probe and compared with the measure-free predicate, in both directions",
+   "waiver": null
+  },
+  {
+   "evidence": "arms 4, disagreements none, head EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY in vocabulary True, equals the primary arm's word on both routes True",
+   "gate": "G-HEAD-DERIVED-TWICE",
+   "passed": true,
+   "statement": "THE HEAD IS DERIVED TWICE BY ROUTES SHARING NO DISPATCHER.  Section 9's census and a second aggregation by distinct record with corpus multiplicities agree on every count of every arm and on every arm word; the head word is then required to lie in the vocabulary parsed from the pin",
+   "waiver": null
+  },
+  {
+   "evidence": "class words 8, unbound none",
+   "gate": "G-CLASS-WORDS-BOUND-TO-PREDICATES",
+   "passed": true,
+   "statement": "EVERY CLASS WORD THIS UNIT PRINTS IS RECOMPUTED FROM THE PREDICATE THAT DEFINES IT (#295).  Eight class words, each carrying the branch or ruling that emits it and the count of arms at which the law actually emitted it",
+   "waiver": null
+  },
+  {
+   "evidence": "float literals 0, float() calls 0",
+   "gate": "G-NO-FLOAT-IN-SOURCE",
+   "passed": true,
+   "statement": "THE ARITHMETIC IS EXACT BY CONSTRUCTION AND THE FILE IS SCANNED TO PROVE IT.  No float literal and no call to float() occurs anywhere in this instrument",
+   "waiver": null
+  },
+  {
+   "evidence": "gates 35, with falsifiers 28, waived 7, unwaived none, description mismatches none",
+   "gate": "G-FALSIFIER-COVERAGE",
+   "passed": true,
+   "statement": "EVERY GATE CARRIES A FALSIFIER OR A NAMED WAIVER WITH A FORCING (E-23).  30 falsifiers are declared, each naming the gate it must die at and the function that carries its hook; every gate that has no falsifier carries a waiver whose forcing is stated, and the gates that run after this census are folded in by declaration rather than left invisible to it",
+   "waiver": null
+  },
+  {
+   "evidence": "falsifiers 30, hooks not located none",
+   "gate": "G-FALSIFIER-REACHABILITY",
+   "passed": true,
+   "statement": "EVERY DECLARED FALSIFIER REACHES ITS GATE (#34).  Each hook is located in this file by AST rather than trusted from its description, and the sweep executes every one of them and records where it actually died",
+   "waiver": null
+  },
+  {
+   "evidence": "reads 7, undeclared none",
+   "gate": "G-READS-DECLARED",
+   "passed": true,
+   "statement": "THE READ SET IS THE DECLARED ONE, RECORDED AT THE I/O LAYER (#91).  Six sources and one object under test, the paper's own read taken inside the run so that no leg is exempt; a read of any other repository file appears here and fires this gate; no subprocess is invoked, so the run is correct off-tree and with no version control present",
+   "waiver": null
+  },
+  {
+   "evidence": "claims 16, missing none",
+   "gate": "G-PAPER-CLAIMS",
+   "passed": true,
+   "statement": "EVERY LOAD-BEARING SENTENCE OF THE PAPER IS RENDERED FROM THE RECEIPT AND MATCHED IN THE PAPER'S OWN BYTES (#20).  Fifteen claims, each built out of receipt values rather than typed, so a paper that drifts from its run cannot pass",
+   "waiver": null
+  },
+  {
+   "evidence": "tables 4, rows 22, missing none",
+   "gate": "G-PAPER-TABLES-WITH-HEADERS",
+   "passed": true,
+   "statement": "EVERY TABLE IS RENDERED FROM THE RECEIPT WITH ITS HEADERS INCLUDED, so a header swap that leaves every number correct dies here (E-22: tables render as claims)",
+   "waiver": null
+  },
+  {
+   "evidence": "numerals 220 (fenced 50), spelled 123, unknown none / none",
+   "gate": "G-PAPER-NUMERAL-COVERAGE",
+   "passed": true,
+   "statement": "EVERY NUMERAL IN THE PAPER IS THE RUN'S OWN PRODUCT (#20, E-22).  The scan covers the whole file including fenced blocks and inline spans, spelled numerals included; anything outside the run's registry and the declared structural literals fails",
+   "waiver": null
+  },
+  {
+   "evidence": "axes 5, failures none",
+   "gate": "G-PAPER-CLAIM-POLARITY",
+   "passed": true,
+   "statement": "EVERY POLARITY AXIS IS CHECKED IN BOTH DIRECTIONS.  Five axes; the paper must assert the measured direction and must not contain its inverse anywhere in its bytes",
+   "waiver": null
+  },
+  {
+   "evidence": "fractions 7, unbound none",
+   "gate": "G-SENTENCE-REFERENT-BINDING",
+   "passed": true,
+   "statement": "EVERY FRACTION IN THE PAPER NAMES A UNIVERSE THAT CARRIES BOTH OF ITS MEMBERS.  Six universes are declared from receipt paths; an 'N of M' whose numerator and denominator are not carried by one common universe fails",
+   "waiver": null
+  },
+  {
+   "evidence": "banned 7, hits none",
+   "gate": "G-WALLS-SCAN-THE-PAPER",
+   "passed": true,
+   "statement": "THE BELL WALL IS SCANNED AGAINST THIS UNIT'S OWN PAPER.  Seven banned assertive sentences -- local realism restored, Bell evaded, hidden variables vindicated among them -- are matched against the paper's normalised bytes and must be absent; the falsifier plants one into exactly that text",
+   "waiver": null
+  },
+  {
+   "evidence": "swept False, rows 0, off target none",
+   "gate": "G-SWEEP-IS-EXECUTION-BOUND",
+   "passed": true,
+   "statement": "THE SWEEP FLAG IS BOUND TO EXECUTION.  A run may claim a sweep only when the sweep rows are its own product: the flag and the row count are compared here, so 'swept' with no sweep dies",
+   "waiver": null
+  },
+  {
+   "evidence": "gates 35, seals 35",
+   "gate": "G-CLOSING-BATTERY-RAN",
+   "passed": true,
+   "statement": "THE PAPER INSTRUMENT AND THE CLOSING BATTERY RAN IN THE PLAIN RUN (#20).  Every gate of this unit is in one ledger, and the ledger, the seal manifest and the transcript are sealed into the same receipt",
+   "waiver": null
+  }
+ ],
+ "measure_relativity": {
+  "agreements": 1080,
+  "certainty_is_measure_free": "constancy on the conditioning fibre",
+  "declared_measures": [
+   "MEASURE-UNIFORM (every committed history weight one)",
+   "MEASURE-SKEWED (weight 1 + (index mod 7), full support)"
+  ],
+  "note": "the equivalence is checked in BOTH directions: where the predicate says certain the exact conditional probability is 1, and where it does not the probability is measured below 1",
+  "probes": 1080,
+  "stamp": "COUNTING-ONLY: no count in this unit is a probability, and no fraction is a frequency (E-24)"
+ },
+ "mutant_sweep": {
+  "declared": 30,
+  "executed": 0,
+  "off_target": [],
+  "rows": [],
+  "swept": false
+ },
+ "mutants": {
+  "count": 30,
+  "description_mismatches": [],
+  "rows": [
+   {
+    "declared_carrier": "provenance",
+    "declared_gate": "G-PROVENANCE-SHA-PINNED",
+    "description_matches_code": true,
+    "located_in": [
+     "provenance"
+    ],
+    "mutant": "MUT-SOURCE-DIGEST",
+    "statement": "a source's digest is reported as something else"
+   },
+   {
+    "declared_carrier": "provenance",
+    "declared_gate": "G-VERBATIM-ANCHORS-IN-SOURCE",
+    "description_matches_code": true,
+    "located_in": [
+     "provenance"
+    ],
+    "mutant": "MUT-ANCHOR-E2",
+    "statement": "the reality criterion's needle is altered by one word"
+   },
+   {
+    "declared_carrier": "provenance",
+    "declared_gate": "G-OUTCOMES-PARSED-FROM-THE-PIN",
+    "description_matches_code": true,
+    "located_in": [
+     "provenance"
+    ],
+    "mutant": "MUT-OUTCOME-TYPED",
+    "statement": "the outcome vocabulary is typed instead of parsed"
+   },
+   {
+    "declared_carrier": "link_set",
+    "declared_gate": "G-LINK-GRAPH-MEASURED",
+    "description_matches_code": true,
+    "located_in": [
+     "link_set"
+    ],
+    "mutant": "MUT-LINKGRAPH",
+    "statement": "the undeclared direction is declared, so the link graph is complete"
+   },
+   {
+    "declared_carrier": "arena_measure",
+    "declared_gate": "G-CELL-IS-A-CO-DIVISION-PAIR",
+    "description_matches_code": true,
+    "located_in": [
+     "arena_measure"
+    ],
+    "mutant": "MUT-CARRIER",
+    "statement": "the cell-to-pair bijection is asserted false"
+   },
+   {
+    "declared_carrier": "build_corpus",
+    "declared_gate": "G-CORPUS-AGREES-WITH-FAC",
+    "description_matches_code": true,
+    "located_in": [
+     "build_corpus"
+    ],
+    "mutant": "MUT-CORPUS-CAP",
+    "statement": "the corpus is silently capped"
+   },
+   {
+    "declared_carrier": "corpus_measure",
+    "declared_gate": "G-RECORD-SITE-CONSTANT",
+    "description_matches_code": true,
+    "located_in": [
+     "corpus_measure"
+    ],
+    "mutant": "MUT-SITECONST",
+    "statement": "one history's record is reported as not site-constant"
+   },
+   {
+    "declared_carrier": "leg_history",
+    "declared_gate": "G-BLOCKS-AGREE-WITH-FAC",
+    "description_matches_code": true,
+    "located_in": [
+     "leg_history"
+    ],
+    "mutant": "MUT-BLOCKS-DROP",
+    "statement": "the history leg is dropped, so coarse decompositions survive"
+   },
+   {
+    "declared_carrier": "sep_link_disjoint",
+    "declared_gate": "G-SEPARATION-PREMISE-CENSUS",
+    "description_matches_code": true,
+    "located_in": [
+     "sep_link_disjoint"
+    ],
+    "mutant": "MUT-SEPARATION-LEAK",
+    "statement": "link-disjointness is granted to every pair"
+   },
+   {
+    "declared_carrier": "disturbance_census",
+    "declared_gate": "G-NO-DISTURBANCE-DYNAMICAL",
+    "description_matches_code": true,
+    "located_in": [
+     "disturbance_census"
+    ],
+    "mutant": "MUT-DISTURBANCE-CONFINEMENT",
+    "statement": "the confinement premise is dropped, so unconfined events are counted as confined ones"
+   },
+   {
+    "declared_carrier": "shadow_menu",
+    "declared_gate": "G-SHADOW-CEILING",
+    "description_matches_code": true,
+    "located_in": [
+     "shadow_menu"
+    ],
+    "mutant": "MUT-SHADOW-INJECTIVE",
+    "statement": "the shadow is allowed to read the count rather than its residue"
+   },
+   {
+    "declared_carrier": "assigned_description",
+    "declared_gate": "G-E4-TWO-REDUCTIONS",
+    "description_matches_code": true,
+    "located_in": [
+     "assigned_description"
+    ],
+    "mutant": "MUT-E4-COLLAPSE",
+    "statement": "every reading is made to assign the same description"
+   },
+   {
+    "declared_carrier": "epr_reality_at",
+    "declared_gate": "G-CERTAINTY-POLARITY",
+    "description_matches_code": true,
+    "located_in": [
+     "epr_reality_at"
+    ],
+    "mutant": "MUT-CERT-CONSTANT-TRUE",
+    "statement": "the certainty predicate is made constantly true"
+   },
+   {
+    "declared_carrier": "epr_counterpart_at",
+    "declared_gate": "G-CERTAINTY-CENSUS-PER-ARM",
+    "description_matches_code": true,
+    "located_in": [
+     "epr_counterpart_at"
+    ],
+    "mutant": "MUT-COUNTERPART-BLIND",
+    "statement": "the counterpart predicate is made constantly true"
+   },
+   {
+    "declared_carrier": "fiber",
+    "declared_gate": "G-CERTAINTY-CENSUS-PER-ARM",
+    "description_matches_code": true,
+    "located_in": [
+     "fiber"
+    ],
+    "mutant": "MUT-FIBER-ROWS",
+    "statement": "the conditioning fibre is truncated to its own row, so every description carries everything"
+   },
+   {
+    "declared_carrier": "conjugacy_measure",
+    "declared_gate": "G-CONJUGATE-PAIR-MEASURED",
+    "description_matches_code": true,
+    "located_in": [
+     "conjugacy_measure"
+    ],
+    "mutant": "MUT-COMMUTATOR",
+    "statement": "the two coin orders are reported as commuting"
+   },
+   {
+    "declared_carrier": "conjugacy_measure",
+    "declared_gate": "G-CONJUGATE-PAIR-MEASURED",
+    "description_matches_code": true,
+    "located_in": [
+     "conjugacy_measure"
+    ],
+    "mutant": "MUT-CONJ-REFINE",
+    "statement": "the conjugate pair is reported as jointly declarable"
+   },
+   {
+    "declared_carrier": "record_at_B_under|shadow_at_B_under",
+    "declared_gate": "G-E5-RECORD-DOES-NOT-MOVE",
+    "description_matches_code": true,
+    "located_in": [
+     "record_at_B_under",
+     "shadow_at_B_under"
+    ],
+    "mutant": "MUT-E5-LEAK",
+    "statement": "the reading declared at A is routed into B's own record and shadow"
+   },
+   {
+    "declared_carrier": "verdict_measure",
+    "declared_gate": "G-HEAD-DERIVED-TWICE",
+    "description_matches_code": true,
+    "located_in": [
+     "verdict_measure"
+    ],
+    "mutant": "MUT-HEAD-TYPED",
+    "statement": "the head word is typed rather than derived"
+   },
+   {
+    "declared_carrier": "controls_measure",
+    "declared_gate": "G-EVERY-OUTCOME-WORD-EMITTABLE",
+    "description_matches_code": true,
+    "located_in": [
+     "controls_measure"
+    ],
+    "mutant": "MUT-CONTROL-MISSING",
+    "statement": "control arms are dropped so a word becomes undemonstrated"
+   },
+   {
+    "declared_carrier": "controls_measure",
+    "declared_gate": "G-PROBABILITY-EXACTLY-ONE",
+    "description_matches_code": true,
+    "located_in": [
+     "controls_measure"
+    ],
+    "mutant": "MUT-MEASURE",
+    "statement": "one exact conditional probability is made to disagree"
+   },
+   {
+    "declared_carrier": "predicate_totality",
+    "declared_gate": "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
+    "description_matches_code": true,
+    "located_in": [
+     "predicate_totality"
+    ],
+    "mutant": "MUT-TOTALITY",
+    "statement": "a predicate is declared partial"
+   },
+   {
+    "declared_carrier": "class_binding_measure",
+    "declared_gate": "G-CLASS-WORDS-BOUND-TO-PREDICATES",
+    "description_matches_code": true,
+    "located_in": [
+     "class_binding_measure"
+    ],
+    "mutant": "MUT-CLASSWORD",
+    "statement": "a class word is typed rather than recomputed"
+   },
+   {
+    "declared_carrier": "paper_battery",
+    "declared_gate": "G-WALLS-SCAN-THE-PAPER",
+    "description_matches_code": true,
+    "located_in": [
+     "paper_battery"
+    ],
+    "mutant": "MUT-BELL-PLANT",
+    "statement": "a banned local-realism sentence is planted into the paper"
+   },
+   {
+    "declared_carrier": "paper_battery",
+    "declared_gate": "G-PAPER-NUMERAL-COVERAGE",
+    "description_matches_code": true,
+    "located_in": [
+     "paper_battery"
+    ],
+    "mutant": "MUT-PAPER-NUMERAL",
+    "statement": "an unregistered numeral is planted into the paper"
+   },
+   {
+    "declared_carrier": "paper_battery",
+    "declared_gate": "G-PAPER-TABLES-WITH-HEADERS",
+    "description_matches_code": true,
+    "located_in": [
+     "paper_battery"
+    ],
+    "mutant": "MUT-PAPER-TABLE-HEADER",
+    "statement": "two table headers are swapped with every number left correct"
+   },
+   {
+    "declared_carrier": "paper_battery",
+    "declared_gate": "G-PAPER-CLAIM-POLARITY",
+    "description_matches_code": true,
+    "located_in": [
+     "paper_battery"
+    ],
+    "mutant": "MUT-POLARITY",
+    "statement": "an inverted claim is planted into the paper"
+   },
+   {
+    "declared_carrier": "paper_battery",
+    "declared_gate": "G-SENTENCE-REFERENT-BINDING",
+    "description_matches_code": true,
+    "located_in": [
+     "paper_battery"
+    ],
+    "mutant": "MUT-REFERENT",
+    "statement": "a fraction is left without a common referent universe"
+   },
+   {
+    "declared_carrier": "Seal",
+    "declared_gate": "G-SEAL-TOTALITY",
+    "description_matches_code": true,
+    "located_in": [
+     "Seal",
+     "take"
+    ],
+    "mutant": "MUT-SEAL-DROP",
+    "statement": "one seal is not taken"
+   },
+   {
+    "declared_carrier": "finish",
+    "declared_gate": "G-ARTIFACT-INTEGRITY",
+    "description_matches_code": true,
+    "located_in": [
+     "finish"
+    ],
+    "mutant": "MUT-INTEGRITY",
+    "statement": "the staged bytes are corrupted after sealing"
+   }
+  ]
+ },
+ "paper_claims": {
+  "count": 16,
+  "missing": [],
+  "rows": [
+   {
+    "claim": "two sites are unlinked exactly when they lie on a common line of the one parallel class the arena does not declare, at 72 of 72 ordered site pairs",
+    "id": "C01"
+   },
+   {
+    "claim": "0 of 512 subsets of the nine actors own a record quantity and a conditioning region sharing no link with them",
+    "id": "C02"
+   },
+   {
+    "claim": "490 subsets own a record quantity and 19 have a nonempty far region",
+    "id": "C03"
+   },
+   {
+    "claim": "of 421,656 ordered block pairs 105,408 are link-disjoint and 18 carry a record quantity at the block, and 0 carry both",
+    "id": "C04"
+   },
+   {
+    "claim": "in the state's own localization the same predicates return 105,408 instances of the premise",
+    "id": "C05"
+   },
+   {
+    "claim": "the record field is site-constant at 5,856 of 5,856 committed histories",
+    "id": "C06"
+   },
+   {
+    "claim": "the corpus carries 36 distinct records and the shadow can separate at most 9 of them",
+    "id": "C07"
+   },
+   {
+    "claim": "not one of the 64 declared states separates two committed records that share a residue class",
+    "id": "C08"
+   },
+   {
+    "claim": "at the state's localization and EPR's own separation the record certifies 316,224 elements and the shadow carries 0 of them",
+    "id": "C09"
+   },
+   {
+    "claim": "the shadow itself certifies 0 elements at any of the four arms",
+    "id": "C10"
+   },
+   {
+    "claim": "at the record's own localization under the weaker separation the census runs at 18 pairs and 54 quantities",
+    "id": "C11"
+   },
+   {
+    "claim": "the five declared readings assign more than one description to the same record at 105,408 of 105,408 probes, and as many as 5",
+    "id": "C12"
+   },
+   {
+    "claim": "B's own record moves at 0 of 105,408 probes and the description assigned to B moves at 105,408",
+    "id": "C13"
+   },
+   {
+    "claim": "the two declared coin orders differ at 30 of the 36 committed records",
+    "id": "C14"
+   },
+   {
+    "claim": "the record carries both members of the conjugate pair at 5,856 of 5,856 committed histories",
+    "id": "C15"
+   },
+   {
+    "claim": "over the 84 event shapes this arena admits, an event confined to an actor-disjoint region changes a record entry the other block owns 0 times, while 342 unconfined ones do reach a block's quantities",
+    "id": "C16"
+   }
+  ]
+ },
+ "paper_coverage": {
+  "in_fenced_blocks": 50,
+  "note": "coverage includes fenced blocks and inline code spans (E-22); the registry is the run's own product",
+  "numerals": 220,
+  "registry_size": 75,
+  "spelled_numerals": 123,
+  "unknown_numerals": [],
+  "unknown_spelled": []
+ },
+ "paper_tables": {
+  "count": 4,
+  "missing": [],
+  "rows": 22,
+  "tables": [
+   {
+    "headers": [
+     "localization",
+     "separation",
+     "pairs",
+     "quantities",
+     "certified",
+     "uncarried by the shadow",
+     "word"
+    ],
+    "name": "T-ARMS",
+    "rows": [
+     [
+      "LOC-PAIR",
+      "SEP-LINK-DISJOINT",
+      "0",
+      "0",
+      "0",
+      "0",
+      "EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY"
+     ],
+     [
+      "LOC-PAIR",
+      "SEP-ACTOR-DISJOINT",
+      "18",
+      "54",
+      "54",
+      "54",
+      "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+     ],
+     [
+      "LOC-WALK",
+      "SEP-LINK-DISJOINT",
+      "105,408",
+      "316,224",
+      "316,224",
+      "316,224",
+      "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+     ],
+     [
+      "LOC-WALK",
+      "SEP-ACTOR-DISJOINT",
+      "421,656",
+      "1,265,112",
+      "1,265,112",
+      "1,265,112",
+      "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "arm",
+     "premise instances",
+     "certified",
+     "uncarried by the record",
+     "uncarried by the shadow",
+     "word"
+    ],
+    "name": "T-CONTROLS",
+    "rows": [
+     [
+      "CTRL-COMMITTED-LOC-PAIR",
+      "0",
+      "0",
+      "0",
+      "0",
+      "EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY"
+     ],
+     [
+      "CTRL-COMMITTED-LOC-WALK",
+      "105,408",
+      "316,224",
+      "0",
+      "316,224",
+      "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+     ],
+     [
+      "CTRL-D-SHADOW-SYNTH-INJECTIVE",
+      "105,408",
+      "316,224",
+      "0",
+      "0",
+      "EPR-BOTH-COMPLETE"
+     ],
+     [
+      "CTRL-D-RECORD-SYNTH-PUNCTURED",
+      "105,408",
+      "316,224",
+      "105,228",
+      "316,224",
+      "EPR-RECORD-ALSO-INCOMPLETE"
+     ],
+     [
+      "CTRL-PREDICATE-PARTIAL",
+      "105,408",
+      "316,224",
+      "0",
+      "316,224",
+      "EPR-BLOCKED-AT-THE-PREDICATE-TOTALITY"
+     ],
+     [
+      "CTRL-ARENA-ONE-DECLARED-DIRECTION",
+      "35,136",
+      "105,408",
+      "0",
+      "105,408",
+      "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "arm",
+     "assignments at one record",
+     "probes"
+    ],
+    "name": "T-REDUCTIONS",
+    "rows": [
+     [
+      "LOC-PAIR x SEP-ACTOR-DISJOINT",
+      "4",
+      "18"
+     ],
+     [
+      "LOC-WALK x SEP-LINK-DISJOINT",
+      "3",
+      "594"
+     ],
+     [
+      "LOC-WALK x SEP-LINK-DISJOINT",
+      "4",
+      "8,514"
+     ],
+     [
+      "LOC-WALK x SEP-LINK-DISJOINT",
+      "5",
+      "96,300"
+     ],
+     [
+      "LOC-WALK x SEP-ACTOR-DISJOINT",
+      "3",
+      "2,382"
+     ],
+     [
+      "LOC-WALK x SEP-ACTOR-DISJOINT",
+      "4",
+      "34,062"
+     ],
+     [
+      "LOC-WALK x SEP-ACTOR-DISJOINT",
+      "5",
+      "385,212"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "reading",
+     "cells",
+     "largest fibre"
+    ],
+    "name": "T-READINGS",
+    "rows": [
+     [
+      "READ-RECORD",
+      "36",
+      "1"
+     ],
+     [
+      "READ-BORN-GD",
+      "4",
+      "12"
+     ],
+     [
+      "READ-BORN-DG",
+      "1",
+      "36"
+     ],
+     [
+      "READ-RECORD-MENU",
+      "23",
+      "4"
+     ],
+     [
+      "READ-CURVATURE",
+      "3",
+      "13"
+     ]
+    ]
+   }
+  ]
+ },
+ "payload_sha256_12": "91eb376bc6e2",
+ "polarity": {
+  "count": 5,
+  "failures": [],
+  "rows": [
+   {
+    "asserted": true,
+    "axis": "P1",
+    "inverse_present": false
+   },
+   {
+    "asserted": true,
+    "axis": "P2",
+    "inverse_present": false
+   },
+   {
+    "asserted": true,
+    "axis": "P3",
+    "inverse_present": false
+   },
+   {
+    "asserted": true,
+    "axis": "P4",
+    "inverse_present": false
+   },
+   {
+    "asserted": true,
+    "axis": "P5",
+    "inverse_present": false
+   }
+  ]
+ },
+ "pre_registered_outcomes": {
+  "count": 5,
+  "families": [
+   "EPR-BLOCKED-AT-",
+   "EPR-BOTH-COMPLETE",
+   "EPR-CRITERION-INAPPLICABLE-AT-",
+   "EPR-RECORD-ALSO-INCOMPLETE",
+   "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+  ],
+  "note": "the vocabulary is PARSED OUT OF THE PIN'S OWN BYTES; a word the head law returns must match one family exactly or extend an <object> family",
+  "parsed_from": "v14/note-epr-pin.md",
+  "words": [
+   "EPR-BLOCKED-AT-<object>",
+   "EPR-BOTH-COMPLETE",
+   "EPR-CRITERION-INAPPLICABLE-AT-<object>",
+   "EPR-RECORD-ALSO-INCOMPLETE",
+   "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"
+  ]
+ },
+ "predicates": {
+  "certainty_is_measure_free": "constancy on the conditioning fibre; probability one under every measure of full support, verified exactly under two declared measures in section 9",
+  "combined_sha256_12": "f791c8dc0877",
+  "free_upper_case_names": {
+   "data_record": [],
+   "data_shadow": [],
+   "epr_counterpart_at": [],
+   "epr_reality_at": [],
+   "far_region": [
+    "B"
+   ],
+   "fiber": [],
+   "loc_pair": [
+    "S"
+   ],
+   "loc_walk": [
+    "S"
+   ],
+   "record_menu": [
+    "M"
+   ],
+   "sep_actor_disjoint": [
+    "A",
+    "B"
+   ],
+   "sep_link_disjoint": [
+    "A",
+    "B"
+   ],
+   "shadow_menu": [
+    "J",
+    "M",
+    "_MENU_CACHE"
+   ]
+  },
+  "leaks": [],
+  "located_by": "AST over this file",
+  "names": [
+   "loc_pair",
+   "loc_walk",
+   "far_region",
+   "sep_link_disjoint",
+   "sep_actor_disjoint",
+   "shadow_menu",
+   "record_menu",
+   "data_record",
+   "data_shadow",
+   "fiber",
+   "epr_reality_at",
+   "epr_counterpart_at"
+  ],
+  "no_disturbance_clause": "link-disjointness -- the conditioning region shares no link with the block, per SEC's adjudicated SEAM-CONFINED ruling",
+  "per_predicate_sha256_12": {
+   "data_record": "e02588a139f0",
+   "data_shadow": "2f90f6a33d16",
+   "epr_counterpart_at": "50065fbe622e",
+   "epr_reality_at": "242af385ac88",
+   "far_region": "ec3126e403c2",
+   "fiber": "8a124ede89d4",
+   "loc_pair": "5bfc4659d864",
+   "loc_walk": "f621e5e3e04b",
+   "record_menu": "0451fc83e6fa",
+   "sep_actor_disjoint": "292895722ed9",
+   "sep_link_disjoint": "e5d536564bd6",
+   "shadow_menu": "03f6bfc2408c"
+  },
+  "totality_failures": 0,
+  "totality_probes": 210
+ },
+ "provenance": {
+  "cited_parent": {
+   "abstention_is_provable": "the read set below is recorded at the I/O layer and does not contain it",
+   "delivered_sha256_12": "240bad74217a",
+   "path": "v14/code/fac_receipt.json",
+   "status": "candidate-under-repair",
+   "why_not_read": "FAC is under repair and its working-tree copy has drifted from the delivered digest; reading it would be a moving reference (#91), so its delivered values are CITED here and every one of them is re-derived by this instrument and compared quantity by quantity",
+   "worker_testimony": "the construction worker inspected both the delivered receipt and the drifted working-tree copy: every quantity this unit consumes is identical in the two"
+  },
+  "count": 6,
+  "repository_reads_outside_the_list": 0,
+  "source_of_record": "v14/sources/epr-1935-physrev-47-777.pdf",
+  "source_of_record_testimony": "the four pages were read in the original by the orchestrator at pin time and again by the construction worker before a line of this instrument was written; the six wall quotes were verified against that print, and are machine-matched here against the pin's bytes, which is the leg a program can take",
+  "sources": [
+   {
+    "agrees": true,
+    "declared": "b1e4cf9a8b9f",
+    "path": "v14/note-epr-pin.md",
+    "role": "the pin: the question, the six wall quotes, the pre-registered outcome vocabulary",
+    "sha256_12": "b1e4cf9a8b9f"
+   },
+   {
+    "agrees": true,
+    "declared": "66b5deb150c4",
+    "path": "v14/sources/epr-1935-physrev-47-777.pdf",
+    "role": "THE SOURCE OF RECORD: Einstein, Podolsky and Rosen, Physical Review 47, 777 (1935), four pages, read in the original",
+    "sha256_12": "66b5deb150c4"
+   },
+   {
+    "agrees": true,
+    "declared": "7a82ffe7168a",
+    "path": "v14/note-sec-adjudication.md",
+    "role": "SEC's adjudicated SEAM-CONFINED ruling: the no-disturbance clause",
+    "sha256_12": "7a82ffe7168a"
+   },
+   {
+    "agrees": true,
+    "declared": "4824d190af73",
+    "path": "v14/paper-20-coupling.md",
+    "role": "paper-20's committed machinery: the two declared menu readings, the coin, the residue the walk consumes",
+    "sha256_12": "4824d190af73"
+   },
+   {
+    "agrees": true,
+    "declared": "ecdd3fbf1d06",
+    "path": "v14/paper-33-aid.md",
+    "role": "AID: what an actor is in this corpus, and its reading walls",
+    "sha256_12": "ecdd3fbf1d06"
+   },
+   {
+    "agrees": true,
+    "declared": "820aafdf42e6",
+    "path": "v5/relativistic-isp-v5-paper14-non-markovianity-and-bell-nonlocality.md",
+    "role": "v5 paper-14: the corpus's standing Bell verdict, this unit's WALL",
+    "sha256_12": "820aafdf42e6"
+   }
+  ],
+  "subprocesses_invoked": 0
+ },
+ "python": "3.13.2",
+ "reachability": {
+  "count": 30,
+  "not_located": [],
+  "rows": [
+   {
+    "declared_gate": "G-PROVENANCE-SHA-PINNED",
+    "hook_located": true,
+    "mutant": "MUT-SOURCE-DIGEST"
+   },
+   {
+    "declared_gate": "G-VERBATIM-ANCHORS-IN-SOURCE",
+    "hook_located": true,
+    "mutant": "MUT-ANCHOR-E2"
+   },
+   {
+    "declared_gate": "G-OUTCOMES-PARSED-FROM-THE-PIN",
+    "hook_located": true,
+    "mutant": "MUT-OUTCOME-TYPED"
+   },
+   {
+    "declared_gate": "G-LINK-GRAPH-MEASURED",
+    "hook_located": true,
+    "mutant": "MUT-LINKGRAPH"
+   },
+   {
+    "declared_gate": "G-CELL-IS-A-CO-DIVISION-PAIR",
+    "hook_located": true,
+    "mutant": "MUT-CARRIER"
+   },
+   {
+    "declared_gate": "G-CORPUS-AGREES-WITH-FAC",
+    "hook_located": true,
+    "mutant": "MUT-CORPUS-CAP"
+   },
+   {
+    "declared_gate": "G-RECORD-SITE-CONSTANT",
+    "hook_located": true,
+    "mutant": "MUT-SITECONST"
+   },
+   {
+    "declared_gate": "G-BLOCKS-AGREE-WITH-FAC",
+    "hook_located": true,
+    "mutant": "MUT-BLOCKS-DROP"
+   },
+   {
+    "declared_gate": "G-SEPARATION-PREMISE-CENSUS",
+    "hook_located": true,
+    "mutant": "MUT-SEPARATION-LEAK"
+   },
+   {
+    "declared_gate": "G-NO-DISTURBANCE-DYNAMICAL",
+    "hook_located": true,
+    "mutant": "MUT-DISTURBANCE-CONFINEMENT"
+   },
+   {
+    "declared_gate": "G-SHADOW-CEILING",
+    "hook_located": true,
+    "mutant": "MUT-SHADOW-INJECTIVE"
+   },
+   {
+    "declared_gate": "G-E4-TWO-REDUCTIONS",
+    "hook_located": true,
+    "mutant": "MUT-E4-COLLAPSE"
+   },
+   {
+    "declared_gate": "G-CERTAINTY-POLARITY",
+    "hook_located": true,
+    "mutant": "MUT-CERT-CONSTANT-TRUE"
+   },
+   {
+    "declared_gate": "G-CERTAINTY-CENSUS-PER-ARM",
+    "hook_located": true,
+    "mutant": "MUT-COUNTERPART-BLIND"
+   },
+   {
+    "declared_gate": "G-CERTAINTY-CENSUS-PER-ARM",
+    "hook_located": true,
+    "mutant": "MUT-FIBER-ROWS"
+   },
+   {
+    "declared_gate": "G-CONJUGATE-PAIR-MEASURED",
+    "hook_located": true,
+    "mutant": "MUT-COMMUTATOR"
+   },
+   {
+    "declared_gate": "G-CONJUGATE-PAIR-MEASURED",
+    "hook_located": true,
+    "mutant": "MUT-CONJ-REFINE"
+   },
+   {
+    "declared_gate": "G-E5-RECORD-DOES-NOT-MOVE",
+    "hook_located": true,
+    "mutant": "MUT-E5-LEAK"
+   },
+   {
+    "declared_gate": "G-HEAD-DERIVED-TWICE",
+    "hook_located": true,
+    "mutant": "MUT-HEAD-TYPED"
+   },
+   {
+    "declared_gate": "G-EVERY-OUTCOME-WORD-EMITTABLE",
+    "hook_located": true,
+    "mutant": "MUT-CONTROL-MISSING"
+   },
+   {
+    "declared_gate": "G-PROBABILITY-EXACTLY-ONE",
+    "hook_located": true,
+    "mutant": "MUT-MEASURE"
+   },
+   {
+    "declared_gate": "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
+    "hook_located": true,
+    "mutant": "MUT-TOTALITY"
+   },
+   {
+    "declared_gate": "G-CLASS-WORDS-BOUND-TO-PREDICATES",
+    "hook_located": true,
+    "mutant": "MUT-CLASSWORD"
+   },
+   {
+    "declared_gate": "G-WALLS-SCAN-THE-PAPER",
+    "hook_located": true,
+    "mutant": "MUT-BELL-PLANT"
+   },
+   {
+    "declared_gate": "G-PAPER-NUMERAL-COVERAGE",
+    "hook_located": true,
+    "mutant": "MUT-PAPER-NUMERAL"
+   },
+   {
+    "declared_gate": "G-PAPER-TABLES-WITH-HEADERS",
+    "hook_located": true,
+    "mutant": "MUT-PAPER-TABLE-HEADER"
+   },
+   {
+    "declared_gate": "G-PAPER-CLAIM-POLARITY",
+    "hook_located": true,
+    "mutant": "MUT-POLARITY"
+   },
+   {
+    "declared_gate": "G-SENTENCE-REFERENT-BINDING",
+    "hook_located": true,
+    "mutant": "MUT-REFERENT"
+   },
+   {
+    "declared_gate": "G-SEAL-TOTALITY",
+    "hook_located": true,
+    "mutant": "MUT-SEAL-DROP"
+   },
+   {
+    "declared_gate": "G-ARTIFACT-INTEGRITY",
+    "hook_located": true,
+    "mutant": "MUT-INTEGRITY"
+   }
+  ]
+ },
+ "read_set": {
+  "note": "the read set is recorded at the actual I/O layer, so an abstention is provable rather than promised",
+  "paper_under_test": [
+   "v14/paper-38-epr.md"
+  ],
+  "sources": [
+   "v14/note-epr-pin.md",
+   "v14/note-sec-adjudication.md",
+   "v14/paper-20-coupling.md",
+   "v14/paper-33-aid.md",
+   "v14/sources/epr-1935-physrev-47-777.pdf",
+   "v5/relativistic-isp-v5-paper14-non-markovianity-and-bell-nonlocality.md"
+  ],
+  "subprocesses": 0,
+  "total_reads": 7,
+  "undeclared_reads": []
+ },
+ "readings": {
+  "declared": [
+   "READ-RECORD",
+   "READ-BORN-GD",
+   "READ-BORN-DG",
+   "READ-RECORD-MENU",
+   "READ-CURVATURE"
+  ],
+  "not_jointly_declarable_count": 3,
+  "not_jointly_declarable_pairs": [
+   "READ-BORN-GD|READ-RECORD-MENU",
+   "READ-BORN-GD|READ-CURVATURE",
+   "READ-CURVATURE|READ-RECORD-MENU"
+  ],
+  "note": "a reading is a declared coarse-graining of the record; READ-RECORD refines every one of them, which is what makes D-RECORD the certifier of section 9",
+  "refinement_matrix": {
+   "READ-BORN-DG|READ-BORN-DG": true,
+   "READ-BORN-DG|READ-BORN-GD": false,
+   "READ-BORN-DG|READ-CURVATURE": false,
+   "READ-BORN-DG|READ-RECORD": false,
+   "READ-BORN-DG|READ-RECORD-MENU": false,
+   "READ-BORN-GD|READ-BORN-DG": true,
+   "READ-BORN-GD|READ-BORN-GD": true,
+   "READ-BORN-GD|READ-CURVATURE": false,
+   "READ-BORN-GD|READ-RECORD": false,
+   "READ-BORN-GD|READ-RECORD-MENU": false,
+   "READ-CURVATURE|READ-BORN-DG": true,
+   "READ-CURVATURE|READ-BORN-GD": false,
+   "READ-CURVATURE|READ-CURVATURE": true,
+   "READ-CURVATURE|READ-RECORD": false,
+   "READ-CURVATURE|READ-RECORD-MENU": false,
+   "READ-RECORD-MENU|READ-BORN-DG": true,
+   "READ-RECORD-MENU|READ-BORN-GD": false,
+   "READ-RECORD-MENU|READ-CURVATURE": false,
+   "READ-RECORD-MENU|READ-RECORD": false,
+   "READ-RECORD-MENU|READ-RECORD-MENU": true,
+   "READ-RECORD|READ-BORN-DG": true,
+   "READ-RECORD|READ-BORN-GD": true,
+   "READ-RECORD|READ-CURVATURE": true,
+   "READ-RECORD|READ-RECORD": true,
+   "READ-RECORD|READ-RECORD-MENU": true
+  },
+  "rows": [
+   {
+    "cells": 36,
+    "largest_fibre": 1,
+    "reading": "READ-RECORD"
+   },
+   {
+    "cells": 4,
+    "largest_fibre": 12,
+    "reading": "READ-BORN-GD"
+   },
+   {
+    "cells": 1,
+    "largest_fibre": 36,
+    "reading": "READ-BORN-DG"
+   },
+   {
+    "cells": 23,
+    "largest_fibre": 4,
+    "reading": "READ-RECORD-MENU"
+   },
+   {
+    "cells": 3,
+    "largest_fibre": 13,
+    "reading": "READ-CURVATURE"
+   }
+  ]
+ },
+ "reductions": {
+  "A_independence_disclosed": "the reading's value at A does not depend on WHICH separated block A is, because the record field is measured site-constant at every committed history (section 4); the dependence that is measured here is on the READING, which is EPR's variable",
+  "arms": [
+   {
+    "distinct_assigned_descriptions": {
+     "4": 18
+    },
+    "largest": 4,
+    "localization": "LOC-PAIR",
+    "probes": 18,
+    "probes_with_more_than_one": 18,
+    "separation": "SEP-ACTOR-DISJOINT",
+    "smallest": 4
+   },
+   {
+    "distinct_assigned_descriptions": {
+     "3": 594,
+     "4": 8514,
+     "5": 96300
+    },
+    "largest": 5,
+    "localization": "LOC-WALK",
+    "probes": 105408,
+    "probes_with_more_than_one": 105408,
+    "separation": "SEP-LINK-DISJOINT",
+    "smallest": 3
+   },
+   {
+    "distinct_assigned_descriptions": {
+     "3": 2382,
+     "4": 34062,
+     "5": 385212
+    },
+    "largest": 5,
+    "localization": "LOC-WALK",
+    "probes": 421656,
+    "probes_with_more_than_one": 421656,
+    "separation": "SEP-ACTOR-DISJOINT",
+    "smallest": 3
+   }
+  ],
+  "assignment": "the set of values the block's quantities can still take given what the declared reading at A reports -- measure-free, so no measure is smuggled in",
+  "readings_declared_on_the_other_block": [
+   "READ-RECORD",
+   "READ-BORN-GD",
+   "READ-BORN-DG",
+   "READ-RECORD-MENU",
+   "READ-CURVATURE"
+  ],
+  "window": "COUNTING-ONLY over the declared corpus (E-24)"
+ },
+ "referent_binding": {
+  "count": 7,
+  "fractions": [
+   {
+    "fraction": "0 of 512",
+    "universes": [
+     "SUBSETS"
+    ]
+   },
+   {
+    "fraction": "72 of 72",
+    "universes": [
+     "SITE-PAIRS"
+    ]
+   },
+   {
+    "fraction": "0 of 512",
+    "universes": [
+     "SUBSETS"
+    ]
+   },
+   {
+    "fraction": "5,856 of 5,856",
+    "universes": [
+     "HISTORIES"
+    ]
+   },
+   {
+    "fraction": "105,408 of 105,408",
+    "universes": [
+     "BLOCK-PAIRS"
+    ]
+   },
+   {
+    "fraction": "5,856 of 5,856",
+    "universes": [
+     "HISTORIES"
+    ]
+   },
+   {
+    "fraction": "0 of 105,408",
+    "universes": [
+     "BLOCK-PAIRS"
+    ]
+   }
+  ],
+  "note": "every 'N of M' in the paper must have BOTH members carried by one declared referent universe",
+  "unbound": [],
+  "universes": {
+   "BLOCK-PAIRS": [
+    "0",
+    "105,408",
+    "105408",
+    "18",
+    "421,656",
+    "421656"
+   ],
+   "HISTORIES": [
+    "5,852",
+    "5,856",
+    "5852",
+    "5856"
+   ],
+   "RECORDS": [
+    "0",
+    "30",
+    "36",
+    "9"
+   ],
+   "SITE-PAIRS": [
+    "72"
+   ],
+   "STATES": [
+    "0",
+    "64"
+   ],
+   "SUBSETS": [
+    "0",
+    "19",
+    "490",
+    "512"
+   ]
+  }
+ },
+ "schema": {
+  "instrument": "v14/code/epr_exact.py",
+  "paper": "v14/paper-38-epr.md",
+  "pin": "v14/note-epr-pin.md",
+  "pin_sha256_12": "b1e4cf9a8b9f",
+  "receipt_keys_are_sealed_or_declared_unsealed": true,
+  "unit": "EPR"
+ },
+ "seal_manifest": [
+  {
+   "path": "schema",
+   "seal": "SEAL-SCHEMA",
+   "sealed_at_gate": "G-PROVENANCE-SHA-PINNED",
+   "sha256_12": "a1f5451ff210"
+  },
+  {
+   "path": "provenance",
+   "seal": "SEAL-PROVENANCE",
+   "sealed_at_gate": "G-PROVENANCE-SHA-PINNED",
+   "sha256_12": "362c23d6549d"
+  },
+  {
+   "path": "verbatim_anchors",
+   "seal": "SEAL-VERBATIM",
+   "sealed_at_gate": "G-VERBATIM-ANCHORS-IN-SOURCE",
+   "sha256_12": "78990cbbee1f"
+  },
+  {
+   "path": "pre_registered_outcomes",
+   "seal": "SEAL-OUTCOMES",
+   "sealed_at_gate": "G-OUTCOMES-PARSED-FROM-THE-PIN",
+   "sha256_12": "e273100fb22c"
+  },
+  {
+   "path": "windows",
+   "seal": "SEAL-WINDOWS",
+   "sealed_at_gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
+   "sha256_12": "c5dd500d2502"
+  },
+  {
+   "path": "arena",
+   "seal": "SEAL-ARENA",
+   "sealed_at_gate": "G-LINK-GRAPH-MEASURED",
+   "sha256_12": "2652e0696916"
+  },
+  {
+   "path": "carrier",
+   "seal": "SEAL-CARRIER",
+   "sealed_at_gate": "G-CELL-IS-A-CO-DIVISION-PAIR",
+   "sha256_12": "a8f4ec269a7d"
+  },
+  {
+   "path": "corpora",
+   "seal": "SEAL-CORPORA",
+   "sealed_at_gate": "G-CORPUS-AGREES-WITH-FAC",
+   "sha256_12": "1589d62ef93f"
+  },
+  {
+   "path": "blocks",
+   "seal": "SEAL-BLOCKS",
+   "sealed_at_gate": "G-BLOCKS-AGREE-WITH-FAC",
+   "sha256_12": "10430db089a8"
+  },
+  {
+   "path": "predicates",
+   "seal": "SEAL-PREDICATES",
+   "sealed_at_gate": "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
+   "sha256_12": "e1a2440a7f56"
+  },
+  {
+   "path": "separation",
+   "seal": "SEAL-SEPARATION",
+   "sealed_at_gate": "G-SEPARATION-PREMISE-CENSUS",
+   "sha256_12": "a0368172c838"
+  },
+  {
+   "path": "descriptions",
+   "seal": "SEAL-DESCRIPTIONS",
+   "sealed_at_gate": "G-SHADOW-CEILING",
+   "sha256_12": "718d95e59df0"
+  },
+  {
+   "path": "readings",
+   "seal": "SEAL-READINGS",
+   "sealed_at_gate": "G-READINGS-PARTITION-MEASURED",
+   "sha256_12": "fd61e91e912b"
+  },
+  {
+   "path": "certainty",
+   "seal": "SEAL-CERTAINTY",
+   "sealed_at_gate": "G-CERTAINTY-CENSUS-PER-ARM",
+   "sha256_12": "60c459fd7245"
+  },
+  {
+   "path": "reductions",
+   "seal": "SEAL-REDUCTIONS",
+   "sealed_at_gate": "G-E4-TWO-REDUCTIONS",
+   "sha256_12": "b25dc30b3b8a"
+  },
+  {
+   "path": "conjugacy",
+   "seal": "SEAL-CONJUGACY",
+   "sealed_at_gate": "G-CONJUGATE-PAIR-MEASURED",
+   "sha256_12": "14aedb6a51ab"
+  },
+  {
+   "path": "e5_audit",
+   "seal": "SEAL-E5",
+   "sealed_at_gate": "G-E5-RECORD-DOES-NOT-MOVE",
+   "sha256_12": "ebb2ffeb0558"
+  },
+  {
+   "path": "bell",
+   "seal": "SEAL-BELL",
+   "sealed_at_gate": "G-BELL-DESIDERATA-BOUND",
+   "sha256_12": "b8ba8e5a2585"
+  },
+  {
+   "path": "controls",
+   "seal": "SEAL-CONTROLS",
+   "sealed_at_gate": "G-EVERY-OUTCOME-WORD-EMITTABLE",
+   "sha256_12": "67a08625ae53"
+  },
+  {
+   "path": "measure_relativity",
+   "seal": "SEAL-MEASURE",
+   "sealed_at_gate": "G-PROBABILITY-EXACTLY-ONE",
+   "sha256_12": "c66f6b29ad85"
+  },
+  {
+   "path": "counts",
+   "seal": "SEAL-COUNTS",
+   "sealed_at_gate": "G-HEAD-DERIVED-TWICE",
+   "sha256_12": "aeab6f871962"
+  },
+  {
+   "path": "verdict",
+   "seal": "SEAL-VERDICT",
+   "sealed_at_gate": "G-HEAD-DERIVED-TWICE",
+   "sha256_12": "85bac5a668ed"
+  },
+  {
+   "path": "class_binding",
+   "seal": "SEAL-CLASSBIND",
+   "sealed_at_gate": "G-CLASS-WORDS-BOUND-TO-PREDICATES",
+   "sha256_12": "cc96b2f83105"
+  },
+  {
+   "path": "mutants",
+   "seal": "SEAL-MUTANTS",
+   "sealed_at_gate": "G-FALSIFIER-COVERAGE",
+   "sha256_12": "f4652a35a9d5"
+  },
+  {
+   "path": "coverage",
+   "seal": "SEAL-COVERAGE",
+   "sealed_at_gate": "G-FALSIFIER-COVERAGE",
+   "sha256_12": "400f43db1a45"
+  },
+  {
+   "path": "waiver_ledger",
+   "seal": "SEAL-WAIVERS",
+   "sealed_at_gate": "G-FALSIFIER-COVERAGE",
+   "sha256_12": "91ed2c831475"
+  },
+  {
+   "path": "reachability",
+   "seal": "SEAL-REACHABILITY",
+   "sealed_at_gate": "G-FALSIFIER-REACHABILITY",
+   "sha256_12": "2efb00bf3f93"
+  },
+  {
+   "path": "read_set",
+   "seal": "SEAL-READSET",
+   "sealed_at_gate": "G-READS-DECLARED",
+   "sha256_12": "ee94c68e08df"
+  },
+  {
+   "path": "paper_claims",
+   "seal": "SEAL-PAPER-CLAIMS",
+   "sealed_at_gate": "G-PAPER-CLAIMS",
+   "sha256_12": "4962de5e8032"
+  },
+  {
+   "path": "paper_tables",
+   "seal": "SEAL-PAPER-TABLES",
+   "sealed_at_gate": "G-PAPER-TABLES-WITH-HEADERS",
+   "sha256_12": "def834fa6e38"
+  },
+  {
+   "path": "paper_coverage",
+   "seal": "SEAL-PAPER-COVERAGE",
+   "sealed_at_gate": "G-PAPER-NUMERAL-COVERAGE",
+   "sha256_12": "b05d15ec497f"
+  },
+  {
+   "path": "polarity",
+   "seal": "SEAL-POLARITY",
+   "sealed_at_gate": "G-PAPER-CLAIM-POLARITY",
+   "sha256_12": "1a6692eb070f"
+  },
+  {
+   "path": "referent_binding",
+   "seal": "SEAL-REFERENT",
+   "sealed_at_gate": "G-SENTENCE-REFERENT-BINDING",
+   "sha256_12": "ddd5585e9928"
+  },
+  {
+   "path": "walls",
+   "seal": "SEAL-WALLS",
+   "sealed_at_gate": "G-WALLS-SCAN-THE-PAPER",
+   "sha256_12": "02091f38e37a"
+  },
+  {
+   "path": "mutant_sweep",
+   "seal": "SEAL-MUTANT-SWEEP",
+   "sealed_at_gate": "G-SWEEP-IS-EXECUTION-BOUND",
+   "sha256_12": "48666411278f"
+  },
+  {
+   "path": "gates",
+   "seal": "SEAL-GATES",
+   "sealed_at_gate": "G-CLOSING-BATTERY-RAN",
+   "sha256_12": "f9428e33e5b8"
+  },
+  {
+   "path": "closing_gates",
+   "seal": "SEAL-CLOSING",
+   "sealed_at_gate": "G-CLOSING-BATTERY-RAN",
+   "sha256_12": "f384259f1024"
+  },
+  {
+   "path": "totals",
+   "seal": "SEAL-TOTALS",
+   "sealed_at_gate": "G-CLOSING-BATTERY-RAN",
+   "sha256_12": "4e6da856f21d"
+  },
+  {
+   "path": "transcript_head",
+   "seal": "SEAL-TRANSCRIPT",
+   "sealed_at_gate": "G-TRANSCRIPT-SEALED-WHOLE",
+   "sha256_12": "0f5df7019dee"
+  }
+ ],
+ "separation": {
+  "dynamical_no_disturbance": {
+   "cell_probes": 54,
+   "confined_events": 24,
+   "disturbances": 0,
+   "event_shapes": 84,
+   "events_that_do_reach_a_block_quantity": 342
+  },
+  "far_region_sizes": {
+   "0": 493,
+   "1": 9,
+   "2": 9,
+   "9": 1
+  },
+  "link_disjoint_block_pairs": 105408,
+  "ordered_block_pairs": 421656,
+  "per_decomposition": {
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ANT": {
+    "PREMISE_LOC_PAIR": 0,
+    "PREMISE_LOC_WALK": 0,
+    "link_disjoint": 0,
+    "pairs": 6,
+    "quantity_bearing_LOC_PAIR": 0
+   },
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL": {
+    "PREMISE_LOC_PAIR": 0,
+    "PREMISE_LOC_WALK": 0,
+    "link_disjoint": 0,
+    "pairs": 6,
+    "quantity_bearing_LOC_PAIR": 6
+   },
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-DIA": {
+    "PREMISE_LOC_PAIR": 0,
+    "PREMISE_LOC_WALK": 0,
+    "link_disjoint": 0,
+    "pairs": 6,
+    "quantity_bearing_LOC_PAIR": 6
+   },
+   "AP-3-BLOCKS-3x3-PARALLEL-CLASS-ROW": {
+    "PREMISE_LOC_PAIR": 0,
+    "PREMISE_LOC_WALK": 0,
+    "link_disjoint": 0,
+    "pairs": 6,
+    "quantity_bearing_LOC_PAIR": 6
+   },
+   "AP-9-BLOCKS-9x1": {
+    "PREMISE_LOC_PAIR": 0,
+    "PREMISE_LOC_WALK": 105408,
+    "link_disjoint": 105408,
+    "pairs": 421632,
+    "quantity_bearing_LOC_PAIR": 0
+   }
+  },
+  "premise_instances_at_LOC_PAIR": 0,
+  "premise_instances_at_LOC_WALK": 105408,
+  "quantity_bearing_at_LOC_PAIR": 18,
+  "quantity_bearing_at_LOC_WALK": 421656,
+  "subset_lattice": 512,
+  "subsets_owning_a_record_quantity": 490,
+  "subsets_with_a_nonempty_far_region": 19,
+  "subsets_with_a_walk_quantity_and_a_nonempty_far_region": 18,
+  "subsets_with_both": 0,
+  "the_two_readings_of_the_clause": "KINEMATIC (SEC's ruling, the pin's instruction): the conditioning region shares no link with the block -- instantiable with a block quantity at no object of this arena.  DYNAMICAL: no event confined to the conditioning region can change a record entry the block owns -- which actor-disjointness alone already secures, measured over every event shape the arena admits.  Both are run; the head is taken at the kinematic reading, which is the stronger one and the one the pin declares",
+  "theorem": "a set with a nonempty far region lies inside one part of the link graph, and a part is an unlinked triple, so it owns no cell: quantity-bearing and separated are mutually exclusive at this arena",
+  "theorem_failures": 0,
+  "theorem_probes": 512,
+  "window": "COUNTING-ONLY over the declared corpus and the complete 512-subset lattice (E-24)"
+ },
+ "totals": {
+  "anchors": 14,
+  "falsifiers": 30,
+  "gates_after_the_snapshot": 4,
+  "gates_in_the_sealed_ledger": 36,
+  "seals_at_the_snapshot": 35,
+  "sources": 6,
+  "windows": 6
+ },
+ "transcript_head": {
+  "lines_at_the_seal": 179,
+  "note": "the ledger is snapshotted here; the gates that follow are declared in closing_gates and verified to be exactly those, and the whole transcript's own digest is compared with the staged bytes at G-ARTIFACT-INTEGRITY",
+  "sha256_12": "3b40db82a0a8"
+ },
+ "verbatim_anchors": {
+  "count": 14,
+  "floor_chars": 30,
+  "missing": [],
+  "note": "each anchor names the gate that consumes it; the quote side is matched, not merely the source side",
+  "rows": [
+   {
+    "anchor": "A-E1",
+    "chars": 85,
+    "consumed_by": "G-CERTAINTY-CENSUS-PER-ARM",
+    "found": true,
+    "source": "v14/note-epr-pin.md"
+   },
+   {
+    "anchor": "A-E2",
+    "chars": 237,
+    "consumed_by": "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
+    "found": true,
+    "source": "v14/note-epr-pin.md"
+   },
+   {
+    "anchor": "A-E3",
+    "chars": 234,
+    "consumed_by": "G-CONJUGATE-PAIR-MEASURED",
+    "found": true,
+    "source": "v14/note-epr-pin.md"
+   },
+   {
+    "anchor": "A-E4",
+    "chars": 107,
+    "consumed_by": "G-E4-TWO-REDUCTIONS",
+    "found": true,
+    "source": "v14/note-epr-pin.md"
+   },
+   {
+    "anchor": "A-E5",
+    "chars": 158,
+    "consumed_by": "G-E5-RECORD-DOES-NOT-MOVE",
+    "found": true,
+    "source": "v14/note-epr-pin.md"
+   },
+   {
+    "anchor": "A-E6",
+    "chars": 123,
+    "consumed_by": "G-BELL-DESIDERATA-BOUND",
+    "found": true,
+    "source": "v14/note-epr-pin.md"
+   },
+   {
+    "anchor": "A-SEAM",
+    "chars": 101,
+    "consumed_by": "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
+    "found": true,
+    "source": "v14/note-sec-adjudication.md"
+   },
+   {
+    "anchor": "A-READING-A",
+    "chars": 98,
+    "consumed_by": "G-SHADOW-CEILING",
+    "found": true,
+    "source": "v14/paper-20-coupling.md"
+   },
+   {
+    "anchor": "A-READING-B",
+    "chars": 39,
+    "consumed_by": "G-READINGS-PARTITION-MEASURED",
+    "found": true,
+    "source": "v14/paper-20-coupling.md"
+   },
+   {
+    "anchor": "A-MOD3",
+    "chars": 59,
+    "consumed_by": "G-SHADOW-CEILING",
+    "found": true,
+    "source": "v14/paper-20-coupling.md"
+   },
+   {
+    "anchor": "A-DGBLIND",
+    "chars": 74,
+    "consumed_by": "G-READINGS-PARTITION-MEASURED",
+    "found": true,
+    "source": "v14/paper-20-coupling.md"
+   },
+   {
+    "anchor": "A-BELL-E1",
+    "chars": 105,
+    "consumed_by": "G-BELL-DESIDERATA-BOUND",
+    "found": true,
+    "source": "v5/relativistic-isp-v5-paper14-non-markovianity-and-bell-nonlocality.md"
+   },
+   {
+    "anchor": "A-BELL-E2",
+    "chars": 106,
+    "consumed_by": "G-BELL-DESIDERATA-BOUND",
+    "found": true,
+    "source": "v5/relativistic-isp-v5-paper14-non-markovianity-and-bell-nonlocality.md"
+   },
+   {
+    "anchor": "A-AID",
+    "chars": 69,
+    "consumed_by": "G-BLOCKS-AGREE-WITH-FAC",
+    "found": true,
+    "source": "v14/paper-33-aid.md"
+   }
+  ]
+ },
+ "verdict": {
+  "candidate": "between delivery and adjudication every headline here is a candidate reading",
+  "head": "EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY",
+  "head_is_in_the_pre_registered_vocabulary": true,
+  "primary_arm": "LOC-PAIR x SEP-LINK-DISJOINT",
+  "second_word": "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE",
+  "segment_1": "EPR-SEPARATION<HISTORIES=5,856; BLOCK-PAIRS=421,656; LINK-DISJOINT=105,408; QUANTITY-BEARING-AT-THE-RECORD-LOCALIZATION=18; PREMISE-AT-THE-RECORD-LOCALIZATION=0; PREMISE-AT-THE-STATE-LOCALIZATION=105,408; SUBSET-LATTICE=512; SUBSETS-WITH-BOTH=0; THEOREM=THE-LINK-GRAPH-IS-COMPLETE-MULTIPARTITE-AND-A-PART-OWNS-NO-CELL>",
+  "segment_2": "EPR-CENSUS<LOC-PAIR-x-SEP-LINK-DISJOINT=EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY-AT-0-PAIRS-0-CERTIFIED-0-UNCARRIED; LOC-PAIR-x-SEP-ACTOR-DISJOINT=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-18-PAIRS-54-CERTIFIED-54-UNCARRIED; LOC-WALK-x-SEP-LINK-DISJOINT=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-105,408-PAIRS-316,224-CERTIFIED-316,224-UNCARRIED; LOC-WALK-x-SEP-ACTOR-DISJOINT=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-421,656-PAIRS-1,265,112-CERTIFIED-1,265,112-UNCARRIED>",
+  "segment_3": "EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY<PRIMARY-ARM=THE-RECORD-S-OWN-LOCALIZATION-AT-EPR-S-OWN-SEPARATION; SECOND-WORD=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-THE-STATE-LOCALIZATION-WITH-316,224-CERTIFIED-AND-316,224-UNCARRIED; E4-ASSIGNMENTS-AT-ONE-RECORD=5; E5-RECORD-MOVES=0-OF-105,408; SCOPE=ONE-ARENA,COMMITTED-HISTORIES,KINEMATIC-SEPARATION-AS-MEASURED;COUNTS-ARE-COUNTING-ONLY;NO-LOCAL-REALISM-CLAIM>",
+  "why_primary": "the record's own localization is the committed carrier typing gated in section 3: a record entry's referent is a co-division PAIR, so a block owns the quantity only when it owns both its actors"
+ },
+ "waiver_ledger": {
+  "count": 7,
+  "rows": [
+   {
+    "forcing": "a declaration gate: its content is the window list itself, which the seal manifest carries",
+    "gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS"
+   },
+   {
+    "forcing": "forced by MUT-SHADOW-INJECTIVE, which moves every reading's fibres and is checked to die upstream at G-SHADOW-CEILING",
+    "gate": "G-READINGS-PARTITION-MEASURED"
+   },
+   {
+    "forcing": "forced by MUT-BELL-PLANT at the paper leg, which is where the wall is owed",
+    "gate": "G-BELL-DESIDERATA-BOUND"
+   },
+   {
+    "forcing": "a source-scan gate: a float literal anywhere in this file fires it, which no mutant can simulate without editing the file",
+    "gate": "G-NO-FLOAT-IN-SOURCE"
+   },
+   {
+    "forcing": "forced by MUT-PAPER-NUMERAL and MUT-POLARITY, both of which alter the paper's bytes",
+    "gate": "G-PAPER-CLAIMS"
+   },
+   {
+    "forcing": "forced: the transcript's digest is compared with the promoted bytes at G-ARTIFACT-INTEGRITY, which MUT-INTEGRITY exercises",
+    "gate": "G-TRANSCRIPT-SEALED-AT-THE-SNAPSHOT"
+   },
+   {
+    "forcing": "a type-scan gate over the published object: any inexact leaf anywhere fires it, and no mutant can plant one without editing the file, which the source scan and the digests would show",
+    "gate": "G-RECEIPT-IS-EXACT"
+   }
+  ]
+ },
+ "walls": {
+  "banned": [
+   "local realism is restored",
+   "this evades Bell",
+   "Bell nonlocality is evaded",
+   "locality is restored by the record",
+   "hidden variables are vindicated",
+   "the corpus satisfies Bell local causality",
+   "a local hidden-variable completion exists"
+  ],
+  "count": 7,
+  "hits": [],
+  "note": "the Bell wall is scanned against this unit's own bytes -- the leg the wall is owed",
+  "scanned": "v14/paper-38-epr.md"
+ },
+ "windows": {
+  "count": 6,
+  "rows": [
+   {
+    "bound": "5856",
+    "statement": "the committed histories: paper-21's 72 I7-STRICT triples, their 5,184 ordered concatenations and the 600 driven-window schedules",
+    "window": "W-CORPUS"
+   },
+   {
+    "bound": "512",
+    "statement": "the COMPLETE lattice of subsets of the nine actors -- no cap, no sampling",
+    "window": "W-SUBSETS"
+   },
+   {
+    "bound": "6",
+    "statement": "the six law-compatible decompositions of the nine actors (FAC's geometry-leg survivors), restricted per history by the history leg",
+    "window": "W-BLOCKS"
+   },
+   {
+    "bound": "64",
+    "statement": "the declared state family for the shadow: every site vector over the alphabet {0, 1, w, w^2}",
+    "window": "W-STATES"
+   },
+   {
+    "bound": "5",
+    "statement": "the declared readings of a block: the record, the Born menu at both coin orders, the record menu, and paper-20's curvature",
+    "window": "W-READINGS"
+   },
+   {
+    "bound": "2",
+    "statement": "the declared measures for the probability leg: uniform and a skewed full-support measure",
+    "window": "W-MEASURES"
+   }
+  ]
+ }
+}

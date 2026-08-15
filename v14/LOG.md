@@ -10902,3 +10902,65 @@ sentences false-about-the-instrument, liftable repairs in
 SPC (#330/#333+#335/#334): combined ~15,000 checks, zero
 false physics numbers.  Both adjudications + repair
 launches are the next mechanical step.**
+
+## 2026-08-15 — EPR (PAPER-38) DELIVERED, COMMITTED AS-IS: THE CRITERION INAPPLICABLE AT THE RECORD'S OWN LOCALIZATION (A THEOREM); WHERE IT APPLIES, SHADOW-INCOMPLETE-RECORD-COMPLETE — EPR'S CONCLUSION AND EPR'S HOPE BOTH MEASURED TRUE (v14 LEDGER #337)
+
+**Files (committed as delivered, pre-battery):**
+v14/paper-38-epr.md (550e3c8fff93); v14/code/epr_exact.py
+(9ed817d9649d); v14/code/epr_output.txt (1b30c6761281);
+v14/code/epr_receipt.json (a51326de11a8).  Pin
+b1e4cf9a8b9f.  ALL HEADLINES CANDIDATE UNTIL ADJUDICATION.
+
+**HEAD:** EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-
+BLOCK-QUANTITY; second word EPR-SHADOW-INCOMPLETE-RECORD-
+COMPLETE at the state's localization; E4-ASSIGNMENTS-AT-
+ONE-RECORD=5; E5-RECORD-MOVES=0-OF-105,408; scope stamps +
+NO-LOCAL-REALISM-CLAIM.
+
+**THE SEPARATION CENSUS (measurement one):** EPR's premise
+is IMPOSSIBLE at the record's own (pair) localization, and
+the reason is a THEOREM — the link graph is complete
+multipartite with the UNDECLARED FOURTH PARALLEL CLASS as
+its parts (72/72), so any region owning a record quantity
+touches every part: 490 subsets own a quantity, 19 have a
+nonempty far region, 0 both (512/512 probes).  At
+paper-20's walk localization the premise EXISTS: 105,408
+link-disjoint quantity-bearing pairs.  The dynamical
+no-disturbance reading measured: events confined to
+actor-disjoint regions disturb a block's record 0 times;
+342 unconfined ones reach it (sighted probe).
+
+**THE COMPLETENESS AUDIT:** at the walk localization,
+316,224 certainty-quantities — **D-RECORD certifies and
+carries ALL; D-SHADOW carries ZERO of its own on every
+arm** (shadow ceiling measured: 36 records → at most 9
+residue classes; the primary state attains the sweep
+maximum, so the audit ran at the shadow's best case; the
+site-constancy ground disclosed, 5,856/5,856).  **E4:**
+every one of 105,408 probes carries MULTIPLE assigned
+shadows (5/4/3 at 96,300/8,514/594) — the ψ_k/φ_r
+phenomenon as a counting fact.  **E3:** horn (1) HOLDS for
+D-SHADOW; horn (2) FAILS for D-RECORD (both members of
+every not-jointly-declarable pair carried at 5,856/5,856;
+G·D ≠ D·G at 30 of 36 records).  **E5:** B's record moves
+0 of 105,408 under A's declared-reading changes; only the
+ASSIGNED description moves — the objection's premise
+dissolved at the record level.  Bell wall stamped (the
+joint assignment lives at v5 paper-14's outcome-dependence
+level).  **Reading: EPR's incompleteness verdict on the
+wave-function-analogue is CONFIRMED as a theorem here, and
+E6's hoped-for completing description EXISTS — it is the
+record.  At the record's own localization the deeper
+finding: the question cannot even be posed (the arena is
+too connected), with SEC's multi-sector route the named
+successor.**
+
+**Instrument:** 40 gates; 30 falsifiers 30/30 on target;
+14 verbatim anchors with consumers; 12 predicates
+AST-frozen (210 totality probes); head derived twice;
+1,080 conditional-probability probes; byte ×4 (two seeds,
+off-tree git-less ×2); independent recomputation of every
+headline; two battery-found defects fixed and disclosed;
+FAC/SEC candidate-under-repair stamps carried, FAC's
+consumed values re-derived 30/30 against both copies.
+**Orchestrator battery next; panel after green.**
