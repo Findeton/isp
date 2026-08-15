@@ -10817,3 +10817,26 @@ LAW-IN-N/NEEDS-3/BREAKS.  SEC-2: seam selection over the
 sources = the #301 objects via git-show (worktree under
 repair) + the #322 adjudication.  Constructions launch on
 commit.
+
+## 2026-08-15 — SPC K1 (OPERATOR) FROZEN: AWF; 1,443 CHECKS ZERO FALSE; A DEMONSTRATED GATING GAP AT THE YOUNG TABLES; THE PRICE THEOREM SURVIVES A STRICTLY STRONGER READING (v14 LEDGER #333)
+
+**Review:** v14/review-spc-operator.md (be0fcb3eb394, 672
+lines).  Grade AWF.  340 from-scratch recomputations (own
+Dixon, own Murnaghan–Nakayama, own SSYT, all 22 orders
+incl. above-cap from stencils), zero disagreements; 940
+table cells; 4 control arms rebuilt.  MAJORS: (M1) the §2
+order-route exception clause false for 12 of 22 rows
+(prose; replacement supplied).  (M2) **EVERY-TABLE-GATED-
+BY-TWO-ROUTES is not implemented for 7 of 18 tables (the
+Young subgroups, 87/220 species): a monkeypatched
+corrupted table exits 0 all-green while publishing 136+126
+orthogonality failures READ BY NO GATE**; no falsifier
+covers it; 3-line repair + mutant drafted.  Ten minors
+(incl. the 6-column header vs 9-column control rows; the
+hard-coded engine-agreement domain).  **POSITIVES: the
+one-species price theorem survives the STRICTLY STRONGER
+reading (any degree, scalar −1 — same unique species both
+readings); the [0,0] pinning FORCED pointwise (obs∘τ₁ =
+−obs at 640/640); a new Σm² = ordered-pair-orbits route
+added, 19/19.**  Caveat: the 55-mutant sweep unverified by
+this seat (K3's business).  POT K3 + SPC K3 remain.
