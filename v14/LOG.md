@@ -11078,3 +11078,29 @@ atom-word flip, the post-seal key, the forged transcript
 PASS — the one survivor correct-by-design (a genuinely
 backed integer; the compound route closed, 5,853 dies).
 **Orchestrator battery next; terminal on green.**
+
+## 2026-08-15 — FAC IS TERMINAL: TWENTY-NINE — THE DIVISION IS REAL AND FORCED, THE THREADS ARE DEPTH-RELATIVE, THE TWO QUESTIONS ARE ONE OBJECT; FAC×SEC REGISTERED (v14 LEDGER #341)
+
+**Orchestrator battery on the repaired object, ALL GREEN:**
+regeneration from deleted artifacts byte-identical vs
+committed; byte-stable ×2; seed-invariant; unknown flag
+exit 2; selftest anchors dying at their gates writing
+nothing; MUT-PARTITION dead at G-ARENA-SHAPE on target;
+artifacts untouched.  STATUS row appended in this commit;
+memory sealed next.
+
+**REGISTERED (user-raised this hour): FAC×SEC — IS
+SECTORHOOD FORCED?**  Run FAC's forced-factorization
+criterion on SEC's glued unions: if the law-compatible
+partition census RECOVERS THE SEAMS, the world remembers
+its merging history structurally (sectorhood forced,
+anti-chart); if a union admits seam-ignoring carvings,
+sector-talk is a chart above the link level.  Slots into
+the SEC-2 / SEC×SPC successor cluster; charters after
+those parents seal.  Context: NDEP removed the NUMBER from
+physics; EPR installed SEPARATION-STRUCTURE as the
+objective thing the number stood in for; FAC×SEC + SEC-2
+decide whether that structure is law-enforced.
+
+**Programme count: TWENTY-NINE terminals; zero false
+computed numbers surviving anywhere in v14.**
