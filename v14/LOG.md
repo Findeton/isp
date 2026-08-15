@@ -11104,3 +11104,35 @@ decide whether that structure is law-enforced.
 
 **Programme count: TWENTY-NINE terminals; zero false
 computed numbers surviving anywhere in v14.**
+
+## 2026-08-15 — NDEP K2 (EFFECTUS) FROZEN: AWF; 141 RECOMPUTATIONS ZERO MOVED; TEN MAJORS — "DOES NOT TRANSPORT" NOT LICENSED AGAINST AID'S ACTUAL BOUND; THE HEAD'S LAWS-NOT-NUMBERS CLAUSE FALSE UNDER ITS LITERAL READING (v14 LEDGER #342)
+
+**Review:** v14/review-ndep-effectus.md (eba071844159, 653
+lines).  Grade AWF.  Every load-bearing measurement
+reproduced from independent primitives (incl. the n=16
+attained floor 6 at all 24 covering tuples).  TEN MAJORS:
+(1) the 3-OF-5 aggregate blends statement-level and
+numeral-level tests undeclared; (2) "WHAT TRANSPORTS ON n
+ALONE IS THE LAWS AND NEVER THEIR NUMBERS" FALSE literally
+— q = √n pointwise, so 2q−1/q+3/q+1 are functions of n;
+only the fixed-n L-sweep escapes; (3) the 6-of-6
+denominator typed and excluding the offset (6 of 7 with
+it); (4) **the floor correction re-ruled: AID's ⌈log₂n⌉ is
+a BOUND, explicitly nine-scoped — "does not transport" NOT
+licensed; the licensed sentence: THE FORM WAS
+UNDISCRIMINATED AT n=9** (and the unit mislabels AID's
+bound key as "the attained floor" — a referent defect at
+the paper's own joint); (5) "the coin's modulus is free"
+CONTRADICTS paper-20's terminal Z₃-from-F₃ derivation
+(uncited; blindness ≠ freedom; the parent predicts m=2 at
+AG(2,2)); (6) the doubling-ladder sentence refuted by the
+unit's own L=2 row; (7) saturation-maximal-at-q=3 asserted
+unbacked; (8) "NO n=9 NUMBER RE-DERIVED" false (the five
+fidelity counts are); (9) the n=16 naming leg is ONE
+HISTORY with 1,240 of 2,064 positives from the vacuous
+empty prefix; (10) FAC's grain axis silently fixed.
+CREDITED: the paper does NOT claim the mod-3 fingerprint
+dissolved (§6 dissolves only the pin's dichotomy; the coin
+registered open).  FREE STRENGTHENING: the sharpened floor
+= 2(q−1) at q=2..7, the offset 1 at every q by
+subtraction.  K1/K3 still out.
