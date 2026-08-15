@@ -10617,3 +10617,37 @@ the perimeter-only mechanism's premise is one-coin-per-
 link; the non-uniform carrier registered as the first
 successor**).  **Battery + panel deferred to the post-reset
 resume (see #325).**
+
+## 2026-08-15 — OPERATIONAL RECORD: THE WEEKLY USAGE LIMIT TERMINATED THREE REPAIR WORKERS MID-FLIGHT; STATE SECURED; RESUME PLAN (v14 LEDGER #325)
+
+**The outage:** the account's weekly usage limit (resets
+2026-08-15 16:00 America/Bogota) terminated: (1) the FAC
+repair worker — Z-work substantially executed, died at "now
+I'll write the repaired paper"; (2) the SEC repair worker —
+died early, at the Z1 seam-confinement measurement; (3) the
+PER-R repair worker — died late, mid falsifier
+self-calibration ("deliv2.txt" staged).  Both CONSTRUCTION
+workers delivered COMPLETE before the wall: SPC committed
+#323, POT committed #324.
+
+**Worktree state (deliberately UNCOMMITTED):** partial
+repair edits sit in the tree — fac_exact.py +
+paper-35-fac.md (FAC); sec_exact.py (SEC); perr_exact.py +
+perr_output.txt + perr_receipt.json + paper-29-perr.md
+(PER-R).  HEAD remains the last verified state of each
+unit (FAC #311 delivered / SEC #301 delivered / PER-R #282
+delivered).  The partials are RESUMABLE STATE, not
+verified objects — no partial is to be committed without
+its full era battery green.
+
+**The resume plan (post-reset):** for each of the three,
+relaunch a CONTINUATION repair worker whose first duty is
+to diff the worktree against HEAD, reconcile the partial
+state against its order sheet (note-fac-adjudication.md
+6a97c67c4391 Z1–Z12 / note-sec-adjudication.md
+7a82ffe7168a Z1–Z11 / the PER-R order set at #294),
+complete the remaining Z's, and run the FULL battery — the
+battery-green requirement protects against half-applied
+state.  Then: POT + SPC orchestrator batteries → panels;
+the armed queue (SEC×SPC, NDEP, SEC-2, R4) unchanged.
+Ledger #325.
