@@ -12030,3 +12030,20 @@ off-tree; 43/43 mutants; every falsifier proved to move
 its target; 18+30 anchors all consumed; 17 reads = 17
 recorded.  **Orchestrator battery next; panel after
 green.**
+
+## 2026-08-16 — HOR BATTERY GREEN; ITS THREE-SEAT PANEL LAUNCHED (v14 LEDGER #375)
+
+Battery all green (byte-identical ×2 from deleted
+artifacts; seed-invariant; MUT-ARENA dead at
+G-ARENA-REBUILT with the corrupted census visible;
+artifacts untouched).  Panel launched: K1 (the c census,
+the split, the 18-law closure verdicts — especially
+merging-index-1-at-every-open-R and the EMPTY R4 family —
+rebuilt from scratch), K2 (NATIVE's licensure at
+10-of-18; the tick's declared status vs R5's seal;
+whether ARTIFACT is an advance or a re-labeling against
+ACT/POT's sealed L-scope — the SEC-2
+findings-not-errata precedent to rule), K3 (the first
+adversarial audit of full E-25…E-33 template conformance;
+the S-1 claim attacked by AST; the 43-sweep).  REC still
+constructing.
