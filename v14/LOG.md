@@ -12157,3 +12157,36 @@ the unit did not (the odd and mixed start-parity cone
 censuses) — every promoted quantity unchanged, only the
 declared-arena-relative asymmetry flips: THE UNIT PASSES
 A PROBE IT NEVER RAN.**  K3 out; REC seats out.
+
+## 2026-08-16 — REC K2 (EFFECTUS) FROZEN: ACCEPT-WITH-FIXES; THE HEAD LICENSED; THE ERASER "NOT ARENA-BLIND AS DECLARED, ARENA-BLIND AS MEASURED"; THE APHORISM INVERTED (v14 LEDGER #380)
+
+**Review:** v14/review-rec-effectus.md (b41c400c0a39, 652
+lines).  182 recomputations zero false; the head LICENSED
+(set-equality verified; the corpus-clause carried; no
+per-history reading available anywhere).  FIVE MAJORS:
+**(M3, the crux) the eraser is NOT arena-blind as
+declared** — the affine strip fixes k mod 3 = the
+direction index, and the residue recovers the three
+declared classes SET-EXACTLY; all 12 equivariance trials
+are affine, structurally blind to this channel (a random
+permutation leaks at 0 of 2,000).  **FOR the unit: the
+leak is proved UNUSED** — identity + 60 random coordinates
+reproduce every leg identically; 300 random relabellings 0
+failures; the residue invariant.  Ruling: NOT-ARENA-BLIND-
+AS-DECLARED, ARENA-BLIND-AS-MEASURED.  (M2) the
+comparator's teeth never exercised on live input (0 of
+3,205/261/27 reach k_agree_sets; the one real refusal —
+the 3+3+3 arm, certified at cast size exactly 9,
+disagreeing — is discarded by a size filter).  **(M1) THE
+APHORISM INVERTED: disjointness explains 839 of 5,856
+refusals (14.3%); the modal refusal (4,104) is SHORTNESS
+(TOKEN-IN-NO-ACTOR); the stronger true theorem available:
+max 18 distinct blocks per history vs all 27 load-bearing
+— covering all 5,856.**  (M4) S-3 confirmed:
+BLOCKED/OBSTRUCTED un-deliverable (raised gates write
+nothing).  (M5) MENU=3-OF-6-EXACT contradicts the paper's
+own PARTIAL; 10 of 22 head fields never round-tripped.
+**RULED CLEAN: the ONE-RULE (τ genuinely derived — the
+same clause yields 2/3/4/5 across arms); the REFUSED
+controls (stronger than claimed); the ANT asymmetry
+sentence already exactly right.**  K1/K3 out.
