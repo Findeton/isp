@@ -824,3 +824,36 @@ forcing 15/54/0 and the 36 packings WITHOUT SEARCH; the
 a=2 floor of 6 certifiable exactly (k=4,5 infeasible by
 weight) — the row where the sharpened floor beats the
 counting bound.**  K2/K3 out; adjudication after.
+
+## 2026-08-16 — ARITY K2 (EFFECTUS) FROZEN: ACCEPT-WITH-MAJOR-REPAIRS; ZERO PHYSICS WRONG IN 444; THE MOD-MECHANISM PROMOTED TO A THEOREM; A LEDGER-HEAD DISCREPANCY FLAGGED (v15 LEDGER #30)
+
+**Review:** v15/review-arity-effectus.md (7384cd5213f7,
+552 lines).  444 recomputations / 11 full deliveries;
+zero delivered physics wrong; the SEC-2 union rebuilt by
+a second hand; the sector geometry RECOVERED from the
+delivered counts alone; all #11 renames folded verbatim;
+extension scope structural 13/13.  SEVEN MAJORS: (M1 =
+K1-M1 convergent) the head numeral bound to the wrong
+noun (the a≠L qualifier); (M2) the walls fail 6 fresh
+paraphrases 0-caught — **the cure already in the file,
+applied to ONE wall of seven**; (M3) a scanner regex
+blind spot — numerals followed by a PERIOD are never
+scanned; the lead's own "0, 1, 2 and 4"→"and 8" ships
+green; (M4) the aggregate is RULE-RELATIVE — under the
+unit's own §9 closed form as a third uniform rule, one
+word moves (0→1 LAW-IN-A); (M5) W3 unwalled (post-
+delivery engraving, noted fairly); (M6) the parent's
+2(q−1) form false at 3 of 4 ARITIES (2,4,6,8 vs 6,4,4,4)
+— unreported, and gated at the one agreeing arity; (M7)
+the pre-registration sealed-never-consumed; 3 of 9
+segments outcome-less.  Ten minors incl. **a LOG-vs-
+artifact discrepancy for the adjudication: #22/#24 record
+ledger head 3ea48cfe71ef3cc9 but the artifacts publish
+7ff8a990f4b541c5 — the published key is taken TWO GATES
+EARLY (before G-SEAL-TOTALITY and G-CLOSE)**.  **THE
+BONUS: §7's mechanism is a THEOREM — under the budget
+reading modulus = nL/gcd(nL,n) = L AT EVERY ARENA; the
+first rung is the link count always; mod-a appears iff
+a = L — discharging that reading's W3 exposure and
+EXPLAINING the parent's R = L rule.**  K3 out;
+adjudication after.
