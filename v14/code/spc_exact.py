@@ -167,10 +167,18 @@ TENS_IN_WORDS = ("", "", "twenty", "thirty", "forty", "fifty", "sixty",
 
 
 def numword(k):
-    """a non-negative integer below one hundred, spelled.  Every spelled
+    """a non-negative integer below one million, spelled.  Every spelled
     numeral this paper delivers is RENDERED through this function from a
     measured value, so a spelled count cannot drift from the run that
     produced it any more than a digit one can (#267)."""
+    if k >= 1000:
+        rest = k % 1000
+        return numword(k // 1000) + " thousand" \
+            + ("" if not rest else " " + numword(rest))
+    if k >= 100:
+        rest = k % 100
+        return UNITS_IN_WORDS[k // 100] + " hundred" \
+            + ("" if not rest else " " + numword(rest))
     if k < len(UNITS_IN_WORDS):
         return UNITS_IN_WORDS[k]
     if k % 10 == 0:
@@ -182,6 +190,37 @@ NUMBER_WORDS = {}
 for _k in range(100):
     NUMBER_WORDS[numword(_k)] = _k
 del _k
+
+SCALE_WORDS = {"hundred": 100, "thousand": 1000}
+
+# the spelled-numeral grammar (#267, K3 m1): an ATOM is a number word below
+# one hundred; a compound is atom-hundred-atom, optionally under a thousand.
+# Two atoms side by side are NOT a compound, so a list of spelled counts is
+# read as its own several numbers and never glued into one.
+_ATOM_RE = "(?:" + "|".join(sorted(NUMBER_WORDS, key=len, reverse=True)) + ")"
+_HUNDREDS_RE = "(?:%s hundred(?: %s)?)" % (_ATOM_RE, _ATOM_RE)
+_THOUSANDS_RE = "(?:(?:%s|%s) thousand(?: (?:%s|%s))?)" \
+    % (_HUNDREDS_RE, _ATOM_RE, _HUNDREDS_RE, _ATOM_RE)
+SPELLED_RE = re.compile(r"\b(?:%s|%s|%s)\b"
+                        % (_THOUSANDS_RE, _HUNDREDS_RE, _ATOM_RE))
+SPELLED_ALPHABET = ("EVERY-ENGLISH-NUMBER-WORD-BELOW-ONE-HUNDRED-HYPHENATED-"
+                    "COMPOUNDS-INCLUDED-AND-EVERY-HUNDRED-AND-THOUSAND-"
+                    "COMPOUND-BELOW-ONE-MILLION-PARSED-AS-THE-NUMBER-IT-"
+                    "SPELLS-AND-NOT-AS-ITS-RESIDUE")
+
+
+def spelled_value(phrase):
+    """the integer a spelled phrase names, accumulated left to right."""
+    total, cur = 0, 0
+    for tok in phrase.split(" "):
+        if tok in NUMBER_WORDS:
+            cur += NUMBER_WORDS[tok]
+        elif tok == "hundred":
+            cur = (cur if cur else 1) * 100
+        elif tok == "thousand":
+            total += (cur if cur else 1) * 1000
+            cur = 0
+    return total + cur
 
 
 def poly_divmod_exact(a, b):
@@ -570,6 +609,22 @@ PATH_VALUES = [
     ("PV-ACT-PINNEDNAME", "S-ACT-RECEIPT", "falsifier/rows/2/observable",
      "OFF-DIAGONAL-QUARTIC-SIGN", "G-THE-ODD-TWIST-SPECIES",
      "its name at the parent's own receipt"),
+    ("PV-ACT-PIN-LO", "S-ACT-RECEIPT",
+     "falsifier/rows/2/range_over_the_reachable_set/0", "0",
+     "G-THE-PRICE-IS-INDEX-TWO-FORCED",
+     "the bottom of the value the parent pinned that observable to, which "
+     "this unit's derivation must reach and not merely gesture at"),
+    ("PV-ACT-PIN-HI", "S-ACT-RECEIPT",
+     "falsifier/rows/2/range_over_the_reachable_set/1", "0",
+     "G-THE-PRICE-IS-INDEX-TWO-FORCED", "and its top: the range is a point"),
+    ("PV-ACT-OBS-LO", "S-ACT-RECEIPT",
+     "falsifier/rows/2/range_of_the_observable_itself/0", "-2",
+     "G-THE-PRICE-IS-INDEX-TWO-FORCED",
+     "the bottom of the observable's own range, against which the pinning "
+     "is a proper narrowing"),
+    ("PV-ACT-OBS-HI", "S-ACT-RECEIPT",
+     "falsifier/rows/2/range_of_the_observable_itself/1", "2",
+     "G-THE-PRICE-IS-INDEX-TWO-FORCED", "and its top"),
     ("PV-AID-S9", "S-AID-RECEIPT", "stabilizer/s9_order", 362880,
      "G-GROUP-INVENTORY-ORDERS-RE-DERIVED",
      "the symmetric group on the nine actors, whose species this unit "
@@ -622,6 +677,26 @@ PATH_VALUES = [
     ("PV-OCC-COINS", "S-OCC-RECEIPT",
      "leaks/carrier_grain_symmetric_coins_leaking", 5, "G-OCC-SELECTED-SHAPE",
      "how many of the coin classes it leaks at"),
+    ("PV-OCC-VACUOUS", "S-OCC-RECEIPT",
+     "leaks/carrier_grain_antisymmetric_forbidden_configurations", 0,
+     "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+     "THE VACUITY: the antisymmetric shape has no forbidden configuration "
+     "at that grain to leak into, which is why its zero is a vacuous zero "
+     "and the parent published it as one"),
+    ("PV-OCC-WEDGE-EMPTY", "S-OCC-RECEIPT",
+     "leaks/wedge_theorem/rows/0/antisymmetric_forbidden_set_is_empty", True,
+     "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+     "the parent's own theorem row saying that emptiness holds at the "
+     "carrier grain and nowhere else"),
+    ("PV-OCC-ACTOR-SELECTS", "S-OCC-RECEIPT",
+     "asymmetry/exclusion_at_the_actor_grain_selects", 0,
+     "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+     "THE SCOPE: at the actor's grain the parent's exclusion selects at no "
+     "row at all"),
+    ("PV-OCC-ACTOR-COINCIDE", "S-OCC-RECEIPT",
+     "leaks/actor_grain_shape_sets_coincide_coins", 6,
+     "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+     "and the two shapes' leak sets coincide there at every coin class"),
 ]
 
 
@@ -732,6 +807,22 @@ VERBATIM = [
      "the antisymmetric shape leaks at 0, so a hard core there would select",
      "G-OCC-SELECTED-SHAPE",
      "the shape the parent's exclusion census selected at the pair grain"),
+    ("VB-OCC-VACUOUS", "S-OCC-PAPER",
+     "the wedge has no doubly occupied configuration to leak into at all "
+     "— its forbidden set is empty, which is why its 0 is a vacuous "
+     "zero and is published as one.",
+     "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+     "the parent's own sentence for the zero this unit's comparison rests "
+     "on"),
+    ("VB-OCC-ACTOR", "S-OCC-PAPER",
+     "At the actor's grain, both shapes leak, and neither is a law.",
+     "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+     "the parent's own measurement at the grain this unit's sharpest row "
+     "sits at"),
+    ("VB-OCC-DECLARATION", "S-OCC-PAPER",
+     "it is a declaration, made at a grain the committed dictionary names "
+     "and never measures.", "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+     "the parent's own verdict on the shape at this arena"),
     ("VB-OCC-CELL", "S-OCC-PAPER",
      "the committed instrument says in its own words what a cell is: the "
      "unordered co-division pair", "G-AG23-ARENA-REBUILT",
@@ -751,6 +842,17 @@ VERBATIM = [
 ]
 
 VERBATIM_FLOOR = 40
+
+# the ATTRIBUTION order: which pinned window each of the paper's blockquotes
+# must match, in the order the paper makes them.  A quote bound only to the
+# UNION of the windows is not bound to the parent it is introduced under;
+# this sequence is what binds it.
+PAPER_QUOTE_ORDER = (
+    "VB-PIN-CENSUS", "VB-PIN-CARRIER", "VB-PIN-HOMELESS", "VB-R5-CARRIER",
+    "VB-CRB-ARENA", "VB-ACT-PARTITION", "VB-ACT-INVARIANT", "VB-ACT-ODD",
+    "VB-ACT-PRICE", "VB-AID-YOUNG", "VB-AID-AXIS", "VB-PIN-SELECTION",
+    "VB-OCC-SELECT", "VB-OCC-VACUOUS", "VB-OCC-ACTOR", "VB-OCC-DECLARATION",
+)
 
 
 def wsnorm(s):
@@ -1779,6 +1881,52 @@ def tensor_decompose(ct, i, j):
     return m1, m2
 
 
+def small_generating_subset(perms, npoints):
+    """a generating subset of the PERMUTATION IMAGE, taken greedily: the
+    orbits of the whole image and the orbits of a generating subset are the
+    same partition, so the pair flood below runs over a handful of maps."""
+    ident = tuple(range(npoints))
+    full = set(perms)
+    chosen, have = [], {ident}
+    for p in sorted(full):
+        if p in have:
+            continue
+        chosen.append(p)
+        have = set(close_group(chosen, ident))
+        if full <= have:
+            break
+    return chosen
+
+
+def ordered_pair_orbits(gens, n):
+    """the number of orbits on ORDERED PAIRS, counted by flooding n squared
+    points.  For a permutation module this is the sum of the SQUARED
+    multiplicities, so it is a route on the whole multiplicity vector and
+    not only on its trivial component."""
+    par = list(range(n * n))
+
+    def findp(a):
+        while par[a] != a:
+            par[a] = par[par[a]]
+            a = par[a]
+        return a
+    for g in gens:
+        for x in range(n):
+            gx, xn = g[x] * n, x * n
+            for y in range(n):
+                a, b = findp(xn + y), findp(gx + g[y])
+                if a != b:
+                    par[a] = b
+    return len({findp(i) for i in range(n * n)})
+
+
+def species_key(ct, k):
+    """a species named by its own CHARACTER and by nothing else -- not by a
+    row index, which is engine-relative -- so the same species met on two
+    carriers of one group is counted once."""
+    return tuple(str(x) for x in ct["table"][k])
+
+
 def price_a_census_row(name, carrier, npoints, perms, gens, provenance,
                        G=None, supplied_table=None, group_name=None,
                        order=None, closed=None, distinguished=False):
@@ -1848,6 +1996,12 @@ def price_a_census_row(name, carrier, npoints, perms, gens, provenance,
     row["hosted"] = sum(1 for m in mult if m > 0)
     row["homeless"] = sum(1 for m in mult if m == 0)
     row["homeless_species"] = [k for k, m in enumerate(mult) if m == 0]
+    row["sum_of_the_squared_multiplicities"] = sum(m * m for m in mult)
+    row["orbits_on_ordered_pairs"] = ordered_pair_orbits(
+        small_generating_subset(perms.values(), npoints), npoints)
+    if mut("MUT-ORDERED-PAIRS") and name == "CELL-27-UNDER-CHART-18":
+        row["orbits_on_ordered_pairs"] = row["orbits_on_ordered_pairs"] + 1
+    row["_species_keys"] = [species_key(ct, k) for k in range(len(mult))]
     hosted = [k for k, m in enumerate(mult) if m > 0]
     rules, routefail = 0, 0
     exits = set()
@@ -2263,16 +2417,20 @@ def measure_the_acting_groups(S, pv):
     orb_ok = all(r["induced_classes_on_the_carrier"]
                  == r["orbits_of_the_group_the_carrier_sees"] for r in rows)
     LD.gate("G-THE-CARRIER-SEES-ONE-GROUP",
-            "THE SCOPE-CLOSING MEASUREMENT: at every one of the six declared "
-            "(grain, reading) rows the subgroup of coin maps a UNIFORM "
-            "configuration can be moved by is the same group -- of order "
-            "eight at the anchored reading and sixteen at the extension -- "
-            "it is closed, and the partition it induces on the carrier is "
-            "exactly the partition the whole acting group induces there, at "
-            "the parent's own two counts.  So the species census on this "
-            "carrier is COMPLETE at all six rows even though four of the six "
-            "acting groups stand above the table cap: the carrier cannot "
-            "tell them apart from the two groups whose tables are computed",
+            "THE SCOPE-CLOSING MEASUREMENT, AND WHAT IT CLOSES: at every one "
+            "of the six declared (grain, reading) rows the subgroup of coin "
+            "maps a UNIFORM configuration can be moved by is the same group "
+            "-- of order eight at the anchored reading and sixteen at the "
+            "extension -- it is closed, and the partition it induces on the "
+            "carrier is exactly the partition the whole acting group induces "
+            "there, at the parent's own two counts.  What that closes is the "
+            "carrier's ORBIT STRUCTURE and its HOSTED SET, since a module "
+            "factoring through an image of order eight or sixteen carries "
+            "exactly that image's constituents inflated.  What it does NOT "
+            "close is the DENOMINATOR: the four groups above the cap carry "
+            "no species count here, so how many species each has -- and "
+            "therefore how many a carrier would leave homeless -- is not "
+            "measured, and none of the four is a carrier row of this census",
             len(seen_a) == 1 and len(seen_e) == 1 and orb_ok
             and ind_a == {pv["PV-ACT-ORB136"]}
             and ind_e == {pv["PV-ACT-ORB80"]}
@@ -2287,7 +2445,16 @@ def measure_the_acting_groups(S, pv):
     S["acting_groups"] = {"rows": rows, "table_cap": TABLE_CAP,
                           "groups_above_the_cap":
                               sum(1 for r in rows
-                                  if r["acting_group_order"] > TABLE_CAP)}
+                                  if r["acting_group_order"] > TABLE_CAP),
+                          "what_the_closer_closes":
+                              "THE-ORBIT-STRUCTURE-AND-THE-HOSTED-SET-AT-"
+                              "THOSE-ROWS-BY-INFLATION-FROM-THE-IMAGE",
+                          "what_it_does_not_close":
+                              "THE-DENOMINATOR-THE-SPECIES-COUNT-OF-THE-"
+                              "GROUPS-ABOVE-THE-CAP-IS-UNMEASURED-HERE",
+                          "acting_groups_that_are_carrier_rows":
+                              sorted({r["the_group_the_carrier_sees"]
+                                      for r in rows})}
     SEAL.take("THE ACTING GROUPS", "acting_groups",
               "G-THE-CARRIER-SEES-ONE-GROUP", S["acting_groups"])
 
@@ -2359,14 +2526,20 @@ def cycle_type_of(p):
     return tuple(sorted(out, reverse=True))
 
 
+THE_SYMMETRIC_GROUPS_BOTH_ENGINES_RUN_ON = (2, 3, 4, 5)
+
+
 def measure_the_two_engines(S):
-    """the cross-engine gate: on the symmetric groups small enough for both,
-    the modular engine and the combinatorial one must return the SAME table
-    -- matched class by class through the cycle type and row by row as a
-    multiset, with no row order assumed."""
+    """the cross-engine gate: on the symmetric groups this unit puts through
+    both engines, the modular engine and the combinatorial one must return
+    the SAME table -- matched class by class through the cycle type and row
+    by row as a multiset, with no row order assumed.  The range is a DECLARED
+    list and not a size limit: the largest of them has fewer elements than
+    the largest group this same instrument enumerates for its Dixon
+    engine."""
     rows = []
     bad = []
-    for n in (2, 3, 4):
+    for n in THE_SYMMETRIC_GROUPS_BOTH_ENGINES_RUN_ON:
         G = sym_group_as_permutations(n)
         ct = dixon_table(G)
         F = ct["field"]
@@ -2391,12 +2564,15 @@ def measure_the_two_engines(S):
             "the two character engines are independent computations -- one "
             "diagonalises the class sums of an enumerated group over a "
             "prime field and lifts, the other never sees a group element and "
-            "recurses on rim hooks -- and on every symmetric group small "
-            "enough for both they are required to return the SAME table, "
-            "matched through the cycle type and compared as a multiset of "
-            "rows so that no ordering is assumed",
-            not bad, "%d cross-engine rows, %d disagreeing %s"
-            % (len(rows), len(bad), bad))
+            "recurses on rim hooks -- and on every symmetric group of this "
+            "unit's DECLARED cross-engine list they are required to return "
+            "the SAME table, matched through the cycle type and compared as "
+            "a multiset of rows so that no ordering is assumed.  The list is "
+            "a declaration, published as one, and not a size limit",
+            not bad, "%d cross-engine rows at the declared list %s, %d "
+            "disagreeing %s"
+            % (len(rows), list(THE_SYMMETRIC_GROUPS_BOTH_ENGINES_RUN_ON),
+               len(bad), bad))
     S["two_engines"] = rows
     SEAL.take("THE TWO ENGINES", "two_engines", "G-TWO-ENGINES-AGREE", rows)
 
@@ -2505,6 +2681,12 @@ def measure_the_identity_layer(S, pv):
     for nm, mu, shape, anchor in STABILIZER_SHAPES:
         Y = young_subgroup(mu)
         cty = ct_from_young(Y)
+        if mut("MUT-YOUNG-TABLE") and nm == "YOUNG-24":
+            F = cty["field"]
+            j = 1 if cty["identity_class"] != 1 else 2
+            tab = [list(r) for r in cty["table"]]
+            tab[1][j] = F.add(tab[1][j], F.one)
+            cty = dict(cty, table=tab)
         tgy = table_gates(cty)
         order_routes = (
             Y["order"] + (1 if mut("MUT-LATTICE-SHAPE") else 0),
@@ -2587,6 +2769,25 @@ def measure_the_identity_layer(S, pv):
                     == r["order_by_the_degree_sum"] for r in rows),
             "%d stabilizer rows, orders %s"
             % (len(rows), [r["order_by_construction"] for r in rows]))
+    ybad = [r["row"] for r in rows
+            if r["row_orthogonality_failures"]
+            or r["column_orthogonality_failures"]]
+    LD.gate("G-YOUNG-TABLE-ORTHOGONALITY",
+            "the seven stabilizer tables are gated by the same two routes as "
+            "every other table this unit publishes, and not merely measured "
+            "beside them: every pair of distinct species has inner product "
+            "zero and every species one with itself, and for every pair of "
+            "classes the column inner product vanishes off the diagonal and "
+            "returns the centralizer order on it.  A published orthogonality "
+            "count no gate reads is a number in a receipt and not a "
+            "measurement the delivery run depends on, so a corrupted "
+            "stabilizer table dies here",
+            not ybad,
+            "%d stabilizer tables gated on both routes, %d failing %s; the "
+            "row failures are %s and the column failures %s"
+            % (len(rows), len(ybad), ybad[:3],
+               [r["row_orthogonality_failures"] for r in rows],
+               [r["column_orthogonality_failures"] for r in rows]))
     LD.gate("G-IDENTITY-BRANCHING-TWO-ROUTES",
             "every branching multiplicity is computed TWICE by computations "
             "that live in different groups: once as an inner product inside "
@@ -2665,22 +2866,33 @@ def measure_the_crystallization_chain(S, pv, src):
                                                              key=len)),
                      "species_with_an_invariant_vector": inv, "of": len(P)})
     ok = all(r["stabilizer_order"] == r["the_parents_order"] for r in rows)
+    inv_seq = [r["species_with_an_invariant_vector"] for r in rows]
+    never_falls = all(inv_seq[i] <= inv_seq[i + 1]
+                      for i in range(len(inv_seq) - 1))
     LD.gate("G-CRYSTALLIZATION-CHAIN-IS-NESTED",
-            "the parent's measured crystallization profile is realised here "
+            "the parent's measured crystallization profile is rebuilt here "
             "by an EXHIBITED flag of partitions of the nine actors: each "
             "block of each step lies inside a block of the step before, so "
             "the stabilizers are genuinely nested and the species inventory "
             "along the chain is a restriction sequence rather than six "
             "unrelated subgroups; every order is compared with the parent's "
-            "own published profile entry by entry",
-            ok and nested and chain[0] == pv["PV-AID-CHAIN"]
+            "own published profile entry by entry.  Because the flag "
+            "refines, the count along it CANNOT FALL -- an invariant vector "
+            "for a larger stabilizer is an invariant vector for every "
+            "smaller one -- and that is measured here step by step rather "
+            "than asserted, so nothing is destroyed at the first prefix and "
+            "nothing is returned at the fifth",
+            ok and nested and never_falls and chain[0] == pv["PV-AID-CHAIN"]
             and rows[pv["PV-AID-TIME"] - 1]["stabilizer_order"] == 1,
             "orders %s against the parent's %s; nested: %s; the inventory "
-            "along the chain %s"
+            "along the chain %s, never falling: %s"
             % ([r["stabilizer_order"] for r in rows], chain, nested,
-               [r["species_with_an_invariant_vector"] for r in rows]))
+               inv_seq, never_falls))
     S["crystallization_chain"] = {
         "rows": rows, "the_flag_is_nested": nested,
+        "the_count_never_falls_along_the_flag": never_falls,
+        "the_flag_is": "ONE-EXHIBIT-OF-AN-UNBOUNDED-FAMILY-AND-THE-SIX-"
+                       "COUNTS-MOVE-WITH-IT",
         "the_parents_profile": chain,
         "the_crystallization_time": pv["PV-AID-TIME"],
         "species_at_the_first_prefix":
@@ -2721,7 +2933,7 @@ def build_the_carrier_rows(S, pv):
 
     coin_groups = [
         ("RESIDUAL-GAUGE-4", [tw[ctw[1]]],
-         "ACT/R5 -- the constant twists the torus itself realises: the "
+         "ACT/R5 -- the constant twists the torus itself carries: the "
          "arena's own gauge group on the carrier, anchored reading"),
         ("ACTING-LINK-8", [tw[1]],
          "ACT -- the acting group at the link grain, anchored reading"),
@@ -2863,6 +3075,25 @@ def build_the_carrier_rows(S, pv):
                 for g in ("RESIDUAL-GAUGE-4", "ACTING-LINK-8",
                           "RESIDUAL-GAUGE-8", "GAMMA-16")],
                sum(1 for a, b in orb.values() if a == b), len(orb)))
+    pairbad = [r["row"] for r in rows
+               if r["status"] == "MEASURED"
+               and r["sum_of_the_squared_multiplicities"]
+               != r["orbits_on_ordered_pairs"]]
+    LD.gate("G-THE-MULTIPLICITY-VECTOR-BY-ORDERED-PAIRS",
+            "the WHOLE multiplicity vector is pinned by a fourth route and "
+            "not only its trivial component: for a permutation module the "
+            "sum of the SQUARED multiplicities is the number of orbits on "
+            "ORDERED PAIRS of carrier points, and that count is taken here "
+            "by flooding the pair set with a generating subset of the "
+            "permutation image, evaluating no character at all.  The gate "
+            "binds each row separately (#87)",
+            not pairbad,
+            "%d rows carry the ordered-pair route, %d disagreeing %s; the "
+            "four coin rows return %s"
+            % (sum(1 for r in rows if r["status"] == "MEASURED"),
+               len(pairbad), pairbad[:3],
+               [r["orbits_on_ordered_pairs"] for r in rows
+                if r["carrier"] == "COIN-640"]))
     if mut("MUT-HOMELESS"):
         for r in rows:
             r["homeless"] = 0
@@ -2882,6 +3113,51 @@ def build_the_carrier_rows(S, pv):
                max(rows, key=lambda r: r["homeless"])["row"],
                max(rows, key=lambda r: r["homeless"])["hosted"],
                max(rows, key=lambda r: r["homeless"])["irreps"]))
+    all_by_group, hosted_by_group = {}, {}
+    for r in rows:
+        keys = r["_species_keys"]
+        all_by_group.setdefault(r["group"], set()).update(keys)
+        hosted_by_group.setdefault(r["group"], set()).update(
+            k for k, m in zip(keys, r["multiplicities"]) if m > 0)
+    slots = sum(r["irreps"] for r in rows)
+    filled = sum(r["hosted"] for r in rows)
+    distinct = sum(len(v) for v in all_by_group.values())
+    distinct_hosted = sum(len(v) for v in hosted_by_group.values())
+    if mut("MUT-SPECIES-UNIVERSES"):
+        distinct = slots
+    repeated = [g for g in all_by_group
+                if sum(1 for r in rows if r["group"] == g) > 1]
+    nrows = {g: sum(1 for r in rows if r["group"] == g) for g in all_by_group}
+    irr = {g: [r["irreps"] for r in rows if r["group"] == g]
+           for g in all_by_group}
+    by_group_ok = all(len(set(v)) == 1 and len(all_by_group[g]) == v[0]
+                      for g, v in irr.items())
+    slots_by_group = sum(nrows[g] * irr[g][0] for g in all_by_group)
+    dup_by_group = sum((nrows[g] - 1) * irr[g][0] for g in all_by_group)
+    LD.gate("G-THE-SPECIES-UNIVERSES-ARE-DISTINGUISHED",
+            "the two universes this census counts in are separated and both "
+            "are measured, because a hosted count read against the wrong one "
+            "is a false sentence even when every numeral in it is true: a "
+            "ROW SLOT is a (species, carrier-row) pairing and the rows offer "
+            "as many slots as the sum of their own irrep counts, while a "
+            "DISTINCT SPECIES is a character of one group counted once "
+            "however many carriers that group is censused on.  The gate "
+            "requires the slot total to exceed the distinct total by exactly "
+            "the duplication the repeated groups create, and requires the "
+            "distinct hosted count -- taken as a union of characters and not "
+            "as a sum of row counts -- never to exceed the distinct total",
+            by_group_ok and slots == slots_by_group
+            and slots - distinct == dup_by_group
+            and distinct < slots and distinct_hosted <= distinct
+            and filled <= slots and len(repeated) > 0
+            and all(len(hosted_by_group[g]) <= len(all_by_group[g])
+                    for g in all_by_group),
+            "%d row slots over %d rows at %d distinct groups; %d distinct "
+            "species behind them, %d slots duplicating a species already "
+            "counted; %d slots filled and %d distinct species hosted "
+            "somewhere; %d groups censused on more than one carrier"
+            % (slots, len(rows), len(all_by_group), distinct,
+               slots - distinct, filled, distinct_hosted, len(repeated)))
     S["_rows"] = rows
     S["carrier_census"] = {
         "rows": [{k: v for k, v in r.items()
@@ -2893,8 +3169,27 @@ def build_the_carrier_rows(S, pv):
         "species_available": sum(r["irreps"] for r in rows),
         "rows_with_a_homeless_species": len(homeless),
         "measure": "COUNTING-ONLY"}
+    S["species_universes"] = {
+        "the_slot_universe": "A-SLOT-IS-ONE-SPECIES-AT-ONE-GROUP-CARRIER-ROW",
+        "row_slots": slots, "slots_filled": filled,
+        "rows": len(rows), "distinct_groups_with_a_carrier_row":
+            len(all_by_group),
+        "groups_censused_on_more_than_one_carrier": len(repeated),
+        "distinct_species_behind_the_slots": distinct,
+        "slots_that_duplicate_a_species_already_counted": slots - distinct,
+        "distinct_species_hosted_somewhere": distinct_hosted,
+        "the_distinct_route": "THE-UNION-OF-THE-CHARACTERS-THEMSELVES-GROUP-"
+                              "BY-GROUP-NOT-THE-SUM-OF-THE-ROW-COUNTS",
+        "per_group": [{"group": g, "irreps": len(all_by_group[g]),
+                       "rows": sum(1 for r in rows if r["group"] == g),
+                       "distinct_species_hosted": len(hosted_by_group[g])}
+                      for g in sorted(all_by_group)],
+        "measure": "COUNTING-ONLY"}
     SEAL.take("THE CARRIER CENSUS", "carrier_census",
               "G-CARRIER-HOMELESS-CENSUS", S["carrier_census"])
+    SEAL.take("THE SPECIES UNIVERSES", "species_universes",
+              "G-THE-SPECIES-UNIVERSES-ARE-DISTINGUISHED",
+              S["species_universes"])
     return rows
 
 
@@ -2991,7 +3286,7 @@ def measure_the_odd_twist_species(S, pv):
             "the parent's price and the parent's one pinned observable are "
             "resolved into a single species, and the resolution is measured "
             "three ways.  There is exactly ONE species on which the odd "
-            "twist acts by minus one while the twists the torus realises act "
+            "twist acts by minus one while the twists the torus itself carries act "
             "trivially; its multiplicity in the carrier equals the drop in "
             "the trivial multiplicity between the arena's own gauge group "
             "and the acting group -- which is the parent's own count of "
@@ -3030,11 +3325,244 @@ def measure_the_odd_twist_species(S, pv):
         "points_where_the_observable_does_not_vanish":
             sum(1 for v in obs if v != 0),
         "its_non_vanishing_isotypic_components": len(nonzero_components),
+        "the_non_vanishing_isotypic_components_are": nonzero_components,
+        "the_reading_they_are_measured_at": "ANCHORED",
         "orbits_of_the_acting_group": len(orb),
         "orbits_where_the_observable_sums_to_zero": orbit_sums_zero,
         "measure": "COUNTING-ONLY"}
     SEAL.take("THE ODD-TWIST SPECIES", "odd_twist_species",
               "G-THE-ODD-TWIST-SPECIES", S["odd_twist_species"])
+
+
+def index_two_probe(lam):
+    """one synthetic probe of the index-two identity: a cyclic group
+    generated by an element of even order acting on a disjoint union of
+    cycles, with the three quantities computed by three separate routes."""
+    n = sum(lam)
+    g, base = [0] * n, 0
+    for L in lam:
+        for i in range(L):
+            g[base + i] = base + (i + 1) % L
+        base += L
+    g = tuple(g)
+    order, p = 1, g
+    ident = tuple(range(n))
+    while p != ident:
+        p = perm_compose(g, p)
+        order += 1
+    g2 = perm_compose(g, g)
+    big = union_find_orbits([g], n)
+    small = union_find_orbits([g2], n)
+    parent_of = {}
+    par = list(range(n))
+
+    def findq(a):
+        while par[a] != a:
+            par[a] = par[par[a]]
+            a = par[a]
+        return a
+    for x in range(n):
+        a, b = findq(x), findq(g2[x])
+        if a != b:
+            par[a] = b
+    for x in range(n):
+        parent_of.setdefault(findq(x), []).append(x)
+    gpar = list(range(n))
+
+    def findg(a):
+        while gpar[a] != a:
+            gpar[a] = gpar[gpar[a]]
+            a = gpar[a]
+        return a
+    for x in range(n):
+        a, b = findg(x), findg(g[x])
+        if a != b:
+            gpar[a] = b
+    inside = {}
+    for root, pts in parent_of.items():
+        inside.setdefault(findg(pts[0]), 0)
+        inside[findg(pts[0])] += 1
+    merged = sum(1 for v in inside.values() if v == 2)
+    acc, p = 0, ident
+    for j in range(order):
+        acc += sum(1 for x in range(n) if p[x] == x) * (1 if j % 2 == 0
+                                                        else -1)
+        p = perm_compose(g, p)
+    eps = acc // order
+    return {"cycle_type": list(lam), "points": n, "order_of_the_group": order,
+            "orbits_of_the_group": big,
+            "orbits_of_the_index_two_subgroup": small,
+            "the_drop": small - big, "merged_orbit_pairs": merged,
+            "the_multiplicity_of_the_quotient_character": eps,
+            "the_three_routes_agree": (small - big == merged == eps
+                                       and acc % order == 0)}
+
+
+def the_index_two_probes(want):
+    """THE MECHANISM, ISOLATED.  For ANY index-two pair acting on ANY finite
+    set three quantities coincide: the drop in the orbit count, the number of
+    merged orbit pairs, and the multiplicity of the unique character trivial
+    on the subgroup.  It is demonstrated here on synthetic sets sharing
+    nothing with this arena, so the reader can see that the price being ONE
+    label is forced and that what this unit measures is WHICH label."""
+    out = []
+    for n in range(2, 40):
+        for lam in partitions(n):
+            L = 1
+            for x in lam:
+                L = ilcm(L, x)
+            if L % 2:
+                continue
+            out.append(index_two_probe(lam))
+            if len(out) == want:
+                return out
+    return out
+
+
+INDEX_TWO_PROBES = 300
+
+
+def measure_the_price_is_index_two(S, pv):
+    """THE PRICE, GRADED.  That the discount is ONE label is a theorem of
+    index two; WHICH label it is, that the parent's observable lives in that
+    one label and nowhere else, and that its expectation is exactly the
+    parent's zero, are the measurements."""
+    coins, tw, sw, ident = S["_coins"], S["_tw"], S["_sw"], S["_ident"]
+    ctw = realisable_constant_twists()
+    rows = {r["row"]: r for r in S["_rows"]}
+    pairs = [("COIN-640-UNDER-ACTING-LINK-8", [tw[ctw[1]]], [tw[1]], False),
+             ("COIN-640-UNDER-GAMMA-16", [tw[ctw[1]], sw], [tw[1], sw], True)]
+    contain = []
+    for rowname, sub, big, has_swap in pairs:
+        H = set(close_group(sub, ident))
+        G = set(close_group(big, ident))
+        contain.append({"row": rowname, "the_arena_gauge_group": len(H),
+                        "the_acting_group": len(G),
+                        "the_gauge_group_sits_inside": H <= G,
+                        "the_index": len(G) // len(H) if H <= G else 0})
+    strong = []
+    for rowname, _sub, _big, has_swap in pairs:
+        ct = rows[rowname]["_ct"]
+        F, w = ct["field"], ct["where"]
+        weak, hard = [], []
+        for k, row in enumerate(ct["table"]):
+            deg = cyc_int(F, row[0])
+            odd_is_minus_one = row[w[tw[1]]] == F.scal(F.one, -1)
+            torus_is_one = row[w[tw[ctw[1]]]] == F.one
+            swap_is_one = (not has_swap) or row[w[sw]] == F.one
+            if deg == 1 and odd_is_minus_one and torus_is_one and swap_is_one:
+                weak.append(k)
+            scalar_minus = row[w[tw[1]]] == F.scal(F.one, -deg)
+            scalar_torus = row[w[tw[ctw[1]]]] == F.scal(F.one, deg)
+            scalar_swap = (not has_swap) or row[w[sw]] == F.scal(F.one, deg)
+            if scalar_minus and scalar_torus and scalar_swap:
+                hard.append(k)
+        if mut("MUT-INDEX-TWO") and rowname == "COIN-640-UNDER-GAMMA-16":
+            hard = hard + [0]
+        strong.append({"row": rowname, "by_the_degree_one_filter": weak,
+                       "by_the_scalar_filter_at_any_degree": hard,
+                       "the_two_filters_agree": weak == hard,
+                       "species_the_scalar_filter_returns": len(hard)})
+    obs = [Fraction(quartic_sign(m[1]) + quartic_sign(m[2])) for m in coins]
+    t1, t2 = tw[1], tw[ctw[1]]
+    reversed_pointwise = sum(1 for x in range(len(coins))
+                             if obs[t1[x]] != -obs[x])
+    even_invariant = sum(1 for x in range(len(coins))
+                         if obs[t2[x]] != obs[x])
+    swap_invariant = sum(1 for x in range(len(coins)) if obs[sw[x]] != obs[x])
+    els = close_group([t1], ident)
+    par = list(range(len(coins)))
+
+    def findo(a):
+        while par[a] != a:
+            par[a] = par[par[a]]
+            a = par[a]
+        return a
+    for g in els:
+        for x in range(len(coins)):
+            a, b = findo(x), findo(g[x])
+            if a != b:
+                par[a] = b
+    orb = {}
+    for x in range(len(coins)):
+        orb.setdefault(findo(x), []).append(x)
+    extremes = sorted({Fraction(sum(obs[x] for x in o), len(o))
+                       for o in orb.values()})
+    probes = the_index_two_probes(INDEX_TWO_PROBES)
+    probes_ok = sum(1 for p in probes if p["the_three_routes_agree"])
+    lo, hi = min(extremes), max(extremes)
+    parent_lo = Fraction(pv["PV-ACT-PIN-LO"])
+    parent_hi = Fraction(pv["PV-ACT-PIN-HI"])
+    obs_lo, obs_hi = min(obs), max(obs)
+    LD.gate("G-THE-PRICE-IS-INDEX-TWO-FORCED",
+            "the price sentence is GRADED, because a headline that spends "
+            "its emphasis on a theorem is not a measurement.  That the "
+            "discount is exactly ONE label is forced: the arena's own gauge "
+            "group is measured to sit inside the acting group with INDEX "
+            "TWO at both readings, and for an index-two pair acting on any "
+            "finite set the drop in the orbit count, the number of merged "
+            "orbit pairs and the multiplicity of the unique character "
+            "trivial on the subgroup coincide -- demonstrated here on "
+            "synthetic sets that share nothing with this arena.  What is "
+            "MEASURED is which character that is, that it is the same one "
+            "under a strictly stronger reading -- a species acting by the "
+            "scalar minus one AT ANY DEGREE, not only at degree one -- that "
+            "the parent's observable is reversed by the odd twist POINTWISE "
+            "and is invariant under the even twist and the swap, and that "
+            "its expectation at every extreme point of the invariant simplex "
+            "is exactly the parent's own pinned value",
+            all(c["the_gauge_group_sits_inside"] and c["the_index"] == 2
+                for c in contain)
+            and probes_ok == len(probes) == INDEX_TWO_PROBES
+            and all(s["the_two_filters_agree"]
+                    and s["species_the_scalar_filter_returns"] == 1
+                    for s in strong)
+            and reversed_pointwise == 0 and even_invariant == 0
+            and swap_invariant == 0
+            and lo == parent_lo and hi == parent_hi
+            and str(obs_lo) == pv["PV-ACT-OBS-LO"]
+            and str(obs_hi) == pv["PV-ACT-OBS-HI"],
+            "the index is %s at the two readings; %d of %d synthetic probes "
+            "agree on all three routes; the scalar filter returns %s and the "
+            "degree-one filter %s; the observable is reversed pointwise by "
+            "the odd twist with %d exceptions and invariant under the even "
+            "twist and the swap with %d and %d; its expectation over the %d "
+            "extreme invariant measures ranges over %s against the parent's "
+            "[%s, %s], and its own range is [%s, %s]"
+            % ([c["the_index"] for c in contain], probes_ok, len(probes),
+               [s["by_the_scalar_filter_at_any_degree"] for s in strong],
+               [s["by_the_degree_one_filter"] for s in strong],
+               reversed_pointwise, even_invariant, swap_invariant,
+               len(orb), [str(x) for x in extremes], parent_lo, parent_hi,
+               obs_lo, obs_hi))
+    S["the_price_is_index_two"] = {
+        "containments": contain,
+        "the_index_at_both_readings": sorted({c["the_index"]
+                                              for c in contain}),
+        "the_stronger_reading": strong,
+        "synthetic_probes": len(probes),
+        "synthetic_probes_where_the_three_routes_agree": probes_ok,
+        "the_probe_family": "CYCLIC-GROUPS-OF-EVEN-ORDER-ACTING-ON-A-"
+                            "DISJOINT-UNION-OF-CYCLES-ENUMERATED-BY-CYCLE-"
+                            "TYPE",
+        "probes": probes[:6],
+        "the_observable_is_reversed_by_the_odd_twist_pointwise":
+            reversed_pointwise == 0,
+        "coins_where_the_odd_twist_does_not_reverse_it": reversed_pointwise,
+        "coins_where_the_even_twist_moves_it": even_invariant,
+        "coins_where_the_swap_moves_it": swap_invariant,
+        "extreme_invariant_measures": len(orb),
+        "the_expectation_at_every_extreme_invariant_measure":
+            [str(x) for x in extremes],
+        "the_range_over_the_reachable_set": [str(lo), str(hi)],
+        "the_parents_range_over_the_reachable_set":
+            [pv["PV-ACT-PIN-LO"], pv["PV-ACT-PIN-HI"]],
+        "the_range_of_the_observable_itself": [str(obs_lo), str(obs_hi)],
+        "the_parents_range_of_the_observable_itself":
+            [pv["PV-ACT-OBS-LO"], pv["PV-ACT-OBS-HI"]],
+        "measure": "COUNTING-ONLY"}
+    SEAL.take("THE PRICE IS INDEX TWO", "the_price_is_index_two",
+              "G-THE-PRICE-IS-INDEX-TWO-FORCED", S["the_price_is_index_two"])
 
 
 def measure_the_statistics_tie_in(S, pv):
@@ -3065,6 +3593,15 @@ def measure_the_statistics_tie_in(S, pv):
                 r["compatible_with_the_selected_shape"]} for r in rows]
     proper = [p for p in per if p["in_neither_shape"] or p["symmetric_only"]
               or p["antisymmetric_only"]]
+    on_grain = [r for r in rows
+                if r["carrier_points"] == pv["PV-OCC-CELLS"]]
+    on = {k: sum(r[k] for r in on_grain)
+          for k in ("irreps", "in_both_shapes", "symmetric_only",
+                    "antisymmetric_only", "in_neither_shape")}
+    if mut("MUT-ON-GRAIN-SPLIT"):
+        on["symmetric_only"] = on["symmetric_only"] + 1
+    on_names = [r["row"] for r in on_grain]
+    off_split = [p["row"] for p in proper if p["row"] not in on_names]
     LD.gate("G-OCC-SELECTED-SHAPE",
             "which shape the occupancy terminal's exclusion census selected "
             "at the pair grain is DERIVED here from that terminal's own two "
@@ -3093,12 +3630,73 @@ def measure_the_statistics_tie_in(S, pv):
             % (tot["in_both_shapes"], tot["symmetric_only"],
                tot["antisymmetric_only"], tot["in_neither_shape"],
                sum(r["irreps"] for r in rows), len(proper), len(rows)))
+    LD.gate("G-STATISTICS-AT-THE-PARENTS-GRAIN",
+            "the split is RE-RUN AT THE PARENT'S OWN SELECTION GRAIN and "
+            "published as the on-grain result, because the parent's thesis "
+            "is that exclusion selects only at the carrier's own grain and "
+            "it measured that nothing is selected at the actor's.  The rows "
+            "at that grain are found here by the parent's own published cell "
+            "count rather than named: at those rows the two squares carry "
+            "the SAME species and the split is EMPTY -- no species is "
+            "symmetric-only, none antisymmetric-only, none in neither -- so "
+            "the selection costs no label where the parent selected.  Every "
+            "row that does split is required to lie OFF that grain, and the "
+            "parent's own zero is carried as what the parent published it to "
+            "be: a vacuous zero over an empty forbidden set",
+            len(on_grain) > 0
+            and on["symmetric_only"] == 0 and on["antisymmetric_only"] == 0
+            and on["in_neither_shape"] == 0
+            and on["in_both_shapes"] == on["irreps"]
+            and len(off_split) == len(proper)
+            and pv["PV-OCC-VACUOUS"] == 0
+            and pv["PV-OCC-WEDGE-EMPTY"] is True
+            and pv["PV-OCC-ACTOR-SELECTS"] == 0,
+            "%d rows sit at the parent's own selection grain (%s) carrying "
+            "%d species: %d in both shapes, %d symmetric only, %d "
+            "antisymmetric only, %d in neither; %d rows split properly and "
+            "all %d of them lie off that grain %s; the parent's "
+            "antisymmetric forbidden set is empty (%s) and its exclusion "
+            "selects at %d rows of the actor grain"
+            % (len(on_grain), on_names, on["irreps"], on["in_both_shapes"],
+               on["symmetric_only"], on["antisymmetric_only"],
+               on["in_neither_shape"], len(proper), len(off_split),
+               off_split[:4], pv["PV-OCC-WEDGE-EMPTY"],
+               pv["PV-OCC-ACTOR-SELECTS"]))
     S["statistics"] = {
         "the_selected_shape": selected,
         "the_parents_antisymmetric_leak_cells": anti,
         "the_parents_symmetric_leak_cells": sym,
         "rows": per, "aggregate": tot,
         "rows_that_split_properly": len(proper),
+        "measure_of_the_aggregate":
+            "" if mut("MUT-E24-STAMP") else "COUNTING-ONLY",
+        "at_the_parents_own_selection_grain": {
+            "the_grain": "THE-PARENTS-OWN-CARRIER-GRAIN-ITS-CO-DIVISION-"
+                         "CELLS",
+            "how_the_rows_are_found": "BY-THE-PARENTS-OWN-PUBLISHED-CELL-"
+                                      "COUNT-AND-NOT-BY-NAME",
+            "rows": on_names, "rows_measured": len(on_grain),
+            "species": on["irreps"],
+            "in_both_shapes": on["in_both_shapes"],
+            "symmetric_only": on["symmetric_only"],
+            "antisymmetric_only": on["antisymmetric_only"],
+            "in_neither_shape": on["in_neither_shape"],
+            "the_split_is_empty": (on["symmetric_only"]
+                                   + on["antisymmetric_only"]
+                                   + on["in_neither_shape"]) == 0,
+            "the_parents_antisymmetric_forbidden_configurations":
+                pv["PV-OCC-VACUOUS"],
+            "the_parents_forbidden_set_is_empty": pv["PV-OCC-WEDGE-EMPTY"],
+            "the_parents_zero_is": "A-VACUOUS-ZERO-OVER-AN-EMPTY-FORBIDDEN-"
+                                   "SET-AS-THE-PARENT-PUBLISHED-IT",
+            "the_parents_exclusion_at_the_actor_grain_selects":
+                pv["PV-OCC-ACTOR-SELECTS"],
+            "the_parents_actor_grain_shape_leak_sets_coincide_at":
+                pv["PV-OCC-ACTOR-COINCIDE"]},
+        "the_rows_that_split_are_all_off_that_grain": off_split,
+        "the_off_grain_rows_are": "A-DECLARED-EXTENSION-OF-THE-PARENTS-"
+                                  "COMPARISON-TO-GRAINS-ITS-SELECTION-DOES-"
+                                  "NOT-REACH",
         "measure": "COUNTING-ONLY"}
     SEAL.take("THE STATISTICS TIE-IN", "statistics",
               "G-STATISTICS-SPLIT-CENSUS", S["statistics"])
@@ -3216,6 +3814,21 @@ def assemble_the_inventory(S, pv):
     S["order_routes"] = orows
     SEAL.take("THE ORDER ROUTES", "order_routes",
               "G-GROUP-INVENTORY-ORDERS-RE-DERIVED", orows)
+    carrier_groups = {r["group"] for r in S["_rows"]}
+    no_row = [r for r in inv if r["group"] not in carrier_groups]
+    su = S["species_universes"]
+    taken = {o["group"]: o["routes_taken"] for o in orows}
+    route_profile = {
+        "by_its_own_element_list_and_the_class_equation_and_the_degree_sum_"
+        "and_orbit_stabilizer":
+            sum(1 for r in inv if not r["above_the_table_cap"]
+                and taken.get(r["group"], 3) == 4),
+        "indexed_by_partitions_so_the_first_route_is_a_product_of_"
+        "factorials_and_no_permutation_is_written_down":
+            sum(1 for r in inv if not r["above_the_table_cap"]
+                and taken.get(r["group"], 3) != 4),
+        "none_of_those_four_the_number_of_distinct_actions_on_the_stencil_"
+        "datum": sum(1 for r in inv if r["above_the_table_cap"])}
     tot = {"groups": len(inv),
            "groups_with_a_table": sum(1 for r in inv
                                       if not r["above_the_table_cap"]),
@@ -3224,6 +3837,14 @@ def assemble_the_inventory(S, pv):
            "classes": sum(r["classes"] for r in inv),
            "species": sum(r["species"] for r in inv),
            "the_table_cap": TABLE_CAP,
+           "distinct_orders": len({r["order"] for r in inv}),
+           "groups_with_a_carrier_row": len(carrier_groups),
+           "groups_with_no_carrier_row": len(no_row),
+           "species_at_the_groups_with_a_carrier_row":
+               su["distinct_species_behind_the_slots"],
+           "species_at_the_groups_with_no_carrier_row":
+               sum(r["species"] for r in no_row),
+           "the_route_classes": route_profile,
            "orders": sorted({r["order"] for r in inv})}
     LD.gate("G-GROUP-INVENTORY-IS-TOTAL",
             "the published inventory is checked TOTAL against the "
@@ -3238,12 +3859,25 @@ def assemble_the_inventory(S, pv):
             and tot["groups_with_a_table"] + tot["groups_above_the_table_cap"]
             == tot["groups"]
             and len(seen) + len(S["identity_layer"]["rows"])
-            + tot["groups_above_the_table_cap"] == tot["groups"],
+            + tot["groups_above_the_table_cap"] == tot["groups"]
+            and sum(route_profile.values()) == tot["groups"]
+            and tot["species_at_the_groups_with_a_carrier_row"]
+            + tot["species_at_the_groups_with_no_carrier_row"]
+            == tot["species"]
+            and tot["groups_with_a_carrier_row"]
+            + tot["groups_with_no_carrier_row"] == tot["groups"],
             "%d groups, %d with a table and %d above the cap; %d classes and "
-            "%d species in all"
+            "%d species in all, %d of them at the %d groups that carry a "
+            "carrier row and %d at the %d groups that carry none; the order "
+            "routes fall %s"
             % (tot["groups"], tot["groups_with_a_table"],
                tot["groups_above_the_table_cap"], tot["classes"],
-               tot["species"]))
+               tot["species"],
+               tot["species_at_the_groups_with_a_carrier_row"],
+               tot["groups_with_a_carrier_row"],
+               tot["species_at_the_groups_with_no_carrier_row"],
+               tot["groups_with_no_carrier_row"],
+               sorted(route_profile.values(), reverse=True)))
     S["group_inventory"] = {"rows": inv, "totals": tot}
     SEAL.take("THE GROUP INVENTORY", "group_inventory",
               "G-GROUP-INVENTORY-IS-TOTAL", S["group_inventory"])
@@ -3270,7 +3904,7 @@ def head_law(rows, tot):
     z = sum(r["in_neither_shape"] for r in rows)
     parts = ["SPC-INVENTORY-%d-GROUPS-%d-CLASSES-%d-SPECIES"
              % (tot["groups"], tot["classes"], tot["species"]),
-             "SPC-CARRIER-SELECTS-%d-OF-%d" % (k, n),
+             "SPC-CARRIER-SELECTS-%d-OF-%d-ROW-SLOTS" % (k, n),
              ("SPC-SELECTION-OPEN" if exits
               else "SPC-SELECTION-CLOSED-%d-RULES" % rules),
              "SPC-STATISTICS-SPLITS-%d|%d|%d|%d" % (b, s, a, z)]
@@ -3301,7 +3935,7 @@ def second_head_law(rows, tot):
     one = "SPC-INVENTORY-" + str(tot["groups"]) + "-GROUPS-" \
         + str(tot["classes"]) + "-CLASSES-" + str(tot["species"]) + "-SPECIES"
     two = "SPC-CARRIER-SELECTS-" + str(acc["hosted"]) + "-OF-" \
-        + str(acc["irreps"])
+        + str(acc["irreps"]) + "-ROW-" + "SLOTS"
     if acc["open"] > 0:
         three = "SPC-SELECTION-OPEN"
     else:
@@ -3408,68 +4042,129 @@ def measure_the_feasibility(S):
         return hit[0] if hit else ""
     fr = [
         {"outcome": "SPC-INVENTORY", "arm": "THE-COUNTS",
-         "live_at_this_arena": True,
+         "live_at_the_row_level": True,
          "witnessed_by_a_delivered_row": witness(lambda r: True),
          "why": "the census is a total exact computation over finite "
                 "groups, so its numbers are its outcome"},
         {"outcome": "SPC-CARRIER-SELECTS", "arm": "EVERY-SPECIES-HOSTED",
-         "live_at_this_arena":
+         "live_at_the_row_level":
              any(r["homeless"] == 0 for r in rows),
          "witnessed_by_a_delivered_row":
              witness(lambda r: r["homeless"] == 0),
          "why": "a module rich enough to contain every species of its "
                 "group"},
         {"outcome": "SPC-CARRIER-SELECTS", "arm": "SOME-SPECIES-HOMELESS",
-         "live_at_this_arena": any(r["homeless"] > 0 for r in rows),
+         "live_at_the_row_level": any(r["homeless"] > 0 for r in rows),
          "witnessed_by_a_delivered_row":
              witness(lambda r: r["homeless"] > 0),
          "why": "a module whose group is larger than the carrier can "
                 "resolve"},
         {"outcome": "SPC-SELECTION-CLOSED", "arm": "THE-COMPOSITES-STAY",
-         "live_at_this_arena": any(r["selection_closes"] for r in rows),
+         "live_at_the_row_level": any(r["selection_closes"] for r in rows),
          "witnessed_by_a_delivered_row":
              witness(lambda r: r["selection_closes"]),
          "why": "a hosted set closed under the composite"},
         {"outcome": "SPC-SELECTION-OPEN", "arm": "THE-COMPOSITES-EXIT",
-         "live_at_this_arena": any(not r["selection_closes"] for r in rows),
+         "live_at_the_row_level": any(not r["selection_closes"] for r in rows),
          "witnessed_by_a_delivered_row":
              witness(lambda r: not r["selection_closes"]),
          "why": "a hosted set that is a proper and non-closed subset"},
         {"outcome": "SPC-STATISTICS-SPLITS", "arm": "ALL-IN-BOTH-SHAPES",
-         "live_at_this_arena":
+         "live_at_the_row_level":
              any(r["in_both_shapes"] == r["irreps"] for r in rows),
          "witnessed_by_a_delivered_row":
              witness(lambda r: r["in_both_shapes"] == r["irreps"]),
          "why": "a module whose two squares are both rich enough"},
         {"outcome": "SPC-STATISTICS-SPLITS", "arm": "A-PROPER-SPLIT",
-         "live_at_this_arena":
+         "live_at_the_row_level":
              any(r["in_both_shapes"] < r["irreps"] for r in rows),
          "witnessed_by_a_delivered_row":
              witness(lambda r: r["in_both_shapes"] < r["irreps"]),
          "why": "a module whose squares differ in what they host"},
         {"outcome": "SPC-BLOCKED-AT", "arm": "INSTRUMENT-FAULT",
-         "live_at_this_arena": False, "witnessed_by_a_delivered_row": "",
+         "live_at_the_row_level": False, "witnessed_by_a_delivered_row": "",
          "why": "it fires only on an instrument fault; it is demonstrated "
                 "on a synthetic arena and reached by no delivered row"},
     ]
     if mut("MUT-FEASIBILITY"):
-        fr[2]["live_at_this_arena"] = False
-    live = [f for f in fr if f["live_at_this_arena"]]
+        fr[2]["live_at_the_row_level"] = False
+    live = [f for f in fr if f["live_at_the_row_level"]]
+    forcers = {
+        "SPC-CARRIER-SELECTS": [r["row"] for r in rows if r["homeless"] > 0],
+        "SPC-SELECTION-OPEN": [r["row"] for r in rows
+                               if not r["selection_closes"]],
+        "SPC-STATISTICS-SPLITS": [r["row"] for r in rows
+                                  if r["in_both_shapes"] < r["irreps"]]}
+    every = sorted(set(forcers["SPC-CARRIER-SELECTS"])
+                   & set(forcers["SPC-SELECTION-OPEN"])
+                   & set(forcers["SPC-STATISTICS-SPLITS"]))
+    widest = max(rows, key=lambda r: r["homeless"])["row"]
+    words = [
+        {"head_word": "SPC-INVENTORY", "two_armed": False,
+         "forced_at_the_arena_level_before_the_run": True,
+         "forced_by_a_single_declared_row": [],
+         "why": "single-armed by construction: the census is a total exact "
+                "computation and its numbers are its outcome"},
+        {"head_word": "SPC-CARRIER-SELECTS", "two_armed": True,
+         "forced_at_the_arena_level_before_the_run":
+             bool(forcers["SPC-CARRIER-SELECTS"]),
+         "forced_by_a_single_declared_row": forcers["SPC-CARRIER-SELECTS"],
+         "why": "the head word aggregates every declared row, and hosted "
+                "never exceeds irreps at a row, so ONE row with a homeless "
+                "species settles the aggregate whatever the others do"},
+        {"head_word": "SPC-SELECTION-OPEN", "two_armed": True,
+         "forced_at_the_arena_level_before_the_run":
+             bool(forcers["SPC-SELECTION-OPEN"]),
+         "forced_by_a_single_declared_row": forcers["SPC-SELECTION-OPEN"],
+         "why": "the word is a disjunction over the declared rows, so ONE "
+                "exiting row settles it"},
+        {"head_word": "SPC-STATISTICS-SPLITS", "two_armed": True,
+         "forced_at_the_arena_level_before_the_run":
+             bool(forcers["SPC-STATISTICS-SPLITS"]),
+         "forced_by_a_single_declared_row": forcers["SPC-STATISTICS-SPLITS"],
+         "why": "the four sums are aggregates over the declared rows, so ONE "
+                "splitting row settles that they do not all sit in both "
+                "shapes"}]
+    if mut("MUT-ARENA-LEVEL"):
+        words[1]["forced_at_the_arena_level_before_the_run"] = False
+    forced = [w for w in words
+              if w["forced_at_the_arena_level_before_the_run"]]
     LD.gate("G-OUTCOME-FEASIBILITY-AT-THIS-ARENA",
-            "the feasibility of every pre-registered word is measured AT "
-            "THIS ARENA and not only in the controls: each arm carries the "
-            "delivered row that witnesses it, an arm claimed live must name "
-            "one, and the one arm that no delivered row can reach is "
-            "declared unreachable here and demonstrated only "
-            "synthetically -- so no outcome is pre-registered that the arena "
-            "had already decided",
+            "the feasibility of every pre-registered word is measured AT TWO "
+            "LEVELS and they are not conflated (#299 as extended).  At the "
+            "ROW level each arm carries the delivered row that witnesses it, "
+            "an arm claimed live must name one, and the one arm no delivered "
+            "row can reach is declared unreachable here and demonstrated "
+            "only synthetically.  At the ARENA level the head's words are "
+            "AGGREGATES over a declared row list, so feasibility must be "
+            "shown AT THE LIST: this gate measures, for each word, whether a "
+            "single declared row already settles it before the run, names "
+            "the rows that do, and requires the count to be published rather "
+            "than a liveness the row level cannot support",
             all(bool(f["witnessed_by_a_delivered_row"])
-                == f["live_at_this_arena"] for f in fr)
-            and len(live) == len(fr) - 1,
-            "%d outcome arms, %d live at this arena, each witnessed by a "
-            "delivered row" % (len(fr), len(live)))
-    S["outcome_feasibility"] = {"rows": fr, "arms": len(fr),
-                                "live_at_this_arena": len(live)}
+                == f["live_at_the_row_level"] for f in fr)
+            and len(live) == len(fr) - 1
+            and len(forced) == len(words)
+            and widest in every and len(every) > 0,
+            "%d outcome arms, %d live at the row level, each witnessed by a "
+            "delivered row; at the arena level %d of %d head words are "
+            "settled before the run, %d of them by any one of %d declared "
+            "rows -- the widest, %s, among them"
+            % (len(fr), len(live), len(forced), len(words),
+               sum(1 for w in words if w["two_armed"]), len(every), widest))
+    S["outcome_feasibility"] = {
+        "rows": fr, "arms": len(fr), "arms_live_at_the_row_level": len(live),
+        "the_row_level": "EACH-ARM-WITNESSED-BY-A-DELIVERED-ROW",
+        "the_arena_level": "THE-HEADS-WORDS-ARE-AGGREGATES-OVER-THE-"
+                           "DECLARED-ROW-LIST-AND-THE-LIST-SETTLES-THEM-"
+                           "BEFORE-THE-RUN",
+        "head_words": words, "head_words_measured": len(words),
+        "head_words_settled_before_the_run": len(forced),
+        "two_armed_head_words": sum(1 for w in words if w["two_armed"]),
+        "rows_that_settle_every_two_armed_word": every,
+        "the_widest_row_settles_them_all": widest in every,
+        "where_the_other_words_are_witnessed":
+            "THE-SYNTHETIC-CONTROL-ARENAS-THROUGH-THE-SAME-CENSUS-FUNCTIONS"}
     SEAL.take("THE OUTCOME FEASIBILITY", "outcome_feasibility",
               "G-OUTCOME-FEASIBILITY-AT-THIS-ARENA", S["outcome_feasibility"])
 
@@ -3488,58 +4183,97 @@ def build_verdict(S):
     ot = S["odd_twist_species"]
     sel = S["selection"]
     st = S["statistics"]
+    su = S["species_universes"]
+    pz = S["the_price_is_index_two"]
+    fe = S["outcome_feasibility"]
+    flag = [c for c in S["choices"]["rows"]
+            if c["choice"] == "THE-CRYSTALLIZATION-FLAG"][0]
     seg = [head]
-    seg.append("INVENTORY=%d-GROUPS-AT-ORDERS-%s-OF-WHICH-%d-CARRY-A-FULL-"
-               "EXACT-TABLE-AND-%d-STAND-ABOVE-THE-DECLARED-CAP-%d;"
-               "CLASSES=%d;SPECIES=%d"
-               % (tot["groups"],
+    seg.append("INVENTORY=%d-GROUPS-AT-%d-DISTINCT-ORDERS-%s-OF-WHICH-%d-"
+               "CARRY-A-FULL-EXACT-TABLE-AND-%d-STAND-ABOVE-THE-DECLARED-"
+               "CAP-%d-ON-THE-GROUP-THIS-UNIT-ENUMERATES-ELEMENT-BY-ELEMENT;"
+               "CLASSES=%d;SPECIES=%d-OVER-THE-%d-INVENTORY-GROUPS-COUNTED-"
+               "ONCE-EACH"
+               % (tot["groups"], tot["distinct_orders"],
                   ",".join(str(o) for o in tot["orders"]),
                   tot["groups_with_a_table"],
                   tot["groups_above_the_table_cap"], tot["the_table_cap"],
-                  tot["classes"], tot["species"]))
+                  tot["classes"], tot["species"], tot["groups"]))
     seg.append("IRREPS=EVERY-TABLE-GATED-BY-TWO-ROUTES-COLUMN-ORTHOGONALITY-"
                "AND-ROW-ORTHOGONALITY-AS-SEPARATE-GATES-WITH-THE-CLASS-"
-               "EQUATION-AND-THE-DEGREE-SUM-BESIDE-THEM;THE-NINE-ACTOR-TABLE-"
+               "EQUATION-AND-THE-DEGREE-SUM-BESIDE-THEM-THE-%d-STABILIZER-"
+               "TABLES-GATED-ON-BOTH-ROUTES-TOO;THE-NINE-ACTOR-TABLE-"
                "IS-INTEGER-VALUED-WITH-%d-CLASSES-AND-%d-SPECIES-ITS-DEGREES-"
                "RE-DERIVED-BY-THE-HOOK-LENGTH-FORMULA;TWO-ENGINES-AGREE-ON-"
                "%d-SYMMETRIC-GROUPS"
-               % (S["symmetric_census"]["classes"],
+               % (len(idl), S["symmetric_census"]["classes"],
                   S["symmetric_census"]["species"], len(S["two_engines"])))
     hosted = sum(r["hosted"] for r in rows)
     avail = sum(r["irreps"] for r in rows)
     hl = [r for r in rows if r["homeless"] > 0]
-    seg.append("CARRIER=%d-ROWS-OVER-%d-DECLARED-CARRIERS;%d-OF-%d-SPECIES-"
-               "HOSTED;%d-ROWS-LEAVE-A-SPECIES-HOMELESS-THE-WIDEST-%s-AT-%d-"
-               "OF-%d;THE-136-CARRIER-CLASSES-AND-THE-80-AT-THE-EXTENSION-"
-               "ARE-THE-TRIVIAL-SPECIES-MULTIPLICITY-BY-TWO-ROUTES"
+    seg.append("CARRIER=%d-ROWS-OVER-%d-DECLARED-CARRIERS;%d-OF-%d-ROW-SLOTS-"
+               "FILLED-WHERE-A-SLOT-IS-ONE-SPECIES-AT-ONE-GROUP-CARRIER-ROW-"
+               "AND-NOT-A-DISTINCT-SPECIES:THE-%d-SLOTS-STAND-AT-%d-DISTINCT-"
+               "GROUPS-OVER-%d-DISTINCT-SPECIES-OF-WHICH-%d-ARE-HOSTED-"
+               "SOMEWHERE-AND-THE-OTHER-%d-INVENTORY-SPECIES-HAVE-NO-CARRIER-"
+               "ROW-AT-ALL;%d-ROWS-LEAVE-A-SPECIES-HOMELESS-THE-WIDEST-%s-AT-"
+               "%d-OF-%d;THE-136-CARRIER-CLASSES-AND-THE-80-AT-THE-EXTENSION-"
+               "ARE-THE-TRIVIAL-SPECIES-MULTIPLICITY-BY-TWO-ROUTES-AND-THE-"
+               "WHOLE-MULTIPLICITY-VECTOR-IS-PINNED-BY-THE-ORDERED-PAIR-"
+               "ROUTE-AT-%d-ROWS"
                % (len(rows), len(S["carrier_census"]["carriers"]), hosted,
-                  avail, len(hl),
+                  avail, avail, su["distinct_groups_with_a_carrier_row"],
+                  su["distinct_species_behind_the_slots"],
+                  su["distinct_species_hosted_somewhere"],
+                  tot["species_at_the_groups_with_no_carrier_row"], len(hl),
                   max(rows, key=lambda r: r["homeless"])["row"],
                   max(rows, key=lambda r: r["homeless"])["hosted"],
-                  max(rows, key=lambda r: r["homeless"])["irreps"]))
-    seg.append("PRICE=ONE-SPECIES:THE-ODD-TWIST-SPECIES-CARRIES-"
-               "MULTIPLICITY-%d-AT-THE-ANCHORED-READING-AND-%d-AT-THE-"
-               "EXTENSION-WHICH-ARE-EXACTLY-THE-PARENTS-IDENTIFIED-ORBIT-"
-               "PAIRS;THE-PARENTS-PINNED-OBSERVABLE-%s-IS-NON-ZERO-AT-%d-OF-"
-               "%d-POINTS-AND-LIES-IN-%d-ISOTYPIC-COMPONENT;%d-OF-%d-ORBIT-"
-               "SUMS-VANISH"
-               % (ot["rows"][0]["multiplicity"], ot["rows"][1]["multiplicity"],
+                  max(rows, key=lambda r: r["homeless"])["irreps"],
+                  len(rows)))
+    seg.append("PRICE=ONE-SPECIES:THAT-THE-DISCOUNT-IS-ONE-LABEL-IS-FORCED-"
+               "BY-INDEX-%d-THE-ARENA-GAUGE-GROUP-SITTING-INSIDE-THE-ACTING-"
+               "GROUP-AT-BOTH-READINGS-WITH-THE-THREE-ROUTES-COINCIDING-AT-"
+               "%d-OF-%d-SYNTHETIC-PROBES;WHAT-IS-MEASURED-IS-WHICH-LABEL-"
+               "AND-WHERE-THE-PARENTS-OBSERVABLE-LIVES:THE-ODD-TWIST-SPECIES-"
+               "CARRIES-MULTIPLICITY-%d-AT-THE-ANCHORED-READING-AND-%d-AT-"
+               "THE-EXTENSION-WHICH-ARE-EXACTLY-THE-PARENTS-IDENTIFIED-ORBIT-"
+               "PAIRS-AND-IS-THE-SAME-SPECIES-UNDER-THE-STRONGER-SCALAR-"
+               "READING-AT-ANY-DEGREE;THE-PARENTS-PINNED-OBSERVABLE-%s-IS-"
+               "NON-ZERO-AT-%d-OF-%d-POINTS-AND-LIES-IN-%d-ISOTYPIC-"
+               "COMPONENT-AT-THE-ANCHORED-READING;%d-OF-%d-ORBIT-SUMS-VANISH-"
+               "AND-ITS-EXPECTATION-AT-EVERY-ONE-OF-THE-%d-EXTREME-INVARIANT-"
+               "MEASURES-IS-%s-REPRODUCING-THE-PARENTS-PINNED-[%s,%s]-"
+               "AGAINST-THE-OBSERVABLES-OWN-[%s,%s]"
+               % (pz["the_index_at_both_readings"][0],
+                  pz["synthetic_probes_where_the_three_routes_agree"],
+                  pz["synthetic_probes"],
+                  ot["rows"][0]["multiplicity"], ot["rows"][1]["multiplicity"],
                   ot["the_observable"],
                   ot["points_where_the_observable_does_not_vanish"],
                   S["coin_arena"]["coins"],
                   ot["its_non_vanishing_isotypic_components"],
                   ot["orbits_where_the_observable_sums_to_zero"],
-                  ot["orbits_of_the_acting_group"]))
+                  ot["orbits_of_the_acting_group"],
+                  pz["extreme_invariant_measures"],
+                  ",".join(pz["the_expectation_at_every_extreme_invariant_"
+                              "measure"]),
+                  pz["the_range_over_the_reachable_set"][0],
+                  pz["the_range_over_the_reachable_set"][1],
+                  pz["the_range_of_the_observable_itself"][0],
+                  pz["the_range_of_the_observable_itself"][1]))
     seg.append("IDENTITY=THE-SPECIES-WITH-AN-INVARIANT-VECTOR-ALONG-THE-"
                "MEASURED-STABILIZER-LATTICE-ARE-%s-OF-%d;ALONG-THE-"
-               "CRYSTALLIZATION-CHAIN-%s-SO-CRYSTALLIZATION-RESTORES-THE-"
-               "INVENTORY-AT-PREFIX-%d;BRANCHING-BY-TWO-ROUTES-AT-%d-PAIRS-"
+               "CRYSTALLIZATION-CHAIN-%s-NON-DECREASING-BY-NESTING-AND-"
+               "ATTAINING-THE-FULL-%d-AT-PREFIX-%d-AT-%d-EXHIBITED-FLAG-OF-"
+               "AN-%s-FAMILY;BRANCHING-BY-TWO-ROUTES-AT-%d-PAIRS-"
                "WITH-%d-DISAGREEMENTS-AND-A-TABLEAU-THIRD-ROUTE-AT-%d-ROWS"
                % (",".join(str(r["species_with_an_invariant_vector"])
                            for r in idl), idl[0]["of"],
                   ",".join(str(r["species_with_an_invariant_vector"])
                            for r in ch["rows"]),
-                  ch["the_crystallization_time"],
+                  ch["species_at_crystallization"],
+                  ch["the_crystallization_time"], flag["instances_built"],
+                  flag["fibre"],
                   S["identity_layer"]["branching_pairs"],
                   S["identity_layer"]["route_disagreements"],
                   len(S["identity_layer"]["species_rows"])))
@@ -3549,18 +4283,29 @@ def build_verdict(S):
                   sel["rows_that_exit"], sel["the_distinguished_row"],
                   [r["species_the_composites_exit_to"] for r in sel["rows"]
                    if r["row"] == sel["the_distinguished_row"]][0]))
-    seg.append("STATISTICS=THE-SELECTED-SHAPE-IS-%s-DERIVED-FROM-%d-LEAK-"
-               "CELLS-AGAINST-%d;%d-SPECIES-IN-BOTH-SHAPES,%d-SYMMETRIC-"
-               "ONLY,%d-ANTISYMMETRIC-ONLY,%d-IN-NEITHER;%d-OF-%d-ROWS-SPLIT-"
-               "PROPERLY"
-               % (st["the_selected_shape"],
+    og = st["at_the_parents_own_selection_grain"]
+    seg.append("STATISTICS=AT-THE-PARENTS-OWN-SELECTION-GRAIN-THE-%d-ROWS-"
+               "THERE-DO-NOT-SPLIT-AT-ALL-%d-OF-%d-SLOTS-IN-BOTH-SHAPES-AND-"
+               "%d-SYMMETRIC-ONLY-%d-ANTISYMMETRIC-ONLY-%d-IN-NEITHER;THE-"
+               "SHAPE-THAT-COMPARISON-NAMES-IS-%s-DERIVED-FROM-%d-LEAK-"
+               "CELLS-AGAINST-%d-WHERE-THE-FIRST-COUNT-IS-THE-PARENTS-"
+               "VACUOUS-ZERO-OVER-AN-EMPTY-FORBIDDEN-SET-AND-THE-PARENTS-"
+               "SCOPE-IS-THE-CARRIER-GRAIN-ONLY;OVER-ALL-%d-DECLARED-ROWS-"
+               "AS-A-DECLARED-EXTENSION-%d-OF-THE-SAME-%d-ROW-SLOTS-IN-BOTH-"
+               "SHAPES,%d-SYMMETRIC-ONLY,%d-ANTISYMMETRIC-ONLY,%d-IN-"
+               "NEITHER;%d-OF-%d-ROWS-SPLIT-PROPERLY-AND-ALL-%d-LIE-OFF-"
+               "THAT-GRAIN"
+               % (og["rows_measured"], og["in_both_shapes"], og["species"],
+                  og["symmetric_only"], og["antisymmetric_only"],
+                  og["in_neither_shape"], st["the_selected_shape"],
                   st["the_parents_antisymmetric_leak_cells"],
-                  st["the_parents_symmetric_leak_cells"],
-                  st["aggregate"]["in_both_shapes"],
+                  st["the_parents_symmetric_leak_cells"], len(st["rows"]),
+                  st["aggregate"]["in_both_shapes"], avail,
                   st["aggregate"]["symmetric_only"],
                   st["aggregate"]["antisymmetric_only"],
                   st["aggregate"]["in_neither_shape"],
-                  st["rows_that_split_properly"], len(st["rows"])))
+                  st["rows_that_split_properly"], len(st["rows"]),
+                  len(st["the_rows_that_split_are_all_off_that_grain"])))
     seg.append("ROUTES=ORBITS-BY-CHARACTER-AND-BY-UNION-FIND-AT-%d-ROWS;"
                "COMPOSITES-BY-TWO-CONTRACTIONS;SQUARES-BY-FORMULA-AND-BY-"
                "COUNTING-ON-THE-PAIR-SET;BRANCHING-BY-RESTRICTION-AND-BY-"
@@ -3569,21 +4314,31 @@ def build_verdict(S):
                "DISAGREEMENTS-EVERYWHERE"
                % len(rows))
     seg.append("CONTROLS=%d-SYNTHETIC-ARENAS-THROUGH-THE-SAME-CENSUS-"
-               "FUNCTIONS-EMITTING-%d-DISTINCT-HEADS;%d-OF-%d-OUTCOME-ARMS-"
-               "ARE-LIVE-AT-THIS-ARENA-EACH-WITNESSED-BY-A-DELIVERED-ROW"
+               "FUNCTIONS-EMITTING-%d-DISTINCT-HEADS-WHICH-IS-WHERE-THE-"
+               "OTHER-WORDS-ARE-WITNESSED;%d-OF-%d-OUTCOME-ARMS-ARE-"
+               "WITNESSED-BY-A-DELIVERED-ROW-AT-THE-ROW-LEVEL;AT-THE-ARENA-"
+               "LEVEL-%d-OF-%d-HEAD-WORDS-ARE-SETTLED-BEFORE-THE-RUN-%d-OF-"
+               "THEM-BY-ANY-ONE-OF-%d-DECLARED-ROWS-INCLUDING-%s-AND-THE-"
+               "FOURTH-SINGLE-ARMED-BY-CONSTRUCTION"
                % (len(S["control_arms"]),
                   len({p["emitted"] for p in S["control_arms"]}),
-                  S["outcome_feasibility"]["live_at_this_arena"],
-                  S["outcome_feasibility"]["arms"]))
+                  fe["arms_live_at_the_row_level"], fe["arms"],
+                  fe["head_words_settled_before_the_run"],
+                  fe["head_words_measured"], fe["two_armed_head_words"],
+                  len(fe["rows_that_settle_every_two_armed_word"]),
+                  max(rows, key=lambda r: r["homeless"])["row"]))
     seg.append("SCOPE=THE-KINEMATIC-HALF-ONLY;LABELS-COMPOSITES-AND-"
                "STATISTICS-COMPATIBILITY;NO-MASS-NO-SPECTRUM-NO-STABILITY-NO-"
                "REALIZED-PARTICLE-CLAIM;NO-STANDARD-MODEL-IDENTIFICATION;NO-"
                "SI-NUMBER;NO-CONTINUUM-CLAIM;COUNTS-ARE-COUNTING-ONLY;THE-"
                "TABLE-CAP-IS-%d-AND-%d-ACTING-GROUPS-STAND-ABOVE-IT-WITH-"
                "THEIR-ORDERS-RE-DERIVED-AND-THE-CARRIER-SEEING-THEM-THROUGH-"
-               "A-GROUP-OF-ORDER-8-OR-16;THE-CARRIER-ROW-LIST-IS-A-"
-               "DECLARATION"
-               % (tot["the_table_cap"], tot["groups_above_the_table_cap"]))
+               "A-GROUP-OF-ORDER-8-OR-16-WHICH-CLOSES-THE-HOSTED-SET-AT-"
+               "THOSE-ROWS-AND-NOT-THE-DENOMINATOR-SINCE-THOSE-%d-GROUPS-"
+               "CARRY-NO-SPECIES-COUNT-HERE-AND-NO-CARRIER-ROW-EITHER;THE-"
+               "CARRIER-ROW-LIST-IS-A-DECLARATION"
+               % (tot["the_table_cap"], tot["groups_above_the_table_cap"],
+                  tot["groups_above_the_table_cap"]))
     return " -- ".join(seg)
 
 
@@ -3611,21 +4366,27 @@ def reconstruct_verdict(P):
     cap = P["acting_groups"]["table_cap"]
     above = len([r for r in inv if r["above_the_table_cap"]])
     with_table = len(inv) - above
-    out.append("INVENTORY=" + str(len(inv)) + "-GROUPS-AT-ORDERS-"
+    out.append("INVENTORY=" + str(len(inv)) + "-GROUPS-AT-"
+               + str(len(orders)) + "-DISTINCT-ORDERS-"
                + ",".join([str(o) for o in orders]) + "-OF-WHICH-"
                + str(with_table) + "-CARRY-A-FULL-EXACT-TABLE-AND-"
                + str(above) + "-STAND-ABOVE-THE-DECLARED-CAP-" + str(cap)
+               + "-ON-THE-GROUP-THIS-UNIT-ENUMERATES-ELEMENT-BY-ELEMENT"
                + ";CLASSES=" + str(tot["classes"]) + ";SPECIES="
-               + str(tot["species"]))
+               + str(tot["species"]) + "-OVER-THE-" + str(len(inv))
+               + "-INVENTORY-GROUPS-COUNTED-ONCE-EACH")
     sc = P["symmetric_census"]
+    idl = P["identity_layer"]["rows"]
     out.append("IRREPS=EVERY-TABLE-GATED-BY-TWO-ROUTES-COLUMN-ORTHOGONALITY-"
                "AND-ROW-ORTHOGONALITY-AS-SEPARATE-GATES-WITH-THE-CLASS-"
-               "EQUATION-AND-THE-DEGREE-SUM-BESIDE-THEM;THE-NINE-ACTOR-TABLE-"
-               "IS-INTEGER-VALUED-WITH-" + str(sc["classes"])
+               "EQUATION-AND-THE-DEGREE-SUM-BESIDE-THEM-THE-" + str(len(idl))
+               + "-STABILIZER-TABLES-GATED-ON-BOTH-ROUTES-TOO;THE-NINE-"
+                 "ACTOR-TABLE-IS-INTEGER-VALUED-WITH-" + str(sc["classes"])
                + "-CLASSES-AND-" + str(sc["species"]) + "-SPECIES-ITS-"
                "DEGREES-RE-DERIVED-BY-THE-HOOK-LENGTH-FORMULA;TWO-ENGINES-"
                "AGREE-ON-" + str(len(P["two_engines"])) + "-SYMMETRIC-GROUPS")
     cr = P["carrier_census"]["rows"]
+    su = P["species_universes"]
     worst = cr[0]
     for r in cr:
         if r["homeless"] > worst["homeless"]:
@@ -3634,27 +4395,62 @@ def reconstruct_verdict(P):
                + str(len(sorted({r["carrier"] for r in cr})))
                + "-DECLARED-CARRIERS;"
                + str(sum(r["hosted"] for r in cr)) + "-OF-"
-               + str(sum(r["irreps"] for r in cr)) + "-SPECIES-HOSTED;"
+               + str(sum(r["irreps"] for r in cr)) + "-ROW-SLOTS-FILLED-"
+               "WHERE-A-SLOT-IS-ONE-SPECIES-AT-ONE-GROUP-CARRIER-ROW-AND-"
+               "NOT-A-DISTINCT-SPECIES:THE-"
+               + str(sum(r["irreps"] for r in cr)) + "-SLOTS-STAND-AT-"
+               + str(su["distinct_groups_with_a_carrier_row"])
+               + "-DISTINCT-GROUPS-OVER-"
+               + str(su["distinct_species_behind_the_slots"])
+               + "-DISTINCT-SPECIES-OF-WHICH-"
+               + str(su["distinct_species_hosted_somewhere"])
+               + "-ARE-HOSTED-SOMEWHERE-AND-THE-OTHER-"
+               + str(sum(r["species"] for r in inv)
+                     - su["distinct_species_behind_the_slots"])
+               + "-INVENTORY-SPECIES-HAVE-NO-CARRIER-ROW-AT-ALL;"
                + str(len([r for r in cr if r["homeless"] > 0]))
                + "-ROWS-LEAVE-A-SPECIES-HOMELESS-THE-WIDEST-" + worst["row"]
                + "-AT-" + str(worst["hosted"]) + "-OF-" + str(worst["irreps"])
                + ";THE-136-CARRIER-CLASSES-AND-THE-80-AT-THE-EXTENSION-ARE-"
-                 "THE-TRIVIAL-SPECIES-MULTIPLICITY-BY-TWO-ROUTES")
+                 "THE-TRIVIAL-SPECIES-MULTIPLICITY-BY-TWO-ROUTES-AND-THE-"
+                 "WHOLE-MULTIPLICITY-VECTOR-IS-PINNED-BY-THE-ORDERED-PAIR-"
+                 "ROUTE-AT-" + str(len(cr)) + "-ROWS")
     ot = P["odd_twist_species"]
-    out.append("PRICE=ONE-SPECIES:THE-ODD-TWIST-SPECIES-CARRIES-MULTIPLICITY-"
+    pz = P["the_price_is_index_two"]
+    out.append("PRICE=ONE-SPECIES:THAT-THE-DISCOUNT-IS-ONE-LABEL-IS-FORCED-"
+               "BY-INDEX-" + str(pz["the_index_at_both_readings"][0])
+               + "-THE-ARENA-GAUGE-GROUP-SITTING-INSIDE-THE-ACTING-GROUP-AT-"
+                 "BOTH-READINGS-WITH-THE-THREE-ROUTES-COINCIDING-AT-"
+               + str(pz["synthetic_probes_where_the_three_routes_agree"])
+               + "-OF-" + str(pz["synthetic_probes"]) + "-SYNTHETIC-PROBES;"
+               "WHAT-IS-MEASURED-IS-WHICH-LABEL-AND-WHERE-THE-PARENTS-"
+               "OBSERVABLE-LIVES:THE-ODD-TWIST-SPECIES-CARRIES-MULTIPLICITY-"
                + str(ot["rows"][0]["multiplicity"]) + "-AT-THE-ANCHORED-"
                "READING-AND-" + str(ot["rows"][1]["multiplicity"])
                + "-AT-THE-EXTENSION-WHICH-ARE-EXACTLY-THE-PARENTS-IDENTIFIED-"
-                 "ORBIT-PAIRS;THE-PARENTS-PINNED-OBSERVABLE-"
+                 "ORBIT-PAIRS-AND-IS-THE-SAME-SPECIES-UNDER-THE-STRONGER-"
+                 "SCALAR-READING-AT-ANY-DEGREE;THE-PARENTS-PINNED-OBSERVABLE-"
                + ot["the_observable"] + "-IS-NON-ZERO-AT-"
                + str(ot["points_where_the_observable_does_not_vanish"])
                + "-OF-" + str(P["coin_arena"]["coins"]) + "-POINTS-AND-LIES-"
                  "IN-" + str(ot["its_non_vanishing_isotypic_components"])
-               + "-ISOTYPIC-COMPONENT;"
+               + "-ISOTYPIC-COMPONENT-AT-THE-ANCHORED-READING;"
                + str(ot["orbits_where_the_observable_sums_to_zero"]) + "-OF-"
-               + str(ot["orbits_of_the_acting_group"]) + "-ORBIT-SUMS-VANISH")
-    idl = P["identity_layer"]["rows"]
+               + str(ot["orbits_of_the_acting_group"])
+               + "-ORBIT-SUMS-VANISH-AND-ITS-EXPECTATION-AT-EVERY-ONE-OF-"
+                 "THE-" + str(pz["extreme_invariant_measures"])
+               + "-EXTREME-INVARIANT-MEASURES-IS-"
+               + ",".join(pz["the_expectation_at_every_extreme_invariant_"
+                             "measure"])
+               + "-REPRODUCING-THE-PARENTS-PINNED-["
+               + pz["the_range_over_the_reachable_set"][0] + ","
+               + pz["the_range_over_the_reachable_set"][1]
+               + "]-AGAINST-THE-OBSERVABLES-OWN-["
+               + pz["the_range_of_the_observable_itself"][0] + ","
+               + pz["the_range_of_the_observable_itself"][1] + "]")
     ch = P["crystallization_chain"]
+    fl = [c for c in P["choices"]["rows"]
+          if c["choice"] == "THE-CRYSTALLIZATION-FLAG"][0]
     out.append("IDENTITY=THE-SPECIES-WITH-AN-INVARIANT-VECTOR-ALONG-THE-"
                "MEASURED-STABILIZER-LATTICE-ARE-"
                + ",".join([str(r["species_with_an_invariant_vector"])
@@ -3662,8 +4458,11 @@ def reconstruct_verdict(P):
                + ";ALONG-THE-CRYSTALLIZATION-CHAIN-"
                + ",".join([str(r["species_with_an_invariant_vector"])
                            for r in ch["rows"]])
-               + "-SO-CRYSTALLIZATION-RESTORES-THE-INVENTORY-AT-PREFIX-"
-               + str(ch["the_crystallization_time"]) + ";BRANCHING-BY-TWO-"
+               + "-NON-DECREASING-BY-NESTING-AND-ATTAINING-THE-FULL-"
+               + str(ch["species_at_crystallization"]) + "-AT-PREFIX-"
+               + str(ch["the_crystallization_time"]) + "-AT-"
+               + str(fl["instances_built"]) + "-EXHIBITED-FLAG-OF-AN-"
+               + str(fl["fibre"]) + "-FAMILY;BRANCHING-BY-TWO-"
                  "ROUTES-AT-" + str(P["identity_layer"]["branching_pairs"])
                + "-PAIRS-WITH-"
                + str(P["identity_layer"]["route_disagreements"])
@@ -3679,17 +4478,32 @@ def reconstruct_verdict(P):
                + "-SPECIES-IT-DOES-NOT-HOST")
     st = P["statistics"]
     ag = st["aggregate"]
-    out.append("STATISTICS=THE-SELECTED-SHAPE-IS-" + st["the_selected_shape"]
+    og = st["at_the_parents_own_selection_grain"]
+    out.append("STATISTICS=AT-THE-PARENTS-OWN-SELECTION-GRAIN-THE-"
+               + str(og["rows_measured"]) + "-ROWS-THERE-DO-NOT-SPLIT-AT-"
+                 "ALL-" + str(og["in_both_shapes"]) + "-OF-"
+               + str(og["species"]) + "-SLOTS-IN-BOTH-SHAPES-AND-"
+               + str(og["symmetric_only"]) + "-SYMMETRIC-ONLY-"
+               + str(og["antisymmetric_only"]) + "-ANTISYMMETRIC-ONLY-"
+               + str(og["in_neither_shape"]) + "-IN-NEITHER;THE-SHAPE-THAT-"
+                 "COMPARISON-NAMES-IS-" + st["the_selected_shape"]
                + "-DERIVED-FROM-"
                + str(st["the_parents_antisymmetric_leak_cells"])
                + "-LEAK-CELLS-AGAINST-"
-               + str(st["the_parents_symmetric_leak_cells"]) + ";"
-               + str(ag["in_both_shapes"]) + "-SPECIES-IN-BOTH-SHAPES,"
-               + str(ag["symmetric_only"]) + "-SYMMETRIC-ONLY,"
+               + str(st["the_parents_symmetric_leak_cells"])
+               + "-WHERE-THE-FIRST-COUNT-IS-THE-PARENTS-VACUOUS-ZERO-OVER-"
+                 "AN-EMPTY-FORBIDDEN-SET-AND-THE-PARENTS-SCOPE-IS-THE-"
+                 "CARRIER-GRAIN-ONLY;OVER-ALL-" + str(len(st["rows"]))
+               + "-DECLARED-ROWS-AS-A-DECLARED-EXTENSION-"
+               + str(ag["in_both_shapes"]) + "-OF-THE-SAME-"
+               + str(sum(r["irreps"] for r in cr)) + "-ROW-SLOTS-IN-BOTH-"
+                 "SHAPES," + str(ag["symmetric_only"]) + "-SYMMETRIC-ONLY,"
                + str(ag["antisymmetric_only"]) + "-ANTISYMMETRIC-ONLY,"
                + str(ag["in_neither_shape"]) + "-IN-NEITHER;"
                + str(st["rows_that_split_properly"]) + "-OF-"
-               + str(len(st["rows"])) + "-ROWS-SPLIT-PROPERLY")
+               + str(len(st["rows"])) + "-ROWS-SPLIT-PROPERLY-AND-ALL-"
+               + str(len(st["the_rows_that_split_are_all_off_that_grain"]))
+               + "-LIE-OFF-THAT-GRAIN")
     out.append("ROUTES=ORBITS-BY-CHARACTER-AND-BY-UNION-FIND-AT-"
                + str(len(cr)) + "-ROWS;COMPOSITES-BY-TWO-CONTRACTIONS;"
                  "SQUARES-BY-FORMULA-AND-BY-COUNTING-ON-THE-PAIR-SET;"
@@ -3702,9 +4516,17 @@ def reconstruct_verdict(P):
     out.append("CONTROLS=" + str(len(ca)) + "-SYNTHETIC-ARENAS-THROUGH-THE-"
                "SAME-CENSUS-FUNCTIONS-EMITTING-"
                + str(len({p["emitted"] for p in ca}))
-               + "-DISTINCT-HEADS;" + str(fe["live_at_this_arena"]) + "-OF-"
-               + str(fe["arms"]) + "-OUTCOME-ARMS-ARE-LIVE-AT-THIS-ARENA-"
-                 "EACH-WITNESSED-BY-A-DELIVERED-ROW")
+               + "-DISTINCT-HEADS-WHICH-IS-WHERE-THE-OTHER-WORDS-ARE-"
+                 "WITNESSED;" + str(fe["arms_live_at_the_row_level"]) + "-OF-"
+               + str(fe["arms"]) + "-OUTCOME-ARMS-ARE-WITNESSED-BY-A-"
+                 "DELIVERED-ROW-AT-THE-ROW-LEVEL;AT-THE-ARENA-LEVEL-"
+               + str(fe["head_words_settled_before_the_run"]) + "-OF-"
+               + str(fe["head_words_measured"]) + "-HEAD-WORDS-ARE-SETTLED-"
+                 "BEFORE-THE-RUN-" + str(fe["two_armed_head_words"])
+               + "-OF-THEM-BY-ANY-ONE-OF-"
+               + str(len(fe["rows_that_settle_every_two_armed_word"]))
+               + "-DECLARED-ROWS-INCLUDING-" + worst["row"]
+               + "-AND-THE-FOURTH-SINGLE-ARMED-BY-CONSTRUCTION")
     out.append("SCOPE=THE-KINEMATIC-HALF-ONLY;LABELS-COMPOSITES-AND-"
                "STATISTICS-COMPATIBILITY;NO-MASS-NO-SPECTRUM-NO-STABILITY-NO-"
                "REALIZED-PARTICLE-CLAIM;NO-STANDARD-MODEL-IDENTIFICATION;NO-"
@@ -3712,13 +4534,21 @@ def reconstruct_verdict(P):
                "TABLE-CAP-IS-" + str(cap) + "-AND-" + str(above)
                + "-ACTING-GROUPS-STAND-ABOVE-IT-WITH-THEIR-ORDERS-RE-DERIVED-"
                  "AND-THE-CARRIER-SEEING-THEM-THROUGH-A-GROUP-OF-ORDER-8-OR-"
-                 "16;THE-CARRIER-ROW-LIST-IS-A-DECLARATION")
+                 "16-WHICH-CLOSES-THE-HOSTED-SET-AT-THOSE-ROWS-AND-NOT-THE-"
+                 "DENOMINATOR-SINCE-THOSE-" + str(above) + "-GROUPS-CARRY-NO-"
+                 "SPECIES-COUNT-HERE-AND-NO-CARRIER-ROW-EITHER;THE-CARRIER-"
+                 "ROW-LIST-IS-A-DECLARATION")
     return " -- ".join(out)
 
 
 # ===========================================================================
 # SECTION 13.  THE CHOICE INVENTORY
 # ===========================================================================
+
+COUNTING_ONLY_OBJECTS = ("carrier_census", "odd_twist_species", "selection",
+                         "statistics", "species_universes",
+                         "the_price_is_index_two")
+
 
 def price_the_choices(S):
     rows = S["_rows"]
@@ -3777,7 +4607,7 @@ def price_the_choices(S):
               "fibre": "UNBOUNDED", "instances_built": 1,
               "verdict_determining": False, "measured": True,
               "why": "the parent published stabilizer ORDERS along the "
-                     "chain, not the partitions; a nested flag realising "
+                     "chain, not the partitions; a nested flag carrying "
                      "those orders is exhibited here and its invariant "
                      "counts depend only on the shapes, which the orders fix"
                      " at every step of this chain"})
@@ -3799,6 +4629,51 @@ def price_the_choices(S):
               "verdict_determining": False, "measured": True,
               "why": "they demonstrate the outcome vocabulary; they enter no "
                      "delivered count"})
+    c.append({"choice": "THE-CROSS-ENGINE-LIST", "class":
+              "DECLARED-AND-DISCLOSED", "fibre": "UNBOUNDED",
+              "instances_built": len(S["two_engines"]),
+              "verdict_determining": False, "measured": True,
+              "why": "which symmetric groups go through both engines is a "
+                     "declared list and not a size limit -- the largest of "
+                     "them has fewer elements than the largest group this "
+                     "instrument enumerates for its modular engine -- so it "
+                     "is priced here as the choice it is"})
+    c.append({"choice": "THE-INDEX-TWO-PROBE-FAMILY", "class":
+              "DECLARED-AND-DISCLOSED", "fibre": "UNBOUNDED",
+              "instances_built": S["the_price_is_index_two"][
+                  "synthetic_probes"],
+              "verdict_determining": False, "measured": True,
+              "why": "the synthetic sets the index-two identity is "
+                     "demonstrated on are a declared family enumerated by "
+                     "cycle type; they enter no delivered count and the "
+                     "identity they exhibit is a theorem, not a measurement "
+                     "of this arena"})
+    stamps = []
+    for k in COUNTING_ONLY_OBJECTS:
+        marks = [S[k][j] for j in ("measure", "measure_of_the_aggregate")
+                 if j in S[k]]
+        stamps.append({"object": k, "measure": "COUNTING-ONLY" if (
+            marks and all(m == "COUNTING-ONLY" for m in marks)) else ""})
+    unstamped = [s["object"] for s in stamps if s["measure"] != "COUNTING-ONLY"]
+    LD.gate("G-COUNTS-ARE-COUNTING-ONLY",
+            "E-24 is a MEASUREMENT here and not a declaration inside a sealed "
+            "object: every published object that carries a count is required "
+            "to carry the counting-only stamp, the list of them is checked "
+            "against the objects themselves, and a stamp removed from any one "
+            "of them -- from ANY of the keys that carry it, since an object "
+            "stamped twice is only as honest as its weaker stamp -- stops the "
+            "run, because a stamp no gate reads is a string in a receipt",
+            not unstamped,
+            "%d objects declared counting-only, %d unstamped %s"
+            % (len(stamps), len(unstamped), unstamped[:3]))
+    S["counting_only"] = {
+        "objects": stamps, "objects_declared": len(stamps),
+        "objects_unstamped": len(unstamped),
+        "why": "no measure over any configuration space is declared here and "
+               "none is used, so every fraction this unit publishes is a "
+               "ratio of two counts over one declared list"}
+    SEAL.take("THE COUNTING-ONLY STAMPS", "counting_only",
+              "G-COUNTS-ARE-COUNTING-ONLY", S["counting_only"])
     vd = sum(1 for r in c if r["verdict_determining"])
     ms = sum(1 for r in c if r["measured"])
     if mut("MUT-CHOICE-INVENTORY"):
@@ -3811,7 +4686,10 @@ def price_the_choices(S):
             c[0]["instances_built"] == len(inv)
             and c[1]["instances_built"] == len(rows)
             and c[7]["instances_built"] == len(STABILIZER_SHAPES)
-            and c[11]["instances_built"] == len(S["control_arms"]),
+            and c[11]["instances_built"] == len(S["control_arms"])
+            and c[12]["instances_built"] == len(S["two_engines"])
+            and c[13]["instances_built"] == S["the_price_is_index_two"][
+                "synthetic_probes"],
             "%d choices, %d verdict-determining, %d with a measured flag"
             % (len(c), vd, ms))
     S["choices"] = {"rows": c, "verdict_determining": vd,
@@ -3827,43 +4705,49 @@ def price_the_choices(S):
 FUNCTION_INVENTORY = (
     "__init__", "_reduce", "add", "add3", "add6", "ag_act_cell",
     "ag_act_site", "ag_apply", "ag_cells", "ag_matmul", "ag_mul",
-    "ag_point_group", "ag_sites", "apply_point", "assemble_the_inventory",
-    "bdigest", "build_claims", "build_coin_alphabet", "build_coin_family",
-    "build_the_arenas", "build_the_carrier_rows", "build_verdict",
-    "build_waiver_ledger", "centralizer_order", "chart_elements",
-    "chart_stabilizer_of", "check_the_arithmetic", "check_the_registry",
-    "class_data", "class_matrices", "close_group", "coin_sector",
-    "coin_swap", "coin_twist", "conj", "conjugacy_classes", "coords",
-    "ct_from_sym", "ct_from_young", "cyc_int", "cycle_perm",
-    "cycle_type_of", "cyclotomic", "declared_function_names", "degrees",
+    "ag_point_group", "ag_sites", "apply_point",
+    "assemble_the_inventory", "bdigest", "build_claims",
+    "build_coin_alphabet", "build_coin_family", "build_the_arenas",
+    "build_the_carrier_rows", "build_verdict", "build_waiver_ledger",
+    "centralizer_order", "chart_elements", "chart_stabilizer_of",
+    "check_the_arithmetic", "check_the_registry", "class_data",
+    "class_matrices", "close_group", "coin_sector", "coin_swap",
+    "coin_twist", "conj", "conjugacy_classes", "coords", "ct_from_sym",
+    "ct_from_young", "cyc_int", "cycle_perm", "cycle_type_of",
+    "cyclotomic", "declared_function_names", "degrees",
     "demonstrate_the_outcome_words", "dig", "digest", "dixon_prime",
-    "dixon_table", "exponent", "find", "fuse", "gate", "gauge_image_of",
-    "gen", "gf_nullspace", "gf_rref", "harvest", "head_law",
-    "hook_dimension", "ifact", "igcd", "ilcm", "inner", "inv", "inverses",
-    "iprod", "is_closed", "is_prime", "is_zero", "isqrt_exact", "kostka",
-    "lat_addv", "lat_boundary", "lat_links", "lat_sites", "link_ends",
-    "load_sources", "main", "measure_path_values", "measure_provenance",
-    "measure_the_acting_groups", "measure_the_crystallization_chain",
-    "measure_the_feasibility", "measure_the_identity_layer",
-    "measure_the_odd_twist_species", "measure_the_selection_rules",
+    "dixon_table", "exponent", "find", "findg", "findo", "findp",
+    "findq", "fuse", "gate", "gauge_image_of", "gen", "gf_nullspace",
+    "gf_rref", "harvest", "head_law", "hook_dimension", "ifact",
+    "igcd", "ilcm", "index_two_probe", "inner", "inv", "inverses",
+    "iprod", "is_closed", "is_prime", "is_zero", "isqrt_exact",
+    "kostka", "lat_addv", "lat_boundary", "lat_links", "lat_sites",
+    "link_ends", "load_sources", "main", "measure_path_values",
+    "measure_provenance", "measure_the_acting_groups",
+    "measure_the_crystallization_chain", "measure_the_feasibility",
+    "measure_the_identity_layer", "measure_the_odd_twist_species",
+    "measure_the_price_is_index_two", "measure_the_selection_rules",
     "measure_the_statistics_tie_in", "measure_the_symmetric_census",
     "measure_the_two_engines", "measure_verbatim", "mn_char", "mnorm",
-    "mul", "multiplicities", "mut", "normsq", "numword", "order_of",
-    "own_source", "pair_characters", "partitions", "perm_compose",
-    "plaquette_image", "point_on_dir", "point_symmetries",
-    "poly_divmod_exact", "price_a_census_row", "price_the_choices",
-    "prime_factors", "project", "quartic_sign", "rational", "read_bytes",
+    "mul", "multiplicities", "mut", "normsq", "numeral_value",
+    "numword", "order_of", "ordered_pair_orbits", "own_source",
+    "pair_characters", "partitions", "perm_compose", "plaquette_image",
+    "point_on_dir", "point_symmetries", "poly_divmod_exact",
+    "price_a_census_row", "price_the_choices", "prime_factors",
+    "project", "put", "quartic_sign", "rational", "read_bytes",
     "realisable_constant_twists", "rec", "reconstruct_verdict",
     "render_cell", "render_table", "resolve", "reverify", "rim_hooks",
     "row_gate_failures", "run", "say", "scal", "seal_and_write",
-    "second_head_law", "selftest", "sentences_of", "split_eigenspaces",
-    "stencil_action_mul", "stencil_of", "strips", "sub", "sym_class_size",
-    "sym_group_as_permutations", "sym_inner", "sym_table",
-    "sym_table_gates", "synthetic_arena", "table_gates", "table_rows",
-    "take", "tensor_decompose", "to_str", "transported_link",
-    "union_find_orbits", "verify_paper", "verify_the_consumers", "witness",
-    "wsnorm", "young_centralizer", "young_char", "young_class_size",
-    "young_dim", "young_subgroup", "zpow")
+    "second_head_law", "selftest", "sentences_of",
+    "small_generating_subset", "species_key", "spelled_value",
+    "split_eigenspaces", "stencil_action_mul", "stencil_of", "strips",
+    "sub", "sym_class_size", "sym_group_as_permutations", "sym_inner",
+    "sym_table", "sym_table_gates", "synthetic_arena", "table_gates",
+    "table_rows", "take", "tensor_decompose", "the_index_two_probes",
+    "to_str", "transported_link", "union_find_orbits",
+    "universe_register", "verify_paper", "verify_the_consumers",
+    "witness", "wsnorm", "young_centralizer", "young_char",
+    "young_class_size", "young_dim", "young_subgroup", "zpow")
 
 
 def declared_function_names(tree):
@@ -3967,8 +4851,10 @@ LATE_GATES = ("G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
               "G-PAPER-CLAIMS", "G-PAPER-VERDICT-EQUALITY",
               "G-MUST-NOT-VOCABULARY", "G-PAPER-POLARITY",
               "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
-              "G-PAPER-NUMERAL-COVERAGE", "G-CONSUMERS-ARE-REAL",
+              "G-PAPER-NUMERAL-COVERAGE", "G-PAPER-REFERENT-BOUND",
+              "G-CONSUMERS-ARE-REAL",
               "G-MUST-NOT-OVER-THE-RECEIPT", "G-SEAL-INTEGRITY",
+              "G-MANIFEST-TOTALITY-AT-PROMOTION",
               "G-ARTIFACT-INTEGRITY")
 
 
@@ -4049,6 +4935,11 @@ DIGEST_KEYS = {"pinned", "measured", "digest", "code_sha256_12",
                "paper_sha256_12", "pin_sha256_prefix"}
 DIGEST_RE = re.compile(r"\b(?=[0-9a-f]{12}\b)(?=[0-9a-f]*[a-f])"
                        r"[0-9a-f]{12}\b")
+# the paper-side whitelist is DIGEST-SHAPED and not merely twelve characters
+# long: it requires an a-f, exactly as the pool side does, so an all-digit
+# token in a code span cannot leave the numeral scan.
+DIGEST_SPAN_RE = re.compile(r"`(?=[0-9a-f]{12}`)(?=[0-9a-f]*[a-f])"
+                            r"[0-9a-f]{12}`")
 POOL_EXCLUDED = {"mutants"}
 
 # THE FOUR WALLS.  Each is a list of banned forms matched at word boundaries
@@ -4057,16 +4948,27 @@ WALLS = [
     ("WALL-DYNAMIC",
      ["mass", "masses", "massive", "spectrum", "spectra", "spectral",
       "energy", "energies", "hamiltonian", "lifetime", "decay", "decays",
-      "unstable", "stability", "eigenvalue", "eigenvalues"],
-     "THE DYNAMIC VOCABULARY IS BEHIND ANOTHER DOOR.  This unit measures "
-     "which species can exist -- labels, composites, statistics "
-     "compatibility -- and nothing about which are realized or with what "
-     "values.  That question is its successor's and waits on the "
-     "potential unit's gate."),
+      "unstable", "stability", "eigenvalue", "eigenvalues",
+      "realized", "realised", "realizes", "realises", "realizing",
+      "realising", "realizable", "realisable", "realization",
+      "realisation",
+      "exists physically", "exist physically", "physically", "physical",
+      "observed", "observes", "observing", "observation", "observations"],
+     "THE DYNAMIC VOCABULARY IS BEHIND ANOTHER DOOR, AND SO IS THE WORD "
+     "THIS WALL WILL NOT WRITE.  This unit measures which species a carrier "
+     "can HOST -- labels, composites, statistics compatibility -- where "
+     "hosted means multiplicity greater than zero in a permutation module "
+     "and means nothing else.  Whether a species is anything more than that "
+     "is its successor's question and waits on the potential unit's gate; "
+     "the whole family of words that would say so is on this wall's own ban "
+     "list, and every sentence of this paper carrying one of them is a "
+     "declared exemption located there."),
     ("WALL-IDENTIFICATION",
      ["electron", "quark", "photon", "gluon", "neutrino", "boson",
       "bosonic", "fermion", "fermionic", "hadron", "lepton", "higgs",
-      "standard model", "isospin", "hypercharge", "flavour", "flavor"],
+      "standard model", "isospin", "hypercharge", "flavour", "flavor",
+      "spin", "charge", "colour", "color", "generation", "chirality",
+      "antiparticle"],
      "NO OUTSIDE IDENTIFICATION IS MADE.  No sentence of this paper names "
      "an outside theory's particle as an identification of any species it "
      "measures.  The pin licenses structural comparisons stamped ANALOGY; "
@@ -4094,6 +4996,13 @@ DECLARING = [
     "NO-MASS-NO-SPECTRUM-NO-STABILITY-NO-REALIZED-PARTICLE-CLAIM",
     "NO-STANDARD-MODEL-IDENTIFICATION",
     "NO-SI-NUMBER;NO-CONTINUUM-CLAIM",
+    "Neither asserts nor implies that any state exists, that anything "
+    "occupies a carrier, or that any species is realized in any sense "
+    "beyond appearing in a decomposition",
+    "Which species are realized",
+    "which irreps of the abstract groups have NO carrier realization",
+    "tensor-product decompositions among the carrier-realized species",
+    "The odd twist is not realisable on this torus",
 ]
 
 # THE POSITIVE LEG.  A ban list refuses only what it lists; a paraphrase
@@ -4150,7 +5059,7 @@ PAPER_TABLES = (
     ("THE-CONTROL-ARMS", "control_arms",
      ("row", "group_order", "species", "hosted", "status", "emitted")),
     ("THE-OUTCOME-FEASIBILITY", "outcome_feasibility/rows",
-     ("outcome", "arm", "live_at_this_arena",
+     ("outcome", "arm", "live_at_the_row_level",
       "witnessed_by_a_delivered_row")),
     ("THE-WALLS", "walls/rows",
      ("wall", "banned_forms", "found", "statement")),
@@ -4168,11 +5077,14 @@ def table_rows(S, path):
 
 
 def render_cell(v):
+    """a cell of a delivered table.  The pipe is ESCAPED, because a cell
+    carrying an unescaped one renders as extra columns and the tail of the
+    cell disappears from the table a reader sees."""
     if isinstance(v, bool):
         return "yes" if v else "no"
     if isinstance(v, list):
         return "[" + ", ".join(str(x) for x in v) + "]"
-    return str(v)
+    return str(v).replace("|", "\\|")
 
 
 def render_table(S, path, keys):
@@ -4201,13 +5113,32 @@ def build_claims(S):
     ca = S["coin_arena"]
     ia = S["identity_arena"]
     ls = S["ledger_shape"]
+    su = S["species_universes"]
+    pz = S["the_price_is_index_two"]
+    og = st["at_the_parents_own_selection_grain"]
+    fe = S["outcome_feasibility"]
     c = []
     c.append(("%d groups, %d of which carry a full exact character table and "
-              "%d of which stand above the declared cap of %d"
+              "%d of which — the acting groups at the plaquette and site "
+              "grains — stand above the declared cap of %d on the group this "
+              "unit will enumerate element by element"
               % (tot["groups"], tot["groups_with_a_table"],
                  tot["groups_above_the_table_cap"], tot["the_table_cap"]), 1))
     c.append(("%d conjugacy classes and %d species in all"
               % (tot["classes"], tot["species"]), 1))
+    c.append(("%d of the %s groups have their order re-derived four ways"
+              % (tot["the_route_classes"][
+                  "by_its_own_element_list_and_the_class_equation_and_the_"
+                  "degree_sum_and_orbit_stabilizer"], numword(tot["groups"])),
+              1))
+    c.append(("%d rows are indexed by partitions rather than enumerated as "
+              "permutations" % tot["the_route_classes"][
+                  "indexed_by_partitions_so_the_first_route_is_a_product_of_"
+                  "factorials_and_no_permutation_is_written_down"], 1))
+    c.append(("The %d acting groups above the table cap take none of those "
+              "four" % tot["the_route_classes"][
+                  "none_of_those_four_the_number_of_distinct_actions_on_the_"
+                  "stencil_datum"], 1))
     for _n, _p, _k in PAPER_TABLES:
         for line in render_table(S, _p, _k):
             c.append((line, 1))
@@ -4221,13 +5152,42 @@ def build_claims(S):
               % (ia["arena_group_order"], ia["chart_group_order"]), 1))
     c.append(("%d carrier rows over %d declared carriers"
               % (cc["rows_measured"], len(cc["carriers"])), 1))
-    c.append(("%d of %d species are hosted"
-              % (cc["species_hosted"], cc["species_available"]), 1))
+    c.append(("%d species-slots — the row-sum of each row's own irrep count, "
+              "a slot per (species, carrier) pairing and not a count of "
+              "distinct species — and %d of those slots are filled"
+              % (su["row_slots"], su["slots_filled"]), 1))
+    c.append(("Behind the %d slots stand %d distinct species"
+              % (su["row_slots"], su["distinct_species_behind_the_slots"]),
+              1))
+    c.append(("the remaining %d species of the inventory belong to the %d "
+              "groups that have no carrier row here at all"
+              % (tot["species_at_the_groups_with_no_carrier_row"],
+                 tot["groups_with_no_carrier_row"]), 1))
+    c.append(("%d distinct species are hosted somewhere in this table"
+              % su["distinct_species_hosted_somewhere"], 1))
     c.append(("%d of the %d rows leave at least one species homeless"
               % (cc["rows_with_a_homeless_species"], cc["rows_measured"]), 1))
+    c.append(("the nine actors under the whole symmetric group host %d of %d "
+              "species"
+              % (max(cc["rows"], key=lambda r: r["homeless"])["hosted"],
+                 max(cc["rows"], key=lambda r: r["homeless"])["irreps"]), 1))
     c.append(("multiplicity %d at the anchored reading and %d at the "
               "extension" % (ot["rows"][0]["multiplicity"],
                              ot["rows"][1]["multiplicity"]), 1))
+    c.append(("%s inside %s anchored and %s inside %s at the extension"
+              % (numword(pz["containments"][0]["the_arena_gauge_group"]),
+                 numword(pz["containments"][0]["the_acting_group"]),
+                 numword(pz["containments"][1]["the_arena_gauge_group"]),
+                 numword(pz["containments"][1]["the_acting_group"])), 1))
+    c.append(("the identity held at %d of %d synthetic probes"
+              % (pz["synthetic_probes_where_the_three_routes_agree"],
+                 pz["synthetic_probes"]), 1))
+    c.append(("the parent's [%s, %s] against the observable's own range "
+              "[%s, %s]"
+              % (pz["the_range_over_the_reachable_set"][0],
+                 pz["the_range_over_the_reachable_set"][1],
+                 pz["the_range_of_the_observable_itself"][0],
+                 pz["the_range_of_the_observable_itself"][1]), 1))
     c.append(("non-zero at %d of the %d coins"
               % (ot["points_where_the_observable_does_not_vanish"],
                  ca["coins"]), 1))
@@ -4254,23 +5214,44 @@ def build_claims(S):
                  st["aggregate"]["in_neither_shape"]), 1))
     c.append(("%d of the %d rows split properly"
               % (st["rows_that_split_properly"], len(st["rows"])), 1))
-    c.append(("leaks at %d cells against %d"
+    c.append(("the shape that leaks at %d cells against %d is the %s one"
               % (st["the_parents_antisymmetric_leak_cells"],
-                 st["the_parents_symmetric_leak_cells"]), 1))
+                 st["the_parents_symmetric_leak_cells"],
+                 st["the_selected_shape"].lower()), 1))
+    c.append(("At the %d rows at that grain the two squares carry the same "
+              "%d species and the split is empty" % (og["rows_measured"],
+                                                     og["species"]), 1))
+    c.append(("all %d rows that split lie at grains the selection does not "
+              "reach"
+              % len(st["the_rows_that_split_are_all_off_that_grain"]), 1))
+    c.append(("the standard species composed with itself reaches %d species, "
+              "of which %d are hosted and %d are not"
+              % (len([x for x in sel["the_composite_table"][-1][
+                  "composite_species"]]),
+                 len([x for x in sel["the_composite_table"][-1][
+                     "composite_species"]])
+                 - [r["species_the_composites_exit_to"] for r in sel["rows"]
+                    if r["row"] == sel["the_distinguished_row"]][0],
+                 [r["species_the_composites_exit_to"] for r in sel["rows"]
+                  if r["row"] == sel["the_distinguished_row"]][0]), 1))
     c.append(("%d classes and %d species, its degrees re-derived by the "
               "hook-length formula" % (sc["classes"], sc["species"]), 1))
     c.append(("the squares of its degrees sum to %d"
               % sc["degree_sum_of_squares"], 1))
     c.append(("%d synthetic arenas" % len(S["control_arms"]), 1))
-    c.append(("%d of the %d outcome arms are live at this arena"
-              % (S["outcome_feasibility"]["live_at_this_arena"],
-                 S["outcome_feasibility"]["arms"]), 1))
+    c.append(("%d of the %d outcome arms are witnessed by a delivered row"
+              % (fe["arms_live_at_the_row_level"], fe["arms"]), 1))
+    c.append(("once %s was in the declared row list all %d were settled "
+              "before the run"
+              % (max(cc["rows"], key=lambda r: r["homeless"])["row"],
+                 fe["head_words_settled_before_the_run"]), 1))
+    c.append(("%d stabilizer shapes" % len(idl["rows"]), 1))
     c.append(("%d gates close before the paper gates, and %d paper gates, %d "
               "receipt-wall gate and %d closing gates follow"
               % (ls["gates_closed_before_the_paper_gates"], ls["paper_gates"],
                  ls["receipt_gates"], ls["closing_gates"]), 1))
-    c.append(("%d objects are sealed before the paper gates"
-              % ls["objects_sealed_before_the_paper_gates"], 1))
+    c.append(("%d objects are sealed when the ledger shape is taken"
+              % ls["objects_sealed_when_the_ledger_shape_was_taken"], 1))
     c.append(("%d construction choices are inventoried, of which %d are "
               "verdict-determining"
               % (len(S["choices"]["rows"]),
@@ -4299,12 +5280,92 @@ POLARITY = [
     ("the species inventory is not carrier-independent", 1),
     ("the composites do not close", 1),
     ("the price is one species", 2),
+    ("that the discount is one label is forced; which label it is, is "
+     "measured", 1),
     ("the observable lies in that species and in no other", 1),
-    ("crystallization does not destroy the inventory, it restores it", 1),
-    ("the trivial species is not compatible with the selected shape at\n      the actor row", 1),
+    ("it means multiplicity greater than zero and it means nothing else", 1),
+    ("nothing is destroyed at the first prefix and nothing is returned at "
+     "the fifth", 1),
+    ("it is not an application of the parent's selection there", 1),
     ("this is the kinematic half only", 1),
     ("the licence is registered and unused", 1),
 ]
+
+
+_NUMEXPR_RE = r"(?:\d+|%s(?: hundred(?: %s)?)?)" % (_ATOM_RE, _ATOM_RE)
+PAIR_RE = re.compile(r"\b(%s)\s+of\s+(?:the\s+|those\s+|its\s+|that\s+)?(%s)\b"
+                     % (_NUMEXPR_RE, _NUMEXPR_RE))
+
+
+def numeral_value(tok):
+    return int(tok) if tok.isdigit() else spelled_value(tok)
+
+
+def universe_register(S):
+    """THE REFERENT REGISTER.  Which universe each headline numeral counts
+    in, and which (part, whole) pairs this run actually measured.  Every
+    entry is a measured value read from this run's own objects; nothing here
+    is typed, and a value claimed by two universes is dropped rather than
+    guessed."""
+    tot = S["group_inventory"]["totals"]
+    su = S["species_universes"]
+    cc = S["carrier_census"]
+    st = S["statistics"]
+    tag = {}
+
+    def put(v, name):
+        tag.setdefault(v, set()).add(name)
+    put(tot["species"], "THE-INVENTORY-SPECIES-COUNTED-ONCE-PER-GROUP")
+    put(su["row_slots"], "THE-ROW-SLOTS")
+    put(su["slots_filled"], "THE-ROW-SLOTS")
+    put(su["distinct_species_behind_the_slots"], "THE-DISTINCT-SPECIES")
+    put(su["distinct_species_hosted_somewhere"], "THE-DISTINCT-SPECIES")
+    put(tot["species_at_the_groups_with_no_carrier_row"],
+        "THE-DISTINCT-SPECIES")
+    universes = {str(k): sorted(v)[0] for k, v in tag.items() if len(v) == 1}
+    pairs = set()
+    for r in cc["rows"]:
+        pairs.add((r["hosted"], r["irreps"]))
+        pairs.add((r["in_both_shapes"], r["irreps"]))
+    og = st["at_the_parents_own_selection_grain"]
+    pz = S["the_price_is_index_two"]
+    ot = S["odd_twist_species"]
+    fe = S["outcome_feasibility"]
+    for a, b in ((su["slots_filled"], su["row_slots"]),
+                 (cc["rows_with_a_homeless_species"], cc["rows_measured"]),
+                 (st["rows_that_split_properly"], len(st["rows"])),
+                 (og["in_both_shapes"], og["species"]),
+                 (fe["arms_live_at_the_row_level"], fe["arms"]),
+                 (ot["points_where_the_observable_does_not_vanish"],
+                  S["coin_arena"]["coins"]),
+                 (ot["orbits_where_the_observable_sums_to_zero"],
+                  ot["orbits_of_the_acting_group"]),
+                 (tot["groups_with_a_table"], tot["groups"]),
+                 (tot["groups_above_the_table_cap"], tot["groups"]),
+                 (tot["groups_with_a_carrier_row"], tot["groups"]),
+                 (tot["the_route_classes"][
+                     "by_its_own_element_list_and_the_class_equation_and_"
+                     "the_degree_sum_and_orbit_stabilizer"], tot["groups"]),
+                 (tot["the_route_classes"][
+                     "indexed_by_partitions_so_the_first_route_is_a_product_"
+                     "of_factorials_and_no_permutation_is_written_down"],
+                  tot["groups"]),
+                 (tot["the_route_classes"][
+                     "none_of_those_four_the_number_of_distinct_actions_on_"
+                     "the_stencil_datum"], tot["groups"]),
+                 (pz["synthetic_probes_where_the_three_routes_agree"],
+                  pz["synthetic_probes"]),
+                 (S["choices"]["verdict_determining"],
+                  len(S["choices"]["rows"])),
+                 (S["identity_layer"]["route_disagreements"],
+                  S["identity_layer"]["branching_pairs"]),
+                 (fe["two_armed_head_words"], fe["head_words_measured"]),
+                 (fe["head_words_settled_before_the_run"],
+                  fe["head_words_measured"]),
+                 (og["the_parents_actor_grain_shape_leak_sets_coincide_at"],
+                  og["the_parents_actor_grain_shape_leak_sets_coincide_at"])):
+        pairs.add((a, b))
+    return universes, pairs
 
 
 def sentences_of(text):
@@ -4329,6 +5390,20 @@ def verify_paper(S, paper_text):
     if mut("MUT-QUOTE-FIDELITY"):
         ptext = ptext.replace("antisymmetric shape leaks at 0",
                               "antisymmetric shape leaks at 81", 1)
+    if mut("MUT-QUOTE-ATTRIBUTION"):
+        _a = "The odd twist is not realisable on this torus"
+        _b = "Every admissible history of this census forces identity"
+        ptext = ptext.replace(_a, "@@SWAP@@").replace(_b, _a)
+        ptext = ptext.replace("@@SWAP@@", _b)
+    if mut("MUT-HEADER-IN-THE-PAPER-TEXT"):
+        _h = "| row | group order | carrier points | classes | irreps |"
+        ptext = ptext.replace(_h + " hosted | homeless |",
+                              _h + " homeless | hosted |", 1)
+    if mut("MUT-HOSTED-UPGRADED"):
+        ptext = ptext + "\n\nThis species is realized on the coin carrier.\n"
+    if mut("MUT-UPGRADE-PARAPHRASE"):
+        ptext = ptext + ("\n\nEvery hosted species exists physically on its "
+                         "carrier.\n")
     if mut("MUT-TABLE-BINDING"):
         ptext = ptext + "\n\n| a | b |\n|---|---|\n| planted | 4242 |\n"
     if mut("MUT-MUST-NOT"):
@@ -4405,6 +5480,63 @@ def verify_paper(S, paper_text):
             % (len(claims), len(miss), miss[:3]))
     SEAL.take("THE PAPER CLAIMS", "paper_claims", "G-PAPER-CLAIMS",
               S["paper_claims"])
+
+    ref_text = re.sub(r"^\s*>.*$", " ", ptext, flags=re.M)
+    if mut("MUT-REFERENT-PAIR"):
+        ref_text = ref_text + "\n\nThe census hosts 156 of 220 species.\n"
+    if mut("MUT-REFERENT-UNIVERSE"):
+        ref_text = ref_text + ("\n\nThe 220 inventory species and the 246 "
+                               "hostable species are one universe of 220 "
+                               "labels.\n")
+    universes, licensed_pairs = universe_register(S)
+    ctexts = [mnorm(fr) for fr, _w in claims]
+    bad_universe, bad_pair, pairs_seen = [], [], 0
+    for s in sentences_of(ref_text):
+        ms = mnorm(s)
+        tags = {universes[x] for x in re.findall(r"\d+", s) if x in universes}
+        if len(tags) > 1 and not any(ct and ct in ms for ct in ctexts):
+            bad_universe.append(s[:70])
+        for a, b in PAIR_RE.findall(ms):
+            if a == "one":
+                continue
+            pairs_seen += 1
+            if (numeral_value(a), numeral_value(b)) not in licensed_pairs:
+                bad_pair.append((s[:60], a, b))
+    LD.gate("G-PAPER-REFERENT-BOUND",
+            "every numeral of the paper's own prose is bound to the LIST IT "
+            "COUNTS IN, which a numeral-coverage gate cannot do: its pool is "
+            "every integer this run computed anywhere, so a true numeral "
+            "re-paired with the wrong universe passes it.  Two legs.  FIRST, "
+            "the universes this census counts in are registered from the "
+            "run's own objects -- species of the inventory counted once per "
+            "group, slots over the declared rows, distinct species behind "
+            "those slots -- and a sentence carrying numerals from two of "
+            "them must be a claim rendered from the receipt.  SECOND, every "
+            "'A of B' this paper writes, spelled or in digits, must be a "
+            "(part, whole) pair this run MEASURED -- excepting the English "
+            "selector 'one of the ...', which names no part-whole relation at "
+            "all.  Blockquotes are excluded because they are the parents' "
+            "sentences and are gated verbatim against the parents' own bytes",
+            not bad_universe and not bad_pair,
+            "%d registered numerals over %d universes; %d part-of-whole "
+            "pairs read, %d not measured %s; %d sentences mixing universes "
+            "outside a rendered claim %s"
+            % (len(universes), len(set(universes.values())), pairs_seen,
+               len(bad_pair), bad_pair[:3], len(bad_universe),
+               bad_universe[:2]))
+    S["referent_binding"] = {
+        "registered_numerals": sorted(universes),
+        "the_universes": sorted(set(universes.values())),
+        "part_of_whole_pairs_read": pairs_seen,
+        "part_of_whole_pairs_this_run_measured": len(licensed_pairs),
+        "pairs_not_measured": len(bad_pair),
+        "sentences_mixing_universes_outside_a_rendered_claim":
+            len(bad_universe),
+        "blockquotes_excluded_because":
+            "THEY-ARE-THE-PARENTS-SENTENCES-AND-ARE-GATED-VERBATIM-AGAINST-"
+            "THE-PARENTS-OWN-BYTES"}
+    SEAL.take("THE REFERENT BINDING", "referent_binding",
+              "G-PAPER-REFERENT-BOUND", S["referent_binding"])
 
     verdict = S["verdict"]
     blocks = [wsnorm(b) for b in
@@ -4488,6 +5620,12 @@ def verify_paper(S, paper_text):
     unbound_quotes = [q[:70] for q in quotes
                       if len(mnorm(q)) < 30
                       or not any(mnorm(q) in nd for nd in needles)]
+    seq = []
+    for q in quotes:
+        hit = [(a, s) for a, s, w, _c, _wh in VERBATIM
+               if mnorm(q) and mnorm(q) in mnorm(w)]
+        seq.append(hit[0] if len(hit) == 1 else ("AMBIGUOUS", "AMBIGUOUS"))
+    order_ok = tuple(a for a, _s in seq) == PAPER_QUOTE_ORDER
     LD.gate("G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
             "E-22's 'tables render as claims' is enforced structurally: "
             "every DATA row of every delivered table must be covered by a "
@@ -4497,13 +5635,22 @@ def verify_paper(S, paper_text):
             "stop matching -- and every BLOCKQUOTE must lie inside one of "
             "the pinned verbatim windows, so a paper that misquotes or "
             "inverts a parent's own sentence dies here even though the "
-            "anchor on the parent's bytes passes",
-            not unbound_rows and not unbound_quotes and not unbound_heads,
+            "anchor on the parent's bytes passes.  A quote is bound to the "
+            "SOURCE IT IS ATTRIBUTED TO and not merely to the union of the "
+            "windows: the sequence of anchors the paper's quotes match, in "
+            "the order it makes them, is compared against a declared "
+            "sequence, so two parents' sentences exchanged under each "
+            "other's introductions die here too",
+            not unbound_rows and not unbound_quotes and not unbound_heads
+            and order_ok,
             "%d table data rows, %d unbound %s; %d header rows, %d unbound "
-            "%s; %d blockquotes, %d not inside a pinned window %s"
+            "%s; %d blockquotes, %d not inside a pinned window %s; the quote "
+            "sequence matches the declared attribution order: %s%s"
             % (len(trows), len(unbound_rows), unbound_rows[:2], len(theads),
                len(unbound_heads), unbound_heads[:2], len(quotes),
-               len(unbound_quotes), unbound_quotes[:2]))
+               len(unbound_quotes), unbound_quotes[:2], order_ok,
+               "" if order_ok else " || measured %s"
+               % [a for a, _s in seq]))
     S["paper_binding"] = {
         "table_data_rows": len(trows), "table_rows_unbound": len(unbound_rows),
         "table_header_rows": len(theads),
@@ -4511,7 +5658,10 @@ def verify_paper(S, paper_text):
         "tables_rendered_from_the_receipt": len(PAPER_TABLES),
         "blockquotes": len(quotes),
         "blockquotes_outside_a_pinned_verbatim_window": len(unbound_quotes),
-        "verbatim_windows_available": len(VERBATIM)}
+        "verbatim_windows_available": len(VERBATIM),
+        "the_quote_attribution_order": [{"anchor": a, "source": s}
+                                        for a, s in seq],
+        "the_quote_attribution_order_is_the_declared_one": order_ok}
     SEAL.take("THE PAPER BINDING", "paper_binding",
               "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND", S["paper_binding"])
 
@@ -4551,7 +5701,9 @@ def verify_paper(S, paper_text):
                   | {"%d.%d" % (a, b) for a in range(1, 16)
                      for b in range(0, 13)})
     scan = re.sub(r"\((?:#\d+|E-\d+)(?:,\s*(?:#\d+|E-\d+))*\)", " ", ptext)
-    scan = re.sub(r"`[0-9a-f]{12}`", " ", scan)
+    if mut("MUT-DIGEST-WHITELIST"):
+        scan = scan + "\n\na backticked all-digit token `987654321012`\n"
+    scan = DIGEST_SPAN_RE.sub(" ", scan)
     nums = re.findall(r"\d+(?:/\d+)?(?:\.\d+)?", scan)
     unmatched = []
     for x in nums:
@@ -4560,14 +5712,15 @@ def verify_paper(S, paper_text):
         if "/" in x and all(p in allowed_nums for p in x.split("/")):
             continue
         unmatched.append(x)
-    wre = r"\b(" + "|".join(sorted(NUMBER_WORDS, key=len, reverse=True)) \
-        + r")\b"
     wscan = scan.lower()
     if mut("MUT-SPELLED-NUMERAL"):
         wscan = wscan + " an uncovered spelled numeral: seventy-nine "
-    words = [w for w in re.findall(wre, wscan) if NUMBER_WORDS[w] >= 13]
-    unmatched_words = sorted({w for w in words
-                              if str(NUMBER_WORDS[w]) not in allowed_nums})
+    if mut("MUT-SPELLED-COMPOUND"):
+        wscan = wscan + " a planted count of nine hundred sixteen "
+    phrases = [(m, spelled_value(m)) for m in SPELLED_RE.findall(wscan)]
+    words = [m for m, v in phrases if v >= 13]
+    unmatched_words = sorted({m for m, v in phrases
+                              if v >= 13 and str(v) not in allowed_nums})
     spans = len(re.findall(r"`[^`]*\d[^`]*`", ptext))
     fenced = len(re.findall(r"```", ptext))
     LD.gate("G-PAPER-NUMERAL-COVERAGE",
@@ -4579,7 +5732,12 @@ def verify_paper(S, paper_text):
             "inside the delivery run.  SPELLED NUMERALS ARE SCANNED THE SAME "
             "WAY (#267): every number-word above twelve, hyphenated "
             "compounds included, is mapped to its integer and matched "
-            "against the same pool",
+            "against the same pool -- and a HUNDRED-OR-THOUSAND COMPOUND IS "
+            "PARSED AS THE NUMBER IT SPELLS rather than scanned by its "
+            "residue, so a spelled count above ninety-nine cannot walk past "
+            "an alphabet that stops there.  The digest whitelist is "
+            "digest-SHAPED and not merely twelve characters long, so an "
+            "all-digit token in a code span stays inside the scan",
             not unmatched and not unmatched_words,
             "%d numerals scanned, %d spelled numerals above twelve, %d "
             "inline code spans carrying a numeral, %d fence markers, %d "
@@ -4590,8 +5748,7 @@ def verify_paper(S, paper_text):
         "numerals_scanned": len(nums),
         "spelled_numerals_above_twelve_scanned": len(words),
         "spelled_numerals_unmatched": len(unmatched_words),
-        "the_number_word_alphabet": "EVERY-ENGLISH-NUMBER-WORD-BELOW-ONE-"
-                                    "HUNDRED-HYPHENATED-COMPOUNDS-INCLUDED",
+        "the_number_word_alphabet": SPELLED_ALPHABET,
         "inline_spans_with_a_numeral": spans, "fence_markers": fenced,
         "unmatched": len(unmatched),
         "removed_from_the_scan_and_bound_as_claims":
@@ -4740,7 +5897,7 @@ MUTANTS = [
      'probes[3]["emitted"] = probes[0]["emitted"]'),
     ("MUT-FEASIBILITY", "G-OUTCOME-FEASIBILITY-AT-THIS-ARENA",
      "declares a live outcome arm dead while its witness row stands",
-     'fr[2]["live_at_this_arena"] = False'),
+     'fr[2]["live_at_the_row_level"] = False'),
     ("MUT-CHOICE-INVENTORY", "G-CHOICE-INVENTORY",
      "leaves one carrier row out of the choice inventory's own count",
      'c[1]["instances_built"] = len(rows) - 1'),
@@ -4812,6 +5969,79 @@ MUTANTS = [
      "a spectrum in the receipt"),
     ("MUT-SEAL", "G-SEAL-INTEGRITY",
      "edits a sealed object after its gate closed", '"MOVED-AFTER-THE-GATE"'),
+    ("MUT-YOUNG-TABLE", "G-YOUNG-TABLE-ORTHOGONALITY",
+     "shifts one NON-IDENTITY value of one stabilizer table by one -- which "
+     "leaves the degrees, the class sizes and the branching engine's own "
+     "character untouched, so only the two orthogonality routes can catch "
+     "it", "tab[1][j] = F.add(tab[1][j], F.one)"),
+    ("MUT-ORDERED-PAIRS", "G-THE-MULTIPLICITY-VECTOR-BY-ORDERED-PAIRS",
+     "adds one to the ordered-pair orbit count at one row, so the sum of "
+     "the squared multiplicities stops matching it",
+     'row["orbits_on_ordered_pairs"] + 1'),
+    ("MUT-SPECIES-UNIVERSES", "G-THE-SPECIES-UNIVERSES-ARE-DISTINGUISHED",
+     "declares the distinct-species count equal to the slot count, "
+     "collapsing the two universes the census counts in", "distinct = slots"),
+    ("MUT-ON-GRAIN-SPLIT", "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+     "adds one symmetric-only species to the on-grain split, so the parent's "
+     "own selection grain stops being empty",
+     'on["symmetric_only"] = on["symmetric_only"] + 1'),
+    ("MUT-INDEX-TWO", "G-THE-PRICE-IS-INDEX-TWO-FORCED",
+     "returns a second species from the stronger scalar filter, so the price "
+     "stops being one label under the reading the paper's own sentence "
+     "invites", "hard = hard + [0]"),
+    ("MUT-ARENA-LEVEL", "G-OUTCOME-FEASIBILITY-AT-THIS-ARENA",
+     "declares a head word unsettled at the arena level while the declared "
+     "row that settles it stands",
+     '"forced_at_the_arena_level_before_the_run"] = False'),
+    ("MUT-E24-STAMP", "G-COUNTS-ARE-COUNTING-ONLY",
+     "removes the counting-only stamp from a published object",
+     '"" if mut("MUT-E24-STAMP") else "COUNTING-ONLY"'),
+    ("MUT-REFERENT-PAIR", "G-PAPER-REFERENT-BOUND",
+     "plants a sentence pairing a true part with the wrong whole -- both "
+     "numerals in the pool, the relation false",
+     "The census hosts 156 of 220 species."),
+    ("MUT-REFERENT-UNIVERSE", "G-PAPER-REFERENT-BOUND",
+     "plants a sentence declaring two different universes to be one",
+     "hostable species are one universe of 220 "),
+    ("MUT-HOSTED-UPGRADED", "G-MUST-NOT-VOCABULARY",
+     "plants the upgrade the pin bans: a species said to be REALIZED on a "
+     "carrier rather than hosted in a module",
+     "This species is realized on the coin carrier."),
+    ("MUT-UPGRADE-PARAPHRASE", "G-MUST-NOT-VOCABULARY",
+     "plants the same upgrade WITHOUT the word the ban list was built "
+     "around: a species said to EXIST PHYSICALLY rather than to be "
+     "realized, which is why this wall bans a family of forms and not a "
+     "single word",
+     "Every hosted species exists physically on its "),
+    ("MUT-QUOTE-ATTRIBUTION", "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
+     "exchanges two parents' quoted sentences under each other's "
+     "introductions, so each quote is still inside SOME pinned window but "
+     "attributed to the wrong parent", '_a = "The odd twist is not '
+     'realisable on this torus"'),
+    ("MUT-HEADER-IN-THE-PAPER-TEXT", "G-PAPER-CLAIMS",
+     "exchanges two opposed column names in the delivered PAPER TEXT rather "
+     "than inside a gate's own local, which is the path a real header swap "
+     "takes", '_h + " homeless | hosted |"'),
+    ("MUT-SPELLED-COMPOUND", "G-PAPER-NUMERAL-COVERAGE",
+     "plants a spelled numeral ABOVE NINETY-NINE that no value this run "
+     "computed can license, which an alphabet stopping at ninety-nine reads "
+     "only by its residue", "a planted count of nine hundred sixteen"),
+    ("MUT-DIGEST-WHITELIST", "G-PAPER-NUMERAL-COVERAGE",
+     "plants an all-digit twelve-character token in a code span, which a "
+     "whitelist that is merely twelve characters long forgives",
+     "a backticked all-digit token `987654321012`"),
+    ("MUT-MUTANT-ROW", "G-SEAL-INTEGRITY",
+     "appends a row to the falsifier registry after its total was taken",
+     '"MUT-PLANTED-AFTER-THE-COUNT"'),
+    ("MUT-UNSEALED-DECLARATION", "G-MANIFEST-TOTALITY-AT-PROMOTION",
+     "declares a key unsealed that the receipt does not publish -- an "
+     "exemption carried and never used",
+     '"A-KEY-THIS-RECEIPT-DOES-NOT-PUBLISH"'),
+    ("MUT-POST-SEAL-KEY", "G-MANIFEST-TOTALITY-AT-PROMOTION",
+     "inserts a top-level key into the receipt AFTER the seal gate has "
+     "computed totality, so it is never sealed, never declared, and a byte "
+     "comparison of the receipt against itself cannot see it",
+     '"FORGED-AFTER-THE-SEAL-GATE"'),
 ]
 
 
@@ -4822,9 +6052,16 @@ MUTANTS = [
 PAPER_GATE_IDS = ("G-PAPER-CLAIMS", "G-PAPER-VERDICT-EQUALITY",
                   "G-MUST-NOT-VOCABULARY", "G-PAPER-POLARITY",
                   "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
-                  "G-PAPER-NUMERAL-COVERAGE", "G-CONSUMERS-ARE-REAL")
+                  "G-PAPER-NUMERAL-COVERAGE", "G-PAPER-REFERENT-BOUND",
+                  "G-CONSUMERS-ARE-REAL")
 RECEIPT_GATE_IDS = ("G-MUST-NOT-OVER-THE-RECEIPT",)
-CLOSING_GATE_IDS = ("G-SEAL-INTEGRITY", "G-ARTIFACT-INTEGRITY")
+CLOSING_GATE_IDS = ("G-SEAL-INTEGRITY", "G-MANIFEST-TOTALITY-AT-PROMOTION",
+                    "G-ARTIFACT-INTEGRITY")
+# the objects a PAPER gate seals: the manifest is partitioned at that
+# boundary and this list is what the partition is checked against.
+THE_PAPER_SEALED_OBJECTS = ("walls", "paper_claims", "referent_binding",
+                            "paper_polarity", "paper_binding",
+                            "paper_coverage", "consumer_register")
 
 DECLARED_UNSEALED = {
     "unit": "the unit's own name, a constant of this source",
@@ -4835,11 +6072,13 @@ DECLARED_UNSEALED = {
     "code_sha256_12": "this instrument's own digest, which cannot seal "
                       "itself",
     "gates": "the gate ledger, snapshotted before the receipt wall and the "
-             "two closing gates -- a seal cannot be inside the object it "
+             "three closing gates -- a seal cannot be inside the object it "
              "seals",
     "gate_digests": "the CHAINED per-row digests of that ledger",
     "seal_manifest": "the manifest itself",
-    "closing_gates": "the two gates that close last of all; the receipt "
+    "closing_gates": "the gates that close last of all -- the seal, the "
+                     "recomputation of the manifest's totality at promotion "
+                     "time, and the artifact integrity check; the receipt "
                      "wall closes after the snapshot too and is counted in "
                      "the totals",
     "declared_unsealed": "this declaration",
@@ -4895,12 +6134,38 @@ def seal_and_write(S, write, paper_bytes):
         "the_refusal_only_gate": sorted(REFUSAL_ONLY_GATES),
         "carrier_rows": len(S["carrier_census"]["rows"]),
         "groups": S["group_inventory"]["totals"]["groups"]}
+    if mut("MUT-MUTANT-ROW"):
+        payload["mutants"] = payload["mutants"] + [
+            {"mutant": "MUT-PLANTED-AFTER-THE-COUNT", "target": "NONE",
+             "what": "a row appended after the totals were taken",
+             "plants": "nothing"}]
     if mut("MUT-SEAL"):
         payload["coin_arena"] = dict(payload["coin_arena"])
         payload["coin_arena"]["coins"] = "MOVED-AFTER-THE-GATE"
     unsealed = [k for k in payload
                 if k not in SEAL.by_key and k not in DECLARED_UNSEALED]
     moved = SEAL.reverify(payload)
+    late_gate_ids = (set(PAPER_GATE_IDS) | set(RECEIPT_GATE_IDS)
+                     | set(CLOSING_GATE_IDS))
+    at_a_paper_gate = sorted(m["receipt_key"] for m in SEAL.man
+                             if m["gate"] in late_gate_ids)
+    before_the_paper_gates = [m for m in SEAL.man
+                              if m["gate"] not in late_gate_ids]
+    declared_unsealed = dict(DECLARED_UNSEALED)
+    if mut("MUT-UNSEALED-DECLARATION"):
+        declared_unsealed["A-KEY-THIS-RECEIPT-DOES-NOT-PUBLISH"] = \
+            "an exemption carried and never used"
+    payload["declared_unsealed"] = declared_unsealed
+    payload["totals"]["objects_sealed_before_the_paper_gates"] = \
+        len(before_the_paper_gates)
+    payload["totals"]["objects_sealed_at_a_paper_gate"] = \
+        len(at_a_paper_gate)
+    boundary_ok = (len(before_the_paper_gates) + len(at_a_paper_gate)
+                   == len(SEAL.man)
+                   and (("paper_coverage" not in payload)
+                        or at_a_paper_gate
+                        == sorted(THE_PAPER_SEALED_OBJECTS)))
+    mutant_rows_ok = len(payload["mutants"]) == payload["totals"]["mutants"]
     rtext = json.dumps({k: v for k, v in payload.items()
                         if k not in POOL_EXCLUDED},
                        sort_keys=True, default=str)
@@ -4940,58 +6205,107 @@ def seal_and_write(S, write, paper_bytes):
             "declaration with the reason it cannot be, and every sealed "
             "object still matches its gate-time digest -- so an object "
             "edited after its gate closed dies here rather than being "
-            "re-derived from disk and pronounced consistent (#119)",
-            not unsealed and not moved and shape_ok,
+            "re-derived from disk and pronounced consistent (#119).  The "
+            "manifest is also PARTITIONED at the paper-gate boundary and the "
+            "objects sealed at a paper gate must be exactly the declared "
+            "ones, so the published sealed-object counts name the property "
+            "they measure; and the falsifier registry is recounted against "
+            "its own published total, so a row appended after the totals "
+            "were taken dies here too",
+            not unsealed and not moved and shape_ok and boundary_ok
+            and mutant_rows_ok,
             "%d published keys, %d sealed, %d declared unsealed, %d "
             "undeclared %s, %d moved since their gate %s; ledger shape "
-            "consistent: %s"
-            % (len(payload), len(SEAL.by_key), len(DECLARED_UNSEALED),
-               len(unsealed), unsealed[:4], len(moved), moved[:4], shape_ok))
+            "consistent: %s; %d objects sealed before the paper gates and "
+            "%d at one, the paper-gate set as declared: %s; %d falsifier "
+            "rows against a published total of %d"
+            % (len(payload), len(SEAL.by_key), len(declared_unsealed),
+               len(unsealed), unsealed[:4], len(moved), moved[:4], shape_ok,
+               len(before_the_paper_gates), len(at_a_paper_gate), boundary_ok,
+               len(payload["mutants"]), payload["totals"]["mutants"]))
     transcript = "\n".join(LOG) + "\n" + verdict + "\n"
     payload["transcript_head"] = digest(transcript)
+    if mut("MUT-POST-SEAL-KEY"):
+        payload["FORGED-AFTER-THE-SEAL-GATE"] = {
+            "planted": "a top-level key inserted after G-SEAL-INTEGRITY"}
     blob = json.dumps(payload, indent=1, sort_keys=True, default=str)
     outtxt = transcript
+    promoted = json.loads(blob)
+    late_keys = [k for k in promoted
+                 if k not in SEAL.by_key and k not in declared_unsealed]
+    absent_keys = [k for k in declared_unsealed if k not in promoted]
+    LD.gate("G-MANIFEST-TOTALITY-AT-PROMOTION",
+            "TOTALITY IS RECOMPUTED AT PROMOTION TIME (#119 as amended) and "
+            "not once, early, on a payload that later grew: the bytes that "
+            "will cross the disk boundary are parsed back here and EVERY "
+            "top-level key they carry must be sealed or declared -- so a key "
+            "inserted after the seal gate, which the seal gate cannot see "
+            "and which a byte comparison of the receipt against itself "
+            "cannot see either, dies before anything is written.  The "
+            "declaration is checked in the other direction too: every key it "
+            "exempts must actually be published, because an exemption "
+            "carried and never used is a hole rather than a courtesy",
+            not late_keys and not absent_keys,
+            "%d top-level keys at promotion, %d sealed, %d declared "
+            "unsealed; %d neither %s; %d declared but absent %s"
+            % (len(promoted), len(SEAL.by_key), len(declared_unsealed),
+               len(late_keys), late_keys[:4], len(absent_keys),
+               absent_keys[:4]))
     if not write:
         return payload, 0
     tmps = []
-    for rel, data in ((OUT_REL, outtxt), (RECEIPT_REL, blob)):
-        p = os.path.join(REPO, rel)
-        tmp = p + ".tmp"
-        with open(tmp, "w") as fh:
-            fh.write(data)
-        tmps.append((tmp, p))
-    raw_receipt = open(tmps[1][0]).read()
-    back = json.loads(raw_receipt)
-    disk_bad = SEAL.reverify(back)
-    txt_ok = open(tmps[0][0]).read() == outtxt
-    blob_ok = raw_receipt == blob
-    chain_ok = back["gate_digests"] == [
-        digest({"prev": "GENESIS" if i == 0 else back["gate_digests"][i - 1],
-                "row": r}) for i, r in enumerate(back["gates"])]
-    if disk_bad or not txt_ok or not blob_ok or not chain_ok:
+    try:
+        for rel, data in ((OUT_REL, outtxt), (RECEIPT_REL, blob)):
+            p = os.path.join(REPO, rel)
+            tmp = p + ".tmp"
+            with open(tmp, "w") as fh:
+                fh.write(data)
+            tmps.append((tmp, p))
+        raw_receipt = open(tmps[1][0]).read()
+        back = json.loads(raw_receipt)
+        disk_bad = SEAL.reverify(back)
+        promoted_text = open(tmps[0][0]).read()
+        txt_ok = promoted_text == outtxt
+        head_ok = digest(promoted_text) == back["transcript_head"]
+        blob_ok = raw_receipt == blob
+        total_ok = not [k for k in back if k not in SEAL.by_key
+                        and k not in declared_unsealed]
+        chain_ok = back["gate_digests"] == [
+            digest({"prev": "GENESIS" if i == 0
+                    else back["gate_digests"][i - 1], "row": r})
+            for i, r in enumerate(back["gates"])]
+        LD.gate("G-ARTIFACT-INTEGRITY",
+                "the artifacts are compared against the GATE-TIME seals and "
+                "not against a re-derivation, and the comparison happens "
+                "BEFORE promotion: both files are written as temporaries, "
+                "the receipt is read back from the filesystem and every "
+                "sealed object must still carry its gate-time digest, the "
+                "manifest is re-derived TOTAL from the bytes read back, the "
+                "transcript must be byte-identical to the string this run "
+                "emitted AND must carry the digest the receipt publishes for "
+                "it, THE RECEIPT MUST BE BYTE-IDENTICAL TOO -- which covers "
+                "the declared-unsealed keys, the gate ledger and its chain "
+                "among them -- and the chain is recomputed from the bytes "
+                "read back.  A refusal removes the temporaries and leaves "
+                "the published artifacts untouched, and so does an exception "
+                "on any path between staging and promotion",
+                not disk_bad and txt_ok and blob_ok and chain_ok
+                and head_ok and total_ok,
+                "%d sealed objects moved on the way to disk %s; transcript "
+                "byte-identical: %s; its digest is the published one: %s; "
+                "receipt byte-identical: %s; the manifest is total over the "
+                "bytes read back: %s; chained ledger verified from the bytes "
+                "read back: %s"
+                % (len(disk_bad), disk_bad[:3], txt_ok, head_ok, blob_ok,
+                   total_ok, chain_ok))
+        for (tmp, p), data in zip(tmps, (outtxt, blob)):
+            with open(tmp, "w") as fh:
+                fh.write(data)
+            os.replace(tmp, p)
+    finally:
         for tmp, _p in tmps:
             if os.path.exists(tmp):
                 os.remove(tmp)
-    LD.gate("G-ARTIFACT-INTEGRITY",
-            "the artifacts are compared against the GATE-TIME seals and not "
-            "against a re-derivation, and the comparison happens BEFORE "
-            "promotion: both files are written as temporaries, the receipt "
-            "is read back from the filesystem and every sealed object must "
-            "still carry its gate-time digest, the transcript must be "
-            "byte-identical to the string this run emitted, THE RECEIPT MUST "
-            "BE BYTE-IDENTICAL TOO -- which covers the declared-unsealed "
-            "keys, the gate ledger and its chain among them -- and the chain "
-            "is recomputed from the bytes read back.  A refusal removes the "
-            "temporaries and leaves the published artifacts untouched",
-            not disk_bad and txt_ok and blob_ok and chain_ok,
-            "%d sealed objects moved on the way to disk %s; transcript "
-            "byte-identical: %s; receipt byte-identical: %s; chained ledger "
-            "verified from the bytes read back: %s"
-            % (len(disk_bad), disk_bad[:3], txt_ok, blob_ok, chain_ok))
-    for (tmp, p), data in zip(tmps, (outtxt, blob)):
-        with open(tmp, "w") as fh:
-            fh.write(data)
-        os.replace(tmp, p)
     return payload, 2
 
 
@@ -5030,6 +6344,17 @@ def run(write=True, paper_gates=True):
             % (r["row"], r["group_order"], r["carrier_points"], r["irreps"],
                r["hosted"], r["orbits_by_the_character"]))
     measure_the_odd_twist_species(S, pv)
+    measure_the_price_is_index_two(S, pv)
+    say("  the price: the arena's gauge group sits inside the acting group "
+        "at index %s, the identity holds at %d of %d synthetic probes, and "
+        "the observable's expectation at every extreme invariant measure is "
+        "%s"
+        % (S["the_price_is_index_two"]["the_index_at_both_readings"],
+           S["the_price_is_index_two"][
+               "synthetic_probes_where_the_three_routes_agree"],
+           S["the_price_is_index_two"]["synthetic_probes"],
+           S["the_price_is_index_two"][
+               "the_expectation_at_every_extreme_invariant_measure"]))
     measure_the_identity_layer(S, pv)
     measure_the_crystallization_chain(S, pv, src)
     say("  the identity layer: species with an invariant vector %s; along "
@@ -5094,7 +6419,7 @@ def run(write=True, paper_gates=True):
           "paper_gates": len(PAPER_GATE_IDS),
           "receipt_gates": len(RECEIPT_GATE_IDS),
           "closing_gates": len(CLOSING_GATE_IDS),
-          "objects_sealed_before_the_paper_gates": len(SEAL.man)}
+          "objects_sealed_when_the_ledger_shape_was_taken": len(SEAL.man)}
     if mut("MUT-LEDGER-SHAPE"):
         ls["paper_gates"] = ls["paper_gates"] + 1
     LD.gate("G-LEDGER-SHAPE-IS-CONSISTENT",
@@ -5102,14 +6427,16 @@ def run(write=True, paper_gates=True):
             "and not a description of it: the sealed-object count is "
             "recounted from the manifest itself, the paper-gate count from "
             "the declared list, and the gate total includes this gate",
-            ls["objects_sealed_before_the_paper_gates"] == len(SEAL.man)
+            ls["objects_sealed_when_the_ledger_shape_was_taken"]
+            == len(SEAL.man)
             and ls["gates_closed_before_the_paper_gates"] == len(LD.rows) + 1
             and ls["paper_gates"] == len(PAPER_GATE_IDS)
             and ls["receipt_gates"] == len(RECEIPT_GATE_IDS),
             "%d sealed objects published against a manifest of %d; %d gates "
             "closed including this one; %d paper gates and %d receipt-wall "
             "gates declared"
-            % (ls["objects_sealed_before_the_paper_gates"], len(SEAL.man),
+            % (ls["objects_sealed_when_the_ledger_shape_was_taken"],
+               len(SEAL.man),
                ls["gates_closed_before_the_paper_gates"], ls["paper_gates"],
                ls["receipt_gates"]))
     S["ledger_shape"] = ls
@@ -5124,8 +6451,11 @@ def run(write=True, paper_gates=True):
         LD.gate("G-PAPER-PRESENT", "the paper must exist to be gated", False,
                 "missing %s" % PAPER_REL)
     say("")
-    say("GATES %d (+%d closing) :: MUTANTS %d :: ANCHORS %d :: SEALED %d"
-        % (len(LD.rows), len(CLOSING_GATE_IDS), len(MUTANTS),
+    say("GATES %d (+%d receipt wall +%d closing = %d) :: MUTANTS %d :: "
+        "ANCHORS %d :: SEALED %d"
+        % (len(LD.rows), len(RECEIPT_GATE_IDS), len(CLOSING_GATE_IDS),
+           len(LD.rows) + len(RECEIPT_GATE_IDS) + len(CLOSING_GATE_IDS),
+           len(MUTANTS),
            len(SOURCES) + len(PATH_VALUES) + len(VERBATIM), len(SEAL.man)))
     payload, _closing = seal_and_write(S, write, paper_bytes)
     say("")
@@ -5213,6 +6543,10 @@ def main(argv):
         if a == "--mutant":
             if i + 1 >= len(argv):
                 sys.stderr.write("--mutant needs a NAME\n%s" % USAGE)
+                return 2
+            if "mutant" in args:
+                sys.stderr.write("--mutant given twice; one falsifier per "
+                                 "process\n%s" % USAGE)
                 return 2
             args["mutant"] = argv[i + 1]
             i += 1

@@ -11786,3 +11786,40 @@ first live) stands registered as the successor.
 
 **Programme count: THIRTY-THREE terminals; zero false
 computed numbers surviving anywhere in v14.**
+
+## 2026-08-15 — SPC REPAIR (CONTINUATION) DELIVERED AND COMMITTED: EVERY Z CONFIRMED; THE ADJUDICATOR'S ≤90 BOUND CORRECTED TO 92 BY THE WORKER; THE ON-GRAIN SPLIT MEASURED EMPTY; ZERO MEASURED MOVES (v14 LEDGER #365)
+
+**Files:** paper-37-spc.md ccdccb349856; spc_exact.py
+234493dc5fce; spc_output.txt b7eca3c40025;
+spc_receipt.json 7cca17887eeb.  The predecessor's Z1–Z10
+substantively complete; the continuation verified all of
+it and fixed TWO further defects (the E24-stamp gate
+reading the wrong key — now every stamp key must read
+COUNTING-ONLY; the under-discharged realization wall — 9
+forms added, the "exists physically" paraphrase now dies
+via MUT-UPGRADE-PARAPHRASE, itself renamed after the wall
+killed its first name).  **ORDER-SHEET CORRECTION, owned
+by the adjudicator: Z1's "≤90 hosted anywhere" (K2's
+per-group-maxima bound, transmitted through #348) is
+wrong — the union across carrier rows gives 92 (CHART-128
+hosts 10+6+6 with union 12 > max 10); the worker computed
+the truth and moved nothing to fit the bad bound.**  The
+ledger measured exactly: 19 rows / 246 slots / 156 filled
+/ 133 distinct / 92 hosted-somewhere / 113 duplicate
+slots.  **Z2 ON-GRAIN STATISTICS: the 3 CELL-27 rows
+found by the parent's published cell count (not by name);
+the split EMPTY — 29/29 both shapes, 0/0/0; all four
+properly-splitting rows off-grain.**  Z8 the Young gate
+closed as K1 drafted (K1's own all-seven-tables
+monkeypatch dies).  Z7 feasibility: 4 of 4 head words
+settled-before-the-run WITH MECHANISMS (the #348
+engraving's first sealed exemplar).  **Battery: 73/73
+falsifiers at declared targets (the instrument's own
+verdict never trusted); 27 injections dead or
+correctly-surviving with attribution separately confirmed;
+byte ×2 off-tree two seeds; 947 numerals zero unlicensed;
+118 table rows re-derived cell-by-cell; the index-two
+theorem re-proved at 252 own probes.  ZERO measured moves;
+one head numeral (3→4 cross-engine groups) = the size of
+an ordered declaration.**  **Orchestrator battery next;
+terminal on green.**

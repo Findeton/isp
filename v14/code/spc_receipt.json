@@ -1,5 +1,9 @@
 {
  "acting_groups": {
+  "acting_groups_that_are_carrier_rows": [
+   8,
+   16
+  ],
   "groups_above_the_cap": 4,
   "rows": [
    {
@@ -69,13 +73,15 @@
     "the_group_the_carrier_sees_is_closed": true
    }
   ],
-  "table_cap": 128
+  "table_cap": 128,
+  "what_it_does_not_close": "THE-DENOMINATOR-THE-SPECIES-COUNT-OF-THE-GROUPS-ABOVE-THE-CAP-IS-UNMEASURED-HERE",
+  "what_the_closer_closes": "THE-ORBIT-STRUCTURE-AND-THE-HOSTED-SET-AT-THOSE-ROWS-BY-INFLATION-FROM-THE-IMAGE"
  },
  "anchor_classes": {
   "file_bytes": 12,
-  "path_value": 43,
-  "total": 74,
-  "verbatim_text": 19
+  "path_value": 51,
+  "total": 85,
+  "verbatim_text": 22
  },
  "arithmetic": {
   "banned_calls": 0,
@@ -153,6 +159,7 @@
     ],
     "orbits_by_the_character": 208,
     "orbits_by_union_find": 208,
+    "orbits_on_ordered_pairs": 105472,
     "order_routes": {
      "by_closure": 4,
      "by_orbit_stabilizer": 4,
@@ -161,12 +168,13 @@
     },
     "order_routes_taken": 4,
     "order_routes_that_agree": 4,
-    "provenance": "ACT/R5 -- the constant twists the torus itself realises: the arena's own gauge group on the carrier, anchored reading",
+    "provenance": "ACT/R5 -- the constant twists the torus itself carries: the arena's own gauge group on the carrier, anchored reading",
     "row": "COIN-640-UNDER-RESIDUAL-GAUGE-4",
     "selection_closes": true,
     "species_the_composites_exit_to": [],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 105472,
     "symmetric_dimension": 205120,
     "symmetric_multiplicities": [
      50832,
@@ -229,6 +237,7 @@
     ],
     "orbits_by_the_character": 136,
     "orbits_by_union_find": 136,
+    "orbits_on_ordered_pairs": 54784,
     "order_routes": {
      "by_closure": 8,
      "by_orbit_stabilizer": 8,
@@ -243,6 +252,7 @@
     "species_the_composites_exit_to": [],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 54784,
     "symmetric_dimension": 205120,
     "symmetric_multiplicities": [
      25416,
@@ -300,6 +310,7 @@
     ],
     "orbits_by_the_character": 120,
     "orbits_by_union_find": 120,
+    "orbits_on_ordered_pairs": 53248,
     "order_routes": {
      "by_closure": 8,
      "by_orbit_stabilizer": 8,
@@ -314,6 +325,7 @@
     "species_the_composites_exit_to": [],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 53248,
     "symmetric_dimension": 205120,
     "symmetric_multiplicities": [
      25416,
@@ -374,6 +386,7 @@
     ],
     "orbits_by_the_character": 80,
     "orbits_by_union_find": 80,
+    "orbits_on_ordered_pairs": 27712,
     "order_routes": {
      "by_closure": 16,
      "by_orbit_stabilizer": 16,
@@ -388,6 +401,7 @@
     "species_the_composites_exit_to": [],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 27712,
     "symmetric_dimension": 205120,
     "symmetric_multiplicities": [
      12612,
@@ -471,6 +485,7 @@
     ],
     "orbits_by_the_character": 1,
     "orbits_by_union_find": 1,
+    "orbits_on_ordered_pairs": 32,
     "order_routes": {
      "by_closure": 32,
      "by_orbit_stabilizer": 32,
@@ -485,6 +500,7 @@
     "species_the_composites_exit_to": [],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 32,
     "symmetric_dimension": 528,
     "symmetric_multiplicities": [
      14,
@@ -580,6 +596,7 @@
     ],
     "orbits_by_the_character": 1,
     "orbits_by_union_find": 1,
+    "orbits_on_ordered_pairs": 10,
     "order_routes": {
      "by_closure": 32,
      "by_orbit_stabilizer": 32,
@@ -599,6 +616,7 @@
     ],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 10,
     "symmetric_dimension": 136,
     "symmetric_multiplicities": [
      2,
@@ -694,6 +712,7 @@
     ],
     "orbits_by_the_character": 1,
     "orbits_by_union_find": 1,
+    "orbits_on_ordered_pairs": 10,
     "order_routes": {
      "by_closure": 32,
      "by_orbit_stabilizer": 32,
@@ -713,6 +732,7 @@
     ],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 10,
     "symmetric_dimension": 136,
     "symmetric_multiplicities": [
      2,
@@ -832,6 +852,7 @@
     ],
     "orbits_by_the_character": 1,
     "orbits_by_union_find": 1,
+    "orbits_on_ordered_pairs": 13,
     "order_routes": {
      "by_closure": 128,
      "by_orbit_stabilizer": 128,
@@ -857,6 +878,7 @@
     ],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 13,
     "symmetric_dimension": 528,
     "symmetric_multiplicities": [
      2,
@@ -986,6 +1008,7 @@
     ],
     "orbits_by_the_character": 1,
     "orbits_by_union_find": 1,
+    "orbits_on_ordered_pairs": 6,
     "order_routes": {
      "by_closure": 128,
      "by_orbit_stabilizer": 128,
@@ -1013,6 +1036,7 @@
     ],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 6,
     "symmetric_dimension": 136,
     "symmetric_multiplicities": [
      0,
@@ -1142,6 +1166,7 @@
     ],
     "orbits_by_the_character": 1,
     "orbits_by_union_find": 1,
+    "orbits_on_ordered_pairs": 6,
     "order_routes": {
      "by_closure": 128,
      "by_orbit_stabilizer": 128,
@@ -1169,6 +1194,7 @@
     ],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 6,
     "symmetric_dimension": 136,
     "symmetric_multiplicities": [
      0,
@@ -1271,6 +1297,7 @@
     ],
     "orbits_by_the_character": 2,
     "orbits_by_union_find": 2,
+    "orbits_on_ordered_pairs": 64,
     "order_routes": {
      "by_closure": 16,
      "by_orbit_stabilizer": 16,
@@ -1285,6 +1312,7 @@
     "species_the_composites_exit_to": [],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 64,
     "symmetric_dimension": 528,
     "symmetric_multiplicities": [
      36,
@@ -1383,6 +1411,7 @@
     ],
     "orbits_by_the_character": 1,
     "orbits_by_union_find": 1,
+    "orbits_on_ordered_pairs": 16,
     "order_routes": {
      "by_closure": 16,
      "by_orbit_stabilizer": 16,
@@ -1397,6 +1426,7 @@
     "species_the_composites_exit_to": [],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 16,
     "symmetric_dimension": 136,
     "symmetric_multiplicities": [
      10,
@@ -1474,6 +1504,7 @@
     ],
     "orbits_by_the_character": 3,
     "orbits_by_union_find": 3,
+    "orbits_on_ordered_pairs": 81,
     "order_routes": {
      "by_closure": 9,
      "by_orbit_stabilizer": 9,
@@ -1488,6 +1519,7 @@
     "species_the_composites_exit_to": [],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 81,
     "symmetric_dimension": 378,
     "symmetric_multiplicities": [
      42,
@@ -1558,6 +1590,7 @@
     ],
     "orbits_by_the_character": 1,
     "orbits_by_union_find": 1,
+    "orbits_on_ordered_pairs": 9,
     "order_routes": {
      "by_closure": 9,
      "by_orbit_stabilizer": 9,
@@ -1572,6 +1605,7 @@
     "species_the_composites_exit_to": [],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 9,
     "symmetric_dimension": 45,
     "symmetric_multiplicities": [
      5,
@@ -1642,6 +1676,7 @@
     ],
     "orbits_by_the_character": 2,
     "orbits_by_union_find": 2,
+    "orbits_on_ordered_pairs": 42,
     "order_routes": {
      "by_closure": 18,
      "by_orbit_stabilizer": 18,
@@ -1656,6 +1691,7 @@
     "species_the_composites_exit_to": [],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 42,
     "symmetric_dimension": 378,
     "symmetric_multiplicities": [
      18,
@@ -1730,6 +1766,7 @@
     ],
     "orbits_by_the_character": 1,
     "orbits_by_union_find": 1,
+    "orbits_on_ordered_pairs": 6,
     "order_routes": {
      "by_closure": 18,
      "by_orbit_stabilizer": 18,
@@ -1748,6 +1785,7 @@
     ],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 6,
     "symmetric_dimension": 45,
     "symmetric_multiplicities": [
      1,
@@ -1830,6 +1868,7 @@
     ],
     "orbits_by_the_character": 1,
     "orbits_by_union_find": 1,
+    "orbits_on_ordered_pairs": 9,
     "order_routes": {
      "by_closure": 108,
      "by_orbit_stabilizer": 108,
@@ -1850,6 +1889,7 @@
     ],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 9,
     "symmetric_dimension": 378,
     "symmetric_multiplicities": [
      2,
@@ -1937,6 +1977,7 @@
     ],
     "orbits_by_the_character": 1,
     "orbits_by_union_find": 1,
+    "orbits_on_ordered_pairs": 3,
     "order_routes": {
      "by_closure": 108,
      "by_orbit_stabilizer": 108,
@@ -1959,6 +2000,7 @@
     ],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 3,
     "symmetric_dimension": 45,
     "symmetric_multiplicities": [
      0,
@@ -2123,6 +2165,7 @@
     ],
     "orbits_by_the_character": 1,
     "orbits_by_union_find": 1,
+    "orbits_on_ordered_pairs": 2,
     "order_routes": {
      "by_closure": 362880,
      "by_the_class_equation": 362880,
@@ -2139,6 +2182,7 @@
     ],
     "statistics_route_disagreements": 0,
     "status": "MEASURED",
+    "sum_of_the_squared_multiplicities": 2,
     "symmetric_dimension": 45,
     "symmetric_multiplicities": [
      2,
@@ -2242,7 +2286,7 @@
   "the_action_on_the_links_is_faithful": true
  },
  "choices": {
-  "flag_measured_at": 11,
+  "flag_measured_at": 13,
   "rows": [
    {
     "choice": "THE-GROUP-INVENTORY-LIST",
@@ -2323,7 +2367,7 @@
     "instances_built": 1,
     "measured": true,
     "verdict_determining": false,
-    "why": "the parent published stabilizer ORDERS along the chain, not the partitions; a nested flag realising those orders is exhibited here and its invariant counts depend only on the shapes, which the orders fix at every step of this chain"
+    "why": "the parent published stabilizer ORDERS along the chain, not the partitions; a nested flag carrying those orders is exhibited here and its invariant counts depend only on the shapes, which the orders fix at every step of this chain"
    },
    {
     "choice": "THE-SELECTED-SHAPE",
@@ -2351,15 +2395,34 @@
     "measured": true,
     "verdict_determining": false,
     "why": "they demonstrate the outcome vocabulary; they enter no delivered count"
+   },
+   {
+    "choice": "THE-CROSS-ENGINE-LIST",
+    "class": "DECLARED-AND-DISCLOSED",
+    "fibre": "UNBOUNDED",
+    "instances_built": 4,
+    "measured": true,
+    "verdict_determining": false,
+    "why": "which symmetric groups go through both engines is a declared list and not a size limit -- the largest of them has fewer elements than the largest group this instrument enumerates for its modular engine -- so it is priced here as the choice it is"
+   },
+   {
+    "choice": "THE-INDEX-TWO-PROBE-FAMILY",
+    "class": "DECLARED-AND-DISCLOSED",
+    "fibre": "UNBOUNDED",
+    "instances_built": 300,
+    "measured": true,
+    "verdict_determining": false,
+    "why": "the synthetic sets the index-two identity is demonstrated on are a declared family enumerated by cycle type; they enter no delivered count and the identity they exhibit is a theorem, not a measurement of this arena"
    }
   ],
   "verdict_determining": 5
  },
  "closing_gates": [
   "G-SEAL-INTEGRITY",
+  "G-MANIFEST-TOTALITY-AT-PROMOTION",
   "G-ARTIFACT-INTEGRITY"
  ],
- "code_sha256_12": "6b399487f286",
+ "code_sha256_12": "234493dc5fce",
  "coin_arena": {
   "alphabet": 25,
   "coin_map_group_order": 16,
@@ -2374,10 +2437,10 @@
   "the_carrier": "THE-PARENTS-640-UNIFORM-CONFIGURATIONS"
  },
  "consumer_register": {
-  "anchors": 62,
+  "anchors": 73,
   "consumers_that_did_not_pass": 0,
   "consumers_that_do_not_exist": 0,
-  "distinct_consumer_gates": 19,
+  "distinct_consumer_gates": 21,
   "the_consumer_gates": [
    "G-ABOVE-THE-TABLE-CAP",
    "G-AG23-ARENA-REBUILT",
@@ -2395,42 +2458,44 @@
    "G-MUST-NOT-VOCABULARY",
    "G-OCC-SELECTED-SHAPE",
    "G-SELECTION-CLOSURE-CENSUS",
+   "G-STATISTICS-AT-THE-PARENTS-GRAIN",
    "G-STATISTICS-SPLIT-CENSUS",
    "G-THE-CARRIER-SEES-ONE-GROUP",
-   "G-THE-ODD-TWIST-SPECIES"
+   "G-THE-ODD-TWIST-SPECIES",
+   "G-THE-PRICE-IS-INDEX-TWO-FORCED"
   ]
  },
  "control_arms": [
   {
    "carrier_points": 3,
    "closes": true,
-   "emitted": "SPC-INVENTORY-1-GROUPS-3-CLASSES-3-SPECIES--SPC-CARRIER-SELECTS-3-OF-3--SPC-SELECTION-CLOSED-9-RULES--SPC-STATISTICS-SPLITS-3|0|0|0",
+   "emitted": "SPC-INVENTORY-1-GROUPS-3-CLASSES-3-SPECIES--SPC-CARRIER-SELECTS-3-OF-3-ROW-SLOTS--SPC-SELECTION-CLOSED-9-RULES--SPC-STATISTICS-SPLITS-3|0|0|0",
    "group_order": 3,
    "hosted": 3,
    "row": "CTRL-CYCLIC-3-REGULAR",
-   "second_law": "SPC-INVENTORY-1-GROUPS-3-CLASSES-3-SPECIES--SPC-CARRIER-SELECTS-3-OF-3--SPC-SELECTION-CLOSED-9-RULES--SPC-STATISTICS-SPLITS-3|0|0|0",
+   "second_law": "SPC-INVENTORY-1-GROUPS-3-CLASSES-3-SPECIES--SPC-CARRIER-SELECTS-3-OF-3-ROW-SLOTS--SPC-SELECTION-CLOSED-9-RULES--SPC-STATISTICS-SPLITS-3|0|0|0",
    "species": 3,
    "status": "MEASURED"
   },
   {
    "carrier_points": 2,
    "closes": true,
-   "emitted": "SPC-INVENTORY-1-GROUPS-3-CLASSES-3-SPECIES--SPC-CARRIER-SELECTS-1-OF-3--SPC-SELECTION-CLOSED-1-RULES--SPC-STATISTICS-SPLITS-1|0|0|2",
+   "emitted": "SPC-INVENTORY-1-GROUPS-3-CLASSES-3-SPECIES--SPC-CARRIER-SELECTS-1-OF-3-ROW-SLOTS--SPC-SELECTION-CLOSED-1-RULES--SPC-STATISTICS-SPLITS-1|0|0|2",
    "group_order": 3,
    "hosted": 1,
    "row": "CTRL-CYCLIC-3-TRIVIAL-ACTION",
-   "second_law": "SPC-INVENTORY-1-GROUPS-3-CLASSES-3-SPECIES--SPC-CARRIER-SELECTS-1-OF-3--SPC-SELECTION-CLOSED-1-RULES--SPC-STATISTICS-SPLITS-1|0|0|2",
+   "second_law": "SPC-INVENTORY-1-GROUPS-3-CLASSES-3-SPECIES--SPC-CARRIER-SELECTS-1-OF-3-ROW-SLOTS--SPC-SELECTION-CLOSED-1-RULES--SPC-STATISTICS-SPLITS-1|0|0|2",
    "species": 3,
    "status": "MEASURED"
   },
   {
    "carrier_points": 5,
    "closes": false,
-   "emitted": "SPC-INVENTORY-1-GROUPS-6-CLASSES-6-SPECIES--SPC-CARRIER-SELECTS-4-OF-6--SPC-SELECTION-OPEN--SPC-STATISTICS-SPLITS-6|0|0|0",
+   "emitted": "SPC-INVENTORY-1-GROUPS-6-CLASSES-6-SPECIES--SPC-CARRIER-SELECTS-4-OF-6-ROW-SLOTS--SPC-SELECTION-OPEN--SPC-STATISTICS-SPLITS-6|0|0|0",
    "group_order": 6,
    "hosted": 4,
    "row": "CTRL-CYCLIC-6-TWO-ORBITS",
-   "second_law": "SPC-INVENTORY-1-GROUPS-6-CLASSES-6-SPECIES--SPC-CARRIER-SELECTS-4-OF-6--SPC-SELECTION-OPEN--SPC-STATISTICS-SPLITS-6|0|0|0",
+   "second_law": "SPC-INVENTORY-1-GROUPS-6-CLASSES-6-SPECIES--SPC-CARRIER-SELECTS-4-OF-6-ROW-SLOTS--SPC-SELECTION-OPEN--SPC-STATISTICS-SPLITS-6|0|0|0",
    "species": 6,
    "status": "MEASURED"
   },
@@ -2446,6 +2511,37 @@
    "status": "BLOCKED"
   }
  ],
+ "counting_only": {
+  "objects": [
+   {
+    "measure": "COUNTING-ONLY",
+    "object": "carrier_census"
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "object": "odd_twist_species"
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "object": "selection"
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "object": "statistics"
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "object": "species_universes"
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "object": "the_price_is_index_two"
+   }
+  ],
+  "objects_declared": 6,
+  "objects_unstamped": 0,
+  "why": "no measure over any configuration space is declared here and none is used, so every fraction this unit publishes is a ratio of two counts over one declared list"
+ },
  "crystallization_chain": {
   "rows": [
    {
@@ -2499,7 +2595,9 @@
   ],
   "species_at_crystallization": 30,
   "species_at_the_first_prefix": 4,
+  "the_count_never_falls_along_the_flag": true,
   "the_crystallization_time": 5,
+  "the_flag_is": "ONE-EXHIBIT-OF-AN-UNBOUNDED-FAMILY-AND-THE-SIX-COUNTS-MOVE-WITH-IT",
   "the_flag_is_nested": true,
   "the_parents_profile": [
    4320,
@@ -2511,12 +2609,12 @@
   ]
  },
  "declared_unsealed": {
-  "closing_gates": "the two gates that close last of all; the receipt wall closes after the snapshot too and is counted in the totals",
+  "closing_gates": "the gates that close last of all -- the seal, the recomputation of the manifest's totality at promotion time, and the artifact integrity check; the receipt wall closes after the snapshot too and is counted in the totals",
   "code_sha256_12": "this instrument's own digest, which cannot seal itself",
   "declared_unsealed": "this declaration",
   "exit_conventions": "the disclosed exit conventions, a constant",
   "gate_digests": "the CHAINED per-row digests of that ledger",
-  "gates": "the gate ledger, snapshotted before the receipt wall and the two closing gates -- a seal cannot be inside the object it seals",
+  "gates": "the gate ledger, snapshotted before the receipt wall and the three closing gates -- a seal cannot be inside the object it seals",
   "mutants": "the falsifier registry, checked TOTAL against the syntax tree at G-MUTANT-REGISTRY-IS-TOTAL and published as this instrument's description of itself",
   "paper_sha256_12": "the paper's digest, taken at the paper gates",
   "pin_sha256_prefix": "the pin digest, verified at G-SOURCE-BYTES",
@@ -2529,59 +2627,66 @@
  },
  "exit_conventions": "the delivery run exits 0 on success and 1 on any refusal, writing nothing; --selftest exits 0 when every anchor class is fatal; --mutant exits 0 when the named mutant dies on its declared target; an unknown flag exits 2",
  "falsifier_totals": {
-  "declared_falsifiers": 55,
-  "distinct_target_gates": 48,
-  "functions_declared": 159,
-  "switches_in_the_syntax_tree": 55,
+  "declared_falsifiers": 73,
+  "distinct_target_gates": 56,
+  "functions_declared": 173,
+  "switches_in_the_syntax_tree": 73,
   "the_sweep_result": "AN-EXTERNAL-BATTERY-RESULT-THE-DELIVERY-RUN-DOES-NOT-PRODUCE-IT"
  },
  "gate_digests": [
   "a51307d6555c",
-  "d64757988a61",
-  "563ef56c4dad",
-  "8b29fe0a2666",
-  "314c7f5360bd",
-  "c0f6ab2bb9c2",
-  "77f45a4c41f9",
-  "b88095cd9e93",
-  "c4bff7a15ea7",
-  "1ebd6c5a367b",
-  "951679d452c8",
-  "c6946d042c15",
-  "b931d4a386cb",
-  "5ef91126ff80",
-  "0479a196a1f9",
-  "3277b3cd5bb4",
-  "4340656f4fd9",
-  "b7960165e4cf",
-  "e02e8f473cad",
-  "34b3e94a37b9",
-  "3d62570e276e",
-  "9cfff46121f4",
-  "e392a4756594",
-  "1e19113a4a5f",
-  "dec692399b75",
-  "d0f1987d81ba",
-  "4f75ecda4b50",
-  "ac6aee689564",
-  "f41c39c74c22",
-  "636411257286",
-  "3a9e0721e6d8",
-  "6d29a09fd498",
-  "8b32c74fa76d",
-  "5f7db4438158",
-  "86fb31551bd0",
-  "23f581c674ee",
-  "7b1e30f74d0c",
-  "2f0bbdfa088a",
-  "096616e786ba",
-  "bf701f8ffbf2",
-  "740ce0bf7593",
-  "f74acc095630",
-  "552b28e08fc6",
-  "a6ca8f2351ae",
-  "4f844449f258",
-  "3b6b7639cfcc"
+  "70d655ca66ec",
+  "74a3c885c69e",
+  "276c10143137",
+  "2c7c6066fb21",
+  "f7f24c98d1fc",
+  "5dd5cee925f6",
+  "cbfc657f0574",
+  "c63a29cbe8db",
+  "fb4a6cc89b01",
+  "d7bc4bd32244",
+  "c61c83061348",
+  "aac3321aacd1",
+  "2c282525071d",
+  "1513c65ddf83",
+  "372f34443fb0",
+  "59fd373908b5",
+  "4c65b2d88ec0",
+  "548295dd78a6",
+  "18e8e7575599",
+  "220509c7474b",
+  "f2a59c6e4416",
+  "9655b451cd52",
+  "bf0e6b849862",
+  "aafaffc3cf04",
+  "ade45236a521",
+  "347fc0e5e2ce",
+  "d5345b0cd9bd",
+  "6769c21cdee3",
+  "942c68c97bdf",
+  "e3da1ed4db66",
+  "dbd2c5c78af9",
+  "1c4aca1dd243",
+  "adab83271b2f",
+  "f39823d1b46b",
+  "6521a02dcceb",
+  "387f7d1ae648",
+  "777d351385d0",
+  "37125067d753",
+  "dbdb1ef11cd8",
+  "7e8a0856b574",
+  "82b34a500533",
+  "5419bca8b276",
+  "b870a540a94c",
+  "cb2fbdaac650",
+  "85384e62e29d",
+  "c482d983482a",
+  "39ba05cf1664",
+  "1de9aca5741a",
+  "92cd1c8fbf99",
+  "7c8c4feccbc6",
+  "04abeab6eee2",
+  "524e82203e39"
  ],
  "gates": [
   {
@@ -2593,14 +2698,14 @@
   },
   {
    "claim": "every inherited quantity is a (path, value) pair: the path must resolve in the pinned receipt AND the value there must be the one this instrument declares, and each is bound to the gate that consumes it -- so a parent that moved a number under a surviving key stops this run",
-   "detail": "43 of 43 path-value anchors resolve; failing []",
+   "detail": "51 of 51 path-value anchors resolve; failing []",
    "gate": "G-PATH-VALUE-ANCHORS",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "every quotation this paper makes of a parent is located EXACTLY ONCE in that parent's pinned bytes under whitespace and markdown-prefix normalisation (#125), is pinned by its own digest and its own character count against a declared floor, stops being locatable when a content-bearing token is perturbed, and is bound to the gate that consumes it -- so the anchor binds QUOTE FIDELITY and not mere existence",
-   "detail": "19 of 19 verbatim windows located exactly once and falsified under perturbation; failing []",
+   "detail": "22 of 22 verbatim windows located exactly once and falsified under perturbation; failing []",
    "gate": "G-VERBATIM-ANCHORS",
    "kind": "MEASURED",
    "passed": true
@@ -2655,15 +2760,15 @@
    "passed": true
   },
   {
-   "claim": "THE SCOPE-CLOSING MEASUREMENT: at every one of the six declared (grain, reading) rows the subgroup of coin maps a UNIFORM configuration can be moved by is the same group -- of order eight at the anchored reading and sixteen at the extension -- it is closed, and the partition it induces on the carrier is exactly the partition the whole acting group induces there, at the parent's own two counts.  So the species census on this carrier is COMPLETE at all six rows even though four of the six acting groups stand above the table cap: the carrier cannot tell them apart from the two groups whose tables are computed",
+   "claim": "THE SCOPE-CLOSING MEASUREMENT, AND WHAT IT CLOSES: at every one of the six declared (grain, reading) rows the subgroup of coin maps a UNIFORM configuration can be moved by is the same group -- of order eight at the anchored reading and sixteen at the extension -- it is closed, and the partition it induces on the carrier is exactly the partition the whole acting group induces there, at the parent's own two counts.  What that closes is the carrier's ORBIT STRUCTURE and its HOSTED SET, since a module factoring through an image of order eight or sixteen carries exactly that image's constituents inflated.  What it does NOT close is the DENOMINATOR: the four groups above the cap carry no species count here, so how many species each has -- and therefore how many a carrier would leave homeless -- is not measured, and none of the four is a carrier row of this census",
    "detail": "the group the carrier sees has order [8] at the anchored rows and [16] at the extension rows; induced classes [136] and [80]; orbit route agrees at 6 of 6 rows",
    "gate": "G-THE-CARRIER-SEES-ONE-GROUP",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the two character engines are independent computations -- one diagonalises the class sums of an enumerated group over a prime field and lifts, the other never sees a group element and recurses on rim hooks -- and on every symmetric group small enough for both they are required to return the SAME table, matched through the cycle type and compared as a multiset of rows so that no ordering is assumed",
-   "detail": "3 cross-engine rows, 0 disagreeing []",
+   "claim": "the two character engines are independent computations -- one diagonalises the class sums of an enumerated group over a prime field and lifts, the other never sees a group element and recurses on rim hooks -- and on every symmetric group of this unit's DECLARED cross-engine list they are required to return the SAME table, matched through the cycle type and compared as a multiset of rows so that no ordering is assumed.  The list is a declaration, published as one, and not a size limit",
+   "detail": "4 cross-engine rows at the declared list [2, 3, 4, 5], 0 disagreeing []",
    "gate": "G-TWO-ENGINES-AGREE",
    "kind": "MEASURED",
    "passed": true
@@ -2704,6 +2809,13 @@
    "passed": true
   },
   {
+   "claim": "the WHOLE multiplicity vector is pinned by a fourth route and not only its trivial component: for a permutation module the sum of the SQUARED multiplicities is the number of orbits on ORDERED PAIRS of carrier points, and that count is taken here by flooding the pair set with a generating subset of the permutation image, evaluating no character at all.  The gate binds each row separately (#87)",
+   "detail": "19 rows carry the ordered-pair route, 0 disagreeing []; the four coin rows return [105472, 54784, 53248, 27712]",
+   "gate": "G-THE-MULTIPLICITY-VECTOR-BY-ORDERED-PAIRS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "the homelessness question is MEASURED and not argued: a species is carrier-homeless at a row exactly when its multiplicity in that row's permutation module is zero, the count is bound to that predicate row by row, and the census is required to populate BOTH arms -- some row where every species is hosted and some row where one is not -- so the verdict is a measurement rather than a property of the arena's size",
    "detail": "9 of 19 rows leave at least one species homeless; the widest gap is ACTOR-9-UNDER-S9 at 2 of 30",
    "gate": "G-CARRIER-HOMELESS-CENSUS",
@@ -2711,9 +2823,23 @@
    "passed": true
   },
   {
-   "claim": "the parent's price and the parent's one pinned observable are resolved into a single species, and the resolution is measured three ways.  There is exactly ONE species on which the odd twist acts by minus one while the twists the torus realises act trivially; its multiplicity in the carrier equals the drop in the trivial multiplicity between the arena's own gauge group and the acting group -- which is the parent's own count of identified orbit pairs, at both readings; the parent's pinned observable, rebuilt here from its own definition, has a NON-ZERO component in that species and in no other; and its sum over every orbit of the acting group is zero, which is why every invariant weight gives it the single expectation the parent measured",
+   "claim": "the two universes this census counts in are separated and both are measured, because a hosted count read against the wrong one is a false sentence even when every numeral in it is true: a ROW SLOT is a (species, carrier-row) pairing and the rows offer as many slots as the sum of their own irrep counts, while a DISTINCT SPECIES is a character of one group counted once however many carriers that group is censused on.  The gate requires the slot total to exceed the distinct total by exactly the duplication the repeated groups create, and requires the distinct hosted count -- taken as a union of characters and not as a sum of row counts -- never to exceed the distinct total",
+   "detail": "246 row slots over 19 rows at 11 distinct groups; 133 distinct species behind them, 113 slots duplicating a species already counted; 156 slots filled and 92 distinct species hosted somewhere; 6 groups censused on more than one carrier",
+   "gate": "G-THE-SPECIES-UNIVERSES-ARE-DISTINGUISHED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the parent's price and the parent's one pinned observable are resolved into a single species, and the resolution is measured three ways.  There is exactly ONE species on which the odd twist acts by minus one while the twists the torus itself carries act trivially; its multiplicity in the carrier equals the drop in the trivial multiplicity between the arena's own gauge group and the acting group -- which is the parent's own count of identified orbit pairs, at both readings; the parent's pinned observable, rebuilt here from its own definition, has a NON-ZERO component in that species and in no other; and its sum over every orbit of the acting group is zero, which is why every invariant weight gives it the single expectation the parent measured",
    "detail": "the species is [0] at the anchored reading with multiplicity 72 against the parent's 72, and [1] with multiplicity 40 against 40; the observable is non-zero at 288 of the 640 points, its non-zero isotypic components are [0], and 136 of 136 orbit sums vanish",
    "gate": "G-THE-ODD-TWIST-SPECIES",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the price sentence is GRADED, because a headline that spends its emphasis on a theorem is not a measurement.  That the discount is exactly ONE label is forced: the arena's own gauge group is measured to sit inside the acting group with INDEX TWO at both readings, and for an index-two pair acting on any finite set the drop in the orbit count, the number of merged orbit pairs and the multiplicity of the unique character trivial on the subgroup coincide -- demonstrated here on synthetic sets that share nothing with this arena.  What is MEASURED is which character that is, that it is the same one under a strictly stronger reading -- a species acting by the scalar minus one AT ANY DEGREE, not only at degree one -- that the parent's observable is reversed by the odd twist POINTWISE and is invariant under the even twist and the swap, and that its expectation at every extreme point of the invariant simplex is exactly the parent's own pinned value",
+   "detail": "the index is [2, 2] at the two readings; 300 of 300 synthetic probes agree on all three routes; the scalar filter returns [[0], [1]] and the degree-one filter [[0], [1]]; the observable is reversed pointwise by the odd twist with 0 exceptions and invariant under the even twist and the swap with 0 and 0; its expectation over the 136 extreme invariant measures ranges over ['0'] against the parent's [0, 0], and its own range is [-2, 2]",
+   "gate": "G-THE-PRICE-IS-INDEX-TWO-FORCED",
    "kind": "MEASURED",
    "passed": true
   },
@@ -2721,6 +2847,13 @@
    "claim": "the identity lattice is NOT this unit's invention: every one of the six nontrivial stabilizer shapes is read from the parent's receipt at its own named path together with the number of prefixes carrying it, the Young subgroup each shape names is built here, and its order is re-derived by three routes -- the product of the block factorials, the sum of its own class sizes, and the sum of the squares of its species degrees",
    "detail": "7 stabilizer rows, orders [1, 2, 4, 8, 24, 216, 4320]",
    "gate": "G-IDENTITY-LATTICE-IS-THE-PARENTS",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the seven stabilizer tables are gated by the same two routes as every other table this unit publishes, and not merely measured beside them: every pair of distinct species has inner product zero and every species one with itself, and for every pair of classes the column inner product vanishes off the diagonal and returns the centralizer order on it.  A published orthogonality count no gate reads is a number in a receipt and not a measurement the delivery run depends on, so a corrupted stabilizer table dies here",
+   "detail": "7 stabilizer tables gated on both routes, 0 failing []; the row failures are [0, 0, 0, 0, 0, 0, 0] and the column failures [0, 0, 0, 0, 0, 0, 0]",
+   "gate": "G-YOUNG-TABLE-ORTHOGONALITY",
    "kind": "MEASURED",
    "passed": true
   },
@@ -2739,8 +2872,8 @@
    "passed": true
   },
   {
-   "claim": "the parent's measured crystallization profile is realised here by an EXHIBITED flag of partitions of the nine actors: each block of each step lies inside a block of the step before, so the stabilizers are genuinely nested and the species inventory along the chain is a restriction sequence rather than six unrelated subgroups; every order is compared with the parent's own published profile entry by entry",
-   "detail": "orders [4320, 216, 216, 8, 1, 1] against the parent's [4320, 216, 216, 8, 1, 1]; nested: True; the inventory along the chain [4, 12, 12, 26, 30, 30]",
+   "claim": "the parent's measured crystallization profile is rebuilt here by an EXHIBITED flag of partitions of the nine actors: each block of each step lies inside a block of the step before, so the stabilizers are genuinely nested and the species inventory along the chain is a restriction sequence rather than six unrelated subgroups; every order is compared with the parent's own published profile entry by entry.  Because the flag refines, the count along it CANNOT FALL -- an invariant vector for a larger stabilizer is an invariant vector for every smaller one -- and that is measured here step by step rather than asserted, so nothing is destroyed at the first prefix and nothing is returned at the fifth",
+   "detail": "orders [4320, 216, 216, 8, 1, 1] against the parent's [4320, 216, 216, 8, 1, 1]; nested: True; the inventory along the chain [4, 12, 12, 26, 30, 30], never falling: True",
    "gate": "G-CRYSTALLIZATION-CHAIN-IS-NESTED",
    "kind": "MEASURED",
    "passed": true
@@ -2767,6 +2900,13 @@
    "passed": true
   },
   {
+   "claim": "the split is RE-RUN AT THE PARENT'S OWN SELECTION GRAIN and published as the on-grain result, because the parent's thesis is that exclusion selects only at the carrier's own grain and it measured that nothing is selected at the actor's.  The rows at that grain are found here by the parent's own published cell count rather than named: at those rows the two squares carry the SAME species and the split is EMPTY -- no species is symmetric-only, none antisymmetric-only, none in neither -- so the selection costs no label where the parent selected.  Every row that does split is required to lie OFF that grain, and the parent's own zero is carried as what the parent published it to be: a vacuous zero over an empty forbidden set",
+   "detail": "3 rows sit at the parent's own selection grain (['CELL-27-UNDER-TRANS-9', 'CELL-27-UNDER-CHART-18', 'CELL-27-UNDER-EXT-108']) carrying 29 species: 29 in both shapes, 0 symmetric only, 0 antisymmetric only, 0 in neither; 4 rows split properly and all 4 of them lie off that grain ['SITE-16-UNDER-CHART-128', 'PLAQUETTE-16-UNDER-CHART-128', 'SITE-9-UNDER-EXT-108', 'ACTOR-9-UNDER-S9']; the parent's antisymmetric forbidden set is empty (True) and its exclusion selects at 0 rows of the actor grain",
+   "gate": "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "no group order in this census is typed.  Every carrier row re-derives its group's order by the length of the closed element list, by the sum of its own conjugacy class sizes and by the sum of the squares of its species degrees -- three computations sharing no step -- and by the product of one declared point's orbit with that point's stabilizer wherever the elements are enumerable, which is every row but the one whose group has three hundred and sixty-two thousand eight hundred and eighty elements.  The four groups the gauge arena's own terminal published orders for are additionally required to carry those orders, at named receipt paths.  The gate binds each group separately (#87)",
    "detail": "19 rows, 75 routes taken in all, 0 groups where the routes disagree []; 0 of the parent's four published orders not reproduced []",
    "gate": "G-GROUP-INVENTORY-ORDERS-RE-DERIVED",
@@ -2775,7 +2915,7 @@
   },
   {
    "claim": "the published inventory is checked TOTAL against the measurements that produced it: every group carrying a carrier row appears exactly once, every acting group above the table cap appears with its re-derived order and the group the carrier sees it through, every measured stabilizer of the identity lattice appears with its own species count, and the totals are recounted from the rows rather than accumulated",
-   "detail": "22 groups, 18 with a table and 4 above the cap; 220 classes and 220 species in all",
+   "detail": "22 groups, 18 with a table and 4 above the cap; 220 classes and 220 species in all, 133 of them at the 11 groups that carry a carrier row and 87 at the 11 groups that carry none; the order routes fall [10, 8, 4]",
    "gate": "G-GROUP-INVENTORY-IS-TOTAL",
    "kind": "MEASURED",
    "passed": true
@@ -2788,36 +2928,43 @@
    "passed": true
   },
   {
-   "claim": "the feasibility of every pre-registered word is measured AT THIS ARENA and not only in the controls: each arm carries the delivered row that witnesses it, an arm claimed live must name one, and the one arm that no delivered row can reach is declared unreachable here and demonstrated only synthetically -- so no outcome is pre-registered that the arena had already decided",
-   "detail": "8 outcome arms, 7 live at this arena, each witnessed by a delivered row",
+   "claim": "the feasibility of every pre-registered word is measured AT TWO LEVELS and they are not conflated (#299 as extended).  At the ROW level each arm carries the delivered row that witnesses it, an arm claimed live must name one, and the one arm no delivered row can reach is declared unreachable here and demonstrated only synthetically.  At the ARENA level the head's words are AGGREGATES over a declared row list, so feasibility must be shown AT THE LIST: this gate measures, for each word, whether a single declared row already settles it before the run, names the rows that do, and requires the count to be published rather than a liveness the row level cannot support",
+   "detail": "8 outcome arms, 7 live at the row level, each witnessed by a delivered row; at the arena level 4 of 4 head words are settled before the run, 3 of them by any one of 4 declared rows -- the widest, ACTOR-9-UNDER-S9, among them",
    "gate": "G-OUTCOME-FEASIBILITY-AT-THIS-ARENA",
    "kind": "MEASURED",
    "passed": true
   },
   {
+   "claim": "E-24 is a MEASUREMENT here and not a declaration inside a sealed object: every published object that carries a count is required to carry the counting-only stamp, the list of them is checked against the objects themselves, and a stamp removed from any one of them -- from ANY of the keys that carry it, since an object stamped twice is only as honest as its weaker stamp -- stops the run, because a stamp no gate reads is a string in a receipt",
+   "detail": "6 objects declared counting-only, 0 unstamped []",
+   "gate": "G-COUNTS-ARE-COUNTING-ONLY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "every construction choice is inventoried with its class, its fibre, the instances this unit built and whether it is verdict-determining, and the instance counts are RECOUNTED from the objects they describe rather than typed beside them",
-   "detail": "12 choices, 5 verdict-determining, 11 with a measured flag",
+   "detail": "14 choices, 5 verdict-determining, 13 with a measured flag",
    "gate": "G-CHOICE-INVENTORY",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the set of functions this source defines is required to EQUAL a declared inventory, so a neutrally-named helper computing something this unit does not publish cannot exist unnoticed",
-   "detail": "159 functions defined; undeclared []; declared but absent []",
+   "detail": "173 functions defined; undeclared []; declared but absent []",
    "gate": "G-FUNCTION-INVENTORY-IS-TOTAL",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the falsifier registry is checked TOTAL against this instrument's own syntax tree: every switch in the source is declared, every declared falsifier has a branch to fire, and a switch the scan cannot read -- a computed name, or a bare comparison outside the switch's own body -- is fatal rather than forgiven",
-   "detail": "55 switches in the tree, 55 declared; undeclared []; declared without a branch []; unreadable switch present False",
+   "detail": "73 switches in the tree, 73 declared; undeclared []; declared without a branch []; unreadable switch present False",
    "gate": "G-MUTANT-REGISTRY-IS-TOTAL",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "E-23: each falsifier's PUBLISHED description names the exact source token it plants, and that token is located in this instrument's own source text -- so a description-inverted mutant dies here rather than in a reader's trust",
-   "detail": "55 falsifiers, 0 whose published token is not in the source []",
+   "detail": "73 falsifiers, 0 whose published token is not in the source []",
    "gate": "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST",
    "kind": "MEASURED",
    "passed": true
@@ -2831,77 +2978,84 @@
   },
   {
    "claim": "the complete verdict string is compared for equality against an INDEPENDENT reconstruction that reads only the SERIALIZED receipt, derives the head by the second head law, and re-renders every segment from the primitive measured tables -- reading neither the builder's segments nor the builder's aggregates and sharing no format string with it",
-   "detail": "builder 2754 characters, reconstruction 2754, equal: True",
+   "detail": "builder 4553 characters, reconstruction 4553, equal: True",
    "gate": "G-VERDICT-RECONSTRUCTION",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the coverage is published at an honest denominator (#34), and the denominator is EVERY gate on the clean path and not only the ones already closed when this ledger is taken: each is either the declared target of a falsifier that REACHES it or carries a registered forcing stating why no falsifier can, the late gates are listed one by one with which of the two covers them, and the gate that exists only to refuse and the external battery's own adjudication are named in registries of their own so that no row of this one can never fire",
-   "detail": "36 gates closed here and 49 on the clean path; 36 carry a declared falsifier, 1 a registered forcing, 0 uncovered []; late gates 13, each covered: ['FALSIFIER:MUT-CHAIN', 'FALSIFIER:MUT-CLAIM,MUT-TABLE-ROW', 'FALSIFIER:MUT-CONSUMER', 'FALSIFIER:MUT-COVERAGE,MUT-SPELLED-NUMERAL', 'FALSIFIER:MUT-LEDGER-SHAPE', 'FALSIFIER:MUT-MUST-NOT,MUT-WALL-PARAPHRASE', 'FALSIFIER:MUT-MUST-NOT-RECEIPT', 'FALSIFIER:MUT-POLARITY', 'FALSIFIER:MUT-QUOTE-FIDELITY,MUT-TABLE-BINDING,MUT-TABLE-HEADER', 'FALSIFIER:MUT-SEAL', 'FALSIFIER:MUT-VERDICT-TWIN', 'FALSIFIER:MUT-WAIVER', 'FORCING']",
+   "detail": "42 gates closed here and 57 on the clean path; 42 carry a declared falsifier, 1 a registered forcing, 0 uncovered []; late gates 15, each covered: ['FALSIFIER:MUT-CHAIN', 'FALSIFIER:MUT-CLAIM,MUT-HEADER-IN-THE-PAPER-TEXT,MUT-TABLE-ROW', 'FALSIFIER:MUT-CONSUMER', 'FALSIFIER:MUT-COVERAGE,MUT-DIGEST-WHITELIST,MUT-SPELLED-COMPOUND,MUT-SPELLED-NUMERAL', 'FALSIFIER:MUT-HOSTED-UPGRADED,MUT-MUST-NOT,MUT-UPGRADE-PARAPHRASE,MUT-WALL-PARAPHRASE', 'FALSIFIER:MUT-LEDGER-SHAPE', 'FALSIFIER:MUT-MUST-NOT-RECEIPT', 'FALSIFIER:MUT-MUTANT-ROW,MUT-SEAL', 'FALSIFIER:MUT-POLARITY', 'FALSIFIER:MUT-POST-SEAL-KEY,MUT-UNSEALED-DECLARATION', 'FALSIFIER:MUT-QUOTE-ATTRIBUTION,MUT-QUOTE-FIDELITY,MUT-TABLE-BINDING,MUT-TABLE-HEADER', 'FALSIFIER:MUT-REFERENT-PAIR,MUT-REFERENT-UNIVERSE', 'FALSIFIER:MUT-VERDICT-TWIN', 'FALSIFIER:MUT-WAIVER', 'FORCING']",
    "gate": "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the chained ledger is VERIFIED and not merely built: every published per-row digest is recomputed here from its own predecessor and its own row and compared element by element, and the same chain is recomputed at the disk boundary from the bytes that were read back",
-   "detail": "37 chained rows recomputed, 0 mismatching []",
+   "detail": "43 chained rows recomputed, 0 mismatching []",
    "gate": "G-LEDGER-CHAIN-VERIFIED",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the ledger's own published shape is a MEASUREMENT of the ledger and not a description of it: the sealed-object count is recounted from the manifest itself, the paper-gate count from the declared list, and the gate total includes this gate",
-   "detail": "25 sealed objects published against a manifest of 25; 39 gates closed including this one; 7 paper gates and 1 receipt-wall gates declared",
+   "detail": "28 sealed objects published against a manifest of 28; 45 gates closed including this one; 8 paper gates and 1 receipt-wall gates declared",
    "gate": "G-LEDGER-SHAPE-IS-CONSISTENT",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the four walls are evaluated against this paper's own characters and each has TWO legs.  The first is a list of banned forms, matched at word boundaries with the declaring sentences removed first, and every declaring sentence the sweep may remove must itself be LOCATED here.  The second is POSITIVE, because a ban list refuses only what it lists and a paraphrase walks past it: every sentence putting a species word beside a word of the declared outside register must be one of the wall statements themselves, and nothing else is allowed",
-   "detail": "banned forms found: []; 4 declaring sentences, 0 not located []; 0 sentences reaching the outside register []",
+   "detail": "banned forms found: []; 9 declaring sentences, 0 not located []; 0 sentences reaching the outside register []",
    "gate": "G-MUST-NOT-VOCABULARY",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "every load-bearing sentence of the paper is RENDERED FROM THE RECEIPT and located in the delivered bytes at its exact occurrence count, under whitespace and markdown-prefix normalisation (#125) -- so a number corrupted at one of its several occurrences dies, and a paper whose prose drifted from the run that produced it cannot be delivered",
-   "detail": "223 rendered claims, 0 not located at their counts: []",
+   "detail": "241 rendered claims, 0 not located at their counts: []",
    "gate": "G-PAPER-CLAIMS",
    "kind": "MEASURED",
    "passed": true
   },
   {
+   "claim": "every numeral of the paper's own prose is bound to the LIST IT COUNTS IN, which a numeral-coverage gate cannot do: its pool is every integer this run computed anywhere, so a true numeral re-paired with the wrong universe passes it.  Two legs.  FIRST, the universes this census counts in are registered from the run's own objects -- species of the inventory counted once per group, slots over the declared rows, distinct species behind those slots -- and a sentence carrying numerals from two of them must be a claim rendered from the receipt.  SECOND, every 'A of B' this paper writes, spelled or in digits, must be a (part, whole) pair this run MEASURED -- excepting the English selector 'one of the ...', which names no part-whole relation at all.  Blockquotes are excluded because they are the parents' sentences and are gated verbatim against the parents' own bytes",
+   "detail": "6 registered numerals over 3 universes; 14 part-of-whole pairs read, 0 not measured []; 0 sentences mixing universes outside a rendered claim []",
+   "gate": "G-PAPER-REFERENT-BOUND",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "the paper's verdict block is compared for EQUALITY against the string this run emits, under whitespace normalisation, and the paper's fenced blocks are gated by MULTISET EQUALITY against the single block this run licenses (E-22) -- so neither a stale verdict nor a forged twin riding beside the clean one can be delivered",
-   "detail": "1 fenced blocks; 1 equal to this run's verdict of 2754 characters",
+   "detail": "1 fenced blocks; 1 equal to this run's verdict of 4553 characters",
    "gate": "G-PAPER-VERDICT-EQUALITY",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the direction-bearing claims are checked for POLARITY as well as presence -- each must occur and must not sit inside a window carrying a declared negator -- which closes the direction-blindness of a fragment gate",
-   "detail": "9 polarity rows, 0 failing",
+   "detail": "11 polarity rows, 0 failing",
    "gate": "G-PAPER-POLARITY",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "E-22's 'tables render as claims' is enforced structurally: every DATA row of every delivered table must be covered by a claim rendered from the receipt, EVERY HEADER ROW is bound the same way -- each rendered from the receipt keys its own columns are, so two semantically opposed columns exchanged in the paper stop matching -- and every BLOCKQUOTE must lie inside one of the pinned verbatim windows, so a paper that misquotes or inverts a parent's own sentence dies here even though the anchor on the parent's bytes passes",
-   "detail": "165 table data rows, 0 unbound []; 15 header rows, 0 unbound []; 13 blockquotes, 0 not inside a pinned window []",
+   "claim": "E-22's 'tables render as claims' is enforced structurally: every DATA row of every delivered table must be covered by a claim rendered from the receipt, EVERY HEADER ROW is bound the same way -- each rendered from the receipt keys its own columns are, so two semantically opposed columns exchanged in the paper stop matching -- and every BLOCKQUOTE must lie inside one of the pinned verbatim windows, so a paper that misquotes or inverts a parent's own sentence dies here even though the anchor on the parent's bytes passes.  A quote is bound to the SOURCE IT IS ATTRIBUTED TO and not merely to the union of the windows: the sequence of anchors the paper's quotes match, in the order it makes them, is compared against a declared sequence, so two parents' sentences exchanged under each other's introductions die here too",
+   "detail": "168 table data rows, 0 unbound []; 15 header rows, 0 unbound []; 16 blockquotes, 0 not inside a pinned window []; the quote sequence matches the declared attribution order: True",
    "gate": "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "EVERY numeral of the paper is matched against a value this run computed -- fenced blocks, verdict block, inline code spans and both sides of every fraction included (E-22, #20) -- with only a published list of structural literals forgiven, so a number invented in prose, or moved from one claim to another, dies inside the delivery run.  SPELLED NUMERALS ARE SCANNED THE SAME WAY (#267): every number-word above twelve, hyphenated compounds included, is mapped to its integer and matched against the same pool",
-   "detail": "1244 numerals scanned, 10 spelled numerals above twelve, 32 inline code spans carrying a numeral, 2 fence markers, 0 unmatched: []; unmatched spelled: []",
+   "claim": "EVERY numeral of the paper is matched against a value this run computed -- fenced blocks, verdict block, inline code spans and both sides of every fraction included (E-22, #20) -- with only a published list of structural literals forgiven, so a number invented in prose, or moved from one claim to another, dies inside the delivery run.  SPELLED NUMERALS ARE SCANNED THE SAME WAY (#267): every number-word above twelve, hyphenated compounds included, is mapped to its integer and matched against the same pool -- and a HUNDRED-OR-THOUSAND COMPOUND IS PARSED AS THE NUMBER IT SPELLS rather than scanned by its residue, so a spelled count above ninety-nine cannot walk past an alphabet that stops there.  The digest whitelist is digest-SHAPED and not merely twelve characters long, so an all-digit token in a code span stays inside the scan",
+   "detail": "1322 numerals scanned, 17 spelled numerals above twelve, 33 inline code spans carrying a numeral, 2 fence markers, 0 unmatched: []; unmatched spelled: []",
    "gate": "G-PAPER-NUMERAL-COVERAGE",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "every anchor's declared CONSUMER is a gate that exists in this run's own ledger and that passed: the register is checked against the ledger rather than published beside it, so an anchor bound to a gate this instrument does not have stops the delivery run instead of being vouched by prose",
-   "detail": "62 anchors naming 19 distinct consumer gates; 0 naming a gate that does not exist []; 0 naming a gate that did not pass []",
+   "detail": "73 anchors naming 21 distinct consumer gates; 0 naming a gate that does not exist []; 0 naming a gate that did not pass []",
    "gate": "G-CONSUMERS-ARE-REAL",
    "kind": "MEASURED",
    "passed": true
@@ -2922,7 +3076,7 @@
     "engine": "DIXON",
     "group": "RESIDUAL-GAUGE-4",
     "order": 4,
-    "provenance": "ACT/R5 -- the constant twists the torus itself realises: the arena's own gauge group on the carrier, anchored reading",
+    "provenance": "ACT/R5 -- the constant twists the torus itself carries: the arena's own gauge group on the carrier, anchored reading",
     "species": 4
    },
    {
@@ -3298,9 +3452,12 @@
   ],
   "totals": {
    "classes": 220,
+   "distinct_orders": 18,
    "groups": 22,
    "groups_above_the_table_cap": 4,
+   "groups_with_a_carrier_row": 11,
    "groups_with_a_table": 18,
+   "groups_with_no_carrier_row": 11,
    "orders": [
     1,
     2,
@@ -3322,6 +3479,13 @@
     362880
    ],
    "species": 220,
+   "species_at_the_groups_with_a_carrier_row": 133,
+   "species_at_the_groups_with_no_carrier_row": 87,
+   "the_route_classes": {
+    "by_its_own_element_list_and_the_class_equation_and_the_degree_sum_and_orbit_stabilizer": 10,
+    "indexed_by_partitions_so_the_first_route_is_a_product_of_factorials_and_no_permutation_is_written_down": 8,
+    "none_of_those_four_the_number_of_distinct_actions_on_the_stencil_datum": 4
+   },
    "the_table_cap": 128
   }
  },
@@ -5157,10 +5321,10 @@
   "the_distinguished_stabilizer": "YOUNG-216"
  },
  "ledger_shape": {
-  "closing_gates": 2,
-  "gates_closed_before_the_paper_gates": 39,
-  "objects_sealed_before_the_paper_gates": 25,
-  "paper_gates": 7,
+  "closing_gates": 3,
+  "gates_closed_before_the_paper_gates": 45,
+  "objects_sealed_when_the_ledger_shape_was_taken": 28,
+  "paper_gates": 8,
   "receipt_gates": 1
  },
  "mutants": [
@@ -5352,7 +5516,7 @@
   },
   {
    "mutant": "MUT-FEASIBILITY",
-   "plants": "fr[2][\"live_at_this_arena\"] = False",
+   "plants": "fr[2][\"live_at_the_row_level\"] = False",
    "target": "G-OUTCOME-FEASIBILITY-AT-THIS-ARENA",
    "what": "declares a live outcome arm dead while its witness row stands"
   },
@@ -5493,6 +5657,114 @@
    "plants": "\"MOVED-AFTER-THE-GATE\"",
    "target": "G-SEAL-INTEGRITY",
    "what": "edits a sealed object after its gate closed"
+  },
+  {
+   "mutant": "MUT-YOUNG-TABLE",
+   "plants": "tab[1][j] = F.add(tab[1][j], F.one)",
+   "target": "G-YOUNG-TABLE-ORTHOGONALITY",
+   "what": "shifts one NON-IDENTITY value of one stabilizer table by one -- which leaves the degrees, the class sizes and the branching engine's own character untouched, so only the two orthogonality routes can catch it"
+  },
+  {
+   "mutant": "MUT-ORDERED-PAIRS",
+   "plants": "row[\"orbits_on_ordered_pairs\"] + 1",
+   "target": "G-THE-MULTIPLICITY-VECTOR-BY-ORDERED-PAIRS",
+   "what": "adds one to the ordered-pair orbit count at one row, so the sum of the squared multiplicities stops matching it"
+  },
+  {
+   "mutant": "MUT-SPECIES-UNIVERSES",
+   "plants": "distinct = slots",
+   "target": "G-THE-SPECIES-UNIVERSES-ARE-DISTINGUISHED",
+   "what": "declares the distinct-species count equal to the slot count, collapsing the two universes the census counts in"
+  },
+  {
+   "mutant": "MUT-ON-GRAIN-SPLIT",
+   "plants": "on[\"symmetric_only\"] = on[\"symmetric_only\"] + 1",
+   "target": "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+   "what": "adds one symmetric-only species to the on-grain split, so the parent's own selection grain stops being empty"
+  },
+  {
+   "mutant": "MUT-INDEX-TWO",
+   "plants": "hard = hard + [0]",
+   "target": "G-THE-PRICE-IS-INDEX-TWO-FORCED",
+   "what": "returns a second species from the stronger scalar filter, so the price stops being one label under the reading the paper's own sentence invites"
+  },
+  {
+   "mutant": "MUT-ARENA-LEVEL",
+   "plants": "\"forced_at_the_arena_level_before_the_run\"] = False",
+   "target": "G-OUTCOME-FEASIBILITY-AT-THIS-ARENA",
+   "what": "declares a head word unsettled at the arena level while the declared row that settles it stands"
+  },
+  {
+   "mutant": "MUT-E24-STAMP",
+   "plants": "\"\" if mut(\"MUT-E24-STAMP\") else \"COUNTING-ONLY\"",
+   "target": "G-COUNTS-ARE-COUNTING-ONLY",
+   "what": "removes the counting-only stamp from a published object"
+  },
+  {
+   "mutant": "MUT-REFERENT-PAIR",
+   "plants": "The census hosts 156 of 220 species.",
+   "target": "G-PAPER-REFERENT-BOUND",
+   "what": "plants a sentence pairing a true part with the wrong whole -- both numerals in the pool, the relation false"
+  },
+  {
+   "mutant": "MUT-REFERENT-UNIVERSE",
+   "plants": "hostable species are one universe of 220 ",
+   "target": "G-PAPER-REFERENT-BOUND",
+   "what": "plants a sentence declaring two different universes to be one"
+  },
+  {
+   "mutant": "MUT-HOSTED-UPGRADED",
+   "plants": "This species is realized on the coin carrier.",
+   "target": "G-MUST-NOT-VOCABULARY",
+   "what": "plants the upgrade the pin bans: a species said to be REALIZED on a carrier rather than hosted in a module"
+  },
+  {
+   "mutant": "MUT-UPGRADE-PARAPHRASE",
+   "plants": "Every hosted species exists physically on its ",
+   "target": "G-MUST-NOT-VOCABULARY",
+   "what": "plants the same upgrade WITHOUT the word the ban list was built around: a species said to EXIST PHYSICALLY rather than to be realized, which is why this wall bans a family of forms and not a single word"
+  },
+  {
+   "mutant": "MUT-QUOTE-ATTRIBUTION",
+   "plants": "_a = \"The odd twist is not realisable on this torus\"",
+   "target": "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
+   "what": "exchanges two parents' quoted sentences under each other's introductions, so each quote is still inside SOME pinned window but attributed to the wrong parent"
+  },
+  {
+   "mutant": "MUT-HEADER-IN-THE-PAPER-TEXT",
+   "plants": "_h + \" homeless | hosted |\"",
+   "target": "G-PAPER-CLAIMS",
+   "what": "exchanges two opposed column names in the delivered PAPER TEXT rather than inside a gate's own local, which is the path a real header swap takes"
+  },
+  {
+   "mutant": "MUT-SPELLED-COMPOUND",
+   "plants": "a planted count of nine hundred sixteen",
+   "target": "G-PAPER-NUMERAL-COVERAGE",
+   "what": "plants a spelled numeral ABOVE NINETY-NINE that no value this run computed can license, which an alphabet stopping at ninety-nine reads only by its residue"
+  },
+  {
+   "mutant": "MUT-DIGEST-WHITELIST",
+   "plants": "a backticked all-digit token `987654321012`",
+   "target": "G-PAPER-NUMERAL-COVERAGE",
+   "what": "plants an all-digit twelve-character token in a code span, which a whitelist that is merely twelve characters long forgives"
+  },
+  {
+   "mutant": "MUT-MUTANT-ROW",
+   "plants": "\"MUT-PLANTED-AFTER-THE-COUNT\"",
+   "target": "G-SEAL-INTEGRITY",
+   "what": "appends a row to the falsifier registry after its total was taken"
+  },
+  {
+   "mutant": "MUT-UNSEALED-DECLARATION",
+   "plants": "\"A-KEY-THIS-RECEIPT-DOES-NOT-PUBLISH\"",
+   "target": "G-MANIFEST-TOTALITY-AT-PROMOTION",
+   "what": "declares a key unsealed that the receipt does not publish -- an exemption carried and never used"
+  },
+  {
+   "mutant": "MUT-POST-SEAL-KEY",
+   "plants": "\"FORGED-AFTER-THE-SEAL-GATE\"",
+   "target": "G-MANIFEST-TOTALITY-AT-PROMOTION",
+   "what": "inserts a top-level key into the receipt AFTER the seal gate has computed totality, so it is never sealed, never declared, and a byte comparison of the receipt against itself cannot see it"
   }
  ],
  "odd_twist_species": {
@@ -5519,8 +5791,12 @@
     "the_species_index": 1
    }
   ],
+  "the_non_vanishing_isotypic_components_are": [
+   0
+  ],
   "the_observable": "OFF-DIAGONAL-QUARTIC-SIGN",
-  "the_parents_verdict_on_it": "PINNED"
+  "the_parents_verdict_on_it": "PINNED",
+  "the_reading_they_are_measured_at": "ANCHORED"
  },
  "order_routes": [
   {
@@ -5734,83 +6010,230 @@
  ],
  "outcome_feasibility": {
   "arms": 8,
-  "live_at_this_arena": 7,
+  "arms_live_at_the_row_level": 7,
+  "head_words": [
+   {
+    "forced_at_the_arena_level_before_the_run": true,
+    "forced_by_a_single_declared_row": [],
+    "head_word": "SPC-INVENTORY",
+    "two_armed": false,
+    "why": "single-armed by construction: the census is a total exact computation and its numbers are its outcome"
+   },
+   {
+    "forced_at_the_arena_level_before_the_run": true,
+    "forced_by_a_single_declared_row": [
+     "SITE-16-UNDER-CHART-32",
+     "PLAQUETTE-16-UNDER-CHART-32",
+     "LINK-32-UNDER-CHART-128",
+     "SITE-16-UNDER-CHART-128",
+     "PLAQUETTE-16-UNDER-CHART-128",
+     "SITE-9-UNDER-CHART-18",
+     "CELL-27-UNDER-EXT-108",
+     "SITE-9-UNDER-EXT-108",
+     "ACTOR-9-UNDER-S9"
+    ],
+    "head_word": "SPC-CARRIER-SELECTS",
+    "two_armed": true,
+    "why": "the head word aggregates every declared row, and hosted never exceeds irreps at a row, so ONE row with a homeless species settles the aggregate whatever the others do"
+   },
+   {
+    "forced_at_the_arena_level_before_the_run": true,
+    "forced_by_a_single_declared_row": [
+     "SITE-16-UNDER-CHART-32",
+     "PLAQUETTE-16-UNDER-CHART-32",
+     "LINK-32-UNDER-CHART-128",
+     "SITE-16-UNDER-CHART-128",
+     "PLAQUETTE-16-UNDER-CHART-128",
+     "SITE-9-UNDER-CHART-18",
+     "CELL-27-UNDER-EXT-108",
+     "SITE-9-UNDER-EXT-108",
+     "ACTOR-9-UNDER-S9"
+    ],
+    "head_word": "SPC-SELECTION-OPEN",
+    "two_armed": true,
+    "why": "the word is a disjunction over the declared rows, so ONE exiting row settles it"
+   },
+   {
+    "forced_at_the_arena_level_before_the_run": true,
+    "forced_by_a_single_declared_row": [
+     "SITE-16-UNDER-CHART-128",
+     "PLAQUETTE-16-UNDER-CHART-128",
+     "SITE-9-UNDER-EXT-108",
+     "ACTOR-9-UNDER-S9"
+    ],
+    "head_word": "SPC-STATISTICS-SPLITS",
+    "two_armed": true,
+    "why": "the four sums are aggregates over the declared rows, so ONE splitting row settles that they do not all sit in both shapes"
+   }
+  ],
+  "head_words_measured": 4,
+  "head_words_settled_before_the_run": 4,
   "rows": [
    {
     "arm": "THE-COUNTS",
-    "live_at_this_arena": true,
+    "live_at_the_row_level": true,
     "outcome": "SPC-INVENTORY",
     "why": "the census is a total exact computation over finite groups, so its numbers are its outcome",
     "witnessed_by_a_delivered_row": "COIN-640-UNDER-RESIDUAL-GAUGE-4"
    },
    {
     "arm": "EVERY-SPECIES-HOSTED",
-    "live_at_this_arena": true,
+    "live_at_the_row_level": true,
     "outcome": "SPC-CARRIER-SELECTS",
     "why": "a module rich enough to contain every species of its group",
     "witnessed_by_a_delivered_row": "COIN-640-UNDER-RESIDUAL-GAUGE-4"
    },
    {
     "arm": "SOME-SPECIES-HOMELESS",
-    "live_at_this_arena": true,
+    "live_at_the_row_level": true,
     "outcome": "SPC-CARRIER-SELECTS",
     "why": "a module whose group is larger than the carrier can resolve",
     "witnessed_by_a_delivered_row": "SITE-16-UNDER-CHART-32"
    },
    {
     "arm": "THE-COMPOSITES-STAY",
-    "live_at_this_arena": true,
+    "live_at_the_row_level": true,
     "outcome": "SPC-SELECTION-CLOSED",
     "why": "a hosted set closed under the composite",
     "witnessed_by_a_delivered_row": "COIN-640-UNDER-RESIDUAL-GAUGE-4"
    },
    {
     "arm": "THE-COMPOSITES-EXIT",
-    "live_at_this_arena": true,
+    "live_at_the_row_level": true,
     "outcome": "SPC-SELECTION-OPEN",
     "why": "a hosted set that is a proper and non-closed subset",
     "witnessed_by_a_delivered_row": "SITE-16-UNDER-CHART-32"
    },
    {
     "arm": "ALL-IN-BOTH-SHAPES",
-    "live_at_this_arena": true,
+    "live_at_the_row_level": true,
     "outcome": "SPC-STATISTICS-SPLITS",
     "why": "a module whose two squares are both rich enough",
     "witnessed_by_a_delivered_row": "COIN-640-UNDER-RESIDUAL-GAUGE-4"
    },
    {
     "arm": "A-PROPER-SPLIT",
-    "live_at_this_arena": true,
+    "live_at_the_row_level": true,
     "outcome": "SPC-STATISTICS-SPLITS",
     "why": "a module whose squares differ in what they host",
     "witnessed_by_a_delivered_row": "SITE-16-UNDER-CHART-128"
    },
    {
     "arm": "INSTRUMENT-FAULT",
-    "live_at_this_arena": false,
+    "live_at_the_row_level": false,
     "outcome": "SPC-BLOCKED-AT",
     "why": "it fires only on an instrument fault; it is demonstrated on a synthetic arena and reached by no delivered row",
     "witnessed_by_a_delivered_row": ""
    }
-  ]
+  ],
+  "rows_that_settle_every_two_armed_word": [
+   "ACTOR-9-UNDER-S9",
+   "PLAQUETTE-16-UNDER-CHART-128",
+   "SITE-16-UNDER-CHART-128",
+   "SITE-9-UNDER-EXT-108"
+  ],
+  "the_arena_level": "THE-HEADS-WORDS-ARE-AGGREGATES-OVER-THE-DECLARED-ROW-LIST-AND-THE-LIST-SETTLES-THEM-BEFORE-THE-RUN",
+  "the_row_level": "EACH-ARM-WITNESSED-BY-A-DELIVERED-ROW",
+  "the_widest_row_settles_them_all": true,
+  "two_armed_head_words": 3,
+  "where_the_other_words_are_witnessed": "THE-SYNTHETIC-CONTROL-ARENAS-THROUGH-THE-SAME-CENSUS-FUNCTIONS"
  },
  "paper_binding": {
-  "blockquotes": 13,
+  "blockquotes": 16,
   "blockquotes_outside_a_pinned_verbatim_window": 0,
-  "table_data_rows": 165,
+  "table_data_rows": 168,
   "table_header_rows": 15,
   "table_header_rows_unbound": 0,
   "table_rows_unbound": 0,
   "tables_rendered_from_the_receipt": 15,
-  "verbatim_windows_available": 19
+  "the_quote_attribution_order": [
+   {
+    "anchor": "VB-PIN-CENSUS",
+    "source": "S-PIN"
+   },
+   {
+    "anchor": "VB-PIN-CARRIER",
+    "source": "S-PIN"
+   },
+   {
+    "anchor": "VB-PIN-HOMELESS",
+    "source": "S-PIN"
+   },
+   {
+    "anchor": "VB-R5-CARRIER",
+    "source": "S-R5-PAPER"
+   },
+   {
+    "anchor": "VB-CRB-ARENA",
+    "source": "S-CRB-PAPER"
+   },
+   {
+    "anchor": "VB-ACT-PARTITION",
+    "source": "S-ACT-PAPER"
+   },
+   {
+    "anchor": "VB-ACT-INVARIANT",
+    "source": "S-ACT-PAPER"
+   },
+   {
+    "anchor": "VB-ACT-ODD",
+    "source": "S-ACT-PAPER"
+   },
+   {
+    "anchor": "VB-ACT-PRICE",
+    "source": "S-ACT-PAPER"
+   },
+   {
+    "anchor": "VB-AID-YOUNG",
+    "source": "S-AID-PAPER"
+   },
+   {
+    "anchor": "VB-AID-AXIS",
+    "source": "S-AID-PAPER"
+   },
+   {
+    "anchor": "VB-PIN-SELECTION",
+    "source": "S-PIN"
+   },
+   {
+    "anchor": "VB-OCC-SELECT",
+    "source": "S-OCC-PAPER"
+   },
+   {
+    "anchor": "VB-OCC-VACUOUS",
+    "source": "S-OCC-PAPER"
+   },
+   {
+    "anchor": "VB-OCC-ACTOR",
+    "source": "S-OCC-PAPER"
+   },
+   {
+    "anchor": "VB-OCC-DECLARATION",
+    "source": "S-OCC-PAPER"
+   }
+  ],
+  "the_quote_attribution_order_is_the_declared_one": true,
+  "verbatim_windows_available": 22
  },
  "paper_claims": [
   {
-   "claim": "22 groups, 18 of which carry a full exact character table and 4 of which stand above the declared cap of 128",
+   "claim": "22 groups, 18 of which carry a full exact character table and 4 of which \u2014 the acting groups at the plaquette and site grains \u2014 stand above the declared cap of 128 on the group this unit will enumerate element by element",
    "occurrences": 1
   },
   {
    "claim": "220 conjugacy classes and 220 species in all",
+   "occurrences": 1
+  },
+  {
+   "claim": "10 of the twenty-two groups have their order re-derived four ways",
+   "occurrences": 1
+  },
+  {
+   "claim": "8 rows are indexed by partitions rather than enumerated as permutations",
+   "occurrences": 1
+  },
+  {
+   "claim": "The 4 acting groups above the table cap take none of those four",
    "occurrences": 1
   },
   {
@@ -6406,19 +6829,23 @@
    "occurrences": 1
   },
   {
+   "claim": "S5 | 120 | 7 | 7 | yes",
+   "occurrences": 1
+  },
+  {
    "claim": "row | group order | species | hosted | status | emitted",
    "occurrences": 1
   },
   {
-   "claim": "CTRL-CYCLIC-3-REGULAR | 3 | 3 | 3 | MEASURED | SPC-INVENTORY-1-GROUPS-3-CLASSES-3-SPECIES--SPC-CARRIER-SELECTS-3-OF-3--SPC-SELECTION-CLOSED-9-RULES--SPC-STATISTICS-SPLITS-3|0|0|0",
+   "claim": "CTRL-CYCLIC-3-REGULAR | 3 | 3 | 3 | MEASURED | SPC-INVENTORY-1-GROUPS-3-CLASSES-3-SPECIES--SPC-CARRIER-SELECTS-3-OF-3-ROW-SLOTS--SPC-SELECTION-CLOSED-9-RULES--SPC-STATISTICS-SPLITS-3\\|0\\|0\\|0",
    "occurrences": 1
   },
   {
-   "claim": "CTRL-CYCLIC-3-TRIVIAL-ACTION | 3 | 3 | 1 | MEASURED | SPC-INVENTORY-1-GROUPS-3-CLASSES-3-SPECIES--SPC-CARRIER-SELECTS-1-OF-3--SPC-SELECTION-CLOSED-1-RULES--SPC-STATISTICS-SPLITS-1|0|0|2",
+   "claim": "CTRL-CYCLIC-3-TRIVIAL-ACTION | 3 | 3 | 1 | MEASURED | SPC-INVENTORY-1-GROUPS-3-CLASSES-3-SPECIES--SPC-CARRIER-SELECTS-1-OF-3-ROW-SLOTS--SPC-SELECTION-CLOSED-1-RULES--SPC-STATISTICS-SPLITS-1\\|0\\|0\\|2",
    "occurrences": 1
   },
   {
-   "claim": "CTRL-CYCLIC-6-TWO-ORBITS | 6 | 6 | 4 | MEASURED | SPC-INVENTORY-1-GROUPS-6-CLASSES-6-SPECIES--SPC-CARRIER-SELECTS-4-OF-6--SPC-SELECTION-OPEN--SPC-STATISTICS-SPLITS-6|0|0|0",
+   "claim": "CTRL-CYCLIC-6-TWO-ORBITS | 6 | 6 | 4 | MEASURED | SPC-INVENTORY-1-GROUPS-6-CLASSES-6-SPECIES--SPC-CARRIER-SELECTS-4-OF-6-ROW-SLOTS--SPC-SELECTION-OPEN--SPC-STATISTICS-SPLITS-6\\|0\\|0\\|0",
    "occurrences": 1
   },
   {
@@ -6426,7 +6853,7 @@
    "occurrences": 1
   },
   {
-   "claim": "outcome | arm | live at this arena | witnessed by a delivered row",
+   "claim": "outcome | arm | live at the row level | witnessed by a delivered row",
    "occurrences": 1
   },
   {
@@ -6466,11 +6893,11 @@
    "occurrences": 1
   },
   {
-   "claim": "WALL-DYNAMIC | 16 | 0 | THE DYNAMIC VOCABULARY IS BEHIND ANOTHER DOOR.  This unit measures which species can exist -- labels, composites, statistics compatibility -- and nothing about which are realized or with what values.  That question is its successor's and waits on the potential unit's gate.",
+   "claim": "WALL-DYNAMIC | 35 | 0 | THE DYNAMIC VOCABULARY IS BEHIND ANOTHER DOOR, AND SO IS THE WORD THIS WALL WILL NOT WRITE.  This unit measures which species a carrier can HOST -- labels, composites, statistics compatibility -- where hosted means multiplicity greater than zero in a permutation module and means nothing else.  Whether a species is anything more than that is its successor's question and waits on the potential unit's gate; the whole family of words that would say so is on this wall's own ban list, and every sentence of this paper carrying one of them is a declared exemption located there.",
    "occurrences": 1
   },
   {
-   "claim": "WALL-IDENTIFICATION | 17 | 0 | NO OUTSIDE IDENTIFICATION IS MADE.  No sentence of this paper names an outside theory's particle as an identification of any species it measures.  The pin licenses structural comparisons stamped ANALOGY; this paper draws none, so the licence is registered and unused and the wall's positive leg is total.",
+   "claim": "WALL-IDENTIFICATION | 24 | 0 | NO OUTSIDE IDENTIFICATION IS MADE.  No sentence of this paper names an outside theory's particle as an identification of any species it measures.  The pin licenses structural comparisons stamped ANALOGY; this paper draws none, so the licence is registered and unused and the wall's positive leg is total.",
    "occurrences": 1
   },
   {
@@ -6534,6 +6961,14 @@
    "occurrences": 1
   },
   {
+   "claim": "THE-CROSS-ENGINE-LIST | DECLARED-AND-DISCLOSED | UNBOUNDED | 4 | no | yes",
+   "occurrences": 1
+  },
+  {
+   "claim": "THE-INDEX-TWO-PROBE-FAMILY | DECLARED-AND-DISCLOSED | UNBOUNDED | 300 | no | yes",
+   "occurrences": 1
+  },
+  {
    "claim": "640 coins, splitting into 64 diagonal, 64 antidiagonal and 512 balanced",
    "occurrences": 1
   },
@@ -6550,7 +6985,19 @@
    "occurrences": 1
   },
   {
-   "claim": "156 of 246 species are hosted",
+   "claim": "246 species-slots \u2014 the row-sum of each row's own irrep count, a slot per (species, carrier) pairing and not a count of distinct species \u2014 and 156 of those slots are filled",
+   "occurrences": 1
+  },
+  {
+   "claim": "Behind the 246 slots stand 133 distinct species",
+   "occurrences": 1
+  },
+  {
+   "claim": "the remaining 87 species of the inventory belong to the 11 groups that have no carrier row here at all",
+   "occurrences": 1
+  },
+  {
+   "claim": "92 distinct species are hosted somewhere in this table",
    "occurrences": 1
   },
   {
@@ -6558,7 +7005,23 @@
    "occurrences": 1
   },
   {
+   "claim": "the nine actors under the whole symmetric group host 2 of 30 species",
+   "occurrences": 1
+  },
+  {
    "claim": "multiplicity 72 at the anchored reading and 40 at the extension",
+   "occurrences": 1
+  },
+  {
+   "claim": "four inside eight anchored and eight inside sixteen at the extension",
+   "occurrences": 1
+  },
+  {
+   "claim": "the identity held at 300 of 300 synthetic probes",
+   "occurrences": 1
+  },
+  {
+   "claim": "the parent's [0, 0] against the observable's own range [-2, 2]",
    "occurrences": 1
   },
   {
@@ -6598,7 +7061,19 @@
    "occurrences": 1
   },
   {
-   "claim": "leaks at 0 cells against 81",
+   "claim": "the shape that leaks at 0 cells against 81 is the antisymmetric one",
+   "occurrences": 1
+  },
+  {
+   "claim": "At the 3 rows at that grain the two squares carry the same 29 species and the split is empty",
+   "occurrences": 1
+  },
+  {
+   "claim": "all 4 rows that split lie at grains the selection does not reach",
+   "occurrences": 1
+  },
+  {
+   "claim": "the standard species composed with itself reaches 4 species, of which 2 are hosted and 2 are not",
    "occurrences": 1
   },
   {
@@ -6614,27 +7089,35 @@
    "occurrences": 1
   },
   {
-   "claim": "7 of the 8 outcome arms are live at this arena",
+   "claim": "7 of the 8 outcome arms are witnessed by a delivered row",
    "occurrences": 1
   },
   {
-   "claim": "39 gates close before the paper gates, and 7 paper gates, 1 receipt-wall gate and 2 closing gates follow",
+   "claim": "once ACTOR-9-UNDER-S9 was in the declared row list all 4 were settled before the run",
    "occurrences": 1
   },
   {
-   "claim": "25 objects are sealed before the paper gates",
+   "claim": "7 stabilizer shapes",
    "occurrences": 1
   },
   {
-   "claim": "12 construction choices are inventoried, of which 5 are verdict-determining",
+   "claim": "45 gates close before the paper gates, and 8 paper gates, 1 receipt-wall gate and 3 closing gates follow",
    "occurrences": 1
   },
   {
-   "claim": "12 file-bytes anchors, 43 path-value anchors and 19 verbatim-text anchors, 74 anchors in all",
+   "claim": "28 objects are sealed when the ledger shape is taken",
+   "occurrences": 1
+  },
+  {
+   "claim": "14 construction choices are inventoried, of which 5 are verdict-determining",
+   "occurrences": 1
+  },
+  {
+   "claim": "12 file-bytes anchors, 51 path-value anchors and 22 verbatim-text anchors, 85 anchors in all",
    "occurrences": 2
   },
   {
-   "claim": "55 declared mutants",
+   "claim": "73 declared mutants",
    "occurrences": 1
   },
   {
@@ -6708,13 +7191,13 @@
    "pinned"
   ],
   "fence_markers": 2,
-  "inline_spans_with_a_numeral": 32,
-  "numerals_scanned": 1244,
+  "inline_spans_with_a_numeral": 33,
+  "numerals_scanned": 1322,
   "published_objects_excluded_from_the_pool": [
    "mutants"
   ],
   "removed_from_the_scan_and_bound_as_claims": "THE-PARENTHESISED-ENGRAVING-REFERENCES-AND-THE-BACKTICKED-TWELVE-HEX-DIGESTS",
-  "spelled_numerals_above_twelve_scanned": 10,
+  "spelled_numerals_above_twelve_scanned": 17,
   "spelled_numerals_unmatched": 0,
   "structural_literals_forgiven": [
    "1",
@@ -6928,7 +7411,7 @@
    "9.8",
    "9.9"
   ],
-  "the_number_word_alphabet": "EVERY-ENGLISH-NUMBER-WORD-BELOW-ONE-HUNDRED-HYPHENATED-COMPOUNDS-INCLUDED",
+  "the_number_word_alphabet": "EVERY-ENGLISH-NUMBER-WORD-BELOW-ONE-HUNDRED-HYPHENATED-COMPOUNDS-INCLUDED-AND-EVERY-HUNDRED-AND-THOUSAND-COMPOUND-BELOW-ONE-MILLION-PARSED-AS-THE-NUMBER-IT-SPELLS-AND-NOT-AS-ITS-RESIDUE",
   "unmatched": 0
  },
  "paper_polarity": [
@@ -6963,6 +7446,13 @@
   {
    "expected": 1,
    "found": 1,
+   "fragment": "that the discount is one label is forced; which label it is, is measured",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
    "fragment": "the observable lies in that species and in no other",
    "negated": false,
    "ok": true
@@ -6970,14 +7460,21 @@
   {
    "expected": 1,
    "found": 1,
-   "fragment": "crystallization does not destroy the inventory, it restores it",
+   "fragment": "it means multiplicity greater than zero and it means nothing else",
    "negated": false,
    "ok": true
   },
   {
    "expected": 1,
    "found": 1,
-   "fragment": "the trivial species is not compatible with the selected shape at\n      the actor row",
+   "fragment": "nothing is destroyed at the first prefix and nothing is returned at the fifth",
+   "negated": false,
+   "ok": true
+  },
+  {
+   "expected": 1,
+   "found": 1,
+   "fragment": "it is not an application of the parent's selection there",
    "negated": false,
    "ok": true
   },
@@ -6996,7 +7493,7 @@
    "ok": true
   }
  ],
- "paper_sha256_12": "1555d049d558",
+ "paper_sha256_12": "ccdccb349856",
  "path_value_anchors": [
   {
    "anchor": "PV-ACT-COINS",
@@ -7279,6 +7776,46 @@
    "what": "its name at the parent's own receipt"
   },
   {
+   "anchor": "PV-ACT-PIN-LO",
+   "consumer": "G-THE-PRICE-IS-INDEX-TWO-FORCED",
+   "declared": "0",
+   "measured": "0",
+   "ok": true,
+   "path": "falsifier/rows/2/range_over_the_reachable_set/0",
+   "source": "S-ACT-RECEIPT",
+   "what": "the bottom of the value the parent pinned that observable to, which this unit's derivation must reach and not merely gesture at"
+  },
+  {
+   "anchor": "PV-ACT-PIN-HI",
+   "consumer": "G-THE-PRICE-IS-INDEX-TWO-FORCED",
+   "declared": "0",
+   "measured": "0",
+   "ok": true,
+   "path": "falsifier/rows/2/range_over_the_reachable_set/1",
+   "source": "S-ACT-RECEIPT",
+   "what": "and its top: the range is a point"
+  },
+  {
+   "anchor": "PV-ACT-OBS-LO",
+   "consumer": "G-THE-PRICE-IS-INDEX-TWO-FORCED",
+   "declared": "-2",
+   "measured": "-2",
+   "ok": true,
+   "path": "falsifier/rows/2/range_of_the_observable_itself/0",
+   "source": "S-ACT-RECEIPT",
+   "what": "the bottom of the observable's own range, against which the pinning is a proper narrowing"
+  },
+  {
+   "anchor": "PV-ACT-OBS-HI",
+   "consumer": "G-THE-PRICE-IS-INDEX-TWO-FORCED",
+   "declared": "2",
+   "measured": "2",
+   "ok": true,
+   "path": "falsifier/rows/2/range_of_the_observable_itself/1",
+   "source": "S-ACT-RECEIPT",
+   "what": "and its top"
+  },
+  {
    "anchor": "PV-AID-S9",
    "consumer": "G-GROUP-INVENTORY-ORDERS-RE-DERIVED",
    "declared": 362880,
@@ -7427,6 +7964,46 @@
    "path": "leaks/carrier_grain_symmetric_coins_leaking",
    "source": "S-OCC-RECEIPT",
    "what": "how many of the coin classes it leaks at"
+  },
+  {
+   "anchor": "PV-OCC-VACUOUS",
+   "consumer": "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+   "declared": 0,
+   "measured": 0,
+   "ok": true,
+   "path": "leaks/carrier_grain_antisymmetric_forbidden_configurations",
+   "source": "S-OCC-RECEIPT",
+   "what": "THE VACUITY: the antisymmetric shape has no forbidden configuration at that grain to leak into, which is why its zero is a vacuous zero and the parent published it as one"
+  },
+  {
+   "anchor": "PV-OCC-WEDGE-EMPTY",
+   "consumer": "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+   "declared": true,
+   "measured": true,
+   "ok": true,
+   "path": "leaks/wedge_theorem/rows/0/antisymmetric_forbidden_set_is_empty",
+   "source": "S-OCC-RECEIPT",
+   "what": "the parent's own theorem row saying that emptiness holds at the carrier grain and nowhere else"
+  },
+  {
+   "anchor": "PV-OCC-ACTOR-SELECTS",
+   "consumer": "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+   "declared": 0,
+   "measured": 0,
+   "ok": true,
+   "path": "asymmetry/exclusion_at_the_actor_grain_selects",
+   "source": "S-OCC-RECEIPT",
+   "what": "THE SCOPE: at the actor's grain the parent's exclusion selects at no row at all"
+  },
+  {
+   "anchor": "PV-OCC-ACTOR-COINCIDE",
+   "consumer": "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+   "declared": 6,
+   "measured": 6,
+   "ok": true,
+   "path": "leaks/actor_grain_shape_sets_coincide_coins",
+   "source": "S-OCC-RECEIPT",
+   "what": "and the two shapes' leak sets coincide there at every coin class"
   }
  ],
  "pin_sha256_prefix": "7f0b1e9d5071",
@@ -7541,6 +8118,26 @@
   }
  ],
  "python": "3.13",
+ "referent_binding": {
+  "blockquotes_excluded_because": "THEY-ARE-THE-PARENTS-SENTENCES-AND-ARE-GATED-VERBATIM-AGAINST-THE-PARENTS-OWN-BYTES",
+  "pairs_not_measured": 0,
+  "part_of_whole_pairs_read": 14,
+  "part_of_whole_pairs_this_run_measured": 36,
+  "registered_numerals": [
+   "133",
+   "156",
+   "220",
+   "246",
+   "87",
+   "92"
+  ],
+  "sentences_mixing_universes_outside_a_rendered_claim": 0,
+  "the_universes": [
+   "THE-DISTINCT-SPECIES",
+   "THE-INVENTORY-SPECIES-COUNTED-ONCE-PER-GROUP",
+   "THE-ROW-SLOTS"
+  ]
+ },
  "schema": "spc-species-census-1",
  "seal_manifest": [
   {
@@ -7558,21 +8155,21 @@
    "receipt_key": "artifacts"
   },
   {
-   "digest": "1b18019831b4",
+   "digest": "d885d828e1b1",
    "gate": "G-PATH-VALUE-ANCHORS",
    "object": "THE PATH-VALUE ANCHORS",
    "omitted_and_sealed_separately": [],
    "receipt_key": "path_value_anchors"
   },
   {
-   "digest": "5d17c017ab79",
+   "digest": "5633c0bbf963",
    "gate": "G-VERBATIM-ANCHORS",
    "object": "THE VERBATIM ANCHORS",
    "omitted_and_sealed_separately": [],
    "receipt_key": "verbatim_anchors"
   },
   {
-   "digest": "89c20a947728",
+   "digest": "56ed9f6d969a",
    "gate": "G-VERBATIM-ANCHORS",
    "object": "THE ANCHOR CLASSES",
    "omitted_and_sealed_separately": [],
@@ -7607,14 +8204,14 @@
    "receipt_key": "chart_action"
   },
   {
-   "digest": "1323d9023144",
+   "digest": "e4e3aee49bba",
    "gate": "G-THE-CARRIER-SEES-ONE-GROUP",
    "object": "THE ACTING GROUPS",
    "omitted_and_sealed_separately": [],
    "receipt_key": "acting_groups"
   },
   {
-   "digest": "4eafb0b59960",
+   "digest": "e580cd50fb37",
    "gate": "G-TWO-ENGINES-AGREE",
    "object": "THE TWO ENGINES",
    "omitted_and_sealed_separately": [],
@@ -7628,18 +8225,32 @@
    "receipt_key": "symmetric_census"
   },
   {
-   "digest": "cbb19554a2a5",
+   "digest": "c3ff055ac648",
    "gate": "G-CARRIER-HOMELESS-CENSUS",
    "object": "THE CARRIER CENSUS",
    "omitted_and_sealed_separately": [],
    "receipt_key": "carrier_census"
   },
   {
-   "digest": "8e96792c90de",
+   "digest": "6c9473bf8abe",
+   "gate": "G-THE-SPECIES-UNIVERSES-ARE-DISTINGUISHED",
+   "object": "THE SPECIES UNIVERSES",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "species_universes"
+  },
+  {
+   "digest": "c2dca8ffab51",
    "gate": "G-THE-ODD-TWIST-SPECIES",
    "object": "THE ODD-TWIST SPECIES",
    "omitted_and_sealed_separately": [],
    "receipt_key": "odd_twist_species"
+  },
+  {
+   "digest": "4550f66ded62",
+   "gate": "G-THE-PRICE-IS-INDEX-TWO-FORCED",
+   "object": "THE PRICE IS INDEX TWO",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "the_price_is_index_two"
   },
   {
    "digest": "c705711c4e3f",
@@ -7649,7 +8260,7 @@
    "receipt_key": "identity_layer"
   },
   {
-   "digest": "f20537ade517",
+   "digest": "8536fcf9b726",
    "gate": "G-CRYSTALLIZATION-CHAIN-IS-NESTED",
    "object": "THE CRYSTALLIZATION CHAIN",
    "omitted_and_sealed_separately": [],
@@ -7663,7 +8274,7 @@
    "receipt_key": "selection"
   },
   {
-   "digest": "2e09bd2f5abb",
+   "digest": "2052c4fcecbf",
    "gate": "G-STATISTICS-SPLIT-CENSUS",
    "object": "THE STATISTICS TIE-IN",
    "omitted_and_sealed_separately": [],
@@ -7677,105 +8288,119 @@
    "receipt_key": "order_routes"
   },
   {
-   "digest": "0e819ebd28c7",
+   "digest": "3d2b268227cf",
    "gate": "G-GROUP-INVENTORY-IS-TOTAL",
    "object": "THE GROUP INVENTORY",
    "omitted_and_sealed_separately": [],
    "receipt_key": "group_inventory"
   },
   {
-   "digest": "9f129bf5b7eb",
+   "digest": "a22eb6ad4eb4",
    "gate": "G-HEAD-LAW-REACHABILITY",
    "object": "THE CONTROL ARMS",
    "omitted_and_sealed_separately": [],
    "receipt_key": "control_arms"
   },
   {
-   "digest": "825ff3f90b2c",
+   "digest": "f58fdf12b3b3",
    "gate": "G-OUTCOME-FEASIBILITY-AT-THIS-ARENA",
    "object": "THE OUTCOME FEASIBILITY",
    "omitted_and_sealed_separately": [],
    "receipt_key": "outcome_feasibility"
   },
   {
-   "digest": "82f39459606b",
+   "digest": "af7b497984dc",
+   "gate": "G-COUNTS-ARE-COUNTING-ONLY",
+   "object": "THE COUNTING-ONLY STAMPS",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "counting_only"
+  },
+  {
+   "digest": "cad2873d3295",
    "gate": "G-CHOICE-INVENTORY",
    "object": "THE CHOICE INVENTORY",
    "omitted_and_sealed_separately": [],
    "receipt_key": "choices"
   },
   {
-   "digest": "932cbab33c95",
+   "digest": "da9d547ea6a0",
    "gate": "G-FALSIFIER-DESCRIPTIONS-ARE-HONEST",
    "object": "THE FALSIFIER TOTALS",
    "omitted_and_sealed_separately": [],
    "receipt_key": "falsifier_totals"
   },
   {
-   "digest": "c455c1b5b62e",
+   "digest": "e973d1d4a140",
    "gate": "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
    "object": "THE WAIVER LEDGER",
    "omitted_and_sealed_separately": [],
    "receipt_key": "waiver_ledger"
   },
   {
-   "digest": "15cbd583aa1f",
+   "digest": "3c4ead719901",
    "gate": "G-LEDGER-SHAPE-IS-CONSISTENT",
    "object": "THE LEDGER SHAPE",
    "omitted_and_sealed_separately": [],
    "receipt_key": "ledger_shape"
   },
   {
-   "digest": "4a3ee3938f56",
+   "digest": "20e9116aa2d5",
    "gate": "G-MUST-NOT-VOCABULARY",
    "object": "THE WALLS",
    "omitted_and_sealed_separately": [],
    "receipt_key": "walls"
   },
   {
-   "digest": "896e0daf73b8",
+   "digest": "42a61d65eb6d",
    "gate": "G-PAPER-CLAIMS",
    "object": "THE PAPER CLAIMS",
    "omitted_and_sealed_separately": [],
    "receipt_key": "paper_claims"
   },
   {
-   "digest": "367ab2dbc156",
+   "digest": "1cebb7663c9d",
+   "gate": "G-PAPER-REFERENT-BOUND",
+   "object": "THE REFERENT BINDING",
+   "omitted_and_sealed_separately": [],
+   "receipt_key": "referent_binding"
+  },
+  {
+   "digest": "d5b80c7a5748",
    "gate": "G-PAPER-POLARITY",
    "object": "THE PAPER POLARITY",
    "omitted_and_sealed_separately": [],
    "receipt_key": "paper_polarity"
   },
   {
-   "digest": "1157e8c40fde",
+   "digest": "fea4a1eca337",
    "gate": "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
    "object": "THE PAPER BINDING",
    "omitted_and_sealed_separately": [],
    "receipt_key": "paper_binding"
   },
   {
-   "digest": "ed94594f8e0f",
+   "digest": "360c41c1fdf1",
    "gate": "G-PAPER-NUMERAL-COVERAGE",
    "object": "THE PAPER COVERAGE",
    "omitted_and_sealed_separately": [],
    "receipt_key": "paper_coverage"
   },
   {
-   "digest": "a17caa82b603",
+   "digest": "3702f0299876",
    "gate": "G-CONSUMERS-ARE-REAL",
    "object": "THE CONSUMER REGISTER",
    "omitted_and_sealed_separately": [],
    "receipt_key": "consumer_register"
   },
   {
-   "digest": "c7f7eb8bcd26",
+   "digest": "fcd00a187e94",
    "gate": "G-VERDICT-RECONSTRUCTION",
    "object": "THE VERDICT STRING",
    "omitted_and_sealed_separately": [],
    "receipt_key": "verdict"
   },
   {
-   "digest": "4fc211bb5c88",
+   "digest": "3dc2011495ab",
    "gate": "G-VERDICT-RECONSTRUCTION",
    "object": "THE VERDICT HEAD",
    "omitted_and_sealed_separately": [],
@@ -7976,6 +8601,87 @@
   ],
   "the_distinguished_row": "ACTOR-9-UNDER-S9"
  },
+ "species_universes": {
+  "distinct_groups_with_a_carrier_row": 11,
+  "distinct_species_behind_the_slots": 133,
+  "distinct_species_hosted_somewhere": 92,
+  "groups_censused_on_more_than_one_carrier": 6,
+  "measure": "COUNTING-ONLY",
+  "per_group": [
+   {
+    "distinct_species_hosted": 8,
+    "group": "ACTING-LINK-8",
+    "irreps": 8,
+    "rows": 1
+   },
+   {
+    "distinct_species_hosted": 12,
+    "group": "CHART-128",
+    "irreps": 20,
+    "rows": 3
+   },
+   {
+    "distinct_species_hosted": 9,
+    "group": "CHART-18",
+    "irreps": 9,
+    "rows": 2
+   },
+   {
+    "distinct_species_hosted": 14,
+    "group": "CHART-32",
+    "irreps": 14,
+    "rows": 3
+   },
+   {
+    "distinct_species_hosted": 6,
+    "group": "EXT-108",
+    "irreps": 11,
+    "rows": 2
+   },
+   {
+    "distinct_species_hosted": 7,
+    "group": "GAMMA-16",
+    "irreps": 7,
+    "rows": 1
+   },
+   {
+    "distinct_species_hosted": 4,
+    "group": "RESIDUAL-GAUGE-4",
+    "irreps": 4,
+    "rows": 1
+   },
+   {
+    "distinct_species_hosted": 5,
+    "group": "RESIDUAL-GAUGE-8",
+    "irreps": 5,
+    "rows": 1
+   },
+   {
+    "distinct_species_hosted": 2,
+    "group": "S9",
+    "irreps": 30,
+    "rows": 1
+   },
+   {
+    "distinct_species_hosted": 16,
+    "group": "TORUS-TRANSLATIONS-16",
+    "irreps": 16,
+    "rows": 2
+   },
+   {
+    "distinct_species_hosted": 9,
+    "group": "TRANS-9",
+    "irreps": 9,
+    "rows": 2
+   }
+  ],
+  "row_slots": 246,
+  "rows": 19,
+  "slots_filled": 156,
+  "slots_that_duplicate_a_species_already_counted": 113,
+  "the_distinct_route": "THE-UNION-OF-THE-CHARACTERS-THEMSELVES-GROUP-BY-GROUP-NOT-THE-SUM-OF-THE-ROW-COUNTS",
+  "the_slot_universe": "A-SLOT-IS-ONE-SPECIES-AT-ONE-GROUP-CARRIER-ROW"
+ },
  "statistics": {
   "aggregate": {
    "antisymmetric_only": 9,
@@ -7983,7 +8689,29 @@
    "in_neither_shape": 31,
    "symmetric_only": 14
   },
+  "at_the_parents_own_selection_grain": {
+   "antisymmetric_only": 0,
+   "how_the_rows_are_found": "BY-THE-PARENTS-OWN-PUBLISHED-CELL-COUNT-AND-NOT-BY-NAME",
+   "in_both_shapes": 29,
+   "in_neither_shape": 0,
+   "rows": [
+    "CELL-27-UNDER-TRANS-9",
+    "CELL-27-UNDER-CHART-18",
+    "CELL-27-UNDER-EXT-108"
+   ],
+   "rows_measured": 3,
+   "species": 29,
+   "symmetric_only": 0,
+   "the_grain": "THE-PARENTS-OWN-CARRIER-GRAIN-ITS-CO-DIVISION-CELLS",
+   "the_parents_actor_grain_shape_leak_sets_coincide_at": 6,
+   "the_parents_antisymmetric_forbidden_configurations": 0,
+   "the_parents_exclusion_at_the_actor_grain_selects": 0,
+   "the_parents_forbidden_set_is_empty": true,
+   "the_parents_zero_is": "A-VACUOUS-ZERO-OVER-AN-EMPTY-FORBIDDEN-SET-AS-THE-PARENT-PUBLISHED-IT",
+   "the_split_is_empty": true
+  },
   "measure": "COUNTING-ONLY",
+  "measure_of_the_aggregate": "COUNTING-ONLY",
   "rows": [
    {
     "antisymmetric_only": 0,
@@ -8158,8 +8886,15 @@
    }
   ],
   "rows_that_split_properly": 4,
+  "the_off_grain_rows_are": "A-DECLARED-EXTENSION-OF-THE-PARENTS-COMPARISON-TO-GRAINS-ITS-SELECTION-DOES-NOT-REACH",
   "the_parents_antisymmetric_leak_cells": 0,
   "the_parents_symmetric_leak_cells": 81,
+  "the_rows_that_split_are_all_off_that_grain": [
+   "SITE-16-UNDER-CHART-128",
+   "PLAQUETTE-16-UNDER-CHART-128",
+   "SITE-9-UNDER-EXT-108",
+   "ACTOR-9-UNDER-S9"
+  ],
   "the_selected_shape": "ANTISYMMETRIC"
  },
  "symmetric_census": {
@@ -8205,27 +8940,187 @@
   "row_orthogonality_failures": 0,
   "species": 30
  },
+ "the_price_is_index_two": {
+  "coins_where_the_even_twist_moves_it": 0,
+  "coins_where_the_odd_twist_does_not_reverse_it": 0,
+  "coins_where_the_swap_moves_it": 0,
+  "containments": [
+   {
+    "row": "COIN-640-UNDER-ACTING-LINK-8",
+    "the_acting_group": 8,
+    "the_arena_gauge_group": 4,
+    "the_gauge_group_sits_inside": true,
+    "the_index": 2
+   },
+   {
+    "row": "COIN-640-UNDER-GAMMA-16",
+    "the_acting_group": 16,
+    "the_arena_gauge_group": 8,
+    "the_gauge_group_sits_inside": true,
+    "the_index": 2
+   }
+  ],
+  "extreme_invariant_measures": 136,
+  "measure": "COUNTING-ONLY",
+  "probes": [
+   {
+    "cycle_type": [
+     2
+    ],
+    "merged_orbit_pairs": 1,
+    "orbits_of_the_group": 1,
+    "orbits_of_the_index_two_subgroup": 2,
+    "order_of_the_group": 2,
+    "points": 2,
+    "the_drop": 1,
+    "the_multiplicity_of_the_quotient_character": 1,
+    "the_three_routes_agree": true
+   },
+   {
+    "cycle_type": [
+     2,
+     1
+    ],
+    "merged_orbit_pairs": 1,
+    "orbits_of_the_group": 2,
+    "orbits_of_the_index_two_subgroup": 3,
+    "order_of_the_group": 2,
+    "points": 3,
+    "the_drop": 1,
+    "the_multiplicity_of_the_quotient_character": 1,
+    "the_three_routes_agree": true
+   },
+   {
+    "cycle_type": [
+     4
+    ],
+    "merged_orbit_pairs": 1,
+    "orbits_of_the_group": 1,
+    "orbits_of_the_index_two_subgroup": 2,
+    "order_of_the_group": 4,
+    "points": 4,
+    "the_drop": 1,
+    "the_multiplicity_of_the_quotient_character": 1,
+    "the_three_routes_agree": true
+   },
+   {
+    "cycle_type": [
+     2,
+     2
+    ],
+    "merged_orbit_pairs": 2,
+    "orbits_of_the_group": 2,
+    "orbits_of_the_index_two_subgroup": 4,
+    "order_of_the_group": 2,
+    "points": 4,
+    "the_drop": 2,
+    "the_multiplicity_of_the_quotient_character": 2,
+    "the_three_routes_agree": true
+   },
+   {
+    "cycle_type": [
+     2,
+     1,
+     1
+    ],
+    "merged_orbit_pairs": 1,
+    "orbits_of_the_group": 3,
+    "orbits_of_the_index_two_subgroup": 4,
+    "order_of_the_group": 2,
+    "points": 4,
+    "the_drop": 1,
+    "the_multiplicity_of_the_quotient_character": 1,
+    "the_three_routes_agree": true
+   },
+   {
+    "cycle_type": [
+     4,
+     1
+    ],
+    "merged_orbit_pairs": 1,
+    "orbits_of_the_group": 2,
+    "orbits_of_the_index_two_subgroup": 3,
+    "order_of_the_group": 4,
+    "points": 5,
+    "the_drop": 1,
+    "the_multiplicity_of_the_quotient_character": 1,
+    "the_three_routes_agree": true
+   }
+  ],
+  "synthetic_probes": 300,
+  "synthetic_probes_where_the_three_routes_agree": 300,
+  "the_expectation_at_every_extreme_invariant_measure": [
+   "0"
+  ],
+  "the_index_at_both_readings": [
+   2
+  ],
+  "the_observable_is_reversed_by_the_odd_twist_pointwise": true,
+  "the_parents_range_of_the_observable_itself": [
+   "-2",
+   "2"
+  ],
+  "the_parents_range_over_the_reachable_set": [
+   "0",
+   "0"
+  ],
+  "the_probe_family": "CYCLIC-GROUPS-OF-EVEN-ORDER-ACTING-ON-A-DISJOINT-UNION-OF-CYCLES-ENUMERATED-BY-CYCLE-TYPE",
+  "the_range_of_the_observable_itself": [
+   "-2",
+   "2"
+  ],
+  "the_range_over_the_reachable_set": [
+   "0",
+   "0"
+  ],
+  "the_stronger_reading": [
+   {
+    "by_the_degree_one_filter": [
+     0
+    ],
+    "by_the_scalar_filter_at_any_degree": [
+     0
+    ],
+    "row": "COIN-640-UNDER-ACTING-LINK-8",
+    "species_the_scalar_filter_returns": 1,
+    "the_two_filters_agree": true
+   },
+   {
+    "by_the_degree_one_filter": [
+     1
+    ],
+    "by_the_scalar_filter_at_any_degree": [
+     1
+    ],
+    "row": "COIN-640-UNDER-GAMMA-16",
+    "species_the_scalar_filter_returns": 1,
+    "the_two_filters_agree": true
+   }
+  ]
+ },
  "totals": {
-  "anchors": 74,
+  "anchors": 85,
   "carrier_rows": 19,
-  "closing_gates": 2,
-  "gates": 49,
-  "gates_in_the_sealed_ledger": 46,
-  "gates_possible_including_the_refusal_only_gate": 50,
-  "gates_that_close_after_this_snapshot": 3,
+  "closing_gates": 3,
+  "gates": 57,
+  "gates_in_the_sealed_ledger": 53,
+  "gates_possible_including_the_refusal_only_gate": 58,
+  "gates_that_close_after_this_snapshot": 4,
   "groups": 22,
-  "mutants": 55,
-  "paper_gates": 7,
-  "path_value_anchors": 43,
+  "mutants": 73,
+  "objects_sealed_at_a_paper_gate": 7,
+  "objects_sealed_before_the_paper_gates": 31,
+  "paper_gates": 8,
+  "path_value_anchors": 51,
   "receipt_gates": 1,
-  "sealed_objects": 34,
+  "sealed_objects": 38,
   "sources": 12,
   "the_refusal_only_gate": [
    "G-PAPER-PRESENT"
   ],
-  "verbatim_anchors": 19
+  "verbatim_anchors": 22
  },
- "transcript_head": "3df7860feb68",
+ "transcript_head": "8d1cc3422aee",
  "two_engines": [
   {
    "classes_dixon": 2,
@@ -8246,6 +9141,13 @@
    "classes_murnaghan_nakayama": 5,
    "order": 24,
    "row": "S4",
+   "tables_agree": true
+  },
+  {
+   "classes_dixon": 7,
+   "classes_murnaghan_nakayama": 7,
+   "order": 120,
+   "row": "S5",
    "tables_agree": true
   }
  ],
@@ -8432,6 +9334,42 @@
    "what": "the shape the parent's exclusion census selected at the pair grain"
   },
   {
+   "anchor": "VB-OCC-VACUOUS",
+   "chars": 158,
+   "consumer": "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+   "digest": "679b7c2e3b5c",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-OCC-PAPER",
+   "what": "the parent's own sentence for the zero this unit's comparison rests on"
+  },
+  {
+   "anchor": "VB-OCC-ACTOR",
+   "chars": 61,
+   "consumer": "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+   "digest": "b269e093a45d",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-OCC-PAPER",
+   "what": "the parent's own measurement at the grain this unit's sharpest row sits at"
+  },
+  {
+   "anchor": "VB-OCC-DECLARATION",
+   "chars": 87,
+   "consumer": "G-STATISTICS-AT-THE-PARENTS-GRAIN",
+   "digest": "f41bfc160c33",
+   "floor": 40,
+   "located": 1,
+   "ok": true,
+   "perturbed_located": 0,
+   "source": "S-OCC-PAPER",
+   "what": "the parent's own verdict on the shape at this arena"
+  },
+  {
    "anchor": "VB-OCC-CELL",
    "chars": 93,
    "consumer": "G-AG23-ARENA-REBUILT",
@@ -8480,26 +9418,28 @@
    "what": "the carrier this census weighs"
   }
  ],
- "verdict": "SPC-INVENTORY-22-GROUPS-220-CLASSES-220-SPECIES--SPC-CARRIER-SELECTS-156-OF-246--SPC-SELECTION-OPEN--SPC-STATISTICS-SPLITS-192|14|9|31 -- INVENTORY=22-GROUPS-AT-ORDERS-1,2,4,8,9,16,18,24,32,108,128,216,1024,4096,4320,8192,32768,362880-OF-WHICH-18-CARRY-A-FULL-EXACT-TABLE-AND-4-STAND-ABOVE-THE-DECLARED-CAP-128;CLASSES=220;SPECIES=220 -- IRREPS=EVERY-TABLE-GATED-BY-TWO-ROUTES-COLUMN-ORTHOGONALITY-AND-ROW-ORTHOGONALITY-AS-SEPARATE-GATES-WITH-THE-CLASS-EQUATION-AND-THE-DEGREE-SUM-BESIDE-THEM;THE-NINE-ACTOR-TABLE-IS-INTEGER-VALUED-WITH-30-CLASSES-AND-30-SPECIES-ITS-DEGREES-RE-DERIVED-BY-THE-HOOK-LENGTH-FORMULA;TWO-ENGINES-AGREE-ON-3-SYMMETRIC-GROUPS -- CARRIER=19-ROWS-OVER-7-DECLARED-CARRIERS;156-OF-246-SPECIES-HOSTED;9-ROWS-LEAVE-A-SPECIES-HOMELESS-THE-WIDEST-ACTOR-9-UNDER-S9-AT-2-OF-30;THE-136-CARRIER-CLASSES-AND-THE-80-AT-THE-EXTENSION-ARE-THE-TRIVIAL-SPECIES-MULTIPLICITY-BY-TWO-ROUTES -- PRICE=ONE-SPECIES:THE-ODD-TWIST-SPECIES-CARRIES-MULTIPLICITY-72-AT-THE-ANCHORED-READING-AND-40-AT-THE-EXTENSION-WHICH-ARE-EXACTLY-THE-PARENTS-IDENTIFIED-ORBIT-PAIRS;THE-PARENTS-PINNED-OBSERVABLE-OFF-DIAGONAL-QUARTIC-SIGN-IS-NON-ZERO-AT-288-OF-640-POINTS-AND-LIES-IN-1-ISOTYPIC-COMPONENT;136-OF-136-ORBIT-SUMS-VANISH -- IDENTITY=THE-SPECIES-WITH-AN-INVARIANT-VECTOR-ALONG-THE-MEASURED-STABILIZER-LATTICE-ARE-30,29,28,26,22,12,4-OF-30;ALONG-THE-CRYSTALLIZATION-CHAIN-4,12,12,26,30,30-SO-CRYSTALLIZATION-RESTORES-THE-INVENTORY-AT-PREFIX-5;BRANCHING-BY-TWO-ROUTES-AT-2610-PAIRS-WITH-0-DISAGREEMENTS-AND-A-TABLEAU-THIRD-ROUTE-AT-210-ROWS -- SELECTION=2154-COMPOSITE-RULES;10-ROWS-CLOSE-AND-9-EXIT;THE-DISTINGUISHED-ROW-ACTOR-9-UNDER-S9-EXITS-TO-2-SPECIES-IT-DOES-NOT-HOST -- STATISTICS=THE-SELECTED-SHAPE-IS-ANTISYMMETRIC-DERIVED-FROM-0-LEAK-CELLS-AGAINST-81;192-SPECIES-IN-BOTH-SHAPES,14-SYMMETRIC-ONLY,9-ANTISYMMETRIC-ONLY,31-IN-NEITHER;4-OF-19-ROWS-SPLIT-PROPERLY -- ROUTES=ORBITS-BY-CHARACTER-AND-BY-UNION-FIND-AT-19-ROWS;COMPOSITES-BY-TWO-CONTRACTIONS;SQUARES-BY-FORMULA-AND-BY-COUNTING-ON-THE-PAIR-SET;BRANCHING-BY-RESTRICTION-AND-BY-FROBENIUS-RECIPROCITY;INVARIANTS-BY-TABLEAU-COUNT;ORDERS-BY-CLOSURE-AND-CLASS-EQUATION-AND-ORBIT-STABILIZER;ZERO-DISAGREEMENTS-EVERYWHERE -- CONTROLS=4-SYNTHETIC-ARENAS-THROUGH-THE-SAME-CENSUS-FUNCTIONS-EMITTING-4-DISTINCT-HEADS;7-OF-8-OUTCOME-ARMS-ARE-LIVE-AT-THIS-ARENA-EACH-WITNESSED-BY-A-DELIVERED-ROW -- SCOPE=THE-KINEMATIC-HALF-ONLY;LABELS-COMPOSITES-AND-STATISTICS-COMPATIBILITY;NO-MASS-NO-SPECTRUM-NO-STABILITY-NO-REALIZED-PARTICLE-CLAIM;NO-STANDARD-MODEL-IDENTIFICATION;NO-SI-NUMBER;NO-CONTINUUM-CLAIM;COUNTS-ARE-COUNTING-ONLY;THE-TABLE-CAP-IS-128-AND-4-ACTING-GROUPS-STAND-ABOVE-IT-WITH-THEIR-ORDERS-RE-DERIVED-AND-THE-CARRIER-SEEING-THEM-THROUGH-A-GROUP-OF-ORDER-8-OR-16;THE-CARRIER-ROW-LIST-IS-A-DECLARATION",
- "verdict_head": "SPC-INVENTORY-22-GROUPS-220-CLASSES-220-SPECIES--SPC-CARRIER-SELECTS-156-OF-246--SPC-SELECTION-OPEN--SPC-STATISTICS-SPLITS-192|14|9|31",
+ "verdict": "SPC-INVENTORY-22-GROUPS-220-CLASSES-220-SPECIES--SPC-CARRIER-SELECTS-156-OF-246-ROW-SLOTS--SPC-SELECTION-OPEN--SPC-STATISTICS-SPLITS-192|14|9|31 -- INVENTORY=22-GROUPS-AT-18-DISTINCT-ORDERS-1,2,4,8,9,16,18,24,32,108,128,216,1024,4096,4320,8192,32768,362880-OF-WHICH-18-CARRY-A-FULL-EXACT-TABLE-AND-4-STAND-ABOVE-THE-DECLARED-CAP-128-ON-THE-GROUP-THIS-UNIT-ENUMERATES-ELEMENT-BY-ELEMENT;CLASSES=220;SPECIES=220-OVER-THE-22-INVENTORY-GROUPS-COUNTED-ONCE-EACH -- IRREPS=EVERY-TABLE-GATED-BY-TWO-ROUTES-COLUMN-ORTHOGONALITY-AND-ROW-ORTHOGONALITY-AS-SEPARATE-GATES-WITH-THE-CLASS-EQUATION-AND-THE-DEGREE-SUM-BESIDE-THEM-THE-7-STABILIZER-TABLES-GATED-ON-BOTH-ROUTES-TOO;THE-NINE-ACTOR-TABLE-IS-INTEGER-VALUED-WITH-30-CLASSES-AND-30-SPECIES-ITS-DEGREES-RE-DERIVED-BY-THE-HOOK-LENGTH-FORMULA;TWO-ENGINES-AGREE-ON-4-SYMMETRIC-GROUPS -- CARRIER=19-ROWS-OVER-7-DECLARED-CARRIERS;156-OF-246-ROW-SLOTS-FILLED-WHERE-A-SLOT-IS-ONE-SPECIES-AT-ONE-GROUP-CARRIER-ROW-AND-NOT-A-DISTINCT-SPECIES:THE-246-SLOTS-STAND-AT-11-DISTINCT-GROUPS-OVER-133-DISTINCT-SPECIES-OF-WHICH-92-ARE-HOSTED-SOMEWHERE-AND-THE-OTHER-87-INVENTORY-SPECIES-HAVE-NO-CARRIER-ROW-AT-ALL;9-ROWS-LEAVE-A-SPECIES-HOMELESS-THE-WIDEST-ACTOR-9-UNDER-S9-AT-2-OF-30;THE-136-CARRIER-CLASSES-AND-THE-80-AT-THE-EXTENSION-ARE-THE-TRIVIAL-SPECIES-MULTIPLICITY-BY-TWO-ROUTES-AND-THE-WHOLE-MULTIPLICITY-VECTOR-IS-PINNED-BY-THE-ORDERED-PAIR-ROUTE-AT-19-ROWS -- PRICE=ONE-SPECIES:THAT-THE-DISCOUNT-IS-ONE-LABEL-IS-FORCED-BY-INDEX-2-THE-ARENA-GAUGE-GROUP-SITTING-INSIDE-THE-ACTING-GROUP-AT-BOTH-READINGS-WITH-THE-THREE-ROUTES-COINCIDING-AT-300-OF-300-SYNTHETIC-PROBES;WHAT-IS-MEASURED-IS-WHICH-LABEL-AND-WHERE-THE-PARENTS-OBSERVABLE-LIVES:THE-ODD-TWIST-SPECIES-CARRIES-MULTIPLICITY-72-AT-THE-ANCHORED-READING-AND-40-AT-THE-EXTENSION-WHICH-ARE-EXACTLY-THE-PARENTS-IDENTIFIED-ORBIT-PAIRS-AND-IS-THE-SAME-SPECIES-UNDER-THE-STRONGER-SCALAR-READING-AT-ANY-DEGREE;THE-PARENTS-PINNED-OBSERVABLE-OFF-DIAGONAL-QUARTIC-SIGN-IS-NON-ZERO-AT-288-OF-640-POINTS-AND-LIES-IN-1-ISOTYPIC-COMPONENT-AT-THE-ANCHORED-READING;136-OF-136-ORBIT-SUMS-VANISH-AND-ITS-EXPECTATION-AT-EVERY-ONE-OF-THE-136-EXTREME-INVARIANT-MEASURES-IS-0-REPRODUCING-THE-PARENTS-PINNED-[0,0]-AGAINST-THE-OBSERVABLES-OWN-[-2,2] -- IDENTITY=THE-SPECIES-WITH-AN-INVARIANT-VECTOR-ALONG-THE-MEASURED-STABILIZER-LATTICE-ARE-30,29,28,26,22,12,4-OF-30;ALONG-THE-CRYSTALLIZATION-CHAIN-4,12,12,26,30,30-NON-DECREASING-BY-NESTING-AND-ATTAINING-THE-FULL-30-AT-PREFIX-5-AT-1-EXHIBITED-FLAG-OF-AN-UNBOUNDED-FAMILY;BRANCHING-BY-TWO-ROUTES-AT-2610-PAIRS-WITH-0-DISAGREEMENTS-AND-A-TABLEAU-THIRD-ROUTE-AT-210-ROWS -- SELECTION=2154-COMPOSITE-RULES;10-ROWS-CLOSE-AND-9-EXIT;THE-DISTINGUISHED-ROW-ACTOR-9-UNDER-S9-EXITS-TO-2-SPECIES-IT-DOES-NOT-HOST -- STATISTICS=AT-THE-PARENTS-OWN-SELECTION-GRAIN-THE-3-ROWS-THERE-DO-NOT-SPLIT-AT-ALL-29-OF-29-SLOTS-IN-BOTH-SHAPES-AND-0-SYMMETRIC-ONLY-0-ANTISYMMETRIC-ONLY-0-IN-NEITHER;THE-SHAPE-THAT-COMPARISON-NAMES-IS-ANTISYMMETRIC-DERIVED-FROM-0-LEAK-CELLS-AGAINST-81-WHERE-THE-FIRST-COUNT-IS-THE-PARENTS-VACUOUS-ZERO-OVER-AN-EMPTY-FORBIDDEN-SET-AND-THE-PARENTS-SCOPE-IS-THE-CARRIER-GRAIN-ONLY;OVER-ALL-19-DECLARED-ROWS-AS-A-DECLARED-EXTENSION-192-OF-THE-SAME-246-ROW-SLOTS-IN-BOTH-SHAPES,14-SYMMETRIC-ONLY,9-ANTISYMMETRIC-ONLY,31-IN-NEITHER;4-OF-19-ROWS-SPLIT-PROPERLY-AND-ALL-4-LIE-OFF-THAT-GRAIN -- ROUTES=ORBITS-BY-CHARACTER-AND-BY-UNION-FIND-AT-19-ROWS;COMPOSITES-BY-TWO-CONTRACTIONS;SQUARES-BY-FORMULA-AND-BY-COUNTING-ON-THE-PAIR-SET;BRANCHING-BY-RESTRICTION-AND-BY-FROBENIUS-RECIPROCITY;INVARIANTS-BY-TABLEAU-COUNT;ORDERS-BY-CLOSURE-AND-CLASS-EQUATION-AND-ORBIT-STABILIZER;ZERO-DISAGREEMENTS-EVERYWHERE -- CONTROLS=4-SYNTHETIC-ARENAS-THROUGH-THE-SAME-CENSUS-FUNCTIONS-EMITTING-4-DISTINCT-HEADS-WHICH-IS-WHERE-THE-OTHER-WORDS-ARE-WITNESSED;7-OF-8-OUTCOME-ARMS-ARE-WITNESSED-BY-A-DELIVERED-ROW-AT-THE-ROW-LEVEL;AT-THE-ARENA-LEVEL-4-OF-4-HEAD-WORDS-ARE-SETTLED-BEFORE-THE-RUN-3-OF-THEM-BY-ANY-ONE-OF-4-DECLARED-ROWS-INCLUDING-ACTOR-9-UNDER-S9-AND-THE-FOURTH-SINGLE-ARMED-BY-CONSTRUCTION -- SCOPE=THE-KINEMATIC-HALF-ONLY;LABELS-COMPOSITES-AND-STATISTICS-COMPATIBILITY;NO-MASS-NO-SPECTRUM-NO-STABILITY-NO-REALIZED-PARTICLE-CLAIM;NO-STANDARD-MODEL-IDENTIFICATION;NO-SI-NUMBER;NO-CONTINUUM-CLAIM;COUNTS-ARE-COUNTING-ONLY;THE-TABLE-CAP-IS-128-AND-4-ACTING-GROUPS-STAND-ABOVE-IT-WITH-THEIR-ORDERS-RE-DERIVED-AND-THE-CARRIER-SEEING-THEM-THROUGH-A-GROUP-OF-ORDER-8-OR-16-WHICH-CLOSES-THE-HOSTED-SET-AT-THOSE-ROWS-AND-NOT-THE-DENOMINATOR-SINCE-THOSE-4-GROUPS-CARRY-NO-SPECIES-COUNT-HERE-AND-NO-CARRIER-ROW-EITHER;THE-CARRIER-ROW-LIST-IS-A-DECLARATION",
+ "verdict_head": "SPC-INVENTORY-22-GROUPS-220-CLASSES-220-SPECIES--SPC-CARRIER-SELECTS-156-OF-246-ROW-SLOTS--SPC-SELECTION-OPEN--SPC-STATISTICS-SPLITS-192|14|9|31",
  "waiver_ledger": {
-  "covered_by_a_declared_falsifier": 36,
-  "gates_closed_when_this_ledger_is_taken": 36,
-  "gates_on_the_clean_path": 49,
+  "covered_by_a_declared_falsifier": 42,
+  "gates_closed_when_this_ledger_is_taken": 42,
+  "gates_on_the_clean_path": 57,
   "late_gate_coverage": {
    "G-ARTIFACT-INTEGRITY": "FORCING",
    "G-CONSUMERS-ARE-REAL": "FALSIFIER:MUT-CONSUMER",
    "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR": "FALSIFIER:MUT-WAIVER",
    "G-LEDGER-CHAIN-VERIFIED": "FALSIFIER:MUT-CHAIN",
    "G-LEDGER-SHAPE-IS-CONSISTENT": "FALSIFIER:MUT-LEDGER-SHAPE",
+   "G-MANIFEST-TOTALITY-AT-PROMOTION": "FALSIFIER:MUT-POST-SEAL-KEY,MUT-UNSEALED-DECLARATION",
    "G-MUST-NOT-OVER-THE-RECEIPT": "FALSIFIER:MUT-MUST-NOT-RECEIPT",
-   "G-MUST-NOT-VOCABULARY": "FALSIFIER:MUT-MUST-NOT,MUT-WALL-PARAPHRASE",
-   "G-PAPER-CLAIMS": "FALSIFIER:MUT-CLAIM,MUT-TABLE-ROW",
-   "G-PAPER-NUMERAL-COVERAGE": "FALSIFIER:MUT-COVERAGE,MUT-SPELLED-NUMERAL",
+   "G-MUST-NOT-VOCABULARY": "FALSIFIER:MUT-HOSTED-UPGRADED,MUT-MUST-NOT,MUT-UPGRADE-PARAPHRASE,MUT-WALL-PARAPHRASE",
+   "G-PAPER-CLAIMS": "FALSIFIER:MUT-CLAIM,MUT-HEADER-IN-THE-PAPER-TEXT,MUT-TABLE-ROW",
+   "G-PAPER-NUMERAL-COVERAGE": "FALSIFIER:MUT-COVERAGE,MUT-DIGEST-WHITELIST,MUT-SPELLED-COMPOUND,MUT-SPELLED-NUMERAL",
    "G-PAPER-POLARITY": "FALSIFIER:MUT-POLARITY",
-   "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND": "FALSIFIER:MUT-QUOTE-FIDELITY,MUT-TABLE-BINDING,MUT-TABLE-HEADER",
+   "G-PAPER-REFERENT-BOUND": "FALSIFIER:MUT-REFERENT-PAIR,MUT-REFERENT-UNIVERSE",
+   "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND": "FALSIFIER:MUT-QUOTE-ATTRIBUTION,MUT-QUOTE-FIDELITY,MUT-TABLE-BINDING,MUT-TABLE-HEADER",
    "G-PAPER-VERDICT-EQUALITY": "FALSIFIER:MUT-VERDICT-TWIN",
-   "G-SEAL-INTEGRITY": "FALSIFIER:MUT-SEAL"
+   "G-SEAL-INTEGRITY": "FALSIFIER:MUT-MUTANT-ROW,MUT-SEAL"
   },
   "late_gates_declared": [
    "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
@@ -8511,9 +9451,11 @@
    "G-PAPER-POLARITY",
    "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
    "G-PAPER-NUMERAL-COVERAGE",
+   "G-PAPER-REFERENT-BOUND",
    "G-CONSUMERS-ARE-REAL",
    "G-MUST-NOT-OVER-THE-RECEIPT",
    "G-SEAL-INTEGRITY",
+   "G-MANIFEST-TOTALITY-AT-PROMOTION",
    "G-ARTIFACT-INTEGRITY"
   ],
   "late_gates_not_yet_closed_when_this_ledger_is_taken": [
@@ -8522,11 +9464,13 @@
    "G-FALSIFIER-COVERAGE-AT-AN-HONEST-DENOMINATOR",
    "G-LEDGER-CHAIN-VERIFIED",
    "G-LEDGER-SHAPE-IS-CONSISTENT",
+   "G-MANIFEST-TOTALITY-AT-PROMOTION",
    "G-MUST-NOT-OVER-THE-RECEIPT",
    "G-MUST-NOT-VOCABULARY",
    "G-PAPER-CLAIMS",
    "G-PAPER-NUMERAL-COVERAGE",
    "G-PAPER-POLARITY",
+   "G-PAPER-REFERENT-BOUND",
    "G-PAPER-TABLES-AND-QUOTES-ARE-BOUND",
    "G-PAPER-VERDICT-EQUALITY",
    "G-SEAL-INTEGRITY"
@@ -8546,18 +9490,18 @@
   "under_a_registered_forcing": 1
  },
  "walls": {
-  "banned_forms": 56,
-  "declaring_sentences": 4,
+  "banned_forms": 82,
+  "declaring_sentences": 9,
   "outside_register_words": 7,
   "rows": [
    {
-    "banned_forms": 16,
+    "banned_forms": 35,
     "found": 0,
-    "statement": "THE DYNAMIC VOCABULARY IS BEHIND ANOTHER DOOR.  This unit measures which species can exist -- labels, composites, statistics compatibility -- and nothing about which are realized or with what values.  That question is its successor's and waits on the potential unit's gate.",
+    "statement": "THE DYNAMIC VOCABULARY IS BEHIND ANOTHER DOOR, AND SO IS THE WORD THIS WALL WILL NOT WRITE.  This unit measures which species a carrier can HOST -- labels, composites, statistics compatibility -- where hosted means multiplicity greater than zero in a permutation module and means nothing else.  Whether a species is anything more than that is its successor's question and waits on the potential unit's gate; the whole family of words that would say so is on this wall's own ban list, and every sentence of this paper carrying one of them is a declared exemption located there.",
     "wall": "WALL-DYNAMIC"
    },
    {
-    "banned_forms": 17,
+    "banned_forms": 24,
     "found": 0,
     "statement": "NO OUTSIDE IDENTIFICATION IS MADE.  No sentence of this paper names an outside theory's particle as an identification of any species it measures.  The pin licenses structural comparisons stamped ANALOGY; this paper draws none, so the licence is registered and unused and the wall's positive leg is total.",
     "wall": "WALL-IDENTIFICATION"
@@ -8575,7 +9519,7 @@
     "wall": "WALL-LIMIT"
    }
   ],
-  "sentences_scanned": 164,
+  "sentences_scanned": 211,
   "species_words": 3,
   "the_analogy_licence": "REGISTERED-AND-UNUSED"
  }
