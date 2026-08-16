@@ -293,3 +293,52 @@ TRUE but ungated).  **The #5 brief item NOT CONFIRMED a
 second time** (19 quote lines = the 13 anchors, zero
 duplicates; the real inflation is ACTOR≡SITE,
 CELL≡CO-DIVISION-PAIR).  K3 out.
+
+## 2026-08-16 — THIRD EXTERNAL REVIEW EVALUATED (NOT FULLY TRUSTED, PER THE USER): DYNAMICS-CLOSURE INSERTED BEFORE EXCITATION; THE n=16 REGISTRATION SHARPENED; RENAMES ORDERED; K2-ATTRIBUTED ITEMS HELD FOR THE SEAT'S OWN REPORT (v15 LEDGER #11)
+
+**ADOPTED (verified or mathematically checked):** (1)
+**DYNAMICS-CLOSURE (paper-46) INSERTED between AUTOGLUE
+and EXCITATION** — full state → allowed events → successor
+distribution → next full state, integrating
+grammar/emission, seam transition, amplitude, branch
+weights; trajectories + reference solutions; EXCITATION
+renumbered paper-48 and gates on it (amends the earlier
+sequential ruling; the gate's own logic demands it —
+AUTOGLUE delivers a transition relation over a
+SEAM-SUBSYSTEM state, not the dynamics EXCITATION
+consumes).  (2) **the n=16 registration SHARPENED
+(mathematically verified): the additive group of AG(2,4)
+is C₂⁴ with subgroup orders 1,2,4,8,16 = ALL divisors of
+16 — n=16 does NOT separate divisibility from
+abstract-subgroup availability; it separates divisibility
+from F₄-LINEAR-subspace cosets (sizes 1,4,16); the
+successor must pre-register WHICH "subgroup" it means.**
+(3) AUTOGLUE renames ordered: AUTONOMOUS-CROSSING-FOUND
+(3 occurrences confirmed) → the licensed
+"A-TARGET-FREE-EVENT-CONDITIONED-CROSS-LINK-CREATION-RULE-
+EXISTS" (the event is externally supplied from the 455;
+the grammar not rerun); the CROSS-ONLY/ALL-NEW
+equivalence-class point (verify: both admit the same 162
+on the bound fiber — the head must not celebrate one);
+the state renamed SEAM-SUBSYSTEM STATE (omits
+amplitude/branch/coin/emission); the global successor
+fiber label (per-seam 4-or-8 vs global 256/512 — verify
+and fix the choice-inventory referent).  (4) ARITY
+renames ordered: "the arena over-determines a" → the
+conditional form ("added proper-coset and
+complete-partition assumptions would select a=q=3 at this
+arena; current ISP does not"); "nothing tested is carried
+by event size" → "none of the parent numerals follows the
+declared uniform a-only transport rule"; the
+coset_events predicate (cited at arity_exact.py:2667)
+verify-and-fix (subgroup-order-availability ≠
+events-are-cosets; 84 triples vs 12 affine lines) —
+rename or build the coset-restricted grammar.  (5) the
+a=2 cross-run stays required before DYNAMICS-CLOSURE.
+**HELD (attributed to an unlanded DISC K2 report — no
+action until the seat's own report):** the
+zero-adjustable-numbers qualification; the non-covariant
+coin at AG(2,2); the renderer-twice reconstruction; the
+referent-gate coverage; the census-gate totals.  **The
+SEAM concern formally retracted by its own author — triply
+closed.**  Routed to both runners this entry.
