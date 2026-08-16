@@ -412,3 +412,54 @@ gates + falsifiers with digest-proved moves; **the
 off-tree byte-reproduction leg honestly reported
 UNVERIFIED at these final shas (machine load) — the
 orchestrator battery covers it next.**
+
+## 2026-08-16 — CONTRACT K3 FROZEN (v15 LEDGER #14) + CONTRACT ADJUDICATED (v15 LEDGER #15): REPAIR ORDERED — NO REJECT; THE WALLS' ROOT CAUSE FOUND (LICENCE LEG OFF); THE Q58 PROBE RE-LABELED FIVE INPUTS
+
+**K3:** v15/review-contract-instrument.md (541124fac47d,
+585 lines).  Nine majors: G-HEAD-REBUILT not total (39 of
+47 positions — an inverted §2 headline delivers);
+the transcript promoted UNBOUND (bind discarded on the
+write path); G-TEMPLATE-EXERCISED matches TEXT not live
+calls (a dead class satisfies 8 of 9; T-FALSIFIER-POISONS
+never runs in --run); S-1 aliased via globals(); **the
+SemanticWall licence leg SWITCHED OFF on all seven walls
+(the root cause of K2 M2)**; 92 spelled numerals ungated;
+TICK a typed literal with tautological anchor consumers;
+six typed payload keys incl. a false receipt_leaves=0;
+the CLI strict only at argv[1] (--run --mutant writes a
+clean delivery).  What holds: 34/34 out-of-harness; byte
+×2; seal totality; post-close edits caught; --render
+cannot pass as delivery; **no physics number moved in 141
+recomputations.**
+
+**ADJUDICATION (three seats: #9/#10/#14; ~482 checks,
+zero false physics):** REPAIR ORDERED, the K2 REJECT
+lever RESOLVED WITHOUT REJECT — CLAIM_TEXTS[4] re-scoped
+to what was measured (the 9-arm domain probe, re-labeled
+FIVE INPUTS → 1 recover / 4 refuse per K1 M1; the
+criterion sentence conditionalized; the ten
+triangle-writing failures and the non-triangular
+certifier rendered).  ORDERS: (Z1) the walls rebuilt —
+licence leg ON for all seven, paraphrase falsifiers
+written independently, all 16+2 planted paraphrases +
+both re-voiced wall sentences die; (Z2) the Q58 probe
+five-inputs re-labeling; (Z3) the quotient row split
+(sort 5,784→136 vs group 136→25/17; order-preserving
+3,830/1,067 published); (Z4) the Born-menu row COMPUTED
+(the real menu takes 4 values; the carried-not-used
+b_born_menu removed — the TPL-2 violation); (Z5)
+minimality amplitude-scoped (205/606 at single-cell); the
+two derivation cells fixed; TICK/CHART added to §6 with
+computed class columns; head-word feasibility per
+#299-extended; (Z6) K3's nine whole — the head rebuilt
+total at 47 positions; the transcript BOUND on the write
+path; template conformance by LIVE calls; S-1 structural
+(the alias route dies; five regions owned; B_ARITY/DIM
+leaks closed); spelled numerals gated; the six payload
+keys measured; the CLI strict at every argv position;
+(Z7) the two FOUNDs rendered (index-12 as the
+orbit-stabilizer theorem; stabilizer set-equality gated);
+OBJECTS=23 with the ≤20-distinct-extents disclosure; all
+minors.  No physics number moves; full battery; every
+injection replayed dead.  **The repair worker launches
+next.**
