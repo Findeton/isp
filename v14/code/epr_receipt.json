@@ -1,4 +1,128 @@
 {
+ "analytic_legs": {
+  "BOTH_COMPLETE_is_closed_before_the_run": "the shadow's own fibre fails to fix a direction at every (record, direction) pair of every declared state; the minimum over the declared family is published below and is nonzero, so no declared state could have returned EPR-BOTH-COMPLETE here",
+  "CERTIFICATION_is_total_for_the_same_reason": "the same containment holds against the CONDITIONER's directions, so certified equals quantities on every arm; the two equal columns of the census table are this containment, not a finding",
+  "RECORD_COMPLETE_is_analytic": "a censused quantity of a block is BY CONSTRUCTION one of the directions the block's own localization carries, so D-RECORD's content at the block always fixes the value being predicted: without_counterpart_in_D_RECORD is identically zero on any arena whatever, and only the punctured control of section 14 -- which deletes a direction from the description by hand -- can move it",
+  "arena_builders_scanned": [
+   "build_corpus",
+   "record_field",
+   "codivision",
+   "history_of",
+   "window_schedules",
+   "leg_history",
+   "leg_geometry",
+   "signature_blocks",
+   "round_vec",
+   "strict_triples"
+  ],
+  "declared_specs": 132,
+  "minimum_unfixed_pairs_over_the_declared_states": 108,
+  "reading_names_found_in_them": [],
+  "records": 36,
+  "residue_classes": 9,
+  "specs_where_the_quantity_lies_in_the_block_s_own_directions": 132,
+  "specs_where_the_quantity_lies_in_the_conditioner_s_directions": 132,
+  "the_live_selector": "two-way at this corpus: the head law's record-incomplete branch cannot fire on unmutated data and its both-complete branch is closed by the ceiling, so what the census measures is one column -- the shadow's",
+  "the_reading_has_no_path_into_the_history": "a reading in this unit is a FUNCTION ON RECORDS, not an operation on a history: no function that builds the arena, the corpus, the record field or the blocks takes a reading or names one, which is checked by AST below.  The E5 zero is therefore forced by the formalisation and would be returned on any arena; what the declared falsifier establishes is that no leak was introduced by accident, not that the arena forbids one",
+  "window": "COUNTING-ONLY over the declared spec list and the declared state family (E-24)"
+ },
+ "anchor_consumers": {
+  "count": 15,
+  "note": "an anchor's consumer is not decoration: the named gate must be a gate this run ran, and it must have called consume() on that anchor as part of its own condition, so a consumed_by field pointing anywhere at all fails here",
+  "rows": [
+   {
+    "anchor": "A-E1",
+    "consumed_by": "G-CERTAINTY-CENSUS-PER-ARM",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   },
+   {
+    "anchor": "A-E2",
+    "consumed_by": "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   },
+   {
+    "anchor": "A-E3",
+    "consumed_by": "G-CONJUGATE-PAIR-MEASURED",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   },
+   {
+    "anchor": "A-E4",
+    "consumed_by": "G-E4-TWO-REDUCTIONS",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   },
+   {
+    "anchor": "A-E5",
+    "consumed_by": "G-E5-RECORD-DOES-NOT-MOVE",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   },
+   {
+    "anchor": "A-E6",
+    "consumed_by": "G-BELL-DESIDERATA-BOUND",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   },
+   {
+    "anchor": "A-E7",
+    "consumed_by": "G-EPR-SUFFICIENCY-CAVEAT",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   },
+   {
+    "anchor": "A-SEAM",
+    "consumed_by": "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   },
+   {
+    "anchor": "A-READING-A",
+    "consumed_by": "G-SHADOW-CEILING",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   },
+   {
+    "anchor": "A-READING-B",
+    "consumed_by": "G-READINGS-PARTITION-MEASURED",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   },
+   {
+    "anchor": "A-MOD3",
+    "consumed_by": "G-SHADOW-CEILING",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   },
+   {
+    "anchor": "A-DGBLIND",
+    "consumed_by": "G-READINGS-PARTITION-MEASURED",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   },
+   {
+    "anchor": "A-BELL-E1",
+    "consumed_by": "G-BELL-WALL-STATED-IN-THE-PAPER",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   },
+   {
+    "anchor": "A-BELL-E2",
+    "consumed_by": "G-BELL-WALL-STATED-IN-THE-PAPER",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   },
+   {
+    "anchor": "A-AID",
+    "consumed_by": "G-BLOCKS-AGREE-WITH-FAC",
+    "the_gate_consumed_it": true,
+    "the_gate_ran": true
+   }
+  ],
+  "unconsumed": []
+ },
  "arena": {
   "declared_link_directions": 3,
   "degree_of_every_site": 6,
@@ -76,6 +200,65 @@
  "arithmetic": "exact integers, fractions.Fraction and Z[w] as integer pairs; no float anywhere",
  "bell": {
   "banned_count": 7,
+  "banned_pattern_count": 14,
+  "banned_patterns": [
+   {
+    "id": "W1",
+    "pattern": "restor\\w*\\s+(?:\\w+\\s+){0,3}?local realism"
+   },
+   {
+    "id": "W2",
+    "pattern": "local realism\\s+(?:\\w+\\s+){0,3}?(?:is|are|was|were)?\\s*restor\\w*"
+   },
+   {
+    "id": "W3",
+    "pattern": "(?:restor|recover|regain)\\w*\\s+(?:\\w+\\s+){0,3}?localit\\w+"
+   },
+   {
+    "id": "W4",
+    "pattern": "localit\\w+\\s+(?:\\w+\\s+){0,4}?(?:restor|recover|regain)\\w*"
+   },
+   {
+    "id": "W5",
+    "pattern": "(?:evad|escap|circumvent|sidestep)\\w*\\s+(?:\\w+\\s+){0,3}?bell"
+   },
+   {
+    "id": "W6",
+    "pattern": "bell\\w*\\s+(?:\\w+\\s+){0,4}?(?:evad|escap|circumvent|sidestep)\\w*"
+   },
+   {
+    "id": "W7",
+    "pattern": "bell\\w*(?:'s)?\\s+(?:theorem|inequalit\\w+)\\s+(?:does not|do not|cannot|can not)\\s+(?:apply|hold|bind)"
+   },
+   {
+    "id": "W8",
+    "pattern": "local hidden.{0,2}variable"
+   },
+   {
+    "id": "W9",
+    "pattern": "hidden.{0,2}variable\\w*\\s+(?:\\w+\\s+){0,4}?(?:vindicat|establish|confirm|verifi)\\w*"
+   },
+   {
+    "id": "W10",
+    "pattern": "(?:vindicat|establish|confirm|verifi)\\w*\\s+(?:\\w+\\s+){0,4}?hidden.{0,2}variable"
+   },
+   {
+    "id": "W11",
+    "pattern": "spooky action\\s+(?:\\w+\\s+){0,6}?(?:refut|disprov|disproved|dispell|dismiss)\\w*"
+   },
+   {
+    "id": "W12",
+    "pattern": "(?:refut|disprov|dispell|dismiss)\\w*\\s+(?:\\w+\\s+){0,6}?spooky action"
+   },
+   {
+    "id": "W13",
+    "pattern": "einstein\\s+(?:\\w+\\s+){0,4}?(?:was right|is right|were right|vindicated|correct after all)"
+   },
+   {
+    "id": "W14",
+    "pattern": "satisf\\w+\\s+(?:\\w+\\s+){0,3}?bell local causality"
+   }
+  ],
   "banned_sentences": [
    "local realism is restored",
    "this evades Bell",
@@ -90,37 +273,73 @@
     "D-RECORD": "MET on the measured arms",
     "D-SHADOW": "NOT MET: 316224 certified elements, none carried",
     "bell_constrained": "no",
-    "desideratum": "E1 -- every element of reality has a counterpart"
+    "desideratum": "E1 -- every element of reality has a counterpart",
+    "paper_cells": [
+     "E1 counterpart for every element",
+     "met on the measured arms",
+     "not met",
+     "no"
+    ]
    },
    {
     "D-RECORD": "INSTANTIABLE only in the state's localization",
     "D-SHADOW": "NEVER: the shadow certifies nothing here",
     "bell_constrained": "no",
-    "desideratum": "E2 -- prediction with certainty without disturbing"
+    "desideratum": "E2 -- prediction with certainty without disturbing",
+    "paper_cells": [
+     "E2 certainty without disturbance",
+     "instantiable only in the state's localization",
+     "never here",
+     "no"
+    ]
    },
    {
     "D-RECORD": "HELD: both members carried at every history",
     "D-SHADOW": "REFUSED: no single menu carries both",
     "bell_constrained": "YES -- any joint assignment across blocks is outcome-dependent in v5 paper-14's sense",
-    "desideratum": "E3 -- simultaneous reality for a conjugate pair"
+    "desideratum": "E3 -- simultaneous reality for a conjugate pair",
+    "paper_cells": [
+     "E3 simultaneous reality for a conjugate pair",
+     "held at every history",
+     "refused",
+     "yes"
+    ]
    },
    {
     "D-RECORD": "one record throughout",
     "D-SHADOW": "up to five assignments at one record",
     "bell_constrained": "no",
-    "desideratum": "E4 -- one reality, several assigned descriptions"
+    "desideratum": "E4 -- one reality, several assigned descriptions",
+    "paper_cells": [
+     "E4 one reality, several assignments",
+     "one record throughout",
+     "up to five assignments",
+     "no"
+    ]
    },
    {
     "D-RECORD": "MET: zero moves measured",
     "D-SHADOW": "the ASSIGNED description moves; B's own does not",
     "bell_constrained": "no",
-    "desideratum": "E5 -- no dependence of B's reality on A's choice"
+    "desideratum": "E5 -- no dependence of B's reality on A's choice",
+    "paper_cells": [
+     "E5 no dependence on the distant choice",
+     "zero moves measured",
+     "the assigned description moves",
+     "no"
+    ]
    },
    {
-    "D-RECORD": "one exists on the measured arms, AT THIS ARENA and under this corpus's site-constancy",
+    "D-RECORD": "COMPLETE FOR THE CENSUSED CERTAINTY-ELEMENTS on the measured arms, AT THIS ARENA and under this corpus's site-constancy -- never completeness simpliciter, which is a claim about physical reality this unit neither makes nor could make",
     "D-SHADOW": "not applicable",
     "bell_constrained": "YES -- it is not a local-realist theory; the corpus is Bell-nonlocal by v5 paper-14 and this unit claims nothing against that",
-    "desideratum": "E6 -- such a theory is possible"
+    "desideratum": "E6 -- such a theory is possible",
+    "paper_cells": [
+     "E6 such a theory is possible",
+     "complete for the censused certainty-elements on the measured arms",
+     "not applicable",
+     "yes"
+    ]
    }
   ],
   "not_claimed": [
@@ -130,7 +349,34 @@
    "any statement about spacelike separation"
   ],
   "standing_verdict": "v5 paper-14: ISP is Bell-nonlocal (E1 false), no-signalling and parameter-independent (E2 true); outcome independence is what fails",
-  "the_locality_finding": "at this arena EPR's criterion is instantiable only in the localization the quantum state uses, where the quantity attributed to a block has as its referent a co-division pair straddling that block's own boundary; so the element the criterion certifies is not local to the block it is certified for"
+  "the_locality_finding": "at this arena EPR's criterion is instantiable only in the localization the quantum state uses, where the quantity attributed to a block has as its referent a co-division pair straddling that block's own boundary; so the element the criterion certifies is not local to the block it is certified for",
+  "the_wall_has_a_positive_leg": "the standing verdict is not only forbidden to be contradicted, it is required to be STATED: v5 paper-14's two sentences are matched in this paper's own bytes, so a paper-38 that quietly dropped its Bell section would fail a gate"
+ },
+ "bell_wall_positive_leg": {
+  "count": 2,
+  "licensed_passages": [
+   {
+    "occurrences": 1,
+    "passage": "THE-STANDING-VERDICT-QUOTED"
+   },
+   {
+    "occurrences": 1,
+    "passage": "THE-UNIT-S-OWN-DENIAL"
+   }
+  ],
+  "licensed_passages_missing": [],
+  "missing": [],
+  "note": "v5 paper-14's two verdict sentences are required VERBATIM in this paper's own bytes, so the wall cannot be satisfied by deleting the section that carries it; and the two passages the pattern scan licenses -- the standing verdict and this unit's own denial -- must each stand exactly once, so the licence cannot be widened by repeating them",
+  "rows": [
+   {
+    "anchor": "A-BELL-E1",
+    "stated_in_the_paper": true
+   },
+   {
+    "anchor": "A-BELL-E2",
+    "stated_in_the_paper": true
+   }
+  ]
  },
  "blocks": {
   "agreements_with_FAC": [
@@ -398,6 +644,7 @@
   "in_the_sealed_ledger": [
    "G-PROVENANCE-SHA-PINNED",
    "G-VERBATIM-ANCHORS-IN-SOURCE",
+   "G-EPR-SUFFICIENCY-CAVEAT",
    "G-OUTCOMES-PARSED-FROM-THE-PIN",
    "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
    "G-LINK-GRAPH-MEASURED",
@@ -409,11 +656,14 @@
    "G-SEPARATION-PREMISE-CENSUS",
    "G-NO-DISTURBANCE-DYNAMICAL",
    "G-SHADOW-CEILING",
+   "G-SHADOW-CARRIES-NOTHING-AT-EVERY-STATE",
    "G-READINGS-PARTITION-MEASURED",
+   "G-THE-ANALYTIC-LEGS-MEASURED",
    "G-CERTAINTY-CENSUS-PER-ARM",
    "G-CERTAINTY-POLARITY",
    "G-E4-TWO-REDUCTIONS",
    "G-CONJUGATE-PAIR-MEASURED",
+   "G-OPERATOR-LEG-IS-RESIDUE-DEGENERACY",
    "G-E5-RECORD-DOES-NOT-MOVE",
    "G-BELL-DESIDERATA-BOUND",
    "G-EVERY-OUTCOME-WORD-EMITTABLE",
@@ -421,15 +671,21 @@
    "G-HEAD-DERIVED-TWICE",
    "G-CLASS-WORDS-BOUND-TO-PREDICATES",
    "G-NO-FLOAT-IN-SOURCE",
+   "G-VOUCHING-KEYS-SEALED",
+   "G-FALSIFIER-DESCRIBES-ITS-CODE",
    "G-FALSIFIER-COVERAGE",
    "G-FALSIFIER-REACHABILITY",
    "G-READS-DECLARED",
    "G-PAPER-CLAIMS",
+   "G-PAPER-FENCES-MATCH-THE-VERDICT",
    "G-PAPER-TABLES-WITH-HEADERS",
    "G-PAPER-NUMERAL-COVERAGE",
    "G-PAPER-CLAIM-POLARITY",
    "G-SENTENCE-REFERENT-BINDING",
+   "G-ELEMENT-OF-REALITY-CONFINED",
    "G-WALLS-SCAN-THE-PAPER",
+   "G-BELL-WALL-STATED-IN-THE-PAPER",
+   "G-ANCHOR-CONSUMERS-RAN",
    "G-SWEEP-IS-EXECUTION-BOUND",
    "G-CLOSING-BATTERY-RAN"
   ]
@@ -446,13 +702,50 @@
   "horn_1_for_D_SHADOW": "HOLDS -- the shadow is measured incomplete in section 9",
   "horn_2_for_D_RECORD": "FAILS -- the record carries both members of a pair that no single shadow carries, at every committed history",
   "of_histories": 5856,
-  "operator_leg": "the two declared coin orders are the two orders of the same pair of matrices: G . D(x) against D(x) . G, compared exactly in Z[w]",
+  "of_those_where_the_record_observable_is_not_scalar": 3,
+  "operator_leg": "the two declared coin orders' OPERATORS are the two orders of the same pair of matrices: G . D(x) against D(x) . G, compared exactly in Z[w]",
+  "operator_leg_agrees_with_the_residue_criterion_at": 36,
   "pair_is_not_jointly_declarable": true,
   "reading_pair": "READ-BORN-GD | READ-RECORD-MENU",
   "records": 36,
   "records_where_the_Born_menu_carries_the_record_menu": 0,
   "records_where_the_record_menu_carries_the_Born_menu": 24,
-  "records_where_the_two_orders_differ": 30
+  "records_where_the_two_orders_commute": 6,
+  "records_where_the_two_orders_differ": 30,
+  "the_antecedent_is_carried_by_the_reading_leg": "the five declared readings are measured as partitions and three unordered pairs admit no common refinement; that is this arena's rendering of two quantities that cannot be declared together, and it is what carries the dilemma below",
+  "the_commuting_records": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    3
+   ],
+   [
+    0,
+    3,
+    0
+   ],
+   [
+    1,
+    1,
+    1
+   ],
+   [
+    2,
+    2,
+    2
+   ],
+   [
+    3,
+    0,
+    0
+   ]
+  ],
+  "what_the_operator_leg_is_not": "NOT an instance of EPR's antecedent. G . D(x) and D(x) . G are paper-20's two declared coin orders -- a declaration fibre, two candidate unitaries -- and this unit exhibits no operator for the Born menu or for the record menu at all.  The leg tracks the degeneracy of the phase encoding: the two orders agree exactly when the three counts are equal modulo three, which happens at records where the record observable is not degenerate.  EPR's antecedent is carried here by the READING leg alone, where three declared pairs admit no common refinement"
  },
  "controls": {
   "count": 6,
@@ -791,17 +1084,71 @@
   "route_two_method": "aggregation by distinct record with corpus multiplicities; no pair-spec list, no cache, no shared loop with section 9"
  },
  "coverage": {
-  "gates_declared_to_run_after_this_census": 10,
-  "gates_run": 35,
-  "gates_with_a_falsifier": 28,
-  "gates_with_a_waiver": 7,
+  "dead_waivers": [],
+  "distinct_gates_a_falsifier_targets": 39,
+  "gates": [
+   "G-ANCHOR-CONSUMERS-RAN",
+   "G-ARTIFACT-INTEGRITY",
+   "G-BELL-DESIDERATA-BOUND",
+   "G-BELL-WALL-STATED-IN-THE-PAPER",
+   "G-BLOCKS-AGREE-WITH-FAC",
+   "G-CELL-IS-A-CO-DIVISION-PAIR",
+   "G-CERTAINTY-CENSUS-PER-ARM",
+   "G-CERTAINTY-POLARITY",
+   "G-CLASS-WORDS-BOUND-TO-PREDICATES",
+   "G-CLOSING-BATTERY-RAN",
+   "G-CONJUGATE-PAIR-MEASURED",
+   "G-CORPUS-AGREES-WITH-FAC",
+   "G-E4-TWO-REDUCTIONS",
+   "G-E5-RECORD-DOES-NOT-MOVE",
+   "G-ELEMENT-OF-REALITY-CONFINED",
+   "G-EPR-SUFFICIENCY-CAVEAT",
+   "G-EVERY-OUTCOME-WORD-EMITTABLE",
+   "G-FALSIFIER-COVERAGE",
+   "G-FALSIFIER-DESCRIBES-ITS-CODE",
+   "G-FALSIFIER-REACHABILITY",
+   "G-HEAD-DERIVED-TWICE",
+   "G-LINK-GRAPH-MEASURED",
+   "G-NO-DISTURBANCE-DYNAMICAL",
+   "G-NO-FLOAT-IN-SOURCE",
+   "G-OPERATOR-LEG-IS-RESIDUE-DEGENERACY",
+   "G-OUTCOMES-PARSED-FROM-THE-PIN",
+   "G-PAPER-CLAIM-POLARITY",
+   "G-PAPER-CLAIMS",
+   "G-PAPER-FENCES-MATCH-THE-VERDICT",
+   "G-PAPER-NUMERAL-COVERAGE",
+   "G-PAPER-TABLES-WITH-HEADERS",
+   "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
+   "G-PROBABILITY-EXACTLY-ONE",
+   "G-PROVENANCE-SHA-PINNED",
+   "G-READINGS-PARTITION-MEASURED",
+   "G-READS-DECLARED",
+   "G-RECEIPT-IS-EXACT",
+   "G-RECORD-SITE-CONSTANT",
+   "G-SEAL-TOTALITY",
+   "G-SENTENCE-REFERENT-BINDING",
+   "G-SEPARATION-PREMISE-CENSUS",
+   "G-SHADOW-CARRIES-NOTHING-AT-EVERY-STATE",
+   "G-SHADOW-CEILING",
+   "G-SWEEP-IS-EXECUTION-BOUND",
+   "G-THE-ANALYTIC-LEGS-MEASURED",
+   "G-TRANSCRIPT-SEALED-AT-THE-SNAPSHOT",
+   "G-VERBATIM-ANCHORS-IN-SOURCE",
+   "G-VOUCHING-KEYS-SEALED",
+   "G-WALLS-SCAN-THE-PAPER",
+   "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS"
+  ],
+  "gates_declared_to_run_after_this_census": 19,
+  "gates_run": 50,
+  "gates_with_a_falsifier": 39,
+  "gates_with_a_waiver": 11,
   "unwaived": []
  },
  "descriptions": {
   "D_RECORD": "the committed history and its record field n_l(x) -- the theory's own state",
   "D_SHADOW": "paper-20's Reading A, the Born menu k_1(l|x) read off the coin at the record -- the wave-function analogue",
   "best_distinct_menus_over_the_sweep": 4,
-  "ceiling": "the coin reads w^{n mod 3}, so two committed records with equal residues have the SAME menu at every state: measured at 0 separations over the whole sweep",
+  "ceiling": "the coin reads w^{n mod 3}, so two committed records with equal residues have the SAME menu at every state: proved state-free at G-SHADOW-CARRIES-NOTHING-AT-EVERY-STATE and witnessed here at 0 separations over the declared family's whole sweep",
   "coin_order_DG_distinct_menus": 1,
   "declared_states": [
    {
@@ -834,6 +1181,7 @@
   },
   "state_sweep_size": 64,
   "states_separating_two_records_of_one_residue_class": 0,
+  "what_this_sweep_is": "a WITNESS of the theorem below, not its ground: the audit does not depend on which state is declared, and the declared family is reported with its own ceiling (4 menus) beside the parent alphabet's (9)",
   "window": "COUNTING-ONLY; the state family is declared and its bounds published (E-24)"
  },
  "e5_audit": {
@@ -843,8 +1191,39 @@
   "probes_where_B_s_record_moves_with_the_reading_at_A": 0,
   "probes_where_the_description_ASSIGNED_to_B_moves": 105408,
   "reading": "nothing declared at A moves anything B has.  What moves is the description an observer at A assigns to B, at every probe -- which is E4, not a disturbance",
-  "seam_confinement": "this is SEC's adjudicated ruling seen from the other side: no sector-private link ever moves",
-  "test_declaration": "THE PROBE IS SIGHTED: the falsifier MUT-E5-LEAK routes the index of the reading declared at A into B's own record and into B's own shadow, and it dies at this gate; so the zero below is a measurement and not a blind spot"
+  "seam_confinement": "this is SEC's adjudicated ruling seen from the other side, and it is a KINEMATIC statement: no sector-private link ever moves",
+  "test_declaration": "THE PROBE IS SIGHTED: the falsifier MUT-E5-LEAK routes the index of the reading declared at A into B's own record and into B's own shadow, and it dies at this gate; so the zero below is demonstrated UNINJECTED",
+  "the_successor_obligation": "testing SEC's ruling in EPR's own sense would require an OPERATION on A that the corpus's dynamics admits; this unit declares none, and that is the honest scope of the row",
+  "what_carries_the_row_instead": "the DYNAMICAL census of section 7, which is a measurement of the arena: over every event shape the arena admits, an event confined to an actor-disjoint region reaches a record entry the other block owns 0 times, while the unconfined ones do reach a block's quantities -- a sighted probe with its positive control in the same census",
+  "what_the_zero_is": "FORCED BY THE FORMALISATION, and reported as that.  A reading in this unit is a function on records, not an operation on a history: nothing that builds the arena, the corpus, the record field or the blocks takes a reading or names one (AST-checked at G-THE-ANALYTIC-LEGS-MEASURED), so no path from A's declaration to B's record exists to be measured, and this zero would be returned on any arena.  The falsifier establishes that the instrument carries no such path by accident; it does not establish that the arena forbids one"
+ },
+ "element_of_reality": {
+  "accounted_for_by_the_declared_carriers": 4,
+  "carriers": [
+   {
+    "carrier": "THE-CRITERION-QUOTED",
+    "occurrences_in_the_paper": 1,
+    "phrase_occurrences_each": 1
+   },
+   {
+    "carrier": "THE-COMPLETENESS-CONDITION-QUOTED",
+    "occurrences_in_the_paper": 1,
+    "phrase_occurrences_each": 1
+   },
+   {
+    "carrier": "THE-PREDICATE-DECLARED",
+    "occurrences_in_the_paper": 1,
+    "phrase_occurrences_each": 1
+   },
+   {
+    "carrier": "THE-SELF-CERTIFICATION",
+    "occurrences_in_the_paper": 1,
+    "phrase_occurrences_each": 1
+   }
+  ],
+  "note": "the phrase may stand only inside the formalised predicate's own declaration and inside verbatim quotation of 1935; the paper's total is compared with the carriers' own count, so a sentence in this unit's voice fails even though every carrier is still present",
+  "occurrences_in_the_paper": 4,
+  "pattern": "elements? of (?:the )?(?:physical )?realit\\w+"
  },
  "gates": [
   {
@@ -855,10 +1234,17 @@
    "waiver": null
   },
   {
-   "evidence": "anchors 14, missing none",
+   "evidence": "anchors 15, missing none",
    "gate": "G-VERBATIM-ANCHORS-IN-SOURCE",
    "passed": true,
-   "statement": "THE WALL QUOTES ARE MATCHED IN THEIR SOURCES' BYTES.  Fourteen anchors, each above the #62 length floor, each naming the gate that consumes it; the six EPR quotes are matched in the pin, where they were transcribed from the 1935 print",
+   "statement": "THE WALL QUOTES ARE MATCHED IN THEIR SOURCES' BYTES.  15 anchors, each above the #62 length floor, each naming the gate that consumes it; the six EPR quotes E1-E6 are matched in the pin, where they were transcribed from the 1935 print, and E7 -- the caveat the pin omitted -- is matched in this paper's own bytes",
+   "waiver": null
+  },
+  {
+   "evidence": "anchor A-E7 found in v14/paper-38-epr.md: True, 373 chars; consequence stated True",
+   "gate": "G-EPR-SUFFICIENCY-CAVEAT",
+   "passed": true,
+   "statement": "EPR'S OWN SUFFICIENT-NOT-NECESSARY CAVEAT IS CARRIED, VERBATIM, IN THIS PAPER.  The passage the pin omitted is transcribed from the print and matched in the paper's bytes, so the unit cannot report a non-instantiation as a verdict against EPR while leaving out the sentence in which they disclaim exactly that.  The quotation is required to be USED: the sentence that draws the consequence must stand in the paper as well",
    "waiver": null
   },
   {
@@ -869,10 +1255,10 @@
    "waiver": null
   },
   {
-   "evidence": "windows 6",
+   "evidence": "windows 7, complete 3 ['W-SUBSETS', 'W-EVENT-SHAPES', 'W-BLOCKS']",
    "gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
    "passed": true,
-   "statement": "EVERY WINDOW THIS UNIT COUNTS OVER IS DECLARED WITH ITS BOUND (\u00a715).  Six windows; the subset lattice is complete and says so, and every other is named with the parent that fixed it",
+   "statement": "EVERY WINDOW THIS UNIT COUNTS OVER IS DECLARED WITH ITS BOUND AND WITH WHETHER IT IS COMPLETE (\u00a715).  Seven windows, three of them complete -- the subset lattice, the event shapes and the block lattice; every other is named with the parent that fixed it and is declared a bound rather than a completion",
    "waiver": null
   },
   {
@@ -907,14 +1293,14 @@
    "evidence": "cross-checks 11, disagreements none; exception rows 4, disagreements none",
    "gate": "G-BLOCKS-AGREE-WITH-FAC",
    "passed": true,
-   "statement": "THE BLOCKS ARE THE PARENT'S, REBUILT AND GATED ROW BY ROW (#87).  The two binding legs are re-implemented here; the resulting per-history admissible sets reproduce FAC's cardinality distribution, its whole inventory and its four named exceptions at their own corpus indices, each compared individually",
+   "statement": "THE BLOCKS ARE THE PARENT'S, REBUILT AND GATED ROW BY ROW (#87).  The two binding legs are re-implemented here; the resulting per-history admissible sets reproduce FAC's cardinality distribution, its whole inventory and its four named exceptions at their own corpus indices, each compared individually; what an actor IS here is AID's own sentence, matched verbatim as A-AID",
    "waiver": null
   },
   {
-   "evidence": "predicates 12, missing none, leaks none, totality probes 210 failures 0, combined digest f791c8dc0877",
+   "evidence": "predicates 12, missing none, leaks none, totality probes 240 failures 0, combined digest 6a62aba8d086",
    "gate": "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
    "passed": true,
-   "statement": "THE TWO CRITERIA ARE DECLARED, LOCATED IN SOURCE, DIGESTED AND TOTAL BEFORE A CENSUS ROW RUNS.  Twelve predicate functions are found by AST in this file, digested individually and jointly, and their upper-case free names are required to contain no census product, so no predicate can consult the answer it decides; every predicate is then exercised on every argument combination of a declared probe set and required to return a boolean or a declared value at each",
+   "statement": "THE TWO CRITERIA ARE DECLARED, LOCATED IN SOURCE, DIGESTED AND TOTAL BEFORE A CENSUS ROW RUNS.  Twelve predicate functions are found by AST in this file, digested individually and jointly, and their upper-case free names are required to contain no census product, so no predicate can consult the answer it decides; ALL TWELVE are then exercised on every argument combination of a declared probe set and required to return a boolean or a declared value at each.  The criterion this gate freezes is EPR's own, matched verbatim in the pin as A-E2, and the no-disturbance clause is SEC's ruling, matched as A-SEAM",
    "waiver": null
   },
   {
@@ -935,21 +1321,35 @@
    "evidence": "records 36, residue classes 9, sweep 64 states, best 4, primary 4, separations 0",
    "gate": "G-SHADOW-CEILING",
    "passed": true,
-   "statement": "THE SHADOW'S BLINDNESS IS A THEOREM ABOUT THE COIN, AND IT IS MEASURED AT EVERY STATE OF A DECLARED FAMILY.  Sixty-four states are swept; not one separates two committed records that share a residue class, so the shadow's ceiling is the residue class and no state can raise it.  The primary state is required to attain the sweep's maximum, so the audit gives the shadow its best case rather than a strawman",
+   "statement": "THE DECLARED STATE FAMILY WITNESSES THE THEOREM, AT ITS OWN BEST CASE.  Sixty-four states are swept; not one separates two committed records that share a residue class.  The primary state is required to attain this family's maximum, so the audit gives the shadow the best case the declared family has -- and the next gate shows the result does not depend on that at all.  The reading audited is paper-20's own, matched verbatim as A-READING-A, and the residue the walk consumes as A-MOD3",
+   "waiver": null
+  },
+  {
+   "evidence": "L1 probes 9 failures 0; L2 probes 507 failures 0; residue classes 9, singletons 0, direction-constant 0, shift-orbit disagreements 0 of 1296; key witness disagreements 0 of 64; parent alphabet 50653 states, best 9 menus at 34992 states, menu cells fixing a direction 0",
+   "gate": "G-SHADOW-CARRIES-NOTHING-AT-EVERY-STATE",
+   "passed": true,
+   "statement": "THE SHADOW'S ZERO IS A THEOREM, NOT A SWEEP RESULT.  Two exact ring identities -- the count enters the coin as w^{n mod 3} and a uniform shift factors out as one phase, and the Born modulus cannot see that phase -- put every Born-menu partition, at every state whatever, below the residue partition; and the residue partition is measured to carry nothing, with no class a single record and none constant in any direction.  The declared 64-state family witnesses it and the parent's whole 37-value alphabet is swept as a cross-check: at none of its 50,653 states does any menu cell fix a direction",
    "waiver": null
   },
   {
    "evidence": "readings 5, conjugate pairs 3, DG cells 1",
    "gate": "G-READINGS-PARTITION-MEASURED",
    "passed": true,
-   "statement": "THE FIVE DECLARED READINGS ARE MEASURED AS PARTITIONS, NOT ASSERTED.  Each reading's fibres over the committed records are enumerated, the refinement relation is computed in both directions for all twenty-five ordered pairs, and the pairs where neither refines the other are the corpus's conjugate pairs.  paper-20's other coin order is measured record-blind: one cell, every record in it",
+   "statement": "THE FIVE DECLARED READINGS ARE MEASURED AS PARTITIONS, NOT ASSERTED.  Each reading's fibres over the committed records are enumerated, the refinement relation is computed in both directions for all twenty-five ordered pairs, and the pairs where neither refines the other are the corpus's conjugate pairs.  paper-20's other coin order is measured record-blind: one cell, every record in it -- which is that parent's own sentence, matched verbatim as A-DGBLIND, beside its record menu A-READING-B",
+   "waiver": null
+  },
+  {
+   "evidence": "specs 132, quantity in the block's own directions 132, in the conditioner's 132; minimum unfixed (record, direction) pairs over the declared states 108; arena builders 10, reading names found in them none",
+   "gate": "G-THE-ANALYTIC-LEGS-MEASURED",
+   "passed": true,
+   "statement": "WHAT THE CENSUS COULD NOT HAVE FOUND IS MEASURED AND PUBLISHED BEFORE IT RUNS (#299/#319).  Every declared spec is checked for the containment that makes the record's counterpart zero analytic and certification total; the both-complete branch is shown closed at every declared state by the residue ceiling; and the arena's own constructors are scanned by AST for any mention of a reading, because that absence is what forces the E5 zero.  The selector this unit really turns on is therefore two-way, and the paper says so",
    "waiver": null
   },
   {
    "evidence": "arms 4; primary arm pairs 0; walk arm certified 316224, without a record counterpart 0, without a shadow counterpart 316224",
    "gate": "G-CERTAINTY-CENSUS-PER-ARM",
    "passed": true,
-   "statement": "EVERY ARM IS CENSUSED QUANTITY BY QUANTITY THROUGH THE FROZEN PREDICATES (#87).  EPR's completeness condition -- every element of the physical reality must have a counterpart in the physical theory -- is applied to both descriptions on all four arms; the record certifies and carries, the shadow certifies nothing and carries none of the record's",
+   "statement": "EVERY ARM IS CENSUSED QUANTITY BY QUANTITY THROUGH THE FROZEN PREDICATES (#87).  EPR's completeness condition -- every element of the physical reality must have a counterpart in the physical theory -- EPR's own sentence, matched verbatim as A-E1 -- is applied to both descriptions on all four arms; the record certifies and carries, the shadow certifies nothing and carries none of the record's.  What the record's zero is, and is not, is measured at G-THE-ANALYTIC-LEGS-MEASURED",
    "waiver": null
   },
   {
@@ -963,28 +1363,35 @@
    "evidence": "primary arm probes 105408, probes with more than one assignment 105408, largest fibre 5",
    "gate": "G-E4-TWO-REDUCTIONS",
    "passed": true,
-   "statement": "THE TWO-REDUCTIONS PHENOMENON IS REBUILT AS A COUNT, PER PROBE (#87).  For one and the same committed record, the five declared readings on the separated block assign more than one description to this block at every probe of the primary arm, and the fibre's size is published as a distribution rather than as an average",
+   "statement": "THE TWO-REDUCTIONS PHENOMENON IS REBUILT AS A COUNT, PER PROBE (#87).  For one and the same committed record, the five declared readings on the separated block assign more than one description to this block at every probe of the primary arm, and the fibre's size is published as a distribution rather than as an average, beside the joint reading's distribution so the definition-relativity is on the record.  EPR's own sentence is matched verbatim as A-E4",
    "waiver": null
   },
   {
    "evidence": "records where the orders differ 30 of 36; pair not jointly declarable True; histories where the record carries both 5856 of 5856; Born menu carries the record menu at 0 of 36 records",
    "gate": "G-CONJUGATE-PAIR-MEASURED",
    "passed": true,
-   "statement": "E3'S SECOND HORN IS PUT AT RISK AND MEASURED.  The corpus's own conjugate pair -- paper-20's Born menu against its record menu -- is verified NOT JOINTLY DECLARABLE by computing the refinement relation in both directions; the operator leg is taken exactly in Z[w], where the two declared coin orders differ at 30 of the 36 committed records; and the record is measured to carry both members at every committed history while no single Born menu carries both",
+   "statement": "E3'S SECOND HORN IS PUT AT RISK AND MEASURED.  The corpus's own conjugate pair -- paper-20's Born menu against its record menu -- is verified NOT JOINTLY DECLARABLE by computing the refinement relation in both directions, which is the leg that carries EPR's antecedent here -- E3 itself matched verbatim as A-E3; the operator leg is taken exactly in Z[w], where the two declared coin orders' OPERATORS differ at 30 of the 36 committed records; and the record is measured to carry both members at every committed history while no single Born menu carries both",
+   "waiver": null
+  },
+  {
+   "evidence": "criterion agreements 36 of 36; commuting records 6, of those with a non-scalar record observable 3",
+   "gate": "G-OPERATOR-LEG-IS-RESIDUE-DEGENERACY",
+   "passed": true,
+   "statement": "THE OPERATOR LEG IS LABELLED FOR WHAT IT MEASURES.  The two coin orders commute exactly when the site's three counts are equal modulo three -- the criterion agrees with the exact Z[w] comparison at every committed record -- so the leg tracks n mod 3 and not the observables; and at some of the commuting records the record observable diag(w^n) is not scalar, where the leg reports agreement while the two quantities' own operators do not commute.  This is a disclosure about the encoding, not an instance of EPR's antecedent, and the paper says so",
    "waiver": null
   },
   {
    "evidence": "probes 105408, record moves 0, own-shadow moves 0, assigned description moves 105408",
    "gate": "G-E5-RECORD-DOES-NOT-MOVE",
    "passed": true,
-   "statement": "B'S RECORD IS MEASURED NOT TO MOVE WITH THE READING DECLARED AT A, PROBE BY PROBE, WITH THE TEST DECLARED.  B's own record and B's own shadow are recomputed under every declared reading through a reading-parameterised path; neither moves at any of the 105,408 probes, while the description assigned to B moves at all of them",
+   "statement": "B'S RECORD IS MEASURED NOT TO MOVE WITH THE READING DECLARED AT A, PROBE BY PROBE, WITH THE TEST DECLARED.  B's own record and B's own shadow are recomputed under every declared reading through a reading-parameterised path; neither moves at any of the 105,408 probes, while the description assigned to B moves at all of them.  EPR's own sentence is matched verbatim as A-E5.  The zero is forced by the formalisation and demonstrated uninjected -- what carries this row as a measurement of the ARENA is the dynamical census of section 7",
    "waiver": null
   },
   {
    "evidence": "desiderata 6, Bell-constrained 2",
    "gate": "G-BELL-DESIDERATA-BOUND",
    "passed": true,
-   "statement": "EVERY EPR DESIDERATUM IS BOUND TO A MEASURED ROW AND TO ITS BELL STATUS.  Six rows, each naming what each description does with that desideratum and whether the corpus's standing Bell verdict constrains it; the two rows that are constrained say so in their own text",
+   "statement": "EVERY EPR DESIDERATUM IS BOUND TO A MEASURED ROW AND TO ITS BELL STATUS.  Six rows, each naming what each description does with that desideratum and whether the corpus's standing Bell verdict constrains it; the two rows that are constrained say so in their own text, the E6 row is scoped to the censused certainty-elements and never to completeness simpliciter, and every cell the paper prints is RENDERED from these rows.  EPR's closing sentence is matched verbatim as A-E6",
    "waiver": null
   },
   {
@@ -1023,14 +1430,28 @@
    "waiver": null
   },
   {
-   "evidence": "gates 35, with falsifiers 28, waived 7, unwaived none, description mismatches none",
-   "gate": "G-FALSIFIER-COVERAGE",
+   "evidence": "arithmetic vouched 'exact integers, fractions.Fraction and Z[w] as i'; python 3.13.2; float literals 0, float() calls 0",
+   "gate": "G-VOUCHING-KEYS-SEALED",
    "passed": true,
-   "statement": "EVERY GATE CARRIES A FALSIFIER OR A NAMED WAIVER WITH A FORCING (E-23).  30 falsifiers are declared, each naming the gate it must die at and the function that carries its hook; every gate that has no falsifier carries a waiver whose forcing is stated, and the gates that run after this census are folded in by declaration rather than left invisible to it",
+   "statement": "WHAT THE RECEIPT VOUCHES FOR IS SEALED (#119).  The receipt's own testimony about its arithmetic and its interpreter used to sit in the declared-unsealed list, where it could be rewritten after the fact to say the opposite of what the source scan just established.  Both are re-derived here against the run and then sealed like every other key",
    "waiver": null
   },
   {
-   "evidence": "falsifiers 30, hooks not located none",
+   "evidence": "falsifiers 49, descriptions not quoting their code none",
+   "gate": "G-FALSIFIER-DESCRIBES-ITS-CODE",
+   "passed": true,
+   "statement": "EVERY FALSIFIER'S PUBLISHED DESCRIPTION IS THE CODE'S OWN ANNOTATION (E-23).  Locating the hook by carrier NAME never consults the statement, so a description-inverted falsifier passed.  Here each hook site carries the registry's sentence verbatim as an in-source annotation and the published description must quote it, so inverting what a falsifier claims to do -- without touching what it does -- fails",
+   "waiver": null
+  },
+  {
+   "evidence": "gates 50, with falsifiers 39, waived 11, unwaived none, dead waivers none, carrier mismatches none",
+   "gate": "G-FALSIFIER-COVERAGE",
+   "passed": true,
+   "statement": "EVERY GATE CARRIES A FALSIFIER OR A NAMED WAIVER WITH A FORCING, AND THE CENSUS SEES EVERY GATE (E-23).  49 falsifiers are declared, each naming the gate it must die at and the function that carries its hook; every gate that has no falsifier carries a waiver whose forcing is stated; the gates that run at or after this census are folded in by declaration rather than left invisible to it; and a waiver for a gate that HAS a falsifier is refused, so no dead waiver sits in the ledger",
+   "waiver": null
+  },
+  {
+   "evidence": "falsifiers 49, hooks not located none",
    "gate": "G-FALSIFIER-REACHABILITY",
    "passed": true,
    "statement": "EVERY DECLARED FALSIFIER REACHES ITS GATE (#34).  Each hook is located in this file by AST rather than trusted from its description, and the sweep executes every one of them and records where it actually died",
@@ -1044,45 +1465,73 @@
    "waiver": null
   },
   {
-   "evidence": "claims 16, missing none",
+   "evidence": "claims 20, declared occurrences 26, wrong counts none",
    "gate": "G-PAPER-CLAIMS",
    "passed": true,
-   "statement": "EVERY LOAD-BEARING SENTENCE OF THE PAPER IS RENDERED FROM THE RECEIPT AND MATCHED IN THE PAPER'S OWN BYTES (#20).  Fifteen claims, each built out of receipt values rather than typed, so a paper that drifts from its run cannot pass",
+   "statement": "EVERY LOAD-BEARING SENTENCE OF THE PAPER IS RENDERED FROM THE RECEIPT AND MATCHED IN THE PAPER'S OWN BYTES BY OCCURRENCE COUNT (#20, E-22).  20 claims, each built out of receipt values rather than typed and each declaring how many times it is said, so a paper that drifts from its run cannot pass and neither can a forged twin of a sentence said twice",
    "waiver": null
   },
   {
-   "evidence": "tables 4, rows 22, missing none",
+   "evidence": "fenced blocks 6, distinct 3, mismatches 0",
+   "gate": "G-PAPER-FENCES-MATCH-THE-VERDICT",
+   "passed": true,
+   "statement": "THE VERDICT FENCES ARE THE RUN'S OWN, BY MULTISET (E-22).  The paper prints three fenced blocks twice each; they are compared as a multiset against the three segments this run emitted, so a word changed in one copy, a stamp struck from both, or an extra block anywhere fails here",
+   "waiver": null
+  },
+  {
+   "evidence": "tables 5, rows 28, table blocks in the paper 5, mismatches none",
    "gate": "G-PAPER-TABLES-WITH-HEADERS",
    "passed": true,
-   "statement": "EVERY TABLE IS RENDERED FROM THE RECEIPT WITH ITS HEADERS INCLUDED, so a header swap that leaves every number correct dies here (E-22: tables render as claims)",
+   "statement": "EVERY TABLE IS RENDERED FROM THE RECEIPT WITH ITS HEADERS INCLUDED AND MATCHED BY MULTISET, so a header swap that leaves every number correct dies here, and so does a fabricated row built out of registered numerals, and so does a table the run never rendered (E-22: tables render as claims).  All five of the paper's tables are rendered -- including the section 9 desiderata table, which is the one that carries the Bell wall",
    "waiver": null
   },
   {
-   "evidence": "numerals 220 (fenced 50), spelled 123, unknown none / none",
+   "evidence": "numerals 280 (fenced 50), structural {'PAPER-IDENTIFIER': 4, 'THE-SOURCE-FILENAME': 3, 'THE-1935-CITATION': 3, 'THE-1935-PAPER': 1}, spelled 171 of 186 number-word tokens, unknown none / none, unmapped none",
    "gate": "G-PAPER-NUMERAL-COVERAGE",
    "passed": true,
-   "statement": "EVERY NUMERAL IN THE PAPER IS THE RUN'S OWN PRODUCT (#20, E-22).  The scan covers the whole file including fenced blocks and inline spans, spelled numerals included; anything outside the run's registry and the declared structural literals fails",
+   "statement": "EVERY NUMERAL IN THE PAPER IS THE RUN'S OWN PRODUCT, OR AN IDENTIFIER IN A DECLARED SHAPE (#20, E-22).  The scan covers the whole file including fenced blocks and inline spans; a numeral outside the registry must sit inside one of the declared identifier contexts -- a section heading, a paper or ledger reference, an engraving, the 1935 citation -- matched at its own position, so a token like 19 or 27 is not whitelisted wherever it appears.  Spelled numerals are scanned through a vocabulary of every English number word, and one that the map cannot resolve fails rather than passing unseen",
    "waiver": null
   },
   {
-   "evidence": "axes 5, failures none",
+   "evidence": "axes 7, failures none",
    "gate": "G-PAPER-CLAIM-POLARITY",
    "passed": true,
-   "statement": "EVERY POLARITY AXIS IS CHECKED IN BOTH DIRECTIONS.  Five axes; the paper must assert the measured direction and must not contain its inverse anywhere in its bytes",
+   "statement": "EVERY POLARITY AXIS IS CHECKED IN BOTH DIRECTIONS.  7 axes -- the head's applicability, the shadow's carrying, B's record, the record's conjugate pair, the premise's localization and the two horns of EPR's dilemma; the paper must assert the measured direction and must not contain its inverse anywhere in its bytes",
    "waiver": null
   },
   {
-   "evidence": "fractions 7, unbound none",
+   "evidence": "fractions 13, unbound none",
    "gate": "G-SENTENCE-REFERENT-BINDING",
    "passed": true,
-   "statement": "EVERY FRACTION IN THE PAPER NAMES A UNIVERSE THAT CARRIES BOTH OF ITS MEMBERS.  Six universes are declared from receipt paths; an 'N of M' whose numerator and denominator are not carried by one common universe fails",
+   "statement": "EVERY FRACTION IN THE PAPER IS RESOLVED AGAINST A DECLARED UNIVERSE, BOUND AND VALUE.  11 universes are declared from receipt paths, each with the total it counts over; an 'N of M' passes only when M is that total, N is a value this run measured in it, and N does not exceed M",
    "waiver": null
   },
   {
-   "evidence": "banned 7, hits none",
+   "evidence": "occurrences 4, accounted for 4, carriers 4",
+   "gate": "G-ELEMENT-OF-REALITY-CONFINED",
+   "passed": true,
+   "statement": "THE PHRASE 'ELEMENT OF REALITY' IS WALLED, AND THE WALL IS COUNTED.  Every occurrence in the paper must be accounted for by a declared carrier -- the formalised predicate's own declaration, or a verbatim quotation of the 1935 paper -- and the totals are compared exactly, so this unit cannot answer EPR's question in its own voice",
+   "waiver": null
+  },
+  {
+   "evidence": "banned 7, hits none; patterns 14, hits outside the licensed passages none, hits inside them 4; licensed passages found 2",
    "gate": "G-WALLS-SCAN-THE-PAPER",
    "passed": true,
-   "statement": "THE BELL WALL IS SCANNED AGAINST THIS UNIT'S OWN PAPER.  Seven banned assertive sentences -- local realism restored, Bell evaded, hidden variables vindicated among them -- are matched against the paper's normalised bytes and must be absent; the falsifier plants one into exactly that text",
+   "statement": "THE BELL WALL IS SCANNED AGAINST THIS UNIT'S OWN PAPER, IN BOTH VOICES.  Seven banned assertive sentences -- local realism restored, Bell evaded, hidden variables vindicated among them -- and 14 voice-normalised patterns that catch the same claims said actively, at a distance, or in the passive: restoring local realism or locality, evading or circumventing Bell, a local hidden variable, a vindicated hidden-variable completion, a refuted spooky action, a vindicated Einstein.  All are matched against the paper's normalised bytes and must be absent OUTSIDE the two declared passages that are allowed to carry those words -- the verbatim standing verdict the paper is required to state, and the paper's own denial -- both of which are gated in their own right; two falsifiers plant one each, in either voice",
+   "waiver": null
+  },
+  {
+   "evidence": "wall sentences required in the paper 2, missing none; licensed passages [('THE-STANDING-VERDICT-QUOTED', 1), ('THE-UNIT-S-OWN-DENIAL', 1)], not standing exactly once none",
+   "gate": "G-BELL-WALL-STATED-IN-THE-PAPER",
+   "passed": true,
+   "statement": "THE STANDING BELL VERDICT IS STATED, NOT MERELY NOT CONTRADICTED.  v5 paper-14's two sentences -- ISP is Bell-nonlocal, and ISP is no-signalling and parameter-independent -- are matched verbatim in this paper's own bytes as well as in their source's, so a paper-38 that silently dropped its Bell section would fail here.  The two passages the pattern scan licenses must each stand exactly once",
+   "waiver": null
+  },
+  {
+   "evidence": "anchors 15, unconsumed or mis-pointed none",
+   "gate": "G-ANCHOR-CONSUMERS-RAN",
+   "passed": true,
+   "statement": "EVERY ANCHOR IS CONSUMED BY THE GATE IT NAMES (K3 MINOR-10).  The consumed_by field was written once and never read again; here each anchor's named gate must be one this run actually ran AND must have consumed that anchor inside its own condition, so re-pointing an anchor at an unrelated or non-existent gate fails",
    "waiver": null
   },
   {
@@ -1093,7 +1542,7 @@
    "waiver": null
   },
   {
-   "evidence": "gates 35, seals 35",
+   "evidence": "gates 45, seals 44",
    "gate": "G-CLOSING-BATTERY-RAN",
    "passed": true,
    "statement": "THE PAPER INSTRUMENT AND THE CLOSING BATTERY RAN IN THE PLAIN RUN (#20).  Every gate of this unit is in one ledger, and the ledger, the seal manifest and the transcript are sealed into the same receipt",
@@ -1112,20 +1561,22 @@
   "stamp": "COUNTING-ONLY: no count in this unit is a probability, and no fraction is a frequency (E-24)"
  },
  "mutant_sweep": {
-  "declared": 30,
+  "declared": 49,
   "executed": 0,
   "off_target": [],
   "rows": [],
   "swept": false
  },
  "mutants": {
-  "count": 30,
+  "carrier_mismatches": [],
+  "count": 49,
   "description_mismatches": [],
   "rows": [
    {
+    "carrier_matches_code": true,
     "declared_carrier": "provenance",
     "declared_gate": "G-PROVENANCE-SHA-PINNED",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "provenance"
     ],
@@ -1133,9 +1584,10 @@
     "statement": "a source's digest is reported as something else"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "provenance",
     "declared_gate": "G-VERBATIM-ANCHORS-IN-SOURCE",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "provenance"
     ],
@@ -1143,9 +1595,10 @@
     "statement": "the reality criterion's needle is altered by one word"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "provenance",
     "declared_gate": "G-OUTCOMES-PARSED-FROM-THE-PIN",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "provenance"
     ],
@@ -1153,9 +1606,10 @@
     "statement": "the outcome vocabulary is typed instead of parsed"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "link_set",
     "declared_gate": "G-LINK-GRAPH-MEASURED",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "link_set"
     ],
@@ -1163,9 +1617,10 @@
     "statement": "the undeclared direction is declared, so the link graph is complete"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "arena_measure",
     "declared_gate": "G-CELL-IS-A-CO-DIVISION-PAIR",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "arena_measure"
     ],
@@ -1173,9 +1628,10 @@
     "statement": "the cell-to-pair bijection is asserted false"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "build_corpus",
     "declared_gate": "G-CORPUS-AGREES-WITH-FAC",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "build_corpus"
     ],
@@ -1183,9 +1639,10 @@
     "statement": "the corpus is silently capped"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "corpus_measure",
     "declared_gate": "G-RECORD-SITE-CONSTANT",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "corpus_measure"
     ],
@@ -1193,9 +1650,10 @@
     "statement": "one history's record is reported as not site-constant"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "leg_history",
     "declared_gate": "G-BLOCKS-AGREE-WITH-FAC",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "leg_history"
     ],
@@ -1203,9 +1661,10 @@
     "statement": "the history leg is dropped, so coarse decompositions survive"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "sep_link_disjoint",
     "declared_gate": "G-SEPARATION-PREMISE-CENSUS",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "sep_link_disjoint"
     ],
@@ -1213,9 +1672,10 @@
     "statement": "link-disjointness is granted to every pair"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "disturbance_census",
     "declared_gate": "G-NO-DISTURBANCE-DYNAMICAL",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "disturbance_census"
     ],
@@ -1223,9 +1683,10 @@
     "statement": "the confinement premise is dropped, so unconfined events are counted as confined ones"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "shadow_menu",
     "declared_gate": "G-SHADOW-CEILING",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "shadow_menu"
     ],
@@ -1233,9 +1694,10 @@
     "statement": "the shadow is allowed to read the count rather than its residue"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "assigned_description",
     "declared_gate": "G-E4-TWO-REDUCTIONS",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "assigned_description"
     ],
@@ -1243,9 +1705,10 @@
     "statement": "every reading is made to assign the same description"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "epr_reality_at",
     "declared_gate": "G-CERTAINTY-POLARITY",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "epr_reality_at"
     ],
@@ -1253,9 +1716,10 @@
     "statement": "the certainty predicate is made constantly true"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "epr_counterpart_at",
     "declared_gate": "G-CERTAINTY-CENSUS-PER-ARM",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "epr_counterpart_at"
     ],
@@ -1263,9 +1727,10 @@
     "statement": "the counterpart predicate is made constantly true"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "fiber",
     "declared_gate": "G-CERTAINTY-CENSUS-PER-ARM",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "fiber"
     ],
@@ -1273,9 +1738,10 @@
     "statement": "the conditioning fibre is truncated to its own row, so every description carries everything"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "conjugacy_measure",
     "declared_gate": "G-CONJUGATE-PAIR-MEASURED",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "conjugacy_measure"
     ],
@@ -1283,9 +1749,10 @@
     "statement": "the two coin orders are reported as commuting"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "conjugacy_measure",
     "declared_gate": "G-CONJUGATE-PAIR-MEASURED",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "conjugacy_measure"
     ],
@@ -1293,9 +1760,10 @@
     "statement": "the conjugate pair is reported as jointly declarable"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "record_at_B_under|shadow_at_B_under",
     "declared_gate": "G-E5-RECORD-DOES-NOT-MOVE",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "record_at_B_under",
      "shadow_at_B_under"
@@ -1304,9 +1772,10 @@
     "statement": "the reading declared at A is routed into B's own record and shadow"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "verdict_measure",
     "declared_gate": "G-HEAD-DERIVED-TWICE",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "verdict_measure"
     ],
@@ -1314,9 +1783,10 @@
     "statement": "the head word is typed rather than derived"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "controls_measure",
     "declared_gate": "G-EVERY-OUTCOME-WORD-EMITTABLE",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "controls_measure"
     ],
@@ -1324,9 +1794,10 @@
     "statement": "control arms are dropped so a word becomes undemonstrated"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "controls_measure",
     "declared_gate": "G-PROBABILITY-EXACTLY-ONE",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "controls_measure"
     ],
@@ -1334,9 +1805,10 @@
     "statement": "one exact conditional probability is made to disagree"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "predicate_totality",
     "declared_gate": "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "predicate_totality"
     ],
@@ -1344,9 +1816,10 @@
     "statement": "a predicate is declared partial"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "class_binding_measure",
     "declared_gate": "G-CLASS-WORDS-BOUND-TO-PREDICATES",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "class_binding_measure"
     ],
@@ -1354,9 +1827,10 @@
     "statement": "a class word is typed rather than recomputed"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "paper_battery",
     "declared_gate": "G-WALLS-SCAN-THE-PAPER",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "paper_battery"
     ],
@@ -1364,9 +1838,10 @@
     "statement": "a banned local-realism sentence is planted into the paper"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "paper_battery",
     "declared_gate": "G-PAPER-NUMERAL-COVERAGE",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "paper_battery"
     ],
@@ -1374,9 +1849,10 @@
     "statement": "an unregistered numeral is planted into the paper"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "paper_battery",
     "declared_gate": "G-PAPER-TABLES-WITH-HEADERS",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "paper_battery"
     ],
@@ -1384,9 +1860,10 @@
     "statement": "two table headers are swapped with every number left correct"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "paper_battery",
     "declared_gate": "G-PAPER-CLAIM-POLARITY",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "paper_battery"
     ],
@@ -1394,19 +1871,21 @@
     "statement": "an inverted claim is planted into the paper"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "paper_battery",
     "declared_gate": "G-SENTENCE-REFERENT-BINDING",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "paper_battery"
     ],
     "mutant": "MUT-REFERENT",
-    "statement": "a fraction is left without a common referent universe"
+    "statement": "a fraction with no declared referent universe is planted into the scan"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "Seal",
     "declared_gate": "G-SEAL-TOTALITY",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "Seal",
      "take"
@@ -1415,100 +1894,408 @@
     "statement": "one seal is not taken"
    },
    {
+    "carrier_matches_code": true,
     "declared_carrier": "finish",
     "declared_gate": "G-ARTIFACT-INTEGRITY",
-    "description_matches_code": true,
+    "description_quotes_the_code": true,
     "located_in": [
      "finish"
     ],
     "mutant": "MUT-INTEGRITY",
     "statement": "the staged bytes are corrupted after sealing"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "shadow_theorem",
+    "declared_gate": "G-SHADOW-CARRIES-NOTHING-AT-EVERY-STATE",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "shadow_theorem"
+    ],
+    "mutant": "MUT-RESIDUE-CARRIES",
+    "statement": "the residue partition is reported as carrying something, so the theorem's third leg is asserted rather than measured"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "analytic_legs",
+    "declared_gate": "G-THE-ANALYTIC-LEGS-MEASURED",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "analytic_legs"
+    ],
+    "mutant": "MUT-SPEC-DOMAIN",
+    "statement": "the containment that makes the record's counterpart zero analytic is left unmeasured"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "residue_degeneracy_census",
+    "declared_gate": "G-OPERATOR-LEG-IS-RESIDUE-DEGENERACY",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "residue_degeneracy_census"
+    ],
+    "mutant": "MUT-RESIDUE-CRITERION",
+    "statement": "the operator leg is reported as tracking the observables rather than the count residue"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "provenance",
+    "declared_gate": "G-ANCHOR-CONSUMERS-RAN",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "provenance"
+    ],
+    "mutant": "MUT-CONSUMER-PHANTOM",
+    "statement": "an anchor's consumer is re-pointed at a gate that never ran, leaving its real consumer's other anchor in place so the consuming gate still passes"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "provenance",
+    "declared_gate": "G-EPR-SUFFICIENCY-CAVEAT",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "provenance"
+    ],
+    "mutant": "MUT-CAVEAT-UNUSED",
+    "statement": "the sentence that puts EPR's caveat to work is deleted from the paper, leaving the quotation decorative"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "bell_measure",
+    "declared_gate": "G-PAPER-TABLES-WITH-HEADERS",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "bell_measure"
+    ],
+    "mutant": "MUT-BELL-TABLE",
+    "statement": "the desiderata table's two description columns are swapped in the rendered row, with every flag left correct"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "paper_battery",
+    "declared_gate": "G-WALLS-SCAN-THE-PAPER",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "paper_battery"
+    ],
+    "mutant": "MUT-BELL-VOICE",
+    "statement": "the banned claim is planted in the active voice, which no literal blacklist catches"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "paper_battery",
+    "declared_gate": "G-BELL-WALL-STATED-IN-THE-PAPER",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "paper_battery"
+    ],
+    "mutant": "MUT-BELL-DELETE",
+    "statement": "the paper's own statement of the corpus's standing Bell verdict is removed"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "paper_battery",
+    "declared_gate": "G-ELEMENT-OF-REALITY-CONFINED",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "paper_battery"
+    ],
+    "mutant": "MUT-ELEMENT-PLANT",
+    "statement": "the walled phrase is used in the unit's own voice, outside the predicate and outside quotation"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "paper_battery",
+    "declared_gate": "G-PAPER-NUMERAL-COVERAGE",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "paper_battery"
+    ],
+    "mutant": "MUT-PAPER-SPELLED",
+    "statement": "an unmapped spelled numeral is planted into the paper"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "paper_battery",
+    "declared_gate": "G-PAPER-TABLES-WITH-HEADERS",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "paper_battery"
+    ],
+    "mutant": "MUT-PAPER-TABLE-ROW",
+    "statement": "a fabricated row built out of registered numerals is appended to a rendered table"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "paper_battery",
+    "declared_gate": "G-PAPER-CLAIMS",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "paper_battery"
+    ],
+    "mutant": "MUT-CLAIM-TWIN",
+    "statement": "a duplicated claim's twin is forged, leaving its clean copy in place to satisfy a containment gate"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "paper_battery",
+    "declared_gate": "G-PAPER-FENCES-MATCH-THE-VERDICT",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "paper_battery"
+    ],
+    "mutant": "MUT-FENCE",
+    "statement": "a verdict fence is altered in one of its two printed copies"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "closing_battery",
+    "declared_gate": "G-FALSIFIER-DESCRIBES-ITS-CODE",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "closing_battery"
+    ],
+    "mutant": "MUT-DESCRIPTION",
+    "statement": "a falsifier's published description is inverted while its code is left alone"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "closing_battery",
+    "declared_gate": "G-VOUCHING-KEYS-SEALED",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "closing_battery"
+    ],
+    "mutant": "MUT-VOUCHING",
+    "statement": "the receipt's own testimony about its arithmetic is rewritten to something false"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "finish",
+    "declared_gate": "G-SEAL-TOTALITY",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "finish"
+    ],
+    "mutant": "MUT-SEALED-AT-PHANTOM",
+    "statement": "a seal claims provenance from a gate that never ran"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "finish",
+    "declared_gate": "G-ARTIFACT-INTEGRITY",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "finish"
+    ],
+    "mutant": "MUT-POST-SNAPSHOT-KEY",
+    "statement": "a fabricated key is inserted into the receipt after the seal manifest was totalled"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "finish",
+    "declared_gate": "G-ARTIFACT-INTEGRITY",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "finish"
+    ],
+    "mutant": "MUT-POST-CLOSE-EDIT",
+    "statement": "a sealed value is edited after the manifest was closed and nothing re-derived it"
+   },
+   {
+    "carrier_matches_code": true,
+    "declared_carrier": "finish",
+    "declared_gate": "G-ARTIFACT-INTEGRITY",
+    "description_quotes_the_code": true,
+    "located_in": [
+     "finish"
+    ],
+    "mutant": "MUT-TRANSCRIPT-FORGE",
+    "statement": "a forged PASS line is appended to the transcript after its gate-time seal"
    }
   ]
  },
  "paper_claims": {
-  "count": 16,
-  "missing": [],
+  "count": 20,
+  "note": "the count is DECLARED per claim and compared exactly: five of these sentences are said twice, and a containment gate would let one copy be forged while its twin satisfied it",
   "rows": [
    {
     "claim": "two sites are unlinked exactly when they lie on a common line of the one parallel class the arena does not declare, at 72 of 72 ordered site pairs",
+    "declared_occurrences": 1,
+    "found_occurrences": 1,
     "id": "C01"
    },
    {
     "claim": "0 of 512 subsets of the nine actors own a record quantity and a conditioning region sharing no link with them",
+    "declared_occurrences": 2,
+    "found_occurrences": 2,
     "id": "C02"
    },
    {
     "claim": "490 subsets own a record quantity and 19 have a nonempty far region",
+    "declared_occurrences": 1,
+    "found_occurrences": 1,
     "id": "C03"
    },
    {
     "claim": "of 421,656 ordered block pairs 105,408 are link-disjoint and 18 carry a record quantity at the block, and 0 carry both",
+    "declared_occurrences": 2,
+    "found_occurrences": 2,
     "id": "C04"
    },
    {
     "claim": "in the state's own localization the same predicates return 105,408 instances of the premise",
+    "declared_occurrences": 2,
+    "found_occurrences": 2,
     "id": "C05"
    },
    {
     "claim": "the record field is site-constant at 5,856 of 5,856 committed histories",
+    "declared_occurrences": 1,
+    "found_occurrences": 1,
     "id": "C06"
    },
    {
     "claim": "the corpus carries 36 distinct records and the shadow can separate at most 9 of them",
+    "declared_occurrences": 2,
+    "found_occurrences": 2,
     "id": "C07"
    },
    {
     "claim": "not one of the 64 declared states separates two committed records that share a residue class",
+    "declared_occurrences": 2,
+    "found_occurrences": 2,
     "id": "C08"
    },
    {
     "claim": "at the state's localization and EPR's own separation the record certifies 316,224 elements and the shadow carries 0 of them",
+    "declared_occurrences": 1,
+    "found_occurrences": 1,
     "id": "C09"
    },
    {
     "claim": "the shadow itself certifies 0 elements at any of the four arms",
+    "declared_occurrences": 1,
+    "found_occurrences": 1,
     "id": "C10"
    },
    {
     "claim": "at the record's own localization under the weaker separation the census runs at 18 pairs and 54 quantities",
+    "declared_occurrences": 1,
+    "found_occurrences": 1,
     "id": "C11"
    },
    {
     "claim": "the five declared readings assign more than one description to the same record at 105,408 of 105,408 probes, and as many as 5",
+    "declared_occurrences": 1,
+    "found_occurrences": 1,
     "id": "C12"
    },
    {
     "claim": "B's own record moves at 0 of 105,408 probes and the description assigned to B moves at 105,408",
+    "declared_occurrences": 1,
+    "found_occurrences": 1,
     "id": "C13"
    },
    {
-    "claim": "the two declared coin orders differ at 30 of the 36 committed records",
+    "claim": "the two declared coin orders' operators differ at 30 of the 36 committed records",
+    "declared_occurrences": 1,
+    "found_occurrences": 1,
     "id": "C14"
    },
    {
     "claim": "the record carries both members of the conjugate pair at 5,856 of 5,856 committed histories",
+    "declared_occurrences": 1,
+    "found_occurrences": 1,
     "id": "C15"
    },
    {
     "claim": "over the 84 event shapes this arena admits, an event confined to an actor-disjoint region changes a record entry the other block owns 0 times, while 342 unconfined ones do reach a block's quantities",
+    "declared_occurrences": 1,
+    "found_occurrences": 1,
     "id": "C16"
+   },
+   {
+    "claim": "no residue class of this corpus is a single record, and none is constant in any direction: 0 of 9 and 0 of 9",
+    "declared_occurrences": 2,
+    "found_occurrences": 2,
+    "id": "C17"
+   },
+   {
+    "claim": "over paper-20's own 37-value alphabet the sweep runs at 50,653 states, the ceiling of 9 menus is attained at 34,992 of them, and the shadow carries a certified direction at 0",
+    "declared_occurrences": 1,
+    "found_occurrences": 1,
+    "id": "C18"
+   },
+   {
+    "claim": "the quantity censused at a block is one of the block's own localization's directions at 132 of 132 declared specs",
+    "declared_occurrences": 1,
+    "found_occurrences": 1,
+    "id": "C19"
+   },
+   {
+    "claim": "the two coin orders commute at exactly the 6 records whose three counts are equal modulo three, and at 3 of those the record observable is not scalar",
+    "declared_occurrences": 1,
+    "found_occurrences": 1,
+    "id": "C20"
    }
-  ]
+  ],
+  "total_declared_occurrences": 26,
+  "wrong_occurrence_count": []
  },
  "paper_coverage": {
+  "declared_literal_contexts": [
+   "SECTION-HEADING",
+   "SECTION-REFERENCE",
+   "PAPER-IDENTIFIER",
+   "LEDGER-REFERENCE",
+   "ENGRAVING-REFERENCE",
+   "THE-1935-CITATION",
+   "THE-1935-PAPER",
+   "THE-SOURCE-FILENAME",
+   "THE-AFFINE-PLANE"
+  ],
   "in_fenced_blocks": 50,
-  "note": "coverage includes fenced blocks and inline code spans (E-22); the registry is the run's own product",
-  "numerals": 220,
-  "registry_size": 75,
-  "spelled_numerals": 123,
+  "note": "coverage includes fenced blocks and inline code spans (E-22); the registry is the run's own product, and a numeral that is not in it passes only inside a DECLARED identifier shape at its own position -- there is no bare allow-list of tokens",
+  "number_word_tokens": 186,
+  "numerals": 280,
+  "registry_size": 101,
+  "spelled_numerals": 171,
+  "structural_literals_by_context": {
+   "PAPER-IDENTIFIER": 4,
+   "THE-1935-CITATION": 3,
+   "THE-1935-PAPER": 1,
+   "THE-SOURCE-FILENAME": 3
+  },
   "unknown_numerals": [],
-  "unknown_spelled": []
+  "unknown_spelled": [],
+  "unmapped_number_words": []
+ },
+ "paper_fences": {
+  "declared_blocks": [
+   {
+    "occurrences": 2,
+    "segment": 1
+   },
+   {
+    "occurrences": 2,
+    "segment": 2
+   },
+   {
+    "occurrences": 2,
+    "segment": 3
+   }
+  ],
+  "distinct_blocks": 3,
+  "fenced_blocks_in_the_paper": 6,
+  "mismatches": [],
+  "note": "the paper's fenced blocks must be exactly the run's three verdict segments, twice each -- MULTISET equality, not containment"
  },
  "paper_tables": {
-  "count": 4,
+  "count": 5,
   "missing": [],
-  "rows": 22,
+  "rows": 28,
+  "table_blocks_in_the_paper": 5,
   "tables": [
    {
     "headers": [
@@ -1700,12 +2487,59 @@
       "13"
      ]
     ]
+   },
+   {
+    "headers": [
+     "desideratum",
+     "D-RECORD",
+     "D-SHADOW",
+     "Bell-constrained"
+    ],
+    "name": "T-BELL",
+    "rows": [
+     [
+      "E1 counterpart for every element",
+      "met on the measured arms",
+      "not met",
+      "no"
+     ],
+     [
+      "E2 certainty without disturbance",
+      "instantiable only in the state's localization",
+      "never here",
+      "no"
+     ],
+     [
+      "E3 simultaneous reality for a conjugate pair",
+      "held at every history",
+      "refused",
+      "yes"
+     ],
+     [
+      "E4 one reality, several assignments",
+      "one record throughout",
+      "up to five assignments",
+      "no"
+     ],
+     [
+      "E5 no dependence on the distant choice",
+      "zero moves measured",
+      "the assigned description moves",
+      "no"
+     ],
+     [
+      "E6 such a theory is possible",
+      "complete for the censused certainty-elements on the measured arms",
+      "not applicable",
+      "yes"
+     ]
+    ]
    }
   ]
  },
- "payload_sha256_12": "91eb376bc6e2",
+ "payload_sha256_12": "11aa7f578412",
  "polarity": {
-  "count": 5,
+  "count": 7,
   "failures": [],
   "rows": [
    {
@@ -1732,6 +2566,16 @@
     "asserted": true,
     "axis": "P5",
     "inverse_present": false
+   },
+   {
+    "asserted": true,
+    "axis": "P6",
+    "inverse_present": false
+   },
+   {
+    "asserted": true,
+    "axis": "P7",
+    "inverse_present": false
    }
   ]
  },
@@ -1756,7 +2600,7 @@
  },
  "predicates": {
   "certainty_is_measure_free": "constancy on the conditioning fibre; probability one under every measure of full support, verified exactly under two declared measures in section 9",
-  "combined_sha256_12": "f791c8dc0877",
+  "combined_sha256_12": "6a62aba8d086",
   "free_upper_case_names": {
    "data_record": [],
    "data_shadow": [],
@@ -1809,19 +2653,19 @@
   "per_predicate_sha256_12": {
    "data_record": "e02588a139f0",
    "data_shadow": "2f90f6a33d16",
-   "epr_counterpart_at": "50065fbe622e",
-   "epr_reality_at": "242af385ac88",
+   "epr_counterpart_at": "b8b7747da0d0",
+   "epr_reality_at": "532d41eb352a",
    "far_region": "ec3126e403c2",
-   "fiber": "8a124ede89d4",
+   "fiber": "f3ebb41e4deb",
    "loc_pair": "5bfc4659d864",
    "loc_walk": "f621e5e3e04b",
    "record_menu": "0451fc83e6fa",
    "sep_actor_disjoint": "292895722ed9",
-   "sep_link_disjoint": "e5d536564bd6",
-   "shadow_menu": "03f6bfc2408c"
+   "sep_link_disjoint": "e2be5035b04c",
+   "shadow_menu": "6ce58e23a0bc"
   },
   "totality_failures": 0,
-  "totality_probes": 210
+  "totality_probes": 240
  },
  "provenance": {
   "cited_parent": {
@@ -1884,7 +2728,7 @@
  },
  "python": "3.13.2",
  "reachability": {
-  "count": 30,
+  "count": 49,
   "not_located": [],
   "rows": [
    {
@@ -2036,6 +2880,101 @@
     "declared_gate": "G-ARTIFACT-INTEGRITY",
     "hook_located": true,
     "mutant": "MUT-INTEGRITY"
+   },
+   {
+    "declared_gate": "G-SHADOW-CARRIES-NOTHING-AT-EVERY-STATE",
+    "hook_located": true,
+    "mutant": "MUT-RESIDUE-CARRIES"
+   },
+   {
+    "declared_gate": "G-THE-ANALYTIC-LEGS-MEASURED",
+    "hook_located": true,
+    "mutant": "MUT-SPEC-DOMAIN"
+   },
+   {
+    "declared_gate": "G-OPERATOR-LEG-IS-RESIDUE-DEGENERACY",
+    "hook_located": true,
+    "mutant": "MUT-RESIDUE-CRITERION"
+   },
+   {
+    "declared_gate": "G-ANCHOR-CONSUMERS-RAN",
+    "hook_located": true,
+    "mutant": "MUT-CONSUMER-PHANTOM"
+   },
+   {
+    "declared_gate": "G-EPR-SUFFICIENCY-CAVEAT",
+    "hook_located": true,
+    "mutant": "MUT-CAVEAT-UNUSED"
+   },
+   {
+    "declared_gate": "G-PAPER-TABLES-WITH-HEADERS",
+    "hook_located": true,
+    "mutant": "MUT-BELL-TABLE"
+   },
+   {
+    "declared_gate": "G-WALLS-SCAN-THE-PAPER",
+    "hook_located": true,
+    "mutant": "MUT-BELL-VOICE"
+   },
+   {
+    "declared_gate": "G-BELL-WALL-STATED-IN-THE-PAPER",
+    "hook_located": true,
+    "mutant": "MUT-BELL-DELETE"
+   },
+   {
+    "declared_gate": "G-ELEMENT-OF-REALITY-CONFINED",
+    "hook_located": true,
+    "mutant": "MUT-ELEMENT-PLANT"
+   },
+   {
+    "declared_gate": "G-PAPER-NUMERAL-COVERAGE",
+    "hook_located": true,
+    "mutant": "MUT-PAPER-SPELLED"
+   },
+   {
+    "declared_gate": "G-PAPER-TABLES-WITH-HEADERS",
+    "hook_located": true,
+    "mutant": "MUT-PAPER-TABLE-ROW"
+   },
+   {
+    "declared_gate": "G-PAPER-CLAIMS",
+    "hook_located": true,
+    "mutant": "MUT-CLAIM-TWIN"
+   },
+   {
+    "declared_gate": "G-PAPER-FENCES-MATCH-THE-VERDICT",
+    "hook_located": true,
+    "mutant": "MUT-FENCE"
+   },
+   {
+    "declared_gate": "G-FALSIFIER-DESCRIBES-ITS-CODE",
+    "hook_located": true,
+    "mutant": "MUT-DESCRIPTION"
+   },
+   {
+    "declared_gate": "G-VOUCHING-KEYS-SEALED",
+    "hook_located": true,
+    "mutant": "MUT-VOUCHING"
+   },
+   {
+    "declared_gate": "G-SEAL-TOTALITY",
+    "hook_located": true,
+    "mutant": "MUT-SEALED-AT-PHANTOM"
+   },
+   {
+    "declared_gate": "G-ARTIFACT-INTEGRITY",
+    "hook_located": true,
+    "mutant": "MUT-POST-SNAPSHOT-KEY"
+   },
+   {
+    "declared_gate": "G-ARTIFACT-INTEGRITY",
+    "hook_located": true,
+    "mutant": "MUT-POST-CLOSE-EDIT"
+   },
+   {
+    "declared_gate": "G-ARTIFACT-INTEGRITY",
+    "hook_located": true,
+    "mutant": "MUT-TRANSCRIPT-FORGE"
    }
   ]
  },
@@ -2057,6 +2996,7 @@
   "undeclared_reads": []
  },
  "readings": {
+  "count": 5,
   "declared": [
    "READ-RECORD",
    "READ-BORN-GD",
@@ -2071,6 +3011,7 @@
    "READ-CURVATURE|READ-RECORD-MENU"
   ],
   "note": "a reading is a declared coarse-graining of the record; READ-RECORD refines every one of them, which is what makes D-RECORD the certifier of section 9",
+  "ordered_pairs_compared": 25,
   "refinement_matrix": {
    "READ-BORN-DG|READ-BORN-DG": true,
    "READ-BORN-DG|READ-BORN-GD": false,
@@ -2133,6 +3074,7 @@
     "distinct_assigned_descriptions": {
      "4": 18
     },
+    "distinct_assigned_descriptions_under_the_joint_reading": "not measured on this arm",
     "largest": 4,
     "localization": "LOC-PAIR",
     "probes": 18,
@@ -2145,6 +3087,10 @@
      "3": 594,
      "4": 8514,
      "5": 96300
+    },
+    "distinct_assigned_descriptions_under_the_joint_reading": {
+     "4": 8586,
+     "5": 96822
     },
     "largest": 5,
     "localization": "LOC-WALK",
@@ -2159,6 +3105,7 @@
      "4": 34062,
      "5": 385212
     },
+    "distinct_assigned_descriptions_under_the_joint_reading": "not measured on this arm",
     "largest": 5,
     "localization": "LOC-WALK",
     "probes": 421656,
@@ -2167,7 +3114,7 @@
     "smallest": 3
    }
   ],
-  "assignment": "the set of values the block's quantities can still take given what the declared reading at A reports -- measure-free, so no measure is smuggled in",
+  "assignment": "the set of values the block's quantities can still take given what the declared reading at A reports, TAKEN QUANTITY BY QUANTITY -- the product of the per-quantity marginals; measure-free, so no measure is smuggled in",
   "readings_declared_on_the_other_block": [
    "READ-RECORD",
    "READ-BORN-GD",
@@ -2175,15 +3122,28 @@
    "READ-RECORD-MENU",
    "READ-CURVATURE"
   ],
+  "the_declared_alternative": "the JOINT reading -- the set of value-tuples the fibre admits, which keeps the correlations between a block's quantities -- is measured on the primary arm and published beside it.  The published distribution is therefore definition-relative, and the marginal reading is the conservative one: it assigns no more distinct descriptions than the joint one does at the head value",
   "window": "COUNTING-ONLY over the declared corpus (E-24)"
  },
  "referent_binding": {
-  "count": 7,
+  "count": 13,
   "fractions": [
    {
     "fraction": "0 of 512",
     "universes": [
      "SUBSETS"
+    ]
+   },
+   {
+    "fraction": "0 of 9",
+    "universes": [
+     "RESIDUE-CLASSES"
+    ]
+   },
+   {
+    "fraction": "0 of 9",
+    "universes": [
+     "RESIDUE-CLASSES"
     ]
    },
    {
@@ -2199,6 +3159,30 @@
     ]
    },
    {
+    "fraction": "5,852 of 5,856",
+    "universes": [
+     "HISTORIES"
+    ]
+   },
+   {
+    "fraction": "0 of 9",
+    "universes": [
+     "RESIDUE-CLASSES"
+    ]
+   },
+   {
+    "fraction": "0 of 9",
+    "universes": [
+     "RESIDUE-CLASSES"
+    ]
+   },
+   {
+    "fraction": "132 of 132",
+    "universes": [
+     "DECLARED-SPECS"
+    ]
+   },
+   {
     "fraction": "5,856 of 5,856",
     "universes": [
      "HISTORIES"
@@ -2207,7 +3191,8 @@
    {
     "fraction": "105,408 of 105,408",
     "universes": [
-     "BLOCK-PAIRS"
+     "E4-PROBES",
+     "E5-PROBES"
     ]
    },
    {
@@ -2219,46 +3204,90 @@
    {
     "fraction": "0 of 105,408",
     "universes": [
-     "BLOCK-PAIRS"
+     "E5-PROBES"
     ]
    }
   ],
-  "note": "every 'N of M' in the paper must have BOTH members carried by one declared referent universe",
+  "note": "every 'N of M' in the paper must name a declared universe whose BOUND is M and one of whose declared VALUES is N, with N at most M: membership alone would pass an in-universe falsehood, so the denominator has to be the universe's own total and the numerator a quantity this run measured in it",
   "unbound": [],
   "universes": {
-   "BLOCK-PAIRS": [
-    "0",
-    "105,408",
-    "105408",
-    "18",
-    "421,656",
-    "421656"
-   ],
-   "HISTORIES": [
-    "5,852",
-    "5,856",
-    "5852",
-    "5856"
-   ],
-   "RECORDS": [
-    "0",
-    "30",
-    "36",
-    "9"
-   ],
-   "SITE-PAIRS": [
-    "72"
-   ],
-   "STATES": [
-    "0",
-    "64"
-   ],
-   "SUBSETS": [
-    "0",
-    "19",
-    "490",
-    "512"
-   ]
+   "BLOCK-PAIRS": {
+    "bound": 421656,
+    "values": [
+     0,
+     18,
+     105408,
+     421656
+    ]
+   },
+   "DECLARED-SPECS": {
+    "bound": 132,
+    "values": [
+     132
+    ]
+   },
+   "E4-PROBES": {
+    "bound": 105408,
+    "values": [
+     105408
+    ]
+   },
+   "E5-PROBES": {
+    "bound": 105408,
+    "values": [
+     0,
+     105408
+    ]
+   },
+   "HISTORIES": {
+    "bound": 5856,
+    "values": [
+     5852,
+     5856
+    ]
+   },
+   "PARENT-STATES": {
+    "bound": 50653,
+    "values": [
+     0,
+     34992
+    ]
+   },
+   "RECORDS": {
+    "bound": 36,
+    "values": [
+     0,
+     6,
+     9,
+     30
+    ]
+   },
+   "RESIDUE-CLASSES": {
+    "bound": 9,
+    "values": [
+     0
+    ]
+   },
+   "SITE-PAIRS": {
+    "bound": 72,
+    "values": [
+     72
+    ]
+   },
+   "STATES": {
+    "bound": 64,
+    "values": [
+     0
+    ]
+   },
+   "SUBSETS": {
+    "bound": 512,
+    "values": [
+     0,
+     19,
+     490
+    ]
+   }
   }
  },
  "schema": {
@@ -2286,7 +3315,13 @@
    "path": "verbatim_anchors",
    "seal": "SEAL-VERBATIM",
    "sealed_at_gate": "G-VERBATIM-ANCHORS-IN-SOURCE",
-   "sha256_12": "78990cbbee1f"
+   "sha256_12": "facb8dcb3cca"
+  },
+  {
+   "path": "sufficiency_caveat",
+   "seal": "SEAL-CAVEAT",
+   "sealed_at_gate": "G-EPR-SUFFICIENCY-CAVEAT",
+   "sha256_12": "ccc12e684672"
   },
   {
    "path": "pre_registered_outcomes",
@@ -2298,7 +3333,7 @@
    "path": "windows",
    "seal": "SEAL-WINDOWS",
    "sealed_at_gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
-   "sha256_12": "c5dd500d2502"
+   "sha256_12": "49fbe48c664b"
   },
   {
    "path": "arena",
@@ -2328,7 +3363,7 @@
    "path": "predicates",
    "seal": "SEAL-PREDICATES",
    "sealed_at_gate": "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
-   "sha256_12": "e1a2440a7f56"
+   "sha256_12": "d67e3f13bd5d"
   },
   {
    "path": "separation",
@@ -2340,13 +3375,25 @@
    "path": "descriptions",
    "seal": "SEAL-DESCRIPTIONS",
    "sealed_at_gate": "G-SHADOW-CEILING",
-   "sha256_12": "718d95e59df0"
+   "sha256_12": "bf687fcd1cd2"
+  },
+  {
+   "path": "shadow_theorem",
+   "seal": "SEAL-SHADOW-THEOREM",
+   "sealed_at_gate": "G-SHADOW-CARRIES-NOTHING-AT-EVERY-STATE",
+   "sha256_12": "807308ea2702"
   },
   {
    "path": "readings",
    "seal": "SEAL-READINGS",
    "sealed_at_gate": "G-READINGS-PARTITION-MEASURED",
-   "sha256_12": "fd61e91e912b"
+   "sha256_12": "fe946adbf5f4"
+  },
+  {
+   "path": "analytic_legs",
+   "seal": "SEAL-ANALYTIC",
+   "sealed_at_gate": "G-THE-ANALYTIC-LEGS-MEASURED",
+   "sha256_12": "dd4e7129d5e6"
   },
   {
    "path": "certainty",
@@ -2358,25 +3405,25 @@
    "path": "reductions",
    "seal": "SEAL-REDUCTIONS",
    "sealed_at_gate": "G-E4-TWO-REDUCTIONS",
-   "sha256_12": "b25dc30b3b8a"
+   "sha256_12": "3d7b21bdb90a"
   },
   {
    "path": "conjugacy",
    "seal": "SEAL-CONJUGACY",
    "sealed_at_gate": "G-CONJUGATE-PAIR-MEASURED",
-   "sha256_12": "14aedb6a51ab"
+   "sha256_12": "6e22368e0f5c"
   },
   {
    "path": "e5_audit",
    "seal": "SEAL-E5",
    "sealed_at_gate": "G-E5-RECORD-DOES-NOT-MOVE",
-   "sha256_12": "ebb2ffeb0558"
+   "sha256_12": "811753d3b714"
   },
   {
    "path": "bell",
    "seal": "SEAL-BELL",
    "sealed_at_gate": "G-BELL-DESIDERATA-BOUND",
-   "sha256_12": "b8ba8e5a2585"
+   "sha256_12": "7cbe8fb29285"
   },
   {
    "path": "controls",
@@ -2400,7 +3447,7 @@
    "path": "verdict",
    "seal": "SEAL-VERDICT",
    "sealed_at_gate": "G-HEAD-DERIVED-TWICE",
-   "sha256_12": "85bac5a668ed"
+   "sha256_12": "cc3a3c569c4b"
   },
   {
    "path": "class_binding",
@@ -2409,28 +3456,40 @@
    "sha256_12": "cc96b2f83105"
   },
   {
+   "path": "arithmetic",
+   "seal": "SEAL-ARITHMETIC",
+   "sealed_at_gate": "G-VOUCHING-KEYS-SEALED",
+   "sha256_12": "3068b51c9763"
+  },
+  {
+   "path": "python",
+   "seal": "SEAL-PYTHON",
+   "sealed_at_gate": "G-VOUCHING-KEYS-SEALED",
+   "sha256_12": "7431641f3bda"
+  },
+  {
    "path": "mutants",
    "seal": "SEAL-MUTANTS",
    "sealed_at_gate": "G-FALSIFIER-COVERAGE",
-   "sha256_12": "f4652a35a9d5"
+   "sha256_12": "cf38f954facd"
   },
   {
    "path": "coverage",
    "seal": "SEAL-COVERAGE",
    "sealed_at_gate": "G-FALSIFIER-COVERAGE",
-   "sha256_12": "400f43db1a45"
+   "sha256_12": "66bb7b1bb029"
   },
   {
    "path": "waiver_ledger",
    "seal": "SEAL-WAIVERS",
    "sealed_at_gate": "G-FALSIFIER-COVERAGE",
-   "sha256_12": "91ed2c831475"
+   "sha256_12": "e5c8699942dd"
   },
   {
    "path": "reachability",
    "seal": "SEAL-REACHABILITY",
    "sealed_at_gate": "G-FALSIFIER-REACHABILITY",
-   "sha256_12": "2efb00bf3f93"
+   "sha256_12": "0fa55e7d03cb"
   },
   {
    "path": "read_set",
@@ -2442,67 +3501,91 @@
    "path": "paper_claims",
    "seal": "SEAL-PAPER-CLAIMS",
    "sealed_at_gate": "G-PAPER-CLAIMS",
-   "sha256_12": "4962de5e8032"
+   "sha256_12": "45c856c6b978"
+  },
+  {
+   "path": "paper_fences",
+   "seal": "SEAL-PAPER-FENCES",
+   "sealed_at_gate": "G-PAPER-FENCES-MATCH-THE-VERDICT",
+   "sha256_12": "fe9990b779d6"
   },
   {
    "path": "paper_tables",
    "seal": "SEAL-PAPER-TABLES",
    "sealed_at_gate": "G-PAPER-TABLES-WITH-HEADERS",
-   "sha256_12": "def834fa6e38"
+   "sha256_12": "73a06adac5de"
   },
   {
    "path": "paper_coverage",
    "seal": "SEAL-PAPER-COVERAGE",
    "sealed_at_gate": "G-PAPER-NUMERAL-COVERAGE",
-   "sha256_12": "b05d15ec497f"
+   "sha256_12": "4c9ac194809b"
   },
   {
    "path": "polarity",
    "seal": "SEAL-POLARITY",
    "sealed_at_gate": "G-PAPER-CLAIM-POLARITY",
-   "sha256_12": "1a6692eb070f"
+   "sha256_12": "abdda89aa621"
   },
   {
    "path": "referent_binding",
    "seal": "SEAL-REFERENT",
    "sealed_at_gate": "G-SENTENCE-REFERENT-BINDING",
-   "sha256_12": "ddd5585e9928"
+   "sha256_12": "ecb0d5c37481"
+  },
+  {
+   "path": "element_of_reality",
+   "seal": "SEAL-ELEMENT",
+   "sealed_at_gate": "G-ELEMENT-OF-REALITY-CONFINED",
+   "sha256_12": "65ad43fa539d"
   },
   {
    "path": "walls",
    "seal": "SEAL-WALLS",
    "sealed_at_gate": "G-WALLS-SCAN-THE-PAPER",
-   "sha256_12": "02091f38e37a"
+   "sha256_12": "e2264ef24aa3"
+  },
+  {
+   "path": "bell_wall_positive_leg",
+   "seal": "SEAL-BELL-POSITIVE",
+   "sealed_at_gate": "G-BELL-WALL-STATED-IN-THE-PAPER",
+   "sha256_12": "7c8230b4ac26"
+  },
+  {
+   "path": "anchor_consumers",
+   "seal": "SEAL-CONSUMERS",
+   "sealed_at_gate": "G-ANCHOR-CONSUMERS-RAN",
+   "sha256_12": "be89fe5cffea"
   },
   {
    "path": "mutant_sweep",
    "seal": "SEAL-MUTANT-SWEEP",
    "sealed_at_gate": "G-SWEEP-IS-EXECUTION-BOUND",
-   "sha256_12": "48666411278f"
+   "sha256_12": "0f2c0f179fd6"
   },
   {
    "path": "gates",
    "seal": "SEAL-GATES",
    "sealed_at_gate": "G-CLOSING-BATTERY-RAN",
-   "sha256_12": "f9428e33e5b8"
+   "sha256_12": "3bd3d148af65"
   },
   {
    "path": "closing_gates",
    "seal": "SEAL-CLOSING",
    "sealed_at_gate": "G-CLOSING-BATTERY-RAN",
-   "sha256_12": "f384259f1024"
+   "sha256_12": "1c68b9eaaa46"
   },
   {
    "path": "totals",
    "seal": "SEAL-TOTALS",
    "sealed_at_gate": "G-CLOSING-BATTERY-RAN",
-   "sha256_12": "4e6da856f21d"
+   "sha256_12": "f6086bd43015"
   },
   {
    "path": "transcript_head",
    "seal": "SEAL-TRANSCRIPT",
-   "sealed_at_gate": "G-TRANSCRIPT-SEALED-WHOLE",
-   "sha256_12": "0f5df7019dee"
+   "sealed_at_gate": "G-TRANSCRIPT-SEALED-AT-THE-SNAPSHOT",
+   "sha256_12": "5e513b4316a9"
   }
  ],
  "separation": {
@@ -2573,25 +3656,82 @@
   "theorem_probes": 512,
   "window": "COUNTING-ONLY over the declared corpus and the complete 512-subset lattice (E-24)"
  },
+ "shadow_theorem": {
+  "L1_failures": 0,
+  "L1_phase_factors_out_probes": 9,
+  "L2_failures": 0,
+  "L2_the_modulus_is_phase_blind_probes": 507,
+  "L3_direction_constant_classes": 0,
+  "L3_residue_classes": 9,
+  "L3_shift_orbit_disagreements": 0,
+  "L3_shift_orbit_probes": 1296,
+  "L3_singleton_classes": 0,
+  "an_example_state_attaining_the_ceiling": [
+   [
+    -3,
+    -3
+   ],
+   [
+    -3,
+    -3
+   ],
+   [
+    -3,
+    -2
+   ]
+  ],
+  "parent_alphabet_best_distinct_menus": 9,
+  "parent_alphabet_distinct_menu_counts": {
+   "1": 109,
+   "2": 1296,
+   "3": 2592,
+   "4": 324,
+   "5": 6156,
+   "8": 5184,
+   "9": 34992
+  },
+  "parent_alphabet_menu_cells_fixing_a_direction": 0,
+  "parent_alphabet_size": 37,
+  "parent_alphabet_states": 50653,
+  "parent_alphabet_states_attaining_the_ceiling": 34992,
+  "parent_alphabet_states_carrying_a_direction": 0,
+  "statement": "at EVERY state whatever, the Born-menu partition coarsens the residue partition, and no residue class of this corpus is a single record or is constant in any direction; so the shadow carries NONE of the certified elements at every state, by theorem",
+  "the_declared_family_is_not_the_widest": "the declared family {0, 1, w, w^2}^3 separates at most 4 menus; the parent's own alphabet reaches the ceiling of 9.  The carried count is 0 at both, which is the theorem and not a property of the family",
+  "window": "COUNTING-ONLY; both state families are declared with their bounds (E-24)",
+  "witness_declared_family_states": 64,
+  "witness_key_agrees_with_shadow_menu_at": 64,
+  "witness_key_disagreements": 0
+ },
+ "sufficiency_caveat": {
+  "anchor": "A-E7",
+  "chars": 373,
+  "consequence_stated": true,
+  "found": true,
+  "matched_in": "v14/paper-38-epr.md",
+  "pin_erratum": "the pin's six anchors omit this passage; the omission was found at adjudication.  The pin is frozen and is not edited: the caveat is restored here, matched in the paper's own bytes, and the erratum is carried in the paper's provenance section",
+  "the_consequence_drawn_in_the_paper": "the criterion is silent where its conditions do not occur, and so is this unit",
+  "where_in_the_print": "p.777 col.2 running to p.778 col.1, immediately after the criterion anchored as E2",
+  "why_it_binds": "EPR's criterion is explicitly SUFFICIENT and not necessary, and explicitly applies whenever its conditions occur; so its non-instantiation at the pair localization decides nothing about what is or is not there, and this unit says so"
+ },
  "totals": {
-  "anchors": 14,
-  "falsifiers": 30,
+  "anchors": 15,
+  "falsifiers": 49,
   "gates_after_the_snapshot": 4,
-  "gates_in_the_sealed_ledger": 36,
-  "seals_at_the_snapshot": 35,
+  "gates_in_the_sealed_ledger": 46,
+  "seals_at_the_snapshot": 44,
   "sources": 6,
-  "windows": 6
+  "windows": 7
  },
  "transcript_head": {
-  "lines_at_the_seal": 179,
+  "lines_at_the_seal": 220,
   "note": "the ledger is snapshotted here; the gates that follow are declared in closing_gates and verified to be exactly those, and the whole transcript's own digest is compared with the staged bytes at G-ARTIFACT-INTEGRITY",
-  "sha256_12": "3b40db82a0a8"
+  "sha256_12": "c5b9d7580534"
  },
  "verbatim_anchors": {
-  "count": 14,
+  "count": 15,
   "floor_chars": 30,
   "missing": [],
-  "note": "each anchor names the gate that consumes it; the quote side is matched, not merely the source side",
+  "note": "each anchor names the gate that consumes it, and the naming is load-bearing: that gate calls consume() and cannot pass without it, and G-ANCHOR-CONSUMERS-RAN requires every named consumer to be a gate this run actually ran",
   "rows": [
    {
     "anchor": "A-E1",
@@ -2636,6 +3776,13 @@
     "source": "v14/note-epr-pin.md"
    },
    {
+    "anchor": "A-E7",
+    "chars": 373,
+    "consumed_by": "G-EPR-SUFFICIENCY-CAVEAT",
+    "found": true,
+    "source": "v14/paper-38-epr.md"
+   },
+   {
     "anchor": "A-SEAM",
     "chars": 101,
     "consumed_by": "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
@@ -2673,14 +3820,14 @@
    {
     "anchor": "A-BELL-E1",
     "chars": 105,
-    "consumed_by": "G-BELL-DESIDERATA-BOUND",
+    "consumed_by": "G-BELL-WALL-STATED-IN-THE-PAPER",
     "found": true,
     "source": "v5/relativistic-isp-v5-paper14-non-markovianity-and-bell-nonlocality.md"
    },
    {
     "anchor": "A-BELL-E2",
     "chars": 106,
-    "consumed_by": "G-BELL-DESIDERATA-BOUND",
+    "consumed_by": "G-BELL-WALL-STATED-IN-THE-PAPER",
     "found": true,
     "source": "v5/relativistic-isp-v5-paper14-non-markovianity-and-bell-nonlocality.md"
    },
@@ -2701,39 +3848,55 @@
   "second_word": "EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE",
   "segment_1": "EPR-SEPARATION<HISTORIES=5,856; BLOCK-PAIRS=421,656; LINK-DISJOINT=105,408; QUANTITY-BEARING-AT-THE-RECORD-LOCALIZATION=18; PREMISE-AT-THE-RECORD-LOCALIZATION=0; PREMISE-AT-THE-STATE-LOCALIZATION=105,408; SUBSET-LATTICE=512; SUBSETS-WITH-BOTH=0; THEOREM=THE-LINK-GRAPH-IS-COMPLETE-MULTIPARTITE-AND-A-PART-OWNS-NO-CELL>",
   "segment_2": "EPR-CENSUS<LOC-PAIR-x-SEP-LINK-DISJOINT=EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY-AT-0-PAIRS-0-CERTIFIED-0-UNCARRIED; LOC-PAIR-x-SEP-ACTOR-DISJOINT=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-18-PAIRS-54-CERTIFIED-54-UNCARRIED; LOC-WALK-x-SEP-LINK-DISJOINT=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-105,408-PAIRS-316,224-CERTIFIED-316,224-UNCARRIED; LOC-WALK-x-SEP-ACTOR-DISJOINT=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-421,656-PAIRS-1,265,112-CERTIFIED-1,265,112-UNCARRIED>",
-  "segment_3": "EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY<PRIMARY-ARM=THE-RECORD-S-OWN-LOCALIZATION-AT-EPR-S-OWN-SEPARATION; SECOND-WORD=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-THE-STATE-LOCALIZATION-WITH-316,224-CERTIFIED-AND-316,224-UNCARRIED; E4-ASSIGNMENTS-AT-ONE-RECORD=5; E5-RECORD-MOVES=0-OF-105,408; SCOPE=ONE-ARENA,COMMITTED-HISTORIES,KINEMATIC-SEPARATION-AS-MEASURED;COUNTS-ARE-COUNTING-ONLY;NO-LOCAL-REALISM-CLAIM>",
+  "segment_3": "EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY<PRIMARY-ARM=THE-RECORD-S-OWN-LOCALIZATION-AT-EPR-S-OWN-SEPARATION; SECOND-WORD=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-THE-STATE-LOCALIZATION-WITH-316,224-CERTIFIED-AND-316,224-UNCARRIED-AND-STATE-INVARIANT-BY-THEOREM; E4-ASSIGNMENTS-AT-ONE-RECORD=5-AT-THE-DECLARED-PRIMARY-STATE-UNDER-THE-MARGINAL-READING; E5-RECORD-MOVES=0-OF-105,408; SCOPE=ONE-ARENA,COMMITTED-HISTORIES,KINEMATIC-SEPARATION-AS-MEASURED;COUNTS-ARE-COUNTING-ONLY;NO-LOCAL-REALISM-CLAIM>",
   "why_primary": "the record's own localization is the committed carrier typing gated in section 3: a record entry's referent is a co-division PAIR, so a block owns the quantity only when it owns both its actors"
  },
  "waiver_ledger": {
-  "count": 7,
+  "count": 11,
   "rows": [
    {
-    "forcing": "a declaration gate: its content is the window list itself, which the seal manifest carries",
-    "gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS"
-   },
-   {
-    "forcing": "forced by MUT-SHADOW-INJECTIVE, which moves every reading's fibres and is checked to die upstream at G-SHADOW-CEILING",
-    "gate": "G-READINGS-PARTITION-MEASURED"
-   },
-   {
-    "forcing": "forced by MUT-BELL-PLANT at the paper leg, which is where the wall is owed",
+    "forcing": "forced from both sides: MUT-BELL-TABLE moves a rendered cell of the desiderata table and MUT-BELL-PLANT plants a banned sentence into the paper, which is where the wall is owed",
     "gate": "G-BELL-DESIDERATA-BOUND"
+   },
+   {
+    "forcing": "this gate",
+    "gate": "G-CLOSING-BATTERY-RAN"
+   },
+   {
+    "forcing": "this gate",
+    "gate": "G-FALSIFIER-COVERAGE"
+   },
+   {
+    "forcing": "this gate",
+    "gate": "G-FALSIFIER-REACHABILITY"
    },
    {
     "forcing": "a source-scan gate: a float literal anywhere in this file fires it, which no mutant can simulate without editing the file",
     "gate": "G-NO-FLOAT-IN-SOURCE"
    },
    {
-    "forcing": "forced by MUT-PAPER-NUMERAL and MUT-POLARITY, both of which alter the paper's bytes",
-    "gate": "G-PAPER-CLAIMS"
+    "forcing": "forced by MUT-SHADOW-INJECTIVE, which moves every reading's fibres and is checked to die upstream at G-SHADOW-CEILING",
+    "gate": "G-READINGS-PARTITION-MEASURED"
    },
    {
-    "forcing": "forced: the transcript's digest is compared with the promoted bytes at G-ARTIFACT-INTEGRITY, which MUT-INTEGRITY exercises",
-    "gate": "G-TRANSCRIPT-SEALED-AT-THE-SNAPSHOT"
+    "forcing": "forced: any read outside the declared set appends to READS and fires it",
+    "gate": "G-READS-DECLARED"
    },
    {
     "forcing": "a type-scan gate over the published object: any inexact leaf anywhere fires it, and no mutant can plant one without editing the file, which the source scan and the digests would show",
     "gate": "G-RECEIPT-IS-EXACT"
+   },
+   {
+    "forcing": "execution-bound by construction: the sweep rows are the run's own product and an empty sweep cannot claim to have run",
+    "gate": "G-SWEEP-IS-EXECUTION-BOUND"
+   },
+   {
+    "forcing": "forced: the transcript's gate-time digest is compared with the promoted bytes at G-ARTIFACT-INTEGRITY, which MUT-INTEGRITY and MUT-TRANSCRIPT-FORGE both exercise",
+    "gate": "G-TRANSCRIPT-SEALED-AT-THE-SNAPSHOT"
+   },
+   {
+    "forcing": "a declaration gate: its content is the window list itself, which the seal manifest carries",
+    "gate": "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS"
    }
   ]
  },
@@ -2749,39 +3912,87 @@
   ],
   "count": 7,
   "hits": [],
-  "note": "the Bell wall is scanned against this unit's own bytes -- the leg the wall is owed",
+  "licensed_passages": [
+   {
+    "occurrences": 1,
+    "passage": "THE-STANDING-VERDICT-QUOTED"
+   },
+   {
+    "occurrences": 1,
+    "passage": "THE-UNIT-S-OWN-DENIAL"
+   }
+  ],
+  "note": "the Bell wall is scanned against this unit's own bytes -- the leg the wall is owed -- as seven exact sentences AND as voice-normalised patterns, because a blacklist is defeated by re-voicing",
+  "pattern_count": 14,
+  "pattern_hits": [],
+  "pattern_hits_inside_the_licensed_passages": 4,
+  "patterns": [
+   "W1",
+   "W2",
+   "W3",
+   "W4",
+   "W5",
+   "W6",
+   "W7",
+   "W8",
+   "W9",
+   "W10",
+   "W11",
+   "W12",
+   "W13",
+   "W14"
+  ],
   "scanned": "v14/paper-38-epr.md"
  },
  "windows": {
-  "count": 6,
+  "complete_count": 3,
+  "complete_windows": [
+   "W-SUBSETS",
+   "W-EVENT-SHAPES",
+   "W-BLOCKS"
+  ],
+  "count": 7,
+  "note": "three of the seven windows are COMPLETE -- the subset lattice, the event shapes and the block lattice; the corpus, the states, the readings and the measures are declared bounds",
   "rows": [
    {
     "bound": "5856",
+    "complete": false,
     "statement": "the committed histories: paper-21's 72 I7-STRICT triples, their 5,184 ordered concatenations and the 600 driven-window schedules",
     "window": "W-CORPUS"
    },
    {
     "bound": "512",
+    "complete": true,
     "statement": "the COMPLETE lattice of subsets of the nine actors -- no cap, no sampling",
     "window": "W-SUBSETS"
    },
    {
+    "bound": "84",
+    "complete": true,
+    "statement": "the COMPLETE set of event shapes this arena admits: every three-actor subset, which is every division event's support -- the window the dynamical no-disturbance census runs over, and not a sample of the ones the corpus happens to run",
+    "window": "W-EVENT-SHAPES"
+   },
+   {
     "bound": "6",
-    "statement": "the six law-compatible decompositions of the nine actors (FAC's geometry-leg survivors), restricted per history by the history leg",
+    "complete": true,
+    "statement": "the COMPLETE set of law-compatible decompositions of the nine actors: FAC's geometry-leg survivors by closed form over the complete 21,147-partition actor lattice, restricted per history by the history leg",
     "window": "W-BLOCKS"
    },
    {
     "bound": "64",
-    "statement": "the declared state family for the shadow: every site vector over the alphabet {0, 1, w, w^2}",
+    "complete": false,
+    "statement": "the declared state family for the shadow: every site vector over the alphabet {0, 1, w, w^2}.  It is a DECLARED bound and not a complete one -- the parent's own alphabet is wider, and the shadow theorem is proved without either",
     "window": "W-STATES"
    },
    {
     "bound": "5",
+    "complete": false,
     "statement": "the declared readings of a block: the record, the Born menu at both coin orders, the record menu, and paper-20's curvature",
     "window": "W-READINGS"
    },
    {
     "bound": "2",
+    "complete": false,
     "statement": "the declared measures for the probability leg: uniform and a skewed full-support measure",
     "window": "W-MEASURES"
    }

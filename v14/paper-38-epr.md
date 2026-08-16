@@ -21,7 +21,7 @@ EPR-CENSUS<LOC-PAIR-x-SEP-LINK-DISJOINT=EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-L
 ```
 
 ```
-EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY<PRIMARY-ARM=THE-RECORD-S-OWN-LOCALIZATION-AT-EPR-S-OWN-SEPARATION; SECOND-WORD=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-THE-STATE-LOCALIZATION-WITH-316,224-CERTIFIED-AND-316,224-UNCARRIED; E4-ASSIGNMENTS-AT-ONE-RECORD=5; E5-RECORD-MOVES=0-OF-105,408; SCOPE=ONE-ARENA,COMMITTED-HISTORIES,KINEMATIC-SEPARATION-AS-MEASURED;COUNTS-ARE-COUNTING-ONLY;NO-LOCAL-REALISM-CLAIM>
+EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY<PRIMARY-ARM=THE-RECORD-S-OWN-LOCALIZATION-AT-EPR-S-OWN-SEPARATION; SECOND-WORD=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-THE-STATE-LOCALIZATION-WITH-316,224-CERTIFIED-AND-316,224-UNCARRIED-AND-STATE-INVARIANT-BY-THEOREM; E4-ASSIGNMENTS-AT-ONE-RECORD=5-AT-THE-DECLARED-PRIMARY-STATE-UNDER-THE-MARGINAL-READING; E5-RECORD-MOVES=0-OF-105,408; SCOPE=ONE-ARENA,COMMITTED-HISTORIES,KINEMATIC-SEPARATION-AS-MEASURED;COUNTS-ARE-COUNTING-ONLY;NO-LOCAL-REALISM-CLAIM>
 ```
 
 Between delivery and adjudication every headline here is a **candidate
@@ -31,11 +31,11 @@ reading**.
 
 ## The short of it
 
-EPR ask a theory two questions. Is there an element of reality here? — yes,
-if the quantity can be predicted with certainty from data that does not
-disturb the system. Is the description complete? — yes, if every such element
-has a counterpart in it. This unit turns both into total exact predicates on
-the committed arena and runs them.
+EPR ask a theory two questions. Their criterion says a quantity predictable
+with certainty from data that does not disturb the system has, on their
+account, a counterpart that a complete theory must carry; their condition of
+completeness says every such counterpart must be there. This unit turns both
+into total exact predicates on the committed arena and runs them.
 
 The first measurement is not the completeness verdict. It is whether EPR's
 premise exists at all. It does not, in the localization the record itself
@@ -62,12 +62,15 @@ So the second word is `EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE`, and the
 locality that EPR's criterion needs is bought, here, by attributing to a block
 a quantity that belongs to a pair straddling its boundary.
 
-The shadow's blindness is not an accident of a state. The coin reads
-w^{n mod 3}, so `not one of the 64 declared states separates two committed
-records that share a residue class`: `the corpus carries 36 distinct records
-and the shadow can separate at most 9 of them`, and the best state in the
-declared family separates 4. The audit is run at that best state, not at a
-strawman.
+The shadow's blindness is not an accident of a state, and it is not a fact
+about the state family this unit declares. The coin reads w^{n mod 3}, and
+the argument of section 4 shows that every Born menu, at every state whatever,
+coarsens the residue partition, which carries nothing: `no residue class of
+this corpus is a single record, and none is constant in any direction: 0 of 9
+and 0 of 9`. The shadow therefore carries none of the certified elements at
+every state, by theorem; `the corpus carries 36 distinct records and the
+shadow can separate at most 9 of them`, and `not one of the 64 declared states
+separates two committed records that share a residue class`.
 
 ---
 
@@ -115,18 +118,19 @@ reality must have a counterpart in the physical theory."*
 
 Formalised:
 
-- **EPR-REALITY(q | D, B, sep)** — the description D fixes the value of the
-  quantity q of block B from its content on a region satisfying the declared
-  separation from B. "With probability equal to unity" is rendered
-  measure-free: the value is constant on the conditioning fibre. That is
-  probability one under every measure of full support, and the instrument
-  checks exactly that as exact rationals under two declared measures, in both
-  directions, at 1,080 probes.
+- **EPR-REALITY(q | D, B, sep)** is the formalised criterion and the only
+  predicate in this unit that carries the phrase element of reality — the
+  description D fixes the value of the quantity q of block B from its content
+  on a region satisfying the declared separation from B. "With probability
+  equal to unity" is rendered measure-free: the value is constant on the
+  conditioning fibre. That is probability one under every measure of full
+  support, and the instrument checks exactly that as exact rationals under two
+  declared measures, in both directions, at 1,080 probes.
 - **EPR-COMPLETE(D)** — every pair (history, quantity) at which EPR-REALITY
   holds has a counterpart in D: D's own content at the block fixes the value.
 
 Both are total: every predicate is exercised on every combination of a
-declared probe set, 210 probes, no failures, and the totality is a gate. The
+declared probe set, 240 probes, no failures, and the totality is a gate. The
 twelve predicate functions are located in the instrument's source by AST,
 digested individually and jointly before a census row runs, and their free
 names are required to contain no census product, so no predicate can consult
@@ -140,6 +144,13 @@ Two declared axes, both run, neither retired:
 - **separation** — SEP-LINK-DISJOINT, EPR's own clause as ruled, against
   SEP-ACTOR-DISJOINT, the weaker one that only forbids a shared actor.
 
+Both axes are this unit's own. The pin fixes the blocks, the separation and
+the two descriptions; it does not fix where a cell is read, and the head word
+turns on exactly that. The primary arm is declared here, not pre-registered,
+and it is declared before the census on the ground that a record entry's
+referent is the pair — section 1's measurement — not on the ground of what the
+arms returned. Section 11 records this against the pin.
+
 ## 3. Measurement one — does EPR's premise exist here?
 
 The complete lattice of subsets of the nine actors is censused: `490 subsets
@@ -149,12 +160,16 @@ sharing no link with them`. The nineteen are the empty set, the nine
 singletons and the nine unlinked pairs; every one of them lies inside a single
 part of the link graph, and a part is a triple no cell lies inside.
 
-The same predicates then run over the corpus's blocks — FAC's forced
-per-history decomposition, rebuilt here from its two binding legs and gated
-against the parent's cardinality distribution, its inventory and its four
-named exceptions at their own corpus indices. Result: `of 421,656 ordered
-block pairs 105,408 are link-disjoint and 18 carry a record quantity at the
-block, and 0 carry both`.
+The same predicates then run over the corpus's blocks — FAC's per-history
+decomposition inventory, forced at 5,852 of 5,856 histories and two-membered
+at the other four, rebuilt here from its two binding legs and gated against
+the parent's cardinality distribution, its inventory and its four named
+exceptions at their own corpus indices. Result: `of 421,656 ordered block
+pairs 105,408 are link-disjoint and 18 carry a record quantity at the block,
+and 0 carry both`. Of those 421,656 pairs only 18 reach the separation test at
+all, the rest failing because a block of one actor cannot own a quantity of
+two; the general statement is the lattice's, where every quantity-bearing
+region in the arena is tested.
 
 EPR's clause admits a second reading, and it is measured rather than
 dismissed. The kinematic reading — SEC's ruling, and the one the pin declares
@@ -175,7 +190,23 @@ is taken at the kinematic reading, which is the stronger one.
 So the premise is not scarce here; it is impossible. Both halves exist —
 separated pairs are everywhere, quantity-bearing blocks occur at three
 histories — and they never coincide. That is a fact about the arena's
-smallness and it is stated as one.
+smallness and it is stated as one. The pin anticipated this word arriving
+through a scarcity of separated pairs. It arrives through the opposite:
+separated pairs are abundant at 105,408, and none of them carries a
+pair-localized quantity.
+
+EPR guard this case themselves. Immediately after stating the criterion they
+write: *"It seems to us that this criterion, while far from exhausting all
+possible ways of recognizing a physical reality, at least provides us with one
+such way, whenever the conditions set down in it occur. Regarded not as a
+necessary, but merely as a sufficient, condition of reality, this criterion is
+in agreement with classical as well as quantum-mechanical ideas of reality."*
+So the criterion's non-instantiation here is not a verdict against anything.
+It decides nothing about what is or is not at the pair localization, and it is
+not a defeat of EPR's argument: the criterion is silent where its conditions
+do not occur,
+and so is this unit. What is measured is what this arena will let their test
+be applied to.
 
 And it is localization-relative: the premise exists in the state's
 localization, where `in the state's own localization the same
@@ -201,8 +232,28 @@ The corpus really does contain records with equal residues and different
 counts — four rounds of one parallel class against one round of it — so this
 is not a vacuous bound.
 
-Second, the audit is given the shadow's best case: the primary state is
-required to attain the maximum of the sweep, and it does, at 4 distinct menus.
+Second, the audit does not depend on which state is declared. Every Born-menu
+partition, at every state whatever, coarsens the residue-class partition,
+because equal residues give the same D and a global shift of the residues
+multiplies all three post-coin amplitudes by one phase that the modulus cannot
+see. Both halves of that are exact identities in Z[w] and both are gated. And
+the residue partition already carries nothing: `no residue class of this
+corpus is a single record, and none is constant in any direction: 0 of 9 and 0
+of 9`. So the shadow carries none of the certified elements at every state, by
+theorem, and the state family below is a check on the theorem rather than the
+ground of the result.
+
+Within the declared family {0, 1, w, w^2} on each of the three site amplitudes
+the best state separates 4 distinct menus and the primary state attains it, so
+the audit gives the shadow the best case that family has. That family is not
+the widest one available, and the disclosure belongs here: over paper-20's own
+alphabet — the elements of (1/3)Z[w] of modulus at most one — the shadow does
+better and still carries nothing. `over paper-20's own 37-value alphabet the
+sweep runs at 50,653 states, the ceiling of 9 menus is attained at 34,992 of
+them, and the shadow carries a certified direction at 0`. The declared family
+resolves the record more coarsely than the parent's alphabet permits; the
+carried count is 0 at both, because it is a theorem and not a property of
+either family.
 
 paper-20's other coin order is measured blind altogether: a `phase applied
 after the coin cannot enter that step's Born weights at all`, and the reading
@@ -228,12 +279,31 @@ it is earned.
 
 `at the state's localization and EPR's own separation the record certifies
 316,224 elements and the shadow carries 0 of them`: the shadow carries none of
-the certified elements, on any arm where there are any. The record's own
-counterpart count is the complement: no certified element lacks a record
-counterpart, on any arm. And `at the record's own localization under the
-weaker separation the census runs at 18 pairs and 54 quantities` — the three
-histories whose every round repeats one declared parallel class, where a block
-is a line and owns three cells. Same verdict there.
+the certified elements, on any arm where there are any. And `at the record's
+own localization under the weaker separation the census runs at 18 pairs and
+54 quantities` — the three histories whose every round repeats one declared
+parallel class, where a block is a line and owns three cells. Same verdict
+there.
+
+**What the census could not have found.** Two of the three branches the head
+law can take are closed at this corpus before any measurement, and saying so
+is part of the result. `the quantity censused at a block is one of the block's
+own localization's directions at 132 of 132 declared specs`, so a censused
+quantity is always one D-RECORD's own content at the block already fixes: the
+record-incomplete branch cannot fire on unmutated data. The record's own
+counterpart count is therefore the complement, and it is analytic rather than
+measured — no certified element lacks a record counterpart, on any arm, on any
+history, and on any arena whatever. The census can put that zero at risk only
+through the punctured control of section 10, where it duly moves to 105,228.
+`RECORD-COMPLETE` is a statement about what the record is, not a finding about
+this corpus; the contentful half of the head word is `SHADOW-INCOMPLETE`. The
+same containment holds against the conditioner's directions, which is why
+certified equals quantities in every row of the table above. And the
+both-complete branch is closed by section 4's ceiling before any state is
+declared: the shadow's own fibre fails to fix a value at every record and
+every direction of every declared state, so no declared state could have
+returned `EPR-BOTH-COMPLETE` here. What the census measures at this corpus is
+one column — the shadow's.
 
 Two disclosures belong beside these counts.
 
@@ -244,21 +314,28 @@ fixes the record everywhere. That is this corpus's version of the perfect
 correlation EPR's entangled state supplies, and it is measured, not assumed;
 without it the criterion would certify far less.
 
-And the shadow certifies nothing of its own: `the shadow itself certifies 0
-elements at any of the four arms`. A coarse description is trivially complete
-about what it can itself predict, which is why the contentful reading is the
-cross-description one — elements certified by the theory's own state, asked
-for a counterpart in the candidate description. Both readings are in the
-receipt.
+And two things about the shadow's zero belong in the open. `the shadow itself
+certifies 0 elements at any of the four arms`, so EPR's argument in its own
+form — the description under test certifies something and is then asked to
+carry it — has nothing to run on here; the reading measured above is the
+cross-description one, elements certified by the theory's own state and asked
+for a counterpart in the candidate description. And that cross-description
+column is uniform: it equals the certified column at every arm, because the
+shadow's fibres are the residue classes and no residue class of this corpus is
+a single record or is constant in any direction. 316,224 is 105,408 times
+three; the content is section 4's ceiling, counted once per block pair. Both
+readings are in the receipt.
 
 ## 6. Measurement three — the two reductions
 
 EPR: *"it is possible to assign two different wave functions (in our example
-psi_k and phi_r) to the same reality."* Here the object is a count. One
-committed record; five declared readings of the separated block — the record,
-the Born menu at both coin orders, the record menu, and paper-20's own
-curvature; and the description assigned to this block is the set of values its
-quantities can still take given what the reading reports. Measure-free, so no
+psi_k and phi_r) to the same reality (the second system after the interaction
+with the first)."* The subscripted Greek is transliterated here and nowhere
+else. The object is a count. One committed record; five declared readings of
+the separated block — the record, the Born menu at both coin orders, the
+record menu, and paper-20's own curvature; and the description assigned to
+this block is the set of values each of its quantities can still take, taken
+quantity by quantity, given what the reading reports. Measure-free, so no
 measure is smuggled in.
 
 `the five declared readings assign more than one description to the same
@@ -275,9 +352,15 @@ as a distribution rather than as an average:
 | LOC-WALK x SEP-ACTOR-DISJOINT | 4 | 34,062 |
 | LOC-WALK x SEP-ACTOR-DISJOINT | 5 | 385,212 |
 
-One disclosure: at this corpus the reading's value does not depend on WHICH
-separated block is read, because the record field is site-constant. What is
-measured here is dependence on the READING, which is EPR's variable.
+Three disclosures. The distribution is relative to that definition of the
+assignment: the joint reading, which keeps the correlations between a block's
+three quantities, is measured on the primary arm and published beside it in
+the receipt as the declared alternative. Of the five readings, three unordered
+pairs are non-jointly-declarable; the fibre of five counts declared
+coarsenings, not conjugate alternatives. And at this corpus the reading's
+value does not depend on WHICH separated block is read, because the record
+field is site-constant. What is measured here is dependence on the READING,
+which is EPR's variable.
 
 ## 7. Measurement four — the non-commuting pair, and the dilemma
 
@@ -286,11 +369,10 @@ given by the wave function is not complete or (2) when the operators
 corresponding to two physical quantities do not commute the two quantities
 cannot have simultaneous reality."*
 
-The corpus has both halves of the antecedent. At the operator level, `the two
-declared coin orders differ at 30 of the 36 committed records` — G . D(x)
-against D(x) . G, compared exactly in Z[w]. At the reading level, the five
-declared readings are measured as partitions and their refinement relation is
-computed in both directions for all twenty-five ordered pairs:
+One half of the antecedent is available in the corpus's own terms and one is
+not. At the reading level, the five declared readings are measured as
+partitions and their refinement relation is computed in both directions for
+all 25 ordered pairs:
 
 | reading | cells | largest fibre |
 |---|---|---|
@@ -304,17 +386,32 @@ Three pairs are not jointly declarable — neither refines the other — and one
 of them is paper-20's own pair: the Born menu against the record menu. Two
 records with equal residues have the same Born menu and different record
 menus; two records with proportional counts have the same record menu and
-different Born menus. Neither reading is a coarsening of the other.
+different Born menus. Neither reading is a coarsening of the other. That is
+this arena's rendering of two quantities that cannot be declared together, and
+it carries the argument below.
+
+At the operator level the unit exhibits no operator for either member of the
+pair. What it can measure is paper-20's declared coin-order fibre: `the two
+declared coin orders' operators differ at 30 of the 36 committed records` —
+G . D(x) against D(x) . G, compared exactly in Z[w]. That number tracks n mod
+3 rather than the record. `the two coin orders commute at exactly the 6
+records whose three counts are equal modulo three, and at 3 of those the
+record observable is not scalar` — at those three the two quantities' own
+operators do not commute at all while the leg reports agreement. The 30 is a
+disclosure about the encoding, not an instance of EPR's antecedent.
 
 Now the dilemma, decided per description. `the record carries both members of
 the conjugate pair at 5,856 of 5,856 committed histories` — READ-RECORD
 refines every declared reading, so the record fixes both values at once. No
 single Born menu carries both. So horn (1) holds for D-SHADOW: it is not
 complete, measured in section 5. And horn (2) fails for D-RECORD: two readings
-whose operators do not commute have simultaneous values there.
+whose fibres do not refine each other have simultaneous values there.
 
-That is EPR's conclusion reached inside a committed theory rather than argued
-for from outside it — and section 9 says exactly what it does not license.
+That is the shape of EPR's conclusion, exhibited inside a committed theory: a
+coarse description that fails the completeness condition and a fine one that
+carries a conjugate pair at once. Section 5's disclosure applies — at this
+corpus both halves are close to forced — and section 9 says exactly what the
+exhibit does not license.
 
 ## 8. Measurement five — the E5 audit
 
@@ -329,24 +426,40 @@ moves at 0 of 105,408 probes and the description assigned to B moves at
 does not move with the reading declared at A**, and nothing B has moves at
 all; what moves is the description an observer at A assigns to B.
 
-The test-declaration duty is discharged rather than promised. The probe is
-SIGHTED: B's record and B's shadow are recomputed through a
-reading-parameterised path, and a declared falsifier routes the reading's own
-index into both of them and dies at this gate. The zero is a measurement, not
-a blind spot.
+What that zero is, exactly. A reading in this unit is a function on records,
+not an operation on a history, so nothing declared at A has a path to anything
+B holds: no constructor of the arena, the corpus, the record field or the
+blocks takes a reading or names one, and that absence is AST-checked. The zero
+is forced by that formalisation and would be returned on any arena. The
+declared falsifier routes the reading's own index into B's record and into B's
+shadow and dies at this gate, which establishes that the instrument carries no
+such path by accident — it does not establish that the arena forbids one.
 
-This is SEC's ruling seen from the other side. No sector-private link moves,
-so nothing done to a separated block can move this one's record. What EPR
-would not permit — a reality depending on the distant choice — does not occur;
-what does occur is a description depending on it, which is section 6.
+What carries this row as a measurement of the arena is the dynamical census of
+section 3, which is one: over the 84 event shapes the arena admits, an event
+confined to an actor-disjoint region reaches a record entry the other block
+owns 0 times, while 342 unconfined events do reach a block's quantities. That
+probe is sighted and its positive control is in the same census.
+
+This is SEC's ruling seen from the other side, and it is a kinematic
+statement: no sector-private link moves. It is not a measurement of what any
+operation on a separated block would do — the variable moved here is the
+declared reading, and section 3's dynamical probe runs at the pair
+localization and at block sizes this arm does not contain. Testing SEC's
+ruling in EPR's own sense would require an operation on A that the corpus's
+dynamics admits, and this unit declares none; that is the honest scope of the
+row, and the successor obligation. What EPR would not permit — a reality
+depending on the distant choice — does not occur among the readings declared;
+what does occur is a description depending on them, which is section 6.
 
 ## 9. The Bell wall
 
 The corpus's standing verdict is v5 paper-14's, and it is a wall here, not a
 result to be revisited: **ISP cannot satisfy Bell local causality and still
-reproduce the Tsirelson violation. It is Bell-nonlocal**, while **ISP is
-no-signalling and parameter-independent; there is no superluminal causal
-influence in its dynamics**. Outcome independence is what fails.
+reproduce the Tsirelson violation. It is Bell-nonlocal.** And, on the other
+side of it: **ISP is no-signalling and parameter-independent; there is no
+superluminal causal influence in its dynamics.** Outcome independence is what
+fails.
 
 | desideratum | D-RECORD | D-SHADOW | Bell-constrained |
 |---|---|---|---|
@@ -355,26 +468,35 @@ influence in its dynamics**. Outcome independence is what fails.
 | E3 simultaneous reality for a conjugate pair | held at every history | refused | yes |
 | E4 one reality, several assignments | one record throughout | up to five assignments | no |
 | E5 no dependence on the distant choice | zero moves measured | the assigned description moves | no |
-| E6 such a theory is possible | one exists on the measured arms | not applicable | yes |
+| E6 such a theory is possible | complete for the censused certainty-elements on the measured arms | not applicable | yes |
 
 Two rows are constrained and they are the two that matter. EPR close by
 saying *"we left open the question of whether or not such a description
-exists. We believe, however, that such a theory is possible."* On the measured
-arms this corpus has one — and it is not a local-realist one. The joint value
-assignment across separated blocks that D-RECORD carries lives at the
-outcome-dependence level the corpus already owns; no sentence of this unit claims a
-restored locality, an evaded Bell theorem, or a vindicated hidden-variable
-completion, and the instrument scans this paper's own bytes for seven such
-sentences.
+exists. We believe, however, that such a theory is possible."* On the arms
+where the census runs, D-RECORD carries every certainty-element the census
+certifies. That is completeness **for this census, at this arena, over these
+histories** — not the completeness EPR left open, which is a claim about
+physical reality and which this unit neither makes nor could make. It is also
+not a local-realist result. The joint value assignment across separated blocks
+that D-RECORD carries lives at the level the corpus's standing verdict already
+owns; the identification of that level with Bell's outcome dependence is the
+pin's, not this unit's measurement, and the separation here is kinematic. No
+sentence of this unit claims a restored locality, an evaded Bell theorem, or a
+vindicated hidden-variable completion, and the instrument scans this paper's
+own bytes for seven such sentences and for 14 voice-normalised patterns, and
+requires the two sentences above to be present. Those two are rendered flat:
+v5 paper-14 states them with its own qualifiers, and stripping the qualifiers
+makes the wall stronger rather than weaker, which is the only direction this
+unit is entitled to move it.
 
-There is also a finding here rather than only a prohibition. At this arena
-EPR's criterion is instantiable only in the localization the quantum state
-uses, and there the quantity attributed to a block has as its referent a
-co-division pair straddling that block's own boundary. The element the
-criterion certifies is not local to the block it is certified for. EPR's
-premise — that a criterion of reality can be applied to a system in isolation
-— is where this arena resists them first, before any question about
-completeness is reached.
+There is also a finding here rather than only a prohibition. The criterion is
+applicable here only in the localization the quantum state uses, and there the
+quantity attributed to a block has as its referent a co-division pair
+straddling that block's own boundary. The element the criterion certifies is
+not local to the block it is certified for. That is a fact about this arena's
+smallness, reported under EPR's own sufficiency caveat of section 3: their
+test is offered as sufficient and not necessary, and where its conditions do
+not occur it decides nothing.
 
 ## 10. The control arms
 
@@ -403,19 +525,24 @@ forms on a synthetic arena with a single declared link direction — FAC's own
 L1 — and the link graph falls apart into three unlinked triangles, each of
 which owns cells. The premise EXISTS there, at 35,136 instances, and the
 census runs. So the inapplicability measured in section 3 is a property of the
-declared arena, not of this instrument.
+declared arena, not of this instrument. Every count in that row is computed by
+the same predicates as its siblings, the record's counterpart column included.
 
 ## 11. What this does not say
 
 Every count here is COUNTING-ONLY over a declared window; no fraction is a
-frequency and no count is a probability. Six windows are declared with their
-bounds; the subset lattice is the only complete one.
+frequency and no count is a probability. Seven windows are declared with their
+bounds, and three of the seven are complete — the subset lattice, the event
+shapes and the block lattice; the corpus, the states, the readings and the
+measures are declared bounds.
 
 The phrase "element of reality" occurs in this unit only inside the formalised
-predicate and inside verbatim quotation of the 1935 paper. Nothing here says
-what is real. The unit measures which descriptions satisfy two criteria, at
-which localization, under which separation, and reports that the answer
-depends on all three.
+predicate's own declaration and inside verbatim quotation of the 1935 paper,
+and that confinement is a gate over this paper's own bytes rather than a
+promise: every occurrence is counted and matched against the declared
+carriers. Nothing here says what is real. The unit measures which descriptions
+satisfy two criteria, at which localization, under which separation, and
+reports that the answer depends on all three.
 
 The separation measured is KINEMATIC: link-disjointness in the arena's own
 conflict topology. It is not a spacelike separation and no claim about
@@ -429,6 +556,38 @@ successor that would settle this is SEC's multi-sector route — a union of
 sectors sharing neither actor nor link, where a quantity-bearing block can
 have a separated conditioner and EPR's premise exists in the record's own
 localization. That is the named successor to this unit.
+
+**Provenance, and three corrections against the pin.** The pin is frozen and
+is not edited; what follows is carried here.
+
+*The localization axis is not the pin's.* The pin fixes the blocks, the
+separation and the two descriptions, and never mentions localization; the
+strings LOC-PAIR and LOC-WALK do not occur in it. The head word instantiates
+the pin's registered word-form EPR-CRITERION-INAPPLICABLE-AT-, and the
+instrument requires the emitted word to lie in the vocabulary parsed from the
+pin's bytes; but the axis that selects between the two emitted words, and the
+object that names the head, are supplied by this unit. The primary arm is
+declared on section 1's measured ground and before the census, and that is the
+whole of its warrant.
+
+*The pin's worked example for that word is refuted by the corpus.* The pin
+offers "no fully link-disjoint block pair exists at R = 3" as the way the word
+might arrive. Link-disjoint block pairs are abundant at 105,408. The word
+arrives by the opposite route, and section 3 states it.
+
+*The pin's feasibility lines argue abstract conditions, not this corpus.* Of
+the five pre-registered outcomes, two were unreachable before the run: the
+record-incomplete branch by the containment measured in section 5, and the
+both-complete branch by the residue ceiling of section 4 — both decidable at
+pin time, neither decided there. The delivered words stand because they are
+true; what is owned is that the selector was two-way and not five-way, and the
+paper says so where the census reports it.
+
+*The pin's anchor list omits EPR's sufficiency caveat.* The six anchors E1 to
+E6 are the pin's; the caveat quoted in section 3 is not among them, and its
+absence let section 9 attribute to EPR a premise their own words disclaim.
+The passage is restored here from the print, matched verbatim in this paper's
+own bytes at a gate, and put to work rather than displayed.
 
 The parents FAC (paper 35) and SEC (paper 32) are both **candidate-under-repair**
 at delivery. SEC enters only through its adjudicated ruling, which is quoted.
@@ -444,12 +603,16 @@ Six committed files are read as sources at pinned digests, plus this paper as
 the object under test; no other repository state is read and no subprocess is
 invoked, so the run is correct off-tree and with no version control present.
 The read set is recorded at the I/O layer, so the abstention from the drifted
-parent is provable rather than promised. 14 verbatim anchors are matched in
-their sources' bytes, each named with the gate that consumes it; the six EPR
-quotes are matched in the pin, where they were transcribed from the print, and
-the print's own digest is verified. The pre-registered outcome vocabulary is
-parsed out of the pin's bytes and reduced to five families, and the head law
-may return words from that set and from no other.
+parent is provable rather than promised. 15 verbatim anchors are matched in
+their sources' bytes, each naming the gate that consumes it — and the naming
+is load-bearing: that gate calls for the anchor inside its own condition, and
+a closing gate requires every named consumer to be a gate that actually ran.
+The six EPR quotes E1 to E6 are matched in the pin, where they were
+transcribed from the print; the caveat is matched in this paper, where it was
+transcribed from the print by the repair; and the print's own digest is
+verified. The pre-registered outcome vocabulary is parsed out of the pin's
+bytes and reduced to five families, and the head law may return words from
+that set and from no other.
 
 The head is derived twice by routes sharing no dispatcher: the census of
 section 5 and a second aggregation by distinct record with corpus
@@ -457,20 +620,34 @@ multiplicities, which re-applies the localization and separation predicates
 inline and re-runs the head law on its own numbers. They agree on every count
 of every arm and on every arm word.
 
-30 falsifiers are declared, each naming the gate it must die at and each
-carrying a hook located in the instrument by AST and matched against the
-statement that describes it, so a description-inverted falsifier cannot pass;
-every gate without a falsifier carries a named waiver with its forcing. Seals
-are taken at gate time and the manifest is required to be total. Every table
-above is rendered from the receipt with its headers included, so a header swap
-that leaves every number correct dies at a gate; every printed class word is
-recomputed from its predicate; every fraction is resolved against the receipt
-and both members required to be carried by one declared referent universe; and
-five polarity axes are checked in both directions. Seven banned sentences —
-the Bell wall — are scanned against this paper's own bytes, and the falsifier
-for that gate plants one into exactly that text. The bytes are read back from
-staging and compared with the gate-time seal before `os.replace` promotes
-anything.
+49 falsifiers are declared, each naming the gate it must die at, each carrying
+a hook located in the instrument by AST, and each quoting, as its published
+description, the annotation the code carries at that hook — so a
+description-inverted falsifier cannot pass. Every gate without a falsifier
+carries a named waiver with its forcing, the census that checks this sees
+every gate the run runs, and a waiver for a gate that has a falsifier is
+refused. Seals are taken at gate time, the manifest is required to be total,
+every seal's named gate must be one that ran, and at promotion the receipt's
+key set is compared again against the set the manifest was totalled over and
+every sealed value is re-derived against its gate-time digest.
+
+Twenty claims and all five tables are rendered from the receipt and matched in
+this paper's bytes by occurrence count and by multiset, headers included — so
+a header swap that leaves every number correct dies at a gate, a fabricated
+row built out of registered numerals dies, and a forged twin of a sentence
+this paper says twice dies. The three verdict fences are matched the same way.
+Every printed class word is recomputed from its predicate; every fraction must
+name a declared universe whose bound is its denominator and one of whose
+measured values is its numerator; and seven polarity axes are checked in both
+directions, the two horns of the dilemma among them. Every numeral is the run's own product or an identifier in a
+declared shape, matched at its own position, and spelled numerals are scanned
+through a vocabulary of every English number word. The Bell wall is scanned
+against this paper's own bytes in both directions — seven banned sentences and
+14 voice-normalised patterns that must be absent, and two verdict sentences
+that must be present. The bytes are read back from staging and compared with
+the gate-time seals before `os.replace` promotes anything, the promoted paths
+are re-read afterwards, and the transcript's own PASS and FAIL lines are
+compared with the ledger's rows as a multiset.
 
 ---
 
@@ -483,5 +660,5 @@ EPR-CENSUS<LOC-PAIR-x-SEP-LINK-DISJOINT=EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-L
 ```
 
 ```
-EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY<PRIMARY-ARM=THE-RECORD-S-OWN-LOCALIZATION-AT-EPR-S-OWN-SEPARATION; SECOND-WORD=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-THE-STATE-LOCALIZATION-WITH-316,224-CERTIFIED-AND-316,224-UNCARRIED; E4-ASSIGNMENTS-AT-ONE-RECORD=5; E5-RECORD-MOVES=0-OF-105,408; SCOPE=ONE-ARENA,COMMITTED-HISTORIES,KINEMATIC-SEPARATION-AS-MEASURED;COUNTS-ARE-COUNTING-ONLY;NO-LOCAL-REALISM-CLAIM>
+EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY<PRIMARY-ARM=THE-RECORD-S-OWN-LOCALIZATION-AT-EPR-S-OWN-SEPARATION; SECOND-WORD=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-THE-STATE-LOCALIZATION-WITH-316,224-CERTIFIED-AND-316,224-UNCARRIED-AND-STATE-INVARIANT-BY-THEOREM; E4-ASSIGNMENTS-AT-ONE-RECORD=5-AT-THE-DECLARED-PRIMARY-STATE-UNDER-THE-MARGINAL-READING; E5-RECORD-MOVES=0-OF-105,408; SCOPE=ONE-ARENA,COMMITTED-HISTORIES,KINEMATIC-SEPARATION-AS-MEASURED;COUNTS-ARE-COUNTING-ONLY;NO-LOCAL-REALISM-CLAIM>
 ```

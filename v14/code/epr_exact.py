@@ -12,9 +12,11 @@ WHAT THIS FILE MEASURES, IN ORDER.
 
   SEC 1  MACHINERY -- gate ledger, total gate-time seal, text normaliser,
          numeral registry, falsifier hooks.
-  SEC 2  PROVENANCE -- seven pinned sources, sha256-12 verified; eleven
-         verbatim anchors bound to the gates that consume them; the
-         pre-registered outcome vocabulary PARSED OUT OF THE PIN'S BYTES.
+  SEC 2  PROVENANCE -- six pinned sources, sha256-12 verified; fifteen
+         verbatim anchors bound to the gates that consume them, and the
+         binding is CHECKED: a gate that names an anchor is required to have
+         consumed it, and every named consumer must be a gate that ran.  The
+         pre-registered outcome vocabulary is PARSED OUT OF THE PIN'S BYTES.
   SEC 3  THE ARENA -- AG(2,3), the three declared link directions, the 27
          co-division cells, and the link graph MEASURED (not assumed) to be
          complete tripartite with the undeclared fourth parallel class as its
@@ -33,8 +35,10 @@ WHAT THIS FILE MEASURES, IN ORDER.
          complete 512-subset census and the corpus-wide block-pair census, in
          both declared localizations.
   SEC 8  THE TWO DESCRIPTIONS -- D-RECORD and D-SHADOW; the shadow ceiling
-         theorem (the coin consumes n mod 3) machine-checked over a declared
-         state family; the five declared readings.
+         theorem (the coin consumes n mod 3), proved STATE-FREE from two
+         exact ring identities and the measured residue partition, then
+         witnessed over the declared 64-state family and cross-checked over
+         the parent's own 37-value alphabet; the five declared readings.
   SEC 9  MEASUREMENT 2 -- THE CERTAINTY-ELEMENT CENSUS on the 2x2 grid of
          declared localization x declared separation, with the counterpart
          check in each description.
@@ -53,16 +57,18 @@ WHAT THIS FILE MEASURES, IN ORDER.
 
 SCOPE AND LANGUAGE.  The phrase "element of reality" appears in this unit ONLY
 inside the formalised predicate and inside verbatim quotation of the 1935
-paper.  Every count is COUNTING-ONLY over a declared window (E-24).  No
+paper -- and that confinement is a GATE over the paper's own bytes, not a
+promise.  Every count is COUNTING-ONLY over a declared window (E-24).  No
 sentence of this unit claims local realism, Bell evasion, or a vindicated
-hidden-variable completion: v5 paper-14's verdict is a WALL and is scanned
-against this unit's own paper.
+hidden-variable completion: v5 paper-14's verdict is a WALL, scanned against
+this unit's own paper as voice-normalised patterns, and carried POSITIVELY --
+the paper is required to state the standing verdict, so deleting it fails.
 
 ARITHMETIC.  Exact only: Python integers, fractions.Fraction, and the ring
 Z[w] carried as integer pairs.  There are no floats; an AST scan of this file
 and a recursive type scan of the emitted receipt are gates.
 
-RUNTIME INPUTS (#46/#91).  Exactly seven committed files are read as SOURCES,
+RUNTIME INPUTS (#46/#91).  Exactly six committed files are read as SOURCES,
 all sha-pinned by this unit's frozen declaration, plus exactly one file read
 as the OBJECT UNDER TEST -- this unit's own paper.  No other repository state
 is read and no subprocess is invoked, so the run is correct off-tree and with
@@ -163,6 +169,7 @@ SEALED_PATHS = [
     ("SEAL-SCHEMA", "schema", "G-PROVENANCE-SHA-PINNED"),
     ("SEAL-PROVENANCE", "provenance", "G-PROVENANCE-SHA-PINNED"),
     ("SEAL-VERBATIM", "verbatim_anchors", "G-VERBATIM-ANCHORS-IN-SOURCE"),
+    ("SEAL-CAVEAT", "sufficiency_caveat", "G-EPR-SUFFICIENCY-CAVEAT"),
     ("SEAL-OUTCOMES", "pre_registered_outcomes",
      "G-OUTCOMES-PARSED-FROM-THE-PIN"),
     ("SEAL-WINDOWS", "windows", "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS"),
@@ -173,12 +180,17 @@ SEALED_PATHS = [
     ("SEAL-PREDICATES", "predicates", "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS"),
     ("SEAL-SEPARATION", "separation", "G-SEPARATION-PREMISE-CENSUS"),
     ("SEAL-DESCRIPTIONS", "descriptions", "G-SHADOW-CEILING"),
+    ("SEAL-SHADOW-THEOREM", "shadow_theorem",
+     "G-SHADOW-CARRIES-NOTHING-AT-EVERY-STATE"),
     ("SEAL-READINGS", "readings", "G-READINGS-PARTITION-MEASURED"),
+    ("SEAL-ANALYTIC", "analytic_legs", "G-THE-ANALYTIC-LEGS-MEASURED"),
     ("SEAL-CERTAINTY", "certainty", "G-CERTAINTY-CENSUS-PER-ARM"),
     ("SEAL-REDUCTIONS", "reductions", "G-E4-TWO-REDUCTIONS"),
     ("SEAL-CONJUGACY", "conjugacy", "G-CONJUGATE-PAIR-MEASURED"),
     ("SEAL-E5", "e5_audit", "G-E5-RECORD-DOES-NOT-MOVE"),
     ("SEAL-BELL", "bell", "G-BELL-DESIDERATA-BOUND"),
+    ("SEAL-BELL-POSITIVE", "bell_wall_positive_leg",
+     "G-BELL-WALL-STATED-IN-THE-PAPER"),
     ("SEAL-CONTROLS", "controls", "G-EVERY-OUTCOME-WORD-EMITTABLE"),
     ("SEAL-MEASURE", "measure_relativity", "G-PROBABILITY-EXACTLY-ONE"),
     ("SEAL-CLASSBIND", "class_binding", "G-CLASS-WORDS-BOUND-TO-PREDICATES"),
@@ -186,7 +198,10 @@ SEALED_PATHS = [
     ("SEAL-VERDICT", "verdict", "G-HEAD-DERIVED-TWICE"),
     ("SEAL-WALLS", "walls", "G-WALLS-SCAN-THE-PAPER"),
     ("SEAL-PAPER-CLAIMS", "paper_claims", "G-PAPER-CLAIMS"),
+    ("SEAL-PAPER-FENCES", "paper_fences", "G-PAPER-FENCES-MATCH-THE-VERDICT"),
     ("SEAL-PAPER-TABLES", "paper_tables", "G-PAPER-TABLES-WITH-HEADERS"),
+    ("SEAL-ELEMENT", "element_of_reality",
+     "G-ELEMENT-OF-REALITY-CONFINED"),
     ("SEAL-PAPER-COVERAGE", "paper_coverage", "G-PAPER-NUMERAL-COVERAGE"),
     ("SEAL-REFERENT", "referent_binding", "G-SENTENCE-REFERENT-BINDING"),
     ("SEAL-POLARITY", "polarity", "G-PAPER-CLAIM-POLARITY"),
@@ -196,13 +211,22 @@ SEALED_PATHS = [
     ("SEAL-MUTANTS", "mutants", "G-FALSIFIER-COVERAGE"),
     ("SEAL-MUTANT-SWEEP", "mutant_sweep", "G-SWEEP-IS-EXECUTION-BOUND"),
     ("SEAL-READSET", "read_set", "G-READS-DECLARED"),
+    ("SEAL-CONSUMERS", "anchor_consumers", "G-ANCHOR-CONSUMERS-RAN"),
+    ("SEAL-ARITHMETIC", "arithmetic", "G-VOUCHING-KEYS-SEALED"),
+    ("SEAL-PYTHON", "python", "G-VOUCHING-KEYS-SEALED"),
     ("SEAL-GATES", "gates", "G-CLOSING-BATTERY-RAN"),
     ("SEAL-CLOSING", "closing_gates", "G-CLOSING-BATTERY-RAN"),
     ("SEAL-TOTALS", "totals", "G-CLOSING-BATTERY-RAN"),
-    ("SEAL-TRANSCRIPT", "transcript_head", "G-TRANSCRIPT-SEALED-WHOLE"),
+    ("SEAL-TRANSCRIPT", "transcript_head",
+     "G-TRANSCRIPT-SEALED-AT-THE-SNAPSHOT"),
 ]
-DECLARED_UNSEALED = ["arithmetic", "python", "seal_manifest",
-                     "payload_sha256_12"]
+# THE ONLY UNSEALED PUBLISHED KEYS.  Both are structural: the manifest is the
+# list of seals itself and the payload digest is taken over the manifest.
+# #119 says SEAL WHAT YOU VOUCH, so `arithmetic` and `python` -- which are
+# testimony about the run -- are sealed at G-VOUCHING-KEYS-SEALED above, and
+# the promotion-time totality check compares this list against the literal
+# two, so growing it publishes nothing.
+DECLARED_UNSEALED = ["seal_manifest", "payload_sha256_12"]
 
 
 class Seal:
@@ -215,6 +239,7 @@ class Seal:
     def take(self, sid, obj):
         path = [p for s, p, _g in SEALED_PATHS if s == sid][0]
         at = [g for s, _p, g in SEALED_PATHS if s == sid][0]
+        # FALSIFIER MUT-SEAL-DROP: one seal is not taken
         if mut("MUT-SEAL-DROP") and sid == "SEAL-COVERAGE":
             return
         d = digest(jpath(obj, path))
@@ -347,18 +372,48 @@ NUMWORDS = ("zero", "one", "two", "three", "four", "five", "six", "seven",
 WORDNUM = dict({w: i for i, w in enumerate(NUMWORDS)},
                twice=2, thirteen=13, fourteen=14, fifteen=15, sixteen=16,
                seventeen=17, eighteen=18, nineteen=19, twenty=20, thirty=30,
-               thirty_six=36, hundred=100, thousand=1000)
+               forty=40, fifty=50, sixty=60, seventy=70, eighty=80, ninety=90,
+               hundred=100, thousand=1000)
+# EVERY English token that can carry a number.  A token in this shape that is
+# not in WORDNUM is a spelled numeral the scan cannot resolve, and the gate
+# fails rather than passing it over in silence (K3 MINOR-4).
+NUMBER_WORD_SHAPES = frozenset(WORDNUM) | frozenset((
+    "hundreds", "thousands", "million", "millions", "billion", "billions",
+    "dozen", "dozens", "score", "scores", "twentyone", "fortytwo",
+    "first", "second", "third", "fourth", "fifth", "sixth", "seventh",
+    "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth",
+    "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth",
+    "nineteenth", "twentieth", "thirtieth", "fortieth", "fiftieth",
+    "sixtieth", "seventieth", "eightieth", "ninetieth", "hundredth",
+    "thousandth"))
+# the ordinals that name a POSITION and never a count: they carry no value to
+# resolve, so they are declared here rather than mapped to a number.
+ORDINAL_WORDS = frozenset((
+    "first", "second", "third", "fourth", "fifth", "sixth", "seventh",
+    "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth",
+    "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth",
+    "nineteenth", "twentieth", "thirtieth", "fortieth", "fiftieth",
+    "sixtieth", "seventieth", "eightieth", "ninetieth", "hundredth",
+    "thousandth"))
 
 
 # ===========================================================================
 # SECTION 2.  PROVENANCE -- THE PINNED SOURCES AND THE VERBATIM ANCHORS
 # ===========================================================================
-# Seven committed files are read as SOURCES at digests frozen in this
+# Six committed files are read as SOURCES at digests frozen in this
 # declaration.  The 1935 paper itself is the SOURCE OF RECORD: it is read as
 # bytes and its digest verified, and the six wall quotes E1-E6 are matched
 # VERBATIM in the pin's own bytes, where the orchestrator transcribed them
 # from the original.  Both legs are published: the quote's presence in the
 # pin is machine-checked, the pin's fidelity to the 1935 print is testimony.
+#
+# E7 -- EPR'S OWN SUFFICIENT-NOT-NECESSARY CAVEAT -- is NOT in the pin.  The
+# pin's six anchors omitted it; the omission was found at adjudication and is
+# repaired here.  Its needle is therefore matched in THIS PAPER'S own bytes,
+# where the repair worker transcribed it from the print (p.777 col.2 running
+# to p.778 col.1, immediately after the criterion E2), so the caveat cannot
+# be dropped from the paper without failing a gate.  The pin's own anchor
+# list is frozen and is not edited; the erratum is carried in the paper.
 
 PIN_REL = "v14/note-epr-pin.md"
 SOURCES = (
@@ -452,6 +507,15 @@ ANCHORS = (
     ("A-E6", PIN_REL, "G-BELL-DESIDERATA-BOUND",
      "we left open the question of whether or not such a description "
      "exists. We believe, however, that such a theory is possible."),
+    # E7, the caveat the pin omitted, transcribed from the print and matched
+    # in the paper's own bytes (p.777 col.2 -> p.778 col.1).
+    ("A-E7", PAPER_REL, "G-EPR-SUFFICIENCY-CAVEAT",
+     "It seems to us that this criterion, while far from exhausting all "
+     "possible ways of recognizing a physical reality, at least provides us "
+     "with one such way, whenever the conditions set down in it occur. "
+     "Regarded not as a necessary, but merely as a sufficient, condition of "
+     "reality, this criterion is in agreement with classical as well as "
+     "quantum-mechanical ideas of reality."),
     ("A-SEAM", "v14/note-sec-adjudication.md",
      "G-PREDICATES-FROZEN-BEFORE-THE-CENSUS",
      "the union changes geometry only on links both sectors jointly own; no "
@@ -468,12 +532,16 @@ ANCHORS = (
      "G-READINGS-PARTITION-MEASURED",
      "phase applied after the coin cannot enter that step's Born weights at "
      "all."),
+    # the two wall sentences.  Their consumer is the POSITIVE leg: they are
+    # matched in v5 paper-14's bytes here AND required to stand in this
+    # paper's own bytes at G-BELL-WALL-STATED-IN-THE-PAPER, so the wall
+    # cannot be satisfied by deleting the section that carries it.
     ("A-BELL-E1", "v5/relativistic-isp-v5-paper14-non-markovianity-and-bell-"
-     "nonlocality.md", "G-BELL-DESIDERATA-BOUND",
+     "nonlocality.md", "G-BELL-WALL-STATED-IN-THE-PAPER",
      "ISP cannot satisfy Bell local causality and still reproduce the "
      "Tsirelson violation. It is Bell-nonlocal."),
     ("A-BELL-E2", "v5/relativistic-isp-v5-paper14-non-markovianity-and-bell-"
-     "nonlocality.md", "G-BELL-DESIDERATA-BOUND",
+     "nonlocality.md", "G-BELL-WALL-STATED-IN-THE-PAPER",
      "ISP is no-signalling and parameter-independent; there is no "
      "superluminal causal influence in its dynamics."),
     ("A-AID", "v14/paper-33-aid.md", "G-BLOCKS-AGREE-WITH-FAC",
@@ -481,12 +549,29 @@ ANCHORS = (
 )
 
 
-def provenance(R):
+CONSUMED = {}
+
+
+def consume(gate, R):
+    """THE ANCHOR-CONSUMER BINDING (K3 MINOR-10).  An anchor's `consumed_by`
+    field is not decoration: the gate that names it calls this, the call is
+    recorded, and the closing battery requires every anchor to have been
+    consumed at a gate that actually ran.  Returns True only when every
+    anchor naming this gate was found in its source's bytes."""
+    rows = [r for r in R["verbatim_anchors"]["rows"]
+            if r["consumed_by"] == gate]
+    CONSUMED.setdefault(gate, set()).update(r["anchor"] for r in rows)
+    return bool(rows) and all(r["found"] for r in rows)
+
+
+def provenance(R, paper_text=""):
     say("SECTION 2.  PROVENANCE")
     rows, texts = [], {}
     for rel, want, why in SOURCES:
         raw = read_bytes(rel)
         got = hashlib.sha256(raw).hexdigest()[:12]
+        # FALSIFIER MUT-SOURCE-DIGEST: a source's digest is reported as
+        # something else
         got = pick("MUT-SOURCE-DIGEST", got, "000000000000") \
             if rel == PIN_REL else got
         rows.append({"path": rel, "sha256_12": got, "declared": want,
@@ -538,28 +623,87 @@ def provenance(R):
     SEAL.take("SEAL-SCHEMA", R)
     SEAL.take("SEAL-PROVENANCE", R)
 
+    # the object under test is an anchor source too: E7 is matched in the
+    # paper's own bytes, which is what makes the caveat undeletable.
+    texts[PAPER_REL] = paper_text
     arows = []
     for name, rel, gate, needle in ANCHORS:
         hay = texts.get(rel)
+        # FALSIFIER MUT-ANCHOR-E2: the reality criterion's needle is altered by
+        # one word
         needle_used = pick("MUT-ANCHOR-E2", needle,
                            needle.replace("certainty", "probability")) \
             if name == "A-E2" else needle
+        # FALSIFIER MUT-CONSUMER-PHANTOM: an anchor's consumer is re-pointed
+        # at a gate that never ran, leaving its real consumer's other anchor
+        # in place so the consuming gate still passes
+        gate_used = pick("MUT-CONSUMER-PHANTOM", gate,
+                         "G-A-GATE-THAT-NEVER-RAN") if name == "A-SEAM" \
+            else gate
         found = bool(hay is not None and match_needle(hay, needle_used))
-        arows.append({"anchor": name, "source": rel, "consumed_by": gate,
+        arows.append({"anchor": name, "source": rel, "consumed_by": gate_used,
                       "found": found, "chars": len(canon(needle_used))})
     miss = [r["anchor"] for r in arows if not r["found"]]
     R["verbatim_anchors"] = {
         "rows": arows, "count": reg(len(arows)), "missing": miss,
         "floor_chars": NEEDLE_FLOOR,
-        "note": "each anchor names the gate that consumes it; the quote side "
-                "is matched, not merely the source side"}
+        "note": "each anchor names the gate that consumes it, and the naming "
+                "is load-bearing: that gate calls consume() and cannot pass "
+                "without it, and G-ANCHOR-CONSUMERS-RAN requires every named "
+                "consumer to be a gate this run actually ran"}
     LD.gate("G-VERBATIM-ANCHORS-IN-SOURCE",
-            "THE WALL QUOTES ARE MATCHED IN THEIR SOURCES' BYTES.  Fourteen "
+            "THE WALL QUOTES ARE MATCHED IN THEIR SOURCES' BYTES.  %d "
             "anchors, each above the #62 length floor, each naming the gate "
-            "that consumes it; the six EPR quotes are matched in the pin, "
-            "where they were transcribed from the 1935 print",
+            "that consumes it; the six EPR quotes E1-E6 are matched in the "
+            "pin, where they were transcribed from the 1935 print, and E7 -- "
+            "the caveat the pin omitted -- is matched in this paper's own "
+            "bytes" % len(ANCHORS),
             not miss, "anchors %d, missing %s" % (len(arows), miss or "none"))
     SEAL.take("SEAL-VERBATIM", R)
+
+    e7 = [r for r in arows if r["anchor"] == "A-E7"][0]
+    # the caveat must be USED, not merely quoted: the sentence that draws the
+    # consequence is required in the paper too, so the quotation cannot be
+    # decorative.
+    use = ("the criterion is silent where its conditions do not occur, and "
+           "so is this unit")
+    ptext = paper_text
+    # FALSIFIER MUT-CAVEAT-UNUSED: the sentence that puts EPR's caveat to
+    # work is deleted from the paper, leaving the quotation decorative
+    if mut("MUT-CAVEAT-UNUSED"):
+        ptext = ptext.replace("and so is this unit", "and so is the corpus")
+    used = bool(ptext) and canon(use) in canon(ptext)
+    R["sufficiency_caveat"] = {
+        "anchor": "A-E7",
+        "the_consequence_drawn_in_the_paper": use,
+        "consequence_stated": used,
+        "where_in_the_print": "p.777 col.2 running to p.778 col.1, "
+                              "immediately after the criterion anchored as "
+                              "E2",
+        "matched_in": e7["source"], "found": e7["found"],
+        "chars": reg(e7["chars"]),
+        "why_it_binds": "EPR's criterion is explicitly SUFFICIENT and not "
+                        "necessary, and explicitly applies whenever its "
+                        "conditions occur; so its non-instantiation at the "
+                        "pair localization decides nothing about what is or "
+                        "is not there, and this unit says so",
+        "pin_erratum": "the pin's six anchors omit this passage; the omission "
+                       "was found at adjudication.  The pin is frozen and is "
+                       "not edited: the caveat is restored here, matched in "
+                       "the paper's own bytes, and the erratum is carried in "
+                       "the paper's provenance section"}
+    LD.gate("G-EPR-SUFFICIENCY-CAVEAT",
+            "EPR'S OWN SUFFICIENT-NOT-NECESSARY CAVEAT IS CARRIED, VERBATIM, "
+            "IN THIS PAPER.  The passage the pin omitted is transcribed from "
+            "the print and matched in the paper's bytes, so the unit cannot "
+            "report a non-instantiation as a verdict against EPR while "
+            "leaving out the sentence in which they disclaim exactly that.  "
+            "The quotation is required to be USED: the sentence that draws "
+            "the consequence must stand in the paper as well",
+            consume("G-EPR-SUFFICIENCY-CAVEAT", R) and used,
+            "anchor A-E7 found in %s: %s, %d chars; consequence stated %s"
+            % (e7["source"], e7["found"], e7["chars"], used))
+    SEAL.take("SEAL-CAVEAT", R)
 
     pin = texts[PIN_REL]
     parsed = []
@@ -567,6 +711,8 @@ def provenance(R):
         m = re.match(r"^- (EPR-[A-Z-]+(?:<object>)?)(?: |$)", line.strip())
         if m:
             parsed.append(m.group(1))
+    # FALSIFIER MUT-OUTCOME-TYPED: the outcome vocabulary is typed instead of
+    # parsed
     parsed = pick("MUT-OUTCOME-TYPED", sorted(set(parsed)),
                   ["EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE"])
     fams = []
@@ -640,6 +786,8 @@ CELL_PAIR = {k: codivision_pair(c) for k, c in enumerate(CELLS)}
 def link_set():
     """the declared link directions; a parameter, so a synthetic arena runs
     through the same predicates (the control arm of section 14)."""
+    # FALSIFIER MUT-LINKGRAPH: the undeclared direction is declared, so the
+    # link graph is complete
     return pick("MUT-LINKGRAPH", I7_LINKS, I7_LINKS + (CLASS_DIR["ANT"],))
 
 
@@ -675,6 +823,7 @@ def arena_measure(R):
     for k in range(DIM):
         for a in CELL_PAIR[k]:
             per_actor[a] += 1
+    # FALSIFIER MUT-CARRIER: the cell-to-pair bijection is asserted false
     bij = pick("MUT-CARRIER", len(pairs) == DIM and two_actor == DIM,
                False)
     R["arena"] = {
@@ -898,6 +1047,7 @@ def build_corpus():
     for sch in scheds:
         corp.append(("C3", history_of([p for p, _s in sch],
                                       [s for _p, s in sch])))
+    # FALSIFIER MUT-CORPUS-CAP: the corpus is silently capped
     if mut("MUT-CORPUS-CAP"):
         corp = corp[:5000]
     return corp, strict, flatq, scheds, smeta
@@ -911,6 +1061,8 @@ def corpus_measure(R, fac):
     nf = [record_field(h) for (_t, h) in corp]
     sc = [len(set(site_rows(n))) == 1 for n in nf]
     sc_ok = sum(1 for b in sc if b)
+    # FALSIFIER MUT-SITECONST: one history's record is reported as not
+    # site-constant
     if mut("MUT-SITECONST"):
         sc_ok -= 1
     rows = [site_rows(n)[0] for n in nf]
@@ -1023,6 +1175,8 @@ def leg_geometry(part, links=None):
 
 def leg_history(part, H):
     """LEG-2: every division event is a union of blocks."""
+    # FALSIFIER MUT-BLOCKS-DROP: the history leg is dropped, so coarse
+    # decompositions survive
     if mut("MUT-BLOCKS-DROP"):
         return True
     for F in H:
@@ -1088,8 +1242,9 @@ def blocks_measure(R, corp, fac):
             "resulting per-history admissible sets reproduce FAC's "
             "cardinality distribution, its whole inventory and its four "
             "named exceptions at their own corpus indices, each compared "
-            "individually",
-            not bad and not rowbad,
+            "individually; what an actor IS here is AID's own sentence, "
+            "matched verbatim as A-AID",
+            not bad and not rowbad and consume("G-BLOCKS-AGREE-WITH-FAC", R),
             "cross-checks %d, disagreements %s; exception rows %d, "
             "disagreements %s"
             % (len(checks), bad or "none", len(nonuniq), rowbad or "none"))
@@ -1160,6 +1315,7 @@ def far_region(B, links=None):
 def sep_link_disjoint(A, B, links=None):
     """EPR'S OWN NO-DISTURBANCE CLAUSE, per SEC's SEAM-CONFINED ruling: the
     conditioning region shares no link with B."""
+    # FALSIFIER MUT-SEPARATION-LEAK: link-disjointness is granted to every pair
     if mut("MUT-SEPARATION-LEAK"):
         return True
     return all(not linked(a, b, links) for a in A for b in B)
@@ -1195,6 +1351,8 @@ def shadow_menu(row, psi_site, order="GD"):
     """D-SHADOW's content at one site: the Born menu k_1(l|x) = q/M as exact
     rationals, or the declared empty value where the site carries no mass.
     The record enters ONLY through w^{n mod 3}: that is the ceiling."""
+    # FALSIFIER MUT-SHADOW-INJECTIVE: the shadow is allowed to read the count
+    # rather than its residue
     if mut("MUT-SHADOW-INJECTIVE"):
         return ("RAW",) + tuple(row)
     key = (tuple(row), tuple(psi_site), order)
@@ -1238,6 +1396,8 @@ def fiber(rows, keyf, row):
     fibre, and the row itself is always in its own."""
     k = keyf(row)
     out = tuple(r for r in rows if keyf(r) == k)
+    # FALSIFIER MUT-FIBER-ROWS: the conditioning fibre is truncated to its own
+    # row, so every description carries everything
     if mut("MUT-FIBER-ROWS"):
         out = out[:1]
     return out
@@ -1246,6 +1406,8 @@ def fiber(rows, keyf, row):
 def epr_reality_at(qdir, fib):
     """EPR-REALITY: the quantity's value is the same at every record the
     conditioning data admits -- prediction with certainty."""
+    # FALSIFIER MUT-CERT-CONSTANT-TRUE: the certainty predicate is made
+    # constantly true
     if mut("MUT-CERT-CONSTANT-TRUE"):
         return True
     return len({r[qdir] for r in fib}) == 1
@@ -1254,6 +1416,8 @@ def epr_reality_at(qdir, fib):
 def epr_counterpart_at(qdir, own):
     """THE COUNTERPART CLAUSE: the description's own content at the block
     determines the value."""
+    # FALSIFIER MUT-COUNTERPART-BLIND: the counterpart predicate is made
+    # constantly true
     if mut("MUT-COUNTERPART-BLIND"):
         return True
     return len({r[qdir] for r in own}) == 1
@@ -1310,10 +1474,13 @@ def freeze_predicates(R):
             "found by AST in this file, digested individually and jointly, "
             "and their upper-case free names are required to contain no "
             "census product, so no predicate can consult the answer it "
-            "decides; every predicate is then exercised on every argument "
+            "decides; ALL TWELVE are then exercised on every argument "
             "combination of a declared probe set and required to return a "
-            "boolean or a declared value at each",
-            not missing and not leaks and tot["failures"] == 0,
+            "boolean or a declared value at each.  The criterion this gate "
+            "freezes is EPR's own, matched verbatim in the pin as A-E2, and "
+            "the no-disturbance clause is SEC's ruling, matched as A-SEAM",
+            not missing and not leaks and tot["failures"] == 0
+            and consume("G-PREDICATES-FROZEN-BEFORE-THE-CENSUS", R),
             "predicates %d, missing %s, leaks %s, totality probes %d "
             "failures %d, combined digest %s"
             % (len(PREDICATE_NAMES), missing or "none", leaks or "none",
@@ -1351,6 +1518,9 @@ def predicate_totality():
             probes += 1
             if not isinstance(record_menu(row), tuple):
                 failures += 1
+            probes += 1
+            if not isinstance(data_shadow(row, S, ((1, 0),) * 3), tuple):
+                failures += 1
     for row in testrows:
         fb = fiber(testrows, lambda r: r[0] % 3, row)
         for d in range(3):
@@ -1359,6 +1529,7 @@ def predicate_totality():
                 failures += 1
             if not isinstance(epr_counterpart_at(d, fb), bool):
                 failures += 1
+    # FALSIFIER MUT-TOTALITY: a predicate is declared partial
     if mut("MUT-TOTALITY"):
         failures += 1
     return {"probes": probes, "failures": failures}
@@ -1392,6 +1563,9 @@ def disturbance_census():
             ib = loc_pair(B)
             fa = frozenset(A)
             for T in ALL_TRIPLES:
+                # FALSIFIER MUT-DISTURBANCE-CONFINEMENT: the confinement
+                # premise is dropped, so unconfined events are counted as
+                # confined ones
                 inA = True if mut("MUT-DISTURBANCE-CONFINEMENT") else T <= fa
                 touches = any(CELL_PAIR[k] <= T for k in ib)
                 if inA:
@@ -1538,18 +1712,45 @@ def separation_measure(R, corp, adm):
 # ===========================================================================
 # D-RECORD is the theory's own state: the committed history and the record
 # field it writes.  D-SHADOW is the declared Born-menu coarse reading --
-# paper-20's Reading A, the wave-function analogue.  The shadow's ceiling is
-# a THEOREM about the coin: D(x) = diag(w^{n_l(x)}) depends on the record
-# only through n mod 3, so no state whatever can make the menu tell two
-# records with equal residues apart.  It is machine-checked over a declared
-# state family and the primary state is required to attain the sweep's
-# maximum, so the shadow is audited at its BEST case.
+# paper-20's Reading A, the wave-function analogue.
+#
+# THE SHADOW CARRIES NOTHING, AT EVERY STATE, BY THEOREM.  The audit does not
+# rest on which state is declared, and the state sweep is a WITNESS of a
+# proved statement rather than its ground.  The proof has three legs, all of
+# them exact and all of them state-free:
+#
+#   L1  w^{(n + c) mod 3} = w^c * w^{n mod 3} in Z[w] -- checked at all nine
+#       (n, c) residue pairs.  With the coin's linearity this says that
+#       shifting every count at a site by one c multiplies all three
+#       post-coin amplitudes by the single phase w^c, AT EVERY STATE.
+#   L2  |w^c z| = |z| -- absq(w^c * z) = absq(z), checked exactly over a
+#       declared probe grid of Z[w].  So the Born modulus cannot see that
+#       phase, and the menu partition COARSENS the residue partition at every
+#       state whatever.
+#   L3  the residue partition itself carries nothing: no residue class of
+#       this corpus is a single record, and no residue class is constant in
+#       any direction -- measured over the committed records.
+#
+# L1 + L2 + L3: at EVERY state, the shadow's own fibre at a block contains a
+# whole residue class, which fixes no direction; so no certified element is
+# carried, at any state.  The declared 64-state family then witnesses it, and
+# the sweep over paper-20's own 37-value alphabet -- 50,653 states, where the
+# ceiling of 9 menus is attained at 34,992 of them -- is published as the
+# disclosure it is: the declared family caps at 4 menus, the parent's own
+# alphabet reaches the ceiling, and the shadow carries 0 at both.
 
 PSI_ALPHABET = ((0, 0), (1, 0), (0, 1), (-1, -1))
 PSI_DECLARED = (("PSI-FLAT", ((1, 0), (1, 0), (1, 0))),
                 ("PSI-BASIS", ((1, 0), (0, 0), (0, 0))),
                 ("PSI-W", ((1, 0), (0, 1), (-1, -1))))
 PSI_PRIMARY = PSI_DECLARED[0][1]
+# paper-20's own discriminating alphabet: the elements of (1/3)Z[w] of
+# modulus at most one, carried here as Z[w] elements of norm at most nine
+# (the menu is invariant under a global scaling of the state vector).
+PSI_PARENT_ALPHABET = tuple(sorted(
+    (a, b) for a in range(-4, 5) for b in range(-4, 5)
+    if a * a - a * b + b * b <= 9))
+ZW_PROBE_GRID = tuple((a, b) for a in range(-6, 7) for b in range(-6, 7))
 
 READINGS = ("READ-RECORD", "READ-BORN-GD", "READ-BORN-DG",
             "READ-RECORD-MENU", "READ-CURVATURE")
@@ -1574,6 +1775,164 @@ def residue_class(row):
     """the site's residue vector modulo the uniform shift the Born modulus
     cannot see (a global phase on the site's three amplitudes)."""
     return min(tuple((row[i] - c) % 3 for i in range(3)) for c in range(3))
+
+
+def menu_key(triple, pw):
+    """the Born menu as a PROPORTIONALITY CLASS of exact integer weights --
+    the same partition shadow_menu's rationals induce, computed from the
+    site's residue triple and the state's pre-multiplied phases."""
+    J = []
+    for i in range(3):
+        a = b = 0
+        for j in range(3):
+            g = GN[i][j]
+            z = pw[j][triple[j]]
+            a += g * z[0]
+            b += g * z[1]
+        J.append(a * a - a * b + b * b)
+    g = J[0]
+    for v in J[1:]:
+        while v:
+            g, v = v, g % v
+        g = abs(g)
+    return ("EMPTY-MENU",) if g == 0 else tuple(v // g for v in J)
+
+
+def shadow_theorem(R, uniq, classes):
+    """THE STATE-FREE PROOF, MACHINE-CHECKED, plus its two witnesses."""
+    # L1: the coin's dependence on a count is w^{n mod 3}, and a uniform
+    # shift of the three counts factors out as one phase -- nine probes.
+    l1_probes = l1_bad = 0
+    for n in range(3):
+        for c in range(3):
+            l1_probes += 1
+            if WPOW[(n + c) % 3] != zmul(WPOW[c], WPOW[n % 3]):
+                l1_bad += 1
+    # L2: the Born modulus cannot see that phase -- an exact identity in
+    # Z[w], checked over a declared probe grid.
+    l2_probes = l2_bad = 0
+    for z in ZW_PROBE_GRID:
+        for c in range(3):
+            l2_probes += 1
+            if absq(zmul(WPOW[c], z)) != absq(z):
+                l2_bad += 1
+    # L3: the residue partition carries nothing.  A class that were a single
+    # record, or constant in some direction, would let the shadow fix a value
+    # -- neither happens, and this is what makes L1+L2 bite.
+    singleton = [k for k, v in sorted(classes.items()) if len(v) == 1]
+    dconst = [(str(k), d) for k, v in sorted(classes.items())
+              for d in range(3) if len({z[d] for z in v}) == 1]
+    # the residue classes ARE the global-shift orbits: measured, both ways,
+    # over every ordered pair of committed records.
+    orb_probes = orb_bad = 0
+    for a in uniq:
+        for b in uniq:
+            orb_probes += 1
+            shifted = any(all((a[j] + c) % 3 == b[j] % 3 for j in range(3))
+                          for c in range(3))
+            if shifted != (residue_class(a) == residue_class(b)):
+                orb_bad += 1
+    # FALSIFIER MUT-RESIDUE-CARRIES: the residue partition is reported as
+    # carrying something, so the theorem's third leg is asserted rather than
+    # measured
+    if mut("MUT-RESIDUE-CARRIES"):
+        singleton = singleton + ["A-PLANTED-SINGLETON-CLASS"]
+    l3_holds = not singleton and not dconst and orb_bad == 0
+    # WITNESS 1: the declared 64-state family, where the proportionality key
+    # is checked to induce exactly shadow_menu's own partition.
+    key_probes = key_bad = 0
+    for ps in product(PSI_ALPHABET, repeat=3):
+        pw = [[zmul(ps[j], WPOW[k]) for k in range(3)] for j in range(3)]
+        direct, viakey = {}, {}
+        for r in uniq:
+            direct.setdefault(shadow_menu(r, ps, "GD"), []).append(r)
+            viakey.setdefault(menu_key(tuple(r[j] % 3 for j in range(3)), pw),
+                              []).append(r)
+        key_probes += 1
+        if (sorted(sorted(v) for v in direct.values())
+                != sorted(sorted(v) for v in viakey.values())):
+            key_bad += 1
+    # WITNESS 2: the parent's own 37-value alphabet, swept whole.  At every
+    # state the menu partition is computed and asked whether ANY of its cells
+    # fixes a direction -- which is what "the shadow carries an element"
+    # would need.  The distribution of distinct menus is published as the
+    # disclosure that the declared family is not the widest one available.
+    triples = sorted({tuple(r[j] % 3 for j in range(3)) for r in uniq})
+    tindex = {t: i for i, t in enumerate(triples)}
+    rowtri = [tindex[tuple(r[j] % 3 for j in range(3))] for r in uniq]
+    sweep, best, bestpsi, carry, carry_states = Counter(), 0, None, 0, 0
+    for ps in product(PSI_PARENT_ALPHABET, repeat=3):
+        pw = [[zmul(ps[j], WPOW[k]) for k in range(3)] for j in range(3)]
+        keys = [menu_key(t, pw) for t in triples]
+        cells = {}
+        for ri, ti in enumerate(rowtri):
+            cells.setdefault(keys[ti], []).append(uniq[ri])
+        sweep[len(cells)] += 1
+        if len(cells) > best:
+            best, bestpsi = len(cells), ps
+        hit = sum(1 for v in cells.values() for d in range(3)
+                  if len({z[d] for z in v}) == 1)
+        carry += hit
+        carry_states += bool(hit)
+    R["shadow_theorem"] = {
+        "statement": "at EVERY state whatever, the Born-menu partition "
+                     "coarsens the residue partition, and no residue class "
+                     "of this corpus is a single record or is constant in "
+                     "any direction; so the shadow carries NONE of the "
+                     "certified elements at every state, by theorem",
+        "L1_phase_factors_out_probes": reg(l1_probes),
+        "L1_failures": reg(l1_bad),
+        "L2_the_modulus_is_phase_blind_probes": reg(l2_probes),
+        "L2_failures": reg(l2_bad),
+        "L3_residue_classes": reg(len(classes)),
+        "L3_singleton_classes": reg(len(singleton)),
+        "L3_direction_constant_classes": reg(len(dconst)),
+        "L3_shift_orbit_probes": reg(orb_probes),
+        "L3_shift_orbit_disagreements": reg(orb_bad),
+        "witness_declared_family_states": reg(len(PSI_ALPHABET) ** 3),
+        "witness_key_agrees_with_shadow_menu_at": reg(key_probes - key_bad),
+        "witness_key_disagreements": reg(key_bad),
+        "parent_alphabet_size": reg(len(PSI_PARENT_ALPHABET)),
+        "parent_alphabet_states": reg(len(PSI_PARENT_ALPHABET) ** 3),
+        "parent_alphabet_distinct_menu_counts": {
+            str(k): reg(v) for k, v in sorted(sweep.items())},
+        "parent_alphabet_best_distinct_menus": reg(best),
+        "parent_alphabet_states_attaining_the_ceiling": reg(sweep[best]),
+        "parent_alphabet_states_carrying_a_direction": reg(carry_states),
+        "parent_alphabet_menu_cells_fixing_a_direction": reg(carry),
+        "an_example_state_attaining_the_ceiling":
+            [list(z) for z in bestpsi],
+        "the_declared_family_is_not_the_widest": "the declared family "
+            "{0, 1, w, w^2}^3 separates at most 4 menus; the parent's own "
+            "alphabet reaches the ceiling of 9.  The carried count is 0 at "
+            "both, which is the theorem and not a property of the family",
+        "window": "COUNTING-ONLY; both state families are declared with "
+                  "their bounds (E-24)"}
+    ok = (l1_bad == 0 and l2_bad == 0 and l3_holds and key_bad == 0
+          and carry == 0 and best == len(classes))
+    LD.gate("G-SHADOW-CARRIES-NOTHING-AT-EVERY-STATE",
+            "THE SHADOW'S ZERO IS A THEOREM, NOT A SWEEP RESULT.  Two exact "
+            "ring identities -- the count enters the coin as w^{n mod 3} and "
+            "a uniform shift factors out as one phase, and the Born modulus "
+            "cannot see that phase -- put every Born-menu partition, at every "
+            "state whatever, below the residue partition; and the residue "
+            "partition is measured to carry nothing, with no class a single "
+            "record and none constant in any direction.  The declared "
+            "64-state family witnesses it and the parent's whole 37-value "
+            "alphabet is swept as a cross-check: at none of its 50,653 "
+            "states does any menu cell fix a direction",
+            ok,
+            "L1 probes %d failures %d; L2 probes %d failures %d; residue "
+            "classes %d, singletons %d, direction-constant %d, shift-orbit "
+            "disagreements %d of %d; key witness disagreements %d of %d; "
+            "parent alphabet %d states, best %d menus at %d states, menu "
+            "cells fixing a direction %d"
+            % (l1_probes, l1_bad, l2_probes, l2_bad, len(classes),
+               len(singleton), len(dconst), orb_bad, orb_probes, key_bad,
+               key_probes, len(PSI_PARENT_ALPHABET) ** 3, best, sweep[best],
+               carry))
+    SEAL.take("SEAL-SHADOW-THEOREM", R)
+    return best, sweep
 
 
 def descriptions_measure(R, rows):
@@ -1629,23 +1988,33 @@ def descriptions_measure(R, rows):
         "states_separating_two_records_of_one_residue_class": reg(seps),
         "ceiling": "the coin reads w^{n mod 3}, so two committed records "
                    "with equal residues have the SAME menu at every state: "
-                   "measured at 0 separations over the whole sweep",
+                   "proved state-free at G-SHADOW-CARRIES-NOTHING-AT-EVERY-"
+                   "STATE and witnessed here at 0 separations over the "
+                   "declared family's whole sweep",
+        "what_this_sweep_is": "a WITNESS of the theorem below, not its "
+                              "ground: the audit does not depend on which "
+                              "state is declared, and the declared family is "
+                              "reported with its own ceiling (4 menus) "
+                              "beside the parent alphabet's (9)",
         "window": "COUNTING-ONLY; the state family is declared and its "
                   "bounds published (E-24)"}
     LD.gate("G-SHADOW-CEILING",
-            "THE SHADOW'S BLINDNESS IS A THEOREM ABOUT THE COIN, AND IT IS "
-            "MEASURED AT EVERY STATE OF A DECLARED FAMILY.  Sixty-four "
-            "states are swept; not one separates two committed records that "
-            "share a residue class, so the shadow's ceiling is the residue "
-            "class and no state can raise it.  The primary state is required "
-            "to attain the sweep's maximum, so the audit gives the shadow "
-            "its best case rather than a strawman",
-            seps == 0 and len(prim) == best and len(classes) < len(uniq),
+            "THE DECLARED STATE FAMILY WITNESSES THE THEOREM, AT ITS OWN "
+            "BEST CASE.  Sixty-four states are swept; not one separates two "
+            "committed records that share a residue class.  The primary "
+            "state is required to attain this family's maximum, so the audit "
+            "gives the shadow the best case the declared family has -- and "
+            "the next gate shows the result does not depend on that at all.  "
+            "The reading audited is paper-20's own, matched verbatim as "
+            "A-READING-A, and the residue the walk consumes as A-MOD3",
+            seps == 0 and len(prim) == best and len(classes) < len(uniq)
+            and consume("G-SHADOW-CEILING", R),
             "records %d, residue classes %d, sweep %d states, best %d, "
             "primary %d, separations %d"
             % (len(uniq), len(classes), len(PSI_ALPHABET) ** 3, best,
                len(prim), seps))
     SEAL.take("SEAL-DESCRIPTIONS", R)
+    shadow_theorem(R, uniq, classes)
 
     rfib, rrows = {}, {}
     for rd in READINGS:
@@ -1664,6 +2033,8 @@ def descriptions_measure(R, rows):
             if a < b and not ref[(a, b)] and not ref[(b, a)]]
     R["readings"] = {
         "declared": list(READINGS),
+        "count": reg(len(READINGS)),
+        "ordered_pairs_compared": reg(len(READINGS) ** 2),
         "rows": [rrows[rd] for rd in READINGS],
         "refinement_matrix": {"%s|%s" % (a, b): ref[(a, b)]
                               for a in READINGS for b in READINGS},
@@ -1679,9 +2050,12 @@ def descriptions_measure(R, rows):
             "directions for all twenty-five ordered pairs, and the pairs "
             "where neither refines the other are the corpus's conjugate "
             "pairs.  paper-20's other coin order is measured record-blind: "
-            "one cell, every record in it",
+            "one cell, every record in it -- which is that parent's own "
+            "sentence, matched verbatim as A-DGBLIND, beside its record "
+            "menu A-READING-B",
             len(conj) > 0 and rrows["READ-BORN-DG"]["cells"] == 1
-            and ref[("READ-RECORD", "READ-BORN-GD")],
+            and ref[("READ-RECORD", "READ-BORN-GD")]
+            and consume("G-READINGS-PARTITION-MEASURED", R),
             "readings %d, conjugate pairs %d, DG cells %d"
             % (len(READINGS), len(conj), rrows["READ-BORN-DG"]["cells"]))
     SEAL.take("SEAL-READINGS", R)
@@ -1737,8 +2111,124 @@ def pair_specs(locf, septest):
     return out
 
 
-def certainty_measure(R, corp, adm, uniq, tot):
+ARENA_BUILDERS = ("build_corpus", "record_field", "codivision", "history_of",
+                  "window_schedules", "leg_history", "leg_geometry",
+                  "signature_blocks", "round_vec", "strict_triples")
+READING_NAMES_IN_SOURCE = ("READINGS", "reading_value", "shadow_menu",
+                           "record_menu", "curvature_of", "rd")
+
+
+def analytic_legs(R, uniq, classes):
+    """WHAT THE CENSUS CANNOT PUT AT RISK.  Three columns of the census are
+    settled before it runs, and this measures exactly how far that goes: the
+    record's counterpart zero is the counterpart predicate's own DOMAIN, the
+    both-complete branch is closed by the residue ceiling at every declared
+    state, and the E5 zero is forced because nothing that builds a history
+    takes a reading.  All three are disclosed rather than left to be read off
+    as findings."""
+    specs = qs_in_db = qs_in_da = 0
+    for _locname, locf in LOCALIZATIONS:
+        for _sepname, septest in SEPARATIONS:
+            for _nm, spec in sorted(pair_specs(locf, septest).items()):
+                for (da, db, qs) in spec:
+                    specs += 1
+                    # FALSIFIER MUT-SPEC-DOMAIN: the containment that makes
+                    # the record's counterpart zero analytic is left
+                    # unmeasured
+                    if mut("MUT-SPEC-DOMAIN"):
+                        continue
+                    qs_in_db += set(qs) <= set(db)
+                    qs_in_da += set(qs) <= set(da)
+    # the both-complete branch: at every declared state, count the (record,
+    # direction) pairs the shadow's own fibre FAILS to fix.  A state at which
+    # this reached zero would open EPR-BOTH-COMPLETE; the minimum is the
+    # measurement, and by the theorem above it is 108 at every state.
+    permin = None
+    for ps in product(PSI_ALPHABET, repeat=3):
+        cells = {}
+        for r in uniq:
+            cells.setdefault(shadow_menu(r, ps, "GD"), []).append(r)
+        fails = sum(1 for v in cells.values() for _r in v for d in range(3)
+                    if len({z[d] for z in v}) > 1)
+        permin = fails if permin is None else min(permin, fails)
+    src = open(SELF, "r", encoding="utf-8").read()
+    tree = ast.parse(src)
+    leak = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.FunctionDef) and node.name in ARENA_BUILDERS:
+            for sub in ast.walk(node):
+                if isinstance(sub, ast.Name) and \
+                        sub.id in READING_NAMES_IN_SOURCE:
+                    leak.append("%s/%s" % (node.name, sub.id))
+                if isinstance(sub, ast.arg) and \
+                        sub.arg in READING_NAMES_IN_SOURCE:
+                    leak.append("%s/arg:%s" % (node.name, sub.arg))
+    R["analytic_legs"] = {
+        "declared_specs": reg(specs),
+        "specs_where_the_quantity_lies_in_the_block_s_own_directions":
+            reg(qs_in_db),
+        "specs_where_the_quantity_lies_in_the_conditioner_s_directions":
+            reg(qs_in_da),
+        "RECORD_COMPLETE_is_analytic":
+            "a censused quantity of a block is BY CONSTRUCTION one of the "
+            "directions the block's own localization carries, so D-RECORD's "
+            "content at the block always fixes the value being predicted: "
+            "without_counterpart_in_D_RECORD is identically zero on any "
+            "arena whatever, and only the punctured control of section 14 -- "
+            "which deletes a direction from the description by hand -- can "
+            "move it",
+        "CERTIFICATION_is_total_for_the_same_reason":
+            "the same containment holds against the CONDITIONER's directions, "
+            "so certified equals quantities on every arm; the two equal "
+            "columns of the census table are this containment, not a finding",
+        "BOTH_COMPLETE_is_closed_before_the_run":
+            "the shadow's own fibre fails to fix a direction at every "
+            "(record, direction) pair of every declared state; the minimum "
+            "over the declared family is published below and is nonzero, so "
+            "no declared state could have returned EPR-BOTH-COMPLETE here",
+        "minimum_unfixed_pairs_over_the_declared_states": reg(permin),
+        "records": reg(len(uniq)), "residue_classes": reg(len(classes)),
+        "the_reading_has_no_path_into_the_history":
+            "a reading in this unit is a FUNCTION ON RECORDS, not an "
+            "operation on a history: no function that builds the arena, the "
+            "corpus, the record field or the blocks takes a reading or names "
+            "one, which is checked by AST below.  The E5 zero is therefore "
+            "forced by the formalisation and would be returned on any arena; "
+            "what the declared falsifier establishes is that no leak was "
+            "introduced by accident, not that the arena forbids one",
+        "arena_builders_scanned": list(ARENA_BUILDERS),
+        "reading_names_found_in_them": sorted(set(leak)),
+        "the_live_selector": "two-way at this corpus: the head law's "
+                             "record-incomplete branch cannot fire on "
+                             "unmutated data and its both-complete branch is "
+                             "closed by the ceiling, so what the census "
+                             "measures is one column -- the shadow's",
+        "window": "COUNTING-ONLY over the declared spec list and the declared "
+                  "state family (E-24)"}
+    LD.gate("G-THE-ANALYTIC-LEGS-MEASURED",
+            "WHAT THE CENSUS COULD NOT HAVE FOUND IS MEASURED AND PUBLISHED "
+            "BEFORE IT RUNS (#299/#319).  Every declared spec is checked for "
+            "the containment that makes the record's counterpart zero "
+            "analytic and certification total; the both-complete branch is "
+            "shown closed at every declared state by the residue ceiling; and "
+            "the arena's own constructors are scanned by AST for any mention "
+            "of a reading, because that absence is what forces the E5 zero.  "
+            "The selector this unit really turns on is therefore two-way, and "
+            "the paper says so",
+            specs > 0 and qs_in_db == specs and qs_in_da == specs
+            and permin > 0 and not leak,
+            "specs %d, quantity in the block's own directions %d, in the "
+            "conditioner's %d; minimum unfixed (record, direction) pairs over "
+            "the declared states %d; arena builders %d, reading names found "
+            "in them %s"
+            % (specs, qs_in_db, qs_in_da, permin, len(ARENA_BUILDERS),
+               sorted(set(leak)) or "none"))
+    SEAL.take("SEAL-ANALYTIC", R)
+
+
+def certainty_measure(R, corp, adm, uniq, classes, tot):
     say("SECTION 9.  MEASUREMENT 2 -- THE CERTAINTY-ELEMENT CENSUS")
+    analytic_legs(R, uniq, classes)
     FR = {}
     for dd in ((), (0,), (1,), (2,), (0, 1), (0, 2), (1, 2), (0, 1, 2)):
         for r in uniq:
@@ -1823,10 +2313,14 @@ def certainty_measure(R, corp, adm, uniq, tot):
             "EVERY ARM IS CENSUSED QUANTITY BY QUANTITY THROUGH THE FROZEN "
             "PREDICATES (#87).  EPR's completeness condition -- every "
             "element of the physical reality must have a counterpart in the "
-            "physical theory -- is applied to both descriptions on all four "
-            "arms; the record certifies and carries, the shadow certifies "
-            "nothing and carries none of the record's",
-            prim["premise_instances"] == 0 and walk["certainty_elements"] > 0
+            "physical theory -- EPR's own sentence, matched verbatim as A-E1 "
+            "-- is applied to both descriptions on all four arms; the record "
+            "certifies and carries, the shadow certifies nothing and carries "
+            "none of the record's.  What the record's zero is, and is not, "
+            "is measured at G-THE-ANALYTIC-LEGS-MEASURED",
+            consume("G-CERTAINTY-CENSUS-PER-ARM", R)
+            and prim["premise_instances"] == 0
+            and walk["certainty_elements"] > 0
             and walk["without_counterpart_in_D_RECORD"] == 0
             and walk["without_counterpart_in_D_SHADOW"]
             == walk["certainty_elements"],
@@ -1863,9 +2357,21 @@ def certainty_measure(R, corp, adm, uniq, tot):
 # A reports.  The assignment is measure-free; the count is a count.
 
 def assigned_description(rd, row, qs, rfib):
+    # FALSIFIER MUT-E4-COLLAPSE: every reading is made to assign the same
+    # description
     if mut("MUT-E4-COLLAPSE"):
         return ()
     return tuple(tuple(sorted({z[d] for z in rfib[rd][row]})) for d in qs)
+
+
+def assigned_description_jointly(rd, row, qs, rfib):
+    """THE DECLARED ALTERNATIVE.  `assigned_description` is the product of the
+    per-quantity marginals: the set of values EACH quantity can still take,
+    taken quantity by quantity.  This is the joint reading -- the set of
+    value-TUPLES the fibre admits -- which keeps the correlations between the
+    block's quantities.  It is measured beside the published one so that the
+    definition-relativity of the E4 distribution is on the record."""
+    return tuple(sorted({tuple(z[d] for d in qs) for z in rfib[rd][row]}))
 
 
 def reductions_measure(R, corp, adm, uniq, rfib, arms):
@@ -1873,21 +2379,29 @@ def reductions_measure(R, corp, adm, uniq, rfib, arms):
     out = []
     for locname, locf in LOCALIZATIONS:
         for sepname, septest in SEPARATIONS:
+            primary = (locname == "LOC-WALK"
+                       and sepname == "SEP-LINK-DISJOINT")
             specs = pair_specs(locf, septest)
-            cache = {}
+            cache, jcache = {}, {}
             for nm, spec in specs.items():
                 for si, (_da, _db, qs) in enumerate(spec):
                     for r in uniq:
                         s = {assigned_description(rd, r, qs, rfib)
                              for rd in READINGS}
                         cache[(nm, si, r)] = len(s)
-            dist, probes = Counter(), 0
+                        if primary:
+                            j = {assigned_description_jointly(rd, r, qs, rfib)
+                                 for rd in READINGS}
+                            jcache[(nm, si, r)] = len(j)
+            dist, probes, jdist = Counter(), 0, Counter()
             for i, (_tag, _h) in enumerate(corp):
                 r = ROWCACHE[i]
                 for nm in adm[i]:
                     for si in range(len(specs[nm])):
                         probes += 1
                         dist[cache[(nm, si, r)]] += 1
+                        if primary:
+                            jdist[jcache[(nm, si, r)]] += 1
             if probes:
                 out.append({
                     "localization": locname, "separation": sepname,
@@ -1896,7 +2410,10 @@ def reductions_measure(R, corp, adm, uniq, rfib, arms):
                         str(k): reg(v) for k, v in sorted(dist.items())},
                     "probes_with_more_than_one": reg(
                         sum(v for k, v in dist.items() if k > 1)),
-                    "largest": reg(max(dist)), "smallest": reg(min(dist))})
+                    "largest": reg(max(dist)), "smallest": reg(min(dist)),
+                    "distinct_assigned_descriptions_under_the_joint_reading": {
+                        str(k): reg(v) for k, v in sorted(jdist.items())}
+                    if primary else "not measured on this arm"})
                 say("    %-9s %-19s probes %-8d distinct assignments %s"
                     % (locname, sepname, probes,
                        {k: v for k, v in sorted(dist.items())}))
@@ -1904,8 +2421,21 @@ def reductions_measure(R, corp, adm, uniq, rfib, arms):
         "arms": out,
         "readings_declared_on_the_other_block": list(READINGS),
         "assignment": "the set of values the block's quantities can still "
-                      "take given what the declared reading at A reports -- "
-                      "measure-free, so no measure is smuggled in",
+                      "take given what the declared reading at A reports, "
+                      "TAKEN QUANTITY BY QUANTITY -- the product of the "
+                      "per-quantity marginals; measure-free, so no measure is "
+                      "smuggled in",
+        "the_declared_alternative": "the JOINT reading -- the set of "
+                                    "value-tuples the fibre admits, which "
+                                    "keeps the correlations between a block's "
+                                    "quantities -- is measured on the primary "
+                                    "arm and published beside it.  The "
+                                    "published distribution is therefore "
+                                    "definition-relative, and the marginal "
+                                    "reading is the conservative one: it "
+                                    "assigns no more distinct descriptions "
+                                    "than the joint one does at the head "
+                                    "value",
         "A_independence_disclosed": "the reading's value at A does not "
                                     "depend on WHICH separated block A is, "
                                     "because the record field is measured "
@@ -1922,8 +2452,11 @@ def reductions_measure(R, corp, adm, uniq, rfib, arms):
             "declared readings on the separated block assign more than one "
             "description to this block at every probe of the primary arm, "
             "and the fibre's size is published as a distribution rather than "
-            "as an average",
-            walk["probes_with_more_than_one"] == walk["probes"]
+            "as an average, beside the joint reading's distribution so the "
+            "definition-relativity is on the record.  EPR's own sentence is "
+            "matched verbatim as A-E4",
+            consume("G-E4-TWO-REDUCTIONS", R)
+            and walk["probes_with_more_than_one"] == walk["probes"]
             and walk["largest"] > 2,
             "primary arm probes %d, probes with more than one assignment %d, "
             "largest fibre %d" % (walk["probes"],
@@ -1951,14 +2484,38 @@ def commutator_census(uniq):
     return rows
 
 
+def residue_degeneracy_census(uniq):
+    """WHAT THE OPERATOR LEG ACTUALLY TRACKS.  The two declared coin orders
+    are two candidate unitaries of paper-20's declaration fibre, not the
+    operators of two physical quantities -- this unit exhibits no operator for
+    the Born menu or for the record menu.  What the leg measures is the
+    degeneracy of the PHASE ENCODING: the orders agree exactly when the three
+    counts are equal modulo three, and at some of those records the record
+    observable diag(w^n) is not degenerate at all."""
+    comm = commutator_census(uniq)
+    agree_rows = [r for r, differs in zip(uniq, comm) if not differs]
+    criterion = sum(1 for r, differs in zip(uniq, comm)
+                    if differs == (len({r[j] % 3 for j in range(3)}) != 1))
+    nonscalar = [r for r in agree_rows if len(set(r)) != 1]
+    # FALSIFIER MUT-RESIDUE-CRITERION: the operator leg is reported as
+    # tracking the observables rather than the count residue
+    if mut("MUT-RESIDUE-CRITERION"):
+        criterion, nonscalar = len(uniq) - 1, []
+    return {"agree_rows": agree_rows, "criterion_agreements": criterion,
+            "nonscalar_agree_rows": nonscalar}
+
+
 def conjugacy_measure(R, corp, uniq, rfib, conj, ref):
     say("SECTION 11.  MEASUREMENT 4 -- E3, THE NON-COMMUTING PAIR")
     comm = commutator_census(uniq)
     ncomm = sum(1 for b in comm if b)
+    # FALSIFIER MUT-COMMUTATOR: the two coin orders are reported as commuting
     if mut("MUT-COMMUTATOR"):
         ncomm = 0
     P, Q = "READ-BORN-GD", "READ-RECORD-MENU"
     is_conj = (P, Q) in conj or (Q, P) in conj
+    # FALSIFIER MUT-CONJ-REFINE: the conjugate pair is reported as jointly
+    # declarable
     if mut("MUT-CONJ-REFINE"):
         is_conj = False
     carried = 0
@@ -1976,10 +2533,27 @@ def conjugacy_measure(R, corp, uniq, rfib, conj, ref):
         r = ROWCACHE[i]
         if len(rfib["READ-RECORD"][r]) == 1:
             hist_both += 1
+    deg = residue_degeneracy_census(uniq)
     R["conjugacy"] = {
-        "operator_leg": "the two declared coin orders are the two orders of "
-                        "the same pair of matrices: G . D(x) against "
-                        "D(x) . G, compared exactly in Z[w]",
+        "operator_leg": "the two declared coin orders' OPERATORS are the two "
+                        "orders of the same pair of matrices: G . D(x) "
+                        "against D(x) . G, compared exactly in Z[w]",
+        "what_the_operator_leg_is_not": "NOT an instance of EPR's antecedent. "
+            "G . D(x) and D(x) . G are paper-20's two declared coin orders -- "
+            "a declaration fibre, two candidate unitaries -- and this unit "
+            "exhibits no operator for the Born menu or for the record menu at "
+            "all.  The leg tracks the degeneracy of the phase encoding: the "
+            "two orders agree exactly when the three counts are equal modulo "
+            "three, which happens at records where the record observable is "
+            "not degenerate.  EPR's antecedent is carried here by the READING "
+            "leg alone, where three declared pairs admit no common refinement",
+        "operator_leg_agrees_with_the_residue_criterion_at":
+            reg(deg["criterion_agreements"]),
+        "records_where_the_two_orders_commute":
+            reg(len(deg["agree_rows"])),
+        "of_those_where_the_record_observable_is_not_scalar":
+            reg(len(deg["nonscalar_agree_rows"])),
+        "the_commuting_records": [list(r) for r in deg["agree_rows"]],
         "records_where_the_two_orders_differ": reg(ncomm),
         "records": reg(len(uniq)),
         "reading_pair": "%s | %s" % (P, Q),
@@ -1990,6 +2564,11 @@ def conjugacy_measure(R, corp, uniq, rfib, conj, ref):
             reg(carried_other),
         "histories_where_D_RECORD_carries_both": reg(hist_both),
         "of_histories": reg(len(corp)),
+        "the_antecedent_is_carried_by_the_reading_leg":
+            "the five declared readings are measured as partitions and three "
+            "unordered pairs admit no common refinement; that is this arena's "
+            "rendering of two quantities that cannot be declared together, "
+            "and it is what carries the dilemma below",
         "horn_1_for_D_SHADOW": "HOLDS -- the shadow is measured incomplete in "
                                "section 9",
         "horn_2_for_D_RECORD": "FAILS -- the record carries both members of a "
@@ -2006,18 +2585,37 @@ def conjugacy_measure(R, corp, uniq, rfib, conj, ref):
             "E3'S SECOND HORN IS PUT AT RISK AND MEASURED.  The corpus's own "
             "conjugate pair -- paper-20's Born menu against its record menu "
             "-- is verified NOT JOINTLY DECLARABLE by computing the "
-            "refinement relation in both directions; the operator leg is "
-            "taken exactly in Z[w], where the two declared coin orders "
-            "differ at %d of the %d committed records; and the record is "
-            "measured to carry both members at every committed history while "
-            "no single Born menu carries both" % (ncomm, len(uniq)),
-            is_conj and ncomm > 0 and hist_both == len(corp)
+            "refinement relation in both directions, which is the leg that "
+            "carries EPR's antecedent here -- E3 itself matched verbatim as "
+            "A-E3; the operator leg is taken exactly in Z[w], where the two "
+            "declared coin orders' OPERATORS differ at %d of the %d committed "
+            "records; and the record is measured to carry both members at "
+            "every committed history while no single Born menu carries both"
+            % (ncomm, len(uniq)),
+            consume("G-CONJUGATE-PAIR-MEASURED", R)
+            and is_conj and ncomm > 0 and hist_both == len(corp)
             and carried < len(uniq) and carried_other < len(uniq),
             "records where the orders differ %d of %d; pair not jointly "
             "declarable %s; histories where the record carries both %d of "
             "%d; Born menu carries the record menu at %d of %d records"
             % (ncomm, len(uniq), is_conj, hist_both, len(corp), carried,
                len(uniq)))
+    LD.gate("G-OPERATOR-LEG-IS-RESIDUE-DEGENERACY",
+            "THE OPERATOR LEG IS LABELLED FOR WHAT IT MEASURES.  The two "
+            "coin orders commute exactly when the site's three counts are "
+            "equal modulo three -- the criterion agrees with the exact Z[w] "
+            "comparison at every committed record -- so the leg tracks n mod "
+            "3 and not the observables; and at some of the commuting records "
+            "the record observable diag(w^n) is not scalar, where the leg "
+            "reports agreement while the two quantities' own operators do "
+            "not commute.  This is a disclosure about the encoding, not an "
+            "instance of EPR's antecedent, and the paper says so",
+            deg["criterion_agreements"] == len(uniq)
+            and len(deg["nonscalar_agree_rows"]) > 0,
+            "criterion agreements %d of %d; commuting records %d, of those "
+            "with a non-scalar record observable %d"
+            % (deg["criterion_agreements"], len(uniq),
+               len(deg["agree_rows"]), len(deg["nonscalar_agree_rows"])))
     SEAL.take("SEAL-CONJUGACY", R)
     return ncomm
 
@@ -2035,6 +2633,8 @@ def record_at_B_under(rd, row, qs):
     declared on A as a parameter -- so that a leak would show."""
     j = READINGS.index(rd)
     vals = tuple(row[d] for d in qs)
+    # FALSIFIER MUT-E5-LEAK: the reading declared at A is routed into B's own
+    # record and shadow
     if mut("MUT-E5-LEAK"):
         vals = tuple(v + j for v in vals)
     return vals
@@ -2083,20 +2683,52 @@ def e5_measure(R, corp, adm, uniq, rfib, red):
                             "routes the index of the reading declared at A "
                             "into B's own record and into B's own shadow, "
                             "and it dies at this gate; so the zero below is "
-                            "a measurement and not a blind spot",
+                            "demonstrated UNINJECTED",
+        "what_the_zero_is": "FORCED BY THE FORMALISATION, and reported as "
+                            "that.  A reading in this unit is a function on "
+                            "records, not an operation on a history: nothing "
+                            "that builds the arena, the corpus, the record "
+                            "field or the blocks takes a reading or names one "
+                            "(AST-checked at G-THE-ANALYTIC-LEGS-MEASURED), "
+                            "so no path from A's declaration to B's record "
+                            "exists to be measured, and this zero would be "
+                            "returned on any arena.  The falsifier "
+                            "establishes that the instrument carries no such "
+                            "path by accident; it does not establish that the "
+                            "arena forbids one",
+        "what_carries_the_row_instead": "the DYNAMICAL census of section 7, "
+                                        "which is a measurement of the arena: "
+                                        "over every event shape the arena "
+                                        "admits, an event confined to an "
+                                        "actor-disjoint region reaches a "
+                                        "record entry the other block owns 0 "
+                                        "times, while the unconfined ones do "
+                                        "reach a block's quantities -- a "
+                                        "sighted probe with its positive "
+                                        "control in the same census",
+        "the_successor_obligation": "testing SEC's ruling in EPR's own sense "
+                                    "would require an OPERATION on A that the "
+                                    "corpus's dynamics admits; this unit "
+                                    "declares none, and that is the honest "
+                                    "scope of the row",
         "reading": "nothing declared at A moves anything B has.  What moves "
                    "is the description an observer at A assigns to B, at "
                    "every probe -- which is E4, not a disturbance",
         "seam_confinement": "this is SEC's adjudicated ruling seen from the "
-                            "other side: no sector-private link ever moves"}
+                            "other side, and it is a KINEMATIC statement: no "
+                            "sector-private link ever moves"}
     LD.gate("G-E5-RECORD-DOES-NOT-MOVE",
             "B'S RECORD IS MEASURED NOT TO MOVE WITH THE READING DECLARED AT "
             "A, PROBE BY PROBE, WITH THE TEST DECLARED.  B's own record and "
             "B's own shadow are recomputed under every declared reading "
             "through a reading-parameterised path; neither moves at any of "
             "the 105,408 probes, while the description assigned to B moves "
-            "at all of them",
-            rec_moved == 0 and sha_moved == 0 and asg_moved == probes,
+            "at all of them.  EPR's own sentence is matched verbatim as "
+            "A-E5.  The zero is forced by the formalisation and demonstrated "
+            "uninjected -- what carries this row as a measurement of the "
+            "ARENA is the dynamical census of section 7",
+            consume("G-E5-RECORD-DOES-NOT-MOVE", R)
+            and rec_moved == 0 and sha_moved == 0 and asg_moved == probes,
             "probes %d, record moves %d, own-shadow moves %d, assigned "
             "description moves %d" % (probes, rec_moved, sha_moved, asg_moved))
     SEAL.take("SEAL-E5", R)
@@ -2116,41 +2748,124 @@ BANNED = (
     "the corpus satisfies Bell local causality",
     "a local hidden-variable completion exists",
 )
+# THE WALL'S SECOND LEG (K2 M5 = K3 M7).  Seven exact sentences are a
+# blacklist, and a blacklist is defeated by re-voicing: "local realism is
+# restored" is banned while "this restores local realism" is not.  These are
+# VOICE-NORMALISED patterns over the paper's canonical bytes, published with
+# the literals, and they are matched in both voices and at a distance.  The
+# delivered paper is required to be clean under all of them.
+BANNED_PATTERNS = (
+    ("W1", r"restor\w*\s+(?:\w+\s+){0,3}?local realism"),
+    ("W2", r"local realism\s+(?:\w+\s+){0,3}?(?:is|are|was|were)?\s*"
+           r"restor\w*"),
+    ("W3", r"(?:restor|recover|regain)\w*\s+(?:\w+\s+){0,3}?localit\w+"),
+    ("W4", r"localit\w+\s+(?:\w+\s+){0,4}?(?:restor|recover|regain)\w*"),
+    ("W5", r"(?:evad|escap|circumvent|sidestep)\w*\s+(?:\w+\s+){0,3}?bell"),
+    ("W6", r"bell\w*\s+(?:\w+\s+){0,4}?(?:evad|escap|circumvent|sidestep)"
+           r"\w*"),
+    ("W7", r"bell\w*(?:'s)?\s+(?:theorem|inequalit\w+)\s+"
+           r"(?:does not|do not|cannot|can not)\s+(?:apply|hold|bind)"),
+    ("W8", r"local hidden.{0,2}variable"),
+    ("W9", r"hidden.{0,2}variable\w*\s+(?:\w+\s+){0,4}?"
+           r"(?:vindicat|establish|confirm|verifi)\w*"),
+    ("W10", r"(?:vindicat|establish|confirm|verifi)\w*\s+(?:\w+\s+){0,4}?"
+            r"hidden.{0,2}variable"),
+    ("W11", r"spooky action\s+(?:\w+\s+){0,6}?"
+            r"(?:refut|disprov|disproved|dispell|dismiss)\w*"),
+    ("W12", r"(?:refut|disprov|dispell|dismiss)\w*\s+(?:\w+\s+){0,6}?"
+            r"spooky action"),
+    ("W13", r"einstein\s+(?:\w+\s+){0,4}?(?:was right|is right|were right|"
+            r"vindicated|correct after all)"),
+    ("W14", r"satisf\w+\s+(?:\w+\s+){0,3}?bell local causality"),
+)
+# TWO PASSAGES MAY CARRY THE WALL'S OWN WORDS, and only these two: the
+# verbatim standing verdict this unit is required to state, and this unit's
+# own denial.  Both are exact declared strings, both are separately gated --
+# the first as a verbatim anchor that must be present, the second as a
+# polarity-checked sentence -- and a pattern hit anywhere outside them fails.
+WALL_LICENSED = (
+    ("THE-STANDING-VERDICT-QUOTED",
+     "ISP cannot satisfy Bell local causality and still reproduce the "
+     "Tsirelson violation. It is Bell-nonlocal"),
+    ("THE-UNIT-S-OWN-DENIAL",
+     "No sentence of this unit claims a restored locality, an evaded Bell "
+     "theorem, or a vindicated hidden-variable completion"),
+)
+# THE PHRASE THAT MAY ONLY APPEAR IN TWO PLACES (K2 M4).  "element of
+# reality" is walled to the formalised predicate and to verbatim quotation of
+# 1935.  The wall had no gate; this is the gate.  Every occurrence in the
+# paper must sit inside one of the carriers declared here, and the accounting
+# is by OCCURRENCE COUNT, so a planted sentence in the unit's own voice
+# fails even though the carriers are all still present.
+ELEMENT_RE = re.compile(r"elements? of (?:the )?(?:physical )?realit\w+")
 
 
 def bell_measure(R, arms, walkarm):
     say("SECTION 13.  MEASUREMENT 6 -- THE BELL WALL")
+    # each row carries the CELLS THE PAPER PRINTS, rendered here and matched
+    # against the paper's own bytes at G-PAPER-TABLES-WITH-HEADERS: the §9
+    # table is the one that carries this unit's Bell obligations, and it was
+    # the one table the paper instrument did not render (K3 MAJOR-1).
     des = [
         {"desideratum": "E1 -- every element of reality has a counterpart",
          "D-RECORD": "MET on the measured arms",
          "D-SHADOW": "NOT MET: %d certified elements, none carried"
                      % walkarm["without_counterpart_in_D_SHADOW"],
-         "bell_constrained": "no"},
+         "bell_constrained": "no",
+         "paper_cells": ["E1 counterpart for every element",
+                         "met on the measured arms", "not met", "no"]},
         {"desideratum": "E2 -- prediction with certainty without disturbing",
          "D-RECORD": "INSTANTIABLE only in the state's localization",
          "D-SHADOW": "NEVER: the shadow certifies nothing here",
-         "bell_constrained": "no"},
+         "bell_constrained": "no",
+         "paper_cells": ["E2 certainty without disturbance",
+                         "instantiable only in the state's localization",
+                         "never here", "no"]},
         {"desideratum": "E3 -- simultaneous reality for a conjugate pair",
          "D-RECORD": "HELD: both members carried at every history",
          "D-SHADOW": "REFUSED: no single menu carries both",
          "bell_constrained": "YES -- any joint assignment across blocks is "
-                             "outcome-dependent in v5 paper-14's sense"},
+                             "outcome-dependent in v5 paper-14's sense",
+         "paper_cells": ["E3 simultaneous reality for a conjugate pair",
+                         "held at every history", "refused", "yes"]},
         {"desideratum": "E4 -- one reality, several assigned descriptions",
          "D-RECORD": "one record throughout",
          "D-SHADOW": "up to five assignments at one record",
-         "bell_constrained": "no"},
+         "bell_constrained": "no",
+         "paper_cells": ["E4 one reality, several assignments",
+                         "one record throughout", "up to five assignments",
+                         "no"]},
         {"desideratum": "E5 -- no dependence of B's reality on A's choice",
          "D-RECORD": "MET: zero moves measured",
          "D-SHADOW": "the ASSIGNED description moves; B's own does not",
-         "bell_constrained": "no"},
+         "bell_constrained": "no",
+         "paper_cells": ["E5 no dependence on the distant choice",
+                         "zero moves measured",
+                         "the assigned description moves", "no"]},
+        # E6 IS SCOPED (K2 M3).  EPR's "such a theory" is a theory furnishing
+        # a COMPLETE DESCRIPTION OF PHYSICAL REALITY.  What is measured here
+        # is completeness for the censused certainty-elements on the measured
+        # arms -- and on those arms that completeness is analytic.  The cell
+        # says so; it never says completeness simpliciter.
         {"desideratum": "E6 -- such a theory is possible",
-         "D-RECORD": "one exists on the measured arms, AT THIS ARENA and "
-                     "under this corpus's site-constancy",
+         "D-RECORD": "COMPLETE FOR THE CENSUSED CERTAINTY-ELEMENTS on the "
+                     "measured arms, AT THIS ARENA and under this corpus's "
+                     "site-constancy -- never completeness simpliciter, which "
+                     "is a claim about physical reality this unit neither "
+                     "makes nor could make",
          "D-SHADOW": "not applicable",
          "bell_constrained": "YES -- it is not a local-realist theory; the "
                              "corpus is Bell-nonlocal by v5 paper-14 and "
-                             "this unit claims nothing against that"},
+                             "this unit claims nothing against that",
+         "paper_cells": ["E6 such a theory is possible",
+                         "complete for the censused certainty-elements on "
+                         "the measured arms", "not applicable", "yes"]},
     ]
+    # FALSIFIER MUT-BELL-TABLE: the desiderata table's two description
+    # columns are swapped in the rendered row, with every flag left correct
+    if mut("MUT-BELL-TABLE"):
+        c = des[0]["paper_cells"]
+        des[0]["paper_cells"] = [c[0], c[2], c[1], c[3]]
     R["bell"] = {
         "standing_verdict": "v5 paper-14: ISP is Bell-nonlocal (E1 false), "
                             "no-signalling and parameter-independent (E2 "
@@ -2158,6 +2873,16 @@ def bell_measure(R, arms, walkarm):
         "desiderata": des,
         "banned_sentences": list(BANNED),
         "banned_count": reg(len(BANNED)),
+        "banned_patterns": [{"id": pid, "pattern": pat}
+                            for pid, pat in BANNED_PATTERNS],
+        "banned_pattern_count": reg(len(BANNED_PATTERNS)),
+        "the_wall_has_a_positive_leg": "the standing verdict is not only "
+                                       "forbidden to be contradicted, it is "
+                                       "required to be STATED: v5 paper-14's "
+                                       "two sentences are matched in this "
+                                       "paper's own bytes, so a paper-38 that "
+                                       "quietly dropped its Bell section "
+                                       "would fail a gate",
         "the_locality_finding": "at this arena EPR's criterion is "
                                 "instantiable only in the localization the "
                                 "quantum state uses, where the quantity "
@@ -2174,9 +2899,17 @@ def bell_measure(R, arms, walkarm):
             "BELL STATUS.  Six rows, each naming what each description does "
             "with that desideratum and whether the corpus's standing Bell "
             "verdict constrains it; the two rows that are constrained say so "
-            "in their own text",
-            len(des) == 6 and sum(1 for d in des
-                                  if d["bell_constrained"] != "no") == 2,
+            "in their own text, the E6 row is scoped to the censused "
+            "certainty-elements and never to completeness simpliciter, and "
+            "every cell the paper prints is RENDERED from these rows.  EPR's "
+            "closing sentence is matched verbatim as A-E6",
+            consume("G-BELL-DESIDERATA-BOUND", R)
+            and len(des) == 6
+            and all(len(d["paper_cells"]) == 4 for d in des)
+            and all((d["paper_cells"][3] == "no")
+                    == (d["bell_constrained"] == "no") for d in des)
+            and sum(1 for d in des
+                    if d["bell_constrained"] != "no") == 2,
             "desiderata %d, Bell-constrained %d"
             % (len(des), sum(1 for d in des
                              if d["bell_constrained"] != "no")))
@@ -2252,7 +2985,7 @@ def controls_measure(R, corp, adm, uniq, FR, FS, arms):
         fs = frozenset(S)
         return tuple(k for k in cells_l1 if CELL_PAIR[k] <= fs)
 
-    prem = qb = ld = cert = unc = quant = 0
+    prem = qb = ld = cert = unc = quant = uncr = 0
     for i, (_t, _h) in enumerate(corp):
         r = ROWCACHE[i]
         for nm in ("AP-9-BLOCKS-9x1", "AP-3-BLOCKS-3x3-PARALLEL-CLASS-COL"):
@@ -2267,12 +3000,18 @@ def controls_measure(R, corp, adm, uniq, FR, FS, arms):
                     continue
                 prem += 1
                 da = tuple(sorted({k % 3 for k in loc_pair_l1(A)}))
+                db = tuple(sorted({k % 3 for k in loc_pair_l1(B)}))
                 fr = FR[(da, r)]
                 for k in qs:
                     dd = k % 3
                     quant += 1
                     if epr_reality_at(dd, fr):
                         cert += 1
+                        # COMPUTED, never typed (#4): the arm the paper calls
+                        # scope-fixing runs the counterpart predicate against
+                        # the record too, exactly as its siblings do.
+                        if not epr_counterpart_at(dd, FR[(db, r)]):
+                            uncr += 1
                         if not epr_counterpart_at(dd, FS[r]):
                             unc += 1
     a1 = {"arm": "CTRL-ARENA-ONE-DECLARED-DIRECTION",
@@ -2285,7 +3024,7 @@ def controls_measure(R, corp, adm, uniq, FR, FS, arms):
           "quantity_bearing_at_LOC_PAIR": reg(qb),
           "quantities": reg(quant),
           "certainty_elements": reg(cert),
-          "without_counterpart_in_D_RECORD": 0,
+          "without_counterpart_in_D_RECORD": reg(uncr),
           "without_counterpart_in_D_SHADOW": reg(unc),
           "totality_failures": 0,
           "object": ARM_OBJECT["LOC-PAIR"]}
@@ -2300,6 +3039,8 @@ def controls_measure(R, corp, adm, uniq, FR, FS, arms):
     missing_fams = [f for f in fams
                     if not any(w == f or (f.endswith("-AT-")
                                           and w.startswith(f)) for w in words)]
+    # FALSIFIER MUT-CONTROL-MISSING: control arms are dropped so a word becomes
+    # undemonstrated
     if mut("MUT-CONTROL-MISSING"):
         rows = rows[:2]
         words = {r["word"] for r in rows}
@@ -2350,6 +3091,8 @@ def controls_measure(R, corp, adm, uniq, FR, FS, arms):
                     probes += 1
                     if (p == 1) == cert:
                         agree += 1
+    # FALSIFIER MUT-MEASURE: one exact conditional probability is made to
+    # disagree
     if mut("MUT-MEASURE"):
         agree -= 1
     R["measure_relativity"] = {
@@ -2462,6 +3205,7 @@ def verdict_measure(R, corp, adm, uniq, arms, tot, red, e5):
             and a["separation"] == "SEP-LINK-DISJOINT"][0]
     walk = [a for a in arms if a["localization"] == "LOC-WALK"
             and a["separation"] == "SEP-LINK-DISJOINT"][0]
+    # FALSIFIER MUT-HEAD-TYPED: the head word is typed rather than derived
     head = pick("MUT-HEAD-TYPED", prim["word"],
                 "EPR-BOTH-COMPLETE")
     seg1 = ("EPR-SEPARATION<" + "; ".join(
@@ -2475,8 +3219,10 @@ def verdict_measure(R, corp, adm, uniq, arms, tot, red, e5):
            com(a["without_counterpart_in_D_SHADOW"])) for a in arms) + ">")
     seg3 = ("%s<PRIMARY-ARM=THE-RECORD-S-OWN-LOCALIZATION-AT-EPR-S-OWN-"
             "SEPARATION; SECOND-WORD=%s-AT-THE-STATE-LOCALIZATION-WITH-%s-"
-            "CERTIFIED-AND-%s-UNCARRIED; E4-ASSIGNMENTS-AT-ONE-RECORD=%s; "
-            "E5-RECORD-MOVES=%s-OF-%s; SCOPE=ONE-ARENA,COMMITTED-HISTORIES,"
+            "CERTIFIED-AND-%s-UNCARRIED-AND-STATE-INVARIANT-BY-THEOREM; "
+            "E4-ASSIGNMENTS-AT-ONE-RECORD=%s-AT-THE-DECLARED-PRIMARY-STATE-"
+            "UNDER-THE-MARGINAL-READING; E5-RECORD-MOVES=%s-OF-%s; "
+            "SCOPE=ONE-ARENA,COMMITTED-HISTORIES,"
             "KINEMATIC-SEPARATION-AS-MEASURED;COUNTS-ARE-COUNTING-ONLY;"
             "NO-LOCAL-REALISM-CLAIM>"
             % (head, walk["word"], com(walk["certainty_elements"]),
@@ -2527,31 +3273,50 @@ ROWCACHE = []
 WINDOWS = (
     ("W-CORPUS", "the committed histories: paper-21's 72 I7-STRICT triples, "
      "their 5,184 ordered concatenations and the 600 driven-window "
-     "schedules", "5856"),
+     "schedules", "5856", False),
     ("W-SUBSETS", "the COMPLETE lattice of subsets of the nine actors -- no "
-     "cap, no sampling", "512"),
-    ("W-BLOCKS", "the six law-compatible decompositions of the nine actors "
-     "(FAC's geometry-leg survivors), restricted per history by the history "
-     "leg", "6"),
+     "cap, no sampling", "512", True),
+    ("W-EVENT-SHAPES", "the COMPLETE set of event shapes this arena admits: "
+     "every three-actor subset, which is every division event's support -- "
+     "the window the dynamical no-disturbance census runs over, and not a "
+     "sample of the ones the corpus happens to run", "84", True),
+    ("W-BLOCKS", "the COMPLETE set of law-compatible decompositions of the "
+     "nine actors: FAC's geometry-leg survivors by closed form over the "
+     "complete 21,147-partition actor lattice, restricted per history by the "
+     "history leg", "6", True),
     ("W-STATES", "the declared state family for the shadow: every site "
-     "vector over the alphabet {0, 1, w, w^2}", "64"),
+     "vector over the alphabet {0, 1, w, w^2}.  It is a DECLARED bound and "
+     "not a complete one -- the parent's own alphabet is wider, and the "
+     "shadow theorem is proved without either", "64", False),
     ("W-READINGS", "the declared readings of a block: the record, the Born "
      "menu at both coin orders, the record menu, and paper-20's curvature",
-     "5"),
+     "5", False),
     ("W-MEASURES", "the declared measures for the probability leg: uniform "
-     "and a skewed full-support measure", "2"),
+     "and a skewed full-support measure", "2", False),
 )
 
 
 def windows_declare(R):
-    R["windows"] = {"rows": [{"window": a, "bound": c, "statement": b}
-                             for a, b, c in WINDOWS],
-                    "count": reg(len(WINDOWS))}
+    complete = [a for a, _b, _c, comp in WINDOWS if comp]
+    R["windows"] = {"rows": [{"window": a, "bound": c, "statement": b,
+                              "complete": comp}
+                             for a, b, c, comp in WINDOWS],
+                    "count": reg(len(WINDOWS)),
+                    "complete_windows": complete,
+                    "complete_count": reg(len(complete)),
+                    "note": "three of the seven windows are COMPLETE -- the "
+                            "subset lattice, the event shapes and the block "
+                            "lattice; the corpus, the states, the readings "
+                            "and the measures are declared bounds"}
     LD.gate("G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS",
             "EVERY WINDOW THIS UNIT COUNTS OVER IS DECLARED WITH ITS BOUND "
-            "(§15).  Six windows; the subset lattice is complete and says "
-            "so, and every other is named with the parent that fixed it",
-            len(WINDOWS) == 6, "windows %d" % len(WINDOWS))
+            "AND WITH WHETHER IT IS COMPLETE (§15).  Seven windows, three of "
+            "them complete -- the subset lattice, the event shapes and the "
+            "block lattice; every other is named with the parent that fixed "
+            "it and is declared a bound rather than a completion",
+            len(WINDOWS) == 7 and len(complete) == 3,
+            "windows %d, complete %d %s"
+            % (len(WINDOWS), len(complete), complete))
     SEAL.take("SEAL-WINDOWS", R)
 
 
@@ -2581,6 +3346,7 @@ def class_binding_measure(R, arms, ctrl, conj):
         rows.append({"class_word": word, "predicate": why,
                      "emitted_by_the_law_at": reg(len(emitted)),
                      "recomputed": True})
+    # FALSIFIER MUT-CLASSWORD: a class word is typed rather than recomputed
     if mut("MUT-CLASSWORD"):
         rows.append({"class_word": "EPR-BOTH-COMPLETE", "predicate": "typed",
                      "emitted_by_the_law_at": 0, "recomputed": False})
@@ -2600,15 +3366,29 @@ def class_binding_measure(R, arms, ctrl, conj):
 # THE PAPER INSTRUMENT
 # --------------------------------------------------------------------------
 
-PAPER_LITERALS = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-                  "11", "12", "13", "14", "15", "19", "20", "21", "22", "23",
-                  "24", "27", "32", "33", "34", "35", "38", "47", "62", "82",
-                  "87", "91", "119", "125", "267", "295", "299", "319", "328",
-                  "777", "1935", "2026"}
+# THE STRUCTURAL LITERALS ARE SCOPED TO THEIR CONTEXTS (K3 MINOR-9).  A bare
+# allow-list of tokens like 19, 27 or 35 whitelists a forgery twice over,
+# because those tokens are simultaneously runbook identifiers and measured
+# values of this unit.  So there is no bare allow-list: a numeral that is not
+# the run's own product must sit inside one of the declared IDENTIFIER SHAPES
+# below, matched with its position, and nothing else passes.
+LITERAL_CONTEXTS = (
+    ("SECTION-HEADING", re.compile(r"^#+ \d+\.", re.M)),
+    ("SECTION-REFERENCE", re.compile(r"sections? \d+")),
+    ("PAPER-IDENTIFIER", re.compile(r"paper[ -]\d+")),
+    ("LEDGER-REFERENCE", re.compile(r"#\d+")),
+    ("ENGRAVING-REFERENCE", re.compile(r"E-\d+")),
+    ("THE-1935-CITATION",
+     re.compile(r"Phys\. Rev\. \d+, \d+ \(\d{4}\)")),
+    ("THE-1935-PAPER", re.compile(r"\d{4} (?:paper|print)")),
+    ("THE-SOURCE-FILENAME", re.compile(r"epr-\d{4}-physrev-\d+-\d+\.pdf")),
+    ("THE-AFFINE-PLANE", re.compile(r"AG\(\d, \d\)")),
+)
 
 NUM_RE = re.compile(r"(?<![\w.])(\d[\d,]*\d|\d)(?![\w])")
 FENCE_RE = re.compile(r"```[^\n]*\n(.*?)```", re.S)
 NOF_RE = re.compile(r"([\d,]+)\s+of\s+([\d,]+)")
+TABLE_ROW_RE = re.compile(r"^\|.*\|\s*$", re.M)
 
 
 def paper_render(R):
@@ -2622,6 +3402,9 @@ def paper_render(R):
     rel = C[("LOC-PAIR", "SEP-ACTOR-DISJOINT")]
     D = R["descriptions"]
     E = R["e5_audit"]
+    T = R["shadow_theorem"]
+    A = R["analytic_legs"]
+    Cj = R["conjugacy"]
     red = [x for x in R["reductions"]["arms"]
            if x["localization"] == "LOC-WALK"
            and x["separation"] == "SEP-LINK-DISJOINT"][0]
@@ -2675,8 +3458,8 @@ def paper_render(R):
          % (com(E["probes_where_B_s_record_moves_with_the_reading_at_A"]),
             com(E["probes"]),
             com(E["probes_where_the_description_ASSIGNED_to_B_moves"]))),
-        ("C14", "the two declared coin orders differ at %s of the %s "
-         "committed records"
+        ("C14", "the two declared coin orders' operators differ at %s of the "
+         "%s committed records"
          % (com(R["conjugacy"]["records_where_the_two_orders_differ"]),
             com(R["conjugacy"]["records"]))),
         ("C15", "the record carries both members of the conjugate pair at %s "
@@ -2691,7 +3474,40 @@ def paper_render(R):
             com(S["dynamical_no_disturbance"]["disturbances"]),
             com(S["dynamical_no_disturbance"]
                 ["events_that_do_reach_a_block_quantity"]))),
+        # THE REPAIR'S OWN LOAD-BEARING SENTENCES, rendered like the rest.
+        ("C17", "no residue class of this corpus is a single record, and "
+         "none is constant in any direction: %s of %s and %s of %s"
+         % (com(T["L3_singleton_classes"]), com(T["L3_residue_classes"]),
+            com(T["L3_direction_constant_classes"]),
+            com(T["L3_residue_classes"]))),
+        ("C18", "over paper-20's own %s-value alphabet the sweep runs at %s "
+         "states, the ceiling of %s menus is attained at %s of them, and the "
+         "shadow carries a certified direction at %s"
+         % (com(T["parent_alphabet_size"]),
+            com(T["parent_alphabet_states"]),
+            com(T["parent_alphabet_best_distinct_menus"]),
+            com(T["parent_alphabet_states_attaining_the_ceiling"]),
+            com(T["parent_alphabet_states_carrying_a_direction"]))),
+        ("C19", "the quantity censused at a block is one of the block's own "
+         "localization's directions at %s of %s declared specs"
+         % (com(A["specs_where_the_quantity_lies_in_the_block_s_own_"
+                  "directions"]),
+            com(A["declared_specs"]))),
+        ("C20", "the two coin orders commute at exactly the %s records whose "
+         "three counts are equal modulo three, and at %s of those the record "
+         "observable is not scalar"
+         % (com(Cj["records_where_the_two_orders_commute"]),
+            com(Cj["of_those_where_the_record_observable_is_not_scalar"]))),
     ]
+    # HOW MANY TIMES EACH CLAIM MUST OCCUR (K3 MAJOR-3).  Containment is what
+    # E-22 was bought to forbid: five of these sentences are said twice, in
+    # the summary and again in their own section, and a containment gate lets
+    # one copy be forged while the other satisfies it.  The multiplicity is
+    # DECLARED here and the paper's occurrence count must equal it exactly,
+    # so both forging a copy and planting a twin fail.
+    multiplicity = {"C02": 2, "C04": 2, "C05": 2, "C07": 2, "C08": 2,
+                    "C17": 2}
+    claims = [(cid, txt, multiplicity.get(cid, 1)) for cid, txt in claims]
     tables = [
         {"name": "T-ARMS",
          "headers": ["localization", "separation", "pairs", "quantities",
@@ -2720,6 +3536,14 @@ def paper_render(R):
          "headers": ["reading", "cells", "largest fibre"],
          "rows": [[r["reading"], com(r["cells"]), com(r["largest_fibre"])]
                   for r in R["readings"]["rows"]]},
+        # THE FIFTH TABLE.  It carries this unit's Bell obligations and it
+        # was the one table the instrument did not render (K3 MAJOR-1): a
+        # header swap, an inverted row and a flipped constrained-flag all
+        # passed.  It renders here like every other.
+        {"name": "T-BELL",
+         "headers": ["desideratum", "D-RECORD", "D-SHADOW",
+                     "Bell-constrained"],
+         "rows": [list(d["paper_cells"]) for d in R["bell"]["desiderata"]]},
     ]
     return claims, tables
 
@@ -2735,113 +3559,321 @@ POLARITY = (
      "the record carries neither member of the conjugate pair"),
     ("P5", "the premise exists in the state's localization",
      "the premise exists in no localization"),
+    # THE DILEMMA'S TWO HORNS ARE DIRECTIONS TOO (K3 PROBE 2).  Swapping them
+    # in section 7's prose left every numeral in the paper correct and no
+    # claim touched, so nothing fired; here each horn's assignment is an axis.
+    ("P6", "horn (1) holds for D-SHADOW", "horn (2) holds for D-SHADOW"),
+    ("P7", "horn (2) fails for D-RECORD", "horn (1) fails for D-RECORD"),
 )
 
+# EVERY UNIVERSE DECLARES ITS BOUND (K3 MINOR-7).  Membership alone lets an
+# in-universe falsehood through -- "the shadow separates 36 of 36 records"
+# has both members in RECORDS.  So a fraction must name a universe whose
+# DECLARED BOUND is its denominator and one of whose declared VALUES is its
+# numerator, and the numerator may not exceed the bound.
 REFERENT_UNIVERSES = {
-    "HISTORIES": ("corpora/histories", "corpora/record_is_site_constant_at",
-                  "conjugacy/histories_where_D_RECORD_carries_both",
-                  "conjugacy/of_histories", "blocks/forced_at",
-                  "blocks/of_histories"),
-    "SUBSETS": ("separation/subset_lattice",
-                "separation/subsets_owning_a_record_quantity",
-                "separation/subsets_with_a_nonempty_far_region",
-                "separation/subsets_with_both",
-                "separation/theorem_probes"),
-    "BLOCK-PAIRS": ("separation/ordered_block_pairs",
-                    "separation/link_disjoint_block_pairs",
-                    "separation/quantity_bearing_at_LOC_PAIR",
-                    "separation/quantity_bearing_at_LOC_WALK",
-                    "separation/premise_instances_at_LOC_PAIR",
-                    "separation/premise_instances_at_LOC_WALK"),
-    "RECORDS": ("descriptions/distinct_records_in_the_corpus",
-                "descriptions/residue_classes_up_to_the_site_phase",
-                "conjugacy/records",
-                "conjugacy/records_where_the_two_orders_differ",
-                "conjugacy/records_where_the_Born_menu_carries_the_record_"
-                "menu"),
-    "STATES": ("descriptions/state_sweep_size",
-               "descriptions/states_separating_two_records_of_one_residue_"
-               "class"),
-    "SITE-PAIRS": ("arena/ordered_site_pairs_checked",),
+    "HISTORIES": {
+        "bound": "corpora/histories",
+        "values": ("corpora/record_is_site_constant_at",
+                   "conjugacy/histories_where_D_RECORD_carries_both",
+                   "blocks/forced_at")},
+    "SUBSETS": {
+        "bound": "separation/subset_lattice",
+        "values": ("separation/subsets_owning_a_record_quantity",
+                   "separation/subsets_with_a_nonempty_far_region",
+                   "separation/subsets_with_both")},
+    "BLOCK-PAIRS": {
+        "bound": "separation/ordered_block_pairs",
+        "values": ("separation/link_disjoint_block_pairs",
+                   "separation/quantity_bearing_at_LOC_PAIR",
+                   "separation/quantity_bearing_at_LOC_WALK",
+                   "separation/premise_instances_at_LOC_PAIR",
+                   "separation/premise_instances_at_LOC_WALK")},
+    "RECORDS": {
+        "bound": "descriptions/distinct_records_in_the_corpus",
+        "values": ("descriptions/residue_classes_up_to_the_site_phase",
+                   "conjugacy/records_where_the_two_orders_differ",
+                   "conjugacy/records_where_the_two_orders_commute",
+                   "conjugacy/records_where_the_Born_menu_carries_the_record_"
+                   "menu")},
+    "STATES": {
+        "bound": "descriptions/state_sweep_size",
+        "values": ("descriptions/states_separating_two_records_of_one_residue_"
+                   "class",)},
+    "PARENT-STATES": {
+        "bound": "shadow_theorem/parent_alphabet_states",
+        "values": ("shadow_theorem/parent_alphabet_states_attaining_the_"
+                   "ceiling",
+                   "shadow_theorem/parent_alphabet_states_carrying_a_"
+                   "direction")},
+    "RESIDUE-CLASSES": {
+        "bound": "shadow_theorem/L3_residue_classes",
+        "values": ("shadow_theorem/L3_singleton_classes",
+                   "shadow_theorem/L3_direction_constant_classes")},
+    "DECLARED-SPECS": {
+        "bound": "analytic_legs/declared_specs",
+        "values": ("analytic_legs/specs_where_the_quantity_lies_in_the_block_"
+                   "s_own_directions",
+                   "analytic_legs/specs_where_the_quantity_lies_in_the_"
+                   "conditioner_s_directions")},
+    "E4-PROBES": {
+        "bound": "reductions/arms/1/probes",
+        "values": ("reductions/arms/1/probes_with_more_than_one",)},
+    "E5-PROBES": {
+        "bound": "e5_audit/probes",
+        "values": ("e5_audit/probes_where_B_s_record_moves_with_the_reading_"
+                   "at_A",
+                   "e5_audit/probes_where_B_s_own_shadow_moves",
+                   "e5_audit/probes_where_the_description_ASSIGNED_to_B_"
+                   "moves")},
+    "SITE-PAIRS": {"bound": "arena/ordered_site_pairs_checked",
+                   "values": ("arena/ordered_site_pairs_checked",)},
 }
+# THE ONLY PLACES "element of reality" MAY STAND (K2 M4).  Each carrier is
+# matched in the paper's own bytes and its occurrences of the phrase are
+# counted; the paper's total must equal the sum, so a sentence in the unit's
+# own voice fails even with every carrier still present.
+ELEMENT_CARRIERS = (
+    ("THE-CRITERION-QUOTED", "then there exists an element of physical "
+     "reality corresponding to this physical quantity."),
+    ("THE-COMPLETENESS-CONDITION-QUOTED", "every element of the physical "
+     "reality must have a counterpart in the physical theory."),
+    ("THE-PREDICATE-DECLARED", "EPR-REALITY(q | D, B, sep) is the formalised "
+     "criterion and the only predicate in this unit that carries the phrase "
+     "element of reality"),
+    ("THE-SELF-CERTIFICATION", "The phrase \"element of reality\" occurs in "
+     "this unit only inside the formalised predicate's own declaration and "
+     "inside verbatim quotation of the 1935 paper"),
+)
 
 
 def paper_battery(R, paper_text, claims, tables):
     say("SECTION 15b.  THE PAPER INSTRUMENT")
+    # FALSIFIER MUT-BELL-PLANT: a banned local-realism sentence is planted
+    # into the paper
     if mut("MUT-BELL-PLANT"):
         paper_text = paper_text + "\n\nlocal realism is restored.\n"
+    # FALSIFIER MUT-BELL-VOICE: the banned claim is planted in the active
+    # voice, which no literal blacklist catches
+    if mut("MUT-BELL-VOICE"):
+        paper_text = paper_text + \
+            "\n\nOn the measured arms this restores local realism.\n"
+    # FALSIFIER MUT-BELL-DELETE: the paper's own statement of the corpus's
+    # standing Bell verdict is removed
+    if mut("MUT-BELL-DELETE"):
+        for _n, _s, _g, needle in ANCHORS:
+            if _n == "A-BELL-E1":
+                paper_text = paper_text.replace(
+                    "**ISP cannot satisfy Bell local causality and still\n"
+                    "reproduce the Tsirelson violation. It is "
+                    "Bell-nonlocal.**",
+                    "the corpus's Bell status is discussed in v5 paper-14.")
+    # FALSIFIER MUT-ELEMENT-PLANT: the walled phrase is used in the unit's
+    # own voice, outside the predicate and outside quotation
+    if mut("MUT-ELEMENT-PLANT"):
+        paper_text = paper_text + \
+            "\n\nThere is an element of reality at every block.\n"
+    # FALSIFIER MUT-PAPER-NUMERAL: an unregistered numeral is planted into
+    # the paper
     if mut("MUT-PAPER-NUMERAL"):
         paper_text = paper_text + "\n\nthe census ran at 424,242 pairs.\n"
+    # FALSIFIER MUT-PAPER-SPELLED: an unmapped spelled numeral is planted
+    # into the paper
+    if mut("MUT-PAPER-SPELLED"):
+        paper_text = paper_text + \
+            "\n\nThe census ran at forty-two pairs across ninety blocks.\n"
+    # FALSIFIER MUT-PAPER-TABLE-HEADER: two table headers are swapped with
+    # every number left correct
     if mut("MUT-PAPER-TABLE-HEADER"):
         paper_text = paper_text.replace("| localization | separation |",
                                         "| separation | localization |")
+    # FALSIFIER MUT-PAPER-TABLE-ROW: a fabricated row built out of
+    # registered numerals is appended to a rendered table
+    if mut("MUT-PAPER-TABLE-ROW"):
+        paper_text = paper_text.replace(
+            "| LOC-WALK | SEP-ACTOR-DISJOINT | 421,656 | 1,265,112 | "
+            "1,265,112 | 1,265,112 | EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE |",
+            "| LOC-WALK | SEP-ACTOR-DISJOINT | 421,656 | 1,265,112 | "
+            "1,265,112 | 1,265,112 | EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE |"
+            "\n| LOC-WALK | SEP-LINK-DISJOINT | 105,408 | 316,224 | 316,224 "
+            "| 0 | EPR-BOTH-COMPLETE |")
+    # FALSIFIER MUT-CLAIM-TWIN: a duplicated claim's twin is forged, leaving
+    # its clean copy in place to satisfy a containment gate
+    if mut("MUT-CLAIM-TWIN"):
+        paper_text = paper_text.replace(
+            "`0 of 512 subsets of the nine actors own a record quantity and "
+            "a\nconditioning region sharing no link with them`",
+            "`512 of 512 subsets of the nine actors own a record quantity "
+            "and a\nconditioning region sharing no link with them`", 1)
+    # FALSIFIER MUT-FENCE: a verdict fence is altered in one of its two
+    # printed copies
+    if mut("MUT-FENCE"):
+        paper_text = paper_text.replace(";NO-LOCAL-REALISM-CLAIM>", ">")
+    # FALSIFIER MUT-POLARITY: an inverted claim is planted into the paper
     if mut("MUT-POLARITY"):
         paper_text = paper_text + "\n\n" + POLARITY[2][2] + ".\n"
     hay = canon(paper_text)
-    for cid, txt in claims:
-        say("    %s  %s" % (cid, txt))
+    for cid, txt, mult in claims:
+        say("    %s x%d  %s" % (cid, mult, txt))
     for t in tables:
         say("    %s | %s |" % (t["name"], " | ".join(t["headers"])))
         for row in t["rows"]:
             say("            | %s |" % " | ".join(row))
-    miss = [cid for cid, txt in claims if canon(txt) not in hay]
-    R["paper_claims"] = {"rows": [{"id": c, "claim": t} for c, t in claims],
-                         "count": reg(len(claims)), "missing": miss}
+    cmiss = ["%s(%d/%d)" % (cid, hay.count(canon(txt)), mult)
+             for cid, txt, mult in claims
+             if hay.count(canon(txt)) != mult]
+    R["paper_claims"] = {
+        "rows": [{"id": c, "claim": t, "declared_occurrences": reg(m),
+                  "found_occurrences": reg(hay.count(canon(t)))}
+                 for c, t, m in claims],
+        "count": reg(len(claims)),
+        "total_declared_occurrences": reg(sum(m for _c, _t, m in claims)),
+        "wrong_occurrence_count": cmiss,
+        "note": "the count is DECLARED per claim and compared exactly: five "
+                "of these sentences are said twice, and a containment gate "
+                "would let one copy be forged while its twin satisfied it"}
     LD.gate("G-PAPER-CLAIMS",
             "EVERY LOAD-BEARING SENTENCE OF THE PAPER IS RENDERED FROM THE "
-            "RECEIPT AND MATCHED IN THE PAPER'S OWN BYTES (#20).  Fifteen "
-            "claims, each built out of receipt values rather than typed, so "
-            "a paper that drifts from its run cannot pass",
-            not miss, "claims %d, missing %s" % (len(claims), miss or "none"))
+            "RECEIPT AND MATCHED IN THE PAPER'S OWN BYTES BY OCCURRENCE "
+            "COUNT (#20, E-22).  %d claims, each built out of receipt values "
+            "rather than typed and each declaring how many times it is said, "
+            "so a paper that drifts from its run cannot pass and neither can "
+            "a forged twin of a sentence said twice" % len(claims),
+            not cmiss, "claims %d, declared occurrences %d, wrong counts %s"
+            % (len(claims), sum(m for _c, _t, m in claims), cmiss or "none"))
     SEAL.take("SEAL-PAPER-CLAIMS", R)
 
+    # THE FENCED BLOCKS ARE MATCHED BY MULTISET (K3 MAJOR-2).  The three
+    # verdict segments are printed twice each and were gated nowhere: a
+    # forged head, a struck NO-LOCAL-REALISM-CLAIM stamp and a flipped count
+    # all promoted clean.  E-22's rule is multiset equality, and this is it.
+    segs = [R["verdict"]["segment_1"], R["verdict"]["segment_2"],
+            R["verdict"]["segment_3"]]
+    want = Counter({canon(s): 2 for s in segs})
+    got = Counter(canon(b) for b in FENCE_RE.findall(paper_text))
+    fdiff = sorted((got - want).elements()) + sorted((want - got).elements())
+    R["paper_fences"] = {
+        "declared_blocks": [{"segment": i + 1, "occurrences": reg(2)}
+                            for i in range(len(segs))],
+        "fenced_blocks_in_the_paper": reg(sum(got.values())),
+        "distinct_blocks": reg(len(got)),
+        "mismatches": [d[:80] for d in fdiff],
+        "note": "the paper's fenced blocks must be exactly the run's three "
+                "verdict segments, twice each -- MULTISET equality, not "
+                "containment"}
+    LD.gate("G-PAPER-FENCES-MATCH-THE-VERDICT",
+            "THE VERDICT FENCES ARE THE RUN'S OWN, BY MULTISET (E-22).  The "
+            "paper prints three fenced blocks twice each; they are compared "
+            "as a multiset against the three segments this run emitted, so a "
+            "word changed in one copy, a stamp struck from both, or an extra "
+            "block anywhere fails here",
+            not fdiff, "fenced blocks %d, distinct %d, mismatches %d"
+            % (sum(got.values()), len(got), len(fdiff)))
+    SEAL.take("SEAL-PAPER-FENCES", R)
+
+    # THE TABLES ARE MATCHED BY MULTISET TOO (K3 MAJOR-1, MINOR-6): every
+    # rendered table must appear whole, and the paper must carry no table
+    # block the run did not render and no row inside one that it did not.
+    blocks, cur = [], []
+    for line in paper_text.split("\n"):
+        if line.strip().startswith("|"):
+            cur.append(canon(line))
+        elif cur:
+            blocks.append(cur)
+            cur = []
+    if cur:
+        blocks.append(cur)
     tmiss = []
     for t in tables:
         head = canon("| " + " | ".join(t["headers"]) + " |")
-        if head not in hay:
-            tmiss.append(t["name"] + "/headers")
-        for row in t["rows"]:
-            if canon("| " + " | ".join(row) + " |") not in hay:
-                tmiss.append(t["name"] + "/" + row[0])
+        hits = [b for b in blocks if b and b[0] == head]
+        if len(hits) != 1:
+            tmiss.append("%s/headers(%d)" % (t["name"], len(hits)))
+            continue
+        body = Counter(r for r in hits[0][1:]
+                       if set(r.replace("|", "").replace(" ", "")) - set("-:"))
+        rendered = Counter(canon("| " + " | ".join(row) + " |")
+                           for row in t["rows"])
+        for d in sorted((body - rendered).elements()):
+            tmiss.append("%s/extra:%s" % (t["name"], d[:60]))
+        for d in sorted((rendered - body).elements()):
+            tmiss.append("%s/absent:%s" % (t["name"], d[:60]))
+    if len(blocks) != len(tables):
+        tmiss.append("table blocks %d, rendered tables %d"
+                     % (len(blocks), len(tables)))
     R["paper_tables"] = {"tables": tables, "count": reg(len(tables)),
                          "rows": reg(sum(len(t["rows"]) for t in tables)),
+                         "table_blocks_in_the_paper": reg(len(blocks)),
                          "missing": tmiss}
     LD.gate("G-PAPER-TABLES-WITH-HEADERS",
             "EVERY TABLE IS RENDERED FROM THE RECEIPT WITH ITS HEADERS "
-            "INCLUDED, so a header swap that leaves every number correct "
-            "dies here (E-22: tables render as claims)",
-            not tmiss, "tables %d, rows %d, missing %s"
-            % (len(tables), sum(len(t["rows"]) for t in tables),
+            "INCLUDED AND MATCHED BY MULTISET, so a header swap that leaves "
+            "every number correct dies here, and so does a fabricated row "
+            "built out of registered numerals, and so does a table the run "
+            "never rendered (E-22: tables render as claims).  All five of "
+            "the paper's tables are rendered -- including the section 9 "
+            "desiderata table, which is the one that carries the Bell wall",
+            not tmiss, "tables %d, rows %d, table blocks in the paper %d, "
+            "mismatches %s"
+            % (len(tables), sum(len(t["rows"]) for t in tables), len(blocks),
                tmiss or "none"))
     SEAL.take("SEAL-PAPER-TABLES", R)
 
     fenced = FENCE_RE.findall(paper_text)
     nums = NUM_RE.findall(paper_text)
     fnums = [n for blk in fenced for n in NUM_RE.findall(blk)]
-    words = [w for w in re.findall(r"[a-z]+", paper_text.lower())
-             if w in WORDNUM]
-    unknown = sorted({n for n in nums
-                      if n not in NUMREG and n.replace(",", "") not in NUMREG
-                      and n not in PAPER_LITERALS})
-    wordbad = sorted({w for w in words
-                      if str(WORDNUM[w]) not in NUMREG
-                      and str(WORDNUM[w]) not in PAPER_LITERALS})
+    spans = []
+    for cname, rx in LITERAL_CONTEXTS:
+        for m in rx.finditer(paper_text):
+            spans.append((m.start(), m.end(), cname))
+    unknown, litrows = [], Counter()
+    for m in NUM_RE.finditer(paper_text):
+        tok = m.group(1)
+        if tok in NUMREG or tok.replace(",", "") in NUMREG:
+            continue
+        home = [c for s, e, c in spans if s <= m.start() and m.end() <= e]
+        if home:
+            litrows[home[0]] += 1
+        else:
+            unknown.append(tok)
+    unknown = sorted(set(unknown))
+    tokens = [w for w in re.findall(r"[a-z]+", paper_text.lower())
+              if w in NUMBER_WORD_SHAPES]
+    words = [w for w in tokens if w in WORDNUM]
+    unmapped = sorted({w for w in tokens
+                       if w not in WORDNUM and w not in ORDINAL_WORDS})
+    wordbad = sorted({w for w in words if str(WORDNUM[w]) not in NUMREG})
     R["paper_coverage"] = {
         "numerals": reg(len(nums)), "in_fenced_blocks": reg(len(fnums)),
         "spelled_numerals": reg(len(words)),
+        "number_word_tokens": reg(len(tokens)),
         "registry_size": reg(len(NUMREG)),
+        "structural_literals_by_context": {k: reg(v) for k, v
+                                           in sorted(litrows.items())},
+        "declared_literal_contexts": [c for c, _rx in LITERAL_CONTEXTS],
         "unknown_numerals": unknown, "unknown_spelled": wordbad,
+        "unmapped_number_words": unmapped,
         "note": "coverage includes fenced blocks and inline code spans "
-                "(E-22); the registry is the run's own product"}
+                "(E-22); the registry is the run's own product, and a "
+                "numeral that is not in it passes only inside a DECLARED "
+                "identifier shape at its own position -- there is no bare "
+                "allow-list of tokens"}
     LD.gate("G-PAPER-NUMERAL-COVERAGE",
-            "EVERY NUMERAL IN THE PAPER IS THE RUN'S OWN PRODUCT (#20, "
-            "E-22).  The scan covers the whole file including fenced blocks "
-            "and inline spans, spelled numerals included; anything outside "
-            "the run's registry and the declared structural literals fails",
-            not unknown and not wordbad,
-            "numerals %d (fenced %d), spelled %d, unknown %s / %s"
-            % (len(nums), len(fnums), len(words), unknown or "none",
-               wordbad or "none"))
+            "EVERY NUMERAL IN THE PAPER IS THE RUN'S OWN PRODUCT, OR AN "
+            "IDENTIFIER IN A DECLARED SHAPE (#20, E-22).  The scan covers "
+            "the whole file including fenced blocks and inline spans; a "
+            "numeral outside the registry must sit inside one of the "
+            "declared identifier contexts -- a section heading, a paper or "
+            "ledger reference, an engraving, the 1935 citation -- matched at "
+            "its own position, so a token like 19 or 27 is not whitelisted "
+            "wherever it appears.  Spelled numerals are scanned through a "
+            "vocabulary of every English number word, and one that the map "
+            "cannot resolve fails rather than passing unseen",
+            not unknown and not wordbad and not unmapped,
+            "numerals %d (fenced %d), structural %s, spelled %d of %d "
+            "number-word tokens, unknown %s / %s, unmapped %s"
+            % (len(nums), len(fnums), dict(litrows), len(words), len(tokens),
+               unknown or "none", wordbad or "none", unmapped or "none"))
     SEAL.take("SEAL-PAPER-COVERAGE", R)
 
     prows, pbad = [], []
@@ -2854,51 +3886,182 @@ def paper_battery(R, paper_text, claims, tables):
     R["polarity"] = {"rows": prows, "count": reg(len(prows)),
                      "failures": pbad}
     LD.gate("G-PAPER-CLAIM-POLARITY",
-            "EVERY POLARITY AXIS IS CHECKED IN BOTH DIRECTIONS.  Five axes; "
-            "the paper must assert the measured direction and must not "
-            "contain its inverse anywhere in its bytes",
+            "EVERY POLARITY AXIS IS CHECKED IN BOTH DIRECTIONS.  %d axes -- "
+            "the head's applicability, the shadow's carrying, B's record, the "
+            "record's conjugate pair, the premise's localization and the two "
+            "horns of EPR's dilemma; the paper must assert the measured "
+            "direction and must not contain its inverse anywhere in its bytes"
+            % len(POLARITY),
             not pbad, "axes %d, failures %s" % (len(prows), pbad or "none"))
     SEAL.take("SEAL-POLARITY", R)
 
     uni = {}
-    for name, paths in REFERENT_UNIVERSES.items():
-        uni[name] = {str(jpath(R, p)) for p in paths}
-        uni[name] |= {com(int(v)) for v in uni[name] if v.isdigit()}
+    for name, spec in REFERENT_UNIVERSES.items():
+        # the bound is NOT admitted as a numerator unless the run measured it
+        # as one: "the shadow separates 36 of 36 records" is an in-universe
+        # falsehood, and it fails here because 36 is this universe's total and
+        # not a quantity measured in it (K3 MINOR-7).
+        bound = int(jpath(R, spec["bound"]))
+        vals = {int(jpath(R, p)) for p in spec["values"]}
+        uni[name] = {"bound": bound, "values": sorted(vals)}
     frac, fbad = [], []
     for a, b in NOF_RE.findall(paper_text):
-        homes = [n for n, vals in uni.items() if a in vals and b in vals]
+        na, nb = int(a.replace(",", "")), int(b.replace(",", ""))
+        homes = [n for n, u in sorted(uni.items())
+                 if nb == u["bound"] and na in u["values"] and na <= nb]
         frac.append({"fraction": "%s of %s" % (a, b), "universes": homes})
         if not homes:
             fbad.append("%s of %s" % (a, b))
+    # FALSIFIER MUT-REFERENT: a fraction with no declared referent universe
+    # is planted into the scan
     if mut("MUT-REFERENT"):
-        fbad.append("planted")
+        for a, b in NOF_RE.findall(
+                "\n\nthe shadow separates 36 of 512 records.\n"):
+            na, nb = int(a.replace(",", "")), int(b.replace(",", ""))
+            homes = [n for n, u in sorted(uni.items())
+                     if nb == u["bound"] and na in u["values"] and na <= nb]
+            frac.append({"fraction": "%s of %s" % (a, b), "universes": homes})
+            if not homes:
+                fbad.append("%s of %s" % (a, b))
     R["referent_binding"] = {
-        "universes": {k: sorted(v) for k, v in sorted(uni.items())},
+        "universes": {k: {"bound": reg(v["bound"]),
+                          "values": [reg(x) for x in v["values"]]}
+                      for k, v in sorted(uni.items())},
         "fractions": frac, "count": reg(len(frac)), "unbound": fbad,
-        "note": "every 'N of M' in the paper must have BOTH members carried "
-                "by one declared referent universe"}
+        "note": "every 'N of M' in the paper must name a declared universe "
+                "whose BOUND is M and one of whose declared VALUES is N, with "
+                "N at most M: membership alone would pass an in-universe "
+                "falsehood, so the denominator has to be the universe's own "
+                "total and the numerator a quantity this run measured in it"}
     LD.gate("G-SENTENCE-REFERENT-BINDING",
-            "EVERY FRACTION IN THE PAPER NAMES A UNIVERSE THAT CARRIES BOTH "
-            "OF ITS MEMBERS.  Six universes are declared from receipt paths; "
-            "an 'N of M' whose numerator and denominator are not carried by "
-            "one common universe fails",
+            "EVERY FRACTION IN THE PAPER IS RESOLVED AGAINST A DECLARED "
+            "UNIVERSE, BOUND AND VALUE.  %d universes are declared from "
+            "receipt paths, each with the total it counts over; an 'N of M' "
+            "passes only when M is that total, N is a value this run measured "
+            "in it, and N does not exceed M" % len(uni),
             not fbad, "fractions %d, unbound %s" % (len(frac), fbad or "none"))
     SEAL.take("SEAL-REFERENT", R)
 
+    # THE WALLED PHRASE, COUNTED (K2 M4).  §11 certifies that "element of
+    # reality" occurs only inside the formalised predicate and inside
+    # verbatim quotation.  That certificate had no gate and was false; this
+    # is the gate, and the accounting is exact.
+    occ = len(ELEMENT_RE.findall(hay))
+    carrows, accounted = [], 0
+    for cname, carrier in ELEMENT_CARRIERS:
+        c = canon(carrier)
+        n = hay.count(c)
+        per = len(ELEMENT_RE.findall(c))
+        accounted += n * per
+        carrows.append({"carrier": cname, "occurrences_in_the_paper": reg(n),
+                        "phrase_occurrences_each": reg(per)})
+    R["element_of_reality"] = {
+        "pattern": ELEMENT_RE.pattern,
+        "occurrences_in_the_paper": reg(occ),
+        "accounted_for_by_the_declared_carriers": reg(accounted),
+        "carriers": carrows,
+        "note": "the phrase may stand only inside the formalised predicate's "
+                "own declaration and inside verbatim quotation of 1935; the "
+                "paper's total is compared with the carriers' own count, so "
+                "a sentence in this unit's voice fails even though every "
+                "carrier is still present"}
+    LD.gate("G-ELEMENT-OF-REALITY-CONFINED",
+            "THE PHRASE 'ELEMENT OF REALITY' IS WALLED, AND THE WALL IS "
+            "COUNTED.  Every occurrence in the paper must be accounted for "
+            "by a declared carrier -- the formalised predicate's own "
+            "declaration, or a verbatim quotation of the 1935 paper -- and "
+            "the totals are compared exactly, so this unit cannot answer "
+            "EPR's question in its own voice",
+            occ == accounted and occ > 0,
+            "occurrences %d, accounted for %d, carriers %d"
+            % (occ, accounted, len(ELEMENT_CARRIERS)))
+    SEAL.take("SEAL-ELEMENT", R)
+
+    licensed, lrows = [], []
+    for lname, passage in WALL_LICENSED:
+        c = canon(passage)
+        n, at = 0, hay.find(c)
+        while at >= 0:
+            licensed.append((at, at + len(c)))
+            n += 1
+            at = hay.find(c, at + 1)
+        lrows.append({"passage": lname, "occurrences": reg(n)})
     hits = [s for s in BANNED if canon(s) in hay]
+    phits, pexcused = [], 0
+    for pid, pat in BANNED_PATTERNS:
+        for m in re.finditer(pat, hay, re.I):
+            if any(s <= m.start() and m.end() <= e for s, e in licensed):
+                pexcused += 1
+            else:
+                phits.append(pid)
     R["walls"] = {"banned": list(BANNED), "count": reg(len(BANNED)),
-                  "hits": hits,
+                  "patterns": [p for p, _x in BANNED_PATTERNS],
+                  "pattern_count": reg(len(BANNED_PATTERNS)),
+                  "licensed_passages": lrows,
+                  "pattern_hits_inside_the_licensed_passages": reg(pexcused),
+                  "hits": hits, "pattern_hits": sorted(set(phits)),
                   "scanned": PAPER_REL,
                   "note": "the Bell wall is scanned against this unit's own "
-                          "bytes -- the leg the wall is owed"}
+                          "bytes -- the leg the wall is owed -- as seven "
+                          "exact sentences AND as voice-normalised patterns, "
+                          "because a blacklist is defeated by re-voicing"}
     LD.gate("G-WALLS-SCAN-THE-PAPER",
-            "THE BELL WALL IS SCANNED AGAINST THIS UNIT'S OWN PAPER.  Seven "
-            "banned assertive sentences -- local realism restored, Bell "
-            "evaded, hidden variables vindicated among them -- are matched "
-            "against the paper's normalised bytes and must be absent; the "
-            "falsifier plants one into exactly that text",
-            not hits, "banned %d, hits %s" % (len(BANNED), hits or "none"))
+            "THE BELL WALL IS SCANNED AGAINST THIS UNIT'S OWN PAPER, IN BOTH "
+            "VOICES.  Seven banned assertive sentences -- local realism "
+            "restored, Bell evaded, hidden variables vindicated among them -- "
+            "and %d voice-normalised patterns that catch the same claims "
+            "said actively, at a distance, or in the passive: restoring "
+            "local realism or locality, evading or circumventing Bell, a "
+            "local hidden variable, a vindicated hidden-variable completion, "
+            "a refuted spooky action, a vindicated Einstein.  All are matched "
+            "against the paper's normalised bytes and must be absent OUTSIDE "
+            "the two declared passages that are allowed to carry those words "
+            "-- the verbatim standing verdict the paper is required to state, "
+            "and the paper's own denial -- both of which are gated in their "
+            "own right; two falsifiers plant one each, in either voice"
+            % len(BANNED_PATTERNS),
+            not hits and not phits,
+            "banned %d, hits %s; patterns %d, hits outside the licensed "
+            "passages %s, hits inside them %d; licensed passages found %d"
+            % (len(BANNED), hits or "none", len(BANNED_PATTERNS),
+               sorted(set(phits)) or "none", pexcused, len(licensed)))
     SEAL.take("SEAL-WALLS", R)
+
+    # THE WALL'S POSITIVE LEG (K3 MAJOR-7).  A wall with only a blacklist is
+    # satisfied by silence: a paper-38 that quietly deleted its Bell section
+    # passed every gate.  The standing verdict must be STATED here.
+    prows = []
+    for nm, _src, gate, needle in ANCHORS:
+        if gate == "G-BELL-WALL-STATED-IN-THE-PAPER":
+            prows.append({"anchor": nm, "stated_in_the_paper":
+                          bool(match_needle(paper_text, needle))})
+    pmiss = [r["anchor"] for r in prows if not r["stated_in_the_paper"]]
+    lmiss = [r["passage"] for r in lrows if r["occurrences"] != 1]
+    R["bell_wall_positive_leg"] = {
+        "rows": prows, "count": reg(len(prows)), "missing": pmiss,
+        "licensed_passages": lrows, "licensed_passages_missing": lmiss,
+        "note": "v5 paper-14's two verdict sentences are required VERBATIM "
+                "in this paper's own bytes, so the wall cannot be satisfied "
+                "by deleting the section that carries it; and the two "
+                "passages the pattern scan licenses -- the standing verdict "
+                "and this unit's own denial -- must each stand exactly once, "
+                "so the licence cannot be widened by repeating them"}
+    LD.gate("G-BELL-WALL-STATED-IN-THE-PAPER",
+            "THE STANDING BELL VERDICT IS STATED, NOT MERELY NOT "
+            "CONTRADICTED.  v5 paper-14's two sentences -- ISP is "
+            "Bell-nonlocal, and ISP is no-signalling and "
+            "parameter-independent -- are matched verbatim in this paper's "
+            "own bytes as well as in their source's, so a paper-38 that "
+            "silently dropped its Bell section would fail here.  The two "
+            "passages the pattern scan licenses must each stand exactly once",
+            not pmiss and not lmiss
+            and consume("G-BELL-WALL-STATED-IN-THE-PAPER", R),
+            "wall sentences required in the paper %d, missing %s; licensed "
+            "passages %s, not standing exactly once %s"
+            % (len(prows), pmiss or "none",
+               [(r["passage"], r["occurrences"]) for r in lrows],
+               lmiss or "none"))
+    SEAL.take("SEAL-BELL-POSITIVE", R)
     return paper_text
 
 
@@ -2976,12 +4139,70 @@ MUTANTS = (
     ("MUT-POLARITY", "G-PAPER-CLAIM-POLARITY",
      "an inverted claim is planted into the paper", "paper_battery"),
     ("MUT-REFERENT", "G-SENTENCE-REFERENT-BINDING",
-     "a fraction is left without a common referent universe",
+     "a fraction with no declared referent universe is planted into the scan",
      "paper_battery"),
     ("MUT-SEAL-DROP", "G-SEAL-TOTALITY",
      "one seal is not taken", "Seal"),
     ("MUT-INTEGRITY", "G-ARTIFACT-INTEGRITY",
      "the staged bytes are corrupted after sealing", "finish"),
+    # THE REPAIR'S OWN FALSIFIERS.  Every gate this repair adds carries one,
+    # and every hole the panel opened is closed by one that dies in it.
+    ("MUT-RESIDUE-CARRIES", "G-SHADOW-CARRIES-NOTHING-AT-EVERY-STATE",
+     "the residue partition is reported as carrying something, so the "
+     "theorem's third leg is asserted rather than measured", "shadow_theorem"),
+    ("MUT-SPEC-DOMAIN", "G-THE-ANALYTIC-LEGS-MEASURED",
+     "the containment that makes the record's counterpart zero analytic is "
+     "left unmeasured", "analytic_legs"),
+    ("MUT-RESIDUE-CRITERION", "G-OPERATOR-LEG-IS-RESIDUE-DEGENERACY",
+     "the operator leg is reported as tracking the observables rather than "
+     "the count residue", "residue_degeneracy_census"),
+    ("MUT-CONSUMER-PHANTOM", "G-ANCHOR-CONSUMERS-RAN",
+     "an anchor's consumer is re-pointed at a gate that never ran, leaving "
+     "its real consumer's other anchor in place so the consuming gate still "
+     "passes", "provenance"),
+    ("MUT-CAVEAT-UNUSED", "G-EPR-SUFFICIENCY-CAVEAT",
+     "the sentence that puts EPR's caveat to work is deleted from the paper, "
+     "leaving the quotation decorative", "provenance"),
+    ("MUT-BELL-TABLE", "G-PAPER-TABLES-WITH-HEADERS",
+     "the desiderata table's two description columns are swapped in the "
+     "rendered row, with every flag left correct", "bell_measure"),
+    ("MUT-BELL-VOICE", "G-WALLS-SCAN-THE-PAPER",
+     "the banned claim is planted in the active voice, which no literal "
+     "blacklist catches", "paper_battery"),
+    ("MUT-BELL-DELETE", "G-BELL-WALL-STATED-IN-THE-PAPER",
+     "the paper's own statement of the corpus's standing Bell verdict is "
+     "removed", "paper_battery"),
+    ("MUT-ELEMENT-PLANT", "G-ELEMENT-OF-REALITY-CONFINED",
+     "the walled phrase is used in the unit's own voice, outside the "
+     "predicate and outside quotation", "paper_battery"),
+    ("MUT-PAPER-SPELLED", "G-PAPER-NUMERAL-COVERAGE",
+     "an unmapped spelled numeral is planted into the paper", "paper_battery"),
+    ("MUT-PAPER-TABLE-ROW", "G-PAPER-TABLES-WITH-HEADERS",
+     "a fabricated row built out of registered numerals is appended to a "
+     "rendered table", "paper_battery"),
+    ("MUT-CLAIM-TWIN", "G-PAPER-CLAIMS",
+     "a duplicated claim's twin is forged, leaving its clean copy in place "
+     "to satisfy a containment gate", "paper_battery"),
+    ("MUT-FENCE", "G-PAPER-FENCES-MATCH-THE-VERDICT",
+     "a verdict fence is altered in one of its two printed copies",
+     "paper_battery"),
+    ("MUT-DESCRIPTION", "G-FALSIFIER-DESCRIBES-ITS-CODE",
+     "a falsifier's published description is inverted while its code is left "
+     "alone", "closing_battery"),
+    ("MUT-VOUCHING", "G-VOUCHING-KEYS-SEALED",
+     "the receipt's own testimony about its arithmetic is rewritten to "
+     "something false", "closing_battery"),
+    ("MUT-SEALED-AT-PHANTOM", "G-SEAL-TOTALITY",
+     "a seal claims provenance from a gate that never ran", "finish"),
+    ("MUT-POST-SNAPSHOT-KEY", "G-ARTIFACT-INTEGRITY",
+     "a fabricated key is inserted into the receipt after the seal manifest "
+     "was totalled", "finish"),
+    ("MUT-POST-CLOSE-EDIT", "G-ARTIFACT-INTEGRITY",
+     "a sealed value is edited after the manifest was closed and nothing "
+     "re-derived it", "finish"),
+    ("MUT-TRANSCRIPT-FORGE", "G-ARTIFACT-INTEGRITY",
+     "a forged PASS line is appended to the transcript after its gate-time "
+     "seal", "finish"),
 )
 MUTANT_NAMES = tuple(m[0] for m in MUTANTS)
 POST_SNAPSHOT_GATES = ("G-TRANSCRIPT-SEALED-AT-THE-SNAPSHOT",
@@ -2991,10 +4212,19 @@ POST_SNAPSHOT_GATES = ("G-TRANSCRIPT-SEALED-AT-THE-SNAPSHOT",
 # four, so those gates are DECLARED here and folded into it; a gate that ran
 # without appearing in this list or in the ledger would leave the census
 # blind, and G-SEAL-TOTALITY checks the declaration against what actually ran.
-DECLARED_LATE_GATES = ("G-PAPER-CLAIMS", "G-PAPER-TABLES-WITH-HEADERS",
+DECLARED_LATE_GATES = ("G-PAPER-CLAIMS", "G-PAPER-FENCES-MATCH-THE-VERDICT",
+                       "G-PAPER-TABLES-WITH-HEADERS",
                        "G-PAPER-NUMERAL-COVERAGE", "G-PAPER-CLAIM-POLARITY",
                        "G-SENTENCE-REFERENT-BINDING",
-                       "G-WALLS-SCAN-THE-PAPER") + POST_SNAPSHOT_GATES
+                       "G-ELEMENT-OF-REALITY-CONFINED",
+                       "G-WALLS-SCAN-THE-PAPER",
+                       "G-BELL-WALL-STATED-IN-THE-PAPER",
+                       "G-ANCHOR-CONSUMERS-RAN",
+                       # the five the census used to be blind to: they run at
+                       # or after it, and their waivers went unpublished
+                       "G-FALSIFIER-COVERAGE", "G-FALSIFIER-REACHABILITY",
+                       "G-READS-DECLARED", "G-SWEEP-IS-EXECUTION-BOUND",
+                       "G-CLOSING-BATTERY-RAN") + POST_SNAPSHOT_GATES
 
 
 def hook_carriers():
@@ -3014,8 +4244,33 @@ def hook_carriers():
     return out
 
 
+def hook_annotations():
+    """E-23, THE LEG THAT WAS MISSING (K3 MAJOR-4).  Matching the carrier's
+    NAME cannot catch a description-inverted falsifier, because the statement
+    string is never consulted.  Here every hook site carries the registry's
+    own sentence as an in-source annotation, and the published description
+    must be that annotation: invert the description and it no longer quotes
+    the code, so the gate fires."""
+    src = open(SELF, "r", encoding="utf-8").read()
+    tree = ast.parse(src)
+    out = {}
+    for node in ast.walk(tree):
+        if isinstance(node, (ast.FunctionDef, ast.ClassDef)):
+            seg = ast.get_source_segment(src, node) or ""
+            out[node.name] = norm(seg.replace("#", " "))
+    return out
+
+
+VOUCHED_ARITHMETIC = ("exact integers, fractions.Fraction and Z[w] as "
+                      "integer pairs; no float anywhere")
+
+
 def closing_battery(R, paper_text, claims, tables):
     say("SECTION 15c.  THE CLOSING BATTERY")
+    # FALSIFIER MUT-VOUCHING: the receipt's own testimony about its
+    # arithmetic is rewritten to something false
+    if mut("MUT-VOUCHING"):
+        R["arithmetic"] = "float64 throughout; numpy used for the census"
     src = open(SELF, "r", encoding="utf-8").read()
     tree = ast.parse(src)
     floats = [n for n in ast.walk(tree)
@@ -3029,19 +4284,62 @@ def closing_battery(R, paper_text, claims, tables):
             not floats and not fcalls,
             "float literals %d, float() calls %d" % (len(floats), len(fcalls)))
 
+    LD.gate("G-VOUCHING-KEYS-SEALED",
+            "WHAT THE RECEIPT VOUCHES FOR IS SEALED (#119).  The receipt's "
+            "own testimony about its arithmetic and its interpreter used to "
+            "sit in the declared-unsealed list, where it could be rewritten "
+            "after the fact to say the opposite of what the source scan just "
+            "established.  Both are re-derived here against the run and then "
+            "sealed like every other key",
+            R["arithmetic"] == VOUCHED_ARITHMETIC
+            and R["python"] == sys.version.split()[0]
+            and not floats and not fcalls,
+            "arithmetic vouched %r; python %s; float literals %d, float() "
+            "calls %d" % (R["arithmetic"][:48], R["python"], len(floats),
+                          len(fcalls)))
+    SEAL.take("SEAL-ARITHMETIC", R)
+    SEAL.take("SEAL-PYTHON", R)
+
     carriers = hook_carriers()
-    mrows, mbad = [], []
+    annot = hook_annotations()
+    mrows, mbad, dbad = [], [], []
     for name, gate, why, decl in MUTANTS:
         got = sorted(carriers.get(name, []))
         want = decl.split("|")
         ok = all(any(w == g for g in got) for w in want)
-        mrows.append({"mutant": name, "declared_gate": gate, "statement": why,
+        # FALSIFIER MUT-DESCRIPTION: a falsifier's published description is
+        # inverted while its code is left alone
+        why_used = (why.replace("granted", "REFUSED")
+                    if mut("MUT-DESCRIPTION") and name == "MUT-SEPARATION-LEAK"
+                    else why)
+        needle = norm("FALSIFIER %s: %s" % (name, why_used))
+        quoted = any(needle in annot.get(w, "") for w in want)
+        mrows.append({"mutant": name, "declared_gate": gate,
+                      "statement": why_used,
                       "declared_carrier": decl, "located_in": got,
-                      "description_matches_code": ok})
+                      "carrier_matches_code": ok,
+                      "description_quotes_the_code": quoted})
         if not ok:
             mbad.append(name)
+        if not quoted:
+            dbad.append(name)
+    LD.gate("G-FALSIFIER-DESCRIBES-ITS-CODE",
+            "EVERY FALSIFIER'S PUBLISHED DESCRIPTION IS THE CODE'S OWN "
+            "ANNOTATION (E-23).  Locating the hook by carrier NAME never "
+            "consults the statement, so a description-inverted falsifier "
+            "passed.  Here each hook site carries the registry's sentence "
+            "verbatim as an in-source annotation and the published "
+            "description must quote it, so inverting what a falsifier claims "
+            "to do -- without touching what it does -- fails",
+            not dbad, "falsifiers %d, descriptions not quoting their code %s"
+            % (len(MUTANTS), dbad or "none"))
+
     gates_with_falsifiers = {m[1] for m in MUTANTS}
-    ran = [g["gate"] for g in LD.rows] + list(DECLARED_LATE_GATES)
+    # THE CENSUS SEES EVERY GATE (K3 MINOR-1).  It used to be built from the
+    # ledger plus the declared-late list only, which left the five gates that
+    # run at or after it invisible -- and their waivers unpublished.
+    ran = sorted({g["gate"] for g in LD.rows} | set(DECLARED_LATE_GATES)
+                 | set(POST_SNAPSHOT_GATES))
     uncovered = [g for g in ran if g not in gates_with_falsifiers]
     waivers = {
         "G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS":
@@ -3062,48 +4360,56 @@ def closing_battery(R, paper_text, claims, tables):
             "execution-bound by construction: the sweep rows are the run's "
             "own product and an empty sweep cannot claim to have run",
         "G-TRANSCRIPT-SEALED-AT-THE-SNAPSHOT":
-            "forced: the transcript's digest is compared with the promoted "
-            "bytes at G-ARTIFACT-INTEGRITY, which MUT-INTEGRITY exercises",
+            "forced: the transcript's gate-time digest is compared with the "
+            "promoted bytes at G-ARTIFACT-INTEGRITY, which MUT-INTEGRITY and "
+            "MUT-TRANSCRIPT-FORGE both exercise",
         "G-RECEIPT-IS-EXACT":
             "a type-scan gate over the published object: any inexact leaf "
             "anywhere fires it, and no mutant can plant one without editing "
             "the file, which the source scan and the digests would show",
         "G-CLOSING-BATTERY-RAN": "this gate",
         "G-BELL-DESIDERATA-BOUND":
-            "forced by MUT-BELL-PLANT at the paper leg, which is where the "
-            "wall is owed",
-        "G-PAPER-CLAIMS":
-            "forced by MUT-PAPER-NUMERAL and MUT-POLARITY, both of which "
-            "alter the paper's bytes",
-        "G-SEAL-TOTALITY": "covered by MUT-SEAL-DROP",
-        "G-ARTIFACT-INTEGRITY": "covered by MUT-INTEGRITY",
+            "forced from both sides: MUT-BELL-TABLE moves a rendered cell of "
+            "the desiderata table and MUT-BELL-PLANT plants a banned sentence "
+            "into the paper, which is where the wall is owed",
     }
+    # THE WAIVER LEDGER CARRIES NO DEAD ROWS.  A waiver for a gate that has a
+    # falsifier is a green badge over nothing (E-23), so the two lists are
+    # required to be exactly complementary.
+    dead = [g for g in sorted(waivers) if g not in uncovered]
     unwaived = [g for g in uncovered if g not in waivers]
     R["mutants"] = {"rows": mrows, "count": reg(len(mrows)),
-                    "description_mismatches": mbad}
+                    "carrier_mismatches": mbad,
+                    "description_mismatches": dbad}
     R["coverage"] = {"gates_run": reg(len(ran)),
                      "gates_declared_to_run_after_this_census":
                          reg(len(DECLARED_LATE_GATES)),
-                     "gates_with_a_falsifier": reg(len(gates_with_falsifiers)),
+                     "gates_with_a_falsifier":
+                         reg(len(ran) - len(uncovered)),
+                     "distinct_gates_a_falsifier_targets":
+                         reg(len(gates_with_falsifiers)),
                      "gates_with_a_waiver": reg(len(uncovered)),
-                     "unwaived": unwaived}
+                     "unwaived": unwaived, "dead_waivers": dead,
+                     "gates": ran}
     R["waiver_ledger"] = {"rows": [{"gate": g, "forcing": waivers[g]}
                                    for g in uncovered if g in waivers],
                           "count": reg(len([g for g in uncovered
                                             if g in waivers]))}
     LD.gate("G-FALSIFIER-COVERAGE",
-            "EVERY GATE CARRIES A FALSIFIER OR A NAMED WAIVER WITH A FORCING "
-            "(E-23).  %d falsifiers are declared, each naming the "
-            "gate it must die at and the function that carries its hook; "
-            "every gate that has no falsifier carries a waiver whose forcing "
-            "is stated, and the gates that run after this census are folded "
-            "in by declaration rather than left invisible to it"
+            "EVERY GATE CARRIES A FALSIFIER OR A NAMED WAIVER WITH A FORCING, "
+            "AND THE CENSUS SEES EVERY GATE (E-23).  %d falsifiers are "
+            "declared, each naming the gate it must die at and the function "
+            "that carries its hook; every gate that has no falsifier carries "
+            "a waiver whose forcing is stated; the gates that run at or after "
+            "this census are folded in by declaration rather than left "
+            "invisible to it; and a waiver for a gate that HAS a falsifier is "
+            "refused, so no dead waiver sits in the ledger"
             % len(MUTANTS),
-            not unwaived and not mbad,
-            "gates %d, with falsifiers %d, waived %d, unwaived %s, "
-            "description mismatches %s"
-            % (len(ran), len(gates_with_falsifiers), len(uncovered),
-               unwaived or "none", mbad or "none"))
+            not unwaived and not mbad and not dead,
+            "gates %d, with falsifiers %d, waived %d, unwaived %s, dead "
+            "waivers %s, carrier mismatches %s"
+            % (len(ran), len(ran) - len(uncovered), len(uncovered),
+               unwaived or "none", dead or "none", mbad or "none"))
     SEAL.take("SEAL-MUTANTS", R)
     SEAL.take("SEAL-COVERAGE", R)
     SEAL.take("SEAL-WAIVERS", R)
@@ -3170,7 +4476,7 @@ def full_run(paper_text="", write=False):
         # read set the gate checks is the run's own I/O and the paper leg is
         # not exempt from it
         paper_text = read_text(PAPER_REL, "PAPER-UNDER-TEST")
-    texts = provenance(R)
+    texts = provenance(R, paper_text)
     fac = FAC_CITED
     windows_declare(R)
     arena_measure(R)
@@ -3181,7 +4487,7 @@ def full_run(paper_text="", write=False):
     tot = R["predicates"]["totality_failures"]
     separation_measure(R, corp, adm)
     uniq, classes, rfib, conj, ref = descriptions_measure(R, rows)
-    arms, FR, FS = certainty_measure(R, corp, adm, uniq, tot)
+    arms, FR, FS = certainty_measure(R, corp, adm, uniq, classes, tot)
     red = reductions_measure(R, corp, adm, uniq, rfib, arms)
     conjugacy_measure(R, corp, uniq, rfib, conj, ref)
     walk = [a for a in arms if a["localization"] == "LOC-WALK"
@@ -3194,13 +4500,39 @@ def full_run(paper_text="", write=False):
     verdict_measure(R, corp, adm, uniq, arms, tot, redwalk, e5)
     class_binding_measure(R, arms, ctrl, conj)
     claims, tables = paper_render(R)
-    R["arithmetic"] = ("exact integers, fractions.Fraction and Z[w] as "
-                       "integer pairs; no float anywhere")
+    R["arithmetic"] = VOUCHED_ARITHMETIC
     R["python"] = sys.version.split()[0]
     return R, claims, tables, paper_text
 
 
 def finish(R, write=True, swept=False):
+    # THE ANCHOR-CONSUMER CENSUS runs here, where every gate that names an
+    # anchor has already run and recorded its consumption.
+    ran_gates = {g["gate"] for g in LD.rows}
+    crows, cbad = [], []
+    for row in R["verbatim_anchors"]["rows"]:
+        gate = row["consumed_by"]
+        ran_it = gate in ran_gates
+        took_it = row["anchor"] in CONSUMED.get(gate, set())
+        crows.append({"anchor": row["anchor"], "consumed_by": gate,
+                      "the_gate_ran": ran_it, "the_gate_consumed_it": took_it})
+        if not (ran_it and took_it):
+            cbad.append(row["anchor"])
+    R["anchor_consumers"] = {
+        "rows": crows, "count": reg(len(crows)), "unconsumed": cbad,
+        "note": "an anchor's consumer is not decoration: the named gate must "
+                "be a gate this run ran, and it must have called consume() on "
+                "that anchor as part of its own condition, so a consumed_by "
+                "field pointing anywhere at all fails here"}
+    LD.gate("G-ANCHOR-CONSUMERS-RAN",
+            "EVERY ANCHOR IS CONSUMED BY THE GATE IT NAMES (K3 MINOR-10).  "
+            "The consumed_by field was written once and never read again; "
+            "here each anchor's named gate must be one this run actually ran "
+            "AND must have consumed that anchor inside its own condition, so "
+            "re-pointing an anchor at an unrelated or non-existent gate fails",
+            not cbad, "anchors %d, unconsumed or mis-pointed %s"
+            % (len(crows), cbad or "none"))
+    SEAL.take("SEAL-CONSUMERS", R)
     R["mutant_sweep"] = {
         "rows": SWEEP_ROWS, "executed": reg(len(SWEEP_ROWS)),
         "declared": reg(len(MUTANTS)), "swept": bool(swept),
@@ -3268,27 +4600,98 @@ def finish(R, write=True, swept=False):
     unsealed = sorted(k for k in published if k not in sealed_paths)
     after = [g["gate"] for g in LD.rows[len(R["gates"]):]]
     late = [g for g in after if g not in POST_SNAPSHOT_GATES]
-    allran = {g["gate"] for g in LD.rows} | set(POST_SNAPSHOT_GATES)
-    late += [g for g in DECLARED_LATE_GATES if g not in allran]
+    # THE UNSEALED LIST IS PINNED, NOT CONSULTED (K3 MAJOR-5b).  Growing it
+    # by a name used to publish a forged key under it; here the list itself
+    # is compared with the literal two structural keys.
+    unsealed_list_is_the_declared_two = (
+        set(DECLARED_UNSEALED) == {"seal_manifest", "payload_sha256_12"})
+    # EVERY SEAL'S PROVENANCE IS A GATE THAT RAN (K3 MAJOR-5c).  The shipped
+    # manifest named G-TRANSCRIPT-SEALED-WHOLE, a gate that never existed.
+    ledger_gates = {g["gate"] for g in LD.rows} | {"G-SEAL-TOTALITY"}
+    # FALSIFIER MUT-SEALED-AT-PHANTOM: a seal claims provenance from a gate
+    # that never ran
+    if mut("MUT-SEALED-AT-PHANTOM"):
+        SEAL.rows[0]["sealed_at_gate"] = "G-A-GATE-THAT-NEVER-RAN"
+    phantom = sorted({r["seal"] for r in SEAL.rows
+                      if r["sealed_at_gate"] not in ledger_gates})
     LD.gate("G-SEAL-TOTALITY",
-            "THE SEAL MANIFEST IS TOTAL (#119).  Every published receipt key "
-            "is either sealed at the gate that established it or named in "
-            "the declared-unsealed list; every gate that ran after the "
-            "ledger snapshot is one this unit declared would, and every gate "
-            "the coverage census folded in as declared-late actually ran",
-            not missing and not extra and not unsealed and not late,
+            "THE SEAL MANIFEST IS TOTAL, AND ITS PROVENANCE IS REAL (#119).  "
+            "Every published receipt key is either sealed at the gate that "
+            "established it or is one of the two structural keys the "
+            "declared-unsealed list is required to be, compared literally so "
+            "that growing the list publishes nothing; every seal's named gate "
+            "must be a gate this run actually ran, so a seal cannot claim "
+            "provenance from a phantom; and every gate that ran after the "
+            "ledger snapshot is one this unit declared would",
+            not missing and not extra and not unsealed and not late
+            and unsealed_list_is_the_declared_two and not phantom,
             "seals %d, published keys %d, missing %s, extra %s, unsealed %s, "
-            "undeclared late gates %s"
+            "undeclared late gates %s, unsealed list pinned %s, seals naming "
+            "a gate that never ran %s"
             % (len(SEAL.rows), len(published), missing or "none",
-               extra or "none", unsealed or "none", late or "none"))
+               extra or "none", unsealed or "none", late or "none",
+               unsealed_list_is_the_declared_two, phantom or "none"))
+    keys_at_totality = sorted(R)
     R["seal_manifest"] = SEAL.rows
     payload = json.dumps(R, indent=1, sort_keys=True, default=str)
     SEAL.close(R, payload)
     R["payload_sha256_12"] = SEAL.payload_sha
+    # FALSIFIER MUT-POST-SNAPSHOT-KEY: a fabricated key is inserted into the
+    # receipt after the seal manifest was totalled
+    if mut("MUT-POST-SNAPSHOT-KEY"):
+        R["headline_summary"] = {"verdict": "EPR-BOTH-COMPLETE",
+                                 "certified": "316,224"}
+    # FALSIFIER MUT-POST-CLOSE-EDIT: a sealed value is edited after the
+    # manifest was closed and nothing re-derived it
+    if mut("MUT-POST-CLOSE-EDIT"):
+        R["verdict"]["head"] = "EPR-BOTH-COMPLETE"
+    # THE SEALS ARE RE-DERIVED AT PROMOTION, NOT ONLY AT CLOSE.  SEAL.close
+    # verifies every sealed path against its gate-time digest, but the payload
+    # that is actually promoted is serialised AFTER it, so a sealed VALUE
+    # edited in between was published against a seal nothing re-checked --
+    # the third form of the ACT disease, beside the key ADD and the unsealed
+    # list.  Here the whole manifest is re-derived over the object as it
+    # stands at promotion.
+    post_close_broken = SEAL.verify(R)
     payload = json.dumps(R, indent=1, sort_keys=True, default=str)
+    # PROMOTION-TIME TOTALITY (#119 as amended).  G-SEAL-TOTALITY runs before
+    # the payload is built, and nothing re-checked the object afterwards: a
+    # key inserted in between was published unsealed, unlisted and
+    # undetected.  The key set is recomputed HERE, at promotion, against the
+    # set the manifest was totalled over plus exactly the two keys this
+    # function is allowed to add.
+    keys_now = sorted(R)
+    keys_want = sorted(set(keys_at_totality)
+                       | {"seal_manifest", "payload_sha256_12"})
+    keys_added_after_the_snapshot = sorted(set(keys_now) - set(keys_want))
+    keys_lost_after_the_snapshot = sorted(set(keys_want) - set(keys_now))
+    # FALSIFIER MUT-TRANSCRIPT-FORGE: a forged PASS line is appended to the
+    # transcript after its gate-time seal
+    if mut("MUT-TRANSCRIPT-FORGE"):
+        LINES.append("  [PASS] G-LOCAL-REALISM-RESTORED")
     text = "\n".join(LINES) + "\n"
     seal_j = hashlib.sha256(payload.encode("utf-8")).hexdigest()[:12]
     seal_t = hashlib.sha256(text.encode("utf-8")).hexdigest()[:12]
+    # THE TRANSCRIPT IS CONTENT-SEALED, NOT ROUND-TRIPPED (K3 MAJOR-6).  Two
+    # comparisons the old gate did not make: the promoted transcript's PREFIX
+    # against the digest sealed at gate time, and every [PASS]/[FAIL] line it
+    # carries against the ledger's own rows, as a multiset.  A hash of the
+    # live lines taken at promotion can only prove the file write
+    # round-tripped.
+    head_lines = R["transcript_head"]["lines_at_the_seal"]
+    prefix = "\n".join(LINES[:head_lines]) + "\n"
+    prefix_sha = hashlib.sha256(prefix.encode("utf-8")).hexdigest()[:12]
+    prefix_ok = prefix_sha == R["transcript_head"]["sha256_12"]
+    printed = Counter()
+    for line in LINES:
+        m = re.match(r"\s*\[(PASS|FAIL)\] (G-[A-Z0-9-]+)$", line)
+        if m:
+            printed[(m.group(2), m.group(1) == "PASS")] += 1
+    ledgered = Counter((g["gate"], g["passed"]) for g in LD.rows)
+    line_diff = sorted("%s:%s" % (k[0], k[1]) for k in
+                       list((printed - ledgered).elements())
+                       + list((ledgered - printed).elements()))
+    # FALSIFIER MUT-INTEGRITY: the staged bytes are corrupted after sealing
     staged_j = payload + (" " if mut("MUT-INTEGRITY") else "")
     tmp_j, tmp_t = OUT_JSON + ".tmp", OUT_TXT + ".tmp"
     if write:
@@ -3307,7 +4710,12 @@ def finish(R, write=True, swept=False):
     dt = hashlib.sha256(raw_t).hexdigest()[:12]
     flipped = bytes([raw_t[0] ^ 1]) + raw_t[1:]
     control_rejects = (hashlib.sha256(flipped).hexdigest()[:12] != seal_t)
-    ok = dj == seal_j and dt == seal_t and control_rejects
+    ranset = {g["gate"] for g in LD.rows} | {"G-ARTIFACT-INTEGRITY"}
+    late_missing = [g for g in DECLARED_LATE_GATES if g not in ranset]
+    ok = (dj == seal_j and dt == seal_t and control_rejects
+          and not keys_added_after_the_snapshot
+          and not keys_lost_after_the_snapshot and not post_close_broken
+          and prefix_ok and not line_diff and not late_missing)
     if write:
         if ok:
             os.replace(tmp_j, OUT_JSON)
@@ -3316,19 +4724,51 @@ def finish(R, write=True, swept=False):
             for p in (tmp_j, tmp_t):
                 if os.path.exists(p):
                     os.remove(p)
+    # AFTER os.replace, NOT ONLY BEFORE (K3 MINOR-8).  The comparison used to
+    # end at the staging read-back, leaving a window between it and the
+    # promotion; the promoted paths are re-read here and compared again.
+    promoted = {}
+    if write and ok:
+        for p, want in ((OUT_JSON, seal_j), (OUT_TXT, seal_t)):
+            with open(p, "rb") as fh:
+                promoted[p] = hashlib.sha256(fh.read()).hexdigest()[:12]
+        ok = all(promoted[p] == w for p, w in ((OUT_JSON, seal_j),
+                                               (OUT_TXT, seal_t)))
     LD.gate("G-ARTIFACT-INTEGRITY",
-            "THE BYTES ARE READ BACK BEFORE THEY ARE PROMOTED (#119).  Both "
-            "artifacts are written to staging, the STAGED bytes are read "
-            "back from disk and compared with the digests of the objects "
-            "sealed at gate time, and only then does os.replace promote "
-            "them; on refusal the staging files are removed and nothing is "
-            "promoted.  On a dry run the same comparison is taken over the "
-            "same buffered bytes, so the gate is reachable there too.  The "
-            "comparison is exercised in the failing direction as well, on "
-            "the same bytes with one bit flipped",
+            "THE BYTES ARE READ BACK BEFORE THEY ARE PROMOTED, AND AGAIN "
+            "AFTER (#119).  Both artifacts are written to staging, the "
+            "STAGED bytes are read back from disk and compared with the "
+            "digests of the objects sealed at gate time, and only then does "
+            "os.replace promote them; the promoted paths are then re-read and "
+            "compared once more, so the window between the read-back and the "
+            "promotion is closed.  On refusal the staging files are removed "
+            "and nothing is promoted; on a dry run the same comparison is "
+            "taken over the same buffered bytes, so the gate is reachable "
+            "there too, and it is exercised in the failing direction on the "
+            "same bytes with one bit flipped.  FOUR further comparisons ride "
+            "here because they can only be made at promotion: the receipt's "
+            "key set against the set the seal manifest was totalled over, so "
+            "a key inserted after the totality gate is caught; every sealed "
+            "value re-derived against its gate-time digest over the object as "
+            "it stands at promotion, so a sealed value edited after the "
+            "manifest closed is caught too; the promoted "
+            "transcript's PREFIX against the digest sealed at gate time; and "
+            "every [PASS]/[FAIL] line the transcript carries against the "
+            "ledger's own rows, as a multiset, so a forged PASS line is not a "
+            "line the ledger never wrote",
             ok, "receipt staged %s seal %s; transcript staged %s seal %s; "
-            "one-bit-flip control rejects %s; promoted %s"
-            % (dj, seal_j, dt, seal_t, control_rejects, bool(write and ok)))
+            "one-bit-flip control rejects %s; keys added after the snapshot "
+            "%s, lost %s; seals broken after the close %s; transcript prefix "
+            "%s vs sealed %s; transcript "
+            "PASS/FAIL lines vs the ledger %s; declared-late gates that never "
+            "ran %s; promoted %s, re-read %s"
+            % (dj, seal_j, dt, seal_t, control_rejects,
+               keys_added_after_the_snapshot or "none",
+               keys_lost_after_the_snapshot or "none",
+               post_close_broken or "none", prefix_sha,
+               R["transcript_head"]["sha256_12"], line_diff or "agree",
+               late_missing or "none", bool(write and ok),
+               promoted or "not promoted"))
     if write:
         print()
         print("receipt    %s  %s" % (OUT_JSON, dj))

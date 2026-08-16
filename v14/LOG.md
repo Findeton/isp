@@ -11620,3 +11620,39 @@ statement in its own review; the FINAL text
 (adb25f6b903e, 371 lines) supersedes 3f45f6837bb7 and is
 committed here.  All #357 rulings stand unchanged.  K3
 still out.
+
+## 2026-08-15 — EPR REPAIR (CONTINUATION) DELIVERED AND COMMITTED: EVERY Z CONFIRMED; TWO GAPS FILLED INCL. A THIRD ACT FORM PRE-EXISTING AT HEAD; THE E7 CAVEAT VERBATIM FROM THE PRINT; ZERO PHYSICS NUMBERS MOVED (v14 LEDGER #359)
+
+**Files:** paper-38-epr.md 22beb6696223; epr_exact.py
+ac2582b44c37; epr_output.txt 130df2ba87ad;
+epr_receipt.json 8813e0c2aad9.  The dead worker's Z1–Z7
+were complete and byte-reproducible; the continuation
+re-derived everything rather than inheriting.  Highlights:
+the shadow-zero THEOREM rendered with
+G-SHADOW-CARRIES-NOTHING-AT-EVERY-STATE (the 37-value
+parent alphabet swept at 50,653 states, ceiling 9 attained
+at 34,992, carried 0; head stamp
+STATE-INVARIANT-BY-THEOREM); the analytic legs said (§5
+"What the census could not have found"); the E7
+sufficiency caveat ANCHORED VERBATIM (373 chars, read
+against p.777–778 of the print) with its consumer gate;
+E6 scoped never-simpliciter; the Bell wall rebuilt (7
+strings + 14 voice-normalised patterns + the positive leg
+requiring v5's sentences in-bytes); the §9 Bell table
+rendered; coverage totalized 50 = 39 + 11 with no dead
+waivers.  **TWO GAPS FILLED: the E3-horn-swap polarity
+axes (K3's P2d died un-caught in the partial); and A
+THIRD ACT FORM — a sealed value edited AFTER close
+promoted a forged head, PRE-EXISTING AT HEAD — killed by
+re-deriving the whole manifest at promotion
+(MUT-POST-CLOSE-EDIT).**  Battery: 49/49 falsifiers
+out-of-harness; 57 injections — 54 dead, 3 pass-by-design
+each with its no-false-sentence proof; byte ×2 off-tree
+PATH=/nonexistent two seeds; selftest tree-hash
+write-nothing.  **Zero physics numbers moved** (33 moved
+leaves all instrument bookkeeping; the head and all four
+census arms byte-identical to HEAD).  One residual for
+the adjudicator: two typed-testimony receipt leaves
+(subprocesses/reads outside the list), safe by
+G-READS-DECLARED but typed — folds into the #267 sweep.
+**Orchestrator battery next; terminal on green.**

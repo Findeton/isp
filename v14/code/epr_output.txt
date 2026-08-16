@@ -3,14 +3,17 @@ SECTION 2.  PROVENANCE
          EVERY SOURCE IS READ AT A FROZEN DIGEST (#91).  The committed files are declared with their sha256-12 prefixes and each is verified against the bytes actually read, per file; the source of record is the 1935 print itself, and the one parent under repair is cited rather than read
          evidence: sources 6, disagreements none
   [PASS] G-VERBATIM-ANCHORS-IN-SOURCE
-         THE WALL QUOTES ARE MATCHED IN THEIR SOURCES' BYTES.  Fourteen anchors, each above the #62 length floor, each naming the gate that consumes it; the six EPR quotes are matched in the pin, where they were transcribed from the 1935 print
-         evidence: anchors 14, missing none
+         THE WALL QUOTES ARE MATCHED IN THEIR SOURCES' BYTES.  15 anchors, each above the #62 length floor, each naming the gate that consumes it; the six EPR quotes E1-E6 are matched in the pin, where they were transcribed from the 1935 print, and E7 -- the caveat the pin omitted -- is matched in this paper's own bytes
+         evidence: anchors 15, missing none
+  [PASS] G-EPR-SUFFICIENCY-CAVEAT
+         EPR'S OWN SUFFICIENT-NOT-NECESSARY CAVEAT IS CARRIED, VERBATIM, IN THIS PAPER.  The passage the pin omitted is transcribed from the print and matched in the paper's bytes, so the unit cannot report a non-instantiation as a verdict against EPR while leaving out the sentence in which they disclaim exactly that.  The quotation is required to be USED: the sentence that draws the consequence must stand in the paper as well
+         evidence: anchor A-E7 found in v14/paper-38-epr.md: True, 373 chars; consequence stated True
   [PASS] G-OUTCOMES-PARSED-FROM-THE-PIN
          THE OUTCOME VOCABULARY IS THE PIN'S, NOT THE INSTRUMENT'S.  The pre-registered words are parsed out of the pin's bytes and reduced to families; five words are expected and every one of them must be shown emittable by the real head law
          evidence: words ['EPR-BLOCKED-AT-<object>', 'EPR-BOTH-COMPLETE', 'EPR-CRITERION-INAPPLICABLE-AT-<object>', 'EPR-RECORD-ALSO-INCOMPLETE', 'EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE']
   [PASS] G-WINDOWS-DECLARED-WITH-THEIR-BOUNDS
-         EVERY WINDOW THIS UNIT COUNTS OVER IS DECLARED WITH ITS BOUND (§15).  Six windows; the subset lattice is complete and says so, and every other is named with the parent that fixed it
-         evidence: windows 6
+         EVERY WINDOW THIS UNIT COUNTS OVER IS DECLARED WITH ITS BOUND AND WITH WHETHER IT IS COMPLETE (§15).  Seven windows, three of them complete -- the subset lattice, the event shapes and the block lattice; every other is named with the parent that fixed it and is declared a bound rather than a completion
+         evidence: windows 7, complete 3 ['W-SUBSETS', 'W-EVENT-SHAPES', 'W-BLOCKS']
 SECTION 3.  THE ARENA
   [PASS] G-LINK-GRAPH-MEASURED
          THE ARENA'S SEPARATION STRUCTURE IS A MEASUREMENT (#87).  Every one of the 72 ordered site pairs is tested: two sites are UNLINKED exactly when they lie on a common line of the one parallel class the arena does not declare, so the link graph is complete multipartite with those three lines as its parts and every site has degree six
@@ -27,12 +30,12 @@ SECTION 4.  THE CORPUS
          evidence: site-constant 5856 of 5856 histories
 SECTION 5.  THE BLOCKS
   [PASS] G-BLOCKS-AGREE-WITH-FAC
-         THE BLOCKS ARE THE PARENT'S, REBUILT AND GATED ROW BY ROW (#87).  The two binding legs are re-implemented here; the resulting per-history admissible sets reproduce FAC's cardinality distribution, its whole inventory and its four named exceptions at their own corpus indices, each compared individually
+         THE BLOCKS ARE THE PARENT'S, REBUILT AND GATED ROW BY ROW (#87).  The two binding legs are re-implemented here; the resulting per-history admissible sets reproduce FAC's cardinality distribution, its whole inventory and its four named exceptions at their own corpus indices, each compared individually; what an actor IS here is AID's own sentence, matched verbatim as A-AID
          evidence: cross-checks 11, disagreements none; exception rows 4, disagreements none
 SECTION 6.  THE PREDICATES
   [PASS] G-PREDICATES-FROZEN-BEFORE-THE-CENSUS
-         THE TWO CRITERIA ARE DECLARED, LOCATED IN SOURCE, DIGESTED AND TOTAL BEFORE A CENSUS ROW RUNS.  Twelve predicate functions are found by AST in this file, digested individually and jointly, and their upper-case free names are required to contain no census product, so no predicate can consult the answer it decides; every predicate is then exercised on every argument combination of a declared probe set and required to return a boolean or a declared value at each
-         evidence: predicates 12, missing none, leaks none, totality probes 210 failures 0, combined digest f791c8dc0877
+         THE TWO CRITERIA ARE DECLARED, LOCATED IN SOURCE, DIGESTED AND TOTAL BEFORE A CENSUS ROW RUNS.  Twelve predicate functions are found by AST in this file, digested individually and jointly, and their upper-case free names are required to contain no census product, so no predicate can consult the answer it decides; ALL TWELVE are then exercised on every argument combination of a declared probe set and required to return a boolean or a declared value at each.  The criterion this gate freezes is EPR's own, matched verbatim in the pin as A-E2, and the no-disturbance clause is SEC's ruling, matched as A-SEAM
+         evidence: predicates 12, missing none, leaks none, totality probes 240 failures 0, combined digest 6a62aba8d086
 SECTION 7.  MEASUREMENT 1 -- THE SEPARATION PREMISE
   [PASS] G-SEPARATION-PREMISE-CENSUS
          EPR'S PREMISE IS MEASURED BEFORE IT IS USED, AT EVERY OBJECT (#87).  The complete lattice of 512 subsets is censused for a record quantity and for a nonempty far region, and every ordered block pair of every admissible decomposition of every committed history is tested for link-disjointness against the block's own quantities in both declared localizations.  At the record's own localization the two requirements never hold together; at the state's localization they hold at 105,408 pairs, and the difference is the localization, not the arena
@@ -42,18 +45,24 @@ SECTION 7.  MEASUREMENT 1 -- THE SEPARATION PREMISE
          evidence: event shapes 84, confined events 24, cell probes 54, disturbances 0, events that do reach a block quantity 342
 SECTION 8.  THE TWO DESCRIPTIONS
   [PASS] G-SHADOW-CEILING
-         THE SHADOW'S BLINDNESS IS A THEOREM ABOUT THE COIN, AND IT IS MEASURED AT EVERY STATE OF A DECLARED FAMILY.  Sixty-four states are swept; not one separates two committed records that share a residue class, so the shadow's ceiling is the residue class and no state can raise it.  The primary state is required to attain the sweep's maximum, so the audit gives the shadow its best case rather than a strawman
+         THE DECLARED STATE FAMILY WITNESSES THE THEOREM, AT ITS OWN BEST CASE.  Sixty-four states are swept; not one separates two committed records that share a residue class.  The primary state is required to attain this family's maximum, so the audit gives the shadow the best case the declared family has -- and the next gate shows the result does not depend on that at all.  The reading audited is paper-20's own, matched verbatim as A-READING-A, and the residue the walk consumes as A-MOD3
          evidence: records 36, residue classes 9, sweep 64 states, best 4, primary 4, separations 0
+  [PASS] G-SHADOW-CARRIES-NOTHING-AT-EVERY-STATE
+         THE SHADOW'S ZERO IS A THEOREM, NOT A SWEEP RESULT.  Two exact ring identities -- the count enters the coin as w^{n mod 3} and a uniform shift factors out as one phase, and the Born modulus cannot see that phase -- put every Born-menu partition, at every state whatever, below the residue partition; and the residue partition is measured to carry nothing, with no class a single record and none constant in any direction.  The declared 64-state family witnesses it and the parent's whole 37-value alphabet is swept as a cross-check: at none of its 50,653 states does any menu cell fix a direction
+         evidence: L1 probes 9 failures 0; L2 probes 507 failures 0; residue classes 9, singletons 0, direction-constant 0, shift-orbit disagreements 0 of 1296; key witness disagreements 0 of 64; parent alphabet 50653 states, best 9 menus at 34992 states, menu cells fixing a direction 0
   [PASS] G-READINGS-PARTITION-MEASURED
-         THE FIVE DECLARED READINGS ARE MEASURED AS PARTITIONS, NOT ASSERTED.  Each reading's fibres over the committed records are enumerated, the refinement relation is computed in both directions for all twenty-five ordered pairs, and the pairs where neither refines the other are the corpus's conjugate pairs.  paper-20's other coin order is measured record-blind: one cell, every record in it
+         THE FIVE DECLARED READINGS ARE MEASURED AS PARTITIONS, NOT ASSERTED.  Each reading's fibres over the committed records are enumerated, the refinement relation is computed in both directions for all twenty-five ordered pairs, and the pairs where neither refines the other are the corpus's conjugate pairs.  paper-20's other coin order is measured record-blind: one cell, every record in it -- which is that parent's own sentence, matched verbatim as A-DGBLIND, beside its record menu A-READING-B
          evidence: readings 5, conjugate pairs 3, DG cells 1
 SECTION 9.  MEASUREMENT 2 -- THE CERTAINTY-ELEMENT CENSUS
+  [PASS] G-THE-ANALYTIC-LEGS-MEASURED
+         WHAT THE CENSUS COULD NOT HAVE FOUND IS MEASURED AND PUBLISHED BEFORE IT RUNS (#299/#319).  Every declared spec is checked for the containment that makes the record's counterpart zero analytic and certification total; the both-complete branch is shown closed at every declared state by the residue ceiling; and the arena's own constructors are scanned by AST for any mention of a reading, because that absence is what forces the E5 zero.  The selector this unit really turns on is therefore two-way, and the paper says so
+         evidence: specs 132, quantity in the block's own directions 132, in the conditioner's 132; minimum unfixed (record, direction) pairs over the declared states 108; arena builders 10, reading names found in them none
     LOC-PAIR  SEP-LINK-DISJOINT   pairs 0        quantities 0        certified 0        no counterpart in the shadow 0        -> EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY
     LOC-PAIR  SEP-ACTOR-DISJOINT  pairs 18       quantities 54       certified 54       no counterpart in the shadow 54       -> EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE
     LOC-WALK  SEP-LINK-DISJOINT   pairs 105408   quantities 316224   certified 316224   no counterpart in the shadow 316224   -> EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE
     LOC-WALK  SEP-ACTOR-DISJOINT  pairs 421656   quantities 1265112  certified 1265112  no counterpart in the shadow 1265112  -> EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE
   [PASS] G-CERTAINTY-CENSUS-PER-ARM
-         EVERY ARM IS CENSUSED QUANTITY BY QUANTITY THROUGH THE FROZEN PREDICATES (#87).  EPR's completeness condition -- every element of the physical reality must have a counterpart in the physical theory -- is applied to both descriptions on all four arms; the record certifies and carries, the shadow certifies nothing and carries none of the record's
+         EVERY ARM IS CENSUSED QUANTITY BY QUANTITY THROUGH THE FROZEN PREDICATES (#87).  EPR's completeness condition -- every element of the physical reality must have a counterpart in the physical theory -- EPR's own sentence, matched verbatim as A-E1 -- is applied to both descriptions on all four arms; the record certifies and carries, the shadow certifies nothing and carries none of the record's.  What the record's zero is, and is not, is measured at G-THE-ANALYTIC-LEGS-MEASURED
          evidence: arms 4; primary arm pairs 0; walk arm certified 316224, without a record counterpart 0, without a shadow counterpart 316224
   [PASS] G-CERTAINTY-POLARITY
          THE CENSUS IS CHECKED IN BOTH DIRECTIONS.  A predicate that returned certainty everywhere would make the shadow certify as much as the record; the measured counts differ by arm and the shadow's own certified count is zero at every one of them, so the two predicates are not the same predicate wearing two names
@@ -63,19 +72,22 @@ SECTION 10.  MEASUREMENT 3 -- E4, THE TWO REDUCTIONS
     LOC-WALK  SEP-LINK-DISJOINT   probes 105408   distinct assignments {3: 594, 4: 8514, 5: 96300}
     LOC-WALK  SEP-ACTOR-DISJOINT  probes 421656   distinct assignments {3: 2382, 4: 34062, 5: 385212}
   [PASS] G-E4-TWO-REDUCTIONS
-         THE TWO-REDUCTIONS PHENOMENON IS REBUILT AS A COUNT, PER PROBE (#87).  For one and the same committed record, the five declared readings on the separated block assign more than one description to this block at every probe of the primary arm, and the fibre's size is published as a distribution rather than as an average
+         THE TWO-REDUCTIONS PHENOMENON IS REBUILT AS A COUNT, PER PROBE (#87).  For one and the same committed record, the five declared readings on the separated block assign more than one description to this block at every probe of the primary arm, and the fibre's size is published as a distribution rather than as an average, beside the joint reading's distribution so the definition-relativity is on the record.  EPR's own sentence is matched verbatim as A-E4
          evidence: primary arm probes 105408, probes with more than one assignment 105408, largest fibre 5
 SECTION 11.  MEASUREMENT 4 -- E3, THE NON-COMMUTING PAIR
   [PASS] G-CONJUGATE-PAIR-MEASURED
-         E3'S SECOND HORN IS PUT AT RISK AND MEASURED.  The corpus's own conjugate pair -- paper-20's Born menu against its record menu -- is verified NOT JOINTLY DECLARABLE by computing the refinement relation in both directions; the operator leg is taken exactly in Z[w], where the two declared coin orders differ at 30 of the 36 committed records; and the record is measured to carry both members at every committed history while no single Born menu carries both
+         E3'S SECOND HORN IS PUT AT RISK AND MEASURED.  The corpus's own conjugate pair -- paper-20's Born menu against its record menu -- is verified NOT JOINTLY DECLARABLE by computing the refinement relation in both directions, which is the leg that carries EPR's antecedent here -- E3 itself matched verbatim as A-E3; the operator leg is taken exactly in Z[w], where the two declared coin orders' OPERATORS differ at 30 of the 36 committed records; and the record is measured to carry both members at every committed history while no single Born menu carries both
          evidence: records where the orders differ 30 of 36; pair not jointly declarable True; histories where the record carries both 5856 of 5856; Born menu carries the record menu at 0 of 36 records
+  [PASS] G-OPERATOR-LEG-IS-RESIDUE-DEGENERACY
+         THE OPERATOR LEG IS LABELLED FOR WHAT IT MEASURES.  The two coin orders commute exactly when the site's three counts are equal modulo three -- the criterion agrees with the exact Z[w] comparison at every committed record -- so the leg tracks n mod 3 and not the observables; and at some of the commuting records the record observable diag(w^n) is not scalar, where the leg reports agreement while the two quantities' own operators do not commute.  This is a disclosure about the encoding, not an instance of EPR's antecedent, and the paper says so
+         evidence: criterion agreements 36 of 36; commuting records 6, of those with a non-scalar record observable 3
 SECTION 12.  MEASUREMENT 5 -- THE E5 AUDIT
   [PASS] G-E5-RECORD-DOES-NOT-MOVE
-         B'S RECORD IS MEASURED NOT TO MOVE WITH THE READING DECLARED AT A, PROBE BY PROBE, WITH THE TEST DECLARED.  B's own record and B's own shadow are recomputed under every declared reading through a reading-parameterised path; neither moves at any of the 105,408 probes, while the description assigned to B moves at all of them
+         B'S RECORD IS MEASURED NOT TO MOVE WITH THE READING DECLARED AT A, PROBE BY PROBE, WITH THE TEST DECLARED.  B's own record and B's own shadow are recomputed under every declared reading through a reading-parameterised path; neither moves at any of the 105,408 probes, while the description assigned to B moves at all of them.  EPR's own sentence is matched verbatim as A-E5.  The zero is forced by the formalisation and demonstrated uninjected -- what carries this row as a measurement of the ARENA is the dynamical census of section 7
          evidence: probes 105408, record moves 0, own-shadow moves 0, assigned description moves 105408
 SECTION 13.  MEASUREMENT 6 -- THE BELL WALL
   [PASS] G-BELL-DESIDERATA-BOUND
-         EVERY EPR DESIDERATUM IS BOUND TO A MEASURED ROW AND TO ITS BELL STATUS.  Six rows, each naming what each description does with that desideratum and whether the corpus's standing Bell verdict constrains it; the two rows that are constrained say so in their own text
+         EVERY EPR DESIDERATUM IS BOUND TO A MEASURED ROW AND TO ITS BELL STATUS.  Six rows, each naming what each description does with that desideratum and whether the corpus's standing Bell verdict constrains it; the two rows that are constrained say so in their own text, the E6 row is scoped to the censused certainty-elements and never to completeness simpliciter, and every cell the paper prints is RENDERED from these rows.  EPR's closing sentence is matched verbatim as A-E6
          evidence: desiderata 6, Bell-constrained 2
 SECTION 14.  THE CONTROL ARMS
   [PASS] G-EVERY-OUTCOME-WORD-EMITTABLE
@@ -93,7 +105,7 @@ EPR-SEPARATION<HISTORIES=5,856; BLOCK-PAIRS=421,656; LINK-DISJOINT=105,408; QUAN
 
 EPR-CENSUS<LOC-PAIR-x-SEP-LINK-DISJOINT=EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY-AT-0-PAIRS-0-CERTIFIED-0-UNCARRIED; LOC-PAIR-x-SEP-ACTOR-DISJOINT=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-18-PAIRS-54-CERTIFIED-54-UNCARRIED; LOC-WALK-x-SEP-LINK-DISJOINT=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-105,408-PAIRS-316,224-CERTIFIED-316,224-UNCARRIED; LOC-WALK-x-SEP-ACTOR-DISJOINT=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-421,656-PAIRS-1,265,112-CERTIFIED-1,265,112-UNCARRIED>
 
-EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY<PRIMARY-ARM=THE-RECORD-S-OWN-LOCALIZATION-AT-EPR-S-OWN-SEPARATION; SECOND-WORD=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-THE-STATE-LOCALIZATION-WITH-316,224-CERTIFIED-AND-316,224-UNCARRIED; E4-ASSIGNMENTS-AT-ONE-RECORD=5; E5-RECORD-MOVES=0-OF-105,408; SCOPE=ONE-ARENA,COMMITTED-HISTORIES,KINEMATIC-SEPARATION-AS-MEASURED;COUNTS-ARE-COUNTING-ONLY;NO-LOCAL-REALISM-CLAIM>
+EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY<PRIMARY-ARM=THE-RECORD-S-OWN-LOCALIZATION-AT-EPR-S-OWN-SEPARATION; SECOND-WORD=EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE-AT-THE-STATE-LOCALIZATION-WITH-316,224-CERTIFIED-AND-316,224-UNCARRIED-AND-STATE-INVARIANT-BY-THEOREM; E4-ASSIGNMENTS-AT-ONE-RECORD=5-AT-THE-DECLARED-PRIMARY-STATE-UNDER-THE-MARGINAL-READING; E5-RECORD-MOVES=0-OF-105,408; SCOPE=ONE-ARENA,COMMITTED-HISTORIES,KINEMATIC-SEPARATION-AS-MEASURED;COUNTS-ARE-COUNTING-ONLY;NO-LOCAL-REALISM-CLAIM>
   [PASS] G-CLASS-WORDS-BOUND-TO-PREDICATES
          EVERY CLASS WORD THIS UNIT PRINTS IS RECOMPUTED FROM THE PREDICATE THAT DEFINES IT (#295).  Eight class words, each carrying the branch or ruling that emits it and the count of arms at which the law actually emitted it
          evidence: class words 8, unbound none
@@ -101,32 +113,42 @@ SECTION 15c.  THE CLOSING BATTERY
   [PASS] G-NO-FLOAT-IN-SOURCE
          THE ARITHMETIC IS EXACT BY CONSTRUCTION AND THE FILE IS SCANNED TO PROVE IT.  No float literal and no call to float() occurs anywhere in this instrument
          evidence: float literals 0, float() calls 0
+  [PASS] G-VOUCHING-KEYS-SEALED
+         WHAT THE RECEIPT VOUCHES FOR IS SEALED (#119).  The receipt's own testimony about its arithmetic and its interpreter used to sit in the declared-unsealed list, where it could be rewritten after the fact to say the opposite of what the source scan just established.  Both are re-derived here against the run and then sealed like every other key
+         evidence: arithmetic vouched 'exact integers, fractions.Fraction and Z[w] as i'; python 3.13.2; float literals 0, float() calls 0
+  [PASS] G-FALSIFIER-DESCRIBES-ITS-CODE
+         EVERY FALSIFIER'S PUBLISHED DESCRIPTION IS THE CODE'S OWN ANNOTATION (E-23).  Locating the hook by carrier NAME never consults the statement, so a description-inverted falsifier passed.  Here each hook site carries the registry's sentence verbatim as an in-source annotation and the published description must quote it, so inverting what a falsifier claims to do -- without touching what it does -- fails
+         evidence: falsifiers 49, descriptions not quoting their code none
   [PASS] G-FALSIFIER-COVERAGE
-         EVERY GATE CARRIES A FALSIFIER OR A NAMED WAIVER WITH A FORCING (E-23).  30 falsifiers are declared, each naming the gate it must die at and the function that carries its hook; every gate that has no falsifier carries a waiver whose forcing is stated, and the gates that run after this census are folded in by declaration rather than left invisible to it
-         evidence: gates 35, with falsifiers 28, waived 7, unwaived none, description mismatches none
+         EVERY GATE CARRIES A FALSIFIER OR A NAMED WAIVER WITH A FORCING, AND THE CENSUS SEES EVERY GATE (E-23).  49 falsifiers are declared, each naming the gate it must die at and the function that carries its hook; every gate that has no falsifier carries a waiver whose forcing is stated; the gates that run at or after this census are folded in by declaration rather than left invisible to it; and a waiver for a gate that HAS a falsifier is refused, so no dead waiver sits in the ledger
+         evidence: gates 50, with falsifiers 39, waived 11, unwaived none, dead waivers none, carrier mismatches none
   [PASS] G-FALSIFIER-REACHABILITY
          EVERY DECLARED FALSIFIER REACHES ITS GATE (#34).  Each hook is located in this file by AST rather than trusted from its description, and the sweep executes every one of them and records where it actually died
-         evidence: falsifiers 30, hooks not located none
+         evidence: falsifiers 49, hooks not located none
   [PASS] G-READS-DECLARED
          THE READ SET IS THE DECLARED ONE, RECORDED AT THE I/O LAYER (#91).  Six sources and one object under test, the paper's own read taken inside the run so that no leg is exempt; a read of any other repository file appears here and fires this gate; no subprocess is invoked, so the run is correct off-tree and with no version control present
          evidence: reads 7, undeclared none
 SECTION 15b.  THE PAPER INSTRUMENT
-    C01  two sites are unlinked exactly when they lie on a common line of the one parallel class the arena does not declare, at 72 of 72 ordered site pairs
-    C02  0 of 512 subsets of the nine actors own a record quantity and a conditioning region sharing no link with them
-    C03  490 subsets own a record quantity and 19 have a nonempty far region
-    C04  of 421,656 ordered block pairs 105,408 are link-disjoint and 18 carry a record quantity at the block, and 0 carry both
-    C05  in the state's own localization the same predicates return 105,408 instances of the premise
-    C06  the record field is site-constant at 5,856 of 5,856 committed histories
-    C07  the corpus carries 36 distinct records and the shadow can separate at most 9 of them
-    C08  not one of the 64 declared states separates two committed records that share a residue class
-    C09  at the state's localization and EPR's own separation the record certifies 316,224 elements and the shadow carries 0 of them
-    C10  the shadow itself certifies 0 elements at any of the four arms
-    C11  at the record's own localization under the weaker separation the census runs at 18 pairs and 54 quantities
-    C12  the five declared readings assign more than one description to the same record at 105,408 of 105,408 probes, and as many as 5
-    C13  B's own record moves at 0 of 105,408 probes and the description assigned to B moves at 105,408
-    C14  the two declared coin orders differ at 30 of the 36 committed records
-    C15  the record carries both members of the conjugate pair at 5,856 of 5,856 committed histories
-    C16  over the 84 event shapes this arena admits, an event confined to an actor-disjoint region changes a record entry the other block owns 0 times, while 342 unconfined ones do reach a block's quantities
+    C01 x1  two sites are unlinked exactly when they lie on a common line of the one parallel class the arena does not declare, at 72 of 72 ordered site pairs
+    C02 x2  0 of 512 subsets of the nine actors own a record quantity and a conditioning region sharing no link with them
+    C03 x1  490 subsets own a record quantity and 19 have a nonempty far region
+    C04 x2  of 421,656 ordered block pairs 105,408 are link-disjoint and 18 carry a record quantity at the block, and 0 carry both
+    C05 x2  in the state's own localization the same predicates return 105,408 instances of the premise
+    C06 x1  the record field is site-constant at 5,856 of 5,856 committed histories
+    C07 x2  the corpus carries 36 distinct records and the shadow can separate at most 9 of them
+    C08 x2  not one of the 64 declared states separates two committed records that share a residue class
+    C09 x1  at the state's localization and EPR's own separation the record certifies 316,224 elements and the shadow carries 0 of them
+    C10 x1  the shadow itself certifies 0 elements at any of the four arms
+    C11 x1  at the record's own localization under the weaker separation the census runs at 18 pairs and 54 quantities
+    C12 x1  the five declared readings assign more than one description to the same record at 105,408 of 105,408 probes, and as many as 5
+    C13 x1  B's own record moves at 0 of 105,408 probes and the description assigned to B moves at 105,408
+    C14 x1  the two declared coin orders' operators differ at 30 of the 36 committed records
+    C15 x1  the record carries both members of the conjugate pair at 5,856 of 5,856 committed histories
+    C16 x1  over the 84 event shapes this arena admits, an event confined to an actor-disjoint region changes a record entry the other block owns 0 times, while 342 unconfined ones do reach a block's quantities
+    C17 x2  no residue class of this corpus is a single record, and none is constant in any direction: 0 of 9 and 0 of 9
+    C18 x1  over paper-20's own 37-value alphabet the sweep runs at 50,653 states, the ceiling of 9 menus is attained at 34,992 of them, and the shadow carries a certified direction at 0
+    C19 x1  the quantity censused at a block is one of the block's own localization's directions at 132 of 132 declared specs
+    C20 x1  the two coin orders commute at exactly the 6 records whose three counts are equal modulo three, and at 3 of those the record observable is not scalar
     T-ARMS | localization | separation | pairs | quantities | certified | uncarried by the shadow | word |
             | LOC-PAIR | SEP-LINK-DISJOINT | 0 | 0 | 0 | 0 | EPR-CRITERION-INAPPLICABLE-AT-THE-PAIR-LOCALIZED-BLOCK-QUANTITY |
             | LOC-PAIR | SEP-ACTOR-DISJOINT | 18 | 54 | 54 | 54 | EPR-SHADOW-INCOMPLETE-RECORD-COMPLETE |
@@ -153,36 +175,55 @@ SECTION 15b.  THE PAPER INSTRUMENT
             | READ-BORN-DG | 1 | 36 |
             | READ-RECORD-MENU | 23 | 4 |
             | READ-CURVATURE | 3 | 13 |
+    T-BELL | desideratum | D-RECORD | D-SHADOW | Bell-constrained |
+            | E1 counterpart for every element | met on the measured arms | not met | no |
+            | E2 certainty without disturbance | instantiable only in the state's localization | never here | no |
+            | E3 simultaneous reality for a conjugate pair | held at every history | refused | yes |
+            | E4 one reality, several assignments | one record throughout | up to five assignments | no |
+            | E5 no dependence on the distant choice | zero moves measured | the assigned description moves | no |
+            | E6 such a theory is possible | complete for the censused certainty-elements on the measured arms | not applicable | yes |
   [PASS] G-PAPER-CLAIMS
-         EVERY LOAD-BEARING SENTENCE OF THE PAPER IS RENDERED FROM THE RECEIPT AND MATCHED IN THE PAPER'S OWN BYTES (#20).  Fifteen claims, each built out of receipt values rather than typed, so a paper that drifts from its run cannot pass
-         evidence: claims 16, missing none
+         EVERY LOAD-BEARING SENTENCE OF THE PAPER IS RENDERED FROM THE RECEIPT AND MATCHED IN THE PAPER'S OWN BYTES BY OCCURRENCE COUNT (#20, E-22).  20 claims, each built out of receipt values rather than typed and each declaring how many times it is said, so a paper that drifts from its run cannot pass and neither can a forged twin of a sentence said twice
+         evidence: claims 20, declared occurrences 26, wrong counts none
+  [PASS] G-PAPER-FENCES-MATCH-THE-VERDICT
+         THE VERDICT FENCES ARE THE RUN'S OWN, BY MULTISET (E-22).  The paper prints three fenced blocks twice each; they are compared as a multiset against the three segments this run emitted, so a word changed in one copy, a stamp struck from both, or an extra block anywhere fails here
+         evidence: fenced blocks 6, distinct 3, mismatches 0
   [PASS] G-PAPER-TABLES-WITH-HEADERS
-         EVERY TABLE IS RENDERED FROM THE RECEIPT WITH ITS HEADERS INCLUDED, so a header swap that leaves every number correct dies here (E-22: tables render as claims)
-         evidence: tables 4, rows 22, missing none
+         EVERY TABLE IS RENDERED FROM THE RECEIPT WITH ITS HEADERS INCLUDED AND MATCHED BY MULTISET, so a header swap that leaves every number correct dies here, and so does a fabricated row built out of registered numerals, and so does a table the run never rendered (E-22: tables render as claims).  All five of the paper's tables are rendered -- including the section 9 desiderata table, which is the one that carries the Bell wall
+         evidence: tables 5, rows 28, table blocks in the paper 5, mismatches none
   [PASS] G-PAPER-NUMERAL-COVERAGE
-         EVERY NUMERAL IN THE PAPER IS THE RUN'S OWN PRODUCT (#20, E-22).  The scan covers the whole file including fenced blocks and inline spans, spelled numerals included; anything outside the run's registry and the declared structural literals fails
-         evidence: numerals 220 (fenced 50), spelled 123, unknown none / none
+         EVERY NUMERAL IN THE PAPER IS THE RUN'S OWN PRODUCT, OR AN IDENTIFIER IN A DECLARED SHAPE (#20, E-22).  The scan covers the whole file including fenced blocks and inline spans; a numeral outside the registry must sit inside one of the declared identifier contexts -- a section heading, a paper or ledger reference, an engraving, the 1935 citation -- matched at its own position, so a token like 19 or 27 is not whitelisted wherever it appears.  Spelled numerals are scanned through a vocabulary of every English number word, and one that the map cannot resolve fails rather than passing unseen
+         evidence: numerals 280 (fenced 50), structural {'PAPER-IDENTIFIER': 4, 'THE-SOURCE-FILENAME': 3, 'THE-1935-CITATION': 3, 'THE-1935-PAPER': 1}, spelled 171 of 186 number-word tokens, unknown none / none, unmapped none
   [PASS] G-PAPER-CLAIM-POLARITY
-         EVERY POLARITY AXIS IS CHECKED IN BOTH DIRECTIONS.  Five axes; the paper must assert the measured direction and must not contain its inverse anywhere in its bytes
-         evidence: axes 5, failures none
+         EVERY POLARITY AXIS IS CHECKED IN BOTH DIRECTIONS.  7 axes -- the head's applicability, the shadow's carrying, B's record, the record's conjugate pair, the premise's localization and the two horns of EPR's dilemma; the paper must assert the measured direction and must not contain its inverse anywhere in its bytes
+         evidence: axes 7, failures none
   [PASS] G-SENTENCE-REFERENT-BINDING
-         EVERY FRACTION IN THE PAPER NAMES A UNIVERSE THAT CARRIES BOTH OF ITS MEMBERS.  Six universes are declared from receipt paths; an 'N of M' whose numerator and denominator are not carried by one common universe fails
-         evidence: fractions 7, unbound none
+         EVERY FRACTION IN THE PAPER IS RESOLVED AGAINST A DECLARED UNIVERSE, BOUND AND VALUE.  11 universes are declared from receipt paths, each with the total it counts over; an 'N of M' passes only when M is that total, N is a value this run measured in it, and N does not exceed M
+         evidence: fractions 13, unbound none
+  [PASS] G-ELEMENT-OF-REALITY-CONFINED
+         THE PHRASE 'ELEMENT OF REALITY' IS WALLED, AND THE WALL IS COUNTED.  Every occurrence in the paper must be accounted for by a declared carrier -- the formalised predicate's own declaration, or a verbatim quotation of the 1935 paper -- and the totals are compared exactly, so this unit cannot answer EPR's question in its own voice
+         evidence: occurrences 4, accounted for 4, carriers 4
   [PASS] G-WALLS-SCAN-THE-PAPER
-         THE BELL WALL IS SCANNED AGAINST THIS UNIT'S OWN PAPER.  Seven banned assertive sentences -- local realism restored, Bell evaded, hidden variables vindicated among them -- are matched against the paper's normalised bytes and must be absent; the falsifier plants one into exactly that text
-         evidence: banned 7, hits none
+         THE BELL WALL IS SCANNED AGAINST THIS UNIT'S OWN PAPER, IN BOTH VOICES.  Seven banned assertive sentences -- local realism restored, Bell evaded, hidden variables vindicated among them -- and 14 voice-normalised patterns that catch the same claims said actively, at a distance, or in the passive: restoring local realism or locality, evading or circumventing Bell, a local hidden variable, a vindicated hidden-variable completion, a refuted spooky action, a vindicated Einstein.  All are matched against the paper's normalised bytes and must be absent OUTSIDE the two declared passages that are allowed to carry those words -- the verbatim standing verdict the paper is required to state, and the paper's own denial -- both of which are gated in their own right; two falsifiers plant one each, in either voice
+         evidence: banned 7, hits none; patterns 14, hits outside the licensed passages none, hits inside them 4; licensed passages found 2
+  [PASS] G-BELL-WALL-STATED-IN-THE-PAPER
+         THE STANDING BELL VERDICT IS STATED, NOT MERELY NOT CONTRADICTED.  v5 paper-14's two sentences -- ISP is Bell-nonlocal, and ISP is no-signalling and parameter-independent -- are matched verbatim in this paper's own bytes as well as in their source's, so a paper-38 that silently dropped its Bell section would fail here.  The two passages the pattern scan licenses must each stand exactly once
+         evidence: wall sentences required in the paper 2, missing none; licensed passages [('THE-STANDING-VERDICT-QUOTED', 1), ('THE-UNIT-S-OWN-DENIAL', 1)], not standing exactly once none
+  [PASS] G-ANCHOR-CONSUMERS-RAN
+         EVERY ANCHOR IS CONSUMED BY THE GATE IT NAMES (K3 MINOR-10).  The consumed_by field was written once and never read again; here each anchor's named gate must be one this run actually ran AND must have consumed that anchor inside its own condition, so re-pointing an anchor at an unrelated or non-existent gate fails
+         evidence: anchors 15, unconsumed or mis-pointed none
   [PASS] G-SWEEP-IS-EXECUTION-BOUND
          THE SWEEP FLAG IS BOUND TO EXECUTION.  A run may claim a sweep only when the sweep rows are its own product: the flag and the row count are compared here, so 'swept' with no sweep dies
          evidence: swept False, rows 0, off target none
   [PASS] G-CLOSING-BATTERY-RAN
          THE PAPER INSTRUMENT AND THE CLOSING BATTERY RAN IN THE PLAIN RUN (#20).  Every gate of this unit is in one ledger, and the ledger, the seal manifest and the transcript are sealed into the same receipt
-         evidence: gates 35, seals 35
+         evidence: gates 45, seals 44
   [PASS] G-TRANSCRIPT-SEALED-AT-THE-SNAPSHOT
          THE TRANSCRIPT IS SEALED (#119).  Its digest is taken over every line the run has emitted at the snapshot and carried in the receipt; the gates that run after it are declared by name and checked to be exactly those, and the completed transcript's bytes are read back and compared at promotion
-         evidence: transcript lines at the seal 179
+         evidence: transcript lines at the seal 220
   [PASS] G-RECEIPT-IS-EXACT
          THE RECEIPT IS SCANNED RECURSIVELY FOR INEXACT TYPES.  Every leaf of the published object must be a string, an integer, a boolean or null
          evidence: inexact leaves none
   [PASS] G-SEAL-TOTALITY
-         THE SEAL MANIFEST IS TOTAL (#119).  Every published receipt key is either sealed at the gate that established it or named in the declared-unsealed list; every gate that ran after the ledger snapshot is one this unit declared would, and every gate the coverage census folded in as declared-late actually ran
-         evidence: seals 39, published keys 39, missing none, extra none, unsealed none, undeclared late gates none
+         THE SEAL MANIFEST IS TOTAL, AND ITS PROVENANCE IS REAL (#119).  Every published receipt key is either sealed at the gate that established it or is one of the two structural keys the declared-unsealed list is required to be, compared literally so that growing the list publishes nothing; every seal's named gate must be a gate this run actually ran, so a seal cannot claim provenance from a phantom; and every gate that ran after the ledger snapshot is one this unit declared would
+         evidence: seals 48, published keys 48, missing none, extra none, unsealed none, undeclared late gates none, unsealed list pinned True, seals naming a gate that never ran none
