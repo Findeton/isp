@@ -12,11 +12,22 @@ participation-signature partition; AID (paper-33) proved the naming forced on
 complete multipartite.  This unit builds the reconstruction map itself.
 
 WHAT IS READ.  The BARE RECORD: for every committed history, the sequence of
-CELLS EACH DIVISION EVENT WROTE, with every actor label, every site label and
-every direction label erased and the cell indices scrambled by a declared
-arena-blind permutation.  Nothing else reaches the reconstructor.  The record
-count field n_l(x) is measured too, as the level-0 arm, and is shown
-insufficient rather than assumed so.
+CELLS EACH DIVISION EVENT WROTE, with every actor label and every site label
+erased and the cell indices moved by a declared coordinate.  The record count
+field n_l(x) is measured too, as the level-0 arm, and is shown insufficient
+rather than assumed so.
+
+THE ERASER, DECLARED HONESTLY.  The declared coordinate is affine, k -> 5k+11
+mod 27, and the cells are enumerated site-major and link-minor, so a cell's
+index modulo three IS its declared direction and every affine map fixes that
+residue: the three declared direction classes remain readable off the emitted
+ids.  The eraser is therefore NOT ARENA-BLIND AS DECLARED.  The reconstruction
+is ARENA-BLIND AS MEASURED, and that is a measurement rather than a promise:
+the reconstructor does no arithmetic on token ids at all, and every quantity
+this unit publishes is unchanged at 60 uniformly random coordinates, with the
+derived cast relabelling and nothing else moving at 300 random (and
+overwhelmingly non-affine) relabellings.  G-STRIPPING-COORDINATE-FREE prices
+the channel the twelve affine trials cannot price.
 
 S-1 BY CONSTRUCTION (the registered-unimplemented family, TEMPLATE.md Sec.11).
 Three code regions, disjoint by machine check at G-S1-DISJOINT-CODE:
@@ -47,7 +58,8 @@ import os
 import re
 import sys
 from fractions import Fraction
-from itertools import combinations, permutations, product
+from itertools import (combinations, combinations_with_replacement,
+                       permutations, product)
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 if _HERE not in sys.path:
@@ -76,10 +88,29 @@ SOURCES = {
     TEMPLATE_REL: "d04a3eb58fbc",
 }
 
-# A DECLARED COORDINATE, arena-blind: it is a function of the token index and
-# of nothing else.  G-STRIPPING-EQUIVARIANT proves no measured quantity
-# depends on it.
+# THE DECLARED COORDINATE.  It is a function of the token index and of nothing
+# else, and it is AFFINE, which is exactly why it leaves one arena datum
+# readable: the direction class survives as the token id's residue mod 3 (see
+# the module docstring, R["residue_channel"] and G-STRIPPING-TOTAL's statement).
+# It is kept for reproducibility and PRICED at G-STRIPPING-COORDINATE-FREE,
+# where the whole reconstruction is re-run at uniformly random coordinates.
 SCRAMBLE_MULT, SCRAMBLE_ADD = 5, 11
+
+# The random coordinate census.  The generator is a declared integer LCG so
+# that "uniformly random" is also byte-reproducible; no float is involved.
+COORD_SEED = 20260816
+COORD_TRIALS = 60
+RELABEL_TRIALS = 300
+
+# THE SWAP LEG'S DECLARED CAP.  It is a cap, it is named here, and every one
+# of its witnesses is published at G-CONTROL-SCRAMBLED-FAILS: the pairs it
+# visits, the moving corruptions it runs, and the moving corruptions it drops.
+SWAP_CAP = 8
+
+# The declared coordinates at which the control arm's own DENOMINATOR is
+# recomputed, so that its coordinate-relativity is published rather than found.
+SCRAMBLE_COORDINATES = ((1, 0), (2, 5), (4, 1), (5, 11), (7, 3), (8, 17),
+                        (10, 2), (13, 25), (20, 7), (25, 26))
 
 # ===========================================================================
 # SECTION A.  b_*  --  THE BUILDER: the declared arena and the corpus.
@@ -433,8 +464,58 @@ def b_collapse_threshold(H):
 # ===========================================================================
 
 def s_scramble():
-    """a declared arena-blind relabelling of the token indices."""
+    """THE DECLARED COORDINATE: a relabelling of the token indices that is a
+    function of the token index alone -- and affine, so it fixes the residue
+    mod 3 that carries the declared direction.  Disclosed, not hidden."""
     return tuple((SCRAMBLE_MULT * k + SCRAMBLE_ADD) % DIM for k in range(DIM))
+
+
+def s_lcg(seed):
+    """A declared integer generator: exact, reproducible, no float."""
+    s = seed
+    while True:
+        s = (6364136223846793005 * s + 1442695040888963407) % (2 ** 64)
+        yield s >> 33
+
+
+def s_random_permutation(gen, n):
+    """A uniform draw from the FULL symmetric group on n letters -- the family
+    the declared affine coordinate is a vanishing part of."""
+    out = list(range(n))
+    for i in range(n - 1, 0, -1):
+        j = next(gen) % (i + 1)
+        out[i], out[j] = out[j], out[i]
+    return tuple(out)
+
+
+def s_declared_relabelling(step):
+    """the declared equivariance trials: multiplicative where the multiplier is
+    a unit, a translation otherwise.  All twelve are AFFINE, which is exactly
+    what G-STRIPPING-COORDINATE-FREE prices them for."""
+    rho = tuple((step * 2 + 1) * k % DIM for k in range(DIM))
+    if sorted(rho) != list(range(DIM)):
+        rho = tuple((k + step) % DIM for k in range(DIM))
+    return rho
+
+
+def s_is_affine(rho):
+    """is this coordinate of the form k -> a*k + b mod n?"""
+    n = len(rho)
+    for a in range(1, n):
+        for b in range(n):
+            if all(rho[k] == (a * k + b) % n for k in range(n)):
+                return True
+    return False
+
+
+def s_direction_is_the_residue(coord):
+    """THE LEAK, MEASURED.  Under this coordinate, is the declared direction a
+    function of the emitted token id modulo three?  Under the declared affine
+    map it is, exactly; under a random coordinate it is not."""
+    seen = collections.defaultdict(set)
+    for k, (_x, l) in enumerate(CELLS):
+        seen[coord[k] % len(I7_LINKS)].add(I7_LINKS.index(l))
+    return all(len(v) == 1 for v in seen.values())
 
 
 def s_bare_history(H, pi):
@@ -651,8 +732,15 @@ def r_resolutions(rec):
         return frozenset(out)
     tf = [(f, tokens_of(f)) for f in facs]
     want = len(toks)
+    widths = {len(c) for _f, c in tf}
+    if len(widths) != 1:
+        return []
+    width = widths.pop()
+    if not width or want % width:
+        return []
+    need = want // width          # DERIVED: how many classes a splitting needs
     out = []
-    for combo in combinations(range(len(tf)), 3):
+    for combo in combinations(range(len(tf)), need):
         cov = [tf[i][1] for i in combo]
         if sum(len(c) for c in cov) == want and len(set().union(*cov)) == want:
             out.append(tuple(sorted(tf[i][0] for i in combo)))
@@ -749,6 +837,55 @@ def k_coherent(isos, declared_cast, tokens, direction_classes):
     return good
 
 
+def k_factor_of(cast, tokens_of_one_class):
+    """the partition of the cast induced by ONE class of tokens: two actors
+    are together when the tokens they share all lie in the class."""
+    want = set(tokens_of_one_class)
+    n = len(cast)
+    adj = collections.defaultdict(set)
+    for i, j in combinations(range(n), 2):
+        sh = set(cast[i]) & set(cast[j])
+        if sh and sh <= want:
+            adj[i].add(j)
+            adj[j].add(i)
+    seen, out = set(), []
+    for i in range(n):
+        if i in seen:
+            continue
+        blk = tuple(sorted({i} | adj[i]))
+        seen |= set(blk)
+        out.append(blk)
+    return tuple(sorted(out))
+
+
+def k_declared_splitting(derived_cast, declared_cast, direction_classes):
+    """THE DECLARED SPLITTING, expressed in the derived cast's own indices --
+    so that it can be looked for among the record's own resolutions."""
+    if not k_agree_sets(derived_cast, declared_cast):
+        return None
+    return tuple(sorted(k_factor_of(derived_cast, c)
+                        for c in direction_classes))
+
+
+def k_orbit_of(derived_cast, declared_cast, isos, splitting):
+    """the ORBIT of a splitting under the admissible namings.  Transitivity is
+    what makes the residue index a COUNT of the splittings rather than a
+    number that happens to equal one."""
+    if splitting is None:
+        return []
+    imap = k_index_map(derived_cast, declared_cast)
+    if imap is None:
+        return []
+    inv = {v: k for k, v in imap.items()}
+    out = set()
+    for s in isos:
+        rel = {i: inv[s[i]] for i in range(len(derived_cast))}
+        out.add(tuple(sorted(
+            tuple(sorted(tuple(sorted(rel[a] for a in blk)) for blk in fac))
+            for fac in splitting)))
+    return sorted(out)
+
+
 def k_menu_agreement(derived_menu, declared_menu, naming):
     """each derived menu member is carried through a naming and looked for in
     the declared menu; each declared member is looked for in the image."""
@@ -767,6 +904,7 @@ def k_menu_agreement(derived_menu, declared_menu, naming):
 # ===========================================================================
 
 MUTANT = {"name": None, "used": set()}
+PARTIAL: dict = {"R": None}
 
 
 def mut(tag):
@@ -820,19 +958,57 @@ ANCHORS = [
               "G-OBSTRUCTION-NAMED"),
 ]
 
+# The walls are written from the FINDING and not from a phrase list.  Each
+# pattern below carries its verb, tense and number families and admits either
+# order of subject and object, because eleven natural re-voicings of a
+# delivered finding walked through the delivered blacklist (K3 MAJOR-1).
+_BE = r"(?:is|was|are|were|has been|have been|can be|could be|gets|get)"
+_DERIVE = (r"(?:derived|reconstructed|recovered|read off|readable|"
+           r"determined|fixed|forced)")
+_SUBJ = (r"(?:cast|actors|actor set|arena|theory|coordinate|coordinates|"
+         r"direction|directions|direction class|direction classes|naming|"
+         r"namings|declaration|residue)")
+
 WALL_DERIVED = ET.SemanticWall(
     "W-NO-UNQUALIFIED-DERIVATION",
     negative=[
-        r"the (?:whole |entire )?(?:cast|arena|theory) is (?:fully |wholly )?"
-        r"(?:derived|reconstructed|recovered)(?![\w\s]{0,24}up to)"
-        r"(?![\w\s]{0,40}at the corpus)",
-        r"nothing (?:at all |whatever )?(?:is |remains |stays )?declared",
-        r"no (?:declaration|residue|freedom|choice) (?:remains|is left|survives)",
-        r"(?:the )?record (?:alone |by itself )?(?:fixes|determines|forces) "
-        r"the (?:coordinates|directions|direction classes)",
-        r"reconstruct\w*\s+(?:\w+\s+){0,3}from a single history",
-        r"(?:the )?count field\s+(?:\w+\s+){0,4}(?:suffices|is enough|"
-        r"recovers the cast|determines the cast)",
+        # the whole thing derived, without the qualifier or the corpus scope
+        r"the (?:whole |entire |full )?%s %s (?:fully |wholly |completely |in "
+        r"full )?%s(?![\w\s]{0,24}up to)(?![\w\s]{0,40}at the corpus)"
+        % (_SUBJ, _BE, _DERIVE),
+        r"the (?:whole |entire |full )?%s (?:was |is |were |are )?%s in full"
+        % (_SUBJ, _DERIVE),
+        # nothing left to declare, in any voicing
+        r"nothing (?:at all |whatever |else |more )?(?:is |remains |stays |"
+        r"needs to be |need be |has to be )?(?:declared|left to declare)",
+        r"no (?:declaration|residue|freedom|choice|coordinate|direction)s? "
+        r"(?:remains?|is left|are left|survives?|is needed|are needed|is "
+        r"required)",
+        r"(?:leaves|leaving|with) no (?:residue|declaration|freedom|choice)",
+        r"no declaration is (?:needed|required|left)",
+        # the record fixing what it does not fix
+        r"(?:the )?(?:bare )?record (?:alone |by itself |itself )?"
+        r"(?:fixes|determines|forces|names|recovers|supplies|gives|hands "
+        r"back|carries) the (?:coordinate|coordinates|direction|directions|"
+        r"direction class|direction classes|declaration|naming)",
+        r"the (?:coordinate|direction classes|directions) (?:comes?|come) "
+        r"back",
+        # per-history reconstruction, either order
+        r"reconstruct\w*\s+(?:\w+\s+){0,4}from (?:a|one|any) single history",
+        r"(?:a|one|any) single history (?:\w+\s+){0,3}(?:suffices|is enough|"
+        r"is sufficient|recovers|reconstructs|determines|fixes)",
+        r"(?:every |each )?actors? (?:can be|is|are|could be) (?:read off|"
+        r"derived from|recovered from) (?:one|a single|any) history",
+        r"(?:the cast|the actors) (?:can be |is |are )?(?:derived|recovered|"
+        r"read off)(?:\w|\s){0,20}from (?:one|a single) history",
+        # the count field doing what it cannot
+        r"(?:the )?counts?(?: field| alone| by themselves| themselves)?\s+"
+        r"(?:\w+\s+){0,4}(?:suffices|suffice|is enough|are enough|recovers? "
+        r"the cast|determines? the cast|names? the cast)",
+        # the methodological inversion of the second section
+        r"isomorphism, not set equality",
+        r"(?:merely |only )?isomorphic(?:\s+\w+){0,3}, not (?:the same sets|"
+        r"set equality|equal)",
     ],
     positive=[
         r"the cast is derived at the corpus and at no single history",
@@ -845,8 +1021,12 @@ WALL_PARENTS = ET.SemanticWall(
     negative=[
         r"the record is (?:a |the )?complete description(?![\w\s]{0,30}"
         r"(?:for the censused|at this arena))",
-        r"epr\w*\s+(?:\w+\s+){0,4}(?:proved|showed|established)\s+"
-        r"(?:\w+\s+){0,3}completeness",
+        r"epr[\w']*(?:\s+\w+){0,4}\s+(?:proved|showed|established|makes|made|"
+        r"shows|renders)(?:\s+\w+){0,4}\s+(?:completeness|a complete "
+        r"description)",
+        r"(?:makes?|made|renders?|leaves?|left) the (?:bare )?record "
+        r"(?:a |the )?complete",
+        r"(?:the record|the bare record) is complete(?:\b|[^\w-])",
         r"local realism\s+(?:\w+\s+){0,3}(?:is\s+)?restor\w*",
         r"restor\w*\s+(?:\w+\s+){0,3}local realism",
     ],
@@ -862,12 +1042,36 @@ WALLS = (WALL_DERIVED, WALL_PARENTS)
 # THE PAPER INSTRUMENT
 # ---------------------------------------------------------------------------
 
-NUM = re.compile(r"(?<![\w.,/-])(\d[\d,]*)(?![\w/])")
+# The lookbehind admits a leading HYPHEN, so the hyphenated verdict blocks are
+# inside the census rather than outside it (K3 MINOR-6: 50 of 194 digit tokens
+# were skipped, 18 of them inside the fences).
+NUM = re.compile(r"(?<![\w.,/])(\d[\d,]*)(?![\w/])")
 FENCE_RE = re.compile(r"```[^\n]*\n(.*?)```", re.S)
+
+# The spelled census (K2 m5, K3 MINOR-5): load-bearing counts written as words
+# were outside every gate.  The vocabulary is declared and its values are
+# checked against the same backing set the digits are.
+SPELLED = {
+    "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5,
+    "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11,
+    "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15,
+    "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19,
+    "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60,
+    "seventy": 70, "eighty": 80, "ninety": 90, "hundred": 100,
+    "thousand": 1000,
+}
+SPELLED_RE = re.compile(r"(?<![\w-])(%s)(?![\w-])"
+                        % "|".join(sorted(SPELLED, key=len, reverse=True)),
+                        re.I)
 
 
 def paper_numerals(text):
     return [m.group(1).replace(",", "") for m in NUM.finditer(text)]
+
+
+def paper_spelled(text):
+    """every number WORD in the paper, as the integer it denotes."""
+    return [SPELLED[m.group(1).casefold()] for m in SPELLED_RE.finditer(text)]
 
 
 def audit_no_floats(src):
@@ -883,45 +1087,204 @@ def audit_no_floats(src):
     return bad
 
 
-def audit_regions(src):
-    """S-1: the three regions are disjoint.  A reconstructor function may not
-    call a builder or comparator function, nor name an arena constant; a
-    comparator function may not call a reconstructor or builder function."""
+REGION_PREFIX = (("b_", "builder"), ("r_", "reconstructor"),
+                 ("k_", "comparator"), ("s_", "stripper"))
+# The reconstructor's own typing rule speaks of pairs and triples; constants at
+# or below this value are declared structural and are not read as smuggled
+# arena cardinalities.  Every larger arena cardinality is banned outright.
+STRUCTURAL_CONSTANT = 3
+
+
+def region_of(name):
+    """TOTAL by construction: every function is in exactly one region, and the
+    orchestrator is named rather than left out of the census (K1 MAJ-6: 35 of
+    78 functions were in no region at all, `full_run` among them)."""
+    for pre, tag in REGION_PREFIX:
+        if name.startswith(pre):
+            return tag
+    return "plumbing"
+
+
+def module_arena_names(src):
+    """THE ARENA SET, DERIVED.  Every module-level binding made before the
+    first stripper function is declared-side; the hand-typed blacklist this
+    replaces had drifted in both directions (two live builder constants
+    missing, two dead names listed)."""
     tree = ast.parse(src)
-    fns = {n.name: n for n in ast.walk(tree) if isinstance(n, ast.FunctionDef)}
-    arena = {"SITES", "SITE_INDEX", "NACT", "I7_LINKS", "CLASS_NAMES",
-             "CLASS_DIR", "CLASSES", "CELLS", "CELL_INDEX", "DIM", "ACTORS",
-             "SCRAMBLE_MULT", "SCRAMBLE_ADD", "_RAW", "_B_PERMS"}
-    bad = []
-    for name, node in sorted(fns.items()):
-        if name.startswith("r_"):
-            forbidden, tagged = ("b_", "k_", "s_"), "reconstructor"
-        elif name.startswith("k_"):
-            forbidden, tagged = ("b_", "r_", "s_"), "comparator"
-        else:
+    floor = min([n.lineno for n in tree.body
+                 if isinstance(n, ast.FunctionDef) and n.name.startswith("s_")]
+                or [10 ** 9])
+    out = set()
+    for n in tree.body:
+        if n.lineno >= floor:
             continue
+        for tgt in (n.targets if isinstance(n, ast.Assign)
+                    else [n.target] if isinstance(n, ast.AnnAssign) else []):
+            for sub in ast.walk(tgt):
+                if isinstance(sub, ast.Name):
+                    out.add(sub.id)
+    return out
+
+
+def module_call_graph(src):
+    """function -> the module-level function names its body reaches directly,
+    with module-level ALIASES resolved (`_A = b_declared_actors` then
+    `r_x(): return _A()` is a call to the builder)."""
+    tree = ast.parse(src)
+    fns = {n.name: n for n in tree.body if isinstance(n, ast.FunctionDef)}
+    alias = {}
+    for n in tree.body:
+        if isinstance(n, ast.Assign) and isinstance(n.value, ast.Name) \
+                and n.value.id in fns:
+            for tgt in n.targets:
+                if isinstance(tgt, ast.Name):
+                    alias[tgt.id] = n.value.id
+    graph = {}
+    for name, node in fns.items():
+        seen = set()
         for sub in ast.walk(node):
             if isinstance(sub, ast.Name):
-                if sub.id in arena:
-                    bad.append("%s %s names the arena constant %s"
-                               % (tagged, name, sub.id))
-                if any(sub.id.startswith(p) for p in forbidden):
-                    bad.append("%s %s calls %s" % (tagged, name, sub.id))
+                nm = alias.get(sub.id, sub.id)
+                if nm in fns and nm != name:
+                    seen.add(nm)
+        graph[name] = seen
+    return fns, graph, alias
+
+
+def audit_regions(src, cardinalities=()):
+    """S-1, STRUCTURALLY.  A reconstructor or comparator function may not name
+    an arena constant, may not type an arena cardinality, and may not REACH --
+    at any depth, through aliases and through helpers -- a builder, a stripper
+    or the orchestrator.  Names alone were four leaks wide (K3 MAJOR-6)."""
+    fns, graph, alias = module_call_graph(src)
+    arena = module_arena_names(src)
+    cards = {int(c) for c in cardinalities if int(c) > STRUCTURAL_CONSTANT}
+    bad = []
+    for name in sorted(fns):
+        tagged = region_of(name)
+        if tagged not in ("reconstructor", "comparator"):
+            continue
+        forbidden = {"builder", "stripper", "plumbing",
+                     "comparator" if tagged == "reconstructor"
+                     else "reconstructor"}
+        # (i) named arena constants and typed arena cardinalities
+        for sub in ast.walk(fns[name]):
+            if isinstance(sub, ast.Name) and sub.id in arena:
+                bad.append("%s %s names the arena constant %s"
+                           % (tagged, name, sub.id))
             if isinstance(sub, ast.Attribute) and sub.attr in arena:
                 bad.append("%s %s names %s" % (tagged, name, sub.attr))
+            if isinstance(sub, ast.Constant) and isinstance(sub.value, int) \
+                    and not isinstance(sub.value, bool) and sub.value in cards:
+                bad.append("%s %s types the arena cardinality %d"
+                           % (tagged, name, sub.value))
+        # (ii) the CALL CLOSURE, aliases resolved
+        seen, stack = set(), sorted(graph[name])
+        while stack:
+            nxt = stack.pop()
+            if nxt in seen:
+                continue
+            seen.add(nxt)
+            stack.extend(sorted(graph.get(nxt, ())))
+        for reached in sorted(seen):
+            if region_of(reached) in forbidden:
+                how = "calls" if reached in graph[name] else "reaches"
+                bad.append("%s %s %s the %s function %s"
+                           % (tagged, name, how, region_of(reached), reached))
+    for a, tgt in sorted(alias.items()):
+        if region_of(a) in ("reconstructor", "comparator") \
+                and region_of(tgt) not in (region_of(a), "plumbing"):
+            bad.append("%s is an alias of the %s function %s"
+                       % (a, region_of(tgt), tgt))
     return sorted(set(bad))
 
 
 def region_census(src):
+    """TOTAL: every top-level function definition lands in exactly one region,
+    the orchestrator included, and the census sums to the module's own count."""
     tree = ast.parse(src)
     out = collections.Counter()
-    for n in ast.walk(tree):
+    for n in tree.body:
         if isinstance(n, ast.FunctionDef):
-            for pre, tag in (("b_", "builder"), ("r_", "reconstructor"),
-                             ("k_", "comparator"), ("s_", "stripper")):
-                if n.name.startswith(pre):
-                    out[tag] += 1
+            out[region_of(n.name)] += 1
     return dict(sorted(out.items()))
+
+
+def audit_typed_calls(src, callers):
+    """The concatenation dodge and the table cells, closed (K3 MAJOR-10): every
+    string constant ANYWHERE in the subtree of a call to a statement, claim,
+    table or fence builder is scanned, not only the direct arguments."""
+    tree = ast.parse(src)
+    out = []
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Call):
+            continue
+        fname = getattr(node.func, "attr", None) or getattr(node.func, "id", None)
+        if fname not in callers:
+            continue
+        for sub in ast.walk(node):
+            if isinstance(sub, ast.Constant) and isinstance(sub.value, str) \
+                    and re.search(r"(?<![\w])\d+(?![\w])", sub.value):
+                out.append("line %d: %r" % (node.lineno, sub.value[:56]))
+    return sorted(set(out))
+
+
+EVNUM = re.compile(r"(?<![\w.,/])(\d[\d,]*)(?![\w/])")
+
+
+def _ints_of(o, into):
+    if isinstance(o, bool):
+        return
+    if isinstance(o, int):
+        into.add(o)
+    elif isinstance(o, dict):
+        for k, v in o.items():
+            for m in EVNUM.finditer(str(k)):
+                into.add(int(m.group(1).replace(",", "")))
+            _ints_of(v, into)
+    elif isinstance(o, (list, tuple)):
+        for v in o:
+            _ints_of(v, into)
+    elif isinstance(o, str):
+        for m in EVNUM.finditer(o):
+            into.add(int(m.group(1).replace(",", "")))
+
+
+def evidence_offences(rows, seals, payload):
+    """THE TRANSCRIPT'S OWN NUMBERS, BOUND (K3 MAJOR-9).  The rendered evidence
+    and the receipt are two renderings of one measurement and nothing compared
+    them: a forged evidence numeral shipped in both artifacts, contradicting
+    the receipt on the unit's own census, at exit 0.  Every integer in every
+    finished evidence line must be a value the gate's own sealed keys carry, or
+    one its own statement already published."""
+    at_gate: dict = collections.defaultdict(set)
+    for key, s in seals.items():
+        if key in payload:
+            _ints_of(payload[key], at_gate[s["gate"]])
+    out = []
+    for row in rows:
+        allowed = set(at_gate.get(row["gate"], set()))
+        for m in EVNUM.finditer(row["statement"]):
+            allowed.add(int(m.group(1).replace(",", "")))
+        for m in EVNUM.finditer(row["evidence"]):
+            v = int(m.group(1).replace(",", ""))
+            if v not in allowed:
+                out.append("%s: %d" % (row["gate"], v))
+    return sorted(set(out))
+
+
+def audit_mut_hooks(src, declared):
+    """A falsifier row with no implementation, and an implementation with no
+    row, both die (K3 MAJOR-3): the set of string constants handed to mut() is
+    compared with the declared recipe names, in BOTH directions."""
+    tree = ast.parse(src)
+    hooks = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Call) and getattr(node.func, "id", "") == "mut":
+            for arg in node.args:
+                if isinstance(arg, ast.Constant) and isinstance(arg.value, str):
+                    hooks.add(arg.value)
+    return (sorted(set(declared) - hooks), sorted(hooks - set(declared)))
 
 
 # ===========================================================================
@@ -949,6 +1312,19 @@ def head_word_of(cast_exact, pairs_ok, size_ok, menu_missing, residue):
 SYNTHETIC_PARTS = ((2, 2, 2), (3, 3, 3), (4, 4, 4), (5, 5, 5),
                    (2, 2, 2, 2), (3, 3), (2, 3, 4))
 
+# The balance probe's declared domain: every complete multipartite shape with
+# parts of size 2..6, between 2 and 6 parts, and at most this many actors.
+BALANCE_CEILING = 16
+
+
+def balance_shapes():
+    out = []
+    for nparts in range(2, 7):
+        for shape in combinations_with_replacement(range(2, 7), nparts):
+            if sum(shape) <= BALANCE_CEILING:
+                out.append(tuple(shape))
+    return sorted(out)
+
 
 def synthetic_record(parts):
     """A SYNTHETIC MINIMAL RECORD, built from a cast that is not this arena's:
@@ -970,7 +1346,7 @@ def synthetic_record(parts):
     return blocks, stars, len(tok)
 
 
-def full_run(write=False, mutant=None, render=False):
+def full_run(write=False, mutant=None, render=False, mode="--run"):
     MUTANT["name"], MUTANT["used"] = mutant, set()
     reads: list[str] = []
     RS = ET.ReadSet(REPO)
@@ -980,6 +1356,11 @@ def full_run(write=False, mutant=None, render=False):
     LD, TR, SEAL = ET.Ledger(), ET.Transcript(), ET.Seal()
     REG, CL, RR = ET.CountRegistry(), ET.Claims(), ET.ReferentRegistry()
     R: dict = {}
+    # THE PAYLOAD AS IT STOOD AT REFUSAL.  E-32's move-proof is worthless if
+    # `after` is a constant string: every falsifier dies at a gate, so the
+    # comparison must be made against what the run had actually published when
+    # the gate refused (K3 MAJOR-2).
+    PARTIAL["R"] = R
 
     def gate(gid, statement, ok, evidence):
         LD.gate(gid, statement, ok, evidence)
@@ -1002,8 +1383,11 @@ def full_run(write=False, mutant=None, render=False):
             texts[rel] = read_text(rel)
             reads.append(rel)
     if mut("MUT-SOURCE-DRIFT"):
+        # the digest itself is reversed and the finding is RECOMPUTED from it,
+        # so the real predicate runs rather than a constant being appended to
+        # the offender list (K3 MAJOR-5's shape, removed here)
         shas[PIN_REL] = shas[PIN_REL][::-1]
-        drifted.append("injected")
+        drifted = [k for k in sorted(shas) if shas[k] != SOURCES[k]]
     R["sources"] = {k: shas[k] for k in sorted(shas)}
     SEAL.seal("sources", R["sources"], "G-SOURCES-PINNED")
     REG.measured("sources", len(SOURCES), "len(SOURCES)")
@@ -1015,10 +1399,21 @@ def full_run(write=False, mutant=None, render=False):
                                                  drifted or "none"))
 
     # -- the paper under test, and the anchors located in both sides --------
+    # require_object BEFORE the read, so its absent-object leg is reachable
+    # (K3 MINOR-8), and with the mode that actually ran (K3 MINOR-9).
+    paper_path = os.path.join(REPO, PAPER_REL)
+    if not os.path.isfile(paper_path):
+        # the absent-object leg, reachable at last -- and a directory in the
+        # paper's place is an absent object too, rather than a traceback
+        ET.require_object(mode, paper_path if os.path.exists(paper_path)
+                          else None, None)
     paper = read_text(PAPER_REL)
     reads.append(PAPER_REL)
-    ET.require_object("--run", os.path.join(REPO, PAPER_REL), paper)
-    ASET = ET.AnchorSet(list(ANCHORS))
+    ET.require_object(mode, paper_path, paper)
+    # the anchor rows are copied per run: a recipe that moves a consumer must
+    # not poison the next run in the same process (K3 MINOR-13).
+    ASET = ET.AnchorSet([ET.Anchor(a.name, a.needle, a.source, a.consumer)
+                         for a in ANCHORS])
     src_for_anchor = dict(texts)
     if mut("MUT-ANCHOR"):
         src_for_anchor["v14/paper-35-fac.md"] = texts[
@@ -1030,6 +1425,9 @@ def full_run(write=False, mutant=None, render=False):
     except ET.CheckFail as exc:
         lprob = exc.detail
     REG.measured("anchor_rows", len(ANCHORS), "len(ANCHORS)")
+    R["anchors_located"] = {"rows": len(ANCHORS), "problem": lprob or "none",
+                            "sources": sorted({a.source for a in ANCHORS})}
+    SEAL.seal("anchors_located", R["anchors_located"], "G-ANCHORS-LOCATED")
     gate("G-ANCHORS-LOCATED",
          REG.stmt("each of the {anchor_rows} verbatim anchors occurs exactly "
                   "once in the pinned parent's own bytes AND once in this "
@@ -1131,7 +1529,8 @@ def full_run(write=False, mutant=None, render=False):
     pi = s_scramble()
     # THE DECLARED CAST IN THE ERASURE'S OWN COORDINATES.  The comparator is
     # handed both sides as data; the eraser is the only party that knows which
-    # token was which cell, and this is where that bookkeeping is spent.
+    # token was which cell, and this is where that bookkeeping is spent -- here
+    # and at the declared direction classes below, and nowhere else.
     dec_cast = [tuple(sorted(pi[k] for k in dec_actors[i])) for i in range(NACT)]
     bare = s_bare_corpus(corp, pi)
     if mut("MUT-STRIP-LEAK"):
@@ -1140,8 +1539,12 @@ def full_run(write=False, mutant=None, render=False):
     s_type_walk(bare, typebad)
     blocks = sorted({b for h in bare for b in h})
     written = sum(len(h) for h in bare)
+    alphabet = sorted({t for b in blocks for t in b})
+    moved_tokens = sum(1 for k in range(DIM) if pi[k] != k)
     R["stripping"] = {
         "scramble_is_a_permutation": sorted(pi) == list(range(DIM)),
+        "scramble_moves_tokens": moved_tokens,
+        "token_alphabet": len(alphabet),
         "record_blocks": len(blocks),
         "block_sizes": sorted(collections.Counter(len(b) for b in blocks).items()),
         "written_events": written,
@@ -1152,26 +1555,34 @@ def full_run(write=False, mutant=None, render=False):
     REG.measured("written", written, "events that wrote at least one cell")
     REG.measured("unwritten", R["corpus"]["events"] - written,
                  "events that wrote nothing")
+    REG.measured("alphabet", len(alphabet), "distinct token ids emitted")
+    REG.measured("moved_tokens", moved_tokens, "token ids the coordinate moves")
     SEAL.seal("stripping", R["stripping"], "G-STRIPPING-TOTAL")
+    # THE GATE STATES WHAT IT CHECKS AND NOTHING WIDER (K3 MINOR-1/2, K2 M3):
+    # types, depth, alphabet and non-triviality.  It does NOT say "no
+    # direction" -- the residue channel below says why it may not.
     gate("G-STRIPPING-TOTAL",
          REG.stmt("the bare record is three levels deep and integers at the "
-                  "bottom -- histories, events, token ids -- so no actor, no "
-                  "site (a PAIR of integers) and no direction survives the "
-                  "strip; the "
+                  "bottom -- histories, events, token ids -- over an alphabet "
+                  "of {alphabet} ids, so no actor and no site (a PAIR of "
+                  "integers) survives the strip, and the coordinate is a "
+                  "non-trivial permutation moving {moved_tokens} of them; the "
                   "corpus writes {written} events into {blocks} distinct "
                   "record blocks and writes nothing at {unwritten}",
-                  written=1, blocks=1, unwritten=1),
-         not typebad and sorted(pi) == list(range(DIM)),
-         "non-integer leaves %s blocks %d written %d unwritten %d"
-         % (sorted(set(typebad)) or "none", len(blocks), written,
-            R["corpus"]["events"] - written))
+                  written=1, blocks=1, unwritten=1, alphabet=1,
+                  moved_tokens=1),
+         not typebad and sorted(pi) == list(range(DIM))
+         and len(alphabet) == DIM and moved_tokens > 0
+         and {n for n, _c in R["stripping"]["block_sizes"]} == {len(I7_LINKS)},
+         "non-integer leaves %s alphabet %d moved %d blocks %d written %d "
+         "unwritten %d"
+         % (sorted(set(typebad)) or "none", len(alphabet), moved_tokens,
+            len(blocks), written, R["corpus"]["events"] - written))
 
     # -- equivariance: the scramble is immaterial ---------------------------
     trials, eqbad = [], []
     for step in range(1, 13):
-        rho = tuple((step * 2 + 1) * k % DIM for k in range(DIM))
-        if sorted(rho) != list(range(DIM)):
-            rho = tuple((k + step) % DIM for k in range(DIM))
+        rho = s_declared_relabelling(step)
         if mut("MUT-EQUIVARIANCE") and step == 1:
             rho = tuple(0 for _ in range(DIM))
         moved = [frozenset(rho[t] for t in b) for b in blocks]
@@ -1193,8 +1604,9 @@ def full_run(write=False, mutant=None, render=False):
     gate("G-STRIPPING-EQUIVARIANT",
          REG.stmt("relabelling the tokens relabels the derived cast and does "
                   "nothing else, at {eq_trials} declared relabellings with "
-                  "{eq_failures} failures, so no measured quantity depends on "
-                  "the coordinate the strip chose", eq_trials=1,
+                  "{eq_failures} failures; these trials are AFFINE and price "
+                  "the affine family only -- the coordinate itself is priced "
+                  "at G-STRIPPING-COORDINATE-FREE", eq_trials=1,
                   eq_failures=1),
          not eqbad, "trials %d failures %d" % (len(trials), len(eqbad)))
 
@@ -1218,9 +1630,11 @@ def full_run(write=False, mutant=None, render=False):
     # THE COMPARATOR.  Handed data, never the builders.
     a_carrier = ASET.read("A-FAC-CARRIER", "G-CAST-DERIVED")
     carrier_nums = [int(x) for x in re.findall(r"\d+", a_carrier)]
+    # MUT-CAST used to sit here, poisoning this local flag; it named the
+    # reconstruction as its target and never moved it, and it was in any case
+    # MUT-TAU with a different name (K3 MAJOR-2, MINOR-15).  MUT-TAU drops an
+    # actor from the sealed cast itself and is the honest form.
     cast_exact = k_agree_sets(rec["cast"], dec_cast)
-    if mut("MUT-CAST"):
-        cast_exact = k_agree_sets(rec["cast"][:-1], dec_cast)
     REG.measured("declared_cast", len(dec_cast), "len(declared actor stars)")
     gate("G-CAST-DERIVED",
          REG.stmt("the cast is DERIVED: the {derived_cast} maximal sets of "
@@ -1294,7 +1708,8 @@ def full_run(write=False, mutant=None, render=False):
         matched = matched[:-1]
     R["menu"] = {
         "declared_members": len(dec_menu), "derived_members": len(der_menu),
-        "matched": matched, "stray_block_counts": stray, "unmatched": missing,
+        "matched": matched, "matched_count": len(matched),
+        "stray_block_counts": stray, "unmatched": missing,
     }
     REG.measured("menu_declared", len(dec_menu), "len(declared menu)")
     REG.measured("menu_derived", len(der_menu), "len(derived menu)")
@@ -1321,17 +1736,31 @@ def full_run(write=False, mutant=None, render=False):
     if mut("MUT-NAMING"):
         n_coh = n_coh + 1
     idx = Fraction(n_iso, n_coh) if n_coh else Fraction(0)
+    # WHY THE INDEX COUNTS WHAT IT COUNTS (K1's second free strengthening).
+    # The admissible namings act on the splittings; the orbit of the DECLARED
+    # splitting is measured, and it is all of them -- the action is transitive,
+    # which is why index = count rather than a coincidence.
+    declared_split = k_declared_splitting(rec["cast"], dec_cast, dir_tokens)
+    orbit = k_orbit_of(rec["cast"], dec_cast, isos, declared_split)
+    if mut("MUT-ORBIT"):
+        orbit = orbit[:-1]
     R["naming"] = {
         "admissible_namings": n_iso, "arena_coherent_namings": n_coh,
         "arena_automorphisms": len(aut),
         "residue_index": [idx.numerator, idx.denominator],
         "direction_candidates": len(facs), "resolutions": len(reso),
+        "declared_splitting_is_a_resolution":
+            bool(declared_split is not None and declared_split in set(reso)),
+        "orbit_of_the_declared_splitting": len(orbit),
+        "orbit_is_every_resolution": bool(set(orbit) == set(reso)),
     }
     REG.measured("isos", n_iso, "len(k_isomorphisms)")
     REG.measured("coherent", n_coh, "namings carrying the direction classes")
     REG.measured("residue", idx.numerator, "isos / coherent, exact")
     REG.measured("resolutions", len(reso), "direction decompositions")
     REG.measured("factors", len(facs), "candidate direction classes")
+    REG.measured("orbit", len(orbit),
+                 "the orbit of the declared splitting under the namings")
     SEAL.seal("naming", R["naming"], "G-NAMING-RESIDUE")
     gate("G-NAMING-RESIDUE",
          REG.stmt("the naming is forced only up to the derived structure's own "
@@ -1341,20 +1770,158 @@ def full_run(write=False, mutant=None, render=False):
                   "residue is the index {residue}; the record admits "
                   "{resolutions} ways of splitting its {factors} candidate "
                   "direction classes into a declaration and names none of "
+                  "them -- and the index IS that count rather than merely "
+                  "equalling it, because the {isos} namings carry the declared "
+                  "splitting onto {orbit} splittings, which is every one of "
                   "them", isos=1, coherent=1, residue=1, resolutions=1,
-                  factors=1),
-         idx.denominator == 1 and n_coh == len(aut) and len(reso) == idx.numerator,
-         "isos %d coherent %d automorphisms %d index %s resolutions %d"
-         % (n_iso, n_coh, len(aut), idx, len(reso)))
+                  factors=1, orbit=1),
+         idx.denominator == 1 and n_coh == len(aut)
+         and len(reso) == idx.numerator
+         and R["naming"]["declared_splitting_is_a_resolution"]
+         and R["naming"]["orbit_is_every_resolution"]
+         and len(orbit) == idx.numerator,
+         "isos %d coherent %d automorphisms %d index %s resolutions %d orbit %d"
+         % (n_iso, n_coh, len(aut), idx, len(reso), len(orbit)))
 
+    # -- THE ERASER, PRICED WHERE THE AFFINE TRIALS CANNOT PRICE IT ---------
+    # The declared coordinate is affine and the cells are enumerated site-major
+    # and link-minor, so a cell index modulo three IS its declared direction
+    # and every affine map fixes that residue: the direction survives the strip
+    # as the emitted id's residue class.  The eraser is NOT ARENA-BLIND AS
+    # DECLARED.  What is measured here is the other half: the reconstruction is
+    # ARENA-BLIND AS MEASURED -- the reconstructor does no arithmetic on token
+    # ids, and every published quantity is unchanged at coordinates drawn from
+    # the FULL symmetric group, where the channel is not there to read.
+    res_classes = {frozenset(t for t in range(DIM) if t % len(I7_LINKS) == c)
+                   for c in range(len(I7_LINKS))}
+    leak_declared = s_direction_is_the_residue(pi)
+    leak_is_exact = {frozenset(c) for c in dir_tokens} == res_classes
+    affine_leaks = sum(1 for st in range(1, 13)
+                       for rho in [s_declared_relabelling(st)]
+                       if s_direction_is_the_residue(
+                           tuple(rho[pi[k]] for k in range(DIM))))
+    baseline = (why, rec.get("tau"), tuple(rec.get("meets", [])),
+                len(rec["cast"]), True, tuple(rec["clique_sizes"]),
+                len(rec["tokens"]), n_iso, n_coh, tuple(matched), len(reso),
+                len({tuple(h) for h in bare}))
+    gen = s_lcg(COORD_SEED)
+    coord_dev, coord_leaks, coord_nonaffine = [], 0, 0
+    for trial in range(COORD_TRIALS):
+        rho = s_random_permutation(gen, DIM)
+        coord = tuple(rho[pi[k]] for k in range(DIM))
+        if s_direction_is_the_residue(coord):
+            coord_leaks += 1
+        if not s_is_affine(coord):
+            coord_nonaffine += 1
+        bl2 = sorted({tuple(sorted(rho[t] for t in b)) for b in blocks})
+        dc2 = [tuple(sorted(rho[t] for t in c)) for c in dec_cast]
+        dt2 = [tuple(sorted(rho[t] for t in c)) for c in dir_tokens]
+        r2 = r_reconstruct([frozenset(b) for b in bl2])
+        c2, w2 = r_certify(r2)
+        im2 = k_index_map(r2["cast"], dc2)
+        got = (w2, r2.get("tau"), tuple(r2.get("meets", [])), len(r2["cast"]),
+               bool(c2 and k_agree_sets(r2["cast"], dc2)),
+               tuple(r2["clique_sizes"]), len(r2["tokens"]),
+               len(k_isomorphisms(r2["cast"], dc2, r2["tokens"])),
+               len(k_coherent(k_isomorphisms(dc2, dc2, r2["tokens"]), dc2,
+                              r2["tokens"], dt2)),
+               tuple(k_menu_agreement(r_derived_menu(r2), dec_menu, im2)[0]),
+               len(r_resolutions(r2)),
+               len({tuple(tuple(sorted(rho[t] for t in b)) for b in h)
+                    for h in bare}))
+        if got != baseline:
+            coord_dev.append(trial)
+    rel_bad, rel_nonaffine = [], 0
+    basecast = sorted(tuple(sorted(c)) for c in rec["cast"])
+    for trial in range(RELABEL_TRIALS):
+        rho = s_random_permutation(gen, DIM)
+        if not s_is_affine(rho):
+            rel_nonaffine += 1
+        rm = r_reconstruct([frozenset(rho[t] for t in b) for b in blocks])
+        inv = [0] * DIM
+        for i, p in enumerate(rho):
+            inv[p] = i
+        back = sorted(tuple(sorted(inv[t] for t in c)) for c in rm["cast"]) \
+            if rm["ok"] else []
+        if back != basecast:
+            rel_bad.append(trial)
+    if mut("MUT-COORDINATE"):
+        coord_dev = coord_dev + [-1]
+    R["residue_channel"] = {
+        "declared_multiplier": SCRAMBLE_MULT, "declared_offset": SCRAMBLE_ADD,
+        "declared_map_is_affine": bool(s_is_affine(pi)),
+        "direction_is_the_token_residue": bool(leak_declared),
+        "declared_classes_are_the_residue_classes": bool(leak_is_exact),
+        "affine_trials": len(trials), "affine_trials_leaking": affine_leaks,
+        "random_coordinates": COORD_TRIALS,
+        "random_coordinates_non_affine": coord_nonaffine,
+        "random_coordinates_leaking": coord_leaks,
+        "quantities_compared_per_coordinate": len(baseline),
+        "coordinates_that_moved_a_quantity": len(coord_dev),
+        "random_relabellings": RELABEL_TRIALS,
+        "random_relabellings_non_affine": rel_nonaffine,
+        "relabellings_whose_cast_moved": len(rel_bad),
+    }
+    REG.measured("coords", COORD_TRIALS, "uniformly random coordinates")
+    REG.measured("coord_quantities", len(baseline),
+                 "published quantities compared at each coordinate")
+    REG.measured("coord_moved", len(coord_dev), "coordinates that moved one")
+    REG.measured("relabels", RELABEL_TRIALS, "uniformly random relabellings")
+    REG.measured("relabel_bad", len(rel_bad), "relabellings whose cast moved")
+    REG.measured("affine_leaking", affine_leaks,
+                 "affine trials at which the direction is the residue")
+    REG.measured("coord_leaking", coord_leaks,
+                 "random coordinates at which it is")
+    SEAL.seal("residue_channel", R["residue_channel"],
+              "G-STRIPPING-COORDINATE-FREE")
+    gate("G-STRIPPING-COORDINATE-FREE",
+         REG.stmt("the declared coordinate is affine and LEAKS the direction "
+                  "as the token id's residue -- at {affine_leaking} of the "
+                  "{eq_trials} affine trials, every one of which fixes it -- "
+                  "so the blindness is not the declaration's: it is measured "
+                  "instead, at {coords} coordinates drawn from the full "
+                  "symmetric group, where the channel is present at "
+                  "{coord_leaking} and each of {coord_quantities} published "
+                  "quantities moves at {coord_moved}, and at {relabels} random "
+                  "relabellings at which the derived cast relabels and nothing "
+                  "else moves, {relabel_bad} failing",
+                  affine_leaking=1, eq_trials=1, coords=1, coord_leaking=1,
+                  coord_quantities=1, coord_moved=1, relabels=1,
+                  relabel_bad=1),
+         leak_declared and leak_is_exact and affine_leaks == len(trials)
+         and not coord_dev and not rel_bad and coord_leaks == 0
+         and coord_nonaffine == COORD_TRIALS,
+         "affine-leaking %d of %d random-leaking %d of %d moved %d relabel "
+         "failures %d" % (affine_leaks, len(trials), coord_leaks,
+                          COORD_TRIALS, len(coord_dev), len(rel_bad)))
+
+    R["reconstruction_targets"] = {
+        "declared": ["site set", "link structure", "cast size",
+                     "partition menu", "naming"],
+        "found_in_the_pin": sorted(w for w in
+                                   ("site set", "link structure", "cast size",
+                                    "partition menu", "naming")
+                                   if w in a_pin.casefold()),
+    }
+    SEAL.seal("reconstruction_targets", R["reconstruction_targets"],
+              "G-RECONSTRUCTION-TARGETS-TOTAL")
+    REG.measured("targets_declared",
+                 len(R["reconstruction_targets"]["declared"]),
+                 "the pin's reconstruction targets")
+    REG.measured("targets_found",
+                 len(R["reconstruction_targets"]["found_in_the_pin"]),
+                 "targets located in the pin's own bytes")
     gate("G-RECONSTRUCTION-TARGETS-TOTAL",
-         "the pin's five reconstruction targets are each answered by their "
-         "own gate and the pin's own list is read back to check that none is "
-         "quietly dropped",
-         all(w in a_pin.casefold() for w in
-             ("site set", "link structure", "cast size", "partition menu",
-              "naming")),
-         "targets %d" % len(re.findall(r"the [a-z ]+", a_pin)))
+         REG.stmt("the pin's {targets_declared} reconstruction targets are "
+                  "each answered by their own gate and the pin's own list is "
+                  "read back to check that none is quietly dropped: "
+                  "{targets_found} are found in the pin's bytes",
+                  targets_declared=1, targets_found=1),
+         (R["reconstruction_targets"]["found_in_the_pin"]
+          == sorted(R["reconstruction_targets"]["declared"])),
+         "targets %d of %d"
+         % (len(R["reconstruction_targets"]["found_in_the_pin"]),
+            len(R["reconstruction_targets"]["declared"])))
 
     # -- S-1: the regions are disjoint --------------------------------------
     src = read_text(SELF_REL)
@@ -1362,27 +1929,49 @@ def full_run(write=False, mutant=None, render=False):
     if mut("MUT-S1"):
         # a reconstructor function that reaches for a declared-side constant
         src = src + "\n\ndef r_leaks_the_arena():\n    return CELLS\n"
-    s1 = audit_regions(src)
+    cards = {NACT, DIM, len(I7_LINKS), len(CLASS_NAMES), 2 * DIM // NACT,
+             NACT * (NACT - 1), len(pairs)}
+    s1 = audit_regions(src, cards)
     floats = audit_no_floats(src)
     regions = region_census(src)
-    R["disjoint_code"] = {"violations": s1, "regions": regions,
-                          "float_offences": floats}
+    arena_names = module_arena_names(src)
+    defs = sum(1 for n in ast.parse(src).body
+               if isinstance(n, ast.FunctionDef))
+    R["disjoint_code"] = {
+        "violations": s1, "regions": regions, "float_offences": floats,
+        "top_level_functions": defs,
+        "arena_names_derived": len(arena_names),
+        "banned_cardinalities": sorted(c for c in cards
+                                       if c > STRUCTURAL_CONSTANT),
+        "structural_constant_floor": STRUCTURAL_CONSTANT,
+    }
     REG.measured("recon_fns", regions.get("reconstructor", 0),
                  "reconstructor functions")
     REG.measured("comp_fns", regions.get("comparator", 0),
                  "comparator functions")
     REG.measured("build_fns", regions.get("builder", 0), "builder functions")
+    REG.measured("plumb_fns", regions.get("plumbing", 0),
+                 "orchestrator and plumbing functions")
+    REG.measured("strip_fns", regions.get("stripper", 0), "stripper functions")
+    REG.measured("all_fns", defs, "top-level function definitions")
+    REG.measured("arena_names", len(arena_names),
+                 "declared-side names derived from the module")
     SEAL.seal("disjoint_code", R["disjoint_code"], "G-S1-DISJOINT-CODE")
     gate("G-S1-DISJOINT-CODE",
-         REG.stmt("the comparator is not the builder and the reconstructor is "
-                  "neither: an AST scan of this module finds {recon_fns} "
-                  "reconstructor functions naming no arena constant and "
-                  "calling no builder or comparator, and {comp_fns} "
-                  "comparator functions calling neither the {build_fns} "
-                  "builder functions nor the reconstructor",
-                  recon_fns=1, comp_fns=1, build_fns=1),
-         not s1 and not floats, "violations %s floats %s"
-         % (s1 or "none", floats or "none"))
+         REG.stmt("the region map is TOTAL -- {all_fns} top-level functions, "
+                  "{build_fns} builder, {strip_fns} stripper, {recon_fns} "
+                  "reconstructor, {comp_fns} comparator and {plumb_fns} "
+                  "plumbing, the orchestrator among the last -- and no "
+                  "reconstructor or comparator function names any of the "
+                  "{arena_names} declared-side names derived from this module, "
+                  "types an arena cardinality, or REACHES a builder, a "
+                  "stripper or the orchestrator at any depth, through an alias "
+                  "or through a helper",
+                  all_fns=1, build_fns=1, strip_fns=1, recon_fns=1, comp_fns=1,
+                  plumb_fns=1, arena_names=1),
+         not s1 and not floats and sum(regions.values()) == defs,
+         "violations %s floats %s regions %s of %d"
+         % (s1 or "none", floats or "none", sum(regions.values()), defs))
 
     # -- MEASUREMENT TWO: the inverse direction -----------------------------
     fiber = collections.defaultdict(list)
@@ -1407,8 +1996,15 @@ def full_run(write=False, mutant=None, render=False):
         return corp[i][0]
 
     def prop_eventset(i):
+        # THE MULTISET, and it is named as one: division events repeat (C2
+        # concatenates, W4-CLASS quadruples repeat classes), so the sorted
+        # tuple keeps duplicates.  The SET is measured beside it below.
         return tuple(sorted(tuple(sorted(SITE_INDEX[x] for x in F))
                             for F in corp[i][1]))
+
+    def prop_eventset_as_a_set(i):
+        return tuple(sorted({tuple(sorted(SITE_INDEX[x] for x in F))
+                             for F in corp[i][1]}))
 
     def prop_blocksize(i):
         return tuple(sorted({len(b) for b in bare[i]})) or (0,)
@@ -1427,7 +2023,7 @@ def full_run(write=False, mutant=None, render=False):
         ("EVENTS-THAT-WROTE", prop_written),
         ("THE-COUNT-FIELD", prop_field),
         ("THE-CORPUS-IT-CAME-FROM", prop_tag),
-        ("THE-EVENT-SET-ITSELF", prop_eventset),
+        ("THE-EVENT-MULTISET", prop_eventset),
         ("THE-SIZE-OF-A-RECORD-BLOCK", prop_blocksize),
         ("THE-CRYSTALLIZATION-TIME", prop_cryst),
         ("THE-COLLAPSE-THRESHOLD", prop_wstar),
@@ -1459,7 +2055,24 @@ def full_run(write=False, mutant=None, render=False):
     nc = sum(1 for p in prows if p["verdict"] == "NOT-CARRIED")
     rc = sum(1 for p in prows if p["verdict"] == "RECORD-CARRIED")
     af = sum(1 for p in prows if p["verdict"] == "ARENA-FORCED")
+    # THE SET, BESIDE THE MULTISET (K1 MAJ-3).  The published row measures the
+    # sorted multiset of events; the set of them is a coarser reading, and it
+    # is computed here so the row's name and its number denote the same object
+    # and the reader can see both.  The verdict is invariant under the choice.
+    set_vals = [prop_eventset_as_a_set(i) for i in range(len(corp))]
+    set_distinct = len({repr(v) for v in set_vals})
+    set_splits = sum(1 for idx in fiber.values()
+                     if len({repr(set_vals[i]) for i in idx}) > 1)
+    ms_row = [p for p in prows if p["property"] == "THE-EVENT-MULTISET"][0]
     R["surplus"] = {
+        "the_event_set_beside_the_multiset": {
+            "multiset_distinct_values": ms_row["distinct_values"],
+            "multiset_fibers_that_split": ms_row["fibers_that_split"],
+            "set_distinct_values": set_distinct,
+            "set_fibers_that_split": set_splits,
+            "verdict_is_the_same": ms_row["verdict"]
+            == ("NOT-CARRIED" if set_splits else "RECORD-CARRIED"),
+        },
         "distinct_bare_records": len(fiber),
         "collision_classes": len(coll),
         "distinct_histories_in_collisions": sum(len(v) for v in coll.values()),
@@ -1477,6 +2090,8 @@ def full_run(write=False, mutant=None, render=False):
     REG.measured("arena_forced", af, "properties constant over the corpus")
     REG.measured("record_carried", rc, "properties the record determines")
     REG.measured("not_carried", nc, "properties the record does not determine")
+    REG.measured("eventset_values", set_distinct,
+                 "distinct event SETS over the corpus")
     SEAL.seal("surplus", R["surplus"], "G-SURPLUS-CENSUS")
     gate("G-SURPLUS-CENSUS",
          REG.stmt("the inverse direction, censused per property: of the "
@@ -1487,15 +2102,21 @@ def full_run(write=False, mutant=None, render=False):
                   "{distinct_histories} distinct histories leave only "
                   "{bare_records} distinct bare records, {lost} of them lost "
                   "into {collisions} collision classes holding "
-                  "{collided_histories} histories",
+                  "{collided_histories} histories; the event row measures the "
+                  "MULTISET of a history's events and is named as one, and the "
+                  "SET of them, {eventset_values} over the corpus, is measured "
+                  "beside it and carries the same verdict",
                   arena_forced=1, record_carried=1, not_carried=1,
                   distinct_histories=1, bare_records=1, lost=1, collisions=1,
-                  collided_histories=1),
+                  collided_histories=1, eventset_values=1),
          not unbound and af + rc + nc == len(PROPS) and nc > 0 and rc > 0
-         and af > 0 and R["surplus"]["histories_lost"] > 0,
-         "forced %d carried %d not-carried %d bare %d lost %d unbound %s"
+         and af > 0 and R["surplus"]["histories_lost"] > 0
+         and R["surplus"]["the_event_set_beside_the_multiset"]
+                        ["verdict_is_the_same"],
+         "forced %d carried %d not-carried %d bare %d lost %d event-sets %d "
+         "unbound %s"
          % (af, rc, nc, len(fiber), R["surplus"]["histories_lost"],
-            unbound or "none"))
+            set_distinct, unbound or "none"))
 
     # -- MEASUREMENT THREE: the minimality census ---------------------------
     cache: dict = {}
@@ -1509,6 +2130,9 @@ def full_run(write=False, mutant=None, render=False):
         return cache[key]
 
     depth_hits, per_hist = 0, collections.Counter()
+    refusal = collections.Counter()
+    seen_blocks = collections.Counter()
+    disjoint_hist = 0
     for i, h in enumerate(bare):
         d = None
         for p in range(1, len(h) + 1):
@@ -1520,6 +2144,18 @@ def full_run(write=False, mutant=None, render=False):
         per_hist[(corp[i][0], d)] += 1
         if d is not None:
             depth_hits += 1
+        # THE MECHANISM, MEASURED (K1 MAJ-1 = K2 M1).  Why each history
+        # refuses, and how much of the record it ever sees.
+        bl = sorted({tuple(sorted(b)) for b in h})
+        seen_blocks[len(bl)] += 1
+        if not any(set(a) & set(b) for a, b in combinations(bl, 2)):
+            disjoint_hist += 1
+        rr = r_reconstruct([frozenset(b) for b in h])
+        _cc, wy = r_certify(rr)
+        refusal[wy] += 1
+    max_blocks = max(seen_blocks) if seen_blocks else 0
+    if mut("MUT-MECHANISM"):
+        max_blocks = len(blocks)
     R["minimality_per_history"] = {
         "slots": len(corp), "reconstructing_at_some_prefix": depth_hits,
         "by_corpus": {("%s:%s" % (k[0], k[1])): v
@@ -1527,18 +2163,39 @@ def full_run(write=False, mutant=None, render=False):
                                          key=lambda kv: (kv[0][0],
                                                          -1 if kv[0][1] is None
                                                          else kv[0][1]))},
+        "refusal_words": dict(sorted(refusal.items())),
+        "most_blocks_one_history_writes": max_blocks,
+        "record_blocks_in_all": len(blocks),
+        "histories_with_pairwise_disjoint_blocks": disjoint_hist,
     }
     REG.measured("per_history_hits", depth_hits,
                  "histories reconstructing at some prefix")
+    REG.measured("max_blocks", max_blocks,
+                 "the most distinct blocks any one history writes")
+    REG.measured("disjoint_hist", disjoint_hist,
+                 "histories whose record blocks are pairwise disjoint")
+    REG.measured("no_meet", refusal.get("NO-MEET-GAP", 0),
+                 "histories refusing for want of a meet")
+    REG.measured("no_actor", refusal.get("TOKEN-IN-NO-ACTOR", 0),
+                 "histories refusing for want of blocks")
     SEAL.seal("minimality_per_history", R["minimality_per_history"],
               "G-MINIMALITY-PER-HISTORY")
     gate("G-MINIMALITY-PER-HISTORY",
          REG.stmt("no committed history reconstructs the cast at any prefix "
                   "of its own record: {per_history_hits} of {slots}, the "
                   "prefix taken at every depth from one event to the whole "
-                  "history", per_history_hits=1, slots=1),
-         depth_hits == 0, "reconstructing histories %d of %d"
-         % (depth_hits, len(corp)))
+                  "history; the most distinct record blocks any one of them "
+                  "writes is {max_blocks} of the {blocks}, and the refusal is "
+                  "modally a want of blocks ({no_actor} histories) rather than "
+                  "a want of overlap ({no_meet}, the pairwise-disjoint "
+                  "mechanism, at {disjoint_hist} histories whose blocks are "
+                  "disjoint)", per_history_hits=1, slots=1, max_blocks=1,
+                  blocks=1, no_actor=1, no_meet=1, disjoint_hist=1),
+         depth_hits == 0 and max_blocks < len(blocks)
+         and sum(refusal.values()) == len(corp),
+         "reconstructing histories %d of %d most-blocks %d refusals %s"
+         % (depth_hits, len(corp), max_blocks,
+            dict(sorted(refusal.items()))))
 
     acc, hdepth = set(), None
     for i, h in enumerate(bare):
@@ -1591,19 +2248,32 @@ def full_run(write=False, mutant=None, render=False):
 
     drop_ok = sum(1 for j in range(len(blocks))
                   if decide([b for k, b in enumerate(blocks) if k != j]))
+    drop2 = [(u, v) for u, v in combinations(range(len(blocks)), 2)]
+    drop2_ok = sum(1 for u, v in drop2
+                   if decide([b for k, b in enumerate(blocks)
+                              if k not in (u, v)]))
     if mut("MUT-BLOCK-MIN"):
         drop_ok = 1
+    if mut("MUT-BLOCKS-25"):
+        drop2_ok = 1
     R["minimality_blocks"] = {"blocks": len(blocks), "drop_one_subsets":
-                              len(blocks), "still_reconstructing": drop_ok}
+                              len(blocks), "still_reconstructing": drop_ok,
+                              "drop_two_subsets": len(drop2),
+                              "still_reconstructing_at_two_fewer": drop2_ok}
     REG.measured("drop_ok", drop_ok, "26-block subsets that reconstruct")
+    REG.measured("drop2", len(drop2), "25-block subsets")
+    REG.measured("drop2_ok", drop2_ok, "25-block subsets that reconstruct")
     SEAL.seal("minimality_blocks", R["minimality_blocks"],
               "G-MINIMALITY-BLOCKS")
     gate("G-MINIMALITY-BLOCKS",
          REG.stmt("every one of the {blocks} record blocks is load-bearing: "
                   "of the {blocks} subsets got by dropping one, "
-                  "{drop_ok} reconstruct", blocks=1, drop_ok=1),
-         drop_ok == 0 and decide(blocks), "drop-one survivors %d of %d"
-         % (drop_ok, len(blocks)))
+                  "{drop_ok} reconstruct, and of the {drop2} got by dropping "
+                  "two, {drop2_ok} do", blocks=1, drop_ok=1, drop2=1,
+                  drop2_ok=1),
+         drop_ok == 0 and drop2_ok == 0 and decide(blocks),
+         "drop-one survivors %d of %d drop-two survivors %d of %d"
+         % (drop_ok, len(blocks), drop2_ok, len(drop2)))
 
     # -- the parents' thresholds, re-derived --------------------------------
     a_w = ASET.read("A-FAC-WSTAR", "G-WSTAR-REDERIVED")
@@ -1734,25 +2404,52 @@ def full_run(write=False, mutant=None, render=False):
     if mut("MUT-CONNECTION"):
         k0 = sorted(joint)[0]
         joint[(k0[0], k0[1], "REACHED")] = joint.pop(k0)
+    # THE ONE EXACT RELATION THE CORPUS CARRIES BETWEEN THE TWO PARENT DEPTHS
+    # (K1's first free strengthening): never-crystallizing IFF w* is the least
+    # width the corpus carries, measured in both directions.
+    least_w = min(w for w in wstar if w is not None)
+    never_set = {i for i, c in enumerate(cryst) if c is None}
+    least_set = {i for i, w in enumerate(wstar) if w == least_w}
+    if mut("MUT-BICONDITIONAL"):
+        never_set = never_set | {max(set(range(len(corp))) - never_set)}
+    bicond = {
+        "never_crystallizing": len(never_set),
+        "least_collapse_threshold": least_w,
+        "at_the_least_threshold": len(least_set),
+        "in_both": len(never_set & least_set),
+        "never_but_not_least": len(never_set - least_set),
+        "least_but_not_never": len(least_set - never_set),
+        "biconditional": never_set == least_set,
+    }
     R["connection"] = {
         "rows": [{"crystallization": k[0], "collapse_threshold": k[1],
                   "reconstruction_depth": k[2], "histories": v}
                  for k, v in sorted(joint.items())],
         "declared_side_finite": sum(v for k, v in joint.items() if k[1] is not None),
         "record_side_reached": depth_hits,
+        "the_biconditional": bicond,
     }
     SEAL.seal("connection", R["connection"], "G-THE-CONNECTION")
     REG.measured("joint_rows", len(joint), "distinct joint rows")
+    REG.measured("both_depths", len(never_set & least_set),
+                 "histories that never crystallize AND take the least width")
+    REG.measured("least_w", least_w, "the least collapse threshold")
     gate("G-THE-CONNECTION",
          REG.stmt("the three depths are put in one table, {joint_rows} rows "
                   "of it: both declared-side thresholds are finite at every "
                   "history that has one, and the record-side depth is reached "
                   "at {per_history_hits}, so the reconstruction depth is not "
                   "the collapse threshold and is not the crystallization "
-                  "time", joint_rows=1, per_history_hits=1),
-         all(k[2] == "NEVER" for k in joint) and depth_hits == 0,
-         "rows %d declared-finite %d record-reached %d"
-         % (len(joint), R["connection"]["declared_side_finite"], depth_hits))
+                  "time; and the two declared-side depths carry one exact "
+                  "relation -- a history never crystallizes exactly when its "
+                  "collapse threshold is {least_w}, at {both_depths} of "
+                  "{both_depths} in each direction",
+                  joint_rows=1, per_history_hits=1, least_w=1, both_depths=1),
+         all(k[2] == "NEVER" for k in joint) and depth_hits == 0
+         and bicond["biconditional"],
+         "rows %d declared-finite %d record-reached %d biconditional %s at %d"
+         % (len(joint), R["connection"]["declared_side_finite"], depth_hits,
+            bicond["biconditional"], len(never_set & least_set)))
 
     # -- MEASUREMENT FOUR: the obstruction ----------------------------------
     a_unl = ASET.read("A-EPR-UNLINKED", "G-OBSTRUCTION-NAMED")
@@ -1764,7 +2461,7 @@ def full_run(write=False, mutant=None, render=False):
     if mut("MUT-OBSTRUCTION"):
         unwritten = unwritten + 1
     R["obstruction"] = {
-        "name": "THE-LINK-DECLARATION",
+        "name": "THE-DIRECTION-DECLARATION",
         "undeclared_classes": len(undeclared),
         "unwritten_events": unwritten,
         "histories_with_an_unwritten_event": empty_hist,
@@ -1778,7 +2475,9 @@ def full_run(write=False, mutant=None, render=False):
                  "histories with at least one unwritten event")
     SEAL.seal("obstruction", R["obstruction"], "G-OBSTRUCTION-NAMED")
     gate("G-OBSTRUCTION-NAMED",
-         REG.stmt("the datum that resists is THE LINK DECLARATION, and it "
+         REG.stmt("the datum that resists is THE DIRECTION DECLARATION -- the "
+                  "choice of three of the four parallel classes as the links, "
+                  "which is the one name this unit gives it -- and it "
                   "resists twice: {unwritten} division events write nothing "
                   "because both their ends lie in the one parallel class the "
                   "arena does not declare, leaving {empty_hist} histories "
@@ -1795,6 +2494,7 @@ def full_run(write=False, mutant=None, render=False):
 
     # -- the control arms ---------------------------------------------------
     scr, scr_rows = [], collections.Counter()
+    certified_scr, reached_comparator = 0, 0
     base = list(blocks)
     for j in range(len(base)):
         for shift in (1, 2):
@@ -1805,19 +2505,36 @@ def full_run(write=False, mutant=None, render=False):
             bl[j] = alien
             rr = r_reconstruct([frozenset(x) for x in bl])
             cc, wy = r_certify(rr)
-            agree = cc and k_agree_sets(rr["cast"], dec_cast)
+            # the comparator is consulted only on a CERTIFIED reconstruction,
+            # so how often it was consulted at all is COUNTED, not inferred
+            # from arithmetic on another leg (K2 M2).
+            certified_scr += bool(cc)
+            if cc:
+                reached_comparator += 1
+                agree = k_agree_sets(rr["cast"], dec_cast)
+            else:
+                agree = False
             scr_rows[("REPLACE", bool(agree))] += 1
             scr.append(agree)
     for j in range(len(base)):
         bl = [b for k, b in enumerate(base) if k != j]
         rr = r_reconstruct([frozenset(x) for x in bl])
         cc, wy = r_certify(rr)
-        agree = cc and k_agree_sets(rr["cast"], dec_cast)
+        certified_scr += bool(cc)
+        if cc:
+            reached_comparator += 1
+            agree = k_agree_sets(rr["cast"], dec_cast)
+        else:
+            agree = False
         scr_rows[("DROP", bool(agree))] += 1
         scr.append(agree)
+    # THE SWAP ARM CARRIES A DECLARED CAP, and it is published with its
+    # witnesses (K1 MAJ-4, K3 MAJOR-11): how many pairs the cap visits, how
+    # many of those the moving-filter drops, and how many moving swaps the
+    # uncapped arm would hold.
+    swap_candidates = swap_visited = 0
     for u, v in combinations(range(len(base)), 2):
-        if u > 8:
-            break
+        capped = u > SWAP_CAP
         bl = list(base)
         a, b = list(base[u]), list(base[v])
         if a[0] == b[0]:
@@ -1828,29 +2545,111 @@ def full_run(write=False, mutant=None, render=False):
         bl[u], bl[v] = tuple(sorted(a)), tuple(sorted(b))
         if sorted(bl) == sorted(base):
             continue
+        swap_candidates += 1                 # a MOVING swap, capped or not
+        if capped:
+            continue
+        swap_visited += 1
         rr = r_reconstruct([frozenset(x) for x in bl])
         cc, wy = r_certify(rr)
-        agree = cc and k_agree_sets(rr["cast"], dec_cast)
+        certified_scr += bool(cc)
+        if cc:
+            reached_comparator += 1
+            agree = k_agree_sets(rr["cast"], dec_cast)
+        else:
+            agree = False
         scr_rows[("SWAP", bool(agree))] += 1
         scr.append(agree)
+    pairs_visited = sum(1 for u, _v in combinations(range(len(base)), 2)
+                        if u <= SWAP_CAP)
     survivors = sum(1 for s in scr if s)
     if mut("MUT-SCRAMBLE-CONTROL"):
         survivors = 0 if survivors else 1
+    # THE DENOMINATOR IS COORDINATE-RELATIVE, and the range is published rather
+    # than left to be discovered (K3 MAJOR-11, RUNBOOK Sec.15).
+    coord_totals = {}
+    for m, a in SCRAMBLE_COORDINATES:
+        p = tuple((m * k + a) % DIM for k in range(DIM))
+        if sorted(p) != list(range(DIM)):
+            continue
+        bb = sorted({b for h in s_bare_corpus(corp, p) for b in h})
+        n_rep = sum(1 for j in range(len(bb)) for sh in (1, 2)
+                    if len({(t + sh) % DIM for t in bb[j]}) >= 3
+                    and tuple(sorted({(t + sh) % DIM for t in bb[j]})) not in bb)
+        n_swap = 0
+        for u, v in combinations(range(len(bb)), 2):
+            if u > SWAP_CAP:
+                continue
+            x, y = list(bb[u]), list(bb[v])
+            if x[0] == y[0]:
+                continue
+            x[0], y[0] = y[0], x[0]
+            if len(set(x)) < 3 or len(set(y)) < 3:
+                continue
+            cand = list(bb)
+            cand[u], cand[v] = tuple(sorted(x)), tuple(sorted(y))
+            if sorted(cand) == sorted(bb):
+                continue
+            n_swap += 1
+        coord_totals["%d,%d" % (m, a)] = n_rep + len(bb) + n_swap
     R["control_scrambled"] = {
         "trials": len(scr), "survivors": survivors,
+        "certified_at_all": certified_scr,
+        "reached_the_comparator": reached_comparator,
         "by_shape": {"%s:%s" % k: v for k, v in sorted(scr_rows.items())},
+        "candidates": 2 * len(base) + len(base) + pairs_visited,
+        "rejected_as_non_moving":
+            2 * len(base) + len(base) + pairs_visited - len(scr),
+        "swap_cap": SWAP_CAP,
+        "swap_pairs_available": len(list(combinations(range(len(base)), 2))),
+        "swap_pairs_visited_under_the_cap": pairs_visited,
+        "swap_moving_corruptions_uncapped": swap_candidates,
+        "swap_moving_corruptions_run": swap_visited,
+        "swap_moving_corruptions_dropped_by_the_cap":
+            swap_candidates - swap_visited,
+        "alien_family": ["the two token-index translates of the block"],
+        "trials_by_coordinate": dict(sorted(coord_totals.items())),
+        "trials_range": [min(coord_totals.values()), max(coord_totals.values())],
     }
     REG.measured("scr_trials", len(scr), "scrambled records tried")
     REG.measured("scr_survivors", survivors, "scrambles the comparator passed")
+    REG.measured("scr_certified", certified_scr,
+                 "scrambled records the reconstructor certified at all")
+    REG.measured("swap_run", swap_visited, "moving swaps run under the cap")
+    REG.measured("swap_uncapped", swap_candidates,
+                 "moving swaps the uncapped arm would hold")
+    REG.measured("swap_dropped", swap_candidates - swap_visited,
+                 "moving swaps the cap drops")
+    REG.measured("scr_candidates", 2 * len(base) + len(base) + pairs_visited,
+                 "corruptions built before the moving-filter")
+    REG.measured("scr_rejected",
+                 2 * len(base) + len(base) + pairs_visited - len(scr),
+                 "corruptions the moving-filter rejected")
+    REG.measured("coord_lo", min(coord_totals.values()), "the least total")
+    REG.measured("coord_hi", max(coord_totals.values()), "the largest total")
+    REG.measured("coord_count", len(coord_totals), "coordinates recomputed")
     SEAL.seal("control_scrambled", R["control_scrambled"],
               "G-CONTROL-SCRAMBLED-FAILS")
     gate("G-CONTROL-SCRAMBLED-FAILS",
          REG.stmt("the control arm the pin asks for, run through the REAL "
                   "reconstructor: {scr_trials} scrambled records, of which "
-                  "{scr_survivors} reach the declared cast", scr_trials=1,
-                  scr_survivors=1),
-         survivors == 0 and len(scr) > len(base),
-         "trials %d survivors %d" % (len(scr), survivors))
+                  "{scr_survivors} reach the declared cast and {scr_certified} "
+                  "are certified at all; {scr_candidates} corruptions were "
+                  "built and {scr_rejected} rejected for leaving the record "
+                  "unmoved; the swap leg carries a DECLARED cap "
+                  "under which {swap_run} of the {swap_uncapped} moving swaps "
+                  "are run and {swap_dropped} are dropped; and the total is "
+                  "coordinate-relative, running from {coord_lo} to {coord_hi} "
+                  "over {coord_count} declared coordinates",
+                  scr_trials=1, scr_survivors=1, scr_certified=1, swap_run=1,
+                  swap_uncapped=1, swap_dropped=1, coord_lo=1, coord_hi=1,
+                  coord_count=1, scr_candidates=1, scr_rejected=1),
+         survivors == 0 and certified_scr == 0 and len(scr) > len(base)
+         and swap_visited + (swap_candidates - swap_visited) == swap_candidates
+         and R["control_scrambled"]["candidates"] - len(scr)
+         == R["control_scrambled"]["rejected_as_non_moving"],
+         "trials %d survivors %d certified %d swaps %d of %d range %d-%d"
+         % (len(scr), survivors, certified_scr, swap_visited, swap_candidates,
+            min(coord_totals.values()), max(coord_totals.values())))
 
     syn_rows, syn_bad = [], []
     for pshape in SYNTHETIC_PARTS:
@@ -1864,7 +2663,12 @@ def full_run(write=False, mutant=None, render=False):
         syn_rows.append({"parts": list(pshape), "tokens": ntok,
                          "blocks": len(sb), "certificate": wy,
                          "cast_recovered": bool(agree),
-                         "cast_size": len(rr["cast"])})
+                         "cast_size": len(rr["cast"]),
+                         # the SAME clause reads a DIFFERENT threshold on each
+                         # arm: the cleanest evidence that tau is read off the
+                         # record rather than typed into it (K2's mandate 2)
+                         "threshold": rr.get("tau"),
+                         "meet_values": rr.get("meets", [])})
         if balanced and not agree:
             syn_bad.append(pshape)
         if not balanced and agree:
@@ -1885,26 +2689,204 @@ def full_run(write=False, mutant=None, render=False):
          not syn_bad, "arms %d recovered %d mismatched %s"
          % (len(syn_rows), good, syn_bad or "none"))
 
-    teeth = [r for r in syn_rows
-             if r["certificate"] == "CERTIFIED" and r["cast_size"] != NACT]
-    if mut("MUT-TEETH"):
-        teeth = []
+    # THE BALANCE PROBE.  The delivered seven arms locate the boundary badly:
+    # it is BALANCE and not three-ness (K1 MAJ-2).  Every complete multipartite
+    # shape up to the declared ceiling is run through the same reconstructor.
+    bal_rows, bal_bad = [], []
+    for pshape in balance_shapes():
+        sb, sstars, ntok = synthetic_record(pshape)
+        rr = r_reconstruct(sb)
+        cc, wy = r_certify(rr)
+        own = bool(cc and k_agree_sets(rr["cast"], sstars))
+        if cc and not own:
+            bal_bad.append(pshape)
+        bal_rows.append({"parts": list(pshape), "balanced":
+                         len(set(pshape)) == 1, "tokens": ntok,
+                         "blocks": len(sb), "certificate": wy,
+                         "cast_size": len(rr["cast"]),
+                         "cast_recovered": own})
+    if mut("MUT-BALANCE"):
+        # an UNBALANCED shape credited with its cast: the boundary the sweep
+        # locates stops being balance, which is what the gate asserts
+        for r in bal_rows:
+            if not r["balanced"]:
+                r["cast_recovered"] = not r["cast_recovered"]
+                break
+    bal_ok = [r for r in bal_rows if r["cast_recovered"]]
+    bal_unbalanced_ok = [r for r in bal_ok if not r["balanced"]]
+    bal_balanced_no = [r for r in bal_rows
+                       if r["balanced"] and not r["cast_recovered"]]
+    R["control_balance"] = {
+        "shapes": len(bal_rows), "balanced_shapes":
+            sum(1 for r in bal_rows if r["balanced"]),
+        "recovered": len(bal_ok),
+        "recovered_unbalanced": len(bal_unbalanced_ok),
+        "balanced_but_refused": [r["parts"] for r in bal_balanced_no],
+        "certified_but_wrong": [list(p) for p in bal_bad],
+        "ceiling_actors": BALANCE_CEILING,
+        "rows": bal_rows,
+    }
+    REG.measured("bal_shapes", len(bal_rows), "multipartite shapes swept")
+    REG.measured("bal_ok", len(bal_ok), "shapes whose cast comes back")
+    REG.measured("bal_unbal", len(bal_unbalanced_ok),
+                 "UNBALANCED shapes whose cast comes back")
+    REG.measured("bal_wrong", len(bal_bad),
+                 "shapes certified for a cast that was not the record's own")
+    REG.measured("bal_refused", len(bal_balanced_no),
+                 "balanced shapes the reconstructor refuses")
+    SEAL.seal("control_balance", R["control_balance"], "G-CONTROL-BALANCE")
+    gate("G-CONTROL-BALANCE",
+         REG.stmt("the boundary of the reconstructor's domain is BALANCE and "
+                  "not the number of parts: of {bal_shapes} complete "
+                  "multipartite shapes swept, {bal_ok} recover their cast "
+                  "exactly and {bal_unbal} of those are unbalanced; "
+                  "{bal_refused} balanced shapes are refused rather than "
+                  "answered wrongly; and {bal_wrong} shapes anywhere in the "
+                  "sweep were certified for a cast that was not that record's "
+                  "own", bal_shapes=1, bal_ok=1, bal_unbal=1, bal_refused=1,
+                  bal_wrong=1),
+         not bal_bad and len(bal_unbalanced_ok) == 0 and len(bal_ok) > 0
+         and all(r["balanced"] for r in bal_ok),
+         "shapes %d recovered %d unbalanced-recovered %d certified-wrong %s"
+         % (len(bal_rows), len(bal_ok), len(bal_unbalanced_ok),
+            bal_bad or "none"))
+
+    # THE COMPARATOR'S OWN TEETH, MEASURED BY RUNNING IT (K2 M2, K3 MAJOR-8).
+    # The delivered leg inferred the count from a CARDINALITY (cast_size != 9)
+    # and never asked the comparator, which silently dropped the one arm whose
+    # refusal is not decidable by size: the 3+3+3 arena carries a cast of
+    # exactly nine that is not this arena's nine.
+    certified_syn = [r for r in syn_rows if r["certificate"] == "CERTIFIED"]
+    teeth, teeth_rows = [], []
+    for r, pshape in zip(syn_rows, SYNTHETIC_PARTS):
+        if r["certificate"] != "CERTIFIED":
+            continue
+        sb, _ss, _nt = synthetic_record(pshape)
+        rr = r_reconstruct(sb)
+        agrees = k_agree_sets(rr["cast"], dec_cast)
+        if mut("MUT-TEETH") and r["cast_size"] == NACT:
+            # the one arm whose refusal is not decidable by size is flipped:
+            # the guard survives (three teeth remain) and the MEASUREMENT is
+            # what moves (K2 m7)
+            agrees = not agrees
+        teeth_rows.append({"parts": list(pshape), "cast_size": r["cast_size"],
+                           "size_alone_decides": r["cast_size"] != NACT,
+                           "the_comparator_agrees": bool(agrees)})
+        if not agrees:
+            teeth.append(r)
+    size_blind = [t for t in teeth_rows if not t["size_alone_decides"]]
     R["comparator_teeth"] = {
         "certified_reconstructions_refused": len(teeth),
-        "per_history_refusals": len(corp) - depth_hits,
-        "scrambles_refused": len(scr) - survivors,
+        "certified_reconstructions_tried": len(certified_syn),
+        "refusals_not_decidable_by_size":
+            sum(1 for t in size_blind if not t["the_comparator_agrees"]),
+        "rows": teeth_rows,
+        "reconstructor_refusals_per_history": len(corp) - depth_hits,
+        "reconstructor_refusals_on_scrambles": len(scr) - survivors,
+        "scrambles_that_reached_the_comparator": reached_comparator,
+        "history_attempts_that_reached_the_comparator": 0,
     }
     REG.measured("teeth", len(teeth),
                  "certified reconstructions the comparator refused")
+    REG.measured("teeth_tried", len(certified_syn),
+                 "certified reconstructions the comparator was asked about")
+    REG.measured("teeth_blind", len(size_blind),
+                 "of those whose cast size alone cannot decide")
+    REG.measured("scr_reached", reached_comparator,
+                 "scrambled records that reached the comparator")
     SEAL.seal("comparator_teeth", R["comparator_teeth"],
               "G-COMPARATOR-HAS-TEETH")
     gate("G-COMPARATOR-HAS-TEETH",
-         REG.stmt("the comparator can fail and does: it refuses {teeth} "
-                  "reconstructions that carry the reconstructor's own "
-                  "certificate, every one of the {scr_trials} scrambles, and "
-                  "every one of the {slots} per-history attempts",
-                  teeth=1, scr_trials=1, slots=1),
-         len(teeth) > 0, "certified-but-refused %d" % len(teeth))
+         REG.stmt("the comparator can fail and does, and it is ASKED rather "
+                  "than inferred from a cardinality: of the {teeth_tried} "
+                  "synthetic reconstructions carrying the reconstructor's own "
+                  "certificate it refuses {teeth}, and {teeth_blind} of those "
+                  "carry a cast of the declared size, so that refusal is not a "
+                  "matter of size; everywhere else the RECONSTRUCTOR refuses "
+                  "first -- {scr_reached} of the {scr_trials} scrambles and "
+                  "none of the {slots} per-history attempts ever reach the "
+                  "comparator at all",
+                  teeth=1, teeth_tried=1, teeth_blind=1, scr_reached=1,
+                  scr_trials=1, slots=1),
+         len(teeth) == len(certified_syn) and len(teeth) > 0
+         and len(size_blind) > 0
+         and all(not t["the_comparator_agrees"] for t in teeth_rows),
+         "certified-but-refused %d of %d size-blind %d reached-on-scrambles %d"
+         % (len(teeth), len(certified_syn), len(size_blind),
+            reached_comparator))
+
+    # -- THE OUTCOME WORDS, WRITTEN AT DECLARED FAULTS (#299) ---------------
+    # A pre-registered outcome that only a refused run could print is not a
+    # deliverable outcome (K2 M4).  Each word is therefore produced HERE by the
+    # real machinery -- the real reconstructor, the real certificate, the real
+    # comparator -- reading a faulted object, and the word it writes is
+    # recorded.  Two faults are on the RECORD side (a synthetic arena's own
+    # bytes); one is on the DECLARED side, and it has to be, because at this
+    # arena the declared pairs are a function of the declared stars: a cast
+    # that is set-equal cannot carry a link structure that is not, so the
+    # OBSTRUCTED word is unreachable from any record whatever.  That is itself
+    # a measured fact, and it is published as one.
+    reach_rows = []
+
+    def reach(tag, side, blocks_in, declared_cast_in, declared_pairs_in,
+              menu_missing, residue):
+        rr = r_reconstruct([frozenset(b) for b in blocks_in])
+        cc, wy = r_certify(rr)
+        exact = bool(cc and k_agree_sets(rr["cast"], declared_cast_in))
+        im = k_index_map(rr["cast"], declared_cast_in)
+        dp = {tuple(sorted(im[i] for i in
+                           tuple(j for j, c in enumerate(rr["cast"]) if t in c)))
+              for t in rr["tokens"]} if im else set()
+        word = head_word_of(exact, dp == declared_pairs_in,
+                            len(rr["cast"]) == len(declared_cast_in),
+                            menu_missing, residue)
+        reach_rows.append({"fault": tag, "faulted_side": side,
+                           "certificate": wy, "cast_size": len(rr["cast"]),
+                           "word": word})
+        return word
+
+    syn_b3, syn_s3, _n3 = synthetic_record((3, 3, 3))
+    syn_b234, syn_s234, _n4 = synthetic_record((2, 3, 4))
+    syn_p3 = {tuple(sorted(i for i, c in enumerate(syn_s3) if t in c))
+              for t in range(_n3)}
+    syn_p234 = {tuple(sorted(i for i, c in enumerate(syn_s234) if t in c))
+                for t in range(_n4)}
+    reach("none: this corpus's own record against its own declared arena",
+          "NEITHER", blocks, dec_cast, dec_pairs, len(missing), idx.numerator)
+    reach("a synthetic arena's own record, read against its own cast, which "
+          "declares no direction and so owes no residue",
+          "RECORD", syn_b3, syn_s3, syn_p3, 0, 1)
+    reach("a synthetic arena whose record leaves a token in no actor",
+          "RECORD", syn_b234, syn_s234, syn_p234, 0, 1)
+    reach("this corpus's record, read against a cast short of one actor",
+          "RECORD", blocks, dec_cast[:-1], dec_pairs, 0, 1)
+    reach("this corpus's record, read against a declared link structure "
+          "missing one pair", "DECLARED", blocks, dec_cast,
+          set(sorted(dec_pairs)[:-1]), len(missing), idx.numerator)
+    got_words = sorted({r["word"] for r in reach_rows})
+    if mut("MUT-REACHABILITY"):
+        reach_rows = reach_rows[:1]
+        got_words = sorted({r["word"] for r in reach_rows})
+    R["outcome_reachability"] = {
+        "rows": reach_rows, "distinct_words": got_words,
+        "pre_registered": sorted({head_word_of(True, True, True, 0, 1),
+                                  head_word_of(True, True, True, 1, 12),
+                                  head_word_of(False, True, True, 0, 1),
+                                  head_word_of(True, False, True, 0, 1)}),
+    }
+    SEAL.seal("outcome_reachability", R["outcome_reachability"],
+              "G-OUTCOMES-REACHABLE")
+    REG.measured("reach_rows", len(reach_rows), "declared faults run")
+    REG.measured("reach_words", len(got_words), "distinct words they wrote")
+    gate("G-OUTCOMES-REACHABLE",
+         REG.stmt("every pre-registered outcome is DELIVERABLE and not merely "
+                  "a value of a function: {reach_rows} declared faults are put "
+                  "through the real reconstructor, the real certificate and "
+                  "the real comparator, and the words they write are "
+                  "{reach_words}, which is every word the pin registered",
+                  reach_rows=1, reach_words=1),
+         got_words == R["outcome_reachability"]["pre_registered"],
+         "faults %d words %s" % (len(reach_rows), got_words))
 
     # -- THE VERDICT, derived --------------------------------------------
     derived_word = head_word_of(cast_exact, der_pairs == dec_pairs,
@@ -1913,7 +2895,7 @@ def full_run(write=False, mutant=None, render=False):
     head = [
         "REC-RECONSTRUCTION<CORPUS=%s; DISTINCT-HISTORIES=%s; "
         "RECORD-BLOCKS=%s; SITE-SET=%s-OF-%s-EXACT; LINK-STRUCTURE=%s-OF-%s-"
-        "EXACT; CAST-SIZE=%s-DERIVED; MENU=%s-OF-%s-EXACT; NAMING=%s-"
+        "EXACT; CAST-SIZE=%s-DERIVED; MENU=%s-OF-%s-PARTIAL; NAMING=%s-"
         "ADMISSIBLE-%s-ARENA-COHERENT; RESIDUE-INDEX=%s; LEVEL-0-COUNT-FIELD="
         "%s-DISTINCT-CAST-NOT-DERIVABLE>"
         % (com(len(corp)), com(R["corpus"]["distinct_histories"]),
@@ -1930,7 +2912,7 @@ def full_run(write=False, mutant=None, render=False):
            "-AND-".join(str(w) for w in w_vals), com(c1c2[0]),
            com(c_by[("C3", None)])),
         "%s<OBSTRUCTION=THE-"
-        "LINK-DECLARATION; UNWRITTEN-EVENTS=%s; PARTLY-UNWRITTEN-HISTORIES=%s;"
+        "DIRECTION-DECLARATION; UNWRITTEN-EVENTS=%s; PARTLY-UNWRITTEN-HISTORIES=%s;"
         " HISTORIES-WRITING-NOTHING=%s; RECORD-COLLISIONS=%s-CLASSES-%s-"
         "HISTORIES; SURPLUS=%s-ARENA-FORCED-%s-RECORD-CARRIED-%s-NOT-CARRIED; "
         "CONTROLS=%s-SCRAMBLES-%s-SURVIVE-AND-%s-OF-%s-SYNTHETIC-ARMS-"
@@ -1945,22 +2927,51 @@ def full_run(write=False, mutant=None, render=False):
         head[2] = head[2].replace("UP-TO-THE-DIRECTION-DECLARATION", "")
     R["verdict"] = {"segments": head, "word": head[2].split("<")[0]}
 
+    # EVERY NUMERAL POSITION IN THE HEAD IS BOUND TO A RECEIPT LEAF, in order:
+    # the head is the artifact quoted standing alone, and a numeral in it that
+    # no leaf answers for is a free number (K3 MAJOR-7).
     HEAD_FIELDS = (
-        (0, "CORPUS", ("corpus", "slots")),
-        (0, "DISTINCT-HISTORIES", ("corpus", "distinct_histories")),
-        (0, "RECORD-BLOCKS", ("stripping", "record_blocks")),
-        (0, "CAST-SIZE", ("reconstruction", "cast_size")),
-        (0, "NAMING", ("naming", "admissible_namings")),
-        (0, "RESIDUE-INDEX", ("naming", "residue_index", 0)),
-        (1, "PER-HISTORY", ("minimality_per_history",
-                            "reconstructing_at_some_prefix")),
-        (1, "CORPUS-ORDER", ("minimality_corpus", "histories")),
-        (1, "NEVER-CRYSTALLIZING", ("crystallization", "never")),
-        (2, "UNWRITTEN-EVENTS", ("obstruction", "unwritten_events")),
+        (0, "CORPUS", (("corpus", "slots"),)),
+        (0, "DISTINCT-HISTORIES", (("corpus", "distinct_histories"),)),
+        (0, "RECORD-BLOCKS", (("stripping", "record_blocks"),)),
+        (0, "SITE-SET", (("reconstruction", "cast_size"), ("arena", "sites"))),
+        (0, "LINK-STRUCTURE", (("link_structure", "derived_pairs"),
+                               ("arena", "cells"))),
+        (0, "CAST-SIZE", (("reconstruction", "cast_size"),)),
+        (0, "MENU", (("menu", "matched_count"), ("menu", "declared_members"))),
+        (0, "NAMING", (("naming", "admissible_namings"),
+                       ("naming", "arena_coherent_namings"))),
+        (0, "RESIDUE-INDEX", (("naming", "residue_index", 0),)),
+        (0, "LEVEL-0-COUNT-FIELD", (("level_zero", "distinct_record_fields"),)),
+        (1, "PER-HISTORY", (("minimality_per_history",
+                             "reconstructing_at_some_prefix"),
+                            ("minimality_per_history", "slots"))),
+        (1, "CORPUS-ORDER", (("minimality_corpus", "histories"),
+                             ("minimality_corpus", "events"))),
+        (1, "BLOCK-MINIMAL", (("minimality_blocks", "blocks"),
+                              ("minimality_blocks", "drop_one_subsets"),
+                              ("minimality_blocks", "still_reconstructing"))),
+        (1, "COLLAPSE-THRESHOLDS", (("wstar", "values", 0),
+                                    ("wstar", "values", 1),
+                                    ("wstar", "values", 2))),
+        (1, "CRYSTALLIZATION-ON-C1-AND-C2", (("crystallization",
+                                              "C1_C2_constant", 0),)),
+        (1, "NEVER-CRYSTALLIZING", (("crystallization", "never"),)),
+        (2, "UNWRITTEN-EVENTS", (("obstruction", "unwritten_events"),)),
         (2, "PARTLY-UNWRITTEN-HISTORIES",
-         ("obstruction", "histories_with_an_unwritten_event")),
+         (("obstruction", "histories_with_an_unwritten_event"),)),
         (2, "HISTORIES-WRITING-NOTHING",
-         ("obstruction", "histories_writing_nothing")),
+         (("obstruction", "histories_writing_nothing"),)),
+        (2, "RECORD-COLLISIONS", (("surplus", "collision_classes"),
+                                  ("surplus",
+                                   "distinct_histories_in_collisions"))),
+        (2, "SURPLUS", (("surplus", "arena_forced"),
+                        ("surplus", "record_carried"),
+                        ("surplus", "not_carried"))),
+        (2, "CONTROLS", (("control_scrambled", "trials"),
+                         ("control_scrambled", "survivors"),
+                         ("control_synthetic", "recovered"),
+                         ("control_synthetic", "arms"))),
     )
     probes = [head_word_of(True, True, True, 0, 1),
               head_word_of(True, True, True, len(missing), idx.numerator),
@@ -1983,26 +2994,40 @@ def full_run(write=False, mutant=None, render=False):
     if len(set(probes)) != len(probes):
         parsed_bad.append("the outcome words are not distinguishable: %s"
                           % probes)
-    for seg, key, path in HEAD_FIELDS:
+    head_numerals = 0
+    for seg, key, paths in HEAD_FIELDS:
         got = k_parse_head(head[seg]).get(key)
-        want = R
-        for step in path:
-            want = want[step]
+        want = []
+        for path in paths:
+            leaf = R
+            for step in path:
+                leaf = leaf[step]
+            want.append(leaf)
+        head_numerals += len(want)
         if got is None or got != want:
             parsed_bad.append("%s: head %s receipt %s" % (key, got, want))
+    seen_numerals = sum(len(v) for seg in range(len(head))
+                        for v in k_parse_head(head[seg]).values())
+    if seen_numerals != head_numerals:
+        parsed_bad.append("the head carries %d numerals and %d are bound"
+                          % (seen_numerals, head_numerals))
     SEAL.seal("verdict", R["verdict"], "G-VERDICT-EQUALITY")
     REG.measured("head_fields", len(HEAD_FIELDS), "len(HEAD_FIELDS)")
+    REG.measured("head_numerals", head_numerals, "head numerals bound to a leaf")
     gate("G-VERDICT-EQUALITY",
          REG.stmt("the verdict is not trusted to its own renderer: each of "
                   "{head_fields} declared head fields is PARSED back out of "
-                  "the emitted string and compared, as an integer, with the "
-                  "receipt leaf it names -- a parser against a builder, "
-                  "sharing no code and no literal -- and the verdict WORD is "
+                  "the emitted string and compared, as integers, with the "
+                  "receipt leaves it names -- a parser against a builder, "
+                  "sharing no code and no literal -- at {head_numerals} "
+                  "numeral positions, which is EVERY numeral the three "
+                  "segments carry; and the verdict WORD is "
                   "bound both ways to the measurement that owes it, with the "
                   "pre-registered outcomes shown distinguishable on declared "
-                  "probes", head_fields=1),
-         not parsed_bad, "fields %d outcomes %d mismatched %s"
-         % (len(HEAD_FIELDS), len(set(probes)), parsed_bad or "none"))
+                  "probes", head_fields=1, head_numerals=1),
+         not parsed_bad, "fields %d numerals %d of %d outcomes %d mismatched %s"
+         % (len(HEAD_FIELDS), head_numerals, seen_numerals, len(set(probes)),
+            parsed_bad or "none"))
 
     # -- the paper --------------------------------------------------------
     t_recon = CL.table(
@@ -2019,25 +3044,44 @@ def full_run(write=False, mutant=None, render=False):
          ("the naming", "record blocks", com(n_iso), com(n_coh),
           "UP TO THE RESIDUE")])
     t_prop = CL.table(
-        "T-SURPLUS", ("property of the history", "verdict", "values"),
+        "T-SURPLUS", ("property of the history", "verdict", "distinct values"),
         [(p["property"], p["verdict"], com(p["distinct_values"]))
          for p in prows])
+    cconst = c1c2[0]
+    wc1 = [w for w in w_vals if w_by[("C1", w)]][0]
+    c3c = ", ".join("%s:%s" % ("never" if k < 0 else k, com(v))
+                    for k, v in sorted(c3, key=lambda kv: (kv[0] < 0, kv[0])))
     t_depth = CL.table(
         "T-DEPTHS", ("depth", "object it measures", "C1", "C2", "C3"),
         [("crystallization time", "the naming, given the cast",
-          com(c_by[("C1", 5)]) + " at 5", com(c_by[("C2", 5)]) + " at 5",
-          "stratified"),
+          com(c_by[("C1", cconst)]) + " at " + str(cconst),
+          com(c_by[("C2", cconst)]) + " at " + str(cconst), c3c),
          ("collapse threshold", "coherence width, given the cast",
-          com(w_by[("C1", 4)]) + " at 4", com(w_by[("C2", 4)]) + " at 4",
-          "3, 4, 5"),
+          com(w_by[("C1", wc1)]) + " at " + str(wc1),
+          com(w_by[("C2", wc1)]) + " at " + str(wc1),
+          ", ".join(str(w) for w in w_vals)),
          ("reconstruction depth", "the cast itself", "never", "never",
           "never")])
     t_syn = CL.table(
-        "T-SYNTHETIC", ("parts", "tokens", "blocks", "certificate",
-                        "cast recovered"),
+        "T-SYNTHETIC", ("parts", "tokens", "blocks", "threshold",
+                        "certificate", "derived cast", "cast recovered"),
         [("+".join(str(x) for x in r["parts"]), com(r["tokens"]),
-          com(r["blocks"]), r["certificate"],
+          com(r["blocks"]),
+          "none" if r["threshold"] is None else com(r["threshold"]),
+          r["certificate"], com(r["cast_size"]),
           "yes" if r["cast_recovered"] else "no") for r in syn_rows])
+    t_bal = CL.table(
+        "T-BALANCE", ("parts", "balanced", "blocks", "certificate",
+                      "cast recovered"),
+        [("+".join(str(x) for x in r["parts"]),
+          "yes" if r["balanced"] else "no", com(r["blocks"]),
+          r["certificate"], "yes" if r["cast_recovered"] else "no")
+         for r in bal_rows if r["balanced"] and len(r["parts"]) != 3])
+    t_reach = CL.table(
+        "T-REACHABILITY", ("declared fault", "faulted side", "certificate",
+                           "word the machinery writes"),
+        [(r["fault"], r["faulted_side"], r["certificate"], r["word"])
+         for r in reach_rows])
 
     c1 = CL.claim("the cast is derived at the corpus and at no single history",
                   times=2)
@@ -2053,14 +3097,47 @@ def full_run(write=False, mutant=None, render=False):
     c6 = CL.claim("the record admits %s namings of the derived cast and %s of "
                   "them carry the declared direction classes"
                   % (com(n_iso), com(n_coh)))
+    # THE DIRECTION-BEARING SENTENCES, LICENSED PER OCCURRENCE.  Each of these
+    # was invertible at exit 0 with the artifacts byte-identical, because the
+    # walls police phrases and the referent registry policies numerals, and a
+    # reversed direction is neither (K3 MAJOR-12).
+    c7 = CL.claim("the first three rows are set equality, not isomorphism")
+    c8 = CL.claim("it is that the record does not carry them")
+    c9 = CL.claim("overlap is what carries identity, and overlap is waste")
+    c10 = CL.claim("the eraser is not arena-blind as declared, and the "
+                   "reconstruction is arena-blind as measured")
+    c11 = CL.claim("no committed history sees more than %s of the %s record "
+                   "blocks" % (com(max_blocks), com(len(blocks))))
+    c12 = CL.claim("what the arms locate is balance and not the number of "
+                   "parts")
+    # the anchors' FRAME, licensed too: a byte-perfect quotation can be
+    # inverted around by the sentence that introduces it (K3 MAJOR-12)
+    c13 = CL.claim("the object EPR measured is the right frame for this one. "
+                   "Two structures decide everything, and both are measured")
+    # THE SENTENCES WHOSE NUMERALS COULD BE EXCHANGED INVISIBLY.  Two numbers
+    # of one universe swapped inside a sentence pass every numeral gate ever
+    # built here -- the referent registry checks membership, not place (K1
+    # MAJ-5's demonstration was exactly this swap).  Licensing the sentence
+    # binds them to their places.
+    c14 = CL.claim("There are %s such events in the corpus; %s histories carry "
+                   "at least one" % (com(unwritten), com(empty_hist)))
+    c15 = CL.claim("%s such events run in the corpus, leaving %s histories "
+                   "partly unwritten" % (com(unwritten), com(empty_hist)))
+    c16 = CL.claim("The corpus holds %s slots carrying %s distinct histories "
+                   "and leaves %s distinct bare records; the %s that vanish "
+                   "are the collisions"
+                   % (com(len(corp)), com(R["corpus"]["distinct_histories"]),
+                      com(len(fiber)), com(R["surplus"]["histories_lost"])))
     f1 = CL.fence(head[0])
     f2 = CL.fence(head[1])
     f3 = CL.fence(head[2])
     if mut("MUT-PAPER-CLAIM"):
         CL.claim("a claim the paper does not carry")
     if render:
-        R["rendered"] = {"tables": [t_recon, t_prop, t_depth, t_syn],
-                         "claims": [c1, c2, c3, c4, c5, c6],
+        R["rendered"] = {"tables": [t_recon, t_prop, t_depth, t_syn, t_bal,
+                                    t_reach],
+                         "claims": [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10,
+                                    c11, c12, c13, c14, c15, c16],
                          "fences": [f1, f2, f3]}
         return R, TR, LD, SEAL, None
     try:
@@ -2089,19 +3166,37 @@ def full_run(write=False, mutant=None, render=False):
     RR.universe("CONTROLS",
                 ["corruption", "corruptions", "control", "controls",
                  "scramble", "scrambles", "arm", "arms", "synthetic"],
-                {len(scr), survivors, len(syn_rows), good, len(teeth)}
-                | {x for shape in SYNTHETIC_PARTS for x in shape})
+                {len(scr), survivors, len(syn_rows), good, len(teeth),
+                 len(size_blind), certified_scr, reached_comparator,
+                 swap_visited, swap_candidates, swap_candidates - swap_visited,
+                 R["control_scrambled"]["candidates"],
+                 R["control_scrambled"]["rejected_as_non_moving"],
+                 SWAP_CAP, len(coord_totals), min(coord_totals.values()),
+                 max(coord_totals.values()), len(bal_rows), len(bal_ok),
+                 len(bal_unbalanced_ok), len(bal_bad), BALANCE_CEILING}
+                | {x for shape in SYNTHETIC_PARTS for x in shape}
+                | {len(s) for s in balance_shapes()}
+                | {x for s in balance_shapes() for x in s},
+                pairs={(survivors, len(scr)), (reached_comparator, len(scr)),
+                       (swap_visited, swap_candidates),
+                       (len(bal_ok), len(bal_rows)),
+                       (len(size_blind), len(teeth))})
     RR.universe("CELLS", ["cell", "cells", "token", "tokens", "record block",
                           "record blocks"],
-                {DIM, drop_ok, rec["tau"], 2 * DIM // NACT, len(rec["cast"]) // 3,
-                 len(pi) // len(pi)} | {2, len(I7_LINKS)},
-                pairs={(drop_ok, DIM), (DIM, DIM)})
+                {DIM, drop_ok, rec["tau"], 2 * DIM // NACT, len(drop2),
+                 max_blocks, SCRAMBLE_MULT, SCRAMBLE_ADD, min(incid),
+                 len(I7_LINKS)},
+                pairs={(drop_ok, DIM), (DIM, DIM), (drop2_ok, len(drop2)),
+                       (max_blocks, DIM)})
     RR.universe("NAMINGS", ["naming", "namings", "relabelling",
                             "relabellings", "splitting", "splittings",
                             "coordinate"],
                 {n_iso, n_coh, idx.numerator, len(reso), len(facs),
-                 len(trials)},
-                pairs={(n_coh, n_iso)})
+                 len(trials), len(orbit), COORD_TRIALS, RELABEL_TRIALS,
+                 len(coord_dev), len(rel_bad), len(baseline), affine_leaks,
+                 coord_leaks},
+                pairs={(n_coh, n_iso), (affine_leaks, len(trials)),
+                       (coord_leaks, COORD_TRIALS)})
     RR.universe("DEPTHS", ["threshold", "thresholds", "crystallization",
                            "width", "widths", "depth", "depths", "meet"],
                 set(rec["meets"]) | set(w_vals) | {c1c2[0], hdepth, edepth,
@@ -2114,11 +3209,16 @@ def full_run(write=False, mutant=None, render=False):
                  unwritten, written, empty_hist, len(silent), len(coll),
                  sum(len(v) for v in coll.values()), R["corpus"]["events"],
                  len(set(fields)), len(strict), len(scheds), bytag["C2"],
-                 len(blocks)},
-                pairs={(depth_hits, len(corp))})
+                 len(blocks), set_distinct, disjoint_hist, max_blocks,
+                 c_by[("C3", None)], least_w, len(never_set & least_set)}
+                | set(refusal.values()),
+                pairs={(depth_hits, len(corp)),
+                       (c_by[("C3", None)], len(corp)),
+                       (refusal.get("NO-MEET-GAP", 0), len(corp)),
+                       (refusal.get("TOKEN-IN-NO-ACTOR", 0), len(corp))})
     RR.universe("CAST", ["actor", "actors", "cast", "site", "sites"],
                 {NACT, 2 * DIM // NACT, NACT * (NACT - 1), len(link_parts or ()),
-                 2},
+                 min(incid)},
                 pairs={(NACT * (NACT - 1), NACT * (NACT - 1)), (NACT, NACT)})
     if mut("MUT-REFERENT"):
         paper_r = paper + "\n\nThe cast carries %d actors.\n" % len(corp)
@@ -2155,13 +3255,29 @@ def full_run(write=False, mutant=None, render=False):
         wall_text = paper.replace(
             "the cast is derived at the corpus and at no single history",
             "the cast is derived", 1)
+    if mut("MUT-WALL-PARAPHRASE"):
+        wall_text = paper + ("\n\nA single history suffices to reconstruct "
+                             "the cast.\n")
+    if mut("MUT-WALL-POSITIVE"):
+        # BOTH copies, line breaks and all, so the positive leg is exercised
+        # on its own rather than left satisfied by the other occurrence
+        wall_text = re.sub(
+            r"the cast is derived at the corpus and at no\s+single history",
+            "the cast comes out of the record", paper)
     wprob = None
     for w in WALLS:
         try:
             w.scan(wall_text)
         except ET.CheckFail as exc:
             wprob = exc.detail
-    R["walls"] = [w.seal_value() for w in WALLS]
+    # THE SCAN'S OWN RESULT IS PUBLISHED, not only the pattern list: the
+    # delivered key was the wall's declaration, which no paper edit can move,
+    # so the wall's falsifier could not move its own declared target (K3
+    # MAJOR-2).
+    R["walls"] = {"walls": [w.seal_value() for w in WALLS],
+                  "scanned_sha256_12": ET.bytes_digest(
+                      wall_text.encode("utf-8")),
+                  "violation": wprob or "none"}
     SEAL.seal("walls", R["walls"], "G-PAPER-WALLS")
     REG.measured("walls", len(WALLS), "len(WALLS)")
     REG.measured("wall_patterns", sum(len(w.negative) for w in WALLS),
@@ -2178,7 +3294,14 @@ def full_run(write=False, mutant=None, render=False):
          % (len(WALLS), sum(len(w.negative) for w in WALLS),
             sum(len(w.positive) for w in WALLS), wprob or ""))
 
+    # THE BACKING SET IS BUILT FROM MEASUREMENTS, not from digits scraped out
+    # of digests (K3 MINOR-4: 18 of 96 admitted values came from digest
+    # fragments alone, and two probes walked in through them).  Integer leaves
+    # count; a dictionary KEY counts only where the key is a declared numeric
+    # index, and the pattern is named here rather than left to a regex over
+    # every string in the receipt.
     backing = set()
+    KEYNUM = re.compile(r"^(?:[A-Za-z][A-Za-z0-9-]*:)?(-?\d+)$")
 
     def harvest(o):
         if isinstance(o, bool):
@@ -2187,53 +3310,81 @@ def full_run(write=False, mutant=None, render=False):
             backing.add(o)
         elif isinstance(o, dict):
             for k, v in o.items():
-                for m in re.findall(r"\d+", str(k)):
-                    backing.add(int(m))
+                m = KEYNUM.match(str(k))
+                if m:
+                    backing.add(int(m.group(1)))
                 harvest(v)
         elif isinstance(o, (list, tuple)):
             for v in o:
                 harvest(v)
-        elif isinstance(o, str):
-            for m in re.findall(r"\d+", o):
-                backing.add(int(m))
     harvest(R)
-    EXEMPT = {33: "paper-33, the AID unit", 35: "paper-35, the FAC unit",
-              38: "paper-38, the EPR unit", 41: "paper-41, this unit",
-              21: "paper-21, the schedule parent", 373: "the ledger entry",
-              14: "the campaign, v14", 25: "engraving E-25",
-              33000: "unused"}
-    EXEMPT.pop(33000)
-    cov = [n for n in paper_numerals(paper)
-           if int(n) not in backing and int(n) not in EXEMPT]
+    # The exemptions live in the registry that exists for them, and every one
+    # must be USED (K3 MINOR-3/16): a declared exemption whose token the paper
+    # never carries is deleted rather than shipped.
+    for tok, why in (("paper-33", "the AID unit"), ("paper-35", "the FAC unit"),
+                     ("paper-38", "the EPR unit"), ("paper 41", "this unit"),
+                     ("paper-21", "the schedule parent"),
+                     ("E-25", "the engraving this template opens at"),
+                     ("E-33", "the engraving it closes at"),
+                     ("E-24", "the counting-only engraving"),
+                     ("AG(2, 3)", "the arena's name"),
+                     ("sha256-12", "the digest length")):
+        REG.exempt_token(tok, why)
+    exempt_used = {t: w for t, w in REG.exempt.items() if t in paper}
+    exempt_unused = sorted(t for t in REG.exempt if t not in paper)
+    exempt_nums = {int(d) for t in exempt_used
+                   for d in re.findall(r"\d+", t)}
+    if mut("MUT-EXEMPTION"):
+        exempt_unused = exempt_unused + ["injected"]
+    nums = paper_numerals(paper)
     if mut("MUT-COVERAGE"):
-        cov.append("injected")
-    R["paper_coverage"] = {"numerals": len(paper_numerals(paper)),
+        nums = nums + paper_numerals("\n\nAn unbacked numeral: 987654.\n")
+    cov = [n for n in nums
+           if int(n) not in backing and int(n) not in exempt_nums]
+    spelled = paper_spelled(paper)
+    if mut("MUT-SPELLED"):
+        spelled = spelled + [SPELLED["thousand"] * SPELLED["thousand"]]
+    spell_bad = sorted({v for v in spelled
+                        if v not in backing and v not in exempt_nums})
+    R["paper_coverage"] = {"numerals": len(nums),
                            "unbacked": sorted(set(cov)),
-                           "exemptions": {str(k): v for k, v in
-                                          sorted(EXEMPT.items())}}
+                           "spelled_numerals": len(spelled),
+                           "spelled_unbacked": spell_bad,
+                           "backing_values": len(backing),
+                           "exemptions": {t: w for t, w in
+                                          sorted(exempt_used.items())},
+                           "exemptions_unused": exempt_unused}
     SEAL.seal("paper_coverage", R["paper_coverage"], "G-PAPER-COVERAGE")
-    REG.measured("numerals", len(paper_numerals(paper)),
+    REG.measured("numerals", len(nums),
                  "numerals in the paper, fences included")
     REG.measured("unbacked", len(set(cov)), "numerals backed by nothing")
+    REG.measured("spelled", len(spelled), "quantities the paper spells out")
+    REG.measured("spelled_bad", len(spell_bad), "spelled quantities unbacked")
     gate("G-PAPER-COVERAGE",
          REG.stmt("every one of the paper's {numerals} numerals -- fenced "
-                  "blocks, verdict blocks and tables included -- is a value "
-                  "this receipt carries or a declared exemption, and "
-                  "{unbacked} are neither", numerals=1, unbacked=1),
-         not cov, "numerals %d unbacked %s"
-         % (len(paper_numerals(paper)), sorted(set(cov)) or "none"))
+                  "blocks, verdict blocks and tables included -- and every one "
+                  "of the {spelled} quantities it spells out in words is a "
+                  "value this receipt carries as an integer measurement or a "
+                  "declared exemption whose token the paper actually carries; "
+                  "{unbacked} and {spelled_bad} are neither",
+                  numerals=1, unbacked=1, spelled=1, spelled_bad=1),
+         not cov and not spell_bad and not exempt_unused,
+         "numerals %d unbacked %s spelled %d unbacked %s unused exemptions %s"
+         % (len(nums), sorted(set(cov)) or "none", len(spelled),
+            spell_bad or "none", exempt_unused or "none"))
 
     # -- anchors, typed counts, exactness ----------------------------------
     if mut("MUT-ANCHOR-CONSUMER"):
-        ANCHORS[0].consumer = "G-CORPUS-SHAPE"
+        ASET.by_name[ANCHORS[0].name].consumer = "G-CORPUS-SHAPE"
     try:
         ASET.verify_consumption(LD)
         aprob = None
     except ET.CheckFail as exc:
         aprob = exc.detail
+    arows = [ASET.by_name[a.name] for a in ANCHORS]   # the per-run copies
     R["anchors"] = [{"name": a.name, "source": a.source,
                      "consumer": a.consumer, "chars": len(a.needle),
-                     "read_by": sorted(a.read_by)} for a in ANCHORS]
+                     "read_by": sorted(a.read_by)} for a in arows]
     SEAL.seal("anchors", R["anchors"], "G-ANCHORS-CONSUMED")
     REG.measured("anchors", len(ANCHORS), "len(ANCHORS)")
     gate("G-ANCHORS-CONSUMED",
@@ -2242,25 +3393,38 @@ def full_run(write=False, mutant=None, render=False):
                   "rendering, and its declared consumer gate took a value out "
                   "of it and compared that value with a measurement",
                   anchors=1),
-         aprob is None and all(a.consumer in a.read_by for a in ANCHORS),
+         aprob is None and all(a.consumer in a.read_by for a in arows),
          "anchors %d consumed %d %s"
-         % (len(ANCHORS), sum(1 for a in ANCHORS if a.consumer in a.read_by),
+         % (len(ANCHORS), sum(1 for a in arows if a.consumer in a.read_by),
             aprob or ""))
 
-    typed = REG.audit_module(src, statement_callers=("stmt", "claim"))
+    src_typed = src
     if mut("MUT-TYPED"):
-        typed = typed + ["injected: 'a statement with the numeral 9 typed'"]
+        # a REAL typed statement, admitted to the source the auditor reads
+        src_typed = src + ('\n\ndef _typed_probe(REG):\n'
+                           '    return REG.stmt("a statement with 9 typed")\n')
+    # `gate` is scanned too, so that a typed fragment CONCATENATED beside a
+    # statement -- outside the stmt call and inside the gate call -- is caught
+    # as well (K3 MAJOR-10's first door).
+    CALLERS = ("stmt", "claim", "table", "fence", "gate")
+    typed = sorted(set(REG.audit_module(src_typed, statement_callers=CALLERS))
+                   | set(audit_typed_calls(src_typed, CALLERS)))
     R["typed_counts"] = {"offenders": typed,
                          "registry": len(REG.values),
-                         "exemptions": sorted(REG.exempt)}
+                         "statement_builders_scanned": sorted(CALLERS),
+                         "exemptions": {t: w for t, w in sorted(REG.exempt.items())}}
     SEAL.seal("typed_counts", R["typed_counts"], "G-NO-TYPED-COUNTS")
     REG.measured("registry", len(REG.values), "measured names in the registry")
+    REG.measured("builders", len(CALLERS), "statement builders scanned")
     gate("G-NO-TYPED-COUNTS",
          REG.stmt("no numeral is typed into anything this unit vouches for: "
                   "every published statement interpolates from the "
                   "{registry} measured names, and an AST scan of this module "
-                  "finds no string literal handed to a statement builder that "
-                  "types a numeral", registry=1),
+                  "finds no string literal ANYWHERE in the subtree of a call "
+                  "to one of the {builders} statement, claim, table and fence "
+                  "builders that types a numeral -- so neither a concatenated "
+                  "fragment nor a table cell escapes it", registry=1,
+                  builders=1),
          not typed, "offenders %s" % (typed or "none"))
 
     bad_types = []
@@ -2279,9 +3443,12 @@ def full_run(write=False, mutant=None, render=False):
                 typewalk(v, path + "[%d]" % i)
         else:
             bad_types.append(path + ":" + type(o).__name__)
-    typewalk(R, "")
     if mut("MUT-FLOAT"):
-        bad_types.append("/injected")
+        # a GENUINE non-integer leaf, so the recursive type walk is the thing
+        # that catches it.  The value is taken from the interpreter rather than
+        # typed, because a float literal in this module is itself an offence.
+        R["reconstruction"]["threshold"] = sys.float_info.epsilon
+    typewalk(R, "")
     # the round-trip leg: a receipt whose digest moves when it goes through
     # JSON and back cannot be verified after promotion (an int-keyed dict is
     # the way this happens, and it is how this instrument first failed).
@@ -2322,6 +3489,24 @@ def full_run(write=False, mutant=None, render=False):
         "threshold_is_derived": True,
     }
 
+    # THE NINE FAMILIES ARE USED, AND THE USE IS GATED (K2 m8): each family's
+    # check id is read off the template's own table and matched to a live call
+    # site found by AST in this module, so "imported and used, not copied" is a
+    # measurement rather than a list.
+    fam_member = {"T-SEAL-PROMOTION": "seal", "T-TRANSCRIPT-BOUND": "bind",
+                  "T-WALL-SEMANTIC": "scan", "T-ANCHOR-CONSUMED": "locate",
+                  "T-CLAIMS-EQUAL": "claim", "T-REFERENT-BOUND": "universe",
+                  "T-NO-TYPED-COUNTS": "stmt",
+                  "T-FALSIFIER-POISONS": "audit_descriptions",
+                  "T-READ-SET": "gate_at_close"}
+    called = {getattr(n.func, "attr", None) or getattr(n.func, "id", None)
+              for n in ast.walk(ast.parse(src)) if isinstance(n, ast.Call)}
+    fam_rows = [{"check": c, "member": fam_member.get(c),
+                 "called": bool(fam_member.get(c) in called)}
+                for _k, _n, c in ET.FAMILIES]
+    if mut("MUT-FAMILIES"):
+        fam_rows[0]["called"] = not fam_rows[0]["called"]
+    R["provenance"]["families_used"] = fam_rows
     if mut("MUT-PROVENANCE"):
         R["provenance"]["pin_sha256_12"] = R["provenance"]["pin_sha256_12"][::-1]
     dig12 = [k for k, v in R["provenance"].items()
@@ -2331,13 +3516,16 @@ def full_run(write=False, mutant=None, render=False):
     prov_ok = (len(dig12) == sum(1 for k in R["provenance"]
                                  if k.endswith("sha256_12"))
                and R["provenance"]["pin_sha256_12"] == SOURCES[PIN_REL]
-               and R["provenance"]["template_sha256_12"] == SOURCES[TEMPLATE_REL])
+               and R["provenance"]["template_sha256_12"] == SOURCES[TEMPLATE_REL]
+               and all(r["called"] for r in fam_rows)
+               and len(fam_rows) == len(ET.FAMILIES))
     R["mutants"] = [{"name": m[0], "gate": m[1], "target": m[2],
                      "description": m[3]} for m in MUTANTS]
     # the gates that fire at or after this one, named so a falsifier for a
     # closing gate is not misread as unreachable
     closing = {"G-PROVENANCE", "G-READS-AT-THE-ACCESSOR",
-               "T-FALSIFIER-COVERAGE", "G-TRANSCRIPT-BOUND"}
+               "T-FALSIFIER-COVERAGE", "G-TRANSCRIPT-BOUND",
+               "G-EVIDENCE-BOUND"}
     allowed = set(LD.names()) | closing | {c for _k, _n, c in ET.FAMILIES}
     bad_mut = sorted(m["name"] for m in R["mutants"]
                      if m["gate"] not in allowed or not m["target"].strip())
@@ -2347,17 +3535,22 @@ def full_run(write=False, mutant=None, render=False):
     SEAL.seal("reconstruction_rule", R["reconstruction_rule"], "G-PROVENANCE")
     REG.measured("digests", len(dig12), "published sha256-12 digests")
     REG.measured("registered_mutants", len(R["mutants"]), "len(R['mutants'])")
+    REG.measured("families", len(fam_rows), "template families used")
     gate("G-PROVENANCE",
          REG.stmt("everything this unit VOUCHES for is sealed, not only what "
                   "it measures: {digests} published digests, each well formed "
                   "and the pin's and the template's equal to the values the "
-                  "pin froze; the reconstruction rule in words; and the "
+                  "pin froze; the reconstruction rule in words; the "
                   "{registered_mutants} falsifier rows, each naming a "
                   "distinct recipe, a non-empty measured target and a gate "
-                  "this run can reach", digests=1, registered_mutants=1),
+                  "this run can reach; and the {families} template families, "
+                  "each matched from the template's own table to a live call "
+                  "in this module", digests=1, registered_mutants=1,
+                  families=1),
          prov_ok and not bad_mut and names_unique,
-         "digests %d mutants %d unreachable %s"
-         % (len(dig12), len(R["mutants"]), bad_mut or "none"))
+         "digests %d mutants %d families %d unreachable %s"
+         % (len(dig12), len(R["mutants"]),
+            sum(1 for r in fam_rows if r["called"]), bad_mut or "none"))
 
     reads.append(TEMPLATE_REL)
     if mut("MUT-READ"):
@@ -2376,10 +3569,11 @@ def full_run(write=False, mutant=None, render=False):
          REG.stmt("every repository read is recorded at an open audit hook, "
                   "not at a helper, and the {declared_reads} declared paths "
                   "are reconciled with what was actually read, as a multiset, "
-                  "at the last gate before promotion", declared_reads=1),
+                  "at the last gate before promotion -- and again after the "
+                  "last gate of all, so the window between them is closed",
+                  declared_reads=1),
          dprob is None, "declared %d distinct %d %s"
          % (len(declared), rev2["distinct"], dprob or ""))
-    RS.active = False
 
     if mut("MUT-TRANSCRIPT"):
         TR.say("  [PASS] G-A-GATE-THAT-NEVER-RAN :: forged")
@@ -2388,38 +3582,101 @@ def full_run(write=False, mutant=None, render=False):
         tprob = None
     except ET.CheckFail as exc:
         tprob = exc.detail
+    R["transcript_binding"] = {"rows_at_this_gate": len(LD.rows),
+                               "chain_at_this_gate": LD.head,
+                               "problem": tprob or "none",
+                               "chain_recomputes":
+                                   LD.recompute_chain() == LD.head}
+    SEAL.seal("transcript_binding", R["transcript_binding"],
+              "G-TRANSCRIPT-BOUND")
+    REG.measured("rows_here", len(LD.rows), "ledger rows at this gate")
     gate("G-TRANSCRIPT-BOUND",
-         "every PASS line in the transcript that will be promoted is parsed "
-         "back out of the finished text and reconciled with the ledger as a "
-         "multiset, evidence included, and the ledger's own chain is "
-         "recomputed from its rows",
+         REG.stmt("every PASS line in the transcript that will be promoted is "
+                  "parsed back out of the finished text and reconciled with "
+                  "the ledger as a multiset, evidence included, and the "
+                  "ledger's own chain is recomputed from its {rows_here} rows "
+                  "so far", rows_here=1),
          tprob is None and LD.recompute_chain() == LD.head,
-         "rows %d chain %s %s" % (len(LD.rows), LD.head, tprob or ""))
+         "rows so far %d chain %s %s" % (len(LD.rows), LD.head, tprob or ""))
 
-    HARNESS = ET.FalsifierHarness(
-        [ET.Falsifier(m[0], m[1], m[3], m[2], None) for m in MUTANTS])
-    waivers = {"T-FALSIFIER-COVERAGE": "the coverage gate is inside its own "
-                                       "denominator"}
+    evbad = evidence_offences(LD.rows, SEAL.seals, R)
+    if mut("MUT-EVIDENCE"):
+        evbad = evidence_offences(
+            LD.rows + [dict(LD.rows[-1], gate="G-CORPUS-SHAPE",
+                            statement="a forged row", evidence="slots %d"
+                            % (len(corp) - 1))],
+            SEAL.seals, R)
+    R["evidence_bound"] = {"rows": len(LD.rows), "offences": evbad}
+    SEAL.seal("evidence_bound", R["evidence_bound"], "G-EVIDENCE-BOUND")
+    REG.measured("ev_rows", len(LD.rows), "finished evidence lines")
+    gate("G-EVIDENCE-BOUND",
+         REG.stmt("the transcript's own numbers are bound to the receipt: "
+                  "every integer in each of the {ev_rows} finished evidence "
+                  "lines is a value the gate's own sealed keys carry, or one "
+                  "its own statement published -- so the two artifacts cannot "
+                  "be promoted contradicting each other", ev_rows=1),
+         not evbad, "rows %d offences %s" % (len(LD.rows), evbad or "none"))
+
+    # THE COVERAGE GATE CARRIES NO WAIVER.  The delivered one said the gate
+    # could not be falsified from inside its own denominator; K3 built the
+    # falsifier and it dies here, so the claim was untrue and the waiver is
+    # gone -- MUT-COVERAGE-GAP is that recipe, adopted.
+    # the withheld row is the ONLY falsifier of its gate, so withholding it
+    # really does leave a fired gate uncovered
+    rows_for_harness = [ET.Falsifier(m[0], m[1], m[3], m[2], None)
+                        for m in MUTANTS if not (mut("MUT-COVERAGE-GAP")
+                                                 and m[0] == "MUT-SURPLUS")]
+    HARNESS = ET.FalsifierHarness(rows_for_harness)
+    waivers: dict = {}
     try:
-        cov2 = HARNESS.coverage(LD, waivers, {"T-FALSIFIER-COVERAGE": True})
+        cov2 = HARNESS.coverage(LD, waivers, {})
         fprob = None
     except ET.CheckFail as exc:
         cov2, fprob = {"gates": len(LD.rows) + 1, "falsified": 0,
                        "waived": len(waivers)}, exc.detail
+    # THE TEMPLATE'S OWN HONESTY LEG, CALLED (K3 MAJOR-5): a hook whose body
+    # only appends a constant to the finding list dies at the gate it names
+    # without ever moving the measurement that gate reads.
+    sentinels = HARNESS.audit_descriptions(src)
+    fired = set(LD.names()) | {"T-FALSIFIER-COVERAGE"}
+    targeted = {m[1] for m in MUTANTS}
+    missing_hooks, orphan_hooks = audit_mut_hooks(src, [m[0] for m in MUTANTS])
+    if mut("MUT-HOOK-MISSING"):
+        missing_hooks, orphan_hooks = audit_mut_hooks(
+            src, [m[0] for m in MUTANTS] + ["MUT-NOT-IMPLEMENTED"])
+    if mut("MUT-SENTINEL-DESC"):
+        sentinels = HARNESS.audit_descriptions(
+            src + "\n\ndef _sentinel_probe(bad):\n"
+                  "    if mut('MUT-SENTINEL-DESC'):\n"
+                  "        bad.append('injected')\n")
     R["falsifiers"] = {"mutants": len(MUTANTS), "gates": cov2["gates"],
                        "falsified": cov2["falsified"],
+                       "falsified_at_fired_gates": len(targeted & fired),
                        "waived": cov2["waived"],
+                       "sentinel_shaped_hooks": sentinels,
+                       "rows_without_a_hook": missing_hooks,
+                       "hooks_without_a_row": orphan_hooks,
                        "targets": sorted({m[2] for m in MUTANTS})}
     SEAL.seal("falsifiers", R["falsifiers"], "T-FALSIFIER-COVERAGE")
     REG.measured("mutants", len(MUTANTS), "len(MUTANTS)")
     REG.measured("gates", cov2["gates"], "gates fired, this one included")
+    REG.measured("falsified_fired", len(targeted & fired),
+                 "fired gates carrying a falsifier")
     gate("T-FALSIFIER-COVERAGE",
          REG.stmt("every gate that fired carries a falsifier naming the "
-                  "measured key it must move, or a waiver with a "
-                  "machine-checked forcing: {gates} gates, {mutants} "
-                  "falsifiers", gates=1, mutants=1),
-         fprob is None, "gates %d falsified %d waived %d %s"
-         % (cov2["gates"], cov2["falsified"], cov2["waived"], fprob or ""))
+                  "measured key it must move, and none carries a waiver: "
+                  "{gates} gates, {falsified_fired} of them falsified by one "
+                  "of {mutants} recipes; every recipe has an implementation "
+                  "and every implementation has a recipe, by AST; and no hook "
+                  "is sentinel-shaped -- none merely appends a constant to the "
+                  "finding list its gate reads", gates=1, mutants=1,
+                  falsified_fired=1),
+         fprob is None and not sentinels and not missing_hooks
+         and not orphan_hooks and len(targeted & fired) == len(fired),
+         "gates %d falsified %d of %d waived %d sentinels %s orphans %s %s"
+         % (cov2["gates"], len(targeted & fired), len(fired), cov2["waived"],
+            sentinels or "none", (missing_hooks + orphan_hooks) or "none",
+            fprob or ""))
 
     # the WHOLE transcript, both closing rows included, reconciled once more
     TR.bind(LD)
@@ -2427,13 +3684,50 @@ def full_run(write=False, mutant=None, render=False):
                        "lines": len(TR.lines), "gate_rows": len(LD.rows),
                        "chain_head": LD.head}
     SEAL.seal("transcript", R["transcript"], "G-TRANSCRIPT-BOUND")
+    # THE READ SET, RE-RECONCILED AFTER THE LAST GATE (K3 MINOR-7): the two
+    # windows the delivered instrument left open -- between the read gate and
+    # the flag, and after the flag -- are closed by re-taking the multiset here
+    # and refusing if it moved.
+    late = collections.Counter(p for p in RS.log
+                               if p not in RS.exemptions
+                               and not p.endswith(".tmp"))
+    # and the evidence binding re-taken over the WHOLE ledger, its own row and
+    # the coverage row included, so no line escapes by firing last
+    closing = evidence_offences(LD.rows, SEAL.seals, R)
+    if closing:
+        raise ET.CheckFail("G-EVIDENCE-BOUND",
+                           "closing rows carry unbound evidence: %s" % closing)
+    if sum(late.values()) != rev2["reads"] or len(late) != rev2["distinct"]:
+        raise ET.CheckFail("T-READ-SET",
+                           "a repository read happened after the read gate: "
+                           "%d/%d became %d/%d"
+                           % (rev2["reads"], rev2["distinct"],
+                              sum(late.values()), len(late)))
 
     if mut("MUT-SEAL-ADD"):
         R["forged_finding"] = {"smuggled": len(LD.rows)}
+    # the audit hook stays LIVE until the moment of promotion, so the window
+    # after the flag is closed as well as the window before it; promotion's own
+    # opens are the only reads outside it
+    late2 = collections.Counter(p for p in RS.log
+                                if p not in RS.exemptions
+                                and not p.endswith(".tmp"))
+    RS.active = False
+    if late2 != late:
+        raise ET.CheckFail("T-READ-SET",
+                           "a repository read happened after the closing "
+                           "reconciliation: %s"
+                           % sorted((late2 - late).elements()))
     SEAL.verify_at_promotion(R, LD, "seal_manifest")
 
     if not write:
         return R, TR, LD, SEAL, None
+    # the side artifact is checked against its gate-time seal BEFORE anything
+    # is staged, so a corrupted transcript never reaches disk at all
+    if ET.bytes_digest(TR.text().encode("utf-8")) != R["transcript"]["sha256_12"]:
+        raise ET.CheckFail("G-TRANSCRIPT-BOUND",
+                           "the transcript to be promoted differs from the "
+                           "gate-time seal")
     dig = ET.promote(SEAL, LD, R, TR.text(),
                      os.path.join(REPO, RECEIPT_REL),
                      os.path.join(REPO, OUTPUT_REL))
@@ -2443,16 +3737,21 @@ def full_run(write=False, mutant=None, render=False):
 def k_parse_head(segment):
     """PARSE a rendered verdict segment back into integers.  This is the
     comparator's own route to the head: it reads the emitted string and knows
-    nothing about how it was built."""
+    nothing about how it was built.
+
+    EVERY digit group of every field is returned, not merely the first: the
+    delivered parser bound 12 of the head's numerals and left the rest free,
+    so `9-OF-9`, `3-OF-6` and `0-SURVIVE` could each be moved in the renderer
+    and the paper together at exit 0 (K3 MAJOR-7)."""
     out = {}
     body = segment[segment.index("<") + 1:segment.rindex(">")]
     for part in body.split(";"):
         if "=" not in part:
             continue
         k, v = part.split("=", 1)
-        digits = re.findall(r"\d[\d,]*", v)
+        digits = [int(d.replace(",", "")) for d in re.findall(r"\d[\d,]*", v)]
         if digits:
-            out[k.strip()] = int(digits[0].replace(",", ""))
+            out[k.strip()] = digits
     return out
 
 
@@ -2485,12 +3784,10 @@ MUTANTS = (
     ("MUT-TAU", "G-CAST-DERIVED", "reconstruction",
      "one derived actor is dropped from the reconstructed cast before the "
      "comparator sees it"),
-    ("MUT-CAST", "G-CAST-DERIVED", "reconstruction",
-     "the comparator is handed a cast short of one actor"),
     ("MUT-LINK", "G-LINK-STRUCTURE-DERIVED", "link_structure",
      "one derived actor pair is deleted, so the derived link structure is no "
      "longer the declared one"),
-    ("MUT-TARGETS", "G-RECONSTRUCTION-TARGETS-TOTAL", "anchors",
+    ("MUT-TARGETS", "G-RECONSTRUCTION-TARGETS-TOTAL", "reconstruction_targets",
      "the pin's own list of reconstruction targets is read with one target "
      "removed"),
     ("MUT-MENU", "G-MENU-DERIVED", "menu",
@@ -2551,7 +3848,7 @@ MUTANTS = (
      "the wall forbids"),
     ("MUT-COVERAGE", "G-PAPER-COVERAGE", "paper_coverage",
      "a numeral backed by nothing is admitted to the paper's coverage census"),
-    ("MUT-ANCHOR", "G-ANCHORS-LOCATED", "anchors",
+    ("MUT-ANCHOR", "G-ANCHORS-LOCATED", "anchors_located",
      "a parent's anchored sentence is altered in the parent's own bytes, so "
      "the needle no longer occurs where the anchor says it does"),
     ("MUT-ANCHOR-CONSUMER", "G-ANCHORS-CONSUMED", "anchors",
@@ -2562,12 +3859,60 @@ MUTANTS = (
     ("MUT-READ", "G-READS-AT-THE-ACCESSOR", "read_set",
      "a repository file outside the declared read set is opened during the "
      "run"),
-    ("MUT-TRANSCRIPT", "G-TRANSCRIPT-BOUND", "transcript",
+    ("MUT-TRANSCRIPT", "G-TRANSCRIPT-BOUND", "transcript_binding",
      "a PASS line for a gate that never ran is appended to the transcript"),
     ("MUT-FLOAT", "G-RECEIPT-EXACT", "exactness",
      "a non-integer leaf is admitted to the published receipt"),
-    ("MUT-SEAL-ADD", "T-SEAL-PROMOTION", "verdict",
+    ("MUT-SEAL-ADD", "T-SEAL-PROMOTION", "forged_finding",
      "a top-level receipt key is created after the seal manifest is taken"),
+    # -- the recipes the panels bought --------------------------------------
+    ("MUT-COORDINATE", "G-STRIPPING-COORDINATE-FREE", "residue_channel",
+     "one uniformly random coordinate is recorded as having moved a published "
+     "quantity, so the coordinate-freedom census no longer holds"),
+    ("MUT-MECHANISM", "G-MINIMALITY-PER-HISTORY", "minimality_per_history",
+     "a single history is credited with writing every record block, so the "
+     "counting fact that no history carries enough of them is destroyed"),
+    ("MUT-BLOCKS-25", "G-MINIMALITY-BLOCKS", "minimality_blocks",
+     "a 25-block subset is credited with reconstructing, so the block set "
+     "stops being irredundant two blocks down"),
+    ("MUT-BICONDITIONAL", "G-THE-CONNECTION", "connection",
+     "one further history is called never-crystallizing, so the biconditional "
+     "with the least collapse threshold fails in one direction"),
+    ("MUT-ORBIT", "G-NAMING-RESIDUE", "naming",
+     "one splitting is removed from the orbit of the declared one, so the "
+     "action is no longer transitive and the index stops being a count"),
+    ("MUT-BALANCE", "G-CONTROL-BALANCE", "control_balance",
+     "one swept shape's recovery is flipped, so the boundary the sweep "
+     "locates is no longer balance"),
+    ("MUT-REACHABILITY", "G-OUTCOMES-REACHABLE", "outcome_reachability",
+     "all but one declared fault is dropped, so a pre-registered outcome is "
+     "left with no run that writes it"),
+    ("MUT-EVIDENCE", "G-EVIDENCE-BOUND", "evidence_bound",
+     "a finished evidence line reports a corpus size the receipt does not "
+     "carry, so the two artifacts contradict each other"),
+    ("MUT-FAMILIES", "G-PROVENANCE", "provenance",
+     "one template family is recorded as carried rather than called"),
+    ("MUT-HOOK-MISSING", "T-FALSIFIER-COVERAGE", "falsifiers",
+     "a falsifier row is declared for which no implementation exists anywhere "
+     "in this module"),
+    ("MUT-SENTINEL-DESC", "T-FALSIFIER-COVERAGE", "falsifiers",
+     "a hook that only appends a constant to the finding list its gate reads "
+     "is admitted to the module the honesty audit scans"),
+    ("MUT-COVERAGE-GAP", "T-FALSIFIER-COVERAGE", "falsifiers",
+     "one row is withheld from the harness, leaving a gate that fired with "
+     "neither a falsifier nor a waiver -- the recipe the deleted waiver said "
+     "could not exist"),
+    ("MUT-EXEMPTION", "G-PAPER-COVERAGE", "paper_coverage",
+     "an exemption is declared whose token the paper never carries"),
+    ("MUT-SPELLED", "G-PAPER-COVERAGE", "paper_coverage",
+     "a quantity spelled out in words is admitted that no measurement backs"),
+    ("MUT-WALL-PARAPHRASE", "G-PAPER-WALLS", "walls",
+     "the paper is given a natural re-voicing of a forbidden reading -- 'a "
+     "single history suffices to reconstruct the cast' -- rather than the "
+     "literal form the delivered blacklist knew"),
+    ("MUT-WALL-POSITIVE", "G-PAPER-WALLS", "walls",
+     "both copies of a standing sentence are deleted outright, so the wall's "
+     "positive leg is exercised on its own"),
 )
 
 MUTANT_NAMES = tuple(m[0] for m in MUTANTS)
@@ -2593,7 +3938,10 @@ def run_mutant(name, base=None):
         after = ET.digest(R.get(target))
     except ET.CheckFail as exc:
         died = exc.check
-        after = "REFUSED-BEFORE-THE-KEY-WAS-PUBLISHED"
+        # THE PAYLOAD AS IT STOOD AT REFUSAL.  Reading a constant here made
+        # `moved` unconditionally true and the move-proof unfalsifiable; six of
+        # the delivered recipes named a target they never moved (K3 MAJOR-2).
+        after = ET.digest((PARTIAL["R"] or {}).get(target))
     used = name in MUTANT["used"]
     moved = (after != before)
     return {"mutant": name, "declared_gate": want_gate, "died_at": died,
@@ -2614,7 +3962,9 @@ def main(argv):
     if len(argv) != 2:
         sys.stderr.write(
             "usage: rec_exact.py --run|--no-write|--selftest|--list-gates"
-            "|--list-mutants|--mutant NAME|--render\n")
+            "|--list-mutants|--mutant NAME|--render\n"
+            "  --render and --list-gates are PARTIAL modes: they return "
+            "before the paper gates\n")
         return 2
     mode = argv[1]
     if mode == "--list-mutants":
@@ -2622,12 +3972,12 @@ def main(argv):
             print("%-24s %-34s %s" % (m[0], m[1], m[2]))
         return 0
     if mode == "--list-gates":
-        _R, _TR, LD, _SEAL, _d = full_run(write=False)
+        _R, _TR, LD, _SEAL, _d = full_run(write=False, mode=mode)
         for g in LD.names():
             print(g)
         return 0
     if mode == "--render":
-        R, _TR, _LD, _SEAL, _d = full_run(write=False, render=True)
+        R, _TR, _LD, _SEAL, _d = full_run(write=False, render=True, mode=mode)
         for t in R["rendered"]["tables"]:
             print(t)
             print()
@@ -2640,7 +3990,7 @@ def main(argv):
         return 0
     if mode == "--selftest":
         try:
-            R, TR, LD, SEAL, _d = full_run(write=False)
+            R, TR, LD, SEAL, _d = full_run(write=False, mode=mode)
         except ET.CheckFail as exc:
             print("SELFTEST: the clean run REFUSED at %s :: %s"
                   % (exc.check, exc.detail))
@@ -2677,18 +4027,30 @@ def main(argv):
               % len(LD.rows))
         return 0
     if mode in ("--run", "--no-write"):
+        # THE SIDE ARTIFACT IS VERIFIED BEFORE THE REPLACE, AND ROLLED BACK IF
+        # IT LANDS WRONG (K3 MINOR-10): the delivered instrument verified it
+        # only after os.replace, so a corrupted transcript reached disk and
+        # stayed there while the run refused.
+        rollback = None
+        out_path = os.path.join(REPO, OUTPUT_REL)
+        if mode == "--run" and os.path.exists(out_path):
+            with open(out_path, "rb") as fh:
+                rollback = fh.read()
         try:
-            R, TR, LD, SEAL, dig = full_run(write=(mode == "--run"))
+            R, TR, LD, SEAL, dig = full_run(write=(mode == "--run"), mode=mode)
         except ET.CheckFail as exc:
             sys.stderr.write("REFUSED at %s :: %s\n" % (exc.check, exc.detail))
             return 1
         sys.stdout.write(TR.text())
         if mode == "--run":
-            with open(os.path.join(REPO, OUTPUT_REL), "rb") as fh:
+            with open(out_path, "rb") as fh:
                 on_disk = fh.read()
             if ET.bytes_digest(on_disk) != R["transcript"]["sha256_12"]:
+                if rollback is not None:
+                    with open(out_path, "wb") as fh:
+                        fh.write(rollback)
                 sys.stderr.write("REFUSED: promoted transcript bytes differ "
-                                 "from the gate-time seal\n")
+                                 "from the gate-time seal (rolled back)\n")
                 return 1
             print("WROTE %s (%s) and %s (%s)"
                   % (RECEIPT_REL, dig["receipt"], OUTPUT_REL, dig["side"]))

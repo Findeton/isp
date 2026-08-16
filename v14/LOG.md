@@ -12359,3 +12359,36 @@ per tick.
 
 **Programme count: THIRTY-SEVEN terminals; zero false
 physics numbers surviving anywhere.**
+
+## 2026-08-16 — REC REPAIR DELIVERED AND COMMITTED: THE ERASER RE-DECLARED TO ITS MEASURED TRUTH; THE MECHANISM CORRECTED; FIVE ORDERED MOVES ONLY; THE OBSTRUCTED IMPOSSIBILITY ITSELF MEASURED (v14 LEDGER #389)
+
+**Files:** paper-41-rec.md c5fbc9acbd76; rec_exact.py
+35fdbd33bded; rec_output.txt 29507d00695d;
+rec_receipt.json 01b23d13fda3.  Z1–Z10 complete: the head
+MENU=3-OF-6-PARTIAL and OBSTRUCTION=THE-DIRECTION-
+DECLARATION (one datum, one name), 22 fields bound at
+38/38 numeral positions; **the eraser re-declared verbatim
+("not arena-blind as declared, arena-blind as measured")
+with G-STRIPPING-COORDINATE-FREE (12/12 affine trials
+read the residue; 0/60 random coordinates; 12 published
+quantities unchanged at all 60; 300 relabellings 0
+failures)**; the mechanism corrected (no history sees more
+than 18 of 27 blocks; drop-two 0/351; the refusal taxonomy
+published — TOKEN-IN-NO-ACTOR modal at 4,104); balance
+gated (125 shapes, 9 recover, 0 unbalanced recover); **the
+five ordered moves the ONLY physics changes** (refused
+3→4; the multiset renamed with set=103 beside it; the SWAP
+caps disclosed 279/18/180-of-315/cap-8; the coordinate
+census 254–261); the comparator exercised (4/4 certified
+arms refused; the 3+3+3 arm not-decidable-by-size);
+**#299: all four words written through real machinery at
+declared faults, and the OBSTRUCTED word's impossibility
+at this record MEASURED and published** (set-equal cast ⟹
+pair agreement); K3's list whole (11/11 paraphrases die;
+real move-proofs; S-1 structural with 7 bypass routes
+dead); the two free strengthenings gated
+(never-crystallizing ⟺ w*=3 4-of-4 both ways; index =
+resolutions by transitivity).  **Battery: 41 gates; 53/53
+falsifiers; 37/37 injections dead, survivors none; byte
+×2 off-tree via --run; no vacuous modes.**  Orchestrator
+battery next; terminal 38 closes v14 on green.

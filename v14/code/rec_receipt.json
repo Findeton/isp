@@ -64,6 +64,16 @@
    "source": "v14/paper-38-epr.md"
   }
  ],
+ "anchors_located": {
+  "problem": "none",
+  "rows": 7,
+  "sources": [
+   "v14/note-rec-pin.md",
+   "v14/paper-33-aid.md",
+   "v14/paper-35-fac.md",
+   "v14/paper-38-epr.md"
+  ]
+ },
  "arena": {
   "cells": 27,
   "cells_per_actor": [
@@ -80,9 +90,55 @@
   "window_schedules": 600
  },
  "comparator_teeth": {
-  "certified_reconstructions_refused": 3,
-  "per_history_refusals": 5856,
-  "scrambles_refused": 261
+  "certified_reconstructions_refused": 4,
+  "certified_reconstructions_tried": 4,
+  "history_attempts_that_reached_the_comparator": 0,
+  "reconstructor_refusals_on_scrambles": 261,
+  "reconstructor_refusals_per_history": 5856,
+  "refusals_not_decidable_by_size": 1,
+  "rows": [
+   {
+    "cast_size": 6,
+    "parts": [
+     2,
+     2,
+     2
+    ],
+    "size_alone_decides": true,
+    "the_comparator_agrees": false
+   },
+   {
+    "cast_size": 9,
+    "parts": [
+     3,
+     3,
+     3
+    ],
+    "size_alone_decides": false,
+    "the_comparator_agrees": false
+   },
+   {
+    "cast_size": 12,
+    "parts": [
+     4,
+     4,
+     4
+    ],
+    "size_alone_decides": true,
+    "the_comparator_agrees": false
+   },
+   {
+    "cast_size": 15,
+    "parts": [
+     5,
+     5,
+     5
+    ],
+    "size_alone_decides": true,
+    "the_comparator_agrees": false
+   }
+  ],
+  "scrambles_that_reached_the_comparator": 0
  },
  "connection": {
   "declared_side_finite": 5856,
@@ -136,22 +192,66 @@
     "histories": 12,
     "reconstruction_depth": "NEVER"
    }
-  ]
+  ],
+  "the_biconditional": {
+   "at_the_least_threshold": 4,
+   "biconditional": true,
+   "in_both": 4,
+   "least_but_not_never": 0,
+   "least_collapse_threshold": 3,
+   "never_but_not_least": 0,
+   "never_crystallizing": 4
+  }
  },
- "control_scrambled": {
-  "by_shape": {
-   "DROP:False": 27,
-   "REPLACE:False": 54,
-   "SWAP:False": 180
-  },
-  "survivors": 0,
-  "trials": 261
- },
- "control_synthetic": {
-  "arms": 7,
-  "recovered": 4,
+ "control_balance": {
+  "balanced_but_refused": [
+   [
+    2,
+    2
+   ],
+   [
+    2,
+    2,
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    6,
+    6
+   ]
+  ],
+  "balanced_shapes": 15,
+  "ceiling_actors": 16,
+  "certified_but_wrong": [],
+  "recovered": 9,
+  "recovered_unbalanced": 0,
   "rows": [
    {
+    "balanced": true,
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     2,
+     2
+    ],
+    "tokens": 4
+   },
+   {
+    "balanced": true,
     "blocks": 8,
     "cast_recovered": true,
     "cast_size": 6,
@@ -164,42 +264,7 @@
     "tokens": 12
    },
    {
-    "blocks": 27,
-    "cast_recovered": true,
-    "cast_size": 9,
-    "certificate": "CERTIFIED",
-    "parts": [
-     3,
-     3,
-     3
-    ],
-    "tokens": 27
-   },
-   {
-    "blocks": 64,
-    "cast_recovered": true,
-    "cast_size": 12,
-    "certificate": "CERTIFIED",
-    "parts": [
-     4,
-     4,
-     4
-    ],
-    "tokens": 48
-   },
-   {
-    "blocks": 125,
-    "cast_recovered": true,
-    "cast_size": 15,
-    "certificate": "CERTIFIED",
-    "parts": [
-     5,
-     5,
-     5
-    ],
-    "tokens": 75
-   },
-   {
+    "balanced": true,
     "blocks": 32,
     "cast_recovered": false,
     "cast_size": 24,
@@ -213,6 +278,1167 @@
     "tokens": 24
    },
    {
+    "balanced": true,
+    "blocks": 80,
+    "cast_recovered": true,
+    "cast_size": 10,
+    "certificate": "CERTIFIED",
+    "parts": [
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "tokens": 40
+   },
+   {
+    "balanced": true,
+    "blocks": 160,
+    "cast_recovered": true,
+    "cast_size": 12,
+    "certificate": "CERTIFIED",
+    "parts": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "tokens": 60
+   },
+   {
+    "balanced": false,
+    "blocks": 200,
+    "cast_recovered": false,
+    "cast_size": 30,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     3
+    ],
+    "tokens": 70
+   },
+   {
+    "balanced": false,
+    "blocks": 240,
+    "cast_recovered": false,
+    "cast_size": 40,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     4
+    ],
+    "tokens": 80
+   },
+   {
+    "balanced": false,
+    "blocks": 280,
+    "cast_recovered": false,
+    "cast_size": 50,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     5
+    ],
+    "tokens": 90
+   },
+   {
+    "balanced": false,
+    "blocks": 320,
+    "cast_recovered": false,
+    "cast_size": 60,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     6
+    ],
+    "tokens": 100
+   },
+   {
+    "balanced": false,
+    "blocks": 104,
+    "cast_recovered": false,
+    "cast_size": 24,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     2,
+     2,
+     3
+    ],
+    "tokens": 48
+   },
+   {
+    "balanced": false,
+    "blocks": 248,
+    "cast_recovered": false,
+    "cast_size": 72,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     2,
+     2,
+     3,
+     3
+    ],
+    "tokens": 81
+   },
+   {
+    "balanced": false,
+    "blocks": 296,
+    "cast_recovered": false,
+    "cast_size": 96,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     2,
+     2,
+     3,
+     4
+    ],
+    "tokens": 92
+   },
+   {
+    "balanced": false,
+    "blocks": 344,
+    "cast_recovered": false,
+    "cast_size": 120,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     2,
+     2,
+     3,
+     5
+    ],
+    "tokens": 103
+   },
+   {
+    "balanced": false,
+    "blocks": 128,
+    "cast_recovered": false,
+    "cast_size": 32,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     2,
+     2,
+     4
+    ],
+    "tokens": 56
+   },
+   {
+    "balanced": false,
+    "blocks": 352,
+    "cast_recovered": false,
+    "cast_size": 128,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     2,
+     2,
+     4,
+     4
+    ],
+    "tokens": 104
+   },
+   {
+    "balanced": false,
+    "blocks": 152,
+    "cast_recovered": false,
+    "cast_size": 40,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     2,
+     2,
+     5
+    ],
+    "tokens": 64
+   },
+   {
+    "balanced": false,
+    "blocks": 176,
+    "cast_recovered": false,
+    "cast_size": 48,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     2,
+     2,
+     6
+    ],
+    "tokens": 72
+   },
+   {
+    "balanced": false,
+    "blocks": 44,
+    "cast_recovered": false,
+    "cast_size": 18,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     2,
+     3
+    ],
+    "tokens": 30
+   },
+   {
+    "balanced": false,
+    "blocks": 134,
+    "cast_recovered": false,
+    "cast_size": 54,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     2,
+     3,
+     3
+    ],
+    "tokens": 57
+   },
+   {
+    "balanced": false,
+    "blocks": 305,
+    "cast_recovered": false,
+    "cast_size": 162,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     2,
+     3,
+     3,
+     3
+    ],
+    "tokens": 93
+   },
+   {
+    "balanced": false,
+    "blocks": 362,
+    "cast_recovered": false,
+    "cast_size": 216,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     2,
+     3,
+     3,
+     4
+    ],
+    "tokens": 105
+   },
+   {
+    "balanced": false,
+    "blocks": 164,
+    "cast_recovered": false,
+    "cast_size": 72,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     2,
+     3,
+     4
+    ],
+    "tokens": 66
+   },
+   {
+    "balanced": false,
+    "blocks": 194,
+    "cast_recovered": false,
+    "cast_size": 90,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     2,
+     3,
+     5
+    ],
+    "tokens": 75
+   },
+   {
+    "balanced": false,
+    "blocks": 224,
+    "cast_recovered": false,
+    "cast_size": 108,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     2,
+     3,
+     6
+    ],
+    "tokens": 84
+   },
+   {
+    "balanced": false,
+    "blocks": 56,
+    "cast_recovered": false,
+    "cast_size": 24,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     2,
+     4
+    ],
+    "tokens": 36
+   },
+   {
+    "balanced": false,
+    "blocks": 200,
+    "cast_recovered": false,
+    "cast_size": 96,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     2,
+     4,
+     4
+    ],
+    "tokens": 76
+   },
+   {
+    "balanced": false,
+    "blocks": 236,
+    "cast_recovered": false,
+    "cast_size": 120,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     2,
+     4,
+     5
+    ],
+    "tokens": 86
+   },
+   {
+    "balanced": false,
+    "blocks": 272,
+    "cast_recovered": false,
+    "cast_size": 144,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     2,
+     4,
+     6
+    ],
+    "tokens": 96
+   },
+   {
+    "balanced": false,
+    "blocks": 68,
+    "cast_recovered": false,
+    "cast_size": 30,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     2,
+     5
+    ],
+    "tokens": 42
+   },
+   {
+    "balanced": false,
+    "blocks": 278,
+    "cast_recovered": false,
+    "cast_size": 150,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     2,
+     5,
+     5
+    ],
+    "tokens": 97
+   },
+   {
+    "balanced": false,
+    "blocks": 80,
+    "cast_recovered": false,
+    "cast_size": 36,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     2,
+     6
+    ],
+    "tokens": 48
+   },
+   {
+    "balanced": false,
+    "blocks": 12,
+    "cast_recovered": false,
+    "cast_size": 24,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     3
+    ],
+    "tokens": 16
+   },
+   {
+    "balanced": false,
+    "blocks": 60,
+    "cast_recovered": false,
+    "cast_size": 36,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     3,
+     3
+    ],
+    "tokens": 37
+   },
+   {
+    "balanced": false,
+    "blocks": 171,
+    "cast_recovered": false,
+    "cast_size": 108,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     3,
+     3,
+     3
+    ],
+    "tokens": 67
+   },
+   {
+    "balanced": false,
+    "blocks": 372,
+    "cast_recovered": false,
+    "cast_size": 324,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     3,
+     3,
+     3,
+     3
+    ],
+    "tokens": 106
+   },
+   {
+    "balanced": false,
+    "blocks": 208,
+    "cast_recovered": false,
+    "cast_size": 144,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     3,
+     3,
+     4
+    ],
+    "tokens": 77
+   },
+   {
+    "balanced": false,
+    "blocks": 245,
+    "cast_recovered": false,
+    "cast_size": 180,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     3,
+     3,
+     5
+    ],
+    "tokens": 87
+   },
+   {
+    "balanced": false,
+    "blocks": 282,
+    "cast_recovered": false,
+    "cast_size": 216,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     3,
+     3,
+     6
+    ],
+    "tokens": 97
+   },
+   {
+    "balanced": false,
+    "blocks": 76,
+    "cast_recovered": false,
+    "cast_size": 48,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     3,
+     4
+    ],
+    "tokens": 44
+   },
+   {
+    "balanced": false,
+    "blocks": 252,
+    "cast_recovered": false,
+    "cast_size": 192,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     3,
+     4,
+     4
+    ],
+    "tokens": 88
+   },
+   {
+    "balanced": false,
+    "blocks": 296,
+    "cast_recovered": false,
+    "cast_size": 240,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     3,
+     4,
+     5
+    ],
+    "tokens": 99
+   },
+   {
+    "balanced": false,
+    "blocks": 92,
+    "cast_recovered": false,
+    "cast_size": 60,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     3,
+     5
+    ],
+    "tokens": 51
+   },
+   {
+    "balanced": false,
+    "blocks": 108,
+    "cast_recovered": false,
+    "cast_size": 72,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     3,
+     6
+    ],
+    "tokens": 58
+   },
+   {
+    "balanced": false,
+    "blocks": 16,
+    "cast_recovered": false,
+    "cast_size": 32,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     4
+    ],
+    "tokens": 20
+   },
+   {
+    "balanced": false,
+    "blocks": 96,
+    "cast_recovered": false,
+    "cast_size": 64,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     4,
+     4
+    ],
+    "tokens": 52
+   },
+   {
+    "balanced": false,
+    "blocks": 304,
+    "cast_recovered": false,
+    "cast_size": 256,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     4,
+     4,
+     4
+    ],
+    "tokens": 100
+   },
+   {
+    "balanced": false,
+    "blocks": 116,
+    "cast_recovered": false,
+    "cast_size": 80,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     4,
+     5
+    ],
+    "tokens": 60
+   },
+   {
+    "balanced": false,
+    "blocks": 136,
+    "cast_recovered": false,
+    "cast_size": 96,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     4,
+     6
+    ],
+    "tokens": 68
+   },
+   {
+    "balanced": false,
+    "blocks": 20,
+    "cast_recovered": false,
+    "cast_size": 40,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     5
+    ],
+    "tokens": 24
+   },
+   {
+    "balanced": false,
+    "blocks": 140,
+    "cast_recovered": false,
+    "cast_size": 100,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     5,
+     5
+    ],
+    "tokens": 69
+   },
+   {
+    "balanced": false,
+    "blocks": 164,
+    "cast_recovered": false,
+    "cast_size": 120,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     5,
+     6
+    ],
+    "tokens": 78
+   },
+   {
+    "balanced": false,
+    "blocks": 24,
+    "cast_recovered": false,
+    "cast_size": 48,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     6
+    ],
+    "tokens": 28
+   },
+   {
+    "balanced": false,
+    "blocks": 192,
+    "cast_recovered": false,
+    "cast_size": 144,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     2,
+     6,
+     6
+    ],
+    "tokens": 88
+   },
+   {
+    "balanced": false,
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     2,
+     3
+    ],
+    "tokens": 6
+   },
+   {
+    "balanced": false,
+    "blocks": 18,
+    "cast_recovered": false,
+    "cast_size": 2,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     3
+    ],
+    "tokens": 21
+   },
+   {
+    "balanced": false,
+    "blocks": 81,
+    "cast_recovered": false,
+    "cast_size": 2,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     3,
+     3
+    ],
+    "tokens": 45
+   },
+   {
+    "balanced": false,
+    "blocks": 216,
+    "cast_recovered": false,
+    "cast_size": 2,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     3,
+     3,
+     3
+    ],
+    "tokens": 78
+   },
+   {
+    "balanced": false,
+    "blocks": 261,
+    "cast_recovered": false,
+    "cast_size": 8,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     3,
+     3,
+     4
+    ],
+    "tokens": 89
+   },
+   {
+    "balanced": false,
+    "blocks": 306,
+    "cast_recovered": false,
+    "cast_size": 10,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     3,
+     3,
+     5
+    ],
+    "tokens": 100
+   },
+   {
+    "balanced": false,
+    "blocks": 102,
+    "cast_recovered": false,
+    "cast_size": 8,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     3,
+     4
+    ],
+    "tokens": 53
+   },
+   {
+    "balanced": false,
+    "blocks": 314,
+    "cast_recovered": false,
+    "cast_size": 32,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     3,
+     4,
+     4
+    ],
+    "tokens": 101
+   },
+   {
+    "balanced": false,
+    "blocks": 123,
+    "cast_recovered": false,
+    "cast_size": 10,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     3,
+     5
+    ],
+    "tokens": 61
+   },
+   {
+    "balanced": false,
+    "blocks": 144,
+    "cast_recovered": false,
+    "cast_size": 12,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     3,
+     6
+    ],
+    "tokens": 69
+   },
+   {
+    "balanced": false,
+    "blocks": 24,
+    "cast_recovered": false,
+    "cast_size": 8,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     4
+    ],
+    "tokens": 26
+   },
+   {
+    "balanced": false,
+    "blocks": 128,
+    "cast_recovered": false,
+    "cast_size": 32,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     4,
+     4
+    ],
+    "tokens": 62
+   },
+   {
+    "balanced": false,
+    "blocks": 154,
+    "cast_recovered": false,
+    "cast_size": 40,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "tokens": 71
+   },
+   {
+    "balanced": false,
+    "blocks": 180,
+    "cast_recovered": false,
+    "cast_size": 48,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     4,
+     6
+    ],
+    "tokens": 80
+   },
+   {
+    "balanced": false,
+    "blocks": 30,
+    "cast_recovered": false,
+    "cast_size": 10,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     5
+    ],
+    "tokens": 31
+   },
+   {
+    "balanced": false,
+    "blocks": 185,
+    "cast_recovered": false,
+    "cast_size": 50,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     5,
+     5
+    ],
+    "tokens": 81
+   },
+   {
+    "balanced": false,
+    "blocks": 216,
+    "cast_recovered": false,
+    "cast_size": 60,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     5,
+     6
+    ],
+    "tokens": 91
+   },
+   {
+    "balanced": false,
+    "blocks": 36,
+    "cast_recovered": false,
+    "cast_size": 12,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     6
+    ],
+    "tokens": 36
+   },
+   {
+    "balanced": false,
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     2,
+     4
+    ],
+    "tokens": 8
+   },
+   {
+    "balanced": false,
+    "blocks": 32,
+    "cast_recovered": false,
+    "cast_size": 2,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     4,
+     4
+    ],
+    "tokens": 32
+   },
+   {
+    "balanced": false,
+    "blocks": 160,
+    "cast_recovered": false,
+    "cast_size": 2,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     4,
+     4,
+     4
+    ],
+    "tokens": 72
+   },
+   {
+    "balanced": false,
+    "blocks": 192,
+    "cast_recovered": false,
+    "cast_size": 10,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     4,
+     4,
+     5
+    ],
+    "tokens": 82
+   },
+   {
+    "balanced": false,
+    "blocks": 224,
+    "cast_recovered": false,
+    "cast_size": 12,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     4,
+     4,
+     6
+    ],
+    "tokens": 92
+   },
+   {
+    "balanced": false,
+    "blocks": 40,
+    "cast_recovered": false,
+    "cast_size": 10,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     4,
+     5
+    ],
+    "tokens": 38
+   },
+   {
+    "balanced": false,
+    "blocks": 230,
+    "cast_recovered": false,
+    "cast_size": 50,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     4,
+     5,
+     5
+    ],
+    "tokens": 93
+   },
+   {
+    "balanced": false,
+    "blocks": 48,
+    "cast_recovered": false,
+    "cast_size": 12,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     4,
+     6
+    ],
+    "tokens": 44
+   },
+   {
+    "balanced": false,
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     2,
+     5
+    ],
+    "tokens": 10
+   },
+   {
+    "balanced": false,
+    "blocks": 50,
+    "cast_recovered": false,
+    "cast_size": 2,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     5,
+     5
+    ],
+    "tokens": 45
+   },
+   {
+    "balanced": false,
+    "blocks": 60,
+    "cast_recovered": false,
+    "cast_size": 12,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     5,
+     6
+    ],
+    "tokens": 52
+   },
+   {
+    "balanced": false,
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     2,
+     6
+    ],
+    "tokens": 12
+   },
+   {
+    "balanced": false,
+    "blocks": 72,
+    "cast_recovered": false,
+    "cast_size": 2,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     6,
+     6
+    ],
+    "tokens": 60
+   },
+   {
+    "balanced": true,
     "blocks": 0,
     "cast_recovered": false,
     "cast_size": 0,
@@ -224,15 +1450,698 @@
     "tokens": 9
    },
    {
+    "balanced": true,
+    "blocks": 27,
+    "cast_recovered": true,
+    "cast_size": 9,
+    "certificate": "CERTIFIED",
+    "parts": [
+     3,
+     3,
+     3
+    ],
+    "tokens": 27
+   },
+   {
+    "balanced": true,
+    "blocks": 108,
+    "cast_recovered": true,
+    "cast_size": 12,
+    "certificate": "CERTIFIED",
+    "parts": [
+     3,
+     3,
+     3,
+     3
+    ],
+    "tokens": 54
+   },
+   {
+    "balanced": true,
+    "blocks": 270,
+    "cast_recovered": true,
+    "cast_size": 15,
+    "certificate": "CERTIFIED",
+    "parts": [
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "tokens": 90
+   },
+   {
+    "balanced": false,
+    "blocks": 324,
+    "cast_recovered": false,
+    "cast_size": 48,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     3,
+     3,
+     3,
+     3,
+     4
+    ],
+    "tokens": 102
+   },
+   {
+    "balanced": false,
+    "blocks": 135,
+    "cast_recovered": false,
+    "cast_size": 36,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     3,
+     3,
+     3,
+     4
+    ],
+    "tokens": 63
+   },
+   {
+    "balanced": false,
+    "blocks": 162,
+    "cast_recovered": false,
+    "cast_size": 45,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     3,
+     3,
+     3,
+     5
+    ],
+    "tokens": 72
+   },
+   {
+    "balanced": false,
+    "blocks": 189,
+    "cast_recovered": false,
+    "cast_size": 54,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     3,
+     3,
+     3,
+     6
+    ],
+    "tokens": 81
+   },
+   {
+    "balanced": false,
+    "blocks": 36,
+    "cast_recovered": false,
+    "cast_size": 24,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     3,
+     3,
+     4
+    ],
+    "tokens": 33
+   },
+   {
+    "balanced": false,
+    "blocks": 168,
+    "cast_recovered": false,
+    "cast_size": 96,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     3,
+     3,
+     4,
+     4
+    ],
+    "tokens": 73
+   },
+   {
+    "balanced": false,
+    "blocks": 201,
+    "cast_recovered": false,
+    "cast_size": 120,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     3,
+     3,
+     4,
+     5
+    ],
+    "tokens": 83
+   },
+   {
+    "balanced": false,
+    "blocks": 234,
+    "cast_recovered": false,
+    "cast_size": 144,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     3,
+     3,
+     4,
+     6
+    ],
+    "tokens": 93
+   },
+   {
+    "balanced": false,
+    "blocks": 45,
+    "cast_recovered": false,
+    "cast_size": 30,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     3,
+     3,
+     5
+    ],
+    "tokens": 39
+   },
+   {
+    "balanced": false,
+    "blocks": 240,
+    "cast_recovered": false,
+    "cast_size": 150,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     3,
+     3,
+     5,
+     5
+    ],
+    "tokens": 94
+   },
+   {
+    "balanced": false,
+    "blocks": 54,
+    "cast_recovered": false,
+    "cast_size": 36,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     3,
+     3,
+     6
+    ],
+    "tokens": 45
+   },
+   {
+    "balanced": false,
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     3,
+     4
+    ],
+    "tokens": 12
+   },
+   {
+    "balanced": false,
+    "blocks": 48,
+    "cast_recovered": false,
+    "cast_size": 3,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     3,
+     4,
+     4
+    ],
+    "tokens": 40
+   },
+   {
+    "balanced": false,
+    "blocks": 208,
+    "cast_recovered": false,
+    "cast_size": 3,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     3,
+     4,
+     4,
+     4
+    ],
+    "tokens": 84
+   },
+   {
+    "balanced": false,
+    "blocks": 248,
+    "cast_recovered": false,
+    "cast_size": 15,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     3,
+     4,
+     4,
+     5
+    ],
+    "tokens": 95
+   },
+   {
+    "balanced": false,
+    "blocks": 60,
+    "cast_recovered": false,
+    "cast_size": 15,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     3,
+     4,
+     5
+    ],
+    "tokens": 47
+   },
+   {
+    "balanced": false,
+    "blocks": 72,
+    "cast_recovered": false,
+    "cast_size": 18,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     3,
+     4,
+     6
+    ],
+    "tokens": 54
+   },
+   {
+    "balanced": false,
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     3,
+     5
+    ],
+    "tokens": 15
+   },
+   {
+    "balanced": false,
+    "blocks": 75,
+    "cast_recovered": false,
+    "cast_size": 3,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     3,
+     5,
+     5
+    ],
+    "tokens": 55
+   },
+   {
+    "balanced": false,
+    "blocks": 90,
+    "cast_recovered": false,
+    "cast_size": 18,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     3,
+     5,
+     6
+    ],
+    "tokens": 63
+   },
+   {
+    "balanced": false,
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     3,
+     6
+    ],
+    "tokens": 18
+   },
+   {
+    "balanced": false,
+    "blocks": 108,
+    "cast_recovered": false,
+    "cast_size": 3,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     3,
+     6,
+     6
+    ],
+    "tokens": 72
+   },
+   {
+    "balanced": true,
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     4,
+     4
+    ],
+    "tokens": 16
+   },
+   {
+    "balanced": true,
+    "blocks": 64,
+    "cast_recovered": true,
+    "cast_size": 12,
+    "certificate": "CERTIFIED",
+    "parts": [
+     4,
+     4,
+     4
+    ],
+    "tokens": 48
+   },
+   {
+    "balanced": true,
+    "blocks": 256,
+    "cast_recovered": true,
+    "cast_size": 16,
+    "certificate": "CERTIFIED",
+    "parts": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "tokens": 96
+   },
+   {
+    "balanced": false,
+    "blocks": 80,
+    "cast_recovered": false,
+    "cast_size": 40,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     4,
+     4,
+     5
+    ],
+    "tokens": 56
+   },
+   {
+    "balanced": false,
+    "blocks": 96,
+    "cast_recovered": false,
+    "cast_size": 48,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     4,
+     4,
+     6
+    ],
+    "tokens": 64
+   },
+   {
+    "balanced": false,
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     4,
+     5
+    ],
+    "tokens": 20
+   },
+   {
+    "balanced": false,
+    "blocks": 100,
+    "cast_recovered": false,
+    "cast_size": 4,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     4,
+     5,
+     5
+    ],
+    "tokens": 65
+   },
+   {
+    "balanced": false,
+    "blocks": 120,
+    "cast_recovered": false,
+    "cast_size": 24,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     4,
+     5,
+     6
+    ],
+    "tokens": 74
+   },
+   {
+    "balanced": false,
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     4,
+     6
+    ],
+    "tokens": 24
+   },
+   {
+    "balanced": false,
+    "blocks": 144,
+    "cast_recovered": false,
+    "cast_size": 4,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     4,
+     6,
+     6
+    ],
+    "tokens": 84
+   },
+   {
+    "balanced": true,
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     5,
+     5
+    ],
+    "tokens": 25
+   },
+   {
+    "balanced": true,
+    "blocks": 125,
+    "cast_recovered": true,
+    "cast_size": 15,
+    "certificate": "CERTIFIED",
+    "parts": [
+     5,
+     5,
+     5
+    ],
+    "tokens": 75
+   },
+   {
+    "balanced": false,
+    "blocks": 150,
+    "cast_recovered": false,
+    "cast_size": 60,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     5,
+     5,
+     6
+    ],
+    "tokens": 85
+   },
+   {
+    "balanced": false,
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     5,
+     6
+    ],
+    "tokens": 30
+   },
+   {
+    "balanced": true,
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     6,
+     6
+    ],
+    "tokens": 36
+   }
+  ],
+  "shapes": 125
+ },
+ "control_scrambled": {
+  "alien_family": [
+   "the two token-index translates of the block"
+  ],
+  "by_shape": {
+   "DROP:False": 27,
+   "REPLACE:False": 54,
+   "SWAP:False": 180
+  },
+  "candidates": 279,
+  "certified_at_all": 0,
+  "reached_the_comparator": 0,
+  "rejected_as_non_moving": 18,
+  "survivors": 0,
+  "swap_cap": 8,
+  "swap_moving_corruptions_dropped_by_the_cap": 135,
+  "swap_moving_corruptions_run": 180,
+  "swap_moving_corruptions_uncapped": 315,
+  "swap_pairs_available": 351,
+  "swap_pairs_visited_under_the_cap": 198,
+  "trials": 261,
+  "trials_by_coordinate": {
+   "1,0": 254,
+   "10,2": 257,
+   "13,25": 257,
+   "2,5": 261,
+   "20,7": 257,
+   "25,26": 258,
+   "4,1": 254,
+   "5,11": 261,
+   "7,3": 261,
+   "8,17": 260
+  },
+  "trials_range": [
+   254,
+   261
+  ]
+ },
+ "control_synthetic": {
+  "arms": 7,
+  "recovered": 4,
+  "rows": [
+   {
+    "blocks": 8,
+    "cast_recovered": true,
+    "cast_size": 6,
+    "certificate": "CERTIFIED",
+    "meet_values": [
+     0,
+     1,
+     2
+    ],
+    "parts": [
+     2,
+     2,
+     2
+    ],
+    "threshold": 2,
+    "tokens": 12
+   },
+   {
+    "blocks": 27,
+    "cast_recovered": true,
+    "cast_size": 9,
+    "certificate": "CERTIFIED",
+    "meet_values": [
+     0,
+     1,
+     3
+    ],
+    "parts": [
+     3,
+     3,
+     3
+    ],
+    "threshold": 3,
+    "tokens": 27
+   },
+   {
+    "blocks": 64,
+    "cast_recovered": true,
+    "cast_size": 12,
+    "certificate": "CERTIFIED",
+    "meet_values": [
+     0,
+     1,
+     4
+    ],
+    "parts": [
+     4,
+     4,
+     4
+    ],
+    "threshold": 4,
+    "tokens": 48
+   },
+   {
+    "blocks": 125,
+    "cast_recovered": true,
+    "cast_size": 15,
+    "certificate": "CERTIFIED",
+    "meet_values": [
+     0,
+     1,
+     5
+    ],
+    "parts": [
+     5,
+     5,
+     5
+    ],
+    "threshold": 5,
+    "tokens": 75
+   },
+   {
+    "blocks": 32,
+    "cast_recovered": false,
+    "cast_size": 24,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "meet_values": [
+     0,
+     1,
+     4
+    ],
+    "parts": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "threshold": 4,
+    "tokens": 24
+   },
+   {
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "meet_values": [],
+    "parts": [
+     3,
+     3
+    ],
+    "threshold": null,
+    "tokens": 9
+   },
+   {
     "blocks": 24,
     "cast_recovered": false,
     "cast_size": 8,
     "certificate": "TOKEN-IN-NO-ACTOR",
+    "meet_values": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
     "parts": [
      2,
      3,
      4
     ],
+    "threshold": 4,
     "tokens": 26
    }
   ]
@@ -271,13 +2180,24 @@
   "never": 4
  },
  "disjoint_code": {
+  "arena_names_derived": 31,
+  "banned_cardinalities": [
+   4,
+   6,
+   9,
+   27,
+   72
+  ],
   "float_offences": [],
   "regions": {
    "builder": 24,
-   "comparator": 6,
+   "comparator": 9,
+   "plumbing": 23,
    "reconstructor": 9,
-   "stripper": 4
+   "stripper": 9
   },
+  "structural_constant_floor": 3,
+  "top_level_functions": 74,
   "violations": []
  },
  "equivariance": {
@@ -285,27 +2205,40 @@
   "failures": 0,
   "trials": 12
  },
+ "evidence_bound": {
+  "offences": [],
+  "rows": 39
+ },
  "exactness": {
   "ast_float_offences": [],
   "float_leaves": [],
   "json_round_trip_stable": true
  },
  "falsifiers": {
-  "falsified": 37,
-  "gates": 37,
-  "mutants": 38,
+  "falsified": 42,
+  "falsified_at_fired_gates": 41,
+  "gates": 41,
+  "hooks_without_a_row": [],
+  "mutants": 53,
+  "rows_without_a_hook": [],
+  "sentinel_shaped_hooks": [],
   "targets": [
    "anchors",
+   "anchors_located",
    "arena",
    "comparator_teeth",
    "connection",
+   "control_balance",
    "control_scrambled",
    "control_synthetic",
    "corpus",
    "crystallization",
    "disjoint_code",
    "equivariance",
+   "evidence_bound",
    "exactness",
+   "falsifiers",
+   "forged_finding",
    "level_zero",
    "link_structure",
    "menu",
@@ -314,6 +2247,7 @@
    "minimality_per_history",
    "naming",
    "obstruction",
+   "outcome_reachability",
    "paper_claims",
    "paper_coverage",
    "paper_referents",
@@ -321,16 +2255,18 @@
    "provenance",
    "read_set",
    "reconstruction",
+   "reconstruction_targets",
+   "residue_channel",
    "sources",
    "stripping",
    "surplus",
-   "transcript",
+   "transcript_binding",
    "typed_counts",
    "verdict",
    "walls",
    "wstar"
   ],
-  "waived": 1
+  "waived": 0
  },
  "level_zero": {
   "distinct_record_fields": 36,
@@ -373,6 +2309,7 @@
    "DISCRETE",
    "TRIVIAL"
   ],
+  "matched_count": 3,
   "stray_block_counts": [],
   "unmatched": [
    "COL",
@@ -383,7 +2320,9 @@
  "minimality_blocks": {
   "blocks": 27,
   "drop_one_subsets": 27,
-  "still_reconstructing": 0
+  "drop_two_subsets": 351,
+  "still_reconstructing": 0,
+  "still_reconstructing_at_two_fewer": 0
  },
  "minimality_corpus": {
   "blocks_at_that_point": 27,
@@ -397,7 +2336,16 @@
    "C2:None": 5184,
    "C3:None": 600
   },
+  "histories_with_pairwise_disjoint_blocks": 840,
+  "most_blocks_one_history_writes": 18,
   "reconstructing_at_some_prefix": 0,
+  "record_blocks_in_all": 27,
+  "refusal_words": {
+   "NO-MEET-GAP": 839,
+   "NO-RECORD-BLOCKS": 1,
+   "TOKEN-IN-NO-ACTOR": 4104,
+   "TOKEN-NOT-IN-EXACTLY-TWO": 912
+  },
   "slots": 5856
  },
  "mutants": [
@@ -444,12 +2392,6 @@
    "target": "reconstruction"
   },
   {
-   "description": "the comparator is handed a cast short of one actor",
-   "gate": "G-CAST-DERIVED",
-   "name": "MUT-CAST",
-   "target": "reconstruction"
-  },
-  {
    "description": "one derived actor pair is deleted, so the derived link structure is no longer the declared one",
    "gate": "G-LINK-STRUCTURE-DERIVED",
    "name": "MUT-LINK",
@@ -459,7 +2401,7 @@
    "description": "the pin's own list of reconstruction targets is read with one target removed",
    "gate": "G-RECONSTRUCTION-TARGETS-TOTAL",
    "name": "MUT-TARGETS",
-   "target": "anchors"
+   "target": "reconstruction_targets"
   },
   {
    "description": "one matched menu member is dropped, so the derived menu no longer accounts for every member it produced",
@@ -591,7 +2533,7 @@
    "description": "a parent's anchored sentence is altered in the parent's own bytes, so the needle no longer occurs where the anchor says it does",
    "gate": "G-ANCHORS-LOCATED",
    "name": "MUT-ANCHOR",
-   "target": "anchors"
+   "target": "anchors_located"
   },
   {
    "description": "an anchor's declared consumer is moved to a gate that ran but never subscripted it, so the anchor is located and then discarded",
@@ -615,7 +2557,7 @@
    "description": "a PASS line for a gate that never ran is appended to the transcript",
    "gate": "G-TRANSCRIPT-BOUND",
    "name": "MUT-TRANSCRIPT",
-   "target": "transcript"
+   "target": "transcript_binding"
   },
   {
    "description": "a non-integer leaf is admitted to the published receipt",
@@ -627,14 +2569,113 @@
    "description": "a top-level receipt key is created after the seal manifest is taken",
    "gate": "T-SEAL-PROMOTION",
    "name": "MUT-SEAL-ADD",
-   "target": "verdict"
+   "target": "forged_finding"
+  },
+  {
+   "description": "one uniformly random coordinate is recorded as having moved a published quantity, so the coordinate-freedom census no longer holds",
+   "gate": "G-STRIPPING-COORDINATE-FREE",
+   "name": "MUT-COORDINATE",
+   "target": "residue_channel"
+  },
+  {
+   "description": "a single history is credited with writing every record block, so the counting fact that no history carries enough of them is destroyed",
+   "gate": "G-MINIMALITY-PER-HISTORY",
+   "name": "MUT-MECHANISM",
+   "target": "minimality_per_history"
+  },
+  {
+   "description": "a 25-block subset is credited with reconstructing, so the block set stops being irredundant two blocks down",
+   "gate": "G-MINIMALITY-BLOCKS",
+   "name": "MUT-BLOCKS-25",
+   "target": "minimality_blocks"
+  },
+  {
+   "description": "one further history is called never-crystallizing, so the biconditional with the least collapse threshold fails in one direction",
+   "gate": "G-THE-CONNECTION",
+   "name": "MUT-BICONDITIONAL",
+   "target": "connection"
+  },
+  {
+   "description": "one splitting is removed from the orbit of the declared one, so the action is no longer transitive and the index stops being a count",
+   "gate": "G-NAMING-RESIDUE",
+   "name": "MUT-ORBIT",
+   "target": "naming"
+  },
+  {
+   "description": "one swept shape's recovery is flipped, so the boundary the sweep locates is no longer balance",
+   "gate": "G-CONTROL-BALANCE",
+   "name": "MUT-BALANCE",
+   "target": "control_balance"
+  },
+  {
+   "description": "all but one declared fault is dropped, so a pre-registered outcome is left with no run that writes it",
+   "gate": "G-OUTCOMES-REACHABLE",
+   "name": "MUT-REACHABILITY",
+   "target": "outcome_reachability"
+  },
+  {
+   "description": "a finished evidence line reports a corpus size the receipt does not carry, so the two artifacts contradict each other",
+   "gate": "G-EVIDENCE-BOUND",
+   "name": "MUT-EVIDENCE",
+   "target": "evidence_bound"
+  },
+  {
+   "description": "one template family is recorded as carried rather than called",
+   "gate": "G-PROVENANCE",
+   "name": "MUT-FAMILIES",
+   "target": "provenance"
+  },
+  {
+   "description": "a falsifier row is declared for which no implementation exists anywhere in this module",
+   "gate": "T-FALSIFIER-COVERAGE",
+   "name": "MUT-HOOK-MISSING",
+   "target": "falsifiers"
+  },
+  {
+   "description": "a hook that only appends a constant to the finding list its gate reads is admitted to the module the honesty audit scans",
+   "gate": "T-FALSIFIER-COVERAGE",
+   "name": "MUT-SENTINEL-DESC",
+   "target": "falsifiers"
+  },
+  {
+   "description": "one row is withheld from the harness, leaving a gate that fired with neither a falsifier nor a waiver -- the recipe the deleted waiver said could not exist",
+   "gate": "T-FALSIFIER-COVERAGE",
+   "name": "MUT-COVERAGE-GAP",
+   "target": "falsifiers"
+  },
+  {
+   "description": "an exemption is declared whose token the paper never carries",
+   "gate": "G-PAPER-COVERAGE",
+   "name": "MUT-EXEMPTION",
+   "target": "paper_coverage"
+  },
+  {
+   "description": "a quantity spelled out in words is admitted that no measurement backs",
+   "gate": "G-PAPER-COVERAGE",
+   "name": "MUT-SPELLED",
+   "target": "paper_coverage"
+  },
+  {
+   "description": "the paper is given a natural re-voicing of a forbidden reading -- 'a single history suffices to reconstruct the cast' -- rather than the literal form the delivered blacklist knew",
+   "gate": "G-PAPER-WALLS",
+   "name": "MUT-WALL-PARAPHRASE",
+   "target": "walls"
+  },
+  {
+   "description": "both copies of a standing sentence are deleted outright, so the wall's positive leg is exercised on its own",
+   "gate": "G-PAPER-WALLS",
+   "name": "MUT-WALL-POSITIVE",
+   "target": "walls"
   }
  ],
  "naming": {
   "admissible_namings": 1296,
   "arena_automorphisms": 108,
   "arena_coherent_namings": 108,
+  "declared_splitting_is_a_resolution": true,
   "direction_candidates": 36,
+  "orbit_is_every_resolution": true,
+  "orbit_of_the_declared_splitting": 12,
   "residue_index": [
    12,
    1
@@ -644,7 +2685,7 @@
  "obstruction": {
   "histories_with_an_unwritten_event": 175,
   "histories_writing_nothing": 1,
-  "name": "THE-LINK-DECLARATION",
+  "name": "THE-DIRECTION-DECLARATION",
   "residue_index": [
    12,
    1
@@ -656,28 +2697,85 @@
   "undeclared_classes": 1,
   "unwritten_events": 768
  },
+ "outcome_reachability": {
+  "distinct_words": [
+   "REC-BLOCKED-AT-THE-CAST",
+   "REC-CAST-DERIVED",
+   "REC-CAST-DERIVED-UP-TO-THE-DIRECTION-DECLARATION",
+   "REC-OBSTRUCTED-AT-THE-LINK-STRUCTURE"
+  ],
+  "pre_registered": [
+   "REC-BLOCKED-AT-THE-CAST",
+   "REC-CAST-DERIVED",
+   "REC-CAST-DERIVED-UP-TO-THE-DIRECTION-DECLARATION",
+   "REC-OBSTRUCTED-AT-THE-LINK-STRUCTURE"
+  ],
+  "rows": [
+   {
+    "cast_size": 9,
+    "certificate": "CERTIFIED",
+    "fault": "none: this corpus's own record against its own declared arena",
+    "faulted_side": "NEITHER",
+    "word": "REC-CAST-DERIVED-UP-TO-THE-DIRECTION-DECLARATION"
+   },
+   {
+    "cast_size": 9,
+    "certificate": "CERTIFIED",
+    "fault": "a synthetic arena's own record, read against its own cast, which declares no direction and so owes no residue",
+    "faulted_side": "RECORD",
+    "word": "REC-CAST-DERIVED"
+   },
+   {
+    "cast_size": 8,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "fault": "a synthetic arena whose record leaves a token in no actor",
+    "faulted_side": "RECORD",
+    "word": "REC-BLOCKED-AT-THE-CAST"
+   },
+   {
+    "cast_size": 9,
+    "certificate": "CERTIFIED",
+    "fault": "this corpus's record, read against a cast short of one actor",
+    "faulted_side": "RECORD",
+    "word": "REC-BLOCKED-AT-THE-CAST"
+   },
+   {
+    "cast_size": 9,
+    "certificate": "CERTIFIED",
+    "fault": "this corpus's record, read against a declared link structure missing one pair",
+    "faulted_side": "DECLARED",
+    "word": "REC-OBSTRUCTED-AT-THE-LINK-STRUCTURE"
+   }
+  ]
+ },
  "paper_claims": {
-  "claims": 8,
+  "claims": 18,
   "fences": 3,
-  "rows": 28,
-  "sha256_12": "58b08940d04c"
+  "rows": 46,
+  "sha256_12": "c5fbc9acbd76"
  },
  "paper_coverage": {
+  "backing_values": 181,
   "exemptions": {
-   "14": "the campaign, v14",
-   "21": "paper-21, the schedule parent",
-   "25": "engraving E-25",
-   "33": "paper-33, the AID unit",
-   "35": "paper-35, the FAC unit",
-   "373": "the ledger entry",
-   "38": "paper-38, the EPR unit",
-   "41": "paper-41, this unit"
+   "AG(2, 3)": "the arena's name",
+   "E-24": "the counting-only engraving",
+   "E-25": "the engraving this template opens at",
+   "E-33": "the engraving it closes at",
+   "paper 41": "this unit",
+   "paper-21": "the schedule parent",
+   "paper-33": "the AID unit",
+   "paper-35": "the FAC unit",
+   "paper-38": "the EPR unit",
+   "sha256-12": "the digest length"
   },
-  "numerals": 144,
+  "exemptions_unused": [],
+  "numerals": 310,
+  "spelled_numerals": 117,
+  "spelled_unbacked": [],
   "unbacked": []
  },
  "paper_referents": {
-  "occurrences_checked": 45,
+  "occurrences_checked": 111,
   "universes": 6
  },
  "parents": {
@@ -859,9 +2957,56 @@
    "T-FALSIFIER-POISONS",
    "T-READ-SET"
   ],
+  "families_used": [
+   {
+    "called": true,
+    "check": "T-SEAL-PROMOTION",
+    "member": "seal"
+   },
+   {
+    "called": true,
+    "check": "T-TRANSCRIPT-BOUND",
+    "member": "bind"
+   },
+   {
+    "called": true,
+    "check": "T-WALL-SEMANTIC",
+    "member": "scan"
+   },
+   {
+    "called": true,
+    "check": "T-ANCHOR-CONSUMED",
+    "member": "locate"
+   },
+   {
+    "called": true,
+    "check": "T-CLAIMS-EQUAL",
+    "member": "claim"
+   },
+   {
+    "called": true,
+    "check": "T-REFERENT-BOUND",
+    "member": "universe"
+   },
+   {
+    "called": true,
+    "check": "T-NO-TYPED-COUNTS",
+    "member": "stmt"
+   },
+   {
+    "called": true,
+    "check": "T-FALSIFIER-POISONS",
+    "member": "audit_descriptions"
+   },
+   {
+    "called": true,
+    "check": "T-READ-SET",
+    "member": "gate_at_close"
+   }
+  ],
   "instrument": "v14/code/rec_exact.py",
   "paper": "v14/paper-41-rec.md",
-  "paper_sha256_12": "58b08940d04c",
+  "paper_sha256_12": "c5fbc9acbd76",
   "pin": "v14/note-rec-pin.md",
   "pin_sha256_12": "0b51e47b7b4b",
   "scramble": {
@@ -869,7 +3014,7 @@
    "note": "a declared arena-blind coordinate; G-STRIPPING-EQUIVARIANT prices it",
    "offset": 11
   },
-  "self_sha256_12": "ba77c08c81a2",
+  "self_sha256_12": "35fdbd33bded",
   "template": "v14/code/era_template.py",
   "template_sha256_12": "d04a3eb58fbc",
   "unit": "REC"
@@ -920,58 +3065,101 @@
   "sharing": "two record cells belong to a common actor exactly when one event wrote them together, or when the cells written with each of them meet in the largest number any never-co-written pair attains",
   "threshold_is_derived": true
  },
+ "reconstruction_targets": {
+  "declared": [
+   "site set",
+   "link structure",
+   "cast size",
+   "partition menu",
+   "naming"
+  ],
+  "found_in_the_pin": [
+   "cast size",
+   "link structure",
+   "naming",
+   "partition menu",
+   "site set"
+  ]
+ },
+ "residue_channel": {
+  "affine_trials": 12,
+  "affine_trials_leaking": 12,
+  "coordinates_that_moved_a_quantity": 0,
+  "declared_classes_are_the_residue_classes": true,
+  "declared_map_is_affine": true,
+  "declared_multiplier": 5,
+  "declared_offset": 11,
+  "direction_is_the_token_residue": true,
+  "quantities_compared_per_coordinate": 12,
+  "random_coordinates": 60,
+  "random_coordinates_leaking": 0,
+  "random_coordinates_non_affine": 60,
+  "random_relabellings": 300,
+  "random_relabellings_non_affine": 300,
+  "relabellings_whose_cast_moved": 0
+ },
  "seal_manifest": {
   "declared_unsealed": {},
   "sealed": {
    "anchors": "1bbfe39593a7",
+   "anchors_located": "d56d32938d03",
    "arena": "6da3b5805893",
-   "comparator_teeth": "db3b3dc8ee1d",
-   "connection": "8b4d17cb8ed9",
-   "control_scrambled": "b2db72000738",
-   "control_synthetic": "82f93526985a",
+   "comparator_teeth": "701c5165af7b",
+   "connection": "19920906ce63",
+   "control_balance": "53a6f4b51507",
+   "control_scrambled": "42ae33083ea1",
+   "control_synthetic": "3b8ef2e2962b",
    "corpus": "ca6e95d63089",
    "crystallization": "86dc06db24b4",
-   "disjoint_code": "776fc0c40327",
+   "disjoint_code": "2f4b13100f4f",
    "equivariance": "45e2e249138c",
+   "evidence_bound": "fbd1b2e3c200",
    "exactness": "e3d88e27d52c",
-   "falsifiers": "6734333c5fb4",
+   "falsifiers": "b4e4b76ceeee",
    "level_zero": "f90a8e8ead86",
    "link_structure": "62348f11f08a",
-   "menu": "d8a5f3b96797",
-   "minimality_blocks": "0fffd1109ed6",
+   "menu": "b65a8f248ceb",
+   "minimality_blocks": "2efa9b47d452",
    "minimality_corpus": "f4abb5e4b5fc",
-   "minimality_per_history": "3effa8b15631",
-   "mutants": "532bf092f274",
-   "naming": "954e3bd2cea6",
-   "obstruction": "154339c14f04",
-   "paper_claims": "d4c7c2735bf1",
-   "paper_coverage": "c09ca770b86d",
-   "paper_referents": "49bfeae606e3",
+   "minimality_per_history": "9f0cdbe07bc6",
+   "mutants": "22e7d45f6a78",
+   "naming": "f9ed5fd9f63f",
+   "obstruction": "37b029b23030",
+   "outcome_reachability": "b940ebdde18d",
+   "paper_claims": "d6df7b3ea139",
+   "paper_coverage": "0c2d187512f9",
+   "paper_referents": "9e4ceee90f39",
    "parents": "5f37d9774d6a",
-   "provenance": "b01fa6682fb1",
+   "provenance": "c5ca97214cfd",
    "read_set": "c2f3f638fbb5",
    "reconstruction": "b70d9d915d0f",
    "reconstruction_rule": "182dd98ca2eb",
+   "reconstruction_targets": "9f3e62841d42",
+   "residue_channel": "59ea4e29d9cb",
    "sources": "191360315412",
-   "stripping": "913d71c1b8e5",
-   "surplus": "81b12db468f4",
-   "transcript": "1b9f34df9a3d",
-   "typed_counts": "da0f91a2dc04",
-   "verdict": "72e7d03aee3a",
-   "walls": "bdc661f94895",
+   "stripping": "43b03a59025c",
+   "surplus": "00a66d33aaec",
+   "transcript": "f04d760da992",
+   "transcript_binding": "9201cb6f53cf",
+   "typed_counts": "d8fc4c2d18ee",
+   "verdict": "2664154f1644",
+   "walls": "35e27a9cd599",
    "wstar": "76e559c140ef"
   },
   "sealed_at_gate": {
    "anchors": "G-ANCHORS-CONSUMED",
+   "anchors_located": "G-ANCHORS-LOCATED",
    "arena": "G-ARENA-CONSTRUCTED",
    "comparator_teeth": "G-COMPARATOR-HAS-TEETH",
    "connection": "G-THE-CONNECTION",
+   "control_balance": "G-CONTROL-BALANCE",
    "control_scrambled": "G-CONTROL-SCRAMBLED-FAILS",
    "control_synthetic": "G-CONTROL-SYNTHETIC-SUCCEEDS",
    "corpus": "G-CORPUS-SHAPE",
    "crystallization": "G-CRYSTALLIZATION-REDERIVED",
    "disjoint_code": "G-S1-DISJOINT-CODE",
    "equivariance": "G-STRIPPING-EQUIVARIANT",
+   "evidence_bound": "G-EVIDENCE-BOUND",
    "exactness": "G-RECEIPT-EXACT",
    "falsifiers": "T-FALSIFIER-COVERAGE",
    "level_zero": "G-LEVEL-ZERO-INSUFFICIENT",
@@ -983,6 +3171,7 @@
    "mutants": "G-PROVENANCE",
    "naming": "G-NAMING-RESIDUE",
    "obstruction": "G-OBSTRUCTION-NAMED",
+   "outcome_reachability": "G-OUTCOMES-REACHABLE",
    "paper_claims": "G-PAPER-CLAIMS",
    "paper_coverage": "G-PAPER-COVERAGE",
    "paper_referents": "G-PAPER-REFERENTS",
@@ -991,10 +3180,13 @@
    "read_set": "G-READS-AT-THE-ACCESSOR",
    "reconstruction": "G-CAST-DERIVED",
    "reconstruction_rule": "G-PROVENANCE",
+   "reconstruction_targets": "G-RECONSTRUCTION-TARGETS-TOTAL",
+   "residue_channel": "G-STRIPPING-COORDINATE-FREE",
    "sources": "G-SOURCES-PINNED",
    "stripping": "G-STRIPPING-TOTAL",
    "surplus": "G-SURPLUS-CENSUS",
    "transcript": "G-TRANSCRIPT-BOUND",
+   "transcript_binding": "G-TRANSCRIPT-BOUND",
    "typed_counts": "G-NO-TYPED-COUNTS",
    "verdict": "G-VERDICT-EQUALITY",
    "walls": "G-PAPER-WALLS",
@@ -1021,6 +3213,8 @@
   "non_integer_leaves": [],
   "record_blocks": 27,
   "scramble_is_a_permutation": true,
+  "scramble_moves_tokens": 26,
+  "token_alphabet": 27,
   "unwritten_events": 768,
   "written_events": 100392
  },
@@ -1060,7 +3254,7 @@
    {
     "distinct_values": 136,
     "fibers_that_split": 6,
-    "property": "THE-EVENT-SET-ITSELF",
+    "property": "THE-EVENT-MULTISET",
     "verdict": "NOT-CARRIED"
    },
    {
@@ -1089,58 +3283,104 @@
    }
   ],
   "record_carried": 4,
-  "rows_unbound": []
+  "rows_unbound": [],
+  "the_event_set_beside_the_multiset": {
+   "multiset_distinct_values": 136,
+   "multiset_fibers_that_split": 6,
+   "set_distinct_values": 103,
+   "set_fibers_that_split": 6,
+   "verdict_is_the_same": true
+  }
  },
  "transcript": {
-  "chain_head": "5a331a7442cc550a",
-  "gate_rows": 37,
-  "lines": 39,
-  "sha256_12": "16b7a64c6156"
+  "chain_head": "a85ce9affdae0429",
+  "gate_rows": 41,
+  "lines": 43,
+  "sha256_12": "29507d00695d"
+ },
+ "transcript_binding": {
+  "chain_at_this_gate": "ac86f761e8b030c8",
+  "chain_recomputes": true,
+  "problem": "none",
+  "rows_at_this_gate": 38
  },
  "typed_counts": {
-  "exemptions": [],
+  "exemptions": {
+   "AG(2, 3)": "the arena's name",
+   "E-24": "the counting-only engraving",
+   "E-25": "the engraving this template opens at",
+   "E-33": "the engraving it closes at",
+   "paper 41": "this unit",
+   "paper-21": "the schedule parent",
+   "paper-33": "the AID unit",
+   "paper-35": "the FAC unit",
+   "paper-38": "the EPR unit",
+   "sha256-12": "the digest length"
+  },
   "offenders": [],
-  "registry": 76
+  "registry": 123,
+  "statement_builders_scanned": [
+   "claim",
+   "fence",
+   "gate",
+   "stmt",
+   "table"
+  ]
  },
  "verdict": {
   "segments": [
-   "REC-RECONSTRUCTION<CORPUS=5,856; DISTINCT-HISTORIES=5,784; RECORD-BLOCKS=27; SITE-SET=9-OF-9-EXACT; LINK-STRUCTURE=27-OF-27-EXACT; CAST-SIZE=9-DERIVED; MENU=3-OF-6-EXACT; NAMING=1,296-ADMISSIBLE-108-ARENA-COHERENT; RESIDUE-INDEX=12; LEVEL-0-COUNT-FIELD=36-DISTINCT-CAST-NOT-DERIVABLE>",
+   "REC-RECONSTRUCTION<CORPUS=5,856; DISTINCT-HISTORIES=5,784; RECORD-BLOCKS=27; SITE-SET=9-OF-9-EXACT; LINK-STRUCTURE=27-OF-27-EXACT; CAST-SIZE=9-DERIVED; MENU=3-OF-6-PARTIAL; NAMING=1,296-ADMISSIBLE-108-ARENA-COHERENT; RESIDUE-INDEX=12; LEVEL-0-COUNT-FIELD=36-DISTINCT-CAST-NOT-DERIVABLE>",
    "REC-MINIMALITY<PER-HISTORY=0-OF-5,856-AT-EVERY-PREFIX; CORPUS-ORDER=17-HISTORIES-145-EVENTS; BLOCK-MINIMAL=27-OF-27-DROP-ONE-SURVIVORS-0; COLLAPSE-THRESHOLDS=3-AND-4-AND-5; CRYSTALLIZATION-ON-C1-AND-C2=5; NEVER-CRYSTALLIZING=4>",
-   "REC-CAST-DERIVED-UP-TO-THE-DIRECTION-DECLARATION<OBSTRUCTION=THE-LINK-DECLARATION; UNWRITTEN-EVENTS=768; PARTLY-UNWRITTEN-HISTORIES=175; HISTORIES-WRITING-NOTHING=1; RECORD-COLLISIONS=39-CLASSES-180-HISTORIES; SURPLUS=1-ARENA-FORCED-4-RECORD-CARRIED-4-NOT-CARRIED; CONTROLS=261-SCRAMBLES-0-SURVIVE-AND-4-OF-7-SYNTHETIC-ARMS-RECOVERED; SCOPE=ONE-ARENA,COMMITTED-HISTORIES,COUNTS-ARE-COUNTING-ONLY;THE-CAST-IS-DERIVED-AT-THE-CORPUS-AND-AT-NO-SINGLE-HISTORY>"
+   "REC-CAST-DERIVED-UP-TO-THE-DIRECTION-DECLARATION<OBSTRUCTION=THE-DIRECTION-DECLARATION; UNWRITTEN-EVENTS=768; PARTLY-UNWRITTEN-HISTORIES=175; HISTORIES-WRITING-NOTHING=1; RECORD-COLLISIONS=39-CLASSES-180-HISTORIES; SURPLUS=1-ARENA-FORCED-4-RECORD-CARRIED-4-NOT-CARRIED; CONTROLS=261-SCRAMBLES-0-SURVIVE-AND-4-OF-7-SYNTHETIC-ARMS-RECOVERED; SCOPE=ONE-ARENA,COMMITTED-HISTORIES,COUNTS-ARE-COUNTING-ONLY;THE-CAST-IS-DERIVED-AT-THE-CORPUS-AND-AT-NO-SINGLE-HISTORY>"
   ],
   "word": "REC-CAST-DERIVED-UP-TO-THE-DIRECTION-DECLARATION"
  },
- "walls": [
-  {
-   "licences": [],
-   "name": "W-NO-UNQUALIFIED-DERIVATION",
-   "negative": [
-    "the (?:whole |entire )?(?:cast|arena|theory) is (?:fully |wholly )?(?:derived|reconstructed|recovered)(?![\\w\\s]{0,24}up to)(?![\\w\\s]{0,40}at the corpus)",
-    "nothing (?:at all |whatever )?(?:is |remains |stays )?declared",
-    "no (?:declaration|residue|freedom|choice) (?:remains|is left|survives)",
-    "(?:the )?record (?:alone |by itself )?(?:fixes|determines|forces) the (?:coordinates|directions|direction classes)",
-    "reconstruct\\w*\\s+(?:\\w+\\s+){0,3}from a single history",
-    "(?:the )?count field\\s+(?:\\w+\\s+){0,4}(?:suffices|is enough|recovers the cast|determines the cast)"
-   ],
-   "positive": [
-    "the cast is derived at the corpus and at no single history",
-    "the direction declaration is the datum that resists"
-   ]
-  },
-  {
-   "licences": [],
-   "name": "W-PARENT-SCOPE",
-   "negative": [
-    "the record is (?:a |the )?complete description(?![\\w\\s]{0,30}(?:for the censused|at this arena))",
-    "epr\\w*\\s+(?:\\w+\\s+){0,4}(?:proved|showed|established)\\s+(?:\\w+\\s+){0,3}completeness",
-    "local realism\\s+(?:\\w+\\s+){0,3}(?:is\\s+)?restor\\w*",
-    "restor\\w*\\s+(?:\\w+\\s+){0,3}local realism"
-   ],
-   "positive": [
-    "record-completeness is analytic at epr's own catalogue"
-   ]
-  }
- ],
+ "walls": {
+  "scanned_sha256_12": "c5fbc9acbd76",
+  "violation": "none",
+  "walls": [
+   {
+    "licences": [],
+    "name": "W-NO-UNQUALIFIED-DERIVATION",
+    "negative": [
+     "the (?:whole |entire |full )?(?:cast|actors|actor set|arena|theory|coordinate|coordinates|direction|directions|direction class|direction classes|naming|namings|declaration|residue) (?:is|was|are|were|has been|have been|can be|could be|gets|get) (?:fully |wholly |completely |in full )?(?:derived|reconstructed|recovered|read off|readable|determined|fixed|forced)(?![\\w\\s]{0,24}up to)(?![\\w\\s]{0,40}at the corpus)",
+     "the (?:whole |entire |full )?(?:cast|actors|actor set|arena|theory|coordinate|coordinates|direction|directions|direction class|direction classes|naming|namings|declaration|residue) (?:was |is |were |are )?(?:derived|reconstructed|recovered|read off|readable|determined|fixed|forced) in full",
+     "nothing (?:at all |whatever |else |more )?(?:is |remains |stays |needs to be |need be |has to be )?(?:declared|left to declare)",
+     "no (?:declaration|residue|freedom|choice|coordinate|direction)s? (?:remains?|is left|are left|survives?|is needed|are needed|is required)",
+     "(?:leaves|leaving|with) no (?:residue|declaration|freedom|choice)",
+     "no declaration is (?:needed|required|left)",
+     "(?:the )?(?:bare )?record (?:alone |by itself |itself )?(?:fixes|determines|forces|names|recovers|supplies|gives|hands back|carries) the (?:coordinate|coordinates|direction|directions|direction class|direction classes|declaration|naming)",
+     "the (?:coordinate|direction classes|directions) (?:comes?|come) back",
+     "reconstruct\\w*\\s+(?:\\w+\\s+){0,4}from (?:a|one|any) single history",
+     "(?:a|one|any) single history (?:\\w+\\s+){0,3}(?:suffices|is enough|is sufficient|recovers|reconstructs|determines|fixes)",
+     "(?:every |each )?actors? (?:can be|is|are|could be) (?:read off|derived from|recovered from) (?:one|a single|any) history",
+     "(?:the cast|the actors) (?:can be |is |are )?(?:derived|recovered|read off)(?:\\w|\\s){0,20}from (?:one|a single) history",
+     "(?:the )?counts?(?: field| alone| by themselves| themselves)?\\s+(?:\\w+\\s+){0,4}(?:suffices|suffice|is enough|are enough|recovers? the cast|determines? the cast|names? the cast)",
+     "isomorphism, not set equality",
+     "(?:merely |only )?isomorphic(?:\\s+\\w+){0,3}, not (?:the same sets|set equality|equal)"
+    ],
+    "positive": [
+     "the cast is derived at the corpus and at no single history",
+     "the direction declaration is the datum that resists"
+    ]
+   },
+   {
+    "licences": [],
+    "name": "W-PARENT-SCOPE",
+    "negative": [
+     "the record is (?:a |the )?complete description(?![\\w\\s]{0,30}(?:for the censused|at this arena))",
+     "epr[\\w']*(?:\\s+\\w+){0,4}\\s+(?:proved|showed|established|makes|made|shows|renders)(?:\\s+\\w+){0,4}\\s+(?:completeness|a complete description)",
+     "(?:makes?|made|renders?|leaves?|left) the (?:bare )?record (?:a |the )?complete",
+     "(?:the record|the bare record) is complete(?:\\b|[^\\w-])",
+     "local realism\\s+(?:\\w+\\s+){0,3}(?:is\\s+)?restor\\w*",
+     "restor\\w*\\s+(?:\\w+\\s+){0,3}local realism"
+    ],
+    "positive": [
+     "record-completeness is analytic at epr's own catalogue"
+    ]
+   }
+  ]
+ },
  "wstar": {
   "anchor_values": [
    3,
