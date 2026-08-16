@@ -12221,3 +12221,37 @@ Adjudication next.**
 
 note-hor-adjudication.md committed (rulings above).  The
 repair worker launches next; REC's panel continues.
+
+## 2026-08-16 — REC K1 (OPERATOR) FROZEN: ACCEPT-WITH-FIXES; 161 OF 162 LEAVES MATCH (THE ONE MISMATCH A MULTISET/SET MISLABEL, VERDICT UNAFFECTED); THE MECHANISM CONVERGENTLY CORRECTED; THE RECONSTRUCTOR GENERALIZES FURTHER THAN CLAIMED (v14 LEDGER #383)
+
+**Review:** v14/review-rec-operator.md (a234abde0c1b, 479
+lines).  162 leaves rebuilt (own Bron-Kerbosch, own
+scramble) — 161 match; the one mismatch:
+THE-EVENT-SET-ITSELF = 136 measures the event MULTISET;
+the event SET takes 103 values (verdict unaffected; the
+label wrong).  Plus 81,027 scrambles, 212 equivariance
+trials, 113 synthetic arenas, 378 block-subset tests.
+NINE MAJORS: (1) §7's disjointness mechanism FALSIFIED at
+5,016 of 5,856 (CONVERGENT with K2 M1); the true theorem:
+no history sees more than 18 of the 27 blocks, and 26/25-
+block subsets also fail (0/27, 0/351).  (2) **"outside
+the balanced three-part family the reconstructor REFUSES"
+is FALSE — 4-part, 5-part, and 2-part balanced arenas all
+RECOVER: the boundary is BALANCE, not three-ness — the
+reconstructor generalizes further than the paper
+claims.**  (3) the 136/103 mislabel.  (4) an undisclosed
+SWAP cap (18 of 279 dropped without receipt witness).
+Five gate-mechanism majors (coverage value-membership not
+value-at-place — 175↔768 swap passes; the S-1 scan one
+level deep with an unregioned full_run route; a
+literal-True forcing; three constant-append sentinels
+with the anti-sentinel leg never called; "finite and
+small" vs NEVER-CRYSTALLIZING=4).  Ten minors.  **TWO
+FREE STRENGTHENINGS: never-crystallizing = exactly the
+w*=3 histories (a biconditional, 4-of-4 both ways); and
+index = resolution count BY TRANSITIVITY of the 1,296
+namings on the 12 resolutions.**  Sound and confirmed:
+the total seal, byte-identical off-tree, 38/38, the
+audit-hook read set, and the blindness itself (carried by
+the type walk + equivariance + controls, not the AST scan
+§8 credits).  K3 still out; adjudication after it.
