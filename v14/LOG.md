@@ -11842,3 +11842,41 @@ SEC×SPC inherits the union symmetry structures.
 
 **Programme count: THIRTY-FOUR terminals; zero false
 computed numbers surviving anywhere in v14.**
+
+## 2026-08-15 — SEC REPAIR (THIRD-RELAY CONTINUATION) DELIVERED AND COMMITTED: THE TWELVE-FORGERY ACCEPTANCE TEST PASSED; SEAM-CONFINED SEALED-IN; EXT DELETED; ZERO MEASURED MOVES (v14 LEDGER #367)
+
+**Files:** paper-32-sec.md f3f43d94cd75; sec_exact.py
+558cc00b3e28; sec_output.txt ccd72cdefafa;
+sec_receipt.json 277f6424cba2.  The two prior workers'
+Z1–Z11 substantially built; the continuation closed SEVEN
+open items (the off-tree battery failure = the battery's
+own 17-file list omitting the two files the stray-read
+mutants poke — **the instrument was RIGHT to refuse
+promotion**; the composite never replayed; K2's
+G-STERILITY line; K1's M2 residuals — both chart-borne
+rows now MEASURED, pair moves 4/16, seam profile 6/16;
+K3's residuals incl. row-multiset EQUALITY killing the
+stray-row hole; §8's tenth row; the test-declaration duty
+now at three probes with the AID vocabulary at 16
+occurrences), adding 7 gates + 6 mutants.  **THE
+ACCEPTANCE TEST: 12/12 single forgeries DEAD; 16
+independent gate deaths across 8 distinct gates; the
+composite DEAD with all 8 firing simultaneously** (12
+distinct names impossible — 11 paper-side gates exist; the
+bar met as 16 ≥ 12 independent deaths); the repaired paper
+passes at 54 gates.  Z-highlights: SEAM-CONFINED in the
+head with no surviving leak wording; FORCED-16/16-at-the-
+shared-rule leading with the first-rule instability
+published (10 of 16 split; 8,740 of 45,010 carry — gated
+as a validated-predicate prediction, disclosed); the
+overlap word comparator-derived with a control arm
+returning SEC-K-SELECTED; the 12-arena mirror-pair table;
+EXT DELETED per the default; every row typed
+representative-vs-type.  **Battery: 64/64 mutants cold-
+process cold-tree; byte ×2 off-tree two seeds; 215
+spelled numerals 0 survivors; zero measured moves (2,057
+leaves; the one non-bookkeeping delta a wall-exclusion
+list).**  Residuals stated honestly in-paper (the
+234 small structural numerals; the no-numeral prose
+sentence; the sample-based exhaustiveness licence).
+**Orchestrator battery next; terminal on green.**

@@ -5,6 +5,8 @@
    "gate": "G-STERILITY",
    "id": "V01",
    "ok": true,
+   "quote_chars": 0,
+   "quoted_in_the_paper": false,
    "source": "A-PIN"
   },
   {
@@ -12,6 +14,8 @@
    "gate": "G-DICT",
    "id": "V02",
    "ok": true,
+   "quote_chars": 0,
+   "quoted_in_the_paper": false,
    "source": "A-PIN"
   },
   {
@@ -19,6 +23,8 @@
    "gate": "G-SECTOR-WELD",
    "id": "V03",
    "ok": true,
+   "quote_chars": 68,
+   "quoted_in_the_paper": true,
    "source": "A-P19"
   },
   {
@@ -26,6 +32,8 @@
    "gate": "G-FORCED-OVERLAP",
    "id": "V04",
    "ok": true,
+   "quote_chars": 109,
+   "quoted_in_the_paper": true,
    "source": "A-P21"
   },
   {
@@ -33,6 +41,8 @@
    "gate": "G-DICT",
    "id": "V05",
    "ok": true,
+   "quote_chars": 98,
+   "quoted_in_the_paper": true,
    "source": "A-PIN"
   },
   {
@@ -40,6 +50,8 @@
    "gate": "G-STERILITY",
    "id": "V06",
    "ok": true,
+   "quote_chars": 33,
+   "quoted_in_the_paper": true,
    "source": "A-R1"
   },
   {
@@ -47,6 +59,8 @@
    "gate": "G-SEAM-RANK",
    "id": "V07",
    "ok": true,
+   "quote_chars": 0,
+   "quoted_in_the_paper": false,
    "source": "A-HA"
   },
   {
@@ -54,15 +68,231 @@
    "gate": "G-WALL-SCAN",
    "id": "V08",
    "ok": true,
+   "quote_chars": 41,
+   "quoted_in_the_paper": true,
    "source": "A-CAT"
   }
  ],
+ "arena_classes": {
+  "arenas": 12,
+  "classes": [
+   [
+    "(0,)"
+   ],
+   [
+    "(1, (0, 0, 1))"
+   ],
+   [
+    "(2, (0, 0, 1), (0, 1, 1))",
+    "(2, (0, 0, 1), (1, 0, 1))"
+   ],
+   [
+    "(2, (0, 0, 1), (1, 1, 1))"
+   ],
+   [
+    "(2, (0, 0, 2))"
+   ],
+   [
+    "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+    "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+   ],
+   [
+    "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+   ],
+   [
+    "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+    "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+   ],
+   [
+    "(3, (0, 0, 1), (0, 1, 2))",
+    "(3, (0, 0, 1), (1, 0, 2))"
+   ],
+   [
+    "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+   ],
+   [
+    "(3, (0, 0, 1), (1, 1, 2))"
+   ],
+   [
+    "(3, (0, 0, 3))"
+   ]
+  ],
+  "mirror_pairs": [
+   {
+    "arena_fiber": 972,
+    "gluings": 486,
+    "mirror": "(2, (0, 0, 1), (1, 0, 1))",
+    "mirror_gluings": 486,
+    "type": "(2, (0, 0, 1), (0, 1, 1))"
+   },
+   {
+    "arena_fiber": 972,
+    "gluings": 486,
+    "mirror": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+    "mirror_gluings": 486,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+   },
+   {
+    "arena_fiber": 17496,
+    "gluings": 8748,
+    "mirror": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+    "mirror_gluings": 8748,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+   },
+   {
+    "arena_fiber": 1944,
+    "gluings": 972,
+    "mirror": "(3, (0, 0, 1), (1, 0, 2))",
+    "mirror_gluings": 972,
+    "type": "(3, (0, 0, 1), (0, 1, 2))"
+   }
+  ],
+  "types": 16
+ },
  "arrangement_free": {
+  "all_realise_one_arena": true,
   "alt_events": 48,
   "alt_pairs": 27,
   "isomorphic": true,
-  "saturating_partitions": 36
+  "ordered_arrangement_triples": 72,
+  "partitions_into_triples": 280,
+  "saturating_partitions": 36,
+  "unordered_arrangement_triples": 12
  },
+ "carrier_axis": [
+  {
+   "carrier": "BARE",
+   "individuation": "SIMPLE",
+   "site_objects": "ACTOR",
+   "target": "the amalgam, SIMPLE"
+  },
+  {
+   "carrier": "EXT-PAIR",
+   "individuation": "SIMPLE",
+   "site_objects": "ACTOR + CO-DIVISION PAIR",
+   "target": "the amalgam's subdivision, SIMPLE"
+  },
+  {
+   "carrier": "EXT-INCIDENCE",
+   "individuation": "CHARTED",
+   "site_objects": "ACTOR + CO-DIVISION INCIDENCE",
+   "target": "the amalgam's subdivision, CHARTED"
+  }
+ ],
+ "choice_inventory": [
+  {
+   "binds": "paper-19's, driven",
+   "class": "forced",
+   "fiber": "1",
+   "item": "the base object: two CONFLICT-GRID(3, 3)",
+   "n": 1
+  },
+  {
+   "binds": "section 2.4",
+   "class": "measured",
+   "fiber": "1",
+   "item": "the saturating arrangement per sector",
+   "n": 2
+  },
+  {
+   "binds": "the constructor's own naming",
+   "class": "forced",
+   "fiber": "1",
+   "item": "the site carrier: actors to the lattice",
+   "n": 3
+  },
+  {
+   "binds": "d42b1 driven directly",
+   "class": "forced",
+   "fiber": "1",
+   "item": "admissibility: the layer's own menu",
+   "n": 4
+  },
+  {
+   "binds": "HA, matched verbatim",
+   "class": "forced",
+   "fiber": "1",
+   "item": "the I7 readout",
+   "n": 5
+  },
+  {
+   "binds": "section 2.1",
+   "class": "declared, the axis",
+   "fiber": "every member run",
+   "item": "k, and the gluing",
+   "n": 6
+  },
+  {
+   "binds": "both driven, section 3.2",
+   "class": "declared",
+   "fiber": "2",
+   "item": "the seed rule",
+   "n": 7
+  },
+  {
+   "binds": "sections 4.3 and 6.1",
+   "class": "declared, VERDICT-DETERMINING for EXT-INCIDENCE and for the seam chart at a doubled site",
+   "fiber": "2",
+   "item": "the link individuation",
+   "n": 8
+  },
+  {
+   "binds": "section 2.3",
+   "class": "declared",
+   "fiber": "3",
+   "item": "the carrier",
+   "n": 9
+  },
+  {
+   "binds": "weld 2's, every row stamped",
+   "class": "declared",
+   "fiber": "2",
+   "item": "the reading",
+   "n": 10
+  },
+  {
+   "binds": "section 6.1",
+   "class": "declared",
+   "fiber": "1",
+   "item": "the seam chart: the direct-sum chart",
+   "n": 11
+  },
+  {
+   "binds": "section 3.1, two routes",
+   "class": "measured",
+   "fiber": "1",
+   "item": "I-SITE-ASSIGNMENT",
+   "n": 12
+  },
+  {
+   "binds": "section 4.2",
+   "class": "measured",
+   "fiber": "1 or 9",
+   "item": "I-DIRECTION-LABEL",
+   "n": 13
+  },
+  {
+   "binds": "section 4.2",
+   "class": "measured",
+   "fiber": "1 or 4",
+   "item": "I-ORIENT",
+   "n": 14
+  },
+  {
+   "binds": "this unit's; section 6.3",
+   "class": "free",
+   "fiber": "--",
+   "item": "the three cross-sector specifications",
+   "n": 15
+  },
+  {
+   "binds": "section 3.2; the abstract arena is a type invariant, section 5.2",
+   "class": "free, VERDICT-DETERMINING for the canonical-rule fate clause",
+   "fiber": "--",
+   "item": "the window's type representative",
+   "n": 16
+  }
+ ],
  "cited_not_read": [
   {
    "id": "A-LOR",
@@ -90,8 +320,8 @@
  },
  "coverage": {
   "gates": [
-   "G-SOURCES",
    "G-CITED-NOT-READ",
+   "G-SOURCES",
    "G-ANCHORS",
    "G-EXACT",
    "G-GRAMMAR-ANCHOR",
@@ -103,15 +333,25 @@
    "G-CLEAN-CRITERION",
    "G-FIBER-ROUTES",
    "G-AUT-ROUTES-UNION",
+   "G-DEGREE",
+   "G-ARENA-COUNT",
+   "G-TYPE-INVARIANT",
    "G-DRIVEN-EQUALS-COMBINATORIAL",
    "G-MAXHITS",
    "G-MENU-PURE",
    "G-SEED-RULE",
+   "G-SEED-PREDICATE",
+   "G-SEED-CENSUS",
    "G-DICT",
+   "G-CARRIER-FIELD",
+   "G-STRUCT-INHERITED",
+   "G-REPRESENTATIVE-ROWS",
    "G-CONTROLS",
    "G-GLUING-FIBER",
+   "G-SEAM-CONFINED",
    "G-SEAM-RANK",
    "G-SEAM-WITNESS",
+   "G-SEAM-ALL-SITES",
    "G-SEAM-CROSS-ALGEBRA",
    "G-CROSS",
    "G-FORCED-OVERLAP",
@@ -121,11 +361,18 @@
    "G-WALL-NAMED",
    "G-WALL-SCAN",
    "G-VERDICT-RECON",
+   "G-OVERLAP-RECON",
+   "G-OVERLAP-CONTROLS",
+   "G-PAPER-SPELLED",
    "G-PAPER-CLAIMS",
+   "G-PAPER-TABLES",
+   "G-PAPER-ROWSET",
+   "G-PAPER-QUOTES",
+   "G-PAPER-REFERENTS",
    "G-PAPER-COVERAGE",
    "G-PAPER-FENCE",
    "G-PAPER-POLARITY",
-   "G-PAPER-SPELLED"
+   "G-DECLARED-STANDARDS"
   ],
   "mutant_map": [
    {
@@ -270,7 +517,7 @@
    },
    {
     "declared_later": false,
-    "description": "writes a boost reading into the measurement layer",
+    "description": "writes one of the scanned barred terms into the measurement layer",
     "gate": "G-WALL-SCAN",
     "gate_reached": true,
     "mutant": "MUT-WALL-SCAN"
@@ -295,6 +542,41 @@
     "gate": "G-PAPER-CLAIMS",
     "gate_reached": true,
     "mutant": "MUT-PAPER-TABLE"
+   },
+   {
+    "declared_later": false,
+    "description": "flips the VERDICT WORD of a compatibility-census row in the paper, COMPATIBLE to SEAM-DEFORMED",
+    "gate": "G-PAPER-CLAIMS",
+    "gate_reached": true,
+    "mutant": "MUT-PAPER-COMPAT"
+   },
+   {
+    "declared_later": true,
+    "description": "points one verbatim anchor at a gate this run never emits",
+    "gate": "G-ANCHOR-CONSUMERS",
+    "gate_reached": false,
+    "mutant": "MUT-ANCHOR-CONSUMER"
+   },
+   {
+    "declared_later": false,
+    "description": "appends a STRAY data row nobody rendered to a real table in the paper",
+    "gate": "G-PAPER-ROWSET",
+    "gate_reached": true,
+    "mutant": "MUT-PAPER-ROWSET"
+   },
+   {
+    "declared_later": false,
+    "description": "publishes an object-under-test name the read register does not carry",
+    "gate": "G-SOURCES",
+    "gate_reached": true,
+    "mutant": "MUT-PAPER-NAME"
+   },
+   {
+    "declared_later": false,
+    "description": "stamps a fraction collection the paper never names",
+    "gate": "G-DECLARED-STANDARDS",
+    "gate_reached": true,
+    "mutant": "MUT-STAMP-NAME"
    },
    {
     "declared_later": false,
@@ -337,27 +619,217 @@
     "gate": "G-SEAL-COMPLETE",
     "gate_reached": false,
     "mutant": "MUT-SEAL-DROP"
+   },
+   {
+    "declared_later": false,
+    "description": "takes an undeclared repository read at the run's own I/O accessor",
+    "gate": "G-SOURCES",
+    "gate_reached": true,
+    "mutant": "MUT-STRAY-READ"
+   },
+   {
+    "declared_later": false,
+    "description": "forges one seam-confinement row, reporting a moved cell that touches an unshared actor",
+    "gate": "G-SEAM-CONFINED",
+    "gate_reached": true,
+    "mutant": "MUT-SEAM-CONFINED"
+   },
+   {
+    "declared_later": false,
+    "description": "moves the induced count field on one extended-carrier row",
+    "gate": "G-CARRIER-FIELD",
+    "gate_reached": true,
+    "mutant": "MUT-CARRIER-FIELD"
+   },
+   {
+    "declared_later": false,
+    "description": "forges one type's shared-actor degree",
+    "gate": "G-DEGREE",
+    "gate_reached": true,
+    "mutant": "MUT-DEGREE"
+   },
+   {
+    "declared_later": false,
+    "description": "forges the union-arena isomorphism classes",
+    "gate": "G-ARENA-COUNT",
+    "gate_reached": true,
+    "mutant": "MUT-ARENA-COUNT"
+   },
+   {
+    "declared_later": false,
+    "description": "poisons one sampled member's abstract union arena",
+    "gate": "G-TYPE-INVARIANT",
+    "gate_reached": true,
+    "mutant": "MUT-TYPE-INVARIANT"
+   },
+   {
+    "declared_later": false,
+    "description": "flips one off-window validation record's predicted fate",
+    "gate": "G-SEED-PREDICATE",
+    "gate_reached": true,
+    "mutant": "MUT-SEED-PREDICATE"
+   },
+   {
+    "declared_later": false,
+    "description": "forges the representative-relative spread of the chart-borne fibers",
+    "gate": "G-REPRESENTATIVE-ROWS",
+    "gate_reached": true,
+    "mutant": "MUT-REP-SPREAD"
+   },
+   {
+    "declared_later": false,
+    "description": "forges the per-site seam profile's spread inside the type",
+    "gate": "G-REPRESENTATIVE-ROWS",
+    "gate_reached": true,
+    "mutant": "MUT-SEAM-PROFILE-SPREAD"
+   },
+   {
+    "declared_later": false,
+    "description": "misreports one shared site's seam kernel in the all-sites census",
+    "gate": "G-SEAM-ALL-SITES",
+    "gate_reached": true,
+    "mutant": "MUT-SEAM-SITES"
+   },
+   {
+    "declared_later": false,
+    "description": "drops one admissible arrangement triple from the exhaustion",
+    "gate": "G-ARRANGEMENT-FREE",
+    "gate_reached": true,
+    "mutant": "MUT-ARRANGEMENT-ALL"
+   },
+   {
+    "declared_later": false,
+    "description": "forges the overlap comparator's outcome word",
+    "gate": "G-OVERLAP-RECON",
+    "gate_reached": true,
+    "mutant": "MUT-OVERLAP-WORD"
+   },
+   {
+    "declared_later": false,
+    "description": "forges one control family's emitted outcome word",
+    "gate": "G-OVERLAP-CONTROLS",
+    "gate_reached": true,
+    "mutant": "MUT-CONTROL-ARM"
+   },
+   {
+    "declared_later": false,
+    "description": "breaks the union-is-the-amalgam's-incidence identity on one type",
+    "gate": "G-STRUCT-INHERITED",
+    "gate_reached": true,
+    "mutant": "MUT-STRUCT-INHERIT"
+   },
+   {
+    "declared_later": false,
+    "description": "forges one shared-rule window fate",
+    "gate": "G-SEED-RULE",
+    "gate_reached": true,
+    "mutant": "MUT-SEED-FATE"
+   },
+   {
+    "declared_later": false,
+    "description": "forges one declared dead arm's fate",
+    "gate": "G-CONTROLS",
+    "gate_reached": true,
+    "mutant": "MUT-DEAD-FATE"
+   },
+   {
+    "declared_later": false,
+    "description": "moves one kernel of the cross-link ladder",
+    "gate": "G-SEAM-CROSS-ALGEBRA",
+    "gate_reached": true,
+    "mutant": "MUT-CROSS-ALGEBRA"
+   },
+   {
+    "declared_later": false,
+    "description": "flattens the contrast against the sterile arm",
+    "gate": "G-CONTRAST",
+    "gate_reached": true,
+    "mutant": "MUT-CONTRAST"
+   },
+   {
+    "declared_later": false,
+    "description": "poisons the union census's second automorphism route",
+    "gate": "G-AUT-ROUTES-UNION",
+    "gate_reached": true,
+    "mutant": "MUT-AUT-ROUTE-UNION"
+   },
+   {
+    "declared_later": false,
+    "description": "swaps two column labels of a published table header",
+    "gate": "G-PAPER-TABLES",
+    "gate_reached": true,
+    "mutant": "MUT-PAPER-HEADER"
+   },
+   {
+    "declared_later": false,
+    "description": "hides a forged head in a fenced block whose info string carries a non-letter",
+    "gate": "G-PAPER-FENCE",
+    "gate_reached": true,
+    "mutant": "MUT-PAPER-FENCE-INFO"
+   },
+   {
+    "declared_later": false,
+    "description": "moves a paper numeral that is followed by a period",
+    "gate": "G-PAPER-COVERAGE",
+    "gate_reached": true,
+    "mutant": "MUT-PAPER-PERIOD"
+   },
+   {
+    "declared_later": false,
+    "description": "inverts a direction-bearing headline sentence of the paper",
+    "gate": "G-PAPER-POLARITY",
+    "gate_reached": true,
+    "mutant": "MUT-PAPER-DIRECTION"
+   },
+   {
+    "declared_later": false,
+    "description": "inverts a source sentence the paper quotes",
+    "gate": "G-PAPER-QUOTES",
+    "gate_reached": true,
+    "mutant": "MUT-PAPER-QUOTE"
+   },
+   {
+    "declared_later": true,
+    "description": "moves a sealed value between its gate and the write",
+    "gate": "G-SEAL-VERIFIED",
+    "gate_reached": false,
+    "mutant": "MUT-SEAL-FORGE"
+   },
+   {
+    "declared_later": true,
+    "description": "hands the writer a sweep row set that is not this run's own",
+    "gate": "G-SWEEP-EXECUTED",
+    "gate_reached": false,
+    "mutant": "MUT-SWEEP-FORGE"
+   },
+   {
+    "declared_later": true,
+    "description": "writes a barred reading into a receipt key that did not exist when the in-run wall gate ran",
+    "gate": "G-WALL-TOTAL",
+    "gate_reached": false,
+    "mutant": "MUT-WALL-TOTAL"
+   },
+   {
+    "declared_later": false,
+    "description": "forges one type's shared-rule seed-carry count",
+    "gate": "G-SEED-CENSUS",
+    "gate_reached": true,
+    "mutant": "MUT-SEED-CENSUS"
+   },
+   {
+    "declared_later": false,
+    "description": "plants a sentence whose numerals are each in the registry and each false of the noun it precedes",
+    "gate": "G-PAPER-REFERENTS",
+    "gate_reached": true,
+    "mutant": "MUT-PAPER-REFERENT"
    }
   ],
   "waivers": {
-   "G-ANCHORS": "falsified by MUT-ANCHOR-TEXT",
-   "G-ARRANGEMENT-FREE": "waived with a forcing: the alternative arrangement is SEARCHED FOR rather than typed, so a run in which no non-collinear saturating triple exists fails at the search rather than at the gate",
-   "G-AUT-ROUTES-UNION": "falsified by MUT-AUT-ROUTE, which poisons the second automorphism route the gate compares",
-   "G-CONTRAST": "falsified by MUT-STERILITY, which breaks the direct-sum identity the contrast is taken against",
-   "G-CONTROLS": "falsified by MUT-DICT-FATE, which forges a fate in the same detector these rows come from",
    "G-COVERAGE": "waived with a forcing: a mutant of the coverage gate would be a mutant of the mutant registry, and the registry is compared against the run's own evaluated ledger",
    "G-DECLARED-LATER": "waived with a forcing: the gate discharges the coverage gate's own declared-later promise, and a mutant of it would be a mutant of the ledger it reads",
-   "G-DRIVEN-EQUALS-COMBINATORIAL": "falsified by MUT-DRIVEN-EQ",
-   "G-EXACT": "a mutant that introduced a float would have to be a float, and the AST scan is the falsifier of its own object; the gate's other value is exercised by G-EXACT's own scan of the receipt's types",
-   "G-GLUING-CENSUS": "falsified by MUT-TYPE-COUNT",
-   "G-INTEGRITY": "waived with a forcing: the integrity gate compares disk bytes against the gate-time seal after a deliberately corrupted probe has been shown to be detected in the same run",
-   "G-MAXHITS": "waived with a forcing: every event is specified by its full tuple, at most one candidate can match, and the under-specified control is paper-19's committed measurement (maxhits 7) which this unit cites and does not re-run",
-   "G-MENU-PURE": "falsified by MUT-MENU-MEMO",
-   "G-PAPER-CLAIMS": "falsified by MUT-PAPER-TABLE, which swaps two data cells of a published table row in the object under test",
-   "G-SEAM-CROSS-ALGEBRA": "falsified by MUT-SEAM-RANK, which misreports the rank of the same exact system",
-   "G-SEED-RULE": "falsified by MUT-MENU-MEMO, which changes what the committed menu offers and so moves the refusal set",
-   "G-SOURCES": "falsified by MUT-ANCHOR-DIGEST and by --break-anchor",
-   "G-SWEEP-EXECUTED": "waived with a forcing: the sweep gate is the binding itself; it is re-taken at the integrity gate, so a run reaching the writer without a sweep dies twice"
+   "G-EXACT": "waived with a forcing: a mutant that introduced a float would have to BE a float, and the AST scan is the falsifier of its own object; the same scan's open-call-site leg is exercised by MUT-STRAY-READ, which takes a read the register then sees",
+   "G-INTEGRITY": "waived with a forcing: the integrity check is the write path's own comparison, and the leg that says the comparison can fail is a REAL corruption of a REAL staged file, read back through the same accessor and required to differ, in this very run -- not a constant-true expression",
+   "G-MAXHITS": "waived with a forcing: every event is specified by its full tuple, at most one candidate can match, and the under-specified control is paper-19's committed measurement (maxhits 7) which this unit cites and does not re-run"
   }
  },
  "cross_sector": [
@@ -3547,6 +4019,66 @@
   "identical": true,
   "slice_exit_free": true
  },
+ "falsifier_stump": {
+  "divisions": 2,
+  "events": 13,
+  "realised_pairs": 6,
+  "refusal": true
+ },
+ "fate_summary": [
+  {
+   "fate": "FOUND-candidate",
+   "free_items": "none",
+   "id": "01",
+   "label": 1,
+   "members": [
+    "(0,)",
+    "(1, (0, 0, 1))",
+    "(2, (0, 0, 1), (0, 1, 1))",
+    "(2, (0, 0, 1), (1, 0, 1))",
+    "(2, (0, 0, 2))",
+    "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+    "(3, (0, 0, 1), (0, 1, 2))",
+    "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+    "(3, (0, 0, 1), (1, 0, 2))",
+    "(3, (0, 0, 3))"
+   ],
+   "of": 16,
+   "orient": 1,
+   "site": 1,
+   "types": 10
+  },
+  {
+   "fate": "UNMOTIVATED",
+   "free_items": "I-DIRECTION-LABEL, I-ORIENT",
+   "id": "02",
+   "label": 9,
+   "members": [
+    "(2, (0, 0, 1), (1, 1, 1))",
+    "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+    "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+    "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+    "(3, (0, 0, 1), (1, 1, 2))"
+   ],
+   "of": 16,
+   "orient": 4,
+   "site": 1,
+   "types": 5
+  },
+  {
+   "fate": "UNMOTIVATED",
+   "free_items": "I-DIRECTION-LABEL",
+   "id": "03",
+   "label": 9,
+   "members": [
+    "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+   ],
+   "of": 16,
+   "orient": 1,
+   "site": 1,
+   "types": 1
+  }
+ ],
  "forced_overlap": {
   "k_with_a_non_welding_type": [
    2,
@@ -3707,118 +4239,166 @@
   "total_gluings": 45010,
   "welding_gluings": 4186
  },
- "gate_count": 37,
+ "gate_count": 60,
  "gluing_fiber": {
   "compatibility": [
    {
     "cells_where_union_differs_from_sector": 0,
     "compatible": true,
+    "differing_cells_with_both_endpoints_shared": 0,
     "k": 0,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 0,
     "type": "(0,)"
    },
    {
     "cells_where_union_differs_from_sector": 0,
     "compatible": true,
+    "differing_cells_with_both_endpoints_shared": 0,
     "k": 1,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 6,
     "type": "(1, (0, 0, 1))"
    },
    {
     "cells_where_union_differs_from_sector": 0,
     "compatible": true,
+    "differing_cells_with_both_endpoints_shared": 0,
     "k": 2,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 12,
     "type": "(2, (0, 0, 1), (0, 1, 1))"
    },
    {
     "cells_where_union_differs_from_sector": 0,
     "compatible": true,
+    "differing_cells_with_both_endpoints_shared": 0,
     "k": 2,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 12,
     "type": "(2, (0, 0, 1), (1, 0, 1))"
    },
    {
     "cells_where_union_differs_from_sector": 2,
     "compatible": false,
+    "differing_cells_with_both_endpoints_shared": 2,
     "k": 2,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 12,
     "type": "(2, (0, 0, 1), (1, 1, 1))"
    },
    {
     "cells_where_union_differs_from_sector": 0,
     "compatible": true,
+    "differing_cells_with_both_endpoints_shared": 0,
     "k": 2,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 12,
     "type": "(2, (0, 0, 2))"
    },
    {
     "cells_where_union_differs_from_sector": 0,
     "compatible": true,
+    "differing_cells_with_both_endpoints_shared": 0,
     "k": 3,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 18,
     "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
    },
    {
     "cells_where_union_differs_from_sector": 2,
     "compatible": false,
+    "differing_cells_with_both_endpoints_shared": 2,
     "k": 3,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 18,
     "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
    },
    {
     "cells_where_union_differs_from_sector": 4,
     "compatible": false,
+    "differing_cells_with_both_endpoints_shared": 4,
     "k": 3,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 18,
     "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
    },
    {
     "cells_where_union_differs_from_sector": 0,
     "compatible": true,
+    "differing_cells_with_both_endpoints_shared": 0,
     "k": 3,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 18,
     "type": "(3, (0, 0, 1), (0, 1, 2))"
    },
    {
     "cells_where_union_differs_from_sector": 0,
     "compatible": true,
+    "differing_cells_with_both_endpoints_shared": 0,
     "k": 3,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 18,
     "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
    },
    {
     "cells_where_union_differs_from_sector": 4,
     "compatible": false,
+    "differing_cells_with_both_endpoints_shared": 4,
     "k": 3,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 18,
     "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
    },
    {
     "cells_where_union_differs_from_sector": 0,
     "compatible": true,
+    "differing_cells_with_both_endpoints_shared": 0,
     "k": 3,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 18,
     "type": "(3, (0, 0, 1), (1, 0, 2))"
    },
    {
     "cells_where_union_differs_from_sector": 6,
     "compatible": false,
+    "differing_cells_with_both_endpoints_shared": 6,
     "k": 3,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 18,
     "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
    },
    {
     "cells_where_union_differs_from_sector": 4,
     "compatible": false,
+    "differing_cells_with_both_endpoints_shared": 4,
     "k": 3,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 18,
     "type": "(3, (0, 0, 1), (1, 1, 2))"
    },
    {
     "cells_where_union_differs_from_sector": 0,
     "compatible": true,
+    "differing_cells_with_both_endpoints_shared": 0,
     "k": 3,
+    "pairs_off_count_1_touching_an_unshared_actor": 0,
+    "reading": "FIXED-ATTRIBUTION",
     "shared_cells": 18,
     "type": "(3, (0, 0, 3))"
    }
@@ -3841,7 +4421,9 @@
    "(3, (0, 0, 1), (1, 1, 2))": 5832,
    "(3, (0, 0, 3))": 54
   },
+  "reading": "FIXED-ATTRIBUTION",
   "total_gluings": 45010,
+  "transported_reading": "not posed: no relabelling carrying the union's cells to a sector's is declared, and the two objects do not share an automorphism group",
   "types": 16
  },
  "gluing_totals": {
@@ -3864,192 +4446,307 @@
  },
  "ledger": [
   {
-   "chain": "7203ce45ced7c482",
-   "gate": "G-SOURCES",
-   "ok": true
-  },
-  {
-   "chain": "be2d66e69fc7c856",
+   "chain": "83ba1bf2e2a3d267",
    "gate": "G-CITED-NOT-READ",
    "ok": true
   },
   {
-   "chain": "7daa5b0bdb265c35",
+   "chain": "86b6e657042bc437",
+   "gate": "G-SOURCES",
+   "ok": true
+  },
+  {
+   "chain": "e5f22521258757d4",
    "gate": "G-ANCHORS",
    "ok": true
   },
   {
-   "chain": "c27294b03d5ea2cd",
+   "chain": "02abd15d7e45930f",
    "gate": "G-EXACT",
    "ok": true
   },
   {
-   "chain": "0402546caa922d21",
+   "chain": "b866ea3a68fb9760",
    "gate": "G-GRAMMAR-ANCHOR",
    "ok": true
   },
   {
-   "chain": "93c10dc4415786a1",
+   "chain": "2588458e167e1059",
    "gate": "G-SECTOR",
    "ok": true
   },
   {
-   "chain": "5c5db0d74b57a7d9",
+   "chain": "4b28adf8005fa0b6",
    "gate": "G-SECTOR-WELD",
    "ok": true
   },
   {
-   "chain": "db8ee05e29e25b88",
+   "chain": "e3cec58d074d6ff9",
    "gate": "G-AUT-ROUTES",
    "ok": true
   },
   {
-   "chain": "1158ee38b20960ae",
+   "chain": "3c110e65f81f20b2",
    "gate": "G-ARRANGEMENT-FREE",
    "ok": true
   },
   {
-   "chain": "8c6eedc20f4828b6",
+   "chain": "f9454fa2acf1397d",
    "gate": "G-GLUING-CENSUS",
    "ok": true
   },
   {
-   "chain": "c4227a72d94a59ed",
+   "chain": "c915fb97f9631976",
    "gate": "G-CLEAN-CRITERION",
    "ok": true
   },
   {
-   "chain": "1f3f8ad277fe096c",
+   "chain": "a0db66360da0ec04",
    "gate": "G-FIBER-ROUTES",
    "ok": true
   },
   {
-   "chain": "794a505ccecf79ff",
+   "chain": "a13c1675deaa5629",
    "gate": "G-AUT-ROUTES-UNION",
    "ok": true
   },
   {
-   "chain": "67891349926da576",
+   "chain": "165ccaf2449bf31f",
+   "gate": "G-DEGREE",
+   "ok": true
+  },
+  {
+   "chain": "b44b2bef101dbe27",
+   "gate": "G-ARENA-COUNT",
+   "ok": true
+  },
+  {
+   "chain": "cd07312f2796d97e",
+   "gate": "G-TYPE-INVARIANT",
+   "ok": true
+  },
+  {
+   "chain": "4fb43bd2bc06de47",
    "gate": "G-DRIVEN-EQUALS-COMBINATORIAL",
    "ok": true
   },
   {
-   "chain": "954baa22566fbca0",
+   "chain": "ed3c5272dc149977",
    "gate": "G-MAXHITS",
    "ok": true
   },
   {
-   "chain": "cb82820de77f656a",
+   "chain": "a3c2d1b9840fb50a",
    "gate": "G-MENU-PURE",
    "ok": true
   },
   {
-   "chain": "7b96138bec12cb7e",
+   "chain": "46a2b42d4f62ff2d",
    "gate": "G-SEED-RULE",
    "ok": true
   },
   {
-   "chain": "cf7148e87326ddd7",
+   "chain": "eb9ead744c0b79c4",
+   "gate": "G-SEED-PREDICATE",
+   "ok": true
+  },
+  {
+   "chain": "50c91a3e778ec290",
+   "gate": "G-SEED-CENSUS",
+   "ok": true
+  },
+  {
+   "chain": "89cae35332e91b8e",
    "gate": "G-DICT",
    "ok": true
   },
   {
-   "chain": "0e43004487da4cf6",
+   "chain": "25153b11137ebb51",
+   "gate": "G-CARRIER-FIELD",
+   "ok": true
+  },
+  {
+   "chain": "75158b945ef38090",
+   "gate": "G-STRUCT-INHERITED",
+   "ok": true
+  },
+  {
+   "chain": "825561f7d9d2f44b",
+   "gate": "G-REPRESENTATIVE-ROWS",
+   "ok": true
+  },
+  {
+   "chain": "29d282fc5f0425bb",
    "gate": "G-CONTROLS",
    "ok": true
   },
   {
-   "chain": "fe56776ff3bb9178",
+   "chain": "e566512264f55e1b",
    "gate": "G-GLUING-FIBER",
    "ok": true
   },
   {
-   "chain": "d234667014a9eb31",
+   "chain": "2ab5319dd2691397",
+   "gate": "G-SEAM-CONFINED",
+   "ok": true
+  },
+  {
+   "chain": "b683cd46ce7281dd",
    "gate": "G-SEAM-RANK",
    "ok": true
   },
   {
-   "chain": "e6b270e560dd94d9",
+   "chain": "d52a3dc513f54f8e",
    "gate": "G-SEAM-WITNESS",
    "ok": true
   },
   {
-   "chain": "6a1683a8d17fdd6a",
+   "chain": "a1bbf579b3ea5da0",
+   "gate": "G-SEAM-ALL-SITES",
+   "ok": true
+  },
+  {
+   "chain": "51e4ad37c9790633",
    "gate": "G-SEAM-CROSS-ALGEBRA",
    "ok": true
   },
   {
-   "chain": "bbec91dde2c52dda",
+   "chain": "d41ac1ca67d8eeec",
    "gate": "G-CROSS",
    "ok": true
   },
   {
-   "chain": "48b9d370edce37c8",
+   "chain": "df08e35b6d8dca43",
    "gate": "G-FORCED-OVERLAP",
    "ok": true
   },
   {
-   "chain": "2d02c5ece62d9e4b",
+   "chain": "7e224b9cecf01a02",
    "gate": "G-STERILITY",
    "ok": true
   },
   {
-   "chain": "c50b57d626226cd1",
+   "chain": "2e5c40377ce57aba",
    "gate": "G-CONTRAST",
    "ok": true
   },
   {
-   "chain": "f2b639fbfa719b99",
+   "chain": "3bf0b03e4a4b5aa2",
    "gate": "G-WALL-L1",
    "ok": true
   },
   {
-   "chain": "8e9e1a56463707ab",
+   "chain": "e53f14d62b6d2231",
    "gate": "G-WALL-NAMED",
    "ok": true
   },
   {
-   "chain": "e5c67dae22a39f6c",
+   "chain": "ebeed18bb824c145",
    "gate": "G-WALL-SCAN",
    "ok": true
   },
   {
-   "chain": "8e8c7d493c38924f",
+   "chain": "86370c5e99d4bcd3",
    "gate": "G-VERDICT-RECON",
    "ok": true
   },
   {
-   "chain": "37132b46393f473e",
-   "gate": "G-PAPER-CLAIMS",
+   "chain": "2906f62853327c81",
+   "gate": "G-OVERLAP-RECON",
    "ok": true
   },
   {
-   "chain": "1b008eee4768d709",
-   "gate": "G-PAPER-COVERAGE",
+   "chain": "97aff25d2b6fc401",
+   "gate": "G-OVERLAP-CONTROLS",
    "ok": true
   },
   {
-   "chain": "fbb4d072d9f7018b",
-   "gate": "G-PAPER-FENCE",
-   "ok": true
-  },
-  {
-   "chain": "771dc7f8c792d240",
-   "gate": "G-PAPER-POLARITY",
-   "ok": true
-  },
-  {
-   "chain": "556212913191fb87",
+   "chain": "ce9f8baa15152b12",
    "gate": "G-PAPER-SPELLED",
    "ok": true
   },
   {
-   "chain": "f9594edb93b89943",
+   "chain": "1bddcc894e5bba77",
+   "gate": "G-PAPER-CLAIMS",
+   "ok": true
+  },
+  {
+   "chain": "0f40ae127afa6e2b",
+   "gate": "G-PAPER-TABLES",
+   "ok": true
+  },
+  {
+   "chain": "27a68ebeabb7bbae",
+   "gate": "G-PAPER-ROWSET",
+   "ok": true
+  },
+  {
+   "chain": "fae89e0a092b1a37",
+   "gate": "G-PAPER-QUOTES",
+   "ok": true
+  },
+  {
+   "chain": "bf36788ce61ec02a",
+   "gate": "G-PAPER-REFERENTS",
+   "ok": true
+  },
+  {
+   "chain": "8ec05d7db980e591",
+   "gate": "G-PAPER-COVERAGE",
+   "ok": true
+  },
+  {
+   "chain": "73bcde3584be4eb7",
+   "gate": "G-PAPER-FENCE",
+   "ok": true
+  },
+  {
+   "chain": "03fb3d8aeca87f91",
+   "gate": "G-PAPER-POLARITY",
+   "ok": true
+  },
+  {
+   "chain": "5a20b8dfad43f78c",
+   "gate": "G-DECLARED-STANDARDS",
+   "ok": true
+  },
+  {
+   "chain": "c9804235c6229522",
    "gate": "G-COVERAGE",
+   "ok": true
+  },
+  {
+   "chain": "43d3ca285104134f",
+   "gate": "G-SWEEP-EXECUTED",
+   "ok": true
+  },
+  {
+   "chain": "6dbd713d25d75ad9",
+   "gate": "G-SEAL-VERIFIED",
+   "ok": true
+  },
+  {
+   "chain": "69db76d87c35b3e9",
+   "gate": "G-WALL-TOTAL",
+   "ok": true
+  },
+  {
+   "chain": "03c75c0b0230b25f",
+   "gate": "G-SEAL-COMPLETE",
+   "ok": true
+  },
+  {
+   "chain": "6b2beb5a73805f51",
+   "gate": "G-ANCHOR-CONSUMERS",
+   "ok": true
+  },
+  {
+   "chain": "1a095e3405cd3976",
+   "gate": "G-DECLARED-LATER",
    "ok": true
   }
  ],
- "ledger_chain": "bbfdfb9f2112f96b",
+ "ledger_chain": "1a095e3405cd3976",
  "measure_stamp": {
   "declared_measure_on_the_gluing_family": null,
   "note": "each is a count over an exhaustive enumeration with its denominator published; none is a probability, and this unit declares no measure under which it could be read as one",
@@ -4057,8 +4754,8 @@
    "welding types of types",
    "welding gluings of gluings",
    "doubled-free gluings of gluings by k",
-   "FORCED window records of window records",
-   "admitted cross specifications of specifications"
+   "FORCED records of window records",
+   "admitted cross-sector specifications of specifications"
   ],
   "stamp": "COUNTING-ONLY"
  },
@@ -4208,6 +4905,36 @@
    "on_target": true
   },
   {
+   "declared": "G-PAPER-CLAIMS",
+   "died_at": "G-PAPER-CLAIMS",
+   "mutant": "MUT-PAPER-COMPAT",
+   "on_target": true
+  },
+  {
+   "declared": "G-ANCHOR-CONSUMERS",
+   "died_at": "G-ANCHOR-CONSUMERS",
+   "mutant": "MUT-ANCHOR-CONSUMER",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-ROWSET",
+   "died_at": "G-PAPER-ROWSET",
+   "mutant": "MUT-PAPER-ROWSET",
+   "on_target": true
+  },
+  {
+   "declared": "G-SOURCES",
+   "died_at": "G-SOURCES",
+   "mutant": "MUT-PAPER-NAME",
+   "on_target": true
+  },
+  {
+   "declared": "G-DECLARED-STANDARDS",
+   "died_at": "G-DECLARED-STANDARDS",
+   "mutant": "MUT-STAMP-NAME",
+   "on_target": true
+  },
+  {
    "declared": "G-PAPER-SPELLED",
    "died_at": "G-PAPER-SPELLED",
    "mutant": "MUT-PAPER-SPELLED",
@@ -4242,8 +4969,423 @@
    "died_at": "G-SEAL-COMPLETE",
    "mutant": "MUT-SEAL-DROP",
    "on_target": true
+  },
+  {
+   "declared": "G-SOURCES",
+   "died_at": "G-SOURCES",
+   "mutant": "MUT-STRAY-READ",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEAM-CONFINED",
+   "died_at": "G-SEAM-CONFINED",
+   "mutant": "MUT-SEAM-CONFINED",
+   "on_target": true
+  },
+  {
+   "declared": "G-CARRIER-FIELD",
+   "died_at": "G-CARRIER-FIELD",
+   "mutant": "MUT-CARRIER-FIELD",
+   "on_target": true
+  },
+  {
+   "declared": "G-DEGREE",
+   "died_at": "G-DEGREE",
+   "mutant": "MUT-DEGREE",
+   "on_target": true
+  },
+  {
+   "declared": "G-ARENA-COUNT",
+   "died_at": "G-ARENA-COUNT",
+   "mutant": "MUT-ARENA-COUNT",
+   "on_target": true
+  },
+  {
+   "declared": "G-TYPE-INVARIANT",
+   "died_at": "G-TYPE-INVARIANT",
+   "mutant": "MUT-TYPE-INVARIANT",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEED-PREDICATE",
+   "died_at": "G-SEED-PREDICATE",
+   "mutant": "MUT-SEED-PREDICATE",
+   "on_target": true
+  },
+  {
+   "declared": "G-REPRESENTATIVE-ROWS",
+   "died_at": "G-REPRESENTATIVE-ROWS",
+   "mutant": "MUT-REP-SPREAD",
+   "on_target": true
+  },
+  {
+   "declared": "G-REPRESENTATIVE-ROWS",
+   "died_at": "G-REPRESENTATIVE-ROWS",
+   "mutant": "MUT-SEAM-PROFILE-SPREAD",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEAM-ALL-SITES",
+   "died_at": "G-SEAM-ALL-SITES",
+   "mutant": "MUT-SEAM-SITES",
+   "on_target": true
+  },
+  {
+   "declared": "G-ARRANGEMENT-FREE",
+   "died_at": "G-ARRANGEMENT-FREE",
+   "mutant": "MUT-ARRANGEMENT-ALL",
+   "on_target": true
+  },
+  {
+   "declared": "G-OVERLAP-RECON",
+   "died_at": "G-OVERLAP-RECON",
+   "mutant": "MUT-OVERLAP-WORD",
+   "on_target": true
+  },
+  {
+   "declared": "G-OVERLAP-CONTROLS",
+   "died_at": "G-OVERLAP-CONTROLS",
+   "mutant": "MUT-CONTROL-ARM",
+   "on_target": true
+  },
+  {
+   "declared": "G-STRUCT-INHERITED",
+   "died_at": "G-STRUCT-INHERITED",
+   "mutant": "MUT-STRUCT-INHERIT",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEED-RULE",
+   "died_at": "G-SEED-RULE",
+   "mutant": "MUT-SEED-FATE",
+   "on_target": true
+  },
+  {
+   "declared": "G-CONTROLS",
+   "died_at": "G-CONTROLS",
+   "mutant": "MUT-DEAD-FATE",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEAM-CROSS-ALGEBRA",
+   "died_at": "G-SEAM-CROSS-ALGEBRA",
+   "mutant": "MUT-CROSS-ALGEBRA",
+   "on_target": true
+  },
+  {
+   "declared": "G-CONTRAST",
+   "died_at": "G-CONTRAST",
+   "mutant": "MUT-CONTRAST",
+   "on_target": true
+  },
+  {
+   "declared": "G-AUT-ROUTES-UNION",
+   "died_at": "G-AUT-ROUTES-UNION",
+   "mutant": "MUT-AUT-ROUTE-UNION",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-TABLES",
+   "died_at": "G-PAPER-TABLES",
+   "mutant": "MUT-PAPER-HEADER",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-FENCE",
+   "died_at": "G-PAPER-FENCE",
+   "mutant": "MUT-PAPER-FENCE-INFO",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-COVERAGE",
+   "died_at": "G-PAPER-COVERAGE",
+   "mutant": "MUT-PAPER-PERIOD",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-POLARITY",
+   "died_at": "G-PAPER-POLARITY",
+   "mutant": "MUT-PAPER-DIRECTION",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-QUOTES",
+   "died_at": "G-PAPER-QUOTES",
+   "mutant": "MUT-PAPER-QUOTE",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEAL-VERIFIED",
+   "died_at": "G-SEAL-VERIFIED",
+   "mutant": "MUT-SEAL-FORGE",
+   "on_target": true
+  },
+  {
+   "declared": "G-SWEEP-EXECUTED",
+   "died_at": "G-SWEEP-EXECUTED",
+   "mutant": "MUT-SWEEP-FORGE",
+   "on_target": true
+  },
+  {
+   "declared": "G-WALL-TOTAL",
+   "died_at": "G-WALL-TOTAL",
+   "mutant": "MUT-WALL-TOTAL",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEED-CENSUS",
+   "died_at": "G-SEED-CENSUS",
+   "mutant": "MUT-SEED-CENSUS",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-REFERENTS",
+   "died_at": "G-PAPER-REFERENTS",
+   "mutant": "MUT-PAPER-REFERENT",
+   "on_target": true
   }
  ],
+ "off_window": [
+  {
+   "divisions": 11,
+   "driven_equals_combinatorial": null,
+   "events": 57,
+   "fate": "REFUSED",
+   "member": "LAST",
+   "predicted": "REFUSED",
+   "representative_fate": "FORCED",
+   "seed_rule": "first",
+   "type": "(1, (0, 0, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "member": "LAST",
+   "predicted": "FORCED",
+   "representative_fate": "FORCED",
+   "seed_rule": "shared",
+   "type": "(1, (0, 0, 1))"
+  },
+  {
+   "divisions": 11,
+   "driven_equals_combinatorial": null,
+   "events": 58,
+   "fate": "REFUSED",
+   "member": "LAST",
+   "predicted": "REFUSED",
+   "representative_fate": "FORCED",
+   "seed_rule": "first",
+   "type": "(2, (0, 0, 1), (0, 1, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "member": "LAST",
+   "predicted": "FORCED",
+   "representative_fate": "FORCED",
+   "seed_rule": "shared",
+   "type": "(2, (0, 0, 1), (0, 1, 1))"
+  },
+  {
+   "divisions": 11,
+   "driven_equals_combinatorial": null,
+   "events": 58,
+   "fate": "REFUSED",
+   "member": "LAST",
+   "predicted": "REFUSED",
+   "representative_fate": "FORCED",
+   "seed_rule": "first",
+   "type": "(2, (0, 0, 1), (1, 1, 1))"
+  },
+  {
+   "divisions": 18,
+   "driven_equals_combinatorial": true,
+   "events": 98,
+   "fate": "FORCED",
+   "member": "LAST",
+   "predicted": "FORCED",
+   "representative_fate": "FORCED",
+   "seed_rule": "shared",
+   "type": "(2, (0, 0, 1), (1, 1, 1))"
+  }
+ ],
+ "overlap_comparator": {
+  "arms": [
+   {
+    "arm": "ARM-REAL-FAMILY",
+    "family": "every type of the family",
+    "k_values": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "types": 16,
+    "welding_types": 10,
+    "word": "SEC-OVERLAP-TYPE-SELECTED-NOT-k-SELECTED"
+   },
+   {
+    "arm": "ARM-K-SELECTED",
+    "family": "the k <= 1 types together with the doubled types -- a family whose welding and non-welding k-classes do not meet",
+    "k_values": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "types": 8,
+    "welding_types": 2,
+    "word": "SEC-K-SELECTED"
+   },
+   {
+    "arm": "ARM-NONE-WELDS",
+    "family": "the doubled types alone",
+    "k_values": [
+     2,
+     3
+    ],
+    "types": 6,
+    "welding_types": 0,
+    "word": "SEC-NEVER-WELDS"
+   },
+   {
+    "arm": "ARM-EVERY-TYPE-WELDS",
+    "family": "the doubled-free types alone",
+    "k_values": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "types": 10,
+    "welding_types": 10,
+    "word": "SEC-OVERLAP-EVERY-TYPE-WELDS"
+   }
+  ],
+  "fresh_rows": [
+   {
+    "doubled_free": true,
+    "gluings": 1,
+    "k": 0,
+    "type": "(0,)",
+    "welds": true
+   },
+   {
+    "doubled_free": true,
+    "gluings": 81,
+    "k": 1,
+    "type": "(1, (0, 0, 1))",
+    "welds": true
+   },
+   {
+    "doubled_free": true,
+    "gluings": 486,
+    "k": 2,
+    "type": "(2, (0, 0, 1), (0, 1, 1))",
+    "welds": true
+   },
+   {
+    "doubled_free": true,
+    "gluings": 486,
+    "k": 2,
+    "type": "(2, (0, 0, 1), (1, 0, 1))",
+    "welds": true
+   },
+   {
+    "doubled_free": false,
+    "gluings": 1458,
+    "k": 2,
+    "type": "(2, (0, 0, 1), (1, 1, 1))",
+    "welds": false
+   },
+   {
+    "doubled_free": true,
+    "gluings": 162,
+    "k": 2,
+    "type": "(2, (0, 0, 2))",
+    "welds": true
+   },
+   {
+    "doubled_free": true,
+    "gluings": 486,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+    "welds": true
+   },
+   {
+    "doubled_free": false,
+    "gluings": 11664,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+    "welds": false
+   },
+   {
+    "doubled_free": false,
+    "gluings": 8748,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+    "welds": false
+   },
+   {
+    "doubled_free": true,
+    "gluings": 972,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (0, 1, 2))",
+    "welds": true
+   },
+   {
+    "doubled_free": true,
+    "gluings": 486,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+    "welds": true
+   },
+   {
+    "doubled_free": false,
+    "gluings": 8748,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+    "welds": false
+   },
+   {
+    "doubled_free": true,
+    "gluings": 972,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (1, 0, 2))",
+    "welds": true
+   },
+   {
+    "doubled_free": false,
+    "gluings": 4374,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+    "welds": false
+   },
+   {
+    "doubled_free": false,
+    "gluings": 5832,
+    "k": 3,
+    "type": "(3, (0, 0, 1), (1, 1, 2))",
+    "welds": false
+   },
+   {
+    "doubled_free": true,
+    "gluings": 54,
+    "k": 3,
+    "type": "(3, (0, 0, 3))",
+    "welds": true
+   }
+  ],
+  "head_word": "SEC-OVERLAP-TYPE-SELECTED-NOT-k-SELECTED",
+  "hypotheses": [
+   "k-SELECTED: the set of k carrying a welding type and the set carrying a non-welding type are disjoint",
+   "ALIGNMENT: a type welds exactly when no shared pair is adjacent in both sectors"
+  ]
+ },
  "paper": "v14/paper-32-sec.md",
  "paper_claims": [
   {
@@ -4276,7 +5418,87 @@
   },
   {
    "id": "C08",
-   "text": "at k = 3 the aligned type carries 2970 of the 42336 gluings"
+   "text": "at k = 3 the criterion is met by 2970 of the 42336 gluings"
+  },
+  {
+   "id": "C09",
+   "text": "15 sources are read at run time"
+  },
+  {
+   "id": "C10",
+   "text": "64 declared mutants"
+  },
+  {
+   "id": "C11",
+   "text": "the 16 types carry 12 union arenas up to isomorphism"
+  },
+  {
+   "id": "C12",
+   "text": "no pair carrying a count other than 1 touches an unshared actor at any of the 16 types"
+  },
+  {
+   "id": "C13",
+   "text": "the seam system is solved at every one of the 39 shared sites of the 16 type representatives"
+  },
+  {
+   "id": "C14",
+   "text": "The record fixes six of the ten entries of the seam's form"
+  },
+  {
+   "id": "C15",
+   "text": "realise fifty-four pairs between them"
+  },
+  {
+   "id": "C16",
+   "text": "the union carries six links: three of the A-chart and three of the B-chart"
+  },
+  {
+   "id": "C23",
+   "text": "the (I-DIRECTION-LABEL, I-ORIENT) pair takes more than one value at 4 of the 16 types"
+  },
+  {
+   "id": "C25",
+   "text": "the per-site seam profile takes more than one value at 6 of the 16 types"
+  },
+  {
+   "id": "C24",
+   "text": "a declared sample of up to twelve of its gluings"
+  },
+  {
+   "id": "C18",
+   "text": "the union welds -- zero free items -- at 10 of them, which are 4186 of the 45010 gluings"
+  },
+  {
+   "id": "C19",
+   "text": "canonical rule refuses at 6 of the 16 driven window records; the shared-seed rule drives all 16"
+  },
+  {
+   "id": "C20",
+   "text": "the driven and combinatorial routes agree at 26 of 26 FORCED window records"
+  },
+  {
+   "id": "C21",
+   "text": "the drive itself is run at 38 records"
+  },
+  {
+   "id": "C22",
+   "text": "item 16 chooses which gluing of a type is driven"
+  },
+  {
+   "id": "C17",
+   "text": "one sector runs to 48 events with 9 division events, its link field is 1 at all 27 of 27 cells, det = 3/4 at all nine sites and the form is positive definite at 9 of 9"
+  },
+  {
+   "id": "T-CARRIER-BARE",
+   "text": "| `BARE` | ACTOR | the amalgam, SIMPLE |"
+  },
+  {
+   "id": "T-CARRIER-EXT-PAIR",
+   "text": "| `EXT-PAIR` | ACTOR + CO-DIVISION PAIR | the amalgam's subdivision, SIMPLE |"
+  },
+  {
+   "id": "T-CARRIER-EXT-INCIDENCE",
+   "text": "| `EXT-INCIDENCE` | ACTOR + CO-DIVISION INCIDENCE | the amalgam's subdivision, CHARTED |"
   },
   {
    "id": "T-CENSUS-(0,)",
@@ -4341,70 +5563,6 @@
   {
    "id": "T-CENSUS-(3, (0, 0, 3))",
    "text": "| `(3, (0, 0, 3))` | 54 | 15 | 54 | 0 | 62208 | 62208 | 1 |"
-  },
-  {
-   "id": "T-OVERLAP-(0,)",
-   "text": "| `(0,)` | 0 | 1 | 0 | FOUND-candidate | YES |"
-  },
-  {
-   "id": "T-OVERLAP-(1, (0, 0, 1))",
-   "text": "| `(1, (0, 0, 1))` | 1 | 81 | 0 | FOUND-candidate | YES |"
-  },
-  {
-   "id": "T-OVERLAP-(2, (0, 0, 1), (0, 1, 1))",
-   "text": "| `(2, (0, 0, 1), (0, 1, 1))` | 2 | 486 | 0 | FOUND-candidate | YES |"
-  },
-  {
-   "id": "T-OVERLAP-(2, (0, 0, 1), (1, 0, 1))",
-   "text": "| `(2, (0, 0, 1), (1, 0, 1))` | 2 | 486 | 0 | FOUND-candidate | YES |"
-  },
-  {
-   "id": "T-OVERLAP-(2, (0, 0, 1), (1, 1, 1))",
-   "text": "| `(2, (0, 0, 1), (1, 1, 1))` | 2 | 1458 | 1 | UNMOTIVATED | no |"
-  },
-  {
-   "id": "T-OVERLAP-(2, (0, 0, 2))",
-   "text": "| `(2, (0, 0, 2))` | 2 | 162 | 0 | FOUND-candidate | YES |"
-  },
-  {
-   "id": "T-OVERLAP-(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
-   "text": "| `(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))` | 3 | 486 | 0 | FOUND-candidate | YES |"
-  },
-  {
-   "id": "T-OVERLAP-(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
-   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))` | 3 | 11664 | 1 | UNMOTIVATED | no |"
-  },
-  {
-   "id": "T-OVERLAP-(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
-   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))` | 3 | 8748 | 2 | UNMOTIVATED | no |"
-  },
-  {
-   "id": "T-OVERLAP-(3, (0, 0, 1), (0, 1, 2))",
-   "text": "| `(3, (0, 0, 1), (0, 1, 2))` | 3 | 972 | 0 | FOUND-candidate | YES |"
-  },
-  {
-   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
-   "text": "| `(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))` | 3 | 486 | 0 | FOUND-candidate | YES |"
-  },
-  {
-   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
-   "text": "| `(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))` | 3 | 8748 | 2 | UNMOTIVATED | no |"
-  },
-  {
-   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 0, 2))",
-   "text": "| `(3, (0, 0, 1), (1, 0, 2))` | 3 | 972 | 0 | FOUND-candidate | YES |"
-  },
-  {
-   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
-   "text": "| `(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))` | 3 | 4374 | 3 | UNMOTIVATED | no |"
-  },
-  {
-   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 1, 2))",
-   "text": "| `(3, (0, 0, 1), (1, 1, 2))` | 3 | 5832 | 2 | UNMOTIVATED | no |"
-  },
-  {
-   "id": "T-OVERLAP-(3, (0, 0, 3))",
-   "text": "| `(3, (0, 0, 3))` | 3 | 54 | 0 | FOUND-candidate | YES |"
   },
   {
    "id": "T-WINDOW-(0,)-first",
@@ -4535,6 +5693,118 @@
    "text": "| `(3, (0, 0, 3))` | shared | FORCED | 102 | 18 | yes |"
   },
   {
+   "id": "T-FATE-01",
+   "text": "| `FOUND-candidate` | 10 of 16 | none | 1, 1, 1 |"
+  },
+  {
+   "id": "T-FATE-02",
+   "text": "| `UNMOTIVATED` | 5 of 16 | I-DIRECTION-LABEL, I-ORIENT | 1, 9, 4 |"
+  },
+  {
+   "id": "T-FATE-03",
+   "text": "| `UNMOTIVATED` | 1 of 16 | I-DIRECTION-LABEL | 1, 9, 1 |"
+  },
+  {
+   "id": "T-DEAD-SEC-UNION(3,aligned)@I7-SINGLE-EMBEDDING",
+   "text": "| SEC-UNION(3,aligned)@I7-SINGLE | EMBEDDING | ARITY-DEAD |"
+  },
+  {
+   "id": "T-DEAD-SEC-UNION(3,aligned)@T(0)-EMBEDDING",
+   "text": "| SEC-UNION(3,aligned)@T(0) | EMBEDDING | ARITY-DEAD |"
+  },
+  {
+   "id": "T-DEAD-SEC-UNION(3,triangle)@T(3,ALIGNED)-EMBEDDING",
+   "text": "| SEC-UNION(3,triangle)@T(3,ALIGNED) | EMBEDDING | STRUCT-DEAD |"
+  },
+  {
+   "id": "T-DEAD-SEC-UNION(3,aligned)-FALSIFIER-EMBEDDING",
+   "text": "| SEC-UNION(3,aligned)-FALSIFIER | EMBEDDING | STRUCT-DEAD |"
+  },
+  {
+   "id": "T-DEAD-SEC-UNION(3,aligned)-FALSIFIER-QUOTIENT",
+   "text": "| SEC-UNION(3,aligned)-FALSIFIER | QUOTIENT | COUNT-DEAD |"
+  },
+  {
+   "id": "T-COMPAT-(0,)",
+   "text": "| `(0,)` | 0 | 0 | 0 | 0 | COMPATIBLE |"
+  },
+  {
+   "id": "T-COMPAT-(1, (0, 0, 1))",
+   "text": "| `(1, (0, 0, 1))` | 6 | 0 | 0 | 0 | COMPATIBLE |"
+  },
+  {
+   "id": "T-COMPAT-(2, (0, 0, 1), (0, 1, 1))",
+   "text": "| `(2, (0, 0, 1), (0, 1, 1))` | 12 | 0 | 0 | 0 | COMPATIBLE |"
+  },
+  {
+   "id": "T-COMPAT-(2, (0, 0, 1), (1, 0, 1))",
+   "text": "| `(2, (0, 0, 1), (1, 0, 1))` | 12 | 0 | 0 | 0 | COMPATIBLE |"
+  },
+  {
+   "id": "T-COMPAT-(2, (0, 0, 1), (1, 1, 1))",
+   "text": "| `(2, (0, 0, 1), (1, 1, 1))` | 12 | 2 | 2 | 0 | SEAM-DEFORMED |"
+  },
+  {
+   "id": "T-COMPAT-(2, (0, 0, 2))",
+   "text": "| `(2, (0, 0, 2))` | 12 | 0 | 0 | 0 | COMPATIBLE |"
+  },
+  {
+   "id": "T-COMPAT-(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))` | 18 | 0 | 0 | 0 | COMPATIBLE |"
+  },
+  {
+   "id": "T-COMPAT-(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))` | 18 | 2 | 2 | 0 | SEAM-DEFORMED |"
+  },
+  {
+   "id": "T-COMPAT-(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))` | 18 | 4 | 4 | 0 | SEAM-DEFORMED |"
+  },
+  {
+   "id": "T-COMPAT-(3, (0, 0, 1), (0, 1, 2))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 2))` | 18 | 0 | 0 | 0 | COMPATIBLE |"
+  },
+  {
+   "id": "T-COMPAT-(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+   "text": "| `(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))` | 18 | 0 | 0 | 0 | COMPATIBLE |"
+  },
+  {
+   "id": "T-COMPAT-(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+   "text": "| `(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))` | 18 | 4 | 4 | 0 | SEAM-DEFORMED |"
+  },
+  {
+   "id": "T-COMPAT-(3, (0, 0, 1), (1, 0, 2))",
+   "text": "| `(3, (0, 0, 1), (1, 0, 2))` | 18 | 0 | 0 | 0 | COMPATIBLE |"
+  },
+  {
+   "id": "T-COMPAT-(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+   "text": "| `(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))` | 18 | 6 | 6 | 0 | SEAM-DEFORMED |"
+  },
+  {
+   "id": "T-COMPAT-(3, (0, 0, 1), (1, 1, 2))",
+   "text": "| `(3, (0, 0, 1), (1, 1, 2))` | 18 | 4 | 4 | 0 | SEAM-DEFORMED |"
+  },
+  {
+   "id": "T-COMPAT-(3, (0, 0, 3))",
+   "text": "| `(3, (0, 0, 3))` | 18 | 0 | 0 | 0 | COMPATIBLE |"
+  },
+  {
+   "id": "T-MIRROR-(2, (0, 0, 1), (0, 1, 1))",
+   "text": "| `(2, (0, 0, 1), (0, 1, 1))` | `(2, (0, 0, 1), (1, 0, 1))` | 486 + 486 | 972 |"
+  },
+  {
+   "id": "T-MIRROR-(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))` | `(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))` | 486 + 486 | 972 |"
+  },
+  {
+   "id": "T-MIRROR-(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))` | `(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))` | 8748 + 8748 | 17496 |"
+  },
+  {
+   "id": "T-MIRROR-(3, (0, 0, 1), (0, 1, 2))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 2))` | `(3, (0, 0, 1), (1, 0, 2))` | 972 + 972 | 1944 |"
+  },
+  {
    "id": "T-SEAM-ALIGNED(k=3)",
    "text": "| ALIGNED(k=3) | [1, 1, 1] | [1, 1, 1] | 6 | 10 | 6 | 4 | -2 |"
   },
@@ -4545,18 +5815,6 @@
   {
    "id": "T-SEAM-k=1",
    "text": "| k=1 | [1, 1, 1] | [1, 1, 1] | 6 | 10 | 6 | 4 | -2 |"
-  },
-  {
-   "id": "T-CROSS-SHARED-SEEDED",
-   "text": "| SHARED-SEEDED | ('S', 0) | ADMITTED | 1 | 1 | STRUCT-DEAD |"
-  },
-  {
-   "id": "T-CROSS-A-SEEDED",
-   "text": "| A-SEEDED | ('A', (1, 1)) | REFUSED | 0 | 0 | -- |"
-  },
-  {
-   "id": "T-CROSS-B-SEEDED-PURE",
-   "text": "| B-SEEDED-PURE | ('B', (1, 1)) | ADMITTED | 2 | 2 | STRUCT-DEAD |"
   },
   {
    "id": "T-XALG-0",
@@ -4577,22 +5835,221 @@
   {
    "id": "T-XALG-4",
    "text": "| 4 | 10 | 0 |"
+  },
+  {
+   "id": "T-CROSS-SHARED-SEEDED",
+   "text": "| SHARED-SEEDED | ('S', 0) | ADMITTED | 1 | 1 | STRUCT-DEAD |"
+  },
+  {
+   "id": "T-CROSS-A-SEEDED",
+   "text": "| A-SEEDED | ('A', (1, 1)) | REFUSED | 0 | 0 | -- |"
+  },
+  {
+   "id": "T-CROSS-B-SEEDED-PURE",
+   "text": "| B-SEEDED-PURE | ('B', (1, 1)) | ADMITTED | 2 | 2 | STRUCT-DEAD |"
+  },
+  {
+   "id": "T-OVERLAP-(0,)",
+   "text": "| `(0,)` | 0 | 1 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(1, (0, 0, 1))",
+   "text": "| `(1, (0, 0, 1))` | 1 | 81 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(2, (0, 0, 1), (0, 1, 1))",
+   "text": "| `(2, (0, 0, 1), (0, 1, 1))` | 2 | 486 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(2, (0, 0, 1), (1, 0, 1))",
+   "text": "| `(2, (0, 0, 1), (1, 0, 1))` | 2 | 486 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(2, (0, 0, 1), (1, 1, 1))",
+   "text": "| `(2, (0, 0, 1), (1, 1, 1))` | 2 | 1458 | 1 | UNMOTIVATED | no |"
+  },
+  {
+   "id": "T-OVERLAP-(2, (0, 0, 2))",
+   "text": "| `(2, (0, 0, 2))` | 2 | 162 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))` | 3 | 486 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))` | 3 | 11664 | 1 | UNMOTIVATED | no |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))` | 3 | 8748 | 2 | UNMOTIVATED | no |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (0, 1, 2))",
+   "text": "| `(3, (0, 0, 1), (0, 1, 2))` | 3 | 972 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+   "text": "| `(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))` | 3 | 486 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+   "text": "| `(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))` | 3 | 8748 | 2 | UNMOTIVATED | no |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 0, 2))",
+   "text": "| `(3, (0, 0, 1), (1, 0, 2))` | 3 | 972 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+   "text": "| `(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))` | 3 | 4374 | 3 | UNMOTIVATED | no |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 1), (1, 1, 2))",
+   "text": "| `(3, (0, 0, 1), (1, 1, 2))` | 3 | 5832 | 2 | UNMOTIVATED | no |"
+  },
+  {
+   "id": "T-OVERLAP-(3, (0, 0, 3))",
+   "text": "| `(3, (0, 0, 3))` | 3 | 54 | 0 | FOUND-candidate | YES |"
+  },
+  {
+   "id": "T-BYK-0",
+   "text": "| 0 | 1 | 1 |"
+  },
+  {
+   "id": "T-BYK-1",
+   "text": "| 1 | 81 | 81 |"
+  },
+  {
+   "id": "T-BYK-2",
+   "text": "| 2 | 2592 | 1134 |"
+  },
+  {
+   "id": "T-BYK-3",
+   "text": "| 3 | 42336 | 2970 |"
+  },
+  {
+   "id": "T-STERILE-carriers",
+   "text": "| carriers | 18 |"
+  },
+  {
+   "id": "T-STERILE-pairs",
+   "text": "| realised pairs | 54 |"
+  },
+  {
+   "id": "T-STERILE-new_pairs_beyond_the_two_sectors",
+   "text": "| pairs beyond the two sectors' own | 0 |"
+  },
+  {
+   "id": "T-STERILE-doubled",
+   "text": "| doubled pairs | 0 |"
+  },
+  {
+   "id": "T-STERILE-seam_cells",
+   "text": "| seam cells | 0 |"
+  },
+  {
+   "id": "T-STERILE-shared_actors",
+   "text": "| shared actors | 0 |"
+  },
+  {
+   "id": "T-STERILE-aut",
+   "text": "| \\|Aut\\|, chain route | 3359232 |"
+  },
+  {
+   "id": "T-STERILE-aut_components_route",
+   "text": "| \\|Aut\\|, component-product route | 3359232 |"
+  },
+  {
+   "id": "T-STERILE-direct_sum_prediction",
+   "text": "| the direct-sum prediction | 3359232 |"
+  },
+  {
+   "id": "T-STERILE-dictionary_fate",
+   "text": "| dictionary | FOUND-candidate |"
+  },
+  {
+   "id": "T-CHOICE-1",
+   "text": "| 1 | the base object: two CONFLICT-GRID(3, 3) | forced | 1 | paper-19's, driven |"
+  },
+  {
+   "id": "T-CHOICE-2",
+   "text": "| 2 | the saturating arrangement per sector | measured | 1 | section 2.4 |"
+  },
+  {
+   "id": "T-CHOICE-3",
+   "text": "| 3 | the site carrier: actors to the lattice | forced | 1 | the constructor's own naming |"
+  },
+  {
+   "id": "T-CHOICE-4",
+   "text": "| 4 | admissibility: the layer's own menu | forced | 1 | d42b1 driven directly |"
+  },
+  {
+   "id": "T-CHOICE-5",
+   "text": "| 5 | the I7 readout | forced | 1 | HA, matched verbatim |"
+  },
+  {
+   "id": "T-CHOICE-6",
+   "text": "| 6 | k, and the gluing | declared, the axis | every member run | section 2.1 |"
+  },
+  {
+   "id": "T-CHOICE-7",
+   "text": "| 7 | the seed rule | declared | 2 | both driven, section 3.2 |"
+  },
+  {
+   "id": "T-CHOICE-8",
+   "text": "| 8 | the link individuation | declared, VERDICT-DETERMINING for EXT-INCIDENCE and for the seam chart at a doubled site | 2 | sections 4.3 and 6.1 |"
+  },
+  {
+   "id": "T-CHOICE-9",
+   "text": "| 9 | the carrier | declared | 3 | section 2.3 |"
+  },
+  {
+   "id": "T-CHOICE-10",
+   "text": "| 10 | the reading | declared | 2 | weld 2's, every row stamped |"
+  },
+  {
+   "id": "T-CHOICE-11",
+   "text": "| 11 | the seam chart: the direct-sum chart | declared | 1 | section 6.1 |"
+  },
+  {
+   "id": "T-CHOICE-12",
+   "text": "| 12 | I-SITE-ASSIGNMENT | measured | 1 | section 3.1, two routes |"
+  },
+  {
+   "id": "T-CHOICE-13",
+   "text": "| 13 | I-DIRECTION-LABEL | measured | 1 or 9 | section 4.2 |"
+  },
+  {
+   "id": "T-CHOICE-14",
+   "text": "| 14 | I-ORIENT | measured | 1 or 4 | section 4.2 |"
+  },
+  {
+   "id": "T-CHOICE-15",
+   "text": "| 15 | the three cross-sector specifications | free | -- | this unit's; section 6.3 |"
+  },
+  {
+   "id": "T-CHOICE-16",
+   "text": "| 16 | the window's type representative | free, VERDICT-DETERMINING for the canonical-rule fate clause | -- | section 3.2; the abstract arena is a type invariant, section 5.2 |"
   }
  ],
  "paper_gates": {
-  "claims": 83,
-  "coverage": 1169,
+  "claims": 161,
+  "coverage": 1546,
   "fences": {
    "blocks": 8,
+   "declared_copies_each": 2,
    "distinct_blocks": 4,
    "missing": [],
+   "multiset_equal": true,
    "ok": true,
    "stray": [],
    "verdict_segments": 4
   },
+  "headers": 14,
   "polarity": {
    "bad": [],
-   "checked": 3,
+   "checked": 17,
    "ok": true,
    "rows": [
     {
@@ -4609,17 +6066,120 @@
      "id": "P3",
      "negation_present": false,
      "positive_present": true
+    },
+    {
+     "id": "P4",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P5",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P6",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P7",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P8",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P9",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P10",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P11",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P12",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P13",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P14",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P15",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P16",
+     "negation_present": false,
+     "positive_present": true
+    },
+    {
+     "id": "P17",
+     "negation_present": false,
+     "positive_present": true
     }
    ]
   },
-  "registry_size": 121,
+  "quoted_anchors": 5,
+  "registry_size": 144,
+  "rowset": {
+   "missing": [],
+   "multiset_equal": true,
+   "ok": true,
+   "paper_data_rows": 136,
+   "rendered_table_rows": 136,
+   "stray": []
+  },
   "spelled": {
+   "grammar_size": 102,
    "ok": true,
    "spelled_found": [
-    "fifty-four"
+    "eighteen",
+    "fifteen",
+    "fifty-four",
+    "five",
+    "four",
+    "nine",
+    "one",
+    "seven",
+    "six",
+    "ten",
+    "three",
+    "twelve",
+    "two",
+    "zero"
    ],
    "unbacked": []
   }
+ },
+ "paper_surface": {
+  "column_headers_rendered": 14,
+  "fence_copies_each": 2,
+  "polarity_rows": 17,
+  "prose_claims": 25,
+  "quoted_anchors": 5,
+  "spelled_grammar_words": 102,
+  "table_rows_rendered": 136,
+  "tables": 14
  },
  "pin": {
   "ledger": 258,
@@ -4748,40 +6308,489 @@
    "why": "the reproduction catalog 1.6/1.7: the BHS block and the Kleitman-Rothschild height-control warning."
   }
  ],
+ "reads": {
+  "by_category": {
+   "OBJECT-UNDER-TEST": [
+    "v14/paper-32-sec.md"
+   ],
+   "SOURCE": [
+    "v10/code/d42b1_transport_exact.py",
+    "v10/code/d60_crystal_exact.py",
+    "v10/code/d66_arbitration_crystal_exact.py",
+    "v10/data/d66_arbitration_crystal_exact.out",
+    "v11/note-L1-lorentz-no-go-lemma.md",
+    "v11/note-v11p0a-reproduction-catalog.md",
+    "v13/code/ha_successor_receipt.json",
+    "v13/paper-ha-successor.md",
+    "v14/code/r3_weld_receipt.json",
+    "v14/code/r4dec_receipt.json",
+    "v14/note-sec-pin.md",
+    "v14/paper-01-continuum-rung.md",
+    "v14/paper-02-manifold-rung.md",
+    "v14/paper-19-r3-weld.md",
+    "v14/paper-21-r4dec.md"
+   ]
+  },
+  "declared_categories": [
+   "SOURCE",
+   "OBJECT-UNDER-TEST",
+   "SELF",
+   "ARTIFACT"
+  ],
+  "rows": [
+   {
+    "category": "OBJECT-UNDER-TEST",
+    "path": "v14/paper-32-sec.md",
+    "sha256_12": "f3f43d94cd75"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v14/note-sec-pin.md",
+    "sha256_12": "c46a9927f2a8"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v14/paper-19-r3-weld.md",
+    "sha256_12": "50bb81e67942"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v14/code/r3_weld_receipt.json",
+    "sha256_12": "dfea664f2408"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v14/paper-21-r4dec.md",
+    "sha256_12": "ef4a8c35a0c4"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v14/code/r4dec_receipt.json",
+    "sha256_12": "a4538c7019e6"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v14/paper-01-continuum-rung.md",
+    "sha256_12": "c4c8880874bf"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v14/paper-02-manifold-rung.md",
+    "sha256_12": "1a80a5bf1a1b"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v13/paper-ha-successor.md",
+    "sha256_12": "f286ba10d2d9"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v13/code/ha_successor_receipt.json",
+    "sha256_12": "542b8735daf0"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v10/code/d42b1_transport_exact.py",
+    "sha256_12": "576275d55ecf"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v10/code/d60_crystal_exact.py",
+    "sha256_12": "684cdb76552b"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v10/code/d66_arbitration_crystal_exact.py",
+    "sha256_12": "3d0516ab106e"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v10/data/d66_arbitration_crystal_exact.out",
+    "sha256_12": "e252529d2586"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v11/note-L1-lorentz-no-go-lemma.md",
+    "sha256_12": "93ea24591c3c"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v11/note-v11p0a-reproduction-catalog.md",
+    "sha256_12": "0cebe543e814"
+   }
+  ],
+  "subprocesses_invoked": 0
+ },
  "reconstruction": {
   "motivated_types": 10,
   "seam_kernel_4": true,
   "sterile": true,
   "word": "SEC-COMPOSES"
  },
+ "representative_rows": {
+  "rows": [
+   {
+    "constant_on_the_sample": true,
+    "distinct_label_orient_pairs_in_the_sample": 1,
+    "distinct_seam_profiles_in_the_sample": 1,
+    "label_orient_pairs": [
+     [
+      1,
+      1
+     ]
+    ],
+    "representative_label_orient": [
+     1,
+     1
+    ],
+    "sampled": 1,
+    "seam_profile_constant_on_the_sample": true,
+    "type": "(0,)"
+   },
+   {
+    "constant_on_the_sample": true,
+    "distinct_label_orient_pairs_in_the_sample": 1,
+    "distinct_seam_profiles_in_the_sample": 1,
+    "label_orient_pairs": [
+     [
+      1,
+      1
+     ]
+    ],
+    "representative_label_orient": [
+     1,
+     1
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": true,
+    "type": "(1, (0, 0, 1))"
+   },
+   {
+    "constant_on_the_sample": true,
+    "distinct_label_orient_pairs_in_the_sample": 1,
+    "distinct_seam_profiles_in_the_sample": 1,
+    "label_orient_pairs": [
+     [
+      1,
+      1
+     ]
+    ],
+    "representative_label_orient": [
+     1,
+     1
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": true,
+    "type": "(2, (0, 0, 1), (0, 1, 1))"
+   },
+   {
+    "constant_on_the_sample": true,
+    "distinct_label_orient_pairs_in_the_sample": 1,
+    "distinct_seam_profiles_in_the_sample": 1,
+    "label_orient_pairs": [
+     [
+      1,
+      1
+     ]
+    ],
+    "representative_label_orient": [
+     1,
+     1
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": true,
+    "type": "(2, (0, 0, 1), (1, 0, 1))"
+   },
+   {
+    "constant_on_the_sample": true,
+    "distinct_label_orient_pairs_in_the_sample": 1,
+    "distinct_seam_profiles_in_the_sample": 12,
+    "label_orient_pairs": [
+     [
+      9,
+      4
+     ]
+    ],
+    "representative_label_orient": [
+     9,
+     4
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": false,
+    "type": "(2, (0, 0, 1), (1, 1, 1))"
+   },
+   {
+    "constant_on_the_sample": true,
+    "distinct_label_orient_pairs_in_the_sample": 1,
+    "distinct_seam_profiles_in_the_sample": 1,
+    "label_orient_pairs": [
+     [
+      1,
+      1
+     ]
+    ],
+    "representative_label_orient": [
+     1,
+     1
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": true,
+    "type": "(2, (0, 0, 2))"
+   },
+   {
+    "constant_on_the_sample": true,
+    "distinct_label_orient_pairs_in_the_sample": 1,
+    "distinct_seam_profiles_in_the_sample": 1,
+    "label_orient_pairs": [
+     [
+      1,
+      1
+     ]
+    ],
+    "representative_label_orient": [
+     1,
+     1
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": true,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+   },
+   {
+    "constant_on_the_sample": true,
+    "distinct_label_orient_pairs_in_the_sample": 1,
+    "distinct_seam_profiles_in_the_sample": 8,
+    "label_orient_pairs": [
+     [
+      9,
+      4
+     ]
+    ],
+    "representative_label_orient": [
+     9,
+     4
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": false,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+   },
+   {
+    "constant_on_the_sample": false,
+    "distinct_label_orient_pairs_in_the_sample": 3,
+    "distinct_seam_profiles_in_the_sample": 9,
+    "label_orient_pairs": [
+     [
+      9,
+      4
+     ],
+     [
+      18,
+      4
+     ],
+     [
+      36,
+      4
+     ]
+    ],
+    "representative_label_orient": [
+     9,
+     4
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": false,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+   },
+   {
+    "constant_on_the_sample": true,
+    "distinct_label_orient_pairs_in_the_sample": 1,
+    "distinct_seam_profiles_in_the_sample": 1,
+    "label_orient_pairs": [
+     [
+      1,
+      1
+     ]
+    ],
+    "representative_label_orient": [
+     1,
+     1
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": true,
+    "type": "(3, (0, 0, 1), (0, 1, 2))"
+   },
+   {
+    "constant_on_the_sample": true,
+    "distinct_label_orient_pairs_in_the_sample": 1,
+    "distinct_seam_profiles_in_the_sample": 1,
+    "label_orient_pairs": [
+     [
+      1,
+      1
+     ]
+    ],
+    "representative_label_orient": [
+     1,
+     1
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": true,
+    "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+   },
+   {
+    "constant_on_the_sample": false,
+    "distinct_label_orient_pairs_in_the_sample": 3,
+    "distinct_seam_profiles_in_the_sample": 10,
+    "label_orient_pairs": [
+     [
+      9,
+      4
+     ],
+     [
+      18,
+      4
+     ],
+     [
+      36,
+      4
+     ]
+    ],
+    "representative_label_orient": [
+     9,
+     4
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": false,
+    "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+   },
+   {
+    "constant_on_the_sample": true,
+    "distinct_label_orient_pairs_in_the_sample": 1,
+    "distinct_seam_profiles_in_the_sample": 1,
+    "label_orient_pairs": [
+     [
+      1,
+      1
+     ]
+    ],
+    "representative_label_orient": [
+     1,
+     1
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": true,
+    "type": "(3, (0, 0, 1), (1, 0, 2))"
+   },
+   {
+    "constant_on_the_sample": false,
+    "distinct_label_orient_pairs_in_the_sample": 3,
+    "distinct_seam_profiles_in_the_sample": 10,
+    "label_orient_pairs": [
+     [
+      9,
+      1
+     ],
+     [
+      9,
+      2
+     ],
+     [
+      9,
+      4
+     ]
+    ],
+    "representative_label_orient": [
+     9,
+     1
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": false,
+    "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+   },
+   {
+    "constant_on_the_sample": false,
+    "distinct_label_orient_pairs_in_the_sample": 3,
+    "distinct_seam_profiles_in_the_sample": 11,
+    "label_orient_pairs": [
+     [
+      9,
+      4
+     ],
+     [
+      18,
+      4
+     ],
+     [
+      36,
+      4
+     ]
+    ],
+    "representative_label_orient": [
+     9,
+     4
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": false,
+    "type": "(3, (0, 0, 1), (1, 1, 2))"
+   },
+   {
+    "constant_on_the_sample": true,
+    "distinct_label_orient_pairs_in_the_sample": 1,
+    "distinct_seam_profiles_in_the_sample": 1,
+    "label_orient_pairs": [
+     [
+      1,
+      1
+     ]
+    ],
+    "representative_label_orient": [
+     1,
+     1
+    ],
+    "sampled": 12,
+    "seam_profile_constant_on_the_sample": true,
+    "type": "(3, (0, 0, 3))"
+   }
+  ],
+  "sample_cap": 12,
+  "types_where_the_pair_moves": 4,
+  "types_where_the_seam_profile_moves": 6
+ },
  "schema": "isp/v14/sec/1",
  "schema_version": "isp/v14/sec/1",
  "seal_manifest": {
   "declared_unsealed": {
-   "ledger_chain": "the chained ledger head is the seal of every gate row and is emitted after the manifest is closed",
-   "mutant_sweep": "the sweep rows are produced by the delivery caller after this run returns and are sealed there",
-   "seal_manifest": "the manifest cannot digest itself",
-   "swept": "the sweep flag is set by the caller after the mutant sweep runs; it is bound by G-SWEEP-EXECUTED in the delivery path rather than sealed here"
+   "gate_count": "the run's own gate count is the length of the ledger and is closed with it",
+   "ledger": "the chained gate ledger is the seal of every gate row and is closed at the writer, after the gates that would otherwise have to appear inside it; it is bound by recomputation from its own rows",
+   "ledger_chain": "the chained ledger head is the seal of every gate row and is emitted after the manifest is closed; it is the head of the published rows under the genesis rule and is recomputable from them",
+   "seal_manifest": "the manifest cannot digest itself"
   },
   "order": [
    "schema",
    "pin",
    "unit",
    "paper",
-   "provenance",
    "cited_not_read",
+   "provenance",
+   "reads",
    "anchors",
    "driver_anchor",
    "sector",
    "sector_weld",
    "arrangement_free",
+   "arena_classes",
+   "type_invariance",
    "type_census",
    "gluing_totals",
    "window",
+   "off_window",
    "seed_rule",
+   "carrier_axis",
    "dictionary",
+   "fate_summary",
+   "representative_rows",
    "dead_arms",
+   "falsifier_stump",
    "gluing_fiber",
+   "seam_all_sites",
    "seam",
    "seam_cross_algebra",
    "cross_sector",
@@ -4791,59 +6800,74 @@
    "walls",
    "verdict",
    "reconstruction",
+   "overlap_comparator",
    "standards",
    "totals",
+   "choice_inventory",
    "paper_claims",
+   "paper_surface",
    "paper_gates",
    "coverage",
-   "ledger",
-   "gate_count",
    "measure_stamp",
    "schema_version",
-   "mutant_sweep"
+   "mutant_sweep",
+   "sweep_binding"
   ],
   "sealed": {
-   "anchors": "61a10da233f6c8fc0644d06a6d0ddb906b577e193f049d1593224df2288976f2",
-   "arrangement_free": "3165bd2152bd2e3fef85ffcb43ade0420140c45166e92d7b97caa12debf74e46",
+   "anchors": "5422d4d7047c6c3a69532c9f84bf3bcbc5a358389b45f0c9200fc410b0e88632",
+   "arena_classes": "19196de4cb5fd53c793ca9458941c18417fd0b155fd64178c7154dae8b5fdde0",
+   "arrangement_free": "655291223802c2dda2104c43d260b9b1c7ad7df2aa8c35e46fffbe28adeb5cc7",
+   "carrier_axis": "f5185711a99bba9abe8c938894f26f1fd0c88124edead66a6af71ed883191b98",
+   "choice_inventory": "621e9d47d09bd9cb4272bc5182bff14459677f40a293149ac65dd741ef9d65ad",
    "cited_not_read": "d18af9ddf9d9fae66f4748003d883ece03ba9b4933b2e8bd02542de777e1d1b7",
    "contrast": "ac1818f59f4e1954dd308f157225d748618cac1774bf40476b206ac820dcf1a0",
-   "coverage": "7aab717315b74094d43b3d09f658199508b53806c69bc12056ccb2f5f2075117",
+   "coverage": "cb918144ee715be15f8203145ce6d07bf7cc5c9bc39f2af58f74ddef5f9bc941",
    "cross_sector": "ce6b1427d337e538f4c4d2cd83d284ae8642676b76bf43151f7baab375362fef",
    "dead_arms": "2af99646e91d2aee36f2e2849aa13787e045e84300690bf285c43e2d5fbd3734",
    "dictionary": "33ec30311113fd95aa61960f48e68cd5c07fe4384d9ff75010990e17bf204c5c",
    "driver_anchor": "43de158dc63bc60075b35fd8be9bae4a6dfe18ea3d1c2c50edcbeaefc62f48ee",
+   "falsifier_stump": "3fde3c123defb74e3151f8137aaa42a5d11dd9f6b1c04091553378062df5b16c",
+   "fate_summary": "8adacd0f68a41e6822cc54b57c8ca14af429133e1908d5d1c028ebf53970aa04",
    "forced_overlap": "03e26aacc32b25a14ce1ca00ba544e10eee2b3e09045398cccd1f7d415814a6d",
-   "gate_count": "7a61b53701befdae0eeeffaecc73f14e20b537bb0f8b91ad7c2936dc63562b25",
-   "gluing_fiber": "71dc18827457044547422b919e0ba037bcd95ed3fac8b65cadd825e79cae46b9",
+   "gluing_fiber": "d4a1794953b55db28625aae60fc2d8d6252a88b19ed36ef66ed32a283df6b9d7",
    "gluing_totals": "8b549e492e1ba2b8e17a0101907f76fe39c0f462fc9e0893f801d2c6fbd8f7a0",
-   "ledger": "764cdd2a471010a6ba17143a332a87def90aa9ab7f7ece15e46c4acee84aa49c",
-   "measure_stamp": "81d7a0579e38d1196b2fc4aa1b2a014ae0896ed0a8633f748403597908093209",
-   "mutant_sweep": "b019dd67e96d200038a359e8a3bee993482af77aac9bb7d548cc9ea0d3484d29",
+   "measure_stamp": "aefe3ed77b9e50e4654e98979e88cb4513644ea813b147ea266304e0c8bb0a15",
+   "mutant_sweep": "a7fdbd95cdff456351d2454dc194843bf5440ab2f737de3b7eea22f51b8df725",
+   "off_window": "5f64abdbbae42d04ae77d5f274fcdcc12c9f16476038bb8a72b77b3af919e264",
+   "overlap_comparator": "258caae1ba5f8a13540ae0f71a6df332191df969380738741cb8c5999fbf0327",
    "paper": "e1010d11261b0a63debf5e2b4067f4d1ae823ade183e4b0f514a5afd741347bb",
-   "paper_claims": "8d25d9be8363b4109902bf67de345d7e237910d9261cb824073ebed400a7d5a9",
-   "paper_gates": "83ffc58b349e8df472dc497fd5076b2ed75f717d93b7abec025e9f4c294fd274",
+   "paper_claims": "9cb71c97e65ddfb0112a02cc8b6b37cbe07726456aaff6fcbcf0e99ca5f4ff16",
+   "paper_gates": "6d83b1459f0c2a4f27a7e673599a12f6c88bd69939b9d900086f99d9c8d86af2",
+   "paper_surface": "0791acab05733e4f43e6d2f4b618092a3f545e257611af2a4f3712424898613d",
    "pin": "41c1c0076eb9536410b063666fa727daba587db50a5d9ad92ffe1ff8db63ccc8",
    "provenance": "686fadccdec271aa4edcfba314f2db63b74538d5ff6f2c5fd08be62336b534be",
+   "reads": "011b3d2e012a2db2796478bb764caf53bbe73330061946b7dde3d1e379f3ea24",
    "reconstruction": "77c9be2b80847064e334f3fcaa3dbf06af1c143eeda4d8e3e4fd6bb41980a499",
+   "representative_rows": "c85e5e88baaf462360ae13f8ffad40782a247a877b81ab0b2c8863f5a3843f21",
    "schema": "be996881b26957349c5926cc20f91c7d2426a8269eb774fcdccaadebe6d6b1bd",
    "schema_version": "be996881b26957349c5926cc20f91c7d2426a8269eb774fcdccaadebe6d6b1bd",
-   "seam": "ca9bc44d4f69370f8abb4f7f95a1edef415e17c4fac3c897dd3419df3b124832",
+   "seam": "18a975e496af1b0e32b70c74cf54c52cb8c8e75828c747ecb048606d668453f2",
+   "seam_all_sites": "f0cd0fd071a81b6ca983d9a6f7f2982f7c6630c6a6d443f5e3ae58d41450dfce",
    "seam_cross_algebra": "efaa634a8bbef11a3df88a0dbc8ba627da93b87f38a3b88bfe5d7e24a3de8e87",
    "sector": "886548ef79c46a7178b3110075ff214d46f8d820cd7375c17094c831f4e5c277",
    "sector_weld": "d627f8a637223ed30fe93b56c2851e03dc39ffb0a3d3aa91819398ac2c7e3173",
-   "seed_rule": "b13673322dad20909459a95d21b6144c14b9b4017e5566b1ecf8e59efbda7f2d",
+   "seed_rule": "675ef1fdf355ac367b04a6f8706d9d558f6a755395146809233621c26360c6d1",
    "standards": "84f2012aad7293f94ff8d41f571829108249887c9012815234fb5e1e004b2b60",
    "sterility": "d0ae80a7c2a1510c66a788e04724ba4e3d5941ce1776a57022935837a536641f",
-   "totals": "8283eb8bd2d12424a1762229a89af90678a807c7e065a785ba3703ae60bd64d6",
-   "type_census": "985fcca129f7218a13b5c277bfcf220f3314c282eb9fa922f9f1f05ea4cc36c3",
+   "sweep_binding": "9f828c50e3774da277626f54e9fd06de64fc5c115925f4bb60a85cfa6c8f4edb",
+   "totals": "5b8177aaed54d031db123ebbf84f113bc441945016c0da2c6372a0520b0894bd",
+   "type_census": "9d7174d19ee00fa16523db06b748a1803627af1f87071935a6220822886422ee",
+   "type_invariance": "fe1f03444026632063ddfab947d5ed92323add33cfa71f16ab6e9d2d7507a9d5",
    "unit": "c5e33bd2ef71d281bbaec56af7836c6ee4bc83abd4a7ee432d0c1d224c046437",
-   "verdict": "7cf6c6194457a09d601df5e3e6ca7ae0e8515c891b2ff837cf683085f252b87e",
-   "walls": "7830ad9d54e70d4602b2e0e159a3c182a8b45a68596f7fef349964b57e4ea32e",
+   "verdict": "12fe122660f7e1bc79a972fe9ffb6326325a0f486259212214b57c460502700a",
+   "walls": "e126986c77f96ad10dffb6a54cdcb59c5127ad18cda9c8d606b0d71f6bc8f067",
    "window": "c606df84e3a1ce7eaa2f7064588df3ba591af0e65c7d82aa14812790e3898d6e"
   }
  },
  "seam": [
   {
+   "chart_dim": 4,
+   "declared_links": 3,
    "direct_sum_minors": [
     "1",
     "3/4",
@@ -4902,6 +6926,8 @@
    "witness_reproduces_counts": true
   },
   {
+   "chart_dim": 4,
+   "declared_links": 3,
    "direct_sum_minors": [
     "1",
     "1",
@@ -4960,6 +6986,8 @@
    "witness_reproduces_counts": true
   },
   {
+   "chart_dim": 4,
+   "declared_links": 3,
    "direct_sum_minors": [
     "1",
     "3/4",
@@ -5018,6 +7046,282 @@
    "witness_reproduces_counts": true
   }
  ],
+ "seam_all_sites": {
+  "aligned_undetermined_entries": 12,
+  "coefficient_rank": 6,
+  "cross_site_consistency": "one system per site; no cross-site consistency condition is imposed or measured",
+  "right_hand_sides_checked": 5,
+  "rows": [
+   {
+    "rank_kernel": [],
+    "shared_sites": 0,
+    "type": "(0,)",
+    "undetermined_entries": 0
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 1,
+    "type": "(1, (0, 0, 1))",
+    "undetermined_entries": 4
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 2,
+    "type": "(2, (0, 0, 1), (0, 1, 1))",
+    "undetermined_entries": 8
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 2,
+    "type": "(2, (0, 0, 1), (1, 0, 1))",
+    "undetermined_entries": 8
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 2,
+    "type": "(2, (0, 0, 1), (1, 1, 1))",
+    "undetermined_entries": 8
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 2,
+    "type": "(2, (0, 0, 2))",
+    "undetermined_entries": 8
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 3,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+    "undetermined_entries": 12
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 3,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+    "undetermined_entries": 12
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 3,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+    "undetermined_entries": 12
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 3,
+    "type": "(3, (0, 0, 1), (0, 1, 2))",
+    "undetermined_entries": 12
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 3,
+    "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+    "undetermined_entries": 12
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 3,
+    "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+    "undetermined_entries": 12
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 3,
+    "type": "(3, (0, 0, 1), (1, 0, 2))",
+    "undetermined_entries": 12
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 3,
+    "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+    "undetermined_entries": 12
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 3,
+    "type": "(3, (0, 0, 1), (1, 1, 2))",
+    "undetermined_entries": 12
+   },
+   {
+    "rank_kernel": [
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "shared_sites": 3,
+    "type": "(3, (0, 0, 3))",
+    "undetermined_entries": 12
+   }
+  ],
+  "shared_sites": 39
+ },
  "seam_cross_algebra": [
   {
    "cross_links": 0,
@@ -5087,7 +7391,24 @@
   "target_arity": 9
  },
  "seed_rule": {
+  "carrying_by_k": {
+   "first": {
+    "0": 1,
+    "1": 27,
+    "2": 648,
+    "3": 8064
+   },
+   "shared": {
+    "0": 1,
+    "1": 81,
+    "2": 2592,
+    "3": 42336
+   }
+  },
+  "carrying_under_first": 8740,
+  "carrying_under_shared": 45010,
   "n_types": 16,
+  "predicate": "the second sector's first round seeds every group holding a shared actor ON a shared actor",
   "refused_under_first": [
    "(2, (0, 0, 1), (1, 0, 1))",
    "(2, (0, 0, 2))",
@@ -5096,7 +7417,139 @@
    "(3, (0, 0, 1), (1, 0, 2))",
    "(3, (0, 0, 3))"
   ],
-  "refused_under_shared": []
+  "refused_under_shared": [],
+  "rows": [
+   {
+    "carrying_under_first": 1,
+    "carrying_under_shared": 1,
+    "first_rule_fate_splits_the_type": false,
+    "gluings": 1,
+    "representative_carries_under_first": true,
+    "type": "(0,)"
+   },
+   {
+    "carrying_under_first": 27,
+    "carrying_under_shared": 81,
+    "first_rule_fate_splits_the_type": true,
+    "gluings": 81,
+    "representative_carries_under_first": true,
+    "type": "(1, (0, 0, 1))"
+   },
+   {
+    "carrying_under_first": 162,
+    "carrying_under_shared": 486,
+    "first_rule_fate_splits_the_type": true,
+    "gluings": 486,
+    "representative_carries_under_first": true,
+    "type": "(2, (0, 0, 1), (0, 1, 1))"
+   },
+   {
+    "carrying_under_first": 0,
+    "carrying_under_shared": 486,
+    "first_rule_fate_splits_the_type": false,
+    "gluings": 486,
+    "representative_carries_under_first": false,
+    "type": "(2, (0, 0, 1), (1, 0, 1))"
+   },
+   {
+    "carrying_under_first": 486,
+    "carrying_under_shared": 1458,
+    "first_rule_fate_splits_the_type": true,
+    "gluings": 1458,
+    "representative_carries_under_first": true,
+    "type": "(2, (0, 0, 1), (1, 1, 1))"
+   },
+   {
+    "carrying_under_first": 0,
+    "carrying_under_shared": 162,
+    "first_rule_fate_splits_the_type": false,
+    "gluings": 162,
+    "representative_carries_under_first": false,
+    "type": "(2, (0, 0, 2))"
+   },
+   {
+    "carrying_under_first": 180,
+    "carrying_under_shared": 486,
+    "first_rule_fate_splits_the_type": true,
+    "gluings": 486,
+    "representative_carries_under_first": true,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+   },
+   {
+    "carrying_under_first": 1296,
+    "carrying_under_shared": 11664,
+    "first_rule_fate_splits_the_type": true,
+    "gluings": 11664,
+    "representative_carries_under_first": false,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+   },
+   {
+    "carrying_under_first": 3240,
+    "carrying_under_shared": 8748,
+    "first_rule_fate_splits_the_type": true,
+    "gluings": 8748,
+    "representative_carries_under_first": true,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+   },
+   {
+    "carrying_under_first": 108,
+    "carrying_under_shared": 972,
+    "first_rule_fate_splits_the_type": true,
+    "gluings": 972,
+    "representative_carries_under_first": true,
+    "type": "(3, (0, 0, 1), (0, 1, 2))"
+   },
+   {
+    "carrying_under_first": 0,
+    "carrying_under_shared": 486,
+    "first_rule_fate_splits_the_type": false,
+    "gluings": 486,
+    "representative_carries_under_first": false,
+    "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+   },
+   {
+    "carrying_under_first": 972,
+    "carrying_under_shared": 8748,
+    "first_rule_fate_splits_the_type": true,
+    "gluings": 8748,
+    "representative_carries_under_first": true,
+    "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+   },
+   {
+    "carrying_under_first": 0,
+    "carrying_under_shared": 972,
+    "first_rule_fate_splits_the_type": false,
+    "gluings": 972,
+    "representative_carries_under_first": false,
+    "type": "(3, (0, 0, 1), (1, 0, 2))"
+   },
+   {
+    "carrying_under_first": 1620,
+    "carrying_under_shared": 4374,
+    "first_rule_fate_splits_the_type": true,
+    "gluings": 4374,
+    "representative_carries_under_first": true,
+    "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+   },
+   {
+    "carrying_under_first": 648,
+    "carrying_under_shared": 5832,
+    "first_rule_fate_splits_the_type": true,
+    "gluings": 5832,
+    "representative_carries_under_first": true,
+    "type": "(3, (0, 0, 1), (1, 1, 2))"
+   },
+   {
+    "carrying_under_first": 0,
+    "carrying_under_shared": 54,
+    "first_rule_fate_splits_the_type": false,
+    "gluings": 54,
+    "representative_carries_under_first": false,
+    "type": "(3, (0, 0, 3))"
+   }
+  ],
+  "types_split_under_first": 10,
+  "validated_at_driven_records": 38
  },
  "standards": {
   "cli_contract": 82,
@@ -5131,14 +7584,19 @@
   "sector_aut": 1296,
   "shared_actors": 0
  },
- "swept": true,
+ "sweep_binding": {
+  "declared_mutants": 64,
+  "mode": "DELIVERY",
+  "rows_on_target": 64,
+  "writes": true
+ },
  "totals": {
   "cited_not_read": 1,
   "cross_specs": 3,
   "dead_arms": 5,
   "dictionary_rows": 96,
   "gluings": 45010,
-  "mutants": 30,
+  "mutants": 64,
   "seams": 3,
   "sources": 15,
   "types": 16,
@@ -5162,7 +7620,12 @@
    "gluings": 1,
    "k": 0,
    "pairs": 54,
-   "type": "(0,)"
+   "shared_degree_deficit": 0,
+   "shared_degrees": [],
+   "type": "(0,)",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 41472,
@@ -5180,7 +7643,14 @@
    "gluings": 81,
    "k": 1,
    "pairs": 54,
-   "type": "(1, (0, 0, 1))"
+   "shared_degree_deficit": 0,
+   "shared_degrees": [
+    12
+   ],
+   "type": "(1, (0, 0, 1))",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 3456,
@@ -5198,7 +7668,14 @@
    "gluings": 486,
    "k": 2,
    "pairs": 54,
-   "type": "(2, (0, 0, 1), (0, 1, 1))"
+   "shared_degree_deficit": 0,
+   "shared_degrees": [
+    12
+   ],
+   "type": "(2, (0, 0, 1), (0, 1, 1))",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 3456,
@@ -5216,7 +7693,14 @@
    "gluings": 486,
    "k": 2,
    "pairs": 54,
-   "type": "(2, (0, 0, 1), (1, 0, 1))"
+   "shared_degree_deficit": 0,
+   "shared_degrees": [
+    12
+   ],
+   "type": "(2, (0, 0, 1), (1, 0, 1))",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 2304,
@@ -5235,7 +7719,14 @@
    "gluings": 1458,
    "k": 2,
    "pairs": 53,
-   "type": "(2, (0, 0, 1), (1, 1, 1))"
+   "shared_degree_deficit": 2,
+   "shared_degrees": [
+    11
+   ],
+   "type": "(2, (0, 0, 1), (1, 1, 1))",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 20736,
@@ -5253,7 +7744,14 @@
    "gluings": 162,
    "k": 2,
    "pairs": 54,
-   "type": "(2, (0, 0, 2))"
+   "shared_degree_deficit": 0,
+   "shared_degrees": [
+    12
+   ],
+   "type": "(2, (0, 0, 2))",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 3456,
@@ -5271,7 +7769,14 @@
    "gluings": 486,
    "k": 3,
    "pairs": 54,
-   "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+   "shared_degree_deficit": 0,
+   "shared_degrees": [
+    12
+   ],
+   "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 288,
@@ -5290,7 +7795,15 @@
    "gluings": 11664,
    "k": 3,
    "pairs": 53,
-   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+   "shared_degree_deficit": 2,
+   "shared_degrees": [
+    11,
+    12
+   ],
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 192,
@@ -5309,7 +7822,15 @@
    "gluings": 8748,
    "k": 3,
    "pairs": 52,
-   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+   "shared_degree_deficit": 4,
+   "shared_degrees": [
+    10,
+    11
+   ],
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 1728,
@@ -5327,7 +7848,14 @@
    "gluings": 972,
    "k": 3,
    "pairs": 54,
-   "type": "(3, (0, 0, 1), (0, 1, 2))"
+   "shared_degree_deficit": 0,
+   "shared_degrees": [
+    12
+   ],
+   "type": "(3, (0, 0, 1), (0, 1, 2))",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 3456,
@@ -5345,7 +7873,14 @@
    "gluings": 486,
    "k": 3,
    "pairs": 54,
-   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+   "shared_degree_deficit": 0,
+   "shared_degrees": [
+    12
+   ],
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 192,
@@ -5364,7 +7899,15 @@
    "gluings": 8748,
    "k": 3,
    "pairs": 52,
-   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+   "shared_degree_deficit": 4,
+   "shared_degrees": [
+    10,
+    11
+   ],
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 1728,
@@ -5382,7 +7925,14 @@
    "gluings": 972,
    "k": 3,
    "pairs": 54,
-   "type": "(3, (0, 0, 1), (1, 0, 2))"
+   "shared_degree_deficit": 0,
+   "shared_degrees": [
+    12
+   ],
+   "type": "(3, (0, 0, 1), (1, 0, 2))",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 768,
@@ -5401,7 +7951,14 @@
    "gluings": 4374,
    "k": 3,
    "pairs": 51,
-   "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+   "shared_degree_deficit": 6,
+   "shared_degrees": [
+    10
+   ],
+   "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 576,
@@ -5420,7 +7977,15 @@
    "gluings": 5832,
    "k": 3,
    "pairs": 52,
-   "type": "(3, (0, 0, 1), (1, 1, 2))"
+   "shared_degree_deficit": 4,
+   "shared_degrees": [
+    10,
+    11
+   ],
+   "type": "(3, (0, 0, 1), (1, 1, 2))",
+   "unshared_degrees": [
+    6
+   ]
   },
   {
    "aut": 62208,
@@ -5438,19 +8003,134 @@
    "gluings": 54,
    "k": 3,
    "pairs": 54,
-   "type": "(3, (0, 0, 3))"
+   "shared_degree_deficit": 0,
+   "shared_degrees": [
+    12
+   ],
+   "type": "(3, (0, 0, 3))",
+   "unshared_degrees": [
+    6
+   ]
   }
  ],
+ "type_invariance": {
+  "rows": [
+   {
+    "isomorphic_to_the_representative": 1,
+    "sampled": 1,
+    "type": "(0,)",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(1, (0, 0, 1))",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(2, (0, 0, 1), (0, 1, 1))",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(2, (0, 0, 1), (1, 0, 1))",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(2, (0, 0, 1), (1, 1, 1))",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(2, (0, 0, 2))",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(3, (0, 0, 1), (0, 1, 2))",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(3, (0, 0, 1), (1, 0, 2))",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(3, (0, 0, 1), (1, 1, 2))",
+    "wl_invariants": 1
+   },
+   {
+    "isomorphic_to_the_representative": 12,
+    "sampled": 12,
+    "type": "(3, (0, 0, 3))",
+    "wl_invariants": 1
+   }
+  ],
+  "sample_cap": 12,
+  "sampled_total": 181
+ },
  "unit": "SEC",
  "verdict": [
-  "SEC-ARENA-[TWO DRIVEN R=3 SATURATING SECTORS; 45010 GLUINGS IN 16 COMBINATORIAL TYPES OVER k IN {0,1,2,3}; UNION CARRIERS 15..18; FORCED 16 OF 16 WINDOW RECORDS AT THE SHARED-SEED RULE, REFUSED 6 OF 16 AT PAPER-19'S CANONICAL RULE; DRIVEN=COMBINATORIAL AT 26 OF 26]@WINDOW-32-OF-45010-GLUINGS",
-  "SEC-COMPOSES-[ACTOR->SITE|CO-DIVISION-ACTOR-PAIR->LINK|DIVISION-COUNT->n_l(x)]@EMBEDDING+QUOTIENT<THE-UNION-DICTIONARY-EXISTS-AT-EVERY-TYPE:STRUCT-ALIVE-16-OF-16,COUNT-POSITIVE-16-OF-16|MOTIVATED-AT-10-OF-16-TYPES(4186-OF-45010-GLUINGS)|SITE-FIBER=1-AT-16-OF-16-TWO-ROUTES:THE-GLUING-BREAKS-EDGE-TRANSITIVITY-SO-THE-SEAM-IS-VISIBLE-IN-THE-STRUCTURE-ALONE|THE-FREE-ITEM-IS-ALWAYS-I-DIRECTION-LABEL|EXTENDED-CARRIERS:EXT-PAIR-AGREES-WITH-BARE,EXT-INCIDENCE-REPAIRS-EVERY-TYPE(FOUND-16-OF-16)-BECAUSE-THE-DOUBLED-PAIR-SPLITS-INTO-TWO-SITES>",
-  "SEC-SEAM-CURVATURE-[THE-DIRECT-SUM-IS-A-DECLARATION-NOT-A-MEASUREMENT: AT EVERY SHARED SITE THE SIX DECLARED LINKS GIVE RANK 6 ON THE 10 ENTRIES OF Sym^2(Q^4), KERNEL 4; THE DIRECT SUM IS THE CHOICE C=0 AND IS POSITIVE DEFINITE, AND AN EXACT RATIONAL COMPLETION REPRODUCING ALL SIX COUNTS IS NEGATIVE ON AN EXHIBITED VECTOR] -- CROSS-SECTOR DIVISION EVENTS ARE ADMITTED BY THE COMMITTED GRAMMAR (2 OF 3 SPECIFICATIONS DRIVEN, THE OTHERS REFUSED ON THE VERSION LINEAGE) AND EACH CROSS LINK REMOVES EXACTLY ONE UNDETERMINED ENTRY (4,3,2,1,0) -- BUT EVERY ADMITTED ONE REALISES A FOREIGN PAIR AND THE DICTIONARY DIES AT STRUCTURE: THE SEAM'S GEOMETRY IS AVAILABLE ONLY BY LEAVING THE TARGET",
-  "SEC-OVERLAP-TYPE-SELECTED-NOT-k-SELECTED-[EVERY k IN {1,2,3} CARRIES BOTH A WELDING AND A NON-WELDING TYPE EXCEPT k=1 WHICH HAS NO PAIR TO DOUBLE; THE CRITERION IS ALIGNMENT: THE UNION WELDS IFF NO SHARED PAIR IS ADJACENT IN BOTH SECTORS, i.e. IFF EVERY SHARED PAIR SHARES A TRIPARTITE CLASS ON AT LEAST ONE SIDE; AT k=3 THIS IS 'ALL THREE IN ONE CLASS ON ONE SIDE', 2970 OF 42336 GLUINGS] -- STERILITY-CONTROL=k=0-CONFIRMS-R1: |Aut|=3359232=|Aut(SECTOR)|^2 x 2 BY TWO ROUTES, 0 NEW PAIRS, 0 DOUBLED, 0 SEAM CELLS, THE DICTIONARY THE DIRECT SUM OF THE TWO -- AGAINST k=3-ALIGNED WHERE |Aut|=62208 AND THE SEAM CARRIES 12 UNDETERMINED ENTRIES"
+  "SEC-ARENA-[TWO DRIVEN R=3 SATURATING SECTORS; 45010 GLUINGS IN 16 COMBINATORIAL TYPES OVER k IN {0,1,2,3}; UNION CARRIERS 15..18; FORCED 16 OF 16 DRIVEN WINDOW RECORDS AT THE SHARED-SEED RULE, AND THAT FATE IS A PROPERTY OF THE RULE (ALL 45010 GLUINGS CARRY THE BASE INTO THE SECOND SECTOR UNDER IT); REFUSED 6 OF 16 AT PAPER-19'S CANONICAL RULE, WHERE THE FATE IS A PROPERTY OF THE DRIVEN GLUING AND NOT OF ITS TYPE -- THE CANONICAL RULE SPLITS 10 OF THE 16 TYPES AND ONLY 8740 OF THE 45010 GLUINGS CARRY; DRIVEN=COMBINATORIAL AT 26 OF 26]@WINDOW-32=16-TYPE-TRANSVERSAL-x-2-SEED-RULES-OF-45010-GLUINGS",
+  "SEC-COMPOSES-[ACTOR->SITE|CO-DIVISION-ACTOR-PAIR->LINK|DIVISION-COUNT->n_l(x)]@EMBEDDING+QUOTIENT<THE-UNION-DICTIONARY-EXISTS-AT-EVERY-TYPE:STRUCT-ALIVE-16-OF-16(INHERITED:THE-UNION'S-REALISED-PAIR-SET-IS-THE-AMALGAM'S-INCIDENCE-SET),COUNT-POSITIVE-16-OF-16|MOTIVATED-AT-10-OF-16-TYPES(4186-OF-45010-GLUINGS)|SITE-FIBER=1-AT-16-OF-16-TWO-ROUTES:THE-GLUING-BREAKS-EDGE-TRANSITIVITY-SO-THE-SEAM-IS-VISIBLE-IN-THE-STRUCTURE-ALONE|I-SITE-ASSIGNMENT-NEVER-FREE(0-OF-6-DOUBLED-TYPES,A-TYPE-ROW);AT-A-DOUBLED-TYPE'S-DECLARED-REPRESENTATIVE-THE-FREE-ITEMS-ARE-I-DIRECTION-LABEL(9-AT-6-OF-6)-AND-I-ORIENT(4-AT-5-OF-6,1-AT-1-OF-6)-BOTH-REPRESENTATIVE-ROWS-NOT-TYPE-ROWS(THE-PAIR-MOVES-INSIDE-4-OF-16-TYPES-ON-THE-DECLARED-SAMPLE)|EXTENDED-CARRIERS:BOTH-RETURN-FOUND-STRUCTURAL-AT-16-OF-16-TYPES-AND-64-OF-64-ROWS,EXT-PAIR-UNDER-SIMPLE-AND-EXT-INCIDENCE-UNDER-CHARTED;THE-INDUCED-COUNT-FIELD-IS-CARRIER-INDEPENDENT-AND-UNCHANGED;THE-RSQ-INVENTORY-IS-READ-AT-BARE-ONLY-SO-NO-REPAIR-OF-THE-FREE-ITEM-IS-MEASURED>",
+  "SEC-SEAM-CURVATURE-[THE-DIRECT-SUM-IS-A-DECLARATION-NOT-A-MEASUREMENT: AT EVERY SHARED SITE THE SIX DECLARED LINKS GIVE RANK 6 ON THE 10 ENTRIES OF Sym^2(Q^4), KERNEL 4 -- BY THEOREM ON THE ROW SPACE, WHICH MENTIONS NO COUNT, AND MEASURED AT 39 OF 39 SHARED SITES; THE DIRECT SUM IS THE CHOICE C=0 AND IS POSITIVE DEFINITE, AND AN EXACT RATIONAL COMPLETION REPRODUCING ALL SIX COUNTS IS NEGATIVE ON AN EXHIBITED VECTOR] -- SEAM-CONFINED COMPOSITIONALITY: EVERY CELL AT WHICH THE UNION'S COUNT DIFFERS FROM THE OWNING SECTOR'S HAS BOTH ENDPOINTS SHARED, 22 OF 22 AT 16 OF 16 TYPES, AND 0 PAIRS OFF COUNT 1 TOUCH AN UNSHARED ACTOR ANYWHERE IN THE UNION ARENA -- NO SECTOR-PRIVATE LINK EVER MOVES (FIXED-ATTRIBUTION READING) -- CROSS-SECTOR DIVISION EVENTS ARE ADMITTED BY THE COMMITTED GRAMMAR (2 OF 3 SPECIFICATIONS DRIVEN, THE OTHERS REFUSED ON THE VERSION LINEAGE) AND EACH CROSS LINK REMOVES EXACTLY ONE UNDETERMINED ENTRY (4,3,2,1,0) -- EVERY CROSS-SECTOR EVENT THAT WOULD FIX A SEAM ENTRY LEAVES THE TARGET BY THEOREM ON THE AMALGAM'S LINK SET (2 OF 2 ADMITTED WITNESSES DIE AT STRUCTURE); WHETHER ANY OTHER COMMITTED STRUCTURE FIXES THEM IS OPEN AT S-3",
+  "SEC-OVERLAP-TYPE-SELECTED-NOT-k-SELECTED-[EVERY k IN {2,3} CARRIES BOTH A WELDING AND A NON-WELDING TYPE, k IN {0,1} ONLY WELDING TYPES AND k=1 HAS NO PAIR TO DOUBLE; THE CRITERION IS ALIGNMENT: THE UNION WELDS IFF NO SHARED PAIR IS ADJACENT IN BOTH SECTORS, i.e. IFF EVERY SHARED PAIR SHARES A TRIPARTITE CLASS ON AT LEAST ONE SIDE; AT k=3 THIS IS 'ALL THREE IN ONE CLASS ON ONE SIDE', 2970 OF 42336 GLUINGS; THE WORD IS TYPED BY A COMPARATOR THAT STATES BOTH HYPOTHESES AND IS EXERCISED ON 4 DECLARED CONTROL FAMILIES, ONE OF WHICH RETURNS SEC-K-SELECTED] -- STERILITY-CONTROL=k=0-CONSISTENT-WITH-R1'S-COPYING-LESSON-AT-A-DIFFERENT-OBJECT(NOT-AN-INSTANCE-OF-THEOREM-B): |Aut|=3359232=|Aut(SECTOR)|^2 x 2 BY TWO ROUTES, 0 NEW PAIRS, 0 DOUBLED, 0 SEAM CELLS, THE DICTIONARY THE DIRECT SUM OF THE TWO -- AGAINST k=3-ALIGNED WHERE |Aut|=62208 AND THE SEAM CARRIES 12 UNDETERMINED ENTRIES"
  ],
  "walls": {
+  "citation_gates_excluded": [
+   "G-SOURCES",
+   "G-CITED-NOT-READ",
+   "G-ANCHORS"
+  ],
   "citation_keys_excluded": [
-   "provenance"
+   "provenance",
+   "reads"
   ],
   "l1_absent": true,
   "naming_present": true,
