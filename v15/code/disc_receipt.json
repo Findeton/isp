@@ -48,6 +48,68 @@
    }
   ]
  },
+ "coin_order_fiber": {
+  "alternative_order": "D-DOT-G",
+  "alternative_tick": 4,
+  "alternative_tick3_equals_the_null": true,
+  "delivered_order": "G-DOT-D",
+  "delivered_tick": 3,
+  "orientation_rows": [
+   {
+    "arena": 2,
+    "first_difference": 3,
+    "ipr_tick3": "43392899/129140163",
+    "orientation": 1
+   },
+   {
+    "arena": 2,
+    "first_difference": 3,
+    "ipr_tick3": "43392899/129140163",
+    "orientation": -1
+   },
+   {
+    "arena": 3,
+    "first_difference": 3,
+    "ipr_tick3": "33596579/129140163",
+    "orientation": 1
+   },
+   {
+    "arena": 3,
+    "first_difference": 3,
+    "ipr_tick3": "33596579/129140163",
+    "orientation": -1
+   }
+  ],
+  "orientation_word": "INERT",
+  "parent_item": "F6-COIN-ORDER, stamped DECLARED-VERDICT-RELEVANT",
+  "reading": "the tick is ORDER-RELATIVE: it is 3 at the delivered member and 4 at the parent's alternative, whose tick-3 law is the null's own exactly. The orientation fiber moves neither.",
+  "rows": [
+   {
+    "arena": 2,
+    "first_difference": 3,
+    "order": "GD",
+    "tick3_equals_the_null": false
+   },
+   {
+    "arena": 2,
+    "first_difference": 4,
+    "order": "DG",
+    "tick3_equals_the_null": true
+   },
+   {
+    "arena": 3,
+    "first_difference": 3,
+    "order": "GD",
+    "tick3_equals_the_null": false
+   },
+   {
+    "arena": 3,
+    "first_difference": 4,
+    "order": "DG",
+    "tick3_equals_the_null": true
+   }
+  ]
+ },
  "discriminant": {
   "agree_checks": 6216,
   "agree_upto": 2,
@@ -59,6 +121,7 @@
   "observable_word": "THE-TICK-3-SITE-OCCUPATION-DISTRIBUTION",
   "q2": {
    "branches": 306,
+   "branches_at_tick": 3,
    "horizon": 5,
    "isp_dist": [
     "9824/19683",
@@ -81,10 +144,12 @@
     "max_cell_count": 5,
     "total_mass": "1"
    },
+   "record_side_read_at_horizon": 5,
    "tv": "10144/59049"
   },
   "q3": {
    "branches": 486,
+   "branches_at_tick": 3,
    "horizon": 3,
    "isp_dist": [
     "1/81",
@@ -117,11 +182,12 @@
     "max_cell_count": 3,
     "total_mass": "1"
    },
+   "record_side_read_at_horizon": 3,
    "tv": "1024/19683"
   },
   "reading": "AN ABLATION: the null is this model with the feedback layer removed and everything else held equal, so the difference measures the layer and not a fitted number",
   "trivial_points": 78,
-  "verdict_word": "RECORD-BACKREACTION-DETECTED-AT-TICK-3"
+  "verdict_word": "RECORD-BACKREACTION-NON-INERT-UNDER-SPECIFIED-DECLARATIONS"
  },
  "exactness": {
   "float_sites": []
@@ -129,9 +195,10 @@
  "expressibility": {
   "both": 6,
   "class_words": [
-   "MEASURABLE",
-   "DEFINITIONAL"
+   "DEFINITIONAL",
+   "MEASURABLE"
   ],
+  "class_words_read_from_the_pin": true,
   "isp_only": 6,
   "rows": [
    {
@@ -211,28 +278,60 @@
   "unruled": []
  },
  "falsifier": {
+  "closest_gap_q2": "8200/59049",
+  "closest_gap_q3": "1024/19683",
   "confidence_denominator": 100,
+  "diagnostic_case": "the value the record-free null itself takes, which is the case that says the record layer was not implemented at all",
   "kind": "REGRESSION-TEST-NOT-EMPIRICAL",
   "max_gap_q2": "10144/59049",
   "max_gap_q3": "1024/19683",
   "operational_units": "ABSENT-IN-THIS-CORPUS",
-  "shots_q2": 3389,
+  "shots_against_the_pr3_null_q2": 3389,
+  "shots_against_the_pr3_null_q3": 36948,
+  "shots_q2": 5186,
   "shots_q3": 36948,
   "simulation_branches_q2": 306,
   "simulation_branches_q3": 486,
-  "statement": "a proposed realization of this model is refuted at the declared arena if the site-occupation distribution at the third tick equals the record-free null's, or any value other than the one published here; the test is a regression test on a realization and not an empirical test of nature, because this corpus supplies no mapping from ticks and sites to laboratory units",
+  "statement": "a proposed realization of this model is refuted at the declared arena if the site-occupation distribution at the third tick takes any value other than the one published here; the test is a regression test on a realization and not an empirical test of nature, because this corpus supplies no mapping from ticks and sites to laboratory units",
   "word": "COMPUTATIONAL-REGRESSION-TEST-ON-A-PROPOSED-REALIZATION"
  },
  "falsifier_coverage": {
-  "falsified": 34,
-  "gates": 34,
+  "denominator": "the declared gate list",
+  "falsified": 43,
+  "gates": 42,
+  "gates_not_yet_fired_when_this_gate_ran": [
+   "G-READS-DECLARED",
+   "G-TEMPLATE-ADOPTED",
+   "G-TRANSCRIPT-BOUND",
+   "T-FALSIFIER-COVERAGE"
+  ],
   "problem": "none",
   "sentinels": [],
-  "waived": 2,
-  "waivers": [
-   "G-READS-DECLARED",
-   "G-SCOPE-DECLARED"
-  ]
+  "waived": 0,
+  "waivers": []
+ },
+ "feasibility": {
+  "blocked_route": "DISC-BLOCKED-RETIRED-AS-UNREACHABLE-BY-CONSTRUCTION",
+  "declared": 3,
+  "demonstration": "MUT-VALUES drives the payload to the negative verdict word and dies at G-DISCRIMINANT-VALUES",
+  "demonstration_present": true,
+  "negative_verdict_word": "RECORD-BACKREACTION-NOT-DETECTED-IN-THE-SWEPT-WINDOW",
+  "reachable": 2,
+  "rows": [
+   {
+    "pin outcome word": "DISC-FOUND",
+    "status": "REACHED-UNDER-THE-RENAMED-POSITIVE-WORD"
+   },
+   {
+    "pin outcome word": "DISC-NULL-REPRODUCES-ALL-TESTED",
+    "status": "REACHABLE: the census's own limit at 10-OF-10-TESTED-ROWS, and the negative verdict word RECORD-BACKREACTION-NOT-DETECTED-IN-THE-SWEPT-WINDOW is driven by the declared recipe MUT-VALUES, which switches the coupling off and dies at G-DISCRIMINANT-VALUES"
+   },
+   {
+    "pin outcome word": "DISC-BLOCKED",
+    "status": "RETIRED-AS-UNREACHABLE: no route in this instrument produces it -- the two arms are exhaustive and exact, so the run either separates them or does not, and there is no third exit; the word is declared retired rather than left silent"
+   }
+  ],
+  "word": "BOTH-WAYS-BY-A-DECLARED-RECIPE"
  },
  "fiber": {
   "first_difference_tick": 3,
@@ -270,6 +369,7 @@
   "trivial_never_differ": 78
  },
  "isp_fidelity": {
+  "canonical_coin_is_the_least_non_trivial_class": true,
   "control_max_cell_count": 1,
   "coupled_branches": [
    3,
@@ -306,13 +406,16 @@
    9234,
    212382
   ],
-  "parent_frozen_ipr": "2306155/14348907"
+  "parent_frozen_ipr": "2306155/14348907",
+  "parities_measured_between_the_two_arms": 3,
+  "parities_read_from_the_parents_sentence": 3
  },
  "lattice_closed_form": {
   "coins": 640,
   "failures": 0,
   "gap_read_from_the_parent": "1/2",
   "halving_present_at": 512,
+  "measured_content": "the halving coefficient's PRESENCE, at the coins counted here and at the record-free lattice arm's own",
   "null_coin_coefficients": [
    "2",
    "-1",
@@ -320,6 +423,7 @@
   ],
   "null_coin_halving": true,
   "null_coin_halving_ratio": "1/2",
+  "ratio_status": "DEFINITIONAL-GIVEN-A-NON-ZERO-HALVING-COEFFICIENT",
   "spectrum": [
    "1",
    "1",
@@ -333,8 +437,11 @@
   "coins": 640,
   "comparisons": 3200,
   "disagreements": 0,
+  "grouping_quantity_read_from_the_parent": "perimeter",
   "null_coin_in_family": true,
+  "null_coin_name": "the Hadamard link coin",
   "null_coin_sector": "BALANCED",
+  "pr3_selects_on_this_carrier": false,
   "rows": 80,
   "sectors": {
    "ANTIDIAGONAL": 64,
@@ -349,6 +456,7 @@
   "distinct": 11,
   "expectation_read_from_the_parent": "13/10",
   "nonflat_diagonal": 56,
+  "parents_own_stamp": "CONDITIONAL-ON-THE-DECLARED-WEIGHTS: the parent reports four expectations, one per declared weight system, and this row reproduces the one taken at the counting measure, which is the record-free arm's own measure by rule PR7",
   "values_read_from_the_parent": 11,
   "word": "REPRODUCED-BY-THE-NULL"
  },
@@ -360,6 +468,7 @@
    "2": 144
   },
   "odd_twists_reverse_everywhere": true,
+  "pinned_value_read_from_the_parent": 0,
   "power_read_from_the_parent": 4,
   "twists": [
    {
@@ -429,6 +538,27 @@
   "status": "INTERNAL-CHECK-CLOSING-THE-PARENTS-REGISTERED-TEST",
   "successor_test_located": true,
   "verdict": "RUN-AND-DETERMINATE"
+ },
+ "mechanism": {
+  "rows": [
+   {
+    "closed under addition": "yes",
+    "directions": "(1, 0) (0, 1) (1, 1)",
+    "first difference": 3
+   },
+   {
+    "closed under addition": "yes",
+    "directions": "(1, 0) (0, 1) (1, 2)",
+    "first difference": 3
+   },
+   {
+    "closed under addition": "no",
+    "directions": "(1, 0) (0, 1) (2, 2)",
+    "first difference": 4
+   }
+  ],
+  "status": "an account, still ungated as an explanation; what is gated is the correlation this row measures",
+  "word": "CORROBORATED"
  },
  "modulus": {
   "declared": [
@@ -501,6 +631,8 @@
  },
  "modulus_descent": {
   "field_order_read_from_the_parent": 3,
+  "lemma": "descent holds exactly when m divides q, separation exactly when m is at least q, and the two together leave m = q",
+  "lemma_counterexamples": [],
   "parent_sentence_located": true,
   "prime_orders_only": true,
   "rows": [
@@ -530,6 +662,14 @@
    }
   ]
  },
+ "null_is_the_control": {
+  "checks": 1116,
+  "equal": 1116,
+  "parent_row": "paper-20's sealed G-NONTRIVIALITY row already established that the declared observables differ from the mandatory frozen-stage control at horizon 5",
+  "what_is_new_here": "the tick at which the parting starts, the exact magnitudes at both planes, and the universality over the swept fiber",
+  "why": "on a record whose counts never update the diagonal is a scalar multiple of the identity at every site, so the frozen coin is the null's coin times a global phase and the two site-occupation ladders coincide at every tick",
+  "word": "THE-NULL-IS-THE-PARENTS-OWN-FROZEN-STAGE-CONTROL"
+ },
  "null_model": {
   "dimension_read_from_the_pin": 2,
   "dropped": "RECORD-LAYER-CONSERVED-PRICE-STRUCTURE",
@@ -556,6 +696,7 @@
   "rules": 7,
   "shared": "ARENA-REGISTER-COIN-SHIFT-STATE-HORIZON",
   "shared_count": 6,
+  "shared_derived_from": "NULL_RULE",
   "word": "PLAIN-COINED-WALK"
  },
  "null_no_record": {
@@ -572,37 +713,52 @@
  },
  "null_two_routes": {
   "checks": 39,
+  "coverage": "one point per arena -- the origin, the first internal direction and the Grover coin -- because the integer route exists only at a rational-integral coin",
+  "points": 2,
   "violations": 0
  },
  "paper": {
   "path": "v15/paper-47-disc.md",
-  "sha256_12": "b12c4c67bac8"
+  "sha256_12": "5da53943c6f7"
  },
  "paper_claims": {
   "fences": 1,
   "problem": "none",
-  "prose": 18,
-  "rows": 92
+  "prose": 24,
+  "rows": 116
  },
  "paper_coverage": {
-  "backing_fractions": 26,
-  "backing_values": 84,
-  "scanned": 337,
+  "backing_fractions": 27,
+  "backing_values": 105,
+  "scanned": 473,
   "unbacked": [],
   "unbacked_fractions": []
  },
  "paper_referents": {
   "exemptions_unused": [],
-  "occurrences_checked": 3,
+  "independent_floor": 28,
+  "occurrences_checked": 28,
   "problem": "none",
-  "section_ordinals_removed": 14,
+  "section_ordinals_removed": 17,
+  "spelled_checked": 21,
+  "spelled_exemption_uses": 15,
+  "spelled_offences": [],
+  "table_rows_removed": 136,
   "universes": {
    "the census": {
     "nouns": [
      "sealed result",
      "sealed results",
      "census row",
-     "census rows"
+     "census rows",
+     "ruling",
+     "rulings",
+     "tested result",
+     "tested results",
+     "tested row",
+     "tested rows",
+     "parent result",
+     "parent results"
     ],
     "pairs": [
      [
@@ -614,6 +770,10 @@
       10
      ],
      [
+      6,
+      9
+     ],
+     [
       7,
       10
      ]
@@ -621,14 +781,20 @@
     "values": [
      1,
      2,
+     6,
      7,
+     9,
      10
     ]
    },
    "the coin census": {
     "nouns": [
      "covariant coin",
-     "covariant coins"
+     "covariant coins",
+     "coin class",
+     "coin classes",
+     "solution",
+     "solutions"
     ],
     "pairs": [
      [
@@ -653,7 +819,9 @@
      "coin of the carrier",
      "coins of the shared family",
      "link coin",
-     "link coins"
+     "link coins",
+     "coin of the shared family",
+     "coins of the carrier"
     ],
     "pairs": [
      [
@@ -688,10 +856,32 @@
      3200
     ]
    },
+   "the coin-order fiber": {
+    "nouns": [
+     "coin order",
+     "coin orders",
+     "shift orientation",
+     "shift orientations"
+    ],
+    "pairs": [],
+    "values": [
+     2,
+     3,
+     4
+    ]
+   },
    "the fiber": {
     "nouns": [
      "fiber point",
-     "fiber points"
+     "fiber points",
+     "point of the sweep",
+     "points of the sweep",
+     "interfering point",
+     "interfering points",
+     "trivial coin point",
+     "trivial coin points",
+     "site-by-tick comparison",
+     "site-by-tick comparisons"
     ],
     "pairs": [
      [
@@ -701,6 +891,14 @@
      [
       294,
       294
+     ],
+     [
+      1116,
+      1116
+     ],
+     [
+      6216,
+      372
      ],
      [
       6216,
@@ -717,13 +915,18 @@
      270,
      294,
      372,
+     1116,
      6216
     ]
    },
    "the modulus sweep": {
     "nouns": [
      "declared modulus",
-     "declared moduli"
+     "declared moduli",
+     "modulus",
+     "moduli",
+     "field order",
+     "field orders"
     ],
     "pairs": [
      [
@@ -738,6 +941,11 @@
      4,
      5,
      6,
+     7,
+     8,
+     9,
+     10,
+     11,
      12
     ]
    },
@@ -756,66 +964,227 @@
      6,
      12
     ]
+   },
+   "the pre-registration": {
+    "nouns": [
+     "pre-registration rule",
+     "pre-registration rules"
+    ],
+    "pairs": [
+     [
+      2,
+      7
+     ]
+    ],
+    "values": [
+     2,
+     6,
+     7
+    ]
+   },
+   "the price": {
+    "nouns": [
+     "structure",
+     "structures",
+     "free number",
+     "free numbers",
+     "adjustable number",
+     "adjustable numbers"
+    ],
+    "pairs": [
+     [
+      1,
+      6
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "values": [
+     0,
+     1,
+     5,
+     6
+    ]
+   },
+   "the wider null sweep": {
+    "nouns": [
+     "memoryless configuration",
+     "memoryless configurations",
+     "integral coin",
+     "integral coins"
+    ],
+    "pairs": [
+     [
+      0,
+      10380
+     ]
+    ],
+    "values": [
+     0,
+     3,
+     16,
+     30,
+     48,
+     76,
+     90,
+     171,
+     240,
+     353,
+     972,
+     2880,
+     6480,
+     10380
+    ]
    }
-  }
+  },
+  "universes_binding_nothing": []
+ },
+ "preregistration": {
+  "asserted_parities": {
+   "PR1": "same site set",
+   "PR2": "same dimension",
+   "PR3": "same coin",
+   "PR4": "same conditional translation",
+   "PR5": "same state",
+   "PR6": "no record layer",
+   "PR7": "uniform counting measure"
+  },
+  "asserts_missing": [],
+  "content_legs": {
+   "PR1": true,
+   "PR2": true,
+   "PR3": true,
+   "PR4": true,
+   "PR5": true,
+   "PR6": true,
+   "PR7": true
+  },
+  "content_unbound": [],
+  "datum_words": [
+   "ARENA",
+   "REGISTER",
+   "COIN",
+   "SHIFT",
+   "STATE",
+   "STRUCTURE",
+   "MEASURE"
+  ],
+  "declared_digest": "cb5064b58db6",
+  "digest": "cb5064b58db6",
+  "how": "the rule table's digest is declared WITH the table; each rule carries a content leg over objects this run built; and each rule's TEXT must still assert the parity that leg measures and admit no post-hoc tuning -- the third leg is the one that survives an author who re-declares the digest beside the table, which the digest leg alone cannot see",
+  "parity_names_isp": [
+   "pr_arena",
+   "pr_horizon",
+   "pr_coin",
+   "pr_start",
+   "pr_dir"
+  ],
+  "parity_names_null": [
+   "pr_arena",
+   "pr_horizon",
+   "pr_coin",
+   "pr_start",
+   "pr_dir"
+  ],
+  "sealed": true,
+  "shared_derived": [
+   "ARENA",
+   "REGISTER",
+   "COIN",
+   "SHIFT",
+   "STATE",
+   "HORIZON"
+  ],
+  "tuning_admitted": []
  },
  "q155_census": {
   "not_expressible": 1,
   "not_reproduced": 2,
+  "parent_reproduced": 6,
+  "parent_results": 9,
+  "provenance_classes": [
+   "sealed parent result",
+   "carved here from the same parent observable as the row below",
+   "parent's registered-and-unrun test",
+   "definitional bundle"
+  ],
+  "reading": "the census is led at the parent-result grain -- one row per parent result, the walk's own site distribution counted once -- and the tested-row grain is kept beside it as provenance",
   "reproduced": 7,
+  "reproduced_keys": [
+   "PERIMETER-LAW",
+   "CLOSED-FORM",
+   "GAP",
+   "PLAQUETTE",
+   "QUARTIC-SIGN",
+   "COIN-REGISTER-RESTRICTION",
+   "THE-FIRST-TWO-TICKS"
+  ],
   "rows": [
    {
-    "evidence": "per-configuration at 3200 equal-perimeter comparisons, 0 disagreements; the null's own coin is in the family",
-    "result": "paper-36 the rectangle ladder is a function of the perimeter alone",
+    "evidence": "per-configuration at 3200 equal-perimeter comparisons, 0 disagreements; the record-free lattice arm's own coin is in the family",
+    "parent result": "paper-36 the rectangle ladder is a function of the perimeter alone",
+    "provenance": "sealed parent result",
     "ruling": "REPRODUCED"
    },
    {
     "evidence": "0 closed-form failures over 640 coins",
-    "result": "paper-36 the three-term closed form at every coin",
+    "parent result": "paper-36 the three-term closed form at every coin",
+    "provenance": "sealed parent result",
     "ruling": "REPRODUCED"
    },
    {
-    "evidence": "present at 512 of 640 coins, the null's own among them with coefficients 2 -1 1",
-    "result": "paper-36 the halving mode and its gap",
+    "evidence": "present at 512 of 640 coins, the record-free lattice arm's own among them with coefficients 2 -1 1",
+    "parent result": "paper-36 the halving mode and its gap",
+    "provenance": "sealed parent result",
     "ruling": "REPRODUCED"
    },
    {
     "evidence": "11 distinct values, expectation 13/10, 56 non-flat diagonal coins",
-    "result": "paper-36 the plaquette counting expectation",
+    "parent result": "paper-36 the plaquette counting expectation",
+    "provenance": "sealed parent result",
     "ruling": "REPRODUCED"
    },
    {
-    "evidence": "the null's counting measure returns 0; the odd twists reverse the observable at every coin",
-    "result": "paper-34 the off-diagonal quartic sign pinned to a single value",
+    "evidence": "the record-free arm's counting measure returns 0; the odd twists reverse the observable at every coin",
+    "parent result": "paper-34 the off-diagonal quartic sign pinned to a single value",
+    "provenance": "sealed parent result",
     "ruling": "REPRODUCED"
    },
    {
     "evidence": "18 unitary and 0 non-monomial over 50653 maps: arena-carried",
-    "result": "paper-20 the coin register is forced on this offset set",
+    "parent result": "paper-20 the coin register is forced on this offset set",
+    "provenance": "sealed parent result",
     "ruling": "REPRODUCED"
    },
    {
     "evidence": "6216 site-by-tick comparisons, 0 violations, over all 372 points of the sweep",
-    "result": "paper-20 the walk's distribution at the first two ticks",
+    "parent result": "paper-20 the walk's distribution at the first two ticks",
+    "provenance": "carved here from the same parent observable as the row below",
     "ruling": "REPRODUCED"
    },
    {
-    "evidence": "unequal at both arenas; the first difference arrives at the same tick at 294 of 294 interfering points of the sweep",
-    "result": "paper-20 the walk's distribution from the third tick on",
+    "evidence": "unequal at both arenas; the first difference arrives at the same tick at 294 of 294 interfering points of the sweep; at the parent's alternative coin order it arrives one tick later",
+    "parent result": "paper-20 the walk's distribution from the third tick on",
+    "provenance": "sealed parent result",
     "ruling": "NOT-REPRODUCED"
    },
    {
-    "evidence": "the null is the modulus-one point of the family; the tick-three distribution takes 5 distinct values over 5 moduli",
-    "result": "paper-39 the connection modulus read at the smaller arena",
+    "evidence": "the record-free arm is the modulus-one point of the family; the tick-three distribution takes 5 distinct values over 5 moduli; internal, construction-dependent",
+    "parent result": "paper-39 the connection modulus read at the smaller arena",
+    "provenance": "parent's registered-and-unrun test",
     "ruling": "NOT-REPRODUCED"
    },
    {
     "evidence": "6 of 12 observables of the classification are formable only where a record exists",
-    "result": "paper-20 the record-side observable set",
+    "parent result": "paper-20 the record-side observable set",
+    "provenance": "definitional bundle",
     "ruling": "NOT-EXPRESSIBLE"
    }
   ],
-  "rows_count": 10
+  "rows_count": 10,
+  "rulings_unbound": []
  },
  "reads": {
   "declared": [
@@ -829,22 +1198,26 @@
    "v15/paper-47-disc.md"
   ],
   "distinct": 8,
+  "problem": "none",
   "reads": 13
  },
  "rendered": {
   "claims": [
    "the two models agree exactly through the second tick and differ from the third on",
-   "the null is one model and not a class",
+   "no memory-bearing null is tested here",
    "the prediction is free of every parameter the null does not also carry",
    "no operational mapping to laboratory units exists in this corpus",
    "a definitional absence is not a discriminant",
    "the discriminant requires interference: at the scalar coins the two models never separate",
    "this unit is a model-ablation benchmark",
    "the null compared here is memoryless",
-   "parameter-free is not structure-free"
+   "parameter-free is not structure-free",
+   "the record-free null is the parent's own frozen-stage control up to a global phase",
+   "the tick is order-relative",
+   "no memoryless walk in either swept class reproduces the third-tick law at either plane"
   ],
   "fences": [
-   "```\nRECORD-BACKREACTION-DETECTED-AT-TICK-3 -- CLASS=MODEL-ABLATION-BENCHMARK;NULL=PLAIN-COINED-WALK;RULES=7;SHARED-WITH-ISP=ARENA-REGISTER-COIN-SHIFT-STATE-HORIZON;ABLATED=RECORD-LAYER-CONSERVED-PRICE-STRUCTURE -- PRIMARY=THE-RECORD-FREE-NULL-REPRODUCES-7-OF-10-TESTED-RESULTS;2-NOT-REPRODUCED;1-NOT-EXPRESSIBLE;REPRODUCED=PERIMETER-LAW+CLOSED-FORM+GAP+PLAQUETTE+QUARTIC-SIGN+COIN-REGISTER-RESTRICTION+THE-FIRST-TWO-TICKS -- LATTICE=PERIMETER-REPRODUCED-BY-THE-NULL;CLOSED-FORM-REPRODUCED-BY-THE-NULL;GAP-REPRODUCED-BY-THE-NULL;PLAQUETTE-REPRODUCED-BY-THE-NULL;QUARTIC-REPRODUCED-BY-THE-NULL -- AGREEMENT=6216-OF-6216-SITE-BY-TICK-CHECKS-EQUAL-THROUGH-TICK-2 -- ABLATION-EFFECT=FIRST-AT-TICK-3-AT-294-OF-294-NON-TRIVIAL-FIBER-POINTS;NEVER-AT-78-TRIVIAL-COIN-POINTS -- VALUES-AT-AG-2-3=ISP-33596579/129140163-VS-NULL-40411/177147;TV=1024/19683 -- VALUES-AT-AG-2-2=ISP-43392899/129140163-VS-NULL-58235/177147;TV=10144/59049 -- M-EQUALS-Q=FORCED-AND-OBSERVABLE;INTERNAL-CHECK-CLOSING-THE-PARENTS-REGISTERED-TEST-NOT-AN-EXTERNAL-PREDICTION;CONSTRUCTION-DEPENDENT;OBSERVABLE-AT-5-OF-5-DECLARED-MODULI -- PRICE=ISP-CARRIES-5-STRUCTURES-THE-NULL-DOES-NOT-AND-0-ADJUSTABLE-NUMBERS;PARAMETER-FREE-IS-NOT-STRUCTURE-FREE -- FALSIFIER=COMPUTATIONAL-REGRESSION-TEST-ON-A-PROPOSED-REALIZATION;SHOTS=36948-AT-AG-2-3-AND-3389-AT-AG-2-2 -- SUCCESSOR=DISC-2-THE-SIMPLEST-MEMORY-BEARING-NULL -- SCOPE=ONE-MEMORYLESS-NULL-NOT-A-CLASS;D=2;ARENAS=AG-2-2-AND-AG-2-3;READINGS=A-AND-B;AT-FINITE-HORIZON-A-RECORD-IS-ABSORBABLE-INTO-AN-ENLARGED-STATE;NO-OPERATIONAL-UNITS;NO-LABORATORY-CLAIM;NOT-AN-EXTERNAL-PREDICTION\n```"
+   "```\nRECORD-BACKREACTION-NON-INERT-UNDER-SPECIFIED-DECLARATIONS -- CLASS=MODEL-ABLATION-BENCHMARK;NULL=PLAIN-COINED-WALK;RULES=7;SHARED-WITH-ISP=ARENA-REGISTER-COIN-SHIFT-STATE-HORIZON;ABLATED=RECORD-LAYER-CONSERVED-PRICE-STRUCTURE -- PRIMARY=THE-RECORD-FREE-NULL-REPRODUCES-6-OF-9-PARENT-RESULTS;7-OF-10-TESTED-ROWS;2-NOT-REPRODUCED;1-NOT-EXPRESSIBLE;REPRODUCED=PERIMETER-LAW+CLOSED-FORM+GAP+PLAQUETTE+QUARTIC-SIGN+COIN-REGISTER-RESTRICTION+THE-FIRST-TWO-TICKS -- LATTICE=PERIMETER-REPRODUCED-BY-THE-NULL;CLOSED-FORM-REPRODUCED-BY-THE-NULL;GAP-REPRODUCED-BY-THE-NULL;PLAQUETTE-REPRODUCED-BY-THE-NULL;QUARTIC-REPRODUCED-BY-THE-NULL -- BASE-FINDING-IS-THE-PARENTS=THE-NULL-IS-PAPER-20S-OWN-FROZEN-STAGE-CONTROL-UP-TO-A-GLOBAL-PHASE;EQUAL-AT-1116-OF-1116-SITE-DISTRIBUTION-CHECKS;THIS-UNITS-NEW-CONTENT=THE-TICK+THE-EXACT-MAGNITUDES+THE-UNIVERSALITY -- AGREEMENT=6216-OF-6216-SITE-BY-TICK-CHECKS-EQUAL-THROUGH-TICK-2 -- ABLATION-EFFECT=FIRST-AT-TICK-3-AT-294-OF-294-NON-TRIVIAL-FIBER-POINTS;NEVER-AT-78-TRIVIAL-COIN-POINTS -- COIN-ORDER-FIBER=DELIVERED-G-DOT-D-TICK-3;ALTERNATIVE-D-DOT-G-TICK-4-WITH-THE-TICK-3-LAW-EQUAL-TO-THE-NULLS-AT-BOTH-PLANES;THE-TICK-IS-ORDER-RELATIVE;ORIENTATION-FIBER-INERT -- WIDER-NULL-SWEEP=10380-MEMORYLESS-CONFIGURATIONS;0-EXACT-REPRODUCTIONS;CLOSEST-AT-AG-2-2=8200/59049-BY-A-NON-COVARIANT-COIN-AGAINST-THE-PR3-NULLS-10144/59049;PR3-IS-THE-BEST-AT-AG-2-3 -- IPR-AT-AG-2-3=ISP-33596579/129140163-VS-NULL-40411/177147;TV=1024/19683 -- IPR-AT-AG-2-2=ISP-43392899/129140163-VS-NULL-58235/177147;TV=10144/59049 -- M-EQUALS-Q=FORCED-AND-OBSERVABLE;INTERNAL-CHECK-CLOSING-THE-PARENTS-REGISTERED-TEST-NOT-AN-EXTERNAL-PREDICTION;CONSTRUCTION-DEPENDENT;OBSERVABLE-AT-5-OF-5-DECLARED-MODULI -- PRICE=ISP-CARRIES-5-STRUCTURES-THE-NULL-DOES-NOT-AND-1-FREE-NUMBER;THE-FREE-NUMBER-IS-THE-PHASE-MODULUS-AND-IT-IS-FIXED-ONLY-BY-THE-CONSTRUCTION-DEPENDENT-DESCENT-FORCING;PARAMETER-FREE-IS-NOT-STRUCTURE-FREE -- FALSIFIER=COMPUTATIONAL-REGRESSION-TEST-ON-A-PROPOSED-REALIZATION;SHOTS-IF-EVER-REALIZED=36948-AT-AG-2-3-AND-5186-AT-AG-2-2-AGAINST-THE-CLOSEST-MEMORYLESS-WALK -- FEASIBILITY=BOTH-WAYS-BY-A-DECLARED-RECIPE;PIN-OUTCOME-WORDS=2-OF-3-REACHABLE;DISC-BLOCKED-RETIRED-AS-UNREACHABLE-BY-CONSTRUCTION -- SUCCESSOR=DISC-2-THE-SIMPLEST-MEMORY-BEARING-NULL -- AXES=ARENA+COIN-CLASS+COIN-DIRECTION+COIN-ORDER+EMISSION-READING+MODULUS+SHIFT-ORIENTATION+START-SITE -- SCOPE=ONE-PRE-REGISTERED-NULL-PR1-TO-PR7-WHICH-IS-THE-PARENTS-FROZEN-STAGE-CONTROL;PLUS-A-SWEPT-MEMORYLESS-CLASS-OF-10380-CONFIGURATIONS;NO-MEMORY-BEARING-NULL-TESTED-AT-ALL;D=2;ARENAS=AG-2-2-AND-AG-2-3;READINGS=A-AND-B;AT-FINITE-HORIZON-A-RECORD-IS-ABSORBABLE-INTO-AN-ENLARGED-STATE;NO-OPERATIONAL-UNITS;NO-LABORATORY-CLAIM;NOT-AN-EXTERNAL-PREDICTION\n```"
   ],
   "tables": [
    "| rule | datum | the null's value |\n|---|---|---|\n| PR1 | ARENA | the null runs on the same site set as the ISP model it is compared against -- the points of AG(2,q) with periodic identification, d=2 |\n| PR2 | REGISTER | the null's internal register has the same dimension as the ISP model's -- one basis vector per declared link direction |\n| PR3 | COIN | the null carries the SAME coin as the ISP model it is compared against, taken from the same S_3-covariant census over the arena's own ring; the discriminator may not be won by changing the coin |\n| PR4 | SHIFT | the null's shift is the same conditional translation, carrying the amplitude at a site along its own direction and leaving the direction alone |\n| PR5 | STATE | the null starts in the same state as the ISP model -- one basis vector, at the same site and the same direction |\n| PR6 | STRUCTURE | the null has NO record layer: its coin is constant in space and in time, it emits nothing, and no count field exists in its region |\n| PR7 | MEASURE | where a census over configurations needs a measure the null uses the uniform counting measure -- it has no conserved-price structure and declares no weight system |",
@@ -854,49 +1227,76 @@
    "| arena | tick | ISP | the null | total variation |\n|---|---|---|---|---|\n| AG(2, 3) | 3 | 33596579/129140163 | 40411/177147 | 1024/19683 |\n| AG(2, 2) | 3 | 43392899/129140163 | 58235/177147 | 10144/59049 |",
    "| site | ISP | the null |\n|---|---|---|\n| (0, 0) | 1/81 | 1/81 |\n| (0, 1) | 68/729 | 68/729 |\n| (0, 2) | 116/729 | 116/729 |\n| (1, 0) | 32/729 | 32/729 |\n| (1, 1) | 0 | 0 |\n| (1, 2) | 2620/19683 | 116/729 |\n| (2, 0) | 32/729 | 32/729 |\n| (2, 1) | 1324/19683 | 68/729 |\n| (2, 2) | 8800/19683 | 32/81 |",
    "| site | ISP | the null |\n|---|---|---|\n| (0, 0) | 9824/19683 | 32/81 |\n| (0, 1) | 8480/59049 | 80/729 |\n| (1, 0) | 12617/59049 | 281/729 |\n| (1, 1) | 8480/59049 | 80/729 |",
+   "| arena | coin order | first difference | tick-3 law equals the null's |\n|---|---|---|---|\n| AG(2, 2) | G.D | 3 | no |\n| AG(2, 2) | D.G | 4 | yes |\n| AG(2, 3) | G.D | 3 | no |\n| AG(2, 3) | D.G | 4 | yes |",
+   "| arena | shift orientation | first difference | tick-3 inverse participation |\n|---|---|---|---|\n| AG(2, 2) | +l | 3 | 43392899/129140163 |\n| AG(2, 2) | -l | 3 | 43392899/129140163 |\n| AG(2, 3) | +l | 3 | 33596579/129140163 |\n| AG(2, 3) | -l | 3 | 33596579/129140163 |",
+   "| arena | null class | configurations | distinct tick-3 laws | exact reproductions | smallest single-site gap |\n|---|---|---|---|---|---|\n| AG(2, 2) | the arena's own covariant census | 48 | 16 | 0 | 10144/59049 |\n| AG(2, 2) | all integral coins, covariance dropped | 2880 | 76 | 0 | 8200/59049 |\n| AG(2, 3) | the arena's own covariant census | 972 | 90 | 0 | 1024/19683 |\n| AG(2, 3) | all integral coins, covariance dropped | 6480 | 171 | 0 | 1024/19683 |",
+   "| declared directions | closed under addition | first difference |\n|---|---|---|\n| (1, 0) (0, 1) (1, 1) | yes | 3 |\n| (1, 0) (0, 1) (1, 2) | yes | 3 |\n| (1, 0) (0, 1) (2, 2) | no | 4 |",
    "| modulus | tick-3 inverse participation | branches |\n|---|---|---|\n| 1 | 58235/177147 | 270 |\n| 2 | 43392899/129140163 | 306 |\n| 3 | 4680635/14348907 | 324 |\n| 4 | 41546723/129140163 | 324 |\n| 6 | 41655923/129140163 | 324 |",
    "| field order | admissible moduli |\n|---|---|\n| 2 | 2 |\n| 3 | 3 |\n| 5 | 5 |\n| 7 | 7 |",
    "| parent's result | measured on the shared carrier | the null's own coin |\n|---|---|---|\n| perimeter-only law | 3200 comparisons, 0 disagreements | in the family: True |\n| three-term closed form | 0 failures over 640 coins | coefficients 2 -1 1 |\n| halving mode | present at 512 of 640 coins | present: True |\n| plaquette counting expectation | 11 distinct values | 13/10 |\n| off-diagonal quartic sign | 352 zero, 144 plus, 144 minus | 0 |",
    "| observable | expressible in | class | why |\n|---|---|---|---|\n| site-occupation distribution p_t(x) | BOTH | MEASURABLE | a function of the state alone |\n| inverse participation ratio | BOTH | MEASURABLE | a function of the site distribution |\n| total variation between two ticks' distributions | BOTH | MEASURABLE | a function of distributions |\n| loop observable on a uniform configuration | BOTH | MEASURABLE | a function of the link operators |\n| off-diagonal quartic sign | BOTH | MEASURABLE | a function of the coin |\n| plaquette counting expectation | BOTH | MEASURABLE | a function of the coin family and a measure |\n| division-count field n_l(x) | ISP-ONLY | DEFINITIONAL | the null has no count field |\n| emission field and its link-class marginal | ISP-ONLY | DEFINITIONAL | the null emits nothing |\n| branch count of the emission tree | ISP-ONLY | DEFINITIONAL | the null has one trajectory |\n| record curvature field on the elementary triangle | ISP-ONLY | DEFINITIONAL | a function of the count field |\n| maximum cell count | ISP-ONLY | DEFINITIONAL | a function of the count field |\n| admissibility exit probability | ISP-ONLY | DEFINITIONAL | admissibility is a property of the record |",
-   "| parent result | ruling | evidence |\n|---|---|---|\n| paper-36 the rectangle ladder is a function of the perimeter alone | REPRODUCED | per-configuration at 3200 equal-perimeter comparisons, 0 disagreements; the null's own coin is in the family |\n| paper-36 the three-term closed form at every coin | REPRODUCED | 0 closed-form failures over 640 coins |\n| paper-36 the halving mode and its gap | REPRODUCED | present at 512 of 640 coins, the null's own among them with coefficients 2 -1 1 |\n| paper-36 the plaquette counting expectation | REPRODUCED | 11 distinct values, expectation 13/10, 56 non-flat diagonal coins |\n| paper-34 the off-diagonal quartic sign pinned to a single value | REPRODUCED | the null's counting measure returns 0; the odd twists reverse the observable at every coin |\n| paper-20 the coin register is forced on this offset set | REPRODUCED | 18 unitary and 0 non-monomial over 50653 maps: arena-carried |\n| paper-20 the walk's distribution at the first two ticks | REPRODUCED | 6216 site-by-tick comparisons, 0 violations, over all 372 points of the sweep |\n| paper-20 the walk's distribution from the third tick on | NOT-REPRODUCED | unequal at both arenas; the first difference arrives at the same tick at 294 of 294 interfering points of the sweep |\n| paper-39 the connection modulus read at the smaller arena | NOT-REPRODUCED | the null is the modulus-one point of the family; the tick-three distribution takes 5 distinct values over 5 moduli |\n| paper-20 the record-side observable set | NOT-EXPRESSIBLE | 6 of 12 observables of the classification are formable only where a record exists |",
-   "| structure | what it is | adjustable numbers |\n|---|---|---|\n| the count field | one non-negative integer per cell, initialised uniform and monotone thereafter | 0 |\n| the feedback rule | the coin at a site is multiplied by the diagonal of phases the site's own counts determine | 0 |\n| the emission rule | one division event per step, on a cell drawn with that cell's own post-coin weight | 0 |\n| the branch structure | the state is an ensemble over emission histories rather than a single trajectory | 0 |\n| the phase character | the map from a count to a phase, taken to be a character of the arena's own scalar group | 0 |",
-   "| arena | largest site gap | shots | branches |\n|---|---|---|---|\n| AG(2, 3) | 1024/19683 | 36948 | 486 |\n| AG(2, 2) | 10144/59049 | 3389 | 306 |",
+   "| parent result | provenance | ruling | evidence |\n|---|---|---|---|\n| paper-36 the rectangle ladder is a function of the perimeter alone | sealed parent result | REPRODUCED | per-configuration at 3200 equal-perimeter comparisons, 0 disagreements; the record-free lattice arm's own coin is in the family |\n| paper-36 the three-term closed form at every coin | sealed parent result | REPRODUCED | 0 closed-form failures over 640 coins |\n| paper-36 the halving mode and its gap | sealed parent result | REPRODUCED | present at 512 of 640 coins, the record-free lattice arm's own among them with coefficients 2 -1 1 |\n| paper-36 the plaquette counting expectation | sealed parent result | REPRODUCED | 11 distinct values, expectation 13/10, 56 non-flat diagonal coins |\n| paper-34 the off-diagonal quartic sign pinned to a single value | sealed parent result | REPRODUCED | the record-free arm's counting measure returns 0; the odd twists reverse the observable at every coin |\n| paper-20 the coin register is forced on this offset set | sealed parent result | REPRODUCED | 18 unitary and 0 non-monomial over 50653 maps: arena-carried |\n| paper-20 the walk's distribution at the first two ticks | carved here from the same parent observable as the row below | REPRODUCED | 6216 site-by-tick comparisons, 0 violations, over all 372 points of the sweep |\n| paper-20 the walk's distribution from the third tick on | sealed parent result | NOT-REPRODUCED | unequal at both arenas; the first difference arrives at the same tick at 294 of 294 interfering points of the sweep; at the parent's alternative coin order it arrives one tick later |\n| paper-39 the connection modulus read at the smaller arena | parent's registered-and-unrun test | NOT-REPRODUCED | the record-free arm is the modulus-one point of the family; the tick-three distribution takes 5 distinct values over 5 moduli; internal, construction-dependent |\n| paper-20 the record-side observable set | definitional bundle | NOT-EXPRESSIBLE | 6 of 12 observables of the classification are formable only where a record exists |",
+   "| structure | what it is | free numbers | how it is fixed |\n|---|---|---|---|\n| the count field | one non-negative integer per cell, initialised uniform and monotone thereafter | 0 | UNCONDITIONAL |\n| the feedback rule | the coin at a site is multiplied by the diagonal of phases the site's own counts determine | 0 | UNCONDITIONAL |\n| the emission rule | one division event per step, on a cell drawn with that cell's own post-coin weight | 0 | UNCONDITIONAL |\n| the branch structure | the state is an ensemble over emission histories rather than a single trajectory | 0 | UNCONDITIONAL |\n| the phase character | the map from a count to a phase, taken to be a character of the arena's own scalar group | 0 | UNCONDITIONAL |\n| the phase modulus m | the modulus at which that character reads a count; a swept axis of this run, measured moving the headline observable | 1 | FIXED-TO-THE-FIELD-ORDER-BY-THE-DESCENT-FORCING-WHICH-IS-CONSTRUCTION-DEPENDENT |",
+   "| arena | largest site gap against the closest memoryless walk | shots | branches |\n|---|---|---|---|\n| AG(2, 3) | 1024/19683 | 36948 | 486 |\n| AG(2, 2) | 8200/59049 | 5186 | 306 |",
+   "| the pin's outcome word | status |\n|---|---|\n| DISC-FOUND | REACHED-UNDER-THE-RENAMED-POSITIVE-WORD |\n| DISC-NULL-REPRODUCES-ALL-TESTED | REACHABLE: the census's own limit at 10-OF-10-TESTED-ROWS, and the negative verdict word RECORD-BACKREACTION-NOT-DETECTED-IN-THE-SWEPT-WINDOW is driven by the declared recipe MUT-VALUES, which switches the coupling off and dies at G-DISCRIMINANT-VALUES |\n| DISC-BLOCKED | RETIRED-AS-UNREACHABLE: no route in this instrument produces it -- the two arms are exhaustive and exact, so the run either separates them or does not, and there is no third exit; the word is declared retired rather than left silent |",
    "| stencil | nonzero differences | multiplicities | unitary | non-monomial |\n|---|---|---|---|---|\n| the arena's link offsets | 6 | 1 | 18 | 0 |\n| a collinear stencil | 2 | 3 | 216 | 198 |"
   ]
  },
  "s1_regions": {
-  "comparator": 8,
+  "aliases_resolved": 0,
+  "comparator": 13,
+  "declared_shared_ground": [
+   "radd",
+   "rmul",
+   "rnormsq",
+   "r_is_rational"
+  ],
+  "head_builder": 2,
   "isp": 16,
-  "null": 5,
-  "offences": []
+  "null": 6,
+  "offences": [],
+  "shared_ground_unused": []
  },
  "scope": {
   "arenas": [
    2,
    3
   ],
+  "axis_members_executed": {
+   "arena": 2,
+   "coin class": 8,
+   "coin direction": 3,
+   "coin order": 2,
+   "emission reading": 2,
+   "modulus": 5,
+   "shift orientation": 2,
+   "start site": 13
+  },
   "class_word": "MODEL-ABLATION-BENCHMARK",
   "declared_free_axes": [
-   "coin class",
-   "start site",
-   "coin direction",
-   "emission reading",
    "arena",
-   "modulus"
+   "coin class",
+   "coin direction",
+   "coin order",
+   "emission reading",
+   "modulus",
+   "shift orientation",
+   "start site"
   ],
   "horizons": {
+   "coin order": 4,
    "fiber": 3,
    "fidelity": 5,
    "head": 5
   },
-  "null_weakness": "the null compared here is MEMORYLESS: its coin is constant in space and in time. At a finite horizon a record is always absorbable into an enlarged state description, so a memory-bearing null is not excluded by anything measured here and is registered as the successor opponent.",
+  "null_weakness": "what was compared is a pre-registered null obeying PR1..PR7, which is the parent's own frozen-stage control up to a global phase, TOGETHER WITH a swept memoryless class of 10380 configurations. Every member of both is MEMORYLESS: its coin is constant in space and in time. At a finite horizon a record is always absorbable into an enlarged state description, so no memory-bearing null is excluded by anything measured here -- none was tested at all -- and that whole class is the successor's charge.",
   "readings": [
    "A",
    "B"
   ],
   "successor": "DISC-2: the simplest memory-bearing null -- a finite-memory coin, a state-dependent coin, a dynamically updated phase field, or an enlarged internal register -- named here and not attempted here.",
   "successor_word": "DISC-2-THE-SIMPLEST-MEMORY-BEARING-NULL",
-  "word": "ONE-MEMORYLESS-NULL-NOT-A-CLASS;D=2;ARENAS=AG-2-2-AND-AG-2-3;READINGS=A-AND-B;AT-FINITE-HORIZON-A-RECORD-IS-ABSORBABLE-INTO-AN-ENLARGED-STATE;NO-OPERATIONAL-UNITS;NO-LABORATORY-CLAIM;NOT-AN-EXTERNAL-PREDICTION"
+  "word": "ONE-PRE-REGISTERED-NULL-PR1-TO-PR7-WHICH-IS-THE-PARENTS-FROZEN-STAGE-CONTROL;PLUS-A-SWEPT-MEMORYLESS-CLASS-OF-10380-CONFIGURATIONS;NO-MEMORY-BEARING-NULL-TESTED-AT-ALL;D=2;ARENAS=AG-2-2-AND-AG-2-3;READINGS=A-AND-B;AT-FINITE-HORIZON-A-RECORD-IS-ABSORBABLE-INTO-AN-ENLARGED-STATE;NO-OPERATIONAL-UNITS;NO-LABORATORY-CLAIM;NOT-AN-EXTERNAL-PREDICTION"
  },
  "seal_manifest": {
   "declared_unsealed": {
@@ -909,49 +1309,58 @@
    "anchors_consumed": "95647a07f69b",
    "anchors_located": "2eb9d7ac82c0",
    "coin_census": "05ab8d3fd0c7",
-   "discriminant": "d8b6fa5951eb",
+   "coin_order_fiber": "b97baec473c3",
+   "discriminant": "32cf24046dd8",
    "exactness": "46c588f6df72",
-   "expressibility": "481750d5290a",
-   "falsifier": "4415726da6be",
-   "falsifier_coverage": "a8bd080016d3",
+   "expressibility": "e2d1fd93e5a0",
+   "falsifier": "453d79d65ad1",
+   "falsifier_coverage": "032db18c8c5e",
+   "feasibility": "4ce60edea8d8",
    "fiber": "d6f2fb6be160",
-   "isp_fidelity": "c10ed4314966",
-   "lattice_closed_form": "e7a5a9ad3719",
-   "lattice_perimeter": "a92dabaa978e",
-   "lattice_plaquette": "a111d6730cf2",
-   "lattice_quartic": "8189867258fb",
+   "isp_fidelity": "cb5e7abd0b28",
+   "lattice_closed_form": "de218f526abe",
+   "lattice_perimeter": "a5b13a4d764c",
+   "lattice_plaquette": "6f08c6b409c3",
+   "lattice_quartic": "f1bc96b7384a",
    "m2_prediction": "daa5ada77d71",
+   "mechanism": "bb033e5e83d7",
    "modulus": "b6733541d98f",
-   "modulus_descent": "c2befaa3cb38",
-   "null_model": "214eebdc80dd",
+   "modulus_descent": "d89a9e8fbc91",
+   "null_is_the_control": "f21b86b95033",
+   "null_model": "233109debb87",
    "null_no_record": "e47bf7acfc16",
-   "null_two_routes": "5bf3f387ba11",
-   "paper_claims": "cb6957354649",
-   "paper_coverage": "f1e794e0f5f5",
-   "paper_referents": "e658db8c96c8",
-   "q155_census": "4d69cff9fc20",
-   "reads": "e89149e63dc4",
-   "s1_regions": "c03368c42344",
-   "scope": "1d8b5af2997a",
+   "null_two_routes": "688894179b11",
+   "paper_claims": "8dccb7f98ef4",
+   "paper_coverage": "bff2c8e91b1a",
+   "paper_referents": "b257df855fd2",
+   "preregistration": "4c68a47969b2",
+   "q155_census": "7132fab74603",
+   "reads": "b3cff34bb7af",
+   "s1_regions": "c7a5b33e9b58",
+   "scope": "1f410fce79d0",
    "sources": "fe454f6afeaa",
    "stencil": "1914a85df0ef",
-   "structure_price": "0dbc585b8c6c",
-   "template": "8f225eb5cec0",
-   "transcript": "a2731d84a054",
-   "typed_counts": "a4b40d49201a",
-   "verdict": "0d9c8c83cd9c",
-   "walls": "eb274a9600ba"
+   "structure_price": "c41228d8a39b",
+   "template": "85a5085a786e",
+   "transcript": "1b155f01ed59",
+   "transcript_bound": "317660c1530f",
+   "typed_counts": "fdaf9869883d",
+   "verdict": "469e7a41886c",
+   "walls": "f391d2814ad6",
+   "wider_null_sweep": "0b530620346e"
   },
   "sealed_at_gate": {
    "agreement": "G-AGREE-THROUGH-THE-EARLY-TICKS",
    "anchors_consumed": "G-ANCHORS-CONSUMED",
    "anchors_located": "G-ANCHORS-LOCATED",
    "coin_census": "G-COIN-CENSUS-PARENT",
+   "coin_order_fiber": "G-COIN-ORDER-FIBER",
    "discriminant": "G-DISCRIMINANT-VALUES",
    "exactness": "G-NO-FLOATS",
    "expressibility": "G-EXPRESSIBILITY-CENSUS",
    "falsifier": "G-FALSIFIER-SPECIFIED",
    "falsifier_coverage": "T-FALSIFIER-COVERAGE",
+   "feasibility": "G-FEASIBILITY-BOTH-WAYS",
    "fiber": "G-FIRST-DIFFERENCE-TICK",
    "isp_fidelity": "G-ISP-FIDELITY-PARENT",
    "lattice_closed_form": "G-GAP-BOTH",
@@ -959,14 +1368,17 @@
    "lattice_plaquette": "G-PLAQUETTE-BOTH",
    "lattice_quartic": "G-QUARTIC-BOTH",
    "m2_prediction": "G-M2-PREDICTION-RUN",
+   "mechanism": "G-MECHANISM-CORROBORATED",
    "modulus": "G-MODULUS-OBSERVABLE",
    "modulus_descent": "G-MODULUS-DESCENT-THEOREM",
+   "null_is_the_control": "G-NULL-IS-THE-PARENTS-CONTROL",
    "null_model": "G-NULL-RULE-TOTAL",
    "null_no_record": "G-NULL-HAS-NO-RECORD",
    "null_two_routes": "G-NULL-TWO-ROUTES",
    "paper_claims": "G-PAPER-CLAIMS",
    "paper_coverage": "G-PAPER-COVERAGE",
    "paper_referents": "G-PAPER-REFERENTS",
+   "preregistration": "G-PR-PREREGISTRATION-SEALED",
    "q155_census": "G-Q155-CENSUS-TOTAL",
    "reads": "G-READS-DECLARED",
    "s1_regions": "G-S1-DISJOINT-CODE",
@@ -976,9 +1388,11 @@
    "structure_price": "G-STRUCTURE-PRICED",
    "template": "G-TEMPLATE-ADOPTED",
    "transcript": "G-TRANSCRIPT-BOUND",
+   "transcript_bound": "G-TRANSCRIPT-BOUND",
    "typed_counts": "G-TYPED-COUNTS",
    "verdict": "G-VERDICT-EQUALITY",
-   "walls": "G-PAPER-WALLS"
+   "walls": "G-PAPER-WALLS",
+   "wider_null_sweep": "G-WIDER-NULL-SWEEP"
   }
  },
  "sources": {
@@ -1010,40 +1424,59 @@
   "maps": 50653
  },
  "structure_price": {
-  "adjustable_numbers": 0,
-  "reading": "parameter-free is not structure-free: the record-carrying model carries these structures and the null does not, and the comparison prices them here even though none of them introduces an adjustable number",
+  "conditional_structures": [
+   "the phase modulus m"
+  ],
+  "dialled_structures": [
+   "the phase modulus m"
+  ],
+  "free_numbers": 1,
+  "priced_rows": 6,
+  "reading": "parameter-free is not structure-free: the record-carrying model carries these structures and the null does not; five of them introduce no free number at all and the sixth, the phase modulus, is the one number this comparison carries as a dial -- the descent leg measures it taking five distinct values and moving the headline observable at every one, and fixes it to the field order by a forcing that is construction-dependent in the parent's own sense, so the honest price is those structures and one number fixed only conditionally",
   "rows": [
    {
-    "adjustable numbers": 0,
+    "free numbers": 0,
+    "how it is fixed": "UNCONDITIONAL",
     "structure": "the count field",
     "what it is": "one non-negative integer per cell, initialised uniform and monotone thereafter"
    },
    {
-    "adjustable numbers": 0,
+    "free numbers": 0,
+    "how it is fixed": "UNCONDITIONAL",
     "structure": "the feedback rule",
     "what it is": "the coin at a site is multiplied by the diagonal of phases the site's own counts determine"
    },
    {
-    "adjustable numbers": 0,
+    "free numbers": 0,
+    "how it is fixed": "UNCONDITIONAL",
     "structure": "the emission rule",
     "what it is": "one division event per step, on a cell drawn with that cell's own post-coin weight"
    },
    {
-    "adjustable numbers": 0,
+    "free numbers": 0,
+    "how it is fixed": "UNCONDITIONAL",
     "structure": "the branch structure",
     "what it is": "the state is an ensemble over emission histories rather than a single trajectory"
    },
    {
-    "adjustable numbers": 0,
+    "free numbers": 0,
+    "how it is fixed": "UNCONDITIONAL",
     "structure": "the phase character",
     "what it is": "the map from a count to a phase, taken to be a character of the arena's own scalar group"
+   },
+   {
+    "free numbers": 1,
+    "how it is fixed": "FIXED-TO-THE-FIELD-ORDER-BY-THE-DESCENT-FORCING-WHICH-IS-CONSTRUCTION-DEPENDENT",
+    "structure": "the phase modulus m",
+    "what it is": "the modulus at which that character reads a count; a swept axis of this run, measured moving the headline observable"
    }
   ],
   "structures": 5,
-  "unpriced": []
+  "unpriced": [],
+  "values_the_dial_reached": 5
  },
  "template": {
-  "engravings": "E-25 through E-33 with TPL-2's items",
+  "engravings": "E-25 through E-33 with the template's registered items",
   "families_adopted": [
    "T-SEAL-PROMOTION",
    "T-TRANSCRIPT-BOUND",
@@ -1055,27 +1488,71 @@
    "T-FALSIFIER-POISONS",
    "T-READ-SET"
   ],
+  "families_exercised": {
+   "T-ANCHOR-CONSUMED": 12,
+   "T-CLAIMS-EQUAL": 116,
+   "T-FALSIFIER-POISONS": 58,
+   "T-NO-TYPED-COUNTS": 86,
+   "T-READ-SET": 13,
+   "T-REFERENT-BOUND": 28,
+   "T-SEAL-PROMOTION": 39,
+   "T-TRANSCRIPT-BOUND": 39,
+   "T-WALL-SEMANTIC": 36
+  },
   "families_missing": [],
-  "families_resolved": 9
+  "families_resolved": 9,
+  "families_unused": []
  },
  "transcript": {
-  "chain_head": "95434862a8b08dc0",
-  "gate_rows": 36,
-  "lines": 38,
-  "sha256_12": "dc79343de5d0"
+  "chain_head": "0a81d9b62a991245",
+  "gate_rows": 42,
+  "lines": 44,
+  "sha256_12": "3d2a9acd573b"
+ },
+ "transcript_bound": {
+  "chain_recomputed": true,
+  "declared_gates": 42,
+  "gate_census": [],
+  "late_reads": "none",
+  "problem": "none",
+  "rows": 42
  },
  "typed_counts": {
   "exemptions": 26,
-  "measured_names": 57,
+  "integer_offsets": [],
+  "measured_names": 84,
   "offenders": []
  },
  "verdict": {
-  "head": "RECORD-BACKREACTION-DETECTED-AT-TICK-3 -- CLASS=MODEL-ABLATION-BENCHMARK;NULL=PLAIN-COINED-WALK;RULES=7;SHARED-WITH-ISP=ARENA-REGISTER-COIN-SHIFT-STATE-HORIZON;ABLATED=RECORD-LAYER-CONSERVED-PRICE-STRUCTURE -- PRIMARY=THE-RECORD-FREE-NULL-REPRODUCES-7-OF-10-TESTED-RESULTS;2-NOT-REPRODUCED;1-NOT-EXPRESSIBLE;REPRODUCED=PERIMETER-LAW+CLOSED-FORM+GAP+PLAQUETTE+QUARTIC-SIGN+COIN-REGISTER-RESTRICTION+THE-FIRST-TWO-TICKS -- LATTICE=PERIMETER-REPRODUCED-BY-THE-NULL;CLOSED-FORM-REPRODUCED-BY-THE-NULL;GAP-REPRODUCED-BY-THE-NULL;PLAQUETTE-REPRODUCED-BY-THE-NULL;QUARTIC-REPRODUCED-BY-THE-NULL -- AGREEMENT=6216-OF-6216-SITE-BY-TICK-CHECKS-EQUAL-THROUGH-TICK-2 -- ABLATION-EFFECT=FIRST-AT-TICK-3-AT-294-OF-294-NON-TRIVIAL-FIBER-POINTS;NEVER-AT-78-TRIVIAL-COIN-POINTS -- VALUES-AT-AG-2-3=ISP-33596579/129140163-VS-NULL-40411/177147;TV=1024/19683 -- VALUES-AT-AG-2-2=ISP-43392899/129140163-VS-NULL-58235/177147;TV=10144/59049 -- M-EQUALS-Q=FORCED-AND-OBSERVABLE;INTERNAL-CHECK-CLOSING-THE-PARENTS-REGISTERED-TEST-NOT-AN-EXTERNAL-PREDICTION;CONSTRUCTION-DEPENDENT;OBSERVABLE-AT-5-OF-5-DECLARED-MODULI -- PRICE=ISP-CARRIES-5-STRUCTURES-THE-NULL-DOES-NOT-AND-0-ADJUSTABLE-NUMBERS;PARAMETER-FREE-IS-NOT-STRUCTURE-FREE -- FALSIFIER=COMPUTATIONAL-REGRESSION-TEST-ON-A-PROPOSED-REALIZATION;SHOTS=36948-AT-AG-2-3-AND-3389-AT-AG-2-2 -- SUCCESSOR=DISC-2-THE-SIMPLEST-MEMORY-BEARING-NULL -- SCOPE=ONE-MEMORYLESS-NULL-NOT-A-CLASS;D=2;ARENAS=AG-2-2-AND-AG-2-3;READINGS=A-AND-B;AT-FINITE-HORIZON-A-RECORD-IS-ABSORBABLE-INTO-AN-ENLARGED-STATE;NO-OPERATIONAL-UNITS;NO-LABORATORY-CLAIM;NOT-AN-EXTERNAL-PREDICTION"
+  "builder": "p_render_head",
+  "comparator": "k_rebuild_head",
+  "head": "RECORD-BACKREACTION-NON-INERT-UNDER-SPECIFIED-DECLARATIONS -- CLASS=MODEL-ABLATION-BENCHMARK;NULL=PLAIN-COINED-WALK;RULES=7;SHARED-WITH-ISP=ARENA-REGISTER-COIN-SHIFT-STATE-HORIZON;ABLATED=RECORD-LAYER-CONSERVED-PRICE-STRUCTURE -- PRIMARY=THE-RECORD-FREE-NULL-REPRODUCES-6-OF-9-PARENT-RESULTS;7-OF-10-TESTED-ROWS;2-NOT-REPRODUCED;1-NOT-EXPRESSIBLE;REPRODUCED=PERIMETER-LAW+CLOSED-FORM+GAP+PLAQUETTE+QUARTIC-SIGN+COIN-REGISTER-RESTRICTION+THE-FIRST-TWO-TICKS -- LATTICE=PERIMETER-REPRODUCED-BY-THE-NULL;CLOSED-FORM-REPRODUCED-BY-THE-NULL;GAP-REPRODUCED-BY-THE-NULL;PLAQUETTE-REPRODUCED-BY-THE-NULL;QUARTIC-REPRODUCED-BY-THE-NULL -- BASE-FINDING-IS-THE-PARENTS=THE-NULL-IS-PAPER-20S-OWN-FROZEN-STAGE-CONTROL-UP-TO-A-GLOBAL-PHASE;EQUAL-AT-1116-OF-1116-SITE-DISTRIBUTION-CHECKS;THIS-UNITS-NEW-CONTENT=THE-TICK+THE-EXACT-MAGNITUDES+THE-UNIVERSALITY -- AGREEMENT=6216-OF-6216-SITE-BY-TICK-CHECKS-EQUAL-THROUGH-TICK-2 -- ABLATION-EFFECT=FIRST-AT-TICK-3-AT-294-OF-294-NON-TRIVIAL-FIBER-POINTS;NEVER-AT-78-TRIVIAL-COIN-POINTS -- COIN-ORDER-FIBER=DELIVERED-G-DOT-D-TICK-3;ALTERNATIVE-D-DOT-G-TICK-4-WITH-THE-TICK-3-LAW-EQUAL-TO-THE-NULLS-AT-BOTH-PLANES;THE-TICK-IS-ORDER-RELATIVE;ORIENTATION-FIBER-INERT -- WIDER-NULL-SWEEP=10380-MEMORYLESS-CONFIGURATIONS;0-EXACT-REPRODUCTIONS;CLOSEST-AT-AG-2-2=8200/59049-BY-A-NON-COVARIANT-COIN-AGAINST-THE-PR3-NULLS-10144/59049;PR3-IS-THE-BEST-AT-AG-2-3 -- IPR-AT-AG-2-3=ISP-33596579/129140163-VS-NULL-40411/177147;TV=1024/19683 -- IPR-AT-AG-2-2=ISP-43392899/129140163-VS-NULL-58235/177147;TV=10144/59049 -- M-EQUALS-Q=FORCED-AND-OBSERVABLE;INTERNAL-CHECK-CLOSING-THE-PARENTS-REGISTERED-TEST-NOT-AN-EXTERNAL-PREDICTION;CONSTRUCTION-DEPENDENT;OBSERVABLE-AT-5-OF-5-DECLARED-MODULI -- PRICE=ISP-CARRIES-5-STRUCTURES-THE-NULL-DOES-NOT-AND-1-FREE-NUMBER;THE-FREE-NUMBER-IS-THE-PHASE-MODULUS-AND-IT-IS-FIXED-ONLY-BY-THE-CONSTRUCTION-DEPENDENT-DESCENT-FORCING;PARAMETER-FREE-IS-NOT-STRUCTURE-FREE -- FALSIFIER=COMPUTATIONAL-REGRESSION-TEST-ON-A-PROPOSED-REALIZATION;SHOTS-IF-EVER-REALIZED=36948-AT-AG-2-3-AND-5186-AT-AG-2-2-AGAINST-THE-CLOSEST-MEMORYLESS-WALK -- FEASIBILITY=BOTH-WAYS-BY-A-DECLARED-RECIPE;PIN-OUTCOME-WORDS=2-OF-3-REACHABLE;DISC-BLOCKED-RETIRED-AS-UNREACHABLE-BY-CONSTRUCTION -- SUCCESSOR=DISC-2-THE-SIMPLEST-MEMORY-BEARING-NULL -- AXES=ARENA+COIN-CLASS+COIN-DIRECTION+COIN-ORDER+EMISSION-READING+MODULUS+SHIFT-ORIENTATION+START-SITE -- SCOPE=ONE-PRE-REGISTERED-NULL-PR1-TO-PR7-WHICH-IS-THE-PARENTS-FROZEN-STAGE-CONTROL;PLUS-A-SWEPT-MEMORYLESS-CLASS-OF-10380-CONFIGURATIONS;NO-MEMORY-BEARING-NULL-TESTED-AT-ALL;D=2;ARENAS=AG-2-2-AND-AG-2-3;READINGS=A-AND-B;AT-FINITE-HORIZON-A-RECORD-IS-ABSORBABLE-INTO-AN-ENLARGED-STATE;NO-OPERATIONAL-UNITS;NO-LABORATORY-CLAIM;NOT-AN-EXTERNAL-PREDICTION",
+  "segments": 18,
+  "two_routes": true
  },
  "walls": {
+  "controls": [
+   {
+    "controls": 5,
+    "uncaught": 0,
+    "wall": "W-NO-EXHAUSTIVE-NULL-CLASS"
+   },
+   {
+    "controls": 4,
+    "uncaught": 0,
+    "wall": "W-PARAMETER-FREE-IS-RELATIVE"
+   },
+   {
+    "controls": 10,
+    "uncaught": 0,
+    "wall": "W-ABLATION-NOT-PREDICTION"
+   }
+  ],
+  "controls_uncaught": [],
   "problem": "none",
   "walls": [
    {
+    "controls": 5,
     "licences": [],
     "name": "W-NO-EXHAUSTIVE-NULL-CLASS",
     "negative": [
@@ -1089,26 +1566,37 @@
      "(?:an? )?(?:existing|published|real) experiment (?:confirms?|confirmed|verifies|verified|supports?) ",
      "(?:si|physical) units? (?:are|is) (?:supplied|given|derived)"
     ],
+    "policed": [],
     "positive": [
-     "the null is one model and not a class",
+     "no memory-bearing null is tested here",
      "no operational mapping to laboratory units exists in this corpus"
     ]
    },
    {
+    "controls": 4,
     "licences": [],
     "name": "W-PARAMETER-FREE-IS-RELATIVE",
     "negative": [
      "(?:isp|the theory|the model) has no (?:free )?(?:parameters?|declarations?|choices?)(?![\\w\\s]{0,30}(?:the null|beyond))",
-     "(?:nothing|no datum|no quantity) (?:is|was|are|were|has been|have been|can be|could be|remains?) declared",
+     "(?:nothing|no datum|no quantity)[\\w\\s,'-]{0,30}(?:is|was|are|were|has been|have been|can be|could be|remains?) declared",
      "(?:the|this) prediction (?:is|was|are|were|has been|have been|can be|could be|remains?) (?:wholly |entirely |completely )?(?:free of|without) (?:any )?declarations?",
      "(?:derived|forced) from first principles alone"
     ],
+    "policed": [],
     "positive": [
      "the prediction is free of every parameter the null does not also carry"
     ]
    },
    {
-    "licences": [],
+    "controls": 10,
+    "licences": [
+     "this unit is a model-ablation benchmark",
+     "the null compared here is memoryless",
+     "no memory-bearing null is tested here",
+     "no operational mapping to laboratory units exists in this corpus",
+     "parameter-free is not structure-free",
+     "a definitional absence is not a discriminant"
+    ],
     "name": "W-ABLATION-NOT-PREDICTION",
     "negative": [
      "(?:the |isp's )?first parameter-free prediction",
@@ -1116,7 +1604,26 @@
      "(?:an?|the) (?:external|empirical|experimental) prediction of (?:isp|the theory|this model)",
      "(?:predicts?|predicted) (?:a |an |the )?(?:new )?(?:physical |empirical |laboratory )(?:effect|phenomenon|result)",
      "(?:tests?|tested|testing) (?:isp|the theory) against (?:nature|experiment|the world)",
-     "the modulus (?:is |was )?(?:an?|the) (?:external|empirical) prediction"
+     "the modulus (?:is |was )?(?:an?|the) (?:external|empirical) prediction",
+     "(?:distinguish(?:es|ed|ing)?|separates?|tells? apart|parts? company)[\\w\\s,'-]{0,40}\\bfrom\\b[\\w\\s,'-]{0,30}(?:quantum (?:mechanics|theory)|ordinary quantum|standard quantum|textbook quantum)",
+     "(?:would |could |will |can )?(?:falsif(?:y|ies|ied)|refut(?:e|es|ed)|disprov(?:e|es|ed)) (?:isp|the theory|this model)\\b",
+     "(?:isp|the theory|this theory|the model|this model) (?:therefore |thus |already )?predicts?\\b",
+     "\\bprediction\\b[\\w\\s,'-]{0,25}\\b(?:is|was) (?:parameter-free|free of (?:all|any) parameters)",
+     "\\bisp's first\\b",
+     "(?:no|not one) (?:ordinary|standard|textbook|plain) (?:coined )?(?:quantum )?walk (?:reaches|attains|gives|produces) ",
+     "(?:the )?effect (?:is|was) physical\\b",
+     "(?:a|one|single) (?:run|shot) of the (?:deciding|proposed) experiment would\\b",
+     "\\b(?:physical|empirical|experimental|laboratory) prediction\\b",
+     "(?:decide|decides|deciding|choose|chooses) between (?:isp|the theory|this theory|this model) and\\b",
+     "what (?:isp|the theory|this theory|this model) predicts\\b"
+    ],
+    "policed": [
+     "first prediction",
+     "first parameter-free prediction",
+     "falsifies isp",
+     "distinguishes isp from",
+     "isp predicts",
+     "predicts an effect"
     ],
     "positive": [
      "this unit is a model-ablation benchmark",
@@ -1125,5 +1632,51 @@
     ]
    }
   ]
+ },
+ "wider_null_sweep": {
+  "box": 3,
+  "closest_gap_q2": "8200/59049",
+  "closest_gap_q3": "1024/19683",
+  "configurations": 10380,
+  "covariant_coins_swept": 40,
+  "distinct_laws": 353,
+  "exact_reproductions": 0,
+  "integral_coins": 240,
+  "integral_rows": 30,
+  "pr3_gap_q2": "10144/59049",
+  "pr3_gap_q3": "1024/19683",
+  "q2": {
+   "census_configurations": 48,
+   "census_distinct_laws": 16,
+   "census_exact": 0,
+   "census_gap": "10144/59049",
+   "census_ipr_reproductions": 0,
+   "closest_coin": "((-1, -2, -2), (-2, 2, -1), (-2, -1, 2))",
+   "closest_gap": "8200/59049",
+   "closest_is_pr3": false,
+   "exact_reproductions": 0,
+   "integral_configurations": 2880,
+   "integral_distinct_laws": 76,
+   "integral_exact": 0,
+   "integral_gap": "8200/59049",
+   "pr3_gap": "10144/59049"
+  },
+  "q3": {
+   "census_configurations": 972,
+   "census_distinct_laws": 90,
+   "census_exact": 0,
+   "census_gap": "1024/19683",
+   "census_ipr_reproductions": 0,
+   "closest_coin": "((-1, -2, -2), (-2, -1, 2), (-2, 2, -1))",
+   "closest_gap": "1024/19683",
+   "closest_is_pr3": true,
+   "exact_reproductions": 0,
+   "integral_configurations": 6480,
+   "integral_distinct_laws": 171,
+   "integral_exact": 0,
+   "integral_gap": "1024/19683",
+   "pr3_gap": "1024/19683"
+  },
+  "reading": "no memoryless walk in either class reproduces the third-tick law at either plane; PR3's null is the best of them at the larger plane, and at the smaller a non-covariant coin comes closer, so the published deciding cost is the cost against THAT one"
  }
 }

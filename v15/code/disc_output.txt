@@ -2,37 +2,43 @@ DISC (paper-47) -- THE DISCRIMINATOR: THE NULL GETS ITS OWN INSTRUMENT
 ==========================================================================
   [PASS] G-SOURCES-PINNED :: sources 6 drifted none
   [PASS] G-ANCHORS-LOCATED :: anchors 12 located all
-  [PASS] G-S1-DISJOINT-CODE :: regions 5/16/8 offences none
+  [PASS] G-S1-DISJOINT-CODE :: regions 6/16/13/2 aliases 0 shared-ground 4 unused none offences none
   [PASS] G-NULL-HAS-NO-RECORD :: record words 7 leaks none
   [PASS] G-NULL-RULE-TOTAL :: rules 7 shared 6 dropped ['RECORD-LAYER', 'CONSERVED-PRICE-STRUCTURE'] missing none pin-dimension 2
+  [PASS] G-PR-PREREGISTRATION-SEALED :: digest cb5064b58db6 declared cb5064b58db6 parity ['pr_arena', 'pr_horizon', 'pr_coin', 'pr_start', 'pr_dir'] unbound none asserts-missing none tuning none
   [PASS] G-COIN-CENSUS-PARENT :: q3 36/6 q2 4/2
-  [PASS] G-ISP-FIDELITY-PARENT :: coupled [3, 27, 486, 10527, 284078] frozen [3, 27, 486, 9234, 212382] ipr 35971074413334039128803/239299329230617529590083 / 2306155/14348907 control-max-count 1
-  [PASS] G-NULL-TWO-ROUTES :: checks 39 violations 0
+  [PASS] G-ISP-FIDELITY-PARENT :: coupled [3, 27, 486, 10527, 284078] frozen [3, 27, 486, 9234, 212382] ipr 35971074413334039128803/239299329230617529590083 / 2306155/14348907 control-max-count 1 parities 3/3
+  [PASS] G-NULL-TWO-ROUTES :: checks 39 violations 0 points 2
   [PASS] G-AGREE-THROUGH-THE-EARLY-TICKS :: checks 6216 violations 0 upto 2
   [PASS] G-FIRST-DIFFERENCE-TICK :: non-trivial 294 of 294 at the third tick, trivial 78 of 78 never
   [PASS] G-DISCRIMINANT-VALUES :: q3 33596579/129140163 vs 40411/177147 ; q2 43392899/129140163 vs 58235/177147
-  [PASS] G-MODULUS-DESCENT-THEOREM :: rows [(2, [2]), (3, [3]), (5, [5]), (7, [7])] parent-sentence True
+  [PASS] G-NULL-IS-THE-PARENTS-CONTROL :: equal 1116 of 1116
+  [PASS] G-COIN-ORDER-FIBER :: G.D tick [3] D.G tick [4] tick-3-equal True orientation inert
+  [PASS] G-WIDER-NULL-SWEEP :: configs 10380 exact 0 closest q3 1024/19683 (pr3 1024/19683) q2 8200/59049 (pr3 10144/59049)
+  [PASS] G-MECHANISM-CORROBORATED :: rows [(True, 3), (True, 3), (False, 4)]
+  [PASS] G-MODULUS-DESCENT-THEOREM :: rows [(2, [2]), (3, [3]), (5, [5]), (7, [7])] lemma-counterexamples none parent-sentence True
   [PASS] G-MODULUS-OBSERVABLE :: distinct 5 of 5 moduli
   [PASS] G-M2-PREDICTION-RUN :: successor sentence True value True
-  [PASS] G-PERIMETER-LAW-BOTH :: comparisons 3200 disagreements 0 null-coin-in-family True
-  [PASS] G-GAP-BOTH :: closed-form failures 0 halving 512 of 640 null-coin True ratio 1/2
+  [PASS] G-PERIMETER-LAW-BOTH :: comparisons 3200 disagreements 0 grouping 'perimeter' null-coin-in-family True
+  [PASS] G-GAP-BOTH :: closed-form failures 0 halving 512 of 640 null-coin True ratio 1/2 (definitional given a non-zero coefficient)
   [PASS] G-PLAQUETTE-BOTH :: values 11 (parent 11) expectation 13/10 (parent 13/10) non-flat 56
-  [PASS] G-QUARTIC-BOTH :: distribution {-2: 144, 0: 352, 2: 144} counting expectation 0 odd-twists True
+  [PASS] G-QUARTIC-BOTH :: distribution {-2: 144, 0: 352, 2: 144} counting expectation 0 parent-pin 0 odd-twists True
   [PASS] G-STENCIL-FORCING-PARENT :: link {'differences': 6, 'multiplicities': [1], 'unitary': 18, 'non_monomial': 0} axis {'differences': 2, 'multiplicities': [3], 'unitary': 216, 'non_monomial': 198}
-  [PASS] G-EXPRESSIBILITY-CENSUS :: rows 12 both 6 isp-only 6 unruled none
-  [PASS] G-Q155-CENSUS-TOTAL :: rows 10 reproduced 7 not 2 not-expressible 1
-  [PASS] G-FALSIFIER-SPECIFIED :: shots 36948 / 3389 branches 486 / 306
-  [PASS] G-SCOPE-DECLARED :: axes ['coin class', 'start site', 'coin direction', 'emission reading', 'arena', 'modulus'] class MODEL-ABLATION-BENCHMARK
-  [PASS] G-STRUCTURE-PRICED :: structures 5 adjustable 0 unpriced none
-  [PASS] G-VERDICT-EQUALITY :: head 1587 chars equal True
-  [PASS] G-PAPER-CLAIMS :: rows 92 prose 18 fences 1 matched
-  [PASS] G-PAPER-REFERENTS :: occurrences 3 unused exemptions none bound
-  [PASS] G-PAPER-WALLS :: walls 3 legs 25 clean
-  [PASS] G-PAPER-COVERAGE :: scanned 337 unbacked none none
-  [PASS] G-TYPED-COUNTS :: measured 58 offenders none
+  [PASS] G-EXPRESSIBILITY-CENSUS :: rows 12 both 6 isp-only 6 classes ['DEFINITIONAL', 'MEASURABLE'] unruled none
+  [PASS] G-Q155-CENSUS-TOTAL :: rows 10 reproduced 7 not 2 not-expressible 1 parent-grain 6/9 unbound none
+  [PASS] G-FALSIFIER-SPECIFIED :: shots 36948 / 5186 (pr3 36948 / 3389) branches 486 / 306
+  [PASS] G-FEASIBILITY-BOTH-WAYS :: words 3 reachable 2 demonstration True
+  [PASS] G-SCOPE-DECLARED :: axes {'arena': 2, 'coin class': 8, 'coin direction': 3, 'coin order': 2, 'emission reading': 2, 'modulus': 5, 'shift orientation': 2, 'start site': 13} class MODEL-ABLATION-BENCHMARK
+  [PASS] G-STRUCTURE-PRICED :: structures 5 rows 6 free-numbers 1 dialled ['the phase modulus m'] conditional ['the phase modulus m'] unpriced none
+  [PASS] G-VERDICT-EQUALITY :: head 2724 chars 18 segments builder p_render_head comparator k_rebuild_head two-routes True equal True
+  [PASS] G-PAPER-CLAIMS :: rows 116 prose 24 fences 1 matched
+  [PASS] G-PAPER-REFERENTS :: occurrences 28 floor 28 spelled 21 offences none universes 10 binding-nothing none unused exemptions none bound
+  [PASS] G-PAPER-WALLS :: walls 3 legs 36 controls 19 uncaught none clean
+  [PASS] G-PAPER-COVERAGE :: scanned 473 unbacked none none
+  [PASS] G-TYPED-COUNTS :: measured 84 offenders none offsets none
   [PASS] G-NO-FLOATS :: float sites none
   [PASS] G-ANCHORS-CONSUMED :: anchors 12 consumed
-  [PASS] G-READS-DECLARED :: reads 13 distinct 8
-  [PASS] T-FALSIFIER-COVERAGE :: gates 34 falsified 34 waived 2 sentinels none
-  [PASS] G-TEMPLATE-ADOPTED :: families 9 resolved 9 missing none
-  [PASS] G-TRANSCRIPT-BOUND :: rows 35 chain c95240e9729b
+  [PASS] T-FALSIFIER-COVERAGE :: gates 42 falsified 43 waived 0 not-yet-fired ['G-READS-DECLARED', 'G-TEMPLATE-ADOPTED', 'G-TRANSCRIPT-BOUND', 'T-FALSIFIER-COVERAGE'] sentinels none
+  [PASS] G-TEMPLATE-ADOPTED :: families 9 resolved 9 unused none missing none
+  [PASS] G-READS-DECLARED :: reads 13 distinct 8 declared
+  [PASS] G-TRANSCRIPT-BOUND :: rows 42 chain 2456364b824e census total late-reads none bound

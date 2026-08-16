@@ -983,3 +983,31 @@ observables; its cast identifiable, not emergent.
 
 **v15 terminals: ONE.  Zero false delivered physics
 numbers across both eras.**
+
+## 2026-08-16 — DISC REPAIR DELIVERED AND COMMITTED (v15 LEDGER #36)
+
+**Files:** paper-47-disc.md 5da53943c6f7; disc_exact.py
+ba8f073f40cc; disc_output.txt 3d2a9acd573b;
+disc_receipt.json 2e67f76e2588.  Every #19 Z verified
+(the W3 head with the coin-order fiber G·D-3/D·G-4
+published and the D·G-equals-null law measured; the
+6-of-9 census lead; the null≡frozen-control disclosure;
+the 6.7× sweep adopted — closest coin 8200/59049 = K2's
+exact counterexample; shots 3,389→5,186 THE ONE ordered
+move, the old value retained beside; the two-route head
+AST-enforced; the PR sealed; DISC-BLOCKED retired with
+#299 feasibility; 19 wall controls).  THREE self-found
+gaps closed: a tuned-coin rewrite that re-declared the
+seal (a third text leg + MUT-PR-TUNED); a spelled
+headline inversion (the narrow-noun pre-registration
+universe + MUT-REFERENT-SPELLED); a whitespace no-op
+recipe.  The #33 addendum folded (ONE null + a swept
+memoryless class + NO memory-bearing null, in the head).
+Battery: byte ×2 alien-CWDs off-tree; write-nothing by
+tree hash; **58/58 out-of-harness at declared gates**;
+14/14 argv; 23/25 injections dead — the two survivors
+are the REGISTERED programme-wide fresh-paraphrase
+condition (#10/#25/#30), not DISC's charge.  Style
+ruling: the six "the delivered version" disclosures stand
+(ordered; no seat or round named).  **Orchestrator
+battery next; terminal two of v15 on green.**
