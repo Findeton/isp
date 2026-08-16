@@ -1,31 +1,28 @@
-# v15 — THE PHYSICAL-THEORY PROGRAMME (charter draft, awaiting user review)
+# v15 — THE PHYSICAL-THEORY PROGRAMME (clean rewrite at v15 #28; supersedes the amended draft — history in v15/LOG.md)
 
-**Chartered:** 2026-08-16 from the user's 156-question set (stored verbatim, one status line each, in v15/QUESTIONS.md — the registry is the programme's index and MUST be updated in the same commit as any terminal that touches a question).
+**Goal (the trichotomy):** decide whether ISP is (a) a physical theory, (b) a family of finite combinatorial models labelled by (n, a, q, L, d, …), or (c) a mathematical language for organizing records. The registry v15/QUESTIONS.md (156 questions, statuses updated in seal commits) is the index.
 
-**The deciding question (the user's):** is ISP becoming (a) a physical theory, (b) a family of finite combinatorial models labelled by (n, a, q, L, d, …), or (c) a mathematical language for organizing records? v15 exists to force this trichotomy.
+**Notation:** n arena actors · a event actors · q field/chart order · L link directions · R depth · d dimension.
 
-**Notation (fixed):** n = actors per arena/sector · a = actors per division event · q = field/chart order · L = declared link directions · R = rounds/depth · d = spatial dimension.
+## STANDING WALLS (all units)
+- **W1**: reconstruction is never promoted to derivation.
+- **W2**: invariance is never promoted to gauge or physical meaning before operational observables exist (gauge = identical values for EVERY observable and experiment).
+- **W3**: a result is an ISP-family prediction only if it holds across every still-free fibre or the fibre is independently selected. **Instrumented from ECC onward: every headline auto-labelled member-specific or family-level with the varied fibres disclosed** (also a TPL-2 requirement).
+- **W-ABLATION-NOT-PREDICTION** (DISC-line units).
+- Wall implementation: SemanticWall licence legs; falsifiers plant independent paraphrases; spelled fractions/proportions gated.
 
-## The dependency gates (binding)
-ontology + gauge → autonomous dynamics → stable excitations → species/statistics → interactions → predictions.
-SPC is NOT revisited until Q89–Q108 establish stable excitations and the symmetry actually acting on them. The v14 armed queue is re-based accordingly: SEC×SPC and SPC-D DEFERRED behind EXCITATION; FAC×SEC ABSORBED into §III (Q30–33); PER-R2 ABSORBED into §VI; CR-B/C/D and LOR-B RETIRED (user ruling, v15 #1); the #267/TPL-2 revision is v15 infrastructure step 0.
+## COMPLETED / IN-CLOSEOUT (wave 1)
+- **CONTRACT (43)**: adjudicated #15; repair running. Family verdict (21 declarations, 13 free, 0 law-selected); gauge withheld; Q58 = identifiability-within-a-generative-class.
+- **ARITY (44)**: delivered #13+#22, ×3-green verified #24; panel running. a is an extension-family dial; the a=2 obstruction-vanishing theorem (C(a,2)−⌊a²/4⌋).
+- **AUTOGLUE (45)**: adjudicated #27; repair running. Event-conditioned creation 108/288; transition relation on the seam-subsystem state; the cross block is the un-preceding datum; motivated ∩ lawful = ∅.
+- **DISC (47)**: adjudicated #19; repair running. Model-ablation benchmark; record backreaction non-inert (tick 3/4 by coin order); demotion census 6-of-9.
+**No unit becomes an ECC parent until sealed terminal.**
 
-## WAVE 1 — the five commissioned units
-1. **THEORY-CONTRACT (paper-43)** — Q1–10, Q24, Q58; touches Q4–5 (the actors↔records circularity: state it, then either the fixed-point theorem or the located obstruction). Deliverable: the complete object census (primitive / declared / generated / reconstructed / law-selected, one row per object, each row cited to its measuring unit), the gauge census (what survives quotienting by all relabellings), and the clean parameters statement (Q24). Mostly a synthesis-with-measurements unit: every row must be backed by a computation or an existing sealed citation, no new physics claims.
-2. **ARITY (paper-44)** — Q13, Q17, Q19 (+Q12, Q22 arity leg). Build a=2 and a=4 (a=5 windowed) grammars at fixed n=9; rerun the core laws (naming, menu, division-forcing, ladder moduli, crystallization); decide whether a is a free dial (like n) or selected — and whether the current a=3 is secretly a=q.
-3. **AUTOGLUE (paper-45)** — Q38–40 (+Q34 seed, Q41–42, Q50). One update in which (geometry, record, state) → (geometry′, record′, state′) where a crossing event CREATES its cross-link and seam with no post-hoc matched target. Success = a lawful autonomous crossing (motivation becomes dynamics, Q50); honest failure = the located obstruction (which datum must be declared in advance, sharpening SEC-2's theorem).
-4. **EXCITATION (paper-46)** — Q89–96 (+Q104–106 open-vs-closed leg). Define the reference/vacuum phase; census the smallest localized disturbances; quotient by gauge; measure persistence and propagation-with-identity over many ticks on open patches AND tori; the operational particle-vs-artifact criterion pre-registered. This unit gates everything downstream (§VIII–X).
-5. **DISCRIMINATOR (paper-47) — RECLASSED at v15 #2: a MODEL-ABLATION BENCHMARK, not a physical prediction, until stronger memory-bearing nulls are defeated (DISC-2, registered) and an operational realization exists** — Q147–150, Q155 (+Q148). The candidates already in hand: ACT's family-invariant quartic-sign 0; POT's gap 1/2; NDEP's untested m=2-at-AG(2,2). Build the simplest comparable lattice/walk model (the Q155 challenge taken seriously — the null hypothesis gets its own instrument), and find one parameter-free prediction where ISP and the null DIFFER, with the finite experiment that measures it.
+## NEXT UNITS (strict order)
+1. **ECC — EVENT-AND-CARRIER-CLOSURE (paper-46).** A COMPATIBILITY/NO-GO paper, not a forced construction. (0) THE INTERFACE TABLE first: every object typed (declared/generated/reconstructed/law-selected; one-state vs ensemble; update rule; free-parameter dependence); the words event/cell/geometry/record/state/metric each fixed to ONE sense. (1) THE ψ-STATUS DECISION before any Born weight is used — ontic stochastic wave / CPTP-instrumented quantum state / Barandes-representational with configuration-level reformulation — resolved or the subsequent results proven independent of it. (2) THE BORN-MARGINAL FEASIBILITY LP with the NORMALIZATION CHOICE PRE-REGISTERED: every a=3 event writes three cells, so event-probability inclusion-marginals sum to 3 while Born weights sum to 1 — inclusion probabilities vs a 1/3 factor vs two-stage cell selection must be chosen explicitly, never notationally hidden. ALL outcomes substantive: no solution ⇒ the parents cannot unify as written; unique ⇒ a genuine derivation; many ⇒ a new free law — and NO silent uniform/max-entropy choice among many. (3) THE VARIABLE CARRIER beyond a symbol: the basis of H_G; how directionless cells acquire quantum degrees of freedom; amplitude entry; coin change; norm; channel-vs-isometry decided (CPTP if creation/deletion/records are involved). (4) The admissible-class consistency debt (the coupled walk continues where AUTOGLUE refuses) decided.
+2. **DYNAMICS-CLOSURE (paper-48).** The normalized kernel K(X′|X); reachability; multi-step trajectories; reference/stable states; **behavioural equivalence = equality of ALL future observable record distributions (never one-step allowed-event sets)**. Consumes ECC + ARITY's a=2 row.
+3. **EXCITATION (paper-49).** Only after DC: vacuum, smallest gauge-inequivalent persistent disturbances, the particle-vs-artifact criterion pre-registered. Then §VIII–X of the registry.
+- **Armed behind:** DISC-2 (memory-bearing null; after ECC+DC), ARITY-at-n=16 (F₄-linear pre-registered), TPL-2 (the disease catalogue incl. the post-final-gate seal window, reflexive referent pairs, bare-negation licence tokens, W3 instrumentation).
 
-## Standards
-Full v14 era standards + E-25…E-33 (the template, with TPL-2's registered items applied first: gate-time seals at promotion, %-format + integer-offset typed-count subspecies, semantic wall controls written independently, move-proofs real, carried-not-used families forbidden). #299-as-extended feasibility at the committed corpus. Every pin cites its question numbers; every terminal updates QUESTIONS.md statuses in the seal commit. Panels ×3 + adjudication + repair + battery per unit, unchanged.
-
-## v14 closeout (parallel, unaffected)
-HOR and REC repairs finish under v14 → terminals 37/38; their results feed Q63–72 and Q51–58 statuses (pre-marked in the registry as candidate-pending-seal where applicable).
-
-## STANDING WALLS (v15 #2, user-engraved)
-W1: reconstruction is never promoted to derivation. W2: invariance is never promoted to gauge or physical meaning before operational observables exist (gauge = identical values for EVERY observable/experiment).
-
-## AMENDMENT (v15 #11): DYNAMICS-CLOSURE (paper-46) inserted before EXCITATION (renumbered paper-48): full state -> allowed events -> successor distribution -> next full state (grammar/emission + seam transition + amplitude + branch weights); trajectories + reference solutions. EXCITATION gates on it. The n=16 ARITY successor must pre-register additive-subgroup vs F_q-linear-subspace.
-
-## AMENDMENT (v15 #17): paper-46 = EVENT-AND-CARRIER-CLOSURE (Born-marginal feasibility LP; variable carriers + isometry; psi-status pre-registered; branch weight -> ensemble); paper-48 = DYNAMICS-CLOSURE (normalized kernel, trajectories, reference states, behavioural equivalence); EXCITATION -> paper-49. W3 ENGRAVED: family-level predictions only (fibre-invariant or independently-selected fibre). DISC-2 re-gated behind ECC+DC.
+## DISCIPLINE
+Full v14 era standards + E-25…E-33 + TPL-2 items; #299-extended feasibility at the committed corpus at the declared row lists; every pin cites question numbers; every terminal updates the registry in its seal commit; panels ×3 + adjudication + repair + battery per unit; workers kill only their own PIDs; batteries run from alien CWDs.

@@ -771,3 +771,34 @@ NO-RULE-EXISTS + per-segment outcomes reachable;
 G-RULE-BLIND folded or made real; the transcript bound;
 the two strengthenings LIFTED; all minors.  No physics
 number moves.  The repair launches next.
+
+## 2026-08-16 — FIFTH EXTERNAL REVIEW INCORPORATED; PLAN REWRITTEN CLEAN (v15 LEDGER #28)
+
+Adopted: (1) the PLAN rewritten as one coherent document
+(the stacked-amendment draft superseded; history stays in
+this ledger); (2) **ECC re-charted as a COMPATIBILITY/
+NO-GO paper with the ×3 NORMALIZATION CHOICE
+pre-registered** (three cells per event ⇒ inclusion
+marginals sum to 3 vs Born's 1 — inclusion vs 1/3 vs
+two-stage selection, explicit, never notational); (3) all
+LP outcomes substantive with NO silent uniform/max-ent
+selection; (4) the ψ-status decision made ECC step 1
+(resolved or independence proven) — strengthening #17's
+pre-registration; (5) the variable carrier specified
+beyond a symbol (basis, DOF acquisition, amplitude entry,
+coin change, norm; channel-vs-isometry); (6) the ECC §0
+INTERFACE TABLE (per-object type/provenance/state-vs-
+ensemble/update/parameter-dependence; single-sense
+vocabulary); (7) **W3 INSTRUMENTED from ECC onward**
+(auto-labelled member-specific/family-level heads with
+fibres disclosed; TPL-2 requirement); (8) DC's
+behavioural equivalence pinned to ALL-future-record-
+distributions (never one-step sets).  Already policy,
+reaffirmed: parents seal before ECC (all four repairs
+running; AUTOGLUE's false mechanism sentence is in its
+running repair's orders).  The reviewer's verdict
+adopted as the era's framing: **the most valuable recent
+result is the discovery that the alleged unified dynamics
+did not type-check — solving that honestly, or proving it
+cannot be solved, precedes any excitation or species
+paper.**
