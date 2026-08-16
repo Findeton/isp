@@ -463,3 +463,24 @@ OBJECTS=23 with the ≤20-distinct-extents disclosure; all
 minors.  No physics number moves; full battery; every
 injection replayed dead.  **The repair worker launches
 next.**
+
+## 2026-08-16 — AMENDMENT TO #13: ARITY CARRIES A DISCLOSED NON-REPRODUCIBILITY DEFECT — NOT BATTERY-ELIGIBLE UNTIL CLOSED (v15 LEDGER #16)
+
+The worker's full report discloses: the delivery run
+passed (34 gates, exit 0) but **the immediately following
+identical run REFUSED at G-FALSIFIERS** — four recipes
+(MUT-CLOSE, MUT-SEAL-ADD, MUT-SEAL-EDIT, MUT-ANCHOR-USE)
+dying elsewhere on the second run; a state dependence in
+the closing-gate/falsifier layer the worker could not
+isolate in budget.  The orchestrator's mirror battery's
+FIRST run reproduced both artifacts byte-identically —
+making the defect INTERMITTENT, which is worse.  **Ruling:
+the #13 commit stands as a candidate's as-is record; the
+physics measurements (gated in the passing run and
+independently reproduced in scratch) are unaffected in
+content; but ARITY is NOT battery-eligible and its panel
+does NOT launch until a continuation isolates and closes
+the state dependence and the full battery passes ×3
+consecutively.**  Two earlier vacuous battery attempts
+(wrong CWD; a hash-stripping sed) disclosed by the worker
+and not counted.  The continuation launches this entry.
