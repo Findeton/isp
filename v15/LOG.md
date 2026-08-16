@@ -581,3 +581,40 @@ IPR-vs-site-occupation naming; the census gate binds each
 ruling to its evidence.  No delivered number moves except
 the ordered shot-count correction (3,389 → 5,186, to
 truth, disclosed).  The repair worker launches next.
+
+## 2026-08-16 — AUTOGLUE (PAPER-45) DELIVERED, COMMITTED AS-IS: EVENT-CONDITIONED CREATION AT 108 OF 288; MOTIVATION AND LAWFULNESS DISJOINT BY THEOREM; THE SEAM'S CROSS BLOCK IS THE DATUM THAT CANNOT PRECEDE THE EVENT (v15 LEDGER #20)
+
+**Files:** v15/paper-45-autoglue.md 09ee568a4bba;
+autoglue_exact.py d750a64f153c; autoglue_output.txt
+1a287adcaead; autoglue_receipt.json 34606049f1ef.
+CANDIDATE UNTIL ADJUDICATION.  Head (all four reviews
+folded): A-TARGET-FREE-EVENT-CONDITIONED-CROSS-LINK-
+CREATION-RULE-EXISTS-AT-108-OF-288 with the window
+in-head; NOT autonomous dynamics (the event supplied from
+the arena's triples; the grammar not re-driven);
+CROSS-ONLY ≡ ALL-NEW (the same 162 once the form leg
+binds — the equivalence class the arena does not select
+within); A-TRANSITION-RELATION-ON-THE-SEAM-SUBSYSTEM-
+STATE; the multiplicity census promoted (per-seam 4-or-8;
+whole-state fiber 256 at 81 crossings / 512 at 27).
+**THE OBSTRUCTION THEOREM: the datum that cannot precede
+the event is THE SEAM'S CROSS BLOCK — the successor never
+unique (0 exceptions over all 288); best advance
+declaration covers 9 of 108; 20,100 of 29,791 states
+ready for none.  Q50 BY THEOREM: motivated (77) and
+lawful (162) are DISJOINT — zero free items ⟺ no doubling
+⟺ three new pairs ⟹ the triangle two-colouring ⟹ a
+within-sector cell ⟹ refused.**  Q41–42: nothing derived
+— max-determinant selects exactly the state realising 0
+of 18 cross directions (self-defeating); the one-sided
+minimiser is the event's own equation.  The Q34 seed
+rewritten (state → allowed-events → successor relation;
+totality measured both readings: memoryless total,
+persistent 9,691/29,791) and handed to ECC/DC.  **The
+licence-leg walls: 6 walls, 30/30 independent paraphrases
+caught — widening required twice, the finding CONTRACT K2
+predicted.**  Battery: 42/42 at named gates; byte ×2
+off-tree confirmed; SEVEN self-found instrument defects
+repaired incl. a hash-seed-dependent sort (G-DETERMINISM
+added).  **Orchestrator battery next; panel after
+green.**

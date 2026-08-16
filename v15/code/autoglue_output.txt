@@ -1,0 +1,103 @@
+==============================================================================
+v15 AUTOGLUE -- CAN A CROSSING EVENT CREATE THE SEAM IT NEEDS?
+instrument for v15/paper-45-autoglue.md   schema isp/v15/autoglue/1
+==============================================================================
+
+    [PASS] G-SOURCES                    2ed74dc21a770df8
+    [PASS] G-ANCHORS                    84df31755ef030e5
+    [PASS] G-TEMPLATE-CONFORMANCE       307d497f24f5993f
+-- THE ARENA ----------------------------------------------------------------
+    [PASS] G-ARENA                      fd06f2177de251f5
+  the aligned union: 15 carriers, 54 realised pairs, none doubled, automorphism order 62208
+  the fourth parallel class holds the 9 pairs the arrangement does not declare
+    [PASS] G-DETERMINISM                5716f586ad7956da
+    [PASS] G-BASELINE-LAWFUL            66ea99a9893f421e
+    [PASS] G-EVENTS                     7396dc1b110c6dff
+  the event set: 455 three-actor conflict groups in 9 orbits, 288 of them seam-spanning
+
+-- M1: THE UPDATE WINDOW ----------------------------------------------------
+    [PASS] G-WINDOW                     a0b32db75689bfcc
+    [PASS] G-RULE-BLIND                 72982eaa2234478e
+    [PASS] G-RULE-EQUIVARIANT           14225e757c6cc99e
+    [PASS] G-NO-POSTHOC                 e6134350ba41a7c6
+    [PASS] G-CONTROL-ARMS               f376435cbd74ffcd
+    [PASS] G-INCIDENCE-CENSUS           76fe4d12b61a0422
+
+  creation rule        events alive   seam-spanning alive   refused
+  NONE                       54              0            401
+  CROSS-ONLY                270            216            185
+  WITHIN-ONLY               167              0            288
+  ALL-NEW                   455            288              0
+  the parent's sentence, parsed: 216 of 288 lawful at a declared target
+
+-- M2: THE FORM LEG ---------------------------------------------------------
+    [PASS] G-SEAM-INDEX                 46989eddac4a79b8
+    [PASS] G-COMPLETION-LATTICE         9b47254d79aed63d
+    [PASS] G-FOURTH-DIRECTION           7ffce07fb5323503
+    [PASS] G-FORM-CENSUS                a68acb3158bb4acb
+
+  the seam: rank 6 on 10 unknowns, kernel 4; 31 completions at the all-simple seam, all positive definite
+  the successor state exists at all three seams for 162 events, 108 of them crossings; 27 need no state move
+  the fourth direction: 468 readings, 0 agreements
+    [PASS] G-RULE-FIBER                 9ff0aaec07b91675
+    [PASS] G-PREPAREDNESS               2ae53b3909407bc1
+  preparedness: over 29791 states the best absorbs 9 of the 108 crossings a state can absorb at all; 20100 absorb none
+    [PASS] G-TRANSITION-RELATION        68c95b12959ea85f
+    [PASS] G-TWO-STEP                   9a16c11406106416
+  the second step: 25 of the events may still cross, 2 with the state kept
+
+-- M3: THE PRICE AND MOTIVATION ---------------------------------------------
+    [PASS] G-INVENTORY                  cbbde7ba4a6b06ca
+
+  the event-free union: 62208 maps, fibers (1, 1, 1), free items 0
+  motivated 77 of 455 events; lawful at every leg 162; the two sets share 0
+    [PASS] G-MOTIVATED-DISJOINT         1738febf1be3f7d7
+    [PASS] G-PRICE                      e86f62ae4795d0d5
+
+  refutability: events the weld refuses             401      293  PART SPENT
+  forcing: free items at a lawful crossing            0        3  SPENT
+  the state: completions the seam may carry          31        8  NARROWED
+  the structure: fourth-class cells creatable         0       15  REFUSED BY THE FORM
+  the declaration: objects the route declares       288        1  BOUGHT
+
+-- M4: THE DERIVATION ATTEMPT AND THE OBSTRUCTION ----------------------------
+    [PASS] G-EXTREMAL                   100c87c54f155309
+
+  every cross direction cuts the lattice 31 -> 8; the direct sum survives 0 of the cuts and realises 0 crossings
+    maximum determinant            selects  1 before,  4 to  4 after
+    minimum determinant            selects 12 before,  4 to  4 after
+    minimum cross coupling         selects  1 before,  1 to  4 after
+    maximum cross coupling         selects  2 before,  1 to  4 after
+    minimum two-sided price        selects 31 before,  8 to  8 after
+    minimum one-sided price        selects  8 before,  1 to  8 after
+    maximum one-sided price        selects  8 before,  1 to  8 after
+    maximum realisable crossings   selects 12 before,  4 to  4 after
+    [PASS] G-NOTHING-DERIVED            80e7dfdf57f4f162
+    [PASS] G-OBSTRUCTION                4b9cfefafc9d5181
+    [PASS] G-OUTCOME-FEASIBILITY        a8a19c6184fd7a51
+    [PASS] G-WALL-SEAMCONFINED          101626170e4135ff
+    [PASS] G-PAPER-CLAIMS               a8c618860894744c
+    [PASS] G-PAPER-COVERAGE             26dd80584bb3bd29
+    [PASS] G-PAPER-POLARITY             b3d9d61838a943ba
+    [PASS] G-PAPER-REFERENT             6220d4a850f5b8b4
+    [PASS] G-VERDICT-RECON              c866c57a31827fdd
+    [PASS] G-ANCHOR-CONSUMPTION         f68b2851eb77c158
+    [PASS] G-FALSIFIER-HONESTY          1fabc7954c164df9
+    [PASS] G-COVERAGE                   2d8bff4d10965942
+    [PASS] G-NO-TYPED-COUNTS            9e67f28219f8f12b
+    [PASS] G-READ-SET                   c16f2acef1200e98
+    [PASS] G-SEAL-TOTAL                 3f6b2cb412b59bfc
+    [PASS] G-TRANSCRIPT-BOUND           e27546d0bc02f521
+    [PASS] G-INTEGRITY                  cf185ea0e3310ef7
+
+-- VERDICT ------------------------------------------------------------------
+
+AUTOGLUE-A-TARGET-FREE-EVENT-CONDITIONED-CROSS-LINK-CREATION-RULE-EXISTS-AT-THIS-ARENA-AT-108-OF-288-[THE WINDOW: FOUR LINK-CREATION RULES BY TWO READINGS BY TWO COUNT LEGS AT EVERY ONE OF 455 THREE-ACTOR EVENTS AND AT BOTH ENDS OF EVERY TRANSITION, THE RULE FIRING ON THE EVENT'S FOOTPRINT ALONE, NO TARGET DECLARED AFTER ANY EVENT; WITH THE GEOMETRY FROZEN THE WELD REFUSES ALL 288 SEAM-SPANNING EVENTS AND WITH EVERY NEW PAIR ABSORBED IT REFUSES NONE OF 455] -- ONE PRE-DECLARED EVENT-UNIFORM RULE REACHES THE PARENT'S 216 OF 288 WITH NO TARGET AT ALL, AND CARRYING THE READOUT TO THE CELLS IT CREATES CUTS THAT TO 108: THE CROSSINGS THAT MAKE ONE CROSS LINK, DOUBLE TWO SEAM LINKS AND OPEN NO PAIR INSIDE A SECTOR. THE EVENT IS SUPPLIED TO THE RULE FROM THE ARENA'S OWN TRIPLES AND THE COMMITTED GRAMMAR IS NOT RE-DRIVEN, SO WHAT IS MEASURED IS EVENT-CONDITIONED CREATION AND NOT AUTONOMOUS DYNAMICS; AND THE SURVIVING RULES FORM AN EQUIVALENCE CLASS THIS ARENA DOES NOT SELECT WITHIN -- CROSS-ONLY AND ALL-NEW ADMIT THE SAME 162 EVENTS ONCE THE FORM LEG BINDS
+
+AUTOGLUE-A-TRANSITION-RELATION-ON-THE-SEAM-SUBSYSTEM-STATE-NOT-AN-EVOLUTION-LAW-THE-DATUM-THAT-CANNOT-PRECEDE-THE-EVENT-IS-THE-SEAM'S-CROSS-BLOCK-[THE FOUR UNDETERMINED ENTRIES OF THE DIRECT-SUM FORM AT EACH SHARED SITE, OVER THE DECLARED UPDATE WINDOW; THE SUCCESSOR STATE CENSUSED AT EVERY ONE OF 455 EVENTS OBJECT BY OBJECT AND NEVER BY ORBIT: EMPTY OR MANY-VALUED, UNIQUE AT 0; 27 OF THE 108 LAWFUL CROSSINGS NEED NO STATE MOVE; OVER ALL 29791 STATES THE ARENA ADMITS THE BEST IS READY FOR 9 CROSSINGS AND 20100 ARE READY FOR NONE] -- AND A LINK INSIDE A SECTOR IS REFUSED OUTRIGHT: AN UNSHARED SITE'S FORM HAS KERNEL ZERO AND FORCES THE FOURTH DIRECTION'S COUNT AGAINST THE ONE THE EVENT DEPOSITS AT 468 OF 468 READINGS -- SO A STATE RESTRICTS THE ALLOWED TRANSITIONS ONLY IF IT PERSISTS, WHICH IS A READING AND NOT A MEASUREMENT
+
+AUTOGLUE-MOTIVATION-AND-LAWFULNESS-ARE-DISJOINT-[77 OF 455 EVENTS LEAVE THE WELD WITH ZERO FREE ITEMS, 162 ARE LAWFUL AT EVERY LEG, AND THE TWO SETS SHARE 0] -- BY A THEOREM CHECKED AT EVERY OBJECT: AN EVENT FORCES THE WELD EXACTLY WHEN IT DOUBLES NOTHING, WHICH IS EXACTLY WHEN ALL THREE OF ITS PAIRS ARE NEW; A TRIANGLE ADMITS NO PROPER TWO-COLOURING SO ONE OF THEM FALLS INSIDE A SECTOR; AND THAT IS THE ONE CELL THE FORM REFUSES -- THE EVENTS THAT PIN THE WELD DOWN ARE THE EVENTS THE GEOMETRY CANNOT HOST
+
+AUTOGLUE-NO-SEAM-PRINCIPLE-DERIVED-[8 EXTREMAL FUNCTIONALS MEASURED BEFORE THE EVENT AND AFTER IT; EVERY CROSS DIRECTION CUTS THE LATTICE 31 TO 8; MAXIMUM DETERMINANT SELECTS THE DIRECT SUM UNIQUELY, THE DIRECT SUM REALISES 0 OF THE ARENA'S CROSSINGS AND SURVIVES 0 OF THE CUTS, AND ON THE POST-EVENT LATTICE THE SAME CRITERION IS 4-VALUED] -- THE CONVENTION-FREE PRICE TAKES 1 VALUE ON THE WHOLE LATTICE AND THE ONE-SIDED PRICE'S MINIMISER IS THE CUT OF EXACTLY 1 CROSS DIRECTION, SO IT IS THE EVENT'S OWN EQUATION WEARING A CRITERION'S CLOTHES: NOTHING IN THIS CORPUS SELECTS THE SEAM, AND THE ONE CRITERION THAT DOES IS THE STATE IN WHICH NOTHING CAN CROSS
+
+==============================================================================

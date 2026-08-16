@@ -1,0 +1,5032 @@
+{
+ "anchors": [
+  {
+   "anchor": "N-PIN-QUESTION",
+   "chars": 150,
+   "consumer": "G-WINDOW",
+   "floor_ok": true,
+   "hits": 1,
+   "mode": "PARSED",
+   "ok": true,
+   "paper_hits": 1,
+   "source": "A-PIN"
+  },
+  {
+   "anchor": "N-PIN-OBSTRUCTION",
+   "chars": 59,
+   "consumer": "G-OBSTRUCTION",
+   "floor_ok": true,
+   "hits": 1,
+   "mode": "PARSED",
+   "ok": true,
+   "paper_hits": 1,
+   "source": "A-PIN"
+  },
+  {
+   "anchor": "N-SEC2-WALL",
+   "chars": 123,
+   "consumer": "G-INCIDENCE-CENSUS",
+   "floor_ok": true,
+   "hits": 1,
+   "mode": "PARSED",
+   "ok": true,
+   "paper_hits": 0,
+   "source": "A-SEC2"
+  },
+  {
+   "anchor": "N-SEC2-MOTIVATED",
+   "chars": 119,
+   "consumer": "G-MOTIVATED-DISJOINT",
+   "floor_ok": true,
+   "hits": 1,
+   "mode": "QUOTED",
+   "ok": true,
+   "paper_hits": 1,
+   "source": "A-SEC2"
+  },
+  {
+   "anchor": "N-SEC2-SEAM",
+   "chars": 75,
+   "consumer": "G-COMPLETION-LATTICE",
+   "floor_ok": true,
+   "hits": 1,
+   "mode": "PARSED",
+   "ok": true,
+   "paper_hits": 0,
+   "source": "A-SEC2"
+  },
+  {
+   "anchor": "N-SEC2-DET",
+   "chars": 78,
+   "consumer": "G-EXTREMAL",
+   "floor_ok": true,
+   "hits": 1,
+   "mode": "QUOTED",
+   "ok": true,
+   "paper_hits": 1,
+   "source": "A-SEC2"
+  },
+  {
+   "anchor": "N-P19-LEGS",
+   "chars": 116,
+   "consumer": "G-BASELINE-LAWFUL",
+   "floor_ok": true,
+   "hits": 1,
+   "mode": "PARSED",
+   "ok": true,
+   "paper_hits": 0,
+   "source": "A-P19"
+  },
+  {
+   "anchor": "N-ADJ-SEAMCONFINED",
+   "chars": 157,
+   "consumer": "G-WALL-SEAMCONFINED",
+   "floor_ok": true,
+   "hits": 1,
+   "mode": "PARSED",
+   "ok": true,
+   "paper_hits": 0,
+   "source": "A-ADJ"
+  },
+  {
+   "anchor": "N-SEC-SEAMTHM",
+   "chars": 61,
+   "consumer": "G-COMPLETION-LATTICE",
+   "floor_ok": true,
+   "hits": 1,
+   "mode": "PARSED",
+   "ok": true,
+   "paper_hits": 0,
+   "source": "A-SEC"
+  }
+ ],
+ "arena": {
+  "aut": 62208,
+  "carriers": 15,
+  "classes": 4,
+  "declared_directions": 3,
+  "doubled": 0,
+  "fourth_pairs": 9,
+  "incidence_is_the_support": true,
+  "pairs": 54,
+  "points": 9,
+  "sector_pairs": 27
+ },
+ "counting_only": "every ratio in this unit is a count over an exhaustive enumeration with its denominator beside it; no measure is declared on the event family, on the state space or on the completion lattice",
+ "cut_size": 8,
+ "ds_in_cut": 0,
+ "ds_realises": 0,
+ "events": {
+  "events": 455,
+  "orbit_sizes": [
+   [
+    1,
+    1
+   ],
+   [
+    4,
+    1
+   ],
+   [
+    36,
+    3
+   ],
+   [
+    54,
+    1
+   ],
+   [
+    72,
+    1
+   ],
+   [
+    108,
+    2
+   ]
+  ],
+  "orbits": 9,
+  "profiles": [
+   [
+    [
+     0,
+     0,
+     3
+    ],
+    54
+   ],
+   [
+    [
+     0,
+     1,
+     2
+    ],
+    108
+   ],
+   [
+    [
+     0,
+     3,
+     0
+    ],
+    5
+   ],
+   [
+    [
+     1,
+     0,
+     2
+    ],
+    108
+   ],
+   [
+    [
+     2,
+     0,
+     1
+    ],
+    108
+   ],
+   [
+    [
+     2,
+     1,
+     0
+    ],
+    72
+   ]
+  ],
+  "spanning": 288
+ },
+ "extremal": [
+  {
+   "functional": "maximum determinant",
+   "selects after, least": 4,
+   "selects after, most": 4,
+   "selects before": 1,
+   "the direct sum before": true
+  },
+  {
+   "functional": "minimum determinant",
+   "selects after, least": 4,
+   "selects after, most": 4,
+   "selects before": 12,
+   "the direct sum before": false
+  },
+  {
+   "functional": "minimum cross coupling",
+   "selects after, least": 1,
+   "selects after, most": 4,
+   "selects before": 1,
+   "the direct sum before": true
+  },
+  {
+   "functional": "maximum cross coupling",
+   "selects after, least": 1,
+   "selects after, most": 4,
+   "selects before": 2,
+   "the direct sum before": false
+  },
+  {
+   "functional": "minimum two-sided price",
+   "selects after, least": 8,
+   "selects after, most": 8,
+   "selects before": 31,
+   "the direct sum before": true
+  },
+  {
+   "functional": "minimum one-sided price",
+   "selects after, least": 1,
+   "selects after, most": 8,
+   "selects before": 8,
+   "the direct sum before": false
+  },
+  {
+   "functional": "maximum one-sided price",
+   "selects after, least": 1,
+   "selects after, most": 8,
+   "selects before": 8,
+   "the direct sum before": false
+  },
+  {
+   "functional": "maximum realisable crossings",
+   "selects after, least": 4,
+   "selects after, most": 4,
+   "selects before": 12,
+   "the direct sum before": false
+  }
+ ],
+ "families": {
+  "from_template": [
+   "T-ANCHOR-CONSUMED",
+   "T-CLAIMS-EQUAL",
+   "T-FALSIFIER-POISONS",
+   "T-NO-TYPED-COUNTS",
+   "T-READ-SET",
+   "T-REFERENT-BOUND",
+   "T-SEAL-PROMOTION",
+   "T-TRANSCRIPT-BOUND",
+   "T-WALL-SEMANTIC"
+  ],
+  "ids": [
+   "T-ANCHOR-CONSUMED",
+   "T-CLAIMS-EQUAL",
+   "T-FALSIFIER-POISONS",
+   "T-NO-TYPED-COUNTS",
+   "T-READ-SET",
+   "T-REFERENT-BOUND",
+   "T-SEAL-PROMOTION",
+   "T-TRANSCRIPT-BOUND",
+   "T-WALL-SEMANTIC"
+  ],
+  "roles": {
+   "T-ANCHOR-CONSUMED": "one accessor, consumption verified, both sides, the content entering a predicate",
+   "T-CLAIMS-EQUAL": "claims by equality, two-way, keyed by table, headers as rows, fences by multiset",
+   "T-FALSIFIER-POISONS": "every falsifier moves its named target by digest and dies at its declared gate",
+   "T-NO-TYPED-COUNTS": "every published numeral arrives by name from the measured registry; an AST leg audits the source",
+   "T-READ-SET": "reads recorded at the accessor and gated after the last gate, order-insensitively",
+   "T-REFERENT-BOUND": "per-occurrence referent binding over prose only, pairs rather than membership",
+   "T-SEAL-PROMOTION": "seals taken at gate time, verified at promotion, totality recomputed at the door",
+   "T-TRANSCRIPT-BOUND": "the promoted transcript parsed back and reconciled with the ledger as a multiset",
+   "T-WALL-SEMANTIC": "voice-normalised regex walls with a positive leg, controls written independently of the patterns"
+  }
+ },
+ "form_census": [
+  {
+   "events": 4,
+   "form_lawful": true,
+   "frozen_possible": true,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "successors": [
+    103,
+    31,
+    31
+   ]
+  },
+  {
+   "events": 4,
+   "form_lawful": true,
+   "frozen_possible": true,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "successors": [
+    31,
+    103,
+    31
+   ]
+  },
+  {
+   "events": 4,
+   "form_lawful": true,
+   "frozen_possible": true,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "successors": [
+    31,
+    31,
+    103
+   ]
+  },
+  {
+   "events": 12,
+   "form_lawful": true,
+   "frozen_possible": true,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "successors": [
+    31,
+    31,
+    31
+   ]
+  },
+  {
+   "events": 10,
+   "form_lawful": true,
+   "frozen_possible": true,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "successors": [
+    31,
+    31,
+    49
+   ]
+  },
+  {
+   "events": 10,
+   "form_lawful": true,
+   "frozen_possible": true,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "successors": [
+    31,
+    49,
+    31
+   ]
+  },
+  {
+   "events": 10,
+   "form_lawful": true,
+   "frozen_possible": true,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "successors": [
+    49,
+    31,
+    31
+   ]
+  },
+  {
+   "events": 2,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "successors": [
+    103,
+    31,
+    31
+   ]
+  },
+  {
+   "events": 2,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "successors": [
+    31,
+    103,
+    31
+   ]
+  },
+  {
+   "events": 2,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "successors": [
+    31,
+    31,
+    103
+   ]
+  },
+  {
+   "events": 48,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "successors": [
+    31,
+    31,
+    31
+   ]
+  },
+  {
+   "events": 16,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "successors": [
+    31,
+    31,
+    49
+   ]
+  },
+  {
+   "events": 16,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "successors": [
+    31,
+    49,
+    31
+   ]
+  },
+  {
+   "events": 2,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "successors": [
+    31,
+    49,
+    49
+   ]
+  },
+  {
+   "events": 16,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "successors": [
+    49,
+    31,
+    31
+   ]
+  },
+  {
+   "events": 2,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "successors": [
+    49,
+    31,
+    49
+   ]
+  },
+  {
+   "events": 2,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "successors": [
+    49,
+    49,
+    31
+   ]
+  },
+  {
+   "events": 5,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    31,
+    31,
+    31
+   ],
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "successors": [
+    31,
+    31,
+    31
+   ]
+  },
+  {
+   "events": 27,
+   "form_lawful": true,
+   "frozen_possible": false,
+   "kept": [
+    0,
+    8,
+    8
+   ],
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "successors": [
+    4,
+    8,
+    8
+   ]
+  },
+  {
+   "events": 27,
+   "form_lawful": true,
+   "frozen_possible": false,
+   "kept": [
+    8,
+    0,
+    8
+   ],
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "successors": [
+    8,
+    4,
+    8
+   ]
+  },
+  {
+   "events": 27,
+   "form_lawful": true,
+   "frozen_possible": false,
+   "kept": [
+    8,
+    8,
+    0
+   ],
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "successors": [
+    8,
+    8,
+    4
+   ]
+  },
+  {
+   "events": 27,
+   "form_lawful": true,
+   "frozen_possible": true,
+   "kept": [
+    8,
+    8,
+    8
+   ],
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "successors": [
+    8,
+    8,
+    8
+   ]
+  },
+  {
+   "events": 36,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    0,
+    4,
+    4
+   ],
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "successors": [
+    0,
+    4,
+    4
+   ]
+  },
+  {
+   "events": 36,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    4,
+    0,
+    4
+   ],
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "successors": [
+    4,
+    0,
+    4
+   ]
+  },
+  {
+   "events": 36,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    4,
+    4,
+    0
+   ],
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "successors": [
+    4,
+    4,
+    0
+   ]
+  },
+  {
+   "events": 72,
+   "form_lawful": false,
+   "frozen_possible": false,
+   "kept": [
+    0,
+    0,
+    0
+   ],
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "successors": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "fourth_direction": [
+  {
+   "counts": [
+    1,
+    1,
+    1
+   ],
+   "predicted": 3,
+   "readings": 360,
+   "realised": 1
+  },
+  {
+   "counts": [
+    1,
+    1,
+    2
+   ],
+   "predicted": 2,
+   "readings": 36,
+   "realised": 1
+  },
+  {
+   "counts": [
+    1,
+    2,
+    1
+   ],
+   "predicted": 5,
+   "readings": 36,
+   "realised": 1
+  },
+  {
+   "counts": [
+    2,
+    1,
+    1
+   ],
+   "predicted": 5,
+   "readings": 36,
+   "realised": 1
+  }
+ ],
+ "incidence_census": [
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "EMBEDDING",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 5,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "EMBEDDING",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 72,
+   "fate": "ALIVE",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "EMBEDDING",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 5,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "EMBEDDING",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 72,
+   "fate": "ALIVE",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "QUOTIENT",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 5,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "QUOTIENT",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 72,
+   "fate": "ALIVE",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "QUOTIENT",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 5,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "QUOTIENT",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 72,
+   "fate": "ALIVE",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "ALL-NEW"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "EMBEDDING",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 5,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "EMBEDDING",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 72,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "EMBEDDING",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 5,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "EMBEDDING",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 72,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "QUOTIENT",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 5,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "QUOTIENT",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 72,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "QUOTIENT",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 5,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "QUOTIENT",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 72,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "CROSS-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "EMBEDDING",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 5,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "EMBEDDING",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 72,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "EMBEDDING",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 5,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "EMBEDDING",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 72,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "QUOTIENT",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 5,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "QUOTIENT",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 72,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "QUOTIENT",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 5,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "QUOTIENT",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 72,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "NONE"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "EMBEDDING",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 5,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "EMBEDDING",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 72,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "EMBEDDING",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 5,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "EMBEDDING",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "EMBEDDING",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 72,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "EMBEDDING",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "QUOTIENT",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 5,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "QUOTIENT",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "NON-NEGATIVE",
+   "events": 72,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 54,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    0,
+    3
+   ],
+   "reading": "QUOTIENT",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    1,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 5,
+   "fate": "ALIVE",
+   "profile": [
+    0,
+    3,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    1,
+    0,
+    2
+   ],
+   "reading": "QUOTIENT",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 108,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    0,
+    1
+   ],
+   "reading": "QUOTIENT",
+   "rule": "WITHIN-ONLY"
+  },
+  {
+   "count_leg": "POSITIVE",
+   "events": 72,
+   "fate": "STRUCT-DEAD",
+   "profile": [
+    2,
+    1,
+    0
+   ],
+   "reading": "QUOTIENT",
+   "rule": "WITHIN-ONLY"
+  }
+ ],
+ "incidence_summary": {
+  "alive_by_rule": {
+   "ALL-NEW": 455,
+   "CROSS-ONLY": 270,
+   "NONE": 54,
+   "WITHIN-ONLY": 167
+  },
+  "cells": 16,
+  "events": 455,
+  "spanning_alive_by_rule": {
+   "ALL-NEW": 288,
+   "CROSS-ONLY": 216,
+   "NONE": 0,
+   "WITHIN-ONLY": 0
+  }
+ },
+ "inventory_census": [
+  {
+   "events": 18,
+   "free_items": 2,
+   "inventory": [
+    54,
+    3,
+    1
+   ],
+   "maps": 62208,
+   "profile": [
+    0,
+    0,
+    3
+   ]
+  },
+  {
+   "events": 36,
+   "free_items": 3,
+   "inventory": [
+    54,
+    3,
+    2
+   ],
+   "maps": 62208,
+   "profile": [
+    0,
+    0,
+    3
+   ]
+  },
+  {
+   "events": 6,
+   "free_items": 3,
+   "inventory": [
+    12,
+    3,
+    2
+   ],
+   "maps": 20736,
+   "profile": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "events": 30,
+   "free_items": 3,
+   "inventory": [
+    12,
+    6,
+    2
+   ],
+   "maps": 20736,
+   "profile": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "events": 12,
+   "free_items": 3,
+   "inventory": [
+    3,
+    3,
+    2
+   ],
+   "maps": 5184,
+   "profile": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "events": 60,
+   "free_items": 3,
+   "inventory": [
+    3,
+    6,
+    2
+   ],
+   "maps": 5184,
+   "profile": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "events": 4,
+   "free_items": 0,
+   "inventory": [
+    1,
+    1,
+    1
+   ],
+   "maps": 15552,
+   "profile": [
+    0,
+    3,
+    0
+   ]
+  },
+  {
+   "events": 1,
+   "free_items": 0,
+   "inventory": [
+    1,
+    1,
+    1
+   ],
+   "maps": 62208,
+   "profile": [
+    0,
+    3,
+    0
+   ]
+  },
+  {
+   "events": 108,
+   "free_items": 3,
+   "inventory": [
+    3,
+    9,
+    4
+   ],
+   "maps": 1728,
+   "profile": [
+    1,
+    0,
+    2
+   ]
+  },
+  {
+   "events": 108,
+   "free_items": 2,
+   "inventory": [
+    1,
+    3,
+    2
+   ],
+   "maps": 576,
+   "profile": [
+    2,
+    0,
+    1
+   ]
+  },
+  {
+   "events": 72,
+   "free_items": 0,
+   "inventory": [
+    1,
+    1,
+    1
+   ],
+   "maps": 864,
+   "profile": [
+    2,
+    1,
+    0
+   ]
+  }
+ ],
+ "ledger": [
+  {
+   "chain": "2ed74dc21a770df8",
+   "evidence": {
+    "commit": "ba62eac",
+    "sources": [
+     {
+      "bytes": 8026,
+      "declared": "7a82ffe7168a",
+      "id": "A-ADJ",
+      "ok": true,
+      "path": "v14/note-sec-adjudication.md",
+      "sha256_12": "7a82ffe7168a"
+     },
+     {
+      "bytes": 57688,
+      "declared": "50bb81e67942",
+      "id": "A-P19",
+      "ok": true,
+      "path": "v14/paper-19-r3-weld.md",
+      "sha256_12": "50bb81e67942"
+     },
+     {
+      "bytes": 1565,
+      "declared": "88c04df52c19",
+      "id": "A-PIN",
+      "ok": true,
+      "path": "v15/note-autoglue-pin.md",
+      "sha256_12": "88c04df52c19"
+     },
+     {
+      "bytes": 68128,
+      "declared": "f3f43d94cd75",
+      "id": "A-SEC",
+      "ok": true,
+      "path": "v14/paper-32-sec.md",
+      "sha256_12": "f3f43d94cd75"
+     },
+     {
+      "bytes": 56456,
+      "declared": "4fe88602280c",
+      "id": "A-SEC2",
+      "ok": true,
+      "path": "v14/paper-40-sec2.md",
+      "sha256_12": "4fe88602280c"
+     },
+     {
+      "bytes": 73825,
+      "declared": "d04a3eb58fbc",
+      "id": "A-TPL",
+      "ok": true,
+      "path": "v14/code/era_template.py",
+      "sha256_12": "d04a3eb58fbc"
+     }
+    ]
+   },
+   "gate": "G-SOURCES",
+   "passed": true
+  },
+  {
+   "chain": "84df31755ef030e5",
+   "evidence": {
+    "anchors": [
+     {
+      "anchor": "N-PIN-QUESTION",
+      "chars": 150,
+      "consumer": "G-WINDOW",
+      "floor_ok": true,
+      "hits": 1,
+      "mode": "PARSED",
+      "ok": true,
+      "paper_hits": 1,
+      "source": "A-PIN"
+     },
+     {
+      "anchor": "N-PIN-OBSTRUCTION",
+      "chars": 59,
+      "consumer": "G-OBSTRUCTION",
+      "floor_ok": true,
+      "hits": 1,
+      "mode": "PARSED",
+      "ok": true,
+      "paper_hits": 1,
+      "source": "A-PIN"
+     },
+     {
+      "anchor": "N-SEC2-WALL",
+      "chars": 123,
+      "consumer": "G-INCIDENCE-CENSUS",
+      "floor_ok": true,
+      "hits": 1,
+      "mode": "PARSED",
+      "ok": true,
+      "paper_hits": 0,
+      "source": "A-SEC2"
+     },
+     {
+      "anchor": "N-SEC2-MOTIVATED",
+      "chars": 119,
+      "consumer": "G-MOTIVATED-DISJOINT",
+      "floor_ok": true,
+      "hits": 1,
+      "mode": "QUOTED",
+      "ok": true,
+      "paper_hits": 1,
+      "source": "A-SEC2"
+     },
+     {
+      "anchor": "N-SEC2-SEAM",
+      "chars": 75,
+      "consumer": "G-COMPLETION-LATTICE",
+      "floor_ok": true,
+      "hits": 1,
+      "mode": "PARSED",
+      "ok": true,
+      "paper_hits": 0,
+      "source": "A-SEC2"
+     },
+     {
+      "anchor": "N-SEC2-DET",
+      "chars": 78,
+      "consumer": "G-EXTREMAL",
+      "floor_ok": true,
+      "hits": 1,
+      "mode": "QUOTED",
+      "ok": true,
+      "paper_hits": 1,
+      "source": "A-SEC2"
+     },
+     {
+      "anchor": "N-P19-LEGS",
+      "chars": 116,
+      "consumer": "G-BASELINE-LAWFUL",
+      "floor_ok": true,
+      "hits": 1,
+      "mode": "PARSED",
+      "ok": true,
+      "paper_hits": 0,
+      "source": "A-P19"
+     },
+     {
+      "anchor": "N-ADJ-SEAMCONFINED",
+      "chars": 157,
+      "consumer": "G-WALL-SEAMCONFINED",
+      "floor_ok": true,
+      "hits": 1,
+      "mode": "PARSED",
+      "ok": true,
+      "paper_hits": 0,
+      "source": "A-ADJ"
+     },
+     {
+      "anchor": "N-SEC-SEAMTHM",
+      "chars": 61,
+      "consumer": "G-COMPLETION-LATTICE",
+      "floor_ok": true,
+      "hits": 1,
+      "mode": "PARSED",
+      "ok": true,
+      "paper_hits": 0,
+      "source": "A-SEC"
+     }
+    ],
+    "floor": 40
+   },
+   "gate": "G-ANCHORS",
+   "passed": true
+  },
+  {
+   "chain": "307d497f24f5993f",
+   "evidence": {
+    "implemented": [
+     "T-ANCHOR-CONSUMED",
+     "T-CLAIMS-EQUAL",
+     "T-FALSIFIER-POISONS",
+     "T-NO-TYPED-COUNTS",
+     "T-READ-SET",
+     "T-REFERENT-BOUND",
+     "T-SEAL-PROMOTION",
+     "T-TRANSCRIPT-BOUND",
+     "T-WALL-SEMANTIC"
+    ],
+    "template_ids": [
+     "T-ANCHOR-CONSUMED",
+     "T-CLAIMS-EQUAL",
+     "T-FALSIFIER-POISONS",
+     "T-NO-TYPED-COUNTS",
+     "T-READ-SET",
+     "T-REFERENT-BOUND",
+     "T-SEAL-PROMOTION",
+     "T-TRANSCRIPT-BOUND",
+     "T-WALL-SEMANTIC"
+    ]
+   },
+   "gate": "G-TEMPLATE-CONFORMANCE",
+   "passed": true
+  },
+  {
+   "chain": "fd06f2177de251f5",
+   "evidence": {
+    "aut": 62208,
+    "carriers": 15,
+    "declared": {
+     "sec2.union.aut": 62208,
+     "sec2.union.carriers": 15,
+     "sec2.union.pairs": 54
+    },
+    "doubled": 0,
+    "incidence_is_the_support": true,
+    "pairs": 54,
+    "search_complete": true
+   },
+   "gate": "G-ARENA",
+   "passed": true
+  },
+  {
+   "chain": "5716f586ad7956da",
+   "evidence": {
+    "canonical_key_invariant": true,
+    "declared": [
+     "\"\\n\") if \"key=repr\" in ln})",
+     "actors = sorted(set(amap.values()) | set(bmap.values()), key=repr)",
+     "for k, v in sorted(form_rows.items(), key=repr)]})",
+     "for k, v in sorted(inv_rows.items(), key=repr)]})",
+     "gg = tuple(sorted(g, key=repr))",
+     "keep.discard(sorted(keep, key=repr)[0])",
+     "key=repr)],",
+     "key=repr)}, \"G-EVENTS\")"
+    ],
+    "unsafe": []
+   },
+   "gate": "G-DETERMINISM",
+   "passed": true
+  },
+  {
+   "chain": "66ea99a9893f421e",
+   "evidence": {
+    "baseline": {
+     "EMBEDDING/NON-NEGATIVE": "ALIVE",
+     "EMBEDDING/POSITIVE": "ALIVE",
+     "QUOTIENT/NON-NEGATIVE": "ALIVE",
+     "QUOTIENT/POSITIVE": "ALIVE"
+    },
+    "legs_anchor": "N-P19-LEGS"
+   },
+   "gate": "G-BASELINE-LAWFUL",
+   "passed": true
+  },
+  {
+   "chain": "7396dc1b110c6dff",
+   "evidence": {
+    "closed_form": 455,
+    "events": 455,
+    "orbit_sizes": [
+     [
+      1,
+      1
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      36,
+      3
+     ],
+     [
+      54,
+      1
+     ],
+     [
+      72,
+      1
+     ],
+     [
+      108,
+      2
+     ]
+    ],
+    "orbits": 9,
+    "spanning": 288,
+    "spanning_second_route": 288
+   },
+   "gate": "G-EVENTS",
+   "passed": true
+  },
+  {
+   "chain": "a0b32db75689bfcc",
+   "evidence": {
+    "axes": [
+     {
+      "axis": "CREATION",
+      "delivered": "NONE",
+      "members": [
+       "NONE",
+       "CROSS-ONLY",
+       "WITHIN-ONLY",
+       "ALL-NEW"
+      ]
+     },
+     {
+      "axis": "READING",
+      "delivered": "EMBEDDING and QUOTIENT",
+      "members": [
+       "EMBEDDING",
+       "QUOTIENT"
+      ]
+     },
+     {
+      "axis": "COUNT LEG",
+      "delivered": "POSITIVE",
+      "members": [
+       "POSITIVE",
+       "NON-NEGATIVE"
+      ]
+     },
+     {
+      "axis": "FORM CARRY",
+      "delivered": "CARRIED at the seam",
+      "members": [
+       "DROPPED",
+       "CARRIED"
+      ]
+     },
+     {
+      "axis": "STATE",
+      "delivered": "not posed",
+      "members": [
+       "FROZEN",
+       "RE-SOLVED"
+      ]
+     }
+    ],
+    "cells": 16,
+    "outside": [
+     "the record",
+     "the committed grammar",
+     "the actor set",
+     "the arrangement",
+     "the readout law itself",
+     "the three-actor conflict group",
+     "the bare carrier",
+     "the simple link individuation",
+     "any target declared after the event"
+    ]
+   },
+   "gate": "G-WINDOW",
+   "passed": true
+  },
+  {
+   "chain": "72982eaa2234478e",
+   "evidence": {
+    "disagreements": []
+   },
+   "gate": "G-RULE-BLIND",
+   "passed": true
+  },
+  {
+   "chain": "14225e757c6cc99e",
+   "evidence": {
+    "chart_preserving": 31104,
+    "disagreements": [],
+    "full_group": 62208,
+    "sector_mixing_moves_cross_only": 0
+   },
+   "gate": "G-RULE-EQUIVARIANT",
+   "passed": true
+  },
+  {
+   "chain": "e6134350ba41a7c6",
+   "evidence": {
+    "banned_terms": [
+     "weld",
+     "fate",
+     "ALIVE",
+     "successors",
+     "verdict",
+     "detect"
+    ],
+    "bodies": [
+     "rule_none",
+     "rule_cross_only",
+     "rule_within_only",
+     "rule_all_new"
+    ],
+    "peeking": []
+   },
+   "gate": "G-NO-POSTHOC",
+   "passed": true
+  },
+  {
+   "chain": "f376435cbd74ffcd",
+   "evidence": {
+    "alive_by_rule": {
+     "ALL-NEW": 455,
+     "CROSS-ONLY": 270,
+     "NONE": 54,
+     "WITHIN-ONLY": 167
+    },
+    "spanning_alive_by_rule": {
+     "ALL-NEW": 288,
+     "CROSS-ONLY": 216,
+     "NONE": 0,
+     "WITHIN-ONLY": 0
+    }
+   },
+   "gate": "G-CONTROL-ARMS",
+   "passed": true
+  },
+  {
+   "chain": "76fe4d12b61a0422",
+   "evidence": {
+    "cross_only_spanning_alive": 216,
+    "parent_sentence": {
+     "lawful": 216,
+     "spanning": 288
+    },
+    "rows": 7280
+   },
+   "gate": "G-INCIDENCE-CENSUS",
+   "passed": true
+  },
+  {
+   "chain": "46989eddac4a79b8",
+   "evidence": {
+    "cross_pairs": 36,
+    "indexed": true,
+    "indices_per_seam": {
+     "0": 18,
+     "1": 18,
+     "2": 18
+    },
+    "pairs_per_index": [
+     2
+    ]
+   },
+   "gate": "G-SEAM-INDEX",
+   "passed": true
+  },
+  {
+   "chain": "9b47254d79aed63d",
+   "evidence": {
+    "kernel": 4,
+    "lattice": 31,
+    "parent_sentence": [
+     6,
+     10,
+     4
+    ],
+    "positive_definite": 31,
+    "rank": 6,
+    "unknowns": 10,
+    "widened": 31
+   },
+   "gate": "G-COMPLETION-LATTICE",
+   "passed": true
+  },
+  {
+   "chain": "7ffce07fb5323503",
+   "evidence": {
+    "agreements": 0,
+    "readings": 468,
+    "rows": [
+     {
+      "counts": [
+       1,
+       1,
+       1
+      ],
+      "predicted": 3,
+      "readings": 360,
+      "realised": 1
+     },
+     {
+      "counts": [
+       1,
+       1,
+       2
+      ],
+      "predicted": 2,
+      "readings": 36,
+      "realised": 1
+     },
+     {
+      "counts": [
+       1,
+       2,
+       1
+      ],
+      "predicted": 5,
+      "readings": 36,
+      "realised": 1
+     },
+     {
+      "counts": [
+       2,
+       1,
+       1
+      ],
+      "predicted": 5,
+      "readings": 36,
+      "realised": 1
+     }
+    ]
+   },
+   "gate": "G-FOURTH-DIRECTION",
+   "passed": true
+  },
+  {
+   "chain": "a68acb3158bb4acb",
+   "evidence": {
+    "crossings": 108,
+    "form_alive": 162,
+    "frozen": 27,
+    "rows": [
+     {
+      "events": 4,
+      "form_lawful": true,
+      "frozen_possible": true,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       0,
+       3
+      ],
+      "successors": [
+       103,
+       31,
+       31
+      ]
+     },
+     {
+      "events": 4,
+      "form_lawful": true,
+      "frozen_possible": true,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       0,
+       3
+      ],
+      "successors": [
+       31,
+       103,
+       31
+      ]
+     },
+     {
+      "events": 4,
+      "form_lawful": true,
+      "frozen_possible": true,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       0,
+       3
+      ],
+      "successors": [
+       31,
+       31,
+       103
+      ]
+     },
+     {
+      "events": 12,
+      "form_lawful": true,
+      "frozen_possible": true,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       0,
+       3
+      ],
+      "successors": [
+       31,
+       31,
+       31
+      ]
+     },
+     {
+      "events": 10,
+      "form_lawful": true,
+      "frozen_possible": true,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       0,
+       3
+      ],
+      "successors": [
+       31,
+       31,
+       49
+      ]
+     },
+     {
+      "events": 10,
+      "form_lawful": true,
+      "frozen_possible": true,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       0,
+       3
+      ],
+      "successors": [
+       31,
+       49,
+       31
+      ]
+     },
+     {
+      "events": 10,
+      "form_lawful": true,
+      "frozen_possible": true,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       0,
+       3
+      ],
+      "successors": [
+       49,
+       31,
+       31
+      ]
+     },
+     {
+      "events": 2,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       1,
+       2
+      ],
+      "successors": [
+       103,
+       31,
+       31
+      ]
+     },
+     {
+      "events": 2,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       1,
+       2
+      ],
+      "successors": [
+       31,
+       103,
+       31
+      ]
+     },
+     {
+      "events": 2,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       1,
+       2
+      ],
+      "successors": [
+       31,
+       31,
+       103
+      ]
+     },
+     {
+      "events": 48,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       1,
+       2
+      ],
+      "successors": [
+       31,
+       31,
+       31
+      ]
+     },
+     {
+      "events": 16,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       1,
+       2
+      ],
+      "successors": [
+       31,
+       31,
+       49
+      ]
+     },
+     {
+      "events": 16,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       1,
+       2
+      ],
+      "successors": [
+       31,
+       49,
+       31
+      ]
+     },
+     {
+      "events": 2,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       1,
+       2
+      ],
+      "successors": [
+       31,
+       49,
+       49
+      ]
+     },
+     {
+      "events": 16,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       1,
+       2
+      ],
+      "successors": [
+       49,
+       31,
+       31
+      ]
+     },
+     {
+      "events": 2,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       1,
+       2
+      ],
+      "successors": [
+       49,
+       31,
+       49
+      ]
+     },
+     {
+      "events": 2,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       1,
+       2
+      ],
+      "successors": [
+       49,
+       49,
+       31
+      ]
+     },
+     {
+      "events": 5,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       31,
+       31,
+       31
+      ],
+      "profile": [
+       0,
+       3,
+       0
+      ],
+      "successors": [
+       31,
+       31,
+       31
+      ]
+     },
+     {
+      "events": 27,
+      "form_lawful": true,
+      "frozen_possible": false,
+      "kept": [
+       0,
+       8,
+       8
+      ],
+      "profile": [
+       1,
+       0,
+       2
+      ],
+      "successors": [
+       4,
+       8,
+       8
+      ]
+     },
+     {
+      "events": 27,
+      "form_lawful": true,
+      "frozen_possible": false,
+      "kept": [
+       8,
+       0,
+       8
+      ],
+      "profile": [
+       1,
+       0,
+       2
+      ],
+      "successors": [
+       8,
+       4,
+       8
+      ]
+     },
+     {
+      "events": 27,
+      "form_lawful": true,
+      "frozen_possible": false,
+      "kept": [
+       8,
+       8,
+       0
+      ],
+      "profile": [
+       1,
+       0,
+       2
+      ],
+      "successors": [
+       8,
+       8,
+       4
+      ]
+     },
+     {
+      "events": 27,
+      "form_lawful": true,
+      "frozen_possible": true,
+      "kept": [
+       8,
+       8,
+       8
+      ],
+      "profile": [
+       1,
+       0,
+       2
+      ],
+      "successors": [
+       8,
+       8,
+       8
+      ]
+     },
+     {
+      "events": 36,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       0,
+       4,
+       4
+      ],
+      "profile": [
+       2,
+       0,
+       1
+      ],
+      "successors": [
+       0,
+       4,
+       4
+      ]
+     },
+     {
+      "events": 36,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       4,
+       0,
+       4
+      ],
+      "profile": [
+       2,
+       0,
+       1
+      ],
+      "successors": [
+       4,
+       0,
+       4
+      ]
+     },
+     {
+      "events": 36,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       4,
+       4,
+       0
+      ],
+      "profile": [
+       2,
+       0,
+       1
+      ],
+      "successors": [
+       4,
+       4,
+       0
+      ]
+     },
+     {
+      "events": 72,
+      "form_lawful": false,
+      "frozen_possible": false,
+      "kept": [
+       0,
+       0,
+       0
+      ],
+      "profile": [
+       2,
+       1,
+       0
+      ],
+      "successors": [
+       0,
+       0,
+       0
+      ]
+     }
+    ]
+   },
+   "gate": "G-FORM-CENSUS",
+   "passed": true
+  },
+  {
+   "chain": "9ff0aaec07b91675",
+   "evidence": {
+    "all_new": 162,
+    "cross_only": 162,
+    "identical": true
+   },
+   "gate": "G-RULE-FIBER",
+   "passed": true
+  },
+  {
+   "chain": "2ae53b3909407bc1",
+   "evidence": {
+    "best": 9,
+    "best_state": [
+     [
+      1,
+      -1,
+      0,
+      1
+     ],
+     [
+      1,
+      -1,
+      0,
+      1
+     ],
+     [
+      1,
+      -1,
+      0,
+      1
+     ]
+    ],
+    "coverage": [
+     [
+      0,
+      20100
+     ],
+     [
+      1,
+      6804
+     ],
+     [
+      2,
+      2034
+     ],
+     [
+      3,
+      622
+     ],
+     [
+      4,
+      153
+     ],
+     [
+      5,
+      18
+     ],
+     [
+      6,
+      52
+     ],
+     [
+      9,
+      8
+     ]
+    ],
+    "ready_for_none": 20100,
+    "states": 29791
+   },
+   "gate": "G-PREPAREDNESS",
+   "passed": true
+  },
+  {
+   "chain": "68c95b12959ea85f",
+   "evidence": {
+    "memoryless_allowed": 162,
+    "multiplicities": [
+     {
+      "seam slots": 81,
+      "successors at one seam": 4
+     },
+     {
+      "seam slots": 243,
+      "successors at one seam": 8
+     }
+    ],
+    "persistent_states_admitting_a_crossing": 9691,
+    "states": 29791,
+    "whole_state_fiber": [
+     {
+      "crossings": 81,
+      "successors of the whole state": 256
+     },
+     {
+      "crossings": 27,
+      "successors of the whole state": 512
+     }
+    ]
+   },
+   "gate": "G-TRANSITION-RELATION",
+   "passed": true
+  },
+  {
+   "chain": "9a16c11406106416",
+   "evidence": {
+    "first_event": [
+     "('A', (0, 1))",
+     "('B', (0, 1))",
+     "('S', 0)"
+    ],
+    "second_step": [
+     {
+      "crossing": false,
+      "events": 43,
+      "form_lawful": true,
+      "state_kept": false
+     },
+     {
+      "crossing": false,
+      "events": 127,
+      "form_lawful": true,
+      "state_kept": true
+     },
+     {
+      "crossing": true,
+      "events": 260,
+      "form_lawful": false,
+      "state_kept": false
+     },
+     {
+      "crossing": true,
+      "events": 23,
+      "form_lawful": true,
+      "state_kept": false
+     },
+     {
+      "crossing": true,
+      "events": 2,
+      "form_lawful": true,
+      "state_kept": true
+     }
+    ],
+    "state": [
+     [
+      0,
+      -1,
+      -1,
+      3
+     ],
+     [
+      0,
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      0,
+      0,
+      0
+     ]
+    ],
+    "successor_sizes": [
+     4,
+     8,
+     8
+    ]
+   },
+   "gate": "G-TWO-STEP",
+   "passed": true
+  },
+  {
+   "chain": "cbbde7ba4a6b06ca",
+   "evidence": {
+    "rows": [
+     {
+      "events": 18,
+      "free_items": 2,
+      "inventory": [
+       54,
+       3,
+       1
+      ],
+      "maps": 62208,
+      "profile": [
+       0,
+       0,
+       3
+      ]
+     },
+     {
+      "events": 36,
+      "free_items": 3,
+      "inventory": [
+       54,
+       3,
+       2
+      ],
+      "maps": 62208,
+      "profile": [
+       0,
+       0,
+       3
+      ]
+     },
+     {
+      "events": 6,
+      "free_items": 3,
+      "inventory": [
+       12,
+       3,
+       2
+      ],
+      "maps": 20736,
+      "profile": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "events": 30,
+      "free_items": 3,
+      "inventory": [
+       12,
+       6,
+       2
+      ],
+      "maps": 20736,
+      "profile": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "events": 12,
+      "free_items": 3,
+      "inventory": [
+       3,
+       3,
+       2
+      ],
+      "maps": 5184,
+      "profile": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "events": 60,
+      "free_items": 3,
+      "inventory": [
+       3,
+       6,
+       2
+      ],
+      "maps": 5184,
+      "profile": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "events": 4,
+      "free_items": 0,
+      "inventory": [
+       1,
+       1,
+       1
+      ],
+      "maps": 15552,
+      "profile": [
+       0,
+       3,
+       0
+      ]
+     },
+     {
+      "events": 1,
+      "free_items": 0,
+      "inventory": [
+       1,
+       1,
+       1
+      ],
+      "maps": 62208,
+      "profile": [
+       0,
+       3,
+       0
+      ]
+     },
+     {
+      "events": 108,
+      "free_items": 3,
+      "inventory": [
+       3,
+       9,
+       4
+      ],
+      "maps": 1728,
+      "profile": [
+       1,
+       0,
+       2
+      ]
+     },
+     {
+      "events": 108,
+      "free_items": 2,
+      "inventory": [
+       1,
+       3,
+       2
+      ],
+      "maps": 576,
+      "profile": [
+       2,
+       0,
+       1
+      ]
+     },
+     {
+      "events": 72,
+      "free_items": 0,
+      "inventory": [
+       1,
+       1,
+       1
+      ],
+      "maps": 864,
+      "profile": [
+       2,
+       1,
+       0
+      ]
+     }
+    ],
+    "union": {
+     "complete": true,
+     "free_items": 0,
+     "inventory": [
+      1,
+      1,
+      1
+     ],
+     "maps": 62208
+    }
+   },
+   "gate": "G-INVENTORY",
+   "passed": true
+  },
+  {
+   "chain": "1738febf1be3f7d7",
+   "evidence": {
+    "lawful": 162,
+    "motivated": 77,
+    "overlap": 0,
+    "theorem_violations": []
+   },
+   "gate": "G-MOTIVATED-DISJOINT",
+   "passed": true
+  },
+  {
+   "chain": "e86f62ae4795d0d5",
+   "evidence": {
+    "distinct_laws": 1,
+    "rows": [
+     {
+      "currency": "refutability: events the weld refuses",
+      "the frozen geometry": 401,
+      "the update": 293,
+      "verdict": "PART SPENT"
+     },
+     {
+      "currency": "forcing: free items at a lawful crossing",
+      "the frozen geometry": 0,
+      "the update": 3,
+      "verdict": "SPENT"
+     },
+     {
+      "currency": "the state: completions the seam may carry",
+      "the frozen geometry": 31,
+      "the update": 8,
+      "verdict": "NARROWED"
+     },
+     {
+      "currency": "the structure: fourth-class cells creatable",
+      "the frozen geometry": 0,
+      "the update": 15,
+      "verdict": "REFUSED BY THE FORM"
+     },
+     {
+      "currency": "the declaration: objects the route declares",
+      "the frozen geometry": 288,
+      "the update": 1,
+      "verdict": "BOUGHT"
+     }
+    ]
+   },
+   "gate": "G-PRICE",
+   "passed": true
+  },
+  {
+   "chain": "100c87c54f155309",
+   "evidence": {
+    "cut_sizes": [
+     8
+    ],
+    "direct_sum_in_cuts": 0,
+    "direct_sum_realises": 0,
+    "rows": [
+     {
+      "functional": "maximum determinant",
+      "selects after, least": 4,
+      "selects after, most": 4,
+      "selects before": 1,
+      "the direct sum before": true
+     },
+     {
+      "functional": "minimum determinant",
+      "selects after, least": 4,
+      "selects after, most": 4,
+      "selects before": 12,
+      "the direct sum before": false
+     },
+     {
+      "functional": "minimum cross coupling",
+      "selects after, least": 1,
+      "selects after, most": 4,
+      "selects before": 1,
+      "the direct sum before": true
+     },
+     {
+      "functional": "maximum cross coupling",
+      "selects after, least": 1,
+      "selects after, most": 4,
+      "selects before": 2,
+      "the direct sum before": false
+     },
+     {
+      "functional": "minimum two-sided price",
+      "selects after, least": 8,
+      "selects after, most": 8,
+      "selects before": 31,
+      "the direct sum before": true
+     },
+     {
+      "functional": "minimum one-sided price",
+      "selects after, least": 1,
+      "selects after, most": 8,
+      "selects before": 8,
+      "the direct sum before": false
+     },
+     {
+      "functional": "maximum one-sided price",
+      "selects after, least": 1,
+      "selects after, most": 8,
+      "selects before": 8,
+      "the direct sum before": false
+     },
+     {
+      "functional": "maximum realisable crossings",
+      "selects after, least": 4,
+      "selects after, most": 4,
+      "selects before": 12,
+      "the direct sum before": false
+     }
+    ]
+   },
+   "gate": "G-EXTREMAL",
+   "passed": true
+  },
+  {
+   "chain": "80e7dfdf57f4f162",
+   "evidence": {
+    "one_sided_matches": [
+     [
+      2,
+      2,
+      1
+     ]
+    ],
+    "positive_definite": 31,
+    "two_sided_values": [
+     36
+    ]
+   },
+   "gate": "G-NOTHING-DERIVED",
+   "passed": true
+  },
+  {
+   "chain": "4b9cfefafc9d5181",
+   "evidence": {
+    "best": 9,
+    "ready_for_none": 20100,
+    "unique_successor_events": []
+   },
+   "gate": "G-OBSTRUCTION",
+   "passed": true
+  },
+  {
+   "chain": "a8a19c6184fd7a51",
+   "evidence": {
+    "outcomes": [
+     {
+      "outcome": "TARGET-FREE-EVENT-CONDITIONED-CREATION-EXISTS",
+      "reached": true,
+      "the run's witness": 455,
+      "why it was reachable": "the create-everything rule makes the geometry's incidence the record's own support, so the weld cannot refuse"
+     },
+     {
+      "outcome": "BLOCKED-AT-THE-DECLARED-DATUM",
+      "reached": true,
+      "the run's witness": 288,
+      "why it was reachable": "with the geometry frozen the parent's wall stands and every seam-spanning event is refused"
+     }
+    ]
+   },
+   "gate": "G-OUTCOME-FEASIBILITY",
+   "passed": true
+  },
+  {
+   "chain": "101626170e4135ff",
+   "evidence": {
+    "adjudication_anchor": "N-ADJ-SEAMCONFINED",
+    "licensed_phrase_found": true,
+    "paper_carries_the_struck_wording": false,
+    "walls": [
+     {
+      "controls": 5,
+      "controls_caught": 5,
+      "hits": [],
+      "missing_positive": [],
+      "ok": true,
+      "self_licensing": [],
+      "unlicensed": [],
+      "wall": "WALL-DECLARATION"
+     },
+     {
+      "controls": 5,
+      "controls_caught": 5,
+      "hits": [],
+      "missing_positive": [],
+      "ok": true,
+      "self_licensing": [],
+      "unlicensed": [],
+      "wall": "WALL-SEAMCONFINED"
+     },
+     {
+      "controls": 5,
+      "controls_caught": 5,
+      "hits": [],
+      "missing_positive": [],
+      "ok": true,
+      "self_licensing": [],
+      "unlicensed": [],
+      "wall": "WALL-NO-METRICAL-READING"
+     },
+     {
+      "controls": 5,
+      "controls_caught": 5,
+      "hits": [],
+      "missing_positive": [],
+      "ok": true,
+      "self_licensing": [],
+      "unlicensed": [],
+      "wall": "WALL-RECONSTRUCTION-NOT-DERIVATION"
+     },
+     {
+      "controls": 5,
+      "controls_caught": 5,
+      "hits": [],
+      "missing_positive": [],
+      "ok": true,
+      "self_licensing": [],
+      "unlicensed": [],
+      "wall": "WALL-RELATION-NOT-LAW"
+     },
+     {
+      "controls": 5,
+      "controls_caught": 5,
+      "hits": [],
+      "missing_positive": [],
+      "ok": true,
+      "self_licensing": [],
+      "unlicensed": [],
+      "wall": "WALL-COUNTING-ONLY"
+     }
+    ]
+   },
+   "gate": "G-WALL-SEAMCONFINED",
+   "passed": true
+  },
+  {
+   "chain": "a8c618860894744c",
+   "evidence": {
+    "fence_mismatch": [],
+    "ok": true,
+    "prose_mismatch": [],
+    "tables": [
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-SOURCES"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-ARENA"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-WINDOW"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-INCIDENCE"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-FORM"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-FOURTH"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-MULT"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-FIBER"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-PREP"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-INVENTORY"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-EXTREMAL"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-PRICE"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-TWOSTEP"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-OUTCOMES"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-CHOICE"
+     }
+    ],
+    "unrendered_tables": []
+   },
+   "gate": "G-PAPER-CLAIMS",
+   "passed": true
+  },
+  {
+   "chain": "26dd80584bb3bd29",
+   "evidence": {
+    "exemptions": {
+     "19": "the weld paper's number",
+     "32": "the grandparent unit's paper number",
+     "40": "the parent unit's paper number",
+     "45": "this unit's own paper number",
+     "46": "the successor unit's paper number"
+    },
+    "spelled_unbacked": [],
+    "unbacked": [],
+    "unused_exemptions": []
+   },
+   "gate": "G-PAPER-COVERAGE",
+   "passed": true
+  },
+  {
+   "chain": "b3d9d61838a943ba",
+   "evidence": {
+    "pairs": [
+     "motivation and lawfulness are disjoint",
+     "the successor state is never unique",
+     "nothing in the corpus selects the seam",
+     "the frozen geometry refuses every crossing",
+     "a within-sector cell is refused at every reading"
+    ],
+    "violations": []
+   },
+   "gate": "G-PAPER-POLARITY",
+   "passed": true
+  },
+  {
+   "chain": "6220d4a850f5b8b4",
+   "evidence": {
+    "pairs": [
+     [
+      0,
+      18
+     ],
+     [
+      0,
+      288
+     ],
+     [
+      0,
+      468
+     ],
+     [
+      1,
+      18
+     ],
+     [
+      8,
+      31
+     ],
+     [
+      9,
+      108
+     ],
+     [
+      25,
+      108
+     ],
+     [
+      27,
+      108
+     ],
+     [
+      31,
+      31
+     ],
+     [
+      64,
+      31104
+     ],
+     [
+      77,
+      455
+     ],
+     [
+      108,
+      288
+     ],
+     [
+      162,
+      455
+     ],
+     [
+      216,
+      288
+     ],
+     [
+      288,
+      288
+     ],
+     [
+      293,
+      455
+     ],
+     [
+      401,
+      455
+     ],
+     [
+      455,
+      455
+     ],
+     [
+      468,
+      468
+     ],
+     [
+      9691,
+      29791
+     ],
+     [
+      20100,
+      29791
+     ]
+    ],
+    "violations": []
+   },
+   "gate": "G-PAPER-REFERENT",
+   "passed": true
+  },
+  {
+   "chain": "c866c57a31827fdd",
+   "evidence": {
+    "cross_check": {
+     "crossings": 288,
+     "events": 455,
+     "full_cross": 108,
+     "spanning": 288
+    },
+    "equal": true,
+    "first_difference": null
+   },
+   "gate": "G-VERDICT-RECON",
+   "passed": true
+  },
+  {
+   "chain": "f68b2851eb77c158",
+   "evidence": {
+    "read_by": {
+     "N-ADJ-SEAMCONFINED": [
+      "G-WALL-SEAMCONFINED"
+     ],
+     "N-P19-LEGS": [
+      "G-BASELINE-LAWFUL"
+     ],
+     "N-PIN-OBSTRUCTION": [
+      "G-OBSTRUCTION"
+     ],
+     "N-PIN-QUESTION": [
+      "G-WINDOW"
+     ],
+     "N-SEC-SEAMTHM": [
+      "G-COMPLETION-LATTICE"
+     ],
+     "N-SEC2-DET": [
+      "G-EXTREMAL"
+     ],
+     "N-SEC2-MOTIVATED": [
+      "G-MOTIVATED-DISJOINT"
+     ],
+     "N-SEC2-SEAM": [
+      "G-COMPLETION-LATTICE"
+     ],
+     "N-SEC2-WALL": [
+      "G-INCIDENCE-CENSUS"
+     ]
+    },
+    "violations": []
+   },
+   "gate": "G-ANCHOR-CONSUMPTION",
+   "passed": true
+  },
+  {
+   "chain": "1fabc7954c164df9",
+   "evidence": {
+    "falsifiers": 44,
+    "sentinels": [],
+    "violations": []
+   },
+   "gate": "G-FALSIFIER-HONESTY",
+   "passed": true
+  },
+  {
+   "chain": "2d8bff4d10965942",
+   "evidence": {
+    "uncovered": [],
+    "waived_and_covered": [],
+    "waivers": {}
+   },
+   "gate": "G-COVERAGE",
+   "passed": true
+  },
+  {
+   "chain": "9e67f28219f8f12b",
+   "evidence": {
+    "exemptions": {
+     "AG(2,3)": "the affine plane's own name, not a count",
+     "sha256-12": "the corpus's name for a digest prefix, not a count"
+    },
+    "offenders": [],
+    "unused_exemptions": []
+   },
+   "gate": "G-NO-TYPED-COUNTS",
+   "passed": true
+  },
+  {
+   "chain": "c16f2acef1200e98",
+   "evidence": {
+    "declared_never_read": [],
+    "distinct_paths": 8,
+    "stray": [],
+    "total_reads": 11,
+    "unused_exemptions": []
+   },
+   "gate": "G-READ-SET",
+   "passed": true
+  },
+  {
+   "chain": "3f6b2cb412b59bfc",
+   "evidence": {
+    "payload_keys": 37,
+    "phase": "at the last gate",
+    "sealed": 29,
+    "stray": [],
+    "unsealed": 11,
+    "violations": []
+   },
+   "gate": "G-SEAL-TOTAL",
+   "passed": true
+  },
+  {
+   "chain": "e27546d0bc02f521",
+   "evidence": {
+    "chain": "3f6b2cb412b59bfc",
+    "ledger_rows": 40,
+    "parsed_rows": 40
+   },
+   "gate": "G-TRANSCRIPT-BOUND",
+   "passed": true
+  },
+  {
+   "chain": "cf185ea0e3310ef7",
+   "evidence": {
+    "payload_keys": 37,
+    "phase": "at promotion",
+    "sealed": 29,
+    "stray": [],
+    "unsealed": 11,
+    "violations": []
+   },
+   "gate": "G-INTEGRITY",
+   "passed": true
+  }
+ ],
+ "measured": {
+  "fiber_max": 512,
+  "fiber_min": 256,
+  "free_lawful": 3,
+  "free_union": 0,
+  "kernel": 4,
+  "n_actors": 15,
+  "n_alive_all": 455,
+  "n_alive_cross": 270,
+  "n_alive_none": 54,
+  "n_anchors": 9,
+  "n_aut": 62208,
+  "n_axes": 5,
+  "n_base_cells": 4,
+  "n_best": 9,
+  "n_cells": 16,
+  "n_chartfree": 0,
+  "n_chartperms": 31104,
+  "n_classes": 4,
+  "n_consumed": 9,
+  "n_controls": 30,
+  "n_crossings": 288,
+  "n_crosspairs": 36,
+  "n_cut": 8,
+  "n_declared": 3,
+  "n_det_after": 4,
+  "n_doubled": 0,
+  "n_ds_cut": 0,
+  "n_ds_real": 0,
+  "n_equi_events": 65,
+  "n_events": 455,
+  "n_families": 9,
+  "n_fences": 8,
+  "n_form_alive": 162,
+  "n_form_cross": 108,
+  "n_fourth_agree": 0,
+  "n_fourth_pairs": 9,
+  "n_fourth_reads": 468,
+  "n_frozen_cross": 27,
+  "n_full_alive": 162,
+  "n_full_cross": 108,
+  "n_fullgroup": 62208,
+  "n_functionals": 8,
+  "n_gates": 42,
+  "n_indices": 18,
+  "n_lattice": 31,
+  "n_lawful": 162,
+  "n_laws": 1,
+  "n_motivated": 77,
+  "n_mult": 2,
+  "n_multvalues": 2,
+  "n_mutants": 44,
+  "n_numerals": 755,
+  "n_obs_unique": 0,
+  "n_onesided_match": 1,
+  "n_orbits": 9,
+  "n_outcomes": 2,
+  "n_outside": 9,
+  "n_overlap": 0,
+  "n_pairs": 21,
+  "n_pd": 31,
+  "n_persistent": 9691,
+  "n_refuse_frozen": 401,
+  "n_refuse_update": 293,
+  "n_relabellings": 64,
+  "n_repr_sorts": 8,
+  "n_rule_defs": 4,
+  "n_rules": 4,
+  "n_sector_pairs": 27,
+  "n_segments": 4,
+  "n_sentinels": 0,
+  "n_shared": 3,
+  "n_sites": 9,
+  "n_slots": 324,
+  "n_sources": 6,
+  "n_sources_ok": 6,
+  "n_span_cross": 216,
+  "n_span_none": 0,
+  "n_spanning": 288,
+  "n_states": 29791,
+  "n_step2_cross": 25,
+  "n_step2_frozen": 2,
+  "n_tables": 15,
+  "n_template_ids": 9,
+  "n_twosided": 1,
+  "n_unbacked": 0,
+  "n_universes": 4,
+  "n_walls": 6,
+  "n_within_cells": 15,
+  "n_zero": 20100,
+  "rank": 6,
+  "succ_max": 8,
+  "succ_min": 4,
+  "unknowns": 10
+ },
+ "measured_how": {
+  "fiber_max": "the whole state's largest successor set",
+  "fiber_min": "the whole state's smallest successor set",
+  "free_lawful": "free items at a lawful crossing",
+  "free_union": "the event-free union's fibers",
+  "kernel": "unknowns minus rank",
+  "n_actors": "the union's carriers",
+  "n_alive_all": "the create-everything arm",
+  "n_alive_cross": "the cross-only arm",
+  "n_alive_none": "the frozen-geometry arm",
+  "n_anchors": "the declared anchor table",
+  "n_aut": "the exhaustive automorphism search",
+  "n_axes": "the declared window axes",
+  "n_base_cells": "reading x count leg",
+  "n_best": "the maximum over the state space",
+  "n_cells": "creation x reading x count leg",
+  "n_chartfree": "sector-mixing relabellings that move the cross-only rule",
+  "n_chartperms": "relabellings that keep the charts",
+  "n_classes": "its parallel classes",
+  "n_consumed": "anchors read through the accessor",
+  "n_controls": "controls written independently of the patterns",
+  "n_crossings": "the arena's crossing events",
+  "n_crosspairs": "private A against private B",
+  "n_cut": "completions surviving one crossing",
+  "n_declared": "the declared arrangement",
+  "n_det_after": "the determinant's post-event fiber",
+  "n_doubled": "pairs the union carries twice",
+  "n_ds_cut": "cuts retaining the direct sum",
+  "n_ds_real": "crossings the direct sum can realise",
+  "n_equi_events": "events swept for equivariance",
+  "n_events": "every three-actor conflict group",
+  "n_families": "the families implemented here",
+  "n_fences": "verdict fences required",
+  "n_form_alive": "events with a successor state",
+  "n_form_cross": "crossings among them",
+  "n_fourth_agree": "readings where the two agree",
+  "n_fourth_pairs": "the pairs of the fourth class",
+  "n_fourth_reads": "fourth-direction readings",
+  "n_frozen_cross": "crossings needing no state move",
+  "n_full_alive": "events lawful at every leg",
+  "n_full_cross": "crossings among them",
+  "n_fullgroup": "the union's whole relabelling group",
+  "n_functionals": "the declared extremal family",
+  "n_gates": "gates this run declares",
+  "n_indices": "cross directions of one seam chart",
+  "n_lattice": "the enumerated completion lattice",
+  "n_lawful": "events lawful at every leg",
+  "n_laws": "distinct lawful-event sets the creating rules produce",
+  "n_motivated": "events leaving the weld forced",
+  "n_mult": "pairs per index",
+  "n_multvalues": "distinct successor multiplicities",
+  "n_mutants": "declared falsifiers",
+  "n_numerals": "numerals scanned in the paper",
+  "n_obs_unique": "crossings with a unique successor",
+  "n_onesided_match": "indices whose cut it equals",
+  "n_orbits": "orbits under the union's own group",
+  "n_outcomes": "the pre-registered outcome words",
+  "n_outside": "the named outside-list",
+  "n_overlap": "events in both sets",
+  "n_pairs": "measured pairs the prose may state",
+  "n_pd": "exact Sylvester on the doubled Gram",
+  "n_persistent": "states admitting a crossing without moving",
+  "n_refuse_frozen": "events the frozen weld refuses",
+  "n_refuse_update": "events the updating weld refuses",
+  "n_relabellings": "the declared relabelling sweep",
+  "n_repr_sorts": "sorts keyed by a bare repr",
+  "n_rule_defs": "rule bodies found in the source",
+  "n_rules": "the link-creation rules",
+  "n_sector_pairs": "the realised pairs of one sector",
+  "n_segments": "verdict segments",
+  "n_sentinels": "recipes assigning a bare boolean",
+  "n_shared": "the union's shared actors",
+  "n_sites": "the affine plane's points",
+  "n_slots": "seam slots of the lawful crossings",
+  "n_sources": "the declared source table",
+  "n_sources_ok": "byte compare",
+  "n_span_cross": "its crossing events",
+  "n_span_none": "the frozen arm's crossings",
+  "n_spanning": "events with a pair across the seam",
+  "n_states": "completions at each seam",
+  "n_step2_cross": "second crossings still form-lawful",
+  "n_step2_frozen": "of those, with the state kept",
+  "n_tables": "tables rendered as claims",
+  "n_template_ids": "parsed from the pinned template",
+  "n_twosided": "values of the two-sided price",
+  "n_unbacked": "numerals with no measured backing",
+  "n_universes": "declared referent universes",
+  "n_walls": "the declared walls",
+  "n_within_cells": "distinct fourth-class cells the rule can create",
+  "n_zero": "states ready for no crossing at all",
+  "rank": "the rref of the six declared rows",
+  "succ_max": "largest successor set at a seam",
+  "succ_min": "smallest successor set at a seam",
+  "unknowns": "the symmetric square of the seam chart"
+ },
+ "motivation": {
+  "lawful": 162,
+  "motivated": 77,
+  "overlap": 0,
+  "union_free_items": 0,
+  "union_maps": 62208
+ },
+ "one_sided_matches": 1,
+ "outcomes": [
+  {
+   "outcome": "TARGET-FREE-EVENT-CONDITIONED-CREATION-EXISTS",
+   "reached": true,
+   "the run's witness": 455,
+   "why it was reachable": "the create-everything rule makes the geometry's incidence the record's own support, so the weld cannot refuse"
+  },
+  {
+   "outcome": "BLOCKED-AT-THE-DECLARED-DATUM",
+   "reached": true,
+   "the run's witness": 288,
+   "why it was reachable": "with the geometry frozen the parent's wall stands and every seam-spanning event is refused"
+  }
+ ],
+ "paper": "v15/paper-45-autoglue.md",
+ "paper_digest": "09ee568a4bba",
+ "paper_report": {
+  "fence_mismatch": [],
+  "ok": true,
+  "prose_mismatch": [],
+  "tables": [
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-SOURCES"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-ARENA"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-WINDOW"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-INCIDENCE"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-FORM"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-FOURTH"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-MULT"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-FIBER"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-PREP"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-INVENTORY"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-EXTREMAL"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-PRICE"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-TWOSTEP"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-OUTCOMES"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-CHOICE"
+   }
+  ],
+  "unrendered_tables": []
+ },
+ "preparedness": {
+  "best": 9,
+  "best_state": [
+   [
+    1,
+    -1,
+    0,
+    1
+   ],
+   [
+    1,
+    -1,
+    0,
+    1
+   ],
+   [
+    1,
+    -1,
+    0,
+    1
+   ]
+  ],
+  "coverage": [
+   {
+    "crossings_absorbed": 0,
+    "states": 20100
+   },
+   {
+    "crossings_absorbed": 1,
+    "states": 6804
+   },
+   {
+    "crossings_absorbed": 2,
+    "states": 2034
+   },
+   {
+    "crossings_absorbed": 3,
+    "states": 622
+   },
+   {
+    "crossings_absorbed": 4,
+    "states": 153
+   },
+   {
+    "crossings_absorbed": 5,
+    "states": 18
+   },
+   {
+    "crossings_absorbed": 6,
+    "states": 52
+   },
+   {
+    "crossings_absorbed": 9,
+    "states": 8
+   }
+  ],
+  "ready_for_none": 20100,
+  "states": 29791
+ },
+ "price": [
+  {
+   "currency": "refutability: events the weld refuses",
+   "the frozen geometry": 401,
+   "the update": 293,
+   "verdict": "PART SPENT"
+  },
+  {
+   "currency": "forcing: free items at a lawful crossing",
+   "the frozen geometry": 0,
+   "the update": 3,
+   "verdict": "SPENT"
+  },
+  {
+   "currency": "the state: completions the seam may carry",
+   "the frozen geometry": 31,
+   "the update": 8,
+   "verdict": "NARROWED"
+  },
+  {
+   "currency": "the structure: fourth-class cells creatable",
+   "the frozen geometry": 0,
+   "the update": 15,
+   "verdict": "REFUSED BY THE FORM"
+  },
+  {
+   "currency": "the declaration: objects the route declares",
+   "the frozen geometry": 288,
+   "the update": 1,
+   "verdict": "BOUGHT"
+  }
+ ],
+ "provenance": {
+  "commit": "ba62eac",
+  "sources": [
+   {
+    "bytes": 8026,
+    "declared": "7a82ffe7168a",
+    "id": "A-ADJ",
+    "ok": true,
+    "path": "v14/note-sec-adjudication.md",
+    "sha256_12": "7a82ffe7168a"
+   },
+   {
+    "bytes": 57688,
+    "declared": "50bb81e67942",
+    "id": "A-P19",
+    "ok": true,
+    "path": "v14/paper-19-r3-weld.md",
+    "sha256_12": "50bb81e67942"
+   },
+   {
+    "bytes": 1565,
+    "declared": "88c04df52c19",
+    "id": "A-PIN",
+    "ok": true,
+    "path": "v15/note-autoglue-pin.md",
+    "sha256_12": "88c04df52c19"
+   },
+   {
+    "bytes": 68128,
+    "declared": "f3f43d94cd75",
+    "id": "A-SEC",
+    "ok": true,
+    "path": "v14/paper-32-sec.md",
+    "sha256_12": "f3f43d94cd75"
+   },
+   {
+    "bytes": 56456,
+    "declared": "4fe88602280c",
+    "id": "A-SEC2",
+    "ok": true,
+    "path": "v14/paper-40-sec2.md",
+    "sha256_12": "4fe88602280c"
+   },
+   {
+    "bytes": 73825,
+    "declared": "d04a3eb58fbc",
+    "id": "A-TPL",
+    "ok": true,
+    "path": "v14/code/era_template.py",
+    "sha256_12": "d04a3eb58fbc"
+   }
+  ]
+ },
+ "questions": [
+  "Q38",
+  "Q39",
+  "Q40",
+  "Q34",
+  "Q41",
+  "Q42",
+  "Q50"
+ ],
+ "relation_totality": {
+  "memoryless_reading_allows": 162,
+  "persistent_reading_states_with_a_crossing": 9691,
+  "states": 29791
+ },
+ "schema": "isp/v15/autoglue/1",
+ "seal_manifest": {
+  "sealed": {
+   "anchors": {
+    "digest": "ab12ed22e9ee9d70",
+    "sealed_at_gate": "G-ANCHORS"
+   },
+   "arena": {
+    "digest": "1ed349ef3391c375",
+    "sealed_at_gate": "G-ARENA"
+   },
+   "cut_size": {
+    "digest": "2c624232cdd22177",
+    "sealed_at_gate": "G-EXTREMAL"
+   },
+   "ds_in_cut": {
+    "digest": "5feceb66ffc86f38",
+    "sealed_at_gate": "G-EXTREMAL"
+   },
+   "ds_realises": {
+    "digest": "5feceb66ffc86f38",
+    "sealed_at_gate": "G-EXTREMAL"
+   },
+   "events": {
+    "digest": "4721474cf8d9f0da",
+    "sealed_at_gate": "G-EVENTS"
+   },
+   "extremal": {
+    "digest": "a9f361c03a2539d3",
+    "sealed_at_gate": "G-EXTREMAL"
+   },
+   "families": {
+    "digest": "32ed812afdbc2ca0",
+    "sealed_at_gate": "G-TEMPLATE-CONFORMANCE"
+   },
+   "form_census": {
+    "digest": "f068a8ed1a5ff4df",
+    "sealed_at_gate": "G-FORM-CENSUS"
+   },
+   "fourth_direction": {
+    "digest": "b54329c0c02ac2fb",
+    "sealed_at_gate": "G-FOURTH-DIRECTION"
+   },
+   "incidence_census": {
+    "digest": "20c59ebfa6436eec",
+    "sealed_at_gate": "G-INCIDENCE-CENSUS"
+   },
+   "incidence_summary": {
+    "digest": "cb0f4735cfb98a70",
+    "sealed_at_gate": "G-CONTROL-ARMS"
+   },
+   "inventory_census": {
+    "digest": "b5b86cbea8e40907",
+    "sealed_at_gate": "G-INVENTORY"
+   },
+   "motivation": {
+    "digest": "de5ce106226690f3",
+    "sealed_at_gate": "G-MOTIVATED-DISJOINT"
+   },
+   "one_sided_matches": {
+    "digest": "6b86b273ff34fce1",
+    "sealed_at_gate": "G-NOTHING-DERIVED"
+   },
+   "outcomes": {
+    "digest": "0d22220411d1381d",
+    "sealed_at_gate": "G-OUTCOME-FEASIBILITY"
+   },
+   "paper_digest": {
+    "digest": "6d3c2fc03514c0d2",
+    "sealed_at_gate": "G-PAPER-CLAIMS"
+   },
+   "preparedness": {
+    "digest": "f0c7f341a1a560ed",
+    "sealed_at_gate": "G-PREPAREDNESS"
+   },
+   "price": {
+    "digest": "5a05a472c527b7a4",
+    "sealed_at_gate": "G-PRICE"
+   },
+   "provenance": {
+    "digest": "3199e0a842995b44",
+    "sealed_at_gate": "G-SOURCES"
+   },
+   "relation_totality": {
+    "digest": "564848a2edf48b25",
+    "sealed_at_gate": "G-TRANSITION-RELATION"
+   },
+   "seam": {
+    "digest": "3e9fb3bfd8cb96f6",
+    "sealed_at_gate": "G-COMPLETION-LATTICE"
+   },
+   "successor_multiplicity": {
+    "digest": "6eb9c7e42bffe80d",
+    "sealed_at_gate": "G-TRANSITION-RELATION"
+   },
+   "two_sided_values": {
+    "digest": "6b86b273ff34fce1",
+    "sealed_at_gate": "G-NOTHING-DERIVED"
+   },
+   "two_step": {
+    "digest": "86623a159223791b",
+    "sealed_at_gate": "G-TWO-STEP"
+   },
+   "verdict": {
+    "digest": "5016b03b8f45ef4e",
+    "sealed_at_gate": "G-VERDICT-RECON"
+   },
+   "walls": {
+    "digest": "e19e8c94b9722e52",
+    "sealed_at_gate": "G-WALL-SEAMCONFINED"
+   },
+   "whole_state_fiber": {
+    "digest": "3e383deeda521aac",
+    "sealed_at_gate": "G-TRANSITION-RELATION"
+   },
+   "window": {
+    "digest": "ceca814697de5093",
+    "sealed_at_gate": "G-WINDOW"
+   }
+  },
+  "unsealed": {
+   "counting_only": "testimony, not a measurement",
+   "ledger": "the gate rows, bound to the transcript",
+   "measured": "the registry the sealed rows render from; each entry is sealed inside the row that measured it",
+   "measured_how": "testimony, not a measurement",
+   "paper": "testimony, not a measurement",
+   "paper_report": "testimony, not a measurement",
+   "questions": "testimony, not a measurement",
+   "schema": "testimony, not a measurement",
+   "seal_manifest": "the manifest itself",
+   "totals": "counts of the run's own rows",
+   "unit": "testimony, not a measurement"
+  }
+ },
+ "seam": {
+  "cross_directions": 18,
+  "cross_pairs": 36,
+  "kernel": 4,
+  "lattice": 31,
+  "pairs_per_index": [
+   2
+  ],
+  "positive_definite": 31,
+  "rank": 6,
+  "unknowns": 10
+ },
+ "successor_multiplicity": [
+  {
+   "seam slots": 81,
+   "successors at one seam": 4
+  },
+  {
+   "seam slots": 243,
+   "successors at one seam": 8
+  }
+ ],
+ "totals": {
+  "gates": 42,
+  "sealed": 29,
+  "tables": 15,
+  "unsealed": 11
+ },
+ "two_sided_values": 1,
+ "two_step": {
+  "first_event": [
+   "('A', (0, 1))",
+   "('B', (0, 1))",
+   "('S', 0)"
+  ],
+  "rows": [
+   {
+    "crossing": false,
+    "events": 43,
+    "form_lawful": true,
+    "state_kept": false
+   },
+   {
+    "crossing": false,
+    "events": 127,
+    "form_lawful": true,
+    "state_kept": true
+   },
+   {
+    "crossing": true,
+    "events": 260,
+    "form_lawful": false,
+    "state_kept": false
+   },
+   {
+    "crossing": true,
+    "events": 23,
+    "form_lawful": true,
+    "state_kept": false
+   },
+   {
+    "crossing": true,
+    "events": 2,
+    "form_lawful": true,
+    "state_kept": true
+   }
+  ],
+  "second_crossings": 25,
+  "second_frozen": 2,
+  "state": [
+   [
+    0,
+    -1,
+    -1,
+    3
+   ],
+   [
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    0,
+    0
+   ]
+  ],
+  "successor_sizes": [
+   4,
+   8,
+   8
+  ]
+ },
+ "unit": "AUTOGLUE",
+ "verdict": [
+  "AUTOGLUE-A-TARGET-FREE-EVENT-CONDITIONED-CROSS-LINK-CREATION-RULE-EXISTS-AT-THIS-ARENA-AT-108-OF-288-[THE WINDOW: FOUR LINK-CREATION RULES BY TWO READINGS BY TWO COUNT LEGS AT EVERY ONE OF 455 THREE-ACTOR EVENTS AND AT BOTH ENDS OF EVERY TRANSITION, THE RULE FIRING ON THE EVENT'S FOOTPRINT ALONE, NO TARGET DECLARED AFTER ANY EVENT; WITH THE GEOMETRY FROZEN THE WELD REFUSES ALL 288 SEAM-SPANNING EVENTS AND WITH EVERY NEW PAIR ABSORBED IT REFUSES NONE OF 455] -- ONE PRE-DECLARED EVENT-UNIFORM RULE REACHES THE PARENT'S 216 OF 288 WITH NO TARGET AT ALL, AND CARRYING THE READOUT TO THE CELLS IT CREATES CUTS THAT TO 108: THE CROSSINGS THAT MAKE ONE CROSS LINK, DOUBLE TWO SEAM LINKS AND OPEN NO PAIR INSIDE A SECTOR. THE EVENT IS SUPPLIED TO THE RULE FROM THE ARENA'S OWN TRIPLES AND THE COMMITTED GRAMMAR IS NOT RE-DRIVEN, SO WHAT IS MEASURED IS EVENT-CONDITIONED CREATION AND NOT AUTONOMOUS DYNAMICS; AND THE SURVIVING RULES FORM AN EQUIVALENCE CLASS THIS ARENA DOES NOT SELECT WITHIN -- CROSS-ONLY AND ALL-NEW ADMIT THE SAME 162 EVENTS ONCE THE FORM LEG BINDS",
+  "AUTOGLUE-A-TRANSITION-RELATION-ON-THE-SEAM-SUBSYSTEM-STATE-NOT-AN-EVOLUTION-LAW-THE-DATUM-THAT-CANNOT-PRECEDE-THE-EVENT-IS-THE-SEAM'S-CROSS-BLOCK-[THE FOUR UNDETERMINED ENTRIES OF THE DIRECT-SUM FORM AT EACH SHARED SITE, OVER THE DECLARED UPDATE WINDOW; THE SUCCESSOR STATE CENSUSED AT EVERY ONE OF 455 EVENTS OBJECT BY OBJECT AND NEVER BY ORBIT: EMPTY OR MANY-VALUED, UNIQUE AT 0; 27 OF THE 108 LAWFUL CROSSINGS NEED NO STATE MOVE; OVER ALL 29791 STATES THE ARENA ADMITS THE BEST IS READY FOR 9 CROSSINGS AND 20100 ARE READY FOR NONE] -- AND A LINK INSIDE A SECTOR IS REFUSED OUTRIGHT: AN UNSHARED SITE'S FORM HAS KERNEL ZERO AND FORCES THE FOURTH DIRECTION'S COUNT AGAINST THE ONE THE EVENT DEPOSITS AT 468 OF 468 READINGS -- SO A STATE RESTRICTS THE ALLOWED TRANSITIONS ONLY IF IT PERSISTS, WHICH IS A READING AND NOT A MEASUREMENT",
+  "AUTOGLUE-MOTIVATION-AND-LAWFULNESS-ARE-DISJOINT-[77 OF 455 EVENTS LEAVE THE WELD WITH ZERO FREE ITEMS, 162 ARE LAWFUL AT EVERY LEG, AND THE TWO SETS SHARE 0] -- BY A THEOREM CHECKED AT EVERY OBJECT: AN EVENT FORCES THE WELD EXACTLY WHEN IT DOUBLES NOTHING, WHICH IS EXACTLY WHEN ALL THREE OF ITS PAIRS ARE NEW; A TRIANGLE ADMITS NO PROPER TWO-COLOURING SO ONE OF THEM FALLS INSIDE A SECTOR; AND THAT IS THE ONE CELL THE FORM REFUSES -- THE EVENTS THAT PIN THE WELD DOWN ARE THE EVENTS THE GEOMETRY CANNOT HOST",
+  "AUTOGLUE-NO-SEAM-PRINCIPLE-DERIVED-[8 EXTREMAL FUNCTIONALS MEASURED BEFORE THE EVENT AND AFTER IT; EVERY CROSS DIRECTION CUTS THE LATTICE 31 TO 8; MAXIMUM DETERMINANT SELECTS THE DIRECT SUM UNIQUELY, THE DIRECT SUM REALISES 0 OF THE ARENA'S CROSSINGS AND SURVIVES 0 OF THE CUTS, AND ON THE POST-EVENT LATTICE THE SAME CRITERION IS 4-VALUED] -- THE CONVENTION-FREE PRICE TAKES 1 VALUE ON THE WHOLE LATTICE AND THE ONE-SIDED PRICE'S MINIMISER IS THE CUT OF EXACTLY 1 CROSS DIRECTION, SO IT IS THE EVENT'S OWN EQUATION WEARING A CRITERION'S CLOTHES: NOTHING IN THIS CORPUS SELECTS THE SEAM, AND THE ONE CRITERION THAT DOES IS THE STATE IN WHICH NOTHING CAN CROSS"
+ ],
+ "walls": [
+  {
+   "controls": 5,
+   "controls_caught": 5,
+   "hits": [],
+   "missing_positive": [],
+   "ok": true,
+   "self_licensing": [],
+   "unlicensed": [],
+   "wall": "WALL-DECLARATION"
+  },
+  {
+   "controls": 5,
+   "controls_caught": 5,
+   "hits": [],
+   "missing_positive": [],
+   "ok": true,
+   "self_licensing": [],
+   "unlicensed": [],
+   "wall": "WALL-SEAMCONFINED"
+  },
+  {
+   "controls": 5,
+   "controls_caught": 5,
+   "hits": [],
+   "missing_positive": [],
+   "ok": true,
+   "self_licensing": [],
+   "unlicensed": [],
+   "wall": "WALL-NO-METRICAL-READING"
+  },
+  {
+   "controls": 5,
+   "controls_caught": 5,
+   "hits": [],
+   "missing_positive": [],
+   "ok": true,
+   "self_licensing": [],
+   "unlicensed": [],
+   "wall": "WALL-RECONSTRUCTION-NOT-DERIVATION"
+  },
+  {
+   "controls": 5,
+   "controls_caught": 5,
+   "hits": [],
+   "missing_positive": [],
+   "ok": true,
+   "self_licensing": [],
+   "unlicensed": [],
+   "wall": "WALL-RELATION-NOT-LAW"
+  },
+  {
+   "controls": 5,
+   "controls_caught": 5,
+   "hits": [],
+   "missing_positive": [],
+   "ok": true,
+   "self_licensing": [],
+   "unlicensed": [],
+   "wall": "WALL-COUNTING-ONLY"
+  }
+ ],
+ "whole_state_fiber": [
+  {
+   "crossings": 81,
+   "successors of the whole state": 256
+  },
+  {
+   "crossings": 27,
+   "successors of the whole state": 512
+  }
+ ],
+ "window": {
+  "axes": [
+   {
+    "axis": "CREATION",
+    "delivered": "NONE",
+    "members": [
+     "NONE",
+     "CROSS-ONLY",
+     "WITHIN-ONLY",
+     "ALL-NEW"
+    ]
+   },
+   {
+    "axis": "READING",
+    "delivered": "EMBEDDING and QUOTIENT",
+    "members": [
+     "EMBEDDING",
+     "QUOTIENT"
+    ]
+   },
+   {
+    "axis": "COUNT LEG",
+    "delivered": "POSITIVE",
+    "members": [
+     "POSITIVE",
+     "NON-NEGATIVE"
+    ]
+   },
+   {
+    "axis": "FORM CARRY",
+    "delivered": "CARRIED at the seam",
+    "members": [
+     "DROPPED",
+     "CARRIED"
+    ]
+   },
+   {
+    "axis": "STATE",
+    "delivered": "not posed",
+    "members": [
+     "FROZEN",
+     "RE-SOLVED"
+    ]
+   }
+  ],
+  "cells": 16,
+  "outside": [
+   "the record",
+   "the committed grammar",
+   "the actor set",
+   "the arrangement",
+   "the readout law itself",
+   "the three-actor conflict group",
+   "the bare carrier",
+   "the simple link individuation",
+   "any target declared after the event"
+  ]
+ }
+}
