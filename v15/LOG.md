@@ -229,3 +229,36 @@ ungated triangle-closure mechanism CORROBORATED — the
 seat built a non-closing arena and the first difference
 moved to tick 4 exactly as the account predicts —
 liftable evidence the unit did not have.**  K2/K3 out.
+
+## 2026-08-16 — CONTRACT K1 (OPERATOR) FROZEN: AWF; 114/114 LEAVES AGREE; THE BRIEF ITEM SETTLED; Q58'S NINE ARMS ARE FIVE INPUTS; TWO FOUNDS UNDER-CLAIMED (v15 LEDGER #9)
+
+**Review:** v15/review-contract-operator.md (e6412399f6fa,
+465 lines).  Grade AWF; 215 recomputations, no computed
+number wrong; all 16 pinned sources re-hashed 16/16.
+**BRIEF ITEM SETTLED: the SEAM census duplication DOES NOT
+EXIST** (one census row; the second appearance is the §6
+parameters table — a different subject); the duplicated
+quotation REAL IN SUBSTANCE (REC-CARRIER quotes OCC — one
+measurement at two hops, disclosed as such); a WEAKER real
+duplication found: by the rows' own reading columns
+SITE=ACTOR, CO-DIVISION-PAIR=CELL, CARRIER-CANDIDATE=CELL
+— OBJECTS=23 is a row count over ≤20 distinct extents.
+**MAJORS: (M1) Q58's nine arms are FIVE INPUTS — the five
+recovering arms hand the reconstructor the IDENTICAL
+27-triangle set; at the reconstructor's grain the probe is
+5 → 1 recover / 4 refuse; the gate checks arm NAMES not
+inputs.  (M2) the quotient row changes object mid-table:
+the sort alone does 5,784 → 136 (97.7% of the advertised
+collapse); order-preserving orbits are 3,830/1,067; the
+count-field quotient unaffected.  (M3) "Born-menu values
+24" is NOT the Born menu — b_born_menu defined and never
+called (a carried-not-used family, the TPL-2 violation the
+unit's own scan missed); the real menu takes 4 values; the
+reading-relativity conclusion SURVIVES AND STRENGTHENS.**
+TWO FOUNDS under-claimed: index-12 = residue-12 is an
+orbit-stabilizer THEOREM; the stabilizer = Aut(K₃,₃,₃) =
+1,296 confirmed by full unpruned double enumeration of all
+362,880.  Eight minors incl. one ROUTED TO ARITY (the
+saturating predicate is an a=3 idiom coincidence) and the
+ungated connectivity precondition (measured: 1 component;
+the result survives loosening).  K2/K3 out.
