@@ -618,3 +618,17 @@ off-tree confirmed; SEVEN self-found instrument defects
 repaired incl. a hash-seed-dependent sort (G-DETERMINISM
 added).  **Orchestrator battery next; panel after
 green.**
+
+## 2026-08-16 — AUTOGLUE BATTERY GREEN; ITS THREE-SEAT PANEL LAUNCHED — WAVE 1 FULLY IN REVIEW (v15 LEDGER #21)
+
+Battery fully green (byte-identical ×2 from deleted
+artifacts; seed-invariant; selftest; mutant; artifacts
+untouched).  Panel launched with the v15 disease
+catalogue as the K3 checklist (the DISC/CONTRACT
+recurrences probed on this unit: payload-blind verdict
+routes, name-based S-1, unsealable pre-registrations,
+text-matched conformance, argv[1]-only CLI).  Board:
+AUTOGLUE ×3 seats, CONTRACT repair, DISC repair, the
+ARITY flake isolation.  Wave-1 state: all four units
+delivered; two adjudicated and in repair; one in panel;
+one gated on ×3-green.
