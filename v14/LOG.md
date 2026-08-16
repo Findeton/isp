@@ -11823,3 +11823,22 @@ theorem re-proved at 252 own probes.  ZERO measured moves;
 one head numeral (3→4 cross-engine groups) = the size of
 an ordered declaration.**  **Orchestrator battery next;
 terminal on green.**
+
+## 2026-08-15 — SPC IS TERMINAL: THIRTY-FOUR — THE CARRIER IS CHOOSY, THE PRICE IS ONE SPECIES, THE FERMIONIC QUESTION HONESTLY OPEN (v14 LEDGER #366)
+
+**Orchestrator battery ALL GREEN** (byte-identical ×2 from
+deleted artifacts; seed-invariant; hostile argv;
+MUT-DROP-SPECIES dead at
+G-CHARACTER-TABLE-COLUMN-ORTHOGONALITY on target; artifacts
+untouched).  STATUS row appended; memory sealed next.  The
+particle-list question closes at its kinematic half:
+existence is a representation-theoretic privilege the
+carrier grants sparingly; the gravitational price and the
+family-invariant prediction are one species seen twice;
+and what statistics selects among the species is left
+exactly as open as the measurements make it.  SPC-D (the
+dynamic half) inherits the gap-at-its-support from POT;
+SEC×SPC inherits the union symmetry structures.
+
+**Programme count: THIRTY-FOUR terminals; zero false
+computed numbers surviving anywhere in v14.**
