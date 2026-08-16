@@ -3,10 +3,10 @@ POT (paper-36) :: the potential unit -- the loop family, the discriminator, the 
   [PASS] G-SOURCES-AT-THEIR-PINNED-DIGESTS :: 9 sources, 9 at their pinned digests
   [PASS] G-PATH-VALUE-ANCHORS :: 29 path-value anchors, 29 agreeing
   [PASS] G-VERBATIM-ANCHORS :: 15 windows, 15 located exactly once, 15 above their floors
-  [PASS] G-THE-ARITHMETIC-IS-EXACT :: 114 functions; banned calls []; banned names []; float literals 0
-  [PASS] G-THE-MUTANT-REGISTRY-IS-TOTAL :: 49 switches in the tree, 49 declared; unregistered []; unused []
-  [PASS] G-THE-FUNCTION-INVENTORY-IS-TOTAL :: 114 functions in the tree, 112 declared; undeclared []; missing []
-  [PASS] G-EVERY-MUTANT-DESCRIPTION-IS-TRUE :: 49 mutants, 49 with their named token located, none missing
+  [PASS] G-THE-ARITHMETIC-IS-EXACT :: 127 functions; banned calls []; banned names []; float literals 0
+  [PASS] G-THE-MUTANT-REGISTRY-IS-TOTAL :: 61 switches in the tree, 61 declared; unregistered []; unused []
+  [PASS] G-THE-FUNCTION-INVENTORY-IS-TOTAL :: 127 functions in the tree, 125 declared; undeclared []; missing []
+  [PASS] G-EVERY-MUTANT-DESCRIPTION-IS-TRUE :: 61 mutants, 61 with their named token located, none missing
 -- the arena --
   [PASS] G-ARENA-REBUILT :: alphabet 25, coins 640 (ANTIDIAGONAL 64, BALANCED 512, DIAGONAL 64), unitary by a second route 640, sites 16, links 32, plaquettes 16
 -- the loop family, the object ACT recorded still absent --
@@ -20,18 +20,23 @@ POT (paper-36) :: the potential unit -- the loop family, the discriminator, the 
   [PASS] G-THE-LOOP-OBSERVABLE-IS-BASE-POINT-BLIND :: 18 shapes, 111360 placement-by-coin comparisons, 0 mismatches, 0 values outside the real subfield, 9 of 18 shapes whose raw trace is already real at every coin (7760 of 11520 shape-by-coin traces)
   [PASS] G-THE-LOOP-OBSERVABLE-IS-REVERSAL-BLIND :: 11520 reversed-loop comparisons, 0 disagreements
   [PASS] G-PLAQUETTE-ROW-REPRODUCED :: 11 distinct values, counting expectation 13/10, 56 non-flat diagonal coins, 8 flat coins
+-- the scope of the perimeter reading, at the family's own lengths --
+  [PASS] G-THE-LENGTH-DOES-NOT-DETERMINE-THE-OBSERVABLE :: 6 step-count groups with more than one shape, 3 of them disagreeing at some coin, 2 rectangle-only groups agreeing everywhere; witness {'step_count': 4, 'coin': 1, 'coin_sector': 'ANTIDIAGONAL', 'shape': 'RECTANGLE-CIRCUIT-1-1', 'value': '1', 'other_shape': 'STRAIGHT-WINDING-CYCLE-1-0', 'other_value': '-1'}
 -- the discriminator, defined and gated before any row runs --
   [PASS] G-THE-DISCRIMINATOR-IS-WELL-DEFINED :: 9 ladder shapes over extents [1, 2, 3]; 2 area-discriminating comparisons ['1-3/2-2', '2-2/3-1']; 4 Creutz rungs ['2-2', '2-3', '3-2', '3-3']
   [PASS] G-THE-MERGING-INDEX-LAW-REPRODUCED :: the link stencil's gauge image is measured at 8 distinct actions and the phase order is 8; L=2 index 4; L=4 index 2; L=8 index 1; L=16 index 1
 -- the ladder's exact closed form --
-  [PASS] G-THE-LADDER-IS-A-FUNCTION-OF-THE-PERIMETER-ALONE :: 5760 shape-by-coin comparisons at equal perimeter, 0 disagreements
+  [PASS] G-THE-LADDER-IS-A-FUNCTION-OF-THE-PERIMETER-ALONE :: 5760 shape-by-coin comparisons at equal perimeter, 0 disagreements (3200 of them a shape against itself, 2560 genuine cross-shape); 3200 unordered-pair-by-coin comparisons, 0 disagreements; 1280 area-discriminating comparison-by-coin checks, 0 disagreements
   [PASS] G-THE-LADDER-CLOSED-FORM :: 640 coins, ladder over perimeters [2, 3, 4, 5, 6], 2 verification points each, 0 failures
+-- the area-blindness universal, over every measure on the carrier --
+  [PASS] G-THE-AREA-BLINDNESS-IS-UNIVERSAL-OVER-MEASURES :: common denominator 16, the rescaling is exact True; 1280 Dirac comparisons, 0 mismatches; 3000 interior comparisons at 1500 measures of full support, 0 mismatches
 -- mode (a): the declared rows --
   [PASS] G-THE-DECLARED-ROWS-BUILT :: 4 rows, all stamped True, conjugation-symmetric True; plaquette expectations [('THE-EXHIBITED-WITNESS', '4294967399/4294967375'), ('THE-LAW-NATIVE-CONTROL', '225/152'), ('THE-NULL', '13/10'), ('THE-WILSON-CONJUGATION-SYMMETRIC', '262244/65615')]
   [PASS] G-THE-CONTROL-STAMP-CARRIED :: stamp 'LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION'; the row's measure field is TRANSPORTED-NOT-DERIVED; the sector law ['15/38', '5/19', '13/38'] sums to 1
 -- mode (b): the family sweep --
   [PASS] G-THE-FAMILY-SWEEP-IS-TOTAL :: 136 extreme points swept; area-seen tally {'False': 136}; ladder tally {'DECONFINES': 24, 'DISCRIMINATOR-DEGENERATE': 112}; winding tally {'WINDING-ORDER-NONZERO': 96, 'WINDING-ORDER-ZERO': 40}; 1 family-invariant and 7 coupling-dependent observables
-  [PASS] G-THE-FAMILY-SLICES :: 9 slices; distinct plaquette expectations 3; area-seen at 0 of them
+  [PASS] G-THE-CREUTZ-UNIT-SET-IS-THE-CONSTANT-LADDER-SET :: the ratio is one at 24 extreme points and the ladder is constant in the perimeter at 24, the two sets equal True; a single mode is active at 32, of which 8 carry the perimeter-proportional mode alone [8, 31, 46, 61, 76, 91, 106, 121]; the constant values there are {'1': 8, '2': 16}; the synthetic single-mode ladders return unit [True, False, True] and the perimeter-proportional one returns {'2-2': '8/9', '2-3': '15/16', '3-2': '15/16', '3-3': '24/25'}
+  [PASS] G-THE-FAMILY-SLICES :: 9 slices; distinct plaquette expectations 3; 3 distinct ladders over 3 classes of sizes [8] in sectors ['ANTIDIAGONAL']; area-seen at 0 of them
 -- the price binding --
   [PASS] G-THE-PRICE-BINDING :: 135 couplings against 136 extreme points; 9 legs, 7 of them partitioning; the area leg is FAMILY-INVARIANT
 -- the order parameter's range --
@@ -49,23 +54,27 @@ POT (paper-36) :: the potential unit -- the loop family, the discriminator, the 
   [PASS] G-EVERY-PREREGISTERED-WORD-IS-EMITTABLE :: 5 control arms, 5 agreeing; 5 distinct head words against 5 pre-registered
 -- the verdict --
   [PASS] G-THE-HEAD-IS-DERIVED :: the head law returns POT-SPLIT-BY-WEIGHT from 4 declared rows and 136 extreme points; row tally {'DISCRIMINATOR-DEGENERATE': 4}; sweep tally {'DECONFINES': 24, 'DISCRIMINATOR-DEGENERATE': 112}
-  [PASS] G-THE-TWO-HEAD-LAWS-AGREE :: the builder's string and the comparator's string agree: True (3063 characters)
-  [PASS] G-THE-LEDGER-CHAIN-VERIFIES :: 35 ledger rows, chain verifies True
-  [PASS] G-COVERAGE-AT-AN-HONEST-DENOMINATOR :: 38 gates on the clean path, 47 falsifier targets, 3 registered forcings, 0 uncovered []
+  [PASS] G-THE-TWO-HEAD-LAWS-AGREE :: the builder's string and the comparator's string agree: True (3267 characters)
+  [PASS] G-THE-LEDGER-CHAIN-VERIFIES :: 38 ledger rows, chain verifies True
 -- the paper gates --
-  [PASS] G-PAPER-CLAIMS-RENDERED :: 39 claims, 39 located, missing []
+  [PASS] G-PAPER-CLAIMS-RENDERED :: 58 claims, 58 at their declared occurrence counts, 87 occurrences in all, missing []
   [PASS] G-PAPER-VERDICT-BLOCK :: 1 fenced blocks in the paper, 1 licensed, equal as multisets True
   [PASS] G-PAPER-POLARITY :: 9 polarity pairs, 9 clean
-  [PASS] G-PAPER-HEADERS-BOUND :: 9 header rows in the paper, 9 licensed, equal as multisets True
-  [PASS] G-PAPER-NUMERALS-COVERED :: 591 numerals scanned, 0 uncovered []
-  [PASS] G-PAPER-SPELLED-NUMERALS :: 17 number-words scanned of 17 declared, 0 unbacked []
-  [PASS] G-THE-CONFINEMENT-LICENCE-WALL :: 258 sentences scanned, 10 carrying a licensed word, 1 declaring the wall, 0 unlicensed []
-  [PASS] G-PAPER-MUST-NOT :: 25 forbidden tokens scanned over 257 sentences, 0 present [], 1 declaring sentences located
-  [PASS] G-PAPER-TABLE-ROWS-COVERED :: 55 data rows, 55 covered
+  [PASS] G-PAPER-HEADERS-BOUND :: 10 header rows in the paper, 10 licensed over 10 tables, equal as multisets True; 0 columns naming no receipt key []
+  [PASS] G-PAPER-NUMERALS-COVERED :: 698 numerals scanned, 0 uncovered []; 322 registry tokens, 218 of them three digits or longer
+  [PASS] G-PAPER-INLINE-SPANS-LICENSED :: 30 inline spans, 29 distinct, 0 unlicensed []
+  [PASS] G-PAPER-SHORT-NUMERALS-IN-CONTEXT :: 171 short numerals in prose after the declared exemptions, 69 context tokens, 0 unbacked []
+  [PASS] G-PAPER-SPELLED-NUMERALS :: 142 spelled numbers read in the prose, 10 distinct values, 0 unbacked []
+  [PASS] G-THE-CONFINEMENT-LICENCE-WALL :: 288 prose sentences scanned, 8 carrying a declared word of 19, 1 declaring the wall, 17 licensed pairs, 0 unlicensed []
+  [PASS] G-PAPER-MUST-NOT :: 25 forbidden tokens scanned over 297 sentences, 0 present [], 1 declaring sentences located
+  [PASS] G-PAPER-TABLE-ROWS-COVERED :: 61 data rows in the paper, 61 licensed, equal as multisets True; first difference []
   [PASS] G-PAPER-QUOTES-INSIDE-THE-WINDOWS :: 9 quoted lines, 0 outside every pinned window []
-  [PASS] G-CONSUMER-REGISTER-IS-REAL :: 13 named consumers, 0 missing
+  [PASS] G-CONSUMER-REGISTER-IS-REAL :: 13 named consumers, 0 missing; 15 verbatim windows, 15 read by their own consumer over 16 reads, 0 unread [], 0 misread []
+  [PASS] G-COVERAGE-AT-AN-HONEST-DENOMINATOR :: 57 gates on the clean path, 5 of them closing at or after this one ['G-COVERAGE-AT-AN-HONEST-DENOMINATOR', 'G-THE-RECEIPT-HEADER-IS-BOUND', 'G-THE-TRANSCRIPT-RECONCILES', 'G-THE-SEAL-IS-TOTAL', 'G-ARTIFACT-INTEGRITY'], 56 falsifier targets, 3 registered forcings, 0 uncovered []
+  [PASS] G-THE-RECEIPT-HEADER-IS-BOUND :: code a811bbb92138, paper 1e495318252d, pin df2f15efa7b0, exit conventions and head list bound True
+  [PASS] G-THE-TRANSCRIPT-RECONCILES :: 54 transcript gate lines against 54 ledger rows, equal as a sequence True
 
 THE VERDICT
-POT-SPLIT-BY-WEIGHT-THE-WINDING-LEG-SPLITS-96-NONZERO-AND-40-ZERO-OF-136-EXTREME-POINTS-AND-1-OF-4-DECLARED-ROWS-WHILE-THE-AREA-LEG-IS-FAMILY-INVARIANT-AREA-BLIND-AT-149-OF-149-MEASURED-ROWS -- LOOP-FAMILY=192-PLACEMENTS-192-DISTINCT-LOOPS-144-CONTRACTIBLE-AND-48-WINDING;RECTANGLE-EXTENTS=1-2-3-MEASURED-SIMPLE-AT-9-OF-16-SWEPT-SIZES;ORBITS-UNDER-THE-ANCHORED-CHART-GROUP-OF-ORDER-32=11-CLOSED-TRUE;THE-WINDOW=RECTANGLE-CIRCUITS-PLUS-STRAIGHT-AND-STAIRCASE-WINDING-CYCLES-NOT-ALL-CLOSED-PATHS -- DISCRIMINATOR=WELL-DEFINED-AT-L-4-WITH-2-AREA-DISCRIMINATING-COMPARISONS-AND-4-CREUTZ-RUNGS;LEG-AREA=BLIND-EVERYWHERE;LEG-CREUTZ=DEFINED-AT-136-OF-136-EXTREME-POINTS-AND-EQUAL-TO-ONE-AT-24;LEG-WINDING=THE-ORDER-PARAMETER-ANALOGUE -- (a)CONDITIONAL=4-ROWS-ALL-STAMPED-CONDITIONAL-ON-THE-DECLARED-WEIGHTS;PLAQUETTE-EXPECTATIONS=13/10@THE-NULL,262244/65615@THE-WILSON-CONJUGATION-SYMMETRIC,4294967399/4294967375@THE-EXHIBITED-WITNESS,225/152@THE-LAW-NATIVE-CONTROL;WINDING=3-ZERO-AND-1-NONZERO;THE-CONTROL-CARRIES-LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION-AND-IS-NEVER-SPENT-AS-DERIVED -- (b)FAMILY-SWEPT=136-EXTREME-POINTS-64-VERTICES-AND-72-EDGE-MIDPOINTS-ALL-RUN;FAMILY-INVARIANT=area_seen;COUPLING-DEPENDENT=ladder_word+creutz_is_unit+winding_word+mode_A+mode_B+mode_C+active_modes;SLICES=9-EXACT-ONE-PARAMETER-ROWS-AGREE-AT-THE-AREA-LEG -- PRICE=THE-INVENTORY-IS-135-COUPLINGS-AND-THE-AREA-LEG-PARTITIONS-NONE-OF-THEM;THE-WINDING-LEG-PARTITIONS-96-AGAINST-40;THE-HALVING-MODE-IS-ABSENT-AT-72-OF-136;THE-PERIMETER-MODE-IS-ABSENT-AT-40-OF-136;THE-CREUTZ-RATIO-IS-UNDEFINED-AT-0-OF-136 -- SPECTRAL-DOOR=THE-TRANSFER-MATRIX-ON-A-TIME-SLICE-IS-NAMED-NOT-RUN-AT-167772160000-STATES-PER-SLICE;THE-FINITE-FORM-IS-MEASURED=W=A+B*P+C*2^-P-WITH-SPECTRUM-{1,1,1/2}-AND-GAP-1/2-AT-640-OF-640-COINS;THE-WINDING-HOLONOMY-IS-UNITARY-AT-640-OF-640-SO-ITS-SPECTRUM-CARRIES-NO-DECAY;SPC-INHERITS-THE-GAP -- ORIENTATION=DECLARED-NEVER-DERIVED-NEITHER-STANDARD-IS-CLAIMED-TRUE-DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING;THE-ORIENTED-SUBGROUP-HAS-INDEX-2-AT-BOTH-READINGS;COUPLINGS=135-AT-ANCHORED-AND-135-AT-ANCHORED-ORIENTED-AND-79-AT-THE-EXTENSION-AND-79-AT-EXTENSION-ORIENTED-SO-THE-DECLARATION-BUYS-OBSERVABLES-AND-COSTS-NO-COUPLING;THE-ODD-PART-IS-LAWFUL-ONLY-THERE-AND-IS-NON-ZERO-AT-3760-OF-11520-SHAPE-BY-COIN-TRACES-AT-9-OF-18-SHAPES-AND-AT-96-OF-136-EXTREME-POINTS -- L-BOUNDARY=THE-MERGING-INDEX-IS-8/GCD(L,8)-WHICH-IS-2-HERE-AND-1-AT-L-8;AREA-BLINDNESS-AND-THE-CLOSED-FORM-AND-THE-GAP-SURVIVE-THE-BOUNDARY-0-DISAGREEMENTS-OVER-44800-CHECKS-AND-640-OF-640-COINS-CARRY-IDENTICAL-COEFFICIENTS;THE-CLASS-MERGING-DOES-NOT-0-MERGES-AT-L-8-AGAINST-72-HERE -- SCOPE=D=2;L=4;BOUNDARY-L=8;FIELD=Q(zeta_8);COINS=640;LINKS=32;PLAQUETTES=16;CARRIER=THE-640-UNIFORM-CONFIGURATIONS;FULL-CONFIGURATION-SPACE=640^32-NOT-A-CARRIER-HERE;WEIGHTS=POSITIVE-EXACT-RATIONALS-NO-LOGS-NO-FLOATS;THE-POTENTIAL-IS-NOMINAL-AND-CARRIED-MULTIPLICATIVELY;CONFINEMENT-VOCABULARY-IS-LICENSED-FOR-THIS-UNIT-ONLY-AND-ONLY-IN-MEASURED-SENTENCES;NO-CONTINUUM-CLAIM;NO-SI-NUMBERS;NOT-QCD
+POT-SPLIT-BY-WEIGHT-THE-WINDING-LEG-SPLITS-96-NONZERO-AND-40-ZERO-OF-136-EXTREME-POINTS-AND-1-OF-4-DECLARED-ROWS-WHILE-THE-AREA-LEG-IS-FAMILY-INVARIANT-AREA-BLIND-AT-149-OF-149-MEASURED-ROWS -- LOOP-FAMILY=192-PLACEMENTS-192-DISTINCT-LOOPS-144-CONTRACTIBLE-AND-48-WINDING;RECTANGLE-EXTENTS=1-2-3-MEASURED-SIMPLE-AT-9-OF-16-SWEPT-SIZES;ORBITS-UNDER-THE-ANCHORED-CHART-GROUP-OF-ORDER-32=11-CLOSED-TRUE;THE-WINDOW=RECTANGLE-CIRCUITS-PLUS-STRAIGHT-AND-STAIRCASE-WINDING-CYCLES-NOT-ALL-CLOSED-PATHS -- DISCRIMINATOR=WELL-DEFINED-AT-L-4-WITH-2-AREA-DISCRIMINATING-COMPARISONS-AND-4-CREUTZ-RUNGS;LEG-AREA=BLIND-EVERYWHERE;LEG-CREUTZ=DEFINED-AT-136-OF-136-EXTREME-POINTS-AND-EQUAL-TO-ONE-AT-24;LEG-WINDING=THE-ORDER-PARAMETER-ANALOGUE -- (a)CONDITIONAL=4-ROWS-ALL-STAMPED-CONDITIONAL-ON-THE-DECLARED-WEIGHTS;PLAQUETTE-EXPECTATIONS=13/10@THE-NULL,262244/65615@THE-WILSON-CONJUGATION-SYMMETRIC,4294967399/4294967375@THE-EXHIBITED-WITNESS,225/152@THE-LAW-NATIVE-CONTROL;WINDING=3-ZERO-AND-1-NONZERO;THE-CONTROL-CARRIES-LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION-AND-IS-NEVER-SPENT-AS-DERIVED -- (b)FAMILY-SWEPT=136-EXTREME-POINTS-64-VERTICES-AND-72-EDGE-MIDPOINTS-ALL-RUN;FAMILY-INVARIANT=area_seen;COUPLING-DEPENDENT=ladder_word+creutz_is_unit+winding_word+mode_A+mode_B+mode_C+active_modes;SLICES=9-EXACT-ONE-PARAMETER-ROWS-AGREE-AT-THE-AREA-LEG -- PRICE=THE-INVENTORY-IS-135-COUPLINGS-AND-THE-AREA-LEG-PARTITIONS-NONE-OF-THEM;THE-WINDING-LEG-PARTITIONS-96-AGAINST-40-OF-136;THE-HALVING-MODE-IS-ABSENT-AT-72-OF-136;THE-PERIMETER-MODE-IS-ABSENT-AT-40-OF-136;THE-CREUTZ-RATIO-IS-UNDEFINED-AT-0-OF-136;THE-CREUTZ-RATIO-IS-ONE-AT-24-WHICH-ARE-EXACTLY-THE-24-LADDERS-CONSTANT-IN-THE-PERIMETER -- SPECTRAL-DOOR=THE-TRANSFER-MATRIX-ON-A-TIME-SLICE-IS-NAMED-NOT-RUN-AT-167772160000-STATES-PER-SLICE;THE-FINITE-FORM-IS-MEASURED-AT-640-OF-640-COINS=W=A+B*P+C*2^-P;THE-ANSATZS-SPECTRUM-IS-{1,1,1/2}-WITH-GAP-1/2-AND-ITS-HALVING-MODE-IS-PRESENT-AT-512-OF-640-COINS-AND-64-OF-136-EXTREME-POINTS;THE-WINDING-HOLONOMY-IS-UNITARY-AT-640-OF-640-SO-ITS-SPECTRUM-CARRIES-NO-DECAY;SPC-INHERITS-THE-GAP-AT-THAT-SUPPORT -- ORIENTATION=DECLARED-NEVER-DERIVED-NEITHER-STANDARD-IS-CLAIMED-TRUE-DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING;THE-ORIENTED-SUBGROUP-HAS-INDEX-2-AT-BOTH-READINGS;COUPLINGS=135-AT-ANCHORED-AND-135-AT-ANCHORED-ORIENTED-AND-79-AT-THE-EXTENSION-AND-79-AT-EXTENSION-ORIENTED-SO-THE-DECLARATION-BUYS-OBSERVABLES-AND-COSTS-NO-COUPLING;THE-ODD-PART-IS-LAWFUL-ONLY-THERE-AND-IS-NON-ZERO-AT-3760-OF-11520-SHAPE-BY-COIN-TRACES-AT-9-OF-18-SHAPES-AND-AT-96-OF-136-EXTREME-POINTS -- L-BOUNDARY=THE-MERGING-INDEX-IS-8/GCD(L,8)-WHICH-IS-2-HERE-AND-1-AT-L-8;AREA-BLINDNESS-AND-THE-CLOSED-FORM-AND-THE-GAP-SURVIVE-THE-BOUNDARY-0-DISAGREEMENTS-OVER-44800-CHECKS-AND-640-OF-640-COINS-CARRY-IDENTICAL-COEFFICIENTS;THE-CLASS-MERGING-DOES-NOT-0-MERGES-AT-L-8-AGAINST-72-HERE -- SCOPE=D=2;L=4;BOUNDARY-L=8;FIELD=Q(zeta_8);COINS=640;LINKS=32;PLAQUETTES=16;CARRIER=THE-640-UNIFORM-CONFIGURATIONS;FULL-CONFIGURATION-SPACE=640^32-NOT-A-CARRIER-HERE;WEIGHTS=POSITIVE-EXACT-RATIONALS-NO-LOGS-NO-FLOATS;THE-POTENTIAL-IS-NOMINAL-AND-CARRIED-MULTIPLICATIVELY;CONFINEMENT-VOCABULARY-IS-LICENSED-FOR-THIS-UNIT-ONLY-AND-ONLY-IN-MEASURED-SENTENCES;NO-CONTINUUM-CLAIM;NO-SI-NUMBERS;NOT-QCD
 
-  [PASS] G-THE-SEAL-IS-TOTAL :: 41 top-level keys, 21 sealed, 20 declared unsealed, 0 unaccounted [], 0 digest mismatches
+  [PASS] G-THE-SEAL-IS-TOTAL :: 44 top-level keys, 38 sealed, 6 declared unsealed, 0 unaccounted [], 0 digest mismatches

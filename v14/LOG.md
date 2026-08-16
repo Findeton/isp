@@ -11728,3 +11728,43 @@ sentinel falsifiers made real; the read-set gate
 order-insensitive).  **The #267 template sweep charters
 immediately after this repair — four panels convergent +
 one realized harm.**  The repair worker launches next.
+
+## 2026-08-15 — POT REPAIR (CONTINUATION) DELIVERED AND COMMITTED: EVERY Z CONFIRMED; ONE PRECISION GAP FIXED-AND-DISCLOSED; ZERO PHYSICS NUMBERS MOVED (v14 LEDGER #363)
+
+**Files:** paper-36-pot.md 1e495318252d; pot_exact.py
+a811bbb92138; pot_output.txt 09819054e960;
+pot_receipt.json 3a48c3806443.  The prior worker's Z1–Z8
+were complete (its own battery had finished before the
+kill); the continuation re-derived everything.  Z1: the
+24 = constant-ladder set identity NEW-GATED (sets equal;
+exceptions exactly the eight (0,2,0) corners; the pure-B
+mechanism rendered).  Z2: the title re-scoped ("The
+Rectangle Ladder's Loop Observable"; the 568/576/640
+length table with the coin-1 witness).  Z3: the universal
+re-grounded (4,280 measure comparisons, 0 mismatches, by
+declared integer recurrence).  Z4: the licence-token set
+ABOLISHED — licensing is full rendered claims or measured
+value-pairs; 19 policed words incl. all synonyms.  Z5:
+bases unified (5,760 = 3,200 self + 2,560 cross; 1,280
+area-discriminating; the L=4 thinness where the finding is
+claimed).  Z6: the gap re-attached to the FORM with the
+halving-mode support (512/640, 64/136) —
+SPC-INHERITS-THE-GAP-AT-THAT-SUPPORT.  Z7: K3's ten live
+(claims by equality; 15/15 verbatim windows READ; coverage
+at the end, 0 uncovered).  **THE GAP FOUND: the repair's
+own §1 wall description overclaimed (the wall binds the
+pair + joining phrase, not the subject) — two
+wrong-predicate plants passed; the minimal precision
+repair applied in three places and the REFERENT-BINDING
+residual PUBLISHED as outside the wall's reach** (K3
+probe-9's species, never in the order; the two surviving
+injections are exactly these, disclosed).  **Battery:
+B1–B8 all green — 61/61 falsifiers; 47/49 injections dead
+(every ordered one); all ten K2 plants now die (was 2 of
+10); byte ×2 off-tree two seeds; no typed counts by
+audit.  2,843 physics leaves: EXACTLY ONE ordered change
+(the SPC-handoff string rescope); zero physics numerals
+moved.**  Out-of-scope flag: #324's instrument counts are
+historical (the repaired instrument reads 61 mutants / 39
+gates-before-paper).  **Orchestrator battery next;
+terminal on green.**

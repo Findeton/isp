@@ -178,11 +178,14 @@ def qs_str(x):
     return "%s+%s*sqrt2" % (x[0], x[1])
 
 
-NUMWORDS = {13: "thirteen", 14: "fourteen", 15: "fifteen", 16: "sixteen",
-            17: "seventeen", 18: "eighteen", 19: "nineteen", 20: "twenty",
-            24: "twenty-four", 30: "thirty", 32: "thirty-two", 40: "forty",
-            64: "sixty-four", 72: "seventy-two", 100: "hundred",
-            104: "a hundred and four", 136: "a hundred and thirty-six"}
+NUMWORD_UNITS = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5,
+                 "six": 6, "seven": 7, "eight": 8, "nine": 9}
+NUMWORD_TEENS = {"ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13,
+                 "fourteen": 14, "fifteen": 15, "sixteen": 16,
+                 "seventeen": 17, "eighteen": 18, "nineteen": 19}
+NUMWORD_TENS = {"twenty": 20, "thirty": 30, "forty": 40, "fifty": 50,
+                "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90}
+NUMWORD_SCALES = {"hundred": 100, "thousand": 1000}
 
 
 # ===========================================================================
@@ -334,6 +337,8 @@ def load_sources():
             ok,
             "%d sources, %d at their pinned digests"
             % (len(rows), sum(1 for r in rows if r["agrees"])))
+    SEAL.take("THE PROVENANCE", "provenance",
+              "G-SOURCES-AT-THEIR-PINNED-DIGESTS", rows)
     return got, rows
 
 
@@ -542,6 +547,7 @@ def measure_verbatim(S, src):
                      "perturbation_is_lost": hay.count(perturbed) == 0,
                      "digest": hashlib.sha256(
                          needle.encode()).hexdigest()[:12],
+                     "located_text": needle if hits == 1 else "",
                      "consumer": consumer})
     ok = all(r["located_exactly_once"] and r["long_enough"]
              and r["perturbation_is_lost"] for r in rows)
@@ -562,23 +568,67 @@ def measure_verbatim(S, src):
     return {r["anchor"]: r for r in rows}
 
 
+VB_READS = []
+
+
+def vbwin(vb, name, gate, token):
+    """THE VERBATIM CONSUMPTION.  A gate that names a window as its own reads
+    the window's located text HERE and takes a content token out of it, so
+    the anchor enters that gate's own predicate instead of decorating a
+    column.  Every read is recorded with the gate that made it and the whole
+    register is reconciled against the declared consumer column at
+    G-CONSUMER-REGISTER-IS-REAL, so a window no gate reads is fatal."""
+    row = vb[name]
+    got = token in row["located_text"]
+    VB_READS.append({"anchor": name, "read_by": gate, "token": token,
+                     "token_located_in_the_window": got})
+    return got
+
+
 def measure_consumers(S):
     """#82 / K3's ruling at ACT: a named consumer gate that does not exist in
     this run's own ledger is fatal, so the consumer column is a real binding
-    and not a decoration."""
+    and not a decoration -- and, since K3's MAJOR-9 at this unit, a window
+    whose named consumer never READ it is fatal too."""
     named = sorted({c for _n, _s, _p, _e, c in PATH_VALUES}
                    | {c for _n, _s, _t, _f, c in VERBATIM})
     if mut("MUT-CONSUMER-GHOST"):
         named = named + ["G-A-GATE-THIS-INSTRUMENT-DOES-NOT-HAVE"]
     missing = [c for c in named if c not in LD.ids]
+    reads = list(VB_READS)
+    if mut("MUT-CONSUMER-UNREAD"):
+        reads = [r for r in reads if r["anchor"] != "VB-SMU-PRICE"]
+    by_anchor = {}
+    for r in reads:
+        by_anchor.setdefault(r["anchor"], []).append(r)
+    unread, misread = [], []
+    for nm, _s, _t, _f, cons in VERBATIM:
+        got = by_anchor.get(nm, [])
+        if not got:
+            unread.append(nm)
+            continue
+        if any(r["read_by"] != cons or not r["token_located_in_the_window"]
+               for r in got):
+            misread.append(nm)
     LD.gate("G-CONSUMER-REGISTER-IS-REAL",
             "every gate named as an anchor's consumer is checked against "
-            "THIS RUN'S OWN closed-gate ledger; an anchor naming a gate this "
-            "instrument does not have stops the run",
-            not missing,
-            "%d named consumers, %d missing" % (len(named), len(missing)))
+            "THIS RUN'S OWN closed-gate ledger, and every verbatim window is "
+            "required to have been READ by exactly the gate its own column "
+            "names, with the token it supplied located inside it: an anchor "
+            "naming a gate this instrument does not have, and a window no "
+            "gate consumed, both stop the run",
+            not missing and not unread and not misread,
+            "%d named consumers, %d missing; %d verbatim windows, %d read by "
+            "their own consumer over %d reads, %d unread %s, %d misread %s"
+            % (len(named), len(missing), len(VERBATIM),
+               len(VERBATIM) - len(unread) - len(misread), len(reads),
+               len(unread), unread, len(misread), misread))
     S["consumer_register"] = {"named": named, "missing": missing,
-                              "all_present": not missing}
+                              "all_present": not missing,
+                              "verbatim_windows": len(VERBATIM),
+                              "verbatim_reads": reads,
+                              "windows_never_read": unread,
+                              "windows_read_by_another_gate": misread}
     SEAL.take("THE CONSUMER REGISTER", "consumer_register",
               "G-CONSUMER-REGISTER-IS-REAL", S["consumer_register"])
 
@@ -666,7 +716,7 @@ class Lattice:
         return l[0], self.addv(l[0], EDIR[l[1]])
 
 
-def build_arena(S, pv):
+def build_arena(S, pv, vb):
     alpha = build_alphabet()
     coins, rows = build_coins(alpha)
     lat = Lattice(pv["PV-ACT-L"])
@@ -682,13 +732,17 @@ def build_arena(S, pv):
           and len(lat.plaquettes) == pv["PV-ACT-PLAQ"]
           and sect.get("DIAGONAL") == pv["PV-R5-COINS-DIAG"]
           and sect.get("ANTIDIAGONAL") == pv["PV-R5-COINS-ANTI"]
-          and sect.get("BALANCED") == pv["PV-R5-COINS-BAL"])
+          and sect.get("BALANCED") == pv["PV-R5-COINS-BAL"]
+          and vbwin(vb, "VB-R5-LINKOP", "G-ARENA-REBUILT",
+                    "the identity on every other site"))
     LD.gate("G-ARENA-REBUILT",
             "the alphabet, the coin family, the lattice, the link set and "
             "the plaquette set are REBUILT here from the parents' own "
             "declarations -- nothing is imported -- and every cardinality is "
             "required to equal the parent's published one at a named receipt "
-            "path, with unitarity confirmed by a second route on every coin",
+            "path, with unitarity confirmed by a second route on every coin "
+            "and the link operator's own window read here for the clause "
+            "that fixes what the operator does away from its link",
             ok,
             "alphabet %d, coins %d (%s), unitary by a second route %d, "
             "sites %d, links %d, plaquettes %d"
@@ -939,7 +993,7 @@ def transport_loop(lat, el, cyc):
     return canon(tuple(lat.addv(apply_point(g, s, lat.L), v) for s in cyc))
 
 
-def measure_loop_family(S, pv):
+def measure_loop_family(S, pv, vb):
     lat = S["_lat"]
     simple_rows, extents, fam = enumerate_family(lat)
     names = {f["name"] for f in fam}
@@ -990,7 +1044,10 @@ def measure_loop_family(S, pv):
     anchored = orbit_rows[0]
     ok2 = (anchored["chart_order"] == pv["PV-R5-CHART"]
            and anchored["closed_under_the_acting_group"]
-           and anchored["orbits"] < len(names))
+           and anchored["orbits"] < len(names)
+           and vbwin(vb, "VB-P23-TRANSITIVE",
+                     "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP",
+                     "transitively"))
     LD.gate("G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP",
             "distinctness is measured under the acting group at both "
             "declared readings: the anchored chart group is the parent's "
@@ -1063,7 +1120,7 @@ def realisable_twists(L):
     return [t for t in range(ph) if (L * t) % ph == 0]
 
 
-def measure_classes(S, pv):
+def measure_classes(S, pv, vb):
     coins, cidx, lat = S["_coins"], S["_cidx"], S["_lat"]
     res = realisable_twists(lat.L)
     parent = twist_orbits(coins, cidx, res)
@@ -1078,7 +1135,9 @@ def measure_classes(S, pv):
     ok = (len(classes) == pv["PV-ACT-ORBITS"]
           and len(parent) == pv["PV-ACT-PARENT-ORBITS"]
           and coarsens and merged == pv["PV-ACT-MERGED"]
-          and sum(prof.values()) == len(classes))
+          and sum(prof.values()) == len(classes)
+          and vbwin(vb, "VB-ACT-ALLOWED", "G-THE-CLASSES-REBUILT",
+                    "one factor per orbit"))
     LD.gate("G-THE-CLASSES-REBUILT",
             "the induced classes on the carrier are rebuilt from the twist "
             "action alone and required to land on the parent's published "
@@ -1097,13 +1156,20 @@ def measure_classes(S, pv):
         midpoints = midpoints[1:]
     ok2 = (len(vertices) == pv["PV-ACT-VERTICES"]
            and len(midpoints) == pv["PV-ACT-MIDPOINTS"]
-           and len(vertices) + len(midpoints) == len(classes))
+           and len(vertices) + len(midpoints) == len(classes)
+           and vbwin(vb, "VB-ACT-EXTREME", "G-THE-EXTREME-POINTS-REBUILT",
+                     "%d of the reachable set's extreme points are vertices"
+                     % len(vertices))
+           and vbwin(vb, "VB-ACT-EXTREME", "G-THE-EXTREME-POINTS-REBUILT",
+                     "the other %d are midpoints" % len(midpoints)))
     LD.gate("G-THE-EXTREME-POINTS-REBUILT",
             "the extreme points of the reachable set are the uniform "
             "measures on the classes: a class the odd twist fixes is a "
             "VERTEX of the parent's simplex and a class it merges is a "
             "MIDPOINT of one of its edges, and the split is required to "
-            "equal the parent's published one",
+            "equal the parent's published one -- read out of the parent's "
+            "own sentence here, so THIS run's two counts must be the two "
+            "integers that sentence carries",
             ok2,
             "%d extreme points: %d vertices and %d edge midpoints"
             % (len(classes), len(vertices), len(midpoints)))
@@ -1229,14 +1295,20 @@ def measure_the_loop_observable(S, pv, vb):
         distinct = distinct[:-1]
     ok3 = (len(distinct) == pv["PV-ACT-WILSON-N"]
            and qs_str(tot) == pv["PV-ACT-NULL"]
-           and nonflat_diag == pv["PV-R5-NONFLAT-DIAG"])
+           and nonflat_diag == pv["PV-R5-NONFLAT-DIAG"]
+           and vbwin(vb, "VB-R5-HOLONOMY", "G-PLAQUETTE-ROW-REPRODUCED",
+                     "inverted where the boundary runs against")
+           and vbwin(vb, "VB-R5-BLOCK", "G-PLAQUETTE-ROW-REPRODUCED",
+                     "four-by-four block"))
     LD.gate("G-PLAQUETTE-ROW-REPRODUCED",
             "the one member of this family the parents already measured is "
             "reproduced from these primitives before anything new is said: "
             "the plaquette's trace takes the parent's own number of distinct "
             "values on the carrier, its counting-measure expectation is the "
             "parent's published number, and the count of non-flat diagonal "
-            "coins is the grandparent's",
+            "coins is the grandparent's -- with the two windows that fix the "
+            "holonomy's own definition read here, at the orientation clause "
+            "and at the block the census runs in",
             ok3,
             "%d distinct values, counting expectation %s, %d non-flat "
             "diagonal coins, %d flat coins"
@@ -1325,18 +1397,21 @@ def classify(table, wind, shapes):
         and len(rungs) > 0 and len(comps) > 0
     unit = defined and all(v == (Fraction(1), Fraction(0)) for v in vals)
     const = defined and len(set(vals)) == 1
+    branch = "NOT-DEGENERATE"
     if missing:
         word = "BLOCKED-AT-THE-LADDER"
     elif not defined:
         word = "DISCRIMINATOR-DEGENERATE"
+        branch = "THE-DISCRIMINATORS-OWN-WELL-DEFINEDNESS-FAILS"
     elif area_seen and const and not unit:
         word = "CONFINES"
     elif (not area_seen) and unit:
         word = "DECONFINES"
     else:
         word = "DISCRIMINATOR-DEGENERATE"
+        branch = "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW"
     return {"area_comparisons": len(comps), "creutz_rungs": len(rungs),
-            "missing_shapes": len(missing),
+            "missing_shapes": len(missing), "degenerate_branch": branch,
             "area_seen": area_seen,
             "creutz": {"%d-%d" % k: qs_str(v) for k, v in sorted(chis.items())},
             "creutz_zero_denominators": len(zero_den),
@@ -1364,7 +1439,9 @@ def measure_the_discriminator(S, pv, vb):
     perim = {}
     for (a, b) in shapes:
         perim.setdefault(a + b, []).append((a, b))
-    ok = len(comps) >= 1 and len(rungs) >= 1
+    ok = (len(comps) >= 1 and len(rungs) >= 1
+          and vbwin(vb, "VB-PIN-DISCRIM", "G-THE-DISCRIMINATOR-IS-WELL-"
+                    "DEFINED", "nonzero denominators; enough ladder rungs"))
     LD.gate("G-THE-DISCRIMINATOR-IS-WELL-DEFINED",
             "the discriminator's own well-definedness at the declared "
             "lattice is a MEASUREMENT taken before any row runs: the ladder "
@@ -1396,7 +1473,13 @@ def measure_the_discriminator(S, pv, vb):
            and gimg == phase_order()
            and all(r["the_merging_index"] == gimg // r[
                "residual_order_on_the_torus"] for r in lrows)
-           and [r["the_merging_index"] for r in lrows if r["L"] == 8] == [1])
+           and [r["the_merging_index"] for r in lrows if r["L"] == 8] == [1]
+           and vbwin(vb, "VB-ACT-BOUNDARY",
+                     "G-THE-MERGING-INDEX-LAW-REPRODUCED",
+                     "it is %d" % [r["the_merging_index"] for r in lrows
+                                   if r["L"] == 8][0])
+           and vbwin(vb, "VB-PIN-LBOUND", "G-THE-MERGING-INDEX-LAW-"
+                     "REPRODUCED", "8/gcd(L,8)"))
     LD.gate("G-THE-MERGING-INDEX-LAW-REPRODUCED",
             "the L-boundary is stated as a measured law and not as a quoted "
             "one: the merging index is eight over the greatest common "
@@ -1489,15 +1572,34 @@ def measure_the_closed_form(S, pv):
         per.setdefault(a + b, []).append((a, b))
     ss = sorted(per)
     rep = {s: sorted(per[s])[0] for s in ss}
-    perim_only, checked = 0, 0
+    perim_only, checked, selfcmp = 0, 0, 0
     for s in ss:
         base = TR[("RECTANGLE-CIRCUIT",) + rep[s]]
         for (a, b) in per[s]:
             v = TR[("RECTANGLE-CIRCUIT", a, b)]
+            if (a, b) == rep[s]:
+                selfcmp += len(coins)
             for i in range(len(coins)):
                 checked += 1
                 if v[i] != base[i]:
                     perim_only += 1
+    pairs = [((a, b), (p, q)) for s in ss for (a, b) in per[s]
+             for (p, q) in per[s] if (a, b) < (p, q)]
+    pair_checked, pair_bad = 0, 0
+    for x, y in pairs:
+        vx, vy = TR[("RECTANGLE-CIRCUIT",) + x], TR[("RECTANGLE-CIRCUIT",) + y]
+        for i in range(len(coins)):
+            pair_checked += 1
+            if vx[i] != vy[i]:
+                pair_bad += 1
+    acmp = area_comparisons(shapes)
+    area_checked, area_bad = 0, 0
+    for x, y in acmp:
+        vx, vy = TR[("RECTANGLE-CIRCUIT",) + x], TR[("RECTANGLE-CIRCUIT",) + y]
+        for i in range(len(coins)):
+            area_checked += 1
+            if vx[i] != vy[i]:
+                area_bad += 1
     if mut("MUT-PERIMETER-ONLY"):
         perim_only = 1
     LD.gate("G-THE-LADDER-IS-A-FUNCTION-OF-THE-PERIMETER-ALONE",
@@ -1505,10 +1607,22 @@ def measure_the_closed_form(S, pv):
             "shapes of equal perimeter, the loop observable takes the SAME "
             "value -- the area does not enter it.  This is measured "
             "per-configuration, not per-expectation, so it holds under "
-            "every measure on this carrier without a second census",
-            perim_only == 0,
+            "every measure on this carrier without a second census.  The "
+            "count is published on THREE bases, because the scheme reads "
+            "each shape against its perimeter class's representative and so "
+            "counts the representative against itself: the shape-by-coin "
+            "count, the genuine cross-shape count inside it, and the "
+            "complete unordered-pair count, of which the "
+            "area-discriminating comparisons are the sub-basis the area "
+            "finding is claimed on",
+            perim_only == 0 and pair_bad == 0 and area_bad == 0,
             "%d shape-by-coin comparisons at equal perimeter, %d "
-            "disagreements" % (checked, perim_only))
+            "disagreements (%d of them a shape against itself, %d genuine "
+            "cross-shape); %d unordered-pair-by-coin comparisons, %d "
+            "disagreements; %d area-discriminating comparison-by-coin "
+            "checks, %d disagreements"
+            % (checked, perim_only, selfcmp, checked - selfcmp, pair_checked,
+               pair_bad, area_checked, area_bad))
     modes, bad = [], 0
     f = {s: TR[("RECTANGLE-CIRCUIT",) + rep[s]] for s in ss}
     for i in range(len(coins)):
@@ -1518,7 +1632,7 @@ def measure_the_closed_form(S, pv):
                 bad += 1
         modes.append((A, B, C))
     if mut("MUT-CLOSED-FORM"):
-        bad = 1
+        bad = len(coins)
     LD.gate("G-THE-LADDER-CLOSED-FORM",
             "the ladder's dependence on the perimeter is fitted EXACTLY "
             "from three points to a constant, a term proportional to the "
@@ -1545,6 +1659,14 @@ def measure_the_closed_form(S, pv):
         "the_ladder_is_a_function_of_the_perimeter_alone": perim_only == 0,
         "equal_perimeter_comparisons": checked,
         "equal_perimeter_disagreements": perim_only,
+        "equal_perimeter_self_comparisons": selfcmp,
+        "equal_perimeter_cross_shape_comparisons": checked - selfcmp,
+        "unordered_equal_perimeter_pairs": len(pairs),
+        "unordered_pair_by_coin_comparisons": pair_checked,
+        "unordered_pair_disagreements": pair_bad,
+        "area_discriminating_comparisons": len(acmp),
+        "area_discriminating_comparison_by_coin_checks": area_checked,
+        "area_discriminating_disagreements": area_bad,
         "perimeters": ss,
         "verification_points_per_coin": len(ss) - 3,
         "closed_form_failures": bad,
@@ -1684,7 +1806,9 @@ def measure_declared_rows(S, pv, vb):
     ok2 = (stamp == "LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-"
                     "IDENTIFICATION"
            and ctrl["the_measure"] == "TRANSPORTED-NOT-DERIVED"
-           and sum(mu_law) == 1)
+           and sum(mu_law) == 1
+           and vbwin(vb, "VB-ACT-STAMP", "G-THE-CONTROL-STAMP-CARRIED",
+                     "must not treat it as a derived measure"))
     LD.gate("G-THE-CONTROL-STAMP-CARRIED",
             "the law-native row enters this unit AS A CONTROL: its stamp is "
             "carried VERBATIM from the parent's receipt, its three sector "
@@ -1745,9 +1869,12 @@ def measure_family_sweep(S, pv):
             "creutz_defined": v["creutz_defined"],
             "creutz_is_unit": v["creutz_is_unit"],
             "creutz_is_constant": v["creutz_is_constant"],
+            "degenerate_branch": v["degenerate_branch"],
             "winding_word": v["winding_word"],
             "winding": v["winding"],
             "mode_A": qs_str(A), "mode_B": qs_str(B), "mode_C": qs_str(C),
+            "ladder_is_constant_in_the_perimeter":
+                qs_is_zero(B) and qs_is_zero(C),
             "active_modes": sum(1 for x in (A, B, C) if not qs_is_zero(x))})
     if mut("MUT-SWEEP-TRUNCATED"):
         rows = rows[:-1]
@@ -1760,6 +1887,8 @@ def measure_family_sweep(S, pv):
     ladder = tally("ladder_word")
     windw = tally("winding_word")
     modes = tally("active_modes")
+    branches = tally("degenerate_branch")
+    flat = tally("ladder_is_constant_in_the_perimeter")
     invariant, dependent = [], []
     for key in ("area_seen", "ladder_word", "creutz_is_unit", "winding_word",
                 "mode_A", "mode_B", "mode_C", "active_modes"):
@@ -1797,12 +1926,286 @@ def measure_family_sweep(S, pv):
         "ladder_word_tally": ladder,
         "winding_word_tally": windw,
         "active_mode_tally": modes,
+        "degenerate_branch_tally": branches,
+        "constant_in_the_perimeter_tally": flat,
         "family_invariant_observables": invariant,
         "coupling_dependent_observables": dependent,
         "rows": rows}
     SEAL.take("THE FAMILY SWEEP", "family_sweep",
               "G-THE-FAMILY-SWEEP-IS-TOTAL", S["family_sweep"])
     return rows
+
+
+def measure_the_constant_ladder_identity(S, pv):
+    """WHICH 24?  The Creutz leg returns one at 24 of the 136 extreme points,
+    and this unit measures WHICH 24 rather than asserting it: the set on
+    which the ratio is one is required to be, elementwise, the set on which
+    the ladder does not move with the perimeter at all.  The mechanism is
+    measured as well, by driving the REAL discriminator with three synthetic
+    single-mode ladders -- so 'a single mode is active' is separated from
+    'the ratio is one' by a measurement and not by a sentence."""
+    rows, shapes = S["_sweep"], S["_shapes_ladder"]
+    unit = {r["extreme_point"] for r in rows if r["creutz_is_unit"]}
+    const = {r["extreme_point"] for r in rows
+             if r["ladder_is_constant_in_the_perimeter"]}
+    if mut("MUT-CONSTANT-SET"):
+        const = set(sorted(const)[1:])
+    single = [r["extreme_point"] for r in rows if r["active_modes"] == 1]
+    onlyB = [r["extreme_point"] for r in rows
+             if r["active_modes"] == 1 and r["mode_B"] != "0"]
+    Avals = {}
+    for r in rows:
+        if r["extreme_point"] in const:
+            Avals[r["mode_A"]] = Avals.get(r["mode_A"], 0) + 1
+    mech = []
+    for nm, fn in (("THE-CONSTANT-MODE-ALONE", lambda p: Fraction(1)),
+                   ("THE-PERIMETER-PROPORTIONAL-MODE-ALONE",
+                    lambda p: Fraction(2 * p)),
+                   ("THE-HALVING-MODE-ALONE",
+                    lambda p: Fraction(1, 2 ** p))):
+        tab = {(a, b): (fn(a + b), Fraction(0)) for (a, b) in shapes}
+        v = classify(tab, (Fraction(0), Fraction(0)), shapes)
+        mech.append({"single_mode_ladder": nm,
+                     "creutz_by_rung": v["creutz"],
+                     "creutz_is_unit": v["creutz_is_unit"],
+                     "ladder_word": v["ladder_word"]})
+    byA = [m for m in mech if m["single_mode_ladder"].endswith(
+        "THE-CONSTANT-MODE-ALONE")][0]
+    byB = [m for m in mech if "PERIMETER-PROPORTIONAL" in
+           m["single_mode_ladder"]][0]
+    byC = [m for m in mech if "HALVING" in m["single_mode_ladder"]][0]
+    halving_only = [r["extreme_point"] for r in rows
+                    if r["active_modes"] == 1 and r["mode_C"] != "0"]
+    ok = (unit == const
+          and len(onlyB) == len(single) - len(unit)
+          and all(r["mode_A"] != "0" for r in rows
+                  if r["extreme_point"] in const)
+          and byA["creutz_is_unit"] and byC["creutz_is_unit"]
+          and not byB["creutz_is_unit"])
+    LD.gate("G-THE-CREUTZ-UNIT-SET-IS-THE-CONSTANT-LADDER-SET",
+            "the extreme points where the Creutz ratio is one are "
+            "characterised BY A MEASUREMENT and elementwise: that set is "
+            "required to be exactly the set at which the ladder is constant "
+            "in the perimeter, so the word the classifier prints there "
+            "records a flat ladder and nothing else.  The mechanism is "
+            "measured too, through the real discriminator on three "
+            "synthetic single-mode ladders: a constant ladder and a halving "
+            "ladder both return one at every rung, a perimeter-proportional "
+            "ladder does not, and a single active mode therefore does NOT "
+            "imply the ratio is one",
+            ok,
+            "the ratio is one at %d extreme points and the ladder is "
+            "constant in the perimeter at %d, the two sets equal %s; a "
+            "single mode is active at %d, of which %d carry the "
+            "perimeter-proportional mode alone %s; the constant values "
+            "there are %s; the synthetic single-mode ladders return unit "
+            "%s and the perimeter-proportional one returns %s"
+            % (len(unit), len(const), unit == const, len(single), len(onlyB),
+               onlyB, dict(sorted(Avals.items())),
+               [m["creutz_is_unit"] for m in mech], byB["creutz_by_rung"]))
+    S["constant_ladder_identity"] = {
+        "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+        "the_creutz_ratio_is_one_at": len(unit),
+        "the_ladder_is_constant_in_the_perimeter_at": len(const),
+        "the_two_sets_are_equal": unit == const,
+        "single_mode_extreme_points": len(single),
+        "single_mode_but_perimeter_proportional": len(onlyB),
+        "which_ones": onlyB,
+        "single_mode_and_halving_only": len(halving_only),
+        "the_constant_values_on_that_set": dict(sorted(Avals.items())),
+        "the_mechanism_at_single_mode_ladders": mech,
+        "the_reading": "DECONFINES-RECORDS-A-FLAT-LADDER-AT-THIS-ARENA-AND-"
+                       "IS-NOT-A-FINDING-THAT-ANYTHING-DECONFINES"}
+    SEAL.take("THE CONSTANT-LADDER IDENTITY", "constant_ladder_identity",
+              "G-THE-CREUTZ-UNIT-SET-IS-THE-CONSTANT-LADDER-SET",
+              S["constant_ladder_identity"])
+    return unit
+
+
+def measure_the_length_reading(S, pv):
+    """THE SCOPE OF THE PERIMETER-ONLY THEOREM, measured at its boundary.
+    The theorem is about the RECTANGLE LADDER.  Over the wider declared
+    family the loop's own length is measured NOT to determine the
+    observable: the declared shapes are grouped by step count and every
+    group with more than one member is read coin by coin."""
+    TR, coins = S["_TR"], S["_coins"]
+    rows = S["loop_observable"]["base_point_rows"]
+    key = {"%s-%d-%d" % k: k for k in S["_shapes"]}
+    bylen = {}
+    for r in rows:
+        bylen.setdefault(r["length"], []).append(r["shape"])
+    out, witness = [], None
+    for ln in sorted(bylen):
+        names = sorted(bylen[ln])
+        ks = [key[n] for n in names]
+        dis = 0
+        for i in range(len(coins)):
+            if len({TR[k][i] for k in ks}) > 1:
+                dis += 1
+                if witness is None and len(names) > 1:
+                    lo = sorted(ks, key=str)
+                    witness = {"step_count": ln, "coin": i,
+                               "coin_sector": coin_sector(coins[i]),
+                               "shape": "%s-%d-%d" % lo[0],
+                               "value": qs_str(TR[lo[0]][i]),
+                               "other_shape": "%s-%d-%d" % lo[-1],
+                               "other_value": qs_str(TR[lo[-1]][i])}
+        out.append({"step_count": ln, "shapes_of_that_length": len(names),
+                    "the_shapes": names, "coins_at_which_they_disagree": dis,
+                    "coins": len(coins)})
+    if mut("MUT-LENGTH-READING"):
+        out = [dict(r, coins_at_which_they_disagree=0) for r in out]
+    groups = [r for r in out if r["shapes_of_that_length"] > 1]
+    split = [r for r in groups if r["coins_at_which_they_disagree"] > 0]
+    rect_only = [r for r in groups
+                 if all(n.startswith("RECTANGLE-CIRCUIT") for n in
+                        r["the_shapes"])]
+    ok = (len(groups) > 0 and len(split) > 0
+          and all(r["coins_at_which_they_disagree"] == 0 for r in rect_only)
+          and all(any(not n.startswith("RECTANGLE-CIRCUIT")
+                      for n in r["the_shapes"]) for r in split)
+          and witness is not None)
+    LD.gate("G-THE-LENGTH-DOES-NOT-DETERMINE-THE-OBSERVABLE",
+            "the perimeter-only theorem's SCOPE is measured at its own "
+            "boundary: over the wider declared family the loop's own length "
+            "is required NOT to determine the observable, so the theorem is "
+            "the rectangle ladder's and is not carried to the family.  "
+            "Every group of shapes sharing a step count is read coin by "
+            "coin, every group on which only rectangles occur is required "
+            "to agree everywhere, and at least one mixed group is required "
+            "to disagree -- with an explicit witness published",
+            ok,
+            "%d step-count groups with more than one shape, %d of them "
+            "disagreeing at some coin, %d rectangle-only groups agreeing "
+            "everywhere; witness %s"
+            % (len(groups), len(split), len(rect_only), witness))
+    S["length_reading"] = {
+        "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+        "rows": out,
+        "groups_with_more_than_one_shape": len(groups),
+        "groups_disagreeing_at_some_coin": len(split),
+        "rectangle_only_groups": len(rect_only),
+        "the_witness": witness,
+        "the_reading": "THE-PERIMETER-ONLY-THEOREM-IS-THE-RECTANGLE-LADDERS-"
+                       "AND-THE-LENGTH-DOES-NOT-DETERMINE-THE-OBSERVABLE-ON-"
+                       "THE-WIDER-FAMILY"}
+    SEAL.take("THE LENGTH READING", "length_reading",
+              "G-THE-LENGTH-DOES-NOT-DETERMINE-THE-OBSERVABLE",
+              S["length_reading"])
+    return out
+
+
+LCG_MODULUS = (1 << 31) - 1
+LCG_MULTIPLIER = 1103515245
+LCG_INCREMENT = 12345
+LCG_SEED = 20260815
+INTERIOR_MEASURES = 1500
+INTERIOR_WEIGHT_RANGE = 1024
+
+
+def measure_the_universal_over_measures(S, pv):
+    """THE AREA-BLINDNESS UNIVERSAL, grounded where it actually lives.  The
+    per-configuration identity of section 5 says the two shapes of an
+    area-discriminating comparison take the SAME value at every coin.  The
+    difference of expectations is then a ratio whose numerator is LINEAR in
+    the measure, so vanishing at each of the 640 point masses forces it to
+    vanish at every measure on this carrier.  Both ends are executed: the
+    640 Dirac measures, which are the point masses themselves, and 1500
+    declared interior measures of full support, drawn by a declared integer
+    recurrence so that the draw is reproducible to the byte."""
+    TR, coins, shapes = S["_TR"], S["_coins"], S["_shapes_ladder"]
+    comps = area_comparisons(shapes)
+    need = sorted({s for pair in comps for s in pair})
+    den = 1
+    for sh in need:
+        for v in TR[("RECTANGLE-CIRCUIT",) + sh]:
+            for c in v:
+                d = c.denominator
+                g, x = den, d
+                while x:
+                    g, x = x, g % x
+                den = den // g * d
+    ints = {sh: [(int(v[0] * den), int(v[1] * den))
+                 for v in TR[("RECTANGLE-CIRCUIT",) + sh]] for sh in need}
+    exact = all(Fraction(a, den) == v[0] and Fraction(b, den) == v[1]
+                for sh in need
+                for (a, b), v in zip(ints[sh],
+                                     TR[("RECTANGLE-CIRCUIT",) + sh]))
+    dirac, dirac_bad = 0, 0
+    for i in range(len(coins)):
+        for x, y in comps:
+            dirac += 1
+            if TR[("RECTANGLE-CIRCUIT",) + x][i] != \
+                    TR[("RECTANGLE-CIRCUIT",) + y][i]:
+                dirac_bad += 1
+    st = LCG_SEED
+    interior, interior_bad, full = 0, 0, 0
+    rng = range(len(coins))
+    for _m in range(INTERIOR_MEASURES):
+        w = []
+        for _i in rng:
+            st = (LCG_MULTIPLIER * st + LCG_INCREMENT) % LCG_MODULUS
+            w.append(1 + (st % INTERIOR_WEIGHT_RANGE))
+        if all(x > 0 for x in w):
+            full += 1
+        tot = {}
+        for sh in need:
+            vs = ints[sh]
+            p, q = 0, 0
+            for i in rng:
+                wi = w[i]
+                p += wi * vs[i][0]
+                q += wi * vs[i][1]
+            tot[sh] = (p, q)
+        for x, y in comps:
+            interior += 1
+            if tot[x] != tot[y]:
+                interior_bad += 1
+    if mut("MUT-UNIVERSAL"):
+        interior_bad = 1
+    ok = (exact and dirac_bad == 0 and interior_bad == 0
+          and full == INTERIOR_MEASURES
+          and dirac == len(coins) * len(comps)
+          and interior == INTERIOR_MEASURES * len(comps))
+    LD.gate("G-THE-AREA-BLINDNESS-IS-UNIVERSAL-OVER-MEASURES",
+            "the universal is licensed where it lives: the difference of "
+            "two expectations at an area-discriminating comparison is a "
+            "ratio whose NUMERATOR IS LINEAR in the measure, so vanishing "
+            "at the point masses forces it to vanish on their whole hull.  "
+            "Both ends are executed rather than argued -- every one of the "
+            "carrier's Dirac measures, and a declared block of interior "
+            "measures of full support drawn by an integer recurrence, "
+            "compared on exact integer numerators over one common "
+            "denominator",
+            ok,
+            "common denominator %d, the rescaling is exact %s; %d Dirac "
+            "comparisons, %d mismatches; %d interior comparisons at %d "
+            "measures of full support, %d mismatches"
+            % (den, exact, dirac, dirac_bad, interior, INTERIOR_MEASURES,
+               interior_bad))
+    S["the_universal"] = {
+        "the_ground": "THE-PER-CONFIGURATION-IDENTITY-PLUS-LINEARITY-OF-THE-"
+                      "NUMERATOR-OF-THE-DIFFERENCE-OF-EXPECTATIONS",
+        "area_discriminating_comparisons": len(comps),
+        "dirac_measures": len(coins),
+        "dirac_comparisons": dirac,
+        "dirac_mismatches": dirac_bad,
+        "interior_measures": INTERIOR_MEASURES,
+        "interior_measures_of_full_support": full,
+        "interior_comparisons": interior,
+        "interior_mismatches": interior_bad,
+        "comparisons_in_all": dirac + interior,
+        "mismatches_in_all": dirac_bad + interior_bad,
+        "the_draw": "AN-INTEGER-RECURRENCE-WITH-A-DECLARED-SEED-NO-LIBRARY-"
+                    "RANDOMNESS",
+        "the_seed": LCG_SEED,
+        "the_common_denominator": den,
+        "the_scope": "EVERY-MEASURE-ON-THIS-CARRIER-NOT-ONLY-THE-ALLOWED-"
+                     "WEIGHT-SYSTEMS"}
+    SEAL.take("THE UNIVERSAL", "the_universal",
+              "G-THE-AREA-BLINDNESS-IS-UNIVERSAL-OVER-MEASURES",
+              S["the_universal"])
+    return interior
 
 
 def measure_family_slices(S, pv):
@@ -1826,12 +2229,18 @@ def measure_family_slices(S, pv):
             q = sum(x * wv[i][1] for i, x in sup)
             v = classify(tab, (p, q), shapes)
             rows.append({"class": ci, "coupling": str(t),
+                         "class_size": len(classes[ci]),
+                         "class_sector": sorted({coin_sector(coins[i])
+                                                 for i in classes[ci]})[0],
                          "area_seen": v["area_seen"],
                          "ladder_word": v["ladder_word"],
                          "winding_word": v["winding_word"],
+                         "ladder": {str(s): qs_str(tab[S["_perim_reps"][s]])
+                                    for s in S["_perims"]},
                          "plaquette_expectation": qs_str(tab[(1, 1)])})
     if mut("MUT-SLICES"):
         rows[0]["area_seen"] = True
+    ladders = {str(sorted(r["ladder"].items())) for r in rows}
     ok = (len(rows) == 9 and all(r["area_seen"] is False for r in rows)
           and len({r["plaquette_expectation"] for r in rows}) > 1)
     LD.gate("G-THE-FAMILY-SLICES",
@@ -1842,12 +2251,24 @@ def measure_family_slices(S, pv):
             "expectations themselves are required to MOVE, so the slice is "
             "not a constant row wearing a parameter",
             ok,
-            "%d slices; distinct plaquette expectations %d; area-seen at %d "
-            "of them" % (len(rows),
-                         len({r["plaquette_expectation"] for r in rows}),
-                         sum(1 for r in rows if r["area_seen"])))
+            "%d slices; distinct plaquette expectations %d; %d distinct "
+            "ladders over %d classes of sizes %s in sectors %s; area-seen "
+            "at %d of them"
+            % (len(rows), len({r["plaquette_expectation"] for r in rows}),
+               len(ladders), len({r["class"] for r in rows}),
+               sorted({r["class_size"] for r in rows}),
+               sorted({r["class_sector"] for r in rows}),
+               sum(1 for r in rows if r["area_seen"])))
     S["family_slices"] = {"slices": len(rows), "rows": rows,
-                          "the_coupling_values": ["1/2", "2", "4"]}
+                          "the_coupling_values": ["1/2", "2", "4"],
+                          "distinct_classes_raised": len({r["class"]
+                                                          for r in rows}),
+                          "distinct_ladders_returned": len(ladders),
+                          "distinct_plaquette_expectations":
+                              len({r["plaquette_expectation"] for r in rows}),
+                          "the_classes_raised_are_of_one_kind":
+                              len({(r["class_size"], r["class_sector"])
+                                   for r in rows}) == 1}
     SEAL.take("THE FAMILY SLICES", "family_slices", "G-THE-FAMILY-SLICES",
               S["family_slices"])
     return rows
@@ -1863,7 +2284,7 @@ def measure_family_slices(S, pv):
 # extreme point on that class.  The partition is therefore a count over the
 # extreme points, taken leg by leg, and it is measured rather than argued.
 
-def measure_the_price_binding(S, pv):
+def measure_the_price_binding(S, pv, vb):
     rows = S["_sweep"]
     classes = S["_classes"]
     base = 0
@@ -1903,7 +2324,9 @@ def measure_the_price_binding(S, pv):
           and area_leg["verdict"] == "FAMILY-INVARIANT"
           and wind_leg["partitions"]
           and sum(area_leg["tally_over_the_136_extreme_points"].values())
-          == len(classes))
+          == len(classes)
+          and vbwin(vb, "VB-SMU-PRICE", "G-THE-PRICE-BINDING",
+                    "surjects onto the invariant simplex"))
     LD.gate("G-THE-PRICE-BINDING",
             "the partition question is answered LEG BY LEG and by counting, "
             "never by argument: the inventory the parent handed over is one "
@@ -1927,6 +2350,7 @@ def measure_the_price_binding(S, pv):
         "couplings_counted": len(couplings),
         "legs": legs,
         "extreme_points_with_no_halving_mode": zeroC,
+        "extreme_points_with_a_halving_mode": len(rows) - zeroC,
         "extreme_points_with_no_perimeter_mode": zeroB,
         "extreme_points_with_a_zero_winding_expectation": windzero,
         "extreme_points_where_the_creutz_ratio_is_undefined": undef,
@@ -2096,8 +2520,32 @@ def measure_the_spectral_door(S, pv):
             "the_reading": "THE-WINDING-HOLONOMY-IS-UNITARY-SO-ITS-SPECTRUM-"
                            "LIES-ON-THE-UNIT-CIRCLE-AND-CARRIES-NO-DECAYING-"
                            "DIRECTION"},
-        "SPC_inherits": "THE-GAP-1/2-IS-THE-MASS-GAP-QUESTIONS-FINITE-FORM-"
-                        "AT-THIS-ARENA-AND-IT-IS-FAMILY-INVARIANT"}
+        "the_support_of_the_halving_mode": {
+            "the_spectrum_is_the_closed_forms_ansatz_not_the_true_transfer_"
+            "matrixs": True,
+            "the_form_holds_at_coins": S["arena"]["coins"]
+            - S["closed_form"]["closed_form_failures"],
+            "coins": S["arena"]["coins"],
+            "the_halving_mode_is_present_at_coins": S["closed_form"][
+                "coefficient_profile"]["C"].get("1", 0),
+            "the_halving_mode_is_absent_at_coins": S["closed_form"][
+                "coefficient_profile"]["C"].get("0", 0),
+            "the_halving_mode_is_present_at_extreme_points":
+                S["price_binding"]["extreme_points_with_a_halving_mode"],
+            "the_halving_mode_is_absent_at_extreme_points":
+                S["price_binding"]["extreme_points_with_no_halving_mode"],
+            "extreme_points": S["family_sweep"]["extreme_points"],
+            "where_the_halving_coefficient_vanishes_the_realised_ladder_is":
+                "A+B*P-WHOSE-MINIMAL-TRANSFER-OBJECT-HAS-NO-GAP-1/2-AT-ALL"},
+        "SPC_inherits":
+            "THE-GAP-%s-IS-THE-CLOSED-FORM-ANSATZS-AND-IS-THE-MASS-GAP-"
+            "QUESTIONS-FINITE-FORM-AT-THIS-ARENA-ONLY-AT-THE-SUPPORT-OF-THE-"
+            "HALVING-MODE-WHICH-IS-%d-OF-%d-COINS-AND-%d-OF-%d-EXTREME-POINTS"
+            % (ladder_gap,
+               S["closed_form"]["coefficient_profile"]["C"].get("1", 0),
+               S["arena"]["coins"],
+               S["price_binding"]["extreme_points_with_a_halving_mode"],
+               S["family_sweep"]["extreme_points"])}
     SEAL.take("THE SPECTRAL DOOR", "spectral_door", "G-THE-SPECTRAL-DOOR",
               S["spectral_door"])
     return door
@@ -2350,6 +2798,8 @@ def measure_the_orientation_reading(S, pv):
                            "SYMMETRY-STANDARD",
         "status": "DECLARED-NEVER-DERIVED-NEITHER-STANDARD-IS-CLAIMED-TRUE",
         "stamp": "DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING",
+        "every_integer_here_is_a_count": "COUNTING-ONLY-E-24-NO-MEASURE-OVER-"
+                                         "THE-FAMILY-IS-DECLARED",
         "readings": dec,
         "the_price_in_convention": "ONE-BINARY-CHOICE-THE-INDEX-IS-2-AT-"
                                    "BOTH-READINGS",
@@ -2468,6 +2918,33 @@ def measure_the_boundary_lattice(S, pv):
         "coins_with_identical_coefficients": same,
         "parent_orbits": len(parent2), "classes": len(classes2),
         "orbit_pairs_merged": merged2,
+        "the_comparison_table": [
+            {"quantity": "simple rectangle shapes",
+             "at_the_declared_L": S["loop_family"]["simple_rectangle_shapes"],
+             "at_the_boundary_L": simple},
+            {"quantity": "area-discriminating comparisons",
+             "at_the_declared_L":
+                 S["discriminator"]["area_discriminating_comparisons"],
+             "at_the_boundary_L": len(comps)},
+            {"quantity": "the longest ladder perimeter",
+             "at_the_declared_L": max(S["closed_form"]["perimeters"]),
+             "at_the_boundary_L": max(ss)},
+            {"quantity": "the merging index",
+             "at_the_declared_L": [r["the_merging_index"] for r in
+                                   S["discriminator"]["the_L_boundary"]
+                                   if r["L"] == S["arena"]["L"]][0],
+             "at_the_boundary_L": [r["the_merging_index"] for r in
+                                   S["discriminator"]["the_L_boundary"]
+                                   if r["L"] == L2][0]},
+            {"quantity": "the parents orbits",
+             "at_the_declared_L": S["classes"]["parent_orbits"],
+             "at_the_boundary_L": len(parent2)},
+            {"quantity": "the induced classes",
+             "at_the_declared_L": S["classes"]["classes"],
+             "at_the_boundary_L": len(classes2)},
+            {"quantity": "orbit pairs merged",
+             "at_the_declared_L": S["classes"]["orbit_pairs_merged"],
+             "at_the_boundary_L": merged2}],
         "what_survives": "AREA-BLINDNESS-AND-THE-CLOSED-FORM-AND-THE-GAP",
         "what_does_not": "THE-CLASS-MERGING-AND-EVERY-COUNT-BUILT-ON-IT"}
     SEAL.take("THE BOUNDARY LATTICE", "boundary_lattice",
@@ -2646,6 +3123,7 @@ def measure_the_verdict(S, pv):
             "points; row tally %s; sweep tally %s"
             % (word, len(rows), len(sweep), t1, t2))
     S["_head_word"] = word
+    SEAL.take("THE HEAD WORD", "verdict_head", "G-THE-HEAD-IS-DERIVED", word)
     return word
 
 
@@ -2660,6 +3138,7 @@ def render_verdict(S):
     pb, sd = S["price_binding"], S["spectral_door"]
     bl, cf = S["boundary_lattice"], S["closed_form"]
     ar, cl = S["arena"], S["classes"]
+    ci = S["constant_ladder_identity"]
     wz = fs["winding_word_tally"].get("WINDING-ORDER-ZERO", 0)
     wn = fs["winding_word_tally"].get("WINDING-ORDER-NONZERO", 0)
     rz = cr["winding_word_tally"].get("WINDING-ORDER-ZERO", 0)
@@ -2711,22 +3190,28 @@ def render_verdict(S):
                   "+".join(fs["coupling_dependent_observables"]), nsl))
     seg.append("PRICE=THE-INVENTORY-IS-%d-COUPLINGS-AND-THE-AREA-LEG-"
                "PARTITIONS-NONE-OF-THEM;THE-WINDING-LEG-PARTITIONS-%d-"
-               "AGAINST-%d;THE-HALVING-MODE-IS-ABSENT-AT-%d-OF-%d;THE-"
+               "AGAINST-%d-OF-%d;THE-HALVING-MODE-IS-ABSENT-AT-%d-OF-%d;THE-"
                "PERIMETER-MODE-IS-ABSENT-AT-%d-OF-%d;THE-CREUTZ-RATIO-IS-"
-               "UNDEFINED-AT-%d-OF-%d"
-               % (pb["the_inventory"], wn, wz,
+               "UNDEFINED-AT-%d-OF-%d;THE-CREUTZ-RATIO-IS-ONE-AT-%d-WHICH-"
+               "ARE-EXACTLY-THE-%d-LADDERS-CONSTANT-IN-THE-PERIMETER"
+               % (pb["the_inventory"], wn, wz, npts,
                   pb["extreme_points_with_no_halving_mode"], npts,
                   pb["extreme_points_with_no_perimeter_mode"], npts,
                   pb["extreme_points_where_the_creutz_ratio_is_undefined"],
-                  npts))
+                  npts, ci["the_creutz_ratio_is_one_at"],
+                  ci["the_ladder_is_constant_in_the_perimeter_at"]))
     seg.append("SPECTRAL-DOOR=THE-TRANSFER-MATRIX-ON-A-TIME-SLICE-IS-NAMED-"
-               "NOT-RUN-AT-%s-STATES-PER-SLICE;THE-FINITE-FORM-IS-MEASURED="
-               "W=A+B*P+C*2^-P-WITH-SPECTRUM-%s-AND-GAP-%s-AT-%d-OF-%d-COINS;"
-               "THE-WINDING-HOLONOMY-IS-UNITARY-AT-%d-OF-%d-SO-ITS-SPECTRUM-"
-               "CARRIES-NO-DECAY;SPC-INHERITS-THE-GAP"
+               "NOT-RUN-AT-%s-STATES-PER-SLICE;THE-FINITE-FORM-IS-MEASURED-"
+               "AT-%d-OF-%d-COINS=W=A+B*P+C*2^-P;THE-ANSATZS-SPECTRUM-IS-%s-"
+               "WITH-GAP-%s-AND-ITS-HALVING-MODE-IS-PRESENT-AT-%d-OF-%d-"
+               "COINS-AND-%d-OF-%d-EXTREME-POINTS;THE-WINDING-HOLONOMY-IS-"
+               "UNITARY-AT-%d-OF-%d-SO-ITS-SPECTRUM-CARRIES-NO-DECAY;SPC-"
+               "INHERITS-THE-GAP-AT-THAT-SUPPORT"
                % (sd["the_door_named"]["states_per_slice"],
-                  cf["the_transfer_spectrum"], cf["the_gap"],
                   ar["coins"] - cf["closed_form_failures"], ar["coins"],
+                  cf["the_transfer_spectrum"], cf["the_gap"],
+                  cf["coefficient_profile"]["C"].get("1", 0), ar["coins"],
+                  pb["extreme_points_with_a_halving_mode"], npts,
                   sd["the_holonomys_own_spectrum"][
                       "self_inversive_characteristic_polynomial"],
                   sd["the_holonomys_own_spectrum"]["holonomies_tested"]))
@@ -2777,10 +3262,13 @@ def render_verdict(S):
 
 
 def rerender_verdict(payload):
-    """THE DE-TWINNED COMPARATOR: it reads ONLY the serialized receipt, it
-    derives the head by the second head law, it re-renders every segment from
-    the primitive measured tables, and it shares no format string and no
-    helper with the builder above."""
+    """THE DE-TWINNED COMPARATOR.  It reads ONLY the receipt payload -- the
+    same object that is about to be serialized, not the builder's working
+    state -- derives the head by the second head law over the tallies rather
+    than the rows, re-renders every segment from the measured tables, and
+    shares no format string and no helper with the builder above.  What it
+    therefore guards is the RENDERING and the staleness of the string, not
+    the measurement underneath it, and it is said here to do exactly that."""
     A = payload["arena"]
     LFm = payload["loop_family"]
     D = payload["discriminator"]
@@ -2845,26 +3333,37 @@ def rerender_verdict(payload):
         "+".join(FS["family_invariant_observables"]), ";COUPLING-DEPENDENT=",
         "+".join(FS["coupling_dependent_observables"]), ";SLICES=", str(ns),
         "-EXACT-ONE-PARAMETER-ROWS-AGREE-AT-THE-AREA-LEG"]))
+    CI = payload["constant_ladder_identity"]
     out.append("".join([
         "PRICE=THE-INVENTORY-IS-", str(PB["the_inventory"]),
         "-COUPLINGS-AND-THE-AREA-LEG-PARTITIONS-NONE-OF-THEM;THE-WINDING-"
-        "LEG-PARTITIONS-", str(wn), "-AGAINST-", str(wz),
+        "LEG-PARTITIONS-", str(wn), "-AGAINST-", str(wz), "-OF-", str(np_),
         ";THE-HALVING-MODE-IS-ABSENT-AT-",
         str(PB["extreme_points_with_no_halving_mode"]), "-OF-", str(np_),
         ";THE-PERIMETER-MODE-IS-ABSENT-AT-",
         str(PB["extreme_points_with_no_perimeter_mode"]), "-OF-", str(np_),
-        ";THE-CREUTZ-RATIO-IS-UNDEFINED-AT-", str(undef), "-OF-", str(np_)]))
+        ";THE-CREUTZ-RATIO-IS-UNDEFINED-AT-", str(undef), "-OF-", str(np_),
+        ";THE-CREUTZ-RATIO-IS-ONE-AT-",
+        str(CI["the_creutz_ratio_is_one_at"]), "-WHICH-ARE-EXACTLY-THE-",
+        str(CI["the_ladder_is_constant_in_the_perimeter_at"]),
+        "-LADDERS-CONSTANT-IN-THE-PERIMETER"]))
     hs = SD["the_holonomys_own_spectrum"]
     out.append("".join([
         "SPECTRAL-DOOR=THE-TRANSFER-MATRIX-ON-A-TIME-SLICE-IS-NAMED-NOT-RUN-"
         "AT-", SD["the_door_named"]["states_per_slice"],
-        "-STATES-PER-SLICE;THE-FINITE-FORM-IS-MEASURED=W=A+B*P+C*2^-P-WITH-"
-        "SPECTRUM-", CF["the_transfer_spectrum"], "-AND-GAP-", CF["the_gap"],
-        "-AT-", str(A["coins"] - CF["closed_form_failures"]), "-OF-",
-        str(A["coins"]), "-COINS;THE-WINDING-HOLONOMY-IS-UNITARY-AT-",
+        "-STATES-PER-SLICE;THE-FINITE-FORM-IS-MEASURED-AT-",
+        str(A["coins"] - CF["closed_form_failures"]), "-OF-",
+        str(A["coins"]), "-COINS=W=A+B*P+C*2^-P;THE-ANSATZS-SPECTRUM-IS-",
+        CF["the_transfer_spectrum"], "-WITH-GAP-", CF["the_gap"],
+        "-AND-ITS-HALVING-MODE-IS-PRESENT-AT-",
+        str(CF["coefficient_profile"]["C"].get("1", 0)), "-OF-",
+        str(A["coins"]), "-COINS-AND-",
+        str(PB["extreme_points_with_a_halving_mode"]), "-OF-", str(np_),
+        "-EXTREME-POINTS;THE-WINDING-HOLONOMY-IS-UNITARY-AT-",
         str(hs["self_inversive_characteristic_polynomial"]), "-OF-",
         str(hs["holonomies_tested"]),
-        "-SO-ITS-SPECTRUM-CARRIES-NO-DECAY;SPC-INHERITS-THE-GAP"]))
+        "-SO-ITS-SPECTRUM-CARRIES-NO-DECAY;SPC-INHERITS-THE-GAP-AT-THAT-"
+        "SUPPORT"]))
     OR = payload["orientation_reading"]
     cs = OR["the_conjugation_split"]
     out.append("".join([
@@ -2943,10 +3442,10 @@ MUTANTS = [
      "classes[-1] + classes[-2]"),
     ("MUT-BASEPOINT", "G-THE-LOOP-OBSERVABLE-IS-BASE-POINT-BLIND",
      "reports a base-point disagreement on the plaquette",
-     'if mut("MUT-BASEPOINT") and key == ("RECTANGLE-CIRCUIT", 1, 1)'),
+     "mism = 1"),
     ("MUT-REVERSAL", "G-THE-LOOP-OBSERVABLE-IS-REVERSAL-BLIND",
      "reports a reversal disagreement",
-     'if mut("MUT-REVERSAL"):'),
+     "rev_bad = 1"),
     ("MUT-PLAQUETTE", "G-PLAQUETTE-ROW-REPRODUCED",
      "drops one distinct plaquette trace value",
      "distinct = distinct[:-1]"),
@@ -2960,8 +3459,8 @@ MUTANTS = [
      "ALONE", "reports an equal-perimeter disagreement",
      "perim_only = 1"),
     ("MUT-CLOSED-FORM", "G-THE-LADDER-CLOSED-FORM",
-     "reports a closed-form verification failure",
-     'if mut("MUT-CLOSED-FORM"):'),
+     "reports a closed-form verification failure at every coin",
+     "bad = len(coins)"),
     ("MUT-ROW-UNSTAMPED", "G-THE-DECLARED-ROWS-BUILT",
      "strips the conditional stamp from one declared row",
      'rows[2]["stamp"] = "PLAIN"'),
@@ -3059,8 +3558,44 @@ MUTANTS = [
      "edits a ledger row after its gate closed",
      'rows[1]["detail"] = rows[1]["detail"] + " "'),
     ("MUT-TABLE-ROW", "G-PAPER-TABLE-ROWS-COVERED",
-     "leaves a delivered table row uncovered by any claim",
-     "covered = covered - 1"),
+     "drops a licensed data row from the rendered row multiset",
+     "data = data[:-1]"),
+    ("MUT-CONSUMER-UNREAD", "G-CONSUMER-REGISTER-IS-REAL",
+     "leaves a verbatim window unread by the gate that names it",
+     'r["anchor"] != "VB-SMU-PRICE"'),
+    ("MUT-CONSTANT-SET", "G-THE-CREUTZ-UNIT-SET-IS-THE-CONSTANT-LADDER-SET",
+     "drops one point from the constant-ladder set the identity is taken "
+     "against", "const = set(sorted(const)[1:])"),
+    ("MUT-LENGTH-READING", "G-THE-LENGTH-DOES-NOT-DETERMINE-THE-OBSERVABLE",
+     "reports that no two shapes of equal length disagree at any coin",
+     "coins_at_which_they_disagree=0"),
+    ("MUT-UNIVERSAL", "G-THE-AREA-BLINDNESS-IS-UNIVERSAL-OVER-MEASURES",
+     "reports an interior measure at which the area is seen",
+     "interior_bad = 1"),
+    ("MUT-PAPER-CLAIM-COUNT", "G-PAPER-CLAIMS-RENDERED",
+     "raises one claim's declared occurrence count above the rendering",
+     'C[1]["need"] = C[1]["need"] + 1'),
+    ("MUT-PAPER-SPAN", "G-PAPER-INLINE-SPANS-LICENSED",
+     "drops a declared path the paper spans from the licensed set",
+     "licensed_spans.discard(RECEIPT_REL)"),
+    ("MUT-PAPER-SHORT-NUMERAL", "G-PAPER-SHORT-NUMERALS-IN-CONTEXT",
+     "drops a rendered short numeral from the context registry",
+     'ctx.discard("24")'),
+    ("MUT-PAPER-QUOTES", "G-PAPER-QUOTES-INSIDE-THE-WINDOWS",
+     "drops one pinned window from the set the quotations are read against",
+     "windows = windows[1:]"),
+    ("MUT-MUSTNOT-CONTENT", "G-PAPER-MUST-NOT",
+     "plants a continuum phrase in the swept body",
+     "The lattice spacing goes to zero."),
+    ("MUT-COVERAGE", "G-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+     "puts a gate with neither a falsifier nor a forcing on the clean path",
+     '"G-A-GATE-WITH-NEITHER-A-FALSIFIER-NOR-A-FORCING"'),
+    ("MUT-RECEIPT-HEADER", "G-THE-RECEIPT-HEADER-IS-BOUND",
+     "publishes a paper digest the bytes do not have",
+     'paper = "0" * 12'),
+    ("MUT-TRANSCRIPT", "G-THE-TRANSCRIPT-RECONCILES",
+     "fabricates a transcript line for a gate that never ran",
+     '"G-A-GATE-THAT-NEVER-RAN"'),
 ]
 
 FUNCTION_INVENTORY = [
@@ -3072,7 +3607,12 @@ FUNCTION_INVENTORY = [
     "link_stencil_orbits", "measure_the_orientation_reading",
     "hdr", "read_bytes",
     "load_sources", "dig", "measure_path_values", "wsnorm", "mnorm",
-    "measure_verbatim", "measure_consumers", "build_alphabet", "build_coins",
+    "measure_verbatim", "vbwin", "measure_consumers", "build_alphabet",
+    "build_coins", "cell", "build_paper_tables", "value_pairs",
+    "spelled_values", "measure_the_constant_ladder_identity",
+    "measure_the_length_reading", "measure_the_universal_over_measures",
+    "measure_coverage", "measure_the_receipt_header",
+    "measure_the_transcript", "addspan",
     "coin_sector", "coin_unitary_second_route", "gauge_twist", "build_arena",
     "rect_cycle", "wind_cycle", "stair_cycle", "rotations", "canon",
     "steps_of", "homology", "holonomy_trace", "enumerate_family",
@@ -3090,7 +3630,7 @@ FUNCTION_INVENTORY = [
     "render_verdict", "rerender_verdict", "scan_syntax_tree",
     "sentences_of", "number_tokens", "receipt_number_registry",
     "build_paper_claims", "measure_paper", "measure_totals", "write_out",
-    "run", "selftest", "main",
+    "run", "selftest", "main", "tree_state",
     "__init__", "gate", "verify_chain", "resolve", "take", "reverify",
     "addv", "ends", "add", "walk", "tally", "averages", "area_table",
     "perim_table", "holed_table", "short_table",
@@ -3193,7 +3733,10 @@ def scan_syntax_tree(S):
 CONFINEMENT_WORDS = ["confinement", "confines", "confining", "confined",
                      "deconfinement", "deconfines", "deconfining",
                      "area law", "string tension", "static potential",
-                     "order parameter"]
+                     "order parameter",
+                     "enclosed area", "flux tube", "linear potential",
+                     "grows linearly", "tension per unit", "quark",
+                     "screening", "wilson loop"]
 
 DECLARING_MARKERS = [
     "licensed for this unit only",
@@ -3201,6 +3744,9 @@ DECLARING_MARKERS = [
     "the pin's own wall",
     "the vocabulary this unit is licensed to use",
 ]
+
+JOINING_PHRASES = ["-of-the-", "-of-", "-against-", " of the ", " of ",
+                   " against ", "-at-", " at "]
 
 SI_UNITS = ["metre", "metres", "meter", "meters", "second", "seconds",
             "kilogram", "kilograms", "joule", "joules", "kelvin", "newton",
@@ -3289,43 +3835,243 @@ def hdr(*keys):
     return "| " + " | ".join(k.replace("_", " ") for k in keys) + " |"
 
 
+def cell(v):
+    """one table cell, rendered from a receipt value: booleans become the
+    words the tables use, tallies become 'value count' lists, and everything
+    else is its own string."""
+    if isinstance(v, bool):
+        return "yes" if v else "no"
+    if isinstance(v, dict):
+        return ", ".join("%s %s" % (k, v[k]) for k in sorted(v))
+    if isinstance(v, list):
+        return ", ".join(str(x) for x in v)
+    return str(v)
+
+
+def build_paper_tables(S):
+    """THE TABLES, RENDERED FROM THE RECEIPT'S OWN ROW OBJECTS -- header and
+    data alike.  K3's MAJOR-5 at this unit: a header bound while its cells
+    are free lets a row label or a verdict word be exchanged in the paper
+    without the run noticing, so every data row is rendered here from the
+    row object it reports and the paper's rows are compared against this
+    rendering as a MULTISET, exactly as the headers already were.  The
+    columns are the receipt keys themselves, and that correspondence is
+    checked rather than trusted."""
+    lf, dc = S["loop_family"], S["discriminator"]
+    cr, pb = S["conditional_rows"], S["price_binding"]
+    bl, orr = S["boundary_lattice"], S["orientation_reading"]
+    lr = S["length_reading"]
+    tables = [
+        ("THE-SIMPLICITY-CENSUS", lf["simplicity_rows"],
+         ["a", "b", "steps", "distinct_links", "distinct_sites", "simple"]),
+        ("THE-ORBIT-CLOSURE", lf["orbit_rows"],
+         ["reading", "chart_order", "distinct_loops", "orbits",
+          "images_outside_the_declared_family"]),
+        ("THE-EQUAL-LENGTH-READING", lr["rows"],
+         ["step_count", "shapes_of_that_length",
+          "coins_at_which_they_disagree", "coins"]),
+        ("THE-MERGING-INDEX-LAW", dc["the_L_boundary"],
+         ["L", "residual_order_on_the_torus", "the_link_stencils_gauge_image",
+          "the_merging_index",
+          "the_odd_twist_is_a_gauge_transformation_here"]),
+        ("THE-DECLARED-ROWS", cr["rows"],
+         ["row", "weight_system", "exponent", "plaquette_expectation",
+          "ladder_word", "winding_word"]),
+        ("THE-DECLARED-ROWS-MODES", cr["rows"],
+         ["row", "mode_A", "mode_B", "mode_C", "closed_form_holds"]),
+        ("THE-PRICE-PARTITION", pb["legs"],
+         ["leg", "distinct_values_over_the_extreme_points", "partitions",
+          "tally_over_the_136_extreme_points", "verdict"]),
+        ("THE-CONTROL-ARMS", S["control_arms"]["arms"],
+         ["arm", "the_synthetic_law", "ladder_word", "head_word", "agrees"]),
+        ("THE-BOUNDARY-COMPARISON", bl["the_comparison_table"],
+         ["quantity", "at_the_declared_L", "at_the_boundary_L"]),
+        ("THE-ORIENTATION-PRICE", orr["readings"],
+         ["reading", "chart_group_order",
+          "the_link_stencils_chart_stabilizer", "orbits", "coupling_count"]),
+    ]
+    heads, data, unbound = [], [], []
+    for name, rows, keys in tables:
+        for k in keys:
+            if any(k not in r for r in rows):
+                unbound.append("%s/%s" % (name, k))
+        heads.append(hdr(*keys))
+        for r in rows:
+            data.append("| " + " | ".join(cell(r.get(k)) for k in keys) + " |")
+    if mut("MUT-PAPER-HEADER"):
+        heads = heads[:-1]
+    if mut("MUT-TABLE-ROW"):
+        data = data[:-1]
+    return heads, data, unbound, tables
+
+
+def value_pairs(text):
+    """the (value, value) pairs a string states TOGETHER -- two numerals
+    separated by nothing but one of the declared joining phrases.  '96 of
+    136' is what a reader carries away, and a pair is licensed only if this
+    run measured those two values AND JOINED THEM THE SAME WAY; a sentence
+    that pairs two separately measured numbers into a relation nothing
+    measured stops the delivery run.  The pair carries the joining phrase
+    and NOT the subject it is said about, so referent binding is outside
+    this function and outside the wall that uses it."""
+    t = text.lower()
+    for j in JOINING_PHRASES:
+        t = t.replace(j, "\x00")
+    parts = t.split("\x00")
+    out = set()
+    for i in range(len(parts) - 1):
+        left, right = parts[i], parts[i + 1]
+        a, b = [], []
+        for ch in reversed(left):
+            if ch.isdigit():
+                a.append(ch)
+            else:
+                break
+        for ch in right:
+            if ch.isdigit():
+                b.append(ch)
+            else:
+                break
+        if a and b:
+            out.add(("".join(reversed(a)), "".join(b)))
+    return out
+
+
+def spelled_values(text):
+    """a general spelled-number reader, so that a count written in words is
+    read the way a reader reads it: units, teens and tens compose, 'hundred'
+    and 'thousand' scale, and the resolved VALUE is what the gate then asks
+    the receipt for."""
+    words, cur = [], []
+    for ch in text.lower():
+        if ch.isalpha():
+            cur.append(ch)
+        else:
+            if cur:
+                words.append("".join(cur))
+            cur = []
+    if cur:
+        words.append("".join(cur))
+    out, acc, live = [], 0, False
+    for w in words:
+        if w in NUMWORD_TENS:
+            if live:
+                out.append(acc)
+            acc, live = NUMWORD_TENS[w], True
+        elif w in NUMWORD_TEENS:
+            if live:
+                out.append(acc)
+            acc, live = NUMWORD_TEENS[w], True
+        elif w in NUMWORD_UNITS:
+            if live and acc in NUMWORD_TENS.values():
+                acc = acc + NUMWORD_UNITS[w]
+            else:
+                if live:
+                    out.append(acc)
+                acc = NUMWORD_UNITS[w]
+            live = True
+        elif w in NUMWORD_SCALES:
+            acc = (acc if live else 1) * NUMWORD_SCALES[w]
+            live = True
+        elif w == "and":
+            continue
+        else:
+            if live:
+                out.append(acc)
+            acc, live = 0, False
+    if live:
+        out.append(acc)
+    return out
+
+
 def build_paper_claims(S):
+    """every number the paper states, rendered here from the receipt.  Each
+    claim carries the number of times the licensed rendering occurs in the
+    delivered text, and the gate compares that count for EQUALITY -- so a
+    second occurrence corrupted, or a rendering deleted, both stop the run.
+    The multiplicity is a declaration about the rendering, not a count of
+    anything measured."""
     lf, dc = S["loop_family"], S["discriminator"]
     cr, fs = S["conditional_rows"], S["family_sweep"]
     pb, sd = S["price_binding"], S["spectral_door"]
     bl, cf = S["boundary_lattice"], S["closed_form"]
     ar, cl = S["arena"], S["classes"]
+    ci, lr, un = (S["constant_ladder_identity"], S["length_reading"],
+                  S["the_universal"])
     C = []
 
     def add(cid, text, need=1):
         C.append({"claim": cid, "text": text, "need": need})
 
+    add("C-ARENA", "%d sites, %d links and %d plaquettes"
+        % (ar["sites"], ar["links"], ar["plaquettes"]))
+    add("C-ALPHABET", "returns %d elements" % ar["alphabet"])
+    add("C-COINS", "returns %d coins splitting into %d diagonal, %d "
+        "antidiagonal and %d balanced"
+        % (ar["coins"], ar["sectors"]["DIAGONAL"],
+           ar["sectors"]["ANTIDIAGONAL"], ar["sectors"]["BALANCED"]))
+    add("C-SHAPES", "%d of the %d declared shapes"
+        % (S["loop_observable"]["shapes_whose_raw_trace_is_already_real"],
+           len(S["_shapes"])))
+    add("C-PLAQ-VALUES", "takes %d distinct values"
+        % S["loop_observable"]["plaquette_distinct_values"])
+    add("C-PLAQ-COUNT", "counting expectation is %s"
+        % S["loop_observable"]["plaquette_counting_expectation"])
+    add("C-PLAQ-DIAG", "%d of the diagonal coins are non-flat"
+        % S["loop_observable"]["plaquette_nonflat_diagonal_coins"])
+    add("C-CONSTANT-SINGLE", "a single mode is active at %d"
+        % ci["single_mode_extreme_points"], 2)
+    add("C-CONSTANT-ONLY-B", "at the remaining %d"
+        % ci["single_mode_but_perimeter_proportional"])
+    add("C-LENGTH", "%d of the %d coins"
+        % (lr["rows"][0]["coins_at_which_they_disagree"], ar["coins"]), 2)
+    add("C-UNIVERSAL", "%d Dirac measures and %d interior measures"
+        % (un["dirac_measures"], un["interior_measures"]))
+    add("C-UNIVERSAL-CHECKS", "%d comparisons and %d mismatches"
+        % (un["comparisons_in_all"], un["mismatches_in_all"]))
+    add("C-AREA-BASIS", "%d area-discriminating comparison-by-coin checks"
+        % cf["area_discriminating_comparison_by_coin_checks"], 3)
+    add("C-CROSS-BASIS", "%d of them are a shape compared with itself and %d "
+        "are cross-shape" % (cf["equal_perimeter_self_comparisons"],
+                             cf["equal_perimeter_cross_shape_comparisons"]))
+    add("C-HALVING-SUPPORT", "present at %d of the %d coins and at %d of the "
+        "%d extreme points"
+        % (cf["coefficient_profile"]["C"].get("1", 0), ar["coins"],
+           pb["extreme_points_with_a_halving_mode"],
+           fs["extreme_points"]), 3)
+    add("C-WALL-WORDS", "%d declared words" % len(CONFINEMENT_WORDS), 2)
+    add("C-EXIT", "exits %s" % EXIT_CONVENTIONS["delivery"])
+    add("C-EXIT-UNKNOWN", "Unknown flags exit %s"
+        % EXIT_CONVENTIONS["unknown_flag"])
+    add("C-SLICE-CLASSES", "%d couplings against %d classes"
+        % (len(S["family_slices"]["the_coupling_values"]),
+           S["family_slices"]["distinct_classes_raised"]))
     add("C-FAMILY", "%d placements and %d distinct loops"
-        % (lf["placements"], lf["distinct_loops"]))
+        % (lf["placements"], lf["distinct_loops"]), 2)
     add("C-FAMILY-SPLIT", "%d contractible and %d winding"
-        % (lf["contractible"], lf["winding"]))
+        % (lf["contractible"], lf["winding"]), 2)
     add("C-EXTENTS", "simple at %d of the %d sizes swept"
         % (lf["simple_rectangle_shapes"], lf["rectangle_sizes_swept"]))
     add("C-ORBITS", "%d orbits under a chart group of order %d"
         % (lf["orbit_rows"][0]["orbits"],
-           lf["orbit_rows"][0]["chart_order"]))
+           lf["orbit_rows"][0]["chart_order"]), 2)
     add("C-ESCAPES", "%d images outside the declared family"
-        % lf["orbit_rows"][1]["images_outside_the_declared_family"])
+        % lf["orbit_rows"][1]["images_outside_the_declared_family"], 3)
     add("C-COMPARISONS", "%d area-discriminating comparisons and %d Creutz "
         "rungs" % (dc["area_discriminating_comparisons"],
-                   dc["creutz_rungs"]))
+                   dc["creutz_rungs"]), 2)
     add("C-PERIM-ONLY", "%d shape-by-coin comparisons at equal perimeter "
         "and %d disagreements" % (cf["equal_perimeter_comparisons"],
                                   cf["equal_perimeter_disagreements"]))
     add("C-CLOSED-FORM", "%d closed-form failures over %d coins"
         % (cf["closed_form_failures"], ar["coins"]))
     add("C-SPECTRUM", "spectrum %s and gap %s"
-        % (cf["the_transfer_spectrum"], cf["the_gap"]))
+        % (cf["the_transfer_spectrum"], cf["the_gap"]), 3)
     add("C-CLASSES", "%d classes against %d parent orbits, %d pairs merged"
         % (cl["classes"], cl["parent_orbits"], cl["orbit_pairs_merged"]))
     add("C-EXTREME", "%d vertices and %d edge midpoints"
         % (cl["extreme_points_that_are_vertices"],
-           cl["extreme_points_that_are_edge_midpoints"]))
+           cl["extreme_points_that_are_edge_midpoints"]), 3)
     for r in cr["rows"]:
         add("C-ROW-" + r["row"], "%s at %s"
             % (r["plaquette_expectation"], r["row"]))
@@ -3335,29 +4081,30 @@ def build_paper_claims(S):
            len(cr["rows"])))
     add("C-SWEEP", "%d extreme points swept, %d vertices and %d edge "
         "midpoints" % (fs["extreme_points"], fs["vertices"],
-                       fs["edge_midpoints"]))
+                       fs["edge_midpoints"]), 2)
     add("C-SWEEP-WIND", "%d with a non-zero winding expectation and %d with "
         "zero" % (fs["winding_word_tally"].get("WINDING-ORDER-NONZERO", 0),
                   fs["winding_word_tally"].get("WINDING-ORDER-ZERO", 0)))
     add("C-SWEEP-UNIT", "%d of the %d extreme points where the ratio is one"
         % (fs["ladder_word_tally"].get("DECONFINES", 0),
-           fs["extreme_points"]))
-    add("C-PRICE", "the inventory of %d couplings" % pb["the_inventory"])
+           fs["extreme_points"]), 3)
+    add("C-PRICE", "the inventory of %d couplings" % pb["the_inventory"], 3)
     add("C-PRICE-C", "absent at %d of the %d"
-        % (pb["extreme_points_with_no_halving_mode"], fs["extreme_points"]))
+        % (pb["extreme_points_with_no_halving_mode"],
+           fs["extreme_points"]), 2)
     add("C-PRICE-B", "absent at %d of them"
-        % pb["extreme_points_with_no_perimeter_mode"])
+        % pb["extreme_points_with_no_perimeter_mode"], 2)
     add("C-PRICE-UNDEF", "undefined at %d of them"
         % pb["extreme_points_where_the_creutz_ratio_is_undefined"])
     add("C-DOOR", "%s states per time slice"
-        % sd["the_door_named"]["states_per_slice"])
+        % sd["the_door_named"]["states_per_slice"], 2)
     add("C-DOOR-UNITARY", "%d of %d holonomies"
         % (sd["the_holonomys_own_spectrum"][
             "self_inversive_characteristic_polynomial"],
-           sd["the_holonomys_own_spectrum"]["holonomies_tested"]))
+           sd["the_holonomys_own_spectrum"]["holonomies_tested"]), 2)
     add("C-BOUNDARY", "%d comparison-by-coin checks at L = %d with %d "
         "disagreements" % (bl["comparison_by_coin_checks"], bl["L"],
-                           bl["area_disagreements"]))
+                           bl["area_disagreements"]), 2)
     add("C-BOUNDARY-MODES", "%d of the %d coins carry identical coefficients"
         % (bl["coins_with_identical_coefficients"], ar["coins"]))
     add("C-BOUNDARY-MERGE", "%d merges at L = %d against %d here"
@@ -3376,13 +4123,13 @@ def build_paper_claims(S):
         "part at %d of the %d shapes"
         % (cs["shape_by_coin_traces_with_a_non_zero_odd_part"],
            cs["traces_split"], cs["shapes_carrying_an_odd_part"],
-           len(S["_shapes"])))
+           len(S["_shapes"])), 2)
     add("C-ORIENT-POINTS", "%d of the %d extreme points carry at least one"
         % (orr["extreme_points_carrying_an_odd_observable"],
            orr["extreme_points"]))
     add("C-ORIENT-ROWS", "%d non-zero odd observables at every declared row"
         % max(r["non_zero_odd_observables"]
-              for r in orr["what_becomes_lawful"]))
+              for r in orr["what_becomes_lawful"]), 2)
     T = S["totals"]
     add("C-ANCHORS", "%d file-bytes anchors, %d path-value anchors and %d "
         "verbatim-text anchors, %d anchors in all"
@@ -3395,10 +4142,12 @@ def build_paper_claims(S):
     add("C-MUTANTS", "%d declared mutants" % T["mutants_declared"])
     if mut("MUT-PAPER-CLAIM"):
         C[0]["text"] = C[0]["text"] + "X"
+    if mut("MUT-PAPER-CLAIM-COUNT"):
+        C[1]["need"] = C[1]["need"] + 1
     return C
 
 
-def measure_paper(S, payload, verdict):
+def measure_paper(S, payload, verdict, vb):
     raw = read_bytes(PAPER_REL)
     if raw is None:
         raise GateFail("G-PAPER-CLAIMS-RENDERED :: the paper is absent at "
@@ -3409,17 +4158,21 @@ def measure_paper(S, payload, verdict):
     claims = build_paper_claims(S)
     for c in claims:
         c["hits"] = norm.count(mnorm(c["text"]))
-        c["covered"] = c["hits"] >= c["need"]
+        c["covered"] = c["hits"] == c["need"]
     missing = [c["claim"] for c in claims if not c["covered"]]
     LD.gate("G-PAPER-CLAIMS-RENDERED",
             "every number the paper states is RENDERED FROM THE RECEIPT and "
-            "located in the delivered text at its declared occurrence count, "
-            "so no count is typed and a paper that drifted from the "
-            "measurement stops the delivery run",
+            "located in the delivered text at its declared occurrence count "
+            "BY EQUALITY and not by a floor, so a claim rendered twice and "
+            "corrupted at one of the two -- which a floor would forgive -- "
+            "stops the delivery run, and so does a rendering deleted",
             not missing,
-            "%d claims, %d located, missing %s"
+            "%d claims, %d at their declared occurrence counts, %d "
+            "occurrences in all, missing %s"
             % (len(claims), sum(1 for c in claims if c["covered"]),
-               missing[:6]))
+               sum(c["hits"] for c in claims),
+               [(c["claim"], c["hits"], c["need"]) for c in claims
+                if not c["covered"]][:6]))
 
     blocks, inblk, cur = [], False, []
     for line in text.split("\n"):
@@ -3463,26 +4216,7 @@ def measure_paper(S, payload, verdict):
             not badpol and len(pol) == len(POLARITY),
             "%d polarity pairs, %d clean" % (len(pol), len(pol) - len(badpol)))
 
-    heads = [
-        hdr("a", "b", "steps", "distinct_links", "distinct_sites", "simple"),
-        hdr("reading", "chart_order", "distinct_loops", "orbits",
-            "images_outside_the_declared_family"),
-        hdr("L", "residual_order_on_the_torus",
-            "the_link_stencils_gauge_image", "the_merging_index",
-            "the_odd_twist_is_a_gauge_transformation_here"),
-        hdr("row", "weight_system", "exponent", "plaquette_expectation",
-            "ladder_word", "winding_word"),
-        hdr("row", "mode_A", "mode_B", "mode_C", "closed_form_holds"),
-        hdr("leg", "distinct_values_over_the_extreme_points", "partitions",
-            "tally_over_the_136_extreme_points", "verdict"),
-        hdr("arm", "the_synthetic_law", "ladder_word", "head_word", "agrees"),
-        hdr("quantity", "at_the_declared_L", "at_the_boundary_L"),
-        hdr("reading", "chart_group_order",
-            "the_link_stencils_chart_stabilizer", "orbits",
-            "coupling_count"),
-    ]
-    if mut("MUT-PAPER-HEADER"):
-        heads = heads[:-1]
+    heads, datarows, unbound, tbl_spec = build_paper_tables(S)
     hrows = []
     all_lines = [wsnorm(l) for l in text.split("\n")]
     for i, l in enumerate(all_lines):
@@ -3495,12 +4229,16 @@ def measure_paper(S, payload, verdict):
     LD.gate("G-PAPER-HEADERS-BOUND",
             "column headers are bound AS CLAIMS: every header row of every "
             "delivered table is rendered from the receipt keys its own "
-            "columns are, and the paper's header rows are compared as a "
+            "columns are -- and that correspondence is CHECKED, every column "
+            "name being required to be a key of every row object the table "
+            "reports -- and the paper's header rows are compared as a "
             "multiset against that rendering, so two semantically opposed "
             "columns exchanged in the paper stop matching",
-            sorted(hrows) == want_h,
-            "%d header rows in the paper, %d licensed, equal as multisets %s"
-            % (len(hrows), len(want_h), sorted(hrows) == want_h))
+            sorted(hrows) == want_h and not unbound,
+            "%d header rows in the paper, %d licensed over %d tables, equal "
+            "as multisets %s; %d columns naming no receipt key %s"
+            % (len(hrows), len(want_h), len(tbl_spec),
+               sorted(hrows) == want_h, len(unbound), unbound[:3]))
 
     stripped = []
     for line in text.split("\n"):
@@ -3521,73 +4259,193 @@ def measure_paper(S, payload, verdict):
             "both sides of every fraction, against a registry built from "
             "the receipt's own values -- section numbers alone are stripped "
             "from headings, and that stripping is declared here rather than "
-            "silently applied",
+            "silently applied.  This registry is a flat set of digit runs, "
+            "so it has teeth at three digits and up and is published as "
+            "having none below that: the short numerals are gated next, "
+            "against a registry of a different kind",
             not uncovered,
-            "%d numerals scanned, %d uncovered %s"
+            "%d numerals scanned, %d uncovered %s; %d registry tokens, %d of "
+            "them three digits or longer"
             % (len(number_tokens("\n".join(stripped))), len(uncovered),
-               sorted(set(uncovered))[:8]))
+               sorted(set(uncovered))[:8], len(reg),
+               sum(1 for t in reg if len(t) >= 3)))
 
-    words = sorted(NUMWORDS.items())
+    unfenced, infence = [], False
+    for line in text.split("\n"):
+        if line.strip().startswith("```"):
+            infence = not infence
+            continue
+        if not infence:
+            unfenced.append(line)
+    spans, inspan, cur = [], False, []
+    for ch in "\n".join(unfenced):
+        if ch == "`":
+            if inspan:
+                spans.append("".join(cur))
+                cur = []
+            inspan = not inspan
+            continue
+        if inspan:
+            cur.append(ch)
+    licensed_spans = set()
+
+    def addspan(o):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                licensed_spans.add(str(k))
+                addspan(v)
+        elif isinstance(o, list):
+            for v in o:
+                addspan(v)
+        else:
+            licensed_spans.add(str(o))
+    addspan(payload)
+    for rel in (PAPER_REL, OUT_REL, RECEIPT_REL,
+                "v14/code/" + os.path.basename(os.path.abspath(__file__))):
+        licensed_spans.add(rel)
+    for f in FLAGS:
+        licensed_spans.add(f)
+    licensed_spans.add("--mutant")
+    licensed_spans.add(DELIVERY_STATUS)
+    for c in claims:
+        licensed_spans.add(c["text"])
+    for g in CLOSING_GATE_IDS + REFUSAL_ONLY_GATES:
+        licensed_spans.add(g)
+    if mut("MUT-PAPER-SPAN"):
+        licensed_spans.discard(RECEIPT_REL)
+    badspans = sorted({s for s in spans if s not in licensed_spans})
+    LD.gate("G-PAPER-INLINE-SPANS-LICENSED",
+            "every inline code span in the delivered text is required to be "
+            "a string this run measured or declared -- a receipt key, a "
+            "receipt value, a gate id, a mutant name, a declared path or a "
+            "declared flag -- so a numeral cannot be smuggled into the paper "
+            "inside a code span, and a span naming an object this run does "
+            "not have stops the delivery run",
+            not badspans,
+            "%d inline spans, %d distinct, %d unlicensed %s"
+            % (len(spans), len(set(spans)), len(badspans), badspans[:4]))
+
+    ctx = set()
+    for src in ([verdict] + [c["text"] for c in claims] + heads + datarows):
+        for t in number_tokens(src):
+            ctx.add(t)
+    masked, fenced = [], False
+    for line in text.split("\n"):
+        if line.strip().startswith("```"):
+            fenced = not fenced
+            masked.append("")
+            continue
+        if fenced or line.strip().startswith("|"):
+            masked.append("")
+            continue
+        out2, code, dollar, ref = [], False, False, False
+        for ch in line:
+            if ch == "`":
+                code = not code
+                continue
+            if ch == "$":
+                dollar = not dollar
+                continue
+            if code or dollar:
+                continue
+            if ch in ("#", "§", "-"):
+                ref = True
+                out2.append(" ")
+                continue
+            if ch.isdigit() and ref:
+                continue
+            ref = False
+            out2.append(ch)
+        masked.append("".join(out2))
+    mtext = "\n".join(masked)
+    short = [t for t in number_tokens(mtext) if len(t) <= 2]
+    if mut("MUT-PAPER-SHORT-NUMERAL"):
+        ctx.discard("24")
+    shortbad = sorted({t for t in short if t not in ctx})
+    LD.gate("G-PAPER-SHORT-NUMERALS-IN-CONTEXT",
+            "the short numerals are gated against a registry of a different "
+            "kind, because a flat registry of digit runs contains every one- "
+            "and two-digit value and therefore backs nothing: a numeral of "
+            "one or two digits in the paper's PROSE must be a token this run "
+            "rendered IN CONTEXT -- inside a claim, a table row, a table "
+            "header or the verdict string.  The declared exemptions are the "
+            "fenced blocks, the table rows and the inline spans, each bound "
+            "by its own gate, the mathematical spans between dollar signs, "
+            "and the era references written with a hash or a section sign",
+            not shortbad,
+            "%d short numerals in prose after the declared exemptions, %d "
+            "context tokens, %d unbacked %s"
+            % (len(short), len(ctx), len(shortbad), shortbad[:8]))
+
+    words = spelled_values(mnorm(mtext))
     if mut("MUT-PAPER-SPELLED"):
         words = words[:-1]
-    spelled = []
-    low = norm.lower()
-    for val, w in words:
-        if w in low and str(val) not in reg:
-            spelled.append(w)
+    spelled = sorted({v for v in words if str(v) not in ctx})
     LD.gate("G-PAPER-SPELLED-NUMERALS",
-            "spelled numerals above twelve are scanned too, so a count "
-            "written in words cannot slip past the numeral gate: every "
-            "spelled number-word the paper uses must have its value in the "
-            "receipt's registry, and the scan is required to be TOTAL over "
-            "the declared word list, so a truncated scan is fatal rather "
-            "than permissive",
-            (not spelled) and len(words) == len(NUMWORDS),
-            "%d number-words scanned of %d declared, %d unbacked %s"
-            % (len(words), len(NUMWORDS), len(spelled), spelled))
+            "spelled numerals are read the way a reader reads them -- units, "
+            "teens and tens compose, hundred and thousand scale -- and the "
+            "RESOLVED VALUE is required to be a token this run rendered in "
+            "context, so a count written in words cannot slip past the "
+            "numeral gates and the scan is not confined to a declared list "
+            "of words that happen to be backed",
+            not spelled and len(words) == len(spelled_values(mnorm(mtext))),
+            "%d spelled numbers read in the prose, %d distinct values, %d "
+            "unbacked %s"
+            % (len(words), len(set(words)), len(spelled), spelled))
 
-    sents = sentences_of(text)
-    licence = set()
-    licence.add(S["_head_word"])
-    for k in ("AREA-BLIND", "FAMILY-INVARIANT", "PARTITIONS-THE-INVENTORY",
-              "WINDING-ORDER-ZERO", "WINDING-ORDER-NONZERO",
-              "DISCRIMINATOR-DEGENERATE", "CONFINES", "DECONFINES"):
-        licence.add(k)
-    for t in sorted(reg):
-        if len(t) >= 2:
-            licence.add(t)
-    licence.add(S["closed_form"]["the_gap"])
-    for r in S["conditional_rows"]["rows"]:
-        licence.add(r["plaquette_expectation"])
-    declaring, unlicensed = [], []
-    for s in sents:
+    pairs = set()
+    for src in ([verdict] + [c["text"] for c in claims] + heads + datarows):
+        pairs |= value_pairs(src)
+    wall_text = "\n".join("" if l.strip().startswith("|") else l
+                          for l in text.split("\n"))
+    wsents = sentences_of(wall_text)
+    ctexts = [mnorm(c["text"]) for c in claims]
+    declaring, unlicensed, policed = [], [], []
+    for s in wsents:
         sl = s.lower()
         if not any(w in sl for w in CONFINEMENT_WORDS):
             continue
+        policed.append(s)
         if any(m in sl for m in DECLARING_MARKERS):
             declaring.append(s)
             continue
-        if not any(tok.lower() in sl for tok in licence):
+        sn = mnorm(s)
+        vp = value_pairs(s)
+        carries = any(t and t in sn for t in ctexts) or bool(vp & pairs)
+        if not carries or (vp - pairs):
             unlicensed.append(s[:90])
     if mut("MUT-LICENCE-WALL"):
         unlicensed = []
         declaring = []
-    ok = (not unlicensed) and len(declaring) >= 1
+    ok = ((not unlicensed) and len(declaring) >= 1
+          and vbwin(vb, "VB-PIN-LICENCE", "G-THE-CONFINEMENT-LICENCE-WALL",
+                    "carrying its measured discriminator value")
+          and vbwin(vb, "VB-ACT-GATE", "G-THE-CONFINEMENT-LICENCE-WALL",
+                    "REMAINS BEHIND POT'S GATE"))
     LD.gate("G-THE-CONFINEMENT-LICENCE-WALL",
             "the confinement vocabulary is licensed FOR THIS UNIT ONLY and "
-            "only inside measured sentences: every sentence of the "
-            "delivered text that uses one of the licensed words must also "
-            "carry a value this run measured, the sentences that declare the "
-            "wall itself are required to be located rather than assumed, and "
-            "an unmeasured confinement sentence stops the delivery run",
+            "only inside measured sentences, on the pin's own terms, which "
+            "are read here from its window: a sentence of the delivered "
+            "prose that uses one of the declared words must CARRY A "
+            "MEASUREMENT -- a claim this run rendered, or a pair of values "
+            "this run measured and joined as the sentence joins them -- and "
+            "every value pair it states must be one this run measured, so a "
+            "sentence built from the classifier's own words licenses "
+            "nothing, and a sentence that pairs two separately measured "
+            "numbers into a relation nothing measured dies here.  What this "
+            "gate does NOT bind is the subject a licensed pair is attached "
+            "to: a sentence carrying a pair this run measured, said about "
+            "the wrong thing, is outside its reach and is published as "
+            "outside it.  The table rows are excluded from this scan "
+            "because they are bound, cell by cell, against the receipt's "
+            "own row objects at their own gate",
             ok,
-            "%d sentences scanned, %d carrying a licensed word, %d "
-            "declaring the wall, %d unlicensed %s"
-            % (len(sents),
-               sum(1 for s in sents
-                   if any(w in s.lower() for w in CONFINEMENT_WORDS)),
-               len(declaring), len(unlicensed), unlicensed[:2]))
+            "%d prose sentences scanned, %d carrying a declared word of %d, "
+            "%d declaring the wall, %d licensed pairs, %d unlicensed %s"
+            % (len(wsents), len(policed), len(CONFINEMENT_WORDS),
+               len(declaring), len(pairs), len(unlicensed), unlicensed[:2]))
 
+    sents = sentences_of(text)
     decl = list(MUST_NOT_DECLARERS)
     if mut("MUT-MUSTNOT"):
         decl = []
@@ -3598,6 +4456,8 @@ def measure_paper(S, payload, verdict):
         keep.append(s)
     hits = []
     body = " ".join(keep)
+    if mut("MUT-MUSTNOT-CONTENT"):
+        body = body + " The lattice spacing goes to zero."
     for w in SI_UNITS:
         at = 0
         while True:
@@ -3628,24 +4488,28 @@ def measure_paper(S, payload, verdict):
         if l.startswith("|") and l not in hrows and not (
                 set(l.replace("|", "").replace(" ", "")) <= {"-", ":"}):
             tbl_rows.append(l)
-    covered = 0
-    for l in tbl_rows:
-        cells = [c.strip() for c in l.strip("|").split("|")]
-        nums = [c for c in cells if number_tokens(c)]
-        if all(all(t in reg for t in number_tokens(c)) for c in nums):
-            covered += 1
-    if mut("MUT-TABLE-ROW"):
-        covered = covered - 1
+    want_rows = sorted(wsnorm(r) for r in datarows)
+    got_rows = sorted(tbl_rows)
     LD.gate("G-PAPER-TABLE-ROWS-COVERED",
-            "every data row of every delivered table is covered by the "
-            "receipt: each numeral in each cell is required to be a value "
-            "this run measured, so a table row invented in prose stops the "
-            "delivery run",
-            covered == len(tbl_rows),
-            "%d data rows, %d covered" % (len(tbl_rows), covered))
+            "every DATA row of every delivered table is bound the way its "
+            "header is: the licensed row multiset is rendered from the "
+            "receipt's own row objects, cell by cell, and the paper's data "
+            "rows are compared against it as a multiset.  So a verdict word "
+            "exchanged inside a cell, a row label swapped between two "
+            "readings, a tally rewritten, and a whole row fabricated all "
+            "stop the delivery run -- none of which a numeral-membership "
+            "test can see",
+            got_rows == want_rows,
+            "%d data rows in the paper, %d licensed, equal as multisets %s; "
+            "first difference %s"
+            % (len(got_rows), len(want_rows), got_rows == want_rows,
+               ([g for g in got_rows if g not in want_rows][:1]
+                + [w for w in want_rows if w not in got_rows][:1])[:2]))
 
     quotes = [l for l in text.split("\n") if l.strip().startswith(">")]
     windows = [mnorm(t) for _n, _s, t, _f, _c in VERBATIM]
+    if mut("MUT-PAPER-QUOTES"):
+        windows = windows[1:]
     outside = []
     for q in quotes:
         qq = mnorm(q)
@@ -3662,18 +4526,32 @@ def measure_paper(S, payload, verdict):
 
     S["paper_binding"] = {
         "claims": claims, "polarity": pol,
+        "claim_occurrences": sum(c["hits"] for c in claims),
         "header_rows": len(hrows), "licensed_headers": len(want_h),
+        "tables_bound": len(tbl_spec),
         "numerals_scanned": len(number_tokens("\n".join(stripped))),
         "numerals_uncovered": len(uncovered),
-        "spelled_numerals_scanned": len(words),
+        "registry_tokens": len(reg),
+        "registry_tokens_of_three_digits_or_more":
+            sum(1 for t in reg if len(t) >= 3),
+        "short_numerals_in_prose": len(short),
+        "context_registry_tokens": len(ctx),
+        "short_numerals_unbacked": len(shortbad),
+        "inline_spans": len(spans),
+        "inline_spans_unlicensed": len(badspans),
+        "spelled_numbers_read": len(words),
+        "spelled_numbers_unbacked": len(spelled),
         "sentences": len(sents),
-        "confinement_sentences": sum(
-            1 for s in sents
-            if any(w in s.lower() for w in CONFINEMENT_WORDS)),
+        "wall_sentences": len(wsents),
+        "the_declared_words": len(CONFINEMENT_WORDS),
+        "confinement_sentences": len(policed),
         "wall_declaring_sentences": len(declaring),
+        "licensed_value_pairs": len(pairs),
         "unlicensed_confinement_sentences": len(unlicensed),
         "must_not_tokens": len(MUST_NOT), "must_not_hits": len(hits),
-        "table_data_rows": len(tbl_rows), "table_rows_covered": covered,
+        "table_data_rows": len(tbl_rows), "licensed_table_rows":
+            len(want_rows),
+        "table_rows_bound_as_a_multiset": got_rows == want_rows,
         "quoted_lines": len(quotes), "quotes_outside_windows": len(outside),
         "fenced_blocks": len(got)}
     SEAL.take("THE PAPER BINDING", "paper_binding",
@@ -3685,7 +4563,19 @@ def measure_paper(S, payload, verdict):
 # ===========================================================================
 
 CLOSING_GATE_IDS = ["G-THE-SEAL-IS-TOTAL", "G-ARTIFACT-INTEGRITY"]
+LATE_GATE_IDS = ["G-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+                 "G-THE-RECEIPT-HEADER-IS-BOUND",
+                 "G-THE-TRANSCRIPT-RECONCILES"]
 REFUSAL_ONLY_GATES = ["G-THE-LOOP-FAMILY-IS-A-FAMILY-OF-LOOPS-STEP-CHECK"]
+
+DELIVERY_STATUS = "DELIVERED"
+
+EXIT_CONVENTIONS = {
+    "delivery": "0 on success, 1 on any refusal, writing nothing",
+    "selftest": "0 when every anchor class is fatal and nothing is written",
+    "mutant": "0 when the named mutant DIES on its declared target with the "
+              "artifacts unchanged",
+    "unknown_flag": "2"}
 
 FORCINGS = {
     "G-THE-SEAL-IS-TOTAL":
@@ -3701,8 +4591,6 @@ FORCINGS = {
 
 def measure_totals(S, verdict, second):
     ok = verdict == second
-    if mut("MUT-HEAD"):
-        ok = verdict == second
     LD.gate("G-THE-TWO-HEAD-LAWS-AGREE",
             "the complete verdict string -- head included -- is compared for "
             "equality against an INDEPENDENT reconstruction that reads only "
@@ -3713,6 +4601,7 @@ def measure_totals(S, verdict, second):
             ok,
             "the builder's string and the comparator's string agree: %s "
             "(%d characters)" % (ok, len(verdict)))
+    SEAL.take("THE VERDICT", "verdict", "G-THE-TWO-HEAD-LAWS-AGREE", verdict)
     chain = LD.verify_chain()
     rows = [dict(r) for r in LD.rows]
     if mut("MUT-LEDGER-CHAIN"):
@@ -3725,22 +4614,6 @@ def measure_totals(S, verdict, second):
             "of its own predecessor",
             chain,
             "%d ledger rows, chain verifies %s" % (len(rows), chain))
-    targets = {m[1] for m in MUTANTS}
-    clean = list(LD.ids) + list(CLOSING_GATE_IDS)
-    uncovered = [g for g in clean
-                 if g not in targets and g not in FORCINGS]
-    LD.gate("G-COVERAGE-AT-AN-HONEST-DENOMINATOR",
-            "the falsifier coverage is published at an honest denominator "
-            "(#34): the denominator is EVERY gate on the clean path and not "
-            "only the ones already closed, each is either a declared "
-            "falsifier's target or carries a registered forcing, and the "
-            "late gates are listed one by one with which of the two covers "
-            "them",
-            not uncovered,
-            "%d gates on the clean path, %d falsifier targets, %d registered "
-            "forcings, %d uncovered %s"
-            % (len(clean), len(targets), len(FORCINGS), len(uncovered),
-               uncovered[:4]))
     S["totals"] = {
         "gates_closed": len(LD.ids),
         "gates_failed": 0,
@@ -3754,44 +4627,151 @@ def measure_totals(S, verdict, second):
         "the_two_head_laws_agree": ok,
         "the_ledger_chain_verifies": chain,
         "verdict_characters": len(verdict)}
+
+
+def measure_coverage(S):
+    """the coverage gate closes AT THE END OF THE DELIVERY PATH, not before
+    the paper leg: K3's MAJOR-8 at this unit measured the old denominator at
+    38 of the 50 gates the delivery run actually closes, which is exactly
+    the shape #34 forbids.  The denominator here is every gate this run
+    closes, the ones after this one named explicitly."""
+    targets = {m[1] for m in MUTANTS}
+    clean = list(LD.ids) + list(LATE_GATE_IDS) + list(CLOSING_GATE_IDS)
+    if mut("MUT-COVERAGE"):
+        clean = clean + ["G-A-GATE-WITH-NEITHER-A-FALSIFIER-NOR-A-FORCING"]
+    uncovered = [g for g in clean
+                 if g not in targets and g not in FORCINGS]
+    dupes = sorted({g for g in clean if clean.count(g) > 1})
+    LD.gate("G-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+            "the falsifier coverage is published at an honest denominator "
+            "(#34): the denominator is EVERY gate the delivery run closes, "
+            "this gate and the ones after it included and named one by one, "
+            "and each is either a declared falsifier's target or carries a "
+            "registered forcing -- so the denominator cannot be made "
+            "flattering by taking it early",
+            not uncovered and not dupes,
+            "%d gates on the clean path, %d of them closing at or after this "
+            "one %s, %d falsifier targets, %d registered forcings, %d "
+            "uncovered %s"
+            % (len(clean), len(LATE_GATE_IDS) + len(CLOSING_GATE_IDS),
+               LATE_GATE_IDS + CLOSING_GATE_IDS, len(targets), len(FORCINGS),
+               len(uncovered), uncovered[:4]))
     S["waiver_ledger"] = {"registered_forcings": FORCINGS,
                           "refusal_only_gates": REFUSAL_ONLY_GATES}
     S["coverage"] = {"clean_path_gates": clean,
+                     "gates_closing_at_or_after_this_one":
+                         LATE_GATE_IDS + CLOSING_GATE_IDS,
                      "falsifier_targets": sorted(targets),
                      "uncovered": uncovered}
+    S["totals"]["gates_on_the_clean_path"] = len(clean)
+    SEAL.take("THE COVERAGE", "coverage",
+              "G-COVERAGE-AT-AN-HONEST-DENOMINATOR", S["coverage"])
+    SEAL.take("THE WAIVER LEDGER", "waiver_ledger",
+              "G-COVERAGE-AT-AN-HONEST-DENOMINATOR", S["waiver_ledger"])
+    SEAL.take("THE TOTALS", "totals",
+              "G-COVERAGE-AT-AN-HONEST-DENOMINATOR", S["totals"])
+
+
+def measure_the_receipt_header(S, payload):
+    """the receipt's own header keys -- the digests it publishes of itself,
+    of the paper and of the pin, and the exit conventions -- are VOUCHED and
+    then sealed, so the forgeable half of the declared-unsealed manifest
+    shrinks to the objects that genuinely cannot be sealed in order."""
+    code = bdigest(open(os.path.abspath(__file__), "rb").read())
+    pb = read_bytes(PAPER_REL)
+    paper = bdigest(pb) if pb else "ABSENT"
+    pin = [r["expected"] for r in payload["provenance"]
+           if r["path"] == "v14/note-pot-pin.md"][0]
+    if mut("MUT-RECEIPT-HEADER"):
+        paper = "0" * 12
+    ok = (payload["code_sha256_12"] == code
+          and payload["paper_sha256_12"] == paper
+          and payload["pin_sha256_prefix"] == pin
+          and payload["exit_conventions"] == EXIT_CONVENTIONS
+          and payload["preregistered_heads"] == PREREGISTERED
+          and payload["verdict_head"] == S["_head_word"]
+          and payload["schema"] == "POT-V1" and payload["unit"] ==
+          "POT-PAPER-36")
+    LD.gate("G-THE-RECEIPT-HEADER-IS-BOUND",
+            "the receipt's header keys are VOUCHED rather than declared "
+            "unsealable: the instrument's own digest and the paper's are "
+            "recomputed here from the bytes, the pin's prefix is required to "
+            "be the one the provenance row verified, and the exit "
+            "conventions, the pre-registered head list, the derived head "
+            "word and the schema are required to be the objects this run "
+            "carries -- and all of them are then sealed",
+            ok,
+            "code %s, paper %s, pin %s, exit conventions and head list bound "
+            "%s" % (code, paper, pin, ok))
+    for key in ("schema", "unit", "code_sha256_12",
+                "paper_sha256_12", "pin_sha256_prefix", "exit_conventions",
+                "preregistered_heads"):
+        SEAL.take("THE RECEIPT HEADER :: " + key, key,
+                  "G-THE-RECEIPT-HEADER-IS-BOUND", payload[key])
+
+
+def measure_the_transcript(S, payload):
+    """K3's MAJOR-7 at this unit: nothing bound the transcript to the run,
+    so a fabricated PASS line for a gate that never existed was delivered at
+    exit 0.  The transcript's PASS lines are reconciled here against THIS
+    run's own ledger, in order and as a sequence, and the head is sealed."""
+    seen = []
+    for line in LOG:
+        t = line.strip()
+        if t.startswith("[PASS] ") or t.startswith("[FAIL] "):
+            seen.append(t[7:].split(" :: ")[0])
+    if mut("MUT-TRANSCRIPT"):
+        seen = seen + ["G-A-GATE-THAT-NEVER-RAN"]
+    ok = seen == list(LD.ids)
+    LD.gate("G-THE-TRANSCRIPT-RECONCILES",
+            "the delivered transcript is bound to the run: the gate ids its "
+            "PASS lines carry are required to equal this run's own ledger "
+            "ids AS A SEQUENCE, so a line fabricated into the transcript -- "
+            "for a gate that never ran, or for one that ran elsewhere -- "
+            "stops the delivery run instead of being published",
+            ok,
+            "%d transcript gate lines against %d ledger rows, equal as a "
+            "sequence %s%s"
+            % (len(seen), len(LD.ids), ok,
+               "" if ok else "; first difference %s"
+               % [a for a, b in zip(seen + [""], list(LD.ids) + [""])
+                  if a != b][:1]))
+    S["transcript"] = {"gate_lines_reconciled": len(seen),
+                       "reconciles_against_the_ledger": ok,
+                       "head": LOG[0],
+                       "the_binding": "THE-PASS-LINES-ARE-THE-LEDGER-IDS-IN-"
+                                      "ORDER-AND-THE-WHOLE-FILE-IS-COMPARED-"
+                                      "BYTE-FOR-BYTE-AT-THE-DISK-BOUNDARY"}
+    SEAL.take("THE TRANSCRIPT", "transcript", "G-THE-TRANSCRIPT-RECONCILES",
+              S["transcript"])
 
 
 DECLARED_UNSEALED = {
     "gates": "the ledger rows themselves; sealing them would seal the "
-             "object that records the seal",
-    "gate_digests": "derived from the ledger after the snapshot",
-    "totals": "closes over the ledger and is verified at the disk boundary "
-              "by total byte comparison instead",
-    "coverage": "computed from the ledger after the snapshot",
-    "waiver_ledger": "a static registry, verified by G-COVERAGE-AT-AN-"
-                     "HONEST-DENOMINATOR",
-    "seal_manifest": "the manifest cannot seal itself",
-    "declared_unsealed": "this declaration",
-    "transcript_head": "the transcript is compared byte for byte at the "
-                       "disk boundary",
-    "schema": "a constant",
-    "unit": "a constant",
-    "python": "the interpreter's own version string",
-    "code_sha256_12": "the instrument's own digest, taken over its bytes",
-    "paper_sha256_12": "the paper's digest, taken over its bytes",
-    "pin_sha256_prefix": "the pin's digest, verified at G-SOURCES-AT-THEIR-"
-                         "PINNED-DIGESTS",
-    "verdict": "compared by string equality against the comparator's "
-               "reconstruction at G-THE-TWO-HEAD-LAWS-AGREE",
-    "verdict_head": "the head word, derived at G-THE-HEAD-IS-DERIVED",
-    "preregistered_heads": "the pin's own list",
-    "provenance": "verified at G-SOURCES-AT-THEIR-PINNED-DIGESTS",
-    "exit_conventions": "a constant",
-    "ledger_shape": "derived from the ledger after the snapshot",
+             "object that records the seal -- and they are compared against "
+             "this run's own ledger from the read-back bytes at "
+             "G-ARTIFACT-INTEGRITY",
+    "gate_digests": "derived from the ledger after the snapshot; recomputed "
+                    "from the read-back rows at G-ARTIFACT-INTEGRITY",
+    "ledger_shape": "derived from the ledger after the snapshot; compared "
+                    "against this run's own chain head from the read-back "
+                    "bytes at G-ARTIFACT-INTEGRITY",
+    "seal_manifest": "the manifest cannot seal itself; it is compared "
+                     "against this run's own manifest object from the "
+                     "read-back bytes at G-ARTIFACT-INTEGRITY",
+    "declared_unsealed": "this declaration; compared against the "
+                         "instrument's own registry from the read-back "
+                         "bytes at G-ARTIFACT-INTEGRITY",
+    "python": "the interpreter's own version string; compared against this "
+              "run's own interpreter at G-ARTIFACT-INTEGRITY",
 }
+
+POST_SNAPSHOT_KEYS = ["gates", "gate_digests", "ledger_shape",
+                      "seal_manifest", "declared_unsealed", "python"]
 
 
 def write_out(S, verdict, payload, write):
+    snapshot = [dict(r) for r in LD.rows]
     declared = sorted(DECLARED_UNSEALED)
     if mut("MUT-SEAL"):
         declared = declared[:-1]
@@ -3803,9 +4783,12 @@ def write_out(S, verdict, payload, write):
     LD.gate("G-THE-SEAL-IS-TOTAL",
             "the manifest is TOTAL: every top-level key of the receipt is "
             "either sealed at the gate that vouched its own values or named "
-            "in the declaration with the reason it cannot be, and every "
-            "sealed object is re-verified against its gate-time digest "
-            "before anything is written",
+            "in the declaration with the reason it cannot be, every sealed "
+            "object is re-verified against its gate-time digest before "
+            "anything is written, and the declared-unsealed half is now only "
+            "the keys with a genuine ordering impossibility -- each of "
+            "which is compared against the object this run built it from, "
+            "from the READ-BACK bytes, at the disk boundary",
             not unaccounted and not bad,
             "%d top-level keys, %d sealed, %d declared unsealed, %d "
             "unaccounted %s, %d digest mismatches"
@@ -3818,31 +4801,63 @@ def write_out(S, verdict, payload, write):
         return out_text, rec_text
     tmp_o = os.path.join(REPO, OUT_REL + ".tmp")
     tmp_r = os.path.join(REPO, RECEIPT_REL + ".tmp")
-    with open(tmp_o, "wb") as fh:
-        fh.write(out_text.encode())
-    with open(tmp_r, "wb") as fh:
-        fh.write(rec_text.encode())
-    back_o = open(tmp_o, "rb").read().decode()
-    back_r = open(tmp_r, "rb").read().decode()
-    same = (back_o == out_text and back_r == rec_text)
-    reread = json.loads(back_r)
-    bad2 = SEAL.reverify(reread)
-    keys_ok = sorted(reread) == top
-    chain_ok = LD.verify_chain(reread["gates"])
-    ok = same and not bad2 and keys_ok and chain_ok
-    LD.gate("G-ARTIFACT-INTEGRITY",
-            "the artifacts are written to temporaries, READ BACK and "
-            "compared against the gate-time digests before either is moved "
-            "into place -- the receipt by total byte equality as well as by "
-            "its seals, so the declared-unsealed keys, the gate ledger and "
-            "its chain among them, cross the disk boundary guarded, and a "
-            "refusing integrity gate promotes nothing",
-            ok,
-            "byte equality %s; %d seal mismatches from disk; top-level keys "
-            "identical %s; the ledger chain verifies from disk %s"
-            % (same, len(bad2), keys_ok, chain_ok))
-    os.replace(tmp_o, os.path.join(REPO, OUT_REL))
-    os.replace(tmp_r, os.path.join(REPO, RECEIPT_REL))
+    moved = False
+    try:
+        with open(tmp_o, "wb") as fh:
+            fh.write(out_text.encode())
+        with open(tmp_r, "wb") as fh:
+            fh.write(rec_text.encode())
+        back_o = open(tmp_o, "rb").read().decode()
+        back_r = open(tmp_r, "rb").read().decode()
+        same = (back_o == out_text and back_r == rec_text)
+        reread = json.loads(back_r)
+        bad2 = SEAL.reverify(reread)
+        keys_ok = sorted(reread) == top
+        chain_ok = LD.verify_chain(reread["gates"])
+        post = {"gates": snapshot,
+                "gate_digests": {r["gate"]: r["link"] for r in snapshot},
+                "ledger_shape": {"rows": len(snapshot),
+                                 "head": snapshot[-1]["link"]},
+                "seal_manifest": SEAL.rows,
+                "declared_unsealed": DECLARED_UNSEALED,
+                "python": "%d.%d" % (sys.version_info[0],
+                                     sys.version_info[1])}
+        post_bad = [k for k in POST_SNAPSHOT_KEYS if reread[k] != post[k]]
+        lines = []
+        for line in back_o.split("\n"):
+            t = line.strip()
+            if t.startswith("[PASS] ") or t.startswith("[FAIL] "):
+                lines.append(t[7:].split(" :: ")[0])
+        trans_ok = lines == list(LD.ids)
+        ok = (same and not bad2 and keys_ok and chain_ok and not post_bad
+              and trans_ok)
+        LD.gate("G-ARTIFACT-INTEGRITY",
+                "the artifacts are written to temporaries, READ BACK and "
+                "compared against the gate-time digests before either is "
+                "moved into place -- the receipt by total byte equality as "
+                "well as by its seals, and every declared-unsealed key by "
+                "EQUALITY AGAINST THE OBJECT THIS RUN BUILT IT FROM, so a "
+                "value forged into the ledger, the manifest, the digests or "
+                "the declaration after the seal no longer verifies; the "
+                "transcript's own gate lines are reconciled again from the "
+                "bytes on disk; and a refusing integrity gate promotes "
+                "nothing and leaves no staging file behind",
+                ok,
+                "byte equality %s; %d seal mismatches from disk; top-level "
+                "keys identical %s; the ledger chain verifies from disk %s; "
+                "%d declared-unsealed keys re-verified, %d forged %s; the "
+                "transcript reconciles from disk %s"
+                % (same, len(bad2), keys_ok, chain_ok,
+                   len(POST_SNAPSHOT_KEYS), len(post_bad), post_bad,
+                   trans_ok))
+        os.replace(tmp_o, os.path.join(REPO, OUT_REL))
+        os.replace(tmp_r, os.path.join(REPO, RECEIPT_REL))
+        moved = True
+    finally:
+        if not moved:
+            for p in (tmp_o, tmp_r):
+                if os.path.exists(p):
+                    os.remove(p)
     return out_text, rec_text
 
 
@@ -3852,6 +4867,7 @@ def write_out(S, verdict, payload, write):
 
 def run(write=True, paper_gates=True):
     S = {}
+    del VB_READS[:]
     say("POT (paper-36) :: the potential unit -- the loop family, the "
         "discriminator, the price binding and the spectral door")
     say("=" * 78)
@@ -3861,35 +4877,47 @@ def run(write=True, paper_gates=True):
     vb = measure_verbatim(S, src)
     scan_syntax_tree(S)
     say("-- the arena --")
-    build_arena(S, pv)
+    build_arena(S, pv, vb)
     say("-- the loop family, the object ACT recorded still absent --")
-    ok_missing = (pv["PV-ACT-LOOPFAM"] == 0)
+    ok_missing = (pv["PV-ACT-LOOPFAM"] == 0
+                  and vbwin(vb, "VB-R5-NEEDS",
+                            "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
+                            "loops whose size can grow")
+                  and vbwin(vb, "VB-ACT-ABSENT",
+                            "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
+                            "still absent"))
     if mut("MUT-LOOPFAM-FIELD"):
         ok_missing = False
     LD.gate("G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
             "the parent's own receipt records ZERO loop families grown, and "
             "its paper names the family of loops whose size can grow as the "
             "gate on everything beyond; this unit reads that field at its "
-            "named path and builds the object rather than quoting the gap",
+            "named path, reads both windows that record the gap, and builds "
+            "the object rather than quoting it",
             ok_missing,
             "the parent grew %d loop families; this unit builds the family "
             "and gates it" % pv["PV-ACT-LOOPFAM"])
-    measure_loop_family(S, pv)
+    measure_loop_family(S, pv, vb)
     say("-- the classes and the extreme points --")
-    measure_classes(S, pv)
+    measure_classes(S, pv, vb)
     say("-- the loop observable on the carrier --")
     measure_the_loop_observable(S, pv, vb)
+    say("-- the scope of the perimeter reading, at the family's own lengths --")
+    measure_the_length_reading(S, pv)
     say("-- the discriminator, defined and gated before any row runs --")
     measure_the_discriminator(S, pv, vb)
     say("-- the ladder's exact closed form --")
     measure_the_closed_form(S, pv)
+    say("-- the area-blindness universal, over every measure on the carrier --")
+    measure_the_universal_over_measures(S, pv)
     say("-- mode (a): the declared rows --")
     measure_declared_rows(S, pv, vb)
     say("-- mode (b): the family sweep --")
     measure_family_sweep(S, pv)
+    measure_the_constant_ladder_identity(S, pv)
     measure_family_slices(S, pv)
     say("-- the price binding --")
-    measure_the_price_binding(S, pv)
+    measure_the_price_binding(S, pv, vb)
     say("-- the order parameter's range --")
     measure_the_order_parameter_range(S, pv)
     say("-- the spectral door --")
@@ -3914,13 +4942,7 @@ def run(write=True, paper_gates=True):
     payload["paper_sha256_12"] = bdigest(pb) if pb else "ABSENT"
     payload["preregistered_heads"] = PREREGISTERED
     payload["verdict_head"] = S["_head_word"]
-    payload["exit_conventions"] = {
-        "delivery": "0 on success, 1 on any refusal, writing nothing",
-        "selftest": "0 when every anchor class is fatal and nothing is "
-                    "written",
-        "mutant": "0 when the named mutant DIES on its declared target with "
-                  "the artifacts unchanged",
-        "unknown_flag": "2"}
+    payload["exit_conventions"] = EXIT_CONVENTIONS
     verdict = render_verdict(S)
     payload["verdict"] = verdict
     payload["gates"] = [dict(r) for r in LD.rows]
@@ -3928,18 +4950,19 @@ def run(write=True, paper_gates=True):
     payload["ledger_shape"] = {"rows": len(LD.rows), "head": LD.chain}
     payload["seal_manifest"] = SEAL.rows
     payload["declared_unsealed"] = DECLARED_UNSEALED
-    payload["transcript_head"] = LOG[0]
     second = rerender_verdict(payload)
     measure_totals(S, verdict, second)
     if paper_gates:
         say("-- the paper gates --")
         payload["totals"] = S["totals"]
-        payload["coverage"] = S["coverage"]
-        payload["waiver_ledger"] = S["waiver_ledger"]
-        measure_paper(S, payload, verdict)
+        measure_paper(S, payload, verdict, vb)
         measure_consumers(S)
         payload["paper_binding"] = S["paper_binding"]
         payload["consumer_register"] = S["consumer_register"]
+    measure_coverage(S)
+    measure_the_receipt_header(S, payload)
+    measure_the_transcript(S, payload)
+    payload["transcript"] = S["transcript"]
     payload["totals"] = S["totals"]
     payload["coverage"] = S["coverage"]
     payload["waiver_ledger"] = S["waiver_ledger"]
@@ -3963,15 +4986,26 @@ ANCHOR_CLASSES = [("FILE-BYTES", "G-SOURCES-AT-THEIR-PINNED-DIGESTS"),
                   ("VERBATIM-TEXT", "G-VERBATIM-ANCHORS")]
 
 
+def tree_state():
+    """the artifact DIRECTORY, not only the two artifact paths: 'a refusing
+    run writes nothing' is checked against the listing as well as the bytes,
+    so a staging temporary left behind by a refusal is a failure rather than
+    an invisible."""
+    d = os.path.dirname(os.path.join(REPO, OUT_REL))
+    arte = {}
+    for rel in (OUT_REL, RECEIPT_REL):
+        p = os.path.join(REPO, rel)
+        arte[rel] = (bdigest(open(p, "rb").read())
+                     if os.path.exists(p) else None)
+    return {"names": sorted(os.listdir(d)), "artifacts": arte}
+
+
 def selftest():
     """the falsification self-test: one anchor class is corrupted IN MEMORY
     at a time, the run is required to die AT THAT CLASS'S OWN GATE, and the
     corruption is restored before the next class so that no class is tested
     through the wreckage of another."""
-    before = {}
-    for rel in (OUT_REL, RECEIPT_REL):
-        p = os.path.join(REPO, rel)
-        before[rel] = open(p, "rb").read() if os.path.exists(p) else None
+    before = tree_state()
     keep_s, keep_p, keep_v = list(SOURCES), list(PATH_VALUES), list(VERBATIM)
     results = []
     for cls, target in ANCHOR_CLASSES:
@@ -4007,17 +5041,12 @@ def selftest():
     globals()["PATH_VALUES"] = keep_p
     globals()["VERBATIM"] = keep_v
     globals()["QUIET"] = False
-    unchanged = True
-    for rel, b in before.items():
-        p = os.path.join(REPO, rel)
-        now = open(p, "rb").read() if os.path.exists(p) else None
-        if now != b:
-            unchanged = False
+    unchanged = tree_state() == before
     ontarget = all(d == t for _c, t, d in results)
     for cls, target, died in results:
         print("SELFTEST %-14s target %-34s -> %s" % (cls, target, died))
     print("SELFTEST :: %d of %d anchor classes fatal at their own gate :: "
-          "artifacts unchanged %s"
+          "the artifact directory is unchanged %s"
           % (sum(1 for _c, t, d in results if d == t), len(results),
              unchanged))
     return 0 if (ontarget and unchanged) else 1
@@ -4032,6 +5061,12 @@ exit conventions (they invert the usual reading and are therefore stated):
   --selftest     0 when EVERY anchor class is fatal and nothing is written
   --mutant NAME  0 when the named mutant DIES at its declared target
   unknown flag   2
+
+flag precedence, declared rather than left to the reading order: --help,
+then --list-gates, --list-mutants, --selftest, --mutant, --all-mutants,
+--verify-paper, then the delivery run.  The first of those present wins and
+the rest are inert, so --verify-paper --mutant NAME runs the mutant and
+--selftest --no-write runs the self-test, which writes nothing anyway.
 """
 
 FLAGS = {"--no-write": "no-write", "--selftest": "selftest",
@@ -4089,10 +5124,7 @@ def main(argv):
             sys.stderr.write("unknown mutant %r\n" % name)
             return 2
         target = [m[1] for m in MUTANTS if m[0] == name][0]
-        before = {}
-        for rel in (OUT_REL, RECEIPT_REL):
-            p = os.path.join(REPO, rel)
-            before[rel] = open(p, "rb").read() if os.path.exists(p) else None
+        before = tree_state()
         MUT = name
         died = None
         try:
@@ -4102,15 +5134,11 @@ def main(argv):
         except Exception as e:                       # noqa: BLE001
             died = "EXCEPTION:%s" % type(e).__name__
         MUT = None
-        unchanged = True
-        for rel, b in before.items():
-            p = os.path.join(REPO, rel)
-            now = open(p, "rb").read() if os.path.exists(p) else None
-            if now != b:
-                unchanged = False
+        unchanged = tree_state() == before
         ok = (died == target) and unchanged
-        print("MUTANT %-28s target %-52s died at %s :: artifacts unchanged "
-              "%s :: %s" % (name, target, died, unchanged,
+        print("MUTANT %-28s target %-52s died at %s :: the artifact "
+              "directory is unchanged %s :: %s" % (name, target, died,
+                                                   unchanged,
                             "DEAD-ON-TARGET" if ok else "FAILED"))
         return 0 if ok else 1
     if args.get("all-mutants"):

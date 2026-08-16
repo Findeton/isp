@@ -24,8 +24,8 @@
   "banned_names_present": [],
   "field": "Q(zeta_8)-AS-INTEGER-FOUR-TUPLES-WITH-A-PER-ROW-POWER-OF-TWO-SCALE",
   "float_literals": 0,
-  "functions": 114,
-  "mutant_switches": 49,
+  "functions": 127,
+  "mutant_switches": 61,
   "no_logarithm_no_exponential_no_square_root_no_power": true
  },
  "boundary_lattice": {
@@ -54,6 +54,43 @@
   "orbit_pairs_merged": 0,
   "parent_orbits": 136,
   "simple_rectangle_shapes": 49,
+  "the_comparison_table": [
+   {
+    "at_the_boundary_L": 49,
+    "at_the_declared_L": 9,
+    "quantity": "simple rectangle shapes"
+   },
+   {
+    "at_the_boundary_L": 70,
+    "at_the_declared_L": 2,
+    "quantity": "area-discriminating comparisons"
+   },
+   {
+    "at_the_boundary_L": 14,
+    "at_the_declared_L": 6,
+    "quantity": "the longest ladder perimeter"
+   },
+   {
+    "at_the_boundary_L": 1,
+    "at_the_declared_L": 2,
+    "quantity": "the merging index"
+   },
+   {
+    "at_the_boundary_L": 136,
+    "at_the_declared_L": 208,
+    "quantity": "the parents orbits"
+   },
+   {
+    "at_the_boundary_L": 136,
+    "at_the_declared_L": 136,
+    "quantity": "the induced classes"
+   },
+   {
+    "at_the_boundary_L": 0,
+    "at_the_declared_L": 72,
+    "quantity": "orbit pairs merged"
+   }
+  ],
   "what_does_not": "THE-CLASS-MERGING-AND-EVERY-COUNT-BUILT-ON-IT",
   "what_survives": "AREA-BLINDNESS-AND-THE-CLOSED-FORM-AND-THE-GAP",
   "why_this_size": "THE-SMALLEST-L-DIVISIBLE-BY-EIGHT-WHERE-THE-MERGING-INDEX-IS-ONE"
@@ -86,6 +123,9 @@
   "the_couplings_the_parent_hands_over": 135
  },
  "closed_form": {
+  "area_discriminating_comparison_by_coin_checks": 1280,
+  "area_discriminating_comparisons": 2,
+  "area_discriminating_disagreements": 0,
   "closed_form_failures": 0,
   "coefficient_profile": {
    "A": {
@@ -115,7 +155,9 @@
    }
   },
   "equal_perimeter_comparisons": 5760,
+  "equal_perimeter_cross_shape_comparisons": 2560,
   "equal_perimeter_disagreements": 0,
+  "equal_perimeter_self_comparisons": 3200,
   "perimeters": [
    2,
    3,
@@ -132,10 +174,13 @@
   },
   "the_ladder_is_a_function_of_the_perimeter_alone": true,
   "the_transfer_spectrum": "{1,1,1/2}",
+  "unordered_equal_perimeter_pairs": 5,
+  "unordered_pair_by_coin_comparisons": 3200,
+  "unordered_pair_disagreements": 0,
   "verification_points_per_coin": 2,
   "why_the_eigenvalue_one_appears_twice": "THE-TERM-PROPORTIONAL-TO-THE-PERIMETER-IS-A-TWO-BLOCK-AT-EIGENVALUE-ONE"
  },
- "code_sha256_12": "8c11f16002d1",
+ "code_sha256_12": "a811bbb92138",
  "conditional_rows": {
   "ladder_word_tally": {
    "DISCRIMINATOR-DEGENERATE": 4
@@ -157,6 +202,7 @@
     "creutz_is_unit": false,
     "creutz_rungs": 4,
     "creutz_zero_denominators": 0,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "exponent": 32,
     "grain": "LINK",
     "ladder": {
@@ -194,6 +240,7 @@
     "creutz_is_unit": false,
     "creutz_rungs": 4,
     "creutz_zero_denominators": 0,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "exponent": 16,
     "grain": "PLAQUETTE",
     "ladder": {
@@ -231,6 +278,7 @@
     "creutz_is_unit": false,
     "creutz_rungs": 4,
     "creutz_zero_denominators": 0,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "exponent": 32,
     "grain": "LINK",
     "ladder": {
@@ -268,6 +316,7 @@
     "creutz_is_unit": false,
     "creutz_rungs": 4,
     "creutz_zero_denominators": 0,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "exponent": 1,
     "grain": "SECTOR",
     "ladder": {
@@ -300,6 +349,65 @@
    "WINDING-ORDER-ZERO": 3
   }
  },
+ "constant_ladder_identity": {
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "single_mode_and_halving_only": 0,
+  "single_mode_but_perimeter_proportional": 8,
+  "single_mode_extreme_points": 32,
+  "the_constant_values_on_that_set": {
+   "1": 8,
+   "2": 16
+  },
+  "the_creutz_ratio_is_one_at": 24,
+  "the_ladder_is_constant_in_the_perimeter_at": 24,
+  "the_mechanism_at_single_mode_ladders": [
+   {
+    "creutz_by_rung": {
+     "2-2": "1",
+     "2-3": "1",
+     "3-2": "1",
+     "3-3": "1"
+    },
+    "creutz_is_unit": true,
+    "ladder_word": "DECONFINES",
+    "single_mode_ladder": "THE-CONSTANT-MODE-ALONE"
+   },
+   {
+    "creutz_by_rung": {
+     "2-2": "8/9",
+     "2-3": "15/16",
+     "3-2": "15/16",
+     "3-3": "24/25"
+    },
+    "creutz_is_unit": false,
+    "ladder_word": "DISCRIMINATOR-DEGENERATE",
+    "single_mode_ladder": "THE-PERIMETER-PROPORTIONAL-MODE-ALONE"
+   },
+   {
+    "creutz_by_rung": {
+     "2-2": "1",
+     "2-3": "1",
+     "3-2": "1",
+     "3-3": "1"
+    },
+    "creutz_is_unit": true,
+    "ladder_word": "DECONFINES",
+    "single_mode_ladder": "THE-HALVING-MODE-ALONE"
+   }
+  ],
+  "the_reading": "DECONFINES-RECORDS-A-FLAT-LADDER-AT-THIS-ARENA-AND-IS-NOT-A-FINDING-THAT-ANYTHING-DECONFINES",
+  "the_two_sets_are_equal": true,
+  "which_ones": [
+   8,
+   31,
+   46,
+   61,
+   76,
+   91,
+   106,
+   121
+  ]
+ },
  "consumer_register": {
   "all_present": true,
   "missing": [],
@@ -317,7 +425,108 @@
    "G-THE-MERGING-INDEX-LAW-REPRODUCED",
    "G-THE-ORIENTATION-READING-IS-PRICED",
    "G-THE-PRICE-BINDING"
-  ]
+  ],
+  "verbatim_reads": [
+   {
+    "anchor": "VB-R5-LINKOP",
+    "read_by": "G-ARENA-REBUILT",
+    "token": "the identity on every other site",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-R5-NEEDS",
+    "read_by": "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
+    "token": "loops whose size can grow",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-ACT-ABSENT",
+    "read_by": "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
+    "token": "still absent",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-P23-TRANSITIVE",
+    "read_by": "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP",
+    "token": "transitively",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-ACT-ALLOWED",
+    "read_by": "G-THE-CLASSES-REBUILT",
+    "token": "one factor per orbit",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-ACT-EXTREME",
+    "read_by": "G-THE-EXTREME-POINTS-REBUILT",
+    "token": "64 of the reachable set's extreme points are vertices",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-ACT-EXTREME",
+    "read_by": "G-THE-EXTREME-POINTS-REBUILT",
+    "token": "the other 72 are midpoints",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-R5-HOLONOMY",
+    "read_by": "G-PLAQUETTE-ROW-REPRODUCED",
+    "token": "inverted where the boundary runs against",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-R5-BLOCK",
+    "read_by": "G-PLAQUETTE-ROW-REPRODUCED",
+    "token": "four-by-four block",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-PIN-DISCRIM",
+    "read_by": "G-THE-DISCRIMINATOR-IS-WELL-DEFINED",
+    "token": "nonzero denominators; enough ladder rungs",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-ACT-BOUNDARY",
+    "read_by": "G-THE-MERGING-INDEX-LAW-REPRODUCED",
+    "token": "it is 1",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-PIN-LBOUND",
+    "read_by": "G-THE-MERGING-INDEX-LAW-REPRODUCED",
+    "token": "8/gcd(L,8)",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-ACT-STAMP",
+    "read_by": "G-THE-CONTROL-STAMP-CARRIED",
+    "token": "must not treat it as a derived measure",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-SMU-PRICE",
+    "read_by": "G-THE-PRICE-BINDING",
+    "token": "surjects onto the invariant simplex",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-PIN-LICENCE",
+    "read_by": "G-THE-CONFINEMENT-LICENCE-WALL",
+    "token": "carrying its measured discriminator value",
+    "token_located_in_the_window": true
+   },
+   {
+    "anchor": "VB-ACT-GATE",
+    "read_by": "G-THE-CONFINEMENT-LICENCE-WALL",
+    "token": "REMAINS BEHIND POT'S GATE",
+    "token_located_in_the_window": true
+   }
+  ],
+  "verbatim_windows": 15,
+  "windows_never_read": [],
+  "windows_read_by_another_gate": []
  },
  "control_arms": {
   "arms": [
@@ -425,13 +634,16 @@
    "G-THE-LOOP-OBSERVABLE-IS-BASE-POINT-BLIND",
    "G-THE-LOOP-OBSERVABLE-IS-REVERSAL-BLIND",
    "G-PLAQUETTE-ROW-REPRODUCED",
+   "G-THE-LENGTH-DOES-NOT-DETERMINE-THE-OBSERVABLE",
    "G-THE-DISCRIMINATOR-IS-WELL-DEFINED",
    "G-THE-MERGING-INDEX-LAW-REPRODUCED",
    "G-THE-LADDER-IS-A-FUNCTION-OF-THE-PERIMETER-ALONE",
    "G-THE-LADDER-CLOSED-FORM",
+   "G-THE-AREA-BLINDNESS-IS-UNIVERSAL-OVER-MEASURES",
    "G-THE-DECLARED-ROWS-BUILT",
    "G-THE-CONTROL-STAMP-CARRIED",
    "G-THE-FAMILY-SWEEP-IS-TOTAL",
+   "G-THE-CREUTZ-UNIT-SET-IS-THE-CONSTANT-LADDER-SET",
    "G-THE-FAMILY-SLICES",
    "G-THE-PRICE-BINDING",
    "G-THE-ORDER-PARAMETER-RANGE",
@@ -445,31 +657,53 @@
    "G-THE-HEAD-IS-DERIVED",
    "G-THE-TWO-HEAD-LAWS-AGREE",
    "G-THE-LEDGER-CHAIN-VERIFIES",
+   "G-PAPER-CLAIMS-RENDERED",
+   "G-PAPER-VERDICT-BLOCK",
+   "G-PAPER-POLARITY",
+   "G-PAPER-HEADERS-BOUND",
+   "G-PAPER-NUMERALS-COVERED",
+   "G-PAPER-INLINE-SPANS-LICENSED",
+   "G-PAPER-SHORT-NUMERALS-IN-CONTEXT",
+   "G-PAPER-SPELLED-NUMERALS",
+   "G-THE-CONFINEMENT-LICENCE-WALL",
+   "G-PAPER-MUST-NOT",
+   "G-PAPER-TABLE-ROWS-COVERED",
+   "G-PAPER-QUOTES-INSIDE-THE-WINDOWS",
+   "G-CONSUMER-REGISTER-IS-REAL",
+   "G-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+   "G-THE-RECEIPT-HEADER-IS-BOUND",
+   "G-THE-TRANSCRIPT-RECONCILES",
    "G-THE-SEAL-IS-TOTAL",
    "G-ARTIFACT-INTEGRITY"
   ],
   "falsifier_targets": [
    "G-ARENA-REBUILT",
    "G-CONSUMER-REGISTER-IS-REAL",
+   "G-COVERAGE-AT-AN-HONEST-DENOMINATOR",
    "G-EVERY-MUTANT-DESCRIPTION-IS-TRUE",
    "G-EVERY-PREREGISTERED-WORD-IS-EMITTABLE",
    "G-PAPER-CLAIMS-RENDERED",
    "G-PAPER-HEADERS-BOUND",
+   "G-PAPER-INLINE-SPANS-LICENSED",
    "G-PAPER-MUST-NOT",
    "G-PAPER-NUMERALS-COVERED",
    "G-PAPER-POLARITY",
+   "G-PAPER-QUOTES-INSIDE-THE-WINDOWS",
+   "G-PAPER-SHORT-NUMERALS-IN-CONTEXT",
    "G-PAPER-SPELLED-NUMERALS",
    "G-PAPER-TABLE-ROWS-COVERED",
    "G-PAPER-VERDICT-BLOCK",
    "G-PATH-VALUE-ANCHORS",
    "G-PLAQUETTE-ROW-REPRODUCED",
    "G-SOURCES-AT-THEIR-PINNED-DIGESTS",
+   "G-THE-AREA-BLINDNESS-IS-UNIVERSAL-OVER-MEASURES",
    "G-THE-ARITHMETIC-IS-EXACT",
    "G-THE-BOUNDARY-LATTICE-RUN",
    "G-THE-CLASSES-REBUILT",
    "G-THE-CONFINEMENT-LICENCE-WALL",
    "G-THE-CONJUGATION-SPLIT-IS-EXACT",
    "G-THE-CONTROL-STAMP-CARRIED",
+   "G-THE-CREUTZ-UNIT-SET-IS-THE-CONSTANT-LADDER-SET",
    "G-THE-DECLARED-ROWS-BUILT",
    "G-THE-DISCRIMINATOR-IS-WELL-DEFINED",
    "G-THE-EXTREME-POINTS-REBUILT",
@@ -480,6 +714,7 @@
    "G-THE-LADDER-CLOSED-FORM",
    "G-THE-LADDER-IS-A-FUNCTION-OF-THE-PERIMETER-ALONE",
    "G-THE-LEDGER-CHAIN-VERIFIES",
+   "G-THE-LENGTH-DOES-NOT-DETERMINE-THE-OBSERVABLE",
    "G-THE-LOOP-FAMILY-IS-A-FAMILY-OF-LOOPS",
    "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP",
    "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
@@ -492,34 +727,29 @@
    "G-THE-ORDER-PARAMETER-RANGE",
    "G-THE-ORIENTATION-READING-IS-PRICED",
    "G-THE-PRICE-BINDING",
+   "G-THE-RECEIPT-HEADER-IS-BOUND",
    "G-THE-SEAL-IS-TOTAL",
    "G-THE-SPECTRAL-DOOR",
+   "G-THE-TRANSCRIPT-RECONCILES",
    "G-THE-TWO-HEAD-LAWS-AGREE",
    "G-VERBATIM-ANCHORS"
+  ],
+  "gates_closing_at_or_after_this_one": [
+   "G-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+   "G-THE-RECEIPT-HEADER-IS-BOUND",
+   "G-THE-TRANSCRIPT-RECONCILES",
+   "G-THE-SEAL-IS-TOTAL",
+   "G-ARTIFACT-INTEGRITY"
   ],
   "uncovered": []
  },
  "declared_unsealed": {
-  "code_sha256_12": "the instrument's own digest, taken over its bytes",
-  "coverage": "computed from the ledger after the snapshot",
-  "declared_unsealed": "this declaration",
-  "exit_conventions": "a constant",
-  "gate_digests": "derived from the ledger after the snapshot",
-  "gates": "the ledger rows themselves; sealing them would seal the object that records the seal",
-  "ledger_shape": "derived from the ledger after the snapshot",
-  "paper_sha256_12": "the paper's digest, taken over its bytes",
-  "pin_sha256_prefix": "the pin's digest, verified at G-SOURCES-AT-THEIR-PINNED-DIGESTS",
-  "preregistered_heads": "the pin's own list",
-  "provenance": "verified at G-SOURCES-AT-THEIR-PINNED-DIGESTS",
-  "python": "the interpreter's own version string",
-  "schema": "a constant",
-  "seal_manifest": "the manifest cannot seal itself",
-  "totals": "closes over the ledger and is verified at the disk boundary by total byte comparison instead",
-  "transcript_head": "the transcript is compared byte for byte at the disk boundary",
-  "unit": "a constant",
-  "verdict": "compared by string equality against the comparator's reconstruction at G-THE-TWO-HEAD-LAWS-AGREE",
-  "verdict_head": "the head word, derived at G-THE-HEAD-IS-DERIVED",
-  "waiver_ledger": "a static registry, verified by G-COVERAGE-AT-AN-HONEST-DENOMINATOR"
+  "declared_unsealed": "this declaration; compared against the instrument's own registry from the read-back bytes at G-ARTIFACT-INTEGRITY",
+  "gate_digests": "derived from the ledger after the snapshot; recomputed from the read-back rows at G-ARTIFACT-INTEGRITY",
+  "gates": "the ledger rows themselves; sealing them would seal the object that records the seal -- and they are compared against this run's own ledger from the read-back bytes at G-ARTIFACT-INTEGRITY",
+  "ledger_shape": "derived from the ledger after the snapshot; compared against this run's own chain head from the read-back bytes at G-ARTIFACT-INTEGRITY",
+  "python": "the interpreter's own version string; compared against this run's own interpreter at G-ARTIFACT-INTEGRITY",
+  "seal_manifest": "the manifest cannot seal itself; it is compared against this run's own manifest object from the read-back bytes at G-ARTIFACT-INTEGRITY"
  },
  "discriminator": {
   "area_discriminating_comparisons": 2,
@@ -592,11 +822,23 @@
   "unknown_flag": "2"
  },
  "family_slices": {
+  "distinct_classes_raised": 3,
+  "distinct_ladders_returned": 3,
+  "distinct_plaquette_expectations": 3,
   "rows": [
    {
     "area_seen": false,
     "class": 0,
+    "class_sector": "ANTIDIAGONAL",
+    "class_size": 8,
     "coupling": "1/2",
+    "ladder": {
+     "2": "442381631489/339302416385",
+     "3": "408021893121/339302416385",
+     "4": "390842023937/339302416385",
+     "5": "76450417869/67860483277",
+     "6": "377957122049/339302416385"
+    },
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "plaquette_expectation": "442381631489/339302416385",
     "winding_word": "WINDING-ORDER-ZERO"
@@ -604,7 +846,16 @@
    {
     "area_seen": false,
     "class": 0,
+    "class_sector": "ANTIDIAGONAL",
+    "class_size": 8,
     "coupling": "2",
+    "ladder": {
+     "2": "4294967399/4294967375",
+     "3": "4294967391/4294967375",
+     "4": "4294967387/4294967375",
+     "5": "858993477/858993475",
+     "6": "4294967384/4294967375"
+    },
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "plaquette_expectation": "4294967399/4294967375",
     "winding_word": "WINDING-ORDER-ZERO"
@@ -612,7 +863,16 @@
    {
     "area_seen": false,
     "class": 0,
+    "class_sector": "ANTIDIAGONAL",
+    "class_size": 8,
     "coupling": "4",
+    "ladder": {
+     "2": "18446744073709551719/18446744073709551695",
+     "3": "18446744073709551711/18446744073709551695",
+     "4": "18446744073709551707/18446744073709551695",
+     "5": "3689348814741910341/3689348814741910339",
+     "6": "18446744073709551704/18446744073709551695"
+    },
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "plaquette_expectation": "18446744073709551719/18446744073709551695",
     "winding_word": "WINDING-ORDER-ZERO"
@@ -620,7 +880,16 @@
    {
     "area_seen": false,
     "class": 1,
+    "class_sector": "ANTIDIAGONAL",
+    "class_size": 8,
     "coupling": "1/2",
+    "ladder": {
+     "2": "442381631489/339302416385",
+     "3": "408021893121/339302416385",
+     "4": "390842023937/339302416385",
+     "5": "76450417869/67860483277",
+     "6": "377957122049/339302416385"
+    },
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "plaquette_expectation": "442381631489/339302416385",
     "winding_word": "WINDING-ORDER-ZERO"
@@ -628,7 +897,16 @@
    {
     "area_seen": false,
     "class": 1,
+    "class_sector": "ANTIDIAGONAL",
+    "class_size": 8,
     "coupling": "2",
+    "ladder": {
+     "2": "4294967399/4294967375",
+     "3": "4294967391/4294967375",
+     "4": "4294967387/4294967375",
+     "5": "858993477/858993475",
+     "6": "4294967384/4294967375"
+    },
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "plaquette_expectation": "4294967399/4294967375",
     "winding_word": "WINDING-ORDER-ZERO"
@@ -636,7 +914,16 @@
    {
     "area_seen": false,
     "class": 1,
+    "class_sector": "ANTIDIAGONAL",
+    "class_size": 8,
     "coupling": "4",
+    "ladder": {
+     "2": "18446744073709551719/18446744073709551695",
+     "3": "18446744073709551711/18446744073709551695",
+     "4": "18446744073709551707/18446744073709551695",
+     "5": "3689348814741910341/3689348814741910339",
+     "6": "18446744073709551704/18446744073709551695"
+    },
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "plaquette_expectation": "18446744073709551719/18446744073709551695",
     "winding_word": "WINDING-ORDER-ZERO"
@@ -644,7 +931,16 @@
    {
     "area_seen": false,
     "class": 2,
+    "class_sector": "ANTIDIAGONAL",
+    "class_size": 8,
     "coupling": "1/2",
+    "ladder": {
+     "2": "442381631489/339302416385",
+     "3": "408021893121/339302416385",
+     "4": "390842023937/339302416385",
+     "5": "76450417869/67860483277",
+     "6": "377957122049/339302416385"
+    },
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "plaquette_expectation": "442381631489/339302416385",
     "winding_word": "WINDING-ORDER-ZERO"
@@ -652,7 +948,16 @@
    {
     "area_seen": false,
     "class": 2,
+    "class_sector": "ANTIDIAGONAL",
+    "class_size": 8,
     "coupling": "2",
+    "ladder": {
+     "2": "4294967399/4294967375",
+     "3": "4294967391/4294967375",
+     "4": "4294967387/4294967375",
+     "5": "858993477/858993475",
+     "6": "4294967384/4294967375"
+    },
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "plaquette_expectation": "4294967399/4294967375",
     "winding_word": "WINDING-ORDER-ZERO"
@@ -660,13 +965,23 @@
    {
     "area_seen": false,
     "class": 2,
+    "class_sector": "ANTIDIAGONAL",
+    "class_size": 8,
     "coupling": "4",
+    "ladder": {
+     "2": "18446744073709551719/18446744073709551695",
+     "3": "18446744073709551711/18446744073709551695",
+     "4": "18446744073709551707/18446744073709551695",
+     "5": "3689348814741910341/3689348814741910339",
+     "6": "18446744073709551704/18446744073709551695"
+    },
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "plaquette_expectation": "18446744073709551719/18446744073709551695",
     "winding_word": "WINDING-ORDER-ZERO"
    }
   ],
   "slices": 9,
+  "the_classes_raised_are_of_one_kind": true,
   "the_coupling_values": [
    "1/2",
    "2",
@@ -682,6 +997,10 @@
   "area_seen_tally": {
    "False": 136
   },
+  "constant_in_the_perimeter_tally": {
+   "False": 112,
+   "True": 24
+  },
   "coupling_dependent_observables": [
    "ladder_word",
    "creutz_is_unit",
@@ -691,6 +1010,10 @@
    "mode_C",
    "active_modes"
   ],
+  "degenerate_branch_tally": {
+   "NOT-DEGENERATE": 24,
+   "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW": 112
+  },
   "edge_midpoints": 72,
   "every_integer_here_is_a_count": "COUNTING-ONLY-E-24-NO-MEASURE-OVER-THE-FAMILY-IS-DECLARED",
   "extreme_points": 136,
@@ -709,8 +1032,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 0,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "1",
     "mode_B": "0",
@@ -725,8 +1050,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 1,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "1",
     "mode_B": "0",
@@ -741,8 +1068,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 2,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "1",
     "mode_B": "0",
@@ -757,8 +1086,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 3,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "1",
     "mode_B": "0",
@@ -773,8 +1104,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 4,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "1",
     "mode_B": "0",
@@ -789,8 +1122,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 5,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "1",
     "mode_B": "0",
@@ -805,8 +1140,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 6,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "1",
     "mode_B": "0",
@@ -821,8 +1158,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 7,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "1",
     "mode_B": "0",
@@ -837,8 +1176,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 8,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "2",
@@ -853,8 +1194,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 9,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -869,8 +1212,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 10,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -885,8 +1230,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 11,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -901,8 +1248,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 12,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "4",
     "mode_B": "-2",
@@ -917,8 +1266,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 13,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -933,8 +1284,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 14,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -949,8 +1302,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 15,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -965,8 +1320,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 16,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2",
     "mode_B": "-1",
@@ -981,8 +1338,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 17,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -997,8 +1356,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 18,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -1013,8 +1374,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 19,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -1029,8 +1392,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 20,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "1",
@@ -1045,8 +1410,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 21,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -1061,8 +1428,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 22,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -1077,8 +1446,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 23,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -1093,8 +1464,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 24,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -1109,8 +1482,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 25,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -1125,8 +1500,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 26,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -1141,8 +1518,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 27,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "4",
     "mode_B": "-2",
@@ -1157,8 +1536,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 28,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -1173,8 +1554,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 29,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -1189,8 +1572,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 30,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -1205,8 +1590,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 31,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "2",
@@ -1221,8 +1608,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 32,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2",
     "mode_B": "-1",
@@ -1237,8 +1626,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 33,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -1253,8 +1644,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 34,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -1269,8 +1662,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 35,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -1285,8 +1680,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 36,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "1",
@@ -1301,8 +1698,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 37,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -1317,8 +1716,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 38,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -1333,8 +1734,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 39,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -1349,8 +1752,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 40,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -1365,8 +1770,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 41,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -1381,8 +1788,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 42,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "4",
     "mode_B": "-2",
@@ -1397,8 +1806,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 43,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -1413,8 +1824,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 44,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -1429,8 +1842,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 45,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -1445,8 +1860,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 46,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "2",
@@ -1461,8 +1878,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 47,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -1477,8 +1896,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 48,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2",
     "mode_B": "-1",
@@ -1493,8 +1914,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 49,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -1509,8 +1932,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 50,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -1525,8 +1950,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 51,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -1541,8 +1968,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 52,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "1",
@@ -1557,8 +1986,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 53,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -1573,8 +2004,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 54,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -1589,8 +2022,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 55,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -1605,8 +2040,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 56,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -1621,8 +2058,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 57,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "4",
     "mode_B": "-2",
@@ -1637,8 +2076,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 58,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -1653,8 +2094,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 59,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -1669,8 +2112,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 60,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -1685,8 +2130,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 61,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "2",
@@ -1701,8 +2148,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 62,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -1717,8 +2166,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 63,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -1733,8 +2184,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 64,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2",
     "mode_B": "-1",
@@ -1749,8 +2202,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 65,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -1765,8 +2220,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 66,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -1781,8 +2238,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 67,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -1797,8 +2256,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 68,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "1",
@@ -1813,8 +2274,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 69,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -1829,8 +2292,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 70,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -1845,8 +2310,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 71,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -1861,8 +2328,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 72,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "4",
     "mode_B": "-2",
@@ -1877,8 +2346,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 73,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -1893,8 +2364,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 74,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -1909,8 +2382,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 75,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -1925,8 +2400,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 76,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "2",
@@ -1941,8 +2418,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 77,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -1957,8 +2436,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 78,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -1973,8 +2454,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 79,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -1989,8 +2472,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 80,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2",
     "mode_B": "-1",
@@ -2005,8 +2490,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 81,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -2021,8 +2508,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 82,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -2037,8 +2526,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 83,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -2053,8 +2544,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 84,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "1",
@@ -2069,8 +2562,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 85,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -2085,8 +2580,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 86,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -2101,8 +2598,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 87,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -2117,8 +2616,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 88,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -2133,8 +2634,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 89,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -2149,8 +2652,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 90,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -2165,8 +2670,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 91,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "2",
@@ -2181,8 +2688,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 92,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -2197,8 +2706,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 93,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -2213,8 +2724,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 94,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -2229,8 +2742,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 95,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "4",
     "mode_B": "-2",
@@ -2245,8 +2760,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 96,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2",
     "mode_B": "-1",
@@ -2261,8 +2778,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 97,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -2277,8 +2796,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 98,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -2293,8 +2814,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 99,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -2309,8 +2832,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 100,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "1",
@@ -2325,8 +2850,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 101,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -2341,8 +2868,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 102,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -2357,8 +2886,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 103,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -2373,8 +2904,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 104,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -2389,8 +2922,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 105,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -2405,8 +2940,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 106,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "2",
@@ -2421,8 +2958,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 107,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -2437,8 +2976,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 108,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -2453,8 +2994,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 109,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -2469,8 +3012,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 110,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "4",
     "mode_B": "-2",
@@ -2485,8 +3030,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 111,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -2501,8 +3048,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 112,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2",
     "mode_B": "-1",
@@ -2517,8 +3066,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 113,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -2533,8 +3084,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 114,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -2549,8 +3102,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 115,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -2565,8 +3120,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 116,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "1",
@@ -2581,8 +3138,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 117,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -2597,8 +3156,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 118,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -2613,8 +3174,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 119,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -2629,8 +3192,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 120,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -2645,8 +3210,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 121,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "2",
@@ -2661,8 +3228,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 122,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+-1*sqrt2",
     "mode_B": "0+1*sqrt2",
@@ -2677,8 +3246,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 123,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -2693,8 +3264,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 124,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -2709,8 +3282,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 125,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "4",
     "mode_B": "-2",
@@ -2725,8 +3300,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 126,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2+1*sqrt2",
     "mode_B": "0+-1*sqrt2",
@@ -2741,8 +3318,10 @@
     "creutz_defined": true,
     "creutz_is_constant": true,
     "creutz_is_unit": true,
+    "degenerate_branch": "NOT-DEGENERATE",
     "extreme_point": 127,
     "kind": "VERTEX",
+    "ladder_is_constant_in_the_perimeter": true,
     "ladder_word": "DECONFINES",
     "mode_A": "2",
     "mode_B": "0",
@@ -2757,8 +3336,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 128,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "2",
     "mode_B": "-1",
@@ -2773,8 +3354,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 129,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -2789,8 +3372,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 130,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -2805,8 +3390,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 131,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -2821,8 +3408,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 132,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "0",
     "mode_B": "1",
@@ -2837,8 +3426,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 133,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+-1/2*sqrt2",
     "mode_B": "0+1/2*sqrt2",
@@ -2853,8 +3444,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 134,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1",
     "mode_B": "0",
@@ -2869,8 +3462,10 @@
     "creutz_defined": true,
     "creutz_is_constant": false,
     "creutz_is_unit": false,
+    "degenerate_branch": "WELL-DEFINED-AND-MATCHING-NEITHER-SHAPE-OF-LAW",
     "extreme_point": 135,
     "kind": "EDGE-MIDPOINT",
+    "ladder_is_constant_in_the_perimeter": false,
     "ladder_word": "DISCRIMINATOR-DEGENERATE",
     "mode_A": "1+1/2*sqrt2",
     "mode_B": "0+-1/2*sqrt2",
@@ -2887,53 +3482,60 @@
   }
  },
  "gate_digests": {
-  "G-ARENA-REBUILT": "8af95935bbb0",
-  "G-CONSUMER-REGISTER-IS-REAL": "92bd5a7923a9",
-  "G-COVERAGE-AT-AN-HONEST-DENOMINATOR": "f62742e5bbad",
-  "G-EVERY-MUTANT-DESCRIPTION-IS-TRUE": "f3e3f2eccadb",
-  "G-EVERY-PREREGISTERED-WORD-IS-EMITTABLE": "60a27d432173",
-  "G-PAPER-CLAIMS-RENDERED": "6d6ab181edf2",
-  "G-PAPER-HEADERS-BOUND": "62b629101eb9",
-  "G-PAPER-MUST-NOT": "c9543b48ba75",
-  "G-PAPER-NUMERALS-COVERED": "f2e2e4683fcc",
-  "G-PAPER-POLARITY": "7e047adef784",
-  "G-PAPER-QUOTES-INSIDE-THE-WINDOWS": "6d36b0b38004",
-  "G-PAPER-SPELLED-NUMERALS": "731ae7bbc9f0",
-  "G-PAPER-TABLE-ROWS-COVERED": "f81aec45f4a7",
-  "G-PAPER-VERDICT-BLOCK": "e0347feac9ac",
+  "G-ARENA-REBUILT": "34dfed9751dc",
+  "G-CONSUMER-REGISTER-IS-REAL": "f7e82a2028a3",
+  "G-COVERAGE-AT-AN-HONEST-DENOMINATOR": "e351185310c8",
+  "G-EVERY-MUTANT-DESCRIPTION-IS-TRUE": "d5c44eeaa548",
+  "G-EVERY-PREREGISTERED-WORD-IS-EMITTABLE": "11c2649e0213",
+  "G-PAPER-CLAIMS-RENDERED": "763d2fc05735",
+  "G-PAPER-HEADERS-BOUND": "909f09263df3",
+  "G-PAPER-INLINE-SPANS-LICENSED": "d61bc2aab601",
+  "G-PAPER-MUST-NOT": "e72b0550a34b",
+  "G-PAPER-NUMERALS-COVERED": "5bb6cf00faca",
+  "G-PAPER-POLARITY": "fcc85f0fa220",
+  "G-PAPER-QUOTES-INSIDE-THE-WINDOWS": "fc9b44a12b03",
+  "G-PAPER-SHORT-NUMERALS-IN-CONTEXT": "39d239ae89a5",
+  "G-PAPER-SPELLED-NUMERALS": "8242dab83f0f",
+  "G-PAPER-TABLE-ROWS-COVERED": "83e2944f5ec0",
+  "G-PAPER-VERDICT-BLOCK": "85786904361a",
   "G-PATH-VALUE-ANCHORS": "aab45bd3b464",
-  "G-PLAQUETTE-ROW-REPRODUCED": "79336a5c6d2f",
+  "G-PLAQUETTE-ROW-REPRODUCED": "7564341635de",
   "G-SOURCES-AT-THEIR-PINNED-DIGESTS": "6b418bcb4e77",
-  "G-THE-ARITHMETIC-IS-EXACT": "ea2d929a2f84",
-  "G-THE-BOUNDARY-LATTICE-RUN": "d633b7e76726",
-  "G-THE-CLASSES-REBUILT": "62785c817c3a",
-  "G-THE-CONFINEMENT-LICENCE-WALL": "cd73250e9868",
-  "G-THE-CONJUGATION-SPLIT-IS-EXACT": "2674757414ea",
-  "G-THE-CONTROL-STAMP-CARRIED": "76f04d86ea3a",
-  "G-THE-DECLARED-ROWS-BUILT": "f536df79a7fa",
-  "G-THE-DISCRIMINATOR-IS-WELL-DEFINED": "eea69e0f14d8",
-  "G-THE-EXTREME-POINTS-REBUILT": "f9e9f0a85e62",
-  "G-THE-FAMILY-SLICES": "25bc38998deb",
-  "G-THE-FAMILY-SWEEP-IS-TOTAL": "7df7f59407f9",
-  "G-THE-FUNCTION-INVENTORY-IS-TOTAL": "53c94e2a8ae9",
-  "G-THE-HEAD-IS-DERIVED": "c3449b0ae781",
-  "G-THE-LADDER-CLOSED-FORM": "c4e2f252c4a6",
-  "G-THE-LADDER-IS-A-FUNCTION-OF-THE-PERIMETER-ALONE": "4c54b11f9c9d",
-  "G-THE-LEDGER-CHAIN-VERIFIES": "986fe23340f5",
-  "G-THE-LOOP-FAMILY-IS-A-FAMILY-OF-LOOPS": "1769e74a73cf",
-  "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP": "6c3b5dee917c",
-  "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT": "e80cc869dff9",
-  "G-THE-LOOP-OBSERVABLE-IS-BASE-POINT-BLIND": "f4d2be97e509",
-  "G-THE-LOOP-OBSERVABLE-IS-REVERSAL-BLIND": "456a9b67f9ca",
-  "G-THE-MERGING-INDEX-LAW-REPRODUCED": "9e3445f25cbf",
-  "G-THE-MUTANT-REGISTRY-IS-TOTAL": "7fb20b898184",
-  "G-THE-ODD-OBSERVABLES-CARRY-THEIR-DECLARATION": "9dca66244e2d",
-  "G-THE-ODD-PART-IS-ORIENTATION-ODD": "9f1de2f8c159",
-  "G-THE-ORDER-PARAMETER-RANGE": "2c9faf7fae92",
-  "G-THE-ORIENTATION-READING-IS-PRICED": "784dc227ebd8",
-  "G-THE-PRICE-BINDING": "f34bc06e94f5",
-  "G-THE-SPECTRAL-DOOR": "b1761112acfb",
-  "G-THE-TWO-HEAD-LAWS-AGREE": "65b1da9d358f",
+  "G-THE-AREA-BLINDNESS-IS-UNIVERSAL-OVER-MEASURES": "81607f8748d7",
+  "G-THE-ARITHMETIC-IS-EXACT": "96d62f3015f7",
+  "G-THE-BOUNDARY-LATTICE-RUN": "5f09e61f93f6",
+  "G-THE-CLASSES-REBUILT": "94dbad9e2e84",
+  "G-THE-CONFINEMENT-LICENCE-WALL": "02dbf8971635",
+  "G-THE-CONJUGATION-SPLIT-IS-EXACT": "98f3513d46f6",
+  "G-THE-CONTROL-STAMP-CARRIED": "f0290b1ea4b4",
+  "G-THE-CREUTZ-UNIT-SET-IS-THE-CONSTANT-LADDER-SET": "e7591c30d4f6",
+  "G-THE-DECLARED-ROWS-BUILT": "16a24c13e1e3",
+  "G-THE-DISCRIMINATOR-IS-WELL-DEFINED": "8a338bbce6d3",
+  "G-THE-EXTREME-POINTS-REBUILT": "5f28f69b8538",
+  "G-THE-FAMILY-SLICES": "16169428cd36",
+  "G-THE-FAMILY-SWEEP-IS-TOTAL": "28be30ddd352",
+  "G-THE-FUNCTION-INVENTORY-IS-TOTAL": "adaec8f3f81a",
+  "G-THE-HEAD-IS-DERIVED": "fdee942c278c",
+  "G-THE-LADDER-CLOSED-FORM": "23e2119dedd6",
+  "G-THE-LADDER-IS-A-FUNCTION-OF-THE-PERIMETER-ALONE": "1d79018a1f70",
+  "G-THE-LEDGER-CHAIN-VERIFIES": "ce5d72cbe8d1",
+  "G-THE-LENGTH-DOES-NOT-DETERMINE-THE-OBSERVABLE": "4ebb15d1f5a4",
+  "G-THE-LOOP-FAMILY-IS-A-FAMILY-OF-LOOPS": "43c20a00af27",
+  "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP": "d1cd46958022",
+  "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT": "6178424f2f64",
+  "G-THE-LOOP-OBSERVABLE-IS-BASE-POINT-BLIND": "e9dc1d82d69e",
+  "G-THE-LOOP-OBSERVABLE-IS-REVERSAL-BLIND": "3ba2bb4e6da8",
+  "G-THE-MERGING-INDEX-LAW-REPRODUCED": "37d2c216324a",
+  "G-THE-MUTANT-REGISTRY-IS-TOTAL": "014047115300",
+  "G-THE-ODD-OBSERVABLES-CARRY-THEIR-DECLARATION": "27e647d6925c",
+  "G-THE-ODD-PART-IS-ORIENTATION-ODD": "9767b2ba3447",
+  "G-THE-ORDER-PARAMETER-RANGE": "b989a522730c",
+  "G-THE-ORIENTATION-READING-IS-PRICED": "f6083696a32d",
+  "G-THE-PRICE-BINDING": "de16ec599556",
+  "G-THE-RECEIPT-HEADER-IS-BOUND": "fd463f950fb8",
+  "G-THE-SPECTRAL-DOOR": "7d6e5be980f5",
+  "G-THE-TRANSCRIPT-RECONCILES": "25404b7d1263",
+  "G-THE-TWO-HEAD-LAWS-AGREE": "0b97752ba486",
   "G-VERBATIM-ANCHORS": "33cf8e56bf35"
  },
  "gates": [
@@ -2966,413 +3568,560 @@
   },
   {
    "claim": "an AST scan of this instrument's own syntax tree is a gate, and it carries the clause the pin's multiplicative framing needs: no call to a logarithm, an exponential, a square root or a power exists in this source at all, no floating-point literal occurs anywhere, and no banned module is named -- so exact arithmetic is a property of the instrument rather than a promise about it",
-   "detail": "114 functions; banned calls []; banned names []; float literals 0",
+   "detail": "127 functions; banned calls []; banned names []; float literals 0",
    "gate": "G-THE-ARITHMETIC-IS-EXACT",
    "kind": "MEASURED",
-   "link": "ea2d929a2f84",
+   "link": "96d62f3015f7",
    "passed": true,
    "prev": "33cf8e56bf35"
   },
   {
    "claim": "the mutant registry is checked TOTAL against the instrument's own syntax tree: every switch the scan can read is declared and every declared mutant is present in the source, and a switch the scan CANNOT read is fatal rather than forgiven, so a falsifier cannot exist as an unswept branch",
-   "detail": "49 switches in the tree, 49 declared; unregistered []; unused []",
+   "detail": "61 switches in the tree, 61 declared; unregistered []; unused []",
    "gate": "G-THE-MUTANT-REGISTRY-IS-TOTAL",
    "kind": "MEASURED",
-   "link": "7fb20b898184",
+   "link": "014047115300",
    "passed": true,
-   "prev": "ea2d929a2f84"
+   "prev": "96d62f3015f7"
   },
   {
    "claim": "the function inventory is checked total the same way, so a helper that appeared after the inventory was written -- or one that vanished from it -- stops the delivery run",
-   "detail": "114 functions in the tree, 112 declared; undeclared []; missing []",
+   "detail": "127 functions in the tree, 125 declared; undeclared []; missing []",
    "gate": "G-THE-FUNCTION-INVENTORY-IS-TOTAL",
    "kind": "MEASURED",
-   "link": "53c94e2a8ae9",
+   "link": "adaec8f3f81a",
    "passed": true,
-   "prev": "7fb20b898184"
+   "prev": "014047115300"
   },
   {
    "claim": "E-23: each mutant's published description names the exact token it plants or changes, and that token is located in this instrument's own source text -- a description that has drifted from the code it describes stops the run",
-   "detail": "49 mutants, 49 with their named token located, none missing",
+   "detail": "61 mutants, 61 with their named token located, none missing",
    "gate": "G-EVERY-MUTANT-DESCRIPTION-IS-TRUE",
    "kind": "MEASURED",
-   "link": "f3e3f2eccadb",
+   "link": "d5c44eeaa548",
    "passed": true,
-   "prev": "53c94e2a8ae9"
+   "prev": "adaec8f3f81a"
   },
   {
-   "claim": "the alphabet, the coin family, the lattice, the link set and the plaquette set are REBUILT here from the parents' own declarations -- nothing is imported -- and every cardinality is required to equal the parent's published one at a named receipt path, with unitarity confirmed by a second route on every coin",
+   "claim": "the alphabet, the coin family, the lattice, the link set and the plaquette set are REBUILT here from the parents' own declarations -- nothing is imported -- and every cardinality is required to equal the parent's published one at a named receipt path, with unitarity confirmed by a second route on every coin and the link operator's own window read here for the clause that fixes what the operator does away from its link",
    "detail": "alphabet 25, coins 640 (ANTIDIAGONAL 64, BALANCED 512, DIAGONAL 64), unitary by a second route 640, sites 16, links 32, plaquettes 16",
    "gate": "G-ARENA-REBUILT",
    "kind": "MEASURED",
-   "link": "8af95935bbb0",
+   "link": "34dfed9751dc",
    "passed": true,
-   "prev": "f3e3f2eccadb"
+   "prev": "d5c44eeaa548"
   },
   {
-   "claim": "the parent's own receipt records ZERO loop families grown, and its paper names the family of loops whose size can grow as the gate on everything beyond; this unit reads that field at its named path and builds the object rather than quoting the gap",
+   "claim": "the parent's own receipt records ZERO loop families grown, and its paper names the family of loops whose size can grow as the gate on everything beyond; this unit reads that field at its named path, reads both windows that record the gap, and builds the object rather than quoting it",
    "detail": "the parent grew 0 loop families; this unit builds the family and gates it",
    "gate": "G-THE-LOOP-FAMILY-IS-THE-MISSING-OBJECT",
    "kind": "MEASURED",
-   "link": "e80cc869dff9",
+   "link": "6178424f2f64",
    "passed": true,
-   "prev": "8af95935bbb0"
+   "prev": "34dfed9751dc"
   },
   {
    "claim": "the declared family is enumerated with no silent cap -- the rectangle extents are swept to the lattice period itself and the SIMPLE ones are measured rather than assumed -- every member closes, every step is an adjacency, every placement carries a distinct canonical name, and the winding arm is populated as well as the contractible one",
    "detail": "192 placements, 192 distinct loops, 144 contractible and 48 winding, simple extents [1, 2, 3] at 9 of 16 swept sizes",
    "gate": "G-THE-LOOP-FAMILY-IS-A-FAMILY-OF-LOOPS",
    "kind": "MEASURED",
-   "link": "1769e74a73cf",
+   "link": "43c20a00af27",
    "passed": true,
-   "prev": "e80cc869dff9"
+   "prev": "6178424f2f64"
   },
   {
    "claim": "distinctness is measured under the acting group at both declared readings: the anchored chart group is the parent's own, the declared family is required to be CLOSED under it, and the orbit count -- which is how many loops this arena really has, as against how many placements -- is computed, not typed.  The extension reading's escape count is published rather than absorbed",
    "detail": "ANCHORED: order 32, 192 loops, 11 orbits, sizes [8, 16, 32], escapes 0; EXTENSION: order 128, 192 loops, 11 orbits, sizes [8, 16, 32], escapes 16",
    "gate": "G-THE-LOOP-FAMILY-IS-CLOSED-UNDER-THE-ACTING-GROUP",
    "kind": "MEASURED",
-   "link": "6c3b5dee917c",
+   "link": "d1cd46958022",
    "passed": true,
-   "prev": "1769e74a73cf"
+   "prev": "43c20a00af27"
   },
   {
    "claim": "the induced classes on the carrier are rebuilt from the twist action alone and required to land on the parent's published counts: the residual gauge group of the torus gives the parent's orbits, the full link-stencil gauge image gives the classes, the classes are measured to COARSEN the orbits, and the number of merged pairs is the parent's own",
    "detail": "136 classes with size profile [(1, 64), (8, 72)], 208 parent orbits, coarsening True, 72 pairs merged",
    "gate": "G-THE-CLASSES-REBUILT",
    "kind": "MEASURED",
-   "link": "62785c817c3a",
+   "link": "94dbad9e2e84",
    "passed": true,
-   "prev": "6c3b5dee917c"
+   "prev": "d1cd46958022"
   },
   {
-   "claim": "the extreme points of the reachable set are the uniform measures on the classes: a class the odd twist fixes is a VERTEX of the parent's simplex and a class it merges is a MIDPOINT of one of its edges, and the split is required to equal the parent's published one",
+   "claim": "the extreme points of the reachable set are the uniform measures on the classes: a class the odd twist fixes is a VERTEX of the parent's simplex and a class it merges is a MIDPOINT of one of its edges, and the split is required to equal the parent's published one -- read out of the parent's own sentence here, so THIS run's two counts must be the two integers that sentence carries",
    "detail": "136 extreme points: 64 vertices and 72 edge midpoints",
    "gate": "G-THE-EXTREME-POINTS-REBUILT",
    "kind": "MEASURED",
-   "link": "f9e9f0a85e62",
+   "link": "5f28f69b8538",
    "passed": true,
-   "prev": "62785c817c3a"
+   "prev": "94dbad9e2e84"
   },
   {
    "claim": "the loop observable is rebuilt from R5's own definition and is the parent's own admissible object -- the CONJUGATION-SYMMETRIC part of the loop trace, which lies in the real subfield by construction -- measured on the whole carrier at EVERY placement of every declared shape: the value at one base point equals the value at every other, which is what makes an expectation over the family a function of the shape and not of where the loop was put, and how many shapes have an already real raw trace is published rather than assumed",
    "detail": "18 shapes, 111360 placement-by-coin comparisons, 0 mismatches, 0 values outside the real subfield, 9 of 18 shapes whose raw trace is already real at every coin (7760 of 11520 shape-by-coin traces)",
    "gate": "G-THE-LOOP-OBSERVABLE-IS-BASE-POINT-BLIND",
    "kind": "MEASURED",
-   "link": "f4d2be97e509",
+   "link": "e9dc1d82d69e",
    "passed": true,
-   "prev": "f9e9f0a85e62"
+   "prev": "5f28f69b8538"
   },
   {
    "claim": "the canonical name of a loop admits its reversal, and that admission is EARNED rather than declared: the reversed loop's holonomy is the inverse, whose trace is the conjugate, and on this carrier every trace is real -- so the reversed loop's trace is measured equal at every shape and every coin",
    "detail": "11520 reversed-loop comparisons, 0 disagreements",
    "gate": "G-THE-LOOP-OBSERVABLE-IS-REVERSAL-BLIND",
    "kind": "MEASURED",
-   "link": "456a9b67f9ca",
+   "link": "3ba2bb4e6da8",
    "passed": true,
-   "prev": "f4d2be97e509"
+   "prev": "e9dc1d82d69e"
   },
   {
-   "claim": "the one member of this family the parents already measured is reproduced from these primitives before anything new is said: the plaquette's trace takes the parent's own number of distinct values on the carrier, its counting-measure expectation is the parent's published number, and the count of non-flat diagonal coins is the grandparent's",
+   "claim": "the one member of this family the parents already measured is reproduced from these primitives before anything new is said: the plaquette's trace takes the parent's own number of distinct values on the carrier, its counting-measure expectation is the parent's published number, and the count of non-flat diagonal coins is the grandparent's -- with the two windows that fix the holonomy's own definition read here, at the orientation clause and at the block the census runs in",
    "detail": "11 distinct values, counting expectation 13/10, 56 non-flat diagonal coins, 8 flat coins",
    "gate": "G-PLAQUETTE-ROW-REPRODUCED",
    "kind": "MEASURED",
-   "link": "79336a5c6d2f",
+   "link": "7564341635de",
    "passed": true,
-   "prev": "456a9b67f9ca"
+   "prev": "3ba2bb4e6da8"
+  },
+  {
+   "claim": "the perimeter-only theorem's SCOPE is measured at its own boundary: over the wider declared family the loop's own length is required NOT to determine the observable, so the theorem is the rectangle ladder's and is not carried to the family.  Every group of shapes sharing a step count is read coin by coin, every group on which only rectangles occur is required to agree everywhere, and at least one mixed group is required to disagree -- with an explicit witness published",
+   "detail": "6 step-count groups with more than one shape, 3 of them disagreeing at some coin, 2 rectangle-only groups agreeing everywhere; witness {'step_count': 4, 'coin': 1, 'coin_sector': 'ANTIDIAGONAL', 'shape': 'RECTANGLE-CIRCUIT-1-1', 'value': '1', 'other_shape': 'STRAIGHT-WINDING-CYCLE-1-0', 'other_value': '-1'}",
+   "gate": "G-THE-LENGTH-DOES-NOT-DETERMINE-THE-OBSERVABLE",
+   "kind": "MEASURED",
+   "link": "4ebb15d1f5a4",
+   "passed": true,
+   "prev": "7564341635de"
   },
   {
    "claim": "the discriminator's own well-definedness at the declared lattice is a MEASUREMENT taken before any row runs: the ladder must carry at least one comparison at equal perimeter and unequal area, and at least one Creutz rung; if it carried neither, the honest verdict would be that the discriminator is degenerate at this lattice and no row could rescue it",
    "detail": "9 ladder shapes over extents [1, 2, 3]; 2 area-discriminating comparisons ['1-3/2-2', '2-2/3-1']; 4 Creutz rungs ['2-2', '2-3', '3-2', '3-3']",
    "gate": "G-THE-DISCRIMINATOR-IS-WELL-DEFINED",
    "kind": "MEASURED",
-   "link": "eea69e0f14d8",
+   "link": "8a338bbce6d3",
    "passed": true,
-   "prev": "79336a5c6d2f"
+   "prev": "4ebb15d1f5a4"
   },
   {
    "claim": "the L-boundary is stated as a measured law and not as a quoted one: the merging index is eight over the greatest common divisor of L and eight, it is the parent's own value at the declared size, and it is one at every L divisible by eight -- where no class merges, so every claim this unit makes about the class structure carries its lattice scope",
    "detail": "the link stencil's gauge image is measured at 8 distinct actions and the phase order is 8; L=2 index 4; L=4 index 2; L=8 index 1; L=16 index 1",
    "gate": "G-THE-MERGING-INDEX-LAW-REPRODUCED",
    "kind": "MEASURED",
-   "link": "9e3445f25cbf",
+   "link": "37d2c216324a",
    "passed": true,
-   "prev": "eea69e0f14d8"
+   "prev": "8a338bbce6d3"
   },
   {
-   "claim": "at every coin of the carrier and at every pair of ladder shapes of equal perimeter, the loop observable takes the SAME value -- the area does not enter it.  This is measured per-configuration, not per-expectation, so it holds under every measure on this carrier without a second census",
-   "detail": "5760 shape-by-coin comparisons at equal perimeter, 0 disagreements",
+   "claim": "at every coin of the carrier and at every pair of ladder shapes of equal perimeter, the loop observable takes the SAME value -- the area does not enter it.  This is measured per-configuration, not per-expectation, so it holds under every measure on this carrier without a second census.  The count is published on THREE bases, because the scheme reads each shape against its perimeter class's representative and so counts the representative against itself: the shape-by-coin count, the genuine cross-shape count inside it, and the complete unordered-pair count, of which the area-discriminating comparisons are the sub-basis the area finding is claimed on",
+   "detail": "5760 shape-by-coin comparisons at equal perimeter, 0 disagreements (3200 of them a shape against itself, 2560 genuine cross-shape); 3200 unordered-pair-by-coin comparisons, 0 disagreements; 1280 area-discriminating comparison-by-coin checks, 0 disagreements",
    "gate": "G-THE-LADDER-IS-A-FUNCTION-OF-THE-PERIMETER-ALONE",
    "kind": "MEASURED",
-   "link": "4c54b11f9c9d",
+   "link": "1d79018a1f70",
    "passed": true,
-   "prev": "9e3445f25cbf"
+   "prev": "37d2c216324a"
   },
   {
    "claim": "the ladder's dependence on the perimeter is fitted EXACTLY from three points to a constant, a term proportional to the perimeter and a term halving with it, and then VERIFIED at every remaining point of the ladder at every coin -- an over-determined test, not a fit",
    "detail": "640 coins, ladder over perimeters [2, 3, 4, 5, 6], 2 verification points each, 0 failures",
    "gate": "G-THE-LADDER-CLOSED-FORM",
    "kind": "MEASURED",
-   "link": "c4e2f252c4a6",
+   "link": "23e2119dedd6",
    "passed": true,
-   "prev": "4c54b11f9c9d"
+   "prev": "1d79018a1f70"
+  },
+  {
+   "claim": "the universal is licensed where it lives: the difference of two expectations at an area-discriminating comparison is a ratio whose NUMERATOR IS LINEAR in the measure, so vanishing at the point masses forces it to vanish on their whole hull.  Both ends are executed rather than argued -- every one of the carrier's Dirac measures, and a declared block of interior measures of full support drawn by an integer recurrence, compared on exact integer numerators over one common denominator",
+   "detail": "common denominator 16, the rescaling is exact True; 1280 Dirac comparisons, 0 mismatches; 3000 interior comparisons at 1500 measures of full support, 0 mismatches",
+   "gate": "G-THE-AREA-BLINDNESS-IS-UNIVERSAL-OVER-MEASURES",
+   "kind": "MEASURED",
+   "link": "81607f8748d7",
+   "passed": true,
+   "prev": "23e2119dedd6"
   },
   {
    "claim": "each declared weight system is rebuilt here and its plaquette expectation is required to equal the parent's own published number at a named receipt path before any larger loop is believed; the Wilson weight is measured to be a function of the trace's conjugation-symmetric invariant; every row carries the stamp CONDITIONAL-ON-THE-DECLARED-WEIGHTS on its own row, so an unstamped expectation stops the run",
    "detail": "4 rows, all stamped True, conjugation-symmetric True; plaquette expectations [('THE-EXHIBITED-WITNESS', '4294967399/4294967375'), ('THE-LAW-NATIVE-CONTROL', '225/152'), ('THE-NULL', '13/10'), ('THE-WILSON-CONJUGATION-SYMMETRIC', '262244/65615')]",
    "gate": "G-THE-DECLARED-ROWS-BUILT",
    "kind": "MEASURED",
-   "link": "f536df79a7fa",
+   "link": "16a24c13e1e3",
    "passed": true,
-   "prev": "c4e2f252c4a6"
+   "prev": "81607f8748d7"
   },
   {
    "claim": "the law-native row enters this unit AS A CONTROL: its stamp is carried VERBATIM from the parent's receipt, its three sector masses are read at a named path and required to normalise, and its row is published as a TRANSPORTED law value and never as a derived measure -- a row that called it derived would stop the run",
    "detail": "stamp 'LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION'; the row's measure field is TRANSPORTED-NOT-DERIVED; the sector law ['15/38', '5/19', '13/38'] sums to 1",
    "gate": "G-THE-CONTROL-STAMP-CARRIED",
    "kind": "MEASURED",
-   "link": "76f04d86ea3a",
+   "link": "f0290b1ea4b4",
    "passed": true,
-   "prev": "f536df79a7fa"
+   "prev": "16a24c13e1e3"
   },
   {
    "claim": "the sweep runs EVERY extreme point of the reachable set, not a sample: each observable is then classified FAMILY-INVARIANT or coupling-dependent by whether its value moves across those extreme points, and both arms are required to be populated so that neither classification is vacuous",
    "detail": "136 extreme points swept; area-seen tally {'False': 136}; ladder tally {'DECONFINES': 24, 'DISCRIMINATOR-DEGENERATE': 112}; winding tally {'WINDING-ORDER-NONZERO': 96, 'WINDING-ORDER-ZERO': 40}; 1 family-invariant and 7 coupling-dependent observables",
    "gate": "G-THE-FAMILY-SWEEP-IS-TOTAL",
    "kind": "MEASURED",
-   "link": "7df7f59407f9",
+   "link": "28be30ddd352",
    "passed": true,
-   "prev": "76f04d86ea3a"
+   "prev": "f0290b1ea4b4"
+  },
+  {
+   "claim": "the extreme points where the Creutz ratio is one are characterised BY A MEASUREMENT and elementwise: that set is required to be exactly the set at which the ladder is constant in the perimeter, so the word the classifier prints there records a flat ladder and nothing else.  The mechanism is measured too, through the real discriminator on three synthetic single-mode ladders: a constant ladder and a halving ladder both return one at every rung, a perimeter-proportional ladder does not, and a single active mode therefore does NOT imply the ratio is one",
+   "detail": "the ratio is one at 24 extreme points and the ladder is constant in the perimeter at 24, the two sets equal True; a single mode is active at 32, of which 8 carry the perimeter-proportional mode alone [8, 31, 46, 61, 76, 91, 106, 121]; the constant values there are {'1': 8, '2': 16}; the synthetic single-mode ladders return unit [True, False, True] and the perimeter-proportional one returns {'2-2': '8/9', '2-3': '15/16', '3-2': '15/16', '3-3': '24/25'}",
+   "gate": "G-THE-CREUTZ-UNIT-SET-IS-THE-CONSTANT-LADDER-SET",
+   "kind": "MEASURED",
+   "link": "e7591c30d4f6",
+   "passed": true,
+   "prev": "28be30ddd352"
   },
   {
    "claim": "the interior of the allowed space is sampled by exact one-parameter slices as well as its corners -- one class raised to three declared exact rational couplings -- and the area leg's verdict is required to be the same there, while the expectations themselves are required to MOVE, so the slice is not a constant row wearing a parameter",
-   "detail": "9 slices; distinct plaquette expectations 3; area-seen at 0 of them",
+   "detail": "9 slices; distinct plaquette expectations 3; 3 distinct ladders over 3 classes of sizes [8] in sectors ['ANTIDIAGONAL']; area-seen at 0 of them",
    "gate": "G-THE-FAMILY-SLICES",
    "kind": "MEASURED",
-   "link": "25bc38998deb",
+   "link": "16169428cd36",
    "passed": true,
-   "prev": "7df7f59407f9"
+   "prev": "e7591c30d4f6"
   },
   {
    "claim": "the partition question is answered LEG BY LEG and by counting, never by argument: the inventory the parent handed over is one coupling per class after the normalisation base is fixed, each coupling's strong limit is the extreme point on its own class, and each leg of the discriminator is asked how many couplings fall on each side.  A leg whose value never moves is FAMILY-INVARIANT and a leg whose value moves partitions the inventory exactly",
    "detail": "135 couplings against 136 extreme points; 9 legs, 7 of them partitioning; the area leg is FAMILY-INVARIANT",
    "gate": "G-THE-PRICE-BINDING",
    "kind": "MEASURED",
-   "link": "f34bc06e94f5",
+   "link": "de16ec599556",
    "passed": true,
-   "prev": "25bc38998deb"
+   "prev": "16169428cd36"
   },
   {
    "claim": "the parent's falsifier is put to the order-parameter analogue: the winding expectation's range is measured three times -- over its own values on the carrier, over the parent's invariant simplex where it is the hull of the orbit averages, and over the reachable set where it is the hull of the CLASS averages -- and an observable is pinned by the action route exactly when the third is narrower than the second",
    "detail": "own range [-4, 4]; over the invariant simplex [-4, 4]; over the reachable set [-4, 4]; pinned False",
    "gate": "G-THE-ORDER-PARAMETER-RANGE",
    "kind": "MEASURED",
-   "link": "2c9faf7fae92",
+   "link": "b989a522730c",
    "passed": true,
-   "prev": "f34bc06e94f5"
+   "prev": "de16ec599556"
   },
   {
    "claim": "the transfer object's own spectrum is measured rather than assumed: the winding cycle's power-sum ladder gives the characteristic polynomial of the winding holonomy by Newton's identities in exact arithmetic, its determinant is required to have modulus one and its coefficient sequence to be self-inversive -- the signature of a matrix whose spectrum lies on the unit circle, which is what settles WHERE the ladder's decay can and cannot live",
    "detail": "640 holonomies; determinant of modulus one at 640; self-inversive at 640; the ladder spectrum {1,1,1/2} with gap 1/2",
    "gate": "G-THE-SPECTRAL-DOOR",
    "kind": "MEASURED",
-   "link": "b1761112acfb",
+   "link": "7d6e5be980f5",
    "passed": true,
-   "prev": "2c9faf7fae92"
+   "prev": "b989a522730c"
   },
   {
    "claim": "the oriented chart subgroup is DECLARED as an alternative symmetry standard and never derived, and its price is measured rather than argued: the index of the oriented subgroup in the chart group is the convention purchased, and the form census at the link grain is re-run at all four readings so that what the smaller covariance group costs -- or fails to cost -- in couplings is a number.  Every row carries the declaration stamp",
    "detail": "ANCHORED: chart 32, stabiliser 1, acting 8, orbits 136, couplings 135, index 2; ANCHORED-ORIENTED: chart 16, stabiliser 1, acting 8, orbits 136, couplings 135, index 2; EXTENSION: chart 128, stabiliser 4, acting 16, orbits 80, couplings 79, index 2; EXTENSION-ORIENTED: chart 64, stabiliser 2, acting 16, orbits 80, couplings 79, index 2",
    "gate": "G-THE-ORIENTATION-READING-IS-PRICED",
    "kind": "MEASURED",
-   "link": "784dc227ebd8",
+   "link": "f6083696a32d",
    "passed": true,
-   "prev": "b1761112acfb"
+   "prev": "7d6e5be980f5"
   },
   {
    "claim": "every loop trace is split exactly into its conjugation-symmetric and conjugation-odd parts and the two are required to reconstruct it in the full field at every shape and every coin, so the odd part this reading makes lawful is the parent's own trace minus the parent's own admissible object and not a new quantity",
    "detail": "11520 shape-by-coin traces split, 0 reconstruction failures, 3760 carrying a non-zero odd part at 9 of 18 shapes",
    "gate": "G-THE-CONJUGATION-SPLIT-IS-EXACT",
    "kind": "MEASURED",
-   "link": "2674757414ea",
+   "link": "98f3513d46f6",
    "passed": true,
-   "prev": "784dc227ebd8"
+   "prev": "f6083696a32d"
   },
   {
    "claim": "the odd part is measured to change sign under the reversal a reflection performs, at every shape and every coin -- which is exactly why it is unlawful at the full chart standard and lawful at the oriented one, and it makes the declaration's content a measurement rather than a definition",
    "detail": "11520 reversed comparisons, 0 that did not negate",
    "gate": "G-THE-ODD-PART-IS-ORIENTATION-ODD",
    "kind": "MEASURED",
-   "link": "9f1de2f8c159",
+   "link": "9767b2ba3447",
    "passed": true,
-   "prev": "2674757414ea"
+   "prev": "98f3513d46f6"
   },
   {
    "claim": "what the oriented declaration buys is published as values, and every one of them carries the stamp DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING on its own row: an odd-part value rendered without its declaration stops the delivery run, because outside that declaration it is not an observable of this arena at all",
    "detail": "4 declared rows carry odd observables at [0, 0, 0, 0] of the family's shapes; 96 of 136 extreme points carry at least one",
    "gate": "G-THE-ODD-OBSERVABLES-CARRY-THEIR-DECLARATION",
    "kind": "MEASURED",
-   "link": "9dca66244e2d",
+   "link": "27e647d6925c",
    "passed": true,
-   "prev": "9f1de2f8c159"
+   "prev": "9767b2ba3447"
   },
   {
    "claim": "the L-boundary is RUN and not projected: at the smallest lattice size where the merging index is one, the ladder is still a function of the perimeter alone across every area-discriminating comparison, the closed form still holds over a strictly longer ladder with the SAME coefficients coin by coin, and the class structure loses its merges entirely -- so the two halves of this unit's findings are measured to carry different lattice scopes",
    "detail": "L=8: 49 simple shapes, 70 area-discriminating comparisons against 2 here, 44800 comparison-by-coin checks with 0 disagreements, closed-form failures 0, identical coefficients at 640 of 640 coins, 136 parent orbits and 136 classes with 0 merges",
    "gate": "G-THE-BOUNDARY-LATTICE-RUN",
    "kind": "MEASURED",
-   "link": "d633b7e76726",
+   "link": "5f09e61f93f6",
    "passed": true,
-   "prev": "9dca66244e2d"
+   "prev": "27e647d6925c"
   },
   {
    "claim": "the head law is measured multi-way rather than declared so: each pre-registered word is produced by driving a DECLARED synthetic ladder -- a law geometric in the area, a law geometric in the perimeter, a ladder with a vanishing rung, a ladder the family does not cover, and two rows that disagree -- through the same discriminator and the same head law the delivered rows go through, with no delivered field overwritten and no row forged",
    "detail": "5 control arms, 5 agreeing; 5 distinct head words against 5 pre-registered",
    "gate": "G-EVERY-PREREGISTERED-WORD-IS-EMITTABLE",
    "kind": "MEASURED",
-   "link": "60a27d432173",
+   "link": "11c2649e0213",
    "passed": true,
-   "prev": "d633b7e76726"
+   "prev": "5f09e61f93f6"
   },
   {
    "claim": "the head word is DERIVED by the selector from the leg verdicts of every declared row and every extreme point, and it is required to be one of the words the pin pre-registered -- so a head that is not the measurement's own is not utterable here",
    "detail": "the head law returns POT-SPLIT-BY-WEIGHT from 4 declared rows and 136 extreme points; row tally {'DISCRIMINATOR-DEGENERATE': 4}; sweep tally {'DECONFINES': 24, 'DISCRIMINATOR-DEGENERATE': 112}",
    "gate": "G-THE-HEAD-IS-DERIVED",
    "kind": "MEASURED",
-   "link": "c3449b0ae781",
+   "link": "fdee942c278c",
    "passed": true,
-   "prev": "60a27d432173"
+   "prev": "11c2649e0213"
   },
   {
    "claim": "the complete verdict string -- head included -- is compared for equality against an INDEPENDENT reconstruction that reads only the serialized receipt, derives the head by a second head law of its own over the tallies rather than the rows, and re-renders every segment with its own format strings, sharing no helper with the builder",
-   "detail": "the builder's string and the comparator's string agree: True (3063 characters)",
+   "detail": "the builder's string and the comparator's string agree: True (3267 characters)",
    "gate": "G-THE-TWO-HEAD-LAWS-AGREE",
    "kind": "MEASURED",
-   "link": "65b1da9d358f",
+   "link": "0b97752ba486",
    "passed": true,
-   "prev": "c3449b0ae781"
+   "prev": "fdee942c278c"
   },
   {
    "claim": "the gate ledger is chained row by row and the chain is VERIFIED rather than published beside an unperformed claim, so a row edited after its gate closed no longer matches the digest of its own predecessor",
-   "detail": "35 ledger rows, chain verifies True",
+   "detail": "38 ledger rows, chain verifies True",
    "gate": "G-THE-LEDGER-CHAIN-VERIFIES",
    "kind": "MEASURED",
-   "link": "986fe23340f5",
+   "link": "ce5d72cbe8d1",
    "passed": true,
-   "prev": "65b1da9d358f"
+   "prev": "0b97752ba486"
   },
   {
-   "claim": "the falsifier coverage is published at an honest denominator (#34): the denominator is EVERY gate on the clean path and not only the ones already closed, each is either a declared falsifier's target or carries a registered forcing, and the late gates are listed one by one with which of the two covers them",
-   "detail": "38 gates on the clean path, 47 falsifier targets, 3 registered forcings, 0 uncovered []",
-   "gate": "G-COVERAGE-AT-AN-HONEST-DENOMINATOR",
-   "kind": "MEASURED",
-   "link": "f62742e5bbad",
-   "passed": true,
-   "prev": "986fe23340f5"
-  },
-  {
-   "claim": "every number the paper states is RENDERED FROM THE RECEIPT and located in the delivered text at its declared occurrence count, so no count is typed and a paper that drifted from the measurement stops the delivery run",
-   "detail": "39 claims, 39 located, missing []",
+   "claim": "every number the paper states is RENDERED FROM THE RECEIPT and located in the delivered text at its declared occurrence count BY EQUALITY and not by a floor, so a claim rendered twice and corrupted at one of the two -- which a floor would forgive -- stops the delivery run, and so does a rendering deleted",
+   "detail": "58 claims, 58 at their declared occurrence counts, 87 occurrences in all, missing []",
    "gate": "G-PAPER-CLAIMS-RENDERED",
    "kind": "MEASURED",
-   "link": "6d6ab181edf2",
+   "link": "763d2fc05735",
    "passed": true,
-   "prev": "f62742e5bbad"
+   "prev": "ce5d72cbe8d1"
   },
   {
    "claim": "the paper's fenced blocks are compared as a MULTISET against the single verdict block this run licenses, so neither a stale verdict nor a forged twin beside the clean one can be delivered, and the licensed string is itself required to equal an independent reconstruction that reads only the receipt",
    "detail": "1 fenced blocks in the paper, 1 licensed, equal as multisets True",
    "gate": "G-PAPER-VERDICT-BLOCK",
    "kind": "MEASURED",
-   "link": "e0347feac9ac",
+   "link": "85786904361a",
    "passed": true,
-   "prev": "6d6ab181edf2"
+   "prev": "763d2fc05735"
   },
   {
    "claim": "every direction-bearing headline is bound by a polarity list: the sentence as measured must be present and its inverse must be absent, so a headline inverted in the paper stops being locatable and the run refuses",
    "detail": "9 polarity pairs, 9 clean",
    "gate": "G-PAPER-POLARITY",
    "kind": "MEASURED",
-   "link": "7e047adef784",
+   "link": "fcc85f0fa220",
    "passed": true,
-   "prev": "e0347feac9ac"
+   "prev": "85786904361a"
   },
   {
-   "claim": "column headers are bound AS CLAIMS: every header row of every delivered table is rendered from the receipt keys its own columns are, and the paper's header rows are compared as a multiset against that rendering, so two semantically opposed columns exchanged in the paper stop matching",
-   "detail": "9 header rows in the paper, 9 licensed, equal as multisets True",
+   "claim": "column headers are bound AS CLAIMS: every header row of every delivered table is rendered from the receipt keys its own columns are -- and that correspondence is CHECKED, every column name being required to be a key of every row object the table reports -- and the paper's header rows are compared as a multiset against that rendering, so two semantically opposed columns exchanged in the paper stop matching",
+   "detail": "10 header rows in the paper, 10 licensed over 10 tables, equal as multisets True; 0 columns naming no receipt key []",
    "gate": "G-PAPER-HEADERS-BOUND",
    "kind": "MEASURED",
-   "link": "62b629101eb9",
+   "link": "909f09263df3",
    "passed": true,
-   "prev": "7e047adef784"
+   "prev": "fcc85f0fa220"
   },
   {
-   "claim": "the numeral sweep covers EVERY numeral in the delivered text including the fenced verdict block, the inline code spans and both sides of every fraction, against a registry built from the receipt's own values -- section numbers alone are stripped from headings, and that stripping is declared here rather than silently applied",
-   "detail": "591 numerals scanned, 0 uncovered []",
+   "claim": "the numeral sweep covers EVERY numeral in the delivered text including the fenced verdict block, the inline code spans and both sides of every fraction, against a registry built from the receipt's own values -- section numbers alone are stripped from headings, and that stripping is declared here rather than silently applied.  This registry is a flat set of digit runs, so it has teeth at three digits and up and is published as having none below that: the short numerals are gated next, against a registry of a different kind",
+   "detail": "698 numerals scanned, 0 uncovered []; 322 registry tokens, 218 of them three digits or longer",
    "gate": "G-PAPER-NUMERALS-COVERED",
    "kind": "MEASURED",
-   "link": "f2e2e4683fcc",
+   "link": "5bb6cf00faca",
    "passed": true,
-   "prev": "62b629101eb9"
+   "prev": "909f09263df3"
   },
   {
-   "claim": "spelled numerals above twelve are scanned too, so a count written in words cannot slip past the numeral gate: every spelled number-word the paper uses must have its value in the receipt's registry, and the scan is required to be TOTAL over the declared word list, so a truncated scan is fatal rather than permissive",
-   "detail": "17 number-words scanned of 17 declared, 0 unbacked []",
+   "claim": "every inline code span in the delivered text is required to be a string this run measured or declared -- a receipt key, a receipt value, a gate id, a mutant name, a declared path or a declared flag -- so a numeral cannot be smuggled into the paper inside a code span, and a span naming an object this run does not have stops the delivery run",
+   "detail": "30 inline spans, 29 distinct, 0 unlicensed []",
+   "gate": "G-PAPER-INLINE-SPANS-LICENSED",
+   "kind": "MEASURED",
+   "link": "d61bc2aab601",
+   "passed": true,
+   "prev": "5bb6cf00faca"
+  },
+  {
+   "claim": "the short numerals are gated against a registry of a different kind, because a flat registry of digit runs contains every one- and two-digit value and therefore backs nothing: a numeral of one or two digits in the paper's PROSE must be a token this run rendered IN CONTEXT -- inside a claim, a table row, a table header or the verdict string.  The declared exemptions are the fenced blocks, the table rows and the inline spans, each bound by its own gate, the mathematical spans between dollar signs, and the era references written with a hash or a section sign",
+   "detail": "171 short numerals in prose after the declared exemptions, 69 context tokens, 0 unbacked []",
+   "gate": "G-PAPER-SHORT-NUMERALS-IN-CONTEXT",
+   "kind": "MEASURED",
+   "link": "39d239ae89a5",
+   "passed": true,
+   "prev": "d61bc2aab601"
+  },
+  {
+   "claim": "spelled numerals are read the way a reader reads them -- units, teens and tens compose, hundred and thousand scale -- and the RESOLVED VALUE is required to be a token this run rendered in context, so a count written in words cannot slip past the numeral gates and the scan is not confined to a declared list of words that happen to be backed",
+   "detail": "142 spelled numbers read in the prose, 10 distinct values, 0 unbacked []",
    "gate": "G-PAPER-SPELLED-NUMERALS",
    "kind": "MEASURED",
-   "link": "731ae7bbc9f0",
+   "link": "8242dab83f0f",
    "passed": true,
-   "prev": "f2e2e4683fcc"
+   "prev": "39d239ae89a5"
   },
   {
-   "claim": "the confinement vocabulary is licensed FOR THIS UNIT ONLY and only inside measured sentences: every sentence of the delivered text that uses one of the licensed words must also carry a value this run measured, the sentences that declare the wall itself are required to be located rather than assumed, and an unmeasured confinement sentence stops the delivery run",
-   "detail": "258 sentences scanned, 10 carrying a licensed word, 1 declaring the wall, 0 unlicensed []",
+   "claim": "the confinement vocabulary is licensed FOR THIS UNIT ONLY and only inside measured sentences, on the pin's own terms, which are read here from its window: a sentence of the delivered prose that uses one of the declared words must CARRY A MEASUREMENT -- a claim this run rendered, or a pair of values this run measured and joined as the sentence joins them -- and every value pair it states must be one this run measured, so a sentence built from the classifier's own words licenses nothing, and a sentence that pairs two separately measured numbers into a relation nothing measured dies here.  What this gate does NOT bind is the subject a licensed pair is attached to: a sentence carrying a pair this run measured, said about the wrong thing, is outside its reach and is published as outside it.  The table rows are excluded from this scan because they are bound, cell by cell, against the receipt's own row objects at their own gate",
+   "detail": "288 prose sentences scanned, 8 carrying a declared word of 19, 1 declaring the wall, 17 licensed pairs, 0 unlicensed []",
    "gate": "G-THE-CONFINEMENT-LICENCE-WALL",
    "kind": "MEASURED",
-   "link": "cd73250e9868",
+   "link": "02dbf8971635",
    "passed": true,
-   "prev": "731ae7bbc9f0"
+   "prev": "8242dab83f0f"
   },
   {
    "claim": "the pin's must-nots are swept over this paper's own text with the declaring sentences removed first, and every declaring sentence is required to be located here: no SI number and no continuum claim survives the sweep",
-   "detail": "25 forbidden tokens scanned over 257 sentences, 0 present [], 1 declaring sentences located",
+   "detail": "25 forbidden tokens scanned over 297 sentences, 0 present [], 1 declaring sentences located",
    "gate": "G-PAPER-MUST-NOT",
    "kind": "MEASURED",
-   "link": "c9543b48ba75",
+   "link": "e72b0550a34b",
    "passed": true,
-   "prev": "cd73250e9868"
+   "prev": "02dbf8971635"
   },
   {
-   "claim": "every data row of every delivered table is covered by the receipt: each numeral in each cell is required to be a value this run measured, so a table row invented in prose stops the delivery run",
-   "detail": "55 data rows, 55 covered",
+   "claim": "every DATA row of every delivered table is bound the way its header is: the licensed row multiset is rendered from the receipt's own row objects, cell by cell, and the paper's data rows are compared against it as a multiset.  So a verdict word exchanged inside a cell, a row label swapped between two readings, a tally rewritten, and a whole row fabricated all stop the delivery run -- none of which a numeral-membership test can see",
+   "detail": "61 data rows in the paper, 61 licensed, equal as multisets True; first difference []",
    "gate": "G-PAPER-TABLE-ROWS-COVERED",
    "kind": "MEASURED",
-   "link": "f81aec45f4a7",
+   "link": "83e2944f5ec0",
    "passed": true,
-   "prev": "c9543b48ba75"
+   "prev": "e72b0550a34b"
   },
   {
    "claim": "every quotation the paper makes of a parent is required to lie INSIDE one of the pinned verbatim windows, so a paper that misquotes -- or inverts -- a definition it attributes to a parent dies on the delivery run",
    "detail": "9 quoted lines, 0 outside every pinned window []",
    "gate": "G-PAPER-QUOTES-INSIDE-THE-WINDOWS",
    "kind": "MEASURED",
-   "link": "6d36b0b38004",
+   "link": "fc9b44a12b03",
    "passed": true,
-   "prev": "f81aec45f4a7"
+   "prev": "83e2944f5ec0"
   },
   {
-   "claim": "every gate named as an anchor's consumer is checked against THIS RUN'S OWN closed-gate ledger; an anchor naming a gate this instrument does not have stops the run",
-   "detail": "13 named consumers, 0 missing",
+   "claim": "every gate named as an anchor's consumer is checked against THIS RUN'S OWN closed-gate ledger, and every verbatim window is required to have been READ by exactly the gate its own column names, with the token it supplied located inside it: an anchor naming a gate this instrument does not have, and a window no gate consumed, both stop the run",
+   "detail": "13 named consumers, 0 missing; 15 verbatim windows, 15 read by their own consumer over 16 reads, 0 unread [], 0 misread []",
    "gate": "G-CONSUMER-REGISTER-IS-REAL",
    "kind": "MEASURED",
-   "link": "92bd5a7923a9",
+   "link": "f7e82a2028a3",
    "passed": true,
-   "prev": "6d36b0b38004"
+   "prev": "fc9b44a12b03"
+  },
+  {
+   "claim": "the falsifier coverage is published at an honest denominator (#34): the denominator is EVERY gate the delivery run closes, this gate and the ones after it included and named one by one, and each is either a declared falsifier's target or carries a registered forcing -- so the denominator cannot be made flattering by taking it early",
+   "detail": "57 gates on the clean path, 5 of them closing at or after this one ['G-COVERAGE-AT-AN-HONEST-DENOMINATOR', 'G-THE-RECEIPT-HEADER-IS-BOUND', 'G-THE-TRANSCRIPT-RECONCILES', 'G-THE-SEAL-IS-TOTAL', 'G-ARTIFACT-INTEGRITY'], 56 falsifier targets, 3 registered forcings, 0 uncovered []",
+   "gate": "G-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+   "kind": "MEASURED",
+   "link": "e351185310c8",
+   "passed": true,
+   "prev": "f7e82a2028a3"
+  },
+  {
+   "claim": "the receipt's header keys are VOUCHED rather than declared unsealable: the instrument's own digest and the paper's are recomputed here from the bytes, the pin's prefix is required to be the one the provenance row verified, and the exit conventions, the pre-registered head list, the derived head word and the schema are required to be the objects this run carries -- and all of them are then sealed",
+   "detail": "code a811bbb92138, paper 1e495318252d, pin df2f15efa7b0, exit conventions and head list bound True",
+   "gate": "G-THE-RECEIPT-HEADER-IS-BOUND",
+   "kind": "MEASURED",
+   "link": "fd463f950fb8",
+   "passed": true,
+   "prev": "e351185310c8"
+  },
+  {
+   "claim": "the delivered transcript is bound to the run: the gate ids its PASS lines carry are required to equal this run's own ledger ids AS A SEQUENCE, so a line fabricated into the transcript -- for a gate that never ran, or for one that ran elsewhere -- stops the delivery run instead of being published",
+   "detail": "54 transcript gate lines against 54 ledger rows, equal as a sequence True",
+   "gate": "G-THE-TRANSCRIPT-RECONCILES",
+   "kind": "MEASURED",
+   "link": "25404b7d1263",
+   "passed": true,
+   "prev": "fd463f950fb8"
   }
  ],
  "ledger_shape": {
-  "head": "92bd5a7923a9",
-  "rows": 48
+  "head": "25404b7d1263",
+  "rows": 55
+ },
+ "length_reading": {
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "groups_disagreeing_at_some_coin": 3,
+  "groups_with_more_than_one_shape": 6,
+  "rectangle_only_groups": 2,
+  "rows": [
+   {
+    "coins": 640,
+    "coins_at_which_they_disagree": 568,
+    "shapes_of_that_length": 3,
+    "step_count": 4,
+    "the_shapes": [
+     "RECTANGLE-CIRCUIT-1-1",
+     "STRAIGHT-WINDING-CYCLE-0-1",
+     "STRAIGHT-WINDING-CYCLE-1-0"
+    ]
+   },
+   {
+    "coins": 640,
+    "coins_at_which_they_disagree": 0,
+    "shapes_of_that_length": 2,
+    "step_count": 6,
+    "the_shapes": [
+     "RECTANGLE-CIRCUIT-1-2",
+     "RECTANGLE-CIRCUIT-2-1"
+    ]
+   },
+   {
+    "coins": 640,
+    "coins_at_which_they_disagree": 576,
+    "shapes_of_that_length": 6,
+    "step_count": 8,
+    "the_shapes": [
+     "RECTANGLE-CIRCUIT-1-3",
+     "RECTANGLE-CIRCUIT-2-2",
+     "RECTANGLE-CIRCUIT-3-1",
+     "STAIRCASE-WINDING-CYCLE-1-1",
+     "STRAIGHT-WINDING-CYCLE-0-2",
+     "STRAIGHT-WINDING-CYCLE-2-0"
+    ]
+   },
+   {
+    "coins": 640,
+    "coins_at_which_they_disagree": 0,
+    "shapes_of_that_length": 2,
+    "step_count": 10,
+    "the_shapes": [
+     "RECTANGLE-CIRCUIT-2-3",
+     "RECTANGLE-CIRCUIT-3-2"
+    ]
+   },
+   {
+    "coins": 640,
+    "coins_at_which_they_disagree": 640,
+    "shapes_of_that_length": 3,
+    "step_count": 12,
+    "the_shapes": [
+     "RECTANGLE-CIRCUIT-3-3",
+     "STRAIGHT-WINDING-CYCLE-0-3",
+     "STRAIGHT-WINDING-CYCLE-3-0"
+    ]
+   },
+   {
+    "coins": 640,
+    "coins_at_which_they_disagree": 0,
+    "shapes_of_that_length": 2,
+    "step_count": 16,
+    "the_shapes": [
+     "STRAIGHT-WINDING-CYCLE-0-4",
+     "STRAIGHT-WINDING-CYCLE-4-0"
+    ]
+   }
+  ],
+  "the_reading": "THE-PERIMETER-ONLY-THEOREM-IS-THE-RECTANGLE-LADDERS-AND-THE-LENGTH-DOES-NOT-DETERMINE-THE-OBSERVABLE-ON-THE-WIDER-FAMILY",
+  "the_witness": {
+   "coin": 1,
+   "coin_sector": "ANTIDIAGONAL",
+   "other_shape": "STRAIGHT-WINDING-CYCLE-1-0",
+   "other_value": "-1",
+   "shape": "RECTANGLE-CIRCUIT-1-1",
+   "step_count": 4,
+   "value": "1"
+  }
  },
  "loop_family": {
   "contractible": 144,
@@ -3743,7 +4492,7 @@
   "values_outside_the_real_subfield": 0
  },
  "mutants": {
-  "declared": 49,
+  "declared": 61,
   "rows": [
    {
     "mutant": "MUT-ARENA",
@@ -3811,14 +4560,14 @@
    {
     "mutant": "MUT-BASEPOINT",
     "target": "G-THE-LOOP-OBSERVABLE-IS-BASE-POINT-BLIND",
-    "token": "if mut(\"MUT-BASEPOINT\") and key == (\"RECTANGLE-CIRCUIT\", 1, 1)",
+    "token": "mism = 1",
     "token_in_source": true,
     "what": "reports a base-point disagreement on the plaquette"
    },
    {
     "mutant": "MUT-REVERSAL",
     "target": "G-THE-LOOP-OBSERVABLE-IS-REVERSAL-BLIND",
-    "token": "if mut(\"MUT-REVERSAL\"):",
+    "token": "rev_bad = 1",
     "token_in_source": true,
     "what": "reports a reversal disagreement"
    },
@@ -3853,9 +4602,9 @@
    {
     "mutant": "MUT-CLOSED-FORM",
     "target": "G-THE-LADDER-CLOSED-FORM",
-    "token": "if mut(\"MUT-CLOSED-FORM\"):",
+    "token": "bad = len(coins)",
     "token_in_source": true,
-    "what": "reports a closed-form verification failure"
+    "what": "reports a closed-form verification failure at every coin"
    },
    {
     "mutant": "MUT-ROW-UNSTAMPED",
@@ -4084,9 +4833,93 @@
    {
     "mutant": "MUT-TABLE-ROW",
     "target": "G-PAPER-TABLE-ROWS-COVERED",
-    "token": "covered = covered - 1",
+    "token": "data = data[:-1]",
     "token_in_source": true,
-    "what": "leaves a delivered table row uncovered by any claim"
+    "what": "drops a licensed data row from the rendered row multiset"
+   },
+   {
+    "mutant": "MUT-CONSUMER-UNREAD",
+    "target": "G-CONSUMER-REGISTER-IS-REAL",
+    "token": "r[\"anchor\"] != \"VB-SMU-PRICE\"",
+    "token_in_source": true,
+    "what": "leaves a verbatim window unread by the gate that names it"
+   },
+   {
+    "mutant": "MUT-CONSTANT-SET",
+    "target": "G-THE-CREUTZ-UNIT-SET-IS-THE-CONSTANT-LADDER-SET",
+    "token": "const = set(sorted(const)[1:])",
+    "token_in_source": true,
+    "what": "drops one point from the constant-ladder set the identity is taken against"
+   },
+   {
+    "mutant": "MUT-LENGTH-READING",
+    "target": "G-THE-LENGTH-DOES-NOT-DETERMINE-THE-OBSERVABLE",
+    "token": "coins_at_which_they_disagree=0",
+    "token_in_source": true,
+    "what": "reports that no two shapes of equal length disagree at any coin"
+   },
+   {
+    "mutant": "MUT-UNIVERSAL",
+    "target": "G-THE-AREA-BLINDNESS-IS-UNIVERSAL-OVER-MEASURES",
+    "token": "interior_bad = 1",
+    "token_in_source": true,
+    "what": "reports an interior measure at which the area is seen"
+   },
+   {
+    "mutant": "MUT-PAPER-CLAIM-COUNT",
+    "target": "G-PAPER-CLAIMS-RENDERED",
+    "token": "C[1][\"need\"] = C[1][\"need\"] + 1",
+    "token_in_source": true,
+    "what": "raises one claim's declared occurrence count above the rendering"
+   },
+   {
+    "mutant": "MUT-PAPER-SPAN",
+    "target": "G-PAPER-INLINE-SPANS-LICENSED",
+    "token": "licensed_spans.discard(RECEIPT_REL)",
+    "token_in_source": true,
+    "what": "drops a declared path the paper spans from the licensed set"
+   },
+   {
+    "mutant": "MUT-PAPER-SHORT-NUMERAL",
+    "target": "G-PAPER-SHORT-NUMERALS-IN-CONTEXT",
+    "token": "ctx.discard(\"24\")",
+    "token_in_source": true,
+    "what": "drops a rendered short numeral from the context registry"
+   },
+   {
+    "mutant": "MUT-PAPER-QUOTES",
+    "target": "G-PAPER-QUOTES-INSIDE-THE-WINDOWS",
+    "token": "windows = windows[1:]",
+    "token_in_source": true,
+    "what": "drops one pinned window from the set the quotations are read against"
+   },
+   {
+    "mutant": "MUT-MUSTNOT-CONTENT",
+    "target": "G-PAPER-MUST-NOT",
+    "token": "The lattice spacing goes to zero.",
+    "token_in_source": true,
+    "what": "plants a continuum phrase in the swept body"
+   },
+   {
+    "mutant": "MUT-COVERAGE",
+    "target": "G-COVERAGE-AT-AN-HONEST-DENOMINATOR",
+    "token": "\"G-A-GATE-WITH-NEITHER-A-FALSIFIER-NOR-A-FORCING\"",
+    "token_in_source": true,
+    "what": "puts a gate with neither a falsifier nor a forcing on the clean path"
+   },
+   {
+    "mutant": "MUT-RECEIPT-HEADER",
+    "target": "G-THE-RECEIPT-HEADER-IS-BOUND",
+    "token": "paper = \"0\" * 12",
+    "token_in_source": true,
+    "what": "publishes a paper digest the bytes do not have"
+   },
+   {
+    "mutant": "MUT-TRANSCRIPT",
+    "target": "G-THE-TRANSCRIPT-RECONCILES",
+    "token": "\"G-A-GATE-THAT-NEVER-RAN\"",
+    "token_in_source": true,
+    "what": "fabricates a transcript line for a gate that never ran"
    }
   ],
   "swept_by": "THE-EXTERNAL-ALL-MUTANTS-BATTERY-NOT-THE-DELIVERY-RUN"
@@ -4109,6 +4942,7 @@
   "the_reading": "THE-ORDER-PARAMETER-IS-NOT-PINNED-THE-LOCALITY-DECLARATION-DOES-NOT-NARROW-ITS-RANGE"
  },
  "orientation_reading": {
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24-NO-MEASURE-OVER-THE-FAMILY-IS-DECLARED",
   "extreme_points": 136,
   "extreme_points_carrying_an_odd_observable": 96,
   "readings": [
@@ -4240,19 +5074,153 @@
   ]
  },
  "paper_binding": {
+  "claim_occurrences": 87,
   "claims": [
+   {
+    "claim": "C-ARENA",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "16 sites, 32 links and 16 plaquettes"
+   },
+   {
+    "claim": "C-ALPHABET",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "returns 25 elements"
+   },
+   {
+    "claim": "C-COINS",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "returns 640 coins splitting into 64 diagonal, 64 antidiagonal and 512 balanced"
+   },
+   {
+    "claim": "C-SHAPES",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "9 of the 18 declared shapes"
+   },
+   {
+    "claim": "C-PLAQ-VALUES",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "takes 11 distinct values"
+   },
+   {
+    "claim": "C-PLAQ-COUNT",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "counting expectation is 13/10"
+   },
+   {
+    "claim": "C-PLAQ-DIAG",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "56 of the diagonal coins are non-flat"
+   },
+   {
+    "claim": "C-CONSTANT-SINGLE",
+    "covered": true,
+    "hits": 2,
+    "need": 2,
+    "text": "a single mode is active at 32"
+   },
+   {
+    "claim": "C-CONSTANT-ONLY-B",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "at the remaining 8"
+   },
+   {
+    "claim": "C-LENGTH",
+    "covered": true,
+    "hits": 2,
+    "need": 2,
+    "text": "568 of the 640 coins"
+   },
+   {
+    "claim": "C-UNIVERSAL",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "640 Dirac measures and 1500 interior measures"
+   },
+   {
+    "claim": "C-UNIVERSAL-CHECKS",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "4280 comparisons and 0 mismatches"
+   },
+   {
+    "claim": "C-AREA-BASIS",
+    "covered": true,
+    "hits": 3,
+    "need": 3,
+    "text": "1280 area-discriminating comparison-by-coin checks"
+   },
+   {
+    "claim": "C-CROSS-BASIS",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "3200 of them are a shape compared with itself and 2560 are cross-shape"
+   },
+   {
+    "claim": "C-HALVING-SUPPORT",
+    "covered": true,
+    "hits": 3,
+    "need": 3,
+    "text": "present at 512 of the 640 coins and at 64 of the 136 extreme points"
+   },
+   {
+    "claim": "C-WALL-WORDS",
+    "covered": true,
+    "hits": 2,
+    "need": 2,
+    "text": "19 declared words"
+   },
+   {
+    "claim": "C-EXIT",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "exits 0 on success, 1 on any refusal, writing nothing"
+   },
+   {
+    "claim": "C-EXIT-UNKNOWN",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "Unknown flags exit 2"
+   },
+   {
+    "claim": "C-SLICE-CLASSES",
+    "covered": true,
+    "hits": 1,
+    "need": 1,
+    "text": "3 couplings against 3 classes"
+   },
    {
     "claim": "C-FAMILY",
     "covered": true,
     "hits": 2,
-    "need": 1,
+    "need": 2,
     "text": "192 placements and 192 distinct loops"
    },
    {
     "claim": "C-FAMILY-SPLIT",
     "covered": true,
     "hits": 2,
-    "need": 1,
+    "need": 2,
     "text": "144 contractible and 48 winding"
    },
    {
@@ -4266,21 +5234,21 @@
     "claim": "C-ORBITS",
     "covered": true,
     "hits": 2,
-    "need": 1,
+    "need": 2,
     "text": "11 orbits under a chart group of order 32"
    },
    {
     "claim": "C-ESCAPES",
     "covered": true,
     "hits": 3,
-    "need": 1,
+    "need": 3,
     "text": "16 images outside the declared family"
    },
    {
     "claim": "C-COMPARISONS",
     "covered": true,
-    "hits": 1,
-    "need": 1,
+    "hits": 2,
+    "need": 2,
     "text": "2 area-discriminating comparisons and 4 Creutz rungs"
    },
    {
@@ -4301,7 +5269,7 @@
     "claim": "C-SPECTRUM",
     "covered": true,
     "hits": 3,
-    "need": 1,
+    "need": 3,
     "text": "spectrum {1,1,1/2} and gap 1/2"
    },
    {
@@ -4314,8 +5282,8 @@
    {
     "claim": "C-EXTREME",
     "covered": true,
-    "hits": 2,
-    "need": 1,
+    "hits": 3,
+    "need": 3,
     "text": "64 vertices and 72 edge midpoints"
    },
    {
@@ -4356,8 +5324,8 @@
    {
     "claim": "C-SWEEP",
     "covered": true,
-    "hits": 1,
-    "need": 1,
+    "hits": 2,
+    "need": 2,
     "text": "136 extreme points swept, 64 vertices and 72 edge midpoints"
    },
    {
@@ -4370,29 +5338,29 @@
    {
     "claim": "C-SWEEP-UNIT",
     "covered": true,
-    "hits": 1,
-    "need": 1,
+    "hits": 3,
+    "need": 3,
     "text": "24 of the 136 extreme points where the ratio is one"
    },
    {
     "claim": "C-PRICE",
     "covered": true,
     "hits": 3,
-    "need": 1,
+    "need": 3,
     "text": "the inventory of 135 couplings"
    },
    {
     "claim": "C-PRICE-C",
     "covered": true,
     "hits": 2,
-    "need": 1,
+    "need": 2,
     "text": "absent at 72 of the 136"
    },
    {
     "claim": "C-PRICE-B",
     "covered": true,
     "hits": 2,
-    "need": 1,
+    "need": 2,
     "text": "absent at 40 of them"
    },
    {
@@ -4406,21 +5374,21 @@
     "claim": "C-DOOR",
     "covered": true,
     "hits": 2,
-    "need": 1,
+    "need": 2,
     "text": "167772160000 states per time slice"
    },
    {
     "claim": "C-DOOR-UNITARY",
     "covered": true,
     "hits": 2,
-    "need": 1,
+    "need": 2,
     "text": "640 of 640 holonomies"
    },
    {
     "claim": "C-BOUNDARY",
     "covered": true,
-    "hits": 1,
-    "need": 1,
+    "hits": 2,
+    "need": 2,
     "text": "44800 comparison-by-coin checks at L = 8 with 0 disagreements"
    },
    {
@@ -4469,7 +5437,7 @@
     "claim": "C-ORIENT-ODD",
     "covered": true,
     "hits": 2,
-    "need": 1,
+    "need": 2,
     "text": "3760 of 11520 shape-by-coin traces carry a non-zero odd part at 9 of the 18 shapes"
    },
    {
@@ -4483,7 +5451,7 @@
     "claim": "C-ORIENT-ROWS",
     "covered": true,
     "hits": 2,
-    "need": 1,
+    "need": 2,
     "text": "0 non-zero odd observables at every declared row"
    },
    {
@@ -4498,30 +5466,35 @@
     "covered": true,
     "hits": 1,
     "need": 1,
-    "text": "37 gates close before the paper gates"
+    "text": "39 gates close before the paper gates"
    },
    {
     "claim": "C-SEALED",
     "covered": true,
     "hits": 1,
     "need": 1,
-    "text": "19 objects are sealed before the paper gates"
+    "text": "25 objects are sealed before the paper gates"
    },
    {
     "claim": "C-MUTANTS",
     "covered": true,
     "hits": 1,
     "need": 1,
-    "text": "49 declared mutants"
+    "text": "61 declared mutants"
    }
   ],
-  "confinement_sentences": 10,
+  "confinement_sentences": 8,
+  "context_registry_tokens": 69,
   "fenced_blocks": 1,
-  "header_rows": 9,
-  "licensed_headers": 9,
+  "header_rows": 10,
+  "inline_spans": 30,
+  "inline_spans_unlicensed": 0,
+  "licensed_headers": 10,
+  "licensed_table_rows": 61,
+  "licensed_value_pairs": 17,
   "must_not_hits": 0,
   "must_not_tokens": 25,
-  "numerals_scanned": 591,
+  "numerals_scanned": 698,
   "numerals_uncovered": 0,
   "polarity": [
    {
@@ -4581,14 +5554,22 @@
   ],
   "quoted_lines": 9,
   "quotes_outside_windows": 0,
-  "sentences": 258,
-  "spelled_numerals_scanned": 17,
-  "table_data_rows": 55,
-  "table_rows_covered": 55,
+  "registry_tokens": 322,
+  "registry_tokens_of_three_digits_or_more": 218,
+  "sentences": 298,
+  "short_numerals_in_prose": 171,
+  "short_numerals_unbacked": 0,
+  "spelled_numbers_read": 142,
+  "spelled_numbers_unbacked": 0,
+  "table_data_rows": 61,
+  "table_rows_bound_as_a_multiset": true,
+  "tables_bound": 10,
+  "the_declared_words": 19,
   "unlicensed_confinement_sentences": 0,
-  "wall_declaring_sentences": 1
+  "wall_declaring_sentences": 1,
+  "wall_sentences": 288
  },
- "paper_sha256_12": "173a88d8755f",
+ "paper_sha256_12": "1e495318252d",
  "path_value_anchors": [
   {
    "agrees": true,
@@ -4864,6 +5845,7 @@
   "couplings_counted": 135,
   "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
   "extreme_points_where_the_creutz_ratio_is_undefined": 0,
+  "extreme_points_with_a_halving_mode": 64,
   "extreme_points_with_a_zero_winding_expectation": 40,
   "extreme_points_with_no_halving_mode": 72,
   "extreme_points_with_no_perimeter_mode": 40,
@@ -5111,25 +6093,31 @@
  "schema": "POT-V1",
  "seal_manifest": [
   {
+   "digest": "757c991e6b94",
+   "object": "THE PROVENANCE",
+   "receipt_key": "provenance",
+   "vouching_gate": "G-SOURCES-AT-THEIR-PINNED-DIGESTS"
+  },
+  {
    "digest": "a870b86d2b6d",
    "object": "THE PATH-VALUE ANCHORS",
    "receipt_key": "path_value_anchors",
    "vouching_gate": "G-PATH-VALUE-ANCHORS"
   },
   {
-   "digest": "576c9c0823a4",
+   "digest": "2d627c8b1850",
    "object": "THE VERBATIM ANCHORS",
    "receipt_key": "verbatim_anchors",
    "vouching_gate": "G-VERBATIM-ANCHORS"
   },
   {
-   "digest": "dedbea497f43",
+   "digest": "1d028815e10e",
    "object": "THE ARITHMETIC",
    "receipt_key": "arithmetic",
    "vouching_gate": "G-THE-ARITHMETIC-IS-EXACT"
   },
   {
-   "digest": "9dede9b31ab5",
+   "digest": "7369a54106c2",
    "object": "THE MUTANTS",
    "receipt_key": "mutants",
    "vouching_gate": "G-EVERY-MUTANT-DESCRIPTION-IS-TRUE"
@@ -5159,37 +6147,55 @@
    "vouching_gate": "G-PLAQUETTE-ROW-REPRODUCED"
   },
   {
+   "digest": "df8f817f3b29",
+   "object": "THE LENGTH READING",
+   "receipt_key": "length_reading",
+   "vouching_gate": "G-THE-LENGTH-DOES-NOT-DETERMINE-THE-OBSERVABLE"
+  },
+  {
    "digest": "8b0030a9a720",
    "object": "THE DISCRIMINATOR",
    "receipt_key": "discriminator",
    "vouching_gate": "G-THE-MERGING-INDEX-LAW-REPRODUCED"
   },
   {
-   "digest": "cf297e9049fe",
+   "digest": "5bba0c21e2d2",
    "object": "THE CLOSED FORM",
    "receipt_key": "closed_form",
    "vouching_gate": "G-THE-LADDER-CLOSED-FORM"
   },
   {
-   "digest": "c46772707c89",
+   "digest": "cb1ab1bfd8a6",
+   "object": "THE UNIVERSAL",
+   "receipt_key": "the_universal",
+   "vouching_gate": "G-THE-AREA-BLINDNESS-IS-UNIVERSAL-OVER-MEASURES"
+  },
+  {
+   "digest": "d421b98e0eed",
    "object": "THE CONDITIONAL ROWS",
    "receipt_key": "conditional_rows",
    "vouching_gate": "G-THE-CONTROL-STAMP-CARRIED"
   },
   {
-   "digest": "6c7942805ef5",
+   "digest": "0e7b4a20ce24",
    "object": "THE FAMILY SWEEP",
    "receipt_key": "family_sweep",
    "vouching_gate": "G-THE-FAMILY-SWEEP-IS-TOTAL"
   },
   {
-   "digest": "e42f8cf8c24b",
+   "digest": "2c40cdbca179",
+   "object": "THE CONSTANT-LADDER IDENTITY",
+   "receipt_key": "constant_ladder_identity",
+   "vouching_gate": "G-THE-CREUTZ-UNIT-SET-IS-THE-CONSTANT-LADDER-SET"
+  },
+  {
+   "digest": "1490f9b849fb",
    "object": "THE FAMILY SLICES",
    "receipt_key": "family_slices",
    "vouching_gate": "G-THE-FAMILY-SLICES"
   },
   {
-   "digest": "b13a0955d0d9",
+   "digest": "d7a2532de651",
    "object": "THE PRICE BINDING",
    "receipt_key": "price_binding",
    "vouching_gate": "G-THE-PRICE-BINDING"
@@ -5201,19 +6207,19 @@
    "vouching_gate": "G-THE-ORDER-PARAMETER-RANGE"
   },
   {
-   "digest": "85554cd2176e",
+   "digest": "43bd77bf851b",
    "object": "THE SPECTRAL DOOR",
    "receipt_key": "spectral_door",
    "vouching_gate": "G-THE-SPECTRAL-DOOR"
   },
   {
-   "digest": "082e18f56543",
+   "digest": "3e669b6f821c",
    "object": "THE ORIENTATION READING",
    "receipt_key": "orientation_reading",
    "vouching_gate": "G-THE-ODD-OBSERVABLES-CARRY-THEIR-DECLARATION"
   },
   {
-   "digest": "342fcd83007e",
+   "digest": "ab4a8da0a592",
    "object": "THE BOUNDARY LATTICE",
    "receipt_key": "boundary_lattice",
    "vouching_gate": "G-THE-BOUNDARY-LATTICE-RUN"
@@ -5225,20 +6231,98 @@
    "vouching_gate": "G-EVERY-PREREGISTERED-WORD-IS-EMITTABLE"
   },
   {
-   "digest": "32f94a1e0672",
+   "digest": "edc4a69f3e4c",
+   "object": "THE HEAD WORD",
+   "receipt_key": "verdict_head",
+   "vouching_gate": "G-THE-HEAD-IS-DERIVED"
+  },
+  {
+   "digest": "4e36dc1137b9",
+   "object": "THE VERDICT",
+   "receipt_key": "verdict",
+   "vouching_gate": "G-THE-TWO-HEAD-LAWS-AGREE"
+  },
+  {
+   "digest": "671ba7a2302e",
    "object": "THE PAPER BINDING",
    "receipt_key": "paper_binding",
    "vouching_gate": "G-PAPER-QUOTES-INSIDE-THE-WINDOWS"
   },
   {
-   "digest": "94d151016799",
+   "digest": "8f502afda461",
    "object": "THE CONSUMER REGISTER",
    "receipt_key": "consumer_register",
    "vouching_gate": "G-CONSUMER-REGISTER-IS-REAL"
+  },
+  {
+   "digest": "e050c339818c",
+   "object": "THE COVERAGE",
+   "receipt_key": "coverage",
+   "vouching_gate": "G-COVERAGE-AT-AN-HONEST-DENOMINATOR"
+  },
+  {
+   "digest": "42a9b07495ba",
+   "object": "THE WAIVER LEDGER",
+   "receipt_key": "waiver_ledger",
+   "vouching_gate": "G-COVERAGE-AT-AN-HONEST-DENOMINATOR"
+  },
+  {
+   "digest": "1cbd48310506",
+   "object": "THE TOTALS",
+   "receipt_key": "totals",
+   "vouching_gate": "G-COVERAGE-AT-AN-HONEST-DENOMINATOR"
+  },
+  {
+   "digest": "cb4e1219a076",
+   "object": "THE RECEIPT HEADER :: schema",
+   "receipt_key": "schema",
+   "vouching_gate": "G-THE-RECEIPT-HEADER-IS-BOUND"
+  },
+  {
+   "digest": "92f42bde2881",
+   "object": "THE RECEIPT HEADER :: unit",
+   "receipt_key": "unit",
+   "vouching_gate": "G-THE-RECEIPT-HEADER-IS-BOUND"
+  },
+  {
+   "digest": "1161508fe422",
+   "object": "THE RECEIPT HEADER :: code_sha256_12",
+   "receipt_key": "code_sha256_12",
+   "vouching_gate": "G-THE-RECEIPT-HEADER-IS-BOUND"
+  },
+  {
+   "digest": "94f981e6f307",
+   "object": "THE RECEIPT HEADER :: paper_sha256_12",
+   "receipt_key": "paper_sha256_12",
+   "vouching_gate": "G-THE-RECEIPT-HEADER-IS-BOUND"
+  },
+  {
+   "digest": "4635f5b0339c",
+   "object": "THE RECEIPT HEADER :: pin_sha256_prefix",
+   "receipt_key": "pin_sha256_prefix",
+   "vouching_gate": "G-THE-RECEIPT-HEADER-IS-BOUND"
+  },
+  {
+   "digest": "6969b88151bf",
+   "object": "THE RECEIPT HEADER :: exit_conventions",
+   "receipt_key": "exit_conventions",
+   "vouching_gate": "G-THE-RECEIPT-HEADER-IS-BOUND"
+  },
+  {
+   "digest": "bc83b6a3f6ce",
+   "object": "THE RECEIPT HEADER :: preregistered_heads",
+   "receipt_key": "preregistered_heads",
+   "vouching_gate": "G-THE-RECEIPT-HEADER-IS-BOUND"
+  },
+  {
+   "digest": "57ecc409a654",
+   "object": "THE TRANSCRIPT",
+   "receipt_key": "transcript",
+   "vouching_gate": "G-THE-TRANSCRIPT-RECONCILES"
   }
  ],
  "spectral_door": {
-  "SPC_inherits": "THE-GAP-1/2-IS-THE-MASS-GAP-QUESTIONS-FINITE-FORM-AT-THIS-ARENA-AND-IT-IS-FAMILY-INVARIANT",
+  "SPC_inherits": "THE-GAP-1/2-IS-THE-CLOSED-FORM-ANSATZS-AND-IS-THE-MASS-GAP-QUESTIONS-FINITE-FORM-AT-THIS-ARENA-ONLY-AT-THE-SUPPORT-OF-THE-HALVING-MODE-WHICH-IS-512-OF-640-COINS-AND-64-OF-136-EXTREME-POINTS",
   "the_door_named": {
    "a_time_slice_is": "THE-4-LINKS-OF-ONE-ROW",
    "entries_in_the_matrix": "28147497671065600000000",
@@ -5297,23 +6381,57 @@
    "holonomies_tested": 640,
    "self_inversive_characteristic_polynomial": 640,
    "the_reading": "THE-WINDING-HOLONOMY-IS-UNITARY-SO-ITS-SPECTRUM-LIES-ON-THE-UNIT-CIRCLE-AND-CARRIES-NO-DECAYING-DIRECTION"
+  },
+  "the_support_of_the_halving_mode": {
+   "coins": 640,
+   "extreme_points": 136,
+   "the_form_holds_at_coins": 640,
+   "the_halving_mode_is_absent_at_coins": 128,
+   "the_halving_mode_is_absent_at_extreme_points": 72,
+   "the_halving_mode_is_present_at_coins": 512,
+   "the_halving_mode_is_present_at_extreme_points": 64,
+   "the_spectrum_is_the_closed_forms_ansatz_not_the_true_transfer_matrixs": true,
+   "where_the_halving_coefficient_vanishes_the_realised_ladder_is": "A+B*P-WHOSE-MINIMAL-TRANSFER-OBJECT-HAS-NO-GAP-1/2-AT-ALL"
   }
+ },
+ "the_universal": {
+  "area_discriminating_comparisons": 2,
+  "comparisons_in_all": 4280,
+  "dirac_comparisons": 1280,
+  "dirac_measures": 640,
+  "dirac_mismatches": 0,
+  "interior_comparisons": 3000,
+  "interior_measures": 1500,
+  "interior_measures_of_full_support": 1500,
+  "interior_mismatches": 0,
+  "mismatches_in_all": 0,
+  "the_common_denominator": 16,
+  "the_draw": "AN-INTEGER-RECURRENCE-WITH-A-DECLARED-SEED-NO-LIBRARY-RANDOMNESS",
+  "the_ground": "THE-PER-CONFIGURATION-IDENTITY-PLUS-LINEARITY-OF-THE-NUMERATOR-OF-THE-DIFFERENCE-OF-EXPECTATIONS",
+  "the_scope": "EVERY-MEASURE-ON-THIS-CARRIER-NOT-ONLY-THE-ALLOWED-WEIGHT-SYSTEMS",
+  "the_seed": 20260815
  },
  "totals": {
   "anchors": 53,
   "closing_gates": 2,
-  "gates_closed": 37,
+  "gates_closed": 39,
   "gates_failed": 0,
-  "mutants_declared": 49,
+  "gates_on_the_clean_path": 57,
+  "mutants_declared": 61,
   "path_value_anchors": 29,
-  "sealed_objects": 19,
+  "sealed_objects": 25,
   "sources": 9,
   "the_ledger_chain_verifies": true,
   "the_two_head_laws_agree": true,
   "verbatim_anchors": 15,
-  "verdict_characters": 3063
+  "verdict_characters": 3267
  },
- "transcript_head": "POT (paper-36) :: the potential unit -- the loop family, the discriminator, the price binding and the spectral door",
+ "transcript": {
+  "gate_lines_reconciled": 54,
+  "head": "POT (paper-36) :: the potential unit -- the loop family, the discriminator, the price binding and the spectral door",
+  "reconciles_against_the_ledger": true,
+  "the_binding": "THE-PASS-LINES-ARE-THE-LEDGER-IDS-IN-ORDER-AND-THE-WHOLE-FILE-IS-COMPARED-BYTE-FOR-BYTE-AT-THE-DISK-BOUNDARY"
+ },
  "unit": "POT-PAPER-36",
  "verbatim_anchors": [
   {
@@ -5324,6 +6442,7 @@
    "floor": 60,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "the holonomy is the ordered product of the four link operators around the boundary, each inverted where the boundary runs against the link's own direction",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-R5-PAPER"
@@ -5336,6 +6455,7 @@
    "floor": 30,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "the whole holonomy lives in a four-by-four block",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-R5-PAPER"
@@ -5348,6 +6468,7 @@
    "floor": 50,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "acts as $U$ on the two-dimensional span of the link's own domino and as the identity on every other site",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-R5-PAPER"
@@ -5360,6 +6481,7 @@
    "floor": 25,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "a family of loops whose size can grow",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-R5-PAPER"
@@ -5372,6 +6494,7 @@
    "floor": 60,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "a family of loops whose size can grow \u2014 is recorded as still absent, and it is the gate on everything beyond",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-ACT-PAPER"
@@ -5384,6 +6507,7 @@
    "floor": 60,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "the allowed space is the direct power of the multiplicative positive rationals with one factor per orbit",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-ACT-PAPER"
@@ -5396,6 +6520,7 @@
    "floor": 60,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "64 of the reachable set's extreme points are vertices of the parent's simplex and the other 72 are midpoints of its edges",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-ACT-PAPER"
@@ -5408,6 +6533,7 @@
    "floor": 60,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "The merging index is $8/\\gcd(L,8)$, and at every L divisible by eight it is 1, and there the price is not reduced, no orbit pair is identified and no observable is pinned",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-ACT-PAPER"
@@ -5420,6 +6546,7 @@
    "floor": 40,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "ACT must not treat it as a derived measure and must not spend it as",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-ACT-PAPER"
@@ -5432,6 +6559,7 @@
    "floor": 40,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "The confinement vocabulary REMAINS BEHIND POT'S GATE",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-ACT-PAPER"
@@ -5444,6 +6572,7 @@
    "floor": 50,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "every confinement word in prose must sit in a sentence carrying its measured discriminator value",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-PIN"
@@ -5456,6 +6585,7 @@
    "floor": 40,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "the merging-index law 8/gcd(L,8) means family-level pinning dies at L \u2261 0 mod 8",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-PIN"
@@ -5468,6 +6598,7 @@
    "floor": 60,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "The discriminator's own well-definedness (nonzero denominators; enough ladder rungs at the declared L) is itself a gated measurement",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-PIN"
@@ -5480,6 +6611,7 @@
    "floor": 25,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "acts transitively on that carrier",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-P23-PAPER"
@@ -5492,12 +6624,13 @@
    "floor": 50,
    "hits": 1,
    "located_exactly_once": true,
+   "located_text": "The covariant-dynamics fibre therefore surjects onto the invariant simplex",
    "long_enough": true,
    "perturbation_is_lost": true,
    "source": "S-SMU-PAPER"
   }
  ],
- "verdict": "POT-SPLIT-BY-WEIGHT-THE-WINDING-LEG-SPLITS-96-NONZERO-AND-40-ZERO-OF-136-EXTREME-POINTS-AND-1-OF-4-DECLARED-ROWS-WHILE-THE-AREA-LEG-IS-FAMILY-INVARIANT-AREA-BLIND-AT-149-OF-149-MEASURED-ROWS -- LOOP-FAMILY=192-PLACEMENTS-192-DISTINCT-LOOPS-144-CONTRACTIBLE-AND-48-WINDING;RECTANGLE-EXTENTS=1-2-3-MEASURED-SIMPLE-AT-9-OF-16-SWEPT-SIZES;ORBITS-UNDER-THE-ANCHORED-CHART-GROUP-OF-ORDER-32=11-CLOSED-TRUE;THE-WINDOW=RECTANGLE-CIRCUITS-PLUS-STRAIGHT-AND-STAIRCASE-WINDING-CYCLES-NOT-ALL-CLOSED-PATHS -- DISCRIMINATOR=WELL-DEFINED-AT-L-4-WITH-2-AREA-DISCRIMINATING-COMPARISONS-AND-4-CREUTZ-RUNGS;LEG-AREA=BLIND-EVERYWHERE;LEG-CREUTZ=DEFINED-AT-136-OF-136-EXTREME-POINTS-AND-EQUAL-TO-ONE-AT-24;LEG-WINDING=THE-ORDER-PARAMETER-ANALOGUE -- (a)CONDITIONAL=4-ROWS-ALL-STAMPED-CONDITIONAL-ON-THE-DECLARED-WEIGHTS;PLAQUETTE-EXPECTATIONS=13/10@THE-NULL,262244/65615@THE-WILSON-CONJUGATION-SYMMETRIC,4294967399/4294967375@THE-EXHIBITED-WITNESS,225/152@THE-LAW-NATIVE-CONTROL;WINDING=3-ZERO-AND-1-NONZERO;THE-CONTROL-CARRIES-LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION-AND-IS-NEVER-SPENT-AS-DERIVED -- (b)FAMILY-SWEPT=136-EXTREME-POINTS-64-VERTICES-AND-72-EDGE-MIDPOINTS-ALL-RUN;FAMILY-INVARIANT=area_seen;COUPLING-DEPENDENT=ladder_word+creutz_is_unit+winding_word+mode_A+mode_B+mode_C+active_modes;SLICES=9-EXACT-ONE-PARAMETER-ROWS-AGREE-AT-THE-AREA-LEG -- PRICE=THE-INVENTORY-IS-135-COUPLINGS-AND-THE-AREA-LEG-PARTITIONS-NONE-OF-THEM;THE-WINDING-LEG-PARTITIONS-96-AGAINST-40;THE-HALVING-MODE-IS-ABSENT-AT-72-OF-136;THE-PERIMETER-MODE-IS-ABSENT-AT-40-OF-136;THE-CREUTZ-RATIO-IS-UNDEFINED-AT-0-OF-136 -- SPECTRAL-DOOR=THE-TRANSFER-MATRIX-ON-A-TIME-SLICE-IS-NAMED-NOT-RUN-AT-167772160000-STATES-PER-SLICE;THE-FINITE-FORM-IS-MEASURED=W=A+B*P+C*2^-P-WITH-SPECTRUM-{1,1,1/2}-AND-GAP-1/2-AT-640-OF-640-COINS;THE-WINDING-HOLONOMY-IS-UNITARY-AT-640-OF-640-SO-ITS-SPECTRUM-CARRIES-NO-DECAY;SPC-INHERITS-THE-GAP -- ORIENTATION=DECLARED-NEVER-DERIVED-NEITHER-STANDARD-IS-CLAIMED-TRUE-DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING;THE-ORIENTED-SUBGROUP-HAS-INDEX-2-AT-BOTH-READINGS;COUPLINGS=135-AT-ANCHORED-AND-135-AT-ANCHORED-ORIENTED-AND-79-AT-THE-EXTENSION-AND-79-AT-EXTENSION-ORIENTED-SO-THE-DECLARATION-BUYS-OBSERVABLES-AND-COSTS-NO-COUPLING;THE-ODD-PART-IS-LAWFUL-ONLY-THERE-AND-IS-NON-ZERO-AT-3760-OF-11520-SHAPE-BY-COIN-TRACES-AT-9-OF-18-SHAPES-AND-AT-96-OF-136-EXTREME-POINTS -- L-BOUNDARY=THE-MERGING-INDEX-IS-8/GCD(L,8)-WHICH-IS-2-HERE-AND-1-AT-L-8;AREA-BLINDNESS-AND-THE-CLOSED-FORM-AND-THE-GAP-SURVIVE-THE-BOUNDARY-0-DISAGREEMENTS-OVER-44800-CHECKS-AND-640-OF-640-COINS-CARRY-IDENTICAL-COEFFICIENTS;THE-CLASS-MERGING-DOES-NOT-0-MERGES-AT-L-8-AGAINST-72-HERE -- SCOPE=D=2;L=4;BOUNDARY-L=8;FIELD=Q(zeta_8);COINS=640;LINKS=32;PLAQUETTES=16;CARRIER=THE-640-UNIFORM-CONFIGURATIONS;FULL-CONFIGURATION-SPACE=640^32-NOT-A-CARRIER-HERE;WEIGHTS=POSITIVE-EXACT-RATIONALS-NO-LOGS-NO-FLOATS;THE-POTENTIAL-IS-NOMINAL-AND-CARRIED-MULTIPLICATIVELY;CONFINEMENT-VOCABULARY-IS-LICENSED-FOR-THIS-UNIT-ONLY-AND-ONLY-IN-MEASURED-SENTENCES;NO-CONTINUUM-CLAIM;NO-SI-NUMBERS;NOT-QCD",
+ "verdict": "POT-SPLIT-BY-WEIGHT-THE-WINDING-LEG-SPLITS-96-NONZERO-AND-40-ZERO-OF-136-EXTREME-POINTS-AND-1-OF-4-DECLARED-ROWS-WHILE-THE-AREA-LEG-IS-FAMILY-INVARIANT-AREA-BLIND-AT-149-OF-149-MEASURED-ROWS -- LOOP-FAMILY=192-PLACEMENTS-192-DISTINCT-LOOPS-144-CONTRACTIBLE-AND-48-WINDING;RECTANGLE-EXTENTS=1-2-3-MEASURED-SIMPLE-AT-9-OF-16-SWEPT-SIZES;ORBITS-UNDER-THE-ANCHORED-CHART-GROUP-OF-ORDER-32=11-CLOSED-TRUE;THE-WINDOW=RECTANGLE-CIRCUITS-PLUS-STRAIGHT-AND-STAIRCASE-WINDING-CYCLES-NOT-ALL-CLOSED-PATHS -- DISCRIMINATOR=WELL-DEFINED-AT-L-4-WITH-2-AREA-DISCRIMINATING-COMPARISONS-AND-4-CREUTZ-RUNGS;LEG-AREA=BLIND-EVERYWHERE;LEG-CREUTZ=DEFINED-AT-136-OF-136-EXTREME-POINTS-AND-EQUAL-TO-ONE-AT-24;LEG-WINDING=THE-ORDER-PARAMETER-ANALOGUE -- (a)CONDITIONAL=4-ROWS-ALL-STAMPED-CONDITIONAL-ON-THE-DECLARED-WEIGHTS;PLAQUETTE-EXPECTATIONS=13/10@THE-NULL,262244/65615@THE-WILSON-CONJUGATION-SYMMETRIC,4294967399/4294967375@THE-EXHIBITED-WITNESS,225/152@THE-LAW-NATIVE-CONTROL;WINDING=3-ZERO-AND-1-NONZERO;THE-CONTROL-CARRIES-LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION-AND-IS-NEVER-SPENT-AS-DERIVED -- (b)FAMILY-SWEPT=136-EXTREME-POINTS-64-VERTICES-AND-72-EDGE-MIDPOINTS-ALL-RUN;FAMILY-INVARIANT=area_seen;COUPLING-DEPENDENT=ladder_word+creutz_is_unit+winding_word+mode_A+mode_B+mode_C+active_modes;SLICES=9-EXACT-ONE-PARAMETER-ROWS-AGREE-AT-THE-AREA-LEG -- PRICE=THE-INVENTORY-IS-135-COUPLINGS-AND-THE-AREA-LEG-PARTITIONS-NONE-OF-THEM;THE-WINDING-LEG-PARTITIONS-96-AGAINST-40-OF-136;THE-HALVING-MODE-IS-ABSENT-AT-72-OF-136;THE-PERIMETER-MODE-IS-ABSENT-AT-40-OF-136;THE-CREUTZ-RATIO-IS-UNDEFINED-AT-0-OF-136;THE-CREUTZ-RATIO-IS-ONE-AT-24-WHICH-ARE-EXACTLY-THE-24-LADDERS-CONSTANT-IN-THE-PERIMETER -- SPECTRAL-DOOR=THE-TRANSFER-MATRIX-ON-A-TIME-SLICE-IS-NAMED-NOT-RUN-AT-167772160000-STATES-PER-SLICE;THE-FINITE-FORM-IS-MEASURED-AT-640-OF-640-COINS=W=A+B*P+C*2^-P;THE-ANSATZS-SPECTRUM-IS-{1,1,1/2}-WITH-GAP-1/2-AND-ITS-HALVING-MODE-IS-PRESENT-AT-512-OF-640-COINS-AND-64-OF-136-EXTREME-POINTS;THE-WINDING-HOLONOMY-IS-UNITARY-AT-640-OF-640-SO-ITS-SPECTRUM-CARRIES-NO-DECAY;SPC-INHERITS-THE-GAP-AT-THAT-SUPPORT -- ORIENTATION=DECLARED-NEVER-DERIVED-NEITHER-STANDARD-IS-CLAIMED-TRUE-DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING;THE-ORIENTED-SUBGROUP-HAS-INDEX-2-AT-BOTH-READINGS;COUPLINGS=135-AT-ANCHORED-AND-135-AT-ANCHORED-ORIENTED-AND-79-AT-THE-EXTENSION-AND-79-AT-EXTENSION-ORIENTED-SO-THE-DECLARATION-BUYS-OBSERVABLES-AND-COSTS-NO-COUPLING;THE-ODD-PART-IS-LAWFUL-ONLY-THERE-AND-IS-NON-ZERO-AT-3760-OF-11520-SHAPE-BY-COIN-TRACES-AT-9-OF-18-SHAPES-AND-AT-96-OF-136-EXTREME-POINTS -- L-BOUNDARY=THE-MERGING-INDEX-IS-8/GCD(L,8)-WHICH-IS-2-HERE-AND-1-AT-L-8;AREA-BLINDNESS-AND-THE-CLOSED-FORM-AND-THE-GAP-SURVIVE-THE-BOUNDARY-0-DISAGREEMENTS-OVER-44800-CHECKS-AND-640-OF-640-COINS-CARRY-IDENTICAL-COEFFICIENTS;THE-CLASS-MERGING-DOES-NOT-0-MERGES-AT-L-8-AGAINST-72-HERE -- SCOPE=D=2;L=4;BOUNDARY-L=8;FIELD=Q(zeta_8);COINS=640;LINKS=32;PLAQUETTES=16;CARRIER=THE-640-UNIFORM-CONFIGURATIONS;FULL-CONFIGURATION-SPACE=640^32-NOT-A-CARRIER-HERE;WEIGHTS=POSITIVE-EXACT-RATIONALS-NO-LOGS-NO-FLOATS;THE-POTENTIAL-IS-NOMINAL-AND-CARRIED-MULTIPLICATIVELY;CONFINEMENT-VOCABULARY-IS-LICENSED-FOR-THIS-UNIT-ONLY-AND-ONLY-IN-MEASURED-SENTENCES;NO-CONTINUUM-CLAIM;NO-SI-NUMBERS;NOT-QCD",
  "verdict_head": "POT-SPLIT-BY-WEIGHT",
  "waiver_ledger": {
   "refusal_only_gates": [

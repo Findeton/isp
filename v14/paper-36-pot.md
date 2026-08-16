@@ -7,7 +7,7 @@ falsification self-test fatal at every anchor class and writing nothing.
 Between delivery and adjudication every headline below is a **candidate
 reading**.
 
-## The Loop Observable on This Carrier Is a Function of the Perimeter Alone at Every Configuration, So the Area Leg of the Discriminator Is Family-Invariant While Its Winding Leg Partitions the Inventory
+## The Rectangle Ladder's Loop Observable on This Carrier Is a Function of the Perimeter Alone at Every Configuration, So the Area Leg of the Discriminator Is Family-Invariant While Its Winding Leg Partitions the Inventory
 
 **Unit:** POT, v14, paper #36.
 **Instrument:** `v14/code/pot_exact.py`.
@@ -32,14 +32,15 @@ exchanged between two sources dies on the delivery run. Anchors are
 53 anchors in all — each verbatim window pinned by the digest of its exact
 bytes, by its own frozen character count and by a declared length floor, each
 located exactly once, each perturbed at a content-bearing token and required
-to stop being locatable, and each bound to the gate that consumes it, where
-the consumer is checked against this run's own ledger.
+to stop being locatable, and each **read inside the predicate of the gate its
+own column names**, with the read recorded and reconciled against this run's
+own ledger, so a window no gate consumed stops the delivery run.
 **Exact arithmetic only, and multiplicative by declaration:** the field is
 $\mathbb{Q}(\zeta_8)$ carried as integer four-tuples over the basis
 $(1,z,z^2,z^3)$ reduced modulo $z^4+1$ with a per-row power-of-two scale, so
 the whole holonomy census runs in machine integers and tuple equality is
 field equality once the scales agree; every weight is a strictly positive
-`Fraction`; every expectation is a ratio of exact rational sums. An AST scan
+exact rational; every expectation is a ratio of exact rational sums. An AST scan
 of the instrument's own syntax tree is a gate, and it carries the clause the
 pin's framing needs: **no call to a logarithm, an exponential, a square root
 or a power exists in this source at all**, and no floating-point literal
@@ -50,13 +51,15 @@ values* passes; every top-level key of the receipt is either sealed that way
 or named in the declaration with the reason it cannot be; and the artifacts
 are written to temporaries, read back and compared against the gate-time
 digests **before** either is moved into place — the receipt by total byte
-equality as well as by its seals, so the declared-unsealed keys, the gate
-ledger and its chain among them, cross the disk boundary guarded.
+equality, by its seals, and by an equality check of every declared-unsealed
+key against the object this run built it from, so the gate ledger, its chain,
+the manifest and the declaration itself cross the disk boundary guarded
+rather than merely accompanied.
 
 **The verdict, quoted exactly as the instrument emits it.** Every value is
 derived inside a gate from a measured receipt field; the complete string —
 head included — is compared for equality against an *independent
-reconstruction* that reads only the serialized receipt, derives the head by a
+reconstruction* that reads only the receipt payload, derives the head by a
 second head law of its own over the tallies rather than the rows, and
 re-renders every segment with its own format strings; and the paper's fenced
 blocks are compared as a **multiset** against the single block this run
@@ -64,7 +67,7 @@ licenses, so neither a stale verdict nor a forged twin beside the clean one
 can be delivered:
 
 ```
-POT-SPLIT-BY-WEIGHT-THE-WINDING-LEG-SPLITS-96-NONZERO-AND-40-ZERO-OF-136-EXTREME-POINTS-AND-1-OF-4-DECLARED-ROWS-WHILE-THE-AREA-LEG-IS-FAMILY-INVARIANT-AREA-BLIND-AT-149-OF-149-MEASURED-ROWS -- LOOP-FAMILY=192-PLACEMENTS-192-DISTINCT-LOOPS-144-CONTRACTIBLE-AND-48-WINDING;RECTANGLE-EXTENTS=1-2-3-MEASURED-SIMPLE-AT-9-OF-16-SWEPT-SIZES;ORBITS-UNDER-THE-ANCHORED-CHART-GROUP-OF-ORDER-32=11-CLOSED-TRUE;THE-WINDOW=RECTANGLE-CIRCUITS-PLUS-STRAIGHT-AND-STAIRCASE-WINDING-CYCLES-NOT-ALL-CLOSED-PATHS -- DISCRIMINATOR=WELL-DEFINED-AT-L-4-WITH-2-AREA-DISCRIMINATING-COMPARISONS-AND-4-CREUTZ-RUNGS;LEG-AREA=BLIND-EVERYWHERE;LEG-CREUTZ=DEFINED-AT-136-OF-136-EXTREME-POINTS-AND-EQUAL-TO-ONE-AT-24;LEG-WINDING=THE-ORDER-PARAMETER-ANALOGUE -- (a)CONDITIONAL=4-ROWS-ALL-STAMPED-CONDITIONAL-ON-THE-DECLARED-WEIGHTS;PLAQUETTE-EXPECTATIONS=13/10@THE-NULL,262244/65615@THE-WILSON-CONJUGATION-SYMMETRIC,4294967399/4294967375@THE-EXHIBITED-WITNESS,225/152@THE-LAW-NATIVE-CONTROL;WINDING=3-ZERO-AND-1-NONZERO;THE-CONTROL-CARRIES-LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION-AND-IS-NEVER-SPENT-AS-DERIVED -- (b)FAMILY-SWEPT=136-EXTREME-POINTS-64-VERTICES-AND-72-EDGE-MIDPOINTS-ALL-RUN;FAMILY-INVARIANT=area_seen;COUPLING-DEPENDENT=ladder_word+creutz_is_unit+winding_word+mode_A+mode_B+mode_C+active_modes;SLICES=9-EXACT-ONE-PARAMETER-ROWS-AGREE-AT-THE-AREA-LEG -- PRICE=THE-INVENTORY-IS-135-COUPLINGS-AND-THE-AREA-LEG-PARTITIONS-NONE-OF-THEM;THE-WINDING-LEG-PARTITIONS-96-AGAINST-40;THE-HALVING-MODE-IS-ABSENT-AT-72-OF-136;THE-PERIMETER-MODE-IS-ABSENT-AT-40-OF-136;THE-CREUTZ-RATIO-IS-UNDEFINED-AT-0-OF-136 -- SPECTRAL-DOOR=THE-TRANSFER-MATRIX-ON-A-TIME-SLICE-IS-NAMED-NOT-RUN-AT-167772160000-STATES-PER-SLICE;THE-FINITE-FORM-IS-MEASURED=W=A+B*P+C*2^-P-WITH-SPECTRUM-{1,1,1/2}-AND-GAP-1/2-AT-640-OF-640-COINS;THE-WINDING-HOLONOMY-IS-UNITARY-AT-640-OF-640-SO-ITS-SPECTRUM-CARRIES-NO-DECAY;SPC-INHERITS-THE-GAP -- ORIENTATION=DECLARED-NEVER-DERIVED-NEITHER-STANDARD-IS-CLAIMED-TRUE-DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING;THE-ORIENTED-SUBGROUP-HAS-INDEX-2-AT-BOTH-READINGS;COUPLINGS=135-AT-ANCHORED-AND-135-AT-ANCHORED-ORIENTED-AND-79-AT-THE-EXTENSION-AND-79-AT-EXTENSION-ORIENTED-SO-THE-DECLARATION-BUYS-OBSERVABLES-AND-COSTS-NO-COUPLING;THE-ODD-PART-IS-LAWFUL-ONLY-THERE-AND-IS-NON-ZERO-AT-3760-OF-11520-SHAPE-BY-COIN-TRACES-AT-9-OF-18-SHAPES-AND-AT-96-OF-136-EXTREME-POINTS -- L-BOUNDARY=THE-MERGING-INDEX-IS-8/GCD(L,8)-WHICH-IS-2-HERE-AND-1-AT-L-8;AREA-BLINDNESS-AND-THE-CLOSED-FORM-AND-THE-GAP-SURVIVE-THE-BOUNDARY-0-DISAGREEMENTS-OVER-44800-CHECKS-AND-640-OF-640-COINS-CARRY-IDENTICAL-COEFFICIENTS;THE-CLASS-MERGING-DOES-NOT-0-MERGES-AT-L-8-AGAINST-72-HERE -- SCOPE=D=2;L=4;BOUNDARY-L=8;FIELD=Q(zeta_8);COINS=640;LINKS=32;PLAQUETTES=16;CARRIER=THE-640-UNIFORM-CONFIGURATIONS;FULL-CONFIGURATION-SPACE=640^32-NOT-A-CARRIER-HERE;WEIGHTS=POSITIVE-EXACT-RATIONALS-NO-LOGS-NO-FLOATS;THE-POTENTIAL-IS-NOMINAL-AND-CARRIED-MULTIPLICATIVELY;CONFINEMENT-VOCABULARY-IS-LICENSED-FOR-THIS-UNIT-ONLY-AND-ONLY-IN-MEASURED-SENTENCES;NO-CONTINUUM-CLAIM;NO-SI-NUMBERS;NOT-QCD
+POT-SPLIT-BY-WEIGHT-THE-WINDING-LEG-SPLITS-96-NONZERO-AND-40-ZERO-OF-136-EXTREME-POINTS-AND-1-OF-4-DECLARED-ROWS-WHILE-THE-AREA-LEG-IS-FAMILY-INVARIANT-AREA-BLIND-AT-149-OF-149-MEASURED-ROWS -- LOOP-FAMILY=192-PLACEMENTS-192-DISTINCT-LOOPS-144-CONTRACTIBLE-AND-48-WINDING;RECTANGLE-EXTENTS=1-2-3-MEASURED-SIMPLE-AT-9-OF-16-SWEPT-SIZES;ORBITS-UNDER-THE-ANCHORED-CHART-GROUP-OF-ORDER-32=11-CLOSED-TRUE;THE-WINDOW=RECTANGLE-CIRCUITS-PLUS-STRAIGHT-AND-STAIRCASE-WINDING-CYCLES-NOT-ALL-CLOSED-PATHS -- DISCRIMINATOR=WELL-DEFINED-AT-L-4-WITH-2-AREA-DISCRIMINATING-COMPARISONS-AND-4-CREUTZ-RUNGS;LEG-AREA=BLIND-EVERYWHERE;LEG-CREUTZ=DEFINED-AT-136-OF-136-EXTREME-POINTS-AND-EQUAL-TO-ONE-AT-24;LEG-WINDING=THE-ORDER-PARAMETER-ANALOGUE -- (a)CONDITIONAL=4-ROWS-ALL-STAMPED-CONDITIONAL-ON-THE-DECLARED-WEIGHTS;PLAQUETTE-EXPECTATIONS=13/10@THE-NULL,262244/65615@THE-WILSON-CONJUGATION-SYMMETRIC,4294967399/4294967375@THE-EXHIBITED-WITNESS,225/152@THE-LAW-NATIVE-CONTROL;WINDING=3-ZERO-AND-1-NONZERO;THE-CONTROL-CARRIES-LAW-RATED-CONSTRUCTION-DECLARED-AT-AN-UNPINNED-IDENTIFICATION-AND-IS-NEVER-SPENT-AS-DERIVED -- (b)FAMILY-SWEPT=136-EXTREME-POINTS-64-VERTICES-AND-72-EDGE-MIDPOINTS-ALL-RUN;FAMILY-INVARIANT=area_seen;COUPLING-DEPENDENT=ladder_word+creutz_is_unit+winding_word+mode_A+mode_B+mode_C+active_modes;SLICES=9-EXACT-ONE-PARAMETER-ROWS-AGREE-AT-THE-AREA-LEG -- PRICE=THE-INVENTORY-IS-135-COUPLINGS-AND-THE-AREA-LEG-PARTITIONS-NONE-OF-THEM;THE-WINDING-LEG-PARTITIONS-96-AGAINST-40-OF-136;THE-HALVING-MODE-IS-ABSENT-AT-72-OF-136;THE-PERIMETER-MODE-IS-ABSENT-AT-40-OF-136;THE-CREUTZ-RATIO-IS-UNDEFINED-AT-0-OF-136;THE-CREUTZ-RATIO-IS-ONE-AT-24-WHICH-ARE-EXACTLY-THE-24-LADDERS-CONSTANT-IN-THE-PERIMETER -- SPECTRAL-DOOR=THE-TRANSFER-MATRIX-ON-A-TIME-SLICE-IS-NAMED-NOT-RUN-AT-167772160000-STATES-PER-SLICE;THE-FINITE-FORM-IS-MEASURED-AT-640-OF-640-COINS=W=A+B*P+C*2^-P;THE-ANSATZS-SPECTRUM-IS-{1,1,1/2}-WITH-GAP-1/2-AND-ITS-HALVING-MODE-IS-PRESENT-AT-512-OF-640-COINS-AND-64-OF-136-EXTREME-POINTS;THE-WINDING-HOLONOMY-IS-UNITARY-AT-640-OF-640-SO-ITS-SPECTRUM-CARRIES-NO-DECAY;SPC-INHERITS-THE-GAP-AT-THAT-SUPPORT -- ORIENTATION=DECLARED-NEVER-DERIVED-NEITHER-STANDARD-IS-CLAIMED-TRUE-DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING;THE-ORIENTED-SUBGROUP-HAS-INDEX-2-AT-BOTH-READINGS;COUPLINGS=135-AT-ANCHORED-AND-135-AT-ANCHORED-ORIENTED-AND-79-AT-THE-EXTENSION-AND-79-AT-EXTENSION-ORIENTED-SO-THE-DECLARATION-BUYS-OBSERVABLES-AND-COSTS-NO-COUPLING;THE-ODD-PART-IS-LAWFUL-ONLY-THERE-AND-IS-NON-ZERO-AT-3760-OF-11520-SHAPE-BY-COIN-TRACES-AT-9-OF-18-SHAPES-AND-AT-96-OF-136-EXTREME-POINTS -- L-BOUNDARY=THE-MERGING-INDEX-IS-8/GCD(L,8)-WHICH-IS-2-HERE-AND-1-AT-L-8;AREA-BLINDNESS-AND-THE-CLOSED-FORM-AND-THE-GAP-SURVIVE-THE-BOUNDARY-0-DISAGREEMENTS-OVER-44800-CHECKS-AND-640-OF-640-COINS-CARRY-IDENTICAL-COEFFICIENTS;THE-CLASS-MERGING-DOES-NOT-0-MERGES-AT-L-8-AGAINST-72-HERE -- SCOPE=D=2;L=4;BOUNDARY-L=8;FIELD=Q(zeta_8);COINS=640;LINKS=32;PLAQUETTES=16;CARRIER=THE-640-UNIFORM-CONFIGURATIONS;FULL-CONFIGURATION-SPACE=640^32-NOT-A-CARRIER-HERE;WEIGHTS=POSITIVE-EXACT-RATIONALS-NO-LOGS-NO-FLOATS;THE-POTENTIAL-IS-NOMINAL-AND-CARRIED-MULTIPLICATIVELY;CONFINEMENT-VOCABULARY-IS-LICENSED-FOR-THIS-UNIT-ONLY-AND-ONLY-IN-MEASURED-SENTENCES;NO-CONTINUUM-CLAIM;NO-SI-NUMBERS;NOT-QCD
 ```
 
 (The string is one line; the gate compares that complete string.)
@@ -91,12 +94,22 @@ of exact rational sums, the potential is nominal, and nothing here takes a
 logarithm.
 
 **The vocabulary wall, and how it is enforced.** The confinement vocabulary is
-licensed for this unit only, and the licence has teeth: every sentence of this
-paper that uses one of the licensed words is required, by a gate on the
-delivered text, to carry a value this run measured. Unmeasured talk of that
-kind stops the delivery run. The pin's must-nots are swept over this paper's
-own text with the declaring sentences removed first: this unit makes no
-continuum claim and publishes no SI number.
+licensed for this unit only, and the licence is a gate on the delivered text:
+every sentence of this paper's prose that uses one of the 19 declared words
+must **carry a measurement** — a claim this run rendered from its own receipt,
+or a pair of values this run measured and joined as the sentence joins them
+— and every value pair such a sentence states must itself be one this run
+measured. So a sentence built out of the classifier's own words licenses
+nothing, a sentence that pairs two separately measured numbers into a relation
+nothing measured dies at the wall, and unmeasured talk of that kind stops the
+delivery run. The wall's remaining reach is published rather than implied: it
+binds the values a sentence states and the way it joins them, and it does not
+bind the subject they are said about, so a sentence carrying a pair this run
+measured but attached to the wrong subject is outside its reach. The
+vocabulary of this paper is therefore clean by reading as well as by gate.
+The pin's must-nots are swept over this paper's own text with
+the declaring sentences removed first: this unit makes no continuum claim and
+publishes no SI number.
 
 ## 2. The arena and the carrier, declared as data (§15)
 
@@ -133,7 +146,7 @@ and 72 edge midpoints, exactly the parent's own split.
 made the admissible Wilson weights the conjugation-symmetric functions of the
 trace, and this unit carries that forward: the observable is the
 conjugation-symmetric part of the loop trace, which lies in the real subfield
-by construction. Nine of the 18 declared shapes have a raw trace that is
+by construction. 9 of the 18 declared shapes have a raw trace that is
 already real at every coin, so on those the restriction costs nothing; on the
 other nine it is doing work, and section 10 measures exactly what.
 
@@ -199,9 +212,10 @@ at one placement equals the value at every other, over 111360
 placement-by-coin comparisons with no mismatch. It is what makes an
 expectation over the family a function of the shape and not of where the loop
 was put. And the one member the parents had already measured is reproduced
-from these primitives before anything new is said: the plaquette's trace takes
-11 distinct values on the carrier, its counting expectation is 13/10, and 56
-of the diagonal coins are non-flat, which is the grandparent's own count.
+from these primitives before anything new is said: the plaquette's trace
+takes 11 distinct values on the carrier, its counting expectation is 13/10,
+and 56 of the diagonal coins are non-flat, which is the grandparent's own
+count.
 
 ## 4. The discriminator, defined before any row runs
 
@@ -211,7 +225,8 @@ Three legs, all multiplicative, all exact.
 ladder shapes are grouped by perimeter and the pairs with equal perimeter and
 unequal area are the comparisons; an area law would show itself at those
 comparisons without a model, and this unit takes them at every one of the
-136 extreme points as well as at the declared rows.
+136 extreme points swept, 64 vertices and 72 edge midpoints, as well as at the
+declared rows.
 
 **LEG-CREUTZ.** The Creutz-ratio analogue
 $\chi(a,b) = W(a,b)\,W(a-1,b-1) / \big(W(a,b-1)\,W(a-1,b)\big)$, which is one
@@ -220,7 +235,19 @@ geometric in the area. Every value is an exact element of the real subfield.
 
 **LEG-WINDING.** The winding-cycle expectation, as the analogue of a
 deconfinement order parameter: zero or not zero, a two-valued verdict, and
-section 7 reports it at all 136 extreme points.
+section 7 reports it at 96 of the 136 extreme points as non-zero.
+
+**One word, two measurements, and both are reported.**
+`DISCRIMINATOR-DEGENERATE` names two different things in this paper. The pin
+registered it for a failure of the discriminator's own well-definedness — too
+few rungs, or a vanishing denominator — which is the condition the
+SYN-ZERO-DENOMINATOR control arm of section 12 exhibits and which this arena
+does not meet, the ratio being defined at 136 extreme points and at every
+declared row. The row-level tallies use the same word in its second and wider
+sense: a ladder that is well defined and matches neither shape of law, which
+is the condition at 112 of the 136. The receipt carries the two branches
+apart, and the re-scope is disclosed here at first use rather than left to a
+reader of the tables.
 
 **The discriminator's own well-definedness is itself a gated measurement**, in
 the pin's words:
@@ -252,16 +279,33 @@ and ACT states the same law in its own bytes:
 Every claim this unit makes about the class structure therefore carries its
 lattice scope, and section 11 runs the boundary rather than projecting it.
 
-## 5. The ladder is a function of the perimeter alone
+## 5. The rectangle ladder is a function of the perimeter alone
 
 This is the unit's deepest measurement and it is taken at the level of
 configurations, not of expectations. At every coin of the carrier and at every
-pair of ladder shapes of equal perimeter, the loop observable takes the same
+pair of **ladder** shapes of equal perimeter, the loop observable takes the same
 value: 5760 shape-by-coin comparisons at equal perimeter and 0 disagreements,
-so **the area does not enter it**. Because the statement is per-configuration, it
-holds under every measure on this carrier without a second census — at every
-declared row, at every extreme point, and at every point of the allowed space
-between them.
+so **the area does not enter it**.
+
+**What that count counts, on three bases.** The scheme reads each ladder shape
+against the representative of its own perimeter class, so the representative is
+read against itself: of the 5760, 3200 of them are a shape compared with itself and 2560
+are cross-shape. Counted as unordered pairs of distinct shapes of equal
+perimeter the ladder carries five, which is 3200 pair-by-coin comparisons, and
+the sub-basis on which the area finding is actually claimed is smaller still —
+the pairs of equal perimeter and *unequal* area, of which this ladder has two,
+giving 1280 area-discriminating comparison-by-coin checks. All three bases
+return zero disagreements, and section 11's boundary count is on the third of
+them, so the two are comparable.
+
+**Why it holds under every measure, and not only under the ones swept.** The
+statement is per-configuration, so the difference of the two expectations at an
+area-discriminating comparison is a ratio whose numerator is linear in the
+measure; vanishing at each point mass forces it to vanish on the whole hull,
+and no second census is needed. Both ends are executed anyway rather than
+argued: 640 Dirac measures and 1500 interior measures of full support, drawn by
+a declared integer recurrence and compared on exact integer numerators over one
+common denominator, give 4280 comparisons and 0 mismatches.
 
 The mechanism is visible once the loop is read as a word. On a uniform
 configuration every link carries the same coin, so the holonomy of a circuit
@@ -269,7 +313,29 @@ depends only on the cyclic sequence of orientations around it; for an
 $a \times b$ rectangle that sequence is $a+b$ forward steps followed by $a+b$
 backward steps, which depends on $a$ and $b$ only through their sum. The
 direction of a leg cannot matter because the coin does not know which
-direction it sits in.
+direction it sits in. The argument is about *simple rectangle circuits*, and
+that is exactly the scope of the theorem.
+
+**The scope is measured at its own boundary.** Over the wider declared family
+the loop's own length does **not** determine the observable. Grouping the 18
+declared shapes by step count and reading each group coin by coin:
+
+| step count | shapes of that length | coins at which they disagree | coins |
+|---|---|---|---|
+| 4 | 3 | 568 | 640 |
+| 6 | 2 | 0 | 640 |
+| 8 | 6 | 576 | 640 |
+| 10 | 2 | 0 | 640 |
+| 12 | 3 | 640 | 640 |
+| 16 | 2 | 0 | 640 |
+
+Every group on which only rectangles occur agrees at every coin; every group
+containing a winding loop does not. At the shortest length the disagreement is
+at 568 of the 640 coins, and an explicit witness is published with it: at the
+antidiagonal coin of index one the $1\times1$ rectangle returns $+1$ while the
+wrap-one straight cycle returns $-1$, two four-step loops of this same family.
+The perimeter-only statement is therefore the rectangle ladder's, and it is not
+claimed on the family.
 
 **And the dependence on the perimeter has an exact closed form.** Writing
 $P = a+b$, the ladder is fitted exactly from three points to
@@ -284,8 +350,10 @@ antidiagonal ones.
 Read as a transfer object, that closed form is a spectrum: a constant mode, a
 mode proportional to the perimeter, and a mode halving with it. The
 eigenvalue one appears twice because a term proportional to the perimeter is a
-two-block at eigenvalue one, so the transfer object this ladder sees has
-spectrum {1,1,1/2} and gap 1/2.
+two-block at eigenvalue one, so the transfer object this **ansatz** sees has
+spectrum {1,1,1/2} and gap 1/2. That spectrum is the fitting basis's, not the
+true transfer matrix's, and the halving mode it names is present at 512 of the 640 coins and at 64 of the 136 extreme points — everywhere else the
+realised ladder is $A + B\,P$, which carries no halving eigenvalue at all.
 
 ## 6. Mode (a): the expectations at the declared rows
 
@@ -340,17 +408,31 @@ stamps them so: no count becomes a probability without a declared measure
 (E-24).
 
 The area leg returns the same value at all of them, which is what the
-per-configuration theorem of section 5 requires. The Creutz leg does not:
-there are 24 of the 136 extreme points where the ratio is one, and they are
-exactly the points at which a single mode is active, while the rest carry two
-modes or three. The winding leg does not either: 96 with a non-zero winding
-expectation and 40 with zero.
+per-configuration theorem of section 5 requires. The Creutz leg does not, and
+*which* points it separates is measured rather than asserted: there are
+24 of the 136 extreme points where the ratio is one, and they are exactly the
+corners at which the ladder is **constant in the perimeter** — the observable
+does not move with the perimeter there at all, so the ratio is one for that
+reason and for no other. The two sets are compared elementwise and they are
+equal. This is not the same as being a single-mode corner: a single mode is active at 32 extreme points, and at the remaining 8
+the one active mode is the perimeter-proportional one, where the ladder is
+$W = 2P$ and the ratio is $P(P-2)/(P-1)^2$ — 8/9, 15/16, 15/16 and 24/25 at
+the four rungs, none of them one. The mechanism is measured through the real
+discriminator on three synthetic single-mode ladders: the constant mode alone
+and the halving mode alone both return one at every rung, the
+perimeter-proportional mode alone does not, and no corner of this arena is
+halving-only. The winding leg separates the family too: 96 with a non-zero
+winding expectation and 40 with zero.
 
 **The interior is sampled as well as the corners.** Nine exact one-parameter
 slices — one class raised to three declared exact rational couplings — return
-the same area verdict while their expectations move, so the sweep's finding is
-not a property of the corners alone: 9 exact one-parameter slices, three
-distinct plaquette expectations, and the area leg unmoved at every one.
+the same area verdict while their expectations move: 9 exact one-parameter
+slices, three distinct plaquette expectations, and the area leg unmoved at
+every one. The slices are 3 couplings against 3 classes, and the three
+classes are of one kind — each of size eight and in the antidiagonal sector —
+which the observables do not separate: the nine rows carry three distinct
+ladders and not nine. So the sweep's finding is not a property of the corners
+alone, and the interior evidence is three points rather than nine.
 
 ## 8. The price binding
 
@@ -373,21 +455,29 @@ limit is the extreme point on its own class.
 | MODE-C-HALVING | 2 | yes | 0 72, 1 64 | PARTITIONS-THE-INVENTORY |
 | ACTIVE-MODES | 3 | yes | 1 32, 2 64, 3 40 | PARTITIONS-THE-INVENTORY |
 
+**What the word in that table means.** DECONFINES is the classifier's word for
+a ladder whose Creutz ratio is one at every rung, and at this arena all
+24 of the 136 extreme points where the ratio is one are points at which the
+loop observable is constant in the perimeter: the word records a **flat
+ladder**, the degenerate member of the perimeter-geometric family, and it is
+not a finding that anything deconfines. It is a machine tally and it is
+reported as one.
+
 **The area leg partitions none of them.** No coupling this arena admits can
-make the loop observable see the area, because the blindness is a property of
-the carrier and not of the measure. Whether the Creutz ratio is defined is
+make the loop observable see the area at any configuration of this carrier,
+because the blindness is a property of the carrier — one coin on every link —
+and not of the measure. Whether the Creutz ratio is defined is
 family-invariant too, and it is undefined at 0 of them.
 
 **Every other leg partitions the inventory**, exactly and by counting. The
 halving mode is absent at 72 of the 136, which is precisely the union of the
-diagonal and antidiagonal classes; the perimeter-proportional mode is absent
-at 40 of them; and the winding leg splits the family 96 against 40. So the
+diagonal and antidiagonal classes; the perimeter-proportional mode is absent at 40 of them; and the winding leg splits the family 96 against 40. So the
 answer to the pin's question is two-sided and both sides are measured: the
-confinement discriminator's area leg is family-invariant at this arena, while
-the order-parameter leg and the amplitudes are coupling-dependent.
+area leg of the discriminator is family-invariant at this arena, while
+the order-parameter leg is coupling-dependent, splitting the same family 96 against 40, and so are the amplitudes.
 
 **And over the 136 extreme points the order parameter is not pinned by the
-action route.** ACT's falsifier asks whether a locality declaration narrows an
+action route**, which is measured at the same 96 against 40 split. ACT's falsifier asks whether a locality declaration narrows an
 observable's range; put to the winding expectation, the range over the
 reachable set is measured equal to the range over the invariant simplex and to
 the observable's own range, all three running from -4 to 4. What the locality
@@ -402,10 +492,15 @@ time slice, and the matrix has that number squared entries. It is out of reach
 by cost at this arena and it is named rather than approximated.
 
 **The finite form the window does reach is measured**, and it is what SPC
-inherits. The ladder's own transfer content is the closed form of section 5:
-spectrum {1,1,1/2} and gap 1/2, verified at every coin of the carrier and
-unchanged at every declared row. The gap is family-invariant; what a coupling
-moves is which modes are switched on and how strongly.
+inherits, with the support it inherits it on. The ladder's own transfer
+content is the closed form of section 5: spectrum {1,1,1/2} and gap 1/2,
+verified at every coin of the carrier and unchanged at every declared row.
+The spectrum is the closed form's three-term ansatz read as a transfer object,
+and the halving eigenvalue that carries the gap is present at 512 of the 640 coins and at 64 of the 136 extreme points; at the others the
+realised ladder has two modes and no gap of that kind. The gap is
+family-invariant on its support; what a coupling moves is which modes are
+switched on and how strongly. SPC inherits the gap together with that
+support, and the receipt's own handoff field carries both.
 
 **And the holonomy's own spectrum is measured too, so that where the decay can
 live is settled rather than assumed.** The winding cycle's power-sum ladder
@@ -424,7 +519,8 @@ loop to its reverse, whose holonomy is the inverse, whose trace is the
 conjugate. Declaring the **oriented** subgroup instead is a DECLARATION and
 never a derivation. Neither standard is claimed true here; the verdict for
 this axis is the declaration-relativity itself, and every row carries the
-stamp `DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING`.
+stamp `DECLARATION-RELATIVE-AT-THE-ORIENTATION-READING`. The integers in this
+section are counts and the receipt stamps them so (E-24).
 
 **What the declaration is.** The oriented subgroup is the chart group minus
 its orientation-reversing elements, and the index of the oriented subgroup is
@@ -457,16 +553,13 @@ full field at every shape and every coin, with no failure. The odd part is
 measured to change sign under the reversal a reflection performs, at every
 shape and every coin, which is exactly why it is unlawful at the full standard
 and lawful at the oriented one. It is not a small effect:
-3760 of 11520 shape-by-coin traces carry a non-zero odd part at 9 of the 18
-shapes — and those nine are precisely the winding family, the straight cycles
+3760 of 11520 shape-by-coin traces carry a non-zero odd part at 9 of the 18 shapes — and those nine are precisely the winding family, the straight cycles
 at every wrap count and the staircase. The contractible rectangles carry none.
 
 **And what it buys is invisible to every measure this unit declared.** At all
-four declared rows the odd observables vanish identically: 0 non-zero odd
-observables at every declared row, because each declared weight system is
+four declared rows the odd observables vanish identically: 0 non-zero odd observables at every declared row, because each declared weight system is
 constant on the coin sectors or on the classes, and the odd part sums to zero
-over each of them. On the family it is another story: 96 of the 136 extreme
-points carry at least one. So the oriented declaration adds a sector of
+over each of them. On the family it is another story: 96 of the 136 extreme points carry at least one. So the oriented declaration adds a sector of
 observables that the arena's natural rows cannot see and most of the allowed
 space can.
 
@@ -487,9 +580,9 @@ the merging index is one, the loop legs are re-measured.
 
 Three findings **survive the boundary** and one does not, and both halves are
 measurements. Area-blindness survives:
-44800 comparison-by-coin checks at L = 8 with 0 disagreements, over a set of
-comparisons that is far richer there than here. The closed form survives, and
-survives in the strongest possible sense —
+44800 comparison-by-coin checks at L = 8 with 0 disagreements, over the same
+basis section 5 reports as 1280 area-discriminating comparison-by-coin checks — seventy area-discriminating comparisons there against two here.
+The closed form survives, and survives in the strongest possible sense —
 640 of the 640 coins carry identical coefficients at the two lattice sizes,
 over a ladder that runs to a perimeter of fourteen rather than six — so the
 spectrum and the gap are lattice-invariant across the declared pair. What does
@@ -531,39 +624,62 @@ minimum (#82): a delivery run that is the only writer, a `--no-write` twin, a
 falsification self-test that corrupts one anchor class in memory, restores it
 before the next, and requires each to die at that class's own gate writing
 nothing, a per-mutant runner, an all-mutants sweep, gate and mutant
-listings, and a `--verify-paper` mode. Unknown flags exit 2. The exit
-conventions invert the usual reading and are disclosed in the usage string, in
-the receipt and here: the delivery run exits 0 on success and 1 on any
-refusal, writing nothing; `--selftest` exits 0 when every anchor class is
-fatal; `--mutant` exits 0 when the named mutant *dies* on its declared target.
+listings, and a `--verify-paper` mode. Unknown flags exit 2, and the flag
+precedence is declared in the usage string rather than left to the reading
+order. The exit conventions invert the usual reading and are disclosed in the
+usage string, in the receipt and here: the delivery run exits 0 on success, 1 on any refusal, writing nothing; `--selftest` exits 0 when every anchor
+class is fatal; `--mutant` exits 0 when the named mutant *dies* on its
+declared target. That a refusing run writes nothing is checked against the
+artifact **directory** and not only the two artifact paths, so a staging
+temporary left behind by a refusal is a failure and not an invisible.
 
 The gate ledger is chained row by row and the chain is verified in the run and
-again at the disk boundary from the bytes read back. 37 gates close before the
-paper gates; the paper gates and the consumer register follow them; and two
-closing gates come last — the seal and the artifact integrity check, which
-cannot be inside the ledger they close over. There are 49 declared mutants,
-each at the gate it was declared to falsify; that sweep is an external-battery
-result and the receipt says so rather than implying the delivery run produced
-it. The registry is checked TOTAL against the instrument's own syntax tree, so
-a falsifier cannot exist as an unswept branch and a switch the scan cannot
-read is fatal rather than forgiven; the function inventory is checked total the
-same way. Each mutant's published description names the exact token it plants
-and that token is located in the source text (E-23). The coverage is published
-at an honest denominator (#34) whose denominator is every gate on the clean
-path and not only the ones already closed: each is either a declared
-falsifier's target or carries a registered forcing.
+again at the disk boundary from the bytes read back. 39 gates close before the paper gates; the paper gates and the consumer register follow them; the
+coverage, the receipt header and the transcript reconciliation close after
+those; and two closing gates come last — the seal and the artifact integrity
+check, which cannot be inside the ledger they close over. There are 61 declared mutants, each at the gate it was declared to falsify; that sweep is
+an external-battery result and the receipt says so rather than implying the
+delivery run produced it. The registry is checked TOTAL against the
+instrument's own syntax tree, so a falsifier cannot exist as an unswept branch
+and a switch the scan cannot read is fatal rather than forgiven; the function
+inventory is checked total the same way. Each mutant's published description
+names the exact token it plants — the planted change itself, not the switch
+line that guards it — and that token is located in the source text (E-23). The
+coverage is published at an honest denominator (#34) and the gate that
+publishes it closes at the END of the delivery path rather than before the
+paper leg, so the denominator is every gate this run closes, this gate and the
+ones after it included and named one by one, each either a declared
+falsifier's target or the carrier of a registered forcing.
 
 The paper gates run in the plain delivery run and not in a separate mode
-(#20): claim rendering at exact occurrence counts, the complete verdict string
-by equality with the fenced blocks compared as a multiset (E-22), claim
-polarity over the direction-bearing headlines, the structural binding of every
-table header as a claim rendered from the receipt keys its own columns are,
-numeral coverage over every numeral including the fenced verdict block and
-both sides of every fraction, the spelled-numeral scan above twelve, the
-must-not sweep with the declaring sentences removed first, the table-row
-coverage, and the requirement that every quotation lie inside a pinned
-verbatim window. 19 objects are sealed before the paper gates, and the
-manifest is total.
+(#20): claim rendering at exact occurrence counts, compared by **equality**
+and not by a floor, so a claim rendered twice and corrupted at one of the two
+dies here; the complete verdict string by equality with the fenced blocks
+compared as a multiset (E-22); claim polarity over the direction-bearing
+headlines; the structural binding of every table header as a claim rendered
+from the receipt keys its own columns are, with each column name required to
+be a key of every row object its table reports; the same binding one level
+down, every **data row** of every table rendered cell by cell from those row
+objects and compared as a multiset, so a verdict word exchanged inside a cell
+or a row label swapped between two readings stops the run; numeral coverage
+over every numeral including the fenced verdict block and both sides of every
+fraction, against a flat registry of digit runs that has teeth at three digits
+and up and is published as having none below that; a separate gate for the
+short numerals, which must be tokens this run rendered in context — inside a
+claim, a table row, a header or the verdict — with the fenced blocks, the
+table rows, the inline spans, the mathematical spans and the era references
+declared as its exemptions; a gate requiring every inline code span to be a
+string this run measured or declared; a general spelled-number reader whose
+resolved values must be backed the same way; the must-not sweep with the
+declaring sentences removed first; and the requirement that every quotation
+lie inside a pinned verbatim window. The vocabulary wall of section 1 runs
+here too, over 19 declared words.
+25 objects are sealed before the paper gates, and the manifest is total: the
+declared-unsealed half is now only the keys with a genuine ordering
+impossibility, and each of those is compared at the disk boundary, from the
+read-back bytes, against the object this run built it from. The transcript is
+bound too — the gate ids its PASS lines carry must equal this run's ledger
+ids as a sequence, in the run and again from the bytes on disk.
 
 **Deviations, and the register of scope.** The pin's arena, gates and
 must-nots are followed as written. Three points are recorded as scope rather
@@ -590,29 +706,34 @@ the values themselves are published for the declared rows, where they are
   16 images outside the declared family at the extension reading. The window
   is named in the verdict and there is **no silent cap** anywhere in the
   enumeration.
-- **The loop observable is a function of the perimeter alone**, at every
-  configuration of the carrier and hence under every measure on it, with an
-  exact closed form in three modes verified over-determinedly at every coin.
+- **The rectangle ladder's loop observable is a function of the perimeter
+  alone**, at every configuration of the carrier and hence under every measure
+  on it, with an exact closed form in three modes verified over-determinedly
+  at every coin. Across the wider declared family the loop's own length does
+  not determine it — at the shortest length the shapes disagree at 568 of the 640 coins — and the theorem is not claimed there.
 - **The area leg of the discriminator is therefore family-invariant**, and the
   partition it induces on the inventory of 135 couplings is trivial. This is
   the finite, exact sense in which this arena cannot exhibit an area law,
-  measured at 5760 comparisons: not that the effect is small, but that the
-  observable cannot see the area at all.
+  measured at 2 area-discriminating comparisons and 4 Creutz rungs: not
+  that the effect is small, but that the observable cannot see the area at
+  all. That is 1280 area-discriminating comparison-by-coin checks with no
+  disagreement, and the leg is thin here; the boundary lattice
+  carries seventy of them, which is the 44800 comparison-by-coin checks at L = 8 with 0 disagreements of section 11.
 - **The other legs partition the inventory**, exactly: the winding leg
   96 against 40, the halving mode absent at 72 of the 136, the
   perimeter-proportional mode absent at 40 of them, and the Creutz leg at one
-  precisely on the single-mode corners.
+  precisely on the corners whose ladder is constant in the perimeter — 24 of the 136 extreme points where the ratio is one, which are not the same as the
+  single-mode corners, since a single mode is active at 32.
 - **The transfer content is measured, and the door is named.** The finite form
-  is spectrum {1,1,1/2} and gap 1/2; the true transfer matrix at
+  is spectrum {1,1,1/2} and gap 1/2, which is the closed form's ansatz read as
+  a transfer object, with the halving mode present at 512 of the 640 coins and at 64 of the 136 extreme points; the true transfer matrix at
   167772160000 states per time slice is named and not run; the winding
   holonomy is unitary at 640 of 640 holonomies and carries no decaying
   direction.
 - **The orientation reading is a declaration with a measured price.** The
   index of the oriented subgroup is 2 at both readings; the coupling inventory
-  does not move; a sector of odd observables becomes lawful, non-zero at
-  3760 of 11520 shape-by-coin traces carry a non-zero odd part at 9 of the 18
-  shapes, invisible at every declared row and visible at 96 of the 136 extreme
-  points.
+  does not move; a sector of odd observables becomes lawful, and
+  3760 of 11520 shape-by-coin traces carry a non-zero odd part at 9 of the 18 shapes, invisible at every declared row and visible at 96 of the 136 extreme points.
 
 **Not decided, and named.**
 
@@ -629,5 +750,9 @@ the values themselves are published for the declared rows, where they are
   rectangle circuits and straight and staircase winding cycles; a family
   closed under the extension reading would need the 16 escaping staircases,
   and what a wider family would show is not decided here.
+- **What the loop observable does beyond the ladder.** The perimeter-only
+  theorem is the rectangle ladder's; the family's winding loops are measured
+  to break any reading of it as a law about length, and no replacement law for
+  them is offered here.
 - **Anything about a limit.** The two lattice sizes this unit runs are
   declared points, not a sequence, and no statement is made about any other.
