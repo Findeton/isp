@@ -11957,3 +11957,25 @@ implementations, self-hosting); the exposure census over
 the sealed instruments (read-only, the panels' own
 recipes, zero seals reopened); RUNBOOK addenda drafted for
 engraving.  The worker launches on commit.
+
+## 2026-08-16 — TPL DELIVERED AND COMMITTED; E-25…E-33 ENGRAVED (NEW-UNITS-ONLY ADOPTION); THE FOUR LEDGER-ONLY ENGRAVINGS BACKFILLED; S-1/S-2/S-3 REGISTERED (v14 LEDGER #372)
+
+**Files:** TEMPLATE.md 809ebe3514ad; era_template.py
+d04a3eb58fbc (selfdemo 9/9 families, 55/55 controls on
+target, all nine enforcements load-bearing); tpl_census.md
+8979815f11ff + tpl_census.py 2e893b77c733 + receipt
+dbbf3512f6eb (39 instruments × 9 families; 294 of 347
+evaluable cells CARRY or PARTIAL; families b/f/i closed
+NOWHERE; 179/179 panel citations machine-located; layer
+disagreement measured — 23 of 34 on post-review-repaired
+digests, 0 on unchanged ones); tpl_runbook_addenda.md
+e46c1abf25b2.  **RUNBOOK engraved in this commit:**
+E-25…E-33 adopted for NEW units only; the four ledger-only
+engravings (#295/#299/#319/#348) backfilled — including
+#348's own totality rule, which had lived only inside an
+adjudication note.  **THREE NEW FAMILIES registered owed:
+S-1 THE COMPARATOR IS THE BUILDER (the corpus's most
+recurrent unenforced shape), S-2 shared-component routes,
+S-3 the gates encode the answer.**  TPL's own instruments
+caught three defects in themselves by the template (the
+acceptance evidence) — recorded in-census.

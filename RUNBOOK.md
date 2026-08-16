@@ -1945,3 +1945,8 @@ every one of its parent's headline sets spanning exactly [0,1]
 over invariant measures (endpoints reached by Gibbs
 functionals).  A unit publishing a fraction either declares
 the measure with it or stamps it COUNTING-ONLY.
+
+## E-25 … E-33 — THE TEMPLATE ENGRAVINGS (adopted at v14 #372 from the TPL sweep; full reference text: v14/tpl_runbook_addenda.md e46c1abf25b2; reference implementations: v14/code/era_template.py d04a3eb58fbc)
+E-25 totality/seals recomputed at the door. E-26 the transcript bound to the ledger by content. E-27 walls semantic, positive, self-sealing. E-28 an anchor is consumed or it is decoration. E-29 claims by equality, both ways, keyed by table. E-30 referent binding per occurrence, over prose, paired. E-31 no typed counts anywhere the unit vouches. E-32 a falsifier moves the measurement or it is not a falsifier. E-33 the read set recorded where reads happen. **Adoption: NEW UNITS ONLY** (terminal units carry their exposure in v14/tpl_census.md; no seal is reopened for a class that moved no measured number).
+**§B backfill (ledger-only engravings now RUNBOOK-carried):** #295 class words gate-bound to computed predicates; #299 (+#319, +#348-extension) pre-registered outcomes with feasibility argued against the committed corpus, at the declared row list; #348 a seal manifest is total only if totality is recomputed at promotion time.
+**Registered-unimplemented families (owed):** S-1 the comparator is the builder (the corpus's most recurrent shape — no mechanism anywhere); S-2 two "independent" routes through one shared component; S-3 the gates encode the answer.
