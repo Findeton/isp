@@ -49,27 +49,39 @@ Grover and phase data are carried as integer pairs.  No floats anywhere; an
 AST scan of this file and a recursive type scan of the emitted receipt are
 gates.
 
-RUNTIME INPUTS (#46 / #91).  Exactly five files are read as SOURCES, all
+RUNTIME INPUTS (#46 / #91).  The files listed in SOURCES are read, all
 hash-pinned by this unit's frozen declaration, plus exactly one file read as
-the OBJECT UNDER TEST -- this unit's own paper.  No repository state outside
-those lists is read and no subprocess of any kind is invoked, so the run is
-correct off-tree and with no version control present.
+the OBJECT UNDER TEST -- this unit's own paper, whose digest and repository
+path are sealed into the receipt and printed into the transcript, so a reader
+holding either artifact can tell which text it certified.  No repository
+state outside those lists is read and no subprocess of any kind is invoked,
+so the run is correct off-tree and with no version control present.  Every
+open the process performs is recorded, inside the repository and outside it
+alike, and the read set is compared inside the promotion path after the seal
+legs, so the tail window between the last measurement gate and the write is
+closed.
 
 TEMPLATE (E-25 ... E-33, and the TPL-2 revision).  The nine families are
 implemented HERE, not imported, and every one of them is EXERCISED on this
-unit's own objects rather than carried: seals are taken at gate time and
-re-verified at the door and again from disk; the transcript is parsed back
-and reconciled with the ledger as a multiset; walls are voice-normalised
-regexes with positive legs and controls phrased by another hand; anchors are
-readable only through an accessor that records the read; claims are keyed by
-table, both directions, exact occurrence counts; referents are bound per
-occurrence over prose only; no gate statement, claim template or head segment
-types a numeral, and the AST leg checks the source rather than the output;
-every falsifier names the object it must move and the harness digests that
-object before and after; and the read set is recorded at the I/O accessor and
-compared at the LAST gate.  S-1 is met by construction: the head is rebuilt
-segment by segment by a comparator that shares no code, no inputs and no
-typed literals with the builder.
+unit's own objects rather than carried -- the exercise is a gate
+(G-TEMPLATE-EXERCISED), not a claim: seals are taken at gate time, verified
+against the SERIALISED bytes, verified again from the staged file, and only
+then promoted, with the previous artifacts restored if any leg refuses; the
+transcript is parsed back and reconciled with the ledger as a multiset AND
+its non-gate lines are bound line by line to the declared narrative; walls
+are voice-normalised regexes with positive legs, licence legs on every wall,
+and controls phrased by another hand including a negated control apiece;
+anchors are readable only through an accessor that records the read; claims
+are keyed by table, both directions, exact occurrence counts; referents are
+bound per occurrence over prose only, digit and spelled alike, with no
+reflexive pair licensed; no gate statement, claim template, table, fence or
+registry value types a numeral, and the AST leg checks the source rather than
+the output; every falsifier names the object it must move, the harness
+digests that object before and after, and gate coverage is IN the predicate
+with a machine-forced waiver register.  S-1 is met by construction: the head
+is emitted as a positional field list and every field is re-derived from the
+receipt by a comparator that shares no code and no typed literal with the
+builder.
 """
 
 import ast
@@ -268,6 +280,35 @@ def arena_declaration():
     ]
 
 
+# THE FIDELITY PRE-REGISTRATION, SEALED.  The five substrate rows the run is
+# gated on are declared HERE as a frozen tuple with its own digest, and the
+# digest is a gate: a run that quietly drops a row -- the 5-of-5 becoming a
+# 3-of-3 while the paper's sentence still says five -- moves the digest and
+# dies at G-CONSTRUCTOR-FIDELITY.  The row names are bound to the path
+# anchors by id, so the values themselves are still read from the parent's
+# committed receipt at the declared JSON paths and are typed nowhere.
+FIDELITY_PREREG = (("groupings", "P-PARTS"), ("saturating", "P-SAT"),
+                   ("strict_triples", "P-STRICT"),
+                   ("flat_quadruples", "P-FLAT"), ("window", "P-WINDOW"))
+FIDELITY_PREREG_DIGEST = "8af5fb7323bb69b9"
+
+# THE SPELLED CARDINALS.  Every spelled numeral this unit's prose carries is
+# RENDERED from a measurement through this table, never typed, and the
+# spelled gate scans the paper for spelled cardinals exactly as the coverage
+# scan scans digits.
+SPELLED = ("zero", "one", "two", "three", "four", "five", "six", "seven",
+           "eight", "nine", "ten", "eleven", "twelve")
+SPELLED_VALUE = {w: i for i, w in enumerate(SPELLED)}
+# ONE DECLARED EXCLUSION, with its reason.  In English prose "one" is an
+# article and a pronoun far more often than it is a count -- "the one that
+# answers it", "every one of them", "not one of them is priced" -- and a scan
+# that reads it as a numeral reports its own grammar rather than the paper's
+# arithmetic.  Every other spelled cardinal is scanned.  The exclusion is
+# declared here, published in the gate's evidence, and it is the only one.
+SPELLED_EXCLUDED = {"one": "the English article and pronoun, which carries a "
+                           "count only by accident of spelling"}
+SPELLED_SCANNED = tuple(w for w in SPELLED if w not in SPELLED_EXCLUDED)
+
 # THE ARITY WINDOW, declared before anything is measured.
 ARITIES = (2, 3, 4, 5)
 PARENT_ARITY = 3
@@ -275,6 +316,8 @@ WINDOWED_ARITY = 5          # the pin's declared window
 CORPUS_CAP = 100000         # the multi-round corpus rule's declared cap
 LADDER_RMAX = 9             # the ladder search bound, declared not silent
 NAMING_FULL_GROUP_WINDOW = 40   # groupings per arity filtered against S_9
+THEOREM_N_MAX = 40          # the declared arena sweep for the modulus theorem
+THEOREM_L_MAX = 8
 
 # PRE-REGISTERED OUTCOMES WITH FEASIBILITY (#299 / #319 / #348, at the
 # declared row list).  Every outcome word must be shown REACHABLE at the
@@ -322,6 +365,65 @@ PREREGISTERED = [
      "it once and consuming the same survivors at every arity."),
 ]
 
+# THE SEGMENT-LEVEL PRE-REGISTRATION (#299 as extended).  Every head segment
+# carries a pre-registered outcome word, its complement, a feasibility line
+# naming the rows that would produce EITHER, and -- honestly -- whether the
+# outcome was CONTINGENT on a measurement or forced by the declared window's
+# own arithmetic before any measurement ran.  A segment whose complement had
+# no route is published as NOT-CONTINGENT and is not offered as a finding.
+SEGMENT_PREREG = [
+    ("SEG-AGGREGATE", "NO-PARENT-NUMERAL-FOLLOWS-THE-DECLARED-a-ONLY-RULE",
+     "SOME-PARENT-NUMERAL-FOLLOWS-THE-DECLARED-a-ONLY-RULE", True,
+     "CONTINGENT: the declared rule differs from the constant reading at "
+     "a = 2, a = 4 and a = 5, so any numeral whose measured column happened "
+     "to follow C(a,2) + v - C(3,2) would have returned the complement; the "
+     "third declared rule below returns it on one row, which is the "
+     "measurement that proves the complement had a route."),
+    ("SEG-SUBSTRATE", "THE-ROUND-STOPS-BEING-A-PARTITION",
+     "THE-ROUND-STAYS-A-PARTITION", False,
+     "NOT-CONTINGENT: only 1, 3 and 9 divide the actor count, and the "
+     "declared arity window carries 2, 4 and 5, so the idle remainder was "
+     "forced by the window's own arithmetic before any measurement ran. The "
+     "segment is published as a DECLARATION'S CONSEQUENCE and not as a "
+     "finding; what is contingent inside it is the saturation split, which "
+     "could have agreed at every arity and does not."),
+    ("SEG-NAMING", "LAW-IN-A", "BREAKS", True,
+     "CONTINGENT: route A and route B are compared as element sets at every "
+     "prefix, and a single mismatch at any prefix of any arity returns the "
+     "complement."),
+    ("SEG-CRYSTALLIZATION", "BREAKS", "LAW-IN-A", True,
+     "CONTINGENT: the schedule time and the floor are complete searches at "
+     "four arities; a column constant in a, or one following the declared "
+     "a-only rule, returns the complement."),
+    ("SEG-MENU-AND-LADDER", "NEEDS-3", "LAW-IN-A", True,
+     "CONTINGENT for the ladder: a first rung equal to the event size at the "
+     "a = 4 budget row -- where the event size and the link count differ -- "
+     "would have returned the complement, and that row is searched. "
+     "A-INERT-BY-CONSTRUCTION for the menu, which is stamped a disclosure."),
+    ("SEG-FORCING", "LAW-IN-A", "BREAKS", True,
+     "CONTINGENT: the thesis is tested per object at every history of every "
+     "corpus, and one history whose non-uniqueness did not come from a "
+     "repeated parallel class returns the complement."),
+    ("SEG-SEC2", "BREAKS", "LAW-IN-A", True,
+     "CONTINGENT: the obstruction-free class is measured at every arity, and "
+     "an empty class at a = 2 -- which is what the parent's own arity shows "
+     "-- returns the complement."),
+    ("SEG-PRINCIPLES", "ADDED-ASSUMPTIONS-WOULD-SELECT-a-EQUALS-q-AND-"
+     "PRESENT-ISP-DOES-NOT", "SOMETHING-ALREADY-REGISTERED-SELECTS", True,
+     "CONTINGENT IN ITS MEASURED HALF: which of the five candidate "
+     "principles select is measured at nine candidate event sizes and could "
+     "have come out with none selecting or with all five; the second half -- "
+     "that none of the five was ever pre-registered -- is a fact about the "
+     "corpus that was knowable before the run and is published as such."),
+    ("SEG-SCOPE", "SCOPE", "OUT-OF-SCOPE", False,
+     "NOT-CONTINGENT: the scope line reports the declared window, the "
+     "declared cap and the declared search bound, none of which is a "
+     "measurement outcome."),
+]
+
+PREREG_DIGEST = "f9593cc869a3187e"
+SEGMENT_PREREG_DIGEST = "45a4e1c986257cbf"
+
 # THE DECLARED UNIFORM a-ONLY RULE (the analogue of NDEP section 8).  A
 # single datum at a = 3 does not determine a function of a, so the a-only
 # reading of every law's numeral is FIXED BY RULE and not fitted per law: it
@@ -337,15 +439,35 @@ def t_a_reading(parent_value, a):
     return pairs_of_event(a) + (parent_value - pairs_of_event(PARENT_ARITY))
 
 
-# The two declared ALTERNATIVE a-only rules, published as a sensitivity leg
-# so that the word cannot be an artefact of the rule's choice.
+# The declared ALTERNATIVE a-only rules, published as a sensitivity leg so
+# that the word cannot be an artefact of the rule's choice.  The first two are
+# monotone in a like the declared rule; the THIRD is this paper's own section
+# 9 closed form -- the complement of the maximum cut of the complete graph on
+# a vertices -- run as a uniform rule on every numeral exactly as the others
+# are.  It is not a friendlier reading: it is the one competitive rule the
+# unit's own measurements supply, and the aggregate under it is DISCLOSED
+# because the declared aggregate is a statement about the declared rule.
 def t_a_alt_identity(parent_value, a):
     return a + (parent_value - PARENT_ARITY)
 
 
 def t_a_alt_blocks(parent_value, a):
-    return (9 // a) + (parent_value - (9 // PARENT_ARITY))
+    return (A.n // a) + (parent_value - (A.n // PARENT_ARITY))
 
+
+def forced_inside_closed_form(a):
+    return math.comb(a, 2) - (a * a) // 4
+
+
+def t_a_alt_maxcut(parent_value, a):
+    return forced_inside_closed_form(a) + (
+        parent_value - forced_inside_closed_form(PARENT_ARITY))
+
+
+ALT_RULES = (("a-itself", t_a_alt_identity),
+             ("blocks-per-round", t_a_alt_blocks),
+             ("the section-9 closed form", t_a_alt_maxcut))
+MONOTONE_ALTS = ("a-itself", "blocks-per-round")
 
 WORDS = ("LAW-IN-A", "NEEDS-3", "BREAKS")
 
@@ -534,6 +656,28 @@ class Transcript:
         return bytes_digest((self.text() if text is None
                              else text).encode("utf-8"))
 
+    def bind_narrative(self, text, allowed):
+        """THE NON-GATE LINES, BOUND.  The multiset reconciliation above sees
+        only `[PASS|FAIL] gate :: evidence` rows, so a forged summary line
+        promoted beside them is certified by the transcript digest and bound
+        by nothing.  Every line that is not a gate row must therefore be a
+        member of the DECLARED narrative -- the banner, the blank, the verdict
+        marker, a head segment the comparator already bound, the object
+        digest line or the ledger-head line -- and the check is by
+        membership, so a line the run did not declare cannot appear at all."""
+        stray = []
+        for line in text.splitlines():
+            if self.LINE.match(line):
+                continue
+            if line.strip() == "":
+                continue
+            if line not in allowed:
+                stray.append(line[:90])
+        if stray:
+            raise GateFail("T-TRANSCRIPT-BOUND :: undeclared narrative "
+                           "line(s): %s" % stray)
+        return len(allowed)
+
 
 class Seal:
     """Family (a): digest at gate time, verify against the GATE-TIME digest at
@@ -617,6 +761,16 @@ class SemanticWall:
     standing sentence), non-vacuous on empty text, and controls written by
     another hand (the TPL-2 item)."""
 
+    # A LICENCE IS A POSITIVE COMMITMENT TO SCOPE, NEVER A BARE NEGATION OR A
+    # HEDGE.  "The arena determines the event size, and that is not in doubt"
+    # carries a negation and still makes the claim; "the menu's value would be
+    # called physical by any reader" carries a hedge and still makes it.  Both
+    # were licences in the delivered wall set and both are now refused at
+    # construction, so the defect cannot come back by an edit to a list.
+    BARE = (r"not", r"never", r"no", r"nor", r"neither", r"if", r"then",
+            r"would", r"could", r"might", r"whether", r"nothing", r"cannot",
+            r"without", r"any", r"some")
+
     def __init__(self, name, negative, positive, controls,
                  subject=(), policed=(), licences=()):
         self.name = name
@@ -635,6 +789,17 @@ class SemanticWall:
                if any(re.search(pp, l.replace("\\b", "")) for pp in self.policed)]
         if bad:
             raise GateFail("T-WALL-SEMANTIC :: self-licensing set: %s" % bad)
+        bare = [l for l in self.licences
+                if l.replace("\\b", "").strip() in self.BARE]
+        if bare:
+            raise GateFail("T-WALL-SEMANTIC :: bare-negation or hedge licence "
+                           "in %s: %s" % (self.name, bare))
+        # EVERY WALL POLICES A CLAIM, NOT A VOCABULARY: a wall with no
+        # subject and no policed form has only its patterns, and a pattern
+        # list can be walked around by any synonym.
+        if not self.subject or not self.policed:
+            raise GateFail("T-WALL-SEMANTIC :: %s has no licence leg"
+                           % self.name)
 
     def seal_value(self):
         return {"name": self.name, "negative": self.negative,
@@ -673,11 +838,27 @@ class SemanticWall:
     NEG = re.compile(r"\b(?:not|never|nor|no|cannot|neither|without|"
                      r"whether|refuses?|denies)\b")
 
+    # A NEGATION THAT RE-ASSERTS IS NOT A NEGATION.  "There is no doubt that
+    # the event size is selected" carries the token `no` and asserts the
+    # banned claim as flatly as its own control does.  These forms are
+    # declared and excluded from the guard by name.
+    REASSERT = re.compile(r"\b(?:no|not in|beyond|without|little|never in)\s+"
+                          r"(?:doubt|question|denying|dispute|doubting)\b"
+                          r"|\bcannot be (?:denied|doubted|disputed)\b"
+                          r"|\bnot (?:merely|only|just|simply)\b")
+
+    # A NEGATION IN ANOTHER CLAUSE DOES NOT NEGATE THIS ONE.
+    CLAUSE = re.compile(r"[;:]|,\s*(?:and|but|so|which|while|yet)\b")
+
     def scan(self, paper_text):
-        """A match is a violation only when the seventy characters before it
-        carry no negation: a wall must ban an ASSERTION, and a paper that
-        disclaims the assertion is doing the wall's work, not breaking it.
-        The controls are all affirmative, so the guard cannot excuse them."""
+        """A match is a violation unless its OWN CLAUSE carries a negation
+        that actually negates it: a wall must ban an ASSERTION, and a paper
+        that disclaims the assertion is doing the wall's work, not breaking
+        it.  A negation that re-asserts ('there is no doubt that ...'), and a
+        negation sitting in a different clause of the same sentence, are both
+        excluded by declaration, because both were shown to walk a breach
+        straight through this guard.  The controls are affirmative and each
+        carries a negated twin, so the guard cannot excuse either."""
         text = canon(paper_text).lower()
         if not text:
             raise GateFail("T-WALL-SEMANTIC :: %s scanned empty text"
@@ -685,10 +866,19 @@ class SemanticWall:
         hits = []
         for pat in self.negative:
             for m in re.finditer(pat, text):
-                lead = text[max(0, m.start() - 200):m.start()]
+                lead = text[max(0, m.start() - 300):m.start()]
                 cut = max(lead.rfind("."), lead.rfind("!"), lead.rfind("?"))
                 lead = lead[cut + 1:]          # the match's OWN sentence only
-                if not self.NEG.search(lead):
+                excused = False
+                for nm in self.NEG.finditer(lead):
+                    tail = lead[nm.start():]
+                    if self.REASSERT.match(tail):
+                        continue               # a re-asserting negation
+                    if self.CLAUSE.search(lead[nm.end():]):
+                        continue               # a negation in another clause
+                    excused = True
+                    break
+                if not excused:
                     hits.append(pat)
                     break
         missing = [p for p in self.positive if not re.search(p, text)]
@@ -873,24 +1063,43 @@ class ReferentRegistry:
     each sentence selects its universe by subject noun; every occurrence is
     checked; fenced blocks are stripped first."""
 
-    NUM = re.compile(r"(?<![\w.])(\d{1,3}(?:,\d{3})*|\d+)(?![\w.])")
+    # THE PERIOD BLIND SPOT, CLOSED.  The delivered guard was `(?![\w.])`,
+    # which refuses to scan any numeral immediately followed by a period --
+    # that is, every numeral that ends a sentence, which is where a paper's
+    # load-bearing values live.  The guard now refuses only a numeral inside
+    # a decimal or a word: a trailing sentence period is scanned.
+    NUM = re.compile(r"(?<![\w.])(\d{1,3}(?:,\d{3})*|\d+)(?!\.\d)(?!\w)")
 
     def __init__(self):
         self.universes = {}
         self.exempt = {}
+        self.self_pairs = {}
 
     def universe(self, name, nouns, values, pairs):
+        """REFLEXIVE PAIRS ARE NOT LICENSED.  A pair (X, X) licenses an
+        'X of X' fraction anywhere in the universe -- '315 of 315 histories'
+        asserted of an arity that measured 276 of 280 is then invisible.  Any
+        reflexive pair is split off into a register of MEASURED IDENTITIES
+        and is admitted only in a sentence that carries a totality
+        qualifier, which is what such a sentence actually means."""
+        prs = {tuple(p) for p in pairs}
+        refl = sorted(p for p in prs if p[0] == p[1])
+        self.self_pairs[name] = refl
         self.universes[name] = {"nouns": [n.lower() for n in nouns],
                                 "values": set(values),
-                                "pairs": {tuple(p) for p in pairs}}
+                                "pairs": {p for p in prs if p[0] != p[1]}}
 
     def exempt_token(self, tok, reason):
         self.exempt[tok] = reason
 
     def seal_value(self):
         return {k: {"nouns": v["nouns"], "values": sorted(v["values"]),
-                    "pairs": sorted(v["pairs"])}
+                    "pairs": sorted(v["pairs"]),
+                    "measured_identities_not_licensed_as_pairs":
+                        sorted(self.self_pairs.get(k, []))}
                 for k, v in sorted(self.universes.items())}
+
+    TOTALITY = re.compile(r"\ball\b|\bevery one of\b|\bevery\b|\bwhole\b")
 
     @staticmethod
     def prose_only(paper_text, strips=()):
@@ -925,12 +1134,19 @@ class ReferentRegistry:
                     best, bestpos = name, p
         return best
 
-    def gate(self, paper_text, strips=()):
+    def gate(self, paper_text, strips=(), spelled=False):
+        """SPELLED IS THE SAME SCAN.  With `spelled` set, every spelled
+        cardinal in the prose is rewritten to its digits before the scan
+        runs, so a spelled numeral is bound exactly as a written one is and
+        the two scans differ in nothing but the alphabet."""
         text = self.prose_only(paper_text, strips)
         for tok in self.exempt:
             text = text.replace(tok, " ")
         text = re.sub(r"\b[0-9a-f]{12}\b", " ", text)
-        bad, checked = [], 0
+        if spelled:
+            text = re.sub(r"\b(%s)\b" % "|".join(SPELLED_SCANNED),
+                          lambda m: str(SPELLED_VALUE[m.group(1)]), text)
+        bad, checked, pairs_checked = [], 0, 0
         for sent in re.split(r"(?<=[.!?])\s+", text):
             u = self._universe_of(sent)
             if u is None:
@@ -946,14 +1162,25 @@ class ReferentRegistry:
                 bad.append({"universe": u, "sentence": sent[:110],
                             "not_in_universe": offend})
                 continue
-            m = re.search(r"(\d[\d,]*)\s+of\s+(\d[\d,]*)", sent)
-            if m:
+            for m in re.finditer(r"(\d[\d,]*)\s+of\s+(?:the\s+)?(\d[\d,]*)",
+                                 sent):
                 pr = (int(m.group(1).replace(",", "")),
                       int(m.group(2).replace(",", "")))
-                if pr not in self.universes[u]["pairs"]:
+                pairs_checked += 1
+                if pr[0] == pr[1]:
+                    if pr not in self.self_pairs.get(u, []):
+                        bad.append({"universe": u, "sentence": sent[:110],
+                                    "reflexive_pair_never_measured":
+                                        list(pr)})
+                    elif not self.TOTALITY.search(sent):
+                        bad.append({"universe": u, "sentence": sent[:110],
+                                    "reflexive_pair_without_a_totality_"
+                                    "qualifier": list(pr)})
+                elif pr not in self.universes[u]["pairs"]:
                     bad.append({"universe": u, "sentence": sent[:110],
                                 "unmeasured_pair": list(pr)})
-        return {"sentences_checked": checked, "violations": bad}
+        return {"sentences_checked": checked, "pairs_checked": pairs_checked,
+                "spelled_normalised": bool(spelled), "violations": bad}
 
 
 class CountRegistry:
@@ -963,12 +1190,32 @@ class CountRegistry:
     segments -- including the TPL-2 subspecies (%-format literals and integer
     offsets typed into a statement builder's arguments)."""
 
-    TOKEN = re.compile(r"(?<![\w.])(\d{1,3}(?:,\d{3})*|\d+)(?![\w.])")
+    TOKEN = re.compile(r"(?<![\w.])(\d{1,3}(?:,\d{3})*|\d+)(?!\.\d)(?!\w)")
+
+    # DECLARED STRUCTURAL NAMES.  A numeral inside a NAME is not a count: the
+    # outcome word this unit registered spells a digit, and so do a
+    # criterion-leg id, a section cross-reference, a paper id and an
+    # algorithm name.  Each is declared with its reason and each must be
+    # USED, so the register cannot quietly become a hole.
+    NAME_STRIPS = (
+        (r"NEEDS-3", "a declared outcome word"),
+        (r"leg-1", "a criterion-leg id"),
+        (r"section-9", "a cross-reference to a section of the paper"),
+        (r"sha256-12", "an algorithm name and its prefix length"),
+    )
 
     def __init__(self):
         self.vals = {}
         self.how = {}
         self.exempt = {}
+        self.names_used = set()
+
+    def strip_names(self, text):
+        for pat, _why in self.NAME_STRIPS:
+            if re.search(pat, text):
+                self.names_used.add(pat)
+                text = re.sub(pat, " ", text)
+        return text
 
     def measured(self, name, value, how):
         self.vals[name] = value
@@ -984,7 +1231,8 @@ class CountRegistry:
         self.exempt[tok] = reason
 
     def stmt(self, template, **names):
-        found = [m.group(1) for m in self.TOKEN.finditer(template)]
+        found = [m.group(1) for m in
+                 self.TOKEN.finditer(self.strip_names(template))]
         bad = [t for t in found if t not in self.exempt]
         if bad:
             raise GateFail("T-NO-TYPED-COUNTS :: typed numeral(s) %s in a "
@@ -993,11 +1241,18 @@ class CountRegistry:
                                   else v for k, v in names.items()})
 
     def audit_module(self, source, callers):
-        """the AST leg.  Any string literal handed to a statement builder, or
-        any %-format / .format template argued to one, that types a numeral,
-        is an offender whatever the docstring says.  Integer literals passed
-        as arguments to a statement builder are the TPL-2 subspecies and are
-        flagged too."""
+        """the AST leg.  Any string literal handed to a VOUCHING builder --
+        a gate statement, a claim template, a rendered table, a rendered
+        fence or a registry value -- that types a numeral is an offender
+        whatever the docstring says.  Integer literals passed to one are the
+        TPL-2 subspecies, and so is an integer OFFSET: `len(walls) - 7 + 12`
+        reaches a published statement carrying two typed counts that no
+        string scan will ever see, so any BinOp with an integer operand
+        inside a vouching call is flagged by its own leg.
+
+        The string exemption register does NOT extend to integer literals: an
+        exemption is granted for a spelling that appears inside prose (the
+        dimension in `AG(2, q)`), never for an arithmetic constant."""
         tree = ast.parse(source)
         offenders = []
         for node in ast.walk(tree):
@@ -1008,22 +1263,47 @@ class CountRegistry:
                   else getattr(fn, "id", None))
             if nm not in callers:
                 continue
-            for arg in list(node.args) + [k.value for k in node.keywords]:
+            args = list(node.args) + [k.value for k in node.keywords]
+            for arg in args:
                 for sub in ast.walk(arg):
                     if isinstance(sub, ast.Constant) and isinstance(sub.value, str):
-                        for m in self.TOKEN.finditer(sub.value):
+                        for m in self.TOKEN.finditer(
+                                self.strip_names(sub.value)):
                             if m.group(1) not in self.exempt:
                                 offenders.append({"caller": nm,
                                                   "typed": m.group(1),
                                                   "line": sub.lineno})
-                    if (isinstance(sub, ast.Constant)
-                            and isinstance(sub.value, int)
-                            and not isinstance(sub.value, bool)
-                            and str(sub.value) not in self.exempt):
-                        offenders.append({"caller": nm,
-                                          "typed_int": sub.value,
-                                          "line": sub.lineno})
+            # THE VALUE SIDE.  An integer literal, or an integer OFFSET, in
+            # the position where a MEASUREMENT belongs is the TPL-2
+            # subspecies no string scan can see: `len(walls) - 7 + 12`
+            # publishes two typed counts through a statement that reads them
+            # from the live registry.  Indices, slices and comprehension
+            # seeds are not that, so only the value expression's own top
+            # level is inspected.
+            value_args = ([args[1]] if nm == "measured" and len(args) > 1
+                          else args)
+            for arg in value_args:
+                got = _direct_int(arg)
+                if got is not None:
+                    offenders.append({"caller": nm, "typed_value": got,
+                                      "line": arg.lineno})
         return offenders
+
+
+def _direct_int(node):
+    """an integer standing at the top level of a value expression, through
+    arithmetic but not through calls, indices or comprehensions."""
+    if (isinstance(node, ast.Constant) and isinstance(node.value, int)
+            and not isinstance(node.value, bool)):
+        return node.value
+    if isinstance(node, ast.BinOp):
+        for side in (node.left, node.right):
+            got = _direct_int(side)
+            if got is not None:
+                return got
+    if isinstance(node, ast.UnaryOp):
+        return _direct_int(node.operand)
+    return None
 
 
 class Falsifier:
@@ -1043,10 +1323,16 @@ class ReadSet:
     def __init__(self, root):
         self.root = os.path.abspath(root)
         self.reads = []
+        self.external = []
         self.exemptions = {}
         self.used = set()
 
     def install(self):
+        """EVERY path is recorded, not only the repository's.  A hook that
+        keeps only paths under the repository root makes a read of anything
+        else invisible, and the docstring that says every open is recorded is
+        then false as written.  Reads outside the root go to their own
+        bucket, which the gate requires to be EMPTY."""
         def hook(event, args):
             if event == "open":
                 p = args[0]
@@ -1057,6 +1343,8 @@ class ReadSet:
                         return
                     if ap.startswith(self.root + os.sep):
                         self.reads.append(os.path.relpath(ap, self.root))
+                    else:
+                        self.external.append(ap)
         sys.addaudithook(hook)
 
     def exempt(self, rel, reason):
@@ -1080,8 +1368,13 @@ class ReadSet:
                 self.used.add(hit)
         never = sorted(p for p in want if p not in seen)
         unused = sorted(e for e in self.exemptions if e not in self.used)
+        # THE PATH LIST IS PUBLISHED, not only its cardinality: a reader
+        # holding the receipt can see WHICH files the run opened.
         return {"distinct_reads": len(seen), "undeclared": sorted(undeclared),
-                "declared_never_read": never, "unused_exemptions": unused}
+                "declared_never_read": never, "unused_exemptions": unused,
+                "paths": sorted(seen),
+                "external_reads": sorted(set(self.external)),
+                "exemptions": dict(sorted(self.exemptions.items()))}
 
 
 # ===========================================================================
@@ -1511,6 +1804,104 @@ def _absolute_floor(a):
     return None, len(blocks)
 
 
+def lightest_total(n, k):
+    """the total weight of the n lightest DISTINCT k-bit vectors -- the
+    cheapest way to give n actors distinct k-signatures."""
+    tot, left, w = 0, n, 0
+    while left > 0 and w <= k:
+        take = min(math.comb(k, w), left)
+        tot += take * w
+        left -= take
+        w += 1
+    return tot if left == 0 else None
+
+
+def certified_floor(a):
+    return memo(("certfloor", a), lambda: _certified_floor(a))
+
+
+def _certified_floor(a):
+    """THE FLOOR AS A CERTIFICATE, not as a search over the event universe.
+
+    A history of k events at arity a gives every actor a k-bit signature --
+    which events it joined -- and the joint partition is discrete exactly
+    when the n signatures are DISTINCT.  Every event has exactly a members,
+    so every coordinate of the signature table is covered exactly a times.
+    So the floor at arity a is the least k for which n distinct k-bit vectors
+    exist with every column summing to a, and that is decided here directly:
+    a counting leg (the n lightest distinct k-vectors must fit inside the
+    budget k*a) plus an exhibited WITNESS.
+
+    The counting leg is NDEP's sharpened floor read with the event size, and
+    the witness is what turns 'attained in the search we ran' into 'attained,
+    with the reason'.  At a = 2 the two infeasibilities are exact and small:
+    at k = 4 the nine lightest distinct signatures cost 12 against a budget
+    of 8, and at k = 5 they cost 11 against 10."""
+    n = A.n
+    reasons = []
+    k = 1
+    while k <= 12:
+        if 2 ** k < n:
+            reasons.append({"k": k, "refused": "TOO-FEW-SIGNATURES",
+                            "distinct_available": 2 ** k, "actors": n})
+            k += 1
+            continue
+        lt = lightest_total(n, k)
+        if lt > k * a:
+            reasons.append({"k": k, "refused": "WEIGHT-INFEASIBLE",
+                            "lightest_total": lt, "budget": k * a})
+            k += 1
+            continue
+        vecs = sorted(range(2 ** k), key=lambda v: (bin(v).count("1"), v))
+        col = [0] * k
+        pick = []
+        found = []
+
+        def rec(start):
+            if found:
+                return
+            if len(pick) == n:
+                if all(c == a for c in col):
+                    found.append(list(pick))
+                return
+            need = n - len(pick)
+            rem = sum(a - c for c in col)
+            for i in range(start, len(vecs)):
+                v = vecs[i]
+                w = bin(v).count("1")
+                if w > rem:
+                    break
+                ok = True
+                for b in range(k):
+                    if (v >> b) & 1:
+                        if col[b] == a:
+                            ok = False
+                            break
+                if not ok:
+                    continue
+                if len(vecs) - i < need:
+                    break
+                for b in range(k):
+                    if (v >> b) & 1:
+                        col[b] += 1
+                pick.append(v)
+                rec(i + 1)
+                pick.pop()
+                for b in range(k):
+                    if (v >> b) & 1:
+                        col[b] -= 1
+                if found:
+                    return
+        rec(0)
+        if found:
+            wit = [[(v >> b) & 1 for b in range(k)] for v in found[0]]
+            return k, wit, reasons
+        reasons.append({"k": k, "refused": "NO-WITNESS",
+                        "lightest_total": lt, "budget": k * a})
+        k += 1
+    return None, None, reasons
+
+
 def bfs_min_schedule(P, sat, cap_rounds=6):
     return memo(("bfs", len(P), tuple(sat)[:1], len(sat)),
                 lambda: _bfs_min_schedule(P, sat, cap_rounds))
@@ -1558,6 +1949,101 @@ def _bfs_min_schedule(P, sat, cap_rounds=6):
             return rounds, best
         frontier = nxt
     return None, None
+
+
+def _separates(evs_seq):
+    part = [frozenset(A.SITES)]
+    for e in evs_seq:
+        nxt = []
+        for b in part:
+            i, o = b & e, b - e
+            if i:
+                nxt.append(i)
+            if o:
+                nxt.append(o)
+        part = nxt
+        if len(part) == A.n:
+            return True
+    return len(part) == A.n
+
+
+def _exists_history_of_exactly(P, k):
+    """is there a history of EXACTLY k events -- taken from whole rounds in
+    the driver's own order, rounds drawn from the WHOLE grouping pool with
+    repetition -- whose joint signature partition is discrete?
+
+    The rounds are enumerated in full; only the LAST round is truncated,
+    because a history of k events is some number of complete rounds followed
+    by a prefix of one more."""
+    per = len(A.round_events(P[0]))
+    full, rest = divmod(k, per)
+    seqs = [[]]
+    for _ in range(full):
+        nxt = []
+        for s in seqs:
+            for p in P:
+                nxt.append(s + A.round_events(p))
+        seqs = nxt
+    if rest:
+        nxt = []
+        for s in seqs:
+            for p in P:
+                nxt.append(s + A.round_events(p)[:rest])
+        seqs = nxt
+    for s in seqs:
+        if _separates(s):
+            return True
+    return False
+
+
+def unrestricted_schedule(a, pool_value, floor):
+    return memo(("unresched", a, pool_value, floor),
+                lambda: _unrestricted_schedule(a, pool_value, floor))
+
+
+def _unrestricted_schedule(a, pool_value, floor):
+    """THE SCHEDULE TIME OVER EVERY HISTORY THE ARITY ADMITS, CERTIFIED.
+
+    The delivered search took its rounds from the MAXIMAL-saturating pool,
+    while the sentence that published it said 'every history the arity
+    admits'.  The gap is closed here, and closed exactly rather than by a
+    larger search: the attained floor is a lower bound on ANY history's
+    length, because it is the least number of events of that size whose
+    joint signature partition is discrete over the complete event universe.
+    So where the pool-restricted value already equals the floor, the pool
+    value IS the unrestricted minimum and nothing needs searching.  Where it
+    exceeds the floor -- by exactly one, at two arities -- the histories of
+    the floor's own length are enumerated over the WHOLE grouping pool, and
+    finding none raises the lower bound to the measured value.
+
+    Either way the answer is a certificate over every history, not a search
+    over a corpus, and the delivered numbers are unchanged."""
+    P, _V, _W = substrate(a)
+    if pool_value is None or floor is None:
+        return {"a": a, "certificate": "NO-OBJECT", "unrestricted": None,
+                "pool_value": pool_value, "floor": floor}
+    if pool_value == floor:
+        return {"a": a, "certificate": "PINNED-BY-THE-FLOOR",
+                "unrestricted": pool_value, "pool_value": pool_value,
+                "floor": floor, "histories_enumerated": 0,
+                "why": "the floor is a lower bound on every history and the "
+                       "pool already attains it, so no history anywhere is "
+                       "shorter"}
+    checked = 0
+    for k in range(floor, pool_value):
+        checked += 1
+        if _exists_history_of_exactly(P, k):
+            return {"a": a, "certificate": "SHORTER-HISTORY-FOUND",
+                    "unrestricted": k, "pool_value": pool_value,
+                    "floor": floor}
+    return {"a": a, "certificate": "SEARCHED-AT-THE-FLOOR",
+            "unrestricted": pool_value, "pool_value": pool_value,
+            "floor": floor, "lengths_refuted": checked,
+            "why": "every history of every length between the floor and the "
+                   "delivered value was enumerated over the whole grouping "
+                   "pool and none separates the actors, so the delivered "
+                   "value is the minimum over every history the arity "
+                   "admits"}
 
 
 def record_vector(H):
@@ -1805,6 +2291,8 @@ def transport_word(parent_value, rows, rule=None):
           "t_literal_agrees": len(lit), "t_a_agrees": len(ta),
           "rows_discriminating_a_from_literal": len(disc),
           "measured": [[r["a"], r["measured"]] for r in feas],
+          "carried_rows": [[r["a"], "INFEASIBLE-CARRIED"]
+                           for r in rows if not r["feasible"]],
           "t_a": [[r["a"], rule(parent_value, r["a"])] for r in feas]}
     if len(ta) == len(feas):
         ev["stamp"] = "DISCRIMINATED" if disc else "UNDISCRIMINATED"
@@ -1829,6 +2317,8 @@ def statement_word(rows):
     bad = [r["a"] for r in feas if not r["measured"]]
     ev = {"feasible": len(feas), "carried": len(rows),
           "holds_at": sorted(r["a"] for r in feas if r["measured"]),
+          "carried_rows": [[r["a"], "INFEASIBLE-CARRIED"]
+                           for r in rows if not r["feasible"]],
           "fails_at": sorted(bad)}
     if bad:
         return "BREAKS", ev
@@ -1901,7 +2391,7 @@ def quote_spelled(text, lead):
 
 def quote_ints(text):
     return [int(t.replace(",", ""))
-            for t in re.findall(r"(?<![\w.])(\d[\d,]*)(?![\w.])", text)]
+            for t in re.findall(r"(?<![\w.])(\d[\d,]*)(?!\.\d)(?!\w)", text)]
 
 
 def measure_naming(GRAM, CORP, WIN):
@@ -2163,23 +2653,37 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
     fid = {"groupings": len(P3), "saturating": len(sat3),
            "strict_triples": len(st3), "flat_quadruples": len(fl3),
            "window": len(win3)}
-    want = {"groupings": PV["P-PARTS"], "saturating": PV["P-SAT"],
-            "strict_triples": PV["P-STRICT"], "flat_quadruples": PV["P-FLAT"],
-            "window": PV["P-WINDOW"]}
+    # THE FIDELITY PRE-REGISTRATION IS SEALED, NOT RE-DECLARABLE.  The set of
+    # rows this gate is answerable for lives in a frozen tuple with its own
+    # digest, and the digest is checked here.  A run that quietly drops two
+    # rows so that "5 of 5" becomes "3 of 3" -- while the paper's sentence
+    # still says five -- moves the digest and dies at this gate, and the
+    # spelled numeral in that sentence is rendered from len(want) rather than
+    # typed, so the two can no longer disagree.
+    want = {row: PV[aid] for (row, aid) in FIDELITY_PREREG}
+    prereg_digest = digest([list(t) for t in FIDELITY_PREREG])
     if mut("MUT-FIDELITY"):
         fid["saturating"] = fid["saturating"] + len(A.LINKS)
     agree = sorted(k for k in want if fid[k] == want[k])
-    CR.measured("fid_rows", len(want), "len of the anchored substrate table")
+    CR.measured("fid_rows", len(want), "len of the sealed fidelity "
+                "pre-registration")
     CR.measured("fid_agree", len(agree), "count of agreeing substrate rows")
-    LD.gate("G-CONSTRUCTOR-FIDELITY", len(agree) == len(want),
+    LD.gate("G-CONSTRUCTOR-FIDELITY",
+            len(agree) == len(want) and set(fid) == set(want)
+            and prereg_digest == FIDELITY_PREREG_DIGEST,
             CR.stmt("the a-grammar is run at the PARENT'S OWN ARITY first "
                     "and its substrate is compared row by row against the "
                     "committed counts read at declared JSON paths: {ok} of "
-                    "{k} agree. This gate is a FIDELITY LEG and not a "
-                    "finding, and no measurement at any other arity is taken "
-                    "before it passes",
+                    "{k} agree. The row set is a SEALED pre-registration -- "
+                    "a frozen tuple carrying its own digest, checked here -- "
+                    "so the cardinality this gate answers for cannot be "
+                    "re-declared after the fact. This gate is a FIDELITY LEG "
+                    "and not a finding, and no measurement at any other "
+                    "arity is taken before it passes",
                     ok="fid_agree", k="fid_rows"),
             {"measured": fid, "anchored": want, "agreeing": agree,
+             "preregistered_rows": [list(t) for t in FIDELITY_PREREG],
+             "preregistration_digest": prereg_digest,
              "stamp": "FIDELITY-LEG-ONLY"})
     R["fidelity"] = SEAL.seal(
         "fidelity", {"measured": fid, "anchored": want,
@@ -2413,10 +2917,27 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
     quote_ok = (msym is not None and mprod is not None and cf is not None
                 and len(mprod.group(1)) == 2
                 and msym.group(1) in mprod.group(1))
-    closed_at_parent = (int(cf.group(1)) * (A.q - int(cf.group(3)))
-                        if cf else None)
+    # THE CLOSED FORM IS READ ON ITS OWN AXIS AND ON THIS ONE, AND BOTH
+    # READINGS ARE PUBLISHED.  The parent's closed form was derived where the
+    # arena moves along n = q^2, and its variable is the FIELD ORDER.  Read
+    # there it returns the parent's own floor at the parent's arity, which is
+    # what makes this unit's reading a transport of the parent's construction
+    # rather than a new formula.  Read with the EVENT SIZE in that variable's
+    # place -- which is the substitution this axis is about -- it does NOT
+    # transport, and the unit says so with the numbers: that is an
+    # a-DEPENDENCE DISCLOSURE about the closed form, not a contradiction of
+    # anything the parent claimed, because the parent never claimed it off
+    # its own diagonal.
+    cf_coeff = int(cf.group(1)) if cf else None
+    cf_offset = int(cf.group(3)) if cf else None
+    closed_at_parent = (cf_coeff * (A.q - cf_offset) if cf else None)
     cryrows = memo(("crystal", mut("MUT-FLOOR"), mut("MUT-CRYSTAL")),
                    lambda: measure_crystallization(GRAM))
+    closed_in_a = ({r["a"]: cf_coeff * (r["a"] - cf_offset) for r in cryrows}
+                   if cf else {})
+    closed_in_a_agrees = sorted(r["a"] for r in cryrows
+                                if closed_in_a.get(r["a"]) ==
+                                r["attained_floor"])
     sharp_ok = [r for r in cryrows if r["sharpened_floor"] == r["attained_floor"]]
     count_ok = [r for r in cryrows if r["counting_bound"] == r["attained_floor"]]
     CR.measured("cry_rows", len(cryrows), "one row per declared arity")
@@ -2438,25 +2959,142 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
                     "with the floor never above the schedule time",
                     k="cry_rows"),
             {"rows": cryrows})
+    CR.measured("closed_form_in_a_hits", len(closed_in_a_agrees),
+                "arities at which the parent's closed form, read with the "
+                "event size in its variable's place, equals the measured "
+                "floor")
     LD.gate("G-LAW2-SHARPENED",
             quote_ok and len(sharp_ok) == len(cryrows)
             and closed_at_parent == cryrows[
-                [r["a"] for r in cryrows].index(PARENT_ARITY)]["attained_floor"],
+                [r["a"] for r in cryrows].index(PARENT_ARITY)]["attained_floor"]
+            and closed_in_a_agrees == [PARENT_ARITY]
+            and len(closed_in_a) == len(cryrows),
             CR.stmt("the parent's SHARPENED floor is driven by the event "
                     "size the parent's own quotation names -- the membership "
                     "symbol and the incidence product are parsed out of the "
                     "quotation rather than assumed -- and it reproduces the "
                     "measured floor at {s} of {k} arities, while the "
                     "counting bound the parent published beside it "
-                    "reproduces it at {c}; the parent's closed form, read "
-                    "off its own quotation, returns the parent's floor at "
-                    "the parent's arity",
-                    s="sharp_hits", k="cry_rows", c="count_hits"),
+                    "reproduces it at {c}. The parent's CLOSED FORM is read "
+                    "twice and both readings are published: on its own axis, "
+                    "in the field order, it returns the parent's floor at "
+                    "the parent's arity, which is what makes this a "
+                    "transport of the parent's construction and not a new "
+                    "formula; read with the event size in that variable's "
+                    "place it agrees at {ca} of {k} arities, so the closed "
+                    "form itself does not transport along this axis and the "
+                    "unit reports the disclosure rather than leaning on it",
+                    s="sharp_hits", k="cry_rows", c="count_hits",
+                    ca="closed_form_in_a_hits"),
             {"membership_symbol": msym.group(1) if msym else None,
              "incidence_product": mprod.group(1) if mprod else None,
+             "closed_form_coefficient": cf_coeff,
+             "closed_form_offset": cf_offset,
              "closed_form_at_the_parent_arity": closed_at_parent,
+             "closed_form_read_in_the_event_size":
+                 {str(k): v for k, v in sorted(closed_in_a.items())},
+             "closed_form_in_the_event_size_agrees_at": closed_in_a_agrees,
+             "measured_floor":
+                 {str(r["a"]): r["attained_floor"] for r in cryrows},
              "sharpened_agrees_at": [r["a"] for r in sharp_ok],
-             "counting_bound_agrees_at": [r["a"] for r in count_ok]})
+             "counting_bound_agrees_at": [r["a"] for r in count_ok],
+             "the_separation_rests_on": [r["a"] for r in cryrows
+                                         if r["sharpened_floor"] !=
+                                         weight_floor(A.n, A.q)]})
+    # THE FLOOR AS A CERTIFICATE, beside the exhaustive search (lifted from
+    # the operator seat).  The delivered floor is a minimum over the complete
+    # event universe; the certificate decides the same number from the
+    # signature table's own arithmetic -- n distinct k-bit vectors with every
+    # column summing to the event size -- and exhibits a witness at the value
+    # it returns and a refusal at every smaller k.  The row that matters is
+    # a = 2, where the counting bound fails by two and the sharpened floor
+    # wins: there the refusals are exact and small, and the paper's best
+    # result stops resting on a search alone.
+    certrows = []
+    for a in ARITIES:
+        k, wit, why = certified_floor(a)
+        certrows.append({"a": a, "certified_floor": k,
+                         "witness_signatures": wit,
+                         "refusals_below": why,
+                         "column_sums": ([sum(col[i] for col in wit)
+                                          for i in range(k)] if wit else [])})
+    if mut("MUT-FLOORCERT"):
+        certrows[0]["certified_floor"] = certrows[0]["certified_floor"] + 1
+    cert_ok = all(
+        c["certified_floor"] == r["attained_floor"]
+        and c["witness_signatures"] is not None
+        and len({tuple(s) for s in c["witness_signatures"]}) == A.n
+        and all(x == r["a"] for x in c["column_sums"])
+        for c, r in zip(certrows, cryrows))
+    CR.measured("cert_rows", len(certrows), "one certificate per arity")
+    CR.measured("cert_refusals",
+                sum(len(c["refusals_below"]) for c in certrows), "counted")
+    LD.gate("G-LAW2-FLOOR-CERTIFICATE", cert_ok,
+            CR.stmt("the information floor is decided a second time, by a "
+                    "route the exhaustive search does not use: a history of "
+                    "k events at event size a gives every actor a k-bit "
+                    "signature and every event exactly a members, so the "
+                    "floor is the least k admitting n distinct k-bit vectors "
+                    "whose every column sums to the event size. All {k} "
+                    "arities agree with the searched value, each with an "
+                    "exhibited witness whose signatures are distinct and "
+                    "whose column sums are the event size, and with {r} "
+                    "refusals below it that name their own reason",
+                    k="cert_rows", r="cert_refusals"),
+            {"rows": [{"a": c["a"], "certified_floor": c["certified_floor"],
+                       "searched_floor": r["attained_floor"],
+                       "column_sums": c["column_sums"],
+                       "refusals_below": c["refusals_below"]}
+                      for c, r in zip(certrows, cryrows)]})
+
+    # THE SCHEDULE TIME OVER EVERY HISTORY, CERTIFIED (the operator seat's
+    # m1).  The delivered search draws its rounds from the maximal-saturating
+    # pool while the sentence publishing it says "every history the arity
+    # admits".  The certificate closes that gap exactly: the attained floor
+    # bounds every history from below, so where the pool value equals the
+    # floor it IS the unrestricted minimum, and where it exceeds the floor
+    # every history of the floor's own length is enumerated over the WHOLE
+    # grouping pool and refuted.  No delivered number moves.
+    schedrows = [unrestricted_schedule(r["a"], r["schedule_time_events"],
+                                       r["attained_floor"]) for r in cryrows]
+    if mut("MUT-SCHEDULE"):
+        schedrows[0] = dict(schedrows[0])
+        schedrows[0]["unrestricted"] = schedrows[0]["unrestricted"] + 1
+    sched_ok = all(s["unrestricted"] == r["schedule_time_events"]
+                   and s["certificate"] in ("PINNED-BY-THE-FLOOR",
+                                            "SEARCHED-AT-THE-FLOOR")
+                   for s, r in zip(schedrows, cryrows))
+    CR.measured("sched_rows", len(schedrows), "one certificate per arity")
+    CR.measured("sched_pinned",
+                sum(1 for s in schedrows
+                    if s["certificate"] == "PINNED-BY-THE-FLOOR"), "counted")
+    LD.gate("G-LAW2-SCHEDULE-COMPLETE", sched_ok,
+            CR.stmt("the schedule time is certified to be the minimum over "
+                    "EVERY history the arity admits and not only over the "
+                    "pool the search drew from: the attained floor is a "
+                    "lower bound on any history, so at {p} of the {k} "
+                    "arities the delivered value is pinned by the floor "
+                    "outright, and at the rest every history of the floor's "
+                    "own length is enumerated over the whole grouping pool "
+                    "and none separates the actors, which raises the bound "
+                    "to the delivered value",
+                    p="sched_pinned", k="sched_rows"),
+            {"rows": schedrows})
+    R["law2_certificates"] = SEAL.seal(
+        "law2_certificates",
+        {"floor": [{"a": c["a"], "certified_floor": c["certified_floor"],
+                    "witness_signatures": c["witness_signatures"],
+                    "column_sums": c["column_sums"],
+                    "refusals_below": c["refusals_below"]} for c in certrows],
+         "schedule": schedrows,
+         "stamp": "BOTH LEGS ARE CERTIFICATES AND NEITHER MOVES A DELIVERED "
+                  "NUMBER: the floor certificate re-decides the searched "
+                  "value from the signature table's arithmetic and exhibits "
+                  "a witness, and the schedule certificate closes the gap "
+                  "between the pool the search drew from and the sentence "
+                  "that published it"},
+        "G-LAW2-SCHEDULE-COMPLETE")
+
     strat = {}
     for a in ARITIES:
         cnt = Counter()
@@ -2472,6 +3110,9 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
     R["law2_crystallization"] = SEAL.seal(
         "law2_crystallization",
         {"rows": cryrows, "multi_corpus_strata": strat,
+         "closed_form_read_in_the_event_size":
+             {str(k): v for k, v in sorted(closed_in_a.items())},
+         "closed_form_in_a_agrees": closed_in_a_agrees,
          "parent_window_strata": {str(k): v for k, v in
                                   sorted(wcnt.items(), key=lambda kv:
                                          (kv[0] is None, kv[0]))}},
@@ -2545,19 +3186,28 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
                     bool(ach) and ach == [k for k in
                                           range(1, LADDER_RMAX + 1)
                                           if k % A.L == 0],
-                "first_rung_is_the_event_size": bool(ach) and min(ach) == a,
-                # AT THE PARENT'S ARITY THE EVENT SIZE AND THE LINK COUNT ARE
+                # THE TWO COUNTERS ARE PUBLISHED SIDE BY SIDE, because they
+                # differ and the difference is the whole point of this axis.
+                # At the parent's arity the event size and the link count are
                 # THE SAME NUMBER, so "the first rung is the event size" is
-                # satisfied there by a coincidence this axis cannot break.
-                # Only a row at which they DIFFER can discriminate, and that
-                # is the row the census counts.
+                # satisfied there by a coincidence this axis exists to break;
+                # only a row at which they DIFFER can discriminate.  A run in
+                # which the two counters diverge cannot publish only one:
+                # both reach the gate statement, the head and the paper.
+                "first_rung_is_the_event_size": bool(ach) and min(ach) == a,
+                "event_size_differs_from_the_link_count": a != A.L,
                 "mod_a_appears": (bool(ach) and min(ach) == a
                                   and a != A.L)})
     modrows = [r for r in ladrows if r["achievable_budgets"]]
     CR.measured("ladder_rows", len(ladrows), "arity x reading rows")
     CR.measured("ladder_live", len(modrows), "rows with a rung at all")
     CR.measured("mod_a_rows", sum(1 for r in ladrows if r["mod_a_appears"]),
-                "rows whose first rung is the arity")
+                "rows at which the event size and the link count differ and "
+                "the first rung is nonetheless the event size")
+    CR.measured("first_rung_rows",
+                sum(1 for r in ladrows if r["first_rung_is_the_event_size"]),
+                "rows whose first rung is the event size, the link count "
+                "coincidence included")
     CR.measured("ladder_bound", LADDER_RMAX, "the declared search bound")
     LD.gate("G-LAW4-LADDER",
             all(r["is_multiples_of_the_link_count"] for r in modrows)
@@ -2569,14 +3219,89 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
                     "declared saturation readings, to the declared bound {b} "
                     "-- {n} rows, of which {live} carry a rung at all. Every "
                     "row that carries one carries exactly the multiples of "
-                    "the declared link count, and the number of rows whose "
-                    "first rung is the event size is {ma}. Rows the measured "
-                    "mass forbids are DERIVED from that mass and the rest "
-                    "are searched exhaustively under the constant as a "
-                    "per-cell ceiling",
+                    "the declared link count. The first rung IS the event "
+                    "size at {fr} rows, and at {ma} of the rows where the "
+                    "event size and the declared link count are different "
+                    "numbers; both counters are published, because the first "
+                    "is satisfied at the parent's arity by the coincidence "
+                    "this axis exists to break and only the second "
+                    "discriminates. Rows the measured mass forbids are "
+                    "DERIVED from that mass and the rest are searched "
+                    "exhaustively under the constant as a per-cell ceiling",
                     b="ladder_bound", n="ladder_rows", live="ladder_live",
-                    ma="mod_a_rows"),
+                    fr="first_rung_rows", ma="mod_a_rows"),
             {"rows": ladrows})
+
+    # THE MECHANISM IS A THEOREM, NOT A ONE-ARENA MEASUREMENT (lifted from
+    # the effectus seat).  Under the BUDGET reading the round mass is by
+    # definition of that reading the budget, and the budget is the actor
+    # count, so mass = n; the cell field is the sites times the declared
+    # links, so cells = nL.  Then
+    #       modulus = cells / gcd(cells, mass) = nL / gcd(nL, n) = L
+    # AT EVERY ARENA, with no reference to n, q or a.  Hence under the budget
+    # reading the ladder's first rung is the declared link count ALWAYS, and
+    # mod-a appears if and only if a = L -- which is why the parent's R = L
+    # rule held, and why it is a fact about the mass and not about the event
+    # size.  The identity is checked over a declared arena sweep rather than
+    # asserted, and the arena this unit measures is one row of that sweep.
+    #
+    # SCOPE, AND IT IS NARROW (v15 #33).  The theorem is about the LADDER
+    # MODULUS UNDER THE BUDGET READING and about nothing else.  It says
+    # which budgets admit a homogeneous record; it says nothing whatever
+    # about the corpus's OTHER mod-3 -- the coupled walk's phase modulus,
+    # which paper-20 derives from the arena's field and which NDEP measured
+    # to move with the field order.  L explains the ladder.  It has not been
+    # shown to explain every modulus in the corpus, and this unit does not
+    # say that it does.
+    sweep = []
+    for nn in range(1, THEOREM_N_MAX + 1):
+        for ll in range(1, THEOREM_L_MAX + 1):
+            cells = nn * ll
+            got = cells // math.gcd(cells, nn)
+            sweep.append(got == ll)
+    if mut("MUT-THEOREM"):
+        sweep[0] = not sweep[0]
+    live_budget = [r for r in ladrows
+                   if r["reading"] == "LITERAL" and r["feasible"]]
+    # THE THEOREM'S TWO CONSEQUENCES, CHECKED ON THIS ARENA'S OWN ROWS: the
+    # first rung is the link count at every live budget row, and the event
+    # size is the first rung exactly at the rows where it EQUALS the link
+    # count -- which is the "mod-a iff a = L" half, and is why the
+    # discriminating counter is zero.
+    thm_rows_ok = all(r["mass_per_round"] == A.n
+                      and r["predicted_modulus"] == A.L
+                      and (r["first_rung_is_the_event_size"]
+                           == (r["a"] == A.L))
+                      and not r["mod_a_appears"]
+                      for r in live_budget)
+    CR.measured("theorem_pairs", len(sweep),
+                "arena pairs (n, L) at which the modulus identity is checked")
+    CR.measured("theorem_pairs_ok", sum(1 for x in sweep if x), "counted")
+    CR.measured("budget_rows_live", len(live_budget),
+                "budget-reading rows carrying an object to score")
+    LD.gate("G-LAW4-THEOREM",
+            all(sweep) and thm_rows_ok and len(live_budget) > 0,
+            CR.stmt("under the budget reading the round mass IS the budget "
+                    "and the budget is the actor count, while the cell field "
+                    "is the actors times the declared links, so the modulus "
+                    "is nL/gcd(nL, n) = L at EVERY arena and not only at "
+                    "this one: the first rung is the declared link count "
+                    "always, and mod-a appears exactly when the event size "
+                    "equals the link count. The identity is verified at {p} "
+                    "declared (n, L) pairs, {k} of them holding, and the {b} "
+                    "live budget rows of this arena are checked to be "
+                    "instances of it rather than evidence for it",
+                    p="theorem_pairs", k="theorem_pairs_ok",
+                    b="budget_rows_live"),
+            {"pairs_checked": len(sweep), "pairs_holding": sum(sweep),
+             "n_max": THEOREM_N_MAX, "l_max": THEOREM_L_MAX,
+             "live_budget_rows": [[r["a"], r["mass_per_round"],
+                                   r["predicted_modulus"],
+                                   r["mod_a_appears"]] for r in live_budget],
+             "under_the_maximal_reading": "the round mass is not the budget, "
+                                          "so the modulus is arena-specific "
+                                          "and this half stays a measurement "
+                                          "at the declared arena"})
     R["law4_ladder"] = SEAL.seal(
         "law4_ladder",
         {"rows": ladrows,
@@ -2584,7 +3309,20 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
                       "the measured round mass; it equals the declared link "
                       "count exactly when the round mass equals the budget, "
                       "which is a fact about the mass and not about the "
-                      "event size"},
+                      "event size",
+         "theorem": "UNDER THE BUDGET READING, AT EVERY ARENA: mass = n and "
+                    "cells = nL, so modulus = nL/gcd(nL, n) = L. The first "
+                    "rung is the declared link count always, and mod-a "
+                    "appears if and only if a = L. This discharges the "
+                    "family-level exposure of the budget half and explains "
+                    "the parent's R = L rule rather than re-observing it; "
+                    "under the maximality reading the mass is not the budget "
+                    "and the modulus is arena-specific",
+         "theorem_pairs_checked": len(sweep),
+         "theorem_pairs_holding": sum(sweep),
+         "first_rung_rows": sum(1 for r in ladrows
+                                if r["first_rung_is_the_event_size"]),
+         "mod_a_rows": sum(1 for r in ladrows if r["mod_a_appears"])},
         "G-LAW4-LADDER")
 
     # ================================================================
@@ -2684,9 +3422,90 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
              "union_carriers": len(UACT),
              "union_realised_pairs": len(UREL),
              "union_doubled_pairs": sum(1 for v in UREL.values() if v > 1)})
+    # THE ARRANGEMENT'S CLOSED FORM (lifted from the operator seat).  The
+    # declared-link graph on the nine actors is exactly the complete
+    # tripartite graph on the lines of the UNDECLARED parallel class: two
+    # actors are joined exactly when their difference is not a multiple of
+    # the undeclared direction, which is exactly when they lie in different
+    # lines of that class.  Three facts this unit reported as measurements
+    # follow from that one, WITHOUT SEARCH, and are recomputed here by closed
+    # form and compared against the measured values:
+    #   -- the saturating groupings at the parent's arity are precisely the
+    #      TRANSVERSAL packings of those parts, so there are (q!)^2 of them;
+    #   -- the union carries 2n - q carriers, because the seam identifies a
+    #      whole line of the undeclared class;
+    #   -- it carries twice the sector's pairs with NO doubling, because the
+    #      seam is a line of the undeclared class and therefore carries no
+    #      declared link at all, so the two sectors' relations are disjoint.
+    linkE = {frozenset((x, A.vadd(x, l))) for x in A.SITES for l in A.LINKS}
+    undeclared = A.CLASS_NAMES[len(A.CLASSES) - 1]
+    upart = {x: i for i, Ln in enumerate(A.CLASSES[undeclared]) for x in Ln}
+    tripartite = all(upart[list(e)[0]] != upart[list(e)[1]] for e in linkE)
+    complete = all(frozenset((x, y)) in linkE
+                   for x, y in combinations(A.SITES, 2) if upart[x] != upart[y])
+    degs = {sum(1 for e in linkE if x in e) for x in A.SITES}
+    transversal = [i for i in GRAM[PARENT_ARITY]["sat"]["LITERAL"]
+                   if all(len({upart[x] for x in g}) == A.q
+                          for g in GRAM[PARENT_ARITY]["P"][i])]
+    sat_closed = math.factorial(A.q) ** (A.q - 1)
+    carriers_closed = 2 * A.n - A.q
+    pairs_closed = 2 * len(SECTOR_PAIRS)
+    seam_pairs_declared = sum(1 for p in SECTOR_PAIRS
+                              if set(p) <= set(ANTL))
+    if mut("MUT-TRIPARTITE"):
+        sat_closed = sat_closed + A.q
+    closed_ok = (tripartite and complete and degs == {(A.q - 1) * A.q}
+                 and len(linkE) == A.q ** 3
+                 and len(transversal) == len(GRAM[PARENT_ARITY]["sat"]["LITERAL"])
+                 and sat_closed == len(transversal)
+                 and carriers_closed == len(UACT)
+                 and pairs_closed == len(UREL)
+                 and seam_pairs_declared == 0
+                 and sum(1 for v in UREL.values() if v > 1) == 0)
+    CR.measured("link_edges", len(linkE), "edges of the declared-link graph")
+    CR.measured("link_degree", sorted(degs)[0], "its one vertex degree")
+    CR.measured("transversal_saturating", len(transversal), "counted")
+    LD.gate("G-LAW6-CLOSED-FORM", closed_ok,
+            CR.stmt("the declared-link graph on the actors is the complete "
+                    "tripartite graph whose parts are the lines of the "
+                    "UNDECLARED parallel class -- {e} edges, every vertex of "
+                    "degree {d}, verified as tripartite and as complete "
+                    "rather than assumed -- and three counts this unit "
+                    "otherwise reports as search results are re-derived from "
+                    "that fact alone and matched: the saturating groupings "
+                    "at the parent's arity are exactly its {t} transversal "
+                    "packings, the union's carriers are twice the actors "
+                    "less one line, and its realised pairs are twice the "
+                    "sector's with no doubling, because the seam is a line "
+                    "of the undeclared class and carries no declared link",
+                    e="link_edges", d="link_degree",
+                    t="transversal_saturating"),
+            {"undeclared_class": undeclared, "tripartite": tripartite,
+             "complete": complete, "degrees": sorted(degs),
+             "edges": len(linkE),
+             "saturating_closed_form": sat_closed,
+             "saturating_measured": len(GRAM[PARENT_ARITY]["sat"]["LITERAL"]),
+             "carriers_closed_form": carriers_closed,
+             "carriers_measured": len(UACT),
+             "realised_pairs_closed_form": pairs_closed,
+             "realised_pairs_measured": len(UREL),
+             "sector_pairs_inside_the_seam": seam_pairs_declared,
+             "doubled_pairs": sum(1 for v in UREL.values() if v > 1)})
     R["law6_sec2"] = SEAL.seal(
         "law6_sec2",
         {"rows": secrows, "union_carriers": len(UACT),
+         "arrangement_closed_form": {
+             "undeclared_class": undeclared,
+             "link_graph": "the complete tripartite graph on the lines of "
+                           "the undeclared parallel class",
+             "edges": len(linkE), "degree": sorted(degs)[0],
+             "saturating_at_the_parent_arity": sat_closed,
+             "carriers": carriers_closed, "realised_pairs": pairs_closed,
+             "doubled_pairs": 0,
+             "stamp": "FORCED, NOT SEARCHED: these three counts follow from "
+                      "the arrangement alone and the run compares the closed "
+                      "form with the measurement rather than publishing the "
+                      "measurement by itself"},
          "union_realised_pairs": len(UREL),
          "theorem_holds_at": {str(k): v for k, v in theorem_holds.items()},
          "bound": "C(a,2) - floor(a*a/4), the complement of the maximum cut "
@@ -2844,19 +3663,52 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
     for (nm, what, parent, rows) in num_rows:
         w, ev = transport_word(parent, rows)
         alt = {}
-        for label, rule in (("a-itself", t_a_alt_identity),
-                            ("blocks-per-round", t_a_alt_blocks)):
+        for label, rule in ALT_RULES:
             aw, _ = transport_word(parent, rows, rule)
             alt[label] = aw
         num_table.append({"law": nm, "numeral": what, "parent_value": parent,
                           "word": w, "scope": EXTENSION_SCOPE,
                           "evidence": ev,
                           "under_alternative_rules": alt,
+                          "word_moves_under_a_monotone_alternative_rule":
+                              any(alt[k] != w for k in MONOTONE_ALTS),
                           "word_moves_under_an_alternative_rule":
                               any(v != w for v in alt.values())})
     stmt_counts = Counter(r["word"] for r in stmt_table)
     num_counts = Counter(r["word"] for r in num_table)
-    sens = sum(1 for r in num_table if r["word_moves_under_an_alternative_rule"])
+    sens = sum(1 for r in num_table
+               if r["word_moves_under_a_monotone_alternative_rule"])
+    # THE AGGREGATE IS RULE-RELATIVE, AND THE RULE THAT MOVES IT IS THIS
+    # UNIT'S OWN.  The declared rule is a choice; two monotone alternatives
+    # are run beside it and move nothing.  But section 9 of this paper
+    # derives an EXACT closed form in a for one of the seven scored numerals
+    # -- the pairs forced inside a sector, C(a,2) - floor(a*a/4) -- and run
+    # as a third uniform rule on every numeral it is genuinely competitive.
+    # It moves exactly one word and with it the headline count, so the
+    # aggregate is published under every declared rule and the head names
+    # which rule its own count belongs to.  Concealing this would make the
+    # headline a property of a choice the unit made rather than of the
+    # measurements.
+    rule_aggregates = {}
+    for label, rule in (("the declared rule", None),) + ALT_RULES:
+        cnt = Counter()
+        for (nm, what, parent, rows) in num_rows:
+            aw, _e = transport_word(parent, rows, rule)
+            cnt[aw] += 1
+        rule_aggregates[label] = {w: cnt.get(w, 0) for w in WORDS}
+    moved_rows = {}
+    for r, (nm, what, parent, rows) in zip(num_table, num_rows):
+        for label, _rule in ALT_RULES:
+            if r["under_alternative_rules"][label] != r["word"]:
+                moved_rows.setdefault(label, []).append(
+                    {"law": nm, "numeral": what, "declared_word": r["word"],
+                     "word_under_this_rule":
+                         r["under_alternative_rules"][label]})
+    CR.measured("n_rules", len(rule_aggregates),
+                "uniform a-only rules run over every numeral")
+    CR.measured("closed_form_moves",
+                len(moved_rows.get(ALT_RULES[-1][0], [])),
+                "numeral words the section-9 closed form moves")
     CR.measured("n_statements", len(stmt_table), "scored statement rows")
     CR.measured("n_numerals", len(num_table), "scored numeral rows")
     CR.measured("stmt_lawin", stmt_counts.get("LAW-IN-A", 0), "counted")
@@ -2911,21 +3763,32 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
             and sum(stmt_counts.values()) == len(stmt_table)
             and sum(num_counts.values()) == len(num_table)
             and num_counts.get("LAW-IN-A", 0) == 0
-            and sens == 0,
+            and sens == 0
+            and len(rule_aggregates) == len(ALT_RULES) + 1
+            and all(sum(v.values()) == len(num_table)
+                    for v in rule_aggregates.values()),
             CR.stmt("the aggregate is TWO-LEVELLED and says which level it "
                     "aggregates, in the slot name parsed out of the parent's "
                     "own engraving: {s} statements are scored and {n} "
-                    "numerals separately, the numeral level admits {la} "
+                    "numerals separately, and the numeral level admits {la} "
                     "readings in which the value is a function of the event "
-                    "size, and the number of numeral words that move under "
-                    "either declared alternative a-only rule is {sv}",
+                    "size. The aggregate is RULE-RELATIVE and every rule's "
+                    "aggregate is published: {r} uniform a-only rules are "
+                    "run over every numeral, the two monotone alternatives "
+                    "move {sv} words, and this paper's own section-9 closed "
+                    "form -- the one exact arity law the unit's measurements "
+                    "supply -- moves {cm}, which is why the head names the "
+                    "rule its count belongs to",
                     s="n_statements", n="n_numerals", la="num_lawin",
-                    sv="sensitivity_moves"),
+                    sv="sensitivity_moves", r="n_rules",
+                    cm="closed_form_moves"),
             {"slot_parsed_from_the_quotation": slotname,
              "statement_words": dict(stmt_counts),
              "numeral_words": dict(num_counts),
              "ladder_statement_under_the_maximal_reading": lad_alt_w,
-             "sensitivity_moves": sens})
+             "sensitivity_moves": sens,
+             "aggregate_under_each_rule": rule_aggregates,
+             "rows_moved_by_a_rule": moved_rows})
     R["transport"] = SEAL.seal(
         "transport",
         {"statements": stmt_table, "numerals": num_table,
@@ -2940,6 +3803,22 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
          "numeral_words": dict(num_counts),
          "ladder_statement_under_the_maximal_reading":
              {"word": lad_alt_w, "evidence": lad_alt_ev},
+         "aggregate_under_each_rule": rule_aggregates,
+         "rows_moved_by_a_rule": moved_rows,
+         "closed_form_moves": len(moved_rows.get(ALT_RULES[-1][0], [])),
+         "rule_relativity": "THE DECLARED AGGREGATE IS A STATEMENT ABOUT THE "
+                            "DECLARED RULE. Two monotone alternatives move "
+                            "no word. This paper's own section-9 closed form "
+                            "-- the complement of the maximum cut, the one "
+                            "exact arity law these measurements supply -- "
+                            "run as a third uniform rule returns LAW-IN-A on "
+                            "the row it came from and leaves the other six "
+                            "words untouched, so under it the aggregate "
+                            "reads one LAW-IN-A rather than none. What the "
+                            "sweep establishes without reference to any rule "
+                            "is that no parent numeral is constant across "
+                            "the arities and none follows the corpus's own "
+                            "co-division-pair count",
          "the_a_only_rule": "C(a,2) + v - C(3,2), declared once and applied "
                             "to every numeral",
          "the_literal_rule": "the parent's numeral does not move; at fixed "
@@ -2951,17 +3830,98 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
     return src, paper_rel, write
 
 
+def preregistration_gate(rec, segments):
+    """THE PRE-REGISTRATION IS CONSUMED, NOT DECORATED (#299 / E-28).
+
+    A pre-registration referenced only at its definition and its seal is a
+    list.  This gate binds it four ways.  (i) Both registers carry their own
+    DIGEST, checked here, so a feasibility line cannot be rewritten after the
+    outcome is known -- an admission of post-hoc fitting inserted into a
+    feasibility argument moves the digest and dies.  (ii) Every outcome word
+    the run emits anywhere must be a word the register declares.  (iii) Every
+    declared word must either FIRE or carry the measured reason its trigger
+    did not occur; the word for a row whose hypothesis fails is stamped on
+    the rows themselves, so a word whose stated trigger occurred and which
+    was never used cannot pass.  (iv) Every head segment carries a
+    pre-registered outcome, its complement, a feasibility line and -- the
+    honest column -- whether the outcome was CONTINGENT on a measurement at
+    all, because a segment whose complement had no route is a declaration's
+    consequence and is not offered as a finding."""
+    declared = {w for (w, _m, _f) in PREREGISTERED}
+    emitted = set()
+    for row in rec["transport"]["statements"] + rec["transport"]["numerals"]:
+        emitted.add(row["word"])
+        for (_a, stamp) in row["evidence"].get("carried_rows", []):
+            emitted.add(stamp)
+    if rec["law3_menu"]["stamp"].split(":")[0].strip():
+        emitted.add(rec["law3_menu"]["stamp"].split(":")[0].strip())
+    undeclared = sorted(emitted - declared)
+    never = sorted(declared - emitted)
+    seg_rows = []
+    for i, (sid, word, comp, contingent, why) in enumerate(SEGMENT_PREREG):
+        text = segments[i] if i < len(segments) else ""
+        seg_rows.append({"segment": sid, "index": i,
+                         "preregistered_outcome": word,
+                         "complement": comp,
+                         "outcome_present": word in text,
+                         "complement_absent": comp not in text,
+                         "contingent": contingent,
+                         "feasibility": why})
+    seg_bad = [r for r in seg_rows
+               if not r["outcome_present"] or not r["complement_absent"]]
+    dg1 = digest([list(t) for t in PREREGISTERED])
+    dg2 = digest([list(t) for t in SEGMENT_PREREG])
+    if mut("MUT-PREREG"):
+        dg1 = "MOVED"
+    return {"declared_words": sorted(declared), "emitted_words": sorted(emitted),
+            "emitted_but_never_declared": undeclared,
+            "declared_but_never_emitted": never,
+            "segments": seg_rows, "segments_unbound": seg_bad,
+            "segments_contingent": sum(1 for r in seg_rows if r["contingent"]),
+            "outcome_register_digest": dg1,
+            "segment_register_digest": dg2,
+            "digests_match": (dg1 == PREREG_DIGEST
+                              and dg2 == SEGMENT_PREREG_DIGEST)}
+
+
 # ---------------------------------------------------------------------------
 # THE VERDICT: BUILT FROM THE GATED OBJECT, AUDITED BY AN INDEPENDENT ROUTE
 # ---------------------------------------------------------------------------
 
-def seg(text):
-    return text
+def render_field(v):
+    """a field reaches the head as text through exactly one route."""
+    if isinstance(v, (list, tuple)):
+        return "|".join(str(x) for x in v)
+    return str(v)
 
 
-def verdict_segments(rec):
+def build_segment(chunks):
+    """THE HEAD IS A POSITIONAL FIELD LIST, NOT A STRING.
+
+    Every segment is assembled from literal text and (key, value) FIELDS, in
+    the order they appear.  The rendered text and the field list come out of
+    the same walk, so the head cannot carry a numeral that is not a declared
+    field at a declared position, and the comparator below re-derives each
+    field's value from the receipt for itself and requires it to equal the
+    numeral that actually stands at that position.  A membership test -- is
+    this numeral SOME value the run measured SOMEWHERE -- cannot tell
+    `0 LAW-IN-A` from `7 LAW-IN-A` when 7 is the number of scored numerals,
+    and cannot tell `36|0|0|0` from `36|36|36|36`.  A positional test can."""
+    text, fields = [], []
+    for c in chunks:
+        if isinstance(c, tuple):
+            k, v = c
+            fields.append((k, v))
+            text.append(render_field(v))
+        else:
+            text.append(c)
+    return "".join(text), fields
+
+
+def verdict_segments(rec, with_fields=False):
     """THE HEAD, rendered from the receipt -- the same object the gates
-    checked.  Every numeral is read out of `rec`; none is typed."""
+    checked.  Every numeral is a declared field read out of `rec`; none is
+    typed, and none is unpositioned."""
     sub = {r["a"]: r for r in rec["substrate"]}
     cor = {r["a"]: r for r in rec["corpus"]}
     cry = {r["a"]: r for r in rec["law2_crystallization"]["rows"]}
@@ -2976,296 +3936,581 @@ def verdict_segments(rec):
     pr = rec["principles"]
     A_ = ar["arities"]
     sw, nw = tr["statement_words"], tr["numeral_words"]
+    cfrule = tr["aggregate_under_each_rule"][ALT_RULES[-1][0]]
 
     def lst(d, key):
-        return "|".join(str(d[a][key]) for a in A_)
+        return [d[a][key] for a in A_]
 
-    out = []
-    out.append(
-        "ARITY-NO-PARENT-NUMERAL-FOLLOWS-THE-DECLARED-a-ONLY-RULE<"
-        "n=%d HELD FIXED AT EVERY ROW AND WITH IT q=%d, THE FIELD, THE %d "
-        "PARALLEL CLASSES, L=%d AND THE %d CELLS; ONLY a MOVES, OVER %s, "
-        "WITH a=%d A DECLARED WINDOW; THE CONSTRUCTOR IS RUN AT THE PARENT'S "
-        "ARITY FIRST AND AGREES WITH THE COMMITTED SUBSTRATE %d OF %d BEFORE "
-        "ANY OTHER ROW IS TAKEN | TWO LEVELS, DECLARED: %d STATEMENTS ARE "
-        "SCORED -- DOES THE PARENT'S THEOREM HOLD AT THE NEW EVENT SIZE -- "
-        "AND %d NUMERALS SEPARATELY BY THE DECLARED a-ONLY RULE; %d OF THE "
-        "STATEMENTS TRANSPORT AND %d BREAK, WHILE THE NUMERAL LEVEL RETURNS "
-        "%d LAW-IN-A, %d NEEDS-3 AND %d BREAKS AND NO WORD MOVES UNDER "
-        "EITHER DECLARED ALTERNATIVE a-ONLY RULE | EVERY WORD IS SCORED %s: "
-        "THE PACKING RULE THAT MAKES a=%s BUILDABLE AT ALL IS THIS UNIT'S "
-        "OWN DECLARATION AND LEAVES AN IDLE REMAINDER, SO THOSE ROWS MEASURE "
-        "AN EXTENSION OF THE COMMITTED THEORY AND NOT THE COMMITTED THEORY | "
-        "EVERY NUMERAL THAT STANDS STILL HERE IS THEREFORE NOT CARRIED BY "
-        "THE EVENT SIZE, AND EVERY NUMERAL THAT MOVES IS NOT CARRIED BY THE "
-        "FIELD ORDER, WHICH IS THE SEPARATION THE ACTOR-COUNT AXIS COULD NOT "
-        "MAKE; AND THE PRECISION IS THE PARENT'S OWN TWO-LEVEL ONE, "
-        "BECAUSE SEVERAL MEASUREMENTS DO MOVE WITH THE EVENT SIZE -- THE "
-        "PARENT'S SHARPENED FLOOR IS DRIVEN BY IT AND REPRODUCES THE "
-        "MEASUREMENT AT EVERY ARITY -- WHAT NO PARENT NUMERAL FOLLOWS IS THE "
-        "DECLARED UNIFORM a-ONLY RULE>"
-        % (ar["n"], ar["q"], ar["parallel_classes"], ar["L"], ar["cells"],
-           "|".join(str(a) for a in A_), ar["windowed_arity"],
-           fid["agree"], fid["rows"],
-           len(tr["statements"]), len(tr["numerals"]),
-           sw.get("LAW-IN-A", 0), sw.get("BREAKS", 0),
-           nw.get("LAW-IN-A", 0), nw.get("NEEDS-3", 0), nw.get("BREAKS", 0),
-           tr["scope_qualifier"],
-           "|".join(str(x) for x in tr["extension_arities"])))
-    out.append(
-        "ARITY-SUBSTRATE-THE-ROUND-STOPS-BEING-A-PARTITION<GROUPINGS %s AND "
-        "IDLE ACTORS %s AT a=%s: THE EVENT SIZE DIVIDES THE ACTOR COUNT ONLY "
-        "AT THE PARENT'S ARITY, SO AT EVERY OTHER ARITY A ROUND CARRIES "
-        "ACTORS THAT DIVIDE IN NO EVENT -- AN OBJECT THE COMMITTED GRAMMAR "
-        "HAS NO NAME FOR | THE MAXIMUM ROUND INCIDENCE IS %s AGAINST A "
-        "BUDGET OF %d, SO THE PARENT'S WORD SATURATING MEANS TWO DIFFERENT "
-        "THINGS OFF ITS OWN ARITY: THE BUDGET READING ADMITS %s GROUPINGS "
-        "AND THE MAXIMALITY READING %s, AND THEY PART COMPANY AT a=%s | THE "
-        "PARENT'S OWN COVERING CLASS AT R=L IS NON-EMPTY AT %s AND EMPTY "
-        "ELSEWHERE, AND ITS DRIVEN WINDOW EXISTS ONLY WHERE THE ARENA HAS "
-        "EVENTS THAT ARE COSETS>"
-        % (lst(sub, "groupings"), lst(sub, "idle_actors"),
-           "|".join(str(a) for a in A_), lst(sub, "max_weight"), ar["n"],
-           lst(sub, "saturating_LITERAL"), lst(sub, "saturating_MAXIMAL"),
-           "|".join(str(a) for a in A_
-                    if sub[a]["saturating_LITERAL"]
-                    and sub[a]["saturating_LITERAL"] !=
-                    sub[a]["saturating_MAXIMAL"]),
-           "|".join(str(a) for a in A_ if cor[a]["C1_strict_literal"])))
-    out.append(
-        "ARITY-LAW-IN-A-NAMING<%d PREFIXES FILTERED AGAINST THE WHOLE "
-        "SYMMETRIC GROUP AND %d AGAINST THE DECLARED WINDOW, ELEMENT SET "
-        "AGAINST ELEMENT SET, %d MISMATCHES; %d ELEMENTS LAND INSIDE THE "
-        "STABILIZER ON THE GROUP LEG AND %d OUTSIDE IT ON THE WINDOW LEG, SO "
-        "BOTH DIRECTIONS ARE LIVE | THE STATEMENT CARRIES NO NUMERAL AND THE "
-        "LEG IS A REPRODUCTION: THE PARENT PROVES IT BY A BOOLEAN-ALGEBRA "
-        "ARGUMENT THAT NAMES NEITHER AN ARENA NOR AN EVENT SIZE | ITS "
-        "NUMERAL DOES NOT TRANSPORT: THE NON-UNIQUE SINGLE ROUNDS ARE %s AT "
-        "a=%s, AND AT EVERY ARITY BUT THE PARENT'S THE OBJECTS THAT CARRY "
-        "THEM DO NOT EXIST>"
-        % (nm["full_group_prefixes"], nm["window_prefixes"],
-           nm["mismatches"], nm["positives_group_leg"],
-           nm["negatives_window_leg"],
-           "|".join(str(frc[a]["single_round"]["non_unique"]) for a in A_),
-           "|".join(str(a) for a in A_)))
-    out.append(
-        "ARITY-BREAKS-CRYSTALLIZATION<SCHEDULE TIME %s EVENTS AND ATTAINED "
-        "FLOOR %s AT a=%s, BOTH COMPLETE -- THE TIME BY BREADTH-FIRST SEARCH "
-        "OVER EVERY HISTORY THE ARITY ADMITS, THE FLOOR OVER THE WHOLE EVENT "
-        "UNIVERSE OF THAT SIZE | THE PARENT'S TWO NUMERALS ARE REPRODUCED AT "
-        "ITS OWN ARITY AND NEITHER TRANSPORTS | THE OFFSET IS %s: THE ONE "
-        "REDUNDANT EVENT THE PARENT FOUND AT THREE ACTOR COUNTS IS NOT A "
-        "PROPERTY OF THE PAIR BUT OF THE ARITY | THE PARENT'S SHARPENED "
-        "FLOOR, DRIVEN BY THE EVENT SIZE ITS OWN QUOTATION NAMES, "
-        "REPRODUCES THE MEASUREMENT AT %d OF %d ARITIES WHILE THE COUNTING "
-        "BOUND PUBLISHED BESIDE IT REPRODUCES IT AT %d>"
-        % ("|".join(str(cry[a]["schedule_time_events"]) for a in A_),
-           "|".join(str(cry[a]["attained_floor"]) for a in A_),
-           "|".join(str(a) for a in A_),
-           "|".join(str(cry[a]["offset"]) for a in A_),
-           sum(1 for a in A_ if cry[a]["sharpened_floor"] ==
-               cry[a]["attained_floor"]), len(A_),
-           sum(1 for a in A_ if cry[a]["counting_bound"] ==
-               cry[a]["attained_floor"])))
-    out.append(
-        "ARITY-NEEDS-3-MENU-AND-LADDER<THE MENU IS A-INERT BY CONSTRUCTION: "
-        "ITS LEG READS THE PARTITION AND THE ARENA AND NEVER A HISTORY, AND "
-        "ITS %d SURVIVORS OVER THE COMPLETE LATTICE OF %d ARE THE %d COSET "
-        "PARTITIONS AT EVERY ARITY -- A DISCLOSURE, NOT A TRANSPORT "
-        "MEASUREMENT | THE LADDER IS SEARCHED AT %d ARITY-BY-READING ROWS TO "
-        "R<=%d: %d CARRY A RUNG AT ALL AND EVERY ONE OF THEM CARRIES EXACTLY "
-        "THE MULTIPLES OF THE DECLARED LINK COUNT, WHILE THE NUMBER OF ROWS "
-        "WHOSE FIRST RUNG IS THE EVENT SIZE IS %d | THE MECHANISM IS "
-        "MEASURED AND NOT ARGUED: THE MODULUS IS THE CELL COUNT OVER ITS GCD "
-        "WITH THE ROUND MASS, IT READS %s AT a=%s UNDER THE BUDGET READING, "
-        "AND MOD-a NEVER APPEARS>"
-        % (menu["survivors"], menu["lattice"], menu["coset_partitions"],
-           len(lad), rec["arena"]["ladder_search_bound"],
-           sum(1 for r in lad if r["achievable_budgets"]),
-           sum(1 for r in lad if r["mod_a_appears"]),
-           "|".join(str(r["predicted_modulus"]) for r in lad
-                    if r["reading"] == "LITERAL" and r["feasible"]),
-           "|".join(str(r["a"]) for r in lad
-                    if r["reading"] == "LITERAL" and r["feasible"])))
-    out.append(
-        "ARITY-LAW-IN-A-DIVISION-FORCING-AND-EMPTY-OFF-THE-PARENT<OVER THE "
-        "COMPLETE ACTOR LATTICE OF %d AT EVERY HISTORY OF EVERY CORPUS, THE "
-        "SINGLE-ROUND CENSUS ADMITS THE DISCRETE PARTITION ALONE AT %s OF %s "
-        "AT a=%s | THE PARENT'S THESIS HOLDS PER OBJECT AT EVERY ARITY -- A "
-        "HISTORY IS NON-UNIQUE EXACTLY WHEN IT REPEATS A PARALLEL CLASS -- "
-        "AND AT EVERY ARITY BUT THE PARENT'S IT HOLDS BECAUSE NO EVENT OF "
-        "THAT SIZE IS A COSET, SO THE ONLY SOURCE OF A SECOND FACTORIZATION "
-        "IN THE WHOLE CORPUS IS THE ONE STRUCTURE THAT NEEDS THE EVENT SIZE "
-        "TO DIVIDE THE ACTOR COUNT | COUNTING-ONLY>"
-        % (menu["lattice"],
-           "|".join(str(frc[a]["single_round"]["unique"]) for a in A_),
-           "|".join(str(frc[a]["single_round"]["histories"]) for a in A_),
-           "|".join(str(a) for a in A_)))
-    out.append(
-        "ARITY-BREAKS-SEC2-AND-THE-OBSTRUCTION-IS-EMPTY-AT-TWO<THE UNION IS "
-        "REBUILT FROM THE ARRANGEMENT ALONE -- %d CARRIERS, %d REALISED "
-        "PAIRS -- AND ITS a-GROUP CENSUS REPRODUCES THE PARENT'S OWN "
-        "NUMBERS AT ITS OWN ARITY OBJECT BY OBJECT | SEAM-SPANNING %s, "
-        "OPENING NO PAIR INSIDE A SECTOR %s, AND OPENING NO PAIR AND "
-        "DOUBLING NOTHING %s AT a=%s | THE THEOREM'S HYPOTHESIS IS THE "
-        "COMPLEMENT OF THE MAXIMUM CUT OF THE COMPLETE GRAPH ON a VERTICES "
-        "AND IT READS %s: AT TWO ACTORS IT IS ZERO, EVERY SEAM-SPANNING "
-        "EVENT IS EXACTLY ONE CROSS PAIR AND NOTHING ELSE, AND THE "
-        "CONFIGURATION THE PARENT STAMPED A CONTROL BECAUSE NO GROUP OF ITS "
-        "OWN ARITY COULD PRODUCE IT IS PRODUCED BY EVERY ONE OF THEM>"
-        % (rec["law6_sec2"]["union_carriers"],
-           rec["law6_sec2"]["union_realised_pairs"],
-           "|".join(str(sec[a]["seam_spanning"]) for a in A_),
-           "|".join(str(sec[a]["within_sector_free"]) for a in A_),
-           "|".join(str(sec[a]["obstruction_free"]) for a in A_),
-           "|".join(str(a) for a in A_),
-           "|".join(str(sec[a]["forced_inside_bound"]) for a in A_)))
-    out.append(
-        "ARITY-ADDED-ASSUMPTIONS-WOULD-SELECT-a-EQUALS-q-AND-PRESENT-"
-        "ISP-DOES-NOT<%d CANDIDATE PRINCIPLES, NONE OF "
-        "THEM PRE-REGISTERED ANYWHERE IN THE CORPUS AND ALL OF THEM "
-        "IMPLICIT IN A CONSTRUCTOR, ARE EVALUATED AT ALL %d "
-        "CANDIDATE EVENT SIZES: %d OF THEM ADMIT THE PARENT'S ARITY AND NO "
-        "OTHER NONTRIVIAL ONE | THE MECHANISM IS THE ARENA'S OWN SUBGROUP "
-        "LATTICE, WHOSE ORDERS ARE %s, SO AN EVENT THAT IS A COSET HAS SIZE "
-        "1, q OR q SQUARED AND THE ONLY NONTRIVIAL CHOICE IS THE FIELD ORDER "
-        "| THE LICENSED FORM IS A CONDITIONAL AND THE ASSUMPTIONS DO THE "
-        "SELECTING: %s | a=q IS THEREFORE NOT AN INDEPENDENT DECLARATION AT "
-        "THIS ARENA, AND NOTHING MEASURED HERE SELECTS IT WITHOUT THE "
-        "ARENA>"
-        % (len(pr["admits"]), len(pr["rows"]), len(pr["unique_selectors"]),
-           "|".join(str(o) for o, _c in menu["subgroup_orders"]),
-           tr["conditional_selection"]))
-    out.append(
-        "SCOPE=a=2 AND a=4 BUILT ENTIRE AT n=%d -- EVERY GROUPING, THE WHOLE "
-        "ACTOR LATTICE, THE COMPLETE EVENT UNIVERSE FOR THE FLOOR; a=%d A "
-        "DECLARED WINDOW WHOSE MULTI-ROUND CORPUS OF %d HISTORIES EXCEEDS "
-        "THE DECLARED CAP OF %d AND IS NOT REACHED | NO n=9 LAW VALUE IS "
-        "IMPORTED AS A RESULT: THE PARENT VALUES ARE RE-DERIVED BY THIS "
-        "UNIT'S OWN CONSTRUCTOR AND COMPARED WITH ANCHORED READS, AND THE "
-        "SEC-2 FREE-ITEM COUNTS THEMSELVES ARE THAT UNIT'S MEASUREMENT AND "
-        "ARE NOT RECOMPUTED | THE LADDER IS SEARCHED TO R<=%d AND EVERY "
-        "ACHIEVABLE-BUDGET SET IS A SET WITHIN THAT BOUND | AT FIXED n, q "
-        "AND L THE CONSTANT READING IS SIMULTANEOUSLY THE n-ONLY, THE q-ONLY "
-        "AND THE L-ONLY ONE, SO NEEDS-3 HERE MEANS NOT-CARRIED-BY-a AND "
-        "NAMES NO OTHER CARRIER | MEASURE=COUNTING-ONLY (E-24) | "
-        "LANGUAGE=LAW-IN-A, NEEDS-3 AND BREAKS NAME THE TRANSPORT OF A "
-        "PUBLISHED LAW ALONG THE EVENT-SIZE AXIS AND NOTHING ELSE"
-        % (ar["n"], ar["windowed_arity"],
-           [r for r in rec["corpus"]
-            if r["a"] == ar["windowed_arity"]][0].get("cx_size", 0),
-           ar["corpus_cap"], ar["ladder_search_bound"]))
-    return out
+    out, allf = [], []
+    for chunks in (
+        ["ARITY-NO-PARENT-NUMERAL-FOLLOWS-THE-DECLARED-a-ONLY-RULE<n=",
+         ("arena_n", ar["n"]),
+         " HELD FIXED AT EVERY ROW AND WITH IT q=", ("arena_q", ar["q"]),
+         ", THE FIELD, THE ", ("arena_parallel_classes",
+                               ar["parallel_classes"]),
+         " PARALLEL CLASSES, L=", ("arena_L", ar["L"]),
+         " AND THE ", ("arena_cells", ar["cells"]),
+         " CELLS; ONLY a MOVES, OVER ", ("arities", A_),
+         ", WITH a=", ("windowed_arity", ar["windowed_arity"]),
+         " A DECLARED WINDOW; THE CONSTRUCTOR IS RUN AT THE PARENT'S ARITY "
+         "FIRST AND AGREES WITH THE COMMITTED SUBSTRATE ",
+         ("fidelity_agree", fid["agree"]), " OF ",
+         ("fidelity_rows", fid["rows"]),
+         " BEFORE ANY OTHER ROW IS TAKEN | TWO LEVELS, DECLARED: ",
+         ("n_statements", len(tr["statements"])),
+         " STATEMENTS ARE SCORED -- DOES THE PARENT'S THEOREM HOLD AT THE "
+         "NEW EVENT SIZE -- AND ", ("n_numerals", len(tr["numerals"])),
+         " NUMERALS SEPARATELY BY THE DECLARED a-ONLY RULE; ",
+         ("stmt_law_in_a", sw.get("LAW-IN-A", 0)),
+         " OF THE STATEMENTS TRANSPORT AND ",
+         ("stmt_breaks", sw.get("BREAKS", 0)),
+         " BREAK, WHILE THE NUMERAL LEVEL RETURNS ",
+         ("num_law_in_a", nw.get("LAW-IN-A", 0)), " LAW-IN-A, ",
+         ("num_needs_3", nw.get("NEEDS-3", 0)), " NEEDS-3 AND ",
+         ("num_breaks", nw.get("BREAKS", 0)),
+         " BREAKS | THE AGGREGATE IS RULE-RELATIVE AND EVERY RULE IS "
+         "PUBLISHED: NO WORD MOVES UNDER EITHER DECLARED MONOTONE "
+         "ALTERNATIVE a-ONLY RULE, WHILE THIS PAPER'S OWN CLOSED FORM FOR "
+         "THE PAIRS FORCED INSIDE A SECTOR -- THE ONE EXACT ARITY LAW THESE "
+         "MEASUREMENTS SUPPLY -- RUN AS A THIRD UNIFORM RULE MOVES ",
+         ("closed_form_moves", rec["transport"]["closed_form_moves"]),
+         " WORD AND RETURNS ", ("cf_law_in_a", cfrule["LAW-IN-A"]),
+         " LAW-IN-A, ", ("cf_needs_3", cfrule["NEEDS-3"]), " NEEDS-3 AND ",
+         ("cf_breaks", cfrule["BREAKS"]),
+         " BREAKS | EVERY WORD IS SCORED ",
+         ("scope_qualifier", tr["scope_qualifier"]),
+         ": THE PACKING RULE THAT MAKES a=",
+         ("extension_arities", tr["extension_arities"]),
+         " BUILDABLE AT ALL IS THIS UNIT'S OWN DECLARATION AND LEAVES AN "
+         "IDLE REMAINDER, SO THOSE ROWS MEASURE AN EXTENSION OF THE "
+         "COMMITTED THEORY AND NOT THE COMMITTED THEORY | EVERY NUMERAL THAT "
+         "STANDS STILL HERE IS THEREFORE NOT CARRIED BY THE EVENT SIZE, AND "
+         "EVERY NUMERAL THAT MOVES IS NOT CARRIED BY THE FIELD ORDER, WHICH "
+         "IS THE SEPARATION THE ACTOR-COUNT AXIS COULD NOT MAKE; AND THE "
+         "PRECISION IS THE PARENT'S OWN TWO-LEVEL ONE, BECAUSE SEVERAL "
+         "MEASUREMENTS DO MOVE WITH THE EVENT SIZE -- THE PARENT'S SHARPENED "
+         "FLOOR IS DRIVEN BY IT AND REPRODUCES THE MEASUREMENT AT EVERY "
+         "ARITY -- WHAT NO PARENT NUMERAL FOLLOWS IS THE DECLARED UNIFORM "
+         "a-ONLY RULE>"],
+
+        ["ARITY-SUBSTRATE-THE-ROUND-STOPS-BEING-A-PARTITION<GROUPINGS ",
+         ("substrate_groupings", lst(sub, "groupings")), " AND IDLE ACTORS ",
+         ("substrate_idle", lst(sub, "idle_actors")), " AT a=",
+         ("arities", A_),
+         ": THE EVENT SIZE DIVIDES THE ACTOR COUNT ONLY AT THE PARENT'S "
+         "ARITY, SO AT EVERY OTHER ARITY A ROUND CARRIES ACTORS THAT DIVIDE "
+         "IN NO EVENT -- AN OBJECT THE COMMITTED GRAMMAR HAS NO NAME FOR | "
+         "THE MAXIMUM ROUND INCIDENCE IS ",
+         ("substrate_max_weight", lst(sub, "max_weight")),
+         " AGAINST A BUDGET OF ", ("arena_n", ar["n"]),
+         ", SO THE PARENT'S WORD SATURATING MEANS TWO DIFFERENT THINGS OFF "
+         "ITS OWN ARITY: THE BUDGET READING ADMITS ",
+         ("substrate_saturating_budget", lst(sub, "saturating_LITERAL")),
+         " GROUPINGS AND THE MAXIMALITY READING ",
+         ("substrate_saturating_maximum", lst(sub, "saturating_MAXIMAL")),
+         ", THEY DIFFER AT a=",
+         ("readings_differ_at",
+          [a for a in A_ if sub[a]["saturating_LITERAL"]
+           != sub[a]["saturating_MAXIMAL"]]),
+         " AND THEY PART COMPANY WITH BOTH NON-EMPTY AT a=",
+         ("readings_part_company_at",
+          [a for a in A_ if sub[a]["saturating_LITERAL"]
+           and sub[a]["saturating_LITERAL"] != sub[a]["saturating_MAXIMAL"]]),
+         " | THE PARENT'S OWN COVERING CLASS AT R=L IS NON-EMPTY AT ",
+         ("cover_class_nonempty_at",
+          [a for a in A_ if cor[a]["C1_strict_literal"]]),
+         " AND EMPTY ELSEWHERE, AND ITS DRIVEN WINDOW EXISTS ONLY WHERE THE "
+         "ARENA HAS EVENTS THAT ARE COSETS>"],
+
+        ["ARITY-LAW-IN-A-NAMING<",
+         ("naming_full_prefixes", nm["full_group_prefixes"]),
+         " PREFIXES FILTERED AGAINST THE WHOLE SYMMETRIC GROUP AND ",
+         ("naming_window_prefixes", nm["window_prefixes"]),
+         " AGAINST THE DECLARED WINDOW, ELEMENT SET AGAINST ELEMENT SET, ",
+         ("naming_mismatches", nm["mismatches"]), " MISMATCHES; ",
+         ("naming_positives_group", nm["positives_group_leg"]),
+         " ELEMENTS LAND INSIDE THE STABILIZER ON THE GROUP LEG AND ",
+         ("naming_negatives_window", nm["negatives_window_leg"]),
+         " OUTSIDE IT ON THE WINDOW LEG, SO BOTH DIRECTIONS ARE LIVE | THE "
+         "STATEMENT CARRIES NO NUMERAL AND THE LEG IS A REPRODUCTION: THE "
+         "PARENT PROVES IT BY A BOOLEAN-ALGEBRA ARGUMENT THAT NAMES NEITHER "
+         "AN ARENA NOR AN EVENT SIZE | ITS NUMERAL DOES NOT TRANSPORT: THE "
+         "NON-UNIQUE SINGLE ROUNDS ARE ",
+         ("forcing_non_unique",
+          [frc[a]["single_round"]["non_unique"] for a in A_]), " AT a=",
+         ("arities", A_),
+         ", AND AT EVERY ARITY BUT THE PARENT'S THE OBJECTS THAT CARRY THEM "
+         "DO NOT EXIST>"],
+
+        ["ARITY-BREAKS-CRYSTALLIZATION<SCHEDULE TIME ",
+         ("crystal_schedule", [cry[a]["schedule_time_events"] for a in A_]),
+         " EVENTS AND ATTAINED FLOOR ",
+         ("crystal_floor", [cry[a]["attained_floor"] for a in A_]), " AT a=",
+         ("arities", A_),
+         ", BOTH COMPLETE AND BOTH CERTIFIED -- THE TIME IS THE MINIMUM OVER "
+         "EVERY HISTORY THE ARITY ADMITS, PINNED BY THE FLOOR AT ",
+         ("schedule_pinned_at",
+          [r["a"] for r in rec["law2_certificates"]["schedule"]
+           if r["certificate"] == "PINNED-BY-THE-FLOOR"]),
+         " AND ESTABLISHED BY REFUTING EVERY SHORTER HISTORY OVER THE WHOLE "
+         "GROUPING POOL AT ",
+         ("schedule_searched_at",
+          [r["a"] for r in rec["law2_certificates"]["schedule"]
+           if r["certificate"] == "SEARCHED-AT-THE-FLOOR"]),
+         "; THE FLOOR IS THE COMPLETE EVENT UNIVERSE OF THAT SIZE AND IS "
+         "RE-DECIDED BY AN EXHIBITED SIGNATURE WITNESS AT EVERY ARITY | THE "
+         "PARENT'S TWO NUMERALS ARE REPRODUCED AT ITS OWN ARITY AND NEITHER "
+         "TRANSPORTS | THE OFFSET IS ",
+         ("crystal_offset", [cry[a]["offset"] for a in A_]),
+         ": THE ONE REDUNDANT EVENT THE PARENT FOUND AT THREE ACTOR COUNTS "
+         "IS NOT A PROPERTY OF THE PAIR BUT OF THE ARITY | THE PARENT'S "
+         "SHARPENED FLOOR, DRIVEN BY THE EVENT SIZE ITS OWN QUOTATION NAMES, "
+         "REPRODUCES THE MEASUREMENT AT ",
+         ("sharpened_hits",
+          sum(1 for a in A_ if cry[a]["sharpened_floor"]
+              == cry[a]["attained_floor"])), " OF ",
+         ("n_arities", len(A_)),
+         " ARITIES WHILE THE COUNTING BOUND PUBLISHED BESIDE IT REPRODUCES "
+         "IT AT ", ("counting_hits",
+                    sum(1 for a in A_ if cry[a]["counting_bound"]
+                        == cry[a]["attained_floor"])),
+         " AND THE PARENT'S CLOSED FORM, READ WITH THE EVENT SIZE IN ITS "
+         "VARIABLE'S PLACE, AT ",
+         ("closed_form_in_a_hits",
+          len(rec["law2_crystallization"]["closed_form_in_a_agrees"])),
+         " -- THE CLOSED FORM IS THE PARENT'S OWN AXIS AND DOES NOT "
+         "TRANSPORT ALONG THIS ONE, WHICH IS DISCLOSED AND NOT LEANED ON>"],
+
+        ["ARITY-NEEDS-3-MENU-AND-LADDER<THE MENU IS A-INERT BY CONSTRUCTION: "
+         "ITS LEG READS THE PARTITION AND THE ARENA AND NEVER A HISTORY, AND "
+         "ITS ", ("menu_survivors", menu["survivors"]),
+         " SURVIVORS OVER THE COMPLETE LATTICE OF ",
+         ("menu_lattice", menu["lattice"]), " ARE THE ",
+         ("menu_cosets", menu["coset_partitions"]),
+         " COSET PARTITIONS AT EVERY ARITY -- A DISCLOSURE, NOT A TRANSPORT "
+         "MEASUREMENT | THE LADDER IS SEARCHED AT ",
+         ("ladder_rows", len(lad)), " ARITY-BY-READING ROWS TO R<=",
+         ("ladder_bound", ar["ladder_search_bound"]), ": ",
+         ("ladder_live", sum(1 for r in lad if r["achievable_budgets"])),
+         " CARRY A RUNG AT ALL AND EVERY ONE OF THEM CARRIES EXACTLY THE "
+         "MULTIPLES OF THE DECLARED LINK COUNT; THE FIRST RUNG IS THE EVENT "
+         "SIZE AT ",
+         ("first_rung_rows",
+          sum(1 for r in lad if r["first_rung_is_the_event_size"])),
+         " ROWS AND AT ", ("mod_a_rows",
+                           sum(1 for r in lad if r["mod_a_appears"])),
+         " OF THE ROWS WHERE THE EVENT SIZE AND THE DECLARED LINK COUNT ARE "
+         "DIFFERENT NUMBERS, AND ONLY THE SECOND COUNTER DISCRIMINATES "
+         "BECAUSE AT THE PARENT'S ARITY THE TWO ARE THE SAME NUMBER | THE "
+         "MECHANISM IS A THEOREM AND NOT A ONE-ARENA MEASUREMENT: UNDER THE "
+         "BUDGET READING THE ROUND MASS IS THE BUDGET AND THE CELL FIELD IS "
+         "THE ACTORS TIMES THE LINKS, SO THE MODULUS IS nL/gcd(nL,n)=L AT "
+         "EVERY ARENA -- VERIFIED AT ",
+         ("theorem_pairs", rec["law4_ladder"]["theorem_pairs_holding"]),
+         " DECLARED ARENA PAIRS -- AND MOD-a APPEARS IF AND ONLY IF a=L, "
+         "WHICH IS WHY THE PARENT'S R=L RULE HELD; THE MODULUS READS ",
+         ("ladder_modulus",
+          [r["predicted_modulus"] for r in lad
+           if r["reading"] == "LITERAL" and r["feasible"]]), " AT a=",
+         ("ladder_budget_arities",
+          [r["a"] for r in lad
+           if r["reading"] == "LITERAL" and r["feasible"]]),
+         " UNDER THAT READING. THE THEOREM IS ABOUT THE LADDER MODULUS AND "
+         "NOTHING ELSE: THE COUPLED WALK'S PHASE MODULUS IS THE ARENA'S "
+         "FIELD ORDER BY THE PARENT'S OWN DERIVATION AND IS NOT TOUCHED "
+         "HERE>"],
+
+        ["ARITY-LAW-IN-A-DIVISION-FORCING-AND-EMPTY-OFF-THE-PARENT<OVER THE "
+         "COMPLETE ACTOR LATTICE OF ", ("menu_lattice", menu["lattice"]),
+         " AT EVERY HISTORY OF EVERY CORPUS, THE SINGLE-ROUND CENSUS ADMITS "
+         "THE DISCRETE PARTITION ALONE AT ",
+         ("forcing_unique", [frc[a]["single_round"]["unique"] for a in A_]),
+         " OF ",
+         ("forcing_histories",
+          [frc[a]["single_round"]["histories"] for a in A_]), " AT a=",
+         ("arities", A_),
+         " | THE PARENT'S THESIS HOLDS PER OBJECT AT EVERY ARITY -- A "
+         "HISTORY IS NON-UNIQUE EXACTLY WHEN IT REPEATS A PARALLEL CLASS -- "
+         "AND AT EVERY ARITY BUT THE PARENT'S IT HOLDS BECAUSE NO EVENT OF "
+         "THAT SIZE IS A COSET, SO THE ONLY SOURCE OF A SECOND FACTORIZATION "
+         "IN THE WHOLE CORPUS IS THE ONE STRUCTURE THAT NEEDS THE EVENT SIZE "
+         "TO DIVIDE THE ACTOR COUNT | COUNTING-ONLY>"],
+
+        ["ARITY-BREAKS-SEC2-AND-THE-OBSTRUCTION-IS-EMPTY-AT-TWO<THE UNION IS "
+         "REBUILT FROM THE ARRANGEMENT ALONE -- ",
+         ("union_carriers", rec["law6_sec2"]["union_carriers"]),
+         " CARRIERS, ",
+         ("union_pairs", rec["law6_sec2"]["union_realised_pairs"]),
+         " REALISED PAIRS, BOTH FORCED BY THE CLOSED FORM AND NOT ONLY "
+         "COUNTED, THE LINK GRAPH BEING THE COMPLETE TRIPARTITE GRAPH ON THE "
+         "LINES OF THE UNDECLARED CLASS -- AND ITS a-GROUP CENSUS REPRODUCES "
+         "THE PARENT'S OWN NUMBERS AT ITS OWN ARITY OBJECT BY OBJECT | "
+         "SEAM-SPANNING ",
+         ("sec2_seam", [sec[a]["seam_spanning"] for a in A_]),
+         ", OPENING NO PAIR INSIDE A SECTOR ",
+         ("sec2_within_free", [sec[a]["within_sector_free"] for a in A_]),
+         ", AND OPENING NO PAIR AND DOUBLING NOTHING ",
+         ("sec2_obstruction_free",
+          [sec[a]["obstruction_free"] for a in A_]), " AT a=",
+         ("arities", A_),
+         " | THE THEOREM'S HYPOTHESIS IS THE COMPLEMENT OF THE MAXIMUM CUT "
+         "OF THE COMPLETE GRAPH ON a VERTICES AND IT READS ",
+         ("sec2_forced_inside",
+          [sec[a]["forced_inside_bound"] for a in A_]),
+         ": AT TWO ACTORS IT IS ZERO, EVERY SEAM-SPANNING EVENT IS EXACTLY "
+         "ONE CROSS PAIR AND NOTHING ELSE, AND THE CONFIGURATION THE PARENT "
+         "STAMPED A CONTROL BECAUSE NO GROUP OF ITS OWN ARITY COULD PRODUCE "
+         "IT IS PRODUCED BY EVERY ONE OF THEM>"],
+
+        ["ARITY-ADDED-ASSUMPTIONS-WOULD-SELECT-a-EQUALS-q-AND-PRESENT-"
+         "ISP-DOES-NOT<", ("n_principles", len(pr["admits"])),
+         " CANDIDATE PRINCIPLES, NONE OF THEM PRE-REGISTERED ANYWHERE IN THE "
+         "CORPUS AND ALL OF THEM IMPLICIT IN A CONSTRUCTOR, ARE EVALUATED AT "
+         "ALL ", ("n_candidate_sizes", len(pr["rows"])),
+         " CANDIDATE EVENT SIZES: ",
+         ("n_selectors", len(pr["unique_selectors"])),
+         " OF THEM ADMIT THE PARENT'S ARITY AND NO OTHER NONTRIVIAL ONE | "
+         "THE MECHANISM IS THE ARENA'S OWN SUBGROUP LATTICE, WHOSE ORDERS "
+         "ARE ", ("subgroup_orders",
+                  [o for o, _c in menu["subgroup_orders"]]),
+         ", SO AN EVENT THAT IS A COSET HAS ONE OF EXACTLY THOSE ORDERS AND "
+         "THE ONLY NONTRIVIAL CHOICE IS THE FIELD ORDER | THE LICENSED FORM "
+         "IS A "
+         "CONDITIONAL AND THE ASSUMPTIONS DO THE SELECTING: ",
+         ("conditional_selection", tr["conditional_selection"]),
+         " | a=q IS THEREFORE NOT AN INDEPENDENT DECLARATION AT THIS ARENA, "
+         "AND NOTHING MEASURED HERE SELECTS IT WITHOUT THE ARENA>"],
+
+        ["SCOPE=THE ARITIES a=",
+         ("built_entire_arities",
+          [a for a in A_ if sub[a]["idle_actors"] and a != ar["windowed_arity"]]),
+         " ARE BUILT ENTIRE AT n=", ("arena_n", ar["n"]),
+         " -- EVERY GROUPING, THE WHOLE ACTOR LATTICE, THE COMPLETE EVENT "
+         "UNIVERSE FOR THE FLOOR; a=",
+         ("windowed_arity", ar["windowed_arity"]),
+         " A DECLARED WINDOW WHOSE MULTI-ROUND CORPUS OF ",
+         ("windowed_corpus_size",
+          [r for r in rec["corpus"]
+           if r["a"] == ar["windowed_arity"]][0].get("cx_size", 0)),
+         " HISTORIES EXCEEDS THE DECLARED CAP OF ",
+         ("corpus_cap", ar["corpus_cap"]),
+         " AND IS NOT REACHED | NO LAW VALUE AT n=", ("arena_n", ar["n"]),
+         " IS IMPORTED AS A RESULT: "
+         "THE PARENT VALUES ARE RE-DERIVED BY THIS UNIT'S OWN CONSTRUCTOR "
+         "AND COMPARED WITH ANCHORED READS, AND THE SEC-2 FREE-ITEM COUNTS "
+         "THEMSELVES ARE THAT UNIT'S MEASUREMENT AND ARE NOT RECOMPUTED | "
+         "THE LADDER IS SEARCHED TO R<=",
+         ("ladder_bound", ar["ladder_search_bound"]),
+         " AND EVERY ACHIEVABLE-BUDGET SET IS A SET WITHIN THAT BOUND | AT "
+         "FIXED n, q AND L THE CONSTANT READING IS SIMULTANEOUSLY THE "
+         "n-ONLY, THE q-ONLY AND THE L-ONLY ONE, SO NEEDS-3 HERE MEANS "
+         "NOT-CARRIED-BY-a AND NAMES NO OTHER CARRIER | MEASURE=COUNTING-"
+         "ONLY (E-24) | LANGUAGE=LAW-IN-A, NEEDS-3 AND BREAKS NAME THE "
+         "TRANSPORT OF A PUBLISHED LAW ALONG THE EVENT-SIZE AXIS AND NOTHING "
+         "ELSE"],
+    ):
+        t, f = build_segment(chunks)
+        out.append(t)
+        allf.append(f)
+    return (out, allf) if with_fields else out
 
 
-def head_audit(rec, segments):
+# THE COMPARATOR'S OWN ARITHMETIC.  Every head field is re-derived HERE from
+# the receipt's ROW LISTS, by a route that does not read the summary key the
+# builder read wherever a row list can supply the value instead.  A field
+# whose name is not in this table is a stray key and is a finding, so the
+# scan is TOTAL by construction rather than by inspection.
+HEAD_RESOLVERS = {
+    "arena_n": lambda r: r["arena"]["q"] ** 2,
+    "arena_q": lambda r: r["arena"]["q"],
+    "arena_parallel_classes": lambda r: r["arena"]["q"] + 1,
+    "arena_L": lambda r: r["arena"]["L"],
+    "arena_cells": lambda r: r["arena"]["n"] * r["arena"]["L"],
+    "arities": lambda r: [row["a"] for row in r["substrate"]],
+    "n_arities": lambda r: len(r["substrate"]),
+    "windowed_arity": lambda r: r["arena"]["windowed_arity"],
+    "corpus_cap": lambda r: r["arena"]["corpus_cap"],
+    "ladder_bound": lambda r: r["arena"]["ladder_search_bound"],
+    "fidelity_agree": lambda r: sum(
+        1 for k, v in r["fidelity"]["measured"].items()
+        if r["fidelity"]["anchored"].get(k) == v),
+    "fidelity_rows": lambda r: len(r["fidelity"]["anchored"]),
+    "n_statements": lambda r: len(r["transport"]["statements"]),
+    "n_numerals": lambda r: len(r["transport"]["numerals"]),
+    "stmt_law_in_a": lambda r: sum(
+        1 for row in r["transport"]["statements"]
+        if not row["evidence"].get("fails_at")),
+    "stmt_breaks": lambda r: sum(
+        1 for row in r["transport"]["statements"]
+        if row["evidence"].get("fails_at")),
+    "num_law_in_a": lambda r: _own_numeral_words(r)["LAW-IN-A"],
+    "num_needs_3": lambda r: _own_numeral_words(r)["NEEDS-3"],
+    "num_breaks": lambda r: _own_numeral_words(r)["BREAKS"],
+    "closed_form_moves": lambda r: sum(
+        1 for row in r["transport"]["numerals"]
+        if row["under_alternative_rules"][ALT_RULES[-1][0]] != row["word"]),
+    "cf_law_in_a": lambda r: _cf_words(r)["LAW-IN-A"],
+    "cf_needs_3": lambda r: _cf_words(r)["NEEDS-3"],
+    "cf_breaks": lambda r: _cf_words(r)["BREAKS"],
+    "scope_qualifier": lambda r: r["transport"]["numerals"][0]["scope"],
+    "extension_arities": lambda r: [row["a"] for row in r["substrate"]
+                                    if row["idle_actors"]],
+    "substrate_groupings": lambda r: [row["groupings"] for row in r["substrate"]],
+    "substrate_idle": lambda r: [row["idle_actors"] for row in r["substrate"]],
+    "substrate_max_weight": lambda r: [row["max_weight"]
+                                       for row in r["substrate"]],
+    "substrate_saturating_budget": lambda r: [row["saturating_LITERAL"]
+                                              for row in r["substrate"]],
+    "substrate_saturating_maximum": lambda r: [row["saturating_MAXIMAL"]
+                                               for row in r["substrate"]],
+    "readings_differ_at": lambda r: [
+        row["a"] for row in r["substrate"]
+        if row["saturating_LITERAL"] != row["saturating_MAXIMAL"]],
+    "readings_part_company_at": lambda r: [
+        row["a"] for row in r["substrate"]
+        if row["saturating_LITERAL"]
+        and row["saturating_LITERAL"] != row["saturating_MAXIMAL"]],
+    "cover_class_nonempty_at": lambda r: [row["a"] for row in r["corpus"]
+                                          if row["C1_strict_literal"]],
+    "naming_full_prefixes": lambda r: r["law1_naming"]["full_group_prefixes"],
+    "naming_window_prefixes": lambda r: r["law1_naming"]["window_prefixes"],
+    "naming_mismatches": lambda r: r["law1_naming"]["mismatches"],
+    "naming_positives_group": lambda r: r["law1_naming"]["positives_group_leg"],
+    "naming_negatives_window": lambda r: (
+        r["law1_naming"]["window_prefixes"] * r["law1_naming"]["window_size"]
+        - r["law1_naming"]["positives_window_leg"]),
+    "forcing_non_unique": lambda r: [row["single_round"]["histories"]
+                                     - row["single_round"]["unique"]
+                                     for row in r["law5_forcing"]["rows"]],
+    "forcing_unique": lambda r: [row["single_round"]["unique"]
+                                 for row in r["law5_forcing"]["rows"]],
+    "forcing_histories": lambda r: [row["single_round"]["histories"]
+                                    for row in r["law5_forcing"]["rows"]],
+    "crystal_schedule": lambda r: [row["schedule_time_events"]
+                                   for row in r["law2_crystallization"]["rows"]],
+    "crystal_floor": lambda r: [row["attained_floor"]
+                                for row in r["law2_crystallization"]["rows"]],
+    "crystal_offset": lambda r: [row["schedule_time_events"]
+                                 - row["attained_floor"]
+                                 for row in r["law2_crystallization"]["rows"]],
+    "schedule_pinned_at": lambda r: [row["a"] for row in
+                                     r["law2_certificates"]["schedule"]
+                                     if row["pool_value"] == row["floor"]],
+    "schedule_searched_at": lambda r: [row["a"] for row in
+                                       r["law2_certificates"]["schedule"]
+                                       if row["pool_value"] != row["floor"]],
+    "sharpened_hits": lambda r: sum(
+        1 for row in r["law2_crystallization"]["rows"]
+        if row["sharpened_floor"] == row["attained_floor"]),
+    "counting_hits": lambda r: sum(
+        1 for row in r["law2_crystallization"]["rows"]
+        if row["counting_bound"] == row["attained_floor"]),
+    "closed_form_in_a_hits": lambda r: len(
+        r["law2_crystallization"]["closed_form_in_a_agrees"]),
+    "menu_survivors": lambda r: r["law3_menu"]["survivors"],
+    "menu_lattice": lambda r: r["law3_menu"]["lattice"],
+    "menu_cosets": lambda r: r["law3_menu"]["coset_partitions"],
+    "ladder_rows": lambda r: len(r["law4_ladder"]["rows"]),
+    "ladder_live": lambda r: sum(1 for row in r["law4_ladder"]["rows"]
+                                 if row["achievable_budgets"]),
+    "first_rung_rows": lambda r: sum(
+        1 for row in r["law4_ladder"]["rows"]
+        if row["achievable_budgets"]
+        and min(row["achievable_budgets"]) == row["a"]),
+    "mod_a_rows": lambda r: sum(
+        1 for row in r["law4_ladder"]["rows"]
+        if row["achievable_budgets"]
+        and min(row["achievable_budgets"]) == row["a"]
+        and row["a"] != r["arena"]["L"]),
+    "theorem_pairs": lambda r: r["law4_ladder"]["theorem_pairs_holding"],
+    "ladder_modulus": lambda r: [row["predicted_modulus"]
+                                 for row in r["law4_ladder"]["rows"]
+                                 if row["reading"] == "LITERAL"
+                                 and row["saturating"]],
+    "ladder_budget_arities": lambda r: [row["a"]
+                                        for row in r["law4_ladder"]["rows"]
+                                        if row["reading"] == "LITERAL"
+                                        and row["saturating"]],
+    "union_carriers": lambda r: r["law6_sec2"][
+        "arrangement_closed_form"]["carriers"],
+    "union_pairs": lambda r: r["law6_sec2"][
+        "arrangement_closed_form"]["realised_pairs"],
+    "sec2_seam": lambda r: [row["seam_spanning"]
+                            for row in r["law6_sec2"]["rows"]],
+    "sec2_within_free": lambda r: [row["seam_spanning"]
+                                   - row["opens_a_pair_inside_a_sector"]
+                                   for row in r["law6_sec2"]["rows"]],
+    "sec2_obstruction_free": lambda r: [row["obstruction_free"]
+                                        for row in r["law6_sec2"]["rows"]],
+    "sec2_forced_inside": lambda r: [math.comb(row["a"], 2)
+                                     - row["max_cut_of_the_complete_graph"]
+                                     for row in r["law6_sec2"]["rows"]],
+    "n_principles": lambda r: len(r["principles"]["admits"]),
+    "n_candidate_sizes": lambda r: len(r["principles"]["rows"]),
+    "n_selectors": lambda r: len(r["principles"]["unique_selectors"]),
+    "subgroup_orders": lambda r: sorted({o for o, _c in
+                                         r["law3_menu"]["subgroup_orders"]}),
+    "conditional_selection": lambda r: r["transport"]["conditional_selection"],
+    "built_entire_arities": lambda r: [
+        row["a"] for row in r["substrate"]
+        if row["idle_actors"] and row["a"] != r["arena"]["windowed_arity"]],
+    "windowed_corpus_size": lambda r: [
+        row for row in r["corpus"]
+        if row["a"] == r["arena"]["windowed_arity"]][0].get("cx_size", 0),
+}
+
+
+def _own_numeral_words(rec):
+    """the numeral slot's words, re-decided from parent_value and the
+    per-arity measured list by this comparator's own arithmetic."""
+    own = Counter({w: 0 for w in WORDS})
+    for row in rec["transport"]["numerals"]:
+        pv = row["parent_value"]
+        ms = row["evidence"].get("measured", [])
+        if not ms:
+            own["BREAKS"] += 1
+            continue
+        lit = all(v == pv for _a, v in ms)
+        ta = all(v == math.comb(aa, 2) + pv - math.comb(PARENT_ARITY, 2)
+                 for aa, v in ms)
+        own["LAW-IN-A" if ta else ("NEEDS-3" if lit else "BREAKS")] += 1
+    return own
+
+
+def _cf_words(rec):
+    """the same slot re-decided under this paper's section-9 closed form,
+    again by the comparator's own arithmetic and not by reading the
+    builder's tally."""
+    own = Counter({w: 0 for w in WORDS})
+    base = math.comb(PARENT_ARITY, 2) - (PARENT_ARITY * PARENT_ARITY) // 4
+    for row in rec["transport"]["numerals"]:
+        pv = row["parent_value"]
+        ms = row["evidence"].get("measured", [])
+        if not ms:
+            own["BREAKS"] += 1
+            continue
+        lit = all(v == pv for _a, v in ms)
+        ta = all(v == math.comb(aa, 2) - (aa * aa) // 4 + pv - base
+                 for aa, v in ms)
+        own["LAW-IN-A" if ta else ("NEEDS-3" if lit else "BREAKS")] += 1
+    return own
+
+
+# FIELDS THE HEAD MAY NOT LOSE.  A positional scan binds the numerals that
+# are THERE; deleting a scope word or a verdict tally moves no remaining
+# position, so the fields that carry this unit's licence are named and their
+# presence is required.
+HEAD_REQUIRED = ("scope_qualifier", "conditional_selection", "num_law_in_a",
+                 "cf_law_in_a", "sec2_obstruction_free", "crystal_offset",
+                 "mod_a_rows", "first_rung_rows", "extension_arities")
+
+
+def head_audit(rec, segments, fields):
     """THE COMPARATOR (S-1, by construction).
 
-    It shares no code, no inputs and no typed literal with the builder: it
-    does not rebuild the prose and it never calls the builder's helpers.  It
-    PARSES the emitted head and checks every field against a value it derives
-    for itself from the receipt's own ROW LISTS -- recomputing the counts,
-    the minima and the transport words by its own arithmetic rather than
-    reading the summary keys the builder read.  A head whose numerals were
-    forged, whose verdict words were swapped, or whose segment count moved,
-    fails here."""
+    It shares no code and no typed literal with the builder, and it is
+    POSITIONAL and TOTAL.  Every numeral standing in the head is matched, in
+    order, against the field declared at that position, and every field's
+    value is re-derived from the receipt's own row lists by the arithmetic
+    above -- not read back off the summary key the builder read.  A numeral
+    with no declared field, a field with no resolver, a value that disagrees
+    with its own recomputation, a swapped pair of positions, or a deleted
+    scope word all fail here.  The membership test the delivered comparator
+    ran could not see any of them, because every forged value was SOME value
+    the run had measured SOMEWHERE."""
     findings = []
     blob = " ".join(segments)
     # ONE declared structural exemption, and it must be used: an engraving id
     # is a name, not a measurement.  If the head ever stops carrying one the
     # exemption becomes a hole, so its absence is itself a finding.
-    scanned, n_eng = re.subn(r"\bE-\d+\b", " ", blob)
+    _s, n_eng = re.subn(r"\bE-\d+\b", " ", blob)
     if not n_eng:
         findings.append({"declared_exemption_never_used": "engraving id"})
-    seen = [int(t.replace(",", ""))
-            for t in re.findall(r"(?<![\w.])(\d[\d,]*)(?![\w.])", scanned)]
+    # THE SECOND DECLARED EXEMPTION: an outcome WORD is a name this unit
+    # registered, not a measurement, and one of them spells a digit.  It is
+    # removed by declaration before the positional scan and its absence
+    # would itself be a finding.
+    if not any(w in blob for w in WORDS):
+        findings.append({"declared_exemption_never_used": "an outcome word"})
+    # THE THIRD DECLARED EXEMPTION: a PARENT UNIT'S NAME spells a digit.
+    _s2, n_par = re.subn(r"\bSEC-\d+\b", " ", blob)
+    if not n_par:
+        findings.append({"declared_exemption_never_used": "a parent unit id"})
 
-    lic = set()
-    ar = rec["arena"]
-    lic |= {ar["n"], ar["q"], ar["L"], ar["cells"], ar["parallel_classes"],
-            ar["windowed_arity"], ar["corpus_cap"], ar["ladder_search_bound"],
-            ar["characteristic"]}
-    lic |= set(ar["arities"])
-    for row in rec["substrate"]:
-        lic |= {row["a"], row["groupings"], row["idle_actors"],
-                row["max_weight"], row["saturating_LITERAL"],
-                row["saturating_MAXIMAL"], row["blocks_per_round"]}
-    for row in rec["corpus"]:
-        lic |= {row["C1_strict_literal"], row["multi_histories"],
-                row["single_round_histories"], row.get("cx_size", 0)}
-    for row in rec["law2_crystallization"]["rows"]:
-        lic |= {row["schedule_time_events"], row["attained_floor"],
-                row["offset"], row["sharpened_floor"], row["counting_bound"]}
-    for row in rec["law4_ladder"]["rows"]:
-        lic |= {row["predicted_modulus"] or 0, row["saturating"]}
-    for row in rec["law5_forcing"]["rows"]:
-        for k in ("single_round", "multi", "driven_window"):
-            lic |= {row[k]["histories"], row[k]["unique"],
-                    row[k]["non_unique"]}
-    for row in rec["law6_sec2"]["rows"]:
-        lic |= {row["seam_spanning"], row["within_sector_free"],
-                row["obstruction_free"], row["forced_inside_bound"],
-                row["groups"], row["max_cut_of_the_complete_graph"]}
-    lic |= {rec["law6_sec2"]["union_carriers"],
-            rec["law6_sec2"]["union_realised_pairs"]}
-    lic |= {rec["law1_naming"]["full_group_prefixes"],
-            rec["law1_naming"]["window_prefixes"],
-            rec["law1_naming"]["mismatches"],
-            rec["law1_naming"]["positives_group_leg"],
-            rec["law1_naming"]["negatives_window_leg"]}
-    lic |= {rec["law3_menu"]["survivors"], rec["law3_menu"]["lattice"],
-            rec["law3_menu"]["coset_partitions"]}
-    lic |= {o for o, _c in rec["law3_menu"]["subgroup_orders"]}
-    lic |= {rec["fidelity"]["agree"], rec["fidelity"]["rows"]}
-    lic |= {len(rec["principles"]["rows"]),
-            len(rec["principles"]["unique_selectors"]),
-            len(rec["principles"]["admits"])}
-    lic |= {len(rec["transport"]["statements"]),
-            len(rec["transport"]["numerals"])}
-    lic |= set(Counter(r["word"] for r in
-                       rec["transport"]["statements"]).values())
-    lic |= set(Counter(r["word"] for r in
-                       rec["transport"]["numerals"]).values())
-    lic |= {0, len(rec["arena"]["arities"])}
-    lic |= {sum(1 for r in rec["law4_ladder"]["rows"]
-                if r["achievable_budgets"]),
-            sum(1 for r in rec["law4_ladder"]["rows"] if r["mod_a_appears"]),
-            len(rec["law4_ladder"]["rows"])}
-    lic |= {sum(1 for r in rec["law2_crystallization"]["rows"]
-                if r["sharpened_floor"] == r["attained_floor"]),
-            sum(1 for r in rec["law2_crystallization"]["rows"]
-                if r["counting_bound"] == r["attained_floor"])}
-    unlicensed = sorted({v for v in seen if v not in lic})
-    if unlicensed:
-        findings.append({"unlicensed_numerals_in_the_head": unlicensed})
+    total = 0
+    for i, (text, flds) in enumerate(zip(segments, fields)):
+        scanned = re.sub(r"\bE-\d+\b", " ", text)
+        scanned = re.sub(r"\bSEC-\d+\b", " ", scanned)
+        for w in WORDS:
+            scanned = scanned.replace(w, " ")
+        seen = [int(t.replace(",", "")) for t in
+                re.findall(r"(?<![\w.])(\d[\d,]*)(?!\.\d)(?!\w)", scanned)]
+        expect = []
+        for (k, v) in flds:
+            if k not in HEAD_RESOLVERS:
+                findings.append({"segment": i, "stray_head_field": k})
+                continue
+            try:
+                own = HEAD_RESOLVERS[k](rec)
+            except Exception as exc:                       # pragma: no cover
+                findings.append({"segment": i, "field": k,
+                                 "resolver_failed": str(exc)[:60]})
+                continue
+            if isinstance(v, str):
+                if own != v:
+                    findings.append({"segment": i, "field": k,
+                                     "text_field_disagrees": [own[:40],
+                                                              v[:40]]})
+                if v not in text:
+                    findings.append({"segment": i, "field": k,
+                                     "text_field_absent_from_the_segment":
+                                         v[:40]})
+                if re.search(r"\d", v):
+                    findings.append({"segment": i, "field": k,
+                                     "text_field_carries_a_numeral": v[:40]})
+                continue
+            same = (list(own) == list(v) if isinstance(v, (list, tuple))
+                    else own == v)
+            if not same:
+                findings.append({"segment": i, "field": k,
+                                 "recomputed": own, "rendered": v})
+            expect.extend(v if isinstance(v, (list, tuple)) else [v])
+        total += len(seen)
+        if seen != expect:
+            findings.append({"segment": i,
+                             "positional_mismatch": True,
+                             "numerals_in_the_segment": seen[:40],
+                             "declared_fields_in_order": expect[:40]})
+
+    present = {k for f in fields for (k, _v) in f}
+    missing = [k for k in HEAD_REQUIRED if k not in present]
+    if missing:
+        findings.append({"required_head_fields_missing": missing})
 
     # the verdict words, re-decided by this comparator's own arithmetic
-    own_stmt, own_num = Counter(), Counter()
+    own_stmt = Counter()
     for row in rec["transport"]["statements"]:
         ev = row["evidence"]
         own_stmt["BREAKS" if ev.get("fails_at") else "LAW-IN-A"] += 1
-    for row in rec["transport"]["numerals"]:
-        pv = row["parent_value"]
-        ms = row["evidence"].get("measured", [])
-        if not ms:
-            own_num["BREAKS"] += 1
-            continue
-        lit = all(v == pv for _a, v in ms)
-        ta = all(v == math.comb(aa, 2) + pv - math.comb(PARENT_ARITY, 2)
-                 for aa, v in ms)
-        own_num["LAW-IN-A" if ta else ("NEEDS-3" if lit else "BREAKS")] += 1
+    own_num = _own_numeral_words(rec)
     built_stmt = Counter(r["word"] for r in rec["transport"]["statements"])
     built_num = Counter(r["word"] for r in rec["transport"]["numerals"])
     if own_stmt != built_stmt:
         findings.append({"statement_words_disagree":
                          [dict(own_stmt), dict(built_stmt)]})
-    if own_num != built_num:
+    if dict(own_num) != {w: built_num.get(w, 0) for w in WORDS}:
         findings.append({"numeral_words_disagree":
                          [dict(own_num), dict(built_num)]})
-    for w, c in own_num.items():
-        pat = r"%d %s" % (c, w)
-        if w != "LAW-IN-A" and c and pat not in blob.replace(",", ""):
-            pass
+    # THE DISCARDED LEG, RESTORED.  The delivered comparator built exactly
+    # this pattern and then executed `pass`, so the rendered "<count> <word>"
+    # strings were bound to nothing.  Every word tally, LAW-IN-A included,
+    # must now stand in the head beside its own recomputed count.
+    flat = blob.replace(",", "")
+    for tally in (own_num, _cf_words(rec)):
+        for w, c in tally.items():
+            if "%d %s" % (c, w) not in flat:
+                findings.append({"word_tally_not_rendered_beside_its_count":
+                                 [w, c]})
     # the segment inventory, derived
     laws = {r["law"] for r in rec["transport"]["statements"]}
     if len(segments) != len(laws) + 3:
@@ -3279,16 +4524,15 @@ def head_audit(rec, segments):
     if not words_in_head <= words_used:
         findings.append({"head_uses_a_word_no_row_earned":
                          sorted(words_in_head - words_used)})
-    return {"unlicensed": unlicensed, "findings": findings,
-            "engraving_ids_exempted": n_eng,
-            "numerals_in_the_head": len(seen),
-            "distinct_numerals_licensed": len(lic),
+    return {"findings": findings, "engraving_ids_exempted": n_eng,
+            "numerals_in_the_head": total,
+            "fields_declared": sum(len(f) for f in fields),
+            "required_fields": len(HEAD_REQUIRED),
+            "resolvers": len(HEAD_RESOLVERS),
+            "positionally_bound": total,
             "statement_words_recomputed": dict(own_stmt),
             "numeral_words_recomputed": dict(own_num)}
 
-
-# ---------------------------------------------------------------------------
-# THE PAPER INSTRUMENT
 # ---------------------------------------------------------------------------
 
 COVERAGE_STRIPS = [
@@ -3320,7 +4564,7 @@ def receipt_numbers(rec):
         elif isinstance(o, int):
             out.add(o)
         elif isinstance(o, str):
-            for t in re.findall(r"(?<![\w.])(\d[\d,]*)(?![\w.])", o):
+            for t in re.findall(r"(?<![\w.])(\d[\d,]*)(?!\.\d)(?!\w)", o):
                 out.add(int(t.replace(",", "")))
     walk(rec)
     return out
@@ -3334,8 +4578,13 @@ def paper_coverage(rec, text):
         if n:
             used.append({"pattern": pat, "reason": why, "hits": n})
         stripped = re.sub(pat, " ", stripped)
+    # THE PERIOD BLIND SPOT, CLOSED HERE TOO.  The delivered guard refused
+    # every numeral that ends a sentence -- nineteen of them in this paper,
+    # four of them load-bearing, one of them the lead's own closed form --
+    # so a corrupted sentence-final value shipped at every gate green.
     nums = [int(t.replace(",", ""))
-            for t in re.findall(r"(?<![\w.])(\d[\d,]*)(?![\w.])", stripped)]
+            for t in re.findall(r"(?<![\w.])(\d[\d,]*)(?!\.\d)(?!\w)",
+                                stripped)]
     have = receipt_numbers(rec)
     bad = sorted({v for v in nums if v not in have})
     return {"numerals_scanned": len(nums), "distinct": len(set(nums)),
@@ -3353,15 +4602,22 @@ def paper_polarity(rec, text):
     lad = rec["law4_ladder"]["rows"]
     cry = {r["a"]: r for r in rec["law2_crystallization"]["rows"]}
     t = canon(" ".join(text.split("```")[0::2])).lower()
+    pr = rec["principles"]
     rows = [
         ("the obstruction is empty at the smallest arity",
-         sec[2]["obstruction_free"] > 0,
+         sec[min(sec)]["obstruction_free"] > 0,
          r"at two actors every one of the",
          r"at two actors none of the"),
-        ("mod-a never appears",
+        ("mod-a appears at no row where the event size and the link count "
+         "differ",
          sum(1 for r in lad if r["mod_a_appears"]) == 0,
-         r"mod-a never appears",
-         r"mod-a appears"),
+         r"mod-a appears at no row",
+         r"mod-a appears at some row"),
+        ("the first rung is the event size at the parent's arity, where the "
+         "event size and the link count coincide",
+         sum(1 for r in lad if r["first_rung_is_the_event_size"]) > 0,
+         r"the first rung is the event size at",
+         r"the first rung is never the event size"),
         ("the offset is not constant",
          len({cry[a]["offset"] for a in rec["arena"]["arities"]}) > 1,
          r"the offset is not constant",
@@ -3371,21 +4627,89 @@ def paper_polarity(rec, text):
              for a in rec["arena"]["arities"]),
          r"reproduces the measurement at every arity",
          r"fails at some arity"),
+        ("the selecting principles ADMIT the parent's arity",
+         len(pr["unique_selectors"]) > 0,
+         r"candidate principles admit the parent's arity",
+         r"principles fail to admit"),
+        ("the closed form moves exactly one word",
+         rec["transport"]["closed_form_moves"] > 0,
+         r"returns law-in-a on that row",
+         r"moves no word"),
     ]
+    # A DIRECTION IS TWO-SIDED.  The delivered leg required the TRUE
+    # direction to be present and flagged the false one only where the truth
+    # was false; so a paper that said the true thing in one sentence and its
+    # inversion three lines below passed.  Both halves are now required at
+    # once: the true direction present AND the false direction absent.
     bad = []
     for (name, truth, pos, neg) in rows:
         has_pos = re.search(pos, t) is not None
         has_neg = re.search(neg, t) is not None
         if truth and not has_pos:
             bad.append({"claim": name, "missing_the_true_direction": pos})
-        if not truth and has_pos and not has_neg:
+        if truth and has_neg:
+            bad.append({"claim": name, "carries_the_false_direction": neg})
+        if not truth and has_pos:
             bad.append({"claim": name, "asserts_a_false_direction": pos})
+        if not truth and not has_neg:
+            bad.append({"claim": name, "missing_the_true_direction": neg})
     return {"claims": len(rows), "violations": bad}
 
 
-PARAPHRASE_FLOOR = 5      # the routed standard: at least five plants
+def paper_spelled(rec, text, RR, claims):
+    """THE SPELLED-NUMERAL GATE.
+
+    Both delivered scanners matched DIGITS.  Every spelled cardinal in the
+    prose was therefore outside every gate, and a spelled falsehood -- 'it is
+    feasible at three arities' against a sealed feasible of four, 'three of
+    the five principles fail to admit' against a measurement that says they
+    admit -- shipped with thirty-four gates green.  This gate scans the same
+    prose for the same numerals in the other alphabet, and it does it four
+    ways:
+
+      SPELLED-UNIVERSE  every spelled cardinal in a sentence that selects a
+                        referent universe must lie in that universe, exactly
+                        as a written one must;
+      SPELLED-PAIR      every 'A of B' with a spelled side must be a pair the
+                        run measured, with reflexive pairs refused as they
+                        are on the digit leg;
+      SPELLED-CLAIM     every sentence this run RENDERS with a spelled
+                        numeral is required at its exact occurrence count,
+                        the spelled word coming from the measurement through
+                        the declared table and never typed;
+      SPELLED-INVERSION each such claim declares the form its own inversion
+                        would take, and that form must be absent.
+    """
+    ref = RR.gate(text, COVERAGE_STRIPS, spelled=True)
+    prose = canon(" ".join(text.split("```")[0::2])).casefold()
+    claim_bad, inv_bad = [], []
+    for (rendered, inverted) in claims:
+        got = prose.count(canon(rendered).casefold())
+        if got != 1:
+            claim_bad.append({"claim": rendered[:70], "occurrences": got})
+        if re.search(inverted, prose):
+            inv_bad.append({"claim": rendered[:70], "inversion": inverted})
+    words = sorted({w for w in SPELLED_SCANNED
+                    if re.search(r"\b%s\b" % w, prose)})
+    return {"spelled_sentences_checked": ref["sentences_checked"],
+            "spelled_pairs_checked": ref["pairs_checked"],
+            "spelled_cardinals_present": words,
+            "spelled_claims": len(claims),
+            "declared_exclusions": SPELLED_EXCLUDED,
+            "universe_violations": ref["violations"],
+            "claim_violations": claim_bad,
+            "inversion_violations": inv_bad}
 
 
+PARAPHRASE_FLOOR = 15     # the routed standard, raised by this repair
+
+
+# THE PLANT SET.  Six were written by this unit; six more were written
+# against it by the effectus seat and every one of them walked through all
+# seven delivered walls at exit 0; six are written here, by this repair, in
+# voices none of the first twelve uses.  All eighteen must die, and each is
+# run again with an inert negating clause appended, because appending one
+# bare "not" to four of the unit's own six plants used to kill the catch.
 PARAPHRASE_PLANTS = [
     ("P-NINE-LEAVES-NO-CHOICE",
      "Nine actors leave no other choice of arity open."),
@@ -3400,14 +4724,65 @@ PARAPHRASE_PLANTS = [
      "establishes its arity."),
     ("P-ISP-AT-TWO",
      "In ISP at two actors every seam-spanning group is free of charge."),
+    # the effectus seat's six
+    ("K2-S1-BLOCK-SIZE",
+     "Only one block size lets every actor take part in every round, and "
+     "that is the size the corpus already uses."),
+    ("K2-S2-NO-RIVAL",
+     "The event size at which the grammar closes is three, and the arena "
+     "admits no rival."),
+    ("K2-G1-BOOKKEEPING",
+     "A count that reads the same at every event size is descriptive "
+     "bookkeeping, carrying no content an experiment could reach."),
+    ("K2-G2-DESCRIPTION",
+     "The admissible-partition count is inert under the sweep, so it belongs "
+     "to the description and not to the world."),
+    ("K2-F1-FAMILY-RUNG",
+     "Across the ISP family the ladder's first rung is always the number of "
+     "declared link directions."),
+    ("K2-F2-FAMILY-OFFSET",
+     "Any ISP model whatever gives one redundant event between the schedule "
+     "and the floor precisely when the event size divides the actor count."),
+    # six written by this repair, in voices none of the twelve above uses
+    ("R-GRAMMAR-CLOSES",
+     "The grammar closes on a division event of three actors and on nothing "
+     "wider, which is why the corpus never had to choose."),
+    ("R-LATTICE-DICTATES",
+     "The subgroup lattice dictates how many actors a division event may "
+     "carry."),
+    ("R-INERT-IS-REAL",
+     "Quantities that survive the whole sweep untouched are the real content "
+     "of the theory; the rest is presentation."),
+    ("R-RECORDS-SUFFICE",
+     "Records generated at the parent's arity suffice to recover the "
+     "arrangement, and that settles what the event size had to be."),
+    ("R-FOUR-ACTOR-ISP",
+     "At four actors the committed theory keeps its covering rule and loses "
+     "nothing else."),
+    ("R-ANY-ARENA-RUNG",
+     "In any arena the first rung of the weld ladder is the declared link "
+     "count, so the ladder predicts the same modulus for every ISP model."),
 ]
 
 
 def build_walls():
-    """FOUR READING WALLS.  Every banned form is a voice-normalised regex;
-    every wall carries a POSITIVE leg the paper must satisfy; and the
-    controls are phrased as a paper would phrase them, not derived from the
-    pattern they must trip (the TPL-2 item)."""
+    """EIGHT READING WALLS, EVERY ONE WITH A LIVE LICENCE LEG.
+
+    Three of the delivered seven declared no subject and no policed form, so
+    their licence legs returned immediately and they were pure pattern lists
+    -- and a pattern list bans the phrasings it was written for and nothing
+    else.  Every wall here polices a CLAIM: a sentence that names the wall's
+    subject and carries one of its policed forms nearby must also carry a
+    LICENCE, and a licence is a positive commitment to scope.  Bare
+    negations and bare hedges are refused at construction, because the
+    delivered set licensed `not`, `never`, `if`, `then` and `would`, and one
+    inert clause carrying any of them walked a breach straight through.
+
+    The eighth wall is W3, engraved after this unit's delivery: a result is
+    an ISP-family prediction only if it holds across every still-free fibre
+    or the fibre is independently selected.  This unit fixes n, q and L at
+    every row, so every measurement here is one point of a three-dimensional
+    free fibre, and a sentence that generalises past it needs the licence."""
     return [
         SemanticWall(
             "W-NO-SELECTION",
@@ -3424,22 +4799,27 @@ def build_walls():
              "The arity is therefore forced by a law of the corpus rather "
              "than by the arena.",
              "This unit proves that three is the correct event size."],
-            subject=(r"\b(?:arity|arities|event size|three actors|"
-                     r"three-actor)\b",),
+            subject=(r"\b(?:arity|arities|event size|event sizes|block "
+                     r"size|block sizes|group size|division event|three "
+                     r"actors|three-actor|actors per event)\b",),
             policed=(r"\bselect\w*", r"(?<!division-)\bforc\w+",
                      r"\bdetermin\w+",
                      r"\brequir\w+", r"\bnecessar\w+", r"\bmandat\w+",
                      r"\bdemand\w+", r"\bsettl\w+", r"\bestablish\w+",
-                     r"\bno other (?:choice|option|possibilit\w+)\b",
+                     r"\bno other (?:choice|option|size|possibilit\w+)\b",
                      r"\bmust be\b", r"\bfixed by\b", r"\bcompel\w+",
-                     r"\bdictat\w+", r"\bleaves no\b", r"\bobliged\b"),
-            licences=(r"\bconditional\b", r"\bassumptions\b",
-                      r"\bimplicit in a constructor\b", r"\bif\b",
-                      r"\bidentifiability\b", r"\bdiscriminat\w+",
-                      r"\bnothing measured\b", r"\bnot\b", r"\bnever\b",
-                      r"\bwithout the arena\b", r"\bwould\b",
-                      r"\bcandidate\b", r"\bonly if\b", r"\bthen\b",
-                      r"\bextension\b", r"\bpin asks\b")),
+                     r"\bdictat\w+", r"\bleaves no\b", r"\bobliged\b",
+                     r"\bonly one\b", r"\bthe only (?:size|choice|option)\b",
+                     r"\badmits no rival\b", r"\bno rival\b",
+                     r"\bcloses on\b", r"\bhad to be\b"),
+            licences=(r"\bassumptions\b", r"\bimplicit in a constructor\b",
+                      r"\bif\b[^.]{0,200}\bthen\b", r"\bidentifiability\b",
+                      r"\bdiscriminat\w+", r"\bnothing measured here\b",
+                      r"\bwithout the arena\b", r"\bcandidate\b",
+                      r"\bextension\b", r"\bcounting-only\b",
+                      r"\bnever registered\b", r"\bnever pre-registered\b",
+                      r"\bat this arena\b", r"\bfree declaration\b",
+                      r"\bthe pin asks\b", r"\bwithin the declared\b")),
         SemanticWall(
             "W-NO-PROBABILITY",
             [r"\b(?:probabilit|likelihood|likely|chance)\w*\b[^.]{0,40}"
@@ -3449,7 +4829,18 @@ def build_walls():
             [r"counting-only"],
             ["Most arities admit no homogeneous record, so the probability "
              "that a random arity carries one is small.",
-             "A typical event size behaves like the parent's."]),
+             "A typical event size behaves like the parent's.",
+             "On average an arity of this arena admits a covering class."],
+            subject=(r"\b(?:arity|arities|event size|event sizes|grouping"
+                     r"s?|histor(?:y|ies)|fraction)\b",),
+            policed=(r"\bprobabilit\w*", r"\blikelihood\b", r"\blikely\b",
+                     r"\bchance\b", r"\btypical\w*", r"\bon average\b",
+                     r"\bexpected value\b", r"\bat random\b",
+                     r"\brandomly\b", r"\bmost (?:arities|event sizes)\b"),
+            licences=(r"\bcounting-only\b", r"\bno measure\b",
+                      r"\bno distribution\b", r"\ba count of\b",
+                      r"\bcomplete census\b", r"\bevery grouping\b",
+                      r"\bnothing sampled\b", r"\bdeclared window\b")),
         SemanticWall(
             "W-NO-CARRIER-OVERREACH",
             [r"\b(?:the (?:numeral|value|count)s?|it) (?:is|are) "
@@ -3460,7 +4851,24 @@ def build_walls():
             [r"names no other carrier"],
             ["Because the count stands still while the event size moves, it "
              "is carried by the field order.",
-             "This unit proves the menu's numeral is q-carried."]),
+             "This unit proves the menu's numeral is q-carried.",
+             "A numeral that stands still here is carried by the field "
+             "order."],
+            subject=(r"\b(?:numerals?|values?|counts?|menu|modulus|first "
+                     r"rung|stands? still|standing still|does not move)\b",),
+            policed=(r"\bis (?:therefore )?carried by (?:the )?"
+                     r"(?:field order|q)\b",
+                     r"\bare (?:therefore )?carried by (?:the )?"
+                     r"(?:field order|q)\b",
+                     r"\bq[- ]carried\b", r"\bn[- ]carried\b",
+                     r"\bbelongs to the field order\b",
+                     r"\bthe field order carries\b"),
+            licences=(r"\bnames no other carrier\b",
+                      r"\bsimultaneously the n-only\b",
+                      r"\bnot-carried-by-a\b", r"\bat fixed n\b",
+                      r"\bthe constant reading\b",
+                      r"\bwhich of the standing coordinates\b",
+                      r"\bcannot separate\b", r"\bcoincide\b")),
         SemanticWall(
             "W-NO-RECONSTRUCTION-AS-DERIVATION",
             [r"\b(?:recover(?:able|ed|s)?|reconstruct\w*|self-consistent)\b"
@@ -3475,14 +4883,15 @@ def build_walls():
              "That the parent's arity works, and is self-consistent, selects "
              "it.",
              "The reconstruction succeeds, hence the event size is forced."],
-            subject=(r"\b(?:recover\w*|reconstruct\w*|self-consistent|"
-                     r"identifiab\w+)\b",),
+            subject=(r"\b(?:recover\w*|reconstruct\w*|reconstructible|"
+                     r"self-consistent|identifiab\w+|records generated)\b",),
             policed=(r"\bselect\w*", r"\bderiv\w+", r"\bforc\w+",
                      r"\bprov\w+", r"\bestablish\w+", r"\bsettl\w+",
-                     r"\bshow\w*\b"),
-            licences=(r"\bidentifiability\b", r"\bnot\b", r"\bnever\b",
-                      r"\bwould be\b", r"\bdifferent property\b",
-                      r"\bconditional\b")),
+                     r"\bshow\w*\b", r"\bhad to be\b", r"\bsuffice\w*\b"),
+            licences=(r"\bidentifiability\b", r"\bdiscriminat\w+",
+                      r"\bdifferent property\b",
+                      r"\bnever promoted to\b", r"\bis a weaker\b",
+                      r"\bwhich is a different\b")),
         SemanticWall(
             "W-NO-INVARIANCE-AS-GAUGE",
             [r"\b(?:a-inert|invarian\w*|unchanged)\b[^.]{0,50}"
@@ -3495,30 +4904,40 @@ def build_walls():
              "a gauge of the theory.",
              "Standing still under the sweep makes the quantity physical.",
              "The menu is therefore physically meaningless."],
-            subject=(r"\b(?:menu|invarian\w*|a-inert|unchanged|"
-                     r"stands? still|standing still|does not move)\b",),
+            subject=(r"\b(?:menu|invarian\w*|a-inert|inert|unchanged|"
+                     r"stands? still|standing still|does not move|reads the "
+                     r"same|survive the whole sweep|constant across)\b",),
             policed=(r"\bgauge\b", r"\bphysic\w*", r"\bobservable\b",
-                     r"\bmeaningless\b", r"\breal\b", r"\bontolog\w+",
-                     r"\bredundan\w+", r"\bpart of the theory\b"),
+                     r"\bmeaningless\b", r"\breal content\b", r"\bontolog\w+",
+                     r"\bredundan\w+", r"\bpart of the theory\b",
+                     r"\bdescriptive\b", r"\bbookkeep\w+",
+                     r"\bbelongs to the description\b", r"\bno content\b",
+                     r"\bcontent an experiment\b", r"\bto the world\b",
+                     r"\bpresentation\b"),
             # NOTE: a bare negation is NOT a licence here.  "The menu does
             # not move, so its value is physical" carries a negation and
             # still makes the claim; only the specific disclaimers license.
-            licences=(r"\bbefore an operational\b", r"\bno sentence\b",
-                      r"\bforbidden\b", r"\binvariance and nothing more\b",
-                      r"\bdisclosure\b", r"\bwould\b")),
+            licences=(r"\bbefore an operational\b", r"\bforbidden\b",
+                      r"\binvariance and nothing more\b", r"\bdisclosure\b",
+                      r"\ba-inert by construction\b", r"\bcounting-only\b",
+                      r"\bno sentence here promotes\b",
+                      r"\bthat promotion is\b")),
         SemanticWall(
             "W-EXTENSION-SCOPE",
             [r"\bin isp at (?:two|four|five) actors\b",
              r"\bthe theory at (?:two|four|five) actors\b"],
             [r"extensions of the committed theory"],
             ["In ISP at two actors the census reports what the theory does.",
-             "The theory at four actors keeps every law but the ladder."],
-            subject=(r"\bat (?:two|four|five) actors\b",),
+             "The theory at four actors keeps every law but the ladder.",
+             "The corpus at five actors carries the same covering class."],
+            subject=(r"\bat (?:two|four|five) actors\b",
+                     r"\b(?:two|four|five)-actor world\b"),
             policed=(r"\bisp\b", r"\bthe theory\b", r"\bthe corpus\b",
-                     r"\bthe committed\b"),
+                     r"\bthe committed\b", r"\bkeeps\b", r"\bloses\b"),
             licences=(r"\bextension\b", r"\bpacking rule\b",
-                      r"\bthis unit\b", r"\bnot\b", r"\bnever\b",
-                      r"\bdeclared\b", r"\bwould\b")),
+                      r"\bthis unit\b", r"\bwithin the declared\b",
+                      r"\bdeclared extension family\b",
+                      r"\bidle remainder\b", r"\bdeclaration\b")),
         SemanticWall(
             "W-NO-MOTIVATION-CLAIM",
             [r"\bgluing is (?:therefore )?(?:a )?free\b",
@@ -3529,7 +4948,44 @@ def build_walls():
              r"recomputed"],
             ["At two actors gluing is therefore a free event of the theory.",
              "Every crossing is motivated at two actors.",
-             "This unit measures the free items of the crossing directly."]),
+             "This unit measures the free items of the crossing directly."],
+            subject=(r"\b(?:gluing|crossing|crossings|seam-spanning|free "
+                     r"items?|motivat\w+)\b",),
+            policed=(r"\bfree\b", r"\bmotivated\b", r"\bpriced at\b",
+                     r"\bcosts nothing\b", r"\blawful\b", r"\bautonomous\b",
+                     r"\bfree of charge\b"),
+            licences=(r"that unit's measurement", r"\brequires the price\b",
+                      r"\bthe unit that owns the update rule\b",
+                      r"\bis not decided here\b", r"\bare not recomputed\b",
+                      r"\bquestion for the unit\b",
+                      r"\bthe price the unit\b", r"\bcounting-only\b",
+                      r"\bpair combinatorics\b")),
+        SemanticWall(
+            "W-NO-FAMILY-PREDICTION",
+            [r"\bacross the isp family\b",
+             r"\bany isp model\b[^.]{0,60}\b(?:gives|predicts|returns)\b",
+             r"\bat every arena\b[^.]{0,40}\b(?:the|this) (?:corpus|theory)"
+             r"\b[^.]{0,20}\bpredicts\b",
+             r"\bthe ladder predicts the same modulus for every\b"],
+            [r"one point of a"],
+            ["Across the ISP family the offset between the schedule and the "
+             "floor is one.",
+             "Any ISP model gives the same admissible-partition count.",
+             "The ladder predicts the same modulus for every ISP model."],
+            subject=(r"\b(?:the isp family|across the isp|any isp model|"
+                     r"every isp model|every arena|any arena|in general|"
+                     r"this theory|the theory|every model|whatever arena)\b",),
+            policed=(r"\bpredicts?\b", r"\balways\b", r"\bat every arena\b",
+                     r"\bin any arena\b", r"\bin general\b",
+                     r"\bwhatever\b", r"\bprecisely when\b",
+                     r"\bfor all arenas\b", r"\buniversally\b",
+                     r"\bevery still-free\b"),
+            licences=(r"\bat this arena\b", r"\bat the declared arena\b",
+                      r"\bone point of a\b", r"\bfibre\b", r"\bstill-free\b",
+                      r"\bmember-specific\b", r"\bthe declared arena\b",
+                      r"\bby a two-line proof\b", r"\bis a theorem\b",
+                      r"\bdeclared arena pairs\b", r"\bwithin the declared\b",
+                      r"\bthis unit measures\b")),
     ]
 
 
@@ -3619,10 +5075,29 @@ def register_claims(rec, CL):
           "|".join(str(v) for _a, v in r["evidence"].get("measured", [])),
           r["word"], r["scope"]] for r in rec["transport"]["numerals"]])
 
+    lad = rec["law4_ladder"]
+    cert = rec["law2_certificates"]
+    cf = rec["law6_sec2"]["arrangement_closed_form"]
+    out["T-RULES"] = CL.table(
+        "T-RULES", ("uniform a-only rule", "LAW-IN-A", "NEEDS-3", "BREAKS"),
+        [[k, v["LAW-IN-A"], v["NEEDS-3"], v["BREAKS"]]
+         for k, v in sorted(rec["transport"]["aggregate_under_each_rule"]
+                            .items())])
+    out["T-CERTIFICATES"] = CL.table(
+        "T-CERTIFICATES",
+        ("a", "searched floor", "certified floor", "schedule certificate",
+         "schedule time"),
+        [[c["a"], r["attained_floor"], c["certified_floor"],
+          sc["certificate"], sc["unrestricted"]]
+         for c, r, sc in zip(cert["floor"],
+                             rec["law2_crystallization"]["rows"],
+                             cert["schedule"])])
+
     nm = rec["law1_naming"]
     menu = rec["law3_menu"]
-    CL.claim("the five substrate counts agree with the committed anchors "
-             "%d of %d" % (rec["fidelity"]["agree"], rec["fidelity"]["rows"]))
+    CL.claim("the %s substrate counts agree with the committed anchors "
+             "%d of %d" % (SPELLED[rec["fidelity"]["rows"]],
+                           rec["fidelity"]["agree"], rec["fidelity"]["rows"]))
     CL.claim("%d prefixes are filtered against the whole symmetric group and "
              "%d against the declared window, with %d mismatches"
              % (nm["full_group_prefixes"], nm["window_prefixes"],
@@ -3630,19 +5105,100 @@ def register_claims(rec, CL):
     CL.claim("the leg-1 survivors number %d over the complete lattice of %d "
              "and they are the %d coset partitions"
              % (menu["survivors"], menu["lattice"], menu["coset_partitions"]))
-    CL.claim("the number of rows whose first rung is the event size is %d"
-             % sum(1 for r in rec["law4_ladder"]["rows"]
-                   if r["mod_a_appears"]))
+    # THE FIRST-RUNG CLAIM, WITH THE QUALIFIER THE CODE ALWAYS CARRIED AND
+    # THE PROSE NEVER DID.  Both counters are rendered, because the first is
+    # satisfied at the parent's arity by a coincidence and only the second
+    # discriminates.
+    CL.claim("the first rung is the event size at %d of the %d rows, and at "
+             "%d of the rows where the event size and the declared link "
+             "count are different numbers"
+             % (sum(1 for r in lad["rows"]
+                    if r["first_rung_is_the_event_size"]),
+                len(lad["rows"]),
+                sum(1 for r in lad["rows"] if r["mod_a_appears"])))
+    CL.claim("mod-a appears at no row where the event size and the declared "
+             "link count differ")
+    CL.claim("the modulus is nL/gcd(nL, n) = L at every arena, verified at "
+             "%d declared arena pairs" % lad["theorem_pairs_holding"])
     CL.claim("at two actors every one of the %d seam-spanning groups opens "
              "no pair inside a sector and doubles nothing"
-             % sec[2]["obstruction_free"])
+             % sec[A_[0]]["obstruction_free"])
+    # THE SENTENCES THE INSTRUMENT SEAT INVERTED IN PROSE WHILE EVERY TABLE
+    # STAYED CORRECT, NOW RENDERED FROM THE RECEIPT AND REQUIRED VERBATIM.
+    CL.claim("the census's non-unique rounds number %d, one for each "
+             "parallel class; at two, four and five actors it is %d"
+             % (frc[PARENT_ARITY]["single_round"]["non_unique"],
+                frc[A_[0]]["single_round"]["non_unique"]))
+    CL.claim("at the parent's arity the discrete partition stands alone at "
+             "%d of %d histories"
+             % (frc[PARENT_ARITY]["single_round"]["unique"],
+                frc[PARENT_ARITY]["single_round"]["histories"]))
+    CL.claim("that complement reads %s"
+             % ", ".join(str(sec[a]["forced_inside_bound"]) for a in A_[:-1])
+             + " and %d" % sec[A_[-1]]["forced_inside_bound"])
     CL.claim("%d of the %d candidate principles admit the parent's arity and "
              "no other nontrivial one"
              % (len(rec["principles"]["unique_selectors"]),
                 len(rec["principles"]["admits"])))
+    CL.claim("the certified floor agrees with the searched floor at %d of "
+             "%d arities, and at the smallest arity the nine lightest "
+             "distinct signatures cost %d against a budget of %d at four "
+             "events and %d against %d at five"
+             % (len(cert["floor"]), len(cert["floor"]),
+                cert["floor"][0]["refusals_below"][-2]["lightest_total"],
+                cert["floor"][0]["refusals_below"][-2]["budget"],
+                cert["floor"][0]["refusals_below"][-1]["lightest_total"],
+                cert["floor"][0]["refusals_below"][-1]["budget"]))
+    CL.claim("the union carries %d carriers and %d realised pairs with %d "
+             "doubled, and all three are forced by the arrangement"
+             % (cf["carriers"], cf["realised_pairs"], cf["doubled_pairs"]))
+    CL.claim("under the third rule the aggregate reads %d LAW-IN-A, %d "
+             "NEEDS-3 and %d BREAKS, so exactly %d word moves"
+             % (rec["transport"]["aggregate_under_each_rule"][
+                    ALT_RULES[-1][0]]["LAW-IN-A"],
+                rec["transport"]["aggregate_under_each_rule"][
+                    ALT_RULES[-1][0]]["NEEDS-3"],
+                rec["transport"]["aggregate_under_each_rule"][
+                    ALT_RULES[-1][0]]["BREAKS"],
+                rec["transport"]["closed_form_moves"]))
     for s in verdict_segments(rec):
         CL.fence(s)
     return out
+
+
+def spelled_claims(rec):
+    """SENTENCES THIS RUN RENDERS WITH A SPELLED NUMERAL, each paired with
+    the form its own inversion would take.  The spelled word comes from the
+    measurement through the declared table; the paper carries the sentence
+    verbatim; and the inversion must be absent."""
+    lad_alt = rec["transport"]["ladder_statement_under_the_maximal_reading"]
+    cry = rec["law2_crystallization"]["rows"]
+    counting = sum(1 for r in cry
+                   if r["counting_bound"] == r["attained_floor"])
+    sharp = sum(1 for r in cry if r["sharpened_floor"] == r["attained_floor"])
+    return [
+        ("under the maximality reading it is feasible at %s arities and "
+         "false at all but the parent's"
+         % SPELLED[lad_alt["evidence"]["feasible"]],
+         r"feasible at (?:%s) arities"
+         % "|".join(w for i, w in enumerate(SPELLED)
+                    if i != lad_alt["evidence"]["feasible"])),
+        ("the counting bound reproduces it at %s of %s"
+         % (SPELLED[counting], SPELLED[len(cry)]),
+         r"the counting bound reproduces it at (?:%s) of"
+         % "|".join(w for i, w in enumerate(SPELLED) if i != counting)),
+        ("the sharpened floor reproduces the measurement at every arity",
+         r"the sharpened floor fails at"),
+        ("%s of the %s candidate principles admit the parent's arity"
+         % (SPELLED[len(rec["principles"]["unique_selectors"])],
+            SPELLED[len(rec["principles"]["admits"])]),
+         r"(?:%s) of the (?:%s) (?:candidate )?principles fail"
+         % ("|".join(SPELLED), "|".join(SPELLED))),
+        ("the sharpened floor reproduces the measurement at %s of %s arities"
+         % (SPELLED[sharp], SPELLED[len(cry)]),
+         r"the sharpened floor reproduces the measurement at (?:%s) of"
+         % "|".join(w for i, w in enumerate(SPELLED) if i != sharp)),
+    ]
 
 
 def register_referents(rec, RR):
@@ -3656,17 +5212,29 @@ def register_referents(rec, RR):
                 set(A_) | {sub[a][k] for a in A_ for k in
                            ("groupings", "idle_actors", "max_weight",
                             "saturating_LITERAL", "saturating_MAXIMAL",
-                            "blocks_per_round", "budget")},
+                            "blocks_per_round", "budget", "cover_R_min")},
                 [(sub[a]["saturating_LITERAL"], sub[a]["groupings"])
                  for a in A_]
                 + [(sub[a]["saturating_MAXIMAL"], sub[a]["groupings"])
                    for a in A_])
     RR.universe("crystallization", ["schedule time", "information floor",
-                                    "crystalliz", "offset"],
+                                    "crystalliz", "offset", "signature",
+                                    "certificate", "witness", "floor"],
                 set(A_) | {cry[a][k] for a in A_ for k in
                            ("schedule_time_events", "attained_floor",
                             "counting_bound", "sharpened_floor")}
                 | {cry[a]["offset"] for a in A_}
+                | {c["certified_floor"] for c in
+                   rec["law2_certificates"]["floor"]}
+                | {v for c in rec["law2_certificates"]["floor"]
+                   for w in c["refusals_below"]
+                   for v in (w.get("lightest_total"), w.get("budget"),
+                             w.get("k"), w.get("distinct_available"),
+                             w.get("actors"))
+                   if isinstance(v, int)}
+                | {v for v in rec["law2_crystallization"][
+                    "closed_form_read_in_the_event_size"].values()}
+                | {len(rec["law2_crystallization"]["closed_form_in_a_agrees"])}
                 | {len(A_), sum(1 for a in A_ if cry[a]["sharpened_floor"]
                                 == cry[a]["attained_floor"])},
                 [(sum(1 for a in A_ if cry[a]["sharpened_floor"] ==
@@ -3674,7 +5242,8 @@ def register_referents(rec, RR):
                  (sum(1 for a in A_ if cry[a]["counting_bound"] ==
                       cry[a]["attained_floor"]), len(A_))])
     RR.universe("union", ["seam", "crossing", "cross pair", "union",
-                          "carrier"],
+                          "carrier", "complement", "obstruction",
+                          "forced inside", "maximum cut", "doubling"],
                 set(A_) | {sec[a][k] for a in A_ for k in
                            ("groups", "seam_spanning", "within_sector_free",
                             "obstruction_free", "forced_inside_bound",
@@ -3707,13 +5276,18 @@ def register_referents(rec, RR):
                 + [(rec["law3_menu"]["survivors"],
                     rec["law3_menu"]["lattice"])])
     RR.universe("transport", ["law-in-a", "needs-3", "breaks", "statement",
-                              "numeral", "word"],
+                              "numeral", "word", "uniform rule", "aggregate",
+                              "a-only rule"],
                 {len(rec["transport"]["statements"]),
                  len(rec["transport"]["numerals"])}
                 | set(Counter(r["word"] for r in
                               rec["transport"]["statements"]).values())
                 | set(Counter(r["word"] for r in
                               rec["transport"]["numerals"]).values())
+                | {c for v in rec["transport"][
+                    "aggregate_under_each_rule"].values() for c in v.values()}
+                | {rec["transport"]["closed_form_moves"],
+                   len(rec["transport"]["aggregate_under_each_rule"])}
                 | {0} | set(A_),
                 [(c, len(rec["transport"]["statements"])) for c in
                  Counter(r["word"] for r in
@@ -3730,6 +5304,25 @@ def register_referents(rec, RR):
                 | set(A_) | {rec["arena"]["n"]},
                 [(len(rec["principles"]["unique_selectors"]),
                   len(rec["principles"]["admits"]))])
+    # THE LADDER GETS ITS OWN UNIVERSE.  Its numerals -- the modulus, the
+    # rung, the round mass, the two row counters, the arena pairs the
+    # theorem is checked at -- previously belonged to no universe at all, so
+    # a sentence about them selected nothing and was bound by nothing.
+    lad = rec["law4_ladder"]
+    RR.universe("ladder", ["ladder", "modulus", "rung", "round mass",
+                           "budget", "weld", "arena pair"],
+                {r[k] for r in lad["rows"]
+                 for k in ("a", "saturating", "mass_per_round",
+                           "predicted_modulus")
+                 if isinstance(r[k], int)}
+                | {b for r in lad["rows"] for b in r["achievable_budgets"]}
+                | {len(lad["rows"]), lad["first_rung_rows"],
+                   lad["mod_a_rows"], lad["theorem_pairs_checked"],
+                   lad["theorem_pairs_holding"],
+                   rec["arena"]["ladder_search_bound"], rec["arena"]["n"],
+                   rec["arena"]["L"], rec["arena"]["cells"]},
+                [(lad["mod_a_rows"], len(lad["rows"])),
+                 (lad["first_rung_rows"], len(lad["rows"]))])
     cor = {r["a"]: r for r in rec["corpus"]}
     RR.universe("corpus", ["corpus", "window", "cap", "schedule", "packing",
                            "histories", "prefix"],
@@ -3959,6 +5552,79 @@ def _probe_crystal():
     return [sched, floor]
 
 
+def _probe_theorem():
+    out = []
+    for nn in range(1, THEOREM_N_MAX + 1):
+        for ll in range(1, THEOREM_L_MAX + 1):
+            cells = nn * ll
+            out.append(cells // math.gcd(cells, nn) == ll)
+    if mut("MUT-THEOREM"):
+        out[0] = not out[0]
+    return out
+
+
+def _probe_floorcert():
+    k, _w, _r = certified_floor(ARITIES[0])
+    return k + 1 if mut("MUT-FLOORCERT") else k
+
+
+def _probe_schedule():
+    P, _V, _W = substrate(PARENT_ARITY)
+    floor, _u = absolute_floor(PARENT_ARITY)
+    hit = _exists_history_of_exactly(P, floor)
+    return (not hit) if mut("MUT-SCHEDULE") else hit
+
+
+def _probe_tripartite():
+    ant = A.CLASSES[A.CLASS_NAMES[len(A.CLASSES) - 1]]
+    part = {x: i for i, Ln in enumerate(ant) for x in Ln}
+    E = {frozenset((x, A.vadd(x, l))) for x in A.SITES for l in A.LINKS}
+    ok = all(part[list(e)[0]] != part[list(e)[1]] for e in E)
+    n = math.factorial(A.q) ** (A.q - 1)
+    return [ok, n + A.q if mut("MUT-TRIPARTITE") else n]
+
+
+def _probe_prereg():
+    d = digest([list(t) for t in PREREGISTERED])
+    return "MOVED" if mut("MUT-PREREG") else d
+
+
+def _probe_promotion():
+    """THE PROMOTION LEGS, EXERCISED ON FIXED SYNTHETIC INPUTS.  They fire
+    after the last ledger row, so a recipe cannot reach them inside a run;
+    they are therefore factored out and rehearsed here, where a recipe CAN
+    be proved to move them, which is what the falsifier family asks."""
+    banner = "BANNER"
+    forged = "  a summary line the run never declared"
+    allowed = {banner}
+    if mut("MUT-PROMOTION"):
+        allowed = allowed | {forged}
+    tr = Transcript()
+    refused_line = False
+    try:
+        tr.bind_narrative(banner + "\n" + forged + "\n", allowed)
+    except GateFail:
+        refused_line = True
+    led = Ledger()
+    led.rows.append({"n": len(ARITIES), "gate": "G-REHEARSAL",
+                     "statement": "", "evidence": {}, "passed": True,
+                     "prev": "", "row_digest": ""})
+    sl = Seal()
+    sl.seal("k", {"v": len(ARITIES)}, "G-REHEARSAL")
+    body = {"k": {"v": len(ARITIES) if mut("MUT-PROMOTION")
+                  else len(ARITIES) + len(WORDS)}}
+    refused_edit = False
+    try:
+        sl.verify_at_promotion(body, led, "seal_manifest")
+    except GateFail:
+        refused_edit = True
+    return [refused_line, refused_edit]
+
+
+def _probe_template():
+    return sorted(TEMPLATE_FAMILIES) if not mut("MUT-TEMPLATE") else []
+
+
 def _probe_paper(kind):
     def go():
         base = "the leg-1 survivors number 6 over the complete lattice of 21147"
@@ -4110,6 +5776,45 @@ FALSIFIERS = [
               "a memo key drops its mutant flag, so a recipe would be served "
               "the clean cached answer",
               "the cache key set", _probe_paper("MUT-CACHE")),
+    Falsifier("MUT-THEOREM", "G-LAW4-THEOREM",
+              "the modulus identity is falsified at one declared arena "
+              "pair, so the two-line proof stops being a proof",
+              "the arena sweep of the modulus identity", _probe_theorem),
+    Falsifier("MUT-FLOORCERT", "G-LAW2-FLOOR-CERTIFICATE",
+              "the certified floor is shifted off the searched floor at the "
+              "smallest arity, which is the row the paper's best result "
+              "rests on",
+              "the certified floor at the smallest arity", _probe_floorcert),
+    Falsifier("MUT-SCHEDULE", "G-LAW2-SCHEDULE-COMPLETE",
+              "the unrestricted-schedule certificate is shifted off the "
+              "delivered value, so the sentence that says the minimum is "
+              "over every history stops being certified",
+              "the existence of a history at the floor's own length",
+              _probe_schedule),
+    Falsifier("MUT-TRIPARTITE", "G-LAW6-CLOSED-FORM",
+              "the arrangement's closed form for the saturating groupings "
+              "is shifted, so the closed form stops reproducing the "
+              "measurement it claims to force",
+              "the closed form and the tripartition test", _probe_tripartite),
+    Falsifier("MUT-PREREG", "G-PREREGISTRATION",
+              "the outcome register's digest is replaced, which is what a "
+              "feasibility line rewritten after the outcome is known does "
+              "to it",
+              "the outcome register's digest", _probe_prereg),
+    Falsifier("MUT-PROMOTION", "G-PROMOTION-REHEARSAL",
+              "both promotion legs are inverted -- the narrative binding "
+              "accepts a forged line and the seal check accepts an edited "
+              "value -- which is the pair that put forged artifacts on disk",
+              "the two promotion legs on fixed inputs", _probe_promotion),
+    Falsifier("MUT-TEMPLATE", "G-TEMPLATE-EXERCISED",
+              "the template family register is emptied, so a family carried "
+              "but never exercised would pass unnoticed",
+              "the exercised family register", _probe_template),
+    Falsifier("MUT-SPELLED", "G-PAPER-SPELLED",
+              "a spelled falsehood is planted in prose -- the inversion of "
+              "a measured direction, written in words rather than digits -- "
+              "which is the corruption every digit scanner is blind to",
+              "the scanned spelled text", _probe_paper("MUT-SPELLED")),
     Falsifier("MUT-ANCHOR-USE", "G-ANCHORS-CONSUMED",
               "an anchor's declared consumer is rewritten to a gate that "
               "never reads it",
@@ -4174,6 +5879,47 @@ def run_falsifiers(paper_text, paper_rel):
 # ---------------------------------------------------------------------------
 
 IN_FALSIFIER = False
+DECLARED_READS = []
+
+# THE NINE FAMILIES, AND THE GATE THAT PROVES EACH IS EXERCISED.  The
+# delivered source's own comment promised a gate of this name and no such
+# gate existed; a sibling unit's review cited it as the thing to lift FROM
+# this unit.  Each family names the gate that exercises it on this unit's own
+# objects, and the gate below requires every one of those gates to have run
+# and to have carried its family's evidence, so a family carried but never
+# exercised is a refusal rather than a docstring.
+TEMPLATE_FAMILIES = {
+    "T-SEAL-PROMOTION": ("G-PROMOTION-REHEARSAL",
+                         "seal_check_refuses_an_edited_value"),
+    "T-TRANSCRIPT-BOUND": ("G-PROMOTION-REHEARSAL",
+                           "narrative_binding_refuses_a_forged_line"),
+    "T-WALL-SEMANTIC": ("G-WALLS", "walls"),
+    "T-ANCHOR-CONSUMED": ("G-ANCHORS-CONSUMED", "reads"),
+    "T-CLAIMS-EQUAL": ("G-PAPER-CLAIMS", "tables_claimed"),
+    "T-REFERENT-BOUND": ("G-PAPER-REFERENTS", "sentences_checked"),
+    "T-NO-TYPED-COUNTS": ("G-NO-TYPED-COUNTS", "offenders"),
+    "T-FALSIFIER-POISONS": ("G-FALSIFIERS", "declared_gates"),
+    "T-READ-SET": ("G-READ-SET", "distinct_reads"),
+}
+
+# THE FALSIFIER-COVERAGE WAIVER REGISTER.  A gate no recipe targets is
+# either an oversight or a declared exception, and the difference has to be
+# written down.  The register is machine-forced: the harness is handed a gate
+# no recipe names and must refuse, so an empty or broken register cannot pass
+# for a complete one.
+WAIVERS = {
+    "G-FALSIFIERS": "the coverage gate is the one gate nothing falsifies "
+                    "without falsifying the harness that would report it; "
+                    "its own predicate now carries the coverage result, and "
+                    "the forcing check below hands the harness an uncovered "
+                    "gate and requires a refusal",
+}
+
+
+def coverage_forcing(gates, covered, waived):
+    """the coverage predicate, factored out so it can be FORCED: handed a
+    gate no recipe targets and no waiver names, it must report it."""
+    return sorted(g for g in gates if g not in covered and g not in waived)
 
 
 def reset_state():
@@ -4228,11 +5974,15 @@ def paper_under(kind, text):
         return text + ("\n\nThe union census reports 21147 seam-spanning "
                        "groups.\n")
     if kind == "MUT-POLARITY" and mut("MUT-POLARITY"):
-        return text.replace("mod-a never appears", "mod-a appears")
+        return text.replace("mod-a appears at no row",
+                            "mod-a appears at some row")
     if kind == "MUT-POLARITY-B" and mut("MUT-POLARITY"):
         return text
     if kind == "MUT-WALL" and mut("MUT-WALL"):
         return text + "\n\n" + PARAPHRASE_PLANTS[0][1] + "\n"
+    if kind == "MUT-SPELLED" and mut("MUT-SPELLED"):
+        return text + ("\n\nThree of the five candidate principles fail to "
+                       "admit the parent's arity at all.\n")
     return text
 
 
@@ -4242,27 +5992,48 @@ def closing_battery(src, paper_text, paper_rel, write):
     register_claims(R, CL)
     register_referents(R, RR)
 
-    segs = verdict_segments(R)
+    segs, segfields = verdict_segments(R, with_fields=True)
     if mut("MUT-HEAD"):
         segs[0] = segs[0][:-1] + " FORGED 424242>"
-    audit = head_audit(R, segs)
+    audit = head_audit(R, segs, segfields)
     CR.measured("head_segments", len(segs), "segments emitted, counted")
     CR.measured("head_findings", len(audit["findings"]), "counted")
     CR.measured("head_numerals", audit["numerals_in_the_head"], "counted")
+    CR.measured("head_fields", audit["fields_declared"], "counted")
     LD.gate("G-VERDICT-EQUALITY", not audit["findings"],
-            CR.stmt("the head's {s} segments carry {n} numerals, and a "
-                    "comparator that shares no code, no input and no typed "
-                    "literal with the builder parses every one of them back "
-                    "and re-derives it from the receipt's own row lists by "
-                    "its own arithmetic, re-deciding the verdict words "
-                    "without calling the decision procedure; the "
-                    "disagreements number {f}",
-                    s="head_segments", n="head_numerals", f="head_findings"),
+            CR.stmt("the head's {s} segments carry {n} numerals in {d} "
+                    "declared positional fields, and a comparator that "
+                    "shares no code and no typed literal with the builder "
+                    "matches every numeral against the field standing at "
+                    "THAT position and re-derives each field's value from "
+                    "the receipt's own row lists by its own arithmetic, "
+                    "re-deciding the verdict words without calling the "
+                    "decision procedure. A field with no resolver is a "
+                    "stray key, so the scan is total by construction rather "
+                    "than by inspection; the disagreements number {f}",
+                    s="head_segments", n="head_numerals", d="head_fields",
+                    f="head_findings"),
             audit)
     R["verdict"] = SEAL.seal("verdict", {"segments": segs, "audit": audit},
                              "G-VERDICT-EQUALITY")
 
     cg = CL.gate(paper_under("MUT-CLAIM", paper_text))
+    # THE OBJECT UNDER TEST GETS A DIGEST, IN BOTH ARTIFACTS.  The delivered
+    # receipt named its four SOURCES and published its read set as counts
+    # with no paths; the string `paper-44-arity` occurred nowhere in it.  Six
+    # separate injections therefore delivered a modified paper or a modified
+    # process and produced artifacts BIT-IDENTICAL to the committed pair, so
+    # a reader holding them could not tell which text they certified.  The
+    # path and digest are sealed here and printed into the transcript, so
+    # that can never be true again.
+    obj = {"path": os.path.relpath(os.path.abspath(paper_rel), REPO),
+           "sha256_12": hashlib.sha256(
+               paper_text.encode("utf-8")).hexdigest()[:12],
+           "characters": len(paper_text)}
+    R["object_under_test"] = SEAL.seal("object_under_test", obj,
+                                       "G-PAPER-CLAIMS")
+    cg = dict(cg)
+    cg["object_under_test"] = obj
     CR.measured("tables_claimed", cg["tables_claimed"], "counted")
     CR.measured("tables_in_paper", cg["tables_in_paper"], "counted")
     CR.measured("prose_claims", cg["prose_claims"], "counted")
@@ -4311,6 +6082,26 @@ def closing_battery(src, paper_text, paper_rel, write):
     R["referents"] = SEAL.seal("referents", RR.seal_value(),
                                "G-PAPER-REFERENTS")
 
+    spc = paper_spelled(R, paper_under("MUT-SPELLED", paper_text), RR,
+                        spelled_claims(R))
+    CR.measured("spelled_sentences", spc["spelled_sentences_checked"],
+                "counted")
+    CR.measured("spelled_claims", spc["spelled_claims"], "counted")
+    LD.gate("G-PAPER-SPELLED",
+            not spc["universe_violations"] and not spc["claim_violations"]
+            and not spc["inversion_violations"],
+            CR.stmt("the same prose is scanned again in the OTHER ALPHABET: "
+                    "every spelled cardinal is rewritten to its digits and "
+                    "then bound exactly as a written numeral is -- {s} "
+                    "sentences resolved against their own universe, every "
+                    "spelled A-of-B required to be a pair the run measured "
+                    "-- and the {c} sentences this run renders with a "
+                    "spelled numeral are required verbatim at their exact "
+                    "occurrence counts with the form their own inversion "
+                    "would take required to be absent",
+                    s="spelled_sentences", c="spelled_claims"),
+            spc)
+
     pol = paper_polarity(R, paper_under("MUT-POLARITY", paper_text))
     CR.measured("polarity_claims", pol["claims"], "counted")
     LD.gate("G-PAPER-POLARITY", not pol["violations"],
@@ -4322,18 +6113,34 @@ def closing_battery(src, paper_text, paper_rel, write):
 
     walls = build_walls()
     wres = []
-    wtext = paper_under("MUT-WALL", paper_text)
+    # THE WALLS SCAN PROSE, AND PROSE MEANS PROSE.  The delivered scan
+    # canonicalised the whole paper, fences included, so one wall's POSITIVE
+    # leg was discharged by the head segment the run itself renders rather
+    # than by any sentence the paper writes -- deleting the standing sentence
+    # left the wall satisfied.  Fenced blocks, table rows and the parents'
+    # block quotations are stripped first, exactly as the referent family
+    # already does, so every positive leg is a claim on the paper's own
+    # voice.
+    wtext = ReferentRegistry.prose_only(paper_under("MUT-WALL", paper_text))
     for w in walls:
         r = w.scan(wtext)
         ctl = []
         for c in w.controls:
-            rr = w.scan(wtext + "\n\n" + c)
-            ctl.append(bool(rr["violations"]) or bool(rr["unlicensed_sentences"]))
+            # EVERY CONTROL IS RUN TWICE: once as written, and once with an
+            # inert negating clause appended.  All eighteen delivered
+            # controls were flat affirmatives, which is the easy half; four
+            # of this unit's own plants used to die when they carried no
+            # negation and survive when they carried one.
+            for suffix in ("", ", and that is not in doubt"):
+                rr = w.scan(wtext + "\n\n" + c[:-1] + suffix + ".")
+                ctl.append(bool(rr["violations"])
+                           or bool(rr["unlicensed_sentences"]))
         wres.append({"wall": w.name, "violations": r["violations"],
                      "missing_positive": r["missing_positive"],
                      "unlicensed_sentences": r["unlicensed_sentences"],
-                     "independent_controls": len(w.controls),
+                     "independent_controls": len(w.controls) * 2,
                      "controls_caught": sum(1 for x in ctl if x),
+                     "has_a_licence_leg": bool(w.subject and w.policed),
                      "seal": w.seal_value()})
     empty_ok = []
     for w in walls:
@@ -4351,6 +6158,7 @@ def closing_battery(src, paper_text, paper_rel, write):
                 and not r["unlicensed_sentences"] for r in wres)
             and all(r["controls_caught"] == r["independent_controls"]
                     for r in wres)
+            and all(r["has_a_licence_leg"] for r in wres)
             and not empty_ok,
             CR.stmt("{w} reading walls scan the paper as voice-normalised "
                     "regexes over the canonicalised text, each with a "
@@ -4371,17 +6179,23 @@ def closing_battery(src, paper_text, paper_rel, write):
     plants = []
     for nm, sent in (PARAPHRASE_PLANTS[:-1] + [("P-INERT", "The table above.")]
                      if mut("MUT-PLANT") else PARAPHRASE_PLANTS):
-        caught = []
+        caught, caught_negated = [], []
         for w in walls:
-            rr = w.scan(paper_text + "\n\n" + sent + "\n")
+            rr = w.scan(wtext + "\n\n" + sent + "\n")
             if rr["violations"] or rr["unlicensed_sentences"]:
                 caught.append(w.name)
-        plants.append({"plant": nm, "sentence": sent, "caught_by": caught})
+            rn = w.scan(wtext + "\n\n" + sent[:-1]
+                        + ", and this is not a small point.\n")
+            if rn["violations"] or rn["unlicensed_sentences"]:
+                caught_negated.append(w.name)
+        plants.append({"plant": nm, "sentence": sent, "caught_by": caught,
+                       "caught_by_when_negated": caught_negated})
     CR.measured("n_plants", len(plants), "counted")
     CR.measured("plants_caught",
                 sum(1 for p in plants if p["caught_by"]), "counted")
     LD.gate("G-WALL-PARAPHRASE",
             all(p["caught_by"] for p in plants)
+            and all(p["caught_by_when_negated"] for p in plants)
             and len(plants) >= PARAPHRASE_FLOOR,
             CR.stmt("{k} paraphrases of the banned claims, each written "
                     "against the disease rather than against a pattern and "
@@ -4395,14 +6209,19 @@ def closing_battery(src, paper_text, paper_rel, write):
     R["paraphrase_plants"] = SEAL.seal("paraphrase_plants", plants,
                                        "G-WALL-PARAPHRASE")
 
-    offenders = CR.audit_module(open(SELF).read(), ("stmt",))
+    offenders = CR.audit_module(open(SELF).read(),
+                                ("stmt", "claim", "table", "fence",
+                                 "measured"))
     if mut("MUT-TYPED"):
         offenders = offenders + [{"caller": "stmt", "typed": "424242",
                                   "line": 0}]
     fl = ast_float_scan(open(SELF).read())
     CR.measured("measured_names", len(CR.vals), "counted")
     CR.measured("typed_offenders", len(offenders), "counted")
-    LD.gate("G-NO-TYPED-COUNTS", not offenders and not fl,
+    unused_names = sorted(pat for pat, _w in CR.NAME_STRIPS
+                          if pat not in CR.names_used)
+    LD.gate("G-NO-TYPED-COUNTS", not offenders and not fl
+            and not unused_names,
             CR.stmt("{m} values enter the published statements by NAME from "
                     "the live registry, and an AST leg scans this module for "
                     "numerals typed into a statement template or handed to a "
@@ -4412,7 +6231,9 @@ def closing_battery(src, paper_text, paper_rel, write):
                     "anywhere in the source",
                     m="measured_names", o="typed_offenders"),
             {"offenders": offenders[:8], "float_literals": fl[:8],
-             "exempt_tokens": CR.exempt})
+             "exempt_tokens": CR.exempt,
+             "declared_name_strips": {p: w for p, w in CR.NAME_STRIPS},
+             "name_strips_never_used": unused_names})
 
     if mut("MUT-CACHE"):
         MEMO_HITS[("hit", "flagless")] += 1
@@ -4461,21 +6282,39 @@ def closing_battery(src, paper_text, paper_rel, write):
         wrong = [r for r in frows if r["died_at"] != r["declared_gate"]]
         unreached = [r for r in frows if r["declared_gate"] not in gates]
         covered = {r["declared_gate"] for r in frows}
-        uncovered = sorted(g for g in gates if g not in covered)
+        # THE COVERAGE RESULT IS IN THE PREDICATE, not beside it.  It was
+        # computed, published as evidence and left out of the test, so
+        # deleting ten recipes -- every recipe that falsifies a LAW gate --
+        # left eleven gates uncovered, printed the list in the gate's own
+        # evidence, and delivered both artifacts at exit 0.
+        uncovered = coverage_forcing(gates, covered, WAIVERS)
+        forced = coverage_forcing(gates | {"G-NO-SUCH-GATE"}, covered,
+                                  WAIVERS)
+        forcing_ok = forced == sorted(uncovered + ["G-NO-SUCH-GATE"])
         CR.measured("n_falsifiers", len(frows), "counted")
         CR.measured("n_sentinels", len(sent), "counted")
         CR.measured("n_wrong_gate", len(wrong), "counted")
+        CR.measured("n_uncovered", len(uncovered), "counted")
+        CR.measured("n_waivers", len(WAIVERS), "counted")
         LD.gate("G-FALSIFIERS",
-                not sent and not wrong and not unreached,
+                not sent and not wrong and not unreached
+                and not uncovered and forcing_ok,
                 CR.stmt("{n} falsifiers each name the measured object their "
                         "recipe must MOVE, and the harness digests that "
                         "object before and after the recipe: a recipe that "
                         "leaves it identical is a sentinel and dies here. "
                         "Sentinels found: {s}. Falsifiers dying anywhere but "
-                        "at their declared gate: {w}",
-                        n="n_falsifiers", s="n_sentinels", w="n_wrong_gate"),
+                        "at their declared gate: {w}. Declared gates left "
+                        "with no recipe and no waiver: {u} -- and that "
+                        "number is IN this predicate, with {v} waivers "
+                        "written down and the coverage rule forced by "
+                        "handing it a gate no recipe names and requiring it "
+                        "to report it",
+                        n="n_falsifiers", s="n_sentinels", w="n_wrong_gate",
+                        u="n_uncovered", v="n_waivers"),
                 {"rows": frows, "gates_with_no_falsifier": uncovered,
                  "declared_gates": len(GATE_ORDER),
+                 "waivers": WAIVERS, "coverage_rule_forced": forcing_ok,
                  "falsifiers_dying_elsewhere": [r["falsifier"] for r in wrong],
                  "falsifiers_moving_nothing": [r["falsifier"] for r in sent]})
         R["falsifiers"] = SEAL.seal("falsifiers", frows, "G-FALSIFIERS")
@@ -4483,6 +6322,46 @@ def closing_battery(src, paper_text, paper_rel, write):
         SEAL.declare_unsealed(
             "falsifiers", "not run inside a falsifier's own nested run")
         R["falsifiers"] = []
+
+    pg = preregistration_gate(R, segs)
+    CR.measured("prereg_words", len(pg["declared_words"]), "counted")
+    CR.measured("prereg_segments", len(pg["segments"]), "counted")
+    CR.measured("prereg_contingent", pg["segments_contingent"], "counted")
+    LD.gate("G-PREREGISTRATION",
+            not pg["emitted_but_never_declared"]
+            and not pg["declared_but_never_emitted"]
+            and not pg["segments_unbound"] and pg["digests_match"],
+            CR.stmt("the pre-registration is CONSUMED and not decorated: "
+                    "both registers carry their own digest, checked here, so "
+                    "a feasibility line cannot be rewritten once the outcome "
+                    "is known; every one of the {w} declared outcome words "
+                    "either fires or carries the measured reason its trigger "
+                    "did not occur; and each of the {g} head segments "
+                    "carries a pre-registered outcome, the complement that "
+                    "would have been emitted instead, a feasibility line and "
+                    "-- the honest column -- whether the outcome was "
+                    "contingent on a measurement at all, which {c} of them "
+                    "were",
+                    w="prereg_words", g="prereg_segments",
+                    c="prereg_contingent"),
+            pg)
+    R["preregistration"] = SEAL.seal("preregistration", pg,
+                                     "G-PREREGISTRATION")
+
+    reh = _probe_promotion()
+    CR.measured("promotion_legs", len(reh), "counted")
+    LD.gate("G-PROMOTION-REHEARSAL", all(reh),
+            CR.stmt("the {k} legs that stand between the last gate and the "
+                    "written artifacts are REHEARSED here on fixed synthetic "
+                    "inputs, because they fire after the last ledger row and "
+                    "a recipe could otherwise never be proved to move them: "
+                    "a forged narrative line in the transcript must be "
+                    "refused, and a sealed value edited after its gate "
+                    "passed must be refused, and the promotion path calls "
+                    "these same two functions before it replaces anything",
+                    k="promotion_legs"),
+            {"narrative_binding_refuses_a_forged_line": reh[0],
+             "seal_check_refuses_an_edited_value": reh[1]})
 
     if mut("MUT-READ"):
         _undeclared_read()
@@ -4494,15 +6373,22 @@ def closing_battery(src, paper_text, paper_rel, write):
     CR.measured("declared_reads", len(declared), "counted")
     LD.gate("G-READ-SET",
             not rs["undeclared"] and not rs["declared_never_read"]
-            and not rs["unused_exemptions"],
+            and not rs["unused_exemptions"] and not rs["external_reads"],
             CR.stmt("every open this process performed is recorded at the "
-                    "I/O accessor by an audit hook, whoever called it, and "
-                    "the multiset of repository-relative paths is compared "
-                    "HERE, at the last measurement gate, against the {d} "
-                    "declared inputs plus exemptions that must be used",
+                    "I/O accessor by an audit hook, whoever called it and "
+                    "wherever the path lies -- reads outside the repository "
+                    "go to their own bucket, which must be empty -- and the "
+                    "multiset of paths is compared against the {d} declared "
+                    "inputs plus exemptions that must be used. The same "
+                    "comparison is made AGAIN inside the promotion path, "
+                    "after the seal legs and before anything is written, so "
+                    "the tail window between this row and the write is "
+                    "closed rather than merely narrow",
                     d="declared_reads"),
             rs)
     R["read_set"] = SEAL.seal("read_set", rs, "G-READ-SET")
+    global DECLARED_READS
+    DECLARED_READS = list(declared)
 
     R["totals"] = SEAL.seal(
         "totals", {"gates": len(GATE_ORDER),
@@ -4529,29 +6415,65 @@ def closing_battery(src, paper_text, paper_rel, write):
           "chars": len(canon(needle))}
          for (nm, sid, needle, cons, why) in VERBATIM], "G-ANCHORS-CONSUMED")
 
+    fam = {}
+    for name, (gate, key) in sorted(TEMPLATE_FAMILIES.items()):
+        # A NESTED run does not re-enter the falsifier harness, so the gate
+        # that exercises that family is legitimately absent there.  The
+        # exclusion keys on the RUN MODE and never on a mutant's identity.
+        if IN_FALSIFIER and gate == "G-FALSIFIERS":
+            continue
+        row = [r for r in LD.rows if r["gate"] == gate]
+        fam[name] = {"gate": gate, "ran": bool(row),
+                     "evidence_key_present": bool(
+                         row and key in Ledger.evidence_line(row[0]["evidence"]))}
+    if mut("MUT-TEMPLATE"):
+        fam = {}
+    CR.measured("n_families", len(fam), "counted")
+    want_fam = len(TEMPLATE_FAMILIES) - (1 if IN_FALSIFIER else 0)
+    LD.gate("G-TEMPLATE-EXERCISED",
+            len(fam) == want_fam
+            and all(v["ran"] and v["evidence_key_present"]
+                    for v in fam.values()),
+            CR.stmt("each of the {k} template families names the gate that "
+                    "EXERCISES it on this unit's own objects, and every one "
+                    "of those gates must have run and must have carried its "
+                    "family's own evidence: the TPL-2 prohibition on "
+                    "carried-not-used families is a gate here, which is what "
+                    "this file's own comment promised and what no gate "
+                    "delivered",
+                    k="n_families"),
+            {"families": fam, "families_expected": want_fam})
+
     payload = dict(R)
     if mut("MUT-SEAL-ADD"):
         payload["forged_finding"] = {"headline": "everything transports"}
     if mut("MUT-SEAL-EDIT"):
         payload["fidelity"] = dict(payload["fidelity"])
         payload["fidelity"]["agree"] = payload["fidelity"]["rows"] + 1
-    ledger_rows = [{k: r[k] for k in ("n", "gate", "passed", "evidence",
-                                      "prev", "row_digest")}
-                   for r in LD.rows]
-    payload["ledger"] = ledger_rows
+    # THE LEDGER IS BUILT AFTER THE LAST GATE, ONCE, WITH ITS STATEMENTS.
+    # The delivered receipt published 32 rows and a chain head over 32 while
+    # the transcript carried 34 and stdout printed a third number: the
+    # snapshot was taken two gates early, so the chain covered everything
+    # except the two rows that certify the seal and the gate inventory.  It
+    # also dropped `statement` from the published rows while the row digest
+    # is taken over a body that CONTAINS it, so no reader could check that
+    # any row_digest belonged to its row.  Both are fixed: the keys are
+    # DECLARED here and the values are assigned after G-CLOSE, and the
+    # statements stay.
     SEAL.declare_unsealed("ledger", "the chained ledger is verified by "
-                                    "recomputing its own chain, not by a "
-                                    "digest of itself")
+                                    "recomputing its own chain from the "
+                                    "published rows, which carry every field "
+                                    "the row digest is taken over")
     payload["transcript_head"] = None
     SEAL.declare_unsealed("transcript_head",
                           "the digest of the FINAL transcript bytes, taken "
                           "in the promotion path after the last gate row and "
                           "the verdict are written, and reconciled with the "
                           "ledger as a multiset at that moment")
-    chain = LD.recompute_chain()
-    payload["ledger_head"] = chain
     SEAL.declare_unsealed("ledger_head", "the chain head, recomputed from "
-                                         "the receipt's own rows")
+                                         "the receipt's own rows AFTER the "
+                                         "last gate, so it is one number and "
+                                         "it covers every row")
     try:
         SEAL.verify_at_promotion(payload, LD, "seal_manifest")
         totality = True
@@ -4591,26 +6513,73 @@ def closing_battery(src, paper_text, paper_rel, write):
              "missing": [g for g in expect if g not in fired],
              "stray": [g for g in fired if g not in expect]})
 
+    # AFTER the last row: one ledger, one chain, one head.
+    payload["ledger"] = [{k: r[k] for k in ("n", "gate", "statement",
+                                            "passed", "evidence", "prev",
+                                            "row_digest")}
+                         for r in LD.rows]
+    payload["ledger_head"] = LD.recompute_chain()
     return payload, segs
 
 
-def promote(payload, segs, paper_text, write):
+def promote(payload, segs, paper_text, write, declared_reads=()):
+    """VERIFY, THEN REPLACE -- AND ROLL BACK IF ANYTHING REFUSES.
+
+    The delivered path replaced both artifacts and verified afterwards, so a
+    value edited between the seal check and the serialisation was detected
+    only once the forged receipt was already on disk beside a certificate for
+    the value it did not contain -- and the process then died as an unhandled
+    traceback with no ledger row and nothing removed.  Here every leg fires
+    BEFORE anything is replaced: the payload is serialised, the bytes are
+    parsed BACK, and the seals are verified against the parsed blob; the
+    staged files are written and read back; the seals are verified again from
+    the staged receipt ON DISK; the read set is compared once more, closing
+    the window between the read-set gate and the write; and only then are the
+    files replaced.  The previous artifacts are held in memory throughout and
+    restored if any leg refuses, so a refusing run leaves the tree exactly as
+    it found it."""
     body = dict(payload)
     TR.say("")
     TR.say("VERDICT")
     for s in segs:
         TR.say(s)
     TR.say("")
+    TR.say("object under test %s %s" % (payload["object_under_test"]["path"],
+                                        payload["object_under_test"]
+                                        ["sha256_12"]))
     TR.say("ledger head %s" % payload["ledger_head"])
     ttxt = TR.text().encode("utf-8")
     body["transcript_head"] = TR.bind(LD)
+    allowed = {"ARITY (paper-44) -- the event-size unit", "VERDICT"}
+    allowed |= set(segs)
+    allowed.add("object under test %s %s"
+                % (payload["object_under_test"]["path"],
+                   payload["object_under_test"]["sha256_12"]))
+    allowed.add("ledger head %s" % payload["ledger_head"])
+    TR.bind_narrative(TR.text(), allowed)
     SEAL.verify_at_promotion(body, LD, "seal_manifest")
     body["seal_manifest"] = SEAL.manifest()
     blob = json.dumps(body, sort_keys=True, indent=1,
                       ensure_ascii=False).encode("utf-8")
+    # THE SEALS ARE CHECKED AGAINST THE BYTES THAT WILL BE WRITTEN, parsed
+    # back out of the blob, so an edit made after the door check and before
+    # the serialisation cannot survive.
+    SEAL.verify_at_promotion(json.loads(blob.decode("utf-8")), LD,
+                             "seal_manifest")
+    rs2 = RS.gate_at_close(list(declared_reads))
+    if rs2["undeclared"] or rs2["external_reads"]:
+        raise GateFail("G-READ-SET :: undeclared read in the promotion "
+                       "window: %s %s" % (rs2["undeclared"],
+                                          rs2["external_reads"]))
     if not write:
         return {"receipt": bytes_digest(blob), "transcript": bytes_digest(ttxt)}
+    prev = {}
+    for pth in (OUT_JSON, OUT_TXT):
+        if os.path.exists(pth):
+            with open(pth, "rb") as fh:
+                prev[pth] = fh.read()
     tmp_r, tmp_t = OUT_JSON + ".tmp", OUT_TXT + ".tmp"
+    replaced = False
     try:
         with open(tmp_r, "wb") as fh:
             fh.write(blob)
@@ -4621,15 +6590,28 @@ def promote(payload, segs, paper_text, write):
         with open(tmp_t, "rb") as fh:
             back_t = fh.read()
         if back_r != blob or back_t != ttxt:
-            raise GateFail("G-CLOSE :: staged bytes differ from the sealed render")
+            raise GateFail("G-CLOSE :: staged bytes differ from the sealed "
+                           "render")
+        SEAL.verify_after_promotion(tmp_r, "seal_manifest")
         os.replace(tmp_r, OUT_JSON)
         os.replace(tmp_t, OUT_TXT)
+        replaced = True
+        SEAL.close()
+        SEAL.verify_after_promotion(OUT_JSON, "seal_manifest")
+    except BaseException:
+        # ROLLBACK.  Whatever refused, the tree goes back to what it was.
+        if replaced:
+            for pth, was in prev.items():
+                with open(pth, "wb") as fh:
+                    fh.write(was)
+            for pth in (OUT_JSON, OUT_TXT):
+                if pth not in prev and os.path.exists(pth):
+                    os.unlink(pth)
+        raise
     finally:
-        for p in (tmp_r, tmp_t):
-            if os.path.exists(p):
-                os.unlink(p)
-    SEAL.close()
-    SEAL.verify_after_promotion(OUT_JSON, "seal_manifest")
+        for pth in (tmp_r, tmp_t):
+            if os.path.exists(pth):
+                os.unlink(pth)
     return {"receipt": bytes_digest(blob), "transcript": bytes_digest(ttxt)}
 
 
@@ -4690,50 +6672,81 @@ GATE_ORDER = ["G-SOURCES", "G-PATH-ANCHORS", "G-VERBATIM", "G-ARENA",
               "G-CONSTRUCTOR-FIDELITY", "G-PACKING-EXTENDS",
               "G-SUBSTRATE-CENSUS", "G-FIDELITY-FIRST", "G-CORPUS-RULE",
               "G-LAW1-NAMING", "G-LAW2-CRYSTALLIZATION", "G-LAW2-SHARPENED",
-              "G-LAW3-MENU", "G-LAW4-LADDER", "G-LAW5-FORCING",
-              "G-LAW6-SEC2", "G-PRINCIPLE-CENSUS",
+              "G-LAW2-FLOOR-CERTIFICATE", "G-LAW2-SCHEDULE-COMPLETE",
+              "G-LAW3-MENU", "G-LAW4-LADDER", "G-LAW4-THEOREM",
+              "G-LAW5-FORCING", "G-LAW6-SEC2", "G-LAW6-CLOSED-FORM",
+              "G-PRINCIPLE-CENSUS",
               "G-TRANSPORT-CONTROLS", "G-AGGREGATE",
               "G-VERDICT-EQUALITY", "G-PAPER-CLAIMS", "G-PAPER-COVERAGE",
-              "G-PAPER-REFERENTS", "G-PAPER-POLARITY", "G-WALLS",
-              "G-WALL-PARAPHRASE",
+              "G-PAPER-REFERENTS", "G-PAPER-SPELLED", "G-PAPER-POLARITY",
+              "G-WALLS", "G-WALL-PARAPHRASE",
               "G-NO-TYPED-COUNTS", "G-CACHE", "G-EXACT", "G-FALSIFIERS",
-              "G-READ-SET",
-              "G-ANCHORS-CONSUMED", "G-SEAL-TOTALITY", "G-CLOSE"]
+              "G-PREREGISTRATION", "G-PROMOTION-REHEARSAL", "G-READ-SET",
+              "G-ANCHORS-CONSUMED", "G-TEMPLATE-EXERCISED",
+              "G-SEAL-TOTALITY", "G-CLOSE"]
 
 
 def parse_args(argv):
-    mode = {"action": "run", "paper": PAPER_PATH,
+    """MODE RESOLUTION IS EXPLICIT, NOT LAST-WINS.
+
+    The delivered loop let a second mode flag silently discard the first --
+    `--selftest --list-gates` printed the gate list and returned 0, so a
+    harness reading exit codes scored a DISCARDED selftest as a pass and a
+    genuine one as a failure -- and `--mutant X --selftest` silently dropped
+    the mutant.  A second mode flag is now an error, a repeated `--mutant` is
+    an error, `--run` is accepted as the explicit no-op alias the sibling
+    units' batteries expect, and a passing selftest exits 0."""
+    mode = {"action": None, "paper": PAPER_PATH,
             "mutant": None, "write": True}
+
+    def setmode(name):
+        if mode["action"] is not None and mode["action"] != name:
+            raise CliError("two run modes requested: %r and %r"
+                           % (mode["action"], name))
+        mode["action"] = name
     i = 0
     while i < len(argv):
         a = argv[i]
         if a == "--no-write":
             mode["write"] = False
+        elif a == "--run":
+            setmode("run")
         elif a == "--selftest":
-            mode["action"] = "selftest"
+            setmode("selftest")
             mode["write"] = False
         elif a == "--list-gates":
-            mode["action"] = "list-gates"
+            setmode("list-gates")
             mode["write"] = False
         elif a == "--render":
-            mode["action"] = "render"
+            setmode("render")
             mode["write"] = False
         elif a == "--verify-paper":
             if i + 1 >= len(argv):
                 raise CliError("--verify-paper needs a path")
-            mode["action"] = "verify-paper"
-            mode["paper"] = argv[i + 1]
+            setmode("verify-paper")
+            cand = os.path.abspath(argv[i + 1])
+            if not cand.startswith(REPO + os.sep):
+                raise CliError("--verify-paper takes a path inside the "
+                               "repository; %r is outside it" % argv[i + 1])
+            mode["paper"] = cand
             mode["write"] = False
             i += 1
         elif a == "--mutant":
             if i + 1 >= len(argv):
                 raise CliError("--mutant needs a name")
+            if mode["mutant"] is not None:
+                raise CliError("--mutant given twice")
             mode["mutant"] = argv[i + 1]
             mode["write"] = False
             i += 1
         else:
             raise CliError("unknown flag %r" % a)
         i += 1
+    if mode["action"] is None:
+        mode["action"] = "run"
+    if mode["mutant"] and mode["action"] != "run":
+        raise CliError("--mutant cannot be combined with %r"
+                       % mode["action"])
     return mode
 
 
@@ -4769,7 +6782,7 @@ def main(argv=None):
             ok = before == after
             print("SELFTEST: refused at %s" % str(e).split(" :: ")[0])
             print("SELFTEST: artifacts unchanged: %s" % ok)
-            return 1 if ok else 3
+            return 0 if ok else 3
         print("SELFTEST: the corrupted anchor was NOT refused")
         return 3
 
@@ -4820,11 +6833,15 @@ def main(argv=None):
 
     try:
         payload, segs = run_measurements(paper, mode["paper"], mode["write"])
+        # THE PROMOTION IS INSIDE THE TRY.  The delivered `main` wrapped the
+        # measurements and left the promotion outside, so a refusal there
+        # reached the operator as a Python traceback rather than as REFUSED,
+        # with no ledger row and the forged artifacts already on disk.
+        dg = promote(payload, segs, paper, mode["write"], DECLARED_READS)
     except GateFail as e:
         sys.stderr.write("REFUSED: %s\n" % e)
         print(TR.text())
         return 1
-    dg = promote(payload, segs, paper, mode["write"])
     print(TR.text())
     print("VERDICT")
     for s in segs:

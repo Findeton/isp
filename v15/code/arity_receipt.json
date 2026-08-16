@@ -117,10 +117,11 @@
   "windowed_arity": 5
  },
  "cache": {
-  "entries": 43,
+  "entries": 51,
   "families": [
    "absolute_floor",
    "bfs",
+   "certfloor",
    "crystal",
    "flat",
    "forcing",
@@ -131,11 +132,12 @@
    "permwin",
    "sec2",
    "strict",
-   "substrate"
+   "substrate",
+   "unresched"
   ],
   "families_never_missed": [],
-  "hits": 18,
-  "misses": 43
+  "hits": 22,
+  "misses": 51
  },
  "corpus": [
   {
@@ -463,6 +465,70 @@
    "target_moved": true
   },
   {
+   "declared_gate": "G-LAW4-THEOREM",
+   "description": "the modulus identity is falsified at one declared arena pair, so the two-line proof stops being a proof",
+   "died_at": "G-LAW4-THEOREM",
+   "falsifier": "MUT-THEOREM",
+   "target": "the arena sweep of the modulus identity",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-LAW2-FLOOR-CERTIFICATE",
+   "description": "the certified floor is shifted off the searched floor at the smallest arity, which is the row the paper's best result rests on",
+   "died_at": "G-LAW2-FLOOR-CERTIFICATE",
+   "falsifier": "MUT-FLOORCERT",
+   "target": "the certified floor at the smallest arity",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-LAW2-SCHEDULE-COMPLETE",
+   "description": "the unrestricted-schedule certificate is shifted off the delivered value, so the sentence that says the minimum is over every history stops being certified",
+   "died_at": "G-LAW2-SCHEDULE-COMPLETE",
+   "falsifier": "MUT-SCHEDULE",
+   "target": "the existence of a history at the floor's own length",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-LAW6-CLOSED-FORM",
+   "description": "the arrangement's closed form for the saturating groupings is shifted, so the closed form stops reproducing the measurement it claims to force",
+   "died_at": "G-LAW6-CLOSED-FORM",
+   "falsifier": "MUT-TRIPARTITE",
+   "target": "the closed form and the tripartition test",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-PREREGISTRATION",
+   "description": "the outcome register's digest is replaced, which is what a feasibility line rewritten after the outcome is known does to it",
+   "died_at": "G-PREREGISTRATION",
+   "falsifier": "MUT-PREREG",
+   "target": "the outcome register's digest",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-PROMOTION-REHEARSAL",
+   "description": "both promotion legs are inverted -- the narrative binding accepts a forged line and the seal check accepts an edited value -- which is the pair that put forged artifacts on disk",
+   "died_at": "G-PROMOTION-REHEARSAL",
+   "falsifier": "MUT-PROMOTION",
+   "target": "the two promotion legs on fixed inputs",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-TEMPLATE-EXERCISED",
+   "description": "the template family register is emptied, so a family carried but never exercised would pass unnoticed",
+   "died_at": "G-TEMPLATE-EXERCISED",
+   "falsifier": "MUT-TEMPLATE",
+   "target": "the exercised family register",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-PAPER-SPELLED",
+   "description": "a spelled falsehood is planted in prose -- the inversion of a measured direction, written in words rather than digits -- which is the corruption every digit scanner is blind to",
+   "died_at": "G-PAPER-SPELLED",
+   "falsifier": "MUT-SPELLED",
+   "target": "the scanned spelled text",
+   "target_moved": true
+  },
+  {
    "declared_gate": "G-ANCHORS-CONSUMED",
    "description": "an anchor's declared consumer is rewritten to a gate that never reads it",
    "died_at": "G-ANCHORS-CONSUMED",
@@ -508,7 +574,435 @@
   "window_prefixes": 19778,
   "window_size": 204
  },
+ "law2_certificates": {
+  "floor": [
+   {
+    "a": 2,
+    "certified_floor": 6,
+    "column_sums": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "refusals_below": [
+     {
+      "actors": 9,
+      "distinct_available": 2,
+      "k": 1,
+      "refused": "TOO-FEW-SIGNATURES"
+     },
+     {
+      "actors": 9,
+      "distinct_available": 4,
+      "k": 2,
+      "refused": "TOO-FEW-SIGNATURES"
+     },
+     {
+      "actors": 9,
+      "distinct_available": 8,
+      "k": 3,
+      "refused": "TOO-FEW-SIGNATURES"
+     },
+     {
+      "budget": 8,
+      "k": 4,
+      "lightest_total": 12,
+      "refused": "WEIGHT-INFEASIBLE"
+     },
+     {
+      "budget": 10,
+      "k": 5,
+      "lightest_total": 11,
+      "refused": "WEIGHT-INFEASIBLE"
+     }
+    ],
+    "witness_signatures": [
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+     ]
+    ]
+   },
+   {
+    "a": 3,
+    "certified_floor": 4,
+    "column_sums": [
+     3,
+     3,
+     3,
+     3
+    ],
+    "refusals_below": [
+     {
+      "actors": 9,
+      "distinct_available": 2,
+      "k": 1,
+      "refused": "TOO-FEW-SIGNATURES"
+     },
+     {
+      "actors": 9,
+      "distinct_available": 4,
+      "k": 2,
+      "refused": "TOO-FEW-SIGNATURES"
+     },
+     {
+      "actors": 9,
+      "distinct_available": 8,
+      "k": 3,
+      "refused": "TOO-FEW-SIGNATURES"
+     }
+    ],
+    "witness_signatures": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      1
+     ],
+     [
+      0,
+      0,
+      1,
+      1
+     ]
+    ]
+   },
+   {
+    "a": 4,
+    "certified_floor": 4,
+    "column_sums": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "refusals_below": [
+     {
+      "actors": 9,
+      "distinct_available": 2,
+      "k": 1,
+      "refused": "TOO-FEW-SIGNATURES"
+     },
+     {
+      "actors": 9,
+      "distinct_available": 4,
+      "k": 2,
+      "refused": "TOO-FEW-SIGNATURES"
+     },
+     {
+      "actors": 9,
+      "distinct_available": 8,
+      "k": 3,
+      "refused": "TOO-FEW-SIGNATURES"
+     }
+    ],
+    "witness_signatures": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1,
+      1
+     ],
+     [
+      0,
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      1
+     ]
+    ]
+   },
+   {
+    "a": 5,
+    "certified_floor": 4,
+    "column_sums": [
+     5,
+     5,
+     5,
+     5
+    ],
+    "refusals_below": [
+     {
+      "actors": 9,
+      "distinct_available": 2,
+      "k": 1,
+      "refused": "TOO-FEW-SIGNATURES"
+     },
+     {
+      "actors": 9,
+      "distinct_available": 4,
+      "k": 2,
+      "refused": "TOO-FEW-SIGNATURES"
+     },
+     {
+      "actors": 9,
+      "distinct_available": 8,
+      "k": 3,
+      "refused": "TOO-FEW-SIGNATURES"
+     }
+    ],
+    "witness_signatures": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      0,
+      1
+     ],
+     [
+      1,
+      0,
+      1,
+      1
+     ],
+     [
+      0,
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      1
+     ]
+    ]
+   }
+  ],
+  "schedule": [
+   {
+    "a": 2,
+    "certificate": "PINNED-BY-THE-FLOOR",
+    "floor": 6,
+    "histories_enumerated": 0,
+    "pool_value": 6,
+    "unrestricted": 6,
+    "why": "the floor is a lower bound on every history and the pool already attains it, so no history anywhere is shorter"
+   },
+   {
+    "a": 3,
+    "certificate": "SEARCHED-AT-THE-FLOOR",
+    "floor": 4,
+    "lengths_refuted": 1,
+    "pool_value": 5,
+    "unrestricted": 5,
+    "why": "every history of every length between the floor and the delivered value was enumerated over the whole grouping pool and none separates the actors, so the delivered value is the minimum over every history the arity admits"
+   },
+   {
+    "a": 4,
+    "certificate": "SEARCHED-AT-THE-FLOOR",
+    "floor": 4,
+    "lengths_refuted": 1,
+    "pool_value": 5,
+    "unrestricted": 5,
+    "why": "every history of every length between the floor and the delivered value was enumerated over the whole grouping pool and none separates the actors, so the delivered value is the minimum over every history the arity admits"
+   },
+   {
+    "a": 5,
+    "certificate": "PINNED-BY-THE-FLOOR",
+    "floor": 4,
+    "histories_enumerated": 0,
+    "pool_value": 4,
+    "unrestricted": 4,
+    "why": "the floor is a lower bound on every history and the pool already attains it, so no history anywhere is shorter"
+   }
+  ],
+  "stamp": "BOTH LEGS ARE CERTIFICATES AND NEITHER MOVES A DELIVERED NUMBER: the floor certificate re-decides the searched value from the signature table's arithmetic and exhibits a witness, and the schedule certificate closes the gap between the pool the search drew from and the sentence that published it"
+ },
  "law2_crystallization": {
+  "closed_form_in_a_agrees": [
+   3
+  ],
+  "closed_form_read_in_the_event_size": {
+   "2": 2,
+   "3": 4,
+   "4": 6,
+   "5": 8
+  },
   "multi_corpus_strata": {
    "2": {
     "6": 848,
@@ -602,12 +1096,15 @@
   }
  },
  "law4_ladder": {
+  "first_rung_rows": 2,
   "mechanism": "the modulus is the cell count divided by its gcd with the measured round mass; it equals the declared link count exactly when the round mass equals the budget, which is a fact about the mass and not about the event size",
+  "mod_a_rows": 0,
   "rows": [
    {
     "a": 2,
     "achievable_budgets": [],
     "derived_rows": 0,
+    "event_size_differs_from_the_link_count": true,
     "feasible": false,
     "first_rung_is_the_event_size": false,
     "is_multiples_of_the_link_count": false,
@@ -623,6 +1120,7 @@
     "a": 2,
     "achievable_budgets": [],
     "derived_rows": 9,
+    "event_size_differs_from_the_link_count": true,
     "feasible": true,
     "first_rung_is_the_event_size": false,
     "is_multiples_of_the_link_count": false,
@@ -642,6 +1140,7 @@
      9
     ],
     "derived_rows": 6,
+    "event_size_differs_from_the_link_count": false,
     "feasible": true,
     "first_rung_is_the_event_size": true,
     "is_multiples_of_the_link_count": true,
@@ -661,6 +1160,7 @@
      9
     ],
     "derived_rows": 6,
+    "event_size_differs_from_the_link_count": false,
     "feasible": true,
     "first_rung_is_the_event_size": true,
     "is_multiples_of_the_link_count": true,
@@ -680,6 +1180,7 @@
      9
     ],
     "derived_rows": 6,
+    "event_size_differs_from_the_link_count": true,
     "feasible": true,
     "first_rung_is_the_event_size": false,
     "is_multiples_of_the_link_count": true,
@@ -695,6 +1196,7 @@
     "a": 4,
     "achievable_budgets": [],
     "derived_rows": 9,
+    "event_size_differs_from_the_link_count": true,
     "feasible": true,
     "first_rung_is_the_event_size": false,
     "is_multiples_of_the_link_count": false,
@@ -710,6 +1212,7 @@
     "a": 5,
     "achievable_budgets": [],
     "derived_rows": 0,
+    "event_size_differs_from_the_link_count": true,
     "feasible": false,
     "first_rung_is_the_event_size": false,
     "is_multiples_of_the_link_count": false,
@@ -725,6 +1228,7 @@
     "a": 5,
     "achievable_budgets": [],
     "derived_rows": 9,
+    "event_size_differs_from_the_link_count": true,
     "feasible": true,
     "first_rung_is_the_event_size": false,
     "is_multiples_of_the_link_count": false,
@@ -736,7 +1240,10 @@
     "saturating": 81,
     "searched_rows": 0
    }
-  ]
+  ],
+  "theorem": "UNDER THE BUDGET READING, AT EVERY ARENA: mass = n and cells = nL, so modulus = nL/gcd(nL, n) = L. The first rung is the declared link count always, and mod-a appears if and only if a = L. This discharges the family-level exposure of the budget half and explains the parent's R = L rule rather than re-observing it; under the maximality reading the mass is not the budget and the modulus is arena-specific",
+  "theorem_pairs_checked": 320,
+  "theorem_pairs_holding": 320
  },
  "law5_forcing": {
   "measure": "COUNTING-ONLY (E-24): no measure over histories is declared anywhere in this unit, so every fraction here is a count of this corpus's histories",
@@ -861,6 +1368,17 @@
   "thesis_holds_per_object": true
  },
  "law6_sec2": {
+  "arrangement_closed_form": {
+   "carriers": 15,
+   "degree": 6,
+   "doubled_pairs": 0,
+   "edges": 27,
+   "link_graph": "the complete tripartite graph on the lines of the undeclared parallel class",
+   "realised_pairs": 54,
+   "saturating_at_the_parent_arity": 36,
+   "stamp": "FORCED, NOT SEARCHED: these three counts follow from the arrangement alone and the run compares the closed form with the measurement rather than publishing the measurement by itself",
+   "undeclared_class": "ANT"
+  },
   "bound": "C(a,2) - floor(a*a/4), the complement of the maximum cut of the complete graph on a vertices: the least number of the group's pairs that must lie inside one sector",
   "rows": [
    {
@@ -1084,7 +1602,8 @@
    "n": 1,
    "passed": true,
    "prev": "0000000000000000",
-   "row_digest": "a1bd498cb9d5d651"
+   "row_digest": "a1bd498cb9d5d651",
+   "statement": "every runtime input is a hash-pinned artifact of this unit's frozen declaration; 4 sources are read and each one's sha256 prefix is compared with the declaration before its bytes are used"
   },
   {
    "evidence": {
@@ -1151,7 +1670,8 @@
    "n": 2,
    "passed": true,
    "prev": "7d6ad8cb52809dd5",
-   "row_digest": "99b44c6f628bc34b"
+   "row_digest": "99b44c6f628bc34b",
+   "statement": "8 path-value anchors bind the (path, value) pair and not only the file bytes, so a path drift that silently substituted another of the parent's numbers dies here even though no number would move"
   },
   {
    "evidence": {
@@ -1210,7 +1730,8 @@
    "n": 3,
    "passed": true,
    "prev": "3cc315676e0770a2",
-   "row_digest": "93c1095b3dc50318"
+   "row_digest": "93c1095b3dc50318",
+   "statement": "8 verbatim-text anchors bind QUOTE FIDELITY: each needle occurs exactly once in the pinned source and at least once in this paper's own rendering under the normalisation the era's text gates use, and each is readable only through an accessor that records the read"
   },
   {
    "evidence": {
@@ -1240,7 +1761,8 @@
    "n": 4,
    "passed": true,
    "prev": "44045aec5e70cf3c",
-   "row_digest": "e1c7c2f4df0e09d7"
+   "row_digest": "e1c7c2f4df0e09d7",
+   "statement": "the arena is AG(2, q) at 3 and it does not move: 9 actors, 27 cells, 4 parallel classes, characteristic 3, and the relation the parent's own quotation names between the field order and the actor count holds here, which is what makes the field order immovable while the event size is swept"
   },
   {
    "evidence": {
@@ -1265,13 +1787,37 @@
      "strict_triples": 72,
      "window": 600
     },
+    "preregistered_rows": [
+     [
+      "groupings",
+      "P-PARTS"
+     ],
+     [
+      "saturating",
+      "P-SAT"
+     ],
+     [
+      "strict_triples",
+      "P-STRICT"
+     ],
+     [
+      "flat_quadruples",
+      "P-FLAT"
+     ],
+     [
+      "window",
+      "P-WINDOW"
+     ]
+    ],
+    "preregistration_digest": "8af5fb7323bb69b9",
     "stamp": "FIDELITY-LEG-ONLY"
    },
    "gate": "G-CONSTRUCTOR-FIDELITY",
    "n": 5,
    "passed": true,
    "prev": "c2db9a7b405d9b8a",
-   "row_digest": "cb480265b639eecd"
+   "row_digest": "9138be6fad43cbf2",
+   "statement": "the a-grammar is run at the PARENT'S OWN ARITY first and its substrate is compared row by row against the committed counts read at declared JSON paths: 5 of 5 agree. The row set is a SEALED pre-registration -- a frozen tuple carrying its own digest, checked here -- so the cardinality this gate answers for cannot be re-declared after the fact. This gate is a FIDELITY LEG and not a finding, and no measurement at any other arity is taken before it passes"
   },
   {
    "evidence": {
@@ -1282,8 +1828,9 @@
    "gate": "G-PACKING-EXTENDS",
    "n": 6,
    "passed": true,
-   "prev": "6595fe375c6c67a8",
-   "row_digest": "999cf5ddfbfd7d7f"
+   "prev": "22817d9a4a89a32c",
+   "row_digest": "64b6f04bf968da42",
+   "statement": "at the parent's arity the maximal-packing rule returns exactly the partitions the parent's constructor returns -- all 280 of them, every one covering every actor -- so the arity transport is a strict extension of the committed constructor and not a different constructor that happens to agree on a count"
   },
   {
    "evidence": {
@@ -1373,8 +1920,9 @@
    "gate": "G-SUBSTRATE-CENSUS",
    "n": 7,
    "passed": true,
-   "prev": "bb6efa29a4c4a6d7",
-   "row_digest": "33ce7da7266f97b9"
+   "prev": "5d168d1fb22c6c06",
+   "row_digest": "b9b4da5569c15295",
+   "statement": "the substrate is censused at every one of the 4 declared arities, and the parent's two SEPARATELY anchored objects -- the budget and the maximum round incidence -- are reproduced at the parent's arity, where they agree at 9. The count of arities at which the budget IS the maximum is 1, which is the measurement that decides what the parent's word saturating can mean off its own arity"
   },
   {
    "evidence": {
@@ -1384,8 +1932,9 @@
    "gate": "G-FIDELITY-FIRST",
    "n": 8,
    "passed": true,
-   "prev": "b38caad84be60f30",
-   "row_digest": "459fb53ce5e4d391"
+   "prev": "c612e2c4e55c3777",
+   "row_digest": "b36c0b85f4861828",
+   "statement": "the fidelity gate fired at ledger row 5, before the first measurement taken at any arity other than the parent's; the ordering is checked against the ledger's own row indices rather than asserted"
   },
   {
    "evidence": {
@@ -1453,8 +2002,9 @@
    "gate": "G-CORPUS-RULE",
    "n": 9,
    "passed": true,
-   "prev": "90cf3977a8ce985f",
-   "row_digest": "2c7260226d3bdb7c"
+   "prev": "3831e017512ac774",
+   "row_digest": "46d2454624e3a4fc",
+   "statement": "one corpus rule is applied at every one of the 4 arities: the single-round census is COMPLETE everywhere -- every grouping the arity admits, nothing sampled -- and the multi-round corpus is the parent's own strict class where that class is non-empty and the orbit-reduced least-crystallizing corpus where it is not, run only when it fits the declared cap"
   },
   {
    "evidence": {
@@ -1474,8 +2024,9 @@
    "gate": "G-LAW1-NAMING",
    "n": 10,
    "passed": true,
-   "prev": "b1bc2baefd24616e",
-   "row_digest": "08fbe235ca27fe6b"
+   "prev": "576b930a1a88a57e",
+   "row_digest": "170cd0ecb0c79c50",
+   "statement": "two routes are compared AS SETS OF PERMUTATIONS, per object: route A holds a permutation set and keeps what survives the definition, route B builds the Young subgroup from the signature blocks and knows nothing of route A. The whole symmetric group is filtered at 400 prefixes and the declared window at 19778 more, with 868480 elements landing inside the stabilizer on the group leg and both directions exercised on the window leg; the disagreements number 0"
   },
   {
    "evidence": {
@@ -1525,31 +2076,251 @@
    "gate": "G-LAW2-CRYSTALLIZATION",
    "n": 11,
    "passed": true,
-   "prev": "c52cb1a8100f6f5f",
-   "row_digest": "8544d23a92904d38"
+   "prev": "45872058f4228b60",
+   "row_digest": "b16f8b52e9f705a5",
+   "statement": "the pair is re-measured at every one of the 4 arities: the schedule time by a complete breadth-first search over signature partitions, so it is a minimum over EVERY history the arity admits and not over a corpus; and the information floor over the COMPLETE event universe of the arity, every subset of that size, with the floor never above the schedule time"
   },
   {
    "evidence": {
     "closed_form_at_the_parent_arity": 4,
+    "closed_form_coefficient": 2,
+    "closed_form_in_the_event_size_agrees_at": [
+     3
+    ],
+    "closed_form_offset": 1,
+    "closed_form_read_in_the_event_size": {
+     "2": 2,
+     "3": 4,
+     "4": 6,
+     "5": 8
+    },
     "counting_bound_agrees_at": [
      3,
      4,
      5
     ],
     "incidence_product": "kq",
+    "measured_floor": {
+     "2": 6,
+     "3": 4,
+     "4": 4,
+     "5": 4
+    },
     "membership_symbol": "q",
     "sharpened_agrees_at": [
      2,
      3,
      4,
      5
+    ],
+    "the_separation_rests_on": [
+     2
     ]
    },
    "gate": "G-LAW2-SHARPENED",
    "n": 12,
    "passed": true,
-   "prev": "34ff8eb661986630",
-   "row_digest": "642ae7c1b2a786a4"
+   "prev": "e95d57153a8b3f6b",
+   "row_digest": "4ffa5d7727ab5576",
+   "statement": "the parent's SHARPENED floor is driven by the event size the parent's own quotation names -- the membership symbol and the incidence product are parsed out of the quotation rather than assumed -- and it reproduces the measured floor at 4 of 4 arities, while the counting bound the parent published beside it reproduces it at 3. The parent's CLOSED FORM is read twice and both readings are published: on its own axis, in the field order, it returns the parent's floor at the parent's arity, which is what makes this a transport of the parent's construction and not a new formula; read with the event size in that variable's place it agrees at 1 of 4 arities, so the closed form itself does not transport along this axis and the unit reports the disclosure rather than leaning on it"
+  },
+  {
+   "evidence": {
+    "rows": [
+     {
+      "a": 2,
+      "certified_floor": 6,
+      "column_sums": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "refusals_below": [
+       {
+        "actors": 9,
+        "distinct_available": 2,
+        "k": 1,
+        "refused": "TOO-FEW-SIGNATURES"
+       },
+       {
+        "actors": 9,
+        "distinct_available": 4,
+        "k": 2,
+        "refused": "TOO-FEW-SIGNATURES"
+       },
+       {
+        "actors": 9,
+        "distinct_available": 8,
+        "k": 3,
+        "refused": "TOO-FEW-SIGNATURES"
+       },
+       {
+        "budget": 8,
+        "k": 4,
+        "lightest_total": 12,
+        "refused": "WEIGHT-INFEASIBLE"
+       },
+       {
+        "budget": 10,
+        "k": 5,
+        "lightest_total": 11,
+        "refused": "WEIGHT-INFEASIBLE"
+       }
+      ],
+      "searched_floor": 6
+     },
+     {
+      "a": 3,
+      "certified_floor": 4,
+      "column_sums": [
+       3,
+       3,
+       3,
+       3
+      ],
+      "refusals_below": [
+       {
+        "actors": 9,
+        "distinct_available": 2,
+        "k": 1,
+        "refused": "TOO-FEW-SIGNATURES"
+       },
+       {
+        "actors": 9,
+        "distinct_available": 4,
+        "k": 2,
+        "refused": "TOO-FEW-SIGNATURES"
+       },
+       {
+        "actors": 9,
+        "distinct_available": 8,
+        "k": 3,
+        "refused": "TOO-FEW-SIGNATURES"
+       }
+      ],
+      "searched_floor": 4
+     },
+     {
+      "a": 4,
+      "certified_floor": 4,
+      "column_sums": [
+       4,
+       4,
+       4,
+       4
+      ],
+      "refusals_below": [
+       {
+        "actors": 9,
+        "distinct_available": 2,
+        "k": 1,
+        "refused": "TOO-FEW-SIGNATURES"
+       },
+       {
+        "actors": 9,
+        "distinct_available": 4,
+        "k": 2,
+        "refused": "TOO-FEW-SIGNATURES"
+       },
+       {
+        "actors": 9,
+        "distinct_available": 8,
+        "k": 3,
+        "refused": "TOO-FEW-SIGNATURES"
+       }
+      ],
+      "searched_floor": 4
+     },
+     {
+      "a": 5,
+      "certified_floor": 4,
+      "column_sums": [
+       5,
+       5,
+       5,
+       5
+      ],
+      "refusals_below": [
+       {
+        "actors": 9,
+        "distinct_available": 2,
+        "k": 1,
+        "refused": "TOO-FEW-SIGNATURES"
+       },
+       {
+        "actors": 9,
+        "distinct_available": 4,
+        "k": 2,
+        "refused": "TOO-FEW-SIGNATURES"
+       },
+       {
+        "actors": 9,
+        "distinct_available": 8,
+        "k": 3,
+        "refused": "TOO-FEW-SIGNATURES"
+       }
+      ],
+      "searched_floor": 4
+     }
+    ]
+   },
+   "gate": "G-LAW2-FLOOR-CERTIFICATE",
+   "n": 13,
+   "passed": true,
+   "prev": "67ed7dc538484b2c",
+   "row_digest": "0351c78ceff8989d",
+   "statement": "the information floor is decided a second time, by a route the exhaustive search does not use: a history of k events at event size a gives every actor a k-bit signature and every event exactly a members, so the floor is the least k admitting n distinct k-bit vectors whose every column sums to the event size. All 4 arities agree with the searched value, each with an exhibited witness whose signatures are distinct and whose column sums are the event size, and with 14 refusals below it that name their own reason"
+  },
+  {
+   "evidence": {
+    "rows": [
+     {
+      "a": 2,
+      "certificate": "PINNED-BY-THE-FLOOR",
+      "floor": 6,
+      "histories_enumerated": 0,
+      "pool_value": 6,
+      "unrestricted": 6,
+      "why": "the floor is a lower bound on every history and the pool already attains it, so no history anywhere is shorter"
+     },
+     {
+      "a": 3,
+      "certificate": "SEARCHED-AT-THE-FLOOR",
+      "floor": 4,
+      "lengths_refuted": 1,
+      "pool_value": 5,
+      "unrestricted": 5,
+      "why": "every history of every length between the floor and the delivered value was enumerated over the whole grouping pool and none separates the actors, so the delivered value is the minimum over every history the arity admits"
+     },
+     {
+      "a": 4,
+      "certificate": "SEARCHED-AT-THE-FLOOR",
+      "floor": 4,
+      "lengths_refuted": 1,
+      "pool_value": 5,
+      "unrestricted": 5,
+      "why": "every history of every length between the floor and the delivered value was enumerated over the whole grouping pool and none separates the actors, so the delivered value is the minimum over every history the arity admits"
+     },
+     {
+      "a": 5,
+      "certificate": "PINNED-BY-THE-FLOOR",
+      "floor": 4,
+      "histories_enumerated": 0,
+      "pool_value": 4,
+      "unrestricted": 4,
+      "why": "the floor is a lower bound on every history and the pool already attains it, so no history anywhere is shorter"
+     }
+    ]
+   },
+   "gate": "G-LAW2-SCHEDULE-COMPLETE",
+   "n": 14,
+   "passed": true,
+   "prev": "cb6ce669e21f6107",
+   "row_digest": "bfc10b9a56755aca",
+   "statement": "the schedule time is certified to be the minimum over EVERY history the arity admits and not only over the pool the search drew from: the attained floor is a lower bound on any history, so at 2 of the 4 arities the delivered value is pinned by the floor outright, and at the rest every history of the floor's own length is enumerated over the whole grouping pool and none separates the actors, which raises the bound to the delivered value"
   },
   {
    "evidence": {
@@ -1561,10 +2332,11 @@
     "survivors": 6
    },
    "gate": "G-LAW3-MENU",
-   "n": 13,
+   "n": 15,
    "passed": true,
-   "prev": "98a6a6914a6ddf07",
-   "row_digest": "41436297e925b422"
+   "prev": "f6488415bc2acb21",
+   "row_digest": "159a5abdf75680c2",
+   "statement": "the geometry leg is evaluated on the COMPLETE actor lattice -- all 21147 partitions of the nine actors, cross-checked against Bell(n) computed by the Bell triangle at 21147 -- and its 6 survivors are compared ELEMENT BY ELEMENT with the 6 coset partitions of the translation subgroups. The leg reads the partition and the arena and never a history, so its value cannot move with the event size: the row is a DISCLOSURE and is published as one"
   },
   {
    "evidence": {
@@ -1573,6 +2345,7 @@
       "a": 2,
       "achievable_budgets": [],
       "derived_rows": 0,
+      "event_size_differs_from_the_link_count": true,
       "feasible": false,
       "first_rung_is_the_event_size": false,
       "is_multiples_of_the_link_count": false,
@@ -1588,6 +2361,7 @@
       "a": 2,
       "achievable_budgets": [],
       "derived_rows": 9,
+      "event_size_differs_from_the_link_count": true,
       "feasible": true,
       "first_rung_is_the_event_size": false,
       "is_multiples_of_the_link_count": false,
@@ -1607,6 +2381,7 @@
        9
       ],
       "derived_rows": 6,
+      "event_size_differs_from_the_link_count": false,
       "feasible": true,
       "first_rung_is_the_event_size": true,
       "is_multiples_of_the_link_count": true,
@@ -1626,6 +2401,7 @@
        9
       ],
       "derived_rows": 6,
+      "event_size_differs_from_the_link_count": false,
       "feasible": true,
       "first_rung_is_the_event_size": true,
       "is_multiples_of_the_link_count": true,
@@ -1645,6 +2421,7 @@
        9
       ],
       "derived_rows": 6,
+      "event_size_differs_from_the_link_count": true,
       "feasible": true,
       "first_rung_is_the_event_size": false,
       "is_multiples_of_the_link_count": true,
@@ -1660,6 +2437,7 @@
       "a": 4,
       "achievable_budgets": [],
       "derived_rows": 9,
+      "event_size_differs_from_the_link_count": true,
       "feasible": true,
       "first_rung_is_the_event_size": false,
       "is_multiples_of_the_link_count": false,
@@ -1675,6 +2453,7 @@
       "a": 5,
       "achievable_budgets": [],
       "derived_rows": 0,
+      "event_size_differs_from_the_link_count": true,
       "feasible": false,
       "first_rung_is_the_event_size": false,
       "is_multiples_of_the_link_count": false,
@@ -1690,6 +2469,7 @@
       "a": 5,
       "achievable_budgets": [],
       "derived_rows": 9,
+      "event_size_differs_from_the_link_count": true,
       "feasible": true,
       "first_rung_is_the_event_size": false,
       "is_multiples_of_the_link_count": false,
@@ -1704,10 +2484,40 @@
     ]
    },
    "gate": "G-LAW4-LADDER",
-   "n": 14,
+   "n": 16,
    "passed": true,
-   "prev": "3cb92cb9195ee29d",
-   "row_digest": "a956dca0fb1c3a6d"
+   "prev": "6fb1eeba26644560",
+   "row_digest": "7f5ac909ab27475b",
+   "statement": "the ladder is searched at every arity and at both declared saturation readings, to the declared bound 9 -- 8 rows, of which 3 carry a rung at all. Every row that carries one carries exactly the multiples of the declared link count. The first rung IS the event size at 2 rows, and at 0 of the rows where the event size and the declared link count are different numbers; both counters are published, because the first is satisfied at the parent's arity by the coincidence this axis exists to break and only the second discriminates. Rows the measured mass forbids are DERIVED from that mass and the rest are searched exhaustively under the constant as a per-cell ceiling"
+  },
+  {
+   "evidence": {
+    "l_max": 8,
+    "live_budget_rows": [
+     [
+      3,
+      9,
+      3,
+      false
+     ],
+     [
+      4,
+      9,
+      3,
+      false
+     ]
+    ],
+    "n_max": 40,
+    "pairs_checked": 320,
+    "pairs_holding": 320,
+    "under_the_maximal_reading": "the round mass is not the budget, so the modulus is arena-specific and this half stays a measurement at the declared arena"
+   },
+   "gate": "G-LAW4-THEOREM",
+   "n": 17,
+   "passed": true,
+   "prev": "c94d00d6a5284125",
+   "row_digest": "d314a13f5affdce2",
+   "statement": "under the budget reading the round mass IS the budget and the budget is the actor count, while the cell field is the actors times the declared links, so the modulus is nL/gcd(nL, n) = L at EVERY arena and not only at this one: the first rung is the declared link count always, and mod-a appears exactly when the event size equals the link count. The identity is verified at 320 declared (n, L) pairs, 320 of them holding, and the 2 live budget rows of this arena are checked to be instances of it rather than evidence for it"
   },
   {
    "evidence": {
@@ -1833,10 +2643,11 @@
     "thesis_holds_per_object": true
    },
    "gate": "G-LAW5-FORCING",
-   "n": 15,
+   "n": 18,
    "passed": true,
-   "prev": "0253cf86a87b1e1f",
-   "row_digest": "2056fbd56f224be2"
+   "prev": "1af15cd01d2f1113",
+   "row_digest": "7a8fb5f3703b3a37",
+   "statement": "the criterion is evaluated over the COMPLETE actor lattice at every history of every corpus at all 4 arities -- the geometry leg collapses the lattice to its survivors before any history is read, so nothing is windowed -- and the parent's thesis is tested PER OBJECT rather than by comparing counts: a history is non-unique exactly when it repeats a parallel class. At the parent's arity 4 single rounds are non-unique"
   },
   {
    "evidence": {
@@ -2039,10 +2850,36 @@
     "union_realised_pairs": 54
    },
    "gate": "G-LAW6-SEC2",
-   "n": 16,
+   "n": 19,
    "passed": true,
-   "prev": "adc910b1da700b5b",
-   "row_digest": "7e8f623839e24439"
+   "prev": "5b32a8b2772f17d6",
+   "row_digest": "dca9b99313c1e054",
+   "statement": "the union of two driven sectors is rebuilt here from the arrangement alone and its a-group census is run at every declared arity, object by object with no orbit shortcut. The parent's own quotations are parsed rather than paraphrased: the spelled bound on cross pairs, the spelled group size its control row says cannot produce the free configuration, and both numerals of its delivered census; all four are compared against this unit's independently measured values, and the identity that every pair of a group is a cross pair, a new within-sector pair or a doubling holds at every group"
+  },
+  {
+   "evidence": {
+    "carriers_closed_form": 15,
+    "carriers_measured": 15,
+    "complete": true,
+    "degrees": [
+     6
+    ],
+    "doubled_pairs": 0,
+    "edges": 27,
+    "realised_pairs_closed_form": 54,
+    "realised_pairs_measured": 54,
+    "saturating_closed_form": 36,
+    "saturating_measured": 36,
+    "sector_pairs_inside_the_seam": 0,
+    "tripartite": true,
+    "undeclared_class": "ANT"
+   },
+   "gate": "G-LAW6-CLOSED-FORM",
+   "n": 20,
+   "passed": true,
+   "prev": "8bc2cbdb90de56b9",
+   "row_digest": "eea61a24a0b4f3dd",
+   "statement": "the declared-link graph on the actors is the complete tripartite graph whose parts are the lines of the UNDECLARED parallel class -- 27 edges, every vertex of degree 6, verified as tripartite and as complete rather than assumed -- and three counts this unit otherwise reports as search results are re-derived from that fact alone and matched: the saturating groupings at the parent's arity are exactly its 36 transversal packings, the union's carriers are twice the actors less one line, and its realised pairs are twice the sector's with no doubling, because the seam is a line of the undeclared class and carries no declared link"
   },
   {
    "evidence": {
@@ -2161,10 +2998,11 @@
     ]
    },
    "gate": "G-PRINCIPLE-CENSUS",
-   "n": 17,
+   "n": 21,
    "passed": true,
-   "prev": "9cbe2f4f6cea55ac",
-   "row_digest": "0f282261fedfa948"
+   "prev": "b803e044e5cfe5e6",
+   "row_digest": "4d5181c1cfdcaa74",
+   "statement": "5 candidate principles, none of them ever registered as a principle anywhere in the corpus, are evaluated by measurement at all 9 candidate event sizes the arena admits; 3 of them admit the parent's arity and no other nontrivial one"
   },
   {
    "evidence": {
@@ -2202,17 +3040,50 @@
     ]
    },
    "gate": "G-TRANSPORT-CONTROLS",
-   "n": 18,
+   "n": 22,
    "passed": true,
-   "prev": "b56210e8fc7a35dd",
-   "row_digest": "04c9b58b2e97af7e"
+   "prev": "7eac3dabc138ae80",
+   "row_digest": "039d949e26f4a190",
+   "statement": "6 synthetic laws are pushed through the REAL decision procedure -- one built to force each word, one whose rows are all infeasible so the procedure must refuse rather than default, and two at the statement slot -- and 6 of them come out as forced; the procedure is a pure function of its rows, so the words the real laws receive are emitted by this same code and nothing else"
   },
   {
    "evidence": {
+    "aggregate_under_each_rule": {
+     "a-itself": {
+      "BREAKS": 5,
+      "LAW-IN-A": 0,
+      "NEEDS-3": 2
+     },
+     "blocks-per-round": {
+      "BREAKS": 5,
+      "LAW-IN-A": 0,
+      "NEEDS-3": 2
+     },
+     "the declared rule": {
+      "BREAKS": 5,
+      "LAW-IN-A": 0,
+      "NEEDS-3": 2
+     },
+     "the section-9 closed form": {
+      "BREAKS": 4,
+      "LAW-IN-A": 1,
+      "NEEDS-3": 2
+     }
+    },
     "ladder_statement_under_the_maximal_reading": "BREAKS",
     "numeral_words": {
      "BREAKS": 5,
      "NEEDS-3": 2
+    },
+    "rows_moved_by_a_rule": {
+     "the section-9 closed form": [
+      {
+       "declared_word": "BREAKS",
+       "law": "sec2-counting",
+       "numeral": "the pairs forced inside a sector",
+       "word_under_this_rule": "LAW-IN-A"
+      }
+     ]
     },
     "sensitivity_moves": 0,
     "slot_parsed_from_the_quotation": "STATEMENT",
@@ -2222,32 +3093,37 @@
     }
    },
    "gate": "G-AGGREGATE",
-   "n": 19,
+   "n": 23,
    "passed": true,
-   "prev": "5fa977583d317c10",
-   "row_digest": "334af52a62aa08a5"
+   "prev": "4d945013312e4d2d",
+   "row_digest": "161f9cae50aff965",
+   "statement": "the aggregate is TWO-LEVELLED and says which level it aggregates, in the slot name parsed out of the parent's own engraving: 6 statements are scored and 7 numerals separately, and the numeral level admits 0 readings in which the value is a function of the event size. The aggregate is RULE-RELATIVE and every rule's aggregate is published: 4 uniform a-only rules are run over every numeral, the two monotone alternatives move 0 words, and this paper's own section-9 closed form -- the one exact arity law the unit's measurements supply -- moves 1, which is why the head names the rule its count belongs to"
   },
   {
    "evidence": {
-    "distinct_numerals_licensed": 44,
     "engraving_ids_exempted": 1,
+    "fields_declared": 83,
     "findings": [],
     "numeral_words_recomputed": {
      "BREAKS": 5,
+     "LAW-IN-A": 0,
      "NEEDS-3": 2
     },
-    "numerals_in_the_head": 148,
+    "numerals_in_the_head": 156,
+    "positionally_bound": 156,
+    "required_fields": 9,
+    "resolvers": 72,
     "statement_words_recomputed": {
      "BREAKS": 2,
      "LAW-IN-A": 4
-    },
-    "unlicensed": []
+    }
    },
    "gate": "G-VERDICT-EQUALITY",
-   "n": 20,
+   "n": 24,
    "passed": true,
-   "prev": "d93809d0d76ebf23",
-   "row_digest": "012225463e5f6859"
+   "prev": "d9f88791a7825839",
+   "row_digest": "7d42d36e4002d530",
+   "statement": "the head's 9 segments carry 156 numerals in 83 declared positional fields, and a comparator that shares no code and no typed literal with the builder matches every numeral against the field standing at THAT position and re-derives each field's value from the receipt's own row lists by its own arithmetic, re-deciding the verdict words without calling the decision procedure. A field with no resolver is a stray key, so the scan is total by construction rather than by inspection; the disagreements number 0"
   },
   {
    "evidence": {
@@ -2255,28 +3131,34 @@
     "fence_stray": [],
     "fences_claimed": 9,
     "fences_in_paper": 9,
+    "object_under_test": {
+     "characters": 57395,
+     "path": "v15/paper-44-arity.md",
+     "sha256_12": "0d677a4cbe97"
+    },
     "prose_bad": [],
-    "prose_claims": 6,
-    "tables_claimed": 11,
-    "tables_in_paper": 11,
+    "prose_claims": 14,
+    "tables_claimed": 13,
+    "tables_in_paper": 13,
     "tables_missing": [],
     "tables_unclaimed": []
    },
    "gate": "G-PAPER-CLAIMS",
-   "n": 21,
+   "n": 25,
    "passed": true,
-   "prev": "c3f8117b2e4d9d0d",
-   "row_digest": "3999095260635ba5"
+   "prev": "0114bb30a8163bc3",
+   "row_digest": "7a4ff5022cad5ac3",
+   "statement": "13 tables are rendered from the receipt and matched against the 13 the paper carries, keyed by table and in BOTH directions so a row transplanted between two tables is stray in one and missing in the other; the verdict fences are compared by MULTISET equality whatever their info string; and 14 prose claims are required at exact occurrence counts"
   },
   {
    "evidence": {
-    "distinct": 44,
-    "numerals_scanned": 456,
+    "distinct": 46,
+    "numerals_scanned": 547,
     "strips_declared": 9,
     "strips_never_used": [],
     "strips_used": [
      {
-      "hits": 8,
+      "hits": 9,
       "pattern": "paper-\\d+",
       "reason": "a paper id"
      },
@@ -2306,12 +3188,12 @@
       "reason": "a criterion-leg id"
      },
      {
-      "hits": 7,
+      "hits": 9,
       "pattern": "\\b[Ss]ections? \\d+(?: and \\d+)?",
       "reason": "a cross-reference to a section"
      },
      {
-      "hits": 14,
+      "hits": 15,
       "pattern": "(?m)^#+\\s+\\d+\\.?",
       "reason": "a numbered section heading"
      },
@@ -2324,59 +3206,94 @@
     "uncovered": []
    },
    "gate": "G-PAPER-COVERAGE",
-   "n": 22,
+   "n": 26,
    "passed": true,
-   "prev": "7cd65e8172d5f07d",
-   "row_digest": "02e1f4eb26b26e79"
+   "prev": "dd058efd685c98ba",
+   "row_digest": "b36895b7e4cfc326",
+   "statement": "every numeral in the paper is scanned -- fenced blocks, inline code spans, table cells and verdict blocks included -- and each must appear in the receipt or fall under a declared structural exemption that is required to be used: 547 numerals scanned, 0 uncovered"
   },
   {
    "evidence": {
-    "sentences_checked": 23,
+    "pairs_checked": 4,
+    "sentences_checked": 37,
+    "spelled_normalised": false,
     "violations": []
    },
    "gate": "G-PAPER-REFERENTS",
-   "n": 23,
+   "n": 27,
    "passed": true,
-   "prev": "b8fe06585059d903",
-   "row_digest": "d0f0be4e26616a9b"
+   "prev": "7e840a0ad08752ca",
+   "row_digest": "b4e0679b6d92f2b8",
+   "statement": "37 prose sentences select a declared universe by their subject noun and every numeral in each is resolved against THAT universe only, per occurrence and with fenced blocks stripped first so the run's own verdict cannot discharge the paper's obligations; an A-of-B fraction must be a pair the run measured, not two members of one set. Violations: 0"
   },
   {
    "evidence": {
-    "claims": 4,
+    "claim_violations": [],
+    "declared_exclusions": {
+     "one": "the English article and pronoun, which carries a count only by accident of spelling"
+    },
+    "inversion_violations": [],
+    "spelled_cardinals_present": [
+     "five",
+     "four",
+     "nine",
+     "seven",
+     "six",
+     "three",
+     "two",
+     "zero"
+    ],
+    "spelled_claims": 5,
+    "spelled_pairs_checked": 7,
+    "spelled_sentences_checked": 84,
+    "universe_violations": []
+   },
+   "gate": "G-PAPER-SPELLED",
+   "n": 28,
+   "passed": true,
+   "prev": "6a3dad71c5aee343",
+   "row_digest": "a6f36876f88bfd29",
+   "statement": "the same prose is scanned again in the OTHER ALPHABET: every spelled cardinal is rewritten to its digits and then bound exactly as a written numeral is -- 84 sentences resolved against their own universe, every spelled A-of-B required to be a pair the run measured -- and the 5 sentences this run renders with a spelled numeral are required verbatim at their exact occurrence counts with the form their own inversion would take required to be absent"
+  },
+  {
+   "evidence": {
+    "claims": 7,
     "violations": []
    },
    "gate": "G-PAPER-POLARITY",
-   "n": 24,
+   "n": 29,
    "passed": true,
-   "prev": "d52a714809038782",
-   "row_digest": "5015afb56df1f896"
+   "prev": "d155fe041347d77a",
+   "row_digest": "0fd9b2ef07ca33f8",
+   "statement": "7 direction-bearing claims are bound to measured booleans rather than to numerals, because a prose flip inverts a finding without moving a number"
   },
   {
    "evidence": {
     "walls": [
      {
-      "controls_caught": 3,
-      "independent_controls": 3,
+      "controls_caught": 6,
+      "has_a_licence_leg": true,
+      "independent_controls": 6,
       "missing_positive": [],
       "seal": {
        "independent_controls": 3,
        "licences": [
-        "\\bconditional\\b",
         "\\bassumptions\\b",
         "\\bimplicit in a constructor\\b",
-        "\\bif\\b",
+        "\\bif\\b[^.]{0,200}\\bthen\\b",
         "\\bidentifiability\\b",
         "\\bdiscriminat\\w+",
-        "\\bnothing measured\\b",
-        "\\bnot\\b",
-        "\\bnever\\b",
+        "\\bnothing measured here\\b",
         "\\bwithout the arena\\b",
-        "\\bwould\\b",
         "\\bcandidate\\b",
-        "\\bonly if\\b",
-        "\\bthen\\b",
         "\\bextension\\b",
-        "\\bpin asks\\b"
+        "\\bcounting-only\\b",
+        "\\bnever registered\\b",
+        "\\bnever pre-registered\\b",
+        "\\bat this arena\\b",
+        "\\bfree declaration\\b",
+        "\\bthe pin asks\\b",
+        "\\bwithin the declared\\b"
        ],
        "name": "W-NO-SELECTION",
        "negative": [
@@ -2395,20 +3312,26 @@
         "\\bdemand\\w+",
         "\\bsettl\\w+",
         "\\bestablish\\w+",
-        "\\bno other (?:choice|option|possibilit\\w+)\\b",
+        "\\bno other (?:choice|option|size|possibilit\\w+)\\b",
         "\\bmust be\\b",
         "\\bfixed by\\b",
         "\\bcompel\\w+",
         "\\bdictat\\w+",
         "\\bleaves no\\b",
-        "\\bobliged\\b"
+        "\\bobliged\\b",
+        "\\bonly one\\b",
+        "\\bthe only (?:size|choice|option)\\b",
+        "\\badmits no rival\\b",
+        "\\bno rival\\b",
+        "\\bcloses on\\b",
+        "\\bhad to be\\b"
        ],
        "positive": [
         "nothing measured here selects",
         "implicit in a constructor"
        ],
        "subject": [
-        "\\b(?:arity|arities|event size|three actors|three-actor)\\b"
+        "\\b(?:arity|arities|event size|event sizes|block size|block sizes|group size|division event|three actors|three-actor|actors per event)\\b"
        ]
       },
       "unlicensed_sentences": [],
@@ -2416,64 +3339,107 @@
       "wall": "W-NO-SELECTION"
      },
      {
-      "controls_caught": 2,
-      "independent_controls": 2,
+      "controls_caught": 6,
+      "has_a_licence_leg": true,
+      "independent_controls": 6,
       "missing_positive": [],
       "seal": {
-       "independent_controls": 2,
-       "licences": [],
+       "independent_controls": 3,
+       "licences": [
+        "\\bcounting-only\\b",
+        "\\bno measure\\b",
+        "\\bno distribution\\b",
+        "\\ba count of\\b",
+        "\\bcomplete census\\b",
+        "\\bevery grouping\\b",
+        "\\bnothing sampled\\b",
+        "\\bdeclared window\\b"
+       ],
        "name": "W-NO-PROBABILITY",
        "negative": [
         "\\b(?:probabilit|likelihood|likely|chance)\\w*\\b[^.]{0,40}\\barit(?:y|ies)\\b",
         "most (?:arities|event sizes) (?:are|admit)",
         "\\btypical(?:ly)? (?:arity|event size)\\b"
        ],
-       "policed": [],
+       "policed": [
+        "\\bprobabilit\\w*",
+        "\\blikelihood\\b",
+        "\\blikely\\b",
+        "\\bchance\\b",
+        "\\btypical\\w*",
+        "\\bon average\\b",
+        "\\bexpected value\\b",
+        "\\bat random\\b",
+        "\\brandomly\\b",
+        "\\bmost (?:arities|event sizes)\\b"
+       ],
        "positive": [
         "counting-only"
        ],
-       "subject": []
+       "subject": [
+        "\\b(?:arity|arities|event size|event sizes|groupings?|histor(?:y|ies)|fraction)\\b"
+       ]
       },
       "unlicensed_sentences": [],
       "violations": [],
       "wall": "W-NO-PROBABILITY"
      },
      {
-      "controls_caught": 2,
-      "independent_controls": 2,
+      "controls_caught": 6,
+      "has_a_licence_leg": true,
+      "independent_controls": 6,
       "missing_positive": [],
       "seal": {
-       "independent_controls": 2,
-       "licences": [],
+       "independent_controls": 3,
+       "licences": [
+        "\\bnames no other carrier\\b",
+        "\\bsimultaneously the n-only\\b",
+        "\\bnot-carried-by-a\\b",
+        "\\bat fixed n\\b",
+        "\\bthe constant reading\\b",
+        "\\bwhich of the standing coordinates\\b",
+        "\\bcannot separate\\b",
+        "\\bcoincide\\b"
+       ],
        "name": "W-NO-CARRIER-OVERREACH",
        "negative": [
         "\\b(?:the (?:numeral|value|count)s?|it) (?:is|are) (?:therefore )?carried by (?:the )?(?:field order|q)\\b",
         "\\bthis unit (?:shows|proves)[^.]{0,40}\\bq[- ]carried\\b",
         "\\bstanding still (?:here )?(?:shows|proves|means) (?:it is )?q[- ]carried"
        ],
-       "policed": [],
+       "policed": [
+        "\\bis (?:therefore )?carried by (?:the )?(?:field order|q)\\b",
+        "\\bare (?:therefore )?carried by (?:the )?(?:field order|q)\\b",
+        "\\bq[- ]carried\\b",
+        "\\bn[- ]carried\\b",
+        "\\bbelongs to the field order\\b",
+        "\\bthe field order carries\\b"
+       ],
        "positive": [
         "names no other carrier"
        ],
-       "subject": []
+       "subject": [
+        "\\b(?:numerals?|values?|counts?|menu|modulus|first rung|stands? still|standing still|does not move)\\b"
+       ]
       },
       "unlicensed_sentences": [],
       "violations": [],
       "wall": "W-NO-CARRIER-OVERREACH"
      },
      {
-      "controls_caught": 3,
-      "independent_controls": 3,
+      "controls_caught": 6,
+      "has_a_licence_leg": true,
+      "independent_controls": 6,
       "missing_positive": [],
       "seal": {
        "independent_controls": 3,
        "licences": [
         "\\bidentifiability\\b",
-        "\\bnot\\b",
-        "\\bnever\\b",
-        "\\bwould be\\b",
+        "\\bdiscriminat\\w+",
         "\\bdifferent property\\b",
-        "\\bconditional\\b"
+        "\\bnever promoted to\\b",
+        "\\bis a weaker\\b",
+        "\\bwhich is a different\\b"
        ],
        "name": "W-NO-RECONSTRUCTION-AS-DERIVATION",
        "negative": [
@@ -2488,14 +3454,16 @@
         "\\bprov\\w+",
         "\\bestablish\\w+",
         "\\bsettl\\w+",
-        "\\bshow\\w*\\b"
+        "\\bshow\\w*\\b",
+        "\\bhad to be\\b",
+        "\\bsuffice\\w*\\b"
        ],
        "positive": [
         "identifiability",
         "discriminat"
        ],
        "subject": [
-        "\\b(?:recover\\w*|reconstruct\\w*|self-consistent|identifiab\\w+)\\b"
+        "\\b(?:recover\\w*|reconstruct\\w*|reconstructible|self-consistent|identifiab\\w+|records generated)\\b"
        ]
       },
       "unlicensed_sentences": [],
@@ -2503,18 +3471,21 @@
       "wall": "W-NO-RECONSTRUCTION-AS-DERIVATION"
      },
      {
-      "controls_caught": 3,
-      "independent_controls": 3,
+      "controls_caught": 6,
+      "has_a_licence_leg": true,
+      "independent_controls": 6,
       "missing_positive": [],
       "seal": {
        "independent_controls": 3,
        "licences": [
         "\\bbefore an operational\\b",
-        "\\bno sentence\\b",
         "\\bforbidden\\b",
         "\\binvariance and nothing more\\b",
         "\\bdisclosure\\b",
-        "\\bwould\\b"
+        "\\ba-inert by construction\\b",
+        "\\bcounting-only\\b",
+        "\\bno sentence here promotes\\b",
+        "\\bthat promotion is\\b"
        ],
        "name": "W-NO-INVARIANCE-AS-GAUGE",
        "negative": [
@@ -2527,16 +3498,23 @@
         "\\bphysic\\w*",
         "\\bobservable\\b",
         "\\bmeaningless\\b",
-        "\\breal\\b",
+        "\\breal content\\b",
         "\\bontolog\\w+",
         "\\bredundan\\w+",
-        "\\bpart of the theory\\b"
+        "\\bpart of the theory\\b",
+        "\\bdescriptive\\b",
+        "\\bbookkeep\\w+",
+        "\\bbelongs to the description\\b",
+        "\\bno content\\b",
+        "\\bcontent an experiment\\b",
+        "\\bto the world\\b",
+        "\\bpresentation\\b"
        ],
        "positive": [
         "before an operational observable exists"
        ],
        "subject": [
-        "\\b(?:menu|invarian\\w*|a-inert|unchanged|stands? still|standing still|does not move)\\b"
+        "\\b(?:menu|invarian\\w*|a-inert|inert|unchanged|stands? still|standing still|does not move|reads the same|survive the whole sweep|constant across)\\b"
        ]
       },
       "unlicensed_sentences": [],
@@ -2544,19 +3522,20 @@
       "wall": "W-NO-INVARIANCE-AS-GAUGE"
      },
      {
-      "controls_caught": 2,
-      "independent_controls": 2,
+      "controls_caught": 6,
+      "has_a_licence_leg": true,
+      "independent_controls": 6,
       "missing_positive": [],
       "seal": {
-       "independent_controls": 2,
+       "independent_controls": 3,
        "licences": [
         "\\bextension\\b",
         "\\bpacking rule\\b",
         "\\bthis unit\\b",
-        "\\bnot\\b",
-        "\\bnever\\b",
-        "\\bdeclared\\b",
-        "\\bwould\\b"
+        "\\bwithin the declared\\b",
+        "\\bdeclared extension family\\b",
+        "\\bidle remainder\\b",
+        "\\bdeclaration\\b"
        ],
        "name": "W-EXTENSION-SCOPE",
        "negative": [
@@ -2567,13 +3546,16 @@
         "\\bisp\\b",
         "\\bthe theory\\b",
         "\\bthe corpus\\b",
-        "\\bthe committed\\b"
+        "\\bthe committed\\b",
+        "\\bkeeps\\b",
+        "\\bloses\\b"
        ],
        "positive": [
         "extensions of the committed theory"
        ],
        "subject": [
-        "\\bat (?:two|four|five) actors\\b"
+        "\\bat (?:two|four|five) actors\\b",
+        "\\b(?:two|four|five)-actor world\\b"
        ]
       },
       "unlicensed_sentences": [],
@@ -2581,42 +3563,118 @@
       "wall": "W-EXTENSION-SCOPE"
      },
      {
-      "controls_caught": 3,
-      "independent_controls": 3,
+      "controls_caught": 6,
+      "has_a_licence_leg": true,
+      "independent_controls": 6,
       "missing_positive": [],
       "seal": {
        "independent_controls": 3,
-       "licences": [],
+       "licences": [
+        "that unit's measurement",
+        "\\brequires the price\\b",
+        "\\bthe unit that owns the update rule\\b",
+        "\\bis not decided here\\b",
+        "\\bare not recomputed\\b",
+        "\\bquestion for the unit\\b",
+        "\\bthe price the unit\\b",
+        "\\bcounting-only\\b",
+        "\\bpair combinatorics\\b"
+       ],
        "name": "W-NO-MOTIVATION-CLAIM",
        "negative": [
         "\\bgluing is (?:therefore )?(?:a )?free\\b",
         "\\bmotivated\\b[^.]{0,30}\\bat (?:two|2) actors\\b",
         "\\bthis unit (?:measures|shows|proves)[^.]{0,30}\\bfree items?\\b"
        ],
-       "policed": [],
+       "policed": [
+        "\\bfree\\b",
+        "\\bmotivated\\b",
+        "\\bpriced at\\b",
+        "\\bcosts nothing\\b",
+        "\\blawful\\b",
+        "\\bautonomous\\b",
+        "\\bfree of charge\\b"
+       ],
        "positive": [
         "(?:is|are) that unit's measurement and (?:is|are) not recomputed"
        ],
-       "subject": []
+       "subject": [
+        "\\b(?:gluing|crossing|crossings|seam-spanning|free items?|motivat\\w+)\\b"
+       ]
       },
       "unlicensed_sentences": [],
       "violations": [],
       "wall": "W-NO-MOTIVATION-CLAIM"
+     },
+     {
+      "controls_caught": 6,
+      "has_a_licence_leg": true,
+      "independent_controls": 6,
+      "missing_positive": [],
+      "seal": {
+       "independent_controls": 3,
+       "licences": [
+        "\\bat this arena\\b",
+        "\\bat the declared arena\\b",
+        "\\bone point of a\\b",
+        "\\bfibre\\b",
+        "\\bstill-free\\b",
+        "\\bmember-specific\\b",
+        "\\bthe declared arena\\b",
+        "\\bby a two-line proof\\b",
+        "\\bis a theorem\\b",
+        "\\bdeclared arena pairs\\b",
+        "\\bwithin the declared\\b",
+        "\\bthis unit measures\\b"
+       ],
+       "name": "W-NO-FAMILY-PREDICTION",
+       "negative": [
+        "\\bacross the isp family\\b",
+        "\\bany isp model\\b[^.]{0,60}\\b(?:gives|predicts|returns)\\b",
+        "\\bat every arena\\b[^.]{0,40}\\b(?:the|this) (?:corpus|theory)\\b[^.]{0,20}\\bpredicts\\b",
+        "\\bthe ladder predicts the same modulus for every\\b"
+       ],
+       "policed": [
+        "\\bpredicts?\\b",
+        "\\balways\\b",
+        "\\bat every arena\\b",
+        "\\bin any arena\\b",
+        "\\bin general\\b",
+        "\\bwhatever\\b",
+        "\\bprecisely when\\b",
+        "\\bfor all arenas\\b",
+        "\\buniversally\\b",
+        "\\bevery still-free\\b"
+       ],
+       "positive": [
+        "one point of a"
+       ],
+       "subject": [
+        "\\b(?:the isp family|across the isp|any isp model|every isp model|every arena|any arena|in general|this theory|the theory|every model|whatever arena)\\b"
+       ]
+      },
+      "unlicensed_sentences": [],
+      "violations": [],
+      "wall": "W-NO-FAMILY-PREDICTION"
      }
     ],
     "walls_passing_on_empty_text": []
    },
    "gate": "G-WALLS",
-   "n": 25,
+   "n": 30,
    "passed": true,
-   "prev": "da53d1541376a81a",
-   "row_digest": "74d42bd3a159de53"
+   "prev": "9c840abb9901816b",
+   "row_digest": "0222d731d466a416",
+   "statement": "8 reading walls scan the paper as voice-normalised regexes over the canonicalised text, each with a POSITIVE leg the paper must satisfy so that deleting the wall's own standing sentence is itself a violation, and each non-vacuous on empty text; 24 controls phrased as a paper would phrase them -- not derived from the patterns they must trip -- are injected and 48 are caught"
   },
   {
    "evidence": {
     "plants": [
      {
       "caught_by": [
+       "W-NO-SELECTION"
+      ],
+      "caught_by_when_negated": [
        "W-NO-SELECTION"
       ],
       "plant": "P-NINE-LEAVES-NO-CHOICE",
@@ -2626,6 +3684,9 @@
       "caught_by": [
        "W-NO-SELECTION"
       ],
+      "caught_by_when_negated": [
+       "W-NO-SELECTION"
+      ],
       "plant": "P-ARENA-DEMANDS",
       "sentence": "Three actors is what this arena demands of a division event."
      },
@@ -2633,11 +3694,17 @@
       "caught_by": [
        "W-NO-SELECTION"
       ],
+      "caught_by_when_negated": [
+       "W-NO-SELECTION"
+      ],
       "plant": "P-CONSTRUCTOR-SETTLES",
       "sentence": "Once the constructor is written the event size is settled."
      },
      {
       "caught_by": [
+       "W-NO-INVARIANCE-AS-GAUGE"
+      ],
+      "caught_by_when_negated": [
        "W-NO-INVARIANCE-AS-GAUGE"
       ],
       "plant": "P-MENU-IS-PHYSICS",
@@ -2648,44 +3715,185 @@
        "W-NO-SELECTION",
        "W-NO-RECONSTRUCTION-AS-DERIVATION"
       ],
+      "caught_by_when_negated": [
+       "W-NO-SELECTION",
+       "W-NO-RECONSTRUCTION-AS-DERIVATION"
+      ],
       "plant": "P-RECONSTRUCTION-ESTABLISHES",
       "sentence": "The parent's structure is reconstructible from its own records, which establishes its arity."
      },
      {
       "caught_by": [
-       "W-EXTENSION-SCOPE"
+       "W-EXTENSION-SCOPE",
+       "W-NO-MOTIVATION-CLAIM"
+      ],
+      "caught_by_when_negated": [
+       "W-EXTENSION-SCOPE",
+       "W-NO-MOTIVATION-CLAIM"
       ],
       "plant": "P-ISP-AT-TWO",
       "sentence": "In ISP at two actors every seam-spanning group is free of charge."
+     },
+     {
+      "caught_by": [
+       "W-NO-SELECTION"
+      ],
+      "caught_by_when_negated": [
+       "W-NO-SELECTION"
+      ],
+      "plant": "K2-S1-BLOCK-SIZE",
+      "sentence": "Only one block size lets every actor take part in every round, and that is the size the corpus already uses."
+     },
+     {
+      "caught_by": [
+       "W-NO-SELECTION"
+      ],
+      "caught_by_when_negated": [
+       "W-NO-SELECTION"
+      ],
+      "plant": "K2-S2-NO-RIVAL",
+      "sentence": "The event size at which the grammar closes is three, and the arena admits no rival."
+     },
+     {
+      "caught_by": [
+       "W-NO-INVARIANCE-AS-GAUGE"
+      ],
+      "caught_by_when_negated": [
+       "W-NO-INVARIANCE-AS-GAUGE"
+      ],
+      "plant": "K2-G1-BOOKKEEPING",
+      "sentence": "A count that reads the same at every event size is descriptive bookkeeping, carrying no content an experiment could reach."
+     },
+     {
+      "caught_by": [
+       "W-NO-INVARIANCE-AS-GAUGE"
+      ],
+      "caught_by_when_negated": [
+       "W-NO-INVARIANCE-AS-GAUGE"
+      ],
+      "plant": "K2-G2-DESCRIPTION",
+      "sentence": "The admissible-partition count is inert under the sweep, so it belongs to the description and not to the world."
+     },
+     {
+      "caught_by": [
+       "W-NO-FAMILY-PREDICTION"
+      ],
+      "caught_by_when_negated": [
+       "W-NO-FAMILY-PREDICTION"
+      ],
+      "plant": "K2-F1-FAMILY-RUNG",
+      "sentence": "Across the ISP family the ladder's first rung is always the number of declared link directions."
+     },
+     {
+      "caught_by": [
+       "W-NO-FAMILY-PREDICTION"
+      ],
+      "caught_by_when_negated": [
+       "W-NO-FAMILY-PREDICTION"
+      ],
+      "plant": "K2-F2-FAMILY-OFFSET",
+      "sentence": "Any ISP model whatever gives one redundant event between the schedule and the floor precisely when the event size divides the actor count."
+     },
+     {
+      "caught_by": [
+       "W-NO-SELECTION"
+      ],
+      "caught_by_when_negated": [
+       "W-NO-SELECTION"
+      ],
+      "plant": "R-GRAMMAR-CLOSES",
+      "sentence": "The grammar closes on a division event of three actors and on nothing wider, which is why the corpus never had to choose."
+     },
+     {
+      "caught_by": [
+       "W-NO-SELECTION"
+      ],
+      "caught_by_when_negated": [
+       "W-NO-SELECTION"
+      ],
+      "plant": "R-LATTICE-DICTATES",
+      "sentence": "The subgroup lattice dictates how many actors a division event may carry."
+     },
+     {
+      "caught_by": [
+       "W-NO-INVARIANCE-AS-GAUGE"
+      ],
+      "caught_by_when_negated": [
+       "W-NO-INVARIANCE-AS-GAUGE"
+      ],
+      "plant": "R-INERT-IS-REAL",
+      "sentence": "Quantities that survive the whole sweep untouched are the real content of the theory; the rest is presentation."
+     },
+     {
+      "caught_by": [
+       "W-NO-SELECTION",
+       "W-NO-RECONSTRUCTION-AS-DERIVATION"
+      ],
+      "caught_by_when_negated": [
+       "W-NO-SELECTION",
+       "W-NO-RECONSTRUCTION-AS-DERIVATION"
+      ],
+      "plant": "R-RECORDS-SUFFICE",
+      "sentence": "Records generated at the parent's arity suffice to recover the arrangement, and that settles what the event size had to be."
+     },
+     {
+      "caught_by": [
+       "W-EXTENSION-SCOPE"
+      ],
+      "caught_by_when_negated": [
+       "W-EXTENSION-SCOPE"
+      ],
+      "plant": "R-FOUR-ACTOR-ISP",
+      "sentence": "At four actors the committed theory keeps its covering rule and loses nothing else."
+     },
+     {
+      "caught_by": [
+       "W-NO-FAMILY-PREDICTION"
+      ],
+      "caught_by_when_negated": [
+       "W-NO-FAMILY-PREDICTION"
+      ],
+      "plant": "R-ANY-ARENA-RUNG",
+      "sentence": "In any arena the first rung of the weld ladder is the declared link count, so the ladder predicts the same modulus for every ISP model."
      }
     ]
    },
    "gate": "G-WALL-PARAPHRASE",
-   "n": 26,
+   "n": 31,
    "passed": true,
-   "prev": "0c0ef6db9d4eae73",
-   "row_digest": "0d3692377edeb76f"
+   "prev": "c6ed7ea4271d7776",
+   "row_digest": "a1bf91648d1a6b65",
+   "statement": "18 paraphrases of the banned claims, each written against the disease rather than against a pattern and none of them reusing a wall's own wording, are planted in the paper and run through the whole wall set as the delivery runs it: 18 are caught. A wall that only matches the sentences its own patterns were written from is not a wall"
   },
   {
    "evidence": {
+    "declared_name_strips": {
+     "NEEDS-3": "a declared outcome word",
+     "leg-1": "a criterion-leg id",
+     "section-9": "a cross-reference to a section of the paper",
+     "sha256-12": "an algorithm name and its prefix length"
+    },
     "exempt_tokens": {
      "2": "the affine plane's dimension, written AG(2, q)"
     },
     "float_literals": [],
+    "name_strips_never_used": [],
     "offenders": []
    },
    "gate": "G-NO-TYPED-COUNTS",
-   "n": 27,
+   "n": 32,
    "passed": true,
-   "prev": "92080bceffe76856",
-   "row_digest": "abd4607018415904"
+   "prev": "c852426cb070320c",
+   "row_digest": "133857a0200b8a3c",
+   "statement": "82 values enter the published statements by NAME from the live registry, and an AST leg scans this module for numerals typed into a statement template or handed to a statement builder as an integer literal -- the %-format and integer-offset subspecies included -- finding 0; the same scan finds no float constant anywhere in the source"
   },
   {
    "evidence": {
-    "entries": 43,
+    "entries": 51,
     "families": [
      "absolute_floor",
      "bfs",
+     "certfloor",
      "crystal",
      "flat",
      "forcing",
@@ -2696,36 +3904,38 @@
      "permwin",
      "sec2",
      "strict",
-     "substrate"
+     "substrate",
+     "unresched"
     ],
     "families_never_missed": [],
-    "hits": 18,
-    "misses": 43
+    "hits": 22,
+    "misses": 51
    },
    "gate": "G-CACHE",
-   "n": 28,
+   "n": 33,
    "passed": true,
-   "prev": "e13d28cc82d32bfb",
-   "row_digest": "39376ec528d8a9de"
+   "prev": "80e7bbe037a5f1d7",
+   "row_digest": "a6da576adf019117",
+   "statement": "the run memoises 51 deterministic computations, every key carrying the mutant flags its value depends on, so a recipe is never served a clean cached answer; the lookup path is exercised 22 times and the compute path 51, and no family is served only from the cache"
   },
   {
    "evidence": {
     "float_paths": []
    },
    "gate": "G-EXACT",
-   "n": 29,
+   "n": 34,
    "passed": true,
-   "prev": "194b84c6adc0c35e",
-   "row_digest": "b063418d115c7c99"
+   "prev": "2448d219e4607325",
+   "row_digest": "ade93015737fa24b",
+   "statement": "a recursive type walk of the whole receipt finds no float anywhere: every quantity this unit publishes is an integer, a string or a boolean"
   },
   {
    "evidence": {
-    "declared_gates": 34,
+    "coverage_rule_forced": true,
+    "declared_gates": 42,
     "falsifiers_dying_elsewhere": [],
     "falsifiers_moving_nothing": [],
-    "gates_with_no_falsifier": [
-     "G-FALSIFIERS"
-    ],
+    "gates_with_no_falsifier": [],
     "rows": [
      {
       "declared_gate": "G-SUBSTRATE-CENSUS",
@@ -2992,6 +4202,70 @@
       "target_moved": true
      },
      {
+      "declared_gate": "G-LAW4-THEOREM",
+      "description": "the modulus identity is falsified at one declared arena pair, so the two-line proof stops being a proof",
+      "died_at": "G-LAW4-THEOREM",
+      "falsifier": "MUT-THEOREM",
+      "target": "the arena sweep of the modulus identity",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-LAW2-FLOOR-CERTIFICATE",
+      "description": "the certified floor is shifted off the searched floor at the smallest arity, which is the row the paper's best result rests on",
+      "died_at": "G-LAW2-FLOOR-CERTIFICATE",
+      "falsifier": "MUT-FLOORCERT",
+      "target": "the certified floor at the smallest arity",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-LAW2-SCHEDULE-COMPLETE",
+      "description": "the unrestricted-schedule certificate is shifted off the delivered value, so the sentence that says the minimum is over every history stops being certified",
+      "died_at": "G-LAW2-SCHEDULE-COMPLETE",
+      "falsifier": "MUT-SCHEDULE",
+      "target": "the existence of a history at the floor's own length",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-LAW6-CLOSED-FORM",
+      "description": "the arrangement's closed form for the saturating groupings is shifted, so the closed form stops reproducing the measurement it claims to force",
+      "died_at": "G-LAW6-CLOSED-FORM",
+      "falsifier": "MUT-TRIPARTITE",
+      "target": "the closed form and the tripartition test",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-PREREGISTRATION",
+      "description": "the outcome register's digest is replaced, which is what a feasibility line rewritten after the outcome is known does to it",
+      "died_at": "G-PREREGISTRATION",
+      "falsifier": "MUT-PREREG",
+      "target": "the outcome register's digest",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-PROMOTION-REHEARSAL",
+      "description": "both promotion legs are inverted -- the narrative binding accepts a forged line and the seal check accepts an edited value -- which is the pair that put forged artifacts on disk",
+      "died_at": "G-PROMOTION-REHEARSAL",
+      "falsifier": "MUT-PROMOTION",
+      "target": "the two promotion legs on fixed inputs",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-TEMPLATE-EXERCISED",
+      "description": "the template family register is emptied, so a family carried but never exercised would pass unnoticed",
+      "died_at": "G-TEMPLATE-EXERCISED",
+      "falsifier": "MUT-TEMPLATE",
+      "target": "the exercised family register",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-PAPER-SPELLED",
+      "description": "a spelled falsehood is planted in prose -- the inversion of a measured direction, written in words rather than digits -- which is the corruption every digit scanner is blind to",
+      "died_at": "G-PAPER-SPELLED",
+      "falsifier": "MUT-SPELLED",
+      "target": "the scanned spelled text",
+      "target_moved": true
+     },
+     {
       "declared_gate": "G-ANCHORS-CONSUMED",
       "description": "an anchor's declared consumer is rewritten to a gate that never reads it",
       "died_at": "G-ANCHORS-CONSUMED",
@@ -2999,26 +4273,178 @@
       "target": "the consumer register",
       "target_moved": true
      }
-    ]
+    ],
+    "waivers": {
+     "G-FALSIFIERS": "the coverage gate is the one gate nothing falsifies without falsifying the harness that would report it; its own predicate now carries the coverage result, and the forcing check below hands the harness an uncovered gate and requires a refusal"
+    }
    },
    "gate": "G-FALSIFIERS",
-   "n": 30,
+   "n": 35,
    "passed": true,
-   "prev": "042dc6a12f106397",
-   "row_digest": "3822753ae2adcb5a"
+   "prev": "cfd46c65421e09d7",
+   "row_digest": "30ed37bf97f89517",
+   "statement": "42 falsifiers each name the measured object their recipe must MOVE, and the harness digests that object before and after the recipe: a recipe that leaves it identical is a sentinel and dies here. Sentinels found: 0. Falsifiers dying anywhere but at their declared gate: 0. Declared gates left with no recipe and no waiver: 0 -- and that number is IN this predicate, with 1 waivers written down and the coverage rule forced by handing it a gate no recipe names and requiring it to report it"
+  },
+  {
+   "evidence": {
+    "declared_but_never_emitted": [],
+    "declared_words": [
+     "A-INERT-BY-CONSTRUCTION",
+     "BREAKS",
+     "INFEASIBLE-CARRIED",
+     "LAW-IN-A",
+     "NEEDS-3"
+    ],
+    "digests_match": true,
+    "emitted_but_never_declared": [],
+    "emitted_words": [
+     "A-INERT-BY-CONSTRUCTION",
+     "BREAKS",
+     "INFEASIBLE-CARRIED",
+     "LAW-IN-A",
+     "NEEDS-3"
+    ],
+    "outcome_register_digest": "f9593cc869a3187e",
+    "segment_register_digest": "45a4e1c986257cbf",
+    "segments": [
+     {
+      "complement": "SOME-PARENT-NUMERAL-FOLLOWS-THE-DECLARED-a-ONLY-RULE",
+      "complement_absent": true,
+      "contingent": true,
+      "feasibility": "CONTINGENT: the declared rule differs from the constant reading at a = 2, a = 4 and a = 5, so any numeral whose measured column happened to follow C(a,2) + v - C(3,2) would have returned the complement; the third declared rule below returns it on one row, which is the measurement that proves the complement had a route.",
+      "index": 0,
+      "outcome_present": true,
+      "preregistered_outcome": "NO-PARENT-NUMERAL-FOLLOWS-THE-DECLARED-a-ONLY-RULE",
+      "segment": "SEG-AGGREGATE"
+     },
+     {
+      "complement": "THE-ROUND-STAYS-A-PARTITION",
+      "complement_absent": true,
+      "contingent": false,
+      "feasibility": "NOT-CONTINGENT: only 1, 3 and 9 divide the actor count, and the declared arity window carries 2, 4 and 5, so the idle remainder was forced by the window's own arithmetic before any measurement ran. The segment is published as a DECLARATION'S CONSEQUENCE and not as a finding; what is contingent inside it is the saturation split, which could have agreed at every arity and does not.",
+      "index": 1,
+      "outcome_present": true,
+      "preregistered_outcome": "THE-ROUND-STOPS-BEING-A-PARTITION",
+      "segment": "SEG-SUBSTRATE"
+     },
+     {
+      "complement": "BREAKS",
+      "complement_absent": true,
+      "contingent": true,
+      "feasibility": "CONTINGENT: route A and route B are compared as element sets at every prefix, and a single mismatch at any prefix of any arity returns the complement.",
+      "index": 2,
+      "outcome_present": true,
+      "preregistered_outcome": "LAW-IN-A",
+      "segment": "SEG-NAMING"
+     },
+     {
+      "complement": "LAW-IN-A",
+      "complement_absent": true,
+      "contingent": true,
+      "feasibility": "CONTINGENT: the schedule time and the floor are complete searches at four arities; a column constant in a, or one following the declared a-only rule, returns the complement.",
+      "index": 3,
+      "outcome_present": true,
+      "preregistered_outcome": "BREAKS",
+      "segment": "SEG-CRYSTALLIZATION"
+     },
+     {
+      "complement": "LAW-IN-A",
+      "complement_absent": true,
+      "contingent": true,
+      "feasibility": "CONTINGENT for the ladder: a first rung equal to the event size at the a = 4 budget row -- where the event size and the link count differ -- would have returned the complement, and that row is searched. A-INERT-BY-CONSTRUCTION for the menu, which is stamped a disclosure.",
+      "index": 4,
+      "outcome_present": true,
+      "preregistered_outcome": "NEEDS-3",
+      "segment": "SEG-MENU-AND-LADDER"
+     },
+     {
+      "complement": "BREAKS",
+      "complement_absent": true,
+      "contingent": true,
+      "feasibility": "CONTINGENT: the thesis is tested per object at every history of every corpus, and one history whose non-uniqueness did not come from a repeated parallel class returns the complement.",
+      "index": 5,
+      "outcome_present": true,
+      "preregistered_outcome": "LAW-IN-A",
+      "segment": "SEG-FORCING"
+     },
+     {
+      "complement": "LAW-IN-A",
+      "complement_absent": true,
+      "contingent": true,
+      "feasibility": "CONTINGENT: the obstruction-free class is measured at every arity, and an empty class at a = 2 -- which is what the parent's own arity shows -- returns the complement.",
+      "index": 6,
+      "outcome_present": true,
+      "preregistered_outcome": "BREAKS",
+      "segment": "SEG-SEC2"
+     },
+     {
+      "complement": "SOMETHING-ALREADY-REGISTERED-SELECTS",
+      "complement_absent": true,
+      "contingent": true,
+      "feasibility": "CONTINGENT IN ITS MEASURED HALF: which of the five candidate principles select is measured at nine candidate event sizes and could have come out with none selecting or with all five; the second half -- that none of the five was ever pre-registered -- is a fact about the corpus that was knowable before the run and is published as such.",
+      "index": 7,
+      "outcome_present": true,
+      "preregistered_outcome": "ADDED-ASSUMPTIONS-WOULD-SELECT-a-EQUALS-q-AND-PRESENT-ISP-DOES-NOT",
+      "segment": "SEG-PRINCIPLES"
+     },
+     {
+      "complement": "OUT-OF-SCOPE",
+      "complement_absent": true,
+      "contingent": false,
+      "feasibility": "NOT-CONTINGENT: the scope line reports the declared window, the declared cap and the declared search bound, none of which is a measurement outcome.",
+      "index": 8,
+      "outcome_present": true,
+      "preregistered_outcome": "SCOPE",
+      "segment": "SEG-SCOPE"
+     }
+    ],
+    "segments_contingent": 7,
+    "segments_unbound": []
+   },
+   "gate": "G-PREREGISTRATION",
+   "n": 36,
+   "passed": true,
+   "prev": "88f7ddb4f00a6159",
+   "row_digest": "038cc64890b1e12f",
+   "statement": "the pre-registration is CONSUMED and not decorated: both registers carry their own digest, checked here, so a feasibility line cannot be rewritten once the outcome is known; every one of the 5 declared outcome words either fires or carries the measured reason its trigger did not occur; and each of the 9 head segments carries a pre-registered outcome, the complement that would have been emitted instead, a feasibility line and -- the honest column -- whether the outcome was contingent on a measurement at all, which 7 of them were"
+  },
+  {
+   "evidence": {
+    "narrative_binding_refuses_a_forged_line": true,
+    "seal_check_refuses_an_edited_value": true
+   },
+   "gate": "G-PROMOTION-REHEARSAL",
+   "n": 37,
+   "passed": true,
+   "prev": "5144c99d8b611fca",
+   "row_digest": "602076c8231dc650",
+   "statement": "the 2 legs that stand between the last gate and the written artifacts are REHEARSED here on fixed synthetic inputs, because they fire after the last ledger row and a recipe could otherwise never be proved to move them: a forged narrative line in the transcript must be refused, and a sealed value edited after its gate passed must be refused, and the promotion path calls these same two functions before it replaces anything"
   },
   {
    "evidence": {
     "declared_never_read": [],
     "distinct_reads": 6,
+    "exemptions": {
+     "v15/code/arity_exact.py": "this module's own source, read by the AST and float scans"
+    },
+    "external_reads": [],
+    "paths": [
+     "v14/code/ndep_receipt.json",
+     "v14/paper-39-ndep.md",
+     "v14/paper-40-sec2.md",
+     "v15/code/arity_exact.py",
+     "v15/note-arity-pin.md",
+     "v15/paper-44-arity.md"
+    ],
     "undeclared": [],
     "unused_exemptions": []
    },
    "gate": "G-READ-SET",
-   "n": 31,
+   "n": 38,
    "passed": true,
-   "prev": "bb23ea0c67fc4367",
-   "row_digest": "0e636e49a51ace61"
+   "prev": "3c1117fe9b853a99",
+   "row_digest": "0b5caab2c5d9fdde",
+   "statement": "every open this process performed is recorded at the I/O accessor by an audit hook, whoever called it and wherever the path lies -- reads outside the repository go to their own bucket, which must be empty -- and the multiset of paths is compared against the 5 declared inputs plus exemptions that must be used. The same comparison is made AGAIN inside the promotion path, after the seal legs and before anything is written, so the tail window between this row and the write is closed rather than merely narrow"
   },
   {
    "evidence": {
@@ -3059,16 +4485,110 @@
     "unconsumed": []
    },
    "gate": "G-ANCHORS-CONSUMED",
-   "n": 32,
+   "n": 39,
    "passed": true,
-   "prev": "ee34c9de20ba5204",
-   "row_digest": "c834bef49cb5f029"
+   "prev": "fc63700351b9dd29",
+   "row_digest": "a100273376d18ded",
+   "statement": "anchor text is readable only through an accessor that records the read, and every anchor's declared consumer must be a gate that RAN and that actually read it: 8 reads were recorded"
+  },
+  {
+   "evidence": {
+    "families": {
+     "T-ANCHOR-CONSUMED": {
+      "evidence_key_present": true,
+      "gate": "G-ANCHORS-CONSUMED",
+      "ran": true
+     },
+     "T-CLAIMS-EQUAL": {
+      "evidence_key_present": true,
+      "gate": "G-PAPER-CLAIMS",
+      "ran": true
+     },
+     "T-FALSIFIER-POISONS": {
+      "evidence_key_present": true,
+      "gate": "G-FALSIFIERS",
+      "ran": true
+     },
+     "T-NO-TYPED-COUNTS": {
+      "evidence_key_present": true,
+      "gate": "G-NO-TYPED-COUNTS",
+      "ran": true
+     },
+     "T-READ-SET": {
+      "evidence_key_present": true,
+      "gate": "G-READ-SET",
+      "ran": true
+     },
+     "T-REFERENT-BOUND": {
+      "evidence_key_present": true,
+      "gate": "G-PAPER-REFERENTS",
+      "ran": true
+     },
+     "T-SEAL-PROMOTION": {
+      "evidence_key_present": true,
+      "gate": "G-PROMOTION-REHEARSAL",
+      "ran": true
+     },
+     "T-TRANSCRIPT-BOUND": {
+      "evidence_key_present": true,
+      "gate": "G-PROMOTION-REHEARSAL",
+      "ran": true
+     },
+     "T-WALL-SEMANTIC": {
+      "evidence_key_present": true,
+      "gate": "G-WALLS",
+      "ran": true
+     }
+    },
+    "families_expected": 9
+   },
+   "gate": "G-TEMPLATE-EXERCISED",
+   "n": 40,
+   "passed": true,
+   "prev": "c9c8de5dfaa8ea3e",
+   "row_digest": "f682c8f3cb87c1fb",
+   "statement": "each of the 9 template families names the gate that EXERCISES it on this unit's own objects, and every one of those gates must have run and must have carried its family's own evidence: the TPL-2 prohibition on carried-not-used families is a gate here, which is what this file's own comment promised and what no gate delivered"
+  },
+  {
+   "evidence": {
+    "declared_unsealed": 3,
+    "detail": "ok",
+    "sealed": 29
+   },
+   "gate": "G-SEAL-TOTALITY",
+   "n": 41,
+   "passed": true,
+   "prev": "52ef98ca58852e8d",
+   "row_digest": "23dc7c8a520cf2bf",
+   "statement": "every sealed value is compared at the door against the digest taken WHEN ITS GATE PASSED, never re-derived from the payload; totality is recomputed from the payload's LIVE key set at that moment; every seal's declared gate must be a gate that ran; and no key is both sealed and declared unsealed"
+  },
+  {
+   "evidence": {
+    "declared": 42,
+    "fired": 42,
+    "missing": [],
+    "stray": []
+   },
+   "gate": "G-CLOSE",
+   "n": 42,
+   "passed": true,
+   "prev": "00820843f57423ea",
+   "row_digest": "6ca4021e311480f3",
+   "statement": "the gates this run fired are exactly the gates it declares, counted with this gate inside its own denominator; the ledger, its chain and the transcript digest are all built after this row, so nothing that certifies the seal sits outside the object that publishes it"
   }
  ],
- "ledger_head": "7ff8a990f4b541c5",
+ "ledger_head": "90dd43d9c7019a82",
+ "object_under_test": {
+  "characters": 57395,
+  "path": "v15/paper-44-arity.md",
+  "sha256_12": "0d677a4cbe97"
+ },
  "paraphrase_plants": [
   {
    "caught_by": [
+    "W-NO-SELECTION"
+   ],
+   "caught_by_when_negated": [
     "W-NO-SELECTION"
    ],
    "plant": "P-NINE-LEAVES-NO-CHOICE",
@@ -3078,6 +4598,9 @@
    "caught_by": [
     "W-NO-SELECTION"
    ],
+   "caught_by_when_negated": [
+    "W-NO-SELECTION"
+   ],
    "plant": "P-ARENA-DEMANDS",
    "sentence": "Three actors is what this arena demands of a division event."
   },
@@ -3085,11 +4608,17 @@
    "caught_by": [
     "W-NO-SELECTION"
    ],
+   "caught_by_when_negated": [
+    "W-NO-SELECTION"
+   ],
    "plant": "P-CONSTRUCTOR-SETTLES",
    "sentence": "Once the constructor is written the event size is settled."
   },
   {
    "caught_by": [
+    "W-NO-INVARIANCE-AS-GAUGE"
+   ],
+   "caught_by_when_negated": [
     "W-NO-INVARIANCE-AS-GAUGE"
    ],
    "plant": "P-MENU-IS-PHYSICS",
@@ -3100,15 +4629,146 @@
     "W-NO-SELECTION",
     "W-NO-RECONSTRUCTION-AS-DERIVATION"
    ],
+   "caught_by_when_negated": [
+    "W-NO-SELECTION",
+    "W-NO-RECONSTRUCTION-AS-DERIVATION"
+   ],
    "plant": "P-RECONSTRUCTION-ESTABLISHES",
    "sentence": "The parent's structure is reconstructible from its own records, which establishes its arity."
   },
   {
    "caught_by": [
-    "W-EXTENSION-SCOPE"
+    "W-EXTENSION-SCOPE",
+    "W-NO-MOTIVATION-CLAIM"
+   ],
+   "caught_by_when_negated": [
+    "W-EXTENSION-SCOPE",
+    "W-NO-MOTIVATION-CLAIM"
    ],
    "plant": "P-ISP-AT-TWO",
    "sentence": "In ISP at two actors every seam-spanning group is free of charge."
+  },
+  {
+   "caught_by": [
+    "W-NO-SELECTION"
+   ],
+   "caught_by_when_negated": [
+    "W-NO-SELECTION"
+   ],
+   "plant": "K2-S1-BLOCK-SIZE",
+   "sentence": "Only one block size lets every actor take part in every round, and that is the size the corpus already uses."
+  },
+  {
+   "caught_by": [
+    "W-NO-SELECTION"
+   ],
+   "caught_by_when_negated": [
+    "W-NO-SELECTION"
+   ],
+   "plant": "K2-S2-NO-RIVAL",
+   "sentence": "The event size at which the grammar closes is three, and the arena admits no rival."
+  },
+  {
+   "caught_by": [
+    "W-NO-INVARIANCE-AS-GAUGE"
+   ],
+   "caught_by_when_negated": [
+    "W-NO-INVARIANCE-AS-GAUGE"
+   ],
+   "plant": "K2-G1-BOOKKEEPING",
+   "sentence": "A count that reads the same at every event size is descriptive bookkeeping, carrying no content an experiment could reach."
+  },
+  {
+   "caught_by": [
+    "W-NO-INVARIANCE-AS-GAUGE"
+   ],
+   "caught_by_when_negated": [
+    "W-NO-INVARIANCE-AS-GAUGE"
+   ],
+   "plant": "K2-G2-DESCRIPTION",
+   "sentence": "The admissible-partition count is inert under the sweep, so it belongs to the description and not to the world."
+  },
+  {
+   "caught_by": [
+    "W-NO-FAMILY-PREDICTION"
+   ],
+   "caught_by_when_negated": [
+    "W-NO-FAMILY-PREDICTION"
+   ],
+   "plant": "K2-F1-FAMILY-RUNG",
+   "sentence": "Across the ISP family the ladder's first rung is always the number of declared link directions."
+  },
+  {
+   "caught_by": [
+    "W-NO-FAMILY-PREDICTION"
+   ],
+   "caught_by_when_negated": [
+    "W-NO-FAMILY-PREDICTION"
+   ],
+   "plant": "K2-F2-FAMILY-OFFSET",
+   "sentence": "Any ISP model whatever gives one redundant event between the schedule and the floor precisely when the event size divides the actor count."
+  },
+  {
+   "caught_by": [
+    "W-NO-SELECTION"
+   ],
+   "caught_by_when_negated": [
+    "W-NO-SELECTION"
+   ],
+   "plant": "R-GRAMMAR-CLOSES",
+   "sentence": "The grammar closes on a division event of three actors and on nothing wider, which is why the corpus never had to choose."
+  },
+  {
+   "caught_by": [
+    "W-NO-SELECTION"
+   ],
+   "caught_by_when_negated": [
+    "W-NO-SELECTION"
+   ],
+   "plant": "R-LATTICE-DICTATES",
+   "sentence": "The subgroup lattice dictates how many actors a division event may carry."
+  },
+  {
+   "caught_by": [
+    "W-NO-INVARIANCE-AS-GAUGE"
+   ],
+   "caught_by_when_negated": [
+    "W-NO-INVARIANCE-AS-GAUGE"
+   ],
+   "plant": "R-INERT-IS-REAL",
+   "sentence": "Quantities that survive the whole sweep untouched are the real content of the theory; the rest is presentation."
+  },
+  {
+   "caught_by": [
+    "W-NO-SELECTION",
+    "W-NO-RECONSTRUCTION-AS-DERIVATION"
+   ],
+   "caught_by_when_negated": [
+    "W-NO-SELECTION",
+    "W-NO-RECONSTRUCTION-AS-DERIVATION"
+   ],
+   "plant": "R-RECORDS-SUFFICE",
+   "sentence": "Records generated at the parent's arity suffice to recover the arrangement, and that settles what the event size had to be."
+  },
+  {
+   "caught_by": [
+    "W-EXTENSION-SCOPE"
+   ],
+   "caught_by_when_negated": [
+    "W-EXTENSION-SCOPE"
+   ],
+   "plant": "R-FOUR-ACTOR-ISP",
+   "sentence": "At four actors the committed theory keeps its covering rule and loses nothing else."
+  },
+  {
+   "caught_by": [
+    "W-NO-FAMILY-PREDICTION"
+   ],
+   "caught_by_when_negated": [
+    "W-NO-FAMILY-PREDICTION"
+   ],
+   "plant": "R-ANY-ARENA-RUNG",
+   "sentence": "In any arena the first rung of the weld ladder is the declared link count, so the ladder predicts the same modulus for every ISP model."
   }
  ],
  "path_anchors": [
@@ -3196,6 +4856,121 @@
    "word": "A-INERT-BY-CONSTRUCTION"
   }
  ],
+ "preregistration": {
+  "declared_but_never_emitted": [],
+  "declared_words": [
+   "A-INERT-BY-CONSTRUCTION",
+   "BREAKS",
+   "INFEASIBLE-CARRIED",
+   "LAW-IN-A",
+   "NEEDS-3"
+  ],
+  "digests_match": true,
+  "emitted_but_never_declared": [],
+  "emitted_words": [
+   "A-INERT-BY-CONSTRUCTION",
+   "BREAKS",
+   "INFEASIBLE-CARRIED",
+   "LAW-IN-A",
+   "NEEDS-3"
+  ],
+  "outcome_register_digest": "f9593cc869a3187e",
+  "segment_register_digest": "45a4e1c986257cbf",
+  "segments": [
+   {
+    "complement": "SOME-PARENT-NUMERAL-FOLLOWS-THE-DECLARED-a-ONLY-RULE",
+    "complement_absent": true,
+    "contingent": true,
+    "feasibility": "CONTINGENT: the declared rule differs from the constant reading at a = 2, a = 4 and a = 5, so any numeral whose measured column happened to follow C(a,2) + v - C(3,2) would have returned the complement; the third declared rule below returns it on one row, which is the measurement that proves the complement had a route.",
+    "index": 0,
+    "outcome_present": true,
+    "preregistered_outcome": "NO-PARENT-NUMERAL-FOLLOWS-THE-DECLARED-a-ONLY-RULE",
+    "segment": "SEG-AGGREGATE"
+   },
+   {
+    "complement": "THE-ROUND-STAYS-A-PARTITION",
+    "complement_absent": true,
+    "contingent": false,
+    "feasibility": "NOT-CONTINGENT: only 1, 3 and 9 divide the actor count, and the declared arity window carries 2, 4 and 5, so the idle remainder was forced by the window's own arithmetic before any measurement ran. The segment is published as a DECLARATION'S CONSEQUENCE and not as a finding; what is contingent inside it is the saturation split, which could have agreed at every arity and does not.",
+    "index": 1,
+    "outcome_present": true,
+    "preregistered_outcome": "THE-ROUND-STOPS-BEING-A-PARTITION",
+    "segment": "SEG-SUBSTRATE"
+   },
+   {
+    "complement": "BREAKS",
+    "complement_absent": true,
+    "contingent": true,
+    "feasibility": "CONTINGENT: route A and route B are compared as element sets at every prefix, and a single mismatch at any prefix of any arity returns the complement.",
+    "index": 2,
+    "outcome_present": true,
+    "preregistered_outcome": "LAW-IN-A",
+    "segment": "SEG-NAMING"
+   },
+   {
+    "complement": "LAW-IN-A",
+    "complement_absent": true,
+    "contingent": true,
+    "feasibility": "CONTINGENT: the schedule time and the floor are complete searches at four arities; a column constant in a, or one following the declared a-only rule, returns the complement.",
+    "index": 3,
+    "outcome_present": true,
+    "preregistered_outcome": "BREAKS",
+    "segment": "SEG-CRYSTALLIZATION"
+   },
+   {
+    "complement": "LAW-IN-A",
+    "complement_absent": true,
+    "contingent": true,
+    "feasibility": "CONTINGENT for the ladder: a first rung equal to the event size at the a = 4 budget row -- where the event size and the link count differ -- would have returned the complement, and that row is searched. A-INERT-BY-CONSTRUCTION for the menu, which is stamped a disclosure.",
+    "index": 4,
+    "outcome_present": true,
+    "preregistered_outcome": "NEEDS-3",
+    "segment": "SEG-MENU-AND-LADDER"
+   },
+   {
+    "complement": "BREAKS",
+    "complement_absent": true,
+    "contingent": true,
+    "feasibility": "CONTINGENT: the thesis is tested per object at every history of every corpus, and one history whose non-uniqueness did not come from a repeated parallel class returns the complement.",
+    "index": 5,
+    "outcome_present": true,
+    "preregistered_outcome": "LAW-IN-A",
+    "segment": "SEG-FORCING"
+   },
+   {
+    "complement": "LAW-IN-A",
+    "complement_absent": true,
+    "contingent": true,
+    "feasibility": "CONTINGENT: the obstruction-free class is measured at every arity, and an empty class at a = 2 -- which is what the parent's own arity shows -- returns the complement.",
+    "index": 6,
+    "outcome_present": true,
+    "preregistered_outcome": "BREAKS",
+    "segment": "SEG-SEC2"
+   },
+   {
+    "complement": "SOMETHING-ALREADY-REGISTERED-SELECTS",
+    "complement_absent": true,
+    "contingent": true,
+    "feasibility": "CONTINGENT IN ITS MEASURED HALF: which of the five candidate principles select is measured at nine candidate event sizes and could have come out with none selecting or with all five; the second half -- that none of the five was ever pre-registered -- is a fact about the corpus that was knowable before the run and is published as such.",
+    "index": 7,
+    "outcome_present": true,
+    "preregistered_outcome": "ADDED-ASSUMPTIONS-WOULD-SELECT-a-EQUALS-q-AND-PRESENT-ISP-DOES-NOT",
+    "segment": "SEG-PRINCIPLES"
+   },
+   {
+    "complement": "OUT-OF-SCOPE",
+    "complement_absent": true,
+    "contingent": false,
+    "feasibility": "NOT-CONTINGENT: the scope line reports the declared window, the declared cap and the declared search bound, none of which is a measurement outcome.",
+    "index": 8,
+    "outcome_present": true,
+    "preregistered_outcome": "SCOPE",
+    "segment": "SEG-SCOPE"
+   }
+  ],
+  "segments_contingent": 7,
+  "segments_unbound": []
+ },
  "principles": {
   "admits": {
    "cover_at_R_equals_L": [
@@ -3341,11 +5116,24 @@
  "read_set": {
   "declared_never_read": [],
   "distinct_reads": 6,
+  "exemptions": {
+   "v15/code/arity_exact.py": "this module's own source, read by the AST and float scans"
+  },
+  "external_reads": [],
+  "paths": [
+   "v14/code/ndep_receipt.json",
+   "v14/paper-39-ndep.md",
+   "v14/paper-40-sec2.md",
+   "v15/code/arity_exact.py",
+   "v15/note-arity-pin.md",
+   "v15/paper-44-arity.md"
+  ],
   "undeclared": [],
   "unused_exemptions": []
  },
  "referents": {
   "corpus": {
+   "measured_identities_not_licensed_as_pairs": [],
    "nouns": [
     "corpus",
     "window",
@@ -3389,19 +5177,25 @@
    ]
   },
   "crystallization": {
+   "measured_identities_not_licensed_as_pairs": [
+    [
+     4,
+     4
+    ]
+   ],
    "nouns": [
     "schedule time",
     "information floor",
     "crystalliz",
-    "offset"
+    "offset",
+    "signature",
+    "certificate",
+    "witness",
+    "floor"
    ],
    "pairs": [
     [
      3,
-     4
-    ],
-    [
-     4,
      4
     ]
    ],
@@ -3412,10 +5206,29 @@
     3,
     4,
     5,
-    6
+    6,
+    8,
+    9,
+    10,
+    11,
+    12
    ]
   },
   "factorization": {
+   "measured_identities_not_licensed_as_pairs": [
+    [
+     126,
+     126
+    ],
+    [
+     315,
+     315
+    ],
+    [
+     945,
+     945
+    ]
+   ],
    "nouns": [
     "factoriz",
     "discrete partition",
@@ -3449,20 +5262,8 @@
      21147
     ],
     [
-     126,
-     126
-    ],
-    [
      276,
      280
-    ],
-    [
-     315,
-     315
-    ],
-    [
-     945,
-     945
     ]
    ],
    "values": [
@@ -3482,7 +5283,47 @@
     21147
    ]
   },
+  "ladder": {
+   "measured_identities_not_licensed_as_pairs": [],
+   "nouns": [
+    "ladder",
+    "modulus",
+    "rung",
+    "round mass",
+    "budget",
+    "weld",
+    "arena pair"
+   ],
+   "pairs": [
+    [
+     0,
+     8
+    ],
+    [
+     2,
+     8
+    ]
+   ],
+   "values": [
+    0,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    27,
+    36,
+    81,
+    162,
+    320,
+    324
+   ]
+  },
   "principles": {
+   "measured_identities_not_licensed_as_pairs": [],
    "nouns": [
     "principle",
     "selector",
@@ -3505,6 +5346,7 @@
    ]
   },
   "substrate": {
+   "measured_identities_not_licensed_as_pairs": [],
    "nouns": [
     "grouping",
     "packing",
@@ -3549,6 +5391,7 @@
     3,
     4,
     5,
+    7,
     8,
     9,
     10,
@@ -3563,13 +5406,17 @@
    ]
   },
   "transport": {
+   "measured_identities_not_licensed_as_pairs": [],
    "nouns": [
     "law-in-a",
     "needs-3",
     "breaks",
     "statement",
     "numeral",
-    "word"
+    "word",
+    "uniform rule",
+    "aggregate",
+    "a-only rule"
    ],
    "pairs": [
     [
@@ -3591,6 +5438,7 @@
    ],
    "values": [
     0,
+    1,
     2,
     3,
     4,
@@ -3600,12 +5448,23 @@
    ]
   },
   "union": {
+   "measured_identities_not_licensed_as_pairs": [
+    [
+     36,
+     36
+    ]
+   ],
    "nouns": [
     "seam",
     "crossing",
     "cross pair",
     "union",
-    "carrier"
+    "carrier",
+    "complement",
+    "obstruction",
+    "forced inside",
+    "maximum cut",
+    "doubling"
    ],
    "pairs": [
     [
@@ -3619,10 +5478,6 @@
     [
      0,
      2751
-    ],
-    [
-     36,
-     36
     ],
     [
      36,
@@ -3683,37 +5538,40 @@
  "schema": "isp/v15/arity-event-size/1",
  "seal_manifest": {
   "declared_unsealed": {
-   "ledger": "the chained ledger is verified by recomputing its own chain, not by a digest of itself",
-   "ledger_head": "the chain head, recomputed from the receipt's own rows",
+   "ledger": "the chained ledger is verified by recomputing its own chain from the published rows, which carry every field the row digest is taken over",
+   "ledger_head": "the chain head, recomputed from the receipt's own rows AFTER the last gate, so it is one number and it covers every row",
    "transcript_head": "the digest of the FINAL transcript bytes, taken in the promotion path after the last gate row and the verdict are written, and reconciled with the ledger as a multiset at that moment"
   },
   "sealed": {
    "anchors": "3555d252d781a357",
    "arena": "be56932ee9d94baf",
-   "cache": "05ce8d5dc68a5c07",
+   "cache": "709caa34fbcd90ad",
    "corpus": "85f0d1168edd31af",
-   "falsifiers": "46e58297d6e2f29a",
+   "falsifiers": "6c0046a6a8ecc06f",
    "fidelity": "ffcb6ba7752ce5f6",
    "law1_naming": "44a19b52dd0d845c",
-   "law2_crystallization": "48b6e34c0b5501a2",
+   "law2_certificates": "e89ad894727cac91",
+   "law2_crystallization": "f4fbf1f76551114e",
    "law3_menu": "2510472b02680aae",
-   "law4_ladder": "66709e8f509b9114",
+   "law4_ladder": "487a7a874232243f",
    "law5_forcing": "2a5a36baf86ac100",
-   "law6_sec2": "6e98367e9a2d899b",
-   "paraphrase_plants": "af868c06cbe09b6b",
+   "law6_sec2": "6a0d3032a42287fe",
+   "object_under_test": "2f72d7b74b01bbfd",
+   "paraphrase_plants": "9c6e1b438fc3aa4e",
    "path_anchors": "e3bd11235988f1eb",
    "preregistered_outcomes": "5d85c5ff6fcae233",
+   "preregistration": "200198cd7e861209",
    "principles": "983f772561406557",
    "provenance": "21aab34656311fae",
-   "read_set": "8f06d797907c9d1f",
-   "referents": "d9ded711edc55ec3",
+   "read_set": "3ef1997a0b2f9996",
+   "referents": "d5a9a00d145d4453",
    "schema": "98f53cc8a73369d8",
    "substrate": "b289cc0470e98676",
-   "totals": "a8a31a1e2aadfa9a",
-   "transport": "25be92dcec4799e4",
+   "totals": "fad331d3dd107714",
+   "transport": "1b0f30c2b90985d4",
    "transport_controls": "e5b5437428a79db7",
-   "verdict": "a4a6e5d28293ac16",
-   "walls": "f7a18ede1375b64d"
+   "verdict": "7cb383e290487e09",
+   "walls": "33919ec04809690f"
   },
   "sealed_at_gate": {
    "anchors": "G-ANCHORS-CONSUMED",
@@ -3723,14 +5581,17 @@
    "falsifiers": "G-FALSIFIERS",
    "fidelity": "G-CONSTRUCTOR-FIDELITY",
    "law1_naming": "G-LAW1-NAMING",
+   "law2_certificates": "G-LAW2-SCHEDULE-COMPLETE",
    "law2_crystallization": "G-LAW2-CRYSTALLIZATION",
    "law3_menu": "G-LAW3-MENU",
    "law4_ladder": "G-LAW4-LADDER",
    "law5_forcing": "G-LAW5-FORCING",
    "law6_sec2": "G-LAW6-SEC2",
+   "object_under_test": "G-PAPER-CLAIMS",
    "paraphrase_plants": "G-WALL-PARAPHRASE",
    "path_anchors": "G-PATH-ANCHORS",
    "preregistered_outcomes": "G-ARENA",
+   "preregistration": "G-PREREGISTRATION",
    "principles": "G-PRINCIPLE-CENSUS",
    "provenance": "G-SOURCES",
    "read_set": "G-READ-SET",
@@ -3828,14 +5689,37 @@
  ],
  "totals": {
   "arities": 4,
-  "falsifiers": 34,
-  "gates": 34,
+  "falsifiers": 42,
+  "gates": 42,
   "path_anchors": 8,
   "sources": 4,
   "verbatim_anchors": 8
  },
- "transcript_head": "95414a8d28246748",
+ "transcript_head": "a51deea97d6d02dd",
  "transport": {
+  "aggregate_under_each_rule": {
+   "a-itself": {
+    "BREAKS": 5,
+    "LAW-IN-A": 0,
+    "NEEDS-3": 2
+   },
+   "blocks-per-round": {
+    "BREAKS": 5,
+    "LAW-IN-A": 0,
+    "NEEDS-3": 2
+   },
+   "the declared rule": {
+    "BREAKS": 5,
+    "LAW-IN-A": 0,
+    "NEEDS-3": 2
+   },
+   "the section-9 closed form": {
+    "BREAKS": 4,
+    "LAW-IN-A": 1,
+    "NEEDS-3": 2
+   }
+  },
+  "closed_form_moves": 1,
   "conditional_selection": "IF every round must be a complete partition of the actors into proper nontrivial coset blocks of the arena's translation group THEN the event size is the field order: the assumptions do the selecting, and this unit measures that they do",
   "extension_arities": [
    2,
@@ -3845,6 +5729,7 @@
   "ladder_statement_under_the_maximal_reading": {
    "evidence": {
     "carried": 4,
+    "carried_rows": [],
     "fails_at": [
      2,
      4,
@@ -3865,6 +5750,7 @@
    {
     "evidence": {
      "carried": 4,
+     "carried_rows": [],
      "feasible": 4,
      "measured": [
       [
@@ -3913,14 +5799,26 @@
     "scope": "WITHIN THE DECLARED EXTENSION FAMILY",
     "under_alternative_rules": {
      "a-itself": "NEEDS-3",
-     "blocks-per-round": "NEEDS-3"
+     "blocks-per-round": "NEEDS-3",
+     "the section-9 closed form": "NEEDS-3"
     },
     "word": "NEEDS-3",
+    "word_moves_under_a_monotone_alternative_rule": false,
     "word_moves_under_an_alternative_rule": false
    },
    {
     "evidence": {
      "carried": 4,
+     "carried_rows": [
+      [
+       2,
+       "INFEASIBLE-CARRIED"
+      ],
+      [
+       5,
+       "INFEASIBLE-CARRIED"
+      ]
+     ],
      "feasible": 2,
      "measured": [
       [
@@ -3953,14 +5851,17 @@
     "scope": "WITHIN THE DECLARED EXTENSION FAMILY",
     "under_alternative_rules": {
      "a-itself": "NEEDS-3",
-     "blocks-per-round": "NEEDS-3"
+     "blocks-per-round": "NEEDS-3",
+     "the section-9 closed form": "NEEDS-3"
     },
     "word": "NEEDS-3",
+    "word_moves_under_a_monotone_alternative_rule": false,
     "word_moves_under_an_alternative_rule": false
    },
    {
     "evidence": {
      "carried": 4,
+     "carried_rows": [],
      "failing_arities": [
       2,
       5
@@ -4013,14 +5914,17 @@
     "scope": "WITHIN THE DECLARED EXTENSION FAMILY",
     "under_alternative_rules": {
      "a-itself": "BREAKS",
-     "blocks-per-round": "BREAKS"
+     "blocks-per-round": "BREAKS",
+     "the section-9 closed form": "BREAKS"
     },
     "word": "BREAKS",
+    "word_moves_under_a_monotone_alternative_rule": false,
     "word_moves_under_an_alternative_rule": false
    },
    {
     "evidence": {
      "carried": 4,
+     "carried_rows": [],
      "failing_arities": [
       2
      ],
@@ -4072,14 +5976,17 @@
     "scope": "WITHIN THE DECLARED EXTENSION FAMILY",
     "under_alternative_rules": {
      "a-itself": "BREAKS",
-     "blocks-per-round": "BREAKS"
+     "blocks-per-round": "BREAKS",
+     "the section-9 closed form": "BREAKS"
     },
     "word": "BREAKS",
+    "word_moves_under_a_monotone_alternative_rule": false,
     "word_moves_under_an_alternative_rule": false
    },
    {
     "evidence": {
      "carried": 4,
+     "carried_rows": [],
      "failing_arities": [
       2,
       5
@@ -4132,14 +6039,17 @@
     "scope": "WITHIN THE DECLARED EXTENSION FAMILY",
     "under_alternative_rules": {
      "a-itself": "BREAKS",
-     "blocks-per-round": "BREAKS"
+     "blocks-per-round": "BREAKS",
+     "the section-9 closed form": "BREAKS"
     },
     "word": "BREAKS",
+    "word_moves_under_a_monotone_alternative_rule": false,
     "word_moves_under_an_alternative_rule": false
    },
    {
     "evidence": {
      "carried": 4,
+     "carried_rows": [],
      "failing_arities": [
       2,
       4,
@@ -4193,14 +6103,17 @@
     "scope": "WITHIN THE DECLARED EXTENSION FAMILY",
     "under_alternative_rules": {
      "a-itself": "BREAKS",
-     "blocks-per-round": "BREAKS"
+     "blocks-per-round": "BREAKS",
+     "the section-9 closed form": "BREAKS"
     },
     "word": "BREAKS",
+    "word_moves_under_a_monotone_alternative_rule": false,
     "word_moves_under_an_alternative_rule": false
    },
    {
     "evidence": {
      "carried": 4,
+     "carried_rows": [],
      "failing_arities": [
       2,
       4,
@@ -4254,12 +6167,25 @@
     "scope": "WITHIN THE DECLARED EXTENSION FAMILY",
     "under_alternative_rules": {
      "a-itself": "BREAKS",
-     "blocks-per-round": "BREAKS"
+     "blocks-per-round": "BREAKS",
+     "the section-9 closed form": "LAW-IN-A"
     },
     "word": "BREAKS",
-    "word_moves_under_an_alternative_rule": false
+    "word_moves_under_a_monotone_alternative_rule": false,
+    "word_moves_under_an_alternative_rule": true
    }
   ],
+  "rows_moved_by_a_rule": {
+   "the section-9 closed form": [
+    {
+     "declared_word": "BREAKS",
+     "law": "sec2-counting",
+     "numeral": "the pairs forced inside a sector",
+     "word_under_this_rule": "LAW-IN-A"
+    }
+   ]
+  },
+  "rule_relativity": "THE DECLARED AGGREGATE IS A STATEMENT ABOUT THE DECLARED RULE. Two monotone alternatives move no word. This paper's own section-9 closed form -- the complement of the maximum cut, the one exact arity law these measurements supply -- run as a third uniform rule returns LAW-IN-A on the row it came from and leaves the other six words untouched, so under it the aggregate reads one LAW-IN-A rather than none. What the sweep establishes without reference to any rule is that no parent numeral is constant across the arities and none follows the corpus's own co-division-pair count",
   "scope_qualifier": "WITHIN THE DECLARED EXTENSION FAMILY",
   "statement_words": {
    "BREAKS": 2,
@@ -4269,6 +6195,7 @@
    {
     "evidence": {
      "carried": 4,
+     "carried_rows": [],
      "fails_at": [],
      "feasible": 4,
      "holds_at": [
@@ -4286,6 +6213,7 @@
    {
     "evidence": {
      "carried": 4,
+     "carried_rows": [],
      "fails_at": [
       2,
       5
@@ -4304,6 +6232,7 @@
    {
     "evidence": {
      "carried": 4,
+     "carried_rows": [],
      "fails_at": [],
      "feasible": 4,
      "holds_at": [
@@ -4321,6 +6250,16 @@
    {
     "evidence": {
      "carried": 4,
+     "carried_rows": [
+      [
+       2,
+       "INFEASIBLE-CARRIED"
+      ],
+      [
+       5,
+       "INFEASIBLE-CARRIED"
+      ]
+     ],
      "fails_at": [],
      "feasible": 2,
      "holds_at": [
@@ -4336,6 +6275,7 @@
    {
     "evidence": {
      "carried": 4,
+     "carried_rows": [],
      "fails_at": [],
      "feasible": 4,
      "holds_at": [
@@ -4353,6 +6293,7 @@
    {
     "evidence": {
      "carried": 4,
+     "carried_rows": [],
      "fails_at": [
       2
      ],
@@ -4406,56 +6347,60 @@
  ],
  "verdict": {
   "audit": {
-   "distinct_numerals_licensed": 44,
    "engraving_ids_exempted": 1,
+   "fields_declared": 83,
    "findings": [],
    "numeral_words_recomputed": {
     "BREAKS": 5,
+    "LAW-IN-A": 0,
     "NEEDS-3": 2
    },
-   "numerals_in_the_head": 148,
+   "numerals_in_the_head": 156,
+   "positionally_bound": 156,
+   "required_fields": 9,
+   "resolvers": 72,
    "statement_words_recomputed": {
     "BREAKS": 2,
     "LAW-IN-A": 4
-   },
-   "unlicensed": []
+   }
   },
   "segments": [
-   "ARITY-NO-PARENT-NUMERAL-FOLLOWS-THE-DECLARED-a-ONLY-RULE<n=9 HELD FIXED AT EVERY ROW AND WITH IT q=3, THE FIELD, THE 4 PARALLEL CLASSES, L=3 AND THE 27 CELLS; ONLY a MOVES, OVER 2|3|4|5, WITH a=5 A DECLARED WINDOW; THE CONSTRUCTOR IS RUN AT THE PARENT'S ARITY FIRST AND AGREES WITH THE COMMITTED SUBSTRATE 5 OF 5 BEFORE ANY OTHER ROW IS TAKEN | TWO LEVELS, DECLARED: 6 STATEMENTS ARE SCORED -- DOES THE PARENT'S THEOREM HOLD AT THE NEW EVENT SIZE -- AND 7 NUMERALS SEPARATELY BY THE DECLARED a-ONLY RULE; 4 OF THE STATEMENTS TRANSPORT AND 2 BREAK, WHILE THE NUMERAL LEVEL RETURNS 0 LAW-IN-A, 2 NEEDS-3 AND 5 BREAKS AND NO WORD MOVES UNDER EITHER DECLARED ALTERNATIVE a-ONLY RULE | EVERY WORD IS SCORED WITHIN THE DECLARED EXTENSION FAMILY: THE PACKING RULE THAT MAKES a=2|4|5 BUILDABLE AT ALL IS THIS UNIT'S OWN DECLARATION AND LEAVES AN IDLE REMAINDER, SO THOSE ROWS MEASURE AN EXTENSION OF THE COMMITTED THEORY AND NOT THE COMMITTED THEORY | EVERY NUMERAL THAT STANDS STILL HERE IS THEREFORE NOT CARRIED BY THE EVENT SIZE, AND EVERY NUMERAL THAT MOVES IS NOT CARRIED BY THE FIELD ORDER, WHICH IS THE SEPARATION THE ACTOR-COUNT AXIS COULD NOT MAKE; AND THE PRECISION IS THE PARENT'S OWN TWO-LEVEL ONE, BECAUSE SEVERAL MEASUREMENTS DO MOVE WITH THE EVENT SIZE -- THE PARENT'S SHARPENED FLOOR IS DRIVEN BY IT AND REPRODUCES THE MEASUREMENT AT EVERY ARITY -- WHAT NO PARENT NUMERAL FOLLOWS IS THE DECLARED UNIFORM a-ONLY RULE>",
-   "ARITY-SUBSTRATE-THE-ROUND-STOPS-BEING-A-PARTITION<GROUPINGS 945|280|315|126 AND IDLE ACTORS 1|0|1|4 AT a=2|3|4|5: THE EVENT SIZE DIVIDES THE ACTOR COUNT ONLY AT THE PARENT'S ARITY, SO AT EVERY OTHER ARITY A ROUND CARRIES ACTORS THAT DIVIDE IN NO EVENT -- AN OBJECT THE COMMITTED GRAMMAR HAS NO NAME FOR | THE MAXIMUM ROUND INCIDENCE IS 4|9|10|8 AGAINST A BUDGET OF 9, SO THE PARENT'S WORD SATURATING MEANS TWO DIFFERENT THINGS OFF ITS OWN ARITY: THE BUDGET READING ADMITS 0|36|81|0 GROUPINGS AND THE MAXIMALITY READING 324|36|162|81, AND THEY PART COMPANY AT a=4 | THE PARENT'S OWN COVERING CLASS AT R=L IS NON-EMPTY AT 3|4 AND EMPTY ELSEWHERE, AND ITS DRIVEN WINDOW EXISTS ONLY WHERE THE ARENA HAS EVENTS THAT ARE COSETS>",
+   "ARITY-NO-PARENT-NUMERAL-FOLLOWS-THE-DECLARED-a-ONLY-RULE<n=9 HELD FIXED AT EVERY ROW AND WITH IT q=3, THE FIELD, THE 4 PARALLEL CLASSES, L=3 AND THE 27 CELLS; ONLY a MOVES, OVER 2|3|4|5, WITH a=5 A DECLARED WINDOW; THE CONSTRUCTOR IS RUN AT THE PARENT'S ARITY FIRST AND AGREES WITH THE COMMITTED SUBSTRATE 5 OF 5 BEFORE ANY OTHER ROW IS TAKEN | TWO LEVELS, DECLARED: 6 STATEMENTS ARE SCORED -- DOES THE PARENT'S THEOREM HOLD AT THE NEW EVENT SIZE -- AND 7 NUMERALS SEPARATELY BY THE DECLARED a-ONLY RULE; 4 OF THE STATEMENTS TRANSPORT AND 2 BREAK, WHILE THE NUMERAL LEVEL RETURNS 0 LAW-IN-A, 2 NEEDS-3 AND 5 BREAKS | THE AGGREGATE IS RULE-RELATIVE AND EVERY RULE IS PUBLISHED: NO WORD MOVES UNDER EITHER DECLARED MONOTONE ALTERNATIVE a-ONLY RULE, WHILE THIS PAPER'S OWN CLOSED FORM FOR THE PAIRS FORCED INSIDE A SECTOR -- THE ONE EXACT ARITY LAW THESE MEASUREMENTS SUPPLY -- RUN AS A THIRD UNIFORM RULE MOVES 1 WORD AND RETURNS 1 LAW-IN-A, 2 NEEDS-3 AND 4 BREAKS | EVERY WORD IS SCORED WITHIN THE DECLARED EXTENSION FAMILY: THE PACKING RULE THAT MAKES a=2|4|5 BUILDABLE AT ALL IS THIS UNIT'S OWN DECLARATION AND LEAVES AN IDLE REMAINDER, SO THOSE ROWS MEASURE AN EXTENSION OF THE COMMITTED THEORY AND NOT THE COMMITTED THEORY | EVERY NUMERAL THAT STANDS STILL HERE IS THEREFORE NOT CARRIED BY THE EVENT SIZE, AND EVERY NUMERAL THAT MOVES IS NOT CARRIED BY THE FIELD ORDER, WHICH IS THE SEPARATION THE ACTOR-COUNT AXIS COULD NOT MAKE; AND THE PRECISION IS THE PARENT'S OWN TWO-LEVEL ONE, BECAUSE SEVERAL MEASUREMENTS DO MOVE WITH THE EVENT SIZE -- THE PARENT'S SHARPENED FLOOR IS DRIVEN BY IT AND REPRODUCES THE MEASUREMENT AT EVERY ARITY -- WHAT NO PARENT NUMERAL FOLLOWS IS THE DECLARED UNIFORM a-ONLY RULE>",
+   "ARITY-SUBSTRATE-THE-ROUND-STOPS-BEING-A-PARTITION<GROUPINGS 945|280|315|126 AND IDLE ACTORS 1|0|1|4 AT a=2|3|4|5: THE EVENT SIZE DIVIDES THE ACTOR COUNT ONLY AT THE PARENT'S ARITY, SO AT EVERY OTHER ARITY A ROUND CARRIES ACTORS THAT DIVIDE IN NO EVENT -- AN OBJECT THE COMMITTED GRAMMAR HAS NO NAME FOR | THE MAXIMUM ROUND INCIDENCE IS 4|9|10|8 AGAINST A BUDGET OF 9, SO THE PARENT'S WORD SATURATING MEANS TWO DIFFERENT THINGS OFF ITS OWN ARITY: THE BUDGET READING ADMITS 0|36|81|0 GROUPINGS AND THE MAXIMALITY READING 324|36|162|81, THEY DIFFER AT a=2|4|5 AND THEY PART COMPANY WITH BOTH NON-EMPTY AT a=4 | THE PARENT'S OWN COVERING CLASS AT R=L IS NON-EMPTY AT 3|4 AND EMPTY ELSEWHERE, AND ITS DRIVEN WINDOW EXISTS ONLY WHERE THE ARENA HAS EVENTS THAT ARE COSETS>",
    "ARITY-LAW-IN-A-NAMING<400 PREFIXES FILTERED AGAINST THE WHOLE SYMMETRIC GROUP AND 19778 AGAINST THE DECLARED WINDOW, ELEMENT SET AGAINST ELEMENT SET, 0 MISMATCHES; 868480 ELEMENTS LAND INSIDE THE STABILIZER ON THE GROUP LEG AND 3981934 OUTSIDE IT ON THE WINDOW LEG, SO BOTH DIRECTIONS ARE LIVE | THE STATEMENT CARRIES NO NUMERAL AND THE LEG IS A REPRODUCTION: THE PARENT PROVES IT BY A BOOLEAN-ALGEBRA ARGUMENT THAT NAMES NEITHER AN ARENA NOR AN EVENT SIZE | ITS NUMERAL DOES NOT TRANSPORT: THE NON-UNIQUE SINGLE ROUNDS ARE 0|4|0|0 AT a=2|3|4|5, AND AT EVERY ARITY BUT THE PARENT'S THE OBJECTS THAT CARRY THEM DO NOT EXIST>",
-   "ARITY-BREAKS-CRYSTALLIZATION<SCHEDULE TIME 6|5|5|4 EVENTS AND ATTAINED FLOOR 6|4|4|4 AT a=2|3|4|5, BOTH COMPLETE -- THE TIME BY BREADTH-FIRST SEARCH OVER EVERY HISTORY THE ARITY ADMITS, THE FLOOR OVER THE WHOLE EVENT UNIVERSE OF THAT SIZE | THE PARENT'S TWO NUMERALS ARE REPRODUCED AT ITS OWN ARITY AND NEITHER TRANSPORTS | THE OFFSET IS 0|1|1|0: THE ONE REDUNDANT EVENT THE PARENT FOUND AT THREE ACTOR COUNTS IS NOT A PROPERTY OF THE PAIR BUT OF THE ARITY | THE PARENT'S SHARPENED FLOOR, DRIVEN BY THE EVENT SIZE ITS OWN QUOTATION NAMES, REPRODUCES THE MEASUREMENT AT 4 OF 4 ARITIES WHILE THE COUNTING BOUND PUBLISHED BESIDE IT REPRODUCES IT AT 3>",
-   "ARITY-NEEDS-3-MENU-AND-LADDER<THE MENU IS A-INERT BY CONSTRUCTION: ITS LEG READS THE PARTITION AND THE ARENA AND NEVER A HISTORY, AND ITS 6 SURVIVORS OVER THE COMPLETE LATTICE OF 21147 ARE THE 6 COSET PARTITIONS AT EVERY ARITY -- A DISCLOSURE, NOT A TRANSPORT MEASUREMENT | THE LADDER IS SEARCHED AT 8 ARITY-BY-READING ROWS TO R<=9: 3 CARRY A RUNG AT ALL AND EVERY ONE OF THEM CARRIES EXACTLY THE MULTIPLES OF THE DECLARED LINK COUNT, WHILE THE NUMBER OF ROWS WHOSE FIRST RUNG IS THE EVENT SIZE IS 0 | THE MECHANISM IS MEASURED AND NOT ARGUED: THE MODULUS IS THE CELL COUNT OVER ITS GCD WITH THE ROUND MASS, IT READS 3|3 AT a=3|4 UNDER THE BUDGET READING, AND MOD-a NEVER APPEARS>",
+   "ARITY-BREAKS-CRYSTALLIZATION<SCHEDULE TIME 6|5|5|4 EVENTS AND ATTAINED FLOOR 6|4|4|4 AT a=2|3|4|5, BOTH COMPLETE AND BOTH CERTIFIED -- THE TIME IS THE MINIMUM OVER EVERY HISTORY THE ARITY ADMITS, PINNED BY THE FLOOR AT 2|5 AND ESTABLISHED BY REFUTING EVERY SHORTER HISTORY OVER THE WHOLE GROUPING POOL AT 3|4; THE FLOOR IS THE COMPLETE EVENT UNIVERSE OF THAT SIZE AND IS RE-DECIDED BY AN EXHIBITED SIGNATURE WITNESS AT EVERY ARITY | THE PARENT'S TWO NUMERALS ARE REPRODUCED AT ITS OWN ARITY AND NEITHER TRANSPORTS | THE OFFSET IS 0|1|1|0: THE ONE REDUNDANT EVENT THE PARENT FOUND AT THREE ACTOR COUNTS IS NOT A PROPERTY OF THE PAIR BUT OF THE ARITY | THE PARENT'S SHARPENED FLOOR, DRIVEN BY THE EVENT SIZE ITS OWN QUOTATION NAMES, REPRODUCES THE MEASUREMENT AT 4 OF 4 ARITIES WHILE THE COUNTING BOUND PUBLISHED BESIDE IT REPRODUCES IT AT 3 AND THE PARENT'S CLOSED FORM, READ WITH THE EVENT SIZE IN ITS VARIABLE'S PLACE, AT 1 -- THE CLOSED FORM IS THE PARENT'S OWN AXIS AND DOES NOT TRANSPORT ALONG THIS ONE, WHICH IS DISCLOSED AND NOT LEANED ON>",
+   "ARITY-NEEDS-3-MENU-AND-LADDER<THE MENU IS A-INERT BY CONSTRUCTION: ITS LEG READS THE PARTITION AND THE ARENA AND NEVER A HISTORY, AND ITS 6 SURVIVORS OVER THE COMPLETE LATTICE OF 21147 ARE THE 6 COSET PARTITIONS AT EVERY ARITY -- A DISCLOSURE, NOT A TRANSPORT MEASUREMENT | THE LADDER IS SEARCHED AT 8 ARITY-BY-READING ROWS TO R<=9: 3 CARRY A RUNG AT ALL AND EVERY ONE OF THEM CARRIES EXACTLY THE MULTIPLES OF THE DECLARED LINK COUNT; THE FIRST RUNG IS THE EVENT SIZE AT 2 ROWS AND AT 0 OF THE ROWS WHERE THE EVENT SIZE AND THE DECLARED LINK COUNT ARE DIFFERENT NUMBERS, AND ONLY THE SECOND COUNTER DISCRIMINATES BECAUSE AT THE PARENT'S ARITY THE TWO ARE THE SAME NUMBER | THE MECHANISM IS A THEOREM AND NOT A ONE-ARENA MEASUREMENT: UNDER THE BUDGET READING THE ROUND MASS IS THE BUDGET AND THE CELL FIELD IS THE ACTORS TIMES THE LINKS, SO THE MODULUS IS nL/gcd(nL,n)=L AT EVERY ARENA -- VERIFIED AT 320 DECLARED ARENA PAIRS -- AND MOD-a APPEARS IF AND ONLY IF a=L, WHICH IS WHY THE PARENT'S R=L RULE HELD; THE MODULUS READS 3|3 AT a=3|4 UNDER THAT READING. THE THEOREM IS ABOUT THE LADDER MODULUS AND NOTHING ELSE: THE COUPLED WALK'S PHASE MODULUS IS THE ARENA'S FIELD ORDER BY THE PARENT'S OWN DERIVATION AND IS NOT TOUCHED HERE>",
    "ARITY-LAW-IN-A-DIVISION-FORCING-AND-EMPTY-OFF-THE-PARENT<OVER THE COMPLETE ACTOR LATTICE OF 21147 AT EVERY HISTORY OF EVERY CORPUS, THE SINGLE-ROUND CENSUS ADMITS THE DISCRETE PARTITION ALONE AT 945|276|315|126 OF 945|280|315|126 AT a=2|3|4|5 | THE PARENT'S THESIS HOLDS PER OBJECT AT EVERY ARITY -- A HISTORY IS NON-UNIQUE EXACTLY WHEN IT REPEATS A PARALLEL CLASS -- AND AT EVERY ARITY BUT THE PARENT'S IT HOLDS BECAUSE NO EVENT OF THAT SIZE IS A COSET, SO THE ONLY SOURCE OF A SECOND FACTORIZATION IN THE WHOLE CORPUS IS THE ONE STRUCTURE THAT NEEDS THE EVENT SIZE TO DIVIDE THE ACTOR COUNT | COUNTING-ONLY>",
-   "ARITY-BREAKS-SEC2-AND-THE-OBSTRUCTION-IS-EMPTY-AT-TWO<THE UNION IS REBUILT FROM THE ARRANGEMENT ALONE -- 15 CARRIERS, 54 REALISED PAIRS -- AND ITS a-GROUP CENSUS REPRODUCES THE PARENT'S OWN NUMBERS AT ITS OWN ARITY OBJECT BY OBJECT | SEAM-SPANNING 36|288|1113|2751, OPENING NO PAIR INSIDE A SECTOR 36|216|405|243, AND OPENING NO PAIR AND DOUBLING NOTHING 36|0|0|0 AT a=2|3|4|5 | THE THEOREM'S HYPOTHESIS IS THE COMPLEMENT OF THE MAXIMUM CUT OF THE COMPLETE GRAPH ON a VERTICES AND IT READS 0|1|2|4: AT TWO ACTORS IT IS ZERO, EVERY SEAM-SPANNING EVENT IS EXACTLY ONE CROSS PAIR AND NOTHING ELSE, AND THE CONFIGURATION THE PARENT STAMPED A CONTROL BECAUSE NO GROUP OF ITS OWN ARITY COULD PRODUCE IT IS PRODUCED BY EVERY ONE OF THEM>",
-   "ARITY-ADDED-ASSUMPTIONS-WOULD-SELECT-a-EQUALS-q-AND-PRESENT-ISP-DOES-NOT<5 CANDIDATE PRINCIPLES, NONE OF THEM PRE-REGISTERED ANYWHERE IN THE CORPUS AND ALL OF THEM IMPLICIT IN A CONSTRUCTOR, ARE EVALUATED AT ALL 9 CANDIDATE EVENT SIZES: 3 OF THEM ADMIT THE PARENT'S ARITY AND NO OTHER NONTRIVIAL ONE | THE MECHANISM IS THE ARENA'S OWN SUBGROUP LATTICE, WHOSE ORDERS ARE 1|3|9, SO AN EVENT THAT IS A COSET HAS SIZE 1, q OR q SQUARED AND THE ONLY NONTRIVIAL CHOICE IS THE FIELD ORDER | THE LICENSED FORM IS A CONDITIONAL AND THE ASSUMPTIONS DO THE SELECTING: IF every round must be a complete partition of the actors into proper nontrivial coset blocks of the arena's translation group THEN the event size is the field order: the assumptions do the selecting, and this unit measures that they do | a=q IS THEREFORE NOT AN INDEPENDENT DECLARATION AT THIS ARENA, AND NOTHING MEASURED HERE SELECTS IT WITHOUT THE ARENA>",
-   "SCOPE=a=2 AND a=4 BUILT ENTIRE AT n=9 -- EVERY GROUPING, THE WHOLE ACTOR LATTICE, THE COMPLETE EVENT UNIVERSE FOR THE FLOOR; a=5 A DECLARED WINDOW WHOSE MULTI-ROUND CORPUS OF 4782969 HISTORIES EXCEEDS THE DECLARED CAP OF 100000 AND IS NOT REACHED | NO n=9 LAW VALUE IS IMPORTED AS A RESULT: THE PARENT VALUES ARE RE-DERIVED BY THIS UNIT'S OWN CONSTRUCTOR AND COMPARED WITH ANCHORED READS, AND THE SEC-2 FREE-ITEM COUNTS THEMSELVES ARE THAT UNIT'S MEASUREMENT AND ARE NOT RECOMPUTED | THE LADDER IS SEARCHED TO R<=9 AND EVERY ACHIEVABLE-BUDGET SET IS A SET WITHIN THAT BOUND | AT FIXED n, q AND L THE CONSTANT READING IS SIMULTANEOUSLY THE n-ONLY, THE q-ONLY AND THE L-ONLY ONE, SO NEEDS-3 HERE MEANS NOT-CARRIED-BY-a AND NAMES NO OTHER CARRIER | MEASURE=COUNTING-ONLY (E-24) | LANGUAGE=LAW-IN-A, NEEDS-3 AND BREAKS NAME THE TRANSPORT OF A PUBLISHED LAW ALONG THE EVENT-SIZE AXIS AND NOTHING ELSE"
+   "ARITY-BREAKS-SEC2-AND-THE-OBSTRUCTION-IS-EMPTY-AT-TWO<THE UNION IS REBUILT FROM THE ARRANGEMENT ALONE -- 15 CARRIERS, 54 REALISED PAIRS, BOTH FORCED BY THE CLOSED FORM AND NOT ONLY COUNTED, THE LINK GRAPH BEING THE COMPLETE TRIPARTITE GRAPH ON THE LINES OF THE UNDECLARED CLASS -- AND ITS a-GROUP CENSUS REPRODUCES THE PARENT'S OWN NUMBERS AT ITS OWN ARITY OBJECT BY OBJECT | SEAM-SPANNING 36|288|1113|2751, OPENING NO PAIR INSIDE A SECTOR 36|216|405|243, AND OPENING NO PAIR AND DOUBLING NOTHING 36|0|0|0 AT a=2|3|4|5 | THE THEOREM'S HYPOTHESIS IS THE COMPLEMENT OF THE MAXIMUM CUT OF THE COMPLETE GRAPH ON a VERTICES AND IT READS 0|1|2|4: AT TWO ACTORS IT IS ZERO, EVERY SEAM-SPANNING EVENT IS EXACTLY ONE CROSS PAIR AND NOTHING ELSE, AND THE CONFIGURATION THE PARENT STAMPED A CONTROL BECAUSE NO GROUP OF ITS OWN ARITY COULD PRODUCE IT IS PRODUCED BY EVERY ONE OF THEM>",
+   "ARITY-ADDED-ASSUMPTIONS-WOULD-SELECT-a-EQUALS-q-AND-PRESENT-ISP-DOES-NOT<5 CANDIDATE PRINCIPLES, NONE OF THEM PRE-REGISTERED ANYWHERE IN THE CORPUS AND ALL OF THEM IMPLICIT IN A CONSTRUCTOR, ARE EVALUATED AT ALL 9 CANDIDATE EVENT SIZES: 3 OF THEM ADMIT THE PARENT'S ARITY AND NO OTHER NONTRIVIAL ONE | THE MECHANISM IS THE ARENA'S OWN SUBGROUP LATTICE, WHOSE ORDERS ARE 1|3|9, SO AN EVENT THAT IS A COSET HAS ONE OF EXACTLY THOSE ORDERS AND THE ONLY NONTRIVIAL CHOICE IS THE FIELD ORDER | THE LICENSED FORM IS A CONDITIONAL AND THE ASSUMPTIONS DO THE SELECTING: IF every round must be a complete partition of the actors into proper nontrivial coset blocks of the arena's translation group THEN the event size is the field order: the assumptions do the selecting, and this unit measures that they do | a=q IS THEREFORE NOT AN INDEPENDENT DECLARATION AT THIS ARENA, AND NOTHING MEASURED HERE SELECTS IT WITHOUT THE ARENA>",
+   "SCOPE=THE ARITIES a=2|4 ARE BUILT ENTIRE AT n=9 -- EVERY GROUPING, THE WHOLE ACTOR LATTICE, THE COMPLETE EVENT UNIVERSE FOR THE FLOOR; a=5 A DECLARED WINDOW WHOSE MULTI-ROUND CORPUS OF 4782969 HISTORIES EXCEEDS THE DECLARED CAP OF 100000 AND IS NOT REACHED | NO LAW VALUE AT n=9 IS IMPORTED AS A RESULT: THE PARENT VALUES ARE RE-DERIVED BY THIS UNIT'S OWN CONSTRUCTOR AND COMPARED WITH ANCHORED READS, AND THE SEC-2 FREE-ITEM COUNTS THEMSELVES ARE THAT UNIT'S MEASUREMENT AND ARE NOT RECOMPUTED | THE LADDER IS SEARCHED TO R<=9 AND EVERY ACHIEVABLE-BUDGET SET IS A SET WITHIN THAT BOUND | AT FIXED n, q AND L THE CONSTANT READING IS SIMULTANEOUSLY THE n-ONLY, THE q-ONLY AND THE L-ONLY ONE, SO NEEDS-3 HERE MEANS NOT-CARRIED-BY-a AND NAMES NO OTHER CARRIER | MEASURE=COUNTING-ONLY (E-24) | LANGUAGE=LAW-IN-A, NEEDS-3 AND BREAKS NAME THE TRANSPORT OF A PUBLISHED LAW ALONG THE EVENT-SIZE AXIS AND NOTHING ELSE"
   ]
  },
  "walls": [
   {
-   "controls_caught": 3,
-   "independent_controls": 3,
+   "controls_caught": 6,
+   "has_a_licence_leg": true,
+   "independent_controls": 6,
    "missing_positive": [],
    "seal": {
     "independent_controls": 3,
     "licences": [
-     "\\bconditional\\b",
      "\\bassumptions\\b",
      "\\bimplicit in a constructor\\b",
-     "\\bif\\b",
+     "\\bif\\b[^.]{0,200}\\bthen\\b",
      "\\bidentifiability\\b",
      "\\bdiscriminat\\w+",
-     "\\bnothing measured\\b",
-     "\\bnot\\b",
-     "\\bnever\\b",
+     "\\bnothing measured here\\b",
      "\\bwithout the arena\\b",
-     "\\bwould\\b",
      "\\bcandidate\\b",
-     "\\bonly if\\b",
-     "\\bthen\\b",
      "\\bextension\\b",
-     "\\bpin asks\\b"
+     "\\bcounting-only\\b",
+     "\\bnever registered\\b",
+     "\\bnever pre-registered\\b",
+     "\\bat this arena\\b",
+     "\\bfree declaration\\b",
+     "\\bthe pin asks\\b",
+     "\\bwithin the declared\\b"
     ],
     "name": "W-NO-SELECTION",
     "negative": [
@@ -4474,20 +6419,26 @@
      "\\bdemand\\w+",
      "\\bsettl\\w+",
      "\\bestablish\\w+",
-     "\\bno other (?:choice|option|possibilit\\w+)\\b",
+     "\\bno other (?:choice|option|size|possibilit\\w+)\\b",
      "\\bmust be\\b",
      "\\bfixed by\\b",
      "\\bcompel\\w+",
      "\\bdictat\\w+",
      "\\bleaves no\\b",
-     "\\bobliged\\b"
+     "\\bobliged\\b",
+     "\\bonly one\\b",
+     "\\bthe only (?:size|choice|option)\\b",
+     "\\badmits no rival\\b",
+     "\\bno rival\\b",
+     "\\bcloses on\\b",
+     "\\bhad to be\\b"
     ],
     "positive": [
      "nothing measured here selects",
      "implicit in a constructor"
     ],
     "subject": [
-     "\\b(?:arity|arities|event size|three actors|three-actor)\\b"
+     "\\b(?:arity|arities|event size|event sizes|block size|block sizes|group size|division event|three actors|three-actor|actors per event)\\b"
     ]
    },
    "unlicensed_sentences": [],
@@ -4495,64 +6446,107 @@
    "wall": "W-NO-SELECTION"
   },
   {
-   "controls_caught": 2,
-   "independent_controls": 2,
+   "controls_caught": 6,
+   "has_a_licence_leg": true,
+   "independent_controls": 6,
    "missing_positive": [],
    "seal": {
-    "independent_controls": 2,
-    "licences": [],
+    "independent_controls": 3,
+    "licences": [
+     "\\bcounting-only\\b",
+     "\\bno measure\\b",
+     "\\bno distribution\\b",
+     "\\ba count of\\b",
+     "\\bcomplete census\\b",
+     "\\bevery grouping\\b",
+     "\\bnothing sampled\\b",
+     "\\bdeclared window\\b"
+    ],
     "name": "W-NO-PROBABILITY",
     "negative": [
      "\\b(?:probabilit|likelihood|likely|chance)\\w*\\b[^.]{0,40}\\barit(?:y|ies)\\b",
      "most (?:arities|event sizes) (?:are|admit)",
      "\\btypical(?:ly)? (?:arity|event size)\\b"
     ],
-    "policed": [],
+    "policed": [
+     "\\bprobabilit\\w*",
+     "\\blikelihood\\b",
+     "\\blikely\\b",
+     "\\bchance\\b",
+     "\\btypical\\w*",
+     "\\bon average\\b",
+     "\\bexpected value\\b",
+     "\\bat random\\b",
+     "\\brandomly\\b",
+     "\\bmost (?:arities|event sizes)\\b"
+    ],
     "positive": [
      "counting-only"
     ],
-    "subject": []
+    "subject": [
+     "\\b(?:arity|arities|event size|event sizes|groupings?|histor(?:y|ies)|fraction)\\b"
+    ]
    },
    "unlicensed_sentences": [],
    "violations": [],
    "wall": "W-NO-PROBABILITY"
   },
   {
-   "controls_caught": 2,
-   "independent_controls": 2,
+   "controls_caught": 6,
+   "has_a_licence_leg": true,
+   "independent_controls": 6,
    "missing_positive": [],
    "seal": {
-    "independent_controls": 2,
-    "licences": [],
+    "independent_controls": 3,
+    "licences": [
+     "\\bnames no other carrier\\b",
+     "\\bsimultaneously the n-only\\b",
+     "\\bnot-carried-by-a\\b",
+     "\\bat fixed n\\b",
+     "\\bthe constant reading\\b",
+     "\\bwhich of the standing coordinates\\b",
+     "\\bcannot separate\\b",
+     "\\bcoincide\\b"
+    ],
     "name": "W-NO-CARRIER-OVERREACH",
     "negative": [
      "\\b(?:the (?:numeral|value|count)s?|it) (?:is|are) (?:therefore )?carried by (?:the )?(?:field order|q)\\b",
      "\\bthis unit (?:shows|proves)[^.]{0,40}\\bq[- ]carried\\b",
      "\\bstanding still (?:here )?(?:shows|proves|means) (?:it is )?q[- ]carried"
     ],
-    "policed": [],
+    "policed": [
+     "\\bis (?:therefore )?carried by (?:the )?(?:field order|q)\\b",
+     "\\bare (?:therefore )?carried by (?:the )?(?:field order|q)\\b",
+     "\\bq[- ]carried\\b",
+     "\\bn[- ]carried\\b",
+     "\\bbelongs to the field order\\b",
+     "\\bthe field order carries\\b"
+    ],
     "positive": [
      "names no other carrier"
     ],
-    "subject": []
+    "subject": [
+     "\\b(?:numerals?|values?|counts?|menu|modulus|first rung|stands? still|standing still|does not move)\\b"
+    ]
    },
    "unlicensed_sentences": [],
    "violations": [],
    "wall": "W-NO-CARRIER-OVERREACH"
   },
   {
-   "controls_caught": 3,
-   "independent_controls": 3,
+   "controls_caught": 6,
+   "has_a_licence_leg": true,
+   "independent_controls": 6,
    "missing_positive": [],
    "seal": {
     "independent_controls": 3,
     "licences": [
      "\\bidentifiability\\b",
-     "\\bnot\\b",
-     "\\bnever\\b",
-     "\\bwould be\\b",
+     "\\bdiscriminat\\w+",
      "\\bdifferent property\\b",
-     "\\bconditional\\b"
+     "\\bnever promoted to\\b",
+     "\\bis a weaker\\b",
+     "\\bwhich is a different\\b"
     ],
     "name": "W-NO-RECONSTRUCTION-AS-DERIVATION",
     "negative": [
@@ -4567,14 +6561,16 @@
      "\\bprov\\w+",
      "\\bestablish\\w+",
      "\\bsettl\\w+",
-     "\\bshow\\w*\\b"
+     "\\bshow\\w*\\b",
+     "\\bhad to be\\b",
+     "\\bsuffice\\w*\\b"
     ],
     "positive": [
      "identifiability",
      "discriminat"
     ],
     "subject": [
-     "\\b(?:recover\\w*|reconstruct\\w*|self-consistent|identifiab\\w+)\\b"
+     "\\b(?:recover\\w*|reconstruct\\w*|reconstructible|self-consistent|identifiab\\w+|records generated)\\b"
     ]
    },
    "unlicensed_sentences": [],
@@ -4582,18 +6578,21 @@
    "wall": "W-NO-RECONSTRUCTION-AS-DERIVATION"
   },
   {
-   "controls_caught": 3,
-   "independent_controls": 3,
+   "controls_caught": 6,
+   "has_a_licence_leg": true,
+   "independent_controls": 6,
    "missing_positive": [],
    "seal": {
     "independent_controls": 3,
     "licences": [
      "\\bbefore an operational\\b",
-     "\\bno sentence\\b",
      "\\bforbidden\\b",
      "\\binvariance and nothing more\\b",
      "\\bdisclosure\\b",
-     "\\bwould\\b"
+     "\\ba-inert by construction\\b",
+     "\\bcounting-only\\b",
+     "\\bno sentence here promotes\\b",
+     "\\bthat promotion is\\b"
     ],
     "name": "W-NO-INVARIANCE-AS-GAUGE",
     "negative": [
@@ -4606,16 +6605,23 @@
      "\\bphysic\\w*",
      "\\bobservable\\b",
      "\\bmeaningless\\b",
-     "\\breal\\b",
+     "\\breal content\\b",
      "\\bontolog\\w+",
      "\\bredundan\\w+",
-     "\\bpart of the theory\\b"
+     "\\bpart of the theory\\b",
+     "\\bdescriptive\\b",
+     "\\bbookkeep\\w+",
+     "\\bbelongs to the description\\b",
+     "\\bno content\\b",
+     "\\bcontent an experiment\\b",
+     "\\bto the world\\b",
+     "\\bpresentation\\b"
     ],
     "positive": [
      "before an operational observable exists"
     ],
     "subject": [
-     "\\b(?:menu|invarian\\w*|a-inert|unchanged|stands? still|standing still|does not move)\\b"
+     "\\b(?:menu|invarian\\w*|a-inert|inert|unchanged|stands? still|standing still|does not move|reads the same|survive the whole sweep|constant across)\\b"
     ]
    },
    "unlicensed_sentences": [],
@@ -4623,19 +6629,20 @@
    "wall": "W-NO-INVARIANCE-AS-GAUGE"
   },
   {
-   "controls_caught": 2,
-   "independent_controls": 2,
+   "controls_caught": 6,
+   "has_a_licence_leg": true,
+   "independent_controls": 6,
    "missing_positive": [],
    "seal": {
-    "independent_controls": 2,
+    "independent_controls": 3,
     "licences": [
      "\\bextension\\b",
      "\\bpacking rule\\b",
      "\\bthis unit\\b",
-     "\\bnot\\b",
-     "\\bnever\\b",
-     "\\bdeclared\\b",
-     "\\bwould\\b"
+     "\\bwithin the declared\\b",
+     "\\bdeclared extension family\\b",
+     "\\bidle remainder\\b",
+     "\\bdeclaration\\b"
     ],
     "name": "W-EXTENSION-SCOPE",
     "negative": [
@@ -4646,13 +6653,16 @@
      "\\bisp\\b",
      "\\bthe theory\\b",
      "\\bthe corpus\\b",
-     "\\bthe committed\\b"
+     "\\bthe committed\\b",
+     "\\bkeeps\\b",
+     "\\bloses\\b"
     ],
     "positive": [
      "extensions of the committed theory"
     ],
     "subject": [
-     "\\bat (?:two|four|five) actors\\b"
+     "\\bat (?:two|four|five) actors\\b",
+     "\\b(?:two|four|five)-actor world\\b"
     ]
    },
    "unlicensed_sentences": [],
@@ -4660,27 +6670,99 @@
    "wall": "W-EXTENSION-SCOPE"
   },
   {
-   "controls_caught": 3,
-   "independent_controls": 3,
+   "controls_caught": 6,
+   "has_a_licence_leg": true,
+   "independent_controls": 6,
    "missing_positive": [],
    "seal": {
     "independent_controls": 3,
-    "licences": [],
+    "licences": [
+     "that unit's measurement",
+     "\\brequires the price\\b",
+     "\\bthe unit that owns the update rule\\b",
+     "\\bis not decided here\\b",
+     "\\bare not recomputed\\b",
+     "\\bquestion for the unit\\b",
+     "\\bthe price the unit\\b",
+     "\\bcounting-only\\b",
+     "\\bpair combinatorics\\b"
+    ],
     "name": "W-NO-MOTIVATION-CLAIM",
     "negative": [
      "\\bgluing is (?:therefore )?(?:a )?free\\b",
      "\\bmotivated\\b[^.]{0,30}\\bat (?:two|2) actors\\b",
      "\\bthis unit (?:measures|shows|proves)[^.]{0,30}\\bfree items?\\b"
     ],
-    "policed": [],
+    "policed": [
+     "\\bfree\\b",
+     "\\bmotivated\\b",
+     "\\bpriced at\\b",
+     "\\bcosts nothing\\b",
+     "\\blawful\\b",
+     "\\bautonomous\\b",
+     "\\bfree of charge\\b"
+    ],
     "positive": [
      "(?:is|are) that unit's measurement and (?:is|are) not recomputed"
     ],
-    "subject": []
+    "subject": [
+     "\\b(?:gluing|crossing|crossings|seam-spanning|free items?|motivat\\w+)\\b"
+    ]
    },
    "unlicensed_sentences": [],
    "violations": [],
    "wall": "W-NO-MOTIVATION-CLAIM"
+  },
+  {
+   "controls_caught": 6,
+   "has_a_licence_leg": true,
+   "independent_controls": 6,
+   "missing_positive": [],
+   "seal": {
+    "independent_controls": 3,
+    "licences": [
+     "\\bat this arena\\b",
+     "\\bat the declared arena\\b",
+     "\\bone point of a\\b",
+     "\\bfibre\\b",
+     "\\bstill-free\\b",
+     "\\bmember-specific\\b",
+     "\\bthe declared arena\\b",
+     "\\bby a two-line proof\\b",
+     "\\bis a theorem\\b",
+     "\\bdeclared arena pairs\\b",
+     "\\bwithin the declared\\b",
+     "\\bthis unit measures\\b"
+    ],
+    "name": "W-NO-FAMILY-PREDICTION",
+    "negative": [
+     "\\bacross the isp family\\b",
+     "\\bany isp model\\b[^.]{0,60}\\b(?:gives|predicts|returns)\\b",
+     "\\bat every arena\\b[^.]{0,40}\\b(?:the|this) (?:corpus|theory)\\b[^.]{0,20}\\bpredicts\\b",
+     "\\bthe ladder predicts the same modulus for every\\b"
+    ],
+    "policed": [
+     "\\bpredicts?\\b",
+     "\\balways\\b",
+     "\\bat every arena\\b",
+     "\\bin any arena\\b",
+     "\\bin general\\b",
+     "\\bwhatever\\b",
+     "\\bprecisely when\\b",
+     "\\bfor all arenas\\b",
+     "\\buniversally\\b",
+     "\\bevery still-free\\b"
+    ],
+    "positive": [
+     "one point of a"
+    ],
+    "subject": [
+     "\\b(?:the isp family|across the isp|any isp model|every isp model|every arena|any arena|in general|this theory|the theory|every model|whatever arena)\\b"
+    ]
+   },
+   "unlicensed_sentences": [],
+   "violations": [],
+   "wall": "W-NO-FAMILY-PREDICTION"
   }
  ]
 }
