@@ -134,3 +134,36 @@ Template 9/9; battery: 36/36 recipes at declared gates
 with moved keys (one recipe self-found defective and
 repaired); byte-identical off-tree.  **Orchestrator
 battery next; panel after green.**
+
+## 2026-08-16 — SECOND EXTERNAL REVIEW RECEIVED AND ROUTED (v15 LEDGER #5)
+
+A second reviewer (via the user) assessed the v15 worktree.
+ADOPTED AND ROUTED: (1) ARITY's off-parent grammars are
+EXTENSIONS of ISP (a new packing rule with idle actors),
+not unchanged comparisons — per-law verdicts must carry
+extension scope; (2) **ARITY-AT-n=16 REGISTERED** as a
+window/successor (distinguishes divisor-based from
+subgroup/coset-based selection arguments); (3) AUTOGLUE's
+head must say TRANSITION RELATION, not evolution law (its
+successor form has 4-or-8 consistent completions, never
+unique — if its draft says otherwise, fix); (4) the
+a=2-INTEGRATION order: AUTOGLUE consumes ARITY's a=2
+result (where the three-actor obstruction reportedly
+dissolves) or registers the cross-run as its first
+successor; (5) the "state restricts allowed transitions
+MAY BE PHYSICS" reframe registered for the wave-2 DYNAMICS
+charter (state → allowed events → successor distribution →
+next state; trajectories; stable/reference solutions
+BEFORE excitations); (6) AUTOGLUE's "metric datum" wording
+ordered fixed if present (conflicts with its own
+no-metrical-interpretation stance); (7) CONTRACT PANEL
+BRIEF ITEM: verify the alleged SEAM census duplication +
+duplicated parent quotation against the 23-object claim
+(grep-level check inconclusive — objects appear in
+multiple tables legitimately).  CONCURRENCES NOTED (no
+action): the Contract and DISC assessments match the
+user's #2 review and the delivered forms; DISC-2 already
+registered; the EXCITATION gate already binding; the
+seven-step programme matches the existing plan + wave-2
+projection.  Routed to the ARITY and AUTOGLUE runners
+this entry.
