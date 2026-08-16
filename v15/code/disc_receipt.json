@@ -1,0 +1,1129 @@
+{
+ "agreement": {
+  "checks": 6216,
+  "points": 372,
+  "upto": 2,
+  "violations": 0
+ },
+ "anchors_consumed": {
+  "consumers": [
+   "G-EXPRESSIBILITY-CENSUS",
+   "G-GAP-BOTH",
+   "G-ISP-FIDELITY-PARENT",
+   "G-M2-PREDICTION-RUN",
+   "G-MODULUS-DESCENT-THEOREM",
+   "G-MODULUS-OBSERVABLE",
+   "G-NULL-RULE-TOTAL",
+   "G-PERIMETER-LAW-BOTH",
+   "G-PLAQUETTE-BOTH",
+   "G-QUARTIC-BOTH"
+  ],
+  "problem": "none",
+  "rows": 12
+ },
+ "anchors_located": {
+  "problem": "none",
+  "rows": 12,
+  "sources": [
+   "v14/paper-20-coupling.md",
+   "v14/paper-34-act.md",
+   "v14/paper-36-pot.md",
+   "v14/paper-39-ndep.md",
+   "v15/note-disc-pin.md"
+  ]
+ },
+ "coin_census": {
+  "rows": [
+   {
+    "classes": 2,
+    "q": 2,
+    "solutions": 4,
+    "trivial_classes": 1
+   },
+   {
+    "classes": 6,
+    "q": 3,
+    "solutions": 36,
+    "trivial_classes": 1
+   }
+  ]
+ },
+ "discriminant": {
+  "agree_checks": 6216,
+  "agree_upto": 2,
+  "agree_violations": 0,
+  "first_difference_tick": 3,
+  "found": true,
+  "nontrivial_at_tick": 294,
+  "nontrivial_points": 294,
+  "observable_word": "THE-TICK-3-SITE-OCCUPATION-DISTRIBUTION",
+  "q2": {
+   "branches": 306,
+   "horizon": 5,
+   "isp_dist": [
+    "9824/19683",
+    "8480/59049",
+    "12617/59049",
+    "8480/59049"
+   ],
+   "isp_ipr": "43392899/129140163",
+   "max_gap": "10144/59049",
+   "null_dist": [
+    "32/81",
+    "80/729",
+    "281/729",
+    "80/729"
+   ],
+   "null_ipr": "58235/177147",
+   "record_side": {
+    "constant_curvature_probability": "0",
+    "distinct_curvature_fields": 8,
+    "max_cell_count": 5,
+    "total_mass": "1"
+   },
+   "tv": "10144/59049"
+  },
+  "q3": {
+   "branches": 486,
+   "horizon": 3,
+   "isp_dist": [
+    "1/81",
+    "68/729",
+    "116/729",
+    "32/729",
+    "0",
+    "2620/19683",
+    "32/729",
+    "1324/19683",
+    "8800/19683"
+   ],
+   "isp_ipr": "33596579/129140163",
+   "max_gap": "1024/19683",
+   "null_dist": [
+    "1/81",
+    "68/729",
+    "116/729",
+    "32/729",
+    "0",
+    "116/729",
+    "32/729",
+    "68/729",
+    "32/81"
+   ],
+   "null_ipr": "40411/177147",
+   "record_side": {
+    "constant_curvature_probability": "0",
+    "distinct_curvature_fields": 282,
+    "max_cell_count": 3,
+    "total_mass": "1"
+   },
+   "tv": "1024/19683"
+  },
+  "reading": "AN ABLATION: the null is this model with the feedback layer removed and everything else held equal, so the difference measures the layer and not a fitted number",
+  "trivial_points": 78,
+  "verdict_word": "RECORD-BACKREACTION-DETECTED-AT-TICK-3"
+ },
+ "exactness": {
+  "float_sites": []
+ },
+ "expressibility": {
+  "both": 6,
+  "class_words": [
+   "MEASURABLE",
+   "DEFINITIONAL"
+  ],
+  "isp_only": 6,
+  "rows": [
+   {
+    "class": "MEASURABLE",
+    "expressible": "BOTH",
+    "observable": "site-occupation distribution p_t(x)",
+    "why": "a function of the state alone"
+   },
+   {
+    "class": "MEASURABLE",
+    "expressible": "BOTH",
+    "observable": "inverse participation ratio",
+    "why": "a function of the site distribution"
+   },
+   {
+    "class": "MEASURABLE",
+    "expressible": "BOTH",
+    "observable": "total variation between two ticks' distributions",
+    "why": "a function of distributions"
+   },
+   {
+    "class": "MEASURABLE",
+    "expressible": "BOTH",
+    "observable": "loop observable on a uniform configuration",
+    "why": "a function of the link operators"
+   },
+   {
+    "class": "MEASURABLE",
+    "expressible": "BOTH",
+    "observable": "off-diagonal quartic sign",
+    "why": "a function of the coin"
+   },
+   {
+    "class": "MEASURABLE",
+    "expressible": "BOTH",
+    "observable": "plaquette counting expectation",
+    "why": "a function of the coin family and a measure"
+   },
+   {
+    "class": "DEFINITIONAL",
+    "expressible": "ISP-ONLY",
+    "observable": "division-count field n_l(x)",
+    "why": "the null has no count field"
+   },
+   {
+    "class": "DEFINITIONAL",
+    "expressible": "ISP-ONLY",
+    "observable": "emission field and its link-class marginal",
+    "why": "the null emits nothing"
+   },
+   {
+    "class": "DEFINITIONAL",
+    "expressible": "ISP-ONLY",
+    "observable": "branch count of the emission tree",
+    "why": "the null has one trajectory"
+   },
+   {
+    "class": "DEFINITIONAL",
+    "expressible": "ISP-ONLY",
+    "observable": "record curvature field on the elementary triangle",
+    "why": "a function of the count field"
+   },
+   {
+    "class": "DEFINITIONAL",
+    "expressible": "ISP-ONLY",
+    "observable": "maximum cell count",
+    "why": "a function of the count field"
+   },
+   {
+    "class": "DEFINITIONAL",
+    "expressible": "ISP-ONLY",
+    "observable": "admissibility exit probability",
+    "why": "admissibility is a property of the record"
+   }
+  ],
+  "total": 12,
+  "unruled": []
+ },
+ "falsifier": {
+  "confidence_denominator": 100,
+  "kind": "REGRESSION-TEST-NOT-EMPIRICAL",
+  "max_gap_q2": "10144/59049",
+  "max_gap_q3": "1024/19683",
+  "operational_units": "ABSENT-IN-THIS-CORPUS",
+  "shots_q2": 3389,
+  "shots_q3": 36948,
+  "simulation_branches_q2": 306,
+  "simulation_branches_q3": 486,
+  "statement": "a proposed realization of this model is refuted at the declared arena if the site-occupation distribution at the third tick equals the record-free null's, or any value other than the one published here; the test is a regression test on a realization and not an empirical test of nature, because this corpus supplies no mapping from ticks and sites to laboratory units",
+  "word": "COMPUTATIONAL-REGRESSION-TEST-ON-A-PROPOSED-REALIZATION"
+ },
+ "falsifier_coverage": {
+  "falsified": 34,
+  "gates": 34,
+  "problem": "none",
+  "sentinels": [],
+  "waived": 2,
+  "waivers": [
+   "G-READS-DECLARED",
+   "G-SCOPE-DECLARED"
+  ]
+ },
+ "fiber": {
+  "first_difference_tick": 3,
+  "nontrivial": 294,
+  "nontrivial_first_at_the_common_tick": 294,
+  "points": 372,
+  "rows": [
+   {
+    "coin": "non-trivial",
+    "first_difference": 3,
+    "points": 24,
+    "q": 2
+   },
+   {
+    "coin": "trivial",
+    "first_difference": "none",
+    "points": 24,
+    "q": 2
+   },
+   {
+    "coin": "non-trivial",
+    "first_difference": 3,
+    "points": 270,
+    "q": 3
+   },
+   {
+    "coin": "trivial",
+    "first_difference": "none",
+    "points": 54,
+    "q": 3
+   }
+  ],
+  "sweep_horizon": 3,
+  "trivial": 78,
+  "trivial_never_differ": 78
+ },
+ "isp_fidelity": {
+  "control_max_cell_count": 1,
+  "coupled_branches": [
+   3,
+   27,
+   486,
+   10527,
+   284078
+  ],
+  "coupled_ipr": "35971074413334039128803/239299329230617529590083",
+  "coupled_max_cell_count": 3,
+  "frozen_branches": [
+   3,
+   27,
+   486,
+   9234,
+   212382
+  ],
+  "frozen_ipr": "2306155/14348907",
+  "mass_one": true,
+  "norm_checks": 20795,
+  "norm_violations": 0,
+  "parent_coupled_branches": [
+   3,
+   27,
+   486,
+   10527,
+   284078
+  ],
+  "parent_coupled_ipr": "35971074413334039128803/239299329230617529590083",
+  "parent_frozen_branches": [
+   3,
+   27,
+   486,
+   9234,
+   212382
+  ],
+  "parent_frozen_ipr": "2306155/14348907"
+ },
+ "lattice_closed_form": {
+  "coins": 640,
+  "failures": 0,
+  "gap_read_from_the_parent": "1/2",
+  "halving_present_at": 512,
+  "null_coin_coefficients": [
+   "2",
+   "-1",
+   "1"
+  ],
+  "null_coin_halving": true,
+  "null_coin_halving_ratio": "1/2",
+  "spectrum": [
+   "1",
+   "1",
+   "1/2"
+  ],
+  "word_closed": "REPRODUCED-BY-THE-NULL",
+  "word_gap": "REPRODUCED-BY-THE-NULL"
+ },
+ "lattice_perimeter": {
+  "alphabet": 25,
+  "coins": 640,
+  "comparisons": 3200,
+  "disagreements": 0,
+  "null_coin_in_family": true,
+  "null_coin_sector": "BALANCED",
+  "rows": 80,
+  "sectors": {
+   "ANTIDIAGONAL": 64,
+   "BALANCED": 512,
+   "DIAGONAL": 64
+  },
+  "word": "REPRODUCED-BY-THE-NULL"
+ },
+ "lattice_plaquette": {
+  "counting_expectation": "13/10",
+  "counting_surd": "0",
+  "distinct": 11,
+  "expectation_read_from_the_parent": "13/10",
+  "nonflat_diagonal": 56,
+  "values_read_from_the_parent": 11,
+  "word": "REPRODUCED-BY-THE-NULL"
+ },
+ "lattice_quartic": {
+  "counting_expectation": "0",
+  "distribution": {
+   "-2": 144,
+   "0": 352,
+   "2": 144
+  },
+  "odd_twists_reverse_everywhere": true,
+  "power_read_from_the_parent": 4,
+  "twists": [
+   {
+    "closed": true,
+    "k": 0,
+    "sign_reversed": 352
+   },
+   {
+    "closed": true,
+    "k": 1,
+    "sign_reversed": 640
+   },
+   {
+    "closed": true,
+    "k": 2,
+    "sign_reversed": 352
+   },
+   {
+    "closed": true,
+    "k": 3,
+    "sign_reversed": 640
+   },
+   {
+    "closed": true,
+    "k": 4,
+    "sign_reversed": 352
+   },
+   {
+    "closed": true,
+    "k": 5,
+    "sign_reversed": 640
+   },
+   {
+    "closed": true,
+    "k": 6,
+    "sign_reversed": 352
+   },
+   {
+    "closed": true,
+    "k": 7,
+    "sign_reversed": 640
+   }
+  ],
+  "word": "REPRODUCED-BY-THE-NULL"
+ },
+ "m2_prediction": {
+  "arena": "AG(2,2)",
+  "caveat": "the forcing holds for the phase-character construction the parent chose -- a phase that is a character of the arena's own scalar group. A different construction would have a different forcing, so this closes an internal obligation and is not an external prediction.",
+  "construction_dependent": true,
+  "distribution": [
+   "9824/19683",
+   "8480/59049",
+   "12617/59049",
+   "8480/59049"
+  ],
+  "ipr": "43392899/129140163",
+  "modulus_read_from_the_prediction_sentence": 2,
+  "modulus_read_from_the_successor_sentence": 2,
+  "null_distribution": [
+   "32/81",
+   "80/729",
+   "281/729",
+   "80/729"
+  ],
+  "null_ipr": "58235/177147",
+  "predicted_modulus": 2,
+  "status": "INTERNAL-CHECK-CLOSING-THE-PARENTS-REGISTERED-TEST",
+  "successor_test_located": true,
+  "verdict": "RUN-AND-DETERMINATE"
+ },
+ "modulus": {
+  "declared": [
+   1,
+   2,
+   3,
+   4,
+   6,
+   12
+  ],
+  "distinct_values": 5,
+  "forced": "M-EQUALS-Q",
+  "moduli_run": 5,
+  "rational_born_weights": [
+   {
+    "m": 1,
+    "rational": true
+   },
+   {
+    "m": 2,
+    "rational": true
+   },
+   {
+    "m": 3,
+    "rational": true
+   },
+   {
+    "m": 4,
+    "rational": true
+   },
+   {
+    "m": 6,
+    "rational": true
+   },
+   {
+    "m": 12,
+    "rational": false
+   }
+  ],
+  "residue_modulus_read_from_the_parent": 3,
+  "residue_sentence": true,
+  "rows": [
+   {
+    "branches_tick3": 270,
+    "ipr_tick3": "58235/177147",
+    "m": 1
+   },
+   {
+    "branches_tick3": 306,
+    "ipr_tick3": "43392899/129140163",
+    "m": 2
+   },
+   {
+    "branches_tick3": 324,
+    "ipr_tick3": "4680635/14348907",
+    "m": 3
+   },
+   {
+    "branches_tick3": 324,
+    "ipr_tick3": "41546723/129140163",
+    "m": 4
+   },
+   {
+    "branches_tick3": 324,
+    "ipr_tick3": "41655923/129140163",
+    "m": 6
+   }
+  ],
+  "word": "FORCED-AND-OBSERVABLE"
+ },
+ "modulus_descent": {
+  "field_order_read_from_the_parent": 3,
+  "parent_sentence_located": true,
+  "prime_orders_only": true,
+  "rows": [
+   {
+    "admissible_moduli": [
+     2
+    ],
+    "q": 2
+   },
+   {
+    "admissible_moduli": [
+     3
+    ],
+    "q": 3
+   },
+   {
+    "admissible_moduli": [
+     5
+    ],
+    "q": 5
+   },
+   {
+    "admissible_moduli": [
+     7
+    ],
+    "q": 7
+   }
+  ]
+ },
+ "null_model": {
+  "dimension_read_from_the_pin": 2,
+  "dropped": "RECORD-LAYER-CONSERVED-PRICE-STRUCTURE",
+  "dropped_count": 2,
+  "pin_sentence_terms_missing": [],
+  "rule_ids": [
+   "PR1",
+   "PR2",
+   "PR3",
+   "PR4",
+   "PR5",
+   "PR6",
+   "PR7"
+  ],
+  "rule_text": {
+   "PR1": "the null runs on the same site set as the ISP model it is compared against -- the points of AG(2,q) with periodic identification, d=2",
+   "PR2": "the null's internal register has the same dimension as the ISP model's -- one basis vector per declared link direction",
+   "PR3": "the null carries the SAME coin as the ISP model it is compared against, taken from the same S_3-covariant census over the arena's own ring; the discriminator may not be won by changing the coin",
+   "PR4": "the null's shift is the same conditional translation, carrying the amplitude at a site along its own direction and leaving the direction alone",
+   "PR5": "the null starts in the same state as the ISP model -- one basis vector, at the same site and the same direction",
+   "PR6": "the null has NO record layer: its coin is constant in space and in time, it emits nothing, and no count field exists in its region",
+   "PR7": "where a census over configurations needs a measure the null uses the uniform counting measure -- it has no conserved-price structure and declares no weight system"
+  },
+  "rules": 7,
+  "shared": "ARENA-REGISTER-COIN-SHIFT-STATE-HORIZON",
+  "shared_count": 6,
+  "word": "PLAIN-COINED-WALK"
+ },
+ "null_no_record": {
+  "leaks": [],
+  "vocabulary": [
+   "record",
+   "emission",
+   "coupled",
+   "branch",
+   "modulus",
+   "count_field",
+   "division"
+  ]
+ },
+ "null_two_routes": {
+  "checks": 39,
+  "violations": 0
+ },
+ "paper": {
+  "path": "v15/paper-47-disc.md",
+  "sha256_12": "b12c4c67bac8"
+ },
+ "paper_claims": {
+  "fences": 1,
+  "problem": "none",
+  "prose": 18,
+  "rows": 92
+ },
+ "paper_coverage": {
+  "backing_fractions": 26,
+  "backing_values": 84,
+  "scanned": 337,
+  "unbacked": [],
+  "unbacked_fractions": []
+ },
+ "paper_referents": {
+  "exemptions_unused": [],
+  "occurrences_checked": 3,
+  "problem": "none",
+  "section_ordinals_removed": 14,
+  "universes": {
+   "the census": {
+    "nouns": [
+     "sealed result",
+     "sealed results",
+     "census row",
+     "census rows"
+    ],
+    "pairs": [
+     [
+      1,
+      10
+     ],
+     [
+      2,
+      10
+     ],
+     [
+      7,
+      10
+     ]
+    ],
+    "values": [
+     1,
+     2,
+     7,
+     10
+    ]
+   },
+   "the coin census": {
+    "nouns": [
+     "covariant coin",
+     "covariant coins"
+    ],
+    "pairs": [
+     [
+      2,
+      4
+     ],
+     [
+      6,
+      36
+     ]
+    ],
+    "values": [
+     2,
+     3,
+     4,
+     6,
+     36
+    ]
+   },
+   "the coin family": {
+    "nouns": [
+     "coin of the carrier",
+     "coins of the shared family",
+     "link coin",
+     "link coins"
+    ],
+    "pairs": [
+     [
+      0,
+      640
+     ],
+     [
+      0,
+      3200
+     ],
+     [
+      56,
+      640
+     ],
+     [
+      512,
+      640
+     ]
+    ],
+    "values": [
+     0,
+     8,
+     11,
+     25,
+     56,
+     64,
+     80,
+     144,
+     352,
+     512,
+     640,
+     3200
+    ]
+   },
+   "the fiber": {
+    "nouns": [
+     "fiber point",
+     "fiber points"
+    ],
+    "pairs": [
+     [
+      78,
+      78
+     ],
+     [
+      294,
+      294
+     ],
+     [
+      6216,
+      6216
+     ]
+    ],
+    "values": [
+     0,
+     2,
+     3,
+     24,
+     54,
+     78,
+     270,
+     294,
+     372,
+     6216
+    ]
+   },
+   "the modulus sweep": {
+    "nouns": [
+     "declared modulus",
+     "declared moduli"
+    ],
+    "pairs": [
+     [
+      5,
+      5
+     ]
+    ],
+    "values": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     12
+    ]
+   },
+   "the observable census": {
+    "nouns": [
+     "declared observable",
+     "declared observables"
+    ],
+    "pairs": [
+     [
+      6,
+      12
+     ]
+    ],
+    "values": [
+     6,
+     12
+    ]
+   }
+  }
+ },
+ "q155_census": {
+  "not_expressible": 1,
+  "not_reproduced": 2,
+  "reproduced": 7,
+  "rows": [
+   {
+    "evidence": "per-configuration at 3200 equal-perimeter comparisons, 0 disagreements; the null's own coin is in the family",
+    "result": "paper-36 the rectangle ladder is a function of the perimeter alone",
+    "ruling": "REPRODUCED"
+   },
+   {
+    "evidence": "0 closed-form failures over 640 coins",
+    "result": "paper-36 the three-term closed form at every coin",
+    "ruling": "REPRODUCED"
+   },
+   {
+    "evidence": "present at 512 of 640 coins, the null's own among them with coefficients 2 -1 1",
+    "result": "paper-36 the halving mode and its gap",
+    "ruling": "REPRODUCED"
+   },
+   {
+    "evidence": "11 distinct values, expectation 13/10, 56 non-flat diagonal coins",
+    "result": "paper-36 the plaquette counting expectation",
+    "ruling": "REPRODUCED"
+   },
+   {
+    "evidence": "the null's counting measure returns 0; the odd twists reverse the observable at every coin",
+    "result": "paper-34 the off-diagonal quartic sign pinned to a single value",
+    "ruling": "REPRODUCED"
+   },
+   {
+    "evidence": "18 unitary and 0 non-monomial over 50653 maps: arena-carried",
+    "result": "paper-20 the coin register is forced on this offset set",
+    "ruling": "REPRODUCED"
+   },
+   {
+    "evidence": "6216 site-by-tick comparisons, 0 violations, over all 372 points of the sweep",
+    "result": "paper-20 the walk's distribution at the first two ticks",
+    "ruling": "REPRODUCED"
+   },
+   {
+    "evidence": "unequal at both arenas; the first difference arrives at the same tick at 294 of 294 interfering points of the sweep",
+    "result": "paper-20 the walk's distribution from the third tick on",
+    "ruling": "NOT-REPRODUCED"
+   },
+   {
+    "evidence": "the null is the modulus-one point of the family; the tick-three distribution takes 5 distinct values over 5 moduli",
+    "result": "paper-39 the connection modulus read at the smaller arena",
+    "ruling": "NOT-REPRODUCED"
+   },
+   {
+    "evidence": "6 of 12 observables of the classification are formable only where a record exists",
+    "result": "paper-20 the record-side observable set",
+    "ruling": "NOT-EXPRESSIBLE"
+   }
+  ],
+  "rows_count": 10
+ },
+ "reads": {
+  "declared": [
+   "v14/code/era_template.py",
+   "v14/paper-20-coupling.md",
+   "v14/paper-34-act.md",
+   "v14/paper-36-pot.md",
+   "v14/paper-39-ndep.md",
+   "v15/code/disc_exact.py",
+   "v15/note-disc-pin.md",
+   "v15/paper-47-disc.md"
+  ],
+  "distinct": 8,
+  "reads": 13
+ },
+ "rendered": {
+  "claims": [
+   "the two models agree exactly through the second tick and differ from the third on",
+   "the null is one model and not a class",
+   "the prediction is free of every parameter the null does not also carry",
+   "no operational mapping to laboratory units exists in this corpus",
+   "a definitional absence is not a discriminant",
+   "the discriminant requires interference: at the scalar coins the two models never separate",
+   "this unit is a model-ablation benchmark",
+   "the null compared here is memoryless",
+   "parameter-free is not structure-free"
+  ],
+  "fences": [
+   "```\nRECORD-BACKREACTION-DETECTED-AT-TICK-3 -- CLASS=MODEL-ABLATION-BENCHMARK;NULL=PLAIN-COINED-WALK;RULES=7;SHARED-WITH-ISP=ARENA-REGISTER-COIN-SHIFT-STATE-HORIZON;ABLATED=RECORD-LAYER-CONSERVED-PRICE-STRUCTURE -- PRIMARY=THE-RECORD-FREE-NULL-REPRODUCES-7-OF-10-TESTED-RESULTS;2-NOT-REPRODUCED;1-NOT-EXPRESSIBLE;REPRODUCED=PERIMETER-LAW+CLOSED-FORM+GAP+PLAQUETTE+QUARTIC-SIGN+COIN-REGISTER-RESTRICTION+THE-FIRST-TWO-TICKS -- LATTICE=PERIMETER-REPRODUCED-BY-THE-NULL;CLOSED-FORM-REPRODUCED-BY-THE-NULL;GAP-REPRODUCED-BY-THE-NULL;PLAQUETTE-REPRODUCED-BY-THE-NULL;QUARTIC-REPRODUCED-BY-THE-NULL -- AGREEMENT=6216-OF-6216-SITE-BY-TICK-CHECKS-EQUAL-THROUGH-TICK-2 -- ABLATION-EFFECT=FIRST-AT-TICK-3-AT-294-OF-294-NON-TRIVIAL-FIBER-POINTS;NEVER-AT-78-TRIVIAL-COIN-POINTS -- VALUES-AT-AG-2-3=ISP-33596579/129140163-VS-NULL-40411/177147;TV=1024/19683 -- VALUES-AT-AG-2-2=ISP-43392899/129140163-VS-NULL-58235/177147;TV=10144/59049 -- M-EQUALS-Q=FORCED-AND-OBSERVABLE;INTERNAL-CHECK-CLOSING-THE-PARENTS-REGISTERED-TEST-NOT-AN-EXTERNAL-PREDICTION;CONSTRUCTION-DEPENDENT;OBSERVABLE-AT-5-OF-5-DECLARED-MODULI -- PRICE=ISP-CARRIES-5-STRUCTURES-THE-NULL-DOES-NOT-AND-0-ADJUSTABLE-NUMBERS;PARAMETER-FREE-IS-NOT-STRUCTURE-FREE -- FALSIFIER=COMPUTATIONAL-REGRESSION-TEST-ON-A-PROPOSED-REALIZATION;SHOTS=36948-AT-AG-2-3-AND-3389-AT-AG-2-2 -- SUCCESSOR=DISC-2-THE-SIMPLEST-MEMORY-BEARING-NULL -- SCOPE=ONE-MEMORYLESS-NULL-NOT-A-CLASS;D=2;ARENAS=AG-2-2-AND-AG-2-3;READINGS=A-AND-B;AT-FINITE-HORIZON-A-RECORD-IS-ABSORBABLE-INTO-AN-ENLARGED-STATE;NO-OPERATIONAL-UNITS;NO-LABORATORY-CLAIM;NOT-AN-EXTERNAL-PREDICTION\n```"
+  ],
+  "tables": [
+   "| rule | datum | the null's value |\n|---|---|---|\n| PR1 | ARENA | the null runs on the same site set as the ISP model it is compared against -- the points of AG(2,q) with periodic identification, d=2 |\n| PR2 | REGISTER | the null's internal register has the same dimension as the ISP model's -- one basis vector per declared link direction |\n| PR3 | COIN | the null carries the SAME coin as the ISP model it is compared against, taken from the same S_3-covariant census over the arena's own ring; the discriminator may not be won by changing the coin |\n| PR4 | SHIFT | the null's shift is the same conditional translation, carrying the amplitude at a site along its own direction and leaving the direction alone |\n| PR5 | STATE | the null starts in the same state as the ISP model -- one basis vector, at the same site and the same direction |\n| PR6 | STRUCTURE | the null has NO record layer: its coin is constant in space and in time, it emits nothing, and no count field exists in its region |\n| PR7 | MEASURE | where a census over configurations needs a measure the null uses the uniform counting measure -- it has no conserved-price structure and declares no weight system |",
+   "| arena | solutions | classes up to phase | trivial classes |\n|---|---|---|---|\n| AG(2, 2) | 4 | 2 | 1 |\n| AG(2, 3) | 36 | 6 | 1 |",
+   "| quantity | this rebuild | the parent's sealed value |\n|---|---|---|\n| coupled branch ladder | 3 27 486 10527 284078 | 3 27 486 10527 284078 |\n| control branch ladder | 3 27 486 9234 212382 | 3 27 486 9234 212382 |\n| coupled inverse participation | 35971074413334039128803/239299329230617529590083 | 35971074413334039128803/239299329230617529590083 |\n| control inverse participation | 2306155/14348907 | 2306155/14348907 |",
+   "| arena | coin | first difference | points |\n|---|---|---|---|\n| AG(2, 2) | non-trivial | 3 | 24 |\n| AG(2, 2) | trivial | none | 24 |\n| AG(2, 3) | non-trivial | 3 | 270 |\n| AG(2, 3) | trivial | none | 54 |",
+   "| arena | tick | ISP | the null | total variation |\n|---|---|---|---|---|\n| AG(2, 3) | 3 | 33596579/129140163 | 40411/177147 | 1024/19683 |\n| AG(2, 2) | 3 | 43392899/129140163 | 58235/177147 | 10144/59049 |",
+   "| site | ISP | the null |\n|---|---|---|\n| (0, 0) | 1/81 | 1/81 |\n| (0, 1) | 68/729 | 68/729 |\n| (0, 2) | 116/729 | 116/729 |\n| (1, 0) | 32/729 | 32/729 |\n| (1, 1) | 0 | 0 |\n| (1, 2) | 2620/19683 | 116/729 |\n| (2, 0) | 32/729 | 32/729 |\n| (2, 1) | 1324/19683 | 68/729 |\n| (2, 2) | 8800/19683 | 32/81 |",
+   "| site | ISP | the null |\n|---|---|---|\n| (0, 0) | 9824/19683 | 32/81 |\n| (0, 1) | 8480/59049 | 80/729 |\n| (1, 0) | 12617/59049 | 281/729 |\n| (1, 1) | 8480/59049 | 80/729 |",
+   "| modulus | tick-3 inverse participation | branches |\n|---|---|---|\n| 1 | 58235/177147 | 270 |\n| 2 | 43392899/129140163 | 306 |\n| 3 | 4680635/14348907 | 324 |\n| 4 | 41546723/129140163 | 324 |\n| 6 | 41655923/129140163 | 324 |",
+   "| field order | admissible moduli |\n|---|---|\n| 2 | 2 |\n| 3 | 3 |\n| 5 | 5 |\n| 7 | 7 |",
+   "| parent's result | measured on the shared carrier | the null's own coin |\n|---|---|---|\n| perimeter-only law | 3200 comparisons, 0 disagreements | in the family: True |\n| three-term closed form | 0 failures over 640 coins | coefficients 2 -1 1 |\n| halving mode | present at 512 of 640 coins | present: True |\n| plaquette counting expectation | 11 distinct values | 13/10 |\n| off-diagonal quartic sign | 352 zero, 144 plus, 144 minus | 0 |",
+   "| observable | expressible in | class | why |\n|---|---|---|---|\n| site-occupation distribution p_t(x) | BOTH | MEASURABLE | a function of the state alone |\n| inverse participation ratio | BOTH | MEASURABLE | a function of the site distribution |\n| total variation between two ticks' distributions | BOTH | MEASURABLE | a function of distributions |\n| loop observable on a uniform configuration | BOTH | MEASURABLE | a function of the link operators |\n| off-diagonal quartic sign | BOTH | MEASURABLE | a function of the coin |\n| plaquette counting expectation | BOTH | MEASURABLE | a function of the coin family and a measure |\n| division-count field n_l(x) | ISP-ONLY | DEFINITIONAL | the null has no count field |\n| emission field and its link-class marginal | ISP-ONLY | DEFINITIONAL | the null emits nothing |\n| branch count of the emission tree | ISP-ONLY | DEFINITIONAL | the null has one trajectory |\n| record curvature field on the elementary triangle | ISP-ONLY | DEFINITIONAL | a function of the count field |\n| maximum cell count | ISP-ONLY | DEFINITIONAL | a function of the count field |\n| admissibility exit probability | ISP-ONLY | DEFINITIONAL | admissibility is a property of the record |",
+   "| parent result | ruling | evidence |\n|---|---|---|\n| paper-36 the rectangle ladder is a function of the perimeter alone | REPRODUCED | per-configuration at 3200 equal-perimeter comparisons, 0 disagreements; the null's own coin is in the family |\n| paper-36 the three-term closed form at every coin | REPRODUCED | 0 closed-form failures over 640 coins |\n| paper-36 the halving mode and its gap | REPRODUCED | present at 512 of 640 coins, the null's own among them with coefficients 2 -1 1 |\n| paper-36 the plaquette counting expectation | REPRODUCED | 11 distinct values, expectation 13/10, 56 non-flat diagonal coins |\n| paper-34 the off-diagonal quartic sign pinned to a single value | REPRODUCED | the null's counting measure returns 0; the odd twists reverse the observable at every coin |\n| paper-20 the coin register is forced on this offset set | REPRODUCED | 18 unitary and 0 non-monomial over 50653 maps: arena-carried |\n| paper-20 the walk's distribution at the first two ticks | REPRODUCED | 6216 site-by-tick comparisons, 0 violations, over all 372 points of the sweep |\n| paper-20 the walk's distribution from the third tick on | NOT-REPRODUCED | unequal at both arenas; the first difference arrives at the same tick at 294 of 294 interfering points of the sweep |\n| paper-39 the connection modulus read at the smaller arena | NOT-REPRODUCED | the null is the modulus-one point of the family; the tick-three distribution takes 5 distinct values over 5 moduli |\n| paper-20 the record-side observable set | NOT-EXPRESSIBLE | 6 of 12 observables of the classification are formable only where a record exists |",
+   "| structure | what it is | adjustable numbers |\n|---|---|---|\n| the count field | one non-negative integer per cell, initialised uniform and monotone thereafter | 0 |\n| the feedback rule | the coin at a site is multiplied by the diagonal of phases the site's own counts determine | 0 |\n| the emission rule | one division event per step, on a cell drawn with that cell's own post-coin weight | 0 |\n| the branch structure | the state is an ensemble over emission histories rather than a single trajectory | 0 |\n| the phase character | the map from a count to a phase, taken to be a character of the arena's own scalar group | 0 |",
+   "| arena | largest site gap | shots | branches |\n|---|---|---|---|\n| AG(2, 3) | 1024/19683 | 36948 | 486 |\n| AG(2, 2) | 10144/59049 | 3389 | 306 |",
+   "| stencil | nonzero differences | multiplicities | unitary | non-monomial |\n|---|---|---|---|---|\n| the arena's link offsets | 6 | 1 | 18 | 0 |\n| a collinear stencil | 2 | 3 | 216 | 198 |"
+  ]
+ },
+ "s1_regions": {
+  "comparator": 8,
+  "isp": 16,
+  "null": 5,
+  "offences": []
+ },
+ "scope": {
+  "arenas": [
+   2,
+   3
+  ],
+  "class_word": "MODEL-ABLATION-BENCHMARK",
+  "declared_free_axes": [
+   "coin class",
+   "start site",
+   "coin direction",
+   "emission reading",
+   "arena",
+   "modulus"
+  ],
+  "horizons": {
+   "fiber": 3,
+   "fidelity": 5,
+   "head": 5
+  },
+  "null_weakness": "the null compared here is MEMORYLESS: its coin is constant in space and in time. At a finite horizon a record is always absorbable into an enlarged state description, so a memory-bearing null is not excluded by anything measured here and is registered as the successor opponent.",
+  "readings": [
+   "A",
+   "B"
+  ],
+  "successor": "DISC-2: the simplest memory-bearing null -- a finite-memory coin, a state-dependent coin, a dynamically updated phase field, or an enlarged internal register -- named here and not attempted here.",
+  "successor_word": "DISC-2-THE-SIMPLEST-MEMORY-BEARING-NULL",
+  "word": "ONE-MEMORYLESS-NULL-NOT-A-CLASS;D=2;ARENAS=AG-2-2-AND-AG-2-3;READINGS=A-AND-B;AT-FINITE-HORIZON-A-RECORD-IS-ABSORBABLE-INTO-AN-ENLARGED-STATE;NO-OPERATIONAL-UNITS;NO-LABORATORY-CLAIM;NOT-AN-EXTERNAL-PREDICTION"
+ },
+ "seal_manifest": {
+  "declared_unsealed": {
+   "paper": "the object under test, digested rather than measured",
+   "rendered": "the rendering the paper gates consume; its content is bound by G-PAPER-CLAIMS",
+   "seal_manifest": "the manifest itself"
+  },
+  "sealed": {
+   "agreement": "bcceff145267",
+   "anchors_consumed": "95647a07f69b",
+   "anchors_located": "2eb9d7ac82c0",
+   "coin_census": "05ab8d3fd0c7",
+   "discriminant": "d8b6fa5951eb",
+   "exactness": "46c588f6df72",
+   "expressibility": "481750d5290a",
+   "falsifier": "4415726da6be",
+   "falsifier_coverage": "a8bd080016d3",
+   "fiber": "d6f2fb6be160",
+   "isp_fidelity": "c10ed4314966",
+   "lattice_closed_form": "e7a5a9ad3719",
+   "lattice_perimeter": "a92dabaa978e",
+   "lattice_plaquette": "a111d6730cf2",
+   "lattice_quartic": "8189867258fb",
+   "m2_prediction": "daa5ada77d71",
+   "modulus": "b6733541d98f",
+   "modulus_descent": "c2befaa3cb38",
+   "null_model": "214eebdc80dd",
+   "null_no_record": "e47bf7acfc16",
+   "null_two_routes": "5bf3f387ba11",
+   "paper_claims": "cb6957354649",
+   "paper_coverage": "f1e794e0f5f5",
+   "paper_referents": "e658db8c96c8",
+   "q155_census": "4d69cff9fc20",
+   "reads": "e89149e63dc4",
+   "s1_regions": "c03368c42344",
+   "scope": "1d8b5af2997a",
+   "sources": "fe454f6afeaa",
+   "stencil": "1914a85df0ef",
+   "structure_price": "0dbc585b8c6c",
+   "template": "8f225eb5cec0",
+   "transcript": "a2731d84a054",
+   "typed_counts": "a4b40d49201a",
+   "verdict": "0d9c8c83cd9c",
+   "walls": "eb274a9600ba"
+  },
+  "sealed_at_gate": {
+   "agreement": "G-AGREE-THROUGH-THE-EARLY-TICKS",
+   "anchors_consumed": "G-ANCHORS-CONSUMED",
+   "anchors_located": "G-ANCHORS-LOCATED",
+   "coin_census": "G-COIN-CENSUS-PARENT",
+   "discriminant": "G-DISCRIMINANT-VALUES",
+   "exactness": "G-NO-FLOATS",
+   "expressibility": "G-EXPRESSIBILITY-CENSUS",
+   "falsifier": "G-FALSIFIER-SPECIFIED",
+   "falsifier_coverage": "T-FALSIFIER-COVERAGE",
+   "fiber": "G-FIRST-DIFFERENCE-TICK",
+   "isp_fidelity": "G-ISP-FIDELITY-PARENT",
+   "lattice_closed_form": "G-GAP-BOTH",
+   "lattice_perimeter": "G-PERIMETER-LAW-BOTH",
+   "lattice_plaquette": "G-PLAQUETTE-BOTH",
+   "lattice_quartic": "G-QUARTIC-BOTH",
+   "m2_prediction": "G-M2-PREDICTION-RUN",
+   "modulus": "G-MODULUS-OBSERVABLE",
+   "modulus_descent": "G-MODULUS-DESCENT-THEOREM",
+   "null_model": "G-NULL-RULE-TOTAL",
+   "null_no_record": "G-NULL-HAS-NO-RECORD",
+   "null_two_routes": "G-NULL-TWO-ROUTES",
+   "paper_claims": "G-PAPER-CLAIMS",
+   "paper_coverage": "G-PAPER-COVERAGE",
+   "paper_referents": "G-PAPER-REFERENTS",
+   "q155_census": "G-Q155-CENSUS-TOTAL",
+   "reads": "G-READS-DECLARED",
+   "s1_regions": "G-S1-DISJOINT-CODE",
+   "scope": "G-SCOPE-DECLARED",
+   "sources": "G-SOURCES-PINNED",
+   "stencil": "G-STENCIL-FORCING-PARENT",
+   "structure_price": "G-STRUCTURE-PRICED",
+   "template": "G-TEMPLATE-ADOPTED",
+   "transcript": "G-TRANSCRIPT-BOUND",
+   "typed_counts": "G-TYPED-COUNTS",
+   "verdict": "G-VERDICT-EQUALITY",
+   "walls": "G-PAPER-WALLS"
+  }
+ },
+ "sources": {
+  "v14/code/era_template.py": "d04a3eb58fbc",
+  "v14/paper-20-coupling.md": "4824d190af73",
+  "v14/paper-34-act.md": "d933221780ed",
+  "v14/paper-36-pot.md": "1e495318252d",
+  "v14/paper-39-ndep.md": "e2293b8c3858",
+  "v15/note-disc-pin.md": "dbe7b26bb0d0"
+ },
+ "stencil": {
+  "alphabet": 37,
+  "axis": {
+   "differences": 2,
+   "multiplicities": [
+    3
+   ],
+   "non_monomial": 198,
+   "unitary": 216
+  },
+  "link": {
+   "differences": 6,
+   "multiplicities": [
+    1
+   ],
+   "non_monomial": 0,
+   "unitary": 18
+  },
+  "maps": 50653
+ },
+ "structure_price": {
+  "adjustable_numbers": 0,
+  "reading": "parameter-free is not structure-free: the record-carrying model carries these structures and the null does not, and the comparison prices them here even though none of them introduces an adjustable number",
+  "rows": [
+   {
+    "adjustable numbers": 0,
+    "structure": "the count field",
+    "what it is": "one non-negative integer per cell, initialised uniform and monotone thereafter"
+   },
+   {
+    "adjustable numbers": 0,
+    "structure": "the feedback rule",
+    "what it is": "the coin at a site is multiplied by the diagonal of phases the site's own counts determine"
+   },
+   {
+    "adjustable numbers": 0,
+    "structure": "the emission rule",
+    "what it is": "one division event per step, on a cell drawn with that cell's own post-coin weight"
+   },
+   {
+    "adjustable numbers": 0,
+    "structure": "the branch structure",
+    "what it is": "the state is an ensemble over emission histories rather than a single trajectory"
+   },
+   {
+    "adjustable numbers": 0,
+    "structure": "the phase character",
+    "what it is": "the map from a count to a phase, taken to be a character of the arena's own scalar group"
+   }
+  ],
+  "structures": 5,
+  "unpriced": []
+ },
+ "template": {
+  "engravings": "E-25 through E-33 with TPL-2's items",
+  "families_adopted": [
+   "T-SEAL-PROMOTION",
+   "T-TRANSCRIPT-BOUND",
+   "T-WALL-SEMANTIC",
+   "T-ANCHOR-CONSUMED",
+   "T-CLAIMS-EQUAL",
+   "T-REFERENT-BOUND",
+   "T-NO-TYPED-COUNTS",
+   "T-FALSIFIER-POISONS",
+   "T-READ-SET"
+  ],
+  "families_missing": [],
+  "families_resolved": 9
+ },
+ "transcript": {
+  "chain_head": "95434862a8b08dc0",
+  "gate_rows": 36,
+  "lines": 38,
+  "sha256_12": "dc79343de5d0"
+ },
+ "typed_counts": {
+  "exemptions": 26,
+  "measured_names": 57,
+  "offenders": []
+ },
+ "verdict": {
+  "head": "RECORD-BACKREACTION-DETECTED-AT-TICK-3 -- CLASS=MODEL-ABLATION-BENCHMARK;NULL=PLAIN-COINED-WALK;RULES=7;SHARED-WITH-ISP=ARENA-REGISTER-COIN-SHIFT-STATE-HORIZON;ABLATED=RECORD-LAYER-CONSERVED-PRICE-STRUCTURE -- PRIMARY=THE-RECORD-FREE-NULL-REPRODUCES-7-OF-10-TESTED-RESULTS;2-NOT-REPRODUCED;1-NOT-EXPRESSIBLE;REPRODUCED=PERIMETER-LAW+CLOSED-FORM+GAP+PLAQUETTE+QUARTIC-SIGN+COIN-REGISTER-RESTRICTION+THE-FIRST-TWO-TICKS -- LATTICE=PERIMETER-REPRODUCED-BY-THE-NULL;CLOSED-FORM-REPRODUCED-BY-THE-NULL;GAP-REPRODUCED-BY-THE-NULL;PLAQUETTE-REPRODUCED-BY-THE-NULL;QUARTIC-REPRODUCED-BY-THE-NULL -- AGREEMENT=6216-OF-6216-SITE-BY-TICK-CHECKS-EQUAL-THROUGH-TICK-2 -- ABLATION-EFFECT=FIRST-AT-TICK-3-AT-294-OF-294-NON-TRIVIAL-FIBER-POINTS;NEVER-AT-78-TRIVIAL-COIN-POINTS -- VALUES-AT-AG-2-3=ISP-33596579/129140163-VS-NULL-40411/177147;TV=1024/19683 -- VALUES-AT-AG-2-2=ISP-43392899/129140163-VS-NULL-58235/177147;TV=10144/59049 -- M-EQUALS-Q=FORCED-AND-OBSERVABLE;INTERNAL-CHECK-CLOSING-THE-PARENTS-REGISTERED-TEST-NOT-AN-EXTERNAL-PREDICTION;CONSTRUCTION-DEPENDENT;OBSERVABLE-AT-5-OF-5-DECLARED-MODULI -- PRICE=ISP-CARRIES-5-STRUCTURES-THE-NULL-DOES-NOT-AND-0-ADJUSTABLE-NUMBERS;PARAMETER-FREE-IS-NOT-STRUCTURE-FREE -- FALSIFIER=COMPUTATIONAL-REGRESSION-TEST-ON-A-PROPOSED-REALIZATION;SHOTS=36948-AT-AG-2-3-AND-3389-AT-AG-2-2 -- SUCCESSOR=DISC-2-THE-SIMPLEST-MEMORY-BEARING-NULL -- SCOPE=ONE-MEMORYLESS-NULL-NOT-A-CLASS;D=2;ARENAS=AG-2-2-AND-AG-2-3;READINGS=A-AND-B;AT-FINITE-HORIZON-A-RECORD-IS-ABSORBABLE-INTO-AN-ENLARGED-STATE;NO-OPERATIONAL-UNITS;NO-LABORATORY-CLAIM;NOT-AN-EXTERNAL-PREDICTION"
+ },
+ "walls": {
+  "problem": "none",
+  "walls": [
+   {
+    "licences": [],
+    "name": "W-NO-EXHAUSTIVE-NULL-CLASS",
+    "negative": [
+     "no (?:simpler |other |ordinary |standard |existing )*(?:model|theory|walk|automaton|lattice model)s? (?:can|could|will|is able to|would be able to) (?:reproduce|produce|give|match|account for)",
+     "(?:only|uniquely) isp (?:can|could) (?:reproduce|produce|give)",
+     "(?:rules? out|ruled out|excludes?|excluded) (?:every|all) (?:simpler|alternative|competing|other) (?:model|theory|account)s?",
+     "the null class (?:is|was|are|were|has been|have been|can be|could be|remains?) exhaustive",
+     "(?:this|the) (?:result|difference|discriminant) (?:is|was|are|were|has been|have been|can be|could be|remains?) no (?:simpler|other) (?:model|explanation)",
+     "(?:refutes?|refuted|overturns?|supersedes?|replaces?) (?:ordinary |standard |textbook )?quantum (?:mechanics|theory)",
+     "(?:has been|was|were) (?:measured|observed|detected) in (?:the )?(?:lab|laboratory|experiment)",
+     "(?:an? )?(?:existing|published|real) experiment (?:confirms?|confirmed|verifies|verified|supports?) ",
+     "(?:si|physical) units? (?:are|is) (?:supplied|given|derived)"
+    ],
+    "positive": [
+     "the null is one model and not a class",
+     "no operational mapping to laboratory units exists in this corpus"
+    ]
+   },
+   {
+    "licences": [],
+    "name": "W-PARAMETER-FREE-IS-RELATIVE",
+    "negative": [
+     "(?:isp|the theory|the model) has no (?:free )?(?:parameters?|declarations?|choices?)(?![\\w\\s]{0,30}(?:the null|beyond))",
+     "(?:nothing|no datum|no quantity) (?:is|was|are|were|has been|have been|can be|could be|remains?) declared",
+     "(?:the|this) prediction (?:is|was|are|were|has been|have been|can be|could be|remains?) (?:wholly |entirely |completely )?(?:free of|without) (?:any )?declarations?",
+     "(?:derived|forced) from first principles alone"
+    ],
+    "positive": [
+     "the prediction is free of every parameter the null does not also carry"
+    ]
+   },
+   {
+    "licences": [],
+    "name": "W-ABLATION-NOT-PREDICTION",
+    "negative": [
+     "(?:the |isp's )?first parameter-free prediction",
+     "(?:this|the) (?:is|was|gives|yields) (?:isp's |the theory's )?first (?:parameter-free |real )?prediction",
+     "(?:an?|the) (?:external|empirical|experimental) prediction of (?:isp|the theory|this model)",
+     "(?:predicts?|predicted) (?:a |an |the )?(?:new )?(?:physical |empirical |laboratory )(?:effect|phenomenon|result)",
+     "(?:tests?|tested|testing) (?:isp|the theory) against (?:nature|experiment|the world)",
+     "the modulus (?:is |was )?(?:an?|the) (?:external|empirical) prediction"
+    ],
+    "positive": [
+     "this unit is a model-ablation benchmark",
+     "the null compared here is memoryless",
+     "parameter-free is not structure-free"
+    ]
+   }
+  ]
+ }
+}

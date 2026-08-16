@@ -1,0 +1,38 @@
+DISC (paper-47) -- THE DISCRIMINATOR: THE NULL GETS ITS OWN INSTRUMENT
+==========================================================================
+  [PASS] G-SOURCES-PINNED :: sources 6 drifted none
+  [PASS] G-ANCHORS-LOCATED :: anchors 12 located all
+  [PASS] G-S1-DISJOINT-CODE :: regions 5/16/8 offences none
+  [PASS] G-NULL-HAS-NO-RECORD :: record words 7 leaks none
+  [PASS] G-NULL-RULE-TOTAL :: rules 7 shared 6 dropped ['RECORD-LAYER', 'CONSERVED-PRICE-STRUCTURE'] missing none pin-dimension 2
+  [PASS] G-COIN-CENSUS-PARENT :: q3 36/6 q2 4/2
+  [PASS] G-ISP-FIDELITY-PARENT :: coupled [3, 27, 486, 10527, 284078] frozen [3, 27, 486, 9234, 212382] ipr 35971074413334039128803/239299329230617529590083 / 2306155/14348907 control-max-count 1
+  [PASS] G-NULL-TWO-ROUTES :: checks 39 violations 0
+  [PASS] G-AGREE-THROUGH-THE-EARLY-TICKS :: checks 6216 violations 0 upto 2
+  [PASS] G-FIRST-DIFFERENCE-TICK :: non-trivial 294 of 294 at the third tick, trivial 78 of 78 never
+  [PASS] G-DISCRIMINANT-VALUES :: q3 33596579/129140163 vs 40411/177147 ; q2 43392899/129140163 vs 58235/177147
+  [PASS] G-MODULUS-DESCENT-THEOREM :: rows [(2, [2]), (3, [3]), (5, [5]), (7, [7])] parent-sentence True
+  [PASS] G-MODULUS-OBSERVABLE :: distinct 5 of 5 moduli
+  [PASS] G-M2-PREDICTION-RUN :: successor sentence True value True
+  [PASS] G-PERIMETER-LAW-BOTH :: comparisons 3200 disagreements 0 null-coin-in-family True
+  [PASS] G-GAP-BOTH :: closed-form failures 0 halving 512 of 640 null-coin True ratio 1/2
+  [PASS] G-PLAQUETTE-BOTH :: values 11 (parent 11) expectation 13/10 (parent 13/10) non-flat 56
+  [PASS] G-QUARTIC-BOTH :: distribution {-2: 144, 0: 352, 2: 144} counting expectation 0 odd-twists True
+  [PASS] G-STENCIL-FORCING-PARENT :: link {'differences': 6, 'multiplicities': [1], 'unitary': 18, 'non_monomial': 0} axis {'differences': 2, 'multiplicities': [3], 'unitary': 216, 'non_monomial': 198}
+  [PASS] G-EXPRESSIBILITY-CENSUS :: rows 12 both 6 isp-only 6 unruled none
+  [PASS] G-Q155-CENSUS-TOTAL :: rows 10 reproduced 7 not 2 not-expressible 1
+  [PASS] G-FALSIFIER-SPECIFIED :: shots 36948 / 3389 branches 486 / 306
+  [PASS] G-SCOPE-DECLARED :: axes ['coin class', 'start site', 'coin direction', 'emission reading', 'arena', 'modulus'] class MODEL-ABLATION-BENCHMARK
+  [PASS] G-STRUCTURE-PRICED :: structures 5 adjustable 0 unpriced none
+  [PASS] G-VERDICT-EQUALITY :: head 1587 chars equal True
+  [PASS] G-PAPER-CLAIMS :: rows 92 prose 18 fences 1 matched
+  [PASS] G-PAPER-REFERENTS :: occurrences 3 unused exemptions none bound
+  [PASS] G-PAPER-WALLS :: walls 3 legs 25 clean
+  [PASS] G-PAPER-COVERAGE :: scanned 337 unbacked none none
+  [PASS] G-TYPED-COUNTS :: measured 58 offenders none
+  [PASS] G-NO-FLOATS :: float sites none
+  [PASS] G-ANCHORS-CONSUMED :: anchors 12 consumed
+  [PASS] G-READS-DECLARED :: reads 13 distinct 8
+  [PASS] T-FALSIFIER-COVERAGE :: gates 34 falsified 34 waived 2 sentinels none
+  [PASS] G-TEMPLATE-ADOPTED :: families 9 resolved 9 missing none
+  [PASS] G-TRANSCRIPT-BOUND :: rows 35 chain c95240e9729b

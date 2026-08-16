@@ -101,3 +101,36 @@ byte-identical off-tree, selftest write-nothing.
 Residuals disclosed (the --render diagnostic; the C1-only
 width sweep; the 9-arm domain probe).  **Orchestrator
 battery next; panel after green.**
+
+## 2026-08-16 — DISC (PAPER-47) DELIVERED, COMMITTED AS-IS: RECORD-BACKREACTION-DETECTED-AT-TICK-3, CLASSED MODEL-ABLATION-BENCHMARK; THE DEMOTION CENSUS PRIMARY (7 OF 10 REPRODUCED BY THE RECORD-FREE NULL) (v15 LEDGER #4)
+
+**Files:** v15/paper-47-disc.md b12c4c67bac8; disc_exact.py
+1d98d618c6bc; disc_output.txt dc79343de5d0;
+disc_receipt.json c745ef39fded.  CANDIDATE UNTIL
+ADJUDICATION.  All review orders folded: the head renamed
+and classed; **PRIMARY = the record-free null reproduces
+7 of 10 tested results (perimeter law, closed form, gap,
+plaquette, quartic sign, coin-register restriction, ticks
+1–2) — each a demotion candidate**; 2 not reproduced
+(the tick-3 distribution; the modulus); 1 not expressible
+(definitional absences are not discriminants).  The null
+anti-strawman by construction: PR1–PR7 pre-registered,
+carrying ISP's OWN coin at every fiber point; AST-disjoint
+regions; two independent null routes 39/39.  **The
+ablation effect: first difference at tick 3 at 294/294
+interfering fiber points, never at the 78 scalar points;
+exact values both arenas (TV = 1024/19683 at AG(2,3);
+10144/59049 at AG(2,2)); ticks 1–2 equal at 6,216/6,216.**
+The m=q row RUN (NDEP's registered test closed): m=2
+forced at AG(2,2), observable at 5 of 5 declared moduli —
+stated internal, construction-dependent, not external.
+Structure priced (5 structures / 0 adjustable numbers;
+G-STRUCTURE-PRICED); the falsifier a computational
+regression test (shots 36,948 / 3,389); DISC-2 the
+registered successor; **the new wall
+W-ABLATION-NOT-PREDICTION fired once on the worker's own
+draft and the prose was reworded — the wall works.**
+Template 9/9; battery: 36/36 recipes at declared gates
+with moved keys (one recipe self-found defective and
+repaired); byte-identical off-tree.  **Orchestrator
+battery next; panel after green.**
