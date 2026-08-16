@@ -8,7 +8,7 @@
 
 ## The dependency gates (binding)
 ontology + gauge → autonomous dynamics → stable excitations → species/statistics → interactions → predictions.
-SPC is NOT revisited until Q89–Q108 establish stable excitations and the symmetry actually acting on them. The v14 armed queue is re-based accordingly: SEC×SPC and SPC-D DEFERRED behind EXCITATION; FAC×SEC ABSORBED into §III (Q30–33); PER-R2 ABSORBED into §VI; CR-B/C/D and LOR-B HELD (recallable); the #267/TPL-2 revision is v15 infrastructure step 0.
+SPC is NOT revisited until Q89–Q108 establish stable excitations and the symmetry actually acting on them. The v14 armed queue is re-based accordingly: SEC×SPC and SPC-D DEFERRED behind EXCITATION; FAC×SEC ABSORBED into §III (Q30–33); PER-R2 ABSORBED into §VI; CR-B/C/D and LOR-B RETIRED (user ruling, v15 #1); the #267/TPL-2 revision is v15 infrastructure step 0.
 
 ## WAVE 1 — the five commissioned units
 1. **THEORY-CONTRACT (paper-43)** — Q1–10, Q24, Q58; touches Q4–5 (the actors↔records circularity: state it, then either the fixed-point theorem or the located obstruction). Deliverable: the complete object census (primitive / declared / generated / reconstructed / law-selected, one row per object, each row cited to its measuring unit), the gauge census (what survives quotienting by all relabellings), and the clean parameters statement (Q24). Mostly a synthesis-with-measurements unit: every row must be backed by a computation or an existing sealed citation, no new physics claims.
