@@ -907,3 +907,31 @@ a=2 floor; m1 closed in favour)**; the W3 wall added;
 #299 outcomes for the three outcome-less segments; all
 minors (7 K1 + 10 K2 + 9 K3).  No physics number moves.
 The repair launches next.
+
+## 2026-08-16 — SIXTH EXTERNAL REVIEW INCORPORATED (v15 LEDGER #33)
+
+Adopted: (1) the ECC normalization pre-registration
+GENERALIZED to C(a,2) — inclusion marginals sum to
+C(a,2); at a=2 the mismatch DEGENERATES AWAY (the a=2
+branch may make Born-feasibility trivially well-posed;
+measured not assumed); (2) a=2 re-classed an ALTERNATIVE
+THEORY BRANCH in DC's charter (own grammar, idle actors —
+never an input to the a=3 closure); (3) the
+classical–quantum instrument {p_G, ρ_G} named the
+CANDIDATE carrier formalism; (4) the PLAN's live-status
+lines made ledger-referential (status rots in plans); (5)
+three light addenda routed to running repairs: DISC — the
+head must say ONE pre-registered null + a swept
+memoryless class, no memory-bearing null tested (the
+singular-null nuance); CONTRACT — the branch-weight
+statement made consistent (bookkeeping/ensemble-side,
+one way, aligning with the ECC charter); ARITY — the
+lifted theorem scoped to the BUDGET-READING LADDER
+modulus only (the coin/phase modulus remains
+field-carried per paper-20/NDEP — L has not been shown to
+explain every phase modulus).  Already policy,
+reaffirmed: repairs+batteries before ECC pins.  The
+reviewer's assessment recorded as the era's honest
+midpoint: "a family of carefully characterized models
+plus an unclosed interface — not yet one physical
+ontology or unified dynamics."
