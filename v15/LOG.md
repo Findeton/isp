@@ -1122,3 +1122,61 @@ in-paper before its terminal.  The claim that survives
 unqualified: zero false COMPUTED-OUTPUT numbers, and
 zero false numbers of any kind in the sealed corpus.)
 
+## 2026-08-16 — SEVENTH EXTERNAL REVIEW EVALUATED: FIVE POINTS FOLDED INTO THE ECC/DC CHARTER; THE LEDGER'S FALSE-NUMBERS CLAIM CORRECTED; TWO POINTS ALREADY SATISFIED (v15 LEDGER #40)
+
+Received from the user mid-seal ("think about it and send
+whatever you see fit").  Disposition, point by point:
+
+1. Seal ARITY and AUTOGLUE before pinning ECC — ALREADY
+   THE STANDING RULE (PLAN: no unit becomes an ECC parent
+   until sealed terminal).  ARITY sealed at #39; AUTOGLUE
+   in repair.
+2. The persistent-vs-re-solved SEAM DECISION moved ahead
+   of the Born LP — ADOPTED as ECC step (0b).  The
+   reviewer's dependency is real: the decision fixes what
+   the complete state X contains, and the LP's variables
+   range over X.  AUTOGLUE's cross-block finding bounds
+   only the BEFORE side; persistence after the event is
+   unmeasured.
+3. The event fork (affine-line triples vs pair-events)
+   formalized, no silent compromise — ADOPTED into the
+   interface table's event-class row (sharpens the sixth
+   review's a=2-as-branch order).
+4. Test whether the coset principle FOLLOWS from chart
+   compatibility or locality — ADOPTED as the registered
+   COSET-FROM-COMPATIBILITY test (charts successor unit,
+   Q28–33 range).  If derived, a=q upgrades from
+   assumption-selected to THEOREM; if not, it is the
+   selection law and is so labelled.  ARITY's seal is not
+   reopened — its conditional verdict is exactly the
+   launching point this test needs.
+5. Three separate conditional maps (event selection, seam
+   completion, quantum evolution) — ADOPTED as ECC step
+   (0c); DC composes them explicitly.
+6. EQUIVARIANT-OR-DECLARED for any seam-selection or
+   tie-break rule — ADOPTED as an ECC/DC wall (the §15
+   declared-arena discipline applied forward).
+7. The 15 free declarations are heterogeneous categories,
+   not physical constants — CORRECT READING of the sealed
+   census (each row is typed in paper-43); the type
+   column is now REQUIRED through ECC's table so the
+   heterogeneity survives downstream.
+8. DISC's 6-of-9 read as plural comparators — ALREADY
+   SATISFIED: the #33 addendum put exactly this in the
+   sealed head (ONE identified null + the swept 10,380-
+   configuration memoryless class + NO memory-bearing
+   null tested).  The singular "the null" names the
+   census comparator only.
+9. The ledger correction — ACCEPTED AND APPLIED AT #39
+   before sealing: "zero false delivered numbers across
+   both eras" was wrong as history (SEC-2's typed column,
+   HOR's offsets, DISC's superseded price were delivered
+   false and repaired).  The engraved form is now: zero
+   false physics numbers REMAIN in any terminal paper;
+   zero false COMPUTED-OUTPUT numbers ever.
+
+No live runner is affected: AUTOGLUE's frozen #27 orders
+are untouched by every point, so nothing was routed to
+it.  All adopted points land in the ECC pin, whose
+parents now number three of four.
+
