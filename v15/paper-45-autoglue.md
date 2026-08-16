@@ -8,19 +8,19 @@ Questions Q38, Q39, Q40, with the Q34 seed and Q41, Q42, Q50.
 **Verdict**, in four segments.
 
 ```
-AUTOGLUE-A-TRANSITION-RELATION-ON-THE-SEAM-SUBSYSTEM-STATE-NOT-AN-EVOLUTION-LAW-THE-DATUM-THAT-CANNOT-PRECEDE-THE-EVENT-IS-THE-SEAM'S-CROSS-BLOCK-[THE FOUR UNDETERMINED ENTRIES OF THE DIRECT-SUM FORM AT EACH SHARED SITE, OVER THE DECLARED UPDATE WINDOW; THE SUCCESSOR STATE CENSUSED AT EVERY ONE OF 455 EVENTS OBJECT BY OBJECT AND NEVER BY ORBIT: EMPTY OR MANY-VALUED, UNIQUE AT 0; 27 OF THE 108 LAWFUL CROSSINGS NEED NO STATE MOVE; OVER ALL 29791 STATES THE ARENA ADMITS THE BEST IS READY FOR 9 CROSSINGS AND 20100 ARE READY FOR NONE] -- AND A LINK INSIDE A SECTOR IS REFUSED OUTRIGHT: AN UNSHARED SITE'S FORM HAS KERNEL ZERO AND FORCES THE FOURTH DIRECTION'S COUNT AGAINST THE ONE THE EVENT DEPOSITS AT 468 OF 468 READINGS -- SO A STATE RESTRICTS THE ALLOWED TRANSITIONS ONLY IF IT PERSISTS, WHICH IS A READING AND NOT A MEASUREMENT
+AUTOGLUE-A-TRANSITION-RELATION-ON-THE-SEAM-SUBSYSTEM-STATE-NOT-AN-EVOLUTION-LAW-THE-DATUM-THAT-CANNOT-PRECEDE-THE-EVENT-IS-THE-SEAM'S-CROSS-BLOCK-[THE FOUR UNDETERMINED ENTRIES OF THE DIRECT-SUM FORM AT EACH SHARED SITE, OVER THE DECLARED UPDATE WINDOW; THE SUCCESSOR STATE CENSUSED AT EVERY ONE OF 455 EVENTS OBJECT BY OBJECT AND NEVER BY ORBIT: EMPTY OR MANY-VALUED, UNIQUE AT 0; 27 OF THE 108 LAWFUL CROSSINGS NEED NO STATE MOVE AND 81 CAN BE ABSORBED BY NO ADVANCE STATE AT ALL; OVER ALL 29791 STATES THE ARENA ADMITS 8 ATTAIN THE BEST 9 CROSSINGS, 2 OF THEM CARRYING ONE COMPLETION AT EVERY SEAM, AND 20100 ARE READY FOR NONE] -- AND A LINK INSIDE A SECTOR IS REFUSED OUTRIGHT: A SECTOR'S OWN FORM AT A SITE HAS KERNEL ZERO OVER ITS THREE DECLARED DIRECTIONS AND FORCES THE FOURTH DIRECTION'S COUNT AGAINST THE ONE THE EVENT DEPOSITS AT EVERY ONE OF 468 READINGS -- 312 OF THEM AT CHART-PRIVATE SITES AND 156 AT THE SHARED SITES, WHERE THE TWO-CHART FORM'S KERNEL IS 4 AND THE SINGLE CHART'S IS STILL ZERO -- SO A STATE RESTRICTS THE ALLOWED TRANSITIONS ONLY IF IT PERSISTS, WHICH IS A READING AND NOT A MEASUREMENT
 ```
 
 ```
-AUTOGLUE-MOTIVATION-AND-LAWFULNESS-ARE-DISJOINT-[77 OF 455 EVENTS LEAVE THE WELD WITH ZERO FREE ITEMS, 162 ARE LAWFUL AT EVERY LEG, AND THE TWO SETS SHARE 0] -- BY A THEOREM CHECKED AT EVERY OBJECT: AN EVENT FORCES THE WELD EXACTLY WHEN IT DOUBLES NOTHING, WHICH IS EXACTLY WHEN ALL THREE OF ITS PAIRS ARE NEW; A TRIANGLE ADMITS NO PROPER TWO-COLOURING SO ONE OF THEM FALLS INSIDE A SECTOR; AND THAT IS THE ONE CELL THE FORM REFUSES -- THE EVENTS THAT PIN THE WELD DOWN ARE THE EVENTS THE GEOMETRY CANNOT HOST
+AUTOGLUE-MOTIVATION-AND-LAWFULNESS-ARE-DISJOINT-[77 OF 455 EVENTS LEAVE THE WELD WITH ZERO FREE ITEMS, 162 ARE LAWFUL AT EVERY LEG, AND THE TWO SETS SHARE 0] -- BY A CHAIN WHOSE ARITHMETIC IS THE PARENT'S, REPRODUCED HERE AND CHECKED AT EVERY OBJECT: AN EVENT FORCES THE WELD EXACTLY WHEN IT DOUBLES NOTHING, WHICH IS EXACTLY WHEN ALL THREE OF ITS PAIRS ARE NEW; A TRIANGLE ADMITS NO PROPER TWO-COLOURING SO ONE OF THEM FALLS INSIDE A SECTOR -- SEC-2'S OWN STEPS, CHECKED THERE AT THE SAME OBJECTS -- AND WHAT THIS UNIT ADDS IS THE TWO-SIDED FORM AND THE CLOSING LINK: THAT IS THE ONE CELL THE SECTOR'S FORM REFUSES -- THE EVENTS THAT PIN THE WELD DOWN ARE THE EVENTS THE GEOMETRY CANNOT HOST
 ```
 
 ```
-AUTOGLUE-NO-SEAM-PRINCIPLE-DERIVED-[8 EXTREMAL FUNCTIONALS MEASURED BEFORE THE EVENT AND AFTER IT; EVERY CROSS DIRECTION CUTS THE LATTICE 31 TO 8; MAXIMUM DETERMINANT SELECTS THE DIRECT SUM UNIQUELY, THE DIRECT SUM REALISES 0 OF THE ARENA'S CROSSINGS AND SURVIVES 0 OF THE CUTS, AND ON THE POST-EVENT LATTICE THE SAME CRITERION IS 4-VALUED] -- THE CONVENTION-FREE PRICE TAKES 1 VALUE ON THE WHOLE LATTICE AND THE ONE-SIDED PRICE'S MINIMISER IS THE CUT OF EXACTLY 1 CROSS DIRECTION, SO IT IS THE EVENT'S OWN EQUATION WEARING A CRITERION'S CLOTHES: NOTHING IN THIS CORPUS SELECTS THE SEAM, AND THE ONE CRITERION THAT DOES IS THE STATE IN WHICH NOTHING CAN CROSS
+AUTOGLUE-NO-SEAM-PRINCIPLE-DERIVED-[8 EXTREMAL FUNCTIONALS MEASURED BEFORE THE EVENT AND AFTER IT, OF WHICH 2 SELECT A SINGLE COMPLETION BEFORE IT AND 4 AT SOME CUT AFTER IT AND 0 AT EVERY CUT; EVERY CROSS DIRECTION CUTS THE LATTICE 31 TO 8; MAXIMUM DETERMINANT SELECTS THE DIRECT SUM UNIQUELY, AND THE DIRECT SUM REALISES 0 OF THE ARENA'S CROSS DIRECTIONS -- WHICH IS THE SAME STATEMENT AS SURVIVING NONE OF THE CUTS, SINCE A CUT IS THE SET OF COMPLETIONS THAT REALISE ITS DIRECTION, AN IDENTITY THAT HOLDS AT EVERY POINT OF THE LATTICE -- AND ON THE POST-EVENT LATTICE THE SAME CRITERION IS 4-VALUED] -- THE CONVENTION-FREE PRICE TAKES 1 VALUE ON THE WHOLE LATTICE AND THE ONE-SIDED PRICE'S MINIMISER IS THE CUT OF EXACTLY 1 CROSS DIRECTION, SO IT IS THE EVENT'S OWN EQUATION WEARING A CRITERION'S CLOTHES: NOTHING IN THIS CORPUS SELECTS THE SEAM, AND THE ONE CRITERION THAT DOES IS THE STATE IN WHICH NOTHING CAN CROSS
 ```
 
 ```
-AUTOGLUE-A-TARGET-FREE-EVENT-CONDITIONED-CROSS-LINK-CREATION-RULE-EXISTS-AT-THIS-ARENA-AT-108-OF-288-[THE WINDOW: FOUR LINK-CREATION RULES BY TWO READINGS BY TWO COUNT LEGS AT EVERY ONE OF 455 THREE-ACTOR EVENTS AND AT BOTH ENDS OF EVERY TRANSITION, THE RULE FIRING ON THE EVENT'S FOOTPRINT ALONE, NO TARGET DECLARED AFTER ANY EVENT; WITH THE GEOMETRY FROZEN THE WELD REFUSES ALL 288 SEAM-SPANNING EVENTS AND WITH EVERY NEW PAIR ABSORBED IT REFUSES NONE OF 455] -- ONE PRE-DECLARED EVENT-UNIFORM RULE REACHES THE PARENT'S 216 OF 288 WITH NO TARGET AT ALL, AND CARRYING THE READOUT TO THE CELLS IT CREATES CUTS THAT TO 108: THE CROSSINGS THAT MAKE ONE CROSS LINK, DOUBLE TWO SEAM LINKS AND OPEN NO PAIR INSIDE A SECTOR. THE EVENT IS SUPPLIED TO THE RULE FROM THE ARENA'S OWN TRIPLES AND THE COMMITTED GRAMMAR IS NOT RE-DRIVEN, SO WHAT IS MEASURED IS EVENT-CONDITIONED CREATION AND NOT AUTONOMOUS DYNAMICS; AND THE SURVIVING RULES FORM AN EQUIVALENCE CLASS THIS ARENA DOES NOT SELECT WITHIN -- CROSS-ONLY AND ALL-NEW ADMIT THE SAME 162 EVENTS ONCE THE FORM LEG BINDS
+AUTOGLUE-A-TARGET-FREE-EVENT-CONDITIONED-CROSS-LINK-CREATION-RULE-EXISTS-AT-THIS-ARENA-AT-108-OF-288-[THE WINDOW: FOUR LINK-CREATION RULES AT EVERY ONE OF 455 THREE-ACTOR EVENTS, FROM THE ONE LAWFUL PRE-STATE AND AT EVERY EVENT'S OWN POST-STATE, RUN AT EVERY ONE OF THE WINDOW'S 16 CELLS AND MEASURED INERT ON TWO OF ITS AXES -- THE READING AND THE COUNT LEG MOVE NO NUMBER AND ONE OF THE WELD'S FOUR FATES NEVER FIRES AT ALL, SO THE 16 CELLS CARRY 4 DISTINCT RESULTS; THE RULE FIRING ON THE EVENT'S FOOTPRINT ALONE, NO TARGET DECLARED AFTER ANY EVENT; WITH THE GEOMETRY FROZEN THE WELD REFUSES ALL 288 SEAM-SPANNING EVENTS AND WITH EVERY NEW PAIR ABSORBED IT REFUSES NONE OF 455] -- ONE PRE-DECLARED EVENT-UNIFORM RULE REACHES THE PARENT'S 216 OF 288 WITH NO TARGET AT ALL, AND CARRYING THE READOUT TO THE CELLS IT CREATES CUTS THAT TO 108: THE CROSSINGS THAT MAKE ONE CROSS LINK, DOUBLE TWO SEAM LINKS AND OPEN NO PAIR INSIDE A SECTOR. THE EVENT IS SUPPLIED TO THE RULE FROM THE ARENA'S OWN TRIPLES AND THE COMMITTED GRAMMAR IS NOT RE-DRIVEN, SO WHAT IS MEASURED IS EVENT-CONDITIONED CREATION AND NOT AUTONOMOUS DYNAMICS; AND THE SURVIVING RULES FORM AN EQUIVALENCE CLASS THIS ARENA DOES NOT SELECT WITHIN -- CROSS-ONLY AND ALL-NEW ADMIT THE SAME 162 EVENTS ONCE THE FORM LEG BINDS
 ```
 
 Between delivery and adjudication every headline reading here is a
@@ -32,11 +32,12 @@ Between delivery and adjudication every headline reading here is a
 
 SEC-2 asked whether merging can be a process and answered: at a target that
 declares the seam it crosses. Its own words for the wall are quoted in this
-unit's instrument and read out of its bytes -- of the seam-spanning
-conflict groups the arena admits, a little under half leave the dictionary
-alive **once the target declares the cross links the event realises**. The
-declaration is made after the event is seen. That is the wall this unit
-was pinned to break or to prove unbreakable, in the pin's own words:
+unit's instrument and read out of its bytes — of the 288 seam-spanning
+conflict groups the arena admits, 216 of 288 leave the dictionary alive
+**once the target declares the cross links the event realises**, which is
+three quarters of them. The declaration is made after the event is seen.
+That is the wall this unit was pinned to break or to prove unbreakable, in
+the pin's own words:
 
 > one lawful transition (geometry, record, state) → (geometry′,
 > record′, state′) in which a seam-crossing event CREATES the
@@ -44,30 +45,33 @@ was pinned to break or to prove unbreakable, in the pin's own words:
 
 The move this unit makes is small and it is the whole of the unit: the
 declaration is taken out of the modeller's hands and given to a RULE. An
-update rule sees the event's footprint -- the pairs it deposits, classified
-against the standing record -- and returns the cells the geometry gains. It
+update rule sees the event's footprint — the pairs it deposits, classified
+against the standing record — and returns the cells the geometry gains. It
 is fixed before any event is run, it is the same rule at every event, and
 nothing in it can consult whether the result will be lawful. Three gates
 hold it to that rather than three assurances: the rule is recomputed from a
-footprint carrying no name of the event that made it, it is swept against
-the arena's own relabellings, and its bodies are read out of the
-instrument's source and required to mention neither the weld, nor a fate,
-nor the successor state, nor the verdict.
+footprint whose carriers have been replaced by opaque tokens, so no name of
+the event survives into it at all; it is swept against the arena's own
+relabellings; and the four rule bodies and the dispatcher that calls them
+are read out of the instrument's source and required to mention neither the
+weld, nor a fate, nor the successor state, nor the verdict.
 
 Two things this unit is NOT measuring should be said before anything it
 is. The event is supplied to the rule from the arena's own three-actor
-triples; the committed grammar is not re-driven here, so what is measured is
-EVENT-CONDITIONED CREATION -- given an event, the geometry follows -- and
-not autonomous dynamics, which would require the process to select the event
-too. And the rule that survives is not selected by the arena: the two rules
-that create anything admit the same events once every leg binds, so what is
-measured is an EQUIVALENCE CLASS of update rules and not a member of it.
+triples; the committed grammar is not re-driven here, so
+what is measured is EVENT-CONDITIONED CREATION — given an event, the
+geometry follows — and not autonomous dynamics, which would require the
+process to select the event too. And the rule that survives is not selected
+by the arena: the two rules that create anything admit the same events once
+every leg binds, so what is measured is an EQUIVALENCE CLASS of update
+rules and not a member of it.
 
 Then the question splits, and the split is the result. At the INCIDENCE leg
--- which cells the geometry carries -- the crossing does declare its own
-cross link, lawfully, at both ends of the transition, and the parent's
-number is reached with no target at all. At the FORM leg -- the readout that makes a
-count the squared length of its link direction -- it does not: the
+— which cells the geometry carries — the crossing does declare its own
+cross link, lawfully, from the one lawful pre-state and at the
+post-state the event leaves, and the parent's
+number is reached with no target at all. At the FORM leg — the readout that makes a
+count the squared length of its link direction — it does not: the
 successor state exists and is never unique, no state declared in advance is
 ready for more than a fraction of what can happen, and the one kind of cell
 the update would have to create inside a sector is refused by the sector's
@@ -88,8 +92,11 @@ own form at every reading taken.
 
 Six sources are read at run time and authenticated; the read set is
 recorded at the process's own I/O accessor, so every `open` this run
-performs is seen whoever calls it, and it is compared against the declared
-set after the last measurement as well as before the first.
+performs is seen whoever calls it, and every path is classified rather than
+filtered — a read outside the repository lands in a bucket that must be
+empty. It is compared against the declared set after the last measurement
+gate, and again after the artifacts have been written and read back, as
+well as before the first.
 
 | id | path | sha256-12 |
 |---|---|---|
@@ -101,9 +108,9 @@ set after the last measurement as well as before the first.
 | A-TPL | v14/code/era_template.py | d04a3eb58fbc |
 
 Nothing else is read. The parent's committed numbers that this unit
-inherits -- its carriers, its pairs, its automorphism order, its event
+inherits — its carriers, its pairs, its automorphism order, its event
 count, its orbit count, its seam-spanning count, its 216, its lattice of
-31, its cut of 8, and the two crossing inventories it priced by hand -- are
+31, its cut of 8, and the two crossing inventories it priced by hand — are
 carried as DECLARED rows and bound by REPRODUCTION: this unit recomputes
 each from its own construction and the run dies on any mismatch.
 
@@ -118,28 +125,39 @@ before anything is measured.
 | READING | EMBEDDING, QUOTIENT | EMBEDDING and QUOTIENT |
 | COUNT LEG | POSITIVE, NON-NEGATIVE | POSITIVE |
 | FORM CARRY | DROPPED, CARRIED | CARRIED at the seam |
-| STATE | FROZEN, RE-SOLVED | not posed |
+| STATE | PERSISTING, RE-SOLVED | both run; VERDICT-BEARING |
 
-The first three axes give the sixteen cells every event is run at. Outside
+The first three axes give the 16 cells every event is run at, and section 3
+reports what those cells turn out to contain. Outside
 the window, and named as outside it: the record, the committed grammar, the
 actor set, the arrangement, the readout law itself, the three-actor
-conflict group, the bare carrier, the simple link individuation, and -- the
-wall that defines the unit -- any target declared after the event.
+conflict group, the bare carrier, the simple link individuation, and — the
+wall that defines the unit — any target declared after the event.
 
-### 2.3 Both outcome words were reachable
+### 2.3 Every head segment carries a pre-registered pair
 
-| pre-registered outcome | reached | why it was reachable | the run's witness |
-|---|---|---|---|
-| TARGET-FREE-EVENT-CONDITIONED-CREATION-EXISTS | True | the create-everything rule makes the geometry's incidence the record's own support, so the weld cannot refuse | 455 |
-| BLOCKED-AT-THE-DECLARED-DATUM | True | with the geometry frozen the parent's wall stands and every seam-spanning event is refused | 288 |
+Not one pair for the paper: one for each segment of the head, each with the
+word that would have been reached instead, the predicate that decides
+between them, and the witness this run produces for each arm. The words are
+not free text either — each is built on a stem of the pin's own bytes, and
+the stem is required of both arms and located in the pinned source, so a
+word naming a result the pin never posed fails the gate however the paper
+is regenerated.
 
-The two witnesses are the two arms of one runner and neither is an
-argument: with the geometry frozen the weld refuses every one of the 288
-seam-spanning events, and with every new pair absorbed the geometry's
-incidence IS the record's own support, so the weld cannot refuse any of the
-455. A verdict either way was available before anything was measured.
+| head segment | the word reached | the word not reached | the predicate that decides between them | why the other arm was reachable | this run's witness | the other arm's witness |
+|---|---|---|---|---|---|---|
+| the window and the creation rule | TARGET-FREE-EVENT-CONDITIONED-CREATION-EXISTS | NO-TARGET-FREE-CREATION-RULE-EXISTS | an event at which the rule CREATES a cross cell is lawful at every leg of the delivered standard | the frozen arm of this run is that word's own witness: under the rule that creates nothing the same predicate returns none of the seam-spanning events | 108 | 0 |
+| the transition relation and the datum | BLOCKED-AT-THE-DECLARED-DATUM | THE-DATUM-IS-SUPPLIED-BY-AN-EVOLUTION-LAW | some lawful crossing leaves a UNIQUE successor state at every seam, so the event supplies the datum itself | the successor sets are counted at every seam slot and the smallest that occurs is one step from the size that would have reached the other word | 0 | 4 |
+| motivation and lawfulness | MOTIVATION-AND-LAWFULNESS-ARE-DISJOINT | MOTIVATION-AND-LAWFULNESS-OVERLAP | an event is both motivated and lawful at every leg | both sets are non-empty at this arena and were censused over the same family, so an event in both was arithmetically available at every one of them | 0 | 77 |
+| the derivation attempt | NO-SEAM-PRINCIPLE-DERIVED | A-SEAM-PRINCIPLE-IS-DERIVED | some declared functional selects a single completion before the event AND at every cut after it | two of the family do select a single completion before the event, so the word turned on whether one of them survived the cuts rather than on whether any was selective | 0 | 2 |
 
-## 3. Measurement one -- the update window at the incidence leg
+The first row's predicate is the one that matters most and it was the one
+most easily got wrong: a predicate satisfied by *any* lawful event would
+have been satisfied, at this arena, by the 54 events at which the rule
+creates nothing at all, and equally by the rule that creates nothing ever.
+The predicate here contains a creation.
+
+## 3. Measurement one — the update window at the incidence leg
 
 | creation rule | events alive | seam-spanning alive | events refused |
 |---|---|---|---|
@@ -153,9 +171,10 @@ parent's number, and this unit's instrument does not type it: it parses it
 out of the parent's own sentence and compares. What has changed is how it
 is reached. There is no target here. One rule, declared before the census,
 fired on the footprint of each event in turn, gives the geometry exactly
-the cross cells the event's own crossing pairs need -- and the weld holds,
-at the delivered reading and the delivered count leg, at both ends of the
-transition, at 216 of the 288 events that put a pair across the seam.
+the cross cells the event's own crossing pairs need — and the weld holds,
+at the delivered reading and the delivered count leg, from the one lawful
+pre-state and at each event's own post-state, at 216 of the 288 events that
+put a pair across the seam.
 
 The other three rows are what make that number mean something.
 
@@ -171,37 +190,111 @@ weld map forever and no record can ever fail. The refusals fall from 401 to
 0. A dictionary that cannot refuse is not a claim about the record, and
 this row is in the table to price that, not to propose it.
 
-**CROSS-ONLY and ALL-NEW are not distinguished by this arena.** Once the
-form leg of section 4 binds, both admit the same 162 events. So the head's
-number belongs to an equivalence class of rules and not to CROSS-ONLY, the
-transition stated in the seed section is a representative of that class, and
-nothing here selects within it.
-
 **WITHIN-ONLY is the control on the other side**: absorbing only the pairs
-inside a sector leaves every crossing dead, 288 of 288, which is what a
+inside a sector leaves every crossing dead, all 288, which is what a
 rule that never makes a cross cell must do.
 
-The rule's three gates are worth their own sentence, because the whole
-weight of the unit rests on the rules being laws and not fittings. Blindness
-is measured at all 455 events: recomputed from a footprint stripped of every
-name of the event that made it, the four rules return what they returned.
-Equivariance is measured at 65 events against 64 of the 31104 relabellings
-that keep each chart's actors in their own chart -- and the relabellings
-that do not keep the charts are the sector exchange and nothing else, under
-which the rules commute as well, at 0 exceptions. And the four rule bodies
-are read out of the instrument's own source: none of them mentions the
-weld, a fate, the successor state or the verdict.
+### 3.1 The census is forced, and two of the window's axes are inert
 
-## 4. Measurement two -- the form leg, and the seam-subsystem state
+Both of those are measured here rather than asserted, and together they say
+what the 16 cells actually contain.
+
+At every one of the 1820 transitions of the window — 455 events by four
+creation rules — the geometry's incidence sits INSIDE the record's support.
+That is not an accident of this arena: the base cells are record pairs, and
+every cell a rule creates is a pair the event has just deposited. Two
+graphs on the same carriers with one contained in the other are isomorphic
+exactly when they are equal. So **the weld is alive exactly when the rule
+creates every new pair the event opens**, and the four rows above are not a
+census but a proposition; the equivalence is checked against the
+isomorphism search itself at a declared sample.
+
+Two consequences follow and both are measured. The quotient reading can
+succeed only where the embedding does. And the field the geometry induces
+carries the record's own counts, whose minimum over the whole window is 1,
+so the COUNT-DEAD fate cannot fire — only 2 of the weld's four fates ever
+occur anywhere. The reading axis and the count-leg axis therefore move no
+number: the window's 16 cells carry 4 distinct results and 12 of them are
+copies. That is the largest invariance this unit found, and it is what two
+of the window's still-free fibres being measured not to move the verdict
+looks like.
+
+### 3.2 What the equivalence of the two creating rules rests on
+
+Once the form leg of section 4 binds, CROSS-ONLY and ALL-NEW admit the same
+162 events — the same SET and not merely the same count, and each arm has
+its own form leg evaluated at its own post-geometry. But the head's 108
+belongs to that equivalence class; its 216 does not. At the incidence leg
+ALL-NEW reaches 288 and CROSS-ONLY 216, and the two rules coincide only
+after the form binds.
+
+What carries the collapse is one leg, and dropping it separates them at
+once: without the fourth-direction refusal the two arms stand at 162 and
+275. So the equivalence is not indistinguishability. The
+create-everything rule's extra output is entirely illegal, and the leg that
+refuses it is the whole of the collapse.
+
+### 3.3 The rule's three gates
+
+The whole weight of the unit rests on the rules being laws and not
+fittings, so the three gates are worth their own paragraph.
+
+**Blindness** is measured at all 455 events and at 1820 rule evaluations:
+each rule is recomputed from a footprint whose carriers have been replaced
+by opaque tokens, and the result mapped back through the same substitution
+must be what the rule returned on the named footprint. No name of the event
+survives into the rule. A rule reading a key the classification does not
+carry, and a rule keyed on a named carrier, both fail here.
+
+**Equivariance** is measured at 489728 checks and neither axis is sampled
+alone: every one of the 455 events against 64 of the 31104 relabellings
+that keep each chart's actors in their own chart, and 3 declared events
+against the whole of that subgroup, all 31104 of it. The
+chart-preserving maps are a subgroup of index two — the closed form in
+section 3.4 proves the index rather than counting it, and the gate requires
+the two classes to have equal size, so a miscounted partition fails — so
+the chart-mixing relabellings are its single non-trivial coset, all 31104
+of them, sampled at 64; under those the rules commute as well, at 0
+exceptions.
+
+What this leg does not exclude is worth stating with it. A rule keyed on
+the repr-ordering of an event's own carriers is blind to names — the opaque
+tokens preserve that order — and it is equivariant at this arena: the
+ordering is invariant under every one of the 31104 chart-preserving maps,
+which is measured and not assumed. Such a rule is separated from the
+delivered one by the incidence census and not by these two gates, because
+it is a different rule and returns a different census.
+
+**The source audit** reads the five bodies that produce a rule's output —
+the four rules and the dispatcher that calls them — out of the instrument's
+own source: none of them mentions the weld, a fate, the successor state or
+the verdict.
+
+### 3.4 The union's relabelling group, in closed form
+
+The automorphism order is not only enumerated here but constructed, and the
+two routes agree at 62208 — a reproduction, reported as one, and no
+derivation is claimed from the agreement. One chart's declared-pair graph is the
+complement of its fourth parallel class — three disjoint triangles of 3
+points each — hence complete tripartite. The aligned union glues two of
+them along one whole part. The shared part is setwise fixed because its 3
+carriers are the only ones of degree 12; each chart contributes 72 from
+permuting its two free parts and exchanging them; and the two charts may
+trade places. The product is 62208, equal to the exhaustive count, and it
+makes the index of the chart-preserving subgroup a theorem rather than a
+measurement.
+
+## 4. Measurement two — the form leg, and the seam-subsystem state
 
 A geometry in this corpus is not an incidence structure. Its cells carry
 counts, and the readout the weld paper fixes makes a count the squared
 length of its link direction; at a shared site the two charts' directions
 span a four-dimensional chart whose form has rank 6 on 10 unknowns, so four
-numbers are left undetermined -- the parent's own measurement, quoted into
+numbers are left undetermined — the parent's own measurement, quoted into
 this unit's gate and compared against this unit's own rank computation. The
-state of the pin's transition -- the SEAM-SUBSYSTEM STATE, and not the whole state of the process -- is exactly those four numbers, at each of the
-3 shared sites.
+state of the pin's transition — the SEAM-SUBSYSTEM STATE, a structural
+state and not the state of the process — is exactly those four numbers, at
+each of the 3 shared sites.
 
 ### 4.1 The successor state, censused at every object
 
@@ -242,20 +335,28 @@ form-lawful. A profile is the event's footprint: how many of its three
 pairs cross the seam, how many fall inside a sector, how many double a link
 the union already carries.
 
-**The 108 crossings that survive are exactly the profile [1, 0, 2]** -- one
+**The 108 lawful crossings are exactly the profile [1, 0, 2]** — one
 cross pair, no pair inside a sector, two doublings. For every one of them a
 successor state exists at all three seams, 4 or 8 completions at each; and
-at 27 of the 108 the state need not move at all, which is the case where
-no doubling lands on a seam's own forward cell.
+at 27 of the 108 the state need not move at all. That last is a
+biconditional and is measured as one: the state may stay exactly when no
+doubling of the event lands on a seam's own forward cell.
 
-**The 108 with two crossings die at the form, not at the incidence.** Their
-profile is [2, 0, 1], they are ALIVE in the census of section 3, and here
-exactly one of their three seams has no successor at all -- the sizes are
-[0, 4, 4] up to which seam fails. Two crossings from one actor fix two
-entries of a seam's cross block, and at one of the three seams the entry
-that is their sum then leaves the range the readout admits; which seam that
-is depends on where the actors sit, which is why the census is taken at the
-object.
+**The 108 two-crossing events die at the form, not at the incidence, and**
+**they die of a sign contradiction on a single entry.** Their profile is
+[2, 0, 1], they are ALIVE in the census of section 3, and here exactly one
+of their three seams has no successor at all — the sizes are [0, 4, 4] up
+to which seam fails. The reason is measured at every one of them rather
+than argued. The doubled pair joins two actors of one sector, so they lie
+on a declared line; a declared line meets each fourth-class line once, so
+its third point is the one shared site collinear with them — and that is
+the seam that fails, at every one of the 108. Seen from that
+seam the two actors sit at the same direction index and opposite signs, so
+the two crossings do not fix two entries of the cross block: they fix THE
+SAME ENTRY AT OPPOSITE SIGNS. Their two equations add to the statement that
+the seam's two counts sum to one, which positive counts cannot do. At the
+other two seams the two crossings do fix two distinct entries and 4
+completions survive.
 
 **The 72 with two crossings and a pair inside a sector die at all three**
 **seams.** The [2, 1, 0] row is the only one whose successor set is empty
@@ -265,7 +366,7 @@ everywhere.
 
 The successor set is computed from the post-record alone. It is therefore
 not a map from a state to a state, and the census says so in the only way
-that settles it -- by counting, at every seam slot of every lawful crossing,
+that settles it — by counting, at every seam slot of every lawful crossing,
 how many completions the record admits.
 
 | successors at one seam | seam slots |
@@ -273,7 +374,7 @@ how many completions the record admits.
 | 4 | 81 |
 | 8 | 243 |
 
-324 seam slots -- three at each of the 108 lawful crossings -- and the
+324 seam slots — three at each of the 108 lawful crossings — and the
 successor set is 4-valued at 81 of them and 8-valued at 243. It is never
 1-valued. Those are per-seam numbers and the state carries three seams, so
 the whole seam-subsystem state's successor set is their product:
@@ -290,10 +391,11 @@ calling it either.
 
 That has a consequence for what a state can be said to do, and the two
 readings differ by a measurement rather than by taste. Read as RE-SOLVED at
-every event, the successor set is a function of the post-record, so every
-state admits every one of the 162 lawful events and the state carries no
-memory at all: it restricts nothing. Read as PERSISTING -- the state stays
-where it is unless the record forces it to move -- a state admits exactly
+every event, the successor set is a function of the post-record — by the
+definition of the successor census, which takes only the post-record — so
+every state admits every one of the 162 lawful events and the state carries
+no memory at all: it restricts nothing. Read as PERSISTING — the state stays
+where it is unless the record forces it to move — a state admits exactly
 the events its own predictions already fit, and then 9691 of the 29791
 states admit a crossing at all while 20100 admit none. **A state restricts**
 **the allowed transitions if and only if it persists**, and persistence is a
@@ -302,12 +404,15 @@ reading this unit declares and measures, not a fact it found.
 ### 4.3 The fourth parallel class
 
 A pair inside a sector that the record has not yet realised is a pair of
-the affine plane's FOURTH parallel class -- the one the arrangement does
-not declare. An unshared site's form is fixed by its own three declared
-counts with kernel zero, so the count it forces on that fourth direction is
-not free: it is twice the first count plus twice the second minus the
-third. The update deposits 1 there. The two are read against each other at
-both ends of every such cell the rule creates.
+the affine plane's FOURTH parallel class — the one the arrangement does
+not declare. A SECTOR'S OWN FORM AT A SITE is fixed by that chart's three
+declared counts with nothing left over: the restriction to one chart has
+kernel zero at every site of that chart, shared or private, which is a
+different object from the two-chart form at a seam, whose kernel is 4. So
+the count the sector's form forces on that fourth direction is not free: it
+is twice the first count plus twice the second minus the third. The update
+deposits 1 there. The two are read against each other at both ends of every
+such cell the rule creates.
 
 | the site's declared counts | the count the form forces | the count the event deposits | readings |
 |---|---|---|---|
@@ -316,10 +421,23 @@ both ends of every such cell the rule creates.
 | [1, 2, 1] | 5 | 1 | 36 |
 | [2, 1, 1] | 5 | 1 | 36 |
 
-468 readings, and the two agree at 0 of them. The form is a count law and
-it has already spoken about that cell; the event contradicts it. This is
-not a prohibition on the fourth class in general -- a site whose three
-declared counts were [1, 1, 3] would force exactly 1 there -- it is a
+468 readings, and the two agree at 0 of them. Where those readings are
+taken matters, because the head says which form is doing the refusing:
+
+| the base site of the reading | readings |
+|---|---|
+| a chart-private site | 312 |
+| a shared (seam) site | 156 |
+
+156 of the 468 are taken at the shared sites — the glue-line pairs, each
+read in both charts at both endpoints — and the leg holds there too. It is
+the single chart's restriction that has kernel zero, not the two-chart form
+this unit builds its whole state around.
+
+The form is a count law and it has already spoken about that cell; the
+event contradicts it. This is
+not a prohibition on the fourth class in general — a site whose three
+declared counts were [1, 1, 3] would force exactly 1 there — it is a
 statement about the record this corpus committed, where every site is
 all-simple and the forced value is 3.
 
@@ -343,18 +461,40 @@ crossings, and the census is exhaustive over the state space.
 | 6 | 52 |
 | 9 | 8 |
 
-**The best state is ready for 9 of the 108, and 20100 of the 29791 are**
-**ready for none.** The best state the census exhibits carries the same
-completion at all three seams. No declaration of the seam covers the events, and the
+**The best states are ready for 9 crossings, and 20100 of the 29791 are**
+**ready for none.** The best states are 8, not one, and they are reported
+here as a family rather than at whichever representative the iteration
+order reaches first:
+
+| the best state | the same completion at all three seams |
+|---|---|
+| [[1, -1, 0, 1], [1, -1, 0, 1], [1, -1, 0, 1]] | True |
+| [[1, -1, 0, 1], [1, -1, 0, 1], [1, 0, -1, 1]] | False |
+| [[1, -1, 0, 1], [1, 0, -1, 1], [1, -1, 0, 1]] | False |
+| [[1, -1, 0, 1], [1, 0, -1, 1], [1, 0, -1, 1]] | False |
+| [[1, 0, -1, 1], [1, -1, 0, 1], [1, -1, 0, 1]] | False |
+| [[1, 0, -1, 1], [1, -1, 0, 1], [1, 0, -1, 1]] | False |
+| [[1, 0, -1, 1], [1, 0, -1, 1], [1, -1, 0, 1]] | False |
+| [[1, 0, -1, 1], [1, 0, -1, 1], [1, 0, -1, 1]] | True |
+
+2 of the 8 carry the same completion at all three seams; the other six mix
+the two completions the census exhibits.
+
+And the shortfall is sharper than that ratio suggests. Of the 108 lawful
+crossings, only 27 of the 108 can be absorbed by any advance state at all:
+the doubling the other 81 of the 108 carry moves the seam's own counts out
+of the pre-event lattice, so no declaration whatever is ready for them. The
+best states take 9 of those 27. No declaration of the seam covers the
+events, and the
 shortfall is not a matter of choosing better: the crossings the arena
 admits impose mutually contradictory equations on one cross block, so a
 state ready for one is forbidden from being ready for another.
 
-### 4.5 The second step
+### 4.5 The second step, and its fiber
 
 The update iterates, and it remembers. Taking one lawful crossing, moving
-the state to the successor a declared rule names -- the completion of least
-cross coupling in the successor set -- and asking the same question again:
+the state to the successor a declared rule names — the completion of least
+cross coupling in the successor set — and asking the same question again:
 
 | crossing | form-lawful | state kept | events |
 |---|---|---|---|
@@ -365,11 +505,42 @@ cross coupling in the successor set -- and asking the same question again:
 | True | True | True | 2 |
 
 Of the events that may cross at the second step, 25 are still form-lawful
-where 108 could cross at the first, and 2 leave the state where it is. The
-first crossing constrains the second. That is the beginning of a dynamics
-with memory, and it is registered here rather than pursued.
+and 2 leave the state where it is. The first crossing constrains the
+second.
 
-## 5. Measurement three -- the price, and where motivation lives
+That row is one first crossing's, and which crossing goes first is a
+declared tie-break — the first in this unit's own canonical key order — so
+the census is run from every one of the 108 lawful first crossings and the
+fiber published:
+
+| still form-lawful at the second step | of those, the state kept | first crossings |
+|---|---|---|
+| 25 | 1 | 3 |
+| 25 | 2 | 6 |
+| 26 | 0 | 24 |
+| 26 | 1 | 12 |
+| 27 | 0 | 24 |
+| 28 | 0 | 12 |
+| 41 | 1 | 6 |
+| 41 | 2 | 3 |
+| 43 | 0 | 12 |
+| 43 | 1 | 6 |
+
+The second-step count runs from 25 to 43 depending on which crossing goes
+first. The delivered row sits at the fiber's MINIMUM, reached at 6 of the
+108 first crossings, so the sentence the head can carry is that the allowed
+set falls from 108 to between 25 and 43 and not that it falls to 25. The
+108 lawful crossings are a single orbit of the union's relabelling group,
+so the spread is the chart breaking a symmetry the relation does not —
+which is precisely the effect section 4.1 invokes to justify censusing at
+the object, applied here as well.
+
+The two steps are also compared at ONE standard. The first step's predicate
+is the incidence weld and a successor at every seam and the
+fourth-direction refusal; applying that whole predicate at the second step
+returns 25 as well, so the comparison is like for like.
+
+## 5. Measurement three — the price, and where motivation lives
 
 | currency | the frozen geometry | the update | verdict |
 |---|---|---|---|
@@ -378,65 +549,102 @@ with memory, and it is registered here rather than pursued.
 | the state: completions the seam may carry | 31 | 8 | NARROWED |
 | the structure: fourth-class cells creatable | 0 | 15 | REFUSED BY THE FORM |
 | the declaration: objects the route declares | 288 | 1 | BOUGHT |
+| the rule fiber: lawful-event sets the rules produce | 4 | 1 | INERT |
 
-Five currencies, each read against the frozen geometry the parent left.
+Six currencies, each read against the frozen geometry the parent left.
 The update spends refutability but does not spend it all: 293 of the 455
 events are still refused where the frozen geometry refuses 401. It spends
-the weld's forcing entirely -- 3 free items at a lawful crossing against 0
+the weld's forcing entirely — 3 free items at a lawful crossing against 0
 at the event-free union. It narrows rather than fixes the state, 31
 completions to at most 8. The fourth-class cells it would create, 15 of
 them, the form refuses outright. And it buys the one thing the parent could
 not: where that route declares one target per seam-spanning event, 288 of
-them, this one declares a single law.
+them, this one declares a single object over the whole family — the name of
+the rule it fires, evaluated at every event and the same one every time.
+
+The last two rows are different quantities and are kept apart. What the
+route declares is not the fiber of the rule it declares: the window offers
+4 creation rules and, once every leg binds, the two that create anything
+produce 1 lawful-event set between them.
 
 ### 5.1 Q50: motivation and lawfulness are disjoint
 
-The weld's forcing is the RSQ inventory -- the number of distinct count
+The weld's forcing is the RSQ inventory — the number of distinct count
 fields the admissible maps produce, and the fibers of the two per-chart
-relabellings. It is measured at every one of the 455 post-states.
+relabellings. It is measured at every one of the 455 post-states, and at a
+declared sweep of 32 base maps rather than at one.
 
 | profile (cross, within, doubled) | I-SITE-ASSIGNMENT | I-DIRECTION-LABEL | I-ORIENT | free items | maps | events |
 |---|---|---|---|---|---|---|
-| [0, 0, 3] | 54 | 3 | 1 | 2 | 62208 | 18 |
-| [0, 0, 3] | 54 | 3 | 2 | 3 | 62208 | 36 |
-| [0, 1, 2] | 12 | 3 | 2 | 3 | 20736 | 6 |
-| [0, 1, 2] | 12 | 6 | 2 | 3 | 20736 | 30 |
-| [0, 1, 2] | 3 | 3 | 2 | 3 | 5184 | 12 |
-| [0, 1, 2] | 3 | 6 | 2 | 3 | 5184 | 60 |
-| [0, 3, 0] | 1 | 1 | 1 | 0 | 15552 | 4 |
-| [0, 3, 0] | 1 | 1 | 1 | 0 | 62208 | 1 |
-| [1, 0, 2] | 3 | 9 | 4 | 3 | 1728 | 108 |
-| [2, 0, 1] | 1 | 3 | 2 | 2 | 576 | 108 |
-| [2, 1, 0] | 1 | 1 | 1 | 0 | 864 | 72 |
+| [0, 0, 3] | 54 | [3] | [1, 2] | [2, 3] | 62208 | 54 |
+| [0, 1, 2] | 12 | [3, 6] | [2] | [3] | 20736 | 16 |
+| [0, 1, 2] | 12 | [3] | [2] | [3] | 20736 | 3 |
+| [0, 1, 2] | 12 | [6] | [2] | [3] | 20736 | 17 |
+| [0, 1, 2] | 3 | [3, 6] | [2] | [3] | 5184 | 36 |
+| [0, 1, 2] | 3 | [6] | [2] | [3] | 5184 | 36 |
+| [0, 3, 0] | 1 | [1] | [1] | [0] | 15552 | 4 |
+| [0, 3, 0] | 1 | [1] | [1] | [0] | 62208 | 1 |
+| [1, 0, 2] | 3 | [9] | [4] | [3] | 1728 | 108 |
+| [2, 0, 1] | 1 | [3] | [2] | [2] | 576 | 108 |
+| [2, 1, 0] | 1 | [1] | [1] | [0] | 864 | 72 |
 
-The parent's two hand-priced crossings reappear here at the fibers it
+The label and orient columns are SETS, and that is the point of the sweep.
+SEC-2 read those two fibers at a base map and re-read them at a declared
+sweep of 32, constant at every one; this unit did not inherit that control,
+and restoring it shows the control fails here. At 106 of the 455
+post-states the label or the orient fiber MOVES with the base map, so those
+rows are base-map-relative readings and are published as the sets the sweep
+returns rather than as invariants. The rows that carry the verdict — the
+ones with no free item, and the two the parent priced by hand — are
+constant across the whole sweep.
+
+The parent's two hand-priced crossings reappear at the fibers it
 published, 3 by 9 by 4 at 1728 maps and 1 by 3 by 2 at 576, from a route
 that enumerates the orbit of the record's own non-unit configuration rather
 than the maps themselves. And the event-free union carries 0 free items.
 
-Now place the two sets. 77 of the 455 events leave the weld with no free
-item at all -- they are the [0, 3, 0] rows and the [2, 1, 0] row. 162
-events are lawful at every leg. **The two sets share nothing**, and not as
-a tally: the parent said of its own 216 that
+Now place the two sets. 77 of the 455 events leave the weld with no free item at all; 162 events are lawful at every leg; the two sets share 0.
+The 77 are the [0, 3, 0] rows and the [2, 1, 0] row. And this is not a
+tally: the parent said of its own 216 that
 
 > And not one of the 216 is MOTIVATED -- not as a tally that came out that
 > way, but because it cannot come out otherwise.
 
-and the mechanism generalises to a two-sided statement, checked at every
-object. An event leaves the weld forced exactly when it doubles nothing:
-with no doubled pair the induced count field is constant, and a constant
-field is moved by no relabelling. Doubling nothing means all three of the
-event's pairs are new. Three actors give three pairs and at most two of
-them can cross the seam, because a triangle admits no proper
-two-colouring -- so such an event always opens a pair inside a sector. And
-that is the one cell the sector's own form refuses. **The events that pin**
-**the weld down are the events the geometry cannot host.**
+**The arithmetic under the mechanism is the parent's, and is reproduced**
+**here rather than discovered.** SEC-2's sentence, read out of its own
+bytes by this unit's instrument, is:
+
+> Three actors give three pairs, at most two of which can join the sectors,
+> since a triangle admits no proper two-colouring; so a group that opens no
+> pair inside a sector must double at least one link the union already
+> carries; and the free items are exactly what a doubling buys. The
+> hypothesis is checked at every one of the 455 groups and the conclusion
+> at every one of the 216 lawful ones, object by object.
+
+The triangle step and the doubling-buys-the-free-items step are therefore
+SEC-2's, checked there at the same objects. This unit reproduces them and
+adds two things the parent does not have. The first is the two-sided form:
+the parent says no lawful event is motivated, this one measures both sets
+and their empty intersection. The second is the closing link — that the
+pair a doubling-free event must open inside a sector is the one cell the
+sector's own form refuses, at every one of the 468 readings. **The events**
+**that pin the weld down are the events the geometry cannot host** is this
+unit's sentence; the arithmetic under it is the parent's.
+
+One half of the biconditional is argued and the other is enumerated, and
+the paper says which. Argued: with no doubled pair the induced count field
+is constant, and a constant field is moved by no relabelling, so doubling
+nothing implies the weld is forced. Enumerated: the converse — the weld
+forced implies doubling nothing — is the half the disjointness chain
+consumes, and it is established by census at every one of the 455 objects
+rather than by proof. That the enumerated half is arena-bound is exactly
+what the a = 2 register in section 14 turns on.
 
 Motivation, then, is not the dynamics wearing another name, and it is not
 mere bookkeeping either: it is a measure of the record's uniformity, which
 the first event destroys and which no lawful event can restore.
 
-## 6. Measurement four -- the derivation attempt, and the obstruction
+## 6. Measurement four — the derivation attempt, and the obstruction
 
 Q41 asked what theory-internal principle selects the seam's four
 undetermined parameters, and Q42 asked whether maximum determinant, or any
@@ -460,27 +668,36 @@ The parent's sentence is quoted into the gate that measures this:
 > maximising the determinant of the form returns the direct sum and nothing
 > else.
 
-It does, uniquely, on the 31. And the dynamics refutes it twice over.
-**The completion maximum determinant returns is precisely the state under**
-**which no crossing can be realised at all** -- it predicts the count 1 for
-0 of the arena's cross directions -- and it survives 0 of the 18 cuts a
-crossing imposes. On the post-event lattice the same criterion is 4-valued.
-A principle that selects the one state in which the process cannot move is
-not a candidate for the law of a process.
+It does, uniquely, on the 31. And the dynamics refutes it at the one place
+that matters. **The completion maximum determinant returns is precisely the**
+**state under which no crossing can be realised at all** — it predicts the
+count 1 for 0 of the 18 cross directions. That it also survives 0 of the 18
+cuts is the same fact and not a second one: a cut IS the set of completions
+that realise its direction, so "realises this direction" and "lies in this
+direction's cut" are one predicate, and the identity is checked at every
+point of the lattice rather than assumed. On the post-event lattice the
+same criterion is 4-valued. A principle that selects the one state in which
+the process cannot move is not a candidate for the law of a process. The
+same mirror could be held to the direct sum itself: it realises no crossing
+because a crossing needs a non-zero cross entry, which is the direct sum's
+definition.
 
 The corpus's own criteria still select nothing that the event does not
 already supply. Positivity is carried by all 31 completions. The
 convention-free price takes 1 value on the whole lattice. And the one-sided
-price -- the other criterion the parent found selective -- turns out not to
+price — the other criterion the parent found selective — turns out not to
 be an independent principle at all: its minimiser is exactly the cut of 1
-of the arena's 18 cross directions, which is to say it IS the constraint
+of the 18 cross directions, which is to say it IS the constraint
 one crossing imposes, wearing a criterion's clothes. Reverse the convention
-and it becomes another direction's cut.
+and it becomes another direction's cut, which the instrument binds rather
+than asserts.
 
-So: **nothing is derived.** Three of the eight functionals do select
-uniquely somewhere, and each of them is an addition to the corpus rather
-than a consequence of it. The status the parent gave maximum determinant --
-named and not licensed -- is the status all eight keep here, and maximum
+So: **nothing is derived.** 2 of the 8 functionals select a single
+completion before the event and 4 of the 8 select one at some cut after it,
+while 0 of the 8 select one at every cut; and each such selection is an
+addition to the corpus rather than a consequence of it. The status the
+parent gave maximum determinant —
+named and not licensed — is the status all eight keep here, and maximum
 determinant has lost even the claim to be the natural candidate.
 
 ### 6.1 The obstruction theorem
@@ -498,24 +715,25 @@ each exhaustive over the arena:
 
 1. **No crossing determines the geometry it leaves behind.** Over all 288
    crossing events, at every seam, the successor state is empty or
-   many-valued and never once unique -- 0 exceptions. The update is a
-   function on the incidence and a relation on the form.
+   many-valued and never once unique — 0 of the 288 are exceptions. The
+   update is a function on the incidence and a relation on the form.
 2. **No state declared in advance covers the events.** The best of the
-   29791 is ready for 9 of the 108 lawful crossings and 20100 are ready for
-   none, because the crossings impose mutually contradictory equations on
-   one cross block.
+   29791 is ready for 9 of the 108 lawful crossings and 20100 of the 29791
+   are ready for none, because the crossings impose mutually contradictory
+   equations on one cross block; and 81 of the 108 are absorbable by no
+   advance state at all.
 3. **The one cell that would let a within-sector link join the geometry is**
-   **refused by the sector's own form**, at 468 of 468 readings, because
-   an unshared site's system has kernel zero and has already fixed that
-   count.
+   **refused by the sector's own form**, at every one of the 468 readings,
+   because a single chart's restriction of the form has kernel zero at
+   every site and has already fixed that count.
 
 Together: the state can neither be derived from the event, nor prepared
-before it, nor dispensed with. That sharpens the parent's finding -- that
+before it, nor dispensed with. That sharpens the parent's finding — that
 the motivated crossing exists as a relation and is unreachable as an
-event -- into a statement about every update in this window, autonomous or
+event — into a statement about every update in this window, autonomous or
 event-conditioned: the crossing is reachable as an event at the incidence
 leg, and what remains
-unreachable is not the crossing but the geometry's own count datum -- the
+unreachable is not the crossing but the geometry's own count datum — the
 cross block of the seam's form, which says how many division events the
 cells crossing the seam would carry. It is a declaration in the exact sense
 that the corpus's laws leave it undetermined and the dynamics leaves it
@@ -524,13 +742,13 @@ multivalued; no metrical reading of it is taken here.
 ## 7. The Q34 seed: state, allowed events, successor relation
 
 What survives is stated here as a candidate and nothing more. It is the
-input the successor unit, DYNAMICS-CLOSURE at paper-46, was chartered to
-consume, and it is written
+input the successor units were chartered to consume — EVENT-AND-CARRIER-CLOSURE
+at paper-46 and DYNAMICS-CLOSURE at paper-48 — and it is written
 in the three-part shape the second review asked for: a state, the events it
 allows, and the successors an allowed event leads to.
 
 **THE STATE, AND WHAT IT IS NOT.** The SEAM-SUBSYSTEM STATE: (geometry,
-record, form) -- the cells the geometry carries; the co-division relation
+record, form) — the cells the geometry carries; the co-division relation
 with its counts; and the seam's cross block, four numbers at each shared
 site. It is a structural state and it is not the state of the process. It
 carries no amplitude, no branch weight, no coin evolution and no emission
@@ -542,8 +760,8 @@ transition below leaves every delivered leg intact. Which events those are
 depends on one declared reading and the paper measures both: read the form
 as RE-SOLVED at every event and all 162 lawful events are allowed from every
 state, the state restricting nothing; read it as PERSISTING and a state
-allows the crossings its own predictions already fit -- 9691 of the 29791
-states allow at least one, 20100 allow none, and the most permissive allows
+allows the crossings its own predictions already fit — 9691 of the 29791
+states allow at least one, 20100 allow none, and the best allows
 9 of the 108.
 
 **THE SUCCESSOR RELATION.** An allowed event fires as one transition:
@@ -552,17 +770,21 @@ states allow at least one, 20100 allow none, and the most permissive allows
   by one;
 - the GEOMETRY takes one new cell for each pair the event opens that the
   geometry does not already carry, the cell carrying no direction label of
-  its own;
-- the FORM takes any completion consistent with the record it now faces --
+  its own — which is EVENT-AND-CARRIER-CLOSURE's chartered problem, since a
+  direction-less cell is exactly what a quantum carrier would have to host,
+  and the clause is routed there;
+- the FORM takes any completion consistent with the record it now faces —
   admissible at the seam's counts, and predicting exactly the count the
   record carries on every realised cross link.
 
 The third clause is a relation and not a function: 4 or 8 completions at
 each seam, 324 seam slots measured, never 1. So the object is a transition
 relation throughout, and the completeness question has a measured answer at
-this arena: under the re-solved reading the relation is total, every state
-admitting every lawful event; under the persistent reading it is partial,
-and the 20100 states that allow no crossing are exactly where it fails.
+this arena: under the re-solved reading the relation is total by
+construction, every state admitting every lawful event because the
+successor census takes only the post-record; under the persistent reading
+it is partial, and the 20100 states that allow no crossing are exactly
+where it fails.
 
 **THE RULE IS A CLASS, NOT A MEMBER.** The two creation rules that survive
 admit the same 162 events, so the transition above is a representative of an
@@ -571,8 +793,9 @@ the choice between them would be unmeasured here.
 
 **THE SCOPE, GATED.** The rule is measured at one arena: the aligned k = 3
 union of two driven R = 3 sectors at n = 9, a = 3, q = 3, with 3 declared
-link directions and d = 2. Within that arena it is exhaustive -- all 455
-events, both ends of every transition, every object, all 29791 states. The
+link directions and d = 2. Within that arena it is exhaustive — all 455
+events, the one lawful pre-state and every post-state, every object, all
+29791 states. The
 events themselves are supplied from the arena's triples and the committed
 grammar is not re-driven, so the rule is event-conditioned and the word
 autonomous is not used of it. Its first leg is lawful at 216 of 288
@@ -582,19 +805,20 @@ another arena, another arrangement or another readout; nothing here licenses
 it as the update rule of the theory; and its own price table is part of the
 statement, not a footnote to it. Multi-step trajectories are named as the
 successor question, not answered: section 4.5 takes one step and finds the
-allowed set falling from 108 to 25.
+allowed set falling from 108 to between 25 and 43, depending on which
+crossing goes first.
 
 **THE REFRAME, AND WHAT WOULD SETTLE IT.** That a state forbids all but a
-few of the crossings can be read two ways -- as a defect of an underdetermined
+few of the crossings can be read two ways — as a defect of an underdetermined
 declaration, or as the beginning of physics, a state that restricts what may
 happen next. This unit does not decide between them and cannot: deciding
 needs an observable, and the corpus has not defined one. What it does supply
-is the measurement the decision would rest on -- the allowed-event set of
-every state, exhaustively -- and the observation that the restrictive
+is the measurement the decision would rest on — the allowed-event set of
+every state, exhaustively — and the observation that the restrictive
 reading exists only if the state persists.
 
-**WHAT WOULD PROMOTE THE RULE.** One of three things. A law that selects a
-completion, derived rather than declared -- and section 6 is the measured
+**WHAT WOULD PROMOTE THE RULE.** Any of three things. A law that selects a
+completion, derived rather than declared — and section 6 is the measured
 report that the corpus does not now carry one. A reading in which the form
 is not part of the state, which section 4 prices at the loss of the
 fourth-class cells and of the geometry's power to refuse. Or an arena in
@@ -609,7 +833,7 @@ window is a declaration, priced; the surviving one is a candidate universal
 rule at a gated scope and is labelled one wherever it appears.
 
 **The parent adjudication's ruling is carried at its own domain:** the
-finding is seam-confined compositionality -- the union changes geometry
+finding is seam-confined compositionality — the union changes geometry
 only on links both sectors jointly own, and no sector-private link ever
 moves. The arenas of this unit's sections 3 and 4 are extension arenas and
 are not offered as counterexamples to it; the wording that ruling struck
@@ -617,23 +841,37 @@ does not occur here, and the gate that enforces its absence
 whitespace-normalises, case-folds and strips markdown prefixes from both
 sides.
 
-**Reconstruction is not derivation, and invariance is not meaning.** Where
-this unit reconstructs a parent's number by a different route -- the 216, the
-two crossing inventories, the automorphism order of 62208 -- the agreement is
+**Reconstruction is not derivation.** Where
+this unit reconstructs a parent's number by a different route — the 216, the
+two crossing inventories, the automorphism order of 62208, and the Q50
+chain's triangle and doubling steps — the agreement is
 a reproduction and is reported as one; nothing is promoted to a derivation on
-the strength of a route that agrees. And where something is measured not to
-move -- the rules commuting with the arena's relabellings, the two creating
+the strength of a route that agrees.
+
+**Invariance is not meaning.** Where something is measured not to
+move — the rules commuting with the arena's relabellings, the two creating
 rules admitting the same 162 events once the form leg binds, the cut standing
-at 8 at every one of the 18 cross directions -- it is stated as an INVARIANCE
-of the quantities this unit measures, at the arena it measures them on. No
-such invariance is called a redundancy of the theory here: that word would
-require identical values for every observable and every experiment, and this
-corpus has not yet defined an observable.
+at 8 at every one of the 18 cross directions, the reading and count-leg axes
+moving no number in any of the window's 16 cells — it is stated as an
+INVARIANCE of the quantities this unit measures, at the arena it measures
+them on. No such invariance is called a redundancy of the theory here,
+a word that would require identical values for every observable and every
+experiment where this corpus has not yet defined an observable.
+
+**Nothing here is a family-level prediction.** Every count in this paper is
+a property of one arena, and it is stated at this arena. Two of the
+window's still-free fibres are measured — the reading and the count leg,
+inert across all 16 cells — and one is measured to be verdict-bearing at
+two rows of the inventory, the base map. What is NOT measured is any other
+member of the ISP family: no arity but a = 3, no arrangement but this one,
+no record but the committed one. A family-level statement would require the
+fibre to be swept, and the sweep this unit ran covers the window's axes and
+not the family's.
 
 **No geometric reading of the seam form.** The form is a count law: it says
 how many division events a cell carries. That its completions can be
 indefinite, that its cross block resembles a coupling, that a state
-constrains what may happen next -- none of that is given a metrical,
+constrains what may happen next — none of that is given a metrical,
 causal or dimensional reading here, and nothing measured licenses one.
 
 ## 9. Every ratio here is COUNTING-ONLY
@@ -656,36 +894,40 @@ crossing is lawful.
 | the whole seam-subsystem state's successor | measured, NEVER UNIQUE | 256 or 512 | M2: the per-seam sets are 4 or 8 and the state carries three seams |
 | the seam's completion before the event | declared | 31 | M2's preparedness census sweeps all of it |
 | the extremal family | declared | 8 | M4, all published |
-| the successor state at the second step | declared by a named rule | 1 | M2's two-step row, and nothing else uses it |
+| the successor state at the second step | declared by a named rule | 1 | M2's two-step fiber, run from every lawful first crossing |
+| the first crossing the second step runs from | declared tie-break, FIBER PUBLISHED | 108 | M2: the second-step count runs 25 to 43 over the fiber |
+| the base map the RSQ fibers are read at | declared sweep, MEASURED VERDICT-BEARING FOR TWO ROWS | 32 | M3: 106 post-states move with it; the rows with no free item do not |
+| the state's reading: re-solved or persisting | declared, MEASURED VERDICT-BEARING | 2 | M2: re-solved admits every lawful event from every state, persisting admits a crossing from 9691 |
 | the three-actor conflict group as the unit of an event | forced | 1 | the committed grammar's own event size |
 
-Two items are declared and measured to be verdict-bearing, and the paper
+Four items are declared and measured to be verdict-bearing, and the paper
 says which and how far: carrying the readout to the cells the update
-creates is the difference between 455 events lawful and 162, and the
-state's successor is never unique at any of them.
+creates is the difference between 455 events lawful and 162; the state's
+successor is never unique at any of them; the base map moves two rows of
+the inventory and no verdict; and whether the state persists decides
+whether it restricts anything at all.
 
 ## 11. Verdict
 
 ```
-AUTOGLUE-A-TRANSITION-RELATION-ON-THE-SEAM-SUBSYSTEM-STATE-NOT-AN-EVOLUTION-LAW-THE-DATUM-THAT-CANNOT-PRECEDE-THE-EVENT-IS-THE-SEAM'S-CROSS-BLOCK-[THE FOUR UNDETERMINED ENTRIES OF THE DIRECT-SUM FORM AT EACH SHARED SITE, OVER THE DECLARED UPDATE WINDOW; THE SUCCESSOR STATE CENSUSED AT EVERY ONE OF 455 EVENTS OBJECT BY OBJECT AND NEVER BY ORBIT: EMPTY OR MANY-VALUED, UNIQUE AT 0; 27 OF THE 108 LAWFUL CROSSINGS NEED NO STATE MOVE; OVER ALL 29791 STATES THE ARENA ADMITS THE BEST IS READY FOR 9 CROSSINGS AND 20100 ARE READY FOR NONE] -- AND A LINK INSIDE A SECTOR IS REFUSED OUTRIGHT: AN UNSHARED SITE'S FORM HAS KERNEL ZERO AND FORCES THE FOURTH DIRECTION'S COUNT AGAINST THE ONE THE EVENT DEPOSITS AT 468 OF 468 READINGS -- SO A STATE RESTRICTS THE ALLOWED TRANSITIONS ONLY IF IT PERSISTS, WHICH IS A READING AND NOT A MEASUREMENT
+AUTOGLUE-A-TRANSITION-RELATION-ON-THE-SEAM-SUBSYSTEM-STATE-NOT-AN-EVOLUTION-LAW-THE-DATUM-THAT-CANNOT-PRECEDE-THE-EVENT-IS-THE-SEAM'S-CROSS-BLOCK-[THE FOUR UNDETERMINED ENTRIES OF THE DIRECT-SUM FORM AT EACH SHARED SITE, OVER THE DECLARED UPDATE WINDOW; THE SUCCESSOR STATE CENSUSED AT EVERY ONE OF 455 EVENTS OBJECT BY OBJECT AND NEVER BY ORBIT: EMPTY OR MANY-VALUED, UNIQUE AT 0; 27 OF THE 108 LAWFUL CROSSINGS NEED NO STATE MOVE AND 81 CAN BE ABSORBED BY NO ADVANCE STATE AT ALL; OVER ALL 29791 STATES THE ARENA ADMITS 8 ATTAIN THE BEST 9 CROSSINGS, 2 OF THEM CARRYING ONE COMPLETION AT EVERY SEAM, AND 20100 ARE READY FOR NONE] -- AND A LINK INSIDE A SECTOR IS REFUSED OUTRIGHT: A SECTOR'S OWN FORM AT A SITE HAS KERNEL ZERO OVER ITS THREE DECLARED DIRECTIONS AND FORCES THE FOURTH DIRECTION'S COUNT AGAINST THE ONE THE EVENT DEPOSITS AT EVERY ONE OF 468 READINGS -- 312 OF THEM AT CHART-PRIVATE SITES AND 156 AT THE SHARED SITES, WHERE THE TWO-CHART FORM'S KERNEL IS 4 AND THE SINGLE CHART'S IS STILL ZERO -- SO A STATE RESTRICTS THE ALLOWED TRANSITIONS ONLY IF IT PERSISTS, WHICH IS A READING AND NOT A MEASUREMENT
 ```
 
 ```
-AUTOGLUE-MOTIVATION-AND-LAWFULNESS-ARE-DISJOINT-[77 OF 455 EVENTS LEAVE THE WELD WITH ZERO FREE ITEMS, 162 ARE LAWFUL AT EVERY LEG, AND THE TWO SETS SHARE 0] -- BY A THEOREM CHECKED AT EVERY OBJECT: AN EVENT FORCES THE WELD EXACTLY WHEN IT DOUBLES NOTHING, WHICH IS EXACTLY WHEN ALL THREE OF ITS PAIRS ARE NEW; A TRIANGLE ADMITS NO PROPER TWO-COLOURING SO ONE OF THEM FALLS INSIDE A SECTOR; AND THAT IS THE ONE CELL THE FORM REFUSES -- THE EVENTS THAT PIN THE WELD DOWN ARE THE EVENTS THE GEOMETRY CANNOT HOST
+AUTOGLUE-MOTIVATION-AND-LAWFULNESS-ARE-DISJOINT-[77 OF 455 EVENTS LEAVE THE WELD WITH ZERO FREE ITEMS, 162 ARE LAWFUL AT EVERY LEG, AND THE TWO SETS SHARE 0] -- BY A CHAIN WHOSE ARITHMETIC IS THE PARENT'S, REPRODUCED HERE AND CHECKED AT EVERY OBJECT: AN EVENT FORCES THE WELD EXACTLY WHEN IT DOUBLES NOTHING, WHICH IS EXACTLY WHEN ALL THREE OF ITS PAIRS ARE NEW; A TRIANGLE ADMITS NO PROPER TWO-COLOURING SO ONE OF THEM FALLS INSIDE A SECTOR -- SEC-2'S OWN STEPS, CHECKED THERE AT THE SAME OBJECTS -- AND WHAT THIS UNIT ADDS IS THE TWO-SIDED FORM AND THE CLOSING LINK: THAT IS THE ONE CELL THE SECTOR'S FORM REFUSES -- THE EVENTS THAT PIN THE WELD DOWN ARE THE EVENTS THE GEOMETRY CANNOT HOST
 ```
 
 ```
-AUTOGLUE-NO-SEAM-PRINCIPLE-DERIVED-[8 EXTREMAL FUNCTIONALS MEASURED BEFORE THE EVENT AND AFTER IT; EVERY CROSS DIRECTION CUTS THE LATTICE 31 TO 8; MAXIMUM DETERMINANT SELECTS THE DIRECT SUM UNIQUELY, THE DIRECT SUM REALISES 0 OF THE ARENA'S CROSSINGS AND SURVIVES 0 OF THE CUTS, AND ON THE POST-EVENT LATTICE THE SAME CRITERION IS 4-VALUED] -- THE CONVENTION-FREE PRICE TAKES 1 VALUE ON THE WHOLE LATTICE AND THE ONE-SIDED PRICE'S MINIMISER IS THE CUT OF EXACTLY 1 CROSS DIRECTION, SO IT IS THE EVENT'S OWN EQUATION WEARING A CRITERION'S CLOTHES: NOTHING IN THIS CORPUS SELECTS THE SEAM, AND THE ONE CRITERION THAT DOES IS THE STATE IN WHICH NOTHING CAN CROSS
+AUTOGLUE-NO-SEAM-PRINCIPLE-DERIVED-[8 EXTREMAL FUNCTIONALS MEASURED BEFORE THE EVENT AND AFTER IT, OF WHICH 2 SELECT A SINGLE COMPLETION BEFORE IT AND 4 AT SOME CUT AFTER IT AND 0 AT EVERY CUT; EVERY CROSS DIRECTION CUTS THE LATTICE 31 TO 8; MAXIMUM DETERMINANT SELECTS THE DIRECT SUM UNIQUELY, AND THE DIRECT SUM REALISES 0 OF THE ARENA'S CROSS DIRECTIONS -- WHICH IS THE SAME STATEMENT AS SURVIVING NONE OF THE CUTS, SINCE A CUT IS THE SET OF COMPLETIONS THAT REALISE ITS DIRECTION, AN IDENTITY THAT HOLDS AT EVERY POINT OF THE LATTICE -- AND ON THE POST-EVENT LATTICE THE SAME CRITERION IS 4-VALUED] -- THE CONVENTION-FREE PRICE TAKES 1 VALUE ON THE WHOLE LATTICE AND THE ONE-SIDED PRICE'S MINIMISER IS THE CUT OF EXACTLY 1 CROSS DIRECTION, SO IT IS THE EVENT'S OWN EQUATION WEARING A CRITERION'S CLOTHES: NOTHING IN THIS CORPUS SELECTS THE SEAM, AND THE ONE CRITERION THAT DOES IS THE STATE IN WHICH NOTHING CAN CROSS
 ```
 
 ```
-AUTOGLUE-A-TARGET-FREE-EVENT-CONDITIONED-CROSS-LINK-CREATION-RULE-EXISTS-AT-THIS-ARENA-AT-108-OF-288-[THE WINDOW: FOUR LINK-CREATION RULES BY TWO READINGS BY TWO COUNT LEGS AT EVERY ONE OF 455 THREE-ACTOR EVENTS AND AT BOTH ENDS OF EVERY TRANSITION, THE RULE FIRING ON THE EVENT'S FOOTPRINT ALONE, NO TARGET DECLARED AFTER ANY EVENT; WITH THE GEOMETRY FROZEN THE WELD REFUSES ALL 288 SEAM-SPANNING EVENTS AND WITH EVERY NEW PAIR ABSORBED IT REFUSES NONE OF 455] -- ONE PRE-DECLARED EVENT-UNIFORM RULE REACHES THE PARENT'S 216 OF 288 WITH NO TARGET AT ALL, AND CARRYING THE READOUT TO THE CELLS IT CREATES CUTS THAT TO 108: THE CROSSINGS THAT MAKE ONE CROSS LINK, DOUBLE TWO SEAM LINKS AND OPEN NO PAIR INSIDE A SECTOR. THE EVENT IS SUPPLIED TO THE RULE FROM THE ARENA'S OWN TRIPLES AND THE COMMITTED GRAMMAR IS NOT RE-DRIVEN, SO WHAT IS MEASURED IS EVENT-CONDITIONED CREATION AND NOT AUTONOMOUS DYNAMICS; AND THE SURVIVING RULES FORM AN EQUIVALENCE CLASS THIS ARENA DOES NOT SELECT WITHIN -- CROSS-ONLY AND ALL-NEW ADMIT THE SAME 162 EVENTS ONCE THE FORM LEG BINDS
+AUTOGLUE-A-TARGET-FREE-EVENT-CONDITIONED-CROSS-LINK-CREATION-RULE-EXISTS-AT-THIS-ARENA-AT-108-OF-288-[THE WINDOW: FOUR LINK-CREATION RULES AT EVERY ONE OF 455 THREE-ACTOR EVENTS, FROM THE ONE LAWFUL PRE-STATE AND AT EVERY EVENT'S OWN POST-STATE, RUN AT EVERY ONE OF THE WINDOW'S 16 CELLS AND MEASURED INERT ON TWO OF ITS AXES -- THE READING AND THE COUNT LEG MOVE NO NUMBER AND ONE OF THE WELD'S FOUR FATES NEVER FIRES AT ALL, SO THE 16 CELLS CARRY 4 DISTINCT RESULTS; THE RULE FIRING ON THE EVENT'S FOOTPRINT ALONE, NO TARGET DECLARED AFTER ANY EVENT; WITH THE GEOMETRY FROZEN THE WELD REFUSES ALL 288 SEAM-SPANNING EVENTS AND WITH EVERY NEW PAIR ABSORBED IT REFUSES NONE OF 455] -- ONE PRE-DECLARED EVENT-UNIFORM RULE REACHES THE PARENT'S 216 OF 288 WITH NO TARGET AT ALL, AND CARRYING THE READOUT TO THE CELLS IT CREATES CUTS THAT TO 108: THE CROSSINGS THAT MAKE ONE CROSS LINK, DOUBLE TWO SEAM LINKS AND OPEN NO PAIR INSIDE A SECTOR. THE EVENT IS SUPPLIED TO THE RULE FROM THE ARENA'S OWN TRIPLES AND THE COMMITTED GRAMMAR IS NOT RE-DRIVEN, SO WHAT IS MEASURED IS EVENT-CONDITIONED CREATION AND NOT AUTONOMOUS DYNAMICS; AND THE SURVIVING RULES FORM AN EQUIVALENCE CLASS THIS ARENA DOES NOT SELECT WITHIN -- CROSS-ONLY AND ALL-NEW ADMIT THE SAME 162 EVENTS ONCE THE FORM LEG BINDS
 ```
 
 Read out. A crossing event can declare its own cross link, by one rule
-fixed in advance, fired on its own footprint, with both ends of the
-transition lawful and no target fitted to anything -- and at this arena it
-does so at 108 of the 288 events that cross. What it cannot do is declare
+fixed in advance, fired on its own footprint, with the pre-state and the
+post-state both lawful and no target fitted to anything — and at this arena it does so at 108 of the 288 events that cross. What it cannot do is declare
 its own seam. The four numbers the seam leaves undetermined are neither
 fixed by the event, nor preparable before it, nor droppable: the update
 narrows them and never to a point, no advance declaration is ready for more
@@ -697,97 +939,165 @@ the dynamics cannot go.
 
 1. **One arena.** Every census here runs at the aligned k = 3 union. Price:
    the counts are properties of that arena. Mitigation: within it nothing
-   is sampled -- all 455 events, all 29791 states, all 18 cross directions,
-   both ends of every transition.
+   is sampled — all 455 events, all 29791 states, all 18 cross directions,
+   the one lawful pre-state and every event's own post-state.
 2. **The grammar is not re-driven.** Which of the 455 conflict groups the
    committed grammar would actually select is not decided here; the event
    set is the arena's, as the parent's was.
 3. **The state's successor rule at the second step is declared**, not
-   derived. Price: section 4.4's numbers are relative to that declaration.
+   derived. Price: section 4.5's numbers are relative to that declaration.
    Mitigation: it is named in the choice inventory and nothing else in the
    unit uses it.
 4. **The readout is carried to cells the arrangement does not declare.**
    That carry is the parent's own reading, taken here at the fourth
    parallel class as well as at the cross directions. It is an axis of the
    window and both of its values are run.
-5. **The equivariance sweep is a sample**: 64 relabellings at 65 events,
-   declared as such. The blindness leg is exhaustive over all 455.
-6. **The two-step census is run from one first event.** Price: the 25 is a
-   property of that event's post-state.
+5. **The equivariance sweep is exhaustive on each axis in turn, not on
+   both at once**: all 455 events against 64 relabellings, and the whole
+   31104-member subgroup against 3 events, with 64 of the chart-mixing
+   coset. The blindness leg is exhaustive over all 455 events and 1820 rule
+   evaluations.
+6. **The RSQ base map is a declared sweep of 32, not the whole group.**
+   Price: at 106 post-states the label or orient fiber moves within the
+   sweep and is published as a set. Mitigation: the rows the verdict rests
+   on are constant across every base map the sweep reaches.
+7. **The second step's first crossing is a declared tie-break.** Price: the
+   delivered row is one cell of a fiber. Mitigation: the fiber is run from
+   every one of the 108 lawful first crossings and published, and the head
+   carries the range.
+8. **The successor census is memoised.** Price: a speed device sits inside
+   a measurement. Mitigation: it is keyed on the only data the answer
+   depends on, and every key the run reaches is recomputed from scratch
+   with the memo bypassed and required to agree.
 
 ## 13. The instrument
 
 `v15/code/autoglue_exact.py`, with the era's CLI: a delivery run that is
 the only writer, `--no-write`, `--numbers`, `--selftest`, `--mutant NAME`,
 `--verify-paper PATH`, `--list-gates`, `--list-mutants` and
-`--list-families`; every unknown flag and every missing flag argument exits
-with the code the contract fixes.
+`--list-families`; every unknown flag, every missing flag argument and
+every pair of conflicting mode flags exits with the code the contract
+fixes, rather than one mode silently discarding another.
 
 Arithmetic is exact end to end: integers and Fractions, never a float. The
 nine template family mechanisms are implemented natively under the
 template's own check ids, and the id set is not declared here but parsed
 out of the pinned era template's own bytes. Seals are taken at gate time,
-verified against the values that would be promoted, and totality is
+verified against the values that would be promoted, and then — the payload
+having been frozen — verified a third time against the serialised bytes
+themselves, so the object vouched is the object promoted and no edit
+between the last gate and the write can reach the receipt. Totality is
 recomputed at the door from the payload's live key set. The transcript is
-parsed back and reconciled with the ledger as a multiset. Every table above
+parsed back and reconciled with the ledger as a multiset, and its
+NARRATIVE is bound as well as its gate rows: every value-bearing line is
+declared with the receipt path each of its numerals is drawn from, and no
+other non-gate line may carry a numeral at all. Every table above
 is a rendered claim of the receipt, header rows included, compared in both
-directions and keyed by its own table. No numeral is typed: the
+directions and keyed by its own table; five load-bearing prose sentences
+are rendered claims too. No numeral is typed: the
 prohibition is taken on the source by an AST leg covering every statement
-template, and it includes the two subspecies the template's successor
-registered.
+template, every statement typed into a gate and the measurement registry's
+own door, and it includes the two subspecies the template's successor
+registered. A spelled proportion is a claim as well, and is resolved
+against a measured pair in its own sentence — a word carries no numeral,
+so no numeral leg can see it.
+
+Every value this unit declares from a parent is required to be consumed by
+a gate condition, so an inherited number that is published and bound by
+nothing fails; and the one speed device inside a measurement, the successor
+memo, is proved inert key by key rather than trusted.
+
+The falsifier table carries more recipes than there are gates and the two
+counts are printed as two numbers, never as one. The move each recipe
+makes is proved by digest: at the injection site itself for the recipes
+whose site evaluates both branches, and by the `--selftest` sweep for the
+rest. That sweep is where the family is discharged in full — it runs every
+recipe, one delivery each, and requires each to refuse at its own declared
+gate and to have moved an object the clean run also produced. Nothing
+about the sweep is claimed of the delivery run.
 
 Two mechanisms are this unit's own. The first is the ordering discipline:
 the repr of an unordered container exposes its table layout and is
 therefore hash-seed dependent, so every ordering in this unit goes through
-a canonical key and a gate reads the source to prove no other exists. The
+a canonical key, and a gate walks this file's own syntax tree to prove no
+other exists — each site named by the function that carries it and the
+container it orders, so that a copy of a permitted line in a new place is a
+new site. The repr is one road to a seed-dependent order and the builtin
+hash is the other, carrying no token a repr scan could find, so the same
+walk locates every call to it and requires there to be none: a sort key
+that reached for it would make the receipt's own row order a property of
+the interpreter's session. The
 second is the comparator. The head is rebuilt by a routine that shares no
-function, no template and no literal with the builder: it reads only the
-receipt's per-object censuses, joins them on the event profile, re-derives
-every number in the head by its own arithmetic, and types the segments
-itself; the two strings are then compared whole.
+function, no template and no literal with the builder, and that reads no
+summary scalar at all: it takes only the receipt's primitive tables — the
+fate census cell by cell, the form census by profile, the inventory census,
+the preparedness histogram, the completion lattice point by point, the
+extremal family's fiber per functional and per cross direction, the fourth
+direction by base site — joins them on the event profile, re-derives every
+number in the head by its own arithmetic, and types the segments itself;
+the two strings are then compared whole. The state space is summed out of
+the histogram, the cut counted out of the lattice, the determinant's
+post-event fiber maximised out of the fiber table.
 
 ## 14. The successor register
 
 Registered, not claimed.
 
-**S-1 -- THE a = 2 CROSS-RUN, REGISTERED.** The obstruction's second leg
-rests on a fact about a = 3 and on nothing else: three actors give three
-pairs, at most two of which can cross, because a triangle admits no proper
-two-colouring -- so an event that doubles nothing must open a pair inside a
+**S-1 — THE a = 2 CROSS-RUN, REGISTERED.** The Q50 disjointness rests on a
+fact about a = 3 and on nothing else: three actors give three pairs, at
+most two of which can cross, because a triangle admits no proper
+two-colouring — so an event that doubles nothing must open a pair inside a
 sector, and that is the cell the form refuses. At a = 2 the argument
 dissolves: an event IS a pair, a crossing event opens exactly one pair and
 that pair crosses, so a crossing that doubles nothing and opens nothing
 inside a sector becomes possible for the first time, and with it a crossing
 that leaves the weld forced. Whether motivation and lawfulness stay disjoint
 is therefore an a-question, and the cross-run against the arity unit's a = 2
-grammar is registered here as this unit's first successor. Its arity was not
-available before this unit closed and nothing here anticipates its result;
-what is stated is the mechanism the cross-run must test, and that the
-disjointness theorem of section 5.1 is scoped to a = 3 by its own proof.
+grammar is registered here as this unit's first successor. This instrument
+does not read the arity unit — its read set is the six sources of section
+2.1 and none of them is that paper — and derives the mechanism
+independently; nothing here anticipates its result. What is stated is the
+mechanism the cross-run must test, and that the disjointness of section 5.1
+is scoped to a = 3 by the proof of its argued half and by the arena of its
+enumerated half.
 
-**S-2 -- the iterated dynamics.** Section 4.5 takes one step from one
-event. The whole trajectory space -- which sequences of events are lawful,
-whether the allowed set shrinks to nothing, whether a fixed point exists --
-is open, and the data it starts from are here.
+**What a = 2 does NOT touch**, and the register says so because a reader
+may take it to: legs 1 and 2 of the obstruction theorem — the never-unique
+successor and the no-advance-state result — turn on the kernel of the
+seam's system and not on the size of an event at all. They are untouched by
+a, and a = 2 dissolving the disjointness would leave the unit's headline
+obstruction exactly where it is.
 
-**S-3 -- the seam at a coarser record.** Every site of this record is
+**S-2 — the iterated dynamics.** Section 4.5 takes one step. The whole
+trajectory space — which sequences of events are lawful, whether the
+allowed set shrinks to nothing, whether a fixed point exists — is open, and
+the data it starts from are here, including the fiber over which first
+crossing goes first.
+
+**S-3 — the seam at a coarser record.** Every site of this record is
 all-simple, which is why the fourth direction is forced to 3. At a record
 where a site carries [1, 1, 3] the within-sector cell would be admitted, and
 the whole form leg would have to be re-measured.
 
-**S-4 -- the state as an observable.** The completion predicts which
+**S-4 — the state as an observable.** The completion predicts which
 crossings can occur. Whether that predictive content shows in the record,
 and whether two states differing only in it are separable by any measurement
-this corpus defines, is unposed -- and it is the question the reframe in
+this corpus defines, is unposed — and it is the question the reframe in
 the seed section turns on.
 
-**S-5 -- the second seam.** The declaration price is 4 numbers per shared
+**S-5 — the second seam.** The declaration price is 4 numbers per shared
 site and the successor sets are computed per seam. Whether two seams of one
 union constrain each other under the update, as the parent registered for
 the static case, is not run.
 
+**S-6 — the base-map dependence.** 106 of the 455 post-states have a label
+or orient fiber that moves with the base map the inventory is read at. A
+base-map-invariant definition of those fibers — the number of distinct
+fields over the whole group action rather than at a representative — is
+available and is not run here.
+
 **What may not be inherited**, as a standing row: the candidate rule as the
 theory's update rule; the 108 as a statement about the grammar rather than
 about the arena; the extremal functionals as laws of this corpus; the
-preparedness numbers at any other arena; and motivation as a criterion that
-selects anything.
+preparedness numbers at any other arena; the two moving inventory rows as
+invariants; and motivation as a criterion that selects anything.

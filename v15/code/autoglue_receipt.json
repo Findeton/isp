@@ -23,6 +23,28 @@
    "source": "A-PIN"
   },
   {
+   "anchor": "N-PIN-BREAK",
+   "chars": 72,
+   "consumer": "G-OUTCOME-FEASIBILITY",
+   "floor_ok": true,
+   "hits": 1,
+   "mode": "PARSED",
+   "ok": true,
+   "paper_hits": 0,
+   "source": "A-PIN"
+  },
+  {
+   "anchor": "N-PIN-BOTHWAYS",
+   "chars": 57,
+   "consumer": "G-OUTCOME-FEASIBILITY",
+   "floor_ok": true,
+   "hits": 1,
+   "mode": "PARSED",
+   "ok": true,
+   "paper_hits": 0,
+   "source": "A-PIN"
+  },
+  {
    "anchor": "N-SEC2-WALL",
    "chars": 123,
    "consumer": "G-INCIDENCE-CENSUS",
@@ -36,6 +58,17 @@
   {
    "anchor": "N-SEC2-MOTIVATED",
    "chars": 119,
+   "consumer": "G-MOTIVATED-DISJOINT",
+   "floor_ok": true,
+   "hits": 1,
+   "mode": "QUOTED",
+   "ok": true,
+   "paper_hits": 1,
+   "source": "A-SEC2"
+  },
+  {
+   "anchor": "N-SEC2-MECHANISM",
+   "chars": 409,
    "consumer": "G-MOTIVATED-DISJOINT",
    "floor_ok": true,
    "hits": 1,
@@ -112,10 +145,232 @@
   "points": 9,
   "sector_pairs": 27
  },
+ "arm_control": {
+  "at every leg": {
+   "ALL-NEW": 162,
+   "CROSS-ONLY": 162
+  },
+  "without the fourth-direction leg": {
+   "ALL-NEW": 275,
+   "CROSS-ONLY": 162
+  }
+ },
+ "aut_structure": {
+  "chart_factor": 72,
+  "closed_form": 62208,
+  "enumerated": 62208,
+  "shared_part": 3,
+  "top_degree": 12
+ },
+ "best_states": [
+  {
+   "state": [
+    [
+     1,
+     -1,
+     0,
+     1
+    ],
+    [
+     1,
+     -1,
+     0,
+     1
+    ],
+    [
+     1,
+     -1,
+     0,
+     1
+    ]
+   ],
+   "the same completion at all three seams": true
+  },
+  {
+   "state": [
+    [
+     1,
+     -1,
+     0,
+     1
+    ],
+    [
+     1,
+     -1,
+     0,
+     1
+    ],
+    [
+     1,
+     0,
+     -1,
+     1
+    ]
+   ],
+   "the same completion at all three seams": false
+  },
+  {
+   "state": [
+    [
+     1,
+     -1,
+     0,
+     1
+    ],
+    [
+     1,
+     0,
+     -1,
+     1
+    ],
+    [
+     1,
+     -1,
+     0,
+     1
+    ]
+   ],
+   "the same completion at all three seams": false
+  },
+  {
+   "state": [
+    [
+     1,
+     -1,
+     0,
+     1
+    ],
+    [
+     1,
+     0,
+     -1,
+     1
+    ],
+    [
+     1,
+     0,
+     -1,
+     1
+    ]
+   ],
+   "the same completion at all three seams": false
+  },
+  {
+   "state": [
+    [
+     1,
+     0,
+     -1,
+     1
+    ],
+    [
+     1,
+     -1,
+     0,
+     1
+    ],
+    [
+     1,
+     -1,
+     0,
+     1
+    ]
+   ],
+   "the same completion at all three seams": false
+  },
+  {
+   "state": [
+    [
+     1,
+     0,
+     -1,
+     1
+    ],
+    [
+     1,
+     -1,
+     0,
+     1
+    ],
+    [
+     1,
+     0,
+     -1,
+     1
+    ]
+   ],
+   "the same completion at all three seams": false
+  },
+  {
+   "state": [
+    [
+     1,
+     0,
+     -1,
+     1
+    ],
+    [
+     1,
+     0,
+     -1,
+     1
+    ],
+    [
+     1,
+     -1,
+     0,
+     1
+    ]
+   ],
+   "the same completion at all three seams": false
+  },
+  {
+   "state": [
+    [
+     1,
+     0,
+     -1,
+     1
+    ],
+    [
+     1,
+     0,
+     -1,
+     1
+    ],
+    [
+     1,
+     0,
+     -1,
+     1
+    ]
+   ],
+   "the same completion at all three seams": true
+  }
+ ],
+ "containment": {
+  "contained": 1820,
+  "copies": 12,
+  "distinct_results": 4,
+  "fates_that_occur": [
+   "ALIVE",
+   "STRUCT-DEAD"
+  ],
+  "field_minimum": [
+   1
+  ],
+  "transitions": 1820,
+  "window_cells": 16
+ },
  "counting_only": "every ratio in this unit is a count over an exhaustive enumeration with its denominator beside it; no measure is declared on the event family, on the state space or on the completion lattice",
  "cut_size": 8,
- "ds_in_cut": 0,
- "ds_realises": 0,
+ "direct_sum": {
+  "completions at which they differ": 0,
+  "completions checked": 31,
+  "cross directions it realises": 0,
+  "cuts it survives": 0,
+  "the two are the same predicate": true
+ },
  "events": {
   "events": 455,
   "orbit_sizes": [
@@ -255,6 +510,1344 @@
    "the direct sum before": false
   }
  ],
+ "extremal_fibers": [
+  {
+   "cross direction": [],
+   "functional": "maximum determinant",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    -1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    -1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    -1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    -1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    -1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    -1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    -1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    -1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    -1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    1
+   ],
+   "functional": "maximum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [],
+   "functional": "minimum determinant",
+   "selects": 12
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    -1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    -1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    -1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    -1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    -1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    -1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    -1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    -1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    -1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    1
+   ],
+   "functional": "minimum determinant",
+   "selects": 4
+  },
+  {
+   "cross direction": [],
+   "functional": "minimum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    -1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    -1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    -1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    -1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    -1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    -1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    -1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    -1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    -1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    1
+   ],
+   "functional": "minimum cross coupling",
+   "selects": 4
+  },
+  {
+   "cross direction": [],
+   "functional": "maximum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    -1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    -1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    -1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    -1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    -1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    -1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    -1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    -1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 2
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    -1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    1
+   ],
+   "functional": "maximum cross coupling",
+   "selects": 4
+  },
+  {
+   "cross direction": [],
+   "functional": "minimum two-sided price",
+   "selects": 31
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    -1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    -1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    -1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    -1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    -1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    -1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    -1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    -1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    -1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    1
+   ],
+   "functional": "minimum two-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [],
+   "functional": "minimum one-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    -1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 3
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    -1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 3
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    -1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    -1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 3
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    -1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 3
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    -1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    -1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    -1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    -1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    1
+   ],
+   "functional": "minimum one-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [],
+   "functional": "maximum one-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    -1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 3
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    -1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 3
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    -1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    -1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 3
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    -1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 3
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 1
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    -1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    -1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    -1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    -1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    1
+   ],
+   "functional": "maximum one-sided price",
+   "selects": 8
+  },
+  {
+   "cross direction": [],
+   "functional": "maximum realisable crossings",
+   "selects": 12
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    -1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    0,
+    1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    -1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    1,
+    1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    -1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    0,
+    2,
+    1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    -1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    0,
+    1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    -1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    1,
+    1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    -1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    1,
+    2,
+    1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    -1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    0,
+    1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    -1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    1,
+    1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    -1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  },
+  {
+   "cross direction": [
+    2,
+    2,
+    1
+   ],
+   "functional": "maximum realisable crossings",
+   "selects": 4
+  }
+ ],
  "families": {
   "from_template": [
    "T-ANCHOR-CONSUMED",
@@ -281,9 +1874,9 @@
   "roles": {
    "T-ANCHOR-CONSUMED": "one accessor, consumption verified, both sides, the content entering a predicate",
    "T-CLAIMS-EQUAL": "claims by equality, two-way, keyed by table, headers as rows, fences by multiset",
-   "T-FALSIFIER-POISONS": "every falsifier moves its named target by digest and dies at its declared gate",
+   "T-FALSIFIER-POISONS": "every falsifier's move proved by digest -- at the site in the delivery run where the site evaluates both branches, and by the --selftest sweep for the rest, which also runs every recipe and requires it to die at its declared gate",
    "T-NO-TYPED-COUNTS": "every published numeral arrives by name from the measured registry; an AST leg audits the source",
-   "T-READ-SET": "reads recorded at the accessor and gated after the last gate, order-insensitively",
+   "T-READ-SET": "reads recorded at the accessor, classified rather than filtered, and gated after the last gate and again after the artifacts are written, order-insensitively",
    "T-REFERENT-BOUND": "per-occurrence referent binding over prose only, pairs rather than membership",
    "T-SEAL-PROMOTION": "seals taken at gate time, verified at promotion, totality recomputed at the door",
    "T-TRANSCRIPT-BOUND": "the promoted transcript parsed back and reconciled with the ledger as a multiset",
@@ -812,6 +2405,22 @@
    ]
   }
  ],
+ "form_summary": {
+  "crossings": 108,
+  "form_alive": 162,
+  "frozen": 27,
+  "successor_at_every_seam": 275
+ },
+ "fourth_by_site": [
+  {
+   "readings": 312,
+   "the base site of the reading": "a chart-private site"
+  },
+  {
+   "readings": 156,
+   "the base site of the reading": "a shared (seam) site"
+  }
+ ],
  "fourth_direction": [
   {
    "counts": [
@@ -854,6 +2463,12 @@
    "realised": 1
   }
  ],
+ "fourth_summary": {
+  "agreements": 0,
+  "at a chart-private site": 312,
+  "at a shared (seam) site": 156,
+  "readings": 468
+ },
  "incidence_census": [
   {
    "count_leg": "NON-NEGATIVE",
@@ -2017,6 +3632,16 @@
   },
   "cells": 16,
   "events": 455,
+  "parent_sentence": {
+   "lawful": 216,
+   "spanning": 288
+  },
+  "refused_by_rule": {
+   "ALL-NEW": 0,
+   "CROSS-ONLY": 185,
+   "NONE": 401,
+   "WITHIN-ONLY": 288
+  },
   "spanning_alive_by_rule": {
    "ALL-NEW": 288,
    "CROSS-ONLY": 216,
@@ -2026,72 +3651,106 @@
  },
  "inventory_census": [
   {
-   "events": 18,
-   "free_items": 2,
+   "events": 54,
+   "free_items": [
+    2,
+    3
+   ],
    "inventory": [
     54,
-    3,
-    1
+    [
+     3
+    ],
+    [
+     1,
+     2
+    ]
    ],
    "maps": 62208,
    "profile": [
     0,
     0,
     3
+   ]
+  },
+  {
+   "events": 16,
+   "free_items": [
+    3
+   ],
+   "inventory": [
+    12,
+    [
+     3,
+     6
+    ],
+    [
+     2
+    ]
+   ],
+   "maps": 20736,
+   "profile": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "events": 3,
+   "free_items": [
+    3
+   ],
+   "inventory": [
+    12,
+    [
+     3
+    ],
+    [
+     2
+    ]
+   ],
+   "maps": 20736,
+   "profile": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "events": 17,
+   "free_items": [
+    3
+   ],
+   "inventory": [
+    12,
+    [
+     6
+    ],
+    [
+     2
+    ]
+   ],
+   "maps": 20736,
+   "profile": [
+    0,
+    1,
+    2
    ]
   },
   {
    "events": 36,
-   "free_items": 3,
-   "inventory": [
-    54,
-    3,
-    2
-   ],
-   "maps": 62208,
-   "profile": [
-    0,
-    0,
+   "free_items": [
     3
-   ]
-  },
-  {
-   "events": 6,
-   "free_items": 3,
-   "inventory": [
-    12,
-    3,
-    2
    ],
-   "maps": 20736,
-   "profile": [
-    0,
-    1,
-    2
-   ]
-  },
-  {
-   "events": 30,
-   "free_items": 3,
-   "inventory": [
-    12,
-    6,
-    2
-   ],
-   "maps": 20736,
-   "profile": [
-    0,
-    1,
-    2
-   ]
-  },
-  {
-   "events": 12,
-   "free_items": 3,
    "inventory": [
     3,
-    3,
-    2
+    [
+     3,
+     6
+    ],
+    [
+     2
+    ]
    ],
    "maps": 5184,
    "profile": [
@@ -2101,12 +3760,18 @@
    ]
   },
   {
-   "events": 60,
-   "free_items": 3,
+   "events": 36,
+   "free_items": [
+    3
+   ],
    "inventory": [
     3,
-    6,
-    2
+    [
+     6
+    ],
+    [
+     2
+    ]
    ],
    "maps": 5184,
    "profile": [
@@ -2117,11 +3782,17 @@
   },
   {
    "events": 4,
-   "free_items": 0,
+   "free_items": [
+    0
+   ],
    "inventory": [
     1,
-    1,
-    1
+    [
+     1
+    ],
+    [
+     1
+    ]
    ],
    "maps": 15552,
    "profile": [
@@ -2132,11 +3803,17 @@
   },
   {
    "events": 1,
-   "free_items": 0,
+   "free_items": [
+    0
+   ],
    "inventory": [
     1,
-    1,
-    1
+    [
+     1
+    ],
+    [
+     1
+    ]
    ],
    "maps": 62208,
    "profile": [
@@ -2147,11 +3824,17 @@
   },
   {
    "events": 108,
-   "free_items": 3,
+   "free_items": [
+    3
+   ],
    "inventory": [
     3,
-    9,
-    4
+    [
+     9
+    ],
+    [
+     4
+    ]
    ],
    "maps": 1728,
    "profile": [
@@ -2162,11 +3845,17 @@
   },
   {
    "events": 108,
-   "free_items": 2,
+   "free_items": [
+    2
+   ],
    "inventory": [
     1,
-    3,
-    2
+    [
+     3
+    ],
+    [
+     2
+    ]
    ],
    "maps": 576,
    "profile": [
@@ -2177,11 +3866,17 @@
   },
   {
    "events": 72,
-   "free_items": 0,
+   "free_items": [
+    0
+   ],
    "inventory": [
     1,
-    1,
-    1
+    [
+     1
+    ],
+    [
+     1
+    ]
    ],
    "maps": 864,
    "profile": [
@@ -2189,6 +3884,1099 @@
     1,
     0
    ]
+  }
+ ],
+ "lattice_census": [
+  {
+   "completion": [
+    -1,
+    0,
+    0,
+    0
+   ],
+   "one-sided price": 22,
+   "realises": [
+    [
+     0,
+     0,
+     -1
+    ],
+    [
+     0,
+     2,
+     -1
+    ],
+    [
+     2,
+     0,
+     -1
+    ],
+    [
+     2,
+     2,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    -1,
+    0,
+    0,
+    1
+   ],
+   "one-sided price": 18,
+   "realises": [
+    [
+     0,
+     0,
+     -1
+    ],
+    [
+     0,
+     2,
+     -1
+    ],
+    [
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     2,
+     1
+    ],
+    [
+     2,
+     0,
+     -1
+    ],
+    [
+     2,
+     1,
+     1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    -1,
+    0,
+    1,
+    -1
+   ],
+   "one-sided price": 22,
+   "realises": [
+    [
+     0,
+     0,
+     -1
+    ],
+    [
+     0,
+     2,
+     -1
+    ],
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     -1
+    ],
+    [
+     2,
+     1,
+     -1
+    ],
+    [
+     2,
+     2,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    -1,
+    0,
+    1,
+    0
+   ],
+   "one-sided price": 18,
+   "realises": [
+    [
+     0,
+     0,
+     -1
+    ],
+    [
+     0,
+     2,
+     -1
+    ],
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    -1,
+    1,
+    0,
+    -1
+   ],
+   "one-sided price": 22,
+   "realises": [
+    [
+     0,
+     0,
+     -1
+    ],
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     -1
+    ],
+    [
+     1,
+     2,
+     -1
+    ],
+    [
+     2,
+     0,
+     -1
+    ],
+    [
+     2,
+     2,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    -1,
+    1,
+    0,
+    0
+   ],
+   "one-sided price": 18,
+   "realises": [
+    [
+     0,
+     0,
+     -1
+    ],
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     2,
+     0,
+     -1
+    ],
+    [
+     2,
+     1,
+     1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    -1,
+    1,
+    1,
+    -1
+   ],
+   "one-sided price": 18,
+   "realises": [
+    [
+     0,
+     0,
+     -1
+    ],
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    -1,
+    1,
+    1,
+    0
+   ],
+   "one-sided price": 14,
+   "realises": [
+    [
+     0,
+     0,
+     -1
+    ],
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     1
+    ],
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     2,
+     2,
+     1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    -1,
+    -1,
+    1
+   ],
+   "one-sided price": 22,
+   "realises": [
+    [
+     0,
+     1,
+     -1
+    ],
+    [
+     0,
+     2,
+     -1
+    ],
+    [
+     1,
+     0,
+     -1
+    ],
+    [
+     1,
+     1,
+     1
+    ],
+    [
+     2,
+     0,
+     -1
+    ],
+    [
+     2,
+     2,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    -1,
+    0,
+    0
+   ],
+   "one-sided price": 22,
+   "realises": [
+    [
+     0,
+     1,
+     -1
+    ],
+    [
+     0,
+     2,
+     -1
+    ],
+    [
+     2,
+     1,
+     -1
+    ],
+    [
+     2,
+     2,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    -1,
+    0,
+    1
+   ],
+   "one-sided price": 18,
+   "realises": [
+    [
+     0,
+     1,
+     -1
+    ],
+    [
+     0,
+     2,
+     -1
+    ],
+    [
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    -1,
+    1,
+    0
+   ],
+   "one-sided price": 18,
+   "realises": [
+    [
+     0,
+     1,
+     -1
+    ],
+    [
+     0,
+     2,
+     -1
+    ],
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     1
+    ],
+    [
+     2,
+     0,
+     1
+    ],
+    [
+     2,
+     1,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    0,
+    -1,
+    0
+   ],
+   "one-sided price": 22,
+   "realises": [
+    [
+     1,
+     0,
+     -1
+    ],
+    [
+     1,
+     2,
+     -1
+    ],
+    [
+     2,
+     0,
+     -1
+    ],
+    [
+     2,
+     2,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    0,
+    -1,
+    1
+   ],
+   "one-sided price": 18,
+   "realises": [
+    [
+     1,
+     0,
+     -1
+    ],
+    [
+     1,
+     1,
+     1
+    ],
+    [
+     2,
+     0,
+     -1
+    ],
+    [
+     2,
+     1,
+     1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    0,
+    0,
+    -1
+   ],
+   "one-sided price": 22,
+   "realises": [
+    [
+     1,
+     1,
+     -1
+    ],
+    [
+     1,
+     2,
+     -1
+    ],
+    [
+     2,
+     1,
+     -1
+    ],
+    [
+     2,
+     2,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "one-sided price": 18,
+   "realises": [],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "one-sided price": 14,
+   "realises": [
+    [
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     2,
+     1
+    ],
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     2,
+     2,
+     1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    0,
+    1,
+    -1
+   ],
+   "one-sided price": 18,
+   "realises": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     -1
+    ],
+    [
+     2,
+     0,
+     1
+    ],
+    [
+     2,
+     1,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "one-sided price": 14,
+   "realises": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     1
+    ],
+    [
+     2,
+     0,
+     1
+    ],
+    [
+     2,
+     2,
+     1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    1,
+    -1,
+    0
+   ],
+   "one-sided price": 18,
+   "realises": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     1,
+     0,
+     -1
+    ],
+    [
+     1,
+     2,
+     -1
+    ],
+    [
+     2,
+     0,
+     -1
+    ],
+    [
+     2,
+     1,
+     1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    1,
+    0,
+    -1
+   ],
+   "one-sided price": 18,
+   "realises": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     1,
+     1,
+     -1
+    ],
+    [
+     1,
+     2,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    1,
+    0,
+    0
+   ],
+   "one-sided price": 14,
+   "realises": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     2,
+     2,
+     1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    0,
+    1,
+    1,
+    -1
+   ],
+   "one-sided price": 14,
+   "realises": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     -1
+    ],
+    [
+     2,
+     0,
+     1
+    ],
+    [
+     2,
+     2,
+     1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    1,
+    -1,
+    -1,
+    0
+   ],
+   "one-sided price": 22,
+   "realises": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     -1
+    ],
+    [
+     1,
+     0,
+     -1
+    ],
+    [
+     1,
+     2,
+     -1
+    ],
+    [
+     2,
+     1,
+     -1
+    ],
+    [
+     2,
+     2,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    1,
+    -1,
+    -1,
+    1
+   ],
+   "one-sided price": 18,
+   "realises": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     -1
+    ],
+    [
+     1,
+     0,
+     -1
+    ],
+    [
+     1,
+     1,
+     1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    1,
+    -1,
+    0,
+    0
+   ],
+   "one-sided price": 18,
+   "realises": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     -1
+    ],
+    [
+     2,
+     0,
+     1
+    ],
+    [
+     2,
+     1,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    1,
+    -1,
+    0,
+    1
+   ],
+   "one-sided price": 14,
+   "realises": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     -1
+    ],
+    [
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     2,
+     1
+    ],
+    [
+     2,
+     0,
+     1
+    ],
+    [
+     2,
+     2,
+     1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    1,
+    0,
+    -1,
+    0
+   ],
+   "one-sided price": 18,
+   "realises": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     1,
+     0,
+     -1
+    ],
+    [
+     1,
+     2,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    1,
+    0,
+    -1,
+    1
+   ],
+   "one-sided price": 14,
+   "realises": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     1,
+     0,
+     -1
+    ],
+    [
+     1,
+     1,
+     1
+    ],
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     2,
+     2,
+     1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    1,
+    0,
+    0,
+    -1
+   ],
+   "one-sided price": 18,
+   "realises": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     1,
+     1,
+     -1
+    ],
+    [
+     1,
+     2,
+     -1
+    ],
+    [
+     2,
+     0,
+     1
+    ],
+    [
+     2,
+     1,
+     -1
+    ]
+   ],
+   "two-sided price": 36
+  },
+  {
+   "completion": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "one-sided price": 14,
+   "realises": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     2,
+     0,
+     1
+    ],
+    [
+     2,
+     2,
+     1
+    ]
+   ],
+   "two-sided price": 36
   }
  ],
  "ledger": [
@@ -2248,10 +5036,11 @@
     ]
    },
    "gate": "G-SOURCES",
-   "passed": true
+   "passed": true,
+   "statement": "6 sources are read at run time and every one authenticates against the sha256-12 this unit's own frozen text declares; the path and the value are anchored together, so a path drift that changed the arena would die here"
   },
   {
-   "chain": "84df31755ef030e5",
+   "chain": "fd952c7df7ef2c18",
    "evidence": {
     "anchors": [
      {
@@ -2277,6 +5066,28 @@
       "source": "A-PIN"
      },
      {
+      "anchor": "N-PIN-BREAK",
+      "chars": 72,
+      "consumer": "G-OUTCOME-FEASIBILITY",
+      "floor_ok": true,
+      "hits": 1,
+      "mode": "PARSED",
+      "ok": true,
+      "paper_hits": 0,
+      "source": "A-PIN"
+     },
+     {
+      "anchor": "N-PIN-BOTHWAYS",
+      "chars": 57,
+      "consumer": "G-OUTCOME-FEASIBILITY",
+      "floor_ok": true,
+      "hits": 1,
+      "mode": "PARSED",
+      "ok": true,
+      "paper_hits": 0,
+      "source": "A-PIN"
+     },
+     {
       "anchor": "N-SEC2-WALL",
       "chars": 123,
       "consumer": "G-INCIDENCE-CENSUS",
@@ -2290,6 +5101,17 @@
      {
       "anchor": "N-SEC2-MOTIVATED",
       "chars": 119,
+      "consumer": "G-MOTIVATED-DISJOINT",
+      "floor_ok": true,
+      "hits": 1,
+      "mode": "QUOTED",
+      "ok": true,
+      "paper_hits": 1,
+      "source": "A-SEC2"
+     },
+     {
+      "anchor": "N-SEC2-MECHANISM",
+      "chars": 409,
       "consumer": "G-MOTIVATED-DISJOINT",
       "floor_ok": true,
       "hits": 1,
@@ -2357,10 +5179,11 @@
     "floor": 40
    },
    "gate": "G-ANCHORS",
-   "passed": true
+   "passed": true,
+   "statement": "12 verbatim anchors are each located exactly once in their own pinned source under the whitespace-and-markdown normaliser and cleared against a character floor; the ones the paper quotes are located on the paper's side as well, so a quotation may not be inverted around a preserved window"
   },
   {
-   "chain": "307d497f24f5993f",
+   "chain": "5ec8ac9242b264e4",
    "evidence": {
     "implemented": [
      "T-ANCHOR-CONSUMED",
@@ -2386,10 +5209,11 @@
     ]
    },
    "gate": "G-TEMPLATE-CONFORMANCE",
-   "passed": true
+   "passed": true,
+   "statement": "the 9 template family mechanisms are implemented natively in this instrument under the template's own check ids, and the id set is not declared here but parsed out of the pinned era template's bytes: a family carried in name and not in mechanism, or a family the template declares and this unit omits, fails against the source"
   },
   {
-   "chain": "fd06f2177de251f5",
+   "chain": "dcc27e8dd3ec97a5",
    "evidence": {
     "aut": 62208,
     "carriers": 15,
@@ -2404,29 +5228,152 @@
     "search_complete": true
    },
    "gate": "G-ARENA",
-   "passed": true
+   "passed": true,
+   "statement": "the committed two-sector corpus is rebuilt from AG(2,3): 9 points in 4 parallel classes of which 3 are declared, so one sector realises 27 pairs and the undeclared fourth class holds the remaining 9; the aligned gluing gives 15 carriers and 54 realised pairs, none of them doubled, and the automorphism group is enumerated exhaustively below the declared cap at order 62208 -- every one of these reproduces the parent's committed value by a route sharing no code with it"
   },
   {
-   "chain": "5716f586ad7956da",
+   "chain": "ff1bc76130564fc9",
    "evidence": {
+    "carriers_at_the_top_degree": 3,
+    "closed_form": 62208,
+    "enumerated": 62208,
+    "factors": {
+     "each chart's free parts": 72,
+     "the sector exchange": 2,
+     "the shared part": 6
+    },
+    "part_sizes": [
+     3,
+     3,
+     3
+    ],
+    "top_degree": 12
+   },
+   "gate": "G-AUT-CLOSED-FORM",
+   "passed": true,
+   "statement": "the union's relabelling group is not only enumerated but CONSTRUCTED, and the two routes agree. One chart's declared-pair graph is the complement of its fourth parallel class -- three disjoint triangles of 3 points each -- hence complete tripartite; the aligned union glues two of them along one whole part; the shared part is setwise fixed because its 3 carriers are the only ones of degree 12; each chart contributes 72 from permuting its two free parts and exchanging them; and the charts may trade places. The product is 62208, equal to the exhaustive count, and it makes the chart-preserving subgroup's INDEX a theorem rather than a measurement"
+  },
+  {
+   "chain": "ba6ee4cdb04d5b7f",
+   "evidence": {
+    "builtin_hash_calls": [],
     "canonical_key_invariant": true,
     "declared": [
-     "\"\\n\") if \"key=repr\" in ln})",
-     "actors = sorted(set(amap.values()) | set(bmap.values()), key=repr)",
-     "for k, v in sorted(form_rows.items(), key=repr)]})",
-     "for k, v in sorted(inv_rows.items(), key=repr)]})",
-     "gg = tuple(sorted(g, key=repr))",
-     "keep.discard(sorted(keep, key=repr)[0])",
-     "key=repr)],",
-     "key=repr)}, \"G-EVENTS\")"
+     [
+      "apply_rule",
+      "seen"
+     ],
+     [
+      "cell_signature",
+      "counter"
+     ],
+     [
+      "full_run",
+      "SUCCACHE"
+     ],
+     [
+      "full_run",
+      "bests"
+     ],
+     [
+      "full_run",
+      "death_rows"
+     ],
+     [
+      "full_run",
+      "fiber2"
+     ],
+     [
+      "full_run",
+      "form_rows"
+     ],
+     [
+      "full_run",
+      "inv_rows"
+     ],
+     [
+      "full_run",
+      "keep"
+     ],
+     [
+      "full_run",
+      "prof_rows"
+     ],
+     [
+      "full_run",
+      "seen"
+     ],
+     [
+      "full_run",
+      "topcarriers"
+     ],
+     [
+      "gluing_maps",
+      "set"
+     ]
+    ],
+    "sites": [
+     [
+      "apply_rule",
+      "seen"
+     ],
+     [
+      "cell_signature",
+      "counter"
+     ],
+     [
+      "full_run",
+      "SUCCACHE"
+     ],
+     [
+      "full_run",
+      "bests"
+     ],
+     [
+      "full_run",
+      "death_rows"
+     ],
+     [
+      "full_run",
+      "fiber2"
+     ],
+     [
+      "full_run",
+      "form_rows"
+     ],
+     [
+      "full_run",
+      "inv_rows"
+     ],
+     [
+      "full_run",
+      "keep"
+     ],
+     [
+      "full_run",
+      "prof_rows"
+     ],
+     [
+      "full_run",
+      "seen"
+     ],
+     [
+      "full_run",
+      "topcarriers"
+     ],
+     [
+      "gluing_maps",
+      "set"
+     ]
     ],
     "unsafe": []
    },
    "gate": "G-DETERMINISM",
-   "passed": true
+   "passed": true,
+   "statement": "no ordering in this unit is taken on the repr of an unordered container, which is the hash-seed dependent shape the corpus's own defect register names: every such ordering goes through a canonical key, and the 13 remaining bare-repr orderings are the declared ones over tuples. The leg is an AST walk over this file's own bytes and each site is named by the function that carries it and the container it orders, so a copy of a permitted line in a new place is a new site and fails here -- a line-text whitelist would not see it. The repr is one road to a seed-dependent order and the BUILTIN HASH is the other, carrying no token a repr scan could find, so every call to it is located the same way and there are 0: this unit needs it nowhere, and a sort key that reaches for it makes the receipt's own row order a property of the interpreter's session"
   },
   {
-   "chain": "66ea99a9893f421e",
+   "chain": "017a6cdf23decb5e",
    "evidence": {
     "baseline": {
      "EMBEDDING/NON-NEGATIVE": "ALIVE",
@@ -2434,13 +5381,15 @@
      "QUOTIENT/NON-NEGATIVE": "ALIVE",
      "QUOTIENT/POSITIVE": "ALIVE"
     },
+    "distinct_pre_states": 1,
     "legs_anchor": "N-P19-LEGS"
    },
    "gate": "G-BASELINE-LAWFUL",
-   "passed": true
+   "passed": true,
+   "statement": "the pre-state of every transition this unit runs is lawful: the delivered union welds onto the delivered geometry at all 4 cells of reading against count leg, under the legs read out of the weld paper's own bytes -- site the actor, link the co-division actor pair, count the division events on that pair. There is exactly ONE pre-state and this gate is where it is judged: every transition in the window starts from it, so 'at both ends of every transition' means this one lawful start and every event's own post-state, and it is said that way rather than as though the weld were evaluated twice per event"
   },
   {
-   "chain": "7396dc1b110c6dff",
+   "chain": "297b4f36e2d872de",
    "evidence": {
     "closed_form": 455,
     "events": 455,
@@ -2475,10 +5424,11 @@
     "spanning_second_route": 288
    },
    "gate": "G-EVENTS",
-   "passed": true
+   "passed": true,
+   "statement": "the event set is the arena's 455 three-actor conflict groups, matching the closed form, falling into 9 orbits whose sizes sum to it, of which 288 put a pair across the seam -- counted twice, once from the footprint and once from the actors' own charts"
   },
   {
-   "chain": "a0b32db75689bfcc",
+   "chain": "07eccc57740818fc",
    "evidence": {
     "axes": [
      {
@@ -2517,9 +5467,9 @@
      },
      {
       "axis": "STATE",
-      "delivered": "not posed",
+      "delivered": "both run; VERDICT-BEARING",
       "members": [
-       "FROZEN",
+       "PERSISTING",
        "RE-SOLVED"
       ]
      }
@@ -2538,29 +5488,36 @@
     ]
    },
    "gate": "G-WINDOW",
-   "passed": true
+   "passed": true,
+   "statement": "the update window is named before anything is measured: 5 axes, of which the first three give the 16 cells run at every event, and 9 things are named as outside it -- the pin's own question, read out of its bytes, is whether a crossing event creates the cross link and seam it needs, and a unit that moved an outside item would be answering another one"
   },
   {
-   "chain": "72982eaa2234478e",
+   "chain": "89d99db79a564306",
    "evidence": {
-    "disagreements": []
+    "disagreements": [],
+    "evaluations": 1820
    },
    "gate": "G-RULE-BLIND",
-   "passed": true
+   "passed": true,
+   "statement": "every rule's output is a function of the event's footprint SHAPE alone: at all 455 events each rule is recomputed from a footprint whose carriers have been replaced by opaque tokens -- so no name of the event survives into the rule -- and the result mapped back through the same substitution is what the rule returned on the named footprint, at 1820 evaluations. A rule reading a key the classification does not carry, and a rule keyed on a named carrier, both fail here"
   },
   {
-   "chain": "14225e757c6cc99e",
+   "chain": "8847982c54914c87",
    "evidence": {
+    "chart_mixing": 31104,
     "chart_preserving": 31104,
+    "checks": 489728,
     "disagreements": [],
     "full_group": 62208,
+    "index": 2,
     "sector_mixing_moves_cross_only": 0
    },
    "gate": "G-RULE-EQUIVARIANT",
-   "passed": true
+   "passed": true,
+   "statement": "and every rule commutes with the arena's own relabellings, at 489728 checks and neither axis sampled alone: every one of the 455 events against 64 of the 31104 automorphisms that keep each chart's actors in their own chart, AND 3 declared events against the WHOLE of that subgroup, all 31104 of it. The image of a rule's output is the rule's output on the image, so no rule can be special-casing an event. The chart-preserving maps are a subgroup of INDEX TWO -- the gate compares the whole group's order against twice theirs and requires the two classes to have equal size, so a miscounted partition fails here, and the closed form below proves the index rather than counting it -- so the chart-mixing relabellings are its single non-trivial coset, all 31104 of them, sampled at 64; under those the rules commute as well, at 0 exceptions: a crossing stays a crossing when the two sectors trade names. What this leg does NOT exclude is stated with it: a rule keyed on the repr-ordering of an event's own carriers is equivariant at this arena and blind to names, and it is the incidence census that separates such a rule from the delivered one, because it is a different rule and returns a different census"
   },
   {
-   "chain": "e6134350ba41a7c6",
+   "chain": "2059d6e77c70ec6f",
    "evidence": {
     "banned_terms": [
      "weld",
@@ -2574,15 +5531,17 @@
      "rule_none",
      "rule_cross_only",
      "rule_within_only",
-     "rule_all_new"
+     "rule_all_new",
+     "apply_rule"
     ],
     "peeking": []
    },
    "gate": "G-NO-POSTHOC",
-   "passed": true
+   "passed": true,
+   "statement": "and no rule can be post hoc: the 5 bodies that produce a rule's output -- the four rules and the dispatcher that calls them -- are read out of this file's own source and none of them mentions the weld, a fate, the successor state or the verdict, so no rule in this window can have been chosen after seeing whether it worked"
   },
   {
-   "chain": "f376435cbd74ffcd",
+   "chain": "9424c3816476118c",
    "evidence": {
     "alive_by_rule": {
      "ALL-NEW": 455,
@@ -2598,10 +5557,11 @@
     }
    },
    "gate": "G-CONTROL-ARMS",
-   "passed": true
+   "passed": true,
+   "statement": "both outcome words are reachable through this runner and neither is reachable by construction: with the geometry frozen the weld refuses every one of the 288 seam-spanning events and still admits 54 others, and with every new pair absorbed it admits all 455 -- the detector is neither a machine that kills what it is handed nor one that cannot"
   },
   {
-   "chain": "76fe4d12b61a0422",
+   "chain": "42241bfab11fdb47",
    "evidence": {
     "cross_only_spanning_alive": 216,
     "parent_sentence": {
@@ -2611,10 +5571,32 @@
     "rows": 7280
    },
    "gate": "G-INCIDENCE-CENSUS",
-   "passed": true
+   "passed": true,
+   "statement": "the census is exhaustive: 455 events against 16 window cells, every fate computed at the object; and the cross-only rule -- one law, fired on the footprint, no target declared anywhere -- leaves the weld alive at exactly the 216 of 288 seam-spanning events the parent reached only by declaring a target after the event, a number this gate reads out of the parent's own sentence rather than from its own"
   },
   {
-   "chain": "46989eddac4a79b8",
+   "chain": "329490965bd12d59",
+   "evidence": {
+    "alive_iff_equal_sampled": true,
+    "contained": 1820,
+    "copies": 12,
+    "distinct_results": 4,
+    "fates_that_occur": [
+     "ALIVE",
+     "STRUCT-DEAD"
+    ],
+    "field_minimum": [
+     1
+    ],
+    "transitions": 1820,
+    "window_cells": 16
+   },
+   "gate": "G-CONTAINMENT",
+   "passed": true,
+   "statement": "the incidence census is FORCED, and two of the window's axes are inert -- both measured, neither asserted. At every one of the 1820 transitions the geometry's incidence sits INSIDE the record's support, 1820 of 1820: the base cells are record pairs and every created cell is a pair the event has just deposited. Two graphs on the same carriers, one contained in the other, are isomorphic exactly when they are equal, so the weld is alive exactly when the rule creates every new pair the event opens -- checked against the isomorphism search itself. Two consequences follow and are measured: the quotient reading can succeed only where the embedding does, and the induced field carries the record's own counts, whose minimum is 1, so the count-dead fate cannot fire -- only 2 of the weld's fates ever occur. The window's cells therefore carry 4 distinct results, 12 of them being copies"
+  },
+  {
+   "chain": "9dae6d46a4320913",
    "evidence": {
     "cross_pairs": 36,
     "indexed": true,
@@ -2628,10 +5610,11 @@
     ]
    },
    "gate": "G-SEAM-INDEX",
-   "passed": true
+   "passed": true,
+   "statement": "every private actor of either sector is a neighbour of every one of the 3 shared actors, so each of the 36 cross pairs the arena can carry has a direction in every seam's own chart: the 18 cross directions each carry exactly 2 of the pairs, at every seam"
   },
   {
-   "chain": "9b47254d79aed63d",
+   "chain": "6161d85ea124a28d",
    "evidence": {
     "kernel": 4,
     "lattice": 31,
@@ -2646,12 +5629,17 @@
     "widened": 31
    },
    "gate": "G-COMPLETION-LATTICE",
-   "passed": true
+   "passed": true,
+   "statement": "the state this unit moves is the seam's cross block. Its system has rank 6 on the 10 entries of the symmetric square of the direct-sum chart, so the kernel is 4 -- taken on the coefficient matrix alone, with no right-hand side in it, and compared against the parent's own sentence rather than against a typed constant. At the all-simple seam the corpus's readout admits 31 completions, every one of them positive definite, and the enumeration box is measured not to bind: widened by one it returns the same set"
   },
   {
-   "chain": "7ffce07fb5323503",
+   "chain": "b30543993125b3a6",
    "evidence": {
     "agreements": 0,
+    "by_base_site": {
+     "a chart-private site": 312,
+     "a shared (seam) site": 156
+    },
     "readings": 468,
     "rows": [
      {
@@ -2697,10 +5685,11 @@
     ]
    },
    "gate": "G-FOURTH-DIRECTION",
-   "passed": true
+   "passed": true,
+   "statement": "a link inside a sector is a link of the fourth parallel class, and A SECTOR'S OWN FORM AT A SITE is fixed by that chart's three declared counts with nothing left over -- the restriction to one chart has kernel zero at EVERY site, shared or private, which is a different object from the two-chart form at a seam whose kernel is four. The count the sector's form forces on the fourth direction is read at both ends of every such cell the update creates, 468 readings in all -- 312 of them at chart-private sites and 156 at the shared ones -- and it agrees with the count the event deposits at 0 of them"
   },
   {
-   "chain": "a68acb3158bb4acb",
+   "chain": "4ee3220479d3563a",
    "evidence": {
     "crossings": 108,
     "form_alive": 162,
@@ -3229,42 +6218,102 @@
     ]
    },
    "gate": "G-FORM-CENSUS",
-   "passed": true
+   "passed": true,
+   "statement": "the form leg is then taken at every one of the 455 events, object by object and never by orbit -- the chart breaks the symmetry the relation does not -- and a successor state exists at all three seams for 275 of them; 162 survive the fourth direction as well, 108 of which put a pair across the seam; at 27 of those the state need not move at all"
   },
   {
-   "chain": "9ff0aaec07b91675",
+   "chain": "334f056be5b62c76",
+   "evidence": {
+    "events": 108,
+    "failing_seam_is_the_collinear_one": 108,
+    "rows": [
+     {
+      "at the failing seam, the two crossings fix": "the same cross entry, at opposite signs",
+      "events": 108,
+      "seams with a successor": 2
+     }
+    ]
+   },
+   "gate": "G-TWO-CROSSING-DEATH",
+   "passed": true,
+   "statement": "the 108 events that put TWO pairs across the seam die at the form and not at the incidence, and the reason is measured at every one of them rather than argued. Exactly one of the three seams has no successor, and at that seam the two crossings do not fix two entries of the cross block: they fix THE SAME ENTRY AT OPPOSITE SIGNS, 108 of 108. The doubled pair joins two actors of one sector, so they lie on a declared line; a declared line meets each fourth-class line once, so its third point is the one shared site collinear with them -- and that is the seam that fails, at 108 of 108. Seen from it the two actors sit at the same direction index and opposite signs, so their two equations add to a statement that the two seam counts sum to one, which positive counts cannot do"
+  },
+  {
+   "chain": "fbd92635f17598d2",
+   "evidence": {
+    "disagreements": 0,
+    "keys": 139
+   },
+   "gate": "G-SUCCESSOR-MEMO",
+   "passed": true,
+   "statement": "the successor census is memoised on the only thing it depends on -- the seam's two count vectors and the constraints its realised cross links impose -- and the memo is PROVED INERT rather than trusted: every one of the 139 distinct keys this run reached is recomputed from scratch with the memo bypassed, and the answers must agree completion for completion and in the same order, at 0 exceptions. Without it the second step could be run from one first crossing only, and a census taken at one representative of a single orbit is not a census"
+  },
+  {
+   "chain": "42d0ad039161cd00",
    "evidence": {
     "all_new": 162,
     "cross_only": 162,
-    "identical": true
+    "identical": true,
+    "the_two_arms_part_without_it": true,
+    "without_the_fourth_leg": {
+     "ALL-NEW": 275,
+     "CROSS-ONLY": 162
+    }
    },
    "gate": "G-RULE-FIBER",
-   "passed": true
+   "passed": true,
+   "statement": "and the window's creation axis collapses: at the complete standard the two rules that create anything admit the SAME 162 events -- the same SET and not the same count -- 108 of them crossings, each arm having its own form leg evaluated at its own post-geometry. What carries the collapse is measured and it is one leg: drop the fourth-direction refusal and the two part company at once, 162 against 275, so the create-everything rule's extra output is not indistinguishable from nothing -- it is entirely illegal"
   },
   {
-   "chain": "2ae53b3909407bc1",
+   "chain": "c4a417702dea2c25",
    "evidence": {
+    "absorbable_by_none": 81,
+    "absorbable_by_some_state": 27,
     "best": 9,
-    "best_state": [
+    "best_state_examples": [
      [
-      1,
-      -1,
-      0,
-      1
+      [
+       1,
+       -1,
+       0,
+       1
+      ],
+      [
+       1,
+       -1,
+       0,
+       1
+      ],
+      [
+       1,
+       -1,
+       0,
+       1
+      ]
      ],
      [
-      1,
-      -1,
-      0,
-      1
-     ],
-     [
-      1,
-      -1,
-      0,
-      1
+      [
+       1,
+       -1,
+       0,
+       1
+      ],
+      [
+       1,
+       -1,
+       0,
+       1
+      ],
+      [
+       1,
+       0,
+       -1,
+       1
+      ]
      ]
     ],
+    "best_states": 8,
+    "best_states_diagonal": 2,
     "coverage": [
      [
       0,
@@ -3303,10 +6352,11 @@
     "states": 29791
    },
    "gate": "G-PREPAREDNESS",
-   "passed": true
+   "passed": true,
+   "statement": "a state declared before the event is ready for only part of what can happen, and the census is taken over the whole state space and reported as a family rather than at a representative: over all 29791 states the arena admits, 8 states attain the maximum 9 -- of which 2 carry the same completion at all three seams and the others mix -- and 20100 states are ready for none. The shortfall is sharper than that ratio: of the 108 lawful crossings only 27 are absorbable by ANY state declared in advance, because the doubling the other 81 carry moves the seam's own counts out of the pre-event lattice, and the best states take 9 of those 27"
   },
   {
-   "chain": "68c95b12959ea85f",
+   "chain": "f8c5f023b94bd41e",
    "evidence": {
     "memoryless_allowed": 162,
     "multiplicities": [
@@ -3333,15 +6383,94 @@
     ]
    },
    "gate": "G-TRANSITION-RELATION",
-   "passed": true
+   "passed": true,
+   "statement": "what the update delivers is a TRANSITION RELATION and not an evolution law: over the 324 seam slots of the lawful crossings the successor set takes 2 distinct sizes and never once the size that would make it a map; the state carries three seams, so the WHOLE state's successor set runs from 256 to 512. And what a state restricts depends on whether it persists: read as re-solved at every event the successor set is a function of the post-record alone, so every state admits every one of the 162 lawful events and the state carries no memory; read as persisting unless the record forces it to move, 9691 of the 29791 states admit a crossing at all"
   },
   {
-   "chain": "9a16c11406106416",
+   "chain": "47a9d77b68bf0973",
    "evidence": {
+    "fiber": [
+     {
+      "first crossings": 3,
+      "of those, state kept": 1,
+      "still form-lawful": 25
+     },
+     {
+      "first crossings": 6,
+      "of those, state kept": 2,
+      "still form-lawful": 25
+     },
+     {
+      "first crossings": 24,
+      "of those, state kept": 0,
+      "still form-lawful": 26
+     },
+     {
+      "first crossings": 12,
+      "of those, state kept": 1,
+      "still form-lawful": 26
+     },
+     {
+      "first crossings": 24,
+      "of those, state kept": 0,
+      "still form-lawful": 27
+     },
+     {
+      "first crossings": 12,
+      "of those, state kept": 0,
+      "still form-lawful": 28
+     },
+     {
+      "first crossings": 6,
+      "of those, state kept": 1,
+      "still form-lawful": 41
+     },
+     {
+      "first crossings": 3,
+      "of those, state kept": 2,
+      "still form-lawful": 41
+     },
+     {
+      "first crossings": 12,
+      "of those, state kept": 0,
+      "still form-lawful": 43
+     },
+     {
+      "first crossings": 6,
+      "of those, state kept": 1,
+      "still form-lawful": 43
+     }
+    ],
     "first_event": [
      "('A', (0, 1))",
      "('B', (0, 1))",
      "('S', 0)"
+    ],
+    "matched_standard_fiber": [
+     [
+      25,
+      9
+     ],
+     [
+      26,
+      36
+     ],
+     [
+      27,
+      24
+     ],
+     [
+      28,
+      12
+     ],
+     [
+      37,
+      9
+     ],
+     [
+      39,
+      18
+     ]
     ],
     "second_step": [
      {
@@ -3399,82 +6528,122 @@
      4,
      8,
      8
-    ]
+    ],
+    "tie_break": "the canonical key order of this unit's own ordering discipline; the fiber is published"
    },
    "gate": "G-TWO-STEP",
-   "passed": true
+   "passed": true,
+   "statement": "the update iterates, and it remembers -- and the census is run from every one of the 108 lawful first crossings, not from one. From the post-state of a first crossing, at a successor named by a declared rule, the second event may still cross at between 25 and 43 of the events that could cross first at 288; the delivered row is the first crossing in this unit's canonical key order, a declared tie-break, and it lands at the fiber's MINIMUM 25, reached at 6 of the first crossings, with the state surviving at 2. The two steps are compared at ONE standard: the first step's whole predicate -- incidence, successor and the fourth direction -- re-applied at the second returns 25"
   },
   {
-   "chain": "cbbde7ba4a6b06ca",
+   "chain": "5d6b7c18901021d3",
    "evidence": {
+    "base_map_sweep": 32,
+    "factorisation_checked_at": 8,
+    "factorisation_disagreements": [],
+    "post_states_whose_fiber_moves": 106,
     "rows": [
      {
-      "events": 18,
-      "free_items": 2,
+      "events": 54,
+      "free_items": [
+       2,
+       3
+      ],
       "inventory": [
        54,
-       3,
-       1
+       [
+        3
+       ],
+       [
+        1,
+        2
+       ]
       ],
       "maps": 62208,
       "profile": [
        0,
        0,
        3
+      ]
+     },
+     {
+      "events": 16,
+      "free_items": [
+       3
+      ],
+      "inventory": [
+       12,
+       [
+        3,
+        6
+       ],
+       [
+        2
+       ]
+      ],
+      "maps": 20736,
+      "profile": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "events": 3,
+      "free_items": [
+       3
+      ],
+      "inventory": [
+       12,
+       [
+        3
+       ],
+       [
+        2
+       ]
+      ],
+      "maps": 20736,
+      "profile": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "events": 17,
+      "free_items": [
+       3
+      ],
+      "inventory": [
+       12,
+       [
+        6
+       ],
+       [
+        2
+       ]
+      ],
+      "maps": 20736,
+      "profile": [
+       0,
+       1,
+       2
       ]
      },
      {
       "events": 36,
-      "free_items": 3,
-      "inventory": [
-       54,
-       3,
-       2
-      ],
-      "maps": 62208,
-      "profile": [
-       0,
-       0,
+      "free_items": [
        3
-      ]
-     },
-     {
-      "events": 6,
-      "free_items": 3,
-      "inventory": [
-       12,
-       3,
-       2
       ],
-      "maps": 20736,
-      "profile": [
-       0,
-       1,
-       2
-      ]
-     },
-     {
-      "events": 30,
-      "free_items": 3,
-      "inventory": [
-       12,
-       6,
-       2
-      ],
-      "maps": 20736,
-      "profile": [
-       0,
-       1,
-       2
-      ]
-     },
-     {
-      "events": 12,
-      "free_items": 3,
       "inventory": [
        3,
-       3,
-       2
+       [
+        3,
+        6
+       ],
+       [
+        2
+       ]
       ],
       "maps": 5184,
       "profile": [
@@ -3484,12 +6653,18 @@
       ]
      },
      {
-      "events": 60,
-      "free_items": 3,
+      "events": 36,
+      "free_items": [
+       3
+      ],
       "inventory": [
        3,
-       6,
-       2
+       [
+        6
+       ],
+       [
+        2
+       ]
       ],
       "maps": 5184,
       "profile": [
@@ -3500,11 +6675,17 @@
      },
      {
       "events": 4,
-      "free_items": 0,
+      "free_items": [
+       0
+      ],
       "inventory": [
        1,
-       1,
-       1
+       [
+        1
+       ],
+       [
+        1
+       ]
       ],
       "maps": 15552,
       "profile": [
@@ -3515,11 +6696,17 @@
      },
      {
       "events": 1,
-      "free_items": 0,
+      "free_items": [
+       0
+      ],
       "inventory": [
        1,
-       1,
-       1
+       [
+        1
+       ],
+       [
+        1
+       ]
       ],
       "maps": 62208,
       "profile": [
@@ -3530,11 +6717,17 @@
      },
      {
       "events": 108,
-      "free_items": 3,
+      "free_items": [
+       3
+      ],
       "inventory": [
        3,
-       9,
-       4
+       [
+        9
+       ],
+       [
+        4
+       ]
       ],
       "maps": 1728,
       "profile": [
@@ -3545,11 +6738,17 @@
      },
      {
       "events": 108,
-      "free_items": 2,
+      "free_items": [
+       2
+      ],
       "inventory": [
        1,
-       3,
-       2
+       [
+        3
+       ],
+       [
+        2
+       ]
       ],
       "maps": 576,
       "profile": [
@@ -3560,11 +6759,17 @@
      },
      {
       "events": 72,
-      "free_items": 0,
+      "free_items": [
+       0
+      ],
       "inventory": [
        1,
-       1,
-       1
+       [
+        1
+       ],
+       [
+        1
+       ]
       ],
       "maps": 864,
       "profile": [
@@ -3575,34 +6780,50 @@
      }
     ],
     "union": {
+     "base_map_relative": false,
+     "bases": 32,
      "complete": true,
-     "free_items": 0,
+     "free_items": [
+      0
+     ],
      "inventory": [
       1,
-      1,
-      1
+      [
+       1
+      ],
+      [
+       1
+      ]
      ],
      "maps": 62208
     }
    },
    "gate": "G-INVENTORY",
-   "passed": true
+   "passed": true,
+   "statement": "the weld's forcing is measured at every one of the 455 post-states, not at a chosen few: the event-free union has 0 free items, and the two crossings the parent priced by hand reappear here at the fibers it published, from a route that enumerates the orbit of the record's own non-unit configuration rather than the maps. The parent's OWN CONTROL is restored here and it does not hold: the label and orient fibers are read at a declared sweep of 32 base maps rather than at one, and at 106 of the post-states they MOVE with the base map, so those rows are published as the sets the sweep returns and are base-map-relative readings. The rows that carry the verdict -- the ones with no free item -- are constant across the whole sweep"
   },
   {
-   "chain": "1738febf1be3f7d7",
+   "chain": "74be3b520fb89a6d",
    "evidence": {
+    "argued_half": "no doubling implies the weld is forced",
+    "enumerated_half": "the weld forced implies no doubling",
     "lawful": 162,
     "motivated": 77,
     "overlap": 0,
+    "parent_anchor": "N-SEC2-MECHANISM",
     "theorem_violations": []
    },
    "gate": "G-MOTIVATED-DISJOINT",
-   "passed": true
+   "passed": true,
+   "statement": "motivation and lawfulness are disjoint at this arena, and not as a tally: 77 of the events leave the weld with no free item and 162 are lawful at every leg, and no event is in both sets. THE CHAIN'S PROVENANCE, stated: the triangle step and the doubling-buys-the-free-items step are the PARENT'S, read here out of its own bytes, where they are already checked at the same objects. What this unit adds is the two-sided form -- the parent says no lawful event is motivated, this one measures both sets and their empty intersection -- and the closing link the parent does not have: the pair a doubling-free event must open inside a sector is the one cell the sector's own form refuses. Of the biconditional itself only one half is ARGUED -- with no doubled pair the induced count field is constant and no relabelling moves a constant field -- and the converse, which is the half the disjointness chain consumes, is ENUMERATED at every object here"
   },
   {
-   "chain": "e86f62ae4795d0d5",
+   "chain": "346b70c21ad14292",
    "evidence": {
     "distinct_laws": 1,
+    "objects_the_route_declares": [
+     "CROSS-ONLY"
+    ],
     "rows": [
      {
       "currency": "refutability: events the weld refuses",
@@ -3633,15 +6854,33 @@
       "the frozen geometry": 288,
       "the update": 1,
       "verdict": "BOUGHT"
+     },
+     {
+      "currency": "the rule fiber: lawful-event sets the rules produce",
+      "the frozen geometry": 4,
+      "the update": 1,
+      "verdict": "INERT"
      }
     ]
    },
    "gate": "G-PRICE",
-   "passed": true
+   "passed": true,
+   "statement": "the price is censused in six currencies, each read against the frozen geometry the parent left: the update refuses 293 events where the frozen geometry refuses 401; it costs the weld's forcing, 3 free items against 0; it narrows the seam from 31 completions to at most 8; the fourth-class cells it would create, 15 of them, the form refuses outright; where the parent's route declares one target per seam-spanning event, 288 of them, this one declares 1 object over the whole family -- the name of the rule it fires, evaluated at every event and the same one every time; and the choice inside the surviving class costs nothing, the two creating rules producing 1 lawful-event set between them. The last two rows are DIFFERENT quantities and are kept apart: what the route declares is not the fiber of the rule it declares"
   },
   {
-   "chain": "100c87c54f155309",
+   "chain": "9ce868cdd81caaba",
    "evidence": {
+    "at_every_cut": [],
+    "before_and_after": [
+     "minimum cross coupling"
+    ],
+    "before_or_after": [
+     "maximum cross coupling",
+     "maximum determinant",
+     "maximum one-sided price",
+     "minimum cross coupling",
+     "minimum one-sided price"
+    ],
     "cut_sizes": [
      8
     ],
@@ -3704,13 +6943,25 @@
       "selects before": 12,
       "the direct sum before": false
      }
-    ]
+    ],
+    "selects_uniquely_at_some_cut": [
+     "minimum cross coupling",
+     "maximum cross coupling",
+     "minimum one-sided price",
+     "maximum one-sided price"
+    ],
+    "selects_uniquely_before": [
+     "maximum determinant",
+     "minimum cross coupling"
+    ],
+    "the_two_counts_differ_at": 0
    },
    "gate": "G-EXTREMAL",
-   "passed": true
+   "passed": true,
+   "statement": "the derivation is attempted against 8 declared extremal functionals, before the event and after it. Every one of the arena's cross directions cuts the lattice to the same 8 completions. Maximum determinant is the one criterion the parent found selective, and the dynamics refutes it AT THE ONE PLACE THAT MATTERS, once and not twice: the completion it returns is the one state under which no crossing can be realised at all, 0 of them -- and 'realises this direction' and 'lies in this direction's cut' are the SAME predicate, so surviving 0 of the cuts is that same fact and not a second one, which is checked at every point of the lattice and differs at 0. On the post-event lattice the same criterion is 4-valued"
   },
   {
-   "chain": "80e7dfdf57f4f162",
+   "chain": "554e8408501971f7",
    "evidence": {
     "one_sided_matches": [
      [
@@ -3719,55 +6970,109 @@
       1
      ]
     ],
+    "opposite_sign_matches": [
+     [
+      2,
+      2,
+      -1
+     ]
+    ],
     "positive_definite": 31,
+    "reversed_matches": [
+     [
+      2,
+      2,
+      -1
+     ]
+    ],
     "two_sided_values": [
      36
     ]
    },
    "gate": "G-NOTHING-DERIVED",
-   "passed": true
+   "passed": true,
+   "statement": "and the corpus's own criteria still select nothing that the event does not already supply: positivity is carried by every one of the 31 completions, the convention-free price takes 1 value on the whole lattice, and the one-sided price -- the parent's other selective criterion -- is not an independent principle at all: its minimiser is exactly the cut of 1 of the arena's cross directions, which is to say it is the constraint one crossing imposes, wearing a criterion's clothes. And the reversal is BOUND rather than asserted: maximising the same price gives the cut of 1 direction and minimising over the opposite sign gives the cut of 1, and neither is the direction the delivered convention returns -- reverse the convention and you get another crossing's equation, not a principle"
   },
   {
-   "chain": "4b9cfefafc9d5181",
+   "chain": "51d362dd632cfdc2",
    "evidence": {
     "best": 9,
     "ready_for_none": 20100,
     "unique_successor_events": []
    },
    "gate": "G-OBSTRUCTION",
-   "passed": true
+   "passed": true,
+   "statement": "the obstruction is then a statement about the whole window and it is checked at every object in it. The datum the pin asks for is the seam's cross block: the incidence the event needs it creates, and the form it needs it cannot. Over every one of the 288 crossing events, at every seam, the successor state is either empty or many-valued and never once unique -- 0 exceptions -- so no crossing determines the geometry it leaves behind; and no state declared in advance covers the events, the best reaching 9 of the 108 absorbable ones while 20100 of the 29791 states reach none"
   },
   {
-   "chain": "a8a19c6184fd7a51",
+   "chain": "559c5ccdf10e6c49",
    "evidence": {
     "outcomes": [
      {
-      "outcome": "TARGET-FREE-EVENT-CONDITIONED-CREATION-EXISTS",
+      "head segment": "the window and the creation rule",
       "reached": true,
-      "the run's witness": 455,
-      "why it was reachable": "the create-everything rule makes the geometry's incidence the record's own support, so the weld cannot refuse"
+      "the other arm's witness": 0,
+      "the pin's stem": "CREAT",
+      "the predicate": "an event at which the rule CREATES a cross cell is lawful at every leg of the delivered standard",
+      "the run's witness": 108,
+      "the word not reached": "NO-TARGET-FREE-CREATION-RULE-EXISTS",
+      "the word reached": "TARGET-FREE-EVENT-CONDITIONED-CREATION-EXISTS",
+      "why the other arm was reachable": "the frozen arm of this run is that word's own witness: under the rule that creates nothing the same predicate returns none of the seam-spanning events"
      },
      {
-      "outcome": "BLOCKED-AT-THE-DECLARED-DATUM",
+      "head segment": "the transition relation and the datum",
       "reached": true,
-      "the run's witness": 288,
-      "why it was reachable": "with the geometry frozen the parent's wall stands and every seam-spanning event is refused"
+      "the other arm's witness": 4,
+      "the pin's stem": "DATUM",
+      "the predicate": "some lawful crossing leaves a UNIQUE successor state at every seam, so the event supplies the datum itself",
+      "the run's witness": 0,
+      "the word not reached": "THE-DATUM-IS-SUPPLIED-BY-AN-EVOLUTION-LAW",
+      "the word reached": "BLOCKED-AT-THE-DECLARED-DATUM",
+      "why the other arm was reachable": "the successor sets are counted at every seam slot and the smallest that occurs is one step from the size that would have reached the other word"
+     },
+     {
+      "head segment": "motivation and lawfulness",
+      "reached": true,
+      "the other arm's witness": 77,
+      "the pin's stem": "MOTIVAT",
+      "the predicate": "an event is both motivated and lawful at every leg",
+      "the run's witness": 0,
+      "the word not reached": "MOTIVATION-AND-LAWFULNESS-OVERLAP",
+      "the word reached": "MOTIVATION-AND-LAWFULNESS-ARE-DISJOINT",
+      "why the other arm was reachable": "both sets are non-empty at this arena and were censused over the same family, so an event in both was arithmetically available at every one of them"
+     },
+     {
+      "head segment": "the derivation attempt",
+      "reached": true,
+      "the other arm's witness": 2,
+      "the pin's stem": "PRINCIPLE",
+      "the predicate": "some declared functional selects a single completion before the event AND at every cut after it",
+      "the run's witness": 0,
+      "the word not reached": "A-SEAM-PRINCIPLE-IS-DERIVED",
+      "the word reached": "NO-SEAM-PRINCIPLE-DERIVED",
+      "why the other arm was reachable": "two of the family do select a single completion before the event, so the word turned on whether one of them survived the cuts rather than on whether any was selective"
      }
-    ]
+    ],
+    "pin_anchors": [
+     "N-PIN-BREAK",
+     "N-PIN-BOTHWAYS"
+    ],
+    "stem_violations": []
    },
    "gate": "G-OUTCOME-FEASIBILITY",
-   "passed": true
+   "passed": true,
+   "statement": "every one of the head's 4 segments carries a PRE-REGISTERED PAIR, not one segment and not a word without an alternative: the word reached, the word that would have been reached instead, the predicate that decides between them, and the witness THIS RUN produces for each arm. The words are not free text -- each is built on a stem of the pin's own bytes, 4 of them, and the stem is required of BOTH arms and located in the pinned source, so a word naming a result the pin did not pose fails here however the paper is regenerated. And the positive word of the first segment is certified by a predicate that contains a CREATION: the rule that creates nothing cannot satisfy it, and the run's own frozen arm is the other word's witness"
   },
   {
-   "chain": "101626170e4135ff",
+   "chain": "da297b1d25546ef4",
    "evidence": {
     "adjudication_anchor": "N-ADJ-SEAMCONFINED",
     "licensed_phrase_found": true,
     "paper_carries_the_struck_wording": false,
     "walls": [
      {
-      "controls": 5,
-      "controls_caught": 5,
+      "controls": 8,
+      "controls_caught": 8,
       "hits": [],
       "missing_positive": [],
       "ok": true,
@@ -3776,8 +7081,8 @@
       "wall": "WALL-DECLARATION"
      },
      {
-      "controls": 5,
-      "controls_caught": 5,
+      "controls": 7,
+      "controls_caught": 7,
       "hits": [],
       "missing_positive": [],
       "ok": true,
@@ -3786,8 +7091,8 @@
       "wall": "WALL-SEAMCONFINED"
      },
      {
-      "controls": 5,
-      "controls_caught": 5,
+      "controls": 8,
+      "controls_caught": 8,
       "hits": [],
       "missing_positive": [],
       "ok": true,
@@ -3796,8 +7101,8 @@
       "wall": "WALL-NO-METRICAL-READING"
      },
      {
-      "controls": 5,
-      "controls_caught": 5,
+      "controls": 7,
+      "controls_caught": 7,
       "hits": [],
       "missing_positive": [],
       "ok": true,
@@ -3806,8 +7111,8 @@
       "wall": "WALL-RECONSTRUCTION-NOT-DERIVATION"
      },
      {
-      "controls": 5,
-      "controls_caught": 5,
+      "controls": 7,
+      "controls_caught": 7,
       "hits": [],
       "missing_positive": [],
       "ok": true,
@@ -3816,22 +7121,53 @@
       "wall": "WALL-RELATION-NOT-LAW"
      },
      {
-      "controls": 5,
-      "controls_caught": 5,
+      "controls": 7,
+      "controls_caught": 7,
       "hits": [],
       "missing_positive": [],
       "ok": true,
       "self_licensing": [],
       "unlicensed": [],
       "wall": "WALL-COUNTING-ONLY"
+     },
+     {
+      "controls": 7,
+      "controls_caught": 7,
+      "hits": [],
+      "missing_positive": [],
+      "ok": true,
+      "self_licensing": [],
+      "unlicensed": [],
+      "wall": "WALL-INVARIANCE-NOT-GAUGE"
+     },
+     {
+      "controls": 7,
+      "controls_caught": 7,
+      "hits": [],
+      "missing_positive": [],
+      "ok": true,
+      "self_licensing": [],
+      "unlicensed": [],
+      "wall": "WALL-FAMILY-PREDICTION"
+     },
+     {
+      "controls": 7,
+      "controls_caught": 7,
+      "hits": [],
+      "missing_positive": [],
+      "ok": true,
+      "self_licensing": [],
+      "unlicensed": [],
+      "wall": "WALL-EVENT-CONDITIONED"
      }
     ]
    },
    "gate": "G-WALL-SEAMCONFINED",
-   "passed": true
+   "passed": true,
+   "statement": "the 9 walls scan the object under test rather than this instrument's own keys, they fail on empty text, and each requires the paper to carry its own standing sentence as well as to be free of the forms it bans. Each carries a LICENCE leg: a sentence making a policed KIND of claim is refused unless that same sentence carries a qualifier from a set sharing no word with the policed patterns, so a paraphrase is caught where a blacklist would pass it; the 65 controls are paraphrases written against the disease rather than copied from the pattern, and every one is caught. The parent adjudication's licensed finding is read out of its own bytes and required of this paper, and the wording it struck is required to be absent from it"
   },
   {
-   "chain": "a8c618860894744c",
+   "chain": "e690ea0436577000",
    "evidence": {
     "fence_mismatch": [],
     "ok": true,
@@ -3901,6 +7237,24 @@
       "matched": true,
       "missing": 0,
       "stray": 0,
+      "table": "TBL-TWOSTEP-FIBER"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-BEST"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
+      "table": "TBL-FOURTH-SITE"
+     },
+     {
+      "matched": true,
+      "missing": 0,
+      "stray": 0,
       "table": "TBL-EXTREMAL"
      },
      {
@@ -3931,27 +7285,30 @@
     "unrendered_tables": []
    },
    "gate": "G-PAPER-CLAIMS",
-   "passed": true
+   "passed": true,
+   "statement": "every one of the paper's 18 tables is a rendered claim of this receipt, header rows included, compared as a multiset in both directions and keyed by the table it was rendered into -- so a transplanted row is stray in one table and missing in another -- and the 8 verdict fences are matched by multiset at their declared multiplicity, so a ninth fence and a deleted verdict block both fail"
   },
   {
-   "chain": "26dd80584bb3bd29",
+   "chain": "c153c013588f421e",
    "evidence": {
     "exemptions": {
      "19": "the weld paper's number",
      "32": "the grandparent unit's paper number",
      "40": "the parent unit's paper number",
      "45": "this unit's own paper number",
-     "46": "the successor unit's paper number"
+     "46": "the successor unit's paper number",
+     "48": "the dynamics-closure unit's paper number"
     },
     "spelled_unbacked": [],
     "unbacked": [],
     "unused_exemptions": []
    },
    "gate": "G-PAPER-COVERAGE",
-   "passed": true
+   "passed": true,
+   "statement": "all 1028 numerals of the paper are scanned -- fenced blocks, inline code spans, table cells and sentence-final numerals included, with only the numbers that name a section stripped, since a heading number is not a claim -- and each is either a value this run measured or one of the declared exemptions, every one of which occurs; spelled numerals are generated rather than listed, so there is no floor and no whitelist"
   },
   {
-   "chain": "b3d9d61838a943ba",
+   "chain": "20742581763b77e9",
    "evidence": {
     "pairs": [
      "motivation and lawfulness are disjoint",
@@ -3963,12 +7320,17 @@
     "violations": []
    },
    "gate": "G-PAPER-POLARITY",
-   "passed": true
+   "passed": true,
+   "statement": "claim polarity is checked over the paper's own prose with the verdict fences stripped, so the run's own head cannot discharge a sentence: each of the head's direction words is paired with the sentence a false paper would carry, and none of them occurs"
   },
   {
-   "chain": "6220d4a850f5b8b4",
+   "chain": "e00e066b968032b0",
    "evidence": {
     "pairs": [
+     [
+      0,
+      8
+     ],
      [
       0,
       18
@@ -3986,8 +7348,28 @@
       18
      ],
      [
+      2,
+      8
+     ],
+     [
+      2,
+      8
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      6,
+      108
+     ],
+     [
       8,
       31
+     ],
+     [
+      8,
+      29791
      ],
      [
       9,
@@ -4002,8 +7384,12 @@
       108
      ],
      [
-      31,
-      31
+      43,
+      108
+     ],
+     [
+      54,
+      455
      ],
      [
       64,
@@ -4014,8 +7400,20 @@
       455
      ],
      [
+      81,
+      108
+     ],
+     [
+      106,
+      455
+     ],
+     [
       108,
       288
+     ],
+     [
+      156,
+      468
      ],
      [
       162,
@@ -4026,24 +7424,16 @@
       288
      ],
      [
-      288,
-      288
-     ],
-     [
       293,
       455
      ],
      [
+      312,
+      468
+     ],
+     [
       401,
       455
-     ],
-     [
-      455,
-      455
-     ],
-     [
-      468,
-      468
      ],
      [
       9691,
@@ -4054,13 +7444,38 @@
       29791
      ]
     ],
+    "reflexive_pairs": [],
     "violations": []
    },
    "gate": "G-PAPER-REFERENT",
-   "passed": true
+   "passed": true,
+   "statement": "referents are bound per occurrence and over prose only -- the verdict fences, the rendered tables and the headings are stripped first, so the run's own head cannot discharge the paper's obligations. Every fraction the prose states is resolved as a PAIR against the 29 pairs this run actually measured, in 5 declared universes: two numerals that are each true somewhere do not make a true relation, and a fraction reading a numerator from one census against a denominator from another fails here. And no pair is REFLEXIVE -- 0 of them -- so the form 'N of N' is licensed nowhere and refused everywhere: a totality is written as a totality, and a sentence rewritten to state its own denominator as its numerator has no pair to hide behind"
   },
   {
-   "chain": "c866c57a31827fdd",
+   "chain": "bec87ce52eb29e3d",
+   "evidence": {
+    "violations": [],
+    "words": [
+     "a few",
+     "a half",
+     "a majority",
+     "a minority",
+     "a quarter",
+     "a third",
+     "almost all",
+     "half",
+     "most",
+     "nearly all",
+     "three quarters",
+     "two thirds"
+    ]
+   },
+   "gate": "G-PAPER-FRACTION",
+   "passed": true,
+   "statement": "and a SPELLED proportion is a claim: the 12 spelled fractions and quantifiers this gate knows -- half, a third, two thirds, a quarter, three quarters, most, nearly all, a few, a minority, a majority, each also under the hedges a little under, a little over, just under and just over -- are located sentence by sentence in the prose. A hedged one is a proportion and nothing else, so it must sit beside a pair this run measured whose ratio the word justifies; a bare one is checked wherever its own sentence states a pair; and a SPELLED pair, three of the eight, is resolved against the same measured pairs the digit form is. A word carries no numeral, so the coverage, polarity and referent legs are all blind to it, and a proportion stated in words about an inherited headline number is exactly where that blindness costs most"
+  },
+  {
+   "chain": "84184cb59702eb42",
    "evidence": {
     "cross_check": {
      "crossings": 288,
@@ -4072,10 +7487,11 @@
     "first_difference": null
    },
    "gate": "G-VERDICT-RECON",
-   "passed": true
+   "passed": true,
+   "statement": "the head's 4 segments and all 41 of their numeral positions are rebuilt by a comparator that shares no function, no template and no literal with the builder, and reads NO SUMMARY SCALAR: it takes only the receipt's primitive tables -- the fate census cell by cell, the form census by profile, the inventory census, the preparedness histogram, the completion lattice point by point, the extremal family's fiber per functional and per cross direction, the fourth direction by base site -- joins them on the event profile, and re-derives every number by its own arithmetic before typing the segments itself. The state space is summed out of the histogram, the cut counted out of the lattice, the determinant's post-event fiber maximised out of the fiber table. The two strings are compared whole, in both directions"
   },
   {
-   "chain": "f68b2851eb77c158",
+   "chain": "4eadcff47e59026b",
    "evidence": {
     "read_by": {
      "N-ADJ-SEAMCONFINED": [
@@ -4083,6 +7499,12 @@
      ],
      "N-P19-LEGS": [
       "G-BASELINE-LAWFUL"
+     ],
+     "N-PIN-BOTHWAYS": [
+      "G-OUTCOME-FEASIBILITY"
+     ],
+     "N-PIN-BREAK": [
+      "G-OUTCOME-FEASIBILITY"
      ],
      "N-PIN-OBSTRUCTION": [
       "G-OBSTRUCTION"
@@ -4095,6 +7517,9 @@
      ],
      "N-SEC2-DET": [
       "G-EXTREMAL"
+     ],
+     "N-SEC2-MECHANISM": [
+      "G-MOTIVATED-DISJOINT"
      ],
      "N-SEC2-MOTIVATED": [
       "G-MOTIVATED-DISJOINT"
@@ -4109,30 +7534,64 @@
     "violations": []
    },
    "gate": "G-ANCHOR-CONSUMPTION",
-   "passed": true
+   "passed": true,
+   "statement": "anchor text is readable only through one accessor, which records the gate that read it: 12 of the declared anchors were actually read, every declared consumer is a gate that ran, and each consuming gate takes an operand out of the anchor's own bytes or the paper quotes it verbatim -- a consumer naming a gate this run does not emit fails here"
   },
   {
-   "chain": "1fabc7954c164df9",
+   "chain": "75f499b98d4895ee",
    "evidence": {
-    "falsifiers": 44,
+    "carried_but_never_consumed": [],
+    "declared": [
+     "sec2.aligned_after_crossing",
+     "sec2.aligned_lattice",
+     "sec2.b_seeded.free",
+     "sec2.b_seeded.maps",
+     "sec2.cross_directions",
+     "sec2.declaration_price_per_seam",
+     "sec2.groups",
+     "sec2.lawful_at_matched",
+     "sec2.orbits",
+     "sec2.seam_spanning",
+     "sec2.shared_seeded.free",
+     "sec2.shared_seeded.maps",
+     "sec2.union.aut",
+     "sec2.union.carriers",
+     "sec2.union.pairs",
+     "sec2.union_no_crossing.free",
+     "sec2.union_no_crossing.maps"
+    ]
+   },
+   "gate": "G-DECLARED-CONSUMED",
+   "passed": true,
+   "statement": "and every one of the 17 values this unit declares from its parents is consumed by a gate condition rather than carried: the source is read and each declared key must appear in a predicate somewhere in it, so a value that is inherited, published and never bound fails here"
+  },
+  {
+   "chain": "6807653a9e938b73",
+   "evidence": {
+    "falsifiers": 60,
+    "moves_not_proved": [],
     "sentinels": [],
     "violations": []
    },
    "gate": "G-FALSIFIER-HONESTY",
-   "passed": true
+   "passed": true,
+   "statement": "every declared falsifier has an injection site in this file, names a gate this run emits, and carries the measured object it corrupts; the source is scanned for the sentinel shape -- a recipe whose whole body assigns a bare boolean -- of which it finds 0; and the MOVE the template asks to be proved by digest is proved here for the 24 recipes whose site evaluates both branches, 24 of them, by digesting the clean value and the corrupted one at the site and requiring them to differ. The remaining recipes' moves and every recipe's DEATH are proved by the --selftest sweep, which runs each one and requires it to refuse at its own gate; that sweep is not claimed of this run"
   },
   {
-   "chain": "2d8bff4d10965942",
+   "chain": "475770088cbba6d9",
    "evidence": {
+    "gates": 49,
+    "recipes": 60,
     "uncovered": [],
     "waived_and_covered": [],
     "waivers": {}
    },
    "gate": "G-COVERAGE",
-   "passed": true
+   "passed": true,
+   "statement": "coverage is taken inside its own denominator: all 49 gates this run declares -- those already fired, this one, and the ones declared to fire after it -- are either falsified by one of the 60 declared recipes, each dying at its own named gate, or waived with a forcing the run checks rather than describes. The two counts are NOT one number and are not printed as one: there are 60 recipes at 49 gates, 11 of the recipes being second and third ones at a gate that deserves more than a single attack"
   },
   {
-   "chain": "9e67f28219f8f12b",
+   "chain": "5b066557d057f016",
    "evidence": {
     "exemptions": {
      "AG(2,3)": "the affine plane's own name, not a count",
@@ -4142,55 +7601,78 @@
     "unused_exemptions": []
    },
    "gate": "G-NO-TYPED-COUNTS",
-   "passed": true
+   "passed": true,
+   "statement": "no numeral is typed anywhere this unit vouches: the prohibition is taken on the SOURCE by an AST leg, over every statement template and every statement typed straight into a gate, and it covers the two subspecies the template's successor registered -- a percent-format template and an integer offset applied inside a statement"
   },
   {
-   "chain": "c16f2acef1200e98",
+   "chain": "d0fcbfac8b52625a",
    "evidence": {
-    "declared_never_read": [],
-    "distinct_paths": 8,
-    "stray": [],
-    "total_reads": 11,
-    "unused_exemptions": []
-   },
-   "gate": "G-READ-SET",
-   "passed": true
-  },
-  {
-   "chain": "3f6b2cb412b59bfc",
-   "evidence": {
-    "payload_keys": 37,
+    "payload_keys": 45,
     "phase": "at the last gate",
-    "sealed": 29,
+    "sealed": 39,
     "stray": [],
     "unsealed": 11,
     "violations": []
    },
    "gate": "G-SEAL-TOTAL",
-   "passed": true
+   "passed": true,
+   "statement": "the seal manifest is total and totality is recomputed here, at the door, from the payload's live key set rather than from a snapshot taken when a gate fired: every published key is either sealed at the gate that vouched it -- with its gate-time digest still matching the value that would be promoted -- or declared unsealed with a reason, and no key is in both dictionaries"
   },
   {
-   "chain": "e27546d0bc02f521",
+   "chain": "b2ddeb7a6885b8f6",
    "evidence": {
-    "chain": "3f6b2cb412b59bfc",
-    "ledger_rows": 40,
-    "parsed_rows": 40
+    "chain": "d0fcbfac8b52625a",
+    "ledger_rows": 45,
+    "parsed_rows": 45
    },
    "gate": "G-TRANSCRIPT-BOUND",
-   "passed": true
+   "passed": true,
+   "statement": "the transcript is parsed back out of the text that will be promoted and reconciled with the ledger as a multiset, evidence chain included and in both directions, so a forged verdict word, an invented row and a dropped row all move the comparison; and the ledger's own chain is recomputed from its rows"
   },
   {
-   "chain": "cf185ea0e3310ef7",
+   "chain": "f23b75d9220fef02",
    "evidence": {
-    "payload_keys": 37,
+    "bound_lines": 31,
+    "undeclared_lines": [],
+    "violations": []
+   },
+   "gate": "G-TRANSCRIPT-NARRATIVE",
+   "passed": true,
+   "statement": "and the transcript's NARRATIVE is bound too, not only its gate rows: every value-bearing line of it -- 31 lines carrying 90 numerals -- is declared with the receipt path each numeral is drawn from, the promoted text is re-parsed here, and each numeral must equal the value re-resolved from the payload at the door. No other non-gate line of the transcript may carry a numeral at all outside the declared decoration, so a forged format argument in a census printer -- a line a reader opens before anything else -- fails here"
+  },
+  {
+   "chain": "a75281e9a07ac919",
+   "evidence": {
+    "declared_never_read": [],
+    "distinct_paths": 8,
+    "external": [],
+    "external_reads": 0,
+    "optional_paths": [
+     "v15/code/autoglue_output.txt",
+     "v15/code/autoglue_output.txt.tmp",
+     "v15/code/autoglue_receipt.json",
+     "v15/code/autoglue_receipt.json.tmp"
+    ],
+    "stray": [],
+    "total_reads": 12
+   },
+   "gate": "G-READ-SET",
+   "passed": true,
+   "statement": "the read set is recorded at the process's own I/O accessor rather than in a helper, so a raw open anywhere is seen, and every path is CLASSIFIED rather than filtered -- a read outside the repository lands in its own bucket, which must be empty, instead of vanishing. It is compared here against the declared set, 8 distinct paths, and compared AGAIN after the artifacts are written and read back, so the tail of the run is inside the window and not outside it: a stray read fails wherever it is planted, including in this door"
+  },
+  {
+   "chain": "b99c43f0c5c93d05",
+   "evidence": {
+    "payload_keys": 45,
     "phase": "at promotion",
-    "sealed": 29,
+    "sealed": 39,
     "stray": [],
     "unsealed": 11,
     "violations": []
    },
    "gate": "G-INTEGRITY",
-   "passed": true
+   "passed": true,
+   "statement": "and the seals are verified a second time against the objects that will actually be written -- then the payload is FROZEN and serialised, and the seals are verified a third time against the parsed bytes themselves, so the object vouched is the object promoted and the window between the last gate and the serialisation is shut: the artifacts are written to a temporary, read back, compared byte for byte, replaced, and read back again from the promoted path, with the temporary removed on every exit that is not a promotion"
   }
  ],
  "measured": {
@@ -4199,72 +7681,121 @@
   "free_lawful": 3,
   "free_union": 0,
   "kernel": 4,
+  "n_absorbable": 27,
   "n_actors": 15,
   "n_alive_all": 455,
   "n_alive_cross": 270,
   "n_alive_none": 54,
-  "n_anchors": 9,
+  "n_anchors": 12,
   "n_aut": 62208,
   "n_axes": 5,
   "n_base_cells": 4,
+  "n_basesweep": 32,
   "n_best": 9,
+  "n_bestdiag": 2,
+  "n_beststates": 8,
+  "n_blind_checks": 1820,
   "n_cells": 16,
+  "n_chart_factor": 72,
   "n_chartfree": 0,
   "n_chartperms": 31104,
   "n_classes": 4,
-  "n_consumed": 9,
-  "n_controls": 30,
+  "n_closed_form": 62208,
+  "n_collinear": 108,
+  "n_consumed": 12,
+  "n_contained": 1820,
+  "n_controls": 65,
   "n_crossings": 288,
   "n_crosspairs": 36,
   "n_cut": 8,
   "n_declared": 3,
+  "n_declared_values": 17,
+  "n_deep_events": 3,
   "n_det_after": 4,
   "n_doubled": 0,
   "n_ds_cut": 0,
   "n_ds_real": 0,
-  "n_equi_events": 65,
+  "n_equi_checks": 489728,
+  "n_equi_events": 455,
   "n_events": 455,
   "n_families": 9,
+  "n_fates_seen": 2,
   "n_fences": 8,
+  "n_fiber_max_at": 27,
+  "n_fiber_min_at": 81,
+  "n_field_floor": 1,
   "n_form_alive": 162,
   "n_form_cross": 108,
+  "n_form_nofourth": 275,
   "n_fourth_agree": 0,
   "n_fourth_pairs": 9,
+  "n_fourth_private": 312,
   "n_fourth_reads": 468,
+  "n_fourth_shared": 156,
+  "n_fraction_words": 12,
   "n_frozen_cross": 27,
   "n_full_alive": 162,
   "n_full_cross": 108,
   "n_fullgroup": 62208,
   "n_functionals": 8,
-  "n_gates": 42,
+  "n_gates": 49,
+  "n_hash_calls": 0,
+  "n_head_positions": 41,
+  "n_identity_bad": 0,
   "n_indices": 18,
+  "n_inv_rows": 11,
   "n_lattice": 31,
   "n_lawful": 162,
   "n_laws": 1,
+  "n_memo_bad": 0,
+  "n_memo_keys": 139,
+  "n_mixedsample": 64,
+  "n_mixing": 31104,
   "n_motivated": 77,
+  "n_moves_proved": 24,
+  "n_moving_rows": 106,
   "n_mult": 2,
+  "n_multi_gates": 11,
   "n_multvalues": 2,
-  "n_mutants": 44,
-  "n_numerals": 755,
+  "n_mutants": 60,
+  "n_narrative_lines": 31,
+  "n_narrative_values": 90,
+  "n_nofourth_all": 275,
+  "n_nofourth_cross": 162,
+  "n_numerals": 1028,
   "n_obs_unique": 0,
   "n_onesided_match": 1,
   "n_orbits": 9,
-  "n_outcomes": 2,
+  "n_outcomes": 4,
   "n_outside": 9,
   "n_overlap": 0,
-  "n_pairs": 21,
+  "n_pairs": 29,
   "n_pd": 31,
   "n_persistent": 9691,
+  "n_pick_sites": 24,
+  "n_prereg_stems": 4,
+  "n_read_paths": 8,
+  "n_reflexive": 0,
   "n_refuse_frozen": 401,
   "n_refuse_update": 293,
   "n_relabellings": 64,
-  "n_repr_sorts": 8,
-  "n_rule_defs": 4,
+  "n_repr_sorts": 13,
+  "n_rev_match": 1,
+  "n_route_declared": 1,
+  "n_rule_defs": 5,
   "n_rules": 4,
   "n_sector_pairs": 27,
   "n_segments": 4,
+  "n_sel_after": 4,
+  "n_sel_before": 2,
+  "n_sel_both": 1,
+  "n_sel_either": 5,
+  "n_sel_every": 0,
   "n_sentinels": 0,
   "n_shared": 3,
+  "n_shared_part": 3,
+  "n_sign_deaths": 108,
+  "n_sign_match": 1,
   "n_sites": 9,
   "n_slots": 324,
   "n_sources": 6,
@@ -4273,14 +7804,26 @@
   "n_span_none": 0,
   "n_spanning": 288,
   "n_states": 29791,
+  "n_step2_atlo": 6,
   "n_step2_cross": 25,
+  "n_step2_firsts": 108,
   "n_step2_frozen": 2,
-  "n_tables": 15,
+  "n_step2_hi": 43,
+  "n_step2_lo": 25,
+  "n_step2_matched": 25,
+  "n_tables": 18,
   "n_template_ids": 9,
+  "n_topdeg": 12,
+  "n_topdeg_carriers": 3,
+  "n_transitions": 1820,
+  "n_twocross": 108,
   "n_twosided": 1,
+  "n_unabsorbable": 81,
   "n_unbacked": 0,
-  "n_universes": 4,
-  "n_walls": 6,
+  "n_universes": 5,
+  "n_walls": 9,
+  "n_window_cells_distinct": 4,
+  "n_window_copies": 12,
   "n_within_cells": 15,
   "n_zero": 20100,
   "rank": 6,
@@ -4294,6 +7837,7 @@
   "free_lawful": "free items at a lawful crossing",
   "free_union": "the event-free union's fibers",
   "kernel": "unknowns minus rank",
+  "n_absorbable": "lawful crossings any advance state can absorb",
   "n_actors": "the union's carriers",
   "n_alive_all": "the create-everything arm",
   "n_alive_cross": "the cross-only arm",
@@ -4302,64 +7846,112 @@
   "n_aut": "the exhaustive automorphism search",
   "n_axes": "the declared window axes",
   "n_base_cells": "reading x count leg",
+  "n_basesweep": "base maps swept per row",
   "n_best": "the maximum over the state space",
+  "n_bestdiag": "of those, carrying one completion at every seam",
+  "n_beststates": "states attaining it",
+  "n_blind_checks": "rule evaluations under tokens",
   "n_cells": "creation x reading x count leg",
+  "n_chart_factor": "one chart's own factor",
   "n_chartfree": "sector-mixing relabellings that move the cross-only rule",
   "n_chartperms": "relabellings that keep the charts",
   "n_classes": "its parallel classes",
+  "n_closed_form": "the closed-form order",
+  "n_collinear": "of them whose failing seam is the collinear shared site",
   "n_consumed": "anchors read through the accessor",
+  "n_contained": "of them with the incidence inside the support",
   "n_controls": "controls written independently of the patterns",
   "n_crossings": "the arena's crossing events",
   "n_crosspairs": "private A against private B",
   "n_cut": "completions surviving one crossing",
   "n_declared": "the declared arrangement",
+  "n_declared_values": "values declared from the parents",
+  "n_deep_events": "events swept at the whole group",
   "n_det_after": "the determinant's post-event fiber",
   "n_doubled": "pairs the union carries twice",
   "n_ds_cut": "cuts retaining the direct sum",
   "n_ds_real": "crossings the direct sum can realise",
+  "n_equi_checks": "equivariance checks in all",
   "n_equi_events": "events swept for equivariance",
   "n_events": "every three-actor conflict group",
   "n_families": "the families implemented here",
+  "n_fates_seen": "weld fates that ever occur",
   "n_fences": "verdict fences required",
+  "n_fiber_max_at": "crossings carrying the largest",
+  "n_fiber_min_at": "crossings carrying the smallest",
+  "n_field_floor": "the induced field's minimum",
   "n_form_alive": "events with a successor state",
   "n_form_cross": "crossings among them",
+  "n_form_nofourth": "events with a successor at every seam, the fourth direction not consulted",
   "n_fourth_agree": "readings where the two agree",
   "n_fourth_pairs": "the pairs of the fourth class",
+  "n_fourth_private": "readings at a private site",
   "n_fourth_reads": "fourth-direction readings",
+  "n_fourth_shared": "readings at a shared site",
+  "n_fraction_words": "spelled proportions the gate resolves",
   "n_frozen_cross": "crossings needing no state move",
   "n_full_alive": "events lawful at every leg",
   "n_full_cross": "crossings among them",
   "n_fullgroup": "the union's whole relabelling group",
   "n_functionals": "the declared extremal family",
   "n_gates": "gates this run declares",
+  "n_hash_calls": "calls to the builtin hash",
+  "n_head_positions": "numeral positions in the head",
+  "n_identity_bad": "completions at which the two counts differ",
   "n_indices": "cross directions of one seam chart",
+  "n_inv_rows": "distinct inventory rows",
   "n_lattice": "the enumerated completion lattice",
   "n_lawful": "events lawful at every leg",
   "n_laws": "distinct lawful-event sets the creating rules produce",
+  "n_memo_bad": "of them the memo gets wrong",
+  "n_memo_keys": "distinct successor keys reached",
+  "n_mixedsample": "the sector-mixing sweep",
+  "n_mixing": "relabellings that exchange the charts",
   "n_motivated": "events leaving the weld forced",
+  "n_moves_proved": "of those, proved to move their target by digest",
+  "n_moving_rows": "post-states whose label or orient fiber moves with the base map",
   "n_mult": "pairs per index",
+  "n_multi_gates": "recipes beyond one per gate",
   "n_multvalues": "distinct successor multiplicities",
   "n_mutants": "declared falsifiers",
+  "n_narrative_lines": "bound narrative lines",
+  "n_narrative_values": "numerals bound to a payload leaf",
+  "n_nofourth_all": "the create-everything arm without it",
+  "n_nofourth_cross": "the cross-only arm without the fourth-direction leg",
   "n_numerals": "numerals scanned in the paper",
   "n_obs_unique": "crossings with a unique successor",
   "n_onesided_match": "indices whose cut it equals",
   "n_orbits": "orbits under the union's own group",
-  "n_outcomes": "the pre-registered outcome words",
+  "n_outcomes": "the pre-registered outcome pairs",
   "n_outside": "the named outside-list",
   "n_overlap": "events in both sets",
   "n_pairs": "measured pairs the prose may state",
   "n_pd": "exact Sylvester on the doubled Gram",
   "n_persistent": "states admitting a crossing without moving",
+  "n_pick_sites": "recipes whose move is proved in this run",
+  "n_prereg_stems": "distinct pin stems the words are built on",
+  "n_read_paths": "distinct paths opened",
+  "n_reflexive": "reflexive pairs in the declared set",
   "n_refuse_frozen": "events the frozen weld refuses",
   "n_refuse_update": "events the updating weld refuses",
   "n_relabellings": "the declared relabelling sweep",
-  "n_repr_sorts": "sorts keyed by a bare repr",
-  "n_rule_defs": "rule bodies found in the source",
+  "n_repr_sorts": "orderings keyed by a bare repr",
+  "n_rev_match": "indices the reversed criterion's minimiser equals",
+  "n_route_declared": "objects the route declares over the whole event family",
+  "n_rule_defs": "rule bodies read out of the source",
   "n_rules": "the link-creation rules",
   "n_sector_pairs": "the realised pairs of one sector",
   "n_segments": "verdict segments",
+  "n_sel_after": "functionals selecting one at some cut after it",
+  "n_sel_before": "functionals selecting a single completion before the event",
+  "n_sel_both": "functionals selecting one both before and after",
+  "n_sel_either": "functionals selecting one before or after",
+  "n_sel_every": "functionals selecting one at every cut",
   "n_sentinels": "recipes assigning a bare boolean",
   "n_shared": "the union's shared actors",
+  "n_shared_part": "the glued part's size",
+  "n_sign_deaths": "deaths by a sign contradiction on one entry",
+  "n_sign_match": "indices the opposite sign convention equals",
   "n_sites": "the affine plane's points",
   "n_slots": "seam slots of the lawful crossings",
   "n_sources": "the declared source table",
@@ -4368,14 +7960,26 @@
   "n_span_none": "the frozen arm's crossings",
   "n_spanning": "events with a pair across the seam",
   "n_states": "completions at each seam",
+  "n_step2_atlo": "first events reaching the delivered cell",
   "n_step2_cross": "second crossings still form-lawful",
+  "n_step2_firsts": "lawful first crossings run",
   "n_step2_frozen": "of those, with the state kept",
+  "n_step2_hi": "the fiber's maximum over the first events",
+  "n_step2_lo": "the fiber's minimum over the first events",
+  "n_step2_matched": "second crossings at the first step's own standard",
   "n_tables": "tables rendered as claims",
   "n_template_ids": "parsed from the pinned template",
+  "n_topdeg": "the top degree in the union",
+  "n_topdeg_carriers": "carriers at it",
+  "n_transitions": "transitions of the window",
+  "n_twocross": "events with two crossings and a doubling",
   "n_twosided": "values of the two-sided price",
+  "n_unabsorbable": "lawful crossings none can",
   "n_unbacked": "numerals with no measured backing",
   "n_universes": "declared referent universes",
   "n_walls": "the declared walls",
+  "n_window_cells_distinct": "distinct results over the window's cells",
+  "n_window_copies": "cells that are copies of another",
   "n_within_cells": "distinct fourth-class cells the rule can create",
   "n_zero": "states ready for no crossing at all",
   "rank": "the rref of the six declared rows",
@@ -4384,29 +7988,64 @@
   "unknowns": "the symmetric square of the seam chart"
  },
  "motivation": {
+  "base_map_sweep": 32,
+  "events": 455,
   "lawful": 162,
   "motivated": 77,
   "overlap": 0,
+  "post_states_whose_fiber_moves": 106,
   "union_free_items": 0,
   "union_maps": 62208
  },
  "one_sided_matches": 1,
  "outcomes": [
   {
-   "outcome": "TARGET-FREE-EVENT-CONDITIONED-CREATION-EXISTS",
+   "head segment": "the window and the creation rule",
    "reached": true,
-   "the run's witness": 455,
-   "why it was reachable": "the create-everything rule makes the geometry's incidence the record's own support, so the weld cannot refuse"
+   "the other arm's witness": 0,
+   "the pin's stem": "CREAT",
+   "the predicate": "an event at which the rule CREATES a cross cell is lawful at every leg of the delivered standard",
+   "the run's witness": 108,
+   "the word not reached": "NO-TARGET-FREE-CREATION-RULE-EXISTS",
+   "the word reached": "TARGET-FREE-EVENT-CONDITIONED-CREATION-EXISTS",
+   "why the other arm was reachable": "the frozen arm of this run is that word's own witness: under the rule that creates nothing the same predicate returns none of the seam-spanning events"
   },
   {
-   "outcome": "BLOCKED-AT-THE-DECLARED-DATUM",
+   "head segment": "the transition relation and the datum",
    "reached": true,
-   "the run's witness": 288,
-   "why it was reachable": "with the geometry frozen the parent's wall stands and every seam-spanning event is refused"
+   "the other arm's witness": 4,
+   "the pin's stem": "DATUM",
+   "the predicate": "some lawful crossing leaves a UNIQUE successor state at every seam, so the event supplies the datum itself",
+   "the run's witness": 0,
+   "the word not reached": "THE-DATUM-IS-SUPPLIED-BY-AN-EVOLUTION-LAW",
+   "the word reached": "BLOCKED-AT-THE-DECLARED-DATUM",
+   "why the other arm was reachable": "the successor sets are counted at every seam slot and the smallest that occurs is one step from the size that would have reached the other word"
+  },
+  {
+   "head segment": "motivation and lawfulness",
+   "reached": true,
+   "the other arm's witness": 77,
+   "the pin's stem": "MOTIVAT",
+   "the predicate": "an event is both motivated and lawful at every leg",
+   "the run's witness": 0,
+   "the word not reached": "MOTIVATION-AND-LAWFULNESS-OVERLAP",
+   "the word reached": "MOTIVATION-AND-LAWFULNESS-ARE-DISJOINT",
+   "why the other arm was reachable": "both sets are non-empty at this arena and were censused over the same family, so an event in both was arithmetically available at every one of them"
+  },
+  {
+   "head segment": "the derivation attempt",
+   "reached": true,
+   "the other arm's witness": 2,
+   "the pin's stem": "PRINCIPLE",
+   "the predicate": "some declared functional selects a single completion before the event AND at every cut after it",
+   "the run's witness": 0,
+   "the word not reached": "A-SEAM-PRINCIPLE-IS-DERIVED",
+   "the word reached": "NO-SEAM-PRINCIPLE-DERIVED",
+   "why the other arm was reachable": "two of the family do select a single completion before the event, so the word turned on whether one of them survived the cuts rather than on whether any was selective"
   }
  ],
  "paper": "v15/paper-45-autoglue.md",
- "paper_digest": "09ee568a4bba",
+ "paper_digest": "fa0268d99524",
  "paper_report": {
   "fence_mismatch": [],
   "ok": true,
@@ -4476,6 +8115,24 @@
     "matched": true,
     "missing": 0,
     "stray": 0,
+    "table": "TBL-TWOSTEP-FIBER"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-BEST"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
+    "table": "TBL-FOURTH-SITE"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
     "table": "TBL-EXTREMAL"
    },
    {
@@ -4506,27 +8163,11 @@
   "unrendered_tables": []
  },
  "preparedness": {
+  "absorbable_by_none": 81,
+  "absorbable_by_some_state": 27,
   "best": 9,
-  "best_state": [
-   [
-    1,
-    -1,
-    0,
-    1
-   ],
-   [
-    1,
-    -1,
-    0,
-    1
-   ],
-   [
-    1,
-    -1,
-    0,
-    1
-   ]
-  ],
+  "best_states": 8,
+  "best_states_diagonal": 2,
   "coverage": [
    {
     "crossings_absorbed": 0,
@@ -4594,6 +8235,12 @@
    "the frozen geometry": 288,
    "the update": 1,
    "verdict": "BOUGHT"
+  },
+  {
+   "currency": "the rule fiber: lawful-event sets the rules produce",
+   "the frozen geometry": 4,
+   "the update": 1,
+   "verdict": "INERT"
   }
  ],
  "provenance": {
@@ -4667,23 +8314,35 @@
  "seal_manifest": {
   "sealed": {
    "anchors": {
-    "digest": "ab12ed22e9ee9d70",
+    "digest": "4ffd8c81b9afd39a",
     "sealed_at_gate": "G-ANCHORS"
    },
    "arena": {
     "digest": "1ed349ef3391c375",
     "sealed_at_gate": "G-ARENA"
    },
+   "arm_control": {
+    "digest": "49b40f439d744261",
+    "sealed_at_gate": "G-RULE-FIBER"
+   },
+   "aut_structure": {
+    "digest": "a098aa6a2944a2e9",
+    "sealed_at_gate": "G-AUT-CLOSED-FORM"
+   },
+   "best_states": {
+    "digest": "fe7a2dc6a3cf5e63",
+    "sealed_at_gate": "G-PREPAREDNESS"
+   },
+   "containment": {
+    "digest": "96fc555bd8e892c4",
+    "sealed_at_gate": "G-CONTAINMENT"
+   },
    "cut_size": {
     "digest": "2c624232cdd22177",
     "sealed_at_gate": "G-EXTREMAL"
    },
-   "ds_in_cut": {
-    "digest": "5feceb66ffc86f38",
-    "sealed_at_gate": "G-EXTREMAL"
-   },
-   "ds_realises": {
-    "digest": "5feceb66ffc86f38",
+   "direct_sum": {
+    "digest": "07a11a32c299a74f",
     "sealed_at_gate": "G-EXTREMAL"
    },
    "events": {
@@ -4694,16 +8353,32 @@
     "digest": "a9f361c03a2539d3",
     "sealed_at_gate": "G-EXTREMAL"
    },
+   "extremal_fibers": {
+    "digest": "75b6df1c818b8eb4",
+    "sealed_at_gate": "G-EXTREMAL"
+   },
    "families": {
-    "digest": "32ed812afdbc2ca0",
+    "digest": "9d93bd4ed66f5a24",
     "sealed_at_gate": "G-TEMPLATE-CONFORMANCE"
    },
    "form_census": {
     "digest": "f068a8ed1a5ff4df",
     "sealed_at_gate": "G-FORM-CENSUS"
    },
+   "form_summary": {
+    "digest": "8527310bee59a556",
+    "sealed_at_gate": "G-FORM-CENSUS"
+   },
+   "fourth_by_site": {
+    "digest": "89b64cc09886d784",
+    "sealed_at_gate": "G-FOURTH-DIRECTION"
+   },
    "fourth_direction": {
     "digest": "b54329c0c02ac2fb",
+    "sealed_at_gate": "G-FOURTH-DIRECTION"
+   },
+   "fourth_summary": {
+    "digest": "9d68b40a6075b667",
     "sealed_at_gate": "G-FOURTH-DIRECTION"
    },
    "incidence_census": {
@@ -4711,15 +8386,19 @@
     "sealed_at_gate": "G-INCIDENCE-CENSUS"
    },
    "incidence_summary": {
-    "digest": "cb0f4735cfb98a70",
+    "digest": "9286581cfa3c402c",
     "sealed_at_gate": "G-CONTROL-ARMS"
    },
    "inventory_census": {
-    "digest": "b5b86cbea8e40907",
+    "digest": "9770e97fd779f139",
     "sealed_at_gate": "G-INVENTORY"
    },
+   "lattice_census": {
+    "digest": "5b8274bac92a4743",
+    "sealed_at_gate": "G-EXTREMAL"
+   },
    "motivation": {
-    "digest": "de5ce106226690f3",
+    "digest": "de698a8a70e460c2",
     "sealed_at_gate": "G-MOTIVATED-DISJOINT"
    },
    "one_sided_matches": {
@@ -4727,19 +8406,19 @@
     "sealed_at_gate": "G-NOTHING-DERIVED"
    },
    "outcomes": {
-    "digest": "0d22220411d1381d",
+    "digest": "ed8acab2349bf3d8",
     "sealed_at_gate": "G-OUTCOME-FEASIBILITY"
    },
    "paper_digest": {
-    "digest": "6d3c2fc03514c0d2",
+    "digest": "4219e0a2740ecedd",
     "sealed_at_gate": "G-PAPER-CLAIMS"
    },
    "preparedness": {
-    "digest": "f0c7f341a1a560ed",
+    "digest": "1178712b1fd641a8",
     "sealed_at_gate": "G-PREPAREDNESS"
    },
    "price": {
-    "digest": "5a05a472c527b7a4",
+    "digest": "baf9b4fd61ca3d84",
     "sealed_at_gate": "G-PRICE"
    },
    "provenance": {
@@ -4758,20 +8437,28 @@
     "digest": "6eb9c7e42bffe80d",
     "sealed_at_gate": "G-TRANSITION-RELATION"
    },
+   "two_crossing_death": {
+    "digest": "aac2b44209dd85f3",
+    "sealed_at_gate": "G-TWO-CROSSING-DEATH"
+   },
    "two_sided_values": {
     "digest": "6b86b273ff34fce1",
     "sealed_at_gate": "G-NOTHING-DERIVED"
    },
    "two_step": {
-    "digest": "86623a159223791b",
+    "digest": "3598b6eb62e4a018",
+    "sealed_at_gate": "G-TWO-STEP"
+   },
+   "two_step_fiber": {
+    "digest": "d996e18c141b9874",
     "sealed_at_gate": "G-TWO-STEP"
    },
    "verdict": {
-    "digest": "5016b03b8f45ef4e",
+    "digest": "04da386609333d90",
     "sealed_at_gate": "G-VERDICT-RECON"
    },
    "walls": {
-    "digest": "e19e8c94b9722e52",
+    "digest": "8b99fad0175f13bd",
     "sealed_at_gate": "G-WALL-SEAMCONFINED"
    },
    "whole_state_fiber": {
@@ -4779,7 +8466,7 @@
     "sealed_at_gate": "G-TRANSITION-RELATION"
    },
    "window": {
-    "digest": "ceca814697de5093",
+    "digest": "7d45d98aa8afa491",
     "sealed_at_gate": "G-WINDOW"
    }
   },
@@ -4820,13 +8507,24 @@
   }
  ],
  "totals": {
-  "gates": 42,
-  "sealed": 29,
-  "tables": 15,
+  "falsifiers": 60,
+  "gates": 49,
+  "sealed": 39,
+  "tables": 18,
   "unsealed": 11
  },
+ "two_crossing_death": [
+  {
+   "at the failing seam, the two crossings fix": "the same cross entry, at opposite signs",
+   "events": 108,
+   "seams with a successor": 2
+  }
+ ],
  "two_sided_values": 1,
  "two_step": {
+  "fiber_high": 43,
+  "fiber_low": 25,
+  "first_crossings_run": 108,
   "first_event": [
    "('A', (0, 1))",
    "('B', (0, 1))",
@@ -4864,6 +8562,7 @@
     "state_kept": true
    }
   ],
+  "second_at_the_step_one_standard": 25,
   "second_crossings": 25,
   "second_frozen": 2,
   "state": [
@@ -4892,17 +8591,69 @@
    8
   ]
  },
+ "two_step_fiber": [
+  {
+   "first crossings": 3,
+   "of those, state kept": 1,
+   "still form-lawful": 25
+  },
+  {
+   "first crossings": 6,
+   "of those, state kept": 2,
+   "still form-lawful": 25
+  },
+  {
+   "first crossings": 24,
+   "of those, state kept": 0,
+   "still form-lawful": 26
+  },
+  {
+   "first crossings": 12,
+   "of those, state kept": 1,
+   "still form-lawful": 26
+  },
+  {
+   "first crossings": 24,
+   "of those, state kept": 0,
+   "still form-lawful": 27
+  },
+  {
+   "first crossings": 12,
+   "of those, state kept": 0,
+   "still form-lawful": 28
+  },
+  {
+   "first crossings": 6,
+   "of those, state kept": 1,
+   "still form-lawful": 41
+  },
+  {
+   "first crossings": 3,
+   "of those, state kept": 2,
+   "still form-lawful": 41
+  },
+  {
+   "first crossings": 12,
+   "of those, state kept": 0,
+   "still form-lawful": 43
+  },
+  {
+   "first crossings": 6,
+   "of those, state kept": 1,
+   "still form-lawful": 43
+  }
+ ],
  "unit": "AUTOGLUE",
  "verdict": [
-  "AUTOGLUE-A-TARGET-FREE-EVENT-CONDITIONED-CROSS-LINK-CREATION-RULE-EXISTS-AT-THIS-ARENA-AT-108-OF-288-[THE WINDOW: FOUR LINK-CREATION RULES BY TWO READINGS BY TWO COUNT LEGS AT EVERY ONE OF 455 THREE-ACTOR EVENTS AND AT BOTH ENDS OF EVERY TRANSITION, THE RULE FIRING ON THE EVENT'S FOOTPRINT ALONE, NO TARGET DECLARED AFTER ANY EVENT; WITH THE GEOMETRY FROZEN THE WELD REFUSES ALL 288 SEAM-SPANNING EVENTS AND WITH EVERY NEW PAIR ABSORBED IT REFUSES NONE OF 455] -- ONE PRE-DECLARED EVENT-UNIFORM RULE REACHES THE PARENT'S 216 OF 288 WITH NO TARGET AT ALL, AND CARRYING THE READOUT TO THE CELLS IT CREATES CUTS THAT TO 108: THE CROSSINGS THAT MAKE ONE CROSS LINK, DOUBLE TWO SEAM LINKS AND OPEN NO PAIR INSIDE A SECTOR. THE EVENT IS SUPPLIED TO THE RULE FROM THE ARENA'S OWN TRIPLES AND THE COMMITTED GRAMMAR IS NOT RE-DRIVEN, SO WHAT IS MEASURED IS EVENT-CONDITIONED CREATION AND NOT AUTONOMOUS DYNAMICS; AND THE SURVIVING RULES FORM AN EQUIVALENCE CLASS THIS ARENA DOES NOT SELECT WITHIN -- CROSS-ONLY AND ALL-NEW ADMIT THE SAME 162 EVENTS ONCE THE FORM LEG BINDS",
-  "AUTOGLUE-A-TRANSITION-RELATION-ON-THE-SEAM-SUBSYSTEM-STATE-NOT-AN-EVOLUTION-LAW-THE-DATUM-THAT-CANNOT-PRECEDE-THE-EVENT-IS-THE-SEAM'S-CROSS-BLOCK-[THE FOUR UNDETERMINED ENTRIES OF THE DIRECT-SUM FORM AT EACH SHARED SITE, OVER THE DECLARED UPDATE WINDOW; THE SUCCESSOR STATE CENSUSED AT EVERY ONE OF 455 EVENTS OBJECT BY OBJECT AND NEVER BY ORBIT: EMPTY OR MANY-VALUED, UNIQUE AT 0; 27 OF THE 108 LAWFUL CROSSINGS NEED NO STATE MOVE; OVER ALL 29791 STATES THE ARENA ADMITS THE BEST IS READY FOR 9 CROSSINGS AND 20100 ARE READY FOR NONE] -- AND A LINK INSIDE A SECTOR IS REFUSED OUTRIGHT: AN UNSHARED SITE'S FORM HAS KERNEL ZERO AND FORCES THE FOURTH DIRECTION'S COUNT AGAINST THE ONE THE EVENT DEPOSITS AT 468 OF 468 READINGS -- SO A STATE RESTRICTS THE ALLOWED TRANSITIONS ONLY IF IT PERSISTS, WHICH IS A READING AND NOT A MEASUREMENT",
-  "AUTOGLUE-MOTIVATION-AND-LAWFULNESS-ARE-DISJOINT-[77 OF 455 EVENTS LEAVE THE WELD WITH ZERO FREE ITEMS, 162 ARE LAWFUL AT EVERY LEG, AND THE TWO SETS SHARE 0] -- BY A THEOREM CHECKED AT EVERY OBJECT: AN EVENT FORCES THE WELD EXACTLY WHEN IT DOUBLES NOTHING, WHICH IS EXACTLY WHEN ALL THREE OF ITS PAIRS ARE NEW; A TRIANGLE ADMITS NO PROPER TWO-COLOURING SO ONE OF THEM FALLS INSIDE A SECTOR; AND THAT IS THE ONE CELL THE FORM REFUSES -- THE EVENTS THAT PIN THE WELD DOWN ARE THE EVENTS THE GEOMETRY CANNOT HOST",
-  "AUTOGLUE-NO-SEAM-PRINCIPLE-DERIVED-[8 EXTREMAL FUNCTIONALS MEASURED BEFORE THE EVENT AND AFTER IT; EVERY CROSS DIRECTION CUTS THE LATTICE 31 TO 8; MAXIMUM DETERMINANT SELECTS THE DIRECT SUM UNIQUELY, THE DIRECT SUM REALISES 0 OF THE ARENA'S CROSSINGS AND SURVIVES 0 OF THE CUTS, AND ON THE POST-EVENT LATTICE THE SAME CRITERION IS 4-VALUED] -- THE CONVENTION-FREE PRICE TAKES 1 VALUE ON THE WHOLE LATTICE AND THE ONE-SIDED PRICE'S MINIMISER IS THE CUT OF EXACTLY 1 CROSS DIRECTION, SO IT IS THE EVENT'S OWN EQUATION WEARING A CRITERION'S CLOTHES: NOTHING IN THIS CORPUS SELECTS THE SEAM, AND THE ONE CRITERION THAT DOES IS THE STATE IN WHICH NOTHING CAN CROSS"
+  "AUTOGLUE-A-TARGET-FREE-EVENT-CONDITIONED-CROSS-LINK-CREATION-RULE-EXISTS-AT-THIS-ARENA-AT-108-OF-288-[THE WINDOW: FOUR LINK-CREATION RULES AT EVERY ONE OF 455 THREE-ACTOR EVENTS, FROM THE ONE LAWFUL PRE-STATE AND AT EVERY EVENT'S OWN POST-STATE, RUN AT EVERY ONE OF THE WINDOW'S 16 CELLS AND MEASURED INERT ON TWO OF ITS AXES -- THE READING AND THE COUNT LEG MOVE NO NUMBER AND ONE OF THE WELD'S FOUR FATES NEVER FIRES AT ALL, SO THE 16 CELLS CARRY 4 DISTINCT RESULTS; THE RULE FIRING ON THE EVENT'S FOOTPRINT ALONE, NO TARGET DECLARED AFTER ANY EVENT; WITH THE GEOMETRY FROZEN THE WELD REFUSES ALL 288 SEAM-SPANNING EVENTS AND WITH EVERY NEW PAIR ABSORBED IT REFUSES NONE OF 455] -- ONE PRE-DECLARED EVENT-UNIFORM RULE REACHES THE PARENT'S 216 OF 288 WITH NO TARGET AT ALL, AND CARRYING THE READOUT TO THE CELLS IT CREATES CUTS THAT TO 108: THE CROSSINGS THAT MAKE ONE CROSS LINK, DOUBLE TWO SEAM LINKS AND OPEN NO PAIR INSIDE A SECTOR. THE EVENT IS SUPPLIED TO THE RULE FROM THE ARENA'S OWN TRIPLES AND THE COMMITTED GRAMMAR IS NOT RE-DRIVEN, SO WHAT IS MEASURED IS EVENT-CONDITIONED CREATION AND NOT AUTONOMOUS DYNAMICS; AND THE SURVIVING RULES FORM AN EQUIVALENCE CLASS THIS ARENA DOES NOT SELECT WITHIN -- CROSS-ONLY AND ALL-NEW ADMIT THE SAME 162 EVENTS ONCE THE FORM LEG BINDS",
+  "AUTOGLUE-A-TRANSITION-RELATION-ON-THE-SEAM-SUBSYSTEM-STATE-NOT-AN-EVOLUTION-LAW-THE-DATUM-THAT-CANNOT-PRECEDE-THE-EVENT-IS-THE-SEAM'S-CROSS-BLOCK-[THE FOUR UNDETERMINED ENTRIES OF THE DIRECT-SUM FORM AT EACH SHARED SITE, OVER THE DECLARED UPDATE WINDOW; THE SUCCESSOR STATE CENSUSED AT EVERY ONE OF 455 EVENTS OBJECT BY OBJECT AND NEVER BY ORBIT: EMPTY OR MANY-VALUED, UNIQUE AT 0; 27 OF THE 108 LAWFUL CROSSINGS NEED NO STATE MOVE AND 81 CAN BE ABSORBED BY NO ADVANCE STATE AT ALL; OVER ALL 29791 STATES THE ARENA ADMITS 8 ATTAIN THE BEST 9 CROSSINGS, 2 OF THEM CARRYING ONE COMPLETION AT EVERY SEAM, AND 20100 ARE READY FOR NONE] -- AND A LINK INSIDE A SECTOR IS REFUSED OUTRIGHT: A SECTOR'S OWN FORM AT A SITE HAS KERNEL ZERO OVER ITS THREE DECLARED DIRECTIONS AND FORCES THE FOURTH DIRECTION'S COUNT AGAINST THE ONE THE EVENT DEPOSITS AT EVERY ONE OF 468 READINGS -- 312 OF THEM AT CHART-PRIVATE SITES AND 156 AT THE SHARED SITES, WHERE THE TWO-CHART FORM'S KERNEL IS 4 AND THE SINGLE CHART'S IS STILL ZERO -- SO A STATE RESTRICTS THE ALLOWED TRANSITIONS ONLY IF IT PERSISTS, WHICH IS A READING AND NOT A MEASUREMENT",
+  "AUTOGLUE-MOTIVATION-AND-LAWFULNESS-ARE-DISJOINT-[77 OF 455 EVENTS LEAVE THE WELD WITH ZERO FREE ITEMS, 162 ARE LAWFUL AT EVERY LEG, AND THE TWO SETS SHARE 0] -- BY A CHAIN WHOSE ARITHMETIC IS THE PARENT'S, REPRODUCED HERE AND CHECKED AT EVERY OBJECT: AN EVENT FORCES THE WELD EXACTLY WHEN IT DOUBLES NOTHING, WHICH IS EXACTLY WHEN ALL THREE OF ITS PAIRS ARE NEW; A TRIANGLE ADMITS NO PROPER TWO-COLOURING SO ONE OF THEM FALLS INSIDE A SECTOR -- SEC-2'S OWN STEPS, CHECKED THERE AT THE SAME OBJECTS -- AND WHAT THIS UNIT ADDS IS THE TWO-SIDED FORM AND THE CLOSING LINK: THAT IS THE ONE CELL THE SECTOR'S FORM REFUSES -- THE EVENTS THAT PIN THE WELD DOWN ARE THE EVENTS THE GEOMETRY CANNOT HOST",
+  "AUTOGLUE-NO-SEAM-PRINCIPLE-DERIVED-[8 EXTREMAL FUNCTIONALS MEASURED BEFORE THE EVENT AND AFTER IT, OF WHICH 2 SELECT A SINGLE COMPLETION BEFORE IT AND 4 AT SOME CUT AFTER IT AND 0 AT EVERY CUT; EVERY CROSS DIRECTION CUTS THE LATTICE 31 TO 8; MAXIMUM DETERMINANT SELECTS THE DIRECT SUM UNIQUELY, AND THE DIRECT SUM REALISES 0 OF THE ARENA'S CROSS DIRECTIONS -- WHICH IS THE SAME STATEMENT AS SURVIVING NONE OF THE CUTS, SINCE A CUT IS THE SET OF COMPLETIONS THAT REALISE ITS DIRECTION, AN IDENTITY THAT HOLDS AT EVERY POINT OF THE LATTICE -- AND ON THE POST-EVENT LATTICE THE SAME CRITERION IS 4-VALUED] -- THE CONVENTION-FREE PRICE TAKES 1 VALUE ON THE WHOLE LATTICE AND THE ONE-SIDED PRICE'S MINIMISER IS THE CUT OF EXACTLY 1 CROSS DIRECTION, SO IT IS THE EVENT'S OWN EQUATION WEARING A CRITERION'S CLOTHES: NOTHING IN THIS CORPUS SELECTS THE SEAM, AND THE ONE CRITERION THAT DOES IS THE STATE IN WHICH NOTHING CAN CROSS"
  ],
  "walls": [
   {
-   "controls": 5,
-   "controls_caught": 5,
+   "controls": 8,
+   "controls_caught": 8,
    "hits": [],
    "missing_positive": [],
    "ok": true,
@@ -4911,8 +8662,8 @@
    "wall": "WALL-DECLARATION"
   },
   {
-   "controls": 5,
-   "controls_caught": 5,
+   "controls": 7,
+   "controls_caught": 7,
    "hits": [],
    "missing_positive": [],
    "ok": true,
@@ -4921,8 +8672,8 @@
    "wall": "WALL-SEAMCONFINED"
   },
   {
-   "controls": 5,
-   "controls_caught": 5,
+   "controls": 8,
+   "controls_caught": 8,
    "hits": [],
    "missing_positive": [],
    "ok": true,
@@ -4931,8 +8682,8 @@
    "wall": "WALL-NO-METRICAL-READING"
   },
   {
-   "controls": 5,
-   "controls_caught": 5,
+   "controls": 7,
+   "controls_caught": 7,
    "hits": [],
    "missing_positive": [],
    "ok": true,
@@ -4941,8 +8692,8 @@
    "wall": "WALL-RECONSTRUCTION-NOT-DERIVATION"
   },
   {
-   "controls": 5,
-   "controls_caught": 5,
+   "controls": 7,
+   "controls_caught": 7,
    "hits": [],
    "missing_positive": [],
    "ok": true,
@@ -4951,14 +8702,44 @@
    "wall": "WALL-RELATION-NOT-LAW"
   },
   {
-   "controls": 5,
-   "controls_caught": 5,
+   "controls": 7,
+   "controls_caught": 7,
    "hits": [],
    "missing_positive": [],
    "ok": true,
    "self_licensing": [],
    "unlicensed": [],
    "wall": "WALL-COUNTING-ONLY"
+  },
+  {
+   "controls": 7,
+   "controls_caught": 7,
+   "hits": [],
+   "missing_positive": [],
+   "ok": true,
+   "self_licensing": [],
+   "unlicensed": [],
+   "wall": "WALL-INVARIANCE-NOT-GAUGE"
+  },
+  {
+   "controls": 7,
+   "controls_caught": 7,
+   "hits": [],
+   "missing_positive": [],
+   "ok": true,
+   "self_licensing": [],
+   "unlicensed": [],
+   "wall": "WALL-FAMILY-PREDICTION"
+  },
+  {
+   "controls": 7,
+   "controls_caught": 7,
+   "hits": [],
+   "missing_positive": [],
+   "ok": true,
+   "self_licensing": [],
+   "unlicensed": [],
+   "wall": "WALL-EVENT-CONDITIONED"
   }
  ],
  "whole_state_fiber": [
@@ -5009,9 +8790,9 @@
    },
    {
     "axis": "STATE",
-    "delivered": "not posed",
+    "delivered": "both run; VERDICT-BEARING",
     "members": [
-     "FROZEN",
+     "PERSISTING",
      "RE-SOLVED"
     ]
    }
