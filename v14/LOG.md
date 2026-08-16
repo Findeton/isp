@@ -12090,3 +12090,17 @@ and repaired all five before delivery; second battery
 38/38.**  Byte ×3 incl. regeneration; off-tree git-less;
 seed-invariant.  **Orchestrator battery next; panel after
 green.**
+
+## 2026-08-16 — REC BATTERY GREEN (--run CORRECTED); ITS THREE-SEAT PANEL LAUNCHED (v14 LEDGER #377)
+
+The corrected battery all green (byte-identical
+regeneration via --run from deleted artifacts; ×2;
+seed-invariant; MUT-NAMING dead at G-NAMING-RESIDUE with
+move-proof; artifacts untouched; the earlier bare-call
+exit-2 was correct CLI discipline).  Panel launched: K1
+(the rule, the censuses, the parent thresholds — rebuilt),
+K2 (DERIVED's corpus-level licensure; the eraser's
+blindness as the S-1-adjacent crux; the REFUSED controls),
+K3 (the template-conformance audit of the second exemplar;
+the S-1 AST check attacked; the eraser-leak probe).  Both
+capstone panels now in the field.
