@@ -11948,3 +11948,12 @@ STATUS row appended in this commit; memory sealed next.
 computed numbers surviving anywhere in v14 — the one
 typed-column incident repaired to truth and disclosed.
 The #267 template sweep charters next per #362.**
+
+## 2026-08-16 — TPL (THE #267 TEMPLATE SWEEP) CHARTERED AND LAUNCHED (v14 LEDGER #371)
+
+note-tpl-pin.md frozen.  Three deliverables: the hardened
+template (nine disease families, reference
+implementations, self-hosting); the exposure census over
+the sealed instruments (read-only, the panels' own
+recipes, zero seals reopened); RUNBOOK addenda drafted for
+engraving.  The worker launches on commit.
