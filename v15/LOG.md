@@ -203,3 +203,29 @@ third exemplar; the unit's own second AST scan attacked;
 --render-passed-as-delivery probed; the planted duplicate
 SEAM row must die).  Both wave-1 delivered units now
 under hostile review.
+
+## 2026-08-16 — DISC K1 (OPERATOR) FROZEN: ACCEPT-WITH-FIXES; ZERO DISCREPANCIES IN 132,187; THE TICK MOVES WITH THE COIN ORDER; THE NULL IS THE PARENT'S OWN CONTROL; THE MECHANISM CORROBORATED BY AN ARENA THE UNIT NEVER BUILT (v15 LEDGER #8)
+
+**Review:** v15/review-disc-operator.md (151a02f01628, 403
+lines).  Every mandated leg exact on first rebuild (the
+four fractions, both TVs, 6,216/6,216, all paper-20
+anchors, all demotion rows, the m=q descent).  THREE
+MAJORS: **(M1) the verdict tick is NOT coin-order-
+invariant — at D·G the first difference is at TICK 4 and
+the tick-3 distribution equals the null EXACTLY; DISC
+silently fixed G·D; §11's no-axis-moves-it sentence false
+against the inherited declarations; the orientation fiber
+inert — F6 is the one mover (the RUNBOOK §15 duty
+applies: the head carries the fiber)**.  (M2) the
+7-vs-6 sealed-count contradiction; counted once the
+census is 6 of 9, not 7 of 10.  (M3) **the null is
+provably identical to paper-20's frozen-stage control
+(1116/1116) — undisclosed; it makes the null
+unimpeachable AND makes the NOT-REPRODUCED row the
+parent's sealed nontriviality restricted to p_site; the
+new content = the tick, the exact values, the
+universality.**  Seven minors.  **BONUS FOR THE UNIT: §8's
+ungated triangle-closure mechanism CORROBORATED — the
+seat built a non-closing arena and the first difference
+moved to tick 4 exactly as the account predicts —
+liftable evidence the unit did not have.**  K2/K3 out.
