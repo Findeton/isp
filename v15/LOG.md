@@ -659,3 +659,32 @@ The #16 gate (×3 consecutive green) now runs as an
 INDEPENDENT VERIFICATION by the continuation worker; the
 panel launches on its confirmation.  Committed this
 entry.
+
+## 2026-08-16 — AUTOGLUE K3 (INSTRUMENT) FROZEN: ACCEPT-WITH-FIXES; A NEW SEAL DISEASE FOUND (POST-FINAL-GATE SERIALISATION WINDOW); ALL SIX WALLS FALL TO ONE LICENCE TOKEN (v15 LEDGER #23)
+
+**Review:** v15/review-autoglue-instrument.md
+(49ca3f5b07aa, 608 lines).  HELD: 44/44 mutants at
+declared gates; byte off-tree ×2 seeds from
+artifact-deleted trees; write-nothing by tree hash; the
+cross-universe plant, table transplant, and unlicensed
+paraphrases all caught.  SEVEN MAJORS: (1) the §3
+headline invertible via REFLEXIVE REFERENT PAIRS
+((288,288),(468,468) license "X of X" anywhere — the
+DISC-1/E-30 recurrence); **(2) A SEALED VALUE EDITED
+AFTER THE LAST GATE reaches the receipt beside its own
+pristine gate-time digest (the disjointness headline
+0→77 published) — both seal verifications run before
+serialisation; NO ENGRAVED PRECEDENT — the
+post-final-gate window is a NEW disease for TPL-2, the
+one to fix first**; (3) all six walls fall to ONE bare-
+negation licence token (none of the 30 controls contains
+a negation); (4) the transcript narrative bound to
+nothing; (5) G-VERDICT-RECON self-comparison at 10 of 30
+head positions; (6) the pre-registration re-declarable
+post-hoc (AUTONOMOUS-DYNAMICS-ESTABLISHED ships); (7)
+T-FALSIFIER-POISONS claimed with no in-instrument
+move-proof (true out-of-harness, unknowable in).  Count
+correction: 44 mutants vs 42 gates (two gates carry two
+recipes — an E-26 naming, nothing over-claimed).
+G-DETERMINISM survived four attacks as a minor.  K1/K2
+out.
