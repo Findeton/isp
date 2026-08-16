@@ -12289,3 +12289,22 @@ number corrections queued (136→multiset-label/103-set;
 
 note-rec-adjudication.md committed (rulings above).  The
 repair worker launches next; HOR's repair continues.
+
+## 2026-08-16 — v15 CHARTERED (DRAFT, AWAITING USER REVIEW): THE PHYSICAL-THEORY PROGRAMME — 156 QUESTIONS REGISTERED WITH STATUSES; FIVE WAVE-1 UNITS DRAFTED (v14 LEDGER #386)
+
+The user delivered the complete v15 research-question set
+(156 questions, twelve sections, dependency gates) and
+commissioned five immediate units.  v15/PLAN.md (the
+charter draft) and v15/QUESTIONS.md (every question
+verbatim with its exploration status — 2 ANSWERED, ~8
+ANSWERED-PARTIAL, ~45 PARTIAL with citations, the rest
+UNEXPLORED) committed for review.  Wave 1 drafted:
+THEORY-CONTRACT (Q1–10/24/58), ARITY (Q13/17/19), AUTOGLUE
+(Q38–40), EXCITATION (Q89–96/104–106), DISCRIMINATOR
+(Q147–150/155).  The v14 armed queue re-based per the
+user's gates (SEC×SPC + SPC-D deferred behind EXCITATION;
+FAC×SEC absorbed into §III; PER-R2 into §VI).  Registry
+discipline: every v15 pin cites question numbers; every
+terminal updates statuses in its seal commit.  **NOTHING
+LAUNCHES until the user reviews.**  HOR/REC repairs
+continue under v14.
