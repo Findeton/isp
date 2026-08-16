@@ -78,12 +78,12 @@ Statuses: UNEXPLORED · PARTIAL(cite) · ANSWERED(cite, scope) · Every status c
 64. Does reversing parity order or changing the schedule alter any physical observable? — PARTIAL (HOR: shape flips, speed/radii don't — the parity self-test + K1's unrun-probe pass #379)
 65. Does the causal cone become isotropic under coarse-graining? — UNEXPLORED
 66. Is the measured speed independent of coordinates, chart choice and scheduling? — PARTIAL (16/16 + the unrun probe; full chart sweep open)
-67. Do all local laws become arena-independent once their causal horizon fits? — PARTIAL (HOR: contractible stable 10,240+650 at 0; candidate pending seal)
-68. Do any apparently local laws secretly depend on winding, closure or global translation structure? — ANSWERED-PARTIAL (HOR #382: the census 11 verbatim / 1 scoped / 6 closure-artifacts; candidate pending seal)
+67. Do all local laws become arena-independent once their causal horizon fits? — ANSWERED-SEALED for the contractible family (HOR TERMINAL #388: 10,240+650 at 0 mismatches); the universal over ALL local laws = the Q69 residue
+68. Do any apparently local laws secretly depend on winding, closure or global translation structure? — ANSWERED-SEALED (HOR TERMINAL #388: 11 verbatim = 5 measured + 6 structural / 1 scoped / 6 closure-artifacts, sweep-proven)
 69. Are the six closure-dependent HOR laws dynamically required by any of the twelve horizon-statable laws? — UNEXPLORED
 70. Can the effective dimension, metric or signature be reconstructed from propagation? — UNEXPLORED
 71. Is there a finite-scale route to approximate rotational or Lorentz symmetry? — UNEXPLORED (LD-BROKEN is prior art)
-72. Can the theory formulate increasing finite patches consistently without asserting an actual infinite object? — ANSWERED-CANDIDATE (HOR #374/#382: the formulation gated; R1 respected; pending seal)
+72. Can the theory formulate increasing finite patches consistently without asserting an actual infinite object? — ANSWERED-SEALED (HOR TERMINAL #388: UNDETERMINED-R-NATIVE; 12 of 18 horizon-statable, 6 named exceptions; R1 respected)
 
 ## VII. Probability and quantum structure
 73. What defines a probability measure over histories or outcomes? — PARTIAL (v10-v12 Born-weights-forced line at fixture scale; no v14-grade single object)

@@ -12344,3 +12344,18 @@ walls, the neutered branch (now dies in-process), all
 eight flips.  ONLY the four ordered numbers moved; every
 physics scalar byte-identical to the reviewed delivery.**
 **Orchestrator battery next; terminal on green.**
+
+## 2026-08-16 — HOR IS TERMINAL: THIRTY-SEVEN — THE UNIVERSE NEEDS NO SIZE (v14 LEDGER #388)
+
+**Orchestrator battery ALL GREEN** (byte-identical ×2 from
+deleted artifacts; seed-invariant; MUT-ARENA dead at
+G-ARENA-REBUILT; artifacts untouched and matching #387).
+STATUS row appended; v15/QUESTIONS.md Q67/Q68/Q72 upgraded
+in this commit; memory next.  The user-raised capstone
+seals: laws quantified over horizons, size never declared,
+the torus demoted to a closure choice with its six
+artifacts named, and the speed of light exact at one site
+per tick.
+
+**Programme count: THIRTY-SEVEN terminals; zero false
+physics numbers surviving anywhere.**
