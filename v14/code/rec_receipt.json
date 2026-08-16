@@ -1,0 +1,1163 @@
+{
+ "anchors": [
+  {
+   "chars": 79,
+   "consumer": "G-RECONSTRUCTION-TARGETS-TOTAL",
+   "name": "A-PIN",
+   "read_by": [
+    "G-RECONSTRUCTION-TARGETS-TOTAL"
+   ],
+   "source": "v14/note-rec-pin.md"
+  },
+  {
+   "chars": 98,
+   "consumer": "G-CAST-DERIVED",
+   "name": "A-FAC-CARRIER",
+   "read_by": [
+    "G-CAST-DERIVED"
+   ],
+   "source": "v14/paper-35-fac.md"
+  },
+  {
+   "chars": 109,
+   "consumer": "G-WSTAR-REDERIVED",
+   "name": "A-FAC-WSTAR",
+   "read_by": [
+    "G-WSTAR-REDERIVED"
+   ],
+   "source": "v14/paper-35-fac.md"
+  },
+  {
+   "chars": 64,
+   "consumer": "G-CRYSTALLIZATION-REDERIVED",
+   "name": "A-AID-CRYSTALLIZATION",
+   "read_by": [
+    "G-CRYSTALLIZATION-REDERIVED"
+   ],
+   "source": "v14/paper-33-aid.md"
+  },
+  {
+   "chars": 68,
+   "consumer": "G-CRYSTALLIZATION-REDERIVED",
+   "name": "A-AID-SIGNATURE",
+   "read_by": [
+    "G-CRYSTALLIZATION-REDERIVED"
+   ],
+   "source": "v14/paper-33-aid.md"
+  },
+  {
+   "chars": 111,
+   "consumer": "G-LINK-STRUCTURE-DERIVED",
+   "name": "A-EPR-LINKGRAPH",
+   "read_by": [
+    "G-LINK-STRUCTURE-DERIVED"
+   ],
+   "source": "v14/paper-38-epr.md"
+  },
+  {
+   "chars": 146,
+   "consumer": "G-OBSTRUCTION-NAMED",
+   "name": "A-EPR-UNLINKED",
+   "read_by": [
+    "G-OBSTRUCTION-NAMED"
+   ],
+   "source": "v14/paper-38-epr.md"
+  }
+ ],
+ "arena": {
+  "cells": 27,
+  "cells_per_actor": [
+   6
+  ],
+  "co_division_pairs": 27,
+  "declared_link_directions": 3,
+  "flat_quadruples": 276,
+  "groupings": 280,
+  "parallel_classes": 4,
+  "saturating_groupings": 36,
+  "sites": 9,
+  "strict_triples": 72,
+  "window_schedules": 600
+ },
+ "comparator_teeth": {
+  "certified_reconstructions_refused": 3,
+  "per_history_refusals": 5856,
+  "scrambles_refused": 261
+ },
+ "connection": {
+  "declared_side_finite": 5856,
+  "record_side_reached": 0,
+  "rows": [
+   {
+    "collapse_threshold": 3,
+    "crystallization": -1,
+    "histories": 4,
+    "reconstruction_depth": "NEVER"
+   },
+   {
+    "collapse_threshold": 4,
+    "crystallization": 5,
+    "histories": 5609,
+    "reconstruction_depth": "NEVER"
+   },
+   {
+    "collapse_threshold": 5,
+    "crystallization": 5,
+    "histories": 51,
+    "reconstruction_depth": "NEVER"
+   },
+   {
+    "collapse_threshold": 4,
+    "crystallization": 7,
+    "histories": 32,
+    "reconstruction_depth": "NEVER"
+   },
+   {
+    "collapse_threshold": 5,
+    "crystallization": 7,
+    "histories": 4,
+    "reconstruction_depth": "NEVER"
+   },
+   {
+    "collapse_threshold": 4,
+    "crystallization": 8,
+    "histories": 124,
+    "reconstruction_depth": "NEVER"
+   },
+   {
+    "collapse_threshold": 5,
+    "crystallization": 8,
+    "histories": 20,
+    "reconstruction_depth": "NEVER"
+   },
+   {
+    "collapse_threshold": 4,
+    "crystallization": 11,
+    "histories": 12,
+    "reconstruction_depth": "NEVER"
+   }
+  ]
+ },
+ "control_scrambled": {
+  "by_shape": {
+   "DROP:False": 27,
+   "REPLACE:False": 54,
+   "SWAP:False": 180
+  },
+  "survivors": 0,
+  "trials": 261
+ },
+ "control_synthetic": {
+  "arms": 7,
+  "recovered": 4,
+  "rows": [
+   {
+    "blocks": 8,
+    "cast_recovered": true,
+    "cast_size": 6,
+    "certificate": "CERTIFIED",
+    "parts": [
+     2,
+     2,
+     2
+    ],
+    "tokens": 12
+   },
+   {
+    "blocks": 27,
+    "cast_recovered": true,
+    "cast_size": 9,
+    "certificate": "CERTIFIED",
+    "parts": [
+     3,
+     3,
+     3
+    ],
+    "tokens": 27
+   },
+   {
+    "blocks": 64,
+    "cast_recovered": true,
+    "cast_size": 12,
+    "certificate": "CERTIFIED",
+    "parts": [
+     4,
+     4,
+     4
+    ],
+    "tokens": 48
+   },
+   {
+    "blocks": 125,
+    "cast_recovered": true,
+    "cast_size": 15,
+    "certificate": "CERTIFIED",
+    "parts": [
+     5,
+     5,
+     5
+    ],
+    "tokens": 75
+   },
+   {
+    "blocks": 32,
+    "cast_recovered": false,
+    "cast_size": 24,
+    "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+    "parts": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "tokens": 24
+   },
+   {
+    "blocks": 0,
+    "cast_recovered": false,
+    "cast_size": 0,
+    "certificate": "NO-RECORD-BLOCKS",
+    "parts": [
+     3,
+     3
+    ],
+    "tokens": 9
+   },
+   {
+    "blocks": 24,
+    "cast_recovered": false,
+    "cast_size": 8,
+    "certificate": "TOKEN-IN-NO-ACTOR",
+    "parts": [
+     2,
+     3,
+     4
+    ],
+    "tokens": 26
+   }
+  ]
+ },
+ "corpus": {
+  "by_corpus": {
+   "C1": 72,
+   "C2": 5184,
+   "C3": 600
+  },
+  "distinct_histories": 5784,
+  "event_lengths": {
+   "12": 600,
+   "18": 5184,
+   "9": 72
+  },
+  "events": 101160,
+  "slots": 5856
+ },
+ "crystallization": {
+  "C1_C2_constant": [
+   5
+  ],
+  "anchor_value": [
+   5
+  ],
+  "distribution": {
+   "C1:5": 72,
+   "C2:5": 5184,
+   "C3:11": 12,
+   "C3:5": 404,
+   "C3:7": 36,
+   "C3:8": 144,
+   "C3:None": 4
+  },
+  "never": 4
+ },
+ "disjoint_code": {
+  "float_offences": [],
+  "regions": {
+   "builder": 24,
+   "comparator": 6,
+   "reconstructor": 9,
+   "stripper": 4
+  },
+  "violations": []
+ },
+ "equivariance": {
+  "failing_steps": [],
+  "failures": 0,
+  "trials": 12
+ },
+ "exactness": {
+  "ast_float_offences": [],
+  "float_leaves": [],
+  "json_round_trip_stable": true
+ },
+ "falsifiers": {
+  "falsified": 37,
+  "gates": 37,
+  "mutants": 38,
+  "targets": [
+   "anchors",
+   "arena",
+   "comparator_teeth",
+   "connection",
+   "control_scrambled",
+   "control_synthetic",
+   "corpus",
+   "crystallization",
+   "disjoint_code",
+   "equivariance",
+   "exactness",
+   "level_zero",
+   "link_structure",
+   "menu",
+   "minimality_blocks",
+   "minimality_corpus",
+   "minimality_per_history",
+   "naming",
+   "obstruction",
+   "paper_claims",
+   "paper_coverage",
+   "paper_referents",
+   "parents",
+   "provenance",
+   "read_set",
+   "reconstruction",
+   "sources",
+   "stripping",
+   "surplus",
+   "transcript",
+   "typed_counts",
+   "verdict",
+   "walls",
+   "wstar"
+  ],
+  "waived": 1
+ },
+ "level_zero": {
+  "distinct_record_fields": 36,
+  "distinct_site_rows": 36,
+  "largest_count": 4,
+  "of_slots": 5856,
+  "site_constant_at": 5856
+ },
+ "link_structure": {
+  "declared_pairs": 27,
+  "degrees": [
+   6
+  ],
+  "derived_pairs": 27,
+  "derived_parts": [
+   [
+    0,
+    3,
+    4
+   ],
+   [
+    1,
+    2,
+    5
+   ],
+   [
+    6,
+    7,
+    8
+   ]
+  ],
+  "pairs_agree": true,
+  "tokens_in_exactly_two_actors": 27
+ },
+ "menu": {
+  "declared_members": 6,
+  "derived_members": 3,
+  "matched": [
+   "ANT",
+   "DISCRETE",
+   "TRIVIAL"
+  ],
+  "stray_block_counts": [],
+  "unmatched": [
+   "COL",
+   "DIA",
+   "ROW"
+  ]
+ },
+ "minimality_blocks": {
+  "blocks": 27,
+  "drop_one_subsets": 27,
+  "still_reconstructing": 0
+ },
+ "minimality_corpus": {
+  "blocks_at_that_point": 27,
+  "events": 145,
+  "histories": 17,
+  "one_history_earlier_reconstructs": false
+ },
+ "minimality_per_history": {
+  "by_corpus": {
+   "C1:None": 72,
+   "C2:None": 5184,
+   "C3:None": 600
+  },
+  "reconstructing_at_some_prefix": 0,
+  "slots": 5856
+ },
+ "mutants": [
+  {
+   "description": "one pinned digest is reversed, so a source no longer digests to the value the pin froze",
+   "gate": "G-SOURCES-PINNED",
+   "name": "MUT-SOURCE-DRIFT",
+   "target": "sources"
+  },
+  {
+   "description": "the carrier's cells-per-actor census is moved off the constructor's own count",
+   "gate": "G-ARENA-CONSTRUCTED",
+   "name": "MUT-ARENA",
+   "target": "arena"
+  },
+  {
+   "description": "the concatenation corpus is given a slot count that is not the square of the triple corpus's",
+   "gate": "G-CORPUS-SHAPE",
+   "name": "MUT-CORPUS",
+   "target": "corpus"
+  },
+  {
+   "description": "the count field is reported site-constant at fewer histories than the constructor finds",
+   "gate": "G-LEVEL-ZERO-INSUFFICIENT",
+   "name": "MUT-LEVEL0",
+   "target": "level_zero"
+  },
+  {
+   "description": "the strip emits the actor triples instead of the cells they wrote, so the bare record carries site labels",
+   "gate": "G-STRIPPING-TOTAL",
+   "name": "MUT-STRIP-LEAK",
+   "target": "stripping"
+  },
+  {
+   "description": "one relabelling trial is handed a constant map instead of a permutation, so the derived cast moves under it",
+   "gate": "G-STRIPPING-EQUIVARIANT",
+   "name": "MUT-EQUIVARIANCE",
+   "target": "equivariance"
+  },
+  {
+   "description": "one derived actor is dropped from the reconstructed cast before the comparator sees it",
+   "gate": "G-CAST-DERIVED",
+   "name": "MUT-TAU",
+   "target": "reconstruction"
+  },
+  {
+   "description": "the comparator is handed a cast short of one actor",
+   "gate": "G-CAST-DERIVED",
+   "name": "MUT-CAST",
+   "target": "reconstruction"
+  },
+  {
+   "description": "one derived actor pair is deleted, so the derived link structure is no longer the declared one",
+   "gate": "G-LINK-STRUCTURE-DERIVED",
+   "name": "MUT-LINK",
+   "target": "link_structure"
+  },
+  {
+   "description": "the pin's own list of reconstruction targets is read with one target removed",
+   "gate": "G-RECONSTRUCTION-TARGETS-TOTAL",
+   "name": "MUT-TARGETS",
+   "target": "anchors"
+  },
+  {
+   "description": "one matched menu member is dropped, so the derived menu no longer accounts for every member it produced",
+   "gate": "G-MENU-DERIVED",
+   "name": "MUT-MENU",
+   "target": "menu"
+  },
+  {
+   "description": "the arena-coherent naming count is raised by one, so the residue index is no longer an integer",
+   "gate": "G-NAMING-RESIDUE",
+   "name": "MUT-NAMING",
+   "target": "naming"
+  },
+  {
+   "description": "a reconstructor function is given a reference to an arena constant, so the reconstructor is no longer blind to the declared side",
+   "gate": "G-S1-DISJOINT-CODE",
+   "name": "MUT-S1",
+   "target": "disjoint_code"
+  },
+  {
+   "description": "a property's surplus verdict is flipped from arena-forced to record-carried without its values moving",
+   "gate": "G-SURPLUS-CENSUS",
+   "name": "MUT-SURPLUS",
+   "target": "surplus"
+  },
+  {
+   "description": "one committed history is credited with reconstructing the cast at its first event",
+   "gate": "G-MINIMALITY-PER-HISTORY",
+   "name": "MUT-PERHIST",
+   "target": "minimality_per_history"
+  },
+  {
+   "description": "the corpus-order depth is moved one history later than the record reaches it",
+   "gate": "G-MINIMALITY-CORPUS",
+   "name": "MUT-CORPUS-DEPTH",
+   "target": "minimality_corpus"
+  },
+  {
+   "description": "a drop-one subset is credited with reconstructing, so a record block stops being load-bearing",
+   "gate": "G-MINIMALITY-BLOCKS",
+   "name": "MUT-BLOCK-MIN",
+   "target": "minimality_blocks"
+  },
+  {
+   "description": "one collapse threshold is moved to a width the parent's paper does not carry",
+   "gate": "G-WSTAR-REDERIVED",
+   "name": "MUT-WSTAR",
+   "target": "wstar"
+  },
+  {
+   "description": "one crystallization time is moved off the constant the parent's paper states",
+   "gate": "G-CRYSTALLIZATION-REDERIVED",
+   "name": "MUT-CRYST",
+   "target": "crystallization"
+  },
+  {
+   "description": "the pin's digest is reversed inside the unit's own published provenance, after every source gate has passed",
+   "gate": "G-PROVENANCE",
+   "name": "MUT-PROVENANCE",
+   "target": "provenance"
+  },
+  {
+   "description": "a parent's delivered quantity is raised by one, so the parent's receipt and this unit's constructor no longer agree",
+   "gate": "G-PARENTS-AGREE",
+   "name": "MUT-PARENTS",
+   "target": "parents"
+  },
+  {
+   "description": "one joint row is given a reached record-side depth",
+   "gate": "G-THE-CONNECTION",
+   "name": "MUT-CONNECTION",
+   "target": "connection"
+  },
+  {
+   "description": "the count of events that wrote nothing is raised by one above the corpus's own arithmetic",
+   "gate": "G-OBSTRUCTION-NAMED",
+   "name": "MUT-OBSTRUCTION",
+   "target": "obstruction"
+  },
+  {
+   "description": "a scrambled record is credited with reaching the declared cast",
+   "gate": "G-CONTROL-SCRAMBLED-FAILS",
+   "name": "MUT-SCRAMBLE-CONTROL",
+   "target": "control_scrambled"
+  },
+  {
+   "description": "the balanced synthetic arms are marked unrecovered, so the reconstructor's own domain is misreported",
+   "gate": "G-CONTROL-SYNTHETIC-SUCCEEDS",
+   "name": "MUT-SYNTHETIC",
+   "target": "control_synthetic"
+  },
+  {
+   "description": "the certified-but-refused list is emptied, so the comparator is left with nothing it ever refused",
+   "gate": "G-COMPARATOR-HAS-TEETH",
+   "name": "MUT-TEETH",
+   "target": "comparator_teeth"
+  },
+  {
+   "description": "the head's qualifier is deleted, so the emitted word no longer carries the residue the measurement found",
+   "gate": "G-VERDICT-EQUALITY",
+   "name": "MUT-HEAD",
+   "target": "verdict"
+  },
+  {
+   "description": "a claim the paper does not carry is licensed",
+   "gate": "G-PAPER-CLAIMS",
+   "name": "MUT-PAPER-CLAIM",
+   "target": "paper_claims"
+  },
+  {
+   "description": "a corpus numeral is planted in a sentence about the cast",
+   "gate": "G-PAPER-REFERENTS",
+   "name": "MUT-REFERENT",
+   "target": "paper_referents"
+  },
+  {
+   "description": "the paper's own standing sentence is cut back to the unqualified form the wall forbids",
+   "gate": "G-PAPER-WALLS",
+   "name": "MUT-WALL",
+   "target": "walls"
+  },
+  {
+   "description": "a numeral backed by nothing is admitted to the paper's coverage census",
+   "gate": "G-PAPER-COVERAGE",
+   "name": "MUT-COVERAGE",
+   "target": "paper_coverage"
+  },
+  {
+   "description": "a parent's anchored sentence is altered in the parent's own bytes, so the needle no longer occurs where the anchor says it does",
+   "gate": "G-ANCHORS-LOCATED",
+   "name": "MUT-ANCHOR",
+   "target": "anchors"
+  },
+  {
+   "description": "an anchor's declared consumer is moved to a gate that ran but never subscripted it, so the anchor is located and then discarded",
+   "gate": "G-ANCHORS-CONSUMED",
+   "name": "MUT-ANCHOR-CONSUMER",
+   "target": "anchors"
+  },
+  {
+   "description": "a statement template that types a numeral is admitted",
+   "gate": "G-NO-TYPED-COUNTS",
+   "name": "MUT-TYPED",
+   "target": "typed_counts"
+  },
+  {
+   "description": "a repository file outside the declared read set is opened during the run",
+   "gate": "G-READS-AT-THE-ACCESSOR",
+   "name": "MUT-READ",
+   "target": "read_set"
+  },
+  {
+   "description": "a PASS line for a gate that never ran is appended to the transcript",
+   "gate": "G-TRANSCRIPT-BOUND",
+   "name": "MUT-TRANSCRIPT",
+   "target": "transcript"
+  },
+  {
+   "description": "a non-integer leaf is admitted to the published receipt",
+   "gate": "G-RECEIPT-EXACT",
+   "name": "MUT-FLOAT",
+   "target": "exactness"
+  },
+  {
+   "description": "a top-level receipt key is created after the seal manifest is taken",
+   "gate": "T-SEAL-PROMOTION",
+   "name": "MUT-SEAL-ADD",
+   "target": "verdict"
+  }
+ ],
+ "naming": {
+  "admissible_namings": 1296,
+  "arena_automorphisms": 108,
+  "arena_coherent_namings": 108,
+  "direction_candidates": 36,
+  "residue_index": [
+   12,
+   1
+  ],
+  "resolutions": 12
+ },
+ "obstruction": {
+  "histories_with_an_unwritten_event": 175,
+  "histories_writing_nothing": 1,
+  "name": "THE-LINK-DECLARATION",
+  "residue_index": [
+   12,
+   1
+  ],
+  "resolutions": 12,
+  "silent_history_events": [
+   12
+  ],
+  "undeclared_classes": 1,
+  "unwritten_events": 768
+ },
+ "paper_claims": {
+  "claims": 8,
+  "fences": 3,
+  "rows": 28,
+  "sha256_12": "58b08940d04c"
+ },
+ "paper_coverage": {
+  "exemptions": {
+   "14": "the campaign, v14",
+   "21": "paper-21, the schedule parent",
+   "25": "engraving E-25",
+   "33": "paper-33, the AID unit",
+   "35": "paper-35, the FAC unit",
+   "373": "the ledger entry",
+   "38": "paper-38, the EPR unit",
+   "41": "paper-41, this unit"
+  },
+  "numerals": 144,
+  "unbacked": []
+ },
+ "paper_referents": {
+  "occurrences_checked": 45,
+  "universes": 6
+ },
+ "parents": {
+  "disagreements": [],
+  "quantities": [
+   {
+    "agrees": true,
+    "here": 9,
+    "parent": 9,
+    "quantity": "sites"
+   },
+   {
+    "agrees": true,
+    "here": 3,
+    "parent": 3,
+    "quantity": "declared_links"
+   },
+   {
+    "agrees": true,
+    "here": 4,
+    "parent": 4,
+    "quantity": "parallel_classes"
+   },
+   {
+    "agrees": true,
+    "here": 280,
+    "parent": 280,
+    "quantity": "groupings"
+   },
+   {
+    "agrees": true,
+    "here": 36,
+    "parent": 36,
+    "quantity": "saturating_groupings"
+   },
+   {
+    "agrees": true,
+    "here": 72,
+    "parent": 72,
+    "quantity": "strict_triples"
+   },
+   {
+    "agrees": true,
+    "here": 276,
+    "parent": 276,
+    "quantity": "flat_quadruples"
+   },
+   {
+    "agrees": true,
+    "here": 600,
+    "parent": 600,
+    "quantity": "window_schedules"
+   },
+   {
+    "agrees": true,
+    "here": 108,
+    "parent": 108,
+    "quantity": "arena_automorphisms"
+   },
+   {
+    "agrees": true,
+    "here": 27,
+    "parent": 27,
+    "quantity": "cells"
+   },
+   {
+    "agrees": true,
+    "here": 27,
+    "parent": 27,
+    "quantity": "co_division_pairs"
+   },
+   {
+    "agrees": true,
+    "here": [
+     6
+    ],
+    "parent": [
+     6
+    ],
+    "quantity": "cells_per_actor"
+   },
+   {
+    "agrees": true,
+    "here": 72,
+    "parent": 72,
+    "quantity": "C1"
+   },
+   {
+    "agrees": true,
+    "here": 5184,
+    "parent": 5184,
+    "quantity": "C2"
+   },
+   {
+    "agrees": true,
+    "here": 600,
+    "parent": 600,
+    "quantity": "C3"
+   },
+   {
+    "agrees": true,
+    "here": 5856,
+    "parent": 5856,
+    "quantity": "total_histories"
+   },
+   {
+    "agrees": true,
+    "here": 5784,
+    "parent": 5784,
+    "quantity": "distinct_histories"
+   },
+   {
+    "agrees": true,
+    "here": {
+     "12": 600,
+     "18": 5184,
+     "9": 72
+    },
+    "parent": {
+     "12": 600,
+     "18": 5184,
+     "9": 72
+    },
+    "quantity": "events_per_history"
+   },
+   {
+    "agrees": true,
+    "here": 5856,
+    "parent": 5856,
+    "quantity": "epr_histories"
+   },
+   {
+    "agrees": true,
+    "here": 36,
+    "parent": 36,
+    "quantity": "epr_distinct_record_fields"
+   },
+   {
+    "agrees": true,
+    "here": 5856,
+    "parent": 5856,
+    "quantity": "epr_site_constant"
+   },
+   {
+    "agrees": true,
+    "here": 4,
+    "parent": 4,
+    "quantity": "epr_largest_count"
+   },
+   {
+    "agrees": true,
+    "here": 5,
+    "parent": 5,
+    "quantity": "aid_crystallization_constant"
+   },
+   {
+    "agrees": true,
+    "here": 4,
+    "parent": 4,
+    "quantity": "aid_never_crystallizing"
+   }
+  ],
+  "quantities_compared": 24,
+  "receipts": {
+   "aid_receipt.json": "2dd2a9879984",
+   "epr_receipt.json": "8813e0c2aad9",
+   "fac_receipt.json": "c7135ba5884c"
+  }
+ },
+ "provenance": {
+  "families_adopted": [
+   "T-SEAL-PROMOTION",
+   "T-TRANSCRIPT-BOUND",
+   "T-WALL-SEMANTIC",
+   "T-ANCHOR-CONSUMED",
+   "T-CLAIMS-EQUAL",
+   "T-REFERENT-BOUND",
+   "T-NO-TYPED-COUNTS",
+   "T-FALSIFIER-POISONS",
+   "T-READ-SET"
+  ],
+  "instrument": "v14/code/rec_exact.py",
+  "paper": "v14/paper-41-rec.md",
+  "paper_sha256_12": "58b08940d04c",
+  "pin": "v14/note-rec-pin.md",
+  "pin_sha256_12": "0b51e47b7b4b",
+  "scramble": {
+   "multiplier": 5,
+   "note": "a declared arena-blind coordinate; G-STRIPPING-EQUIVARIANT prices it",
+   "offset": 11
+  },
+  "self_sha256_12": "ba77c08c81a2",
+  "template": "v14/code/era_template.py",
+  "template_sha256_12": "d04a3eb58fbc",
+  "unit": "REC"
+ },
+ "read_set": {
+  "declared": [
+   "v14/code/aid_receipt.json",
+   "v14/code/epr_receipt.json",
+   "v14/code/era_template.py",
+   "v14/code/fac_receipt.json",
+   "v14/code/rec_exact.py",
+   "v14/note-rec-pin.md",
+   "v14/paper-33-aid.md",
+   "v14/paper-35-fac.md",
+   "v14/paper-38-epr.md",
+   "v14/paper-41-rec.md"
+  ],
+  "distinct": 10,
+  "reads": 18
+ },
+ "reconstruction": {
+  "cast_size": 9,
+  "cells_per_actor": [
+   6
+  ],
+  "certificate": "CERTIFIED",
+  "certified": true,
+  "clique_sizes": [
+   [
+    3,
+    27
+   ],
+   [
+    6,
+    9
+   ]
+  ],
+  "meet_values": [
+   0,
+   1,
+   3
+  ],
+  "threshold": 3,
+  "tokens": 27
+ },
+ "reconstruction_rule": {
+  "cast": "an actor is a maximal set of cells that pairwise belong to one actor, of the largest size such a set attains",
+  "sharing": "two record cells belong to a common actor exactly when one event wrote them together, or when the cells written with each of them meet in the largest number any never-co-written pair attains",
+  "threshold_is_derived": true
+ },
+ "seal_manifest": {
+  "declared_unsealed": {},
+  "sealed": {
+   "anchors": "1bbfe39593a7",
+   "arena": "6da3b5805893",
+   "comparator_teeth": "db3b3dc8ee1d",
+   "connection": "8b4d17cb8ed9",
+   "control_scrambled": "b2db72000738",
+   "control_synthetic": "82f93526985a",
+   "corpus": "ca6e95d63089",
+   "crystallization": "86dc06db24b4",
+   "disjoint_code": "776fc0c40327",
+   "equivariance": "45e2e249138c",
+   "exactness": "e3d88e27d52c",
+   "falsifiers": "6734333c5fb4",
+   "level_zero": "f90a8e8ead86",
+   "link_structure": "62348f11f08a",
+   "menu": "d8a5f3b96797",
+   "minimality_blocks": "0fffd1109ed6",
+   "minimality_corpus": "f4abb5e4b5fc",
+   "minimality_per_history": "3effa8b15631",
+   "mutants": "532bf092f274",
+   "naming": "954e3bd2cea6",
+   "obstruction": "154339c14f04",
+   "paper_claims": "d4c7c2735bf1",
+   "paper_coverage": "c09ca770b86d",
+   "paper_referents": "49bfeae606e3",
+   "parents": "5f37d9774d6a",
+   "provenance": "b01fa6682fb1",
+   "read_set": "c2f3f638fbb5",
+   "reconstruction": "b70d9d915d0f",
+   "reconstruction_rule": "182dd98ca2eb",
+   "sources": "191360315412",
+   "stripping": "913d71c1b8e5",
+   "surplus": "81b12db468f4",
+   "transcript": "1b9f34df9a3d",
+   "typed_counts": "da0f91a2dc04",
+   "verdict": "72e7d03aee3a",
+   "walls": "bdc661f94895",
+   "wstar": "76e559c140ef"
+  },
+  "sealed_at_gate": {
+   "anchors": "G-ANCHORS-CONSUMED",
+   "arena": "G-ARENA-CONSTRUCTED",
+   "comparator_teeth": "G-COMPARATOR-HAS-TEETH",
+   "connection": "G-THE-CONNECTION",
+   "control_scrambled": "G-CONTROL-SCRAMBLED-FAILS",
+   "control_synthetic": "G-CONTROL-SYNTHETIC-SUCCEEDS",
+   "corpus": "G-CORPUS-SHAPE",
+   "crystallization": "G-CRYSTALLIZATION-REDERIVED",
+   "disjoint_code": "G-S1-DISJOINT-CODE",
+   "equivariance": "G-STRIPPING-EQUIVARIANT",
+   "exactness": "G-RECEIPT-EXACT",
+   "falsifiers": "T-FALSIFIER-COVERAGE",
+   "level_zero": "G-LEVEL-ZERO-INSUFFICIENT",
+   "link_structure": "G-LINK-STRUCTURE-DERIVED",
+   "menu": "G-MENU-DERIVED",
+   "minimality_blocks": "G-MINIMALITY-BLOCKS",
+   "minimality_corpus": "G-MINIMALITY-CORPUS",
+   "minimality_per_history": "G-MINIMALITY-PER-HISTORY",
+   "mutants": "G-PROVENANCE",
+   "naming": "G-NAMING-RESIDUE",
+   "obstruction": "G-OBSTRUCTION-NAMED",
+   "paper_claims": "G-PAPER-CLAIMS",
+   "paper_coverage": "G-PAPER-COVERAGE",
+   "paper_referents": "G-PAPER-REFERENTS",
+   "parents": "G-PARENTS-AGREE",
+   "provenance": "G-PROVENANCE",
+   "read_set": "G-READS-AT-THE-ACCESSOR",
+   "reconstruction": "G-CAST-DERIVED",
+   "reconstruction_rule": "G-PROVENANCE",
+   "sources": "G-SOURCES-PINNED",
+   "stripping": "G-STRIPPING-TOTAL",
+   "surplus": "G-SURPLUS-CENSUS",
+   "transcript": "G-TRANSCRIPT-BOUND",
+   "typed_counts": "G-NO-TYPED-COUNTS",
+   "verdict": "G-VERDICT-EQUALITY",
+   "walls": "G-PAPER-WALLS",
+   "wstar": "G-WSTAR-REDERIVED"
+  }
+ },
+ "sources": {
+  "v14/code/aid_receipt.json": "2dd2a9879984",
+  "v14/code/epr_receipt.json": "8813e0c2aad9",
+  "v14/code/era_template.py": "d04a3eb58fbc",
+  "v14/code/fac_receipt.json": "c7135ba5884c",
+  "v14/note-rec-pin.md": "0b51e47b7b4b",
+  "v14/paper-33-aid.md": "ecdd3fbf1d06",
+  "v14/paper-35-fac.md": "281289a615ad",
+  "v14/paper-38-epr.md": "22beb6696223"
+ },
+ "stripping": {
+  "block_sizes": [
+   [
+    3,
+    27
+   ]
+  ],
+  "non_integer_leaves": [],
+  "record_blocks": 27,
+  "scramble_is_a_permutation": true,
+  "unwritten_events": 768,
+  "written_events": 100392
+ },
+ "surplus": {
+  "arena_forced": 1,
+  "collision_classes": 39,
+  "distinct_bare_records": 5643,
+  "distinct_histories_in_collisions": 180,
+  "histories_lost": 141,
+  "largest_fiber": 6,
+  "not_carried": 4,
+  "properties": [
+   {
+    "distinct_values": 3,
+    "fibers_that_split": 6,
+    "property": "EVENTS-IN-THE-HISTORY",
+    "verdict": "NOT-CARRIED"
+   },
+   {
+    "distinct_values": 6,
+    "fibers_that_split": 0,
+    "property": "EVENTS-THAT-WROTE",
+    "verdict": "RECORD-CARRIED"
+   },
+   {
+    "distinct_values": 36,
+    "fibers_that_split": 0,
+    "property": "THE-COUNT-FIELD",
+    "verdict": "RECORD-CARRIED"
+   },
+   {
+    "distinct_values": 3,
+    "fibers_that_split": 6,
+    "property": "THE-CORPUS-IT-CAME-FROM",
+    "verdict": "NOT-CARRIED"
+   },
+   {
+    "distinct_values": 136,
+    "fibers_that_split": 6,
+    "property": "THE-EVENT-SET-ITSELF",
+    "verdict": "NOT-CARRIED"
+   },
+   {
+    "distinct_values": 2,
+    "fibers_that_split": 0,
+    "property": "THE-SIZE-OF-A-RECORD-BLOCK",
+    "verdict": "RECORD-CARRIED"
+   },
+   {
+    "distinct_values": 5,
+    "fibers_that_split": 21,
+    "property": "THE-CRYSTALLIZATION-TIME",
+    "verdict": "NOT-CARRIED"
+   },
+   {
+    "distinct_values": 3,
+    "fibers_that_split": 0,
+    "property": "THE-COLLAPSE-THRESHOLD",
+    "verdict": "RECORD-CARRIED"
+   },
+   {
+    "distinct_values": 1,
+    "fibers_that_split": 0,
+    "property": "ACTORS-IN-A-DIVISION-EVENT",
+    "verdict": "ARENA-FORCED"
+   }
+  ],
+  "record_carried": 4,
+  "rows_unbound": []
+ },
+ "transcript": {
+  "chain_head": "5a331a7442cc550a",
+  "gate_rows": 37,
+  "lines": 39,
+  "sha256_12": "16b7a64c6156"
+ },
+ "typed_counts": {
+  "exemptions": [],
+  "offenders": [],
+  "registry": 76
+ },
+ "verdict": {
+  "segments": [
+   "REC-RECONSTRUCTION<CORPUS=5,856; DISTINCT-HISTORIES=5,784; RECORD-BLOCKS=27; SITE-SET=9-OF-9-EXACT; LINK-STRUCTURE=27-OF-27-EXACT; CAST-SIZE=9-DERIVED; MENU=3-OF-6-EXACT; NAMING=1,296-ADMISSIBLE-108-ARENA-COHERENT; RESIDUE-INDEX=12; LEVEL-0-COUNT-FIELD=36-DISTINCT-CAST-NOT-DERIVABLE>",
+   "REC-MINIMALITY<PER-HISTORY=0-OF-5,856-AT-EVERY-PREFIX; CORPUS-ORDER=17-HISTORIES-145-EVENTS; BLOCK-MINIMAL=27-OF-27-DROP-ONE-SURVIVORS-0; COLLAPSE-THRESHOLDS=3-AND-4-AND-5; CRYSTALLIZATION-ON-C1-AND-C2=5; NEVER-CRYSTALLIZING=4>",
+   "REC-CAST-DERIVED-UP-TO-THE-DIRECTION-DECLARATION<OBSTRUCTION=THE-LINK-DECLARATION; UNWRITTEN-EVENTS=768; PARTLY-UNWRITTEN-HISTORIES=175; HISTORIES-WRITING-NOTHING=1; RECORD-COLLISIONS=39-CLASSES-180-HISTORIES; SURPLUS=1-ARENA-FORCED-4-RECORD-CARRIED-4-NOT-CARRIED; CONTROLS=261-SCRAMBLES-0-SURVIVE-AND-4-OF-7-SYNTHETIC-ARMS-RECOVERED; SCOPE=ONE-ARENA,COMMITTED-HISTORIES,COUNTS-ARE-COUNTING-ONLY;THE-CAST-IS-DERIVED-AT-THE-CORPUS-AND-AT-NO-SINGLE-HISTORY>"
+  ],
+  "word": "REC-CAST-DERIVED-UP-TO-THE-DIRECTION-DECLARATION"
+ },
+ "walls": [
+  {
+   "licences": [],
+   "name": "W-NO-UNQUALIFIED-DERIVATION",
+   "negative": [
+    "the (?:whole |entire )?(?:cast|arena|theory) is (?:fully |wholly )?(?:derived|reconstructed|recovered)(?![\\w\\s]{0,24}up to)(?![\\w\\s]{0,40}at the corpus)",
+    "nothing (?:at all |whatever )?(?:is |remains |stays )?declared",
+    "no (?:declaration|residue|freedom|choice) (?:remains|is left|survives)",
+    "(?:the )?record (?:alone |by itself )?(?:fixes|determines|forces) the (?:coordinates|directions|direction classes)",
+    "reconstruct\\w*\\s+(?:\\w+\\s+){0,3}from a single history",
+    "(?:the )?count field\\s+(?:\\w+\\s+){0,4}(?:suffices|is enough|recovers the cast|determines the cast)"
+   ],
+   "positive": [
+    "the cast is derived at the corpus and at no single history",
+    "the direction declaration is the datum that resists"
+   ]
+  },
+  {
+   "licences": [],
+   "name": "W-PARENT-SCOPE",
+   "negative": [
+    "the record is (?:a |the )?complete description(?![\\w\\s]{0,30}(?:for the censused|at this arena))",
+    "epr\\w*\\s+(?:\\w+\\s+){0,4}(?:proved|showed|established)\\s+(?:\\w+\\s+){0,3}completeness",
+    "local realism\\s+(?:\\w+\\s+){0,3}(?:is\\s+)?restor\\w*",
+    "restor\\w*\\s+(?:\\w+\\s+){0,3}local realism"
+   ],
+   "positive": [
+    "record-completeness is analytic at epr's own catalogue"
+   ]
+  }
+ ],
+ "wstar": {
+  "anchor_values": [
+   3,
+   4,
+   5
+  ],
+  "distribution": {
+   "C1:4": 72,
+   "C2:4": 5184,
+   "C3:3": 4,
+   "C3:4": 521,
+   "C3:5": 75
+  },
+  "values": [
+   3,
+   4,
+   5
+  ]
+ }
+}

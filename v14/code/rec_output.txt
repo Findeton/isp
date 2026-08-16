@@ -1,0 +1,39 @@
+REC (paper-41) -- THE RECONSTRUCTION UNIT: THE CAST DERIVED FROM THE RECORD
+==========================================================================
+  [PASS] G-SOURCES-PINNED :: sources 8 drifted none
+  [PASS] G-ANCHORS-LOCATED :: anchors 7 located all
+  [PASS] G-ARENA-CONSTRUCTED :: cells 27 pairs 27 cells-per-actor [6]
+  [PASS] G-CORPUS-SHAPE :: slots 5856 distinct 5784 lengths [9, 12, 18]
+  [PASS] G-LEVEL-ZERO-INSUFFICIENT :: distinct fields 36 site-constant 5856 of 5856
+  [PASS] G-STRIPPING-TOTAL :: non-integer leaves none blocks 27 written 100392 unwritten 768
+  [PASS] G-STRIPPING-EQUIVARIANT :: trials 12 failures 0
+  [PASS] G-CAST-DERIVED :: certified CERTIFIED cast 9 set-equal True anchor [27, 27]
+  [PASS] G-LINK-STRUCTURE-DERIVED :: two-actor tokens 27 pairs 27 agree True parts 3 degrees [6]
+  [PASS] G-MENU-DERIVED :: matched ['ANT', 'DISCRETE', 'TRIVIAL'] stray none unmatched ['COL', 'DIA', 'ROW']
+  [PASS] G-NAMING-RESIDUE :: isos 1296 coherent 108 automorphisms 108 index 12 resolutions 12
+  [PASS] G-RECONSTRUCTION-TARGETS-TOTAL :: targets 5
+  [PASS] G-S1-DISJOINT-CODE :: violations none floats none
+  [PASS] G-SURPLUS-CENSUS :: forced 1 carried 4 not-carried 4 bare 5643 lost 141 unbound none
+  [PASS] G-MINIMALITY-PER-HISTORY :: reconstructing histories 0 of 5856
+  [PASS] G-MINIMALITY-CORPUS :: histories 17 events 145 blocks 27 one-earlier False
+  [PASS] G-MINIMALITY-BLOCKS :: drop-one survivors 0 of 27
+  [PASS] G-WSTAR-REDERIVED :: measured [3, 4, 5] anchor [3, 4, 5]
+  [PASS] G-CRYSTALLIZATION-REDERIVED :: C1/C2 [5] anchor [5] never 4
+  [PASS] G-PARENTS-AGREE :: quantities 24 disagreements none
+  [PASS] G-THE-CONNECTION :: rows 8 declared-finite 5856 record-reached 0
+  [PASS] G-OBSTRUCTION-NAMED :: unwritten 768 partly 175 silent 1 undeclared classes 1
+  [PASS] G-CONTROL-SCRAMBLED-FAILS :: trials 261 survivors 0
+  [PASS] G-CONTROL-SYNTHETIC-SUCCEEDS :: arms 7 recovered 4 mismatched none
+  [PASS] G-COMPARATOR-HAS-TEETH :: certified-but-refused 3
+  [PASS] G-VERDICT-EQUALITY :: fields 12 outcomes 4 mismatched none
+  [PASS] G-PAPER-CLAIMS :: rows 28 claims 8 fences 3 
+  [PASS] G-PAPER-REFERENTS :: universes 6 occurrences 45 
+  [PASS] G-PAPER-WALLS :: walls 2 patterns 10 positive 3 
+  [PASS] G-PAPER-COVERAGE :: numerals 144 unbacked none
+  [PASS] G-ANCHORS-CONSUMED :: anchors 7 consumed 7 
+  [PASS] G-NO-TYPED-COUNTS :: offenders none
+  [PASS] G-RECEIPT-EXACT :: float leaves none ast none round-trip True
+  [PASS] G-PROVENANCE :: digests 4 mutants 38 unreachable none
+  [PASS] G-READS-AT-THE-ACCESSOR :: declared 10 distinct 10 
+  [PASS] G-TRANSCRIPT-BOUND :: rows 35 chain b37ae3b6b2b7e940 
+  [PASS] T-FALSIFIER-COVERAGE :: gates 37 falsified 37 waived 1 

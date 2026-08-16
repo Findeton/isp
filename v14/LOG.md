@@ -12047,3 +12047,46 @@ findings-not-errata precedent to rule), K3 (the first
 adversarial audit of full E-25…E-33 template conformance;
 the S-1 claim attacked by AST; the 43-sweep).  REC still
 constructing.
+
+## 2026-08-16 — REC (PAPER-41) DELIVERED, COMMITTED AS-IS: THE CAST DERIVED UP TO THE DIRECTION DECLARATION — FROM BARE SCRAMBLED RECORD BYTES, AT THE CORPUS AND AT NO SINGLE HISTORY (v14 LEDGER #376)
+
+**Files:** paper-41-rec.md 58b08940d04c; rec_exact.py
+ba77c08c81a2; rec_output.txt 16b7a64c6156;
+rec_receipt.json 2428d901e5c5.  CANDIDATE UNTIL
+ADJUDICATION.  **HEAD:
+REC-CAST-DERIVED-UP-TO-THE-DIRECTION-DECLARATION.**  From
+bare records (cells written per event, indices scrambled
+by a declared arena-blind map), ONE rule with a DERIVED
+threshold recovers: **the site set 9/9 EXACT (set
+equality); the link structure 27/27 EXACT (a token IS a
+co-division pair; complete multipartite recovered); the
+cast size 9 DERIVED; the partition menu 3 of 6 (TRIVIAL,
+DISCRETE, and the UNDECLARED class ANT emerge; the three
+DECLARED direction classes do not)**; naming lands at
+1,296 admissible / 108 arena-coherent with residue index
+EXACTLY 12 = the resolvable direction decompositions.
+**Derived vs residual, precisely: the cast, the links, and
+the undeclared class are THEOREMS OF THE RECORD; the
+declared direction classes and the labels are a 12-fold
+coordinate choice the record does not make.**  The
+level-0 no-go measured (the count field alone names no
+cast).  **INVERSE SURPLUS: 1 arena-forced / 4
+record-carried / 4 not-carried — FAC's collapse threshold
+IS a function of the bare record; AID's crystallization
+time is NOT.**  **MINIMALITY: 0 of 5,856 single histories
+reconstruct at any prefix (zero false certificates);
+corpus-order 17 histories / 145 events; all 27 blocks
+load-bearing — THE CAST IS DERIVED AT THE CORPUS AND AT
+NO SINGLE HISTORY.**  Both parent thresholds re-derived
+exactly (w* and crystallization, matching FAC/AID).  The
+obstruction named: THE LINK DECLARATION (768 unwritten
+events; one history writes nothing).  Controls: 261
+scrambles 0 survive; 4 of 7 synthetic arms recovered.
+**Template conformance: imports era_template, all nine
+families USED; S-1 machine-checked (0 violations); the
+unit's own battery found FOUR instrument defects + one
+dishonest falsifier (caught by the harness's move-proof)
+and repaired all five before delivery; second battery
+38/38.**  Byte ×3 incl. regeneration; off-tree git-less;
+seed-invariant.  **Orchestrator battery next; panel after
+green.**
