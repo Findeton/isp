@@ -262,3 +262,34 @@ orbit-stabilizer THEOREM; the stabilizer = Aut(K₃,₃,₃) =
 saturating predicate is an a=3 idiom coincidence) and the
 ungated connectivity precondition (measured: 1 component;
 the result survives loosening).  K2/K3 out.
+
+## 2026-08-16 — CONTRACT K2 (EFFECTUS) FROZEN: ACCEPT-WITH-FIXES WITH A REJECT LEVER; **THE W1/W2 WALLS DO NOT STAND (16/16 PARAPHRASES SURVIVE) — THE FIX IDENTIFIED AND ROUTED PROGRAMME-WIDE**; A SEALED CLAIM FALSE IN BOTH HALVES (v15 LEDGER #10)
+
+**Review:** v15/review-contract-effectus.md (98476ada790c,
+475 lines).  126 recomputations, zero false numerals; four
+of six orders folded structurally (grammar-carried, not
+prose-carried); the gauge sweep clean at 13 occurrences;
+the defensible sentence verbatim and gated.  **MAJORS:
+(M1, the REJECT lever) CLAIM_TEXTS[4] false in BOTH
+halves — ten triangle-writing block sets fail to recover
+(four at total cover: the criterion not sufficient) and a
+non-triangular set CERTIFIES (not necessary); the 9-arm
+domain probe stated as a classification.  (M2, URGENT
+PROGRAMME-WIDE): the W1/W2 walls pass 16/16 planted
+paraphrases at exit 0 incl. "the nine actors follow from
+the record blocks alone" — MUT-WALL plants the wall's own
+verbatim pattern (the S-1 family); §8's description false
+(E-23); THE FIX: the unused SemanticWall licence leg
+kills all sixteen — ROUTED to ARITY/AUTOGLUE now and to
+the DISC adjudication as a check item.  (M3) the 0-OF-606
+minimality is amplitude-relative (205/606 at a
+single-cell amplitude) — sufficiency safe, minimality
+undisclosed.  (M4) two table cells promote reconstruction
+to derivation on the ordered object.  (M5)
+"every declaration" contradicted by the census's own
+TICK/CHART absence; 2 of 4 head words fail #299-extended
+feasibility.**  8 minors (incl. set-equality VERIFIED
+TRUE but ungated).  **The #5 brief item NOT CONFIRMED a
+second time** (19 quote lines = the 13 anchors, zero
+duplicates; the real inflation is ACTOR≡SITE,
+CELL≡CO-DIVISION-PAIR).  K3 out.
