@@ -1180,3 +1180,116 @@ are untouched by every point, so nothing was routed to
 it.  All adopted points land in the ECC pin, whose
 parents now number three of four.
 
+## 2026-08-16 — AUTOGLUE REPAIR DELIVERED AND COMMITTED (v15 LEDGER #41)
+
+The continuation reconciled the interrupted worker's
+partial (only autoglue_exact.py had been touched; paper,
+output, receipt were at HEAD), KEPT its work on 18 items,
+and repaired EIGHT defects it carried, four of them
+silent: the anon-footprint copy that disabled the
+no-hidden-input leg entirely (MUT-RULE-BLIND died
+nowhere); first-call-only move recording that blinded
+family-valued sites; the window keyed on two axes giving
+1-result-over-4-cells where the head needs 16 cells / 4
+results / 12 copies; an integer offset inside an m()
+call, caught by the very audit leg the partial had added;
+the list/tuple type break in the price row; an incomplete
+determinism whitelist; the 455 s runtime factorised to
+48 s with every number identical; a CLI flag that existed
+only in a comment.  Committed as-is at 0b9e096 (paper
+fa0268d99524 / code 703b199b3b41 / output 0dd478220ad2 /
+receipt 6542c7819389; 49 gates, 60 recipes, 9 walls / 65
+controls, 153 measured values).  Commit UNSIGNED (GPG
+non-interactive), per the #38 disclosure.
+
+Every #27 order landed with evidence: the death mechanism
+is now a GATE — the failing seam's two crossings fix the
+SAME entry at OPPOSITE signs, 108/108, at the collinear
+shared site 108/108; rule blindness rebuilt on opaque
+tokens (1,820 evaluations); SEC-2's 32-map base sweep
+restored (106 of 455 post-states move; fibers published
+as sets; verdict rows constant); the spelled-fraction
+gates (12 words x 5 hedges, sentence-scoped); the
+ten-cell fiber table from all 108 first crossings (range
+25-43, the delivered cell the minimum, reached at 6);
+"A SECTOR'S OWN FORM AT A SITE" with the 312/156 census;
+the direct-sum identity at all 31 lattice points; SEC-2
+§4.5 quoted verbatim and the Q50 mechanism re-attributed;
+four #299 pre-registered pairs, one per head segment,
+segment 1's predicate now UNSATISFIABLE by the
+create-nothing rule; the 16-cell window published with 4
+distinct results and 2 fates; the comparator reads NO
+summary scalar — all 41 head positions derived from
+primitive tables; 8 best states (2 diagonal; 81 of 108
+absorbable by no advance state); the payload
+frozen-serialised-verified at the bytes; every bare
+negation gone from all six licence lists (9 walls, 65
+controls, a negation control per wall); the transcript
+narrative gated (31 lines / 90 numerals bound to receipt
+paths); outcome words built on pin stems located in the
+frozen pin; reflexive N-of-N pairs refused outright.
+
+Its battery: 60/60 recipes at declared gates out of
+harness, tree unchanged; --selftest 60/60 deaths with 60
+MOVES PROVED, whole-tree hash unchanged; byte
+reproduction at two seeds from artifact-deleted off-tree
+trees run from cwd /; 21/21 hostile argv; the 29 head
+quantities re-derived outside the instrument.  INJECTION
+REPLAYS 29/29 DEAD — the fourteen delivery-survivors all
+die at their proper gates now, and the worker found ONE
+NEW DISEASE of its own: INJ-22, which K3 had recorded as
+vacuous, was NOT vacuous in a harsher variant — a hash()
+in a census sort key made the promoted receipt
+seed-dependent while the transcript stayed fixed.
+G-DETERMINISM gained an AST leg banning the builtin hash
+(MUT-HASH).  Registered for TPL-2 as the
+SEED-DEPENDENT-RECEIPT-FIXED-TRANSCRIPT species.
+
+Physics: 0 measured keys dropped, 14 moved — ALL
+FOURTEEN instrument counts (gates 42→49, recipes 44→59,
+controls 30→65, walls 6→9, ...), no physics value among
+them; 108, 288, 216, 162, 455, 468, 29791, 20100, 77, 0,
+31, 8, 62208, rank 6 / kernel 4 — all unchanged.
+
+## 2026-08-16 — AUTOGLUE IS TERMINAL: v15 TERMINAL FOUR — WAVE 1 IS CLOSED (v15 LEDGER #42)
+
+Orchestrator battery all green on the committed blob
+(git-less mirror: plain run from DELETED artifacts
+byte-identical to committed, byte x2, PYTHONHASHSEED
+55555 invariant; unknown flag and unknown mutant rc 2;
+selftest write-nothing; MUT-CONTAINMENT dead at its
+declared gate; committed artifacts untouched).
+
+STATUS row appended; registry sealed in this commit: Q38
+SEALED (the crossing CAN create what it needs — 108 of
+288 by a pre-declared target-free rule; frozen geometry
+0/288), Q39 SEALED (as a TRANSITION RELATION, not an
+evolution law — the successor empty or many-valued at
+every one of 455 events, unique at 0), Q40 SEALED (no
+target after the event, ever), Q41 strengthened (8
+extremal functionals, 0 select at every cut), Q42
+ANSWERED-PARTIAL (max-det underivable AND its unique
+selection is the no-crossing state), Q50
+SEALED-AT-THIS-ARENA (motivation and lawfulness DISJOINT
+77-vs-162-share-0; bookkeeping confirmed; the dynamics
+half = DC on Q34), Q34 + Q36 upgraded PARTIAL.
+
+The physics, in one paragraph: the theory can GROW BY
+RULE — a rule fixed before any event, seeing only the
+event's own footprint, creates the crossing's seam at 108
+of the 288 conflicts the arena admits — but nothing makes
+it grow (motivated and lawful share zero events, by the
+parent's own theorem), nothing selects HOW it grows (no
+extremal principle survives its own cuts), and what the
+growth updates is a RELATION, not a law: the seam's
+successor state is empty or many-valued, never unique.
+Whether the seam PERSISTS between events is not a
+measurement but a reading — and that exact question is
+ECC's step (0b), first in its charter.
+
+**WAVE 1 IS CLOSED: four units, four terminals, twelve
+frozen panel seats, four adjudications, four repairs, ~42
+sealed or upgraded registry questions.  v15 terminals:
+FOUR.  42 terminals across both eras.  Zero false physics
+numbers remain in any terminal paper; zero false
+computed-output numbers ever.**
