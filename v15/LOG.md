@@ -1011,3 +1011,18 @@ condition (#10/#25/#30), not DISC's charge.  Style
 ruling: the six "the delivered version" disclosures stand
 (ordered; no seat or round named).  **Orchestrator
 battery next; terminal two of v15 on green.**
+
+## 2026-08-16 — DISC IS TERMINAL: v15 TERMINAL TWO (v15 LEDGER #37)
+
+Battery all green (byte-identical ×2 alien-CWD from
+deleted artifacts; seed-invariant; MUT-AGREE dead at its
+gate with move+hook; artifacts untouched).  STATUS row
+appended; registry seal-block updated in this commit
+(Q147–Q150 SEALED at the ablation forms; Q155 SEALED —
+the reproduction census; Q21 upgraded).  The record layer
+survives its own audit at exactly its honest size: real,
+memoryful, and — so far — one tick of daylight from the
+lattice it lives on.
+
+**v15 terminals: TWO.  Zero false delivered physics
+numbers across both eras.**
