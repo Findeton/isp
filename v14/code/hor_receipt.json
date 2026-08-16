@@ -1,0 +1,4696 @@
+{
+ "arena": {
+  "admissible_rows": 80,
+  "alphabet": 25,
+  "carrier": "THE-UNIFORM-CONFIGURATIONS-ONE-COIN-ON-EVERY-LINK",
+  "coins": 640,
+  "d": 2,
+  "domino_dimension_read_from_R5": 2,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "field": "Q(zeta_8)",
+  "links_there": 32,
+  "patch_ladder": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "plaquettes_there": 16,
+  "sectors": {
+   "ANTIDIAGONAL": 64,
+   "BALANCED": 512,
+   "DIAGONAL": 64
+  },
+  "sites_there": 16,
+  "the_declared_size_of_the_parents": 4,
+  "the_two_closures": [
+   "TORUS",
+   "OPEN-PATCH"
+  ],
+  "torus_ladder": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "unitary_by_a_second_route": 640
+ },
+ "arithmetic": {
+  "banned_calls_present": [],
+  "field": "Q(zeta_8)",
+  "float_literals": 0,
+  "measured_names": 77,
+  "ratios": "FRACTION",
+  "representation": "INTEGER-4-TUPLES-DOUBLED",
+  "typed_numeral_offenders": 0
+ },
+ "c_against_the_group_speed": {
+  "rows": [
+   {
+    "lives_in": "THE-DUAL-TORUS",
+    "measured_by": "R4B",
+    "needs_the_closure": true,
+    "object": "the group speed of a translation-covariant generator",
+    "this_unit_re_measures_it": false
+   },
+   {
+    "lives_in": "THE-SITE-SET",
+    "measured_by": "HOR",
+    "needs_the_closure": false,
+    "object": "the reach of the support under one tick",
+    "this_unit_re_measures_it": true
+   }
+  ],
+  "the_parents_clause_was_read": true,
+  "this_unit_contradicts_nothing_of_the_parents": true
+ },
+ "circulants": {
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "rows": [
+   {
+    "arena": "T-4",
+    "axes": 9,
+    "axes_whose_shift_is_a_bijection": 9,
+    "closure": "TORUS",
+    "per_axis": [
+     {
+      "axis": "0,1",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "1,0",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "1,1",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "1,3",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "0,2",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "2,0",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "1,2",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "2,1",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "2,2",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     }
+    ],
+    "translations_carrying_the_link_set_to_itself": 16
+   },
+   {
+    "arena": "P-9",
+    "axes": 9,
+    "axes_whose_shift_is_a_bijection": 0,
+    "closure": "OPEN-PATCH",
+    "per_axis": [
+     {
+      "axis": "0,1",
+      "sites_the_shift_loses": 9,
+      "the_shift_is_a_bijection": false
+     },
+     {
+      "axis": "1,0",
+      "sites_the_shift_loses": 9,
+      "the_shift_is_a_bijection": false
+     },
+     {
+      "axis": "1,1",
+      "sites_the_shift_loses": 17,
+      "the_shift_is_a_bijection": false
+     },
+     {
+      "axis": "1,3",
+      "sites_the_shift_loses": 33,
+      "the_shift_is_a_bijection": false
+     },
+     {
+      "axis": "0,2",
+      "sites_the_shift_loses": 18,
+      "the_shift_is_a_bijection": false
+     },
+     {
+      "axis": "2,0",
+      "sites_the_shift_loses": 18,
+      "the_shift_is_a_bijection": false
+     },
+     {
+      "axis": "1,2",
+      "sites_the_shift_loses": 25,
+      "the_shift_is_a_bijection": false
+     },
+     {
+      "axis": "2,1",
+      "sites_the_shift_loses": 25,
+      "the_shift_is_a_bijection": false
+     },
+     {
+      "axis": "2,2",
+      "sites_the_shift_loses": 32,
+      "the_shift_is_a_bijection": false
+     }
+    ],
+    "translations_carrying_the_link_set_to_itself": 1
+   }
+  ]
+ },
+ "closed_form": {
+  "area_disagreements": 0,
+  "area_discriminating_comparisons": 5120,
+  "arena": "P-9",
+  "checks_after_the_fit": 10240,
+  "coins": 640,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "failures": 0,
+  "fitted_at": [
+   2,
+   3,
+   4
+  ],
+  "ladder_perimeters": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "on_the_closed_arena": {
+   "area_disagreements": 0,
+   "area_discriminating_comparisons": 5120,
+   "arena": "T-8",
+   "checks_after_the_fit": 10240,
+   "coins": 640,
+   "failures": 0,
+   "fitted_at": [
+    2,
+    3,
+    4
+   ],
+   "ladder_perimeters": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "per_perimeter": [
+    {
+     "P": 2,
+     "area_disagreements": 0,
+     "area_pairs": 0,
+     "checks": 640,
+     "failures": 0
+    },
+    {
+     "P": 3,
+     "area_disagreements": 0,
+     "area_pairs": 0,
+     "checks": 1280,
+     "failures": 0
+    },
+    {
+     "P": 4,
+     "area_disagreements": 0,
+     "area_pairs": 1280,
+     "checks": 1920,
+     "failures": 0
+    },
+    {
+     "P": 5,
+     "area_disagreements": 0,
+     "area_pairs": 2560,
+     "checks": 2560,
+     "failures": 0
+    },
+    {
+     "P": 6,
+     "area_disagreements": 0,
+     "area_pairs": 1280,
+     "checks": 1920,
+     "failures": 0
+    },
+    {
+     "P": 7,
+     "area_disagreements": 0,
+     "area_pairs": 0,
+     "checks": 1280,
+     "failures": 0
+    },
+    {
+     "P": 8,
+     "area_disagreements": 0,
+     "area_pairs": 0,
+     "checks": 640,
+     "failures": 0
+    }
+   ],
+   "shapes": 16
+  },
+  "on_the_open_arena": {
+   "area_disagreements": 0,
+   "area_discriminating_comparisons": 5120,
+   "arena": "P-9",
+   "checks_after_the_fit": 10240,
+   "coins": 640,
+   "failures": 0,
+   "fitted_at": [
+    2,
+    3,
+    4
+   ],
+   "ladder_perimeters": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "per_perimeter": [
+    {
+     "P": 2,
+     "area_disagreements": 0,
+     "area_pairs": 0,
+     "checks": 640,
+     "failures": 0
+    },
+    {
+     "P": 3,
+     "area_disagreements": 0,
+     "area_pairs": 0,
+     "checks": 1280,
+     "failures": 0
+    },
+    {
+     "P": 4,
+     "area_disagreements": 0,
+     "area_pairs": 1280,
+     "checks": 1920,
+     "failures": 0
+    },
+    {
+     "P": 5,
+     "area_disagreements": 0,
+     "area_pairs": 2560,
+     "checks": 2560,
+     "failures": 0
+    },
+    {
+     "P": 6,
+     "area_disagreements": 0,
+     "area_pairs": 1280,
+     "checks": 1920,
+     "failures": 0
+    },
+    {
+     "P": 7,
+     "area_disagreements": 0,
+     "area_pairs": 0,
+     "checks": 1280,
+     "failures": 0
+    },
+    {
+     "P": 8,
+     "area_disagreements": 0,
+     "area_pairs": 0,
+     "checks": 640,
+     "failures": 0
+    }
+   ],
+   "shapes": 16
+  },
+  "per_arena_residuals": [
+   {
+    "arena": "P-9",
+    "coins_admissible_on_a_link": 640,
+    "links": 144,
+    "links_whose_operator_is_not_a_two_site_domino": 0,
+    "links_without_a_refinement_place": 0,
+    "loops_whose_reversal_is_not_the_conjugate_trace": 0,
+    "plaquettes": 64,
+    "shapes_that_fit": 16,
+    "sites_that_are_not_a_plaquette_base": 17,
+    "sites_the_tick_sends_outside_the_arena": 0,
+    "sites_with_fewer_than_four_links": 32
+   },
+   {
+    "arena": "T-8",
+    "coins_admissible_on_a_link": 640,
+    "links": 128,
+    "links_whose_operator_is_not_a_two_site_domino": 0,
+    "links_without_a_refinement_place": 0,
+    "loops_whose_reversal_is_not_the_conjugate_trace": 0,
+    "plaquettes": 64,
+    "shapes_that_fit": 16,
+    "sites_that_are_not_a_plaquette_base": 0,
+    "sites_the_tick_sends_outside_the_arena": 0,
+    "sites_with_fewer_than_four_links": 0
+   }
+  ],
+  "per_perimeter": [
+   {
+    "P": 2,
+    "area_disagreements": 0,
+    "area_pairs": 0,
+    "checks": 640,
+    "failures": 0
+   },
+   {
+    "P": 3,
+    "area_disagreements": 0,
+    "area_pairs": 0,
+    "checks": 1280,
+    "failures": 0
+   },
+   {
+    "P": 4,
+    "area_disagreements": 0,
+    "area_pairs": 1280,
+    "checks": 1920,
+    "failures": 0
+   },
+   {
+    "P": 5,
+    "area_disagreements": 0,
+    "area_pairs": 2560,
+    "checks": 2560,
+    "failures": 0
+   },
+   {
+    "P": 6,
+    "area_disagreements": 0,
+    "area_pairs": 1280,
+    "checks": 1920,
+    "failures": 0
+   },
+   {
+    "P": 7,
+    "area_disagreements": 0,
+    "area_pairs": 0,
+    "checks": 1280,
+    "failures": 0
+   },
+   {
+    "P": 8,
+    "area_disagreements": 0,
+    "area_pairs": 0,
+    "checks": 640,
+    "failures": 0
+   }
+  ],
+  "shapes": 16,
+  "the_ladder_is_an_initial_segment_of_the_parents": true
+ },
+ "closure_census": {
+  "artifact": 8,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "rows": [
+   {
+    "id": "LAW-LINK-OPERATOR",
+    "law": "the link operator is a two-site domino and the identity elsewhere",
+    "parent": "R5",
+    "verdict": "SURVIVES-VERBATIM",
+    "witness_on_the_closed_arena": 0,
+    "witness_on_the_open_arena": 0
+   },
+   {
+    "id": "LAW-HOLONOMY",
+    "law": "the holonomy of a reversed loop is the conjugate trace",
+    "parent": "R5",
+    "verdict": "SURVIVES-VERBATIM",
+    "witness_on_the_closed_arena": 0,
+    "witness_on_the_open_arena": 0
+   },
+   {
+    "id": "LAW-COIN-FAMILY",
+    "law": "the coins admissible on a link",
+    "parent": "R5",
+    "verdict": "SURVIVES-VERBATIM",
+    "witness_on_the_closed_arena": 640,
+    "witness_on_the_open_arena": 640
+   },
+   {
+    "id": "LAW-STRATIFICATION",
+    "law": "the four parity strata are matchings, summed over the whole ladder",
+    "parent": "R5",
+    "verdict": "SURVIVES-SCOPED",
+    "witness_on_the_closed_arena": 6,
+    "witness_on_the_open_arena": 0
+   },
+   {
+    "id": "LAW-LINK-COUNT",
+    "law": "every site carries four links",
+    "parent": "R5",
+    "verdict": "CLOSURE-ARTIFACT",
+    "witness_on_the_closed_arena": 0,
+    "witness_on_the_open_arena": 32
+   },
+   {
+    "id": "LAW-PLAQUETTE-COUNT",
+    "law": "every site is the base of a plaquette",
+    "parent": "R5",
+    "verdict": "CLOSURE-ARTIFACT",
+    "witness_on_the_closed_arena": 0,
+    "witness_on_the_open_arena": 17
+   },
+   {
+    "id": "LAW-SINGLE-OCCUPATION",
+    "law": "the tick keeps the single-occupation sector",
+    "parent": "R5",
+    "verdict": "SURVIVES-VERBATIM",
+    "witness_on_the_closed_arena": 0,
+    "witness_on_the_open_arena": 0
+   },
+   {
+    "id": "LAW-RECTANGLE-FAMILY",
+    "law": "the rectangle circuits that stay simple",
+    "parent": "POT",
+    "verdict": "SURVIVES-VERBATIM",
+    "witness_on_the_closed_arena": 16,
+    "witness_on_the_open_arena": 16
+   },
+   {
+    "id": "LAW-WINDING-FAMILY",
+    "law": "the winding cycles",
+    "parent": "POT",
+    "verdict": "CLOSURE-ARTIFACT",
+    "witness_on_the_closed_arena": 128,
+    "witness_on_the_open_arena": "ABSENT"
+   },
+   {
+    "id": "LAW-HOMOLOGY",
+    "law": "the winding classes a loop can carry",
+    "parent": "POT",
+    "verdict": "CLOSURE-ARTIFACT",
+    "witness_on_the_closed_arena": 13,
+    "witness_on_the_open_arena": 1
+   },
+   {
+    "id": "LAW-CLOSED-FORM",
+    "law": "the three-term ladder form fails at",
+    "parent": "POT",
+    "verdict": "SURVIVES-VERBATIM",
+    "witness_on_the_closed_arena": 0,
+    "witness_on_the_open_arena": 0
+   },
+   {
+    "id": "LAW-AREA-BLINDNESS",
+    "law": "the equal-perimeter comparisons that disagree",
+    "parent": "POT",
+    "verdict": "SURVIVES-VERBATIM",
+    "witness_on_the_closed_arena": 0,
+    "witness_on_the_open_arena": 0
+   },
+   {
+    "id": "LAW-MERGING-INDEX",
+    "law": "the merging index",
+    "parent": "ACT",
+    "verdict": "CLOSURE-ARTIFACT",
+    "witness_on_the_closed_arena": 2,
+    "witness_on_the_open_arena": 1
+   },
+   {
+    "id": "LAW-PARENT-ORBITS",
+    "law": "the orbit count under the realisable twists",
+    "parent": "ACT",
+    "verdict": "CLOSURE-ARTIFACT",
+    "witness_on_the_closed_arena": 208,
+    "witness_on_the_open_arena": 136
+   },
+   {
+    "id": "LAW-CLASS-COUNT",
+    "law": "the class count under the full stencil image",
+    "parent": "ACT",
+    "verdict": "SURVIVES-VERBATIM",
+    "witness_on_the_closed_arena": 136,
+    "witness_on_the_open_arena": 136
+   },
+   {
+    "id": "LAW-TRANSLATION-COVARIANCE",
+    "law": "the declared axes whose shift is a bijection",
+    "parent": "R4",
+    "verdict": "CLOSURE-ARTIFACT",
+    "witness_on_the_closed_arena": 9,
+    "witness_on_the_open_arena": "ABSENT"
+   },
+   {
+    "id": "LAW-DUAL-TORUS",
+    "law": "the translations the momentum route needs",
+    "parent": "R4B",
+    "verdict": "CLOSURE-ARTIFACT",
+    "witness_on_the_closed_arena": 16,
+    "witness_on_the_open_arena": "ABSENT"
+   },
+   {
+    "id": "LAW-REFINEMENT-PLACES",
+    "law": "the links a refinement step leaves without a new place",
+    "parent": "LOR",
+    "verdict": "SURVIVES-VERBATIM",
+    "witness_on_the_closed_arena": 0,
+    "witness_on_the_open_arena": 0
+   }
+  ],
+  "scoped": 1,
+  "verbatim": 9
+ },
+ "code_sha256_12": "00c985939230",
+ "cone_saturation": {
+  "closed_sizes": 6,
+  "every_closed_size_becomes_visible": true,
+  "every_closed_size_saturates": true,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "open_sizes": 7,
+  "rows": [
+   {
+    "arena": "T-3",
+    "closure": "TORUS",
+    "closure_first_visible_at_tick": 2,
+    "free_cone_at_that_tick": 4,
+    "n": 3,
+    "saturates_at_tick": 4,
+    "sites": 9
+   },
+   {
+    "arena": "T-4",
+    "closure": "TORUS",
+    "closure_first_visible_at_tick": 5,
+    "free_cone_at_that_tick": 24,
+    "n": 4,
+    "saturates_at_tick": 4,
+    "sites": 16
+   },
+   {
+    "arena": "T-5",
+    "closure": "TORUS",
+    "closure_first_visible_at_tick": 2,
+    "free_cone_at_that_tick": 4,
+    "n": 5,
+    "saturates_at_tick": 8,
+    "sites": 25
+   },
+   {
+    "arena": "T-6",
+    "closure": "TORUS",
+    "closure_first_visible_at_tick": 6,
+    "free_cone_at_that_tick": 32,
+    "n": 6,
+    "saturates_at_tick": 7,
+    "sites": 36
+   },
+   {
+    "arena": "T-7",
+    "closure": "TORUS",
+    "closure_first_visible_at_tick": 2,
+    "free_cone_at_that_tick": 4,
+    "n": 7,
+    "saturates_at_tick": 12,
+    "sites": 49
+   },
+   {
+    "arena": "T-8",
+    "closure": "TORUS",
+    "closure_first_visible_at_tick": 9,
+    "free_cone_at_that_tick": 80,
+    "n": 8,
+    "saturates_at_tick": 8,
+    "sites": 64
+   },
+   {
+    "arena": "P-3",
+    "closure": "OPEN-PATCH",
+    "closure_first_visible_at_tick": 2,
+    "free_cone_at_that_tick": 4,
+    "n": 3,
+    "saturates_at_tick": 4,
+    "sites": 9
+   },
+   {
+    "arena": "P-4",
+    "closure": "OPEN-PATCH",
+    "closure_first_visible_at_tick": 2,
+    "free_cone_at_that_tick": 4,
+    "n": 4,
+    "saturates_at_tick": 7,
+    "sites": 16
+   },
+   {
+    "arena": "P-5",
+    "closure": "OPEN-PATCH",
+    "closure_first_visible_at_tick": 5,
+    "free_cone_at_that_tick": 24,
+    "n": 5,
+    "saturates_at_tick": 7,
+    "sites": 25
+   },
+   {
+    "arena": "P-6",
+    "closure": "OPEN-PATCH",
+    "closure_first_visible_at_tick": 6,
+    "free_cone_at_that_tick": 32,
+    "n": 6,
+    "saturates_at_tick": 7,
+    "sites": 36
+   },
+   {
+    "arena": "P-7",
+    "closure": "OPEN-PATCH",
+    "closure_first_visible_at_tick": 6,
+    "free_cone_at_that_tick": 32,
+    "n": 7,
+    "saturates_at_tick": 8,
+    "sites": 49
+   },
+   {
+    "arena": "P-8",
+    "closure": "OPEN-PATCH",
+    "closure_first_visible_at_tick": 6,
+    "free_cone_at_that_tick": 32,
+    "n": 8,
+    "saturates_at_tick": 11,
+    "sites": 64
+   },
+   {
+    "arena": "P-9",
+    "closure": "OPEN-PATCH",
+    "closure_first_visible_at_tick": 9,
+    "free_cone_at_that_tick": 80,
+    "n": 9,
+    "saturates_at_tick": 11,
+    "sites": 81
+   }
+  ]
+ },
+ "cone_shape": {
+  "asymmetric_depths": 16,
+  "depths": 16,
+  "depths_reflected_by_reversing_the_parity_order": 16,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "radii_that_move_under_that_reversal": 0,
+  "rows": [
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 1
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 2
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 3
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 4
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 5
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 6
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 7
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 8
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 9
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 10
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 11
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 12
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 13
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 14
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 15
+   },
+   {
+    "radius_moved": false,
+    "reflected": true,
+    "tick": 16
+   }
+  ],
+  "the_shape_is_declaration_relative": true,
+  "the_speed_is_not": true
+ },
+ "control_arms": {
+  "arms": [
+   {
+    "arm": "ARM-CONTRACTIBLE-INSIDE",
+    "got": "UNMOVED",
+    "must": "UNMOVED",
+    "what": "a two-by-two rectangle, open size against closed size"
+   },
+   {
+    "arm": "ARM-WINDING",
+    "got": "MOVED",
+    "must": "MOVED",
+    "what": "the straight winding cycle, one closed size against another"
+   },
+   {
+    "arm": "ARM-WRAPPING-SHAPE",
+    "got": "MOVED",
+    "must": "MOVED",
+    "what": "a shape whose extent equals the size, so it wraps"
+   },
+   {
+    "arm": "ARM-DEPTH-BEYOND-THE-HORIZON",
+    "got": "MOVED",
+    "must": "MOVED",
+    "what": "the window amplitude at a depth the small closed size cannot hide"
+   },
+   {
+    "arm": "ARM-GLOBAL-MERGING-INDEX",
+    "got": "MOVED",
+    "must": "MOVED",
+    "what": "the merging index, a quantity of the whole arena"
+   }
+  ],
+  "arms_on_the_wrong_side": 0,
+  "arms_that_did_not": 1,
+  "arms_that_moved": 4,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24"
+ },
+ "coverage": {
+  "forcings": {
+   "G-FALSIFIER-COVERAGE": true,
+   "G-FALSIFIER-MOVES": true
+  },
+  "gates": 44,
+  "gates_waived": 2,
+  "gates_with_a_falsifier": 42,
+  "waivers": {
+   "G-FALSIFIER-COVERAGE": "the coverage gate counts itself inside its own denominator, so a falsifier for it would have to be a falsifier of the count that contains it; the forcing is that its own identifier is a member of the denominator it divides by, checked here",
+   "G-FALSIFIER-MOVES": "a falsifier of the move-proof gate would have to be proved to move by the very gate it falsifies; the forcing is that the gate demonstrably evaluated every declared falsifier, checked by requiring one move proof per declared row"
+  }
+ },
+ "declared_unsealed": [
+  "code_sha256_12",
+  "exit_conventions",
+  "pin_sha256_prefix",
+  "preregistered_heads",
+  "python",
+  "schema",
+  "unit",
+  "declared_unsealed"
+ ],
+ "direct_limit": {
+  "comparisons": 400,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "rows": [
+   {
+    "arena": "P-5",
+    "carried_unchanged": 80,
+    "comparisons": 80,
+    "n": 5,
+    "shapes": 16
+   },
+   {
+    "arena": "P-6",
+    "carried_unchanged": 80,
+    "comparisons": 80,
+    "n": 6,
+    "shapes": 16
+   },
+   {
+    "arena": "P-7",
+    "carried_unchanged": 80,
+    "comparisons": 80,
+    "n": 7,
+    "shapes": 16
+   },
+   {
+    "arena": "P-8",
+    "carried_unchanged": 80,
+    "comparisons": 80,
+    "n": 8,
+    "shapes": 16
+   },
+   {
+    "arena": "P-9",
+    "carried_unchanged": 80,
+    "comparisons": 80,
+    "n": 9,
+    "shapes": 16
+   }
+  ],
+  "the_form": "A HOR-LAW IS A STATEMENT OF THE FORM: FOR EVERY FINITE OPEN PATCH P AND EVERY OBSERVABLE O WHOSE SUPPORT AND WHOSE DEPTH-CONE BOTH LIE INSIDE P, PHI(O) HOLDS.  NO SYMBOL IN A HOR-LAW DENOTES A SIZE, NO QUANTIFIER RANGES OVER A COMPLETED TOTALITY, AND EVERY INSTANCE IS A STATEMENT ABOUT ONE FINITE PATCH.  THE PATCHES FORM A DIRECTED SYSTEM UNDER INCLUSION AND THE INCLUSIONS CARRY VALUES UNCHANGED ON THE OBSERVABLES A HOR-LAW QUANTIFIES OVER; THAT PROPERTY IS WHAT THE UNIT MEASURES, AND IT IS NOT A CONVERGENCE, NOT A LIMIT AND NOT AN OBJECT.",
+  "the_sizes_are_directed_under_inclusion": true,
+  "this_is_not_a_limit_and_not_an_object": true,
+  "values_an_inclusion_failed_to_carry": 0
+ },
+ "dynamic_stability": {
+  "coins": 5,
+  "depth": 8,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "rows": [
+   {
+    "arena": "T-6",
+    "closure": "TORUS",
+    "depth": 1,
+    "measured_on_the_values": true,
+    "n": 6,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-6",
+    "closure": "TORUS",
+    "depth": 2,
+    "measured_on_the_values": true,
+    "n": 6,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-6",
+    "closure": "TORUS",
+    "depth": 3,
+    "measured_on_the_values": true,
+    "n": 6,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-6",
+    "closure": "TORUS",
+    "depth": 4,
+    "measured_on_the_values": true,
+    "n": 6,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-6",
+    "closure": "TORUS",
+    "depth": 5,
+    "measured_on_the_values": true,
+    "n": 6,
+    "predicted_by_the_cone": false
+   },
+   {
+    "arena": "T-6",
+    "closure": "TORUS",
+    "depth": 6,
+    "measured_on_the_values": false,
+    "n": 6,
+    "predicted_by_the_cone": false
+   },
+   {
+    "arena": "T-6",
+    "closure": "TORUS",
+    "depth": 7,
+    "measured_on_the_values": false,
+    "n": 6,
+    "predicted_by_the_cone": false
+   },
+   {
+    "arena": "T-6",
+    "closure": "TORUS",
+    "depth": 8,
+    "measured_on_the_values": false,
+    "n": 6,
+    "predicted_by_the_cone": false
+   },
+   {
+    "arena": "T-8",
+    "closure": "TORUS",
+    "depth": 1,
+    "measured_on_the_values": true,
+    "n": 8,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-8",
+    "closure": "TORUS",
+    "depth": 2,
+    "measured_on_the_values": true,
+    "n": 8,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-8",
+    "closure": "TORUS",
+    "depth": 3,
+    "measured_on_the_values": true,
+    "n": 8,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-8",
+    "closure": "TORUS",
+    "depth": 4,
+    "measured_on_the_values": true,
+    "n": 8,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-8",
+    "closure": "TORUS",
+    "depth": 5,
+    "measured_on_the_values": true,
+    "n": 8,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-8",
+    "closure": "TORUS",
+    "depth": 6,
+    "measured_on_the_values": true,
+    "n": 8,
+    "predicted_by_the_cone": false
+   },
+   {
+    "arena": "T-8",
+    "closure": "TORUS",
+    "depth": 7,
+    "measured_on_the_values": true,
+    "n": 8,
+    "predicted_by_the_cone": false
+   },
+   {
+    "arena": "T-8",
+    "closure": "TORUS",
+    "depth": 8,
+    "measured_on_the_values": true,
+    "n": 8,
+    "predicted_by_the_cone": false
+   },
+   {
+    "arena": "T-10",
+    "closure": "TORUS",
+    "depth": 1,
+    "measured_on_the_values": true,
+    "n": 10,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-10",
+    "closure": "TORUS",
+    "depth": 2,
+    "measured_on_the_values": true,
+    "n": 10,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-10",
+    "closure": "TORUS",
+    "depth": 3,
+    "measured_on_the_values": true,
+    "n": 10,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-10",
+    "closure": "TORUS",
+    "depth": 4,
+    "measured_on_the_values": true,
+    "n": 10,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-10",
+    "closure": "TORUS",
+    "depth": 5,
+    "measured_on_the_values": true,
+    "n": 10,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-10",
+    "closure": "TORUS",
+    "depth": 6,
+    "measured_on_the_values": true,
+    "n": 10,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-10",
+    "closure": "TORUS",
+    "depth": 7,
+    "measured_on_the_values": true,
+    "n": 10,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-10",
+    "closure": "TORUS",
+    "depth": 8,
+    "measured_on_the_values": true,
+    "n": 10,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-12",
+    "closure": "TORUS",
+    "depth": 1,
+    "measured_on_the_values": true,
+    "n": 12,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-12",
+    "closure": "TORUS",
+    "depth": 2,
+    "measured_on_the_values": true,
+    "n": 12,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-12",
+    "closure": "TORUS",
+    "depth": 3,
+    "measured_on_the_values": true,
+    "n": 12,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-12",
+    "closure": "TORUS",
+    "depth": 4,
+    "measured_on_the_values": true,
+    "n": 12,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-12",
+    "closure": "TORUS",
+    "depth": 5,
+    "measured_on_the_values": true,
+    "n": 12,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-12",
+    "closure": "TORUS",
+    "depth": 6,
+    "measured_on_the_values": true,
+    "n": 12,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-12",
+    "closure": "TORUS",
+    "depth": 7,
+    "measured_on_the_values": true,
+    "n": 12,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "T-12",
+    "closure": "TORUS",
+    "depth": 8,
+    "measured_on_the_values": true,
+    "n": 12,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-5",
+    "closure": "OPEN-PATCH",
+    "depth": 1,
+    "measured_on_the_values": true,
+    "n": 5,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-5",
+    "closure": "OPEN-PATCH",
+    "depth": 2,
+    "measured_on_the_values": true,
+    "n": 5,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-5",
+    "closure": "OPEN-PATCH",
+    "depth": 3,
+    "measured_on_the_values": true,
+    "n": 5,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-5",
+    "closure": "OPEN-PATCH",
+    "depth": 4,
+    "measured_on_the_values": true,
+    "n": 5,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-5",
+    "closure": "OPEN-PATCH",
+    "depth": 5,
+    "measured_on_the_values": false,
+    "n": 5,
+    "predicted_by_the_cone": false
+   },
+   {
+    "arena": "P-5",
+    "closure": "OPEN-PATCH",
+    "depth": 6,
+    "measured_on_the_values": false,
+    "n": 5,
+    "predicted_by_the_cone": false
+   },
+   {
+    "arena": "P-5",
+    "closure": "OPEN-PATCH",
+    "depth": 7,
+    "measured_on_the_values": false,
+    "n": 5,
+    "predicted_by_the_cone": false
+   },
+   {
+    "arena": "P-5",
+    "closure": "OPEN-PATCH",
+    "depth": 8,
+    "measured_on_the_values": false,
+    "n": 5,
+    "predicted_by_the_cone": false
+   },
+   {
+    "arena": "P-7",
+    "closure": "OPEN-PATCH",
+    "depth": 1,
+    "measured_on_the_values": true,
+    "n": 7,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-7",
+    "closure": "OPEN-PATCH",
+    "depth": 2,
+    "measured_on_the_values": true,
+    "n": 7,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-7",
+    "closure": "OPEN-PATCH",
+    "depth": 3,
+    "measured_on_the_values": true,
+    "n": 7,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-7",
+    "closure": "OPEN-PATCH",
+    "depth": 4,
+    "measured_on_the_values": true,
+    "n": 7,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-7",
+    "closure": "OPEN-PATCH",
+    "depth": 5,
+    "measured_on_the_values": true,
+    "n": 7,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-7",
+    "closure": "OPEN-PATCH",
+    "depth": 6,
+    "measured_on_the_values": false,
+    "n": 7,
+    "predicted_by_the_cone": false
+   },
+   {
+    "arena": "P-7",
+    "closure": "OPEN-PATCH",
+    "depth": 7,
+    "measured_on_the_values": false,
+    "n": 7,
+    "predicted_by_the_cone": false
+   },
+   {
+    "arena": "P-7",
+    "closure": "OPEN-PATCH",
+    "depth": 8,
+    "measured_on_the_values": false,
+    "n": 7,
+    "predicted_by_the_cone": false
+   },
+   {
+    "arena": "P-9",
+    "closure": "OPEN-PATCH",
+    "depth": 1,
+    "measured_on_the_values": true,
+    "n": 9,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-9",
+    "closure": "OPEN-PATCH",
+    "depth": 2,
+    "measured_on_the_values": true,
+    "n": 9,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-9",
+    "closure": "OPEN-PATCH",
+    "depth": 3,
+    "measured_on_the_values": true,
+    "n": 9,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-9",
+    "closure": "OPEN-PATCH",
+    "depth": 4,
+    "measured_on_the_values": true,
+    "n": 9,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-9",
+    "closure": "OPEN-PATCH",
+    "depth": 5,
+    "measured_on_the_values": true,
+    "n": 9,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-9",
+    "closure": "OPEN-PATCH",
+    "depth": 6,
+    "measured_on_the_values": true,
+    "n": 9,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-9",
+    "closure": "OPEN-PATCH",
+    "depth": 7,
+    "measured_on_the_values": true,
+    "n": 9,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-9",
+    "closure": "OPEN-PATCH",
+    "depth": 8,
+    "measured_on_the_values": true,
+    "n": 9,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-11",
+    "closure": "OPEN-PATCH",
+    "depth": 1,
+    "measured_on_the_values": true,
+    "n": 11,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-11",
+    "closure": "OPEN-PATCH",
+    "depth": 2,
+    "measured_on_the_values": true,
+    "n": 11,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-11",
+    "closure": "OPEN-PATCH",
+    "depth": 3,
+    "measured_on_the_values": true,
+    "n": 11,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-11",
+    "closure": "OPEN-PATCH",
+    "depth": 4,
+    "measured_on_the_values": true,
+    "n": 11,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-11",
+    "closure": "OPEN-PATCH",
+    "depth": 5,
+    "measured_on_the_values": true,
+    "n": 11,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-11",
+    "closure": "OPEN-PATCH",
+    "depth": 6,
+    "measured_on_the_values": true,
+    "n": 11,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-11",
+    "closure": "OPEN-PATCH",
+    "depth": 7,
+    "measured_on_the_values": true,
+    "n": 11,
+    "predicted_by_the_cone": true
+   },
+   {
+    "arena": "P-11",
+    "closure": "OPEN-PATCH",
+    "depth": 8,
+    "measured_on_the_values": true,
+    "n": 11,
+    "predicted_by_the_cone": true
+   }
+  ],
+  "rows_where_agreement_survives_without_the_condition": 4,
+  "rows_where_the_sufficient_condition_is_violated": 0,
+  "rows_where_the_value_is_unmoved": 54,
+  "rows_where_the_value_moves": 10,
+  "the_reference_arena": "P-19",
+  "window_sites": 25
+ },
+ "emergent_c": {
+  "c_in_the_max_norm_per_tick_instantaneous": "1",
+  "c_in_the_max_norm_per_tick_sustained": [
+   "1/2"
+  ],
+  "c_in_the_sum_norm_per_tick": "1",
+  "c_in_the_sum_norm_per_tick_sustained": [
+   "1"
+  ],
+  "depths_at_which_the_sum_norm_maximum_is_attained": 16,
+  "depths_censused": 16,
+  "the_speed_is_a_maximum_not_a_bound": true,
+  "the_unit": "SITES-PER-TICK-WHERE-A-TICK-IS-ONE-STRATUM-OPERATOR"
+ },
+ "exit_conventions": {
+  "0": "every gate passed and both artifacts were promoted",
+  "1": "a gate refused; nothing was promoted",
+  "2": "the argv contract refused the invocation"
+ },
+ "family_split": {
+  "closed_sizes": 3,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "open_sizes": 6,
+  "rows": [
+   {
+    "arena": "T-4",
+    "closure": "TORUS",
+    "contractible_placements": 144,
+    "n": 4,
+    "shapes_that_fit": 9,
+    "winding_placements": 128
+   },
+   {
+    "arena": "T-6",
+    "closure": "TORUS",
+    "contractible_placements": 576,
+    "n": 6,
+    "shapes_that_fit": 16,
+    "winding_placements": 432
+   },
+   {
+    "arena": "T-8",
+    "closure": "TORUS",
+    "contractible_placements": 1024,
+    "n": 8,
+    "shapes_that_fit": 16,
+    "winding_placements": 1024
+   },
+   {
+    "arena": "P-4",
+    "closure": "OPEN-PATCH",
+    "contractible_placements": 36,
+    "n": 4,
+    "shapes_that_fit": 9,
+    "winding_placements": 0
+   },
+   {
+    "arena": "P-5",
+    "closure": "OPEN-PATCH",
+    "contractible_placements": 100,
+    "n": 5,
+    "shapes_that_fit": 16,
+    "winding_placements": 0
+   },
+   {
+    "arena": "P-6",
+    "closure": "OPEN-PATCH",
+    "contractible_placements": 196,
+    "n": 6,
+    "shapes_that_fit": 16,
+    "winding_placements": 0
+   },
+   {
+    "arena": "P-7",
+    "closure": "OPEN-PATCH",
+    "contractible_placements": 324,
+    "n": 7,
+    "shapes_that_fit": 16,
+    "winding_placements": 0
+   },
+   {
+    "arena": "P-8",
+    "closure": "OPEN-PATCH",
+    "contractible_placements": 484,
+    "n": 8,
+    "shapes_that_fit": 16,
+    "winding_placements": 0
+   },
+   {
+    "arena": "P-9",
+    "closure": "OPEN-PATCH",
+    "contractible_placements": 676,
+    "n": 9,
+    "shapes_that_fit": 16,
+    "winding_placements": 0
+   }
+  ],
+  "winding_is_empty_at_every_open_size": true,
+  "winding_is_present_at_every_closed_size": true
+ },
+ "gate_digests": {
+  "G-ANCHOR-CONSUMPTION": "28657fe623f8",
+  "G-ARENA-REBUILT": "4e41f1a2de13",
+  "G-C-IS-NOT-THE-GROUP-SPEED": "35039397d33e",
+  "G-CIRCULANTS-NEED-THE-CLOSURE": "22ea6e26e010",
+  "G-CLOSURE-CENSUS": "4a0445f4aaca",
+  "G-CONE-SATURATION": "2696825d16c7",
+  "G-CONE-SHAPE-IS-DECLARATION-RELATIVE": "9f6c9ec1376b",
+  "G-CONTROL-ARMS": "1aa3b9115ac0",
+  "G-DIRECT-LIMIT-FORM": "2c66652b50a1",
+  "G-EMERGENT-C": "9c8cb1fb9b0b",
+  "G-HOMOLOGY": "dddd63727c20",
+  "G-HORIZON-STABILITY-DYNAMIC": "75b2563165e9",
+  "G-LOOP-STABILITY-CONTRACTIBLE": "18effd8db22d",
+  "G-LOOP-THRESHOLD": "a7d272b82bc2",
+  "G-MERGING-ON-THE-PATCH": "60200476ead0",
+  "G-NO-TYPED-COUNTS": "b34a4766e906",
+  "G-ONE-TICK-REACH": "c41b26712a02",
+  "G-PAPER-CLAIMS": "945b93ced793",
+  "G-PATCH-GAUGE-GROUP": "e364b30c694d",
+  "G-PATH-VALUES": "dcc729a25226",
+  "G-QUANTIFIABILITY": "9019f82ee8fb",
+  "G-READS-DECLARED": "8994b0c929b7",
+  "G-REFERENTS": "78ade77d827b",
+  "G-SEAL-TOTALITY": "99616a171f4a",
+  "G-SOURCES": "ea5aa189604c",
+  "G-TEMPLATE-CONFORMANCE": "03b6ba60bbd4",
+  "G-THE-CLOSED-FORM-SURVIVES": "deb56b50cab5",
+  "G-THE-CONE": "17922f9e93f9",
+  "G-THE-FAMILY-SPLIT": "5de930e7666c",
+  "G-THE-HORIZON-LAW": "12765a39e609",
+  "G-THE-OUTCOME": "1ca43d3c1b10",
+  "G-THE-SPLIT": "5fb261859b61",
+  "G-THE-STRATIFICATION": "d7d11c94b62f",
+  "G-THE-TICK-IS-BUILT": "d23ed58fff98",
+  "G-THE-TICK-IS-DECLARED": "d46ba052883a",
+  "G-TRANSCRIPT-BOUND": "c192c6f674b0",
+  "G-VERDICT-EQUALITY": "bc4e1516ca0d",
+  "G-WALL-NO-ACTUAL-INFINITY": "32d9cbbbb74d",
+  "G-WALL-NO-CONTINUUM": "a77360fe3613",
+  "G-WALL-SPEED-LICENCE": "6d85fac6ebc9",
+  "G-WINDING-IS-TORUS-DECLARED": "20c7395522e4",
+  "G-ZERO-PATTERN-THEOREM": "31a848bb45f7"
+ },
+ "gates": [
+  {
+   "evidence": "sources 15, all at their declared digests",
+   "gate": "G-SOURCES",
+   "passed": true
+  },
+  {
+   "evidence": "path-value anchors 30, off their anchored value 0",
+   "gate": "G-PATH-VALUES",
+   "passed": true
+  },
+  {
+   "evidence": "alphabet 25, rows 80, coins 640 (ANTIDIAGONAL 64, BALANCED 512, DIAGONAL 64), unitary by a second route 640, sites 16, links 32, plaquettes 16, domino dimension 2",
+   "gate": "G-ARENA-REBUILT",
+   "passed": true
+  },
+  {
+   "evidence": "patterns 3 over 640 coins: 0110->64, 1001->64, 1111->512",
+   "gate": "G-ZERO-PATTERN-THEOREM",
+   "passed": true
+  },
+  {
+   "evidence": "rows 13, patch failures 0, odd tori failing 3 of 3, R5's own stratum size 8",
+   "gate": "G-THE-STRATIFICATION",
+   "passed": true
+  },
+  {
+   "evidence": "columns 320, coins 5, non-unitary 0, identity failures 0, disjoint True",
+   "gate": "G-THE-TICK-IS-BUILT",
+   "passed": true
+  },
+  {
+   "evidence": "R5's own no-dynamics clause located and read: True; the tick is declared as ONE-APPLICATION-OF-ONE-PARITY-STRATUM-OPERATOR",
+   "gate": "G-THE-TICK-IS-DECLARED",
+   "passed": true
+  },
+  {
+   "evidence": "coins 640: reach 0 at 64, reach 1 at 576, reach above 1 at 0",
+   "gate": "G-ONE-TICK-REACH",
+   "passed": true
+  },
+  {
+   "evidence": "depths 16, sum-radius equals the depth True, product shape True, escapes 0, radius attained by at least 576 coins at every attainment depth, depths not filled site for site 2, sizes 2,4,8,16,24,32,48,64,80,96,120,144,168,192,224,256",
+   "gate": "G-THE-CONE",
+   "passed": true
+  },
+  {
+   "evidence": "c_sum 1 attained at 16 of 16 depths, c_max 1, sustained max-norm ['1/2'], sustained sum-norm ['1']",
+   "gate": "G-EMERGENT-C",
+   "passed": true
+  },
+  {
+   "evidence": "asymmetric depths 16, reflected under reversal 16 of 16, radii that moved 0",
+   "gate": "G-CONE-SHAPE-IS-DECLARATION-RELATIVE",
+   "passed": true
+  },
+  {
+   "evidence": "torus rows 6 all saturating True all becoming visible True, patch rows 7, the parent's wrap clause read True",
+   "gate": "G-CONE-SATURATION",
+   "passed": true
+  },
+  {
+   "evidence": "the parent's own clause read True; the two objects live in THE-DUAL-TORUS and THE-SITE-SET; closure needed True and False",
+   "gate": "G-C-IS-NOT-THE-GROUP-SPEED",
+   "passed": true
+  },
+  {
+   "evidence": "patch rows 6 with winding 0 everywhere True, torus rows 3 with winding present everywhere True, the parent's split numbers [144, 48]",
+   "gate": "G-THE-FAMILY-SPLIT",
+   "passed": true
+  },
+  {
+   "evidence": "patch classes 1 (0 nonzero of 586 walks), torus classes 13 (3420 nonzero of 8320 walks)",
+   "gate": "G-HOMOLOGY",
+   "passed": true
+  },
+  {
+   "evidence": "core comparisons 10240 mismatches 0; ladder comparisons 650 mismatches 0; shapes 16; the parent's numbers [640, 640]",
+   "gate": "G-LOOP-STABILITY-CONTRACTIBLE",
+   "passed": true
+  },
+  {
+   "evidence": "rows 13, sizes binding the identity 4, all satisfying it True",
+   "gate": "G-LOOP-THRESHOLD",
+   "passed": true
+  },
+  {
+   "evidence": "absent at every open size True; moves at 8 of 10 closed size-by-coin comparisons",
+   "gate": "G-WINDING-IS-TORUS-DECLARED",
+   "passed": true
+  },
+  {
+   "evidence": "rows 64, sufficiency violations 0, conservative margin 4, unmoved 54, moved 10, coins 5, window 25",
+   "gate": "G-HORIZON-STABILITY-DYNAMIC",
+   "passed": true
+  },
+  {
+   "evidence": "depths 8, all with a hiding size True, monotone True",
+   "gate": "G-THE-HORIZON-LAW",
+   "passed": true
+  },
+  {
+   "evidence": "arms 5, moved 4, unmoved 1, wrong []",
+   "gate": "G-CONTROL-ARMS",
+   "passed": true
+  },
+  {
+   "evidence": "open sizes realising every twist True, closed sizes matching the parent's law True, the parent's clause read True, at the declared size orbits 208 classes 136 merged 72",
+   "gate": "G-PATCH-GAUGE-GROUP",
+   "passed": true
+  },
+  {
+   "evidence": "open sizes at the divisible index True, the first sentence's number [1], the second's [0, 8, 72]",
+   "gate": "G-MERGING-ON-THE-PATCH",
+   "passed": true
+  },
+  {
+   "evidence": "closed: bijective axes 9, symmetries 16; open: bijective axes 0, symmetries 1",
+   "gate": "G-CIRCULANTS-NEED-THE-CLOSURE",
+   "passed": true
+  },
+  {
+   "evidence": "shapes 16, open checks 10240 failures 0, closed checks 10240 failures 0, area comparisons 5120 disagreements 0, the ladder variable is the parent's True, per-arena residuals [0, 0]",
+   "gate": "G-THE-CLOSED-FORM-SURVIVES",
+   "passed": true
+  },
+  {
+   "evidence": "rows 18: verbatim 9, scoped 1, artifact 8, reclassifications 0",
+   "gate": "G-CLOSURE-CENSUS",
+   "passed": true
+  },
+  {
+   "evidence": "sizes 5, comparisons 400, values not carried 0, directed True, the parent's no-topology clause read True",
+   "gate": "G-DIRECT-LIMIT-FORM",
+   "passed": true
+  },
+  {
+   "evidence": "rows 18, quantifiable 10, exceptions 8 all named True, rows disagreeing with the census 0: ['LAW-LINK-COUNT', 'LAW-PLAQUETTE-COUNT', 'LAW-WINDING-FAMILY', 'LAW-HOMOLOGY', 'LAW-MERGING-INDEX', 'LAW-PARENT-ORBITS', 'LAW-TRANSLATION-COVARIANCE', 'LAW-DUAL-TORUS']",
+   "gate": "G-QUANTIFIABILITY",
+   "passed": true
+  },
+  {
+   "evidence": "the pin's own split sentence read True; contractible stable True; winding declaration-bound True; the split is AS-PRE-REGISTERED",
+   "gate": "G-THE-SPLIT",
+   "passed": true
+  },
+  {
+   "evidence": "outcome HOR-UNDETERMINED-R-NATIVE; branches published 4; global-sensitivity offenders 0; the blocked counter re-derived inside the gate agrees True",
+   "gate": "G-THE-OUTCOME",
+   "passed": true
+  },
+  {
+   "evidence": "template families 9, implemented 9, equal True, the caveat read True",
+   "gate": "G-TEMPLATE-CONFORMANCE",
+   "passed": true
+  },
+  {
+   "evidence": "typed-numeral offenders 0, float literals 0, banned calls []",
+   "gate": "G-NO-TYPED-COUNTS",
+   "passed": true
+  },
+  {
+   "evidence": "head length 1739, rebuilt length 1739, equal True",
+   "gate": "G-VERDICT-EQUALITY",
+   "passed": true
+  },
+  {
+   "evidence": "WALL-NO-ACTUAL-INFINITY: banned patterns 13, standing sentences 2, declaring sentences carried 4 of 4, the parent's own prohibition carried True",
+   "gate": "G-WALL-NO-ACTUAL-INFINITY",
+   "passed": true
+  },
+  {
+   "evidence": "WALL-NO-CONTINUUM: banned patterns 12, standing sentences 1, declaring sentences carried 4 of 4, the parent's own prohibition carried True",
+   "gate": "G-WALL-NO-CONTINUUM",
+   "passed": true
+  },
+  {
+   "evidence": "WALL-EVERY-SPEED-CARRIES-ITS-MEASUREMENT: banned patterns 1, standing sentences 1, declaring sentences carried 4 of 4, the parent's own prohibition carried True",
+   "gate": "G-WALL-SPEED-LICENCE",
+   "passed": true
+  },
+  {
+   "evidence": "occurrences checked 42 over 4 declared universes",
+   "gate": "G-REFERENTS",
+   "passed": true
+  },
+  {
+   "evidence": "table rows 98, prose claim occurrences 18 over 18 distinct claims, fenced blocks 1",
+   "gate": "G-PAPER-CLAIMS",
+   "passed": true
+  },
+  {
+   "evidence": "anchors 18, consumed by their named gate 18",
+   "gate": "G-ANCHOR-CONSUMPTION",
+   "passed": true
+  },
+  {
+   "evidence": "published keys 58, sealed 49, declared unsealed 8, undeclared 0",
+   "gate": "G-SEAL-TOTALITY",
+   "passed": true
+  },
+  {
+   "evidence": "reads 17 over 17 distinct paths, declared 17",
+   "gate": "G-READS-DECLARED",
+   "passed": true
+  },
+  {
+   "evidence": "ledger rows 42, transcript gate lines 42, chain head a44c971812e03dce",
+   "gate": "G-TRANSCRIPT-BOUND",
+   "passed": true
+  }
+ ],
+ "homology": {
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "rows": [
+   {
+    "arena": "T-4",
+    "closed_walks_of_the_declared_depth": 8320,
+    "closure": "TORUS",
+    "displacement_classes": 13,
+    "walks_with_nonzero_displacement": 3420
+   },
+   {
+    "arena": "P-4",
+    "closed_walks_of_the_declared_depth": 586,
+    "closure": "OPEN-PATCH",
+    "displacement_classes": 1,
+    "walks_with_nonzero_displacement": 0
+   }
+  ],
+  "walk_depth": 8
+ },
+ "horizon_law": {
+  "every_depth_has_a_hiding_open_size": true,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "rows": [
+   {
+    "depth": 1,
+    "least_closed_size_that_hides_the_edge": 6,
+    "least_open_size_that_hides_the_edge": 5
+   },
+   {
+    "depth": 2,
+    "least_closed_size_that_hides_the_edge": 6,
+    "least_open_size_that_hides_the_edge": 5
+   },
+   {
+    "depth": 3,
+    "least_closed_size_that_hides_the_edge": 6,
+    "least_open_size_that_hides_the_edge": 5
+   },
+   {
+    "depth": 4,
+    "least_closed_size_that_hides_the_edge": 6,
+    "least_open_size_that_hides_the_edge": 5
+   },
+   {
+    "depth": 5,
+    "least_closed_size_that_hides_the_edge": 6,
+    "least_open_size_that_hides_the_edge": 7
+   },
+   {
+    "depth": 6,
+    "least_closed_size_that_hides_the_edge": 8,
+    "least_open_size_that_hides_the_edge": 9
+   },
+   {
+    "depth": 7,
+    "least_closed_size_that_hides_the_edge": 8,
+    "least_open_size_that_hides_the_edge": 9
+   },
+   {
+    "depth": 8,
+    "least_closed_size_that_hides_the_edge": 8,
+    "least_open_size_that_hides_the_edge": 9
+   }
+  ],
+  "the_least_hiding_size_is_monotone": true
+ },
+ "ledger_shape": {
+  "head": "48881be707a070ac",
+  "recomputed": "48881be707a070ac",
+  "rows": 42
+ },
+ "loop_stability": {
+  "coins_in_the_full_sweep": 640,
+  "coins_in_the_ladder_sweep": 5,
+  "core_pair": [
+   "P-9",
+   "T-8"
+  ],
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "full_family_comparisons": 10240,
+  "full_family_mismatches": 0,
+  "ladder_comparisons": 650,
+  "ladder_mismatches": 0,
+  "ladder_rows": [
+   {
+    "agreeing": 45,
+    "arena": "T-4",
+    "closure": "TORUS",
+    "comparisons": 45,
+    "n": 4,
+    "shapes_absent": 7,
+    "shapes_present": 9
+   },
+   {
+    "agreeing": 80,
+    "arena": "T-6",
+    "closure": "TORUS",
+    "comparisons": 80,
+    "n": 6,
+    "shapes_absent": 0,
+    "shapes_present": 16
+   },
+   {
+    "agreeing": 80,
+    "arena": "T-8",
+    "closure": "TORUS",
+    "comparisons": 80,
+    "n": 8,
+    "shapes_absent": 0,
+    "shapes_present": 16
+   },
+   {
+    "agreeing": 45,
+    "arena": "P-4",
+    "closure": "OPEN-PATCH",
+    "comparisons": 45,
+    "n": 4,
+    "shapes_absent": 7,
+    "shapes_present": 9
+   },
+   {
+    "agreeing": 80,
+    "arena": "P-5",
+    "closure": "OPEN-PATCH",
+    "comparisons": 80,
+    "n": 5,
+    "shapes_absent": 0,
+    "shapes_present": 16
+   },
+   {
+    "agreeing": 80,
+    "arena": "P-6",
+    "closure": "OPEN-PATCH",
+    "comparisons": 80,
+    "n": 6,
+    "shapes_absent": 0,
+    "shapes_present": 16
+   },
+   {
+    "agreeing": 80,
+    "arena": "P-7",
+    "closure": "OPEN-PATCH",
+    "comparisons": 80,
+    "n": 7,
+    "shapes_absent": 0,
+    "shapes_present": 16
+   },
+   {
+    "agreeing": 80,
+    "arena": "P-8",
+    "closure": "OPEN-PATCH",
+    "comparisons": 80,
+    "n": 8,
+    "shapes_absent": 0,
+    "shapes_present": 16
+   },
+   {
+    "agreeing": 80,
+    "arena": "P-9",
+    "closure": "OPEN-PATCH",
+    "comparisons": 80,
+    "n": 9,
+    "shapes_absent": 0,
+    "shapes_present": 16
+   }
+  ],
+  "shapes_compared": 16
+ },
+ "loop_threshold": {
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "rows": [
+   {
+    "arena": "T-3",
+    "closure": "TORUS",
+    "largest_extent_that_fits": 2,
+    "n": 3,
+    "shapes_that_fit": 4,
+    "threshold_is_n_minus_one": true
+   },
+   {
+    "arena": "T-4",
+    "closure": "TORUS",
+    "largest_extent_that_fits": 3,
+    "n": 4,
+    "shapes_that_fit": 9,
+    "threshold_is_n_minus_one": true
+   },
+   {
+    "arena": "T-5",
+    "closure": "TORUS",
+    "largest_extent_that_fits": 4,
+    "n": 5,
+    "shapes_that_fit": 16,
+    "threshold_is_n_minus_one": true
+   },
+   {
+    "arena": "T-6",
+    "closure": "TORUS",
+    "largest_extent_that_fits": 4,
+    "n": 6,
+    "shapes_that_fit": 16,
+    "threshold_is_n_minus_one": false
+   },
+   {
+    "arena": "T-7",
+    "closure": "TORUS",
+    "largest_extent_that_fits": 4,
+    "n": 7,
+    "shapes_that_fit": 16,
+    "threshold_is_n_minus_one": false
+   },
+   {
+    "arena": "T-8",
+    "closure": "TORUS",
+    "largest_extent_that_fits": 4,
+    "n": 8,
+    "shapes_that_fit": 16,
+    "threshold_is_n_minus_one": false
+   },
+   {
+    "arena": "P-3",
+    "closure": "OPEN-PATCH",
+    "largest_extent_that_fits": 2,
+    "n": 3,
+    "shapes_that_fit": 4,
+    "threshold_is_n_minus_one": true
+   },
+   {
+    "arena": "P-4",
+    "closure": "OPEN-PATCH",
+    "largest_extent_that_fits": 3,
+    "n": 4,
+    "shapes_that_fit": 9,
+    "threshold_is_n_minus_one": true
+   },
+   {
+    "arena": "P-5",
+    "closure": "OPEN-PATCH",
+    "largest_extent_that_fits": 4,
+    "n": 5,
+    "shapes_that_fit": 16,
+    "threshold_is_n_minus_one": true
+   },
+   {
+    "arena": "P-6",
+    "closure": "OPEN-PATCH",
+    "largest_extent_that_fits": 4,
+    "n": 6,
+    "shapes_that_fit": 16,
+    "threshold_is_n_minus_one": false
+   },
+   {
+    "arena": "P-7",
+    "closure": "OPEN-PATCH",
+    "largest_extent_that_fits": 4,
+    "n": 7,
+    "shapes_that_fit": 16,
+    "threshold_is_n_minus_one": false
+   },
+   {
+    "arena": "P-8",
+    "closure": "OPEN-PATCH",
+    "largest_extent_that_fits": 4,
+    "n": 8,
+    "shapes_that_fit": 16,
+    "threshold_is_n_minus_one": false
+   },
+   {
+    "arena": "P-9",
+    "closure": "OPEN-PATCH",
+    "largest_extent_that_fits": 4,
+    "n": 9,
+    "shapes_that_fit": 16,
+    "threshold_is_n_minus_one": false
+   }
+  ]
+ },
+ "merging_on_the_patch": {
+  "closed_sizes_the_phase_order_divides": 1,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "open_sizes": 7,
+  "open_sizes_at_index_one": 7,
+  "the_index_the_first_parents_sentence_carries": 1,
+  "the_merged_pairs_the_second_parents_sentence_carries": 72
+ },
+ "mutants": {
+  "count": 43,
+  "death_at_the_named_gate_is_verified_by": "THE---MUTANT-NAME-RUNS-WHICH-EXIT-1-AT-THAT-GATE-WRITING-NOTHING",
+  "move_proofs": [
+   {
+    "clean_digest": "340d59f98212",
+    "gate": "G-SOURCES",
+    "moved": true,
+    "mutant": "MUT-SOURCE-SHA",
+    "mutated_digest": "668de6ec8e79",
+    "target": "provenance"
+   },
+   {
+    "clean_digest": "5781ee80ad3a",
+    "gate": "G-PATH-VALUES",
+    "moved": true,
+    "mutant": "MUT-PATH-VALUE",
+    "mutated_digest": "452df4bb0efb",
+    "target": "path_value_anchors"
+   },
+   {
+    "clean_digest": "c64224e20fd7",
+    "gate": "G-ARENA-REBUILT",
+    "moved": true,
+    "mutant": "MUT-ARENA",
+    "mutated_digest": "bd6760a80998",
+    "target": "arena"
+   },
+   {
+    "clean_digest": "2808cbaadfde",
+    "gate": "G-ZERO-PATTERN-THEOREM",
+    "moved": true,
+    "mutant": "MUT-ZERO-PATTERN",
+    "mutated_digest": "9097cda77fd1",
+    "target": "zero_patterns"
+   },
+   {
+    "clean_digest": "954f560820d8",
+    "gate": "G-THE-STRATIFICATION",
+    "moved": true,
+    "mutant": "MUT-STRATUM",
+    "mutated_digest": "3cf384b4560f",
+    "target": "stratification"
+   },
+   {
+    "clean_digest": "28f74fe59f8c",
+    "gate": "G-THE-TICK-IS-BUILT",
+    "moved": true,
+    "mutant": "MUT-TICK",
+    "mutated_digest": "9bc0aa82d5c9",
+    "target": "the_tick"
+   },
+   {
+    "clean_digest": "5a7bd46f5c30",
+    "gate": "G-ONE-TICK-REACH",
+    "moved": true,
+    "mutant": "MUT-REACH",
+    "mutated_digest": "85404e557479",
+    "target": "one_tick_reach"
+   },
+   {
+    "clean_digest": "a57a25e2e448",
+    "gate": "G-THE-CONE",
+    "moved": true,
+    "mutant": "MUT-CONE",
+    "mutated_digest": "df9948d5dcde",
+    "target": "the_cone"
+   },
+   {
+    "clean_digest": "a57a25e2e448",
+    "gate": "G-THE-CONE",
+    "moved": true,
+    "mutant": "MUT-CONE-ESCAPE",
+    "mutated_digest": "fc99ade74c1e",
+    "target": "the_cone"
+   },
+   {
+    "clean_digest": "f3221785556e",
+    "gate": "G-EMERGENT-C",
+    "moved": true,
+    "mutant": "MUT-C",
+    "mutated_digest": "73c08f29a931",
+    "target": "emergent_c"
+   },
+   {
+    "clean_digest": "34cdfcc50f34",
+    "gate": "G-CONE-SHAPE-IS-DECLARATION-RELATIVE",
+    "moved": true,
+    "mutant": "MUT-SCHEDULE-SYMMETRY",
+    "mutated_digest": "828cd2bf9022",
+    "target": "cone_shape"
+   },
+   {
+    "clean_digest": "1112fa9967ae",
+    "gate": "G-CONE-SATURATION",
+    "moved": true,
+    "mutant": "MUT-SATURATION",
+    "mutated_digest": "7140f75ea6d0",
+    "target": "cone_saturation"
+   },
+   {
+    "clean_digest": "da7471aafd47",
+    "gate": "G-C-IS-NOT-THE-GROUP-SPEED",
+    "moved": true,
+    "mutant": "MUT-GROUPSPEED",
+    "mutated_digest": "f8091c0becf0",
+    "target": "c_against_the_group_speed"
+   },
+   {
+    "clean_digest": "b12f136838ce",
+    "gate": "G-THE-FAMILY-SPLIT",
+    "moved": true,
+    "mutant": "MUT-FAMILY",
+    "mutated_digest": "fa042b71c5c6",
+    "target": "family_split"
+   },
+   {
+    "clean_digest": "585da38652f6",
+    "gate": "G-HOMOLOGY",
+    "moved": true,
+    "mutant": "MUT-HOMOLOGY",
+    "mutated_digest": "39c993f9dbb6",
+    "target": "homology"
+   },
+   {
+    "clean_digest": "f0475654d024",
+    "gate": "G-LOOP-STABILITY-CONTRACTIBLE",
+    "moved": true,
+    "mutant": "MUT-LOOP-STABILITY",
+    "mutated_digest": "cf73185bf4cf",
+    "target": "loop_stability"
+   },
+   {
+    "clean_digest": "2672518a6198",
+    "gate": "G-LOOP-THRESHOLD",
+    "moved": true,
+    "mutant": "MUT-THRESHOLD",
+    "mutated_digest": "c99acaa3b7e5",
+    "target": "loop_threshold"
+   },
+   {
+    "clean_digest": "6561a3ec2c07",
+    "gate": "G-WINDING-IS-TORUS-DECLARED",
+    "moved": true,
+    "mutant": "MUT-WINDING",
+    "mutated_digest": "28247f677483",
+    "target": "winding"
+   },
+   {
+    "clean_digest": "3bacfbac89be",
+    "gate": "G-HORIZON-STABILITY-DYNAMIC",
+    "moved": true,
+    "mutant": "MUT-DYNAMIC",
+    "mutated_digest": "d6a18846d4fb",
+    "target": "dynamic_stability"
+   },
+   {
+    "clean_digest": "183b1f6c43b4",
+    "gate": "G-THE-HORIZON-LAW",
+    "moved": true,
+    "mutant": "MUT-HORIZON-LAW",
+    "mutated_digest": "b800689247a1",
+    "target": "horizon_law"
+   },
+   {
+    "clean_digest": "ae1df1243160",
+    "gate": "G-CONTROL-ARMS",
+    "moved": true,
+    "mutant": "MUT-CONTROL-ARM",
+    "mutated_digest": "c5c22de3a3fc",
+    "target": "control_arms"
+   },
+   {
+    "clean_digest": "183407d36f67",
+    "gate": "G-PATCH-GAUGE-GROUP",
+    "moved": true,
+    "mutant": "MUT-PATCH-GAUGE",
+    "mutated_digest": "420d94bb485a",
+    "target": "patch_gauge"
+   },
+   {
+    "clean_digest": "bdd148813d57",
+    "gate": "G-MERGING-ON-THE-PATCH",
+    "moved": true,
+    "mutant": "MUT-MERGING",
+    "mutated_digest": "af534a50d9bd",
+    "target": "merging_on_the_patch"
+   },
+   {
+    "clean_digest": "5a6d2a7c4b05",
+    "gate": "G-CIRCULANTS-NEED-THE-CLOSURE",
+    "moved": true,
+    "mutant": "MUT-CIRCULANTS",
+    "mutated_digest": "cd83bbabcdd3",
+    "target": "circulants"
+   },
+   {
+    "clean_digest": "e86a76085715",
+    "gate": "G-THE-CLOSED-FORM-SURVIVES",
+    "moved": true,
+    "mutant": "MUT-CLOSED-FORM",
+    "mutated_digest": "b4caf2dff200",
+    "target": "closed_form"
+   },
+   {
+    "clean_digest": "d665aabd6294",
+    "gate": "G-CLOSURE-CENSUS",
+    "moved": true,
+    "mutant": "MUT-CENSUS",
+    "mutated_digest": "c061f4553eca",
+    "target": "closure_census"
+   },
+   {
+    "clean_digest": "b0d2e2f78b99",
+    "gate": "G-DIRECT-LIMIT-FORM",
+    "moved": true,
+    "mutant": "MUT-DIRECT-LIMIT",
+    "mutated_digest": "9e51538dbba3",
+    "target": "direct_limit"
+   },
+   {
+    "clean_digest": "974468ce6f3f",
+    "gate": "G-QUANTIFIABILITY",
+    "moved": true,
+    "mutant": "MUT-QUANTIFIABILITY",
+    "mutated_digest": "eacdea52e44c",
+    "target": "quantifiability"
+   },
+   {
+    "clean_digest": "e2459f35dac8",
+    "gate": "G-THE-SPLIT",
+    "moved": true,
+    "mutant": "MUT-SPLIT",
+    "mutated_digest": "5769f8d89907",
+    "target": "the_split"
+   },
+   {
+    "clean_digest": "4a99a82e3610",
+    "gate": "G-THE-OUTCOME",
+    "moved": true,
+    "mutant": "MUT-OUTCOME",
+    "mutated_digest": "9fdcbeb418b4",
+    "target": "outcome"
+   },
+   {
+    "clean_digest": "c4b47b535eab",
+    "gate": "G-VERDICT-EQUALITY",
+    "moved": true,
+    "mutant": "MUT-HEAD",
+    "mutated_digest": "2183f47cc1e8",
+    "target": "verdict"
+   },
+   {
+    "clean_digest": "762fbe02c8f4",
+    "gate": "G-PAPER-CLAIMS",
+    "moved": true,
+    "mutant": "MUT-PAPER",
+    "mutated_digest": "ed8a04fc62a0",
+    "target": "paper_claims"
+   },
+   {
+    "clean_digest": "1b799b218180",
+    "gate": "G-WALL-NO-ACTUAL-INFINITY",
+    "moved": true,
+    "mutant": "MUT-WALL-INFINITY",
+    "mutated_digest": "e07790937c92",
+    "target": "walls"
+   },
+   {
+    "clean_digest": "1b799b218180",
+    "gate": "G-WALL-NO-CONTINUUM",
+    "moved": true,
+    "mutant": "MUT-WALL-CONTINUUM",
+    "mutated_digest": "b81a363bf92a",
+    "target": "walls"
+   },
+   {
+    "clean_digest": "1b799b218180",
+    "gate": "G-WALL-SPEED-LICENCE",
+    "moved": true,
+    "mutant": "MUT-WALL-LICENCE",
+    "mutated_digest": "c6e26fe9d2ee",
+    "target": "walls"
+   },
+   {
+    "clean_digest": "e7cbe6c5219b",
+    "gate": "G-REFERENTS",
+    "moved": true,
+    "mutant": "MUT-REFERENT",
+    "mutated_digest": "28671c4d12d8",
+    "target": "referents"
+   },
+   {
+    "clean_digest": "879e870de13a",
+    "gate": "G-NO-TYPED-COUNTS",
+    "moved": true,
+    "mutant": "MUT-TYPED",
+    "mutated_digest": "02db12e03d80",
+    "target": "arithmetic"
+   },
+   {
+    "clean_digest": "7c1a18b391f3",
+    "gate": "G-TEMPLATE-CONFORMANCE",
+    "moved": true,
+    "mutant": "MUT-TEMPLATE",
+    "mutated_digest": "f0f14e4c3492",
+    "target": "template_conformance"
+   },
+   {
+    "clean_digest": "be89eaa0814e",
+    "gate": "G-ANCHOR-CONSUMPTION",
+    "moved": true,
+    "mutant": "MUT-ANCHOR",
+    "mutated_digest": "387cb6c41562",
+    "target": "verbatim_anchors"
+   },
+   {
+    "clean_digest": "384c9fcbebcd",
+    "gate": "G-TRANSCRIPT-BOUND",
+    "moved": true,
+    "mutant": "MUT-TRANSCRIPT",
+    "mutated_digest": "5bbc4c5bdd6d",
+    "target": "transcript"
+   },
+   {
+    "clean_digest": "1fd21c8d7380",
+    "gate": "G-SEAL-TOTALITY",
+    "moved": true,
+    "mutant": "MUT-SEAL",
+    "mutated_digest": "4c379cde680f",
+    "target": "seal_shape"
+   },
+   {
+    "clean_digest": "bc52e83cc77c",
+    "gate": "G-READS-DECLARED",
+    "moved": true,
+    "mutant": "MUT-READS",
+    "mutated_digest": "b15d50a2de3e",
+    "target": "runtime_inputs"
+   },
+   {
+    "clean_digest": "28f74fe59f8c",
+    "gate": "G-THE-TICK-IS-DECLARED",
+    "moved": true,
+    "mutant": "MUT-NODYN",
+    "mutated_digest": "7d1cae970254",
+    "target": "the_tick"
+   }
+  ],
+  "rows": [
+   {
+    "description": "forces one pinned source's measured digest to a value that is not its bytes' digest",
+    "dies_at": "G-SOURCES",
+    "mutant": "MUT-SOURCE-SHA",
+    "target": "provenance"
+   },
+   {
+    "description": "moves one inherited (path, value) anchor off the value the parent's receipt carries",
+    "dies_at": "G-PATH-VALUES",
+    "mutant": "MUT-PATH-VALUE",
+    "target": "path_value_anchors"
+   },
+   {
+    "description": "drops one coin from the family the arena is rebuilt from",
+    "dies_at": "G-ARENA-REBUILT",
+    "mutant": "MUT-ARENA",
+    "target": "arena"
+   },
+   {
+    "description": "adds a vanishing pattern unitarity forbids",
+    "dies_at": "G-ZERO-PATTERN-THEOREM",
+    "mutant": "MUT-ZERO-PATTERN",
+    "target": "zero_patterns"
+   },
+   {
+    "description": "hides the clash that makes an odd closed size fail to be a matching",
+    "dies_at": "G-THE-STRATIFICATION",
+    "mutant": "MUT-STRATUM",
+    "target": "stratification"
+   },
+   {
+    "description": "corrupts the stratum operator so that it stops being unitary on the single-occupation sector",
+    "dies_at": "G-THE-TICK-IS-BUILT",
+    "mutant": "MUT-TICK",
+    "target": "the_tick"
+   },
+   {
+    "description": "publishes a one-tick reach above one site",
+    "dies_at": "G-ONE-TICK-REACH",
+    "mutant": "MUT-REACH",
+    "target": "one_tick_reach"
+   },
+   {
+    "description": "moves one depth's sum-norm radius off the tick number",
+    "dies_at": "G-THE-CONE",
+    "mutant": "MUT-CONE",
+    "target": "the_cone"
+   },
+   {
+    "description": "records an amplitude support outside the structural cone",
+    "dies_at": "G-THE-CONE",
+    "mutant": "MUT-CONE-ESCAPE",
+    "target": "the_cone"
+   },
+   {
+    "description": "publishes a sum-norm speed the census does not attain",
+    "dies_at": "G-EMERGENT-C",
+    "mutant": "MUT-C",
+    "target": "emergent_c"
+   },
+   {
+    "description": "breaks one depth's reflection under the reversed parity order",
+    "dies_at": "G-CONE-SHAPE-IS-DECLARATION-RELATIVE",
+    "mutant": "MUT-SCHEDULE-SYMMETRY",
+    "target": "cone_shape"
+   },
+   {
+    "description": "erases one closed size's measured visibility depth",
+    "dies_at": "G-CONE-SATURATION",
+    "mutant": "MUT-SATURATION",
+    "target": "cone_saturation"
+   },
+   {
+    "description": "claims the parent's momentum object does not need the closure",
+    "dies_at": "G-C-IS-NOT-THE-GROUP-SPEED",
+    "mutant": "MUT-GROUPSPEED",
+    "target": "c_against_the_group_speed"
+   },
+   {
+    "description": "plants a winding placement on an open size",
+    "dies_at": "G-THE-FAMILY-SPLIT",
+    "mutant": "MUT-FAMILY",
+    "target": "family_split"
+   },
+   {
+    "description": "gives the open arena the closed arena's displacement classes",
+    "dies_at": "G-HOMOLOGY",
+    "mutant": "MUT-HOMOLOGY",
+    "target": "homology"
+   },
+   {
+    "description": "records a mismatch in the full contractible sweep",
+    "dies_at": "G-LOOP-STABILITY-CONTRACTIBLE",
+    "mutant": "MUT-LOOP-STABILITY",
+    "target": "loop_stability"
+   },
+   {
+    "description": "moves the measured fitting threshold to the size itself",
+    "dies_at": "G-LOOP-THRESHOLD",
+    "mutant": "MUT-THRESHOLD",
+    "target": "loop_threshold"
+   },
+   {
+    "description": "freezes the winding observable across closed sizes",
+    "dies_at": "G-WINDING-IS-TORUS-DECLARED",
+    "mutant": "MUT-WINDING",
+    "target": "winding"
+   },
+   {
+    "description": "makes one row's measured agreement contradict the cone's prediction",
+    "dies_at": "G-HORIZON-STABILITY-DYNAMIC",
+    "mutant": "MUT-DYNAMIC",
+    "target": "dynamic_stability"
+   },
+   {
+    "description": "erases one depth's hiding size",
+    "dies_at": "G-THE-HORIZON-LAW",
+    "mutant": "MUT-HORIZON-LAW",
+    "target": "horizon_law"
+   },
+   {
+    "description": "flips the null arm to the moved side",
+    "dies_at": "G-CONTROL-ARMS",
+    "mutant": "MUT-CONTROL-ARM",
+    "target": "control_arms"
+   },
+   {
+    "description": "takes seven realisable twists away from an open size",
+    "dies_at": "G-PATCH-GAUGE-GROUP",
+    "mutant": "MUT-PATCH-GAUGE",
+    "target": "patch_gauge"
+   },
+   {
+    "description": "puts the open arena at the closed arena's merging index",
+    "dies_at": "G-MERGING-ON-THE-PATCH",
+    "mutant": "MUT-MERGING",
+    "target": "merging_on_the_patch"
+   },
+   {
+    "description": "declares the parent's shifts bijective on the open arena",
+    "dies_at": "G-CIRCULANTS-NEED-THE-CLOSURE",
+    "mutant": "MUT-CIRCULANTS",
+    "target": "circulants"
+   },
+   {
+    "description": "records a failure of the parent's closed form on the open arena",
+    "dies_at": "G-THE-CLOSED-FORM-SURVIVES",
+    "mutant": "MUT-CLOSED-FORM",
+    "target": "closed_form"
+   },
+   {
+    "description": "reclassifies a surviving law as an artifact",
+    "dies_at": "G-CLOSURE-CENSUS",
+    "mutant": "MUT-CENSUS",
+    "target": "closure_census"
+   },
+   {
+    "description": "makes an inclusion fail to carry a value",
+    "dies_at": "G-DIRECT-LIMIT-FORM",
+    "mutant": "MUT-DIRECT-LIMIT",
+    "target": "direct_limit"
+   },
+   {
+    "description": "passes an exception as quantifiable and drops its name",
+    "dies_at": "G-QUANTIFIABILITY",
+    "mutant": "MUT-QUANTIFIABILITY",
+    "target": "quantifiability"
+   },
+   {
+    "description": "inverts the contractible side of the pre-registered split",
+    "dies_at": "G-THE-SPLIT",
+    "mutant": "MUT-SPLIT",
+    "target": "the_split"
+   },
+   {
+    "description": "forces the blocked branch of the outcome rule",
+    "dies_at": "G-THE-OUTCOME",
+    "mutant": "MUT-OUTCOME",
+    "target": "outcome"
+   },
+   {
+    "description": "corrupts one segment of the emitted head",
+    "dies_at": "G-VERDICT-EQUALITY",
+    "mutant": "MUT-HEAD",
+    "target": "verdict"
+   },
+   {
+    "description": "changes the licensed occurrence count of a prose claim",
+    "dies_at": "G-PAPER-CLAIMS",
+    "mutant": "MUT-PAPER",
+    "target": "paper_claims"
+   },
+   {
+    "description": "adds a convergence sentence to the text the wall scans",
+    "dies_at": "G-WALL-NO-ACTUAL-INFINITY",
+    "mutant": "MUT-WALL-INFINITY",
+    "target": "walls"
+   },
+   {
+    "description": "adds a continuum-limit sentence to the text the wall scans",
+    "dies_at": "G-WALL-NO-CONTINUUM",
+    "mutant": "MUT-WALL-CONTINUUM",
+    "target": "walls"
+   },
+   {
+    "description": "adds an unmeasured speed sentence to the text the wall scans",
+    "dies_at": "G-WALL-SPEED-LICENCE",
+    "mutant": "MUT-WALL-LICENCE",
+    "target": "walls"
+   },
+   {
+    "description": "plants a numeral from the arena universe in a census sentence",
+    "dies_at": "G-REFERENTS",
+    "mutant": "MUT-REFERENT",
+    "target": "referents"
+   },
+   {
+    "description": "types a numeral into a published statement",
+    "dies_at": "G-NO-TYPED-COUNTS",
+    "mutant": "MUT-TYPED",
+    "target": "arithmetic"
+   },
+   {
+    "description": "drops one adopted family check from the implemented set",
+    "dies_at": "G-TEMPLATE-CONFORMANCE",
+    "mutant": "MUT-TEMPLATE",
+    "target": "template_conformance"
+   },
+   {
+    "description": "erases one anchor's consumption record",
+    "dies_at": "G-ANCHOR-CONSUMPTION",
+    "mutant": "MUT-ANCHOR",
+    "target": "verbatim_anchors"
+   },
+   {
+    "description": "forges a passing gate line into the transcript",
+    "dies_at": "G-TRANSCRIPT-BOUND",
+    "mutant": "MUT-TRANSCRIPT",
+    "target": "transcript"
+   },
+   {
+    "description": "adds a top-level receipt key after the totality gate",
+    "dies_at": "G-SEAL-TOTALITY",
+    "mutant": "MUT-SEAL",
+    "target": "seal_shape"
+   },
+   {
+    "description": "reads a repository file the declaration does not carry",
+    "dies_at": "G-READS-DECLARED",
+    "mutant": "MUT-READS",
+    "target": "runtime_inputs"
+   },
+   {
+    "description": "drops the parent's no-dynamics clause from the tick's own stamp",
+    "dies_at": "G-THE-TICK-IS-DECLARED",
+    "mutant": "MUT-NODYN",
+    "target": "the_tick"
+   }
+  ],
+  "sentinel_shaped_branches": 0
+ },
+ "one_tick_reach": {
+  "by_sector_reach_and_rest": {
+   "ANTIDIAGONAL|1|False": 64,
+   "BALANCED|1|True": 512,
+   "DIAGONAL|0|True": 64
+  },
+  "coins": 640,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "reach_above_one": 0,
+  "reach_one": 576,
+  "reach_zero": 64
+ },
+ "outcome": {
+  "branch_reachability": {
+   "HOR-BLOCKED-AT-THE-STABILITY-TESTER": "reached when the tester never returns an unmoved row or the census never returns a surviving law",
+   "HOR-GLOBAL-SENSITIVE-AT": "reached by any census row the classifier calls verbatim while its two witnesses differ -- computed on every row of the census",
+   "HOR-SPLIT-DIFFERENTLY": "reached whenever either side of the split fails its rule -- the rule is evaluated on measured counters, and the winding side's counters are nonzero here, so the branch was live",
+   "HOR-UNDETERMINED-R-NATIVE": "reached when the split is as pre-registered and the tester has both an unmoved arm and a moved one"
+  },
+  "global_sensitivity_offenders": [],
+  "named_exceptions": [
+   "LAW-LINK-COUNT",
+   "LAW-PLAQUETTE-COUNT",
+   "LAW-WINDING-FAMILY",
+   "LAW-HOMOLOGY",
+   "LAW-MERGING-INDEX",
+   "LAW-PARENT-ORBITS",
+   "LAW-TRANSLATION-COVARIANCE",
+   "LAW-DUAL-TORUS"
+  ],
+  "word": "HOR-UNDETERMINED-R-NATIVE"
+ },
+ "paper_claims": {
+  "distinct_prose_claims": 18,
+  "fence_blocks": 1,
+  "prose_claim_occurrences": 18,
+  "table_rows": 98
+ },
+ "paper_sha256_12": "376e29746e39",
+ "patch_gauge": {
+  "classes_under_the_full_stencil_image": 136,
+  "closed_sizes": 6,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "open_sizes": 7,
+  "open_sizes_realising_every_twist": 7,
+  "phase_order": 8,
+  "rows": [
+   {
+    "arena": "T-3",
+    "classes_under_the_full_stencil_image": 136,
+    "closure": "TORUS",
+    "merging_index": 8,
+    "n": 3,
+    "orbit_pairs_merged": 504,
+    "orbits_under_the_realisable_twists": 640,
+    "realisable_constant_twists": 1
+   },
+   {
+    "arena": "T-4",
+    "classes_under_the_full_stencil_image": 136,
+    "closure": "TORUS",
+    "merging_index": 2,
+    "n": 4,
+    "orbit_pairs_merged": 72,
+    "orbits_under_the_realisable_twists": 208,
+    "realisable_constant_twists": 4
+   },
+   {
+    "arena": "T-5",
+    "classes_under_the_full_stencil_image": 136,
+    "closure": "TORUS",
+    "merging_index": 8,
+    "n": 5,
+    "orbit_pairs_merged": 504,
+    "orbits_under_the_realisable_twists": 640,
+    "realisable_constant_twists": 1
+   },
+   {
+    "arena": "T-6",
+    "classes_under_the_full_stencil_image": 136,
+    "closure": "TORUS",
+    "merging_index": 4,
+    "n": 6,
+    "orbit_pairs_merged": 216,
+    "orbits_under_the_realisable_twists": 352,
+    "realisable_constant_twists": 2
+   },
+   {
+    "arena": "T-7",
+    "classes_under_the_full_stencil_image": 136,
+    "closure": "TORUS",
+    "merging_index": 8,
+    "n": 7,
+    "orbit_pairs_merged": 504,
+    "orbits_under_the_realisable_twists": 640,
+    "realisable_constant_twists": 1
+   },
+   {
+    "arena": "T-8",
+    "classes_under_the_full_stencil_image": 136,
+    "closure": "TORUS",
+    "merging_index": 1,
+    "n": 8,
+    "orbit_pairs_merged": 0,
+    "orbits_under_the_realisable_twists": 136,
+    "realisable_constant_twists": 8
+   },
+   {
+    "arena": "P-3",
+    "classes_under_the_full_stencil_image": 136,
+    "closure": "OPEN-PATCH",
+    "merging_index": 1,
+    "n": 3,
+    "orbit_pairs_merged": 0,
+    "orbits_under_the_realisable_twists": 136,
+    "realisable_constant_twists": 8
+   },
+   {
+    "arena": "P-4",
+    "classes_under_the_full_stencil_image": 136,
+    "closure": "OPEN-PATCH",
+    "merging_index": 1,
+    "n": 4,
+    "orbit_pairs_merged": 0,
+    "orbits_under_the_realisable_twists": 136,
+    "realisable_constant_twists": 8
+   },
+   {
+    "arena": "P-5",
+    "classes_under_the_full_stencil_image": 136,
+    "closure": "OPEN-PATCH",
+    "merging_index": 1,
+    "n": 5,
+    "orbit_pairs_merged": 0,
+    "orbits_under_the_realisable_twists": 136,
+    "realisable_constant_twists": 8
+   },
+   {
+    "arena": "P-6",
+    "classes_under_the_full_stencil_image": 136,
+    "closure": "OPEN-PATCH",
+    "merging_index": 1,
+    "n": 6,
+    "orbit_pairs_merged": 0,
+    "orbits_under_the_realisable_twists": 136,
+    "realisable_constant_twists": 8
+   },
+   {
+    "arena": "P-7",
+    "classes_under_the_full_stencil_image": 136,
+    "closure": "OPEN-PATCH",
+    "merging_index": 1,
+    "n": 7,
+    "orbit_pairs_merged": 0,
+    "orbits_under_the_realisable_twists": 136,
+    "realisable_constant_twists": 8
+   },
+   {
+    "arena": "P-8",
+    "classes_under_the_full_stencil_image": 136,
+    "closure": "OPEN-PATCH",
+    "merging_index": 1,
+    "n": 8,
+    "orbit_pairs_merged": 0,
+    "orbits_under_the_realisable_twists": 136,
+    "realisable_constant_twists": 8
+   },
+   {
+    "arena": "P-9",
+    "classes_under_the_full_stencil_image": 136,
+    "closure": "OPEN-PATCH",
+    "merging_index": 1,
+    "n": 9,
+    "orbit_pairs_merged": 0,
+    "orbits_under_the_realisable_twists": 136,
+    "realisable_constant_twists": 8
+   }
+  ]
+ },
+ "path_value_anchors": {
+  "PV-ACT-IDX-L2": 4,
+  "PV-ACT-IDX-L4": 2,
+  "PV-ACT-IDX-L8": 1,
+  "PV-ACT-IMAGE": 8,
+  "PV-POT-ALPHABET": 25,
+  "PV-POT-ANTI": 64,
+  "PV-POT-BAL": 512,
+  "PV-POT-BL": 8,
+  "PV-POT-BL-IDENT": 640,
+  "PV-POT-BL-MERGED": 0,
+  "PV-POT-BL-ORBITS": 136,
+  "PV-POT-BL-SHAPES": 49,
+  "PV-POT-CLASSES": 136,
+  "PV-POT-COINS": 640,
+  "PV-POT-CONTRACTIBLE": 144,
+  "PV-POT-DIAG": 64,
+  "PV-POT-L": 4,
+  "PV-POT-LADDER": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14
+  ],
+  "PV-POT-LINKS": 32,
+  "PV-POT-MERGED": 72,
+  "PV-POT-ORBITS": 208,
+  "PV-POT-PLACEMENTS": 192,
+  "PV-POT-PLAQ": 16,
+  "PV-POT-ROWS": 80,
+  "PV-POT-SHAPES": 9,
+  "PV-POT-SITES": 16,
+  "PV-POT-WINDING": 48,
+  "PV-R5-CIRCULANTS": 58,
+  "PV-R5-COINS": 640,
+  "PV-R5-CONNECTIVE": "MAX-NORM"
+ },
+ "pin_sha256_prefix": "0cf8515e184f",
+ "preregistered_heads": [
+  "HOR-UNDETERMINED-R-NATIVE",
+  "HOR-SPLIT-DIFFERENTLY-",
+  "HOR-GLOBAL-SENSITIVE-AT-",
+  "HOR-BLOCKED-AT-THE-STABILITY-TESTER"
+ ],
+ "provenance": {
+  "source_digests": {
+   "ACTPAPER": "d933221780ed",
+   "ACTRECEIPT": "7fd1267bddc7",
+   "EPRPAPER": "22beb6696223",
+   "ERATPL": "d04a3eb58fbc",
+   "LORPAPER": "0a08203b7e99",
+   "PIN": "0cf8515e184f",
+   "POTPAPER": "1e495318252d",
+   "POTRECEIPT": "3a48c3806443",
+   "R1PAPER": "c4c8880874bf",
+   "R4BPAPER": "89c636906061",
+   "R4PAPER": "1063401c7bb5",
+   "R5CODE": "0d98de793b79",
+   "R5PAPER": "62cfe5689d2c",
+   "R5RECEIPT": "0c02b7684e5b",
+   "TEMPLATE": "809ebe3514ad"
+  },
+  "sources": 15,
+  "the_object_under_test": "v14/paper-42-hor.md"
+ },
+ "python": "3.13",
+ "quantifiability": {
+  "every_exception_is_named": true,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "exception_ids": [
+   "LAW-LINK-COUNT",
+   "LAW-PLAQUETTE-COUNT",
+   "LAW-WINDING-FAMILY",
+   "LAW-HOMOLOGY",
+   "LAW-MERGING-INDEX",
+   "LAW-PARENT-ORBITS",
+   "LAW-TRANSLATION-COVARIANCE",
+   "LAW-DUAL-TORUS"
+  ],
+  "exceptions": 8,
+  "quantifiable": 10,
+  "rows": [
+   {
+    "horizon_quantifiable": true,
+    "id": "LAW-LINK-OPERATOR",
+    "parent": "R5",
+    "the_named_exception": null
+   },
+   {
+    "horizon_quantifiable": true,
+    "id": "LAW-HOLONOMY",
+    "parent": "R5",
+    "the_named_exception": null
+   },
+   {
+    "horizon_quantifiable": true,
+    "id": "LAW-COIN-FAMILY",
+    "parent": "R5",
+    "the_named_exception": null
+   },
+   {
+    "horizon_quantifiable": true,
+    "id": "LAW-STRATIFICATION",
+    "parent": "R5",
+    "the_named_exception": null
+   },
+   {
+    "horizon_quantifiable": false,
+    "id": "LAW-LINK-COUNT",
+    "parent": "R5",
+    "the_named_exception": "every site carries four links"
+   },
+   {
+    "horizon_quantifiable": false,
+    "id": "LAW-PLAQUETTE-COUNT",
+    "parent": "R5",
+    "the_named_exception": "every site is the base of a plaquette"
+   },
+   {
+    "horizon_quantifiable": true,
+    "id": "LAW-SINGLE-OCCUPATION",
+    "parent": "R5",
+    "the_named_exception": null
+   },
+   {
+    "horizon_quantifiable": true,
+    "id": "LAW-RECTANGLE-FAMILY",
+    "parent": "POT",
+    "the_named_exception": null
+   },
+   {
+    "horizon_quantifiable": false,
+    "id": "LAW-WINDING-FAMILY",
+    "parent": "POT",
+    "the_named_exception": "the winding cycles"
+   },
+   {
+    "horizon_quantifiable": false,
+    "id": "LAW-HOMOLOGY",
+    "parent": "POT",
+    "the_named_exception": "the winding classes a loop can carry"
+   },
+   {
+    "horizon_quantifiable": true,
+    "id": "LAW-CLOSED-FORM",
+    "parent": "POT",
+    "the_named_exception": null
+   },
+   {
+    "horizon_quantifiable": true,
+    "id": "LAW-AREA-BLINDNESS",
+    "parent": "POT",
+    "the_named_exception": null
+   },
+   {
+    "horizon_quantifiable": false,
+    "id": "LAW-MERGING-INDEX",
+    "parent": "ACT",
+    "the_named_exception": "the merging index"
+   },
+   {
+    "horizon_quantifiable": false,
+    "id": "LAW-PARENT-ORBITS",
+    "parent": "ACT",
+    "the_named_exception": "the orbit count under the realisable twists"
+   },
+   {
+    "horizon_quantifiable": true,
+    "id": "LAW-CLASS-COUNT",
+    "parent": "ACT",
+    "the_named_exception": null
+   },
+   {
+    "horizon_quantifiable": false,
+    "id": "LAW-TRANSLATION-COVARIANCE",
+    "parent": "R4",
+    "the_named_exception": "the declared axes whose shift is a bijection"
+   },
+   {
+    "horizon_quantifiable": false,
+    "id": "LAW-DUAL-TORUS",
+    "parent": "R4B",
+    "the_named_exception": "the translations the momentum route needs"
+   },
+   {
+    "horizon_quantifiable": true,
+    "id": "LAW-REFINEMENT-PLACES",
+    "parent": "LOR",
+    "the_named_exception": null
+   }
+  ]
+ },
+ "referents": {
+  "occurrences_checked": 42,
+  "universes": {
+   "THE-ARENA": {
+    "nouns": [
+     "coin",
+     "coins",
+     "alphabet",
+     "link",
+     "links",
+     "plaquette",
+     "plaquettes",
+     "site",
+     "sites",
+     "stratum",
+     "strata"
+    ],
+    "pairs": [
+     [
+      64,
+      640
+     ],
+     [
+      512,
+      640
+     ],
+     [
+      640,
+      640
+     ]
+    ],
+    "values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     8,
+     9,
+     16,
+     25,
+     32,
+     64,
+     80,
+     136,
+     512,
+     640
+    ]
+   },
+   "THE-CLOSURE-CENSUS": {
+    "nouns": [
+     "census",
+     "sealed law",
+     "sealed laws",
+     "merging index",
+     "twist",
+     "twists",
+     "artifact",
+     "artifacts"
+    ],
+    "pairs": [
+     [
+      0,
+      5120
+     ],
+     [
+      0,
+      10240
+     ],
+     [
+      1,
+      18
+     ],
+     [
+      7,
+      7
+     ],
+     [
+      8,
+      18
+     ],
+     [
+      9,
+      18
+     ],
+     [
+      10,
+      18
+     ]
+    ],
+    "values": [
+     0,
+     1,
+     2,
+     6,
+     7,
+     8,
+     9,
+     10,
+     16,
+     18,
+     136,
+     640,
+     5120,
+     10240
+    ]
+   },
+   "THE-CONE": {
+    "nouns": [
+     "cone",
+     "tick",
+     "ticks",
+     "reach",
+     "depth",
+     "depths"
+    ],
+    "pairs": [
+     [
+      16,
+      16
+     ],
+     [
+      64,
+      640
+     ],
+     [
+      576,
+      640
+     ]
+    ],
+    "values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     24,
+     32,
+     48,
+     64,
+     80,
+     96,
+     120,
+     144,
+     168,
+     192,
+     224,
+     256,
+     576,
+     640
+    ]
+   },
+   "THE-STABILITY-SWEEP": {
+    "nouns": [
+     "comparison",
+     "comparisons",
+     "mismatch",
+     "mismatches",
+     "shape-by-coin",
+     "arena-by-depth",
+     "arm",
+     "arms"
+    ],
+    "pairs": [
+     [
+      0,
+      650
+     ],
+     [
+      0,
+      5120
+     ],
+     [
+      0,
+      10240
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ],
+     [
+      8,
+      10
+     ],
+     [
+      10,
+      64
+     ],
+     [
+      54,
+      64
+     ]
+    ],
+    "values": [
+     0,
+     1,
+     4,
+     5,
+     8,
+     10,
+     16,
+     25,
+     54,
+     64,
+     640,
+     650,
+     5120,
+     10240
+    ]
+   }
+  }
+ },
+ "runtime_inputs": {
+  "declared": 17,
+  "distinct_paths": 17,
+  "exemptions_carried": 0,
+  "pinned": [
+   "v14/TEMPLATE.md",
+   "v14/code/act_receipt.json",
+   "v14/code/era_template.py",
+   "v14/code/pot_receipt.json",
+   "v14/code/r5_gauge_exact.py",
+   "v14/code/r5_gauge_receipt.json",
+   "v14/note-hor-pin.md",
+   "v14/paper-01-continuum-rung.md",
+   "v14/paper-10-defect-on-the-stage.md",
+   "v14/paper-15-momentum.md",
+   "v14/paper-18-gauge-rung.md",
+   "v14/paper-30-lor.md",
+   "v14/paper-34-act.md",
+   "v14/paper-36-pot.md",
+   "v14/paper-38-epr.md"
+  ],
+  "reads_recorded": 17,
+  "the_instruments_own_source_is_read_for_the_syntax_scan": true,
+  "the_object_under_test": "v14/paper-42-hor.md",
+  "the_recorder_is_closed_at_the_read_gate": true
+ },
+ "schema": "HOR-1",
+ "seal_manifest": {
+  "declared_unsealed": {
+   "code_sha256_12": "this file's own digest, which cannot be taken inside a gate of the run it describes",
+   "declared_unsealed": "the manifest's own index, republished inside the manifest it indexes",
+   "exit_conventions": "the CLI contract, declared not measured",
+   "pin_sha256_prefix": "the pin's digest, gated at G-SOURCES inside the sealed provenance block and republished here for a reader",
+   "preregistered_heads": "the pin's own outcome words, declared before the run and not produced by it",
+   "python": "the interpreter's minor version, not a measurement",
+   "schema": "the receipt's own format tag, not a measurement",
+   "unit": "the unit's identity block, not a measurement"
+  },
+  "sealed": {
+   "arena": "c64224e20fd7",
+   "arithmetic": "879e870de13a",
+   "c_against_the_group_speed": "da7471aafd47",
+   "circulants": "5a6d2a7c4b05",
+   "closed_form": "e86a76085715",
+   "closure_census": "d665aabd6294",
+   "cone_saturation": "1112fa9967ae",
+   "cone_shape": "34cdfcc50f34",
+   "control_arms": "ae1df1243160",
+   "coverage": "c1874a8d6611",
+   "direct_limit": "b0d2e2f78b99",
+   "dynamic_stability": "3bacfbac89be",
+   "emergent_c": "f3221785556e",
+   "family_split": "b12f136838ce",
+   "gate_digests": "9ca0951dabfc",
+   "gates": "7d2b31d5b50b",
+   "homology": "585da38652f6",
+   "horizon_law": "183b1f6c43b4",
+   "ledger_shape": "d2c79e034b87",
+   "loop_stability": "f0475654d024",
+   "loop_threshold": "2672518a6198",
+   "merging_on_the_patch": "bdd148813d57",
+   "mutants": "01b3a11e0da1",
+   "one_tick_reach": "5a7bd46f5c30",
+   "outcome": "4a99a82e3610",
+   "paper_claims": "762fbe02c8f4",
+   "paper_sha256_12": "c63bc708ae96",
+   "patch_gauge": "183407d36f67",
+   "path_value_anchors": "5781ee80ad3a",
+   "provenance": "340d59f98212",
+   "quantifiability": "974468ce6f3f",
+   "referents": "e7cbe6c5219b",
+   "runtime_inputs": "bc52e83cc77c",
+   "seal_shape": "1fd21c8d7380",
+   "stratification": "954f560820d8",
+   "template_conformance": "7c1a18b391f3",
+   "the_cone": "a57a25e2e448",
+   "the_split": "e2459f35dac8",
+   "the_tick": "28f74fe59f8c",
+   "totals": "6d0366b87908",
+   "transcript": "384c9fcbebcd",
+   "verbatim_anchors": "be89eaa0814e",
+   "verdict": "c4b47b535eab",
+   "verdict_head": "3c053486a9e6",
+   "walls": "1b799b218180",
+   "winding": "6561a3ec2c07",
+   "zero_patterns": "2808cbaadfde"
+  },
+  "sealed_at_gate": {
+   "arena": "G-ARENA-REBUILT",
+   "arithmetic": "G-NO-TYPED-COUNTS",
+   "c_against_the_group_speed": "G-C-IS-NOT-THE-GROUP-SPEED",
+   "circulants": "G-CIRCULANTS-NEED-THE-CLOSURE",
+   "closed_form": "G-THE-CLOSED-FORM-SURVIVES",
+   "closure_census": "G-CLOSURE-CENSUS",
+   "cone_saturation": "G-CONE-SATURATION",
+   "cone_shape": "G-CONE-SHAPE-IS-DECLARATION-RELATIVE",
+   "control_arms": "G-CONTROL-ARMS",
+   "coverage": "G-FALSIFIER-COVERAGE",
+   "direct_limit": "G-DIRECT-LIMIT-FORM",
+   "dynamic_stability": "G-HORIZON-STABILITY-DYNAMIC",
+   "emergent_c": "G-EMERGENT-C",
+   "family_split": "G-THE-FAMILY-SPLIT",
+   "gate_digests": "G-TRANSCRIPT-BOUND",
+   "gates": "G-TRANSCRIPT-BOUND",
+   "homology": "G-HOMOLOGY",
+   "horizon_law": "G-THE-HORIZON-LAW",
+   "ledger_shape": "G-TRANSCRIPT-BOUND",
+   "loop_stability": "G-LOOP-STABILITY-CONTRACTIBLE",
+   "loop_threshold": "G-LOOP-THRESHOLD",
+   "merging_on_the_patch": "G-MERGING-ON-THE-PATCH",
+   "mutants": "G-FALSIFIER-MOVES",
+   "one_tick_reach": "G-ONE-TICK-REACH",
+   "outcome": "G-THE-OUTCOME",
+   "paper_claims": "G-PAPER-CLAIMS",
+   "paper_sha256_12": "G-PAPER-CLAIMS",
+   "patch_gauge": "G-PATCH-GAUGE-GROUP",
+   "path_value_anchors": "G-PATH-VALUES",
+   "provenance": "G-SOURCES",
+   "quantifiability": "G-QUANTIFIABILITY",
+   "referents": "G-REFERENTS",
+   "runtime_inputs": "G-READS-DECLARED",
+   "seal_shape": "G-SEAL-TOTALITY",
+   "stratification": "G-THE-STRATIFICATION",
+   "template_conformance": "G-TEMPLATE-CONFORMANCE",
+   "the_cone": "G-THE-CONE",
+   "the_split": "G-THE-SPLIT",
+   "the_tick": "G-THE-TICK-IS-DECLARED",
+   "totals": "G-SEAL-TOTALITY",
+   "transcript": "G-TRANSCRIPT-BOUND",
+   "verbatim_anchors": "G-ANCHOR-CONSUMPTION",
+   "verdict": "G-VERDICT-EQUALITY",
+   "verdict_head": "G-VERDICT-EQUALITY",
+   "walls": "G-WALL-SPEED-LICENCE",
+   "winding": "G-WINDING-IS-TORUS-DECLARED",
+   "zero_patterns": "G-ZERO-PATTERN-THEOREM"
+  }
+ },
+ "seal_shape": {
+  "and_the_rows_that_fire_after_it_are_declared_and_reconciled": true,
+  "declared_unsealed": 8,
+  "published_keys": 57,
+  "sealed": 48,
+  "the_closing_record_is_sealed_at_the_binding_gate": [
+   "gates",
+   "gate_digests",
+   "ledger_shape",
+   "transcript"
+  ]
+ },
+ "stratification": {
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "odd_tori_measured": 3,
+  "odd_tori_where_the_stratification_is_a_matching": 0,
+  "patch_sizes_where_it_is_a_matching": 7,
+  "rows": [
+   {
+    "arena": "T-3",
+    "closure": "TORUS",
+    "links": 18,
+    "n": 3,
+    "per_stratum": [
+     {
+      "is_a_matching": false,
+      "is_perfect": false,
+      "links": 6,
+      "sites_touched": 9,
+      "sites_touched_twice": 3,
+      "stratum": "X-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 3,
+      "sites_touched": 6,
+      "sites_touched_twice": 0,
+      "stratum": "X-ODD"
+     },
+     {
+      "is_a_matching": false,
+      "is_perfect": false,
+      "links": 6,
+      "sites_touched": 9,
+      "sites_touched_twice": 3,
+      "stratum": "Y-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 3,
+      "sites_touched": 6,
+      "sites_touched_twice": 0,
+      "stratum": "Y-ODD"
+     }
+    ],
+    "plaquettes": 9,
+    "sites": 9,
+    "sites_touched_twice": 6,
+    "strata_that_are_matchings": 2,
+    "strata_that_are_perfect": 0
+   },
+   {
+    "arena": "T-4",
+    "closure": "TORUS",
+    "links": 32,
+    "n": 4,
+    "per_stratum": [
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 8,
+      "sites_touched": 16,
+      "sites_touched_twice": 0,
+      "stratum": "X-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 8,
+      "sites_touched": 16,
+      "sites_touched_twice": 0,
+      "stratum": "X-ODD"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 8,
+      "sites_touched": 16,
+      "sites_touched_twice": 0,
+      "stratum": "Y-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 8,
+      "sites_touched": 16,
+      "sites_touched_twice": 0,
+      "stratum": "Y-ODD"
+     }
+    ],
+    "plaquettes": 16,
+    "sites": 16,
+    "sites_touched_twice": 0,
+    "strata_that_are_matchings": 4,
+    "strata_that_are_perfect": 4
+   },
+   {
+    "arena": "T-5",
+    "closure": "TORUS",
+    "links": 50,
+    "n": 5,
+    "per_stratum": [
+     {
+      "is_a_matching": false,
+      "is_perfect": false,
+      "links": 15,
+      "sites_touched": 25,
+      "sites_touched_twice": 5,
+      "stratum": "X-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 10,
+      "sites_touched": 20,
+      "sites_touched_twice": 0,
+      "stratum": "X-ODD"
+     },
+     {
+      "is_a_matching": false,
+      "is_perfect": false,
+      "links": 15,
+      "sites_touched": 25,
+      "sites_touched_twice": 5,
+      "stratum": "Y-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 10,
+      "sites_touched": 20,
+      "sites_touched_twice": 0,
+      "stratum": "Y-ODD"
+     }
+    ],
+    "plaquettes": 25,
+    "sites": 25,
+    "sites_touched_twice": 10,
+    "strata_that_are_matchings": 2,
+    "strata_that_are_perfect": 0
+   },
+   {
+    "arena": "T-6",
+    "closure": "TORUS",
+    "links": 72,
+    "n": 6,
+    "per_stratum": [
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 18,
+      "sites_touched": 36,
+      "sites_touched_twice": 0,
+      "stratum": "X-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 18,
+      "sites_touched": 36,
+      "sites_touched_twice": 0,
+      "stratum": "X-ODD"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 18,
+      "sites_touched": 36,
+      "sites_touched_twice": 0,
+      "stratum": "Y-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 18,
+      "sites_touched": 36,
+      "sites_touched_twice": 0,
+      "stratum": "Y-ODD"
+     }
+    ],
+    "plaquettes": 36,
+    "sites": 36,
+    "sites_touched_twice": 0,
+    "strata_that_are_matchings": 4,
+    "strata_that_are_perfect": 4
+   },
+   {
+    "arena": "T-7",
+    "closure": "TORUS",
+    "links": 98,
+    "n": 7,
+    "per_stratum": [
+     {
+      "is_a_matching": false,
+      "is_perfect": false,
+      "links": 28,
+      "sites_touched": 49,
+      "sites_touched_twice": 7,
+      "stratum": "X-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 21,
+      "sites_touched": 42,
+      "sites_touched_twice": 0,
+      "stratum": "X-ODD"
+     },
+     {
+      "is_a_matching": false,
+      "is_perfect": false,
+      "links": 28,
+      "sites_touched": 49,
+      "sites_touched_twice": 7,
+      "stratum": "Y-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 21,
+      "sites_touched": 42,
+      "sites_touched_twice": 0,
+      "stratum": "Y-ODD"
+     }
+    ],
+    "plaquettes": 49,
+    "sites": 49,
+    "sites_touched_twice": 14,
+    "strata_that_are_matchings": 2,
+    "strata_that_are_perfect": 0
+   },
+   {
+    "arena": "T-8",
+    "closure": "TORUS",
+    "links": 128,
+    "n": 8,
+    "per_stratum": [
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 32,
+      "sites_touched": 64,
+      "sites_touched_twice": 0,
+      "stratum": "X-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 32,
+      "sites_touched": 64,
+      "sites_touched_twice": 0,
+      "stratum": "X-ODD"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 32,
+      "sites_touched": 64,
+      "sites_touched_twice": 0,
+      "stratum": "Y-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 32,
+      "sites_touched": 64,
+      "sites_touched_twice": 0,
+      "stratum": "Y-ODD"
+     }
+    ],
+    "plaquettes": 64,
+    "sites": 64,
+    "sites_touched_twice": 0,
+    "strata_that_are_matchings": 4,
+    "strata_that_are_perfect": 4
+   },
+   {
+    "arena": "P-3",
+    "closure": "OPEN-PATCH",
+    "links": 12,
+    "n": 3,
+    "per_stratum": [
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 3,
+      "sites_touched": 6,
+      "sites_touched_twice": 0,
+      "stratum": "X-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 3,
+      "sites_touched": 6,
+      "sites_touched_twice": 0,
+      "stratum": "X-ODD"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 3,
+      "sites_touched": 6,
+      "sites_touched_twice": 0,
+      "stratum": "Y-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 3,
+      "sites_touched": 6,
+      "sites_touched_twice": 0,
+      "stratum": "Y-ODD"
+     }
+    ],
+    "plaquettes": 4,
+    "sites": 9,
+    "sites_touched_twice": 0,
+    "strata_that_are_matchings": 4,
+    "strata_that_are_perfect": 0
+   },
+   {
+    "arena": "P-4",
+    "closure": "OPEN-PATCH",
+    "links": 24,
+    "n": 4,
+    "per_stratum": [
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 8,
+      "sites_touched": 16,
+      "sites_touched_twice": 0,
+      "stratum": "X-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 4,
+      "sites_touched": 8,
+      "sites_touched_twice": 0,
+      "stratum": "X-ODD"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 8,
+      "sites_touched": 16,
+      "sites_touched_twice": 0,
+      "stratum": "Y-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 4,
+      "sites_touched": 8,
+      "sites_touched_twice": 0,
+      "stratum": "Y-ODD"
+     }
+    ],
+    "plaquettes": 9,
+    "sites": 16,
+    "sites_touched_twice": 0,
+    "strata_that_are_matchings": 4,
+    "strata_that_are_perfect": 2
+   },
+   {
+    "arena": "P-5",
+    "closure": "OPEN-PATCH",
+    "links": 40,
+    "n": 5,
+    "per_stratum": [
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 10,
+      "sites_touched": 20,
+      "sites_touched_twice": 0,
+      "stratum": "X-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 10,
+      "sites_touched": 20,
+      "sites_touched_twice": 0,
+      "stratum": "X-ODD"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 10,
+      "sites_touched": 20,
+      "sites_touched_twice": 0,
+      "stratum": "Y-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 10,
+      "sites_touched": 20,
+      "sites_touched_twice": 0,
+      "stratum": "Y-ODD"
+     }
+    ],
+    "plaquettes": 16,
+    "sites": 25,
+    "sites_touched_twice": 0,
+    "strata_that_are_matchings": 4,
+    "strata_that_are_perfect": 0
+   },
+   {
+    "arena": "P-6",
+    "closure": "OPEN-PATCH",
+    "links": 60,
+    "n": 6,
+    "per_stratum": [
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 18,
+      "sites_touched": 36,
+      "sites_touched_twice": 0,
+      "stratum": "X-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 12,
+      "sites_touched": 24,
+      "sites_touched_twice": 0,
+      "stratum": "X-ODD"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 18,
+      "sites_touched": 36,
+      "sites_touched_twice": 0,
+      "stratum": "Y-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 12,
+      "sites_touched": 24,
+      "sites_touched_twice": 0,
+      "stratum": "Y-ODD"
+     }
+    ],
+    "plaquettes": 25,
+    "sites": 36,
+    "sites_touched_twice": 0,
+    "strata_that_are_matchings": 4,
+    "strata_that_are_perfect": 2
+   },
+   {
+    "arena": "P-7",
+    "closure": "OPEN-PATCH",
+    "links": 84,
+    "n": 7,
+    "per_stratum": [
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 21,
+      "sites_touched": 42,
+      "sites_touched_twice": 0,
+      "stratum": "X-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 21,
+      "sites_touched": 42,
+      "sites_touched_twice": 0,
+      "stratum": "X-ODD"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 21,
+      "sites_touched": 42,
+      "sites_touched_twice": 0,
+      "stratum": "Y-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 21,
+      "sites_touched": 42,
+      "sites_touched_twice": 0,
+      "stratum": "Y-ODD"
+     }
+    ],
+    "plaquettes": 36,
+    "sites": 49,
+    "sites_touched_twice": 0,
+    "strata_that_are_matchings": 4,
+    "strata_that_are_perfect": 0
+   },
+   {
+    "arena": "P-8",
+    "closure": "OPEN-PATCH",
+    "links": 112,
+    "n": 8,
+    "per_stratum": [
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 32,
+      "sites_touched": 64,
+      "sites_touched_twice": 0,
+      "stratum": "X-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 24,
+      "sites_touched": 48,
+      "sites_touched_twice": 0,
+      "stratum": "X-ODD"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": true,
+      "links": 32,
+      "sites_touched": 64,
+      "sites_touched_twice": 0,
+      "stratum": "Y-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 24,
+      "sites_touched": 48,
+      "sites_touched_twice": 0,
+      "stratum": "Y-ODD"
+     }
+    ],
+    "plaquettes": 49,
+    "sites": 64,
+    "sites_touched_twice": 0,
+    "strata_that_are_matchings": 4,
+    "strata_that_are_perfect": 2
+   },
+   {
+    "arena": "P-9",
+    "closure": "OPEN-PATCH",
+    "links": 144,
+    "n": 9,
+    "per_stratum": [
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 36,
+      "sites_touched": 72,
+      "sites_touched_twice": 0,
+      "stratum": "X-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 36,
+      "sites_touched": 72,
+      "sites_touched_twice": 0,
+      "stratum": "X-ODD"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 36,
+      "sites_touched": 72,
+      "sites_touched_twice": 0,
+      "stratum": "Y-EVEN"
+     },
+     {
+      "is_a_matching": true,
+      "is_perfect": false,
+      "links": 36,
+      "sites_touched": 72,
+      "sites_touched_twice": 0,
+      "stratum": "Y-ODD"
+     }
+    ],
+    "plaquettes": 64,
+    "sites": 81,
+    "sites_touched_twice": 0,
+    "strata_that_are_matchings": 4,
+    "strata_that_are_perfect": 0
+   }
+  ],
+  "strata": 4,
+  "the_number_R5s_sentence_carries": 8
+ },
+ "template_conformance": {
+  "adoption": "NEW-UNIT-BUILT-ON-E-25-TO-E-33",
+  "checks_implemented_here": [
+   "T-ANCHOR-CONSUMED",
+   "T-CLAIMS-EQUAL",
+   "T-FALSIFIER-POISONS",
+   "T-NO-TYPED-COUNTS",
+   "T-READ-SET",
+   "T-REFERENT-BOUND",
+   "T-SEAL-PROMOTION",
+   "T-TRANSCRIPT-BOUND",
+   "T-WALL-SEMANTIC"
+  ],
+  "families_declared_by_the_template": [
+   "T-ANCHOR-CONSUMED",
+   "T-CLAIMS-EQUAL",
+   "T-FALSIFIER-POISONS",
+   "T-NO-TYPED-COUNTS",
+   "T-READ-SET",
+   "T-REFERENT-BOUND",
+   "T-SEAL-PROMOTION",
+   "T-TRANSCRIPT-BOUND",
+   "T-WALL-SEMANTIC"
+  ],
+  "the_caveat_was_read": true
+ },
+ "the_cone": {
+  "amplitude_supports_escaping_the_cone": 0,
+  "attainment_depth": 8,
+  "attainment_depths_no_coin_fills_site_for_site": 2,
+  "attainment_rows": [
+   {
+    "coins_realising_the_cone_s_own_sum_norm_radius": 576,
+    "coins_whose_support_is_the_whole_cone": 512,
+    "cone_sites": 2,
+    "tick": 1
+   },
+   {
+    "coins_realising_the_cone_s_own_sum_norm_radius": 576,
+    "coins_whose_support_is_the_whole_cone": 512,
+    "cone_sites": 4,
+    "tick": 2
+   },
+   {
+    "coins_realising_the_cone_s_own_sum_norm_radius": 576,
+    "coins_whose_support_is_the_whole_cone": 512,
+    "cone_sites": 8,
+    "tick": 3
+   },
+   {
+    "coins_realising_the_cone_s_own_sum_norm_radius": 576,
+    "coins_whose_support_is_the_whole_cone": 512,
+    "cone_sites": 16,
+    "tick": 4
+   },
+   {
+    "coins_realising_the_cone_s_own_sum_norm_radius": 576,
+    "coins_whose_support_is_the_whole_cone": 0,
+    "cone_sites": 24,
+    "tick": 5
+   },
+   {
+    "coins_realising_the_cone_s_own_sum_norm_radius": 576,
+    "coins_whose_support_is_the_whole_cone": 512,
+    "cone_sites": 32,
+    "tick": 6
+   },
+   {
+    "coins_realising_the_cone_s_own_sum_norm_radius": 576,
+    "coins_whose_support_is_the_whole_cone": 0,
+    "cone_sites": 48,
+    "tick": 7
+   },
+   {
+    "coins_realising_the_cone_s_own_sum_norm_radius": 576,
+    "coins_whose_support_is_the_whole_cone": 512,
+    "cone_sites": 64,
+    "tick": 8
+   }
+  ],
+  "coins_realising_the_cone_radius_at_the_thinnest_depth": 576,
+  "depth": 16,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "rows": [
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 1,
+    "sites": 2,
+    "sum_norm_radius": 1,
+    "tick": 1,
+    "x_backward": 0,
+    "x_forward": 1,
+    "x_offsets": 2,
+    "y_offsets": 1
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 2,
+    "sites": 4,
+    "sum_norm_radius": 2,
+    "tick": 2,
+    "x_backward": -1,
+    "x_forward": 2,
+    "x_offsets": 4,
+    "y_offsets": 1
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 2,
+    "sites": 8,
+    "sum_norm_radius": 3,
+    "tick": 3,
+    "x_backward": -1,
+    "x_forward": 2,
+    "x_offsets": 4,
+    "y_offsets": 2
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 2,
+    "sites": 16,
+    "sum_norm_radius": 4,
+    "tick": 4,
+    "x_backward": -1,
+    "x_forward": 2,
+    "x_offsets": 4,
+    "y_offsets": 4
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 3,
+    "sites": 24,
+    "sum_norm_radius": 5,
+    "tick": 5,
+    "x_backward": -2,
+    "x_forward": 3,
+    "x_offsets": 6,
+    "y_offsets": 4
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 4,
+    "sites": 32,
+    "sum_norm_radius": 6,
+    "tick": 6,
+    "x_backward": -3,
+    "x_forward": 4,
+    "x_offsets": 8,
+    "y_offsets": 4
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 4,
+    "sites": 48,
+    "sum_norm_radius": 7,
+    "tick": 7,
+    "x_backward": -3,
+    "x_forward": 4,
+    "x_offsets": 8,
+    "y_offsets": 6
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 4,
+    "sites": 64,
+    "sum_norm_radius": 8,
+    "tick": 8,
+    "x_backward": -3,
+    "x_forward": 4,
+    "x_offsets": 8,
+    "y_offsets": 8
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 5,
+    "sites": 80,
+    "sum_norm_radius": 9,
+    "tick": 9,
+    "x_backward": -4,
+    "x_forward": 5,
+    "x_offsets": 10,
+    "y_offsets": 8
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 6,
+    "sites": 96,
+    "sum_norm_radius": 10,
+    "tick": 10,
+    "x_backward": -5,
+    "x_forward": 6,
+    "x_offsets": 12,
+    "y_offsets": 8
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 6,
+    "sites": 120,
+    "sum_norm_radius": 11,
+    "tick": 11,
+    "x_backward": -5,
+    "x_forward": 6,
+    "x_offsets": 12,
+    "y_offsets": 10
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 6,
+    "sites": 144,
+    "sum_norm_radius": 12,
+    "tick": 12,
+    "x_backward": -5,
+    "x_forward": 6,
+    "x_offsets": 12,
+    "y_offsets": 12
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 7,
+    "sites": 168,
+    "sum_norm_radius": 13,
+    "tick": 13,
+    "x_backward": -6,
+    "x_forward": 7,
+    "x_offsets": 14,
+    "y_offsets": 12
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 8,
+    "sites": 192,
+    "sum_norm_radius": 14,
+    "tick": 14,
+    "x_backward": -7,
+    "x_forward": 8,
+    "x_offsets": 16,
+    "y_offsets": 12
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 8,
+    "sites": 224,
+    "sum_norm_radius": 15,
+    "tick": 15,
+    "x_backward": -7,
+    "x_forward": 8,
+    "x_offsets": 16,
+    "y_offsets": 14
+   },
+   {
+    "is_a_product_box": true,
+    "max_norm_radius": 8,
+    "sites": 256,
+    "sum_norm_radius": 16,
+    "tick": 16,
+    "x_backward": -7,
+    "x_forward": 8,
+    "x_offsets": 16,
+    "y_offsets": 16
+   }
+  ],
+  "sum_norm_radius_equals_the_tick_at_every_depth": true,
+  "the_arena_it_was_censused_on": "P-35",
+  "the_cone_is_a_product_box_at_every_depth": true
+ },
+ "the_split": {
+  "contractible_side_stable": true,
+  "the_pin_sentence_was_read": true,
+  "winding_side_declaration_bound": true,
+  "word": "AS-PRE-REGISTERED"
+ },
+ "the_tick": {
+  "coins_probed": 5,
+  "columns_checked": 320,
+  "definition": "ONE-APPLICATION-OF-ONE-PARITY-STRATUM-OPERATOR",
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "factors_disjoint_at_the_declared_size": true,
+  "identity_failures_off_the_class": 0,
+  "non_unitary_columns": 0,
+  "schedule": [
+   "X-EVEN",
+   "X-ODD",
+   "Y-EVEN",
+   "Y-ODD"
+  ],
+  "sweep_length": 4,
+  "the_parent_declares_no_dynamics": true,
+  "the_tick_is_this_units_declaration": true
+ },
+ "totals": {
+  "anchors": 18,
+  "gates": 44,
+  "measured_names": 77,
+  "mutants": 43,
+  "path_value_anchors": 30,
+  "sources": 15
+ },
+ "transcript": {
+  "closing_rows": [
+   "G-FALSIFIER-MOVES",
+   "G-FALSIFIER-COVERAGE"
+  ],
+  "digest": "b2d2b3675d29",
+  "gate_lines": 42,
+  "the_transcript_is_the_ledger_by_content": true
+ },
+ "unit": {
+  "number": "paper-42",
+  "paper": "v14/paper-42-hor.md",
+  "pin": "v14/note-hor-pin.md",
+  "question": "does the theory need a size",
+  "unit": "HOR"
+ },
+ "verbatim_anchors": {
+  "anchors": 18,
+  "consumed": 18,
+  "rows": [
+   {
+    "chars": 135,
+    "consumer": "G-PATCH-GAUGE-GROUP",
+    "name": "VB-ACT-CLOSES",
+    "read_by": [
+     "G-PATCH-GAUGE-GROUP"
+    ],
+    "source": "ACTPAPER"
+   },
+   {
+    "chars": 130,
+    "consumer": "G-MERGING-ON-THE-PATCH",
+    "name": "VB-ACT-INDEX",
+    "read_by": [
+     "G-MERGING-ON-THE-PATCH"
+    ],
+    "source": "ACTPAPER"
+   },
+   {
+    "chars": 105,
+    "consumer": "G-HORIZON-STABILITY-DYNAMIC",
+    "name": "VB-EPR-ROOM",
+    "read_by": [
+     "G-HORIZON-STABILITY-DYNAMIC"
+    ],
+    "source": "EPRPAPER"
+   },
+   {
+    "chars": 107,
+    "consumer": "G-EMERGENT-C",
+    "name": "VB-HOR-C",
+    "read_by": [
+     "G-EMERGENT-C"
+    ],
+    "source": "PIN"
+   },
+   {
+    "chars": 89,
+    "consumer": "G-THE-SPLIT",
+    "name": "VB-HOR-SPLIT",
+    "read_by": [
+     "G-THE-SPLIT"
+    ],
+    "source": "PIN"
+   },
+   {
+    "chars": 46,
+    "consumer": "G-CLOSURE-CENSUS",
+    "name": "VB-LOR-PLACES",
+    "read_by": [
+     "G-CLOSURE-CENSUS"
+    ],
+    "source": "LORPAPER"
+   },
+   {
+    "chars": 74,
+    "consumer": "G-LOOP-STABILITY-CONTRACTIBLE",
+    "name": "VB-POT-IDENTICAL",
+    "read_by": [
+     "G-LOOP-STABILITY-CONTRACTIBLE"
+    ],
+    "source": "POTPAPER"
+   },
+   {
+    "chars": 77,
+    "consumer": "G-MERGING-ON-THE-PATCH",
+    "name": "VB-POT-MERGING",
+    "read_by": [
+     "G-MERGING-ON-THE-PATCH"
+    ],
+    "source": "POTPAPER"
+   },
+   {
+    "chars": 79,
+    "consumer": "G-THE-FAMILY-SPLIT",
+    "name": "VB-POT-SPLIT",
+    "read_by": [
+     "G-THE-FAMILY-SPLIT"
+    ],
+    "source": "POTPAPER"
+   },
+   {
+    "chars": 62,
+    "consumer": "G-WALL-NO-ACTUAL-INFINITY",
+    "name": "VB-R1-NOLIMIT",
+    "read_by": [
+     "G-WALL-NO-ACTUAL-INFINITY"
+    ],
+    "source": "R1PAPER"
+   },
+   {
+    "chars": 97,
+    "consumer": "G-DIRECT-LIMIT-FORM",
+    "name": "VB-R1-NOTOPOLOGY",
+    "read_by": [
+     "G-DIRECT-LIMIT-FORM"
+    ],
+    "source": "R1PAPER"
+   },
+   {
+    "chars": 126,
+    "consumer": "G-THE-CONE",
+    "name": "VB-R4-CONE",
+    "read_by": [
+     "G-THE-CONE"
+    ],
+    "source": "R4PAPER"
+   },
+   {
+    "chars": 66,
+    "consumer": "G-CONE-SATURATION",
+    "name": "VB-R4-WRAPS",
+    "read_by": [
+     "G-CONE-SATURATION"
+    ],
+    "source": "R4PAPER"
+   },
+   {
+    "chars": 102,
+    "consumer": "G-C-IS-NOT-THE-GROUP-SPEED",
+    "name": "VB-R4B-NOTC",
+    "read_by": [
+     "G-C-IS-NOT-THE-GROUP-SPEED"
+    ],
+    "source": "R4BPAPER"
+   },
+   {
+    "chars": 104,
+    "consumer": "G-ARENA-REBUILT",
+    "name": "VB-R5-LINKOP",
+    "read_by": [
+     "G-ARENA-REBUILT"
+    ],
+    "source": "R5PAPER"
+   },
+   {
+    "chars": 102,
+    "consumer": "G-THE-TICK-IS-DECLARED",
+    "name": "VB-R5-NODYN",
+    "read_by": [
+     "G-THE-TICK-IS-DECLARED"
+    ],
+    "source": "R5PAPER"
+   },
+   {
+    "chars": 76,
+    "consumer": "G-THE-TICK-IS-BUILT",
+    "name": "VB-R5-STRATUM",
+    "read_by": [
+     "G-THE-TICK-IS-BUILT"
+    ],
+    "source": "R5CODE"
+   },
+   {
+    "chars": 95,
+    "consumer": "G-TEMPLATE-CONFORMANCE",
+    "name": "VB-TPL-ADOPT",
+    "read_by": [
+     "G-TEMPLATE-CONFORMANCE"
+    ],
+    "source": "TEMPLATE"
+   }
+  ]
+ },
+ "verdict": {
+  "head": "HOR-UNDETERMINED-R-NATIVE -- CONE=[TICK=ONE-PARITY-STRATUM-OPERATOR-THE-PARENT-NAMES-AND-NEVER-BUILDS;REACH-PER-TICK=ZERO-AT-64-COINS-AND-ONE-AT-576-OF-640;c=1-SITE-PER-TICK-IN-THE-SUM-NORM-ATTAINED-AT-16-OF-16-DEPTHS-A-MAXIMUM-NOT-A-BOUND;MAX-NORM-SUSTAINED=1/2;SHAPE=A-PRODUCT-BOX-AT-EVERY-DEPTH-ASYMMETRIC-AT-16-AND-REFLECTED-BY-REVERSING-THE-PARITY-ORDER-AT-16;AMPLITUDE-SUPPORTS-ESCAPE-AT-0;RADIUS-ATTAINED-BY-576-COINS-AT-EVERY-ATTAINMENT-DEPTH-AND-THE-CONE-UNFILLED-AT-2] -- STABILITY=[CONTRACTIBLE=10240-SHAPE-BY-COIN-AT-THE-CORE-PAIR-OVER-THE-WHOLE-COIN-FAMILY-AND-650-OVER-THE-LADDER-WITH-0-MISMATCHES;DYNAMIC=64-ARENA-BY-DEPTH-ROWS-WITH-THE-HORIZON-PREDICTED-FROM-THE-CONE-BEFORE-THE-VALUES-0-VIOLATIONS-4-SLACK-54-UNMOVED-10-MOVED;WINDING=ABSENT-AT-EVERY-OPEN-SIZE-AND-MOVING-AT-8-OF-10;ARMS=4-MOVED-AND-1-UNMOVED-THROUGH-ONE-TESTER;SPLIT=AS-PRE-REGISTERED] -- CLOSURE=[18-SEALED-LAWS:9-VERBATIM-1-SCOPED-8-ARTIFACT;THE-OPEN-PATCH-REALISES-EVERY-TWIST-SO-ITS-MERGING-INDEX-IS-1-AT-ALL-7-OPEN-SIZES-WHICH-IS-THE-CLOSED-VALUE-ONLY-WHERE-THE-PHASE-ORDER-DIVIDES-THE-SIZE;WINDING-CLASSES=1-OPEN-AGAINST-13-CLOSED;TRANSLATIONS-CARRYING-THE-OPEN-LINK-SET-TO-ITSELF=1;THE-CLOSED-FORM-AND-AREA-BLINDNESS-SURVIVE-THE-FLUSH-10240-CHECKS-AND-5120-COMPARISONS-FAILING-0-AND-0] -- FORM=[5-OPEN-SIZES-DIRECTED-UNDER-INCLUSION-CARRYING-400-VALUES-AND-FAILING-TO-CARRY-0;QUANTIFIABLE-AT-10-OF-18-WITH-8-NAMED-EXCEPTIONS;NOT-A-LIMIT-NOT-A-CONVERGENCE-NOT-AN-OBJECT] -- SCOPE=[D-IS-TWO;FIELD=Q(zeta_8);COINS=640;CARRIER=THE-UNIFORM-CONFIGURATIONS;THE-GENERATORS-ARE-THE-PARENTS-AND-THE-TICK-IS-THIS-UNITS-DECLARATION;LADDERS-DECLARED-OPEN-7-AND-CLOSED-6;NO-CONTINUUM-CLAIM;NO-ACTUAL-INFINITY-CLAIM;SCALEFUL-NOT-CONTINUOUS;NOT-A-RELATIVITY-CLAIM]",
+  "segments": 6
+ },
+ "verdict_head": "HOR-UNDETERMINED-R-NATIVE",
+ "walls": {
+  "declaring_sentences": [
+   "This unit makes no actual-infinity claim of any kind.",
+   "This unit makes no continuum claim of any kind.",
+   "The register this unit works in is scaleful, not continuous.",
+   "No symbol in a HOR-law denotes a size, no quantifier ranges over a completed totality, and every instance is a statement about one finite patch."
+  ],
+  "rows": [
+   {
+    "licences": [],
+    "name": "WALL-NO-ACTUAL-INFINITY",
+    "negative": [
+     "\\bactual(?:ly)? infinit",
+     "\\ban infinite (?:lattice|arena|patch|family|set|number)",
+     "\\bthe infinite (?:lattice|arena|patch|volume)",
+     "\\bin the limit\\b",
+     "\\bconverge[sd]? to\\b",
+     "\\bconvergence to\\b",
+     "\\btends? to infinity\\b",
+     "\\bas r (?:goes|grows|tends) to infinity\\b",
+     "\\blimit of the family\\b",
+     "\\bcompleted (?:totality|infinity)\\b",
+     "\\bexists an infinite\\b",
+     "\\bthe direct limit is an object\\b",
+     "\\ba limit in (?:some|any|the) topology\\b"
+    ],
+    "policed": [],
+    "positive": [
+     "every instance is a statement about one finite patch",
+     "not a limit"
+    ],
+    "wall": "WALL-NO-ACTUAL-INFINITY"
+   },
+   {
+    "licences": [],
+    "name": "WALL-NO-CONTINUUM",
+    "negative": [
+     "\\bcontinuum limit\\b",
+     "\\bin the continuum\\b",
+     "\\bsmooth (?:manifold|limit|geometry|structure)\\b",
+     "\\bdifferentiable\\b",
+     "\\binfinitesimal\\b",
+     "\\bthe real line\\b",
+     "\\bmetric tensor\\b",
+     "\\bcontinuous (?:spacetime|space|manifold)\\b",
+     "\\blorentz (?:invarian|covarian)",
+     "\\bspeed of light\\b",
+     "\\bminkowski\\b",
+     "\\bcausal structure of spacetime\\b"
+    ],
+    "policed": [],
+    "positive": [
+     "scaleful, not continuous"
+    ],
+    "wall": "WALL-NO-CONTINUUM"
+   },
+   {
+    "licences": [],
+    "name": "WALL-EVERY-SPEED-CARRIES-ITS-MEASUREMENT",
+    "negative": [
+     "\\bthe speed of light\\b"
+    ],
+    "policed": [
+     "per tick"
+    ],
+    "positive": [
+     "a maximum, not a bound"
+    ],
+    "wall": "WALL-EVERY-SPEED-CARRIES-ITS-MEASUREMENT"
+   }
+  ]
+ },
+ "winding": {
+  "absent_at_every_open_size": true,
+  "adjacent_pairs": [
+   {
+    "comparisons": 5,
+    "from": 4,
+    "moving": 4,
+    "to": 6
+   },
+   {
+    "comparisons": 5,
+    "from": 6,
+    "moving": 4,
+    "to": 8
+   }
+  ],
+  "adjacent_size_comparisons": 10,
+  "comparisons_where_the_value_moves": 8,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "rows": [
+   {
+    "arena": "T-4",
+    "closure": "TORUS",
+    "its_length": 4,
+    "n": 4,
+    "the_straight_winding_cycle_exists": true
+   },
+   {
+    "arena": "T-6",
+    "closure": "TORUS",
+    "its_length": 6,
+    "n": 6,
+    "the_straight_winding_cycle_exists": true
+   },
+   {
+    "arena": "T-8",
+    "closure": "TORUS",
+    "its_length": 8,
+    "n": 8,
+    "the_straight_winding_cycle_exists": true
+   },
+   {
+    "arena": "P-4",
+    "closure": "OPEN-PATCH",
+    "its_length": 0,
+    "n": 4,
+    "the_straight_winding_cycle_exists": false
+   },
+   {
+    "arena": "P-5",
+    "closure": "OPEN-PATCH",
+    "its_length": 0,
+    "n": 5,
+    "the_straight_winding_cycle_exists": false
+   },
+   {
+    "arena": "P-6",
+    "closure": "OPEN-PATCH",
+    "its_length": 0,
+    "n": 6,
+    "the_straight_winding_cycle_exists": false
+   },
+   {
+    "arena": "P-7",
+    "closure": "OPEN-PATCH",
+    "its_length": 0,
+    "n": 7,
+    "the_straight_winding_cycle_exists": false
+   },
+   {
+    "arena": "P-8",
+    "closure": "OPEN-PATCH",
+    "its_length": 0,
+    "n": 8,
+    "the_straight_winding_cycle_exists": false
+   },
+   {
+    "arena": "P-9",
+    "closure": "OPEN-PATCH",
+    "its_length": 0,
+    "n": 9,
+    "the_straight_winding_cycle_exists": false
+   }
+  ]
+ },
+ "zero_patterns": {
+  "census": {
+   "0110": 64,
+   "1001": 64,
+   "1111": 512
+  },
+  "coins_failing_the_theorem": 0,
+  "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "patterns": 3
+ }
+}

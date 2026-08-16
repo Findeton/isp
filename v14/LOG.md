@@ -11995,3 +11995,38 @@ observables under growth (open patches AND torus
 closures); the open-patch arena built and the
 closure-artifact census run; the direct-limit formulation
 stated and gated.  Constructions launch on commit.
+
+## 2026-08-16 — HOR (PAPER-42) DELIVERED, COMMITTED AS-IS: UNDETERMINED-R-NATIVE — c = 1 MEASURED, THE SPLIT AS PRE-REGISTERED, EIGHT SEALED LAWS EXPOSED AS TORUS-ARTIFACTS (v14 LEDGER #374)
+
+**Files:** paper-42-hor.md 376e29746e39; hor_exact.py
+00c985939230; hor_output.txt 87ea30df2a92;
+hor_receipt.json df3549596b4e.  CANDIDATE UNTIL
+ADJUDICATION.  **HEAD: HOR-UNDETERMINED-R-NATIVE.**  The
+emergent c MEASURED: 1 site per tick in the sum norm,
+attained at 16/16 depths (a maximum, not a bound); 64
+diagonal coins cannot move; the cone a product box —
+SHAPE declaration-relative, SPEED not; amplitude escapes
+at 0.  **STABILITY AS PRE-REGISTERED:** contractible
+R-STABLE (10,240 + 650 comparisons, 0 mismatches;
+threshold measured); winding TORUS-DECLARED (absent at
+every open size — 1 displacement class open vs 13
+closed); the blind one-tester arms 4-moved/1-unmoved each
+on its declared side.  **THE CLOSURE CENSUS (18 sealed
+laws): 9 VERBATIM, 1 SCOPED, 8 ARTIFACT** — the winding
+family, homology, the merging index, R4's
+translation-covariant family (EMPTY on patches), the dual
+torus; **the open patch realises all 8 twists at every
+size (merging index 1 at every R) — the 72 merged pairs
+carrying ACT/POT's price are bought by the torus
+identification alone.**  **THE FORMULATION GATED:** the
+HOR-law form (no symbol denotes a size; not a limit, not
+a convergence, not an object — R1's sentences anchored
+and consumed); 10 of 18 laws quantifiable, 8 named
+exceptions; the directed system carries 400 values,
+fails 0.  Template conformance: the E-25…E-33 first
+exemplar, the nine checks PARSED from era_template.py's
+own table; S-1 by construction.  Battery: byte ×2
+off-tree; 43/43 mutants; every falsifier proved to move
+its target; 18+30 anchors all consumed; 17 reads = 17
+recorded.  **Orchestrator battery next; panel after
+green.**
