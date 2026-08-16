@@ -857,3 +857,53 @@ first rung is the link count always; mod-a appears iff
 a = L — discharging that reading's W3 exposure and
 EXPLAINING the parent's R = L rule.**  K3 out;
 adjudication after.
+
+## 2026-08-16 — ARITY K3 FROZEN (v15 #31) + ARITY ADJUDICATED (v15 #32): REPAIR ORDERED — THE HEAD STANDS; THE THEOREM AND THREE BONUSES LIFTED; THE OBJECT-DIGEST HOLE CLOSED
+
+**K3:** v15/review-arity-instrument.md (90e4b886911c, 782
+lines).  HELD: 34/34 out-of-harness; byte ×2 alien-CWD;
+58 re-derivations no number moved; **T-FALSIFIER-POISONS
+genuinely implemented — three earlier-review repairs
+lifted and working (the panels teaching each other)**.
+NINE MAJORS: verdict-equality set-membership with a
+literal pass (148 head numerals, 0 positionally bound —
+all six direction flips deliver); falsifier coverage
+computed-and-DISCARDED (10 recipes deleted ships green,
+11 gates uncovered under PASS); post-close edit detected
+only after os.replace (uncaught traceback, no rollback);
+the fidelity pre-registration NOT SEALED (re-declared
+5→3 at exit 0); reflexive pairs (5); bare-negation
+licences (3 walls have NO licence leg); spelled fractions
+survive; **the OBJECT UNDER TEST HAS NO DIGEST in either
+artifact — six injections produced BIT-IDENTICAL
+artifacts**; a 32-vs-34 ledger/chain discrepancy with a
+third head on stdout (joining K2's two-gates-early
+finding).
+
+**ADJUDICATION (seats #29/#30/#31; ~1,046 checks, zero
+physics moved):** REPAIR ORDERED, no reject; the head and
+THE LEAD stand.  ORDERS: the a≠L qualifier into
+prose/head/gate (K1-M1 = K2-M1); the walls rebuilt —
+licence legs on ALL SEVEN, fresh-paraphrase acceptance
+(six new die); the period-regex scanner fixed (the
+"and 8" plant dies); the spelled-fraction gate; the
+rule-relative aggregate DISCLOSED (the §9 closed form as
+a third rule moves one word — published); the 2(q−1)
+mis-gating fixed (checked at all arities; the a-falseness
+REPORTED as an a-dependence disclosure, not an NDEP
+contradiction); BOTH pre-registrations SEALED (fidelity +
+outcomes; the 5→3 rewrite dies); verdict-equality
+positionally bound at 148 numerals; coverage IN the
+predicate with a waiver mechanism; post-close rollback
+(the seal window — TPL-2's item); **the object-under-test
+digest published in BOTH artifacts (the M8 hole)**; the
+ledger reconciled to ONE head computed at close (the
+#22/#24 discrepancy resolved in-paper); reflexive pairs
+banned; typed offsets; **THE THEOREM LIFTED (K2's bonus:
+modulus = nL/gcd(nL,n) = L at every arena — mod-a iff
+a=L, explaining the parent's R=L rule) + K1's three
+(the K₃,₃,₃ closed form replacing search; the certifiable
+a=2 floor; m1 closed in favour)**; the W3 wall added;
+#299 outcomes for the three outcome-less segments; all
+minors (7 K1 + 10 K2 + 9 K3).  No physics number moves.
+The repair launches next.
