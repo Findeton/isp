@@ -736,3 +736,38 @@ absent from the paper); (M6) NO-RULE-EXISTS unreachable
 scalars against its own docstring.  16 minors; strong
 credits (UNIQUE-AT-0 exact and exhaustive; the fiber
 referents clean everywhere).  K1 out; adjudication after.
+
+## 2026-08-16 — AUTOGLUE K1 FROZEN (v15 #26) + AUTOGLUE ADJUDICATED (v15 #27): REPAIR ORDERED — THE HEAD STANDS; THE MECHANISM SENTENCE CORRECTED; TWO STRENGTHENINGS LIFTED
+
+**K1:** v15/review-autoglue-operator.md (222d755dcb8d,
+570 lines).  241 quantities zero discrepancies (~0.8M
+evaluations; equivariance re-swept at 429,340 checks).
+FIVE MAJORS, none arithmetic: §4.1's death mechanism
+FALSE at all 108 (the two crossings hit the SAME entry at
+opposite signs — the correct account supplied);
+G-RULE-BLIND vacuous; two of three RSQ fibers base-map
+artifacts (Q50 SURVIVES at 900 samples per row); **"a
+little under half" for 216/288 = THREE QUARTERS — a false
+spelled proportion**; the two-step 25 a tie-break minimum
+of a 25–43 fiber.  Eight minors.  **TWO STRENGTHENINGS TO
+LIFT: the containment proposition; |Aut| = 62,208 closed
+form making index-two a theorem.**
+
+**ADJUDICATION (seats #23/#25/#26; ~1,285 checks, zero
+delivered physics wrong): REPAIR ORDERED, no reject; the
+head stands.**  ORDERS: the death-mechanism replaced; the
+Q50 mechanism RE-ATTRIBUTED to SEC-2 §4.5 with AUTOGLUE's
+additions stated; both spelled falsehoods fixed AND
+spelled fractions/proportions gated; the 468 scope word;
+the RSQ fibers with the 32-map control; the two-step
+fiber published; the 16-cell inertness disclosed; **the
+POST-FINAL-GATE SEAL WINDOW CLOSED (new disease; TPL-2
+gains it)**; reflexive referent pairs banned;
+bare-negation licence tokens removed; W1/W2/W3 walls
+rebuilt to survive FRESH paraphrases; the
+pre-registration sealed; self-comparison head positions
+payload-read; T-FALSIFIER-POISONS proved in-instrument;
+NO-RULE-EXISTS + per-segment outcomes reachable;
+G-RULE-BLIND folded or made real; the transcript bound;
+the two strengthenings LIFTED; all minors.  No physics
+number moves.  The repair launches next.
