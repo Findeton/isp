@@ -342,3 +342,37 @@ coin at AG(2,2); the renderer-twice reconstruction; the
 referent-gate coverage; the census-gate totals.  **The
 SEAM concern formally retracted by its own author — triply
 closed.**  Routed to both runners this entry.
+
+## 2026-08-16 — DISC K2 (EFFECTUS) FROZEN: ACCEPT-WITH-MAJOR-REPAIRS; ZERO FALSE NUMBERS; THE HELD ITEMS CONFIRMED BY THE SEAT ITSELF; THE FINDING STRENGTHENED BY A 6.7× WIDER SWEEP (v15 LEDGER #12)
+
+**Review:** v15/review-disc-effectus.md (1586a2630ced, 575
+lines).  130 recomputations, zero false numbers.  **THE
+SEAT STRENGTHENED THE UNIT: a memoryless-null sweep 6.7×
+wider than the unit's (9,360 + 1,020 configurations) —
+ZERO reproductions of ISP's tick-3 law at either plane;
+ordered adopted.**  EIGHT MAJORS: (1) G-VERDICT-EQUALITY
+is ONE function called twice under an
+"independent-reconstruction" claim — the RUNBOOK §14 shape
+(the third reviewer's held item CONFIRMED); (2) the
+referent gate binds 3 of 337 numerals (0.89%); (3)
+W-ABLATION-NOT-PREDICTION porous — 4 of 5 paraphrases
+survive (the CONTRACT wall disease CONFIRMED in DISC;
+the licence-leg fix applies); (4) "zero adjustable
+numbers" CONTRADICTED by the run's own sealed free-axes
+list (modulus — measured moving the observable at all 5
+values; the price column typed zeros); (5) §3's
+anti-strawman generalisation FALSE at AG(2,2) — a
+non-covariant memoryless coin reaches 8200/59049 vs the
+null's 10144/59049, moving the shot count 3,389 → 5,186
+(PR3 optimal at AG(2,3), measured); (6) #299-extended
+feasibility ABSENT entirely (the pin's outcome words
+appear nowhere; DISC-BLOCKED has no route); (7) the
+head's two most prominent numbers are IPRs published
+under site-occupation prose; (8) the census gate a
+cardinality identity — no ruling bound to its evidence.
+11 minors.  Mandate: 6 of 7 #2-orders folded
+(structure-pricing fails); the mechanism honestly
+labelled narrative-unproved — and K1's corroboration
+(#8) now supplies its evidence.  K3 out; the
+adjudication will merge K1's fiber finding (the tick
+moves with coin order) with this seat's list.
