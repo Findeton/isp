@@ -11606,3 +11606,17 @@ census by another route**; the minimising eight and the
 cut eight are literally the same set {u₃₃ = +1},
 unremarked.  All price laws, censuses, and the 22
 inheritances reproduce exactly.  K3 still out.
+
+## 2026-08-15 — FREEZE AMENDMENT TO #357: SEC-2 K1 FINAL — THE OFF-TREE BYTE REPRODUCTION PASSED (v14 LEDGER #358)
+
+The K1 seat's disclosed in-flight leg completed: in a
+clean scratch tree with ONLY the five pinned sources +
+paper + instrument and NO .git, the plain delivery run
+rewrote both artifacts BYTE-IDENTICAL to committed
+(cmp-confirmed; 45 gates PASS 0 FAIL) — #91's
+off-tree/version-control-free test passed.  The seat
+replaced its stale disclosure rather than leave a false
+statement in its own review; the FINAL text
+(adb25f6b903e, 371 lines) supersedes 3f45f6837bb7 and is
+committed here.  All #357 rulings stand unchanged.  K3
+still out.

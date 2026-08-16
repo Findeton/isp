@@ -327,12 +327,21 @@ machinery, canonical types and Gram handling were written independently and
 agree with the delivered fates cell for cell.
 
 Not this seat's business, and deliberately not done: the seal/coverage/CLI
-audit (K3's), the meaning-and-scope inventory (K2's). One observation for K3
-only: an off-tree, git-less byte-reproduction run of `sec2_exact.py` was
-launched from a clean scratch copy of the tree and was still executing its
-mutant sweep at the close of this review; it is reported as **in flight, not
-concluded**, and no byte-identity claim is made here either way. The repo tree
-also carried other units' uncommitted edits and at least one concurrent
+audit (K3's), the meaning-and-scope inventory (K2's).
+
+One measurement for K3, completed after the body of this review was written and
+recorded here rather than left as a stale disclosure. A clean scratch copy of
+the tree was built containing only the five pinned sources, the paper and
+`sec2_exact.py` — **no `.git`, nothing else** — and the plain delivery run was
+executed there. It **wrote both artifacts byte-identical to the committed ones**:
+`sec2_output.txt` **57c98674b479** and `sec2_receipt.json` **b66fdfaacc33**,
+confirmed by `cmp` as well as by digest, with **45 gates PASS and 0 FAIL**. That
+is #91's off-tree, version-control-free byte-reproduction test, passed, and it
+means the objects this seat audited are exactly what the instrument produces
+from the pinned inputs alone. It is one run in one environment, and it is not a
+substitute for K3's CLI, mutant and seal battery.
+
+The repo tree carried other units' uncommitted edits and at least one concurrent
 `sec2_exact.py` process during this review; nothing was written to the tree from
 this seat except this file.
 
@@ -356,3 +365,7 @@ The three majors are a false spelled numeral in §1, a table whose declaration
 columns describe one member of each class rather than the class, and an unnamed
 convention on which the headline's own "49" depends. None of them moves a fate,
 a lattice count, a price or a verdict.
+
+And the objects themselves are the instrument's own: run off-tree with no
+version control present, from the pinned inputs alone, `sec2_exact.py` rewrites
+both artifacts byte for byte, 45 gates PASS and 0 FAIL (§6).
