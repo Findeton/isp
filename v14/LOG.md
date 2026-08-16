@@ -11677,3 +11677,38 @@ Bell verdict standing guard against every over-reading.
 
 **Programme count: THIRTY-TWO terminals; zero false
 computed numbers surviving anywhere in v14.**
+
+## 2026-08-15 — SEC-2 K3 (INSTRUMENT) FROZEN: ACCEPT-WITH-FIXES; NO MEASURED QUANTITY WRONG (THE FULL 455 RE-CENSUSED); 13 MAJORS, TEN TEMPLATE-SHAPED; THE PANEL IS COMPLETE (v14 LEDGER #361)
+
+**Review:** v14/review-sec2-instrument.md (5724179ec187,
+688 lines).  Grade ACCEPT-WITH-FIXES.  Independent census
+of ALL 455 groups with no orbit reduction: 288/54/216/72
+(72/72 opening within-sector pairs)/0-motivated — exact;
+byte ×2 off-tree two seeds; sweep 38/38; chain 42/42; ~201
+recomputations zero disagreements.  **44 injections: 13
+refused, 29 accepted at exit 0.**  MAJORS: the claims gate
+TABLE-BLIND and one-way (header swaps, row transplants, a
+duplicate row pass); five of six prose direction flips
+pass; THE ACT DISEASE both forms (integrity is a
+write-time re-derivation, not the gate-time seal — a
+mutated sealed key and an added key both promote with the
+receipt self-contradicting); the read-set gate
+ORDER-SENSITIVE (a stray read of the pin-forbidden
+sec_exact.py planted AFTER the gate survives; --verify-sec
+itself sound); the transcript unbound (forged PASS→FAIL,
+forged numbers, an invented gate row all survive; 42
+published rows vs 45 fired vs 34 listed); E-22 fences fail
+BOTH directions; **E-23 leg 3 at 32/38 — six sentinel
+falsifiers poison the gate's verdict variable instead of
+the measurement (incl. MUT-VERDICT and MUT-PAPER-CLAIM),
+so the comparator and claims machinery have no real
+falsifier**; four of 42 gates uncovered (G-COVERAGE
+snapshots before appending itself); two vacuous-pass modes
+(--verify-paper on empty; --no-write with the paper
+deleted).  The spelled list misses sixty-three; referent
+binding PRESENT as a hole (cross-universe plants pass).
+**SEAM RULING: ten of thirteen map onto LOR's four
+template families; five new families proposed for the
+#267 standing list.  PANEL COMPLETE (K1 #357+#358 / K2
+#356 / K3 here): ~2,352 recomputations, the typed column
+the only false numerals.  Adjudication next.**
