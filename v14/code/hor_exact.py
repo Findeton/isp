@@ -25,9 +25,13 @@ WHAT THIS INSTRUMENT MEASURES.  Four things the pin names.
       link operator, the same coins, no identification.  Which sealed laws
       survive verbatim and which were closure artifacts -- censused.
 
-  (4) THE DIRECT-LIMIT FORM.  The undetermined-R statement written out, and a
-      gate that every sealed law this unit uses is quantifiable over horizons
-      or is named as an exception.
+  (4) THE DIRECT-LIMIT FORM.  The undetermined-R statement written out, and
+      the gate the pin asks for, run on every sealed law this unit uses: the
+      law is HORIZON-STATABLE BY THE CLOSURE-WITNESS TEST -- its witness on
+      the open arena is its witness on the closed one, or differs with a
+      stated proviso -- or it is named as an exception.  The class word is
+      the test; the absence of a symbol for a size is a different property
+      and is not what is measured here.
 
 WALLS (from the pin).  No actual-infinity claim of any kind -- R1's seal
 stands and is cited, never contradicted; no continuum vocabulary; the
@@ -329,7 +333,17 @@ class Seal:
 
 class SemanticWall:
     """(c) E-27: voice-normalised patterns, a positive leg, non-vacuous,
-    self-sealed, and no self-licensing."""
+    self-sealed, and no self-licensing.
+
+    Three separations the legs need and this class makes:
+      * the NEGATIVE legs run over the paper's own voice -- its declaring
+        sentences and the pinned windows it quotes removed;
+      * the POSITIVE legs run over the paper with the pinned windows removed
+        and nothing else, so a standing sentence of this unit's own cannot be
+        discharged by a parent's quotation;
+      * the LICENCE leg polices the paper's PROSE with hyphens folded, so a
+        policed token cannot be smuggled past it by a hyphen, and it publishes
+        the number of sentences it policed, so its non-vacuity is measured."""
 
     CHECK = "T-WALL-SEMANTIC"
 
@@ -351,16 +365,20 @@ class SemanticWall:
                 "positive": self.positive, "licences": list(self.licences),
                 "policed": list(self.policed)}
 
-    def scan(self, paper_text, claims=None, scan_text=None):
-        """the negative legs run over the paper's OWN voice -- its declaring
-        sentences and the pinned windows it quotes removed, both of which are
-        gated elsewhere -- and the positive legs run over the whole paper, so
-        that stripping can never satisfy a standing sentence."""
+    @staticmethod
+    def fold(text):
+        """#125 normalisation with the hyphen folded to a space: a policed
+        token written with a hyphen is the same token."""
+        return re.sub(r"\s+", " ", canon(text).replace("-", " ")).strip()
+
+    def scan(self, paper_text, claims=None, scan_text=None,
+             standing_text=None, licence_text=None):
         if not paper_text or not paper_text.strip():
             raise GateFail(self.CHECK,
                            "%s scanned no text (vacuous pass)" % self.name)
         own = scan_text if scan_text is not None else paper_text
-        if not own.strip():
+        standing = standing_text if standing_text is not None else paper_text
+        if not own.strip() or not standing.strip():
             raise GateFail(self.CHECK,
                            "%s scanned no text (vacuous pass)" % self.name)
         hay = canon(own)
@@ -368,24 +386,36 @@ class SemanticWall:
         if hits:
             raise GateFail(self.CHECK,
                            "%s: banned pattern matched %s" % (self.name, hits))
-        gone = [p for p in self.positive if not re.search(p, canon(paper_text))]
+        gone = [p for p in self.positive if not re.search(p, canon(standing))]
         if gone:
             raise GateFail(self.CHECK, "%s: required standing sentence absent "
                            "%s" % (self.name, gone))
+        policed = 0
         if self.policed:
-            self._licence_leg(own, claims or [])
-        return {"negative": len(self.negative), "positive": len(self.positive)}
+            lic = licence_text if licence_text is not None else own
+            if not lic.strip():
+                raise GateFail(self.CHECK, "%s policed no text (vacuous pass)"
+                               % self.name)
+            policed = self._licence_leg(lic, claims or [])
+            if not policed:
+                raise GateFail(self.CHECK, "%s policed no sentence at all "
+                               "(vacuous pass)" % self.name)
+        return {"negative": len(self.negative), "positive": len(self.positive),
+                "policed_sentences": policed}
 
     def _licence_leg(self, paper_text, claims):
-        cclaims = [canon(c) for c in claims]
+        cclaims = [self.fold(c) for c in claims]
+        policed = 0
         for sentence in re.split(r"(?<=[.!?])\s+", paper_text):
-            s = canon(sentence)
+            s = self.fold(sentence)
             if not any(re.search(r"\b%s" % w, s) for w in self.policed):
                 continue
+            policed += 1
             if not any(c and c in s for c in cclaims):
                 raise GateFail(self.CHECK, "%s: policed sentence carries no "
                                "rendered claim :: %s"
                                % (self.name, sentence.strip()[:90]))
+        return policed
 
 
 class Anchor:
@@ -571,11 +601,18 @@ class ReferentRegistry:
 
     def __init__(self):
         self.universes = {}
+        self.exempt = {}
 
     def universe(self, name, nouns, values, pairs=None):
         self.universes[name] = {"nouns": [canon(n) for n in nouns],
                                 "values": set(values),
                                 "pairs": set(pairs or ())}
+
+    def exempt_token(self, token, reason):
+        """a numeral that is an IDENTIFIER and not a measurement -- this
+        unit's own number in the corpus, or a ledger entry's -- exempted by
+        name and with its reason published, never by silence."""
+        self.exempt[token] = reason
 
     def seal_value(self):
         return {n: {"nouns": u["nouns"], "values": sorted(u["values"]),
@@ -591,38 +628,81 @@ class ReferentRegistry:
         return "\n".join(ln for ln in t.splitlines()
                           if not Claims.ROW.match(ln))
 
-    def _universe_of(self, sentence):
-        s = canon(sentence)
+    def _nouns_in(self, s):
+        """every occurrence of every declared noun in the canonicalised
+        sentence, with its position.  The match is EXACT -- a noun is bounded
+        at both ends -- so `censused` is not the noun `census` and `armed` is
+        not the noun `arm`."""
+        out = []
         for name, u in self.universes.items():
-            if any(re.search(r"\b%s" % re.escape(n), s) for n in u["nouns"]):
-                return name
+            for n in u["nouns"]:
+                for m in re.finditer(r"\b%s\b" % re.escape(n), s):
+                    out.append((m.start(), name))
+        return sorted(out)
+
+    @staticmethod
+    def _referent(nouns, at):
+        """the universe of the noun the numeral is PREDICATED OF: the nearest
+        declared noun after it, or -- when its sentence puts none after it --
+        the nearest before.  This is the repair for a false number riding a
+        foreign noun into this gate: `at every depth the census carries 256
+        sealed laws` resolves 256 against the census, which is what it is a
+        count of, and not against the cone, which is merely the first universe
+        the sentence mentions."""
+        after = [n for n in nouns if n[0] >= at]
+        if after:
+            return after[0][1]
+        before = [n for n in nouns if n[0] < at]
+        if before:
+            return before[-1][1]
         return None
 
     def gate(self, paper_text):
         prose = self.prose_only(paper_text)
-        checked, offences = 0, []
-        for sentence in re.split(r"(?<=[.!?])\s+", prose):
-            uname = self._universe_of(sentence)
-            if uname is None:
-                continue
-            u = self.universes[uname]
-            spans = [m.span() for m in self.NOF.finditer(sentence)]
-            for m in self.NOF.finditer(sentence):
+        for tok in self.exempt:
+            prose = prose.replace(tok, " ")
+        everything, allpairs = set(), set()
+        for u in self.universes.values():
+            everything |= u["values"]
+            allpairs |= u["pairs"]
+        checked, unbound, offences = 0, 0, []
+        for raw in re.split(r"(?<=[.!?])\s+", prose):
+            s = canon(raw)
+            nouns = self._nouns_in(s)
+            spans = [m.span() for m in self.NOF.finditer(s)]
+            for m in self.NOF.finditer(s):
                 a, b = (int(x.replace(",", "")) for x in m.groups())
                 checked += 1
-                if (a, b) not in u["pairs"]:
+                uname = self._referent(nouns, m.end())
+                if uname is None:
+                    unbound += 1
+                    if (a, b) not in allpairs:
+                        offences.append("(%d of %d) is a measured pair of no "
+                                        "declared universe" % (a, b))
+                elif (a, b) not in self.universes[uname]["pairs"]:
                     offences.append("(%d of %d) is not a measured pair of %s"
                                     % (a, b, uname))
-            for m in self.NUM.finditer(sentence):
-                if any(s <= m.start() < e for s, e in spans):
+            for m in self.NUM.finditer(s):
+                if any(x <= m.start() < y for x, y in spans):
                     continue
                 v = int(m.group(1).replace(",", ""))
                 checked += 1
-                if v not in u["values"]:
+                uname = self._referent(nouns, m.end())
+                if uname is None:
+                    # a sentence carrying no declared noun at all is resolved
+                    # against the union of every universe, so that no prose
+                    # numeral sits outside all of them.
+                    unbound += 1
+                    if v not in everything:
+                        offences.append("%d is a value of no declared universe"
+                                        % v)
+                elif v not in self.universes[uname]["values"]:
                     offences.append("%d is not a value of %s" % (v, uname))
         if offences:
             raise GateFail(self.CHECK, "; ".join(sorted(set(offences))[:6]))
         return {"occurrences_checked": checked,
+                "occurrences_with_no_universe_noun": unbound,
+                "exemptions": len(self.exempt),
                 "universes": len(self.universes)}
 
 
@@ -670,6 +750,13 @@ class CountRegistry:
         return template.format(**{k: self.values[k] for k in keys})
 
     def audit_module(self, source, statement_callers):
+        """E-31, at the ARGUMENT EXPRESSION rather than at the top-level
+        string.  Two subspecies the older scan could not see, both of which
+        published false counts elsewhere in this era: a numeral typed into a
+        %-formatted evidence string, which is a string constant nested inside
+        a BinOp rather than an argument itself; and a typed integer offset
+        added to or subtracted from a measured count, which is a published
+        numeral that never appears in any string at all."""
         tree = ast.parse(source)
         out = []
         for node in ast.walk(tree):
@@ -679,13 +766,24 @@ class CountRegistry:
             if fname not in statement_callers:
                 continue
             for arg in node.args:
-                if isinstance(arg, ast.Constant) and isinstance(arg.value, str):
-                    probe = arg.value
-                    for tok in self.exempt:
-                        probe = probe.replace(tok, " ")
-                    probe = re.sub(r"\{[^{}]*\}", " ", probe)
-                    if self.DIGITS.search(probe):
-                        out.append("line %d: %r" % (node.lineno, arg.value[:56]))
+                for sub in ast.walk(arg):
+                    if isinstance(sub, ast.Constant) and isinstance(sub.value, str):
+                        probe = sub.value
+                        for tok in self.exempt:
+                            probe = probe.replace(tok, " ")
+                        probe = re.sub(r"\{[^{}]*\}", " ", probe)
+                        if self.DIGITS.search(probe):
+                            out.append("line %d: %r"
+                                       % (sub.lineno, sub.value[:56]))
+                    if isinstance(sub, ast.BinOp) and \
+                            isinstance(sub.op, (ast.Add, ast.Sub)):
+                        for side in (sub.left, sub.right):
+                            if isinstance(side, ast.Constant) and \
+                                    isinstance(side.value, int) and \
+                                    not isinstance(side.value, bool):
+                                out.append("line %d: a typed integer offset "
+                                           "over a published count"
+                                           % sub.lineno)
         return out
 
 
@@ -723,38 +821,66 @@ class FalsifierHarness:
                         "moved": True})
         return out
 
-    def audit_descriptions(self, source):
-        """AST leg for E-23: a mutant branch that only rebinds a local flag to
-        a constant, or only appends a constant to a local list, corrupts no
-        measured object; a branch that reaches into a published structure
-        does."""
+    def audit_descriptions(self, source, declared=()):
+        """AST leg for E-23, at the reference implementation's own strength.
+        ANY statement of a mutant branch that rebinds a local flag to a
+        constant, or appends a constant to a local list, is sentinel-shaped --
+        not only a branch all of whose statements are.  And the branch itself
+        must be LIVE: a test carrying a constant beside the mutant call is a
+        short-circuited branch (`if False and mut(...)`), and a declared
+        falsifier with no branch at all in this file is a badge with nothing
+        behind it -- which is what makes the in-process move proof a statement
+        about this instrument rather than about a probe."""
         tree = ast.parse(source)
         offenders = []
+        live = collections.Counter()
         for node in ast.walk(tree):
             if not isinstance(node, ast.If):
                 continue
-            if "mut" not in ast.dump(node.test):
+            calls = [c for c in ast.walk(node.test)
+                     if isinstance(c, ast.Call)
+                     and getattr(c.func, "id", None) == "mut"]
+            if not calls:
                 continue
-            flags = 0
+            names = [c.args[0].value for c in calls
+                     if c.args and isinstance(c.args[0], ast.Constant)]
+            shorted = [s for s in ast.walk(node.test)
+                       if isinstance(s, ast.Constant)
+                       and not isinstance(s.value, str)]
+            if shorted:
+                offenders.append("line %d: the branch test carries a constant "
+                                 "beside the mutant call" % node.lineno)
+            else:
+                for nm in names:
+                    live[nm] += 1
             for st in node.body:
                 if isinstance(st, ast.Assign) and \
                         all(isinstance(t, ast.Name) for t in st.targets) and \
                         isinstance(st.value, ast.Constant):
-                    flags += 1
+                    offenders.append("line %d: the branch rebinds a local flag "
+                                     "to a constant" % node.lineno)
                 elif isinstance(st, ast.Expr) and \
                         isinstance(st.value, ast.Call) and \
                         getattr(st.value.func, "attr", "") == "append" and \
                         st.value.args and \
                         isinstance(st.value.args[0], ast.Constant):
-                    flags += 1
-            if node.body and flags == len(node.body):
-                offenders.append("line %d: the branch rebinds only local flags"
-                                 % node.lineno)
+                    offenders.append("line %d: the branch appends a constant "
+                                     "to a local list" % node.lineno)
+        for nm in declared:
+            if not live[nm]:
+                offenders.append("%s: no live branch of its own in this "
+                                 "instrument's source" % nm)
         return offenders
 
     def coverage(self, ledger, waivers, forcings):
         targeted = {f.gate for f in self.rows}
-        fired = set(ledger.names()) | {"G-FALSIFIER-COVERAGE"}
+        already = set(ledger.names())
+        fired = already | {"G-FALSIFIER-COVERAGE"}
+        live = "G-FALSIFIER-COVERAGE" not in already
+        # a forcing may be a predicate OF the denominator this gate divides
+        # by, evaluated here, after that denominator is taken and not before.
+        forcings = {k: (v(live) if callable(v) else v)
+                    for k, v in forcings.items()}
         uncovered = sorted(g for g in fired
                            if g not in targeted and g not in waivers)
         unforced = sorted(g for g in waivers if not forcings.get(g, False))
@@ -765,7 +891,12 @@ class FalsifierHarness:
             raise GateFail(self.CHECK,
                            "waivers with no machine-checked forcing: %s" % unforced)
         return {"gates": len(fired), "gates_with_a_falsifier": len(targeted),
-                "gates_waived": len(waivers)}
+                "gates_waived": len(waivers),
+                "denominator": sorted(fired),
+                "forcings_as_evaluated": {k: bool(v)
+                                          for k, v in sorted(forcings.items())},
+                "the_denominator_is_the_live_ledger_and_this_gate_is_not_in_it_yet":
+                    live}
 
 
 class ReadSet:
@@ -914,6 +1045,18 @@ ANCHOR_ROWS = [
 
 # --- the path-value anchors -------------------------------------------------
 # (name, source key, dotted path, the value that path must carry)
+
+PATH_VALUES_VALUE_ONLY = {
+    "PV-POT-BL-SHAPES":
+        "the parent's own rectangle family at its boundary size runs to a "
+        "longer extent than the family this unit declares, so its count "
+        "cannot be the predicate of any measurement taken here; it is carried "
+        "as a drift check on the parent's receipt and as nothing else",
+    "PV-R5-CIRCULANTS":
+        "the gauge parent's control count over its own circulant family, "
+        "which this unit neither rebuilds nor uses; it is carried as a drift "
+        "check on the parent's receipt and as nothing else",
+}
 
 PATH_VALUES = [
     ("PV-POT-COINS", "POTRECEIPT", "arena.coins", 640),
@@ -1211,11 +1354,22 @@ CONE_DEPTH = 16
 ATTAIN_DEPTH = 8
 DYN_DEPTH = 8
 DYN_WINDOW = 2
-DYN_REF_R = 13
 DYN_TORI = (6, 8, 10, 12)
 DYN_PATCHES = (5, 7, 9, 11)
 COIN_STRIDE = 128                        # the declared representative stride
-RECT_MAX = 3
+RECT_MAX = 4                             # the largest declared rectangle extent
+
+# the census's own arena pair, declared here as data and printed in the
+# census table row by row: ONE open size and ONE closed size, both on the
+# ladders above, with the closed one the size the potential parent ran its
+# own boundary lattice at.
+CORE_PATCH, CORE_TORUS = 9, 8
+
+# and the sizes the census sweeps each of its witnesses over, so that a
+# witness an arena can move is told from a witness no arena can: every size
+# of either ladder at which every declared rectangle shape fits.
+CENSUS_SWEEP_T = tuple(n for n in TORUS_LADDER if n > RECT_MAX)
+CENSUS_SWEEP_P = tuple(n for n in PATCH_LADDER if n > RECT_MAX)
 
 
 def measure_arena(S, pv, anchors):
@@ -1298,6 +1452,9 @@ def measure_zero_patterns(S, coins):
     if mut("MUT-ZERO-PATTERN"):
         pat[(True, True, False, False)] = 1
     ok = (not bad) and len(pat) == 3
+    census_line = ", ".join(
+        "%s->%d" % ("".join("Z" if t else "-" for t in k), v)
+        for k, v in sorted(pat.items()))
     CNT.measured("patterns", len(pat), "the per-coin zero pattern census")
     LD.gate("G-ZERO-PATTERN-THEOREM",
             CNT.stmt("unitarity forces the vanishing pattern of a coin: the "
@@ -1307,9 +1464,7 @@ def measure_zero_patterns(S, coins):
                      "checked against the theorem on its own four entries "
                      "rather than counted into a tally"),
             ok, "patterns %d over %d coins: %s" %
-            (len(pat), len(coins),
-             ", ".join("%s->%d" % ("".join("1" if t else "0" for t in k), v)
-                       for k, v in sorted(pat.items()))))
+            (len(pat), len(coins), census_line))
     S["zero_patterns"] = {
         "patterns": len(pat),
         "census": {"".join("1" if t else "0" for t in k): v
@@ -1580,8 +1735,8 @@ def measure_one_tick_reach(S, pv, coins, anchors):
                      "diagonal sector, where the state cannot move at all -- "
                      "and exactly one site at {reach1}, and it exceeds one at "
                      "{reachover}"),
-            ok, "coins %d: reach 0 at %d, reach 1 at %d, reach above 1 at %d"
-            % (len(coins), zero, one, over))
+            ok, "coins %d: reach of zero sites at %d, of one site at %d, of "
+            "more than one site at %d" % (len(coins), zero, one, over))
     S["one_tick_reach"] = {
         "coins": len(coins), "reach_zero": zero, "reach_one": one,
         "reach_above_one": over,
@@ -1670,6 +1825,9 @@ def measure_the_cone(S, pv, anchors):
     CNT.measured("coneshort", sum(1 for a in attain if a == 0),
                  "attainment depths at which no coin fills the whole cone")
     CNT.measured("attaindepth", ATTAIN_DEPTH, "the declared attainment ladder")
+    CNT.measured("dynattained", sum(1 for r in radius if r > 0),
+                 "attainment depths at which the DYNAMICS reaches the cone's "
+                 "own sum-norm radius, as against the partner relation")
     LD.gate("G-THE-CONE",
             CNT.stmt("the cone is censused to depth {conedepth} by a route "
                      "that touches no amplitude at all, and every amplitude "
@@ -1700,6 +1858,8 @@ def measure_the_cone(S, pv, anchors):
         "amplitude_supports_escaping_the_cone": escapes,
         "attainment_depth": ATTAIN_DEPTH,
         "attainment_rows": deficit,
+        "attainment_depths_the_dynamics_reaches_the_radius_at":
+            sum(1 for r in radius if r > 0),
         "coins_realising_the_cone_radius_at_the_thinnest_depth": min(radius),
         "attainment_depths_no_coin_fills_site_for_site":
             sum(1 for a in attain if a == 0),
@@ -1709,10 +1869,14 @@ def measure_the_cone(S, pv, anchors):
     return rows
 
 
-def measure_c(S, anchors, rows):
+def measure_c(S, pv, anchors, rows):
     """c, DERIVED from the census: the maximum of radius over tick, in each
     declared norm, as an exact rational; and the sustained value, taken over
-    whole sweeps so that no partial sweep flatters it."""
+    whole sweeps so that no partial sweep flatters it.
+
+    The licence for calling it a MAXIMUM sits at two depths and both are
+    published: the structural cone attains it at every censused depth, and the
+    dynamics attains it at every depth of the attainment sweep."""
     sum_ratios = [Fraction(r["sum_norm_radius"], r["tick"]) for r in rows]
     max_ratios = [Fraction(r["max_norm_radius"], r["tick"]) for r in rows]
     sweeps = [r for r in rows if r["tick"] % len(SCHEDULE) == 0]
@@ -1723,10 +1887,17 @@ def measure_c(S, anchors, rows):
     if mut("MUT-C"):
         c_sum = c_sum + 1
     attained = sum(1 for f in sum_ratios if f == c_sum)
+    # the gauge parent's own connective tag, used as a predicate: the norm it
+    # names is one of the two this run censuses, and the value this run
+    # publishes for it is the SUSTAINED one.
+    connective = pv["PV-R5-CONNECTIVE"]
+    norms = {"SUM-NORM": sust_sum, "MAX-NORM": sust}
     ok = (c_sum == Fraction(1) and len(sust) == 1
           and next(iter(sust)) == Fraction(1, 2)
           and len(sust_sum) == 1 and next(iter(sust_sum)) == Fraction(1)
           and attained == len(rows)
+          and connective in norms and len(norms[connective]) == 1
+          and CNT.get("dynattained") == CNT.get("attaindepth")
           and anchor_has(anchors, "VB-HOR-C", "G-EMERGENT-C",
                          "measured (not assumed) on the committed dynamics"))
     CNT.measured("csum", str(c_sum), "max over the cone census, exact rational")
@@ -1737,16 +1908,27 @@ def measure_c(S, anchors, rows):
     LD.gate("G-EMERGENT-C",
             CNT.stmt("the emergent speed is DERIVED from the cone census and "
                      "never typed: in the sum norm it is {csum} site per tick, "
-                     "attained at every one of the {attained} censused depths "
-                     "rather than merely bounded; in the max norm the "
+                     "attained by the STRUCTURAL cone at every one of the "
+                     "{attained} censused depths and by the DYNAMICS at every "
+                     "one of the {dynattained} depths of the attainment sweep, "
+                     "so it is a maximum and not a bound at both depths and "
+                     "neither of them is a ceiling; in the max norm the "
                      "instantaneous value is {cmax} and the value sustained "
-                     "over whole sweeps is {csust}, one value at every sweep"),
-            ok, "c_sum %s attained at %d of %d depths, c_max %s, sustained "
-            "max-norm %s, sustained sum-norm %s" %
-            (c_sum, attained, len(rows), c_max,
-             sorted(str(x) for x in sust), sorted(str(x) for x in sust_sum)))
+                     "over whole sweeps is {csust}, one value at every sweep, "
+                     "and the norm the gauge parent's own connective tag names "
+                     "is one this census carries"),
+            ok, "c_sum %s attained structurally at %d of %d depths and "
+            "dynamically at %d of %d, c_max %s, sustained max-norm %s, "
+            "sustained sum-norm %s, the parent's connective tag %s" %
+            (c_sum, attained, len(rows), CNT.get("dynattained"),
+             CNT.get("attaindepth"), c_max,
+             sorted(str(x) for x in sust), sorted(str(x) for x in sust_sum),
+             connective))
     S["emergent_c"] = {
         "c_in_the_sum_norm_per_tick": str(c_sum),
+        "the_norm_the_gauge_parents_connective_tag_names": connective,
+        "depths_at_which_the_dynamics_attains_it": CNT.get("dynattained"),
+        "attainment_depths": CNT.get("attaindepth"),
         "c_in_the_max_norm_per_tick_instantaneous": str(c_max),
         "c_in_the_max_norm_per_tick_sustained": sorted(str(x) for x in sust),
         "c_in_the_sum_norm_per_tick_sustained": sorted(str(x) for x in sust_sum),
@@ -1869,33 +2051,58 @@ def measure_c_is_not_the_group_speed(S, pv, anchors):
     than by a footnote."""
     read = anchor_has(anchors, "VB-R4B-NOTC", "G-C-IS-NOT-THE-GROUP-SPEED",
                       "is not a light-cone velocity")
+    # the separation is DERIVED from the circulant measurement rather than
+    # typed: the parent's object needs the closure exactly in so far as the
+    # translations its own family is defined by exist on one arena and not on
+    # the other, which is a pair of numbers this run measured.
+    cir = S["circulants"]["rows"]
+    ct = [r for r in cir if r["closure"] == TORUS][0]
+    cp = [r for r in cir if r["closure"] == PATCH][0]
+    closed_axes = ct["axes_whose_shift_is_a_bijection"]
+    open_axes = cp["axes_whose_shift_is_a_bijection"]
+    closed_syms = ct["translations_carrying_the_link_set_to_itself"]
+    open_syms = cp["translations_carrying_the_link_set_to_itself"]
+    if mut("MUT-GROUPSPEED"):
+        open_axes = closed_axes
+    needs_closure = (closed_axes > open_axes and closed_syms > open_syms)
+    reach_needs_closure = False
     rows = [
         {"object": "the group speed of a translation-covariant generator",
-         "lives_in": "THE-DUAL-TORUS", "needs_the_closure": True,
-         "measured_by": "R4B", "this_unit_re_measures_it": False},
+         "lives_in": "THE-DUAL-TORUS", "needs_the_closure": needs_closure,
+         "measured_by": "R4B", "this_unit_re_measures_it": False,
+         "the_translations_its_family_needs": closed_syms,
+         "the_declared_axes_that_are_bijections_there": closed_axes},
         {"object": "the reach of the support under one tick",
-         "lives_in": "THE-SITE-SET", "needs_the_closure": False,
-         "measured_by": "HOR", "this_unit_re_measures_it": True},
+         "lives_in": "THE-SITE-SET", "needs_the_closure": reach_needs_closure,
+         "measured_by": "HOR", "this_unit_re_measures_it": True,
+         "the_translations_its_family_needs": open_syms,
+         "the_declared_axes_that_are_bijections_there": open_axes},
     ]
-    if mut("MUT-GROUPSPEED"):
-        rows[0]["needs_the_closure"] = False
     ok = (read and rows[0]["needs_the_closure"]
           and not rows[1]["needs_the_closure"]
           and rows[0]["lives_in"] != rows[1]["lives_in"])
     LD.gate("G-C-IS-NOT-THE-GROUP-SPEED",
             "the speed this unit measures is not the speed the parent "
-            "measured, and the separation is gated: the parent's is a phase "
-            "advance on the dual torus, which exists only because the arena is "
-            "closed, and its own sentence says it is not a light-cone "
-            "velocity; this unit's is the reach of the support, which is "
-            "defined on an arena with no closure at all, and nothing here "
-            "re-runs, revises or contradicts the parent's number",
+            "measured, and the separation is gated on a measurement rather "
+            "than on a declaration: the parent's object is a phase advance on "
+            "the dual torus, and whether it needs the closure is DECIDED here "
+            "by the circulant census -- the declared axes that are bijections "
+            "and the translations that carry the link set to itself, counted "
+            "on each closure -- while its own sentence says it is not a "
+            "light-cone velocity; this unit's object is the reach of the "
+            "support, which is defined on an arena with no closure at all, "
+            "and nothing here re-runs, revises or contradicts the parent's "
+            "number",
             ok, "the parent's own clause read %s; the two objects live in %s "
-            "and %s; closure needed %s and %s" %
+            "and %s; bijective declared axes closed %d against open %d, "
+            "translations carrying the link set to itself closed %d against "
+            "open %d; closure needed %s and %s" %
             (read, rows[0]["lives_in"], rows[1]["lives_in"],
+             closed_axes, open_axes, closed_syms, open_syms,
              rows[0]["needs_the_closure"], rows[1]["needs_the_closure"]))
     S["c_against_the_group_speed"] = {
         "rows": rows, "the_parents_clause_was_read": read,
+        "the_separation_is_derived_from": "G-CIRCULANTS-NEED-THE-CLOSURE",
         "this_unit_contradicts_nothing_of_the_parents": True}
     SEAL.take("c_against_the_group_speed", S["c_against_the_group_speed"],
               "G-C-IS-NOT-THE-GROUP-SPEED")
@@ -2022,9 +2229,6 @@ def sym_real(t):
     return (t[0], (t[1] - t[3]) / 2)
 
 
-RECT_MAX = 4
-
-
 def rect_shapes():
     return [(a, b) for a in range(1, RECT_MAX + 1)
             for b in range(1, RECT_MAX + 1)]
@@ -2084,8 +2288,18 @@ def measure_the_family_split(S, pv, anchors):
     tori = [r for r in rows if r["closure"] == TORUS]
     no_wind = all(r["winding_placements"] == 0 for r in patches)
     all_wind = all(r["winding_placements"] > 0 for r in tori)
+    # the parent's own placement total and its own shape count at its own
+    # size, used as predicates rather than carried: the total is its two
+    # published parts summed, and the shapes it counts there are the shapes
+    # this run finds there.
+    parts = pv["PV-POT-CONTRACTIBLE"] + pv["PV-POT-WINDING"]
+    potrow = [r for r in tori if r["n"] == pv["PV-POT-L"]][0]
+    potshapes = potrow["shapes_that_fit"]
     ok = (no_wind and all_wind and anc[2] == pv["PV-POT-CONTRACTIBLE"]
           and anc[3] == pv["PV-POT-WINDING"]
+          and pv["PV-POT-PLACEMENTS"] == parts
+          and pv["PV-POT-SHAPES"] == potshapes
+          and potrow["contractible_placements"] == pv["PV-POT-CONTRACTIBLE"]
           and all(r["contractible_placements"] > 0 for r in rows))
     CNT.measured("patchloops", len(patches), "the patch rows of the family census")
     CNT.measured("torusloops", len(tori), "the torus rows of the family census")
@@ -2096,10 +2310,16 @@ def measure_the_family_split(S, pv, anchors):
                      "populated at every size, and at all {torusloops} closed "
                      "sizes the winding part is populated; the two numbers the "
                      "parent's own split sentence carries are required to be "
-                     "the two this run reads from its receipt"),
-            ok, "patch rows %d with winding 0 everywhere %s, torus rows %d "
-            "with winding present everywhere %s, the parent's split numbers "
-            "%s" % (len(patches), no_wind, len(tori), all_wind, anc[2:4]))
+                     "the two this run reads from its receipt, its published "
+                     "placement total to be those two parts summed, and its "
+                     "published shape count at its own size to be the count "
+                     "this run measures there"),
+            ok, "patch rows %d with the winding part empty everywhere %s, "
+            "torus rows %d with winding present everywhere %s, the parent's "
+            "split numbers %s, its placements %d against its two parts summed "
+            "%d, its own shape count %d against this run's at that size %d"
+            % (len(patches), no_wind, len(tori), all_wind, anc[2:4],
+               pv["PV-POT-PLACEMENTS"], parts, pv["PV-POT-SHAPES"], potshapes))
     S["family_split"] = {
         "rows": rows, "open_sizes": len(patches), "closed_sizes": len(tori),
         "winding_is_empty_at_every_open_size": no_wind,
@@ -2115,10 +2335,14 @@ WALK_DEPTH = 8
 def measure_homology(S, pv):
     """first homology, measured exhaustively rather than asserted: every
     closed walk up to the declared depth from a fixed base, on both closures,
-    classified by its net displacement."""
+    classified by its net displacement.  Measured at the parent's own declared
+    size, where the two closures are the same square of places, AND at the
+    census's own declared arena pair, so that the census compares this law at
+    the size every other row of it uses."""
     rows = []
-    for kind in (TORUS, PATCH):
-        A = Arena(kind, pv["PV-POT-L"])
+    for kind, n in ((TORUS, pv["PV-POT-L"]), (PATCH, pv["PV-POT-L"]),
+                    (TORUS, CORE_TORUS), (PATCH, CORE_PATCH)):
+        A = Arena(kind, n)
         base = (0, 0)
         classes = collections.Counter()
         walks = 0
@@ -2146,10 +2370,12 @@ def measure_homology(S, pv):
         rows[1]["displacement_classes"] = rows[0]["displacement_classes"]
     pat = [r for r in rows if r["closure"] == PATCH][0]
     tor = [r for r in rows if r["closure"] == TORUS][0]
-    ok = (pat["displacement_classes"] == 1
-          and pat["walks_with_nonzero_displacement"] == 0
-          and tor["displacement_classes"] > 1
-          and tor["walks_with_nonzero_displacement"] > 0)
+    ok = (all(r["displacement_classes"] == 1
+              and r["walks_with_nonzero_displacement"] == 0
+              for r in rows if r["closure"] == PATCH)
+          and all(r["displacement_classes"] > 1
+                  and r["walks_with_nonzero_displacement"] > 0
+                  for r in rows if r["closure"] == TORUS))
     CNT.measured("walkdepth", WALK_DEPTH, "the declared exhaustive walk depth")
     CNT.measured("patchclasses", pat["displacement_classes"], "exhaustive")
     CNT.measured("torusclasses", tor["displacement_classes"], "exhaustive")
@@ -2160,13 +2386,17 @@ def measure_homology(S, pv):
                      "{patchclasses} class and no walk with a nonzero one, the "
                      "closed torus returns {torusclasses}, so the winding "
                      "numbers a loop observable can carry are a property of "
-                     "the identification and of nothing else"),
+                     "the identification and of nothing else -- and the same "
+                     "enumeration is run again at the arena pair the closure "
+                     "census declares, so that row of the census compares this "
+                     "law at the sizes every other row of it uses"),
             ok, "patch classes %d (%d nonzero of %d walks), torus classes %d "
-            "(%d nonzero of %d walks)" %
+            "(%d nonzero of %d walks), rows %s" %
             (pat["displacement_classes"], pat["walks_with_nonzero_displacement"],
              pat["closed_walks_of_the_declared_depth"],
              tor["displacement_classes"], tor["walks_with_nonzero_displacement"],
-             tor["closed_walks_of_the_declared_depth"]))
+             tor["closed_walks_of_the_declared_depth"],
+             ["%s:%d" % (r["arena"], r["displacement_classes"]) for r in rows]))
     S["homology"] = {"rows": rows, "walk_depth": WALK_DEPTH,
                      "every_integer_here_is_a_count": "COUNTING-ONLY-E-24"}
     SEAL.take("homology", S["homology"], "G-HOMOLOGY")
@@ -2176,9 +2406,6 @@ def measure_homology(S, pv):
 # ===========================================================================
 # SECTION 7.  HORIZON-STABILITY -- THE STATIC SIDE
 # ===========================================================================
-
-CORE_PATCH, CORE_TORUS = 9, 8
-
 
 def loop_values(arena, coins, shapes):
     """the observable POT declares -- the conjugation-symmetric part of the
@@ -2238,7 +2465,8 @@ def measure_loop_stability(S, pv, coins, anchors):
     anc = anchor_ints(anchors, "VB-POT-IDENTICAL", "G-LOOP-STABILITY-CONTRACTIBLE")
     ok = (full_mismatch == 0 and ladder_mismatch == 0
           and anc[0] == pv["PV-POT-COINS"] and anc[1] == pv["PV-POT-COINS"]
-          and len(coins) == anc[0] and len(shapes) > 0)
+          and len(coins) == anc[0] and len(shapes) > 0
+          and pv["PV-POT-BL-IDENT"] == len(coins))
     CNT.measured("coreshapes", len(shapes), "shapes present in both core arenas")
     CNT.measured("fullchecks", len(shapes) * len(coins),
                  "shape by coin, at the core pair")
@@ -2255,12 +2483,14 @@ def measure_loop_stability(S, pv, coins, anchors):
                      "{probecoins} coins taken by a declared stride, with the "
                      "parent's own identical-coefficients sentence read here "
                      "and its two numbers required to be this run's coin "
-                     "count"),
+                     "count, and the coin count its own receipt publishes at "
+                     "its boundary size required to be that count too"),
             ok, "core comparisons %d mismatches %d; ladder comparisons %d "
-            "mismatches %d; shapes %d; the parent's numbers %s" %
+            "mismatches %d; shapes %d; the parent's numbers %s; the coins its "
+            "receipt carries at its boundary size %d" %
             (len(shapes) * len(coins), full_mismatch,
              sum(r["comparisons"] for r in ladder_rows), ladder_mismatch,
-             len(shapes), anc[:2]))
+             len(shapes), anc[:2], pv["PV-POT-BL-IDENT"]))
     S["loop_stability"] = {
         "core_pair": [core_p.tag(), core_t.tag()],
         "shapes_compared": len(shapes),
@@ -2292,22 +2522,36 @@ def measure_loop_threshold(S, pv, probe):
                          "threshold_is_n_minus_one": biggest == n - 1})
     if mut("MUT-THRESHOLD"):
         rows[0]["largest_extent_that_fits"] = rows[0]["n"]
-    small = [r for r in rows if r["n"] <= RECT_MAX]
-    ok = (all(r["largest_extent_that_fits"] == r["n"] - 1 for r in small)
-          and len(small) > 0)
+    # the identity is TESTABLE exactly where the declared shape family
+    # contains an extent of the size less one; at every larger size the
+    # largest extent that stays simple is the declared cap itself, which is a
+    # fact about this unit's declaration and not about the arena.
+    binds = [r for r in rows if r["n"] - 1 <= RECT_MAX]
+    capped = [r for r in rows if r["n"] - 1 > RECT_MAX]
+    ok = (all(r["largest_extent_that_fits"] == r["n"] - 1 for r in binds)
+          and len(binds) > 0 and len(capped) > 0
+          and all(r["largest_extent_that_fits"] == RECT_MAX for r in capped))
     CNT.measured("threshrows", len(rows), "the two ladders, counted")
-    CNT.measured("threshsmall", len(small),
-                 "sizes at or below the largest declared extent")
+    CNT.measured("threshsmall", len(binds),
+                 "sizes where the declared family contains the size less one")
+    CNT.measured("threshcapped", len(capped),
+                 "sizes where it does not and the cap decides instead")
     LD.gate("G-LOOP-THRESHOLD",
             CNT.stmt("the horizon a contractible observable needs is MEASURED "
-                     "at every one of the {threshrows} sizes of both ladders: "
-                     "the largest extent that stays simple is the size less "
-                     "one, on both closures, and at each of the {threshsmall} "
-                     "sizes where the ladder can bind it the identity holds "
-                     "exactly"),
-            ok, "rows %d, sizes binding the identity %d, all satisfying it %s"
-            % (len(rows), len(small), ok))
+                     "at every one of the {threshrows} sizes of both ladders, "
+                     "and the identity is stated only where it can be tested: "
+                     "at the {threshsmall} sizes whose declared shape family "
+                     "contains an extent of the size less one, the largest "
+                     "extent that stays simple IS the size less one on both "
+                     "closures; at the remaining {threshcapped} it is this "
+                     "unit's own declared cap, which is a fact about the "
+                     "declaration and not about the arena"),
+            ok, "rows %d, sizes binding the identity %d all satisfying it %s, "
+            "sizes the cap decides %d" %
+            (len(rows), len(binds), ok, len(capped)))
     S["loop_threshold"] = {"rows": rows,
+                           "sizes_where_the_identity_can_be_tested": len(binds),
+                           "sizes_where_the_declared_cap_decides": len(capped),
                            "every_integer_here_is_a_count": "COUNTING-ONLY-E-24"}
     SEAL.take("loop_threshold", S["loop_threshold"], "G-LOOP-THRESHOLD")
     return rows
@@ -2346,7 +2590,7 @@ def measure_winding_is_torus_declared(S, pv, probe):
     ok = absent and moving > 0
     CNT.measured("windmoves", moving,
                  "adjacent closed sizes, coin by coin, values compared")
-    CNT.measured("windpairs", (len(sizes) - 1) * len(probe),
+    CNT.measured("windpairs", sum(r["comparisons"] for r in pairs),
                  "adjacent closed sizes by coin")
     LD.gate("G-WINDING-IS-TORUS-DECLARED",
             CNT.stmt("the winding side is measured on both sides rather than "
@@ -2357,11 +2601,10 @@ def measure_winding_is_torus_declared(S, pv, probe):
                      "quantity of the declaration and not of the physics "
                      "inside any horizon"),
             ok, "absent at every open size %s; moves at %d of %d closed "
-            "size-by-coin comparisons" %
-            (absent, moving, (len(sizes) - 1) * len(probe)))
+            "size-by-coin comparisons" % (absent, moving, CNT.get("windpairs")))
     S["winding"] = {
         "rows": rows, "adjacent_pairs": pairs,
-        "adjacent_size_comparisons": (len(sizes) - 1) * len(probe),
+        "adjacent_size_comparisons": CNT.get("windpairs"),
         "comparisons_where_the_value_moves": moving,
         "absent_at_every_open_size": absent,
         "every_integer_here_is_a_count": "COUNTING-ONLY-E-24"}
@@ -2589,16 +2832,27 @@ def measure_control_arms(S, pv, probe, coins):
             return None
         return [sym_real(holonomy_trace(A, steps_of(A, cyc), m)) for m in probe]
 
+    # every arm names the two arenas it compares, because two of them are not
+    # closure comparisons at all: the winding arm compares one closed size
+    # with another, and the merging-index arm takes its closed side at the
+    # parents' own size, where the phase order does not divide it.
     arms.append({"arm": "ARM-CONTRACTIBLE-INSIDE", "must": "UNMOVED",
-                 "what": "a two-by-two rectangle, open size against closed size",
+                 "what": "a two-by-two rectangle, %s against %s: an open "
+                         "arena against a closed one" % (P.tag(), T8.tag()),
+                 "arenas": [P.tag(), T8.tag()],
                  "got": stability_tester(rect_value(P, 2, 2),
                                          rect_value(T8, 2, 2))})
     arms.append({"arm": "ARM-WINDING", "must": "MOVED",
-                 "what": "the straight winding cycle, one closed size against "
-                         "another",
+                 "what": "the straight winding cycle, %s against %s: a closed "
+                         "arena against another closed one, which is a size "
+                         "comparison and not a closure comparison"
+                         % (T6.tag(), T8.tag()),
+                 "arenas": [T6.tag(), T8.tag()],
                  "got": stability_tester(wind_value(T6), wind_value(T8))})
     arms.append({"arm": "ARM-WRAPPING-SHAPE", "must": "MOVED",
-                 "what": "a shape whose extent equals the size, so it wraps",
+                 "what": "a shape whose extent equals the size, so it wraps, "
+                         "%s against %s" % (T4.tag(), P.tag()),
+                 "arenas": [T4.tag(), P.tag()],
                  "got": stability_tester(rect_value(T4, 4, 1),
                                          rect_value(P, 4, 1))})
     ref_free, REF, refc = free_cone_displacements(DYN_DEPTH)
@@ -2617,12 +2871,19 @@ def measure_control_arms(S, pv, probe, coins):
 
     arms.append({"arm": "ARM-DEPTH-BEYOND-THE-HORIZON", "must": "MOVED",
                  "what": "the window amplitude at a depth the small closed "
-                         "size cannot hide",
+                         "size cannot hide, %s against %s"
+                         % (T6.tag(), REF.tag()),
+                 "arenas": [T6.tag(), REF.tag()],
                  "got": stability_tester(
                      amp_value(Arena(TORUS, 6), (0, 0), DYN_DEPTH),
                      amp_value(REF, refc, DYN_DEPTH))})
     arms.append({"arm": "ARM-GLOBAL-MERGING-INDEX", "must": "MOVED",
-                 "what": "the merging index, a quantity of the whole arena",
+                 "what": "the merging index, a quantity of the whole arena, "
+                         "%s against %s: the closed side is the parents' own "
+                         "size, which the phase order does not divide, and "
+                         "the arm's declared side turns on that"
+                         % (T4.tag(), P.tag()),
+                 "arenas": [T4.tag(), P.tag()],
                  "got": stability_tester(
                      merging_index(Arena(TORUS, 4)),
                      merging_index(Arena(PATCH, CORE_PATCH)))})
@@ -2736,10 +2997,20 @@ def measure_patch_gauge(S, pv, coins, anchors):
     torus_law = all(r["merging_index"] ==
                     phase_order() // _gcd(r["n"], phase_order()) for r in tori)
     t4 = [r for r in tori if r["n"] == pv["PV-POT-L"]][0]
+    # the closed size the potential parent ran its own boundary lattice at is
+    # the size this census takes its closed witness at, and the parent's own
+    # numbers there are predicates of this run rather than decoration: no
+    # orbit pair merges and the orbit count is the class count.  The twist
+    # parent's own gauge image of the link stencil is the phase order this
+    # run derives from the field.
+    t8 = [r for r in tori if r["n"] == CORE_TORUS][0]
     ok = (all_free and torus_law and closes
           and t4["orbits_under_the_realisable_twists"] == pv["PV-POT-ORBITS"]
           and t4["orbit_pairs_merged"] == pv["PV-POT-MERGED"]
           and len(full) == pv["PV-POT-CLASSES"]
+          and t8["orbit_pairs_merged"] == pv["PV-POT-BL-MERGED"]
+          and t8["orbits_under_the_realisable_twists"] == pv["PV-POT-BL-ORBITS"]
+          and pv["PV-ACT-IMAGE"] == phase_order()
           and all(r["orbit_pairs_merged"] == 0 for r in patches))
     CNT.measured("phaseorder", phase_order(), "derived from the field arithmetic")
     CNT.measured("patchgauge", len(patches), "open sizes, counted")
@@ -2753,13 +3024,21 @@ def measure_patch_gauge(S, pv, coins, anchors):
                      "the closed sizes the measured index is the parent's own "
                      "law at every one, and at the parent's declared size this "
                      "run recovers its published orbit count, its published "
-                     "class count and its published number of merged pairs"),
+                     "class count and its published number of merged pairs, "
+                     "while at the size the potential parent ran its own "
+                     "boundary lattice at it recovers that receipt's orbit "
+                     "count and its zero merged pairs, and the twist parent's "
+                     "published gauge image of the link stencil is required to "
+                     "be the phase order this run derives from the field"),
             ok, "open sizes realising every twist %s, closed sizes matching "
             "the parent's law %s, the parent's clause read %s, at the declared "
-            "size orbits %d classes %d merged %d" %
+            "size orbits %d classes %d merged %d, at the parent's boundary "
+            "size orbits %d merged %d, the stencil's gauge image %d" %
             (all_free, torus_law, closes,
              t4["orbits_under_the_realisable_twists"], len(full),
-             t4["orbit_pairs_merged"]))
+             t4["orbit_pairs_merged"],
+             t8["orbits_under_the_realisable_twists"],
+             t8["orbit_pairs_merged"], pv["PV-ACT-IMAGE"]))
     S["patch_gauge"] = {
         "rows": rows, "phase_order": phase_order(),
         "classes_under_the_full_stencil_image": len(full),
@@ -2830,7 +3109,8 @@ def measure_circulants(S, pv):
     as the number of sites a shift takes out of the arena, and separately as
     the number of translations that carry the link set to itself."""
     rows = []
-    for kind, n in ((TORUS, pv["PV-POT-L"]), (PATCH, CORE_PATCH)):
+    for kind, n in ((TORUS, pv["PV-POT-L"]), (PATCH, CORE_PATCH),
+                    (TORUS, CORE_TORUS)):
         A = Arena(kind, n)
         sset = set(A.sites())
         axrows = []
@@ -2864,10 +3144,12 @@ def measure_circulants(S, pv):
         rows[1]["axes_whose_shift_is_a_bijection"] = len(R4_AXES)
     tor = [r for r in rows if r["closure"] == TORUS][0]
     pat = [r for r in rows if r["closure"] == PATCH][0]
-    ok = (tor["axes_whose_shift_is_a_bijection"] == len(R4_AXES)
-          and pat["axes_whose_shift_is_a_bijection"] == 0
-          and tor["translations_carrying_the_link_set_to_itself"] > 1
-          and pat["translations_carrying_the_link_set_to_itself"] == 1)
+    ok = (all(r["axes_whose_shift_is_a_bijection"] == len(R4_AXES)
+              and r["translations_carrying_the_link_set_to_itself"] > 1
+              for r in rows if r["closure"] == TORUS)
+          and all(r["axes_whose_shift_is_a_bijection"] == 0
+                  and r["translations_carrying_the_link_set_to_itself"] == 1
+                  for r in rows if r["closure"] == PATCH))
     CNT.measured("axes", len(R4_AXES), "the parent's declared axes, counted")
     CNT.measured("patchsyms",
                  pat["translations_carrying_the_link_set_to_itself"],
@@ -2882,11 +3164,14 @@ def measure_circulants(S, pv):
                      "else -- so a family defined by covariance under them is "
                      "empty there rather than merely smaller"),
             ok, "closed: bijective axes %d, symmetries %d; open: bijective "
-            "axes %d, symmetries %d" %
+            "axes %d, symmetries %d; rows %s" %
             (tor["axes_whose_shift_is_a_bijection"],
              tor["translations_carrying_the_link_set_to_itself"],
              pat["axes_whose_shift_is_a_bijection"],
-             pat["translations_carrying_the_link_set_to_itself"]))
+             pat["translations_carrying_the_link_set_to_itself"],
+             ["%s:%d" % (r["arena"],
+                         r["translations_carrying_the_link_set_to_itself"])
+              for r in rows]))
     S["circulants"] = {"rows": rows,
                        "every_integer_here_is_a_count": "COUNTING-ONLY-E-24"}
     SEAL.take("circulants", S["circulants"], "G-CIRCULANTS-NEED-THE-CLOSURE")
@@ -3105,6 +3390,8 @@ def measure_the_closed_form(S, pv, coins, probe):
 VERBATIM = "SURVIVES-VERBATIM"
 SCOPED = "SURVIVES-SCOPED"
 ARTIFACT = "CLOSURE-ARTIFACT"
+MEASURED = "MEASURED"
+STRUCTURAL = "STRUCTURAL"
 
 
 def classify_row(open_witness, closed_witness, proviso):
@@ -3118,125 +3405,322 @@ def classify_row(open_witness, closed_witness, proviso):
     return ARTIFACT
 
 
+def globally_sensitive(row):
+    """the pre-registered global-sensitivity condition, computed on every row
+    of the census: the classifier calls the law a survivor -- its witness on
+    the open arena IS its witness on the closed one -- and yet that same
+    witness MOVES across the declared open ladder, so a law that reads local
+    is being set by how much arena there is.  That is a local observable
+    feeling the far lattice, and it is the condition the pin's
+    globally-sensitive word is reached by."""
+    if row["verdict"] not in (VERBATIM, SCOPED):
+        return False
+    return len(set(row["witness_over_the_open_ladder"])) > 1
+
+
+def measure_census_sweep(S, pv, coins, probe, shapes):
+    """every witness the census draws from an arena, taken again at every
+    size of the declared sweep on both closures.  This is what tells a witness
+    an arena can move from a witness no arena can, and it is the ladder the
+    global-sensitivity condition is computed over.  The closed-form witnesses
+    are swept at the declared coin stride; the census's own row for them is
+    taken over the whole coin family."""
+    out = {}
+    for kind, ladder in ((TORUS, CENSUS_SWEEP_T), (PATCH, CENSUS_SWEEP_P)):
+        for n in ladder:
+            A = Arena(kind, n)
+            res = arena_residuals(A, coins, probe, shapes)
+            cfr = closed_form_on(A, probe, shapes, pv)
+            res["the_three_term_form_fails_at"] = cfr["failures"]
+            res["equal_perimeter_comparisons_that_disagree"] = \
+                cfr["area_disagreements"]
+            out[A.tag()] = res
+    S["_census_sweep"] = out
+    return out
+
+
 def measure_closure_census(S, pv, anchors):
+    """the flush, at ONE declared arena pair, with every row's arena named in
+    the row and every row's witness swept over the declared ladder.
+
+    Three things the row carries beyond its two witnesses.  The ARENA PAIR:
+    one open size and one closed size, the same for every row that has an
+    arena at all, so that no verdict here is selected by taking the two sides
+    at different sizes.  The BASIS: whether the witness is one an arena can
+    move at all -- a defect count the construction forbids, or a quantity
+    computed with no arena argument, is labelled STRUCTURAL and is required to
+    take ONE value over the whole sweep, so a label an arena can move dies
+    here; only a witness drawn from the arena's own objects is labelled
+    MEASURED.  And the LADDER: the value the witness takes at every swept
+    size, which is the size-dependence entering the classifier as an input
+    rather than sitting beside it as prose."""
     strat = S["stratification"]
     fam = S["family_split"]
     hom = S["homology"]
     gau = S["patch_gauge"]
     cir = S["circulants"]
     cf = S["closed_form"]
-    P9 = [r for r in gau["rows"] if r["arena"] == "P-%d" % CORE_PATCH][0]
-    T4 = [r for r in gau["rows"] if r["arena"] == "T-%d" % pv["PV-POT-L"]][0]
-    fp = [r for r in fam["rows"] if r["arena"] == "P-%d" % CORE_PATCH][0]
-    ft = [r for r in fam["rows"] if r["arena"] == "T-%d" % pv["PV-POT-L"]][0]
-    hp = [r for r in hom["rows"] if r["closure"] == PATCH][0]
-    ht = [r for r in hom["rows"] if r["closure"] == TORUS][0]
-    cp = [r for r in cir["rows"] if r["closure"] == PATCH][0]
-    ct = [r for r in cir["rows"] if r["closure"] == TORUS][0]
+    sweep = S["_census_sweep"]
+    OPEN, CLOSED = "P-%d" % CORE_PATCH, "T-%d" % CORE_TORUS
+    PAIR = "%s / %s" % (OPEN, CLOSED)
+    LADDER = "the whole ladder"
+    OP = ["P-%d" % n for n in CENSUS_SWEEP_P]
+    OT = ["T-%d" % n for n in CENSUS_SWEEP_T]
+    P9 = [r for r in gau["rows"] if r["arena"] == OPEN][0]
+    T8 = [r for r in gau["rows"] if r["arena"] == CLOSED][0]
+    fp = [r for r in fam["rows"] if r["arena"] == OPEN][0]
+    ft = [r for r in fam["rows"] if r["arena"] == CLOSED][0]
+    hp = [r for r in hom["rows"] if r["arena"] == OPEN][0]
+    ht = [r for r in hom["rows"] if r["arena"] == CLOSED][0]
+    cp = [r for r in cir["rows"] if r["arena"] == OPEN][0]
+    ct = [r for r in cir["rows"] if r["arena"] == CLOSED][0]
     lorlinks = anchor_has(anchors, "VB-LOR-PLACES", "G-CLOSURE-CENSUS",
                           "new places are the old links")
 
     ro = {r["arena"]: r for r in cf["per_arena_residuals"]}
-    RO, RC = ro["P-%d" % CORE_PATCH], ro["T-%d" % CORE_TORUS]
-    strat_open = sum(4 - r["strata_that_are_matchings"]
-                     for r in strat["rows"] if r["closure"] == PATCH)
-    strat_closed = sum(4 - r["strata_that_are_matchings"]
-                       for r in strat["rows"] if r["closure"] == TORUS)
+    RO, RC = ro[OPEN], ro[CLOSED]
+
+    def swept(key):
+        return ([sweep[t][key] for t in OP], [sweep[t][key] for t in OT])
+
+    def swept_sum(k1, k2):
+        return ([sweep[t][k1] + sweep[t][k2] for t in OP],
+                [sweep[t][k1] + sweep[t][k2] for t in OT])
+
+    def over(rowlist, field):
+        return ([r[field] for r in rowlist if r["closure"] == PATCH],
+                [r[field] for r in rowlist if r["closure"] == TORUS])
+
+    strat_by_size = [dict(r, defects=4 - r["strata_that_are_matchings"])
+                     for r in strat["rows"]]
+    strat_open = sum(r["defects"] for r in strat_by_size
+                     if r["closure"] == PATCH)
+    strat_closed = sum(r["defects"] for r in strat_by_size
+                       if r["closure"] == TORUS)
+
+    # the twist parent's own L-scope, consumed rather than cited: the index it
+    # publishes at each of its own sizes is the index this run's law returns
+    # there, and at the two of those sizes that lie on this ladder it is the
+    # index this run MEASURES there.
+    act_idx = {2: pv["PV-ACT-IDX-L2"], 4: pv["PV-ACT-IDX-L4"],
+               8: pv["PV-ACT-IDX-L8"]}
+    idx_by_size = {r["n"]: r["merging_index"] for r in gau["rows"]
+                   if r["closure"] == TORUS}
+    act_law = all(v == phase_order() // _gcd(L, phase_order())
+                  for L, v in act_idx.items())
+    act_here = all(idx_by_size[L] == v for L, v in act_idx.items()
+                   if L in idx_by_size)
+    act_at_the_closed_witness = (T8["merging_index"]
+                                 == act_idx[pv["PV-POT-BL"]])
+    bl_is_the_closed_witness = (pv["PV-POT-BL"] == CORE_TORUS)
+
     rows = [
         ("LAW-LINK-OPERATOR", "R5", "the link operator is a two-site domino "
          "and the identity elsewhere",
          RO["links_whose_operator_is_not_a_two_site_domino"]
          + RO["sites_the_tick_sends_outside_the_arena"],
          RC["links_whose_operator_is_not_a_two_site_domino"]
-         + RC["sites_the_tick_sends_outside_the_arena"], False),
+         + RC["sites_the_tick_sends_outside_the_arena"], False, PAIR,
+         STRUCTURAL, "two defect counts the construction forbids: a link's "
+         "two ends are distinct places at every size above one, and the tick "
+         "writes only to keys of the arena's own link set",
+         swept_sum("links_whose_operator_is_not_a_two_site_domino",
+                   "sites_the_tick_sends_outside_the_arena")),
         ("LAW-HOLONOMY", "R5", "the holonomy of a reversed loop is the "
          "conjugate trace", RO["loops_whose_reversal_is_not_the_conjugate_trace"],
-         RC["loops_whose_reversal_is_not_the_conjugate_trace"], False),
+         RC["loops_whose_reversal_is_not_the_conjugate_trace"], False, PAIR,
+         MEASURED, "the reversal is walked on the arena's own links and its "
+         "trace compared with the conjugate, loop by loop and coin by coin",
+         swept("loops_whose_reversal_is_not_the_conjugate_trace")),
         ("LAW-COIN-FAMILY", "R5", "the coins admissible on a link",
          RO["coins_admissible_on_a_link"], RC["coins_admissible_on_a_link"],
-         False),
+         False, PAIR, STRUCTURAL, "the coin family is an argument handed to "
+         "both sides of the comparison, not a quantity either arena computes",
+         swept("coins_admissible_on_a_link")),
         ("LAW-STRATIFICATION", "R5", "the four parity strata are matchings, "
-         "summed over the whole ladder", strat_open, strat_closed, True),
+         "summed over the whole ladder", strat_open, strat_closed, True,
+         LADDER, MEASURED, "the stratification is rebuilt and its clashes "
+         "counted at every size of both ladders",
+         over(strat_by_size, "defects")),
         ("LAW-LINK-COUNT", "R5", "every site carries four links",
          RO["sites_with_fewer_than_four_links"],
-         RC["sites_with_fewer_than_four_links"], False),
+         RC["sites_with_fewer_than_four_links"], False, PAIR, MEASURED,
+         "the degree of every site of the arena's own link set is counted",
+         swept("sites_with_fewer_than_four_links")),
         ("LAW-PLAQUETTE-COUNT", "R5", "every site is the base of a plaquette",
          RO["sites_that_are_not_a_plaquette_base"],
-         RC["sites_that_are_not_a_plaquette_base"], False),
+         RC["sites_that_are_not_a_plaquette_base"], False, PAIR, MEASURED,
+         "the arena's own plaquette set is built and its bases counted",
+         swept("sites_that_are_not_a_plaquette_base")),
         ("LAW-SINGLE-OCCUPATION", "R5", "the tick keeps the single-occupation "
          "sector", RO["sites_the_tick_sends_outside_the_arena"],
-         RC["sites_the_tick_sends_outside_the_arena"], False),
+         RC["sites_the_tick_sends_outside_the_arena"], False, PAIR,
+         STRUCTURAL, "the tick writes only to keys of the arena's own link "
+         "set, so the count is zero before any arena is chosen",
+         swept("sites_the_tick_sends_outside_the_arena")),
         ("LAW-RECTANGLE-FAMILY", "POT", "the rectangle circuits that stay "
-         "simple", RO["shapes_that_fit"], RC["shapes_that_fit"], True),
+         "simple", RO["shapes_that_fit"], RC["shapes_that_fit"], True, PAIR,
+         STRUCTURAL, "the shape list is an argument handed to both sides of "
+         "the comparison, not a quantity either arena computes",
+         swept("shapes_that_fit")),
         ("LAW-WINDING-FAMILY", "POT", "the winding cycles",
          None if fp["winding_placements"] == 0 else fp["winding_placements"],
-         ft["winding_placements"], False),
+         ft["winding_placements"], False, PAIR, MEASURED,
+         "every placement of every declared cycle is built on the arena's own "
+         "links and its net displacement read off the steps",
+         over(fam["rows"], "winding_placements")),
         ("LAW-HOMOLOGY", "POT", "the winding classes a loop can carry",
-         hp["displacement_classes"], ht["displacement_classes"], False),
+         hp["displacement_classes"], ht["displacement_classes"], False, PAIR,
+         MEASURED, "every closed walk of the declared depth is enumerated on "
+         "the arena and classified by its net displacement",
+         over(hom["rows"], "displacement_classes")),
         ("LAW-CLOSED-FORM", "POT", "the three-term ladder form fails at",
          cf["on_the_open_arena"]["failures"],
-         cf["on_the_closed_arena"]["failures"], False),
+         cf["on_the_closed_arena"]["failures"], False, PAIR, MEASURED,
+         "the parent's three constants are fitted and then checked against "
+         "holonomies taken on the arena's own loops",
+         swept("the_three_term_form_fails_at")),
         ("LAW-AREA-BLINDNESS", "POT", "the equal-perimeter comparisons that "
          "disagree", cf["on_the_open_arena"]["area_disagreements"],
-         cf["on_the_closed_arena"]["area_disagreements"], False),
+         cf["on_the_closed_arena"]["area_disagreements"], False, PAIR,
+         MEASURED, "equal-perimeter shapes of different area are compared "
+         "coin by coin on the arena's own loops",
+         swept("equal_perimeter_comparisons_that_disagree")),
         ("LAW-MERGING-INDEX", "ACT", "the merging index", P9["merging_index"],
-         T4["merging_index"], False),
+         T8["merging_index"], False, PAIR, MEASURED,
+         "the constant twists the arena realises are found by propagation "
+         "over its own links, and the index is the phase order over their "
+         "number", over(gau["rows"], "merging_index")),
         ("LAW-PARENT-ORBITS", "ACT", "the orbit count under the realisable "
          "twists", P9["orbits_under_the_realisable_twists"],
-         T4["orbits_under_the_realisable_twists"], False),
+         T8["orbits_under_the_realisable_twists"], False, PAIR, MEASURED,
+         "the orbits are built by acting with the twists the arena itself "
+         "realises", over(gau["rows"], "orbits_under_the_realisable_twists")),
         ("LAW-CLASS-COUNT", "ACT", "the class count under the full stencil "
          "image", P9["classes_under_the_full_stencil_image"],
-         T4["classes_under_the_full_stencil_image"], False),
+         T8["classes_under_the_full_stencil_image"], False, PAIR, STRUCTURAL,
+         "the orbits under the FULL stencil image are computed once, with no "
+         "arena argument at all",
+         over(gau["rows"], "classes_under_the_full_stencil_image")),
         ("LAW-TRANSLATION-COVARIANCE", "R4", "the declared axes whose shift is "
          "a bijection",
          None if cp["axes_whose_shift_is_a_bijection"] == 0
          else cp["axes_whose_shift_is_a_bijection"],
-         ct["axes_whose_shift_is_a_bijection"], False),
+         ct["axes_whose_shift_is_a_bijection"], False, PAIR, MEASURED,
+         "each declared axis is shifted over the arena's own site set and the "
+         "places it loses are counted",
+         over(cir["rows"], "axes_whose_shift_is_a_bijection")),
         ("LAW-DUAL-TORUS", "R4B", "the translations the momentum route needs",
          None if cp["translations_carrying_the_link_set_to_itself"] == 1
          else cp["translations_carrying_the_link_set_to_itself"],
-         ct["translations_carrying_the_link_set_to_itself"], False),
+         ct["translations_carrying_the_link_set_to_itself"], False, PAIR,
+         MEASURED, "every translation is applied to every link of the arena's "
+         "own link set",
+         over(cir["rows"], "translations_carrying_the_link_set_to_itself")),
         ("LAW-REFINEMENT-PLACES", "LOR", "the links a refinement step leaves "
          "without a new place",
          RO["links_without_a_refinement_place"] if lorlinks else None,
-         RC["links_without_a_refinement_place"], False),
+         RC["links_without_a_refinement_place"], False, PAIR, STRUCTURAL,
+         "the refinement map sends distinct links to distinct places, so the "
+         "count is zero before any arena is chosen",
+         swept("links_without_a_refinement_place")),
     ]
     census = []
-    for cid, src, law, ow, cw, prov in rows:
+    for cid, src, law, ow, cw, prov, pair, basis, why, ladder in rows:
         v = classify_row(ow, cw, prov)
         census.append({"id": cid, "parent": src, "law": law,
+                       "arena_pair": pair,
                        "witness_on_the_open_arena":
                            "ABSENT" if ow is None else ow,
                        "witness_on_the_closed_arena": cw,
-                       "verdict": v})
+                       "verdict": v, "basis": basis,
+                       "why_the_basis_is_that": why,
+                       "witness_over_the_open_ladder": list(ladder[0]),
+                       "witness_over_the_closed_ladder": list(ladder[1])})
     if mut("MUT-CENSUS"):
         census[0]["verdict"] = ARTIFACT
+    if mut("MUT-CENSUS-BASIS"):
+        for r in census:
+            if r["id"] == "LAW-LINK-COUNT":
+                r["basis"] = STRUCTURAL
     surv = sum(1 for r in census if r["verdict"] == VERBATIM)
     scop = sum(1 for r in census if r["verdict"] == SCOPED)
     art = sum(1 for r in census if r["verdict"] == ARTIFACT)
+    meas = sum(1 for r in census
+               if r["verdict"] == VERBATIM and r["basis"] == MEASURED)
+    stru = sum(1 for r in census
+               if r["verdict"] == VERBATIM and r["basis"] == STRUCTURAL)
     recl = [r["id"] for r in census
             if r["verdict"] != classify_row(
                 None if r["witness_on_the_open_arena"] == "ABSENT"
                 else r["witness_on_the_open_arena"],
                 r["witness_on_the_closed_arena"],
                 r["verdict"] == SCOPED)]
+    # a STRUCTURAL label an arena can move is a false label and dies here; a
+    # MEASURED label no arena moves anywhere in the census would leave the
+    # distinction vacuous, so at least one is required to move.
+    mislabelled = [r["id"] for r in census if r["basis"] == STRUCTURAL
+                   and len(set(r["witness_over_the_open_ladder"]
+                               + r["witness_over_the_closed_ladder"])) > 1]
+    moved = [r["id"] for r in census if r["basis"] == MEASURED
+             and len(set(r["witness_over_the_open_ladder"]
+                         + r["witness_over_the_closed_ladder"])) > 1]
+    unswept = [r["id"] for r in census
+               if r["verdict"] in (VERBATIM, SCOPED)
+               and not r["witness_over_the_open_ladder"]]
+    pairs = sorted({r["arena_pair"] for r in census})
     ok = (surv + scop + art == len(census) and not recl and art > 0
-          and surv > 0 and lorlinks)
+          and surv > 0 and lorlinks and meas + stru == surv
+          and not mislabelled and moved and not unswept
+          and act_law and act_here and act_at_the_closed_witness
+          and bl_is_the_closed_witness)
     CNT.measured("censusrows", len(census), "one row per sealed law used")
     CNT.measured("surv", surv, "rows the classifier returned verbatim on")
     CNT.measured("scop", scop, "rows the classifier returned scoped on")
     CNT.measured("art", art, "rows the classifier returned artifact on")
+    CNT.measured("censusmeasured", meas,
+                 "surviving rows whose witness an arena could have moved")
+    CNT.measured("censusstructural", stru,
+                 "surviving rows whose witness no arena moves")
+    CNT.measured("censussweep", len(OP) + len(OT),
+                 "sizes every census witness is taken at")
     LD.gate("G-CLOSURE-CENSUS",
             CNT.stmt("every one of the {censusrows} sealed laws this unit uses "
-                     "is put through ONE classifier that sees only the law's "
-                     "witness on the open arena and its witness on the closed "
-                     "one: {surv} survive the flush verbatim, {scop} survive "
-                     "with a stated proviso, and {art} were carried by the "
-                     "identification and are not laws of any horizon"),
-            ok, "rows %d: verbatim %d, scoped %d, artifact %d, "
-            "reclassifications %d" % (len(census), surv, scop, art, len(recl)))
+                     "is put through ONE classifier at ONE declared arena "
+                     "pair, which every row prints: {surv} survive the flush "
+                     "verbatim, {scop} survives with a stated proviso, and "
+                     "{art} differ across that pair.  Of the survivors "
+                     "{censusmeasured} carry a witness drawn from each arena's "
+                     "own objects and {censusstructural} carry one no arena "
+                     "can move -- a defect count the construction forbids, or "
+                     "a quantity computed with no arena argument -- and the "
+                     "labels are not taken on trust: every witness is measured "
+                     "again at each of the {censussweep} swept sizes, a "
+                     "structural label the sweep moves stops the run, and the "
+                     "twist parent's own index at its own sizes is required to "
+                     "be the index this run's law returns and this run's "
+                     "measurement finds there"),
+            ok, "rows %d: verbatim %d (measured %d, structural %d), scoped %d, "
+            "artifact %d, reclassifications %d, arena pairs %s, structural "
+            "labels the sweep moves %d, measured witnesses it moves %d, "
+            "surviving rows with no sweep %d, the parent's index law %s, its "
+            "index measured here %s, at the closed witness %s" %
+            (len(census), surv, meas, stru, scop, art, len(recl), pairs,
+             len(mislabelled), len(moved), len(unswept), act_law, act_here,
+             act_at_the_closed_witness))
     S["closure_census"] = {
         "rows": census, "verbatim": surv, "scoped": scop, "artifact": art,
+        "surviving_rows_whose_witness_an_arena_could_move": meas,
+        "surviving_rows_whose_witness_no_arena_moves": stru,
+        "the_declared_arena_pair": PAIR,
+        "the_sizes_every_witness_was_swept_at": OP + OT,
+        "the_sweep": {
+            "open_sizes": OP, "closed_sizes": OT,
+            "the_closed_form_witnesses_are_swept_at_the_coin_stride": True,
+            "rows": [dict(sweep[t], arena=t) for t in OP + OT]},
+        "structural_labels_the_sweep_moves": mislabelled,
+        "measured_witnesses_the_sweep_moves": moved,
+        "the_twist_parents_index_at_its_own_sizes": act_idx,
         "every_integer_here_is_a_count": "COUNTING-ONLY-E-24"}
     SEAL.take("closure_census", S["closure_census"], "G-CLOSURE-CENSUS")
     return census
@@ -3292,24 +3776,38 @@ def measure_direct_limit(S, pv, coins, probe, anchors):
     notop = anchor_has(anchors, "VB-R1-NOTOPOLOGY", "G-DIRECT-LIMIT-FORM",
                        "or about a limit of the family in any topology")
     ok = moved == 0 and directed and notop and tested > 0
+    ref_row = sorted(rows, key=lambda r: r["n"])[0]
     CNT.measured("dlrows", len(rows), "open sizes in the directed system")
     CNT.measured("dltested", tested, "shape by coin by size")
     CNT.measured("dlmoved", moved, "values an inclusion failed to carry")
+    CNT.measured("dlself", ref_row["comparisons"],
+                 "the reference size compared with itself")
+    CNT.measured("dlgenuine", tested - ref_row["comparisons"],
+                 "comparisons across a proper inclusion")
     LD.gate("G-DIRECT-LIMIT-FORM",
             CNT.stmt("the undetermined-size statement is written out and then "
                      "measured where it can be: over {dlrows} open sizes the "
                      "inclusions carry {dltested} shape-by-coin values and "
-                     "fail to carry {dlmoved} of them, and the sizes are "
+                     "fail to carry {dlmoved} of them, and the basis is "
+                     "disclosed rather than summed over -- {dlself} of those "
+                     "comparisons are the reference size against itself and "
+                     "{dlgenuine} cross a proper inclusion; the sizes are "
                      "directed under inclusion; the parent's own sentence "
                      "barring a claim about a limit of a family in any "
                      "topology is read here, and nothing in this statement is "
                      "a limit, a convergence or an object"),
-            ok, "sizes %d, comparisons %d, values not carried %d, directed %s, "
+            ok, "sizes %d, comparisons %d (reference against itself %d, "
+            "proper inclusions %d), values not carried %d, directed %s, "
             "the parent's no-topology clause read %s" %
-            (len(rows), tested, moved, directed, notop))
+            (len(rows), tested, ref_row["comparisons"],
+             tested - ref_row["comparisons"], moved, directed, notop))
     S["direct_limit"] = {
         "the_form": DIRECT_LIMIT_FORM, "rows": rows,
         "comparisons": tested, "values_an_inclusion_failed_to_carry": moved,
+        "comparisons_of_the_reference_size_with_itself": ref_row["comparisons"],
+        "comparisons_across_a_proper_inclusion":
+            tested - ref_row["comparisons"],
+        "the_reference_size": ref_row["n"],
         "the_sizes_are_directed_under_inclusion": directed,
         "this_is_not_a_limit_and_not_an_object": True,
         "every_integer_here_is_a_count": "COUNTING-ONLY-E-24"}
@@ -3318,46 +3816,73 @@ def measure_direct_limit(S, pv, coins, probe, anchors):
 
 
 def measure_quantifiability(S):
-    """the gate the pin asks for: every sealed law used is quantifiable over
-    horizons, or is NAMED as an exception."""
+    """the gate the pin asks for: every sealed law used is horizon-statable,
+    or is NAMED as an exception.
+
+    The class word says what the test is.  The test is the CLOSURE-WITNESS
+    TEST -- the law's witness on the open arena is its witness on the closed
+    one, or differs from it with a stated proviso -- and the word for a law
+    that passes it is HORIZON-STATABLE-BY-THE-CLOSURE-WITNESS-TEST.  It is not
+    the absence of a symbol for a size, which is a different property and is
+    not what this run measures; that distinction is the subject of a sentence
+    in the paper and of the successor register, not of this word."""
     census = S["closure_census"]["rows"]
     rows = []
     for r in census:
         q = r["verdict"] in (VERBATIM, SCOPED)
         rows.append({"id": r["id"], "parent": r["parent"],
-                     "horizon_quantifiable": q,
+                     "horizon_statable_by_the_closure_witness_test": q,
                      "the_named_exception": None if q else r["law"]})
     if mut("MUT-QUANTIFIABILITY"):
         for r in rows:
-            if not r["horizon_quantifiable"]:
-                r["horizon_quantifiable"] = True
+            if not r["horizon_statable_by_the_closure_witness_test"]:
+                r["horizon_statable_by_the_closure_witness_test"] = True
                 r["the_named_exception"] = None
                 break
-    quant = sum(1 for r in rows if r["horizon_quantifiable"])
-    exc = [r["id"] for r in rows if not r["horizon_quantifiable"]]
-    named = sum(1 for r in rows
-                if not r["horizon_quantifiable"] and r["the_named_exception"])
-    verdicts = {c["id"]: c["verdict"] for c in census}
-    disagree = [r["id"] for r in rows
-                if r["horizon_quantifiable"] !=
-                (verdicts[r["id"]] in (VERBATIM, SCOPED))]
+    K = "horizon_statable_by_the_closure_witness_test"
+    quant = sum(1 for r in rows if r[K])
+    exc = [r["id"] for r in rows if not r[K]]
+    named = sum(1 for r in rows if not r[K] and r["the_named_exception"])
+    # the leg that can fail: the sort is recomputed HERE from the two
+    # witnesses themselves rather than from the classifier's word, so a
+    # verdict word that stops matching the witnesses it was computed from
+    # dies at this gate as well as at the census's own.
+    byrow = {c["id"]: c for c in census}
+    disagree = []
+    for r in rows:
+        c = byrow[r["id"]]
+        ow = c["witness_on_the_open_arena"]
+        direct = (ow != "ABSENT"
+                  and (ow == c["witness_on_the_closed_arena"]
+                       or c["verdict"] == SCOPED))
+        if r[K] != direct:
+            disagree.append(r["id"])
     ok = (quant + len(exc) == len(rows) and named == len(exc)
           and not disagree)
-    CNT.measured("quant", quant, "rows the gate passed as quantifiable")
+    CNT.measured("quant", quant, "rows that pass the closure-witness test")
     CNT.measured("exc", len(exc), "rows it refused and required a name for")
     LD.gate("G-QUANTIFIABILITY",
             CNT.stmt("the gate the pin asks for is run on every law of the "
-                     "census: {quant} of them are quantifiable over horizons "
-                     "-- statable with no symbol for a size -- and {exc} are "
-                     "not, and every one of those is required to carry the "
-                     "name of the object it needs, so the formulation ships "
-                     "with its exceptions listed rather than with its "
-                     "exceptions hidden"),
-            ok, "rows %d, quantifiable %d, exceptions %d all named %s, rows "
-            "disagreeing with the census %d: %s" %
+                     "census, and the class word is the test: {quant} of them "
+                     "are HORIZON-STATABLE BY THE CLOSURE-WITNESS TEST -- the "
+                     "law's witness on the open arena is its witness on the "
+                     "closed one, or differs from it with a stated proviso -- "
+                     "and {exc} are not, and every one of those is required to "
+                     "carry the name of the object it needs, so the "
+                     "formulation ships with its exceptions listed rather than "
+                     "with its exceptions hidden; the sort is recomputed here "
+                     "from the two witnesses themselves rather than from the "
+                     "classifier's word, so the two routes must agree row by "
+                     "row"),
+            ok, "rows %d, horizon-statable %d, exceptions %d all named %s, "
+            "rows where the witnesses and the verdict word disagree %d: %s" %
             (len(rows), quant, len(exc), named == len(exc), len(disagree), exc))
     S["quantifiability"] = {
         "rows": rows, "quantifiable": quant, "exceptions": len(exc),
+        "the_test": "THE-CLOSURE-WITNESS-TEST",
+        "the_word_this_test_licenses":
+            "HORIZON-STATABLE-BY-THE-CLOSURE-WITNESS-TEST",
+        "not_the_absence_of_a_symbol_for_a_size": True,
         "exception_ids": exc, "every_exception_is_named": named == len(exc),
         "every_integer_here_is_a_count": "COUNTING-ONLY-E-24"}
     SEAL.take("quantifiability", S["quantifiability"], "G-QUANTIFIABILITY")
@@ -3415,27 +3940,61 @@ def measure_the_split(S, pv, anchors):
     return word
 
 
+def outcome_word(blocked, offenders, stable, split):
+    """the pin's four-way rule, in one place, so that the control that proves
+    a branch reachable runs the same rule the run itself is decided by."""
+    if blocked:
+        return "HOR-BLOCKED-AT-THE-STABILITY-TESTER"
+    if offenders:
+        return "HOR-GLOBAL-SENSITIVE-AT-" + offenders[0]
+    if stable and split == "AS-PRE-REGISTERED":
+        return "HOR-UNDETERMINED-R-NATIVE"
+    return "HOR-SPLIT-DIFFERENTLY-" + split
+
+
 def measure_the_outcome(S, exceptions):
     """the outcome word, derived from the measurements by the pin's own
-    four-way rule -- never chosen, and every branch reachable at this arena."""
+    four-way rule -- never chosen, and every branch reachable at this arena.
+
+    The globally-sensitive branch is not reachable by inspection, so it is
+    made reachable by CONTROL: a synthetic row built out of this run's own
+    measured numbers -- two witnesses that agree at the declared arena pair,
+    carrying an open ladder the arena moves -- is put through the SAME
+    classifier and the SAME offender condition and the SAME four-way rule, and
+    the word it produces is required to be the globally-sensitive one.  A
+    second control, identical but for an open ladder no arena moves, is
+    required NOT to produce it."""
     split = S["the_split"]["word"]
     stable = S["the_split"]["contractible_side_stable"]
+    census = S["closure_census"]["rows"]
     dy = S["dynamic_stability"]
     if mut("MUT-OUTCOME"):
         dy = dict(dy, rows_where_the_value_is_unmoved=0)
     blocked = (dy["rows_where_the_value_is_unmoved"] == 0
                or S["closure_census"]["verbatim"] == 0)
-    offenders = [r["id"] for r in S["closure_census"]["rows"]
-                 if r["verdict"] == VERBATIM
-                 and r["witness_on_the_open_arena"] != r["witness_on_the_closed_arena"]]
-    if blocked:
-        word = "HOR-BLOCKED-AT-THE-STABILITY-TESTER"
-    elif offenders:
-        word = "HOR-GLOBAL-SENSITIVE-AT-" + offenders[0]
-    elif stable and split == "AS-PRE-REGISTERED":
-        word = "HOR-UNDETERMINED-R-NATIVE"
-    else:
-        word = "HOR-SPLIT-DIFFERENTLY-" + split
+    offenders = [r["id"] for r in census if globally_sensitive(r)]
+
+    # the controls, assembled from rows this run measured: the witness the
+    # classifier is handed is a real pair that agrees, and the ladder beside
+    # it is a real ladder -- one the arena moves, one it does not.
+    src = {r["id"]: r for r in census}
+    agree = src["LAW-RECTANGLE-FAMILY"]["witness_on_the_open_arena"]
+    moving = src["LAW-LINK-COUNT"]["witness_over_the_open_ladder"]
+    flat = src["LAW-COIN-FAMILY"]["witness_over_the_open_ladder"]
+    if mut("MUT-GLOBAL-CONTROL"):
+        moving = flat
+    live = {"id": "CONTROL-A-LOCAL-LAW-THE-FAR-LATTICE-SETS",
+            "verdict": classify_row(agree, agree, False),
+            "witness_over_the_open_ladder": moving}
+    null = {"id": "CONTROL-A-LOCAL-LAW-NO-ARENA-SETS",
+            "verdict": classify_row(agree, agree, False),
+            "witness_over_the_open_ladder": flat}
+    control_word = outcome_word(False, [live["id"]] if globally_sensitive(live)
+                                else [], stable, split)
+    reachable = (globally_sensitive(live) and not globally_sensitive(null)
+                 and control_word.startswith("HOR-GLOBAL-SENSITIVE-AT-"))
+
+    word = outcome_word(blocked, offenders, stable, split)
     reach = {"HOR-UNDETERMINED-R-NATIVE":
              "reached when the split is as pre-registered and the tester has "
              "both an unmoved arm and a moved one",
@@ -3444,26 +4003,46 @@ def measure_the_outcome(S, exceptions):
              "rule is evaluated on measured counters, and the winding side's "
              "counters are nonzero here, so the branch was live",
              "HOR-GLOBAL-SENSITIVE-AT":
-             "reached by any census row the classifier calls verbatim while "
-             "its two witnesses differ -- computed on every row of the census",
+             "reached by any law the classifier calls surviving whose witness "
+             "on the open arena moves across the declared open ladder -- a "
+             "local law the far lattice sets; computed on every row of the "
+             "census, and shown reachable by a control built from this run's "
+             "own rows which does produce the word through the same rule",
              "HOR-BLOCKED-AT-THE-STABILITY-TESTER":
              "reached when the tester never returns an unmoved row or the "
              "census never returns a surviving law"}
     true_blocked = (S["dynamic_stability"]["rows_where_the_value_is_unmoved"] == 0
                     or S["closure_census"]["verbatim"] == 0)
     ok = (word.startswith("HOR-") and len(reach) == 4
-          and blocked == true_blocked)
+          and blocked == true_blocked and reachable)
     LD.gate("G-THE-OUTCOME",
             "the outcome word is derived from measured counters by the pin's "
             "own four-way rule, and each of the four branches is published "
-            "with the counter that would reach it, so the reader can see that "
-            "the run could have landed anywhere the pin allowed",
+            "with the counter that would reach it; the one branch whose "
+            "counter is empty here is shown REACHABLE rather than argued to "
+            "be, by putting a synthetic row built out of this run's own "
+            "measured ladders through the same classifier, the same offender "
+            "condition and the same four-way rule and requiring the "
+            "globally-sensitive word to come out, while a second control "
+            "differing only in a ladder no arena moves is required not to "
+            "produce it",
             ok, "outcome %s; branches published %d; global-sensitivity "
             "offenders %d; the blocked counter re-derived inside the gate "
-            "agrees %s" % (word, len(reach), len(offenders),
-                           blocked == true_blocked))
+            "agrees %s; the control emits %s and the null control does not %s"
+            % (word, len(reach), len(offenders), blocked == true_blocked,
+               control_word, not globally_sensitive(null)))
     S["outcome"] = {"word": word, "branch_reachability": reach,
                     "global_sensitivity_offenders": offenders,
+                    "the_global_sensitivity_condition":
+                        "A-SURVIVING-ROW-WHOSE-OPEN-WITNESS-MOVES-ACROSS-THE-"
+                        "DECLARED-OPEN-LADDER",
+                    "the_reachability_control": {
+                        "the_row_that_must_produce_the_word": live["id"],
+                        "its_open_ladder": live["witness_over_the_open_ladder"],
+                        "the_row_that_must_not": null["id"],
+                        "its_open_ladder": null["witness_over_the_open_ladder"],
+                        "the_word_the_control_produces": control_word,
+                        "through_the_same_classifier_and_the_same_rule": True},
                     "named_exceptions": exceptions}
     SEAL.take("outcome", S["outcome"], "G-THE-OUTCOME")
     return word
@@ -3484,7 +4063,9 @@ def build_head(S):
         CNT.stmt("CONE=[TICK=ONE-PARITY-STRATUM-OPERATOR-THE-PARENT-NAMES-AND-"
                  "NEVER-BUILDS;REACH-PER-TICK=ZERO-AT-{reach0}-COINS-AND-ONE-"
                  "AT-{reach1}-OF-{coins};c={csum}-SITE-PER-TICK-IN-THE-SUM-"
-                 "NORM-ATTAINED-AT-{attained}-OF-{conedepth}-DEPTHS-A-MAXIMUM-"
+                 "NORM-ATTAINED-STRUCTURALLY-AT-{attained}-OF-{conedepth}-"
+                 "DEPTHS-AND-BY-THE-DYNAMICS-AT-{dynattained}-OF-"
+                 "{attaindepth}-ATTAINMENT-DEPTHS-A-MAXIMUM-"
                  "NOT-A-BOUND;MAX-NORM-SUSTAINED={csust};SHAPE=A-PRODUCT-BOX-"
                  "AT-EVERY-DEPTH-ASYMMETRIC-AT-{asym}-AND-REFLECTED-BY-"
                  "REVERSING-THE-PARITY-ORDER-AT-{flips};AMPLITUDE-SUPPORTS-ESCAPE-"
@@ -3499,7 +4080,9 @@ def build_head(S):
                  "AND-MOVING-AT-{windmoves}-OF-{windpairs};ARMS={armsmoved}-"
                  "MOVED-AND-{armsunmoved}-UNMOVED-THROUGH-ONE-TESTER;SPLIT="
                  "{splitword}]"),
-        CNT.stmt("CLOSURE=[{censusrows}-SEALED-LAWS:{surv}-VERBATIM-{scop}-"
+        CNT.stmt("CLOSURE=[{censusrows}-SEALED-LAWS-AT-ONE-DECLARED-ARENA-"
+                 "PAIR:{surv}-VERBATIM-OF-WHICH-{censusmeasured}-MEASURED-AND-"
+                 "{censusstructural}-STRUCTURAL-{scop}-"
                  "SCOPED-{art}-ARTIFACT;THE-OPEN-PATCH-REALISES-EVERY-TWIST-"
                  "SO-ITS-MERGING-INDEX-IS-{actindex}-AT-ALL-{patchgauge}-OPEN-"
                  "SIZES-WHICH-IS-THE-CLOSED-VALUE-ONLY-WHERE-THE-PHASE-ORDER-"
@@ -3509,13 +4092,16 @@ def build_head(S):
                  "AREA-BLINDNESS-SURVIVE-THE-FLUSH-{cfchecks}-CHECKS-AND-"
                  "{areapairs}-COMPARISONS-FAILING-{cffails}-AND-{areadis}]"),
         CNT.stmt("FORM=[{dlrows}-OPEN-SIZES-DIRECTED-UNDER-INCLUSION-CARRYING-"
-                 "{dltested}-VALUES-AND-FAILING-TO-CARRY-{dlmoved};"
-                 "QUANTIFIABLE-AT-{quant}-OF-{censusrows}-WITH-{exc}-NAMED-"
+                 "{dltested}-VALUES-OF-WHICH-{dlself}-ARE-THE-REFERENCE-"
+                 "AGAINST-ITSELF-AND-FAILING-TO-CARRY-{dlmoved};"
+                 "HORIZON-STATABLE-BY-THE-CLOSURE-WITNESS-TEST-AT-{quant}-OF-"
+                 "{censusrows}-WITH-{exc}-NAMED-"
                  "EXCEPTIONS;NOT-A-LIMIT-NOT-A-CONVERGENCE-NOT-AN-OBJECT]"),
         CNT.stmt("SCOPE=[D-IS-TWO;FIELD=Q(zeta_8);COINS={coins};CARRIER=THE-"
                  "UNIFORM-CONFIGURATIONS;THE-GENERATORS-ARE-THE-PARENTS-AND-"
                  "THE-TICK-IS-THIS-UNITS-DECLARATION;LADDERS-DECLARED-OPEN-"
-                 "{patchgauge}-AND-CLOSED-{closedsizes};NO-CONTINUUM-CLAIM;NO-"
+                 "{patchgauge}-AND-CLOSED-{closedsizes};COUNTS-ARE-COUNTING-"
+                 "ONLY;NO-CONTINUUM-CLAIM;NO-"
                  "ACTUAL-INFINITY-CLAIM;SCALEFUL-NOT-CONTINUOUS;NOT-A-"
                  "RELATIVITY-CLAIM]"),
     ]
@@ -3559,6 +4145,9 @@ def rebuild_head(payload):
               for r in payload["the_cone"]["attainment_rows"])
     shrt = len([r for r in payload["the_cone"]["attainment_rows"]
                 if r["coins_whose_support_is_the_whole_cone"] == 0])
+    dyatt = len([r for r in payload["the_cone"]["attainment_rows"]
+                 if r["coins_realising_the_cone_s_own_sum_norm_radius"]])
+    adepth = len(payload["the_cone"]["attainment_rows"])
     ladder = sum(r["comparisons"] for r in lst["ladder_rows"])
     lagree = sum(r["agreeing"] for r in lst["ladder_rows"])
     loopmis = (ladder - lagree) + lst["full_family_mismatches"]
@@ -3576,10 +4165,15 @@ def rebuild_head(payload):
     vb = len([r for r in cen if r["verdict"] == VERBATIM])
     sc = len([r for r in cen if r["verdict"] == SCOPED])
     at = len([r for r in cen if r["verdict"] == ARTIFACT])
-    qn = len([r for r in qua if r["horizon_quantifiable"]])
+    vbm = len([r for r in cen if r["verdict"] == VERBATIM
+               and r["basis"] == MEASURED])
+    vbs = len(([r for r in cen if r["verdict"] == VERBATIM])) - vbm
+    qn = len([r for r in qua
+              if r["horizon_statable_by_the_closure_witness_test"]])
     ex = len(qua) - qn
     dtest = sum(r["comparisons"] for r in dl)
     dcar = sum(r["carried_unchanged"] for r in dl)
+    dself = [r["comparisons"] for r in sorted(dl, key=lambda r: r["n"])][0]
     pg = [r for r in gau if r["closure"] == PATCH]
     idx = sorted({r["merging_index"] for r in pg})
     pcl = [r for r in hom if r["closure"] == PATCH][0]["displacement_classes"]
@@ -3604,8 +4198,9 @@ def rebuild_head(payload):
         split = "CONTRACTIBLE-NOT-STABLE"
     else:
         split = "NEITHER-SIDE-AS-PRE-REGISTERED"
-    off = [r["id"] for r in cen if r["verdict"] == VERBATIM
-           and r["witness_on_the_open_arena"] != r["witness_on_the_closed_arena"]]
+    off = [r["id"] for r in cen
+           if r["verdict"] in (VERBATIM, SCOPED)
+           and len(set(r["witness_over_the_open_ladder"])) > 1]
     if dagree == 0 or vb == 0:
         word = "HOR-BLOCKED-AT-THE-STABILITY-TESTER"
     elif off:
@@ -3621,8 +4216,10 @@ def rebuild_head(payload):
         "CONE=[TICK=ONE-PARITY-STRATUM-OPERATOR-THE-PARENT-NAMES-AND-NEVER-",
         "BUILDS;REACH-PER-TICK=ZERO-AT-", str(z), "-COINS-AND-ONE-AT-", str(o),
         "-OF-", str(ar["coins"]), ";c=", str(top),
-        "-SITE-PER-TICK-IN-THE-SUM-NORM-ATTAINED-AT-", str(hit), "-OF-",
-        str(len(cone)), "-DEPTHS-A-MAXIMUM-NOT-A-BOUND;MAX-NORM-SUSTAINED=",
+        "-SITE-PER-TICK-IN-THE-SUM-NORM-ATTAINED-STRUCTURALLY-AT-", str(hit),
+        "-OF-", str(len(cone)), "-DEPTHS-AND-BY-THE-DYNAMICS-AT-", str(dyatt),
+        "-OF-", str(adepth),
+        "-ATTAINMENT-DEPTHS-A-MAXIMUM-NOT-A-BOUND;MAX-NORM-SUSTAINED=",
         str(sust[0]) if len(sust) == 1 else "SPLIT",
         ";SHAPE=A-PRODUCT-BOX-AT-EVERY-DEPTH-ASYMMETRIC-AT-", str(asym),
         "-AND-REFLECTED-BY-REVERSING-THE-PARITY-ORDER-AT-", str(flips),
@@ -3642,8 +4239,9 @@ def rebuild_head(payload):
         "-MOVED-AND-", str(aunm), "-UNMOVED-THROUGH-ONE-TESTER;SPLIT=", split,
         "]"]))
     p.append("".join([
-        "CLOSURE=[", str(len(cen)), "-SEALED-LAWS:", str(vb), "-VERBATIM-",
-        str(sc), "-SCOPED-", str(at),
+        "CLOSURE=[", str(len(cen)), "-SEALED-LAWS-AT-ONE-DECLARED-ARENA-PAIR:",
+        str(vb), "-VERBATIM-OF-WHICH-", str(vbm), "-MEASURED-AND-", str(vbs),
+        "-STRUCTURAL-", str(sc), "-SCOPED-", str(at),
         "-ARTIFACT;THE-OPEN-PATCH-REALISES-EVERY-TWIST-SO-ITS-MERGING-INDEX-",
         "IS-", str(idx[0]) if len(idx) == 1 else "SPLIT", "-AT-ALL-",
         str(len(pg)),
@@ -3656,17 +4254,19 @@ def rebuild_head(payload):
         "-AND-", str(adis), "]"]))
     p.append("".join([
         "FORM=[", str(len(dl)), "-OPEN-SIZES-DIRECTED-UNDER-INCLUSION-",
-        "CARRYING-", str(dtest), "-VALUES-AND-FAILING-TO-CARRY-",
-        str(dtest - dcar), ";QUANTIFIABLE-AT-", str(qn), "-OF-", str(len(cen)),
-        "-WITH-", str(ex),
+        "CARRYING-", str(dtest), "-VALUES-OF-WHICH-", str(dself),
+        "-ARE-THE-REFERENCE-AGAINST-ITSELF-AND-FAILING-TO-CARRY-",
+        str(dtest - dcar),
+        ";HORIZON-STATABLE-BY-THE-CLOSURE-WITNESS-TEST-AT-", str(qn), "-OF-",
+        str(len(cen)), "-WITH-", str(ex),
         "-NAMED-EXCEPTIONS;NOT-A-LIMIT-NOT-A-CONVERGENCE-NOT-AN-OBJECT]"]))
     p.append("".join([
         "SCOPE=[D-IS-TWO;FIELD=Q(zeta_8);COINS=", str(ar["coins"]),
         ";CARRIER=THE-UNIFORM-CONFIGURATIONS;THE-GENERATORS-ARE-THE-PARENTS-",
         "AND-THE-TICK-IS-THIS-UNITS-DECLARATION;LADDERS-DECLARED-OPEN-",
         str(len(pg)), "-AND-CLOSED-", str(closed),
-        ";NO-CONTINUUM-CLAIM;NO-ACTUAL-INFINITY-CLAIM;SCALEFUL-NOT-",
-        "CONTINUOUS;NOT-A-RELATIVITY-CLAIM]"]))
+        ";COUNTS-ARE-COUNTING-ONLY;NO-CONTINUUM-CLAIM;NO-ACTUAL-INFINITY-",
+        "CLAIM;SCALEFUL-NOT-CONTINUOUS;NOT-A-RELATIVITY-CLAIM]"]))
     return SEGMENT_SEP.join(p)
 
 
@@ -3688,11 +4288,14 @@ def measure_verdict(S, payload):
     LD.gate("G-VERDICT-EQUALITY",
             "the complete verdict string is compared for equality against an "
             "independent reconstruction that reads only the receipt's "
-            "primitive row lists and measured leaves, recomputes every count "
-            "in the head by its own aggregation, re-derives the outcome word "
-            "from a second copy of the four-way rule, and renders every "
-            "segment with its own format strings -- sharing with the builder "
-            "no function, no aggregate and no literal",
+            "primitive row lists and measured leaves, recomputes the head's "
+            "counts from those rows by its own aggregations -- four of them "
+            "it reads from the measured leaves rather than re-aggregating -- "
+            "re-derives the outcome word from a second copy of the four-way "
+            "rule, and renders every segment with its own format strings, "
+            "sharing with the builder no function of this instrument, no "
+            "aggregate, no format string and no numeric literal, and one "
+            "constant, the separator the two renderings are joined with",
             ok, "head length %d, rebuilt length %d, equal %s%s"
             % (len(head), len(rebuilt), ok, where))
     return head
@@ -3711,6 +4314,15 @@ DECLARING_SENTENCES = [
     "patch.",
 ]
 
+# The negative legs are written against the DISEASE and not against a form of
+# words: beside the verb forms a paper would reach for first sit the noun
+# forms it would reach for second (a completed member, an arena of unbounded
+# extent, a totality the laws are about, all patches at once), because a wall
+# whose only controls are its own patterns is a badge.  The controls that
+# exercise these legs -- MUT-WALL-INFINITY, MUT-WALL-CONTINUUM,
+# MUT-WALL-LICENCE -- are written as a paper would write the banned claim, in
+# this paper's own voice, and NOT lifted from the pattern list.
+
 WALL_INFINITY = SemanticWall(
     "WALL-NO-ACTUAL-INFINITY",
     negative=[
@@ -3721,6 +4333,13 @@ WALL_INFINITY = SemanticWall(
         r"\blimit of the family\b", r"\bcompleted (?:totality|infinity)\b",
         r"\bexists an infinite\b", r"\bthe direct limit is an object\b",
         r"\ba limit in (?:some|any|the) topology\b",
+        r"\bcompleted (?:member|arena|patch|object|whole|lattice)\b",
+        r"\bunbounded (?:extent|size|volume|lattice|arena|patch)\b",
+        r"\bof unbounded\b", r"\bwithout bound\b",
+        r"\bcontains every finite (?:patch|arena|size|member)\b",
+        r"\ball (?:patches|arenas|sizes) at once\b",
+        r"\b(?:that|this|the) totality is\b",
+        r"\btaken over all (?:patches|arenas|sizes)\b",
     ],
     positive=[r"every instance is a statement about one finite patch",
               r"not a limit"])
@@ -3734,6 +4353,9 @@ WALL_CONTINUUM = SemanticWall(
         r"\bmetric tensor\b", r"\bcontinuous (?:spacetime|space|manifold)\b",
         r"\blorentz (?:invarian|covarian)", r"\bspeed of light\b",
         r"\bminkowski\b", r"\bcausal structure of spacetime\b",
+        r"\brefined without bound\b", r"\bbecomes a derivative\b",
+        r"\bsmooth arena\b", r"\bthe spacing is refined\b",
+        r"\bfield-theoretic description\b", r"\bbecomes a smooth\b",
     ],
     positive=[r"scaleful, not continuous"])
 
@@ -3741,41 +4363,72 @@ WALL_TICK_LICENCE = SemanticWall(
     "WALL-EVERY-SPEED-CARRIES-ITS-MEASUREMENT",
     negative=[r"\bthe speed of light\b"],
     positive=[r"a maximum, not a bound"],
-    policed=("per tick",))
+    policed=("per tick", "per that tick"))
 
 
 def _flat(t):
     return re.sub(r"\s+", " ", t)
 
 
-def strip_declaring(text, anchors=None):
-    """#125: the strip is taken on whitespace-normalised text, because a
-    sentence a paper wrapped in house style is the same sentence."""
+def strip_anchors(text, anchors=None):
+    """the pinned windows this paper quotes, removed and nothing else: what
+    is left is the paper's own voice, which is where a standing sentence of
+    this unit's own has to be found."""
     out = _flat(text)
-    for s in DECLARING_SENTENCES:
-        out = out.replace(_flat(s), " ")
     for a in (anchors.by_name.values() if anchors else ()):
         out = out.replace(_flat(a.needle), " ")
     return out
 
 
+def strip_declaring(text, anchors=None):
+    """#125: the strip is taken on whitespace-normalised text, because a
+    sentence a paper wrapped in house style is the same sentence."""
+    out = strip_anchors(text, anchors)
+    for s in DECLARING_SENTENCES:
+        out = out.replace(_flat(s), " ")
+    return out
+
+
 def measure_walls(S, paper_text, claims, anchors=None):
     scanned = strip_declaring(paper_text, anchors)
+    standing = strip_anchors(paper_text, anchors)
+    # the licensed-vocabulary leg reads the paper's PROSE: the rendered
+    # tables and the fenced verdict are bound by equality at the claims gate
+    # and are this run's own output, so policing them would police this
+    # instrument rather than the paper.
+    lic = strip_declaring(ReferentRegistry.prose_only(paper_text), anchors)
+    # the three controls are written against the DISEASE, in the voice a paper
+    # would use to make the banned claim, and not lifted from any wall's own
+    # pattern list -- family (c) obligation 7.
     if mut("MUT-WALL-INFINITY"):
-        scanned = scanned + ("\nThe values converge to a limit of the family "
-                             "as the arena grows.")
+        scanned = scanned + (
+            "\nTaken over all patches at once the family has a completed "
+            "member, an arena of unbounded extent that contains every finite "
+            "patch as a sub-patch, and that totality is what the laws above "
+            "are ultimately about.")
     if mut("MUT-WALL-CONTINUUM"):
-        scanned = scanned + "\nThis is the continuum limit of the arena."
+        # the continuum disease with no unboundedness word in it, so that this
+        # control lands on the continuum wall rather than on the infinity one,
+        # which catches the unbounded phrasing of the same sentence on its own.
+        scanned = scanned + (
+            "\nAs the spacing between places is refined again and again the "
+            "lattice becomes a smooth arena and the tick becomes a "
+            "derivative, so the ordinary field-theoretic description is "
+            "recovered.")
     if mut("MUT-WALL-LICENCE"):
-        scanned = scanned + "\nInfluence travels four sites per tick here."
+        lic = lic + (
+            "\nInfluence travels four sites per-tick on this arena.")
     rows = []
+    policed = 0
     for w, gid in ((WALL_INFINITY, "G-WALL-NO-ACTUAL-INFINITY"),
                    (WALL_CONTINUUM, "G-WALL-NO-CONTINUUM"),
                    (WALL_TICK_LICENCE, "G-WALL-SPEED-LICENCE")):
         try:
-            r = w.scan(paper_text, claims, scan_text=scanned)
+            r = w.scan(paper_text, claims, scan_text=scanned,
+                       standing_text=standing, licence_text=lic)
         except GateFail as exc:
             raise GateFail(gid, exc.detail)
+        policed += r["policed_sentences"]
         extra = True
         if gid == "G-WALL-NO-ACTUAL-INFINITY" and anchors is not None:
             phrase = "not a limit and not a convergence"
@@ -3784,19 +4437,26 @@ def measure_walls(S, paper_text, claims, anchors=None):
         present = [d for d in DECLARING_SENTENCES if _flat(d) in _flat(paper_text)]
         LD.gate(gid,
                 "the wall is a set of voice-normalised patterns run over the "
-                "whole canonicalised paper with the declaring sentences "
-                "removed first, with a POSITIVE leg the paper must carry, a "
-                "refusal on empty text, and -- where the wall licenses a "
-                "vocabulary -- a requirement that every sentence using it "
-                "carry a claim this run rendered from its own measurements",
+                "whole canonicalised paper with the declaring sentences and "
+                "the pinned quotations removed first, so the legs read this "
+                "paper's own voice; with a POSITIVE leg that must be found in "
+                "that voice with the quotations still stripped, so no parent's "
+                "sentence can discharge it; with a refusal on empty text; and "
+                "-- where the wall licenses a vocabulary -- a requirement that "
+                "every sentence of the prose using it, hyphens folded, carry a "
+                "claim this run rendered from its own measurements, with the "
+                "number of sentences policed published rather than assumed",
                 len(present) == len(DECLARING_SENTENCES) and extra,
-                "%s: banned patterns %d, standing sentences %d, declaring "
-                "sentences carried %d of %d, the parent's own prohibition "
-                "carried %s" %
-                (w.name, r["negative"], r["positive"], len(present),
+                "%s: banned patterns %d, standing sentences %d, sentences "
+                "policed %d, declaring sentences carried %d of %d, the "
+                "parent's own prohibition carried %s" %
+                (w.name, r["negative"], r["positive"],
+                 r["policed_sentences"], len(present),
                  len(DECLARING_SENTENCES), extra))
-        rows.append({"wall": w.name, **w.seal_value()})
-    S["walls"] = {"rows": rows,
+        rows.append({"wall": w.name, "policed_sentences":
+                     r["policed_sentences"], **w.seal_value()})
+    S["walls"] = {"rows": rows, "sentences_policed": policed,
+                  "the_positive_legs_read_the_papers_own_voice": True,
                   "declaring_sentences": list(DECLARING_SENTENCES)}
     SEAL.take("walls", S["walls"], "G-WALL-SPEED-LICENCE")
 
@@ -3806,7 +4466,7 @@ def build_referents(S):
     ar, cone, otr = S["arena"], S["the_cone"], S["one_tick_reach"]
     lst, dyn, cen = S["loop_stability"], S["dynamic_stability"], S["closure_census"]
     gau, cf = S["patch_gauge"], S["closed_form"]
-    cir = S["circulants"]
+    cir, dl = S["circulants"], S["direct_limit"]
     cone_vals = {r["tick"] for r in cone["rows"]} | \
                 {r["sites"] for r in cone["rows"]} | \
                 {r["sum_norm_radius"] for r in cone["rows"]} | \
@@ -3819,12 +4479,15 @@ def build_referents(S):
                  S["cone_shape"]["asymmetric_depths"],
                  S["cone_shape"]["depths_reflected_by_reversing_the_parity_order"],
                  otr["reach_zero"], otr["reach_one"], otr["reach_above_one"],
+                 cone["attainment_depths_the_dynamics_reaches_the_radius_at"],
                  ar["coins"], 0, 1, 2}
     R.universe("THE-CONE", ["cone", "tick", "ticks", "reach", "depth", "depths"],
                cone_vals,
                {(otr["reach_zero"], ar["coins"]), (otr["reach_one"], ar["coins"]),
                 (S["emergent_c"]["depths_at_which_the_sum_norm_maximum_is_attained"],
                  cone["depth"]),
+                (cone["attainment_depths_the_dynamics_reaches_the_radius_at"],
+                 cone["attainment_depth"]),
                 (S["cone_shape"]["depths_reflected_by_reversing_the_parity_order"],
                  cone["depth"])})
     stab_vals = {lst["full_family_comparisons"], lst["full_family_mismatches"],
@@ -3841,12 +4504,18 @@ def build_referents(S):
                  S["control_arms"]["arms_that_moved"],
                  S["control_arms"]["arms_that_did_not"],
                  len(S["control_arms"]["arms"]),
+                 S["family_split"]["open_sizes"],
+                 S["family_split"]["closed_sizes"],
+                 dl["comparisons"], dl["values_an_inclusion_failed_to_carry"],
+                 dl["comparisons_of_the_reference_size_with_itself"],
+                 dl["comparisons_across_a_proper_inclusion"], len(dl["rows"]),
                  cf["checks_after_the_fit"], cf["failures"],
                  cf["area_discriminating_comparisons"],
                  cf["area_disagreements"], 0, 1}
     R.universe("THE-STABILITY-SWEEP",
                ["comparison", "comparisons", "mismatch", "mismatches",
-                "shape-by-coin", "arena-by-depth", "arm", "arms"],
+                "shape-by-coin", "size-by-coin", "arena-by-depth", "arm",
+                "arms", "row", "rows", "inclusion", "inclusions"],
                stab_vals,
                {(lst["full_family_mismatches"], lst["full_family_comparisons"]),
                 (lst["ladder_mismatches"], lst["ladder_comparisons"]),
@@ -3866,14 +4535,20 @@ def build_referents(S):
                  gau["classes_under_the_full_stencil_image"],
                  gau["open_sizes"], gau["closed_sizes"],
                  gau["open_sizes_realising_every_twist"],
+                 cen["surviving_rows_whose_witness_an_arena_could_move"],
+                 cen["surviving_rows_whose_witness_no_arena_moves"],
                  cf["checks_after_the_fit"], cf["failures"],
                  cf["area_discriminating_comparisons"], cf["area_disagreements"],
                  cf["shapes"], cf["coins"],
                  S["quantifiability"]["quantifiable"],
-                 S["quantifiability"]["exceptions"], 0, 1, 2}
+                 S["quantifiability"]["exceptions"], 0, 1, 2} | \
+                {r["merging_index"] for r in gau["rows"]} | \
+                {r["orbits_under_the_realisable_twists"] for r in gau["rows"]} | \
+                {r["orbit_pairs_merged"] for r in gau["rows"]} | \
+                {r["realisable_constant_twists"] for r in gau["rows"]}
     R.universe("THE-CLOSURE-CENSUS",
-               ["census", "sealed law", "sealed laws", "merging index",
-                "twist", "twists", "artifact", "artifacts"],
+               ["census", "sealed law", "sealed laws", "law", "laws",
+                "merging index", "twist", "twists", "artifact", "artifacts"],
                clos_vals,
                {(cen["verbatim"], len(cen["rows"])),
                 (cen["scoped"], len(cen["rows"])),
@@ -3899,6 +4574,7 @@ def build_referents(S):
                    "translations_carrying_the_link_set_to_itself"],
                S["patch_gauge"]["phase_order"],
                S["patch_gauge"]["classes_under_the_full_stencil_image"],
+               otr["reach_zero"], otr["reach_one"], otr["reach_above_one"],
                0, 1, 2, 4}
     R.universe("THE-ARENA",
                ["coin", "coins", "alphabet", "link", "links", "plaquette",
@@ -3913,11 +4589,12 @@ def build_referents(S):
 
 def measure_referents(S, paper_text):
     R = build_referents(S)
+    for tok, why in EXEMPT_NUMERALS:
+        R.exempt_token(tok, why)
     txt = paper_text
     if mut("MUT-REFERENT"):
-        txt = txt + ("\n\nThe census carries %d of %d sealed laws.\n"
-                     % (S["the_cone"]["rows"][-1]["sites"],
-                        S["arena"]["coins"]))
+        txt = txt + ("\n\nAt every depth the census carries %d sealed laws.\n"
+                     % S["the_cone"]["rows"][-1]["sites"])
     try:
         r = R.gate(txt)
     except GateFail as exc:
@@ -3927,14 +4604,30 @@ def measure_referents(S, paper_text):
             "this run's own verdict cannot discharge the paper's obligations "
             "-- and its rendered table rows stripped, which the claims gate "
             "binds by equality in both directions -- is resolved against the "
-            "universe its own sentence is about, "
-            "occurrence by occurrence rather than by any aggregate, and every "
-            "fraction it states must be a pair this run actually measured "
-            "rather than two members of one set",
-            True, "occurrences checked %d over %d declared universes"
-            % (r["occurrences_checked"], r["universes"]))
+            "universe of the noun it is PREDICATED OF, found as the nearest "
+            "declared noun after it or, where its sentence puts none after "
+            "it, the nearest before, with every noun matched exactly at both "
+            "ends rather than by prefix -- so a false number riding an "
+            "earlier universe's noun into this gate is resolved against the "
+            "thing it is a count of and not against whichever universe the "
+            "sentence happens to mention first; a sentence carrying no "
+            "declared noun at all is resolved against "
+            "the union of every universe this run declares, so that no prose "
+            "numeral sits outside all of them; the only numerals exempted are "
+            "exempted BY NAME with a reason, being identifiers of this unit "
+            "rather than measurements of it; and every fraction the prose "
+            "states must be a pair this run actually measured rather than two "
+            "members of one set",
+            True, "occurrences checked %d over %d declared universes, of "
+            "which %d carry no universe noun and are resolved against the "
+            "union, exemptions carried by name %d"
+            % (r["occurrences_checked"], r["universes"],
+               r["occurrences_with_no_universe_noun"], r["exemptions"]))
     S["referents"] = {"universes": R.seal_value(),
-                      "occurrences_checked": r["occurrences_checked"]}
+                      "occurrences_checked": r["occurrences_checked"],
+                      "occurrences_with_no_universe_noun":
+                          r["occurrences_with_no_universe_noun"],
+                      "numerals_exempted_by_name": dict(EXEMPT_NUMERALS)}
     SEAL.take("referents", S["referents"], "G-REFERENTS")
 
 
@@ -3974,18 +4667,19 @@ def build_claims(S, head):
          for r in S["patch_gauge"]["rows"]])
     T["T-CENSUS"] = C.table(
         "T-CENSUS",
-        ("law", "parent", "witness on the open arena",
-         "witness on the closed arena", "verdict"),
-        [(r["id"], r["parent"], r["witness_on_the_open_arena"],
-          r["witness_on_the_closed_arena"], r["verdict"])
+        ("law", "parent", "arena pair", "witness on the open arena",
+         "witness on the closed arena", "verdict", "basis"),
+        [(r["id"], r["parent"], r["arena_pair"],
+          r["witness_on_the_open_arena"],
+          r["witness_on_the_closed_arena"], r["verdict"], r["basis"])
          for r in S["closure_census"]["rows"]])
     T["T-ARMS"] = C.table(
         "T-ARMS", ("arm", "required before the run", "what the tester said"),
         [(a["arm"], a["must"], a["got"]) for a in S["control_arms"]["arms"]])
     T["T-HORIZON"] = C.table(
         "T-HORIZON",
-        ("depth", "least open size that hides the edge",
-         "least closed size that hides the edge"),
+        ("depth", "least swept open size that hides the edge",
+         "least swept closed size that hides the edge"),
         [(r["depth"], r["least_open_size_that_hides_the_edge"],
           r["least_closed_size_that_hides_the_edge"])
          for r in S["horizon_law"]["rows"]])
@@ -4009,13 +4703,17 @@ def build_claims(S, head):
         "object the gauge parent names and never builds, and its factors are "
         "disjoint at every size where the stratification is a matching.")))
     P.append(C.claim(CNT.stmt(
+        "Every speed published here is a speed per that tick and is stamped "
+        "so wherever it appears.")))
+    P.append(C.claim(CNT.stmt(
         "Unitarity leaves exactly {patterns} vanishing patterns over the "
         "{coins} coins, so the reach of a tick is zero at {reach0} of them and "
         "one site at {reach1}, and it exceeds one site at {reachover}.")))
     P.append(C.claim(CNT.stmt(
-        "In the sum norm the emergent speed is {csum} site per tick, and it is "
-        "attained at {attained} of {conedepth} censused depths, so it is a "
-        "maximum, not a bound.")))
+        "In the sum norm the emergent speed is {csum} site per tick; the "
+        "structural cone attains it at {attained} of {conedepth} censused "
+        "depths and the dynamics attains it at {dynattained} of "
+        "{attaindepth} attainment depths, so it is a maximum, not a bound.")))
     P.append(C.claim(CNT.stmt(
         "Over whole sweeps the max-norm speed is {csust} site per tick, one "
         "value at every sweep.")))
@@ -4047,18 +4745,20 @@ def build_claims(S, head):
         "The tester finds the value unmoved at {dynagree} of those rows and "
         "moved at {dynmove}, so it is neither blind nor unanimous.")))
     P.append(C.claim(CNT.stmt(
-        "The straight winding cycle exists at no open size at all, and across "
-        "adjacent closed sizes its observable moves at {windmoves} of "
-        "{windpairs} size-by-coin comparisons.")))
+        "The straight winding cycle exists at none of the {patchloops} open "
+        "sizes swept, and across adjacent closed sizes its observable moves at "
+        "{windmoves} of {windpairs} size-by-coin comparisons.")))
     P.append(C.claim(CNT.stmt(
         "All {arms} control arms go through one tester that is told nothing "
         "about which arm it is running: it reports moved at {armsmoved} and "
         "unmoved at {armsunmoved}, each on the side declared for it before the "
         "run.")))
     P.append(C.claim(CNT.stmt(
-        "Of the {censusrows} sealed laws this unit uses, {surv} survive the "
-        "flush verbatim, {scop} survive with a stated proviso and {art} were "
-        "carried by the identification alone.")))
+        "Of the {censusrows} sealed laws this unit uses, measured at one "
+        "declared arena pair, {surv} survive the flush verbatim -- "
+        "{censusmeasured} of them on a witness an arena could have moved and "
+        "{censusstructural} on one no arena moves -- {scop} survives with a "
+        "stated proviso, and {art} differ across the pair.")))
     P.append(C.claim(CNT.stmt(
         "The open patch realises all {phaseorder} constant twists at every one "
         "of its {patchgauge} sizes, so its merging index is {actindex}, which "
@@ -4079,11 +4779,16 @@ def build_claims(S, head):
         "{areadis} of {areapairs} equal-perimeter comparisons there.")))
     P.append(C.claim(CNT.stmt(
         "Across {dlrows} open sizes directed under inclusion the inclusions "
-        "carry {dltested} values and fail to carry {dlmoved}.")))
+        "carry {dltested} values and fail to carry {dlmoved}, and of those "
+        "comparisons {dlself} are the reference size against itself and "
+        "{dlgenuine} cross a proper inclusion.")))
     P.append(C.claim(CNT.stmt(
-        "{quant} of the {censusrows} laws are quantifiable over horizons and "
-        "{exc} are not, and every one of those carries the name of the object "
-        "it needs.")))
+        "{quant} of the {censusrows} laws are horizon-statable by the "
+        "closure-witness test and {exc} are not, and every one of those "
+        "carries the name of the object it needs.")))
+    P.append(C.claim(CNT.stmt(
+        "The generators are inherited and the tick is this unit's "
+        "declaration; every speed is a speed per that tick.")))
     F = C.fence(head)
     return C, T, P, F
 
@@ -4154,7 +4859,45 @@ def measure_template_conformance(S, text, anchors):
               "G-TEMPLATE-CONFORMANCE")
 
 
-def measure_anchor_consumption(S, anchors):
+def audit_path_value_consumption(src, names, value_only):
+    """the (path, value) family's own consumption check, taken on this
+    instrument's syntax tree: an anchor is CONSUMED when a function that fires
+    a gate subscripts it by name -- and the gates that function fires are
+    published beside it -- or it is declared VALUE-ONLY here with the reason
+    it cannot be a predicate of anything measured.  E-28's standard is that an
+    anchor is consumed or it is decoration; this makes the difference a
+    measurement instead of a habit."""
+    tree = ast.parse(src)
+    used = collections.defaultdict(set)
+    for fn in ast.walk(tree):
+        if not isinstance(fn, ast.FunctionDef):
+            continue
+        gates = {c.args[0].value for c in ast.walk(fn)
+                 if isinstance(c, ast.Call)
+                 and getattr(c.func, "attr", None) == "gate"
+                 and c.args and isinstance(c.args[0], ast.Constant)
+                 and isinstance(c.args[0].value, str)}
+        if not gates:
+            continue
+        for sub in ast.walk(fn):
+            if isinstance(sub, ast.Subscript) and \
+                    getattr(sub.value, "id", None) == "pv" and \
+                    isinstance(sub.slice, ast.Constant) and \
+                    isinstance(sub.slice.value, str):
+                used[sub.slice.value] |= gates
+    rows, unconsumed = [], []
+    for name in names:
+        gates = sorted(used.get(name, ()))
+        if not gates and name not in value_only:
+            unconsumed.append(name)
+        rows.append({"anchor": name,
+                     "role": "VALUE-ONLY" if name in value_only else "CONSUMED",
+                     "consumed_inside_the_gates": gates,
+                     "why_it_is_value_only": value_only.get(name, "")})
+    return rows, unconsumed
+
+
+def measure_anchor_consumption(S, anchors, src):
     if mut("MUT-ANCHOR"):
         for a in anchors.by_name.values():
             a.read_by = set()
@@ -4163,23 +4906,44 @@ def measure_anchor_consumption(S, anchors):
         r = anchors.verify_consumption(LD)
     except GateFail as exc:
         raise GateFail("G-ANCHOR-CONSUMPTION", exc.detail)
+    names = [n for n, _s, _p, _v in PATH_VALUES]
+    if mut("MUT-PATH-CONSUMED"):
+        src = src.replace('pv["PV-ACT-IDX-L8"]', "None")
+    pvrows, pvun = audit_path_value_consumption(src, names,
+                                                PATH_VALUES_VALUE_ONLY)
+    pvinert = [x["anchor"] for x in pvrows if x["role"] == "VALUE-ONLY"]
+    stray = [k for k in PATH_VALUES_VALUE_ONLY if k not in names]
+    ok = not pvun and not stray
     LD.gate("G-ANCHOR-CONSUMPTION",
             "every verbatim window is located exactly once in the pinned "
             "source it is quoted from AND in this paper's own rendering, is "
             "above the declared length floor, is readable only through one "
             "accessor that records who read it, and is required to have been "
-            "read by the very gate its own row names, with a value taken out "
-            "of its text and compared against a measurement -- so a window no "
-            "gate consumed, or a window consumed for its existence rather than "
-            "its meaning, stops the run",
-            True, "anchors %d, consumed by their named gate %d"
-            % (r["anchors"], r["consumed"]))
+            "read by the very gate its own row names -- so a window no gate "
+            "consumed stops the run; and the (path, value) family is held to "
+            "the same standard by a scan of this instrument's own syntax "
+            "tree: each of those anchors is either subscripted inside a "
+            "function that fires a gate, with those gates published beside "
+            "it, or is DECLARED value-only here with the reason it cannot be "
+            "a predicate, so that no inherited number is carried as "
+            "decoration without saying so",
+            ok, "anchors %d, consumed by their named gate %d; path-value "
+            "anchors %d, consumed inside a gate %d, declared value-only %d, "
+            "neither %d"
+            % (r["anchors"], r["consumed"], len(pvrows),
+               len(pvrows) - len(pvinert) - len(pvun), len(pvinert),
+               len(pvun)))
     S["verbatim_anchors"] = {
         "rows": [{"name": a.name, "source": a.source, "consumer": a.consumer,
                   "chars": len(a.needle),
                   "read_by": sorted(a.read_by)}
                  for a in sorted(anchors.by_name.values(), key=lambda x: x.name)],
-        "anchors": r["anchors"], "consumed": r["consumed"]}
+        "anchors": r["anchors"], "consumed": r["consumed"],
+        "path_value_rows": pvrows,
+        "path_value_anchors": len(pvrows),
+        "path_value_anchors_consumed_inside_a_gate":
+            len(pvrows) - len(pvinert) - len(pvun),
+        "path_value_anchors_declared_value_only": len(pvinert)}
     SEAL.take("verbatim_anchors", S["verbatim_anchors"], "G-ANCHOR-CONSUMPTION")
 
 
@@ -4191,7 +4955,12 @@ def own_source():
 def measure_typed_counts(S, src):
     off = CNT.audit_module(src, ("stmt", "claim", "gate"))
     if mut("MUT-TYPED"):
-        off = off + ["line 0: 'injected typed numeral 7'"]
+        # the detector is EXERCISED rather than its output injected into: a
+        # numeral is planted in a statement string and the real scan is run
+        # again over the planted source.
+        off = CNT.audit_module(
+            src + "\n_ = CNT.stmt('a numeral 7 typed into a statement')\n",
+            ("stmt", "claim", "gate"))
     floats = re.findall(r"(?<![\w.])\d+\.\d+(?![\w.])", src)
     banned = []
     tree = ast.parse(src)
@@ -4216,9 +4985,14 @@ def measure_typed_counts(S, src):
                      "registry of {provenanced} measured values, the "
                      "prohibition is checked on the SOURCE rather than on the "
                      "output by walking this instrument's own syntax tree, and "
-                     "the same scan confirms that no floating-point literal, "
-                     "no logarithm, no exponential, no square root and no "
-                     "power operator occurs anywhere in this file"),
+                     "the walk reaches the whole ARGUMENT EXPRESSION of every "
+                     "published statement rather than its top-level strings "
+                     "alone -- so a numeral typed into a %-formatted evidence "
+                     "string, and an integer offset added to or taken from a "
+                     "measured count, are both offences here; and the same "
+                     "scan confirms that no floating-point literal, no "
+                     "logarithm, no exponential, no square root and no power "
+                     "operator occurs anywhere in this file"),
             ok, "typed-numeral offenders %d, float literals %d, banned calls "
             "%s" % (len(off), len(floats), banned))
     S["arithmetic"] = {
@@ -4405,6 +5179,12 @@ def build_falsifiers(S, text):
                   lambda p: dict(p["closure_census"], rows=[
                       dict(r, verdict=ARTIFACT) if r["verdict"] == VERBATIM
                       else r for r in p["closure_census"]["rows"]])),
+        Falsifier("MUT-CENSUS-BASIS", "G-CLOSURE-CENSUS",
+                  "labels a witness the arena moves as one no arena moves",
+                  "closure_census",
+                  lambda p: dict(p["closure_census"], rows=[
+                      dict(r, basis=STRUCTURAL) if r["id"] == "LAW-LINK-COUNT"
+                      else r for r in p["closure_census"]["rows"]])),
         Falsifier("MUT-DIRECT-LIMIT", "G-DIRECT-LIMIT-FORM",
                   "makes an inclusion fail to carry a value", "direct_limit",
                   lambda p: dict(p["direct_limit"], rows=[
@@ -4425,6 +5205,13 @@ def build_falsifiers(S, text):
                   "forces the blocked branch of the outcome rule", "outcome",
                   lambda p: rc(p, "outcome",
                                word="HOR-BLOCKED-AT-THE-STABILITY-TESTER")),
+        Falsifier("MUT-GLOBAL-CONTROL", "G-THE-OUTCOME",
+                  "hands the globally-sensitive control a ladder no arena "
+                  "moves, so the branch stops being shown reachable",
+                  "outcome",
+                  lambda p: dict(p["outcome"], the_reachability_control=dict(
+                      p["outcome"]["the_reachability_control"],
+                      the_word_the_control_produces="HOR-UNDETERMINED-R-NATIVE"))),
         Falsifier("MUT-HEAD", "G-VERDICT-EQUALITY",
                   "corrupts one segment of the emitted head", "verdict",
                   lambda p: dict(p["verdict"],
@@ -4473,6 +5260,15 @@ def build_falsifiers(S, text):
                   "erases one anchor's consumption record", "verbatim_anchors",
                   lambda p: rc(p, "verbatim_anchors",
                                consumed=p["verbatim_anchors"]["consumed"] - 1)),
+        Falsifier("MUT-PATH-CONSUMED", "G-ANCHOR-CONSUMPTION",
+                  "takes an inherited (path, value) anchor out of the gate "
+                  "that consumes it, leaving it declared and inert",
+                  "verbatim_anchors",
+                  lambda p: rc(p, "verbatim_anchors",
+                               path_value_anchors_consumed_inside_a_gate=p[
+                                   "verbatim_anchors"][
+                                   "path_value_anchors_consumed_inside_a_gate"]
+                               - 1)),
         Falsifier("MUT-TRANSCRIPT", "G-TRANSCRIPT-BOUND",
                   "forges a passing gate line into the transcript",
                   "transcript",
@@ -4501,10 +5297,17 @@ def measure_falsifiers(S, payload, src):
     F = build_falsifiers(S, None)
     H = FalsifierHarness(F)
     moves = H.prove_moves(payload)
-    sentinels = H.audit_descriptions(src)
+    sentinels = H.audit_descriptions(src, [f.name for f in F])
     if mut("MUT-FALSIFIER"):
-        sentinels = sentinels + ["injected"]
-    ok = len(moves) == len(F) and not sentinels
+        # the detector is EXERCISED rather than its output injected into: a
+        # sentinel-shaped branch is planted and the real audit run again.
+        sentinels = H.audit_descriptions(
+            src + "\nif mut('MUT-A-BRANCH-THAT-ONLY-SETS-A-FLAG'):\n"
+                  "    flag = True\n", [f.name for f in F])
+    proved = {m["mutant"] for m in moves
+              if m["clean_digest"] != m["mutated_digest"]
+              and m["target"] in payload}
+    ok = proved == {f.name for f in F} and not sentinels
     CNT.measured("mutants", len(F), "the declared falsifiers, counted")
     LD.gate("G-FALSIFIER-MOVES",
             CNT.stmt("each of the {mutants} falsifiers names the measured "
@@ -4513,45 +5316,70 @@ def measure_falsifiers(S, payload, src):
                      "that object under the mutation and digests it before and "
                      "after, so a recipe that leaves its target byte-identical "
                      "dies here whatever colour its badge is; and a syntax "
-                     "scan of this file confirms that no mutant branch merely "
-                     "assigns a constant or appends one"),
+                     "scan of this file confirms that no mutant branch assigns "
+                     "a constant or appends one at any statement of it, that "
+                     "no branch is short-circuited by a constant in its own "
+                     "test, and that every declared falsifier HAS a live "
+                     "branch here -- the in-process badge certifies the "
+                     "instrument's own branch and not only the probe, while "
+                     "death at the named gate stays the CLI's proof"),
             ok, "falsifiers %d, all moving their declared target %s, "
-            "sentinel-shaped branches %d"
-            % (len(F), len(moves) == len(F), len(sentinels)))
+            "sentinel-shaped or dead branches %d"
+            % (len(F), proved == {f.name for f in F}, len(sentinels)))
     S["mutants"] = {
         "rows": [{"mutant": f.name, "dies_at": f.gate, "target": f.target,
                   "description": f.description} for f in F],
         "move_proofs": moves, "count": len(F),
         "sentinel_shaped_branches": len(sentinels),
+        "every_declared_falsifier_has_a_live_branch_in_this_source": True,
         "death_at_the_named_gate_is_verified_by":
             "THE---MUTANT-NAME-RUNS-WHICH-EXIT-1-AT-THAT-GATE-WRITING-NOTHING"}
     SEAL.take("mutants", S["mutants"], "G-FALSIFIER-MOVES")
     waivers = {
         "G-FALSIFIER-MOVES":
             "a falsifier of the move-proof gate would have to be proved to "
-            "move by the very gate it falsifies; the forcing is that the gate "
-            "demonstrably evaluated every declared falsifier, checked by "
-            "requiring one move proof per declared row",
+            "move by the very gate it falsifies; the forcing is the CONTENT "
+            "of the move proofs -- every declared falsifier is required to "
+            "have a proof whose clean and mutated digests differ and whose "
+            "target is a published key -- rather than their number, which a "
+            "harness that raises on failure cannot get wrong",
         "G-FALSIFIER-COVERAGE":
             "the coverage gate counts itself inside its own denominator, so a "
             "falsifier for it would have to be a falsifier of the count that "
-            "contains it; the forcing is that its own identifier is a member "
-            "of the denominator it divides by, checked here",
+            "contains it; the forcing is that the denominator is the LIVE "
+            "ledger at this moment and this gate is demonstrably not in it "
+            "yet, which is what a denominator snapshotted early would fail",
     }
-    forcings = {"G-FALSIFIER-MOVES": len(moves) == len(F),
-                "G-FALSIFIER-COVERAGE":
-                "G-FALSIFIER-COVERAGE" in (set(LD.names())
-                                           | {"G-FALSIFIER-COVERAGE"})}
+    forcings = {"G-FALSIFIER-MOVES": proved == {f.name for f in F},
+                "G-FALSIFIER-COVERAGE": lambda live: live}
     cov = H.coverage(LD, waivers, forcings)
+    forcings = cov["forcings_as_evaluated"]
     LD.gate("G-FALSIFIER-COVERAGE",
             "every gate that fired in this run carries a falsifier or a waiver "
             "with a machine-checked forcing, and the denominator is taken "
             "after the fact and contains this gate itself, so the coverage "
-            "count cannot exempt itself by being snapshotted early",
-            True, "gates %d, gates with a falsifier %d, gates waived %d"
-            % (cov["gates"], cov["gates_with_a_falsifier"], cov["gates_waived"]))
+            "count cannot exempt itself by being snapshotted early; the two "
+            "waivers are forced on the content of the move proofs and on the "
+            "liveness of that denominator, neither of which is a predicate "
+            "that cannot be false",
+            True, "gates %d, gates with a falsifier %d, gates waived %d, "
+            "waiver forcings %s"
+            % (cov["gates"], cov["gates_with_a_falsifier"],
+               cov["gates_waived"],
+               sorted(k for k, v in forcings.items() if v)))
+    # the closing rows -- the two that fire after the ledger's shape is
+    # published -- carried here, inside the last gate's own sealed block, so
+    # that the digest-chained record covers every gate this run fires.
+    closing = [{"gate": r["gate"], "passed": r["passed"],
+                "evidence": r["evidence"], "statement": r["statement"],
+                "row_digest": r["row_digest"]} for r in LD.rows
+               if r["gate"] in ("G-FALSIFIER-MOVES", "G-FALSIFIER-COVERAGE")]
     S["coverage"] = {**cov, "waivers": waivers,
-                     "forcings": {k: bool(v) for k, v in forcings.items()}}
+                     "forcings": {k: bool(v) for k, v in forcings.items()},
+                     "the_closing_rows": closing,
+                     "ledger_rows_including_the_closing_rows": len(LD.rows),
+                     "ledger_head_after_the_closing_rows": LD.head,
+                     "recomputed": LD.recompute_chain()}
     SEAL.take("coverage", S["coverage"], "G-FALSIFIER-COVERAGE")
 
 
@@ -4564,6 +5392,33 @@ def promote(payload, side_text, receipt_path, side_path):
     SEAL.close()
     body = dict(payload)
     body["seal_manifest"] = SEAL.manifest()
+    # the two cardinalities the receipt states about ITSELF are checked here,
+    # at the door, against the object about to be written -- the one place
+    # where the whole key set exists.  They are computed upstream from the
+    # live key set and a declared list of the keys that arrive after that
+    # point; if either is wrong by one, nothing is promoted.
+    shape = body["seal_shape"]
+    if shape["published_keys"] != len(body) or \
+            shape["sealed"] != len(SEAL.seals):
+        raise GateFail(Seal.CHECK,
+                       "the receipt's own cardinalities are not the "
+                       "receipt's: published %d against %d keys, sealed %d "
+                       "against %d seals"
+                       % (shape["published_keys"], len(body),
+                          shape["sealed"], len(SEAL.seals)))
+    # and the same for the gate total, against the ledger it counts: the rows
+    # that fired after the totals block are required to be exactly the ones
+    # that block declared would.
+    tot = body["totals"]
+    fired_after = LD.names()[tot["ledger_rows_when_this_block_was_built"]:]
+    if tot["gates"] != len(LD.rows) or \
+            fired_after != tot["the_gates_that_fire_after_it"]:
+        raise GateFail(Seal.CHECK,
+                       "the receipt's gate total is not the ledger's: %d "
+                       "against %d rows, and the rows that fired after the "
+                       "totals block are %s against the declared %s"
+                       % (tot["gates"], len(LD.rows), fired_after,
+                          tot["the_gates_that_fire_after_it"]))
     blob = json.dumps(body, sort_keys=True, indent=1,
                       ensure_ascii=False).encode("utf-8")
     ttxt = side_text.encode("utf-8")
@@ -4604,6 +5459,32 @@ EXEMPT = (
     ("E-24", "an engraving identifier, not a count"),
 )
 
+# numerals of the paper's prose that are IDENTIFIERS rather than
+# measurements, exempted by name with the reason, never by silence.
+EXEMPT_NUMERALS = (
+    ("#42", "this unit's own number in the corpus, not a measurement of it"),
+    ("#373", "the ledger entry this unit's pin was frozen at, not a "
+             "measurement of anything"),
+)
+
+# the receipt keys that arrive AFTER the totality block is built, declared
+# here so that the cardinalities that block publishes are computed from the
+# live key set and this list rather than from a typed offset; every one of
+# them is sealed at the gate that vouches it except the manifest itself,
+# which is the index the partition is written into.  Both numbers are checked
+# again at the door against the object that is actually written.
+KEYS_ARRIVING_AFTER_THE_TOTALITY_BLOCK = (
+    "seal_shape", "gates", "gate_digests", "ledger_shape", "transcript",
+    "mutants", "coverage", "seal_manifest")
+THE_MANIFEST_KEY = "seal_manifest"
+
+# and the gates that fire after the totals block is built, declared here for
+# the same reason and reconciled against the ledger before anything is
+# written.
+GATES_AFTER_THE_TOTALS_BLOCK = (
+    "G-SEAL-TOTALITY", "G-READS-DECLARED", "G-TRANSCRIPT-BOUND",
+    "G-FALSIFIER-MOVES", "G-FALSIFIER-COVERAGE")
+
 
 def run(write=True, paper_path=None):
     for tok, why in EXEMPT:
@@ -4637,9 +5518,10 @@ def run(write=True, paper_path=None):
     measure_the_tick_is_declared(S, anchors)
     measure_one_tick_reach(S, pv, coins, anchors)
     cone_rows = measure_the_cone(S, pv, anchors)
-    measure_c(S, anchors, cone_rows)
+    measure_c(S, pv, anchors, cone_rows)
     measure_cone_shape(S, pv, cone_rows)
     measure_cone_saturation(S, pv, anchors)
+    measure_circulants(S, pv)
     measure_c_is_not_the_group_speed(S, pv, anchors)
 
     measure_the_family_split(S, pv, anchors)
@@ -4653,8 +5535,8 @@ def run(write=True, paper_path=None):
 
     gau_rows, _full = measure_patch_gauge(S, pv, coins, anchors)
     measure_merging_on_the_patch(S, pv, gau_rows, anchors)
-    measure_circulants(S, pv)
     measure_the_closed_form(S, pv, coins, probe)
+    measure_census_sweep(S, pv, coins, probe, shapes)
     measure_closure_census(S, pv, anchors)
     measure_direct_limit(S, pv, coins, probe, anchors)
     _q, exceptions = measure_quantifiability(S)
@@ -4696,11 +5578,11 @@ def run(write=True, paper_path=None):
     payload["paper_claims"] = S["paper_claims"]
     payload["paper_sha256_12"] = bdigest(paper_text.encode("utf-8"))
     SEAL.take("paper_sha256_12", payload["paper_sha256_12"], "G-PAPER-CLAIMS")
-    measure_anchor_consumption(S, anchors)
+    measure_anchor_consumption(S, anchors, src)
     payload["verbatim_anchors"] = S["verbatim_anchors"]
 
     payload["runtime_inputs"] = {
-        "declared": len(SOURCES) + 1,
+        "declared": len(SOURCES) + len((PAPER_REL,)),
         "pinned": sorted(rel for rel, _s in SOURCES.values()),
         "the_object_under_test": PAPER_REL,
         "the_instruments_own_source_is_read_for_the_syntax_scan": True,
@@ -4726,17 +5608,28 @@ def run(write=True, paper_path=None):
     SEAL.declare_unsealed("declared_unsealed", "the manifest's own index, "
                           "republished inside the manifest it indexes")
 
-    payload["totals"] = {"gates": len(LD.rows) + 5,
+    payload["totals"] = {"gates": len(LD.rows) + len(GATES_AFTER_THE_TOTALS_BLOCK),
                          "mutants": len(build_falsifiers(S, None)),
                          "anchors": S["verbatim_anchors"]["anchors"],
                          "path_value_anchors": len(pv),
                          "sources": len(SOURCES),
-                         "measured_names": len(CNT.values)}
+                         "measured_names": len(CNT.values),
+                         "ledger_rows_when_this_block_was_built": len(LD.rows),
+                         "the_gates_that_fire_after_it":
+                             list(GATES_AFTER_THE_TOTALS_BLOCK),
+                         "and_both_are_reconciled_with_the_ledger_at_the_door":
+                             True}
     SEAL.take("totals", payload["totals"], "G-SEAL-TOTALITY")
+    later = list(KEYS_ARRIVING_AFTER_THE_TOTALITY_BLOCK)
+    later_sealed = [k for k in later if k != THE_MANIFEST_KEY]
+    published_keys = len(payload) + len(later)
+    sealed_keys = len(SEAL.seals) + len(later_sealed)
     payload["seal_shape"] = {
-        "published_keys": len(payload) + 9,
-        "sealed": len(SEAL.seals) + 8,
+        "published_keys": published_keys,
+        "sealed": sealed_keys,
         "declared_unsealed": len(SEAL.unsealed),
+        "the_keys_that_arrive_after_this_block": later,
+        "these_two_numbers_are_re_checked_at_the_door": True,
         "the_closing_record_is_sealed_at_the_binding_gate":
             ["gates", "gate_digests", "ledger_shape", "transcript"],
         "and_the_rows_that_fire_after_it_are_declared_and_reconciled": True}
@@ -4744,9 +5637,7 @@ def run(write=True, paper_path=None):
     if mut("MUT-SEAL"):
         payload["forged_finding"] = {"headline": "forged"}
 
-    covered = set(SEAL.seals) | set(SEAL.unsealed) | {"seal_manifest"} | {
-        "gates", "gate_digests", "ledger_shape", "transcript", "mutants",
-        "coverage", "runtime_inputs"}
+    covered = set(SEAL.seals) | set(SEAL.unsealed) | {THE_MANIFEST_KEY} | set(later)
     undeclared = sorted(set(payload) - covered)
     LD.gate("G-SEAL-TOTALITY",
             "every published receipt key is either digested at the moment the "
@@ -4754,10 +5645,15 @@ def run(write=True, paper_path=None):
             "with the reason it cannot be, and the partition is RECOMPUTED "
             "here from the payload's live key set rather than read off a "
             "snapshot taken earlier, and again at the door before anything is "
-            "written",
+            "written; the two cardinalities this receipt states about ITSELF "
+            "are computed from that live key set and from the declared list "
+            "of keys that arrive after this block -- no offset is typed over "
+            "them -- and both are checked against the object actually written "
+            "before it is written, so a receipt that mis-states its own size "
+            "by one is not promoted",
             not undeclared,
             "published keys %d, sealed %d, declared unsealed %d, undeclared %d"
-            % (len(payload) + 9, len(SEAL.seals) + 8, len(SEAL.unsealed),
+            % (published_keys, sealed_keys, len(SEAL.unsealed),
                len(undeclared)))
 
     if mut("MUT-READS"):
@@ -4801,20 +5697,24 @@ def run(write=True, paper_path=None):
             "that will be promoted and reconciled with the ledger as a "
             "multiset -- gate, verdict word and evidence string together, in "
             "both directions -- the row count is reconciled with the gates "
-            "fired, the whole transcript rather than a prefix is digested, and "
-            "the rows that fire after this one are DECLARED here and "
-            "reconciled again against the promoted bytes before anything is "
-            "moved into place",
+            "fired, each of the two numbers being taken from its own object; "
+            "the render this gate binds is digested under its own name, and "
+            "the rows that fire after this one are DECLARED here by name and "
+            "reconciled again, as a multiset and in order, against the "
+            "promoted bytes before anything is moved into place",
             True, "ledger rows %d, transcript gate lines %d, chain head %s"
-            % (len(LD.rows) + 1, len(LD.rows) + 1, LD.head))
+            % (len(LD.rows), sum(TRANSCRIPT.parse(body0).values()), LD.head))
     payload["gates"] = [{"gate": r["gate"], "passed": r["passed"],
+                         "statement": r["statement"],
                          "evidence": r["evidence"]} for r in LD.rows]
     payload["gate_digests"] = {r["gate"]: r["row_digest"] for r in LD.rows}
     payload["ledger_shape"] = {"rows": len(LD.rows), "head": LD.head,
                                "recomputed": LD.recompute_chain()}
     payload["transcript"] = {
         "gate_lines": len(LD.rows),
-        "digest": bdigest(body0.encode("utf-8")),
+        "digest_of_the_render_bound_at_this_gate":
+            bdigest(body0.encode("utf-8")),
+        "and_that_render_is_this_transcript_without_its_closing_rows": True,
         "closing_rows": ["G-FALSIFIER-MOVES", "G-FALSIFIER-COVERAGE"],
         "the_transcript_is_the_ledger_by_content": True}
     for k in ("gates", "gate_digests", "ledger_shape", "transcript"):
@@ -4917,7 +5817,7 @@ def main(argv):
         except GateFail as exc:
             print("[PASS] --selftest :: the corrupted anchor is refused and "
                   "nothing is written :: %s" % exc)
-            return 1
+            return 0
         sys.stderr.write("selftest did not refuse\n")
         return 1
     sys.stderr.write(USAGE + "\n")

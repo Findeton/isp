@@ -3,7 +3,7 @@ HOR -- paper-42 -- THE HORIZON UNIT: UNDETERMINED R AS THE NATIVE FORM
 
 THE VERDICT, as the instrument emits it:
 
-HOR-UNDETERMINED-R-NATIVE -- CONE=[TICK=ONE-PARITY-STRATUM-OPERATOR-THE-PARENT-NAMES-AND-NEVER-BUILDS;REACH-PER-TICK=ZERO-AT-64-COINS-AND-ONE-AT-576-OF-640;c=1-SITE-PER-TICK-IN-THE-SUM-NORM-ATTAINED-AT-16-OF-16-DEPTHS-A-MAXIMUM-NOT-A-BOUND;MAX-NORM-SUSTAINED=1/2;SHAPE=A-PRODUCT-BOX-AT-EVERY-DEPTH-ASYMMETRIC-AT-16-AND-REFLECTED-BY-REVERSING-THE-PARITY-ORDER-AT-16;AMPLITUDE-SUPPORTS-ESCAPE-AT-0;RADIUS-ATTAINED-BY-576-COINS-AT-EVERY-ATTAINMENT-DEPTH-AND-THE-CONE-UNFILLED-AT-2] -- STABILITY=[CONTRACTIBLE=10240-SHAPE-BY-COIN-AT-THE-CORE-PAIR-OVER-THE-WHOLE-COIN-FAMILY-AND-650-OVER-THE-LADDER-WITH-0-MISMATCHES;DYNAMIC=64-ARENA-BY-DEPTH-ROWS-WITH-THE-HORIZON-PREDICTED-FROM-THE-CONE-BEFORE-THE-VALUES-0-VIOLATIONS-4-SLACK-54-UNMOVED-10-MOVED;WINDING=ABSENT-AT-EVERY-OPEN-SIZE-AND-MOVING-AT-8-OF-10;ARMS=4-MOVED-AND-1-UNMOVED-THROUGH-ONE-TESTER;SPLIT=AS-PRE-REGISTERED] -- CLOSURE=[18-SEALED-LAWS:9-VERBATIM-1-SCOPED-8-ARTIFACT;THE-OPEN-PATCH-REALISES-EVERY-TWIST-SO-ITS-MERGING-INDEX-IS-1-AT-ALL-7-OPEN-SIZES-WHICH-IS-THE-CLOSED-VALUE-ONLY-WHERE-THE-PHASE-ORDER-DIVIDES-THE-SIZE;WINDING-CLASSES=1-OPEN-AGAINST-13-CLOSED;TRANSLATIONS-CARRYING-THE-OPEN-LINK-SET-TO-ITSELF=1;THE-CLOSED-FORM-AND-AREA-BLINDNESS-SURVIVE-THE-FLUSH-10240-CHECKS-AND-5120-COMPARISONS-FAILING-0-AND-0] -- FORM=[5-OPEN-SIZES-DIRECTED-UNDER-INCLUSION-CARRYING-400-VALUES-AND-FAILING-TO-CARRY-0;QUANTIFIABLE-AT-10-OF-18-WITH-8-NAMED-EXCEPTIONS;NOT-A-LIMIT-NOT-A-CONVERGENCE-NOT-AN-OBJECT] -- SCOPE=[D-IS-TWO;FIELD=Q(zeta_8);COINS=640;CARRIER=THE-UNIFORM-CONFIGURATIONS;THE-GENERATORS-ARE-THE-PARENTS-AND-THE-TICK-IS-THIS-UNITS-DECLARATION;LADDERS-DECLARED-OPEN-7-AND-CLOSED-6;NO-CONTINUUM-CLAIM;NO-ACTUAL-INFINITY-CLAIM;SCALEFUL-NOT-CONTINUOUS;NOT-A-RELATIVITY-CLAIM]
+HOR-UNDETERMINED-R-NATIVE -- CONE=[TICK=ONE-PARITY-STRATUM-OPERATOR-THE-PARENT-NAMES-AND-NEVER-BUILDS;REACH-PER-TICK=ZERO-AT-64-COINS-AND-ONE-AT-576-OF-640;c=1-SITE-PER-TICK-IN-THE-SUM-NORM-ATTAINED-STRUCTURALLY-AT-16-OF-16-DEPTHS-AND-BY-THE-DYNAMICS-AT-8-OF-8-ATTAINMENT-DEPTHS-A-MAXIMUM-NOT-A-BOUND;MAX-NORM-SUSTAINED=1/2;SHAPE=A-PRODUCT-BOX-AT-EVERY-DEPTH-ASYMMETRIC-AT-16-AND-REFLECTED-BY-REVERSING-THE-PARITY-ORDER-AT-16;AMPLITUDE-SUPPORTS-ESCAPE-AT-0;RADIUS-ATTAINED-BY-576-COINS-AT-EVERY-ATTAINMENT-DEPTH-AND-THE-CONE-UNFILLED-AT-2] -- STABILITY=[CONTRACTIBLE=10240-SHAPE-BY-COIN-AT-THE-CORE-PAIR-OVER-THE-WHOLE-COIN-FAMILY-AND-650-OVER-THE-LADDER-WITH-0-MISMATCHES;DYNAMIC=64-ARENA-BY-DEPTH-ROWS-WITH-THE-HORIZON-PREDICTED-FROM-THE-CONE-BEFORE-THE-VALUES-0-VIOLATIONS-4-SLACK-54-UNMOVED-10-MOVED;WINDING=ABSENT-AT-EVERY-OPEN-SIZE-AND-MOVING-AT-8-OF-10;ARMS=4-MOVED-AND-1-UNMOVED-THROUGH-ONE-TESTER;SPLIT=AS-PRE-REGISTERED] -- CLOSURE=[18-SEALED-LAWS-AT-ONE-DECLARED-ARENA-PAIR:11-VERBATIM-OF-WHICH-5-MEASURED-AND-6-STRUCTURAL-1-SCOPED-6-ARTIFACT;THE-OPEN-PATCH-REALISES-EVERY-TWIST-SO-ITS-MERGING-INDEX-IS-1-AT-ALL-7-OPEN-SIZES-WHICH-IS-THE-CLOSED-VALUE-ONLY-WHERE-THE-PHASE-ORDER-DIVIDES-THE-SIZE;WINDING-CLASSES=1-OPEN-AGAINST-13-CLOSED;TRANSLATIONS-CARRYING-THE-OPEN-LINK-SET-TO-ITSELF=1;THE-CLOSED-FORM-AND-AREA-BLINDNESS-SURVIVE-THE-FLUSH-10240-CHECKS-AND-5120-COMPARISONS-FAILING-0-AND-0] -- FORM=[5-OPEN-SIZES-DIRECTED-UNDER-INCLUSION-CARRYING-400-VALUES-OF-WHICH-80-ARE-THE-REFERENCE-AGAINST-ITSELF-AND-FAILING-TO-CARRY-0;HORIZON-STATABLE-BY-THE-CLOSURE-WITNESS-TEST-AT-12-OF-18-WITH-6-NAMED-EXCEPTIONS;NOT-A-LIMIT-NOT-A-CONVERGENCE-NOT-AN-OBJECT] -- SCOPE=[D-IS-TWO;FIELD=Q(zeta_8);COINS=640;CARRIER=THE-UNIFORM-CONFIGURATIONS;THE-GENERATORS-ARE-THE-PARENTS-AND-THE-TICK-IS-THIS-UNITS-DECLARATION;LADDERS-DECLARED-OPEN-7-AND-CLOSED-6;COUNTS-ARE-COUNTING-ONLY;NO-CONTINUUM-CLAIM;NO-ACTUAL-INFINITY-CLAIM;SCALEFUL-NOT-CONTINUOUS;NOT-A-RELATIVITY-CLAIM]
 
 T-CONE
 | tick | sites in the cone | sum-norm radius | max-norm radius | x forward | x backward |
@@ -73,26 +73,26 @@ T-GAUGE
 | P-9 | 8 | 1 | 136 | 136 | 0 |
 
 T-CENSUS
-| law | parent | witness on the open arena | witness on the closed arena | verdict |
-|---|---|---|---|---|
-| LAW-LINK-OPERATOR | R5 | 0 | 0 | SURVIVES-VERBATIM |
-| LAW-HOLONOMY | R5 | 0 | 0 | SURVIVES-VERBATIM |
-| LAW-COIN-FAMILY | R5 | 640 | 640 | SURVIVES-VERBATIM |
-| LAW-STRATIFICATION | R5 | 0 | 6 | SURVIVES-SCOPED |
-| LAW-LINK-COUNT | R5 | 32 | 0 | CLOSURE-ARTIFACT |
-| LAW-PLAQUETTE-COUNT | R5 | 17 | 0 | CLOSURE-ARTIFACT |
-| LAW-SINGLE-OCCUPATION | R5 | 0 | 0 | SURVIVES-VERBATIM |
-| LAW-RECTANGLE-FAMILY | POT | 16 | 16 | SURVIVES-VERBATIM |
-| LAW-WINDING-FAMILY | POT | ABSENT | 128 | CLOSURE-ARTIFACT |
-| LAW-HOMOLOGY | POT | 1 | 13 | CLOSURE-ARTIFACT |
-| LAW-CLOSED-FORM | POT | 0 | 0 | SURVIVES-VERBATIM |
-| LAW-AREA-BLINDNESS | POT | 0 | 0 | SURVIVES-VERBATIM |
-| LAW-MERGING-INDEX | ACT | 1 | 2 | CLOSURE-ARTIFACT |
-| LAW-PARENT-ORBITS | ACT | 136 | 208 | CLOSURE-ARTIFACT |
-| LAW-CLASS-COUNT | ACT | 136 | 136 | SURVIVES-VERBATIM |
-| LAW-TRANSLATION-COVARIANCE | R4 | ABSENT | 9 | CLOSURE-ARTIFACT |
-| LAW-DUAL-TORUS | R4B | ABSENT | 16 | CLOSURE-ARTIFACT |
-| LAW-REFINEMENT-PLACES | LOR | 0 | 0 | SURVIVES-VERBATIM |
+| law | parent | arena pair | witness on the open arena | witness on the closed arena | verdict | basis |
+|---|---|---|---|---|---|---|
+| LAW-LINK-OPERATOR | R5 | P-9 / T-8 | 0 | 0 | SURVIVES-VERBATIM | STRUCTURAL |
+| LAW-HOLONOMY | R5 | P-9 / T-8 | 0 | 0 | SURVIVES-VERBATIM | MEASURED |
+| LAW-COIN-FAMILY | R5 | P-9 / T-8 | 640 | 640 | SURVIVES-VERBATIM | STRUCTURAL |
+| LAW-STRATIFICATION | R5 | the whole ladder | 0 | 6 | SURVIVES-SCOPED | MEASURED |
+| LAW-LINK-COUNT | R5 | P-9 / T-8 | 32 | 0 | CLOSURE-ARTIFACT | MEASURED |
+| LAW-PLAQUETTE-COUNT | R5 | P-9 / T-8 | 17 | 0 | CLOSURE-ARTIFACT | MEASURED |
+| LAW-SINGLE-OCCUPATION | R5 | P-9 / T-8 | 0 | 0 | SURVIVES-VERBATIM | STRUCTURAL |
+| LAW-RECTANGLE-FAMILY | POT | P-9 / T-8 | 16 | 16 | SURVIVES-VERBATIM | STRUCTURAL |
+| LAW-WINDING-FAMILY | POT | P-9 / T-8 | ABSENT | 1024 | CLOSURE-ARTIFACT | MEASURED |
+| LAW-HOMOLOGY | POT | P-9 / T-8 | 1 | 5 | CLOSURE-ARTIFACT | MEASURED |
+| LAW-CLOSED-FORM | POT | P-9 / T-8 | 0 | 0 | SURVIVES-VERBATIM | MEASURED |
+| LAW-AREA-BLINDNESS | POT | P-9 / T-8 | 0 | 0 | SURVIVES-VERBATIM | MEASURED |
+| LAW-MERGING-INDEX | ACT | P-9 / T-8 | 1 | 1 | SURVIVES-VERBATIM | MEASURED |
+| LAW-PARENT-ORBITS | ACT | P-9 / T-8 | 136 | 136 | SURVIVES-VERBATIM | MEASURED |
+| LAW-CLASS-COUNT | ACT | P-9 / T-8 | 136 | 136 | SURVIVES-VERBATIM | STRUCTURAL |
+| LAW-TRANSLATION-COVARIANCE | R4 | P-9 / T-8 | ABSENT | 9 | CLOSURE-ARTIFACT | MEASURED |
+| LAW-DUAL-TORUS | R4B | P-9 / T-8 | ABSENT | 64 | CLOSURE-ARTIFACT | MEASURED |
+| LAW-REFINEMENT-PLACES | LOR | P-9 / T-8 | 0 | 0 | SURVIVES-VERBATIM | STRUCTURAL |
 
 T-ARMS
 | arm | required before the run | what the tester said |
@@ -104,7 +104,7 @@ T-ARMS
 | ARM-GLOBAL-MERGING-INDEX | MOVED | MOVED |
 
 T-HORIZON
-| depth | least open size that hides the edge | least closed size that hides the edge |
+| depth | least swept open size that hides the edge | least swept closed size that hides the edge |
 |---|---|---|
 | 1 | 5 | 6 |
 | 2 | 5 | 6 |
@@ -129,66 +129,68 @@ T-DYNAMIC
 
 THE CLAIMS THIS RUN LICENSES:
   - The tick is one application of one parity stratum operator, the object the gauge parent names and never builds, and its factors are disjoint at every size where the stratification is a matching.
+  - Every speed published here is a speed per that tick and is stamped so wherever it appears.
   - Unitarity leaves exactly 3 vanishing patterns over the 640 coins, so the reach of a tick is zero at 64 of them and one site at 576, and it exceeds one site at 0.
-  - In the sum norm the emergent speed is 1 site per tick, and it is attained at 16 of 16 censused depths, so it is a maximum, not a bound.
+  - In the sum norm the emergent speed is 1 site per tick; the structural cone attains it at 16 of 16 censused depths and the dynamics attains it at 8 of 8 attainment depths, so it is a maximum, not a bound.
   - Over whole sweeps the max-norm speed is 1/2 site per tick, one value at every sweep.
   - The cone is a product of an x-range and a y-range at every one of the 16 depths, its x-range is asymmetric at 16 of them, and reversing the parity order inside the schedule reflects it at 16 while moving no radius in either norm.
   - Every amplitude support this run evolves is tested against the cone and escapes it at 0, at least 576 coins realise the cone's own sum-norm radius at every one of the 8 attainment depths, and at 2 of those depths no coin fills the cone site for site because amplitudes cancel on exact interior lines.
   - The contractible observable is compared at 10240 shape-by-coin rows at the core pair over the whole coin family and at 650 rows over the whole declared ladder, and it moves at 0.
   - The dynamical observable is measured at 64 arena-by-depth rows, the horizon condition is predicted from the cone before any value is read, containing the source's cone is sufficient for arena-independence and is violated at 0 rows, and the measured slack where agreement survives without it is 4.
   - The tester finds the value unmoved at 54 of those rows and moved at 10, so it is neither blind nor unanimous.
-  - The straight winding cycle exists at no open size at all, and across adjacent closed sizes its observable moves at 8 of 10 size-by-coin comparisons.
+  - The straight winding cycle exists at none of the 6 open sizes swept, and across adjacent closed sizes its observable moves at 8 of 10 size-by-coin comparisons.
   - All 5 control arms go through one tester that is told nothing about which arm it is running: it reports moved at 4 and unmoved at 1, each on the side declared for it before the run.
-  - Of the 18 sealed laws this unit uses, 9 survive the flush verbatim, 1 survive with a stated proviso and 8 were carried by the identification alone.
+  - Of the 18 sealed laws this unit uses, measured at one declared arena pair, 11 survive the flush verbatim -- 5 of them on a witness an arena could have moved and 6 on one no arena moves -- 1 survives with a stated proviso, and 6 differ across the pair.
   - The open patch realises all 8 constant twists at every one of its 7 sizes, so its merging index is 1, which a closed arena reaches only where the phase order divides its size.
   - Closed walks of length 8 from a fixed base fall into 1 displacement class on the open arena and 13 on the closed one.
   - Every one of the parent's 9 declared axes shifts the closed arena onto itself and none shifts the open one onto itself, and the translations carrying the open link set to itself number 1.
   - The parent's closed form, fitted at the three shortest perimeters and then checked, fails at 0 of 10240 rows on an arena with no identification anywhere, and its area-blindness disagrees at 0 of 5120 equal-perimeter comparisons there.
-  - Across 5 open sizes directed under inclusion the inclusions carry 400 values and fail to carry 0.
-  - 10 of the 18 laws are quantifiable over horizons and 8 are not, and every one of those carries the name of the object it needs.
+  - Across 5 open sizes directed under inclusion the inclusions carry 400 values and fail to carry 0, and of those comparisons 80 are the reference size against itself and 320 cross a proper inclusion.
+  - 12 of the 18 laws are horizon-statable by the closure-witness test and 6 are not, and every one of those carries the name of the object it needs.
+  - The generators are inherited and the tick is this unit's declaration; every speed is a speed per that tick.
 
 THE GATE LEDGER:
   [PASS] G-SOURCES :: sources 15, all at their declared digests
   [PASS] G-PATH-VALUES :: path-value anchors 30, off their anchored value 0
   [PASS] G-ARENA-REBUILT :: alphabet 25, rows 80, coins 640 (ANTIDIAGONAL 64, BALANCED 512, DIAGONAL 64), unitary by a second route 640, sites 16, links 32, plaquettes 16, domino dimension 2
-  [PASS] G-ZERO-PATTERN-THEOREM :: patterns 3 over 640 coins: 0110->64, 1001->64, 1111->512
+  [PASS] G-ZERO-PATTERN-THEOREM :: patterns 3 over 640 coins: -ZZ-->64, Z--Z->64, ZZZZ->512
   [PASS] G-THE-STRATIFICATION :: rows 13, patch failures 0, odd tori failing 3 of 3, R5's own stratum size 8
   [PASS] G-THE-TICK-IS-BUILT :: columns 320, coins 5, non-unitary 0, identity failures 0, disjoint True
   [PASS] G-THE-TICK-IS-DECLARED :: R5's own no-dynamics clause located and read: True; the tick is declared as ONE-APPLICATION-OF-ONE-PARITY-STRATUM-OPERATOR
-  [PASS] G-ONE-TICK-REACH :: coins 640: reach 0 at 64, reach 1 at 576, reach above 1 at 0
+  [PASS] G-ONE-TICK-REACH :: coins 640: reach of zero sites at 64, of one site at 576, of more than one site at 0
   [PASS] G-THE-CONE :: depths 16, sum-radius equals the depth True, product shape True, escapes 0, radius attained by at least 576 coins at every attainment depth, depths not filled site for site 2, sizes 2,4,8,16,24,32,48,64,80,96,120,144,168,192,224,256
-  [PASS] G-EMERGENT-C :: c_sum 1 attained at 16 of 16 depths, c_max 1, sustained max-norm ['1/2'], sustained sum-norm ['1']
+  [PASS] G-EMERGENT-C :: c_sum 1 attained structurally at 16 of 16 depths and dynamically at 8 of 8, c_max 1, sustained max-norm ['1/2'], sustained sum-norm ['1'], the parent's connective tag MAX-NORM
   [PASS] G-CONE-SHAPE-IS-DECLARATION-RELATIVE :: asymmetric depths 16, reflected under reversal 16 of 16, radii that moved 0
   [PASS] G-CONE-SATURATION :: torus rows 6 all saturating True all becoming visible True, patch rows 7, the parent's wrap clause read True
-  [PASS] G-C-IS-NOT-THE-GROUP-SPEED :: the parent's own clause read True; the two objects live in THE-DUAL-TORUS and THE-SITE-SET; closure needed True and False
-  [PASS] G-THE-FAMILY-SPLIT :: patch rows 6 with winding 0 everywhere True, torus rows 3 with winding present everywhere True, the parent's split numbers [144, 48]
-  [PASS] G-HOMOLOGY :: patch classes 1 (0 nonzero of 586 walks), torus classes 13 (3420 nonzero of 8320 walks)
-  [PASS] G-LOOP-STABILITY-CONTRACTIBLE :: core comparisons 10240 mismatches 0; ladder comparisons 650 mismatches 0; shapes 16; the parent's numbers [640, 640]
-  [PASS] G-LOOP-THRESHOLD :: rows 13, sizes binding the identity 4, all satisfying it True
+  [PASS] G-CIRCULANTS-NEED-THE-CLOSURE :: closed: bijective axes 9, symmetries 16; open: bijective axes 0, symmetries 1; rows ['T-4:16', 'P-9:1', 'T-8:64']
+  [PASS] G-C-IS-NOT-THE-GROUP-SPEED :: the parent's own clause read True; the two objects live in THE-DUAL-TORUS and THE-SITE-SET; bijective declared axes closed 9 against open 0, translations carrying the link set to itself closed 16 against open 1; closure needed True and False
+  [PASS] G-THE-FAMILY-SPLIT :: patch rows 6 with the winding part empty everywhere True, torus rows 3 with winding present everywhere True, the parent's split numbers [144, 48], its placements 192 against its two parts summed 192, its own shape count 9 against this run's at that size 9
+  [PASS] G-HOMOLOGY :: patch classes 1 (0 nonzero of 586 walks), torus classes 13 (3420 nonzero of 8320 walks), rows ['T-4:13', 'P-4:1', 'T-8:5', 'P-9:1']
+  [PASS] G-LOOP-STABILITY-CONTRACTIBLE :: core comparisons 10240 mismatches 0; ladder comparisons 650 mismatches 0; shapes 16; the parent's numbers [640, 640]; the coins its receipt carries at its boundary size 640
+  [PASS] G-LOOP-THRESHOLD :: rows 13, sizes binding the identity 6 all satisfying it True, sizes the cap decides 7
   [PASS] G-WINDING-IS-TORUS-DECLARED :: absent at every open size True; moves at 8 of 10 closed size-by-coin comparisons
   [PASS] G-HORIZON-STABILITY-DYNAMIC :: rows 64, sufficiency violations 0, conservative margin 4, unmoved 54, moved 10, coins 5, window 25
   [PASS] G-THE-HORIZON-LAW :: depths 8, all with a hiding size True, monotone True
   [PASS] G-CONTROL-ARMS :: arms 5, moved 4, unmoved 1, wrong []
-  [PASS] G-PATCH-GAUGE-GROUP :: open sizes realising every twist True, closed sizes matching the parent's law True, the parent's clause read True, at the declared size orbits 208 classes 136 merged 72
+  [PASS] G-PATCH-GAUGE-GROUP :: open sizes realising every twist True, closed sizes matching the parent's law True, the parent's clause read True, at the declared size orbits 208 classes 136 merged 72, at the parent's boundary size orbits 136 merged 0, the stencil's gauge image 8
   [PASS] G-MERGING-ON-THE-PATCH :: open sizes at the divisible index True, the first sentence's number [1], the second's [0, 8, 72]
-  [PASS] G-CIRCULANTS-NEED-THE-CLOSURE :: closed: bijective axes 9, symmetries 16; open: bijective axes 0, symmetries 1
   [PASS] G-THE-CLOSED-FORM-SURVIVES :: shapes 16, open checks 10240 failures 0, closed checks 10240 failures 0, area comparisons 5120 disagreements 0, the ladder variable is the parent's True, per-arena residuals [0, 0]
-  [PASS] G-CLOSURE-CENSUS :: rows 18: verbatim 9, scoped 1, artifact 8, reclassifications 0
-  [PASS] G-DIRECT-LIMIT-FORM :: sizes 5, comparisons 400, values not carried 0, directed True, the parent's no-topology clause read True
-  [PASS] G-QUANTIFIABILITY :: rows 18, quantifiable 10, exceptions 8 all named True, rows disagreeing with the census 0: ['LAW-LINK-COUNT', 'LAW-PLAQUETTE-COUNT', 'LAW-WINDING-FAMILY', 'LAW-HOMOLOGY', 'LAW-MERGING-INDEX', 'LAW-PARENT-ORBITS', 'LAW-TRANSLATION-COVARIANCE', 'LAW-DUAL-TORUS']
+  [PASS] G-CLOSURE-CENSUS :: rows 18: verbatim 11 (measured 5, structural 6), scoped 1, artifact 6, reclassifications 0, arena pairs ['P-9 / T-8', 'the whole ladder'], structural labels the sweep moves 0, measured witnesses it moves 9, surviving rows with no sweep 0, the parent's index law True, its index measured here True, at the closed witness True
+  [PASS] G-DIRECT-LIMIT-FORM :: sizes 5, comparisons 400 (reference against itself 80, proper inclusions 320), values not carried 0, directed True, the parent's no-topology clause read True
+  [PASS] G-QUANTIFIABILITY :: rows 18, horizon-statable 12, exceptions 6 all named True, rows where the witnesses and the verdict word disagree 0: ['LAW-LINK-COUNT', 'LAW-PLAQUETTE-COUNT', 'LAW-WINDING-FAMILY', 'LAW-HOMOLOGY', 'LAW-TRANSLATION-COVARIANCE', 'LAW-DUAL-TORUS']
   [PASS] G-THE-SPLIT :: the pin's own split sentence read True; contractible stable True; winding declaration-bound True; the split is AS-PRE-REGISTERED
-  [PASS] G-THE-OUTCOME :: outcome HOR-UNDETERMINED-R-NATIVE; branches published 4; global-sensitivity offenders 0; the blocked counter re-derived inside the gate agrees True
+  [PASS] G-THE-OUTCOME :: outcome HOR-UNDETERMINED-R-NATIVE; branches published 4; global-sensitivity offenders 0; the blocked counter re-derived inside the gate agrees True; the control emits HOR-GLOBAL-SENSITIVE-AT-CONTROL-A-LOCAL-LAW-THE-FAR-LATTICE-SETS and the null control does not True
   [PASS] G-TEMPLATE-CONFORMANCE :: template families 9, implemented 9, equal True, the caveat read True
   [PASS] G-NO-TYPED-COUNTS :: typed-numeral offenders 0, float literals 0, banned calls []
-  [PASS] G-VERDICT-EQUALITY :: head length 1739, rebuilt length 1739, equal True
-  [PASS] G-WALL-NO-ACTUAL-INFINITY :: WALL-NO-ACTUAL-INFINITY: banned patterns 13, standing sentences 2, declaring sentences carried 4 of 4, the parent's own prohibition carried True
-  [PASS] G-WALL-NO-CONTINUUM :: WALL-NO-CONTINUUM: banned patterns 12, standing sentences 1, declaring sentences carried 4 of 4, the parent's own prohibition carried True
-  [PASS] G-WALL-SPEED-LICENCE :: WALL-EVERY-SPEED-CARRIES-ITS-MEASUREMENT: banned patterns 1, standing sentences 1, declaring sentences carried 4 of 4, the parent's own prohibition carried True
-  [PASS] G-REFERENTS :: occurrences checked 42 over 4 declared universes
-  [PASS] G-PAPER-CLAIMS :: table rows 98, prose claim occurrences 18 over 18 distinct claims, fenced blocks 1
-  [PASS] G-ANCHOR-CONSUMPTION :: anchors 18, consumed by their named gate 18
-  [PASS] G-SEAL-TOTALITY :: published keys 58, sealed 49, declared unsealed 8, undeclared 0
+  [PASS] G-VERDICT-EQUALITY :: head length 1967, rebuilt length 1967, equal True
+  [PASS] G-WALL-NO-ACTUAL-INFINITY :: WALL-NO-ACTUAL-INFINITY: banned patterns 21, standing sentences 2, sentences policed 0, declaring sentences carried 4 of 4, the parent's own prohibition carried True
+  [PASS] G-WALL-NO-CONTINUUM :: WALL-NO-CONTINUUM: banned patterns 18, standing sentences 1, sentences policed 0, declaring sentences carried 4 of 4, the parent's own prohibition carried True
+  [PASS] G-WALL-SPEED-LICENCE :: WALL-EVERY-SPEED-CARRIES-ITS-MEASUREMENT: banned patterns 1, standing sentences 1, sentences policed 4, declaring sentences carried 4 of 4, the parent's own prohibition carried True
+  [PASS] G-REFERENTS :: occurrences checked 69 over 4 declared universes, of which 7 carry no universe noun and are resolved against the union, exemptions carried by name 2
+  [PASS] G-PAPER-CLAIMS :: table rows 98, prose claim occurrences 20 over 20 distinct claims, fenced blocks 1
+  [PASS] G-ANCHOR-CONSUMPTION :: anchors 18, consumed by their named gate 18; path-value anchors 30, consumed inside a gate 28, declared value-only 2, neither 0
+  [PASS] G-SEAL-TOTALITY :: published keys 56, sealed 47, declared unsealed 8, undeclared 0
   [PASS] G-READS-DECLARED :: reads 17 over 17 distinct paths, declared 17
-  [PASS] G-TRANSCRIPT-BOUND :: ledger rows 42, transcript gate lines 42, chain head a44c971812e03dce
-  [PASS] G-FALSIFIER-MOVES :: falsifiers 43, all moving their declared target True, sentinel-shaped branches 0
-  [PASS] G-FALSIFIER-COVERAGE :: gates 44, gates with a falsifier 42, gates waived 2
+  [PASS] G-TRANSCRIPT-BOUND :: ledger rows 41, transcript gate lines 41, chain head ae41c4fe3b2ae325
+  [PASS] G-FALSIFIER-MOVES :: falsifiers 46, all moving their declared target True, sentinel-shaped or dead branches 0
+  [PASS] G-FALSIFIER-COVERAGE :: gates 44, gates with a falsifier 42, gates waived 2, waiver forcings ['G-FALSIFIER-COVERAGE', 'G-FALSIFIER-MOVES']

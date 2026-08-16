@@ -44,7 +44,7 @@
   "banned_calls_present": [],
   "field": "Q(zeta_8)",
   "float_literals": 0,
-  "measured_names": 77,
+  "measured_names": 84,
   "ratios": "FRACTION",
   "representation": "INTEGER-4-TUPLES-DOUBLED",
   "typed_numeral_offenders": 0
@@ -56,6 +56,8 @@
     "measured_by": "R4B",
     "needs_the_closure": true,
     "object": "the group speed of a translation-covariant generator",
+    "the_declared_axes_that_are_bijections_there": 9,
+    "the_translations_its_family_needs": 16,
     "this_unit_re_measures_it": false
    },
    {
@@ -63,10 +65,13 @@
     "measured_by": "HOR",
     "needs_the_closure": false,
     "object": "the reach of the support under one tick",
+    "the_declared_axes_that_are_bijections_there": 0,
+    "the_translations_its_family_needs": 1,
     "this_unit_re_measures_it": true
    }
   ],
   "the_parents_clause_was_read": true,
+  "the_separation_is_derived_from": "G-CIRCULANTS-NEED-THE-CLOSURE",
   "this_unit_contradicts_nothing_of_the_parents": true
  },
  "circulants": {
@@ -179,6 +184,60 @@
      }
     ],
     "translations_carrying_the_link_set_to_itself": 1
+   },
+   {
+    "arena": "T-8",
+    "axes": 9,
+    "axes_whose_shift_is_a_bijection": 9,
+    "closure": "TORUS",
+    "per_axis": [
+     {
+      "axis": "0,1",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "1,0",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "1,1",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "1,3",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "0,2",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "2,0",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "1,2",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "2,1",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     },
+     {
+      "axis": "2,2",
+      "sites_the_shift_loses": 0,
+      "the_shift_is_a_bijection": true
+     }
+    ],
+    "translations_carrying_the_link_set_to_itself": 64
    }
   ]
  },
@@ -435,158 +494,629 @@
   "the_ladder_is_an_initial_segment_of_the_parents": true
  },
  "closure_census": {
-  "artifact": 8,
+  "artifact": 6,
   "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
+  "measured_witnesses_the_sweep_moves": [
+   "LAW-STRATIFICATION",
+   "LAW-LINK-COUNT",
+   "LAW-PLAQUETTE-COUNT",
+   "LAW-WINDING-FAMILY",
+   "LAW-HOMOLOGY",
+   "LAW-MERGING-INDEX",
+   "LAW-PARENT-ORBITS",
+   "LAW-TRANSLATION-COVARIANCE",
+   "LAW-DUAL-TORUS"
+  ],
   "rows": [
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "STRUCTURAL",
     "id": "LAW-LINK-OPERATOR",
     "law": "the link operator is a two-site domino and the identity elsewhere",
     "parent": "R5",
     "verdict": "SURVIVES-VERBATIM",
+    "why_the_basis_is_that": "two defect counts the construction forbids: a link's two ends are distinct places at every size above one, and the tick writes only to keys of the arena's own link set",
     "witness_on_the_closed_arena": 0,
-    "witness_on_the_open_arena": 0
+    "witness_on_the_open_arena": 0,
+    "witness_over_the_closed_ladder": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "witness_over_the_open_ladder": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "MEASURED",
     "id": "LAW-HOLONOMY",
     "law": "the holonomy of a reversed loop is the conjugate trace",
     "parent": "R5",
     "verdict": "SURVIVES-VERBATIM",
+    "why_the_basis_is_that": "the reversal is walked on the arena's own links and its trace compared with the conjugate, loop by loop and coin by coin",
     "witness_on_the_closed_arena": 0,
-    "witness_on_the_open_arena": 0
+    "witness_on_the_open_arena": 0,
+    "witness_over_the_closed_ladder": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "witness_over_the_open_ladder": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "STRUCTURAL",
     "id": "LAW-COIN-FAMILY",
     "law": "the coins admissible on a link",
     "parent": "R5",
     "verdict": "SURVIVES-VERBATIM",
+    "why_the_basis_is_that": "the coin family is an argument handed to both sides of the comparison, not a quantity either arena computes",
     "witness_on_the_closed_arena": 640,
-    "witness_on_the_open_arena": 640
+    "witness_on_the_open_arena": 640,
+    "witness_over_the_closed_ladder": [
+     640,
+     640,
+     640,
+     640
+    ],
+    "witness_over_the_open_ladder": [
+     640,
+     640,
+     640,
+     640,
+     640
+    ]
    },
    {
+    "arena_pair": "the whole ladder",
+    "basis": "MEASURED",
     "id": "LAW-STRATIFICATION",
     "law": "the four parity strata are matchings, summed over the whole ladder",
     "parent": "R5",
     "verdict": "SURVIVES-SCOPED",
+    "why_the_basis_is_that": "the stratification is rebuilt and its clashes counted at every size of both ladders",
     "witness_on_the_closed_arena": 6,
-    "witness_on_the_open_arena": 0
+    "witness_on_the_open_arena": 0,
+    "witness_over_the_closed_ladder": [
+     2,
+     0,
+     2,
+     0,
+     2,
+     0
+    ],
+    "witness_over_the_open_ladder": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "MEASURED",
     "id": "LAW-LINK-COUNT",
     "law": "every site carries four links",
     "parent": "R5",
     "verdict": "CLOSURE-ARTIFACT",
+    "why_the_basis_is_that": "the degree of every site of the arena's own link set is counted",
     "witness_on_the_closed_arena": 0,
-    "witness_on_the_open_arena": 32
+    "witness_on_the_open_arena": 32,
+    "witness_over_the_closed_ladder": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "witness_over_the_open_ladder": [
+     16,
+     20,
+     24,
+     28,
+     32
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "MEASURED",
     "id": "LAW-PLAQUETTE-COUNT",
     "law": "every site is the base of a plaquette",
     "parent": "R5",
     "verdict": "CLOSURE-ARTIFACT",
+    "why_the_basis_is_that": "the arena's own plaquette set is built and its bases counted",
     "witness_on_the_closed_arena": 0,
-    "witness_on_the_open_arena": 17
+    "witness_on_the_open_arena": 17,
+    "witness_over_the_closed_ladder": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "witness_over_the_open_ladder": [
+     9,
+     11,
+     13,
+     15,
+     17
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "STRUCTURAL",
     "id": "LAW-SINGLE-OCCUPATION",
     "law": "the tick keeps the single-occupation sector",
     "parent": "R5",
     "verdict": "SURVIVES-VERBATIM",
+    "why_the_basis_is_that": "the tick writes only to keys of the arena's own link set, so the count is zero before any arena is chosen",
     "witness_on_the_closed_arena": 0,
-    "witness_on_the_open_arena": 0
+    "witness_on_the_open_arena": 0,
+    "witness_over_the_closed_ladder": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "witness_over_the_open_ladder": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "STRUCTURAL",
     "id": "LAW-RECTANGLE-FAMILY",
     "law": "the rectangle circuits that stay simple",
     "parent": "POT",
     "verdict": "SURVIVES-VERBATIM",
+    "why_the_basis_is_that": "the shape list is an argument handed to both sides of the comparison, not a quantity either arena computes",
     "witness_on_the_closed_arena": 16,
-    "witness_on_the_open_arena": 16
+    "witness_on_the_open_arena": 16,
+    "witness_over_the_closed_ladder": [
+     16,
+     16,
+     16,
+     16
+    ],
+    "witness_over_the_open_ladder": [
+     16,
+     16,
+     16,
+     16,
+     16
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "MEASURED",
     "id": "LAW-WINDING-FAMILY",
     "law": "the winding cycles",
     "parent": "POT",
     "verdict": "CLOSURE-ARTIFACT",
-    "witness_on_the_closed_arena": 128,
-    "witness_on_the_open_arena": "ABSENT"
+    "why_the_basis_is_that": "every placement of every declared cycle is built on the arena's own links and its net displacement read off the steps",
+    "witness_on_the_closed_arena": 1024,
+    "witness_on_the_open_arena": "ABSENT",
+    "witness_over_the_closed_ladder": [
+     128,
+     432,
+     1024
+    ],
+    "witness_over_the_open_ladder": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "MEASURED",
     "id": "LAW-HOMOLOGY",
     "law": "the winding classes a loop can carry",
     "parent": "POT",
     "verdict": "CLOSURE-ARTIFACT",
-    "witness_on_the_closed_arena": 13,
-    "witness_on_the_open_arena": 1
+    "why_the_basis_is_that": "every closed walk of the declared depth is enumerated on the arena and classified by its net displacement",
+    "witness_on_the_closed_arena": 5,
+    "witness_on_the_open_arena": 1,
+    "witness_over_the_closed_ladder": [
+     13,
+     5
+    ],
+    "witness_over_the_open_ladder": [
+     1,
+     1
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "MEASURED",
     "id": "LAW-CLOSED-FORM",
     "law": "the three-term ladder form fails at",
     "parent": "POT",
     "verdict": "SURVIVES-VERBATIM",
+    "why_the_basis_is_that": "the parent's three constants are fitted and then checked against holonomies taken on the arena's own loops",
     "witness_on_the_closed_arena": 0,
-    "witness_on_the_open_arena": 0
+    "witness_on_the_open_arena": 0,
+    "witness_over_the_closed_ladder": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "witness_over_the_open_ladder": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "MEASURED",
     "id": "LAW-AREA-BLINDNESS",
     "law": "the equal-perimeter comparisons that disagree",
     "parent": "POT",
     "verdict": "SURVIVES-VERBATIM",
+    "why_the_basis_is_that": "equal-perimeter shapes of different area are compared coin by coin on the arena's own loops",
     "witness_on_the_closed_arena": 0,
-    "witness_on_the_open_arena": 0
+    "witness_on_the_open_arena": 0,
+    "witness_over_the_closed_ladder": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "witness_over_the_open_ladder": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "MEASURED",
     "id": "LAW-MERGING-INDEX",
     "law": "the merging index",
     "parent": "ACT",
-    "verdict": "CLOSURE-ARTIFACT",
-    "witness_on_the_closed_arena": 2,
-    "witness_on_the_open_arena": 1
+    "verdict": "SURVIVES-VERBATIM",
+    "why_the_basis_is_that": "the constant twists the arena realises are found by propagation over its own links, and the index is the phase order over their number",
+    "witness_on_the_closed_arena": 1,
+    "witness_on_the_open_arena": 1,
+    "witness_over_the_closed_ladder": [
+     8,
+     2,
+     8,
+     4,
+     8,
+     1
+    ],
+    "witness_over_the_open_ladder": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "MEASURED",
     "id": "LAW-PARENT-ORBITS",
     "law": "the orbit count under the realisable twists",
     "parent": "ACT",
-    "verdict": "CLOSURE-ARTIFACT",
-    "witness_on_the_closed_arena": 208,
-    "witness_on_the_open_arena": 136
+    "verdict": "SURVIVES-VERBATIM",
+    "why_the_basis_is_that": "the orbits are built by acting with the twists the arena itself realises",
+    "witness_on_the_closed_arena": 136,
+    "witness_on_the_open_arena": 136,
+    "witness_over_the_closed_ladder": [
+     640,
+     208,
+     640,
+     352,
+     640,
+     136
+    ],
+    "witness_over_the_open_ladder": [
+     136,
+     136,
+     136,
+     136,
+     136,
+     136,
+     136
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "STRUCTURAL",
     "id": "LAW-CLASS-COUNT",
     "law": "the class count under the full stencil image",
     "parent": "ACT",
     "verdict": "SURVIVES-VERBATIM",
+    "why_the_basis_is_that": "the orbits under the FULL stencil image are computed once, with no arena argument at all",
     "witness_on_the_closed_arena": 136,
-    "witness_on_the_open_arena": 136
+    "witness_on_the_open_arena": 136,
+    "witness_over_the_closed_ladder": [
+     136,
+     136,
+     136,
+     136,
+     136,
+     136
+    ],
+    "witness_over_the_open_ladder": [
+     136,
+     136,
+     136,
+     136,
+     136,
+     136,
+     136
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "MEASURED",
     "id": "LAW-TRANSLATION-COVARIANCE",
     "law": "the declared axes whose shift is a bijection",
     "parent": "R4",
     "verdict": "CLOSURE-ARTIFACT",
+    "why_the_basis_is_that": "each declared axis is shifted over the arena's own site set and the places it loses are counted",
     "witness_on_the_closed_arena": 9,
-    "witness_on_the_open_arena": "ABSENT"
+    "witness_on_the_open_arena": "ABSENT",
+    "witness_over_the_closed_ladder": [
+     9,
+     9
+    ],
+    "witness_over_the_open_ladder": [
+     0
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "MEASURED",
     "id": "LAW-DUAL-TORUS",
     "law": "the translations the momentum route needs",
     "parent": "R4B",
     "verdict": "CLOSURE-ARTIFACT",
-    "witness_on_the_closed_arena": 16,
-    "witness_on_the_open_arena": "ABSENT"
+    "why_the_basis_is_that": "every translation is applied to every link of the arena's own link set",
+    "witness_on_the_closed_arena": 64,
+    "witness_on_the_open_arena": "ABSENT",
+    "witness_over_the_closed_ladder": [
+     16,
+     64
+    ],
+    "witness_over_the_open_ladder": [
+     1
+    ]
    },
    {
+    "arena_pair": "P-9 / T-8",
+    "basis": "STRUCTURAL",
     "id": "LAW-REFINEMENT-PLACES",
     "law": "the links a refinement step leaves without a new place",
     "parent": "LOR",
     "verdict": "SURVIVES-VERBATIM",
+    "why_the_basis_is_that": "the refinement map sends distinct links to distinct places, so the count is zero before any arena is chosen",
     "witness_on_the_closed_arena": 0,
-    "witness_on_the_open_arena": 0
+    "witness_on_the_open_arena": 0,
+    "witness_over_the_closed_ladder": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "witness_over_the_open_ladder": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
    }
   ],
   "scoped": 1,
-  "verbatim": 9
+  "structural_labels_the_sweep_moves": [],
+  "surviving_rows_whose_witness_an_arena_could_move": 5,
+  "surviving_rows_whose_witness_no_arena_moves": 6,
+  "the_declared_arena_pair": "P-9 / T-8",
+  "the_sizes_every_witness_was_swept_at": [
+   "P-5",
+   "P-6",
+   "P-7",
+   "P-8",
+   "P-9",
+   "T-5",
+   "T-6",
+   "T-7",
+   "T-8"
+  ],
+  "the_sweep": {
+   "closed_sizes": [
+    "T-5",
+    "T-6",
+    "T-7",
+    "T-8"
+   ],
+   "open_sizes": [
+    "P-5",
+    "P-6",
+    "P-7",
+    "P-8",
+    "P-9"
+   ],
+   "rows": [
+    {
+     "arena": "P-5",
+     "coins_admissible_on_a_link": 640,
+     "equal_perimeter_comparisons_that_disagree": 0,
+     "links": 40,
+     "links_whose_operator_is_not_a_two_site_domino": 0,
+     "links_without_a_refinement_place": 0,
+     "loops_whose_reversal_is_not_the_conjugate_trace": 0,
+     "plaquettes": 16,
+     "shapes_that_fit": 16,
+     "sites_that_are_not_a_plaquette_base": 9,
+     "sites_the_tick_sends_outside_the_arena": 0,
+     "sites_with_fewer_than_four_links": 16,
+     "the_three_term_form_fails_at": 0
+    },
+    {
+     "arena": "P-6",
+     "coins_admissible_on_a_link": 640,
+     "equal_perimeter_comparisons_that_disagree": 0,
+     "links": 60,
+     "links_whose_operator_is_not_a_two_site_domino": 0,
+     "links_without_a_refinement_place": 0,
+     "loops_whose_reversal_is_not_the_conjugate_trace": 0,
+     "plaquettes": 25,
+     "shapes_that_fit": 16,
+     "sites_that_are_not_a_plaquette_base": 11,
+     "sites_the_tick_sends_outside_the_arena": 0,
+     "sites_with_fewer_than_four_links": 20,
+     "the_three_term_form_fails_at": 0
+    },
+    {
+     "arena": "P-7",
+     "coins_admissible_on_a_link": 640,
+     "equal_perimeter_comparisons_that_disagree": 0,
+     "links": 84,
+     "links_whose_operator_is_not_a_two_site_domino": 0,
+     "links_without_a_refinement_place": 0,
+     "loops_whose_reversal_is_not_the_conjugate_trace": 0,
+     "plaquettes": 36,
+     "shapes_that_fit": 16,
+     "sites_that_are_not_a_plaquette_base": 13,
+     "sites_the_tick_sends_outside_the_arena": 0,
+     "sites_with_fewer_than_four_links": 24,
+     "the_three_term_form_fails_at": 0
+    },
+    {
+     "arena": "P-8",
+     "coins_admissible_on_a_link": 640,
+     "equal_perimeter_comparisons_that_disagree": 0,
+     "links": 112,
+     "links_whose_operator_is_not_a_two_site_domino": 0,
+     "links_without_a_refinement_place": 0,
+     "loops_whose_reversal_is_not_the_conjugate_trace": 0,
+     "plaquettes": 49,
+     "shapes_that_fit": 16,
+     "sites_that_are_not_a_plaquette_base": 15,
+     "sites_the_tick_sends_outside_the_arena": 0,
+     "sites_with_fewer_than_four_links": 28,
+     "the_three_term_form_fails_at": 0
+    },
+    {
+     "arena": "P-9",
+     "coins_admissible_on_a_link": 640,
+     "equal_perimeter_comparisons_that_disagree": 0,
+     "links": 144,
+     "links_whose_operator_is_not_a_two_site_domino": 0,
+     "links_without_a_refinement_place": 0,
+     "loops_whose_reversal_is_not_the_conjugate_trace": 0,
+     "plaquettes": 64,
+     "shapes_that_fit": 16,
+     "sites_that_are_not_a_plaquette_base": 17,
+     "sites_the_tick_sends_outside_the_arena": 0,
+     "sites_with_fewer_than_four_links": 32,
+     "the_three_term_form_fails_at": 0
+    },
+    {
+     "arena": "T-5",
+     "coins_admissible_on_a_link": 640,
+     "equal_perimeter_comparisons_that_disagree": 0,
+     "links": 50,
+     "links_whose_operator_is_not_a_two_site_domino": 0,
+     "links_without_a_refinement_place": 0,
+     "loops_whose_reversal_is_not_the_conjugate_trace": 0,
+     "plaquettes": 25,
+     "shapes_that_fit": 16,
+     "sites_that_are_not_a_plaquette_base": 0,
+     "sites_the_tick_sends_outside_the_arena": 0,
+     "sites_with_fewer_than_four_links": 0,
+     "the_three_term_form_fails_at": 0
+    },
+    {
+     "arena": "T-6",
+     "coins_admissible_on_a_link": 640,
+     "equal_perimeter_comparisons_that_disagree": 0,
+     "links": 72,
+     "links_whose_operator_is_not_a_two_site_domino": 0,
+     "links_without_a_refinement_place": 0,
+     "loops_whose_reversal_is_not_the_conjugate_trace": 0,
+     "plaquettes": 36,
+     "shapes_that_fit": 16,
+     "sites_that_are_not_a_plaquette_base": 0,
+     "sites_the_tick_sends_outside_the_arena": 0,
+     "sites_with_fewer_than_four_links": 0,
+     "the_three_term_form_fails_at": 0
+    },
+    {
+     "arena": "T-7",
+     "coins_admissible_on_a_link": 640,
+     "equal_perimeter_comparisons_that_disagree": 0,
+     "links": 98,
+     "links_whose_operator_is_not_a_two_site_domino": 0,
+     "links_without_a_refinement_place": 0,
+     "loops_whose_reversal_is_not_the_conjugate_trace": 0,
+     "plaquettes": 49,
+     "shapes_that_fit": 16,
+     "sites_that_are_not_a_plaquette_base": 0,
+     "sites_the_tick_sends_outside_the_arena": 0,
+     "sites_with_fewer_than_four_links": 0,
+     "the_three_term_form_fails_at": 0
+    },
+    {
+     "arena": "T-8",
+     "coins_admissible_on_a_link": 640,
+     "equal_perimeter_comparisons_that_disagree": 0,
+     "links": 128,
+     "links_whose_operator_is_not_a_two_site_domino": 0,
+     "links_without_a_refinement_place": 0,
+     "loops_whose_reversal_is_not_the_conjugate_trace": 0,
+     "plaquettes": 64,
+     "shapes_that_fit": 16,
+     "sites_that_are_not_a_plaquette_base": 0,
+     "sites_the_tick_sends_outside_the_arena": 0,
+     "sites_with_fewer_than_four_links": 0,
+     "the_three_term_form_fails_at": 0
+    }
+   ],
+   "the_closed_form_witnesses_are_swept_at_the_coin_stride": true
+  },
+  "the_twist_parents_index_at_its_own_sizes": {
+   "2": 4,
+   "4": 2,
+   "8": 1
+  },
+  "verbatim": 11
  },
- "code_sha256_12": "00c985939230",
+ "code_sha256_12": "aa2dcdd60531",
  "cone_saturation": {
   "closed_sizes": 6,
   "every_closed_size_becomes_visible": true,
@@ -807,34 +1337,54 @@
  "control_arms": {
   "arms": [
    {
+    "arenas": [
+     "P-9",
+     "T-8"
+    ],
     "arm": "ARM-CONTRACTIBLE-INSIDE",
     "got": "UNMOVED",
     "must": "UNMOVED",
-    "what": "a two-by-two rectangle, open size against closed size"
+    "what": "a two-by-two rectangle, P-9 against T-8: an open arena against a closed one"
    },
    {
+    "arenas": [
+     "T-6",
+     "T-8"
+    ],
     "arm": "ARM-WINDING",
     "got": "MOVED",
     "must": "MOVED",
-    "what": "the straight winding cycle, one closed size against another"
+    "what": "the straight winding cycle, T-6 against T-8: a closed arena against another closed one, which is a size comparison and not a closure comparison"
    },
    {
+    "arenas": [
+     "T-4",
+     "P-9"
+    ],
     "arm": "ARM-WRAPPING-SHAPE",
     "got": "MOVED",
     "must": "MOVED",
-    "what": "a shape whose extent equals the size, so it wraps"
+    "what": "a shape whose extent equals the size, so it wraps, T-4 against P-9"
    },
    {
+    "arenas": [
+     "T-6",
+     "P-19"
+    ],
     "arm": "ARM-DEPTH-BEYOND-THE-HORIZON",
     "got": "MOVED",
     "must": "MOVED",
-    "what": "the window amplitude at a depth the small closed size cannot hide"
+    "what": "the window amplitude at a depth the small closed size cannot hide, T-6 against P-19"
    },
    {
+    "arenas": [
+     "T-4",
+     "P-9"
+    ],
     "arm": "ARM-GLOBAL-MERGING-INDEX",
     "got": "MOVED",
     "must": "MOVED",
-    "what": "the merging index, a quantity of the whole arena"
+    "what": "the merging index, a quantity of the whole arena, T-4 against P-9: the closed side is the parents' own size, which the phase order does not divide, and the arm's declared side turns on that"
    }
   ],
   "arms_on_the_wrong_side": 0,
@@ -843,16 +1393,86 @@
   "every_integer_here_is_a_count": "COUNTING-ONLY-E-24"
  },
  "coverage": {
+  "denominator": [
+   "G-ANCHOR-CONSUMPTION",
+   "G-ARENA-REBUILT",
+   "G-C-IS-NOT-THE-GROUP-SPEED",
+   "G-CIRCULANTS-NEED-THE-CLOSURE",
+   "G-CLOSURE-CENSUS",
+   "G-CONE-SATURATION",
+   "G-CONE-SHAPE-IS-DECLARATION-RELATIVE",
+   "G-CONTROL-ARMS",
+   "G-DIRECT-LIMIT-FORM",
+   "G-EMERGENT-C",
+   "G-FALSIFIER-COVERAGE",
+   "G-FALSIFIER-MOVES",
+   "G-HOMOLOGY",
+   "G-HORIZON-STABILITY-DYNAMIC",
+   "G-LOOP-STABILITY-CONTRACTIBLE",
+   "G-LOOP-THRESHOLD",
+   "G-MERGING-ON-THE-PATCH",
+   "G-NO-TYPED-COUNTS",
+   "G-ONE-TICK-REACH",
+   "G-PAPER-CLAIMS",
+   "G-PATCH-GAUGE-GROUP",
+   "G-PATH-VALUES",
+   "G-QUANTIFIABILITY",
+   "G-READS-DECLARED",
+   "G-REFERENTS",
+   "G-SEAL-TOTALITY",
+   "G-SOURCES",
+   "G-TEMPLATE-CONFORMANCE",
+   "G-THE-CLOSED-FORM-SURVIVES",
+   "G-THE-CONE",
+   "G-THE-FAMILY-SPLIT",
+   "G-THE-HORIZON-LAW",
+   "G-THE-OUTCOME",
+   "G-THE-SPLIT",
+   "G-THE-STRATIFICATION",
+   "G-THE-TICK-IS-BUILT",
+   "G-THE-TICK-IS-DECLARED",
+   "G-TRANSCRIPT-BOUND",
+   "G-VERDICT-EQUALITY",
+   "G-WALL-NO-ACTUAL-INFINITY",
+   "G-WALL-NO-CONTINUUM",
+   "G-WALL-SPEED-LICENCE",
+   "G-WINDING-IS-TORUS-DECLARED",
+   "G-ZERO-PATTERN-THEOREM"
+  ],
   "forcings": {
+   "G-FALSIFIER-COVERAGE": true,
+   "G-FALSIFIER-MOVES": true
+  },
+  "forcings_as_evaluated": {
    "G-FALSIFIER-COVERAGE": true,
    "G-FALSIFIER-MOVES": true
   },
   "gates": 44,
   "gates_waived": 2,
   "gates_with_a_falsifier": 42,
+  "ledger_head_after_the_closing_rows": "d2de3ae289200d0f",
+  "ledger_rows_including_the_closing_rows": 44,
+  "recomputed": "d2de3ae289200d0f",
+  "the_closing_rows": [
+   {
+    "evidence": "falsifiers 46, all moving their declared target True, sentinel-shaped or dead branches 0",
+    "gate": "G-FALSIFIER-MOVES",
+    "passed": true,
+    "row_digest": "2fa5c7035904",
+    "statement": "each of the 46 falsifiers names the measured object its recipe must move, and the harness proves the move rather than trusting the description: it recomputes that object under the mutation and digests it before and after, so a recipe that leaves its target byte-identical dies here whatever colour its badge is; and a syntax scan of this file confirms that no mutant branch assigns a constant or appends one at any statement of it, that no branch is short-circuited by a constant in its own test, and that every declared falsifier HAS a live branch here -- the in-process badge certifies the instrument's own branch and not only the probe, while death at the named gate stays the CLI's proof"
+   },
+   {
+    "evidence": "gates 44, gates with a falsifier 42, gates waived 2, waiver forcings ['G-FALSIFIER-COVERAGE', 'G-FALSIFIER-MOVES']",
+    "gate": "G-FALSIFIER-COVERAGE",
+    "passed": true,
+    "row_digest": "7079f5a45152",
+    "statement": "every gate that fired in this run carries a falsifier or a waiver with a machine-checked forcing, and the denominator is taken after the fact and contains this gate itself, so the coverage count cannot exempt itself by being snapshotted early; the two waivers are forced on the content of the move proofs and on the liveness of that denominator, neither of which is a predicate that cannot be false"
+   }
+  ],
+  "the_denominator_is_the_live_ledger_and_this_gate_is_not_in_it_yet": true,
   "waivers": {
-   "G-FALSIFIER-COVERAGE": "the coverage gate counts itself inside its own denominator, so a falsifier for it would have to be a falsifier of the count that contains it; the forcing is that its own identifier is a member of the denominator it divides by, checked here",
-   "G-FALSIFIER-MOVES": "a falsifier of the move-proof gate would have to be proved to move by the very gate it falsifies; the forcing is that the gate demonstrably evaluated every declared falsifier, checked by requiring one move proof per declared row"
+   "G-FALSIFIER-COVERAGE": "the coverage gate counts itself inside its own denominator, so a falsifier for it would have to be a falsifier of the count that contains it; the forcing is that the denominator is the LIVE ledger at this moment and this gate is demonstrably not in it yet, which is what a denominator snapshotted early would fail",
+   "G-FALSIFIER-MOVES": "a falsifier of the move-proof gate would have to be proved to move by the very gate it falsifies; the forcing is the CONTENT of the move proofs -- every declared falsifier is required to have a proof whose clean and mutated digests differ and whose target is a published key -- rather than their number, which a harness that raises on failure cannot get wrong"
   }
  },
  "declared_unsealed": [
@@ -867,6 +1487,8 @@
  ],
  "direct_limit": {
   "comparisons": 400,
+  "comparisons_across_a_proper_inclusion": 320,
+  "comparisons_of_the_reference_size_with_itself": 80,
   "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
   "rows": [
    {
@@ -906,6 +1528,7 @@
    }
   ],
   "the_form": "A HOR-LAW IS A STATEMENT OF THE FORM: FOR EVERY FINITE OPEN PATCH P AND EVERY OBSERVABLE O WHOSE SUPPORT AND WHOSE DEPTH-CONE BOTH LIE INSIDE P, PHI(O) HOLDS.  NO SYMBOL IN A HOR-LAW DENOTES A SIZE, NO QUANTIFIER RANGES OVER A COMPLETED TOTALITY, AND EVERY INSTANCE IS A STATEMENT ABOUT ONE FINITE PATCH.  THE PATCHES FORM A DIRECTED SYSTEM UNDER INCLUSION AND THE INCLUSIONS CARRY VALUES UNCHANGED ON THE OBSERVABLES A HOR-LAW QUANTIFIES OVER; THAT PROPERTY IS WHAT THE UNIT MEASURES, AND IT IS NOT A CONVERGENCE, NOT A LIMIT AND NOT AN OBJECT.",
+  "the_reference_size": 5,
   "the_sizes_are_directed_under_inclusion": true,
   "this_is_not_a_limit_and_not_an_object": true,
   "values_an_inclusion_failed_to_carry": 0
@@ -1436,6 +2059,7 @@
   "window_sites": 25
  },
  "emergent_c": {
+  "attainment_depths": 8,
   "c_in_the_max_norm_per_tick_instantaneous": "1",
   "c_in_the_max_norm_per_tick_sustained": [
    "1/2"
@@ -1444,8 +2068,10 @@
   "c_in_the_sum_norm_per_tick_sustained": [
    "1"
   ],
+  "depths_at_which_the_dynamics_attains_it": 8,
   "depths_at_which_the_sum_norm_maximum_is_attained": 16,
   "depths_censused": 16,
+  "the_norm_the_gauge_parents_connective_tag_names": "MAX-NORM",
   "the_speed_is_a_maximum_not_a_bound": true,
   "the_unit": "SITES-PER-TICK-WHERE-A-TICK-IS-ONE-STRATUM-OPERATOR"
  },
@@ -1536,259 +2162,301 @@
   "winding_is_present_at_every_closed_size": true
  },
  "gate_digests": {
-  "G-ANCHOR-CONSUMPTION": "28657fe623f8",
+  "G-ANCHOR-CONSUMPTION": "2f6e00acda81",
   "G-ARENA-REBUILT": "4e41f1a2de13",
-  "G-C-IS-NOT-THE-GROUP-SPEED": "35039397d33e",
-  "G-CIRCULANTS-NEED-THE-CLOSURE": "22ea6e26e010",
-  "G-CLOSURE-CENSUS": "4a0445f4aaca",
-  "G-CONE-SATURATION": "2696825d16c7",
-  "G-CONE-SHAPE-IS-DECLARATION-RELATIVE": "9f6c9ec1376b",
-  "G-CONTROL-ARMS": "1aa3b9115ac0",
-  "G-DIRECT-LIMIT-FORM": "2c66652b50a1",
-  "G-EMERGENT-C": "9c8cb1fb9b0b",
-  "G-HOMOLOGY": "dddd63727c20",
-  "G-HORIZON-STABILITY-DYNAMIC": "75b2563165e9",
-  "G-LOOP-STABILITY-CONTRACTIBLE": "18effd8db22d",
-  "G-LOOP-THRESHOLD": "a7d272b82bc2",
-  "G-MERGING-ON-THE-PATCH": "60200476ead0",
-  "G-NO-TYPED-COUNTS": "b34a4766e906",
-  "G-ONE-TICK-REACH": "c41b26712a02",
-  "G-PAPER-CLAIMS": "945b93ced793",
-  "G-PATCH-GAUGE-GROUP": "e364b30c694d",
+  "G-C-IS-NOT-THE-GROUP-SPEED": "8cb6c19d8334",
+  "G-CIRCULANTS-NEED-THE-CLOSURE": "51a17bd45b72",
+  "G-CLOSURE-CENSUS": "f616e9456667",
+  "G-CONE-SATURATION": "286088029a28",
+  "G-CONE-SHAPE-IS-DECLARATION-RELATIVE": "455d8e6bbbef",
+  "G-CONTROL-ARMS": "779503c07154",
+  "G-DIRECT-LIMIT-FORM": "607d47052df5",
+  "G-EMERGENT-C": "c75d75bff757",
+  "G-HOMOLOGY": "9c7bc90cfd1a",
+  "G-HORIZON-STABILITY-DYNAMIC": "05b191b8f27e",
+  "G-LOOP-STABILITY-CONTRACTIBLE": "48df73e570fa",
+  "G-LOOP-THRESHOLD": "ce3c09ad41af",
+  "G-MERGING-ON-THE-PATCH": "da43d6e81d33",
+  "G-NO-TYPED-COUNTS": "42c650a35235",
+  "G-ONE-TICK-REACH": "7ff3e35b250c",
+  "G-PAPER-CLAIMS": "189666dc1cb9",
+  "G-PATCH-GAUGE-GROUP": "1002bbb9038b",
   "G-PATH-VALUES": "dcc729a25226",
-  "G-QUANTIFIABILITY": "9019f82ee8fb",
-  "G-READS-DECLARED": "8994b0c929b7",
-  "G-REFERENTS": "78ade77d827b",
-  "G-SEAL-TOTALITY": "99616a171f4a",
+  "G-QUANTIFIABILITY": "66f1cf2a6b30",
+  "G-READS-DECLARED": "74d2d0b8d685",
+  "G-REFERENTS": "0622513925a7",
+  "G-SEAL-TOTALITY": "ec8f1eac08f2",
   "G-SOURCES": "ea5aa189604c",
-  "G-TEMPLATE-CONFORMANCE": "03b6ba60bbd4",
-  "G-THE-CLOSED-FORM-SURVIVES": "deb56b50cab5",
-  "G-THE-CONE": "17922f9e93f9",
-  "G-THE-FAMILY-SPLIT": "5de930e7666c",
-  "G-THE-HORIZON-LAW": "12765a39e609",
-  "G-THE-OUTCOME": "1ca43d3c1b10",
-  "G-THE-SPLIT": "5fb261859b61",
-  "G-THE-STRATIFICATION": "d7d11c94b62f",
-  "G-THE-TICK-IS-BUILT": "d23ed58fff98",
-  "G-THE-TICK-IS-DECLARED": "d46ba052883a",
-  "G-TRANSCRIPT-BOUND": "c192c6f674b0",
-  "G-VERDICT-EQUALITY": "bc4e1516ca0d",
-  "G-WALL-NO-ACTUAL-INFINITY": "32d9cbbbb74d",
-  "G-WALL-NO-CONTINUUM": "a77360fe3613",
-  "G-WALL-SPEED-LICENCE": "6d85fac6ebc9",
-  "G-WINDING-IS-TORUS-DECLARED": "20c7395522e4",
-  "G-ZERO-PATTERN-THEOREM": "31a848bb45f7"
+  "G-TEMPLATE-CONFORMANCE": "9e85d5a7bfbc",
+  "G-THE-CLOSED-FORM-SURVIVES": "76df3d0d3ddf",
+  "G-THE-CONE": "b3b75197654a",
+  "G-THE-FAMILY-SPLIT": "179b1d7dd619",
+  "G-THE-HORIZON-LAW": "00154f6d02a3",
+  "G-THE-OUTCOME": "68e2a6895aca",
+  "G-THE-SPLIT": "cfc04fd92d8a",
+  "G-THE-STRATIFICATION": "c53f98695308",
+  "G-THE-TICK-IS-BUILT": "471493de991e",
+  "G-THE-TICK-IS-DECLARED": "d29b3d033980",
+  "G-TRANSCRIPT-BOUND": "aab60558504b",
+  "G-VERDICT-EQUALITY": "e87bb3828314",
+  "G-WALL-NO-ACTUAL-INFINITY": "d4cf515eba7d",
+  "G-WALL-NO-CONTINUUM": "b72d3f0b7e6d",
+  "G-WALL-SPEED-LICENCE": "6e416af2d7fe",
+  "G-WINDING-IS-TORUS-DECLARED": "b502b82f0857",
+  "G-ZERO-PATTERN-THEOREM": "2c10254435c3"
  },
  "gates": [
   {
    "evidence": "sources 15, all at their declared digests",
    "gate": "G-SOURCES",
-   "passed": true
+   "passed": true,
+   "statement": "every runtime input is a hash-pinned repository artifact read at its declared digest: the pin, the era template and its reference implementation, and the seven parent papers and three parent receipts this unit rebuilds from -- no ledger, no status board, no other unit's working file, no subprocess and no moving reference of any kind"
   },
   {
    "evidence": "path-value anchors 30, off their anchored value 0",
    "gate": "G-PATH-VALUES",
-   "passed": true
+   "passed": true,
+   "statement": "every inherited number this unit uses is anchored as a (path, value) pair in a parent's own receipt, so a path that drifts to a different quantity dies here rather than arriving as a silent re-definition"
   },
   {
    "evidence": "alphabet 25, rows 80, coins 640 (ANTIDIAGONAL 64, BALANCED 512, DIAGONAL 64), unitary by a second route 640, sites 16, links 32, plaquettes 16, domino dimension 2",
    "gate": "G-ARENA-REBUILT",
-   "passed": true
+   "passed": true,
+   "statement": "the alphabet, the coin family, the torus at the parent's own size, its link set and its plaquette set are REBUILT here from the parents' declarations -- nothing is imported -- every cardinality is required to equal the parent's published one at a named receipt path, unitarity is confirmed by a second route on every coin, and the dimension of the block the link operator acts on is read out of R5's own sentence rather than assumed: it is 2"
   },
   {
-   "evidence": "patterns 3 over 640 coins: 0110->64, 1001->64, 1111->512",
+   "evidence": "patterns 3 over 640 coins: -ZZ-->64, Z--Z->64, ZZZZ->512",
    "gate": "G-ZERO-PATTERN-THEOREM",
-   "passed": true
+   "passed": true,
+   "statement": "unitarity forces the vanishing pattern of a coin: the diagonal entries vanish together and the off-diagonal entries vanish together, so exactly 3 patterns occur over the whole coin family and each coin is checked against the theorem on its own four entries rather than counted into a tally"
   },
   {
    "evidence": "rows 13, patch failures 0, odd tori failing 3 of 3, R5's own stratum size 8",
    "gate": "G-THE-STRATIFICATION",
-   "passed": true
+   "passed": true,
+   "statement": "R5's 4 parity strata are rebuilt on both closures at every affordable size, and the property that makes a stratum operator well defined without an order -- that the stratum is a MATCHING -- is measured rather than assumed: it holds at all 7 patch sizes, at every even torus, and at none of the 3 odd tori; and the number R5's own sentence carries for a stratum at its own size, 8, is required to be this run's measured stratum size there"
   },
   {
    "evidence": "columns 320, coins 5, non-unitary 0, identity failures 0, disjoint True",
    "gate": "G-THE-TICK-IS-BUILT",
-   "passed": true
+   "passed": true,
+   "statement": "the object R5 names and never constructs -- the stratum operator -- is BUILT here and shown to be a tick: its factors are disjoint because the stratum is a matching, so no order is chosen; it is the identity on every site its own class does not touch; and it is unitary on the single-occupation sector, checked column against column over 320 columns at 5 coins taken by a declared stride through the family"
   },
   {
    "evidence": "R5's own no-dynamics clause located and read: True; the tick is declared as ONE-APPLICATION-OF-ONE-PARITY-STRATUM-OPERATOR",
    "gate": "G-THE-TICK-IS-DECLARED",
-   "passed": true
+   "passed": true,
+   "statement": "the parent's seal is read here and carried forward rather than contradicted: R5 declares no dynamics for the link variables, so the GENERATORS below are inherited and the TICK is this unit's own declaration; every speed this unit publishes is a speed per that tick and is stamped so wherever it appears"
   },
   {
-   "evidence": "coins 640: reach 0 at 64, reach 1 at 576, reach above 1 at 0",
+   "evidence": "coins 640: reach of zero sites at 64, of one site at 576, of more than one site at 0",
    "gate": "G-ONE-TICK-REACH",
-   "passed": true
+   "passed": true,
+   "statement": "the reach of one tick is measured on every coin of the carrier separately, never sampled and never tallied into a predicate: it is zero at 64 coins -- the diagonal sector, where the state cannot move at all -- and exactly one site at 576, and it exceeds one at 0"
   },
   {
    "evidence": "depths 16, sum-radius equals the depth True, product shape True, escapes 0, radius attained by at least 576 coins at every attainment depth, depths not filled site for site 2, sizes 2,4,8,16,24,32,48,64,80,96,120,144,168,192,224,256",
    "gate": "G-THE-CONE",
-   "passed": true
+   "passed": true,
+   "statement": "the cone is censused to depth 16 by a route that touches no amplitude at all, and every amplitude support this run evolves is tested against it: it escapes at 0, which is the causal statement; its sum-norm radius equals the tick number at every depth, it is a product of an x-range and a y-range at every depth, it never exceeds the one-neighbourhood-per-step ceiling the parent's own sentence carries; and its RADIUS is attained by the dynamics rather than only by the partner relation -- at every one of the 8 attainment depths at least 576 coins of the carrier evolve a support whose own sum-norm radius is the cone's, while at 2 of those depths no coin fills the cone site for site, because amplitudes cancel on exact interior lines"
   },
   {
-   "evidence": "c_sum 1 attained at 16 of 16 depths, c_max 1, sustained max-norm ['1/2'], sustained sum-norm ['1']",
+   "evidence": "c_sum 1 attained structurally at 16 of 16 depths and dynamically at 8 of 8, c_max 1, sustained max-norm ['1/2'], sustained sum-norm ['1'], the parent's connective tag MAX-NORM",
    "gate": "G-EMERGENT-C",
-   "passed": true
+   "passed": true,
+   "statement": "the emergent speed is DERIVED from the cone census and never typed: in the sum norm it is 1 site per tick, attained by the STRUCTURAL cone at every one of the 16 censused depths and by the DYNAMICS at every one of the 8 depths of the attainment sweep, so it is a maximum and not a bound at both depths and neither of them is a ceiling; in the max norm the instantaneous value is 1 and the value sustained over whole sweeps is 1/2, one value at every sweep, and the norm the gauge parent's own connective tag names is one this census carries"
   },
   {
    "evidence": "asymmetric depths 16, reflected under reversal 16 of 16, radii that moved 0",
    "gate": "G-CONE-SHAPE-IS-DECLARATION-RELATIVE",
-   "passed": true
+   "passed": true,
+   "statement": "the cone's SHAPE carries a declaration and its SPEED does not, and the instrument is self-tested under the declaration's own action: the x-range is asymmetric at 16 depths, reversing the parity order inside the schedule reflects it at 16 depths, and no radius in either norm moves under that reversal"
   },
   {
    "evidence": "torus rows 6 all saturating True all becoming visible True, patch rows 7, the parent's wrap clause read True",
    "gate": "G-CONE-SATURATION",
-   "passed": true
+   "passed": true,
+   "statement": "every one of the 6 closed sizes saturates its own cone at a measured depth and every one of them makes its closure visible in the cone at a measured depth, which is why a cone censused on a closed arena stops saying anything past that depth; the parent named the mechanism in its own sentence and this run reads it"
   },
   {
-   "evidence": "the parent's own clause read True; the two objects live in THE-DUAL-TORUS and THE-SITE-SET; closure needed True and False",
+   "evidence": "closed: bijective axes 9, symmetries 16; open: bijective axes 0, symmetries 1; rows ['T-4:16', 'P-9:1', 'T-8:64']",
+   "gate": "G-CIRCULANTS-NEED-THE-CLOSURE",
+   "passed": true,
+   "statement": "the parent's translation-covariant generator family is measured on both closures: every one of its 9 declared axes shifts the closed arena onto itself and none of them shifts the open one onto itself, and the number of translations that carry the open arena's link set to itself is 1 -- the identity and nothing else -- so a family defined by covariance under them is empty there rather than merely smaller"
+  },
+  {
+   "evidence": "the parent's own clause read True; the two objects live in THE-DUAL-TORUS and THE-SITE-SET; bijective declared axes closed 9 against open 0, translations carrying the link set to itself closed 16 against open 1; closure needed True and False",
    "gate": "G-C-IS-NOT-THE-GROUP-SPEED",
-   "passed": true
+   "passed": true,
+   "statement": "the speed this unit measures is not the speed the parent measured, and the separation is gated on a measurement rather than on a declaration: the parent's object is a phase advance on the dual torus, and whether it needs the closure is DECIDED here by the circulant census -- the declared axes that are bijections and the translations that carry the link set to itself, counted on each closure -- while its own sentence says it is not a light-cone velocity; this unit's object is the reach of the support, which is defined on an arena with no closure at all, and nothing here re-runs, revises or contradicts the parent's number"
   },
   {
-   "evidence": "patch rows 6 with winding 0 everywhere True, torus rows 3 with winding present everywhere True, the parent's split numbers [144, 48]",
+   "evidence": "patch rows 6 with the winding part empty everywhere True, torus rows 3 with winding present everywhere True, the parent's split numbers [144, 48], its placements 192 against its two parts summed 192, its own shape count 9 against this run's at that size 9",
    "gate": "G-THE-FAMILY-SPLIT",
-   "passed": true
+   "passed": true,
+   "statement": "the parent's family is rebuilt on both closures: at all 6 open sizes the winding part is EMPTY -- not small, absent -- while the contractible part is populated at every size, and at all 3 closed sizes the winding part is populated; the two numbers the parent's own split sentence carries are required to be the two this run reads from its receipt, its published placement total to be those two parts summed, and its published shape count at its own size to be the count this run measures there"
   },
   {
-   "evidence": "patch classes 1 (0 nonzero of 586 walks), torus classes 13 (3420 nonzero of 8320 walks)",
+   "evidence": "patch classes 1 (0 nonzero of 586 walks), torus classes 13 (3420 nonzero of 8320 walks), rows ['T-4:13', 'P-4:1', 'T-8:5', 'P-9:1']",
    "gate": "G-HOMOLOGY",
-   "passed": true
+   "passed": true,
+   "statement": "every closed walk of length 8 from a fixed base is enumerated on both closures and classified by its net displacement: the open patch returns 1 class and no walk with a nonzero one, the closed torus returns 13, so the winding numbers a loop observable can carry are a property of the identification and of nothing else -- and the same enumeration is run again at the arena pair the closure census declares, so that row of the census compares this law at the sizes every other row of it uses"
   },
   {
-   "evidence": "core comparisons 10240 mismatches 0; ladder comparisons 650 mismatches 0; shapes 16; the parent's numbers [640, 640]",
+   "evidence": "core comparisons 10240 mismatches 0; ladder comparisons 650 mismatches 0; shapes 16; the parent's numbers [640, 640]; the coins its receipt carries at its boundary size 640",
    "gate": "G-LOOP-STABILITY-CONTRACTIBLE",
-   "passed": true
+   "passed": true,
+   "statement": "the contractible observable is measured on both closures at every affordable size: 10240 shape-by-coin comparisons at the core pair over the WHOLE coin family, and 650 more over the whole declared ladder at 5 coins taken by a declared stride, with the parent's own identical-coefficients sentence read here and its two numbers required to be this run's coin count, and the coin count its own receipt publishes at its boundary size required to be that count too"
   },
   {
-   "evidence": "rows 13, sizes binding the identity 4, all satisfying it True",
+   "evidence": "rows 13, sizes binding the identity 6 all satisfying it True, sizes the cap decides 7",
    "gate": "G-LOOP-THRESHOLD",
-   "passed": true
+   "passed": true,
+   "statement": "the horizon a contractible observable needs is MEASURED at every one of the 13 sizes of both ladders, and the identity is stated only where it can be tested: at the 6 sizes whose declared shape family contains an extent of the size less one, the largest extent that stays simple IS the size less one on both closures; at the remaining 7 it is this unit's own declared cap, which is a fact about the declaration and not about the arena"
   },
   {
    "evidence": "absent at every open size True; moves at 8 of 10 closed size-by-coin comparisons",
    "gate": "G-WINDING-IS-TORUS-DECLARED",
-   "passed": true
+   "passed": true,
+   "statement": "the winding side is measured on both sides rather than asserted on one: the straight winding cycle does not exist at any open size, and across adjacent closed sizes its observable moves at 8 of 10 size-by-coin comparisons, so a winding quantity is a quantity of the declaration and not of the physics inside any horizon"
   },
   {
    "evidence": "rows 64, sufficiency violations 0, conservative margin 4, unmoved 54, moved 10, coins 5, window 25",
    "gate": "G-HORIZON-STABILITY-DYNAMIC",
-   "passed": true
+   "passed": true,
+   "statement": "the dynamical observable is measured at 64 arena-by-depth rows on both closures, and the horizon condition is PREDICTED from the cone before any value is read: containing the source's cone is SUFFICIENT for the window to be arena-independent and is violated at 0 rows, it is not necessary and the measured slack is 4 rows, and the value is unmoved at 54 rows and moves at 10, so the tester is neither blind nor unanimous"
   },
   {
    "evidence": "depths 8, all with a hiding size True, monotone True",
    "gate": "G-THE-HORIZON-LAW",
-   "passed": true
+   "passed": true,
+   "statement": "at every one of the 8 censused depths there is a size on the open ladder at which the arena's edge is invisible to an observable of that depth, and the least such size does not decrease as the depth grows -- which is the whole content of a formulation that never declares a size"
   },
   {
    "evidence": "arms 5, moved 4, unmoved 1, wrong []",
    "gate": "G-CONTROL-ARMS",
-   "passed": true
+   "passed": true,
+   "statement": "all 5 arms are pushed through the SAME stability tester, which is told nothing about which arm it is running: it reports MOVED at 4 of them and UNMOVED at 1, and every arm lands on the side declared for it before the run"
   },
   {
-   "evidence": "open sizes realising every twist True, closed sizes matching the parent's law True, the parent's clause read True, at the declared size orbits 208 classes 136 merged 72",
+   "evidence": "open sizes realising every twist True, closed sizes matching the parent's law True, the parent's clause read True, at the declared size orbits 208 classes 136 merged 72, at the parent's boundary size orbits 136 merged 0, the stencil's gauge image 8",
    "gate": "G-PATCH-GAUGE-GROUP",
-   "passed": true
+   "passed": true,
+   "statement": "the constant twists an arena realises are MEASURED by propagation over its own links, not read off a formula: the open patch realises all 8 of them at every one of its 7 sizes, so its merging index is one and no orbit pair is identified there; on the closed sizes the measured index is the parent's own law at every one, and at the parent's declared size this run recovers its published orbit count, its published class count and its published number of merged pairs, while at the size the potential parent ran its own boundary lattice at it recovers that receipt's orbit count and its zero merged pairs, and the twist parent's published gauge image of the link stencil is required to be the phase order this run derives from the field"
   },
   {
    "evidence": "open sizes at the divisible index True, the first sentence's number [1], the second's [0, 8, 72]",
    "gate": "G-MERGING-ON-THE-PATCH",
-   "passed": true
-  },
-  {
-   "evidence": "closed: bijective axes 9, symmetries 16; open: bijective axes 0, symmetries 1",
-   "gate": "G-CIRCULANTS-NEED-THE-CLOSURE",
-   "passed": true
+   "passed": true,
+   "statement": "the two parents' sentences are read here and their numbers used as predicates rather than as decoration: the index the first sentence gives for a size the phase order divides is 1, and that is exactly the index this run measures at every open size; the number of pairs the second sentence says merge at the declared closed size is 72, and the number that merge at every open size is the other number that sentence carries"
   },
   {
    "evidence": "shapes 16, open checks 10240 failures 0, closed checks 10240 failures 0, area comparisons 5120 disagreements 0, the ladder variable is the parent's True, per-arena residuals [0, 0]",
    "gate": "G-THE-CLOSED-FORM-SURVIVES",
-   "passed": true
+   "passed": true,
+   "statement": "the parent's closed form is re-measured on an arena with no identification anywhere: its three constants are fitted at the three shortest perimeters and then the form is CHECKED at 10240 coin-by-shape rows, failing at 0; and the parent's area-blindness is re-measured as 5120 equal-perimeter different-area comparisons with 0 disagreements; and the ladder variable is the parent's own, gated by requiring this run's ladder to be an initial segment of the ladder the parent's receipt publishes"
   },
   {
-   "evidence": "rows 18: verbatim 9, scoped 1, artifact 8, reclassifications 0",
+   "evidence": "rows 18: verbatim 11 (measured 5, structural 6), scoped 1, artifact 6, reclassifications 0, arena pairs ['P-9 / T-8', 'the whole ladder'], structural labels the sweep moves 0, measured witnesses it moves 9, surviving rows with no sweep 0, the parent's index law True, its index measured here True, at the closed witness True",
    "gate": "G-CLOSURE-CENSUS",
-   "passed": true
+   "passed": true,
+   "statement": "every one of the 18 sealed laws this unit uses is put through ONE classifier at ONE declared arena pair, which every row prints: 11 survive the flush verbatim, 1 survives with a stated proviso, and 6 differ across that pair.  Of the survivors 5 carry a witness drawn from each arena's own objects and 6 carry one no arena can move -- a defect count the construction forbids, or a quantity computed with no arena argument -- and the labels are not taken on trust: every witness is measured again at each of the 9 swept sizes, a structural label the sweep moves stops the run, and the twist parent's own index at its own sizes is required to be the index this run's law returns and this run's measurement finds there"
   },
   {
-   "evidence": "sizes 5, comparisons 400, values not carried 0, directed True, the parent's no-topology clause read True",
+   "evidence": "sizes 5, comparisons 400 (reference against itself 80, proper inclusions 320), values not carried 0, directed True, the parent's no-topology clause read True",
    "gate": "G-DIRECT-LIMIT-FORM",
-   "passed": true
+   "passed": true,
+   "statement": "the undetermined-size statement is written out and then measured where it can be: over 5 open sizes the inclusions carry 400 shape-by-coin values and fail to carry 0 of them, and the basis is disclosed rather than summed over -- 80 of those comparisons are the reference size against itself and 320 cross a proper inclusion; the sizes are directed under inclusion; the parent's own sentence barring a claim about a limit of a family in any topology is read here, and nothing in this statement is a limit, a convergence or an object"
   },
   {
-   "evidence": "rows 18, quantifiable 10, exceptions 8 all named True, rows disagreeing with the census 0: ['LAW-LINK-COUNT', 'LAW-PLAQUETTE-COUNT', 'LAW-WINDING-FAMILY', 'LAW-HOMOLOGY', 'LAW-MERGING-INDEX', 'LAW-PARENT-ORBITS', 'LAW-TRANSLATION-COVARIANCE', 'LAW-DUAL-TORUS']",
+   "evidence": "rows 18, horizon-statable 12, exceptions 6 all named True, rows where the witnesses and the verdict word disagree 0: ['LAW-LINK-COUNT', 'LAW-PLAQUETTE-COUNT', 'LAW-WINDING-FAMILY', 'LAW-HOMOLOGY', 'LAW-TRANSLATION-COVARIANCE', 'LAW-DUAL-TORUS']",
    "gate": "G-QUANTIFIABILITY",
-   "passed": true
+   "passed": true,
+   "statement": "the gate the pin asks for is run on every law of the census, and the class word is the test: 12 of them are HORIZON-STATABLE BY THE CLOSURE-WITNESS TEST -- the law's witness on the open arena is its witness on the closed one, or differs from it with a stated proviso -- and 6 are not, and every one of those is required to carry the name of the object it needs, so the formulation ships with its exceptions listed rather than with its exceptions hidden; the sort is recomputed here from the two witnesses themselves rather than from the classifier's word, so the two routes must agree row by row"
   },
   {
    "evidence": "the pin's own split sentence read True; contractible stable True; winding declaration-bound True; the split is AS-PRE-REGISTERED",
    "gate": "G-THE-SPLIT",
-   "passed": true
+   "passed": true,
+   "statement": "the pin's pre-registered split is decided by a rule frozen before the values were looked at, and both sides are required to be measured rather than one side asserted: the contractible side counts every mismatch of the static sweep, every mismatch of the ladder sweep and every disagreement between the predicted and the measured horizon on the dynamical side, and the winding side requires both absence on every open size and motion across closed ones"
   },
   {
-   "evidence": "outcome HOR-UNDETERMINED-R-NATIVE; branches published 4; global-sensitivity offenders 0; the blocked counter re-derived inside the gate agrees True",
+   "evidence": "outcome HOR-UNDETERMINED-R-NATIVE; branches published 4; global-sensitivity offenders 0; the blocked counter re-derived inside the gate agrees True; the control emits HOR-GLOBAL-SENSITIVE-AT-CONTROL-A-LOCAL-LAW-THE-FAR-LATTICE-SETS and the null control does not True",
    "gate": "G-THE-OUTCOME",
-   "passed": true
+   "passed": true,
+   "statement": "the outcome word is derived from measured counters by the pin's own four-way rule, and each of the four branches is published with the counter that would reach it; the one branch whose counter is empty here is shown REACHABLE rather than argued to be, by putting a synthetic row built out of this run's own measured ladders through the same classifier, the same offender condition and the same four-way rule and requiring the globally-sensitive word to come out, while a second control differing only in a ladder no arena moves is required not to produce it"
   },
   {
    "evidence": "template families 9, implemented 9, equal True, the caveat read True",
    "gate": "G-TEMPLATE-CONFORMANCE",
-   "passed": true
+   "passed": true,
+   "statement": "the 9 family check identifiers this unit implements are parsed out of the pinned reference implementation's own family table and required to be exactly the identifiers this instrument's classes carry, so adoption is a measurement rather than a claim; and the template's own caveat -- that adopting a mechanism is not evidence the mechanism has teeth on this object -- is read here and stands over every green row below"
   },
   {
    "evidence": "typed-numeral offenders 0, float literals 0, banned calls []",
    "gate": "G-NO-TYPED-COUNTS",
-   "passed": true
+   "passed": true,
+   "statement": "every numeral of every published statement, claim template and head segment arrives by name from a registry of 83 measured values, the prohibition is checked on the SOURCE rather than on the output by walking this instrument's own syntax tree, and the walk reaches the whole ARGUMENT EXPRESSION of every published statement rather than its top-level strings alone -- so a numeral typed into a %-formatted evidence string, and an integer offset added to or taken from a measured count, are both offences here; and the same scan confirms that no floating-point literal, no logarithm, no exponential, no square root and no power operator occurs anywhere in this file"
   },
   {
-   "evidence": "head length 1739, rebuilt length 1739, equal True",
+   "evidence": "head length 1967, rebuilt length 1967, equal True",
    "gate": "G-VERDICT-EQUALITY",
-   "passed": true
+   "passed": true,
+   "statement": "the complete verdict string is compared for equality against an independent reconstruction that reads only the receipt's primitive row lists and measured leaves, recomputes the head's counts from those rows by its own aggregations -- four of them it reads from the measured leaves rather than re-aggregating -- re-derives the outcome word from a second copy of the four-way rule, and renders every segment with its own format strings, sharing with the builder no function of this instrument, no aggregate, no format string and no numeric literal, and one constant, the separator the two renderings are joined with"
   },
   {
-   "evidence": "WALL-NO-ACTUAL-INFINITY: banned patterns 13, standing sentences 2, declaring sentences carried 4 of 4, the parent's own prohibition carried True",
+   "evidence": "WALL-NO-ACTUAL-INFINITY: banned patterns 21, standing sentences 2, sentences policed 0, declaring sentences carried 4 of 4, the parent's own prohibition carried True",
    "gate": "G-WALL-NO-ACTUAL-INFINITY",
-   "passed": true
+   "passed": true,
+   "statement": "the wall is a set of voice-normalised patterns run over the whole canonicalised paper with the declaring sentences and the pinned quotations removed first, so the legs read this paper's own voice; with a POSITIVE leg that must be found in that voice with the quotations still stripped, so no parent's sentence can discharge it; with a refusal on empty text; and -- where the wall licenses a vocabulary -- a requirement that every sentence of the prose using it, hyphens folded, carry a claim this run rendered from its own measurements, with the number of sentences policed published rather than assumed"
   },
   {
-   "evidence": "WALL-NO-CONTINUUM: banned patterns 12, standing sentences 1, declaring sentences carried 4 of 4, the parent's own prohibition carried True",
+   "evidence": "WALL-NO-CONTINUUM: banned patterns 18, standing sentences 1, sentences policed 0, declaring sentences carried 4 of 4, the parent's own prohibition carried True",
    "gate": "G-WALL-NO-CONTINUUM",
-   "passed": true
+   "passed": true,
+   "statement": "the wall is a set of voice-normalised patterns run over the whole canonicalised paper with the declaring sentences and the pinned quotations removed first, so the legs read this paper's own voice; with a POSITIVE leg that must be found in that voice with the quotations still stripped, so no parent's sentence can discharge it; with a refusal on empty text; and -- where the wall licenses a vocabulary -- a requirement that every sentence of the prose using it, hyphens folded, carry a claim this run rendered from its own measurements, with the number of sentences policed published rather than assumed"
   },
   {
-   "evidence": "WALL-EVERY-SPEED-CARRIES-ITS-MEASUREMENT: banned patterns 1, standing sentences 1, declaring sentences carried 4 of 4, the parent's own prohibition carried True",
+   "evidence": "WALL-EVERY-SPEED-CARRIES-ITS-MEASUREMENT: banned patterns 1, standing sentences 1, sentences policed 4, declaring sentences carried 4 of 4, the parent's own prohibition carried True",
    "gate": "G-WALL-SPEED-LICENCE",
-   "passed": true
+   "passed": true,
+   "statement": "the wall is a set of voice-normalised patterns run over the whole canonicalised paper with the declaring sentences and the pinned quotations removed first, so the legs read this paper's own voice; with a POSITIVE leg that must be found in that voice with the quotations still stripped, so no parent's sentence can discharge it; with a refusal on empty text; and -- where the wall licenses a vocabulary -- a requirement that every sentence of the prose using it, hyphens folded, carry a claim this run rendered from its own measurements, with the number of sentences policed published rather than assumed"
   },
   {
-   "evidence": "occurrences checked 42 over 4 declared universes",
+   "evidence": "occurrences checked 69 over 4 declared universes, of which 7 carry no universe noun and are resolved against the union, exemptions carried by name 2",
    "gate": "G-REFERENTS",
-   "passed": true
+   "passed": true,
+   "statement": "every numeral of the paper's PROSE -- fenced blocks stripped, so this run's own verdict cannot discharge the paper's obligations -- and its rendered table rows stripped, which the claims gate binds by equality in both directions -- is resolved against the universe of the noun it is PREDICATED OF, found as the nearest declared noun after it or, where its sentence puts none after it, the nearest before, with every noun matched exactly at both ends rather than by prefix -- so a false number riding an earlier universe's noun into this gate is resolved against the thing it is a count of and not against whichever universe the sentence happens to mention first; a sentence carrying no declared noun at all is resolved against the union of every universe this run declares, so that no prose numeral sits outside all of them; the only numerals exempted are exempted BY NAME with a reason, being identifiers of this unit rather than measurements of it; and every fraction the prose states must be a pair this run actually measured rather than two members of one set"
   },
   {
-   "evidence": "table rows 98, prose claim occurrences 18 over 18 distinct claims, fenced blocks 1",
+   "evidence": "table rows 98, prose claim occurrences 20 over 20 distinct claims, fenced blocks 1",
    "gate": "G-PAPER-CLAIMS",
-   "passed": true
+   "passed": true,
+   "statement": "every table, every prose claim and every fenced block of the delivered paper is bound by EQUALITY in both directions and keyed by the table it was rendered into, headers included, at exact occurrence counts, and the paper's own table set is required to be exhausted by the rendered set, so a transplanted row, a duplicated claim, an extra fence and a deleted fence all die here"
   },
   {
-   "evidence": "anchors 18, consumed by their named gate 18",
+   "evidence": "anchors 18, consumed by their named gate 18; path-value anchors 30, consumed inside a gate 28, declared value-only 2, neither 0",
    "gate": "G-ANCHOR-CONSUMPTION",
-   "passed": true
+   "passed": true,
+   "statement": "every verbatim window is located exactly once in the pinned source it is quoted from AND in this paper's own rendering, is above the declared length floor, is readable only through one accessor that records who read it, and is required to have been read by the very gate its own row names -- so a window no gate consumed stops the run; and the (path, value) family is held to the same standard by a scan of this instrument's own syntax tree: each of those anchors is either subscripted inside a function that fires a gate, with those gates published beside it, or is DECLARED value-only here with the reason it cannot be a predicate, so that no inherited number is carried as decoration without saying so"
   },
   {
-   "evidence": "published keys 58, sealed 49, declared unsealed 8, undeclared 0",
+   "evidence": "published keys 56, sealed 47, declared unsealed 8, undeclared 0",
    "gate": "G-SEAL-TOTALITY",
-   "passed": true
+   "passed": true,
+   "statement": "every published receipt key is either digested at the moment the gate that vouches its values passed, or named in the manifest with the reason it cannot be, and the partition is RECOMPUTED here from the payload's live key set rather than read off a snapshot taken earlier, and again at the door before anything is written; the two cardinalities this receipt states about ITSELF are computed from that live key set and from the declared list of keys that arrive after this block -- no offset is typed over them -- and both are checked against the object actually written before it is written, so a receipt that mis-states its own size by one is not promoted"
   },
   {
    "evidence": "reads 17 over 17 distinct paths, declared 17",
    "gate": "G-READS-DECLARED",
-   "passed": true
+   "passed": true,
+   "statement": "every read of a repository file this process performed is recorded at the accessor itself by an audit hook rather than inside a helper, and the multiset of relative paths is compared with the declaration at the LAST measurement gate rather than the first, with exemptions declared, carried and required to be used"
   },
   {
-   "evidence": "ledger rows 42, transcript gate lines 42, chain head a44c971812e03dce",
+   "evidence": "ledger rows 41, transcript gate lines 41, chain head ae41c4fe3b2ae325",
    "gate": "G-TRANSCRIPT-BOUND",
-   "passed": true
+   "passed": true,
+   "statement": "every gate line of the transcript is parsed back out of the text that will be promoted and reconciled with the ledger as a multiset -- gate, verdict word and evidence string together, in both directions -- the row count is reconciled with the gates fired, each of the two numbers being taken from its own object; the render this gate binds is digested under its own name, and the rows that fire after this one are DECLARED here by name and reconciled again, as a multiset and in order, against the promoted bytes before anything is moved into place"
   }
  ],
  "homology": {
@@ -1804,6 +2472,20 @@
    {
     "arena": "P-4",
     "closed_walks_of_the_declared_depth": 586,
+    "closure": "OPEN-PATCH",
+    "displacement_classes": 1,
+    "walks_with_nonzero_displacement": 0
+   },
+   {
+    "arena": "T-8",
+    "closed_walks_of_the_declared_depth": 4904,
+    "closure": "TORUS",
+    "displacement_classes": 5,
+    "walks_with_nonzero_displacement": 4
+   },
+   {
+    "arena": "P-9",
+    "closed_walks_of_the_declared_depth": 588,
     "closure": "OPEN-PATCH",
     "displacement_classes": 1,
     "walks_with_nonzero_displacement": 0
@@ -1859,8 +2541,8 @@
   "the_least_hiding_size_is_monotone": true
  },
  "ledger_shape": {
-  "head": "48881be707a070ac",
-  "recomputed": "48881be707a070ac",
+  "head": "5d67992445dde0f1",
+  "recomputed": "5d67992445dde0f1",
   "rows": 42
  },
  "loop_stability": {
@@ -2067,7 +2749,9 @@
     "shapes_that_fit": 16,
     "threshold_is_n_minus_one": false
    }
-  ]
+  ],
+  "sizes_where_the_declared_cap_decides": 7,
+  "sizes_where_the_identity_can_be_tested": 6
  },
  "merging_on_the_patch": {
   "closed_sizes_the_phase_order_divides": 1,
@@ -2078,8 +2762,9 @@
   "the_merged_pairs_the_second_parents_sentence_carries": 72
  },
  "mutants": {
-  "count": 43,
+  "count": 46,
   "death_at_the_named_gate_is_verified_by": "THE---MUTANT-NAME-RUNS-WHICH-EXIT-1-AT-THAT-GATE-WRITING-NOTHING",
+  "every_declared_falsifier_has_a_live_branch_in_this_source": true,
   "move_proofs": [
    {
     "clean_digest": "340d59f98212",
@@ -2138,27 +2823,27 @@
     "target": "one_tick_reach"
    },
    {
-    "clean_digest": "a57a25e2e448",
+    "clean_digest": "b6c7d13ebf72",
     "gate": "G-THE-CONE",
     "moved": true,
     "mutant": "MUT-CONE",
-    "mutated_digest": "df9948d5dcde",
+    "mutated_digest": "b61b73f8a20f",
     "target": "the_cone"
    },
    {
-    "clean_digest": "a57a25e2e448",
+    "clean_digest": "b6c7d13ebf72",
     "gate": "G-THE-CONE",
     "moved": true,
     "mutant": "MUT-CONE-ESCAPE",
-    "mutated_digest": "fc99ade74c1e",
+    "mutated_digest": "674b7a13d236",
     "target": "the_cone"
    },
    {
-    "clean_digest": "f3221785556e",
+    "clean_digest": "e03b441d62c4",
     "gate": "G-EMERGENT-C",
     "moved": true,
     "mutant": "MUT-C",
-    "mutated_digest": "73c08f29a931",
+    "mutated_digest": "01905a35e42f",
     "target": "emergent_c"
    },
    {
@@ -2178,11 +2863,11 @@
     "target": "cone_saturation"
    },
    {
-    "clean_digest": "da7471aafd47",
+    "clean_digest": "891dcb30c282",
     "gate": "G-C-IS-NOT-THE-GROUP-SPEED",
     "moved": true,
     "mutant": "MUT-GROUPSPEED",
-    "mutated_digest": "f8091c0becf0",
+    "mutated_digest": "31585012a86e",
     "target": "c_against_the_group_speed"
    },
    {
@@ -2194,11 +2879,11 @@
     "target": "family_split"
    },
    {
-    "clean_digest": "585da38652f6",
+    "clean_digest": "0c3050d8fe98",
     "gate": "G-HOMOLOGY",
     "moved": true,
     "mutant": "MUT-HOMOLOGY",
-    "mutated_digest": "39c993f9dbb6",
+    "mutated_digest": "efb4a64dc020",
     "target": "homology"
    },
    {
@@ -2210,11 +2895,11 @@
     "target": "loop_stability"
    },
    {
-    "clean_digest": "2672518a6198",
+    "clean_digest": "cfd4729d21b8",
     "gate": "G-LOOP-THRESHOLD",
     "moved": true,
     "mutant": "MUT-THRESHOLD",
-    "mutated_digest": "c99acaa3b7e5",
+    "mutated_digest": "be0400b647e2",
     "target": "loop_threshold"
    },
    {
@@ -2242,11 +2927,11 @@
     "target": "horizon_law"
    },
    {
-    "clean_digest": "ae1df1243160",
+    "clean_digest": "a72eff195875",
     "gate": "G-CONTROL-ARMS",
     "moved": true,
     "mutant": "MUT-CONTROL-ARM",
-    "mutated_digest": "c5c22de3a3fc",
+    "mutated_digest": "3f8a6ca76719",
     "target": "control_arms"
    },
    {
@@ -2266,11 +2951,11 @@
     "target": "merging_on_the_patch"
    },
    {
-    "clean_digest": "5a6d2a7c4b05",
+    "clean_digest": "a7e517638c9d",
     "gate": "G-CIRCULANTS-NEED-THE-CLOSURE",
     "moved": true,
     "mutant": "MUT-CIRCULANTS",
-    "mutated_digest": "cd83bbabcdd3",
+    "mutated_digest": "c791477ba2f5",
     "target": "circulants"
    },
    {
@@ -2282,27 +2967,35 @@
     "target": "closed_form"
    },
    {
-    "clean_digest": "d665aabd6294",
+    "clean_digest": "ad567c641ee0",
     "gate": "G-CLOSURE-CENSUS",
     "moved": true,
     "mutant": "MUT-CENSUS",
-    "mutated_digest": "c061f4553eca",
+    "mutated_digest": "3828b095890c",
     "target": "closure_census"
    },
    {
-    "clean_digest": "b0d2e2f78b99",
+    "clean_digest": "ad567c641ee0",
+    "gate": "G-CLOSURE-CENSUS",
+    "moved": true,
+    "mutant": "MUT-CENSUS-BASIS",
+    "mutated_digest": "77d4e5d9bb16",
+    "target": "closure_census"
+   },
+   {
+    "clean_digest": "b120f7ef4e84",
     "gate": "G-DIRECT-LIMIT-FORM",
     "moved": true,
     "mutant": "MUT-DIRECT-LIMIT",
-    "mutated_digest": "9e51538dbba3",
+    "mutated_digest": "4aa8609e7f97",
     "target": "direct_limit"
    },
    {
-    "clean_digest": "974468ce6f3f",
+    "clean_digest": "3db4e384626e",
     "gate": "G-QUANTIFIABILITY",
     "moved": true,
     "mutant": "MUT-QUANTIFIABILITY",
-    "mutated_digest": "eacdea52e44c",
+    "mutated_digest": "418d99703dc9",
     "target": "quantifiability"
    },
    {
@@ -2314,67 +3007,75 @@
     "target": "the_split"
    },
    {
-    "clean_digest": "4a99a82e3610",
+    "clean_digest": "fea36865096b",
     "gate": "G-THE-OUTCOME",
     "moved": true,
     "mutant": "MUT-OUTCOME",
-    "mutated_digest": "9fdcbeb418b4",
+    "mutated_digest": "d4e4d1b7d259",
     "target": "outcome"
    },
    {
-    "clean_digest": "c4b47b535eab",
+    "clean_digest": "fea36865096b",
+    "gate": "G-THE-OUTCOME",
+    "moved": true,
+    "mutant": "MUT-GLOBAL-CONTROL",
+    "mutated_digest": "67005fcd5230",
+    "target": "outcome"
+   },
+   {
+    "clean_digest": "22a52e693ef1",
     "gate": "G-VERDICT-EQUALITY",
     "moved": true,
     "mutant": "MUT-HEAD",
-    "mutated_digest": "2183f47cc1e8",
+    "mutated_digest": "b02f5fdd4dd1",
     "target": "verdict"
    },
    {
-    "clean_digest": "762fbe02c8f4",
+    "clean_digest": "295616a62fb4",
     "gate": "G-PAPER-CLAIMS",
     "moved": true,
     "mutant": "MUT-PAPER",
-    "mutated_digest": "ed8a04fc62a0",
+    "mutated_digest": "b11770491bad",
     "target": "paper_claims"
    },
    {
-    "clean_digest": "1b799b218180",
+    "clean_digest": "c0c4bc504abe",
     "gate": "G-WALL-NO-ACTUAL-INFINITY",
     "moved": true,
     "mutant": "MUT-WALL-INFINITY",
-    "mutated_digest": "e07790937c92",
+    "mutated_digest": "a2dac8ba683d",
     "target": "walls"
    },
    {
-    "clean_digest": "1b799b218180",
+    "clean_digest": "c0c4bc504abe",
     "gate": "G-WALL-NO-CONTINUUM",
     "moved": true,
     "mutant": "MUT-WALL-CONTINUUM",
-    "mutated_digest": "b81a363bf92a",
+    "mutated_digest": "b16514849df5",
     "target": "walls"
    },
    {
-    "clean_digest": "1b799b218180",
+    "clean_digest": "c0c4bc504abe",
     "gate": "G-WALL-SPEED-LICENCE",
     "moved": true,
     "mutant": "MUT-WALL-LICENCE",
-    "mutated_digest": "c6e26fe9d2ee",
+    "mutated_digest": "5117a1cb4c8d",
     "target": "walls"
    },
    {
-    "clean_digest": "e7cbe6c5219b",
+    "clean_digest": "cae39a0aa49c",
     "gate": "G-REFERENTS",
     "moved": true,
     "mutant": "MUT-REFERENT",
-    "mutated_digest": "28671c4d12d8",
+    "mutated_digest": "9f3d4fbdb859",
     "target": "referents"
    },
    {
-    "clean_digest": "879e870de13a",
+    "clean_digest": "863a20a0ddc6",
     "gate": "G-NO-TYPED-COUNTS",
     "moved": true,
     "mutant": "MUT-TYPED",
-    "mutated_digest": "02db12e03d80",
+    "mutated_digest": "4ac60d04107a",
     "target": "arithmetic"
    },
    {
@@ -2386,27 +3087,35 @@
     "target": "template_conformance"
    },
    {
-    "clean_digest": "be89eaa0814e",
+    "clean_digest": "37a4bb682d4d",
     "gate": "G-ANCHOR-CONSUMPTION",
     "moved": true,
     "mutant": "MUT-ANCHOR",
-    "mutated_digest": "387cb6c41562",
+    "mutated_digest": "4b3d2ece1f20",
     "target": "verbatim_anchors"
    },
    {
-    "clean_digest": "384c9fcbebcd",
+    "clean_digest": "37a4bb682d4d",
+    "gate": "G-ANCHOR-CONSUMPTION",
+    "moved": true,
+    "mutant": "MUT-PATH-CONSUMED",
+    "mutated_digest": "a5ec6649a647",
+    "target": "verbatim_anchors"
+   },
+   {
+    "clean_digest": "a774a7e11c2e",
     "gate": "G-TRANSCRIPT-BOUND",
     "moved": true,
     "mutant": "MUT-TRANSCRIPT",
-    "mutated_digest": "5bbc4c5bdd6d",
+    "mutated_digest": "1fdef59fd872",
     "target": "transcript"
    },
    {
-    "clean_digest": "1fd21c8d7380",
+    "clean_digest": "4569934d7f04",
     "gate": "G-SEAL-TOTALITY",
     "moved": true,
     "mutant": "MUT-SEAL",
-    "mutated_digest": "4c379cde680f",
+    "mutated_digest": "8f212ac4c05d",
     "target": "seal_shape"
    },
    {
@@ -2584,6 +3293,12 @@
     "target": "closure_census"
    },
    {
+    "description": "labels a witness the arena moves as one no arena moves",
+    "dies_at": "G-CLOSURE-CENSUS",
+    "mutant": "MUT-CENSUS-BASIS",
+    "target": "closure_census"
+   },
+   {
     "description": "makes an inclusion fail to carry a value",
     "dies_at": "G-DIRECT-LIMIT-FORM",
     "mutant": "MUT-DIRECT-LIMIT",
@@ -2605,6 +3320,12 @@
     "description": "forces the blocked branch of the outcome rule",
     "dies_at": "G-THE-OUTCOME",
     "mutant": "MUT-OUTCOME",
+    "target": "outcome"
+   },
+   {
+    "description": "hands the globally-sensitive control a ladder no arena moves, so the branch stops being shown reachable",
+    "dies_at": "G-THE-OUTCOME",
+    "mutant": "MUT-GLOBAL-CONTROL",
     "target": "outcome"
    },
    {
@@ -2662,6 +3383,12 @@
     "target": "verbatim_anchors"
    },
    {
+    "description": "takes an inherited (path, value) anchor out of the gate that consumes it, leaving it declared and inert",
+    "dies_at": "G-ANCHOR-CONSUMPTION",
+    "mutant": "MUT-PATH-CONSUMED",
+    "target": "verbatim_anchors"
+   },
+   {
     "description": "forges a passing gate line into the transcript",
     "dies_at": "G-TRANSCRIPT-BOUND",
     "mutant": "MUT-TRANSCRIPT",
@@ -2703,7 +3430,7 @@
  "outcome": {
   "branch_reachability": {
    "HOR-BLOCKED-AT-THE-STABILITY-TESTER": "reached when the tester never returns an unmoved row or the census never returns a surviving law",
-   "HOR-GLOBAL-SENSITIVE-AT": "reached by any census row the classifier calls verbatim while its two witnesses differ -- computed on every row of the census",
+   "HOR-GLOBAL-SENSITIVE-AT": "reached by any law the classifier calls surviving whose witness on the open arena moves across the declared open ladder -- a local law the far lattice sets; computed on every row of the census, and shown reachable by a control built from this run's own rows which does produce the word through the same rule",
    "HOR-SPLIT-DIFFERENTLY": "reached whenever either side of the split fails its rule -- the rule is evaluated on measured counters, and the winding side's counters are nonzero here, so the branch was live",
    "HOR-UNDETERMINED-R-NATIVE": "reached when the split is as pre-registered and the tester has both an unmoved arm and a moved one"
   },
@@ -2713,20 +3440,32 @@
    "LAW-PLAQUETTE-COUNT",
    "LAW-WINDING-FAMILY",
    "LAW-HOMOLOGY",
-   "LAW-MERGING-INDEX",
-   "LAW-PARENT-ORBITS",
    "LAW-TRANSLATION-COVARIANCE",
    "LAW-DUAL-TORUS"
   ],
+  "the_global_sensitivity_condition": "A-SURVIVING-ROW-WHOSE-OPEN-WITNESS-MOVES-ACROSS-THE-DECLARED-OPEN-LADDER",
+  "the_reachability_control": {
+   "its_open_ladder": [
+    640,
+    640,
+    640,
+    640,
+    640
+   ],
+   "the_row_that_must_not": "CONTROL-A-LOCAL-LAW-NO-ARENA-SETS",
+   "the_row_that_must_produce_the_word": "CONTROL-A-LOCAL-LAW-THE-FAR-LATTICE-SETS",
+   "the_word_the_control_produces": "HOR-GLOBAL-SENSITIVE-AT-CONTROL-A-LOCAL-LAW-THE-FAR-LATTICE-SETS",
+   "through_the_same_classifier_and_the_same_rule": true
+  },
   "word": "HOR-UNDETERMINED-R-NATIVE"
  },
  "paper_claims": {
-  "distinct_prose_claims": 18,
+  "distinct_prose_claims": 20,
   "fence_blocks": 1,
-  "prose_claim_occurrences": 18,
+  "prose_claim_occurrences": 20,
   "table_rows": 98
  },
- "paper_sha256_12": "376e29746e39",
+ "paper_sha256_12": "164aa0d755bc",
  "patch_gauge": {
   "classes_under_the_full_stencil_image": 136,
   "closed_sizes": 6,
@@ -2950,126 +3689,132 @@
    "LAW-PLAQUETTE-COUNT",
    "LAW-WINDING-FAMILY",
    "LAW-HOMOLOGY",
-   "LAW-MERGING-INDEX",
-   "LAW-PARENT-ORBITS",
    "LAW-TRANSLATION-COVARIANCE",
    "LAW-DUAL-TORUS"
   ],
-  "exceptions": 8,
-  "quantifiable": 10,
+  "exceptions": 6,
+  "not_the_absence_of_a_symbol_for_a_size": true,
+  "quantifiable": 12,
   "rows": [
    {
-    "horizon_quantifiable": true,
+    "horizon_statable_by_the_closure_witness_test": true,
     "id": "LAW-LINK-OPERATOR",
     "parent": "R5",
     "the_named_exception": null
    },
    {
-    "horizon_quantifiable": true,
+    "horizon_statable_by_the_closure_witness_test": true,
     "id": "LAW-HOLONOMY",
     "parent": "R5",
     "the_named_exception": null
    },
    {
-    "horizon_quantifiable": true,
+    "horizon_statable_by_the_closure_witness_test": true,
     "id": "LAW-COIN-FAMILY",
     "parent": "R5",
     "the_named_exception": null
    },
    {
-    "horizon_quantifiable": true,
+    "horizon_statable_by_the_closure_witness_test": true,
     "id": "LAW-STRATIFICATION",
     "parent": "R5",
     "the_named_exception": null
    },
    {
-    "horizon_quantifiable": false,
+    "horizon_statable_by_the_closure_witness_test": false,
     "id": "LAW-LINK-COUNT",
     "parent": "R5",
     "the_named_exception": "every site carries four links"
    },
    {
-    "horizon_quantifiable": false,
+    "horizon_statable_by_the_closure_witness_test": false,
     "id": "LAW-PLAQUETTE-COUNT",
     "parent": "R5",
     "the_named_exception": "every site is the base of a plaquette"
    },
    {
-    "horizon_quantifiable": true,
+    "horizon_statable_by_the_closure_witness_test": true,
     "id": "LAW-SINGLE-OCCUPATION",
     "parent": "R5",
     "the_named_exception": null
    },
    {
-    "horizon_quantifiable": true,
+    "horizon_statable_by_the_closure_witness_test": true,
     "id": "LAW-RECTANGLE-FAMILY",
     "parent": "POT",
     "the_named_exception": null
    },
    {
-    "horizon_quantifiable": false,
+    "horizon_statable_by_the_closure_witness_test": false,
     "id": "LAW-WINDING-FAMILY",
     "parent": "POT",
     "the_named_exception": "the winding cycles"
    },
    {
-    "horizon_quantifiable": false,
+    "horizon_statable_by_the_closure_witness_test": false,
     "id": "LAW-HOMOLOGY",
     "parent": "POT",
     "the_named_exception": "the winding classes a loop can carry"
    },
    {
-    "horizon_quantifiable": true,
+    "horizon_statable_by_the_closure_witness_test": true,
     "id": "LAW-CLOSED-FORM",
     "parent": "POT",
     "the_named_exception": null
    },
    {
-    "horizon_quantifiable": true,
+    "horizon_statable_by_the_closure_witness_test": true,
     "id": "LAW-AREA-BLINDNESS",
     "parent": "POT",
     "the_named_exception": null
    },
    {
-    "horizon_quantifiable": false,
+    "horizon_statable_by_the_closure_witness_test": true,
     "id": "LAW-MERGING-INDEX",
     "parent": "ACT",
-    "the_named_exception": "the merging index"
+    "the_named_exception": null
    },
    {
-    "horizon_quantifiable": false,
+    "horizon_statable_by_the_closure_witness_test": true,
     "id": "LAW-PARENT-ORBITS",
     "parent": "ACT",
-    "the_named_exception": "the orbit count under the realisable twists"
+    "the_named_exception": null
    },
    {
-    "horizon_quantifiable": true,
+    "horizon_statable_by_the_closure_witness_test": true,
     "id": "LAW-CLASS-COUNT",
     "parent": "ACT",
     "the_named_exception": null
    },
    {
-    "horizon_quantifiable": false,
+    "horizon_statable_by_the_closure_witness_test": false,
     "id": "LAW-TRANSLATION-COVARIANCE",
     "parent": "R4",
     "the_named_exception": "the declared axes whose shift is a bijection"
    },
    {
-    "horizon_quantifiable": false,
+    "horizon_statable_by_the_closure_witness_test": false,
     "id": "LAW-DUAL-TORUS",
     "parent": "R4B",
     "the_named_exception": "the translations the momentum route needs"
    },
    {
-    "horizon_quantifiable": true,
+    "horizon_statable_by_the_closure_witness_test": true,
     "id": "LAW-REFINEMENT-PLACES",
     "parent": "LOR",
     "the_named_exception": null
    }
-  ]
+  ],
+  "the_test": "THE-CLOSURE-WITNESS-TEST",
+  "the_word_this_test_licenses": "HORIZON-STATABLE-BY-THE-CLOSURE-WITNESS-TEST"
  },
  "referents": {
-  "occurrences_checked": 42,
+  "numerals_exempted_by_name": {
+   "#373": "the ledger entry this unit's pin was frozen at, not a measurement of anything",
+   "#42": "this unit's own number in the corpus, not a measurement of it"
+  },
+  "occurrences_checked": 69,
+  "occurrences_with_no_universe_noun": 7,
   "universes": {
    "THE-ARENA": {
     "nouns": [
@@ -3114,6 +3859,7 @@
      80,
      136,
      512,
+     576,
      640
     ]
    },
@@ -3122,6 +3868,8 @@
      "census",
      "sealed law",
      "sealed laws",
+     "law",
+     "laws",
      "merging index",
      "twist",
      "twists",
@@ -3142,19 +3890,19 @@
       18
      ],
      [
+      6,
+      18
+     ],
+     [
       7,
       7
      ],
      [
-      8,
+      11,
       18
      ],
      [
-      9,
-      18
-     ],
-     [
-      10,
+      12,
       18
      ]
     ],
@@ -3162,14 +3910,21 @@
      0,
      1,
      2,
+     4,
+     5,
      6,
      7,
      8,
-     9,
-     10,
+     11,
+     12,
      16,
      18,
+     72,
      136,
+     208,
+     216,
+     352,
+     504,
      640,
      5120,
      10240
@@ -3185,6 +3940,10 @@
      "depths"
     ],
     "pairs": [
+     [
+      8,
+      8
+     ],
      [
       16,
       16
@@ -3239,9 +3998,14 @@
      "mismatch",
      "mismatches",
      "shape-by-coin",
+     "size-by-coin",
      "arena-by-depth",
      "arm",
-     "arms"
+     "arms",
+     "row",
+     "rows",
+     "inclusion",
+     "inclusions"
     ],
     "pairs": [
      [
@@ -3280,14 +4044,19 @@
     "values": [
      0,
      1,
+     3,
      4,
      5,
+     6,
      8,
      10,
      16,
      25,
      54,
      64,
+     80,
+     320,
+     400,
      640,
      650,
      5120,
@@ -3336,50 +4105,50 @@
   },
   "sealed": {
    "arena": "c64224e20fd7",
-   "arithmetic": "879e870de13a",
-   "c_against_the_group_speed": "da7471aafd47",
-   "circulants": "5a6d2a7c4b05",
+   "arithmetic": "863a20a0ddc6",
+   "c_against_the_group_speed": "891dcb30c282",
+   "circulants": "a7e517638c9d",
    "closed_form": "e86a76085715",
-   "closure_census": "d665aabd6294",
+   "closure_census": "ad567c641ee0",
    "cone_saturation": "1112fa9967ae",
    "cone_shape": "34cdfcc50f34",
-   "control_arms": "ae1df1243160",
-   "coverage": "c1874a8d6611",
-   "direct_limit": "b0d2e2f78b99",
+   "control_arms": "a72eff195875",
+   "coverage": "56e3dd3ac2c7",
+   "direct_limit": "b120f7ef4e84",
    "dynamic_stability": "3bacfbac89be",
-   "emergent_c": "f3221785556e",
+   "emergent_c": "e03b441d62c4",
    "family_split": "b12f136838ce",
-   "gate_digests": "9ca0951dabfc",
-   "gates": "7d2b31d5b50b",
-   "homology": "585da38652f6",
+   "gate_digests": "694af1661738",
+   "gates": "e3c5b2413bde",
+   "homology": "0c3050d8fe98",
    "horizon_law": "183b1f6c43b4",
-   "ledger_shape": "d2c79e034b87",
+   "ledger_shape": "81d4a257c0af",
    "loop_stability": "f0475654d024",
-   "loop_threshold": "2672518a6198",
+   "loop_threshold": "cfd4729d21b8",
    "merging_on_the_patch": "bdd148813d57",
-   "mutants": "01b3a11e0da1",
+   "mutants": "dec769ab3a65",
    "one_tick_reach": "5a7bd46f5c30",
-   "outcome": "4a99a82e3610",
-   "paper_claims": "762fbe02c8f4",
-   "paper_sha256_12": "c63bc708ae96",
+   "outcome": "fea36865096b",
+   "paper_claims": "295616a62fb4",
+   "paper_sha256_12": "13e0aac1693a",
    "patch_gauge": "183407d36f67",
    "path_value_anchors": "5781ee80ad3a",
    "provenance": "340d59f98212",
-   "quantifiability": "974468ce6f3f",
-   "referents": "e7cbe6c5219b",
+   "quantifiability": "3db4e384626e",
+   "referents": "cae39a0aa49c",
    "runtime_inputs": "bc52e83cc77c",
-   "seal_shape": "1fd21c8d7380",
+   "seal_shape": "4569934d7f04",
    "stratification": "954f560820d8",
    "template_conformance": "7c1a18b391f3",
-   "the_cone": "a57a25e2e448",
+   "the_cone": "b6c7d13ebf72",
    "the_split": "e2459f35dac8",
    "the_tick": "28f74fe59f8c",
-   "totals": "6d0366b87908",
-   "transcript": "384c9fcbebcd",
-   "verbatim_anchors": "be89eaa0814e",
-   "verdict": "c4b47b535eab",
+   "totals": "30e3c8caf41c",
+   "transcript": "a774a7e11c2e",
+   "verbatim_anchors": "37a4bb682d4d",
+   "verdict": "22a52e693ef1",
    "verdict_head": "3c053486a9e6",
-   "walls": "1b799b218180",
+   "walls": "c0c4bc504abe",
    "winding": "6561a3ec2c07",
    "zero_patterns": "2808cbaadfde"
   },
@@ -3436,14 +4205,25 @@
  "seal_shape": {
   "and_the_rows_that_fire_after_it_are_declared_and_reconciled": true,
   "declared_unsealed": 8,
-  "published_keys": 57,
-  "sealed": 48,
+  "published_keys": 56,
+  "sealed": 47,
   "the_closing_record_is_sealed_at_the_binding_gate": [
    "gates",
    "gate_digests",
    "ledger_shape",
    "transcript"
-  ]
+  ],
+  "the_keys_that_arrive_after_this_block": [
+   "seal_shape",
+   "gates",
+   "gate_digests",
+   "ledger_shape",
+   "transcript",
+   "mutants",
+   "coverage",
+   "seal_manifest"
+  ],
+  "these_two_numbers_are_re_checked_at_the_door": true
  },
  "stratification": {
   "every_integer_here_is_a_count": "COUNTING-ONLY-E-24",
@@ -4070,6 +4850,7 @@
   "amplitude_supports_escaping_the_cone": 0,
   "attainment_depth": 8,
   "attainment_depths_no_coin_fills_site_for_site": 2,
+  "attainment_depths_the_dynamics_reaches_the_radius_at": 8,
   "attainment_rows": [
    {
     "coins_realising_the_cone_s_own_sum_norm_radius": 576,
@@ -4331,18 +5112,28 @@
  },
  "totals": {
   "anchors": 18,
+  "and_both_are_reconciled_with_the_ledger_at_the_door": true,
   "gates": 44,
-  "measured_names": 77,
-  "mutants": 43,
+  "ledger_rows_when_this_block_was_built": 39,
+  "measured_names": 84,
+  "mutants": 46,
   "path_value_anchors": 30,
-  "sources": 15
+  "sources": 15,
+  "the_gates_that_fire_after_it": [
+   "G-SEAL-TOTALITY",
+   "G-READS-DECLARED",
+   "G-TRANSCRIPT-BOUND",
+   "G-FALSIFIER-MOVES",
+   "G-FALSIFIER-COVERAGE"
+  ]
  },
  "transcript": {
+  "and_that_render_is_this_transcript_without_its_closing_rows": true,
   "closing_rows": [
    "G-FALSIFIER-MOVES",
    "G-FALSIFIER-COVERAGE"
   ],
-  "digest": "b2d2b3675d29",
+  "digest_of_the_render_bound_at_this_gate": "bf069e5c21cc",
   "gate_lines": 42,
   "the_transcript_is_the_ledger_by_content": true
  },
@@ -4356,6 +5147,258 @@
  "verbatim_anchors": {
   "anchors": 18,
   "consumed": 18,
+  "path_value_anchors": 30,
+  "path_value_anchors_consumed_inside_a_gate": 28,
+  "path_value_anchors_declared_value_only": 2,
+  "path_value_rows": [
+   {
+    "anchor": "PV-POT-COINS",
+    "consumed_inside_the_gates": [
+     "G-ARENA-REBUILT",
+     "G-LOOP-STABILITY-CONTRACTIBLE"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-ALPHABET",
+    "consumed_inside_the_gates": [
+     "G-ARENA-REBUILT"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-ROWS",
+    "consumed_inside_the_gates": [
+     "G-ARENA-REBUILT"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-SITES",
+    "consumed_inside_the_gates": [
+     "G-ARENA-REBUILT"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-LINKS",
+    "consumed_inside_the_gates": [
+     "G-ARENA-REBUILT"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-PLAQ",
+    "consumed_inside_the_gates": [
+     "G-ARENA-REBUILT"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-L",
+    "consumed_inside_the_gates": [
+     "G-ARENA-REBUILT",
+     "G-CIRCULANTS-NEED-THE-CLOSURE",
+     "G-HOMOLOGY",
+     "G-ONE-TICK-REACH",
+     "G-PATCH-GAUGE-GROUP",
+     "G-THE-FAMILY-SPLIT",
+     "G-THE-TICK-IS-BUILT"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-DIAG",
+    "consumed_inside_the_gates": [
+     "G-ARENA-REBUILT",
+     "G-ONE-TICK-REACH"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-ANTI",
+    "consumed_inside_the_gates": [
+     "G-ARENA-REBUILT",
+     "G-ONE-TICK-REACH"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-BAL",
+    "consumed_inside_the_gates": [
+     "G-ARENA-REBUILT",
+     "G-ONE-TICK-REACH"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-CLASSES",
+    "consumed_inside_the_gates": [
+     "G-PATCH-GAUGE-GROUP"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-ORBITS",
+    "consumed_inside_the_gates": [
+     "G-PATCH-GAUGE-GROUP"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-MERGED",
+    "consumed_inside_the_gates": [
+     "G-MERGING-ON-THE-PATCH",
+     "G-PATCH-GAUGE-GROUP"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-CONTRACTIBLE",
+    "consumed_inside_the_gates": [
+     "G-THE-FAMILY-SPLIT"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-WINDING",
+    "consumed_inside_the_gates": [
+     "G-THE-FAMILY-SPLIT"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-PLACEMENTS",
+    "consumed_inside_the_gates": [
+     "G-THE-FAMILY-SPLIT"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-SHAPES",
+    "consumed_inside_the_gates": [
+     "G-THE-FAMILY-SPLIT"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-BL",
+    "consumed_inside_the_gates": [
+     "G-CLOSURE-CENSUS"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-BL-MERGED",
+    "consumed_inside_the_gates": [
+     "G-PATCH-GAUGE-GROUP"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-BL-ORBITS",
+    "consumed_inside_the_gates": [
+     "G-PATCH-GAUGE-GROUP"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-BL-IDENT",
+    "consumed_inside_the_gates": [
+     "G-LOOP-STABILITY-CONTRACTIBLE"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-POT-BL-SHAPES",
+    "consumed_inside_the_gates": [],
+    "role": "VALUE-ONLY",
+    "why_it_is_value_only": "the parent's own rectangle family at its boundary size runs to a longer extent than the family this unit declares, so its count cannot be the predicate of any measurement taken here; it is carried as a drift check on the parent's receipt and as nothing else"
+   },
+   {
+    "anchor": "PV-POT-LADDER",
+    "consumed_inside_the_gates": [
+     "G-THE-CLOSED-FORM-SURVIVES"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-R5-COINS",
+    "consumed_inside_the_gates": [
+     "G-ARENA-REBUILT"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-R5-CONNECTIVE",
+    "consumed_inside_the_gates": [
+     "G-EMERGENT-C"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-R5-CIRCULANTS",
+    "consumed_inside_the_gates": [],
+    "role": "VALUE-ONLY",
+    "why_it_is_value_only": "the gauge parent's control count over its own circulant family, which this unit neither rebuilds nor uses; it is carried as a drift check on the parent's receipt and as nothing else"
+   },
+   {
+    "anchor": "PV-ACT-IDX-L2",
+    "consumed_inside_the_gates": [
+     "G-CLOSURE-CENSUS"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-ACT-IDX-L4",
+    "consumed_inside_the_gates": [
+     "G-CLOSURE-CENSUS"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-ACT-IDX-L8",
+    "consumed_inside_the_gates": [
+     "G-CLOSURE-CENSUS"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   },
+   {
+    "anchor": "PV-ACT-IMAGE",
+    "consumed_inside_the_gates": [
+     "G-PATCH-GAUGE-GROUP"
+    ],
+    "role": "CONSUMED",
+    "why_it_is_value_only": ""
+   }
+  ],
   "rows": [
    {
     "chars": 135,
@@ -4522,7 +5565,7 @@
   ]
  },
  "verdict": {
-  "head": "HOR-UNDETERMINED-R-NATIVE -- CONE=[TICK=ONE-PARITY-STRATUM-OPERATOR-THE-PARENT-NAMES-AND-NEVER-BUILDS;REACH-PER-TICK=ZERO-AT-64-COINS-AND-ONE-AT-576-OF-640;c=1-SITE-PER-TICK-IN-THE-SUM-NORM-ATTAINED-AT-16-OF-16-DEPTHS-A-MAXIMUM-NOT-A-BOUND;MAX-NORM-SUSTAINED=1/2;SHAPE=A-PRODUCT-BOX-AT-EVERY-DEPTH-ASYMMETRIC-AT-16-AND-REFLECTED-BY-REVERSING-THE-PARITY-ORDER-AT-16;AMPLITUDE-SUPPORTS-ESCAPE-AT-0;RADIUS-ATTAINED-BY-576-COINS-AT-EVERY-ATTAINMENT-DEPTH-AND-THE-CONE-UNFILLED-AT-2] -- STABILITY=[CONTRACTIBLE=10240-SHAPE-BY-COIN-AT-THE-CORE-PAIR-OVER-THE-WHOLE-COIN-FAMILY-AND-650-OVER-THE-LADDER-WITH-0-MISMATCHES;DYNAMIC=64-ARENA-BY-DEPTH-ROWS-WITH-THE-HORIZON-PREDICTED-FROM-THE-CONE-BEFORE-THE-VALUES-0-VIOLATIONS-4-SLACK-54-UNMOVED-10-MOVED;WINDING=ABSENT-AT-EVERY-OPEN-SIZE-AND-MOVING-AT-8-OF-10;ARMS=4-MOVED-AND-1-UNMOVED-THROUGH-ONE-TESTER;SPLIT=AS-PRE-REGISTERED] -- CLOSURE=[18-SEALED-LAWS:9-VERBATIM-1-SCOPED-8-ARTIFACT;THE-OPEN-PATCH-REALISES-EVERY-TWIST-SO-ITS-MERGING-INDEX-IS-1-AT-ALL-7-OPEN-SIZES-WHICH-IS-THE-CLOSED-VALUE-ONLY-WHERE-THE-PHASE-ORDER-DIVIDES-THE-SIZE;WINDING-CLASSES=1-OPEN-AGAINST-13-CLOSED;TRANSLATIONS-CARRYING-THE-OPEN-LINK-SET-TO-ITSELF=1;THE-CLOSED-FORM-AND-AREA-BLINDNESS-SURVIVE-THE-FLUSH-10240-CHECKS-AND-5120-COMPARISONS-FAILING-0-AND-0] -- FORM=[5-OPEN-SIZES-DIRECTED-UNDER-INCLUSION-CARRYING-400-VALUES-AND-FAILING-TO-CARRY-0;QUANTIFIABLE-AT-10-OF-18-WITH-8-NAMED-EXCEPTIONS;NOT-A-LIMIT-NOT-A-CONVERGENCE-NOT-AN-OBJECT] -- SCOPE=[D-IS-TWO;FIELD=Q(zeta_8);COINS=640;CARRIER=THE-UNIFORM-CONFIGURATIONS;THE-GENERATORS-ARE-THE-PARENTS-AND-THE-TICK-IS-THIS-UNITS-DECLARATION;LADDERS-DECLARED-OPEN-7-AND-CLOSED-6;NO-CONTINUUM-CLAIM;NO-ACTUAL-INFINITY-CLAIM;SCALEFUL-NOT-CONTINUOUS;NOT-A-RELATIVITY-CLAIM]",
+  "head": "HOR-UNDETERMINED-R-NATIVE -- CONE=[TICK=ONE-PARITY-STRATUM-OPERATOR-THE-PARENT-NAMES-AND-NEVER-BUILDS;REACH-PER-TICK=ZERO-AT-64-COINS-AND-ONE-AT-576-OF-640;c=1-SITE-PER-TICK-IN-THE-SUM-NORM-ATTAINED-STRUCTURALLY-AT-16-OF-16-DEPTHS-AND-BY-THE-DYNAMICS-AT-8-OF-8-ATTAINMENT-DEPTHS-A-MAXIMUM-NOT-A-BOUND;MAX-NORM-SUSTAINED=1/2;SHAPE=A-PRODUCT-BOX-AT-EVERY-DEPTH-ASYMMETRIC-AT-16-AND-REFLECTED-BY-REVERSING-THE-PARITY-ORDER-AT-16;AMPLITUDE-SUPPORTS-ESCAPE-AT-0;RADIUS-ATTAINED-BY-576-COINS-AT-EVERY-ATTAINMENT-DEPTH-AND-THE-CONE-UNFILLED-AT-2] -- STABILITY=[CONTRACTIBLE=10240-SHAPE-BY-COIN-AT-THE-CORE-PAIR-OVER-THE-WHOLE-COIN-FAMILY-AND-650-OVER-THE-LADDER-WITH-0-MISMATCHES;DYNAMIC=64-ARENA-BY-DEPTH-ROWS-WITH-THE-HORIZON-PREDICTED-FROM-THE-CONE-BEFORE-THE-VALUES-0-VIOLATIONS-4-SLACK-54-UNMOVED-10-MOVED;WINDING=ABSENT-AT-EVERY-OPEN-SIZE-AND-MOVING-AT-8-OF-10;ARMS=4-MOVED-AND-1-UNMOVED-THROUGH-ONE-TESTER;SPLIT=AS-PRE-REGISTERED] -- CLOSURE=[18-SEALED-LAWS-AT-ONE-DECLARED-ARENA-PAIR:11-VERBATIM-OF-WHICH-5-MEASURED-AND-6-STRUCTURAL-1-SCOPED-6-ARTIFACT;THE-OPEN-PATCH-REALISES-EVERY-TWIST-SO-ITS-MERGING-INDEX-IS-1-AT-ALL-7-OPEN-SIZES-WHICH-IS-THE-CLOSED-VALUE-ONLY-WHERE-THE-PHASE-ORDER-DIVIDES-THE-SIZE;WINDING-CLASSES=1-OPEN-AGAINST-13-CLOSED;TRANSLATIONS-CARRYING-THE-OPEN-LINK-SET-TO-ITSELF=1;THE-CLOSED-FORM-AND-AREA-BLINDNESS-SURVIVE-THE-FLUSH-10240-CHECKS-AND-5120-COMPARISONS-FAILING-0-AND-0] -- FORM=[5-OPEN-SIZES-DIRECTED-UNDER-INCLUSION-CARRYING-400-VALUES-OF-WHICH-80-ARE-THE-REFERENCE-AGAINST-ITSELF-AND-FAILING-TO-CARRY-0;HORIZON-STATABLE-BY-THE-CLOSURE-WITNESS-TEST-AT-12-OF-18-WITH-6-NAMED-EXCEPTIONS;NOT-A-LIMIT-NOT-A-CONVERGENCE-NOT-AN-OBJECT] -- SCOPE=[D-IS-TWO;FIELD=Q(zeta_8);COINS=640;CARRIER=THE-UNIFORM-CONFIGURATIONS;THE-GENERATORS-ARE-THE-PARENTS-AND-THE-TICK-IS-THIS-UNITS-DECLARATION;LADDERS-DECLARED-OPEN-7-AND-CLOSED-6;COUNTS-ARE-COUNTING-ONLY;NO-CONTINUUM-CLAIM;NO-ACTUAL-INFINITY-CLAIM;SCALEFUL-NOT-CONTINUOUS;NOT-A-RELATIVITY-CLAIM]",
   "segments": 6
  },
  "verdict_head": "HOR-UNDETERMINED-R-NATIVE",
@@ -4550,9 +5593,18 @@
      "\\bcompleted (?:totality|infinity)\\b",
      "\\bexists an infinite\\b",
      "\\bthe direct limit is an object\\b",
-     "\\ba limit in (?:some|any|the) topology\\b"
+     "\\ba limit in (?:some|any|the) topology\\b",
+     "\\bcompleted (?:member|arena|patch|object|whole|lattice)\\b",
+     "\\bunbounded (?:extent|size|volume|lattice|arena|patch)\\b",
+     "\\bof unbounded\\b",
+     "\\bwithout bound\\b",
+     "\\bcontains every finite (?:patch|arena|size|member)\\b",
+     "\\ball (?:patches|arenas|sizes) at once\\b",
+     "\\b(?:that|this|the) totality is\\b",
+     "\\btaken over all (?:patches|arenas|sizes)\\b"
     ],
     "policed": [],
+    "policed_sentences": 0,
     "positive": [
      "every instance is a statement about one finite patch",
      "not a limit"
@@ -4574,9 +5626,16 @@
      "\\blorentz (?:invarian|covarian)",
      "\\bspeed of light\\b",
      "\\bminkowski\\b",
-     "\\bcausal structure of spacetime\\b"
+     "\\bcausal structure of spacetime\\b",
+     "\\brefined without bound\\b",
+     "\\bbecomes a derivative\\b",
+     "\\bsmooth arena\\b",
+     "\\bthe spacing is refined\\b",
+     "\\bfield-theoretic description\\b",
+     "\\bbecomes a smooth\\b"
     ],
     "policed": [],
+    "policed_sentences": 0,
     "positive": [
      "scaleful, not continuous"
     ],
@@ -4589,14 +5648,18 @@
      "\\bthe speed of light\\b"
     ],
     "policed": [
-     "per tick"
+     "per tick",
+     "per that tick"
     ],
+    "policed_sentences": 4,
     "positive": [
      "a maximum, not a bound"
     ],
     "wall": "WALL-EVERY-SPEED-CARRIES-ITS-MEASUREMENT"
    }
-  ]
+  ],
+  "sentences_policed": 4,
+  "the_positive_legs_read_the_papers_own_voice": true
  },
  "winding": {
   "absent_at_every_open_size": true,

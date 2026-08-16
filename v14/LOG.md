@@ -12308,3 +12308,39 @@ discipline: every v15 pin cites question numbers; every
 terminal updates statuses in its seal commit.  **NOTHING
 LAUNCHES until the user reviews.**  HOR/REC repairs
 continue under v14.
+
+## 2026-08-16 — HOR REPAIR DELIVERED AND COMMITTED: THE CENSUS RECOUNTED AT THE UNIFORM WITNESS (11 VERBATIM = 5 MEASURED + 6 STRUCTURAL / 1 SCOPED / 6 ARTIFACT, SWEEP-PROVEN); NATIVE STANDS; GLOBAL-SENSITIVE REACHABLE; THE FOUR CARDINALITIES TO TRUTH (v14 LEDGER #387)
+
+**Files:** paper-42-hor.md 164aa0d755bc; hor_exact.py
+aa2dcdd60531; hor_output.txt 83329c2cb832;
+hor_receipt.json 27430187aee3.  Z1: the closed side ONE
+declared arena pair (P-9/T-8, POT's own boundary size,
+PV-POT-BL consumed to force it); every VERBATIM row
+labeled MEASURED (5) or STRUCTURAL (6, reasons published);
+**the labels not taken on trust — every witness re-measured
+at 9 declared sizes; a STRUCTURAL label the sweep moves
+kills the run (0 moved; the 9 measured witnesses DO move);
+MUT-CENSUS-BASIS bites**; ACT's sealed L-scope quoted
+in-sentence with its law re-derived from this run's phase
+order.  Z2–Z4: NATIVE with K2's licensed dependency
+sentence; GLOBAL-SENSITIVE REACHABLE (a synthetic row
+through the REAL classifier emits the word; the null does
+not; MUT-GLOBAL-CONTROL); the class word re-bound with a
+recomputed disagree leg; maximum-not-bound scoped
+structural-16/16 + dynamical-8/8; the R4/R4b gate derived
+from the circulant census.  Z5: the four cardinalities
+COMPUTED AT THE DOOR and re-checked in promote() — both
+artifacts carry the true 56/47; E-31 extended to
+%-format strings AND integer offsets (four pre-existing
+cleaned).  Z6–Z7: 21 wall patterns with disease-written
+controls; 28/30 anchors gate-consumed (2 declared
+value-only); real move-proofs; referents 69-checked/
+0-unbound (was 25 unbound); the seal chain all 44 gates.
+Z8: the two template-inherited openings left registered
+for TPL-2, HOR's own wording closed.  **Battery: byte ×2
+off-tree two seeds; 46/46 falsifiers; 22 argv; EVERY
+injection dead incl. the +500 offsets, the re-voiced
+walls, the neutered branch (now dies in-process), all
+eight flips.  ONLY the four ordered numbers moved; every
+physics scalar byte-identical to the reviewed delivery.**
+**Orchestrator battery next; terminal on green.**

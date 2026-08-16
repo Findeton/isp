@@ -38,10 +38,13 @@ the receipt and counted there rather than here. Each
 window is located exactly once in the pinned bytes it is quoted from **and**
 in this paper's own rendering, is above a declared length floor, is readable
 only through one accessor that records who read it, and is required to have
-been read inside the predicate of the gate its own row names — with a value
-taken out of its text and compared against a measurement of this run. A window
-no gate consumed, or a window consumed for its existence rather than its
-meaning, stops the run.
+been read inside the predicate of the gate its own row names. A window no gate
+consumed stops the run. The inherited (path, value) pairs are held to the same
+standard by a scan of the instrument's own syntax tree: each is either
+subscripted inside a function that fires a gate, with those gates published
+beside it in the receipt, or is declared value-only there with the reason it
+cannot be the predicate of anything measured here — so an inherited number
+carried as decoration has to say so.
 
 **Exact arithmetic only.** The field is $\mathbb{Q}(\zeta_8)$ carried as
 integer four-tuples over the basis $(1,z,z^2,z^3)$ reduced modulo $z^4+1$, with
@@ -50,7 +53,10 @@ power of two tracked separately and divided out once. Every ratio is an exact
 rational. A scan of this instrument's own syntax tree is a gate, and it carries
 the clause the subject needs: no floating-point literal occurs in the file, and
 no power operator, no logarithm, no exponential and no square root is called
-anywhere in it.
+anywhere in it. The same scan reaches the whole argument expression of every
+published statement rather than its top-level strings alone, so a numeral typed
+into a formatted evidence string, and an integer offset added to a measured
+count, are offences there too.
 
 **The template (E-25 … E-33).** This unit is one of the adoption's first
 exemplars. The family mechanisms are implemented natively under the
@@ -66,12 +72,15 @@ every green row below:
 derived inside a gate from a measured field; the complete string — head
 included — is compared for equality against an independent reconstruction that
 reads only the receipt's primitive row lists and measured leaves, recomputes
-every count by its own aggregation, re-derives the outcome word from a second
-copy of the four-way rule, and renders every segment with its own format
-strings, sharing with the builder no function, no aggregate and no literal:
+the head's counts from those rows by its own aggregations — four of them it
+reads from measured leaves rather than re-aggregating — re-derives the outcome
+word from a second copy of the four-way rule, and renders every segment with
+its own format strings, sharing with the builder no function of this
+instrument, no aggregate, no format string and no numeric literal, and one
+constant, the separator the two renderings are joined with:
 
 ```
-HOR-UNDETERMINED-R-NATIVE -- CONE=[TICK=ONE-PARITY-STRATUM-OPERATOR-THE-PARENT-NAMES-AND-NEVER-BUILDS;REACH-PER-TICK=ZERO-AT-64-COINS-AND-ONE-AT-576-OF-640;c=1-SITE-PER-TICK-IN-THE-SUM-NORM-ATTAINED-AT-16-OF-16-DEPTHS-A-MAXIMUM-NOT-A-BOUND;MAX-NORM-SUSTAINED=1/2;SHAPE=A-PRODUCT-BOX-AT-EVERY-DEPTH-ASYMMETRIC-AT-16-AND-REFLECTED-BY-REVERSING-THE-PARITY-ORDER-AT-16;AMPLITUDE-SUPPORTS-ESCAPE-AT-0;RADIUS-ATTAINED-BY-576-COINS-AT-EVERY-ATTAINMENT-DEPTH-AND-THE-CONE-UNFILLED-AT-2] -- STABILITY=[CONTRACTIBLE=10240-SHAPE-BY-COIN-AT-THE-CORE-PAIR-OVER-THE-WHOLE-COIN-FAMILY-AND-650-OVER-THE-LADDER-WITH-0-MISMATCHES;DYNAMIC=64-ARENA-BY-DEPTH-ROWS-WITH-THE-HORIZON-PREDICTED-FROM-THE-CONE-BEFORE-THE-VALUES-0-VIOLATIONS-4-SLACK-54-UNMOVED-10-MOVED;WINDING=ABSENT-AT-EVERY-OPEN-SIZE-AND-MOVING-AT-8-OF-10;ARMS=4-MOVED-AND-1-UNMOVED-THROUGH-ONE-TESTER;SPLIT=AS-PRE-REGISTERED] -- CLOSURE=[18-SEALED-LAWS:9-VERBATIM-1-SCOPED-8-ARTIFACT;THE-OPEN-PATCH-REALISES-EVERY-TWIST-SO-ITS-MERGING-INDEX-IS-1-AT-ALL-7-OPEN-SIZES-WHICH-IS-THE-CLOSED-VALUE-ONLY-WHERE-THE-PHASE-ORDER-DIVIDES-THE-SIZE;WINDING-CLASSES=1-OPEN-AGAINST-13-CLOSED;TRANSLATIONS-CARRYING-THE-OPEN-LINK-SET-TO-ITSELF=1;THE-CLOSED-FORM-AND-AREA-BLINDNESS-SURVIVE-THE-FLUSH-10240-CHECKS-AND-5120-COMPARISONS-FAILING-0-AND-0] -- FORM=[5-OPEN-SIZES-DIRECTED-UNDER-INCLUSION-CARRYING-400-VALUES-AND-FAILING-TO-CARRY-0;QUANTIFIABLE-AT-10-OF-18-WITH-8-NAMED-EXCEPTIONS;NOT-A-LIMIT-NOT-A-CONVERGENCE-NOT-AN-OBJECT] -- SCOPE=[D-IS-TWO;FIELD=Q(zeta_8);COINS=640;CARRIER=THE-UNIFORM-CONFIGURATIONS;THE-GENERATORS-ARE-THE-PARENTS-AND-THE-TICK-IS-THIS-UNITS-DECLARATION;LADDERS-DECLARED-OPEN-7-AND-CLOSED-6;NO-CONTINUUM-CLAIM;NO-ACTUAL-INFINITY-CLAIM;SCALEFUL-NOT-CONTINUOUS;NOT-A-RELATIVITY-CLAIM]
+HOR-UNDETERMINED-R-NATIVE -- CONE=[TICK=ONE-PARITY-STRATUM-OPERATOR-THE-PARENT-NAMES-AND-NEVER-BUILDS;REACH-PER-TICK=ZERO-AT-64-COINS-AND-ONE-AT-576-OF-640;c=1-SITE-PER-TICK-IN-THE-SUM-NORM-ATTAINED-STRUCTURALLY-AT-16-OF-16-DEPTHS-AND-BY-THE-DYNAMICS-AT-8-OF-8-ATTAINMENT-DEPTHS-A-MAXIMUM-NOT-A-BOUND;MAX-NORM-SUSTAINED=1/2;SHAPE=A-PRODUCT-BOX-AT-EVERY-DEPTH-ASYMMETRIC-AT-16-AND-REFLECTED-BY-REVERSING-THE-PARITY-ORDER-AT-16;AMPLITUDE-SUPPORTS-ESCAPE-AT-0;RADIUS-ATTAINED-BY-576-COINS-AT-EVERY-ATTAINMENT-DEPTH-AND-THE-CONE-UNFILLED-AT-2] -- STABILITY=[CONTRACTIBLE=10240-SHAPE-BY-COIN-AT-THE-CORE-PAIR-OVER-THE-WHOLE-COIN-FAMILY-AND-650-OVER-THE-LADDER-WITH-0-MISMATCHES;DYNAMIC=64-ARENA-BY-DEPTH-ROWS-WITH-THE-HORIZON-PREDICTED-FROM-THE-CONE-BEFORE-THE-VALUES-0-VIOLATIONS-4-SLACK-54-UNMOVED-10-MOVED;WINDING=ABSENT-AT-EVERY-OPEN-SIZE-AND-MOVING-AT-8-OF-10;ARMS=4-MOVED-AND-1-UNMOVED-THROUGH-ONE-TESTER;SPLIT=AS-PRE-REGISTERED] -- CLOSURE=[18-SEALED-LAWS-AT-ONE-DECLARED-ARENA-PAIR:11-VERBATIM-OF-WHICH-5-MEASURED-AND-6-STRUCTURAL-1-SCOPED-6-ARTIFACT;THE-OPEN-PATCH-REALISES-EVERY-TWIST-SO-ITS-MERGING-INDEX-IS-1-AT-ALL-7-OPEN-SIZES-WHICH-IS-THE-CLOSED-VALUE-ONLY-WHERE-THE-PHASE-ORDER-DIVIDES-THE-SIZE;WINDING-CLASSES=1-OPEN-AGAINST-13-CLOSED;TRANSLATIONS-CARRYING-THE-OPEN-LINK-SET-TO-ITSELF=1;THE-CLOSED-FORM-AND-AREA-BLINDNESS-SURVIVE-THE-FLUSH-10240-CHECKS-AND-5120-COMPARISONS-FAILING-0-AND-0] -- FORM=[5-OPEN-SIZES-DIRECTED-UNDER-INCLUSION-CARRYING-400-VALUES-OF-WHICH-80-ARE-THE-REFERENCE-AGAINST-ITSELF-AND-FAILING-TO-CARRY-0;HORIZON-STATABLE-BY-THE-CLOSURE-WITNESS-TEST-AT-12-OF-18-WITH-6-NAMED-EXCEPTIONS;NOT-A-LIMIT-NOT-A-CONVERGENCE-NOT-AN-OBJECT] -- SCOPE=[D-IS-TWO;FIELD=Q(zeta_8);COINS=640;CARRIER=THE-UNIFORM-CONFIGURATIONS;THE-GENERATORS-ARE-THE-PARENTS-AND-THE-TICK-IS-THIS-UNITS-DECLARATION;LADDERS-DECLARED-OPEN-7-AND-CLOSED-6;COUNTS-ARE-COUNTING-ONLY;NO-CONTINUUM-CLAIM;NO-ACTUAL-INFINITY-CLAIM;SCALEFUL-NOT-CONTINUOUS;NOT-A-RELATIVITY-CLAIM]
 ```
 
 (The string is one line; the gate compares that complete string.)
@@ -92,8 +101,8 @@ travel at a finite speed, so that an observable of finite depth has a horizon
 at all; and the physics inside a horizon has to be indifferent to what the
 arena does far away. Both are measured here, and so is the part that is not
 indifferent — because the answer is not that everything survives. Some of what
-the corpus has been calling physics is a property of the identification that
-closes the lattice into a torus, and this unit says which.
+the corpus has stated at a closed arena has no counterpart on the open patch
+this unit declares, and this unit says which.
 
 ## The arena, declared as data
 
@@ -158,8 +167,9 @@ its arena has
 > no configuration measure, no action functional, no coupling and **no dynamics for the link variables**
 
 so the generators below are inherited and the tick is this unit's own
-declaration. Every speed published here is a speed per that tick and is
-stamped so wherever it appears.
+declaration.
+
+Every speed published here is a speed per that tick and is stamped so wherever it appears.
 
 ## The emergent speed
 
@@ -183,9 +193,12 @@ Unitarity leaves exactly 3 vanishing patterns over the 640 coins, so the reach o
 Then the cone, censused to the declared depth rather than bounded. Its
 sum-norm radius is exactly the tick number at every depth — not at most, but
 exactly — and its shape is a product of a range in each direction, so it is a
-box and not a diamond.
+box and not a diamond. The licence for calling the speed a maximum sits at two
+depths and both are published: the structural cone reaches the radius at every
+censused depth, and the dynamics reaches it at every depth of the shorter
+attainment sweep.
 
-In the sum norm the emergent speed is 1 site per tick, and it is attained at 16 of 16 censused depths, so it is a maximum, not a bound.
+In the sum norm the emergent speed is 1 site per tick; the structural cone attains it at 16 of 16 censused depths and the dynamics attains it at 8 of 8 attainment depths, so it is a maximum, not a bound.
 
 Over whole sweeps the max-norm speed is 1/2 site per tick, one value at every sweep.
 
@@ -239,8 +252,8 @@ The cone is a product of an x-range and a y-range at every one of the 16 depths,
 On a closed arena a cone is a wasting asset. It fills the arena at a measured
 depth and says nothing afterwards, and before that it starts to double back on
 itself. Both depths are measured here for every closed size, and both are the
-reason the corpus's earlier cone statements were disclosures rather than
-findings. The parent named the mechanism itself:
+reason a cone censused on a closed arena stops carrying information past a
+measured depth — which is the mechanism R4's own wrap sentence names:
 
 > The bound is not saturated by all of them, because the torus wraps
 
@@ -258,7 +271,11 @@ That object is a phase advance on the dual torus. It exists because the arena is
 closed, and this unit neither re-runs it nor revises it nor contradicts it. The
 object measured here is the reach of the support, which is defined on an arena
 with no identification at all. The two are kept apart by a gate rather than by
-a footnote.
+a footnote, and the gate decides the separation on a measurement rather than on
+a declaration: it consumes the circulant census — the parent's declared axes
+that are bijections, and the translations that carry the link set to itself,
+counted on each closure — and the difference between those pairs is what says
+which object needs a closure and which does not.
 
 ## Horizon-stability: the contractible side
 
@@ -273,10 +290,14 @@ predicate rather than as decoration:
 
 > 640 of the 640 coins carry identical coefficients at the two lattice sizes
 
-The threshold a contractible observable needs is measured, not declared: the
-largest extent that stays simple is the size less one, on both closures. Below
-that the very same shape stops being the same observable — it wraps — and the
-control arms use exactly that case.
+The threshold a contractible observable needs is measured, not declared, and it
+is stated only where it can be tested: at every size whose declared shape
+family contains an extent of the size less one, the largest extent that stays
+simple is the size less one, on both closures. At every larger size what
+decides the largest simple extent is this unit's own declared cap, which is a
+fact about the declaration and not about the arena. Below the threshold the very
+same shape stops being the same observable — it wraps — and the control arms use
+exactly that case.
 
 ## Horizon-stability: the dynamical side
 
@@ -315,9 +336,11 @@ For every depth there is a size at which the edge of the arena is invisible to
 anything of that depth, and the least such size does not decrease as the depth
 grows. That is the whole content of a theory that never declares a size:
 whatever depth you name, there is room enough, and the statement is about that
-room and not about any totality.
+room and not about any totality. The column below is the least size **on the
+sparse ladder that was swept**; whether a smaller unswept size also hides the
+edge is not known here.
 
-| depth | least open size that hides the edge | least closed size that hides the edge |
+| depth | least swept open size that hides the edge | least swept closed size that hides the edge |
 |---|---|---|
 | 1 | 5 | 6 |
 | 2 | 5 | 6 |
@@ -340,11 +363,13 @@ of it on a closed arena:
 > 192 placements and 192 distinct loops, of which 144 contractible and 48 winding
 
 Both sides are measured here, not one asserted. On the open side the winding
-family is not small. It is absent: there is no closed walk with a net
-displacement anywhere on an open patch, at any size, and the exhaustive walk
-census says so rather than a theorem being waved at it.
+family is not small. It is absent, at every open size the census ran; and the
+reason it is absent is not a census result but a one-line fact standing beside
+it, which the census then confirms: a closed walk on an arena whose coordinates
+are honest integers returns to where it started by taking each step back, so its
+net displacement is zero, and there is nothing for a winding number to count.
 
-The straight winding cycle exists at no open size at all, and across adjacent closed sizes its observable moves at 8 of 10 size-by-coin comparisons.
+The straight winding cycle exists at none of the 6 open sizes swept, and across adjacent closed sizes its observable moves at 8 of 10 size-by-coin comparisons.
 
 Closed walks of length 8 from a fixed base fall into 1 displacement class on the open arena and 13 on the closed one.
 
@@ -365,7 +390,10 @@ Closed walks of length 8 from a fixed base fall into 1 displacement class on the
 A stability tester that reports nothing but agreement has proved nothing. The
 arms go through the same tester, which is told nothing about which arm it is
 running: one that must not move, and the rest that must. Each was assigned its
-side before the run.
+side before the run, and each arm's own record carries the two arenas it
+compares — one of them, the winding arm, compares a closed size against another
+closed size rather than a closure against a closure, and the merging-index arm
+compares the parents' own closed size against the open patch.
 
 All 5 control arms go through one tester that is told nothing about which arm it is running: it reports moved at 4 and unmoved at 1, each on the side declared for it before the run.
 
@@ -397,10 +425,13 @@ and
 
 > What does not survive is the class merging: 0 merges at L = 8 against 72 here
 
-So the identified pairs that carry the parents' price, their prohibition and
-their pinned observable are bought by the identification, and an arena with no
-identification never has them at any size. The class count under the full
-stencil image, by contrast, is the same everywhere.
+So, under this unit's declared flush, the identified pairs that carry the
+parents' price, their prohibition and their pinned observable are bought by an
+identification whose length the phase order does not divide; an arena with no
+identification never has them at any of the seven open sizes swept, which is
+where a closed arena already stands at the size the twist parent sealed and the
+potential parent ran. The class count under the full stencil image, by
+contrast, is the same everywhere.
 
 | arena | realisable twists | merging index | orbits under the realisable twists | classes | orbit pairs merged |
 |---|---|---|---|---|---|
@@ -425,30 +456,62 @@ law's residual on the open arena and its residual on the closed one. A law
 whose two residuals agree survives the flush verbatim; one that differs with a
 stated proviso survives scoped; one that differs without a proviso, or that has
 no residual on the open arena at all because the object it speaks of is not
-there, was carried by the identification.
+there, differs across the pair.
 
-Of the 18 sealed laws this unit uses, 9 survive the flush verbatim, 1 survive with a stated proviso and 8 were carried by the identification alone.
+**The pair is one pair, and every row prints it.** The open side is the patch
+at the largest size on the open ladder and the closed side is the torus at the
+largest size on the closed one — the size the potential parent itself ran its
+boundary lattice at — and one row, the stratification, compares ladder sums
+instead and says so in its own arena column. Nothing here is decided by taking
+the two sides of a comparison at different sizes. Beyond the pair, every
+witness in the table is measured again at each of the nine sizes on which every
+declared shape fits, and those ladders are published in the receipt beside the
+row they belong to.
 
-| law | parent | witness on the open arena | witness on the closed arena | verdict |
-|---|---|---|---|---|
-| LAW-LINK-OPERATOR | R5 | 0 | 0 | SURVIVES-VERBATIM |
-| LAW-HOLONOMY | R5 | 0 | 0 | SURVIVES-VERBATIM |
-| LAW-COIN-FAMILY | R5 | 640 | 640 | SURVIVES-VERBATIM |
-| LAW-STRATIFICATION | R5 | 0 | 6 | SURVIVES-SCOPED |
-| LAW-LINK-COUNT | R5 | 32 | 0 | CLOSURE-ARTIFACT |
-| LAW-PLAQUETTE-COUNT | R5 | 17 | 0 | CLOSURE-ARTIFACT |
-| LAW-SINGLE-OCCUPATION | R5 | 0 | 0 | SURVIVES-VERBATIM |
-| LAW-RECTANGLE-FAMILY | POT | 16 | 16 | SURVIVES-VERBATIM |
-| LAW-WINDING-FAMILY | POT | ABSENT | 128 | CLOSURE-ARTIFACT |
-| LAW-HOMOLOGY | POT | 1 | 13 | CLOSURE-ARTIFACT |
-| LAW-CLOSED-FORM | POT | 0 | 0 | SURVIVES-VERBATIM |
-| LAW-AREA-BLINDNESS | POT | 0 | 0 | SURVIVES-VERBATIM |
-| LAW-MERGING-INDEX | ACT | 1 | 2 | CLOSURE-ARTIFACT |
-| LAW-PARENT-ORBITS | ACT | 136 | 208 | CLOSURE-ARTIFACT |
-| LAW-CLASS-COUNT | ACT | 136 | 136 | SURVIVES-VERBATIM |
-| LAW-TRANSLATION-COVARIANCE | R4 | ABSENT | 9 | CLOSURE-ARTIFACT |
-| LAW-DUAL-TORUS | R4B | ABSENT | 16 | CLOSURE-ARTIFACT |
-| LAW-REFINEMENT-PLACES | LOR | 0 | 0 | SURVIVES-VERBATIM |
+**Two columns, not one.** The verdict says what the flush did to the law. The
+basis says what kind of witness carried the verdict: a witness drawn from each
+arena's own objects is **measured**, and a witness that no arena can move —
+a defect count the construction forbids, or a quantity computed with no arena
+argument at all, such as the coin family handed to both sides of the comparison
+or the class count under the full stencil image — is **structural**, and
+survives the flush trivially rather than informatively. The label is not taken
+on trust: a structural label the nine-size sweep can move stops the run.
+
+Of the 18 sealed laws this unit uses, measured at one declared arena pair, 11 survive the flush verbatim -- 5 of them on a witness an arena could have moved and 6 on one no arena moves -- 1 survives with a stated proviso, and 6 differ across the pair.
+
+| law | parent | arena pair | witness on the open arena | witness on the closed arena | verdict | basis |
+|---|---|---|---|---|---|---|
+| LAW-LINK-OPERATOR | R5 | P-9 / T-8 | 0 | 0 | SURVIVES-VERBATIM | STRUCTURAL |
+| LAW-HOLONOMY | R5 | P-9 / T-8 | 0 | 0 | SURVIVES-VERBATIM | MEASURED |
+| LAW-COIN-FAMILY | R5 | P-9 / T-8 | 640 | 640 | SURVIVES-VERBATIM | STRUCTURAL |
+| LAW-STRATIFICATION | R5 | the whole ladder | 0 | 6 | SURVIVES-SCOPED | MEASURED |
+| LAW-LINK-COUNT | R5 | P-9 / T-8 | 32 | 0 | CLOSURE-ARTIFACT | MEASURED |
+| LAW-PLAQUETTE-COUNT | R5 | P-9 / T-8 | 17 | 0 | CLOSURE-ARTIFACT | MEASURED |
+| LAW-SINGLE-OCCUPATION | R5 | P-9 / T-8 | 0 | 0 | SURVIVES-VERBATIM | STRUCTURAL |
+| LAW-RECTANGLE-FAMILY | POT | P-9 / T-8 | 16 | 16 | SURVIVES-VERBATIM | STRUCTURAL |
+| LAW-WINDING-FAMILY | POT | P-9 / T-8 | ABSENT | 1024 | CLOSURE-ARTIFACT | MEASURED |
+| LAW-HOMOLOGY | POT | P-9 / T-8 | 1 | 5 | CLOSURE-ARTIFACT | MEASURED |
+| LAW-CLOSED-FORM | POT | P-9 / T-8 | 0 | 0 | SURVIVES-VERBATIM | MEASURED |
+| LAW-AREA-BLINDNESS | POT | P-9 / T-8 | 0 | 0 | SURVIVES-VERBATIM | MEASURED |
+| LAW-MERGING-INDEX | ACT | P-9 / T-8 | 1 | 1 | SURVIVES-VERBATIM | MEASURED |
+| LAW-PARENT-ORBITS | ACT | P-9 / T-8 | 136 | 136 | SURVIVES-VERBATIM | MEASURED |
+| LAW-CLASS-COUNT | ACT | P-9 / T-8 | 136 | 136 | SURVIVES-VERBATIM | STRUCTURAL |
+| LAW-TRANSLATION-COVARIANCE | R4 | P-9 / T-8 | ABSENT | 9 | CLOSURE-ARTIFACT | MEASURED |
+| LAW-DUAL-TORUS | R4B | P-9 / T-8 | ABSENT | 64 | CLOSURE-ARTIFACT | MEASURED |
+| LAW-REFINEMENT-PLACES | LOR | P-9 / T-8 | 0 | 0 | SURVIVES-VERBATIM | STRUCTURAL |
+
+**The two rows the twist parent's own scope governs.** The merging index and
+the orbit count it moves agree with the open patch at this pair, and they do so
+because the closed side of the pair is a size the phase order divides — which
+is the case that parent sealed in its own verdict string and priced along its
+own length axis: *at every L divisible by eight it is 1, and there the price is
+not reduced, no orbit pair is identified and no observable is pinned*. At the
+sizes the phase order does not divide, the same two witnesses take other values
+— they are the merging-index column of the gauge table above — and the ladder
+of those values is carried into the classifier as an input beside the pair and
+published row by row, so the reader can see at once that what survives the
+flush here survives at a size the parent had already singled out and not at
+every size of the closed ladder.
 
 Two rows deserve their names read out. The parent's translation-covariant
 generator family is not smaller on an open patch, it is empty, because the
@@ -478,9 +541,12 @@ quantifier ranges over a completed totality, and every instance is a statement
 about one finite patch. The patches are directed under inclusion and the
 inclusions carry values unchanged on exactly the observables a HOR-law
 quantifies over; that property is what is measured, and it is not a
-convergence, not a limit and not an object.
+convergence, not a limit and not an object. The basis is disclosed rather than
+summed over: the reference is the smallest size in the system, and the
+comparisons it makes with itself are counted separately from the ones that
+cross a proper inclusion.
 
-Across 5 open sizes directed under inclusion the inclusions carry 400 values and fail to carry 0.
+Across 5 open sizes directed under inclusion the inclusions carry 400 values and fail to carry 0, and of those comparisons 80 are the reference size against itself and 320 cross a proper inclusion.
 
 The standing prohibition is the parent's and it is not weakened here. R1 says
 of its own two stabilised values:
@@ -500,17 +566,23 @@ exist. This unit makes no actual-infinity claim of any kind.
 
 Stating the form is cheap. The pin therefore asks for a gate: every sealed law
 this unit uses must be quantifiable over horizons, or the exception must be
-named. It is run on every row of the census.
+named. It is run on every row of the census, and the word it returns says what
+it tested. The test is the **closure-witness test** — the law's witness on the
+open arena is its witness on the closed one, or differs from it with a stated
+proviso — and a law that passes it is horizon-statable **by that test**. That is
+not the same property as carrying no symbol for a size, and this unit does not
+claim to have measured the second one.
 
-10 of the 18 laws are quantifiable over horizons and 8 are not, and every one of those carries the name of the object it needs.
+12 of the 18 laws are horizon-statable by the closure-witness test and 6 are not, and every one of those carries the name of the object it needs.
 
 The exceptions are not failures of the formulation; they are its content. They
-are the winding family, the winding classes a loop can carry, the merging index
-and the orbit count it moves, the translation-covariant generator family and
-the momentum route that needs it, and the two completeness properties of the
-link and plaquette sets that hold only when there is no edge. Every one of them
-is a statement about a closure. None of them is a statement inside a horizon,
-and none of them is needed to state anything that is.
+are the winding family, the winding classes a loop can carry, the
+translation-covariant generator family and the momentum route that needs it,
+and the two completeness properties of the link and plaquette sets that hold
+only when there is no edge. Every one of them is a statement about a closure.
+None of them is a statement about an observable inside a horizon. Whether any
+horizon-statable law depends on one of them is not measured here, and is handed
+on rather than assumed.
 
 ## Separation needs room, and the room is what a horizon is
 
@@ -529,9 +601,16 @@ Every pre-registered outcome word is reachable at this arena by a
 counter this run computes. The blocked word is reached whenever the stability
 tester never returns an unmoved row or the census never returns a surviving
 law; both counters are nonzero here and both could have been zero. The
-globally-sensitive word is reached by any census row the classifier calls
-surviving while its two residuals differ, and that comparison is computed on
-every row. The split-differently word is reached whenever either side of the
+globally-sensitive word is reached by any law the classifier calls surviving
+whose witness on the open arena moves across the declared open ladder — a local
+law that the far lattice is setting — and that condition is computed on every
+row of the census and is empty here. Because it is empty, the branch is shown
+reachable rather than argued to be: a synthetic row built out of this run's own
+measured ladders, whose two witnesses agree at the pair and whose open ladder
+an arena moves, is put through the same classifier, the same condition and the
+same four-way rule, and the word that comes out is the globally-sensitive one;
+a second control differing only in a ladder no arena moves does not produce it.
+The split-differently word is reached whenever either side of the
 pre-registered split fails its own rule, and the winding side's counters are
 what make that branch live. The word this run reached is the remaining one.
 
@@ -546,16 +625,28 @@ through the same tester, on the same call.
 
 The arena is two-dimensional and finite at every size swept; the field, the
 alphabet and the coin family are the parents'. The carrier is the uniform
-configurations, one coin on every link. The generators are inherited and the
-tick is this unit's declaration; every speed is a speed per that tick.
+configurations, one coin on every link.
+
+The generators are inherited and the tick is this unit's declaration; every speed is a speed per that tick.
+
+Every integer this unit publishes is a count of things it enumerated, and the
+receipt stamps every counting block `COUNTS-ARE-COUNTING-ONLY`: no number here
+is a probability, a density or a measure of anything, and no fraction printed
+above is a ratio over a measure — each is one enumerated count against another.
 
 **What was swept, and what was not.** The size ladders are the ones printed in
-the tables above and nothing beyond them was run. The contractible sweep runs
-the whole coin family at the core pair and a declared stride through the
-family at every other size; the dynamical sweep runs that same stride, minus
-the sector whose tick cannot move anything, on a declared window; the cone's
-attainment sweep runs the whole family at its own declared depth, which is
-shorter than the cone census's. The loop family is the parent's window —
+the tables above. Two arenas carry a census without appearing in any table and
+are named here: the cone census and its attainment sweep are taken on the open
+patch P-35, which is large enough that the boundary is never reached at the
+censused depth, and the dynamical sweep's reference arena is the open patch
+P-19, which plays the same role for the window. Nothing else was run. The
+contractible sweep runs the whole coin family at the core pair and a declared
+stride through the family at every other size; the dynamical sweep runs that
+same stride, minus the sector whose tick cannot move anything, on a declared
+window; the cone's attainment sweep runs the whole family at its own declared
+depth, which is shorter than the cone census's; the census's own nine-size
+witness sweep runs the closed-form witnesses at that same declared stride and
+its own row at the whole family. The loop family is the parent's window —
 rectangle circuits and straight winding cycles — and not all closed paths. The
 non-uniform configurations are not swept here, as they were not swept by the
 parent that handed the carrier over. Nothing above is claimed at a size, a
@@ -567,6 +658,12 @@ no metric, no signature, no invariance group and no observer. The word for what
 was measured is a maximal reach of influence per application of a declared
 operator, and it is a maximum, not a bound. No cosmological reading is
 licensed. No SI number appears anywhere.
+
+Two of the forty-four gates fire after the ledger's shape is published, and
+they are the two that vouch the mutant battery; they are declared by name at
+the binding gate, their rows and the chain head that closes over them are
+carried inside the last gate's own sealed block, and the promoted transcript is
+reconciled against the ledger again, in order, before anything is written.
 
 The declared free axes are the two closures, the size ladders, the coin, the
 schedule's parity order and the start place's parity class; every quantity
