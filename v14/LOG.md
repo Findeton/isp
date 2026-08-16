@@ -11768,3 +11768,21 @@ moved.**  Out-of-scope flag: #324's instrument counts are
 historical (the repaired instrument reads 61 mutants / 39
 gates-before-paper).  **Orchestrator battery next;
 terminal on green.**
+
+## 2026-08-15 — POT IS TERMINAL: THIRTY-THREE — PERIMETER-ONLY BY PROOF, AREA-BLIND UNDER EVERY MEASURE, THE GAP 1/2 EXACT AT ITS SUPPORT; CONFINEMENT STRUCTURALLY MUTE AT THE UNIFORM CARRIER (v14 LEDGER #364)
+
+**Orchestrator battery ALL GREEN** (byte-identical ×2 from
+deleted artifacts; seed-invariant; hostile argv;
+MUT-ARENA dead at G-ARENA-REBUILT on target; artifacts
+untouched).  STATUS row appended; memory sealed next.
+The QCD road's second rung seals: the confinement question
+at this carrier is not answered but DISSOLVED — the
+substrate cannot express an area law, the deconfinement
+tally is exactly the flat potentials, and what the
+135-coupling family actually buys is winding physics and
+mode amplitudes around an unmovable exact gap of one half.
+The non-uniform carrier (where local force physics could
+first live) stands registered as the successor.
+
+**Programme count: THIRTY-THREE terminals; zero false
+computed numbers surviving anywhere in v14.**
