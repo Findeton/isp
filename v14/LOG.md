@@ -12104,3 +12104,32 @@ blindness as the S-1-adjacent crux; the REFUSED controls),
 K3 (the template-conformance audit of the second exemplar;
 the S-1 AST check attacked; the eraser-leak probe).  Both
 capstone panels now in the field.
+
+## 2026-08-16 — HOR K2 (EFFECTUS) FROZEN: ACCEPT-WITH-FIXES (BLOCKING); NATIVE RULED FOR THE UNIT; ARTIFACT SPLIT 6-ADVANCE/2-RELABEL; ZERO NUMBERS WRONG IN 302 (v14 LEDGER #378)
+
+**Review:** v14/review-hor-effectus.md (080c9516608b, 782
+lines).  302 recomputations, zero delivered numbers wrong;
+all four tables cell-for-cell; byte-identical rerun.
+**RULINGS:** (1) **NATIVE LICENSED** (the pin's definition
+met; quantifiability is a disjunction met 18/18) — but the
+load-bearing "none of them is needed" dependency sentence
+is UNGATED: measure or re-word.  (2) **ARTIFACT SPLIT: an
+advance at 6 of 8 rows, a re-labeling at 2** — MAJOR-1:
+the census's "closed arena" is FOUR undisclosed arenas;
+under a uniform T-8 witness the census reads 11/1/6, not
+9/1/8 (the two moving rows restate ACT's sealed L-scope
+duty).  **NO ERRATUM OWED to any parent** — but three
+sentences apply FOUND/DECLARED vocabulary to sealed
+terminals and take the SEC-2 in-sentence scope clause.
+(3) the tick honest, one scope word owed ("a maximum, not
+a bound" bolted to the structural 16/16 while dynamical
+attainment is 8); the R4/R4b separation gate decorative in
+mechanism.  (4) the arms genuinely blind (two minor
+scopes).  (5) **R1's walls the cleanest item — no
+smuggling; "direct limit" appears nowhere.**  MAJOR-3:
+GLOBAL-SENSITIVE-AT UNREACHABLE BY CONSTRUCTION (the
+offender predicate empty at every input — the #299
+failure recurring).  MAJOR-2: the quantifiability class
+word bound to a different predicate, counterexamples both
+directions.  Three head-segment replacements with exact
+licensed strings supplied.  K1/K3 still out.
