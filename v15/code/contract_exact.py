@@ -20,22 +20,30 @@ re-implemented in this file, or CITED to a sealed unit at its pinned digest --
 and the row says which.
 
 S-1 BY CONSTRUCTION (the registered-unimplemented family, v14/TEMPLATE.md
-Sec.11).  Four code regions, disjoint by machine check at G-S1-DISJOINT-CODE:
+Sec.11).  FIVE code regions, disjoint by machine check at G-S1-DISJOINT-CODE:
   b_*   THE BUILDER       -- the declared arena, the committed corpus, the
                              declared dynamics; the only region that may name a
                              declared-side constant;
   s_*   THE STRIPPER      -- the eraser that emits bare record bytes;
   r_*   THE RECONSTRUCTOR -- reads bare bytes and nothing else, ever;
   k_*   THE COMPARATOR    -- decides agreement and rebuilds the verdict; calls
-                             no builder, no stripper and no reconstructor.
-The comparator is shown to HAVE TEETH: it refuses four of eight declared
-generating mechanisms, and it rebuilds the head from the serialized receipt
-alone.
+                             no builder, no stripper and no reconstructor;
+  the unprefixed PLUMBING -- digests, i/o, gates, rendering.  It is not policed
+                             for reach, and the reach audit is transitive
+                             THROUGH it, so a reconstructor that reaches a
+                             builder by way of plumbing is still an offence.
+Three legs answer the family, not one: the transitive reach audit; an
+ALIAS leg that forbids globals()/getattr/sys.modules/importlib/eval/exec and
+builder-name string constants inside any r_*/s_*/k_* subtree; and a
+DECLARED-CONSTANT leg that forbids naming any member of DECLARED_CONSTANTS
+there.  The reconstructor is shown to HAVE TEETH: it refuses four of the nine
+declared generating mechanisms, and the comparator rebuilds the head from the
+serialized receipt alone.
 
 TEMPLATE.  The nine E-25...E-33 families are imported from
-v14/code/era_template.py and USED, not copied: every family's check id is read
-off the template's own table and matched to a live call in this module, and
-that match is gated at G-TEMPLATE-EXERCISED.
+v14/code/era_template.py and USED, not copied: every family's entry point is
+COUNTED AT THE CALL SITE in the mode being delivered, and G-TEMPLATE-EXERCISED
+gates the execution census -- not a regex over this file's own source.
 
 EXACTNESS.  Python integers and fractions.Fraction only.  No float appears
 anywhere; an AST scan of this module and a recursive type walk of the receipt
@@ -44,8 +52,10 @@ are gates.
 CLI (#82).  --run | --no-write | --selftest | --list-gates | --list-mutants
             | --mutant NAME | --render
 --render is the paper-free diagnostic: it fires every gate whose object is the
-payload, skips exactly the four whose object is the paper, and writes nothing.
-Anything else exits 2.
+payload, skips exactly the four whose object is the paper, writes nothing, and
+exits 4 so that no exit-code-only harness can score it as a delivery.
+The argv whitelist is STRICT AT EVERY POSITION: --mutant takes exactly one
+operand and every other flag takes none, so `--run --mutant NAME` exits 2.
 """
 
 from __future__ import annotations
@@ -81,7 +91,7 @@ PIN_REL = "v15/note-contract-pin.md"
 # reads at pinned digests only, every product consumed by a gate).
 SOURCES = {
     PIN_REL: "438586c11db5",
-    "v15/PLAN.md": "6ba8621d4ec7",
+    "v15/PLAN.md": "754e075c4a0e",
     TEMPLATE_REL: "d04a3eb58fbc",
     "v14/TEMPLATE.md": "809ebe3514ad",
     "v14/paper-41-rec.md": "c5fbc9acbd76",
@@ -459,6 +469,48 @@ def b_record_menu(n):
                  for s in range(NACT))
 
 
+def b_amplitudes():
+    """the declared amplitudes the screening measurement is taken at.  The
+    first is the uniform one the head is stamped to; the rest are the state
+    space's own corners, so that the two legs of the screening theorem can be
+    told apart (K2 MAJOR-3)."""
+    single = [B_Z0] * DIM
+    single[0] = B_Z1
+    one_direction = [B_Z1 if k % len(DECLARED_LINKS) == 0 else B_Z0
+                     for k in range(DIM)]
+    alternating = [B_Z1 if k % 2 == 0 else B_WPOW[1] for k in range(DIM)]
+    return (("THE-UNIFORM-AMPLITUDE", tuple([B_Z1] * DIM)),
+            ("A-SINGLE-CELL-AMPLITUDE", tuple(single)),
+            ("ONE-LINK-DIRECTION-ONLY", tuple(one_direction)),
+            ("ALTERNATING-ROOTS", tuple(alternating)),
+            ("THE-ZERO-AMPLITUDE", tuple([B_Z0] * DIM)))
+
+
+def b_screening_at(psi, fields):
+    """one screening measurement at one amplitude: the successors, the two
+    residue legs, and both readings' menus."""
+    succ = {}
+    for n in fields:
+        succ[n] = b_walk_step(list(psi), list(n))
+    same = agree = diff = cross = 0
+    for a, b in combinations(fields, 2):
+        ra = tuple(v % B_Q for v in a)
+        rb = tuple(v % B_Q for v in b)
+        if ra == rb:
+            same += 1
+            if succ[a] == succ[b]:
+                agree += 1
+        else:
+            diff += 1
+            if succ[a] == succ[b]:
+                cross += 1
+    return {"successors": len({succ[n] for n in fields}),
+            "equal_residue_pairs": same, "equal_residue_agreements": agree,
+            "distinct_residue_pairs": diff, "distinct_residue_collisions": cross,
+            "born_menus": len({b_born_menu(succ[n][1]) for n in fields}),
+            "post_coin_vectors": len({succ[n][1] for n in fields})}
+
+
 def b_coin_fiber(bound):
     """the S_3-covariant unitary coins over the arena's own ring: C = aI + bJ
     with |a| = 1 and a conj(b) + conj(a) b + q |b|^2 = 0, carried over the
@@ -628,10 +680,14 @@ def b_groupoid_counts(H, widths):
 # ===========================================================================
 
 S_MULT, S_ADD = 5, 11
+S_MULT_SECOND, S_ADD_SECOND = 7, 4        # a second, unrelated token naming
 
 
-def s_coordinate(mult, add):
-    return {k: (mult * k + add) % DIM for k in range(DIM)}
+def s_coordinate(mult, add, tokens):
+    """the emitted naming of the record's tokens.  `tokens` is handed in by
+    the caller: the eraser is told how many tokens it is renaming and names no
+    declared-side constant itself (S-1's declared-constant leg)."""
+    return {k: (mult * k + add) % tokens for k in range(tokens)}
 
 
 def s_bare_blocks(corpus, pi):
@@ -648,20 +704,6 @@ def s_bare_blocks(corpus, pi):
 def s_bare_history(H, pi):
     return tuple(tuple(sorted(pi[c] for c in b_cell_footprint(F)))
                  for F in H if b_cell_footprint(F))
-
-
-def s_type_walk(obj, depth=0):
-    """the emitted object's shape: nesting depth and leaf types."""
-    if isinstance(obj, int):
-        return depth, {"int"}
-    if isinstance(obj, (tuple, list, frozenset, set)):
-        d, ts = depth, set()
-        for o in obj:
-            dd, tt = s_type_walk(o, depth + 1)
-            d = max(d, dd)
-            ts |= tt
-        return d, ts
-    return depth, {type(obj).__name__}
 
 
 # ===========================================================================
@@ -804,16 +846,18 @@ def group_set_stabilizer(n, arity, family):
     return out
 
 
-def r_direction_splittings(adj, pairs):
-    """the ways the derived link structure splits into disjoint classes, each
-    class a spanning union of triangles.  The record offers these and prefers
-    none."""
+def r_direction_splittings(adj, pairs, arity):
+    """the ways the reconstructed link structure splits into disjoint spans,
+    each class a spanning union of cliques of the size the RECORD's own blocks
+    have.  `arity` is that measured block size, handed in by the caller; this
+    region names no declared-side constant.  The record offers these and
+    prefers none."""
     toks = sorted(pairs)
     n = len(adj)
     tok_of = {frozenset(p): t for t, p in pairs.items()}
-    # a candidate class is a partition of the actors into cliques of the
-    # declared arity; its tokens are the edges those cliques carry.
-    tri = [c for c in combinations(range(n), B_ARITY)
+    # a candidate class is a partition of the actors into cliques of the size
+    # the record's blocks have; its tokens are the edges those cliques carry.
+    tri = [c for c in combinations(range(n), arity)
            if all(b in adj[a] for a, b in combinations(c, 2))]
     parts, cur = [], []
 
@@ -829,17 +873,49 @@ def r_direction_splittings(adj, pairs):
             bt(rem - set(c))
             cur.pop()
     bt(frozenset(range(n)))
-    classes = []
+    spans = []
     for P in parts:
         toks_here = frozenset(tok_of[frozenset(e)]
                               for c in P for e in combinations(c, 2))
-        classes.append(toks_here)
-    classes = sorted(set(classes), key=sorted)
+        spans.append(toks_here)
+    spans = sorted(set(spans), key=sorted)
     splits = set()
-    for tri in combinations(classes, B_ARITY):
-        if len(set().union(*tri)) == len(toks):
-            splits.add(frozenset(tri))
-    return len(classes), splits
+    if spans:
+        # how many spans a splitting takes is READ OFF the record: every
+        # candidate class carries the same number of tokens, so the count is
+        # the token total divided by that width.  (Writing the arity here
+        # would be an a = 3 coincidence, K1 m7's species.)
+        widths = {len(c) for c in spans}
+        if len(widths) == 1 and len(toks) % len(spans[0]) == 0:
+            per = len(toks) // len(spans[0])
+            for tri in combinations(spans, per):
+                if len(set().union(*tri)) == len(toks):
+                    splits.add(frozenset(tri))
+    return len(spans), splits
+
+
+def r_block_components(blocks):
+    """the number of connected components of the record's block hypergraph.
+    The representation-class search offers each token after the first only one
+    fresh label, which is exhaustive exactly when this count is one."""
+    seen, comps = set(), 0
+    bof = collections.defaultdict(list)
+    for bi, b in enumerate(blocks):
+        for t in b:
+            bof[t].append(bi)
+    for t0 in sorted({t for b in blocks for t in b}):
+        if t0 in seen:
+            continue
+        comps += 1
+        stack = [t0]
+        while stack:
+            t = stack.pop()
+            if t in seen:
+                continue
+            seen.add(t)
+            for bi in bof[t]:
+                stack.extend(u for u in blocks[bi] if u not in seen)
+    return comps
 
 
 def r_cast_solutions(blocks):
@@ -955,16 +1031,19 @@ def k_parameter_word(free):
     return "ISP-IS-ONE-THEORY" if free == 0 else "ISP-IS-A-FAMILY"
 
 
-def k_head(seg):
-    return seg
-
-
 def k_parse_head(segment):
     """the verdict's own numerals, parsed back out of the emitted string by a
-    reader that shares no code and no literal with the builder."""
+    reader that shares no code and no literal with the builder.  EVERY
+    numeral position is returned, including the second half of a compound
+    `A-OF-B` value, which the first reader stopped at the hyphen and never
+    saw."""
     out = {}
-    for m in re.finditer(r"([A-Z0-9\-]+)=([0-9][0-9,]*)", segment):
-        out[m.group(1)] = int(m.group(2).replace(",", ""))
+    for m in re.finditer(
+            r"([A-Z0-9\-]+)=([0-9][0-9,]*)(?:-OF-([0-9][0-9,]*))?", segment):
+        vals = [int(m.group(2).replace(",", ""))]
+        if m.group(3) is not None:
+            vals.append(int(m.group(3).replace(",", "")))
+        out[m.group(1)] = tuple(vals)
     return out
 
 
@@ -1000,6 +1079,23 @@ def audit_no_floats(src):
 REGION_PREFIX = (("b_", "builder"), ("s_", "stripper"),
                  ("r_", "reconstructor"), ("k_", "comparator"))
 
+# Every declared-side constant this module carries.  Only the builder may name
+# one; the stripper, the reconstructor and the comparator may not, and
+# G-S1-DISJOINT-CODE's third leg enforces it CASE-INSENSITIVELY (K3 MAJOR-4:
+# `region_of` is case-sensitive, so `B_ARITY` read as plumbing).
+DECLARED_CONSTANTS = frozenset((
+    "B_Q", "B_DIMENSION", "B_ARITY", "B_ROUNDS", "B_WPOW", "B_GROVER",
+    "B_SHIFT", "B_Z0", "B_Z1", "B_COLLINEAR_FLAT", "B_COMMITTED_R4",
+    "B_SEEDS_PER_ROUND", "SITES", "SITE_INDEX", "NACT", "DECLARED_LINKS",
+    "CLASS_NAMES", "CLASS_DIR", "UNDECLARED_CLASS", "CLASSES", "CELLS",
+    "CELL_INDEX", "DIM", "S_MULT", "S_ADD",
+))
+
+# The routes by which a region can reach another without leaving a call edge
+# or a bare Name for the graph to see (K3 MAJOR-4, INJ-01).
+ALIAS_ROUTES = ("globals", "getattr", "vars", "eval", "exec", "compile",
+                "sys.modules", "importlib", "__import__", "locals")
+
 
 def region_of(name):
     for pre, reg in REGION_PREFIX:
@@ -1026,8 +1122,8 @@ def module_call_graph(src):
 
 
 def audit_regions(src):
-    """no reconstructor and no comparator may REACH a builder or a stripper at
-    any depth."""
+    """LEG 1 -- no reconstructor and no comparator may REACH a builder or a
+    stripper at any depth, transitively THROUGH the unpoliced plumbing."""
     g = module_call_graph(src)
     offences = []
     for name in g:
@@ -1047,35 +1143,84 @@ def audit_regions(src):
     return offences
 
 
+def _region_subtrees(src, regions):
+    tree = ast.parse(src)
+    for node in tree.body:
+        if isinstance(node, ast.FunctionDef) and region_of(node.name) in regions:
+            yield node
+
+
+def audit_alias_routes(src):
+    """LEG 2 -- inside any stripper, reconstructor or comparator, the routes
+    that reach a function WITHOUT leaving a call edge are forbidden outright:
+    name assembly through globals()/getattr()/sys.modules/importlib, eval and
+    exec, and any string constant spelling a builder's or a stripper's name."""
+    offences = []
+    for node in _region_subtrees(src, ("stripper", "reconstructor",
+                                       "comparator")):
+        for sub in ast.walk(node):
+            nm = None
+            if isinstance(sub, ast.Call):
+                nm = getattr(sub.func, "id", None)
+                if nm is None and isinstance(sub.func, ast.Attribute):
+                    root = sub.func
+                    while isinstance(root, ast.Attribute):
+                        root = root.value
+                    if isinstance(root, ast.Name):
+                        nm = "%s.%s" % (root.id, sub.func.attr)
+            elif isinstance(sub, ast.Attribute):
+                root = sub.value
+                if isinstance(root, ast.Name):
+                    nm = "%s.%s" % (root.id, sub.attr)
+            elif isinstance(sub, ast.Name):
+                nm = sub.id
+            if nm and nm in ALIAS_ROUTES:
+                offences.append("%s uses the alias route %s at line %d"
+                                % (node.name, nm, getattr(sub, "lineno", 0)))
+            if isinstance(sub, ast.Constant) and isinstance(sub.value, str):
+                if re.fullmatch(r"(?:b_|s_)\w+", sub.value):
+                    offences.append("%s spells the name %r at line %d"
+                                    % (node.name, sub.value, sub.lineno))
+    return offences
+
+
+def audit_declared_constants(src):
+    """LEG 3 -- only the builder may name a declared-side constant.  The test
+    is case-insensitive, so a shouted constant cannot slip through the
+    prefix map (K3 MAJOR-4)."""
+    lowered = {c.casefold() for c in DECLARED_CONSTANTS}
+    offences = []
+    for node in _region_subtrees(src, ("stripper", "reconstructor",
+                                       "comparator")):
+        for sub in ast.walk(node):
+            if isinstance(sub, ast.Name) and sub.id.casefold() in lowered:
+                offences.append("%s names the declared constant %s at line %d"
+                                % (node.name, sub.id, sub.lineno))
+    return offences
+
+
 def region_census(src):
     g = module_call_graph(src)
     return collections.Counter(region_of(n) for n in g)
 
 
 def receipt_type_walk(obj, bad, path="$"):
-    if isinstance(obj, bool) or isinstance(obj, int) or obj is None:
-        return
-    if isinstance(obj, str):
-        return
+    """returns the number of LEAVES visited, so that the count the gate
+    publishes is the walk's own and not a typed zero (K3 MAJOR-8)."""
     if isinstance(obj, float):
         bad.append(path)
-        return
+        return 1
+    if isinstance(obj, bool) or isinstance(obj, int) or obj is None \
+            or isinstance(obj, str):
+        return 1
     if isinstance(obj, dict):
-        for k, v in obj.items():
-            receipt_type_walk(v, bad, path + "." + str(k))
-        return
+        return sum(receipt_type_walk(v, bad, path + "." + str(k))
+                   for k, v in obj.items())
     if isinstance(obj, (list, tuple)):
-        for i, v in enumerate(obj):
-            receipt_type_walk(v, bad, path + "[%d]" % i)
-        return
+        return sum(receipt_type_walk(v, bad, path + "[%d]" % i)
+                   for i, v in enumerate(obj))
     bad.append(path + ":" + type(obj).__name__)
-
-
-MUT = {"none": None}
-
-
-def mut(tag, state):
-    return state.get("mutant") == tag
+    return 1
 
 
 # ===========================================================================
@@ -1085,13 +1230,20 @@ def mut(tag, state):
 
 CLASS_ALPHABET = ("PRIMITIVE", "DECLARED", "GENERATED", "RECONSTRUCTED",
                   "LAW-SELECTED")
-BACKING_ALPHABET = ("COMPUTED-HERE", "SEALED-CITATION")
+# NONE is in the alphabet because a row whose declared backing the run cannot
+# resolve MUST be able to read NONE -- that is what makes CENSUS-PARTIAL a
+# reachable word at this corpus rather than an unfalsifiable one (K2 MAJOR-5c).
+BACKING_ALPHABET = ("COMPUTED-HERE", "SEALED-CITATION", "NONE")
+
+# the declared prefix lengths of the Q58 domain probe; each is gated to lie
+# strictly below the measured covering prefix, so each fails to cover.
+DOMAIN_PREFIXES = (4, 8, 12, 16, 20, 22)
 
 
 def measure():
     R: dict = {}
     corp, parts, strict, flatq, scheds, smeta = b_build_corpus()
-    pi = s_coordinate(S_MULT, S_ADD)
+    pi = s_coordinate(S_MULT, S_ADD, DIM)
     DA = b_declared_actors()
     PAIRS = b_declared_pairs()
 
@@ -1103,8 +1255,23 @@ def measure():
     R["arena_parallel_classes"] = len(CLASS_NAMES)
     R["arena_declared_directions"] = len(DECLARED_LINKS)
     R["arena_cells"] = DIM
+    # the carrier typing, MEASURED rather than asserted: the cell is the
+    # unordered co-division pair, and the map is a bijection (K1's m2 check).
+    R["arena_codivision_pairs"] = len({b_codivision_pair(c) for c in CELLS})
+    R["arena_cell_pair_bijection"] = (R["arena_codivision_pairs"] == DIM)
     R["arena_groupings"] = len(parts)
     R["arena_saturating_groupings"] = len(b_raw_census()["sat"])
+    # K1 m7: `sum(round_vec) == n` is an a = 3 coincidence of the idiom -- the
+    # general identity is (n/a)*C(a,2) = n only at a = 3.  What the law says
+    # structurally is that EVERY GROUP IS A TRIANGLE, and the two are measured
+    # against each other here so that the coincidence is not reused as a
+    # formula by a unit at another arity.
+    _parts = b_raw_census()["parts"]
+    _tri = [i for i, P_ in enumerate(_parts)
+            if all(len(b_cell_footprint(frozenset(g))) == B_ARITY for g in P_)]
+    R["arena_saturating_all_triangles"] = (
+        sorted(_tri) == sorted(b_raw_census()["sat"]))
+    R["arena_all_triangle_groupings"] = len(_tri)
     R["arena_strict_triples"] = len(strict)
     R["arena_flat_quadruples"] = len(flatq)
     R["arena_window_schedules"] = len(scheds)
@@ -1172,36 +1339,45 @@ def measure():
         len(v) for v in byfield.values() if len(v) > 1)
 
     # ---- the state ------------------------------------------------------
-    psi_uniform = [B_Z1] * DIM
-    succ = {}
-    for n in fields:
-        nxt, post = b_walk_step(list(psi_uniform), list(n))
-        succ[n] = (nxt, post)
-    R["state_successors_distinct"] = len({succ[n] for n in fields})
-    same = diff = agree = disagree = cross = 0
-    for a, b in combinations(fields, 2):
-        ra = tuple(v % B_Q for v in a)
-        rb = tuple(v % B_Q for v in b)
-        if ra == rb:
-            same += 1
-            if succ[a] == succ[b]:
-                agree += 1
-            else:
-                disagree += 1
-        else:
-            diff += 1
-            if succ[a] == succ[b]:
-                cross += 1
-    R["state_equal_residue_pairs"] = same
-    R["state_equal_residue_agreements"] = agree
-    R["state_equal_residue_disagreements"] = disagree
-    R["state_distinct_residue_pairs"] = diff
-    R["state_distinct_residue_collisions"] = cross
-    R["state_reading_a_menus"] = len({succ[n][1] for n in fields})
+    # The screening theorem is measured AT EVERY DECLARED AMPLITUDE, because
+    # its two legs part company: sufficiency is structural and minimality is
+    # amplitude-relative (K2 MAJOR-3).  The head is stamped to the first.
+    amps = b_amplitudes()
+    sweep = [(name, b_screening_at(list(psi), fields)) for name, psi in amps]
+    R["state_amplitudes_probed"] = len(sweep)
+    R["state_amplitude_rows"] = [
+        [name, s["successors"], s["equal_residue_agreements"],
+         s["equal_residue_pairs"], s["distinct_residue_collisions"],
+         s["distinct_residue_pairs"], s["born_menus"], s["post_coin_vectors"]]
+        for name, s in sweep]
+    R["state_amplitudes_sufficient"] = sum(
+        1 for _n, s in sweep
+        if s["equal_residue_agreements"] == s["equal_residue_pairs"])
+    R["state_amplitudes_minimal"] = sum(
+        1 for _n, s in sweep if s["distinct_residue_collisions"] == 0)
+    here = sweep[0][1]
+    R["state_amplitude_stamped"] = sweep[0][0]
+    R["state_successors_distinct"] = here["successors"]
+    R["state_equal_residue_pairs"] = here["equal_residue_pairs"]
+    R["state_equal_residue_agreements"] = here["equal_residue_agreements"]
+    R["state_equal_residue_disagreements"] = (
+        here["equal_residue_pairs"] - here["equal_residue_agreements"])
+    R["state_distinct_residue_pairs"] = here["distinct_residue_pairs"]
+    R["state_distinct_residue_collisions"] = here["distinct_residue_collisions"]
+    single = [s for n, s in sweep if n == "A-SINGLE-CELL-AMPLITUDE"][0]
+    R["state_single_cell_collisions"] = single["distinct_residue_collisions"]
+    R["state_single_cell_pairs"] = single["distinct_residue_pairs"]
+    # reading A's menu is the BORN menu -- the post-coin weights, not the
+    # post-coin vectors (K1 M3).  Both are published; they are not the same
+    # quantity and the row that names one may not print the other.
+    R["state_reading_a_born_values"] = here["born_menus"]
+    R["state_reading_a_post_coin_vectors"] = here["post_coin_vectors"]
+    R["state_reading_a_menus"] = here["post_coin_vectors"]
     R["state_reading_b_menus"] = len({b_record_menu(n) for n in fields})
     R["state_reading_b_menus_on_residues"] = len(
         {b_record_menu(tuple(v % B_Q for v in n)) for n in fields})
-    R["state_components"] = 3
+    R["state_components"] = 2
+    R["state_ensemble_components"] = 1
     R["state_background_components"] = 6
 
     # ---- the reconstruction and the gauge -------------------------------
@@ -1212,6 +1388,14 @@ def measure():
     R["recon_actor_size"] = max(len(a) for a in cast)
     declared_moved = frozenset(frozenset(pi[c] for c in v) for v in DA.values())
     R["recon_set_equality"] = k_set_equal(cast, declared_moved)
+    # the coordinate priced, not asserted: the record is re-emitted in a second,
+    # unrelated naming of its tokens and the reconstruction is run again.
+    pi2 = s_coordinate(S_MULT_SECOND, S_ADD_SECOND, DIM)
+    blocks2 = s_bare_blocks(corp, pi2)
+    cert2, cast2, _th2 = r_reconstruct(blocks2)
+    R["recon_second_coordinate_certificate"] = cert2
+    R["recon_coordinate_invariant"] = k_set_equal(
+        cast2, frozenset(frozenset(pi2[c] for c in v) for v in DA.values()))
     adj, dpairs, members = r_link_graph(cast)
     R["recon_derived_pairs"] = len(dpairs)
     R["recon_degree"] = max(len(v) for v in adj.values())
@@ -1230,13 +1414,61 @@ def measure():
     R["inv_two_labellings_agree"] = (len(autos) == len(autos_site))
     R["inv_arena_automorphisms"] = len(b_arena_automorphisms())
     R["inv_direction_index"] = len(autos) // len(b_arena_automorphisms())
-    nclasses, splits = r_direction_splittings(adj, dpairs)
+    # the arity the SPLITTING search uses is read off the record's own blocks,
+    # never off the declaration.
+    blk_arity = R["record_block_sizes"][0]
+    R["recon_block_arity"] = blk_arity
+    nclasses, splits = r_direction_splittings(adj, dpairs, blk_arity)
     R["inv_candidate_direction_classes"] = nclasses
     R["inv_direction_splittings"] = len(splits)
     declared_split = frozenset(
         frozenset(t for t in range(DIM) if _preimage(pi, t) % B_ARITY == d)
         for d in range(B_ARITY))
     R["inv_declared_splitting_offered"] = declared_split in splits
+    # FOUND (K1 F1).  The two twelves are the same twelve by orbit-stabilizer:
+    # Aut(link) acts on the splittings, the action is TRANSITIVE, and the
+    # stabilizer of the declared splitting is the arena group ITSELF.
+    # the action is taken in the DECLARED labelling, where the arena group and
+    # the link group live, so that the stabilizer can be compared with the
+    # arena group as a SET of permutations and not only by order.
+    tok_pair = {pi[k]: frozenset(PAIRS[k]) for k in range(DIM)}
+    idx_of = {}
+    for t, p in tok_pair.items():
+        idx_of.setdefault(p, t)
+
+    def split_image(sp, perm):
+        out = set()
+        for cls in sp:
+            moved = set()
+            for t in cls:
+                a, b = sorted(tok_pair[t])
+                moved.add(idx_of[frozenset((perm[a], perm[b]))])
+            out.add(frozenset(moved))
+        return frozenset(out)
+    # the same measurement restricted to ONE declared direction class: three
+    # disjoint triangles, which offer exactly one splitting.  This is the
+    # corpus-derived witness that the residue-one verdict word is reachable.
+    one_class = sorted(sorted(declared_split, key=sorted)[0])
+    sub_pairs = {t: dpairs[t] for t in one_class}
+    sub_adj = {i: set() for i in range(len(members))}
+    for _t, pr in sub_pairs.items():
+        a, b = sorted(pr)
+        sub_adj[a].add(b)
+        sub_adj[b].add(a)
+    n_one, s_one = r_direction_splittings(sub_adj, sub_pairs, blk_arity)
+    R["inv_single_class_candidate_classes"] = n_one
+    R["inv_single_class_splittings"] = len(s_one)
+    orbit = {split_image(declared_split, p) for p in autos_site}
+    stab_split = [p for p in autos_site
+                  if split_image(declared_split, p) == declared_split]
+    R["inv_splitting_orbit"] = len(orbit)
+    R["inv_splitting_action_transitive"] = (orbit == splits)
+    R["inv_splitting_stabilizer"] = len(stab_split)
+    R["inv_splitting_stabilizer_is_the_arena_group"] = (
+        {tuple(p) for p in stab_split}
+        == {tuple(p) for p in b_arena_automorphisms()})
+    R["inv_orbit_stabilizer_identity"] = (
+        len(orbit) * len(stab_split) == len(autos_site))
 
     # the law's own stabilizer in the symmetric group
     admissible_groups = {frozenset(SITE_INDEX[x] for x in g)
@@ -1245,6 +1477,27 @@ def measure():
     R["inv_admissible_groups"] = len(admissible_groups)
     R["inv_law_stabilizer"] = len(stab)
     R["inv_law_blind_to_direction"] = (len(stab) == len(autos))
+    # FOUND (K1 F2 / K2 minor 3).  Not an order coincidence: the two groups
+    # are EQUAL AS SETS of permutations of the nine actors, and the link graph
+    # is complete multipartite, so the order is the closed form as well.
+    R["inv_law_stabilizer_is_the_link_group"] = (
+        {tuple(p) for p in stab} == {tuple(p) for p in autos_site})
+    R["inv_arena_group_inside_the_link_group"] = (
+        {tuple(p) for p in b_arena_automorphisms()}
+        <= {tuple(p) for p in autos_site})
+    parts_of_the_multipartition = collections.defaultdict(set)
+    for a in range(NACT):
+        parts_of_the_multipartition[
+            frozenset(b for b in range(NACT) if b != a and b not in adj_site[a])
+            | {a}].add(a)
+    R["inv_link_graph_parts"] = len(parts_of_the_multipartition)
+    R["inv_link_graph_part_sizes"] = sorted(
+        len(v) for v in parts_of_the_multipartition.values())
+    closed = 1
+    for sz in R["inv_link_graph_part_sizes"]:
+        closed *= _factorial(sz)
+    closed *= _factorial(R["inv_link_graph_parts"])
+    R["inv_link_graph_closed_form"] = closed
 
     # the direction declaration priced by rebuilding the whole census
     profs = {}
@@ -1276,8 +1529,32 @@ def measure():
     AUTA = [tuple(p) for p in b_arena_automorphisms()]
     AUTL = [tuple(p) for p in autos_site]
 
-    def himg(H, p):
-        return tuple(sorted(tuple(sorted(p[SITE_INDEX[x]] for x in F)) for F in H))
+    # Each event is named by its index in the SORTED list of all actor groups
+    # of the declared arity, a list the relabellings permute among themselves.
+    # Index order is event order, so comparing index tuples is comparing event
+    # tuples: the orbit counts below are the same numbers a direct image would
+    # give, at a fraction of the work.
+    all_events = [tuple(c) for c in combinations(range(NACT), B_ARITY)]
+    ev_index = {e: i for i, e in enumerate(all_events)}
+    hist_ids = [tuple(ev_index[tuple(sorted(SITE_INDEX[x] for x in F))]
+                      for F in H) for H in hist]
+
+    def perm_table(p):
+        return tuple(ev_index[tuple(sorted(p[i] for i in e))]
+                     for e in all_events)
+    AUTA_T = [perm_table(p) for p in AUTA]
+    AUTL_T = [perm_table(p) for p in AUTL]
+    ident_T = perm_table(tuple(range(NACT)))
+
+    def hkeep(Hid, t):
+        """the ORDER-PRESERVING image: a history is a sequence, and this map
+        keeps it one."""
+        return tuple(t[i] for i in Hid)
+
+    def himg(Hid, t):
+        """the image AFTER the order is forgotten -- a different object, and
+        the census row must say so (K1 M2)."""
+        return tuple(sorted(t[i] for i in Hid))
 
     def fimg(n, p):
         d = {}
@@ -1285,8 +1562,18 @@ def measure():
             d[tuple(sorted(p[i] for i in PAIRS[k]))] = n[k]
         return tuple(v for _k, v in sorted(d.items()))
     R["quotient_histories"] = len(hist)
-    R["quotient_histories_arena"] = len({min(himg(H, p) for p in AUTA) for H in hist})
-    R["quotient_histories_link"] = len({min(himg(H, p) for p in AUTL) for H in hist})
+    # the three-step chain, with the step the group does NOT do published
+    # first: sorting the events is not a group action.
+    R["quotient_history_event_multisets"] = len(
+        {himg(Hid, ident_T) for Hid in hist_ids})
+    R["quotient_histories_arena"] = len(
+        {min(himg(Hid, t) for t in AUTA_T) for Hid in hist_ids})
+    R["quotient_histories_link"] = len(
+        {min(himg(Hid, t) for t in AUTL_T) for Hid in hist_ids})
+    R["quotient_histories_ordered_arena"] = len(
+        {min(hkeep(Hid, t) for t in AUTA_T) for Hid in hist_ids})
+    R["quotient_histories_ordered_link"] = len(
+        {min(hkeep(Hid, t) for t in AUTL_T) for Hid in hist_ids})
     R["quotient_fields"] = len(fields)
     R["quotient_fields_arena"] = len({min(fimg(n, p) for p in AUTA) for n in fields})
     R["quotient_fields_link"] = len({min(fimg(n, p) for p in AUTL) for n in fields})
@@ -1305,6 +1592,10 @@ def measure():
                                    if actor_record else [])
     R["dep_actor_record_cycle_length"] = (
         len(R["dep_actor_record_cycle"]) if actor_record else 0)
+    # the search's own precondition, gated rather than assumed (K1 m8): the
+    # one-fresh-label menu is complete only if the record's block hypergraph
+    # is connected, so the number of components is measured and gated.
+    R["class_blocks_components"] = r_block_components(blocks)
     sols = r_cast_solutions(blocks)
     R["class_cast_solutions"] = len(sols)
     R["class_cast_matches_declared"] = (sols == {declared_moved})
@@ -1348,9 +1639,19 @@ def measure():
         ps = [inv[t] for t in block]
         return (len(set().union(*ps)) == B_ARITY
                 and all(len(p & q) == 1 for p, q in combinations(ps, 2)))
+    # THE GRAIN THE RECONSTRUCTOR ACTUALLY READS (K1 M1).  r_reconstruct is
+    # handed a block set and nothing else, so the probe's width is the number
+    # of DISTINCT block sets the nine arms supply, not the number of arms.
+    record_id, seen_sets = {}, {}
+    for name, _k, _a, bl in ARMS:
+        key = frozenset(bl)
+        if key not in seen_sets:
+            seen_sets[key] = "RECORD-%d" % (len(seen_sets) + 1)
+        record_id[name] = seen_sets[key]
     for name, kind, arity, bl in ARMS:
         c, ca, th = r_reconstruct(bl)
         arms.append({"arm": name, "mechanism": kind, "event_arity": arity,
+                     "record": record_id[name],
                      "blocks": len(bl),
                      "block_sizes": sorted(collections.Counter(
                          len(b) for b in bl).items()),
@@ -1361,6 +1662,12 @@ def measure():
                      "cast_recovered": bool(ca == declared_moved)})
     R["q58_arms"] = arms
     R["q58_arms_total"] = len(arms)
+    R["q58_distinct_inputs"] = len(seen_sets)
+    R["q58_distinct_recovering_inputs"] = len(
+        {a["record"] for a in arms if a["cast_recovered"]})
+    R["q58_distinct_refusing_inputs"] = len(
+        {a["record"] for a in arms if not a["cast_recovered"]})
+    R["q58_records"] = sorted({a["record"] for a in arms})
     R["q58_arms_recovering"] = sum(1 for a in arms if a["cast_recovered"])
     R["q58_arms_refusing"] = sum(1 for a in arms if not a["cast_recovered"])
     R["q58_arms_at_declared_arity"] = sum(
@@ -1380,6 +1687,59 @@ def measure():
         for a in arms)
     R["q58_triangular_arms"] = sum(1 for a in arms if a["all_blocks_triangular"])
     R["q58_mechanism_kinds"] = sorted({a["mechanism"] for a in arms})
+    # the two refusals are not one refusal (K2 minor 7): at two arms the rule
+    # RAN and its own membership certificate rejected the cast it built; at
+    # two the rule DECLINED, because the record carries no co-writing at all.
+    R["q58_arms_certificate_rejected"] = sum(
+        1 for a in arms if a["certificate"] == "TOKEN-NOT-IN-EXACTLY-TWO")
+    R["q58_arms_declined"] = sum(
+        1 for a in arms if a["certificate"] == "THRESHOLD-UNDETERMINED")
+
+    # ---- Q58, the DOMAIN probe: is the criterion sufficient off the arms? --
+    # The arms decide the arms.  This family asks whether triangularity with
+    # total cover is a property of MECHANISMS, and measures that it is not.
+    tri_sorted = sorted(set(triangles))
+    pair_sorted = sorted(set(pairs_only))
+    cover, k_cover = set(), 0
+    while len(cover) < DIM and k_cover < len(tri_sorted):
+        cover |= set(tri_sorted[k_cover])
+        k_cover += 1
+    dom = [("all the triangles", tri_sorted),
+           ("the smallest covering prefix", tri_sorted[:k_cover])]
+    for label, d in (("the first", 0), ("a middle", len(tri_sorted) // 2),
+                     ("the last", len(tri_sorted) - 1)):
+        dom.append(("the triangles less %s block" % label,
+                    tri_sorted[:d] + tri_sorted[d + 1:]))
+    for k in DOMAIN_PREFIXES:
+        dom.append(("a prefix of %s triangles" % com(k), tri_sorted[:k]))
+    dom.append(("the triangles and one two-cell block",
+                tri_sorted + [pair_sorted[0]]))
+    probes = []
+    for label, bl in dom:
+        c, ca, _t = r_reconstruct(bl)
+        probes.append({"probe": label, "blocks": len(bl),
+                       "all_blocks_triangular": all(is_triangle(b) for b in bl),
+                       "tokens_covered": len({t for b in bl for t in b}),
+                       "certificate": c,
+                       "cast_recovered": bool(ca == declared_moved)})
+    R["q58_domain_probes"] = probes
+    R["q58_domain_probe_count"] = len(probes)
+    R["q58_domain_covering_prefix"] = k_cover
+    R["q58_domain_prefixes_below_the_cover"] = sum(
+        1 for k in DOMAIN_PREFIXES if k < k_cover)
+    R["q58_domain_prefixes_declared"] = len(DOMAIN_PREFIXES)
+    R["q58_domain_triangular_failures"] = sum(
+        1 for p in probes if p["all_blocks_triangular"] and not p["cast_recovered"])
+    R["q58_domain_failures_at_total_cover"] = sum(
+        1 for p in probes if p["all_blocks_triangular"]
+        and not p["cast_recovered"] and p["tokens_covered"] == DIM)
+    R["q58_domain_nontriangular_recovering"] = sum(
+        1 for p in probes if not p["all_blocks_triangular"] and p["cast_recovered"])
+    # the two quantifiers the sealed sentence used to carry, MEASURED:
+    R["q58_criterion_holds_on_every_triangle_writer"] = (
+        R["q58_domain_triangular_failures"] == 0)
+    R["q58_criterion_refuses_every_non_triangle_writer"] = (
+        R["q58_domain_nontriangular_recovering"] == 0)
 
     # ---- the parameters --------------------------------------------------
     nA, nsol, ncls, ngrov, ratios = b_coin_fiber(2 * len(DECLARED_LINKS) + 2)
@@ -1393,33 +1753,92 @@ def measure():
     R["seam_columns"] = len(seam[0])
     R["seam_rank"] = b_rank(seam)
     R["seam_kernel"] = len(seam[0]) - b_rank(seam)
-    R["param_rows"] = PARAMETER_ROWS
-    R["param_total"] = len(PARAMETER_ROWS)
-    R["param_free"] = sum(1 for p in PARAMETER_ROWS if p[3] == "FREE")
+    # the three selection laws, MEASURED here rather than typed in the table
+    R["coin_phase_group_order"] = len(B_WPOW)
+    R["param_law_cell_count"] = (
+        R["arena_cells"] == R["arena_sites"] * R["arena_declared_directions"])
+    R["param_law_connection"] = (
+        R["coin_phase_group_order"] == R["arena_field_order"])
+    R["param_law_menu"] = (R["arena_menu"] == R["arena_translation_subgroups"])
+    R["param_law_actor_count_conditional"] = (
+        R["class_cast_matches_declared"] and R["q58_arms_refusing"] > 0)
+    R["inv_direction_blind"] = (
+        R["inv_direction_profiles_agreeing"] == R["inv_direction_choices"])
+    rows = parameter_rows(R)
+    R["param_rows"] = rows
+    R["param_total"] = len(rows)
+    R["param_free"] = sum(1 for p in rows if p[3] == "FREE")
     R["param_invariant"] = sum(
-        1 for p in PARAMETER_ROWS if p[3] == "INVARIANT-IN-THE-SUBSTRATE-CENSUS")
-    R["param_derived"] = sum(1 for p in PARAMETER_ROWS if p[3] == "DERIVED")
+        1 for p in rows if p[3] == "INVARIANT-IN-THE-SUBSTRATE-CENSUS")
+    R["param_derived"] = sum(1 for p in rows if p[3] == "DERIVED")
     R["param_reconstructed"] = sum(
-        1 for p in PARAMETER_ROWS if p[3] == "RECONSTRUCTED-CONDITIONALLY")
-    R["param_initial"] = sum(1 for p in PARAMETER_ROWS if p[3] == "INITIAL")
-    R["param_selected_by_a_law"] = sum(1 for p in PARAMETER_ROWS if p[4] == "YES")
+        1 for p in rows if p[3] == "RECONSTRUCTED-CONDITIONALLY")
+    R["param_initial"] = sum(1 for p in rows if p[3] == "INITIAL")
+    R["param_selected_by_a_law"] = sum(1 for p in rows if p[4] == "YES")
     R["param_free_selected_by_a_law"] = sum(
-        1 for p in PARAMETER_ROWS if p[3] == "FREE" and p[4] == "YES")
+        1 for p in rows if p[3] == "FREE" and p[4] == "YES")
+    R["param_class_predicates"] = sum(
+        len(v) for v in PARAM_CLASS_PREDICATE.values() if v)
+    R["param_class_predicate_failures"] = sorted(
+        "%s :: %s" % (nm, key)
+        for cls, mapping in PARAM_CLASS_PREDICATE.items() if mapping
+        for nm, key in mapping.items() if not R.get(key))
+    R["param_laws_declared"] = sum(
+        1 for p in PARAMETER_SPEC if p[4] is not None)
+    R["param_laws_satisfied"] = sum(
+        1 for p in PARAMETER_SPEC if p[4] is not None and bool(R.get(p[4])))
 
-    # ---- the object census ----------------------------------------------
-    R["cited_gluings"] = 45010
-    R["cited_chart_types"] = 16
-    R["census_rows"] = census_rows(R)
-    R["census_row_count"] = len(R["census_rows"])
-    R["census_backed"] = sum(1 for r in R["census_rows"]
-                             if r["backing"] in BACKING_ALPHABET)
-    R["census_computed_here"] = sum(1 for r in R["census_rows"]
-                                    if r["backing"] == "COMPUTED-HERE")
-    R["census_cited"] = sum(1 for r in R["census_rows"]
-                            if r["backing"] == "SEALED-CITATION")
-    R["census_classes"] = sorted(collections.Counter(
-        r["class"] for r in R["census_rows"]).items())
     return R
+
+
+def census_payload(P, anchors):
+    """the census, taken AFTER the anchors are located so that every cited
+    cardinality is PARSED OUT OF THE LOCATED TEXT rather than typed here."""
+    chart = anchor_numerals(anchors.read("SEC-CHART", "G-OBJECT-CENSUS"))
+    carrier = anchor_numerals(anchors.read("REC-CARRIER", "G-OBJECT-CENSUS"))
+    tick = anchor_spelled_numerals(anchors.read("HOR-TICK", "G-OBJECT-CENSUS"))
+    P["cited_gluings"] = chart[0]
+    P["cited_chart_types"] = chart[-1]
+    P["cited_carrier_cells"] = carrier[0]
+    P["cited_tick_sites"] = tick[0]
+    P["cited_numeral_sources"] = len({"SEC-CHART", "REC-CARRIER", "HOR-TICK"})
+    P["census_rows"] = census_rows(P)
+    P["census_row_count"] = len(P["census_rows"])
+    P["census_backed"] = sum(1 for r in P["census_rows"]
+                             if r["backing"] != "NONE")
+    P["census_computed_here"] = sum(1 for r in P["census_rows"]
+                                    if r["backing"] == "COMPUTED-HERE")
+    P["census_cited"] = sum(1 for r in P["census_rows"]
+                            if r["backing"] == "SEALED-CITATION")
+    P["census_unbacked"] = sum(1 for r in P["census_rows"]
+                               if r["backing"] == "NONE")
+    P["census_classes"] = sorted(collections.Counter(
+        r["class"] for r in P["census_rows"]).items())
+    P["census_primitive"] = sum(1 for r in P["census_rows"]
+                                if r["class"] == "PRIMITIVE")
+    P["census_class_words"] = len(CLASS_ALPHABET)
+    P["census_backing_words"] = len(BACKING_ALPHABET)
+    P["census_distinct_extents"] = len({r["extent"] for r in P["census_rows"]})
+    P["census_identifications"] = (P["census_row_count"]
+                                   - P["census_distinct_extents"])
+    # the census and the parameter table reconciled: no object the census
+    # classes DECLARED may go unpriced in section six (K2 MAJOR-5a).
+    priced = {p[0] for p in PARAMETER_SPEC}
+    P["census_declared_objects"] = sorted(
+        r["object"] for r in P["census_rows"] if r["class"] == "DECLARED")
+    P["param_declared_objects_unpriced"] = sum(
+        1 for o in P["census_declared_objects"]
+        if CENSUS_DECLARED_TO_PARAMETER.get(o) not in priced)
+    return P
+
+
+# every object the census classes DECLARED, and the row of section six that
+# prices it
+CENSUS_DECLARED_TO_PARAMETER = {
+    "ACTOR": "n", "SITE": "n", "DIRECTION": "L", "QUANTUM-STATE": "the state",
+    "COIN": "the coin", "SEAM": "the seam", "CHART": "the chart",
+    "TICK": "the tick", "CARRIER-CANDIDATE": "the cell count",
+}
 
 
 def _factorial(n):
@@ -1469,146 +1888,226 @@ DEPENDENCY_EDGES = (
     ("COUNT-FIELD", "QUANTUM-STATE", "the coin reads the count residue"),
     ("QUANTUM-STATE", "EMISSION", "the menu weights the next division event"),
     ("EMISSION", "COUNT-FIELD", "an emission increments the count field"),
-    ("RECORD-BLOCK", "ACTOR", "the reconstruction derives the cast"),
+    ("RECORD-BLOCK", "ACTOR", "the reconstruction reads a cast off the blocks"),
 )
 
-PARAMETER_ROWS = (
-    ("d", "the spatial dimension", "UNSWEPT", "FREE", "NO", "NDEP"),
-    ("q", "the field order", "SWEPT-AT-THREE-POINTS", "FREE", "NO", "NDEP"),
-    ("a", "the division-event arity", "UNSWEPT", "FREE", "NO", "ARITY-CHARTERED"),
-    ("R", "the depth in rounds", "SWEPT-ALONG-THE-LADDER", "FREE", "NO", "PERR"),
-    ("the window", "the driven schedule set", "DECLARED-WINDOW", "FREE", "NO", "R4DEC"),
-    ("the coin", "the S_3-covariant unitary", "COMPUTED-HERE", "FREE", "NO", "COUPLING"),
+# Every declaration the corpus makes, INCLUDING the two the object census
+# classes DECLARED and the first delivery did not price (K2 MAJOR-5a).  The
+# fifth field is the PAYLOAD KEY of the measured predicate that selects the
+# row -- None where the corpus has measured no such law -- so the class and
+# the selection column are computed from a measurement and not typed (#295,
+# K2 MAJOR-5b).  A row is DERIVED exactly when its predicate holds.
+PARAMETER_SPEC = (
+    ("d", "the spatial dimension", "UNSWEPT", "FREE", None, "NDEP"),
+    ("q", "the field order", "SWEPT-AT-THREE-POINTS", "FREE", None, "NDEP"),
+    ("a", "the division-event arity", "UNSWEPT", "FREE", None,
+     "ARITY-CHARTERED"),
+    ("R", "the depth in rounds", "SWEPT-ALONG-THE-LADDER", "FREE", None,
+     "PERR"),
+    ("the window", "the driven schedule set", "DECLARED-WINDOW", "FREE", None,
+     "R4DEC"),
+    ("the coin", "the S_3-covariant unitary", "COMPUTED-HERE", "FREE", None,
+     "COUPLING"),
     ("the coin order", "coin before or after the residue", "DECLARED-PAIR",
-     "FREE", "NO", "COUPLING"),
-    ("the orientation", "the sign of the shift", "DECLARED-PAIR", "FREE", "NO",
+     "FREE", None, "COUPLING"),
+    ("the orientation", "the sign of the shift", "DECLARED-PAIR", "FREE",
+     None, "COUPLING"),
+    ("the horizon", "the number of coupled steps", "DECLARED", "FREE", None,
      "COUPLING"),
-    ("the horizon", "the number of coupled steps", "DECLARED", "FREE", "NO",
-     "COUPLING"),
-    ("the reading", "the Born menu or the record menu", "DECLARED-PAIR", "FREE",
-     "NO", "COUPLING"),
-    ("the seam", "the completion at a shared site", "COMPUTED-HERE", "FREE", "NO",
-     "SEC-2"),
-    ("the ceiling", "the occupancy ceiling", "DECLARED", "FREE", "NO", "OCC"),
-    ("the measure", "the measure over configurations", "A-SIMPLEX", "FREE", "NO",
-     "R5M"),
+    ("the reading", "the Born menu or the record menu", "DECLARED-PAIR",
+     "FREE", None, "COUPLING"),
+    ("the seam", "the completion at a shared site", "COMPUTED-HERE", "FREE",
+     None, "SEC-2"),
+    ("the ceiling", "the occupancy ceiling", "DECLARED", "FREE", None, "OCC"),
+    ("the measure", "the measure over configurations", "A-SIMPLEX", "FREE",
+     None, "R5M"),
+    ("the tick", "the scheduling convention", "DECLARED", "FREE", None, "HOR"),
+    ("the chart", "the two-sector overlap type", "SEALED-CITATION", "FREE",
+     None, "SEC"),
     ("L", "which classes are declared links", "COMPUTED-HERE",
-     "INVARIANT-IN-THE-SUBSTRATE-CENSUS", "NO", "AID"),
+     "INVARIANT-IN-THE-SUBSTRATE-CENSUS", None, "AID"),
     ("the coordinate", "the naming of the record tokens", "ANY-BIJECTION",
-     "INVARIANT-IN-THE-SUBSTRATE-CENSUS", "NO", "REC"),
+     "INVARIANT-IN-THE-SUBSTRATE-CENSUS", None, "REC"),
     ("n", "the actor count", "COMPUTED-HERE", "RECONSTRUCTED-CONDITIONALLY",
-     "NO", "THIS-UNIT"),
-    ("the cell count", "the carrier size", "COMPUTED-HERE", "DERIVED", "YES",
-     "THIS-UNIT"),
+     None, "THIS-UNIT"),
+    ("the cell count", "the carrier size", "COMPUTED-HERE", "DERIVED",
+     "param_law_cell_count", "THIS-UNIT"),
     ("the connection", "the group the walk's phases live in", "DECLARED",
-     "DERIVED", "YES", "COUPLING"),
+     "DERIVED", "param_law_connection", "COUPLING"),
     ("the menu", "the admissible actor grains", "COMPUTED-HERE", "DERIVED",
-     "YES", "FAC"),
+     "param_law_menu", "FAC"),
     ("the state", "the initial amplitude", "AN-INITIAL-CONDITION", "INITIAL",
-     "NO", "COUPLING"),
-    ("the record", "the initial count field", "AN-INITIAL-CONDITION", "INITIAL",
-     "NO", "COUPLING"),
+     None, "COUPLING"),
+    ("the record", "the initial count field", "AN-INITIAL-CONDITION",
+     "INITIAL", None, "COUPLING"),
+)
+
+# The class words that are themselves carried by a measured predicate, and the
+# payload key that carries each.  A row in one of these classes whose
+# predicate is false is an offence at G-PARAMETERS.
+PARAM_CLASS_PREDICATE = {
+    "DERIVED": None,                     # handled by the row's own law key
+    "INVARIANT-IN-THE-SUBSTRATE-CENSUS": {
+        "L": "inv_direction_blind",
+        "the coordinate": "recon_coordinate_invariant"},
+    "RECONSTRUCTED-CONDITIONALLY": {"n": "param_law_actor_count_conditional"},
+}
+
+
+def parameter_rows(P):
+    """the rendered parameter table: the selection column is READ OFF the
+    measured predicate the row names, never typed."""
+    out = []
+    for (nm, what, fiber, cls, law, where) in PARAMETER_SPEC:
+        selects = "YES" if (law is not None and bool(P.get(law))) else "NO"
+        out.append((nm, what, fiber, cls, selects, where))
+    return out
+
+
+# One row per object.  Every row names the PAYLOAD KEY its cardinality is
+# read from -- no cardinality is typed here (K3 MAJOR-7 / K2 minor 8) -- the
+# backing word it claims, the EXTENT it is a name for (so that rows which are
+# re-descriptions of one set are visible as such, K1 m2), and what the number
+# counts (K1 m1: a state-space dimension and a kernel corank are not object
+# counts).  A row whose key the run does not measure resolves NONE.
+CENSUS_SPEC = (
+    ("ACTOR", "DECLARED", "COMPUTED-HERE", "arena_sites", "THE-ACTORS",
+     "actors",
+     "declared as the points of the arena, and reconstructed from the record "
+     "inside the triangular class of section five"),
+    ("SITE", "DECLARED", "COMPUTED-HERE", "arena_sites", "THE-ACTORS",
+     "sites", "the same objects as the actors under the weld's dictionary"),
+    ("DIRECTION", "DECLARED", "COMPUTED-HERE", "arena_declared_directions",
+     "THE-DIRECTIONS", "declared classes",
+     "three of the parallel classes of the arena are declared links"),
+    ("PARALLEL-CLASS", "GENERATED", "COMPUTED-HERE", "arena_parallel_classes",
+     "THE-PARALLEL-CLASSES", "resolutions",
+     "the resolutions of the arena, generated from the field"),
+    ("CELL", "GENERATED", "COMPUTED-HERE", "arena_cells", "THE-CELLS",
+     "cells", "one per site and declared direction"),
+    ("CO-DIVISION-PAIR", "GENERATED", "COMPUTED-HERE",
+     "arena_codivision_pairs", "THE-CELLS", "cells",
+     "the cell is the unordered pair, by the carrier typing"),
+    ("DIVISION-EVENT", "GENERATED", "COMPUTED-HERE", "arena_actor_groups",
+     "THE-EVENTS", "actor groups",
+     "every group of the declared arity; the corpus realises some of them"),
+    ("REALISED-EVENT", "GENERATED", "COMPUTED-HERE", "corpus_distinct_events",
+     "THE-REALISED-EVENTS", "events",
+     "the events the committed corpus actually runs"),
+    ("GROUPING", "GENERATED", "COMPUTED-HERE", "arena_groupings",
+     "THE-GROUPINGS", "partitions",
+     "the partitions of the actors into groups of the declared arity"),
+    ("ADMISSIBLE-ROUND", "LAW-SELECTED", "COMPUTED-HERE",
+     "arena_saturating_groupings", "THE-ADMISSIBLE-ROUNDS", "partitions",
+     "the groupings the saturation law admits"),
+    ("HISTORY", "GENERATED", "COMPUTED-HERE", "corpus_distinct_histories",
+     "THE-HISTORIES", "sequences",
+     "the distinct sequences of events the committed drivers produce"),
+    ("RECORD-BLOCK", "GENERATED", "COMPUTED-HERE", "record_blocks",
+     "THE-BLOCKS", "blocks", "the cells one event writes"),
+    ("BARE-RECORD", "GENERATED", "COMPUTED-HERE",
+     "record_distinct_bare_records", "THE-BARE-RECORDS", "sequences",
+     "the sequence of blocks, actor labels erased"),
+    ("COUNT-FIELD", "GENERATED", "COMPUTED-HERE", "record_count_fields",
+     "THE-COUNT-FIELDS", "fields", "the division count on each cell"),
+    ("QUANTUM-STATE", "DECLARED", "COMPUTED-HERE", "arena_cells",
+     "THE-AMPLITUDE-COORDINATES", "ring coordinates",
+     "one amplitude per cell, in the ring the field generates"),
+    ("MENU", "LAW-SELECTED", "COMPUTED-HERE", "arena_menu", "THE-MENU",
+     "coset partitions",
+     "the coset partitions of the translation subgroups"),
+    ("NAMING", "RECONSTRUCTED", "COMPUTED-HERE",
+     "inv_link_graph_automorphisms", "THE-NAMINGS", "relabellings",
+     "the relabellings the record admits of the reconstructed cast"),
+    ("DIRECTION-SPLITTING", "RECONSTRUCTED", "COMPUTED-HERE",
+     "inv_direction_splittings", "THE-SPLITTINGS", "splittings",
+     "the ways the reconstructed link structure splits into classes"),
+    ("COIN", "DECLARED", "COMPUTED-HERE", "coin_classes", "THE-COIN-CLASSES",
+     "classes up to a phase",
+     "the covariant unitary family, up to a global phase"),
+    ("SEAM", "DECLARED", "COMPUTED-HERE", "seam_kernel", "THE-SEAM-KERNEL",
+     "undetermined numbers",
+     "the undetermined entries the chart leaves at a shared site"),
+    ("CHART", "DECLARED", "SEALED-CITATION", "cited_chart_types",
+     "THE-CHART-TYPES", "combinatorial types",
+     "the combinatorial types of a two-sector overlap"),
+    ("TICK", "DECLARED", "SEALED-CITATION", "cited_tick_sites", "THE-TICK",
+     "sites a tick",
+     "one scheduling convention; the emergent speed is one site a tick"),
+    ("CARRIER-CANDIDATE", "DECLARED", "SEALED-CITATION",
+     "cited_carrier_cells", "THE-CELLS", "cells",
+     "the carrier the exclusion census selected; excitations are not "
+     "declared until the excitation gate opens"),
 )
 
 
 def census_rows(R):
     """one row per object.  `class` is one of the pin's five words; `backing`
-    says whether this unit computed the row or cites a sealed one."""
-    C = "COMPUTED-HERE"
-    S = "SEALED-CITATION"
-    rows = [
-        ("ACTOR", "DECLARED", C, R["arena_sites"],
-         "declared as the points of the arena, and derived back from the record"),
-        ("SITE", "DECLARED", C, R["arena_sites"],
-         "the same objects as the actors under the weld's dictionary"),
-        ("DIRECTION", "DECLARED", C, R["arena_declared_directions"],
-         "three of the parallel classes of the arena are declared links"),
-        ("PARALLEL-CLASS", "GENERATED", C, R["arena_parallel_classes"],
-         "the resolutions of the arena, generated from the field"),
-        ("CELL", "GENERATED", C, R["arena_cells"],
-         "one per site and declared direction"),
-        ("CO-DIVISION-PAIR", "GENERATED", C, R["arena_cells"],
-         "the cell is the unordered pair, by the carrier typing"),
-        ("DIVISION-EVENT", "GENERATED", C, R["arena_actor_groups"],
-         "every group of the declared arity; the corpus realises some of them"),
-        ("REALISED-EVENT", "GENERATED", C, R["corpus_distinct_events"],
-         "the events the committed corpus actually runs"),
-        ("GROUPING", "GENERATED", C, R["arena_groupings"],
-         "the partitions of the actors into groups of the declared arity"),
-        ("ADMISSIBLE-ROUND", "LAW-SELECTED", C, R["arena_saturating_groupings"],
-         "the groupings the saturation law admits"),
-        ("HISTORY", "GENERATED", C, R["corpus_distinct_histories"],
-         "the distinct sequences of events the committed drivers produce"),
-        ("RECORD-BLOCK", "GENERATED", C, R["record_blocks"],
-         "the cells one event writes"),
-        ("BARE-RECORD", "GENERATED", C, R["record_distinct_bare_records"],
-         "the sequence of blocks, actor labels erased"),
-        ("COUNT-FIELD", "GENERATED", C, R["record_count_fields"],
-         "the division count on each cell"),
-        ("QUANTUM-STATE", "DECLARED", C, R["arena_cells"],
-         "one amplitude per cell, in the ring the field generates"),
-        ("MENU", "LAW-SELECTED", C, R["arena_menu"],
-         "the coset partitions of the translation subgroups"),
-        ("NAMING", "RECONSTRUCTED", C, R["inv_link_graph_automorphisms"],
-         "the relabellings the record admits of the derived cast"),
-        ("DIRECTION-SPLITTING", "RECONSTRUCTED", C, R["inv_direction_splittings"],
-         "the ways the derived link structure splits into classes"),
-        ("COIN", "DECLARED", C, R["coin_classes"],
-         "the covariant unitary family, up to a global phase"),
-        ("SEAM", "DECLARED", C, R["seam_kernel"],
-         "the undetermined entries the chart leaves at a shared site"),
-        ("CHART", "DECLARED", S, R["cited_chart_types"],
-         "the combinatorial types of a two-sector overlap"),
-        ("TICK", "DECLARED", S, 1,
-         "one scheduling convention; the emergent speed is one site a tick"),
-        ("CARRIER-CANDIDATE", "DECLARED", S, R["arena_cells"],
-         "the carrier the exclusion census selected; excitations are not "
-         "declared until the excitation gate opens"),
-    ]
-    return [{"object": o, "class": c, "backing": bk, "cardinality": n,
-             "reading": rd} for (o, c, bk, n, rd) in rows]
+    is RESOLVED, not typed: a row whose declared cardinality key the run does
+    not carry reads NONE and the census word falls to CENSUS-PARTIAL."""
+    out = []
+    for (o, c, bk, key, extent, counts, rd) in CENSUS_SPEC:
+        if key in R:
+            out.append({"object": o, "class": c, "backing": bk,
+                        "cardinality": R[key], "extent": extent,
+                        "counts": counts, "reading": rd})
+        else:
+            out.append({"object": o, "class": c, "backing": "NONE",
+                        "cardinality": 0, "extent": extent,
+                        "counts": counts, "reading": rd})
+    return out
 
 
 # ===========================================================================
 # SECTION F.  THE ANCHORS, THE WALLS, THE UNIVERSES.
 # ===========================================================================
 
+# The fifth field is the BINDING: DIGIT and SPELLED anchors have a numeral
+# parsed out of their located text and compared with a measurement; a WORD
+# anchor carries no numeral at all, is declared as such, and may back no
+# published cardinality (K3 MAJOR-7).
 ANCHORS = (
     ("REC-CARRIER", "v14/paper-41-rec.md", "G-OBJECT-CENSUS",
      "27 cells against 27 pairs, two actors in each cell at all of them, "
-     "six cells per actor at all nine"),
+     "six cells per actor at all nine", "DIGIT"),
     ("REC-NAMING", "v14/paper-41-rec.md", "G-INVARIANCE-GROUPS",
      "the record admits 1,296 namings of the derived cast and 108 of them "
-     "carry the declared direction classes"),
+     "carry the declared direction classes", "DIGIT"),
     ("REC-DEPTH", "v14/paper-41-rec.md", "G-RECORD-REBUILT",
-     "no committed history sees more than 18 of the 27 record blocks"),
+     "no committed history sees more than 18 of the 27 record blocks", "DIGIT"),
     ("COUP-RESIDUE", "v14/paper-20-coupling.md", "G-STATE-READING-RELATIVE",
-     "the walk consumes the count residue n mod 3, not the count."),
+     "the walk consumes the count residue n mod 3, not the count.", "DIGIT"),
     ("COUP-COIN", "v14/paper-20-coupling.md", "G-COIN-FIBER",
      "falling into 6 classes up to a global phase, of which exactly 1 is "
-     "+/- Grover"),
+     "+/- Grover", "DIGIT"),
     ("OCC-CARRIER", "v14/paper-31-occ.md", "G-OBJECT-CENSUS",
-     "CELLS-WITH-EXACTLY-TWO-ACTORS=27-OF-27; ACTORS-IN-EXACTLY-SIX-CELLS=9-OF-9"),
+     "CELLS-WITH-EXACTLY-TWO-ACTORS=27-OF-27; ACTORS-IN-EXACTLY-SIX-CELLS=9-OF-9",
+     "DIGIT"),
     ("SEC2-SEAM", "v14/paper-40-sec2.md", "G-SEAM-KERNEL",
      "The seam's own system is rank 6 on 10 by the chart alone, kernel 4; "
-     "an unshared site's system is three equations on"),
+     "an unshared site's system is three equations on", "DIGIT"),
     ("AID-GAUGE", "v14/paper-33-aid.md", "G-DIRECTION-INVARIANCE",
      "rebuilt with ANT in place of DIA the substrate returns 36 saturating, "
-     "72 I7-STRICT triples and 276 G-FLAT quadruples"),
+     "72 I7-STRICT triples and 276 G-FLAT quadruples", "DIGIT"),
     ("NDEP-CARRIED", "v14/paper-39-ndep.md", "G-PARAMETERS",
-     "NO TESTED NUMERAL IS REPRODUCED BY THE DECLARED n-ONLY READING"),
+     "NO TESTED NUMERAL IS REPRODUCED BY THE DECLARED n-ONLY READING", "WORD"),
     ("EPR-MULTIPARTITE", "v14/paper-38-epr.md", "G-ARENA-REBUILT",
      "The graph is therefore complete multipartite with those three lines as "
-     "its parts, and every site has degree six"),
+     "its parts, and every site has degree six", "SPELLED"),
     ("PLAN-WALLS", "v15/PLAN.md", "G-WALLS",
-     "W1: reconstruction is never promoted to derivation. W2: invariance is "
+     "W1 : reconstruction is never promoted to derivation. W2 : invariance is "
      "never promoted to gauge or physical meaning before operational "
-     "observables exist"),
+     "observables exist", "INDEX"),
     ("HOR-TICK", "v14/paper-42-hor.md", "G-OBJECT-CENSUS",
-     "The Emergent Speed Is One Site a Tick and It Is Attained"),
+     "The Emergent Speed Is One Site a Tick and It Is Attained", "SPELLED"),
     ("SEC-CHART", "v14/paper-32-sec.md", "G-OBJECT-CENSUS",
-     "the family is 45010 gluings in 16 combinatorial types"),
+     "the family is 45010 gluings in 16 combinatorial types", "DIGIT"),
 )
+ANCHOR_BINDING = {a[0]: a[4] for a in ANCHORS}
+
+# which anchor's parsed numeral each cited census row's cardinality comes from
+CENSUS_CITED_ANCHOR = {"CHART": "SEC-CHART", "TICK": "HOR-TICK",
+                       "CARRIER-CANDIDATE": "REC-CARRIER"}
 
 
 def anchor_numerals(text):
@@ -1617,68 +2116,294 @@ def anchor_numerals(text):
             for m in re.finditer(r"(?<![\w.])\d[\d,]*(?![\w])", text)]
 
 
+def anchor_spelled_numerals(text):
+    """the integers an anchor's located text spells IN WORDS, in order.  A
+    parent whose sentence says `One Site a Tick` is carrying the numeral one,
+    and a census row citing it is bound to that parse: were the parent to say
+    two, the row would move (K3 MAJOR-7)."""
+    words = {w: v for v, w in SPELLED.items()}
+    out = []
+    for m in re.finditer(r"[A-Za-z]+", text):
+        w = m.group(0).casefold()
+        if w in words:
+            out.append(words[w])
+    return out
+
+
+# THE SEVEN WALLS, REBUILT (K2 MAJOR-2, K3 MAJOR-5).
+#
+# The negative leg is FRAME-GENERAL: a subject class, a bounded gap, a verb
+# class, a bounded gap, an object class -- so the paraphrase, the passive and
+# the re-voicing all match, and a sentence has to change what it SAYS to get
+# past it, not merely how it says it.
+#
+# The LICENCE leg is switched ON for all seven (the previous delivery passed
+# `(), ()` everywhere and the mechanism never ran).  Its vocabulary is the
+# PROMOTION vocabulary: the words a paper reaches for when it upgrades a
+# reconstruction to a derivation or an invariance to a gauge.  This paper
+# carries none of them, so the leg reads as a ban with a licensed escape --
+# any sentence carrying one must also carry a RENDERED CLAIM, which is a
+# gated string.  Per POT MAJOR-1 the licence pool of each wall is the claim
+# set MINUS any claim that itself carries that wall's policed vocabulary, so a
+# policed word can never license itself; G-WALLS gates that every pool is
+# non-empty.
+#
+# The controls are in WALL_PROBES below, written as prose BEFORE these
+# patterns were written and sharing no long literal with them.
 WALLS = (
     ("W-SCOPE",
-     [r"\bat every arena\b", r"\bfor all arenas\b", r"\bin general\b",
-      r"\bat any arena\b", r"\bfor any record\b", r"\bat all arenas\b",
-      r"\bfor every possible\b", r"\bwithout restriction\b"],
+     [r"\b(?:at|for|in|across)\s+(?:every|all|any)\s+"
+      r"(?:arena|arenas|corpus|corpora|record|records)\b",
+      r"\bin general\b", r"\bwithout restriction\b",
+      r"\bfor every possible\b",
+      r"\b(?:holds|true|the same)\b[^.|]{0,50}\b(?:at every|for all|in every)"
+      r"\b[^.|]{0,20}\barena",
+      r"\bthe (?:result|census|theorem) is universal\b",
+      r"\b(?:extends|generalis\w+|generaliz\w+) to (?:every|all|any) "
+      r"(?:arena|arenas|record|records|theory|theories)\b"],
      [r"one arena, the committed corpus", r"beyond the committed corpus"],
-     (), ()),
+     ("at every arena", "for all arenas", "at any arena", "in general",
+      "without restriction", "universally true")),
     ("W-EMERGENCE",
-     [r"\bthe actors emerge\b", r"\bactors emerge from\b",
-      r"\bthe actors are emergent\b", r"\bthe cast is emergent\b",
+     [r"\b(?:the\s+)?(?:actors?|cast|points|actor count)\b[^.|]{0,60}"
+      r"\bemerge\w*\b",
+      r"\bemerge\w*\b[^.|]{0,50}\b(?:from|out of)\b[^.|]{0,30}\brecords?\b",
+      r"\b(?:the\s+)?(?:actors?|cast)\b[^.|]{0,30}\b(?:is|are)\b[^.|]{0,20}"
+      r"\bemergent\b",
       r"\bproves the emergence of\b",
-      r"\b(?:reconstruction|result|cast|census)\s+is\s+(?:therefore\s+)?"
-      r"generator[- ]independent\b",
+      r"\b(?:actors?|cast)\b[^.|]{0,40}\baris\w+\b[^.|]{0,30}\brecords?\b",
+      r"\b(?:reconstruction|result|cast|census|rule|criterion)\b[^.|]{0,50}"
+      r"\b(?:is|are)\s+(?:therefore\s+|thus\s+)?generator[- ]independent\b",
       r"\bactors are not needed\b", r"\bactors need never be assumed\b",
-      r"\bthe record alone creates\b"],
+      r"\bthe records?\s+alone\s+(?:creates?|makes?|produces?|generates?)\b",
+      r"\bthe records?\b[^.|]{0,40}\bbrings?\b[^.|]{0,30}"
+      r"\b(?:actors?|cast)\b[^.|]{0,20}\binto (?:being|existence)\b"],
      [r"identifiability within a generative class",
       r"the reconstruction is not generator[- ]independent"],
-     (), ()),
+     ("emergence of the actors", "emerge from the record",
+      "brought into being by", "creates the actors")),
     ("W-RECONSTRUCTION-IS-NOT-DERIVATION",
-     [r"\bthe actors are derived from the record\b",
-      r"\bthe record derives the (?:cast|actors)\b",
-      r"\bthe cast is derived\b",
-      r"\bthe record selects the (?:cast|actors)\b",
-      r"\bthe record selects among possible worlds\b",
-      r"\bidentifiability (?:is|means) derivation\b",
-      r"\breconstruction (?:therefore )?(?:shows|proves|establishes) "
-      r"derivation\b",
-      r"\bthe actor count is derived from the record\b"],
+     [r"\brecords?\b[^.|]{0,60}\bderives?\b[^.|]{0,40}"
+      r"\b(?:the\s+)?(?:actors?|cast|points)\b",
+      r"\b(?:actors?|cast|actor count|points of the arena)\b[^.|]{0,60}"
+      r"\b(?:is|are|was|were)\b[^.|]{0,40}\bderived\s+(?:back\s+)?from\b",
+      r"\bderived\s+back\s+from\s+the\s+records?\b",
+      r"\bthe\s+(?:cast|actors?|actor count)\s+(?:is|are)\s+"
+      r"(?:therefore\s+|thus\s+)?(?:a\s+)?derived\b",
+      r"\b(?:actors?|cast|actor count)\b[^.|]{0,60}\b(?:follows? from|"
+      r"obtained from|obtained back|read out of|an output of|not an input)\b",
+      r"\b(?:the record|the records|the reconstruction)\b[^.|]{0,40}"
+      r"\b(?:selects?|chooses?|creates?|fixes?)\b[^.|]{0,30}"
+      r"\b(?:the cast|the actors|among possible worlds)\b",
+      r"\bidentifiability (?:is|means|amounts to|establishes) derivation\b",
+      r"\breconstruction\b[^.|]{0,50}"
+      r"\b(?:shows|proves|establishes|demonstrates)\b[^.|]{0,40}\bderivation\b",
+      r"\b(?:reconstruction|records?)\b[^.|]{0,80}\bestablishes that\b"
+      r"[^.|]{0,80}\b(?:an output|not an input)\b",
+      r"\bthe (?:cast|actors?) (?:is|are) (?:an )?output of\b"],
      [r"is identifiability and not derivation"],
-     (), ()),
+     ("derived from the record", "derives the cast", "derived back",
+      "a derived quantity", "output of the writing", "output of the record",
+      "obtained from the record", "not an input to it",
+      "follow from the record", "follows from the record")),
     ("W-INVARIANCE-IS-NOT-GAUGE",
-     [r"\bis therefore gauge\b", r"\bis pure gauge\b",
-      r"\bare therefore gauge\b", r"\bis a gauge redundancy\b",
-      r"\bare gauge redundancies\b", r"\bis a redundancy\b",
-      r"\bare redundancies\b", r"\bis physically meaningless\b",
+     [r"\b(?:stabilizer|invariance|relabellings?|orbit|quotient|"
+      r"automorphisms?|group)\b[^.|]{0,60}\b(?:is|are)\s+"
+      r"(?:therefore\s+|thus\s+|simply\s+|purely\s+)?(?:a\s+|pure\s+)?gauge\b",
+      r"\b(?:is|are)\s+(?:therefore\s+|thus\s+)?(?:pure\s+|mere\s+)?gauge\b",
+      r"\b(?:stabilizer|invariance|relabellings?|orbit|quotient|"
+      r"automorphisms?|group)\b[^.|]{0,60}\b(?:is|are)\s+"
+      r"(?:therefore\s+|thus\s+)?(?:a\s+|pure\s+)?redundanc\w*\b",
+      r"\bunphysical\b",
+      r"\bcarries the whole physical content\b",
+      r"\b(?:is|are)\b[^.|]{0,20}\bphysically meaningless\b",
       r"\bthe gauge quotient is\b",
-      r"\bthe stabilizer is the gauge group\b"],
+      r"\b(?:stabilizer|invariance|automorphisms?|relabellings?)\b"
+      r"[^.|]{0,40}\bis the gauge group\b",
+      r"\b(?:relabellings?|orbit|stabilizer|namings?)\b[^.|]{0,60}"
+      r"\b(?:no physical content|not physical|carry no physics)\b"],
      [r"the gauge word is withheld here",
       r"every physical observable and every experiment"],
-     (), ()),
+     ("unobservable in principle", "an experiment could ever see",
+      "pure convention", "merely conventional", "redundant labelling",
+      "without physical content", "the gauge group",
+      "a mere relabelling")),
     ("W-STATE-SCOPE",
      [r"\bthe complete state of the theory\b",
       r"\bthe universal state is\b", r"\bthis is the state of isp\b",
+      r"\bthe state (?:list )?is (?:universal|complete for every|"
+      r"the theory's)\b",
       r"\bthe state is complete for every dynamics\b",
-      r"\bthe state list is universal\b"],
+      r"\b(?:this|the) state list\b[^.|]{0,40}\b(?:every|any) "
+      r"(?:dynamics|theory|arena)\b",
+      r"\bstate\b[^.|]{0,30}\bsufficient\b[^.|]{0,30}\bfor (?:every|any) "
+      r"dynamics\b"],
      [r"sufficient for the committed machine at fixed background",
       r"the universal state waits on the autonomous[- ]update unit"],
-     (), ()),
+     ("the universal state is", "state of the theory",
+      "complete for every dynamics", "the state list is universal",
+      "sufficient for every dynamics")),
     ("W-MEASURE",
      [r"\bmore likely\b", r"\bprobability that a history\b",
       r"\bthe typical history\b", r"\bon average the\b",
-      r"\bmost histories are\b", r"\bwith high probability\b"],
+      r"\bmost histories are\b", r"\bwith high probability\b",
+      r"\bthe odds\b", r"\bexpected number of histories\b",
+      r"\ba randomly chosen (?:history|record|field)\b"],
      [r"counts are counting[- ]only"],
-     (), ()),
+     ("more likely", "probability that", "on average", "the typical history",
+      "with high probability", "the odds")),
     ("W-NEW-PHYSICS",
      [r"\bthis unit predicts\b", r"\bwe therefore predict\b",
       r"\bin the continuum limit\b", r"\bthis is spacetime\b",
       r"\bthe theory is confirmed\b", r"\ba new law\b",
-      r"\bwe derive a new\b"],
+      r"\bwe derive a new\b", r"\bthe prediction is\b",
+      r"\bexperimentally confirmed\b",
+      r"\bthe\s+(?:carrier|cells?)\s+(?:is|are)\s+(?:the\s+|a\s+|an\s+)?"
+      r"(?:particles?|excitations?|quanta)\b",
+      r"\bthe (?:particle|excitation) content of (?:the theory|isp|"
+      r"this corpus)\b",
+      r"\bthese are the (?:particles|excitations)\b"],
      [r"no new physics claim"],
-     (), ()),
+     ("we predict", "this unit predicts", "in the continuum limit",
+      "this is spacetime", "the theory is confirmed", "a new law",
+      "we derive a new", "the particle content", "the excitation content of")),
 )
+
+STANDING_WALLS = ("W-RECONSTRUCTION-IS-NOT-DERIVATION",
+                  "W-INVARIANCE-IS-NOT-GAUGE")
+
+
+def wall_licences(policed, texts):
+    """POT MAJOR-1: a policed word may never license itself, so the pool is
+    the rendered claim set minus every claim that carries one."""
+    return tuple(c for c in texts
+                 if not any(w in c.casefold() for w in policed))
+
+
+def wall_objects(texts):
+    return [ET.SemanticWall(n, neg, pos, pol, wall_licences(pol, texts))
+            for (n, neg, pos, pol) in WALLS]
+
+
+# THE CONTROLS.  Every one is a sentence a paper could write, drafted from the
+# violation and not from the pattern list.  The first sixteen are the
+# paraphrase families the effectus seat planted; the last two are the
+# instrument seat's re-voicings of the two standing walls, verbatim.  Each
+# declares the wall that must kill it, and G-WALLS runs each one through the
+# delivered paper and requires that death.
+WALL_PROBES = (
+    ("W-RECONSTRUCTION-IS-NOT-DERIVATION",
+     "The record therefore fixes the cast: the nine actors follow from the "
+     "record blocks alone, and nothing else was needed to obtain them."),
+    ("W-RECONSTRUCTION-IS-NOT-DERIVATION",
+     "The actor count is therefore a derived quantity of the construction."),
+    ("W-RECONSTRUCTION-IS-NOT-DERIVATION",
+     "Because the blocks leave no choice, the cast is derived from the "
+     "record and the arena's points are read off it."),
+    ("W-RECONSTRUCTION-IS-NOT-DERIVATION",
+     "The reconstruction establishes that the points of the arena are an "
+     "output of the writing rather than an input to it."),
+    ("W-RECONSTRUCTION-IS-NOT-DERIVATION",
+     "The record selects the cast among the possible worlds the tokens "
+     "allow."),
+    ("W-EMERGENCE",
+     "The nine actors emerge from the twenty-seven blocks and from nothing "
+     "else."),
+    ("W-EMERGENCE",
+     "The cast is emergent: it was never assumed, only written."),
+    ("W-EMERGENCE",
+     "The reconstruction is generator-independent, so the actors arise from "
+     "the records themselves."),
+    ("W-INVARIANCE-IS-NOT-GAUGE",
+     "The 1,296 relabellings the round law fixes are therefore without "
+     "physical content: nothing an experiment could ever see distinguishes "
+     "them."),
+    ("W-INVARIANCE-IS-NOT-GAUGE",
+     "The stabilizer of the round law is a redundancy of the description "
+     "and nothing more."),
+    ("W-INVARIANCE-IS-NOT-GAUGE",
+     "Those 1,296 namings are unphysical, so the quotient is where the "
+     "content lives."),
+    ("W-INVARIANCE-IS-NOT-GAUGE",
+     "The direction declaration is pure convention, a redundant labelling "
+     "of one and the same structure."),
+    ("W-STATE-SCOPE",
+     "The components above are the complete state of the theory."),
+    ("W-STATE-SCOPE",
+     "The state list is universal: it is sufficient for every dynamics a "
+     "successor unit could declare."),
+    ("W-NEW-PHYSICS",
+     "The carrier is the excitation, and the cells are the quanta the "
+     "theory has been looking for."),
+    ("W-NEW-PHYSICS",
+     "In the continuum limit this is spacetime, and the theory is confirmed."),
+    ("W-RECONSTRUCTION-IS-NOT-DERIVATION",
+     "The records derive nine actors: the cast follows from the blocks "
+     "alone, so the actor count is obtained from the record rather than "
+     "assumed, and the reconstruction therefore establishes that the points "
+     "of the arena are an output of the writing and not an input to it."),
+    ("W-INVARIANCE-IS-NOT-GAUGE",
+     "The round law's stabilizer is gauge: its 1,296 elements are "
+     "unobservable in principle, the quotient by them carries the whole "
+     "physical content, and the remaining 108 are the only relabellings an "
+     "experiment could ever see."),
+)
+
+
+LITERAL_FLOOR = 12
+
+
+def _pattern_literals(pat):
+    """the literal PHRASES a regex insists on, so that a control can be
+    checked for having been copied out of the pattern list (E-23).  Word
+    boundaries are joined across and whitespace classes become spaces; every
+    other regex construct breaks the phrase."""
+    t = pat.replace(r"\b", "").replace(r"\s+", " ").replace(r"\s", " ")
+    t = re.sub(r"\[[^\]]*\]", "\x00", t)
+    t = re.sub(r"\\[a-zA-Z]", "\x00", t)
+    t = re.sub(r"[(){}|?*+^$.\\]", "\x00", t)
+    return [s.strip().casefold() for s in t.split("\x00")
+            if len(s.strip()) >= LITERAL_FLOOR]
+
+
+# The wall's own falsifier, written as a paper would write the violation and
+# sharing no literal phrase with any pattern (K2 MAJOR-2's mechanism: the old
+# MUT-WALL was the wall's own negative pattern spelled out as a sentence).
+# It carries a POLICED phrase in an unlicensed sentence, so it dies at the
+# licence leg -- the leg the first delivery never switched on.
+MUT_WALL_SENTENCE = ("Two records that differ by a mere relabelling say the "
+                     "same thing about the world.")
+
+
+def wall_probe_report(walls, paper_text, claims):
+    """every control planted into the delivered paper, one at a time, and run
+    through the wall it names.  A control that does not die is an offence."""
+    byname = {w.name: w for w in walls}
+    rows, offences = [], []
+    for wname, sentence in WALL_PROBES:
+        w = byname[wname]
+        planted = paper_text + "\n\n" + sentence + "\n"
+        leg, detail = "SURVIVED", ""
+        try:
+            w.scan(planted, claims)
+        except ET.CheckFail as exc:
+            detail = exc.detail
+            if "banned pattern" in detail:
+                leg = "NEGATIVE"
+            elif "policed sentence" in detail:
+                leg = "LICENCE"
+            elif "standing sentence" in detail:
+                leg = "POSITIVE"
+            else:
+                leg = "OTHER"
+        if leg in ("SURVIVED", "POSITIVE", "OTHER"):
+            offences.append("%s :: %s" % (wname, sentence[:60]))
+        copied = sorted({lit for pat in w.negative
+                         for lit in _pattern_literals(pat)
+                         if lit in sentence.casefold()})
+        rows.append({"wall": wname, "died_at_leg": leg,
+                     "copied_pattern_literals": len(copied)})
+    return rows, offences
 
 
 # ===========================================================================
@@ -1687,7 +2412,7 @@ WALLS = (
 
 GATE_ORDER = (
     "G-SOURCES-PINNED", "G-NO-FLOAT", "G-S1-DISJOINT-CODE",
-    "G-TEMPLATE-EXERCISED", "G-ARENA-REBUILT", "G-CORPUS-REBUILT",
+    "G-ARENA-REBUILT", "G-CORPUS-REBUILT",
     "G-RECORD-REBUILT", "G-OBJECT-CENSUS", "G-STATE-COMPONENTS",
     "G-STATE-SCREENS-THE-HISTORY", "G-STATE-READING-RELATIVE",
     "G-INVARIANCE-GROUPS", "G-DIRECTION-INVARIANCE",
@@ -1697,16 +2422,58 @@ GATE_ORDER = (
     "G-SEAM-KERNEL", "G-PARAMETERS", "G-OUTCOMES-REACHABLE",
     "G-CLAIMS-EQUAL", "G-REFERENTS-BOUND", "G-WALLS", "G-ANCHORS-CONSUMED",
     "G-NO-TYPED-COUNTS", "G-RECEIPT-TYPES", "G-HEAD-REBUILT",
-    "G-TRANSCRIPT-BOUND", "G-READS-DECLARED",
+    "G-TRANSCRIPT-BOUND", "G-READS-DECLARED", "G-TEMPLATE-EXERCISED",
 )
 
+# The three gates whose object is the run itself, and which therefore fire
+# AFTER the ordinary loop closes: the transcript's reconciliation, the read
+# set, and the execution census.  Their measurements do not exist until the
+# loop has run, so a mutant that names one of them is applied AT ITS OWN GATE
+# and never at the payload's construction.
+CLOSING_GATES = ("G-TRANSCRIPT-BOUND", "G-READS-DECLARED",
+                 "G-TEMPLATE-EXERCISED")
+
+# A key is sealed AT THE GATE WHOSE PREDICATE READS IT (E-25; K3 MINOR-1 found
+# seven gates' worth of keys attributed to gates that never evaluated them).
+# The longest matching prefix wins, so the specific routes below override the
+# family prefixes at the bottom.
 SEAL_AT = {
-    "inv_": "G-INVARIANCE-GROUPS",
+    "state_equal_residue": "G-STATE-SCREENS-THE-HISTORY",
+    "state_distinct_residue": "G-STATE-SCREENS-THE-HISTORY",
+    "state_single_cell": "G-STATE-SCREENS-THE-HISTORY",
+    "state_successors": "G-STATE-SCREENS-THE-HISTORY",
+    "state_amplitude": "G-STATE-SCREENS-THE-HISTORY",
+    "state_reading": "G-STATE-READING-RELATIVE",
+    "inv_local": "G-LOCAL-ARITY-GROUP",
+    "inv_direction_profiles": "G-DIRECTION-INVARIANCE",
+    "inv_direction_choices": "G-DIRECTION-INVARIANCE",
+    "inv_direction_census": "G-DIRECTION-INVARIANCE",
+    "inv_direction_blind": "G-DIRECTION-INVARIANCE",
+    "inv_candidate_direction": "G-CAST-RESIDUE",
+    "inv_declared_splitting": "G-CAST-RESIDUE",
+    "inv_single_class": "G-CAST-RESIDUE",
+    "class_cast_residue": "G-CAST-RESIDUE",
+    "class_cast": "G-CAST-UNIQUE-IN-THE-CLASS",
+    "class_blocks": "G-CAST-UNIQUE-IN-THE-CLASS",
+    "recon_coordinate": "G-CAST-UNIQUE-IN-THE-CLASS",
+    "recon_second": "G-CAST-UNIQUE-IN-THE-CLASS",
+    "recon_set_equality": "G-CAST-UNIQUE-IN-THE-CLASS",
+    "q58_split": "G-Q58-VERDICT",
+    "q58_domain": "G-Q58-VERDICT",
+    "q58_criterion": "G-Q58-VERDICT",
+    "arena_menu": "G-MENU-LAW-SELECTED",
+    "arena_translation": "G-MENU-LAW-SELECTED",
+    "wall_": "G-WALLS",
+    "referent_": "G-REFERENTS-BOUND",
+    "delivery_falsifier": "G-TEMPLATE-EXERCISED",
+    "template_": "G-TEMPLATE-EXERCISED",
+    "region_": "G-S1-DISJOINT-CODE",
     "arena": "G-ARENA-REBUILT", "corpus": "G-CORPUS-REBUILT",
     "record": "G-RECORD-REBUILT", "census": "G-OBJECT-CENSUS",
+    "cited": "G-OBJECT-CENSUS",
     "state": "G-STATE-COMPONENTS", "inv_": "G-INVARIANCE-GROUPS",
     "quotient": "G-QUOTIENT-CENSUS", "dep": "G-DEPENDENCY-CYCLE",
-    "class_cast": "G-CAST-UNIQUE-IN-THE-CLASS", "q58": "G-Q58-ARMS",
+    "q58": "G-Q58-ARMS",
     "coin": "G-COIN-FIBER", "seam": "G-SEAM-KERNEL",
     "param": "G-PARAMETERS", "recon": "G-RECORD-REBUILT",
 }
@@ -1717,22 +2484,27 @@ KEY_GATE_EXACT = {
     "source_mismatches": "G-SOURCES-PINNED",
     "source_mismatch_count": "G-SOURCES-PINNED",
     "float_offences": "G-NO-FLOAT", "float_offence_count": "G-NO-FLOAT",
-    "region_offences": "G-S1-DISJOINT-CODE",
-    "region_offence_count": "G-S1-DISJOINT-CODE",
-    "region_census": "G-S1-DISJOINT-CODE", "region_count": "G-S1-DISJOINT-CODE",
-    "template_families": "G-TEMPLATE-EXERCISED",
-    "template_families_live": "G-TEMPLATE-EXERCISED",
-    "cited_gluings": "G-OBJECT-CENSUS", "cited_chart_types": "G-OBJECT-CENSUS",
     "outcome_controls": "G-OUTCOMES-REACHABLE",
     "outcome_words": "G-OUTCOMES-REACHABLE",
     "outcome_reachable": "G-OUTCOMES-REACHABLE",
+    "outcome_feasibility_distinct": "G-OUTCOMES-REACHABLE",
+    "outcome_measured_witnesses": "G-OUTCOMES-REACHABLE",
+    "param_declared_objects_unpriced": "G-PARAMETERS",
+    "census_declared_objects": "G-OBJECT-CENSUS",
+    "census_cited_rows": "G-ANCHORS-CONSUMED",
+    "census_cited_rows_on_word_bound_anchors": "G-ANCHORS-CONSUMED",
     "anchor_count": "G-ANCHORS-CONSUMED",
     "anchor_consumers": "G-ANCHORS-CONSUMED",
+    "anchor_bindings": "G-ANCHORS-CONSUMED",
+    "anchor_numeral_bound": "G-ANCHORS-CONSUMED",
+    "anchor_word_bound": "G-ANCHORS-CONSUMED",
     "anchor_unconsumed": "G-ANCHORS-CONSUMED",
     "anchor_phantom_consumers": "G-ANCHORS-CONSUMED",
     "claim_rows": "G-CLAIMS-EQUAL", "claim_prose": "G-CLAIMS-EQUAL",
     "claim_fences": "G-CLAIMS-EQUAL", "render_tables": "G-CLAIMS-EQUAL",
     "paper_digest": "G-CLAIMS-EQUAL",
+    "claim_texts_fixed": "G-CLAIMS-EQUAL",
+    "claim_texts_rendered": "G-CLAIMS-EQUAL",
     "referent_universes": "G-REFERENTS-BOUND",
     "referent_occurrences": "G-REFERENTS-BOUND",
     "wall_count": "G-WALLS", "wall_patterns": "G-WALLS",
@@ -1748,14 +2520,17 @@ KEY_GATE_EXACT = {
     "head_segments": "G-HEAD-REBUILT", "head_words": "G-HEAD-REBUILT",
     "head_segment_count": "G-HEAD-REBUILT",
     "head_fields_parsed": "G-HEAD-REBUILT",
+    "head_positions_emitted": "G-HEAD-REBUILT",
     "head_mismatches": "G-HEAD-REBUILT",
     "transcript_rows": "G-TRANSCRIPT-BOUND",
+    "transcript_preamble": "G-TRANSCRIPT-BOUND",
     "ledger_rows": "G-TRANSCRIPT-BOUND",
     "transcript_stray": "G-TRANSCRIPT-BOUND",
     "transcript_missing": "G-TRANSCRIPT-BOUND",
     "reads_declared": "G-READS-DECLARED", "reads_stray": "G-READS-DECLARED",
     "reads_never": "G-READS-DECLARED", "reads_distinct": "G-READS-DECLARED",
     "reads_unpinnable": "G-READS-DECLARED",
+    "reads_after_the_gate": "G-READS-DECLARED",
 }
 
 UNSEALED_KEYS = {
@@ -1769,57 +2544,10 @@ UNSEALED_KEYS = {
 def gate_of_key(k):
     if k in KEY_GATE_EXACT:
         return KEY_GATE_EXACT[k]
-    for pre, g in SEAL_AT.items():
+    for pre in sorted(SEAL_AT, key=len, reverse=True):
         if k.startswith(pre):
-            return g
+            return SEAL_AT[pre]
     return None
-
-
-class Run:
-    """the delivery.  Gates are predicates over the payload and nothing else,
-    which is what lets a falsifier move a measurement and be caught."""
-
-    def __init__(self, mode="--run"):
-        self.mode = mode
-        self.led = ET.Ledger()
-        self.tr = ET.Transcript()
-        self.seal = ET.Seal()
-        self.cr = ET.CountRegistry()
-        self.claims = ET.Claims()
-        self.ref = ET.ReferentRegistry()
-        self.anchors = ET.AnchorSet(
-            [ET.Anchor(n, needle, src, cons, floor=40)
-             for (n, src, cons, needle) in ANCHORS])
-        self.walls = [ET.SemanticWall(n, neg, pos, pol, lic)
-                      for (n, neg, pos, pol, lic) in WALLS]
-        self.reads = ET.ReadSet(REPO)
-        self.sealed_keys = []
-        self.render = {}
-
-    # -- plumbing ---------------------------------------------------------
-    def S(self, template, *names):
-        return self.cr.stmt(template, **{n: None for n in names})
-
-    def fire(self, gid, statement, ok, evidence, keys=()):
-        for k in keys:
-            self.seal.seal(k, self.P[k], gid)
-            self.sealed_keys.append(k)
-        self.led.gate(gid, statement, ok, evidence)
-        self.tr.row(gid, ok, evidence)
-
-
-def _measured_register(cr, P):
-    for k, v in sorted(P.items()):
-        if isinstance(v, bool):
-            cr.measured(k, v, "computed by this run")
-        elif isinstance(v, int):
-            cr.measured(k, v, "computed by this run")
-        elif isinstance(v, str):
-            cr.measured(k, v, "decided by this run")
-        else:
-            cr.measured(k, len(v) if hasattr(v, "__len__") else v,
-                        "the size of a computed structure")
-    return cr
 
 
 def head_segments(P):
@@ -1832,40 +2560,55 @@ def head_segments(P):
                               P["class_cast_residue"])
     q58 = k_q58_word(P["q58_arms_recovering"], P["q58_arms_refusing"])
     par = k_parameter_word(P["param_free"])
-    s1 = ("CONTRACT-%s<OBJECTS=%d; COMPUTED-HERE=%d; CITED=%d; "
-          "ACTORS=%d; CELLS=%d; EVENTS-REALISED=%d; HISTORIES=%d; "
+    s1 = ("CONTRACT-%s<OBJECTS=%d; DISTINCT-EXTENTS=%d; COMPUTED-HERE=%d; "
+          "CITED=%d; ACTORS=%d; CELLS=%d; EVENTS-REALISED=%d; HISTORIES=%d; "
           "BLOCKS=%d; COUNT-FIELDS=%d; MENU=%d; CHART-CLASSES=%d>") % (
-        census, P["census_row_count"], P["census_computed_here"],
+        census, P["census_row_count"], P["census_distinct_extents"],
+        P["census_computed_here"],
         P["census_cited"], P["arena_sites"], P["arena_cells"],
         P["corpus_distinct_events"], P["corpus_distinct_histories"],
         P["record_blocks"], P["record_count_fields"], P["arena_menu"],
         P["inv_link_graph_automorphisms"])
     s2 = ("CONTRACT-STATE-AT-FIXED-BACKGROUND-AND-INVARIANCE<"
-          "STATE-COMPONENTS=%d; BACKGROUND=%d; "
+          "STATE-COMPONENTS=%d; ENSEMBLE-SIDE-BOOKKEEPING=%d; BACKGROUND=%d; "
           "COUNT-FIELDS=%d; RESIDUE-FIELDS=%d; SUCCESSORS=%d; "
           "EQUAL-RESIDUE-PAIRS-AGREEING=%d-OF-%d; "
-          "DISTINCT-RESIDUE-COLLISIONS=%d-OF-%d; "
+          "DISTINCT-RESIDUE-COLLISIONS-AT-THE-UNIFORM-AMPLITUDE=%d-OF-%d; "
+          "DISTINCT-RESIDUE-COLLISIONS-AT-A-SINGLE-CELL-AMPLITUDE=%d-OF-%d; "
+          "BORN-MENU-VALUES=%d; "
           "RELABELLINGS=%d; LAW-STABILIZER=%d; ARENA-STABILIZER=%d; "
           "DIRECTION-INDEX=%d; SPLITTINGS=%d; "
           "LOCAL-GROUP=%d; LOCAL-COLLAPSE-WIDTH=%d; "
-          "HISTORIES-SURVIVING=%d-OF-%d; FIELDS-SURVIVING=%d-OF-%d; "
+          "HISTORY-EVENT-MULTISETS=%d; "
+          "HISTORIES-SURVIVING=%d-OF-%d; "
+          "HISTORIES-ORDER-KEPT-SURVIVING=%d-OF-%d; "
+          "FIELDS-SURVIVING=%d-OF-%d; "
           "GAUGE-WORD=WITHHELD>") % (
-        P["state_components"], P["state_background_components"],
+        P["state_components"], P["state_ensemble_components"],
+        P["state_background_components"],
         P["record_count_fields"], P["record_residue_fields"],
         P["state_successors_distinct"],
         P["state_equal_residue_agreements"], P["state_equal_residue_pairs"],
         P["state_distinct_residue_collisions"], P["state_distinct_residue_pairs"],
+        P["state_single_cell_collisions"], P["state_single_cell_pairs"],
+        P["state_reading_a_born_values"],
         P["inv_symmetric_group"], P["inv_law_stabilizer"],
         P["inv_arena_automorphisms"], P["inv_direction_index"],
         P["inv_direction_splittings"], P["inv_local_group_order"],
         P["inv_local_collapse_width"],
-        P["quotient_histories_link"], P["quotient_histories"],
+        P["quotient_history_event_multisets"],
+        P["quotient_histories_link"], P["quotient_history_event_multisets"],
+        P["quotient_histories_ordered_link"], P["quotient_histories"],
         P["quotient_fields_link"], P["quotient_fields"])
-    s3 = ("CONTRACT-%s<CYCLE-LENGTH=%d; CAST-SOLUTIONS=%d; RESIDUE=%d; "
-          "ARMS=%d; RECOVERING=%d; REFUSING=%d>") % (
-        circ, P["dep_cycle_length"], P["class_cast_solutions"],
-        P["class_cast_residue"], P["q58_arms_total"],
-        P["q58_arms_recovering"], P["q58_arms_refusing"])
+    s3 = ("CONTRACT-%s<CYCLE-LENGTH=%d; ACTOR-RECORD-CYCLE-LENGTH=%d; "
+          "CAST-SOLUTIONS=%d; RESIDUE=%d; "
+          "ARMS=%d; DISTINCT-INPUTS=%d; RECOVERING=%d; RECOVERING-INPUTS=%d; "
+          "REFUSING=%d; REFUSING-INPUTS=%d>") % (
+        circ, P["dep_cycle_length"], P["dep_actor_record_cycle_length"],
+        P["class_cast_solutions"],
+        P["class_cast_residue"], P["q58_arms_total"], P["q58_distinct_inputs"],
+        P["q58_arms_recovering"], P["q58_distinct_recovering_inputs"],
+        P["q58_arms_refusing"], P["q58_distinct_refusing_inputs"])
     s4 = ("CONTRACT-%s-%s<DECLARATIONS=%d; FREE=%d; "
           "INVARIANT-IN-THE-SUBSTRATE-CENSUS=%d; DERIVED=%d; "
           "RECONSTRUCTED-CONDITIONALLY=%d; INITIAL=%d; "
@@ -1880,28 +2623,94 @@ def head_segments(P):
     return [s1, s2, s3, s4], (census, circ, q58, par)
 
 
-def outcome_controls():
-    """#299: every pre-registered outcome word is shown REACHABLE by handing
-    the comparator declared inputs it did not measure here."""
+def outcome_controls(P):
+    """#299-EXTENDED.  Every pre-registered word is (a) EMITTED by the real
+    comparator, and (b) argued FEASIBLE AT THE COMMITTED CORPUS, per row, by a
+    sentence that names the corpus fact which would flip it.  Where a real
+    input of this run emits the word the witness is MEASURED-HERE; where the
+    corpus supplies no such input the witness says which fact is missing.
+    (K2 MAJOR-5c: eleven identical strings, and two words that no corpus this
+    builder can produce could ever emit.)"""
     rows = []
-    rows.append(("CENSUS-TOTAL", k_census_word(
-        [{"backing": "COMPUTED-HERE"}])))
-    rows.append(("CENSUS-PARTIAL", k_census_word([{"backing": "NONE"}])))
-    rows.append(("ACYCLIC", k_circularity_word(False, 1, True, 1)))
-    rows.append(("CIRCULAR-CAST-UNIQUE-IN-THE-TRIANGULAR-CLASS",
-                 k_circularity_word(True, 1, True, 1)))
-    rows.append(("CIRCULAR-CAST-UNIQUE-IN-THE-TRIANGULAR-CLASS-"
-                 "UP-TO-THE-DIRECTION-DECLARATION",
-                 k_circularity_word(True, 1, True, 2)))
-    rows.append(("CIRCULAR-BLOCKED-AT-THE-CAST",
-                 k_circularity_word(True, 2, False, 1)))
-    rows.append(("Q58-EMERGENCE-GENERATOR-INDEPENDENT", k_q58_word(2, 0)))
-    rows.append(("Q58-IDENTIFIABILITY-WITHIN-A-GENERATIVE-CLASS",
-                 k_q58_word(2, 1)))
-    rows.append(("Q58-UNDECIDED-NO-SECOND-MECHANISM", k_q58_word(0, 1)))
-    rows.append(("ISP-IS-ONE-THEORY", k_parameter_word(0)))
-    rows.append(("ISP-IS-A-FAMILY", k_parameter_word(1)))
+    thin = {k: v for k, v in P.items() if k != "cited_tick_sites"}
+    arms = P["q58_arms"]
+    tri_recovering = sum(1 for a in arms
+                         if a["all_blocks_triangular"] and a["cast_recovered"])
+    tri_refusing = sum(1 for a in arms
+                       if a["all_blocks_triangular"] and not a["cast_recovered"])
+    non_recovering = sum(1 for a in arms
+                         if not a["all_blocks_triangular"] and a["cast_recovered"])
+    non_refusing = sum(1 for a in arms
+                       if not a["all_blocks_triangular"] and not a["cast_recovered"])
+    prefix = [p for p in P["q58_domain_probes"]
+              if p["probe"] == "the smallest covering prefix"][0]
+
+    def word_row(word, got, witness, feasibility):
+        rows.append([word, got, witness, feasibility])
+    word_row("CENSUS-TOTAL", k_census_word(P["census_rows"]), "MEASURED-HERE",
+        "the delivered census: every row's cardinality key is carried by "
+        "this run, so no row resolves NONE")
+    word_row("CENSUS-PARTIAL", k_census_word(census_rows(thin)), "MEASURED-HERE",
+        "the same builder over a payload from which one cited cardinality "
+        "has been withheld: that row resolves NONE and the word falls")
+    word_row("ACYCLIC", k_circularity_word(
+        len(_all_cycles(tuple(e for e in DEPENDENCY_EDGES
+                              if e not in FEEDBACK_EDGES))) > 0,
+        P["class_cast_solutions"], P["class_cast_matches_declared"],
+        P["class_cast_residue"]), "MEASURED-HERE",
+        "the same dependency graph with its two feedback edges cut has no "
+        "cycle at all, so a corpus that never wrote a record back would "
+        "read here")
+    word_row("CIRCULAR-CAST-UNIQUE-IN-THE-TRIANGULAR-CLASS",
+        k_circularity_word(True, P["class_cast_solutions"],
+                           P["class_cast_matches_declared"],
+                           P["inv_single_class_splittings"]), "MEASURED-HERE",
+        "one declared direction class of the same record offers exactly one "
+        "splitting, so a record with no direction residue reads here")
+    word_row("CIRCULAR-CAST-UNIQUE-IN-THE-TRIANGULAR-CLASS-"
+        "UP-TO-THE-DIRECTION-DECLARATION",
+        k_circularity_word(True, P["class_cast_solutions"],
+                           P["class_cast_matches_declared"],
+                           P["class_cast_residue"]), "MEASURED-HERE",
+        "the delivered measurement: one cast family and a direction residue "
+        "above one")
+    word_row("CIRCULAR-BLOCKED-AT-THE-CAST",
+        k_circularity_word(True, P["class_cast_solutions"],
+                           prefix["cast_recovered"], P["class_cast_residue"]),
+        "MEASURED-HERE",
+        "the covering-prefix probe of section five does not return the "
+        "declared cast, and a corpus whose whole record read like it would "
+        "read here")
+    word_row("Q58-EMERGENCE-GENERATOR-INDEPENDENT",
+        k_q58_word(tri_recovering, tri_refusing), "MEASURED-HERE",
+        "restricted to the arms that write triangles the corpus already "
+        "shows no refusal, so a corpus whose every mechanism wrote "
+        "triangles would read here")
+    word_row("Q58-IDENTIFIABILITY-WITHIN-A-GENERATIVE-CLASS",
+        k_q58_word(P["q58_arms_recovering"], P["q58_arms_refusing"]),
+        "MEASURED-HERE",
+        "the delivered measurement: more than one arm recovers and at least "
+        "one refuses")
+    word_row("Q58-UNDECIDED-NO-SECOND-MECHANISM",
+        k_q58_word(non_recovering, non_refusing), "MEASURED-HERE",
+        "restricted to the arms that do not write triangles no arm recovers, "
+        "so a corpus supplying only those would leave the question open")
+    word_row("ISP-IS-ONE-THEORY",
+        k_parameter_word(P["param_free_selected_by_a_law"]), "MEASURED-HERE",
+        "the word reads at a free count of zero; the free count is computed "
+        "from the selection predicates, of which this corpus satisfies every "
+        "one it declares and declares none for the rows that stay free")
+    word_row("ISP-IS-A-FAMILY", k_parameter_word(P["param_free"]), "MEASURED-HERE",
+        "the delivered measurement: the free count is positive")
     return rows
+
+
+# the two edges that close the dependency graph's loops; cutting them is what
+# the ACYCLIC control measures.
+FEEDBACK_EDGES = (
+    ("RECORD-BLOCK", "ACTOR", "the reconstruction reads a cast off the blocks"),
+    ("EMISSION", "COUNT-FIELD", "an emission increments the count field"),
+)
 
 
 # ===========================================================================
@@ -1912,7 +2721,24 @@ CTX: dict = {}
 
 SPELLED = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six",
            7: "seven", 8: "eight", 9: "nine", 10: "ten", 11: "eleven",
-           12: "twelve"}
+           12: "twelve", 13: "thirteen", 14: "fourteen", 15: "fifteen",
+           16: "sixteen", 17: "seventeen", 18: "eighteen", 19: "nineteen",
+           20: "twenty", 21: "twenty-one", 22: "twenty-two",
+           23: "twenty-three", 24: "twenty-four", 25: "twenty-five",
+           26: "twenty-six", 27: "twenty-seven"}
+
+# The four families whose object is the paper; --render skips their gates and
+# therefore does not exercise them, and says so rather than counting them.
+PAPERLESS_FAMILIES = ("T-WALL-SEMANTIC", "T-ANCHOR-CONSUMED",
+                      "T-CLAIMS-EQUAL", "T-REFERENT-BOUND")
+
+
+def _fam(cid):
+    """THE EXECUTION CENSUS (K3 MAJOR-3).  Called at the family's own live
+    call site, in the mode being delivered -- never a regex over this file's
+    source, which a dead class or a token in a comment can satisfy."""
+    CTX.setdefault("fam", collections.Counter())[cid] += 1
+    return cid
 
 
 def fmt(P, template, *names):
@@ -1932,27 +2758,54 @@ def _paper_prose(text):
 
 
 def g_sources(P):
+    # every *_count is DERIVED from its own list at render time, so a failing
+    # gate's published evidence cannot contradict its failure (K3 MINOR-5).
+    P["source_mismatch_count"] = len(P["source_mismatches"])
     ok = not P["source_mismatches"]
     return ok, fmt(P, "sources {source_count} mismatches {source_mismatch_count}",
                    "source_count", "source_mismatch_count")
 
 
 def g_no_float(P):
+    P["float_offence_count"] = len(P["float_offences"])
     return not P["float_offences"], fmt(
         P, "float literals {float_offence_count} in the module",
         "float_offence_count")
 
 
 def g_s1(P):
+    P["region_offences"] = (P["region_reach_offences"]
+                            + P["region_alias_offences"]
+                            + P["region_constant_offences"])
+    P["region_offence_count"] = len(P["region_offences"])
     return not P["region_offences"], fmt(
-        P, "regions {region_count} offences {region_offence_count}",
-        "region_count", "region_offence_count")
+        P, "regions {region_count} legs {region_legs} reach "
+           "{region_reach_offence_count} alias {region_alias_offence_count} "
+           "declared-constant {region_constant_offence_count} offences "
+           "{region_offence_count}",
+        "region_count", "region_legs", "region_reach_offence_count",
+        "region_alias_offence_count", "region_constant_offence_count",
+        "region_offence_count")
 
 
 def g_template(P):
-    return (P["template_families"] == P["template_families_live"]), fmt(
-        P, "template families {template_families} exercised {template_families_live}",
-        "template_families", "template_families_live")
+    counts = dict(P["template_family_counts"])
+    expected = [cid for (_l, _n, cid) in ET.FAMILIES
+                if cid not in P["template_families_declared_out_of_mode"]]
+    P["template_families_expected"] = len(expected)
+    P["template_families_live"] = sum(1 for cid in expected
+                                      if counts.get(cid, 0) > 0)
+    P["template_families_unexercised"] = sorted(
+        cid for cid in expected if counts.get(cid, 0) == 0)
+    ok = (P["template_families_live"] == P["template_families_expected"]
+          and not P["template_families_unexercised"]
+          and P["template_families"] == len(ET.FAMILIES))
+    return ok, fmt(
+        P, "template families {template_families} expected in this mode "
+           "{template_families_expected} exercised by a live call "
+           "{template_families_live}",
+        "template_families", "template_families_expected",
+        "template_families_live")
 
 
 def g_arena(P):
@@ -1963,12 +2816,18 @@ def g_arena(P):
           and P["arena_parallel_classes"] == B_Q + 1
           and P["arena_groupings"] == len(b_raw_census()["parts"])
           and P["recon_degree"] * P["arena_sites"] == 2 * P["arena_cells"]
+          and P["arena_saturating_all_triangles"]
+          and P["arena_all_triangle_groupings"] == P["arena_saturating_groupings"]
+          and P["arena_cell_pair_bijection"]
+          and P["arena_codivision_pairs"] == P["arena_cells"]
           and deg)
     return ok, fmt(P, "sites {arena_sites} cells {arena_cells} classes "
                       "{arena_parallel_classes} groupings {arena_groupings} "
-                      "saturating {arena_saturating_groupings} degree {recon_degree}",
+                      "saturating {arena_saturating_groupings} all-triangle "
+                      "{arena_all_triangle_groupings} degree {recon_degree}",
                    "arena_sites", "arena_cells", "arena_parallel_classes",
-                   "arena_groupings", "arena_saturating_groupings", "recon_degree")
+                   "arena_groupings", "arena_saturating_groupings",
+                   "arena_all_triangle_groupings", "recon_degree")
 
 
 def g_corpus(P):
@@ -2012,60 +2871,102 @@ def g_census(P):
     carrier = anchor_numerals(carrier_text)
     occ = anchor_numerals(A.read("OCC-CARRIER", "G-OBJECT-CENSUS"))
     chart = anchor_numerals(A.read("SEC-CHART", "G-OBJECT-CENSUS"))
-    tick = A.read("HOR-TICK", "G-OBJECT-CENSUS")
+    tick = anchor_spelled_numerals(A.read("HOR-TICK", "G-OBJECT-CENSUS"))
     rows = P["census_rows"]
+    byname = {r["object"]: r for r in rows}
     classes_ok = all(r["class"] in CLASS_ALPHABET for r in rows)
     backing_ok = all(r["backing"] in BACKING_ALPHABET for r in rows)
     names_ok = len({r["object"] for r in rows}) == len(rows)
-    chart_row = [r for r in rows if r["object"] == "CHART"]
-    tick_row = [r for r in rows if r["object"] == "TICK"]
-    ok = (classes_ok and backing_ok and names_ok
+    counts_ok = all(r["counts"] for r in rows)
+    ok = (classes_ok and backing_ok and names_ok and counts_ok
           and carrier[0] == P["arena_cells"] and carrier[1] == P["arena_cells"]
           and SPELLED[P["arena_sites"]] in carrier_text
           and occ[0] == P["arena_cells"] and occ[-1] == P["arena_sites"]
-          and chart_row and chart_row[0]["cardinality"] == chart[-1]
-          and tick_row and "One Site a Tick" in tick
-          and P["census_backed"] == P["census_row_count"])
+          # every CITED cardinality is the numeral parsed out of its anchor,
+          # spelled numerals included -- none is typed here (K3 MAJOR-7)
+          and byname["CHART"]["cardinality"] == chart[-1]
+          and byname["TICK"]["cardinality"] == tick[0]
+          and byname["CARRIER-CANDIDATE"]["cardinality"] == carrier[0]
+          and P["census_backed"] == P["census_row_count"]
+          and P["census_unbacked"] == 0
+          and P["census_distinct_extents"] < P["census_row_count"]
+          and P["census_identifications"] > 0)
     return ok, fmt(P, "rows {census_row_count} computed {census_computed_here} "
-                      "cited {census_cited} backed {census_backed}",
+                      "cited {census_cited} backed {census_backed} primitive "
+                      "{census_primitive} distinct extents "
+                      "{census_distinct_extents} identifications "
+                      "{census_identifications}",
                    "census_row_count", "census_computed_here", "census_cited",
-                   "census_backed")
+                   "census_backed", "census_primitive",
+                   "census_distinct_extents", "census_identifications")
 
 
 def g_state_components(P):
+    """ONE CLASSIFICATION PER OBJECT (v15 #33).  The branch weight is
+    ensemble-side bookkeeping and is gated OUT of the one-instant state list,
+    so the two tables cannot both name it."""
+    names = {a for (a, _b, _c) in STATE_COMPONENTS}
+    ens = {a for (a, _b, _c) in STATE_ENSEMBLE}
     ok = (P["state_components"] == len(STATE_COMPONENTS)
-          and P["state_background_components"] == len(STATE_BACKGROUND))
-    return ok, fmt(P, "state components {state_components} background "
+          and P["state_ensemble_components"] == len(STATE_ENSEMBLE)
+          and P["state_background_components"] == len(STATE_BACKGROUND)
+          and not (names & ens)
+          and not (names & {a for (a, _b) in STATE_BACKGROUND}))
+    return ok, fmt(P, "state components {state_components} ensemble-side "
+                      "{state_ensemble_components} background "
                       "{state_background_components}",
-                   "state_components", "state_background_components")
+                   "state_components", "state_ensemble_components",
+                   "state_background_components")
 
 
 def g_state_screens(P):
+    """the two legs, TOLD APART (K2 MAJOR-3, K1 m4).  Sufficiency is
+    structural -- the coin indexes the count only through its residue -- and
+    holds at every amplitude probed.  Minimality is amplitude-relative and
+    fails at a single-cell amplitude, so the head's zero is stamped to the
+    uniform one."""
     ok = (P["state_equal_residue_agreements"] == P["state_equal_residue_pairs"]
           and P["state_equal_residue_disagreements"] == 0
           and P["state_distinct_residue_collisions"] == 0
-          and P["state_successors_distinct"] == P["record_residue_fields"])
+          and P["state_successors_distinct"] == P["record_residue_fields"]
+          # sufficiency at EVERY amplitude probed; minimality at some but not
+          # all, which is the disclosure this gate carries
+          and P["state_amplitudes_sufficient"] == P["state_amplitudes_probed"]
+          and 0 < P["state_amplitudes_minimal"] < P["state_amplitudes_probed"]
+          and P["state_single_cell_collisions"] > 0
+          and P["state_amplitude_stamped"] == "THE-UNIFORM-AMPLITUDE")
     return ok, fmt(P, "equal-residue pairs {state_equal_residue_pairs} agreeing "
                       "{state_equal_residue_agreements} distinct-residue pairs "
                       "{state_distinct_residue_pairs} colliding "
                       "{state_distinct_residue_collisions} successors "
-                      "{state_successors_distinct}",
+                      "{state_successors_distinct} amplitudes "
+                      "{state_amplitudes_probed} sufficient at "
+                      "{state_amplitudes_sufficient} minimal at "
+                      "{state_amplitudes_minimal} single-cell collisions "
+                      "{state_single_cell_collisions}",
                    "state_equal_residue_pairs", "state_equal_residue_agreements",
                    "state_distinct_residue_pairs",
                    "state_distinct_residue_collisions",
-                   "state_successors_distinct")
+                   "state_successors_distinct", "state_amplitudes_probed",
+                   "state_amplitudes_sufficient", "state_amplitudes_minimal",
+                   "state_single_cell_collisions")
 
 
 def g_state_reading(P):
+    """the Born menu is the post-coin WEIGHTS, and it is coarser than the
+    post-coin vectors the first delivery printed under its name (K1 M3)."""
     a = CTX["anchors"].read("COUP-RESIDUE", "G-STATE-READING-RELATIVE")
     ok = (anchor_numerals(a) == [B_Q]
-          and P["state_reading_a_menus"] == P["record_residue_fields"]
+          and P["state_reading_a_post_coin_vectors"] == P["record_residue_fields"]
           and P["state_reading_b_menus"] == P["record_count_fields"]
-          and P["state_reading_b_menus"] > P["state_reading_a_menus"])
-    return ok, fmt(P, "reading A menus {state_reading_a_menus} reading B menus "
-                      "{state_reading_b_menus} residue fields "
+          and P["state_reading_a_born_values"]
+          < P["state_reading_a_post_coin_vectors"] < P["state_reading_b_menus"])
+    return ok, fmt(P, "Born-menu values {state_reading_a_born_values} post-coin "
+                      "vectors {state_reading_a_post_coin_vectors} record-menu "
+                      "values {state_reading_b_menus} residue fields "
                       "{record_residue_fields} count fields {record_count_fields}",
-                   "state_reading_a_menus", "state_reading_b_menus",
+                   "state_reading_a_born_values",
+                   "state_reading_a_post_coin_vectors", "state_reading_b_menus",
                    "record_residue_fields", "record_count_fields")
 
 
@@ -2079,15 +2980,30 @@ def g_invariance_groups(P):
           and P["inv_law_blind_to_direction"]
           and P["inv_direction_index"] * P["inv_arena_automorphisms"]
           == P["inv_link_graph_automorphisms"]
-          and P["inv_direction_index"] == P["inv_direction_splittings"])
+          and P["inv_direction_index"] == P["inv_direction_splittings"]
+          # THE TWO FOUNDS, GATED (K1 F1, F2 / K2 minor 3)
+          and P["inv_law_stabilizer_is_the_link_group"]
+          and P["inv_arena_group_inside_the_link_group"]
+          and P["inv_link_graph_closed_form"]
+          == P["inv_link_graph_automorphisms"]
+          and P["inv_splitting_action_transitive"]
+          and P["inv_splitting_orbit"] == P["inv_direction_splittings"]
+          and P["inv_splitting_stabilizer"] == P["inv_arena_automorphisms"]
+          and P["inv_splitting_stabilizer_is_the_arena_group"]
+          and P["inv_orbit_stabilizer_identity"])
     return ok, fmt(P, "symmetric group {inv_symmetric_group} law stabilizer "
                       "{inv_law_stabilizer} link automorphisms "
                       "{inv_link_graph_automorphisms} arena automorphisms "
                       "{inv_arena_automorphisms} index {inv_direction_index} "
-                      "splittings {inv_direction_splittings}",
+                      "splittings {inv_direction_splittings} orbit "
+                      "{inv_splitting_orbit} splitting stabilizer "
+                      "{inv_splitting_stabilizer} parts {inv_link_graph_parts} "
+                      "closed form {inv_link_graph_closed_form}",
                    "inv_symmetric_group", "inv_law_stabilizer",
                    "inv_link_graph_automorphisms", "inv_arena_automorphisms",
-                   "inv_direction_index", "inv_direction_splittings")
+                   "inv_direction_index", "inv_direction_splittings",
+                   "inv_splitting_orbit", "inv_splitting_stabilizer",
+                   "inv_link_graph_parts", "inv_link_graph_closed_form")
 
 
 def g_direction_invariance(P):
@@ -2107,9 +3023,6 @@ def g_direction_invariance(P):
                    "inv_direction_census_numbers")
 
 
-B_ARITH_SEVEN = 7
-
-
 def g_local_arity(P):
     w = dict((a, b) for a, b in P["inv_local_widths"])
     ok = (P["inv_local_global_count"] == 1
@@ -2127,17 +3040,35 @@ def g_local_arity(P):
 
 
 def g_quotient(P):
-    ok = (P["quotient_histories_link"] <= P["quotient_histories_arena"]
-          <= P["quotient_histories"]
+    """SAME OBJECT ON BOTH SIDES (K1 M2).  The multiset chain and the
+    order-preserving chain are gated separately, and the step that forgets the
+    order -- which no group performs -- is published as its own number."""
+    ok = (# the multiset chain: the sort first, then the groups
+          P["quotient_history_event_multisets"] <= P["quotient_histories"]
+          and P["quotient_histories_link"] <= P["quotient_histories_arena"]
+          <= P["quotient_history_event_multisets"]
+          # the order-preserving chain, on the object the census row defines
+          and P["quotient_histories_ordered_link"]
+          <= P["quotient_histories_ordered_arena"] <= P["quotient_histories"]
+          # the sort is not a group action, and here it does most of the work
+          and P["quotient_history_event_multisets"] < P["quotient_histories"]
+          and P["quotient_histories_ordered_link"]
+          > P["quotient_histories_link"]
           and P["quotient_fields_link"] <= P["quotient_fields_arena"]
           <= P["quotient_fields"]
           and P["quotient_fields_arena"] == P["quotient_fields_link"])
-    return ok, fmt(P, "histories {quotient_histories} arena "
+    return ok, fmt(P, "histories {quotient_histories} event multisets "
+                      "{quotient_history_event_multisets} arena "
                       "{quotient_histories_arena} link {quotient_histories_link} "
+                      "order kept arena {quotient_histories_ordered_arena} "
+                      "order kept link {quotient_histories_ordered_link} "
                       "fields {quotient_fields} arena {quotient_fields_arena} "
                       "link {quotient_fields_link}",
-                   "quotient_histories", "quotient_histories_arena",
-                   "quotient_histories_link", "quotient_fields",
+                   "quotient_histories", "quotient_history_event_multisets",
+                   "quotient_histories_arena",
+                   "quotient_histories_link",
+                   "quotient_histories_ordered_arena",
+                   "quotient_histories_ordered_link", "quotient_fields",
                    "quotient_fields_arena", "quotient_fields_link")
 
 
@@ -2152,14 +3083,22 @@ def g_dependency(P):
 
 
 def g_cast_unique(P):
+    """the search's exhaustiveness carries a HYPOTHESIS, and the hypothesis is
+    gated rather than assumed (K1 m8): the one-fresh-label menu is complete
+    only over a connected block hypergraph."""
     ok = (P["class_cast_solutions"] == 1 and P["class_cast_matches_declared"]
           and P["recon_set_equality"] and P["recon_certificate"] == "CERTIFIED"
-          and P["recon_cast_size"] == P["arena_sites"])
+          and P["recon_cast_size"] == P["arena_sites"]
+          and P["class_blocks_components"] == 1
+          and P["recon_coordinate_invariant"]
+          and P["recon_second_coordinate_certificate"] == "CERTIFIED")
     return ok, fmt(P, "cast solutions {class_cast_solutions} certificate "
-                      "{recon_certificate} derived cast {recon_cast_size} "
-                      "threshold {recon_threshold}",
+                      "{recon_certificate} reconstructed cast "
+                      "{recon_cast_size} threshold {recon_threshold} block "
+                      "components {class_blocks_components}",
                    "class_cast_solutions", "recon_certificate",
-                   "recon_cast_size", "recon_threshold")
+                   "recon_cast_size", "recon_threshold",
+                   "class_blocks_components")
 
 
 def g_cast_residue(P):
@@ -2180,24 +3119,54 @@ def g_q58_arms(P):
                                        "TOKEN-IN-NO-ACTOR",
                                        "TOKEN-NOT-IN-EXACTLY-TWO",
                                        "NO-RECORD-BLOCKS") for a in arms)
-          and len({a["arm"] for a in arms}) == len(arms))
-    return ok, fmt(P, "arms {q58_arms_total} recovering {q58_arms_recovering} "
-                      "refusing {q58_arms_refusing} triangular {q58_triangular_arms}",
-                   "q58_arms_total", "q58_arms_recovering", "q58_arms_refusing",
+          and len({a["arm"] for a in arms}) == len(arms)
+          # THE PROBE'S REAL WIDTH (K1 M1): distinct arm NAMES were gated and
+          # distinct arm INPUTS were not, so five arms handing one record read
+          # as five probes.  Both are now measured and the head carries both.
+          and len({a["record"] for a in arms}) == P["q58_distinct_inputs"]
+          and P["q58_distinct_inputs"] < P["q58_arms_total"]
+          and P["q58_distinct_recovering_inputs"]
+          + P["q58_distinct_refusing_inputs"] == P["q58_distinct_inputs"])
+    return ok, fmt(P, "arms {q58_arms_total} distinct inputs "
+                      "{q58_distinct_inputs} recovering {q58_arms_recovering} "
+                      "from {q58_distinct_recovering_inputs} refusing "
+                      "{q58_arms_refusing} from {q58_distinct_refusing_inputs} "
+                      "triangular {q58_triangular_arms}",
+                   "q58_arms_total", "q58_distinct_inputs",
+                   "q58_arms_recovering", "q58_distinct_recovering_inputs",
+                   "q58_arms_refusing", "q58_distinct_refusing_inputs",
                    "q58_triangular_arms")
 
 
 def g_q58_verdict(P):
+    """the criterion DECIDES THE ARMS and is measured NOT to be sufficient off
+    them (K2 MAJOR-1): the domain probe exhibits triangle-writing block sets
+    at total cover that do not return the cast, and one non-triangular set
+    that does."""
     ok = (P["q58_arms_recovering"] > 1 and P["q58_arms_refusing"] > 0
           and P["q58_split_is_triangularity"]
           and not P["q58_split_is_the_block_size"]
-          and len(P["q58_mechanism_kinds"]) > 1)
+          and len(P["q58_mechanism_kinds"]) > 1
+          and P["q58_domain_triangular_failures"] > 0
+          and P["q58_domain_failures_at_total_cover"] > 0
+          and P["q58_domain_nontriangular_recovering"] > 0
+          and not P["q58_criterion_holds_on_every_triangle_writer"]
+          and not P["q58_criterion_refuses_every_non_triangle_writer"]
+          and P["q58_domain_prefixes_below_the_cover"]
+          == P["q58_domain_prefixes_declared"])
     return ok, fmt(P, "recovering {q58_arms_recovering} refusing "
-                      "{q58_arms_refusing} triangularity decides "
+                      "{q58_arms_refusing} triangularity decides the arms "
                       "{q58_split_is_triangularity} block size decides "
-                      "{q58_split_is_the_block_size}",
+                      "{q58_split_is_the_block_size} domain probes "
+                      "{q58_domain_probe_count} triangle-writing failures "
+                      "{q58_domain_triangular_failures} of them at total cover "
+                      "{q58_domain_failures_at_total_cover} non-triangular "
+                      "recoveries {q58_domain_nontriangular_recovering}",
                    "q58_arms_recovering", "q58_arms_refusing",
-                   "q58_split_is_triangularity", "q58_split_is_the_block_size")
+                   "q58_split_is_triangularity", "q58_split_is_the_block_size",
+                   "q58_domain_probe_count", "q58_domain_triangular_failures",
+                   "q58_domain_failures_at_total_cover",
+                   "q58_domain_nontriangular_recovering")
 
 
 def g_coin(P):
@@ -2238,22 +3207,46 @@ def g_parameters(P):
                                    + P["param_derived"] + P["param_initial"]
                                    + P["param_reconstructed"])
           and P["param_free_selected_by_a_law"] == 0
-          and P["param_free"] > 0)
+          and P["param_free"] > 0
+          # #295: the class words are carried by measured predicates, and the
+          # DERIVED count is exactly the number of satisfied selection laws
+          and P["param_derived"] == P["param_laws_satisfied"]
+          == P["param_laws_declared"]
+          and P["param_selected_by_a_law"] == P["param_laws_satisfied"]
+          and not P["param_class_predicate_failures"]
+          and P["param_class_predicates"] > 0
+          # every object the census classes DECLARED is priced here (K2
+          # MAJOR-5a): the census and the parameter table are reconciled
+          and P["param_declared_objects_unpriced"] == 0)
     return ok, fmt(P, "declarations {param_total} free {param_free} invariant "
                       "{param_invariant} derived {param_derived} "
                       "reconstructed-conditionally {param_reconstructed} "
                       "initial {param_initial} free rows a law selects "
-                      "{param_free_selected_by_a_law}",
+                      "{param_free_selected_by_a_law} selection laws declared "
+                      "{param_laws_declared} satisfied {param_laws_satisfied} "
+                      "class predicates {param_class_predicates}",
                    "param_total", "param_free", "param_invariant",
                    "param_derived", "param_reconstructed", "param_initial",
-                   "param_free_selected_by_a_law")
+                   "param_free_selected_by_a_law", "param_laws_declared",
+                   "param_laws_satisfied", "param_class_predicates")
 
 
 def g_outcomes(P):
+    """#299-extended: reachable AND argued feasible against this corpus, per
+    row, with no two rows sharing a feasibility sentence."""
     rows = P["outcome_controls"]
-    ok = all(want == got for want, got in rows) and len(rows) == P["outcome_words"]
-    return ok, fmt(P, "outcome words {outcome_words} reachable {outcome_reachable}",
-                   "outcome_words", "outcome_reachable")
+    ok = (all(want == got for want, got, _w, _f in rows)
+          and len(rows) == P["outcome_words"]
+          and P["outcome_feasibility_distinct"] == P["outcome_words"]
+          and P["outcome_measured_witnesses"] > 0
+          and all(w in ("MEASURED-HERE", "ARGUED") for _x, _g, w, _f in rows))
+    return ok, fmt(P, "outcome words {outcome_words} reachable "
+                      "{outcome_reachable} feasibility sentences "
+                      "{outcome_feasibility_distinct} witnesses measured here "
+                      "{outcome_measured_witnesses}",
+                   "outcome_words", "outcome_reachable",
+                   "outcome_feasibility_distinct",
+                   "outcome_measured_witnesses")
 
 
 def g_anchors(P):
@@ -2266,21 +3259,44 @@ def g_anchors(P):
     P["anchor_phantom_consumers"] = sum(
         1 for a in A.by_name.values() if a.consumer not in _gates)
     try:
+        _fam("T-ANCHOR-CONSUMED")
         CTX["anchors"].verify_consumption(CTX["ledger"])
         bad = ""
     except ET.CheckFail as exc:
         bad = exc.detail
+    # the measured split (K3 MAJOR-7): nine anchors have a DIGIT parsed out of
+    # the located text, two a SPELLED numeral, one an engraved INDEX, and
+    # exactly one carries no numeral at all -- that one is declared WORD-bound
+    # and backs no published cardinality.
+    P["anchor_bindings"] = sorted(collections.Counter(
+        ANCHOR_BINDING[n] for n in A.by_name).items())
+    P["anchor_numeral_bound"] = sum(
+        1 for n in A.by_name if ANCHOR_BINDING[n] != "WORD")
+    P["anchor_word_bound"] = sum(
+        1 for n in A.by_name if ANCHOR_BINDING[n] == "WORD")
+    cited_backings = {r["object"] for r in P["census_rows"]
+                      if r["backing"] == "SEALED-CITATION"}
+    P["census_cited_rows"] = sorted(cited_backings)
+    P["census_cited_rows_on_word_bound_anchors"] = sum(
+        1 for o in cited_backings
+        if ANCHOR_BINDING.get(CENSUS_CITED_ANCHOR.get(o, ""), "WORD") == "WORD")
     ok = ((not bad) and P["anchor_unconsumed"] == 0
-          and P["anchor_phantom_consumers"] == 0)
+          and P["anchor_phantom_consumers"] == 0
+          and P["anchor_numeral_bound"] + P["anchor_word_bound"]
+          == P["anchor_count"]
+          and P["census_cited_rows_on_word_bound_anchors"] == 0)
     return ok, fmt(P, "anchors {anchor_count} consumers {anchor_consumers} "
                       "unconsumed {anchor_unconsumed} phantom "
-                      "{anchor_phantom_consumers}",
+                      "{anchor_phantom_consumers} numeral-bound "
+                      "{anchor_numeral_bound} word-bound {anchor_word_bound}",
                    "anchor_count", "anchor_consumers", "anchor_unconsumed",
-                   "anchor_phantom_consumers")
+                   "anchor_phantom_consumers", "anchor_numeral_bound",
+                   "anchor_word_bound")
 
 
 def g_claims(P):
     try:
+        _fam("T-CLAIMS-EQUAL")
         got = CTX["claims"].gate(CTX["paper"])
         bad = ""
     except ET.CheckFail as exc:
@@ -2291,39 +3307,152 @@ def g_claims(P):
                    "claim_rows", "claim_prose", "claim_fences")
 
 
+def spell_out(text):
+    """the paper's SPELLED numerals, rewritten as digits, so that the same
+    per-occurrence referent gate that binds `27` also binds `twenty-seven`
+    (K3 MAJOR-6: NUM matches digits only, and 92 prose numerals sat outside
+    every numeral gate)."""
+    words = sorted(((w, v) for v, w in SPELLED.items()),
+                   key=lambda kv: -len(kv[0]))
+    out = text
+    for w, v in words:
+        out = re.sub(r"(?<![\w-])%s(?![\w-])" % w, str(v), out,
+                     flags=re.IGNORECASE)
+    return out
+
+
+def count_spelled(text):
+    words = {w for w in SPELLED.values()}
+    return sum(1 for m in re.finditer(r"[A-Za-z][A-Za-z-]*", text)
+               if m.group(0).casefold() in words)
+
+
+# The DISCRIMINATING noun of each universe: a whole word that says what the
+# sentence is about, as against the registry's own prefix list, which routes on
+# common words like class, event and object.  The ambiguity leg below scores on
+# these.
+AMBIGUITY_NOUNS = {
+    "THE-INVARIANCE": ("relabelling", "relabellings", "stabilizer",
+                       "automorphism", "automorphisms", "orbit", "orbits",
+                       "quotient", "splitting", "splittings", "naming",
+                       "namings"),
+    "THE-ARMS": ("arm", "arms", "mechanism", "mechanisms", "reconstructor"),
+    "THE-PARAMETERS": ("declaration", "declarations", "parameter",
+                       "parameters", "fiber", "fibers"),
+    "THE-STATE": ("amplitude", "amplitudes", "residue", "residues",
+                  "successor", "successors"),
+    "THE-RECORD": ("history", "histories", "record", "records", "block",
+                   "blocks"),
+    "THE-ARENA": ("arena", "cell", "cells", "site", "sites", "actor",
+                  "actors", "grouping", "groupings"),
+}
+
+
+def strict_referents(prose, ref):
+    """THE AMBIGUITY LEG (K3 MINOR-4).  The registry routes a sentence to the
+    FIRST universe whose noun it carries, so a sentence that names two
+    universes can launder one's numerals into the other's subject.  Here every
+    universe the sentence names BY ITS DISCRIMINATING NOUN is scored, and a
+    numeral must belong to ALL of them."""
+    unis = ref.universes
+    offences, checked = [], 0
+    for sentence in re.split(r"(?<=[.!?])\s+", prose):
+        s = ET.canon(sentence)
+        hit = [n for n in unis
+               if any(re.search(r"\b%s\b" % re.escape(w), s)
+                      for w in AMBIGUITY_NOUNS[n])]
+        if len(hit) < 2:
+            continue
+        spans = [m.span() for m in ET.ReferentRegistry.NOF.finditer(sentence)]
+        for m in ET.ReferentRegistry.NUM.finditer(sentence):
+            if any(a <= m.start() < b for a, b in spans):
+                continue
+            v = int(m.group(1).replace(",", ""))
+            checked += 1
+            missing = [n for n in hit if v not in unis[n]["values"]]
+            if missing:
+                offences.append("%d is not a value of %s in a sentence that "
+                                "also names %s" % (v, missing[0], hit))
+    return checked, offences
+
+
 def g_referents(P):
+    prose = _paper_prose(CTX["paper"])
+    checked, bad = 0, ""
     try:
-        got = CTX["ref"].gate(_paper_prose(CTX["paper"]))
-        bad = ""
+        _fam("T-REFERENT-BOUND")
+        got = CTX["ref"].gate(prose)
+        checked += got["occurrences_checked"]
     except ET.CheckFail as exc:
-        got, bad = {"occurrences_checked": 0}, exc.detail
-    P["referent_occurrences"] = got["occurrences_checked"]
+        bad = exc.detail
+    if not bad:
+        try:
+            got2 = CTX["ref"].gate(spell_out(prose))
+            checked += got2["occurrences_checked"]
+            P["referent_spelled_occurrences"] = (
+                got2["occurrences_checked"] - got["occurrences_checked"])
+        except ET.CheckFail as exc:
+            bad = "spelled: " + exc.detail
+    amb, amb_off = strict_referents(spell_out(prose), CTX["ref"])
+    P["referent_ambiguous_occurrences"] = amb
+    P["referent_ambiguity_offences"] = sorted(set(amb_off))
+    P["referent_occurrences"] = checked
+    P["referent_spelled_numerals"] = count_spelled(prose)
     CTX["referent_detail"] = bad
-    ok = (not bad) and got["occurrences_checked"] > 0
+    ok = ((not bad) and checked > 0 and P["referent_spelled_numerals"] > 0
+          and not P["referent_ambiguity_offences"])
     return ok, fmt(P, "universes {referent_universes} occurrences checked "
-                      "{referent_occurrences}",
-                   "referent_universes", "referent_occurrences")
+                      "{referent_occurrences} spelled numerals in the prose "
+                      "{referent_spelled_numerals} of them newly bound "
+                      "{referent_spelled_occurrences} cross-universe "
+                      "occurrences {referent_ambiguous_occurrences}",
+                   "referent_universes", "referent_occurrences",
+                   "referent_spelled_numerals", "referent_spelled_occurrences",
+                   "referent_ambiguous_occurrences")
 
 
 def g_walls(P):
     order = CTX["anchors"].read("PLAN-WALLS", "G-WALLS")
     named = [w.name for w in CTX["walls"]]
-    standing_present = ("W-RECONSTRUCTION-IS-NOT-DERIVATION" in named
-                        and "W-INVARIANCE-IS-NOT-GAUGE" in named
-                        and "derivation" in order and "gauge" in order)
+    # the engraving's own INDEX is parsed out of the located text and compared
+    # with the number of standing walls this run built (K3 MAJOR-7: the old
+    # predicate was a substring test on the module's own literal).
+    engraved = sorted({int(m.group(1))
+                       for m in re.finditer(r"\bw(\d)\s*:", ET.canon(order))})
+    P["wall_engraved_indices"] = engraved
+    P["wall_engraved_count"] = len(engraved)
+    standing_present = (all(s in named for s in STANDING_WALLS)
+                        and len(engraved) == P["wall_standing"])
     bad = [] if standing_present else ["the two standing walls are not built"]
     for w in CTX["walls"]:
+        if not w.licences:
+            bad.append("%s: empty licence pool" % w.name)
         try:
+            _fam("T-WALL-SEMANTIC")
             w.scan(CTX["paper"], CTX["claim_texts"])
         except ET.CheckFail as exc:
             bad.append(exc.detail)
+    rows, off = wall_probe_report(CTX["walls"], CTX["paper"],
+                                  CTX["claim_texts"])
+    P["wall_probe_rows"] = rows
+    P["wall_probes"] = len(rows)
+    P["wall_probes_surviving"] = len(off)
+    P["wall_probe_legs"] = sorted(collections.Counter(
+        r["died_at_leg"] for r in rows).items())
+    P["wall_probes_copying_a_pattern_literal"] = sum(
+        1 for r in rows if r["copied_pattern_literals"])
+    bad.extend(off)
     ok = not bad
     return ok, fmt(P, "walls {wall_count} patterns {wall_patterns} standing "
-                      "sentences {wall_positives}",
-                   "wall_count", "wall_patterns", "wall_positives")
+                      "sentences {wall_positives} policed {wall_policed} "
+                      "controls {wall_probes} surviving "
+                      "{wall_probes_surviving}",
+                   "wall_count", "wall_patterns", "wall_positives",
+                   "wall_policed", "wall_probes", "wall_probes_surviving")
 
 
 def g_typed(P):
+    P["typed_count_offence_count"] = len(P["typed_count_offences"])
     ok = (not P["typed_count_offences"]
           and P["exempt_tokens_unused"] == 0)
     return ok, fmt(
@@ -2335,6 +3464,10 @@ def g_typed(P):
 
 
 def g_receipt_types(P):
+    """the walk runs BEFORE this gate (PRE_GATE) and writes what it found, so
+    neither conjunct is constant and `receipt_leaves` is the walk's own count
+    (K3 MAJOR-8: it was a typed zero, and false)."""
+    P["receipt_type_offence_count"] = len(P["receipt_type_offences"])
     return not P["receipt_type_offences"], fmt(
         P, "receipt leaves {receipt_leaves} type offences "
            "{receipt_type_offence_count}",
@@ -2342,24 +3475,50 @@ def g_receipt_types(P):
 
 
 def g_head(P):
-    """the head is not trusted to its renderer: every numeral position is
-    parsed back out of the emitted string and compared, as an integer, against
-    the receipt leaf it names."""
-    bad = []
+    """THE HEAD IS TOTAL BY CONSTRUCTION (K3 MAJOR-1).  Every `KEY=` position
+    present in the emitted string is parsed back out by a reader that shares
+    no code and no literal with the builder, and compared, as an integer,
+    against the receipt leaf it names -- including BOTH halves of every
+    compound `A-OF-B` field.  A position the string carries and the field
+    table does not name is a STRAY and fails here."""
+    bad, parsed = [], 0
     for seg, want in zip(P["head_segments"], HEAD_FIELDS):
         got = k_parse_head(seg)
+        named = {f for f, _k in want}
+        for field in sorted(got):
+            if field not in named:
+                bad.append("stray head position " + field)
         for field, key in want:
             if field not in got:
-                bad.append(field)
-            elif got[field] != P[key]:
-                bad.append(field)
-    ok = not bad and len(P["head_segments"]) == len(HEAD_FIELDS)
-    return ok, fmt(P, "segments {head_segment_count} fields parsed "
+                bad.append("absent " + field)
+                continue
+            values = got[field]
+            keys = key if isinstance(key, tuple) else (key,)
+            if len(values) != len(keys):
+                bad.append("arity " + field)
+                continue
+            for v, k in zip(values, keys):
+                parsed += 1
+                if v != P[k]:
+                    bad.append("moved " + field)
+    P["head_fields_parsed"] = parsed
+    P["head_mismatches"] = len(bad)
+    P["head_positions_emitted"] = sum(
+        sum(len(v) for v in k_parse_head(s).values())
+        for s in P["head_segments"])
+    ok = (not bad and len(P["head_segments"]) == len(HEAD_FIELDS)
+          and parsed == P["head_positions_emitted"])
+    return ok, fmt(P, "segments {head_segment_count} numeral positions emitted "
+                      "{head_positions_emitted} parsed back "
                       "{head_fields_parsed} mismatches {head_mismatches}",
-                   "head_segment_count", "head_fields_parsed", "head_mismatches")
+                   "head_segment_count", "head_positions_emitted",
+                   "head_fields_parsed", "head_mismatches")
 
 
 def g_transcript(P):
+    """the transcript reconciled with the ledger BY CONTENT.  The stray and
+    missing counts are MEASURED before this gate from the multiset difference
+    (K3 MAJOR-8: two of the three conjuncts were constant-True)."""
     ok = (P["transcript_rows"] == P["ledger_rows"] and P["transcript_stray"] == 0
           and P["transcript_missing"] == 0)
     return ok, fmt(P, "transcript rows {transcript_rows} ledger rows "
@@ -2441,13 +3600,25 @@ GATE_STATEMENT = {
     "G-READS-DECLARED": "the read set is exactly the declared set",
 }
 
+# THE ONE-INSTANT PHYSICAL STATE.  The branch weight is NOT here: it is
+# ensemble-side bookkeeping, carried once in STATE_ENSEMBLE below (v15 #33,
+# the ECC charter's state-vs-ensemble split).  The first delivery listed it as
+# a state component AND described it as bookkeeping, which is two
+# classifications of one object.
 STATE_COMPONENTS = (
     ("THE-COUNT-FIELD", "one non-negative integer per cell",
      "the geometry: the division count the weld identifies with the metric"),
     ("THE-AMPLITUDE", "one ring element per cell",
      "the quantum state the coin and the shift act on"),
+)
+
+# ENSEMBLE-SIDE BOOKKEEPING.  It travels with a run and it is not a component
+# of the state at one instant; the screening measurement above never reads it.
+STATE_ENSEMBLE = (
     ("THE-BRANCH-WEIGHT", "one exact rational",
-     "the bookkeeping weight the emission law multiplies"),
+     "ensemble-side bookkeeping: the weight the emission law multiplies along "
+     "a branch, carried to compare runs and never read by the one-instant "
+     "update"),
 )
 
 STATE_BACKGROUND = (
@@ -2459,29 +3630,54 @@ STATE_BACKGROUND = (
     ("THE-READING", "the Born menu or the record menu"),
 )
 
+# EVERY numeral position of the head, including BOTH halves of every compound
+# `A-OF-B` field.  A tuple of keys is a compound position; g_head additionally
+# fails on any `KEY=` position the string carries that this table does not
+# name, so the check is TOTAL BY CONSTRUCTION (K3 MAJOR-1).
 HEAD_FIELDS = (
-    (("OBJECTS", "census_row_count"), ("COMPUTED-HERE", "census_computed_here"),
+    (("OBJECTS", "census_row_count"),
+     ("DISTINCT-EXTENTS", "census_distinct_extents"),
+     ("COMPUTED-HERE", "census_computed_here"),
      ("CITED", "census_cited"), ("ACTORS", "arena_sites"),
      ("CELLS", "arena_cells"), ("EVENTS-REALISED", "corpus_distinct_events"),
      ("HISTORIES", "corpus_distinct_histories"), ("BLOCKS", "record_blocks"),
      ("COUNT-FIELDS", "record_count_fields"), ("MENU", "arena_menu"),
      ("CHART-CLASSES", "inv_link_graph_automorphisms")),
     (("STATE-COMPONENTS", "state_components"),
+     ("ENSEMBLE-SIDE-BOOKKEEPING", "state_ensemble_components"),
      ("BACKGROUND", "state_background_components"),
      ("COUNT-FIELDS", "record_count_fields"),
      ("RESIDUE-FIELDS", "record_residue_fields"),
      ("SUCCESSORS", "state_successors_distinct"),
+     ("EQUAL-RESIDUE-PAIRS-AGREEING",
+      ("state_equal_residue_agreements", "state_equal_residue_pairs")),
+     ("DISTINCT-RESIDUE-COLLISIONS-AT-THE-UNIFORM-AMPLITUDE",
+      ("state_distinct_residue_collisions", "state_distinct_residue_pairs")),
+     ("DISTINCT-RESIDUE-COLLISIONS-AT-A-SINGLE-CELL-AMPLITUDE",
+      ("state_single_cell_collisions", "state_single_cell_pairs")),
+     ("BORN-MENU-VALUES", "state_reading_a_born_values"),
      ("RELABELLINGS", "inv_symmetric_group"),
      ("LAW-STABILIZER", "inv_law_stabilizer"),
      ("ARENA-STABILIZER", "inv_arena_automorphisms"),
      ("DIRECTION-INDEX", "inv_direction_index"),
      ("SPLITTINGS", "inv_direction_splittings"),
      ("LOCAL-GROUP", "inv_local_group_order"),
-     ("LOCAL-COLLAPSE-WIDTH", "inv_local_collapse_width")),
+     ("LOCAL-COLLAPSE-WIDTH", "inv_local_collapse_width"),
+     ("HISTORY-EVENT-MULTISETS", "quotient_history_event_multisets"),
+     ("HISTORIES-SURVIVING",
+      ("quotient_histories_link", "quotient_history_event_multisets")),
+     ("HISTORIES-ORDER-KEPT-SURVIVING",
+      ("quotient_histories_ordered_link", "quotient_histories")),
+     ("FIELDS-SURVIVING", ("quotient_fields_link", "quotient_fields"))),
     (("CYCLE-LENGTH", "dep_cycle_length"),
+     ("ACTOR-RECORD-CYCLE-LENGTH", "dep_actor_record_cycle_length"),
      ("CAST-SOLUTIONS", "class_cast_solutions"),
      ("RESIDUE", "class_cast_residue"), ("ARMS", "q58_arms_total"),
-     ("RECOVERING", "q58_arms_recovering"), ("REFUSING", "q58_arms_refusing")),
+     ("DISTINCT-INPUTS", "q58_distinct_inputs"),
+     ("RECOVERING", "q58_arms_recovering"),
+     ("RECOVERING-INPUTS", "q58_distinct_recovering_inputs"),
+     ("REFUSING", "q58_arms_refusing"),
+     ("REFUSING-INPUTS", "q58_distinct_refusing_inputs")),
     (("DECLARATIONS", "param_total"), ("FREE", "param_free"),
      ("INVARIANT-IN-THE-SUBSTRATE-CENSUS", "param_invariant"),
      ("DERIVED", "param_derived"),
@@ -2502,12 +3698,16 @@ def build_render(P, claims):
     and matched against the paper's own bytes by two-way equality."""
     R = {}
     R["census"] = claims.table(
-        "census", ("object", "class", "cardinality", "backing", "reading"),
-        [(r["object"], r["class"], com(r["cardinality"]), r["backing"],
-          r["reading"]) for r in P["census_rows"]])
+        "census", ("object", "class", "cardinality", "what the number counts",
+                   "backing", "reading"),
+        [(r["object"], r["class"], com(r["cardinality"]), r["counts"],
+          r["backing"], r["reading"]) for r in P["census_rows"]])
     R["state"] = claims.table(
         "state", ("component", "shape", "what it carries"),
         [(a, b, c) for (a, b, c) in STATE_COMPONENTS])
+    R["ensemble"] = claims.table(
+        "ensemble", ("quantity", "shape", "what it carries"),
+        [(a, b, c) for (a, b, c) in STATE_ENSEMBLE])
     R["background"] = claims.table(
         "background", ("declaration", "what it fixes"),
         [(a, b) for (a, b) in STATE_BACKGROUND])
@@ -2520,8 +3720,18 @@ def build_render(P, claims):
          ("of which the successor agrees", com(P["state_equal_residue_agreements"])),
          ("distinct-residue field pairs", com(P["state_distinct_residue_pairs"])),
          ("of which the successor agrees", com(P["state_distinct_residue_collisions"])),
-         ("Born-menu values", com(P["state_reading_a_menus"])),
+         ("post-coin state vectors", com(P["state_reading_a_post_coin_vectors"])),
+         ("Born-menu values", com(P["state_reading_a_born_values"])),
          ("record-menu values", com(P["state_reading_b_menus"]))])
+    R["amplitudes"] = claims.table(
+        "amplitudes", ("amplitude", "one-step successors",
+                       "equal-residue pairs agreeing",
+                       "distinct-residue pairs colliding",
+                       "Born-menu values"),
+        [(nm, com(succ), "%s of %s" % (com(agree), com(pairs)),
+          "%s of %s" % (com(coll), com(dpairs)), com(born))
+         for (nm, succ, agree, pairs, coll, dpairs, born, _pc)
+         in P["state_amplitude_rows"]])
     R["invariance"] = claims.table(
         "invariance", ("group", "order", "what it preserves",
                        "measured status"),
@@ -2540,8 +3750,13 @@ def build_render(P, claims):
           "nothing beyond the event's own order",
           "COUNT-INVARIANT-AT-AND-ABOVE-THE-WIDTH")])
     R["quotient"] = claims.table(
-        "quotient", ("object", "before", "modulo the arena", "modulo the links"),
-        [("histories", com(P["quotient_histories"]),
+        "quotient", ("object", "before", "modulo the arena",
+                     "modulo the links"),
+        [("histories, order kept", com(P["quotient_histories"]),
+          com(P["quotient_histories_ordered_arena"]),
+          com(P["quotient_histories_ordered_link"])),
+         ("event multisets, order forgotten",
+          com(P["quotient_history_event_multisets"]),
           com(P["quotient_histories_arena"]), com(P["quotient_histories_link"])),
          ("count fields", com(P["quotient_fields"]),
           com(P["quotient_fields_arena"]), com(P["quotient_fields_link"]))])
@@ -2552,24 +3767,97 @@ def build_render(P, claims):
         "dependency", ("from", "to", "the edge"),
         [(a, b, w) for (a, b, w) in DEPENDENCY_EDGES])
     R["arms"] = claims.table(
-        "arms", ("mechanism", "kind", "actors per event", "blocks",
-                 "block sizes", "certificate", "cast recovered"),
-        [(a["arm"], a["mechanism"], com(a["event_arity"]), com(a["blocks"]),
+        "arms", ("mechanism", "kind", "the record it hands over",
+                 "actors per event", "blocks", "block sizes", "certificate",
+                 "cast recovered"),
+        [(a["arm"], a["mechanism"], a["record"], com(a["event_arity"]),
+          com(a["blocks"]),
           "+".join("%s x %s" % (com(n), com(s)) for s, n in a["block_sizes"]),
           a["certificate"], "yes" if a["cast_recovered"] else "no")
          for a in P["q58_arms"]])
+    R["domain"] = claims.table(
+        "domain", ("block set", "blocks", "all blocks triangular",
+                   "tokens covered", "certificate", "cast recovered"),
+        [(p["probe"], com(p["blocks"]),
+          "yes" if p["all_blocks_triangular"] else "no",
+          com(p["tokens_covered"]), p["certificate"],
+          "yes" if p["cast_recovered"] else "no")
+         for p in P["q58_domain_probes"]])
     R["parameters"] = claims.table(
         "parameters", ("declaration", "what it fixes", "fiber", "class",
                        "a measured law selects it", "where it is measured"),
         [(a, b, c, d, e, f) for (a, b, c, d, e, f) in P["param_rows"]])
     R["outcomes"] = claims.table(
-        "outcomes", ("pre-registered word", "the control that emits it"),
-        [(w, "a declared input handed to the comparator")
-         for w, _g in P["outcome_controls"]])
+        "outcomes", ("pre-registered word", "witness",
+                     "what would make this corpus read it"),
+        [(w, wit, feas) for w, _g, wit, feas in P["outcome_controls"]])
     R["sources"] = claims.table(
         "sources", ("path", "sha256-12"),
         [(k, v) for k, v in sorted(SOURCES.items())])
     return R
+
+
+def spelled_name(P, name):
+    """a count, spelled, entered in the registry under its own name so that a
+    prose sentence carrying it in words is INTERPOLATED and never typed."""
+    cr = CTX["cr"]
+    key = name + "_spelled"
+    cr.measured(key, SPELLED[P[name]], "spelled from a count this run made")
+    return key
+
+
+def spelled_claims(P):
+    """The prose sentences whose load-bearing count is written IN WORDS.
+    Every one is rendered from the payload and registered as a claim, so an
+    inversion of the words dies at G-CLAIMS-EQUAL rather than sitting outside
+    every numeral gate (K3 MAJOR-6, the Q58 headline inversion)."""
+    cr = CTX["cr"]
+
+    def made(template, *names):
+        keys = [spelled_name(P, n) for n in names]
+        return cr.stmt(template, **{k: None for k in keys})
+    return (
+        made("Run through {q58_arms_total_spelled} mechanisms, the cast comes "
+             "back at {q58_arms_recovering_spelled} and does not at "
+             "{q58_arms_refusing_spelled}: at "
+             "{q58_arms_certificate_rejected_spelled} the rule ran and its "
+             "own membership certificate rejected the cast it built, and at "
+             "{q58_arms_declined_spelled} -- both grains of the coupled "
+             "walk's own emission law -- the record carries no co-writing to "
+             "threshold, so the rule declines and returns none.",
+             "q58_arms_total", "q58_arms_recovering", "q58_arms_refusing",
+             "q58_arms_certificate_rejected", "q58_arms_declined"),
+        made("The {q58_arms_total_spelled} arms hand the reconstructor "
+             "{q58_distinct_inputs_spelled} distinct block sets between them, "
+             "of which {q58_distinct_recovering_inputs_spelled} recovers the "
+             "cast and {q58_distinct_refusing_inputs_spelled} refuse.",
+             "q58_arms_total", "q58_distinct_inputs",
+             "q58_distinct_recovering_inputs", "q58_distinct_refusing_inputs"),
+        made("{census_cited_spelled} rows are citations rather than "
+             "computations, and their objects belong to units this one does "
+             "not rebuild.",
+             "census_cited"),
+        made("{param_derived_spelled} rows are DERIVED and say so, each "
+             "carrying the measured predicate that selects it; "
+             "{param_invariant_spelled} are invariant in the substrate "
+             "census; {param_reconstructed_spelled} is reconstructed "
+             "conditionally; {param_initial_spelled} are initial conditions; "
+             "and the rest are free.",
+             "param_derived", "param_invariant", "param_reconstructed",
+             "param_initial"),
+        made("The census names {census_row_count_spelled} rows and "
+             "{census_distinct_extents_spelled} distinct extents, because the "
+             "weld's dictionary identifies the sites with the actors and the "
+             "carrier typing identifies the co-division pairs and the carrier "
+             "candidate with the cells.",
+             "census_row_count", "census_distinct_extents"),
+    )
+
+
+def claim_texts(P):
+    """the rendered claim set: the fixed sentences, and the ones whose count
+    is computed."""
+    return tuple(CLAIM_TEXTS) + tuple(spelled_claims(P))
 
 
 CLAIM_TEXTS = (
@@ -2582,9 +3870,14 @@ CLAIM_TEXTS = (
     "a fixed point of the actor-record-emission dynamics.",
     "What the record does not fix is the direction declaration, and the "
     "residue is an index the record offers and does not choose.",
-    "The reconstruction is not generator-independent: it holds across every "
-    "mechanism that writes triangles and refuses on every mechanism that does "
-    "not.",
+    "The reconstruction is not generator-independent. Of the mechanisms the "
+    "corpus supplies, those whose blocks are triangles covering every token "
+    "recover the cast and the others do not, so triangularity with total "
+    "cover decides every arm. It is not a sufficient condition beyond them: "
+    "the domain probe exhibits triangle-writing block sets at total cover on "
+    "which the rule does not return the declared cast, and one non-triangular "
+    "block set on which it does, so the criterion is stated as what separates "
+    "these arms and not as a property of mechanisms.",
     "So the answer to the emergence question is identifiability within a "
     "generative class.",
     "Recovering a datum from records that were generated with it is "
@@ -2616,6 +3909,7 @@ def full_run(mode="--run", mutant=None, write=False):
     CTX.clear()
     reads = ET.ReadSet(REPO)
     reads.install()
+    _fam("T-READ-SET")
     reads.active = True
     cr = ET.CountRegistry()
     for tok, why in EXEMPT_TOKENS:
@@ -2636,34 +3930,66 @@ def full_run(mode="--run", mutant=None, write=False):
             paper = read_text(PAPER_REL)
         ET.require_object(mode, pth, paper)
 
+    anchors = ET.AnchorSet([ET.Anchor(n, needle, s, c, floor=40)
+                            for (n, s, c, needle, _b) in ANCHORS])
+    sources_text = {s: read_text(s) for s in {a[1] for a in ANCHORS}}
+    anchors.locate(sources_text, paper if paper else None)
+
     P = measure()
+    census_payload(P, anchors)
+    if mode == "--render":
+        for _n, _s, _c, _needle, _b in ANCHORS:
+            anchors.read(_n, _c)
+    P["anchor_count"] = len(ANCHORS)
+    P["anchor_consumers"] = len({a[2] for a in ANCHORS})
     P["source_count"] = len(SOURCES)
     P["source_mismatches"] = mismatch
     P["source_mismatch_count"] = len(mismatch)
     P["float_offences"] = audit_no_floats(src)
     P["float_offence_count"] = len(P["float_offences"])
-    P["region_offences"] = audit_regions(src)
+    P["region_reach_offences"] = audit_regions(src)
+    P["region_alias_offences"] = audit_alias_routes(src)
+    P["region_constant_offences"] = audit_declared_constants(src)
+    P["region_reach_offence_count"] = len(P["region_reach_offences"])
+    P["region_alias_offence_count"] = len(P["region_alias_offences"])
+    P["region_constant_offence_count"] = len(P["region_constant_offences"])
+    P["region_offences"] = (P["region_reach_offences"]
+                            + P["region_alias_offences"]
+                            + P["region_constant_offences"])
     P["region_offence_count"] = len(P["region_offences"])
+    P["region_legs"] = 3
     P["region_census"] = sorted(region_census(src).items())
     P["region_count"] = len(P["region_census"])
-    live = [cid for (_l, _n, cid) in ET.FAMILIES if cid in TEMPLATE_CALLS
-            and re.search(TEMPLATE_CALLS[cid], src)]
+    P["region_declared_constants"] = len(DECLARED_CONSTANTS)
     P["template_families"] = len(ET.FAMILIES)
-    P["template_families_live"] = len(live)
-    P["outcome_controls"] = [[w, g] for w, g in outcome_controls()]
+    P["template_families_live"] = 0
+    P["template_families_expected"] = 0
+    P["template_family_counts"] = []
+    P["template_families_unexercised"] = []
+    P["template_families_declared_out_of_mode"] = []
+    P["outcome_controls"] = [list(r) for r in outcome_controls(P)]
     P["outcome_words"] = len(P["outcome_controls"])
-    P["outcome_reachable"] = sum(1 for w, g in P["outcome_controls"] if w == g)
+    P["outcome_reachable"] = sum(
+        1 for w, g, _wit, _f in P["outcome_controls"] if w == g)
+    P["outcome_feasibility_distinct"] = len(
+        {f for _w, _g, _wit, f in P["outcome_controls"]})
+    P["outcome_measured_witnesses"] = sum(
+        1 for _w, _g, wit, _f in P["outcome_controls"] if wit == "MEASURED-HERE")
 
     segs, words = head_segments(P)
     P["head_segments"] = segs
     P["head_words"] = list(words)
     P["head_segment_count"] = len(segs)
-    P["head_fields_parsed"] = sum(len(f) for f in HEAD_FIELDS)
+    P["head_fields_parsed"] = 0
+    P["head_positions_emitted"] = 0
     P["head_mismatches"] = 0
 
     claims = ET.Claims()
     render = build_render(P, claims)
-    for t in CLAIM_TEXTS:
+    texts = claim_texts(P)
+    P["claim_texts_fixed"] = len(CLAIM_TEXTS)
+    P["claim_texts_rendered"] = len(texts) - len(CLAIM_TEXTS)
+    for t in texts:
         claims.claim(t)
     for s in segs:
         claims.fence(s)
@@ -2676,42 +4002,54 @@ def full_run(mode="--run", mutant=None, write=False):
     _universes(ref, P)
     P["referent_universes"] = len(ref.universes)
     P["referent_occurrences"] = 0
+    P["referent_spelled_numerals"] = 0
+    P["referent_spelled_occurrences"] = 0
+    P["referent_ambiguous_occurrences"] = 0
+    P["referent_ambiguity_offences"] = []
 
-    anchors = ET.AnchorSet([ET.Anchor(n, needle, s, c, floor=40)
-                            for (n, s, c, needle) in ANCHORS])
-    sources_text = {s: read_text(s) for s in {a[1] for a in ANCHORS}}
-    anchors.locate(sources_text, paper if paper else None)
-    if mode == "--render":
-        for _n, _s, _c, _needle in ANCHORS:
-            anchors.read(_n, _c)
-    P["anchor_count"] = len(ANCHORS)
-    P["anchor_consumers"] = len({a[2] for a in ANCHORS})
-
-    walls = [ET.SemanticWall(n, neg, pos, pol, lic)
-             for (n, neg, pos, pol, lic) in WALLS]
+    walls = wall_objects(texts)
     P["wall_count"] = len(walls)
     P["wall_patterns"] = sum(len(w.negative) for w in walls)
     P["wall_positives"] = sum(len(w.positive) for w in walls)
+    P["wall_policed"] = sum(len(w.policed) for w in walls)
+    P["wall_licence_pools"] = sum(1 for w in walls if w.licences)
+    P["wall_standing"] = sum(1 for w in walls if w.name in STANDING_WALLS)
+    P["wall_probes"] = len(WALL_PROBES)
+    P["wall_probes_surviving"] = 0
+    P["wall_probe_rows"] = []
+    P["wall_probe_legs"] = []
+    P["wall_probes_copying_a_pattern_literal"] = 0
+    P["wall_engraved_indices"] = []
+    P["wall_engraved_count"] = 0
+    P["wall_control_copies_a_pattern_literal"] = sum(
+        1 for w in walls for pat in w.negative
+        for lit in _pattern_literals(pat)
+        if lit in MUT_WALL_SENTENCE.casefold())
 
     P["typed_callers"] = len(TYPED_CALLERS)
+    _fam("T-NO-TYPED-COUNTS")
     P["typed_count_offences"] = (cr.audit_module(src, TYPED_CALLERS)
                                  + audit_typed_deep(src, TYPED_CALLERS,
-                                                    tuple(cr.exempt)))
+                                                    tuple(cr.exempt))
+                                 + audit_typed_constants(src, TYPED_CALLERS))
     P["typed_count_offence_count"] = len(P["typed_count_offences"])
     P["exempt_tokens"] = len(EXEMPT_TOKENS)
     P["exempt_tokens_unused"] = sum(1 for t, _w in EXEMPT_TOKENS if t not in src)
     P["receipt_type_offences"] = []
     P["receipt_type_offence_count"] = 0
     P["receipt_leaves"] = 0
+    P["transcript_preamble"] = 2
     P["transcript_rows"] = 0
     P["ledger_rows"] = 0
     P["transcript_stray"] = 0
     P["transcript_missing"] = 0
+    P["transcript_digest"] = ""
     P["reads_declared"] = len(SOURCES) + 1
     P["reads_unpinnable"] = 1
     P["reads_stray"] = 0
     P["reads_never"] = 0
     P["reads_distinct"] = 0
+    P["reads_after_the_gate"] = 0
     P["anchor_unconsumed"] = 0
     P["paper_digest"] = ET.bytes_digest(paper.encode("utf-8"))
     P["mode"] = mode
@@ -2720,13 +4058,33 @@ def full_run(mode="--run", mutant=None, write=False):
     led = ET.Ledger()
     tr = ET.Transcript()
     seal = ET.Seal()
-    CTX.update({"paper": paper, "claims": claims, "claim_texts": list(CLAIM_TEXTS),
+    CTX.update({"paper": paper, "claims": claims, "claim_texts": list(texts),
                 "ref": ref, "anchors": anchors, "walls": walls, "ledger": led,
+                "transcript": tr, "seal": seal,
                 "src": src, "template": tpl_text, "render": render,
                 "c1_first": [h for t, h in b_build_corpus()[0] if t == "C1"][0]})
 
-    if mutant:
+    # T-FALSIFIER-POISONS, EXERCISED ON THE DELIVERY PATH (K3 MAJOR-3): the
+    # harness is handed a copy of this run's own payload and a real recipe, and
+    # it -- not this module -- checks that the recipe moved its declared target
+    # and died at its declared gate.
+    P["delivery_falsifier"] = delivery_falsifier_probe(P)
+    P["delivery_falsifier_moved"] = bool(P["delivery_falsifier"]["target_moved"])
+    P["delivery_falsifier_gate"] = P["delivery_falsifier"]["died_at"]
+
+    # a mutant that names a CLOSING gate is applied at that gate and not here:
+    # the key it moves is not measured until the ordinary loop has closed.
+    if mutant and MUTANTS[mutant]["gate"] not in CLOSING_GATES:
         MUTANTS[mutant]["apply"](P)
+
+    # an opaque leaf must die AT ITS OWN GATE'S NAME and as a CheckFail, not as
+    # a raw TypeError out of the serializer the first seal happens to call
+    # (K3 MAJOR-8's INJ-17).  The walk runs once here, once at the gate, and
+    # once more at the door.
+    _early = []
+    receipt_type_walk(P, _early)
+    if _early:
+        raise ET.CheckFail("G-RECEIPT-TYPES", "opaque leaves: %s" % _early[:4])
 
     tr.say("CONTRACT -- THE THEORY CONTRACT -- the unit the pin names")
     tr.say("mode %s   mutant %s" % (mode, mutant or "none"))
@@ -2738,23 +4096,34 @@ def full_run(mode="--run", mutant=None, write=False):
     # path and says so.
     paperless = ("G-ANCHORS-CONSUMED", "G-CLAIMS-EQUAL", "G-REFERENTS-BOUND",
                  "G-WALLS")
+    closing = CLOSING_GATES
     for gid in GATE_ORDER:
-        if gid in ("G-TRANSCRIPT-BOUND", "G-READS-DECLARED"):
+        if gid in closing:
             continue
         if mode == "--render" and gid in paperless:
             continue
+        if gid in PRE_GATE:
+            PRE_GATE[gid](P)
         ok, ev = GATE_FN[gid](P)
         for k in sorted(P):
             if gate_of_key(k) == gid and k not in seal.seals \
                     and k not in UNSEALED_KEYS:
+                _fam("T-SEAL-PROMOTION")
                 seal.seal(k, P[k], gid)
         led.gate(gid, GATE_STATEMENT[gid], ok, ev)
         tr.row(gid, ok, ev)
         fired.append(gid)
 
     # -- the closing gates -------------------------------------------------
-    P["transcript_rows"] = len(tr.parse()) + 2
-    P["ledger_rows"] = len(led.rows) + 2
+    # the reconciliation is MEASURED here, before the gate that publishes it
+    _fam("T-TRANSCRIPT-BOUND")
+    _want = collections.Counter((r["gate"], r["passed"], r["evidence"])
+                                for r in led.rows)
+    _got = tr.parse()
+    P["transcript_stray"] = sum((_got - _want).values())
+    P["transcript_missing"] = sum((_want - _got).values())
+    P["transcript_rows"] = sum(_got.values()) + P["transcript_preamble"]
+    P["ledger_rows"] = len(led.rows) + P["transcript_preamble"]
     if mutant and MUTANTS[mutant]["gate"] == "G-TRANSCRIPT-BOUND":
         MUTANTS[mutant]["apply"](P)
     ok, ev = GATE_FN["G-TRANSCRIPT-BOUND"](P)
@@ -2784,9 +4153,51 @@ def full_run(mode="--run", mutant=None, write=False):
             seal.seal(k, P[k], "G-READS-DECLARED")
     led.gate("G-READS-DECLARED", GATE_STATEMENT["G-READS-DECLARED"], ok, ev)
     tr.row("G-READS-DECLARED", ok, ev)
+    # the execution census is taken LAST, when every family that runs in this
+    # mode has run (K3 MAJOR-3).
+    _counts = dict(CTX.get("fam", {}))
+    P["template_family_counts"] = sorted(
+        [cid, _counts.get(cid, 0)] for (_l, _n, cid) in ET.FAMILIES)
+    P["template_families_declared_out_of_mode"] = sorted(
+        PAPERLESS_FAMILIES) if mode == "--render" else []
+    if mutant and MUTANTS[mutant]["gate"] == "G-TEMPLATE-EXERCISED":
+        MUTANTS[mutant]["apply"](P)
+    ok, ev = GATE_FN["G-TEMPLATE-EXERCISED"](P)
+    for k in sorted(P):
+        if gate_of_key(k) == "G-TEMPLATE-EXERCISED" and k not in seal.seals:
+            seal.seal(k, P[k], "G-TEMPLATE-EXERCISED")
+    led.gate("G-TEMPLATE-EXERCISED", GATE_STATEMENT["G-TEMPLATE-EXERCISED"],
+             ok, ev)
+    tr.row("G-TEMPLATE-EXERCISED", ok, ev)
 
     P["gates"] = len(led.rows)
     P["ledger_head"] = led.recompute_chain()
+
+    tr.say("")
+    tr.say("VERDICT")
+    for s in segs:
+        tr.say("  " + s)
+    text = tr.text()
+    # THE SECOND ARTIFACT IS SEALED (K3 MAJOR-2).  The bind result is not
+    # discarded: it becomes a payload leaf, it is sealed, and after promotion
+    # the promoted bytes are re-read FROM DISK and compared against it, so a
+    # transcript mutated between bind and promote cannot reach the tree.
+    bound = tr.bind(led, text)
+    P["transcript_digest"] = bound
+    seal.seal("transcript_digest", bound, "G-TRANSCRIPT-BOUND")
+    # the read set is re-evaluated at the DOOR, not only at its gate, so a read
+    # taken after G-READS-DECLARED fired is still caught (K3 MINOR-3).
+    _seen_late = collections.Counter(p for p in reads.log
+                                     if not p.endswith(".tmp"))
+    P["reads_after_the_gate"] = len(set(_seen_late) - set(declared))
+    if P["reads_after_the_gate"] and mode != "--render":
+        raise ET.CheckFail("T-READ-SET", "read after the read gate: %s"
+                           % sorted(set(_seen_late) - set(declared)))
+    bad = []
+    receipt_type_walk(P, bad)          # the door's own re-walk; the gate-time
+    if bad:                            # count is the sealed one and stands
+        raise ET.CheckFail("G-RECEIPT-TYPES", "opaque leaves: %s" % bad[:4])
+
     for k, why in sorted(UNSEALED_KEYS.items()):
         if k not in seal.seals:
             seal.declare_unsealed(k, why)
@@ -2797,41 +4208,84 @@ def full_run(mode="--run", mutant=None, write=False):
                            "payload keys neither sealed at a gate nor "
                            "declared: %s" % uncovered)
 
-    tr.say("")
-    tr.say("VERDICT")
-    for s in segs:
-        tr.say("  " + s)
-    text = tr.text()
-    bound = tr.bind(led, text)
-    bad = []
-    receipt_type_walk(P, bad)
-    if bad:
-        raise ET.CheckFail("G-RECEIPT-TYPES", "opaque leaves: %s" % bad[:4])
-
     if write:
+        _fam("T-SEAL-PROMOTION")
         digests = ET.promote(seal, led, P, text,
                              os.path.join(REPO, RECEIPT_REL),
                              os.path.join(REPO, OUTPUT_REL))
+        with open(os.path.join(REPO, OUTPUT_REL), "rb") as fh:
+            on_disk = fh.read()
+        if ET.bytes_digest(on_disk) != bound or digests["side"] != bound:
+            raise ET.CheckFail("T-SEAL-PROMOTION",
+                               "the promoted transcript is not the bound "
+                               "transcript")
     else:
         digests = {"receipt": bound, "side": bound}
     return P, led, tr, text, digests
 
 
-TEMPLATE_CALLS = {
-    "T-SEAL-PROMOTION": r"ET\.promote|ET\.Seal",
-    "T-TRANSCRIPT-BOUND": r"tr\.bind|ET\.Transcript",
-    "T-WALL-SEMANTIC": r"w\.scan|ET\.SemanticWall",
-    "T-ANCHOR-CONSUMED": r"anchors\.verify_consumption|ET\.AnchorSet",
-    "T-CLAIMS-EQUAL": r"claims\.gate|ET\.Claims",
-    "T-REFERENT-BOUND": r"ref\.gate|ET\.ReferentRegistry",
-    "T-NO-TYPED-COUNTS": r"cr\.audit_module|ET\.CountRegistry",
-    "T-FALSIFIER-POISONS": r"ET\.FalsifierHarness",
-    "T-READ-SET": r"reads\.install|ET\.ReadSet",
-}
-
 EXEMPT_TOKENS = (("sha256-12", "the name of the digest format, not a count"),)
 
 TYPED_CALLERS = ("stmt", "fmt", "claim", "fence", "table", "gate", "row", "say")
+
+
+def _pre_receipt_types(P):
+    """the type walk runs BEFORE its gate, so neither the offence list nor the
+    leaf count is a constant the gate cannot move (K3 MAJOR-8).  A planted
+    offence is APPENDED to, never erased by, this walk."""
+    bad = list(P["receipt_type_offences"])
+    P["receipt_leaves"] = receipt_type_walk(P, bad)
+    P["receipt_type_offences"] = bad
+
+
+PRE_GATE = {"G-RECEIPT-TYPES": _pre_receipt_types}
+
+
+def delivery_falsifier_probe(P):
+    """T-FALSIFIER-POISONS on the DELIVERY path.  The template's own harness
+    is handed a copy of this run's payload and one real recipe; the harness
+    refuses a recipe that leaves its declared target byte-identical, and
+    refuses a death at any gate but the declared one."""
+    _fam("T-FALSIFIER-POISONS")
+    probe = ET.Falsifier(
+        "MUT-DELIVERY-PROBE", "G-NO-FLOAT",
+        "plants a float offence in a copy of this run's own payload",
+        "float_offences", _hook("MUT-FLOAT"))
+    H = ET.FalsifierHarness([probe])
+
+    def build():
+        return ({"float_offences": list(P["float_offences"]),
+                 "float_offence_count": P["float_offence_count"]},
+                ET.Ledger())
+    return H.run_one(probe, build)
+
+
+def audit_typed_constants(src, callers):
+    """the taint leg (K3 MINOR-2): an int-valued MODULE constant, or a str()
+    of one, reaching a statement builder is the same offence as a literal --
+    the scan that only looks inside the call's own subtree is defeated at one
+    remove."""
+    tree = ast.parse(src)
+    ints = set()
+    for node in tree.body:
+        if isinstance(node, ast.Assign) and isinstance(node.value, ast.Constant) \
+                and isinstance(node.value.value, int) \
+                and not isinstance(node.value.value, bool):
+            for t in node.targets:
+                if isinstance(t, ast.Name):
+                    ints.add(t.id)
+    out = []
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Call):
+            continue
+        fname = getattr(node.func, "attr", None) or getattr(node.func, "id", None)
+        if fname not in callers:
+            continue
+        for sub in ast.walk(node):
+            if isinstance(sub, ast.Name) and sub.id in ints:
+                out.append("line %d: the module constant %s reaches a builder"
+                           % (sub.lineno, sub.id))
+    return out
 
 
 def audit_typed_deep(src, callers, exempt):
@@ -2883,13 +4337,20 @@ def _universes(ref, P):
                  vals(["inv_", "quotient"]) | base,
                  {(P["inv_arena_automorphisms"],
                    P["inv_link_graph_automorphisms"]),
-                  (P["quotient_histories_link"], P["quotient_histories"]),
+                  (P["quotient_histories_link"],
+                   P["quotient_history_event_multisets"]),
+                  (P["quotient_histories_ordered_link"],
+                   P["quotient_histories"]),
                   (P["quotient_fields_link"], P["quotient_fields"])})
     ref.universe("THE-ARMS", ["arm", "mechanism", "reconstructor",
-                              "generating", "generator"],
+                              "generating", "generator", "probe", "triangle"],
                  vals(["q58"]) | base,
                  {(P["q58_arms_recovering"], P["q58_arms_total"]),
-                  (P["q58_arms_refusing"], P["q58_arms_total"])})
+                  (P["q58_arms_refusing"], P["q58_arms_total"]),
+                  (P["q58_distinct_recovering_inputs"], P["q58_distinct_inputs"]),
+                  (P["q58_distinct_refusing_inputs"], P["q58_distinct_inputs"]),
+                  (P["q58_domain_failures_at_total_cover"],
+                   P["q58_domain_triangular_failures"])})
     ref.universe("THE-PARAMETERS", ["parameter", "declaration", "fiber",
                                     "free item", "coin", "seam"],
                  vals(["param", "coin", "seam"]) | base,
@@ -2897,11 +4358,24 @@ def _universes(ref, P):
                   (P["coin_grover_classes"], P["coin_classes"])})
     ref.universe("THE-STATE", ["state", "amplitude", "residue", "successor",
                                "menu", "walk"],
-                 vals(["state", "record_residue", "record_count"]) | base, set())
-    ref.universe("THE-RECORD", ["record", "history", "corpus", "block",
-                                "count field", "cast", "cast solution", "cycle",
-                                "dependency"],
-                 vals(["record", "corpus", "class_cast", "dep", "recon"]) | base,
+                 vals(["state", "record_residue", "record_count"]) | base,
+                 {(P["state_equal_residue_agreements"],
+                   P["state_equal_residue_pairs"]),
+                  (P["state_distinct_residue_collisions"],
+                   P["state_distinct_residue_pairs"]),
+                  (P["state_single_cell_collisions"],
+                   P["state_single_cell_pairs"])})
+    # the counts the RECORD itself offers -- what it admits of the cast, and
+    # what survives the quotient of its own histories -- are record facts as
+    # well as invariance facts, and belong to both universes.
+    ref.universe("THE-RECORD", ["record", "history", "histories", "corpus",
+                                "block", "count field", "cast",
+                                "cast solution", "cycle", "dependency"],
+                 vals(["record", "corpus", "class_cast", "dep", "recon",
+                       "quotient"]) | base
+                 | {P["inv_link_graph_automorphisms"],
+                    P["inv_arena_automorphisms"],
+                    P["inv_direction_splittings"], P["inv_direction_index"]},
                  {(P["record_collision_classes"], P["record_colliding_histories"]),
                   (P["record_max_blocks_in_a_history"], P["record_blocks"])})
     ref.universe("THE-ARENA", ["arena", "cell", "site", "actor", "grouping",
@@ -2993,11 +4467,22 @@ _mk("MUT-SOURCE", "G-SOURCES-PINNED",
 _mk("MUT-FLOAT", "G-NO-FLOAT", "plants a float offence in the module audit",
     "float_offences", _plant("float_offences", ["planted line"]))
 _mk("MUT-REGION", "G-S1-DISJOINT-CODE",
-    "plants a comparator reaching a builder", "region_offences",
-    _plant("region_offences", ["k_planted reaches b_planted"]))
+    "plants a comparator reaching a builder", "region_reach_offences",
+    _plant("region_reach_offences", ["k_planted reaches b_planted"]))
+
+
+def _unexercise_a_family(P):
+    """the family (h) disease as a real instrument produces it: a template
+    family that no live call in this mode exercises."""
+    rows = [list(r) for r in P["template_family_counts"]]
+    rows[0][1] = 0
+    P["template_family_counts"] = rows
+    return P
+
+
 _mk("MUT-TEMPLATE", "G-TEMPLATE-EXERCISED",
-    "drops one template family from the live set", "template_families_live",
-    lambda P: P.update(template_families_live=P["template_families_live"] - 1) or P)
+    "zeroes one template family's live-call count", "template_family_counts",
+    _unexercise_a_family)
 _mk("MUT-ARENA", "G-ARENA-REBUILT", "moves the cell count off the product",
     "arena_cells", _bump("arena_cells"))
 _mk("MUT-CORPUS", "G-CORPUS-REBUILT", "moves the corpus slot count",
@@ -3079,9 +4564,9 @@ _mk("MUT-REFERENT", "G-REFERENTS-BOUND",
                    "The corpus has been asked, unit by unit, what its 999999 "
                    "objects can"))
 _mk("MUT-WALL", "G-WALLS",
-    "plants a generator-independence claim in the paper's own voice",
+    "plants an unlicensed policed sentence in the paper's own voice",
     "paper_digest",
-    _corrupt_paper("## 1.", "The actors emerge from the record.\n\n## 1."))
+    _corrupt_paper("## 1.", MUT_WALL_SENTENCE + "\n\n## 1."))
 _mk("MUT-TYPED", "G-NO-TYPED-COUNTS", "plants a typed numeral offence",
     "typed_count_offences", _plant("typed_count_offences", ["line 1: '27'"]))
 _mk("MUT-RECEIPT", "G-RECEIPT-TYPES", "plants an opaque receipt leaf",
@@ -3089,8 +4574,9 @@ _mk("MUT-RECEIPT", "G-RECEIPT-TYPES", "plants an opaque receipt leaf",
 _mk("MUT-HEAD", "G-HEAD-REBUILT",
     "moves one numeral of the head away from its receipt leaf", "head_segments",
     _corrupt_head)
-_mk("MUT-TRANSCRIPT", "G-TRANSCRIPT-BOUND", "inserts a transcript row",
-    "transcript_rows", _bump("transcript_rows"))
+_mk("MUT-TRANSCRIPT", "G-TRANSCRIPT-BOUND",
+    "reports a transcript row the ledger does not carry", "transcript_stray",
+    _bump("transcript_stray"))
 _mk("MUT-READS", "G-READS-DECLARED", "plants a stray read", "reads_stray",
     _bump("reads_stray"))
 
@@ -3124,9 +4610,9 @@ def _fresh():
     CTX.clear()
     CTX.update(_BASE["ctx"])
     fresh_anchors = ET.AnchorSet([ET.Anchor(n, needle, src, cons, floor=40)
-                                  for (n, src, cons, needle) in ANCHORS])
+                                  for (n, src, cons, needle, _b) in ANCHORS])
     fresh_anchors.locate(_BASE["sources_text"], _BASE["paper"] or None)
-    for _n, _s, _c, _needle in ANCHORS:
+    for _n, _s, _c, _needle, _b in ANCHORS:
         fresh_anchors.read(_n, _c)
     CTX["anchors"] = fresh_anchors
     CTX["cr"] = ET.CountRegistry()
@@ -3176,6 +4662,13 @@ def run_falsifiers():
     cov = H.coverage(led, COVERAGE_WAIVER,
                      {"T-FALSIFIER-COVERAGE": forced})
     cov["waiver_forced"] = forced
+    # K3 MINOR-7: the honest denominator.  The nine template checks are
+    # load-bearing kill paths outside this unit's ledger; they are falsified
+    # by the era's own reference demos, and the split is stated rather than
+    # folded into one number.
+    cov["ledger_gates"] = len(GATE_ORDER)
+    cov["template_checks_outside_the_ledger"] = len(ET.FAMILIES)
+    cov["honest_denominator"] = (cov["gates"] + len(ET.FAMILIES))
     return rows, offenders, cov
 
 
@@ -3187,11 +4680,22 @@ USAGE = ("usage: contract_exact.py "
          "[--run|--no-write|--selftest|--list-gates|--list-mutants|"
          "--mutant NAME|--render]")
 
+# #82, STRICT AT EVERY POSITION (K3 MAJOR-9): every flag's operand arity is
+# declared, and an argv longer than its flag allows exits 2 -- so
+# `--run --mutant NAME` can no longer write a clean delivery.
+FLAG_ARITY = {"--run": 0, "--no-write": 0, "--selftest": 0, "--list-gates": 0,
+              "--list-mutants": 0, "--render": 0, "--mutant": 1}
+
+RENDER_EXIT = 4
+
 
 def main(argv):
     if len(argv) == 1:
         argv = argv + ["--run"]
     flag = argv[1]
+    if flag not in FLAG_ARITY or len(argv) != 2 + FLAG_ARITY[flag]:
+        print(USAGE)
+        return 2
     if flag == "--list-gates":
         for g in GATE_ORDER:
             print(g)
@@ -3203,6 +4707,10 @@ def main(argv):
         return 0
     if flag == "--render":
         P, led, tr, text, _d = full_run(mode="--render")
+        banner = ("DIAGNOSTIC-ONLY: the four paper gates are skipped, nothing "
+                  "is written, and this mode exits non-zero by design")
+        print(banner)
+        sys.stderr.write(banner + "\n")
         for k, v in CTX["render"].items():
             print("<<<TABLE %s>>>" % k)
             print(v)
@@ -3214,9 +4722,9 @@ def main(argv):
             print("```")
             print()
         print("<<<CLAIMS>>>")
-        for c in CLAIM_TEXTS:
+        for c in CTX["claim_texts"]:
             print("- " + c)
-        return 0
+        return RENDER_EXIT
     if flag == "--selftest":
         rows, offenders, cov = run_falsifiers()
         for r in rows:
@@ -3230,7 +4738,7 @@ def main(argv):
               "dying at its named gate; nothing written" % len(rows))
         return 0
     if flag == "--mutant":
-        if len(argv) < 3 or argv[2] not in MUTANTS:
+        if argv[2] not in MUTANTS:
             print(USAGE)
             return 2
         name = argv[2]

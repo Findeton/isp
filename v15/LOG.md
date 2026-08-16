@@ -935,3 +935,33 @@ reviewer's assessment recorded as the era's honest
 midpoint: "a family of carefully characterized models
 plus an unclosed interface — not yet one physical
 ontology or unified dynamics."
+
+## 2026-08-16 — CONTRACT REPAIR DELIVERED AND COMMITTED: EVERY Z VERIFIED; THE #33 ADDENDUM FOLDED; ONE SURVIVOR RULED DISCLOSED (v15 LEDGER #34)
+
+**Files:** paper-43-contract.md 0c8d1a687b14;
+contract_exact.py 039af6795980; contract_output.txt
+a618fe0d0c68; contract_receipt.json 8ffff45b88aa.  All
+seven Z verified (the licence-leg walls 18-controls-0-
+surviving; Q58 five-inputs with the 12-row domain probe;
+the quotient split; the Born menu CALLED (4 values); the
+amplitude-scoped minimality; the head total BY
+CONSTRUCTION at 59 positions; live-call template census;
+structural S-1; the CLI strict at every position; both
+FOUNDs gated as SET equalities).  Two gaps filled: a
+closing-gate mutant crash (byte-inert fix, verified); the
+branch-weight classification made single (STATE-COMPONENTS
+= 2 + ENSEMBLE-SIDE-BOOKKEEPING = 1, gated disjoint; the
+PLAN re-pinned to the #33 digest).  **Battery: byte ×2
+alien-CWDs off-tree git-less; selftest 34/34 with
+tree-hash ≡ pristine; sweep 34/34; 29 of 30 panel
+injections dead.  THE ONE SURVIVOR RULED (adjudicator):
+INJ-16's fresh single-universe non-claim sentence pairing
+two legitimate arm members survives a membership registry
+by construction — the faithful form dies at
+G-CLAIMS-EQUAL; the limitation is DISCLOSED HERE at the
+seal, and the role-aware referent leg goes to TPL-2.**
+11 receipt keys moved, none physics (instrument censuses
++ the ordered TICK/CHART rows: 23 declarations / 15 free
+— the family verdict's numbers updated BY ORDER; state
+3→2 per #33).  **Orchestrator battery next; the first
+v15 terminal on green.**

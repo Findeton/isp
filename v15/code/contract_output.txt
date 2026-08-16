@@ -3,41 +3,41 @@ mode --run   mutant none
 
   [PASS] G-SOURCES-PINNED :: sources 16 mismatches 0
   [PASS] G-NO-FLOAT :: float literals 0 in the module
-  [PASS] G-S1-DISJOINT-CODE :: regions 5 offences 0
-  [PASS] G-TEMPLATE-EXERCISED :: template families 9 exercised 9
-  [PASS] G-ARENA-REBUILT :: sites 9 cells 27 classes 4 groupings 280 saturating 36 degree 6
+  [PASS] G-S1-DISJOINT-CODE :: regions 5 legs 3 reach 0 alias 0 declared-constant 0 offences 0
+  [PASS] G-ARENA-REBUILT :: sites 9 cells 27 classes 4 groupings 280 saturating 36 all-triangle 36 degree 6
   [PASS] G-CORPUS-REBUILT :: slots 5856 strict 72 concatenations 5184 window 600 distinct 5784 events 30
   [PASS] G-RECORD-REBUILT :: blocks 27 unwritten 768 partly 175 silent 1 bare 5643 collisions 39 colliding 180 fields 36 most blocks one history sees 18
-  [PASS] G-OBJECT-CENSUS :: rows 23 computed 20 cited 3 backed 23
-  [PASS] G-STATE-COMPONENTS :: state components 3 background 6
-  [PASS] G-STATE-SCREENS-THE-HISTORY :: equal-residue pairs 24 agreeing 24 distinct-residue pairs 606 colliding 0 successors 24
-  [PASS] G-STATE-READING-RELATIVE :: reading A menus 24 reading B menus 36 residue fields 24 count fields 36
-  [PASS] G-INVARIANCE-GROUPS :: symmetric group 362880 law stabilizer 1296 link automorphisms 1296 arena automorphisms 108 index 12 splittings 12
+  [PASS] G-OBJECT-CENSUS :: rows 23 computed 20 cited 3 backed 23 primitive 0 distinct extents 20 identifications 3
+  [PASS] G-STATE-COMPONENTS :: state components 2 ensemble-side 1 background 6
+  [PASS] G-STATE-SCREENS-THE-HISTORY :: equal-residue pairs 24 agreeing 24 distinct-residue pairs 606 colliding 0 successors 24 amplitudes 5 sufficient at 5 minimal at 2 single-cell collisions 205
+  [PASS] G-STATE-READING-RELATIVE :: Born-menu values 4 post-coin vectors 24 record-menu values 36 residue fields 24 count fields 36
+  [PASS] G-INVARIANCE-GROUPS :: symmetric group 362880 law stabilizer 1296 link automorphisms 1296 arena automorphisms 108 index 12 splittings 12 orbit 12 splitting stabilizer 108 parts 3 closed form 1296
   [PASS] G-DIRECTION-INVARIANCE :: declarations 4 agreeing 4 census numbers 7
   [PASS] G-LOCAL-ARITY-GROUP :: local group 6 global 1 collapse width 4 histories 72
-  [PASS] G-QUOTIENT-CENSUS :: histories 5784 arena 25 link 17 fields 36 arena 12 link 12
+  [PASS] G-QUOTIENT-CENSUS :: histories 5784 event multisets 136 arena 25 link 17 order kept arena 3830 order kept link 1067 fields 36 arena 12 link 12
   [PASS] G-DEPENDENCY-CYCLE :: nodes 10 edges 12 cycles 3 through the cast and the record 2 shortest 4
-  [PASS] G-CAST-UNIQUE-IN-THE-CLASS :: cast solutions 1 certificate CERTIFIED derived cast 9 threshold 3
+  [PASS] G-CAST-UNIQUE-IN-THE-CLASS :: cast solutions 1 certificate CERTIFIED reconstructed cast 9 threshold 3 block components 1
   [PASS] G-CAST-RESIDUE :: residue 12 index 12 candidate classes 36
-  [PASS] G-Q58-ARMS :: arms 9 recovering 5 refusing 4 triangular 5
-  [PASS] G-Q58-VERDICT :: recovering 5 refusing 4 triangularity decides True block size decides False
+  [PASS] G-Q58-ARMS :: arms 9 distinct inputs 5 recovering 5 from 1 refusing 4 from 4 triangular 5
+  [PASS] G-Q58-VERDICT :: recovering 5 refusing 4 triangularity decides the arms True block size decides False domain probes 12 triangle-writing failures 10 of them at total cover 4 non-triangular recoveries 1
   [PASS] G-COIN-FIBER :: ring solutions 36 classes 6 phase units 6 Grover classes 1
   [PASS] G-MENU-LAW-SELECTED :: subgroups 6 menu 6
   [PASS] G-SEAM-KERNEL :: rows 6 columns 10 rank 6 kernel 4
-  [PASS] G-PARAMETERS :: declarations 21 free 13 invariant 2 derived 3 reconstructed-conditionally 1 initial 2 free rows a law selects 0
-  [PASS] G-OUTCOMES-REACHABLE :: outcome words 11 reachable 11
-  [PASS] G-CLAIMS-EQUAL :: rows 135 prose 15 fences 4
-  [PASS] G-REFERENTS-BOUND :: universes 6 occurrences checked 21
-  [PASS] G-WALLS :: walls 7 patterns 53 standing sentences 11
-  [PASS] G-ANCHORS-CONSUMED :: anchors 13 consumers 10 unconsumed 0 phantom 0
+  [PASS] G-PARAMETERS :: declarations 23 free 15 invariant 2 derived 3 reconstructed-conditionally 1 initial 2 free rows a law selects 0 selection laws declared 3 satisfied 3 class predicates 3
+  [PASS] G-OUTCOMES-REACHABLE :: outcome words 11 reachable 11 feasibility sentences 11 witnesses measured here 11
+  [PASS] G-CLAIMS-EQUAL :: rows 159 prose 20 fences 4
+  [PASS] G-REFERENTS-BOUND :: universes 6 occurrences checked 212 spelled numerals in the prose 171 of them newly bound 152 cross-universe occurrences 61
+  [PASS] G-WALLS :: walls 7 patterns 64 standing sentences 11 policed 48 controls 18 surviving 0
+  [PASS] G-ANCHORS-CONSUMED :: anchors 13 consumers 10 unconsumed 0 phantom 0 numeral-bound 12 word-bound 1
   [PASS] G-NO-TYPED-COUNTS :: statement builders audited 8 offences 0 exemptions 1 unused 0
-  [PASS] G-RECEIPT-TYPES :: receipt leaves 0 type offences 0
-  [PASS] G-HEAD-REBUILT :: segments 4 fields parsed 39 mismatches 0
-  [PASS] G-TRANSCRIPT-BOUND :: transcript rows 34 ledger rows 34 stray 0 missing 0
+  [PASS] G-RECEIPT-TYPES :: receipt leaves 977 type offences 0
+  [PASS] G-HEAD-REBUILT :: segments 4 numeral positions emitted 59 parsed back 59 mismatches 0
+  [PASS] G-TRANSCRIPT-BOUND :: transcript rows 33 ledger rows 33 stray 0 missing 0
   [PASS] G-READS-DECLARED :: declared 18 pinned 16 unpinnable 2 stray 0 never read 0 distinct 18
+  [PASS] G-TEMPLATE-EXERCISED :: template families 9 expected in this mode 9 exercised by a live call 9
 
 VERDICT
-  CONTRACT-CENSUS-TOTAL<OBJECTS=23; COMPUTED-HERE=20; CITED=3; ACTORS=9; CELLS=27; EVENTS-REALISED=30; HISTORIES=5784; BLOCKS=27; COUNT-FIELDS=36; MENU=6; CHART-CLASSES=1296>
-  CONTRACT-STATE-AT-FIXED-BACKGROUND-AND-INVARIANCE<STATE-COMPONENTS=3; BACKGROUND=6; COUNT-FIELDS=36; RESIDUE-FIELDS=24; SUCCESSORS=24; EQUAL-RESIDUE-PAIRS-AGREEING=24-OF-24; DISTINCT-RESIDUE-COLLISIONS=0-OF-606; RELABELLINGS=362880; LAW-STABILIZER=1296; ARENA-STABILIZER=108; DIRECTION-INDEX=12; SPLITTINGS=12; LOCAL-GROUP=6; LOCAL-COLLAPSE-WIDTH=4; HISTORIES-SURVIVING=17-OF-5784; FIELDS-SURVIVING=12-OF-36; GAUGE-WORD=WITHHELD>
-  CONTRACT-CIRCULAR-CAST-UNIQUE-IN-THE-TRIANGULAR-CLASS-UP-TO-THE-DIRECTION-DECLARATION<CYCLE-LENGTH=3; CAST-SOLUTIONS=1; RESIDUE=12; ARMS=9; RECOVERING=5; REFUSING=4>
-  CONTRACT-Q58-IDENTIFIABILITY-WITHIN-A-GENERATIVE-CLASS-ISP-IS-A-FAMILY<DECLARATIONS=21; FREE=13; INVARIANT-IN-THE-SUBSTRATE-CENSUS=2; DERIVED=3; RECONSTRUCTED-CONDITIONALLY=1; INITIAL=2; FREE-ROWS-A-LAW-SELECTS=0; COIN-CLASSES=6; SEAM-KERNEL=4; DIRECTION-CHOICES=4; UNRESOLVED=THE-GAUGE-QUOTIENT+THE-UNIVERSAL-STATE+THE-EXCITATION-CONTENT>
+  CONTRACT-CENSUS-TOTAL<OBJECTS=23; DISTINCT-EXTENTS=20; COMPUTED-HERE=20; CITED=3; ACTORS=9; CELLS=27; EVENTS-REALISED=30; HISTORIES=5784; BLOCKS=27; COUNT-FIELDS=36; MENU=6; CHART-CLASSES=1296>
+  CONTRACT-STATE-AT-FIXED-BACKGROUND-AND-INVARIANCE<STATE-COMPONENTS=2; ENSEMBLE-SIDE-BOOKKEEPING=1; BACKGROUND=6; COUNT-FIELDS=36; RESIDUE-FIELDS=24; SUCCESSORS=24; EQUAL-RESIDUE-PAIRS-AGREEING=24-OF-24; DISTINCT-RESIDUE-COLLISIONS-AT-THE-UNIFORM-AMPLITUDE=0-OF-606; DISTINCT-RESIDUE-COLLISIONS-AT-A-SINGLE-CELL-AMPLITUDE=205-OF-606; BORN-MENU-VALUES=4; RELABELLINGS=362880; LAW-STABILIZER=1296; ARENA-STABILIZER=108; DIRECTION-INDEX=12; SPLITTINGS=12; LOCAL-GROUP=6; LOCAL-COLLAPSE-WIDTH=4; HISTORY-EVENT-MULTISETS=136; HISTORIES-SURVIVING=17-OF-136; HISTORIES-ORDER-KEPT-SURVIVING=1067-OF-5784; FIELDS-SURVIVING=12-OF-36; GAUGE-WORD=WITHHELD>
+  CONTRACT-CIRCULAR-CAST-UNIQUE-IN-THE-TRIANGULAR-CLASS-UP-TO-THE-DIRECTION-DECLARATION<CYCLE-LENGTH=3; ACTOR-RECORD-CYCLE-LENGTH=4; CAST-SOLUTIONS=1; RESIDUE=12; ARMS=9; DISTINCT-INPUTS=5; RECOVERING=5; RECOVERING-INPUTS=1; REFUSING=4; REFUSING-INPUTS=4>
+  CONTRACT-Q58-IDENTIFIABILITY-WITHIN-A-GENERATIVE-CLASS-ISP-IS-A-FAMILY<DECLARATIONS=23; FREE=15; INVARIANT-IN-THE-SUBSTRATE-CENSUS=2; DERIVED=3; RECONSTRUCTED-CONDITIONALLY=1; INITIAL=2; FREE-ROWS-A-LAW-SELECTS=0; COIN-CLASSES=6; SEAM-KERNEL=4; DIRECTION-CHOICES=4; UNRESOLVED=THE-GAUGE-QUOTIENT+THE-UNIVERSAL-STATE+THE-EXCITATION-CONTENT>
