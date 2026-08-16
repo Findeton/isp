@@ -12,3 +12,51 @@ Registry discipline in force: pins cite question numbers;
 terminals update v15/QUESTIONS.md in their seal commits.
 The v14 ledger closes at #386 with HOR/REC repairs
 finishing under it (terminals 37/38 to be sealed there).
+
+## 2026-08-16 — USER REVIEW OF IN-FLIGHT v15 (BINDING): TWO STANDING WALLS ENGRAVED; PAPER-43 SIX CATEGORY ERRORS ORDERED FIXED; PAPER-47 RENAMED RECORD-BACKREACTION-DETECTED-AT-TICK-3 AND RECLASSED MODEL-ABLATION BENCHMARK; DISC-2 REGISTERED (v15 LEDGER #2)
+
+The user read the worktree drafts directly.  Verdict: v15
+asks better questions than v14; the strongest results are
+its CONCESSIONS AND DEMOTIONS; positive headlines still
+outrun establishment.  **TWO STANDING WALLS, all v15
+units:** (W1) RECONSTRUCTION IS NEVER PROMOTED TO
+DERIVATION — recovering a datum from records generated
+WITH it is identifiability, not selection among possible
+worlds.  (W2) INVARIANCE IS NEVER PROMOTED TO GAUGE OR
+PHYSICAL MEANING before operational observables exist —
+gauge requires identical values for EVERY observable and
+experiment, not one invariant law.
+**PAPER-43 ORDERS:** n → RECONSTRUCTED-CONDITIONALLY (not
+DERIVED/law-selected); the fixed point scoped to the
+triangular representation class; the gauge census
+re-labeled an INVARIANCE census (stabilizer≠gauge;
+non-stabilizer≠physical without operational tests); the
+direction-declaration blindness scoped to the substrate
+census (not the coupled dynamics/readings/interactions);
+the instantaneous state scoped to the paper-20 machine at
+fixed background (the universal state waits on AUTOGLUE);
+EXCITATION row → CARRIER-CANDIDATE (the dependency gate
+violated otherwise); target head = the user's defensible
+sentence (family; identifiability in a measured
+triangle-writing class; gauge quotient/universal
+state/excitation content unresolved).
+**PAPER-47 ORDERS:** head → RECORD-BACKREACTION-DETECTED-
+AT-TICK-3; the unit reclassed a MODEL-ABLATION BENCHMARK
+(resolves the PLAN's gate tension); the DEMOTION CENSUS
+(7 of 10 celebrated results reproduced by the
+record-free null — perimeter law, closed form, gap,
+plaquette, quartic sign, coin restriction) promoted to
+the primary result; the null's weakness disclosed
+(memoryless; at finite horizon a record is absorbable
+into an enlarged state); **DISC-2 REGISTERED: the
+simplest MEMORY-BEARING null (finite-memory coin /
+state-dependent coin / updated phase field / enlarged
+register) is the next opponent**; ISP's extra structure
+priced even where parameter-free; the falsifier stated as
+computational-regression, not experimental; m=q kept as
+the internal check closing NDEP's registered test.
+**ARITY/AUTOGLUE:** the walls apply to their forming
+heads (AUTOGLUE's AUTONOMOUS-CROSSING-FOUND and
+FORM-IS-THE-DATUM strings must survive W1/W2 phrasing).
+PLAN.md amended.  Feedback routed to all four runners
+this entry.
