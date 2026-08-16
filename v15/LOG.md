@@ -707,3 +707,32 @@ snapshot pre-read), one symptom; the nested-state theory
 DISPROVEN; the committed blob contains both fixes.**
 2,939 receipt leaves: 0 moved.  The ARITY three-seat
 panel launches this entry.
+
+## 2026-08-16 — AUTOGLUE K2 (EFFECTUS) FROZEN: ACCEPT-WITH-MAJOR-REPAIRS; A SPELLED-FRACTION FALSEHOOD IN PROSE; THE Q50 MECHANISM IS THE PARENT'S; THE WALLS FAIL FRESH PARAPHRASES (v15 LEDGER #25)
+
+**Review:** v15/review-autoglue-effectus.md (e0e944b8e5e8,
+772 lines).  436 recomputations, zero delivered physics
+numbers wrong (the form census verbatim; the fibers; all 8
+functionals × 18 cuts).  NINE MAJORS: (M1) **a false
+number in prose** — §6's "Three of the eight functionals
+select uniquely somewhere" wrong under EVERY reading
+(2/4/5/1/0 by reading) — a SPELLED fraction bound by no
+gate; (M2) a false scope word in a head string (the
+468-of-468 "unshared" includes 156 SHARED seam readings —
+the mechanism survives, the word is wrong; judged short of
+a lever); (M3) one measurement counted twice ("refutes it
+twice over"); **(M4) the Q50 disjointness MECHANISM is
+SEC-2's own (§4.5 carries the two-colouring chain at the
+same 455) — AUTOGLUE's genuine additions are the
+two-sidedness (77 ∩ 162 = 0) and the form-refusal link —
+the attribution re-drawn**; (M5) the walls: the unit's
+30/30 confirmed but K2's SIX fresh paraphrases 0-of-36
+fired — and **W3 HAS NO WALL AT ALL** (engraved #17,
+absent from the paper); (M6) NO-RULE-EXISTS unreachable
+(#299 again; 3 of 4 head segments outcome-less); (M7) the
+16-cell window carries only 4 distinct results
+(undisclosed — exactly the W3-discharging measurement);
+(M8) the comparator re-types 8 head numbers from sealed
+scalars against its own docstring.  16 minors; strong
+credits (UNIQUE-AT-0 exact and exhaustive; the fiber
+referents clean everywhere).  K1 out; adjudication after.
