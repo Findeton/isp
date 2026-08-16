@@ -484,3 +484,48 @@ the state dependence and the full battery passes ×3
 consecutively.**  Two earlier vacuous battery attempts
 (wrong CWD; a hash-stripping sed) disclosed by the worker
 and not counted.  The continuation launches this entry.
+
+## 2026-08-16 — FOURTH EXTERNAL REVIEW ADOPTED IN SUBSTANCE: PAPER-46 SPLIT (EVENT-AND-CARRIER-CLOSURE THEN DYNAMICS-CLOSURE); THE BORN-MARGINAL FEASIBILITY QUESTION MADE THE CENTERPIECE; W3 (FAMILY-LEVEL PREDICTIONS) ENGRAVED (v15 LEDGER #17)
+
+**THE CORE FINDING ADOPTED — the two dynamics do not
+type-check as one system:** the coupling's "division
+event" increments ONE cell (paper-20; CONTRACT's own Q58
+row confirmed its records are single-cell-grain), while
+the grammar's event is a THREE-ACTOR set writing three
+cells, and AUTOGLUE creates DIRECTION-LESS cells the
+quantum carrier cannot host.  **PLAN RESTRUCTURED:
+paper-46 = EVENT-AND-CARRIER-CLOSURE (ECC)** — type the
+full state; reconcile cell-events with actor-events; **the
+centerpiece: the exact linear-feasibility question — does
+a probability distribution over lawful actor-events exist
+whose cell marginals reproduce the Born emission weights?
+(no solution ⇒ the parents cannot unify as written; many ⇒
+a new free law — either answer is physics)**; define
+variable carriers H_G with a specified isometry J_{G→G'}
+(amplitude/coin/shift/norm on new cells); pre-register the
+ψ-status decision (ontic stochastic-wave / CPTP
+instrument / Barandes-representational with a
+configuration-level reformulation) and measure its
+consequences; move branch weight OUT of the physical
+state into the ensemble measure (CONTRACT already calls
+it bookkeeping); decide the metric-vs-Z₃-connection
+reading (the walk sees n mod 3 only — the full count as
+geometry + the residue as a compact connection is the
+live candidate) and the admissible-class consistency debt
+(the coupled walk continues where AUTOGLUE refuses).
+**paper-48 = DYNAMICS-CLOSURE** (the normalized successor
+kernel; trajectories; reference states; behavioural
+equivalence = equality of all future record
+distributions).  **EXCITATION → paper-49.**  **W3
+ENGRAVED: a result is an ISP-family prediction only if it
+holds across every still-free fibre or the fibre is
+independently selected** (DISC's tick — coin-order-moved
+— fails W3 as a family claim; its licensed residue:
+record feedback is non-inert under specified
+declarations; the DISC adjudication carries W3).  DISC-2
+RE-GATED behind ECC + DC.  AUTOGLUE scope notes routed
+(possibilities-not-probabilities; uniform weighting = a
+declaration and possibly coordinatization-dependent;
+persistent-vs-resolved verdict-bearing; a=2 removes the
+obstruction, NOT seam underdetermination).  No current
+candidate freezes as an ECC parent until sealed.

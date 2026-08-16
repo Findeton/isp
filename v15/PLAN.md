@@ -27,3 +27,5 @@ HOR and REC repairs finish under v14 → terminals 37/38; their results feed Q63
 W1: reconstruction is never promoted to derivation. W2: invariance is never promoted to gauge or physical meaning before operational observables exist (gauge = identical values for EVERY observable/experiment).
 
 ## AMENDMENT (v15 #11): DYNAMICS-CLOSURE (paper-46) inserted before EXCITATION (renumbered paper-48): full state -> allowed events -> successor distribution -> next full state (grammar/emission + seam transition + amplitude + branch weights); trajectories + reference solutions. EXCITATION gates on it. The n=16 ARITY successor must pre-register additive-subgroup vs F_q-linear-subspace.
+
+## AMENDMENT (v15 #17): paper-46 = EVENT-AND-CARRIER-CLOSURE (Born-marginal feasibility LP; variable carriers + isometry; psi-status pre-registered; branch weight -> ensemble); paper-48 = DYNAMICS-CLOSURE (normalized kernel, trajectories, reference states, behavioural equivalence); EXCITATION -> paper-49. W3 ENGRAVED: family-level predictions only (fibre-invariant or independently-selected fibre). DISC-2 re-gated behind ECC+DC.
