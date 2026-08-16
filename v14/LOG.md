@@ -11480,3 +11480,46 @@ independently gated elsewhere — liftable string-identical
 repair REGISTERED for the #267 template sweep, which owns
 exactly this defect class corpus-wide.  **Orchestrator
 battery next; terminal on green.**
+
+## 2026-08-15 — PER-R IS TERMINAL: THIRTY-ONE; REC + HOR REGISTERED (USER-RAISED); THE SECOND LIMIT OUTAGE RESUMED (v14 LEDGER #354)
+
+**Orchestrator battery core legs ALL GREEN** (byte-identical
+regeneration ×2 from deleted artifacts; seed-invariant;
+selftest exit 1 at G-SOURCES writing nothing; hostile argv
+2; artifacts untouched).  **Mutant-leg disclosure:** a
+single PER-R falsifier run costs ~50 minutes (the era's
+heaviest pipeline), so this seal cites the continuation
+worker's out-of-harness sweep on THESE EXACT BYTES — 65/65
+dead-on-target, one process each, tree unchanged — instead
+of a redundant orchestrator re-run.  STATUS row appended.
+
+**REGISTERED (user-raised this hour):**
+- **REC — the reconstruction unit:** can the theory be
+  reconstructed from the record alone, the cast DERIVED
+  rather than declared?  (FAC's LEG-2 ⟺ participation-
+  signature and EPR's record-completeness are the existing
+  evidence that the cast is record-recoverable; REC would
+  make it a theorem or find the obstruction.)
+- **HOR — the horizon/undetermined-R re-charter of R4:**
+  measure the emergent c exactly; test HORIZON-STABILITY
+  of the local observable algebra under refinement and
+  growth (open patches vs torus closures); the
+  pre-registered split: contractible physics R-stable
+  (POT's L=4→8 identical coefficients = the existing
+  witness) vs winding physics torus-declared (the
+  merging-index law = the existing counter-witness); goal:
+  the undetermined-R (direct-limit) formulation as the
+  theory's native form — R never declared, laws stable
+  inside every causal horizon.  Actual-∞ remains closed by
+  R1; this is potential-∞ made measurable.
+
+**THE SECOND LIMIT OUTAGE:** the session limit terminated
+the POT/SPC/EPR/SEC repair workers at their BATTERY stages
+(Z-work reported complete or near-complete in each dying
+message; worktree partials uncommitted).  Continuations
+relaunch now with the same reconcile-then-verify contract
+as #326.  SEC-2's orchestrator battery core legs are green;
+its registry-mutant leg runs next; panel on green.
+
+**Programme count: THIRTY-ONE terminals; zero false
+computed numbers surviving anywhere in v14.**
