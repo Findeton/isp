@@ -376,3 +376,39 @@ labelled narrative-unproved — and K1's corroboration
 (#8) now supplies its evidence.  K3 out; the
 adjudication will merge K1's fiber finding (the tick
 moves with coin order) with this seat's list.
+
+## 2026-08-16 — ARITY (PAPER-44) DELIVERED, COMMITTED AS-IS: NO PARENT NUMERAL FOLLOWS THE a-ONLY RULE; THE a=2 OBSTRUCTION-VANISHING THEOREM (THE LEAD); ALL THREE REVIEWS' ORDERS FOLDED (v15 LEDGER #13)
+
+**Files:** v15/paper-44-arity.md 177560920b33;
+arity_exact.py a07f02e508b8; arity_output.txt
+95414a8d2824; arity_receipt.json c1354b632733.  CANDIDATE
+UNTIL ADJUDICATION.  Head: the two-level NDEP form —
+statements 4-transport/2-break (the crystallization
+OFFSET breaks: 0|1|1|0; SEC-2's counting theorem breaks at
+a=2), numerals 0-LAW-IN-A / 2-NEEDS-3 / 5-BREAKS, no word
+moving under either alternative rule; every row scored
+WITHIN THE DECLARED EXTENSION FAMILY (the packing rule its
+own declaration); the licensed separation sentence: what
+stands still is not carried by event size, what moves is
+not carried by field order.  **THE LEAD — THE a=2 ROW:
+the obstruction hypothesis generalises exactly to
+C(a,2) − ⌊a²/4⌋ = 0|1|2|4; AT a=2 IT IS ZERO — all 36
+seam-spanning events are exactly one cross pair, doubling
+nothing (36|0|0|0), precisely the configuration SEC-2
+priced free and stamped unreachable-by-three-actor-groups
+(the anchor consumed).  AUTOGLUE consumes this.**  mod-a:
+the modulus is MASS/LINK-CARRIED, never arity-carried
+(reads 3 at a=3 AND a=4; first-rung-equals-a rows: 0
+where a≠L).  Q17/Q19 in the ordered conditional form (3
+of 5 principles select a=3 among nontrivial IF the added
+assumptions hold; none pre-registered; a=q remains an
+independent free declaration in present ISP).  All routed
+orders folded: the licence-leg walls (6/6 independent
+paraphrases caught; MUT-WALL plants paraphrases now);
+coset_events → subgroup_order_available with every
+leaning sentence re-worded; n=16 pre-registered
+F₄-LINEAR; the saturating-predicate note.  Battery: 34/34
+gates + falsifiers with digest-proved moves; **the
+off-tree byte-reproduction leg honestly reported
+UNVERIFIED at these final shas (machine load) — the
+orchestrator battery covers it next.**
