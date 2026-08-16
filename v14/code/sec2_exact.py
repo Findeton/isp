@@ -27,10 +27,14 @@ onto 12 union arenas.  Three measurements are pinned here.
 
 WHAT THIS PROGRAM DOES
   S1  PROVENANCE.  Five pinned sources read at run time (byte + path-value +
-      verbatim anchors, each bound to a named consumer gate); the four #301
-      SEC objects DECLARED at their commit and bound by REPRODUCTION rather
-      than by reading, because the worktree copies are under repair -- the
-      declaration is checkable with `--verify-sec DIR`.
+      verbatim anchors, each bound to a named consumer gate AND to the mode
+      in which that gate consumes it); the read set is recorded at an audit
+      hook, so it is every open() the process performs and not only the ones
+      that go through a helper, and it is compared both at the first gate
+      and after the last.  The four #301 SEC objects are DECLARED at their
+      commit and bound by REPRODUCTION rather than by reading, because the
+      worktree copies are under repair -- the declaration is checkable with
+      `--verify-sec DIR`.
   S2  EXACTNESS.  An AST scan of this file is a gate: no float, no eval, no
       subprocess or network import, so the run is correct off-tree and with
       no version control present (#91).
@@ -41,11 +45,16 @@ WHAT THIS PROGRAM DOES
   S7  THE WALLS.
   S8  The verdict, derived a second time by a comparator that types all four
       templates itself; the paper gates (claim rendering row by row AND
-      header by header, numeral coverage including fenced blocks and inline
-      spans, fenced blocks by multiset, polarity, spelled numerals); the
-      TOTAL seal taken at value-close; the artifacts written through
-      os.replace from the sealed payload; the integrity check against the
-      gate-time seal.
+      header by header AND PER TABLE, numeral coverage including fenced
+      blocks, inline spans and sentence-final numerals, fenced blocks by
+      MULTISET EQUALITY at a declared multiplicity, case-folded polarity over
+      the headline direction words, generated spelled numerals, referent
+      binding across the unit's six populations); the TOTAL seal taken at
+      value-close with the SPLIT constrained too; the gate-time seals
+      verified against what would be promoted, once at the last gate and
+      once at the door (#119-as-amended); both artifacts staged and read
+      back before either is promoted; the transcript bound to the receipt by
+      digest, line count and gate-row count.
 
 CLI CONTRACT (the #82 minimum: argv parsed against a whitelist)
 ---------------------------------------------------------------
@@ -59,6 +68,10 @@ CLI CONTRACT (the #82 minimum: argv parsed against a whitelist)
     --verify-paper P  run the paper gates against P
     --verify-sec DIR  verify the DECLARED #301 SEC values against copies of
                       the committed objects in DIR
+    --verify-transcript [DIR]
+                      re-check the delivered transcript against the receipt
+                      that rendered it: digest, line count, gate-row count
+                      and the ledger chain recomputed from the bytes
     --list-gates / --list-mutants
 Every unknown flag, unknown flag argument, missing flag argument and second
 mode flag exits 2.
@@ -181,45 +194,56 @@ DRIVEN_SPECS = [
      "ADMITTED"),
 ]
 
-# ---- verbatim (#62) anchors: quote fidelity, each bound to a consumer gate
+# ---- verbatim (#62) anchors, each bound to a consumer gate AND to the MODE
+# of that consumption, which G-ANCHOR-CONSUMPTION checks:
+#   PARSED  the gate reads its own operand out of the anchor's bytes
+#   QUOTED  the paper under test quotes the anchor verbatim
+#   GATE    the consumer gate names the anchor in its own evidence row
+# A consumer that names a gate the run does not emit dies at that gate; in
+# the delivered instrument the field was a declaration and nothing read it.
 NEEDLE_FLOOR = 40
 VERBATIM = [
     ("N-PIN-COMPLETION", "A-PIN",
      "the 4-parameter completion space at each seam",
-     "G-COMPLETION-LATTICE"),
+     "G-COMPLETION-LATTICE", "QUOTED"),
     ("N-PIN-PRICE", "A-PIN",
      "the conserved-price frame (SMU #278) evaluated on composites vs "
-     "lone sectors", "G-PRICE-LAWS"),
+     "lone sectors", "G-PRICE-LAWS", "GATE"),
     ("N-PIN-OUTCOME", "A-PIN",
      "GLUING-EVENT-UNLAWFUL-AT-ALL-DECLARED-EXTENSIONS (the honest wall, "
-     "with the extension window named)", "G-LAWFUL"),
+     "with the extension window named)", "G-LAWFUL", "PARSED"),
     ("N-ADJ-SEAM", "A-ADJ",
      "The licensed finding is SEAM-CONFINED COMPOSITIONALITY: the union "
      "changes geometry only on links both sectors jointly own; no "
-     "sector-private link ever moves.", "G-WALL-SEAMCONFINED"),
+     "sector-private link ever moves.", "G-WALL-SEAMCONFINED", "PARSED"),
     ("N-ADJ-ARENAS", "A-ADJ",
      "the 16 types collapse onto 12 union arenas (four A B mirror pairs)",
-     "G-ARENA-COLLAPSE"),
+     "G-ARENA-COLLAPSE", "PARSED"),
     ("N-P19-LEGS", "A-P19",
      "site ACTOR, link the co-division actor pair, count the division "
-     "events on that pair inside the declared window", "G-LEGS"),
+     "events on that pair inside the declared window", "G-LEGS", "PARSED"),
     ("N-LOR-CEILING", "A-LOR",
      "No record admits more than $\\lfloor\\log_2(\\min n_\\ell)\\rfloor$ "
-     "consecutive steps.", "G-REFINEMENT"),
+     "consecutive steps.", "G-REFINEMENT", "QUOTED"),
     ("N-SMU-PRICE", "A-SMU",
      "declaring a covariant irreducible dynamics on this carrier still "
      "supplies exactly 207 independent numbers at the anchored reading",
-     "G-PRICE-VERDICT"),
+     "G-PRICE-VERDICT", "QUOTED"),
 ]
 
-# ---- the declared mutants, each with the gate it must die at
+# ---- the declared mutants, each with the gate it must die at.  E-23: the
+# published description must name the corruption the code performs, and the
+# corruption must be of a MEASUREMENT -- a falsifier that assigns False to a
+# gate's own verdict variable proves only that the gate raises when handed a
+# False, which is not a falsifier at all.
 MUTANTS = [
     ("MUT-SOURCE-DIGEST", "G-SOURCES", "one source's declared digest is "
      "altered, so the read set no longer authenticates"),
     ("MUT-ANCHOR-TEXT", "G-ANCHORS", "one verbatim anchor is perturbed at a "
      "content-bearing token and can no longer be located in its source"),
-    ("MUT-EXACT-FLOAT", "G-EXACT", "the AST scan is handed a float constant "
-     "from the declared probe, so the exactness gate must fire"),
+    ("MUT-EXACT-FLOAT", "G-EXACT", "a float constant is appended to the "
+     "source the AST scan parses, so the exactness scan meets a real "
+     "ast.Constant of type float"),
     ("MUT-CENSUS-DROP", "G-CENSUS", "one gluing is dropped from the k = 3 "
      "enumeration, so the two routes disagree"),
     ("MUT-SEC-VALUE", "G-SEC-VALUES", "one reproduced SEC value is shifted "
@@ -236,12 +260,15 @@ MUTANTS = [
     ("MUT-POSITIVITY", "G-POSITIVITY", "one seam type's positive-definite "
      "set is truncated to a single completion, so positivity would appear to "
      "select one"),
-    ("MUT-PRICE-FLAT", "G-PRICE-FLAT", "the two-sided cross budget drops one "
-     "sign, so the convention-free price stops being constant"),
+    ("MUT-PRICE-FLAT", "G-PRICE-FLAT", "the two-sided cross budget drops the "
+     "minus-sign half of every cross direction, so the sum it reports is the "
+     "one-sided one and the convention-free price stops being constant"),
     ("MUT-REFINEMENT", "G-REFINEMENT", "the ceiling law is computed on the "
-     "maximum count instead of the minimum, so the ceiling reads 1"),
-    ("MUT-FISCHER", "G-FISCHER", "the determinant comparison is inverted, so "
-     "the direct sum stops being the unique maximiser"),
+     "family's measured MAXIMUM count instead of its measured minimum, so "
+     "the ceiling reads 1"),
+    ("MUT-FISCHER", "G-FISCHER", "the determinant extremum is taken as the "
+     "MINIMUM instead of the maximum, so the direct sum stops being the "
+     "unique argopt"),
     ("MUT-SEC-WITNESS", "G-SEC-WITNESS", "the declared witness completion is "
      "corrupted at a cross entry, so SEC's own value is not reproduced and "
      "the inadmissibility it is placed by moves too"),
@@ -255,8 +282,9 @@ MUTANTS = [
      "fate is forged dead, so the positive control stops firing"),
     ("MUT-GRID-CELL", "G-EXTENSION-GRID", "one grid cell's fate is forged, "
      "so it leaves its pre-declared cell"),
-    ("MUT-QUOT-POS", "G-QUOTIENT-POS-COLLAPSE", "one QUOTIENT+POSITIVE fate "
-     "is forged, so the derived identity with EMBEDDING breaks"),
+    ("MUT-QUOT-POS", "G-QUOTIENT-POS-COLLAPSE", "the FULL-CROSS "
+     "QUOTIENT+POSITIVE baseline fate is forged ALIVE before the identity is "
+     "derived, so the measured agreement with EMBEDDING breaks"),
     ("MUT-LAWFUL", "G-LAWFUL", "the lawful count is shifted by one, so the "
      "outcome word no longer matches its own census"),
     ("MUT-BLINDNESS", "G-BLINDNESS", "the r = 1 orbit census is forged to "
@@ -272,10 +300,13 @@ MUTANTS = [
     ("MUT-WALL-EXT", "G-WALL-EXTENSION", "the wall's own sentence is "
      "inverted in the text under test, so the paper would carry a lawful "
      "extension without disowning it as the theory"),
-    ("MUT-VERDICT", "G-VERDICT-RECON", "one verdict segment is edited after "
-     "the builder, so the independent comparator disagrees"),
-    ("MUT-PAPER-CLAIM", "G-PAPER-CLAIMS", "one rendered table row is "
-     "corrupted, so the paper stops rendering the receipt"),
+    ("MUT-VERDICT", "G-VERDICT-RECON", "the first verdict segment's outcome "
+     "word is edited in the built head after the builder returns, so the "
+     "independent comparator -- which is run in full -- disagrees"),
+    ("MUT-PAPER-CLAIM", "G-PAPER-CLAIMS", "one measured row of the "
+     "completion lattice is corrupted before the claim list is built from "
+     "it, so the paper stops rendering the receipt and check_claims is run "
+     "in full against the corruption"),
     ("MUT-PAPER-NUM", "G-PAPER-COVERAGE", "the numeral registry loses a "
      "measured value, so a numeral in the paper is unbacked"),
     ("MUT-LEGS", "G-LEGS", "the legs' quotation is perturbed, so the parent "
@@ -294,13 +325,72 @@ MUTANTS = [
      "run that requires it, so the paper leg goes vacuous"),
     ("MUT-UNQUANTISED", "G-UNQUANTISED", "the two exhibited off-lattice "
      "completions collapse onto one, so the witness pair stops being a pair"),
+    ("MUT-DECL-FIBER", "G-DECLARATION-FIBER", "one declaration route's "
+     "collision detection is dropped, so its fiber is counted as index "
+     "tuples rather than as distinct declared targets"),
+    ("MUT-BOTHSIGNS", "G-SEAM-CONVENTION", "the both-signs seam reading is "
+     "computed with the forward cell alone, so the two conventions stop "
+     "being distinguishable and the alternative census returns 49"),
+    ("MUT-CROSS-DIRECTIONS", "G-CROSS-DIRECTIONS", "one of the eighteen "
+     "cross directions is cut at count 2 instead of count 1, so its cut set "
+     "leaves the measured size"),
+    ("MUT-THEOREM", "G-MOTIVATED-THEOREM", "one lawful group's per-object "
+     "doubling count is forged to zero, so the counting theorem's own "
+     "hypothesis fails at an object"),
+    ("MUT-COUNT-LEG", "G-COUNT-LEG-AXIS", "one NON-NEGATIVE cell's fate is "
+     "forged to match its POSITIVE twin, so the measured count-leg flips "
+     "are lost"),
+    ("MUT-UNIVERSE", "G-SEAM-CONFINED-UNIVERSE", "one gluing's "
+     "sector-private doubling census is forged non-zero, so the delivered "
+     "union stops satisfying the ruling it carries"),
+    ("MUT-LAX", "G-LAX-VACUITY", "the LAX sweep is run at the matched "
+     "extension instead of the delivered target, so the reading's vacuity "
+     "is no longer the measured one"),
+    ("MUT-DECL-PRICE", "G-PRICE-LAWS", "the seam kernel the declaration "
+     "currency is summed from is shifted by one, so the fifth currency's "
+     "measured value leaves its law 4k"),
+    ("MUT-CONSUMER", "G-ANCHOR-CONSUMPTION", "one anchor's declared consumer "
+     "gate is renamed to a gate that does not exist, so a phantom consumer "
+     "would go unchecked"),
+    ("MUT-REFERENT", "G-PAPER-REFERENT", "one referent binding's declared "
+     "value is taken from another universe, so a numeral true of one "
+     "population would validate a sentence about another"),
+    ("MUT-FENCE", "G-PAPER-FENCE", "a ninth fenced block duplicating a "
+     "legitimate verdict segment is appended to the text under test, so "
+     "containment would pass where multiset equality must not"),
+    ("MUT-POLARITY", "G-PAPER-POLARITY", "a negation of a measured direction "
+     "is appended to the text under test capitalised as a sentence opener, "
+     "so a case-sensitive needle would miss it"),
+    ("MUT-SPELLED", "G-PAPER-SPELLED", "a spelled numeral whose integer no "
+     "measurement backs is appended to the text under test"),
+    ("MUT-COVERAGE", "G-COVERAGE", "one declared falsifier is dropped from "
+     "the coverage relation, so a real gate becomes uncovered"),
+    ("MUT-INTEGRITY", "G-INTEGRITY", "a sealed measured value is mutated "
+     "after the seal is taken, so the gate-time seal no longer matches the "
+     "value that would be promoted"),
+    ("MUT-READ-SET", "G-READ-SET", "a raw builtin open() of a path outside "
+     "the declared set is performed AFTER the early read-set comparison, so "
+     "only a log taken at the I/O layer and re-compared at the last gate "
+     "can catch it"),
 ]
 
-LATER_GATES = ("G-VERDICT-RECON", "G-PAPER-PRESENT", "G-PAPER-CLAIMS",
+# gates emitted after the coverage gate.  LATER_GATES exempts a gate from the
+# ORDERING check alone: every gate named here still carries its own mutant or
+# its own machine-checked forcing, and G-COVERAGE takes the FULL declared gate
+# list -- itself and these included -- rather than a snapshot of what has
+# already fired.
+LATER_GATES = ("G-VERDICT-RECON", "G-PAPER-CLAIMS",
                "G-PAPER-COVERAGE", "G-PAPER-FENCE", "G-PAPER-POLARITY",
-               "G-PAPER-SPELLED", "G-SWEEP-EXECUTED", "G-SEAL-COMPLETE",
-               "G-DECLARED-LATER", "G-INTEGRITY")
-PAPER_REQUIRED = [False]
+               "G-PAPER-SPELLED", "G-PAPER-REFERENT", "G-SWEEP-EXECUTED",
+               "G-SEAL-COMPLETE", "G-READ-SET", "G-DECLARED-LATER",
+               "G-INTEGRITY")
+PAPER_REQUIRED = [True]
+
+# the ONLY receipt keys that may be declared unsealed.  Totality constrains
+# the union of the two sides; without this list it does not constrain the
+# SPLIT, and any measured key could be moved to the unsealed side at will.
+UNSEALABLE = ("ledger", "ledger_chain", "seal_manifest", "swept", "schema",
+              "schema_version", "unit", "pin", "mutant_sweep", "transcript")
 
 # gates whose falsifier is a machine-checked forcing rather than a mutant
 WAIVERS = {
@@ -308,30 +398,43 @@ WAIVERS = {
                          "a mutant of it would be a mutant of the harness "
                          "that runs mutants; the forcing checked here is "
                          "that the writer is downstream of a sweep whose "
-                         "row count equals the declared mutant count"),
+                         "ROW COUNT is the declared mutant count, which the "
+                         "gate is handed and compares"),
     "G-SEAL-COMPLETE": ("forcing: every published receipt key is sealed at "
-                        "value-close or declared unsealed; the forcing is "
-                        "checked by set equality against the receipt's own "
-                        "top-level keys, which no mutant can evade"),
-    "G-INTEGRITY": ("forcing: the disk bytes are compared against the "
-                    "gate-time seal before promotion, and the comparison is "
-                    "evaluated on every delivery run"),
-    "G-DECLARED-LATER": ("forcing: the three gates emitted after the "
-                         "coverage gate are named in LATER_GATES and their "
-                         "presence is checked by set equality at the last "
-                         "gate"),
+                        "value-close or declared unsealed, checked by "
+                        "containment of the receipt's own top-level key set "
+                        "in the covered set AND by the constraint that the "
+                        "unsealed side is a subset of the declared "
+                        "UNSEALABLE list, so no measured key can be moved "
+                        "across the split"),
+    "G-DECLARED-LATER": ("forcing: the gates emitted after the coverage gate "
+                         "are named in LATER_GATES and their presence is "
+                         "checked at the last gate"),
 }
 
-SPELLED = {
-    "thirteen": 13, "fourteen": 14, "fifteen": 15, "sixteen": 16,
-    "seventeen": 17, "eighteen": 18, "nineteen": 19, "twenty": 20,
-    "twenty-one": 21, "twenty-two": 22, "twenty-four": 24,
-    "twenty-seven": 27,
-    "twenty-eight": 28, "thirty": 30, "thirty-one": 31, "thirty-six": 36,
-    "forty": 40, "forty-five": 45, "forty-eight": 48, "forty-nine": 49,
-    "fifty": 50, "fifty-four": 54, "seventy-two": 72, "one hundred": 100,
-    "two hundred": 200, "four hundred": 400,
-}
+# ---- spelled numerals.  NOT a whitelist: every form from zero to nine
+# hundred and ninety-nine is generated, so a numeral spelled in words is
+# scanned whatever its size and there is no floor for a head numeral to hide
+# under (the delivered instrument scanned only a self-list above twelve).
+_ONES = ("zero", "one", "two", "three", "four", "five", "six", "seven",
+         "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen",
+         "fifteen", "sixteen", "seventeen", "eighteen", "nineteen")
+_TENS = ("", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy",
+         "eighty", "ninety")
+
+
+def _spell(n):
+    if n < 20:
+        return _ONES[n]
+    if n < 100:
+        return _TENS[n // 10] + ("-" + _ONES[n % 10] if n % 10 else "")
+    head = _ONES[n // 100] + " hundred"
+    if n % 100 == 0:
+        return head
+    return head + " and " + _spell(n % 100)
+
+
+SPELLED = {_spell(n): n for n in range(1000)}
 
 POLARITY = [
     ("P1", "the freedom is irreducible", "the freedom is reducible"),
@@ -343,6 +446,37 @@ POLARITY = [
      "the record's own price is not additive"),
     ("P5", "every seam-spanning group is dead at the delivered target",
      "some seam-spanning group is alive at the delivered target"),
+    # the headline direction words, in the paper's own prose voice: a flip of
+    # any one of these inverts a delivered finding, and none of them is a
+    # table cell, a fenced block or a numeral, so nothing else looks at them
+    ("P6", "SEAM-DECLARATION-IRREDUCIBLE", "SEAM-DECLARATION-SELECTED"),
+    ("P7", "leave the dictionary alive once the target declares",
+     "leave the dictionary dead once the target declares"),
+    ("P8", "not one of the 216 is MOTIVATED",
+     "every one of the 216 is MOTIVATED"),
+    ("P9", "the direct sum is not among them",
+     "the direct sum is the unique one among them"),
+    ("P10", "the one completion the measured crossing forbids",
+     "the one completion the measured crossing selects"),
+]
+
+# ---- referent binding (#267): a numeral is not "backed" by occurring
+# somewhere in the receipt.  Each pattern below binds a numeral to the
+# POPULATION its sentence names, and the value comes from the receipt row
+# that measured that population.  The unit runs six live universes and
+# without this any one's numerals would validate any other's sentence.
+REFERENTS = [
+    ("REF-SEAMTYPES", r"(\d[\d,]*)\s+seam\s+types", "n_seam_types"),
+    ("REF-SITES", r"(\d[\d,]*)\s+shared\s+sites", "n_shared_sites"),
+    ("REF-GROUPS", r"(\d[\d,]*)\s+three-actor\s+groups", "n_groups"),
+    ("REF-SPANNING", r"(\d[\d,]*)\s+seam-spanning\s+groups",
+     "n_seam_spanning"),
+    ("REF-COMPOSITES", r"(\d[\d,]*)\s+composites", "n_gluings"),
+    ("REF-GLUINGS", r"(\d[\d,]*)\s+gluings\s+in", "n_gluings"),
+    ("REF-KERNEL", r"kernel\s+is\s+(\d[\d,]*)", "n_kernel"),
+    ("REF-LAWFUL", r"(\d[\d,]*)\s+leave\s+the\s+dictionary\s+alive",
+     "n_lawful"),
+    ("REF-PLACEMENTS", r"all\s+(\d[\d,]*)\s+placements", "n_placements"),
 ]
 
 # the reading this unit does NOT take (#322's wall vocabulary and the pin's)
@@ -427,14 +561,37 @@ class Seal:
                 "n_sealed": len(self.seals), "n_unsealed": len(self.unsealed)}
 
 
+# ---- THE READ SET, recorded at the actual I/O layer.  Not in a helper: a
+# helper records only the reads that go through it, and the file this unit's
+# pin explicitly forbids reading can be opened with the builtin in one line.
+# An audit hook sees every open() this process performs, whoever calls it, so
+# a stray read is caught wherever it is planted and in whatever order.
 READLOG = []
+EXTRA_READS = []
+# the paths a run of this instrument legitimately touches besides its five
+# declared sources: itself (the AST scan and the E-23 description scan), the
+# paper under test, and its own two artifacts
+READ_EXEMPT = (SELF_REL, PAPER_REL, OUT_REL, REC_REL,
+               OUT_REL + ".tmp", REC_REL + ".tmp")
+
+
+def relpath(p):
+    a = os.path.abspath(p)
+    return a[len(ROOT) + 1:] if a.startswith(ROOT + os.sep) else a
+
+
+def _audit(event, args):
+    if event == "open" and args and isinstance(args[0], str):
+        READLOG.append(relpath(args[0]))
+
+
+sys.addaudithook(_audit)
 
 
 def read_bytes(rel):
     path = os.path.join(ROOT, rel)
     with open(path, "rb") as fh:
         data = fh.read()
-    READLOG.append(rel)
     return data
 
 
@@ -468,6 +625,14 @@ def canon(s):
 
 def locate(hay, needle):
     return canon(hay).count(canon(needle))
+
+
+def locate_ci(hay, needle):
+    """the same, CASE-FOLDED on both sides.  A negation capitalised as a
+    sentence opener is the same assertion as the same words mid-sentence, and
+    a gate that exists to catch the paper asserting its own inverse must not
+    be defeated by a capital letter."""
+    return canon(hay).casefold().count(canon(needle).casefold())
 
 
 def perturb(needle):
@@ -1010,6 +1175,11 @@ def detect(actors, rel, target, reading, countleg):
 
 
 MAP_CAP = 200000
+# the declared number of base maps the label/orient fibers are re-read at
+LABEL_ORIENT_SWEEP = 32
+# the window's two enumerated axes besides the target
+READINGS = ("EMBEDDING", "QUOTIENT", "LAX")
+COUNTLEGS = ("POSITIVE", "NON-NEGATIVE")
 
 
 def inventory(actors, rel, target):
@@ -1093,11 +1263,13 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
         prov.append({"id": sid, "path": rel, "declared": declared,
                      "sha256_12": got, "ok": got == declared, "why": why})
     LD.gate("G-SOURCES",
-            all(p["ok"] for p in prov) and sorted(READLOG) ==
+            all(p["ok"] for p in prov) and sorted(set(READLOG)) ==
             sorted(s[1] for s in SOURCES),
             "every source this run reads is authenticated at its declared "
-            "sha256-12 and the read set recorded at the actual I/O layer is "
-            "exactly the declared set, so a stray read fails the gate",
+            "sha256-12, and at this point in the run the read set recorded "
+            "at the audit hook is exactly the declared set; the same log is "
+            "re-compared after the LAST gate by G-READ-SET, so a stray read "
+            "planted after this instant dies too",
             {"n": len(prov), "read_log": sorted(set(READLOG)),
              "bad": [p["id"] for p in prov if not p["ok"]]})
     R["provenance"] = SEAL.seal("provenance", prov)
@@ -1112,22 +1284,33 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
                     for p, s in SEC301["objects"]]})
 
     anch = []
-    for (nid, sid, needle, consumer) in VERBATIM:
+    NEEDLE = {}
+    for (nid, sid, needle, consumer, mode) in VERBATIM:
         nd = needle
         if mut("MUT-ANCHOR-TEXT") and nid == "N-ADJ-SEAM":
             nd = needle.replace("only", "never")
         if BROKEN_ANCHOR[0] == nid:
             nd = perturb(needle)
+        if mut("MUT-CONSUMER") and nid == "N-PIN-PRICE":
+            consumer = "G-NO-SUCH-GATE-AT-ALL"
         hits = locate(texts[sid], nd)
         ok = hits == 1 and len(canon(nd)) >= NEEDLE_FLOOR
+        NEEDLE[nid] = nd
+        # a numeral inside an anchor is a numeral of the PARENT's own
+        # authenticated bytes, and the paper may quote it: it is backed by
+        # the pinned source rather than by a measurement of this run
+        for m in NUM_RE.finditer(nd):
+            NUMREG.add(m.group(0))
         anch.append({"id": nid, "source": sid, "consumer": consumer,
-                     "hits": hits, "chars": len(canon(nd)), "ok": ok})
+                     "consumption": mode, "hits": hits,
+                     "chars": len(canon(nd)), "ok": ok})
     LD.gate("G-ANCHORS",
             all(a["ok"] for a in anch),
             "every verbatim anchor is located exactly once in its pinned "
             "source under the #125 normaliser, clears the declared "
-            "character floor, and names the gate that consumes it -- so a "
-            "misquotation of a parent dies on the delivery run",
+            "character floor, and names the gate that consumes it and the "
+            "MODE of that consumption -- so a misquotation of a parent dies "
+            "on the delivery run",
             {"n": len(anch), "floor": NEEDLE_FLOOR,
              "bad": [a["id"] for a in anch if not a["ok"]],
              "consumers": sorted({a["consumer"] for a in anch})})
@@ -1135,12 +1318,10 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
 
     # ---- S2  EXACTNESS ----------------------------------------------------
     selftext = read_bytes(SELF_REL).decode()
-    READLOG.pop()
-    tree = ast.parse(selftext)
+    tree = ast.parse(selftext + ("\nEXACT_PROBE = 0.5\n"
+                                 if mut("MUT-EXACT-FLOAT") else ""))
     floats = [n for n in ast.walk(tree)
               if isinstance(n, ast.Constant) and isinstance(n.value, float)]
-    if mut("MUT-EXACT-FLOAT"):
-        floats = floats + ["injected"]
     banned = [n for n in ast.walk(tree)
               if isinstance(n, ast.Call) and isinstance(n.func, ast.Name)
               and n.func.id in ("float", "eval", "exec")]
@@ -1160,13 +1341,13 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
              "imports": imports, "subprocess_modules": subproc})
 
     # ---- the delivered legs, bound to their anchor -----------------------
+    # PARSED consumption: the probe IS the anchor's own bytes, not a second
+    # typed literal that happens to resemble them.
     LEGS = ("ACTOR->SITE", "CO-DIVISION-ACTOR-PAIR->LINK",
             "DIVISION-COUNT->n_l(x)")
-    legs_probe = pick("MUT-LEGS",
-                      "site ACTOR, link the co-division actor pair, count "
-                      "the division events on that pair",
-                      "site ACTOR, link the co-division actor triple, count "
-                      "the division events on that pair")
+    legs_probe = pick("MUT-LEGS", NEEDLE["N-P19-LEGS"],
+                      NEEDLE["N-P19-LEGS"].replace("actor pair", "actor "
+                                                   "triple"))
     legs_quoted = canon(legs_probe) in canon(texts["A-P19"])
     LD.gate("G-LEGS", legs_quoted and len(LEGS) == 3,
             "the three reading legs this unit relaxes are the ones paper-19 "
@@ -1174,10 +1355,42 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
             "co-division actor pair, count from the division events on that "
             "pair -- and the relaxation window below is built on those three "
             "and on the target they read into",
-            {"legs": list(LEGS), "quoted_in_parent": legs_quoted})
+            {"legs": list(LEGS), "quoted_in_parent": legs_quoted,
+             "anchor": "N-P19-LEGS"})
 
     DECL = {k: v for (_i, k, v, _c) in SEC_VALUES}
     ADECL = {i: v for (i, _w, v, _c) in ADJ_VALUES}
+
+    # ---- THE TWO KERNELS THE FIFTH CURRENCY IS SUMMED FROM ---------------
+    # measured HERE, before the census, because the declaration price of a
+    # composite is not a typed identity: it is the seam system's kernel at
+    # every shared site plus the unshared site's kernel at every other, and
+    # both are rank computations on coefficient matrices with no right-hand
+    # side in them.
+    rows0 = seam_rows()
+    M0, piv0 = rref(rows0, len(IDX4))
+    rank0, ker0 = len(piv0), len(IDX4) - len(piv0)
+    lone_rows = [quad_row(v, sym_index(2), 2)
+                 for v in ([1, 0], [0, 1], [1, 1])]
+    _lm, lpiv = rref(lone_rows, 3)
+    lone_ker = 3 - len(lpiv)
+    reg(rank0, ker0, len(IDX4), len(rows0), lone_ker, len(lpiv))
+    LD.gate("G-SEAM-RANK",
+            rank0 == DECL["seam.0.rank"]
+            and ker0 == DECL["seam.0.kernel_dim"]
+            and len(IDX4) == DECL["seam.0.unknowns"] and lone_ker == 0,
+            "the seam's %d declared links give rank %d on the %d entries of "
+            "Sym^2(Q^4), so the completion space is a %d-parameter affine "
+            "family; the rank is taken on the COEFFICIENT matrix alone, so "
+            "it is a property of the direct-sum chart and holds at every "
+            "seam type whatever the counts -- while an unshared site's three "
+            "links give rank %d on the %d entries of Sym^2(Q^2), kernel %d"
+            % (len(rows0), rank0, len(IDX4), ker0, len(lpiv), 3, lone_ker),
+            {"equations": len(rows0), "unknowns": len(IDX4), "rank": rank0,
+             "kernel_dim": ker0, "rhs_independent": True,
+             "unshared_site_rank": len(lpiv),
+             "unshared_site_kernel": lone_ker})
+    ker_price = ker0 + 1 if mut("MUT-DECL-PRICE") else ker0
 
     # ---- S3  THE GLUING CENSUS AND THE PRICE CURRENCIES -------------------
     census = {}
@@ -1185,11 +1398,14 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
     typecount = Counter()
     dfree_k = Counter()
     seamtypes = Counter()
+    seamtypes_both = Counter()
     price_bad = []
     seam_route_bad = []
     kpop = Counter()
     dbl_pop = Counter()
     total = 0
+    union_min, union_max = None, None
+    private_doubled = 0
     for k in (0, 1, 2, 3):
         GL = all_gluings(k)
         if mut("MUT-CENSUS-DROP") and k == 3:
@@ -1204,7 +1420,22 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
             actors, rel, amap, bmap = union_counts(gl)
             d = sum(1 for v in rel.values() if v > 1)
             dbl_pop[(k, d)] += 1
-            # the five currencies
+            # the union's own minimum count, MEASURED over the whole family:
+            # it is what paper-04's ceiling law is evaluated on, and the
+            # delivered instrument typed it
+            lo, hi = min(rel.values()), max(rel.values())
+            union_min = lo if union_min is None else min(union_min, lo)
+            union_max = hi if union_max is None else max(union_max, hi)
+            # SEAM-CONFINEMENT, at the ruling's own universe: a pair the
+            # union carries twice, with an endpoint no gluing shares
+            for key, v in rel.items():
+                if v > 1 and (key[0][0] != "S" or key[1][0] != "S"):
+                    private_doubled += 1
+            if mut("MUT-UNIVERSE") and k == 3 and not private_doubled:
+                private_doubled += 1
+            # the five currencies.  The fifth is NOT the identity 4k: it is
+            # the seam kernel summed over the shared sites plus the unshared
+            # site's kernel over the rest, both measured above.
             p_record = sum(rel.values())
             p_budget = 0
             cells = 0
@@ -1213,7 +1444,7 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
                     for l in LINKS:
                         cells += 1
                         p_budget += rel[cell_key(mp, x, l)]
-            p_decl = 4 * k
+            p_decl = ker_price * k + lone_ker * (18 - 2 * k)
             p_carrier = len(actors)
             p_links = len(rel)
             if mut("MUT-PRICE-LAW") and k == 2:
@@ -1244,6 +1475,22 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
                 if (nA, nB) != (nA2, nB2):
                     seam_route_bad.append(str((gl, i)))
                 seamtypes[(nA, nB)] += 1
+                # THE CONVENTION, named where the number is born.  FORWARD:
+                # the count at (site, direction) is the count of the cell
+                # {x, x + d}, which is I7's own 27-cell structure and the
+                # reading every number below is taken under.  BOTH SIGNS:
+                # the direction reads 2 if either {x, x + d} or {x, x - d}
+                # is doubled.  Both cover the same shared sites; only the
+                # type function differs, and the censuses do not agree.
+                back = (lambda mp, s, l: rel[cell_key(mp, zadd(s, zneg(l)),
+                                                      l)])
+                mA = tuple(nA[t] if mut("MUT-BOTHSIGNS") else
+                           max(nA[t], back(amap, sa, LINKS[t]))
+                           for t in range(3))
+                mB = tuple(nB[t] if mut("MUT-BOTHSIGNS") else
+                           max(nB[t], back(bmap, sb, LINKS[t]))
+                           for t in range(3))
+                seamtypes_both[(mA, mB)] += 1
             kpop[k] += 1
 
     def closed(k):
@@ -1316,15 +1563,24 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
     n_arenas = len(arena_classes)
     mirror_pairs = sum(1 for v in arena_classes.values() if len(v) == 2)
     reg(n_arenas, mirror_pairs)
+    # PARSED consumption: the two numbers this gate checks are read out of
+    # the adjudication's own quoted sentence, not typed a second time here.
+    anch_nums = [int(m.group(0)) for m in
+                 NUM_RE.finditer(NEEDLE["N-ADJ-ARENAS"])]
     LD.gate("G-ARENA-COLLAPSE",
             n_arenas == ADECL["V-ARENAS"]
-            and mirror_pairs == ADECL["V-MIRRORS"],
-            "the 16 combinatorial types collapse onto 12 union arenas under "
-            "the A-B mirror, in four mirror pairs and eight self-mirror "
-            "types -- the #322 ruling, measured here on the profiles rather "
-            "than inherited",
+            and mirror_pairs == ADECL["V-MIRRORS"]
+            and anch_nums == [len(typecount), n_arenas],
+            "the %d combinatorial types collapse onto %d union arenas under "
+            "the A-B mirror, in %d mirror pairs and %d self-mirror types -- "
+            "the #322 ruling, measured here on the profiles rather than "
+            "inherited, and checked against the two numbers read out of the "
+            "adjudication's own quoted sentence"
+            % (len(typecount), n_arenas, mirror_pairs,
+               n_arenas - mirror_pairs),
             {"types": len(typecount), "arenas": n_arenas,
-             "mirror_pairs": mirror_pairs,
+             "mirror_pairs": mirror_pairs, "anchor": "N-ADJ-ARENAS",
+             "numerals_read_from_the_anchor": anch_nums,
              "classes": {k: v for k, v in sorted(arena_classes.items())}})
     R["arena_collapse"] = SEAL.seal("arena_collapse", {
         "declared": [{"id": i, "what": w, "value": v, "consumer": c,
@@ -1334,6 +1590,13 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
         "types": len(typecount), "arenas": n_arenas,
         "mirror_pairs": mirror_pairs,
         "classes": {k: v for k, v in sorted(arena_classes.items())}})
+
+    # a raw open() of an undeclared path, planted well AFTER the early
+    # read-set comparison: the audit hook sees it, and the last gate is what
+    # compares the log
+    if mut("MUT-READ-SET"):
+        with open(os.devnull, "rb") as _fh:
+            _fh.read()
 
     # ---- M1a  THE SEAM CENSUS --------------------------------------------
     stypes = sorted(seamtypes)
@@ -1351,17 +1614,40 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
             and missing == [tuple([2] * 3)]
             and not seam_route_bad,
             "the seam types realised by the family are censused exactly over "
-            "every shared site of every gluing: seven of the eight count "
-            "vectors occur on each side and the one that never occurs is the "
+            "every shared site of every gluing: %d of the %d count vectors "
+            "occur on each side and the one that never occurs is the "
             "all-doubled vector, because a shared site has at most two other "
-            "shared actors",
+            "shared actors"
+            % (len(vectors), len(all_vectors)),
             {"seam_types": len(stypes), "shared_sites": sites_total,
              "shared_sites_second_route": sites_route2,
              "seam_type_second_route_disagreements": len(seam_route_bad),
              "vectors": [str(v) for v in vectors],
              "missing_vectors": [str(v) for v in missing]})
+    n_both = len(seamtypes_both)
+    reg(n_both)
+    LD.gate("G-SEAM-CONVENTION",
+            sum(seamtypes_both.values()) == sites_total
+            and n_both != len(stypes) and n_both > 0,
+            "the census's type function carries a CONVENTION and this gate "
+            "names it where the number is born: under the FORWARD reading -- "
+            "the count at (site, direction) is the count of the cell "
+            "{x, x + d}, I7's own 27-cell structure, and the reading every "
+            "number in this unit is taken under -- the family realises %d "
+            "seam types; under the BOTH-SIGNS reading, where a direction "
+            "reads 2 if either {x, x + d} or {x, x - d} is doubled, the same "
+            "%d shared sites fall into %d. The headline's first number is "
+            "the forward one and this is the sentence that says so"
+            % (len(stypes), sites_total, n_both),
+            {"forward_seam_types": len(stypes),
+             "both_signs_seam_types": n_both,
+             "shared_sites": sites_total,
+             "shared_sites_both_signs": sum(seamtypes_both.values())})
     R["seam_census"] = SEAL.seal("seam_census", {
         "seam_types": len(stypes), "shared_sites": sites_total,
+        "convention": "FORWARD: the count at (site, direction) is the count "
+                      "of the cell {x, x + d}",
+        "both_signs_seam_types": n_both,
         "vectors": [str(v) for v in vectors],
         "missing_vectors": [str(v) for v in missing],
         "populations": {str(k): v for k, v in sorted(seamtypes.items(),
@@ -1369,22 +1655,6 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
                                                      str(kv[0]))}})
 
     # ---- M1b  THE COMPLETION SPACE ---------------------------------------
-    rows0 = seam_rows()
-    M0, piv0 = rref(rows0, len(IDX4))
-    rank0, ker0 = len(piv0), len(IDX4) - len(piv0)
-    reg(rank0, ker0, len(IDX4), len(rows0))
-    LD.gate("G-SEAM-RANK",
-            rank0 == DECL["seam.0.rank"]
-            and ker0 == DECL["seam.0.kernel_dim"]
-            and len(IDX4) == DECL["seam.0.unknowns"],
-            "the seam's six declared links give rank 6 on the ten entries of "
-            "Sym^2(Q^4), so the completion space is a 4-parameter affine "
-            "family; the rank is taken on the COEFFICIENT matrix alone, so "
-            "it is a property of the direct-sum chart and holds at every "
-            "seam type whatever the counts",
-            {"equations": len(rows0), "unknowns": len(IDX4), "rank": rank0,
-             "kernel_dim": ker0, "rhs_independent": True})
-
     lattice_rows = []
     box_bad = []
     for st in stypes:
@@ -1400,15 +1670,34 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
         d0 = form_det(gram(nA, nB, [[0, 0], [0, 0]]))
         dets = {U: form_det(gram(nA, nB, [[U[0], U[1]], [U[2], U[3]]]))
                 for U in pd}
-        dmax = max(dets.values())
+        dmax = min(dets.values()) if mut("MUT-FISCHER") else max(dets.values())
         argmax = [U for U in pd if dets[U] == dmax]
+        # Fischer's inequality is a statement about positive semidefinite
+        # matrices, and the admissible lattice is larger than the
+        # positive-definite one at 36 of the 49 types.  The rest is covered
+        # by CENSUS: no admissible completion outside the positive-definite
+        # set has positive determinant anywhere.
+        offpd = [U for U in cands if U not in set(pd)]
+        offpos = [U for U in offpd
+                  if form_det(gram(nA, nB, [[U[0], U[1]],
+                                            [U[2], U[3]]])) > 0]
         parity = [U for U in pd
                   if all(v % 2 == 0 for v in
                          cross_counts(nA, nB, [[U[0], U[1]],
                                                [U[2], U[3]]]).values())]
-        tot2 = {sum(cross_counts(nA, nB, [[U[0], U[1]],
-                                          [U[2], U[3]]]).values())
+        tot2 = {sum(v for (_i, _j, s), v in
+                    cross_counts(nA, nB, [[U[0], U[1]],
+                                          [U[2], U[3]]]).items()
+                    if not (mut("MUT-PRICE-FLAT") and s == -1))
                 for U in pd}
+        # the ONE-SIDED reading, at every seam type: its minimising set is
+        # many-valued everywhere, and the paper's "eight" is the all-simple
+        # seam's own number, not a fact about seams
+        one1 = {}
+        for U in pd:
+            cc1 = cross_counts(nA, nB, [[U[0], U[1]], [U[2], U[3]]])
+            one1[U] = sum(v for (_i, _j, s), v in cc1.items() if s == 1)
+        m1 = min(one1.values())
         lattice_rows.append({
             "seam": str(st), "nA": str(nA), "nB": str(nB),
             "population": seamtypes[st],
@@ -1416,6 +1705,10 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
             "det_direct_sum": str(d0), "det_max": str(dmax),
             "argmax_is_direct_sum": argmax == [(0, 0, 0, 0)],
             "n_argmax": len(argmax),
+            "admissible_not_posdef": len(offpd),
+            "admissible_not_posdef_with_positive_determinant": len(offpos),
+            "one_sided_min": m1,
+            "one_sided_argmin": sum(1 for U in pd if one1[U] == m1),
             "parity_stable": len(parity),
             "two_sided_budgets": sorted(str(x) for x in tot2)})
     for row in lattice_rows:
@@ -1493,8 +1786,6 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
     # criterion 2: price minimisation
     flat = [r["seam"] for r in lattice_rows
             if len(r["two_sided_budgets"]) != 1]
-    if mut("MUT-PRICE-FLAT"):
-        flat = flat + ["injected"]
     nA1 = nB1 = (1, 1, 1)
     cands1, _b = completion_lattice(nA1, nB1)
     pd1 = [U for U in cands1
@@ -1508,58 +1799,80 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
     pmin = min(one_plus.values())
     argm = sorted(U for U in pd1 if one_minus[U] == mmin)
     argp = sorted(U for U in pd1 if one_plus[U] == pmin)
-    reg(mmin, pmin, len(argm), len(argp))
+    amin = min(r["one_sided_argmin"] for r in lattice_rows)
+    amax = max(r["one_sided_argmin"] for r in lattice_rows)
+    many = [r["seam"] for r in lattice_rows if r["one_sided_argmin"] < 2]
+    reg(mmin, pmin, len(argm), len(argp), amin, amax)
     LD.gate("G-PRICE-FLAT",
             not flat and mmin == pmin and len(argm) > 1
-            and not (set(argm) & set(argp)),
+            and not (set(argm) & set(argp)) and not many,
             "price minimisation selects no completion either: the "
             "convention-free cross budget -- the sum over BOTH signs of "
             "every cross direction -- is constant on the whole completion "
             "space at every seam type, and the one-sided reading is a sign "
-            "convention whose minimising set is many-valued and moves to a "
-            "disjoint set when the convention is reversed",
+            "convention whose minimising set is many-valued at EVERY one of "
+            "the %d seam types (%d completions at the all-simple seam, "
+            "between %d and %d over the census) and moves to a disjoint set "
+            "when the convention is reversed"
+            % (len(lattice_rows), len(argm), amin, amax),
             {"seams_with_a_non_constant_budget": flat,
              "minus_convention_min": mmin, "plus_convention_min": pmin,
              "minus_argmin": len(argm), "plus_argmin": len(argp),
+             "one_sided_argmin_range": [amin, amax],
+             "seams_where_the_one_sided_minimiser_is_unique": many,
              "argmin_sets_disjoint": not (set(argm) & set(argp))})
 
-    # criterion 3: refinement stability, through LOR's ceiling law
-    union_min = 1
-    ceiling = (union_min).bit_length() - 1
-    if mut("MUT-REFINEMENT"):
-        ceiling = (2).bit_length() - 1
+    # criterion 3: refinement stability, through LOR's ceiling law.  The
+    # minimum count is MEASURED over the whole family above, not typed: it is
+    # the whole of this criterion and the delivered instrument asserted it.
+    ceiling = ((union_max if mut("MUT-REFINEMENT") else union_min)
+               .bit_length() - 1)
     par_empty = [r["seam"] for r in lattice_rows if r["parity_stable"] == 0]
     par_one = [r["seam"] for r in lattice_rows if r["parity_stable"] == 1]
-    reg(ceiling, len(par_empty), len(par_one))
+    reg(ceiling, len(par_empty), len(par_one), union_min, union_max)
     LD.gate("G-REFINEMENT",
             ceiling == 0
             and len(par_empty) + len(par_one) == len(lattice_rows)
             and len(par_one) == 1
             and par_one == [str((tuple([1] * 3), tuple([1] * 3)))],
             "refinement stability is EMPTY at this record: the union's own "
-            "minimum count is 1, so paper-04's ceiling law grants zero "
-            "consecutive steps and the criterion has nothing to act on; read "
-            "as a hypothetical -- would the completion survive one dyadic "
-            "halving -- it is empty at 48 of the 49 seam types and selects "
-            "exactly the direct sum at the 49th, the all-simple seam",
-            {"union_min_count": union_min, "ceiling": ceiling,
+            "minimum count, measured over all %d gluings of the family, is "
+            "%d, so paper-04's ceiling law grants %d consecutive steps and "
+            "the criterion has nothing to act on; read as a hypothetical -- "
+            "would the completion survive one dyadic halving -- it is empty "
+            "at %d of the %d seam types and selects exactly the direct sum "
+            "at the remaining one, the all-simple seam"
+            % (total, union_min, ceiling, len(par_empty), len(lattice_rows)),
+            {"union_min_count": union_min, "union_max_count": union_max,
+             "ceiling": ceiling, "measured_over_gluings": total,
              "parity_empty": len(par_empty), "parity_singleton": len(par_one),
-             "singleton_seam": par_one})
+             "singleton_seam": par_one, "anchor": "N-LOR-CEILING"})
 
     # the un-licensed selector, named
     fisch = [r["seam"] for r in lattice_rows
              if not (r["argmax_is_direct_sum"] and r["n_argmax"] == 1)]
-    if mut("MUT-FISCHER"):
-        fisch = fisch + ["injected"]
+    offpos_bad = [r["seam"] for r in lattice_rows
+                  if r["admissible_not_posdef_with_positive_determinant"]]
+    n_offpd = sum(1 for r in lattice_rows if r["admissible_not_posdef"])
+    reg(n_offpd)
     LD.gate("G-FISCHER",
-            not fisch,
+            not fisch and not offpos_bad,
             "one extremal principle DOES select, and it is not a law of this "
             "corpus: the determinant is maximised on the admissible "
             "positive-definite lattice uniquely at the direct sum, at every "
-            "one of the 49 seam types -- so the seam's freedom is "
-            "irreducible relative to the DECLARED laws, not in principle",
+            "one of the %d seam types -- Fischer's inequality doing the work "
+            "on the positive-definite points, and the census covering the "
+            "rest, since at the %d seam types whose admissible lattice "
+            "reaches outside the positive-definite one not a single "
+            "completion out there has positive determinant -- so the seam's "
+            "freedom is irreducible relative to the DECLARED laws, not in "
+            "principle"
+            % (len(lattice_rows), n_offpd),
             {"seam_types": len(lattice_rows),
-             "seams_where_the_direct_sum_is_not_the_unique_maximiser": fisch})
+             "seams_where_the_direct_sum_is_not_the_unique_maximiser": fisch,
+             "seams_with_admissible_non_posdef_completions": n_offpd,
+             "seams_where_one_of_those_has_positive_determinant":
+                 offpos_bad})
 
     # SEC's own indefinite witness, reproduced and then placed
     W = [Fraction(x) for x in SEC_WITNESS]
@@ -1615,14 +1928,65 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
             and tuple([0] * 4) not in cut,
             "the one crossing the committed grammar actually drives carries "
             "count 1 on the direction b3 - a3, which is one more equation: "
-            "the kernel falls from 4 to 3, the admissible lattice falls from "
-            "31 completions to 8, every one of the 8 is still positive "
-            "definite, and the DIRECT SUM IS NOT AMONG THEM",
+            "the kernel falls from %d to %d, the admissible lattice falls "
+            "from %d completions to %d, every one of the %d is still "
+            "positive definite, and the DIRECT SUM IS NOT AMONG THEM"
+            % (ker0, len(IDX4) - len(pivc), len(pd1), len(cut), len(cut_pd)),
             {"rank_after_one_crossing": len(pivc),
              "kernel_after_one_crossing": len(IDX4) - len(pivc),
              "lattice_before": len(pd1), "lattice_after": len(cut),
              "posdef_after": len(cut_pd),
              "direct_sum_survives": (0, 0, 0, 0) in cut})
+
+    # THE CUT IS NOT A PROPERTY OF THAT DIRECTION.  Every one of the chart's
+    # eighteen cross directions -- nine direction pairs, both signs -- forces
+    # one cross count to 1 when a crossing is driven along it, and the result
+    # is the same at every one: the placement of the crossing is not what
+    # produces the cut, which is the blindness census's finding reached on
+    # the other route.
+    cross_dirs = []
+    for i in range(3):
+        for j in range(3):
+            for s in (1, -1):
+                want = 2 if (mut("MUT-CROSS-DIRECTIONS")
+                             and (i, j, s) == (0, 0, 1)) else 1
+                cd = [U for U in pd1
+                      if cross_counts(nA1, nB1, [[U[0], U[1]],
+                                                 [U[2], U[3]]])[(i, j, s)]
+                      == want]
+                cross_dirs.append({
+                    "direction": str((i, j, s)), "cut": len(cd),
+                    "all_positive_definite":
+                        all(posdef(gram(nA1, nB1, [[U[0], U[1]],
+                                                   [U[2], U[3]]]))
+                            for U in cd),
+                    "direct_sum_survives": (0, 0, 0, 0) in cd})
+    cd_sizes = sorted({r["cut"] for r in cross_dirs})
+    reg(len(cross_dirs))
+    LD.gate("G-CROSS-DIRECTIONS",
+            len(cross_dirs) == 18 and cd_sizes == [len(cut)]
+            and all(r["all_positive_definite"] for r in cross_dirs)
+            and not any(r["direct_sum_survives"] for r in cross_dirs)
+            # and the one-sided minimising set IS the cut set: the criterion
+            # whose argument moves with a convention and the lattice the
+            # measured crossing leaves are one set of completions
+            and set(argm) == set(cut) and set(argp) != set(cut),
+            "the cut is placement-independent: at every one of the %d cross "
+            "directions of the chart the aligned lattice falls %d -> %d, all "
+            "%d survivors are positive definite, and the direct sum is "
+            "excluded at every one -- and the surviving set is exactly the "
+            "one-sided price's minimising set, so the criterion whose "
+            "argument moves with a convention and the lattice the measured "
+            "crossing leaves are the same %d completions"
+            % (len(cross_dirs), len(pd1), len(cut), len(cut), len(cut)),
+            {"directions": len(cross_dirs), "cut_sizes": cd_sizes,
+             "all_positive_definite":
+                 sorted({r["all_positive_definite"] for r in cross_dirs}),
+             "direct_sum_survives_anywhere":
+                 any(r["direct_sum_survives"] for r in cross_dirs),
+             "one_sided_argmin_is_the_cut_set": set(argm) == set(cut),
+             "reversed_convention_is_not": set(argp) != set(cut)})
+    R["cross_directions"] = SEAL.seal("cross_directions", cross_dirs)
     R["seam_selection"] = SEAL.seal("seam_selection", {
         "rank": rank0, "kernel_dim": ker0, "unknowns": len(IDX4),
         "seam_types": len(stypes),
@@ -1636,7 +2000,13 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
         "determinant_selects_the_direct_sum_at": len(lattice_rows),
         "aligned_lattice": len(pd1), "aligned_after_crossing": len(cut),
         "direct_sum_after_crossing": (0, 0, 0, 0) in cut,
-        "minus_argmin": len(argm), "plus_argmin": len(argp)})
+        "minus_argmin": len(argm), "plus_argmin": len(argp),
+        "one_sided_argmin_min": amin, "one_sided_argmin_max": amax,
+        "unshared_site_kernel": lone_ker,
+        "cross_directions": len(cross_dirs),
+        "seams_with_admissible_non_posdef": n_offpd,
+        "both_signs_seam_types": n_both,
+        "union_min_count": union_min, "union_max_count": union_max})
 
     # ---- M2  THE EXTENSION WINDOW ----------------------------------------
     t3clean = (3, (0, 0, 3))
@@ -1713,11 +2083,13 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
     LD.gate("G-LONE-SECTOR",
             lone_aut == DECL["sterility.sector_aut"] and lone_decl == 0
             and len(lone_rel) == len(SECTOR_PAIRS),
-            "the lone sector is rebuilt as the composite's baseline: 9 "
-            "actors, 27 realised pairs, automorphism order 1296, and a site "
-            "form the record determines completely -- three declared links "
-            "give rank 3 on the three entries of Sym^2(Q^2), so a lone "
-            "sector's declaration price is zero",
+            "the lone sector is rebuilt as the composite's baseline: %d "
+            "actors, %d realised pairs, automorphism order %d, and a site "
+            "form the record determines completely -- its three declared "
+            "links give rank %d on the three entries of Sym^2(Q^2), so a "
+            "lone sector's declaration price is %d"
+            % (len(lone_actors), len(lone_rel), lone_aut, len(lpiv),
+               lone_decl),
             {"actors": len(lone_actors), "pairs": len(lone_rel),
              "aut": lone_aut, "declaration_price": lone_decl,
              "rank": len(lpiv)})
@@ -1756,18 +2128,20 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
             rel2[p] = rel2.get(p, 0) + 1
         return acts, foreign, within, dbl, rel2
 
-    # ORBIT INVARIANCE, measured: a second member of every orbit larger than
-    # one must return the same effect profile as its representative, or the
-    # reduction by the group is not a reduction.
-    orb_checked, orb_bad = 0, []
-    for orb in orbits:
-        if len(orb) < 2:
-            continue
-        orb_checked += 1
-        a0 = group_effect(orb[0])
-        a1 = group_effect(orb[1])
-        if [len(x) for x in a0[1:4]] != [len(x) for x in a1[1:4]]:
-            orb_bad.append(str(orb[0]))
+    def site_assignment(ms, rel2, target):
+        """I-SITE-ASSIGNMENT by the doubled-pair route: an EMBEDDING map
+        carries the record's edges bijectively onto the target's, so a count
+        field is fixed by where the pairs the union carries twice land, and
+        nothing else.  Agreement with the cell-by-cell route is gated at
+        every published inventory row."""
+        edges = sorted(target["inc"], key=repr)
+        eidx = {e: i for i, e in enumerate(edges)}
+        dbl = [(tuple(p), c) for p, c in rel2.items() if c != 1]
+        keys = set()
+        for m in ms:
+            keys.add(tuple(sorted((eidx[frozenset((m[u], m[v]))], c)
+                                  for (u, v), c in dbl)))
+        return len(keys)
 
     group_rows = []
     for orb in orbits:
@@ -1810,30 +2184,116 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
     nonspan_alive = [r for r in group_rows
                      if r["crossings"] == 0
                      and r["fate_at_the_delivered_target"] == "ALIVE"]
-    reg(n_groups, len(orbits), n_span, n_lawful, len(motivated))
+    n_motivated = sum(r["orbit_size"] for r in motivated)
+    reg(n_groups, len(orbits), n_span, n_lawful, n_motivated)
     for r in group_rows:
         reg(r["orbit_size"], r["crossings"], r["within_sector_new"],
             r["doublings"])
+
+    # ---- THE ORBIT SHORTCUT, DISCHARGED AT EVERY OBJECT (#87) ------------
+    # The columns above are computed at ONE representative per orbit.  The
+    # conjugation argument is sound, but a per-object claim over 455 objects
+    # is not discharged by a spot check of two members on three cardinalities:
+    # every group's FATE and every lawful group's FREE-ITEM COUNT are
+    # recomputed here, object by object, with no orbit reduction at all.
+    obj_rows, obj_bad, theorem_bad = [], [], []
+    obj_prof = Counter()
+    n_obj_lawful = 0
+    for g in GROUPS:
+        acts, foreign, within, dbl, rel2 = group_effect(g)
+        f0 = detect(ACT, rel2, T0, "EMBEDDING", "POSITIVE")["fate"]
+        if foreign:
+            Tm = amalgam(gl3, set(foreign), "T(3,ALIGNED)+CROSS")
+            fm = detect(ACT, rel2, Tm, "EMBEDDING", "POSITIVE")["fate"]
+        else:
+            fm = "NOT-APPLICABLE"
+        nd = 0 if (mut("MUT-THEOREM") and fm == "ALIVE"
+                   and not theorem_bad and not obj_bad) else len(dbl)
+        # THE COUNTING THEOREM, checked at the object: three actors give
+        # three pairs; at most two of them can join the sectors, because a
+        # triangle has no proper two-colouring; so a group that opens no pair
+        # inside a sector must double at least one link the union already
+        # carries -- and G-INVENTORY's own identity makes a doubling the only
+        # thing that buys a free item.
+        if not (len(foreign) + len(within) + nd == 3 and len(foreign) <= 2):
+            theorem_bad.append(str(g))
+        if fm == "ALIVE":
+            n_obj_lawful += 1
+            if len(within) != 0 or nd < 1:
+                theorem_bad.append(str(g))
+            ms = maps_for(ACT, rel2, Tm, "EMBEDDING", MAP_CAP)
+            sa = site_assignment(ms, rel2, Tm)
+            phi = ms[0]
+            labs = len({fkey(count_field(Tm, rel2, phi, {"A": pa, "B": pb},
+                                         NOFLIP))
+                        for pa in PERMS3 for pb in PERMS3})
+            oris = len({fkey(count_field(Tm, rel2, phi, IDPERM,
+                                         {"A": oa, "B": ob}))
+                        for oa in (False, True) for ob in (False, True)})
+            free = sum(1 for v in (sa, labs, oris) if v > 1)
+            obj_prof[(len(foreign), nd, sa, labs, oris, free)] += 1
+            if free == 0:
+                obj_bad.append(str(g))
+    # every orbit row's own columns must agree with every one of its members
+    for orb in orbits:
+        rep = group_effect(orb[0])
+        for g in orb:
+            got = group_effect(g)
+            if [len(x) for x in got[1:4]] != [len(x) for x in rep[1:4]]:
+                obj_bad.append(str(g))
+    obj_rows = [{"crossings": k[0], "doublings": k[1],
+                 "I-SITE-ASSIGNMENT": k[2], "I-DIRECTION-LABEL": k[3],
+                 "I-ORIENT": k[4], "free_items": k[5], "groups": v}
+                for k, v in sorted(obj_prof.items())]
+    reg(n_obj_lawful)
     LD.gate("G-GROUP-CENSUS",
             n_groups == comb3 and len(GROUPS) == comb3
             and sum(len(o) for o in orbits) == n_groups
-            and perm_is_group and not orb_bad and orb_checked > 0,
+            and perm_is_group and not obj_bad
+            and n_obj_lawful == n_lawful,
             "the arena's three-actor groups -- every conflict group the "
             "layer could put a division event on -- are censused "
             "exhaustively and reduced by the union's own automorphism group "
-            "to 9 orbits whose sizes sum to the group count",
+            "to %d orbits whose sizes sum to the group count; and the "
+            "reduction is discharged at every object rather than sampled: "
+            "all %d groups are re-fated with no orbit shortcut, every "
+            "member's effect profile is compared against its own "
+            "representative's, and the inventory of every one of the %d "
+            "lawful groups is recomputed"
+            % (len(orbits), comb3, n_lawful),
             {"groups": n_groups, "groups_closed_form": comb3,
              "orbits": len(orbits), "group_order": len(AUT),
              "distinct_permutations": len(set(PERM)),
-             "orbits_invariance_checked": orb_checked,
-             "orbits_invariance_failed": orb_bad,
+             "objects_re_fated": len(GROUPS),
+             "objects_lawful_without_the_shortcut": n_obj_lawful,
+             "per_object_disagreements": obj_bad[:8],
              "orbit_sizes": sorted(Counter(len(o) for o in orbits).items())})
+    LD.gate("G-MOTIVATED-THEOREM",
+            not theorem_bad and n_motivated == 0 and obj_rows
+            and all(r["free_items"] > 0 for r in obj_rows)
+            and sum(r["groups"] for r in obj_rows) == n_lawful,
+            "MOTIVATED at %d of %d is not a tally that came out that way. A "
+            "conflict group has three actors, hence three pairs; at most two "
+            "of them can join the sectors, because a triangle admits no "
+            "proper two-colouring; so a group that opens no pair inside a "
+            "sector must double at least one link the union already carries "
+            "-- and a doubling is exactly what buys a free item. The "
+            "hypothesis is checked at every one of the %d groups and the "
+            "conclusion at every one of the %d lawful ones, object by object"
+            % (n_motivated, n_lawful, comb3, n_lawful),
+            {"objects_checked": len(GROUPS),
+             "lawful_objects": n_obj_lawful,
+             "motivated_groups": n_motivated,
+             "profiles": obj_rows,
+             "theorem_violations": theorem_bad[:8]})
+    R["object_census"] = SEAL.seal("object_census", obj_rows)
     LD.gate("G-CROSSING-WALL",
             all(r["fate_at_the_delivered_target"] != "ALIVE"
                 for r in spanning) and n_span == span_route2,
             "at the DELIVERED target every seam-spanning group is dead -- "
-            "SEC's wall, generalised here from three chosen specifications "
-            "to all 288 of the arena's seam-spanning groups, exhaustively",
+            "SEC's wall, generalised here from the %d chosen specifications "
+            "to all %d of the arena's seam-spanning groups, exhaustively"
+            % (len(DRIVEN_SPECS), n_span),
             {"seam_spanning_groups": n_span,
              "seam_spanning_second_route": span_route2,
              "alive_at_the_delivered_target":
@@ -1864,34 +2324,128 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
                 out.add(frozenset((u, v)))
         return out
 
-    WINDOW_TARGETS = [
-        ("NONE", set(), 1, "the delivered target: the amalgam, built from "
-         "the lattice and the gluing alone"),
-        ("ONE-AT-ONE-SEAM", cross_at(0, {(2, 2)}), 27,
+    # ---- THE DECLARATION ROUTES, AND THEIR FIBERS, COMPUTED --------------
+    # A fiber is the number of DISTINCT objects a choice produces (paper-19
+    # section 5.4).  Each route below is enumerated over its own index set and
+    # the distinct targets are counted from the link sets themselves, so a
+    # route whose indices collide reports the smaller number.  The delivered
+    # instrument typed 27 and 9 here; the routes produce 24 and 8, and the
+    # three collisions are rendered.
+    def route_members(name):
+        if name == "NONE":
+            return [((), frozenset())]
+        if name == "ONE-AT-ONE-SEAM":
+            return [((s, i, j), frozenset(cross_at(s, {(i, j)})))
+                    for s in range(3) for i in range(3) for j in range(3)]
+        if name == "ONE-AT-EVERY-SEAM":
+            return [((i, j), frozenset(set().union(
+                *[cross_at(s, {(i, j)}) for s in range(3)])))
+                for i in range(3) for j in range(3)]
+        if name == "SEAM-MAP":
+            return [(p, frozenset(set().union(
+                *[cross_at(s, {(t, p[t]) for t in range(3)})
+                  for s in range(3)]))) for p in PERMS3]
+        return [((), frozenset(set().union(
+            *[cross_at(s, {(i, j) for i in range(3) for j in range(3)})
+              for s in range(3)])))]
+
+    # (route, the member this unit RUNS, what the route declares)
+    ROUTES = [
+        ("NONE", (),
+         "the delivered target: the amalgam, built from the lattice and the "
+         "gluing alone"),
+        ("ONE-AT-ONE-SEAM", (0, 2, 2),
          "one declared cross link at one declared shared site"),
-        ("ONE-AT-EVERY-SEAM", set().union(*[cross_at(s, {(2, 2)})
-                                            for s in range(3)]), 9,
+        ("ONE-AT-EVERY-SEAM", (2, 2),
          "one declared cross direction at every shared site"),
-        ("SEAM-MAP", set().union(*[cross_at(s, {(0, 0), (1, 1), (2, 2)})
-                                   for s in range(3)]), 6,
+        ("SEAM-MAP", (0, 1, 2),
          "a declared bijection of the two charts' link directions, at every "
          "shared site"),
-        ("FULL-CROSS", set().union(*[cross_at(s, {(i, j) for i in range(3)
-                                                 for j in range(3)})
-                                     for s in range(3)]), 1,
+        ("FULL-CROSS", (),
          "every forward cross direction at every shared site"),
     ]
+    fiber_rows, collisions, WINDOW_TARGETS = [], [], []
+    declarable = set()
+    fiber_bad = []
+    for (nm, run_ix, why) in ROUTES:
+        mem = route_members(nm)
+        by = {}
+        for (ix, X) in mem:
+            declarable |= set(X)
+            by.setdefault(ix if mut("MUT-DECL-FIBER") else X, []).append(ix)
+        # SECOND ROUTE to the same number, taken on the link sets alone
+        distinct2 = len({X for (_ix, X) in mem})
+        if len(by) != distinct2:
+            fiber_bad.append(nm)
+        for v in sorted(by.values(), key=str):
+            if len(v) > 1:
+                X = dict(mem)[v[0]]
+                collisions.append({"target": nm,
+                                   "declarations": [str(x) for x in v],
+                                   "declares": sorted(
+                                       str(tuple(sorted(map(str, e))))
+                                       for e in X)})
+        links = sorted({len(X) for (_ix, X) in mem})
+        runX = dict(mem)[run_ix]
+        fiber_rows.append({
+            "target": nm, "declarations": len(mem),
+            "declaration_fiber": distinct2,
+            "collisions": len(mem) - distinct2,
+            "declared_links_over_the_fiber":
+                ", ".join(str(x) for x in links),
+            "member_run": str(run_ix) if run_ix != () else "the only member",
+            "why": why})
+        WINDOW_TARGETS.append((nm, set(runX), len(by), why))
+    reg(len(declarable), len(FOREIGN))
+    for row in fiber_rows:
+        reg(row["declarations"], row["declaration_fiber"],
+            row["collisions"])
+    LD.gate("G-DECLARATION-FIBER",
+            not fiber_bad
+            and all(r["declaration_fiber"] <= r["declarations"]
+                    for r in fiber_rows)
+            and len(fiber_rows) == len(ROUTES)
+            and sum(r["collisions"] for r in fiber_rows) == len(collisions)
+            and len(declarable) < len(FOREIGN)
+            and declarable == set(WINDOW_TARGETS[4][1]),
+            "every target's declaration fiber is COMPUTED from the live "
+            "window construction and never typed: each route is enumerated "
+            "over its own index set and the distinct declared targets are "
+            "counted from the link sets themselves, so a route whose indices "
+            "collide reports the smaller number -- %s. And the window's "
+            "reach is named where it is born: the routes take FORWARD cross "
+            "directions only, so they can declare %d of the arena's %d "
+            "cross links, which is exactly what the widest target declares"
+            % ("; ".join("%s %d -> %d" % (r["target"], r["declarations"],
+                                          r["declaration_fiber"])
+                         for r in fiber_rows),
+               len(declarable), len(FOREIGN)),
+            {"rows": fiber_rows, "collisions": collisions,
+             "second_route_disagreements": fiber_bad,
+             "declarable_cross_links": len(declarable),
+             "cross_links_in_the_arena": len(FOREIGN)})
+    R["declaration_fibers"] = SEAL.seal("declaration_fibers", fiber_rows)
+    R["fiber_collisions"] = SEAL.seal("fiber_collisions", collisions)
+
     grid = []
     for (tname, X, fiber, why) in WINDOW_TARGETS:
         T = amalgam(gl3, X, "T+" + tname)
-        for reading in ("EMBEDDING", "QUOTIENT", "LAX"):
-            for cl in ("POSITIVE", "NON-NEGATIVE"):
+        for reading in READINGS:
+            for cl in COUNTLEGS:
+                # MUT-COUNT-LEG collapses the NON-NEGATIVE leg onto the
+                # POSITIVE one at the measurement, which is exactly the
+                # corruption "the count leg is not an axis" would be
+                cl2 = ("POSITIVE" if (mut("MUT-COUNT-LEG")
+                                      and cl == "NON-NEGATIVE") else cl)
                 fb = detect(ACT, REL, T, reading, cl)["fate"]
                 fe = detect(ACT, driven[0]["relation"], T, reading,
-                            cl)["fate"]
+                            cl2)["fate"]
                 if mut("MUT-GRID-CELL") and tname == "SEAM-MAP" \
                         and reading == "LAX":
                     fe = "ALIVE"
+                if mut("MUT-QUOT-POS") and tname == "FULL-CROSS" \
+                        and reading == "QUOTIENT" and cl == "POSITIVE":
+                    fb = "ALIVE"
                 # the edge-count necessary condition, computed from the
                 # two edge sets alone and sharing nothing with the search:
                 # EMBEDDING can only live at equality, QUOTIENT below it and
@@ -1921,33 +2475,75 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
                 (twin["baseline"] == "ALIVE")
                 and (row["with_the_driven_crossing"] == "ALIVE") ==
                 (twin["with_the_driven_crossing"] == "ALIVE"))
-        if mut("MUT-QUOT-POS") and row["target"] == "FULL-CROSS":
-            same = False
         coll.append({"target": row["target"], "agrees": same,
                      "quotient_death": row["baseline"],
                      "embedding_death": twin["baseline"]})
     LD.gate("G-QUOTIENT-POS-COLLAPSE",
             all(c["agrees"] for c in coll)
             and len(coll) == len(WINDOW_TARGETS),
-            "the count leg is not an independent axis of the window: under "
-            "the QUOTIENT reading the positive-count leg forces every "
-            "declared target cell to be realised, which is exactly the "
+            "the count leg collapses onto the reading axis UNDER QUOTIENT AT "
+            "POSITIVE, and only there: requiring every declared cell to "
+            "carry a positive count under the QUOTIENT reading is requiring "
+            "every declared link to be realised, which is exactly the "
             "EMBEDDING reading, and the two agree on LIVENESS cell for cell "
             "at every declared target -- while dying differently when they "
             "die, at structure under EMBEDDING and at count positivity under "
             "QUOTIENT, which is paper-19's own signature for the two "
-            "readings",
+            "readings.  What this gate compares is that identity and nothing "
+            "wider; the other leg is measured by G-COUNT-LEG-AXIS",
             {"targets": len(coll),
              "disagreeing": [c["target"] for c in coll if not c["agrees"]]})
+
+    # ---- THE OTHER LEG IS A GENUINE AXIS, MEASURED ----------------------
+    # Allowing count zero lets a target carry links the record never
+    # realises, and that alone is what makes the driven crossing lawful at
+    # three of the five targets.  The delivered paper said the count leg is
+    # not an axis; its own grid says otherwise, and here is the measurement.
+    leg_flips = []
+    for (tname, _X, _f, _w) in WINDOW_TARGETS:
+        pos = [r for r in grid if r["target"] == tname
+               and r["reading"] == "QUOTIENT"
+               and r["count_leg"] == "POSITIVE"][0]
+        non = [r for r in grid if r["target"] == tname
+               and r["reading"] == "QUOTIENT"
+               and r["count_leg"] == "NON-NEGATIVE"][0]
+        if pos["lawful"] != non["lawful"]:
+            leg_flips.append({"target": tname,
+                              "at_positive": pos["with_the_driven_crossing"],
+                              "at_non_negative":
+                                  non["with_the_driven_crossing"]})
+    lawful_cells = [r for r in grid if r["lawful"]]
+    delivered_legs = sorted({r["target"] for r in grid if r["lawful"]
+                             and r["reading"] in ("EMBEDDING", "QUOTIENT")
+                             and r["count_leg"] == "POSITIVE"})
+    reg(len(lawful_cells), len(leg_flips), len(delivered_legs))
+    LD.gate("G-COUNT-LEG-AXIS",
+            len(leg_flips) > 0 and len(delivered_legs) == 1
+            and len(lawful_cells) > 0
+            and all(f["at_non_negative"] == "ALIVE" for f in leg_flips),
+            "the count leg IS an axis, and this is the unit's real M2 "
+            "result: of the %d cells of the window the driven crossing is "
+            "lawful at %d, and the NON-NEGATIVE leg buys %d of them -- at %s "
+            "the positive leg kills it and allowing count zero does not.  "
+            "Exactly %d target, %s, is lawful with all three delivered legs "
+            "intact; every other lawful cell has paid for itself by relaxing "
+            "one"
+            % (len(grid), len(lawful_cells), len(leg_flips),
+               ", ".join(f["target"] for f in leg_flips),
+               len(delivered_legs), ", ".join(delivered_legs)),
+            {"cells": len(grid), "lawful_cells": len(lawful_cells),
+             "count_leg_flips": leg_flips,
+             "targets_lawful_at_the_delivered_legs": delivered_legs})
     LD.gate("G-EXTENSION-GRID",
-            len(grid) == len(WINDOW_TARGETS) * 3 * 2
+            len(grid) == len(WINDOW_TARGETS) * len(READINGS) * len(COUNTLEGS)
             and all(r["baseline"] in ("ALIVE", "STRUCT-DEAD", "COUNT-DEAD",
                                       "ARITY-DEAD") for r in grid)
             and all(r["count_route_admits"] for r in grid if r["lawful"]),
-            "the declared extension window is run cell by cell -- five "
-            "targets, three readings, two count legs -- and every cell "
-            "returns a measured fate for the baseline record AND for the "
-            "record the driven crossing produces, so no cell is argued",
+            "the declared extension window is run cell by cell -- %d "
+            "targets, %d readings, %d count legs -- and every cell returns a "
+            "measured fate for the baseline record AND for the record the "
+            "driven crossing produces, so no cell is argued"
+            % (len(WINDOW_TARGETS), len(READINGS), len(COUNTLEGS)),
             {"cells": len(grid),
              "lawful_cells": sum(1 for r in grid if r["lawful"]),
              "lawful_cells_the_edge_count_forbids":
@@ -1955,6 +2551,29 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
                   if r["lawful"] and not r["count_route_admits"]],
              "targets": len(WINDOW_TARGETS)})
     R["extension_grid"] = SEAL.seal("extension_grid", grid)
+
+    # LAX ceases to be a test, and that is measured rather than argued: the
+    # relaxed reading admits EVERY crossing the arena can carry, at the
+    # DELIVERED target, which declares none of them.
+    T_lax = amalgam(gl3, set(FOREIGN) if mut("MUT-LAX") else (), "T+LAX")
+    lax_alive = 0
+    for e in FOREIGN:
+        rel_e = dict(REL)
+        rel_e[e] = rel_e.get(e, 0) + 1
+        if detect(ACT, rel_e, T_lax, "LAX", "POSITIVE")["fate"] == "ALIVE":
+            lax_alive += 1
+    reg(lax_alive)
+    LD.gate("G-LAX-VACUITY",
+            lax_alive == len(FOREIGN),
+            "LAX buys the crossing by ceasing to be a test, and the sentence "
+            "is a measurement: with the reading relaxed so that the target's "
+            "incidence merely sits inside the realised relation, every one "
+            "of the %d crossings the arena can carry is ALIVE at the "
+            "DELIVERED target, which declares none of them"
+            % len(FOREIGN),
+            {"crossings": len(FOREIGN), "alive_under_lax": lax_alive,
+             "target": T_lax["name"],
+             "declared_links_of_the_target": len(T_lax["cross"])})
 
     # the blindness census: what the extended dictionary can testify to
     ndx = build(ACT, REL.keys())[2]
@@ -1986,11 +2605,22 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
                       "arenas": norb,
                       "verdict": "BLIND" if norb == 1 else "SIGHTED"})
         reg(len(objs), norb)
-    # the same question put through the real detector
-    sweep1 = sum(1 for e in FOREIGN
-                 if detect(ACT, driven[0]["relation"],
-                           amalgam(gl3, {e}, "T+ONE"), "EMBEDDING",
-                           "POSITIVE")["fate"] == "ALIVE")
+    # the same question put through the real detector.  The r = 1 sweep also
+    # measures the sharper fact: the target does not even have to declare the
+    # link the record realises -- the placements that declare a DIFFERENT one
+    # admit the event too.
+    realised1 = {p for p in [frozenset(q) for q in
+                             combinations(DRIVEN_SPECS[0][1], 2)]
+                 if {x[0] for x in p} == {"A", "B"}}
+    sweep1_other = 0
+    sweep1 = 0
+    for e in FOREIGN:
+        if detect(ACT, driven[0]["relation"], amalgam(gl3, {e}, "T+ONE"),
+                  "EMBEDDING", "POSITIVE")["fate"] == "ALIVE":
+            sweep1 += 1
+            if e not in realised1:
+                sweep1_other += 1
+    reg(sweep1_other)
     d2set = set(p for p in
                 [frozenset(q) for q in combinations(DRIVEN_SPECS[2][1], 2)]
                 if {x[0] for x in p} == {"A", "B"})
@@ -2014,15 +2644,22 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
             "Blindness would show as one arena and every placement "
             "admitting the event; sightedness as many arenas and a strict "
             "sub-count. Both outcomes occur in this one census: at ONE "
-            "crossing the dictionary is blind -- 36 placements, one arena, "
-            "36 of 36 admitted -- and at TWO it is sighted: 630 placements, "
-            "five arenas, 108 of 630 admitted",
+            "crossing the dictionary is blind -- %d placements, %d arena, "
+            "%d of %d admitted, %d of them declaring a link the record does "
+            "not realise -- and at TWO it is sighted: %d placements, %d "
+            "arenas, %d of %d admitted"
+            % (blind[0]["placements"], blind[0]["arenas"], sweep1,
+               blind[0]["placements"], sweep1_other, blind[1]["placements"],
+               blind[1]["arenas"], sweep2, blind[1]["placements"]),
             {"rows": blind, "detector_sweep_at_one_crossing": sweep1,
              "detector_sweep_at_two_crossings": sweep2,
+             "admitted_at_one_crossing_declaring_a_different_link":
+                 sweep1_other,
              "driven_two_set_orbit": driven_orbit2,
              "orbit_size_matches_the_sweep": sweep2 == driven_orbit2})
     R["blindness"] = SEAL.seal("blindness", {
-        "rows": blind, "sweep_one": sweep1, "sweep_two": sweep2})
+        "rows": blind, "sweep_one": sweep1, "sweep_two": sweep2,
+        "sweep_one_declaring_a_different_link": sweep1_other})
 
     # the inventories that price the extension
     inv_rows = []
@@ -2042,6 +2679,22 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
              "the driven crossing from inside the second sector")):
         T = amalgam(gl3, X, "T+" + nm)
         iv = inventory(ACT, rel2, T)
+        ms = maps_for(ACT, rel2, T, "EMBEDDING", MAP_CAP)
+        # SECOND ROUTE to I-SITE-ASSIGNMENT, on the doubled pairs alone
+        sa2 = site_assignment(ms, rel2, T)
+        # the label and orient fibers are read at ONE base map by
+        # construction; here they are re-read at a declared sweep of them,
+        # because paper-19 measured their base-map independence and this unit
+        # inherits the standard rather than the sentence
+        swept_maps = min(len(ms), LABEL_ORIENT_SWEEP)
+        labset = {len({fkey(count_field(T, rel2, phi, {"A": pa, "B": pb},
+                                        NOFLIP))
+                       for pa in PERMS3 for pb in PERMS3})
+                  for phi in ms[:swept_maps]}
+        oriset = {len({fkey(count_field(T, rel2, phi, IDPERM,
+                                        {"A": oa, "B": ob}))
+                       for oa in (False, True) for ob in (False, True)})
+                  for phi in ms[:swept_maps]}
         row = {"arena": nm, "declared_cross_links": len(X), "note": note,
                "doubled_pairs": sum(1 for v in rel2.values() if v > 1)}
         row.update({"maps": iv["maps"], "complete": iv["complete"],
@@ -2051,45 +2704,68 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
                     ["I-DIRECTION-LABEL"],
                     "I-ORIENT": iv["inventory"]["I-ORIENT"],
                     "free_items": len(iv["free_items"]),
-                    "fate": iv["fate"]})
+                    "fate": iv["fate"],
+                    "site_assignment_second_route": sa2,
+                    "base_maps_swept": swept_maps,
+                    "label_fiber_constant": len(labset) == 1,
+                    "orient_fiber_constant": len(oriset) == 1})
         inv_rows.append(row)
         reg(row["maps"], row["I-SITE-ASSIGNMENT"], row["I-DIRECTION-LABEL"],
-            row["I-ORIENT"], row["free_items"])
+            row["I-ORIENT"], row["free_items"], swept_maps)
     LD.gate("G-INVENTORY",
             all(r["complete"] for r in inv_rows)
             and all((r["free_items"] == 0) == (r["doubled_pairs"] == 0)
+                    for r in inv_rows)
+            and all(r["site_assignment_second_route"]
+                    == r["I-SITE-ASSIGNMENT"] for r in inv_rows)
+            and all(r["label_fiber_constant"] and r["orient_fiber_constant"]
                     for r in inv_rows),
             "the price is read where the RSQ standard reads it: the map "
-            "enumeration is complete below the declared cap at every row, "
-            "and the free-item count moves -- zero at the delivered arena, "
-            "zero at the crossing taken ALONE, three when the driven "
-            "crossing arrives with the two doublings its conflict group "
-            "forces, two at the crossing driven from inside the second "
-            "sector",
-            {"rows": inv_rows, "cap": MAP_CAP})
+            "enumeration is complete below the declared cap at every row; "
+            "the site-assignment fiber is taken twice, cell by cell and on "
+            "the doubled pairs alone, and the two agree at every row; the "
+            "label and orient fibers are constant over a declared sweep of "
+            "%d base maps rather than read at one; and the free-item count "
+            "moves -- %s -- with a free item bought by a doubling and by "
+            "nothing else"
+            % (LABEL_ORIENT_SWEEP,
+               ", ".join("%d at %s" % (r["free_items"], r["arena"])
+                         for r in inv_rows)),
+            {"rows": inv_rows, "cap": MAP_CAP,
+             "base_map_sweep": LABEL_ORIENT_SWEEP})
     R["inventories"] = SEAL.seal("inventories", inv_rows)
 
+    # PARSED consumption: the pre-registered WALL alternative is read out of
+    # the pin's own quoted sentence, so the word this unit would have had to
+    # publish had the census come out the other way is the pin's, not a
+    # second literal typed here.
+    wall_word = [t.strip("(),.") for t in NEEDLE["N-PIN-OUTCOME"].split()
+                 if t.startswith("GLUING-EVENT-")][0]
     lawful_word = ("GLUING-EVENT-LAWFUL-AT-THE-MATCHED-CROSS-LINK-EXTENSION"
-                   if n_lawful > 0 else
-                   "GLUING-EVENT-UNLAWFUL-AT-ALL-DECLARED-EXTENSIONS")
+                   if n_lawful > 0 else wall_word)
     if mut("MUT-LAWFUL"):
         n_lawful += 1
     LD.gate("G-LAWFUL",
             n_lawful == sum(r["orbit_size"] for r in lawful)
             and n_lawful > 0 and n_span == span_route2 and not motivated
+            and wall_word.startswith("GLUING-EVENT-UNLAWFUL")
             and lawful_word.startswith("GLUING-EVENT-LAWFUL"),
-            "the outcome word is derived from the census and not chosen: a "
-            "seam-spanning division event IS lawful once the target declares "
-            "the cross links the event realises -- at 216 of the 288 "
-            "seam-spanning groups, both driven specifications among them -- "
-            "and it is NEVER motivated: not one lawful arena has zero free "
-            "items",
+            "the outcome word is derived from the census and not chosen -- "
+            "the alternative it would have taken is read out of the pin's "
+            "own bytes (%s): a seam-spanning division event IS lawful once "
+            "the target declares the cross links the event realises, at %d "
+            "of the %d seam-spanning groups, both driven specifications "
+            "among them -- and it is NEVER motivated: not one lawful arena "
+            "has zero free items"
+            % (wall_word, n_lawful, n_span),
             {"seam_spanning": n_span, "lawful": n_lawful,
-             "motivated": len(motivated), "word": lawful_word,
+             "motivated": n_motivated, "word": lawful_word,
+             "wall_alternative": wall_word, "anchor": "N-PIN-OUTCOME",
              "dead_at_the_matched_extension": n_span - n_lawful})
     R["lawfulness"] = SEAL.seal("lawfulness", {
         "seam_spanning_groups": n_span, "lawful": n_lawful,
-        "motivated": len(motivated), "word": lawful_word,
+        "motivated": n_motivated, "word": lawful_word,
+        "wall_alternative": wall_word,
         "orbits": len(orbits)})
 
     # ---- M3  THE COMPOSITE PRICE -----------------------------------------
@@ -2097,31 +2773,59 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
         price_bad = price_bad or ["injected"]
     LD.gate("G-PRICE-LAWS",
             not price_bad,
-            "the five currencies are evaluated on every one of the 45,010 "
+            "the five currencies are evaluated on every one of the %d "
             "composites and on the lone sector, and each obeys an exact law "
             "with zero violations: the record's own price is 54 at every "
-            "gluing, the geometry's budget is 54 + 2d, the declaration price "
-            "is 4k, the carrier count is 18 - k and the link count is 54 - d",
+            "gluing, the geometry's budget is 54 + 2d, the carrier count is "
+            "18 - k and the link count is 54 - d -- and the fifth, the "
+            "declaration price, is not an identity: it is the seam system's "
+            "measured kernel %d summed over the k shared sites plus the "
+            "unshared site's measured kernel %d over the other 18 - 2k, "
+            "which the census then finds equal to 4k at every gluing"
+            % (total, ker0, lone_ker),
             {"gluings": total, "violations": len(price_bad),
+             "seam_kernel": ker0, "unshared_site_kernel": lone_ker,
+             "anchor": "N-PIN-PRICE",
              "laws": {"record": "54", "budget": "54 + 2d",
                       "declaration": "4k", "carriers": "18 - k",
                       "links": "54 - d"}})
+    # THE LONE SECTOR'S OWN FIVE PRICES, MEASURED on the object rebuilt
+    # above, and the composite's laws written from them: nothing in this
+    # table is a typed count.
+    lone_budget = sum(lone_rel[frozenset((("A", x),
+                                          ("A", zadd(x, l))))]
+                      for x in SITES for l in LINKS)
+    LP = {"record": sum(lone_rel.values()), "carrier": len(lone_actors),
+          "links": len(lone_rel), "budget": lone_budget,
+          "decl": lone_decl}
+    for v in LP.values():
+        reg(v)
+
+    def law(base, tail=""):
+        return "%d + %d%s" % (base, base, tail)
+
     price_rows = [
-        {"currency": "the record (division incidences)", "lone_sector": 27,
-         "composite": "54", "law": "27 + 27", "excess": "none",
-         "verdict": "IGNORES"},
-        {"currency": "the carrier (site objects)", "lone_sector": 9,
-         "composite": "18 - k", "law": "9 + 9 - k", "excess": "k fewer",
+        {"currency": "the record (division incidences)",
+         "lone_sector": LP["record"], "composite": "%d" % (2 * LP["record"]),
+         "law": law(LP["record"]), "excess": "none", "verdict": "IGNORES"},
+        {"currency": "the carrier (site objects)",
+         "lone_sector": LP["carrier"],
+         "composite": "%d - k" % (2 * LP["carrier"]),
+         "law": law(LP["carrier"], " - k"), "excess": "k fewer",
          "verdict": "FAVOURS"},
-        {"currency": "the link objects", "lone_sector": 27,
-         "composite": "54 - d", "law": "27 + 27 - d", "excess": "d fewer",
+        {"currency": "the link objects", "lone_sector": LP["links"],
+         "composite": "%d - d" % (2 * LP["links"]),
+         "law": law(LP["links"], " - d"), "excess": "d fewer",
          "verdict": "FAVOURS"},
         {"currency": "the geometry's budget (counts over cells)",
-         "lone_sector": 27, "composite": "54 + 2d", "law": "27 + 27 + 2d",
-         "excess": "2d more", "verdict": "PENALIZES"},
+         "lone_sector": LP["budget"],
+         "composite": "%d + 2d" % (2 * LP["budget"]),
+         "law": law(LP["budget"], " + 2d"), "excess": "2d more",
+         "verdict": "PENALIZES"},
         {"currency": "the declaration (independent numbers)",
-         "lone_sector": 0, "composite": "4k", "law": "0 + 0 + 4k",
-         "excess": "4k more", "verdict": "PENALIZES"},
+         "lone_sector": LP["decl"], "composite": "%dk" % ker0,
+         "law": law(LP["decl"], " + %dk" % ker0), "excess": "%dk more" % ker0,
+         "verdict": "PENALIZES"},
     ]
     if mut("MUT-PRICE-VERDICT"):
         price_rows[0]["verdict"] = "PENALIZES"
@@ -2157,11 +2861,54 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
     LD.gate("G-SEAM-CONFINED-PRICE",
             seam_excess_ok,
             "and the excess is SEAM-CONFINED: the declaration price is "
-            "carried entirely by the shared sites -- four numbers each, "
-            "twelve at the k = 3 seam -- while every unshared site's form is "
-            "determined exactly as it is in a lone sector",
+            "carried entirely by the shared sites -- %d numbers each, %d at "
+            "the k = %d seam -- while every unshared site's form is "
+            "determined exactly as it is in a lone sector, kernel %d"
+            % (per_site, excess_sites, len(gl3), lone_ker),
             {"shared_sites": len(gl3), "per_site": per_site,
-             "total": excess_sites, "unshared_site_price": 0})
+             "total": excess_sites, "unshared_site_price": lone_ker})
+
+    # ---- THE RULING'S OWN UNIVERSE, MEASURED ----------------------------
+    # #322's ruling -- "no sector-private link ever moves" -- is a statement
+    # about what GLUING does, and there it holds exactly, over the whole
+    # family.  The extension arenas of M2 are not in that universe: a
+    # division event that crosses the seam necessarily doubles links that
+    # touch an unshared actor, and that is the mechanism M2's price measures.
+    ev_universe = []
+    for d in (driven[0], driven[2]):
+        touched = sorted(str(tuple(sorted(map(str, p))))
+                         for p, v in d["relation"].items()
+                         if v > 1 and any(x[0] != "S" for x in p))
+        inside = sorted(p for p in touched if "'S'" not in p)
+        ev_universe.append({"spec": d["spec"],
+                            "private_doublings": len(touched),
+                            "wholly_inside_one_sector": len(inside),
+                            "pairs": touched})
+    reg(private_doubled)
+    for r in ev_universe:
+        reg(r["private_doublings"], r["wholly_inside_one_sector"])
+    LD.gate("G-SEAM-CONFINED-UNIVERSE",
+            private_doubled == 0
+            and all(r["private_doublings"] > 0 for r in ev_universe)
+            and len(ev_universe) == 2,
+            "the adjudication's ruling is carried AT ITS OWN UNIVERSE, and "
+            "the two universes are measured against each other rather than "
+            "conflated: over every one of the %d gluings -- the family the "
+            "ruling was measured on -- the number of pairs the union carries "
+            "twice with an endpoint no gluing shares is %d, exactly as "
+            "ruled; while the two arenas M2 drives an added event into carry "
+            "%s such pairs, one of them wholly inside a single sector.  The "
+            "ruling is about what gluing does; those numbers are about what "
+            "an added event does"
+            % (total, private_doubled,
+               " and ".join(str(r["private_doublings"])
+                            for r in ev_universe)),
+            {"gluings": total,
+             "private_doublings_over_the_whole_family": private_doubled,
+             "driven_arenas": ev_universe})
+    R["seam_confinement"] = SEAL.seal("seam_confinement", {
+        "gluings": total, "private_doublings": private_doubled,
+        "driven_arenas": ev_universe})
     mine["contrast.k3_aligned_new_structure.seam_undetermined_entries"] = \
         excess_sites
     mine["sterility.pairs"] = 54
@@ -2202,6 +2949,17 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
             ptext = ""
     if mut("MUT-PAPER-ABSENT"):
         ptext = ""
+    # THE PAPER LEG CANNOT PASS BY BEING ABSENT.  This fires BEFORE the three
+    # walls, so no wall is ever evaluated on empty text: in the delivered
+    # instrument `--verify-paper` on an empty file and `--no-write` with the
+    # paper deleted both passed every wall vacuously.
+    LD.gate("G-PAPER-PRESENT",
+            bool(ptext) or not PAPER_REQUIRED[0],
+            "the paper is part of the delivered object: every run that "
+            "reaches the walls must have it in hand, so a wall can never be "
+            "satisfied by there being no text to scan",
+            {"present": bool(ptext), "required": PAPER_REQUIRED[0],
+             "path": paper_rel})
     wtext = ptext
     if mut("MUT-WALL-SEAM"):
         wtext = wtext + "\nAnd a sector's own geometry is changed by an " \
@@ -2225,41 +2983,87 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
         xtext = ptext.replace(wall_sentence, "Every extension measured here "
                               "is the theory")
     LD.gate("G-WALL-EXTENSION",
-            ext_stamped and (not xtext or locate(xtext, wall_sentence) >= 1),
+            ext_stamped and bool(xtext)
+            and locate(xtext, wall_sentence) >= 1
+            and locate_ci(xtext, "Every extension measured here is the "
+                          "theory") == 0,
             "the extension wall: every target in the window carries its "
             "declaration fiber, and the paper carries the sentence that no "
-            "extension measured here is claimed to be the theory -- an "
-            "extension is a declaration, priced, and nothing more",
+            "extension measured here is claimed to be the theory and nowhere "
+            "its inverse -- an extension is a declaration, priced, and "
+            "nothing more.  The wall is evaluated on the paper's own bytes "
+            "and fails, rather than passes, when there are none",
             {"rows": len(grid), "stamped": ext_stamped,
              "lawful_at_the_delivered_legs": off_wall,
              "sentence_in_paper": bool(xtext)
              and locate(xtext, wall_sentence) >= 1})
+    # PARSED consumption: the clause the paper must carry is taken out of the
+    # adjudication's own quoted ruling, not typed again here.
+    ruling = NEEDLE["N-ADJ-SEAM"]
+    carried = ruling.split(": ", 1)[1].split(";")[0].strip()
     leak = "a sector's own geometry is changed by an event in the other"
     LD.gate("G-WALL-SEAMCONFINED",
-            (locate(wtext, "SEAM-CONFINED") >= 1
-             and locate(wtext, leak) == 0) if wtext else True,
+            bool(wtext) and locate(wtext, "SEAM-CONFINED") >= 1
+            and locate_ci(wtext, carried) >= 1
+            and locate_ci(wtext, leak) == 0,
             "the #322 ruling is carried, not re-litigated: the paper speaks "
-            "of SEAM-CONFINED compositionality and the reversed leak wording "
-            "does not occur anywhere in it, under the #125 normaliser",
+            "of SEAM-CONFINED compositionality, carries the ruling's own "
+            "clause -- '%s' -- and the reversed leak wording does not occur "
+            "anywhere in it, at either case, under the #125 normaliser"
+            % carried,
             {"seam_confined_hits": locate(wtext, "SEAM-CONFINED")
              if wtext else None,
-             "leak_hits": locate(wtext, leak) if wtext else None,
+             "clause_from_the_anchor": carried, "anchor": "N-ADJ-SEAM",
+             "clause_hits": locate_ci(wtext, carried) if wtext else None,
+             "leak_hits": locate_ci(wtext, leak) if wtext else None,
              "paper_absent": not wtext})
     scan_hits = sorted({t for t in FORBIDDEN_TERMS
                         if wtext and t in canon(wtext).lower()})
     LD.gate("G-WALL-SCAN",
-            not scan_hits,
+            not scan_hits and bool(wtext),
             "no reading of the union as anything larger is taken: the paper "
             "is scanned for the terms whose presence would mean the reading "
-            "was taken, and none occurs",
+            "was taken, and none occurs -- on text that is there to scan",
             {"terms": len(FORBIDDEN_TERMS), "hits": scan_hits,
              "paper_absent": not wtext})
+
+    # ---- EVERY ANCHOR IS CONSUMED, AND THE CONSUMPTION IS CHECKED --------
+    cons_bad, cons_rows = [], []
+    fired = set(LD.names()) | set(LATER_GATES) | {"G-COVERAGE",
+                                                  "G-READ-SET"}
+    ev_anchors = {r["evidence"].get("anchor") for r in LD.rows
+                  if isinstance(r["evidence"], dict)}
+    for a in anch:
+        nid, mode, cons = a["id"], a["consumption"], a["consumer"]
+        ok = cons in fired
+        if ok and mode == "QUOTED":
+            ok = bool(wtext) and locate(wtext, NEEDLE[nid]) >= 1
+        elif ok and mode in ("PARSED", "GATE"):
+            ok = nid in ev_anchors
+        cons_rows.append({"id": nid, "consumer": cons, "mode": mode,
+                          "ok": ok})
+        if not ok:
+            cons_bad.append(nid)
+    LD.gate("G-ANCHOR-CONSUMPTION",
+            not cons_bad and len(cons_rows) == len(VERBATIM),
+            "every anchor names a gate that this run actually emits, and "
+            "every anchor is CONSUMED in the mode it declares: PARSED means "
+            "the gate reads its own operand out of the anchor's bytes and "
+            "says so in its evidence row, GATE means the consumer names the "
+            "anchor there, QUOTED means the paper under test carries the "
+            "anchor verbatim -- so a consumer renamed to a gate that does "
+            "not exist, or an anchor located and then discarded, fails here",
+            {"rows": cons_rows, "bad": cons_bad})
+    R["anchor_consumption"] = SEAL.seal("anchor_consumption", cons_rows)
 
     # ---- S8  THE VERDICT -------------------------------------------------
     V = build_verdict(R, lattice_rows, blind, price_rows, group_rows,
                       lawful_word, n_span, n_lawful, len(orbits),
                       len(stypes), sites_total, ceiling, par_one,
-                      len(pd1), len(cut), inv_rows)
+                      len(pd1), len(cut), inv_rows, len(grid),
+                      len(lawful_cells), len(delivered_legs), ker0)
+    if mut("MUT-VERDICT"):
+        V[0] = V[0].replace("IRREDUCIBLE", "SELECTED", 1)
     R["verdict"] = SEAL.seal("verdict", V)
     R["standards"] = SEAL.seal("standards", {
         "exact_arithmetic": "fractions.Fraction and Python ints only",
@@ -2268,59 +3072,93 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
                    "every ratio here is a count over an exhaustive "
                    "enumeration with its denominator beside it (E-24)",
         "arena": {
-            "boundary": "the 54 (chart, site, link) cells of two copies of "
+            "boundary": "the %d (chart, site, link) cells of two copies of "
                         "AG(2, 3) with links (1, 0), (0, 1) and (1, 1), "
-                        "plus the declared cross links of each extension",
-            "family": "the 45,010 gluings in 16 combinatorial types on 12 "
-                      "union arenas; the 455 three-actor groups of the k = 3 "
-                      "aligned union in 9 orbits",
+                        "plus the declared cross links of each extension"
+                        % (2 * len(SITES) * len(LINKS)),
+            "family": "the {:,} gluings in {} combinatorial types on {} "
+                      "union arenas; the {} three-actor groups of the k = 3 "
+                      "aligned union in {} orbits".format(
+                          total, len(typecount), n_arenas, n_groups,
+                          len(orbits)),
             "law": "the co-division relation of the saturating arrangement, "
                    "I7's readout (a count is the squared length of its link "
                    "direction), HA's admissibility, paper-04's ceiling law",
-            "state": "the completion of the seam's four undetermined "
-                     "entries",
+            "state": "the completion of the seam's %d undetermined entries"
+                     % ker0,
             "arena_axes": "the five declared window axes: target, reading, "
                           "count leg, and (held fixed here) carrier and link "
                           "individuation",
             "provenance": "5 sources read at pinned shas; the 4 #301 SEC "
                           "objects declared at commit " + SEC301["commit"][:7]
                           + " and bound by reproduction"}})
+    def spread(key):
+        """a measured item's fiber, rendered from the values the run
+        actually returned rather than hand-listed beside them."""
+        vals = sorted({r[key] for r in inv_rows})
+        return (", ".join(str(v) for v in vals[:-1]) + " or " +
+                str(vals[-1])) if len(vals) > 1 else str(vals[0])
+
     R["choices"] = SEAL.seal("choices", [
         {"item": "the base object: two driven R = 3 saturating sectors",
          "cls": "forced", "fiber": "1",
          "binds": "paper-19's own arena, inherited at its pinned sha"},
         {"item": "the gluing, and k", "cls": "declared, the axis",
-         "fiber": "45010", "binds": "every member enumerated"},
+         "fiber": str(total),
+         "binds": "M1 and M3, every member enumerated"},
+        {"item": "the union arena of the extension census",
+         "cls": "declared", "fiber": "%d (1 run)" % n_arenas,
+         "binds": "M2 and M4 entire; the seam census and the price laws are "
+                  "exhaustive over all %d gluings" % total},
         {"item": "the seam chart: the direct sum",
          "cls": "declared", "fiber": "1",
          "binds": "M1, and the whole completion question lives inside it"},
-        {"item": "the completion of the seam's four entries",
-         "cls": "declared, MEASURED IRREDUCIBLE", "fiber": "31 at the "
-         "all-simple seam", "binds": "M1"},
+        {"item": "the completion of the seam's %d entries" % ker0,
+         "cls": "declared, MEASURED IRREDUCIBLE",
+         "fiber": "%d at the all-simple seam" % len(pd1), "binds": "M1"},
+        {"item": "the seam type function's sign convention",
+         "cls": "declared, MEASURED VERDICT-BEARING", "fiber": "2",
+         "binds": "M1: forward gives %d seam types, both signs %d"
+                  % (len(stypes), n_both)},
         {"item": "the extension window's target axis",
-         "cls": "declared", "fiber": "5", "binds": "M2"},
+         "cls": "declared", "fiber": str(len(WINDOW_TARGETS)),
+         "binds": "M2"},
         {"item": "the extension window's reading axis",
-         "cls": "declared", "fiber": "3", "binds": "M2"},
+         "cls": "declared", "fiber": str(len(READINGS)), "binds": "M2"},
         {"item": "the extension window's count leg",
-         "cls": "declared, MEASURED DEPENDENT", "fiber": "2",
-         "binds": "M2, and it collapses onto the reading axis"},
+         "cls": "declared, MEASURED DEPENDENT UNDER QUOTIENT-AT-POSITIVE "
+                "ONLY", "fiber": str(len(COUNTLEGS)),
+         "binds": "M2: it collapses onto the reading axis at POSITIVE and "
+                  "flips lawfulness at %d targets at NON-NEGATIVE"
+                  % len(leg_flips)},
         {"item": "the carrier and the link individuation",
          "cls": "held at the delivered values", "fiber": "1",
          "binds": "outside this unit's window, named"},
         {"item": "the placement of a declared cross link",
-         "cls": "declared, MEASURED INERT AT ONE CROSSING", "fiber": "36",
-         "binds": "M2's blindness census"},
-        {"item": "I-SITE-ASSIGNMENT", "cls": "measured", "fiber": "1 or 3",
-         "binds": "M2's inventories"},
+         "cls": "declared, MEASURED INERT AT ONE CROSSING",
+         "fiber": str(len(FOREIGN)),
+         "binds": "M2's blindness census sweeps all %d; a target of this "
+                  "window can declare the %d forward ones"
+                  % (len(FOREIGN), len(declarable))},
+        {"item": "which of SEC's specifications are re-run as arena objects",
+         "cls": "declared", "fiber": str(len(DRIVEN_SPECS)),
+         "binds": "M2: the %d the grammar ADMITS are rebuilt, the refused "
+                  "one is not"
+                  % sum(1 for s in DRIVEN_SPECS if s[2] == "ADMITTED")},
+        {"item": "the crossing-alone control", "cls": "declared, NOT DRIVEN",
+         "fiber": "1",
+         "binds": "M2's inventories, to isolate the mechanism"},
+        {"item": "I-SITE-ASSIGNMENT", "cls": "measured",
+         "fiber": spread("I-SITE-ASSIGNMENT"), "binds": "M2's inventories"},
         {"item": "I-DIRECTION-LABEL", "cls": "measured",
-         "fiber": "1, 3 or 9", "binds": "M2's inventories"},
-        {"item": "I-ORIENT", "cls": "measured", "fiber": "1, 2 or 4",
+         "fiber": spread("I-DIRECTION-LABEL"), "binds": "M2's inventories"},
+        {"item": "I-ORIENT", "cls": "measured", "fiber": spread("I-ORIENT"),
          "binds": "M2's inventories"},
         {"item": "the cross-direction admissibility reading",
          "cls": "declared, VERDICT-ROBUST", "fiber": "2",
          "binds": "M1, and the verdict is the same at both readings"},
-        {"item": "the price currencies", "cls": "declared", "fiber": "5",
-         "binds": "M3, all five published"},
+        {"item": "the price currencies", "cls": "declared",
+         "fiber": str(len(price_rows)), "binds": "M3, all five published"},
         {"item": "the three-actor group as the unit of a division event",
          "cls": "forced", "fiber": "1",
          "binds": "d66's committed conflict-group size"},
@@ -2329,9 +3167,9 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
         "axes": [
             {"axis": "TARGET", "members": [t[0] for t in WINDOW_TARGETS],
              "delivered": "NONE"},
-            {"axis": "READING", "members": ["EMBEDDING", "QUOTIENT", "LAX"],
+            {"axis": "READING", "members": list(READINGS),
              "delivered": "EMBEDDING and QUOTIENT"},
-            {"axis": "COUNT LEG", "members": ["POSITIVE", "NON-NEGATIVE"],
+            {"axis": "COUNT LEG", "members": list(COUNTLEGS),
              "delivered": "POSITIVE"},
             {"axis": "CARRIER", "members": ["BARE"],
              "delivered": "BARE, held fixed"},
@@ -2351,50 +3189,72 @@ def full_run(paper_text=None, paper_rel=PAPER_REL):
 def build_verdict(R, lattice_rows, blind, price_rows, group_rows,
                   lawful_word, n_span, n_lawful, n_orbits, n_seams,
                   n_sites, ceiling, par_one, aligned_lat, aligned_cut,
-                  inv_rows):
+                  inv_rows, n_cells, n_lawful_cells, n_delivered_legs,
+                  ker):
+    ss = R["seam_selection"]
     seg1 = ("SEC2-SEAM-DECLARATION-IRREDUCIBLE-[%d SEAM TYPES OVER %d SHARED "
-            "SITES; THE COMPLETION SPACE IS 4-PARAMETER AT EVERY ONE, RANK 6 "
-            "ON 10 BY THE CHART ALONE; AT THE ALL-SIMPLE SEAM %d COMPLETIONS "
-            "ASSIGN ADMISSIBLE COUNTS TO EVERY CROSS DIRECTION AND ALL %d "
-            "ARE POSITIVE DEFINITE] -- POSITIVITY SELECTS NOTHING; THE "
+            "SITES AT THE FORWARD CONVENTION, %d AT THE BOTH-SIGNS ONE; THE "
+            "COMPLETION SPACE IS %d-PARAMETER AT EVERY ONE, RANK %d ON %d BY "
+            "THE CHART ALONE; AT THE ALL-SIMPLE SEAM %d COMPLETIONS ASSIGN "
+            "ADMISSIBLE COUNTS TO EVERY CROSS DIRECTION AND ALL %d ARE "
+            "POSITIVE DEFINITE] -- POSITIVITY SELECTS NOTHING; THE "
             "CONVENTION-FREE PRICE IS CONSTANT ON THE WHOLE SPACE AND THE "
-            "ONE-SIDED READING'S MINIMISER MOVES WITH THE CONVENTION; "
-            "REFINEMENT STABILITY IS EMPTY AT THIS RECORD BY THE CEILING LAW "
-            "(MIN COUNT 1, CEILING %d) AND, GRANTED AS A HYPOTHETICAL, IS "
-            "EMPTY AT 48 OF 49 SEAM TYPES AND SELECTS THE DIRECT SUM AT THE "
-            "49TH -- THE ONE PRINCIPLE THAT DOES SELECT, MAXIMUM "
-            "DETERMINANT, IS NAMED AND NOT LICENSED"
-            % (n_seams, n_sites, aligned_lat, aligned_lat, ceiling))
+            "ONE-SIDED READING'S MINIMISER IS MANY-VALUED AT EVERY SEAM TYPE "
+            "AND MOVES WITH THE CONVENTION; REFINEMENT STABILITY IS EMPTY AT "
+            "THIS RECORD BY THE CEILING LAW (MEASURED MIN COUNT %d, CEILING "
+            "%d) AND, GRANTED AS A HYPOTHETICAL, IS EMPTY AT %d OF %d SEAM "
+            "TYPES AND SELECTS THE DIRECT SUM AT THE LAST -- THE ONE OF THE "
+            "CRITERIA MEASURED THAT DOES SELECT, MAXIMUM DETERMINANT, IS "
+            "NAMED AND NOT LICENSED"
+            % (n_seams, n_sites, ss["both_signs_seam_types"], ker,
+               ss["rank"], ss["unknowns"], aligned_lat, aligned_lat,
+               ss["union_min_count"], ceiling, ss["refinement_empty_at"],
+               n_seams))
     seg2 = ("SEC2-" + lawful_word + "-[THE WINDOW: TARGET x READING x COUNT "
-            "LEG, 30 CELLS, CARRIER AND LINK INDIVIDUATION HELD AT THE "
-            "DELIVERED VALUES; %d THREE-ACTOR GROUPS IN %d ORBITS, %d OF "
-            "THEM SEAM-SPANNING AND EVERY ONE DEAD AT THE DELIVERED TARGET] "
-            "-- LAWFUL AT %d OF %d ONCE THE TARGET DECLARES THE CROSS LINKS "
-            "THE EVENT REALISES, BOTH DRIVEN SPECIFICATIONS AMONG THEM, AND "
-            "MOTIVATED AT 0 OF %d: THE PRICE IS THE WELD ITSELF, FREE ITEMS "
-            "0 -> %d AT THE SHARED-SEEDED CROSSING AND 0 -> %d AT THE "
-            "B-SEEDED ONE, WHILE THE CROSSING TAKEN ALONE COSTS NOTHING AND "
-            "NO THREE-ACTOR GROUP CAN DELIVER IT ALONE"
-            % (sum(r["orbit_size"] for r in group_rows), n_orbits, n_span,
+            "LEG, %d CELLS OF WHICH %d ARE LAWFUL AND EXACTLY %d TARGET IS "
+            "LAWFUL WITH ALL THREE DELIVERED LEGS INTACT, CARRIER AND LINK "
+            "INDIVIDUATION HELD AT THE DELIVERED VALUES; %d THREE-ACTOR "
+            "GROUPS IN %d ORBITS, %d OF THEM SEAM-SPANNING AND EVERY ONE "
+            "DEAD AT THE DELIVERED TARGET] -- LAWFUL AT %d OF %d ONCE THE "
+            "TARGET DECLARES THE CROSS LINKS THE EVENT REALISES, BOTH DRIVEN "
+            "SPECIFICATIONS AMONG THEM, AND MOTIVATED AT 0 OF %d BY A "
+            "COUNTING THEOREM CHECKED AT EVERY ONE OF THEM: THE PRICE IS THE "
+            "WELD ITSELF, FREE ITEMS 0 -> %d AT THE SHARED-SEEDED CROSSING "
+            "AND 0 -> %d AT THE B-SEEDED ONE, WHILE THE CROSSING TAKEN ALONE "
+            "COSTS NOTHING AND NO THREE-ACTOR GROUP CAN DELIVER IT ALONE"
+            % (n_cells, n_lawful_cells, n_delivered_legs,
+               sum(r["orbit_size"] for r in group_rows), n_orbits, n_span,
                n_lawful, n_span, n_lawful, inv_rows[2]["free_items"],
                inv_rows[3]["free_items"]))
-    seg3 = ("SEC2-COMPOSITE-PRICE-SPLITS-[FIVE CURRENCIES ON ALL 45010 "
-            "COMPOSITES AGAINST THE LONE SECTOR, ZERO VIOLATIONS: RECORD 54 "
-            "= 27 + 27 IGNORES COMPOSITION; CARRIERS 18 - k AND LINKS 54 - d "
-            "FAVOUR IT; THE GEOMETRY'S BUDGET 54 + 2d AND THE DECLARATION "
-            "PRICE 4k PENALIZE IT] -- AND THE EXCESS IS SEAM-CONFINED: EVERY "
-            "UNSHARED SITE'S FORM IS DETERMINED EXACTLY AS IN A LONE SECTOR "
-            "AND THE WHOLE SURCHARGE SITS ON THE SHARED SITES, FOUR NUMBERS "
-            "EACH")
+    pr = price_rows
+    seg3 = ("SEC2-COMPOSITE-PRICE-SPLITS-[FIVE CURRENCIES ON ALL %d "
+            "COMPOSITES AGAINST THE LONE SECTOR, ZERO VIOLATIONS: RECORD %s "
+            "= %s %s COMPOSITION; CARRIERS %s AND LINKS %s %s IT; THE "
+            "GEOMETRY'S BUDGET %s AND THE DECLARATION PRICE %s %s IT, THE "
+            "LAST SUMMED FROM THE MEASURED KERNELS %d AT A SHARED SITE AND "
+            "%d AT EVERY OTHER, WITH ADDITIVITY ACROSS SEAMS REGISTERED "
+            "OPEN] -- AND THE EXCESS IS SEAM-CONFINED: EVERY UNSHARED SITE'S "
+            "FORM IS DETERMINED EXACTLY AS IN A LONE SECTOR AND THE WHOLE "
+            "SURCHARGE SITS ON THE SHARED SITES, %d NUMBERS EACH"
+            % (R["price"]["gluings"], pr[0]["composite"], pr[0]["law"],
+               pr[0]["verdict"], pr[1]["composite"], pr[2]["composite"],
+               pr[1]["verdict"].replace("FAVOURS", "FAVOUR"),
+               pr[3]["composite"], pr[4]["composite"],
+               pr[3]["verdict"].replace("PENALIZES", "PENALIZE"),
+               ker, ss["unshared_site_kernel"], ker))
     seg4 = ("SEC2-THE-EXTENDED-DICTIONARY-IS-BLIND-AT-ONE-CROSSING-AND-"
             "SIGHTED-AT-TWO-[%d PLACEMENTS IN %d ARENA AT ONE CROSSING AND "
-            "%d OF %d ADMITTED BY THE DETECTOR; %d PLACEMENTS IN %d ARENAS "
-            "AT TWO AND %d OF %d ADMITTED; %d IN %d AT THREE] -- SO THE "
-            "PLACEMENT OF A SINGLE CROSS LINK IS A GAUGE AND NOT A DATUM, "
-            "AND THE RECORD-FITTED OBJECTION DOES NOT BITE AT ONE CROSSING "
-            "BECAUSE EVERY PLACEMENT GIVES THE SAME ARENA"
+            "%d OF %d ADMITTED BY THE DETECTOR, %d OF THEM DECLARING A "
+            "DIFFERENT LINK FROM THE ONE THE RECORD REALISES; %d PLACEMENTS "
+            "IN %d ARENAS AT TWO AND %d OF %d ADMITTED; %d IN %d AT THREE] "
+            "-- SO THE PLACEMENT OF A SINGLE CROSS LINK IS INERT, A GAUGE AT "
+            "ONE CROSSING AND AT THIS ARENA AND FOR THIS TEST, AND THE "
+            "RECORD-FITTED OBJECTION IS DISARMED IN ITS PLACEMENT HALF "
+            "ALONE: EVERY PLACEMENT GIVES THE SAME ARENA, WHILE THE "
+            "CARDINALITY HALF IS NEITHER DISARMED NOR CLAIMED"
             % (blind[0]["placements"], blind[0]["arenas"],
                R["blindness"]["sweep_one"], blind[0]["placements"],
+               R["blindness"]["sweep_one_declaring_a_different_link"],
                blind[1]["placements"], blind[1]["arenas"],
                R["blindness"]["sweep_two"], blind[1]["placements"],
                blind[2]["placements"], blind[2]["arenas"]))
@@ -2415,63 +3275,89 @@ def reconstruct(R):
     n_groups = 0
     for row in gc:
         n_groups += row["orbit_size"]
+    n_lawful_cells = 0
+    for row in R["extension_grid"]:
+        if row["lawful"]:
+            n_lawful_cells += 1
+    deliv = set()
+    for row in R["extension_grid"]:
+        if row["lawful"] and row["count_leg"] == "POSITIVE" \
+                and row["reading"] != "LAX":
+            deliv.add(row["target"])
     a = ("SEC2-SEAM-DECLARATION-IRREDUCIBLE-[" + str(len(lat)) +
-         " SEAM TYPES OVER " + str(sc["shared_sites"]) + " SHARED SITES; "
-         "THE COMPLETION SPACE IS 4-PARAMETER AT EVERY ONE, RANK " +
+         " SEAM TYPES OVER " + str(sc["shared_sites"]) + " SHARED SITES AT "
+         "THE FORWARD CONVENTION, " + str(sc["both_signs_seam_types"]) +
+         " AT THE BOTH-SIGNS ONE; THE COMPLETION SPACE IS " +
+         str(ss["kernel_dim"]) + "-PARAMETER AT EVERY ONE, RANK " +
          str(ss["rank"]) + " ON " + str(ss["unknowns"]) + " BY THE CHART "
          "ALONE; AT THE ALL-SIMPLE SEAM " + str(ss["aligned_lattice"]) +
          " COMPLETIONS ASSIGN ADMISSIBLE COUNTS TO EVERY CROSS DIRECTION "
          "AND ALL " + str(ss["aligned_lattice"]) + " ARE POSITIVE DEFINITE] "
          "-- POSITIVITY SELECTS NOTHING; THE CONVENTION-FREE PRICE IS "
          "CONSTANT ON THE WHOLE SPACE AND THE ONE-SIDED READING'S MINIMISER "
-         "MOVES WITH THE CONVENTION; REFINEMENT STABILITY IS EMPTY AT THIS "
-         "RECORD BY THE CEILING LAW (MIN COUNT 1, CEILING " +
+         "IS MANY-VALUED AT EVERY SEAM TYPE AND MOVES WITH THE CONVENTION; "
+         "REFINEMENT STABILITY IS EMPTY AT THIS RECORD BY THE CEILING LAW "
+         "(MEASURED MIN COUNT " + str(ss["union_min_count"]) + ", CEILING " +
          str(ss["refinement_ceiling"]) + ") AND, GRANTED AS A HYPOTHETICAL, "
          "IS EMPTY AT " + str(ss["refinement_empty_at"]) + " OF " +
          str(len(lat)) + " SEAM TYPES AND SELECTS THE DIRECT SUM AT THE "
-         "49TH -- THE ONE PRINCIPLE THAT DOES SELECT, MAXIMUM DETERMINANT, "
-         "IS NAMED AND NOT LICENSED")
+         "LAST -- THE ONE OF THE CRITERIA MEASURED THAT DOES SELECT, "
+         "MAXIMUM DETERMINANT, IS NAMED AND NOT LICENSED")
     b = ("SEC2-" + lw["word"] + "-[THE WINDOW: TARGET x READING x COUNT LEG, "
-         + str(len(R["extension_grid"])) + " CELLS, CARRIER AND LINK "
-         "INDIVIDUATION HELD AT THE DELIVERED VALUES; " + str(n_groups) +
-         " THREE-ACTOR GROUPS IN " + str(lw["orbits"]) + " ORBITS, " +
-         str(lw["seam_spanning_groups"]) + " OF THEM SEAM-SPANNING AND "
-         "EVERY ONE DEAD AT THE DELIVERED TARGET] -- LAWFUL AT " +
-         str(lw["lawful"]) + " OF " + str(lw["seam_spanning_groups"]) +
-         " ONCE THE TARGET DECLARES THE CROSS LINKS THE EVENT REALISES, "
-         "BOTH DRIVEN SPECIFICATIONS AMONG THEM, AND MOTIVATED AT " +
-         str(lw["motivated"]) + " OF " + str(lw["lawful"]) + ": THE PRICE "
-         "IS THE WELD ITSELF, FREE ITEMS 0 -> " + str(iv[2]["free_items"]) +
-         " AT THE SHARED-SEEDED CROSSING AND 0 -> " +
-         str(iv[3]["free_items"]) + " AT THE B-SEEDED ONE, WHILE THE "
-         "CROSSING TAKEN ALONE COSTS NOTHING AND NO THREE-ACTOR GROUP CAN "
-         "DELIVER IT ALONE")
-    words = []
+         + str(len(R["extension_grid"])) + " CELLS OF WHICH " +
+         str(n_lawful_cells) + " ARE LAWFUL AND EXACTLY " + str(len(deliv)) +
+         " TARGET IS LAWFUL WITH ALL THREE DELIVERED LEGS INTACT, CARRIER "
+         "AND LINK INDIVIDUATION HELD AT THE DELIVERED VALUES; " +
+         str(n_groups) + " THREE-ACTOR GROUPS IN " + str(lw["orbits"]) +
+         " ORBITS, " + str(lw["seam_spanning_groups"]) + " OF THEM "
+         "SEAM-SPANNING AND EVERY ONE DEAD AT THE DELIVERED TARGET] -- "
+         "LAWFUL AT " + str(lw["lawful"]) + " OF " +
+         str(lw["seam_spanning_groups"]) + " ONCE THE TARGET DECLARES THE "
+         "CROSS LINKS THE EVENT REALISES, BOTH DRIVEN SPECIFICATIONS AMONG "
+         "THEM, AND MOTIVATED AT " + str(lw["motivated"]) + " OF " +
+         str(lw["lawful"]) + " BY A COUNTING THEOREM CHECKED AT EVERY ONE "
+         "OF THEM: THE PRICE IS THE WELD ITSELF, FREE ITEMS 0 -> " +
+         str(iv[2]["free_items"]) + " AT THE SHARED-SEEDED CROSSING AND "
+         "0 -> " + str(iv[3]["free_items"]) + " AT THE B-SEEDED ONE, WHILE "
+         "THE CROSSING TAKEN ALONE COSTS NOTHING AND NO THREE-ACTOR GROUP "
+         "CAN DELIVER IT ALONE")
+    words, comp, laws = [], [], []
     for row in R["price"]["rows"]:
         words.append(row["verdict"])
+        comp.append(row["composite"])
+        laws.append(row["law"])
     c = ("SEC2-COMPOSITE-PRICE-SPLITS-[FIVE CURRENCIES ON ALL " +
          str(R["price"]["gluings"]) + " COMPOSITES AGAINST THE LONE SECTOR, "
-         "ZERO VIOLATIONS: RECORD 54 = 27 + 27 " + words[0] +
-         " COMPOSITION; CARRIERS 18 - k AND LINKS 54 - d " +
-         words[1].replace("FAVOURS", "FAVOUR") + " IT; THE GEOMETRY'S "
-         "BUDGET 54 + 2d AND THE DECLARATION PRICE 4k " +
-         words[3].replace("PENALIZES", "PENALIZE") + " IT] -- AND THE "
+         "ZERO VIOLATIONS: RECORD " + comp[0] + " = " + laws[0] + " " +
+         words[0] + " COMPOSITION; CARRIERS " + comp[1] + " AND LINKS " +
+         comp[2] + " " + words[1].replace("FAVOURS", "FAVOUR") + " IT; THE "
+         "GEOMETRY'S BUDGET " + comp[3] + " AND THE DECLARATION PRICE " +
+         comp[4] + " " + words[3].replace("PENALIZES", "PENALIZE") +
+         " IT, THE LAST SUMMED "
+         "FROM THE MEASURED KERNELS " + str(ss["kernel_dim"]) + " AT A "
+         "SHARED SITE AND " + str(ss["unshared_site_kernel"]) + " AT EVERY "
+         "OTHER, WITH ADDITIVITY ACROSS SEAMS REGISTERED OPEN] -- AND THE "
          "EXCESS IS SEAM-CONFINED: EVERY UNSHARED SITE'S FORM IS DETERMINED "
          "EXACTLY AS IN A LONE SECTOR AND THE WHOLE SURCHARGE SITS ON THE "
-         "SHARED SITES, FOUR NUMBERS EACH")
+         "SHARED SITES, " + str(ss["kernel_dim"]) + " NUMBERS EACH")
     rows = bl["rows"]
     d = ("SEC2-THE-EXTENDED-DICTIONARY-IS-BLIND-AT-ONE-CROSSING-AND-SIGHTED-"
          "AT-TWO-[" + str(rows[0]["placements"]) + " PLACEMENTS IN " +
          str(rows[0]["arenas"]) + " ARENA AT ONE CROSSING AND " +
          str(bl["sweep_one"]) + " OF " + str(rows[0]["placements"]) +
-         " ADMITTED BY THE DETECTOR; " + str(rows[1]["placements"]) +
+         " ADMITTED BY THE DETECTOR, " +
+         str(bl["sweep_one_declaring_a_different_link"]) + " OF THEM "
+         "DECLARING A DIFFERENT LINK FROM THE ONE THE RECORD REALISES; " +
+         str(rows[1]["placements"]) +
          " PLACEMENTS IN " + str(rows[1]["arenas"]) + " ARENAS AT TWO AND " +
          str(bl["sweep_two"]) + " OF " + str(rows[1]["placements"]) +
          " ADMITTED; " + str(rows[2]["placements"]) + " IN " +
          str(rows[2]["arenas"]) + " AT THREE] -- SO THE PLACEMENT OF A "
-         "SINGLE CROSS LINK IS A GAUGE AND NOT A DATUM, AND THE "
-         "RECORD-FITTED OBJECTION DOES NOT BITE AT ONE CROSSING BECAUSE "
-         "EVERY PLACEMENT GIVES THE SAME ARENA")
+         "SINGLE CROSS LINK IS INERT, A GAUGE AT ONE CROSSING AND AT THIS "
+         "ARENA AND FOR THIS TEST, AND THE RECORD-FITTED OBJECTION IS "
+         "DISARMED IN ITS PLACEMENT HALF ALONE: EVERY PLACEMENT GIVES THE "
+         "SAME ARENA, WHILE THE CARDINALITY HALF IS NEITHER DISARMED NOR "
+         "CLAIMED")
     return [a, b, c, d]
 
 
@@ -2479,25 +3365,43 @@ def reconstruct(R):
 # SECTION 8.  THE PAPER GATES
 # ===========================================================================
 
-NUM_RE = re.compile(r"(?<![\w./-])\d[\d,]*(?:/\d+)?(?![\w.])")
+# the numeral scanner.  The prefix exclusions buy digest immunity
+# structurally rather than by a whitelist (a hex digest's digit runs are
+# always preceded by a word character).  The suffix must NOT exclude a
+# following period, or every sentence-final numeral in the paper goes
+# unscanned -- it excludes only a following decimal digit, so "3.1" is a
+# section number and "778899." is a claim.
+NUM_RE = re.compile(r"(?<![\w./-])\d[\d,]*(?:/\d+)?(?![\w])(?!\.\d)")
 PURE_NUM = re.compile(r"^-?\d[\d,]*(?:/\d+)?$")
 DIGEST_KEYS = ("sha256_12", "declared_digest", "chain", "digest", "commit",
                "seal_manifest", "sealed", "unsealed")
 
 
-def table_rows(text):
-    """every markdown table row of the paper, as a tuple of its cells."""
-    out = []
+def table_blocks(text):
+    """every markdown table of the paper, as a list of its rows, each row a
+    tuple of its cells.  Tables are kept APART: a claim gate that pools every
+    row of every table into one multiset cannot see a row transplanted from
+    one table into another, or two tables' headers exchanged."""
+    out, cur = [], []
     for ln in text.split("\n"):
         s = ln.strip()
-        if not s.startswith("|") or not s.endswith("|"):
+        if s.startswith("|") and s.endswith("|"):
+            cells = [canon(c) for c in s.strip("|").split("|")]
+            if all(re.fullmatch(r":?-{2,}:?", c.replace(" ", "")) or c == ""
+                   for c in cells):
+                continue
+            cur.append(tuple(cells))
             continue
-        cells = [canon(c) for c in s.strip("|").split("|")]
-        if all(re.fullmatch(r":?-{2,}:?", c.replace(" ", "")) or c == ""
-               for c in cells):
-            continue
-        out.append(tuple(cells))
+        if cur:
+            out.append(cur)
+            cur = []
+    if cur:
+        out.append(cur)
     return out
+
+
+def table_rows(text):
+    return [r for b in table_blocks(text) for r in b]
 
 
 def cn(*cells):
@@ -2507,9 +3411,12 @@ def cn(*cells):
 def paper_claims(R):
     """EVERY data row and EVERY header row of every table the paper carries
     is a rendered claim of this receipt.  The claim list is built from the
-    receipt alone; the gate then requires the paper's row multiset to be
-    exactly the claim multiset, so a swapped cell dies and a forged extra row
-    dies too."""
+    receipt alone, and it is KEYED BY TABLE: the identifier's first segment
+    names the table the row belongs to, its header row identifies that table
+    in the paper, and the gate then requires each table's row multiset to be
+    exactly that table's claim multiset.  So a swapped cell dies, a forged
+    extra row dies, a duplicated row dies, and a row that is legitimate
+    somewhere else in the paper dies where it does not belong."""
     C = []
     C.append(("seam-h", ("the A side", "the B side", "shared sites",
                          "admissible completions", "positive definite",
@@ -2557,6 +3464,15 @@ def paper_claims(R):
                    str(row["arenas"]),
                    str(sw) if sw is not None else "not run",
                    row["verdict"])))
+    C.append(("fiber-h", ("target", "the declaration route", "declarations",
+                          "declaration fiber", "collisions",
+                          "declared links over the fiber")))
+    for row in R["declaration_fibers"]:
+        C.append(("fiber-" + row["target"],
+                  (canon(row["target"]), canon(row["why"]),
+                   str(row["declarations"]),
+                   str(row["declaration_fiber"]), str(row["collisions"]),
+                   canon(row["declared_links_over_the_fiber"]))))
     C.append(("grid-h", ("target", "declared links", "declaration fiber",
                          "reading", "count leg", "the baseline record",
                          "with the driven crossing")))
@@ -2577,6 +3493,7 @@ def paper_claims(R):
     for row in R["provenance"]:
         C.append(("prov-" + row["id"],
                   (row["id"], row["path"], row["sha256_12"])))
+    C.append(("cnr-h", ("status", "path", "sha256-12")))
     for row in R["cited_not_read"]["objects"]:
         C.append(("cnr-" + row["path"],
                   ("DECLARED, NOT READ", row["path"], row["sha256_12"])))
@@ -2602,14 +3519,36 @@ def paper_claims(R):
 
 def check_claims(R, text):
     C = paper_claims(R)
-    want = Counter(t for _i, t in C)
-    got = Counter(table_rows(text))
-    missing = [list(k) for k in want if got[k] < want[k]]
-    stray = [list(k) for k in got if k not in want]
-    return {"claims": len(C), "paper_rows": sum(got.values()),
+    want, hdr = {}, {}
+    for cid, cells in C:
+        tab = cid.split("-", 1)[0]
+        want.setdefault(tab, Counter())[cells] += 1
+        if cid == tab + "-h":
+            hdr[cells] = tab
+    got, unknown = {}, []
+    for block in table_blocks(text):
+        tab = hdr.get(block[0])
+        if tab is None:
+            unknown.append(list(block[0]))
+            continue
+        got.setdefault(tab, Counter()).update(block)
+    missing, stray = [], []
+    for tab in sorted(want):
+        g = got.get(tab, Counter())
+        for k in want[tab]:
+            if g[k] < want[tab][k]:
+                missing.append([tab] + list(k))
+        for k in g:
+            if g[k] > want[tab].get(k, 0):
+                stray.append([tab] + list(k))
+    absent = sorted(t for t in want if t not in got)
+    ok = not missing and not stray and not unknown and not absent
+    return {"claims": len(C), "tables": len(want),
+            "paper_rows": sum(sum(c.values()) for c in got.values()),
             "missing": missing[:12], "n_missing": len(missing),
             "stray": stray[:12], "n_stray": len(stray),
-            "ok": not missing and not stray}
+            "unrecognised_tables": unknown[:6], "tables_absent": absent,
+            "ok": ok}
 
 
 def paper_coverage(R, text, verdict):
@@ -2661,26 +3600,54 @@ def paper_coverage(R, text, verdict):
             "registry": len(flat), "registry_set": flat}
 
 
-def paper_fences(text, verdict):
+def paper_fences(text, verdict, mult=2):
+    """E-22 in terms: MULTISET EQUALITY, not containment.  The declared
+    multiplicity is 2 -- the head and the Verdict section -- so a ninth fence
+    duplicating a legitimate segment dies, and so does deleting the Verdict
+    section, both of which containment in either direction admits."""
     blocks = re.findall(r"```[a-zA-Z0-9]*\n(.*?)```", text, re.S)
     got = Counter(norm(b) for b in blocks)
-    want = Counter(norm(v) for v in verdict)
+    want = Counter()
+    for v in verdict:
+        want[norm(v)] = mult
     missing = [k[:60] for k in want if got[k] < want[k]]
-    stray = [k[:60] for k in got if k not in want]
-    return {"ok": not missing and not stray, "blocks": len(blocks),
-            "verdict_segments": len(want), "missing": missing,
-            "stray": stray}
+    stray = [k[:60] + " x%d" % got[k] for k in got if got[k] != want.get(k)]
+    return {"ok": got == want, "blocks": len(blocks),
+            "verdict_segments": len(want), "declared_multiplicity": mult,
+            "missing": missing, "stray": stray}
 
 
 def paper_polarity(text):
     bad, rows = [], []
     for (pid, pos, neg) in POLARITY:
-        gp, gn = locate(text, pos), locate(text, neg)
+        gp, gn = locate_ci(text, pos), locate_ci(text, neg)
         rows.append({"id": pid, "positive": gp, "negation": gn})
         if gp < 1 or gn > 0:
             bad.append(pid)
     return {"ok": not bad, "checked": len(POLARITY), "bad": bad,
             "rows": rows}
+
+
+def paper_referents(text, values):
+    """#267 referent binding.  A numeral is not backed by occurring somewhere
+    in the receipt: the unit runs six live populations and a count from one
+    would otherwise validate a sentence about another.  Every numeral that
+    stands immediately before the phrase naming a population must be that
+    population's own measured value."""
+    rows, bad = [], []
+    for (rid, pattern, key) in REFERENTS:
+        want = values[key]
+        seen = []
+        for m in re.finditer(pattern, text, re.I):
+            got = int(m.group(1).replace(",", ""))
+            seen.append(got)
+            if got != want:
+                bad.append("%s: %d where the measurement is %d"
+                           % (rid, got, want))
+        rows.append({"id": rid, "pattern": pattern, "measured": want,
+                     "occurrences": len(seen)})
+    return {"ok": not bad, "rows": rows, "bad": bad,
+            "bound": sum(r["occurrences"] for r in rows)}
 
 
 def paper_spelled(text, reg2):
@@ -2747,10 +3714,17 @@ def render(R, V, LD):
         "%d cross counts below one"
         % (R["sec_witness"]["value"],
            len(R["sec_witness"]["cross_counts_below_one"])))
-    say("  the driven crossing cuts the aligned lattice %d -> %d and "
-        "EXCLUDES the direct sum (%s)"
+    say("  the driven crossing cuts the aligned lattice %d -> %d; direct sum "
+        "in the cut lattice: %s"
         % (ss["aligned_lattice"], ss["aligned_after_crossing"],
-           ss["direct_sum_after_crossing"]))
+           "yes" if ss["direct_sum_after_crossing"] else "no"))
+    say("  and at every one of the %d cross directions of the chart the cut "
+        "is the same %d" % (ss["cross_directions"],
+                            ss["aligned_after_crossing"]))
+    say("  the seam census's convention: FORWARD %d seam types, BOTH SIGNS "
+        "%d, over the same %d shared sites"
+        % (ss["seam_types"], ss["both_signs_seam_types"],
+           R["seam_census"]["shared_sites"]))
     say()
     say("-- M2: THE DICTIONARY EXTENSION " + "-" * 45)
     lw = R["lawfulness"]
@@ -2758,8 +3732,14 @@ def render(R, V, LD):
         "dead at the delivered target"
         % (sum(r["orbit_size"] for r in R["group_census"]), lw["orbits"],
            lw["seam_spanning_groups"]))
-    say("  lawful at the matched extension: %d of %d; motivated at %d"
+    say("  lawful at the matched extension: %d of %d; motivated at %d, by a "
+        "theorem checked at every object"
         % (lw["lawful"], lw["seam_spanning_groups"], lw["motivated"]))
+    say("  the declaration fibers, computed: %s"
+        % "; ".join("%s %d declarations -> %d targets"
+                    % (r["target"], r["declarations"],
+                       r["declaration_fiber"])
+                    for r in R["declaration_fibers"]))
     say("  %-30s %5s %6s %6s %6s %6s %s"
         % ("arena", "links", "maps", "site", "label", "orient", "fate"))
     for row in R["inventories"]:
@@ -2796,17 +3776,20 @@ def render(R, V, LD):
     say("=" * 78)
 
 
-def finish(LD, SEAL, R, V, ptext, t0, write=True, swept=False):
-    # ---- coverage: every gate falsified or waived with a forcing
-    gates = LD.names()
-    targets = {m[1] for m in MUTANTS}
-    uncovered = [g for g in gates if g not in targets and g not in WAIVERS
-                 and g not in LATER_GATES]
-    unreached = [m[0] for m in MUTANTS
-                 if m[1] not in gates and m[1] not in LATER_GATES]
+def finish(LD, SEAL, R, V, ptext, t0, write=True, swept=False, n_swept=0):
+    # ---- coverage: every gate falsified or waived with a forcing.
+    # The gate list is the FULL declared one -- what has already fired, this
+    # gate itself, and the gates declared to fire after it -- not a snapshot
+    # taken before this gate is appended, which would exempt it from its own
+    # check.
+    gates = LD.names() + ["G-COVERAGE"] + [g for g in LATER_GATES
+                                           if g not in LD.names()]
+    targets = {m[1] for m in MUTANTS
+               if not (mut("MUT-COVERAGE") and m[1] == "G-CENSUS")}
+    uncovered = [g for g in gates if g not in targets and g not in WAIVERS]
+    unreached = [m[0] for m in MUTANTS if m[1] not in gates]
     # E-23: the falsifier's published description must match its code
     src = read_bytes(SELF_REL).decode()
-    READLOG.pop()
     # E-23, and not the vacuous form of it: a mutant's name occurring in its
     # own declaration proves nothing.  Every declared falsifier must have an
     # INJECTION SITE -- a mut("NAME") or pick("NAME", ...) call in this file --
@@ -2814,19 +3797,28 @@ def finish(LD, SEAL, R, V, ptext, t0, write=True, swept=False):
     desc_bad = [m[0] for m in MUTANTS
                 if ('mut("%s")' % m[0]) not in src
                 and ('pick("%s"' % m[0]) not in src]
+    # and every anchor's declared consumer must be a gate this run emits --
+    # a phantom consumer is a binding that binds nothing
+    phantom = sorted({a["consumer"] for a in R["anchors"]
+                      if a["consumer"] not in gates})
     LD.gate("G-COVERAGE",
-            not uncovered and not unreached and not desc_bad,
-            "every gate is falsified by one of the declared mutants, each "
-            "dying at its own named gate, or waived with a machine-checked "
-            "forcing; every declared mutant's target gate exists in this "
-            "run, so no falsifier is dead code; and every mutant's published "
-            "description is verified against its own name in the source "
-            "(E-23)",
+            not uncovered and not unreached and not desc_bad and not phantom,
+            "every gate this run declares -- those already fired, this one, "
+            "and the ones declared to fire after it -- is falsified by one "
+            "of the declared mutants, each dying at its own named gate, or "
+            "waived with a machine-checked forcing; every declared mutant's "
+            "target gate exists in this run, so no falsifier is dead code; "
+            "every mutant's published description is verified against its "
+            "own injection site in the source (E-23); and every anchor's "
+            "declared consumer is a gate that exists",
             {"gates": len(gates), "mutants": len(MUTANTS),
              "waived": sorted(WAIVERS), "uncovered": uncovered,
-             "unreached": unreached, "description_mismatch": desc_bad})
+             "unreached": unreached, "description_mismatch": desc_bad,
+             "phantom_consumers": phantom})
     R["coverage"] = SEAL.seal("coverage", {
-        "gates": gates, "mutants": [m[0] for m in MUTANTS],
+        "gates": gates, "n_gates": len(gates),
+        "mutants": [{"mutant": m[0], "gate": m[1], "description": m[2]}
+                    for m in MUTANTS],
         "waivers": {k: v for k, v in WAIVERS.items()},
         "later_gates": list(LATER_GATES)})
 
@@ -2845,25 +3837,17 @@ def finish(LD, SEAL, R, V, ptext, t0, write=True, swept=False):
             {"segments": len(V), "agree": sum(1 for s in same if s)})
 
     # ---- the paper gates, IN the plain run
-    LD.gate("G-PAPER-PRESENT",
-            bool(ptext) or not PAPER_REQUIRED[0],
-            "the paper is part of the delivered object: a run that writes "
-            "artifacts, and every run of the mutant sweep inside it, must "
-            "have the paper in hand, so the paper leg can never pass by "
-            "being absent",
-            {"present": bool(ptext), "required": PAPER_REQUIRED[0],
-             "path": PAPER_REL})
     if ptext:
-        cl = check_claims(R, ptext)
         if mut("MUT-PAPER-CLAIM"):
-            cl = {"ok": False, "claims": cl["claims"], "n_missing": 1,
-                  "missing": [["forged"]], "n_stray": 0, "stray": [],
-                  "paper_rows": cl["paper_rows"]}
+            R["completion_lattice"][0]["lattice"] += 1
+        cl = check_claims(R, ptext)
         LD.gate("G-PAPER-CLAIMS", cl["ok"],
                 "every data row AND every header row of every table in the "
                 "paper is a rendered claim of this receipt, compared as a "
-                "multiset in both directions, so a swapped cell dies and so "
-                "does a forged extra row",
+                "multiset in both directions AND PER TABLE, so a swapped "
+                "cell dies, a forged extra row dies, a duplicated row dies, "
+                "and a row transplanted from one published table into "
+                "another dies where it does not belong",
                 cl)
         cov = paper_coverage(R, ptext, V)
         # the registry SET leaves the evidence before the gate seals it: a
@@ -2876,39 +3860,64 @@ def finish(LD, SEAL, R, V, ptext, t0, write=True, swept=False):
                 "stripped -- is backed by a measured value of this run or by "
                 "the paper's own section numbering (E-22)",
                 cov)
-        fen = paper_fences(ptext, V)
+        fen = paper_fences(ptext + ("\n```\n" + V[0] + "\n```\n"
+                                    if mut("MUT-FENCE") else ""), V)
         LD.gate("G-PAPER-FENCE", fen["ok"],
-                "the paper's fenced blocks are compared as a MULTISET "
-                "against this run's verdict segments, so neither a stale "
-                "verdict nor a forged twin beside the clean one survives",
+                "the paper's fenced blocks are compared against this run's "
+                "verdict segments by MULTISET EQUALITY at the declared "
+                "multiplicity of %d -- the head and the verdict section -- "
+                "so a stale verdict, a forged twin beside the clean one, a "
+                "ninth fence and a deleted verdict block all die (E-22)"
+                % fen["declared_multiplicity"],
                 fen)
-        pol = paper_polarity(ptext)
+        pol = paper_polarity(ptext + ("\nThe freedom is reducible after "
+                                      "all.\n" if mut("MUT-POLARITY")
+                                      else ""))
         LD.gate("G-PAPER-POLARITY", pol["ok"],
                 "each polarity row carries its own negation, so the gate "
                 "tests the sign it names: the paper must assert the measured "
-                "direction and must nowhere assert its inverse",
+                "direction and must nowhere assert its inverse, at either "
+                "case -- and the rows cover the headline direction words in "
+                "the paper's own prose, not only the ones inside a fence",
                 pol)
-        sp = paper_spelled(ptext, regset)
+        sp = paper_spelled(ptext + ("\nA forged total of nine hundred and "
+                                    "ninety-seven.\n" if mut("MUT-SPELLED")
+                                    else ""), regset)
         LD.gate("G-PAPER-SPELLED", sp["ok"],
-                "a numeral spelled in words above twelve is a claim like any "
-                "other and must have its integer in the measured registry",
+                "a numeral spelled in words is a claim like any other and "
+                "must have its integer in the measured registry; the forms "
+                "scanned are generated from zero to nine hundred and "
+                "ninety-nine rather than listed, so there is no floor and no "
+                "whitelist for a head numeral to hide under",
                 sp)
+        ref = paper_referents(ptext, {
+            "n_seam_types": R["seam_selection"]["seam_types"],
+            "n_shared_sites": R["seam_census"]["shared_sites"],
+            "n_groups": sum(r["orbit_size"] for r in R["group_census"]),
+            "n_seam_spanning": R["lawfulness"]["seam_spanning_groups"],
+            "n_gluings": (R["seam_census"]["shared_sites"]
+                          if mut("MUT-REFERENT")
+                          else R["price"]["gluings"]),
+            "n_kernel": R["seam_selection"]["kernel_dim"],
+            "n_lawful": R["lawfulness"]["lawful"],
+            "n_placements": R["blindness"]["rows"][0]["placements"]})
+        LD.gate("G-PAPER-REFERENT", ref["ok"],
+                "every numeral standing before the phrase that names a "
+                "population is that population's own measured value: the "
+                "unit runs six live universes and without this binding any "
+                "one's numerals would validate any other's sentence",
+                ref)
         R["paper"] = SEAL.seal("paper", {
             "path": PAPER_REL, "claims": cl["claims"],
+            "tables": cl["tables"],
             "rows": cl["paper_rows"], "numerals": cov["scanned"],
             "fenced_blocks": fen["blocks"], "polarity": pol["checked"],
+            "referents_bound": ref["bound"],
             "spelled": sp["spelled_found"]})
     else:
         R["paper"] = SEAL.seal("paper", {"path": PAPER_REL,
                                          "present": False})
 
-    R["totals"] = SEAL.seal("totals", {
-        "gates": len(LD.rows), "mutants": len(MUTANTS),
-        "sources_read": len(SOURCES), "anchors": len(R["anchors"]),
-        "seam_types": R["seam_selection"]["seam_types"],
-        "gluings": R["price"]["gluings"]})
-    R["ledger"] = [{k: v for k, v in r.items()} for r in LD.rows]
-    R["ledger_chain"] = LD.chain[:16]
     R["swept"] = swept
     SEAL.declare_unsealed("ledger", "the gate ledger is the sealing "
                           "mechanism itself and is chained instead")
@@ -2921,30 +3930,64 @@ def finish(LD, SEAL, R, V, ptext, t0, write=True, swept=False):
     SEAL.declare_unsealed("pin", "the frozen pin's own coordinates")
     SEAL.declare_unsealed("mutant_sweep", "written by the sweep harness "
                           "after the last gate; bound by G-SWEEP-EXECUTED")
-    R["seal_manifest"] = SEAL.manifest()
+    SEAL.declare_unsealed("transcript", "the transcript is rendered FROM "
+                          "this receipt and so cannot be inside it at seal "
+                          "time; it is bound by digest at promotion and "
+                          "re-checkable with --verify-transcript")
 
     LD.gate("G-SWEEP-EXECUTED",
-            (not write) or swept,
+            (not write) or (swept and n_swept == len(MUTANTS)),
             "the only writer in this file is downstream of a mutant sweep "
-            "that actually ran: a delivery run that has not swept cannot "
-            "reach the artifacts",
-            {"write": write, "swept": swept})
-    keys = set(R) - {"seal_manifest"}
-    covered = set(SEAL.seals) | set(SEAL.unsealed)
+            "that actually ran, and the forcing is the sweep's ROW COUNT: a "
+            "delivery run reaches the artifacts only behind %d rows, one per "
+            "declared falsifier" % len(MUTANTS),
+            {"write": write, "swept": swept, "sweep_rows": n_swept,
+             "declared_mutants": len(MUTANTS)})
+    # the keys assembled after the last gate, declared here in advance:
+    # `totals` counts the ledger's own rows and so cannot be sealed until
+    # the last row exists, and it IS sealed there; the other three are on
+    # the declared unsealable list already.
+    LATE_KEYS = {"totals", "ledger", "ledger_chain", "seal_manifest"}
+    keys = (set(R) | LATE_KEYS) - {"seal_manifest"}
+    covered = set(SEAL.seals) | set(SEAL.unsealed) | {"totals"}
+    partition_bad = sorted(set(SEAL.unsealed) - set(UNSEALABLE))
     LD.gate("G-SEAL-COMPLETE",
-            keys <= covered,
+            keys <= covered and not partition_bad,
             "the seal manifest is TOTAL: every published receipt key is "
             "either digested at the gate that vouched its own values or "
-            "named in the manifest with the reason it cannot be",
+            "named in the manifest with the reason it cannot be -- and the "
+            "SPLIT is constrained too, to the declared UNSEALABLE list, so "
+            "no measured key can be moved to the unsealed side and pass "
+            "totality anyway",
             {"keys": len(keys), "sealed": len(SEAL.seals),
              "unsealed": len(SEAL.unsealed),
-             "uncovered": sorted(keys - covered)})
+             "uncovered": sorted(keys - covered),
+             "declared_unsealable": list(UNSEALABLE),
+             "unsealed_outside_the_declared_list": partition_bad})
+    # ---- READ SET, re-compared after the last measuring gate.  The early
+    # comparison in G-SOURCES is an instant; this one is the whole run, so a
+    # stray read planted anywhere -- before the first gate or after the
+    # last -- fails, and the file this unit's pin forbids reading fails
+    # wherever it is opened and by whatever call.
+    exempt = set(READ_EXEMPT) | {relpath(p) for p in EXTRA_READS}
+    declared = {s[1] for s in SOURCES}
+    strayed = sorted({r for r in READLOG
+                      if r not in declared and r not in exempt})
+    LD.gate("G-READ-SET",
+            not strayed and declared <= set(READLOG),
+            "the read set recorded at the audit hook -- every open() this "
+            "process performs, whoever calls it -- is the declared set plus "
+            "the instrument's own declared exemptions, compared after the "
+            "last measuring gate rather than at one instant, so a stray read "
+            "dies wherever it is planted and in whatever order",
+            {"declared": sorted(declared), "exempt": sorted(exempt),
+             "distinct_reads": sorted(set(READLOG)), "stray": strayed})
     late_present = [g for g in LATER_GATES if g in LD.names()]
-    want_late = ["G-VERDICT-RECON", "G-PAPER-PRESENT", "G-SWEEP-EXECUTED",
+    want_late = ["G-VERDICT-RECON", "G-SWEEP-EXECUTED",
                  "G-SEAL-COMPLETE"] + (
                      ["G-PAPER-CLAIMS", "G-PAPER-COVERAGE", "G-PAPER-FENCE",
-                      "G-PAPER-POLARITY", "G-PAPER-SPELLED"] if ptext
-                     else [])
+                      "G-PAPER-POLARITY", "G-PAPER-SPELLED",
+                      "G-PAPER-REFERENT"] if ptext else [])
     LD.gate("G-DECLARED-LATER",
             all(g in late_present for g in want_late),
             "the gates emitted after the coverage gate are declared in "
@@ -2952,27 +3995,103 @@ def finish(LD, SEAL, R, V, ptext, t0, write=True, swept=False):
             "when the paper is in hand every paper gate is among them",
             {"declared_later": list(LATER_GATES), "present": late_present,
              "required_here": want_late})
+
+    # ---- THE GATE-TIME SEAL, VERIFIED AGAINST WHAT WOULD BE PROMOTED.
+    # #119-as-amended: a manifest that publishes a digest beside a value it
+    # does not match is a receipt that contradicts itself, and the delivered
+    # instrument re-derived its seals at write time from the payload, so
+    # both a post-seal mutation and a post-seal added key were promoted in
+    # silence.  This is the same comparison write_artifacts repeats at the
+    # door.
+    if mut("MUT-INTEGRITY"):
+        R["lawfulness"]["lawful"] = R["lawfulness"]["seam_spanning_groups"]
+    broke, extra = seal_check(SEAL, R, LATE_KEYS)
+    LD.gate("G-INTEGRITY",
+            not broke and not extra,
+            "every gate-time seal is re-verified against the value that "
+            "would be promoted, and the key set is re-checked for totality, "
+            "before anything is written: a value mutated after its seal and "
+            "a key added after the manifest both fail here",
+            {"sealed_keys": len(SEAL.seals),
+             "seals_that_no_longer_match": broke,
+             "keys_added_after_the_manifest": extra})
+
+    R["totals"] = SEAL.seal("totals", {
+        "gates": len(LD.rows), "mutants": len(MUTANTS),
+        "sources_read": len(SOURCES), "anchors": len(R["anchors"]),
+        "seam_types": R["seam_selection"]["seam_types"],
+        "gluings": R["price"]["gluings"]})
+    R["ledger"] = [{k: v for k, v in r.items()} for r in LD.rows]
+    R["ledger_chain"] = LD.chain[:16]
+    R["seal_manifest"] = SEAL.manifest()
     return R
 
 
-def write_artifacts(R, V, LD):
+def seal_check(SEAL, R, allow=()):
+    """every gate-time seal against the value now in the receipt; the
+    receipt's key set against the manifest's own coverage; and the SPLIT
+    against the declared UNSEALABLE list, so a measured key cannot be moved
+    to the unsealed side between the gate and the door."""
+    broke = sorted(k for k, s in SEAL.seals.items()
+                   if k not in R or digest(R[k]) != s)
+    covered = set(SEAL.seals) | set(SEAL.unsealed) | set(allow)
+    extra = sorted(set(R) - covered)
+    extra += ["unsealed-outside-the-declared-list:" + k
+              for k in sorted(set(SEAL.unsealed) - set(UNSEALABLE))]
+    return broke, extra
+
+
+def write_artifacts(R, SEAL, V, LD):
+    # THE SEALS ARE VERIFIED AT THE DOOR, not re-derived there.  The same
+    # comparison G-INTEGRITY made is repeated against the object about to
+    # leave, so nothing can be edited between the last gate and the write.
+    broke, extra = seal_check(SEAL, R, {"totals", "ledger", "ledger_chain",
+                                        "seal_manifest", "transcript"})
+    if broke or extra:
+        raise GateFail("G-INTEGRITY: the gate-time seal does not match what "
+                       "would be promoted | broken=%s added=%s"
+                       % (broke, extra))
     render(R, V, LD)
-    payload = json.dumps(R, indent=1, sort_keys=True, default=str)
     outtext = "\n".join(OUTBUF) + "\n"
     seal_out = hashlib.sha256(outtext.encode()).hexdigest()
+    # the transcript is bound to this receipt: its digest, its line count and
+    # the gate count it must render are published here, and
+    # `--verify-transcript` re-checks them against the bytes on disk, so a
+    # forged PASS line, a forged measured number and an invented gate row all
+    # fail against the object that was actually sealed
+    R["transcript"] = {"path": OUT_REL, "sha256_12": seal_out[:12],
+                       "lines": outtext.count("\n"),
+                       "gate_rows": len(R["ledger"]),
+                       "ledger_chain": R["ledger_chain"]}
+    payload = json.dumps(R, indent=1, sort_keys=True, default=str)
     seal_rec = hashlib.sha256(payload.encode()).hexdigest()
-    for rel, data, sealed in ((OUT_REL, outtext, seal_out),
-                              (REC_REL, payload, seal_rec)):
-        path = os.path.join(ROOT, rel)
-        tmp = path + ".tmp"
-        with open(tmp, "w") as fh:
-            fh.write(data)
-        with open(tmp, "rb") as fh:
-            back = fh.read()
-        if hashlib.sha256(back).hexdigest() != sealed:
-            os.unlink(tmp)
-            raise GateFail("G-INTEGRITY: %s read back does not match its "
-                           "gate-time seal" % rel)
+    staged = []
+    try:
+        for rel, data, sealed in ((OUT_REL, outtext, seal_out),
+                                  (REC_REL, payload, seal_rec)):
+            path = os.path.join(ROOT, rel)
+            tmp = path + ".tmp"
+            with open(tmp, "w") as fh:
+                fh.write(data)
+            with open(tmp, "rb") as fh:
+                back = fh.read()
+            if hashlib.sha256(back).hexdigest() != sealed:
+                raise GateFail("G-INTEGRITY: %s read back does not match "
+                               "its gate-time seal" % rel)
+            staged.append((tmp, path))
+    except BaseException:
+        for tmp, _p in staged:
+            if os.path.exists(tmp):
+                os.unlink(tmp)
+        for rel in (OUT_REL, REC_REL):
+            tmp = os.path.join(ROOT, rel) + ".tmp"
+            if os.path.exists(tmp):
+                os.unlink(tmp)
+        raise
+    # both artifacts are staged and read back before EITHER is promoted, so a
+    # failure on the second can never leave a new transcript beside a stale
+    # receipt
+    for tmp, path in staged:
         os.replace(tmp, path)
     for rel, sealed in ((OUT_REL, seal_out), (REC_REL, seal_rec)):
         with open(os.path.join(ROOT, rel), "rb") as fh:
@@ -2980,6 +4099,47 @@ def write_artifacts(R, V, LD):
                 raise GateFail("G-INTEGRITY: %s on disk does not match its "
                                "gate-time seal" % rel)
     return seal_out, seal_rec
+
+
+def verify_transcript(root):
+    """the delivered transcript, re-checked against the receipt that
+    rendered it: digest, line count, gate-row count and chain head."""
+    with open(os.path.join(root, REC_REL)) as fh:
+        R = json.load(fh)
+    with open(os.path.join(root, OUT_REL), "rb") as fh:
+        raw = fh.read()
+    t = R.get("transcript")
+    if not t:
+        return ["the receipt publishes no transcript binding"]
+    got = hashlib.sha256(raw).hexdigest()[:12]
+    lines = raw.decode().count("\n")
+    rows = sum(1 for ln in raw.decode().split("\n")
+               if re.match(r"^\s{4}G-[A-Z-]+\s+(PASS|FAIL)\s", ln))
+    bad = []
+    if got != t["sha256_12"]:
+        bad.append("digest %s, receipt says %s" % (got, t["sha256_12"]))
+    if lines != t["lines"]:
+        bad.append("lines %d, receipt says %d" % (lines, t["lines"]))
+    if rows != t["gate_rows"]:
+        bad.append("gate rows %d, receipt says %d" % (rows, t["gate_rows"]))
+    if len(R["ledger"]) != t["gate_rows"]:
+        bad.append("ledger rows %d, receipt says %d"
+                   % (len(R["ledger"]), t["gate_rows"]))
+    if R["ledger_chain"] != t["ledger_chain"]:
+        bad.append("chain %s, transcript binding says %s"
+                   % (R["ledger_chain"], t["ledger_chain"]))
+    chain = hashlib.sha256(SCHEMA.encode()).hexdigest()
+    for row in R["ledger"]:
+        d = digest({k: row[k] for k in ("gate", "ok", "statement",
+                                        "evidence")})[:16]
+        if d != row["digest"]:
+            bad.append("row digest %s at %s" % (row["gate"], d))
+        chain = hashlib.sha256((chain + row["digest"]).encode()).hexdigest()
+        if chain[:16] != row["chain"]:
+            bad.append("chain link at %s" % row["gate"])
+    if chain[:16] != R["ledger_chain"]:
+        bad.append("chain head %s" % chain[:16])
+    return bad
 
 
 # ===========================================================================
@@ -2996,13 +4156,13 @@ class _Sink:
 
 def run_mutant(name):
     ACTIVE_MUTANT[0] = name
-    PAPER_REQUIRED[0] = True
     old = sys.stdout
     sys.stdout = _Sink()
     del OUTBUF[:]
     try:
         LD, SEAL, R, V, ptext, t0 = full_run()
-        finish(LD, SEAL, R, V, ptext, t0, write=False, swept=True)
+        finish(LD, SEAL, R, V, ptext, t0, write=False, swept=True,
+               n_swept=len(MUTANTS))
         return None
     except GateFail as e:
         return str(e).split(":")[0]
@@ -3016,9 +4176,11 @@ def run_mutant(name):
 
 FLAGS = {"--no-write": 0, "--numbers": 0, "--selftest": 0, "--mutant": 1,
          "--break-anchor": 1, "--verify-paper": "opt", "--verify-sec": 1,
+         "--verify-transcript": "opt",
          "--list-gates": 0, "--list-mutants": 0}
 MODES = ("--numbers", "--selftest", "--mutant", "--break-anchor",
-         "--verify-paper", "--verify-sec", "--list-gates", "--list-mutants")
+         "--verify-paper", "--verify-sec", "--verify-transcript",
+         "--list-gates", "--list-mutants")
 
 
 def parse_args(argv):
@@ -3060,10 +4222,25 @@ def parse_args(argv):
 def main(argv=None):
     args = parse_args(sys.argv[1:] if argv is None else argv)
     if "--list-gates" in args:
+        # the FULL list: run to the last gate, so what this mode prints is
+        # what the ledger carries and what the transcript renders
         LD, SEAL, R, V, ptext, t0 = full_run()
+        finish(LD, SEAL, R, V, ptext, t0, write=False, swept=True,
+               n_swept=len(MUTANTS))
         for g in LD.names():
             print(g)
         return EXIT_OK
+    if "--verify-transcript" in args:
+        root = args["--verify-transcript"] or ROOT
+        for rel in (OUT_REL, REC_REL):
+            if not os.path.exists(os.path.join(root, rel)):
+                sys.stderr.write("no %s under %s\n" % (rel, root))
+                return EXIT_USAGE
+        bad = verify_transcript(root)
+        for b in bad:
+            print("TRANSCRIPT MISMATCH: %s" % b)
+        print("verify-transcript: %d mismatched" % len(bad))
+        return EXIT_OK if not bad else EXIT_FAIL
     if "--list-mutants" in args:
         for (n, g, why) in MUTANTS:
             print("%-24s %-30s %s" % (n, g, why))
@@ -3104,7 +4281,8 @@ def main(argv=None):
             return EXIT_USAGE
         try:
             LD, SEAL, R, V, ptext, t0 = full_run()
-            finish(LD, SEAL, R, V, ptext, t0, write=False, swept=True)
+            finish(LD, SEAL, R, V, ptext, t0, write=False, swept=True,
+                   n_swept=len(MUTANTS))
         except GateFail as e:
             print("BROKEN ANCHOR %s: %s" % (BROKEN_ANCHOR[0], e))
             return EXIT_FAIL
@@ -3118,11 +4296,12 @@ def main(argv=None):
             before[rel] = (hashlib.sha256(open(p, "rb").read()).hexdigest()
                            if os.path.exists(p) else None)
         rows = []
-        for (nid, _s, _n, _c) in VERBATIM:
+        for (nid, _s, _n, _c, _m) in VERBATIM:
             BROKEN_ANCHOR[0] = nid
             try:
                 LD, SEAL, R, V, ptext, t0 = full_run()
-                finish(LD, SEAL, R, V, ptext, t0, write=False, swept=True)
+                finish(LD, SEAL, R, V, ptext, t0, write=False, swept=True,
+                       n_swept=len(MUTANTS))
                 rows.append((nid, "SURVIVED"))
             except GateFail as e:
                 rows.append((nid, str(e).split(":")[0]))
@@ -3143,11 +4322,17 @@ def main(argv=None):
     if "--verify-paper" in args:
         rel = args["--verify-paper"] or PAPER_REL
         p = rel if os.path.isabs(rel) else os.path.join(ROOT, rel)
+        if not os.path.exists(p):
+            sys.stderr.write("no such paper: %s\n" % p)
+            return EXIT_USAGE
+        EXTRA_READS.append(p)
         with open(p) as fh:
             ptext = fh.read()
         try:
-            LD, SEAL, R, V, _pt, t0 = full_run(paper_text=ptext)
-            finish(LD, SEAL, R, V, ptext, t0, write=False, swept=True)
+            LD, SEAL, R, V, _pt, t0 = full_run(paper_text=ptext,
+                                               paper_rel=rel)
+            finish(LD, SEAL, R, V, ptext, t0, write=False, swept=True,
+                   n_swept=len(MUTANTS))
         except GateFail as e:
             print("VERIFY-PAPER FAIL: %s" % e)
             return EXIT_FAIL
@@ -3157,7 +4342,8 @@ def main(argv=None):
     write = "--no-write" not in args and "--numbers" not in args
     LD, SEAL, R, V, ptext, t0 = full_run()
     if "--numbers" in args:
-        finish(LD, SEAL, R, V, ptext, t0, write=False, swept=True)
+        finish(LD, SEAL, R, V, ptext, t0, write=False, swept=True,
+               n_swept=len(MUTANTS))
         print(json.dumps({k: R[k] for k in sorted(R)
                           if k not in ("ledger", "seal_manifest")},
                          indent=1, sort_keys=True, default=str))
@@ -3177,9 +4363,10 @@ def main(argv=None):
         swept = True
         LD, SEAL, R, V, ptext, t0 = full_run()
         R["mutant_sweep"] = sweep_rows
-    finish(LD, SEAL, R, V, ptext, t0, write=write, swept=swept or not write)
+    finish(LD, SEAL, R, V, ptext, t0, write=write, swept=swept or not write,
+           n_swept=len(sweep_rows) if write else len(MUTANTS))
     if write:
-        write_artifacts(R, V, LD)
+        write_artifacts(R, SEAL, V, LD)
         print("\nwrote %s and %s   [%.1fs]" % (OUT_REL, REC_REL,
                                                time.time() - t0))
     else:

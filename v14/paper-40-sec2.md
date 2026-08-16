@@ -7,19 +7,19 @@
 **Verdict**, in four segments.
 
 ```
-SEC2-SEAM-DECLARATION-IRREDUCIBLE-[49 SEAM TYPES OVER 132273 SHARED SITES; THE COMPLETION SPACE IS 4-PARAMETER AT EVERY ONE, RANK 6 ON 10 BY THE CHART ALONE; AT THE ALL-SIMPLE SEAM 31 COMPLETIONS ASSIGN ADMISSIBLE COUNTS TO EVERY CROSS DIRECTION AND ALL 31 ARE POSITIVE DEFINITE] -- POSITIVITY SELECTS NOTHING; THE CONVENTION-FREE PRICE IS CONSTANT ON THE WHOLE SPACE AND THE ONE-SIDED READING'S MINIMISER MOVES WITH THE CONVENTION; REFINEMENT STABILITY IS EMPTY AT THIS RECORD BY THE CEILING LAW (MIN COUNT 1, CEILING 0) AND, GRANTED AS A HYPOTHETICAL, IS EMPTY AT 48 OF 49 SEAM TYPES AND SELECTS THE DIRECT SUM AT THE 49TH -- THE ONE PRINCIPLE THAT DOES SELECT, MAXIMUM DETERMINANT, IS NAMED AND NOT LICENSED
+SEC2-SEAM-DECLARATION-IRREDUCIBLE-[49 SEAM TYPES OVER 132273 SHARED SITES AT THE FORWARD CONVENTION, 37 AT THE BOTH-SIGNS ONE; THE COMPLETION SPACE IS 4-PARAMETER AT EVERY ONE, RANK 6 ON 10 BY THE CHART ALONE; AT THE ALL-SIMPLE SEAM 31 COMPLETIONS ASSIGN ADMISSIBLE COUNTS TO EVERY CROSS DIRECTION AND ALL 31 ARE POSITIVE DEFINITE] -- POSITIVITY SELECTS NOTHING; THE CONVENTION-FREE PRICE IS CONSTANT ON THE WHOLE SPACE AND THE ONE-SIDED READING'S MINIMISER IS MANY-VALUED AT EVERY SEAM TYPE AND MOVES WITH THE CONVENTION; REFINEMENT STABILITY IS EMPTY AT THIS RECORD BY THE CEILING LAW (MEASURED MIN COUNT 1, CEILING 0) AND, GRANTED AS A HYPOTHETICAL, IS EMPTY AT 48 OF 49 SEAM TYPES AND SELECTS THE DIRECT SUM AT THE LAST -- THE ONE OF THE CRITERIA MEASURED THAT DOES SELECT, MAXIMUM DETERMINANT, IS NAMED AND NOT LICENSED
 ```
 
 ```
-SEC2-GLUING-EVENT-LAWFUL-AT-THE-MATCHED-CROSS-LINK-EXTENSION-[THE WINDOW: TARGET x READING x COUNT LEG, 30 CELLS, CARRIER AND LINK INDIVIDUATION HELD AT THE DELIVERED VALUES; 455 THREE-ACTOR GROUPS IN 9 ORBITS, 288 OF THEM SEAM-SPANNING AND EVERY ONE DEAD AT THE DELIVERED TARGET] -- LAWFUL AT 216 OF 288 ONCE THE TARGET DECLARES THE CROSS LINKS THE EVENT REALISES, BOTH DRIVEN SPECIFICATIONS AMONG THEM, AND MOTIVATED AT 0 OF 216: THE PRICE IS THE WELD ITSELF, FREE ITEMS 0 -> 3 AT THE SHARED-SEEDED CROSSING AND 0 -> 2 AT THE B-SEEDED ONE, WHILE THE CROSSING TAKEN ALONE COSTS NOTHING AND NO THREE-ACTOR GROUP CAN DELIVER IT ALONE
+SEC2-GLUING-EVENT-LAWFUL-AT-THE-MATCHED-CROSS-LINK-EXTENSION-[THE WINDOW: TARGET x READING x COUNT LEG, 30 CELLS OF WHICH 11 ARE LAWFUL AND EXACTLY 1 TARGET IS LAWFUL WITH ALL THREE DELIVERED LEGS INTACT, CARRIER AND LINK INDIVIDUATION HELD AT THE DELIVERED VALUES; 455 THREE-ACTOR GROUPS IN 9 ORBITS, 288 OF THEM SEAM-SPANNING AND EVERY ONE DEAD AT THE DELIVERED TARGET] -- LAWFUL AT 216 OF 288 ONCE THE TARGET DECLARES THE CROSS LINKS THE EVENT REALISES, BOTH DRIVEN SPECIFICATIONS AMONG THEM, AND MOTIVATED AT 0 OF 216 BY A COUNTING THEOREM CHECKED AT EVERY ONE OF THEM: THE PRICE IS THE WELD ITSELF, FREE ITEMS 0 -> 3 AT THE SHARED-SEEDED CROSSING AND 0 -> 2 AT THE B-SEEDED ONE, WHILE THE CROSSING TAKEN ALONE COSTS NOTHING AND NO THREE-ACTOR GROUP CAN DELIVER IT ALONE
 ```
 
 ```
-SEC2-COMPOSITE-PRICE-SPLITS-[FIVE CURRENCIES ON ALL 45010 COMPOSITES AGAINST THE LONE SECTOR, ZERO VIOLATIONS: RECORD 54 = 27 + 27 IGNORES COMPOSITION; CARRIERS 18 - k AND LINKS 54 - d FAVOUR IT; THE GEOMETRY'S BUDGET 54 + 2d AND THE DECLARATION PRICE 4k PENALIZE IT] -- AND THE EXCESS IS SEAM-CONFINED: EVERY UNSHARED SITE'S FORM IS DETERMINED EXACTLY AS IN A LONE SECTOR AND THE WHOLE SURCHARGE SITS ON THE SHARED SITES, FOUR NUMBERS EACH
+SEC2-COMPOSITE-PRICE-SPLITS-[FIVE CURRENCIES ON ALL 45010 COMPOSITES AGAINST THE LONE SECTOR, ZERO VIOLATIONS: RECORD 54 = 27 + 27 IGNORES COMPOSITION; CARRIERS 18 - k AND LINKS 54 - d FAVOUR IT; THE GEOMETRY'S BUDGET 54 + 2d AND THE DECLARATION PRICE 4k PENALIZE IT, THE LAST SUMMED FROM THE MEASURED KERNELS 4 AT A SHARED SITE AND 0 AT EVERY OTHER, WITH ADDITIVITY ACROSS SEAMS REGISTERED OPEN] -- AND THE EXCESS IS SEAM-CONFINED: EVERY UNSHARED SITE'S FORM IS DETERMINED EXACTLY AS IN A LONE SECTOR AND THE WHOLE SURCHARGE SITS ON THE SHARED SITES, 4 NUMBERS EACH
 ```
 
 ```
-SEC2-THE-EXTENDED-DICTIONARY-IS-BLIND-AT-ONE-CROSSING-AND-SIGHTED-AT-TWO-[36 PLACEMENTS IN 1 ARENA AT ONE CROSSING AND 36 OF 36 ADMITTED BY THE DETECTOR; 630 PLACEMENTS IN 5 ARENAS AT TWO AND 108 OF 630 ADMITTED; 7140 IN 15 AT THREE] -- SO THE PLACEMENT OF A SINGLE CROSS LINK IS A GAUGE AND NOT A DATUM, AND THE RECORD-FITTED OBJECTION DOES NOT BITE AT ONE CROSSING BECAUSE EVERY PLACEMENT GIVES THE SAME ARENA
+SEC2-THE-EXTENDED-DICTIONARY-IS-BLIND-AT-ONE-CROSSING-AND-SIGHTED-AT-TWO-[36 PLACEMENTS IN 1 ARENA AT ONE CROSSING AND 36 OF 36 ADMITTED BY THE DETECTOR, 35 OF THEM DECLARING A DIFFERENT LINK FROM THE ONE THE RECORD REALISES; 630 PLACEMENTS IN 5 ARENAS AT TWO AND 108 OF 630 ADMITTED; 7140 IN 15 AT THREE] -- SO THE PLACEMENT OF A SINGLE CROSS LINK IS INERT, A GAUGE AT ONE CROSSING AND AT THIS ARENA AND FOR THIS TEST, AND THE RECORD-FITTED OBJECTION IS DISARMED IN ITS PLACEMENT HALF ALONE: EVERY PLACEMENT GIVES THE SAME ARENA, WHILE THE CARDINALITY HALF IS NEITHER DISARMED NOR CLAIMED
 ```
 
 Between delivery and adjudication every headline reading here is a
@@ -31,12 +31,13 @@ Between delivery and adjudication every headline reading here is a
 
 SEC glued two driven sectors and found that geography composes: the union
 carries a dictionary at every one of its combinatorial types. It also found
-two things it could not finish. The seam's own form was six equations short
-of determined — the direct sum a declaration, not a measurement — and the
-committed grammar turned out to ADMIT division events spanning the two
-sectors, which then killed the dictionary at structure. So gluing was left as
-a boundary condition: something a modeller does between records, never
-something the process does inside one.
+two things it could not finish. The seam's own form was four equations short
+of determined — six declared links on ten unknowns, so the kernel is 4, and
+the direct sum a declaration rather than a measurement — and the committed
+grammar turned out to ADMIT division events spanning the two sectors, which
+then killed the dictionary at structure. So gluing was left as a boundary
+condition: something a modeller does between records, never something the
+process does inside one.
 
 The pin asks whether that can be reversed. Its three measurements are asked
 here in its own words.
@@ -60,7 +61,8 @@ measurement, at a price the paper states rather than absorbs.
 
 The SEC adjudication is carried, not re-litigated. Its ruling is that the
 union's geometry changes only on links both sectors jointly own; the finding
-is SEAM-CONFINED compositionality, and every sentence below respects it.
+is SEAM-CONFINED compositionality, and every sentence below respects it, at
+the domain section 6 names.
 Its arena count is re-measured here rather than inherited.
 
 ## 2. The arena, declared as data (RUNBOOK section 15)
@@ -70,14 +72,16 @@ Its arena count is re-measured here rather than inherited.
 | boundary | the 54 (chart, site, link) cells of two copies of AG(2, 3) with links (1, 0), (0, 1) and (1, 1), plus the declared cross links of each extension |
 | family | the 45,010 gluings in 16 combinatorial types on 12 union arenas; the 455 three-actor groups of the k = 3 aligned union in 9 orbits |
 | law | the co-division relation of the saturating arrangement, I7's readout (a count is the squared length of its link direction), HA's admissibility, paper-04's ceiling law |
-| state | the completion of the seam's four undetermined entries |
+| state | the completion of the seam's 4 undetermined entries |
 | arena axes | the five declared window axes: target, reading, count leg, and (held fixed here) carrier and link individuation |
 | provenance | 5 sources read at pinned shas; the 4 #301 SEC objects declared at commit 88e4a83 and bound by reproduction |
 
 ### 2.1 What is read, and what is declared
 
 Five sources are read at run time and authenticated, and the read set
-recorded at the I/O layer is gated to be exactly this set.
+recorded at the I/O layer — every `open` this process performs, whoever
+calls it — is gated to be exactly this set plus the instrument's own
+declared exemptions, after the last gate as well as before the first.
 
 | id | path | sha256-12 |
 |---|---|---|
@@ -95,8 +99,9 @@ carried as a DECLARED row and bound by REPRODUCTION: this unit recomputes it
 from its own arena, and the run dies on any mismatch. Twenty-two such values
 are declared and all twenty-two reproduce.
 
-| DECLARED, NOT READ | v14/paper-32-sec.md | cfe0825d67b2 |
+| status | path | sha256-12 |
 |---|---|---|
+| DECLARED, NOT READ | v14/paper-32-sec.md | cfe0825d67b2 |
 | DECLARED, NOT READ | v14/code/sec_exact.py | 6481a8706503 |
 | DECLARED, NOT READ | v14/code/sec_output.txt | e80d2f08a257 |
 | DECLARED, NOT READ | v14/code/sec_receipt.json | fdf66d990dbf |
@@ -124,9 +129,19 @@ would be writing another one.
 ### 3.1 The seam census
 
 A seam is a shared site, and its type is the pair of count vectors its two
-charts carry on their three declared links. Every shared site of every one
-of the 45,010 gluings is classified: **49 seam types over 132,273 shared
-sites**. Seven of the eight possible count vectors occur on each side, and
+charts carry on their three declared links — a link being the cell (site,
+direction) that I7's lattice carries, so the count at x in direction d is
+the count on the cell {x, x + d}. That FORWARD reading is the convention
+every number below is taken under, and it is named here because the
+headline's own first number depends on it: a site has six neighbours along
+those three directions, and one may instead let a direction read 2 when
+either {x, x + d} or {x, x − d} is doubled. Every shared site of every one
+of the 45,010 gluings is classified under both. Forward: **49 seam types
+over 132,273 shared sites**. Both signs: the same sites fall into 37 types.
+Both censuses cover the same sites; only the type function differs, and the
+census the whole of this measurement is taken under is the forward one.
+
+Seven of the eight possible count vectors occur on each side, and
 the one that never occurs is (2, 2, 2) — a shared site has at most two other
 shared actors, so its three links cannot all be doubled.
 
@@ -227,12 +242,13 @@ counts: a link costs the division events that realise it. So the price of a
 completion is the total count on the cross directions it licenses. Summed
 over both signs of every cross direction — the only
 convention-free reading, since a chart's neighbour x + a and its neighbour
-x - a are both declared — the budget is **constant on the whole completion
+x − a are both declared — the budget is **constant on the whole completion
 space**, at every seam type. One may instead sum over the forward directions
-only; then the minimum is attained, but at eight completions rather than
-one, and reversing the sign convention moves the minimising set to a
-disjoint set of eight. A criterion whose argument moves with a convention
-does not select.
+only; then a minimum is attained, but never at one completion. At the
+all-simple seam it is attained at eight, and over the census the minimising
+set runs from 4 completions to 76 — measured at every one of the 49 — while
+reversing the sign convention moves it to a disjoint set at every one. A
+criterion whose argument moves with a convention does not select.
 
 **Refinement stability.** LOR carries paper-04's ceiling law in its own
 bytes:
@@ -240,24 +256,36 @@ bytes:
 > No record admits more than $\lfloor\log_2(\min n_\ell)\rfloor$ consecutive
 > steps.
 
-The union's minimum count is 1 at every gluing in the family, so the ceiling
-is 0 and the refinement laws have nothing to act on. That is the honest
-answer: the criterion is empty at this record. Granted anyway as a
-hypothetical — would a completion's cross counts survive one dyadic halving
-— it is empty at 48 of the 49 seam types, because the halving conditions are
-over-determined the moment the two sides carry different parities, and it
-selects exactly one completion, the direct sum, at the 49th, which is the
-all-simple seam.
+The union's minimum count, measured over every one of the 45,010 gluings, is
+1, so the ceiling is 0 and the refinement laws have nothing to act on. That
+is the honest answer: the criterion is empty at this record. Granted anyway
+as a hypothetical — would a completion's cross counts survive one dyadic
+halving — it is empty at 48 of the 49 seam types, because the halving
+conditions are over-determined the moment the two sides carry different
+parities, and it selects exactly one completion, the direct sum, at the
+last, which is the all-simple seam.
 
 ### 3.4 The verdict, and the principle that would break it
 
-So **the freedom is irreducible** relative to the declared laws:
-`SEAM-DECLARATION-IRREDUCIBLE`. It is not irreducible in principle, and
-this paper says which principle would break it rather than leaving the
-result looking stronger than it is. One extremal principle does select,
-uniquely, at all 49 seam types: maximising the determinant of the
+So **the freedom is irreducible** at every criterion the pin named:
+`SEAM-DECLARATION-IRREDUCIBLE`. The word is relative and this paper says to
+what. Positivity selects nothing and at 13 of the 49 seam types carries no
+information at all; the convention-free price is flat and the one-sided
+price is a sign convention; refinement is the only one of the three resting
+on a law of this corpus — paper-04's ceiling, carried in LOR's own bytes —
+and that law is empty at this record, so its verdict is a hypothetical and
+is labelled one. It should be said plainly that the corpus declares none of
+the three as a selection principle either: what is measured is that the
+pin's criteria do not narrow the seam, not that nothing does.
+
+One extremal principle that would, and that no unit here has declared, does
+select uniquely at all 49 seam types: maximising the determinant of the
 form returns the direct sum and nothing else. That is Fischer's inequality
-doing the work, and nothing in this corpus declares it. It is named here and
+doing the work on the positive-definite points, and the census covering the
+rest — at 36 of the 49 seam types, whose admissible lattice reaches outside the
+positive-definite one, not a single completion out there has positive
+determinant, which is measured and not argued. Nothing in this corpus
+declares the principle. It is named here and
 not licensed; a unit that adopted it would be making a declaration, not
 reporting a measurement.
 
@@ -266,8 +294,9 @@ reporting a measurement.
 SEC exhibited an exact rational completion, reproducing all six measured
 counts, that is negative on an exhibited vector. Rebuilt here from its
 declared entries, it returns all six counts and its own value on its own
-vector. It is then placed: it assigns count 0 to four of the chart's cross
-directions, so **it lies outside the admissible lattice**. The affine family
+vector. It is then placed: under the reading of section 3.2 it assigns count
+0 to four of the chart's cross directions, so **it lies outside the
+admissible lattice**. The affine family
 does contain indefinite points, exactly as delivered; the admissible lattice
 at the all-simple seam does not.
 
@@ -275,8 +304,20 @@ And the crossing the grammar actually drives cuts the space. Its co-division
 pair joins the shared site's third A-neighbour to its third B-neighbour, so
 it carries one more equation: the kernel falls from 4 to 3, the admissible
 lattice falls from 31 completions to 8, every one of the 8 is still positive
-definite, and the direct sum is **not** among them. The completion SEC
-declared is the one completion the measured crossing forbids.
+definite, and the direct sum is **not** among them. Under the reading of
+section 3.2, the completion SEC declared is the one completion the measured
+crossing forbids.
+
+The cut is not a property of that direction. Every one of the chart's 18
+cross directions — 9 direction pairs, both signs — forces one cross count to
+1, cuts the aligned lattice 31 to 8, leaves all 8 positive definite and
+excludes the direct sum. The result is placement-independent, which is the
+finding section 4.4's blindness census reaches on the other route. And the
+surviving eight are exactly the eight the one-sided price minimises over:
+the criterion whose argument moves with a convention and the lattice the
+measured crossing leaves are one set of completions, which is why the
+one-sided price is convention-bound — the convention is a choice of which
+cross direction counts as realised.
 
 ## 4. Measurement two — the dictionary extension
 
@@ -303,7 +344,11 @@ automorphism group to 9 orbits.
 
 The charts column names the representative's own composition; the orbit
 contains its mirror as well, so the column is a property of the
-representative and the orbit size is the property of the orbit.
+representative and the orbit size is the property of the orbit. The
+reduction is a convenience of the table and not of the result: every one of
+the 455 groups is re-fated with no orbit shortcut at all, every member's
+effect profile is compared against its own representative's, and the
+inventory of every lawful group is recomputed object by object.
 
 Two readings come straight off it. First, **every seam-spanning group is dead
 at the delivered target** — 288 of them, exhaustively, where SEC had three
@@ -314,6 +359,46 @@ within-sector pair. The control fires in both directions inside one census.
 
 ### 4.2 The window, cell by cell
 
+A target is a declaration, and a declaration is made along a route. Each
+route below is enumerated over its own index set, and its fiber — the number
+of DISTINCT targets the route produces — is computed from the link sets
+themselves rather than from the size of the index set, because the two are
+not the same number.
+
+| target | the declaration route | declarations | declaration fiber | collisions | declared links over the fiber |
+|---|---|---|---|---|---|
+| NONE | the delivered target: the amalgam, built from the lattice and the gluing alone | 1 | 1 | 0 | 0 |
+| ONE-AT-ONE-SEAM | one declared cross link at one declared shared site | 27 | 24 | 3 | 1 |
+| ONE-AT-EVERY-SEAM | one declared cross direction at every shared site | 9 | 8 | 1 | 3 |
+| SEAM-MAP | a declared bijection of the two charts' link directions, at every shared site | 6 | 6 | 0 | 6, 9 |
+| FULL-CROSS | every forward cross direction at every shared site | 1 | 1 | 0 | 24 |
+
+Three collisions make ONE-AT-ONE-SEAM's 27 declarations into 24 targets. The
+declarations (seam 0, direction 0, direction 0) and (seam 1, direction 1,
+direction 1) declare the same link; so do (0, 1, 1) and (2, 0, 0); so do
+(1, 0, 0) and (2, 1, 1). ONE-AT-EVERY-SEAM's one collision is (0, 0) with
+(1, 1). SEAM-MAP has none, but its members are not interchangeable in the
+other column: the identity bijection declares 6 links and the other five
+declare 9, and the member this unit runs is the identity.
+
+**These numbers were typed in the delivered instrument, and two of them were
+wrong.** The column read 27 and 9 — the sizes of the index sets, not the
+fibers — and the paper's own FULL-CROSS row carried the refutation, since 24
+is exactly the number of distinct one-link declarations. They are computed
+here, from the live window construction, and they are the first delivered
+numerals of this corpus that the standing rule against typed counts has had
+to correct — the rule this unit now states plainly: a count is measured or
+it is not published. Nothing else in the
+unit moves; every fate below is what the delivered run returned, at every
+member of every family.
+
+The routes take FORWARD cross directions only. So a target of this window
+can declare 24 of the arena's 36 cross links, and that is exactly what
+FULL-CROSS declares. The 12 it cannot reach are the backward ones, excluded
+by the same sign convention section 3.3 prices as convention-dependent —
+which is why section 4.4's blindness census, which sweeps all 36, is running
+on a wider space than the target axis is.
+
 | target | declared links | declaration fiber | reading | count leg | the baseline record | with the driven crossing |
 |---|---|---|---|---|---|---|
 | NONE | 0 | 1 | EMBEDDING | POSITIVE | ALIVE | STRUCT-DEAD |
@@ -322,18 +407,18 @@ within-sector pair. The control fires in both directions inside one census.
 | NONE | 0 | 1 | QUOTIENT | NON-NEGATIVE | ALIVE | STRUCT-DEAD |
 | NONE | 0 | 1 | LAX | POSITIVE | ALIVE | ALIVE |
 | NONE | 0 | 1 | LAX | NON-NEGATIVE | ALIVE | ALIVE |
-| ONE-AT-ONE-SEAM | 1 | 27 | EMBEDDING | POSITIVE | STRUCT-DEAD | ALIVE |
-| ONE-AT-ONE-SEAM | 1 | 27 | EMBEDDING | NON-NEGATIVE | STRUCT-DEAD | ALIVE |
-| ONE-AT-ONE-SEAM | 1 | 27 | QUOTIENT | POSITIVE | COUNT-DEAD | ALIVE |
-| ONE-AT-ONE-SEAM | 1 | 27 | QUOTIENT | NON-NEGATIVE | ALIVE | ALIVE |
-| ONE-AT-ONE-SEAM | 1 | 27 | LAX | POSITIVE | STRUCT-DEAD | ALIVE |
-| ONE-AT-ONE-SEAM | 1 | 27 | LAX | NON-NEGATIVE | STRUCT-DEAD | ALIVE |
-| ONE-AT-EVERY-SEAM | 3 | 9 | EMBEDDING | POSITIVE | STRUCT-DEAD | STRUCT-DEAD |
-| ONE-AT-EVERY-SEAM | 3 | 9 | EMBEDDING | NON-NEGATIVE | STRUCT-DEAD | STRUCT-DEAD |
-| ONE-AT-EVERY-SEAM | 3 | 9 | QUOTIENT | POSITIVE | COUNT-DEAD | COUNT-DEAD |
-| ONE-AT-EVERY-SEAM | 3 | 9 | QUOTIENT | NON-NEGATIVE | ALIVE | ALIVE |
-| ONE-AT-EVERY-SEAM | 3 | 9 | LAX | POSITIVE | STRUCT-DEAD | STRUCT-DEAD |
-| ONE-AT-EVERY-SEAM | 3 | 9 | LAX | NON-NEGATIVE | STRUCT-DEAD | STRUCT-DEAD |
+| ONE-AT-ONE-SEAM | 1 | 24 | EMBEDDING | POSITIVE | STRUCT-DEAD | ALIVE |
+| ONE-AT-ONE-SEAM | 1 | 24 | EMBEDDING | NON-NEGATIVE | STRUCT-DEAD | ALIVE |
+| ONE-AT-ONE-SEAM | 1 | 24 | QUOTIENT | POSITIVE | COUNT-DEAD | ALIVE |
+| ONE-AT-ONE-SEAM | 1 | 24 | QUOTIENT | NON-NEGATIVE | ALIVE | ALIVE |
+| ONE-AT-ONE-SEAM | 1 | 24 | LAX | POSITIVE | STRUCT-DEAD | ALIVE |
+| ONE-AT-ONE-SEAM | 1 | 24 | LAX | NON-NEGATIVE | STRUCT-DEAD | ALIVE |
+| ONE-AT-EVERY-SEAM | 3 | 8 | EMBEDDING | POSITIVE | STRUCT-DEAD | STRUCT-DEAD |
+| ONE-AT-EVERY-SEAM | 3 | 8 | EMBEDDING | NON-NEGATIVE | STRUCT-DEAD | STRUCT-DEAD |
+| ONE-AT-EVERY-SEAM | 3 | 8 | QUOTIENT | POSITIVE | COUNT-DEAD | COUNT-DEAD |
+| ONE-AT-EVERY-SEAM | 3 | 8 | QUOTIENT | NON-NEGATIVE | ALIVE | ALIVE |
+| ONE-AT-EVERY-SEAM | 3 | 8 | LAX | POSITIVE | STRUCT-DEAD | STRUCT-DEAD |
+| ONE-AT-EVERY-SEAM | 3 | 8 | LAX | NON-NEGATIVE | STRUCT-DEAD | STRUCT-DEAD |
 | SEAM-MAP | 6 | 6 | EMBEDDING | POSITIVE | STRUCT-DEAD | STRUCT-DEAD |
 | SEAM-MAP | 6 | 6 | EMBEDDING | NON-NEGATIVE | STRUCT-DEAD | STRUCT-DEAD |
 | SEAM-MAP | 6 | 6 | QUOTIENT | POSITIVE | COUNT-DEAD | COUNT-DEAD |
@@ -349,33 +434,46 @@ within-sector pair. The control fires in both directions inside one census.
 
 Three facts, in the order they matter.
 
-**The count leg is not an axis.** Under the QUOTIENT reading, requiring every
-declared cell to carry a positive count is requiring every declared link to
-be realised, which with containment one way is the EMBEDDING reading. The
-two agree on liveness at every target. They die differently when they die —
-at structure under EMBEDDING, at count positivity under QUOTIENT — which is
-paper-19's own signature for the two readings, reproduced here without being
-aimed at.
+**The count leg collapses only under QUOTIENT, and only at POSITIVE.**
+Requiring every declared cell to carry a positive count under the QUOTIENT
+reading is requiring every declared link to be realised, which with
+containment one way is the EMBEDDING reading; the two agree on liveness at
+every target and die differently when they die — at structure under
+EMBEDDING, at count positivity under QUOTIENT — which is paper-19's own
+signature for the two readings, reproduced here without being aimed at. The
+other leg is a genuine axis: allowing count zero lets the target carry links
+the record never realises, and that alone makes the driven crossing lawful
+at ONE-AT-EVERY-SEAM, at SEAM-MAP and at FULL-CROSS, where the positive leg
+kills it. Of the window's 30 cells the driven crossing is lawful at 11.
+Exactly one target — ONE-AT-ONE-SEAM — is lawful with all three delivered
+legs intact; every other lawful cell has paid for itself by relaxing one.
 
 **LAX buys the crossing by ceasing to be a test.** Relaxing the reading so
 that the target's incidence merely sits inside the realised relation makes
-the driven crossing lawful at the delivered target immediately, and makes
-every one of the 36 possible crossings lawful too. What it costs is the
+the driven crossing lawful at the delivered target immediately, and the
+sentence is a measurement rather than an argument: at the delivered target,
+which declares no cross link at all, every one of the 36 crossings the arena
+can carry is ALIVE under LAX. What it costs is the
 weld's whole content: the record then carries a pair the geometry does not
 represent, and the dictionary stops being a claim about the record.
 
 **The target extension buys it selectively.** Declaring one cross link, at
 one shared site, in one direction, leaves all three delivered legs intact:
 the driven crossing is ALIVE under EMBEDDING with positive counts. Declaring
-one at *every* shared site does not, because the record realises one crossing
-and the target then demands three.
+one at *every* shared site does not under those legs, because the record
+realises one crossing and the target carries three — though it does at
+NON-NEGATIVE, which is the axis the first fact names.
 
 And the extension is not conservative, which the same table says in its own
-baseline column. At that one-link target the union WITHOUT the crossing is
-STRUCT-DEAD: the geometry now carries a link no division event realises, and
-the record that never crosses no longer welds onto it. A declared cross link
-is a demand rather than an option — the target that can host a crossing
-cannot host the process that declines to make one.
+baseline column. At the one-link target, under the delivered legs, the union
+WITHOUT the crossing is STRUCT-DEAD: the geometry carries a link no division
+event realises, and the record that never crosses no longer welds onto it.
+This is bookkeeping against a target, not a force on a process — the record
+has 54 realised pairs against 55 declared cells — and it is reading-relative:
+allow count zero and the same record welds again, ALIVE at QUOTIENT with
+NON-NEGATIVE. What the row licenses is this much and no more: a target
+extended to host a crossing is not an extension of the delivered dictionary
+that leaves the un-crossed record where it was.
 
 ### 4.3 The price, read where the RSQ standard reads it
 
@@ -385,6 +483,11 @@ cannot host the process that declines to make one.
 | the crossing alone, NOT DRIVEN | 1 | 1728 | 1 | 1 | 1 | 0 | MOTIVATED |
 | SHARED-SEEDED, driven | 1 | 1728 | 3 | 9 | 4 | 3 | UNMOTIVATED |
 | B-SEEDED-PURE, driven | 2 | 576 | 1 | 3 | 2 | 2 | UNMOTIVATED |
+
+The site-assignment fiber is taken twice, cell by cell and on the doubled
+pairs alone, and the two routes agree at every row; the label and orient
+fibers are read at a base map, and re-read at a declared sweep of 32 of
+them, constant at every one.
 
 This is the unit's sharpest row and it was not the expected one. **the
 crossing itself is free**: a union whose relation carries one extra
@@ -407,7 +510,7 @@ forced to keep.
 
 THE TEST, DECLARED. A declared cross link has to be placed somewhere, and
 the question is whether the placement is a datum. The test is run twice, by
-two instruments that share nothing: the placements are reduced by the
+two instruments: the placements are reduced by the
 union's own automorphism group, and the same question is put through the
 detector itself. Blindness would show as one arena and every placement
 admitting the event; sightedness as many arenas and a strict sub-count. Both
@@ -419,18 +522,37 @@ outcomes are reachable and both occur.
 | 2 | 630 | 5 | 108 | SIGHTED |
 | 3 | 7140 | 15 | not run | SIGHTED |
 
+This census sweeps every A-private/B-private pair — all 36 of them, the
+backward directions included — while a target of section 4.2's window can
+declare only the 24 forward ones. The two spaces are different and the
+conclusion is unharmed: all 36 lie in one orbit of the union's own
+automorphism group, so any two placements are conjugate and the restriction
+moves no verdict.
+
 At one crossing the geometry cannot say where the crossing happened: all 36
 placements give the same arena, and the detector admits the event at every
-one of them. At two it can: 630 placements fall into 5 arenas and exactly
-108 admit the event, which is the orbit the record's own placement lies in.
-The detector's count and the orbit's size agree without being compared into
-agreement — they are computed by different machinery.
+one of them — including the 35 that declare a link the record does not
+realise, so at one crossing the target does not even have to name the
+crossing it hosts. At two it can: 630 placements fall into 5 arenas and
+exactly 108 admit the event, which is the orbit the record's own placement
+lies in. The detector's count and the orbit's size agree without being
+compared into agreement — they are computed by different routes.
 
-One consequence deserves its own sentence, because it disarms the obvious
-objection. A target extension that carries exactly the links the record
-realises looks like a target fitted to its record. At one crossing it cannot
-be: every placement gives the same arena, so there is nothing to fit. At two
-crossings it can be, and there the fiber is published.
+One consequence deserves its own sentence, because it disarms half of the
+obvious objection. A target extension that carries exactly the links the
+record realises looks like a target fitted to its record. In its placement
+half, at one crossing, it cannot be: every placement gives the same arena,
+so there is nothing to fit. At two crossings there is, and there the fiber
+is published. The other half is not disarmed and is not claimed to be: the
+target declares as many cross links as the event realises, because that is
+what "matched" means, and a census over declared count against realised
+count is registered as S-5 rather than run.
+
+So the placement of a single cross link is a gauge — at one crossing, at
+this arena, and for this test. The word imports nothing else: two
+declarations differing only in placement give arenas related by an
+automorphism of the union, and the detector cannot separate them. Beside it
+stands the sightedness contrast, which is what entitles the paper to it.
 
 ### 4.5 The outcome
 
@@ -439,11 +561,17 @@ seam-spanning groups, 216 leave the dictionary alive once the target
 declares the cross links the event realises, and both specifications the
 committed grammar was measured to admit are among them. The 72 that stay
 dead are the groups that also open a pair inside one sector: no cross-link
-declaration repairs a lattice that has lost a link of its own.
+declaration repairs a target that lacks a link the record realises.
 
-And not one of the 216 is MOTIVATED. Gluing can be an event in this theory,
-at a target that declares the seam it crosses; what it cannot be is a free
-one.
+And not one of the 216 is MOTIVATED — not as a tally that came out that way,
+but because it cannot come out otherwise. Three actors give three pairs, at
+most two of which can join the sectors, since a triangle admits no proper
+two-colouring; so a group that opens no pair inside a sector must double at
+least one link the union already carries; and the free items are exactly what
+a doubling buys. The hypothesis is checked at every one of the 455 groups and
+the conclusion at every one of the 216 lawful ones, object by object. Gluing
+can be an event in this theory, at a target that declares the seam it
+crosses; what it cannot be, at this conflict-group size, is a free one.
 
 ## 5. Measurement three — the composite price
 
@@ -452,11 +580,15 @@ must supply, and found it conserved across the axis it varied — in its own
 words,
 
 > declaring a covariant irreducible dynamics on this carrier still supplies
+> exactly 207 independent numbers at the anchored reading
 
-exactly the count of independent numbers its parent already owed, unchanged.
+— the same count its parent already owed, unchanged.
 The composition axis is a different axis, and the answer is not one word.
 Five currencies are evaluated on every one of the 45,010 composites and on
-the lone sector, and each obeys an exact law with zero violations.
+the lone sector, and each obeys an exact law with zero violations. A currency
+FAVOURS composition when the composite costs less than the two sectors,
+PENALIZES when it costs more, and IGNORES when the two are equal; the words
+are the pin's and carry no preference of the theory's.
 
 | currency | a lone sector | the composite | excess over the two sectors | verdict |
 |---|---|---|---|---|
@@ -505,9 +637,17 @@ And composition is dearer where the geometry lives. The budget the geometry
 must supply over its own cells is 54 + 2d, so every doubled link costs two;
 and the declaration price — SMU's own currency, the count of independent
 numbers the record does not fix — is 0 for a lone sector and 4k for the
-composite.
+composite. That last currency is not an identity: it is summed, site by
+site, from two rank measurements. The seam's own system is rank 6 on 10 by
+the chart alone, kernel 4; an unshared site's system is three equations on
+the three entries of the symmetric square of its own chart, rank 3, kernel
+0. The composite's price is therefore 4 per shared site and 0 everywhere
+else, and the census then finds that sum equal to 4k at every one of the
+45,010 gluings. Whether two seams of one union constrain each other — and so
+whether the true joint price is ever less than the sum of its seams — is
+S-3, and it is registered rather than run.
 
-That last excess is **SEAM-CONFINED**, and the confinement is the point.
+That excess is **SEAM-CONFINED**, and the confinement is the point.
 Every unshared site's form is determined by its own three links exactly as
 in a lone sector; the whole surcharge sits on the shared sites, four numbers
 each, twelve at a k = 3 seam. The price of composition is not distributed
@@ -520,12 +660,21 @@ the window carries its declaration fiber in the row that reports it, and
 every lawful cell is lawful AT a declaration. An extension is a declaration,
 priced; it is not a discovery about the process.
 
-**The adjudication's ruling is carried.** The union changes geometry only
-on links both sectors jointly own; nothing here says otherwise, and the
-reversed
+**The adjudication's ruling is carried, at its own domain.** In the
+delivered union — every one of the 45,010 gluings, with no declared cross
+link and no added event — the union changes geometry only on links both
+sectors jointly own, and no sector-private link ever moves; this unit
+re-measures it and finds zero exceptions, over the whole family. The
+extension arenas of section 4 are not in that domain and are not offered
+as counterexamples to it: a division event that crosses the seam necessarily
+doubles links that touch an unshared actor — two of them at the
+shared-seeded crossing, one of them wholly inside a sector at the B-seeded
+one — and that is the mechanism the price of section 4.3 measures. The
+ruling is about what gluing does; those two numbers are about what an added
+event does. The reversed
 wording the adjudication struck does not occur in this paper. The gate that
-enforces its absence whitespace-normalises, ASCII-folds and strips markdown
-prefixes from both sides.
+enforces its absence whitespace-normalises, ASCII-folds, case-folds and
+strips markdown prefixes from both sides.
 
 **No sector narrative, and no reading of the union as anything larger.** The
 paper is scanned for the terms whose presence would mean such a reading had
@@ -553,14 +702,18 @@ read as a likelihood that a crossing is lawful.
 | item | class | fiber | where it binds |
 |---|---|---|---|
 | the base object: two driven R = 3 saturating sectors | forced | 1 | paper-19's own arena, inherited at its pinned sha |
-| the gluing, and k | declared, the axis | 45010 | every member enumerated |
+| the gluing, and k | declared, the axis | 45010 | M1 and M3, every member enumerated |
+| the union arena of the extension census | declared | 12 (1 run) | M2 and M4 entire; the seam census and the price laws are exhaustive over all 45010 gluings |
 | the seam chart: the direct sum | declared | 1 | M1, and the whole completion question lives inside it |
-| the completion of the seam's four entries | declared, MEASURED IRREDUCIBLE | 31 at the all-simple seam | M1 |
+| the completion of the seam's 4 entries | declared, MEASURED IRREDUCIBLE | 31 at the all-simple seam | M1 |
+| the seam type function's sign convention | declared, MEASURED VERDICT-BEARING | 2 | M1: forward gives 49 seam types, both signs 37 |
 | the extension window's target axis | declared | 5 | M2 |
 | the extension window's reading axis | declared | 3 | M2 |
-| the extension window's count leg | declared, MEASURED DEPENDENT | 2 | M2, and it collapses onto the reading axis |
+| the extension window's count leg | declared, MEASURED DEPENDENT UNDER QUOTIENT-AT-POSITIVE ONLY | 2 | M2: it collapses onto the reading axis at POSITIVE and flips lawfulness at 3 targets at NON-NEGATIVE |
 | the carrier and the link individuation | held at the delivered values | 1 | outside this unit's window, named |
-| the placement of a declared cross link | declared, MEASURED INERT AT ONE CROSSING | 36 | M2's blindness census |
+| the placement of a declared cross link | declared, MEASURED INERT AT ONE CROSSING | 36 | M2's blindness census sweeps all 36; a target of this window can declare the 24 forward ones |
+| which of SEC's specifications are re-run as arena objects | declared | 3 | M2: the 2 the grammar ADMITS are rebuilt, the refused one is not |
+| the crossing-alone control | declared, NOT DRIVEN | 1 | M2's inventories, to isolate the mechanism |
 | I-SITE-ASSIGNMENT | measured | 1 or 3 | M2's inventories |
 | I-DIRECTION-LABEL | measured | 1, 3 or 9 | M2's inventories |
 | I-ORIENT | measured | 1, 2 or 4 | M2's inventories |
@@ -569,27 +722,28 @@ read as a likelihood that a crossing is lawful.
 | the three-actor group as the unit of a division event | forced | 1 | d66's committed conflict-group size |
 
 Three items are declared and measured to be inert or dependent, and the
-paper says which: the count leg collapses onto the reading axis, the
-placement of a single cross link is a gauge, and the completion is
-irreducible rather than free in the pejorative sense — it is a declaration
-the laws do not narrow.
+paper says which and how far: the count leg collapses onto the reading axis
+under QUOTIENT at POSITIVE and is a genuine axis at the other leg, the
+placement of a single cross link is a gauge at one crossing, and the
+completion is irreducible rather than free in the pejorative sense — it is a
+declaration the laws do not narrow.
 
 ## 9. Verdict
 
 ```
-SEC2-SEAM-DECLARATION-IRREDUCIBLE-[49 SEAM TYPES OVER 132273 SHARED SITES; THE COMPLETION SPACE IS 4-PARAMETER AT EVERY ONE, RANK 6 ON 10 BY THE CHART ALONE; AT THE ALL-SIMPLE SEAM 31 COMPLETIONS ASSIGN ADMISSIBLE COUNTS TO EVERY CROSS DIRECTION AND ALL 31 ARE POSITIVE DEFINITE] -- POSITIVITY SELECTS NOTHING; THE CONVENTION-FREE PRICE IS CONSTANT ON THE WHOLE SPACE AND THE ONE-SIDED READING'S MINIMISER MOVES WITH THE CONVENTION; REFINEMENT STABILITY IS EMPTY AT THIS RECORD BY THE CEILING LAW (MIN COUNT 1, CEILING 0) AND, GRANTED AS A HYPOTHETICAL, IS EMPTY AT 48 OF 49 SEAM TYPES AND SELECTS THE DIRECT SUM AT THE 49TH -- THE ONE PRINCIPLE THAT DOES SELECT, MAXIMUM DETERMINANT, IS NAMED AND NOT LICENSED
+SEC2-SEAM-DECLARATION-IRREDUCIBLE-[49 SEAM TYPES OVER 132273 SHARED SITES AT THE FORWARD CONVENTION, 37 AT THE BOTH-SIGNS ONE; THE COMPLETION SPACE IS 4-PARAMETER AT EVERY ONE, RANK 6 ON 10 BY THE CHART ALONE; AT THE ALL-SIMPLE SEAM 31 COMPLETIONS ASSIGN ADMISSIBLE COUNTS TO EVERY CROSS DIRECTION AND ALL 31 ARE POSITIVE DEFINITE] -- POSITIVITY SELECTS NOTHING; THE CONVENTION-FREE PRICE IS CONSTANT ON THE WHOLE SPACE AND THE ONE-SIDED READING'S MINIMISER IS MANY-VALUED AT EVERY SEAM TYPE AND MOVES WITH THE CONVENTION; REFINEMENT STABILITY IS EMPTY AT THIS RECORD BY THE CEILING LAW (MEASURED MIN COUNT 1, CEILING 0) AND, GRANTED AS A HYPOTHETICAL, IS EMPTY AT 48 OF 49 SEAM TYPES AND SELECTS THE DIRECT SUM AT THE LAST -- THE ONE OF THE CRITERIA MEASURED THAT DOES SELECT, MAXIMUM DETERMINANT, IS NAMED AND NOT LICENSED
 ```
 
 ```
-SEC2-GLUING-EVENT-LAWFUL-AT-THE-MATCHED-CROSS-LINK-EXTENSION-[THE WINDOW: TARGET x READING x COUNT LEG, 30 CELLS, CARRIER AND LINK INDIVIDUATION HELD AT THE DELIVERED VALUES; 455 THREE-ACTOR GROUPS IN 9 ORBITS, 288 OF THEM SEAM-SPANNING AND EVERY ONE DEAD AT THE DELIVERED TARGET] -- LAWFUL AT 216 OF 288 ONCE THE TARGET DECLARES THE CROSS LINKS THE EVENT REALISES, BOTH DRIVEN SPECIFICATIONS AMONG THEM, AND MOTIVATED AT 0 OF 216: THE PRICE IS THE WELD ITSELF, FREE ITEMS 0 -> 3 AT THE SHARED-SEEDED CROSSING AND 0 -> 2 AT THE B-SEEDED ONE, WHILE THE CROSSING TAKEN ALONE COSTS NOTHING AND NO THREE-ACTOR GROUP CAN DELIVER IT ALONE
+SEC2-GLUING-EVENT-LAWFUL-AT-THE-MATCHED-CROSS-LINK-EXTENSION-[THE WINDOW: TARGET x READING x COUNT LEG, 30 CELLS OF WHICH 11 ARE LAWFUL AND EXACTLY 1 TARGET IS LAWFUL WITH ALL THREE DELIVERED LEGS INTACT, CARRIER AND LINK INDIVIDUATION HELD AT THE DELIVERED VALUES; 455 THREE-ACTOR GROUPS IN 9 ORBITS, 288 OF THEM SEAM-SPANNING AND EVERY ONE DEAD AT THE DELIVERED TARGET] -- LAWFUL AT 216 OF 288 ONCE THE TARGET DECLARES THE CROSS LINKS THE EVENT REALISES, BOTH DRIVEN SPECIFICATIONS AMONG THEM, AND MOTIVATED AT 0 OF 216 BY A COUNTING THEOREM CHECKED AT EVERY ONE OF THEM: THE PRICE IS THE WELD ITSELF, FREE ITEMS 0 -> 3 AT THE SHARED-SEEDED CROSSING AND 0 -> 2 AT THE B-SEEDED ONE, WHILE THE CROSSING TAKEN ALONE COSTS NOTHING AND NO THREE-ACTOR GROUP CAN DELIVER IT ALONE
 ```
 
 ```
-SEC2-COMPOSITE-PRICE-SPLITS-[FIVE CURRENCIES ON ALL 45010 COMPOSITES AGAINST THE LONE SECTOR, ZERO VIOLATIONS: RECORD 54 = 27 + 27 IGNORES COMPOSITION; CARRIERS 18 - k AND LINKS 54 - d FAVOUR IT; THE GEOMETRY'S BUDGET 54 + 2d AND THE DECLARATION PRICE 4k PENALIZE IT] -- AND THE EXCESS IS SEAM-CONFINED: EVERY UNSHARED SITE'S FORM IS DETERMINED EXACTLY AS IN A LONE SECTOR AND THE WHOLE SURCHARGE SITS ON THE SHARED SITES, FOUR NUMBERS EACH
+SEC2-COMPOSITE-PRICE-SPLITS-[FIVE CURRENCIES ON ALL 45010 COMPOSITES AGAINST THE LONE SECTOR, ZERO VIOLATIONS: RECORD 54 = 27 + 27 IGNORES COMPOSITION; CARRIERS 18 - k AND LINKS 54 - d FAVOUR IT; THE GEOMETRY'S BUDGET 54 + 2d AND THE DECLARATION PRICE 4k PENALIZE IT, THE LAST SUMMED FROM THE MEASURED KERNELS 4 AT A SHARED SITE AND 0 AT EVERY OTHER, WITH ADDITIVITY ACROSS SEAMS REGISTERED OPEN] -- AND THE EXCESS IS SEAM-CONFINED: EVERY UNSHARED SITE'S FORM IS DETERMINED EXACTLY AS IN A LONE SECTOR AND THE WHOLE SURCHARGE SITS ON THE SHARED SITES, 4 NUMBERS EACH
 ```
 
 ```
-SEC2-THE-EXTENDED-DICTIONARY-IS-BLIND-AT-ONE-CROSSING-AND-SIGHTED-AT-TWO-[36 PLACEMENTS IN 1 ARENA AT ONE CROSSING AND 36 OF 36 ADMITTED BY THE DETECTOR; 630 PLACEMENTS IN 5 ARENAS AT TWO AND 108 OF 630 ADMITTED; 7140 IN 15 AT THREE] -- SO THE PLACEMENT OF A SINGLE CROSS LINK IS A GAUGE AND NOT A DATUM, AND THE RECORD-FITTED OBJECTION DOES NOT BITE AT ONE CROSSING BECAUSE EVERY PLACEMENT GIVES THE SAME ARENA
+SEC2-THE-EXTENDED-DICTIONARY-IS-BLIND-AT-ONE-CROSSING-AND-SIGHTED-AT-TWO-[36 PLACEMENTS IN 1 ARENA AT ONE CROSSING AND 36 OF 36 ADMITTED BY THE DETECTOR, 35 OF THEM DECLARING A DIFFERENT LINK FROM THE ONE THE RECORD REALISES; 630 PLACEMENTS IN 5 ARENAS AT TWO AND 108 OF 630 ADMITTED; 7140 IN 15 AT THREE] -- SO THE PLACEMENT OF A SINGLE CROSS LINK IS INERT, A GAUGE AT ONE CROSSING AND AT THIS ARENA AND FOR THIS TEST, AND THE RECORD-FITTED OBJECTION IS DISARMED IN ITS PLACEMENT HALF ALONE: EVERY PLACEMENT GIVES THE SAME ARENA, WHILE THE CARDINALITY HALF IS NEITHER DISARMED NOR CLAIMED
 ```
 
 Read out. Merging can be a process in this theory, and the price is exact.
@@ -633,13 +787,19 @@ declarational — sits on the shared sites and nowhere else.
 6. **The hypothetical refinement reading is a hypothetical**, and it is
    labelled one everywhere it appears: the ceiling law grants zero steps at
    this record, so no completion of this arena is ever actually refined.
+7. **The label and orient fibers are read at a declared sweep of base maps,
+   not at every one.** Price: 32 maps per inventory row rather than the full
+   automorphism group. Mitigation: the sweep is declared, the constancy is
+   gated, and the site-assignment fiber — the one that moves — is computed
+   over every admissible map by two independent routes.
 
 ## 11. The instrument
 
 `v14/code/sec2_exact.py`, with the era's CLI contract: a delivery run that is
 the only writer, `--no-write`, `--numbers`, `--selftest`, `--mutant NAME`,
 `--break-anchor NAME`, `--verify-paper [PATH]`, `--verify-sec DIR`,
-`--list-gates` and `--list-mutants`; every unknown flag, unknown flag
+`--verify-transcript [DIR]`, `--list-gates` and `--list-mutants`; every
+unknown flag, unknown flag
 argument, missing flag argument and second mode flag exits 2.
 
 Arithmetic is exact end to end, and an AST scan of the file is a gate: no
@@ -649,11 +809,17 @@ seam's forms are carried as doubled integer Gram matrices, which makes
 Sylvester positivity and the determinant order integer predicates without
 changing either.
 
-Five sources are read at run time, sha-pinned, with the read set recorded at
-the I/O layer and gated to be exactly the declared set; eight verbatim
+Five sources are read at run time, sha-pinned. The read set is recorded at
+an audit hook rather than in a helper, so it records every `open` the
+process performs whoever calls it, and it is compared against the declared
+set both at the first gate and after the last, order-insensitively: a stray
+read of a file the pin forbids fails wherever it is planted. Eight verbatim
 anchors are each located exactly once in their own pinned source under the
 whitespace-and-markdown normaliser, cleared against a character floor, and
-bound to the gate that consumes them.
+consumed in a declared mode — the gate reads its own operand out of the
+anchor's bytes, or names the anchor in its evidence row, or the paper quotes
+it verbatim — so a consumer naming a gate that does not exist fails, and an
+anchor located and then discarded fails too.
 
 The automorphism machinery is this unit's own: an equitable-refinement
 backtracking search, exhaustive and uncapped below a declared cap, whose
@@ -662,24 +828,48 @@ carried into a separate search mode rather than tested on one arbitrary map,
 so the reading-collapse gate compares two procedures rather than an object
 with itself. Every cell of the window additionally carries an edge-count
 necessary condition computed from the two edge sets alone, so a forged
-liveness dies without the search being consulted.
+liveness dies without the search being consulted. No count is typed: the
+declaration fibers, the union's minimum count, the arena's own totals and
+the choice inventory's own fibers are all computed from the run and
+published from the computation.
 
-Coverage is honest. Every gate is falsified by one of the declared mutants,
-each dying at its own named gate, or waived with a machine-checked forcing;
-every declared mutant's target gate exists in the run; and every declared
-mutant is verified to have an injection site in the source, so a falsifier
-that could not fire is a failure rather than a badge. The head is derived a
-second time by a comparator that types all four templates itself and rereads
-every value from the receipt's own rows. The seal is total — every published
-receipt key sealed at the gate that vouched its values or declared unsealed
-with its reason — the artifacts are written through a staged replace from
-the sealed payload, and the integrity check compares the disk bytes against
-the gate-time seal. The paper under test is checked in the same run: every
-data row and every header row of every table above is a rendered claim of
-the receipt, compared as a multiset in both directions; numeral coverage
-includes fenced blocks and inline code spans; the fenced blocks are matched
-against this run's own verdict strings; claim polarity is checked against
-each row's own negation; and spelled numerals above twelve are scanned.
+Coverage is honest. Every gate this run declares — those already fired, the
+coverage gate itself, and the gates declared to fire after it — is falsified
+by one of the declared mutants, each dying at its own named gate, or waived
+with a machine-checked forcing whose wording is the code's; every declared
+mutant's target gate exists in the run; every declared mutant is verified to
+have an injection site in the source; and every falsifier corrupts a
+measurement rather than a gate's own verdict variable, so a mutant that
+passed by handing a gate a False would not be a falsifier at all. The head
+is derived a second time by a comparator that types all four templates
+itself and rereads every value from the receipt's own rows. The seal is
+total — every published receipt key sealed at the gate that vouched its
+values or declared unsealed, from a declared list of the keys that may be,
+so no measured key can be moved across the split — and the gate-time seals
+are verified against the values that would be promoted, once at the last
+gate and once at the door, before anything is written. The two artifacts are
+staged and read back before either is promoted. The transcript is bound to
+the receipt by digest, line count and gate-row count, and
+`--verify-transcript` re-checks all three and recomputes the ledger chain
+from the receipt's own bytes, so a forged PASS line or an invented gate row
+fails against the object that was sealed.
+
+The paper under test is checked in the same run, and no paper gate can pass
+by there being no paper: every data row and every header row of every table
+above is a rendered claim of the receipt, compared as a multiset in both
+directions and PER TABLE, so a row transplanted from one published table
+into another, a duplicated row and two exchanged headers all die; numeral
+coverage includes fenced blocks and inline code spans, and scans
+sentence-final numerals as well as the rest; the fenced blocks are matched
+against this run's own verdict strings by multiset equality at a declared
+multiplicity, so a ninth fence and a deleted verdict section both die; claim
+polarity is checked case-insensitively against each row's own negation and
+covers the headline direction words in the paper's own prose, not only the
+ones inside a fence; spelled numerals are generated rather than listed, so
+there is no floor and no whitelist; and every numeral standing before the
+phrase that names a population is bound to that population's own measured
+value, so a count from one of the unit's populations cannot validate a
+sentence about another.
 
 ## 12. The successor register
 
@@ -692,8 +882,10 @@ specifications. A driven census over the version lineage would turn 216 of
 
 **S-2 — the seam at more than two crossings.** Blindness at one and sight at
 two is measured. Whether the sighted regime has a law — which orbits a
-lawful record can land in — is open, and the orbit counts 5 and 15 are where
-it starts.
+lawful record can land in — is open, and the data it starts from are here:
+the orbit sizes at two crossings are 72, 72, 108, 162 and 216, the admitted
+set is exactly the 108, and at three crossings the 7140 placements fall into
+15 orbits.
 
 **S-3 — the completion under a second seam.** The declaration price is 4k
 and the completions are censused per seam independently. Whether two seams
@@ -704,6 +896,19 @@ sum of its seams, is not run.
 k at R = 3. What 54 + 2d becomes at R = 6, where a link may carry 2 before
 any gluing and the ceiling law is no longer 0, is the first place the
 refinement criterion could stop being empty.
+
+**S-5 — the cardinality half of the fitting objection.** At one crossing the
+placement is inert and any of the 36 targets admits; what is never tested is
+a target declaring a different number of cross links than the event
+realises. The ONE-AT-EVERY-SEAM row is the first data point — three declared,
+one realised, dead under the delivered legs and alive at NON-NEGATIVE — and a
+census over declared count against realised count is what would make
+"matched" a measured notion rather than a definition.
+
+**S-6 — the seam type function's other convention.** The both-signs reading
+returns 37 types over the same shared sites. Nothing here is measured under
+it, and whether the completion lattice, the price laws and the extension
+window return the same verdicts at that reading is open.
 
 **What may not be inherited**, as a standing row: any lawful extension as
 the theory rather than as a declaration; the blindness result at any other

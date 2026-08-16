@@ -11880,3 +11880,39 @@ list).**  Residuals stated honestly in-paper (the
 234 small structural numerals; the no-numeral prose
 sentence; the sample-based exhaustiveness licence).
 **Orchestrator battery next; terminal on green.**
+
+## 2026-08-16 — SEC-2 REPAIR DELIVERED AND COMMITTED: THE ORDERED EXCEPTION EXECUTED (12 LEAVES, THE COMPUTED COLUMN, ZERO OTHER MOVES); MOTIVATED-AT-0 GATED AS A THEOREM; THE BOTH-SIGNS 37 COMPUTED (v14 LEDGER #368)
+
+**Files:** paper-40-sec2.md 4fe88602280c; sec2_exact.py
+bac3bf371c42; sec2_output.txt 37dd76a0113a;
+sec2_receipt.json 12a22d74c3cd.  **The ordered exception:**
+the declaration-fiber column COMPUTED by route_members()
+gated against a second route — 27→24 (3 collisions), 9→8
+(1), the four collisions rendered in a gated table
+(reproducing K1's list exactly); the forward-only 24-of-36
+scope named at the number's birth; the incident disclosed
+in-paper as the no-typed-counts rule's first realized
+harm.  **Keyed receipt diff vs HEAD: the 12
+declaration-fiber leaves are the ONLY changes** —
+completion lattice 49/49, census 16/16, sec_values 22/22,
+all 30 extension cells, all price/seam/blindness objects:
+0 moved.  Z-highlights: IRREDUCIBLE relativized;
+G-SEAM-CONVENTION with the both-signs census COMPUTED (37
+types over the same 132,273 sites); MOTIVATED-AT-0 gated
+AS A THEOREM (all 455 re-fated, hypothesis checked at
+every object, all 216 inventories, orbit invariance at
+every member per #87); the real M2 result written
+(G-COUNT-LEG-AXIS: 11 of 30; exactly ONE fully-intact
+target); SEAM-CONFINED's universe gated (0 private
+doublings over 45,010; the driven arenas' 2 and 1
+in-sector); all 18 directions cut 31→8 with the
+minimising=cut set identity gated; the fifth currency
+DERIVED from the two measured kernels; LAX vacuity
+measured 36/36; Fischer's census leg (0 outside-PD with
+positive determinant).  Instrument: 56 gates fully
+reconciled (42/45/34 resolved); 54/54 mutants
+out-of-harness; 24/24 paper + 5/5 code injections; both
+vacuous-pass modes exit 1; byte ×2 off-tree; the chain
+56/56 with head MATCH.  Two battery-caught defects fixed
+pre-delivery.  **Orchestrator battery next; terminal on
+green.**
