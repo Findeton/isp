@@ -688,3 +688,22 @@ correction: 44 mutants vs 42 gates (two gates carry two
 recipes — an E-26 naming, nothing over-claimed).
 G-DETERMINISM survived four attacks as a minor.  K1/K2
 out.
+
+## 2026-08-16 — THE ARITY #16 GATE CLOSED: ALL FOUR VERIFICATION LEGS PASS; TWO PATH-HYGIENE BUGS (NOT STATE), BOTH FIXED IN THE COMMITTED BLOB; THE PANEL LAUNCHES (v15 LEDGER #24)
+
+Independent verification (fresh mirror): ×3 consecutive
+deliveries from three CWDs + 8 more (11 total), all 34/34
+with ledger head 3ea48cfe71ef3cc9 and byte-identical
+artifacts under randomised hash seeds; off-tree git-less
+byte-identical; the 34-falsifier out-of-harness sweep
+agreeing ROW-FOR-ROW with the in-harness rows (the
+clean-state proof); the residual reproduced against the
+#13 blob and characterized for the panel (the CLI
+snapshot's undeclared self-reads — closed in d0044766fcd8
+by accessor-level exemption for exactly the opened
+files).  **Diagnosis corrected: TWO path-hygiene defects
+(D1 the nested call's CWD-relative default; D2 the
+snapshot pre-read), one symptom; the nested-state theory
+DISPROVEN; the committed blob contains both fixes.**
+2,939 receipt leaves: 0 moved.  The ARITY three-seat
+panel launches this entry.
