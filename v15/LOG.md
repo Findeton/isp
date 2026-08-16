@@ -632,3 +632,30 @@ AUTOGLUE ×3 seats, CONTRACT repair, DISC repair, the
 ARITY flake isolation.  Wave-1 state: all four units
 delivered; two adjudicated and in repair; one in panel;
 one gated on ×3-green.
+
+## 2026-08-16 — THE ARITY FLAKE ROOT-CAUSED AND FIXED BY THE ORIGINAL WORKER: A CWD-RELATIVE READ-SET DECLARATION; MEASUREMENT ARTIFACTS BYTE-UNCHANGED (v15 LEDGER #22)
+
+Root cause: os.path.abspath(paper_rel) resolved the
+object-under-test against the LAUNCH CWD — any non-repo-
+root run (and every off-tree run) declared a path the
+audit hook never saw and refused at G-READ-SET before the
+late gates, producing all three disclosed symptoms (the
+varying falsifiers-dying-elsewhere sets; non-reproducible
+repeats; the off-tree refusal).  The delivering run had
+been launched from the repo root.  **The fix touched only
+the read-set declaration: arity_exact.py a07f02e508b8 →
+d0044766fcd8; output 95414a8d2824 and receipt
+c1354b632733 UNCHANGED — no measured quantity moved, the
+ledger head identical (3ea48cfe71ef3cc9).**  Post-fix:
+delivery from an alien CWD green (34 gates, same head);
+byte ×2; off-tree git-less BYTE-IDENTICAL (#91
+satisfied).  ONE SCOPED RESIDUAL disclosed: via the
+--mutant CLI path only, MUT-SEAL-ADD lands at G-READ-SET
+(artifact_digests pre-reads the unit's own artifacts —
+an undeclared read on that path; the in-run harness
+attributes correctly) — the mode-conditional exemption
+decision goes to the PANEL, not applied unilaterally.
+The #16 gate (×3 consecutive green) now runs as an
+INDEPENDENT VERIFICATION by the continuation worker; the
+panel launches on its confirmation.  Committed this
+entry.

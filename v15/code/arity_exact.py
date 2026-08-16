@@ -91,6 +91,12 @@ OUT_JSON = os.path.join(os.path.dirname(SELF), "arity_receipt.json")
 
 SCHEMA = "isp/v15/arity-event-size/1"
 PAPER_REL = "v15/paper-44-arity.md"
+# The object under test is resolved off THIS FILE, never off the process's
+# working directory: the read-set gate compares the path the run DECLARES it
+# reads against the path the audit hook RECORDED, and a working-directory
+# relative default makes those two disagree wherever the run is launched from
+# somewhere other than the repository root.
+PAPER_PATH = os.path.join(REPO, PAPER_REL)
 
 # ===========================================================================
 # SECTION 0.  THE FROZEN DECLARATION (RUNBOOK section 15: the arena is data)
@@ -2045,7 +2051,7 @@ def measure_sec2(UACT, UREL):
     return rows, theorem_bad
 
 
-def full_run(paper_text, paper_rel=PAPER_REL, write=True, break_anchor=None):
+def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
     global AN, R
     R = {}
     src = {}
@@ -4111,10 +4117,18 @@ FALSIFIERS = [
 ]
 
 
-def run_falsifiers(paper_text):
+def run_falsifiers(paper_text, paper_rel):
     """The harness runs each recipe in a NESTED, non-writing run.  The outer
     run's ledger, seal, registry and receipt are saved and restored around
-    it, so a falsifier can never move the delivery it is auditing."""
+    it, so a falsifier can never move the delivery it is auditing.
+
+    The OBJECT UNDER TEST IS THREADED IN, never re-defaulted: a nested run
+    that resolved the paper's path for itself would declare a different file
+    from the one the outer run actually opened, and would then die at the
+    read-set gate instead of at the gate its recipe names.  A recipe whose
+    declared gate fires after the read-set gate is exactly the one such a
+    substitution silences, so the identity of the path is part of the
+    harness's contract and not a convenience."""
     global MUTANT, IN_FALSIFIER, LD, TR, SEAL, CR, R, AN
     keep = (LD, TR, SEAL, CR, R, AN)
     keep_reads = list(RS.reads)
@@ -4134,7 +4148,7 @@ def run_falsifiers(paper_text):
             moved = digest(f.apply()) != base[f.name]
         died_at = None
         try:
-            run_measurements(paper_text)
+            run_measurements(paper_text, paper_rel)
         except GateFail as e:
             died_at = str(e).split(" :: ")[0]
         except CliError as e:
@@ -4437,7 +4451,7 @@ def closing_battery(src, paper_text, paper_rel, write):
             {"float_paths": bad[:8]})
 
     if not IN_FALSIFIER:
-        frows = run_falsifiers(paper_text)
+        frows = run_falsifiers(paper_text, paper_rel)
         # The denominator is the unit's DECLARED gate list, not the gates
         # fired so far: this gate runs before the closing gates, and scoring
         # against the gates already fired would silently excuse every
@@ -4619,7 +4633,7 @@ def promote(payload, segs, paper_text, write):
     return {"receipt": bytes_digest(blob), "transcript": bytes_digest(ttxt)}
 
 
-def run_measurements(paper_text, paper_rel=PAPER_REL, write=False,
+def run_measurements(paper_text, paper_rel=PAPER_PATH, write=False,
                      break_anchor=None):
     reset_state()
     TR.say("ARITY (paper-44) -- the event-size unit")
@@ -4649,11 +4663,26 @@ def read_paper(path):
 
 
 def artifact_digests():
+    """The tamper snapshot the NON-WRITING run modes take of this unit's OWN
+    emitted artifacts, so they can prove they left them alone.
+
+    These opens are not repository INPUTS and they are not part of any
+    measurement -- but the audit hook sees every open, whoever calls it, so
+    each one is EXEMPTED HERE, at the accessor, and only for a file this
+    function actually opened.  Registering the exemption where the read
+    happens is what keeps both legs of the read-set gate honest: a run mode
+    that never takes the snapshot never registers the exemption, so it cannot
+    accumulate an unused one, and a run mode that does take it cannot smuggle
+    a third path in under the same licence."""
     out = {}
     for p in (OUT_JSON, OUT_TXT):
         if os.path.exists(p):
             with open(p, "rb") as fh:
                 out[os.path.basename(p)] = bytes_digest(fh.read())
+            RS.exempt(os.path.relpath(p, REPO),
+                      "this unit's own emitted artifact, opened by a "
+                      "non-writing run mode's tamper snapshot and by nothing "
+                      "that measures")
     return out
 
 
@@ -4673,7 +4702,7 @@ GATE_ORDER = ["G-SOURCES", "G-PATH-ANCHORS", "G-VERBATIM", "G-ARENA",
 
 
 def parse_args(argv):
-    mode = {"action": "run", "paper": os.path.join(REPO, PAPER_REL),
+    mode = {"action": "run", "paper": PAPER_PATH,
             "mutant": None, "write": True}
     i = 0
     while i < len(argv):
@@ -4733,7 +4762,8 @@ def main(argv=None):
     if mode["action"] == "selftest":
         before = artifact_digests()
         try:
-            run_measurements(paper, write=False, break_anchor=VERBATIM[2][0])
+            run_measurements(paper, mode["paper"], write=False,
+                             break_anchor=VERBATIM[2][0])
         except GateFail as e:
             after = artifact_digests()
             ok = before == after
@@ -4751,7 +4781,7 @@ def main(argv=None):
         MUTANT = mode["mutant"]
         IN_FALSIFIER = True
         try:
-            run_measurements(paper, write=False)
+            run_measurements(paper, mode["paper"], write=False)
         except GateFail as e:
             MUTANT = None
             IN_FALSIFIER = False
