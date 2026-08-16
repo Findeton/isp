@@ -11581,3 +11581,28 @@ against SEC's committed bytes).  Everything else
 reproduces exactly (the 49-row table entry for entry;
 31→8 with the direct sum excluded; 216/72; the blindness
 censuses with orbit match).  K1/K3 still out.
+
+## 2026-08-15 — SEC-2 K1 (OPERATOR) FROZEN: AWF; 555 OF 558 REBUILT EXACT (THE 3 = THE TYPED COLUMN, TWO-SEAT CONVERGENT); THE DIRECT-SUM EXCLUSION PLACEMENT-INDEPENDENT; THE 49 CONVENTION-RELATIVE (v14 LEDGER #357)
+
+**Review:** v14/review-sec2-operator.md (3f45f6837bb7, 358
+lines).  Grade AWF.  558 delivered quantities rebuilt from
+nothing by six independent scripts (+~228,000 supplementary
+measurements); 555 exact — the three failures ARE K2's
+typed declaration-fiber column (27→24, 9→8, with the
+collisions listed; all 42 family members × 12 fates run —
+every family fate-homogeneous, NO FATE MOVES).  THREE
+MAJORS: (M-1) §1's "six equations short" false — the
+shortfall is FOUR (it survived because the numeral scan
+floors at twelve); (M-2) the typed column (convergent);
+(M-3) **the convention producing "49 seam types" (the
+forward cell) is never named — the both-signs reading
+gives 37; the verdict's first number is
+convention-relative.**  ATTACKED AND SURVIVED: "the one
+principle that does select" (vs min-det, maximin, minimax,
+max-budget).  **STRENGTHENING: the 31→8 cut, all-8-PD, and
+the DIRECT-SUM EXCLUSION hold at EVERY one of the 18 cross
+directions — placement-independent, matching the blindness
+census by another route**; the minimising eight and the
+cut eight are literally the same set {u₃₃ = +1},
+unremarked.  All price laws, censuses, and the 22
+inheritances reproduce exactly.  K3 still out.
