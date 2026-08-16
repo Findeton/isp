@@ -12392,3 +12392,21 @@ resolutions by transitivity).  **Battery: 41 gates; 53/53
 falsifiers; 37/37 injections dead, survivors none; byte
 ×2 off-tree via --run; no vacuous modes.**  Orchestrator
 battery next; terminal 38 closes v14 on green.
+
+## 2026-08-16 — REC IS TERMINAL: THIRTY-EIGHT — THE CAST IS A THEOREM OF THE RECORD, UP TO A NAMING; v14 CLOSES (v14 LEDGER #390, FINAL)
+
+**Orchestrator battery ALL GREEN** (byte-identical ×2 from
+deleted artifacts via --run; seed-invariant; MUT-NAMING
+dead at G-NAMING-RESIDUE with move-proof and hook;
+artifacts untouched).  STATUS row appended;
+v15/QUESTIONS.md Q51/Q54–Q57 sealed in this commit; memory
+next.  **v14 CLOSES AT THIRTY-EIGHT TERMINALS: the era
+that took the click-law programme from one arena's record
+laws to a sealed audit of its own assumptions — division
+forced, naming forced, size unnecessary, cast
+record-derived, confinement dissolved, species priced,
+completeness measured against Einstein's own criteria —
+with zero false physics numbers surviving anywhere and
+every correction on the record.**  The programme continues
+in v15 (the physical-theory trichotomy; ledger already at
+#9).
