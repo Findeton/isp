@@ -12255,3 +12255,37 @@ the total seal, byte-identical off-tree, 38/38, the
 audit-hook read set, and the blindness itself (carried by
 the type walk + equivariance + controls, not the AST scan
 §8 credits).  K3 still out; adjudication after it.
+
+## 2026-08-16 — REC K3 (INSTRUMENT) FROZEN: ACCEPT-WITH-FIXES; ONE CANDIDATE FALSE NUMERAL (THE REFUSED-3 PROXY — THE REAL COMPARATOR REFUSES 4); THE PANEL IS COMPLETE (v14 LEDGER #384)
+
+**Review:** v14/review-rec-instrument.md (591abcc273d7,
+844 lines).  12 majors / 17 minors; no physics moved; 219
+executions.  SEAM: the template ADOPTED IN MECHANISM,
+PARTIAL IN EXERCISE (families c and h carried not used —
+their mechanisms live in methods never called).  MAJORS:
+walls defeated 11/11 by paraphrase; **the E-32 move-proof
+a tautology (after constant on every raising path) — 6 of
+38 recipes do not move their named target**; an
+unimplemented falsifier row ships; **the one waiver
+UNTRUE (the seat built the falsifier it says cannot
+exist)**; audit_descriptions never called and flags three
+hooks; S-1 name-based (four bypass routes; the
+load-bearing attack DOES die at the synthetic arm); the
+head bound at 12 of 26 numerals (three fields move with
+byte-identical transcripts); **refused=3 is a
+cast_size≠9 proxy — the comparator actually run refuses
+4 (CONVERGENT with K2 M2's discarded 3+3+3 refusal)**;
+the 261 denominator scramble-dependent (254–261); the
+SWAP arm silently capped 180-of-315; direction-bearing
+prose unbound.  POSITIVES: byte ×2 off-tree via --run; no
+vacuous modes; 38/38 at declared gates; family (e) the
+corpus's strongest claims implementation; the synthetic
+arm has real teeth.  **PANEL COMPLETE (K1 #383 / K2 #380
+/ K3 here): ~563 checks; the head LICENSED; two ordered
+number corrections queued (136→multiset-label/103-set;
+3→4).  Adjudication next.**
+
+## 2026-08-16 — REC ADJUDICATED: REPAIR ORDERED; THE ERASER RE-DECLARED TO ITS MEASURED TRUTH; THE MECHANISM AND BOUNDARY CORRECTED; TWO NUMBER CORRECTIONS TO TRUTH (v14 LEDGER #385)
+
+note-rec-adjudication.md committed (rulings above).  The
+repair worker launches next; HOR's repair continues.
