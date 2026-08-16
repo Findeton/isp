@@ -1293,3 +1293,40 @@ sealed or upgraded registry questions.  v15 terminals:
 FOUR.  42 terminals across both eras.  Zero false physics
 numbers remain in any terminal paper; zero false
 computed-output numbers ever.**
+
+## 2026-08-16 — ECC + ARITY-16 PINNED AND LAUNCHED: THE SPINE AND THE SIDE UNIT — THE FIRST POST-WAVE-1 CONSTRUCTIONS (v15 LEDGER #43)
+
+Both pins frozen this commit, written against the four
+sealed parents and the charter as amended through #40:
+
+- **ECC (paper-46)** — v15/note-ecc-pin.md (04874b01e241).
+  The spine unit: the interface table with typed
+  declarations and the DECLARED event fork; (0b) THE SEAM
+  DECISION (persistent vs re-solved) ahead of any Born
+  weight, launched from AUTOGLUE's sealed
+  persistence-is-a-reading row; (0c) the three conditional
+  maps typed separately; the psi-status trilemma resolved
+  or proven irrelevant; THE BORN-MARGINAL FEASIBILITY LP
+  with C(a,2) normalization pre-registered (a=2
+  degenerate branch reported); the cq-instrument carrier
+  candidate MEASURED against alternatives; the
+  admissible-class debt decided.  Q2/Q75/Q73/Q79/Q5
+  committed; EQUIVARIANT-OR-DECLARED and the full TPL-2
+  disease list (incl. MUT-HASH) gated.
+- **ARITY-16 (paper-50)** — v15/note-arity16-pin.md
+  (1dac6a35ddc5).  The side unit, off the spine: ARITY's
+  modulus theorem and a=q conditional at AG(2,4), the
+  F4-LINEAR reading PRE-REGISTERED per #11's sharpened
+  registration (subspace cosets 1|4|16) with the abstract
+  C2^4 reading (1|2|4|8|16) reported beside, never
+  merged; the parent's transport discipline at matched
+  arities; a=3-at-n=16 stamped PURE EXTENSION FAMILY (3
+  does not divide 16 — the refusal is the measurement).
+
+Per the plan: DISC-2 stays ARMED (gated after ECC+DC);
+TPL-2 queues behind a free worker slot; DC (paper-48)
+pins on ECC's verdict; EXCITATION (paper-49) on DC's.
+Concurrency held at two constructions + orchestration.
+Both construction workers launched in background this
+entry.  Commits remain UNSIGNED (GPG non-interactive).
+
