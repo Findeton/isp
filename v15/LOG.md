@@ -167,3 +167,21 @@ registered; the EXCITATION gate already binding; the
 seven-step programme matches the existing plan + wave-2
 projection.  Routed to the ARITY and AUTOGLUE runners
 this entry.
+
+## 2026-08-16 — DISC BATTERY GREEN; ITS THREE-SEAT PANEL LAUNCHED — THE FIRST v15 HOSTILE REVIEW (v15 LEDGER #6)
+
+Battery fully green (byte-identical regeneration via --run
+from deleted artifacts; ×2; seed-invariant; the selftest's
+sealed-value edit dying at T-SEAL-PROMOTION — the
+template's own check firing; MUT-AGREE dead at
+G-AGREE-THROUGH-THE-EARLY-TICKS with move-proof; artifacts
+untouched).  Panel launched: K1 (the null rebuilt; the
+four fractions and both TVs re-derived; the demotion
+census row by row; the m=q descent), K2 (every #2 order
+verified folded; W-ABLATION-NOT-PREDICTION swept with
+paraphrase plants; the anti-strawman PR rows ruled; the
+mechanism sentence measured-or-narrative), K3 (the nine
+template families adversarially audited on the second
+exemplar; the PR pre-registration sealed?; the S-1
+regions attacked; full 36-recipe sweep).  CONTRACT's
+battery continues; its panel on green.
