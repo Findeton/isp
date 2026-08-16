@@ -802,3 +802,25 @@ result is the discovery that the alleged unified dynamics
 did not type-check — solving that honestly, or proving it
 cannot be solved, precedes any excitation or species
 paper.**
+
+## 2026-08-16 — ARITY K1 (OPERATOR) FROZEN: ACCEPT-WITH-FIXES; 431/432 EXACT; THE LEAD RE-PROVED OBJECT-FOR-OBJECT; TWO QUALIFIER-DROP MAJORS (v15 LEDGER #29)
+
+**Review:** v15/review-arity-operator.md (b3435f895103,
+506 lines).  No measurement wrong (431 exact of 432; 1
+container-shape 0-vs-[]); the fidelity 5/5 on an
+independent constructor; **THE LEAD STANDS object for
+object with C(a,2)−⌊a²/4⌋ RE-PROVED** (a=2 a single
+profile ×36; the union 15/54/0).  TWO MAJORS, one
+species: (M1) the bolded "rows whose first rung is the
+event size = 0" is FALSE AS WRITTEN — the true value is
+2; the code's a≠L qualifier never reaches the prose (same
+defect in "mod-a never appears"); (M2) the spelled
+"feasible at three arities" vs the sealed feasible=4 —
+the spelled-numeral disease recurring.  Seven minors.
+**THREE BONUSES to lift: m1 closed in the unit's favour
+(unrestricted BFS returns 6|5|5|4); the link graph is
+exactly K₃,₃,₃ with parts = the UNDECLARED class —
+forcing 15/54/0 and the 36 packings WITHOUT SEARCH; the
+a=2 floor of 6 certifiable exactly (k=4,5 infeasible by
+weight) — the row where the sharpened floor beats the
+counting bound.**  K2/K3 out; adjudication after.
