@@ -11979,3 +11979,19 @@ recurrent unenforced shape), S-2 shared-component routes,
 S-3 the gates encode the answer.**  TPL's own instruments
 caught three defects in themselves by the template (the
 acceptance evidence) — recorded in-census.
+
+## 2026-08-16 — REC (PAPER-41) + HOR (PAPER-42) PINNED AND LAUNCHED: THE USER-RAISED CAPSTONES — THE CAST FROM THE RECORD; THE UNIVERSE WITHOUT A SIZE (v14 LEDGER #373)
+
+Both pins frozen (note-rec-pin.md, note-hor-pin.md), the
+first units built on the E-25…E-33 template (the
+adoption's first exemplars, S-1 addressed by
+construction).  REC: the reconstruction map from bare
+record bytes (site set, links, cast size, menu, naming —
+each gated against the declared arena); the inverse
+surplus; the minimality census (the w* connection
+measured); the obstruction named if found.  HOR: the
+emergent c censused; horizon-stability of contractible
+observables under growth (open patches AND torus
+closures); the open-patch arena built and the
+closure-artifact census run; the direct-limit formulation
+stated and gated.  Constructions launch on commit.
