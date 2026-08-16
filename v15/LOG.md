@@ -185,3 +185,21 @@ template families adversarially audited on the second
 exemplar; the PR pre-registration sealed?; the S-1
 regions attacked; full 36-recipe sweep).  CONTRACT's
 battery continues; its panel on green.
+
+## 2026-08-16 — CONTRACT BATTERY GREEN; ITS THREE-SEAT PANEL LAUNCHED (v15 LEDGER #7)
+
+Battery fully green (byte-identical regeneration; ×2;
+seed-invariant; selftest 34/34 recipes with move-proofs
+writing nothing; MUT-ANCHOR dead at G-ANCHORS-CONSUMED
+with the corrupted state visible; artifacts untouched).
+Panel launched: K1 (the census recomputed; the SEAM/
+duplicate-quote brief item from review #5 assigned; the
+stabilizer-1,296 search re-run; the Q58 nine mechanisms
+through an independent reconstructor), K2 (every #2 order
+verified at every use; W1/W2 paraphrase plants; the
+THRESHOLD-UNDETERMINED wording ruled; the defensible
+sentence's licensure), K3 (the template audit on the
+third exemplar; the unit's own second AST scan attacked;
+--render-passed-as-delivery probed; the planted duplicate
+SEAM row must die).  Both wave-1 delivered units now
+under hostile review.
