@@ -11916,3 +11916,35 @@ vacuous-pass modes exit 1; byte ×2 off-tree; the chain
 56/56 with head MATCH.  Two battery-caught defects fixed
 pre-delivery.  **Orchestrator battery next; terminal on
 green.**
+
+## 2026-08-16 — SEC IS TERMINAL: THIRTY-FIVE (v14 LEDGER #369)
+
+Orchestrator battery ALL GREEN on the third-relay repaired
+object (byte-identical ×2 from deleted artifacts;
+seed-invariant; the selftest's read-set message now proving
+the accessor-recorded set category by category;
+MUT-TYPE-COUNT dead at G-GLUING-CENSUS; artifacts
+untouched).  The sector-statics line seals: universes can
+sit together, the law proves the seam's shape, alignment
+decides welding, and no sector's interior is ever touched
+from outside — the locality theorem that replaced the
+leak.  STATUS row appended in this commit.
+
+## 2026-08-16 — SEC-2 IS TERMINAL: THIRTY-SIX — THE WAVE IS COMPLETE (v14 LEDGER #370)
+
+Orchestrator battery ALL GREEN on the repaired object
+(byte-identical ×2; seed-invariant; MUT-ANCHOR-TEXT dead
+at G-ANCHORS on target; artifacts untouched).  The
+dynamics-of-merging line seals: fusion is lawful at
+exactly one fully-honest extension, never motivated — by
+theorem; the stitching is irreducibly conventional at
+every criterion the pin named, with the lazy convention
+excluded by the measured crossing from every direction;
+the first bridge is gauge, the second is geography; and
+the whole cost of being a composite sits on the seam.
+STATUS row appended in this commit; memory sealed next.
+
+**Programme count: THIRTY-SIX terminals; zero false
+computed numbers surviving anywhere in v14 — the one
+typed-column incident repaired to truth and disclosed.
+The #267 template sweep charters next per #362.**
