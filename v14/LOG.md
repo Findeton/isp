@@ -11656,3 +11656,24 @@ the adjudicator: two typed-testimony receipt leaves
 (subprocesses/reads outside the list), safe by
 G-READS-DECLARED but typed — folds into the #267 sweep.
 **Orchestrator battery next; terminal on green.**
+
+## 2026-08-15 — EPR IS TERMINAL: THIRTY-TWO — SHADOW-INCOMPLETE BY THEOREM, RECORD-COMPLETE FOR THE CENSUSED ELEMENTS; EINSTEIN'S HOPE MEASURED TRUE AT THIS ARENA (v14 LEDGER #360)
+
+**Orchestrator battery ALL GREEN** (byte-identical ×2 from
+deleted artifacts; seed-invariant; hostile argv;
+MUT-E5-LEAK dead at G-E5-RECORD-DOES-NOT-MOVE on target;
+artifacts untouched).  STATUS row appended; memory next.
+
+The user-ordered unit closes at its honest form: the
+wave-function-analogue description cannot hold this
+universe's certainty-elements — by its form, at every
+state; the record holds them all — by its construction,
+now said; one recorded reality wears up to five shadows;
+the far record never moves with the near choice; and the
+1935 paper's closing sentence ("we believe, however, that
+such a theory is possible") is measured TRUE here, with
+Einstein's own sufficiency caveat carried verbatim and the
+Bell verdict standing guard against every over-reading.
+
+**Programme count: THIRTY-TWO terminals; zero false
+computed numbers surviving anywhere in v14.**
