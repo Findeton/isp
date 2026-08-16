@@ -11441,3 +11441,42 @@ non-trivial point.
 
 **Programme count: THIRTY terminals; zero false computed
 numbers surviving anywhere in v14.**
+
+## 2026-08-15 — PER-R REPAIR (CONTINUATION) DELIVERED AND COMMITTED: Z1–Z13 COMPLETE; THE BLOCKING NO-OP FALSIFIER DIAGNOSED AND RECALIBRATED; ZERO OF 1,713 MEASURED LEAVES MOVED (v14 LEDGER #353)
+
+**Files:** paper-29-perr.md 9f00850bfd98; perr_exact.py
+603319c24257; perr_output.txt 17836c4fac4a;
+perr_receipt.json 44b157df665d.  **Reconciliation finding:
+the prior worker's deliv2.txt was a FAILED-RUN log, not a
+report — M-RESIDUE was a no-op (planted "seventeen", a
+registered value), and since the sweep runs before the
+pipeline, NO delivery could ever have written.**  The
+continuation computed the bag-only set (34 values),
+recalibrated M-RESIDUE onto 60 (the DIA parallel-class
+frequency — true of a census, no claim), added M-RESIDUE-N
+(the digit leg, previously falsifier-less), and made every
+injection recipe assert it changed the paper (no-ops can
+never masquerade as survivors again).  All Z1–Z13
+executed: the 5 gate-bound classes with derived labels;
+floors 6/7 live-and-covering with the bare-live 4/5
+control; the 19-part window decomposition; the base-map
+qualifier; the exhaustive stamp re-scoped; 3-BREAKS by
+independence; the seed menu disaggregated; 10 header rows
+as claims; transcript by EQUALITY; G-READS + the honest
+68-gate denominator + read-back; sentence referents (the
+72-forgery dies); the DIA ceiling table (locking general;
+dissolves at R=7; R=8 = 3,752); anchors' consumers 23/18/0
+phantoms; E-24 14 quantities; the two typed §13 counts now
+derived; the successor register S-1…S-6 (PER-R2 at R=8).
+**Battery: delivery ×5 byte-identical (4 off-tree
+git-less); seeds ×2; 20/20 argv; selftest across ALL 14
+anchor classes writing nothing; 65/65 falsifiers on
+target; 42/42 panel injections dead; 1,151 + 166 numerals
+0 unbacked.  Zero measured moves (1,713 leaves by
+identity).**  ONE RESIDUAL FLAGGED NOT REPAIRED (the
+worker's honest call at the acceptance boundary): six
+claim templates still TYPE numerals whose facts are
+independently gated elsewhere — liftable string-identical
+repair REGISTERED for the #267 template sweep, which owns
+exactly this defect class corpus-wide.  **Orchestrator
+battery next; terminal on green.**

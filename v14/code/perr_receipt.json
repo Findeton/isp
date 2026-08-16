@@ -41,6 +41,31 @@
   "same_at_every_site": true,
   "size": 7
  },
+ "anchor_consumers": {
+  "anchors": 23,
+  "gates_evaluated_when_checked": 58,
+  "gates_named": [
+   "G-COVER-CODES",
+   "G-DIA-LAW",
+   "G-DRIVEN-EQUALITY",
+   "G-I7-READOUT",
+   "G-INTERFERENCE-CLOSED",
+   "G-LADDER",
+   "G-PRED-A",
+   "G-PRED-B",
+   "G-PREDICTIONS",
+   "G-R6-DOOR",
+   "G-SATURATION-SCHEMA",
+   "G-SIG-FEED",
+   "G-SLACK",
+   "G-TWO-WAY",
+   "G-WALL-BHS",
+   "G-WALL-KR",
+   "G-WALL-L1",
+   "G-WELD-ROWS"
+  ],
+  "phantom_gates": []
+ },
  "anchors": [
   {
    "chars": 54,
@@ -279,45 +304,52 @@
    "name": "the driven window W5"
   },
   {
+   "binds": "\u00a76.2; the fan exercises 3 x 3 of it on (1, 1, 3)'s first two rounds; no exhaustive column uses it",
+   "class": "declared",
+   "fiber": 1,
+   "item": 8,
+   "name": "the seed menu: the first canonical transversal, plus the declared fan"
+  },
+  {
    "binds": "\u00a72.1, by measured translation invariance",
    "class": "forced",
    "fiber": 1,
-   "item": 8,
+   "item": 9,
    "name": "the site the local-type census is taken at"
   },
   {
    "binds": "weld 2's, carried unchanged",
    "class": "declared",
    "fiber": 2,
-   "item": 9,
+   "item": 10,
    "name": "the reading axis (EMBEDDING / QUOTIENT)"
   },
   {
-   "binds": "\u00a76, at every arena above the floor",
+   "binds": "\u00a76, at every arena above the floor; read at every base map",
    "class": "measured",
    "fiber": 36,
-   "item": 10,
+   "item": 11,
    "name": "I-SITE-ASSIGNMENT"
   },
   {
-   "binds": "\u00a76",
+   "binds": "\u00a76, at the declared base map; spread [3, 6] across the 1296 - not base-map invariant",
    "class": "measured",
    "fiber": 3,
-   "item": 11,
+   "item": 12,
    "name": "I-DIRECTION-LABEL"
   },
   {
-   "binds": "\u00a76",
+   "binds": "\u00a76, at the declared base map; spread [1, 2] across the 1296 - not base-map invariant",
    "class": "measured",
    "fiber": 1,
-   "item": 12,
+   "item": 13,
    "name": "I-ORIENT"
   },
   {
    "binds": "a division-set edit on the driven record",
    "class": "free",
    "fiber": "-",
-   "item": 13,
+   "item": 14,
    "name": "the declared falsifier (one division withheld)"
   }
  ],
@@ -481,12 +513,28 @@
   }
  },
  "closing_gates": {
+  "in_the_artifact": [
+   "G-SEAL-TOTAL",
+   "G-INTEGRITY-PRE"
+  ],
+  "integrity_evaluated_at_source_line": [
+   5805
+  ],
   "names": [
    "G-SEAL-TOTAL",
    "G-INTEGRITY-PRE",
    "G-INTEGRITY"
   ],
-  "warrant": "these three are evaluated after the gate ledger is snapshotted and sealed: a totality gate cannot be inside the object it seals, and the integrity gates run against the sealed payload and then against the bytes on disk.  The archived transcript therefore carries their rows while the sealed ledger does not, and a run that fails any gate writes nothing at all"
+  "not_in_the_artifact": [
+   "G-INTEGRITY"
+  ],
+  "promotion_at_source_line": [
+   5833,
+   5834
+  ],
+  "read_back_before_promotion": true,
+  "warrant_transcript": "the closing gates are evaluated after the gate ledger is snapshotted and sealed: a totality gate cannot be inside the object it seals.  The archived transcript carries the rows of those evaluated before the write -- G-SEAL-TOTAL and G-INTEGRITY-PRE -- while the sealed ledger does not; the terminal integrity gate is evaluated against the STAGED bytes and cannot appear in the file it validates",
+  "warrant_write": "a run that fails any gate writes nothing at all: the payload is staged beside its destination, the terminal integrity gate is taken against the staged bytes, and the promotion runs only after it passes -- a run that fails it removes its staging and leaves the committed artifacts untouched"
  },
  "code_space": {
   "2": 23,
@@ -507,16 +555,24 @@
   "refusal_control_refused": true
  },
  "coverage": {
-  "gates": 47,
-  "gates_with_a_declared_mutant": 39,
-  "gates_with_a_forcing_waiver": 8,
+  "closing_gates_projected": [
+   "G-SEAL-TOTAL",
+   "G-INTEGRITY-PRE",
+   "G-INTEGRITY"
+  ],
+  "gates": 68,
+  "gates_evaluated_when_the_ledger_is_built": 61,
+  "gates_with_a_declared_mutant": 56,
+  "gates_with_a_forcing_waiver": 12,
   "rows": [
    {
+    "evaluated": true,
     "gate": "G-SOURCES",
     "mutants": [],
     "waiver": "falsified by --break-anchor, which the selftest runs"
    },
    {
+    "evaluated": true,
     "gate": "G-ANCHORS",
     "mutants": [
      "M-ANCHOR"
@@ -524,6 +580,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-I7-READOUT",
     "mutants": [
      "M-I7-LINKS"
@@ -531,6 +588,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-ARENA",
     "mutants": [
      "M-ARENA"
@@ -538,11 +596,13 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-TRANSLATION",
     "mutants": [],
     "waiver": "a pure identity over the 2,520 translation-partition pairs; its falsifier is the census itself, which would report a mismatch count"
    },
    {
+    "evaluated": true,
     "gate": "G-ALPHABET",
     "mutants": [
      "M-ALPHABET"
@@ -550,6 +610,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-CODESPACE",
     "mutants": [
      "M-CODESPACE"
@@ -557,6 +618,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-CLASS-SPLIT",
     "mutants": [
      "M-CLASS"
@@ -564,6 +626,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-LOCKING",
     "mutants": [
      "M-LOCKING"
@@ -571,6 +634,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-COVER-CODES",
     "mutants": [
      "M-COVER-R4"
@@ -578,6 +642,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-SINGULAR-WITNESS",
     "mutants": [
      "M-COVER-CODES",
@@ -586,6 +651,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-CLASS-LADDER",
     "mutants": [
      "M-CLASS-LADDER"
@@ -593,6 +659,55 @@
     "waiver": null
    },
    {
+    "evaluated": true,
+    "gate": "G-CLASS-WORDS",
+    "mutants": [
+     "M-CLASS-WORDS"
+    ],
+    "waiver": null
+   },
+   {
+    "evaluated": true,
+    "gate": "G-LIVE-CONTROL",
+    "mutants": [
+     "M-LIVE-CONTROL"
+    ],
+    "waiver": null
+   },
+   {
+    "evaluated": true,
+    "gate": "G-CEILING",
+    "mutants": [
+     "M-CEILING"
+    ],
+    "waiver": null
+   },
+   {
+    "evaluated": true,
+    "gate": "G-LOCK-GENERAL",
+    "mutants": [
+     "M-LOCK-GENERAL"
+    ],
+    "waiver": null
+   },
+   {
+    "evaluated": true,
+    "gate": "G-POSDEF-COVERS",
+    "mutants": [
+     "M-BRIDGE"
+    ],
+    "waiver": "a walk of every code of a box wider than this ladder reaches, by the same Sylvester value the census classifies with; a positive-definite code carrying a zero count anywhere in the box fires it, and the bridge mutant plants one"
+   },
+   {
+    "evaluated": true,
+    "gate": "G-PACK4",
+    "mutants": [
+     "M-PACK4"
+    ],
+    "waiver": null
+   },
+   {
+    "evaluated": true,
     "gate": "G-SIG-FEED",
     "mutants": [
      "M-SIG-FLOOR"
@@ -600,6 +715,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-SATURATION-SCHEMA",
     "mutants": [
      "M-SATURATION"
@@ -607,6 +723,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-STRATUM",
     "mutants": [
      "M-STRATUM"
@@ -614,6 +731,15 @@
     "waiver": null
    },
    {
+    "evaluated": true,
+    "gate": "G-STRATUM-FIELDS",
+    "mutants": [
+     "M-FIELDS"
+    ],
+    "waiver": null
+   },
+   {
+    "evaluated": true,
     "gate": "G-LADDER",
     "mutants": [
      "M-LADDER"
@@ -621,6 +747,15 @@
     "waiver": null
    },
    {
+    "evaluated": true,
+    "gate": "G-RECORD-FLOORS",
+    "mutants": [
+     "M-RECORD-FLOOR"
+    ],
+    "waiver": null
+   },
+   {
+    "evaluated": true,
     "gate": "G-PARITY",
     "mutants": [
      "M-PARITY"
@@ -628,6 +763,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-PRED-A",
     "mutants": [
      "M-PRED-A"
@@ -635,6 +771,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-PRED-B",
     "mutants": [
      "M-PRED-B"
@@ -642,6 +779,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-PRED-C",
     "mutants": [
      "M-PRED-C"
@@ -649,11 +787,13 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-PREDICTIONS",
     "mutants": [],
     "waiver": "an aggregate of three gates each separately falsified"
    },
    {
+    "evaluated": true,
     "gate": "G-SLACK",
     "mutants": [
      "M-SLACK"
@@ -661,13 +801,16 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-WELD-ROWS",
     "mutants": [
-     "M-WELD"
+     "M-WELD",
+     "M-SPREAD"
     ],
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-WELD-FIBER-LAW",
     "mutants": [
      "M-FIBER-LAW"
@@ -675,6 +818,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-R6-DOOR",
     "mutants": [
      "M-R6"
@@ -682,11 +826,13 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-SLICE-EXIT-FREE",
     "mutants": [],
     "waiver": "a property of the committed source text at its pinned sha, gated by G-SOURCES"
    },
    {
+    "evaluated": true,
     "gate": "G-DRIVER-ANCHOR",
     "mutants": [
      "M-DRIVE-ANCHOR"
@@ -694,6 +840,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-DRIVEN-EQUALITY",
     "mutants": [
      "M-DRIVEN-EQ"
@@ -701,6 +848,15 @@
     "waiver": null
    },
    {
+    "evaluated": true,
+    "gate": "G-WINDOW-DECOMP",
+    "mutants": [
+     "M-WINDOW"
+    ],
+    "waiver": null
+   },
+   {
+    "evaluated": true,
     "gate": "G-FORCED",
     "mutants": [
      "M-FORCED"
@@ -708,13 +864,16 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-DIA-LAW",
     "mutants": [
-     "M-DIA"
+     "M-DIA",
+     "M-DIA-EXT"
     ],
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-INVENTORY",
     "mutants": [
      "M-INVENTORY"
@@ -722,6 +881,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-PERSISTENCE",
     "mutants": [
      "M-PERSIST"
@@ -729,6 +889,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-INTERFERENCE-CLOSED",
     "mutants": [
      "M-INTERFERENCE",
@@ -737,6 +898,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-WALL-L1",
     "mutants": [
      "M-WALL-L1"
@@ -744,6 +906,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-WALL-LORENTZ",
     "mutants": [
      "M-WALL-LORENTZ"
@@ -751,30 +914,43 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-WALL-BHS",
     "mutants": [
      "M-PAPER-BHS"
     ],
-    "waiver": "a scan of the declared surface; the interference mutant demonstrates the same scanner firing"
+    "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-WALL-KR",
     "mutants": [
      "M-PAPER-KR"
     ],
-    "waiver": "a scan of the declared surface; the interference mutant demonstrates the same scanner firing"
+    "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-TWO-WAY",
     "mutants": [],
     "waiver": "discharged by the fates the census exhibits; a mutant that removes one fate fires the gate that measures it"
    },
    {
+    "evaluated": true,
     "gate": "G-EXACT",
     "mutants": [],
     "waiver": "an AST and type scan of this file and this receipt; a float literal anywhere in either fires it"
    },
    {
+    "evaluated": true,
+    "gate": "G-READS",
+    "mutants": [
+     "M-READS"
+    ],
+    "waiver": null
+   },
+   {
+    "evaluated": true,
     "gate": "G-HEAD-DERIVED",
     "mutants": [
      "M-HEAD"
@@ -782,11 +958,13 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-COMPARATOR-INDEPENDENT",
     "mutants": [],
     "waiver": "an AST scan of this file's own two verdict routines; its falsifier is a source edit, and the scan publishes the shared constants and typed values it finds -- the head mutant demonstrates the paired gate firing"
    },
    {
+    "evaluated": true,
     "gate": "G-PAPER-CLAIMS",
     "mutants": [
      "M-PAPER-CLAIM"
@@ -794,13 +972,16 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-PAPER-TABLES",
     "mutants": [
-     "M-PAPER-TABLE"
+     "M-PAPER-TABLE",
+     "M-HEADERS"
     ],
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-PAPER-COVERAGE",
     "mutants": [
      "M-PAPER-COVERAGE"
@@ -808,6 +989,17 @@
     "waiver": null
    },
    {
+    "evaluated": true,
+    "gate": "G-PAPER-SENTENCE",
+    "mutants": [
+     "M-SENTENCE",
+     "M-RESIDUE",
+     "M-RESIDUE-N"
+    ],
+    "waiver": null
+   },
+   {
+    "evaluated": true,
     "gate": "G-PAPER-POLARITY",
     "mutants": [
      "M-PAPER-POLARITY"
@@ -815,6 +1007,7 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-PAPER-FENCES",
     "mutants": [
      "M-PAPER-FENCE"
@@ -822,21 +1015,806 @@
     "waiver": null
    },
    {
+    "evaluated": true,
     "gate": "G-FALSIFIER-CODE",
     "mutants": [],
     "waiver": "an AST scan of this file's own mutant hooks; a mutant that removed its hook would break the declared-versus-hooked equality this gate IS"
+   },
+   {
+    "evaluated": true,
+    "gate": "G-ANCHOR-CONSUMERS",
+    "mutants": [
+     "M-ANCHOR-GATE"
+    ],
+    "waiver": null
+   },
+   {
+    "evaluated": true,
+    "gate": "G-WALL-SURFACE",
+    "mutants": [
+     "M-SURFACE"
+    ],
+    "waiver": null
+   },
+   {
+    "evaluated": true,
+    "gate": "G-E24-STAMPS",
+    "mutants": [
+     "M-STAMPS"
+    ],
+    "waiver": null
+   },
+   {
+    "evaluated": true,
+    "gate": "G-COVERAGE-HONEST",
+    "mutants": [],
+    "waiver": "this ledger itself -- a gate cannot be inside the object it audits.  Its falsifier is the unguarded list it publishes: a gate added without a mutant or a forcing fills it and the gate fails on its own row"
+   },
+   {
+    "evaluated": true,
+    "gate": "G-SWEEP-EXECUTED",
+    "mutants": [],
+    "waiver": "the sweep-to-writer binding; its conjunction is RE-TAKEN as a conjunct of the terminal integrity gate, so a run whose sweep did not execute cannot write, and the mutants of that gate exercise the same conjunction"
+   },
+   {
+    "evaluated": true,
+    "gate": "G-CLOSING-WARRANT",
+    "mutants": [
+     "M-WARRANT"
+    ],
+    "waiver": "a comparison of the sealed warrant against the transcript it describes and an AST reading of this file's own write path; the warrant mutant corrupts the sealed row"
+   },
+   {
+    "evaluated": true,
+    "gate": "G-GATE-REGISTRY",
+    "mutants": [
+     "M-REGISTRY"
+    ],
+    "waiver": "a comparison of this run's own evaluated gate names against the frozen registry the CLI prints; the registry mutant drops a name from it"
+   },
+   {
+    "evaluated": false,
+    "gate": "G-SEAL-TOTAL",
+    "mutants": [],
+    "waiver": "the totality gate; it compares the seal manifest against the published key set, so a key published without a seal or a declared-unsealed row fires it, and no mutant can add a key without adding a gap"
+   },
+   {
+    "evaluated": false,
+    "gate": "G-INTEGRITY-PRE",
+    "mutants": [
+     "M-SEAL",
+     "M-TRANSCRIPT",
+     "M-TAIL"
+    ],
+    "waiver": null
+   },
+   {
+    "evaluated": false,
+    "gate": "G-INTEGRITY",
+    "mutants": [],
+    "waiver": "the terminal disk-versus-seal comparison, taken against the STAGED bytes before they are promoted; it re-takes the pre-write gate's whole conjunction on the bytes actually written and additionally requires the corrupted probe to be detected, which the run demonstrates in line"
    }
   ],
   "unguarded": []
  },
  "coverage_scan": {
-  "chars_scanned": 38833,
-  "exemptions": 26,
-  "exemptions_fired": 26,
-  "number_words_scanned": 121,
-  "numerals_scanned": 825,
+  "chars_scanned": 52982,
+  "compound_number_words": 0,
+  "exemptions": 27,
+  "exemptions_fired": 27,
+  "number_words_scanned": 166,
+  "numerals_scanned": 1115,
   "unbacked": [],
+  "unbacked_compounds": [],
   "unbacked_words": []
+ },
+ "covering_ceiling": {
+  "back_validated_against_the_per_code_route": {
+   "3": true,
+   "4": true,
+   "5": true
+  },
+  "route": "one shared dynamic program over (partial site code, antichain of achievable unions); the quantifier is the same 280^R ordered grouping R-tuples",
+  "rows": [
+   {
+    "budget": 3,
+    "codes": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "covering_class_codes": 1,
+    "det4_support": [
+     3
+    ],
+    "indefinite": [],
+    "max_cell": 1,
+    "non_posdef": []
+   },
+   {
+    "budget": 4,
+    "codes": [
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      2
+     ],
+     [
+      1,
+      2,
+      1
+     ],
+     [
+      1,
+      2,
+      2
+     ],
+     [
+      2,
+      1,
+      1
+     ],
+     [
+      2,
+      1,
+      2
+     ],
+     [
+      2,
+      2,
+      1
+     ]
+    ],
+    "covering_class_codes": 7,
+    "det4_support": [
+     3,
+     4,
+     7
+    ],
+    "indefinite": [],
+    "max_cell": 2,
+    "non_posdef": []
+   },
+   {
+    "budget": 5,
+    "codes": [
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      2
+     ],
+     [
+      1,
+      1,
+      3
+     ],
+     [
+      1,
+      1,
+      4
+     ],
+     [
+      1,
+      2,
+      1
+     ],
+     [
+      1,
+      2,
+      2
+     ],
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      1,
+      2,
+      4
+     ],
+     [
+      1,
+      3,
+      1
+     ],
+     [
+      1,
+      3,
+      2
+     ],
+     [
+      1,
+      3,
+      3
+     ],
+     [
+      1,
+      4,
+      1
+     ],
+     [
+      1,
+      4,
+      2
+     ],
+     [
+      2,
+      1,
+      1
+     ],
+     [
+      2,
+      1,
+      2
+     ],
+     [
+      2,
+      1,
+      3
+     ],
+     [
+      2,
+      1,
+      4
+     ],
+     [
+      2,
+      2,
+      1
+     ],
+     [
+      2,
+      2,
+      2
+     ],
+     [
+      2,
+      2,
+      3
+     ],
+     [
+      2,
+      3,
+      1
+     ],
+     [
+      2,
+      3,
+      2
+     ],
+     [
+      2,
+      4,
+      1
+     ],
+     [
+      3,
+      1,
+      1
+     ],
+     [
+      3,
+      1,
+      2
+     ],
+     [
+      3,
+      1,
+      3
+     ],
+     [
+      3,
+      2,
+      1
+     ],
+     [
+      3,
+      2,
+      2
+     ],
+     [
+      3,
+      3,
+      1
+     ],
+     [
+      4,
+      1,
+      1
+     ],
+     [
+      4,
+      1,
+      2
+     ],
+     [
+      4,
+      2,
+      1
+     ]
+    ],
+    "covering_class_codes": 32,
+    "det4_support": [
+     0,
+     3,
+     4,
+     7,
+     8,
+     11,
+     12,
+     15
+    ],
+    "indefinite": [],
+    "max_cell": 4,
+    "non_posdef": [
+     [
+      1,
+      1,
+      4
+     ],
+     [
+      1,
+      4,
+      1
+     ],
+     [
+      4,
+      1,
+      1
+     ]
+    ]
+   },
+   {
+    "budget": 6,
+    "codes": [
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      2
+     ],
+     [
+      1,
+      1,
+      3
+     ],
+     [
+      1,
+      1,
+      4
+     ],
+     [
+      1,
+      1,
+      5
+     ],
+     [
+      1,
+      2,
+      1
+     ],
+     [
+      1,
+      2,
+      2
+     ],
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      1,
+      2,
+      4
+     ],
+     [
+      1,
+      2,
+      5
+     ],
+     [
+      1,
+      3,
+      1
+     ],
+     [
+      1,
+      3,
+      2
+     ],
+     [
+      1,
+      3,
+      3
+     ],
+     [
+      1,
+      3,
+      4
+     ],
+     [
+      1,
+      3,
+      5
+     ],
+     [
+      1,
+      4,
+      1
+     ],
+     [
+      1,
+      4,
+      2
+     ],
+     [
+      1,
+      4,
+      3
+     ],
+     [
+      1,
+      4,
+      4
+     ],
+     [
+      1,
+      5,
+      1
+     ],
+     [
+      1,
+      5,
+      2
+     ],
+     [
+      1,
+      5,
+      3
+     ],
+     [
+      2,
+      1,
+      1
+     ],
+     [
+      2,
+      1,
+      2
+     ],
+     [
+      2,
+      1,
+      3
+     ],
+     [
+      2,
+      1,
+      4
+     ],
+     [
+      2,
+      1,
+      5
+     ],
+     [
+      2,
+      2,
+      1
+     ],
+     [
+      2,
+      2,
+      2
+     ],
+     [
+      2,
+      2,
+      3
+     ],
+     [
+      2,
+      2,
+      4
+     ],
+     [
+      2,
+      2,
+      5
+     ],
+     [
+      2,
+      3,
+      1
+     ],
+     [
+      2,
+      3,
+      2
+     ],
+     [
+      2,
+      3,
+      3
+     ],
+     [
+      2,
+      3,
+      4
+     ],
+     [
+      2,
+      4,
+      1
+     ],
+     [
+      2,
+      4,
+      2
+     ],
+     [
+      2,
+      4,
+      3
+     ],
+     [
+      2,
+      5,
+      1
+     ],
+     [
+      2,
+      5,
+      2
+     ],
+     [
+      3,
+      1,
+      1
+     ],
+     [
+      3,
+      1,
+      2
+     ],
+     [
+      3,
+      1,
+      3
+     ],
+     [
+      3,
+      1,
+      4
+     ],
+     [
+      3,
+      1,
+      5
+     ],
+     [
+      3,
+      2,
+      1
+     ],
+     [
+      3,
+      2,
+      2
+     ],
+     [
+      3,
+      2,
+      3
+     ],
+     [
+      3,
+      2,
+      4
+     ],
+     [
+      3,
+      3,
+      1
+     ],
+     [
+      3,
+      3,
+      2
+     ],
+     [
+      3,
+      3,
+      3
+     ],
+     [
+      3,
+      4,
+      1
+     ],
+     [
+      3,
+      4,
+      2
+     ],
+     [
+      3,
+      5,
+      1
+     ],
+     [
+      4,
+      1,
+      1
+     ],
+     [
+      4,
+      1,
+      2
+     ],
+     [
+      4,
+      1,
+      3
+     ],
+     [
+      4,
+      1,
+      4
+     ],
+     [
+      4,
+      2,
+      1
+     ],
+     [
+      4,
+      2,
+      2
+     ],
+     [
+      4,
+      2,
+      3
+     ],
+     [
+      4,
+      3,
+      1
+     ],
+     [
+      4,
+      3,
+      2
+     ],
+     [
+      4,
+      4,
+      1
+     ],
+     [
+      5,
+      1,
+      1
+     ],
+     [
+      5,
+      1,
+      2
+     ],
+     [
+      5,
+      1,
+      3
+     ],
+     [
+      5,
+      2,
+      1
+     ],
+     [
+      5,
+      2,
+      2
+     ],
+     [
+      5,
+      3,
+      1
+     ]
+    ],
+    "covering_class_codes": 72,
+    "det4_support": [
+     -5,
+     0,
+     3,
+     4,
+     7,
+     8,
+     11,
+     12,
+     15,
+     16,
+     20,
+     23,
+     27
+    ],
+    "indefinite": [
+     [
+      1,
+      1,
+      5
+     ],
+     [
+      1,
+      5,
+      1
+     ],
+     [
+      5,
+      1,
+      1
+     ]
+    ],
+    "max_cell": 5,
+    "non_posdef": [
+     [
+      1,
+      1,
+      4
+     ],
+     [
+      1,
+      1,
+      5
+     ],
+     [
+      1,
+      4,
+      1
+     ],
+     [
+      1,
+      5,
+      1
+     ],
+     [
+      4,
+      1,
+      1
+     ],
+     [
+      5,
+      1,
+      1
+     ]
+    ]
+   }
+  ],
+  "sequence": [
+   1,
+   2,
+   4,
+   5
+  ]
  },
  "covering_codes": {
   "3": {
@@ -1098,6 +2076,18 @@
  "dia": {
   "law": "the parallel class of a link is compulsory exactly when the record counts that link more than once AND counts some link exactly once",
   "law_holds": true,
+  "link_constant_rows": [
+   [
+    1,
+    1,
+    1
+   ],
+   [
+    2,
+    2,
+    2
+   ]
+  ],
   "naive_law": "the parallel class of a link is compulsory exactly when the record counts that link more than once",
   "naive_law_counterexamples": [
    [
@@ -1108,6 +2098,27 @@
   ],
   "naive_law_holds": false,
   "rows": [
+   {
+    "budget": 3,
+    "compulsory": [],
+    "frequency": {
+     "ANT": 0,
+     "COL": 6,
+     "DIA": 6,
+     "ROW": 6
+    },
+    "law_holds": true,
+    "multisets": 12,
+    "naive_law_holds": true,
+    "predicted_by_the_count_law": [],
+    "predicted_by_the_naive_law": [],
+    "record": [
+     1,
+     1,
+     1
+    ],
+    "witnesses": 72
+   },
    {
     "budget": 4,
     "compulsory": [
@@ -1362,31 +2373,6 @@
    },
    {
     "budget": 6,
-    "compulsory": [],
-    "frequency": {
-     "ANT": 0,
-     "COL": 8010,
-     "DIA": 8010,
-     "ROW": 8010
-    },
-    "law_holds": true,
-    "multisets": 78,
-    "naive_law_holds": false,
-    "predicted_by_the_count_law": [],
-    "predicted_by_the_naive_law": [
-     "COL",
-     "DIA",
-     "ROW"
-    ],
-    "record": [
-     2,
-     2,
-     2
-    ],
-    "witnesses": 48600
-   },
-   {
-    "budget": 6,
     "compulsory": [
      "DIA"
     ],
@@ -1445,6 +2431,178 @@
    {
     "budget": 6,
     "compulsory": [
+     "DIA",
+     "ROW"
+    ],
+    "frequency": {
+     "ANT": 0,
+     "COL": 60,
+     "DIA": 4020,
+     "ROW": 4020
+    },
+    "law_holds": true,
+    "multisets": 12,
+    "naive_law_holds": true,
+    "predicted_by_the_count_law": [
+     "DIA",
+     "ROW"
+    ],
+    "predicted_by_the_naive_law": [
+     "DIA",
+     "ROW"
+    ],
+    "record": [
+     1,
+     3,
+     2
+    ],
+    "witnesses": 4020
+   },
+   {
+    "budget": 6,
+    "compulsory": [
+     "ROW"
+    ],
+    "frequency": {
+     "ANT": 0,
+     "COL": 30,
+     "DIA": 30,
+     "ROW": 1350
+    },
+    "law_holds": true,
+    "multisets": 12,
+    "naive_law_holds": true,
+    "predicted_by_the_count_law": [
+     "ROW"
+    ],
+    "predicted_by_the_naive_law": [
+     "ROW"
+    ],
+    "record": [
+     1,
+     4,
+     1
+    ],
+    "witnesses": 1350
+   },
+   {
+    "budget": 6,
+    "compulsory": [
+     "COL",
+     "DIA"
+    ],
+    "frequency": {
+     "ANT": 0,
+     "COL": 4020,
+     "DIA": 4020,
+     "ROW": 60
+    },
+    "law_holds": true,
+    "multisets": 12,
+    "naive_law_holds": true,
+    "predicted_by_the_count_law": [
+     "COL",
+     "DIA"
+    ],
+    "predicted_by_the_naive_law": [
+     "COL",
+     "DIA"
+    ],
+    "record": [
+     2,
+     1,
+     3
+    ],
+    "witnesses": 4020
+   },
+   {
+    "budget": 6,
+    "compulsory": [],
+    "frequency": {
+     "ANT": 0,
+     "COL": 8010,
+     "DIA": 8010,
+     "ROW": 8010
+    },
+    "law_holds": true,
+    "multisets": 78,
+    "naive_law_holds": false,
+    "predicted_by_the_count_law": [],
+    "predicted_by_the_naive_law": [
+     "COL",
+     "DIA",
+     "ROW"
+    ],
+    "record": [
+     2,
+     2,
+     2
+    ],
+    "witnesses": 48600
+   },
+   {
+    "budget": 6,
+    "compulsory": [
+     "COL",
+     "ROW"
+    ],
+    "frequency": {
+     "ANT": 0,
+     "COL": 4020,
+     "DIA": 60,
+     "ROW": 4020
+    },
+    "law_holds": true,
+    "multisets": 12,
+    "naive_law_holds": true,
+    "predicted_by_the_count_law": [
+     "COL",
+     "ROW"
+    ],
+    "predicted_by_the_naive_law": [
+     "COL",
+     "ROW"
+    ],
+    "record": [
+     2,
+     3,
+     1
+    ],
+    "witnesses": 4020
+   },
+   {
+    "budget": 6,
+    "compulsory": [
+     "COL",
+     "DIA"
+    ],
+    "frequency": {
+     "ANT": 0,
+     "COL": 4020,
+     "DIA": 4020,
+     "ROW": 60
+    },
+    "law_holds": true,
+    "multisets": 12,
+    "naive_law_holds": true,
+    "predicted_by_the_count_law": [
+     "COL",
+     "DIA"
+    ],
+    "predicted_by_the_naive_law": [
+     "COL",
+     "DIA"
+    ],
+    "record": [
+     3,
+     1,
+     2
+    ],
+    "witnesses": 4020
+   },
+   {
+    "budget": 6,
+    "compulsory": [
      "COL",
      "ROW"
     ],
@@ -1471,8 +2629,46 @@
      1
     ],
     "witnesses": 4020
+   },
+   {
+    "budget": 6,
+    "compulsory": [
+     "COL"
+    ],
+    "frequency": {
+     "ANT": 0,
+     "COL": 1350,
+     "DIA": 30,
+     "ROW": 30
+    },
+    "law_holds": true,
+    "multisets": 12,
+    "naive_law_holds": true,
+    "predicted_by_the_count_law": [
+     "COL"
+    ],
+    "predicted_by_the_naive_law": [
+     "COL"
+    ],
+    "record": [
+     4,
+     1,
+     1
+    ],
+    "witnesses": 1350
    }
-  ]
+  ],
+  "undeclared_direction": {
+   "class": "ANT",
+   "declared_incidences_per_round": 0,
+   "reason": "the ANT parallel class deposits no declared incidence at all, so it is not in the saturating stratum and no live tuple can contain it",
+   "status": "FORCED, NOT MEASURED"
+  },
+  "vocabulary": {
+   "compulsory": "a parallel class that occurs as a round of EVERY witness of the row",
+   "multisets": "the number of distinct round-multisets among the row's witnesses",
+   "witness": "an ordered saturating R-tuple whose induced record is the row's count vector"
+  }
  },
  "driven": {
   "budgets": [
@@ -1831,28 +3027,164 @@
    "identical_event_lists": true
   }
  },
+ "e24": {
+  "counter_column_denominators": {
+   "covering_class_codes": [
+    44,
+    90
+   ],
+   "covering_class_max_cell": [
+    3,
+    3
+   ],
+   "det4_support": [
+    3,
+    8
+   ],
+   "reachable_codes": [
+    105,
+    181
+   ],
+   "stratum_cover": [
+    1679616,
+    60466176
+   ]
+  },
+  "stamped": 14,
+  "stamps": [
+   {
+    "measure": "COUNTING-ONLY",
+    "path": "arena/partitions",
+    "quantity": "the round's object space",
+    "universe": "the partitions of the nine sites into three triples",
+    "value": 280
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "path": "arena/saturating",
+    "quantity": "the saturating partitions",
+    "universe": "the partitions attaining the top of the incidence spectrum",
+    "value": 36
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "path": "i7/admissible_box_points",
+    "quantity": "the admissible points of I7's committed box",
+    "universe": "I7's own declared count box",
+    "value": 361
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "path": "parity/declared_total",
+    "quantity": "the declared homogeneous records",
+    "universe": "I7's declared homogeneous record family",
+    "value": 9
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "path": "code_space/5",
+    "quantity": "the reachable site codes at this budget",
+    "universe": "the R-fold sumset of the per-round alphabet",
+    "value": 181
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "path": "sig_feed/covered_codes",
+    "quantity": "the covered site codes at this budget",
+    "universe": "the reachable site codes with all three links present",
+    "value": 90
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "path": "sig_feed/covering_class_codes",
+    "quantity": "the covering-class codes at this budget",
+    "universe": "the site codes carried by a covering R-tuple",
+    "value": 32
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "path": "stratum/5/total",
+    "quantity": "the saturating stratum at this budget",
+    "universe": "the ordered saturating R-tuples",
+    "value": 60466176
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "path": "stratum/5/cover",
+    "quantity": "its covering tuples",
+    "universe": "the ordered saturating R-tuples covering all 27 cells",
+    "value": 1842120
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "path": "stratum/5/distinct_fields",
+    "quantity": "the fields the stratum induces",
+    "universe": "the distinct link fields induced by the saturating stratum",
+    "value": 619092
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "path": "stratum_fields/covering_subset/5",
+    "quantity": "the fields its covering subset induces",
+    "universe": "the distinct link fields induced by the covering saturating R-tuples",
+    "value": 6336
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "path": "r6_door/counts/(2, 2, 2)",
+    "quantity": "the link-constant record at the rung above",
+    "universe": "the ordered saturating sextuples inducing (2, 2, 2)",
+    "value": 48600
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "path": "r6_door/counts/G-SINGULAR",
+    "quantity": "I7's G-SINGULAR at its own budget",
+    "universe": "the ordered saturating sextuples inducing (1, 1, 4)",
+    "value": 1350
+   },
+   {
+    "measure": "COUNTING-ONLY",
+    "path": "driven/schedules",
+    "quantity": "the driven schedules of the declared window",
+    "universe": "the schedules of the declared window W5",
+    "value": 19
+   }
+  ],
+  "statement": "every quantity this unit publishes is a CARDINALITY over an exhaustively enumerated finite set, stamped COUNTING-ONLY beside its own universe; no typicality claim rests on any of them, and the one counter-column of ratios carries its denominators beside its numerators"
+ },
  "falsifiers": {
   "constant_boolean": [],
   "declared": [
    "M-ALPHABET",
    "M-ANCHOR",
+   "M-ANCHOR-GATE",
    "M-ARENA",
+   "M-BRIDGE",
+   "M-CEILING",
    "M-CLASS",
    "M-CLASS-LADDER",
+   "M-CLASS-WORDS",
    "M-CODESPACE",
    "M-COVER-CODES",
    "M-COVER-R4",
    "M-DIA",
+   "M-DIA-EXT",
    "M-DRIVE-ANCHOR",
    "M-DRIVEN-EQ",
    "M-FIBER-LAW",
+   "M-FIELDS",
    "M-FORCED",
    "M-HEAD",
+   "M-HEADERS",
    "M-I7-LINKS",
    "M-INTERFERENCE",
    "M-INVENTORY",
    "M-LADDER",
+   "M-LIVE-CONTROL",
+   "M-LOCK-GENERAL",
    "M-LOCKING",
+   "M-PACK4",
    "M-PAPER-BHS",
    "M-PAPER-CLAIM",
    "M-PAPER-COVERAGE",
@@ -1867,15 +3199,27 @@
    "M-PRED-B",
    "M-PRED-C",
    "M-R6",
+   "M-READS",
+   "M-RECORD-FLOOR",
+   "M-REGISTRY",
+   "M-RESIDUE",
+   "M-RESIDUE-N",
    "M-SATURATION",
    "M-SEAL",
+   "M-SENTENCE",
    "M-SIG-FLOOR",
    "M-SLACK",
+   "M-SPREAD",
+   "M-STAMPS",
    "M-STRATUM",
+   "M-SURFACE",
+   "M-TAIL",
    "M-TRANSCRIPT",
    "M-WALL-L1",
    "M-WALL-LORENTZ",
+   "M-WARRANT",
    "M-WELD",
+   "M-WINDOW",
    "M-WITNESS"
   ],
   "hook_sources": {
@@ -1885,14 +3229,26 @@
    "M-ANCHOR": [
     "hit = match_needle(hay, pick(M-ANCHOR, needle, needle +  XX))"
    ],
+   "M-ANCHOR-GATE": [
+    "anchor_rows2 = pick(M-ANCHOR-GATE, R[anchors], [dict(a, gate=G-DOES-NOT-EXIST) for a in R[anchors]])"
+   ],
    "M-ARENA": [
     "closed = pick(M-ARENA, closed // ((6 ** 3) * 6), closed // ((6 ** 3) * 6) + 1)"
+   ],
+   "M-BRIDGE": [
+    "bridge_bad = pick(M-BRIDGE, bridge_bad, bridge_bad + [(0, 0, 0)])"
+   ],
+   "M-CEILING": [
+    "ceiling = pick(M-CEILING, ceiling, [dict(c0, max_cell=c0[max_cell] - 1) if c0[budget] == max(ceil_budgets) else c0 for c0 in ceiling])"
    ],
    "M-CLASS": [
     "sp = pick(M-CLASS, sp, {POSDEF: sp[POSDEF] + sp[SINGULAR], SINGULAR: [], INDEFINITE: sp[INDEFINITE]}) if r == ROUNDS else sp"
    ],
    "M-CLASS-LADDER": [
     "ladder_classes = pick(M-CLASS-LADDER, ladder_classes, [dict(r0, **{COVERING-RECORD: r0[COVERED-SITE-CODE]}) for r0 in ladder_classes])"
+   ],
+   "M-CLASS-WORDS": [
+    "class_rows = pick(M-CLASS-WORDS, class_rows, [dict(c, label=class_label(c[every_round_saturating], c[covering_required], c[declared_list])) for c in class_rows])"
    ],
    "M-CODESPACE": [
     "cs[4] = pick(M-CODESPACE, cs[4], cs[4] | {(len(SITES),) * 3})"
@@ -1906,6 +3262,9 @@
    "M-DIA": [
     "dia_rows = pick(M-DIA, dia_rows, [dict(d, compulsory=sorted(CLASS_NAMES)) if d[budget] == ROUNDS else d for d in dia_rows])"
    ],
+   "M-DIA-EXT": [
+    "dia_rows = pick(M-DIA-EXT, dia_rows, [dict(d, compulsory=[DIA]) if d[budget] != ROUNDS and not d[compulsory] else d for d in dia_rows])"
+   ],
    "M-DRIVE-ANCHOR": [
     "prof = pick(M-DRIVE-ANCHOR, prof, (prof[0] + 1, prof[1], prof[2])) if r == 6 else prof"
    ],
@@ -1915,11 +3274,17 @@
    "M-FIBER-LAW": [
     "weld_rows = pick(M-FIBER-LAW, weld_rows, [dict(w, link_constant=not w[link_constant]) for w in weld_rows])"
    ],
+   "M-FIELDS": [
+    "cdf = pick(M-FIELDS, cdf, {k: (strat[ROUNDS][distinct_fields] if int(k) == ROUNDS else v) for k, v in cdf.items()})"
+   ],
    "M-FORCED": [
     "forced = all(d[maxhits] == 1 for d in pick(M-FORCED, drows, [dict(d, maxhits=d[maxhits] + 1) for d in drows]))"
    ],
    "M-HEAD": [
     "head = pick(M-HEAD, head, [head[0] +  XX] + head[1:])"
+   ],
+   "M-HEADERS": [
+    "want = pick(M-HEADERS, want, [_swap_cells(w) if w == headers[0] else w for w in want])"
    ],
    "M-I7-LINKS": [
     "links7 = pick(M-I7-LINKS, [tuple(v) for v in D7[links_d2]], [tuple(v) for v in reversed(D7[links_d2])])"
@@ -1933,8 +3298,17 @@
    "M-LADDER": [
     "ladder_rows = pick(M-LADDER, ladder_rows, [dict(r0, budget=r0[budget] + 1) if r0[record] == G-FLAT else r0 for r0 in ladder_rows])"
    ],
+   "M-LIVE-CONTROL": [
+    "lfld = pick(M-LIVE-CONTROL, lfld, [c + 1 for c in lfld])"
+   ],
+   "M-LOCK-GENERAL": [
+    "lock_gen = pick(M-LOCK-GENERAL, lock_gen, {k: [dict(row, covering_reachable=True) for row in v] for k, v in lock_gen.items()})"
+   ],
    "M-LOCKING": [
     "lock = pick(M-LOCKING, lock, [dict(row, covering_reachable=True) for row in lock])"
+   ],
+   "M-PACK4": [
+    "pack_max = pick(M-PACK4, pack_max, 16)"
    ],
    "M-PAPER-BHS": [
     "bhs_scan = surface +   + pick( M-PAPER-BHS, body, body +  a sprinkling-grade Lorentz-invariance test is run here)"
@@ -1949,7 +3323,7 @@
     "blocks = fenced_blocks(pick(M-PAPER-FENCE, ptext, ptext + \\n```\\n + head[0] +  FORGED\\n```\\n))"
    ],
    "M-PAPER-INTERFERENCE": [
-    "surface = json.dumps({k: R[k] for k in R}, sort_keys=True, default=str) \\ +  .join(r0[statement] +   + str(r0[evidence]) for r0 in LD.rows) \\ +   + pick(M-PAPER-INTERFERENCE, body, body +  the interference census at L = 5 carries here)"
+    "surface = json.dumps({k: R[k] for k in surface_keys}, sort_keys=True, default=str) \\ +   +  .join(head_preview) \\ +  .join(r0[statement] +   + str(r0[evidence]) for r0 in LD.rows) \\ +   + pick(M-PAPER-INTERFERENCE, body, body +  the interference census at L = 5 carries here)"
    ],
    "M-PAPER-KR": [
     "kr_scan = surface +   + pick( M-PAPER-KR, body, body +  the Myrheim-Meyer dimension estimate of this record is)"
@@ -1978,11 +3352,29 @@
    "M-R6": [
     "r6count = pick(M-R6, r6count, dict(r6count, **{(2, 2, 2): 1}))"
    ],
+   "M-READS": [
+    "reads = pick(M-READS, list(READS), list(READS) + [{path: v14/PLAN.md, category: SOURCE, sha256_12: 0 * 12}])"
+   ],
+   "M-RECORD-FLOOR": [
+    "realiz = pick(M-RECORD-FLOOR, realiz, dict(realiz, **{G-INDEF: dict(realiz[G-INDEF], witnesses=0)}))"
+   ],
+   "M-REGISTRY": [
+    "declared_gates = pick(M-REGISTRY, list(GATES_DECLARED), list(GATES_DECLARED)[1:])"
+   ],
+   "M-RESIDUE": [
+    "sent_txt = pick(M-RESIDUE, sent_txt, sent_txt.replace(Read out., Read out. There are sixty  rungs here., 1))"
+   ],
+   "M-RESIDUE-N": [
+    "sent_txt = pick(M-RESIDUE-N, sent_txt, sent_txt.replace(Read out., Read out. There are 60  rungs here., 1))"
+   ],
    "M-SATURATION": [
     "need = pick(M-SATURATION, need, {c: need[c] + 1 for c in need})"
    ],
    "M-SEAL": [
     "if mut(M-SEAL): payload[totals][gates] += 1"
+   ],
+   "M-SENTENCE": [
+    "sent_txt = pick(M-SENTENCE, ptext, ptext.replace(the determinant support is {, over 72 classes the determinant  support is {, 1))"
    ],
    "M-SIG-FLOOR": [
     "floors = pick(M-SIG-FLOOR, floors, dict(floors, **{G-INDEF: dict(floors[G-INDEF], budget=ROUNDS)}))"
@@ -1990,11 +3382,23 @@
    "M-SLACK": [
     "slack5 = pick(M-SLACK, slack5, slack5 + 1)"
    ],
+   "M-SPREAD": [
+    "spread_rows = pick(M-SPREAD, spread_rows, [(b, (l[0],), o, inv) for (b, l, o, inv) in spread_rows])"
+   ],
+   "M-STAMPS": [
+    "stamps = pick(M-STAMPS, stamps, [dict(s0, measure=A DENSITY) if i == 0 else s0 for i, s0 in enumerate(stamps)])"
+   ],
    "M-STRATUM": [
     "st5 = pick(M-STRATUM, st5, dict(st5, cover=st5[cover] + 1))"
    ],
+   "M-SURFACE": [
+    "surface_keys = pick(M-SURFACE, surface_keys, surface_keys[1:])"
+   ],
+   "M-TAIL": [
+    "text = pick(M-TAIL, text, text +  [PASS] G-SEAL-TOTAL forged twin row\\n)"
+   ],
    "M-TRANSCRIPT": [
-    "text = pick(M-TRANSCRIPT, text, text +  [PASS] G-FORGED\\n)"
+    "text = pick(M-TRANSCRIPT, text, text +   * 9 + FORGED: the covering class and the  positive-definite class\\n)"
    ],
    "M-WALL-L1": [
     "ptext = pick(M-WALL-L1, ptext, ptext + \\n\\n + BANNED_L1 + \\n)"
@@ -2002,8 +3406,14 @@
    "M-WALL-LORENTZ": [
     "ptext_nm = pick(M-WALL-LORENTZ, ptext, ptext.replace(NAMED AND NOT READ, read as a signature))"
    ],
+   "M-WARRANT": [
+    "closing_decl = pick(M-WARRANT, closing_decl, dict(closing_decl, warrant_transcript=the archived transcript  carries all three rows))"
+   ],
    "M-WELD": [
     "weld_rows = pick(M-WELD, weld_rows, [dict(w, inventory=dict(w[inventory], **{I-SITE-ASSIGNMENT: 1}), fate=FOUND) if w[budget] == ROUNDS else w for w in weld_rows])"
+   ],
+   "M-WINDOW": [
+    "window_rows = pick(M-WINDOW, window_rows, [dict(w, schedules=w[schedules] + 1) if w[tag] == W5-SEEDFAN else (dict(w, schedules=w[schedules] - 1) if w[tag] == W4-ANCHOR else w) for w in window_rows])"
    ],
    "M-WITNESS": [
     "fld = pick(M-WITNESS, fld, [c + 1 for c in fld])"
@@ -2012,23 +3422,33 @@
   "hooked": [
    "M-ALPHABET",
    "M-ANCHOR",
+   "M-ANCHOR-GATE",
    "M-ARENA",
+   "M-BRIDGE",
+   "M-CEILING",
    "M-CLASS",
    "M-CLASS-LADDER",
+   "M-CLASS-WORDS",
    "M-CODESPACE",
    "M-COVER-CODES",
    "M-COVER-R4",
    "M-DIA",
+   "M-DIA-EXT",
    "M-DRIVE-ANCHOR",
    "M-DRIVEN-EQ",
    "M-FIBER-LAW",
+   "M-FIELDS",
    "M-FORCED",
    "M-HEAD",
+   "M-HEADERS",
    "M-I7-LINKS",
    "M-INTERFERENCE",
    "M-INVENTORY",
    "M-LADDER",
+   "M-LIVE-CONTROL",
+   "M-LOCK-GENERAL",
    "M-LOCKING",
+   "M-PACK4",
    "M-PAPER-BHS",
    "M-PAPER-CLAIM",
    "M-PAPER-COVERAGE",
@@ -2043,15 +3463,27 @@
    "M-PRED-B",
    "M-PRED-C",
    "M-R6",
+   "M-READS",
+   "M-RECORD-FLOOR",
+   "M-REGISTRY",
+   "M-RESIDUE",
+   "M-RESIDUE-N",
    "M-SATURATION",
    "M-SEAL",
+   "M-SENTENCE",
    "M-SIG-FLOOR",
    "M-SLACK",
+   "M-SPREAD",
+   "M-STAMPS",
    "M-STRATUM",
+   "M-SURFACE",
+   "M-TAIL",
    "M-TRANSCRIPT",
    "M-WALL-L1",
    "M-WALL-LORENTZ",
+   "M-WARRANT",
    "M-WELD",
+   "M-WINDOW",
    "M-WITNESS"
   ],
   "rows": [
@@ -2068,9 +3500,27 @@
     "source_published": true
    },
    {
+    "gate": "G-ANCHOR-CONSUMERS",
+    "hooks": 1,
+    "mutant": "M-ANCHOR-GATE",
+    "source_published": true
+   },
+   {
     "gate": "G-ARENA",
     "hooks": 1,
     "mutant": "M-ARENA",
+    "source_published": true
+   },
+   {
+    "gate": "G-POSDEF-COVERS",
+    "hooks": 1,
+    "mutant": "M-BRIDGE",
+    "source_published": true
+   },
+   {
+    "gate": "G-CEILING",
+    "hooks": 1,
+    "mutant": "M-CEILING",
     "source_published": true
    },
    {
@@ -2083,6 +3533,12 @@
     "gate": "G-CLASS-LADDER",
     "hooks": 1,
     "mutant": "M-CLASS-LADDER",
+    "source_published": true
+   },
+   {
+    "gate": "G-CLASS-WORDS",
+    "hooks": 1,
+    "mutant": "M-CLASS-WORDS",
     "source_published": true
    },
    {
@@ -2110,6 +3566,12 @@
     "source_published": true
    },
    {
+    "gate": "G-DIA-LAW",
+    "hooks": 1,
+    "mutant": "M-DIA-EXT",
+    "source_published": true
+   },
+   {
     "gate": "G-DRIVER-ANCHOR",
     "hooks": 1,
     "mutant": "M-DRIVE-ANCHOR",
@@ -2128,6 +3590,12 @@
     "source_published": true
    },
    {
+    "gate": "G-STRATUM-FIELDS",
+    "hooks": 1,
+    "mutant": "M-FIELDS",
+    "source_published": true
+   },
+   {
     "gate": "G-FORCED",
     "hooks": 1,
     "mutant": "M-FORCED",
@@ -2137,6 +3605,12 @@
     "gate": "G-HEAD-DERIVED",
     "hooks": 1,
     "mutant": "M-HEAD",
+    "source_published": true
+   },
+   {
+    "gate": "G-PAPER-TABLES",
+    "hooks": 1,
+    "mutant": "M-HEADERS",
     "source_published": true
    },
    {
@@ -2164,9 +3638,27 @@
     "source_published": true
    },
    {
+    "gate": "G-LIVE-CONTROL",
+    "hooks": 1,
+    "mutant": "M-LIVE-CONTROL",
+    "source_published": true
+   },
+   {
+    "gate": "G-LOCK-GENERAL",
+    "hooks": 1,
+    "mutant": "M-LOCK-GENERAL",
+    "source_published": true
+   },
+   {
     "gate": "G-LOCKING",
     "hooks": 1,
     "mutant": "M-LOCKING",
+    "source_published": true
+   },
+   {
+    "gate": "G-PACK4",
+    "hooks": 1,
+    "mutant": "M-PACK4",
     "source_published": true
    },
    {
@@ -2254,6 +3746,36 @@
     "source_published": true
    },
    {
+    "gate": "G-READS",
+    "hooks": 1,
+    "mutant": "M-READS",
+    "source_published": true
+   },
+   {
+    "gate": "G-RECORD-FLOORS",
+    "hooks": 1,
+    "mutant": "M-RECORD-FLOOR",
+    "source_published": true
+   },
+   {
+    "gate": "G-GATE-REGISTRY",
+    "hooks": 1,
+    "mutant": "M-REGISTRY",
+    "source_published": true
+   },
+   {
+    "gate": "G-PAPER-SENTENCE",
+    "hooks": 1,
+    "mutant": "M-RESIDUE",
+    "source_published": true
+   },
+   {
+    "gate": "G-PAPER-SENTENCE",
+    "hooks": 1,
+    "mutant": "M-RESIDUE-N",
+    "source_published": true
+   },
+   {
     "gate": "G-SATURATION-SCHEMA",
     "hooks": 1,
     "mutant": "M-SATURATION",
@@ -2263,6 +3785,12 @@
     "gate": "G-INTEGRITY-PRE",
     "hooks": 1,
     "mutant": "M-SEAL",
+    "source_published": true
+   },
+   {
+    "gate": "G-PAPER-SENTENCE",
+    "hooks": 1,
+    "mutant": "M-SENTENCE",
     "source_published": true
    },
    {
@@ -2278,9 +3806,33 @@
     "source_published": true
    },
    {
+    "gate": "G-WELD-ROWS",
+    "hooks": 1,
+    "mutant": "M-SPREAD",
+    "source_published": true
+   },
+   {
+    "gate": "G-E24-STAMPS",
+    "hooks": 1,
+    "mutant": "M-STAMPS",
+    "source_published": true
+   },
+   {
     "gate": "G-STRATUM",
     "hooks": 1,
     "mutant": "M-STRATUM",
+    "source_published": true
+   },
+   {
+    "gate": "G-WALL-SURFACE",
+    "hooks": 1,
+    "mutant": "M-SURFACE",
+    "source_published": true
+   },
+   {
+    "gate": "G-INTEGRITY-PRE",
+    "hooks": 1,
+    "mutant": "M-TAIL",
     "source_published": true
    },
    {
@@ -2302,9 +3854,21 @@
     "source_published": true
    },
    {
+    "gate": "G-CLOSING-WARRANT",
+    "hooks": 1,
+    "mutant": "M-WARRANT",
+    "source_published": true
+   },
+   {
     "gate": "G-WELD-ROWS",
     "hooks": 1,
     "mutant": "M-WELD",
+    "source_published": true
+   },
+   {
+    "gate": "G-WINDOW-DECOMP",
+    "hooks": 1,
+    "mutant": "M-WINDOW",
     "source_published": true
    },
    {
@@ -2315,16 +3879,178 @@
    }
   ]
  },
+ "gate_registry": {
+  "closing_still_to_come": [
+   "G-GATE-REGISTRY",
+   "G-INTEGRITY",
+   "G-INTEGRITY-PRE",
+   "G-SEAL-TOTAL"
+  ],
+  "declared": [
+   "G-SOURCES",
+   "G-ANCHORS",
+   "G-I7-READOUT",
+   "G-ARENA",
+   "G-TRANSLATION",
+   "G-ALPHABET",
+   "G-CODESPACE",
+   "G-CLASS-SPLIT",
+   "G-LOCKING",
+   "G-COVER-CODES",
+   "G-SINGULAR-WITNESS",
+   "G-CLASS-LADDER",
+   "G-CLASS-WORDS",
+   "G-LIVE-CONTROL",
+   "G-CEILING",
+   "G-LOCK-GENERAL",
+   "G-POSDEF-COVERS",
+   "G-PACK4",
+   "G-SIG-FEED",
+   "G-SATURATION-SCHEMA",
+   "G-STRATUM",
+   "G-STRATUM-FIELDS",
+   "G-LADDER",
+   "G-RECORD-FLOORS",
+   "G-PARITY",
+   "G-PRED-A",
+   "G-PRED-B",
+   "G-PRED-C",
+   "G-PREDICTIONS",
+   "G-SLACK",
+   "G-WELD-ROWS",
+   "G-WELD-FIBER-LAW",
+   "G-R6-DOOR",
+   "G-SLICE-EXIT-FREE",
+   "G-DRIVER-ANCHOR",
+   "G-DRIVEN-EQUALITY",
+   "G-WINDOW-DECOMP",
+   "G-FORCED",
+   "G-DIA-LAW",
+   "G-INVENTORY",
+   "G-PERSISTENCE",
+   "G-INTERFERENCE-CLOSED",
+   "G-WALL-L1",
+   "G-WALL-LORENTZ",
+   "G-WALL-BHS",
+   "G-WALL-KR",
+   "G-TWO-WAY",
+   "G-EXACT",
+   "G-READS",
+   "G-HEAD-DERIVED",
+   "G-COMPARATOR-INDEPENDENT",
+   "G-PAPER-CLAIMS",
+   "G-PAPER-TABLES",
+   "G-PAPER-COVERAGE",
+   "G-PAPER-SENTENCE",
+   "G-PAPER-POLARITY",
+   "G-PAPER-FENCES",
+   "G-FALSIFIER-CODE",
+   "G-ANCHOR-CONSUMERS",
+   "G-WALL-SURFACE",
+   "G-E24-STAMPS",
+   "G-COVERAGE-HONEST",
+   "G-SWEEP-EXECUTED",
+   "G-CLOSING-WARRANT",
+   "G-GATE-REGISTRY",
+   "G-SEAL-TOTAL",
+   "G-INTEGRITY-PRE",
+   "G-INTEGRITY"
+  ],
+  "declared_count": 68,
+  "evaluated": [
+   "G-SOURCES",
+   "G-ANCHORS",
+   "G-I7-READOUT",
+   "G-ARENA",
+   "G-TRANSLATION",
+   "G-ALPHABET",
+   "G-CODESPACE",
+   "G-CLASS-SPLIT",
+   "G-LOCKING",
+   "G-COVER-CODES",
+   "G-SINGULAR-WITNESS",
+   "G-CLASS-LADDER",
+   "G-CLASS-WORDS",
+   "G-LIVE-CONTROL",
+   "G-CEILING",
+   "G-LOCK-GENERAL",
+   "G-POSDEF-COVERS",
+   "G-PACK4",
+   "G-SIG-FEED",
+   "G-SATURATION-SCHEMA",
+   "G-STRATUM",
+   "G-STRATUM-FIELDS",
+   "G-LADDER",
+   "G-RECORD-FLOORS",
+   "G-PARITY",
+   "G-PRED-A",
+   "G-PRED-B",
+   "G-PRED-C",
+   "G-PREDICTIONS",
+   "G-SLACK",
+   "G-WELD-ROWS",
+   "G-WELD-FIBER-LAW",
+   "G-R6-DOOR",
+   "G-SLICE-EXIT-FREE",
+   "G-DRIVER-ANCHOR",
+   "G-DRIVEN-EQUALITY",
+   "G-WINDOW-DECOMP",
+   "G-FORCED",
+   "G-DIA-LAW",
+   "G-INVENTORY",
+   "G-PERSISTENCE",
+   "G-INTERFERENCE-CLOSED",
+   "G-WALL-L1",
+   "G-WALL-LORENTZ",
+   "G-WALL-BHS",
+   "G-WALL-KR",
+   "G-TWO-WAY",
+   "G-EXACT",
+   "G-READS",
+   "G-HEAD-DERIVED",
+   "G-COMPARATOR-INDEPENDENT",
+   "G-PAPER-CLAIMS",
+   "G-PAPER-TABLES",
+   "G-PAPER-COVERAGE",
+   "G-PAPER-SENTENCE",
+   "G-PAPER-POLARITY",
+   "G-PAPER-FENCES",
+   "G-FALSIFIER-CODE",
+   "G-ANCHOR-CONSUMERS",
+   "G-WALL-SURFACE",
+   "G-E24-STAMPS",
+   "G-COVERAGE-HONEST",
+   "G-SWEEP-EXECUTED",
+   "G-CLOSING-WARRANT"
+  ],
+  "evaluated_count": 64,
+  "in_declared_order": true,
+  "mode_conditional": {
+   "G-INTEGRITY": "the terminal disk check, taken only by a writing run",
+   "G-PAPER-CLAIMS": "the paper gates, skipped by --numbers",
+   "G-PAPER-COVERAGE": "the paper gates, skipped by --numbers",
+   "G-PAPER-FENCES": "the paper gates, skipped by --numbers",
+   "G-PAPER-POLARITY": "the paper gates, skipped by --numbers",
+   "G-PAPER-SENTENCE": "the paper gates, skipped by --numbers",
+   "G-PAPER-TABLES": "the paper gates, skipped by --numbers",
+   "G-SWEEP-EXECUTED": "the sweep binding, taken only by a delivery run",
+   "G-WALL-L1": "evaluated only when an object under test is present",
+   "G-WALL-LORENTZ": "evaluated only when an object under test is present"
+  },
+  "skipped_in_this_mode": [],
+  "undeclared_skips": [],
+  "unknown_gates": []
+ },
  "gates": {
-  "chain": "6d440b6edbab",
-  "count": 49,
+  "chain": "940793a73938",
+  "count": 65,
   "rows": [
    {
     "chain": "af3123cde844",
-    "evidence": "sources 14, mismatches 0",
+    "evidence": "sources 14, mismatches 0, absent []",
     "gate": "G-SOURCES",
     "pass": true,
-    "statement": "EVERY SOURCE IS READ AT ITS PINNED SHA.  The 14 declared sources are read at run time and each file's measured sha256-12 equals the digest this unit froze; a single mismatch stops the run before any census is built",
+    "statement": "EVERY SOURCE IS READ AT ITS PINNED SHA.  The 14 declared sources are read at run time and each file's measured sha256-12 equals the digest this unit froze; a single mismatch stops the run before any census is built, and a source that is ABSENT -- a bare copy of this file with no repository under it -- fails here by name rather than by traceback",
     "wall": false
    },
    {
@@ -2409,14 +4135,62 @@
    },
    {
     "chain": "83be5869d5e0",
-    "evidence": "SINGULAR: site 4, covering 5, live 6, declared 6 (G-SINGULAR); INDEFINITE: site 5, covering 6, live 7, declared 8 (G-INDEF)",
+    "evidence": "SINGULAR: covered site code 4, covering record 5, live and covering record 6, I7-declared record 6 (control bare-live 4), declared G-SINGULAR; INDEFINITE: covered site code 5, covering record 6, live and covering record 7, I7-declared record 8 (control bare-live 5), declared G-INDEF",
     "gate": "G-CLASS-LADDER",
     "pass": true,
-    "statement": "THE REACHABILITY LADDER IS CLASS-EXPLICIT, AND THE CLASSES DO NOT SHARE A FLOOR.  A determinant sign is reachable at four different budgets depending on WHICH class is asked about -- a covered site code, a record covering all 27 cells, a structurally live record with no foreign pair, or one of I7's own declared records -- and each floor is computed separately, in order, with the nesting checked rather than assumed",
+    "statement": "THE REACHABILITY LADDER IS CLASS-EXPLICIT, AND THE CLASSES DO NOT SHARE A FLOOR.  A determinant sign is reachable at a different budget in each of the four cumulative classes -- a covered site code, a record covering all 27 cells, a live AND covering record, or one of I7's own declared records -- and each floor is computed separately from its own predicate, with the nesting checked rather than assumed.  The BARE-LIVE control carries the live condition WITHOUT the covering condition, and it is checked to sit between the covered and the live-and-covering floors",
     "wall": false
    },
    {
-    "chain": "5c8dd1bd467a",
+    "chain": "5dae2f300e5a",
+    "evidence": "classes 5, labels ['covered site code', 'covering record', 'bare-live record', 'live and covering record', 'I7-declared record'], predicates derived True, flags matched True",
+    "gate": "G-CLASS-WORDS",
+    "pass": true,
+    "statement": "EVERY LADDER CLASS'S PRINTED WORDS ARE ITS COMPUTED PREDICATE.  A class here is a pair of flags -- must the record cover all 27 cells, must every one of its rounds saturate -- plus I7's own declared list; the floor is computed FROM the flags by one routine and the words are DERIVED from the same flags, so the printed class and the computed class cannot come apart.  The labels are required to be pairwise distinct, and the paper's table headers and definition sentences are rendered from these rows, so a class-word swap dies at the table and claim gates",
+    "wall": false
+   },
+   {
+    "chain": "5fdbbff17335",
+    "evidence": "bare-live floors {'SINGULAR': 4, 'INDEFINITE': 5}; the R=5 witness: target [1, 1, 4], rounds saturating 5 of 5, foreign pairs 0, code at the origin [1, 1, 4] at 4det 0 (SINGULAR), covering False at 20 of 27 cells, 45 incidences",
+    "gate": "G-LIVE-CONTROL",
+    "pass": true,
+    "statement": "THE BARE-LIVE CONTROL, EXHIBITED ROUND BY ROUND -- AND IT IS WHY THE COVERING CONDITION IS THE ONE DOING THE WORK.  Drop the covering condition and keep liveness alone and the floors fall two rungs; the run exhibits an explicit R = 5 record all of whose rounds saturate -- so it carries NO foreign pair -- whose site code at the origin is I7's own G-SINGULAR count vector at 4det 0. It does NOT cover, and its uncovered cells are counted, so a polarity census run over bare-live records at this budget sees a determinant that the live-AND-covering class cannot reach until two rungs later",
+    "wall": false
+   },
+   {
+    "chain": "a8b0e2cf7c96",
+    "evidence": "sequence [1, 2, 4, 5] over budgets [3, 4, 5, 6]; codes [1, 7, 32, 72]; back-validated against the per-code route at {3: True, 4: True, 5: True}; 4det support at the top [-5, 0, 3, 4, 7, 8, 11, 12, 15, 16, 20, 23, 27]; non-posdef at the top [[1, 1, 4], [1, 1, 5], [1, 4, 1], [1, 5, 1], [4, 1, 1], [5, 1, 1]]",
+    "gate": "G-CEILING",
+    "pass": true,
+    "statement": "THE COVERING CLASS'S CELL CEILING, MEASURED ONE RUNG ABOVE THIS ONE BY A SECOND ROUTE, AND BACK-VALIDATED AGAINST THE FIRST.  The per-code census asks one code at a time; this carries every partial code forward at once, reducing the achievable unions of each partial code to their antichain -- sound because union is monotone, so a union contained in another reaches nothing the other does not.  At the three budgets the per-code route reaches, the two agree code for code; at the rung above, where the per-code route does not run, the ceiling is measured.  The ceiling RISES again, so the identity that rode on it was living on a budget-dependent quantity",
+    "wall": false
+   },
+   {
+    "chain": "64a1941d6e4a",
+    "evidence": "third members required [7] at every link and every budget; obstruction dissolves at R=7; minimum uncovered by budget {'3': 6, '4': 3, '5': 2, '6': 1, '7': 0, '8': 0}; the deficit follows 7 - R from R=4",
+    "gate": "G-LOCK-GENERAL",
+    "pass": true,
+    "statement": "THE LOCKING OBSTRUCTION'S GENERAL FORM, AND ITS BOUNDARY.  The numerator of the count is BUDGET-FREE: a cell at count R locks its two sites into one group in every round, the cells at those two sites demand the same seven distinct third members at every budget, and R rounds supply at most R.  The union of R locked rounds is therefore carried forward here with NO completion prune, so the LARGEST union it reaches is measured and not only its success: the obstruction holds at every budget below seven and dissolves at exactly seven, where seven rounds can supply seven thirds.  At this unit's own budget the deficit is two uncovered cells -- the same minimum the signature unit measures by branch-and-bound",
+    "wall": false
+   },
+   {
+    "chain": "cc76c71af93a",
+    "evidence": "box side 72, positive-definite codes carrying a zero count 0; positive-definite covered codes by budget {'3': 17, '4': 41, '5': 84, '6': 145}",
+    "gate": "G-POSDEF-COVERS",
+    "pass": true,
+    "statement": "THE ONE-WAY CONTAINMENT THE `cover = posdef` ROW RESTS ON, MEASURED.  A positive-definite code cannot carry a zero count: q11 = n1 forces n1 > 0, positivity of the determinant forces n2 > 0, and with n3 = 0 the integer 4.det is -(n1 - n2)^2, which is never positive.  Every code of a box wider than this ladder reaches is walked, and none is positive definite with a zero count -- so a positive-definite RECORD necessarily covers, the containment runs one way, and the equality of the two RECORD classes is a fact about which codes the covering class carries rather than a definition",
+    "wall": false
+   },
+   {
+    "chain": "2a06c61925e7",
+    "evidence": "largest cell count 6 against a capacity of 16",
+    "gate": "G-PACK4",
+    "pass": true,
+    "statement": "THE PACKED COLUMN CANNOT CARRY, AND THAT IS MEASURED.  Every census here sums link fields packed at four bits a cell; a cell reaching sixteen would carry into the next cell and silently corrupt every count above it.  The largest cell count this run deposits anywhere -- across the covering class at every budget of the ladder, the saturating stratum and the covered code space -- is compared against the packing's capacity",
+    "wall": false
+   },
+   {
+    "chain": "9599491cc947",
     "evidence": "indefinite region opens at R=5 (3 codes, 4det [-5]); inside the covering class: singular True, indefinite False; cover=posdef R=4 True -> R=5 False; record floors G-SINGULAR R=6, G-INDEF R=8",
     "gate": "G-SIG-FEED",
     "pass": true,
@@ -2424,15 +4198,15 @@
     "wall": false
    },
    {
-    "chain": "08a2b3f7b6f2",
-    "evidence": "budget 45 = 9 x 5, targets [[1, 1, 3], [1, 2, 2], [1, 3, 1], [2, 1, 2], [2, 2, 1], [3, 1, 1]] each needing 45 incidences, forced 6 of 6; saturating family 60,466,176 of 1,721,036,800,000",
+    "chain": "195087d948f4",
+    "evidence": "budget 45 = 9 x 5, targets [[1, 1, 3], [1, 2, 2], [1, 3, 1], [2, 1, 2], [2, 2, 1], [3, 1, 1]] each needing 45 incidences, forced 6 of 6; the empirical premise re-taken here: the spectrum's top is 9 incidences and 36 partitions attain it; saturating family 60,466,176 of 1,721,036,800,000",
     "gate": "G-SATURATION-SCHEMA",
     "pass": true,
     "statement": "THE SATURATION SCHEMA, RE-PROVED AT THIS RUNG RATHER THAN INHERITED.  No round deposits more than 9 link incidences, so five rounds carry at most 45; a homogeneous record whose counts sum to 5 needs 9 x 5 = 45, and each target's requirement is recomputed from its own count vector: equality forces every round to saturate, so a census over the 36^5 saturating quintuples is exhaustive over all 280^5 for these targets",
     "wall": false
    },
    {
-    "chain": "bea17ee0700c",
+    "chain": "668562ac0a65",
     "evidence": "R=3 cover 72 (committed 72); R=4 homogeneous {'[1, 1, 2]': 276, '[1, 2, 1]': 276, '[2, 1, 1]': 276} (committed {'[1, 1, 2]': 276, '[1, 2, 1]': 276, '[2, 1, 1]': 276}); R=5 total 60,466,176, cover 1,842,120, distinct fields 619,092, homogeneous {'[1, 1, 3]': 680, '[1, 2, 2]': 1350, '[1, 3, 1]': 680, '[2, 1, 2]': 1350, '[2, 2, 1]': 1350, '[3, 1, 1]': 680}, max cell 3",
     "gate": "G-STRATUM",
     "pass": true,
@@ -2440,7 +4214,15 @@
     "wall": false
    },
    {
-    "chain": "d0802eda6ec0",
+    "chain": "c43cb9dc26cd",
+    "evidence": "whole stratum {3: 8407, 4: 80775, 5: 619092}; covering subset {'3': 1, '4': 36, '5': 6336}",
+    "gate": "G-STRATUM-FIELDS",
+    "pass": true,
+    "statement": "THE COVERING SUBSET'S FIELD COUNT IS ITS OWN MEASUREMENT.  The stratum induces one number of distinct link fields and its COVERING subset induces another; each is counted over the set it names, and the covering count is checked to be strictly the smaller at every budget where the stratum has a non-covering part, so a sentence attaching the stratum's count to the covering tuples cannot be built from these rows",
+    "wall": false
+   },
+   {
+    "chain": "b7cd325b2931",
     "evidence": "budgets {'G-ANISO': 10, 'G-ANISO2': 26, 'G-DIAG2': 8, 'G-FLAT': 4, 'G-INDEF': 8, 'G-OFFDIAG': 10, 'G-OFFDIAG2': 20, 'G-OFFNEG': 12, 'G-SINGULAR': 6}; reachable at their own budget {4: 276, 6: 1350}; G-FLAT at R=5 0",
     "gate": "G-LADDER",
     "pass": true,
@@ -2448,7 +4230,15 @@
     "wall": false
    },
    {
-    "chain": "6007dcfdf459",
+    "chain": "32646f15b180",
+    "evidence": "censused {'G-ANISO': 278460, 'G-DIAG2': 1452780, 'G-FLAT': 276, 'G-INDEF': 3752, 'G-OFFDIAG': 19744200, 'G-SINGULAR': 1350}; beyond the census ['G-ANISO2', 'G-OFFDIAG2', 'G-OFFNEG']",
+    "gate": "G-RECORD-FLOORS",
+    "pass": true,
+    "statement": "EVERY DECLARED RECORD THE STRATUM REACHES IS CENSUSED AT ITS OWN BUDGET, SO ITS FLOOR IS A FLOOR.  The ladder law gives only the lower half -- no record can arrive before its own counts sum -- and a column printing a budget without a witness there is an inequality wearing a floor's clothes.  Each record whose budget the saturating stratum reaches is counted at exactly that budget, I7's own G-INDEF at R = 8 included; the records beyond the census are named as such rather than asserted",
+    "wall": false
+   },
+   {
+    "chain": "67c93ac9dbae",
     "evidence": "declared with even sum 9 of 9; the mechanism (even sum iff q12 integral) holds on 9 of 9; admissible box 181 even and 180 odd of 361",
     "gate": "G-PARITY",
     "pass": true,
@@ -2456,7 +4246,7 @@
     "wall": false
    },
    {
-    "chain": "6a0c2fc6bf6d",
+    "chain": "71ad181477cf",
     "evidence": "declared records at this budget []; admissible box points [[1, 1, 3], [1, 2, 2], [1, 3, 1], [2, 1, 2], [2, 2, 1], [3, 1, 1]]; reached [[1, 1, 3], [1, 2, 2], [1, 3, 1], [2, 1, 2], [2, 2, 1], [3, 1, 1]]; all reached True",
     "gate": "G-PRED-A",
     "pass": true,
@@ -2464,7 +4254,7 @@
     "wall": false
    },
    {
-    "chain": "3efff2967381",
+    "chain": "2b08daca74b4",
     "evidence": "link-constant possible at R [3, 6] (R = 0 mod 3), at this budget False; the control's field [1], fate STRUCT-DEAD, foreign pairs 18",
     "gate": "G-PRED-B",
     "pass": true,
@@ -2472,7 +4262,7 @@
     "wall": false
    },
    {
-    "chain": "f9fa8d006464",
+    "chain": "3a050bc51108",
     "evidence": "declared yield: {3: 0, 4: 276, 5: 0, 6: 1350}; motivated possible: {3: True, 4: False, 5: False, 6: True}; richer at R=5 in {'reachable_codes': [105, 181], 'covering_class_codes': [7, 32], 'covering_class_max_cell': [2, 4], 'det4_support': [3, 8], 'stratum_cover': [9936, 1842120]}",
     "gate": "G-PRED-C",
     "pass": true,
@@ -2480,7 +4270,7 @@
     "wall": false
    },
    {
-    "chain": "92606b199b61",
+    "chain": "bd9dcf8f9804",
     "evidence": "verdicts {'a': 'PASS', 'b': 'PASS', 'c': 'PASS'}, passed 3 of 3",
     "gate": "G-PREDICTIONS",
     "pass": true,
@@ -2488,7 +4278,7 @@
     "wall": false
    },
    {
-    "chain": "4f7849e35b6e",
+    "chain": "d333ab921b2c",
     "evidence": "slack 18 = 9(5 - 3); binding THE COVER; rows {2: (18, -9, 'THE BUDGET'), 3: (27, 0, 'THE PERFECT MATCHING'), 4: (36, 9, 'THE COVER'), 5: (45, 18, 'THE COVER'), 6: (54, 27, 'THE COVER')}",
     "gate": "G-SLACK",
     "pass": true,
@@ -2496,15 +4286,15 @@
     "wall": false
    },
    {
-    "chain": "90a1bd8cd58c",
-    "evidence": "R=4 fibers [36, 3, 1] against paper-21's committed [36, 3, 1]; R=5 fibers [[36, 3, 1], [36, 3, 1]]; R=6 (2,2,2) fibers [[1, 1, 1]]; isomorphisms 1296 everywhere",
+    "chain": "afab59b5d16a",
+    "evidence": "R=4 fibers [36, 3, 1] against paper-21's committed [36, 3, 1]; R=5 fibers [[36, 3, 1], [36, 3, 1]]; R=6 (2,2,2) fibers [[1, 1, 1]]; isomorphisms 1296 everywhere; unmotivated spreads [(4, [3, 6], [1, 2]), (5, [3, 6], [1, 2]), (6, [3, 6], [1, 2])], base-map invariant [False], spreads persist True",
     "gate": "G-WELD-ROWS",
     "pass": true,
-    "statement": "THE WELD, RUN ON ONE INSTRUMENT AT EVERY RUNG, AND VALIDATED AT THE RUNG WHOSE ANSWER IS COMMITTED.  Weld 2's detector is carried unchanged at both readings; at R = 4 it returns paper-21's committed fibers and isomorphism count exactly, at R = 6 the link-constant record returns ZERO-FREE-ITEMS, and every R = 5 arena returns UNMOTIVATED",
+    "statement": "THE WELD, RUN ON ONE INSTRUMENT AT EVERY RUNG, AND VALIDATED AT THE RUNG WHOSE ANSWER IS COMMITTED -- WITH THE BASE-MAP QUALIFIER BOUND TO THE ROW.  Weld 2's detector is carried unchanged at both readings; at R = 4 it returns paper-21's committed fibers and isomorphism count exactly, at R = 6 the link-constant record returns ZERO-FREE-ITEMS, and every R = 5 arena returns UNMOTIVATED.  The headline triple is read AT ONE BASE MAP: the label and orient fibers are not base-map invariant, their spreads across the enumeration are measured here, and the spreads are required to be identical at every unmotivated arena -- so what persists across the rung is the whole spread and not only the headline",
     "wall": false
    },
    {
-    "chain": "87ea6cc21f32",
+    "chain": "3d7f15ce1702",
     "evidence": "arenas 6, agreements 12 of 12",
     "gate": "G-WELD-FIBER-LAW",
     "pass": true,
@@ -2512,7 +4302,7 @@
     "wall": false
    },
    {
-    "chain": "ccc81c9a1023",
+    "chain": "744fe8b9b8b7",
     "evidence": "(2,2,2) at 48,600 ordered saturating sextuples against the parent's constructive lower bound 5,184; G-SINGULAR at 1,350; declared records at R=6 ['G-SINGULAR']",
     "gate": "G-R6-DOOR",
     "pass": true,
@@ -2520,7 +4310,7 @@
     "wall": false
    },
    {
-    "chain": "135faf07dd4a",
+    "chain": "25d93bded3d2",
     "evidence": "slice exit-free True, extracted bodies exit-free True, slice ends at char 16129 of 40838",
     "gate": "G-SLICE-EXIT-FREE",
     "pass": true,
@@ -2528,7 +4318,7 @@
     "wall": false
    },
    {
-    "chain": "1ad8c083fb79",
+    "chain": "9efb986c9e7e",
     "evidence": "R=4 identical True, driven (n, arbs, deliveries) (66, 12, 18), d66's committed row (66, 12, 18); R=6 identical True, driven (n, arbs, deliveries) (102, 18, 30), d66's committed row (102, 18, 30)",
     "gate": "G-DRIVER-ANCHOR",
     "pass": true,
@@ -2536,7 +4326,7 @@
     "wall": false
    },
    {
-    "chain": "d00fbb9321d9",
+    "chain": "d36400b88d0a",
     "evidence": "schedules 19 over budgets [4, 5, 6], cell-by-cell equalities 19, refusals 0, window {'W4-ANCHOR': 1, 'W5-CTRL': 1, 'W5-LADDER': 6, 'W5-SEEDFAN': 8, 'W6-CTRL': 1, 'W6-DOOR': 2}",
     "gate": "G-DRIVEN-EQUALITY",
     "pass": true,
@@ -2544,7 +4334,15 @@
     "wall": false
    },
    {
-    "chain": "4d3bd686f7ed",
+    "chain": "c505bf0b367c",
+    "evidence": "parts {'W4-ANCHOR': 1, 'W5-CTRL': 1, 'W5-LADDER': 6, 'W5-SEEDFAN': 8, 'W6-CTRL': 1, 'W6-DOOR': 2} summing to 19 against 19 schedules; the seed fan enumerates 9 choices, contributes 8, and its one collision is with W5-LADDER(1, 1, 3); the only budget-4 member is ['W4-ANCHOR']",
+    "gate": "G-WINDOW-DECOMP",
+    "pass": true,
+    "statement": "THE DECLARED WINDOW IS BOUND BY ITS PARTS AND NOT ONLY BY ITS SUM.  Every tag's schedule count and budget set is rendered as a table row, the sum is re-taken from the parts, and the seed fan's own arithmetic is measured: the fan enumerates its choices, one of them coincides with a schedule already in the window, and the number it CONTRIBUTES is therefore one less than the number it enumerates.  The budget-4 member is identified by its budget rather than named, so a decomposition that omits it cannot sum",
+    "wall": false
+   },
+   {
+    "chain": "a1e76d0ea0c0",
     "evidence": "forced True (maxhits spectrum [1] of 19 schedules); refusal control refused True; the withheld-division falsifier keeps 14 divisions, minimum count 0, fate COUNT-DEAD",
     "gate": "G-FORCED",
     "pass": true,
@@ -2552,39 +4350,39 @@
     "wall": false
    },
    {
-    "chain": "4236b050e319",
-    "evidence": "R=4 DIA in 276 of 276 witnesses (paper-21's committed 276); the law holds on 13 of 13 rows and the count clause alone on 12, falsified at [[2, 2, 2]]; rows [('[1, 1, 2]', 4, 276, ['DIA']), ('[1, 2, 1]', 4, 276, ['ROW']), ('[2, 1, 1]', 4, 276, ['COL']), ('[1, 1, 3]', 5, 680, ['DIA']), ('[1, 2, 2]', 5, 1350, ['DIA', 'ROW']), ('[1, 3, 1]', 5, 680, ['ROW']), ('[2, 1, 2]', 5, 1350, ['COL', 'DIA']), ('[2, 2, 1]', 5, 1350, ['COL', 'ROW']), ('[3, 1, 1]', 5, 680, ['COL']), ('[2, 2, 2]', 6, 48600, []), ('[1, 1, 4]', 6, 1350, ['DIA']), ('[1, 2, 3]', 6, 4020, ['DIA', 'ROW']), ('[3, 2, 1]', 6, 4020, ['COL', 'ROW'])]",
+    "chain": "adb78453bd3c",
+    "evidence": "R=4 DIA in 276 of 276 witnesses (paper-21's committed 276); the law holds on 20 of 20 rows and the count clause alone on 19, falsified at [[2, 2, 2]]; rows [('[1, 1, 1]', 3, 72, []), ('[1, 1, 2]', 4, 276, ['DIA']), ('[1, 2, 1]', 4, 276, ['ROW']), ('[2, 1, 1]', 4, 276, ['COL']), ('[1, 1, 3]', 5, 680, ['DIA']), ('[1, 2, 2]', 5, 1350, ['DIA', 'ROW']), ('[1, 3, 1]', 5, 680, ['ROW']), ('[2, 1, 2]', 5, 1350, ['COL', 'DIA']), ('[2, 2, 1]', 5, 1350, ['COL', 'ROW']), ('[3, 1, 1]', 5, 680, ['COL']), ('[1, 1, 4]', 6, 1350, ['DIA']), ('[1, 2, 3]', 6, 4020, ['DIA', 'ROW']), ('[1, 3, 2]', 6, 4020, ['DIA', 'ROW']), ('[1, 4, 1]', 6, 1350, ['ROW']), ('[2, 1, 3]', 6, 4020, ['COL', 'DIA']), ('[2, 2, 2]', 6, 48600, []), ('[2, 3, 1]', 6, 4020, ['COL', 'ROW']), ('[3, 1, 2]', 6, 4020, ['COL', 'DIA']), ('[3, 2, 1]', 6, 4020, ['COL', 'ROW']), ('[4, 1, 1]', 6, 1350, ['COL'])]",
     "gate": "G-DIA-LAW",
     "pass": true,
-    "statement": "THE COMPULSORY CLASS IS A LAW, AND THE LAW HAS A BOUNDARY.  Every witness of every homogeneous record at R = 4, 5 and 6 is enumerated and each parallel class is counted against its own record: a class is compulsory exactly when the record counts its link more than once AND counts some link exactly once.  The count clause alone is FALSIFIED here -- at the link-constant record every link is counted twice and no class is compulsory at all -- so the compulsion is carried by the scarce link, and it vanishes at exactly the record where the weld turns motivated.  At R = 4 the census returns paper-21's own committed DIA row",
+    "statement": "THE COMPULSORY CLASS IS A LAW, AND THE LAW HAS A BOUNDARY.  Every witness of every homogeneous record at R = 4, 5 and 6 is enumerated and each parallel class is counted against its own record: a class is compulsory exactly when the record counts its link more than once AND counts some link exactly once.  The count clause alone is FALSIFIED here -- at the link-constant record every link is counted twice and no class is compulsory at all -- so the compulsion is carried by the scarce link, and it vanishes at exactly the records where the weld turns motivated: BOTH link-constant records the ladder reaches, and no other row, carry no compulsory class.  The undeclared direction's absence is FORCED rather than found -- its parallel class deposits no declared incidence at all, so it is not in the stratum.  At R = 4 the census returns paper-21's own committed DIA row",
     "wall": false
    },
    {
-    "chain": "61310665e459",
-    "evidence": "items 13, forced 6, measured fibers [36, 3, 1]",
+    "chain": "42b5f8459022",
+    "evidence": "items 14, forced 6, measured fibers [36, 3, 1]",
     "gate": "G-INVENTORY",
     "pass": true,
     "statement": "THE CHOICE INVENTORY IS PUBLISHED AS DATA AND ITS MEASURED ROWS ARE THE CENSUS'S OWN.  Every forced item carries fiber 1 by its own row, the declared reading axis carries the number of readings this run actually evaluates, and the three measured items are taken from this budget's own weld row rather than re-typed -- so a swapped or forged inventory row dies at the table gate",
     "wall": false
    },
    {
-    "chain": "c7816950b8ca",
-    "evidence": "rows 8, tally {'BREAKS-AT-R=5': 3, 'PERSISTS': 4, 'TRANSFORMS': 1}",
+    "chain": "3e53f1b2757f",
+    "evidence": "rows 8, tally {'BREAKS-AT-R=5': 3, 'PERSISTS': 4, 'TRANSFORMS': 1}; breaks by independence {'COROLLARY OF THE CELL-CEILING ROW': 1, 'FORCED BY THE PARITY LAW': 1, 'MECHANISM': 1}",
     "gate": "G-PERSISTENCE",
     "pass": true,
-    "statement": "THE PER-INVARIANT PERSISTENCE TABLE, EACH ROW DECIDED BY ITS OWN PAIR OF MEASUREMENTS.  Every invariant paper-21 delivered is re-measured here and its verdict is read off the comparison of the two values rather than assigned: a row PERSISTS exactly when the two agree, every row's value at this rung is re-checked against the census row that measured it, and every row carries the witness that decides it",
+    "statement": "THE PER-INVARIANT PERSISTENCE TABLE, EACH ROW DECIDED BY ITS OWN PAIR OF MEASUREMENTS.  Every invariant paper-21 delivered is re-measured here and its verdict is read off the comparison of the two values rather than assigned: a row PERSISTS exactly when the two agree, every row's value at this rung is re-checked against the census row that measured it, and every row carries the witness that decides it.  The tally counts RE-MEASURED PROPOSITIONS; each row also carries what it IS, so the breaks are read out by independence -- exactly one of them is a mechanism, and the others are that mechanism's corollary and this unit's own parity law seen from the other side",
     "wall": false
    },
    {
-    "chain": "1b285e03c498",
-    "evidence": "surface 93698 chars (paper body 36683 of them), interference readings found 0",
+    "chain": "a455f6f1d8b9",
+    "evidence": "surface 134332 chars over 42 enumerated receipt keys, 4 verdict segments and 41 gate rows (paper body 50642 chars of it), readings found 0",
     "gate": "G-INTERFERENCE-CLOSED",
     "pass": true,
-    "statement": "THE INTERFERENCE CENSUS IS NOT RUN, AND THE ABSTENTION IS MEASURED.  PER-L's adjudicated corollary closes it by theorem for the whole R-ladder, so running it here would re-derive a decided question; the gate scans this run's declared measurement surface -- every published receipt key, the statement and evidence of every gate evaluated, AND THE PAPER'S OWN BODY -- and finds no interference reading in it",
+    "statement": "THE INTERFERENCE CENSUS IS NOT RUN, AND THE ABSTENTION IS MEASURED.  PER-L's adjudicated corollary closes it by theorem for the whole R-ladder, so running it here would re-derive a decided question; the gate scans this run's declared measurement surface -- the 42 census keys of this run's receipt, ENUMERATED in the receipt rather than described, together with the four derived verdict segments, the statement and evidence of every gate evaluated before the scan, AND THE PAPER'S OWN BODY -- and finds no reading of it there",
     "wall": false
    },
    {
-    "chain": "ad01133d2b01",
+    "chain": "330c7481f4d5",
     "evidence": "banned sentence present False, needle 97 chars",
     "gate": "G-WALL-L1",
     "pass": true,
@@ -2592,7 +4390,7 @@
     "wall": true
    },
    {
-    "chain": "c39889132efc",
+    "chain": "0cae9c98c264",
     "evidence": "naming sentence present True, derived form q = [[1, 1/2], [1/2, 1]] present True",
     "gate": "G-WALL-LORENTZ",
     "pass": true,
@@ -2600,23 +4398,23 @@
     "wall": true
    },
    {
-    "chain": "082a10594fca",
-    "evidence": "surface 93698 chars, paper body 36683 chars, sprinkling-grade readings 0",
+    "chain": "106f7fef9f7e",
+    "evidence": "surface 134332 chars over 42 enumerated receipt keys, paper body 50642 chars, sprinkling-grade readings 0",
     "gate": "G-WALL-BHS",
     "pass": true,
-    "statement": "BHS: NO SPRINKLING-GRADE LORENTZ-INVARIANCE TEST IS RUN, AND THE ABSTENTION IS MEASURED.  A Poisson sprinkling admits no Lorentz-invariant finite-valency graph and these schedules are finite-valency by construction, so running such a test would manufacture a false negative; the gate scans this run's declared measurement surface AND THE PAPER'S OWN BODY -- every section but the wall section in which the abstention is stated -- rather than declaring the abstention",
+    "statement": "BHS: NO SPRINKLING-GRADE LORENTZ-INVARIANCE TEST IS RUN, AND THE ABSTENTION IS MEASURED.  A Poisson sprinkling admits no Lorentz-invariant finite-valency graph and these schedules are finite-valency by construction, so running such a test would manufacture a false negative; the gate scans the same declared surface -- the 42 enumerated census keys, the derived verdict segments, every gate row evaluated before the scan -- AND THE PAPER'S OWN BODY, every section but the wall section in which the abstention is stated, rather than declaring the abstention",
     "wall": true
    },
    {
-    "chain": "82d2d8123ff3",
-    "evidence": "surface 93698 chars, paper body 36683 chars, dimension readings 0",
+    "chain": "844093839d36",
+    "evidence": "surface 134332 chars over 42 enumerated receipt keys, paper body 50642 chars, dimension readings 0",
     "gate": "G-WALL-KR",
     "pass": true,
-    "statement": "KLEITMAN-ROTHSCHILD: NO DIMENSION READING IS TAKEN, SO NO HEIGHT CONTROL IS OWED.  This unit takes no chart width, no Myrheim-Meyer estimate and no shatter reading; the same declared surface is scanned for one, and so is the paper's own body",
+    "statement": "KLEITMAN-ROTHSCHILD: NO DIMENSION READING IS TAKEN, SO NO HEIGHT CONTROL IS OWED.  This unit takes no chart width, no Myrheim-Meyer estimate and no shatter reading; the same declared surface -- the 42 enumerated census keys, the derived verdict segments and every gate row evaluated before the scan -- is scanned for one, and so is the paper's own body",
     "wall": true
    },
    {
-    "chain": "4f8ddc193895",
+    "chain": "f92b3aee0873",
     "evidence": "fates exhibited ['COUNT-DEAD', 'FOUND', 'STRUCT-DEAD', 'UNMOTIVATED']",
     "gate": "G-TWO-WAY",
     "pass": true,
@@ -2624,7 +4422,7 @@
     "wall": false
    },
    {
-    "chain": "08fddfbc14c8",
+    "chain": "3256be21676a",
     "evidence": "float literals 0, true divisions 0, floats in the receipt 0",
     "gate": "G-EXACT",
     "pass": true,
@@ -2632,47 +4430,63 @@
     "wall": false
    },
    {
-    "chain": "431f97d67ef9",
-    "evidence": "segments 4, exact string agreements 4, head 2317 chars",
+    "chain": "9febc73d6a80",
+    "evidence": "reads 16 in categories ['OBJECT-UNDER-TEST', 'SELF', 'SOURCE']; sources 14 of 14 declared True; self True; object under test ['v14/paper-29-perr.md']; artifacts []",
+    "gate": "G-READS",
+    "pass": true,
+    "statement": "THE SET OF RUN-TIME READS IS EXACTLY THE DECLARED SET, AND THE REGISTER THAT RECORDS IT HAS A CONSUMER.  Every read is stamped with its category as it happens -- SOURCE, OBJECT-UNDER-TEST, SELF or this run's own staged artifacts -- and the register is compared here against the declaration category by category: the SOURCE paths must be exactly the 14 pinned sources, SELF must be this file, the object under test must be a single file, and no fifth category may appear.  No subprocess of any kind is invoked, so the run is correct off-tree and with no version control present",
+    "wall": false
+   },
+   {
+    "chain": "63821d779040",
+    "evidence": "segments 4, exact string agreements 4, head 2407 chars",
     "gate": "G-HEAD-DERIVED",
     "pass": true,
     "statement": "THE HEAD IS DERIVED TWICE AND THE TWO STRINGS ARE COMPARED CHARACTER FOR CHARACTER.  The builder renders the four verdict segments from its own objects; a comparator reads only the SERIALIZED receipt, types all four templates in its own fragments and rebuilds them, and the two routes must agree exactly -- so no segment of the head can go stale",
     "wall": false
    },
    {
-    "chain": "f097c94eb408",
-    "evidence": "builder constants 5, comparator constants 86, shared 0, typed numerals [], typed number-words []",
+    "chain": "d400fcb7de73",
+    "evidence": "builder constants 5, comparator constants 87, shared 0, typed numerals [], typed number-words []",
     "gate": "G-COMPARATOR-INDEPENDENT",
     "pass": true,
     "statement": "THE TWO ROUTES SHARE NO TYPED TEXT AND NEITHER TYPES A VALUE.  An AST scan reads the string constants of the builder and of the comparator, requires the two sets to be DISJOINT, and requires that once the declared object names are removed no numeral and no number-word survives in either -- every number in the head is interpolated from the receipt on both sides",
     "wall": false
    },
    {
-    "chain": "f9e4f1a8ae31",
-    "evidence": "claims 20, matched 20, missing []",
+    "chain": "f4aa094ef961",
+    "evidence": "claims 43, matched 43, missing []",
     "gate": "G-PAPER-CLAIMS",
     "pass": true,
     "statement": "EVERY HEADLINE SENTENCE OF THE PAPER IS RENDERED FROM THE RECEIPT AND MATCHED INTO THE PAPER.  Each claim is built from the receipt's own values and then searched for in the object under test, whitespace-normalised and markdown-stripped, so a sentence whose number drifts from the census cannot survive",
     "wall": false
    },
    {
-    "chain": "52113fa72455",
-    "evidence": "rendered rows 54, table rows in the paper 61, rows not occurring exactly once 0",
+    "chain": "16aed479023b",
+    "evidence": "tables 10, header rows 10, data rows 78, rendered rows 88, table rows in the paper 88, rows not occurring exactly once 0",
     "gate": "G-PAPER-TABLES",
     "pass": true,
-    "statement": "EVERY CELL OF EVERY MEASUREMENT TABLE IS RENDERED FROM THE RECEIPT AND REQUIRED TO OCCUR EXACTLY ONCE (E-22).  A table row is a claim: a forged cell dies even when every numeral in it is receipt-backed, and a duplicated row dies too",
+    "statement": "EVERY CELL OF EVERY MEASUREMENT TABLE IS RENDERED FROM THE RECEIPT AND REQUIRED TO OCCUR EXACTLY ONCE (E-22) -- THE HEADER ROWS INCLUDED.  A table row is a claim: a forged cell dies even when every numeral in it is receipt-backed, and a duplicated row dies too.  The HEADER row is the claim that says what the other rows ARE, so it is rendered from the receipt on the same terms, and every class-naming header is derived from the predicate its column's number was computed with -- a swapped column label is then a claim about a predicate this file does not compute, and dies here",
     "wall": false
    },
    {
-    "chain": "765fdf50d7da",
-    "evidence": "numerals scanned 825, unbacked [], number-words scanned 121, unbacked [], exemptions fired 26 of 26, chars 38833",
+    "chain": "5fe0382aeaaf",
+    "evidence": "numerals scanned 1115, unbacked [], number-words scanned 166, unbacked [], compound number-words 0, unbacked [], exemptions fired 27 of 27, chars 52982",
     "gate": "G-PAPER-COVERAGE",
     "pass": true,
     "statement": "NUMERAL COVERAGE SCANS THE WHOLE PAPER -- PROSE, TABLES, INLINE CODE SPANS AND THE FENCED VERDICT BLOCKS -- AGAINST EXACTLY THREE DECLARED LISTS: this run's registered numbers, the receipt it publishes, and a declared exemption table with a reason per literal, every one of which must fire.  The spelled-out numbers are scanned on the same terms",
     "wall": false
    },
    {
-    "chain": "7e5f15e63825",
+    "chain": "dd84145211bd",
+    "evidence": "sentences scanned 294, carrying a claim 35, declared names 27, numerals with no referent []; residue against a ceiling of 0: [] numerals, [] number-words",
+    "gate": "G-PAPER-SENTENCE",
+    "pass": true,
+    "statement": "ONE UNIVERSE PER SENTENCE: EVERY NUMERAL OF A SENTENCE THAT CARRIES A RENDERED CLAIM BELONGS TO THAT CLAIM.  A numeral that is true of SOME census in this receipt can be false of the sentence it is standing in -- every numeral backed, the RELATION forged -- and a receipt-wide allow-list cannot see it.  So each prose sentence carrying at least one rendered claim is required to carry no numeral outside the spans of the claims it carries, with the declared object NAMES removed first; a numeral appended to a claim's sentence has no referent and dies here.  AND THE RESIDUE IS PUBLISHED: a numeral -- spelled or not -- standing in a sentence that carries no referent at all and backed by nothing but the receipt read as a bag is counted against a declared ceiling, so the breadth of the allow-list is a measured number and not an implicit licence",
+    "wall": false
+   },
+   {
+    "chain": "c7c7270b49c0",
     "evidence": "polarity claims 8, in agreement 8",
     "gate": "G-PAPER-POLARITY",
     "pass": true,
@@ -2680,7 +4494,7 @@
     "wall": false
    },
    {
-    "chain": "b6c60895ef6a",
+    "chain": "ca6b59b5829f",
     "evidence": "fenced blocks 8, verdict fences 8, expected 8, multiset equal True",
     "gate": "G-PAPER-FENCES",
     "pass": true,
@@ -2688,34 +4502,74 @@
     "wall": false
    },
    {
-    "chain": "f38a010a64be",
-    "evidence": "declared 43, hooked 43, constant-boolean corruptions 0, hooks published 43",
+    "chain": "c59562e8d7dc",
+    "evidence": "declared 65, hooked 65, constant-boolean corruptions 0, hooks published 65",
     "gate": "G-FALSIFIER-CODE",
     "pass": true,
     "statement": "EVERY FALSIFIER IS CHECKED AGAINST ITS OWN CODE (E-23).  Each declared mutant's hook is located by AST, the source of the statement carrying it is published in the receipt, the declared set and the hooked set must agree exactly, and any corruption that is a constant boolean -- the class that cannot fail and whose description therefore inverts its code -- is rejected outright",
     "wall": false
    },
    {
-    "chain": "1901102664b6",
-    "evidence": "gates 47, with a mutant 39, with a forcing waiver 8, unguarded []",
-    "gate": "G-COVERAGE-HONEST",
+    "chain": "600bbb3e3588",
+    "evidence": "anchors 23 naming 18 distinct gates, phantom consumers [], gates evaluated when checked 58",
+    "gate": "G-ANCHOR-CONSUMERS",
     "pass": true,
-    "statement": "THE COVERAGE LEDGER IS HONEST: EVERY GATE IS EITHER FALSIFIED BY A DECLARED MUTANT OR WAIVED WITH A FORCING THAT SAYS WHY IT CANNOT FAIL.  The denominator is this run's own gate count rather than a hand-kept number, and a gate with neither is reported as unguarded",
+    "statement": "EVERY VERBATIM ANCHOR'S NAMED CONSUMER IS A GATE THIS RUN ACTUALLY EVALUATED.  The anchor register records, for each needle, the gate that consumes it; recording it is not enforcing it, and a register whose consumers are never checked admits a phantom.  Here every gate named by an anchor is required to be in this run's own evaluated gate list at the close, so an anchor pointed at a gate that does not exist -- or at one that never ran -- dies",
     "wall": false
    },
    {
-    "chain": "6d440b6edbab",
-    "evidence": "declared 43, rows 43, on target 43",
+    "chain": "919869a1ebbd",
+    "evidence": "keys published 59, scanned 42, outside 15 (all declared True), declared-late keys found inside [], verdict segments in the surface 4, paper body in the surface True",
+    "gate": "G-WALL-SURFACE",
+    "pass": true,
+    "statement": "THE WALLS' DECLARED SURFACE IS ENUMERATED, AND WHAT IS OUTSIDE IT IS DECLARED.  A scan that claims to cover `every published receipt key` and covers two thirds of them is a false vouching row.  This run enumerates the keys its wall scans actually cover, lists the keys published after the scan, and requires that list to be exactly the DECLARED vouching layer -- so a census key that quietly moved outside the scan is caught.  The four derived verdict segments are inside the surface, so a banned reading in the head is seen",
+    "wall": false
+   },
+   {
+    "chain": "448f506c744d",
+    "evidence": "quantities stamped 14, all COUNTING-ONLY True, counter-column pairs with denominators 5 of 5",
+    "gate": "G-E24-STAMPS",
+    "pass": true,
+    "statement": "E-24: EVERY PUBLISHED QUANTITY CARRIES ITS MEASURE AND ITS UNIVERSE, AND THE STAMP IS IN THE RECEIPT RATHER THAN IN A SENTENCE ABOUT THE RECEIPT.  A paper that says its counts are counting-only and stamps nothing has written an adjective; here each published cardinality is stamped COUNTING-ONLY beside the finite set it counts, each stamped value is checked to be an integer, and the counter-column's every pair carries its own denominators -- so a ratio cannot be read off a numerator alone",
+    "wall": false
+   },
+   {
+    "chain": "e02f2174aa6a",
+    "evidence": "gates 68 (61 evaluated when the ledger is built, 6 projected closing rows), with a mutant 56, with a forcing waiver 12, unguarded []",
+    "gate": "G-COVERAGE-HONEST",
+    "pass": true,
+    "statement": "THE COVERAGE LEDGER IS HONEST: EVERY GATE IS EITHER FALSIFIED BY A DECLARED MUTANT OR WAIVED WITH A FORCING THAT SAYS WHY IT CANNOT FAIL.  The denominator is the run's WHOLE gate set -- the rows already in the ledger plus this gate, the sweep binding and the three declared closing gates, every one of which is evaluated after the ledger is snapshotted and would otherwise be audited by nobody -- so the denominator is strictly larger than the number of gates standing when it is built, and a gate with neither a mutant nor a forcing is reported as unguarded",
+    "wall": false
+   },
+   {
+    "chain": "c57d5e5a1063",
+    "evidence": "declared 65, rows 65, on target 65",
     "gate": "G-SWEEP-EXECUTED",
     "pass": true,
     "statement": "THE MUTANT SWEEP ACTUALLY RAN, AND EVERY MUTANT DIED AT THE GATE ITS DECLARATION NAMES.  A delivery-level run carries one sweep row per declared mutant and every row is on target; the same conjunction is re-taken at the terminal integrity gate, so the only writer in this file is downstream of a sweep that actually ran",
+    "wall": false
+   },
+   {
+    "chain": "df443d4f0c09",
+    "evidence": "closing gates ['G-SEAL-TOTAL', 'G-INTEGRITY-PRE', 'G-INTEGRITY'], carried in the artifact ['G-SEAL-TOTAL', 'G-INTEGRITY-PRE']; integrity gate evaluated at source line [5805], promotion at [5833, 5834], read-back before promotion True",
+    "gate": "G-CLOSING-WARRANT",
+    "pass": true,
+    "statement": "THE SEALED CLOSING WARRANT IS TRUE IN BOTH ITS CLAUSES, AND BOTH ARE CHECKED RATHER THAN ASSERTED.  Clause one names which closing rows the archived transcript carries -- the two evaluated before the write -- and the terminal integrity row, which cannot appear in the file it validates; the transcript gate below compares the artifact's tail against exactly those rows.  Clause two says a failing run writes nothing, and it is checked by READING THIS FILE: the payload is staged beside its destination, the integrity gate is evaluated against the staged bytes, and the promotion call appears strictly after it in this function's own syntax tree, so a failing run cannot promote",
+    "wall": false
+   },
+   {
+    "chain": "940793a73938",
+    "evidence": "declared 68, evaluated 64, still to come 4, skipped in this mode [], unknown [], in declared order True",
+    "gate": "G-GATE-REGISTRY",
+    "pass": true,
+    "statement": "THE GATE REGISTRY THE CLI PRINTS IS THIS RUN'S OWN GATE SET.  A `--list-gates` that enumerates the falsifiable gates and calls them the gates is an undisclosed convention; here the registry is frozen in the source, printed by the CLI, and compared against the names this run actually evaluated -- every evaluated gate must be in it, in its declared ORDER, and every declared gate not evaluated must either be a closing gate still to come or carry a declared reason why this mode skips it",
     "wall": false
    }
   ]
  },
  "head_independence": {
   "builder_constants": 5,
-  "comparator_constants": 86,
+  "comparator_constants": 87,
   "declared_names": [
    [
     "I7",
@@ -2970,6 +4824,260 @@
    }
   ]
  },
+ "live_control": {
+  "budget": 5,
+  "cells": 27,
+  "cells_covered": 20,
+  "class_at_the_origin": "SINGULAR",
+  "covering": false,
+  "det4_at_the_origin": 0,
+  "floors": {
+   "INDEFINITE": 5,
+   "SINGULAR": 4
+  },
+  "foreign_pairs": 0,
+  "round_incidences": [
+   9,
+   9,
+   9,
+   9,
+   9
+  ],
+  "rounds": [
+   [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ]
+    ]
+   ],
+   [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ]
+    ]
+   ],
+   [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ]
+    ]
+   ],
+   [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ]
+    ]
+   ],
+   [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ]
+    ]
+   ]
+  ],
+  "saturating_rounds": 5,
+  "site_code_at_the_origin": [
+   1,
+   1,
+   4
+  ],
+  "target": [
+   1,
+   1,
+   4
+  ],
+  "total_incidences": 45
+ },
  "locking": {
   "budget": 5,
   "rows": [
@@ -2999,28 +5107,300 @@
    }
   ]
  },
+ "locking_general": {
+  "deficit_formula": "7 - R",
+  "deficit_formula_holds_from": 4,
+  "ladder": [
+   {
+    "best_coverage": 21,
+    "budget": 3,
+    "covering_reachable": false,
+    "links_agreeing": 3,
+    "min_uncovered": 6,
+    "third_members_required": 7
+   },
+   {
+    "best_coverage": 24,
+    "budget": 4,
+    "covering_reachable": false,
+    "links_agreeing": 3,
+    "min_uncovered": 3,
+    "third_members_required": 7
+   },
+   {
+    "best_coverage": 25,
+    "budget": 5,
+    "covering_reachable": false,
+    "links_agreeing": 3,
+    "min_uncovered": 2,
+    "third_members_required": 7
+   },
+   {
+    "best_coverage": 26,
+    "budget": 6,
+    "covering_reachable": false,
+    "links_agreeing": 3,
+    "min_uncovered": 1,
+    "third_members_required": 7
+   },
+   {
+    "best_coverage": 27,
+    "budget": 7,
+    "covering_reachable": true,
+    "links_agreeing": 3,
+    "min_uncovered": 0,
+    "third_members_required": 7
+   },
+   {
+    "best_coverage": 27,
+    "budget": 8,
+    "covering_reachable": true,
+    "links_agreeing": 3,
+    "min_uncovered": 0,
+    "third_members_required": 7
+   }
+  ],
+  "min_uncovered": {
+   "3": 6,
+   "4": 3,
+   "5": 2,
+   "6": 1,
+   "7": 0,
+   "8": 0
+  },
+  "min_uncovered_at_this_budget": 2,
+  "obstruction_dissolves_at": 7,
+  "rows": {
+   "3": [
+    {
+     "best_coverage": 21,
+     "covering_reachable": false,
+     "distinct_masks": 70,
+     "link": "(1, 0)",
+     "locked_partitions": 70,
+     "min_uncovered": 6,
+     "rounds_available": 3
+    },
+    {
+     "best_coverage": 21,
+     "covering_reachable": false,
+     "distinct_masks": 70,
+     "link": "(0, 1)",
+     "locked_partitions": 70,
+     "min_uncovered": 6,
+     "rounds_available": 3
+    },
+    {
+     "best_coverage": 21,
+     "covering_reachable": false,
+     "distinct_masks": 70,
+     "link": "(1, 1)",
+     "locked_partitions": 70,
+     "min_uncovered": 6,
+     "rounds_available": 3
+    }
+   ],
+   "4": [
+    {
+     "best_coverage": 24,
+     "covering_reachable": false,
+     "distinct_masks": 70,
+     "link": "(1, 0)",
+     "locked_partitions": 70,
+     "min_uncovered": 3,
+     "rounds_available": 4
+    },
+    {
+     "best_coverage": 24,
+     "covering_reachable": false,
+     "distinct_masks": 70,
+     "link": "(0, 1)",
+     "locked_partitions": 70,
+     "min_uncovered": 3,
+     "rounds_available": 4
+    },
+    {
+     "best_coverage": 24,
+     "covering_reachable": false,
+     "distinct_masks": 70,
+     "link": "(1, 1)",
+     "locked_partitions": 70,
+     "min_uncovered": 3,
+     "rounds_available": 4
+    }
+   ],
+   "5": [
+    {
+     "best_coverage": 25,
+     "covering_reachable": false,
+     "distinct_masks": 70,
+     "link": "(1, 0)",
+     "locked_partitions": 70,
+     "min_uncovered": 2,
+     "rounds_available": 5
+    },
+    {
+     "best_coverage": 25,
+     "covering_reachable": false,
+     "distinct_masks": 70,
+     "link": "(0, 1)",
+     "locked_partitions": 70,
+     "min_uncovered": 2,
+     "rounds_available": 5
+    },
+    {
+     "best_coverage": 25,
+     "covering_reachable": false,
+     "distinct_masks": 70,
+     "link": "(1, 1)",
+     "locked_partitions": 70,
+     "min_uncovered": 2,
+     "rounds_available": 5
+    }
+   ],
+   "6": [
+    {
+     "best_coverage": 26,
+     "covering_reachable": false,
+     "distinct_masks": 70,
+     "link": "(1, 0)",
+     "locked_partitions": 70,
+     "min_uncovered": 1,
+     "rounds_available": 6
+    },
+    {
+     "best_coverage": 26,
+     "covering_reachable": false,
+     "distinct_masks": 70,
+     "link": "(0, 1)",
+     "locked_partitions": 70,
+     "min_uncovered": 1,
+     "rounds_available": 6
+    },
+    {
+     "best_coverage": 26,
+     "covering_reachable": false,
+     "distinct_masks": 70,
+     "link": "(1, 1)",
+     "locked_partitions": 70,
+     "min_uncovered": 1,
+     "rounds_available": 6
+    }
+   ],
+   "7": [
+    {
+     "best_coverage": 27,
+     "covering_reachable": true,
+     "distinct_masks": 70,
+     "link": "(1, 0)",
+     "locked_partitions": 70,
+     "min_uncovered": 0,
+     "rounds_available": 7
+    },
+    {
+     "best_coverage": 27,
+     "covering_reachable": true,
+     "distinct_masks": 70,
+     "link": "(0, 1)",
+     "locked_partitions": 70,
+     "min_uncovered": 0,
+     "rounds_available": 7
+    },
+    {
+     "best_coverage": 27,
+     "covering_reachable": true,
+     "distinct_masks": 70,
+     "link": "(1, 1)",
+     "locked_partitions": 70,
+     "min_uncovered": 0,
+     "rounds_available": 7
+    }
+   ],
+   "8": [
+    {
+     "best_coverage": 27,
+     "covering_reachable": true,
+     "distinct_masks": 70,
+     "link": "(1, 0)",
+     "locked_partitions": 70,
+     "min_uncovered": 0,
+     "rounds_available": 8
+    },
+    {
+     "best_coverage": 27,
+     "covering_reachable": true,
+     "distinct_masks": 70,
+     "link": "(0, 1)",
+     "locked_partitions": 70,
+     "min_uncovered": 0,
+     "rounds_available": 8
+    },
+    {
+     "best_coverage": 27,
+     "covering_reachable": true,
+     "distinct_masks": 70,
+     "link": "(1, 1)",
+     "locked_partitions": 70,
+     "min_uncovered": 0,
+     "rounds_available": 8
+    }
+   ]
+  },
+  "third_members_required": [
+   7
+  ]
+ },
+ "pack4": {
+  "bits_per_cell": 4,
+  "capacity": 16,
+  "largest_cell_count": 6,
+  "statement": "the link field is packed at four bits a cell, so a cell count of sixteen would carry into its neighbour; the largest count any census of this unit deposits is measured against that capacity rather than argued in a docstring"
+ },
  "paper_claims": {
   "missing": [],
   "rendered": {
    "arena": "280 partitions, 36 of them saturating, and a family of 1,721,036,800,000",
-   "class_ladder": "the indefinite region is attained at R = 5 as a covered site code, at R = 6 as a covering record, at R = 7 as a structurally live record and at R = 8 as one of I7's declared records",
+   "back_validation": "8 columns are back-validated",
+   "ceiling": "the covering class's maximum cell count runs 1, 2, 4, 5 along R = 3, 4, 5, 6, and at R = 6 the covering class holds 72 codes",
+   "class_BARE-LIVE-RECORD": "a BARE-LIVE RECORD carries no foreign pair, so every one of its rounds saturates",
+   "class_COVERED-SITE-CODE": "a COVERED SITE CODE has all 3 declared links present, with no condition on the rest of the record",
+   "class_COVERING-RECORD": "a COVERING RECORD covers all 27 cells",
+   "class_I7-DECLARED-RECORD": "an I7-DECLARED RECORD is one of I7's own declared records",
+   "class_STRUCTURALLY-LIVE-COVERING-RECORD": "a LIVE AND COVERING RECORD covers all 27 cells and carries no foreign pair, so every one of its rounds saturates",
+   "class_ladder": "the indefinite region is attained at R = 5 as a covered site code, R = 6 as a covering record, R = 7 as a live and covering record, R = 8 as an I7-declared record",
+   "det_support": "the determinant support is {0, 3, 4, 7, 8, 11, 12, 15}",
    "dia": "a parallel class is compulsory exactly when the record counts its link more than once and counts some link exactly once, and the count clause alone is falsified at the link-constant record",
    "driven": "19 schedules driven over budgets 4, 5, 6, with 19 of 19 driven fields equal to their groupings' field",
+   "indef_record": "I7's own G-INDEF arrives as a whole record at R = 8, at 3,752 ordered saturating octuples",
+   "indefinite_codes": "the indefinite region opens at R = 5, at 3 codes, (1, 1, 5), (1, 5, 1) and (5, 1, 1), every one of them at 4det = -5",
+   "ladder_members": "the collinear arrangement of every homogeneous record the R = 5 stratum reaches, all 6 of them, none sampled",
+   "live_control": "an R = 5 record all of whose 5 rounds saturate, carrying no foreign pair, whose site code at the origin is (1, 1, 4) at 4det 0, and which covers only 20 of the 27 cells",
+   "live_floors": "dropped to liveness alone, without the covering condition, the floors are 4 and 5",
+   "lock_general": "the cells at those two sites demand the same 7 distinct third members at every budget, so the obstruction holds at every budget below 7 and dissolves at exactly R = 7",
    "locking": "no covering quintuple carries a cell count of 5",
+   "locking_cells": "it never reaches all 27 cells: no covering quintuple carries a cell count of 5",
    "maxcell": "the covering class's maximum cell count is 2 at R = 4 and 4 here",
+   "min_uncovered": "a locked quintuple leaves 2 of the 27 cells uncovered",
    "parity": "all 9 of I7's homogeneous declared records carry an even count sum, while its own admissible box splits 181 even and 180 odd",
-   "persistence": "8 invariants re-measured: 3 BREAKS-AT-R=5, 4 PERSISTS, 1 TRANSFORMS",
+   "persistence": "8 invariants re-measured: 3 BREAKS-AT-R=5, 4 PERSISTS, 1 TRANSFORMS; of the breaks 1 corollary of the cell-ceiling row, 1 forced by the parity law, 1 mechanism",
    "pred_a": "I7's box holds 6 admissible count vectors summing to 5, the stratum reaches every one of them, and 0 are declared",
    "pred_b": "a link-constant field needs 27 to divide 9R, so R must be divisible by 3",
+   "pred_b_arith": "a structurally live R-tuple spends 9 incidences a round over 27 cells, so a field constant on all three links needs 27 to divide 9R",
    "pred_b_control": "the link-constant control at this budget dies STRUCT-DEAD on 18 foreign pairs",
    "pred_c": "the declared-record yield is 276 at R = 4 and 0 here, and 1350 at R = 6",
    "r6": "(2, 2, 2) at 48,600 ordered saturating sextuples and G-SINGULAR at 1,350",
+   "r6_bound": "a constructive lower bound of 5,184",
+   "seed_fan": "the fan enumerates 9 canonical transversal choices and contributes 8 schedules, because one of the 9 is the W5-LADDER member of (1, 1, 3)",
    "sig_break": "the covering class and the positive-definite class coincide at R = 3 and at R = 4 and part company at R = 5",
    "sig_covering": "32 of the 90 covered codes occur at a site of a covering quintuple",
    "sig_opens": "the indefinite region opens at R = 5",
    "sig_split": "90 covered site codes at this budget: 84 positive definite, 3 singular and 3 indefinite",
    "slack": "the slack is 18 = 9(R - 3) and what binds is the cover",
+   "slack_binds": "45 incidences over 27 cells",
+   "sources": "14 sources are read at run time",
    "stratum": "1,842,120 of the 60,466,176 ordered saturating quintuples cover all 27 cells",
+   "stratum_fields": "the stratum as a whole induces 619,092 distinct fields, while its covering subset induces 6,336",
+   "window": "the window is 19 schedules: 1 W4-ANCHOR, 1 W5-CTRL, 6 W5-LADDER, 8 W5-SEEDFAN, 1 W6-CTRL, 2 W6-DOOR",
    "witness": "one covering quintuple with 41 incidences, 3 of its five rounds saturating, and exactly one singular site"
   }
  },
@@ -3031,9 +5411,23 @@
   "verdict_fences": 8
  },
  "paper_tables": {
+  "data_rows": 78,
+  "headers": [
+   "| R | site codes | covering-class codes | max cell count | every covering-class code positive definite |",
+   "| budget | covering-class codes | max cell count | 4det support |",
+   "| budget | third members required | rounds available | best coverage | minimum uncovered | covering reachable |",
+   "| record | counts | budget | class | witnesses at that budget |",
+   "| polarity | covered site code | covering record | bare-live record | live and covering record | I7-declared record |",
+   "| arena | budget | fibers (site/label/orient) | fate | link-constant |",
+   "| tag | schedules | budgets |",
+   "| record | budget | witnesses | compulsory classes | multisets |",
+   "| # | item | class | fiber | where it binds |",
+   "| invariant | at the rung below | here | verdict | independence |"
+  ],
   "not_exactly_once": [],
-  "rendered": 54,
-  "rows_in_the_paper": 61
+  "rendered": 88,
+  "rows_in_the_paper": 88,
+  "tables": 10
  },
  "parity": {
   "box_even": 181,
@@ -3043,10 +5437,17 @@
   "mechanism_holds": true
  },
  "persistence": {
+  "breaks_by_independence": {
+   "COROLLARY OF THE CELL-CEILING ROW": 1,
+   "FORCED BY THE PARITY LAW": 1,
+   "MECHANISM": 1
+  },
+  "independent_mechanisms_among_the_breaks": 1,
   "rows": [
    {
     "at_the_rung_below": "THE COVER",
     "here": "THE COVER",
+    "independence": "A THEOREM OF THE PRICE LAW",
     "invariant": "the binding constraint of the price law",
     "verdict": "PERSISTS",
     "witness": "slack 9 against 18"
@@ -3054,13 +5455,15 @@
    {
     "at_the_rung_below": "every round forced to saturate",
     "here": "every round forced to saturate",
+    "independence": "A THEOREM OF THE PRICE LAW",
     "invariant": "the saturation schema",
     "verdict": "PERSISTS",
     "witness": "45 incidences needed against a ceiling of 45"
    },
    {
-    "at_the_rung_below": "36/3/1",
-    "here": "36/3/1",
+    "at_the_rung_below": "36/3/1 at the declared base map, spreads [3, 6] and [1, 2]",
+    "here": "36/3/1 at the declared base map, spreads [3, 6] and [1, 2]",
+    "independence": "MEASURED PER ARENA",
     "invariant": "the weld fiber signature",
     "verdict": "PERSISTS",
     "witness": "1296 base maps read at both"
@@ -3068,6 +5471,7 @@
    {
     "at_the_rung_below": "holds",
     "here": "holds",
+    "independence": "MEASURED PER ARENA",
     "invariant": "the fiber law (all ones iff link-constant)",
     "verdict": "PERSISTS",
     "witness": "6 arenas"
@@ -3075,6 +5479,7 @@
    {
     "at_the_rung_below": "True",
     "here": "False",
+    "independence": "COROLLARY OF THE CELL-CEILING ROW",
     "invariant": "cover = positive definite",
     "verdict": "BREAKS-AT-R=5",
     "witness": "the singular witness at [1, 1, 4]"
@@ -3082,6 +5487,7 @@
    {
     "at_the_rung_below": "2",
     "here": "4",
+    "independence": "MECHANISM",
     "invariant": "block quantisation (the covering class's cell ceiling)",
     "verdict": "BREAKS-AT-R=5",
     "witness": "cell counts 2 against 4"
@@ -3089,6 +5495,7 @@
    {
     "at_the_rung_below": "compulsory when the link is counted more than once",
     "here": "and only when some link is counted exactly once",
+    "independence": "MEASURED PER RECORD",
     "invariant": "the compulsory parallel class",
     "verdict": "TRANSFORMS",
     "witness": "the link-constant record at 48,600 witnesses"
@@ -3096,6 +5503,7 @@
    {
     "at_the_rung_below": "276",
     "here": "0",
+    "independence": "FORCED BY THE PARITY LAW",
     "invariant": "the declared-record yield",
     "verdict": "BREAKS-AT-R=5",
     "witness": "the parity law: 9 of 9 declared records at an even count sum"
@@ -3166,6 +5574,17 @@
    "should_be_present": true
   }
  ],
+ "posdef_bridge": {
+  "box_side": 72,
+  "posdef_with_a_zero_count": 0,
+  "positive_definite_covered_codes": {
+   "3": 17,
+   "4": 41,
+   "5": 84,
+   "6": 145
+  },
+  "statement": "a positive-definite site code has all three counts positive, so a positive-definite RECORD necessarily covers; the containment is one-way and the two record classes coincide only while the covering class carries no non-positive-definite code"
+ },
  "prediction_a": {
   "admissible_box_points_at_this_budget": [
    [
@@ -3317,6 +5736,29 @@
     1842120
    ]
   },
+  "richer_in_denominators": {
+   "covering_class_codes": [
+    44,
+    90
+   ],
+   "covering_class_max_cell": [
+    3,
+    3
+   ],
+   "det4_support": [
+    3,
+    8
+   ],
+   "reachable_codes": [
+    105,
+    181
+   ],
+   "stratum_cover": [
+    1679616,
+    60466176
+   ]
+  },
+  "richer_in_measure": "COUNTING-ONLY",
   "rows": {
    "3": {
     "covering_class_codes": 1,
@@ -3513,19 +5955,74 @@
   "parent_constructive_lower_bound": 5184
  },
  "reachability_ladder": {
+  "chain": [
+   "COVERED-SITE-CODE",
+   "COVERING-RECORD",
+   "STRUCTURALLY-LIVE-COVERING-RECORD",
+   "I7-DECLARED-RECORD"
+  ],
+  "class_rows": [
+   {
+    "class": "COVERED-SITE-CODE",
+    "covering_required": false,
+    "declared_list": false,
+    "every_round_saturating": false,
+    "kind": "CHAIN",
+    "label": "covered site code",
+    "predicate": "has all 3 declared links present, with no condition on the rest of the record"
+   },
+   {
+    "class": "COVERING-RECORD",
+    "covering_required": true,
+    "declared_list": false,
+    "every_round_saturating": false,
+    "kind": "CHAIN",
+    "label": "covering record",
+    "predicate": "covers all 27 cells"
+   },
+   {
+    "class": "BARE-LIVE-RECORD",
+    "covering_required": false,
+    "declared_list": false,
+    "every_round_saturating": true,
+    "kind": "CONTROL",
+    "label": "bare-live record",
+    "predicate": "carries no foreign pair, so every one of its rounds saturates"
+   },
+   {
+    "class": "STRUCTURALLY-LIVE-COVERING-RECORD",
+    "covering_required": true,
+    "declared_list": false,
+    "every_round_saturating": true,
+    "kind": "CHAIN",
+    "label": "live and covering record",
+    "predicate": "covers all 27 cells and carries no foreign pair, so every one of its rounds saturates"
+   },
+   {
+    "class": "I7-DECLARED-RECORD",
+    "covering_required": false,
+    "declared_list": true,
+    "every_round_saturating": false,
+    "kind": "CHAIN",
+    "label": "I7-declared record",
+    "predicate": "is one of I7's own declared records"
+   }
+  ],
   "classes": [
    "COVERED-SITE-CODE",
    "COVERING-RECORD",
-   "STRUCTURALLY-LIVE-RECORD",
+   "BARE-LIVE-RECORD",
+   "STRUCTURALLY-LIVE-COVERING-RECORD",
    "I7-DECLARED-RECORD"
   ],
-  "note": "every reachability row names the class it is about; a floor for one class is not a floor for another",
+  "note": "every reachability row names the class it is about and every floor is computed from that class's own predicate flags; a floor for one class is not a floor for another",
   "rows": [
    {
+    "BARE-LIVE-RECORD": 4,
     "COVERED-SITE-CODE": 4,
     "COVERING-RECORD": 5,
     "I7-DECLARED-RECORD": 6,
-    "STRUCTURALLY-LIVE-RECORD": 6,
+    "STRUCTURALLY-LIVE-COVERING-RECORD": 6,
     "declared_names": [
      "G-SINGULAR"
     ],
@@ -3533,10 +6030,11 @@
     "scanned_to": 8
    },
    {
+    "BARE-LIVE-RECORD": 5,
     "COVERED-SITE-CODE": 5,
     "COVERING-RECORD": 6,
     "I7-DECLARED-RECORD": 8,
-    "STRUCTURALLY-LIVE-RECORD": 7,
+    "STRUCTURALLY-LIVE-COVERING-RECORD": 7,
     "declared_names": [
      "G-INDEF"
     ],
@@ -3544,6 +6042,262 @@
     "scanned_to": 8
    }
   ]
+ },
+ "reads": {
+  "by_category": {
+   "OBJECT-UNDER-TEST": [
+    "v14/paper-29-perr.md"
+   ],
+   "SELF": [
+    "v14/code/perr_exact.py"
+   ],
+   "SOURCE": [
+    "v10/code/d42b1_transport_exact.py",
+    "v10/code/d60_crystal_exact.py",
+    "v10/code/d66_arbitration_crystal_exact.py",
+    "v10/data/d66_arbitration_crystal_exact.out",
+    "v11/note-L1-lorentz-no-go-lemma.md",
+    "v11/note-v11p0a-reproduction-catalog.md",
+    "v13/code/ha_successor_receipt.json",
+    "v13/paper-ha-successor.md",
+    "v14/code/r3_weld_receipt.json",
+    "v14/code/r4dec_receipt.json",
+    "v14/note-perl-adjudication.md",
+    "v14/note-perr-pin.md",
+    "v14/paper-19-r3-weld.md",
+    "v14/paper-21-r4dec.md"
+   ]
+  },
+  "declared_artifacts": [
+   "v14/code/perr_output.txt",
+   "v14/code/perr_output.txt.tmp",
+   "v14/code/perr_receipt.json",
+   "v14/code/perr_receipt.json.tmp"
+  ],
+  "declared_categories": [
+   "SOURCE",
+   "OBJECT-UNDER-TEST",
+   "SELF",
+   "ARTIFACT"
+  ],
+  "declared_sources": [
+   "v10/code/d42b1_transport_exact.py",
+   "v10/code/d60_crystal_exact.py",
+   "v10/code/d66_arbitration_crystal_exact.py",
+   "v10/data/d66_arbitration_crystal_exact.out",
+   "v11/note-L1-lorentz-no-go-lemma.md",
+   "v11/note-v11p0a-reproduction-catalog.md",
+   "v13/code/ha_successor_receipt.json",
+   "v13/paper-ha-successor.md",
+   "v14/code/r3_weld_receipt.json",
+   "v14/code/r4dec_receipt.json",
+   "v14/note-perl-adjudication.md",
+   "v14/note-perr-pin.md",
+   "v14/paper-19-r3-weld.md",
+   "v14/paper-21-r4dec.md"
+  ],
+  "rows": [
+   {
+    "category": "OBJECT-UNDER-TEST",
+    "path": "v14/paper-29-perr.md",
+    "sha256_12": "9f00850bfd98"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v14/note-perr-pin.md",
+    "sha256_12": "6339ba42f354"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v14/paper-21-r4dec.md",
+    "sha256_12": "ef4a8c35a0c4"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v14/code/r4dec_receipt.json",
+    "sha256_12": "a4538c7019e6"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v14/paper-19-r3-weld.md",
+    "sha256_12": "50bb81e67942"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v14/code/r3_weld_receipt.json",
+    "sha256_12": "dfea664f2408"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v13/paper-ha-successor.md",
+    "sha256_12": "f286ba10d2d9"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v13/code/ha_successor_receipt.json",
+    "sha256_12": "542b8735daf0"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v14/note-perl-adjudication.md",
+    "sha256_12": "08bec11d8466"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v10/code/d42b1_transport_exact.py",
+    "sha256_12": "576275d55ecf"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v10/code/d60_crystal_exact.py",
+    "sha256_12": "684cdb76552b"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v10/code/d66_arbitration_crystal_exact.py",
+    "sha256_12": "3d0516ab106e"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v10/data/d66_arbitration_crystal_exact.out",
+    "sha256_12": "e252529d2586"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v11/note-L1-lorentz-no-go-lemma.md",
+    "sha256_12": "93ea24591c3c"
+   },
+   {
+    "category": "SOURCE",
+    "path": "v11/note-v11p0a-reproduction-catalog.md",
+    "sha256_12": "0cebe543e814"
+   },
+   {
+    "category": "SELF",
+    "path": "v14/code/perr_exact.py",
+    "sha256_12": "603319c24257"
+   }
+  ],
+  "self": "v14/code/perr_exact.py",
+  "subprocesses_invoked": 0
+ },
+ "record_realizability": {
+  "beyond_the_census": [
+   "G-ANISO2",
+   "G-OFFDIAG2",
+   "G-OFFNEG"
+  ],
+  "census_ceiling": 10,
+  "censused": [
+   "G-ANISO",
+   "G-DIAG2",
+   "G-FLAT",
+   "G-INDEF",
+   "G-OFFDIAG",
+   "G-SINGULAR"
+  ],
+  "rows": {
+   "G-ANISO": {
+    "budget": 10,
+    "censused": true,
+    "class": "POSDEF",
+    "record": [
+     1,
+     4,
+     5
+    ],
+    "witnesses": 278460
+   },
+   "G-ANISO2": {
+    "budget": 26,
+    "censused": false,
+    "class": "POSDEF",
+    "record": [
+     4,
+     9,
+     13
+    ],
+    "witnesses": null
+   },
+   "G-DIAG2": {
+    "budget": 8,
+    "censused": true,
+    "class": "POSDEF",
+    "record": [
+     2,
+     2,
+     4
+    ],
+    "witnesses": 1452780
+   },
+   "G-FLAT": {
+    "budget": 4,
+    "censused": true,
+    "class": "POSDEF",
+    "record": [
+     1,
+     1,
+     2
+    ],
+    "witnesses": 276
+   },
+   "G-INDEF": {
+    "budget": 8,
+    "censused": true,
+    "class": "INDEFINITE",
+    "record": [
+     1,
+     1,
+     6
+    ],
+    "witnesses": 3752
+   },
+   "G-OFFDIAG": {
+    "budget": 10,
+    "censused": true,
+    "class": "POSDEF",
+    "record": [
+     2,
+     2,
+     6
+    ],
+    "witnesses": 19744200
+   },
+   "G-OFFDIAG2": {
+    "budget": 20,
+    "censused": false,
+    "class": "POSDEF",
+    "record": [
+     3,
+     5,
+     12
+    ],
+    "witnesses": null
+   },
+   "G-OFFNEG": {
+    "budget": 12,
+    "censused": false,
+    "class": "POSDEF",
+    "record": [
+     3,
+     5,
+     4
+    ],
+    "witnesses": null
+   },
+   "G-SINGULAR": {
+    "budget": 6,
+    "censused": true,
+    "class": "SINGULAR",
+    "record": [
+     1,
+     1,
+     4
+    ],
+    "witnesses": 1350
+   }
+  },
+  "statement": "the ladder law forbids a record before the sum of its own counts; the census decides that it arrives there"
  },
  "saturation": {
   "budget": 45,
@@ -3596,56 +6350,71 @@
  },
  "schema": "isp/v14/r-ladder-persistence/1",
  "seal_manifest": {
-  "chain": "b702883375fd",
+  "chain": "a17cf347cbc9",
   "seals": {
    "alphabet": "0afee54b0cf9607ad850cc8f39a497c9fec04f20e5d58ecdf52aa7e6d8a4fcd1",
+   "anchor_consumers": "b158a60b706b3854d8b9a32fda61c4e96f5eae24a94345468eb2ee02d3be5d2b",
    "anchors": "c69e53a65779592baf676d602df777ebe55a6651711b27d62e03df61f4e0235a",
    "arena": "0d5a764d0e10b70ca812c60b02350b3d43bf2932eead3a39a342d412ff3bd6d9",
    "arithmetic": "93a8bbb4d9feb7f1fbb9e6ffc6bb1529a3ad48d0d67b5023d7a885847a07a5e4",
-   "choice_inventory": "abd0809069b81046a03e10616f697ffb06831ce375e684dd4bed816280981c4a",
+   "choice_inventory": "11e32e9e04b8a1b4b9e84af0be07561a67a55288b77d9e9cfd736707ee6acf7f",
    "class_split": "0ba2c48583705dfb90f9b4f470171342845b11ba5f02d70053214935f73dcb5c",
-   "closing_gates": "7914b08036239ff37d72ca947e926cb9dbf8c9d659fa49884b5b7a4986732b41",
+   "closing_gates": "20b54df24eb8af3229b7a8ffdb79356523804e13623c0ed1259ec3e6e699c63c",
    "code_space": "bae6acd9e03585f2de539fd7a2d3404aa596c133feaeb9ecf00cb7cddf5506ab",
    "controls": "df83fd262d6143849c5e8b512b55ffd13331bd03fab09fc312ad1acf2ea1a718",
-   "coverage": "c4045776d9ffd38af65dab956e1d093c628228e5da53e152ef7800c071c2072d",
-   "coverage_scan": "4983af8363e7f43cebffb8a6f8c0ab2a487061ae73a10105cac3838207322731",
+   "coverage": "8eedb53ca86e3f417a1aff9bcfa220954d3d0c4dbf4fda788293011624fc4f04",
+   "coverage_scan": "4147c4cd501f54134689ecff2f8d3bfbe116757ea57f68680dea0c4f60bd4320",
+   "covering_ceiling": "bc4fab68c51d5929ed9f88faf2f8e5c562ba1b36e585acd02df4138ea7115d7a",
    "covering_codes": "a00a3758a457e9bbc3d3f9e401f0701b948115538ba4f2328a576db3d9767eed",
-   "dia": "5d78b708d49b88f2d678ad2711c820e6b89720632c4b37ab6655e338293f6e0c",
+   "dia": "aea100d0fc48d8db2d2db91a3884558d1a7eb7e058f107f3b76ac7df15006deb",
    "driven": "8d272b25d9715f36df2683a72fe5fcd8ee7d3fd9af7ad3f4f719621759edbb64",
    "driver_anchor": "0de97deb13fb79f4a90d5e98a3fac4aeb9547f8f3c6c5c71175c787f1a430720",
-   "falsifiers": "d42eef2767bc1a5eac3a1b4922c344ea0040baef7c55b4a4dbe3d25756939250",
-   "gates": "9660d3af1147db286e1ab3820f1dad09209398fcc5ced520d39659e48308e822",
-   "head_independence": "42b3d5e476fe627f184669c4ff177c3370ae67555725017d4c29620e1ca49e62",
+   "e24": "2d488de1e8ad7409ff0f95dde30d52306191a666bb064b52618753327e2df294",
+   "falsifiers": "9498428aa1b78b0e655aceb0580032c096e32d3fa3716fbaf15bd1f0b867aedd",
+   "gate_registry": "f578b837a2e564fdc968d45f8d38f118d55bb4559d3e63a32f0ce2167492c756",
+   "gates": "3cf999a54968e085e8abe7e6050d14ded66344fe127ad5182d7498f5a389aab6",
+   "head_independence": "53bfa4155ca9a7579abb2573f1eb9efd7a208159073eddb75ef23ce2b4dbf476",
    "i7": "aac8ef365f0fb65fc9f13f302c4f87bc166ee96e86349573b5b69a07c9861a82",
    "interference": "37ff80cc00298dd2b7ee532b8fb29ba3f3df84f812d107fbeff40b0647cf21f0",
    "ladder": "6a7937e4405e4ef7199d7c8b34f962ffb8662a8603e12452508975920ec8230e",
+   "live_control": "b0759a5a46c0fc1cad429256c7cc7900b9fc729f6431084247a8ee8b5f529076",
    "locking": "09b26d1f2397b1e57ff6c4e7fabc064cdfef1d1bb7f6365e7c3a7ff460d1ed1b",
-   "paper_claims": "b02a7f865566b026e97320bddf78c5b87ba5fd79ef4e485d140ce1a11ae9dae5",
+   "locking_general": "2d34f96e180693132b638017c988411d85cc9bd7774bd1ea8d5ed701776a6605",
+   "pack4": "a62512421ba3eda524eb359002f38d125790d63494ae26dc0bf1efd0b78aec2d",
+   "paper_claims": "7c48e325f5596d399fbf372616b1b4c4487c5b77337943388ff537c0c77141b0",
    "paper_fences": "8744551405dadc72e36eb100c23d8ae1802fe23369be9b5148ad383460c78e01",
-   "paper_tables": "3da177c66716984288b6b2ca79d20bf75a9012669cd6d99d31acd1c330b4b6fd",
+   "paper_tables": "562852eacef02030789aabcd103df272152867489da7cf94c6bf5e3299429c94",
    "parity": "03b3373f728ad4cf0c5a980801af0194e94b336210a9ed6a92883ae012be9cc7",
-   "persistence": "badfcc7f82f28d20080c497544705ecb309c2e2052cd97d5303917a5ddbd1535",
+   "persistence": "9f5d70e9a2257d788a0905a1d5834de0e99b929710986cc05b29b80b503408e2",
    "polarity": "0dbb12e72f9b3762142ed27b24c21d9af6f71c2d5d42f0314b5c18d1ed2933bc",
+   "posdef_bridge": "486fce668ee5334ca69027374931e16bccb43e039a797272b89e27412055480e",
    "prediction_a": "03ee265782211178fb3442392b27d109642d78c64eeb201f02f6bb2a62c965bf",
    "prediction_b": "f1570ad31b93598f34553b804ef252d25f7aee78bcf521cfed5db439ee44596f",
-   "prediction_c": "d4168f9de40877ddcc450fe941a0dc81edaab941f5db3642bc561d5182ff9b30",
+   "prediction_c": "792dab0fdcfd189b257cb58df862ac2c2f4aa8579e5eb3ffe9712cc12f364c33",
    "predictions": "f897b39e55e599bb3726875c4acca4de672256c39662d26c1cf41936de54182f",
    "provenance": "9822b563a04f67a0d4f2efaaf10153cf11cd3c3827b17ae85b92a654d8091d36",
    "r6_door": "a1de9dc64cad41c1dec53f2afdd862d1fecc8101b33bcbcf7067791f64cecabf",
-   "reachability_ladder": "d0dcb43c04800bcf9484e571287cc23844d563d1e6d5d3338585a67dfff0a71e",
+   "reachability_ladder": "a6aac6b68abb2468d270d77970242130d310ae45b7ea1265923194efd7fb6494",
+   "reads": "c26892a1bdc20c4aa884b84c1e70ee3a822bdf5b8994aed9022df65bfa9d1009",
+   "record_realizability": "f023f51cf898a44a0b27d154ed5aed541e5978d1f2e1921f272c742abd438edc",
    "saturation": "35bec58fb8092e84bcb6665a7ba6d90b21ec02328cf4916fc80c8ea13ecad1be",
+   "sentence_referents": "11cf9c1678c5618e0db791e06c69d337b85bda32274a644ed3ba264bece12251",
    "sig_feed": "f093b4e837df50bcd1e2b1cdb094808f37807d0cd60b8a57f7063e3e30fae9fa",
    "singular_witness": "684d68098a80235dac7d1a2809fdfe3e55936b413412666b84858671c10e2a09",
    "slack": "b5326ebe8b533fe3c1a6fe49bd535043f5aea22c86ea794f46aea8046064faf6",
-   "stratum": "52f6f55aa0e74919f9bd1c09b6d8819d0559eb8dfc1c57a3949a9018092cc7d2",
-   "sweep": "486afa0c21447b440695722bc0f566cf597584add59d6fe98d9c82a6f6850e16",
-   "totals": "98d0476cf69ee913cc866771b83842f75fe32705ef9b5fbc97793bd2fc17ba29",
-   "transcript": "4083d4363716f2bab3400207dde89caa131a68ecac6b54bf9f7abe4fc8adf92d",
-   "transcript_head": "9d05df7ac2c9da615981e062e0b79e4cf935bb757f0bb8cb81ac308eb1fce80b",
+   "stratum": "3dd22d8c631ab7bf5f73a59c735196b82ae1403196b888929cdf97eba1673d4d",
+   "stratum_fields": "3150f8b6daab69f626e6042c439483f47fb53e9e06b4db1ff2680d012c302927",
+   "surface": "946925f83ed3ce430be1323ca3101810a5684299a3f30fdb2fa4e354e8c98d50",
+   "sweep": "333e73a6473f178d0f5bb031a0b5393ab611dd4376cbbf070b3ac25610377b9f",
+   "totals": "82adee3f92c702aa78a806965260a0efb2a81ad90ca8cd185758218dc5e6b06f",
+   "transcript": "664f4eb47ee56e655b2fa6a8c3b62b5d52d8080d005f6c40e52e59b53e6c8814",
+   "transcript_head": "d6108ebaceae3341490e184af75327ffcfadf158740e40caa34b1213fd958eef",
    "translation": "746a0bdeccbc35597bb6e86c77cbd9d270566b8b6f6fc62bd7037ccf902bf7fd",
-   "verdict": "34a03a9616a4601974ff93556e9ea5846707271284234ac4e2fe8d2928fd7d38",
+   "verdict": "01e4aaa0be9238180c691520633b01410dd9342f83e9930caaaa1639e36221cc",
+   "wall_surface": "d6bc0d202d2e68ba7f67a554a011643b7a9191921460da4bcf632223cc9cc319",
    "walls": "3862f674d370fd186452d91d6a03b6c749fb934413ff977bc757c52f46669def",
-   "weld": "4c288056ee39cae1394ffa8e70bfcf7b2191332759002a1fd2efcb4223549af0"
+   "weld": "457a7c04138a4cc41e4301fa0212ccb255cc548d25e41e6bbb6024a2bf227e9b",
+   "window": "3a1a8739d3ee40490b0563345d67008617054e2021341e27d981388ac244886a"
   },
   "unsealed": [
    {
@@ -3669,6 +6438,15 @@
     "reason": "this unit's pin path and sha, frozen in the source"
    }
   ]
+ },
+ "sentence_referents": {
+  "declared_names": 27,
+  "loose_numerals": [],
+  "residue_ceiling": 0,
+  "residue_number_words": [],
+  "residue_numerals": [],
+  "sentences_carrying_a_claim": 35,
+  "sentences_scanned": 294
  },
  "sig_feed": {
   "budget": 5,
@@ -4195,6 +6973,7 @@
  "stratum": {
   "3": {
    "cover": 72,
+   "cover_distinct_fields": 1,
    "det4_spectrum": {
     "3": 648
    },
@@ -4225,6 +7004,7 @@
   },
   "4": {
    "cover": 9936,
+   "cover_distinct_fields": 36,
    "det4_spectrum": {
     "3": 19872,
     "4": 49680,
@@ -4285,6 +7065,7 @@
   },
   "5": {
    "cover": 1842120,
+   "cover_distinct_fields": 6336,
    "det4_spectrum": {
     "11": 476640,
     "12": 1496880,
@@ -4411,9 +7192,74 @@
    "total": 60466176
   }
  },
+ "stratum_fields": {
+  "covering_subset": {
+   "3": 1,
+   "4": 36,
+   "5": 6336
+  },
+  "statement": "the covering subset of the stratum induces far fewer distinct fields than the stratum as a whole; the two counts are counts of different sets",
+  "whole_stratum": {
+   "3": 8407,
+   "4": 80775,
+   "5": 619092
+  }
+ },
+ "surface": {
+  "chars": 134332,
+  "gate_rows_included": 41,
+  "paper_body_included": true,
+  "scanned_receipt_key_count": 42,
+  "scanned_receipt_keys": [
+   "alphabet",
+   "anchors",
+   "arena",
+   "choice_inventory",
+   "class_split",
+   "code_space",
+   "controls",
+   "covering_ceiling",
+   "covering_codes",
+   "dia",
+   "driven",
+   "driver_anchor",
+   "i7",
+   "ladder",
+   "live_control",
+   "locking",
+   "locking_general",
+   "pack4",
+   "parity",
+   "persistence",
+   "pin",
+   "posdef_bridge",
+   "prediction_a",
+   "prediction_b",
+   "prediction_c",
+   "predictions",
+   "provenance",
+   "python",
+   "r6_door",
+   "reachability_ladder",
+   "record_realizability",
+   "saturation",
+   "schema",
+   "sig_feed",
+   "singular_witness",
+   "slack",
+   "stratum",
+   "stratum_fields",
+   "translation",
+   "unit",
+   "weld",
+   "window"
+  ],
+  "scope": "the CENSUS layer of this run's receipt -- every key published when the scan is taken, enumerated here -- together with the four derived verdict segments, the statement and evidence of every gate evaluated before the scan, and the paper's own body.  The vouching layer published after the scan is sealed and gated separately, and the wall rows themselves necessarily quote the words the scan bans",
+  "verdict_segments_included": 4
+ },
  "sweep": {
-  "mutants": 43,
-  "on_target": 43,
+  "mutants": 65,
+  "on_target": 65,
   "rows": [
    {
     "gate": "G-ALPHABET",
@@ -4426,9 +7272,24 @@
     "mutant": "M-ANCHOR"
    },
    {
+    "gate": "G-ANCHOR-CONSUMERS",
+    "killed_at": "G-ANCHOR-CONSUMERS",
+    "mutant": "M-ANCHOR-GATE"
+   },
+   {
     "gate": "G-ARENA",
     "killed_at": "G-ARENA",
     "mutant": "M-ARENA"
+   },
+   {
+    "gate": "G-POSDEF-COVERS",
+    "killed_at": "G-POSDEF-COVERS",
+    "mutant": "M-BRIDGE"
+   },
+   {
+    "gate": "G-CEILING",
+    "killed_at": "G-CEILING",
+    "mutant": "M-CEILING"
    },
    {
     "gate": "G-CLASS-SPLIT",
@@ -4439,6 +7300,11 @@
     "gate": "G-CLASS-LADDER",
     "killed_at": "G-CLASS-LADDER",
     "mutant": "M-CLASS-LADDER"
+   },
+   {
+    "gate": "G-CLASS-WORDS",
+    "killed_at": "G-CLASS-WORDS",
+    "mutant": "M-CLASS-WORDS"
    },
    {
     "gate": "G-CODESPACE",
@@ -4461,6 +7327,11 @@
     "mutant": "M-DIA"
    },
    {
+    "gate": "G-DIA-LAW",
+    "killed_at": "G-DIA-LAW",
+    "mutant": "M-DIA-EXT"
+   },
+   {
     "gate": "G-DRIVER-ANCHOR",
     "killed_at": "G-DRIVER-ANCHOR",
     "mutant": "M-DRIVE-ANCHOR"
@@ -4476,6 +7347,11 @@
     "mutant": "M-FIBER-LAW"
    },
    {
+    "gate": "G-STRATUM-FIELDS",
+    "killed_at": "G-STRATUM-FIELDS",
+    "mutant": "M-FIELDS"
+   },
+   {
     "gate": "G-FORCED",
     "killed_at": "G-FORCED",
     "mutant": "M-FORCED"
@@ -4484,6 +7360,11 @@
     "gate": "G-HEAD-DERIVED",
     "killed_at": "G-HEAD-DERIVED",
     "mutant": "M-HEAD"
+   },
+   {
+    "gate": "G-PAPER-TABLES",
+    "killed_at": "G-PAPER-TABLES",
+    "mutant": "M-HEADERS"
    },
    {
     "gate": "G-I7-READOUT",
@@ -4506,9 +7387,24 @@
     "mutant": "M-LADDER"
    },
    {
+    "gate": "G-LIVE-CONTROL",
+    "killed_at": "G-LIVE-CONTROL",
+    "mutant": "M-LIVE-CONTROL"
+   },
+   {
+    "gate": "G-LOCK-GENERAL",
+    "killed_at": "G-LOCK-GENERAL",
+    "mutant": "M-LOCK-GENERAL"
+   },
+   {
     "gate": "G-LOCKING",
     "killed_at": "G-LOCKING",
     "mutant": "M-LOCKING"
+   },
+   {
+    "gate": "G-PACK4",
+    "killed_at": "G-PACK4",
+    "mutant": "M-PACK4"
    },
    {
     "gate": "G-WALL-BHS",
@@ -4581,6 +7477,31 @@
     "mutant": "M-R6"
    },
    {
+    "gate": "G-READS",
+    "killed_at": "G-READS",
+    "mutant": "M-READS"
+   },
+   {
+    "gate": "G-RECORD-FLOORS",
+    "killed_at": "G-RECORD-FLOORS",
+    "mutant": "M-RECORD-FLOOR"
+   },
+   {
+    "gate": "G-GATE-REGISTRY",
+    "killed_at": "G-GATE-REGISTRY",
+    "mutant": "M-REGISTRY"
+   },
+   {
+    "gate": "G-PAPER-SENTENCE",
+    "killed_at": "G-PAPER-SENTENCE",
+    "mutant": "M-RESIDUE"
+   },
+   {
+    "gate": "G-PAPER-SENTENCE",
+    "killed_at": "G-PAPER-SENTENCE",
+    "mutant": "M-RESIDUE-N"
+   },
+   {
     "gate": "G-SATURATION-SCHEMA",
     "killed_at": "G-SATURATION-SCHEMA",
     "mutant": "M-SATURATION"
@@ -4589,6 +7510,11 @@
     "gate": "G-INTEGRITY-PRE",
     "killed_at": "G-INTEGRITY-PRE",
     "mutant": "M-SEAL"
+   },
+   {
+    "gate": "G-PAPER-SENTENCE",
+    "killed_at": "G-PAPER-SENTENCE",
+    "mutant": "M-SENTENCE"
    },
    {
     "gate": "G-SIG-FEED",
@@ -4601,9 +7527,29 @@
     "mutant": "M-SLACK"
    },
    {
+    "gate": "G-WELD-ROWS",
+    "killed_at": "G-WELD-ROWS",
+    "mutant": "M-SPREAD"
+   },
+   {
+    "gate": "G-E24-STAMPS",
+    "killed_at": "G-E24-STAMPS",
+    "mutant": "M-STAMPS"
+   },
+   {
     "gate": "G-STRATUM",
     "killed_at": "G-STRATUM",
     "mutant": "M-STRATUM"
+   },
+   {
+    "gate": "G-WALL-SURFACE",
+    "killed_at": "G-WALL-SURFACE",
+    "mutant": "M-SURFACE"
+   },
+   {
+    "gate": "G-INTEGRITY-PRE",
+    "killed_at": "G-INTEGRITY-PRE",
+    "mutant": "M-TAIL"
    },
    {
     "gate": "G-INTEGRITY-PRE",
@@ -4621,9 +7567,19 @@
     "mutant": "M-WALL-LORENTZ"
    },
    {
+    "gate": "G-CLOSING-WARRANT",
+    "killed_at": "G-CLOSING-WARRANT",
+    "mutant": "M-WARRANT"
+   },
+   {
     "gate": "G-WELD-ROWS",
     "killed_at": "G-WELD-ROWS",
     "mutant": "M-WELD"
+   },
+   {
+    "gate": "G-WINDOW-DECOMP",
+    "killed_at": "G-WINDOW-DECOMP",
+    "mutant": "M-WINDOW"
    },
    {
     "gate": "G-SINGULAR-WITNESS",
@@ -4634,20 +7590,20 @@
  },
  "totals": {
   "anchors": 23,
-  "gates": 49,
-  "mutants": 43,
-  "registered_numbers": 146,
+  "gates": 65,
+  "mutants": 65,
+  "registered_numbers": 160,
   "sources": 14
  },
  "transcript": {
-  "closing_lines": "the rows of the closing gates named in closing_gates, and nothing else, may follow the sealed prefix in the artifact",
-  "digest": "c4210427eaf6",
-  "lines_sealed": 168
+  "closing_lines": "the artifact's tail must EQUAL, line for line, the rows of the closing gates carried in it, rendered from the ledger; there is no whitelist, so neither an indented line nor a line merely containing a closing gate's name is admitted",
+  "digest": "3358da3815b8",
+  "lines_sealed": 216
  },
  "transcript_head": [
   "[SEC 1] PROVENANCE",
   "  [PASS] G-SOURCES",
-  "         EVERY SOURCE IS READ AT ITS PINNED SHA.  The 14 declared sources are read at run time and each file's measured sha256-12 equals the digest this unit froze; a single mismatch stops the run before any census is built"
+  "         EVERY SOURCE IS READ AT ITS PINNED SHA.  The 14 declared sources are read at run time and each file's measured sha256-12 equals the digest this unit froze; a single mismatch stops the run before any census is built, and a source that is ABSENT -- a bare copy of this file with no repository under it -- fails here by name rather than by traceback"
  ],
  "translation": {
   "checks": 2520,
@@ -4655,11 +7611,61 @@
  },
  "unit": "perr",
  "verdict": [
-  "PERR-SIG-FEED-AT-R=5-[COVERED CODES 90 = 84 POSDEF + 3 SINGULAR + 3 INDEFINITE; THE INDEFINITE REGION OPENS HERE, AT 4det [-5]; COVERING-CLASS CODES 32, MAX CELL COUNT 4, 4det SUPPORT [0, 3, 4, 7, 8, 11, 12, 15]] -- INSIDE THE COVERING CLASS: THE SINGULAR BOUNDARY IS REACHABLE (WITNESS [1, 1, 4] AT EXACTLY 1 OF 9 SITES, 41 INCIDENCES, 3 OF 5 ROUNDS SATURATING) AND THE INDEFINITE REGION IS NOT (THE LOCKING THEOREM: NO COVERING QUINTUPLE CARRIES A CELL COUNT OF 5) -- SO COVER=POSDEF BREAKS AT R=5 AFTER HOLDING AT R=3 AND R=4 -- RECORD FLOORS: G-SINGULAR R=6, G-INDEF R=8@EXHAUSTIVE-OVER-1,721,036,800,000-ORDERED-GROUPING-QUINTUPLES",
+  "PERR-SIG-FEED-AT-R=5-[COVERED CODES 90 = 84 POSDEF + 3 SINGULAR + 3 INDEFINITE; THE INDEFINITE REGION OPENS HERE, AT 4det [-5]; COVERING-CLASS CODES 32, MAX CELL COUNT 4, 4det SUPPORT [0, 3, 4, 7, 8, 11, 12, 15]] -- INSIDE THE COVERING CLASS: THE SINGULAR BOUNDARY IS REACHABLE (WITNESS [1, 1, 4] AT EXACTLY 1 OF 9 SITES, 41 INCIDENCES, 3 OF 5 ROUNDS SATURATING) AND THE INDEFINITE REGION IS NOT (THE LOCKING THEOREM: NO COVERING QUINTUPLE CARRIES A CELL COUNT OF 5) -- SO COVER=POSDEF BREAKS AT R=5 AFTER HOLDING AT R=3 AND R=4@EXHAUSTIVE-OVER-1,721,036,800,000-ORDERED-GROUPING-QUINTUPLES -- RECORD FLOORS (BY THE LADDER LAW, THE ROWS CENSUSED OVER 36^6 AND 36^8): G-SINGULAR R=6, G-INDEF R=8",
   "PERR-PREDICTIONS-3-OF-3-PASS-[(a) NO DECLARED RECORD AT COUNT-SUM 5: I7'S OWN BOX HOLDS 6 ADMISSIBLE POINTS THERE, THE STRATUM REACHES ALL 6 AND 0 ARE DECLARED -- AND EVERY DECLARED HOMOGENEOUS RECORD OF I7'S 9 HAS AN EVEN COUNT SUM, THE INTEGER-q12 SUBLATTICE, AGAINST ITS OWN BOX'S 181 EVEN AND 180 ODD | (b) ZERO-FREE-ITEMS IMPOSSIBLE: A LIVE R-TUPLE SPENDS 9 PER ROUND OVER 27 CELLS SO LINK-CONSTANCY NEEDS R=0 MOD 3, AND THE ARENA'S OWN LINK-CONSTANT CONTROL DIES STRUCT-DEAD ON 18 FOREIGN PAIRS | (c) STRICTLY WEAKER IN BOTH CURRENCIES: DECLARED YIELD 276 AT R=4 AND 0 HERE, MOTIVATED AT NEITHER, WHILE R=6 BUYS BOTH -- AND STRICTLY RICHER IN EVERY SLACK COLUMN]",
   "PERR-SLACK-18-AT-R=5-[= 9(R-3), THE PARENT'S FORMULA; BINDING=THE COVER (45 > 27); THE SEQUENCE GAINS A ROW AND NO CONDITION] -- WHAT THE SLACK BUYS ALONG R=3/4/5: SITE CODES 54/105/181 | COVERING-CLASS CODES 1/7/32 | MAX CELL COUNT 1/2/4 (BLOCK QUANTISATION BREAKS) | 4det SUPPORT 1/3/8 | COVER=POSDEF True/True/False",
-  "PERR-DICTIONARY-[WELD FIBERS 1/1/1(R=3) -> 36/3/1(R=4) -> 36/3/1(R=5) -> 1/1/1(R=6), FOUND EXACTLY AT THE LINK-CONSTANT RECORDS AND UNMOTIVATED EVERYWHERE ELSE; THE R=5 SIGNATURE IS THE R=4 SIGNATURE] -- DRIVEN: THE COMMITTED GRAMMAR DRIVES 19 SCHEDULES OVER BUDGETS 4/5/6 WITH 19 OF 19 DRIVEN FIELDS EQUAL TO THEIR GROUPINGS' FIELD, ANCHORED AT d66's OWN COMMITTED R=4/6 ROWS -- THE R=6 DOOR CENSUSED EXACTLY: [2, 2, 2] AT 48,600 AND I7'S DECLARED G-SINGULAR AT 1,350 ORDERED SATURATING SEXTUPLES -- DIA: A PARALLEL CLASS IS COMPULSORY EXACTLY WHEN THE RECORD COUNTS ITS LINK MORE THAN ONCE AND COUNTS SOME LINK EXACTLY ONCE, ON 13 OF 13 ROWS; THE COUNT CLAUSE ALONE IS FALSIFIED AT [[2, 2, 2]]"
+  "PERR-DICTIONARY-[WELD FIBERS 1/1/1(R=3) -> 36/3/1(R=4) -> 36/3/1(R=5) -> 1/1/1(R=6), FOUND EXACTLY AT THE LINK-CONSTANT RECORDS AND UNMOTIVATED AT EVERY OTHER ARENA OF THE DECLARED DICTIONARY; THE R=5 SIGNATURE IS THE R=4 SIGNATURE] -- DRIVEN: THE COMMITTED GRAMMAR DRIVES 19 SCHEDULES OVER BUDGETS 4/5/6 WITH 19 OF 19 DRIVEN FIELDS EQUAL TO THEIR GROUPINGS' FIELD, ANCHORED AT d66's OWN COMMITTED R=4/6 ROWS -- THE R=6 DOOR CENSUSED EXACTLY: [2, 2, 2] AT 48,600 AND I7'S DECLARED G-SINGULAR AT 1,350 ORDERED SATURATING SEXTUPLES -- DIA: A PARALLEL CLASS IS COMPULSORY EXACTLY WHEN THE RECORD COUNTS ITS LINK MORE THAN ONCE AND COUNTS SOME LINK EXACTLY ONCE, ON 20 OF 20 ROWS; THE COUNT CLAUSE ALONE IS FALSIFIED AT [[2, 2, 2]]"
  ],
+ "wall_surface": {
+  "declared_outside": [
+   "surface",
+   "interference",
+   "walls",
+   "arithmetic",
+   "reads",
+   "verdict",
+   "head_independence",
+   "paper_claims",
+   "paper_tables",
+   "coverage_scan",
+   "sentence_referents",
+   "polarity",
+   "paper_fences",
+   "falsifiers",
+   "anchor_consumers",
+   "wall_surface",
+   "e24",
+   "coverage",
+   "sweep",
+   "gates",
+   "closing_gates",
+   "transcript_head",
+   "transcript",
+   "totals",
+   "seal_manifest"
+  ],
+  "keys_outside_the_scan": [
+   "anchor_consumers",
+   "arithmetic",
+   "coverage_scan",
+   "falsifiers",
+   "head_independence",
+   "interference",
+   "paper_claims",
+   "paper_fences",
+   "paper_tables",
+   "polarity",
+   "reads",
+   "sentence_referents",
+   "surface",
+   "verdict",
+   "walls"
+  ],
+  "keys_published": 58,
+  "keys_scanned": 42,
+  "reason": "the keys outside the scan are the VOUCHING layer, published after the census closes and sealed and gated in its own right; the wall and interference rows among them necessarily quote the very words the scan bans, which is why the scan is taken before they exist",
+  "undeclared_outside": []
+ },
  "walls": {
   "BHS": {
    "reason": "these schedules are finite-valency by construction and a Poisson sprinkling admits no Lorentz-invariant finite-valency graph",
@@ -4682,6 +7688,7 @@
   }
  },
  "weld": {
+  "base_map_note": "the site fiber is read at every base map; the label and orient fibers are read at the enumeration's first and are not base-map invariant",
   "fiber_law_holds": true,
   "rows": [
    {
@@ -5370,6 +8377,112 @@
     ],
     "site_gen": "ACTOR"
    }
+  ],
+  "spreads_persist": true,
+  "unmotivated_spreads": [
+   {
+    "budget": 4,
+    "fibers_base_map_invariant": false,
+    "label_fiber_spread": [
+     3,
+     6
+    ],
+    "orient_fiber_spread": [
+     1,
+     2
+    ]
+   },
+   {
+    "budget": 5,
+    "fibers_base_map_invariant": false,
+    "label_fiber_spread": [
+     3,
+     6
+    ],
+    "orient_fiber_spread": [
+     1,
+     2
+    ]
+   },
+   {
+    "budget": 6,
+    "fibers_base_map_invariant": false,
+    "label_fiber_spread": [
+     3,
+     6
+    ],
+    "orient_fiber_spread": [
+     1,
+     2
+    ]
+   }
+  ]
+ },
+ "window": {
+  "budgets": [
+   4,
+   5,
+   6
+  ],
+  "rows": [
+   {
+    "budgets": [
+     4
+    ],
+    "schedules": 1,
+    "tag": "W4-ANCHOR"
+   },
+   {
+    "budgets": [
+     5
+    ],
+    "schedules": 1,
+    "tag": "W5-CTRL"
+   },
+   {
+    "budgets": [
+     5
+    ],
+    "schedules": 6,
+    "tag": "W5-LADDER"
+   },
+   {
+    "budgets": [
+     5
+    ],
+    "schedules": 8,
+    "tag": "W5-SEEDFAN"
+   },
+   {
+    "budgets": [
+     6
+    ],
+    "schedules": 1,
+    "tag": "W6-CTRL"
+   },
+   {
+    "budgets": [
+     6
+    ],
+    "schedules": 2,
+    "tag": "W6-DOOR"
+   }
+  ],
+  "schedules": 19,
+  "seed_fan": {
+   "choices": 9,
+   "collided": [
+    [
+     0,
+     0
+    ]
+   ],
+   "collides_with": "W5-LADDER(1, 1, 3)",
+   "fresh": 8
+  },
+  "sum_by_parts": 19,
+  "the_only_budget_4_member": [
+   "W4-ANCHOR"
   ]
  }
 }

@@ -294,6 +294,10 @@ def read_bytes(rel):
 
 
 READS = []
+# the OBJECT-UNDER-TEST read happens in `main`, before the run's own register
+# is cleared; it is carried across the clear so the provenance consumer gate
+# sees the whole set of reads and not the sources alone.
+OBJECT_READ = [None]
 
 
 def read_text(path, category):
@@ -887,6 +891,257 @@ def witness_with_code(types, R, site):
     return found[0] if found else None
 
 
+def maximal_masks(ms):
+    """the ANTICHAIN of a set of unions: a union contained in another reaches
+    no cell the larger one does not, and union is monotone, so dropping a
+    dominated state drops no reachable completion.  Used only where the
+    question is `is FULLMASK reachable` or `what is the largest union`, both
+    of which are monotone in the state."""
+    out = []
+    for m in sorted(ms, key=lambda z: -popc(z)):
+        if not any((m | o) == o for o in out):
+            out.append(m)
+    return out
+
+
+CCC_CACHE = {}
+
+
+def covering_class_codes(R, site=(0, 0)):
+    """THE COVERING-CLASS CODE CENSUS BY ONE SHARED DP -- the route that
+    reaches R = 6, where the per-code route does not.
+
+    `covering_with_code` asks one code at a time and re-runs the union DP for
+    every type multiset of that code.  This carries ALL codes forward at once:
+    a state is a pair (partial site code, achievable union), the local type of
+    each round advances both coordinates, and within one partial code the
+    unions are reduced to their antichain.  The quantifier is the same one --
+    every ordered R-tuple of groupings -- and the answer is BACK-VALIDATED
+    against the per-code route at R = 3, 4 and 5."""
+    key = (R, site)
+    if key in CCC_CACHE:
+        return CCC_CACHE[key]
+    _buck, bmask = local_buckets(site, 0)
+    per_round = len(CELLS) // 3
+    cur = {(0, 0, 0): [0]}
+    for k in range(R):
+        left = R - k - 1
+        nxt = {}
+        for code, masks in cur.items():
+            for t, tmasks in bmask.items():
+                c2 = (code[0] + t[0], code[1] + t[1], code[2] + t[2])
+                s = nxt.setdefault(c2, set())
+                for m in masks:
+                    for mm in tmasks:
+                        n = m | mm
+                        if popc(FULLMASK & ~n) <= per_round * left:
+                            s.add(n)
+        cur = {}
+        for c2, s in nxt.items():
+            keep = maximal_masks(s)
+            if keep:
+                cur[c2] = keep
+    out = sorted(c for c, ms in cur.items() if FULLMASK in ms)
+    CCC_CACHE[key] = out
+    return out
+
+
+BRIDGE_CACHE = {}
+
+
+def posdef_with_a_zero_count(side):
+    """every code of a box, walked for the one shape the `cover = posdef` row
+    rests on being impossible: a POSITIVE-DEFINITE code carrying a zero
+    count.  q11 = n1 forces n1 > 0, det > 0 forces n2 > 0, and with n3 = 0
+    the integer 4.det is -(n1 - n2)^2, never positive -- so the list is
+    expected empty, and it is walked rather than argued."""
+    if side in BRIDGE_CACHE:
+        return BRIDGE_CACHE[side]
+    out = [(a, b, c) for a in range(side + 1) for b in range(side + 1)
+           for c in range(side + 1)
+           if min(a, b, c) == 0 and sig_class((a, b, c)) == "POSDEF"]
+    BRIDGE_CACHE[side] = out
+    return out
+
+
+LIVE_CACHE = {}
+
+
+def live_alphabet(site=(0, 0)):
+    """THE PER-ROUND SITE-CODE ALPHABET OF A STRUCTURALLY LIVE ROUND: the
+    codes a SATURATING partition can deposit at one site.  A live record's
+    rounds all saturate, so this -- not the full alphabet -- is the letter
+    set its site codes are summed from."""
+    if site in LIVE_CACHE:
+        return LIVE_CACHE[site]
+    RC = raw_census()
+    k = SITE_INDEX[site]
+    sat = set(RC["sat"])
+    out = sorted({tuple(RC["vecs"][i][3 * k:3 * k + 3]) for i in sat})
+    LIVE_CACHE[site] = out
+    return out
+
+
+def live_code_space(R, live_alpha):
+    """the R-fold sumset of the LIVE alphabet: every site code a bare-live
+    record can carry, with no covering condition on it."""
+    cur = {(0, 0, 0)}
+    for _ in range(R):
+        cur = {(c[0] + s[0], c[1] + s[1], c[2] + s[2])
+               for c in cur for s in live_alpha}
+    return cur
+
+
+LW_CACHE = {}
+
+
+def live_witness(target, R, site=(0, 0)):
+    """one explicit STRUCTURALLY LIVE R-tuple -- every round saturating, so no
+    foreign pair anywhere -- carrying `target` as its site code, exhibited
+    round by round.  The object §3.7's licensed sentence is about."""
+    RC = raw_census()
+    k = SITE_INDEX[site]
+    buckets = {}
+    for i in RC["sat"]:
+        buckets.setdefault(tuple(RC["vecs"][i][3 * k:3 * k + 3]), []).append(i)
+    la = live_alphabet(site)
+    found = []
+
+    def rec(j, rem, acc):
+        if found:
+            return
+        if j == R:
+            if rem == (0, 0, 0):
+                found.append(tuple(acc))
+            return
+        for t in la:
+            r2 = (rem[0] - t[0], rem[1] - t[1], rem[2] - t[2])
+            if min(r2) < 0:
+                continue
+            for i in buckets[t]:
+                rec(j + 1, r2, acc + [i])
+                if found:
+                    return
+    if (tuple(target), R, site) in LW_CACHE:
+        return LW_CACHE[(tuple(target), R, site)]
+    rec(0, tuple(target), [])
+    LW_CACHE[(tuple(target), R, site)] = found[0] if found else None
+    return LW_CACHE[(tuple(target), R, site)]
+
+
+# ---------------------------------------------------------------------------
+# THE REACHABILITY CLASSES, EACH AS ITS OWN PREDICATE PAIR (the #270 advisory
+# given its binding gate).  A class here IS a pair of flags -- must the record
+# COVER all 27 cells, must every one of its rounds SATURATE -- together with
+# I7's declared list.  The WORDS the paper prints for a class are DERIVED from
+# those flags by `class_label` and `class_predicate`, and every floor is
+# computed by the single routine `floor_for` from the same flags, so the
+# printed class and the computed class cannot come apart.  A class-word swap
+# is then a claim about a predicate this file does not compute, and dies.
+# ---------------------------------------------------------------------------
+
+CLASS_FLAGS = (
+    ("COVERED-SITE-CODE", False, False, False, "CHAIN"),
+    ("COVERING-RECORD", True, False, False, "CHAIN"),
+    ("BARE-LIVE-RECORD", False, True, False, "CONTROL"),
+    ("STRUCTURALLY-LIVE-COVERING-RECORD", True, True, False, "CHAIN"),
+    ("I7-DECLARED-RECORD", False, False, True, "CHAIN"),
+)
+
+
+def class_label(covering, live, declared):
+    """the class's PRINTED WORDS, derived from the predicate its floor is
+    computed with -- the table header, the §3.6 definition and the receipt
+    row all read this one function."""
+    if declared:
+        return "I7-declared record"
+    if covering and live:
+        return "live and covering record"
+    if covering:
+        return "covering record"
+    if live:
+        return "bare-live record"
+    return "covered site code"
+
+
+def class_predicate(covering, live, declared):
+    """the class's DEFINING CONDITION, in the same derived words."""
+    if declared:
+        return "is one of I7's own declared records"
+    parts = []
+    if covering:
+        parts.append("covers all %d cells" % len(CELLS))
+    if live:
+        parts.append("carries no foreign pair, so every one of its rounds "
+                     "saturates")
+    if not parts:
+        return ("has all %d declared links present, with no condition on the "
+                "rest of the record" % len(I7_LINKS))
+    return " and ".join(parts)
+
+
+def floor_for(pol, covering, live, declared, alpha, live_alpha, fam, scan_to):
+    """THE ONE FLOOR ROUTINE EVERY LADDER COLUMN IS COMPUTED BY.  The column
+    is named by its flags and computed from them."""
+    if declared:
+        dec = [sum(v) for _nm, v in fam.items() if sig_class(tuple(v)) == pol]
+        return min(dec) if dec else None
+    for r in range(1, scan_to + 1):
+        if live and not covering:
+            if any(min(c) >= 1 and sig_class(c) == pol
+                   for c in live_code_space(r, live_alpha)):
+                return r
+            continue
+        cands = sorted(c for c in class_split(r, alpha)[1][pol])
+        if not covering:
+            if cands:
+                return r
+            continue
+        if any(covering_with_code(c, r, alpha, live_only=live)[0]
+               for c in cands):
+            return r
+    return None
+
+
+LG_CACHE = {}
+
+
+def locking_general(R):
+    """THE LOCKING OBSTRUCTION'S GENERAL FORM, measured at every declared link
+    and at every budget of the scan.  The counting mechanism is budget-free in
+    its numerator -- a cell at count R locks two sites whose remaining cells
+    demand seven distinct third members, and R rounds supply at most R -- so
+    the obstruction is expected to dissolve at R = 7.  Here the union of R
+    locked rounds is carried forward with NO completion prune, so the largest
+    union it reaches is measured rather than only its success or failure."""
+    if R in LG_CACHE:
+        return LG_CACHE[R]
+    RC = raw_census()
+    rows = []
+    for l in I7_LINKS:
+        x = SITES[0]
+        y = zadd(x, l)
+        locked = [i for i, P in enumerate(RC["parts"])
+                  if any(x in g and y in g for g in P)]
+        masks = sorted({RC["masks"][i] for i in locked})
+        cur = [0]
+        for _k in range(R):
+            nxt = set()
+            for m in cur:
+                for mm in masks:
+                    nxt.add(m | mm)
+            cur = maximal_masks(nxt)
+        best = max(popc(m) for m in cur)
+        rows.append({"link": str(l), "rounds_available": R,
+                     "locked_partitions": len(locked),
+                     "distinct_masks": len(masks),
+                     "best_coverage": best,
+                     "min_uncovered": len(CELLS) - best,
+                     "covering_reachable": FULLMASK in cur})
+    LG_CACHE[R] = rows
+    return rows
+
+
 def locking_census(R):
     """THE LOCKING THEOREM, measured.  A cell (x, l) carrying count R forces
     x and x + l into one conflict group in EVERY round.  This census asks --
@@ -993,12 +1248,14 @@ def stratum_census(R):
     pos = Counter()
     maxcell = 0
     codes = set()
+    cov_fields = 0
     for m, c in D.items():
         ts = [site_trip(m, k) for k in range(9)]
         npd = sum(1 for t in ts if CODE_TAB[t[0] | (t[1] << 4) | (t[2] << 8)][1])
         pos[npd] += c
         if all(min(t) >= 1 for t in ts):
             ncov += c
+            cov_fields += 1
             for t in ts:
                 det[det4(t)] += c
                 codes.add(t)
@@ -1008,14 +1265,20 @@ def stratum_census(R):
                 homo[ts[0]] += c
     SC_CACHE[R] = {"total": sum(D.values()), "cover": ncov, "homo": homo,
                    "det": det, "pos": pos, "maxcell": maxcell,
-                   "codes": sorted(codes), "distinct_fields": len(D)}
+                   "codes": sorted(codes), "distinct_fields": len(D),
+                   "cover_distinct_fields": cov_fields}
     return SC_CACHE[R]
+
+
+STC_CACHE = {}
 
 
 def stratum_target_count(target, R):
     """the exact number of ordered saturating R-tuples inducing a given
     HOMOGENEOUS record, by a convolution of two half-length censuses that
     never enumerates the R-tuples themselves."""
+    if (tuple(target), R) in STC_CACHE:
+        return STC_CACHE[(tuple(target), R)]
     half = R // 2
     A = stratum_sums(half)
     B = stratum_sums(R - half)
@@ -1030,6 +1293,7 @@ def stratum_target_count(target, R):
         if not ok:
             continue
         n += c * B.get(T - s, 0)
+    STC_CACHE[(tuple(target), R)] = n
     return n
 
 
@@ -1333,37 +1597,58 @@ def class_names_for(record):
 def window_schedules(records5):
     """THE DECLARED DRIVEN WINDOW W5, disclosed here and in the head.
 
+    W4-ANCHOR:  d66's own R = 4 point -- the ONLY budget-4 member of the
+                window, and the rung whose answer paper-21 committed.
     W5-LADDER:  the collinear arrangement of EVERY homogeneous record the
                 R = 5 stratum reaches -- all six, none sampled.
-    W5-SEEDFAN: the (1,1,3) arrangement at all 3 x 3 canonical transversal
+    W5-SEEDFAN: the (1,1,3) arrangement at the 3 x 3 canonical transversal
                 choices of its first two rounds -- the seed axis, declared.
+                The fan enumerates NINE choices and contributes EIGHT
+                schedules: the choice (0, 0) is the first canonical
+                transversal at both rounds, which IS the W5-LADDER member of
+                (1,1,3), so it is already counted there.  The collision is
+                measured below rather than assumed.
     W5-CTRL:    d66's own R = 5 point.
     W6-DOOR:    the R = 6 rung -- the link-constant (2,2,2) concatenation and
                 I7's own declared G-SINGULAR arrangement.
     W6-CTRL:    d66's own R = 6 point, whose committed output row this run
-                reads from d66's pinned bytes."""
+                reads from d66's pinned bytes.
+
+    So the decomposition by parts is 1 + 6 + 8 + 1 + 2 + 1, over budgets
+    4, 5 and 6 -- and the sum, the parts and the collision are all gated."""
     out, meta = [], {}
 
     def add(sch, tag):
         if sch not in meta:
             out.append(sch)
             meta[sch] = tag
+            return True
+        return False
     for rec in records5:
         add(class_schedule(class_names_for(rec)), "W5-LADDER")
+    ladder_113 = class_schedule(class_names_for((1, 1, 3)))
     base = class_names_for((1, 1, 3))
+    fan = {"choices": 0, "fresh": 0, "collided": [], "collides_with": None}
     for s0 in range(3):
         for s1 in range(3):
             T = tuple(CLASSES[n] for n in base)
             seeds = [canon_transversals(P)[0] for P in T]
             seeds[0] = canon_transversals(T[0])[s0]
             seeds[1] = canon_transversals(T[1])[s1]
-            add(tuple((T[k], seeds[k]) for k in range(len(T))), "W5-SEEDFAN")
+            sch = tuple((T[k], seeds[k]) for k in range(len(T)))
+            fan["choices"] += 1
+            if add(sch, "W5-SEEDFAN"):
+                fan["fresh"] += 1
+            else:
+                fan["collided"].append([s0, s1])
+                if sch == ladder_113:
+                    fan["collides_with"] = "W5-LADDER(1, 1, 3)"
     add(committed_schedule(5), "W5-CTRL")
     add(class_schedule(class_names_for((2, 2, 2))), "W6-DOOR")
     add(class_schedule(class_names_for((1, 1, 4))), "W6-DOOR")
     add(committed_schedule(6), "W6-CTRL")
     add(committed_schedule(4), "W4-ANCHOR")
-    return out, meta
+    return out, meta, fan
 
 
 DECLARED_DISPLACEMENTS = frozenset(
@@ -1456,6 +1741,22 @@ VERBATIM = [
 FENCE_COPIES = 2
 FENCE_COPIES_REASON = ("each segment appears once in the head and once in the "
                        "verdict section; the multiset gate binds the count")
+
+# THE COLUMNS BACK-VALIDATED AGAINST NUMBERS THIS UNIT DID NOT PRODUCE -- read
+# from paper-21's committed receipt and from d66's committed output rather than
+# re-typed.  §13's count is RENDERED from this list, never typed beside it.
+BACK_VALIDATED = (
+    "the reachable site-code counts at R = 3 and R = 4",
+    "the covering-class row at R = 4 -- its code count, its maximum cell "
+    "count and its determinant support",
+    "the identity-breaking codes at R = 4",
+    "the saturating stratum's covering class at R = 3 and its homogeneous "
+    "records at R = 4",
+    "the weld fibers and isomorphism count at R = 4",
+    "the DIA row at R = 4",
+    "the constructive lower bound at R = 6",
+    "d66's own event profiles at R = 4 and R = 6",
+)
 
 NUMREG = set()
 
@@ -1569,18 +1870,29 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
          "pin": "v14/note-perr-pin.md@6339ba42f354"}
     NUMREG.clear()
     READS.clear()
+    if OBJECT_READ[0] is not None:
+        READS.append(dict(OBJECT_READ[0]))
 
     # ---- SEC 1  PROVENANCE ----------------------------------------------
     say("[SEC 1] PROVENANCE")
     texts, provrows = {}, []
     for sid, rel, sha, why in SOURCES:
-        t = read_text(os.path.join(REPO, rel), "SOURCE")
+        # a source that is not there is a PROVENANCE FAILURE with a name, not
+        # a traceback: a bare copy of this file must abort at G-SOURCES.
+        try:
+            t = read_text(os.path.join(REPO, rel), "SOURCE")
+        except OSError:
+            provrows.append({"id": sid, "path": rel, "declared": sha,
+                             "measured": "ABSENT", "match": False,
+                             "why": why})
+            continue
         got = hashlib.sha256(t.encode("utf-8")).hexdigest()[:12]
         want = sha if break_anchor != sid else ("0" * 12)
         texts[rel] = t
         provrows.append({"id": sid, "path": rel, "declared": want,
                          "measured": got, "match": got == want, "why": why})
     bad = [p for p in provrows if not p["match"]]
+    absent = [p["path"] for p in provrows if p["measured"] == "ABSENT"]
     R["provenance"] = SEAL.take("provenance",
                                 {"sources": provrows, "count": len(provrows)})
     LD.add("G-SOURCES",
@@ -1588,8 +1900,11 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
            "EVERY SOURCE IS READ AT ITS PINNED SHA.  The %d declared sources "
            "are read at run time and each file's measured sha256-12 equals "
            "the digest this unit froze; a single mismatch stops the run "
-           "before any census is built" % len(SOURCES),
-           "sources %d, mismatches %d" % (len(provrows), len(bad)))
+           "before any census is built, and a source that is ABSENT -- a bare "
+           "copy of this file with no repository under it -- fails here by "
+           "name rather than by traceback" % len(SOURCES),
+           "sources %d, mismatches %d, absent %s"
+           % (len(provrows), len(bad), absent))
 
     anchors = []
     for vid, sid, needle, gate in VERBATIM:
@@ -1930,37 +2245,22 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                       "reachable_as_a_site_code_from":
                           min(r for r in range(1, sum(v) + 1)
                               if tuple(v) in code_space(r, alpha))}
-    # THE CLASS-EXPLICIT REACHABILITY LADDER.  Every reachability row names
-    # the CLASS it is about: a covered SITE code, a COVERING record, a
-    # STRUCTURALLY LIVE record, or one of I7's DECLARED records.
+    # THE CLASS-EXPLICIT REACHABILITY LADDER.  Every column is a PREDICATE
+    # PAIR (must it cover, must every round saturate) plus I7's declared list;
+    # every floor is computed by `floor_for` FROM those flags, and every word
+    # the paper prints for the column is derived from the same flags by
+    # `class_label` / `class_predicate`.  The four CHAIN columns are
+    # cumulative; BARE-LIVE is a CONTROL -- the live condition with the
+    # covering condition dropped -- and it is what makes the substitution
+    # visible: its floors are two rungs below the live-and-covering ones.
     scan_to = ROUNDS + 3
+    live_alpha = live_alphabet()
     ladder_classes = []
     for pol in ("SINGULAR", "INDEFINITE"):
         row = {"polarity": pol, "scanned_to": scan_to}
-        first = None
-        for r in range(1, scan_to + 1):
-            if class_split(r, alpha)[1][pol]:
-                first = r
-                break
-        row["COVERED-SITE-CODE"] = first
-        first = None
-        for r in range(1, scan_to + 1):
-            cands = sorted(c for c in class_split(r, alpha)[1][pol])
-            if any(covering_with_code(c, r, alpha)[0] for c in cands):
-                first = r
-                break
-        row["COVERING-RECORD"] = first
-        first = None
-        for r in range(1, scan_to + 1):
-            cands = sorted(c for c in class_split(r, alpha)[1][pol])
-            if any(covering_with_code(c, r, alpha, live_only=True)[0]
-                   for c in cands):
-                first = r
-                break
-        row["STRUCTURALLY-LIVE-RECORD"] = first
-        dec = [sum(v) for nm, v in fam.items()
-               if sig_class(tuple(v)) == pol]
-        row["I7-DECLARED-RECORD"] = min(dec) if dec else None
+        for key, cov, liv, dec, kind in CLASS_FLAGS:
+            row[key] = floor_for(pol, cov, liv, dec, alpha, live_alpha, fam,
+                                 scan_to)
         row["declared_names"] = sorted(nm for nm, v in fam.items()
                                        if sig_class(tuple(v)) == pol)
         ladder_classes.append(row)
@@ -1968,38 +2268,337 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                           [dict(r0, **{"COVERING-RECORD":
                                        r0["COVERED-SITE-CODE"]})
                            for r0 in ladder_classes])
+    # the printed words of each class, DERIVED from the flags its floor was
+    # computed with -- swapping two of them in the paper is a claim about a
+    # predicate this file does not compute
+    class_rows = [{"class": key, "label": class_label(cov, liv, dec),
+                   "predicate": class_predicate(cov, liv, dec),
+                   "covering_required": cov, "every_round_saturating": liv,
+                   "declared_list": dec, "kind": kind}
+                  for key, cov, liv, dec, kind in CLASS_FLAGS]
+    class_rows = pick("M-CLASS-WORDS", class_rows,
+                      [dict(c, label=class_label(c["every_round_saturating"],
+                                                 c["covering_required"],
+                                                 c["declared_list"]))
+                       for c in class_rows])
+    chain = [k for k, _c, _l, _d, kind in CLASS_FLAGS if kind == "CHAIN"]
     R["reachability_ladder"] = SEAL.take("reachability_ladder", {
-        "rows": ladder_classes,
-        "classes": ["COVERED-SITE-CODE", "COVERING-RECORD",
-                    "STRUCTURALLY-LIVE-RECORD", "I7-DECLARED-RECORD"],
-        "note": "every reachability row names the class it is about; a floor "
-                "for one class is not a floor for another"})
+        "rows": ladder_classes, "classes": [k[0] for k in CLASS_FLAGS],
+        "chain": chain, "class_rows": class_rows,
+        "note": "every reachability row names the class it is about and every "
+                "floor is computed from that class's own predicate flags; a "
+                "floor for one class is not a floor for another"})
+    nest_chain = all(
+        r0[chain[i]] <= r0[chain[i + 1]]
+        for r0 in ladder_classes for i in range(len(chain) - 1))
+    nest_ctrl = all(r0["COVERED-SITE-CODE"] <= r0["BARE-LIVE-RECORD"]
+                    <= r0["STRUCTURALLY-LIVE-COVERING-RECORD"]
+                    for r0 in ladder_classes)
     LD.add("G-CLASS-LADDER",
-           all(r0["COVERED-SITE-CODE"] is not None for r0 in ladder_classes)
-           and all(r0["COVERED-SITE-CODE"] <= r0["COVERING-RECORD"]
-                   <= r0["STRUCTURALLY-LIVE-RECORD"]
-                   for r0 in ladder_classes)
-           and all(r0["STRUCTURALLY-LIVE-RECORD"]
-                   <= r0["I7-DECLARED-RECORD"] for r0 in ladder_classes)
+           all(r0[k] is not None for r0 in ladder_classes
+               for k, _c, _l, _d, _kd in CLASS_FLAGS)
+           and nest_chain and nest_ctrl
            and [r0["COVERING-RECORD"] for r0 in ladder_classes
                 if r0["polarity"] == "INDEFINITE"][0] > ROUNDS,
            "THE REACHABILITY LADDER IS CLASS-EXPLICIT, AND THE CLASSES DO NOT "
-           "SHARE A FLOOR.  A determinant sign is reachable at four different "
-           "budgets depending on WHICH class is asked about -- a covered site "
-           "code, a record covering all 27 cells, a structurally live record "
-           "with no foreign pair, or one of I7's own declared records -- and "
-           "each floor is computed separately, in order, with the nesting "
-           "checked rather than assumed",
-           "; ".join("%s: site %s, covering %s, live %s, declared %s (%s)"
-                     % (r0["polarity"], r0["COVERED-SITE-CODE"],
-                        r0["COVERING-RECORD"],
-                        r0["STRUCTURALLY-LIVE-RECORD"],
-                        r0["I7-DECLARED-RECORD"], ", ".join(
-                            r0["declared_names"]))
+           "SHARE A FLOOR.  A determinant sign is reachable at a different "
+           "budget in each of the four cumulative classes -- a covered site "
+           "code, a record covering all 27 cells, a live AND covering record, "
+           "or one of I7's own declared records -- and each floor is computed "
+           "separately from its own predicate, with the nesting checked "
+           "rather than assumed.  The BARE-LIVE control carries the live "
+           "condition WITHOUT the covering condition, and it is checked to "
+           "sit between the covered and the live-and-covering floors",
+           "; ".join("%s: %s (control bare-live %s), declared %s"
+                     % (r0["polarity"],
+                        ", ".join("%s %s" % (class_label(c, l, d), r0[k])
+                                  for k, c, l, d, kd in CLASS_FLAGS
+                                  if kd == "CHAIN"),
+                        r0["BARE-LIVE-RECORD"],
+                        ", ".join(r0["declared_names"]))
                      for r0 in ladder_classes))
     for r0 in ladder_classes:
-        reg(r0["COVERED-SITE-CODE"], r0["COVERING-RECORD"],
-            r0["STRUCTURALLY-LIVE-RECORD"], r0["I7-DECLARED-RECORD"])
+        reg(*[r0[k] for k, _c, _l, _d, _kd in CLASS_FLAGS])
+
+    # THE CLASS-WORD BINDING (v14 #294's central ruling): the words printed
+    # for a class must be the predicate its number was computed with.
+    words_ok = all(
+        c["label"] == class_label(c["covering_required"],
+                                  c["every_round_saturating"],
+                                  c["declared_list"])
+        and c["predicate"] == class_predicate(c["covering_required"],
+                                              c["every_round_saturating"],
+                                              c["declared_list"])
+        for c in class_rows)
+    flags_ok = all(
+        (c["covering_required"], c["every_round_saturating"],
+         c["declared_list"]) == (cov, liv, dec)
+        for c, (_k, cov, liv, dec, _kd) in zip(class_rows, CLASS_FLAGS))
+    LD.add("G-CLASS-WORDS",
+           words_ok and flags_ok
+           and len({c["label"] for c in class_rows}) == len(class_rows),
+           "EVERY LADDER CLASS'S PRINTED WORDS ARE ITS COMPUTED PREDICATE.  A "
+           "class here is a pair of flags -- must the record cover all 27 "
+           "cells, must every one of its rounds saturate -- plus I7's own "
+           "declared list; the floor is computed FROM the flags by one "
+           "routine and the words are DERIVED from the same flags, so the "
+           "printed class and the computed class cannot come apart.  The "
+           "labels are required to be pairwise distinct, and the paper's "
+           "table headers and definition sentences are rendered from these "
+           "rows, so a class-word swap dies at the table and claim gates",
+           "classes %d, labels %s, predicates derived %s, flags matched %s"
+           % (len(class_rows), [c["label"] for c in class_rows], words_ok,
+              flags_ok))
+
+    # THE BARE-LIVE CONTROL, EXHIBITED: a structurally live R = 5 record whose
+    # site code is SINGULAR -- the object §3.7's licensed sentence is about.
+    lw_target = sorted(c for c in live_code_space(ROUNDS, live_alpha)
+                       if min(c) >= 1 and sig_class(c) == "SINGULAR")[0]
+    lw_idx = live_witness(lw_target, ROUNDS)
+    lfld = [0] * len(CELLS)
+    for i in (lw_idx or ()):
+        for kk in range(len(CELLS)):
+            lfld[kk] += RC["vecs"][i][kk]
+    lfld = pick("M-LIVE-CONTROL", lfld, [c + 1 for c in lfld])
+    lw_codes = [tuple(lfld[3 * kk:3 * kk + 3]) for kk in range(len(SITES))]
+    live_ctrl = {
+        "budget": ROUNDS, "target": list(lw_target),
+        "rounds": [list(map(list, RC["parts"][i])) for i in (lw_idx or ())],
+        "round_incidences": [RC["incidences"][i] for i in (lw_idx or ())],
+        "saturating_rounds": sum(1 for i in (lw_idx or ())
+                                 if RC["incidences"][i] == per_round),
+        "foreign_pairs": foreign_pairs(list(lw_idx or ())),
+        "site_code_at_the_origin": list(lw_codes[0]),
+        "det4_at_the_origin": det4(lw_codes[0]),
+        "class_at_the_origin": sig_class(lw_codes[0]),
+        "cells_covered": sum(1 for c in lfld if c > 0),
+        "cells": len(CELLS), "covering": all(c >= 1 for c in lfld),
+        "total_incidences": sum(lfld),
+        "floors": {pol: [r0["BARE-LIVE-RECORD"] for r0 in ladder_classes
+                         if r0["polarity"] == pol][0]
+                   for pol in ("SINGULAR", "INDEFINITE")}}
+    R["live_control"] = SEAL.take("live_control", live_ctrl)
+    LD.add("G-LIVE-CONTROL",
+           lw_idx is not None
+           and live_ctrl["saturating_rounds"] == ROUNDS
+           and live_ctrl["foreign_pairs"] == 0
+           and live_ctrl["class_at_the_origin"] == "SINGULAR"
+           and live_ctrl["covering"] is False
+           and live_ctrl["floors"]["SINGULAR"] < ROUNDS
+           and live_ctrl["floors"]["INDEFINITE"] <= ROUNDS,
+           "THE BARE-LIVE CONTROL, EXHIBITED ROUND BY ROUND -- AND IT IS WHY "
+           "THE COVERING CONDITION IS THE ONE DOING THE WORK.  Drop the "
+           "covering condition and keep liveness alone and the floors fall "
+           "two rungs; the run exhibits an explicit R = 5 record all of whose "
+           "rounds saturate -- so it carries NO foreign pair -- whose site "
+           "code at the origin is I7's own G-SINGULAR count vector at 4det 0. "
+           "It does NOT cover, and its uncovered cells are counted, so a "
+           "polarity census run over bare-live records at this budget sees a "
+           "determinant that the live-AND-covering class cannot reach until "
+           "two rungs later",
+           "bare-live floors %s; the R=%d witness: target %s, rounds "
+           "saturating %d of %d, foreign pairs %d, code at the origin %s at "
+           "4det %d (%s), covering %s at %d of %d cells, %d incidences"
+           % (live_ctrl["floors"], ROUNDS, list(lw_target),
+              live_ctrl["saturating_rounds"], ROUNDS,
+              live_ctrl["foreign_pairs"], live_ctrl["site_code_at_the_origin"],
+              live_ctrl["det4_at_the_origin"],
+              live_ctrl["class_at_the_origin"], live_ctrl["covering"],
+              live_ctrl["cells_covered"], live_ctrl["cells"],
+              live_ctrl["total_incidences"]))
+    reg(live_ctrl["cells_covered"], live_ctrl["total_incidences"],
+        live_ctrl["foreign_pairs"], live_ctrl["det4_at_the_origin"])
+
+    # ---- THE CELL CEILING, CONTINUED TO THE RUNG ABOVE -------------------
+    # The identity `cover = posdef` rode on the covering class's maximum cell
+    # count, which is a BUDGET-DEPENDENT quantity.  The per-code route of
+    # G-COVER-CODES does not reach R = 6; a second route that carries every
+    # code forward at once does, and it is back-validated against the first
+    # at all three budgets the first reaches.
+    ceil_budgets = LADDER
+    cc = {r: covering_class_codes(r) for r in ceil_budgets}
+    ceiling = [{"budget": r, "covering_class_codes": len(cc[r]),
+                "max_cell": max(max(c) for c in cc[r]),
+                "det4_support": sorted({det4(c) for c in cc[r]}),
+                "non_posdef": [list(c) for c in cc[r]
+                               if sig_class(c) != "POSDEF"],
+                "indefinite": [list(c) for c in cc[r]
+                               if sig_class(c) == "INDEFINITE"],
+                "codes": [list(c) for c in cc[r]]} for r in ceil_budgets]
+    ceiling = pick("M-CEILING", ceiling,
+                   [dict(c0, max_cell=c0["max_cell"] - 1)
+                    if c0["budget"] == max(ceil_budgets) else c0
+                    for c0 in ceiling])
+    back_ok = {r: sorted(tuple(x) for x in cc[r]) == sorted(occ[r])
+               for r in occ}
+    seq = [c0["max_cell"] for c0 in ceiling]
+    R["covering_ceiling"] = SEAL.take("covering_ceiling", {
+        "rows": ceiling, "sequence": seq,
+        "back_validated_against_the_per_code_route": back_ok,
+        "route": "one shared dynamic program over (partial site code, "
+                 "antichain of achievable unions); the quantifier is the "
+                 "same 280^R ordered grouping R-tuples"})
+    LD.add("G-CEILING",
+           all(back_ok.values())
+           and all(c0["max_cell"] == max(max(x) for x in c0["codes"])
+                   for c0 in ceiling)
+           and all(seq[i] <= seq[i + 1] for i in range(len(seq) - 1))
+           and seq[-1] > seq[-2],
+           "THE COVERING CLASS'S CELL CEILING, MEASURED ONE RUNG ABOVE THIS "
+           "ONE BY A SECOND ROUTE, AND BACK-VALIDATED AGAINST THE FIRST.  The "
+           "per-code census asks one code at a time; this carries every "
+           "partial code forward at once, reducing the achievable unions of "
+           "each partial code to their antichain -- sound because union is "
+           "monotone, so a union contained in another reaches nothing the "
+           "other does not.  At the three budgets the per-code route reaches, "
+           "the two agree code for code; at the rung above, where the "
+           "per-code route does not run, the ceiling is measured.  The "
+           "ceiling RISES again, so the identity that rode on it was living "
+           "on a budget-dependent quantity",
+           "sequence %s over budgets %s; codes %s; back-validated against the "
+           "per-code route at %s; 4det support at the top %s; non-posdef at "
+           "the top %s"
+           % (seq, list(ceil_budgets),
+              [c0["covering_class_codes"] for c0 in ceiling],
+              {k: v for k, v in sorted(back_ok.items())},
+              ceiling[-1]["det4_support"], ceiling[-1]["non_posdef"]))
+    for c0 in ceiling:
+        reg(c0["budget"], c0["covering_class_codes"], c0["max_cell"])
+        reg(*c0["det4_support"])
+
+    # ---- THE LOCKING OBSTRUCTION'S GENERAL FORM --------------------------
+    lock_gen = {str(r): locking_general(r) for r in range(3, ROUNDS + 4)}
+    lock_gen = pick("M-LOCK-GENERAL", lock_gen,
+                    {k: [dict(row, covering_reachable=True) for row in v]
+                     for k, v in lock_gen.items()})
+    third = sorted({row["third_members_required"] for row in lock})
+    dissolves = min(int(k) for k, v in lock_gen.items()
+                    if all(row["covering_reachable"] for row in v))
+    min_unc = {k: sorted({row["min_uncovered"] for row in v})
+               for k, v in sorted(lock_gen.items(), key=lambda z: int(z[0]))}
+    # the counting mechanism is budget-free in its numerator; the measured
+    # deficit follows 7 - R only from the budget at which it first can
+    formula_from = min(int(k) for k in lock_gen
+                       if all(int(k) >= 4 and
+                              row["min_uncovered"] == third[0] - int(k)
+                              for row in lock_gen[k]))
+    # the ladder collapsed one row per budget: all three declared links agree
+    # at every budget, and the gate below requires that agreement
+    lg_ladder = [{"budget": int(k),
+                  "third_members_required": third[0],
+                  "best_coverage": sorted({r0["best_coverage"]
+                                           for r0 in v})[0],
+                  "min_uncovered": sorted({r0["min_uncovered"]
+                                           for r0 in v})[0],
+                  "covering_reachable": all(r0["covering_reachable"]
+                                            for r0 in v),
+                  "links_agreeing": len(v)}
+                 for k, v in sorted(lock_gen.items(), key=lambda z: int(z[0]))]
+    R["locking_general"] = SEAL.take("locking_general", {
+        "rows": lock_gen, "ladder": lg_ladder,
+        "third_members_required": third,
+        "obstruction_dissolves_at": dissolves,
+        "min_uncovered": {k: v[0] for k, v in min_unc.items()},
+        "deficit_formula": "7 - R",
+        "deficit_formula_holds_from": formula_from,
+        "min_uncovered_at_this_budget":
+            min_unc[str(ROUNDS)][0]})
+    LD.add("G-LOCK-GENERAL",
+           len(third) == 1 and dissolves == third[0]
+           and all(len(v) == 1 for v in min_unc.values())
+           and all(not row["covering_reachable"]
+                   for k, v in lock_gen.items() if int(k) < third[0]
+                   for row in v)
+           and all(row["covering_reachable"]
+                   for k, v in lock_gen.items() if int(k) >= third[0]
+                   for row in v)
+           and min_unc[str(ROUNDS)][0] == 2
+           and all(len({r0["best_coverage"] for r0 in v}) == 1
+                   and len(v) == len(I7_LINKS)
+                   for v in lock_gen.values()),
+           "THE LOCKING OBSTRUCTION'S GENERAL FORM, AND ITS BOUNDARY.  The "
+           "numerator of the count is BUDGET-FREE: a cell at count R locks "
+           "its two sites into one group in every round, the cells at those "
+           "two sites demand the same seven distinct third members at every "
+           "budget, and R rounds supply at most R.  The union of R locked "
+           "rounds is therefore carried forward here with NO completion "
+           "prune, so the LARGEST union it reaches is measured and not only "
+           "its success: the obstruction holds at every budget below seven "
+           "and dissolves at exactly seven, where seven rounds can supply "
+           "seven thirds.  At this unit's own budget the deficit is two "
+           "uncovered cells -- the same minimum the signature unit measures "
+           "by branch-and-bound",
+           "third members required %s at every link and every budget; "
+           "obstruction dissolves at R=%d; minimum uncovered by budget %s; "
+           "the deficit follows 7 - R from R=%d"
+           % (third, dissolves, {k: v[0] for k, v in min_unc.items()},
+              formula_from))
+    reg(dissolves, formula_from)
+    for k, v in min_unc.items():
+        reg(v[0])
+    for k, v in lock_gen.items():
+        for row in v:
+            reg(row["best_coverage"])
+
+    # ---- THE BRIDGE THE `cover = posdef` ROW RESTS ON --------------------
+    # A positive-definite code cannot carry a zero count: q11 = n1 > 0 and
+    # det > 0 force n2 > 0, and with n3 = 0 the determinant 4.det =
+    # -(n1 - n2)^2 <= 0.  So {posdef} is contained in {covered}, ALWAYS, and
+    # the two RECORD classes can coincide at all.  Measured over a box that
+    # contains every code this unit's ladder reaches.
+    bridge_max = per_round * (ROUNDS + 3)
+    bridge_bad = posdef_with_a_zero_count(bridge_max)
+    bridge_bad = pick("M-BRIDGE", bridge_bad, bridge_bad + [(0, 0, 0)])
+    posdef_covered = {str(r): len([c for c in split[r]["covered"]
+                                   if sig_class(c) == "POSDEF"])
+                      for r in LADDER}
+    R["posdef_bridge"] = SEAL.take("posdef_bridge", {
+        "box_side": bridge_max, "posdef_with_a_zero_count": len(bridge_bad),
+        "positive_definite_covered_codes": posdef_covered,
+        "statement": "a positive-definite site code has all three counts "
+                     "positive, so a positive-definite RECORD necessarily "
+                     "covers; the containment is one-way and the two record "
+                     "classes coincide only while the covering class carries "
+                     "no non-positive-definite code"})
+    LD.add("G-POSDEF-COVERS",
+           not bridge_bad and bridge_max > ROUNDS + 3,
+           "THE ONE-WAY CONTAINMENT THE `cover = posdef` ROW RESTS ON, "
+           "MEASURED.  A positive-definite code cannot carry a zero count: "
+           "q11 = n1 forces n1 > 0, positivity of the determinant forces "
+           "n2 > 0, and with n3 = 0 the integer 4.det is -(n1 - n2)^2, which "
+           "is never positive.  Every code of a box wider than this ladder "
+           "reaches is walked, and none is positive definite with a zero "
+           "count -- so a positive-definite RECORD necessarily covers, the "
+           "containment runs one way, and the equality of the two RECORD "
+           "classes is a fact about which codes the covering class carries "
+           "rather than a definition",
+           "box side %d, positive-definite codes carrying a zero count %d; "
+           "positive-definite covered codes by budget %s"
+           % (bridge_max, len(bridge_bad), posdef_covered))
+
+    # ---- THE PACKED COLUMN'S NO-CARRY INVARIANT, GATED -------------------
+    pack_max = max([c0["max_cell"] for c0 in ceiling]
+                   + [max(max(c) for c in split[r]["covered"])
+                      for r in LADDER]
+                   + [max(max(c) for c in cs[r]) for r in cs])
+    pack_max = pick("M-PACK4", pack_max, 16)
+    R["pack4"] = SEAL.take("pack4", {
+        "bits_per_cell": 4, "capacity": 16, "largest_cell_count": pack_max,
+        "statement": "the link field is packed at four bits a cell, so a cell "
+                     "count of sixteen would carry into its neighbour; the "
+                     "largest count any census of this unit deposits is "
+                     "measured against that capacity rather than argued in a "
+                     "docstring"})
+    LD.add("G-PACK4",
+           pack_max < 16 and pack_max > 0,
+           "THE PACKED COLUMN CANNOT CARRY, AND THAT IS MEASURED.  Every "
+           "census here sums link fields packed at four bits a cell; a cell "
+           "reaching sixteen would carry into the next cell and silently "
+           "corrupt every count above it.  The largest cell count this run "
+           "deposits anywhere -- across the covering class at every budget of "
+           "the ladder, the saturating stratum and the covered code space -- "
+           "is compared against the packing's capacity",
+           "largest cell count %d against a capacity of 16" % pack_max)
 
     floors = pick("M-SIG-FLOOR", floors,
                   dict(floors, **{"G-INDEF": dict(floors["G-INDEF"],
@@ -2074,7 +2673,8 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         "family": nparts ** ROUNDS})
     LD.add("G-SATURATION-SCHEMA",
            all(forced.values()) and budget == per_round * ROUNDS
-           and all(need[c] == len(SITES) * sum(c) for c in homo5),
+           and all(need[c] == len(SITES) * sum(c) for c in homo5)
+           and per_round == max(spec) and spec[per_round] == nsat,
            "THE SATURATION SCHEMA, RE-PROVED AT THIS RUNG RATHER THAN "
            "INHERITED.  No round deposits more than 9 link incidences, so "
            "five rounds carry at most 45; a homogeneous record whose counts "
@@ -2083,9 +2683,12 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
            "round to saturate, so a census over the 36^5 saturating "
            "quintuples is exhaustive over all 280^5 for these targets",
            "budget %d = %d x %d, targets %s each needing %d incidences, "
-           "forced %d of %d; saturating family %s of %s"
+           "forced %d of %d; the empirical premise re-taken here: the "
+           "spectrum's top is %d incidences and %d partitions attain it; "
+           "saturating family %s of %s"
            % (budget, per_round, ROUNDS, [list(c) for c in homo5], budget,
               sum(1 for v in forced.values() if v), len(homo5),
+              max(spec), spec[per_round],
               com(nsat ** ROUNDS), com(nparts ** ROUNDS)))
     reg(budget, len(homo5), nsat ** ROUNDS)
 
@@ -2109,6 +2712,7 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                  "posdef_distribution": {str(k): v for k, v in
                                          sorted(strat[r]["pos"].items())},
                  "max_cell": strat[r]["maxcell"],
+                 "cover_distinct_fields": strat[r]["cover_distinct_fields"],
                  "site_codes": [list(c) for c in strat[r]["codes"]]}
         for r in (3, 4, ROUNDS)})
     LD.add("G-STRATUM",
@@ -2135,6 +2739,41 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
               {str(list(k)): v for k, v in
                sorted(strat[ROUNDS]["homo"].items())},
               strat[ROUNDS]["maxcell"]))
+    # THE TWO FIELD COUNTS ARE COUNTS OF DIFFERENT SETS, AND BOTH ARE
+    # PUBLISHED.  `distinct_fields` counts the fields the WHOLE stratum
+    # induces; `cover_distinct_fields` counts those induced by its COVERING
+    # subset -- two orders of magnitude apart at this budget, and a sentence
+    # that attaches the first to the second is false.
+    cdf = {str(r): strat[r]["cover_distinct_fields"] for r in (3, 4, ROUNDS)}
+    cdf = pick("M-FIELDS", cdf,
+               {k: (strat[ROUNDS]["distinct_fields"] if int(k) == ROUNDS
+                    else v) for k, v in cdf.items()})
+    R["stratum_fields"] = SEAL.take("stratum_fields", {
+        "whole_stratum": {str(r): strat[r]["distinct_fields"]
+                          for r in (3, 4, ROUNDS)},
+        "covering_subset": cdf,
+        "statement": "the covering subset of the stratum induces far fewer "
+                     "distinct fields than the stratum as a whole; the two "
+                     "counts are counts of different sets"})
+    LD.add("G-STRATUM-FIELDS",
+           all(cdf[str(r)] == strat[r]["cover_distinct_fields"]
+               for r in (3, 4, ROUNDS))
+           and all(cdf[str(r)] < strat[r]["distinct_fields"]
+                   for r in (4, ROUNDS))
+           and cdf[str(ROUNDS)] > 0,
+           "THE COVERING SUBSET'S FIELD COUNT IS ITS OWN MEASUREMENT.  The "
+           "stratum induces one number of distinct link fields and its "
+           "COVERING subset induces another; each is counted over the set it "
+           "names, and the covering count is checked to be strictly the "
+           "smaller at every budget where the stratum has a non-covering "
+           "part, so a sentence attaching the stratum's count to the "
+           "covering tuples cannot be built from these rows",
+           "whole stratum %s; covering subset %s"
+           % ({r: strat[r]["distinct_fields"] for r in (3, 4, ROUNDS)},
+              {k: v for k, v in sorted(cdf.items(), key=lambda z: int(z[0]))}))
+    for r in (3, 4, ROUNDS):
+        reg(strat[r]["cover_distinct_fields"])
+
     for r in (3, 4, ROUNDS):
         reg(strat[r]["cover"], strat[r]["total"], strat[r]["maxcell"],
             strat[r]["distinct_fields"])
@@ -2180,6 +2819,51 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
               {r: reach[r] for r in reach}, offrung[str(list(flat))]))
     reg(*[r0["budget"] for r0 in ladder_rows])
     reg(*[reach[r] for r in reach])
+
+    # ---- THE DECLARED RECORDS, CENSUSED AT THEIR OWN BUDGETS -------------
+    # The ladder law settles the LOWER half of a record floor -- nothing can
+    # arrive earlier.  The upper half is a census, and it is run here at every
+    # declared budget the saturating stratum reaches, G-INDEF's R = 8
+    # included, so the floor column is a floor and not an inequality.
+    census_ceiling = 2 * ROUNDS
+    realiz = {}
+    for nm, v in sorted(fam.items()):
+        b = sum(v)
+        realiz[nm] = {"record": list(v), "budget": b,
+                      "class": sig_class(tuple(v)),
+                      "witnesses": (stratum_target_count(tuple(v), b)
+                                    if b <= census_ceiling else None),
+                      "censused": b <= census_ceiling}
+    realiz = pick("M-RECORD-FLOOR", realiz,
+                  dict(realiz, **{"G-INDEF": dict(realiz["G-INDEF"],
+                                                  witnesses=0)}))
+    censused = [nm for nm in realiz if realiz[nm]["censused"]]
+    R["record_realizability"] = SEAL.take("record_realizability", {
+        "rows": realiz, "census_ceiling": census_ceiling,
+        "censused": sorted(censused),
+        "beyond_the_census": sorted(nm for nm in realiz
+                                    if not realiz[nm]["censused"]),
+        "statement": "the ladder law forbids a record before the sum of its "
+                     "own counts; the census decides that it arrives there"})
+    LD.add("G-RECORD-FLOORS",
+           all(realiz[nm]["witnesses"] > 0 for nm in censused)
+           and realiz["G-INDEF"]["censused"]
+           and realiz["G-INDEF"]["witnesses"] > 0
+           and all(realiz[nm]["budget"] == sum(realiz[nm]["record"])
+                   for nm in realiz),
+           "EVERY DECLARED RECORD THE STRATUM REACHES IS CENSUSED AT ITS OWN "
+           "BUDGET, SO ITS FLOOR IS A FLOOR.  The ladder law gives only the "
+           "lower half -- no record can arrive before its own counts sum -- "
+           "and a column printing a budget without a witness there is an "
+           "inequality wearing a floor's clothes.  Each record whose budget "
+           "the saturating stratum reaches is counted at exactly that budget, "
+           "I7's own G-INDEF at R = 8 included; the records beyond the "
+           "census are named as such rather than asserted",
+           "censused %s; beyond the census %s"
+           % ({nm: realiz[nm]["witnesses"] for nm in sorted(censused)},
+              sorted(nm for nm in realiz if not realiz[nm]["censused"])))
+    for nm in censused:
+        reg(realiz[nm]["witnesses"])
 
     even_pts = [p for p in pts if sum(p) % 2 == 0]
     parity = {"declared_even": sum(1 for r0 in ladder_rows if r0["even"]),
@@ -2324,6 +3008,15 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
             "covering_class_max_cell": [occ4_max, occ5_max],
             "det4_support": [len(occ4_det), len(occ5_det)],
             "stratum_cover": [strat[4]["cover"], strat[ROUNDS]["cover"]]},
+        "richer_in_denominators": {
+            "reachable_codes": [len(cs[4]), len(cs[ROUNDS])],
+            "covering_class_codes": [len(split[4]["covered"]),
+                                     len(split[ROUNDS]["covered"])],
+            "covering_class_max_cell": [len(CELLS) // len(SITES),
+                                        len(CELLS) // len(SITES)],
+            "det4_support": [len(occ4_det), len(occ5_det)],
+            "stratum_cover": [strat[4]["total"], strat[ROUNDS]["total"]]},
+        "richer_in_measure": "COUNTING-ONLY",
         "verdict": "PASS"}
     pred_c["verdict"] = ("PASS" if pred_c["strictly_weaker_in_the_currencies"]
                          else "FAIL")
@@ -2451,28 +3144,65 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                   ("I-SITE-ASSIGNMENT", "I-DIRECTION-LABEL", "I-ORIENT"))
     r5rows = [w for w in weld_rows if w["budget"] == ROUNDS]
     r6rows = [w for w in weld_rows if w["arena"] == "R6-(2,2,2)"]
-    R["weld"] = SEAL.take("weld", {"rows": weld_rows,
-                                   "fiber_law_holds": fiber_law})
+    # THE SPREADS TRAVEL WITH THE HEADLINE FIBERS.  The site fiber is read at
+    # every base map; the label and orient fibers are read at the
+    # enumeration's FIRST base map and are not base-map invariant.  Both
+    # spreads are bound here so the qualifier cannot be dropped silently.
+    unmot = [w for w in weld_rows if w["fate"] == "UNMOTIVATED"]
+    spread_rows = sorted({(w["budget"], tuple(w["label_fiber_spread"]),
+                           tuple(w["orient_fiber_spread"]),
+                           w["fibers_base_map_invariant"]) for w in unmot})
+    spread_rows = pick("M-SPREAD", spread_rows,
+                       [(b, (l[0],), o, inv)
+                        for (b, l, o, inv) in spread_rows])
+    spreads_persist = (len({(l, o) for (_b, l, o, _i) in spread_rows}) == 1
+                       and len({b for (b, _l, _o, _i) in spread_rows}) > 1)
+    R["weld"] = SEAL.take("weld", {
+        "rows": weld_rows, "fiber_law_holds": fiber_law,
+        "base_map_note": "the site fiber is read at every base map; the label "
+                         "and orient fibers are read at the enumeration's "
+                         "first and are not base-map invariant",
+        "unmotivated_spreads": [{"budget": b, "label_fiber_spread": list(l),
+                                 "orient_fiber_spread": list(o),
+                                 "fibers_base_map_invariant": i}
+                                for (b, l, o, i) in spread_rows],
+        "spreads_persist": spreads_persist})
     LD.add("G-WELD-ROWS",
            r4fib == p21_fibers
            and all(w["isomorphisms"] == p21["counts"]["isomorphisms"]
                    for w in weld_rows if w["reading"] == "EMBEDDING")
            and all(w["fate"] == "FOUND" for w in r6rows)
-           and all(w["fate"] == "UNMOTIVATED" for w in r5rows),
+           and all(w["fate"] == "UNMOTIVATED" for w in r5rows)
+           and spreads_persist
+           and all(i is False for (_b, _l, _o, i) in spread_rows)
+           and all(len(l) > 1 and len(o) > 1
+                   for (_b, l, o, _i) in spread_rows),
            "THE WELD, RUN ON ONE INSTRUMENT AT EVERY RUNG, AND VALIDATED AT "
-           "THE RUNG WHOSE ANSWER IS COMMITTED.  Weld 2's detector is "
-           "carried unchanged at both readings; at R = 4 it returns "
-           "paper-21's committed fibers and isomorphism count exactly, at "
-           "R = 6 the link-constant record returns ZERO-FREE-ITEMS, and "
-           "every R = 5 arena returns UNMOTIVATED",
+           "THE RUNG WHOSE ANSWER IS COMMITTED -- WITH THE BASE-MAP "
+           "QUALIFIER BOUND TO THE ROW.  Weld 2's detector is carried "
+           "unchanged at both readings; at R = 4 it returns paper-21's "
+           "committed fibers and isomorphism count exactly, at R = 6 the "
+           "link-constant record returns ZERO-FREE-ITEMS, and every R = 5 "
+           "arena returns UNMOTIVATED.  The headline triple is read AT ONE "
+           "BASE MAP: the label and orient fibers are not base-map invariant, "
+           "their spreads across the enumeration are measured here, and the "
+           "spreads are required to be identical at every unmotivated arena "
+           "-- so what persists across the rung is the whole spread and not "
+           "only the headline",
            "R=4 fibers %s against paper-21's committed %s; R=5 fibers %s; "
-           "R=6 (2,2,2) fibers %s; isomorphisms %d everywhere"
+           "R=6 (2,2,2) fibers %s; isomorphisms %d everywhere; unmotivated "
+           "spreads %s, base-map invariant %s, spreads persist %s"
            % (list(r4fib), list(p21_fibers),
               [list(w["inventory"].values()) for w in r5rows
                if w["reading"] == "EMBEDDING"],
               [list(w["inventory"].values()) for w in r6rows
                if w["reading"] == "EMBEDDING"],
-              p21["counts"]["isomorphisms"]))
+              p21["counts"]["isomorphisms"],
+              [(b, list(l), list(o)) for (b, l, o, _i) in spread_rows],
+              sorted({i for (_b, _l, _o, i) in spread_rows}),
+              spreads_persist))
+    for (_b, l, o, _i) in spread_rows:
+        reg(*(list(l) + list(o)))
     reg(*p21_fibers)
     reg(p21["counts"]["isomorphisms"])
     LD.add("G-WELD-FIBER-LAW",
@@ -2575,7 +3305,7 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     for r in anchor_rows:
         reg(*anchor_rows[r]["d66_committed_row"])
 
-    sch_list, meta = window_schedules(reached5)
+    sch_list, meta, fan = window_schedules(reached5)
     drows = []
     for sch in sch_list:
         rec = driven(G, sch)
@@ -2622,6 +3352,62 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     for d in drows:
         reg(d["events"], d["divisions"])
 
+    # ---- THE DECLARED WINDOW, DECOMPOSED BY PARTS AND GATED --------------
+    # The head advertises the window's SIZE; §6.2 states its PARTS.  A
+    # decomposition whose parts are wrong in two places that cancel in the sum
+    # is invisible to a gate on the sum alone, so the parts are rendered as
+    # table rows and the sum is re-taken from them.
+    wtags = sorted({d["tag"] for d in drows})
+    window_rows = [{"tag": t,
+                    "schedules": sum(1 for d in drows if d["tag"] == t),
+                    "budgets": sorted({d["rounds"] for d in drows
+                                       if d["tag"] == t})}
+                   for t in wtags]
+    window_rows = pick("M-WINDOW", window_rows,
+                       [dict(w, schedules=w["schedules"] + 1)
+                        if w["tag"] == "W5-SEEDFAN" else
+                        (dict(w, schedules=w["schedules"] - 1)
+                         if w["tag"] == "W4-ANCHOR" else w)
+                        for w in window_rows])
+    fan_ok = (fan["choices"] == len(canon_transversals(CLASSES["ROW"])) ** 2
+              and fan["fresh"] == fan["choices"] - len(fan["collided"])
+              and len(fan["collided"]) == 1
+              and fan["collides_with"] is not None)
+    anchor_budgets = sorted({d["rounds"] for d in drows
+                             if d["tag"] == "W4-ANCHOR"})
+    R["window"] = SEAL.take("window", {
+        "rows": window_rows, "schedules": len(drows),
+        "sum_by_parts": sum(w["schedules"] for w in window_rows),
+        "seed_fan": fan, "budgets": sorted({d["rounds"] for d in drows}),
+        "the_only_budget_4_member": [w["tag"] for w in window_rows
+                                     if w["budgets"] == [ROUNDS - 1]]})
+    LD.add("G-WINDOW-DECOMP",
+           sum(w["schedules"] for w in window_rows) == len(drows)
+           and fan_ok
+           and anchor_budgets == [ROUNDS - 1]
+           and [w["tag"] for w in window_rows
+                if w["budgets"] == [ROUNDS - 1]] == ["W4-ANCHOR"]
+           and all(w["schedules"] > 0 for w in window_rows),
+           "THE DECLARED WINDOW IS BOUND BY ITS PARTS AND NOT ONLY BY ITS "
+           "SUM.  Every tag's schedule count and budget set is rendered as a "
+           "table row, the sum is re-taken from the parts, and the seed fan's "
+           "own arithmetic is measured: the fan enumerates its choices, one "
+           "of them coincides with a schedule already in the window, and the "
+           "number it CONTRIBUTES is therefore one less than the number it "
+           "enumerates.  The budget-4 member is identified by its budget "
+           "rather than named, so a decomposition that omits it cannot sum",
+           "parts %s summing to %d against %d schedules; the seed fan "
+           "enumerates %d choices, contributes %d, and its one collision is "
+           "with %s; the only budget-%d member is %s"
+           % ({w["tag"]: w["schedules"] for w in window_rows},
+              sum(w["schedules"] for w in window_rows), len(drows),
+              fan["choices"], fan["fresh"], fan["collides_with"], ROUNDS - 1,
+              [w["tag"] for w in window_rows
+               if w["budgets"] == [ROUNDS - 1]]))
+    reg(fan["choices"], fan["fresh"])
+    for w in window_rows:
+        reg(w["schedules"])
+
     forced = all(d["maxhits"] == 1 for d in
                  pick("M-FORCED", drows,
                       [dict(d, maxhits=d["maxhits"] + 1) for d in drows]))
@@ -2663,12 +3449,19 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     # ---- SEC 9  STAGE 4 -- THE DIA ROW -----------------------------------
     say("")
     say("[SEC 9] STAGE 4 -- THE DIA ROW")
+    # EVERY homogeneous record the stratum reaches at every rung of the
+    # ladder, derived from the code space rather than listed: the law is
+    # quantified over its whole population at R = 3, 4, 5 and 6, so the two
+    # LINK-CONSTANT records of the ladder -- (1,1,1) at R = 3 and (2,2,2) at
+    # R = 6 -- are both in it, and "compulsion vanishes where the weld turns
+    # motivated" has both of its instances rather than one.
     dia_rows = []
+    dia_targets = []
+    for r in LADDER:
+        for c in sorted(x for x in cs[r] if min(x) >= 1 and sum(x) == r):
+            dia_targets.append((c, r))
     r4targets = sorted(c for c in cs[4] if min(c) >= 1 and sum(c) == 4)
-    r6targets = [(2, 2, 2), tuple(fam["G-SINGULAR"]), (1, 2, 3), (3, 2, 1)]
-    for rec, r in ([(c, 4) for c in r4targets]
-                   + [(c, ROUNDS) for c in reached5]
-                   + [(c, 6) for c in r6targets]):
+    for rec, r in dia_targets:
         W = stratum_witnesses(rec, r)
         freq = {k: sum(1 for w in W if RC["class_index"][k] in w)
                 for k in CLASS_NAMES}
@@ -2686,6 +3479,14 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     dia_rows = pick("M-DIA", dia_rows,
                     [dict(d, compulsory=sorted(CLASS_NAMES))
                      if d["budget"] == ROUNDS else d for d in dia_rows])
+    dia_rows = pick("M-DIA-EXT", dia_rows,
+                    [dict(d, compulsory=["DIA"])
+                     if d["budget"] != ROUNDS and not d["compulsory"] else d
+                     for d in dia_rows])
+    # the undeclared direction's absence is FORCED, not found: the ANT
+    # parallel class deposits no declared incidence at all, so it is not in
+    # the saturating stratum and no live tuple can contain it.
+    ant_inc = RC["incidences"][RC["class_index"]["ANT"]]
     p21_dia = p21["census"]["quadruples_containing_the_diagonal_class"]
     r4dia = [d for d in dia_rows if d["record"] == list(flat)][0]
     R["dia"] = SEAL.take("dia", {"rows": dia_rows,
@@ -2703,7 +3504,30 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                                                         for d in dia_rows),
                                  "naive_law_counterexamples":
                                      [d["record"] for d in dia_rows
-                                      if not d["naive_law_holds"]]})
+                                      if not d["naive_law_holds"]],
+                                 "link_constant_rows":
+                                     [d["record"] for d in dia_rows
+                                      if len(set(d["record"])) == 1],
+                                 "undeclared_direction": {
+                                     "class": "ANT",
+                                     "declared_incidences_per_round": ant_inc,
+                                     "status": "FORCED, NOT MEASURED",
+                                     "reason": "the ANT parallel class "
+                                               "deposits no declared "
+                                               "incidence at all, so it is "
+                                               "not in the saturating "
+                                               "stratum and no live tuple "
+                                               "can contain it"},
+                                 "vocabulary": {
+                                     "witness": "an ordered saturating "
+                                                "R-tuple whose induced record "
+                                                "is the row's count vector",
+                                     "compulsory": "a parallel class that "
+                                                   "occurs as a round of "
+                                                   "EVERY witness of the row",
+                                     "multisets": "the number of distinct "
+                                                  "round-multisets among the "
+                                                  "row's witnesses"}})
     LD.add("G-DIA-LAW",
            all(d["compulsory"] == d["predicted_by_the_count_law"]
                for d in dia_rows)
@@ -2711,7 +3535,11 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                        for d in dia_rows)
            and r4dia["frequency"]["DIA"] == p21_dia
            and r4dia["witnesses"] == p21_dia
-           and all(d["frequency"]["ANT"] == 0 for d in dia_rows),
+           and all(d["frequency"]["ANT"] == 0 for d in dia_rows)
+           and ant_inc == 0
+           and len([d for d in dia_rows
+                    if len(set(d["record"])) == 1 and not d["compulsory"]])
+           == len([d for d in dia_rows if len(set(d["record"])) == 1]),
            "THE COMPULSORY CLASS IS A LAW, AND THE LAW HAS A BOUNDARY.  "
            "Every witness of every homogeneous record at R = 4, 5 and 6 is "
            "enumerated and each parallel class is counted against its own "
@@ -2720,8 +3548,12 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
            "count clause alone is FALSIFIED here -- at the link-constant "
            "record every link is counted twice and no class is compulsory at "
            "all -- so the compulsion is carried by the scarce link, and it "
-           "vanishes at exactly the record where the weld turns motivated.  "
-           "At R = 4 the census returns paper-21's own committed DIA row",
+           "vanishes at exactly the records where the weld turns motivated: "
+           "BOTH link-constant records the ladder reaches, and no other row, "
+           "carry no compulsory class.  The undeclared direction's absence is "
+           "FORCED rather than found -- its parallel class deposits no "
+           "declared incidence at all, so it is not in the stratum.  At "
+           "R = 4 the census returns paper-21's own committed DIA row",
            "R=4 DIA in %d of %d witnesses (paper-21's committed %d); the "
            "law holds on %d of %d rows and the count clause alone on %d, "
            "falsified at %s; rows %s"
@@ -2738,8 +3570,17 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
         reg(d["witnesses"], d["multisets"])
 
     # ---- THE CHOICE INVENTORY, PUBLISHED AS DATA ------------------------
-    wf = [w for w in weld_rows if w["budget"] == ROUNDS
-          and w["reading"] == "EMBEDDING"][0]["inventory"]
+    wrow5 = [w for w in weld_rows if w["budget"] == ROUNDS
+             and w["reading"] == "EMBEDDING"][0]
+    wf = wrow5["inventory"]
+    # THE TWO FIBERS THAT ARE READ AT ONE BASE MAP CARRY THEIR SPREAD WITH
+    # THEM (paper-21's own disclosure, restored): the site fiber is read at
+    # every base map, the label and orient fibers at the enumeration's first.
+    lab_sp = wrow5["label_fiber_spread"]
+    ori_sp = wrow5["orient_fiber_spread"]
+    nbase = wrow5["base_maps_read"]
+    base_note = ("§6, at the declared base map; spread %s across the %d - "
+                 "not base-map invariant")
     inv_rows = [
         (1, "the base object: CONFLICT-GRID(3, R)", "forced", 1,
          "pin, from the committed constructor"),
@@ -2757,16 +3598,23 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
          1, "the pin; both neighbours are measured in-unit"),
         (7, "the driven window W%d" % ROUNDS, "declared", 1,
          "§6.2, disclosed in the head"),
-        (8, "the site the local-type census is taken at", "forced", 1,
+        (8, "the seed menu: the first canonical transversal, plus the "
+            "declared fan", "declared", 1,
+         "§6.2; the fan exercises %d x %d of it on (1, 1, 3)'s first two "
+         "rounds; no exhaustive column uses it"
+         % (len(canon_transversals(CLASSES["ROW"])),
+            len(canon_transversals(CLASSES["ROW"])))),
+        (9, "the site the local-type census is taken at", "forced", 1,
          "§2.1, by measured translation invariance"),
-        (9, "the reading axis (EMBEDDING / QUOTIENT)", "declared",
+        (10, "the reading axis (EMBEDDING / QUOTIENT)", "declared",
          len({w["reading"] for w in weld_rows}), "weld 2's, carried unchanged"),
-        (10, "I-SITE-ASSIGNMENT", "measured", wf["I-SITE-ASSIGNMENT"],
-         "§6, at every arena above the floor"),
-        (11, "I-DIRECTION-LABEL", "measured", wf["I-DIRECTION-LABEL"],
-         "§6"),
-        (12, "I-ORIENT", "measured", wf["I-ORIENT"], "§6"),
-        (13, "the declared falsifier (one division withheld)", "free", "-",
+        (11, "I-SITE-ASSIGNMENT", "measured", wf["I-SITE-ASSIGNMENT"],
+         "§6, at every arena above the floor; read at every base map"),
+        (12, "I-DIRECTION-LABEL", "measured", wf["I-DIRECTION-LABEL"],
+         base_note % (lab_sp, nbase)),
+        (13, "I-ORIENT", "measured", wf["I-ORIENT"],
+         base_note % (ori_sp, nbase)),
+        (14, "the declared falsifier (one division withheld)", "free", "-",
          "a division-set edit on the driven record")]
     inv_rows = pick("M-INVENTORY", inv_rows,
                     [(a, b, c, 1 if c == "measured" else d, e)
@@ -2797,13 +3645,26 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
     # ---- THE PER-INVARIANT PERSISTENCE TABLE ----------------------------
     prev = str(ROUNDS - 1)
     here = str(ROUNDS)
+
+    def weld_signature(b):
+        """the rung's weld signature WITH its base map: the headline triple
+        is read at one base map, so the row that claims persistence carries
+        the spreads that persist with it."""
+        w = [x for x in weld_rows if x["budget"] == b
+             and x["reading"] == "EMBEDDING"][0]
+        return ("%s at the declared base map, spreads %s and %s"
+                % (w["fiber_string"], w["label_fiber_spread"],
+                   w["orient_fiber_spread"]))
+
     persist = [
         {"invariant": "the binding constraint of the price law",
+         "independence": "A THEOREM OF THE PRICE LAW",
          "at_the_rung_below": slack_rows[ROUNDS - 1]["binds"],
          "here": slack_rows[ROUNDS]["binds"],
          "witness": "slack %d against %d" % (slack_rows[ROUNDS - 1]["slack"],
                                              slack_rows[ROUNDS]["slack"])},
         {"invariant": "the saturation schema",
+         "independence": "A THEOREM OF THE PRICE LAW",
          "at_the_rung_below": "every round forced to saturate",
          "here": ("every round forced to saturate"
                   if R["saturation"]["every_round_forced_to_saturate"]
@@ -2811,27 +3672,28 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
          "witness": "%d incidences needed against a ceiling of %d"
                     % (budget, budget)},
         {"invariant": "the weld fiber signature",
-         "at_the_rung_below": [w["fiber_string"] for w in weld_rows
-                               if w["budget"] == ROUNDS - 1
-                               and w["reading"] == "EMBEDDING"][0],
-         "here": [w["fiber_string"] for w in weld_rows
-                  if w["budget"] == ROUNDS
-                  and w["reading"] == "EMBEDDING"][0],
+         "independence": "MEASURED PER ARENA",
+         "at_the_rung_below": weld_signature(ROUNDS - 1),
+         "here": weld_signature(ROUNDS),
          "witness": "%d base maps read at both" % p21["counts"]["isomorphisms"]},
         {"invariant": "the fiber law (all ones iff link-constant)",
+         "independence": "MEASURED PER ARENA",
          "at_the_rung_below": "holds", "here": "holds" if fiber_law
          else "fails",
          "witness": "%d arenas" % len(weld_arenas)},
         {"invariant": "cover = positive definite",
+         "independence": "COROLLARY OF THE CELL-CEILING ROW",
          "at_the_rung_below": str(not [c for c in occ[ROUNDS - 1]
                                        if sig_class(c) != "POSDEF"]),
          "here": str(not occ5_bad),
          "witness": "the singular witness at %s" % (list(wit_code)
                                                     if wit_code else None)},
         {"invariant": "block quantisation (the covering class's cell ceiling)",
+         "independence": "MECHANISM",
          "at_the_rung_below": str(occ4_max), "here": str(occ5_max),
          "witness": "cell counts %d against %d" % (occ4_max, occ5_max)},
         {"invariant": "the compulsory parallel class",
+         "independence": "MEASURED PER RECORD",
          "at_the_rung_below": "compulsory when the link is counted more than "
                               "once",
          "here": "and only when some link is counted exactly once",
@@ -2839,6 +3701,7 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                     % com(dia_rows[[d["record"] for d in dia_rows].index(
                         list((2, 2, 2)))]["witnesses"])},
         {"invariant": "the declared-record yield",
+         "independence": "FORCED BY THE PARITY LAW",
          "at_the_rung_below": str(yields[ROUNDS - 1]["declared_yield"]),
          "here": str(yields[ROUNDS]["declared_yield"]),
          "witness": "the parity law: %d of %d declared records at an even "
@@ -2853,9 +3716,18 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                                 if row["invariant"].startswith("the compulsory")
                                 else "BREAKS-AT-R=%d" % ROUNDS))
     tally = Counter(r["verdict"] for r in persist)
+    # THE TALLY COUNTS RE-MEASURED PROPOSITIONS, NOT INDEPENDENT CONTENT.
+    # Each row also carries what it IS: a mechanism, a corollary of another
+    # row, a theorem of the price law, a per-object measurement, or a
+    # consequence of this unit's own parity law.  The break count is then
+    # read out by independence rather than by arithmetic.
+    breaks = [r for r in persist if r["verdict"].startswith("BREAKS")]
+    bind = Counter(r["independence"] for r in breaks)
     R["persistence"] = SEAL.take("persistence", {
         "rows": persist,
-        "tally": {k: v for k, v in sorted(tally.items())}})
+        "tally": {k: v for k, v in sorted(tally.items())},
+        "breaks_by_independence": {k: v for k, v in sorted(bind.items())},
+        "independent_mechanisms_among_the_breaks": bind.get("MECHANISM", 0)})
     LD.add("G-PERSISTENCE",
            all(r["verdict"] in ("PERSISTS", "TRANSFORMS",
                                 "BREAKS-AT-R=%d" % ROUNDS) for r in persist)
@@ -2863,23 +3735,43 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                    == (r["verdict"] == "PERSISTS") for r in persist)
            and all(persist[i]["here"] == here_measured[i]
                    for i in range(len(persist)))
-           and sum(tally.values()) == len(persist),
+           and sum(tally.values()) == len(persist)
+           and all(r.get("independence") for r in persist)
+           and sum(bind.values()) == len(breaks)
+           and bind.get("MECHANISM", 0) == 1,
            "THE PER-INVARIANT PERSISTENCE TABLE, EACH ROW DECIDED BY ITS OWN "
            "PAIR OF MEASUREMENTS.  Every invariant paper-21 delivered is "
            "re-measured here and its verdict is read off the comparison of "
            "the two values rather than assigned: a row PERSISTS exactly when "
            "the two agree, every row's value at this rung is re-checked "
            "against the census row that measured it, and every row carries "
-           "the witness that decides it",
-           "rows %d, tally %s"
-           % (len(persist), {k: v for k, v in sorted(tally.items())}))
+           "the witness that decides it.  The tally counts RE-MEASURED "
+           "PROPOSITIONS; each row also carries what it IS, so the breaks are "
+           "read out by independence -- exactly one of them is a mechanism, "
+           "and the others are that mechanism's corollary and this unit's own "
+           "parity law seen from the other side",
+           "rows %d, tally %s; breaks by independence %s"
+           % (len(persist), {k: v for k, v in sorted(tally.items())},
+              {k: v for k, v in sorted(bind.items())}))
     reg(*[v for v in tally.values()])
 
     # ---- SEC 10  THE INTERFERENCE CENSUS, CLOSED BY THEOREM -------------
     say("")
     say("[SEC 10] THE CENSUS NOT RUN, AND THE WALLS")
     body = paper_body(paper_text or "")
-    surface = json.dumps({k: R[k] for k in R}, sort_keys=True, default=str) \
+    # THE DECLARED MEASUREMENT SURFACE, ENUMERATED RATHER THAN DESCRIBED.
+    # The scan is taken here, so the keys it covers are the CENSUS layer --
+    # every key published up to this point, listed in the receipt so the
+    # scope is data and not an adjective.  The vouching layer that follows is
+    # sealed and gated separately, and the four DERIVED VERDICT SEGMENTS --
+    # the highest-stakes text this unit publishes -- are derived early and
+    # folded in here, so a banned reading in the head is seen by every wall.
+    surface_keys = sorted(R)
+    head_preview = verdict_segments(R)
+    surface_keys = pick("M-SURFACE", surface_keys, surface_keys[1:])
+    surface = json.dumps({k: R[k] for k in surface_keys}, sort_keys=True,
+                         default=str) \
+        + " " + " ".join(head_preview) \
         + " ".join(r0["statement"] + " " + str(r0["evidence"])
                    for r0 in LD.rows) \
         + " " + pick("M-PAPER-INTERFERENCE", body,
@@ -2889,6 +3781,20 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
                    "DDS-carrying ball on the R-ladder")
     banned_words = ("interference census at", "DDS-carrying", "Sidon at every")
     hits = [w for w in banned_words if w.lower() in surface.lower()]
+    R["surface"] = SEAL.take("surface", {
+        "scanned_receipt_keys": surface_keys,
+        "scanned_receipt_key_count": len(surface_keys),
+        "verdict_segments_included": len(head_preview),
+        "gate_rows_included": len(LD.rows),
+        "paper_body_included": True, "chars": len(surface),
+        "scope": "the CENSUS layer of this run's receipt -- every key "
+                 "published when the scan is taken, enumerated here -- "
+                 "together with the four derived verdict segments, the "
+                 "statement and evidence of every gate evaluated before the "
+                 "scan, and the paper's own body.  The vouching layer "
+                 "published after the scan is sealed and gated separately, "
+                 "and the wall rows themselves necessarily quote the words "
+                 "the scan bans"})
     R["interference"] = SEAL.take("interference", {
         "status": "NOT RUN -- CLOSED BY THEOREM",
         "authority": "the PER-L adjudication (v14 #228): the transport to "
@@ -2902,11 +3808,15 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
            "MEASURED.  PER-L's adjudicated corollary closes it by theorem for "
            "the whole R-ladder, so running it here would re-derive a decided "
            "question; the gate scans this run's declared measurement surface "
-           "-- every published receipt key, the statement and evidence of "
-           "every gate evaluated, AND THE PAPER'S OWN BODY -- and finds no "
-           "interference reading in it",
-           "surface %d chars (paper body %d of them), interference readings "
-           "found %d" % (len(surface), len(body), len(hits)))
+           "-- the %d census keys of this run's receipt, ENUMERATED in the "
+           "receipt rather than described, together with the four derived "
+           "verdict segments, the statement and evidence of every gate "
+           "evaluated before the scan, AND THE PAPER'S OWN BODY -- and finds "
+           "no reading of it there" % len(surface_keys),
+           "surface %d chars over %d enumerated receipt keys, %d verdict "
+           "segments and %d gate rows (paper body %d chars of it), readings "
+           "found %d" % (len(surface), len(surface_keys), len(head_preview),
+                         len(LD.rows), len(body), len(hits)))
 
     # ---- THE WALLS -------------------------------------------------------
     ptext = paper_text if paper_text is not None else ""
@@ -2961,12 +3871,15 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
            "ABSTENTION IS MEASURED.  A Poisson sprinkling admits no "
            "Lorentz-invariant finite-valency graph and these schedules are "
            "finite-valency by construction, so running such a test would "
-           "manufacture a false negative; the gate scans this run's declared "
-           "measurement surface AND THE PAPER'S OWN BODY -- every section but "
-           "the wall section in which the abstention is stated -- rather than "
-           "declaring the abstention",
-           "surface %d chars, paper body %d chars, sprinkling-grade readings 0"
-           % (len(surface), len(body)), wall=True)
+           "manufacture a false negative; the gate scans the same declared "
+           "surface -- the %d enumerated census keys, the derived verdict "
+           "segments, every gate row evaluated before the scan -- AND THE "
+           "PAPER'S OWN BODY, every section but the wall section in which the "
+           "abstention is stated, rather than declaring the abstention"
+           % len(surface_keys),
+           "surface %d chars over %d enumerated receipt keys, paper body %d "
+           "chars, sprinkling-grade readings 0"
+           % (len(surface), len(surface_keys), len(body)), wall=True)
     kr_scan = surface + " " + pick(
         "M-PAPER-KR", body,
         body + " the Myrheim-Meyer dimension estimate of this record is")
@@ -2977,9 +3890,13 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
            "KLEITMAN-ROTHSCHILD: NO DIMENSION READING IS TAKEN, SO NO HEIGHT "
            "CONTROL IS OWED.  This unit takes no chart width, no "
            "Myrheim-Meyer estimate and no shatter reading; the same declared "
-           "surface is scanned for one, and so is the paper's own body",
-           "surface %d chars, paper body %d chars, dimension readings 0"
-           % (len(surface), len(body)), wall=True)
+           "surface -- the %d enumerated census keys, the derived verdict "
+           "segments and every gate row evaluated before the scan -- is "
+           "scanned for one, and so is the paper's own body"
+           % len(surface_keys),
+           "surface %d chars over %d enumerated receipt keys, paper body %d "
+           "chars, dimension readings 0"
+           % (len(surface), len(surface_keys), len(body)), wall=True)
     LD.add("G-TWO-WAY",
            len({w["fate"] for w in weld_rows}) > 1
            and {"FOUND", "UNMOTIVATED"} <= {w["fate"] for w in weld_rows}
@@ -3022,6 +3939,55 @@ def full_run(break_anchor=None, paper_text=None, paper_rel=PAPER_REL,
            "type scan of the emitted receipt finds no float anywhere in it",
            "float literals %d, true divisions %d, floats in the receipt %d"
            % (len(floats), len(truediv), nfloat))
+
+    # ---- THE READS REGISTER, WITH A CONSUMER ----------------------------
+    # #46/#91: a register with a producer and no consumer vouches for
+    # nothing.  Every read at run time records its category; here the whole
+    # register is compared against the DECLARED set, category by category.
+    reads = pick("M-READS", list(READS),
+                 list(READS) + [{"path": "v14/PLAN.md", "category": "SOURCE",
+                                 "sha256_12": "0" * 12}])
+    cats = {}
+    for r0 in reads:
+        cats.setdefault(r0["category"], []).append(r0["path"])
+    declared_src = sorted({s[1] for s in SOURCES})
+    self_rel = os.path.relpath(SELF, REPO)
+    artifacts = {os.path.relpath(OUT_JSON, REPO),
+                 os.path.relpath(OUT_TXT, REPO),
+                 os.path.relpath(OUT_JSON + ".tmp", REPO),
+                 os.path.relpath(OUT_TXT + ".tmp", REPO)}
+    cat_ok = set(cats) <= {"SOURCE", "OBJECT-UNDER-TEST", "SELF", "ARTIFACT"}
+    src_ok = sorted(set(cats.get("SOURCE", []))) == declared_src
+    self_ok = cats.get("SELF") == [self_rel]
+    obj_ok = len(cats.get("OBJECT-UNDER-TEST", [])) == 1
+    art_ok = set(cats.get("ARTIFACT", [])) <= artifacts
+    R["reads"] = SEAL.take("reads", {
+        "rows": reads, "by_category": {k: sorted(set(v))
+                                       for k, v in sorted(cats.items())},
+        "declared_categories": ["SOURCE", "OBJECT-UNDER-TEST", "SELF",
+                                "ARTIFACT"],
+        "declared_sources": declared_src, "self": self_rel,
+        "declared_artifacts": sorted(artifacts),
+        "subprocesses_invoked": 0})
+    LD.add("G-READS",
+           cat_ok and src_ok and self_ok and obj_ok and art_ok
+           and len(cats.get("SOURCE", [])) == len(SOURCES),
+           "THE SET OF RUN-TIME READS IS EXACTLY THE DECLARED SET, AND THE "
+           "REGISTER THAT RECORDS IT HAS A CONSUMER.  Every read is stamped "
+           "with its category as it happens -- SOURCE, OBJECT-UNDER-TEST, "
+           "SELF or this run's own staged artifacts -- and the register is "
+           "compared here against the declaration category by category: the "
+           "SOURCE paths must be exactly the %d pinned sources, SELF must be "
+           "this file, the object under test must be a single file, and no "
+           "fifth category may appear.  No subprocess of any kind is invoked, "
+           "so the run is correct off-tree and with no version control "
+           "present" % len(SOURCES),
+           "reads %d in categories %s; sources %d of %d declared %s; self %s; "
+           "object under test %s; artifacts %s"
+           % (len(reads), sorted(cats), len(cats.get("SOURCE", [])),
+              len(SOURCES), src_ok, self_ok,
+              cats.get("OBJECT-UNDER-TEST", []), sorted(cats.get("ARTIFACT",
+                                                                 []))))
     return LD, SEAL, R, G, texts, src, tree, ptext, ptext_nm, weld_rows, drows
 
 
@@ -3064,9 +4030,10 @@ def verdict_segments(R):
         "ROUNDS SATURATING) AND THE INDEFINITE REGION IS NOT (THE LOCKING "
         "THEOREM: "
         "NO COVERING QUINTUPLE CARRIES A CELL COUNT OF %d) -- SO "
-        "COVER=POSDEF BREAKS AT R=%d AFTER HOLDING AT R=%d AND R=%d -- "
-        "RECORD FLOORS: G-SINGULAR R=%d, G-INDEF R=%d"
-        "@EXHAUSTIVE-OVER-%s-ORDERED-GROUPING-QUINTUPLES") % (
+        "COVER=POSDEF BREAKS AT R=%d AFTER HOLDING AT R=%d AND R=%d"
+        "@EXHAUSTIVE-OVER-%s-ORDERED-GROUPING-QUINTUPLES -- "
+        "RECORD FLOORS (BY THE LADDER LAW, THE ROWS CENSUSED OVER "
+        "%d^%d AND %d^%d): G-SINGULAR R=%d, G-INDEF R=%d") % (
         S["budget"], S["covered_codes"], S["posdef"], S["singular"],
         S["indefinite"], S["indefinite_det4"], S["covering_class_codes"],
         S["covering_class_max_cell"], S["covering_class_det4_support"],
@@ -3074,8 +4041,10 @@ def verdict_segments(R):
                           if x == wit["code"]]), len(wit["site_codes"]),
         wit["total_incidences"], wit["saturating_rounds"], S["budget"],
         S["budget"], S["budget"],
-        lad[0], lad[1], S["g_singular_record_floor"],
-        S["g_indef_record_floor"], "{:,}".format(ar["family"]))
+        lad[0], lad[1], "{:,}".format(ar["family"]),
+        ar["saturating"], S["g_singular_record_floor"],
+        ar["saturating"], S["g_indef_record_floor"],
+        S["g_singular_record_floor"], S["g_indef_record_floor"])
     seg2 = (
         "PERR-PREDICTIONS-%d-OF-%d-PASS-[(a) NO DECLARED RECORD AT COUNT-SUM "
         "%d: I7'S OWN BOX HOLDS %d ADMISSIBLE POINTS THERE, THE STRATUM "
@@ -3114,7 +4083,8 @@ def verdict_segments(R):
         "/".join(str(cep[k]) for k in keys))
     seg4 = (
         "PERR-DICTIONARY-[WELD FIBERS %s, FOUND EXACTLY AT THE LINK-CONSTANT "
-        "RECORDS AND UNMOTIVATED EVERYWHERE ELSE; THE R=%d SIGNATURE IS THE "
+        "RECORDS AND UNMOTIVATED AT EVERY OTHER ARENA OF THE DECLARED "
+        "DICTIONARY; THE R=%d SIGNATURE IS THE "
         "R=%d SIGNATURE] -- DRIVEN: THE COMMITTED GRAMMAR DRIVES %d "
         "SCHEDULES OVER BUDGETS %s WITH %d OF %d DRIVEN FIELDS EQUAL TO "
         "THEIR GROUPINGS' FIELD, ANCHORED AT d66's OWN COMMITTED R=%s ROWS "
@@ -3163,9 +4133,10 @@ def reconstruct_from_serialized(text):
           "AND THE INDEFINITE REGION IS NOT ", "(THE LOCKING THEOREM: ",
           "NO COVERING QUINTUPLE CARRIES A CELL COUNT OF %d) -- SO ",
           "COVER=POSDEF BREAKS AT R=%d AFTER HOLDING AT R=%d ",
-          "AND R=%d -- RECORD FLOORS: ", "G-SINGULAR R=%d, ",
-          "G-INDEF R=%d", "@EXHAUSTIVE-OVER-%s", "-ORDERED-GROUPING",
-          "-QUINTUPLES"]
+          "AND R=%d", "@EXHAUSTIVE-OVER-%s", "-ORDERED-GROUPING",
+          "-QUINTUPLES -- RECORD FLOORS (BY THE LADDER LAW, ",
+          "THE ROWS CENSUSED OVER %d^%d AND %d^%d): ", "G-SINGULAR R=%d, ",
+          "G-INDEF R=%d"]
     seg1 = "".join(j1) % (
         s["budget"], s["covered_codes"], s["posdef"], s["singular"],
         s["indefinite"], s["indefinite_det4"], s["covering_class_codes"],
@@ -3174,8 +4145,10 @@ def reconstruct_from_serialized(text):
                           if x == wit["code"]]), len(wit["site_codes"]),
         wit["total_incidences"], wit["saturating_rounds"], s["budget"],
         s["budget"], s["budget"], lad[0], lad[1],
-        s["g_singular_record_floor"], s["g_indef_record_floor"],
-        "{:,}".format(ar["family"]))
+        "{:,}".format(ar["family"]), ar["saturating"],
+        s["g_singular_record_floor"], ar["saturating"],
+        s["g_indef_record_floor"], s["g_singular_record_floor"],
+        s["g_indef_record_floor"])
     j2 = ["PERR", "-PREDICTIONS-%d", "-OF-%d-PASS-[", "(a) NO DECLARED ",
           "RECORD AT COUNT-SUM %d: ", "I7'S OWN BOX HOLDS %d ",
           "ADMISSIBLE POINTS THERE, ", "THE STRATUM REACHES ALL %d ",
@@ -3214,7 +4187,8 @@ def reconstruct_from_serialized(text):
         "/".join(str(k["buys"]["det4_support_size"][x]) for x in ks),
         "/".join(str(k["buys"]["cover_equals_posdef"][x]) for x in ks))
     j4 = ["PERR", "-DICTIONARY-[WELD FIBERS %s, ", "FOUND EXACTLY AT THE ",
-          "LINK-CONSTANT RECORDS AND UNMOTIVATED ", "EVERYWHERE ELSE; ",
+          "LINK-CONSTANT RECORDS AND UNMOTIVATED ",
+          "AT EVERY OTHER ARENA OF THE DECLARED DICTIONARY; ",
           "THE R=%d SIGNATURE IS THE R=%d SIGNATURE] ", "-- DRIVEN: THE ",
           "COMMITTED GRAMMAR DRIVES %d SCHEDULES ", "OVER BUDGETS %s WITH ",
           "%d OF %d DRIVEN FIELDS EQUAL TO ", "THEIR GROUPINGS' FIELD, ",
@@ -3261,15 +4235,15 @@ def paper_claims(R):
           "%d of the %d covered codes occur at a site of a covering "
           "quintuple" % (S["covering_class_codes"], S["covered_codes"]),
           "class_ladder":
-          "the indefinite region is attained at R = %s as a covered site "
-          "code, at R = %s as a covering record, at R = %s as a "
-          "structurally live record and at R = %s as one of I7's declared "
-          "records"
-          % tuple(str([r0[k] for r0 in R["reachability_ladder"]["rows"]
-                       if r0["polarity"] == "INDEFINITE"][0])
-                  for k in ("COVERED-SITE-CODE", "COVERING-RECORD",
-                            "STRUCTURALLY-LIVE-RECORD",
-                            "I7-DECLARED-RECORD")),
+          "the indefinite region is attained at "
+          + ", ".join(
+              "R = %s as %s %s"
+              % ([r0[c0["class"]] for r0 in R["reachability_ladder"]["rows"]
+                  if r0["polarity"] == "INDEFINITE"][0],
+                 "an" if c0["label"][0].upper() in "AEIOU" else "a",
+                 c0["label"])
+              for c0 in R["reachability_ladder"]["class_rows"]
+              if c0["kind"] == "CHAIN"),
           "sig_break":
           "the covering class and the positive-definite class coincide at "
           "R = 3 and at R = 4 and part company at R = 5",
@@ -3333,52 +4307,215 @@ def paper_claims(R):
           "arena":
           "%d partitions, %d of them saturating, and a family of %s"
           % (ar["partitions"], ar["saturating"], com(ar["family"]))}
+    # the determinant support, rendered so the sentence that carries it is a
+    # claim rather than a gap between two claims
+    cl["det_support"] = ("the determinant support is {%s}"
+                         % ", ".join(str(x) for x in
+                                     S["covering_class_det4_support"]))
+    cl["indefinite_codes"] = (
+        "the indefinite region opens at R = %d, at %d codes, %s and %s, every "
+        "one of them at 4det = %s"
+        % (S["indefinite_opens_at"], S["indefinite"],
+           ", ".join("(%s)" % ", ".join(str(y) for y in x)
+                     for x in S["indefinite_codes"][:-1]),
+           "(%s)" % ", ".join(str(y) for y in S["indefinite_codes"][-1]),
+           ", ".join(str(x) for x in S["indefinite_det4"])))
+    cl["locking_cells"] = (
+        "it never reaches all %d cells: no covering quintuple carries a cell "
+        "count of %d" % (ar["cells"], R["locking"]["budget"]))
+    cl["pred_b_arith"] = (
+        "a structurally live R-tuple spends %d incidences a round over %d "
+        "cells, so a field constant on all three links needs %d to divide 9R"
+        % (ar["max_incidences_per_round"], ar["cells"], ar["cells"]))
+    cl["slack_binds"] = ("%d incidences over %d cells"
+                         % (R["saturation"]["budget"], ar["cells"]))
+    cl["stratum_fields"] = (
+        "the stratum as a whole induces %s distinct fields, while its "
+        "covering subset induces %s"
+        % (com(R["stratum_fields"]["whole_stratum"][str(
+            R["saturation"]["rounds"])]),
+           com(R["stratum_fields"]["covering_subset"][str(
+               R["saturation"]["rounds"])])))
+    cl["r6_bound"] = ("a constructive lower bound of %s"
+                      % com(six["parent_constructive_lower_bound"]))
+    # the ceiling continuation, the locking general form and the bare-live
+    # control -- the three promotions, each rendered from its own row
+    ce = R["covering_ceiling"]
+    cl["ceiling"] = (
+        "the covering class's maximum cell count runs %s along R = %s, and at "
+        "R = %d the covering class holds %d codes"
+        % (", ".join(str(x) for x in ce["sequence"]),
+           ", ".join(str(c0["budget"]) for c0 in ce["rows"]),
+           ce["rows"][-1]["budget"], ce["rows"][-1]["covering_class_codes"]))
+    lg = R["locking_general"]
+    cl["lock_general"] = (
+        "the cells at those two sites demand the same %s distinct third "
+        "members at every budget, so the obstruction holds at every budget "
+        "below %d and dissolves at exactly R = %d"
+        % (", ".join(str(x) for x in lg["third_members_required"]),
+           lg["obstruction_dissolves_at"], lg["obstruction_dissolves_at"]))
+    cl["min_uncovered"] = (
+        "a locked quintuple leaves %d of the %d cells uncovered"
+        % (lg["min_uncovered_at_this_budget"], ar["cells"]))
+    lc = R["live_control"]
+    cl["live_control"] = (
+        "an R = %d record all of whose %d rounds saturate, carrying no "
+        "foreign pair, whose site code at the origin is (%s) at 4det %d, and "
+        "which covers only %d of the %d cells"
+        % (lc["budget"], lc["saturating_rounds"],
+           ", ".join(str(x) for x in lc["site_code_at_the_origin"]),
+           lc["det4_at_the_origin"], lc["cells_covered"], lc["cells"]))
+    cl["live_floors"] = (
+        "dropped to liveness alone, without the covering condition, the "
+        "floors are %d and %d"
+        % (lc["floors"]["SINGULAR"], lc["floors"]["INDEFINITE"]))
+    # the window, by parts
+    wd = R["window"]
+    cl["window"] = (
+        "the window is %d schedules: %s"
+        % (wd["schedules"],
+           ", ".join("%d %s" % (w["schedules"], w["tag"])
+                     for w in wd["rows"])))
+    cl["ladder_members"] = (
+        "the collinear arrangement of every homogeneous record the R = %d "
+        "stratum reaches, all %d of them, none sampled"
+        % (R["saturation"]["rounds"],
+           [w["schedules"] for w in wd["rows"] if w["tag"] == "W5-LADDER"][0]))
+    cl["seed_fan"] = (
+        "the fan enumerates %d canonical transversal choices and contributes "
+        "%d schedules, because one of the %d is the W5-LADDER member of "
+        "(1, 1, 3)" % (wd["seed_fan"]["choices"], wd["seed_fan"]["fresh"],
+                       wd["seed_fan"]["choices"]))
+    # the two §13 counts that were typed prose
+    cl["sources"] = ("%d sources are read at run time"
+                     % R["provenance"]["count"])
+    cl["back_validation"] = ("%d columns are back-validated"
+                             % len(BACK_VALIDATED))
+    # G-INDEF's own budget, censused rather than asserted
+    rr = R["record_realizability"]["rows"]
+    cl["indef_record"] = (
+        "I7's own G-INDEF arrives as a whole record at R = %d, at %s ordered "
+        "saturating octuples" % (rr["G-INDEF"]["budget"],
+                                 com(rr["G-INDEF"]["witnesses"])))
+    # the class definitions, DERIVED from the predicate each floor is
+    # computed with (the #294 ruling: a class-explicit row is only
+    # class-explicit if its printed words are its computed predicate)
+    for c0 in R["reachability_ladder"]["class_rows"]:
+        art = "an" if c0["label"][0].upper() in "AEIOU" else "a"
+        cl["class_%s" % c0["class"]] = ("%s %s %s" % (art, c0["label"].upper(),
+                                                      c0["predicate"]))
+    # the persistence read-out, by independence rather than by arithmetic
+    pr = R["persistence"]
+    cl["persistence"] = (
+        "%d invariants re-measured: %s; of the breaks %s"
+        % (len(pr["rows"]),
+           ", ".join("%d %s" % (v, k) for k, v in sorted(pr["tally"].items())),
+           ", ".join("%d %s" % (v, k.lower())
+                     for k, v in sorted(pr["breaks_by_independence"].items()))))
     return cl
 
 
-def paper_tables(R):
-    """the paper's measurement TABLES, rendered row by row from the receipt
-    (E-22: a table row is a claim)."""
-    rows = []
+def paper_table_blocks(R):
+    """THE PAPER'S MEASUREMENT TABLES, HEADERS AND ALL.  A table's header row
+    is the row that says what its numbers ARE, so it is a claim exactly as
+    its data rows are, and it is RENDERED from the receipt rather than left
+    to the prose.  Every class-naming header is derived from the predicate
+    its column's number was computed with, so swapping two of them is a
+    claim about a predicate this file does not compute."""
+    blocks = []
     occ = R["covering_codes"]
     K = R["slack"]["buys"]
-    for r in sorted(occ, key=int):
-        rows.append("| %s | %s | %s | %s | %s |"
-                    % (r, K["reachable_site_codes"][r], occ[r]["count"],
-                       occ[r]["max_cell"],
-                       "yes" if K["cover_equals_posdef"][r] else "**no**"))
-    for row in R["weld"]["rows"]:
-        if row["reading"] == "EMBEDDING":
-            rows.append("| %s | %s | %s | %s | %s |"
-                        % (row["arena"], row["budget"],
-                           "/".join(str(row["inventory"][k]) for k in
-                                    ("I-SITE-ASSIGNMENT", "I-DIRECTION-LABEL",
-                                     "I-ORIENT")),
-                           row["fate"],
-                           "yes" if row["link_constant"] else "no"))
-    for row in R["dia"]["rows"]:
-        rows.append("| %s | %s | %s | %s | %s |"
-                    % (row["record"], row["budget"], com(row["witnesses"]),
-                       ", ".join(row["compulsory"]) or "none",
-                       row["multisets"]))
-    for row in R["choice_inventory"]:
-        rows.append("| %s | %s | %s | %s | %s |"
-                    % (row["item"], row["name"], row["class"], row["fiber"],
-                       row["binds"]))
-    for row in R["persistence"]["rows"]:
-        rows.append("| %s | %s | %s | %s |"
-                    % (row["invariant"], row["at_the_rung_below"],
-                       row["here"], row["verdict"]))
-    for row in R["reachability_ladder"]["rows"]:
-        rows.append("| %s | %s | %s | %s | %s |"
-                    % (row["polarity"], row["COVERED-SITE-CODE"],
-                       row["COVERING-RECORD"],
-                       row["STRUCTURALLY-LIVE-RECORD"],
-                       row["I7-DECLARED-RECORD"]))
-    for nm in sorted(R["sig_feed"]["record_floors"]):
-        f = R["sig_feed"]["record_floors"][nm]
-        rows.append("| %s | %s | %s | %s |"
-                    % (nm, f["record"], f["budget"], f["class"]))
+    blocks.append((
+        "the code space and the covering class",
+        ("R", "site codes", "covering-class codes", "max cell count",
+         "every covering-class code positive definite"),
+        ["| %s | %s | %s | %s | %s |"
+         % (r, K["reachable_site_codes"][r], occ[r]["count"],
+            occ[r]["max_cell"],
+            "yes" if K["cover_equals_posdef"][r] else "**no**")
+         for r in sorted(occ, key=int)]))
+    ce = R["covering_ceiling"]
+    blocks.append((
+        "the cell ceiling, continued",
+        ("budget", "covering-class codes", "max cell count", "4det support"),
+        ["| %s | %s | %s | %s |"
+         % (c0["budget"], c0["covering_class_codes"], c0["max_cell"],
+            "{%s}" % ", ".join(str(x) for x in c0["det4_support"]))
+         for c0 in ce["rows"]]))
+    lg = R["locking_general"]
+    blocks.append((
+        "the locking obstruction, budget by budget",
+        ("budget", "third members required", "rounds available",
+         "best coverage", "minimum uncovered", "covering reachable"),
+        ["| %s | %s | %s | %s | %s | %s |"
+         % (b["budget"], b["third_members_required"], b["budget"],
+            b["best_coverage"], b["min_uncovered"], b["covering_reachable"])
+         for b in lg["ladder"]]))
+    rr = R["record_realizability"]["rows"]
+    blocks.append((
+        "the record floors",
+        ("record", "counts", "budget", "class", "witnesses at that budget"),
+        ["| %s | %s | %s | %s | %s |"
+         % (nm, R["sig_feed"]["record_floors"][nm]["record"],
+            R["sig_feed"]["record_floors"][nm]["budget"],
+            R["sig_feed"]["record_floors"][nm]["class"],
+            com(rr[nm]["witnesses"]) if rr[nm]["censused"]
+            else "beyond this census")
+         for nm in sorted(R["sig_feed"]["record_floors"])]))
+    cls = R["reachability_ladder"]["class_rows"]
+    blocks.append((
+        "the reachability ladder",
+        tuple(["polarity"] + [c["label"] for c in cls]),
+        ["| %s | %s |" % (row["polarity"],
+                          " | ".join(str(row[c["class"]]) for c in cls))
+         for row in R["reachability_ladder"]["rows"]]))
+    blocks.append((
+        "the weld along the ladder",
+        ("arena", "budget", "fibers (site/label/orient)", "fate",
+         "link-constant"),
+        ["| %s | %s | %s | %s | %s |"
+         % (row["arena"], row["budget"],
+            "/".join(str(row["inventory"][k]) for k in
+                     ("I-SITE-ASSIGNMENT", "I-DIRECTION-LABEL", "I-ORIENT")),
+            row["fate"], "yes" if row["link_constant"] else "no")
+         for row in R["weld"]["rows"] if row["reading"] == "EMBEDDING"]))
+    blocks.append((
+        "the declared driven window",
+        ("tag", "schedules", "budgets"),
+        ["| %s | %s | %s |" % (w["tag"], w["schedules"],
+                               ", ".join(str(b) for b in w["budgets"]))
+         for w in R["window"]["rows"]]))
+    blocks.append((
+        "the compulsory parallel classes",
+        ("record", "budget", "witnesses", "compulsory classes", "multisets"),
+        ["| %s | %s | %s | %s | %s |"
+         % (row["record"], row["budget"], com(row["witnesses"]),
+            ", ".join(row["compulsory"]) or "none", row["multisets"])
+         for row in R["dia"]["rows"]]))
+    blocks.append((
+        "the choice inventory",
+        ("#", "item", "class", "fiber", "where it binds"),
+        ["| %s | %s | %s | %s | %s |"
+         % (row["item"], row["name"], row["class"], row["fiber"],
+            row["binds"]) for row in R["choice_inventory"]]))
+    blocks.append((
+        "the persistence table",
+        ("invariant", "at the rung below", "here", "verdict", "independence"),
+        ["| %s | %s | %s | %s | %s |"
+         % (row["invariant"], row["at_the_rung_below"], row["here"],
+            row["verdict"], row["independence"])
+         for row in R["persistence"]["rows"]]))
+    return blocks
+
+
+def paper_tables(R):
+    """every rendered row of every measurement table -- HEADER ROWS INCLUDED
+    (E-22: a table row is a claim, and the header row is the claim that says
+    what the other rows are)."""
+    rows = []
+    for _name, header, data in paper_table_blocks(R):
+        rows.append("| " + " | ".join(str(h) for h in header) + " |")
+        rows.extend(data)
     return rows
 
 
@@ -3433,7 +4570,175 @@ EXEMPT = [
     ("148", "the seal-totality addendum's ledger number"),
     ("20", "the #20 paper-coverage discipline"),
     ("46", "the #46 provenance discipline"),
+    ("2026", "the year the L-1 sentence was retracted, a date in the wall "
+             "section rather than a measurement"),
 ]
+
+
+def fold_numwords(text):
+    """SPELLED NUMERALS COMPOSED, NOT DECOMPOSED.  `forty-two` is 42, not 40
+    beside 2, and `two hundred` is 200: a compound whose PARTS are both
+    receipt-backed but whose VALUE is not would otherwise pass the word
+    scanner.  Only genuine compounds -- two or more number-words joined by a
+    hyphen or a single space -- are returned, so the single-word scan and its
+    count are untouched."""
+    pat = "|".join(sorted(WORDNUM, key=len, reverse=True))
+    out = []
+    for m in re.finditer(r"\b(?:%s)(?:[- ](?:%s))+\b" % (pat, pat), text,
+                         re.I):
+        parts = [p.lower() for p in re.split(r"[- ]", m.group())]
+        total, cur = 0, 0
+        for p in parts:
+            v = WORDNUM[p]
+            if v >= 100:
+                cur = (cur or 1) * v
+                total += cur
+                cur = 0
+            else:
+                cur += v
+        out.append((m.group(), total + cur))
+    return out
+
+
+SENTENCE_NAMES = (
+    ("S-1", "this unit's own successor-register row, a name"),
+    ("S-2", "this unit's own successor-register row, a name"),
+    ("S-3", "this unit's own successor-register row, a name"),
+    ("S-4", "this unit's own successor-register row, a name"),
+    ("L-1", "the retracted lemma's name"),
+    ("AG(2,3)", "the committed affine plane's name"),
+    ("Z_3^2", "the site lattice's name"),
+    ("R6a", "a committed unit's name"),
+    ("R6b", "a committed unit's name"),
+    ("CR-B", "a committed unit's name"),
+    ("d42b1", "the committed transport layer's name"),
+    ("d60", "a committed layer's name"),
+    ("d66", "the committed constructor's name"),
+    ("I7", "the parent unit's name"),
+    ("W4-ANCHOR", "a declared window tag"),
+    ("W5-LADDER", "a declared window tag"),
+    ("W5-SEEDFAN", "a declared window tag"),
+    ("W5-CTRL", "a declared window tag"),
+    ("W6-DOOR", "a declared window tag"),
+    ("W6-CTRL", "a declared window tag"),
+    ("W5", "the declared window's name"),
+    ("E-22", "an engraving's name"),
+    ("E-23", "an engraving's name"),
+    ("E-24", "an engraving's name"),
+    ("4det", "this instrument's name for four times the determinant"),
+    ("q12", "I7's own name for the off-diagonal entry"),
+    ("G3-", "I7's d = 3 record family prefix, a name"),
+)
+
+
+def prose_sentences(text):
+    """the paper's PROSE, split into sentences: fenced blocks and table rows
+    are gated elsewhere (by multiset and row equality respectively) and are
+    cut out here so a sentence is a sentence."""
+    keep, infence = [], False
+    for ln in text.split("\n"):
+        if ln.startswith("```"):
+            infence = not infence
+            continue
+        if infence:
+            continue
+        t = ln.strip()
+        if t.startswith("|") and t.endswith("|"):
+            continue
+        keep.append(ln)
+    out = []
+    for para in re.split(r"\n\s*\n", "\n".join(keep)):
+        p = re.sub(r"\s+", " ", para).strip()
+        if not p:
+            continue
+        for s in re.split(r"(?<=[.!?])\s+(?=[A-Z*`\(\[\"])", p):
+            if s.strip():
+                out.append(s.strip())
+    return out
+
+
+def sentence_referents(R, text, claims):
+    """SENTENCE-LEVEL REFERENT BINDING (v14 #293's engraving, one universe
+    per sentence).  A numeral in a sentence that carries a rendered claim
+    belongs to that claim's census; a numeral sitting in the connective
+    tissue BETWEEN two rendered claims belongs to nothing, and that is
+    exactly where a true-looking false relation lives -- every numeral true,
+    the relation forged.  Here every sentence that carries at least one
+    rendered claim is required to carry NO numeral outside the claims it
+    carries, so a numeral appended to a claim's sentence has no referent and
+    dies."""
+    exempt = {e[0] for e in EXEMPT}
+    names = [norm(nm) for nm, _why in SENTENCE_NAMES]
+
+    def denamed(t):
+        t = norm(t)
+        for nm in names:
+            t = t.replace(nm, " ")
+        return t
+    nclaims = [(k, denamed(v)) for k, v in sorted(claims.items())
+               if denamed(v).strip()]
+    loose, checked = [], 0
+    for s in prose_sentences(text):
+        ns = denamed(s)
+        spans, carried = [], []
+        for k, nv in nclaims:
+            i = ns.find(nv)
+            if i >= 0:
+                spans.append((i, i + len(nv)))
+                carried.append(k)
+        if not carried:
+            continue
+        checked += 1
+        for m in re.finditer(r"(?<![0-9A-Za-z])\d[\d,]*(?:/\d+)?"
+                             r"(?![0-9A-Za-z])", ns):
+            tok = m.group().rstrip(",")
+            end = m.start() + len(tok)
+            if any(a <= m.start() and end <= b for a, b in spans):
+                continue
+            if tok in exempt or tok.replace(",", "") in exempt:
+                continue
+            loose.append({"numeral": tok, "claims": carried,
+                          "sentence": ns[:160]})
+    # THE RESIDUE.  The sentence rule above binds the sentences that carry a
+    # referent.  A numeral standing in a sentence that carries NONE is backed
+    # by the receipt-wide bag alone -- true of SOME census, of no stated one
+    # -- and that is the whole breadth of the allow-list, published here as a
+    # number instead of left implicit.  A paper whose residue is empty cannot
+    # carry a borrowed numeral anywhere in its prose.
+    reg = set(NUMREG)
+    bag = receipt_numbers(R)
+    nclaim_txt = [nv for _k, nv in nclaims]
+    residue = []
+    for s in prose_sentences(text):
+        ns = denamed(s)
+        spans = [(ns.find(nv), ns.find(nv) + len(nv))
+                 for nv in nclaim_txt if nv in ns]
+        for m in re.finditer(r"(?<![0-9A-Za-z])\d[\d,]*(?:/\d+)?"
+                             r"(?![0-9A-Za-z])", ns):
+            tok = m.group().rstrip(",")
+            flat = tok.replace(",", "")
+            if any(a <= m.start() and m.start() + len(tok) <= b
+                   for a, b in spans):
+                continue
+            if tok in exempt or flat in exempt or tok in reg or flat in reg:
+                continue
+            if tok in bag or flat in bag:
+                residue.append({"numeral": tok, "sentence": ns[:120]})
+    wresidue = []
+    for w in sorted({x.lower() for x in
+                     re.findall(r"\b(%s)\b" % "|".join(WORDNUM), text, re.I)}):
+        v = str(WORDNUM[w])
+        if v in exempt or v in reg:
+            continue
+        if v in bag:
+            wresidue.append({"word": w, "value": v})
+    return {"sentences_scanned": len(prose_sentences(text)),
+            "sentences_carrying_a_claim": checked,
+            "loose_numerals": loose,
+            "residue_numerals": residue,
+            "residue_number_words": wresidue,
+            "residue_ceiling": 0,
+            "declared_names": len(SENTENCE_NAMES)}
 
 
 def paper_body(text):
@@ -3489,12 +4794,16 @@ def paper_coverage(R, text):
         bad.append(tok)
     words = re.findall(r"\b(%s)\b" % "|".join(WORDNUM), text, re.I)
     badw = [w for w in words if str(WORDNUM[w.lower()]) not in allowed]
+    comp = fold_numwords(text)
+    badc = sorted({t for t, v in comp if str(v) not in allowed})
     fired = {}
     for lit, _why in EXEMPT:
         fired[lit] = len(re.findall(r"\b%s\b" % re.escape(lit), text))
     return {"numerals_scanned": len(seen), "unbacked": sorted(set(bad)),
             "number_words_scanned": len(words), "unbacked_words":
             sorted(set(w.lower() for w in badw)),
+            "compound_number_words": len(comp),
+            "unbacked_compounds": badc,
             "exemptions": len(EXEMPT),
             "exemptions_fired": sum(1 for v in fired.values() if v),
             "chars_scanned": len(text)}
@@ -3536,9 +4845,12 @@ def paper_polarity(R, text):
     return out
 
 
-def waiver_ledger(LD, mutants_for_gate):
+def waiver_ledger(names, mutants_for_gate):
     """#34: every gate is either falsified by a declared mutant or waived
-    with a machine-checked forcing that says why it cannot fail."""
+    with a machine-checked forcing that says why it cannot fail.  `names` is
+    the run's WHOLE gate set -- the ledger rows plus the closing gates that
+    are evaluated after the ledger is snapshotted -- so the denominator is
+    the run's own and not the subset standing when this is called."""
     waivers = {
         "G-SOURCES": "falsified by --break-anchor, which the selftest runs",
         "G-TRANSLATION": "a pure identity over the 2,520 translation-"
@@ -3550,10 +4862,6 @@ def waiver_ledger(LD, mutants_for_gate):
                    "float literal anywhere in either fires it",
         "G-TWO-WAY": "discharged by the fates the census exhibits; a mutant "
                      "that removes one fate fires the gate that measures it",
-        "G-WALL-BHS": "a scan of the declared surface; the interference "
-                      "mutant demonstrates the same scanner firing",
-        "G-WALL-KR": "a scan of the declared surface; the interference "
-                     "mutant demonstrates the same scanner firing",
         "G-PREDICTIONS": "an aggregate of three gates each separately "
                          "falsified",
         "G-COMPARATOR-INDEPENDENT": "an AST scan of this file's own two "
@@ -3565,16 +4873,154 @@ def waiver_ledger(LD, mutants_for_gate):
         "G-FALSIFIER-CODE": "an AST scan of this file's own mutant hooks; a "
                             "mutant that removed its hook would break the "
                             "declared-versus-hooked equality this gate IS",
-        "G-INTEGRITY-PRE": "the same seal and transcript comparison the "
-                           "terminal integrity gate takes, which the seal and "
-                           "transcript mutants falsify",
+        "G-POSDEF-COVERS": "a walk of every code of a box wider than this "
+                           "ladder reaches, by the same Sylvester value the "
+                           "census classifies with; a positive-definite code "
+                           "carrying a zero count anywhere in the box fires "
+                           "it, and the bridge mutant plants one",
+        "G-COVERAGE-HONEST": "this ledger itself -- a gate cannot be inside "
+                             "the object it audits.  Its falsifier is the "
+                             "unguarded list it publishes: a gate added "
+                             "without a mutant or a forcing fills it and the "
+                             "gate fails on its own row",
+        "G-SWEEP-EXECUTED": "the sweep-to-writer binding; its conjunction is "
+                            "RE-TAKEN as a conjunct of the terminal integrity "
+                            "gate, so a run whose sweep did not execute "
+                            "cannot write, and the mutants of that gate "
+                            "exercise the same conjunction",
+        "G-GATE-REGISTRY": "a comparison of this run's own evaluated gate "
+                           "names against the frozen registry the CLI "
+                           "prints; the registry mutant drops a name from it",
+        "G-CLOSING-WARRANT": "a comparison of the sealed warrant against the "
+                             "transcript it describes and an AST reading of "
+                             "this file's own write path; the warrant mutant "
+                             "corrupts the sealed row",
+        "G-SEAL-TOTAL": "the totality gate; it compares the seal manifest "
+                        "against the published key set, so a key published "
+                        "without a seal or a declared-unsealed row fires it, "
+                        "and no mutant can add a key without adding a gap",
+        "G-INTEGRITY": "the terminal disk-versus-seal comparison, taken "
+                       "against the STAGED bytes before they are promoted; "
+                       "it re-takes the pre-write gate's whole conjunction on "
+                       "the bytes actually written and additionally requires "
+                       "the corrupted probe to be detected, which the run "
+                       "demonstrates in line",
     }
     rows = []
-    for name in LD.names():
+    for name in names:
         rows.append({"gate": name, "mutants": mutants_for_gate.get(name, []),
-                     "waiver": waivers.get(name)})
+                     "waiver": waivers.get(name),
+                     "evaluated": name not in CLOSING_GATES})
     return rows
 
+
+# the three gates evaluated AFTER the ledger is snapshotted and sealed: a
+# totality gate cannot be inside the object it seals, and the integrity gates
+# run against the sealed payload and then against the staged bytes.
+CLOSING_GATES = ("G-SEAL-TOTAL", "G-INTEGRITY-PRE", "G-INTEGRITY")
+
+# the sealed warrant's two clauses, frozen here so the gate that checks them
+# compares strings rather than paraphrases
+WARRANT_TRANSCRIPT = (
+    "the closing gates are evaluated after the gate ledger is snapshotted and "
+    "sealed: a totality gate cannot be inside the object it seals.  The "
+    "archived transcript carries the rows of those evaluated before the write "
+    "-- G-SEAL-TOTAL and G-INTEGRITY-PRE -- while the sealed ledger does not; "
+    "the terminal integrity gate is evaluated against the STAGED bytes and "
+    "cannot appear in the file it validates")
+WARRANT_WRITE = (
+    "a run that fails any gate writes nothing at all: the payload is staged "
+    "beside its destination, the terminal integrity gate is taken against the "
+    "staged bytes, and the promotion runs only after it passes -- a run that "
+    "fails it removes its staging and leaves the committed artifacts "
+    "untouched")
+
+# the VOUCHING layer: the receipt keys published after the walls' scan is
+# taken.  Declared here so the walls' scope is data and a census key that
+# quietly moved outside the scan is caught.
+LATE_KEYS = (
+    "surface", "interference", "walls", "arithmetic", "reads", "verdict",
+    "head_independence", "paper_claims", "paper_tables", "coverage_scan",
+    "sentence_referents", "polarity", "paper_fences", "falsifiers",
+    "anchor_consumers", "wall_surface", "e24", "coverage", "sweep", "gates",
+    "closing_gates", "transcript_head", "transcript", "totals",
+    "seal_manifest",
+)
+
+# E-24: every published quantity of this unit is a CARDINALITY over an
+# exhaustively enumerated finite set.  Declared here with the set it counts,
+# and stamped COUNTING-ONLY in the receipt rather than in a sentence.
+E24_QUANTITIES = (
+    ("the round's object space", "arena/partitions",
+     "the partitions of the nine sites into three triples"),
+    ("the saturating partitions", "arena/saturating",
+     "the partitions attaining the top of the incidence spectrum"),
+    ("the admissible points of I7's committed box",
+     "i7/admissible_box_points", "I7's own declared count box"),
+    ("the declared homogeneous records", "parity/declared_total",
+     "I7's declared homogeneous record family"),
+    ("the reachable site codes at this budget", "code_space/%d" % ROUNDS,
+     "the R-fold sumset of the per-round alphabet"),
+    ("the covered site codes at this budget", "sig_feed/covered_codes",
+     "the reachable site codes with all three links present"),
+    ("the covering-class codes at this budget",
+     "sig_feed/covering_class_codes",
+     "the site codes carried by a covering R-tuple"),
+    ("the saturating stratum at this budget", "stratum/%d/total" % ROUNDS,
+     "the ordered saturating R-tuples"),
+    ("its covering tuples", "stratum/%d/cover" % ROUNDS,
+     "the ordered saturating R-tuples covering all 27 cells"),
+    ("the fields the stratum induces", "stratum/%d/distinct_fields" % ROUNDS,
+     "the distinct link fields induced by the saturating stratum"),
+    ("the fields its covering subset induces",
+     "stratum_fields/covering_subset/%d" % ROUNDS,
+     "the distinct link fields induced by the covering saturating R-tuples"),
+    ("the link-constant record at the rung above", "r6_door/counts/(2, 2, 2)",
+     "the ordered saturating sextuples inducing (2, 2, 2)"),
+    ("I7's G-SINGULAR at its own budget", "r6_door/counts/G-SINGULAR",
+     "the ordered saturating sextuples inducing (1, 1, 4)"),
+    ("the driven schedules of the declared window", "driven/schedules",
+     "the schedules of the declared window W5"),
+)
+
+# THE FROZEN GATE REGISTRY.  `--list-gates` prints this, and a gate compares
+# it against the names this run actually evaluated, so the printed registry
+# cannot drift from the run.
+GATES_DECLARED = (
+    "G-SOURCES", "G-ANCHORS", "G-I7-READOUT", "G-ARENA", "G-TRANSLATION",
+    "G-ALPHABET", "G-CODESPACE", "G-CLASS-SPLIT", "G-LOCKING",
+    "G-COVER-CODES", "G-SINGULAR-WITNESS", "G-CLASS-LADDER", "G-CLASS-WORDS",
+    "G-LIVE-CONTROL", "G-CEILING", "G-LOCK-GENERAL", "G-POSDEF-COVERS",
+    "G-PACK4", "G-SIG-FEED", "G-SATURATION-SCHEMA", "G-STRATUM",
+    "G-STRATUM-FIELDS", "G-LADDER", "G-RECORD-FLOORS", "G-PARITY",
+    "G-PRED-A", "G-PRED-B", "G-PRED-C", "G-PREDICTIONS", "G-SLACK",
+    "G-WELD-ROWS", "G-WELD-FIBER-LAW", "G-R6-DOOR", "G-SLICE-EXIT-FREE",
+    "G-DRIVER-ANCHOR", "G-DRIVEN-EQUALITY", "G-WINDOW-DECOMP", "G-FORCED",
+    "G-DIA-LAW", "G-INVENTORY", "G-PERSISTENCE", "G-INTERFERENCE-CLOSED",
+    "G-WALL-L1", "G-WALL-LORENTZ", "G-WALL-BHS", "G-WALL-KR", "G-TWO-WAY",
+    "G-EXACT", "G-READS", "G-HEAD-DERIVED", "G-COMPARATOR-INDEPENDENT",
+    "G-PAPER-CLAIMS", "G-PAPER-TABLES", "G-PAPER-COVERAGE",
+    "G-PAPER-SENTENCE", "G-PAPER-POLARITY", "G-PAPER-FENCES",
+    "G-FALSIFIER-CODE", "G-ANCHOR-CONSUMERS", "G-WALL-SURFACE",
+    "G-E24-STAMPS", "G-COVERAGE-HONEST", "G-SWEEP-EXECUTED",
+    "G-CLOSING-WARRANT", "G-GATE-REGISTRY", "G-SEAL-TOTAL",
+    "G-INTEGRITY-PRE", "G-INTEGRITY",
+)
+
+# the gates a NON-DELIVERY mode does not reach, declared with the mode that
+# skips them so the registry comparison is exact rather than a subset test
+MODE_CONDITIONAL = {
+    "G-WALL-L1": "evaluated only when an object under test is present",
+    "G-WALL-LORENTZ": "evaluated only when an object under test is present",
+    "G-PAPER-CLAIMS": "the paper gates, skipped by --numbers",
+    "G-PAPER-TABLES": "the paper gates, skipped by --numbers",
+    "G-PAPER-COVERAGE": "the paper gates, skipped by --numbers",
+    "G-PAPER-SENTENCE": "the paper gates, skipped by --numbers",
+    "G-PAPER-POLARITY": "the paper gates, skipped by --numbers",
+    "G-PAPER-FENCES": "the paper gates, skipped by --numbers",
+    "G-SWEEP-EXECUTED": "the sweep binding, taken only by a delivery run",
+    "G-INTEGRITY": "the terminal disk check, taken only by a writing run",
+}
 
 MUTANTS = {
     "M-ANCHOR": ("corrupts every verbatim needle by appending two characters "
@@ -3637,8 +5083,9 @@ MUTANTS = {
                "comparator sees it", "G-HEAD-DERIVED"),
     "M-SEAL": ("mutates a sealed receipt value between the gate and the "
                "write", "G-INTEGRITY-PRE"),
-    "M-TRANSCRIPT": ("appends a forged gate line to the transcript after the "
-                     "ledger is sealed", "G-INTEGRITY-PRE"),
+    "M-TRANSCRIPT": ("appends a forged NINE-SPACE-INDENTED line to the "
+                     "transcript after the ledger is sealed -- the shape an "
+                     "indentation whitelist admits", "G-INTEGRITY-PRE"),
     "M-I7-LINKS": ("reverses the declared link order read from I7's own "
                    "receipt", "G-I7-READOUT"),
     "M-ARENA": ("adds one to the closed-form partition count",
@@ -3663,6 +5110,56 @@ MUTANTS = {
                     "G-WELD-FIBER-LAW"),
     "M-FORCED": ("adds one to the builder's maxhits at every driven "
                  "schedule", "G-FORCED"),
+    "M-CLASS-WORDS": ("swaps the covering and saturating flags when the "
+                      "ladder's class labels are derived, so a class is "
+                      "printed under another class's words", "G-CLASS-WORDS"),
+    "M-LIVE-CONTROL": ("adds one incidence to every cell of the bare-live "
+                       "control's field", "G-LIVE-CONTROL"),
+    "M-CEILING": ("lowers the covering class's maximum cell count at the "
+                  "rung above this one", "G-CEILING"),
+    "M-LOCK-GENERAL": ("reports the locked union as covering at every budget",
+                       "G-LOCK-GENERAL"),
+    "M-BRIDGE": ("plants a positive-definite code carrying a zero count in "
+                 "the bridge census", "G-POSDEF-COVERS"),
+    "M-PACK4": ("raises the largest measured cell count to the packing's "
+                "capacity", "G-PACK4"),
+    "M-FIELDS": ("copies the whole stratum's field count onto its covering "
+                 "subset's", "G-STRATUM-FIELDS"),
+    "M-RECORD-FLOOR": ("empties G-INDEF's census at its own budget",
+                       "G-RECORD-FLOORS"),
+    "M-DIA-EXT": ("reports a compulsory class at the link-constant records "
+                  "outside this budget", "G-DIA-LAW"),
+    "M-WINDOW": ("moves one schedule from the budget-4 anchor to the seed "
+                 "fan in the window decomposition", "G-WINDOW-DECOMP"),
+    "M-SPREAD": ("collapses the label fiber's spread to its headline value "
+                 "at every unmotivated arena", "G-WELD-ROWS"),
+    "M-READS": ("adds an undeclared source to the run's own reads register",
+                "G-READS"),
+    "M-HEADERS": ("swaps two column labels of the first rendered table "
+                  "header", "G-PAPER-TABLES"),
+    "M-SENTENCE": ("appends a numeral from another census to a rendered "
+                   "claim's sentence in the paper under test",
+                   "G-PAPER-SENTENCE"),
+    "M-ANCHOR-GATE": ("re-points every verbatim anchor at a gate that does "
+                      "not exist", "G-ANCHOR-CONSUMERS"),
+    "M-SURFACE": ("drops a census key from the walls' declared scanned "
+                  "surface", "G-WALL-SURFACE"),
+    "M-STAMPS": ("re-stamps a counting-only quantity as a density",
+                 "G-E24-STAMPS"),
+    "M-REGISTRY": ("drops a name from the frozen gate registry the CLI "
+                   "prints", "G-GATE-REGISTRY"),
+    "M-WARRANT": ("corrupts the sealed closing-gate warrant's transcript "
+                  "clause", "G-CLOSING-WARRANT"),
+    "M-TAIL": ("appends a forged transcript line carrying a closing gate's "
+               "name -- the second shape a containment whitelist admits",
+               "G-INTEGRITY-PRE"),
+    "M-RESIDUE": ("plants the DIA census's own class frequency, SPELLED, in "
+                  "a referent-free sentence of the paper under test -- a "
+                  "value true of a census in this receipt and of no claim",
+                  "G-PAPER-SENTENCE"),
+    "M-RESIDUE-N": ("plants the same DIA class frequency IN DIGITS in a "
+                    "referent-free sentence of the paper under test -- the "
+                    "residue's other list", "G-PAPER-SENTENCE"),
 }
 
 
@@ -3740,25 +5237,48 @@ def finish(LD, SEAL, R, src, tree, ptext, ptext_nm, do_paper, write, swept,
                "claims %d, matched %d, missing %s"
                % (len(claims), len(claims) - len(missing), missing))
 
+        blocks = paper_table_blocks(R)
+        headers = ["| " + " | ".join(str(h) for h in hd) + " |"
+                   for _n, hd, _d in blocks]
         want = paper_tables(R)
         want = pick("M-PAPER-TABLE", want,
                     want[:-1] + [want[-1].replace("|", "!", 1)])
+
+        def _swap_cells(row):
+            cells = row.split(" | ")
+            if len(cells) > 3:
+                cells[1], cells[2] = cells[2], cells[1]
+            return " | ".join(cells)
+        want = pick("M-HEADERS", want,
+                    [_swap_cells(w) if w == headers[0] else w for w in want])
         have = markdown_table_rows(ptext)
         havec = [canon(h) for h in have]
         badrows = [w for w in want if havec.count(canon(w)) != 1]
         R["paper_tables"] = SEAL.take("paper_tables",
                                       {"rendered": len(want),
+                                       "tables": len(blocks),
+                                       "headers": headers,
+                                       "data_rows": len(want) - len(blocks),
                                        "rows_in_the_paper": len(have),
                                        "not_exactly_once": badrows})
         LD.add("G-PAPER-TABLES",
-               not badrows and len(want) > 0,
+               not badrows and len(want) > 0
+               and len(headers) == len(blocks)
+               and len(set(headers)) == len(headers),
                "EVERY CELL OF EVERY MEASUREMENT TABLE IS RENDERED FROM THE "
-               "RECEIPT AND REQUIRED TO OCCUR EXACTLY ONCE (E-22).  A table "
-               "row is a claim: a forged cell dies even when every numeral "
-               "in it is receipt-backed, and a duplicated row dies too",
-               "rendered rows %d, table rows in the paper %d, rows not "
-               "occurring exactly once %d"
-               % (len(want), len(have), len(badrows)))
+               "RECEIPT AND REQUIRED TO OCCUR EXACTLY ONCE (E-22) -- THE "
+               "HEADER ROWS INCLUDED.  A table row is a claim: a forged cell "
+               "dies even when every numeral in it is receipt-backed, and a "
+               "duplicated row dies too.  The HEADER row is the claim that "
+               "says what the other rows ARE, so it is rendered from the "
+               "receipt on the same terms, and every class-naming header is "
+               "derived from the predicate its column's number was computed "
+               "with -- a swapped column label is then a claim about a "
+               "predicate this file does not compute, and dies here",
+               "tables %d, header rows %d, data rows %d, rendered rows %d, "
+               "table rows in the paper %d, rows not occurring exactly once %d"
+               % (len(blocks), len(headers), len(want) - len(blocks),
+                  len(want), len(have), len(badrows)))
 
         cov = paper_coverage(R, pick("M-PAPER-COVERAGE", ptext,
                                      ptext + "\n\nan unbacked count: "
@@ -3766,6 +5286,7 @@ def finish(LD, SEAL, R, src, tree, ptext, ptext_nm, do_paper, write, swept,
         R["coverage_scan"] = SEAL.take("coverage_scan", cov)
         LD.add("G-PAPER-COVERAGE",
                not cov["unbacked"] and not cov["unbacked_words"]
+               and not cov["unbacked_compounds"]
                and cov["exemptions_fired"] == cov["exemptions"],
                "NUMERAL COVERAGE SCANS THE WHOLE PAPER -- PROSE, TABLES, "
                "INLINE CODE SPANS AND THE FENCED VERDICT BLOCKS -- AGAINST "
@@ -3774,11 +5295,62 @@ def finish(LD, SEAL, R, src, tree, ptext, ptext_nm, do_paper, write, swept,
                "with a reason per literal, every one of which must fire.  "
                "The spelled-out numbers are scanned on the same terms",
                "numerals scanned %d, unbacked %s, number-words scanned %d, "
-               "unbacked %s, exemptions fired %d of %d, chars %d"
+               "unbacked %s, compound number-words %d, unbacked %s, "
+               "exemptions fired %d of %d, chars %d"
                % (cov["numerals_scanned"], cov["unbacked"],
                   cov["number_words_scanned"], cov["unbacked_words"],
+                  cov["compound_number_words"], cov["unbacked_compounds"],
                   cov["exemptions_fired"], cov["exemptions"],
                   cov["chars_scanned"]))
+
+        sent_txt = pick("M-SENTENCE", ptext,
+                        ptext.replace("the determinant support is {",
+                                      "over 72 classes the determinant "
+                                      "support is {", 1))
+        # THE TWO RESIDUE LEGS, FALSIFIED SEPARATELY.  The planted value is
+        # the DIA census's own parallel-class frequency -- true of a census
+        # in this very receipt, false of the sentence it is planted in, and
+        # registered by no claim.  Spelled (M-RESIDUE) and in digits
+        # (M-RESIDUE-N), because the gate tests the two on separate lists.
+        sent_txt = pick("M-RESIDUE", sent_txt,
+                        sent_txt.replace("Read out.",
+                                         "Read out.  There are sixty "
+                                         "rungs here.", 1))
+        sent_txt = pick("M-RESIDUE-N", sent_txt,
+                        sent_txt.replace("Read out.",
+                                         "Read out.  There are 60 "
+                                         "rungs here.", 1))
+        sent = sentence_referents(R, sent_txt, claims)
+        R["sentence_referents"] = SEAL.take("sentence_referents", sent)
+        LD.add("G-PAPER-SENTENCE",
+               not sent["loose_numerals"]
+               and len(sent["residue_numerals"]) <= sent["residue_ceiling"]
+               and len(sent["residue_number_words"]) <= sent["residue_ceiling"]
+               and sent["sentences_carrying_a_claim"] > 0,
+               "ONE UNIVERSE PER SENTENCE: EVERY NUMERAL OF A SENTENCE THAT "
+               "CARRIES A RENDERED CLAIM BELONGS TO THAT CLAIM.  A numeral "
+               "that is true of SOME census in this receipt can be false of "
+               "the sentence it is standing in -- every numeral backed, the "
+               "RELATION forged -- and a receipt-wide allow-list cannot see "
+               "it.  So each prose sentence carrying at least one rendered "
+               "claim is required to carry no numeral outside the spans of "
+               "the claims it carries, with the declared object NAMES "
+               "removed first; a numeral appended to a claim's sentence has "
+               "no referent and dies here.  AND THE RESIDUE IS PUBLISHED: a "
+               "numeral -- spelled or not -- standing in a sentence that "
+               "carries no referent at all and backed by nothing but the "
+               "receipt read as a bag is counted against a declared ceiling, "
+               "so the breadth of the allow-list is a measured number and "
+               "not an implicit licence",
+               "sentences scanned %d, carrying a claim %d, declared names %d, "
+               "numerals with no referent %s; residue against a ceiling of "
+               "%d: %s numerals, %s number-words"
+               % (sent["sentences_scanned"],
+                  sent["sentences_carrying_a_claim"], sent["declared_names"],
+                  [x["numeral"] for x in sent["loose_numerals"]],
+                  sent["residue_ceiling"],
+                  [x["numeral"] for x in sent["residue_numerals"]],
+                  [x["word"] for x in sent["residue_number_words"]]))
 
         pol = paper_polarity(R, pick(
             "M-PAPER-POLARITY", ptext_nm,
@@ -3846,28 +5418,149 @@ def finish(LD, SEAL, R, src, tree, ptext, ptext_nm, do_paper, write, swept,
            "published %d" % (len(declared), len(hooked), len(const_bool),
                              sum(d["hooks"] for d in desc_ok)))
 
+    # ---- THE ANCHORS' CONSUMERS, ENFORCED --------------------------------
+    anchor_rows2 = pick("M-ANCHOR-GATE", R["anchors"],
+                        [dict(a, gate="G-DOES-NOT-EXIST") for a in R["anchors"]])
+    evaluated = set(LD.names())
+    named = sorted({a["gate"] for a in anchor_rows2})
+    phantom = sorted(g for g in named if g not in evaluated)
+    R["anchor_consumers"] = SEAL.take("anchor_consumers", {
+        "anchors": len(anchor_rows2), "gates_named": named,
+        "phantom_gates": phantom,
+        "gates_evaluated_when_checked": len(evaluated)})
+    LD.add("G-ANCHOR-CONSUMERS",
+           not phantom and len(named) > 0
+           and all(a["gate"] for a in anchor_rows2),
+           "EVERY VERBATIM ANCHOR'S NAMED CONSUMER IS A GATE THIS RUN "
+           "ACTUALLY EVALUATED.  The anchor register records, for each "
+           "needle, the gate that consumes it; recording it is not enforcing "
+           "it, and a register whose consumers are never checked admits a "
+           "phantom.  Here every gate named by an anchor is required to be in "
+           "this run's own evaluated gate list at the close, so an anchor "
+           "pointed at a gate that does not exist -- or at one that never "
+           "ran -- dies",
+           "anchors %d naming %d distinct gates, phantom consumers %s, gates "
+           "evaluated when checked %d"
+           % (len(anchor_rows2), len(named), phantom, len(evaluated)))
+
+    # ---- THE WALL SURFACE'S SCOPE, MADE DATA -----------------------------
+    late = sorted(k for k in R if k not in set(R["surface"]
+                                               ["scanned_receipt_keys"]))
+    undeclared_late = [k for k in late if k not in LATE_KEYS]
+    inside = [k for k in R["surface"]["scanned_receipt_keys"]
+              if k in LATE_KEYS]
+    R["wall_surface"] = SEAL.take("wall_surface", {
+        "keys_published": len(R) + 1,
+        "keys_scanned": R["surface"]["scanned_receipt_key_count"],
+        "keys_outside_the_scan": late,
+        "declared_outside": list(LATE_KEYS),
+        "undeclared_outside": undeclared_late,
+        "reason": "the keys outside the scan are the VOUCHING layer, "
+                  "published after the census closes and sealed and gated in "
+                  "its own right; the wall and interference rows among them "
+                  "necessarily quote the very words the scan bans, which is "
+                  "why the scan is taken before they exist"})
+    LD.add("G-WALL-SURFACE",
+           not undeclared_late and not inside
+           and R["surface"]["paper_body_included"] is True
+           and R["surface"]["verdict_segments_included"] > 0,
+           "THE WALLS' DECLARED SURFACE IS ENUMERATED, AND WHAT IS OUTSIDE IT "
+           "IS DECLARED.  A scan that claims to cover `every published receipt "
+           "key` and covers two thirds of them is a false vouching row.  This "
+           "run enumerates the keys its wall scans actually cover, lists the "
+           "keys published after the scan, and requires that list to be "
+           "exactly the DECLARED vouching layer -- so a census key that "
+           "quietly moved outside the scan is caught.  The four derived "
+           "verdict segments are inside the surface, so a banned reading in "
+           "the head is seen",
+           "keys published %d, scanned %d, outside %d (all declared %s), "
+           "declared-late keys found inside %s, verdict segments in the "
+           "surface %d, paper body in the surface %s"
+           % (len(R) + 1, R["surface"]["scanned_receipt_key_count"],
+              len(late), not undeclared_late, inside,
+              R["surface"]["verdict_segments_included"],
+              R["surface"]["paper_body_included"]))
+
+    # ---- E-24: THE COUNTING-ONLY STAMPS, ACTUALLY EMITTED ----------------
+    stamps = []
+    for q, path, universe in E24_QUANTITIES:
+        try:
+            val = jpath(R, path)
+        except Exception:
+            val = None
+        stamps.append({"quantity": q, "path": path, "value": val,
+                       "measure": "COUNTING-ONLY", "universe": universe})
+    stamps = pick("M-STAMPS", stamps,
+                  [dict(s0, measure="A DENSITY") if i == 0 else s0
+                   for i, s0 in enumerate(stamps)])
+    dens = R["prediction_c"].get("richer_in_denominators", {})
+    R["e24"] = SEAL.take("e24", {
+        "stamps": stamps, "stamped": len(stamps),
+        "counter_column_denominators": dens,
+        "statement": "every quantity this unit publishes is a CARDINALITY "
+                     "over an exhaustively enumerated finite set, stamped "
+                     "COUNTING-ONLY beside its own universe; no typicality "
+                     "claim rests on any of them, and the one counter-column "
+                     "of ratios carries its denominators beside its "
+                     "numerators"})
+    LD.add("G-E24-STAMPS",
+           all(s0["measure"] == "COUNTING-ONLY" for s0 in stamps)
+           and all(isinstance(s0["value"], int) and not isinstance(
+               s0["value"], bool) for s0 in stamps)
+           and len(stamps) == len(E24_QUANTITIES)
+           and set(dens) == set(R["prediction_c"]["richer_in"]),
+           "E-24: EVERY PUBLISHED QUANTITY CARRIES ITS MEASURE AND ITS "
+           "UNIVERSE, AND THE STAMP IS IN THE RECEIPT RATHER THAN IN A "
+           "SENTENCE ABOUT THE RECEIPT.  A paper that says its counts are "
+           "counting-only and stamps nothing has written an adjective; here "
+           "each published cardinality is stamped COUNTING-ONLY beside the "
+           "finite set it counts, each stamped value is checked to be an "
+           "integer, and the counter-column's every pair carries its own "
+           "denominators -- so a ratio cannot be read off a numerator alone",
+           "quantities stamped %d, all COUNTING-ONLY %s, counter-column pairs "
+           "with denominators %d of %d"
+           % (len(stamps),
+              all(s0["measure"] == "COUNTING-ONLY" for s0 in stamps),
+              len(dens), len(R["prediction_c"]["richer_in"])))
+
     gate_of = {}
     for name, (_d, gate) in MUTANTS.items():
         gate_of.setdefault(gate, []).append(name)
-    led = waiver_ledger(LD, gate_of)
+    # THE HONEST DENOMINATOR IS THE RUN'S WHOLE GATE SET -- the rows sealed in
+    # the ledger PLUS the declared closing gates, which are evaluated after
+    # the ledger is snapshotted and would otherwise be counted by nobody.
+    projected = list(LD.names()) + ["G-COVERAGE-HONEST"] \
+        + (["G-SWEEP-EXECUTED"] if swept else []) \
+        + ["G-CLOSING-WARRANT", "G-GATE-REGISTRY"] + list(CLOSING_GATES)
+    led = waiver_ledger(projected, gate_of)
     naked = [r["gate"] for r in led if not r["mutants"] and not r["waiver"]]
     R["coverage"] = SEAL.take("coverage", {
         "gates": len(led), "rows": led,
+        "gates_evaluated_when_the_ledger_is_built": len(LD.rows),
+        "closing_gates_projected": list(CLOSING_GATES),
         "gates_with_a_declared_mutant": sum(1 for r in led if r["mutants"]),
         "gates_with_a_forcing_waiver": sum(1 for r in led if r["waiver"]
                                            and not r["mutants"]),
         "unguarded": naked})
     LD.add("G-COVERAGE-HONEST",
-           not naked,
+           not naked and len(led) == len(set(led_r["gate"] for led_r in led))
+           and len(led) > len(LD.rows),
            "THE COVERAGE LEDGER IS HONEST: EVERY GATE IS EITHER FALSIFIED BY "
            "A DECLARED MUTANT OR WAIVED WITH A FORCING THAT SAYS WHY IT "
-           "CANNOT FAIL.  The denominator is this run's own gate count "
-           "rather than a hand-kept number, and a gate with neither is "
-           "reported as unguarded",
-           "gates %d, with a mutant %d, with a forcing waiver %d, unguarded "
-           "%s" % (len(led), sum(1 for r in led if r["mutants"]),
-                   sum(1 for r in led if r["waiver"] and not r["mutants"]),
-                   naked))
+           "CANNOT FAIL.  The denominator is the run's WHOLE gate set -- the "
+           "rows already in the ledger plus this gate, the sweep binding and "
+           "the three declared closing gates, every one of which is evaluated "
+           "after the ledger is snapshotted and would otherwise be audited by "
+           "nobody -- so the denominator is strictly larger than the number "
+           "of gates standing when it is built, and a gate with neither a "
+           "mutant nor a forcing is reported as unguarded",
+           "gates %d (%d evaluated when the ledger is built, %d projected "
+           "closing rows), with a mutant %d, with a forcing waiver %d, "
+           "unguarded %s"
+           % (len(led), len(LD.rows), len(led) - len(LD.rows) - 1,
+              sum(1 for r in led if r["mutants"]),
+              sum(1 for r in led if r["waiver"] and not r["mutants"]),
+              naked))
 
     if swept:
         on_target = [r for r in sweep_rows if r["killed_at"] == r["gate"]]
@@ -3886,26 +5579,125 @@ def finish(LD, SEAL, R, src, tree, ptext, ptext_nm, do_paper, write, swept,
                "declared %d, rows %d, on target %d"
                % (len(MUTANTS), len(sweep_rows), len(on_target)))
 
+    # ---- THE CLOSING WARRANT, TRUE IN BOTH ITS CLAUSES ------------------
+    # A sealed vouching row that says what the code does must be checked
+    # against the code.  Clause one is checked against the transcript the run
+    # is about to write; clause two is checked by READING THIS FILE'S OWN
+    # WRITE PATH: the terminal integrity gate must be evaluated BEFORE the
+    # promotion, so a run that fails it promotes nothing.
+    fin_fn = [n for n in ast.walk(tree)
+              if isinstance(n, ast.FunctionDef) and n.name == "finish"][0]
+
+    def _call_lines(fn, owner, attr, first_arg=None):
+        """the source lines of `owner.attr(...)` inside `fn` -- the OWNER is
+        matched too, so a string's own `.replace` is not read as a
+        promotion."""
+        out = []
+        for n in ast.walk(fn):
+            if not (isinstance(n, ast.Call)
+                    and isinstance(n.func, ast.Attribute)
+                    and n.func.attr == attr
+                    and isinstance(n.func.value, ast.Name)
+                    and n.func.value.id == owner):
+                continue
+            if first_arg is not None:
+                if not (n.args and isinstance(n.args[0], ast.Constant)
+                        and n.args[0].value == first_arg):
+                    continue
+            out.append(n.lineno)
+        return sorted(out)
+    integ_at = _call_lines(fin_fn, "LD", "add", "G-INTEGRITY")
+    promote_at = _call_lines(fin_fn, "os", "replace")
+    readback_first = bool(integ_at) and bool(promote_at) \
+        and min(promote_at) > max(integ_at)
+    in_artifact = [g for g in CLOSING_GATES if g != "G-INTEGRITY"]
+    closing_decl = {
+        "names": list(CLOSING_GATES),
+        "in_the_artifact": in_artifact,
+        "not_in_the_artifact": ["G-INTEGRITY"],
+        "warrant_transcript": WARRANT_TRANSCRIPT,
+        "warrant_write": WARRANT_WRITE,
+        "integrity_evaluated_at_source_line": integ_at,
+        "promotion_at_source_line": promote_at,
+        "read_back_before_promotion": readback_first}
+    closing_decl = pick("M-WARRANT", closing_decl,
+                        dict(closing_decl,
+                             warrant_transcript="the archived transcript "
+                                                "carries all three rows"))
+    LD.add("G-CLOSING-WARRANT",
+           closing_decl["warrant_transcript"] == WARRANT_TRANSCRIPT
+           and closing_decl["warrant_write"] == WARRANT_WRITE
+           and closing_decl["names"] == list(CLOSING_GATES)
+           and closing_decl["in_the_artifact"] == in_artifact
+           and readback_first,
+           "THE SEALED CLOSING WARRANT IS TRUE IN BOTH ITS CLAUSES, AND BOTH "
+           "ARE CHECKED RATHER THAN ASSERTED.  Clause one names which closing "
+           "rows the archived transcript carries -- the two evaluated before "
+           "the write -- and the terminal integrity row, which cannot appear "
+           "in the file it validates; the transcript gate below compares the "
+           "artifact's tail against exactly those rows.  Clause two says a "
+           "failing run writes nothing, and it is checked by READING THIS "
+           "FILE: the payload is staged beside its destination, the integrity "
+           "gate is evaluated against the staged bytes, and the promotion "
+           "call appears strictly after it in this function's own syntax "
+           "tree, so a failing run cannot promote",
+           "closing gates %s, carried in the artifact %s; integrity gate "
+           "evaluated at source line %s, promotion at %s, read-back before "
+           "promotion %s"
+           % (closing_decl["names"], closing_decl["in_the_artifact"],
+              integ_at, promote_at, readback_first))
+
+    # ---- THE FROZEN GATE REGISTRY, COMPARED AGAINST THE RUN -------------
+    declared_gates = pick("M-REGISTRY", list(GATES_DECLARED),
+                          list(GATES_DECLARED)[1:])
+    evaluated_names = list(LD.names())
+    future = set(CLOSING_GATES) | {"G-GATE-REGISTRY"}
+    unknown = [g for g in evaluated_names if g not in set(declared_gates)]
+    missing = [g for g in declared_gates
+               if g not in set(evaluated_names) | future]
+    undeclared_skips = [g for g in missing if g not in MODE_CONDITIONAL]
+    order_ok = [g for g in declared_gates if g in set(evaluated_names)] \
+        == evaluated_names
+    R["gate_registry"] = SEAL.take("gate_registry", {
+        "declared": declared_gates, "declared_count": len(declared_gates),
+        "evaluated": evaluated_names, "evaluated_count": len(evaluated_names),
+        "closing_still_to_come": sorted(future),
+        "skipped_in_this_mode": missing,
+        "mode_conditional": MODE_CONDITIONAL,
+        "unknown_gates": unknown, "undeclared_skips": undeclared_skips,
+        "in_declared_order": order_ok})
+    LD.add("G-GATE-REGISTRY",
+           not unknown and not undeclared_skips and order_ok
+           and len(set(declared_gates)) == len(declared_gates)
+           and len(declared_gates) == len(GATES_DECLARED),
+           "THE GATE REGISTRY THE CLI PRINTS IS THIS RUN'S OWN GATE SET.  A "
+           "`--list-gates` that enumerates the falsifiable gates and calls "
+           "them the gates is an undisclosed convention; here the registry is "
+           "frozen in the source, printed by the CLI, and compared against "
+           "the names this run actually evaluated -- every evaluated gate "
+           "must be in it, in its declared ORDER, and every declared gate not "
+           "evaluated must either be a closing gate still to come or carry a "
+           "declared reason why this mode skips it",
+           "declared %d, evaluated %d, still to come %d, skipped in this mode "
+           "%s, unknown %s, in declared order %s"
+           % (len(declared_gates), len(evaluated_names), len(future),
+              missing, unknown, order_ok))
+
+    R["closing_gates"] = SEAL.take("closing_gates", closing_decl)
     R["gates"] = SEAL.take("gates", {"rows": [dict(g) for g in LD.rows],
                                      "count": len(LD.rows),
                                      "chain": LD.chain[:12]})
-    R["closing_gates"] = SEAL.take("closing_gates", {
-        "names": ["G-SEAL-TOTAL", "G-INTEGRITY-PRE", "G-INTEGRITY"],
-        "warrant": "these three are evaluated after the gate ledger is "
-                   "snapshotted and sealed: a totality gate cannot be inside "
-                   "the object it seals, and the integrity gates run against "
-                   "the sealed payload and then against the bytes on disk.  "
-                   "The archived transcript therefore carries their rows "
-                   "while the sealed ledger does not, and a run that fails "
-                   "any gate writes nothing at all"})
     snap = list(LINES)
+    snap_rows = len(LD.rows)
     R["transcript_head"] = SEAL.take("transcript_head", snap[:3])
     R["transcript"] = SEAL.take("transcript", {
         "lines_sealed": len(snap),
         "digest": hashlib.sha256("\n".join(snap).encode()).hexdigest()[:12],
-        "closing_lines": "the rows of the closing gates named in "
-                         "closing_gates, and nothing else, may follow the "
-                         "sealed prefix in the artifact"})
+        "closing_lines": "the artifact's tail must EQUAL, line for line, the "
+                         "rows of the closing gates carried in it, rendered "
+                         "from the ledger; there is no whitelist, so neither "
+                         "an indented line nor a line merely containing a "
+                         "closing gate's name is admitted"})
     R["totals"] = SEAL.take("totals", {
         "gates": len(LD.rows), "sources": len(SOURCES),
         "anchors": len(VERBATIM), "mutants": len(MUTANTS),
@@ -3941,15 +5733,35 @@ def finish(LD, SEAL, R, src, tree, ptext, ptext_nm, do_paper, write, swept,
     if mut("M-SEAL"):
         payload["totals"]["gates"] += 1
     bad = SEAL.verify(payload)
+
+    def rendered_tail():
+        """THE ARTIFACT'S EXPECTED TAIL, RENDERED FROM THE LEDGER ITSELF.
+        Every gate row the ledger has taken since the transcript prefix was
+        sealed is re-rendered here in the writer's own format; the tail of
+        the text is then required to EQUAL it, line for line.  There is no
+        whitelist to defeat: neither a nine-space-indented line nor a line
+        merely containing a closing gate's name is admitted."""
+        out = []
+        for r0 in LD.rows[snap_rows:]:
+            out.append("  [%s] %s" % ("PASS" if r0["pass"] else "FAIL",
+                                      r0["gate"]))
+            out.append("         %s" % r0["statement"])
+            out.append("         evidence: %s" % r0["evidence"])
+        return out
+
+    def transcript_ok(txt):
+        tl = txt.rstrip("\n").split("\n")
+        pre = (hashlib.sha256("\n".join(tl[:len(snap)]).encode())
+               .hexdigest()[:12] == R["transcript"]["digest"])
+        return pre, tl[len(snap):] == rendered_tail(), len(tl) - len(snap)
+
     text = "\n".join(LINES) + "\n"
-    text = pick("M-TRANSCRIPT", text, text + "  [PASS] G-FORGED\n")
-    tl = text.rstrip("\n").split("\n")
-    pre_ok = (hashlib.sha256("\n".join(tl[:len(snap)]).encode())
-              .hexdigest()[:12] == R["transcript"]["digest"])
-    closing = R["closing_gates"]["names"]
-    tail = [ln for ln in tl[len(snap):] if ln.strip()]
-    tail_ok = all(any(g in ln for g in closing) or ln.startswith(" " * 9)
-                  for ln in tail)
+    text = pick("M-TRANSCRIPT", text,
+                text + " " * 9 + "FORGED: the covering class and the "
+                "positive-definite class\n")
+    text = pick("M-TAIL", text,
+                text + "  [PASS] G-SEAL-TOTAL  forged twin row\n")
+    pre_ok, tail_ok, ntail = transcript_ok(text)
     LD.add("G-INTEGRITY-PRE",
            not bad and pre_ok and tail_ok,
            "THE PAYLOAD ABOUT TO BE WRITTEN IS THE PAYLOAD THAT WAS SEALED.  "
@@ -3957,50 +5769,69 @@ def finish(LD, SEAL, R, src, tree, ptext, ptext_nm, do_paper, write, swept,
            "compared against the digest taken at gate time, so a value that "
            "moved between its gate and the write is caught before any byte "
            "reaches the disk.  THE TRANSCRIPT IS COVERED LINE BY LINE ON THE "
-           "SAME TERMS: the sealed prefix is re-digested from the text about "
-           "to be written and every line after it must belong to a declared "
-           "closing gate, so a forged late line dies here and not only at "
-           "the artifact",
+           "SAME TERMS, AND BY EQUALITY RATHER THAN BY WHITELIST: the sealed "
+           "prefix is re-digested from the text about to be written, and the "
+           "lines after it must EQUAL the closing rows rendered from the "
+           "ledger itself -- so a forged line dies whatever it is indented "
+           "by and whatever gate name it happens to contain",
            "sealed keys %d, mismatches %s, transcript prefix %d lines "
-           "re-digested %s, trailing lines %d all declared %s"
-           % (len(SEAL.seals), bad, len(snap), pre_ok, len(tail), tail_ok))
+           "re-digested %s, trailing lines %d equal to the rendered closing "
+           "rows %s" % (len(SEAL.seals), bad, len(snap), pre_ok, ntail,
+                        tail_ok))
 
     if write:
+        # THE PROMOTION IS DOWNSTREAM OF THE READ-BACK.  The payload is
+        # staged beside its destination, the terminal gate is taken against
+        # the STAGED bytes, and only a run that passes it promotes; a run
+        # that fails removes its staging, so it leaves nothing behind.
+        text = "\n".join(LINES) + "\n"
         tmp_j = OUT_JSON + ".tmp"
         tmp_t = OUT_TXT + ".tmp"
         with open(tmp_j, "w") as fh:
             json.dump(payload, fh, indent=1, sort_keys=True, default=str)
         with open(tmp_t, "w") as fh:
             fh.write(text)
-        os.replace(tmp_j, OUT_JSON)
-        os.replace(tmp_t, OUT_TXT)
-        disk = json.loads(read_text(OUT_JSON, "ARTIFACT"))
+        disk = json.loads(read_text(tmp_j, "ARTIFACT"))
         bad2 = SEAL.verify(disk)
-        dl = read_text(OUT_TXT, "ARTIFACT").rstrip("\n").split("\n")
-        pre_ok = (hashlib.sha256("\n".join(dl[:len(snap)]).encode())
-                  .hexdigest()[:12] == R["transcript"]["digest"])
-        tail = [ln for ln in dl[len(snap):] if ln.strip()]
-        tail_ok = all(any(g in ln for g in closing) or ln.startswith(" " * 9)
-                      for ln in tail)
+        pre_ok, tail_ok, ntail = transcript_ok(read_text(tmp_t, "ARTIFACT"))
         probe = json.loads(json.dumps(disk))
         probe["totals"]["gates"] = -1
         detected = bool(SEAL.verify(probe))
-        LD.add("G-INTEGRITY",
-               not bad2 and detected and swept and pre_ok and tail_ok,
-               "THE BYTES ON DISK ARE THE BYTES THAT WERE SEALED, AND THE "
-               "CHECK IS SHOWN TO BE ABLE TO FAIL.  The artifact is re-read "
-               "from disk and every sealed key is compared against its "
-               "gate-time digest; a deliberately corrupted probe of the same "
-               "payload is then shown to be detected, and the writer is "
-               "downstream of an executed mutant sweep.  THE TRANSCRIPT IS "
-               "COVERED LINE BY LINE: the sealed prefix is re-digested from "
-               "the bytes on disk and every line after it must belong to a "
-               "declared closing gate, so a forged late line dies",
-               "sealed keys %d, disk mismatches %s, corrupted probe detected "
-               "%s, sweep executed %s, transcript prefix %d lines re-digested "
-               "%s, trailing lines %d all declared %s"
-               % (len(SEAL.seals), bad2, detected, swept, len(snap), pre_ok,
-                  len(tail), tail_ok))
+        art_reads = sorted({r0["path"] for r0 in READS
+                            if r0["category"] == "ARTIFACT"})
+        art_ok = art_reads == sorted({os.path.relpath(tmp_j, REPO),
+                                      os.path.relpath(tmp_t, REPO)})
+        try:
+            LD.add("G-INTEGRITY",
+                   not bad2 and detected and swept and pre_ok and tail_ok
+                   and art_ok,
+                   "THE BYTES THAT WILL BE PROMOTED ARE THE BYTES THAT WERE "
+                   "SEALED, AND THE CHECK IS SHOWN TO BE ABLE TO FAIL.  The "
+                   "staged artifact is re-read FROM DISK before any promotion "
+                   "and every sealed key is compared against its gate-time "
+                   "digest; a deliberately corrupted probe of the same "
+                   "payload is then shown to be detected, the writer is "
+                   "downstream of an executed mutant sweep, and the run's own "
+                   "reads register is checked to hold exactly the two staged "
+                   "files it just read.  THE TRANSCRIPT IS COVERED BY "
+                   "EQUALITY: the sealed prefix is re-digested from the bytes "
+                   "on disk and the lines after it must equal the closing "
+                   "rows rendered from the ledger.  Only then are the staged "
+                   "files promoted, so a run that fails here leaves the "
+                   "committed artifacts untouched",
+                   "sealed keys %d, staged mismatches %s, corrupted probe "
+                   "detected %s, sweep executed %s, transcript prefix %d "
+                   "lines re-digested %s, trailing lines %d equal to the "
+                   "rendered closing rows %s, staged reads %s"
+                   % (len(SEAL.seals), bad2, detected, swept, len(snap),
+                      pre_ok, ntail, tail_ok, art_ok))
+        except GateFail:
+            for tmp in (tmp_j, tmp_t):
+                if os.path.exists(tmp):
+                    os.remove(tmp)
+            raise
+        os.replace(tmp_j, OUT_JSON)
+        os.replace(tmp_t, OUT_TXT)
     return payload, text
 
 
@@ -4093,7 +5924,7 @@ def main(argv=None):
         return 2
     mode, arg = opt["mode"], opt["arg"]
     if mode == "--list-gates":
-        for g in sorted({v[1] for v in MUTANTS.values()}):
+        for g in GATES_DECLARED:
             print(g)
         return 0
     if mode == "--list-mutants":
@@ -4117,6 +5948,7 @@ def main(argv=None):
     paper_text = None
     if os.path.isfile(paper_path):
         paper_text = read_text(paper_path, "OBJECT-UNDER-TEST")
+        OBJECT_READ[0] = dict(READS[-1])
     if mode == "--selftest":
         got = selftest(paper_text)
         print("selftest: corrupted anchor died at %s" % got)
