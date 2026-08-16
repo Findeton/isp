@@ -12190,3 +12190,34 @@ own PARTIAL; 10 of 22 head fields never round-tripped.
 same clause yields 2/3/4/5 across arms); the REFUSED
 controls (stronger than claimed); the ANT asymmetry
 sentence already exactly right.**  K1/K3 out.
+
+## 2026-08-16 — HOR K3 (INSTRUMENT) FROZEN: AWF; NO PHYSICS MOVED IN 76 INJECTIONS; THE FOUR FALSE CARDINALITIES CONFIRMED; TWO OPENINGS CHARGED TO THE TEMPLATE; THE PANEL IS COMPLETE (v14 LEDGER #381)
+
+**Review:** v14/review-hor-instrument.md (f00b04eaf9f3,
+501 lines).  Grade AWF.  60 of 76 injections caught; 43/43
+mutants out-of-harness at declared gates (42/43 re-proved
+by evidence-string movement); byte ×2 off-tree; 8/8
+direction flips died through two independent gates.
+MAJORS: the four false published cardinalities (57/48 vs
+58/49 vs the true 56/47 — typed offsets, +500 runs at exit
+0; the partition itself sound); the E-31 AST leg blind to
+%-formatted evidence strings (106 of 238 scanned — exactly
+where the false numbers live); 3/3 walls pass re-voiced
+bans (controls written from their own patterns — family-c
+obligation 7 unmet); 13 of 30 path-value anchors never
+consumed (all still value-gated); both machine-checked
+forcings tautologies; cross-universe referent first-match;
+the in-process falsifier badge certifies a surrogate.
+**RULING FOR ADJUDICATION: the side-artifact promotion
+window and the read-set multiset/.tmp exemption are
+INHERITED VERBATIM from era_template.py — the TEMPLATE's
+successor register, not HOR's charge.**  Conformance: 2
+CONFORM, 4 one-leg-open, 3 GAP.  **THE PANEL IS COMPLETE
+(K1 #379 / K2 #378 / K3 here): ~994 recomputations, zero
+physics moved, the 11/1/6 recount two-seat convergent.
+Adjudication next.**
+
+## 2026-08-16 — HOR ADJUDICATED: REPAIR ORDERED; THE CENSUS RECOUNTED 11/1/6; NATIVE STANDS; TPL-2 REGISTERED (v14 LEDGER #382)
+
+note-hor-adjudication.md committed (rulings above).  The
+repair worker launches next; REC's panel continues.
