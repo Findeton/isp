@@ -11540,3 +11540,44 @@ stray read of the under-repair sec file; the #119
 promotion-totality; the both-ways fence multiset;
 full 38-sweep).  Four battery-stage continuation repairs
 running (POT / SPC / EPR / SEC per #354).  Board: 7.
+
+## 2026-08-15 — SEC-2 K2 (EFFECTUS) FROZEN: ACCEPT-WITH-FIXES; 1,593 RECOMPUTATIONS; **THE ERA'S FIRST TWO FALSE DELIVERED NUMERALS — BOTH IN A TYPED-NOT-COMPUTED COLUMN**; MOTIVATED-AT-0 PROMOTED TO A THEOREM; SEC'S REPAIR TAKES NO CORRECTION (v14 LEDGER #356)
+
+**Review:** v14/review-sec2-effectus.md (edd2dee0e2d5, 687
+lines).  Grade ACCEPT-WITH-FIXES; 8 majors, 9 minors.
+**THE TWO FALSE NUMBERS (the unit's first, the era's
+first in a delivered paper):** the §4.2 declaration-fiber
+column is TYPED in WINDOW_TARGETS — measured at the
+instrument's own representative and all 54 aligned
+gluings: ONE-AT-ONE-SEAM 27 → 24 distinct declarations;
+ONE-AT-EVERY-SEAM 9 → 8; and the window declares only 24
+of 36 cross links (forward only) while §3.3 argues both
+signs — three numbers standing for one choice.  **The
+no-typed-counts discipline exists precisely for this; the
+zero-false-COMPUTED-numbers invariant survives, and the
+lesson is engraved: the disease's first realized harm.**
+**RE-RULINGS:** the count leg IS an axis (lawful at 11 of
+30 cells, not 6; the driven crossing COUNT-DEAD at
+QUOTIENT+POSITIVE and ALIVE at NON-NEGATIVE at three
+targets) — **the real result unwritten: exactly ONE target
+is lawful with all three delivered legs intact.**
+SEAM-CONFINED over-scoped (the paper's own driven arenas
+carry 2 and 1 count≠1 pairs touching unshared actors — a
+missing universe, no SEC contradiction).  IRREDUCIBLE
+licensed with the relativization "at every criterion the
+pin named" (price-minimisation exactly as un-licensed as
+max-determinant).  **MOTIVATED-AT-0 PROMOTED TO A
+THEOREM** (3 actors, ≤2 crossings ⇒ a lawful group doubles
+≥1 link; all 216 inventories computed, 108×free-2 +
+108×free-3; the orbit-invariance gate owed per #87).  The
+gauge sentence licensed at three scopes with a measured
+bonus (at r=1 all 36 targets admit even undeclared links).
+The fifth currency's check vacuous (4k==4k; additivity =
+S-3's open).  The "demand" sentence agency-flagged.
+**MANDATE RULING: both sharpenings are SEC-2 findings
+about SEC's DECLARATIONS, not SEC errata — SEC's repair
+worker takes NO correction from this unit** (established
+against SEC's committed bytes).  Everything else
+reproduces exactly (the 49-row table entry for entry;
+31→8 with the direct sum excluded; 216/72; the blindness
+censuses with orbit match).  K1/K3 still out.
