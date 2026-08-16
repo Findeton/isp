@@ -11414,3 +11414,30 @@ ordered; ZERO physics values changed.**  Four extra
 defects found+fixed incl. two typed-count gate statements
 and a no-op falsifier caught by the worker's own sweep.
 **Orchestrator battery next; terminal on green.**
+
+## 2026-08-15 — NDEP IS TERMINAL: THIRTY — STRUCTURE UNIVERSAL, QUANTITY LOCAL; NOTHING MEASURED SELECTS NINE (v14 LEDGER #352)
+
+**Orchestrator battery on the repaired object, ALL GREEN:**
+byte-identical regeneration from deleted artifacts; ×2;
+seed-invariant; unknown flag exit 2; selftest anchors dying
+at G-PROVENANCE writing nothing; MUT-ANCHOR-VALUE dead at
+G-PARENT-ANCHORS; artifacts untouched and matching #351.
+STATUS row appended in this commit; memory sealed next.
+
+**THE TERMINAL PICTURE.**  The user's "why 9" question at
+its sealed form: the laws whose statements carry no
+numeral transport verbatim between universes; every
+constant in any law is size-dressed (7 of 7 under the
+uniform rule); the era's strongest suspected
+9-fingerprint (mod-3) split into a DECLARED half (the
+ladder modulus = L, proved by re-appearance at n=4 with
+the confound closed) and a FIELD-DERIVED half (the coin,
+per paper-20, with a falsifiable untested prediction
+m=2-at-AG(2,2) for the successor).  9 is the size of this
+laboratory, not a commandment; if anything selects it, it
+must live in unswept territory (prices, composability) —
+the constitutive route is measured closed at the first
+non-trivial point.
+
+**Programme count: THIRTY terminals; zero false computed
+numbers surviving anywhere in v14.**
