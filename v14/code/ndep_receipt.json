@@ -23,7 +23,7 @@
    },
    {
     "axis": "PROVENANCE",
-    "text": "THREE HASH-PINNED SOURCES read at run time; the FAC objects carried as frozen declared constants at commit f4172ea because their worktree copies are under repair (#46)."
+    "text": "FOUR HASH-PINNED SOURCES read at run time -- this unit's pin, AID's paper and committed receipt, and paper-20 for the coin's derived connection group; the FAC objects carried as frozen declared constants at commit f4172ea because their worktree copies are under repair (#46)."
    }
   ]
  },
@@ -37,45 +37,45 @@
    "waiver": null
   },
   {
-   "evidence": "scanned 355 of 355 reference, unbacked [], spelled 104 unbacked [], fenced 95, inline spans 4, fences multiset-equal True, exemptions 0 declared / 0 fired, dangling refs []",
+   "evidence": "scanned 531 of 531 reference, unbacked [], spelled 179 of 179 reference unbacked [], fenced 135, inline spans 4, fences multiset-equal True (fences not required: none), exemptions 0 declared / 0 fired, dangling refs []",
    "gate": "G-PAPER-COVERAGE",
    "passed": true,
    "statement": "EVERY NUMERAL OF THE PAPER IS BACKED, INCLUDING THOSE IN FENCED BLOCKS, INLINE CODE SPANS AND TABLES (#20 + E-22).  The allow list is this run's own registry plus the receipt it publishes; the declared exemption table is EMPTY and an exemption that fires on nothing is itself a failure; spelled numerals are scanned on the same terms; and the verdict fences are gated by MULTISET equality rather than containment.  The scan's own coverage is measured against a reference count taken over the whole paper",
    "waiver": null
   },
   {
-   "evidence": "claims 13, unsupported none",
+   "evidence": "claims 19, unsupported none, absent from the paper none, polarity partners present none",
    "gate": "G-PAPER-CLAIMS",
    "passed": true,
-   "statement": "EVERY LOAD-BEARING SENTENCE OF THE PAPER IS SUPPORTED BY A MEASURED VALUE, AND THE SUPPORT IS EVALUATED HERE RATHER THAN ASSERTED IN THE PROSE.  Thirteen claims, each a predicate over the receipt's own objects; a claim whose predicate is false kills the run before anything is written",
+   "statement": "EVERY LOAD-BEARING SENTENCE OF THE PAPER IS SUPPORTED BY A MEASURED VALUE, AND THE SENTENCE IS THEN LOOKED FOR IN THE PAPER.  Each claim is rendered from the receipt's own objects, each carries a predicate that could be false, and each carries a POLARITY PARTNER -- the same sentence with its direction inverted -- which must be absent.  A gate that only evaluated its own predicate would never see the prose, and a paper that flipped 'transports' to 'does not transport' would pass it",
    "waiver": null
   },
   {
-   "evidence": "tables 4, rows bound 18, missing none",
+   "evidence": "tables 6, rows bound 28, missing none; paper table rows 28, unaccounted none",
    "gate": "G-PAPER-TABLES",
    "passed": true,
-   "statement": "EVERY PUBLISHED TABLE IS BOUND TO THE PAPER ROW BY ROW, HEADER INCLUDED.  A table whose header row were renamed would be a different table making a different claim, so the header is bound on the same terms as the data rows",
+   "statement": "EVERY PUBLISHED TABLE IS BOUND TO THE PAPER ROW BY ROW, HEADER INCLUDED, AND THE PAPER'S TABLE ROWS ARE EXHAUSTED BY THE RENDERED TABLES.  A table whose header row were renamed would be a different table making a different claim, so the header is bound on the same terms as the data rows; and a table the run does not render is a table the run cannot check, so an unaccounted row -- a fabricated corpus row, a transposed header -- fails here rather than passing in silence",
    "waiver": null
   },
   {
-   "evidence": "axes 5, failing none, dead axes none",
+   "evidence": "axes 6, failing none, dead axes none",
    "gate": "G-PAPER-CLAIM-POLARITY",
    "passed": true,
    "statement": "EVERY POLARITY AXIS IS CHECKED IN BOTH DIRECTIONS AND EVERY AXIS IS LIVE.  The licensed word must be present AND its forbidden partner absent; an axis whose negative could not have occurred is disclosed as such rather than counted as a pass",
    "waiver": null
   },
   {
-   "evidence": "walls 5, hits none, probes firing 5 of 5",
+   "evidence": "walls 5, patterns 16, hits none, controls caught {'WALL-NINE-DERIVED': '3 of 3', 'WALL-ARBITRARY': '3 of 3', 'WALL-N9-REDERIVED': '3 of 3', 'WALL-N16-COMPLETE': '3 of 3', 'WALL-PROBABILITY': '3 of 3'}",
    "gate": "G-WALLS-SCAN-THE-PAPER",
    "passed": true,
-   "statement": "THE READING WALLS SCAN THE PAPER AND ARE THEMSELVES EXERCISED.  Five forbidden readings; each pattern is run against the paper (zero hits required) AND against a probe sentence built to trip it (a hit required), so a wall that could never fire is caught by its own positive control",
+   "statement": "THE READING WALLS SCAN THE PAPER, AND EACH IS A SEMANTIC FAMILY EXERCISED BY THREE CONTROLS IT WAS NOT WRITTEN FROM.  Five forbidden readings, each carrying several patterns spanning the ways the reading is actually written; every pattern is run against the paper (zero hits required) and every control sentence must be caught by some pattern of its wall.  A pattern lifted from the one sentence its own probe is written from proves only that a regex matches the string it was copied out of -- so the controls include violation sentences written by a hand other than the pattern's",
    "waiver": null
   },
   {
-   "evidence": "bindings 5, unbound none",
+   "evidence": "bindings 5, unbound in prose none, sitting beside a wrong noun none",
    "gate": "G-NOUN-BINDING",
    "passed": true,
-   "statement": "EVERY HEADLINE COUNT IS BOUND TO ITS REFERENT IN THE PAPER, ADJACENT.  A numeral that appears anywhere in the paper does not discharge the obligation; the gate requires the numeral within three words of the noun it counts, so a count silently attached to the wrong universe fails",
+   "statement": "EVERY HEADLINE COUNT IS BOUND TO ITS REFERENT IN THE PROSE, AND NO COUNT SITS BESIDE THE WRONG ONE.  A numeral that appears anywhere in the paper does not discharge the obligation, and neither does an occurrence inside a verdict fence the run itself renders -- that would test the machine's output against itself.  So the first leg is taken over the PROSE only, and the second is universal and negative: no registered count may appear within three words of a DIFFERENT registered noun anywhere in the paper, which is the cross-universe plant an existential gate cannot see",
    "waiver": null
   },
   {
@@ -86,35 +86,35 @@
    "waiver": null
   },
   {
-   "evidence": "mutants 27, hooks present 27, waiver rows 3",
+   "evidence": "mutants 46, hooks present 46, waiver rows 3",
    "gate": "G-REACHABILITY",
    "passed": true,
    "statement": "EVERY DECLARED FALSIFIER HAS A HOOK IN THIS SOURCE AND EVERY PUBLISHED WAIVER IS A DISCLOSURE WITH A MECHANISM (#34, E-23).  A mutant named in the registry but absent from the code is dead text; a waiver with no forcing is a false badge.  Three rows are carried and none of them is a never-falsified pass",
    "waiver": null
   },
   {
-   "evidence": "sweep rows 0, off-target none",
+   "evidence": "sweep rows 0, stamp 'NOT RUN IN THIS ARTIFACT: the committed ', off-target none",
    "gate": "G-SWEEP-BOUND",
    "passed": true,
-   "statement": "THE MUTANT SWEEP, WHEN RUN, IS BOUND TO ITS DECLARED TARGETS.  Every mutant must die at the gate its registry row NAMES -- 'died' and 'died where it said it would' are two different facts -- and must leave both artifacts untouched",
+   "statement": "THE MUTANT SWEEP, WHEN RUN, IS BOUND TO ITS DECLARED TARGETS, AND WHEN NOT RUN IT SAYS SO.  Every mutant must die at the gate its registry row NAMES -- 'died' and 'died where it said it would' are two different facts -- and must leave both artifacts untouched.  A sweep of zero rows passes all([]) vacuously, so the artifact carries an explicit NOT-RUN stamp rather than a silent zero",
    "waiver": null
   },
   {
-   "evidence": "census {'gates': 39, 'seals_taken_before_this_gate': 18, 'falsifiers': 27, 'windows': 9, 'byte_anchors': 3, 'path_value_anchors': 10, 'verbatim_anchors': 6, 'walls': 5, 'noun_bindings': 5, 'polarity_axes': 5, 'control_arms': 13, 'tables': 4, 'claims': 13}",
+   "evidence": "census {'gates': 42, 'seals_taken_before_this_gate': 20, 'falsifiers': 46, 'windows': 10, 'byte_anchors': 4, 'path_value_anchors': 11, 'verbatim_anchors': 8, 'walls': 5, 'wall_patterns': 16, 'wall_controls': 15, 'noun_bindings': 5, 'polarity_axes': 6, 'verbatim_consumptions': 8, 'numeral_transport_rows': 7, 'control_arms': 13, 'tables': 6, 'claims': 19}",
    "gate": "G-COVERAGE",
    "passed": true,
    "statement": "THE INSTRUMENT'S OWN CENSUS IS PUBLISHED AND CHECKED FOR EMPTINESS.  Gates, seals, falsifiers, windows, the three anchor kinds, walls, referent bindings, polarity axes, control arms, tables and claims are counted from the live objects rather than typed, and every category is required non-empty -- a category with no members is an instrument that is not there",
    "waiver": null
   },
   {
-   "evidence": "gates 40, closing gates declared 15, absent none",
+   "evidence": "gates 43, closing gates declared 16, absent none",
    "gate": "G-GATE-ACCOUNTING",
    "passed": true,
    "statement": "THE GATE LEDGER IS COMPLETE AND EVERY DECLARED CLOSING GATE RAN.  The totals are computed from the live ledger rather than typed, and every gate named in the closing list is a gate this run evaluated",
    "waiver": null
   },
   {
-   "evidence": "seals 34 over 35 published keys, missing none, extra none, declared-unsealed that were sealed none, phantom gate names none, manifest gaps none; CLOSED FIGURES: gates 42 all passed, seals 34",
+   "evidence": "seals 36 over 37 published keys, missing none, extra none, declared-unsealed that were sealed none, phantom gate names none, manifest gaps none; CLOSED FIGURES: gates 45 all passed, seals 36",
    "gate": "G-SEAL-TOTALITY",
    "passed": true,
    "statement": "THE SEAL MANIFEST IS TOTAL AND EVERY SEAL'S DECLARED GATE ACTUALLY RAN (#119 + #148).  Every published receipt key is either sealed at the gate that established it or named in the declared-unsealed list, and every gate name that a seal, a verbatim anchor or a path-value anchor attributes itself to is a gate this run evaluated -- a seal naming a gate that never runs publishes a false provenance over a real object",
@@ -135,6 +135,7 @@
   "G-NO-FLOATS",
   "G-GATE-ACCOUNTING",
   "G-SEAL-TOTALITY",
+  "G-SEAL-PROMOTION-TOTALITY",
   "G-TRANSCRIPT-INTEGRITY",
   "G-ARTIFACT-INTEGRITY"
  ],
@@ -308,6 +309,7 @@
    "R_window": 3
   },
   "cells": 8,
+  "characteristic": 2,
   "class_names": [
    "ROW",
    "COL",
@@ -345,50 +347,143 @@
     "schedules": 34
    }
   },
+  "distinct_event_multisets": 12,
+  "distinct_event_sequences": 33,
+  "distinct_event_sets": 7,
   "groupings": 3,
   "histories": 48,
   "max_round_incidence": 4,
   "n": 4,
   "parallel_classes": 3,
   "q": 2,
-  "saturating": 2
+  "saturating": 2,
+  "saturating_are_the_parallel_classes": true
  },
  "counts": {
+  "abstract_subgroups_q4": 67,
   "actor_lattice_n4": 15,
+  "atoms_are_the_signature_blocks_at_n4": 53,
   "attained_floor_n16": 6,
   "attained_floor_n4": 2,
   "breaks": 0,
+  "c1_schedules_n4": 2,
+  "census_non_unique_n4": 3,
+  "census_unique_n4": 45,
+  "characteristic_n4": 2,
   "chart_n4": 3,
+  "coin_pairs_n4": 144991,
   "coset_menu_n4": 5,
+  "coset_partitions_n4": 5,
+  "coset_survivors_n4": 5,
+  "counting_bound_n16": 4,
+  "f_q_subspaces_q4": 7,
   "forced_n4": 45,
+  "groupings_of_sixteen_sites": 2627625,
   "histories_n4": 48,
+  "ladder_search_bound_n16": 8,
+  "ladder_search_bound_n4": 7,
+  "ladder_set_n16": [
+   4,
+   8
+  ],
+  "ladder_sets": {
+   "1": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "2": [
+    2,
+    4,
+    6
+   ],
+   "3": [
+    3,
+    6
+   ]
+  },
   "laws": 5,
+  "leg4_reached_n4": 51,
+  "leg_pairs_universe_n4": 720,
+  "links_generate_q4": 8,
+  "n4": 4,
+  "n4_max_incidence": 4,
   "needs_root": 2,
   "numerals_q_carried": 6,
-  "numerals_tested": 6,
+  "numerals_q_carried_under_the_declared_uniform_rule": 7,
+  "numerals_tested": 7,
   "offset": 1,
+  "parent_attained_floor_n9": 4,
+  "parent_schedule_time_n9": 5,
+  "path_anchors": 11,
   "portable": 3,
+  "predicted_coin_modulus_n4": 2,
+  "q3_budget": 9,
+  "q3_first_rung": 3,
+  "q3_ladder_set": [
+   3,
+   6
+  ],
+  "q3_links": 3,
+  "q3_max_incidence": 9,
+  "q3_saturating": 36,
+  "redundant_at_n4": 2,
+  "route_prefix_sequences_n4": 87,
+  "route_prefixes_n4": 53,
+  "route_window_comparisons_n16": 505920,
+  "route_window_histories_n16": 24,
+  "route_window_positive_empty_prefix_n16": 29760,
+  "route_window_positive_n16": 49536,
+  "saturation_budget_q4": 16,
+  "saturation_witness_incidence_q4": 48,
   "schedule_time_n16": 7,
   "schedule_time_n4": 3,
-  "unique_factorization_n4": 45
+  "subgroups_of_T_n4": 5,
+  "translation_group_order_q4": 16,
+  "union_of_admissible_n4": 4,
+  "unique_factorization_n4": 45,
+  "weight_floor_n16": 6,
+  "weight_floor_n4": 2,
+  "weight_floor_n9": 4,
+  "words": {
+   "chart_count": "NEEDS-3",
+   "coset_count": "NEEDS-3",
+   "floor": "NEEDS-3",
+   "forcing_count": "NEEDS-3",
+   "ladder": "NEEDS-3",
+   "offset": "LAW-IN-N",
+   "offset_stamp": "UNDISCRIMINATED",
+   "offset_under_the_rule": "NEEDS-3",
+   "time": "NEEDS-3"
+  }
  },
  "coverage": {
-  "byte_anchors": 3,
-  "claims": 13,
+  "byte_anchors": 4,
+  "claims": 19,
   "control_arms": 13,
-  "falsifiers": 27,
-  "gates": 39,
+  "falsifiers": 46,
+  "gates": 42,
   "noun_bindings": 5,
-  "path_value_anchors": 10,
-  "polarity_axes": 5,
-  "seals_taken_before_this_gate": 18,
-  "tables": 4,
-  "verbatim_anchors": 6,
+  "numeral_transport_rows": 7,
+  "path_value_anchors": 11,
+  "polarity_axes": 6,
+  "seals_taken_before_this_gate": 20,
+  "tables": 6,
+  "verbatim_anchors": 8,
+  "verbatim_consumptions": 8,
+  "wall_controls": 15,
+  "wall_patterns": 16,
   "walls": 5,
-  "windows": 9
+  "windows": 10
  },
  "fidelity": {
   "L": 3,
+  "budget_n": 9,
+  "characteristic": 3,
   "flat_tuples": {
    "here": 276,
    "parent": 276
@@ -397,13 +492,59 @@
    "here": 280,
    "parent": 280
   },
+  "homogeneous_budgets_over_all_saturating": [
+   3,
+   6
+  ],
+  "homogeneous_ladder_rows": [
+   {
+    "R": 1,
+    "achievable": false,
+    "how": "DERIVED-FROM-THE-MEASURED-MASS"
+   },
+   {
+    "R": 2,
+    "achievable": false,
+    "how": "DERIVED-FROM-THE-MEASURED-MASS"
+   },
+   {
+    "R": 3,
+    "achievable": true,
+    "how": "EXHAUSTIVE-UNDER-THE-CEILING"
+   },
+   {
+    "R": 4,
+    "achievable": false,
+    "how": "DERIVED-FROM-THE-MEASURED-MASS"
+   },
+   {
+    "R": 5,
+    "achievable": false,
+    "how": "DERIVED-FROM-THE-MEASURED-MASS"
+   },
+   {
+    "R": 6,
+    "achievable": true,
+    "how": "EXHAUSTIVE-UNDER-THE-CEILING"
+   },
+   {
+    "R": 7,
+    "achievable": false,
+    "how": "DERIVED-FROM-THE-MEASURED-MASS"
+   }
+  ],
+  "max_round_incidence": 9,
   "n": 9,
   "q": 3,
   "saturating": {
    "here": 36,
    "parent": 36
   },
-  "stamp": "FIDELITY-LEG-ONLY: no n = 9 law is evaluated at q = 3 here and no n = 9 finding is produced here",
+  "saturating_incidence_masses": [
+   9
+  ],
+  "saturation_is_maximal": true,
+  "stamp": "FIDELITY-LEG-ONLY (W-Q3): no n = 9 LAW VALUE is evaluated at q = 3 here and no n = 9 finding is produced here.  The five substrate counts ARE re-derived and compared with the parent's anchored ones -- that comparison is the leg -- and two further q = 3 SUBSTRATE quantities are measured because two clauses of this paper are about them: the maximum round incidence and the achievable homogeneous budgets",
   "strict_tuples": {
    "here": 72,
    "parent": 72
@@ -415,24 +556,24 @@
  },
  "gates": [
   {
-   "evidence": "sources 3, mismatches none, fac carried at commit f4172ea",
+   "evidence": "sources 4, mismatches none, fac carried at commit f4172ea",
    "gate": "G-PROVENANCE",
    "passed": true,
-   "statement": "EVERY PINNED SOURCE IS PRESENT AND ITS BYTES ARE THE DECLARED ONES (#91).  Three files are read as sources at run time and each carries a sha256-12 fixed in this unit's frozen declaration; a fourth parent (FAC) is carried by COMMIT and digest and is deliberately NOT read, because its worktree copy is under repair.  No subprocess is invoked and no repository state outside the declaration is touched",
+   "statement": "EVERY PINNED SOURCE IS PRESENT AND ITS BYTES ARE THE DECLARED ONES (#91).  4 files are read as sources at run time -- this unit's pin, AID's paper and committed receipt, and paper-20 -- and each carries a sha256-12 fixed in this unit's frozen declaration; one further parent (FAC) is carried by COMMIT and digest and is deliberately NOT read, because its worktree copy is under repair.  No subprocess is invoked and no repository state outside the declaration is touched",
    "waiver": null
   },
   {
-   "evidence": "anchors 10, mismatches none, consumers 4",
+   "evidence": "anchors 11, mismatches none, consumers 5",
    "gate": "G-PARENT-ANCHORS",
    "passed": true,
-   "statement": "THE PARENT'S VALUES ARE READ BY PATH AND THE (PATH, VALUE) PAIR IS ANCHORED (#20).  Ten rows of AID's committed receipt are read at declared JSON paths and compared with the values this unit froze; a path drift that silently substitutes another number dies here.  Every row names the gate that CONSUMES it, and every named consumer is a gate this run evaluates (checked at G-SEAL-TOTALITY)",
+   "statement": "THE PARENT'S VALUES ARE READ BY PATH AND THE (PATH, VALUE) PAIR IS ANCHORED (#20).  Every row of AID's committed receipt this unit consumes is read at a declared JSON path and compared with the value this unit froze; the count is in the evidence and not in this sentence; a path drift that silently substitutes another number dies here.  Every row names the gate that CONSUMES it, and every named consumer is a gate this run evaluates (checked at G-SEAL-TOTALITY)",
    "waiver": null
   },
   {
-   "evidence": "quotes 6, failures none, shortest 52 chars",
+   "evidence": "quotes 8, failures none, shortest 52 chars",
    "gate": "G-VERBATIM",
    "passed": true,
-   "statement": "THE QUOTATIONS ARE THE PARENT'S OWN BYTES (#62 as amended).  Six quotations carry the parent laws into this unit; each is matched against the pinned source's bytes under the full text normalisation with a length floor, and each is bound to a NAMED consumer gate that reads the quotation's content rather than its existence.  This gate is evaluated BEFORE the byte anchors are consumed anywhere downstream",
+   "statement": "THE QUOTATIONS ARE THE PARENT'S OWN BYTES (#62 as amended).  The quotations carry the parent laws into this unit; each is matched against the pinned source's bytes under the full text normalisation with a length floor, and each is bound to a NAMED consumer gate that reads the quotation's content rather than its existence.  This gate is evaluated BEFORE the byte anchors are consumed anywhere downstream",
    "waiver": null
   },
   {
@@ -443,35 +584,35 @@
    "waiver": null
   },
   {
-   "evidence": "windows 9, entire 6, partial ['W-N16-CLASS', 'W-N16-PERM', 'W-Q3']",
+   "evidence": "windows 10, entire 5, partial ['W-LSWEEP', 'W-N16-CLASS', 'W-N16-PERM', 'W-Q3', 'W-LADDER-SEARCH'], every partial window's declaration states its exclusion True",
    "gate": "G-WINDOWS-DISCLOSED",
    "passed": true,
-   "statement": "EVERY WINDOW IS DECLARED, AND WHETHER IT IS ENTIRE IS PART OF THE DECLARATION.  Nine windows; the six marked entire are whole classes with no sampling, and the three that are not carry the reason in their own text -- the q = 4 saturating census, S_16, and the q = 3 fidelity leg",
+   "statement": "EVERY WINDOW IS DECLARED, WHETHER IT IS ENTIRE IS PART OF THE DECLARATION, AND EVERY PARTIAL WINDOW CARRIES ITS OWN REASON AND ITS OWN BOUND IN ITS OWN TEXT.  The counts below are taken from the live declaration and not typed; a partial window whose text did not say what it excludes -- the q = 4 saturating census, the unfiltered S_16, the q = 3 leg, the R-bound of the ladder sweeps -- dies here",
    "waiver": null
   },
   {
-   "evidence": "rows agreeing 5 of 5 (groupings, saturating, strict_tuples, flat_tuples, window); disagreeing none",
+   "evidence": "rows agreeing 5 of 5 (groupings, saturating, strict_tuples, flat_tuples, window); disagreeing none; q = 3 max round incidence 9 against budget 9, saturation maximal True; q = 3 homogeneous budgets over all 36 saturating groupings [3, 6]",
    "gate": "G-CONSTRUCTOR-FIDELITY",
    "passed": true,
-   "statement": "THE PARAMETERISED CONSTRUCTOR REPRODUCES THE PARENT'S SUBSTRATE AT q = 3, ROW BY ROW.  The same code that builds the n = 4 arena is run at q = 3 and its five substrate counts are compared -- each against the value read at its own anchored path in AID's committed receipt, per object and never as a total.  This is what licenses 'the same grammar' for the n = 4 build; it is a FIDELITY LEG and not a finding, and the receipt row says so",
+   "statement": "THE PARAMETERISED CONSTRUCTOR REPRODUCES THE PARENT'S SUBSTRATE AT q = 3, ROW BY ROW.  The same code that builds the n = 4 arena is run at q = 3 and its five substrate counts are compared -- each against the value read at its own anchored path in AID's committed receipt, per object and never as a total.  This is what licenses 'the same grammar' for the n = 4 build; it is a FIDELITY LEG and not a finding, and the receipt row says so.  The leg also MEASURES the two q = 3 substrate quantities this paper's scope block asserts -- the maximum round incidence against the budget, and the achievable homogeneous budgets over all the saturating groupings -- so that neither is an assertion",
    "waiver": null
   },
   {
-   "evidence": "sum of corpora 48, histories 48, constructor product 48, events = rounds x q at 4 of 4",
+   "evidence": "sum of corpora 48, histories 48, constructor product 48, events = rounds x q at 4 of 4; event multisets 12, event sets 7, event sequences 33; saturating groupings are exactly the saturating parallel classes True",
    "gate": "G-CORPUS-SHAPE",
    "passed": true,
-   "statement": "THE n = 4 CORPUS IS THE CONSTRUCTOR'S PRODUCT, AND ITS SHAPE IS MEASURED PER CORPUS.  Each of the four corpora publishes its schedule count, its round count and its events-per-history, and the total is the sum of the four rather than a separately typed number; every event of every history is a conflict group of a grouping of the four sites into two pairs, and the published total is compared with the CONSTRUCTOR's own product, so a corpus row dropped after the build dies here.  No sampling: the class is entire",
+   "statement": "THE n = 4 CORPUS IS THE CONSTRUCTOR'S PRODUCT, AND ITS SHAPE IS MEASURED PER CORPUS.  Each of the four corpora publishes its schedule count, its round count and its events-per-history, and the total is the sum of the four rather than a separately typed number; every event of every history is a conflict group of a grouping of the four sites into two pairs, and the published total is compared with the CONSTRUCTOR's own product, so a corpus row dropped after the build dies here.  No sampling: the class is entire.  The corpus's own multiplicity is measured on three separate axes -- distinct event MULTISETS, distinct event SETS and distinct event SEQUENCES -- and all three are published, because a repeated parallel class repeats its events and the three counts are different quantities",
    "waiver": null
   },
   {
-   "evidence": "prefixes 53, mismatches 0, |S_4| = 24 filtered per prefix",
+   "evidence": "prefix multisets 53, prefix sequences 87, mismatches 0, |S_4| = 24 filtered per prefix; atoms = signature blocks at 53 of 53; |stabilizer| = product of block factorials at 53 of 53; identity iff every actor has its own signature at 53 of 53; arena-free leg True",
    "gate": "G-LAW1-ROUTES",
    "passed": true,
-   "statement": "THE NAMING THEOREM IS TESTED AS A THEOREM AND NOT ASSUMED, PER OBJECT.  Route A holds the whole of S_4 and keeps the elements that fix EVERY division event setwise; route B builds the Young subgroup of the participation-signature partition from the blocks and knows nothing of route A.  The two are compared as SETS OF PERMUTATIONS at every distinct prefix of the corpus.  This is the gate the parent's quotation V-YOUNG names: the stabilizer IS that Young subgroup, its order the product of the block factorials",
+   "statement": "THE NAMING THEOREM IS TESTED AS A THEOREM AND NOT ASSUMED, PER OBJECT.  Route A holds the whole of S_4 and keeps the elements that fix EVERY division event setwise; route B builds the Young subgroup of the participation-signature partition from the blocks and knows nothing of route A.  The two are compared as SETS OF PERMUTATIONS at every distinct prefix EVENT MULTISET of the corpus, with the prefix-SEQUENCE count published beside it.  The parent's two quotations are CONSUMED here rather than named: V-ROUTES's atoms-of-the-Boolean-algebra claim is measured at every prefix against the signature blocks, and V-YOUNG's order claim is measured as |route A| against the product of the block factorials.  Because that argument names no arena, this leg is a REPRODUCTION and is stamped one; it is not scored as transport",
    "waiver": null
   },
   {
-   "evidence": "chart 3, constant-class 3, sets equal True, parallel classes 3",
+   "evidence": "chart 3, constant-class 3, sets equal True, parallel classes 3; the parent's quotation names 4 constant-class tuples (ANT,COL,DIA,ROW) against its anchored chart count 4",
    "gate": "G-LAW1-CHART",
    "passed": true,
    "statement": "THE CHART SET IS CHARACTERISED, NOT COUNTED (#87).  Each history is tested individually for two properties -- a nontrivial stabilizer, and repeating one parallel class in every round -- and the two SETS OF HISTORIES are compared, not their sizes.  The parent's own characterisation (V-CHART: the constant-class quadruples, one per parallel class) is the statement under test, and at n = 4 the count that follows is the number of parallel classes",
@@ -485,14 +626,14 @@
    "waiver": null
   },
   {
-   "evidence": "comparisons 21080, mismatches 0, positive 2064, negative 19016, covering histories 24",
+   "evidence": "comparisons 505920 over 24 of 24 covering histories x 17 prefixes x 1240 permutations, mismatches 0, positive 49536 (of which 29760 at the empty prefix and 19776 beyond it), negative 456384",
    "gate": "G-N16-WINDOW",
    "passed": true,
-   "statement": "THE n = 16 WINDOW IS BUILT, AND ITS LIMITS ARE MEASURED RATHER THAN ASSERTED.  The window's own arithmetic is published beside it: S_16 has 20,922,789,888,000 elements and is not filtered, so route A runs on a declared permutation window of transpositions and 3-cycles at every prefix -- and that window is exercised in BOTH polarities, with permutations inside the stabilizer and permutations outside it.  A window whose positive count were zero would be a gate that cannot fail",
+   "statement": "THE n = 16 WINDOW IS BUILT, AND ITS LIMITS ARE MEASURED RATHER THAN ASSERTED.  The window's own arithmetic is published beside it: S_16 has 20,922,789,888,000 elements and is not filtered, so route A runs on a declared permutation window of transpositions and 3-cycles at every prefix of EVERY covering class tuple -- and that window is exercised in BOTH polarities, with permutations inside the stabilizer and permutations outside it.  A window whose positive count were zero would be a gate that cannot fail, and a positive count carried by the EMPTY prefix alone would be a gate that cannot fail either: the vacuous share is measured and the non-vacuous positives are required to be non-zero in their own right.  The history axis is not windowed and the gate requires every covering tuple to have been scanned",
    "waiver": null
   },
   {
-   "evidence": "n = 4 mismatches 0 of 53, n = 16 mismatches 0 of 21080, parent anchors 5852 + 4 = 5856",
+   "evidence": "n = 4 mismatches 0 of 53, n = 16 mismatches 0 of 505920, parent anchors 5852 + 4 = 5856",
    "gate": "G-LAW1-TRANSPORT",
    "passed": true,
    "statement": "THE NAMING THEOREM'S TRANSPORT IS MEASURED AT BOTH NEW ARENA POINTS.  At n = 4 the theorem is checked exhaustively (whole symmetric group, every distinct prefix); at n = 16 it is checked on the declared permutation window.  The parent's own numbers -- 5,852 forced of 5,856, 4 chart -- enter ONLY as anchored reads of its committed receipt and are never recomputed here",
@@ -506,17 +647,24 @@
    "waiver": null
   },
   {
-   "evidence": "word NEEDS-3 (DISCRIMINATED); attained 4:2 9:4 16:6; counting bound 16:4; sharpened bound 4:2 9:4 16:6",
+   "evidence": "word NEEDS-3 (DISCRIMINATED); attained 4:2 9:4 16:6; counting bound 16:4; sharpened bound 4:2 9:4 16:6; the bound never exceeds the attained value at 3 of 3 rows; sharpened floor = 2(q-1) at 6 of 6 q with the time 2q-1 above it and the offset 1 by subtraction at all of them",
    "gate": "G-LAW2-FLOOR",
    "passed": true,
-   "statement": "THE INFORMATION FLOOR IS MEASURED AS AN ATTAINED VALUE, NOT TAKEN FROM ITS BOUND.  The parent's V-FLOOR and V-ATTAINED quotations state a counting bound -- k events supply at most 2^k signatures -- AND that it is attained.  Here the attained value is the smallest event SUBSET whose stabilizer is trivial, searched by increasing size at every history; it is compared with the counting bound and with the sharpened bound this unit supplies, in which each event's fixed size q enters",
+   "statement": "THE INFORMATION FLOOR IS MEASURED AS AN ATTAINED VALUE, NOT TAKEN FROM ITS BOUND.  The parent's V-FLOOR and V-ATTAINED quotations state a counting bound -- k events supply at most 2^k signatures -- AND that it is attained.  Here the attained value is the smallest event SUBSET whose stabilizer is trivial, searched by increasing size at every history; it is compared with the counting bound and with the sharpened bound this unit supplies, in which each event's fixed size q enters.  THE BOUND IS NOT DISPUTED and the gate checks that it never exceeds the attained value at any row: what n = 16 discriminates is which form is ATTAINED, and at n = 9 the two forms coincide, so the parent's arena could not have discriminated them.  The sharpened formula is also evaluated beyond the three arena points, where it reads 2(q-1) at every q it is evaluated at",
    "waiver": null
   },
   {
-   "evidence": "word LAW-IN-N (UNDISCRIMINATED); offsets 4:1 9:1 16:1; round-one last event redundant at 2 of 2; time when moved to the end ['2']",
+   "evidence": "word LAW-IN-N (UNDISCRIMINATED); offsets 4:1 9:1 16:1; round-one last event redundant at 2 of 2; time when moved to the end ['2']; the n = 9 floor read at P-FLOOR-ATTAINED",
    "gate": "G-LAW2-OFFSET",
    "passed": true,
-   "statement": "THE REDUNDANT-EVENT OFFSET IS COMPUTED FROM THE TWO MEASURED OBJECTS AT EVERY ARENA POINT, AND ITS MECHANISM IS MEASURED TOO.  The offset is the schedule time minus the ATTAINED floor -- never minus the bound -- and the parent's V-OFFSET quotation names the mechanism: one structurally redundant event.  Here the last event of round one is dropped at every C1 history and the signature partition is checked unchanged, then the event is moved to the end and the crystallization time re-measured",
+   "statement": "THE REDUNDANT-EVENT OFFSET IS COMPUTED FROM THE TWO MEASURED OBJECTS AT EVERY ARENA POINT, AND ITS MECHANISM IS MEASURED TOO.  The offset is the schedule time minus the ATTAINED floor -- never minus the bound -- and the parent's V-OFFSET quotation names the mechanism: one structurally redundant event.  Here the last event of round one is dropped at every C1 history and the signature partition is checked unchanged, then the event is moved to the end and the crystallization time re-measured.  The n = 9 row's floor is required to have been read at P-FLOOR-ATTAINED and not at the bound's path: the two values coincide at n = 9, so only the ANCHOR'S IDENTITY can catch a row that reads the bound and calls it the attained value",
+   "waiver": null
+  },
+  {
+   "evidence": "exemption word LAW-IN-N (UNDISCRIMINATED); rule-applied word NEEDS-3 (DISCRIMINATED); the rule's T-N reads [1, -1, 1] against a measured [1, 1, 1]",
+   "gate": "G-LAW2-OFFSET-RULE",
+   "passed": true,
+   "statement": "THE OFFSET IS SCORED A SECOND TIME UNDER THE DECLARED UNIFORM RULE, WITH NO EXEMPTION, AND BOTH SCORINGS ARE PUBLISHED.  The uniformity claim of section 8 is a claim about this instrument, so the instrument measures it: T-N is recomputed for the offset by the same t_n_reading every other law's numeral goes through, and the word it emits is published beside the word the constant-law exemption emits.  A constant is honestly all three readings at once, which is what the exemption's UNDISCRIMINATED stamp says; the rule applied without exemption discriminates and says NEEDS-3.  Neither may stand for the other, and the aggregate is rendered at both",
    "waiver": null
   },
   {
@@ -541,10 +689,10 @@
    "waiver": null
   },
   {
-   "evidence": "declared 6, enumerated at q = 3 6, q + 3 6",
+   "evidence": "declared 6, declared survivors 6, enumerated at q = 3 6, q + 3 6; the declared Boolean True against this unit's measured set equality at n = 4 True",
    "gate": "G-LAW3-PARENT",
    "passed": true,
-   "statement": "THE FROZEN PARENT CONSTANT IS CROSS-CHECKED AGAINST A VALUE THIS UNIT COMPUTES.  FAC's worktree copy is under repair, so its 6 is carried as a declared constant at commit f4172ea; the same number is independently produced here by enumerating the subgroups of the translation group of AG(2,3) by closure, so the declaration is checked rather than trusted",
+   "statement": "THE FROZEN PARENT CONSTANT IS CROSS-CHECKED AGAINST A VALUE THIS UNIT COMPUTES.  FAC's worktree copy is under repair, so its 6 is carried as a declared constant at commit f4172ea; the same number is independently produced here by enumerating the subgroups of the translation group of AG(2,3) by closure, so the declaration is checked rather than trusted.  Its SURVIVOR count and its Boolean are cross-checked on the same terms: the survivor count against the same enumeration, and the Boolean -- which asserts the theorem at nine actors -- against the SET EQUALITY this unit measures at four, which is the same statement at the one arena point where it can be measured without re-deriving an n = 9 law value",
    "waiver": null
   },
   {
@@ -555,17 +703,24 @@
    "waiver": null
   },
   {
-   "evidence": "first rungs by L {'1': 1, '2': 2, '3': 3}; achievable sets {'1': [1, 2, 3, 4, 5, 6, 7], '2': [2, 4, 6], '3': [3, 6]}; modulus equals L at every row True; modulus equals q at every row False; the frozen parent rung 3 equals the parent arena's own link count 3",
+   "evidence": "first rungs by L {'1': 1, '2': 2, '3': 3}; achievable sets {'1': [1, 2, 3, 4, 5, 6, 7], '2': [2, 4, 6], '3': [3, 6]} (search bound R <= 7); modulus equals L at every row True; modulus equals q at every row False; the number of saturating groupings is confounded with L at n = 4 True and separated at q = 3 (rung 3 over 36 saturating groupings, declared links 3); pruned-vs-exhaustive control agrees at 3 of 3; the frozen parent rung 3 equals the parent arena's own link count 3",
    "gate": "G-LAW4-LADDER",
    "passed": true,
-   "statement": "THE LADDER'S MODULUS IS MEASURED, AND ITS CARRIER IS SEPARATED FROM sqrt(n) AND FROM THE CHARACTERISTIC BY A SWEEP AT FIXED n.  For each declared link count L = 1, 2, 3 the achievable budgets are found by exhaustive search over multisets of saturating groupings -- which R admit a summed link field constant on every cell -- and the achievable set is checked to be EXACTLY the multiples of the first rung.  n, q and the characteristic are all held at their n = 4 values throughout the sweep, so a modulus that moves with L cannot be a function of any of them",
+   "statement": "THE LADDER'S MODULUS IS MEASURED, AND ITS CARRIER IS SEPARATED FROM sqrt(n) AND FROM THE CHARACTERISTIC BY A SWEEP AT FIXED n.  For each declared link count L = 1, 2, 3 the achievable budgets are found by exhaustive search over multisets of saturating groupings -- which R admit a summed link field constant on every cell -- and the achievable set is checked to be EXACTLY the multiples of the first rung.  n, q and the characteristic are all held at their n = 4 values throughout the sweep, so a modulus that moves with L cannot be a function of any of them.  A FOURTH rival is named and it is NOT separated here: the number of saturating groupings moves with L at every row of the n = 4 sweep.  It is separated at q = 3, where 36 groupings saturate and the first rung is the declared link count 3 -- measured in the fidelity leg's own window, over all 36.  The pruned search that measurement uses carries its positive control here: at n = 4, where the plain exhaustive search is affordable, the two searches are run side by side and must agree row for row",
    "waiver": null
   },
   {
-   "evidence": "pairs {'2': 144991, '3': 144991}; mismatches {'2': 0, '3': 0}; census by m {'2': 45, '3': 45, '4': 45, '5': 45}; blind True",
+   "evidence": "pairs {'2': 144991, '3': 144991}; mismatches {'2': 0, '3': 0} (DEFINITIONAL, disclosed); census by m {'2': 45, '3': 45, '4': 45, '5': 45}; census blind to m True; the parent's derived group Z_3 from F_3, its prediction at this arena m = 2, tested here False",
    "gate": "G-LAW4-COIN",
    "passed": true,
-   "statement": "THE COIN'S RESIDUE CHANNEL IS MEASURED IN BOTH DIRECTIONS AND ITS MODULUS SHOWN FREE.  Over a declared record family every unordered pair is classified twice -- congruent modulo m or not, and carrying identical one-step operators or not -- and the two classifications are required to agree on every pair, at m = 2 and at m = 3.  The freedom is then measured rather than argued: the whole division-forcing census is re-run at m = 2, 3, 4 and 5 and its counts compared",
+   "statement": "THE COIN'S RESIDUE CHANNEL IS DISCLOSED AS DEFINITIONAL AND ITS MODULUS IS NOT CLAIMED FREE.  The first half of the sentence -- that the record enters exactly modulo m -- is a DEFINITIONAL property of the operator this unit implements, which reads the record only through its residue; the pair census reproduces it and is published as a disclosure, not as a measurement, because it could not have come out otherwise.  What IS measured is the second half: the division-forcing census re-run at m = 2, 3, 4 and 5 returns the same counts, and section 9's leg census says WHY -- the only leg that reads m never binds.  The parent's own derivation is consumed here rather than ignored: paper-20 derives the connection group Z_q from the arena's field F_q, which at nine actors is Z_3 and at this unit's arena would read m = 2, and that prediction is registered untested",
+   "waiver": null
+  },
+  {
+   "evidence": "consumptions 8 of 8 anchors, disagreeing none",
+   "gate": "G-VERBATIM-CONSUMED",
+   "passed": true,
+   "statement": "EVERY VERBATIM ANCHOR IS PARSED AND WHAT IS PARSED IS CONSUMED (#62 as amended).  A quotation bound only to a gate's NAME is decoration: it could be swapped for a different true sentence of the same parent and nothing measured would move.  Each row below extracts a value or a predicate FROM the quotation's own text -- a spelled floor, a stated time, the named constant-class tuples, the atoms of the Boolean algebra, the transportable content's three numerals, the derived connection group -- and compares it with a measurement of this run.  A quotation that no longer yields its parse fails here even though its bytes still match",
    "waiver": null
   },
   {
@@ -576,17 +731,17 @@
    "waiver": null
   },
   {
-   "evidence": "unique 45, non-unique 3, histories 48, discrete admissible everywhere True, leg pass counts {'leg1': 240, 'leg2': 57, 'leg3': 720}, histories whose admissible set escapes a leg none",
+   "evidence": "unique 45, non-unique 3, histories 48, discrete admissible everywhere True; leg pass counts {'leg1': 240, 'leg2': 57, 'leg3': 720, 'leg4': 51} against 720 (partition, history) pairs; leg failures {'leg1': 480, 'leg2': 663}; leg 4 reached at 51, coin-order disagreements 0 of 51; binding legs ['leg1', 'leg2'], inert legs ['leg3', 'leg4']; histories whose admissible set escapes a leg none",
    "gate": "G-LAW5-CENSUS",
    "passed": true,
-   "statement": "THE DIVISION-FORCING CENSUS RUNS THE COMPLETE ACTOR LATTICE THROUGH THE FOUR-LEG CRITERION AT EVERY HISTORY, AND THE DISCRETE PARTITION IS CHECKED ADMISSIBLE AT EVERY ONE OF THEM SEPARATELY.  The count can therefore never be zero by construction, and the question is always whether anything JOINS the four-fold division -- which is the parent's own question, asked of a lattice with no window in it",
+   "statement": "THE DIVISION-FORCING CENSUS RUNS THE COMPLETE ACTOR LATTICE THROUGH THE FOUR-LEG CRITERION AT EVERY HISTORY, AND THE DISCRETE PARTITION IS CHECKED ADMISSIBLE AT EVERY ONE OF THEM SEPARATELY.  The count can therefore never be zero by construction, and the question is always whether anything JOINS the four-fold division -- which is the parent's own question, asked of a lattice with no window in it.  ALL FOUR LEGS PUBLISH A PASS COUNT AND A FAILURE COUNT AGAINST A NAMED DENOMINATOR, leg 4 against the pairs that reach it rather than against the whole universe, and the two declared coin orders are COMPARED at every one of those pairs rather than merely conjoined -- so a census whose discriminating power is carried by two legs says which two",
    "waiver": null
   },
   {
-   "evidence": "non-unique class tuples ['COL,COL,COL', 'DIA,DIA,DIA', 'ROW,ROW,ROW']; thesis holds True; parent 5852 + 4",
+   "evidence": "non-unique class tuples ['COL,COL,COL', 'DIA,DIA,DIA', 'ROW,ROW,ROW']; thesis holds True; parent 5852 + 4; declared actor lattice 21147 against Bell(9) = 21147; the Bell routine against this unit's enumerated lattice at n = 4: 15 = 15; grain ACTOR",
    "gate": "G-LAW5-PARENT",
    "passed": true,
-   "statement": "THE THESIS UNDER TEST IS THE PARENT'S OWN SENTENCE, AND IT IS TESTED PER HISTORY.  Each non-unique history is examined individually for the property the parent's thesis names -- that it repeats a single parallel class in every round -- rather than the set being compared with a count.  The parent's own counts are frozen declared constants at commit f4172ea and are cross-checked for internal consistency",
+   "statement": "THE THESIS UNDER TEST IS THE PARENT'S OWN SENTENCE, AND IT IS TESTED PER HISTORY.  Each non-unique history is examined individually for the property the parent's thesis names -- that it repeats a single parallel class in every round -- rather than the set being compared with a count.  The parent's own counts are frozen declared constants at commit f4172ea and are cross-checked for internal consistency; its frozen ACTOR-LATTICE constant is cross-checked against Bell(9) computed here by the Bell triangle -- a routine itself checked against the lattice this unit ENUMERATES at n = 4 -- so no frozen constant reaches the receipt without a value this unit computes beside it.  The grain is named: the parent's verdict is stratified by grain and this is the ACTOR grain",
    "waiver": null
   },
   {
@@ -604,10 +759,17 @@
    "waiver": null
   },
   {
-   "evidence": "schedules 48, distinct event sets 12, rows 3",
+   "evidence": "schedules 48, distinct event multisets 12, distinct event sets 7, distinct event sequences 33, rows 5",
    "gate": "G-E24-MEASURE",
    "passed": true,
-   "statement": "NO COUNT BECOMES A PROBABILITY (E-24).  Every published fraction is stamped COUNTING-ONLY with its denominator's family named, and the corpus's own multiplicity is disclosed: the schedule count and the distinct-event-set count are different families and the receipt publishes both rather than letting one stand for the other",
+   "statement": "NO COUNT BECOMES A PROBABILITY (E-24).  Every published fraction is stamped COUNTING-ONLY with its denominator's family named, and the corpus's own multiplicity is disclosed on every axis it has: schedules, event multisets, event sets and event sequences are four different families and the receipt publishes all four rather than letting one stand for another",
+   "waiver": null
+  },
+  {
+   "evidence": "statement level 3 of 5 portable from the word list ['LAW-IN-N', 'NEEDS-3', 'LAW-IN-N', 'NEEDS-3', 'LAW-IN-N']; numeral level 7 tested, q-carried 6 of 7 under the constant-law exemption and 7 of 7 under the declared uniform rule; the exempt-branch exception is ['law2 redundant-event offset']",
+   "gate": "G-HEAD-TWO-LEVELS",
+   "passed": true,
+   "statement": "THE AGGREGATE IS SCORED AT TWO LEVELS AND THE DENOMINATOR OF EACH IS COUNTED FROM ITS OWN DECLARED ROW LIST.  The five law words are STATEMENT-level; the numerals are scored separately by the transport procedure over a row list built by this run, so the numeral denominator is len(the list) and never a hand-chosen subset -- in particular the offset, which is the one tested numeral whose word is not NEEDS-3 under the constant-law exemption, is IN the denominator rather than dropped from it.  The numeral level is rendered under BOTH scorings of the offset, and the feasibility of the row list is carried with it (#299 as extended)",
    "waiver": null
   },
   {
@@ -619,6 +781,7 @@
   }
  ],
  "law1_naming": {
+  "atoms_are_the_signature_blocks_at": 53,
   "chart": 3,
   "chart_class_tuples": [
    [
@@ -656,14 +819,20 @@
   "compared_as": "ELEMENT SET AGAINST ELEMENT SET, PER OBJECT",
   "forced": 45,
   "histories": 48,
+  "identity_crystallizes_iff_every_actor_has_its_own_signature_at": 53,
   "parent_chart": 4,
   "parent_forced": 5852,
   "parent_histories": 5856,
   "route_a": "THE COMPLETE SYMMETRIC GROUP S_4, FILTERED ELEMENT BY ELEMENT BY THE DEFINITION (setwise fixing)",
   "route_b": "THE YOUNG SUBGROUP OF THE PARTICIPATION-SIGNATURE PARTITION, BUILT FROM THE BLOCKS",
   "route_mismatches": 0,
+  "route_prefix_sequences": 87,
+  "route_prefixes_are_event_multisets": "THE COMPARISON IS TAKEN ONCE PER DISTINCT PREFIX EVENT MULTISET.  The stabilizer reads only which events occurred, so the dedup is sound for the test; the SEQUENCE count is published beside it because the noun 'prefix' has two families and neither may stand for the other",
   "route_prefixes_compared": 53,
+  "routes_leg_disclosure": "THE ROUTE COMPARISON CANNOT FAIL ON A FAITHFUL IMPLEMENTATION, AND THAT IS DISCLOSED RATHER THAN SCORED AS TRANSPORT.  The parent proves route B by a Boolean-algebra argument that names no arena (V-ROUTES), so the two routes agree for ANY family of subsets of ANY finite set.  This leg is therefore a REPRODUCTION of the parent's theorem and a fidelity check on this unit's constructor; what the n = 4 arena decides is the CHART SET and its count",
+  "routes_leg_is_arena_free": true,
   "s_n_size": 24,
+  "stabilizer_order_is_the_block_factorial_product_at": 53,
   "stabilizer_orders": {
    "1": 45,
    "4": 3
@@ -697,6 +866,7 @@
  },
  "law2_crystallization": {
   "information_floor": {
+   "bound_is_never_above_the_attained": true,
    "counting_floor": {
     "16": 4,
     "4": 2,
@@ -715,6 +885,9 @@
    "n16_attained": 6,
    "n4_attained": 2,
    "parent_n9_attained": 4,
+   "parent_n9_attained_anchor": "P-FLOOR-ATTAINED",
+   "parent_n9_counting_bound": 4,
+   "parent_n9_counting_bound_anchor": "P-FLOOR-BOUND",
    "per_corpus": {
     "C1": {
      "2": 2
@@ -736,7 +909,7 @@
      "feasible": true,
      "measured": 4,
      "n": 9,
-     "note": "PARENT ANCHOR: the attained information floor at n = 9",
+     "note": "PARENT ANCHOR P-FLOOR-ATTAINED (counts/information_floor): the ATTAINED information floor at n = 9.  The counting BOUND column of this table is a separate anchor, P-FLOOR-BOUND, and the two are never the same read",
      "q": 3,
      "t_literal": 4,
      "t_n": 4,
@@ -765,6 +938,63 @@
      "t_q": 6
     }
    ],
+   "sharpened_floor_family": [
+    {
+     "agrees": true,
+     "n": 4,
+     "offset_by_subtraction": 1,
+     "q": 2,
+     "schedule_time_formula": 3,
+     "sharpened_floor": 2,
+     "two_q_minus_two": 2
+    },
+    {
+     "agrees": true,
+     "n": 9,
+     "offset_by_subtraction": 1,
+     "q": 3,
+     "schedule_time_formula": 5,
+     "sharpened_floor": 4,
+     "two_q_minus_two": 4
+    },
+    {
+     "agrees": true,
+     "n": 16,
+     "offset_by_subtraction": 1,
+     "q": 4,
+     "schedule_time_formula": 7,
+     "sharpened_floor": 6,
+     "two_q_minus_two": 6
+    },
+    {
+     "agrees": true,
+     "n": 25,
+     "offset_by_subtraction": 1,
+     "q": 5,
+     "schedule_time_formula": 9,
+     "sharpened_floor": 8,
+     "two_q_minus_two": 8
+    },
+    {
+     "agrees": true,
+     "n": 36,
+     "offset_by_subtraction": 1,
+     "q": 6,
+     "schedule_time_formula": 11,
+     "sharpened_floor": 10,
+     "two_q_minus_two": 10
+    },
+    {
+     "agrees": true,
+     "n": 49,
+     "offset_by_subtraction": 1,
+     "q": 7,
+     "schedule_time_formula": 13,
+     "sharpened_floor": 12,
+     "two_q_minus_two": 12
+    }
+   ],
+   "the_bound_stands_as_a_bound": "THE PARENT'S BOUND IS A THEOREM AND IT STANDS: no history forces identity on fewer than ceil(log2 n) events, at n = 16 as at n = 9.  What n = 16 discriminates is which FORM is the value ATTAINED -- at n = 9 the counting bound and the size-corrected bound coincide at 4, so the parent's arena could not tell them apart",
    "weight_floor": {
     "16": 6,
     "4": 2,
@@ -786,13 +1016,14 @@
    "n16": 1,
    "n4": 1,
    "parent_n9": 1,
+   "reading_rule": "DECLARED-CONSTANT, NOT THE COUNTING-BOUND RULE",
    "rows": [
     {
      "L": 3,
      "feasible": true,
      "measured": 1,
      "n": 9,
-     "note": "PARENT ANCHORS: schedule time minus attained floor at n = 9",
+     "note": "PARENT ANCHORS: schedule time minus the ATTAINED floor at n = 9, read at P-FLOOR-ATTAINED.  READING RULE: DECLARED-CONSTANT, NOT THE COUNTING-BOUND RULE",
      "q": 3,
      "t_literal": 1,
      "t_n": 1,
@@ -803,7 +1034,7 @@
      "feasible": true,
      "measured": 1,
      "n": 4,
-     "note": "MEASURED at n = 4: schedule time minus attained floor",
+     "note": "MEASURED at n = 4: schedule time minus attained floor.  READING RULE: DECLARED-CONSTANT, NOT THE COUNTING-BOUND RULE",
      "q": 2,
      "t_literal": 1,
      "t_n": 1,
@@ -814,13 +1045,62 @@
      "feasible": true,
      "measured": 1,
      "n": 16,
-     "note": "MEASURED on W-N16-CLASS: schedule time minus attained floor",
+     "note": "MEASURED on W-N16-CLASS: schedule time minus attained floor.  READING RULE: DECLARED-CONSTANT, NOT THE COUNTING-BOUND RULE",
      "q": 4,
      "t_literal": 1,
      "t_n": 1,
      "t_q": 1
     }
    ],
+   "under_the_declared_uniform_rule": {
+    "evidence": {
+     "carried": 3,
+     "feasible": 3,
+     "rows_discriminating_n_from_literal": 1,
+     "rows_discriminating_q_from_n": 1,
+     "stamp": "DISCRIMINATED",
+     "t_literal_agrees": 3,
+     "t_n_agrees": 2,
+     "t_q_agrees": 3
+    },
+    "reading_rule": "THE COUNTING-BOUND RULE, APPLIED WITH NO EXEMPTION",
+    "rows": [
+     {
+      "L": 3,
+      "feasible": true,
+      "measured": 1,
+      "n": 9,
+      "note": "THE DECLARED UNIFORM RULE APPLIED TO THE OFFSET WITH NO EXEMPTION: T-N is the counting bound offset to the parent's own value at n = 9",
+      "q": 3,
+      "t_literal": 1,
+      "t_n": 1,
+      "t_q": 1
+     },
+     {
+      "L": 2,
+      "feasible": true,
+      "measured": 1,
+      "n": 4,
+      "note": "THE SAME RULE AT n = 4",
+      "q": 2,
+      "t_literal": 1,
+      "t_n": -1,
+      "t_q": 1
+     },
+     {
+      "L": 4,
+      "feasible": true,
+      "measured": 1,
+      "n": 16,
+      "note": "THE SAME RULE ON W-N16-CLASS",
+      "q": 4,
+      "t_literal": 1,
+      "t_n": 1,
+      "t_q": 1
+     }
+    ],
+    "word": "NEEDS-3"
+   },
    "word": "LAW-IN-N"
   },
   "redundant_event": {
@@ -903,13 +1183,14 @@
    "word": "NEEDS-3"
   },
   "word": "NEEDS-3",
-  "word_basis": "THE PAIR'S WEAKEST LEG GOVERNS: the floor FORMULA the parent published is ceil(log2 n), and it is not the attained floor at n = 16"
+  "word_basis": "THE PAIR'S WEAKEST LEG GOVERNS.  The pair survives as a structure; what n = 16 discriminates is WHICH FORM is the value attained -- the parent's ceil(log2 n) is a true bound at every n and is not the attained value at n = 16"
  },
  "law3_coset_menu": {
   "actor_lattice": 15,
   "bell": 15,
   "by_q": {
    "2": {
+    "characteristic": 2,
     "declared_links_generate": 4,
     "group_order": 4,
     "hypothesis_transitive": true,
@@ -917,6 +1198,7 @@
     "subgroups_of_T": 5
    },
    "3": {
+    "characteristic": 3,
     "declared_links_generate": 9,
     "group_order": 9,
     "hypothesis_transitive": true,
@@ -924,6 +1206,7 @@
     "subgroups_of_T": 6
    },
    "4": {
+    "characteristic": 2,
     "declared_links_generate": 8,
     "group_order": 16,
     "hypothesis_transitive": false,
@@ -953,6 +1236,7 @@
    2,
    2
   ],
+  "parent_boolean_cross_checked_against": "THIS UNIT'S OWN SET EQUALITY AT n = 4 (True): the frozen Boolean asserts the theorem at nine actors, and the same statement is measured here at four",
   "parent_declared": {
    "actor_lattice": 21147,
    "leg1_equals_the_subgroup_cosets": true,
@@ -1012,54 +1296,129 @@
    "modulus_equals_L": true,
    "modulus_equals_q_at_every_row": false,
    "n_is_fixed_at": 4,
+   "number_of_saturating_groupings_moves_with_L": true,
+   "pruned_search_control": [
+    {
+     "L": 1,
+     "agree": true,
+     "exhaustive": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "pruned": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    {
+     "L": 2,
+     "agree": true,
+     "exhaustive": [
+      2,
+      4,
+      6
+     ],
+     "pruned": [
+      2,
+      4,
+      6
+     ]
+    },
+    {
+     "L": 3,
+     "agree": true,
+     "exhaustive": [
+      3,
+      6
+     ],
+     "pruned": [
+      3,
+      6
+     ]
+    }
+   ],
+   "q3_declared_links": 3,
+   "q3_first_rung_over_all_saturating_groupings": 3,
+   "q3_saturating_groupings": 36,
    "rows": [
     {
      "L": 1,
      "equals_L": true,
      "equals_characteristic": false,
+     "equals_number_of_saturating_groupings": true,
      "equals_q": false,
      "modulus": 1,
      "n": 4,
-     "q": 2
+     "q": 2,
+     "saturating_groupings": 1
     },
     {
      "L": 2,
      "equals_L": true,
      "equals_characteristic": true,
+     "equals_number_of_saturating_groupings": true,
      "equals_q": true,
      "modulus": 2,
      "n": 4,
-     "q": 2
+     "q": 2,
+     "saturating_groupings": 2
     },
     {
      "L": 3,
      "equals_L": true,
      "equals_characteristic": false,
+     "equals_number_of_saturating_groupings": true,
      "equals_q": false,
      "modulus": 3,
      "n": 4,
-     "q": 2
+     "q": 2,
+     "saturating_groupings": 3
     }
-   ]
+   ],
+   "sqrt_n_is_fixed_at": 2,
+   "the_saturating_count_rival_is_closed_at_q3": true
   },
   "census_by_m": {
    "2": {
+    "leg4_coin_order_disagreements": 0,
+    "leg4_failures": 0,
+    "leg4_reached": 51,
     "non_unique": 3,
     "unique": 45
    },
    "3": {
+    "leg4_coin_order_disagreements": 0,
+    "leg4_failures": 0,
+    "leg4_reached": 51,
     "non_unique": 3,
     "unique": 45
    },
    "4": {
+    "leg4_coin_order_disagreements": 0,
+    "leg4_failures": 0,
+    "leg4_reached": 51,
     "non_unique": 3,
     "unique": 45
    },
    "5": {
+    "leg4_coin_order_disagreements": 0,
+    "leg4_failures": 0,
+    "leg4_reached": 51,
     "non_unique": 3,
     "unique": 45
    }
   },
+  "coin_census_is_blind_to_m": true,
   "coin_channel": {
    "2": {
     "congruent_and_identical": 11928,
@@ -1076,7 +1435,7 @@
     "records": 539
    }
   },
-  "coin_modulus_is_free": true,
+  "coin_modulus_scope": "MEASURED: THIS CENSUS IS BLIND TO m.  Blindness of one census is not freedom of the modulus.  Paper-20 DERIVES the coin's connection group from the arena's own field -- Z_3 from F_3 at nine actors -- and the same derivation read at this unit's arena, which is over F_2, PREDICTS m = 2 at n = 4.  This unit neither tests nor rebuts that derivation, and the prediction is registered as the successor test",
   "ladder_by_L": {
    "1": {
     "achievable_R": [
@@ -1122,7 +1481,8 @@
       "achievable": true
      }
     ],
-    "saturating": 1
+    "saturating": 1,
+    "search_bound_R_at_most": 7
    },
    "2": {
     "achievable_R": [
@@ -1164,7 +1524,8 @@
       "achievable": false
      }
     ],
-    "saturating": 2
+    "saturating": 2,
+    "search_bound_R_at_most": 7
    },
    "3": {
     "achievable_R": [
@@ -1205,7 +1566,8 @@
       "achievable": false
      }
     ],
-    "saturating": 3
+    "saturating": 3,
+    "search_bound_R_at_most": 7
    }
   },
   "ladder_evidence": {
@@ -1258,16 +1620,24 @@
    }
   ],
   "ladder_word": "NEEDS-3",
+  "paper20_derived_modulus_at_n9": 3,
+  "paper20_predicted_modulus_at_n4": 2,
+  "paper20_prediction_tested_here": false,
   "parent_cross_check": true,
   "parent_declared": {
    "first_rung_at_n9": 3,
    "source": "THE R-RUNG PAPERS' LADDER LAW: a live weld is motivated exactly at budgets R congruent to 0 modulo 3 at the nine-actor arena, whose declared link count is 3"
   },
   "word": "NEEDS-3",
-  "word_basis": "THE MOTIF SPLITS.  The ladder's modulus is DERIVED and equals the declared link count L; under the corpus's own declaration L = q, so it moves to mod-q -- the pin's NEEDS-3 branch.  The coin's modulus is DECLARED and free: the census is blind to it while the record enters exactly modulo it"
+  "word_basis": "THE MOTIF SPLITS.  The ladder's modulus is DERIVED and equals the declared link count L; under the corpus's own declaration L = q, so it moves to mod-q -- the pin's NEEDS-3 branch.  The coin's modulus is DECLARED at this unit and the census is measured BLIND to it; the parent derives it from the field, and that derivation stands uncontested here"
  },
  "law5_division_forcing": {
   "actor_lattice": 15,
+  "binding_legs": [
+   "leg1",
+   "leg2"
+  ],
+  "coin_order_disagreement_denominator": 51,
   "coin_order_disagreements": 0,
   "count_evidence": {
    "carried": 2,
@@ -1304,13 +1674,26 @@
    }
   ],
   "count_word": "NEEDS-3",
+  "criterion_reach": "THE FOUR-LEG CRITERION IS A TWO-LEG CRITERION ON THIS CORPUS.  Legs 1 and 2 fail somewhere and do the discriminating; leg 3 passes at every one of the 720 (partition, history) pairs, and leg 4 -- the only leg that reads the coin's modulus -- is reached at 51 of them and admissible at all of them, at every declared modulus and at both coin orders.  The census's blindness to m is therefore FORCED BY THE BINDING LEGS and is a statement about this census's reach, not about the modulus",
   "discrete_admissible_everywhere": true,
+  "grain": "ACTOR.  The parent's own verdict is stratified BY GRAIN -- an actor grain and a carrier grain, and its atom breaks at the groupoid grain.  This unit tests the ACTOR grain only, at the complete actor lattice; the carrier grain at n = 4 is untested here and is registered as a successor",
   "histories": 48,
+  "inert_legs": [
+   "leg3",
+   "leg4"
+  ],
+  "leg4_reached_at": 51,
+  "leg_failure_counts": {
+   "leg1": 480,
+   "leg2": 663
+  },
   "leg_pass_counts": {
    "leg1": 240,
    "leg2": 57,
-   "leg3": 720
+   "leg3": 720,
+   "leg4": 51
   },
+  "leg_universe_partition_history_pairs": 720,
   "measure": "COUNTING-ONLY (E-24): no measure is declared over the corpus, so the fraction 45 of 48 is a count of this corpus's histories and not a probability",
   "non_unique": 3,
   "non_unique_class_tuples": [
@@ -1331,6 +1714,7 @@
    ]
   ],
   "parent_declared_lattice": 21147,
+  "parent_declared_lattice_is_bell_9": 21147,
   "parent_declared_non_unique": 4,
   "parent_declared_unique": 5852,
   "thesis": "MORE THAN ONE FACTORIZATION ONLY WHERE THE HISTORY REPEATS A PARALLEL CLASS",
@@ -1341,7 +1725,9 @@
   "word_basis": "THE THESIS IS n-FREE AND HOLDS VERBATIM AT n = 4; ITS COUNT IS q + 1, THE PARALLEL-CLASS COUNT"
  },
  "measure_relativity": {
-  "distinct_event_sets": 12,
+  "distinct_event_multisets": 12,
+  "distinct_event_sequences": 33,
+  "distinct_event_sets": 7,
   "rows": [
    {
     "measure": "NONE DECLARED; the denominator is this corpus's history count and the fraction is a count, not a probability",
@@ -1357,12 +1743,25 @@
     "measure": "the corpus is a MULTISET of schedules built by the grammar; C1FAN repeats event sets at different seed menus, so distinct-history and schedule counts are different families and are never crossed",
     "quantity": "the corpus itself",
     "value": "48 histories"
+   },
+   {
+    "measure": "THREE DIFFERENT FAMILIES, ALL PUBLISHED.  A history that repeats a parallel class repeats its events, so the events of a history are a MULTISET; the set count is strictly smaller and the sequence count strictly larger, and no one of the three may stand for another",
+    "quantity": "the corpus's event families",
+    "value": "12 distinct event multisets, 7 distinct event sets, 33 distinct event sequences"
+   },
+   {
+    "measure": "the stabilizer reads only which events occurred, so the comparison is taken once per MULTISET; the sequence count is published beside it",
+    "quantity": "the naming theorem's prefixes",
+    "value": "53 distinct prefix event multisets, 87 distinct prefix sequences"
    }
   ],
   "schedules": 48,
   "stamp": "COUNTING-ONLY"
  },
- "mutant_sweep": [],
+ "mutant_sweep": {
+  "rows": [],
+  "stamp": "NOT RUN IN THIS ARTIFACT: the committed run is a plain run, and the sweep is taken separately by --sweep.  A gate passing over zero rows is not evidence, and this stamp is what the reader sees instead of a silent all([])"
+ },
  "mutants": [
   {
    "description": "the path-value anchor P-STRICT is read from a drifted path, so the parent's 72 is replaced by a value from elsewhere in the receipt",
@@ -1445,8 +1844,8 @@
    "mutant": "MUT-CONTROL"
   },
   {
-   "description": "the head's aggregate portability count is written from a typed literal instead of the emitted law words",
-   "gate": "G-VERDICT-RECONSTRUCTED",
+   "description": "the head's aggregate portability count is written from a typed literal instead of the emitted law words, and dies at the gate that re-derives the statement-level count from the word list -- which runs before the head is built",
+   "gate": "G-HEAD-TWO-LEVELS",
    "mutant": "MUT-VERDICT"
   },
   {
@@ -1470,9 +1869,14 @@
    "mutant": "MUT-SPAN"
   },
   {
-   "description": "one published table's HEADER row is dropped from the binding, so a table whose columns were renamed would pass",
+   "description": "one published table's HEADER row is TRUNCATED before it is looked for in the paper, so the header the run demands is not the header the paper carries and the header leg must fire (E-23: the description is the code's, not the disease's -- the disease that a header could go unbound is tested by MUT-TABLE-UNRENDERED)",
    "gate": "G-PAPER-TABLES",
    "mutant": "MUT-TABLE"
+  },
+  {
+   "description": "a markdown table row is planted in the scanned paper that no rendered table accounts for, so a table the run does not render must not be a table the run ignores",
+   "gate": "G-PAPER-TABLES",
+   "mutant": "MUT-TABLE-UNRENDERED"
   },
   {
    "description": "one referent binding is retargeted to the WRONG noun, so a count attached to the wrong universe must be caught",
@@ -1490,14 +1894,104 @@
    "mutant": "MUT-POLARITY"
   },
   {
-   "description": "the coverage seal is never taken, so a published key reaches disk unsealed",
+   "description": "the coverage seal is never taken, so a published key reaches disk unsealed and the manifest acquires a gap; both legs -- the published-key leg and the manifest-gap leg -- are live for it",
    "gate": "G-SEAL-TOTALITY",
    "mutant": "MUT-SEAL-DROP"
   },
   {
-   "description": "a seal names a gate this run never evaluates",
+   "description": "one seal's declared gate is RETARGETED at take time to a gate name this run never evaluates, so the phantom-gate detector is fed a real condition rather than a constant",
    "gate": "G-SEAL-TOTALITY",
    "mutant": "MUT-SEAL-GATE"
+  },
+  {
+   "description": "a top-level receipt key is added AFTER the totality gate has run, so a forged finding would reach disk unsealed and undeclared unless totality is recomputed at promotion time (#119 addendum, #348)",
+   "gate": "G-SEAL-PROMOTION-TOTALITY",
+   "mutant": "MUT-POSTSEAL"
+  },
+  {
+   "description": "one gate's evidence line is re-rendered into the transcript with a different number from the one the receipt carries, so the human-readable artifact would contradict the sealed one",
+   "gate": "G-TRANSCRIPT-INTEGRITY",
+   "mutant": "MUT-TRANSCRIPT-EVIDENCE"
+  },
+  {
+   "description": "a leaf of a law object is forged after the law object is built, so the publishing path and the comparator -- which read DIFFERENT receipt keys for every quantity in the head -- must part",
+   "gate": "G-VERDICT-RECONSTRUCTED",
+   "mutant": "MUT-HEADKEY"
+  },
+  {
+   "description": "one verbatim anchor's needle is replaced by a DIFFERENT TRUE SENTENCE of the same pinned parent, so an anchor whose consumer reads only its existence would move nothing",
+   "gate": "G-VERBATIM-CONSUMED",
+   "mutant": "MUT-VERBATIM-CONSUMER"
+  },
+  {
+   "description": "the n = 16 route scan is restricted to the first covering class tuple, so a window declared over 24 histories would be measured on one",
+   "gate": "G-N16-WINDOW",
+   "mutant": "MUT-N16-TUPLE"
+  },
+  {
+   "description": "the n = 9 offset row is re-anchored at the COUNTING BOUND's path instead of the parent's attained floor; both read 4, so only the anchor's identity can catch it",
+   "gate": "G-LAW2-OFFSET",
+   "mutant": "MUT-OFFSET-N9"
+  },
+  {
+   "description": "the offset's rule-applied row bypasses t_n_reading and is handed the constant instead, so the claim that the declared uniform rule is applied to it would go unmeasured",
+   "gate": "G-LAW2-OFFSET-RULE",
+   "mutant": "MUT-OFFSET-RULE"
+  },
+  {
+   "description": "one of the two declared coin orders is flipped at a pair that reaches leg 4, so a census that never compares the two orders would pass",
+   "gate": "G-LAW5-CENSUS",
+   "mutant": "MUT-COINORDER"
+  },
+  {
+   "description": "leg 4's evaluation counter is suppressed, so the leg that reads the coin's modulus would publish no denominator",
+   "gate": "G-LAW5-CENSUS",
+   "mutant": "MUT-LEGCOUNT"
+  },
+  {
+   "description": "FAC's frozen leg1-equals-the-subgroup-cosets Boolean is flipped, so a declared parent constant that no gate cross-checks would survive",
+   "gate": "G-LAW3-PARENT",
+   "mutant": "MUT-FACBOOL"
+  },
+  {
+   "description": "FAC's frozen actor-lattice constant is drifted, so a declared 21,147 that is not Bell(9) would survive",
+   "gate": "G-LAW5-PARENT",
+   "mutant": "MUT-FACLATTICE"
+  },
+  {
+   "description": "one rendered claim sentence is altered before it is looked for in the paper, so a claims gate that only evaluates a predicate over the receipt would never see the prose",
+   "gate": "G-PAPER-CLAIMS",
+   "mutant": "MUT-CLAIM-PROSE"
+  },
+  {
+   "description": "an eighth verdict fence is planted in the scanned paper, so a fence multiset gated in one direction only would admit a forged verdict",
+   "gate": "G-PAPER-COVERAGE",
+   "mutant": "MUT-FENCE-EXTRA"
+  },
+  {
+   "description": "one reading wall's pattern is narrowed back to its own probe sentence, so a literal-phrase trap must be caught by the semantic controls that no longer match it",
+   "gate": "G-WALLS-SCAN-THE-PAPER",
+   "mutant": "MUT-WALL-NARROW"
+  },
+  {
+   "description": "a headline numeral is planted beside the WRONG registered noun in the scanned prose, so a binding satisfied by some other occurrence must still fail",
+   "gate": "G-NOUN-BINDING",
+   "mutant": "MUT-NOUN-CROSS"
+  },
+  {
+   "description": "the spelled-numeral scan is narrowed after its reference count is taken, so a scan that shrinks would no longer be invisible",
+   "gate": "G-PAPER-COVERAGE",
+   "mutant": "MUT-SPELLED-SCAN"
+  },
+  {
+   "description": "the pruned ladder search is corrupted at n = 4, where the unpruned search is affordable, so the pruned search's own positive control must fire",
+   "gate": "G-LAW4-LADDER",
+   "mutant": "MUT-LADDER-CONTROL"
+  },
+  {
+   "description": "the q = 3 maximum round incidence published in the fidelity block is drifted off the measured maximum, so the scope block's saturation-is-maximality clause cannot be carried by an asserted value",
+   "gate": "G-CONSTRUCTOR-FIDELITY",
+   "mutant": "MUT-SATMAX"
   }
  ],
  "n16_window": {
@@ -1549,9 +2043,313 @@
   ],
   "n": 16,
   "q": 4,
-  "route_window_comparisons": 21080,
+  "route_window_comparisons": 505920,
+  "route_window_histories_scanned": 24,
   "route_window_mismatches": 0,
-  "route_window_positive": 2064,
+  "route_window_note": "THE PERMUTATION AXIS IS THE WINDOW; THE HISTORY AXIS IS NOT.  All 1,240 transpositions and 3-cycles are taken at every prefix of every covering class tuple of W-N16-CLASS.  The empty prefix contributes positives vacuously and its share is published separately",
+  "route_window_per_history": [
+   {
+    "class_tuple": [
+     "ROW",
+     "COL",
+     "DIA",
+     "ANT"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "ROW",
+     "COL",
+     "ANT",
+     "DIA"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "ROW",
+     "DIA",
+     "COL",
+     "ANT"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "ROW",
+     "DIA",
+     "ANT",
+     "COL"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "ROW",
+     "ANT",
+     "COL",
+     "DIA"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "ROW",
+     "ANT",
+     "DIA",
+     "COL"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "COL",
+     "ROW",
+     "DIA",
+     "ANT"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "COL",
+     "ROW",
+     "ANT",
+     "DIA"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "COL",
+     "DIA",
+     "ROW",
+     "ANT"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "COL",
+     "DIA",
+     "ANT",
+     "ROW"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "COL",
+     "ANT",
+     "ROW",
+     "DIA"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "COL",
+     "ANT",
+     "DIA",
+     "ROW"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "DIA",
+     "ROW",
+     "COL",
+     "ANT"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "DIA",
+     "ROW",
+     "ANT",
+     "COL"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "DIA",
+     "COL",
+     "ROW",
+     "ANT"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "DIA",
+     "COL",
+     "ANT",
+     "ROW"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "DIA",
+     "ANT",
+     "ROW",
+     "COL"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "DIA",
+     "ANT",
+     "COL",
+     "ROW"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "ANT",
+     "ROW",
+     "COL",
+     "DIA"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "ANT",
+     "ROW",
+     "DIA",
+     "COL"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "ANT",
+     "COL",
+     "ROW",
+     "DIA"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "ANT",
+     "COL",
+     "DIA",
+     "ROW"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "ANT",
+     "DIA",
+     "ROW",
+     "COL"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   },
+   {
+    "class_tuple": [
+     "ANT",
+     "DIA",
+     "COL",
+     "ROW"
+    ],
+    "comparisons": 21080,
+    "mismatches": 0,
+    "positive": 2064,
+    "positive_at_the_empty_prefix": 1240
+   }
+  ],
+  "route_window_positive": 49536,
+  "route_window_positive_at_the_empty_prefix": 29760,
+  "route_window_positive_beyond_the_empty_prefix": 19776,
+  "route_window_positive_by_prefix_length": {
+   "0": 29760,
+   "1": 12480,
+   "2": 4032,
+   "3": 1344,
+   "4": 1344,
+   "5": 480,
+   "6": 96
+  },
+  "route_window_prefixes_per_history": 17,
   "route_window_size": 1240,
   "s16_size_not_filtered": 20922789888000,
   "saturation_budget_n": 16,
@@ -1581,100 +2379,242 @@
  },
  "noun_bindings": [
   {
+   "beside_a_wrong_noun": [],
    "binding": "NB-HIST",
    "bound": true,
+   "bound_in_prose": true,
    "noun": "histories",
    "value": 48
   },
   {
+   "beside_a_wrong_noun": [],
    "binding": "NB-LATTICE",
    "bound": true,
+   "bound_in_prose": true,
    "noun": "partitions",
    "value": 15
   },
   {
+   "beside_a_wrong_noun": [],
    "binding": "NB-PREFIX",
    "bound": true,
+   "bound_in_prose": true,
    "noun": "prefixes",
    "value": 53
   },
   {
+   "beside_a_wrong_noun": [],
    "binding": "NB-COMPARISON",
    "bound": true,
+   "bound_in_prose": true,
    "noun": "comparisons",
-   "value": 21080
+   "value": 505920
   },
   {
+   "beside_a_wrong_noun": [],
    "binding": "NB-PAIRS",
    "bound": true,
+   "bound_in_prose": true,
    "noun": "pairs",
    "value": 144991
   }
  ],
+ "numeral_transport": {
+  "feasibility_at_the_declared_row_list": "EVERY ROW OF THE LIST COULD HAVE EMITTED ANY OF THE THREE WORDS: the transport procedure is driven to LAW-IN-N, NEEDS-3 and BREAKS, and to both degenerate cases, by the synthetic control arms, on the same code path these rows take",
+  "q_carried_under_the_constant_law_exemption": 6,
+  "q_carried_under_the_declared_uniform_rule": 7,
+  "rows": [
+   {
+    "numeral": "law1 chart count",
+    "word_under_the_constant_law_exemption": "NEEDS-3",
+    "word_under_the_declared_uniform_rule": "NEEDS-3"
+   },
+   {
+    "numeral": "law2 schedule time",
+    "word_under_the_constant_law_exemption": "NEEDS-3",
+    "word_under_the_declared_uniform_rule": "NEEDS-3"
+   },
+   {
+    "numeral": "law2 attained floor",
+    "word_under_the_constant_law_exemption": "NEEDS-3",
+    "word_under_the_declared_uniform_rule": "NEEDS-3"
+   },
+   {
+    "numeral": "law2 redundant-event offset",
+    "word_under_the_constant_law_exemption": "LAW-IN-N",
+    "word_under_the_declared_uniform_rule": "NEEDS-3"
+   },
+   {
+    "numeral": "law3 coset-menu count",
+    "word_under_the_constant_law_exemption": "NEEDS-3",
+    "word_under_the_declared_uniform_rule": "NEEDS-3"
+   },
+   {
+    "numeral": "law4 ladder modulus",
+    "word_under_the_constant_law_exemption": "NEEDS-3",
+    "word_under_the_declared_uniform_rule": "NEEDS-3"
+   },
+   {
+    "numeral": "law5 non-unique count",
+    "word_under_the_constant_law_exemption": "NEEDS-3",
+    "word_under_the_declared_uniform_rule": "NEEDS-3"
+   }
+  ],
+  "tested": 7,
+  "the_two_levels": "THE AGGREGATE IS TWO-LEVELLED AND BOTH LEVELS ARE RENDERED.  STATEMENT LEVEL: does the parent's theorem hold at the new arena point?  Scored for all five laws; the three that survive are exactly the three whose statements carry no numeral.  NUMERAL LEVEL: does the parent's number transport?  Scored by the transport procedure over the declared row list above, including the numerals of the three statement-level survivors.  A contrast drawn between two tests must declare that it is one",
+  "what_the_words_can_separate": "q = sqrt(n) AT EVERY ARENA POINT THIS UNIT REACHES (4/2, 9/3, 16/4), so a formula in q is also a formula in n and the three-point transport table cannot separate them.  What the words record is that no tested numeral is reproduced by the ONE DECLARED n-only reading -- the counting bound offset to the parent's value at n = 9 -- while every one is reproduced by a formula in q or in the declared link count L.  The only numeral shown non-n by an instrument that does separate them is the ladder's modulus, and the instrument is the FIXED-n L-SWEEP"
+ },
  "paper_claims": [
   {
    "claim": "CL-PORTABLE",
-   "sentence": "three of the five laws transport with n as a parameter",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "Five of the five laws are portable",
+   "polarity_partner_absent": true,
+   "sentence": "Three of the five laws are portable",
    "supported": true
   },
   {
    "claim": "CL-HISTORIES",
-   "sentence": "the n = 4 corpus carries 48 driven histories",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "That is 47 driven histories",
+   "polarity_partner_absent": true,
+   "sentence": "That is 48 driven histories",
    "supported": true
   },
   {
    "claim": "CL-ROUTES",
-   "sentence": "the two routes disagree at 0 of the 53 distinct prefixes",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "the two routes disagree at 3 of them",
+   "polarity_partner_absent": true,
+   "sentence": "the two routes disagree at none of them",
    "supported": true
   },
   {
    "claim": "CL-CHART",
-   "sentence": "chart at 3, and the 3 are exactly the constant-class histories",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "here 45 of 48 force it and 4 are chart",
+   "polarity_partner_absent": true,
+   "sentence": "here 45 of 48 force it and 3 are chart",
    "supported": true
   },
   {
    "claim": "CL-TIME",
-   "sentence": "the schedule's crystallization time is 3 at n = 4 and 7 at n = 16",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "The schedule time is 4 at n = 4",
+   "polarity_partner_absent": true,
+   "sentence": "The schedule time is 3 at n = 4",
    "supported": true
   },
   {
    "claim": "CL-FLOOR",
-   "sentence": "the attained floor at n = 16 is 6 while the counting bound reads 4",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "At sixteen actors the bound reads 4, and the smallest event subset that forces identity has size 4",
+   "polarity_partner_absent": true,
+   "sentence": "At sixteen actors the bound reads 4, and the smallest event subset that forces identity has size 6",
    "supported": true
   },
   {
    "claim": "CL-OFFSET",
-   "sentence": "the offset is one at n = 4, at n = 9 and at n = 16",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "The offset survives everywhere: one at n = 4, one at n = 9, two at n = 16",
+   "polarity_partner_absent": true,
+   "sentence": "The offset survives everywhere: one at n = 4, one at n = 9, one at n = 16",
    "supported": true
   },
   {
    "claim": "CL-COSET",
-   "sentence": "the geometry leg admits 5 partitions of the complete lattice of 15",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "There are 5 survivors and 5 coset partitions and they are not the same 5 partitions",
+   "polarity_partner_absent": true,
+   "sentence": "There are 5 survivors and 5 coset partitions and they are the same 5 partitions",
    "supported": true
   },
   {
    "claim": "CL-HYPOTHESIS",
-   "sentence": "the declared links generate 8 of the 16 translations at q = 4",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "the four declared translations span the whole group of order 16",
+   "polarity_partner_absent": true,
+   "sentence": "the four declared translations span a subgroup of order 8 inside a group of order 16",
    "supported": true
   },
   {
    "claim": "CL-LADDER",
-   "sentence": "the modulus is the declared link count",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "The modulus is the square root of the actor count",
+   "polarity_partner_absent": true,
+   "sentence": "The modulus is the declared link count",
    "supported": true
   },
   {
    "claim": "CL-COIN",
-   "sentence": "the census is blind to the coin's modulus",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "the census can see m",
+   "polarity_partner_absent": true,
+   "sentence": "the census cannot see m",
    "supported": true
   },
   {
    "claim": "CL-FORCING",
-   "sentence": "unique factorization at 45 of 48",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "46 histories admit the discrete partition alone",
+   "polarity_partner_absent": true,
+   "sentence": "45 histories admit the discrete partition alone",
    "supported": true
   },
   {
    "claim": "CL-SATURATION",
-   "sentence": "saturation is not maximal at q = 4",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "At q = 4 it is too",
+   "polarity_partner_absent": true,
+   "sentence": "At q = 4 it is not",
+   "supported": true
+  },
+  {
+   "claim": "CL-LEGS",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "leg 4, the only leg that reads it, cuts the census",
+   "polarity_partner_absent": true,
+   "sentence": "leg 4, the only leg that reads it, is reached at 51 of the 720 partition-history pairs and is admissible at all 51",
+   "supported": true
+  },
+  {
+   "claim": "CL-SHARPENED",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "it evaluates to 2(q - 1) at q = 2 and nowhere else",
+   "polarity_partner_absent": true,
+   "sentence": "it evaluates to 2(q - 1) at q = 2 through 7",
+   "supported": true
+  },
+  {
+   "claim": "CL-N16-MISMATCHES",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "505,920 comparisons in all, 3 mismatches",
+   "polarity_partner_absent": true,
+   "sentence": "505,920 comparisons in all, 0 mismatches",
+   "supported": true
+  },
+  {
+   "claim": "CL-TRANSPORTS",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "The theorem does not transport",
+   "polarity_partner_absent": true,
+   "sentence": "The theorem transports",
+   "supported": true
+  },
+  {
+   "claim": "CL-PAIR-WORD",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "The pair's word is the weakest leg's: LAW-IN-N",
+   "polarity_partner_absent": true,
+   "sentence": "The pair's word is the weakest leg's: NEEDS-3",
+   "supported": true
+  },
+  {
+   "claim": "CL-DEFINITION",
+   "occurs_in_the_paper": true,
+   "polarity_partner": "it is LAW-IN-N when that reading fails",
+   "polarity_partner_absent": true,
+   "sentence": "it is NEEDS-3 when that reading fails",
    "supported": true
   }
  ],
@@ -1683,33 +2623,35 @@
   "exemptions_declared": 0,
   "exemptions_fired": 0,
   "fence_multiset_equal": true,
-  "fenced_numerals_scanned": 95,
+  "fenced_numerals_scanned": 135,
   "fences_in_paper": 7,
+  "fences_not_required": [],
   "inline_span_numerals_scanned": 4,
-  "numerals_scanned": 355,
-  "reference_numerals_in_whole_paper": 355,
+  "numerals_scanned": 531,
+  "reference_numerals_in_whole_paper": 531,
   "scan_covers_everything": true,
-  "spelled_numerals_scanned": 104,
+  "spelled_numerals_scanned": 179,
+  "spelled_reference_in_whole_paper": 179,
   "spelled_unbacked": [],
-  "table_rows": 23,
+  "table_rows": 28,
   "unbacked": [],
   "verdict_fences_found": {
    "NDEP-LAW-IN-N-COSET-MENU<SET-EQUAL AT n=4: THE GEOMETRY LEG'S 5 SURVIVORS OVER THE COMPLETE LATTICE OF 15 ARE EXACTLY THE 5 COSET PARTITIONS OF THE 5 TRANSLATION SUBGROUPS | THE COUNT IS q+3 AT PRIME q (NEEDS-3) | THE HYPOTHESIS FAILS AT q=4: THE DECLARED LINKS GENERATE 8 OF 16, SO THE q=4 ROW IS CARRIED UNSCORED AND THE TWO READINGS THERE (67 ABSTRACT SUBGROUPS, 7 F_q-SUBSPACES) ARE NAMED AND NOT CHOSEN>": 1,
-   "NDEP-LAW-IN-N-DIVISION-FORCING<UNIQUE FACTORIZATION 45 OF 48 OVER THE COMPLETE ACTOR LATTICE OF 15, THE DISCRETE PARTITION CHECKED ADMISSIBLE AT EVERY HISTORY SEPARATELY | THE 3 NON-UNIQUE ARE EXACTLY THE CONSTANT-CLASS HISTORIES AND THE PARENT'S THESIS HOLDS VERBATIM | UNION OF ADMISSIBLE PARTITIONS 4 = THE DISCRETE ONE PLUS ONE PER PARALLEL CLASS | THE COUNT IS NEEDS-3 | COUNTING-ONLY>": 1,
-   "NDEP-LAW-IN-N-NAMING<ROUTES=0 MISMATCHES OVER 53 DISTINCT PREFIXES AT n=4, ELEMENT SET AGAINST ELEMENT SET, THE WHOLE OF S_4 FILTERED PER PREFIX | n=16 21,080 COMPARISONS 0 MISMATCHES ON THE DECLARED PERMUTATION WINDOW, 2,064 POSITIVE | FORCED 45 OF 48, CHART 3 = THE CONSTANT-CLASS HISTORIES, ONE PER PARALLEL CLASS -- THE PARENT'S CHARACTERISATION VERBATIM | THE COUNT IS NEEDS-3>": 1,
-   "NDEP-NEEDS-3-CRYSTALLIZATION<THE PAIR SURVIVES AS A STRUCTURE AND ITS FLOOR FORMULA DOES NOT: SCHEDULE TIME 3|5|7 AT n=4|9|16 = 2q-1 (NEEDS-3) | ATTAINED FLOOR 2|4|6 WHILE THE COUNTING BOUND ceil(log2 n) READS 4 AT n=16 (NEEDS-3) | THE SUCCESSOR FORMULA, IN WHICH THE EVENT SIZE q ENTERS, READS 2|4|6 AND MATCHES ALL THREE | OFFSET ONE AT ALL THREE (LAW-IN-N), ROUND ONE'S LAST EVENT REDUNDANT AT 2 OF 2>": 1,
-   "NDEP-NEEDS-3-MOD-MOTIF<THE MOTIF SPLITS IN TWO. THE LADDER'S MODULUS IS DERIVED AND IS THE DECLARED LINK COUNT L: AT FIXED n=4 THE SWEEP L=1|2|3 RETURNS ACHIEVABLE BUDGETS {1,2,3,4,5,6,7}|{2,4,6}|{3,6}, SO MOD-3 REAPPEARS AT FOUR ACTORS AND THE MODULUS IS NEITHER sqrt(n) NOR THE CHARACTERISTIC, BOTH FIXED AT 2 THROUGHOUT; n=16 RETURNS {4,8}. THE COIN'S MODULUS IS A FREE DECLARATION: THE RECORD ENTERS EXACTLY MOD m (0 MISMATCHES OVER 144,991 PAIRS AT EACH OF m=2 AND m=3) WHILE THE CENSUS IS BLIND TO m (45 UNIQUE AND 3 NON-UNIQUE AT m=2,3,4,5)>": 1,
-   "NDEP-PORTABLE-3-OF-5<n=4 BUILT AND RUN ENTIRE -- AG(2,2), 48 DRIVEN HISTORIES, ACTOR LATTICE 15 COMPLETE, SYMMETRIC GROUP FILTERED WHOLE; n=16 A DECLARED WINDOW; EVERY ONE OF THE 6 TESTED NUMERALS IS q-CARRIED (6 OF 6), SO WHAT TRANSPORTS ON n ALONE IS THE LAWS AND NEVER THEIR NUMBERS>": 1,
-   "SCOPE=n=4 ENTIRE AND COMPLETE; n=16 A DECLARED WINDOW (CLASS TUPLES ONLY -- THE 2,627,625 GROUPINGS OF SIXTEEN SITES ARE OUT OF SCOPE, S_16 IS NOT FILTERED); q=3 ENTERS ONLY AS THE CONSTRUCTOR-FIDELITY LEG AND NO n=9 NUMBER IS RE-DERIVED HERE -- ALL TEN ARE ANCHORED READS OF THE PARENT'S COMMITTED RECEIPT OR FROZEN DECLARED CONSTANTS | SATURATION IS MAXIMAL AT q=2 AND q=3 AND IS NOT AT q=4, WHERE A WITNESS GROUPING REACHES 48 AGAINST THE BUDGET 16 | MEASURE=COUNTING-ONLY (E-24) | LANGUAGE=LAW-IN-N, NEEDS-3 AND BREAKS NAME THE TRANSPORT OF A PUBLISHED LAW AND NOTHING ELSE": 1
+   "NDEP-LAW-IN-N-DIVISION-FORCING<UNIQUE FACTORIZATION 45 OF 48 OVER THE COMPLETE ACTOR LATTICE OF 15 AT THE ACTOR GRAIN, THE DISCRETE PARTITION CHECKED ADMISSIBLE AT EVERY HISTORY SEPARATELY | THE 3 NON-UNIQUE ARE EXACTLY THE CONSTANT-CLASS HISTORIES AND THE PARENT'S THESIS HOLDS VERBATIM | UNION OF ADMISSIBLE PARTITIONS 4 = THE DISCRETE ONE PLUS ONE PER PARALLEL CLASS | THE CRITERION IS TWO-LEGGED ON THIS CORPUS: LEG 3 PASSES AT ALL 720 PARTITION-HISTORY PAIRS AND LEG 4, THE ONLY LEG THAT READS THE COIN'S MODULUS, IS ADMISSIBLE AT ALL 51 THAT REACH IT | THE COUNT IS NEEDS-3 | COUNTING-ONLY>": 1,
+   "NDEP-LAW-IN-N-NAMING<ROUTES=0 MISMATCHES OVER 53 DISTINCT PREFIX EVENT MULTISETS (87 PREFIX SEQUENCES) AT n=4, ELEMENT SET AGAINST ELEMENT SET, THE WHOLE OF S_4 FILTERED PER PREFIX | n=16 505,920 COMPARISONS 0 MISMATCHES OVER ALL 24 COVERING CLASS TUPLES ON THE DECLARED PERMUTATION WINDOW, 49,536 POSITIVE OF WHICH 29,760 AT THE EMPTY PREFIX | THE ROUTE LEG IS A REPRODUCTION AND NOT A TRANSPORT MEASUREMENT: THE PARENT PROVES IT BY A BOOLEAN-ALGEBRA ARGUMENT THAT NAMES NO ARENA, AND THE ATOMS ARE THE SIGNATURE BLOCKS AT 53 OF 53 | FORCED 45 OF 48, CHART 3 = THE CONSTANT-CLASS HISTORIES, ONE PER PARALLEL CLASS -- THE PARENT'S CHARACTERISATION VERBATIM | THE COUNT IS NEEDS-3>": 1,
+   "NDEP-NEEDS-3-CRYSTALLIZATION<THE PAIR SURVIVES AS A STRUCTURE; THE BOUND ceil(log2 n) STANDS AS A BOUND AND IS NOT THE ATTAINED VALUE AT n=16: SCHEDULE TIME 3|5|7 AT n=4|9|16 = 2q-1 (NEEDS-3) | ATTAINED FLOOR 2|4|6 WHILE THE COUNTING BOUND READS 4 AT n=16 (NEEDS-3) | THE FORM WAS UNDISCRIMINATED AT n=9, WHERE THE COUNTING BOUND AND THE SIZE-CORRECTED BOUND BOTH READ 4 | THE SUCCESSOR FORMULA, IN WHICH THE EVENT SIZE q ENTERS, READS 2|4|6 AND MATCHES ALL THREE, AND EVALUATES TO 2(q-1) AT q=2..7 WITH THE SCHEDULE TIME 2q-1 ABOVE IT AND THE OFFSET 1 BY SUBTRACTION | OFFSET ONE AT ALL THREE (LAW-IN-N, UNDISCRIMINATED UNDER THE CONSTANT-LAW EXEMPTION; NEEDS-3 UNDER THE DECLARED UNIFORM RULE), ROUND ONE'S LAST EVENT REDUNDANT AT 2 OF 2>": 1,
+   "NDEP-NEEDS-3-MOD-MOTIF<THE MOTIF SPLITS IN TWO. THE LADDER'S MODULUS IS DERIVED AND IS THE DECLARED LINK COUNT L: AT FIXED n=4 THE SWEEP L=1|2|3 RETURNS ACHIEVABLE BUDGETS {1,2,3,4,5,6,7}|{2,4,6}|{3,6} WITHIN R<=7, SO MOD-3 REAPPEARS AT FOUR ACTORS AND THE MODULUS IS NEITHER sqrt(n) NOR THE CHARACTERISTIC, BOTH FIXED AT 2 THROUGHOUT; THE NUMBER OF SATURATING GROUPINGS MOVES WITH L HERE AND IS SEPARATED AT q=3, WHERE ALL 36 SATURATING GROUPINGS GIVE {3,6} AND THE RUNG IS THE LINK COUNT 3 AND NOT 36; n=16 RETURNS {4,8} WITHIN R<=8. THE COIN'S MODULUS IS DECLARED AT THIS UNIT AND THIS CENSUS IS MEASURED BLIND TO IT (45 UNIQUE AND 3 NON-UNIQUE AT m=2,3,4,5); THAT THE RECORD ENTERS EXACTLY MOD m IS DEFINITIONAL AND IS DISCLOSED, NOT MEASURED; AND PAPER-20 DERIVES THE COIN'S Z_3 FROM THE ARENA'S OWN FIELD F_3, WHICH READ AT AG(2,2) WOULD GIVE m=2 AND IS NOT TESTED HERE>": 1,
+   "NDEP-PORTABLE-3-OF-5<n=4 BUILT AND RUN ENTIRE -- AG(2,2), 48 DRIVEN HISTORIES, ACTOR LATTICE 15 COMPLETE, SYMMETRIC GROUP FILTERED WHOLE; n=16 A DECLARED WINDOW | TWO LEVELS, DECLARED: THE 5 LAW WORDS ARE SCORED AT THE STATEMENT -- DOES THE PARENT'S THEOREM HOLD AT THE NEW ARENA POINT -- AND THE 3 PORTABLE ARE EXACTLY THE 3 WHOSE STATEMENTS CARRY NO NUMERAL; THE 7 TESTED NUMERALS ARE SCORED BY THE TRANSPORT PROCEDURE, 7 OF 7 q-CARRIED UNDER THE DECLARED UNIFORM RULE AND 6 OF 7 UNDER THE CONSTANT-LAW EXEMPTION ON THE OFFSET | NO TESTED NUMERAL IS REPRODUCED BY THE DECLARED n-ONLY READING; EVERY ONE IS REPRODUCED BY A FORMULA IN q=sqrt(n) OR IN THE DECLARED LINK COUNT L, AND SINCE q=sqrt(n) AT EVERY ARENA POINT REACHED IT IS THE FIXED-n L-SWEEP AND NOT THE TRANSPORT TABLE THAT SEPARATES L FROM n>": 1,
+   "SCOPE=n=4 ENTIRE AND COMPLETE; n=16 A DECLARED WINDOW (CLASS TUPLES ONLY -- THE 2,627,625 GROUPINGS OF SIXTEEN SITES ARE OUT OF SCOPE, S_16 IS NOT FILTERED); NO n=9 LAW VALUE IS RE-DERIVED HERE -- ALL 11 ARE ANCHORED READS OF THE PARENT'S COMMITTED RECEIPT OR FROZEN DECLARED CONSTANTS -- WHILE THE FIVE q=3 SUBSTRATE COUNTS ARE RE-DERIVED AS THE FIDELITY LEG AND AGREE WITH THE PARENT'S ANCHORS 5 OF 5 | SATURATION IS MEASURED MAXIMAL AT q=2 (4 AGAINST 4) AND AT q=3 (9 AGAINST 9) AND IS NOT AT q=4, WHERE A WITNESS GROUPING REACHES 48 AGAINST THE BUDGET 16 | MEASURE=COUNTING-ONLY (E-24) | LANGUAGE=LAW-IN-N, NEEDS-3 AND BREAKS NAME THE TRANSPORT OF A PUBLISHED LAW AND NOTHING ELSE": 1
   },
   "verdict_fences_required": {
    "NDEP-LAW-IN-N-COSET-MENU<SET-EQUAL AT n=4: THE GEOMETRY LEG'S 5 SURVIVORS OVER THE COMPLETE LATTICE OF 15 ARE EXACTLY THE 5 COSET PARTITIONS OF THE 5 TRANSLATION SUBGROUPS | THE COUNT IS q+3 AT PRIME q (NEEDS-3) | THE HYPOTHESIS FAILS AT q=4: THE DECLARED LINKS GENERATE 8 OF 16, SO THE q=4 ROW IS CARRIED UNSCORED AND THE TWO READINGS THERE (67 ABSTRACT SUBGROUPS, 7 F_q-SUBSPACES) ARE NAMED AND NOT CHOSEN>": 1,
-   "NDEP-LAW-IN-N-DIVISION-FORCING<UNIQUE FACTORIZATION 45 OF 48 OVER THE COMPLETE ACTOR LATTICE OF 15, THE DISCRETE PARTITION CHECKED ADMISSIBLE AT EVERY HISTORY SEPARATELY | THE 3 NON-UNIQUE ARE EXACTLY THE CONSTANT-CLASS HISTORIES AND THE PARENT'S THESIS HOLDS VERBATIM | UNION OF ADMISSIBLE PARTITIONS 4 = THE DISCRETE ONE PLUS ONE PER PARALLEL CLASS | THE COUNT IS NEEDS-3 | COUNTING-ONLY>": 1,
-   "NDEP-LAW-IN-N-NAMING<ROUTES=0 MISMATCHES OVER 53 DISTINCT PREFIXES AT n=4, ELEMENT SET AGAINST ELEMENT SET, THE WHOLE OF S_4 FILTERED PER PREFIX | n=16 21,080 COMPARISONS 0 MISMATCHES ON THE DECLARED PERMUTATION WINDOW, 2,064 POSITIVE | FORCED 45 OF 48, CHART 3 = THE CONSTANT-CLASS HISTORIES, ONE PER PARALLEL CLASS -- THE PARENT'S CHARACTERISATION VERBATIM | THE COUNT IS NEEDS-3>": 1,
-   "NDEP-NEEDS-3-CRYSTALLIZATION<THE PAIR SURVIVES AS A STRUCTURE AND ITS FLOOR FORMULA DOES NOT: SCHEDULE TIME 3|5|7 AT n=4|9|16 = 2q-1 (NEEDS-3) | ATTAINED FLOOR 2|4|6 WHILE THE COUNTING BOUND ceil(log2 n) READS 4 AT n=16 (NEEDS-3) | THE SUCCESSOR FORMULA, IN WHICH THE EVENT SIZE q ENTERS, READS 2|4|6 AND MATCHES ALL THREE | OFFSET ONE AT ALL THREE (LAW-IN-N), ROUND ONE'S LAST EVENT REDUNDANT AT 2 OF 2>": 1,
-   "NDEP-NEEDS-3-MOD-MOTIF<THE MOTIF SPLITS IN TWO. THE LADDER'S MODULUS IS DERIVED AND IS THE DECLARED LINK COUNT L: AT FIXED n=4 THE SWEEP L=1|2|3 RETURNS ACHIEVABLE BUDGETS {1,2,3,4,5,6,7}|{2,4,6}|{3,6}, SO MOD-3 REAPPEARS AT FOUR ACTORS AND THE MODULUS IS NEITHER sqrt(n) NOR THE CHARACTERISTIC, BOTH FIXED AT 2 THROUGHOUT; n=16 RETURNS {4,8}. THE COIN'S MODULUS IS A FREE DECLARATION: THE RECORD ENTERS EXACTLY MOD m (0 MISMATCHES OVER 144,991 PAIRS AT EACH OF m=2 AND m=3) WHILE THE CENSUS IS BLIND TO m (45 UNIQUE AND 3 NON-UNIQUE AT m=2,3,4,5)>": 1,
-   "NDEP-PORTABLE-3-OF-5<n=4 BUILT AND RUN ENTIRE -- AG(2,2), 48 DRIVEN HISTORIES, ACTOR LATTICE 15 COMPLETE, SYMMETRIC GROUP FILTERED WHOLE; n=16 A DECLARED WINDOW; EVERY ONE OF THE 6 TESTED NUMERALS IS q-CARRIED (6 OF 6), SO WHAT TRANSPORTS ON n ALONE IS THE LAWS AND NEVER THEIR NUMBERS>": 1,
-   "SCOPE=n=4 ENTIRE AND COMPLETE; n=16 A DECLARED WINDOW (CLASS TUPLES ONLY -- THE 2,627,625 GROUPINGS OF SIXTEEN SITES ARE OUT OF SCOPE, S_16 IS NOT FILTERED); q=3 ENTERS ONLY AS THE CONSTRUCTOR-FIDELITY LEG AND NO n=9 NUMBER IS RE-DERIVED HERE -- ALL TEN ARE ANCHORED READS OF THE PARENT'S COMMITTED RECEIPT OR FROZEN DECLARED CONSTANTS | SATURATION IS MAXIMAL AT q=2 AND q=3 AND IS NOT AT q=4, WHERE A WITNESS GROUPING REACHES 48 AGAINST THE BUDGET 16 | MEASURE=COUNTING-ONLY (E-24) | LANGUAGE=LAW-IN-N, NEEDS-3 AND BREAKS NAME THE TRANSPORT OF A PUBLISHED LAW AND NOTHING ELSE": 1
+   "NDEP-LAW-IN-N-DIVISION-FORCING<UNIQUE FACTORIZATION 45 OF 48 OVER THE COMPLETE ACTOR LATTICE OF 15 AT THE ACTOR GRAIN, THE DISCRETE PARTITION CHECKED ADMISSIBLE AT EVERY HISTORY SEPARATELY | THE 3 NON-UNIQUE ARE EXACTLY THE CONSTANT-CLASS HISTORIES AND THE PARENT'S THESIS HOLDS VERBATIM | UNION OF ADMISSIBLE PARTITIONS 4 = THE DISCRETE ONE PLUS ONE PER PARALLEL CLASS | THE CRITERION IS TWO-LEGGED ON THIS CORPUS: LEG 3 PASSES AT ALL 720 PARTITION-HISTORY PAIRS AND LEG 4, THE ONLY LEG THAT READS THE COIN'S MODULUS, IS ADMISSIBLE AT ALL 51 THAT REACH IT | THE COUNT IS NEEDS-3 | COUNTING-ONLY>": 1,
+   "NDEP-LAW-IN-N-NAMING<ROUTES=0 MISMATCHES OVER 53 DISTINCT PREFIX EVENT MULTISETS (87 PREFIX SEQUENCES) AT n=4, ELEMENT SET AGAINST ELEMENT SET, THE WHOLE OF S_4 FILTERED PER PREFIX | n=16 505,920 COMPARISONS 0 MISMATCHES OVER ALL 24 COVERING CLASS TUPLES ON THE DECLARED PERMUTATION WINDOW, 49,536 POSITIVE OF WHICH 29,760 AT THE EMPTY PREFIX | THE ROUTE LEG IS A REPRODUCTION AND NOT A TRANSPORT MEASUREMENT: THE PARENT PROVES IT BY A BOOLEAN-ALGEBRA ARGUMENT THAT NAMES NO ARENA, AND THE ATOMS ARE THE SIGNATURE BLOCKS AT 53 OF 53 | FORCED 45 OF 48, CHART 3 = THE CONSTANT-CLASS HISTORIES, ONE PER PARALLEL CLASS -- THE PARENT'S CHARACTERISATION VERBATIM | THE COUNT IS NEEDS-3>": 1,
+   "NDEP-NEEDS-3-CRYSTALLIZATION<THE PAIR SURVIVES AS A STRUCTURE; THE BOUND ceil(log2 n) STANDS AS A BOUND AND IS NOT THE ATTAINED VALUE AT n=16: SCHEDULE TIME 3|5|7 AT n=4|9|16 = 2q-1 (NEEDS-3) | ATTAINED FLOOR 2|4|6 WHILE THE COUNTING BOUND READS 4 AT n=16 (NEEDS-3) | THE FORM WAS UNDISCRIMINATED AT n=9, WHERE THE COUNTING BOUND AND THE SIZE-CORRECTED BOUND BOTH READ 4 | THE SUCCESSOR FORMULA, IN WHICH THE EVENT SIZE q ENTERS, READS 2|4|6 AND MATCHES ALL THREE, AND EVALUATES TO 2(q-1) AT q=2..7 WITH THE SCHEDULE TIME 2q-1 ABOVE IT AND THE OFFSET 1 BY SUBTRACTION | OFFSET ONE AT ALL THREE (LAW-IN-N, UNDISCRIMINATED UNDER THE CONSTANT-LAW EXEMPTION; NEEDS-3 UNDER THE DECLARED UNIFORM RULE), ROUND ONE'S LAST EVENT REDUNDANT AT 2 OF 2>": 1,
+   "NDEP-NEEDS-3-MOD-MOTIF<THE MOTIF SPLITS IN TWO. THE LADDER'S MODULUS IS DERIVED AND IS THE DECLARED LINK COUNT L: AT FIXED n=4 THE SWEEP L=1|2|3 RETURNS ACHIEVABLE BUDGETS {1,2,3,4,5,6,7}|{2,4,6}|{3,6} WITHIN R<=7, SO MOD-3 REAPPEARS AT FOUR ACTORS AND THE MODULUS IS NEITHER sqrt(n) NOR THE CHARACTERISTIC, BOTH FIXED AT 2 THROUGHOUT; THE NUMBER OF SATURATING GROUPINGS MOVES WITH L HERE AND IS SEPARATED AT q=3, WHERE ALL 36 SATURATING GROUPINGS GIVE {3,6} AND THE RUNG IS THE LINK COUNT 3 AND NOT 36; n=16 RETURNS {4,8} WITHIN R<=8. THE COIN'S MODULUS IS DECLARED AT THIS UNIT AND THIS CENSUS IS MEASURED BLIND TO IT (45 UNIQUE AND 3 NON-UNIQUE AT m=2,3,4,5); THAT THE RECORD ENTERS EXACTLY MOD m IS DEFINITIONAL AND IS DISCLOSED, NOT MEASURED; AND PAPER-20 DERIVES THE COIN'S Z_3 FROM THE ARENA'S OWN FIELD F_3, WHICH READ AT AG(2,2) WOULD GIVE m=2 AND IS NOT TESTED HERE>": 1,
+   "NDEP-PORTABLE-3-OF-5<n=4 BUILT AND RUN ENTIRE -- AG(2,2), 48 DRIVEN HISTORIES, ACTOR LATTICE 15 COMPLETE, SYMMETRIC GROUP FILTERED WHOLE; n=16 A DECLARED WINDOW | TWO LEVELS, DECLARED: THE 5 LAW WORDS ARE SCORED AT THE STATEMENT -- DOES THE PARENT'S THEOREM HOLD AT THE NEW ARENA POINT -- AND THE 3 PORTABLE ARE EXACTLY THE 3 WHOSE STATEMENTS CARRY NO NUMERAL; THE 7 TESTED NUMERALS ARE SCORED BY THE TRANSPORT PROCEDURE, 7 OF 7 q-CARRIED UNDER THE DECLARED UNIFORM RULE AND 6 OF 7 UNDER THE CONSTANT-LAW EXEMPTION ON THE OFFSET | NO TESTED NUMERAL IS REPRODUCED BY THE DECLARED n-ONLY READING; EVERY ONE IS REPRODUCED BY A FORMULA IN q=sqrt(n) OR IN THE DECLARED LINK COUNT L, AND SINCE q=sqrt(n) AT EVERY ARENA POINT REACHED IT IS THE FIXED-n L-SWEEP AND NOT THE TRANSPORT TABLE THAT SEPARATES L FROM n>": 1,
+   "SCOPE=n=4 ENTIRE AND COMPLETE; n=16 A DECLARED WINDOW (CLASS TUPLES ONLY -- THE 2,627,625 GROUPINGS OF SIXTEEN SITES ARE OUT OF SCOPE, S_16 IS NOT FILTERED); NO n=9 LAW VALUE IS RE-DERIVED HERE -- ALL 11 ARE ANCHORED READS OF THE PARENT'S COMMITTED RECEIPT OR FROZEN DECLARED CONSTANTS -- WHILE THE FIVE q=3 SUBSTRATE COUNTS ARE RE-DERIVED AS THE FIDELITY LEG AND AGREE WITH THE PARENT'S ANCHORS 5 OF 5 | SATURATION IS MEASURED MAXIMAL AT q=2 (4 AGAINST 4) AND AT q=3 (9 AGAINST 9) AND IS NOT AT q=4, WHERE A WITNESS GROUPING REACHES 48 AGAINST THE BUDGET 16 | MEASURE=COUNTING-ONLY (E-24) | LANGUAGE=LAW-IN-N, NEEDS-3 AND BREAKS NAME THE TRANSPORT OF A PUBLISHED LAW AND NOTHING ELSE": 1
   }
  },
  "paper_tables": [
@@ -1850,6 +2792,71 @@
     ]
    ],
    "table": "T-SUBGROUPS"
+  },
+  {
+   "header": [
+    "corpus",
+    "schedules",
+    "rounds",
+    "events per history"
+   ],
+   "rows": [
+    [
+     "C1",
+     "2",
+     "2",
+     "4"
+    ],
+    [
+     "C1FAN",
+     "8",
+     "2",
+     "4"
+    ],
+    [
+     "C2",
+     "4",
+     "4",
+     "8"
+    ],
+    [
+     "C3",
+     "34",
+     "3",
+     "6"
+    ]
+   ],
+   "table": "T-CORPUS"
+  },
+  {
+   "header": [
+    "corpus",
+    "crystallization time",
+    "attained floor"
+   ],
+   "rows": [
+    [
+     "C1",
+     "3 at 2",
+     "2 at 2"
+    ],
+    [
+     "C1FAN",
+     "3 at 8",
+     "2 at 8"
+    ],
+    [
+     "C2",
+     "3 at 4",
+     "2 at 4"
+    ],
+    [
+     "C3",
+     "3 at 25, 5 at 6, never at 3",
+     "2 at 31, never at 3"
+    ]
+   ],
+   "table": "T-STRAT"
   }
  ],
  "path_anchors": [
@@ -1935,22 +2942,36 @@
    "source": "A-AIDREC"
   },
   {
-   "anchor": "P-FLOOR",
+   "anchor": "P-FLOOR-BOUND",
    "consumer_gate": "G-LAW2-FLOOR",
    "declared": 4,
    "matches": true,
    "path": "crystallization/information_floor/counting_bound_ceil_log2_actors",
    "read": 4,
    "source": "A-AIDREC"
+  },
+  {
+   "anchor": "P-FLOOR-ATTAINED",
+   "consumer_gate": "G-LAW2-OFFSET",
+   "declared": 4,
+   "matches": true,
+   "path": "counts/information_floor",
+   "read": 4,
+   "source": "A-AIDREC"
   }
  ],
- "payload_sha256_12": "949c650d328a",
+ "payload_sha256_12": "7797747f04df",
  "polarity": [
   {
    "axis": "POL-PORTABLE",
    "axis_live": true,
-   "negative": "portable at all five",
    "negative_absent": true,
+   "negatives": [
+    "portable at all five",
+    "all five laws are portable",
+    "five of the five laws are portable"
+   ],
+   "negatives_found": [],
    "ok": true,
    "positive": "portable",
    "positive_present": true
@@ -1958,8 +2979,13 @@
   {
    "axis": "POL-FLOOR",
    "axis_live": true,
-   "negative": "the counting bound is attained",
    "negative_absent": true,
+   "negatives": [
+    "the counting bound is attained",
+    "the counting bound is the attained value",
+    "the bound is reached at n = 16"
+   ],
+   "negatives_found": [],
    "ok": true,
    "positive": "the counting bound",
    "positive_present": true
@@ -1967,8 +2993,14 @@
   {
    "axis": "POL-WINDOW",
    "axis_live": true,
-   "negative": "exhaustive at n = 16",
    "negative_absent": true,
+   "negatives": [
+    "exhaustive at n = 16",
+    "the n = 16 census is complete",
+    "the n = 16 enumeration is exhaustive",
+    "the n = 16 corpus is entire"
+   ],
+   "negatives_found": [],
    "ok": true,
    "positive": "declared window",
    "positive_present": true
@@ -1976,8 +3008,13 @@
   {
    "axis": "POL-MEASURE",
    "axis_live": true,
-   "negative": "the probability that a law",
    "negative_absent": true,
+   "negatives": [
+    "the probability that a law",
+    "the likelihood that a law",
+    "per cent chance"
+   ],
+   "negatives_found": [],
    "ok": true,
    "positive": "counting-only",
    "positive_present": true
@@ -1985,10 +3022,29 @@
   {
    "axis": "POL-SPLIT",
    "axis_live": true,
-   "negative": "one modulus",
    "negative_absent": true,
+   "negatives": [
+    "one modulus",
+    "a single modulus",
+    "the same mechanism throughout"
+   ],
+   "negatives_found": [],
    "ok": true,
    "positive": "splits",
+   "positive_present": true
+  },
+  {
+   "axis": "POL-DERIVED",
+   "axis_live": true,
+   "negative_absent": true,
+   "negatives": [
+    "nine is derived",
+    "nine is selected",
+    "nine is forced"
+   ],
+   "negatives_found": [],
+   "ok": true,
+   "positive": "declaration",
    "positive_present": true
   }
  ],
@@ -2031,6 +3087,14 @@
     "measured_sha256_12": "2dd2a9879984",
     "path": "v14/code/aid_receipt.json",
     "role": "AID's COMMITTED RECEIPT: the n = 9 substrate counts and the n = 9 law values, read by PATH and consumed as anchors by the fidelity and transport gates."
+   },
+   {
+    "declared_sha256_12": "4824d190af73",
+    "id": "A-P20",
+    "matches": true,
+    "measured_sha256_12": "4824d190af73",
+    "path": "v14/paper-20-coupling.md",
+    "role": "PAPER-20 (terminal, v14 ledger #198): the coupled walk's coin, whose connection group Z_3 is DERIVED from the arena's own field F_3.  Quoted as the standing counter-claim to any reading of the coin's modulus as free, and consumed by G-LAW4-COIN."
    },
    {
     "declared_sha256_12": "2e9cbae8a83e / 240bad74217a",
@@ -2141,8 +3205,8 @@
    "mutant": "MUT-CONTROL"
   },
   {
-   "declared_gate": "G-VERDICT-RECONSTRUCTED",
-   "description": "the head's aggregate portability count is written from a typed literal instead of the emitted law words",
+   "declared_gate": "G-HEAD-TWO-LEVELS",
+   "description": "the head's aggregate portability count is written from a typed literal instead of the emitted law words, and dies at the gate that re-derives the statement-level count from the word list -- which runs before the head is built",
    "hook_present": true,
    "mutant": "MUT-VERDICT"
   },
@@ -2172,9 +3236,15 @@
   },
   {
    "declared_gate": "G-PAPER-TABLES",
-   "description": "one published table's HEADER row is dropped from the binding, so a table whose columns were renamed would pass",
+   "description": "one published table's HEADER row is TRUNCATED before it is looked for in the paper, so the header the run demands is not the header the paper carries and the header leg must fire (E-23: the description is the code's, not the disease's -- the disease that a header could go unbound is tested by MUT-TABLE-UNRENDERED)",
    "hook_present": true,
    "mutant": "MUT-TABLE"
+  },
+  {
+   "declared_gate": "G-PAPER-TABLES",
+   "description": "a markdown table row is planted in the scanned paper that no rendered table accounts for, so a table the run does not render must not be a table the run ignores",
+   "hook_present": true,
+   "mutant": "MUT-TABLE-UNRENDERED"
   },
   {
    "declared_gate": "G-NOUN-BINDING",
@@ -2196,15 +3266,123 @@
   },
   {
    "declared_gate": "G-SEAL-TOTALITY",
-   "description": "the coverage seal is never taken, so a published key reaches disk unsealed",
+   "description": "the coverage seal is never taken, so a published key reaches disk unsealed and the manifest acquires a gap; both legs -- the published-key leg and the manifest-gap leg -- are live for it",
    "hook_present": true,
    "mutant": "MUT-SEAL-DROP"
   },
   {
    "declared_gate": "G-SEAL-TOTALITY",
-   "description": "a seal names a gate this run never evaluates",
+   "description": "one seal's declared gate is RETARGETED at take time to a gate name this run never evaluates, so the phantom-gate detector is fed a real condition rather than a constant",
    "hook_present": true,
    "mutant": "MUT-SEAL-GATE"
+  },
+  {
+   "declared_gate": "G-SEAL-PROMOTION-TOTALITY",
+   "description": "a top-level receipt key is added AFTER the totality gate has run, so a forged finding would reach disk unsealed and undeclared unless totality is recomputed at promotion time (#119 addendum, #348)",
+   "hook_present": true,
+   "mutant": "MUT-POSTSEAL"
+  },
+  {
+   "declared_gate": "G-TRANSCRIPT-INTEGRITY",
+   "description": "one gate's evidence line is re-rendered into the transcript with a different number from the one the receipt carries, so the human-readable artifact would contradict the sealed one",
+   "hook_present": true,
+   "mutant": "MUT-TRANSCRIPT-EVIDENCE"
+  },
+  {
+   "declared_gate": "G-VERDICT-RECONSTRUCTED",
+   "description": "a leaf of a law object is forged after the law object is built, so the publishing path and the comparator -- which read DIFFERENT receipt keys for every quantity in the head -- must part",
+   "hook_present": true,
+   "mutant": "MUT-HEADKEY"
+  },
+  {
+   "declared_gate": "G-VERBATIM-CONSUMED",
+   "description": "one verbatim anchor's needle is replaced by a DIFFERENT TRUE SENTENCE of the same pinned parent, so an anchor whose consumer reads only its existence would move nothing",
+   "hook_present": true,
+   "mutant": "MUT-VERBATIM-CONSUMER"
+  },
+  {
+   "declared_gate": "G-N16-WINDOW",
+   "description": "the n = 16 route scan is restricted to the first covering class tuple, so a window declared over 24 histories would be measured on one",
+   "hook_present": true,
+   "mutant": "MUT-N16-TUPLE"
+  },
+  {
+   "declared_gate": "G-LAW2-OFFSET",
+   "description": "the n = 9 offset row is re-anchored at the COUNTING BOUND's path instead of the parent's attained floor; both read 4, so only the anchor's identity can catch it",
+   "hook_present": true,
+   "mutant": "MUT-OFFSET-N9"
+  },
+  {
+   "declared_gate": "G-LAW2-OFFSET-RULE",
+   "description": "the offset's rule-applied row bypasses t_n_reading and is handed the constant instead, so the claim that the declared uniform rule is applied to it would go unmeasured",
+   "hook_present": true,
+   "mutant": "MUT-OFFSET-RULE"
+  },
+  {
+   "declared_gate": "G-LAW5-CENSUS",
+   "description": "one of the two declared coin orders is flipped at a pair that reaches leg 4, so a census that never compares the two orders would pass",
+   "hook_present": true,
+   "mutant": "MUT-COINORDER"
+  },
+  {
+   "declared_gate": "G-LAW5-CENSUS",
+   "description": "leg 4's evaluation counter is suppressed, so the leg that reads the coin's modulus would publish no denominator",
+   "hook_present": true,
+   "mutant": "MUT-LEGCOUNT"
+  },
+  {
+   "declared_gate": "G-LAW3-PARENT",
+   "description": "FAC's frozen leg1-equals-the-subgroup-cosets Boolean is flipped, so a declared parent constant that no gate cross-checks would survive",
+   "hook_present": true,
+   "mutant": "MUT-FACBOOL"
+  },
+  {
+   "declared_gate": "G-LAW5-PARENT",
+   "description": "FAC's frozen actor-lattice constant is drifted, so a declared 21,147 that is not Bell(9) would survive",
+   "hook_present": true,
+   "mutant": "MUT-FACLATTICE"
+  },
+  {
+   "declared_gate": "G-PAPER-CLAIMS",
+   "description": "one rendered claim sentence is altered before it is looked for in the paper, so a claims gate that only evaluates a predicate over the receipt would never see the prose",
+   "hook_present": true,
+   "mutant": "MUT-CLAIM-PROSE"
+  },
+  {
+   "declared_gate": "G-PAPER-COVERAGE",
+   "description": "an eighth verdict fence is planted in the scanned paper, so a fence multiset gated in one direction only would admit a forged verdict",
+   "hook_present": true,
+   "mutant": "MUT-FENCE-EXTRA"
+  },
+  {
+   "declared_gate": "G-WALLS-SCAN-THE-PAPER",
+   "description": "one reading wall's pattern is narrowed back to its own probe sentence, so a literal-phrase trap must be caught by the semantic controls that no longer match it",
+   "hook_present": true,
+   "mutant": "MUT-WALL-NARROW"
+  },
+  {
+   "declared_gate": "G-NOUN-BINDING",
+   "description": "a headline numeral is planted beside the WRONG registered noun in the scanned prose, so a binding satisfied by some other occurrence must still fail",
+   "hook_present": true,
+   "mutant": "MUT-NOUN-CROSS"
+  },
+  {
+   "declared_gate": "G-PAPER-COVERAGE",
+   "description": "the spelled-numeral scan is narrowed after its reference count is taken, so a scan that shrinks would no longer be invisible",
+   "hook_present": true,
+   "mutant": "MUT-SPELLED-SCAN"
+  },
+  {
+   "declared_gate": "G-LAW4-LADDER",
+   "description": "the pruned ladder search is corrupted at n = 4, where the unpruned search is affordable, so the pruned search's own positive control must fire",
+   "hook_present": true,
+   "mutant": "MUT-LADDER-CONTROL"
+  },
+  {
+   "declared_gate": "G-CONSTRUCTOR-FIDELITY",
+   "description": "the q = 3 maximum round incidence published in the fidelity block is drifted off the measured maximum, so the scope block's saturation-is-maximality clause cannot be carried by an asserted value",
+   "hook_present": true,
+   "mutant": "MUT-SATMAX"
   }
  ],
  "schema": "isp/v14/ndep-n-dependence/1",
@@ -2219,79 +3397,85 @@
    "path": "provenance",
    "seal": "SEAL-PROVENANCE",
    "sealed_at_gate": "G-PROVENANCE",
-   "sha256_12": "71f57d3c06c0"
+   "sha256_12": "ea14035f6a6b"
   },
   {
    "path": "path_anchors",
    "seal": "SEAL-ANCHORS",
    "sealed_at_gate": "G-PARENT-ANCHORS",
-   "sha256_12": "90b1934155db"
+   "sha256_12": "6e1ef42fd52a"
   },
   {
    "path": "verbatim_anchors",
    "seal": "SEAL-VERBATIM",
    "sealed_at_gate": "G-VERBATIM",
-   "sha256_12": "05c8e452a397"
+   "sha256_12": "5cdcb7f3028c"
   },
   {
    "path": "arena",
    "seal": "SEAL-ARENA",
    "sealed_at_gate": "G-ARENA-DECLARED",
-   "sha256_12": "35a0c959bf9c"
+   "sha256_12": "0c26c0f03073"
   },
   {
    "path": "windows",
    "seal": "SEAL-WINDOWS",
    "sealed_at_gate": "G-WINDOWS-DISCLOSED",
-   "sha256_12": "4f0c1499f24c"
+   "sha256_12": "ffe0218e2ba6"
   },
   {
    "path": "fidelity",
    "seal": "SEAL-FIDELITY",
    "sealed_at_gate": "G-CONSTRUCTOR-FIDELITY",
-   "sha256_12": "b78264b68b88"
+   "sha256_12": "b6eb80d6a475"
   },
   {
    "path": "corpus",
    "seal": "SEAL-CORPUS",
    "sealed_at_gate": "G-CORPUS-SHAPE",
-   "sha256_12": "869b4033f92a"
+   "sha256_12": "820250ab279d"
   },
   {
    "path": "law1_naming",
    "seal": "SEAL-LAW1",
    "sealed_at_gate": "G-LAW1-WORD",
-   "sha256_12": "27cd93f9ec16"
+   "sha256_12": "9ebee0033a3e"
   },
   {
    "path": "n16_window",
    "seal": "SEAL-N16",
    "sealed_at_gate": "G-N16-WINDOW",
-   "sha256_12": "f19ca5dba2f5"
+   "sha256_12": "de8b88d09eb6"
   },
   {
    "path": "law2_crystallization",
    "seal": "SEAL-LAW2",
    "sealed_at_gate": "G-LAW2-WORD",
-   "sha256_12": "9c17fc662bfc"
+   "sha256_12": "dd36f2698ad0"
   },
   {
    "path": "law3_coset_menu",
    "seal": "SEAL-LAW3",
    "sealed_at_gate": "G-LAW3-WORD",
-   "sha256_12": "ebaae74b47a8"
+   "sha256_12": "177b452daf77"
+  },
+  {
+   "path": "verbatim_consumers",
+   "seal": "SEAL-VERBATIM-CONSUMED",
+   "sealed_at_gate": "G-VERBATIM-CONSUMED",
+   "sha256_12": "74d08d692e1a"
   },
   {
    "path": "law4_mod_motif",
    "seal": "SEAL-LAW4",
    "sealed_at_gate": "G-LAW4-WORD",
-   "sha256_12": "cfebbfb5e2a9"
+   "sha256_12": "b212b7bd40a4"
   },
   {
    "path": "law5_division_forcing",
    "seal": "SEAL-LAW5",
    "sealed_at_gate": "G-LAW5-WORD",
-   "sha256_12": "fc448732adb1"
+   "sha256_12": "e6b6d30724a8"
   },
   {
    "path": "controls",
@@ -2303,73 +3487,79 @@
    "path": "measure_relativity",
    "seal": "SEAL-MEASURE",
    "sealed_at_gate": "G-E24-MEASURE",
-   "sha256_12": "2f1934932afb"
+   "sha256_12": "533e16806144"
+  },
+  {
+   "path": "numeral_transport",
+   "seal": "SEAL-NUMERALS",
+   "sealed_at_gate": "G-HEAD-TWO-LEVELS",
+   "sha256_12": "dc697c4d9a40"
   },
   {
    "path": "verdict",
    "seal": "SEAL-VERDICT",
    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
-   "sha256_12": "75251828ed6e"
+   "sha256_12": "e2e7a154bb14"
   },
   {
    "path": "counts",
    "seal": "SEAL-COUNTS",
    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
-   "sha256_12": "585a8a57988a"
+   "sha256_12": "5c05c6af9c89"
   },
   {
    "path": "walls",
    "seal": "SEAL-WALLS",
    "sealed_at_gate": "G-WALLS-SCAN-THE-PAPER",
-   "sha256_12": "503d76c0f97c"
+   "sha256_12": "144a380cc3ca"
   },
   {
    "path": "walls_positive",
    "seal": "SEAL-WALLS-POSITIVE",
    "sealed_at_gate": "G-WALLS-SCAN-THE-PAPER",
-   "sha256_12": "2e1ce888f4df"
+   "sha256_12": "cdc5a6e83f3c"
   },
   {
    "path": "noun_bindings",
    "seal": "SEAL-NOUNS",
    "sealed_at_gate": "G-NOUN-BINDING",
-   "sha256_12": "d8c3bb2a7167"
+   "sha256_12": "4b695ea67abd"
   },
   {
    "path": "paper_claims",
    "seal": "SEAL-PAPER-CLAIMS",
    "sealed_at_gate": "G-PAPER-CLAIMS",
-   "sha256_12": "271853b48c50"
+   "sha256_12": "581aaa232a9e"
   },
   {
    "path": "paper_tables",
    "seal": "SEAL-PAPER-TABLES",
    "sealed_at_gate": "G-PAPER-TABLES",
-   "sha256_12": "1a7129994b78"
+   "sha256_12": "d6cae81fb6fd"
   },
   {
    "path": "paper_coverage",
    "seal": "SEAL-PAPER-COVERAGE",
    "sealed_at_gate": "G-PAPER-HEAD-VERBATIM",
-   "sha256_12": "f5475f9e4a88"
+   "sha256_12": "aa332cd524fe"
   },
   {
    "path": "polarity",
    "seal": "SEAL-POLARITY",
    "sealed_at_gate": "G-PAPER-CLAIM-POLARITY",
-   "sha256_12": "1e048f116cd5"
+   "sha256_12": "5d384a2af31b"
   },
   {
    "path": "coverage",
    "seal": "SEAL-COVERAGE",
    "sealed_at_gate": "G-COVERAGE",
-   "sha256_12": "0673ecf5d615"
+   "sha256_12": "f0a02e76dc73"
   },
   {
    "path": "reachability",
    "seal": "SEAL-REACHABILITY",
    "sealed_at_gate": "G-REACHABILITY",
-   "sha256_12": "70d49f804571"
+   "sha256_12": "da1bf456ada4"
   },
   {
    "path": "waiver_ledger",
@@ -2381,51 +3571,51 @@
    "path": "mutants",
    "seal": "SEAL-MUTANTS",
    "sealed_at_gate": "G-COVERAGE",
-   "sha256_12": "1b5cd40def71"
+   "sha256_12": "e1bc81b8c1c0"
   },
   {
    "path": "mutant_sweep",
    "seal": "SEAL-MUTANT-SWEEP",
    "sealed_at_gate": "G-SWEEP-BOUND",
-   "sha256_12": "4f53cda18c2b"
+   "sha256_12": "97c1d7324e47"
   },
   {
    "path": "gates",
    "seal": "SEAL-GATES",
    "sealed_at_gate": "G-GATE-ACCOUNTING",
-   "sha256_12": "9abd2580a576"
+   "sha256_12": "cd3a06add690"
   },
   {
    "path": "closing_gates",
    "seal": "SEAL-CLOSING",
    "sealed_at_gate": "G-GATE-ACCOUNTING",
-   "sha256_12": "bd63929d6132"
+   "sha256_12": "384a8855ff5c"
   },
   {
    "path": "totals",
    "seal": "SEAL-TOTALS",
    "sealed_at_gate": "G-GATE-ACCOUNTING",
-   "sha256_12": "1f1746b0ff63"
+   "sha256_12": "561c34ef06d5"
   },
   {
-   "path": "transcript_head",
+   "path": "transcript_seal",
    "seal": "SEAL-TRANSCRIPT",
    "sealed_at_gate": "G-GATE-ACCOUNTING",
-   "sha256_12": "7114dab7b56f"
+   "sha256_12": "bbdd7c1ee8ae"
   }
  ],
  "totals": {
-  "gates_at_this_seal": 40,
-  "gates_passed_at_this_seal": 40,
+  "gates_at_this_seal": 43,
+  "gates_passed_at_this_seal": 43,
   "gates_still_to_run": [
    "G-GATE-ACCOUNTING",
    "G-SEAL-TOTALITY"
   ],
   "reads": {
    "SELF": 1,
-   "SOURCE": 3
+   "SOURCE": 4
   },
-  "seals_at_this_seal": 30,
+  "seals_at_this_seal": 32,
   "seals_still_to_take": [
    "SEAL-CLOSING",
    "SEAL-GATES",
@@ -2434,7 +3624,12 @@
   ],
   "sweep_rows": 0
  },
- "transcript_head": "5a7a0f199fbd",
+ "transcript_seal": {
+  "first_40_lines_sha256_12": "8786ef7fd14c",
+  "lines_sealed_at_this_gate": 181,
+  "note": "THE REMAINING LINES ARE GATE ROWS AND THEIR EVIDENCE IS BOUND TO THE RECEIPT'S OWN EVIDENCE STRINGS AT G-TRANSCRIPT-INTEGRITY",
+  "prefix_sha256_12": "c626028d29da"
+ },
  "verbatim_anchors": [
   {
    "anchor": "V-YOUNG",
@@ -2477,10 +3672,102 @@
    "consumer_gate": "G-LAW1-CHART",
    "quote_fidelity": true,
    "source": "A-AID"
+  },
+  {
+   "anchor": "V-ROUTES",
+   "chars": 172,
+   "consumer_gate": "G-LAW1-ROUTES",
+   "quote_fidelity": true,
+   "source": "A-AID"
+  },
+  {
+   "anchor": "V-COIN",
+   "chars": 175,
+   "consumer_gate": "G-LAW4-COIN",
+   "quote_fidelity": true,
+   "source": "A-P20"
+  }
+ ],
+ "verbatim_consumers": [
+  {
+   "agrees": true,
+   "anchor": "V-ROUTES",
+   "consumer_gate": "G-LAW1-ROUTES",
+   "measured": "atoms = signature blocks at 53 of 53 prefixes",
+   "parsed": true,
+   "parsed_from_the_quotation": "atom OF THE BOOLEAN ALGEBRA THE EVENTS GENERATE"
+  },
+  {
+   "agrees": true,
+   "anchor": "V-YOUNG",
+   "consumer_gate": "G-LAW1-ROUTES",
+   "measured": "|route A| = the product at 53 of 53 prefixes",
+   "parsed": true,
+   "parsed_from_the_quotation": "product of the block factorials"
+  },
+  {
+   "agrees": true,
+   "anchor": "V-CHART",
+   "consumer_gate": "G-LAW1-CHART",
+   "measured": "parent chart anchor 4; here 3 chart histories, all constant-class over this arena's 3 classes",
+   "parsed": [
+    "ANT",
+    "COL",
+    "DIA",
+    "ROW"
+   ],
+   "parsed_from_the_quotation": "the constant-class tuples named in the quotation"
+  },
+  {
+   "agrees": true,
+   "anchor": "V-TIME",
+   "consumer_gate": "G-LAW2-TIME",
+   "measured": "P-TIME reads 5",
+   "parsed": 5,
+   "parsed_from_the_quotation": "the digit after 'exactly' in the parent's time sentence"
+  },
+  {
+   "agrees": true,
+   "anchor": "V-FLOOR",
+   "consumer_gate": "G-LAW2-FLOOR",
+   "measured": "P-FLOOR-BOUND reads 4",
+   "parsed": 4,
+   "parsed_from_the_quotation": "the spelled floor after 'fewer than'"
+  },
+  {
+   "agrees": true,
+   "anchor": "V-ATTAINED",
+   "consumer_gate": "G-LAW2-FLOOR",
+   "measured": "P-FLOOR-ATTAINED reads 4 against the bound's 4 -- the two coincide at n = 9 and part at n = 16 (attained 6, bound 4)",
+   "parsed": true,
+   "parsed_from_the_quotation": "the parent asserts the floor is ATTAINED at its own arena"
+  },
+  {
+   "agrees": true,
+   "anchor": "V-OFFSET",
+   "consumer_gate": "G-LAW2-OFFSET",
+   "measured": "time 5, attained floor 4, offset 1",
+   "parsed": [
+    5,
+    4,
+    1
+   ],
+   "parsed_from_the_quotation": "'the transportable content of the FIVE is FOUR informative events plus ONE structurally redundant event'"
+  },
+  {
+   "agrees": true,
+   "anchor": "V-COIN",
+   "consumer_gate": "G-LAW4-COIN",
+   "measured": "the parent arena's field order is 3; the same rule at this unit's arena (over F_2) reads m = 2",
+   "parsed": [
+    3,
+    3
+   ],
+   "parsed_from_the_quotation": "the connection group Z_k and the field F_k the parent derives it from"
   }
  ],
  "verdict": {
-  "head": "NDEP-PORTABLE-3-OF-5<n=4 BUILT AND RUN ENTIRE -- AG(2,2), 48 DRIVEN HISTORIES, ACTOR LATTICE 15 COMPLETE, SYMMETRIC GROUP FILTERED WHOLE; n=16 A DECLARED WINDOW; EVERY ONE OF THE 6 TESTED NUMERALS IS q-CARRIED (6 OF 6), SO WHAT TRANSPORTS ON n ALONE IS THE LAWS AND NEVER THEIR NUMBERS>",
+  "head": "NDEP-PORTABLE-3-OF-5<n=4 BUILT AND RUN ENTIRE -- AG(2,2), 48 DRIVEN HISTORIES, ACTOR LATTICE 15 COMPLETE, SYMMETRIC GROUP FILTERED WHOLE; n=16 A DECLARED WINDOW | TWO LEVELS, DECLARED: THE 5 LAW WORDS ARE SCORED AT THE STATEMENT -- DOES THE PARENT'S THEOREM HOLD AT THE NEW ARENA POINT -- AND THE 3 PORTABLE ARE EXACTLY THE 3 WHOSE STATEMENTS CARRY NO NUMERAL; THE 7 TESTED NUMERALS ARE SCORED BY THE TRANSPORT PROCEDURE, 7 OF 7 q-CARRIED UNDER THE DECLARED UNIFORM RULE AND 6 OF 7 UNDER THE CONSTANT-LAW EXEMPTION ON THE OFFSET | NO TESTED NUMERAL IS REPRODUCED BY THE DECLARED n-ONLY READING; EVERY ONE IS REPRODUCED BY A FORMULA IN q=sqrt(n) OR IN THE DECLARED LINK COUNT L, AND SINCE q=sqrt(n) AT EVERY ARENA POINT REACHED IT IS THE FIXED-n L-SWEEP AND NOT THE TRANSPORT TABLE THAT SEPARATES L FROM n>",
   "law_words": [
    {
     "law": "NAMING",
@@ -2504,13 +3791,13 @@
    }
   ],
   "segments": [
-   "NDEP-PORTABLE-3-OF-5<n=4 BUILT AND RUN ENTIRE -- AG(2,2), 48 DRIVEN HISTORIES, ACTOR LATTICE 15 COMPLETE, SYMMETRIC GROUP FILTERED WHOLE; n=16 A DECLARED WINDOW; EVERY ONE OF THE 6 TESTED NUMERALS IS q-CARRIED (6 OF 6), SO WHAT TRANSPORTS ON n ALONE IS THE LAWS AND NEVER THEIR NUMBERS>",
-   "NDEP-LAW-IN-N-NAMING<ROUTES=0 MISMATCHES OVER 53 DISTINCT PREFIXES AT n=4, ELEMENT SET AGAINST ELEMENT SET, THE WHOLE OF S_4 FILTERED PER PREFIX | n=16 21,080 COMPARISONS 0 MISMATCHES ON THE DECLARED PERMUTATION WINDOW, 2,064 POSITIVE | FORCED 45 OF 48, CHART 3 = THE CONSTANT-CLASS HISTORIES, ONE PER PARALLEL CLASS -- THE PARENT'S CHARACTERISATION VERBATIM | THE COUNT IS NEEDS-3>",
-   "NDEP-NEEDS-3-CRYSTALLIZATION<THE PAIR SURVIVES AS A STRUCTURE AND ITS FLOOR FORMULA DOES NOT: SCHEDULE TIME 3|5|7 AT n=4|9|16 = 2q-1 (NEEDS-3) | ATTAINED FLOOR 2|4|6 WHILE THE COUNTING BOUND ceil(log2 n) READS 4 AT n=16 (NEEDS-3) | THE SUCCESSOR FORMULA, IN WHICH THE EVENT SIZE q ENTERS, READS 2|4|6 AND MATCHES ALL THREE | OFFSET ONE AT ALL THREE (LAW-IN-N), ROUND ONE'S LAST EVENT REDUNDANT AT 2 OF 2>",
+   "NDEP-PORTABLE-3-OF-5<n=4 BUILT AND RUN ENTIRE -- AG(2,2), 48 DRIVEN HISTORIES, ACTOR LATTICE 15 COMPLETE, SYMMETRIC GROUP FILTERED WHOLE; n=16 A DECLARED WINDOW | TWO LEVELS, DECLARED: THE 5 LAW WORDS ARE SCORED AT THE STATEMENT -- DOES THE PARENT'S THEOREM HOLD AT THE NEW ARENA POINT -- AND THE 3 PORTABLE ARE EXACTLY THE 3 WHOSE STATEMENTS CARRY NO NUMERAL; THE 7 TESTED NUMERALS ARE SCORED BY THE TRANSPORT PROCEDURE, 7 OF 7 q-CARRIED UNDER THE DECLARED UNIFORM RULE AND 6 OF 7 UNDER THE CONSTANT-LAW EXEMPTION ON THE OFFSET | NO TESTED NUMERAL IS REPRODUCED BY THE DECLARED n-ONLY READING; EVERY ONE IS REPRODUCED BY A FORMULA IN q=sqrt(n) OR IN THE DECLARED LINK COUNT L, AND SINCE q=sqrt(n) AT EVERY ARENA POINT REACHED IT IS THE FIXED-n L-SWEEP AND NOT THE TRANSPORT TABLE THAT SEPARATES L FROM n>",
+   "NDEP-LAW-IN-N-NAMING<ROUTES=0 MISMATCHES OVER 53 DISTINCT PREFIX EVENT MULTISETS (87 PREFIX SEQUENCES) AT n=4, ELEMENT SET AGAINST ELEMENT SET, THE WHOLE OF S_4 FILTERED PER PREFIX | n=16 505,920 COMPARISONS 0 MISMATCHES OVER ALL 24 COVERING CLASS TUPLES ON THE DECLARED PERMUTATION WINDOW, 49,536 POSITIVE OF WHICH 29,760 AT THE EMPTY PREFIX | THE ROUTE LEG IS A REPRODUCTION AND NOT A TRANSPORT MEASUREMENT: THE PARENT PROVES IT BY A BOOLEAN-ALGEBRA ARGUMENT THAT NAMES NO ARENA, AND THE ATOMS ARE THE SIGNATURE BLOCKS AT 53 OF 53 | FORCED 45 OF 48, CHART 3 = THE CONSTANT-CLASS HISTORIES, ONE PER PARALLEL CLASS -- THE PARENT'S CHARACTERISATION VERBATIM | THE COUNT IS NEEDS-3>",
+   "NDEP-NEEDS-3-CRYSTALLIZATION<THE PAIR SURVIVES AS A STRUCTURE; THE BOUND ceil(log2 n) STANDS AS A BOUND AND IS NOT THE ATTAINED VALUE AT n=16: SCHEDULE TIME 3|5|7 AT n=4|9|16 = 2q-1 (NEEDS-3) | ATTAINED FLOOR 2|4|6 WHILE THE COUNTING BOUND READS 4 AT n=16 (NEEDS-3) | THE FORM WAS UNDISCRIMINATED AT n=9, WHERE THE COUNTING BOUND AND THE SIZE-CORRECTED BOUND BOTH READ 4 | THE SUCCESSOR FORMULA, IN WHICH THE EVENT SIZE q ENTERS, READS 2|4|6 AND MATCHES ALL THREE, AND EVALUATES TO 2(q-1) AT q=2..7 WITH THE SCHEDULE TIME 2q-1 ABOVE IT AND THE OFFSET 1 BY SUBTRACTION | OFFSET ONE AT ALL THREE (LAW-IN-N, UNDISCRIMINATED UNDER THE CONSTANT-LAW EXEMPTION; NEEDS-3 UNDER THE DECLARED UNIFORM RULE), ROUND ONE'S LAST EVENT REDUNDANT AT 2 OF 2>",
    "NDEP-LAW-IN-N-COSET-MENU<SET-EQUAL AT n=4: THE GEOMETRY LEG'S 5 SURVIVORS OVER THE COMPLETE LATTICE OF 15 ARE EXACTLY THE 5 COSET PARTITIONS OF THE 5 TRANSLATION SUBGROUPS | THE COUNT IS q+3 AT PRIME q (NEEDS-3) | THE HYPOTHESIS FAILS AT q=4: THE DECLARED LINKS GENERATE 8 OF 16, SO THE q=4 ROW IS CARRIED UNSCORED AND THE TWO READINGS THERE (67 ABSTRACT SUBGROUPS, 7 F_q-SUBSPACES) ARE NAMED AND NOT CHOSEN>",
-   "NDEP-NEEDS-3-MOD-MOTIF<THE MOTIF SPLITS IN TWO. THE LADDER'S MODULUS IS DERIVED AND IS THE DECLARED LINK COUNT L: AT FIXED n=4 THE SWEEP L=1|2|3 RETURNS ACHIEVABLE BUDGETS {1,2,3,4,5,6,7}|{2,4,6}|{3,6}, SO MOD-3 REAPPEARS AT FOUR ACTORS AND THE MODULUS IS NEITHER sqrt(n) NOR THE CHARACTERISTIC, BOTH FIXED AT 2 THROUGHOUT; n=16 RETURNS {4,8}. THE COIN'S MODULUS IS A FREE DECLARATION: THE RECORD ENTERS EXACTLY MOD m (0 MISMATCHES OVER 144,991 PAIRS AT EACH OF m=2 AND m=3) WHILE THE CENSUS IS BLIND TO m (45 UNIQUE AND 3 NON-UNIQUE AT m=2,3,4,5)>",
-   "NDEP-LAW-IN-N-DIVISION-FORCING<UNIQUE FACTORIZATION 45 OF 48 OVER THE COMPLETE ACTOR LATTICE OF 15, THE DISCRETE PARTITION CHECKED ADMISSIBLE AT EVERY HISTORY SEPARATELY | THE 3 NON-UNIQUE ARE EXACTLY THE CONSTANT-CLASS HISTORIES AND THE PARENT'S THESIS HOLDS VERBATIM | UNION OF ADMISSIBLE PARTITIONS 4 = THE DISCRETE ONE PLUS ONE PER PARALLEL CLASS | THE COUNT IS NEEDS-3 | COUNTING-ONLY>",
-   "SCOPE=n=4 ENTIRE AND COMPLETE; n=16 A DECLARED WINDOW (CLASS TUPLES ONLY -- THE 2,627,625 GROUPINGS OF SIXTEEN SITES ARE OUT OF SCOPE, S_16 IS NOT FILTERED); q=3 ENTERS ONLY AS THE CONSTRUCTOR-FIDELITY LEG AND NO n=9 NUMBER IS RE-DERIVED HERE -- ALL TEN ARE ANCHORED READS OF THE PARENT'S COMMITTED RECEIPT OR FROZEN DECLARED CONSTANTS | SATURATION IS MAXIMAL AT q=2 AND q=3 AND IS NOT AT q=4, WHERE A WITNESS GROUPING REACHES 48 AGAINST THE BUDGET 16 | MEASURE=COUNTING-ONLY (E-24) | LANGUAGE=LAW-IN-N, NEEDS-3 AND BREAKS NAME THE TRANSPORT OF A PUBLISHED LAW AND NOTHING ELSE"
+   "NDEP-NEEDS-3-MOD-MOTIF<THE MOTIF SPLITS IN TWO. THE LADDER'S MODULUS IS DERIVED AND IS THE DECLARED LINK COUNT L: AT FIXED n=4 THE SWEEP L=1|2|3 RETURNS ACHIEVABLE BUDGETS {1,2,3,4,5,6,7}|{2,4,6}|{3,6} WITHIN R<=7, SO MOD-3 REAPPEARS AT FOUR ACTORS AND THE MODULUS IS NEITHER sqrt(n) NOR THE CHARACTERISTIC, BOTH FIXED AT 2 THROUGHOUT; THE NUMBER OF SATURATING GROUPINGS MOVES WITH L HERE AND IS SEPARATED AT q=3, WHERE ALL 36 SATURATING GROUPINGS GIVE {3,6} AND THE RUNG IS THE LINK COUNT 3 AND NOT 36; n=16 RETURNS {4,8} WITHIN R<=8. THE COIN'S MODULUS IS DECLARED AT THIS UNIT AND THIS CENSUS IS MEASURED BLIND TO IT (45 UNIQUE AND 3 NON-UNIQUE AT m=2,3,4,5); THAT THE RECORD ENTERS EXACTLY MOD m IS DEFINITIONAL AND IS DISCLOSED, NOT MEASURED; AND PAPER-20 DERIVES THE COIN'S Z_3 FROM THE ARENA'S OWN FIELD F_3, WHICH READ AT AG(2,2) WOULD GIVE m=2 AND IS NOT TESTED HERE>",
+   "NDEP-LAW-IN-N-DIVISION-FORCING<UNIQUE FACTORIZATION 45 OF 48 OVER THE COMPLETE ACTOR LATTICE OF 15 AT THE ACTOR GRAIN, THE DISCRETE PARTITION CHECKED ADMISSIBLE AT EVERY HISTORY SEPARATELY | THE 3 NON-UNIQUE ARE EXACTLY THE CONSTANT-CLASS HISTORIES AND THE PARENT'S THESIS HOLDS VERBATIM | UNION OF ADMISSIBLE PARTITIONS 4 = THE DISCRETE ONE PLUS ONE PER PARALLEL CLASS | THE CRITERION IS TWO-LEGGED ON THIS CORPUS: LEG 3 PASSES AT ALL 720 PARTITION-HISTORY PAIRS AND LEG 4, THE ONLY LEG THAT READS THE COIN'S MODULUS, IS ADMISSIBLE AT ALL 51 THAT REACH IT | THE COUNT IS NEEDS-3 | COUNTING-ONLY>",
+   "SCOPE=n=4 ENTIRE AND COMPLETE; n=16 A DECLARED WINDOW (CLASS TUPLES ONLY -- THE 2,627,625 GROUPINGS OF SIXTEEN SITES ARE OUT OF SCOPE, S_16 IS NOT FILTERED); NO n=9 LAW VALUE IS RE-DERIVED HERE -- ALL 11 ARE ANCHORED READS OF THE PARENT'S COMMITTED RECEIPT OR FROZEN DECLARED CONSTANTS -- WHILE THE FIVE q=3 SUBSTRATE COUNTS ARE RE-DERIVED AS THE FIDELITY LEG AND AGREE WITH THE PARENT'S ANCHORS 5 OF 5 | SATURATION IS MEASURED MAXIMAL AT q=2 (4 AGAINST 4) AND AT q=3 (9 AGAINST 9) AND IS NOT AT q=4, WHERE A WITNESS GROUPING REACHES 48 AGAINST THE BUDGET 16 | MEASURE=COUNTING-ONLY (E-24) | LANGUAGE=LAW-IN-N, NEEDS-3 AND BREAKS NAME THE TRANSPORT OF A PUBLISHED LAW AND NOTHING ELSE"
   ],
   "vocabulary": [
    "LAW-IN-N",
@@ -2537,69 +3824,166 @@
  ],
  "walls": [
   {
-   "pattern": "nine\\s+(?:is|was)\\s+(?:derived|forced|structurally\\s+selected)",
+   "controls": [
+    "here nine is derived from the law",
+    "The actor count nine is not a declaration at all; it is selected by the geometry.",
+    "Nine actors are structurally necessary, and the arena selects that count."
+   ],
+   "patterns": [
+    "nine\\s+(?:actors?\\s+)?(?:is|are|was|were)\\s+(?:\\w+\\s+){0,2}(?:derived|forced|selected|necessary|inevitable|required)",
+    "nine\\s+(?:actors?\\s+)?(?:is|are)\\s+not\\s+(?:a\\s+|an\\s+)?(?:declaration|declared|choice|convention)",
+    "(?:selected|forced|determined|fixed|chosen)\\s+by\\s+the\\s+(?:geometry|arena|law|structure|plane)",
+    "(?:the\\s+)?(?:geometry|arena|law|structure|plane)\\s+(?:selects?|forces?|fixes?|determines?)\\s+(?:that\\s+|the\\s+)?(?:count|actor\\s+count|number\\s+of\\s+actors|nine)"
+   ],
    "wall": "WALL-NINE-DERIVED",
-   "why": "this unit measures transport of laws, and never that the actor count nine is derived"
+   "why": "this unit measures transport of laws, and never that the actor count nine is derived, selected or structurally necessary"
   },
   {
-   "pattern": "(?:the\\s+)?actor\\s+count\\s+is\\s+(?:arbitrary|meaningless|a\\s+fiction)",
+   "controls": [
+    "the actor count is arbitrary",
+    "Nine is an arbitrary choice with no content.",
+    "the number of actors is meaningless here"
+   ],
+   "patterns": [
+    "(?:the\\s+)?(?:actor\\s+count|number\\s+of\\s+actors|nine)\\s+is\\s+(?:an?\\s+)?(?:\\w+\\s+){0,1}(?:arbitrary|meaningless|a\\s+fiction)",
+    "arbitrary\\s+choice\\s+with\\s+no\\s+content",
+    "(?:actor\\s+count|nine)\\s+(?:carries|has)\\s+no\\s+content"
+   ],
    "wall": "WALL-ARBITRARY",
    "why": "a declaration is not an arbitrariness claim, and this unit measures only which laws move with n"
   },
   {
-   "pattern": "(?:we|this\\s+unit|the\\s+run)\\s+re-?derives?\\s+the\\s+n\\s*=\\s*9",
+   "controls": [
+    "this unit re-derives the n = 9 census",
+    "The nine-actor numbers are recomputed here from scratch.",
+    "the n = 9 law values are re-derived in this unit"
+   ],
+   "patterns": [
+    "(?:we|this\\s+unit|the\\s+run|this\\s+paper)\\s+re-?(?:derives?|computes?|calculates?)\\s+the\\s+(?:n\\s*=\\s*9|nine-actor)",
+    "(?:nine-actor|n\\s*=\\s*9)\\s+(?:numbers?|values?|counts?|law\\s+values?)\\s+are\\s+(?:recomputed|re-?derived|rebuilt|reproduced)",
+    "re-?(?:derives?|computes?)\\s+the\\s+(?:nine-actor|n\\s*=\\s*9)\\s+(?:law|census|numbers?)"
+   ],
    "wall": "WALL-N9-REDERIVED",
-   "why": "the n = 9 numbers are anchors here, never products"
+   "why": "the n = 9 LAW VALUES are anchors here, never products; the five q = 3 substrate counts are re-derived and are declared as the fidelity leg"
   },
   {
-   "pattern": "n\\s*=\\s*16\\s+(?:census|corpus)\\s+is\\s+(?:complete|exhaustive)",
+   "controls": [
+    "the n = 16 census is complete",
+    "The n = 16 enumeration is exhaustive and complete, not a window.",
+    "the n = 16 corpus is entire"
+   ],
+   "patterns": [
+    "n\\s*=\\s*16\\s+(?:census|corpus|enumeration|scan|results?|rows?)\\s+(?:is|are)\\s+(?:complete|exhaustive|entire|whole|total)",
+    "(?:complete|exhaustive|entire)\\s+(?:census|enumeration|scan)\\s+at\\s+n\\s*=\\s*16",
+    "n\\s*=\\s*16\\s+is\\s+not\\s+a\\s+window"
+   ],
    "wall": "WALL-N16-COMPLETE",
    "why": "n = 16 is a declared window and every n = 16 row says so"
   },
   {
-   "pattern": "(?:probability|likelihood)\\s+that\\s+a\\s+(?:law|history)",
+   "controls": [
+    "the probability that a law transports",
+    "There is a 90 per cent chance a given law transports.",
+    "the likelihood that a history forces identity"
+   ],
+   "patterns": [
+    "(?:probability|likelihood|chance|odds)\\s+(?:that\\s+)?(?:a|an|any|the)\\s+(?:\\w+\\s+){0,1}(?:law|history|arena|numeral|schedule)\\b",
+    "\\d+\\s+per\\s+cent\\s+chance",
+    "(?:is|are)\\s+(?:likely|unlikely)\\s+to\\s+transport"
+   ],
    "wall": "WALL-PROBABILITY",
    "why": "E-24: no count becomes a probability without a declared measure"
   }
  ],
  "walls_positive": [
   {
+   "controls": [
+    "here nine is derived from the law",
+    "The actor count nine is not a declaration at all; it is selected by the geometry.",
+    "Nine actors are structurally necessary, and the arena selects that count."
+   ],
+   "controls_caught": 3,
+   "controls_total": 3,
    "fires_on_probe": true,
    "hits_in_paper": 0,
-   "pattern": "nine\\s+(?:is|was)\\s+(?:derived|forced|structurally\\s+selected)",
-   "probe": "here nine is derived from the law",
+   "patterns": [
+    "nine\\s+(?:actors?\\s+)?(?:is|are|was|were)\\s+(?:\\w+\\s+){0,2}(?:derived|forced|selected|necessary|inevitable|required)",
+    "nine\\s+(?:actors?\\s+)?(?:is|are)\\s+not\\s+(?:a\\s+|an\\s+)?(?:declaration|declared|choice|convention)",
+    "(?:selected|forced|determined|fixed|chosen)\\s+by\\s+the\\s+(?:geometry|arena|law|structure|plane)",
+    "(?:the\\s+)?(?:geometry|arena|law|structure|plane)\\s+(?:selects?|forces?|fixes?|determines?)\\s+(?:that\\s+|the\\s+)?(?:count|actor\\s+count|number\\s+of\\s+actors|nine)"
+   ],
    "wall": "WALL-NINE-DERIVED",
-   "why": "this unit measures transport of laws, and never that the actor count nine is derived"
+   "why": "this unit measures transport of laws, and never that the actor count nine is derived, selected or structurally necessary"
   },
   {
+   "controls": [
+    "the actor count is arbitrary",
+    "Nine is an arbitrary choice with no content.",
+    "the number of actors is meaningless here"
+   ],
+   "controls_caught": 3,
+   "controls_total": 3,
    "fires_on_probe": true,
    "hits_in_paper": 0,
-   "pattern": "(?:the\\s+)?actor\\s+count\\s+is\\s+(?:arbitrary|meaningless|a\\s+fiction)",
-   "probe": "the actor count is arbitrary",
+   "patterns": [
+    "(?:the\\s+)?(?:actor\\s+count|number\\s+of\\s+actors|nine)\\s+is\\s+(?:an?\\s+)?(?:\\w+\\s+){0,1}(?:arbitrary|meaningless|a\\s+fiction)",
+    "arbitrary\\s+choice\\s+with\\s+no\\s+content",
+    "(?:actor\\s+count|nine)\\s+(?:carries|has)\\s+no\\s+content"
+   ],
    "wall": "WALL-ARBITRARY",
    "why": "a declaration is not an arbitrariness claim, and this unit measures only which laws move with n"
   },
   {
+   "controls": [
+    "this unit re-derives the n = 9 census",
+    "The nine-actor numbers are recomputed here from scratch.",
+    "the n = 9 law values are re-derived in this unit"
+   ],
+   "controls_caught": 3,
+   "controls_total": 3,
    "fires_on_probe": true,
    "hits_in_paper": 0,
-   "pattern": "(?:we|this\\s+unit|the\\s+run)\\s+re-?derives?\\s+the\\s+n\\s*=\\s*9",
-   "probe": "this unit re-derives the n = 9 census",
+   "patterns": [
+    "(?:we|this\\s+unit|the\\s+run|this\\s+paper)\\s+re-?(?:derives?|computes?|calculates?)\\s+the\\s+(?:n\\s*=\\s*9|nine-actor)",
+    "(?:nine-actor|n\\s*=\\s*9)\\s+(?:numbers?|values?|counts?|law\\s+values?)\\s+are\\s+(?:recomputed|re-?derived|rebuilt|reproduced)",
+    "re-?(?:derives?|computes?)\\s+the\\s+(?:nine-actor|n\\s*=\\s*9)\\s+(?:law|census|numbers?)"
+   ],
    "wall": "WALL-N9-REDERIVED",
-   "why": "the n = 9 numbers are anchors here, never products"
+   "why": "the n = 9 LAW VALUES are anchors here, never products; the five q = 3 substrate counts are re-derived and are declared as the fidelity leg"
   },
   {
+   "controls": [
+    "the n = 16 census is complete",
+    "The n = 16 enumeration is exhaustive and complete, not a window.",
+    "the n = 16 corpus is entire"
+   ],
+   "controls_caught": 3,
+   "controls_total": 3,
    "fires_on_probe": true,
    "hits_in_paper": 0,
-   "pattern": "n\\s*=\\s*16\\s+(?:census|corpus)\\s+is\\s+(?:complete|exhaustive)",
-   "probe": "the n = 16 census is complete",
+   "patterns": [
+    "n\\s*=\\s*16\\s+(?:census|corpus|enumeration|scan|results?|rows?)\\s+(?:is|are)\\s+(?:complete|exhaustive|entire|whole|total)",
+    "(?:complete|exhaustive|entire)\\s+(?:census|enumeration|scan)\\s+at\\s+n\\s*=\\s*16",
+    "n\\s*=\\s*16\\s+is\\s+not\\s+a\\s+window"
+   ],
    "wall": "WALL-N16-COMPLETE",
    "why": "n = 16 is a declared window and every n = 16 row says so"
   },
   {
+   "controls": [
+    "the probability that a law transports",
+    "There is a 90 per cent chance a given law transports.",
+    "the likelihood that a history forces identity"
+   ],
+   "controls_caught": 3,
+   "controls_total": 3,
    "fires_on_probe": true,
    "hits_in_paper": 0,
-   "pattern": "(?:probability|likelihood)\\s+that\\s+a\\s+(?:law|history)",
-   "probe": "the probability that a law transports",
+   "patterns": [
+    "(?:probability|likelihood|chance|odds)\\s+(?:that\\s+)?(?:a|an|any|the)\\s+(?:\\w+\\s+){0,1}(?:law|history|arena|numeral|schedule)\\b",
+    "\\d+\\s+per\\s+cent\\s+chance",
+    "(?:is|are)\\s+(?:likely|unlikely)\\s+to\\s+transport"
+   ],
    "wall": "WALL-PROBABILITY",
    "why": "E-24: no count becomes a probability without a declared measure"
   }
@@ -2621,8 +4005,8 @@
    "window": "W-N4-S4"
   },
   {
-   "declaration": "THE DECLARED-LINK SWEEP AT n = 4, ENTIRE: L = 1, 2 and 3, that is, every initial segment of the q + 1 = 3 canonical directions.  This is the window that separates the modulus's carrier from sqrt(n) and from the characteristic, both of which are 2 at every point of it.",
-   "entire": true,
+   "declaration": "THE DECLARED-LINK SWEEP AT n = 4: L = 1, 2 and 3, that is, every initial segment of the q + 1 = 3 canonical directions -- ENTIRE in L and BOUNDED in R.  This is the window that separates the modulus's carrier from sqrt(n), from the characteristic and from the number of saturating groupings; the first three are 2, 2 and (1, 2, 3) at the three points of it.  THE SEARCH BOUND IS DECLARED: budgets R <= 7 at n = 4 and R <= 2L = 8 at n = 16, so every achievable-budget SET below is a set within that bound and is published as such.",
+   "entire": false,
    "window": "W-LSWEEP"
   },
   {
@@ -2641,14 +4025,19 @@
    "window": "W-N16-CLASS"
   },
   {
-   "declaration": "THE n = 16 PERMUTATION WINDOW for the naming theorem's route A: all transpositions and all 3-cycles of the sixteen actors, at every prefix.  S_16 has 20,922,789,888,000 elements and is not filtered.",
+   "declaration": "THE n = 16 PERMUTATION WINDOW for the naming theorem's route A: all transpositions and all 3-cycles of the sixteen actors, at every prefix of EVERY ONE OF THE 24 COVERING CLASS TUPLES -- the whole history window of W-N16-CLASS, not one tuple of it.  S_16 has 20,922,789,888,000 elements and is not filtered, which is why the permutation axis is a window at all.  The empty prefix is carried and its positives are published separately, because every permutation fixes every event of an empty history vacuously.",
    "entire": false,
    "window": "W-N16-PERM"
   },
   {
-   "declaration": "THE CONSTRUCTOR-FIDELITY LEG AT q = 3.  The substrate counts only -- groupings, saturating groupings, strict triples, flat quadruples, window size.  No n = 9 law is evaluated here and no n = 9 finding is produced here.",
+   "declaration": "THE CONSTRUCTOR-FIDELITY LEG AT q = 3.  The substrate counts only -- groupings, saturating groupings, strict triples, flat quadruples, window size -- together with the two substrate quantities the ladder and saturation clauses need there: the achievable homogeneous budgets over all 36 saturating groupings, and the maximum round incidence.  No n = 9 LAW VALUE is evaluated here and no n = 9 finding is produced here; the five substrate counts ARE re-derived, and that is the point of the leg.",
    "entire": false,
    "window": "W-Q3"
+  },
+  {
+   "declaration": "THE HOMOGENEOUS-LADDER SEARCH, AND HOW IT IS BOUNDED.  At n = 4 the search is the plain exhaustive one over multisets of saturating groupings, R <= 7.  At q = 3 the same exhaustive search is run under one PRUNE and one DERIVED ROW, both declared: every saturating grouping's incidence vector is measured to have mass exactly n, so a homogeneous field of R rounds carries constant R*n/(n*L) per cell -- budgets where that is not an integer are closed by the measured mass identity rather than enumerated, and budgets where it is are searched exhaustively with the per-cell ceiling as the prune.  The pruned search is checked against the unpruned one at n = 4 at all three L, where both are affordable, and the two agree row for row.",
+   "entire": false,
+   "window": "W-LADDER-SEARCH"
   }
  ]
 }

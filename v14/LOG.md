@@ -11383,3 +11383,34 @@ panel (extension census at ONE union arena k=3 aligned;
 grammar not re-driven; the blindness detector not run at
 three crossings).  **Orchestrator battery next; panel
 after green.**
+
+## 2026-08-15 — NDEP REPAIR DELIVERED AND COMMITTED: THE TWO-LEVEL HEAD WITH THE UNIFORM-RULE OFFSET ROW (NEEDS-3, DISCRIMINATED → 7 OF 7 AT THE NUMERAL LEVEL); NO QUANTITY MOVED (v14 LEDGER #351)
+
+**Files:** paper-39-ndep.md e2293b8c3858; ndep_exact.py
+3ba62f7a5ac5; ndep_output.txt 48a48e1aac58;
+ndep_receipt.json 29216cea946f.  Z1–Z7 complete.  Head
+two-levelled: PORTABLE-3-OF-5 at the statement level (the
+3 = exactly the numeral-free statements) and **7 OF 7
+q-carried under the declared uniform rule** (the new gated
+row: T-N = [1,−1,1] vs [1,1,1] — NEEDS-3, DISCRIMINATED);
+the floor split P-FLOOR-BOUND / P-FLOOR-ATTAINED with the
+identity-binding anchor; 2(q−1) measured at q=2..7; the
+ladder-is-L confound CLOSED (q=3 all-36 → {3,6} under a
+declared prune with positive control); paper-20 pinned as
+the fourth source with the m=2-at-AG(2,2) prediction
+registered untested; leg counts published (leg-3 0/720
+failures; leg-4 51 reached, 0 failures, 0 coin
+disagreements — measured); the n=16 FULL window adopted
+(505,920/0/49,536 with the vacuous split); multiset/set/
+sequence axes published (12/7/33; 53/87); K3's ten built
+(promotion-time totality; the 181-line transcript bound;
+the comparator de-twinned at key level; 8/8 verbatim
+consumed; semantic walls with 15 controls; both FAC
+constants gated).  **Battery: 46/46 falsifiers; 33/33 K3
+injections dead; byte ×2 off-tree at two seeds; selftest
+five-legged write-nothing; 21 argv forms; 531+179 numerals
+0 unbacked.  24 leaf moves, every one instrument-census or
+ordered; ZERO physics values changed.**  Four extra
+defects found+fixed incl. two typed-count gate statements
+and a no-op falsifier caught by the worker's own sweep.
+**Orchestrator battery next; terminal on green.**
