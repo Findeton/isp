@@ -12133,3 +12133,27 @@ failure recurring).  MAJOR-2: the quantifiability class
 word bound to a different predicate, counterexamples both
 directions.  Three head-segment replacements with exact
 licensed strings supplied.  K1/K3 still out.
+
+## 2026-08-16 — HOR K1 (OPERATOR) FROZEN: AWF; 616 RECOMPUTATIONS ZERO PHYSICS DISAGREEMENTS; SIX VERBATIM ROWS SELF-COMPARED; THE 11/1/6 RECOUNT CONVERGENT; A TYPED-OFFSET COUNT WRONG IN BOTH ARTIFACTS (v14 LEDGER #379)
+
+**Review:** v14/review-hor-operator.md (04dc878e4a02, 496
+lines).  Grade AWF.  Everything physics reproduced by an
+independent field + holonomy route (the tick, the cone
+16/16, the split, merging-index-1-at-every-open-R TRUE,
+the EMPTY R4 family TRUE, the 400/0 directed system).
+THREE MAJORS: (1) **6 of 9 SURVIVES-VERBATIM rows decided
+by construction** (three witnesses identically {0}; three
+with no arena argument — the census's own docstring
+violated at six rows; only 3 verbatim rows are measured);
+(2) **2 of 8 ARTIFACT verdicts comparison-size-selected —
+at the unit's own core torus T-8 they flip to VERBATIM
+(the honest headline 11/1/6; CONVERGENT with K2 M-1)**;
+(3) a published totality count WRONG IN BOTH ARTIFACTS
+(typed offsets len+9/len+8 — integer constants invisible
+to the string-literal audit; receipt 56 keys, published
+57/48 and 58/49) — a NEW typed-count subspecies for the
+template.  Four minors.  **POSITIVE: the seat ran a probe
+the unit did not (the odd and mixed start-parity cone
+censuses) — every promoted quantity unchanged, only the
+declared-arena-relative asymmetry flips: THE UNIT PASSES
+A PROBE IT NEVER RAN.**  K3 out; REC seats out.
