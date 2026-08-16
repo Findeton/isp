@@ -60,3 +60,44 @@ heads (AUTOGLUE's AUTONOMOUS-CROSSING-FOUND and
 FORM-IS-THE-DATUM strings must survive W1/W2 phrasing).
 PLAN.md amended.  Feedback routed to all four runners
 this entry.
+
+## 2026-08-16 — THEORY-CONTRACT (PAPER-43) DELIVERED, COMMITTED AS-IS: THE SIX ORDERS AND BOTH WALLS FOLDED; ISP-IS-A-FAMILY WITH 13 FREE DECLARATIONS AND ZERO LAW-SELECTED; THE GAUGE WORD WITHHELD (v15 LEDGER #3)
+
+**Files:** v15/paper-43-contract.md a0caabea6566;
+contract_exact.py d7f4c15e7704; contract_output.txt
+2f1933c09b8f; contract_receipt.json 9b3638b796ae.
+CANDIDATE UNTIL ADJUDICATION.  All six user orders + W1/W2
+folded (n RECONSTRUCTED-CONDITIONALLY; the fixed point
+scoped to the triangular class in head, gates, and prose;
+GAUGE-WORD=WITHHELD with the every-observable upgrade
+standard stated; blindness substrate-scoped; the state
+scoped to the committed machine at fixed background;
+CARRIER-CANDIDATE).  **Head:** census total (23 objects:
+9 declared / 10 generated / 2 law-selected / 2
+reconstructed; 20 recomputed, 3 cited, every corpus number
+matching) · state+invariance (3 components + 6 background;
+**the walk reads the count field ONLY THROUGH ITS RESIDUE
+— 36 fields → 24 residue classes, 24/24 agree, 0/606
+collide; what the state must carry is READING-RELATIVE**;
+the round-law stabilizer 1,296 = Aut(link graph), STRICTLY
+larger than the arena's 108, index 12 = the direction
+splittings; quotient: 5,784 → 17 histories, 36 → 12
+fields) · the circularity (**exhaustive search with the
+actor count FREE returns exactly one cast — uniqueness
+INSIDE THE TRIANGULAR REPRESENTATION CLASS, explicitly not
+a fixed point of the full dynamics**; cycle length 3;
+residue 12) · **Q58 RULED BY MEASUREMENT: 9 in-corpus
+mechanisms through one reconstructor — 5 recover, 4
+refuse, AND THE REFUSERS INCLUDE THE COUPLED WALK'S OWN
+EMISSION LAW at both grains (a=2, threshold-undetermined);
+the criterion measured: triangularity-with-total-cover
+decides all 9, block size alone does not.
+IDENTIFIABILITY-WITHIN-A-GENERATIVE-CLASS; ISP IS A
+FAMILY — 21 declarations, 13 FREE, 0 selected by any
+measured law.**  Template 9/9 with the TPL-2 subspecies
+scan ADDED (%-format + integer offsets); battery: 34/34
+gates, 34/34 mutants at named gates with real move-proofs,
+byte-identical off-tree, selftest write-nothing.
+Residuals disclosed (the --render diagnostic; the C1-only
+width sweep; the 9-arm domain probe).  **Orchestrator
+battery next; panel after green.**

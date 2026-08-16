@@ -1,0 +1,43 @@
+CONTRACT -- THE THEORY CONTRACT -- the unit the pin names
+mode --run   mutant none
+
+  [PASS] G-SOURCES-PINNED :: sources 16 mismatches 0
+  [PASS] G-NO-FLOAT :: float literals 0 in the module
+  [PASS] G-S1-DISJOINT-CODE :: regions 5 offences 0
+  [PASS] G-TEMPLATE-EXERCISED :: template families 9 exercised 9
+  [PASS] G-ARENA-REBUILT :: sites 9 cells 27 classes 4 groupings 280 saturating 36 degree 6
+  [PASS] G-CORPUS-REBUILT :: slots 5856 strict 72 concatenations 5184 window 600 distinct 5784 events 30
+  [PASS] G-RECORD-REBUILT :: blocks 27 unwritten 768 partly 175 silent 1 bare 5643 collisions 39 colliding 180 fields 36 most blocks one history sees 18
+  [PASS] G-OBJECT-CENSUS :: rows 23 computed 20 cited 3 backed 23
+  [PASS] G-STATE-COMPONENTS :: state components 3 background 6
+  [PASS] G-STATE-SCREENS-THE-HISTORY :: equal-residue pairs 24 agreeing 24 distinct-residue pairs 606 colliding 0 successors 24
+  [PASS] G-STATE-READING-RELATIVE :: reading A menus 24 reading B menus 36 residue fields 24 count fields 36
+  [PASS] G-INVARIANCE-GROUPS :: symmetric group 362880 law stabilizer 1296 link automorphisms 1296 arena automorphisms 108 index 12 splittings 12
+  [PASS] G-DIRECTION-INVARIANCE :: declarations 4 agreeing 4 census numbers 7
+  [PASS] G-LOCAL-ARITY-GROUP :: local group 6 global 1 collapse width 4 histories 72
+  [PASS] G-QUOTIENT-CENSUS :: histories 5784 arena 25 link 17 fields 36 arena 12 link 12
+  [PASS] G-DEPENDENCY-CYCLE :: nodes 10 edges 12 cycles 3 through the cast and the record 2 shortest 4
+  [PASS] G-CAST-UNIQUE-IN-THE-CLASS :: cast solutions 1 certificate CERTIFIED derived cast 9 threshold 3
+  [PASS] G-CAST-RESIDUE :: residue 12 index 12 candidate classes 36
+  [PASS] G-Q58-ARMS :: arms 9 recovering 5 refusing 4 triangular 5
+  [PASS] G-Q58-VERDICT :: recovering 5 refusing 4 triangularity decides True block size decides False
+  [PASS] G-COIN-FIBER :: ring solutions 36 classes 6 phase units 6 Grover classes 1
+  [PASS] G-MENU-LAW-SELECTED :: subgroups 6 menu 6
+  [PASS] G-SEAM-KERNEL :: rows 6 columns 10 rank 6 kernel 4
+  [PASS] G-PARAMETERS :: declarations 21 free 13 invariant 2 derived 3 reconstructed-conditionally 1 initial 2 free rows a law selects 0
+  [PASS] G-OUTCOMES-REACHABLE :: outcome words 11 reachable 11
+  [PASS] G-CLAIMS-EQUAL :: rows 135 prose 15 fences 4
+  [PASS] G-REFERENTS-BOUND :: universes 6 occurrences checked 21
+  [PASS] G-WALLS :: walls 7 patterns 53 standing sentences 11
+  [PASS] G-ANCHORS-CONSUMED :: anchors 13 consumers 10 unconsumed 0 phantom 0
+  [PASS] G-NO-TYPED-COUNTS :: statement builders audited 8 offences 0 exemptions 1 unused 0
+  [PASS] G-RECEIPT-TYPES :: receipt leaves 0 type offences 0
+  [PASS] G-HEAD-REBUILT :: segments 4 fields parsed 39 mismatches 0
+  [PASS] G-TRANSCRIPT-BOUND :: transcript rows 34 ledger rows 34 stray 0 missing 0
+  [PASS] G-READS-DECLARED :: declared 18 pinned 16 unpinnable 2 stray 0 never read 0 distinct 18
+
+VERDICT
+  CONTRACT-CENSUS-TOTAL<OBJECTS=23; COMPUTED-HERE=20; CITED=3; ACTORS=9; CELLS=27; EVENTS-REALISED=30; HISTORIES=5784; BLOCKS=27; COUNT-FIELDS=36; MENU=6; CHART-CLASSES=1296>
+  CONTRACT-STATE-AT-FIXED-BACKGROUND-AND-INVARIANCE<STATE-COMPONENTS=3; BACKGROUND=6; COUNT-FIELDS=36; RESIDUE-FIELDS=24; SUCCESSORS=24; EQUAL-RESIDUE-PAIRS-AGREEING=24-OF-24; DISTINCT-RESIDUE-COLLISIONS=0-OF-606; RELABELLINGS=362880; LAW-STABILIZER=1296; ARENA-STABILIZER=108; DIRECTION-INDEX=12; SPLITTINGS=12; LOCAL-GROUP=6; LOCAL-COLLAPSE-WIDTH=4; HISTORIES-SURVIVING=17-OF-5784; FIELDS-SURVIVING=12-OF-36; GAUGE-WORD=WITHHELD>
+  CONTRACT-CIRCULAR-CAST-UNIQUE-IN-THE-TRIANGULAR-CLASS-UP-TO-THE-DIRECTION-DECLARATION<CYCLE-LENGTH=3; CAST-SOLUTIONS=1; RESIDUE=12; ARMS=9; RECOVERING=5; REFUSING=4>
+  CONTRACT-Q58-IDENTIFIABILITY-WITHIN-A-GENERATIVE-CLASS-ISP-IS-A-FAMILY<DECLARATIONS=21; FREE=13; INVARIANT-IN-THE-SUBSTRATE-CENSUS=2; DERIVED=3; RECONSTRUCTED-CONDITIONALLY=1; INITIAL=2; FREE-ROWS-A-LAW-SELECTS=0; COIN-CLASSES=6; SEAM-KERNEL=4; DIRECTION-CHOICES=4; UNRESOLVED=THE-GAUGE-QUOTIENT+THE-UNIVERSAL-STATE+THE-EXCITATION-CONTENT>

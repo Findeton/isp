@@ -1,0 +1,1213 @@
+{
+ "anchor_consumers": 10,
+ "anchor_count": 13,
+ "anchor_phantom_consumers": 0,
+ "anchor_unconsumed": 0,
+ "arena_actor_groups": 84,
+ "arena_automorphisms": 108,
+ "arena_cells": 27,
+ "arena_declared_directions": 3,
+ "arena_dimension": 2,
+ "arena_event_arity": 3,
+ "arena_field_order": 3,
+ "arena_flat_quadruples": 276,
+ "arena_groupings": 280,
+ "arena_groups_writing_none": 3,
+ "arena_groups_writing_three": 27,
+ "arena_groups_writing_two": 54,
+ "arena_menu": 6,
+ "arena_parallel_classes": 4,
+ "arena_saturating_groupings": 36,
+ "arena_sites": 9,
+ "arena_strict_triples": 72,
+ "arena_translation_subgroups": 6,
+ "arena_window_schedules": 600,
+ "census_backed": 23,
+ "census_cited": 3,
+ "census_classes": [
+  [
+   "DECLARED",
+   9
+  ],
+  [
+   "GENERATED",
+   10
+  ],
+  [
+   "LAW-SELECTED",
+   2
+  ],
+  [
+   "RECONSTRUCTED",
+   2
+  ]
+ ],
+ "census_computed_here": 20,
+ "census_row_count": 23,
+ "census_rows": [
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 9,
+   "class": "DECLARED",
+   "object": "ACTOR",
+   "reading": "declared as the points of the arena, and derived back from the record"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 9,
+   "class": "DECLARED",
+   "object": "SITE",
+   "reading": "the same objects as the actors under the weld's dictionary"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 3,
+   "class": "DECLARED",
+   "object": "DIRECTION",
+   "reading": "three of the parallel classes of the arena are declared links"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 4,
+   "class": "GENERATED",
+   "object": "PARALLEL-CLASS",
+   "reading": "the resolutions of the arena, generated from the field"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 27,
+   "class": "GENERATED",
+   "object": "CELL",
+   "reading": "one per site and declared direction"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 27,
+   "class": "GENERATED",
+   "object": "CO-DIVISION-PAIR",
+   "reading": "the cell is the unordered pair, by the carrier typing"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 84,
+   "class": "GENERATED",
+   "object": "DIVISION-EVENT",
+   "reading": "every group of the declared arity; the corpus realises some of them"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 30,
+   "class": "GENERATED",
+   "object": "REALISED-EVENT",
+   "reading": "the events the committed corpus actually runs"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 280,
+   "class": "GENERATED",
+   "object": "GROUPING",
+   "reading": "the partitions of the actors into groups of the declared arity"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 36,
+   "class": "LAW-SELECTED",
+   "object": "ADMISSIBLE-ROUND",
+   "reading": "the groupings the saturation law admits"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 5784,
+   "class": "GENERATED",
+   "object": "HISTORY",
+   "reading": "the distinct sequences of events the committed drivers produce"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 27,
+   "class": "GENERATED",
+   "object": "RECORD-BLOCK",
+   "reading": "the cells one event writes"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 5643,
+   "class": "GENERATED",
+   "object": "BARE-RECORD",
+   "reading": "the sequence of blocks, actor labels erased"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 36,
+   "class": "GENERATED",
+   "object": "COUNT-FIELD",
+   "reading": "the division count on each cell"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 27,
+   "class": "DECLARED",
+   "object": "QUANTUM-STATE",
+   "reading": "one amplitude per cell, in the ring the field generates"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 6,
+   "class": "LAW-SELECTED",
+   "object": "MENU",
+   "reading": "the coset partitions of the translation subgroups"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 1296,
+   "class": "RECONSTRUCTED",
+   "object": "NAMING",
+   "reading": "the relabellings the record admits of the derived cast"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 12,
+   "class": "RECONSTRUCTED",
+   "object": "DIRECTION-SPLITTING",
+   "reading": "the ways the derived link structure splits into classes"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 6,
+   "class": "DECLARED",
+   "object": "COIN",
+   "reading": "the covariant unitary family, up to a global phase"
+  },
+  {
+   "backing": "COMPUTED-HERE",
+   "cardinality": 4,
+   "class": "DECLARED",
+   "object": "SEAM",
+   "reading": "the undetermined entries the chart leaves at a shared site"
+  },
+  {
+   "backing": "SEALED-CITATION",
+   "cardinality": 16,
+   "class": "DECLARED",
+   "object": "CHART",
+   "reading": "the combinatorial types of a two-sector overlap"
+  },
+  {
+   "backing": "SEALED-CITATION",
+   "cardinality": 1,
+   "class": "DECLARED",
+   "object": "TICK",
+   "reading": "one scheduling convention; the emergent speed is one site a tick"
+  },
+  {
+   "backing": "SEALED-CITATION",
+   "cardinality": 27,
+   "class": "DECLARED",
+   "object": "CARRIER-CANDIDATE",
+   "reading": "the carrier the exclusion census selected; excitations are not declared until the excitation gate opens"
+  }
+ ],
+ "cited_chart_types": 16,
+ "cited_gluings": 45010,
+ "claim_fences": 4,
+ "claim_prose": 15,
+ "claim_rows": 135,
+ "class_cast_matches_declared": true,
+ "class_cast_residue": 12,
+ "class_cast_solutions": 1,
+ "coin_classes": 6,
+ "coin_grover_classes": 1,
+ "coin_norm_solutions": 6,
+ "coin_ratios": [
+  [
+   "-1/3",
+   "-1/3"
+  ],
+  [
+   "-1/3",
+   "1/3"
+  ],
+  [
+   "-2/3",
+   "-1/3"
+  ],
+  [
+   "-2/3",
+   "0"
+  ],
+  [
+   "0",
+   "0"
+  ],
+  [
+   "0",
+   "1/3"
+  ]
+ ],
+ "coin_ring_solutions": 36,
+ "corpus_c1": 72,
+ "corpus_c2": 5184,
+ "corpus_c3": 600,
+ "corpus_distinct_events": 30,
+ "corpus_distinct_histories": 5784,
+ "corpus_events_writing_nothing": 3,
+ "corpus_slots": 5856,
+ "dep_actor_record_cycle": [
+  "ACTOR",
+  "DIVISION-EVENT",
+  "HISTORY",
+  "RECORD-BLOCK"
+ ],
+ "dep_actor_record_cycle_length": 4,
+ "dep_actor_record_cycles": 2,
+ "dep_cycle_length": 3,
+ "dep_cycles": 3,
+ "dep_edges": 12,
+ "dep_longest_cycle_length": 5,
+ "dep_nodes": 10,
+ "exempt_tokens": 1,
+ "exempt_tokens_unused": 0,
+ "float_offence_count": 0,
+ "float_offences": [],
+ "gates": 34,
+ "head_fields_parsed": 39,
+ "head_mismatches": 0,
+ "head_segment_count": 4,
+ "head_segments": [
+  "CONTRACT-CENSUS-TOTAL<OBJECTS=23; COMPUTED-HERE=20; CITED=3; ACTORS=9; CELLS=27; EVENTS-REALISED=30; HISTORIES=5784; BLOCKS=27; COUNT-FIELDS=36; MENU=6; CHART-CLASSES=1296>",
+  "CONTRACT-STATE-AT-FIXED-BACKGROUND-AND-INVARIANCE<STATE-COMPONENTS=3; BACKGROUND=6; COUNT-FIELDS=36; RESIDUE-FIELDS=24; SUCCESSORS=24; EQUAL-RESIDUE-PAIRS-AGREEING=24-OF-24; DISTINCT-RESIDUE-COLLISIONS=0-OF-606; RELABELLINGS=362880; LAW-STABILIZER=1296; ARENA-STABILIZER=108; DIRECTION-INDEX=12; SPLITTINGS=12; LOCAL-GROUP=6; LOCAL-COLLAPSE-WIDTH=4; HISTORIES-SURVIVING=17-OF-5784; FIELDS-SURVIVING=12-OF-36; GAUGE-WORD=WITHHELD>",
+  "CONTRACT-CIRCULAR-CAST-UNIQUE-IN-THE-TRIANGULAR-CLASS-UP-TO-THE-DIRECTION-DECLARATION<CYCLE-LENGTH=3; CAST-SOLUTIONS=1; RESIDUE=12; ARMS=9; RECOVERING=5; REFUSING=4>",
+  "CONTRACT-Q58-IDENTIFIABILITY-WITHIN-A-GENERATIVE-CLASS-ISP-IS-A-FAMILY<DECLARATIONS=21; FREE=13; INVARIANT-IN-THE-SUBSTRATE-CENSUS=2; DERIVED=3; RECONSTRUCTED-CONDITIONALLY=1; INITIAL=2; FREE-ROWS-A-LAW-SELECTS=0; COIN-CLASSES=6; SEAM-KERNEL=4; DIRECTION-CHOICES=4; UNRESOLVED=THE-GAUGE-QUOTIENT+THE-UNIVERSAL-STATE+THE-EXCITATION-CONTENT>"
+ ],
+ "head_words": [
+  "CENSUS-TOTAL",
+  "CIRCULAR-CAST-UNIQUE-IN-THE-TRIANGULAR-CLASS-UP-TO-THE-DIRECTION-DECLARATION",
+  "Q58-IDENTIFIABILITY-WITHIN-A-GENERATIVE-CLASS",
+  "ISP-IS-A-FAMILY"
+ ],
+ "inv_admissible_groups": 27,
+ "inv_arena_automorphisms": 108,
+ "inv_candidate_direction_classes": 36,
+ "inv_declared_splitting_offered": true,
+ "inv_direction_census_numbers": 7,
+ "inv_direction_choices": 4,
+ "inv_direction_index": 12,
+ "inv_direction_profiles_agreeing": 4,
+ "inv_direction_splittings": 12,
+ "inv_law_blind_to_direction": true,
+ "inv_law_stabilizer": 1296,
+ "inv_link_graph_automorphisms": 1296,
+ "inv_link_graph_automorphisms_declared": 1296,
+ "inv_local_c1_global": 1,
+ "inv_local_c1_histories": 72,
+ "inv_local_c1_threshold": 4,
+ "inv_local_c1_uniform": true,
+ "inv_local_collapse_width": 4,
+ "inv_local_global_count": 1,
+ "inv_local_group_order": 6,
+ "inv_local_widths": [
+  [
+   0,
+   10077696
+  ],
+  [
+   1,
+   124416
+  ],
+  [
+   2,
+   144
+  ],
+  [
+   3,
+   4
+  ],
+  [
+   4,
+   1
+  ],
+  [
+   5,
+   1
+  ]
+ ],
+ "inv_symmetric_group": 362880,
+ "inv_two_labellings_agree": true,
+ "ledger_head": "32471e88823f5fb4",
+ "ledger_rows": 34,
+ "mode": "--run",
+ "mutant": "none",
+ "outcome_controls": [
+  [
+   "CENSUS-TOTAL",
+   "CENSUS-TOTAL"
+  ],
+  [
+   "CENSUS-PARTIAL",
+   "CENSUS-PARTIAL"
+  ],
+  [
+   "ACYCLIC",
+   "ACYCLIC"
+  ],
+  [
+   "CIRCULAR-CAST-UNIQUE-IN-THE-TRIANGULAR-CLASS",
+   "CIRCULAR-CAST-UNIQUE-IN-THE-TRIANGULAR-CLASS"
+  ],
+  [
+   "CIRCULAR-CAST-UNIQUE-IN-THE-TRIANGULAR-CLASS-UP-TO-THE-DIRECTION-DECLARATION",
+   "CIRCULAR-CAST-UNIQUE-IN-THE-TRIANGULAR-CLASS-UP-TO-THE-DIRECTION-DECLARATION"
+  ],
+  [
+   "CIRCULAR-BLOCKED-AT-THE-CAST",
+   "CIRCULAR-BLOCKED-AT-THE-CAST"
+  ],
+  [
+   "Q58-EMERGENCE-GENERATOR-INDEPENDENT",
+   "Q58-EMERGENCE-GENERATOR-INDEPENDENT"
+  ],
+  [
+   "Q58-IDENTIFIABILITY-WITHIN-A-GENERATIVE-CLASS",
+   "Q58-IDENTIFIABILITY-WITHIN-A-GENERATIVE-CLASS"
+  ],
+  [
+   "Q58-UNDECIDED-NO-SECOND-MECHANISM",
+   "Q58-UNDECIDED-NO-SECOND-MECHANISM"
+  ],
+  [
+   "ISP-IS-ONE-THEORY",
+   "ISP-IS-ONE-THEORY"
+  ],
+  [
+   "ISP-IS-A-FAMILY",
+   "ISP-IS-A-FAMILY"
+  ]
+ ],
+ "outcome_reachable": 11,
+ "outcome_words": 11,
+ "paper_digest": "a0caabea6566",
+ "param_derived": 3,
+ "param_free": 13,
+ "param_free_selected_by_a_law": 0,
+ "param_initial": 2,
+ "param_invariant": 2,
+ "param_reconstructed": 1,
+ "param_rows": [
+  [
+   "d",
+   "the spatial dimension",
+   "UNSWEPT",
+   "FREE",
+   "NO",
+   "NDEP"
+  ],
+  [
+   "q",
+   "the field order",
+   "SWEPT-AT-THREE-POINTS",
+   "FREE",
+   "NO",
+   "NDEP"
+  ],
+  [
+   "a",
+   "the division-event arity",
+   "UNSWEPT",
+   "FREE",
+   "NO",
+   "ARITY-CHARTERED"
+  ],
+  [
+   "R",
+   "the depth in rounds",
+   "SWEPT-ALONG-THE-LADDER",
+   "FREE",
+   "NO",
+   "PERR"
+  ],
+  [
+   "the window",
+   "the driven schedule set",
+   "DECLARED-WINDOW",
+   "FREE",
+   "NO",
+   "R4DEC"
+  ],
+  [
+   "the coin",
+   "the S_3-covariant unitary",
+   "COMPUTED-HERE",
+   "FREE",
+   "NO",
+   "COUPLING"
+  ],
+  [
+   "the coin order",
+   "coin before or after the residue",
+   "DECLARED-PAIR",
+   "FREE",
+   "NO",
+   "COUPLING"
+  ],
+  [
+   "the orientation",
+   "the sign of the shift",
+   "DECLARED-PAIR",
+   "FREE",
+   "NO",
+   "COUPLING"
+  ],
+  [
+   "the horizon",
+   "the number of coupled steps",
+   "DECLARED",
+   "FREE",
+   "NO",
+   "COUPLING"
+  ],
+  [
+   "the reading",
+   "the Born menu or the record menu",
+   "DECLARED-PAIR",
+   "FREE",
+   "NO",
+   "COUPLING"
+  ],
+  [
+   "the seam",
+   "the completion at a shared site",
+   "COMPUTED-HERE",
+   "FREE",
+   "NO",
+   "SEC-2"
+  ],
+  [
+   "the ceiling",
+   "the occupancy ceiling",
+   "DECLARED",
+   "FREE",
+   "NO",
+   "OCC"
+  ],
+  [
+   "the measure",
+   "the measure over configurations",
+   "A-SIMPLEX",
+   "FREE",
+   "NO",
+   "R5M"
+  ],
+  [
+   "L",
+   "which classes are declared links",
+   "COMPUTED-HERE",
+   "INVARIANT-IN-THE-SUBSTRATE-CENSUS",
+   "NO",
+   "AID"
+  ],
+  [
+   "the coordinate",
+   "the naming of the record tokens",
+   "ANY-BIJECTION",
+   "INVARIANT-IN-THE-SUBSTRATE-CENSUS",
+   "NO",
+   "REC"
+  ],
+  [
+   "n",
+   "the actor count",
+   "COMPUTED-HERE",
+   "RECONSTRUCTED-CONDITIONALLY",
+   "NO",
+   "THIS-UNIT"
+  ],
+  [
+   "the cell count",
+   "the carrier size",
+   "COMPUTED-HERE",
+   "DERIVED",
+   "YES",
+   "THIS-UNIT"
+  ],
+  [
+   "the connection",
+   "the group the walk's phases live in",
+   "DECLARED",
+   "DERIVED",
+   "YES",
+   "COUPLING"
+  ],
+  [
+   "the menu",
+   "the admissible actor grains",
+   "COMPUTED-HERE",
+   "DERIVED",
+   "YES",
+   "FAC"
+  ],
+  [
+   "the state",
+   "the initial amplitude",
+   "AN-INITIAL-CONDITION",
+   "INITIAL",
+   "NO",
+   "COUPLING"
+  ],
+  [
+   "the record",
+   "the initial count field",
+   "AN-INITIAL-CONDITION",
+   "INITIAL",
+   "NO",
+   "COUPLING"
+  ]
+ ],
+ "param_selected_by_a_law": 3,
+ "param_total": 21,
+ "q58_arms": [
+  {
+   "all_blocks_triangular": true,
+   "arm": "THE-COMMITTED-GRAMMAR",
+   "block_sizes": [
+    [
+     3,
+     27
+    ]
+   ],
+   "blocks": 27,
+   "cast_recovered": true,
+   "certificate": "CERTIFIED",
+   "event_arity": 3,
+   "mechanism": "GRAMMAR",
+   "threshold": 3,
+   "tokens_covered": 27
+  },
+  {
+   "all_blocks_triangular": true,
+   "arm": "THE-STRICT-COVER-DRIVER",
+   "block_sizes": [
+    [
+     3,
+     27
+    ]
+   ],
+   "blocks": 27,
+   "cast_recovered": true,
+   "certificate": "CERTIFIED",
+   "event_arity": 3,
+   "mechanism": "GRAMMAR",
+   "threshold": 3,
+   "tokens_covered": 27
+  },
+  {
+   "all_blocks_triangular": true,
+   "arm": "THE-CONCATENATION-DRIVER",
+   "block_sizes": [
+    [
+     3,
+     27
+    ]
+   ],
+   "blocks": 27,
+   "cast_recovered": true,
+   "certificate": "CERTIFIED",
+   "event_arity": 3,
+   "mechanism": "GRAMMAR",
+   "threshold": 3,
+   "tokens_covered": 27
+  },
+  {
+   "all_blocks_triangular": true,
+   "arm": "THE-DRIVEN-WINDOW",
+   "block_sizes": [
+    [
+     3,
+     27
+    ]
+   ],
+   "blocks": 27,
+   "cast_recovered": true,
+   "certificate": "CERTIFIED",
+   "event_arity": 3,
+   "mechanism": "GRAMMAR",
+   "threshold": 3,
+   "tokens_covered": 27
+  },
+  {
+   "all_blocks_triangular": true,
+   "arm": "THE-PAIRWISE-LINKED-GROUPS",
+   "block_sizes": [
+    [
+     3,
+     27
+    ]
+   ],
+   "blocks": 27,
+   "cast_recovered": true,
+   "certificate": "CERTIFIED",
+   "event_arity": 3,
+   "mechanism": "GRAMMAR-FREE",
+   "threshold": 3,
+   "tokens_covered": 27
+  },
+  {
+   "all_blocks_triangular": false,
+   "arm": "THE-UNRESTRICTED-GROUPS",
+   "block_sizes": [
+    [
+     2,
+     54
+    ],
+    [
+     3,
+     27
+    ]
+   ],
+   "blocks": 81,
+   "cast_recovered": false,
+   "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+   "event_arity": 3,
+   "mechanism": "GRAMMAR-FREE",
+   "threshold": 3,
+   "tokens_covered": 27
+  },
+  {
+   "all_blocks_triangular": false,
+   "arm": "THE-NON-COLLINEAR-GROUPS",
+   "block_sizes": [
+    [
+     2,
+     54
+    ]
+   ],
+   "blocks": 54,
+   "cast_recovered": false,
+   "certificate": "TOKEN-NOT-IN-EXACTLY-TWO",
+   "event_arity": 2,
+   "mechanism": "GRAMMAR-FREE",
+   "threshold": 2,
+   "tokens_covered": 27
+  },
+  {
+   "all_blocks_triangular": false,
+   "arm": "THE-COUPLED-WALK-EMISSION",
+   "block_sizes": [
+    [
+     1,
+     27
+    ]
+   ],
+   "blocks": 27,
+   "cast_recovered": false,
+   "certificate": "THRESHOLD-UNDETERMINED",
+   "event_arity": 2,
+   "mechanism": "DYNAMICS",
+   "threshold": null,
+   "tokens_covered": 27
+  },
+  {
+   "all_blocks_triangular": false,
+   "arm": "THE-COUPLED-WALK-SITE-MENU",
+   "block_sizes": [
+    [
+     3,
+     9
+    ]
+   ],
+   "blocks": 9,
+   "cast_recovered": false,
+   "certificate": "THRESHOLD-UNDETERMINED",
+   "event_arity": 2,
+   "mechanism": "DYNAMICS",
+   "threshold": null,
+   "tokens_covered": 27
+  }
+ ],
+ "q58_arms_all_blocks_at_arity": 6,
+ "q58_arms_at_declared_arity": 6,
+ "q58_arms_recovering": 5,
+ "q58_arms_refusing": 4,
+ "q58_arms_total": 9,
+ "q58_mechanism_kinds": [
+  "DYNAMICS",
+  "GRAMMAR",
+  "GRAMMAR-FREE"
+ ],
+ "q58_split_is_the_block_size": false,
+ "q58_split_is_triangularity": true,
+ "q58_triangular_arms": 5,
+ "quotient_fields": 36,
+ "quotient_fields_arena": 12,
+ "quotient_fields_link": 12,
+ "quotient_histories": 5784,
+ "quotient_histories_arena": 25,
+ "quotient_histories_link": 17,
+ "reads_declared": 18,
+ "reads_distinct": 18,
+ "reads_never": 0,
+ "reads_stray": 0,
+ "reads_unpinnable": 2,
+ "receipt_leaves": 0,
+ "receipt_type_offence_count": 0,
+ "receipt_type_offences": [],
+ "recon_actor_size": 6,
+ "recon_cast_size": 9,
+ "recon_certificate": "CERTIFIED",
+ "recon_degree": 6,
+ "recon_derived_pairs": 27,
+ "recon_set_equality": true,
+ "recon_threshold": 3,
+ "record_block_sizes": [
+  3
+ ],
+ "record_blocks": 27,
+ "record_colliding_histories": 180,
+ "record_collision_classes": 39,
+ "record_count_fields": 36,
+ "record_distinct_bare_records": 5643,
+ "record_field_classes_multi": 32,
+ "record_histories_in_multi_classes": 5780,
+ "record_histories_writing_nothing": 1,
+ "record_max_blocks_in_a_history": 18,
+ "record_partly_unwritten_histories": 175,
+ "record_residue_fields": 24,
+ "record_unwritten_events": 768,
+ "record_vanishing_histories": 141,
+ "referent_occurrences": 21,
+ "referent_universes": 6,
+ "region_census": [
+  [
+   "builder",
+   35
+  ],
+  [
+   "comparator",
+   7
+  ],
+  [
+   "plumbing",
+   79
+  ],
+  [
+   "reconstructor",
+   7
+  ],
+  [
+   "stripper",
+   4
+  ]
+ ],
+ "region_count": 5,
+ "region_offence_count": 0,
+ "region_offences": [],
+ "render_tables": 12,
+ "seal_manifest": {
+  "declared_unsealed": {
+   "gates": "counted after the last gate; the ledger's own rows carry it",
+   "ledger_head": "the chain head, recomputable from the receipt's own rows",
+   "mode": "a declared input, not a measurement",
+   "mutant": "a declared input, not a measurement"
+  },
+  "sealed": {
+   "anchor_consumers": "4a44dc153642",
+   "anchor_count": "3fdba35f04dc",
+   "anchor_phantom_consumers": "5feceb66ffc8",
+   "anchor_unconsumed": "5feceb66ffc8",
+   "arena_actor_groups": "44c8031cb036",
+   "arena_automorphisms": "9537f32ec759",
+   "arena_cells": "670671cd9740",
+   "arena_declared_directions": "4e07408562be",
+   "arena_dimension": "d4735e3a265e",
+   "arena_event_arity": "4e07408562be",
+   "arena_field_order": "4e07408562be",
+   "arena_flat_quadruples": "c76b40578113",
+   "arena_groupings": "7f0a22117f8f",
+   "arena_groups_writing_none": "4e07408562be",
+   "arena_groups_writing_three": "670671cd9740",
+   "arena_groups_writing_two": "2fca346db656",
+   "arena_menu": "e7f6c011776e",
+   "arena_parallel_classes": "4b227777d4dd",
+   "arena_saturating_groupings": "76a50887d8f1",
+   "arena_sites": "19581e27de7c",
+   "arena_strict_triples": "872261620421",
+   "arena_translation_subgroups": "e7f6c011776e",
+   "arena_window_schedules": "284b7e6d788f",
+   "census_backed": "535fa30d7e25",
+   "census_cited": "4e07408562be",
+   "census_classes": "a20573f507fd",
+   "census_computed_here": "f5ca38f748a1",
+   "census_row_count": "535fa30d7e25",
+   "census_rows": "c3584507b263",
+   "cited_chart_types": "b17ef6d19c7a",
+   "cited_gluings": "262305f87901",
+   "claim_fences": "4b227777d4dd",
+   "claim_prose": "e629fa6598d7",
+   "claim_rows": "13671077b66a",
+   "class_cast_matches_declared": "b5bea41b6c62",
+   "class_cast_residue": "6b51d431df5d",
+   "class_cast_solutions": "6b86b273ff34",
+   "coin_classes": "e7f6c011776e",
+   "coin_grover_classes": "6b86b273ff34",
+   "coin_norm_solutions": "e7f6c011776e",
+   "coin_ratios": "672d6f43df32",
+   "coin_ring_solutions": "76a50887d8f1",
+   "corpus_c1": "872261620421",
+   "corpus_c2": "2086aa95003f",
+   "corpus_c3": "284b7e6d788f",
+   "corpus_distinct_events": "624b60c58c9d",
+   "corpus_distinct_histories": "7928e72dd6d8",
+   "corpus_events_writing_nothing": "4e07408562be",
+   "corpus_slots": "6ef6a4c45ebe",
+   "dep_actor_record_cycle": "842dd9d96c8a",
+   "dep_actor_record_cycle_length": "4b227777d4dd",
+   "dep_actor_record_cycles": "d4735e3a265e",
+   "dep_cycle_length": "4e07408562be",
+   "dep_cycles": "4e07408562be",
+   "dep_edges": "6b51d431df5d",
+   "dep_longest_cycle_length": "ef2d127de37b",
+   "dep_nodes": "4a44dc153642",
+   "exempt_tokens": "6b86b273ff34",
+   "exempt_tokens_unused": "5feceb66ffc8",
+   "float_offence_count": "5feceb66ffc8",
+   "float_offences": "4f53cda18c2b",
+   "head_fields_parsed": "0b918943df09",
+   "head_mismatches": "5feceb66ffc8",
+   "head_segment_count": "4b227777d4dd",
+   "head_segments": "05d9dbb8c4fd",
+   "head_words": "e0d3426f0e9f",
+   "inv_admissible_groups": "670671cd9740",
+   "inv_arena_automorphisms": "9537f32ec759",
+   "inv_candidate_direction_classes": "76a50887d8f1",
+   "inv_declared_splitting_offered": "b5bea41b6c62",
+   "inv_direction_census_numbers": "7902699be42c",
+   "inv_direction_choices": "4b227777d4dd",
+   "inv_direction_index": "6b51d431df5d",
+   "inv_direction_profiles_agreeing": "4b227777d4dd",
+   "inv_direction_splittings": "6b51d431df5d",
+   "inv_law_blind_to_direction": "b5bea41b6c62",
+   "inv_law_stabilizer": "f7961248034a",
+   "inv_link_graph_automorphisms": "f7961248034a",
+   "inv_link_graph_automorphisms_declared": "f7961248034a",
+   "inv_local_c1_global": "6b86b273ff34",
+   "inv_local_c1_histories": "872261620421",
+   "inv_local_c1_threshold": "4b227777d4dd",
+   "inv_local_c1_uniform": "b5bea41b6c62",
+   "inv_local_collapse_width": "4b227777d4dd",
+   "inv_local_global_count": "6b86b273ff34",
+   "inv_local_group_order": "e7f6c011776e",
+   "inv_local_widths": "b632bbd89496",
+   "inv_symmetric_group": "f233032bb043",
+   "inv_two_labellings_agree": "b5bea41b6c62",
+   "ledger_rows": "86e501496586",
+   "outcome_controls": "7d52e88f6469",
+   "outcome_reachable": "4fc82b26aecb",
+   "outcome_words": "4fc82b26aecb",
+   "paper_digest": "e14db2360364",
+   "param_derived": "4e07408562be",
+   "param_free": "3fdba35f04dc",
+   "param_free_selected_by_a_law": "5feceb66ffc8",
+   "param_initial": "d4735e3a265e",
+   "param_invariant": "d4735e3a265e",
+   "param_reconstructed": "6b86b273ff34",
+   "param_rows": "3712b107e18e",
+   "param_selected_by_a_law": "4e07408562be",
+   "param_total": "6f4b6612125f",
+   "q58_arms": "e21672ac149d",
+   "q58_arms_all_blocks_at_arity": "e7f6c011776e",
+   "q58_arms_at_declared_arity": "e7f6c011776e",
+   "q58_arms_recovering": "ef2d127de37b",
+   "q58_arms_refusing": "4b227777d4dd",
+   "q58_arms_total": "19581e27de7c",
+   "q58_mechanism_kinds": "54172a584d4e",
+   "q58_split_is_the_block_size": "fcbcf165908d",
+   "q58_split_is_triangularity": "b5bea41b6c62",
+   "q58_triangular_arms": "ef2d127de37b",
+   "quotient_fields": "76a50887d8f1",
+   "quotient_fields_arena": "6b51d431df5d",
+   "quotient_fields_link": "6b51d431df5d",
+   "quotient_histories": "7928e72dd6d8",
+   "quotient_histories_arena": "b7a56873cd77",
+   "quotient_histories_link": "4523540f1504",
+   "reads_declared": "4ec9599fc203",
+   "reads_distinct": "4ec9599fc203",
+   "reads_never": "5feceb66ffc8",
+   "reads_stray": "5feceb66ffc8",
+   "reads_unpinnable": "d4735e3a265e",
+   "receipt_leaves": "5feceb66ffc8",
+   "receipt_type_offence_count": "5feceb66ffc8",
+   "receipt_type_offences": "4f53cda18c2b",
+   "recon_actor_size": "e7f6c011776e",
+   "recon_cast_size": "19581e27de7c",
+   "recon_certificate": "9af6f427dfc8",
+   "recon_degree": "e7f6c011776e",
+   "recon_derived_pairs": "670671cd9740",
+   "recon_set_equality": "b5bea41b6c62",
+   "recon_threshold": "4e07408562be",
+   "record_block_sizes": "06d033ece664",
+   "record_blocks": "670671cd9740",
+   "record_colliding_histories": "7b69759630f8",
+   "record_collision_classes": "0b918943df09",
+   "record_count_fields": "76a50887d8f1",
+   "record_distinct_bare_records": "b4c79208b569",
+   "record_field_classes_multi": "e29c9c180c62",
+   "record_histories_in_multi_classes": "6c663502b8bd",
+   "record_histories_writing_nothing": "6b86b273ff34",
+   "record_max_blocks_in_a_history": "4ec9599fc203",
+   "record_partly_unwritten_histories": "dac53c17c250",
+   "record_residue_fields": "c2356069e9d1",
+   "record_unwritten_events": "f7b856c054de",
+   "record_vanishing_histories": "2c7d5490e605",
+   "referent_occurrences": "6f4b6612125f",
+   "referent_universes": "e7f6c011776e",
+   "region_census": "c5c44df249aa",
+   "region_count": "ef2d127de37b",
+   "region_offence_count": "5feceb66ffc8",
+   "region_offences": "4f53cda18c2b",
+   "render_tables": "6b51d431df5d",
+   "seam_columns": "4a44dc153642",
+   "seam_kernel": "4b227777d4dd",
+   "seam_rank": "e7f6c011776e",
+   "seam_rows": "e7f6c011776e",
+   "source_count": "b17ef6d19c7a",
+   "source_mismatch_count": "5feceb66ffc8",
+   "source_mismatches": "4f53cda18c2b",
+   "state_background_components": "e7f6c011776e",
+   "state_components": "4e07408562be",
+   "state_distinct_residue_collisions": "5feceb66ffc8",
+   "state_distinct_residue_pairs": "f57b8252cea0",
+   "state_equal_residue_agreements": "c2356069e9d1",
+   "state_equal_residue_disagreements": "5feceb66ffc8",
+   "state_equal_residue_pairs": "c2356069e9d1",
+   "state_reading_a_menus": "c2356069e9d1",
+   "state_reading_b_menus": "76a50887d8f1",
+   "state_reading_b_menus_on_residues": "c2356069e9d1",
+   "state_successors_distinct": "c2356069e9d1",
+   "template_families": "19581e27de7c",
+   "template_families_live": "19581e27de7c",
+   "transcript_missing": "5feceb66ffc8",
+   "transcript_rows": "86e501496586",
+   "transcript_stray": "5feceb66ffc8",
+   "typed_callers": "2c624232cdd2",
+   "typed_count_offence_count": "5feceb66ffc8",
+   "typed_count_offences": "4f53cda18c2b",
+   "wall_count": "7902699be42c",
+   "wall_patterns": "2858dcd1057d",
+   "wall_positives": "4fc82b26aecb"
+  },
+  "sealed_at_gate": {
+   "anchor_consumers": "G-ANCHORS-CONSUMED",
+   "anchor_count": "G-ANCHORS-CONSUMED",
+   "anchor_phantom_consumers": "G-ANCHORS-CONSUMED",
+   "anchor_unconsumed": "G-ANCHORS-CONSUMED",
+   "arena_actor_groups": "G-ARENA-REBUILT",
+   "arena_automorphisms": "G-ARENA-REBUILT",
+   "arena_cells": "G-ARENA-REBUILT",
+   "arena_declared_directions": "G-ARENA-REBUILT",
+   "arena_dimension": "G-ARENA-REBUILT",
+   "arena_event_arity": "G-ARENA-REBUILT",
+   "arena_field_order": "G-ARENA-REBUILT",
+   "arena_flat_quadruples": "G-ARENA-REBUILT",
+   "arena_groupings": "G-ARENA-REBUILT",
+   "arena_groups_writing_none": "G-ARENA-REBUILT",
+   "arena_groups_writing_three": "G-ARENA-REBUILT",
+   "arena_groups_writing_two": "G-ARENA-REBUILT",
+   "arena_menu": "G-ARENA-REBUILT",
+   "arena_parallel_classes": "G-ARENA-REBUILT",
+   "arena_saturating_groupings": "G-ARENA-REBUILT",
+   "arena_sites": "G-ARENA-REBUILT",
+   "arena_strict_triples": "G-ARENA-REBUILT",
+   "arena_translation_subgroups": "G-ARENA-REBUILT",
+   "arena_window_schedules": "G-ARENA-REBUILT",
+   "census_backed": "G-OBJECT-CENSUS",
+   "census_cited": "G-OBJECT-CENSUS",
+   "census_classes": "G-OBJECT-CENSUS",
+   "census_computed_here": "G-OBJECT-CENSUS",
+   "census_row_count": "G-OBJECT-CENSUS",
+   "census_rows": "G-OBJECT-CENSUS",
+   "cited_chart_types": "G-OBJECT-CENSUS",
+   "cited_gluings": "G-OBJECT-CENSUS",
+   "claim_fences": "G-CLAIMS-EQUAL",
+   "claim_prose": "G-CLAIMS-EQUAL",
+   "claim_rows": "G-CLAIMS-EQUAL",
+   "class_cast_matches_declared": "G-CAST-UNIQUE-IN-THE-CLASS",
+   "class_cast_residue": "G-CAST-UNIQUE-IN-THE-CLASS",
+   "class_cast_solutions": "G-CAST-UNIQUE-IN-THE-CLASS",
+   "coin_classes": "G-COIN-FIBER",
+   "coin_grover_classes": "G-COIN-FIBER",
+   "coin_norm_solutions": "G-COIN-FIBER",
+   "coin_ratios": "G-COIN-FIBER",
+   "coin_ring_solutions": "G-COIN-FIBER",
+   "corpus_c1": "G-CORPUS-REBUILT",
+   "corpus_c2": "G-CORPUS-REBUILT",
+   "corpus_c3": "G-CORPUS-REBUILT",
+   "corpus_distinct_events": "G-CORPUS-REBUILT",
+   "corpus_distinct_histories": "G-CORPUS-REBUILT",
+   "corpus_events_writing_nothing": "G-CORPUS-REBUILT",
+   "corpus_slots": "G-CORPUS-REBUILT",
+   "dep_actor_record_cycle": "G-DEPENDENCY-CYCLE",
+   "dep_actor_record_cycle_length": "G-DEPENDENCY-CYCLE",
+   "dep_actor_record_cycles": "G-DEPENDENCY-CYCLE",
+   "dep_cycle_length": "G-DEPENDENCY-CYCLE",
+   "dep_cycles": "G-DEPENDENCY-CYCLE",
+   "dep_edges": "G-DEPENDENCY-CYCLE",
+   "dep_longest_cycle_length": "G-DEPENDENCY-CYCLE",
+   "dep_nodes": "G-DEPENDENCY-CYCLE",
+   "exempt_tokens": "G-NO-TYPED-COUNTS",
+   "exempt_tokens_unused": "G-NO-TYPED-COUNTS",
+   "float_offence_count": "G-NO-FLOAT",
+   "float_offences": "G-NO-FLOAT",
+   "head_fields_parsed": "G-HEAD-REBUILT",
+   "head_mismatches": "G-HEAD-REBUILT",
+   "head_segment_count": "G-HEAD-REBUILT",
+   "head_segments": "G-HEAD-REBUILT",
+   "head_words": "G-HEAD-REBUILT",
+   "inv_admissible_groups": "G-INVARIANCE-GROUPS",
+   "inv_arena_automorphisms": "G-INVARIANCE-GROUPS",
+   "inv_candidate_direction_classes": "G-INVARIANCE-GROUPS",
+   "inv_declared_splitting_offered": "G-INVARIANCE-GROUPS",
+   "inv_direction_census_numbers": "G-INVARIANCE-GROUPS",
+   "inv_direction_choices": "G-INVARIANCE-GROUPS",
+   "inv_direction_index": "G-INVARIANCE-GROUPS",
+   "inv_direction_profiles_agreeing": "G-INVARIANCE-GROUPS",
+   "inv_direction_splittings": "G-INVARIANCE-GROUPS",
+   "inv_law_blind_to_direction": "G-INVARIANCE-GROUPS",
+   "inv_law_stabilizer": "G-INVARIANCE-GROUPS",
+   "inv_link_graph_automorphisms": "G-INVARIANCE-GROUPS",
+   "inv_link_graph_automorphisms_declared": "G-INVARIANCE-GROUPS",
+   "inv_local_c1_global": "G-INVARIANCE-GROUPS",
+   "inv_local_c1_histories": "G-INVARIANCE-GROUPS",
+   "inv_local_c1_threshold": "G-INVARIANCE-GROUPS",
+   "inv_local_c1_uniform": "G-INVARIANCE-GROUPS",
+   "inv_local_collapse_width": "G-INVARIANCE-GROUPS",
+   "inv_local_global_count": "G-INVARIANCE-GROUPS",
+   "inv_local_group_order": "G-INVARIANCE-GROUPS",
+   "inv_local_widths": "G-INVARIANCE-GROUPS",
+   "inv_symmetric_group": "G-INVARIANCE-GROUPS",
+   "inv_two_labellings_agree": "G-INVARIANCE-GROUPS",
+   "ledger_rows": "G-TRANSCRIPT-BOUND",
+   "outcome_controls": "G-OUTCOMES-REACHABLE",
+   "outcome_reachable": "G-OUTCOMES-REACHABLE",
+   "outcome_words": "G-OUTCOMES-REACHABLE",
+   "paper_digest": "G-CLAIMS-EQUAL",
+   "param_derived": "G-PARAMETERS",
+   "param_free": "G-PARAMETERS",
+   "param_free_selected_by_a_law": "G-PARAMETERS",
+   "param_initial": "G-PARAMETERS",
+   "param_invariant": "G-PARAMETERS",
+   "param_reconstructed": "G-PARAMETERS",
+   "param_rows": "G-PARAMETERS",
+   "param_selected_by_a_law": "G-PARAMETERS",
+   "param_total": "G-PARAMETERS",
+   "q58_arms": "G-Q58-ARMS",
+   "q58_arms_all_blocks_at_arity": "G-Q58-ARMS",
+   "q58_arms_at_declared_arity": "G-Q58-ARMS",
+   "q58_arms_recovering": "G-Q58-ARMS",
+   "q58_arms_refusing": "G-Q58-ARMS",
+   "q58_arms_total": "G-Q58-ARMS",
+   "q58_mechanism_kinds": "G-Q58-ARMS",
+   "q58_split_is_the_block_size": "G-Q58-ARMS",
+   "q58_split_is_triangularity": "G-Q58-ARMS",
+   "q58_triangular_arms": "G-Q58-ARMS",
+   "quotient_fields": "G-QUOTIENT-CENSUS",
+   "quotient_fields_arena": "G-QUOTIENT-CENSUS",
+   "quotient_fields_link": "G-QUOTIENT-CENSUS",
+   "quotient_histories": "G-QUOTIENT-CENSUS",
+   "quotient_histories_arena": "G-QUOTIENT-CENSUS",
+   "quotient_histories_link": "G-QUOTIENT-CENSUS",
+   "reads_declared": "G-READS-DECLARED",
+   "reads_distinct": "G-READS-DECLARED",
+   "reads_never": "G-READS-DECLARED",
+   "reads_stray": "G-READS-DECLARED",
+   "reads_unpinnable": "G-READS-DECLARED",
+   "receipt_leaves": "G-RECEIPT-TYPES",
+   "receipt_type_offence_count": "G-RECEIPT-TYPES",
+   "receipt_type_offences": "G-RECEIPT-TYPES",
+   "recon_actor_size": "G-RECORD-REBUILT",
+   "recon_cast_size": "G-RECORD-REBUILT",
+   "recon_certificate": "G-RECORD-REBUILT",
+   "recon_degree": "G-RECORD-REBUILT",
+   "recon_derived_pairs": "G-RECORD-REBUILT",
+   "recon_set_equality": "G-RECORD-REBUILT",
+   "recon_threshold": "G-RECORD-REBUILT",
+   "record_block_sizes": "G-RECORD-REBUILT",
+   "record_blocks": "G-RECORD-REBUILT",
+   "record_colliding_histories": "G-RECORD-REBUILT",
+   "record_collision_classes": "G-RECORD-REBUILT",
+   "record_count_fields": "G-RECORD-REBUILT",
+   "record_distinct_bare_records": "G-RECORD-REBUILT",
+   "record_field_classes_multi": "G-RECORD-REBUILT",
+   "record_histories_in_multi_classes": "G-RECORD-REBUILT",
+   "record_histories_writing_nothing": "G-RECORD-REBUILT",
+   "record_max_blocks_in_a_history": "G-RECORD-REBUILT",
+   "record_partly_unwritten_histories": "G-RECORD-REBUILT",
+   "record_residue_fields": "G-RECORD-REBUILT",
+   "record_unwritten_events": "G-RECORD-REBUILT",
+   "record_vanishing_histories": "G-RECORD-REBUILT",
+   "referent_occurrences": "G-REFERENTS-BOUND",
+   "referent_universes": "G-REFERENTS-BOUND",
+   "region_census": "G-S1-DISJOINT-CODE",
+   "region_count": "G-S1-DISJOINT-CODE",
+   "region_offence_count": "G-S1-DISJOINT-CODE",
+   "region_offences": "G-S1-DISJOINT-CODE",
+   "render_tables": "G-CLAIMS-EQUAL",
+   "seam_columns": "G-SEAM-KERNEL",
+   "seam_kernel": "G-SEAM-KERNEL",
+   "seam_rank": "G-SEAM-KERNEL",
+   "seam_rows": "G-SEAM-KERNEL",
+   "source_count": "G-SOURCES-PINNED",
+   "source_mismatch_count": "G-SOURCES-PINNED",
+   "source_mismatches": "G-SOURCES-PINNED",
+   "state_background_components": "G-STATE-COMPONENTS",
+   "state_components": "G-STATE-COMPONENTS",
+   "state_distinct_residue_collisions": "G-STATE-COMPONENTS",
+   "state_distinct_residue_pairs": "G-STATE-COMPONENTS",
+   "state_equal_residue_agreements": "G-STATE-COMPONENTS",
+   "state_equal_residue_disagreements": "G-STATE-COMPONENTS",
+   "state_equal_residue_pairs": "G-STATE-COMPONENTS",
+   "state_reading_a_menus": "G-STATE-COMPONENTS",
+   "state_reading_b_menus": "G-STATE-COMPONENTS",
+   "state_reading_b_menus_on_residues": "G-STATE-COMPONENTS",
+   "state_successors_distinct": "G-STATE-COMPONENTS",
+   "template_families": "G-TEMPLATE-EXERCISED",
+   "template_families_live": "G-TEMPLATE-EXERCISED",
+   "transcript_missing": "G-TRANSCRIPT-BOUND",
+   "transcript_rows": "G-TRANSCRIPT-BOUND",
+   "transcript_stray": "G-TRANSCRIPT-BOUND",
+   "typed_callers": "G-NO-TYPED-COUNTS",
+   "typed_count_offence_count": "G-NO-TYPED-COUNTS",
+   "typed_count_offences": "G-NO-TYPED-COUNTS",
+   "wall_count": "G-WALLS",
+   "wall_patterns": "G-WALLS",
+   "wall_positives": "G-WALLS"
+  }
+ },
+ "seam_columns": 10,
+ "seam_kernel": 4,
+ "seam_rank": 6,
+ "seam_rows": 6,
+ "source_count": 16,
+ "source_mismatch_count": 0,
+ "source_mismatches": [],
+ "state_background_components": 6,
+ "state_components": 3,
+ "state_distinct_residue_collisions": 0,
+ "state_distinct_residue_pairs": 606,
+ "state_equal_residue_agreements": 24,
+ "state_equal_residue_disagreements": 0,
+ "state_equal_residue_pairs": 24,
+ "state_reading_a_menus": 24,
+ "state_reading_b_menus": 36,
+ "state_reading_b_menus_on_residues": 24,
+ "state_successors_distinct": 24,
+ "template_families": 9,
+ "template_families_live": 9,
+ "transcript_missing": 0,
+ "transcript_rows": 34,
+ "transcript_stray": 0,
+ "typed_callers": 8,
+ "typed_count_offence_count": 0,
+ "typed_count_offences": [],
+ "wall_count": 7,
+ "wall_patterns": 53,
+ "wall_positives": 11
+}
