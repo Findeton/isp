@@ -11712,3 +11712,19 @@ template families; five new families proposed for the
 #267 standing list.  PANEL COMPLETE (K1 #357+#358 / K2
 #356 / K3 here): ~2,352 recomputations, the typed column
 the only false numerals.  Adjudication next.**
+
+## 2026-08-15 — SEC-2 ADJUDICATED: REPAIR ORDERED; THE TYPED COLUMN BECOMES COMPUTED (THE ORDERED EXCEPTION — TWO VALUES MOVE TO THE TRUE ONES); MOTIVATED-AT-0 A THEOREM; THE #267 SWEEP CHARTERS AFTER THIS REPAIR (v14 LEDGER #362)
+
+note-sec2-adjudication.md committed.  The era's first
+false delivered numerals repaired by computing the column
+(27→24, 9→8 — the one sanctioned number-move, to the true
+values, disclosed in-paper); IRREDUCIBLE relativized; the
+49's convention named (37 beside it); MOTIVATED-AT-0
+rendered as the theorem it is; the real M2 headline
+written (exactly ONE fully-intact lawful target); the
+placement-independence strengthening rendered; K3's
+instrument list whole (gate-time seals per #119; the
+sentinel falsifiers made real; the read-set gate
+order-insensitive).  **The #267 template sweep charters
+immediately after this repair — four panels convergent +
+one realized harm.**  The repair worker launches next.
