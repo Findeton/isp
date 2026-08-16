@@ -1,0 +1,118 @@
+==============================================================================
+v14 SEC-2 -- THE DYNAMICS OF GLUING
+instrument for v14/paper-40-sec2.md   schema isp/v14/sec2/1
+==============================================================================
+
+PROVENANCE: 5 sources read, all sha256-12 verified.
+  A-PIN    v14/note-sec2-pin.md                       bfe5c66be9ec
+  A-ADJ    v14/note-sec-adjudication.md               7a82ffe7168a
+  A-P19    v14/paper-19-r3-weld.md                    50bb81e67942
+  A-SMU    v14/paper-27-smu.md                        6df0db523d32
+  A-LOR    v14/paper-30-lor.md                        0a08203b7e99
+  DECLARED AND NOT READ (worktree under repair): the #301 SEC objects at commit
+  88e4a834f532 --
+     v14/paper-32-sec.md              cfe0825d67b2
+     v14/code/sec_exact.py            6481a8706503
+     v14/code/sec_output.txt          e80d2f08a257
+     v14/code/sec_receipt.json        fdf66d990dbf
+
+-- M1: SEAM SELECTION -------------------------------------------------------
+  the seam census: 49 seam types over 132273 shared sites; the vector (2, 2, 2) never occurs
+  the completion space: rank 6 on 10 unknowns, kernel 4, by the chart alone
+
+  seam type                   sites lattice  posdef  parity
+  ((1, 1, 1), (1, 1, 1))      42606      31      31       1
+  ((1, 1, 1), (1, 1, 2))       7533      49      49       0
+  ((1, 1, 1), (1, 2, 1))       7533      49      49       0
+  ((1, 1, 1), (1, 2, 2))        486     103     103       0
+  ((1, 1, 1), (2, 1, 1))       7533      49      49       0
+  ((1, 1, 1), (2, 1, 2))        486     103     103       0
+  ((1, 1, 1), (2, 2, 1))        486     103     103       0
+  ((1, 1, 2), (1, 1, 1))       7533      49      49       0
+  ... 49 rows in all, every one in the receipt
+
+  positivity selects nothing (min positive-definite count over the 49 seam types: 31)
+  price minimisation selects nothing: the two-sided budget is constant at every seam type
+  refinement stability: ceiling 0 at this record; as a hypothetical, empty at 48 of 49
+  the determinant DOES select the direct sum, uniquely, at 49 of 49 -- named, not licensed
+  SEC's indefinite witness reproduces (-2) and is NOT admissible: 4 cross counts below one
+  the driven crossing cuts the aligned lattice 31 -> 8 and EXCLUDES the direct sum (False)
+
+-- M2: THE DICTIONARY EXTENSION ---------------------------------------------
+  three-actor groups: 455 in 9 orbits; seam-spanning 288, every one dead at the delivered target
+  lawful at the matched extension: 216 of 288; motivated at 0
+  arena                          links   maps   site  label orient fate
+  the union, no crossing             0  62208      1      1      1 MOTIVATED
+  the crossing alone, NOT DRIVEN     1   1728      1      1      1 MOTIVATED
+  SHARED-SEEDED, driven              1   1728      3      9      4 UNMOTIVATED
+  B-SEEDED-PURE, driven              2    576      1      3      2 UNMOTIVATED
+
+  blindness: 1 crossing(s): 36 placements, 1 arena(s), BLIND; 2 crossing(s): 630 placements, 5 arena(s), SIGHTED; 3 crossing(s): 7140 placements, 15 arena(s), SIGHTED
+
+-- M3: THE COMPOSITE PRICE --------------------------------------------------
+  currency                                     lone composite    excess   verdict
+  the record (division incidences)               27 54           none     IGNORES
+  the carrier (site objects)                      9 18 - k       k fewer  FAVOURS
+  the link objects                               27 54 - d       d fewer  FAVOURS
+  the geometry's budget (counts over cells)      27 54 + 2d      2d more  PENALIZES
+  the declaration (independent numbers)           0 4k           4k more  PENALIZES
+  violations over all 45010 composites: 0
+
+-- GATES --------------------------------------------------------------------
+    G-SOURCES                          PASS bc26b568d54a8b66
+    G-ANCHORS                          PASS 875f8fd31fc7494d
+    G-EXACT                            PASS e6770f684e7a8984
+    G-LEGS                             PASS 48a41fca6b8a2ec1
+    G-CENSUS                           PASS e23357f5ad0c09b0
+    G-ARENA-COLLAPSE                   PASS 5340a2d9fff41521
+    G-SEAM-CENSUS                      PASS cd4d3449ae141a6f
+    G-SEAM-RANK                        PASS a7efaf7d745cac52
+    G-COMPLETION-LATTICE               PASS 799c0df81e277cb5
+    G-UNQUANTISED                      PASS ce458391d4876eb0
+    G-POSITIVITY                       PASS 7f1d7a9c32bb4ccc
+    G-PRICE-FLAT                       PASS 3e267475992b9971
+    G-REFINEMENT                       PASS 29b0caeb9186508f
+    G-FISCHER                          PASS 0aa409bde80c991a
+    G-SEC-WITNESS                      PASS df2faaa819db4bf9
+    G-CROSSING-CUT                     PASS d690597643141322
+    G-AUT                              PASS 506fbda097cef3d9
+    G-DRIVEN-EVENTS                    PASS eabb3c50533e4dfb
+    G-LONE-SECTOR                      PASS 2a321b03ed43c78b
+    G-GROUP-CENSUS                     PASS cd100199d0ec126f
+    G-CROSSING-WALL                    PASS 9c8bd729df11ee60
+    G-NON-CROSSING-CONTROL             PASS 13032f51aa4d93b3
+    G-QUOTIENT-POS-COLLAPSE            PASS 83375979b397247c
+    G-EXTENSION-GRID                   PASS d83d71f09e2a5711
+    G-BLINDNESS                        PASS 4dabaac1bb4e5726
+    G-INVENTORY                        PASS 24948d59de8c00bb
+    G-LAWFUL                           PASS edc5e445c0503cb4
+    G-PRICE-LAWS                       PASS cc630505ff28804a
+    G-PRICE-VERDICT                    PASS d4c58c7fef9c4a45
+    G-SEAM-CONFINED-PRICE              PASS 8a0101fa7d436932
+    G-SEC-VALUES                       PASS e729a67471a0d741
+    G-WALL-EXTENSION                   PASS 0d7d224406134eb0
+    G-WALL-SEAMCONFINED                PASS 27f2d3ec9a537483
+    G-WALL-SCAN                        PASS e6981ffd96af7ea5
+    G-COVERAGE                         PASS 31a52eaf8f5cbe7f
+    G-VERDICT-RECON                    PASS bc81365271755310
+    G-PAPER-PRESENT                    PASS ae7fa515d50d7c39
+    G-PAPER-CLAIMS                     PASS 9e51d0b9c9dfa6e7
+    G-PAPER-COVERAGE                   PASS f9d9e44382a0d7a6
+    G-PAPER-FENCE                      PASS adb488b70c5756d4
+    G-PAPER-POLARITY                   PASS cfdad359e3212d28
+    G-PAPER-SPELLED                    PASS 986a3ef8d59f5174
+    G-SWEEP-EXECUTED                   PASS 516a9f5e94fcbbbd
+    G-SEAL-COMPLETE                    PASS 2184fb590f1e9943
+    G-DECLARED-LATER                   PASS 1d52a70200bf40e3
+
+-- VERDICT ------------------------------------------------------------------
+
+SEC2-SEAM-DECLARATION-IRREDUCIBLE-[49 SEAM TYPES OVER 132273 SHARED SITES; THE COMPLETION SPACE IS 4-PARAMETER AT EVERY ONE, RANK 6 ON 10 BY THE CHART ALONE; AT THE ALL-SIMPLE SEAM 31 COMPLETIONS ASSIGN ADMISSIBLE COUNTS TO EVERY CROSS DIRECTION AND ALL 31 ARE POSITIVE DEFINITE] -- POSITIVITY SELECTS NOTHING; THE CONVENTION-FREE PRICE IS CONSTANT ON THE WHOLE SPACE AND THE ONE-SIDED READING'S MINIMISER MOVES WITH THE CONVENTION; REFINEMENT STABILITY IS EMPTY AT THIS RECORD BY THE CEILING LAW (MIN COUNT 1, CEILING 0) AND, GRANTED AS A HYPOTHETICAL, IS EMPTY AT 48 OF 49 SEAM TYPES AND SELECTS THE DIRECT SUM AT THE 49TH -- THE ONE PRINCIPLE THAT DOES SELECT, MAXIMUM DETERMINANT, IS NAMED AND NOT LICENSED
+
+SEC2-GLUING-EVENT-LAWFUL-AT-THE-MATCHED-CROSS-LINK-EXTENSION-[THE WINDOW: TARGET x READING x COUNT LEG, 30 CELLS, CARRIER AND LINK INDIVIDUATION HELD AT THE DELIVERED VALUES; 455 THREE-ACTOR GROUPS IN 9 ORBITS, 288 OF THEM SEAM-SPANNING AND EVERY ONE DEAD AT THE DELIVERED TARGET] -- LAWFUL AT 216 OF 288 ONCE THE TARGET DECLARES THE CROSS LINKS THE EVENT REALISES, BOTH DRIVEN SPECIFICATIONS AMONG THEM, AND MOTIVATED AT 0 OF 216: THE PRICE IS THE WELD ITSELF, FREE ITEMS 0 -> 3 AT THE SHARED-SEEDED CROSSING AND 0 -> 2 AT THE B-SEEDED ONE, WHILE THE CROSSING TAKEN ALONE COSTS NOTHING AND NO THREE-ACTOR GROUP CAN DELIVER IT ALONE
+
+SEC2-COMPOSITE-PRICE-SPLITS-[FIVE CURRENCIES ON ALL 45010 COMPOSITES AGAINST THE LONE SECTOR, ZERO VIOLATIONS: RECORD 54 = 27 + 27 IGNORES COMPOSITION; CARRIERS 18 - k AND LINKS 54 - d FAVOUR IT; THE GEOMETRY'S BUDGET 54 + 2d AND THE DECLARATION PRICE 4k PENALIZE IT] -- AND THE EXCESS IS SEAM-CONFINED: EVERY UNSHARED SITE'S FORM IS DETERMINED EXACTLY AS IN A LONE SECTOR AND THE WHOLE SURCHARGE SITS ON THE SHARED SITES, FOUR NUMBERS EACH
+
+SEC2-THE-EXTENDED-DICTIONARY-IS-BLIND-AT-ONE-CROSSING-AND-SIGHTED-AT-TWO-[36 PLACEMENTS IN 1 ARENA AT ONE CROSSING AND 36 OF 36 ADMITTED BY THE DETECTOR; 630 PLACEMENTS IN 5 ARENAS AT TWO AND 108 OF 630 ADMITTED; 7140 IN 15 AT THREE] -- SO THE PLACEMENT OF A SINGLE CROSS LINK IS A GAUGE AND NOT A DATUM, AND THE RECORD-FITTED OBJECTION DOES NOT BITE AT ONE CROSSING BECAUSE EVERY PLACEMENT GIVES THE SAME ARENA
+
+==============================================================================

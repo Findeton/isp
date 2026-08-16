@@ -1,0 +1,3679 @@
+{
+ "anchors": [
+  {
+   "chars": 45,
+   "consumer": "G-COMPLETION-LATTICE",
+   "hits": 1,
+   "id": "N-PIN-COMPLETION",
+   "ok": true,
+   "source": "A-PIN"
+  },
+  {
+   "chars": 76,
+   "consumer": "G-PRICE-LAWS",
+   "hits": 1,
+   "id": "N-PIN-PRICE",
+   "ok": true,
+   "source": "A-PIN"
+  },
+  {
+   "chars": 99,
+   "consumer": "G-LAWFUL",
+   "hits": 1,
+   "id": "N-PIN-OUTCOME",
+   "ok": true,
+   "source": "A-PIN"
+  },
+  {
+   "chars": 157,
+   "consumer": "G-WALL-SEAMCONFINED",
+   "hits": 1,
+   "id": "N-ADJ-SEAM",
+   "ok": true,
+   "source": "A-ADJ"
+  },
+  {
+   "chars": 66,
+   "consumer": "G-ARENA-COLLAPSE",
+   "hits": 1,
+   "id": "N-ADJ-ARENAS",
+   "ok": true,
+   "source": "A-ADJ"
+  },
+  {
+   "chars": 110,
+   "consumer": "G-LEGS",
+   "hits": 1,
+   "id": "N-P19-LEGS",
+   "ok": true,
+   "source": "A-P19"
+  },
+  {
+   "chars": 81,
+   "consumer": "G-REFINEMENT",
+   "hits": 1,
+   "id": "N-LOR-CEILING",
+   "ok": true,
+   "source": "A-LOR"
+  },
+  {
+   "chars": 129,
+   "consumer": "G-PRICE-VERDICT",
+   "hits": 1,
+   "id": "N-SMU-PRICE",
+   "ok": true,
+   "source": "A-SMU"
+  }
+ ],
+ "arena_collapse": {
+  "arenas": 12,
+  "classes": {
+   "(0,)": [
+    "(0,)"
+   ],
+   "(1, (0, 0, 1))": [
+    "(1, (0, 0, 1))"
+   ],
+   "(2, (0, 0, 1), (0, 1, 1))": [
+    "(2, (0, 0, 1), (0, 1, 1))",
+    "(2, (0, 0, 1), (1, 0, 1))"
+   ],
+   "(2, (0, 0, 1), (1, 1, 1))": [
+    "(2, (0, 0, 1), (1, 1, 1))"
+   ],
+   "(2, (0, 0, 2))": [
+    "(2, (0, 0, 2))"
+   ],
+   "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))": [
+    "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+    "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+   ],
+   "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))": [
+    "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+   ],
+   "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))": [
+    "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+    "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+   ],
+   "(3, (0, 0, 1), (0, 1, 2))": [
+    "(3, (0, 0, 1), (0, 1, 2))",
+    "(3, (0, 0, 1), (1, 0, 2))"
+   ],
+   "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))": [
+    "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+   ],
+   "(3, (0, 0, 1), (1, 1, 2))": [
+    "(3, (0, 0, 1), (1, 1, 2))"
+   ],
+   "(3, (0, 0, 3))": [
+    "(3, (0, 0, 3))"
+   ]
+  },
+  "declared": [
+   {
+    "consumer": "G-ARENA-COLLAPSE",
+    "id": "V-ARENAS",
+    "reproduced": 12,
+    "value": 12,
+    "what": "the union arenas the 16 types collapse onto"
+   },
+   {
+    "consumer": "G-ARENA-COLLAPSE",
+    "id": "V-MIRRORS",
+    "reproduced": 4,
+    "value": 4,
+    "what": "the A-B mirror pairs among them"
+   }
+  ],
+  "mirror_pairs": 4,
+  "types": 16
+ },
+ "blindness": {
+  "rows": [
+   {
+    "arenas": 1,
+    "crossings": 1,
+    "placements": 36,
+    "verdict": "BLIND"
+   },
+   {
+    "arenas": 5,
+    "crossings": 2,
+    "placements": 630,
+    "verdict": "SIGHTED"
+   },
+   {
+    "arenas": 15,
+    "crossings": 3,
+    "placements": 7140,
+    "verdict": "SIGHTED"
+   }
+  ],
+  "sweep_one": 36,
+  "sweep_two": 108
+ },
+ "census": [
+  {
+   "E": 54,
+   "doubled": 0,
+   "doubled_free": true,
+   "gluings": 1,
+   "k": 0,
+   "n": 18,
+   "type": "(0,)"
+  },
+  {
+   "E": 54,
+   "doubled": 0,
+   "doubled_free": true,
+   "gluings": 81,
+   "k": 1,
+   "n": 17,
+   "type": "(1, (0, 0, 1))"
+  },
+  {
+   "E": 54,
+   "doubled": 0,
+   "doubled_free": true,
+   "gluings": 486,
+   "k": 2,
+   "n": 16,
+   "type": "(2, (0, 0, 1), (0, 1, 1))"
+  },
+  {
+   "E": 54,
+   "doubled": 0,
+   "doubled_free": true,
+   "gluings": 486,
+   "k": 2,
+   "n": 16,
+   "type": "(2, (0, 0, 1), (1, 0, 1))"
+  },
+  {
+   "E": 53,
+   "doubled": 1,
+   "doubled_free": false,
+   "gluings": 1458,
+   "k": 2,
+   "n": 16,
+   "type": "(2, (0, 0, 1), (1, 1, 1))"
+  },
+  {
+   "E": 54,
+   "doubled": 0,
+   "doubled_free": true,
+   "gluings": 162,
+   "k": 2,
+   "n": 16,
+   "type": "(2, (0, 0, 2))"
+  },
+  {
+   "E": 54,
+   "doubled": 0,
+   "doubled_free": true,
+   "gluings": 486,
+   "k": 3,
+   "n": 15,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))"
+  },
+  {
+   "E": 53,
+   "doubled": 1,
+   "doubled_free": false,
+   "gluings": 11664,
+   "k": 3,
+   "n": 15,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+  },
+  {
+   "E": 52,
+   "doubled": 2,
+   "doubled_free": false,
+   "gluings": 8748,
+   "k": 3,
+   "n": 15,
+   "type": "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))"
+  },
+  {
+   "E": 54,
+   "doubled": 0,
+   "doubled_free": true,
+   "gluings": 972,
+   "k": 3,
+   "n": 15,
+   "type": "(3, (0, 0, 1), (0, 1, 2))"
+  },
+  {
+   "E": 54,
+   "doubled": 0,
+   "doubled_free": true,
+   "gluings": 486,
+   "k": 3,
+   "n": 15,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+  },
+  {
+   "E": 52,
+   "doubled": 2,
+   "doubled_free": false,
+   "gluings": 8748,
+   "k": 3,
+   "n": 15,
+   "type": "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+  },
+  {
+   "E": 54,
+   "doubled": 0,
+   "doubled_free": true,
+   "gluings": 972,
+   "k": 3,
+   "n": 15,
+   "type": "(3, (0, 0, 1), (1, 0, 2))"
+  },
+  {
+   "E": 51,
+   "doubled": 3,
+   "doubled_free": false,
+   "gluings": 4374,
+   "k": 3,
+   "n": 15,
+   "type": "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+  },
+  {
+   "E": 52,
+   "doubled": 2,
+   "doubled_free": false,
+   "gluings": 5832,
+   "k": 3,
+   "n": 15,
+   "type": "(3, (0, 0, 1), (1, 1, 2))"
+  },
+  {
+   "E": 54,
+   "doubled": 0,
+   "doubled_free": true,
+   "gluings": 54,
+   "k": 3,
+   "n": 15,
+   "type": "(3, (0, 0, 3))"
+  }
+ ],
+ "choices": [
+  {
+   "binds": "paper-19's own arena, inherited at its pinned sha",
+   "cls": "forced",
+   "fiber": "1",
+   "item": "the base object: two driven R = 3 saturating sectors"
+  },
+  {
+   "binds": "every member enumerated",
+   "cls": "declared, the axis",
+   "fiber": "45010",
+   "item": "the gluing, and k"
+  },
+  {
+   "binds": "M1, and the whole completion question lives inside it",
+   "cls": "declared",
+   "fiber": "1",
+   "item": "the seam chart: the direct sum"
+  },
+  {
+   "binds": "M1",
+   "cls": "declared, MEASURED IRREDUCIBLE",
+   "fiber": "31 at the all-simple seam",
+   "item": "the completion of the seam's four entries"
+  },
+  {
+   "binds": "M2",
+   "cls": "declared",
+   "fiber": "5",
+   "item": "the extension window's target axis"
+  },
+  {
+   "binds": "M2",
+   "cls": "declared",
+   "fiber": "3",
+   "item": "the extension window's reading axis"
+  },
+  {
+   "binds": "M2, and it collapses onto the reading axis",
+   "cls": "declared, MEASURED DEPENDENT",
+   "fiber": "2",
+   "item": "the extension window's count leg"
+  },
+  {
+   "binds": "outside this unit's window, named",
+   "cls": "held at the delivered values",
+   "fiber": "1",
+   "item": "the carrier and the link individuation"
+  },
+  {
+   "binds": "M2's blindness census",
+   "cls": "declared, MEASURED INERT AT ONE CROSSING",
+   "fiber": "36",
+   "item": "the placement of a declared cross link"
+  },
+  {
+   "binds": "M2's inventories",
+   "cls": "measured",
+   "fiber": "1 or 3",
+   "item": "I-SITE-ASSIGNMENT"
+  },
+  {
+   "binds": "M2's inventories",
+   "cls": "measured",
+   "fiber": "1, 3 or 9",
+   "item": "I-DIRECTION-LABEL"
+  },
+  {
+   "binds": "M2's inventories",
+   "cls": "measured",
+   "fiber": "1, 2 or 4",
+   "item": "I-ORIENT"
+  },
+  {
+   "binds": "M1, and the verdict is the same at both readings",
+   "cls": "declared, VERDICT-ROBUST",
+   "fiber": "2",
+   "item": "the cross-direction admissibility reading"
+  },
+  {
+   "binds": "M3, all five published",
+   "cls": "declared",
+   "fiber": "5",
+   "item": "the price currencies"
+  },
+  {
+   "binds": "d66's committed conflict-group size",
+   "cls": "forced",
+   "fiber": "1",
+   "item": "the three-actor group as the unit of a division event"
+  }
+ ],
+ "cited_not_read": {
+  "commit": "88e4a834f532ed2a11b47c74468585eadfcbd54e",
+  "ledger": 301,
+  "objects": [
+   {
+    "path": "v14/paper-32-sec.md",
+    "sha256_12": "cfe0825d67b2"
+   },
+   {
+    "path": "v14/code/sec_exact.py",
+    "sha256_12": "6481a8706503"
+   },
+   {
+    "path": "v14/code/sec_output.txt",
+    "sha256_12": "e80d2f08a257"
+   },
+   {
+    "path": "v14/code/sec_receipt.json",
+    "sha256_12": "fdf66d990dbf"
+   }
+  ],
+  "values_declared": 22,
+  "why": "the #301 SEC objects are DECLARED at their commit and bound by reproduction, never read: the worktree copies are under repair (the pin forbids reading them) and a committed object cannot be read off-tree without version control"
+ },
+ "completion_lattice": [
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 1], [1, 1]]",
+   "det_direct_sum": "9/16",
+   "det_max": "9/16",
+   "lattice": 31,
+   "nA": "(1, 1, 1)",
+   "nB": "(1, 1, 1)",
+   "n_argmax": 1,
+   "parity_stable": 1,
+   "population": 42606,
+   "posdef": 31,
+   "seam": "((1, 1, 1), (1, 1, 1))",
+   "two_sided_budgets": [
+    "36"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 1], [1, 1]]",
+   "det_direct_sum": "3/4",
+   "det_max": "3/4",
+   "lattice": 49,
+   "nA": "(1, 1, 1)",
+   "nB": "(1, 1, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 7533,
+   "posdef": 49,
+   "seam": "((1, 1, 1), (1, 1, 2))",
+   "two_sided_budgets": [
+    "42"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 2], [1, 2]]",
+   "det_direct_sum": "3/4",
+   "det_max": "3/4",
+   "lattice": 49,
+   "nA": "(1, 1, 1)",
+   "nB": "(1, 2, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 7533,
+   "posdef": 49,
+   "seam": "((1, 1, 1), (1, 2, 1))",
+   "two_sided_budgets": [
+    "42"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 2], [1, 2]]",
+   "det_direct_sum": "21/16",
+   "det_max": "21/16",
+   "lattice": 103,
+   "nA": "(1, 1, 1)",
+   "nB": "(1, 2, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 103,
+   "seam": "((1, 1, 1), (1, 2, 2))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 1], [2, 1]]",
+   "det_direct_sum": "3/4",
+   "det_max": "3/4",
+   "lattice": 49,
+   "nA": "(1, 1, 1)",
+   "nB": "(2, 1, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 7533,
+   "posdef": 49,
+   "seam": "((1, 1, 1), (2, 1, 1))",
+   "two_sided_budgets": [
+    "42"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 1], [2, 1]]",
+   "det_direct_sum": "21/16",
+   "det_max": "21/16",
+   "lattice": 103,
+   "nA": "(1, 1, 1)",
+   "nB": "(2, 1, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 103,
+   "seam": "((1, 1, 1), (2, 1, 2))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 2], [2, 2]]",
+   "det_direct_sum": "21/16",
+   "det_max": "21/16",
+   "lattice": 103,
+   "nA": "(1, 1, 1)",
+   "nB": "(2, 2, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 103,
+   "seam": "((1, 1, 1), (2, 2, 1))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 1], [1, 1]]",
+   "det_direct_sum": "3/4",
+   "det_max": "3/4",
+   "lattice": 49,
+   "nA": "(1, 1, 2)",
+   "nB": "(1, 1, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 7533,
+   "posdef": 49,
+   "seam": "((1, 1, 2), (1, 1, 1))",
+   "two_sided_budgets": [
+    "42"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 1], [1, 1]]",
+   "det_direct_sum": "1",
+   "det_max": "1",
+   "lattice": 79,
+   "nA": "(1, 1, 2)",
+   "nB": "(1, 1, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 3483,
+   "posdef": 73,
+   "seam": "((1, 1, 2), (1, 1, 2))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 2], [1, 2]]",
+   "det_direct_sum": "1",
+   "det_max": "1",
+   "lattice": 79,
+   "nA": "(1, 1, 2)",
+   "nB": "(1, 2, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 3483,
+   "posdef": 73,
+   "seam": "((1, 1, 2), (1, 2, 1))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 2], [1, 2]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(1, 1, 2)",
+   "nB": "(1, 2, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((1, 1, 2), (1, 2, 2))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 1], [2, 1]]",
+   "det_direct_sum": "1",
+   "det_max": "1",
+   "lattice": 79,
+   "nA": "(1, 1, 2)",
+   "nB": "(2, 1, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 3483,
+   "posdef": 73,
+   "seam": "((1, 1, 2), (2, 1, 1))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 1], [2, 1]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(1, 1, 2)",
+   "nB": "(2, 1, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((1, 1, 2), (2, 1, 2))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 2], [2, 2]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(1, 1, 2)",
+   "nB": "(2, 2, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((1, 1, 2), (2, 2, 1))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 1], [2, 2]]",
+   "det_direct_sum": "3/4",
+   "det_max": "3/4",
+   "lattice": 49,
+   "nA": "(1, 2, 1)",
+   "nB": "(1, 1, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 7533,
+   "posdef": 49,
+   "seam": "((1, 2, 1), (1, 1, 1))",
+   "two_sided_budgets": [
+    "42"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 1], [2, 2]]",
+   "det_direct_sum": "1",
+   "det_max": "1",
+   "lattice": 79,
+   "nA": "(1, 2, 1)",
+   "nB": "(1, 1, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 3483,
+   "posdef": 73,
+   "seam": "((1, 2, 1), (1, 1, 2))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 2], [2, 3]]",
+   "det_direct_sum": "1",
+   "det_max": "1",
+   "lattice": 79,
+   "nA": "(1, 2, 1)",
+   "nB": "(1, 2, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 3483,
+   "posdef": 73,
+   "seam": "((1, 2, 1), (1, 2, 1))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 2], [2, 3]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(1, 2, 1)",
+   "nB": "(1, 2, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((1, 2, 1), (1, 2, 2))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 1], [3, 2]]",
+   "det_direct_sum": "1",
+   "det_max": "1",
+   "lattice": 79,
+   "nA": "(1, 2, 1)",
+   "nB": "(2, 1, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 3483,
+   "posdef": 73,
+   "seam": "((1, 2, 1), (2, 1, 1))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 1], [3, 2]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(1, 2, 1)",
+   "nB": "(2, 1, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((1, 2, 1), (2, 1, 2))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 2], [3, 3]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(1, 2, 1)",
+   "nB": "(2, 2, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((1, 2, 1), (2, 2, 1))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 1], [2, 2]]",
+   "det_direct_sum": "21/16",
+   "det_max": "21/16",
+   "lattice": 103,
+   "nA": "(1, 2, 2)",
+   "nB": "(1, 1, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 103,
+   "seam": "((1, 2, 2), (1, 1, 1))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 1], [2, 2]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(1, 2, 2)",
+   "nB": "(1, 1, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((1, 2, 2), (1, 1, 2))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 2], [2, 3]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(1, 2, 2)",
+   "nB": "(1, 2, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((1, 2, 2), (1, 2, 1))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[1, 2], [2, 3]]",
+   "det_direct_sum": "49/16",
+   "det_max": "49/16",
+   "lattice": 275,
+   "nA": "(1, 2, 2)",
+   "nB": "(1, 2, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 162,
+   "posdef": 267,
+   "seam": "((1, 2, 2), (1, 2, 2))",
+   "two_sided_budgets": [
+    "60"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 1], [3, 2]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(1, 2, 2)",
+   "nB": "(2, 1, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((1, 2, 2), (2, 1, 1))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 1], [3, 2]]",
+   "det_direct_sum": "49/16",
+   "det_max": "49/16",
+   "lattice": 275,
+   "nA": "(1, 2, 2)",
+   "nB": "(2, 1, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 162,
+   "posdef": 267,
+   "seam": "((1, 2, 2), (2, 1, 2))",
+   "two_sided_budgets": [
+    "60"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 2], [3, 3]]",
+   "det_direct_sum": "49/16",
+   "det_max": "49/16",
+   "lattice": 275,
+   "nA": "(1, 2, 2)",
+   "nB": "(2, 2, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 162,
+   "posdef": 267,
+   "seam": "((1, 2, 2), (2, 2, 1))",
+   "two_sided_budgets": [
+    "60"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 2], [1, 1]]",
+   "det_direct_sum": "3/4",
+   "det_max": "3/4",
+   "lattice": 49,
+   "nA": "(2, 1, 1)",
+   "nB": "(1, 1, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 7533,
+   "posdef": 49,
+   "seam": "((2, 1, 1), (1, 1, 1))",
+   "two_sided_budgets": [
+    "42"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 2], [1, 1]]",
+   "det_direct_sum": "1",
+   "det_max": "1",
+   "lattice": 79,
+   "nA": "(2, 1, 1)",
+   "nB": "(1, 1, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 3483,
+   "posdef": 73,
+   "seam": "((2, 1, 1), (1, 1, 2))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 3], [1, 2]]",
+   "det_direct_sum": "1",
+   "det_max": "1",
+   "lattice": 79,
+   "nA": "(2, 1, 1)",
+   "nB": "(1, 2, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 3483,
+   "posdef": 73,
+   "seam": "((2, 1, 1), (1, 2, 1))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 3], [1, 2]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(2, 1, 1)",
+   "nB": "(1, 2, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((2, 1, 1), (1, 2, 2))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[3, 2], [2, 1]]",
+   "det_direct_sum": "1",
+   "det_max": "1",
+   "lattice": 79,
+   "nA": "(2, 1, 1)",
+   "nB": "(2, 1, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 3483,
+   "posdef": 73,
+   "seam": "((2, 1, 1), (2, 1, 1))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[3, 2], [2, 1]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(2, 1, 1)",
+   "nB": "(2, 1, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((2, 1, 1), (2, 1, 2))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[3, 3], [2, 2]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(2, 1, 1)",
+   "nB": "(2, 2, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((2, 1, 1), (2, 2, 1))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 2], [1, 1]]",
+   "det_direct_sum": "21/16",
+   "det_max": "21/16",
+   "lattice": 103,
+   "nA": "(2, 1, 2)",
+   "nB": "(1, 1, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 103,
+   "seam": "((2, 1, 2), (1, 1, 1))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 2], [1, 1]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(2, 1, 2)",
+   "nB": "(1, 1, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((2, 1, 2), (1, 1, 2))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 3], [1, 2]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(2, 1, 2)",
+   "nB": "(1, 2, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((2, 1, 2), (1, 2, 1))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 3], [1, 2]]",
+   "det_direct_sum": "49/16",
+   "det_max": "49/16",
+   "lattice": 275,
+   "nA": "(2, 1, 2)",
+   "nB": "(1, 2, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 162,
+   "posdef": 267,
+   "seam": "((2, 1, 2), (1, 2, 2))",
+   "two_sided_budgets": [
+    "60"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[3, 2], [2, 1]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(2, 1, 2)",
+   "nB": "(2, 1, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((2, 1, 2), (2, 1, 1))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[3, 2], [2, 1]]",
+   "det_direct_sum": "49/16",
+   "det_max": "49/16",
+   "lattice": 275,
+   "nA": "(2, 1, 2)",
+   "nB": "(2, 1, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 162,
+   "posdef": 267,
+   "seam": "((2, 1, 2), (2, 1, 2))",
+   "two_sided_budgets": [
+    "60"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[3, 3], [2, 2]]",
+   "det_direct_sum": "49/16",
+   "det_max": "49/16",
+   "lattice": 275,
+   "nA": "(2, 1, 2)",
+   "nB": "(2, 2, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 162,
+   "posdef": 267,
+   "seam": "((2, 1, 2), (2, 2, 1))",
+   "two_sided_budgets": [
+    "60"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 2], [2, 2]]",
+   "det_direct_sum": "21/16",
+   "det_max": "21/16",
+   "lattice": 103,
+   "nA": "(2, 2, 1)",
+   "nB": "(1, 1, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 103,
+   "seam": "((2, 2, 1), (1, 1, 1))",
+   "two_sided_budgets": [
+    "48"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 2], [2, 2]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(2, 2, 1)",
+   "nB": "(1, 1, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((2, 2, 1), (1, 1, 2))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 3], [2, 3]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(2, 2, 1)",
+   "nB": "(1, 2, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((2, 2, 1), (1, 2, 1))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[2, 3], [2, 3]]",
+   "det_direct_sum": "49/16",
+   "det_max": "49/16",
+   "lattice": 275,
+   "nA": "(2, 2, 1)",
+   "nB": "(1, 2, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 162,
+   "posdef": 267,
+   "seam": "((2, 2, 1), (1, 2, 2))",
+   "two_sided_budgets": [
+    "60"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[3, 2], [3, 2]]",
+   "det_direct_sum": "7/4",
+   "det_max": "7/4",
+   "lattice": 155,
+   "nA": "(2, 2, 1)",
+   "nB": "(2, 1, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 486,
+   "posdef": 141,
+   "seam": "((2, 2, 1), (2, 1, 1))",
+   "two_sided_budgets": [
+    "54"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[3, 2], [3, 2]]",
+   "det_direct_sum": "49/16",
+   "det_max": "49/16",
+   "lattice": 275,
+   "nA": "(2, 2, 1)",
+   "nB": "(2, 1, 2)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 162,
+   "posdef": 267,
+   "seam": "((2, 2, 1), (2, 1, 2))",
+   "two_sided_budgets": [
+    "60"
+   ]
+  },
+  {
+   "argmax_is_direct_sum": true,
+   "bound": "[[3, 3], [3, 3]]",
+   "det_direct_sum": "49/16",
+   "det_max": "49/16",
+   "lattice": 275,
+   "nA": "(2, 2, 1)",
+   "nB": "(2, 2, 1)",
+   "n_argmax": 1,
+   "parity_stable": 0,
+   "population": 162,
+   "posdef": 267,
+   "seam": "((2, 2, 1), (2, 2, 1))",
+   "two_sided_budgets": [
+    "60"
+   ]
+  }
+ ],
+ "coverage": {
+  "gates": [
+   "G-SOURCES",
+   "G-ANCHORS",
+   "G-EXACT",
+   "G-LEGS",
+   "G-CENSUS",
+   "G-ARENA-COLLAPSE",
+   "G-SEAM-CENSUS",
+   "G-SEAM-RANK",
+   "G-COMPLETION-LATTICE",
+   "G-UNQUANTISED",
+   "G-POSITIVITY",
+   "G-PRICE-FLAT",
+   "G-REFINEMENT",
+   "G-FISCHER",
+   "G-SEC-WITNESS",
+   "G-CROSSING-CUT",
+   "G-AUT",
+   "G-DRIVEN-EVENTS",
+   "G-LONE-SECTOR",
+   "G-GROUP-CENSUS",
+   "G-CROSSING-WALL",
+   "G-NON-CROSSING-CONTROL",
+   "G-QUOTIENT-POS-COLLAPSE",
+   "G-EXTENSION-GRID",
+   "G-BLINDNESS",
+   "G-INVENTORY",
+   "G-LAWFUL",
+   "G-PRICE-LAWS",
+   "G-PRICE-VERDICT",
+   "G-SEAM-CONFINED-PRICE",
+   "G-SEC-VALUES",
+   "G-WALL-EXTENSION",
+   "G-WALL-SEAMCONFINED",
+   "G-WALL-SCAN"
+  ],
+  "later_gates": [
+   "G-VERDICT-RECON",
+   "G-PAPER-PRESENT",
+   "G-PAPER-CLAIMS",
+   "G-PAPER-COVERAGE",
+   "G-PAPER-FENCE",
+   "G-PAPER-POLARITY",
+   "G-PAPER-SPELLED",
+   "G-SWEEP-EXECUTED",
+   "G-SEAL-COMPLETE",
+   "G-DECLARED-LATER",
+   "G-INTEGRITY"
+  ],
+  "mutants": [
+   "MUT-SOURCE-DIGEST",
+   "MUT-ANCHOR-TEXT",
+   "MUT-EXACT-FLOAT",
+   "MUT-CENSUS-DROP",
+   "MUT-SEC-VALUE",
+   "MUT-ARENA-COLLAPSE",
+   "MUT-SEAM-TYPE",
+   "MUT-SEAM-RANK",
+   "MUT-LATTICE-BOUND",
+   "MUT-POSITIVITY",
+   "MUT-PRICE-FLAT",
+   "MUT-REFINEMENT",
+   "MUT-FISCHER",
+   "MUT-SEC-WITNESS",
+   "MUT-CROSSING-CUT",
+   "MUT-GROUP-ORBIT",
+   "MUT-CROSSING-WALL",
+   "MUT-NONCROSS",
+   "MUT-GRID-CELL",
+   "MUT-QUOT-POS",
+   "MUT-LAWFUL",
+   "MUT-BLINDNESS",
+   "MUT-INVENTORY",
+   "MUT-PRICE-LAW",
+   "MUT-PRICE-VERDICT",
+   "MUT-LONE",
+   "MUT-WALL-EXT",
+   "MUT-VERDICT",
+   "MUT-PAPER-CLAIM",
+   "MUT-PAPER-NUM",
+   "MUT-LEGS",
+   "MUT-AUT",
+   "MUT-DRIVEN",
+   "MUT-SEAM-CONFINED",
+   "MUT-WALL-SEAM",
+   "MUT-WALL-SCAN",
+   "MUT-PAPER-ABSENT",
+   "MUT-UNQUANTISED"
+  ],
+  "waivers": {
+   "G-DECLARED-LATER": "forcing: the three gates emitted after the coverage gate are named in LATER_GATES and their presence is checked by set equality at the last gate",
+   "G-INTEGRITY": "forcing: the disk bytes are compared against the gate-time seal before promotion, and the comparison is evaluated on every delivery run",
+   "G-SEAL-COMPLETE": "forcing: every published receipt key is sealed at value-close or declared unsealed; the forcing is checked by set equality against the receipt's own top-level keys, which no mutant can evade",
+   "G-SWEEP-EXECUTED": "forcing: this gate IS the sweep's own binding, and a mutant of it would be a mutant of the harness that runs mutants; the forcing checked here is that the writer is downstream of a sweep whose row count equals the declared mutant count"
+  }
+ },
+ "extension_grid": [
+  {
+   "baseline": "ALIVE",
+   "count_leg": "POSITIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 1,
+   "declared_links": 0,
+   "edges_declared": 54,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "EMBEDDING",
+   "target": "NONE",
+   "why": "the delivered target: the amalgam, built from the lattice and the gluing alone",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "ALIVE",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 1,
+   "declared_links": 0,
+   "edges_declared": 54,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "EMBEDDING",
+   "target": "NONE",
+   "why": "the delivered target: the amalgam, built from the lattice and the gluing alone",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "ALIVE",
+   "count_leg": "POSITIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 1,
+   "declared_links": 0,
+   "edges_declared": 54,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "QUOTIENT",
+   "target": "NONE",
+   "why": "the delivered target: the amalgam, built from the lattice and the gluing alone",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "ALIVE",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 1,
+   "declared_links": 0,
+   "edges_declared": 54,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "QUOTIENT",
+   "target": "NONE",
+   "why": "the delivered target: the amalgam, built from the lattice and the gluing alone",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "ALIVE",
+   "count_leg": "POSITIVE",
+   "count_route_admits": true,
+   "declaration_fiber": 1,
+   "declared_links": 0,
+   "edges_declared": 54,
+   "edges_realised": 55,
+   "lawful": true,
+   "reading": "LAX",
+   "target": "NONE",
+   "why": "the delivered target: the amalgam, built from the lattice and the gluing alone",
+   "with_the_driven_crossing": "ALIVE"
+  },
+  {
+   "baseline": "ALIVE",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": true,
+   "declaration_fiber": 1,
+   "declared_links": 0,
+   "edges_declared": 54,
+   "edges_realised": 55,
+   "lawful": true,
+   "reading": "LAX",
+   "target": "NONE",
+   "why": "the delivered target: the amalgam, built from the lattice and the gluing alone",
+   "with_the_driven_crossing": "ALIVE"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "POSITIVE",
+   "count_route_admits": true,
+   "declaration_fiber": 27,
+   "declared_links": 1,
+   "edges_declared": 55,
+   "edges_realised": 55,
+   "lawful": true,
+   "reading": "EMBEDDING",
+   "target": "ONE-AT-ONE-SEAM",
+   "why": "one declared cross link at one declared shared site",
+   "with_the_driven_crossing": "ALIVE"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": true,
+   "declaration_fiber": 27,
+   "declared_links": 1,
+   "edges_declared": 55,
+   "edges_realised": 55,
+   "lawful": true,
+   "reading": "EMBEDDING",
+   "target": "ONE-AT-ONE-SEAM",
+   "why": "one declared cross link at one declared shared site",
+   "with_the_driven_crossing": "ALIVE"
+  },
+  {
+   "baseline": "COUNT-DEAD",
+   "count_leg": "POSITIVE",
+   "count_route_admits": true,
+   "declaration_fiber": 27,
+   "declared_links": 1,
+   "edges_declared": 55,
+   "edges_realised": 55,
+   "lawful": true,
+   "reading": "QUOTIENT",
+   "target": "ONE-AT-ONE-SEAM",
+   "why": "one declared cross link at one declared shared site",
+   "with_the_driven_crossing": "ALIVE"
+  },
+  {
+   "baseline": "ALIVE",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": true,
+   "declaration_fiber": 27,
+   "declared_links": 1,
+   "edges_declared": 55,
+   "edges_realised": 55,
+   "lawful": true,
+   "reading": "QUOTIENT",
+   "target": "ONE-AT-ONE-SEAM",
+   "why": "one declared cross link at one declared shared site",
+   "with_the_driven_crossing": "ALIVE"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "POSITIVE",
+   "count_route_admits": true,
+   "declaration_fiber": 27,
+   "declared_links": 1,
+   "edges_declared": 55,
+   "edges_realised": 55,
+   "lawful": true,
+   "reading": "LAX",
+   "target": "ONE-AT-ONE-SEAM",
+   "why": "one declared cross link at one declared shared site",
+   "with_the_driven_crossing": "ALIVE"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": true,
+   "declaration_fiber": 27,
+   "declared_links": 1,
+   "edges_declared": 55,
+   "edges_realised": 55,
+   "lawful": true,
+   "reading": "LAX",
+   "target": "ONE-AT-ONE-SEAM",
+   "why": "one declared cross link at one declared shared site",
+   "with_the_driven_crossing": "ALIVE"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "POSITIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 9,
+   "declared_links": 3,
+   "edges_declared": 57,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "EMBEDDING",
+   "target": "ONE-AT-EVERY-SEAM",
+   "why": "one declared cross direction at every shared site",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 9,
+   "declared_links": 3,
+   "edges_declared": 57,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "EMBEDDING",
+   "target": "ONE-AT-EVERY-SEAM",
+   "why": "one declared cross direction at every shared site",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "COUNT-DEAD",
+   "count_leg": "POSITIVE",
+   "count_route_admits": true,
+   "declaration_fiber": 9,
+   "declared_links": 3,
+   "edges_declared": 57,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "QUOTIENT",
+   "target": "ONE-AT-EVERY-SEAM",
+   "why": "one declared cross direction at every shared site",
+   "with_the_driven_crossing": "COUNT-DEAD"
+  },
+  {
+   "baseline": "ALIVE",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": true,
+   "declaration_fiber": 9,
+   "declared_links": 3,
+   "edges_declared": 57,
+   "edges_realised": 55,
+   "lawful": true,
+   "reading": "QUOTIENT",
+   "target": "ONE-AT-EVERY-SEAM",
+   "why": "one declared cross direction at every shared site",
+   "with_the_driven_crossing": "ALIVE"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "POSITIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 9,
+   "declared_links": 3,
+   "edges_declared": 57,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "LAX",
+   "target": "ONE-AT-EVERY-SEAM",
+   "why": "one declared cross direction at every shared site",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 9,
+   "declared_links": 3,
+   "edges_declared": 57,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "LAX",
+   "target": "ONE-AT-EVERY-SEAM",
+   "why": "one declared cross direction at every shared site",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "POSITIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 6,
+   "declared_links": 6,
+   "edges_declared": 60,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "EMBEDDING",
+   "target": "SEAM-MAP",
+   "why": "a declared bijection of the two charts' link directions, at every shared site",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 6,
+   "declared_links": 6,
+   "edges_declared": 60,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "EMBEDDING",
+   "target": "SEAM-MAP",
+   "why": "a declared bijection of the two charts' link directions, at every shared site",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "COUNT-DEAD",
+   "count_leg": "POSITIVE",
+   "count_route_admits": true,
+   "declaration_fiber": 6,
+   "declared_links": 6,
+   "edges_declared": 60,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "QUOTIENT",
+   "target": "SEAM-MAP",
+   "why": "a declared bijection of the two charts' link directions, at every shared site",
+   "with_the_driven_crossing": "COUNT-DEAD"
+  },
+  {
+   "baseline": "ALIVE",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": true,
+   "declaration_fiber": 6,
+   "declared_links": 6,
+   "edges_declared": 60,
+   "edges_realised": 55,
+   "lawful": true,
+   "reading": "QUOTIENT",
+   "target": "SEAM-MAP",
+   "why": "a declared bijection of the two charts' link directions, at every shared site",
+   "with_the_driven_crossing": "ALIVE"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "POSITIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 6,
+   "declared_links": 6,
+   "edges_declared": 60,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "LAX",
+   "target": "SEAM-MAP",
+   "why": "a declared bijection of the two charts' link directions, at every shared site",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 6,
+   "declared_links": 6,
+   "edges_declared": 60,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "LAX",
+   "target": "SEAM-MAP",
+   "why": "a declared bijection of the two charts' link directions, at every shared site",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "POSITIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 1,
+   "declared_links": 24,
+   "edges_declared": 78,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "EMBEDDING",
+   "target": "FULL-CROSS",
+   "why": "every forward cross direction at every shared site",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 1,
+   "declared_links": 24,
+   "edges_declared": 78,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "EMBEDDING",
+   "target": "FULL-CROSS",
+   "why": "every forward cross direction at every shared site",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "COUNT-DEAD",
+   "count_leg": "POSITIVE",
+   "count_route_admits": true,
+   "declaration_fiber": 1,
+   "declared_links": 24,
+   "edges_declared": 78,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "QUOTIENT",
+   "target": "FULL-CROSS",
+   "why": "every forward cross direction at every shared site",
+   "with_the_driven_crossing": "COUNT-DEAD"
+  },
+  {
+   "baseline": "ALIVE",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": true,
+   "declaration_fiber": 1,
+   "declared_links": 24,
+   "edges_declared": 78,
+   "edges_realised": 55,
+   "lawful": true,
+   "reading": "QUOTIENT",
+   "target": "FULL-CROSS",
+   "why": "every forward cross direction at every shared site",
+   "with_the_driven_crossing": "ALIVE"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "POSITIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 1,
+   "declared_links": 24,
+   "edges_declared": 78,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "LAX",
+   "target": "FULL-CROSS",
+   "why": "every forward cross direction at every shared site",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  },
+  {
+   "baseline": "STRUCT-DEAD",
+   "count_leg": "NON-NEGATIVE",
+   "count_route_admits": false,
+   "declaration_fiber": 1,
+   "declared_links": 24,
+   "edges_declared": 78,
+   "edges_realised": 55,
+   "lawful": false,
+   "reading": "LAX",
+   "target": "FULL-CROSS",
+   "why": "every forward cross direction at every shared site",
+   "with_the_driven_crossing": "STRUCT-DEAD"
+  }
+ ],
+ "gluing_totals": {
+  "by_k": {
+   "0": 1,
+   "1": 81,
+   "2": 2592,
+   "3": 42336
+  },
+  "closed_form": 45010,
+  "doubled_free_by_k": {
+   "0": 1,
+   "1": 81,
+   "2": 1134,
+   "3": 2970
+  },
+  "doubled_free_total": 4186,
+  "total": 45010,
+  "types": 16
+ },
+ "group_census": [
+  {
+   "charts": "(('A', 2), ('B', 1))",
+   "crossings": 2,
+   "doublings": 1,
+   "fate_at_the_delivered_target": "STRUCT-DEAD",
+   "fate_at_the_matched_extension": "ALIVE",
+   "free_items": [
+    "I-DIRECTION-LABEL",
+    "I-ORIENT"
+   ],
+   "inventory": {
+    "I-DIRECTION-LABEL": 3,
+    "I-ORIENT": 2,
+    "I-SITE-ASSIGNMENT": 1
+   },
+   "maps": 576,
+   "maps_complete": true,
+   "motivated": "UNMOTIVATED",
+   "orbit_size": 108,
+   "representative": [
+    "('A', (0, 1))",
+    "('A', (0, 2))",
+    "('B', (0, 1))"
+   ],
+   "within_sector_new": 0
+  },
+  {
+   "charts": "(('A', 2), ('B', 1))",
+   "crossings": 2,
+   "doublings": 0,
+   "fate_at_the_delivered_target": "STRUCT-DEAD",
+   "fate_at_the_matched_extension": "STRUCT-DEAD",
+   "orbit_size": 72,
+   "representative": [
+    "('A', (0, 1))",
+    "('A', (1, 0))",
+    "('B', (0, 1))"
+   ],
+   "within_sector_new": 1
+  },
+  {
+   "charts": "(('A', 1), ('B', 1), ('S', 1))",
+   "crossings": 1,
+   "doublings": 2,
+   "fate_at_the_delivered_target": "STRUCT-DEAD",
+   "fate_at_the_matched_extension": "ALIVE",
+   "free_items": [
+    "I-DIRECTION-LABEL",
+    "I-ORIENT",
+    "I-SITE-ASSIGNMENT"
+   ],
+   "inventory": {
+    "I-DIRECTION-LABEL": 9,
+    "I-ORIENT": 4,
+    "I-SITE-ASSIGNMENT": 3
+   },
+   "maps": 1728,
+   "maps_complete": true,
+   "motivated": "UNMOTIVATED",
+   "orbit_size": 108,
+   "representative": [
+    "('A', (0, 1))",
+    "('B', (0, 1))",
+    "('S', 0)"
+   ],
+   "within_sector_new": 0
+  },
+  {
+   "charts": "(('A', 2), ('S', 1))",
+   "crossings": 0,
+   "doublings": 3,
+   "fate_at_the_delivered_target": "ALIVE",
+   "fate_at_the_matched_extension": "NOT-APPLICABLE",
+   "orbit_size": 54,
+   "representative": [
+    "('A', (0, 1))",
+    "('A', (0, 2))",
+    "('S', 0)"
+   ],
+   "within_sector_new": 0
+  },
+  {
+   "charts": "(('A', 1), ('S', 2))",
+   "crossings": 0,
+   "doublings": 2,
+   "fate_at_the_delivered_target": "STRUCT-DEAD",
+   "fate_at_the_matched_extension": "NOT-APPLICABLE",
+   "orbit_size": 36,
+   "representative": [
+    "('A', (0, 1))",
+    "('S', 0)",
+    "('S', 1)"
+   ],
+   "within_sector_new": 1
+  },
+  {
+   "charts": "(('A', 2), ('S', 1))",
+   "crossings": 0,
+   "doublings": 2,
+   "fate_at_the_delivered_target": "STRUCT-DEAD",
+   "fate_at_the_matched_extension": "NOT-APPLICABLE",
+   "orbit_size": 36,
+   "representative": [
+    "('A', (0, 1))",
+    "('A', (1, 0))",
+    "('S', 0)"
+   ],
+   "within_sector_new": 1
+  },
+  {
+   "charts": "(('A', 3),)",
+   "crossings": 0,
+   "doublings": 2,
+   "fate_at_the_delivered_target": "STRUCT-DEAD",
+   "fate_at_the_matched_extension": "NOT-APPLICABLE",
+   "orbit_size": 36,
+   "representative": [
+    "('A', (0, 1))",
+    "('A', (0, 2))",
+    "('A', (1, 0))"
+   ],
+   "within_sector_new": 1
+  },
+  {
+   "charts": "(('A', 3),)",
+   "crossings": 0,
+   "doublings": 0,
+   "fate_at_the_delivered_target": "STRUCT-DEAD",
+   "fate_at_the_matched_extension": "NOT-APPLICABLE",
+   "orbit_size": 4,
+   "representative": [
+    "('A', (0, 1))",
+    "('A', (1, 0))",
+    "('A', (2, 2))"
+   ],
+   "within_sector_new": 3
+  },
+  {
+   "charts": "(('S', 3),)",
+   "crossings": 0,
+   "doublings": 0,
+   "fate_at_the_delivered_target": "STRUCT-DEAD",
+   "fate_at_the_matched_extension": "NOT-APPLICABLE",
+   "orbit_size": 1,
+   "representative": [
+    "('S', 0)",
+    "('S', 1)",
+    "('S', 2)"
+   ],
+   "within_sector_new": 3
+  }
+ ],
+ "inventories": [
+  {
+   "I-DIRECTION-LABEL": 1,
+   "I-ORIENT": 1,
+   "I-SITE-ASSIGNMENT": 1,
+   "arena": "the union, no crossing",
+   "complete": true,
+   "declared_cross_links": 0,
+   "doubled_pairs": 0,
+   "fate": "MOTIVATED",
+   "free_items": 0,
+   "maps": 62208,
+   "note": "the delivered arena and the delivered target"
+  },
+  {
+   "I-DIRECTION-LABEL": 1,
+   "I-ORIENT": 1,
+   "I-SITE-ASSIGNMENT": 1,
+   "arena": "the crossing alone, NOT DRIVEN",
+   "complete": true,
+   "declared_cross_links": 1,
+   "doubled_pairs": 0,
+   "fate": "MOTIVATED",
+   "free_items": 0,
+   "maps": 1728,
+   "note": "a control: the crossing pair with no other incidence, which no three-actor conflict group can produce"
+  },
+  {
+   "I-DIRECTION-LABEL": 9,
+   "I-ORIENT": 4,
+   "I-SITE-ASSIGNMENT": 3,
+   "arena": "SHARED-SEEDED, driven",
+   "complete": true,
+   "declared_cross_links": 1,
+   "doubled_pairs": 2,
+   "fate": "UNMOTIVATED",
+   "free_items": 3,
+   "maps": 1728,
+   "note": "the driven crossing through a shared actor"
+  },
+  {
+   "I-DIRECTION-LABEL": 3,
+   "I-ORIENT": 2,
+   "I-SITE-ASSIGNMENT": 1,
+   "arena": "B-SEEDED-PURE, driven",
+   "complete": true,
+   "declared_cross_links": 2,
+   "doubled_pairs": 1,
+   "fate": "UNMOTIVATED",
+   "free_items": 2,
+   "maps": 576,
+   "note": "the driven crossing from inside the second sector"
+  }
+ ],
+ "lawfulness": {
+  "lawful": 216,
+  "motivated": 0,
+  "orbits": 9,
+  "seam_spanning_groups": 288,
+  "word": "GLUING-EVENT-LAWFUL-AT-THE-MATCHED-CROSS-LINK-EXTENSION"
+ },
+ "ledger": [
+  {
+   "chain": "64f56a23af450837",
+   "digest": "bc26b568d54a8b66",
+   "evidence": {
+    "bad": [],
+    "n": 5,
+    "read_log": [
+     "v14/note-sec-adjudication.md",
+     "v14/note-sec2-pin.md",
+     "v14/paper-19-r3-weld.md",
+     "v14/paper-27-smu.md",
+     "v14/paper-30-lor.md"
+    ]
+   },
+   "gate": "G-SOURCES",
+   "ok": true,
+   "statement": "every source this run reads is authenticated at its declared sha256-12 and the read set recorded at the actual I/O layer is exactly the declared set, so a stray read fails the gate"
+  },
+  {
+   "chain": "49ba003f44476d54",
+   "digest": "875f8fd31fc7494d",
+   "evidence": {
+    "bad": [],
+    "consumers": [
+     "G-ARENA-COLLAPSE",
+     "G-COMPLETION-LATTICE",
+     "G-LAWFUL",
+     "G-LEGS",
+     "G-PRICE-LAWS",
+     "G-PRICE-VERDICT",
+     "G-REFINEMENT",
+     "G-WALL-SEAMCONFINED"
+    ],
+    "floor": 40,
+    "n": 8
+   },
+   "gate": "G-ANCHORS",
+   "ok": true,
+   "statement": "every verbatim anchor is located exactly once in its pinned source under the #125 normaliser, clears the declared character floor, and names the gate that consumes it -- so a misquotation of a parent dies on the delivery run"
+  },
+  {
+   "chain": "0b7c405f1287bda9",
+   "digest": "e6770f684e7a8984",
+   "evidence": {
+    "banned_calls": 0,
+    "floats": 0,
+    "imports": [
+     "ast",
+     "collections",
+     "fractions",
+     "hashlib",
+     "itertools",
+     "json",
+     "os",
+     "re",
+     "sys",
+     "time"
+    ],
+    "subprocess_modules": []
+   },
+   "gate": "G-EXACT",
+   "ok": true,
+   "statement": "an AST scan of this file finds no float constant, no call to float(), eval() or exec(), and no subprocess or network import: all arithmetic is Python ints and fractions.Fraction and the run is correct off-tree and with no version control present"
+  },
+  {
+   "chain": "ada3f6457a865cfe",
+   "digest": "48a41fca6b8a2ec1",
+   "evidence": {
+    "legs": [
+     "ACTOR->SITE",
+     "CO-DIVISION-ACTOR-PAIR->LINK",
+     "DIVISION-COUNT->n_l(x)"
+    ],
+    "quoted_in_parent": true
+   },
+   "gate": "G-LEGS",
+   "ok": true,
+   "statement": "the three reading legs this unit relaxes are the ones paper-19 declares in its own bytes -- site from the actor, link from the co-division actor pair, count from the division events on that pair -- and the relaxation window below is built on those three and on the target they read into"
+  },
+  {
+   "chain": "96cca75dca6f3fa3",
+   "digest": "e23357f5ad0c09b0",
+   "evidence": {
+    "by_k": {
+     "0": 1,
+     "1": 81,
+     "2": 2592,
+     "3": 42336
+    },
+    "closed_form": 45010,
+    "doubled_free_by_k": {
+     "0": 1,
+     "1": 81,
+     "2": 1134,
+     "3": 2970
+    },
+    "doubled_free_total": 4186,
+    "enumerated": 45010,
+    "types": 16
+   },
+   "gate": "G-CENSUS",
+   "ok": true,
+   "statement": "the gluing family is enumerated exhaustively and counted a second time from the closed form C(9,k) x 9!/(9-k)! with no shared code, and every gluing lands in exactly one combinatorial type"
+  },
+  {
+   "chain": "4c3ecf511492c769",
+   "digest": "5340a2d9fff41521",
+   "evidence": {
+    "arenas": 12,
+    "classes": {
+     "(0,)": [
+      "(0,)"
+     ],
+     "(1, (0, 0, 1))": [
+      "(1, (0, 0, 1))"
+     ],
+     "(2, (0, 0, 1), (0, 1, 1))": [
+      "(2, (0, 0, 1), (0, 1, 1))",
+      "(2, (0, 0, 1), (1, 0, 1))"
+     ],
+     "(2, (0, 0, 1), (1, 1, 1))": [
+      "(2, (0, 0, 1), (1, 1, 1))"
+     ],
+     "(2, (0, 0, 2))": [
+      "(2, (0, 0, 2))"
+     ],
+     "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))": [
+      "(3, (0, 0, 1), (0, 1, 1), (0, 2, 1))",
+      "(3, (0, 0, 1), (1, 0, 1), (2, 0, 1))"
+     ],
+     "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))": [
+      "(3, (0, 0, 1), (0, 1, 1), (1, 0, 1))"
+     ],
+     "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))": [
+      "(3, (0, 0, 1), (0, 1, 1), (1, 2, 1))",
+      "(3, (0, 0, 1), (1, 0, 1), (2, 1, 1))"
+     ],
+     "(3, (0, 0, 1), (0, 1, 2))": [
+      "(3, (0, 0, 1), (0, 1, 2))",
+      "(3, (0, 0, 1), (1, 0, 2))"
+     ],
+     "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))": [
+      "(3, (0, 0, 1), (1, 1, 1), (2, 2, 1))"
+     ],
+     "(3, (0, 0, 1), (1, 1, 2))": [
+      "(3, (0, 0, 1), (1, 1, 2))"
+     ],
+     "(3, (0, 0, 3))": [
+      "(3, (0, 0, 3))"
+     ]
+    },
+    "mirror_pairs": 4,
+    "types": 16
+   },
+   "gate": "G-ARENA-COLLAPSE",
+   "ok": true,
+   "statement": "the 16 combinatorial types collapse onto 12 union arenas under the A-B mirror, in four mirror pairs and eight self-mirror types -- the #322 ruling, measured here on the profiles rather than inherited"
+  },
+  {
+   "chain": "fe0f472420fd4ae5",
+   "digest": "cd4d3449ae141a6f",
+   "evidence": {
+    "missing_vectors": [
+     "(2, 2, 2)"
+    ],
+    "seam_type_second_route_disagreements": 0,
+    "seam_types": 49,
+    "shared_sites": 132273,
+    "shared_sites_second_route": 132273,
+    "vectors": [
+     "(1, 1, 1)",
+     "(1, 1, 2)",
+     "(1, 2, 1)",
+     "(1, 2, 2)",
+     "(2, 1, 1)",
+     "(2, 1, 2)",
+     "(2, 2, 1)"
+    ]
+   },
+   "gate": "G-SEAM-CENSUS",
+   "ok": true,
+   "statement": "the seam types realised by the family are censused exactly over every shared site of every gluing: seven of the eight count vectors occur on each side and the one that never occurs is the all-doubled vector, because a shared site has at most two other shared actors"
+  },
+  {
+   "chain": "807518c6c4898b46",
+   "digest": "a7efaf7d745cac52",
+   "evidence": {
+    "equations": 6,
+    "kernel_dim": 4,
+    "rank": 6,
+    "rhs_independent": true,
+    "unknowns": 10
+   },
+   "gate": "G-SEAM-RANK",
+   "ok": true,
+   "statement": "the seam's six declared links give rank 6 on the ten entries of Sym^2(Q^4), so the completion space is a 4-parameter affine family; the rank is taken on the COEFFICIENT matrix alone, so it is a property of the direct-sum chart and holds at every seam type whatever the counts"
+  },
+  {
+   "chain": "6f3e8e73024e4017",
+   "digest": "799c0df81e277cb5",
+   "evidence": {
+    "lattice_range": [
+     31,
+     275
+    ],
+    "posdef_range": [
+     31,
+     267
+    ],
+    "seam_types": 49,
+    "seams_where_the_widened_box_disagrees": []
+   },
+   "gate": "G-COMPLETION-LATTICE",
+   "ok": true,
+   "statement": "the completion space is censused EXACTLY at every seam type the family realises: the enumeration box is derived from the cross counts themselves, so the census is exhaustive, and every seam type carries at least one admissible positive-definite completion"
+  },
+  {
+   "chain": "ba28cd9030bf22d3",
+   "digest": "ce458391d4876eb0",
+   "evidence": {
+    "witnesses": [
+     {
+      "counts": [
+       "1",
+       "1",
+       "1",
+       "1",
+       "1",
+       "1"
+      ],
+      "cross_entry": "1/3",
+      "in_the_half_integer_lattice": false,
+      "posdef": true,
+      "reproduces_the_six_counts": true
+     },
+     {
+      "counts": [
+       "1",
+       "1",
+       "1",
+       "1",
+       "1",
+       "1"
+      ],
+      "cross_entry": "2/3",
+      "in_the_half_integer_lattice": false,
+      "posdef": true,
+      "reproduces_the_six_counts": true
+     }
+    ]
+   },
+   "gate": "G-UNQUANTISED",
+   "ok": true,
+   "statement": "the finiteness of the completion family is a DECLARED reading -- I7's readout carried from the declared links to every direction of the chart -- and the verdict does not rest on it: two distinct completions outside every half-integer lattice are exhibited, both reproducing the six declared counts and both positive definite, so dropping the reading returns an infinite family on which no criterion selects either"
+  },
+  {
+   "chain": "c524b7c51cc03d8d",
+   "digest": "7f1d7a9c32bb4ccc",
+   "evidence": {
+    "min_posdef": 31,
+    "seam_types": 49,
+    "seams_where_admissible_implies_posdef": 13,
+    "seams_with_a_unique_posdef": []
+   },
+   "gate": "G-POSITIVITY",
+   "ok": true,
+   "statement": "positivity selects no completion: at every seam type the admissible lattice carries at least two positive-definite completions, and at the seam types where admissibility already implies positivity it carries no information at all"
+  },
+  {
+   "chain": "ab516e1d5d495e69",
+   "digest": "3e267475992b9971",
+   "evidence": {
+    "argmin_sets_disjoint": true,
+    "minus_argmin": 8,
+    "minus_convention_min": 14,
+    "plus_argmin": 8,
+    "plus_convention_min": 14,
+    "seams_with_a_non_constant_budget": []
+   },
+   "gate": "G-PRICE-FLAT",
+   "ok": true,
+   "statement": "price minimisation selects no completion either: the convention-free cross budget -- the sum over BOTH signs of every cross direction -- is constant on the whole completion space at every seam type, and the one-sided reading is a sign convention whose minimising set is many-valued and moves to a disjoint set when the convention is reversed"
+  },
+  {
+   "chain": "1cea2f2941d9be9b",
+   "digest": "29b0caeb9186508f",
+   "evidence": {
+    "ceiling": 0,
+    "parity_empty": 48,
+    "parity_singleton": 1,
+    "singleton_seam": [
+     "((1, 1, 1), (1, 1, 1))"
+    ],
+    "union_min_count": 1
+   },
+   "gate": "G-REFINEMENT",
+   "ok": true,
+   "statement": "refinement stability is EMPTY at this record: the union's own minimum count is 1, so paper-04's ceiling law grants zero consecutive steps and the criterion has nothing to act on; read as a hypothetical -- would the completion survive one dyadic halving -- it is empty at 48 of the 49 seam types and selects exactly the direct sum at the 49th, the all-simple seam"
+  },
+  {
+   "chain": "162cce0b2308d68c",
+   "digest": "0aa409bde80c991a",
+   "evidence": {
+    "seam_types": 49,
+    "seams_where_the_direct_sum_is_not_the_unique_maximiser": []
+   },
+   "gate": "G-FISCHER",
+   "ok": true,
+   "statement": "one extremal principle DOES select, and it is not a law of this corpus: the determinant is maximised on the admissible positive-definite lattice uniquely at the direct sum, at every one of the 49 seam types -- so the seam's freedom is irreducible relative to the DECLARED laws, not in principle"
+  },
+  {
+   "chain": "a5989b5c89da92d2",
+   "digest": "df2faaa819db4bf9",
+   "evidence": {
+    "A_counts": [
+     "1",
+     "1",
+     "1"
+    ],
+    "B_counts": [
+     "1",
+     "1",
+     "1"
+    ],
+    "cross_counts_below_one": [
+     "(0, 1, 1)",
+     "(0, 2, 1)",
+     "(2, 1, 1)",
+     "(2, 2, 1)"
+    ],
+    "declared_value": "-2",
+    "value": "-2"
+   },
+   "gate": "G-SEC-WITNESS",
+   "ok": true,
+   "statement": "SEC's delivered indefinite completion is reproduced here from its declared entries -- it returns all six counts and its own value on its own vector -- and is then placed: it lies OUTSIDE the admissible lattice, because it assigns count zero to four of the chart's cross directions"
+  },
+  {
+   "chain": "4ad3d84c87722708",
+   "digest": "d690597643141322",
+   "evidence": {
+    "direct_sum_survives": false,
+    "kernel_after_one_crossing": 3,
+    "lattice_after": 8,
+    "lattice_before": 31,
+    "posdef_after": 8,
+    "rank_after_one_crossing": 7
+   },
+   "gate": "G-CROSSING-CUT",
+   "ok": true,
+   "statement": "the one crossing the committed grammar actually drives carries count 1 on the direction b3 - a3, which is one more equation: the kernel falls from 4 to 3, the admissible lattice falls from 31 completions to 8, every one of the 8 is still positive definite, and the DIRECT SUM IS NOT AMONG THEM"
+  },
+  {
+   "chain": "3ef122aceafb859d",
+   "digest": "506fbda097cef3d9",
+   "evidence": {
+    "aut": 62208,
+    "cap": 200000,
+    "carriers": 15
+   },
+   "gate": "G-AUT",
+   "ok": true,
+   "statement": "the k = 3 aligned union's automorphism group is enumerated exhaustively below the declared cap and reproduces SEC's own committed order by a route sharing no code with it"
+  },
+  {
+   "chain": "d904d88620fd7825",
+   "digest": "eabb3c50533e4dfb",
+   "evidence": {
+    "specs": [
+     {
+      "declared_fate": "ADMITTED",
+      "doubled_by_the_event": 2,
+      "foreign_pairs": 1,
+      "group": [
+       "('A', (1, 1))",
+       "('B', (1, 1))",
+       "('S', 0)"
+      ],
+      "new_pairs": 1,
+      "spec": "SHARED-SEEDED"
+     },
+     {
+      "declared_fate": "REFUSED",
+      "doubled_by_the_event": 2,
+      "foreign_pairs": 1,
+      "group": [
+       "('A', (1, 1))",
+       "('B', (1, 1))",
+       "('S', 0)"
+      ],
+      "new_pairs": 1,
+      "spec": "A-SEEDED"
+     },
+     {
+      "declared_fate": "ADMITTED",
+      "doubled_by_the_event": 1,
+      "foreign_pairs": 2,
+      "group": [
+       "('A', (1, 1))",
+       "('B', (1, 1))",
+       "('B', (1, 0))"
+      ],
+      "new_pairs": 2,
+      "spec": "B-SEEDED-PURE"
+     }
+    ]
+   },
+   "gate": "G-DRIVEN-EVENTS",
+   "ok": true,
+   "statement": "the two cross-sector specifications the committed grammar ADMITS are reconstructed here as arena objects from their declared conflict groups alone, and the pairs they deposit reproduce SEC's own driven counts exactly -- which is what binds this unit's combinatorial route to that unit's driven one"
+  },
+  {
+   "chain": "073c5f2ae3cb71b1",
+   "digest": "2a321b03ed43c78b",
+   "evidence": {
+    "actors": 9,
+    "aut": 1296,
+    "declaration_price": 0,
+    "pairs": 27,
+    "rank": 3
+   },
+   "gate": "G-LONE-SECTOR",
+   "ok": true,
+   "statement": "the lone sector is rebuilt as the composite's baseline: 9 actors, 27 realised pairs, automorphism order 1296, and a site form the record determines completely -- three declared links give rank 3 on the three entries of Sym^2(Q^2), so a lone sector's declaration price is zero"
+  },
+  {
+   "chain": "bbcbcd3e945f5684",
+   "digest": "cd100199d0ec126f",
+   "evidence": {
+    "distinct_permutations": 62208,
+    "group_order": 62208,
+    "groups": 455,
+    "groups_closed_form": 455,
+    "orbit_sizes": [
+     [
+      1,
+      1
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      36,
+      3
+     ],
+     [
+      54,
+      1
+     ],
+     [
+      72,
+      1
+     ],
+     [
+      108,
+      2
+     ]
+    ],
+    "orbits": 9,
+    "orbits_invariance_checked": 8,
+    "orbits_invariance_failed": []
+   },
+   "gate": "G-GROUP-CENSUS",
+   "ok": true,
+   "statement": "the arena's three-actor groups -- every conflict group the layer could put a division event on -- are censused exhaustively and reduced by the union's own automorphism group to 9 orbits whose sizes sum to the group count"
+  },
+  {
+   "chain": "d3287750c943a29a",
+   "digest": "9c8bd729df11ee60",
+   "evidence": {
+    "alive_at_the_delivered_target": [],
+    "seam_spanning_groups": 288,
+    "seam_spanning_second_route": 288
+   },
+   "gate": "G-CROSSING-WALL",
+   "ok": true,
+   "statement": "at the DELIVERED target every seam-spanning group is dead -- SEC's wall, generalised here from three chosen specifications to all 288 of the arena's seam-spanning groups, exhaustively"
+  },
+  {
+   "chain": "0016c265a1c71af9",
+   "digest": "13032f51aa4d93b3",
+   "evidence": {
+    "non_crossing_alive_groups": 54,
+    "orbits": 1
+   },
+   "gate": "G-NON-CROSSING-CONTROL",
+   "ok": true,
+   "statement": "the control fires in the other direction inside the same census: a division event that crosses nothing and creates no within-sector pair leaves the dictionary ALIVE at the delivered target, so the detector is not a machine that kills everything handed to it"
+  },
+  {
+   "chain": "38abe642ed75850c",
+   "digest": "83375979b397247c",
+   "evidence": {
+    "disagreeing": [],
+    "targets": 5
+   },
+   "gate": "G-QUOTIENT-POS-COLLAPSE",
+   "ok": true,
+   "statement": "the count leg is not an independent axis of the window: under the QUOTIENT reading the positive-count leg forces every declared target cell to be realised, which is exactly the EMBEDDING reading, and the two agree on LIVENESS cell for cell at every declared target -- while dying differently when they die, at structure under EMBEDDING and at count positivity under QUOTIENT, which is paper-19's own signature for the two readings"
+  },
+  {
+   "chain": "5ef6ad080ff9fe0e",
+   "digest": "d83d71f09e2a5711",
+   "evidence": {
+    "cells": 30,
+    "lawful_cells": 11,
+    "lawful_cells_the_edge_count_forbids": [],
+    "targets": 5
+   },
+   "gate": "G-EXTENSION-GRID",
+   "ok": true,
+   "statement": "the declared extension window is run cell by cell -- five targets, three readings, two count legs -- and every cell returns a measured fate for the baseline record AND for the record the driven crossing produces, so no cell is argued"
+  },
+  {
+   "chain": "9382abea275ced61",
+   "digest": "4dabaac1bb4e5726",
+   "evidence": {
+    "detector_sweep_at_one_crossing": 36,
+    "detector_sweep_at_two_crossings": 108,
+    "driven_two_set_orbit": 108,
+    "orbit_size_matches_the_sweep": true,
+    "rows": [
+     {
+      "arenas": 1,
+      "crossings": 1,
+      "placements": 36,
+      "verdict": "BLIND"
+     },
+     {
+      "arenas": 5,
+      "crossings": 2,
+      "placements": 630,
+      "verdict": "SIGHTED"
+     },
+     {
+      "arenas": 15,
+      "crossings": 3,
+      "placements": 7140,
+      "verdict": "SIGHTED"
+     }
+    ]
+   },
+   "gate": "G-BLINDNESS",
+   "ok": true,
+   "statement": "THE TEST, DECLARED: the declared cross-link placements are reduced by the union's own automorphism group, and the same question is put a second time through the detector itself. Blindness would show as one arena and every placement admitting the event; sightedness as many arenas and a strict sub-count. Both outcomes occur in this one census: at ONE crossing the dictionary is blind -- 36 placements, one arena, 36 of 36 admitted -- and at TWO it is sighted: 630 placements, five arenas, 108 of 630 admitted"
+  },
+  {
+   "chain": "fe5f89b3d078f01d",
+   "digest": "24948d59de8c00bb",
+   "evidence": {
+    "cap": 200000,
+    "rows": [
+     {
+      "I-DIRECTION-LABEL": 1,
+      "I-ORIENT": 1,
+      "I-SITE-ASSIGNMENT": 1,
+      "arena": "the union, no crossing",
+      "complete": true,
+      "declared_cross_links": 0,
+      "doubled_pairs": 0,
+      "fate": "MOTIVATED",
+      "free_items": 0,
+      "maps": 62208,
+      "note": "the delivered arena and the delivered target"
+     },
+     {
+      "I-DIRECTION-LABEL": 1,
+      "I-ORIENT": 1,
+      "I-SITE-ASSIGNMENT": 1,
+      "arena": "the crossing alone, NOT DRIVEN",
+      "complete": true,
+      "declared_cross_links": 1,
+      "doubled_pairs": 0,
+      "fate": "MOTIVATED",
+      "free_items": 0,
+      "maps": 1728,
+      "note": "a control: the crossing pair with no other incidence, which no three-actor conflict group can produce"
+     },
+     {
+      "I-DIRECTION-LABEL": 9,
+      "I-ORIENT": 4,
+      "I-SITE-ASSIGNMENT": 3,
+      "arena": "SHARED-SEEDED, driven",
+      "complete": true,
+      "declared_cross_links": 1,
+      "doubled_pairs": 2,
+      "fate": "UNMOTIVATED",
+      "free_items": 3,
+      "maps": 1728,
+      "note": "the driven crossing through a shared actor"
+     },
+     {
+      "I-DIRECTION-LABEL": 3,
+      "I-ORIENT": 2,
+      "I-SITE-ASSIGNMENT": 1,
+      "arena": "B-SEEDED-PURE, driven",
+      "complete": true,
+      "declared_cross_links": 2,
+      "doubled_pairs": 1,
+      "fate": "UNMOTIVATED",
+      "free_items": 2,
+      "maps": 576,
+      "note": "the driven crossing from inside the second sector"
+     }
+    ]
+   },
+   "gate": "G-INVENTORY",
+   "ok": true,
+   "statement": "the price is read where the RSQ standard reads it: the map enumeration is complete below the declared cap at every row, and the free-item count moves -- zero at the delivered arena, zero at the crossing taken ALONE, three when the driven crossing arrives with the two doublings its conflict group forces, two at the crossing driven from inside the second sector"
+  },
+  {
+   "chain": "2eab285c72d1e1b2",
+   "digest": "edc5e445c0503cb4",
+   "evidence": {
+    "dead_at_the_matched_extension": 72,
+    "lawful": 216,
+    "motivated": 0,
+    "seam_spanning": 288,
+    "word": "GLUING-EVENT-LAWFUL-AT-THE-MATCHED-CROSS-LINK-EXTENSION"
+   },
+   "gate": "G-LAWFUL",
+   "ok": true,
+   "statement": "the outcome word is derived from the census and not chosen: a seam-spanning division event IS lawful once the target declares the cross links the event realises -- at 216 of the 288 seam-spanning groups, both driven specifications among them -- and it is NEVER motivated: not one lawful arena has zero free items"
+  },
+  {
+   "chain": "6f13918c2627892e",
+   "digest": "cc630505ff28804a",
+   "evidence": {
+    "gluings": 45010,
+    "laws": {
+     "budget": "54 + 2d",
+     "carriers": "18 - k",
+     "declaration": "4k",
+     "links": "54 - d",
+     "record": "54"
+    },
+    "violations": 0
+   },
+   "gate": "G-PRICE-LAWS",
+   "ok": true,
+   "statement": "the five currencies are evaluated on every one of the 45,010 composites and on the lone sector, and each obeys an exact law with zero violations: the record's own price is 54 at every gluing, the geometry's budget is 54 + 2d, the declaration price is 4k, the carrier count is 18 - k and the link count is 54 - d"
+  },
+  {
+   "chain": "24e99404d5b42456",
+   "digest": "d4c58c7fef9c4a45",
+   "evidence": {
+    "rows": [
+     {
+      "composite": "54",
+      "currency": "the record (division incidences)",
+      "excess": "none",
+      "law": "27 + 27",
+      "lone_sector": 27,
+      "verdict": "IGNORES"
+     },
+     {
+      "composite": "18 - k",
+      "currency": "the carrier (site objects)",
+      "excess": "k fewer",
+      "law": "9 + 9 - k",
+      "lone_sector": 9,
+      "verdict": "FAVOURS"
+     },
+     {
+      "composite": "54 - d",
+      "currency": "the link objects",
+      "excess": "d fewer",
+      "law": "27 + 27 - d",
+      "lone_sector": 27,
+      "verdict": "FAVOURS"
+     },
+     {
+      "composite": "54 + 2d",
+      "currency": "the geometry's budget (counts over cells)",
+      "excess": "2d more",
+      "law": "27 + 27 + 2d",
+      "lone_sector": 27,
+      "verdict": "PENALIZES"
+     },
+     {
+      "composite": "4k",
+      "currency": "the declaration (independent numbers)",
+      "excess": "4k more",
+      "law": "0 + 0 + 4k",
+      "lone_sector": 0,
+      "verdict": "PENALIZES"
+     }
+    ],
+    "words": [
+     "FAVOURS",
+     "IGNORES",
+     "PENALIZES"
+    ]
+   },
+   "gate": "G-PRICE-VERDICT",
+   "ok": true,
+   "statement": "each currency's verdict word is DERIVED from its own measured excess and compared against the published word, and the answer to the pinned question is that all three of its words are realised at once: composition is free to the process, cheaper in objects, and dearer in budget and in declaration"
+  },
+  {
+   "chain": "c6316d045c6962af",
+   "digest": "8a0101fa7d436932",
+   "evidence": {
+    "per_site": 4,
+    "shared_sites": 3,
+    "total": 12,
+    "unshared_site_price": 0
+   },
+   "gate": "G-SEAM-CONFINED-PRICE",
+   "ok": true,
+   "statement": "and the excess is SEAM-CONFINED: the declaration price is carried entirely by the shared sites -- four numbers each, twelve at the k = 3 seam -- while every unshared site's form is determined exactly as it is in a lone sector"
+  },
+  {
+   "chain": "2fb578b5df844e1f",
+   "digest": "e729a67471a0d741",
+   "evidence": {
+    "bad": [],
+    "commit": "88e4a834f532ed2a11b47c74468585eadfcbd54e",
+    "n": 22
+   },
+   "gate": "G-SEC-VALUES",
+   "ok": true,
+   "statement": "every value this unit inherits from the #301 SEC delivery is carried as a DECLARED (path, key, value) row and bound by REPRODUCTION: this unit recomputes each one from its own arena and the gate kills the run on any mismatch, so the declaration cannot drift from the committed object it names"
+  },
+  {
+   "chain": "5f004962e27dd736",
+   "digest": "0d7d224406134eb0",
+   "evidence": {
+    "lawful_at_the_delivered_legs": [],
+    "rows": 30,
+    "sentence_in_paper": true,
+    "stamped": true
+   },
+   "gate": "G-WALL-EXTENSION",
+   "ok": true,
+   "statement": "the extension wall: every target in the window carries its declaration fiber, and the paper carries the sentence that no extension measured here is claimed to be the theory -- an extension is a declaration, priced, and nothing more"
+  },
+  {
+   "chain": "e012d0cfdfae2bde",
+   "digest": "27f2d3ec9a537483",
+   "evidence": {
+    "leak_hits": 0,
+    "paper_absent": false,
+    "seam_confined_hits": 4
+   },
+   "gate": "G-WALL-SEAMCONFINED",
+   "ok": true,
+   "statement": "the #322 ruling is carried, not re-litigated: the paper speaks of SEAM-CONFINED compositionality and the reversed leak wording does not occur anywhere in it, under the #125 normaliser"
+  },
+  {
+   "chain": "f778ddee4a089ffd",
+   "digest": "e6981ffd96af7ea5",
+   "evidence": {
+    "hits": [],
+    "paper_absent": false,
+    "terms": 9
+   },
+   "gate": "G-WALL-SCAN",
+   "ok": true,
+   "statement": "no reading of the union as anything larger is taken: the paper is scanned for the terms whose presence would mean the reading was taken, and none occurs"
+  },
+  {
+   "chain": "b2deb66de51306d2",
+   "digest": "31a52eaf8f5cbe7f",
+   "evidence": {
+    "description_mismatch": [],
+    "gates": 34,
+    "mutants": 38,
+    "uncovered": [],
+    "unreached": [],
+    "waived": [
+     "G-DECLARED-LATER",
+     "G-INTEGRITY",
+     "G-SEAL-COMPLETE",
+     "G-SWEEP-EXECUTED"
+    ]
+   },
+   "gate": "G-COVERAGE",
+   "ok": true,
+   "statement": "every gate is falsified by one of the declared mutants, each dying at its own named gate, or waived with a machine-checked forcing; every declared mutant's target gate exists in this run, so no falsifier is dead code; and every mutant's published description is verified against its own name in the source (E-23)"
+  },
+  {
+   "chain": "a7897de1ca588591",
+   "digest": "bc81365271755310",
+   "evidence": {
+    "agree": 4,
+    "segments": 4
+   },
+   "gate": "G-VERDICT-RECON",
+   "ok": true,
+   "statement": "the head is derived a second time by a comparator that types all four templates itself and re-reads every value from the receipt's own measured rows, sharing no format string, no helper and no typed literal with the builder; the complete strings are compared for equality"
+  },
+  {
+   "chain": "23debea9164bf8b7",
+   "digest": "ae7fa515d50d7c39",
+   "evidence": {
+    "path": "v14/paper-40-sec2.md",
+    "present": true,
+    "required": true
+   },
+   "gate": "G-PAPER-PRESENT",
+   "ok": true,
+   "statement": "the paper is part of the delivered object: a run that writes artifacts, and every run of the mutant sweep inside it, must have the paper in hand, so the paper leg can never pass by being absent"
+  },
+  {
+   "chain": "0e088efb5b237348",
+   "digest": "9e51d0b9c9dfa6e7",
+   "evidence": {
+    "claims": 162,
+    "missing": [],
+    "n_missing": 0,
+    "n_stray": 0,
+    "ok": true,
+    "paper_rows": 162,
+    "stray": []
+   },
+   "gate": "G-PAPER-CLAIMS",
+   "ok": true,
+   "statement": "every data row AND every header row of every table in the paper is a rendered claim of this receipt, compared as a multiset in both directions, so a swapped cell dies and so does a forged extra row"
+  },
+  {
+   "chain": "37fd19f1bed68e04",
+   "digest": "f9d9e44382a0d7a6",
+   "evidence": {
+    "registry": 90,
+    "scanned": 1018,
+    "unbacked": []
+   },
+   "gate": "G-PAPER-COVERAGE",
+   "ok": true,
+   "statement": "every numeral in the paper -- fenced blocks, verdict blocks, tables and inline code spans included, nothing stripped -- is backed by a measured value of this run or by the paper's own section numbering (E-22)"
+  },
+  {
+   "chain": "ef0ba2cafc7d8435",
+   "digest": "adb488b70c5756d4",
+   "evidence": {
+    "blocks": 8,
+    "missing": [],
+    "ok": true,
+    "stray": [],
+    "verdict_segments": 4
+   },
+   "gate": "G-PAPER-FENCE",
+   "ok": true,
+   "statement": "the paper's fenced blocks are compared as a MULTISET against this run's verdict segments, so neither a stale verdict nor a forged twin beside the clean one survives"
+  },
+  {
+   "chain": "f152a4eff63016fd",
+   "digest": "cfdad359e3212d28",
+   "evidence": {
+    "bad": [],
+    "checked": 5,
+    "ok": true,
+    "rows": [
+     {
+      "id": "P1",
+      "negation": 0,
+      "positive": 1
+     },
+     {
+      "id": "P2",
+      "negation": 0,
+      "positive": 1
+     },
+     {
+      "id": "P3",
+      "negation": 0,
+      "positive": 1
+     },
+     {
+      "id": "P4",
+      "negation": 0,
+      "positive": 1
+     },
+     {
+      "id": "P5",
+      "negation": 0,
+      "positive": 1
+     }
+    ]
+   },
+   "gate": "G-PAPER-POLARITY",
+   "ok": true,
+   "statement": "each polarity row carries its own negation, so the gate tests the sign it names: the paper must assert the measured direction and must nowhere assert its inverse"
+  },
+  {
+   "chain": "a72a3ae7f7c3e91d",
+   "digest": "986a3ef8d59f5174",
+   "evidence": {
+    "ok": true,
+    "spelled_found": [
+     "twenty-two"
+    ],
+    "unbacked": []
+   },
+   "gate": "G-PAPER-SPELLED",
+   "ok": true,
+   "statement": "a numeral spelled in words above twelve is a claim like any other and must have its integer in the measured registry"
+  }
+ ],
+ "ledger_chain": "a72a3ae7f7c3e91d",
+ "mutant_sweep": [
+  {
+   "declared": "G-SOURCES",
+   "died_at": "G-SOURCES",
+   "mutant": "MUT-SOURCE-DIGEST",
+   "on_target": true
+  },
+  {
+   "declared": "G-ANCHORS",
+   "died_at": "G-ANCHORS",
+   "mutant": "MUT-ANCHOR-TEXT",
+   "on_target": true
+  },
+  {
+   "declared": "G-EXACT",
+   "died_at": "G-EXACT",
+   "mutant": "MUT-EXACT-FLOAT",
+   "on_target": true
+  },
+  {
+   "declared": "G-CENSUS",
+   "died_at": "G-CENSUS",
+   "mutant": "MUT-CENSUS-DROP",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEC-VALUES",
+   "died_at": "G-SEC-VALUES",
+   "mutant": "MUT-SEC-VALUE",
+   "on_target": true
+  },
+  {
+   "declared": "G-ARENA-COLLAPSE",
+   "died_at": "G-ARENA-COLLAPSE",
+   "mutant": "MUT-ARENA-COLLAPSE",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEAM-CENSUS",
+   "died_at": "G-SEAM-CENSUS",
+   "mutant": "MUT-SEAM-TYPE",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEAM-RANK",
+   "died_at": "G-SEAM-RANK",
+   "mutant": "MUT-SEAM-RANK",
+   "on_target": true
+  },
+  {
+   "declared": "G-COMPLETION-LATTICE",
+   "died_at": "G-COMPLETION-LATTICE",
+   "mutant": "MUT-LATTICE-BOUND",
+   "on_target": true
+  },
+  {
+   "declared": "G-POSITIVITY",
+   "died_at": "G-POSITIVITY",
+   "mutant": "MUT-POSITIVITY",
+   "on_target": true
+  },
+  {
+   "declared": "G-PRICE-FLAT",
+   "died_at": "G-PRICE-FLAT",
+   "mutant": "MUT-PRICE-FLAT",
+   "on_target": true
+  },
+  {
+   "declared": "G-REFINEMENT",
+   "died_at": "G-REFINEMENT",
+   "mutant": "MUT-REFINEMENT",
+   "on_target": true
+  },
+  {
+   "declared": "G-FISCHER",
+   "died_at": "G-FISCHER",
+   "mutant": "MUT-FISCHER",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEC-WITNESS",
+   "died_at": "G-SEC-WITNESS",
+   "mutant": "MUT-SEC-WITNESS",
+   "on_target": true
+  },
+  {
+   "declared": "G-CROSSING-CUT",
+   "died_at": "G-CROSSING-CUT",
+   "mutant": "MUT-CROSSING-CUT",
+   "on_target": true
+  },
+  {
+   "declared": "G-GROUP-CENSUS",
+   "died_at": "G-GROUP-CENSUS",
+   "mutant": "MUT-GROUP-ORBIT",
+   "on_target": true
+  },
+  {
+   "declared": "G-CROSSING-WALL",
+   "died_at": "G-CROSSING-WALL",
+   "mutant": "MUT-CROSSING-WALL",
+   "on_target": true
+  },
+  {
+   "declared": "G-NON-CROSSING-CONTROL",
+   "died_at": "G-NON-CROSSING-CONTROL",
+   "mutant": "MUT-NONCROSS",
+   "on_target": true
+  },
+  {
+   "declared": "G-EXTENSION-GRID",
+   "died_at": "G-EXTENSION-GRID",
+   "mutant": "MUT-GRID-CELL",
+   "on_target": true
+  },
+  {
+   "declared": "G-QUOTIENT-POS-COLLAPSE",
+   "died_at": "G-QUOTIENT-POS-COLLAPSE",
+   "mutant": "MUT-QUOT-POS",
+   "on_target": true
+  },
+  {
+   "declared": "G-LAWFUL",
+   "died_at": "G-LAWFUL",
+   "mutant": "MUT-LAWFUL",
+   "on_target": true
+  },
+  {
+   "declared": "G-BLINDNESS",
+   "died_at": "G-BLINDNESS",
+   "mutant": "MUT-BLINDNESS",
+   "on_target": true
+  },
+  {
+   "declared": "G-INVENTORY",
+   "died_at": "G-INVENTORY",
+   "mutant": "MUT-INVENTORY",
+   "on_target": true
+  },
+  {
+   "declared": "G-PRICE-LAWS",
+   "died_at": "G-PRICE-LAWS",
+   "mutant": "MUT-PRICE-LAW",
+   "on_target": true
+  },
+  {
+   "declared": "G-PRICE-VERDICT",
+   "died_at": "G-PRICE-VERDICT",
+   "mutant": "MUT-PRICE-VERDICT",
+   "on_target": true
+  },
+  {
+   "declared": "G-LONE-SECTOR",
+   "died_at": "G-LONE-SECTOR",
+   "mutant": "MUT-LONE",
+   "on_target": true
+  },
+  {
+   "declared": "G-WALL-EXTENSION",
+   "died_at": "G-WALL-EXTENSION",
+   "mutant": "MUT-WALL-EXT",
+   "on_target": true
+  },
+  {
+   "declared": "G-VERDICT-RECON",
+   "died_at": "G-VERDICT-RECON",
+   "mutant": "MUT-VERDICT",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-CLAIMS",
+   "died_at": "G-PAPER-CLAIMS",
+   "mutant": "MUT-PAPER-CLAIM",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-COVERAGE",
+   "died_at": "G-PAPER-COVERAGE",
+   "mutant": "MUT-PAPER-NUM",
+   "on_target": true
+  },
+  {
+   "declared": "G-LEGS",
+   "died_at": "G-LEGS",
+   "mutant": "MUT-LEGS",
+   "on_target": true
+  },
+  {
+   "declared": "G-AUT",
+   "died_at": "G-AUT",
+   "mutant": "MUT-AUT",
+   "on_target": true
+  },
+  {
+   "declared": "G-DRIVEN-EVENTS",
+   "died_at": "G-DRIVEN-EVENTS",
+   "mutant": "MUT-DRIVEN",
+   "on_target": true
+  },
+  {
+   "declared": "G-SEAM-CONFINED-PRICE",
+   "died_at": "G-SEAM-CONFINED-PRICE",
+   "mutant": "MUT-SEAM-CONFINED",
+   "on_target": true
+  },
+  {
+   "declared": "G-WALL-SEAMCONFINED",
+   "died_at": "G-WALL-SEAMCONFINED",
+   "mutant": "MUT-WALL-SEAM",
+   "on_target": true
+  },
+  {
+   "declared": "G-WALL-SCAN",
+   "died_at": "G-WALL-SCAN",
+   "mutant": "MUT-WALL-SCAN",
+   "on_target": true
+  },
+  {
+   "declared": "G-PAPER-PRESENT",
+   "died_at": "G-PAPER-PRESENT",
+   "mutant": "MUT-PAPER-ABSENT",
+   "on_target": true
+  },
+  {
+   "declared": "G-UNQUANTISED",
+   "died_at": "G-UNQUANTISED",
+   "mutant": "MUT-UNQUANTISED",
+   "on_target": true
+  }
+ ],
+ "paper": {
+  "claims": 162,
+  "fenced_blocks": 8,
+  "numerals": 1018,
+  "path": "v14/paper-40-sec2.md",
+  "polarity": 5,
+  "rows": 162,
+  "spelled": [
+   "twenty-two"
+  ]
+ },
+ "pin": {
+  "ledger": 332,
+  "paper_number": 40,
+  "path": "v14/note-sec2-pin.md"
+ },
+ "price": {
+  "gluings": 45010,
+  "populations": {
+   "(0, 0)": 1,
+   "(1, 0)": 81,
+   "(2, 0)": 1134,
+   "(2, 1)": 1458,
+   "(3, 0)": 2970,
+   "(3, 1)": 11664,
+   "(3, 2)": 23328,
+   "(3, 3)": 4374
+  },
+  "rows": [
+   {
+    "composite": "54",
+    "currency": "the record (division incidences)",
+    "excess": "none",
+    "law": "27 + 27",
+    "lone_sector": 27,
+    "verdict": "IGNORES"
+   },
+   {
+    "composite": "18 - k",
+    "currency": "the carrier (site objects)",
+    "excess": "k fewer",
+    "law": "9 + 9 - k",
+    "lone_sector": 9,
+    "verdict": "FAVOURS"
+   },
+   {
+    "composite": "54 - d",
+    "currency": "the link objects",
+    "excess": "d fewer",
+    "law": "27 + 27 - d",
+    "lone_sector": 27,
+    "verdict": "FAVOURS"
+   },
+   {
+    "composite": "54 + 2d",
+    "currency": "the geometry's budget (counts over cells)",
+    "excess": "2d more",
+    "law": "27 + 27 + 2d",
+    "lone_sector": 27,
+    "verdict": "PENALIZES"
+   },
+   {
+    "composite": "4k",
+    "currency": "the declaration (independent numbers)",
+    "excess": "4k more",
+    "law": "0 + 0 + 4k",
+    "lone_sector": 0,
+    "verdict": "PENALIZES"
+   }
+  ],
+  "violations": 0
+ },
+ "provenance": [
+  {
+   "declared": "bfe5c66be9ec",
+   "id": "A-PIN",
+   "ok": true,
+   "path": "v14/note-sec2-pin.md",
+   "sha256_12": "bfe5c66be9ec",
+   "why": "THIS UNIT'S PIN (ledger #332): the three measurements, the outcome vocabulary, the walls."
+  },
+  {
+   "declared": "7a82ffe7168a",
+   "id": "A-ADJ",
+   "ok": true,
+   "path": "v14/note-sec-adjudication.md",
+   "sha256_12": "7a82ffe7168a",
+   "why": "THE #322 SEC ADJUDICATION: binding context -- SEAM-CONFINED COMPOSITIONALITY, the 12-arena collapse, the alignment law, FORCED 16 of 16 at the shared rule."
+  },
+  {
+   "declared": "50bb81e67942",
+   "id": "A-P19",
+   "ok": true,
+   "path": "v14/paper-19-r3-weld.md",
+   "sha256_12": "50bb81e67942",
+   "why": "PAPER-19 (terminal): the three reading legs this unit relaxes, and the single-sector weld with fibers 1/1/1."
+  },
+  {
+   "declared": "6df0db523d32",
+   "id": "A-SMU",
+   "ok": true,
+   "path": "v14/paper-27-smu.md",
+   "sha256_12": "6df0db523d32",
+   "why": "SMU (terminal): the conserved-price frame -- a declaration supplies a measured number of independent numbers -- which M3 evaluates on composites."
+  },
+  {
+   "declared": "0a08203b7e99",
+   "id": "A-LOR",
+   "ok": true,
+   "path": "v14/paper-30-lor.md",
+   "sha256_12": "0a08203b7e99",
+   "why": "LOR (terminal): the refinement laws and paper-04's ceiling law, which M1's third selection criterion is read through."
+  }
+ ],
+ "schema": "isp/v14/sec2/1",
+ "schema_version": 1,
+ "seal_manifest": {
+  "n_sealed": 25,
+  "n_unsealed": 9,
+  "sealed": {
+   "anchors": "a715055369644ac15834bc3f85282e37418c5336aacc3604a50082ba9aa2760b",
+   "arena_collapse": "271fabbd328deb85e5d48e92c5090aea3ba42bd079eabdf3d22aa1cff8319479",
+   "blindness": "2449b6fe27650e5c3b79a3e7259574f175dc659875b5cfc915fc91ad7c8be082",
+   "census": "6bdd2496681bb7017b308016cdb96535174d8f631cdee58e63684b7b2075bb5d",
+   "choices": "bcf6f48ec546ccbc3c801cc8435902422284962668dde33a50e229dbad179c70",
+   "cited_not_read": "0006fb313dd2f077acffbc3b244ab9bc1d0f6b3683af3595442bd73d809bbb20",
+   "completion_lattice": "f92934b891f1513038ec7f3624171dc8e2c6e2625e847f11f376928689b4d73e",
+   "coverage": "6f50e9397c088a28d4c21860379051813e5210a36868dc2fd316407206147ef8",
+   "extension_grid": "e8cba42c2b610d599354a94cc9bfe6e2c53307d52c0571bd487455810d1bf689",
+   "gluing_totals": "8b549e492e1ba2b8e17a0101907f76fe39c0f462fc9e0893f801d2c6fbd8f7a0",
+   "group_census": "ffae5b1b078d2e123297c769570030557bc8eb5559f20120471fdb0770dfb678",
+   "inventories": "ec6db5f9ebcc9a5c6f10f0b41046048380752c92b6e752d170c14afe4f05a401",
+   "lawfulness": "9e1c5f7d271afaf47c052499d52630623d579bc47e3c046c9fd4cf2b980596f2",
+   "paper": "5efd4b6c0786d70ba345fd4b0bccb46964d3e32fef743cce513e156b8a16946a",
+   "price": "861af5f0e33cce964a14ee79bc9a68ba27b8ec1bd2fc52d7d868efa76046d701",
+   "provenance": "48e8d5ff86796e7ff119a93a6beaf1525d4037985588ceff61d3e25f06442187",
+   "seam_census": "deff60ebf153a922b15a7a06e554f20758324cd76bb2e903bbdf2cf26147f3e5",
+   "seam_selection": "56576e76c885025eeb4a99e2c2b8c96412897ba294c7c810fafe05186daf3ac8",
+   "sec_values": "0befe8f05667c26e84d45b15d38c049e9182338d967f4e858da93b26dbc81ab1",
+   "sec_witness": "9317f55207c614acc046ef880cfc8e2a72cebb1676bea935fabbb05f5701ef34",
+   "standards": "9dcc3e4c6136a34bddaf03adb7c3ff896b34ecb282359ab72ece578aa9136241",
+   "totals": "0cb4bb1f657f5d63788e64912b2fb2ba8fbb5584aff18289fb630cd596f73443",
+   "unquantised": "01bb3597c830c5c83f8d6235398ea6b83c8f38b42cb99858e157a61b32e838c1",
+   "verdict": "bde6f11f9576effaae6ea8300eeefb2325e05c466af277a45765e93a33069fc3",
+   "window": "d2b4efe3c0e721f850250133569e810c991c76df152a922822d9e1cbd2c79de9"
+  },
+  "unsealed": {
+   "ledger": "the gate ledger is the sealing mechanism itself and is chained instead",
+   "ledger_chain": "the chain head of the ledger",
+   "mutant_sweep": "written by the sweep harness after the last gate; bound by G-SWEEP-EXECUTED",
+   "pin": "the frozen pin's own coordinates",
+   "schema": "a constant of the instrument",
+   "schema_version": "a constant of the instrument",
+   "seal_manifest": "the manifest cannot seal itself",
+   "swept": "set by the harness that runs the sweep",
+   "unit": "a constant of the instrument"
+  }
+ },
+ "seam_census": {
+  "missing_vectors": [
+   "(2, 2, 2)"
+  ],
+  "populations": {
+   "((1, 1, 1), (1, 1, 1))": 42606,
+   "((1, 1, 1), (1, 1, 2))": 7533,
+   "((1, 1, 1), (1, 2, 1))": 7533,
+   "((1, 1, 1), (1, 2, 2))": 486,
+   "((1, 1, 1), (2, 1, 1))": 7533,
+   "((1, 1, 1), (2, 1, 2))": 486,
+   "((1, 1, 1), (2, 2, 1))": 486,
+   "((1, 1, 2), (1, 1, 1))": 7533,
+   "((1, 1, 2), (1, 1, 2))": 3483,
+   "((1, 1, 2), (1, 2, 1))": 3483,
+   "((1, 1, 2), (1, 2, 2))": 486,
+   "((1, 1, 2), (2, 1, 1))": 3483,
+   "((1, 1, 2), (2, 1, 2))": 486,
+   "((1, 1, 2), (2, 2, 1))": 486,
+   "((1, 2, 1), (1, 1, 1))": 7533,
+   "((1, 2, 1), (1, 1, 2))": 3483,
+   "((1, 2, 1), (1, 2, 1))": 3483,
+   "((1, 2, 1), (1, 2, 2))": 486,
+   "((1, 2, 1), (2, 1, 1))": 3483,
+   "((1, 2, 1), (2, 1, 2))": 486,
+   "((1, 2, 1), (2, 2, 1))": 486,
+   "((1, 2, 2), (1, 1, 1))": 486,
+   "((1, 2, 2), (1, 1, 2))": 486,
+   "((1, 2, 2), (1, 2, 1))": 486,
+   "((1, 2, 2), (1, 2, 2))": 162,
+   "((1, 2, 2), (2, 1, 1))": 486,
+   "((1, 2, 2), (2, 1, 2))": 162,
+   "((1, 2, 2), (2, 2, 1))": 162,
+   "((2, 1, 1), (1, 1, 1))": 7533,
+   "((2, 1, 1), (1, 1, 2))": 3483,
+   "((2, 1, 1), (1, 2, 1))": 3483,
+   "((2, 1, 1), (1, 2, 2))": 486,
+   "((2, 1, 1), (2, 1, 1))": 3483,
+   "((2, 1, 1), (2, 1, 2))": 486,
+   "((2, 1, 1), (2, 2, 1))": 486,
+   "((2, 1, 2), (1, 1, 1))": 486,
+   "((2, 1, 2), (1, 1, 2))": 486,
+   "((2, 1, 2), (1, 2, 1))": 486,
+   "((2, 1, 2), (1, 2, 2))": 162,
+   "((2, 1, 2), (2, 1, 1))": 486,
+   "((2, 1, 2), (2, 1, 2))": 162,
+   "((2, 1, 2), (2, 2, 1))": 162,
+   "((2, 2, 1), (1, 1, 1))": 486,
+   "((2, 2, 1), (1, 1, 2))": 486,
+   "((2, 2, 1), (1, 2, 1))": 486,
+   "((2, 2, 1), (1, 2, 2))": 162,
+   "((2, 2, 1), (2, 1, 1))": 486,
+   "((2, 2, 1), (2, 1, 2))": 162,
+   "((2, 2, 1), (2, 2, 1))": 162
+  },
+  "seam_types": 49,
+  "shared_sites": 132273,
+  "vectors": [
+   "(1, 1, 1)",
+   "(1, 1, 2)",
+   "(1, 2, 1)",
+   "(1, 2, 2)",
+   "(2, 1, 1)",
+   "(2, 1, 2)",
+   "(2, 2, 1)"
+  ]
+ },
+ "seam_selection": {
+  "admissibility_implies_positivity_at": 13,
+  "aligned_after_crossing": 8,
+  "aligned_lattice": 31,
+  "determinant_selects_the_direct_sum_at": 49,
+  "direct_sum_after_crossing": false,
+  "kernel_dim": 4,
+  "min_positive_definite_completions": 31,
+  "minus_argmin": 8,
+  "plus_argmin": 8,
+  "positivity_selects": false,
+  "price_selects": false,
+  "rank": 6,
+  "refinement_ceiling": 0,
+  "refinement_empty_at": 48,
+  "refinement_singleton_at": 1,
+  "seam_types": 49,
+  "unknowns": 10
+ },
+ "sec_values": [
+  {
+   "consumer": "G-CENSUS",
+   "declared": 45010,
+   "id": "V-TOTAL",
+   "key": "gluing_totals.total",
+   "ok": true,
+   "reproduced": 45010
+  },
+  {
+   "consumer": "G-CENSUS",
+   "declared": 16,
+   "id": "V-TYPES",
+   "key": "gluing_totals.types",
+   "ok": true,
+   "reproduced": 16
+  },
+  {
+   "consumer": "G-CENSUS",
+   "declared": 4186,
+   "id": "V-DFREE",
+   "key": "gluing_totals.doubled_free_total",
+   "ok": true,
+   "reproduced": 4186
+  },
+  {
+   "consumer": "G-CENSUS",
+   "declared": 1,
+   "id": "V-BYK0",
+   "key": "gluing_totals.by_k.0",
+   "ok": true,
+   "reproduced": 1
+  },
+  {
+   "consumer": "G-CENSUS",
+   "declared": 81,
+   "id": "V-BYK1",
+   "key": "gluing_totals.by_k.1",
+   "ok": true,
+   "reproduced": 81
+  },
+  {
+   "consumer": "G-CENSUS",
+   "declared": 2592,
+   "id": "V-BYK2",
+   "key": "gluing_totals.by_k.2",
+   "ok": true,
+   "reproduced": 2592
+  },
+  {
+   "consumer": "G-CENSUS",
+   "declared": 42336,
+   "id": "V-BYK3",
+   "key": "gluing_totals.by_k.3",
+   "ok": true,
+   "reproduced": 42336
+  },
+  {
+   "consumer": "G-CENSUS",
+   "declared": 1134,
+   "id": "V-DFK2",
+   "key": "gluing_totals.doubled_free_by_k.2",
+   "ok": true,
+   "reproduced": 1134
+  },
+  {
+   "consumer": "G-CENSUS",
+   "declared": 2970,
+   "id": "V-DFK3",
+   "key": "gluing_totals.doubled_free_by_k.3",
+   "ok": true,
+   "reproduced": 2970
+  },
+  {
+   "consumer": "G-PRICE-LAWS",
+   "declared": 54,
+   "id": "V-STERILE-PAIRS",
+   "key": "sterility.pairs",
+   "ok": true,
+   "reproduced": 54
+  },
+  {
+   "consumer": "G-PRICE-LAWS",
+   "declared": 18,
+   "id": "V-STERILE-CARR",
+   "key": "sterility.carriers",
+   "ok": true,
+   "reproduced": 18
+  },
+  {
+   "consumer": "G-LONE-SECTOR",
+   "declared": 1296,
+   "id": "V-SECTOR-AUT",
+   "key": "sterility.sector_aut",
+   "ok": true,
+   "reproduced": 1296
+  },
+  {
+   "consumer": "G-AUT",
+   "declared": 62208,
+   "id": "V-K3-AUT",
+   "key": "contrast.k3_aligned_new_structure.aut",
+   "ok": true,
+   "reproduced": 62208
+  },
+  {
+   "consumer": "G-AUT",
+   "declared": 15,
+   "id": "V-K3-CARR",
+   "key": "contrast.k3_aligned_new_structure.carriers",
+   "ok": true,
+   "reproduced": 15
+  },
+  {
+   "consumer": "G-PRICE-LAWS",
+   "declared": 12,
+   "id": "V-SEAM-UNDET",
+   "key": "contrast.k3_aligned_new_structure.seam_undetermined_entries",
+   "ok": true,
+   "reproduced": 12
+  },
+  {
+   "consumer": "G-SEAM-RANK",
+   "declared": 6,
+   "id": "V-SEAM-RANK",
+   "key": "seam.0.rank",
+   "ok": true,
+   "reproduced": 6
+  },
+  {
+   "consumer": "G-SEAM-RANK",
+   "declared": 4,
+   "id": "V-SEAM-KER",
+   "key": "seam.0.kernel_dim",
+   "ok": true,
+   "reproduced": 4
+  },
+  {
+   "consumer": "G-SEAM-RANK",
+   "declared": 10,
+   "id": "V-SEAM-UNK",
+   "key": "seam.0.unknowns",
+   "ok": true,
+   "reproduced": 10
+  },
+  {
+   "consumer": "G-DRIVEN-EVENTS",
+   "declared": 1,
+   "id": "V-CROSS-NEW",
+   "key": "cross_sector.0.new_pairs",
+   "ok": true,
+   "reproduced": 1
+  },
+  {
+   "consumer": "G-DRIVEN-EVENTS",
+   "declared": 1,
+   "id": "V-CROSS-FOR",
+   "key": "cross_sector.0.foreign_pairs",
+   "ok": true,
+   "reproduced": 1
+  },
+  {
+   "consumer": "G-DRIVEN-EVENTS",
+   "declared": 2,
+   "id": "V-CROSS2-NEW",
+   "key": "cross_sector.2.new_pairs",
+   "ok": true,
+   "reproduced": 2
+  },
+  {
+   "consumer": "G-DRIVEN-EVENTS",
+   "declared": 2,
+   "id": "V-CROSS2-FOR",
+   "key": "cross_sector.2.foreign_pairs",
+   "ok": true,
+   "reproduced": 2
+  }
+ ],
+ "sec_witness": {
+  "cross_counts_below_one": [
+   "(0, 1, 1)",
+   "(0, 2, 1)",
+   "(2, 1, 1)",
+   "(2, 2, 1)"
+  ],
+  "declared_value": "-2",
+  "lattice_admissible": false,
+  "value": "-2"
+ },
+ "standards": {
+  "arena": {
+   "arena_axes": "the five declared window axes: target, reading, count leg, and (held fixed here) carrier and link individuation",
+   "boundary": "the 54 (chart, site, link) cells of two copies of AG(2, 3) with links (1, 0), (0, 1) and (1, 1), plus the declared cross links of each extension",
+   "family": "the 45,010 gluings in 16 combinatorial types on 12 union arenas; the 455 three-actor groups of the k = 3 aligned union in 9 orbits",
+   "law": "the co-division relation of the saturating arrangement, I7's readout (a count is the squared length of its link direction), HA's admissibility, paper-04's ceiling law",
+   "provenance": "5 sources read at pinned shas; the 4 #301 SEC objects declared at commit 88e4a83 and bound by reproduction",
+   "state": "the completion of the seam's four undetermined entries"
+  },
+  "exact_arithmetic": "fractions.Fraction and Python ints only",
+  "measure": "COUNTING-ONLY: no measure is declared on the gluing family, the group family or the placement family, and every ratio here is a count over an exhaustive enumeration with its denominator beside it (E-24)"
+ },
+ "swept": true,
+ "totals": {
+  "anchors": 8,
+  "gates": 42,
+  "gluings": 45010,
+  "mutants": 38,
+  "seam_types": 49,
+  "sources_read": 5
+ },
+ "unit": "SEC-2",
+ "unquantised": [
+  {
+   "counts": [
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "cross_entry": "1/3",
+   "in_the_half_integer_lattice": false,
+   "posdef": true,
+   "reproduces_the_six_counts": true
+  },
+  {
+   "counts": [
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "cross_entry": "2/3",
+   "in_the_half_integer_lattice": false,
+   "posdef": true,
+   "reproduces_the_six_counts": true
+  }
+ ],
+ "verdict": [
+  "SEC2-SEAM-DECLARATION-IRREDUCIBLE-[49 SEAM TYPES OVER 132273 SHARED SITES; THE COMPLETION SPACE IS 4-PARAMETER AT EVERY ONE, RANK 6 ON 10 BY THE CHART ALONE; AT THE ALL-SIMPLE SEAM 31 COMPLETIONS ASSIGN ADMISSIBLE COUNTS TO EVERY CROSS DIRECTION AND ALL 31 ARE POSITIVE DEFINITE] -- POSITIVITY SELECTS NOTHING; THE CONVENTION-FREE PRICE IS CONSTANT ON THE WHOLE SPACE AND THE ONE-SIDED READING'S MINIMISER MOVES WITH THE CONVENTION; REFINEMENT STABILITY IS EMPTY AT THIS RECORD BY THE CEILING LAW (MIN COUNT 1, CEILING 0) AND, GRANTED AS A HYPOTHETICAL, IS EMPTY AT 48 OF 49 SEAM TYPES AND SELECTS THE DIRECT SUM AT THE 49TH -- THE ONE PRINCIPLE THAT DOES SELECT, MAXIMUM DETERMINANT, IS NAMED AND NOT LICENSED",
+  "SEC2-GLUING-EVENT-LAWFUL-AT-THE-MATCHED-CROSS-LINK-EXTENSION-[THE WINDOW: TARGET x READING x COUNT LEG, 30 CELLS, CARRIER AND LINK INDIVIDUATION HELD AT THE DELIVERED VALUES; 455 THREE-ACTOR GROUPS IN 9 ORBITS, 288 OF THEM SEAM-SPANNING AND EVERY ONE DEAD AT THE DELIVERED TARGET] -- LAWFUL AT 216 OF 288 ONCE THE TARGET DECLARES THE CROSS LINKS THE EVENT REALISES, BOTH DRIVEN SPECIFICATIONS AMONG THEM, AND MOTIVATED AT 0 OF 216: THE PRICE IS THE WELD ITSELF, FREE ITEMS 0 -> 3 AT THE SHARED-SEEDED CROSSING AND 0 -> 2 AT THE B-SEEDED ONE, WHILE THE CROSSING TAKEN ALONE COSTS NOTHING AND NO THREE-ACTOR GROUP CAN DELIVER IT ALONE",
+  "SEC2-COMPOSITE-PRICE-SPLITS-[FIVE CURRENCIES ON ALL 45010 COMPOSITES AGAINST THE LONE SECTOR, ZERO VIOLATIONS: RECORD 54 = 27 + 27 IGNORES COMPOSITION; CARRIERS 18 - k AND LINKS 54 - d FAVOUR IT; THE GEOMETRY'S BUDGET 54 + 2d AND THE DECLARATION PRICE 4k PENALIZE IT] -- AND THE EXCESS IS SEAM-CONFINED: EVERY UNSHARED SITE'S FORM IS DETERMINED EXACTLY AS IN A LONE SECTOR AND THE WHOLE SURCHARGE SITS ON THE SHARED SITES, FOUR NUMBERS EACH",
+  "SEC2-THE-EXTENDED-DICTIONARY-IS-BLIND-AT-ONE-CROSSING-AND-SIGHTED-AT-TWO-[36 PLACEMENTS IN 1 ARENA AT ONE CROSSING AND 36 OF 36 ADMITTED BY THE DETECTOR; 630 PLACEMENTS IN 5 ARENAS AT TWO AND 108 OF 630 ADMITTED; 7140 IN 15 AT THREE] -- SO THE PLACEMENT OF A SINGLE CROSS LINK IS A GAUGE AND NOT A DATUM, AND THE RECORD-FITTED OBJECTION DOES NOT BITE AT ONE CROSSING BECAUSE EVERY PLACEMENT GIVES THE SAME ARENA"
+ ],
+ "window": {
+  "axes": [
+   {
+    "axis": "TARGET",
+    "delivered": "NONE",
+    "members": [
+     "NONE",
+     "ONE-AT-ONE-SEAM",
+     "ONE-AT-EVERY-SEAM",
+     "SEAM-MAP",
+     "FULL-CROSS"
+    ]
+   },
+   {
+    "axis": "READING",
+    "delivered": "EMBEDDING and QUOTIENT",
+    "members": [
+     "EMBEDDING",
+     "QUOTIENT",
+     "LAX"
+    ]
+   },
+   {
+    "axis": "COUNT LEG",
+    "delivered": "POSITIVE",
+    "members": [
+     "POSITIVE",
+     "NON-NEGATIVE"
+    ]
+   },
+   {
+    "axis": "CARRIER",
+    "delivered": "BARE, held fixed",
+    "members": [
+     "BARE"
+    ]
+   },
+   {
+    "axis": "LINK INDIVIDUATION",
+    "delivered": "SIMPLE, held fixed",
+    "members": [
+     "SIMPLE"
+    ]
+   }
+  ],
+  "outside_the_window": [
+   "the record itself",
+   "the committed grammar",
+   "the actor set",
+   "the arrangement",
+   "I7's readout law n = |l|^2"
+  ]
+ }
+}

@@ -11314,3 +11314,72 @@ replaced (paper-20 cited; m=2-at-AG(2,2) the successor
 test); windows declared; K3's ten whole; the #267 sweep
 OWED as its own unit.  Repair workers launch next; the
 board runs four repairs + SEC-2.
+
+## 2026-08-15 — SEC-2 (PAPER-40) DELIVERED, COMMITTED AS-IS: THE SEAM IRREDUCIBLY DECLARED; THE GLUING EVENT LAWFUL AT THE MATCHED EXTENSION (216/288, MOTIVATED AT 0); THE COMPOSITE PRICE SPLITS FIVE WAYS SEAM-CONFINED; ONE CROSSING IS GAUGE, TWO ARE DATA (v14 LEDGER #350)
+
+**Files:** paper-40-sec2.md aeeeb6757715; sec2_exact.py
+4cb4011cfa05; sec2_output.txt 57c98674b479;
+sec2_receipt.json b66fdfaacc33.  CANDIDATE UNTIL
+ADJUDICATION.  SEC inheritance bound by REPRODUCTION (22
+values, 0 mismatches vs the committed receipt) + a
+--verify-sec mode against git-shown #301 objects (4/4).
+
+**M1 — SEAM-DECLARATION-IRREDUCIBLE:** 49 seam types over
+132,273 shared sites ((2,2,2) never occurs); kernel 4
+everywhere, RHS-independent; 31–275 admissible completions
+per type, 31–267 positive definite.  POSITIVITY SELECTS
+NOTHING (at 13 of 49 admissibility implies it); the
+convention-free price CONSTANT on the whole space (the
+one-sided minimiser moves with the sign convention);
+refinement stability EMPTY by the ceiling law (hypothetical
+grant: empty at 48/49, direct sum at the 49th).  **Named
+not licensed: MAXIMUM DETERMINANT selects the direct sum
+uniquely at 49/49 (Fischer).**  Sharpenings of SEC: its
+indefinite witness is OUTSIDE the admissible lattice; and
+**the one driven crossing cuts the aligned lattice 31 → 8
+and EXCLUDES THE DIRECT SUM — the completion SEC declared
+is the one the measured crossing forbids.**
+
+**M2 — GLUING-EVENT-LAWFUL-AT-THE-MATCHED-CROSS-LINK-
+EXTENSION (the heart):** the wall generalised — ALL 288
+seam-spanning three-actor groups dead at the delivered
+target (54 non-crossing controls ALIVE); at the
+ONE-AT-ONE-SEAM extension (one declared cross link, all
+three delivered legs intact) **216 of 288 become lawful —
+both driven specifications among them — and MOTIVATED at
+0 of 216: the price is the weld itself (free items 0→3 /
+0→2), NOT conservative (the union without the crossing is
+STRUCT-DEAD at that target).**  THE MECHANISM: the
+crossing ALONE is free (welds with zero free items); a
+conflict group's other two incidences are what un-weld —
+**"the motivated crossing exists as a relation and is
+unreachable as an event."**  The 72 that stay dead also
+open a within-sector pair.  LAX is lawful everywhere by
+ceasing to be a test; ONE-AT-EVERY-SEAM/SEAM-MAP/
+FULL-CROSS unlawful under EMBEDDING; the count leg not an
+independent axis (QUOTIENT+POSITIVE ≡ EMBEDDING on
+liveness, dying differently — paper-19's signature).
+
+**M3 — COMPOSITE-PRICE-SPLITS (all 45,010, zero
+violations):** record IGNORES (54 = 27+27); carriers
+(18−k) and links (54−d) FAVOUR; the geometry budget
+(54+2d) and the declaration price (4k, SMU's currency)
+PENALIZE — **and the whole surcharge is SEAM-CONFINED**
+(every unshared site exactly as in a lone sector).
+
+**M4 — BLIND-AT-ONE-SIGHTED-AT-TWO:** 1 crossing → 36
+placements, ONE arena, 36/36 admitted (the placement of a
+single cross link is a GAUGE, not a datum); 2 → 630
+placements, 5 arenas, 108/630 admitted; 3 → 7,140 in 15.
+The record-fitted objection cannot bite at one crossing.
+
+**Instrument:** 42 gates; 38/38 mutants on target in-run;
+read set gated at the I/O layer; 162 claims ⟷ 162 rows as
+a multiset BOTH WAYS; 1,018 numerals; byte ×2 off-tree
+git-less at two seeds; selftest 8/8 anchors dying
+hash-unchanged; three mis-targeted falsifiers repaired
+in-construction and disclosed; window disclosures for the
+panel (extension census at ONE union arena k=3 aligned;
+grammar not re-driven; the blindness detector not run at
+three crossings).  **Orchestrator battery next; panel
+after green.**
