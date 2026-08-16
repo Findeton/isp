@@ -1026,3 +1026,99 @@ lattice it lives on.
 
 **v15 terminals: TWO.  Zero false delivered physics
 numbers across both eras.**
+
+## 2026-08-16 — ARITY REPAIR DELIVERED AND COMMITTED (v15 LEDGER #38)
+
+The repair worker executed every #32 order and both
+addenda, and closed 26 minors.  Committed as-is at
+9d35686 (paper 0d677a4cbe97 / code c145fb1ab69c / output
+a51deea97d6d / receipt e90a41eed544; 42 gates, one ledger
+head 90dd43d9c7019a82 in both artifacts).  DISCLOSURE:
+the commit is UNSIGNED — GPG pinentry cannot prompt in a
+non-interactive session; re-signing is the user's option.
+
+The orders, as landed: the a-not-equal-L qualifier
+carried by BOTH counters everywhere (first rung = event
+size at 2 of 8 rows and at 0 of the discriminating rows);
+all EIGHT walls (seven + W3) with live licence legs —
+bare-negation and hedge licences REFUSED at construction,
+18 plants dead twice (with and without a negating
+clause), 48 controls caught; the period-regex fixed in
+all five numeral scanners plus a spelled-numeral gate
+(one declared exclusion: the English article); the
+aggregate re-scored rule-relatively with every rule
+published (the unit's own closed form as third uniform
+rule: 1 LAW-IN-A / 2 NEEDS-3 / 4 BREAKS — one word moves,
+disclosed); 2(q-1) read twice (field order: parent floor
+reproduced; event size: agree 1 of 4 — an a-dependence
+disclosure); both pre-registrations digest-sealed with
+per-segment outcome/complement/feasibility/CONTINGENCY (7
+of 9 contingent, the 2 non-contingent published as
+declarations' consequences); G-VERDICT-EQUALITY made
+positional over a field list (156 numerals, 83 declared
+fields, 72 independent resolvers; all six direction flips
+die).  The lifts: K2's modulus theorem
+nL/gcd(nL,n)=L — scoped per #33 to the budget-reading
+ladder modulus, the coin/phase modulus explicitly
+field-carried; K1's K(3,3,3) closed form (15 carriers /
+54 realised pairs FORCED, the 36 packings forced not
+searched); the certifiable a=2 floor (witness + refusals
+12-vs-8 and 11-vs-10); m1 closed by an exact certificate,
+and the 21-minute unrestricted brute-force BFS returned
+the IDENTICAL 6|5|5|4.
+
+The worker's own battery: 42/42 gates; byte reproduction
+x4 (seeds 1/99999/7/424242, alien CWDs, git-less
+artifact-deleted trees); 42/42 recipes dead at their
+declared gates out of harness; 34/34 panel injections
+refused with artifacts unchanged in every case (INJ-11
+now dies at T-SEAL-PROMOTION with the tree INTACT — the
+forged-artifact residue is gone; the two collateral
+deaths proven real kills at their own gates directly);
+5/5 write-nothing modes tree-hash-clean; 21/21 argv
+rejections at rc 2.  **Physics: 456 leaves compared
+against the pristine receipt — 0 moved.**  Every
+transport word identical (statements 4 LAW-IN-A / 2
+BREAKS; numerals 0/2/5).
+
+
+## 2026-08-16 — ARITY IS TERMINAL: v15 TERMINAL THREE (v15 LEDGER #39)
+
+Orchestrator battery all green on the committed blob
+(mirror, git-less: plain run from DELETED artifacts
+byte-identical to committed, byte x2, PYTHONHASHSEED
+90210 invariant; unknown flag and unknown mutant both rc
+2; selftest plants a corrupted verbatim anchor and the
+chain refuses at G-VERBATIM with artifacts unchanged;
+MUT-FIDELITY dead at G-CONSTRUCTOR-FIDELITY, its declared
+gate; committed artifacts untouched by every probe).
+
+STATUS row appended; registry seal-block updated in this
+commit: Q13 SEALED (the a-sweep exists at fixed n=9,
+extension-family scope), Q17 SEALED-NEGATIVE (no
+pre-registered principle selects a=3 — the conditional
+does), Q19 SEALED (a=q assumption-selected through the
+subgroup lattice 1|3|9), Q22 upgraded (the ladder modulus
+a THEOREM: nL/gcd(nL,n)=L, mod-a iff a=L — the mod-3
+story is at least TWO independent mechanisms), Q12's
+arity leg updated.
+
+The event size is a dial the committed theory never
+turns: turning it BUILDS A DIFFERENT THEORY (the round
+stops being a partition, idle actors appear, the
+crystallization clock re-times itself 6|5|5|4), and
+nothing in the corpus selects three except the arena
+whose subgroup lattice offers nothing else nontrivial.
+
+**v15 terminals: THREE.  Zero false physics numbers
+REMAIN in any terminal paper.**  (Wording corrected at
+the seventh external review's catch, superseding the
+#35/#37 shorthand "zero false delivered numbers across
+both eras": the eras' HISTORY records three false
+delivered numerals — SEC-2's typed §4.2 column, HOR's
+four typed offsets, DISC's superseded falsifier price —
+every one caught by review and repaired to truth
+in-paper before its terminal.  The claim that survives
+unqualified: zero false COMPUTED-OUTPUT numbers, and
+zero false numbers of any kind in the sealed corpus.)
+

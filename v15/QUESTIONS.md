@@ -1,4 +1,5 @@
 # v15 QUESTION REGISTRY
+**SEAL BLOCK (v15 #39, ARITY terminal):** Q13 ANSWERED-SEALED (a swept 2|3|4|5 at fixed n=9; extension-family scope — the packing rule is the unit's own declaration, idle actors 1|0|1|4). Q17 ANSWERED-SEALED-NEGATIVE (no pre-registered principle; 3 of 5 implicit constructor principles admit only a=3; the licensed form a conditional — the assumptions do the selecting). Q19 ANSWERED-SEALED (a=q assumption-selected through the subgroup lattice 1|3|9; not an independent declaration at this arena). Q22 upgraded ANSWERED-PARTIAL (the ladder modulus a THEOREM: nL/gcd(nL,n)=L at 320 arena pairs, mod-a iff a=L; coin field-derived; at least two independent mechanisms CONFIRMED). Q12 arity leg updated.
 **SEAL BLOCK (v15 #37, DISC terminal):** Q147–Q150 ANSWERED-SEALED at the ablation forms (backreaction non-inert; the tick a coin-order fiber; the falsifier computational at shots 5,186). Q155 ANSWERED-SEALED (6-of-9 reproduced by the record-free null; the memory-bearing null = DISC-2). Q21 upgraded (m=q forced and observable at 5/5 declared moduli, construction-dependent).
 **SEAL BLOCK (v15 #35, THEORY-CONTRACT terminal):** Q2 ANSWERED-SEALED (state = 2 components + 1 ensemble bookkeeping, machine-at-fixed-background scope; reading-relative). Q3 ANSWERED-SEALED (the 23-row census, each backed). Q6/Q9 SEALED-PARTIAL (the invariance census with gauge withheld; the quotient 5,784→17 / 36→12 with the object-shift disclosed). Q10/Q24 ANSWERED-SEALED (a FAMILY: 23 declarations, 15 free, 0 law-selected). Q58 ANSWERED-SEALED (identifiability-within-a-generative-class; 5 inputs → 1/4; conditional criterion). Q1/Q4/Q5 SEALED-PARTIAL (cast unique in the triangular class; the full-dynamics fixed point open → ECC). — the user's 156 questions, verbatim, with exploration status
 Statuses: UNEXPLORED · PARTIAL(cite) · ANSWERED(cite, scope) · Every status change cites its ledger entry and lands in the same commit as the terminal that earns it. Notation: n arena actors · a event actors · q field/chart order · L link directions · R depth · d dimension.
@@ -17,17 +18,17 @@ Statuses: UNEXPLORED · PARTIAL(cite) · ANSWERED(cite, scope) · Every status c
 
 ## II. The numbers three and nine → ARITY (+NDEP successors)
 11. If every literal 3 and 9 is removed from the constructors, what law—if any—reconstructs either number uniquely? — UNEXPLORED (constructors carry literals)
-12. Can n,a,q,L, and spatial dimension d be varied independently? — PARTIAL (n: NDEP; L: NDEP fixed-n sweep; a,q,d never)
-13. Can n=9 be held fixed while a=2,3,4,5 is varied? — UNEXPLORED → ARITY
+12. Can n,a,q,L, and spatial dimension d be varied independently? — PARTIAL (n: NDEP; L: NDEP fixed-n sweep; a: ARITY #39 at fixed n=9,q,L — extension-family scope; q,d never)
+13. Can n=9 be held fixed while a=2,3,4,5 is varied? — ANSWERED-SEALED (ARITY #39: yes — a=2|4 built ENTIRE at n=9, a=5 a declared window; extension-family scope: the packing rule that makes a≠3 buildable is the unit's own declaration and leaves idle actors 1|0|1|4)
 14. Can a=3 be held fixed while n is varied? — ANSWERED-PARTIAL (NDEP #352: n=4,16 — numeral-free laws verbatim)
 15. Can L vary while n,q,a remain fixed? — PARTIAL (NDEP L=1,2,3 at n=4)
 16. Can q vary independently of n, rather than always imposing n=q^2? — UNEXPLORED
-17. Does any pre-registered internal principle uniquely select a=3? — UNEXPLORED → ARITY
+17. Does any pre-registered internal principle uniquely select a=3? — ANSWERED-SEALED-NEGATIVE (ARITY #39: none is pre-registered anywhere in the corpus; 5 implicit constructor principles evaluated at all 9 candidate sizes, 3 admit only a=3 — the licensed form is a CONDITIONAL: the assumptions do the selecting)
 18. Does any pre-registered internal principle uniquely select n=9? — PARTIAL-NEGATIVE (NDEP: nothing measured selects 9; price/composability unswept)
-19. Is the current three-actor event size merely the block size q, or is there an independent reason for it? — UNEXPLORED → ARITY (the a=q suspicion)
+19. Is the current three-actor event size merely the block size q, or is there an independent reason for it? — ANSWERED-SEALED (ARITY #39: a=q is NOT an independent declaration at this arena — a coset event's order lives in the subgroup lattice 1|3|9, so the only nontrivial choice is the field order; no independent reason measured)
 20. What selects three declared directions from the four parallel classes? — PARTIAL (REC #376: the record does not — residue 12; law-side selection unexplored)
 21. What selects the field order q=3? — PARTIAL (NDEP: the coin modulus is field-derived per paper-20; m=2-at-AG(2,2) prediction UNTESTED)
-22. Is the mod-3 structure derived from the field, from the number of links, from event arity, or from multiple independent mechanisms? — PARTIAL (NDEP split: ladder=L-declared, coin=field-derived; the ARITY mechanism unexplored)
+22. Is the mod-3 structure derived from the field, from the number of links, from event arity, or from multiple independent mechanisms? — ANSWERED-PARTIAL (ARITY #39 THEOREM: the budget-reading ladder modulus is nL/gcd(nL,n)=L at EVERY arena — 320 pairs, mod-a iff a=L, the ladder follows the LINK COUNT; the coin modulus stays field-derived (paper-20); at least TWO independent mechanisms CONFIRMED; d unswept)
 23. What selects two dimensions? — UNEXPLORED (d=2 declared everywhere)
 24. If none of these quantities is selected, can the theory state cleanly that they are laboratory or superselection parameters? — PARTIAL (NDEP structure-universal/quantity-local; the clean statement = THEORY-CONTRACT)
 
