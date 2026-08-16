@@ -529,3 +529,55 @@ declaration and possibly coordinatization-dependent;
 persistent-vs-resolved verdict-bearing; a=2 removes the
 obstruction, NOT seam underdetermination).  No current
 candidate freezes as an ECC parent until sealed.
+
+## 2026-08-16 — DISC K3 FROZEN (v15 #18) + DISC ADJUDICATED (v15 #19): REPAIR ORDERED — THE HEAD RE-FORMED UNDER W3 WITH THE TICK FIBER PUBLISHED
+
+**K3:** v15/review-disc-instrument.md (b525d193c294, 481
+lines).  HELD: byte ×2 off-tree confirmed; 36/36 sweep;
+8/8 move-proofs re-proved; the physics re-derived by hand.
+FIVE MAJORS: the primary headline bound by nothing in
+prose (7→3 flips ship; 3 of 182 prose numerals in scope —
+the E-30 recurrence); **G-VERDICT-EQUALITY compares
+k_rebuild_head(R) with ITSELF (AST-proved; the S-1
+recurrence inside the unit claiming S-1-by-construction)**;
+the S-1 gate name-based (three bypass routes); **the
+PR1–PR7 pre-registration re-declarable post-hoc** (a
+tuned-coin rewrite ships while the head still says
+shared); G-TRANSCRIPT-BOUND uncovered — the family-(b)
+gate E-26 records as closed nowhere.  Six minors.
+OPERATIONAL: a concurrent worker's broad pkill killed
+this seat's sweep — **engraved: workers kill only their
+own PIDs, never by pattern.**
+
+**ADJUDICATION (seats #8/#12/#18; ~410 checks, zero false
+numbers):** REPAIR ORDERED.  (Z1) THE HEAD RE-FORMED
+UNDER W3 + K1's fiber: RECORD-BACKREACTION-NON-INERT-
+UNDER-SPECIFIED-DECLARATIONS, the tick fiber PUBLISHED
+(3 at G·D / 4 at D·G — the D·G tick-3 distribution equals
+the null exactly; orientation inert), the census led as
+6-OF-9-PARENT-RESULTS (7/10 kept as tested-rows
+provenance), MODEL-ABLATION-BENCHMARK carried.  (Z2)
+K2's strengthenings ADOPTED INTO THE UNIT: the 6.7×-wider
+memoryless sweep (zero reproductions); the AG(2,2)
+closest-null correction (the non-covariant coin at
+8200/59049; shots 3,389 → 5,186); "zero adjustable
+numbers" replaced by the free-axes disclosure (the
+modulus named, measured moving, fixed conditionally).
+(Z3) the null's identity with paper-20's frozen-stage
+control DISCLOSED (1116/1116) — the base finding
+re-attributed to the parent's control; DISC's new content
+= the tick, the exact magnitudes, the universality.  (Z4)
+the mechanism carried by K1's corroboration (the
+non-closing arena moving the difference to tick 4).  (Z5)
+instrument whole: the ablation wall's licence leg ON;
+referent nouns real; G-VERDICT-EQUALITY reads the
+payload; S-1 structural; **the PR pre-registration
+SEALED (post-hoc re-declaration dies)**;
+G-TRANSCRIPT-BOUND covered (the family-(b) first closed
+instance); the 57/58 contradiction; the tautological
+anchors; the TPL-2 offsets; the two uncontrolled walls;
+#299 feasibility with the DISC-BLOCKED route; the
+IPR-vs-site-occupation naming; the census gate binds each
+ruling to its evidence.  No delivered number moves except
+the ordered shot-count correction (3,389 → 5,186, to
+truth, disclosed).  The repair worker launches next.
