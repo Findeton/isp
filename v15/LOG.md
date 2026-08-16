@@ -965,3 +965,21 @@ seal, and the role-aware referent leg goes to TPL-2.**
 — the family verdict's numbers updated BY ORDER; state
 3→2 per #33).  **Orchestrator battery next; the first
 v15 terminal on green.**
+
+## 2026-08-16 — THEORY-CONTRACT IS TERMINAL: THE FIRST v15 TERMINAL (v15 LEDGER #35)
+
+Battery all green (byte-identical ×2 from deleted
+artifacts at alien CWDs; seed-invariant; MUT-ANCHOR dead
+at G-ANCHORS-CONSUMED with the corrupted census visible;
+artifacts untouched).  STATUS row appended; registry
+updated in this commit (Q2/Q3/Q6/Q9/Q10/Q24/Q58 →
+ANSWERED-SEALED at their contract forms; Q1/Q4/Q5
+SEALED-PARTIAL — the circularity scoped to the
+representation class, the full fixed point open).  The
+theory's self-knowledge is now a sealed object: a family,
+23 declarations, 15 free, none law-selected; its gauge
+quotient honestly withheld pending operational
+observables; its cast identifiable, not emergent.
+
+**v15 terminals: ONE.  Zero false delivered physics
+numbers across both eras.**
