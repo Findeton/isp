@@ -2850,3 +2850,64 @@ values.  No measured value moves.  On its green battery
 the scout CLOSES AS A SEALED SCOUT NOTE (note-class; no
 registry questions of its own; its results feed DC and
 the held decisions).
+
+## 2026-08-17 — SCOUT-K DELIVERED, COMMITTED AS-IS: THE EMPTINESS GENERALIZES — SCOUTK-COVARIANT-EMPTY-AT-3 AT EVERY PROXIMITY ARM AND EVEN AT THE GLOBAL NO-LOCALITY READING; THE #64 TRIGGER BRIDGE REJECTED IN ITS COVARIANT CLASS; THE MECHANISM: COVARIANCE IDENTIFIES WHAT THE ANCHORED START STATE DISTINGUISHES (v15 LEDGER #74)
+
+Construction complete under pin a1a6ccc61bd4 + the #68
+addendum 3a1e5a649537 (conditional consistency mode;
+pre-registered proximity predicates; the first-event
+requirements; the record-only scope wall).  Committed as
+delivered (note 573cb2c55e5c / code 38c3f6cb288e /
+output c37cbd977d57 / receipt 5af53face093 + the
+disclosed parent snapshot scoutk_parent_delivered.py
+edb60bccd22e — the live scout had diverged mid-repair,
+so the parent is bound snapshot-only, the #58 precedent).
+CANDIDATE READINGS until the verifier seat.
+
+THE RESULT: the ninth review's record-dependence granted
+IN FULL — 16 to 25 orbit variables per arm against the
+fixed-alpha family's one — and the delivered walk
+refuses ALL of it at depth 3: EMPTY at shared-actor,
+record-distance, metric-count, causal-neighborhood, AND
+at the GLOBAL reading (locality is NOT the obstruction).
+Depth 2 is NONVACUOUS at dim 1 (all arms coincide at the
+zero record); depth 3 kills everything.  Certificates:
+18 sampled refusals Farkas-verified; branchwise lemma
+infeasible (gaps up to 53755/3402); ONE UNIFORM FARKAS
+CERTIFICATE PER SYSTEM closing the whole line-weight
+segment by the affine-endpoint argument.  THE MECHANISM
+WITNESS: branch rows (0,5,14) and (1,11,21) carry
+IDENTICAL covariant coefficient vectors while the walk
+assigns 16/729 vs 64/729 — covariance identifies what
+the ANCHORED START STATE distinguishes; the record at
+these depths has not yet recorded the asymmetry the walk
+already carries.
+
+THE FIRST-EVENT CENSUS (#64/#68 requirements): step 1
+collapses to 2 orbit variables, dim 1; ONLY the
+symmetric-stochastic tie-break (trilemma arm a) is
+realizable — deterministic non-line selection forbidden
+by the measured stabilizer swap; arms (b) declared
+initial asymmetry and (c) extra variable are PRICED
+EXITS, registered.  The proximity fork measured with no
+silence: SA=RD and MC=GLOBAL byte-identical partitions
+(coincidences said), CN strictly between.  The
+fixed-alpha consistency check BINDS to the parent: the
+record-blind tying reproduces #58 byte-exactly (729
+rows, 25 polynomials, roots -1|0|+1), and the 288 pure
+survivors are now PRICED: none is realizable covariantly.
+
+Instrument: 24 gates, 23 falsifiers with move proofs in
+both harnesses, 12 verbatim anchors incl. the #59
+honest-scope sentence gated, 38 sample-space
+declarations, a 23-row numeral-binding table; controls
+forced both ways; the receipt hazard closed (byte-
+identical from deleted artifacts at 2 alien CWDs — one
+containing a space — x 3 seeds); one late instrument
+repair disclosed (a falsifier dying one gate early;
+concerns split; full battery rerun on final bytes).
+Registered successors: depth-4, sub-normalized kernels,
+trilemma arms (b)/(c), and the rho-prime transport law
+(open regardless — the scope sentence gated).
+Orchestrator battery next; verifier seat on green.
+
