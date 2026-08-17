@@ -3690,3 +3690,19 @@ NEW rows only (the four-grain table and the secondary
 are new measured values the #76 seat never saw), then
 seal.
 
+
+## 2026-08-17 — SCOUT-PSI BATTERY GREEN AT THE ORCHESTRATOR; THE LIGHT SECOND VERIFIER LAUNCHED OVER THE NEW ROWS (v15 LEDGER #91)
+
+Byte-identical from deleted artifacts incl. receipt;
+byte x2; seed-invariant; argv rc 2; selftest 28/28 with
+move proofs (MUT-NUMTOT at G-NUMERAL-TOTALITY);
+MUT-ADDCON dead at G-ADDENDUM-CONSUMED — the
+addendum-consumption gate killing its mutant is the
+breach class closing on itself.  The light second
+verifier launched (v15/review-scoutpsi-verifier2.md):
+scope = ONLY the rows the #76 seat never saw — the
+four-grain verdict table (30 rows incl. the T9/S27
+quotient columns and the RHO1-family caveat), the frozen
+secondary run (378 records, {26:2} at 0 vs 1/729), the
+HJW mutual-unbiasedness check, the Z6 witnesses.  On its
+freeze: SCOUT-PSI seals.
