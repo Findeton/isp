@@ -2336,3 +2336,41 @@ receipt.  Battery + one hostile verifier seat (scout
 class).  Launched in parallel with the scout repair —
 different files, no contention.
 
+## 2026-08-17 — ARITY-16 K2 (EFFECTUS) FROZEN: ACCEPT-WITH-FIXES; ZERO FALSE NUMBERS; THE ECC LAUNDERING SPECIES CAUGHT HERE (A MEASURED HARDENING); ONE NEW SPECIES — HYPHEN-EVASION (v15 LEDGER #61)
+
+Review frozen v15/review-arity16-effectus.md.  The
+predecessor's scratch reconciled honestly: all 17 plant
+runs had completed pre-outage; every adopted claim
+re-verified at the bytes (10/10 head fences; ~25
+independent numeral recomputations exact; all findings
+re-confirmed at cited lines).  The missing
+brief-required species built and run: ", being gated,"
+DIED at W-NO-SELECTION — both ECC laundering species
+(NEG-guard prefix, licence-token insertion) are CAUGHT
+by this younger instrument, a measured hardening over
+ECC.  Both ECC K3 TPL-2 species REPRODUCE (bare
+derivation claim, slash-rational).  8 fresh paraphrases
+survive = the registered #10/#25/#30 condition at full
+strength — including TWO FALSE READING-MERGE sentences
+that walk past the pin's own new W-NO-READING-MERGE
+wall, a no-arena theorem claim, and a continuum/SI forge.
+ONE NEW SPECIES: HYPHEN-EVASION — "The event-size is
+uniquely selected..." survives because every
+W-NO-SELECTION pattern keys on "event size" WITH A
+SPACE (code:5546-5560).  Registered for TPL-2.
+
+Findings: E-1 MEDIUM seven true-but-unanchored parent
+attributions (vs SCOPE's every-parent-number-anchored
+sentence); E-2 the head's "AGAINST THE PARENT'S CONSTANT
+ONE" vs the parent's own sealed non-constant 0|1|1|0;
+E-3 REFUSED-COMPLETE/FOUND invisible to the
+declared/emitted reconciliation; E-4 the pin-promised W3
+auto-labelling never BUILT (discharged in prose); E-5..
+E-9 LOW (incl. E-34 term double-bindings and an
+unstamped-but-verified window value); E-10 the plant
+table.  Licensure otherwise closed: the reading fork
+never merged in committed prose (42 sentences), caps and
+refusals at every point of use, prereg seal order
+verified, 635 numerals / 0 uncovered.  K3's continuation
+is the last seat; adjudication on its freeze.
+
