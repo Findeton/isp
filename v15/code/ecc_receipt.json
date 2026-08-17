@@ -297,6 +297,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "QUOTED",
+   "needle": "a state restricts the allowed transitions if and only if it persists, and persistence is a reading this unit declares and measures, not a fact it found",
    "ok": true,
    "paper_hits": 1,
    "source": "E-AUT"
@@ -308,6 +309,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "GATE",
+   "needle": "The successor set is computed from the post-record alone. It is therefore not a map from a state to a state",
    "ok": true,
    "paper_hits": 0,
    "source": "E-AUT"
@@ -319,6 +321,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "QUOTED",
+   "needle": "Whether that predictive content shows in the record, and whether two states differing only in it are separable by any measurement this corpus defines, is unposed",
    "ok": true,
    "paper_hits": 1,
    "source": "E-AUT"
@@ -330,6 +333,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "PARSED",
+   "needle": "324 seam slots -- three at each of the 108 lawful crossings -- and the successor set is 4-valued at 81 of them and 8-valued at 243. It is never 1-valued.",
    "ok": true,
    "paper_hits": 0,
    "source": "E-AUT"
@@ -341,6 +345,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "PARSED",
+   "needle": "The best states are ready for 9 crossings, and 20100 of the 29791 are ready for none.",
    "ok": true,
    "paper_hits": 0,
    "source": "E-AUT"
@@ -352,6 +357,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "PARSED",
+   "needle": "The 108 lawful crossings are exactly the profile [1, 0, 2]",
    "ok": true,
    "paper_hits": 0,
    "source": "E-AUT"
@@ -363,6 +369,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "PARSED",
+   "needle": "CROSS-ONLY and ALL-NEW admit the same 162 events -- the same SET and not merely the same count",
    "ok": true,
    "paper_hits": 0,
    "source": "E-AUT"
@@ -374,6 +381,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "PARSED",
+   "needle": "and at 27 of the 108 the state need not move at all",
    "ok": true,
    "paper_hits": 0,
    "source": "E-AUT"
@@ -385,6 +393,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "PARSED",
+   "needle": "the allowed set falling from 108 to between 25 and 43, depending on which crossing goes first",
    "ok": true,
    "paper_hits": 0,
    "source": "E-AUT"
@@ -396,6 +405,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "PARSED",
+   "needle": "CONTRACT-CENSUS-TOTAL<OBJECTS=23; DISTINCT-EXTENTS=20; COMPUTED-HERE=20; CITED=3; ACTORS=9; CELLS=27; EVENTS-REALISED=30; HISTORIES=5784; BLOCKS=27; COUNT-FIELDS=36; MENU=6; CHART-CLASSES=1296>",
    "ok": true,
    "paper_hits": 0,
    "source": "E-CON"
@@ -407,6 +417,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "PARSED",
+   "needle": "CONTRACT-Q58-IDENTIFIABILITY-WITHIN-A-GENERATIVE-CLASS-ISP-IS-A-FAMILY<DECLARATIONS=23; FREE=15;",
    "ok": true,
    "paper_hits": 0,
    "source": "E-CON"
@@ -418,6 +429,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "PARSED",
+   "needle": "the walk consumes the count residue n mod 3, not the count.",
    "ok": true,
    "paper_hits": 0,
    "source": "E-CON"
@@ -429,6 +441,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "PARSED",
+   "needle": "falling into 6 classes up to a global phase, of which exactly 1 is +/- Grover",
    "ok": true,
    "paper_hits": 0,
    "source": "E-CON"
@@ -440,6 +453,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "PARSED",
+   "needle": "The seam's own system is rank 6 on 10 by the chart alone, kernel 4; an unshared site's system is three equations on",
    "ok": true,
    "paper_hits": 0,
    "source": "E-CON"
@@ -451,6 +465,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "QUOTED",
+   "needle": "ensemble-side bookkeeping: the weight the emission law multiplies along a branch, carried to compare runs and never read by the one-instant update",
    "ok": true,
    "paper_hits": 1,
    "source": "E-CON"
@@ -462,6 +477,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "QUOTED",
+   "needle": "the coupled dynamics writes its own record: one emitted cell per step, which is a co-division pair rather than a group of the declared arity",
    "ok": true,
    "paper_hits": 1,
    "source": "E-CON"
@@ -473,6 +489,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "PARSED",
+   "needle": "At two actors every one of the 36 seam-spanning groups opens no pair inside a sector and doubles nothing.",
    "ok": true,
    "paper_hits": 1,
    "source": "E-ARI"
@@ -484,6 +501,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "QUOTED",
+   "needle": "IF every round must be a complete partition of the actors into proper nontrivial coset blocks of the arena's translation group, THEN the event size is the field order",
    "ok": true,
    "paper_hits": 1,
    "source": "E-ARI"
@@ -495,6 +513,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "QUOTED",
+   "needle": "the packing rule is a declaration this unit makes, it is carried as its own row of the arena table",
    "ok": true,
    "paper_hits": 1,
    "source": "E-ARI"
@@ -506,6 +525,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "PARSED",
+   "needle": "GROUPINGS 945|280|315|126 AND IDLE ACTORS 1|0|1|4 AT a=2|3|4|5",
    "ok": true,
    "paper_hits": 0,
    "source": "E-ARI"
@@ -517,6 +537,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "QUOTED",
+   "needle": "Under the alternative order the count phase lands after the coin, so it cannot enter that step's Born weights at all",
    "ok": true,
    "paper_hits": 1,
    "source": "E-DIS"
@@ -528,6 +549,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "GATE",
+   "needle": "the null starts in the same state as the ISP model -- one basis vector, at the same site and the same direction",
    "ok": true,
    "paper_hits": 0,
    "source": "E-DIS"
@@ -539,6 +561,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "QUOTED",
+   "needle": "a division event emitted on a cell with that cell's post-coin Born weight, every branch of the emission tree carried with no sampling and no pruning",
    "ok": true,
    "paper_hits": 1,
    "source": "E-DIS"
@@ -550,6 +573,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "GATE",
+   "needle": "SEAM-PERSISTENT-SUPPORTED / SEAM-RE-SOLVED-SUPPORTED / SEAM-DECISION-UNDERDETERMINED-AT-<row> (reachable: AUTOGLUE's row is already a measured refusal to decide",
    "ok": true,
    "paper_hits": 0,
    "source": "E-PIN"
@@ -561,6 +585,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "GATE",
+   "needle": "PSI-ONTIC / PSI-INSTRUMENT / PSI-REPRESENTATIONAL -- or PSI-STATUS-INDEPENDENT-<results list> (independence proven row by row)",
    "ok": true,
    "paper_hits": 0,
    "source": "E-PIN"
@@ -572,6 +597,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "GATE",
+   "needle": "ECC-LP-INFEASIBLE-AT-<scope> (the parents cannot unify as written -- a major result, not a failure) / ECC-LP-UNIQUE (a derivation)",
    "ok": true,
    "paper_hits": 0,
    "source": "E-PIN"
@@ -583,6 +609,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "GATE",
+   "needle": "ECC-STATE-CONTRACT-CLOSED-AT-<scope> / ECC-CIRCULARITY-<verdict>",
    "ok": true,
    "paper_hits": 0,
    "source": "E-PIN"
@@ -594,6 +621,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "GATE",
+   "needle": "ECC-BLOCKED-AT-<object> -- instrument fault only.",
    "ok": true,
    "paper_hits": 0,
    "source": "E-PIN"
@@ -605,6 +633,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "GATE",
+   "needle": "The admissible-class consistency debt: the coupled walk continues where AUTOGLUE refuses -- decided, not narrated.",
    "ok": true,
    "paper_hits": 0,
    "source": "E-PIN"
@@ -616,6 +645,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "PARSED",
+   "needle": "an a-actor event writes C(a,2) pair-cells, so\n    inclusion marginals sum to C(a,2) -- 3 at a=3; at a=2 the problem\n    DEGENERATES",
    "ok": true,
    "paper_hits": 0,
    "source": "E-PIN"
@@ -627,6 +657,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "GATE",
+   "needle": "A COMPATIBILITY/NO-GO paper, not a forced construction.",
    "ok": true,
    "paper_hits": 0,
    "source": "E-PIN"
@@ -638,6 +669,7 @@
    "floor_ok": true,
    "hits": 1,
    "mode": "GATE",
+   "needle": "THE SEAM DECISION, ahead of any Born weight",
    "ok": true,
    "paper_hits": 0,
    "source": "E-PIN"
@@ -726,6 +758,56 @@
  "circularity": {
   "actor_cycle": 4,
   "dynamical_cycle": 3,
+  "edge_list": [
+   [
+    "ACTOR",
+    "CELL"
+   ],
+   [
+    "DIRECTION",
+    "CELL"
+   ],
+   [
+    "ACTOR",
+    "DIVISION-EVENT"
+   ],
+   [
+    "CELL",
+    "ROUND-LAW"
+   ],
+   [
+    "ROUND-LAW",
+    "HISTORY"
+   ],
+   [
+    "DIVISION-EVENT",
+    "HISTORY"
+   ],
+   [
+    "HISTORY",
+    "RECORD-BLOCK"
+   ],
+   [
+    "RECORD-BLOCK",
+    "COUNT-FIELD"
+   ],
+   [
+    "COUNT-FIELD",
+    "QUANTUM-STATE"
+   ],
+   [
+    "QUANTUM-STATE",
+    "EMISSION"
+   ],
+   [
+    "EMISSION",
+    "COUNT-FIELD"
+   ],
+   [
+    "RECORD-BLOCK",
+    "ACTOR"
+   ]
+  ],
   "edges": 12,
   "full_dynamics_fixed_point": "OPEN-ROUTED-TO-DC"
  },
@@ -828,6 +910,12 @@
     "matched": true,
     "missing": 0,
     "stray": 0,
+    "table": "T-INVENTORY"
+   },
+   {
+    "matched": true,
+    "missing": 0,
+    "stray": 0,
     "table": "T-W3"
    },
    {
@@ -851,15 +939,15 @@
    "ok": true
   },
   "segments": [
-   "ECC-STATE-CONTRACT-CLOSED-AT-THE-COMMITTED-WINDOWS-UNDER-THE-DECLARED-SEAM-READING<OBJECTS=23; COMPUTED-HERE=18; CITED=5; SENSE-WORDS=6; FREE-DECLARATIONS-CARRIED=15-OF-15-WITH-6-TYPE-CATEGORIES; EVENT-FORK=DECLARED-2-ARMS-NO-COMPROMISE; COSET-PRINCIPLE=DECLARED-THE-SELECTION-LAW; MAPS=3-TYPED-COMPOSED-NOWHERE; STATE-COMPONENTS=2-PLUS-BOOKKEEPING=1; SEAM-COMPONENT=READING-CONDITIONAL; ACTOR-RECORD-CYCLE=4-EDGES-CARRIED-OPEN-AT-FULL-DYNAMICS>",
+   "ECC-STATE-CONTRACT-CLOSED-AT-THE-COMMITTED-WINDOWS-UNDER-THE-DECLARED-SEAM-READING<OBJECTS=23; COMPUTED-HERE=18; CITED=5; SENSE-WORDS=6; FREE-DECLARATIONS-CARRIED=15-OF-15-WITH-6-TYPE-CATEGORIES; EVENT-FORK=DECLARED-2-ARMS-NO-COMPROMISE; COSET-PRINCIPLE=DECLARED-THE-SELECTION-LAW; MAPS=3-TYPED-COMPOSED-NOWHERE; STATE-COMPONENTS=2-PLUS-BOOKKEEPING=1; SEAM-COMPONENT=READING-RELATIVE; ACTOR-RECORD-CYCLE=4-EDGES-CARRIED-OPEN-AT-FULL-DYNAMICS>",
    "SEAM-DECISION-UNDERDETERMINED-AT-THE-COMMITTED-OBSERVABLE-MENU<OBSERVABLES=8; COMPLETION-BLIND=8-OF-8; PROBE-STATES=11; THE-MODAL-RELATION-SEPARATES=2-VALUES-OVER-THE-SAME-PROBES; READING-FAMILY=3; TWO-STEP-CENSUS-FROM-ALL-108-FIRST-CROSSINGS: RE-SOLVED-FIBER-25-TO-43; PERSIST-FIT-DIFFERS-AT-108-OF-108; PERSIST-KEPT-DIFFERS-AT-108-OF-108; CHOSEN-READING=RE-SOLVED-DECLARED-NOT-MEASURED; DOWNSTREAM-STAMPED=215-ROWS>",
    "PSI-STATUS-INDEPENDENT-AT-EVERY-DELIVERED-ROW<FACES=3; ROWS=18; FUNCTIONAL-AGREEMENTS=18-OF-18; SEPARATING-ROWS=0; THE-CONSUMERS-REACH-THE-BORN-FUNCTIONAL-ALONE=AUDITED; THE-TRILEMMA-IS-UNRESOLVED-AND-EVERY-DELIVERED-RESULT-IS-PROVEN-BLIND-TO-IT>",
-   "ECC-LP-INFEASIBLE-AT-THE-COMMITTED-ROW-AND-THE-CEILING-IS-A-THEOREM<CLASSES=4-PLUS-THE-PAIR-EVENT-BRANCH; DISTINCT-TARGETS=39; ROWS=156; INFEASIBLE=136; UNIQUE=8; MANY=6-MAX-DIM-8; FIBER-FEASIBLE=6; BRANCH-DEGENERATE-IDENTITY=39-OF-39; TARGET-UNDEFINED-AMPLITUDES=2; COMMITTED-ROW=SINGLE-CELL-AMPLITUDE-AT-THE-INITIAL-RECORD-AT-THE-DELIVERED-ORDER-QMAX-4/9-ABOVE-THE-CEILING-INFEASIBLE-AT-ALL-4-COMMITTED-CLASSES; CEILING=FEASIBILITY-FORCES-QMAX-AT-MOST-ONE-THIRD-CHECKED-AT-156-ROWS-EXCEPTIONS-0; CONTROLS=FORCED-BOTH-WAYS-THROUGH-THE-REAL-PREDICATES; NORMALIZATION=PRE-REGISTERED-PAIR-CELL-FORM-INCLUSION-EQUALS-UNIFORM-TWO-STAGE-WHERE-EVERY-EVENT-WRITES-3-CELLS; FREE-TWO-STAGE=VACUOUS-AT-27-OF-27-CELLS-COVERED>",
-   "ECC-CARRIER-FAMILY-UNSELECTED-AND-THE-DEBT-DECIDED<CANDIDATES=4; HOST-THE-STATE=4-OF-4; EXPRESS-THE-COMMITTED-BRANCHING=2-OF-4; EVOLVE-ACROSS-CREATION=0-OF-4; NOTHING-SELECTED-THE-FAMILY-PUBLISHED; DEBT=THE-WALK-CONTINUES-ON-ITS-OWN-MENU-WHERE-CREATION-REFUSES: MENU-CELLS-IN-THE-CROSS-CLASS=0-OF-36; FROZEN-CREATION-ADMITS=0-OF-288-SEAM-SPANNING; UNIT-MASS-AMPLITUDES=4-OF-4; CLASS=COMPATIBILITY-NO-GO; SCOPE=ONE-ARENA-COMMITTED-WINDOWS-COUNTING-ONLY; W-THREE-LABELS=4-MEMBER-SPECIFIC-PLUS-1-FAMILY-LEVEL-FIBRES-DISCLOSED>"
+   "ECC-LP-INFEASIBLE-AT-THE-COMMITTED-ROW-AND-THE-CEILING-IS-A-THEOREM<CLASSES=4-PLUS-THE-PAIR-EVENT-BRANCH; DISTINCT-TARGETS=39; ROWS=156; INFEASIBLE=136; UNIQUE=8; MANY=6-MAX-DIM-8; FIBER-FEASIBLE=6; BRANCH-DEGENERATE-IDENTITY=39-OF-39; TARGET-UNDEFINED-ROWS=2; COMMITTED-ROW=SINGLE-CELL-AMPLITUDE-AT-THE-INITIAL-RECORD-AT-THE-DELIVERED-ORDER-QMAX-4/9-ABOVE-THE-CEILING-INFEASIBLE-AT-ALL-4-COMMITTED-CLASSES; CEILING=FEASIBILITY-FORCES-QMAX-AT-MOST-ONE-THIRD-CHECKED-AT-156-ROWS-EXCEPTIONS-0; CONTROLS=FORCED-BOTH-WAYS-THROUGH-THE-REAL-PREDICATES; NORMALIZATION=PRE-REGISTERED-PAIR-CELL-FORM-INCLUSION-EQUALS-UNIFORM-TWO-STAGE-WHERE-EVERY-EVENT-WRITES-3-CELLS; FREE-TWO-STAGE=VACUOUS-AT-27-OF-27-CELLS-COVERED>",
+   "ECC-CARRIER-FAMILY-UNSELECTED-AND-THE-DEBT-DECIDED<CANDIDATES=4; HOST-THE-STATE=4-OF-4; EXPRESS-THE-COMMITTED-BRANCHING=2-OF-4; EVOLVE-ACROSS-CREATION=0-OF-4; NOTHING-SELECTED-THE-FAMILY-PUBLISHED; DEBT=THE-WALK-CONTINUES-ON-ITS-OWN-MENU-WHERE-CREATION-REFUSES: MENU-CELLS-IN-THE-CROSS-CLASS=0-OF-36; FROZEN-CREATION-ADMITS=0-OF-288-SEAM-SPANNING; UNIT-MASS-AMPLITUDES=4-OF-4; CLASS=COMPATIBILITY-NO-GO; SCOPE=ONE-ARENA-COMMITTED-WINDOWS-COUNTING-ONLY; W-THREE-LABELS=4-MEMBER-SPECIFIC-PLUS-1-FAMILY-LEVEL-ACROSS-THE-TARGET-FAMILY-FIBRES-DISCLOSED>"
   ]
  },
  "coverage_scan": {
-  "distinct": 51,
+  "distinct": 54,
   "exempt": [
    "20",
    "40",
@@ -870,19 +958,395 @@
    "47",
    "48"
   ],
-  "paper_numerals": 282
+  "paper_numerals": 290
  },
  "debt": {
+  "amplitude_rows": [
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "nonzero": true,
+    "unit_mass": true
+   },
+   {
+    "amplitude": "A-SINGLE-CELL-AMPLITUDE",
+    "nonzero": true,
+    "unit_mass": true
+   },
+   {
+    "amplitude": "ONE-LINK-DIRECTION-ONLY",
+    "nonzero": true,
+    "unit_mass": true
+   },
+   {
+    "amplitude": "ALTERNATING-ROOTS",
+    "nonzero": true,
+    "unit_mass": true
+   },
+   {
+    "amplitude": "THE-ZERO-AMPLITUDE",
+    "nonzero": false,
+    "unit_mass": false
+   }
+  ],
   "amplitudes_with_unit_mass": 4,
   "chart_menu_cells": 27,
   "cross_pairs": 36,
+  "cross_rows": [
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (0, 1))",
+     "('B', (0, 1))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (0, 1))",
+     "('B', (0, 2))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (0, 1))",
+     "('B', (1, 0))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (0, 1))",
+     "('B', (1, 1))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (0, 1))",
+     "('B', (2, 0))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (0, 1))",
+     "('B', (2, 2))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (0, 2))",
+     "('B', (0, 1))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (0, 2))",
+     "('B', (0, 2))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (0, 2))",
+     "('B', (1, 0))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (0, 2))",
+     "('B', (1, 1))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (0, 2))",
+     "('B', (2, 0))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (0, 2))",
+     "('B', (2, 2))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (1, 0))",
+     "('B', (0, 1))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (1, 0))",
+     "('B', (0, 2))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (1, 0))",
+     "('B', (1, 0))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (1, 0))",
+     "('B', (1, 1))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (1, 0))",
+     "('B', (2, 0))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (1, 0))",
+     "('B', (2, 2))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (1, 1))",
+     "('B', (0, 1))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (1, 1))",
+     "('B', (0, 2))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (1, 1))",
+     "('B', (1, 0))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (1, 1))",
+     "('B', (1, 1))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (1, 1))",
+     "('B', (2, 0))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (1, 1))",
+     "('B', (2, 2))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (2, 0))",
+     "('B', (0, 1))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (2, 0))",
+     "('B', (0, 2))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (2, 0))",
+     "('B', (1, 0))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (2, 0))",
+     "('B', (1, 1))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (2, 0))",
+     "('B', (2, 0))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (2, 0))",
+     "('B', (2, 2))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (2, 2))",
+     "('B', (0, 1))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (2, 2))",
+     "('B', (0, 2))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (2, 2))",
+     "('B', (1, 0))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (2, 2))",
+     "('B', (1, 1))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (2, 2))",
+     "('B', (2, 0))"
+    ]
+   },
+   {
+    "in_menu": false,
+    "pair": [
+     "('A', (2, 2))",
+     "('B', (2, 2))"
+    ]
+   }
+  ],
+  "frozen_admitted_events": 54,
   "frozen_creation_admits_doubling": 54,
   "frozen_creation_admits_seam": 0,
+  "frozen_live_route_agrees": true,
+  "frozen_seam_live": 0,
   "grain_mismatch": true,
   "menu_cross_overlap": 0,
   "nonzero_amplitudes": 4,
+  "profile_rows": [
+   {
+    "count": 54,
+    "frozen_admitted": true,
+    "profile": [
+     0,
+     0,
+     3
+    ],
+    "seam_spanning": false
+   },
+   {
+    "count": 108,
+    "frozen_admitted": false,
+    "profile": [
+     0,
+     1,
+     2
+    ],
+    "seam_spanning": false
+   },
+   {
+    "count": 5,
+    "frozen_admitted": false,
+    "profile": [
+     0,
+     3,
+     0
+    ],
+    "seam_spanning": false
+   },
+   {
+    "count": 108,
+    "frozen_admitted": false,
+    "profile": [
+     1,
+     0,
+     2
+    ],
+    "seam_spanning": true
+   },
+   {
+    "count": 108,
+    "frozen_admitted": false,
+    "profile": [
+     2,
+     0,
+     1
+    ],
+    "seam_spanning": true
+   },
+   {
+    "count": 72,
+    "frozen_admitted": false,
+    "profile": [
+     2,
+     1,
+     0
+    ],
+    "seam_spanning": true
+   }
+  ],
   "seam_spanning": 288,
+  "seam_spanning_events": 288,
   "union_menu_pairs": 54
+ },
+ "decl_inventory": {
+  "already_parent": [
+   "the committed coin order"
+  ],
+  "combined": 17,
+  "parent_free": 15,
+  "parent_rows": [
+   "d",
+   "q",
+   "a",
+   "R",
+   "the ceiling",
+   "the chart",
+   "the window",
+   "the horizon",
+   "the tick",
+   "the coin",
+   "the coin order",
+   "the orientation",
+   "the reading",
+   "the seam",
+   "the measure"
+  ],
+  "unit_new": 2,
+  "unit_rows": [
+   "the probe-family extras",
+   "the canonical container order"
+  ]
  },
  "declared": {
   "consumed": [
@@ -992,6 +1456,63 @@
   "hash_sites": [],
   "repr_sites": []
  },
+ "emitability": {
+  "reached_rows": [
+   {
+    "in_head": true,
+    "reached": "ECC-STATE-CONTRACT-CLOSED-AT-THE-COMMITTED-WINDOWS-UNDER-THE-DECLARED-SEAM-READING"
+   },
+   {
+    "in_head": true,
+    "reached": "SEAM-DECISION-UNDERDETERMINED-AT-THE-COMMITTED-OBSERVABLE-MENU"
+   },
+   {
+    "in_head": true,
+    "reached": "PSI-STATUS-INDEPENDENT"
+   },
+   {
+    "in_head": true,
+    "reached": "ECC-LP-INFEASIBLE-AT-THE-COMMITTED-ROW"
+   },
+   {
+    "in_head": true,
+    "reached": "ECC-CARRIER-FAMILY-UNSELECTED-AND-THE-DEBT-DECIDED"
+   }
+  ],
+  "sentence_hits": 1,
+  "unreached_rows": [
+   {
+    "in_head": false,
+    "registration_only": true,
+    "source_occurrences": 1,
+    "unreached": "ECC-CIRCULARITY-UNTYPABLE-AT-THE-TABLE"
+   },
+   {
+    "in_head": false,
+    "registration_only": true,
+    "source_occurrences": 1,
+    "unreached": "SEAM-PERSISTENT-SUPPORTED"
+   },
+   {
+    "in_head": false,
+    "registration_only": true,
+    "source_occurrences": 1,
+    "unreached": "PSI-ONTIC"
+   },
+   {
+    "in_head": false,
+    "registration_only": true,
+    "source_occurrences": 1,
+    "unreached": "ECC-LP-UNIQUE"
+   },
+   {
+    "in_head": false,
+    "registration_only": true,
+    "source_occurrences": 1,
+    "unreached": "ECC-BLOCKED-AT-THE-CARRIER"
+   }
+  ]
+ },
  "falsifier_coverage": {
   "gates": [
    "G-ANCHOR-CONSUMPTION",
@@ -1004,6 +1525,7 @@
    "G-COIN-FAMILY",
    "G-COVERAGE",
    "G-DEBT",
+   "G-DECLARATION-INVENTORY",
    "G-DECLARED-CONSUMED",
    "G-DETERMINISM",
    "G-EQUIV-DECLARED",
@@ -1031,11 +1553,13 @@
    "G-OBS-MENU",
    "G-OBS-SWEEP",
    "G-ORDER-FIBER",
+   "G-OUTCOME-EMITABILITY",
    "G-OUTCOME-FEASIBILITY",
    "G-PAPER-CLAIMS",
    "G-PAPER-COVERAGE",
    "G-PAPER-FRACTION",
    "G-PAPER-POLARITY",
+   "G-PAPER-RATIONAL",
    "G-PAPER-REFERENT",
    "G-PAPER-SPELLED",
    "G-PREPAREDNESS",
@@ -1060,11 +1584,11 @@
    "G-W3-LABELS",
    "G-WALLS"
   ],
-  "recipes": 73
+  "recipes": 78
  },
  "falsifier_honesty": {
   "missing": [],
-  "recipes": 73
+  "recipes": 78
  },
  "fork": {
   "arm_count": 2,
@@ -1551,8 +2075,8 @@
   "staylable": 27
  },
  "ledger": {
-  "head": "e448f3d941059c5a",
-  "recomputed": "e448f3d941059c5a",
+  "head": "4b9e30294365ace9",
+  "recomputed": "4b9e30294365ace9",
   "rows": [
    {
     "chain": "d6caf549232dbb2c",
@@ -1700,157 +2224,172 @@
     "passed": true
    },
    {
-    "chain": "a0daa0aad801b82f",
+    "chain": "dd4fad09f137e58b",
     "gate": "G-PSI-EQUAL",
     "passed": true
    },
    {
-    "chain": "083ea410d965f272",
+    "chain": "4540084310b02652",
     "gate": "G-LP-BUILD",
     "passed": true
    },
    {
-    "chain": "22cf4e55cc3e41d0",
+    "chain": "6b662a42ac138fb7",
     "gate": "G-NORMALIZATION",
     "passed": true
    },
    {
-    "chain": "9b1e36bc58166c4d",
+    "chain": "a2caf25c7ce97eef",
     "gate": "G-LP-COMMITTED",
     "passed": true
    },
    {
-    "chain": "2a306d526d73e4f0",
+    "chain": "3334717c321502b6",
     "gate": "G-LP-CENSUS",
     "passed": true
    },
    {
-    "chain": "bc5c69436ab265e8",
+    "chain": "bef5656bbc888151",
     "gate": "G-LP-CONTROLS",
     "passed": true
    },
    {
-    "chain": "cdfd66a649633e40",
+    "chain": "75aaf3e9dca7fa02",
     "gate": "G-LP-CEILING",
     "passed": true
    },
    {
-    "chain": "b7399a779e4ba38b",
+    "chain": "53bda6698bf762d8",
     "gate": "G-LP-DEGENERATE",
     "passed": true
    },
    {
-    "chain": "3b1543eae92b25ba",
+    "chain": "c71fc5d4b98d06c5",
     "gate": "G-LP-DIM",
     "passed": true
    },
    {
-    "chain": "80df78d8c6c41cfb",
+    "chain": "36111d17b78ed42d",
     "gate": "G-CARRIER",
     "passed": true
    },
    {
-    "chain": "36e80d3002677009",
+    "chain": "9837abdba8ba33ea",
     "gate": "G-DEBT",
     "passed": true
    },
    {
-    "chain": "11f9eadb98f75b0b",
+    "chain": "b8baa58da2573ce1",
     "gate": "G-EQUIV-DECLARED",
     "passed": true
    },
    {
-    "chain": "2fa16aacd4b666c8",
+    "chain": "b109ac34259c0f29",
+    "gate": "G-DECLARATION-INVENTORY",
+    "passed": true
+   },
+   {
+    "chain": "061de0749ccb6712",
     "gate": "G-W3-LABELS",
     "passed": true
    },
    {
-    "chain": "0d68d4e472b271c3",
+    "chain": "1cd5aaa145be1b2b",
     "gate": "G-STAMPS",
     "passed": true
    },
    {
-    "chain": "f2573d282104b392",
+    "chain": "18d74386c8f196b3",
     "gate": "G-CIRCULARITY",
     "passed": true
    },
    {
-    "chain": "3923687a4ab35987",
+    "chain": "ced5e9c7401570af",
     "gate": "G-OUTCOME-FEASIBILITY",
     "passed": true
    },
    {
-    "chain": "fda6faeb1cd13f7d",
+    "chain": "7e78206f310c34c5",
     "gate": "G-SENSES",
     "passed": true
    },
    {
-    "chain": "0bf5c67617e5deb7",
+    "chain": "c7931d1203d89245",
+    "gate": "G-OUTCOME-EMITABILITY",
+    "passed": true
+   },
+   {
+    "chain": "f8f35cf091392801",
     "gate": "G-WALLS",
     "passed": true
    },
    {
-    "chain": "e7901368221f4074",
+    "chain": "d77cba153564753b",
     "gate": "G-PAPER-CLAIMS",
     "passed": true
    },
    {
-    "chain": "e0433168785d6600",
+    "chain": "51851b29c21d8b25",
     "gate": "G-PAPER-COVERAGE",
     "passed": true
    },
    {
-    "chain": "21fb3f043b8cff9e",
+    "chain": "4d034e968df9b289",
+    "gate": "G-PAPER-RATIONAL",
+    "passed": true
+   },
+   {
+    "chain": "771ba664d3b9ce5d",
     "gate": "G-PAPER-POLARITY",
     "passed": true
    },
    {
-    "chain": "ba2c511095311539",
+    "chain": "0d5959550e0c626b",
     "gate": "G-PAPER-REFERENT",
     "passed": true
    },
    {
-    "chain": "a8babec931e45aa1",
+    "chain": "67ee9000636347b2",
     "gate": "G-PAPER-SPELLED",
     "passed": true
    },
    {
-    "chain": "20cdb28796f2d5f2",
+    "chain": "93b7d0eb32e3a8a2",
     "gate": "G-PAPER-FRACTION",
     "passed": true
    },
    {
-    "chain": "9867be9fe166c41b",
+    "chain": "50f9685ba581ae65",
     "gate": "G-NO-TYPED-COUNTS",
     "passed": true
    },
    {
-    "chain": "8aa8dd606067982f",
+    "chain": "5f1539225efab1b8",
     "gate": "G-DECLARED-CONSUMED",
     "passed": true
    },
    {
-    "chain": "fafeff4e0d40209e",
+    "chain": "35d349ba19449de5",
     "gate": "G-ANCHOR-CONSUMPTION",
     "passed": true
    },
    {
-    "chain": "3f261eb0d0ec8bf2",
+    "chain": "adcfbe0e482167d6",
     "gate": "G-FALSIFIER-HONESTY",
     "passed": true
    },
    {
-    "chain": "a09c44b5a7dd7044",
+    "chain": "ea0731605248850e",
     "gate": "G-COVERAGE",
     "passed": true
    },
    {
-    "chain": "104c3ed4ffbd2812",
+    "chain": "6e828688f7ed3218",
     "gate": "G-VERDICT-RECON",
     "passed": true
    },
    {
-    "chain": "e448f3d941059c5a",
+    "chain": "4b9e30294365ace9",
     "gate": "G-READ-SET",
     "passed": true
    }
@@ -6393,6 +6932,500 @@
    }
   ],
   "target_rows": 82,
+  "target_table": [
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "R0"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "R0"
+   },
+   {
+    "amplitude": "A-SINGLE-CELL-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "R0"
+   },
+   {
+    "amplitude": "A-SINGLE-CELL-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "R0"
+   },
+   {
+    "amplitude": "ONE-LINK-DIRECTION-ONLY",
+    "defined": true,
+    "order": "G.D",
+    "record": "R0"
+   },
+   {
+    "amplitude": "ONE-LINK-DIRECTION-ONLY",
+    "defined": true,
+    "order": "D.G",
+    "record": "R0"
+   },
+   {
+    "amplitude": "ALTERNATING-ROOTS",
+    "defined": true,
+    "order": "G.D",
+    "record": "R0"
+   },
+   {
+    "amplitude": "ALTERNATING-ROOTS",
+    "defined": true,
+    "order": "D.G",
+    "record": "R0"
+   },
+   {
+    "amplitude": "THE-ZERO-AMPLITUDE",
+    "defined": false,
+    "order": "G.D",
+    "record": "R0"
+   },
+   {
+    "amplitude": "THE-ZERO-AMPLITUDE",
+    "defined": false,
+    "order": "D.G",
+    "record": "R0"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-0"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-0"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-1"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-1"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-2"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-2"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-3"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-3"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-4"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-4"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-5"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-5"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-6"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-6"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-7"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-7"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-8"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-8"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-9"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-9"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-10"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-10"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-11"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-11"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-12"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-12"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-13"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-13"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-14"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-14"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-15"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-15"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-16"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-16"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-17"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-17"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-18"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-18"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-19"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-19"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-20"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-20"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-21"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-21"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-22"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-22"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-23"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-23"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-24"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-24"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-25"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-25"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-26"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-26"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-27"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-27"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-28"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-28"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-29"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-29"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-30"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-30"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-31"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-31"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-32"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-32"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-33"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-33"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-34"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-34"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "G.D",
+    "record": "ROUND-35"
+   },
+   {
+    "amplitude": "THE-UNIFORM-AMPLITUDE",
+    "defined": true,
+    "order": "D.G",
+    "record": "ROUND-35"
+   }
+  ],
   "undefined_targets": 2,
   "words": [
    [
@@ -6489,6 +7522,7 @@
   "lp.committed_classes": 4,
   "lp.committed_qmax": "4/9",
   "lp.fiber": 6,
+  "lp.fiber_infeasible": 132,
   "lp.infeasible": 136,
   "lp.many": 6,
   "lp.maxdim": 8,
@@ -6525,6 +7559,7 @@
   "targets.rows": 370,
   "union.groups": 455,
   "w3.family": 1,
+  "w3.family_label": "FAMILY-LEVEL-ACROSS-THE-TARGET-FAMILY",
   "w3.member": 4
  },
  "narrative_binds": {
@@ -6560,6 +7595,35 @@
  },
  "normalization": {
   "arity": 3,
+  "cell_cover": [
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3
+  ],
   "free_two_stage_covered_cells": 27,
   "free_two_stage_vacuous": true,
   "per_class": [
@@ -6621,7 +7685,7 @@
  },
  "object_under_test": {
   "path": "v15/paper-46-ecc.md",
-  "sha256_12": "61d330d13fe0"
+  "sha256_12": "96a3475e9f40"
  },
  "obs": {
   "blind": 8,
@@ -6661,7 +7725,154 @@
    }
   ],
   "probe_family_shares_record": true,
+  "probe_list": [
+   [
+    26,
+    26,
+    26
+   ],
+   [
+    26,
+    26,
+    28
+   ],
+   [
+    26,
+    28,
+    26
+   ],
+   [
+    26,
+    28,
+    28
+   ],
+   [
+    28,
+    26,
+    26
+   ],
+   [
+    28,
+    26,
+    28
+   ],
+   [
+    28,
+    28,
+    26
+   ],
+   [
+    28,
+    28,
+    28
+   ],
+   [
+    15,
+    15,
+    15
+   ],
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    30,
+    30,
+    30
+   ]
+  ],
   "probes": 11,
+  "relation_rows": [
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     26,
+     26,
+     26
+    ]
+   },
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     26,
+     26,
+     28
+    ]
+   },
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     26,
+     28,
+     26
+    ]
+   },
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     26,
+     28,
+     28
+    ]
+   },
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     28,
+     26,
+     26
+    ]
+   },
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     28,
+     26,
+     28
+    ]
+   },
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     28,
+     28,
+     26
+    ]
+   },
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     28,
+     28,
+     28
+    ]
+   },
+   {
+    "mask": "0",
+    "probe": [
+     15,
+     15,
+     15
+    ]
+   },
+   {
+    "mask": "0",
+    "probe": [
+     0,
+     0,
+     0
+    ]
+   },
+   {
+    "mask": "0",
+    "probe": [
+     30,
+     30,
+     30
+    ]
+   }
+  ],
   "relation_value_set": 2
  },
  "order_fiber": {
@@ -6735,11 +7946,11 @@
  },
  "paper_kit": {
   "fences": [
-   "ECC-STATE-CONTRACT-CLOSED-AT-THE-COMMITTED-WINDOWS-UNDER-THE-DECLARED-SEAM-READING<OBJECTS=23; COMPUTED-HERE=18; CITED=5; SENSE-WORDS=6; FREE-DECLARATIONS-CARRIED=15-OF-15-WITH-6-TYPE-CATEGORIES; EVENT-FORK=DECLARED-2-ARMS-NO-COMPROMISE; COSET-PRINCIPLE=DECLARED-THE-SELECTION-LAW; MAPS=3-TYPED-COMPOSED-NOWHERE; STATE-COMPONENTS=2-PLUS-BOOKKEEPING=1; SEAM-COMPONENT=READING-CONDITIONAL; ACTOR-RECORD-CYCLE=4-EDGES-CARRIED-OPEN-AT-FULL-DYNAMICS>",
+   "ECC-STATE-CONTRACT-CLOSED-AT-THE-COMMITTED-WINDOWS-UNDER-THE-DECLARED-SEAM-READING<OBJECTS=23; COMPUTED-HERE=18; CITED=5; SENSE-WORDS=6; FREE-DECLARATIONS-CARRIED=15-OF-15-WITH-6-TYPE-CATEGORIES; EVENT-FORK=DECLARED-2-ARMS-NO-COMPROMISE; COSET-PRINCIPLE=DECLARED-THE-SELECTION-LAW; MAPS=3-TYPED-COMPOSED-NOWHERE; STATE-COMPONENTS=2-PLUS-BOOKKEEPING=1; SEAM-COMPONENT=READING-RELATIVE; ACTOR-RECORD-CYCLE=4-EDGES-CARRIED-OPEN-AT-FULL-DYNAMICS>",
    "SEAM-DECISION-UNDERDETERMINED-AT-THE-COMMITTED-OBSERVABLE-MENU<OBSERVABLES=8; COMPLETION-BLIND=8-OF-8; PROBE-STATES=11; THE-MODAL-RELATION-SEPARATES=2-VALUES-OVER-THE-SAME-PROBES; READING-FAMILY=3; TWO-STEP-CENSUS-FROM-ALL-108-FIRST-CROSSINGS: RE-SOLVED-FIBER-25-TO-43; PERSIST-FIT-DIFFERS-AT-108-OF-108; PERSIST-KEPT-DIFFERS-AT-108-OF-108; CHOSEN-READING=RE-SOLVED-DECLARED-NOT-MEASURED; DOWNSTREAM-STAMPED=215-ROWS>",
    "PSI-STATUS-INDEPENDENT-AT-EVERY-DELIVERED-ROW<FACES=3; ROWS=18; FUNCTIONAL-AGREEMENTS=18-OF-18; SEPARATING-ROWS=0; THE-CONSUMERS-REACH-THE-BORN-FUNCTIONAL-ALONE=AUDITED; THE-TRILEMMA-IS-UNRESOLVED-AND-EVERY-DELIVERED-RESULT-IS-PROVEN-BLIND-TO-IT>",
-   "ECC-LP-INFEASIBLE-AT-THE-COMMITTED-ROW-AND-THE-CEILING-IS-A-THEOREM<CLASSES=4-PLUS-THE-PAIR-EVENT-BRANCH; DISTINCT-TARGETS=39; ROWS=156; INFEASIBLE=136; UNIQUE=8; MANY=6-MAX-DIM-8; FIBER-FEASIBLE=6; BRANCH-DEGENERATE-IDENTITY=39-OF-39; TARGET-UNDEFINED-AMPLITUDES=2; COMMITTED-ROW=SINGLE-CELL-AMPLITUDE-AT-THE-INITIAL-RECORD-AT-THE-DELIVERED-ORDER-QMAX-4/9-ABOVE-THE-CEILING-INFEASIBLE-AT-ALL-4-COMMITTED-CLASSES; CEILING=FEASIBILITY-FORCES-QMAX-AT-MOST-ONE-THIRD-CHECKED-AT-156-ROWS-EXCEPTIONS-0; CONTROLS=FORCED-BOTH-WAYS-THROUGH-THE-REAL-PREDICATES; NORMALIZATION=PRE-REGISTERED-PAIR-CELL-FORM-INCLUSION-EQUALS-UNIFORM-TWO-STAGE-WHERE-EVERY-EVENT-WRITES-3-CELLS; FREE-TWO-STAGE=VACUOUS-AT-27-OF-27-CELLS-COVERED>",
-   "ECC-CARRIER-FAMILY-UNSELECTED-AND-THE-DEBT-DECIDED<CANDIDATES=4; HOST-THE-STATE=4-OF-4; EXPRESS-THE-COMMITTED-BRANCHING=2-OF-4; EVOLVE-ACROSS-CREATION=0-OF-4; NOTHING-SELECTED-THE-FAMILY-PUBLISHED; DEBT=THE-WALK-CONTINUES-ON-ITS-OWN-MENU-WHERE-CREATION-REFUSES: MENU-CELLS-IN-THE-CROSS-CLASS=0-OF-36; FROZEN-CREATION-ADMITS=0-OF-288-SEAM-SPANNING; UNIT-MASS-AMPLITUDES=4-OF-4; CLASS=COMPATIBILITY-NO-GO; SCOPE=ONE-ARENA-COMMITTED-WINDOWS-COUNTING-ONLY; W-THREE-LABELS=4-MEMBER-SPECIFIC-PLUS-1-FAMILY-LEVEL-FIBRES-DISCLOSED>"
+   "ECC-LP-INFEASIBLE-AT-THE-COMMITTED-ROW-AND-THE-CEILING-IS-A-THEOREM<CLASSES=4-PLUS-THE-PAIR-EVENT-BRANCH; DISTINCT-TARGETS=39; ROWS=156; INFEASIBLE=136; UNIQUE=8; MANY=6-MAX-DIM-8; FIBER-FEASIBLE=6; BRANCH-DEGENERATE-IDENTITY=39-OF-39; TARGET-UNDEFINED-ROWS=2; COMMITTED-ROW=SINGLE-CELL-AMPLITUDE-AT-THE-INITIAL-RECORD-AT-THE-DELIVERED-ORDER-QMAX-4/9-ABOVE-THE-CEILING-INFEASIBLE-AT-ALL-4-COMMITTED-CLASSES; CEILING=FEASIBILITY-FORCES-QMAX-AT-MOST-ONE-THIRD-CHECKED-AT-156-ROWS-EXCEPTIONS-0; CONTROLS=FORCED-BOTH-WAYS-THROUGH-THE-REAL-PREDICATES; NORMALIZATION=PRE-REGISTERED-PAIR-CELL-FORM-INCLUSION-EQUALS-UNIFORM-TWO-STAGE-WHERE-EVERY-EVENT-WRITES-3-CELLS; FREE-TWO-STAGE=VACUOUS-AT-27-OF-27-CELLS-COVERED>",
+   "ECC-CARRIER-FAMILY-UNSELECTED-AND-THE-DEBT-DECIDED<CANDIDATES=4; HOST-THE-STATE=4-OF-4; EXPRESS-THE-COMMITTED-BRANCHING=2-OF-4; EVOLVE-ACROSS-CREATION=0-OF-4; NOTHING-SELECTED-THE-FAMILY-PUBLISHED; DEBT=THE-WALK-CONTINUES-ON-ITS-OWN-MENU-WHERE-CREATION-REFUSES: MENU-CELLS-IN-THE-CROSS-CLASS=0-OF-36; FROZEN-CREATION-ADMITS=0-OF-288-SEAM-SPANNING; UNIT-MASS-AMPLITUDES=4-OF-4; CLASS=COMPATIBILITY-NO-GO; SCOPE=ONE-ARENA-COMMITTED-WINDOWS-COUNTING-ONLY; W-THREE-LABELS=4-MEMBER-SPECIFIC-PLUS-1-FAMILY-LEVEL-ACROSS-THE-TARGET-FAMILY-FIBRES-DISCLOSED>"
   ],
   "prose_claims": [
    "a cell is an unordered co-division pair of actors carrying one declared direction, and nothing else is called one",
@@ -7409,6 +8620,36 @@
      1
     ]
    ],
+   "T-INVENTORY": [
+    [
+     [
+      "free declarations carried from the parent census",
+      "15"
+     ],
+     1
+    ],
+    [
+     [
+      "inventory row",
+      "count"
+     ],
+     1
+    ],
+    [
+     [
+      "the combined declaration count",
+      "17"
+     ],
+     1
+    ],
+    [
+     [
+      "this unit's new declared choices",
+      "2"
+     ],
+     1
+    ]
+   ],
    "T-LPWORDS": [
     [
      [
@@ -7844,7 +9085,10 @@
    "the lp is feasible after all",
    "an observable separates the completion",
    "the persist members allow the same second crossings",
-   "the faces emit different functionals"
+   "the faces emit different functionals",
+   "the parents unify as written",
+   "the parents can be unified as written",
+   "a single probability assignment carries both the born weights and the grammar"
   ]
  },
  "preparedness": {
@@ -7893,6 +9137,7 @@
   "faces": 3,
   "rows": [
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "THE-UNIFORM-AMPLITUDE",
     "defined": true,
@@ -7900,6 +9145,7 @@
     "record": "R0"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "THE-UNIFORM-AMPLITUDE",
     "defined": true,
@@ -7907,6 +9153,7 @@
     "record": "R0"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "THE-UNIFORM-AMPLITUDE",
     "defined": true,
@@ -7914,6 +9161,7 @@
     "record": "ROUND-A"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "THE-UNIFORM-AMPLITUDE",
     "defined": true,
@@ -7921,6 +9169,7 @@
     "record": "ROUND-A"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "THE-UNIFORM-AMPLITUDE",
     "defined": true,
@@ -7928,6 +9177,7 @@
     "record": "ROUND-B"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "THE-UNIFORM-AMPLITUDE",
     "defined": true,
@@ -7935,6 +9185,7 @@
     "record": "ROUND-B"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "A-SINGLE-CELL-AMPLITUDE",
     "defined": true,
@@ -7942,6 +9193,7 @@
     "record": "R0"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "A-SINGLE-CELL-AMPLITUDE",
     "defined": true,
@@ -7949,6 +9201,7 @@
     "record": "R0"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "A-SINGLE-CELL-AMPLITUDE",
     "defined": true,
@@ -7956,6 +9209,7 @@
     "record": "ROUND-A"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "A-SINGLE-CELL-AMPLITUDE",
     "defined": true,
@@ -7963,6 +9217,7 @@
     "record": "ROUND-A"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "A-SINGLE-CELL-AMPLITUDE",
     "defined": true,
@@ -7970,6 +9225,7 @@
     "record": "ROUND-B"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "A-SINGLE-CELL-AMPLITUDE",
     "defined": true,
@@ -7977,6 +9233,7 @@
     "record": "ROUND-B"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "ONE-LINK-DIRECTION-ONLY",
     "defined": true,
@@ -7984,6 +9241,7 @@
     "record": "R0"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "ONE-LINK-DIRECTION-ONLY",
     "defined": true,
@@ -7991,6 +9249,7 @@
     "record": "R0"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "ALTERNATING-ROOTS",
     "defined": true,
@@ -7998,6 +9257,7 @@
     "record": "R0"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "ALTERNATING-ROOTS",
     "defined": true,
@@ -8005,6 +9265,7 @@
     "record": "R0"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "THE-ZERO-AMPLITUDE",
     "defined": false,
@@ -8012,6 +9273,7 @@
     "record": "R0"
    },
    {
+    "accessor_agrees": true,
     "agree": true,
     "amplitude": "THE-ZERO-AMPLITUDE",
     "defined": false,
@@ -8025,6 +9287,14 @@
   "psi_instrument_rho": [],
   "psi_ontic_q": [],
   "psi_repr_q": []
+ },
+ "rational_scan": {
+  "distinct": [
+   "4/9",
+   "7/3"
+  ],
+  "paper_rationals": 7,
+  "receipt_rationals": 13
  },
  "read_set": {
   "declared_never_read": [],
@@ -8078,7 +9348,7 @@
     "sealed_at_gate": "G-ANCHOR-CONSUMPTION"
    },
    "anchors": {
-    "digest": "dbd1b548363943c8",
+    "digest": "4d919e8ded462286",
     "sealed_at_gate": "G-ANCHORS"
    },
    "born": {
@@ -8094,11 +9364,11 @@
     "sealed_at_gate": "G-CHART"
    },
    "circularity": {
-    "digest": "cbe78f5146f4456a",
+    "digest": "7601fb2d1781e3c7",
     "sealed_at_gate": "G-CIRCULARITY"
    },
    "claims": {
-    "digest": "ead944cc23e5aad7",
+    "digest": "8b494176b92fa3b5",
     "sealed_at_gate": "G-PAPER-CLAIMS"
    },
    "coin": {
@@ -8106,16 +9376,20 @@
     "sealed_at_gate": "G-COIN-FAMILY"
    },
    "comparator": {
-    "digest": "e42c940795c90dc4",
+    "digest": "6fe39dd8a48b6b8d",
     "sealed_at_gate": "G-VERDICT-RECON"
    },
    "coverage_scan": {
-    "digest": "2325663c394e415b",
+    "digest": "9258eb46f68ce4f0",
     "sealed_at_gate": "G-PAPER-COVERAGE"
    },
    "debt": {
-    "digest": "63c0293dfab23531",
+    "digest": "2fe19b1140d2c442",
     "sealed_at_gate": "G-DEBT"
+   },
+   "decl_inventory": {
+    "digest": "4bdec143686304f0",
+    "sealed_at_gate": "G-DECLARATION-INVENTORY"
    },
    "declared": {
     "digest": "98f16438a291d553",
@@ -8125,12 +9399,16 @@
     "digest": "90844005c75460c7",
     "sealed_at_gate": "G-DETERMINISM"
    },
+   "emitability": {
+    "digest": "4131681fc97d2679",
+    "sealed_at_gate": "G-OUTCOME-EMITABILITY"
+   },
    "falsifier_coverage": {
-    "digest": "265ff54c1feafe90",
+    "digest": "1b454986bf2771df",
     "sealed_at_gate": "G-COVERAGE"
    },
    "falsifier_honesty": {
-    "digest": "b714a7432ae32199",
+    "digest": "608863b88c507f67",
     "sealed_at_gate": "G-FALSIFIER-HONESTY"
    },
    "fork": {
@@ -8158,7 +9436,7 @@
     "sealed_at_gate": "G-MULTIPLICITY"
    },
    "lp": {
-    "digest": "3d9ba64d6368d3da",
+    "digest": "2ba08df1749a666d",
     "sealed_at_gate": "G-LP-DIM"
    },
    "lp_controls": {
@@ -8170,19 +9448,19 @@
     "sealed_at_gate": "G-MAPS-SEPARATE"
    },
    "measured": {
-    "digest": "903f1815b52336e3",
+    "digest": "b42c8b4ec69a1eaf",
     "sealed_at_gate": "G-VERDICT-RECON"
    },
    "normalization": {
-    "digest": "429aa385977d82d7",
+    "digest": "7ca39826efeb0312",
     "sealed_at_gate": "G-NORMALIZATION"
    },
    "object_under_test": {
-    "digest": "1f150d46e1c37130",
+    "digest": "4c9bf7b2ae52d41f",
     "sealed_at_gate": "G-VERDICT-RECON"
    },
    "obs": {
-    "digest": "47ca3c9362c2deaa",
+    "digest": "59a37b75c23afa0e",
     "sealed_at_gate": "G-OBS-SWEEP"
    },
    "order_fiber": {
@@ -8194,7 +9472,7 @@
     "sealed_at_gate": "G-OUTCOME-FEASIBILITY"
    },
    "polarity": {
-    "digest": "61978f285fc086b0",
+    "digest": "a6006da926946820",
     "sealed_at_gate": "G-PAPER-POLARITY"
    },
    "preparedness": {
@@ -8202,19 +9480,23 @@
     "sealed_at_gate": "G-PREPAREDNESS"
    },
    "psi": {
-    "digest": "90510144d27c04f8",
+    "digest": "1f586d6b6d747f70",
     "sealed_at_gate": "G-PSI-EQUAL"
    },
    "psi_regions": {
     "digest": "e41429ae1f06f4b1",
     "sealed_at_gate": "G-PSI-REGIONS"
    },
+   "rational_scan": {
+    "digest": "9879335d3b7c486e",
+    "sealed_at_gate": "G-PAPER-RATIONAL"
+   },
    "referent": {
     "digest": "ff30237f5d2ede36",
     "sealed_at_gate": "G-PAPER-REFERENT"
    },
    "seam": {
-    "digest": "787e5367969052a0",
+    "digest": "b8f436a22d121377",
     "sealed_at_gate": "G-SEAM-DECISION"
    },
    "senses_check": {
@@ -8226,11 +9508,11 @@
     "sealed_at_gate": "G-SOURCES"
    },
    "spelled": {
-    "digest": "394710af39faaea4",
+    "digest": "4b66edcc87ce3997",
     "sealed_at_gate": "G-PAPER-SPELLED"
    },
    "stamps": {
-    "digest": "8eba954acb71a1fc",
+    "digest": "eaabfdf1d4c2c7c1",
     "sealed_at_gate": "G-STAMPS"
    },
    "template": {
@@ -8254,15 +9536,15 @@
     "sealed_at_gate": "G-CLASS"
    },
    "verdict": {
-    "digest": "5ce4a9b70bfe6919",
+    "digest": "7fd86d903c3807c9",
     "sealed_at_gate": "G-VERDICT-RECON"
    },
    "w3": {
-    "digest": "08a04d3ca29e5552",
+    "digest": "a3f8698ee8062522",
     "sealed_at_gate": "G-W3-LABELS"
    },
    "walls": {
-    "digest": "2f6901692b3f31d1",
+    "digest": "f37a2eb7cbc33fac",
     "sealed_at_gate": "G-WALLS"
    }
   },
@@ -8342,11 +9624,158 @@
     "value_set_size": 1
    }
   ],
+  "probe_list": [
+   [
+    26,
+    26,
+    26
+   ],
+   [
+    26,
+    26,
+    28
+   ],
+   [
+    26,
+    28,
+    26
+   ],
+   [
+    26,
+    28,
+    28
+   ],
+   [
+    28,
+    26,
+    26
+   ],
+   [
+    28,
+    26,
+    28
+   ],
+   [
+    28,
+    28,
+    26
+   ],
+   [
+    28,
+    28,
+    28
+   ],
+   [
+    15,
+    15,
+    15
+   ],
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    30,
+    30,
+    30
+   ]
+  ],
   "probes": 11,
   "reading_family": [
    "RE-SOLVED",
    "PERSIST-FIT",
    "PERSIST-KEPT"
+  ],
+  "relation_rows": [
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     26,
+     26,
+     26
+    ]
+   },
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     26,
+     26,
+     28
+    ]
+   },
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     26,
+     28,
+     26
+    ]
+   },
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     26,
+     28,
+     28
+    ]
+   },
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     28,
+     26,
+     26
+    ]
+   },
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     28,
+     26,
+     28
+    ]
+   },
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     28,
+     28,
+     26
+    ]
+   },
+   {
+    "mask": "40564915921424250268041800056834",
+    "probe": [
+     28,
+     28,
+     28
+    ]
+   },
+   {
+    "mask": "0",
+    "probe": [
+     15,
+     15,
+     15
+    ]
+   },
+   {
+    "mask": "0",
+    "probe": [
+     0,
+     0,
+     0
+    ]
+   },
+   {
+    "mask": "0",
+    "probe": [
+     30,
+     30,
+     30
+    ]
+   }
   ],
   "relation_values": 2,
   "step2_rows": [
@@ -9723,6 +11152,14 @@
    "word": "zero"
   },
   {
+   "value": 0,
+   "word": "zero"
+  },
+  {
+   "value": 0,
+   "word": "zero"
+  },
+  {
    "value": 2,
    "word": "two"
   },
@@ -9893,6 +11330,22 @@
   {
    "value": 3,
    "word": "three"
+  },
+  {
+   "value": 3,
+   "word": "three"
+  },
+  {
+   "value": 3,
+   "word": "three"
+  },
+  {
+   "value": 4,
+   "word": "four"
+  },
+  {
+   "value": 4,
+   "word": "four"
   },
   {
    "value": 4,
@@ -10000,227 +11453,1085 @@
    "audited": 7,
    "offences": []
   },
+  "psi_by_byte": 18,
+  "psi_by_reach": 197,
   "rows": [
-   "lp.row.0",
-   "lp.row.1",
-   "lp.row.2",
-   "lp.row.3",
-   "lp.row.4",
-   "lp.row.5",
-   "lp.row.6",
-   "lp.row.7",
-   "lp.row.8",
-   "lp.row.9",
-   "lp.row.10",
-   "lp.row.11",
-   "lp.row.12",
-   "lp.row.13",
-   "lp.row.14",
-   "lp.row.15",
-   "lp.row.16",
-   "lp.row.17",
-   "lp.row.18",
-   "lp.row.19",
-   "lp.row.20",
-   "lp.row.21",
-   "lp.row.22",
-   "lp.row.23",
-   "lp.row.24",
-   "lp.row.25",
-   "lp.row.26",
-   "lp.row.27",
-   "lp.row.28",
-   "lp.row.29",
-   "lp.row.30",
-   "lp.row.31",
-   "lp.row.32",
-   "lp.row.33",
-   "lp.row.34",
-   "lp.row.35",
-   "lp.row.36",
-   "lp.row.37",
-   "lp.row.38",
-   "lp.row.39",
-   "lp.row.40",
-   "lp.row.41",
-   "lp.row.42",
-   "lp.row.43",
-   "lp.row.44",
-   "lp.row.45",
-   "lp.row.46",
-   "lp.row.47",
-   "lp.row.48",
-   "lp.row.49",
-   "lp.row.50",
-   "lp.row.51",
-   "lp.row.52",
-   "lp.row.53",
-   "lp.row.54",
-   "lp.row.55",
-   "lp.row.56",
-   "lp.row.57",
-   "lp.row.58",
-   "lp.row.59",
-   "lp.row.60",
-   "lp.row.61",
-   "lp.row.62",
-   "lp.row.63",
-   "lp.row.64",
-   "lp.row.65",
-   "lp.row.66",
-   "lp.row.67",
-   "lp.row.68",
-   "lp.row.69",
-   "lp.row.70",
-   "lp.row.71",
-   "lp.row.72",
-   "lp.row.73",
-   "lp.row.74",
-   "lp.row.75",
-   "lp.row.76",
-   "lp.row.77",
-   "lp.row.78",
-   "lp.row.79",
-   "lp.row.80",
-   "lp.row.81",
-   "lp.row.82",
-   "lp.row.83",
-   "lp.row.84",
-   "lp.row.85",
-   "lp.row.86",
-   "lp.row.87",
-   "lp.row.88",
-   "lp.row.89",
-   "lp.row.90",
-   "lp.row.91",
-   "lp.row.92",
-   "lp.row.93",
-   "lp.row.94",
-   "lp.row.95",
-   "lp.row.96",
-   "lp.row.97",
-   "lp.row.98",
-   "lp.row.99",
-   "lp.row.100",
-   "lp.row.101",
-   "lp.row.102",
-   "lp.row.103",
-   "lp.row.104",
-   "lp.row.105",
-   "lp.row.106",
-   "lp.row.107",
-   "lp.row.108",
-   "lp.row.109",
-   "lp.row.110",
-   "lp.row.111",
-   "lp.row.112",
-   "lp.row.113",
-   "lp.row.114",
-   "lp.row.115",
-   "lp.row.116",
-   "lp.row.117",
-   "lp.row.118",
-   "lp.row.119",
-   "lp.row.120",
-   "lp.row.121",
-   "lp.row.122",
-   "lp.row.123",
-   "lp.row.124",
-   "lp.row.125",
-   "lp.row.126",
-   "lp.row.127",
-   "lp.row.128",
-   "lp.row.129",
-   "lp.row.130",
-   "lp.row.131",
-   "lp.row.132",
-   "lp.row.133",
-   "lp.row.134",
-   "lp.row.135",
-   "lp.row.136",
-   "lp.row.137",
-   "lp.row.138",
-   "lp.row.139",
-   "lp.row.140",
-   "lp.row.141",
-   "lp.row.142",
-   "lp.row.143",
-   "lp.row.144",
-   "lp.row.145",
-   "lp.row.146",
-   "lp.row.147",
-   "lp.row.148",
-   "lp.row.149",
-   "lp.row.150",
-   "lp.row.151",
-   "lp.row.152",
-   "lp.row.153",
-   "lp.row.154",
-   "lp.row.155",
-   "lp.branch.0",
-   "lp.branch.1",
-   "lp.branch.2",
-   "lp.branch.3",
-   "lp.branch.4",
-   "lp.branch.5",
-   "lp.branch.6",
-   "lp.branch.7",
-   "lp.branch.8",
-   "lp.branch.9",
-   "lp.branch.10",
-   "lp.branch.11",
-   "lp.branch.12",
-   "lp.branch.13",
-   "lp.branch.14",
-   "lp.branch.15",
-   "lp.branch.16",
-   "lp.branch.17",
-   "lp.branch.18",
-   "lp.branch.19",
-   "lp.branch.20",
-   "lp.branch.21",
-   "lp.branch.22",
-   "lp.branch.23",
-   "lp.branch.24",
-   "lp.branch.25",
-   "lp.branch.26",
-   "lp.branch.27",
-   "lp.branch.28",
-   "lp.branch.29",
-   "lp.branch.30",
-   "lp.branch.31",
-   "lp.branch.32",
-   "lp.branch.33",
-   "lp.branch.34",
-   "lp.branch.35",
-   "lp.branch.36",
-   "lp.branch.37",
-   "lp.branch.38",
-   "psi.row.0",
-   "psi.row.1",
-   "psi.row.2",
-   "psi.row.3",
-   "psi.row.4",
-   "psi.row.5",
-   "psi.row.6",
-   "psi.row.7",
-   "psi.row.8",
-   "psi.row.9",
-   "psi.row.10",
-   "psi.row.11",
-   "psi.row.12",
-   "psi.row.13",
-   "psi.row.14",
-   "psi.row.15",
-   "psi.row.16",
-   "psi.row.17",
-   "carrier.family",
-   "debt.census"
-  ],
-  "stamp": {
-   "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
-   "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
-  }
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.0",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.1",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.2",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.3",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.4",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.5",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.6",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.7",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.8",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.9",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.10",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.11",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.12",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.13",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.14",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.15",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.16",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.17",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.18",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.19",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.20",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.21",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.22",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.23",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.24",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.25",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.26",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.27",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.28",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.29",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.30",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.31",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.32",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.33",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.34",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.35",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.36",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.37",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.38",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.39",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.40",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.41",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.42",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.43",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.44",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.45",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.46",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.47",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.48",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.49",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.50",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.51",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.52",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.53",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.54",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.55",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.56",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.57",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.58",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.59",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.60",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.61",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.62",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.63",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.64",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.65",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.66",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.67",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.68",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.69",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.70",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.71",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.72",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.73",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.74",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.75",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.76",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.77",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.78",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.79",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.80",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.81",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.82",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.83",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.84",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.85",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.86",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.87",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.88",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.89",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.90",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.91",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.92",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.93",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.94",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.95",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.96",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.97",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.98",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.99",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.100",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.101",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.102",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.103",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.104",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.105",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.106",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.107",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.108",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.109",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.110",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.111",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.112",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.113",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.114",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.115",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.116",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.117",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.118",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.119",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.120",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.121",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.122",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.123",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.124",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.125",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.126",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.127",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.128",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.129",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.130",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.131",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.132",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.133",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.134",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.135",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.136",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.137",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.138",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.139",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.140",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.141",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.142",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.143",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.144",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.145",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.146",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.147",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.148",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.149",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.150",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.151",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.152",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.153",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.154",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.row.155",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.0",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.1",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.2",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.3",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.4",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.5",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.6",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.7",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.8",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.9",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.10",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.11",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.12",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.13",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.14",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.15",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.16",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.17",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.18",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.19",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.20",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.21",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.22",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.23",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.24",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.25",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.26",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.27",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.28",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.29",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.30",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.31",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.32",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.33",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.34",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.35",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.36",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.37",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "lp.branch.38",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.0",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.1",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.2",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.3",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.4",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.5",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.6",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.7",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.8",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.9",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.10",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.11",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.12",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.13",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.14",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.15",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.16",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY",
+    "row": "psi.row.17",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "carrier.family",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   },
+   {
+    "psi": "FACE-INDEPENDENT-BY-REACH-AUDIT",
+    "row": "debt.census",
+    "seam": "READING-INDEPENDENT-BY-REACH-AUDIT"
+   }
+  ]
  },
  "template": {
   "implemented": [
@@ -10273,7 +12584,7 @@
   ],
   "window_closed_under_generator": true
  },
- "transcript_digest": "3034f0028bb3",
+ "transcript_digest": "c13c1b2fc17b",
  "typed_counts": [],
  "union": {
   "a2_groups": 105,
@@ -10341,67 +12652,103 @@
   "pin_sentence": "A COMPATIBILITY/NO-GO paper, not a forced construction."
  },
  "verdict": [
-  "ECC-STATE-CONTRACT-CLOSED-AT-THE-COMMITTED-WINDOWS-UNDER-THE-DECLARED-SEAM-READING<OBJECTS=23; COMPUTED-HERE=18; CITED=5; SENSE-WORDS=6; FREE-DECLARATIONS-CARRIED=15-OF-15-WITH-6-TYPE-CATEGORIES; EVENT-FORK=DECLARED-2-ARMS-NO-COMPROMISE; COSET-PRINCIPLE=DECLARED-THE-SELECTION-LAW; MAPS=3-TYPED-COMPOSED-NOWHERE; STATE-COMPONENTS=2-PLUS-BOOKKEEPING=1; SEAM-COMPONENT=READING-CONDITIONAL; ACTOR-RECORD-CYCLE=4-EDGES-CARRIED-OPEN-AT-FULL-DYNAMICS>",
+  "ECC-STATE-CONTRACT-CLOSED-AT-THE-COMMITTED-WINDOWS-UNDER-THE-DECLARED-SEAM-READING<OBJECTS=23; COMPUTED-HERE=18; CITED=5; SENSE-WORDS=6; FREE-DECLARATIONS-CARRIED=15-OF-15-WITH-6-TYPE-CATEGORIES; EVENT-FORK=DECLARED-2-ARMS-NO-COMPROMISE; COSET-PRINCIPLE=DECLARED-THE-SELECTION-LAW; MAPS=3-TYPED-COMPOSED-NOWHERE; STATE-COMPONENTS=2-PLUS-BOOKKEEPING=1; SEAM-COMPONENT=READING-RELATIVE; ACTOR-RECORD-CYCLE=4-EDGES-CARRIED-OPEN-AT-FULL-DYNAMICS>",
   "SEAM-DECISION-UNDERDETERMINED-AT-THE-COMMITTED-OBSERVABLE-MENU<OBSERVABLES=8; COMPLETION-BLIND=8-OF-8; PROBE-STATES=11; THE-MODAL-RELATION-SEPARATES=2-VALUES-OVER-THE-SAME-PROBES; READING-FAMILY=3; TWO-STEP-CENSUS-FROM-ALL-108-FIRST-CROSSINGS: RE-SOLVED-FIBER-25-TO-43; PERSIST-FIT-DIFFERS-AT-108-OF-108; PERSIST-KEPT-DIFFERS-AT-108-OF-108; CHOSEN-READING=RE-SOLVED-DECLARED-NOT-MEASURED; DOWNSTREAM-STAMPED=215-ROWS>",
   "PSI-STATUS-INDEPENDENT-AT-EVERY-DELIVERED-ROW<FACES=3; ROWS=18; FUNCTIONAL-AGREEMENTS=18-OF-18; SEPARATING-ROWS=0; THE-CONSUMERS-REACH-THE-BORN-FUNCTIONAL-ALONE=AUDITED; THE-TRILEMMA-IS-UNRESOLVED-AND-EVERY-DELIVERED-RESULT-IS-PROVEN-BLIND-TO-IT>",
-  "ECC-LP-INFEASIBLE-AT-THE-COMMITTED-ROW-AND-THE-CEILING-IS-A-THEOREM<CLASSES=4-PLUS-THE-PAIR-EVENT-BRANCH; DISTINCT-TARGETS=39; ROWS=156; INFEASIBLE=136; UNIQUE=8; MANY=6-MAX-DIM-8; FIBER-FEASIBLE=6; BRANCH-DEGENERATE-IDENTITY=39-OF-39; TARGET-UNDEFINED-AMPLITUDES=2; COMMITTED-ROW=SINGLE-CELL-AMPLITUDE-AT-THE-INITIAL-RECORD-AT-THE-DELIVERED-ORDER-QMAX-4/9-ABOVE-THE-CEILING-INFEASIBLE-AT-ALL-4-COMMITTED-CLASSES; CEILING=FEASIBILITY-FORCES-QMAX-AT-MOST-ONE-THIRD-CHECKED-AT-156-ROWS-EXCEPTIONS-0; CONTROLS=FORCED-BOTH-WAYS-THROUGH-THE-REAL-PREDICATES; NORMALIZATION=PRE-REGISTERED-PAIR-CELL-FORM-INCLUSION-EQUALS-UNIFORM-TWO-STAGE-WHERE-EVERY-EVENT-WRITES-3-CELLS; FREE-TWO-STAGE=VACUOUS-AT-27-OF-27-CELLS-COVERED>",
-  "ECC-CARRIER-FAMILY-UNSELECTED-AND-THE-DEBT-DECIDED<CANDIDATES=4; HOST-THE-STATE=4-OF-4; EXPRESS-THE-COMMITTED-BRANCHING=2-OF-4; EVOLVE-ACROSS-CREATION=0-OF-4; NOTHING-SELECTED-THE-FAMILY-PUBLISHED; DEBT=THE-WALK-CONTINUES-ON-ITS-OWN-MENU-WHERE-CREATION-REFUSES: MENU-CELLS-IN-THE-CROSS-CLASS=0-OF-36; FROZEN-CREATION-ADMITS=0-OF-288-SEAM-SPANNING; UNIT-MASS-AMPLITUDES=4-OF-4; CLASS=COMPATIBILITY-NO-GO; SCOPE=ONE-ARENA-COMMITTED-WINDOWS-COUNTING-ONLY; W-THREE-LABELS=4-MEMBER-SPECIFIC-PLUS-1-FAMILY-LEVEL-FIBRES-DISCLOSED>"
+  "ECC-LP-INFEASIBLE-AT-THE-COMMITTED-ROW-AND-THE-CEILING-IS-A-THEOREM<CLASSES=4-PLUS-THE-PAIR-EVENT-BRANCH; DISTINCT-TARGETS=39; ROWS=156; INFEASIBLE=136; UNIQUE=8; MANY=6-MAX-DIM-8; FIBER-FEASIBLE=6; BRANCH-DEGENERATE-IDENTITY=39-OF-39; TARGET-UNDEFINED-ROWS=2; COMMITTED-ROW=SINGLE-CELL-AMPLITUDE-AT-THE-INITIAL-RECORD-AT-THE-DELIVERED-ORDER-QMAX-4/9-ABOVE-THE-CEILING-INFEASIBLE-AT-ALL-4-COMMITTED-CLASSES; CEILING=FEASIBILITY-FORCES-QMAX-AT-MOST-ONE-THIRD-CHECKED-AT-156-ROWS-EXCEPTIONS-0; CONTROLS=FORCED-BOTH-WAYS-THROUGH-THE-REAL-PREDICATES; NORMALIZATION=PRE-REGISTERED-PAIR-CELL-FORM-INCLUSION-EQUALS-UNIFORM-TWO-STAGE-WHERE-EVERY-EVENT-WRITES-3-CELLS; FREE-TWO-STAGE=VACUOUS-AT-27-OF-27-CELLS-COVERED>",
+  "ECC-CARRIER-FAMILY-UNSELECTED-AND-THE-DEBT-DECIDED<CANDIDATES=4; HOST-THE-STATE=4-OF-4; EXPRESS-THE-COMMITTED-BRANCHING=2-OF-4; EVOLVE-ACROSS-CREATION=0-OF-4; NOTHING-SELECTED-THE-FAMILY-PUBLISHED; DEBT=THE-WALK-CONTINUES-ON-ITS-OWN-MENU-WHERE-CREATION-REFUSES: MENU-CELLS-IN-THE-CROSS-CLASS=0-OF-36; FROZEN-CREATION-ADMITS=0-OF-288-SEAM-SPANNING; UNIT-MASS-AMPLITUDES=4-OF-4; CLASS=COMPATIBILITY-NO-GO; SCOPE=ONE-ARENA-COMMITTED-WINDOWS-COUNTING-ONLY; W-THREE-LABELS=4-MEMBER-SPECIFIC-PLUS-1-FAMILY-LEVEL-ACROSS-THE-TARGET-FAMILY-FIBRES-DISCLOSED>"
  ],
  "w3": {
   "ceiling_family_level": true,
+  "family_label": "FAMILY-LEVEL-ACROSS-THE-TARGET-FAMILY",
   "family_level": 1,
   "labels": [
    {
     "fibres": "one arena; the committed corpus; the declared seam reading",
     "label": "MEMBER-SPECIFIC",
-    "segment": "the interface table and the state contract"
+    "segment": "the interface table and the state contract",
+    "sweep": null
    },
    {
     "fibres": "one arena; the declared probe family; the three-member reading family; every first crossing",
     "label": "MEMBER-SPECIFIC",
-    "segment": "the seam decision"
+    "segment": "the seam decision",
+    "sweep": null
    },
    {
     "fibres": "the delivered row family: five amplitudes, three records, both coin orders",
     "label": "MEMBER-SPECIFIC",
-    "segment": "the psi-status trilemma"
+    "segment": "the psi-status trilemma",
+    "sweep": null
    },
    {
-    "fibres": "the ceiling leg is an arithmetic theorem checked at every row; the verdict row is member-specific to the committed amplitude, record, order and class",
+    "fibres": "the ceiling leg is an arithmetic theorem checked at every row of the swept target family; the verdict row is member-specific to the committed amplitude, record, order and class",
     "label": "FAMILY-LEVEL-ACROSS-THE-TARGET-FAMILY",
-    "segment": "the born-marginal feasibility lp"
+    "segment": "the born-marginal feasibility lp",
+    "sweep": {
+     "exceptions": 0,
+     "family": "ACROSS-THE-TARGET-FAMILY",
+     "swept_rows": 156
+    }
    },
    {
     "fibres": "one arena; both fork arms censused; the four-member candidate family",
     "label": "MEMBER-SPECIFIC",
-    "segment": "the carrier and the admissible-class debt"
+    "segment": "the carrier and the admissible-class debt",
+    "sweep": null
    }
   ],
   "member_specific": 4
  },
  "walls": [
   {
-   "controls": 6,
-   "controls_dead": 6,
+   "controls": 11,
+   "controls_dead": 11,
    "missing_positive": [],
    "spec": {
-    "independent_controls": 6,
+    "independent_controls": 11,
     "licences": [
-     "\\bcandidate\\b",
-     "\\bgated\\b",
-     "\\bscope\\b",
-     "\\breported as (a reproduction|one)\\b",
-     "\\bconsumer gate\\b",
-     "\\bidentifiab\\w+ within\\b",
-     "\\bat (this|one) arena\\b",
-     "\\bdeclared\\b",
-     "\\bcited\\b",
-     "\\bfidelity\\b"
+     {
+      "id": "L-CANDIDATE-READING",
+      "pattern": "\\bcandidate reading\\b"
+     },
+     {
+      "id": "L-GATED-REPRODUCTION",
+      "pattern": "\\bgated as a reproduction\\b|\\ba gated reproduction\\b|\\bgated against the sealed parent\\b"
+     },
+     {
+      "id": "L-CITED-SEAL",
+      "pattern": "\\bcited to (its|the) seal\\b"
+     },
+     {
+      "id": "L-CONSUMER-GATE",
+      "pattern": "\\bconsumer gate\\b"
+     },
+     {
+      "id": "L-REPORTED-AS",
+      "pattern": "\\breported as (a reproduction|one|agreement)\\b"
+     },
+     {
+      "id": "L-IDENT-WITHIN",
+      "pattern": "\\bidentifiab\\w+ within\\b"
+     },
+     {
+      "id": "L-ONE-ARENA",
+      "pattern": "\\bat (this|one) arena\\b|\\bone arena\\b"
+     },
+     {
+      "id": "L-SCOPED-TO",
+      "pattern": "\\bscoped to\\b|\\bscope is stamped\\b"
+     }
     ],
     "name": "WALL-W1-RECONSTRUCTION",
     "negative": [
      "\\bthe (cast|state|born rule|seam|carrier) is derived from the record\\b",
-     "\\breproduction establishes the derivation\\b"
+     "\\breproduction establishes the derivation\\b",
+     "\\bthe (cast|state|born rule|born weights?|seam|carrier) (is|are|was|were) (thereby )?derived\\b",
+     "\\bthe born rule follows from\\b",
+     "\\bproves? the born (rule|weights?)\\b",
+     "\\bfrom first principles\\b"
     ],
     "policed": [
      "\\b(derives?|derived|derivation|establish\\w+|proves?|proven)\\b"
@@ -10420,32 +12767,52 @@
    "wall": "WALL-W1-RECONSTRUCTION"
   },
   {
-   "controls": 6,
-   "controls_dead": 6,
+   "controls": 9,
+   "controls_dead": 9,
    "missing_positive": [],
    "spec": {
-    "independent_controls": 6,
+    "independent_controls": 9,
     "licences": [
-     "\\bwithheld\\b",
-     "\\boperational observables\\b",
-     "\\bevery observable and every experiment\\b",
-     "\\bcandidate\\b",
-     "\\binvariance statement\\b",
-     "\\bcarried at its parent\\b"
+     {
+      "id": "L-WITHHELD-UNTIL",
+      "pattern": "\\bwithheld until\\b|\\bis withheld\\b"
+     },
+     {
+      "id": "L-OPERATIONAL-OBS",
+      "pattern": "\\boperational observables\\b"
+     },
+     {
+      "id": "L-EVERY-OBS-EXP",
+      "pattern": "\\bevery observable and every experiment\\b"
+     },
+     {
+      "id": "L-CANDIDATE-READING",
+      "pattern": "\\bcandidate reading\\b"
+     },
+     {
+      "id": "L-INVARIANCE-STMT",
+      "pattern": "\\binvariance statement\\b"
+     },
+     {
+      "id": "L-CARRIED-PARENT",
+      "pattern": "\\bcarried at its parent\\b"
+     }
     ],
     "name": "WALL-W2-GAUGE",
     "negative": [
      "\\bgauge (redundancy|quotient) (is|stands) established\\b",
-     "\\brelabelling is physically meaningless\\b"
+     "\\brelabelling is physically meaningless\\b",
+     "\\bare one physical situation\\b",
+     "\\bthe quotient is the arena\\b"
     ],
     "policed": [
-     "\\b(gauge|redundan\\w+|physically meaningless|unobservable)\\b"
+     "\\b(gauge|redundan\\w+|physically meaningless|unobservable|physical situation)\\b"
     ],
     "positive": [
      "\\binvariance is never promoted to gauge\\b"
     ],
     "subject": [
-     "\\b(invarian\\w+|stabilizer|relabelling|automorphism)\\b"
+     "\\b(invarian\\w+|stabilizer|relabelling|automorphism|namings?)\\b"
     ]
    },
    "unlicensed": [],
@@ -10459,14 +12826,34 @@
    "spec": {
     "independent_controls": 6,
     "licences": [
-     "\\blabel\\w+\\b",
-     "\\bmember-specific\\b",
-     "\\bfamily-level\\b",
-     "\\bfibres? disclosed\\b",
-     "\\btheorem\\b",
-     "\\bswept\\b",
-     "\\bdeclared\\b",
-     "\\bone arena\\b"
+     {
+      "id": "L-MEMBER-SPECIFIC",
+      "pattern": "\\bmember-specific\\b"
+     },
+     {
+      "id": "L-FAMILY-LEVEL",
+      "pattern": "\\bfamily-level\\b"
+     },
+     {
+      "id": "L-FIBRES-DISCLOSED",
+      "pattern": "\\bfibres? disclosed\\b"
+     },
+     {
+      "id": "L-THEOREM-STRUCT",
+      "pattern": "\\b(arithmetic|ceiling) theorem\\b|\\bis a theorem\\b"
+     },
+     {
+      "id": "L-SWEPT-ROWS",
+      "pattern": "\\bchecked at every row\\b|\\bswept rows\\b"
+     },
+     {
+      "id": "L-DECLARED-STRUCT",
+      "pattern": "\\bdeclared (reading|fork|predicates?|domain audit|probe family|rows?|choices?|window|and counted|fit member|kept member|arm)\\b|\\bthis unit declares\\b|\\bis a declaration\\b|\\bunit declares and measures\\b"
+     },
+     {
+      "id": "L-ONE-ARENA",
+      "pattern": "\\bat (this|one) arena\\b|\\bone arena\\b"
+     }
     ],
     "name": "WALL-W3-FAMILY",
     "negative": [
@@ -10494,13 +12881,30 @@
    "spec": {
     "independent_controls": 6,
     "licences": [
-     "\\bdeclared fork\\b",
-     "\\bcommitted arm\\b",
-     "\\bextension branch\\b",
-     "\\bkept apart\\b",
-     "\\btwo arms\\b",
-     "\\bbranch\\b",
-     "\\bfork\\b"
+     {
+      "id": "L-DECLARED-FORK",
+      "pattern": "\\bdeclared fork\\b"
+     },
+     {
+      "id": "L-COMMITTED-ARM",
+      "pattern": "\\bcommitted arm\\b"
+     },
+     {
+      "id": "L-EXTENSION-BRANCH",
+      "pattern": "\\bextension (branch|family)\\b"
+     },
+     {
+      "id": "L-KEPT-APART",
+      "pattern": "\\bkept apart\\b"
+     },
+     {
+      "id": "L-TWO-ARMS",
+      "pattern": "\\btwo arms\\b"
+     },
+     {
+      "id": "L-BRANCH-ARM",
+      "pattern": "\\bbranch arm\\b|\\bthe branch\\b|\\bthe (declared )?fork\\b"
+     }
     ],
     "name": "WALL-EVENT-FORK",
     "negative": [
@@ -10528,14 +12932,26 @@
    "spec": {
     "independent_controls": 6,
     "licences": [
-     "\\blp row\\b",
-     "\\bfeasibility\\b",
-     "\\binfeasible\\b",
-     "\\bmarginal\\b",
-     "\\bemission functional\\b",
-     "\\breading a\\b",
-     "\\bdeclared\\b",
-     "\\bthe lp\\b"
+     {
+      "id": "L-LP-ROW",
+      "pattern": "\\blp row\\b|\\bthe lp\\b"
+     },
+     {
+      "id": "L-FEASIBILITY-STRUCT",
+      "pattern": "\\bfeasibility (lp|question|row)\\b|\\bborn-marginal feasibility\\b|\\bmarginal constraint\\b|\\binclusion marginals?\\b"
+     },
+     {
+      "id": "L-INFEASIBLE-AT",
+      "pattern": "\\binfeasible at\\b|\\breads? infeasible\\b"
+     },
+     {
+      "id": "L-EMISSION-FUNCTIONAL",
+      "pattern": "\\bemission functional\\b"
+     },
+     {
+      "id": "L-DECLARED-STRUCT",
+      "pattern": "\\bdeclared (reading|fork|predicates?|domain audit|probe family|rows?|choices?|window|and counted|fit member|kept member|arm)\\b|\\bthis unit declares\\b|\\bis a declaration\\b|\\bunit declares and measures\\b"
+     }
     ],
     "name": "WALL-BORN-DOWNSTREAM",
     "negative": [
@@ -10557,30 +12973,44 @@
    "wall": "WALL-BORN-DOWNSTREAM"
   },
   {
-   "controls": 6,
-   "controls_dead": 6,
+   "controls": 7,
+   "controls_dead": 7,
    "missing_positive": [],
    "spec": {
-    "independent_controls": 6,
+    "independent_controls": 7,
     "licences": [
-     "\\bfinite\\b",
-     "\\bone arena\\b",
-     "\\bcommitted windows\\b",
-     "\\bcounting-only\\b"
+     {
+      "id": "L-FINITE-CENSUS",
+      "pattern": "\\bcensus here is finite\\b"
+     },
+     {
+      "id": "L-ONE-ARENA",
+      "pattern": "\\bat (this|one) arena\\b|\\bone arena\\b"
+     },
+     {
+      "id": "L-COMMITTED-WINDOWS",
+      "pattern": "\\bcommitted windows\\b"
+     },
+     {
+      "id": "L-COUNTING-ONLY",
+      "pattern": "\\bcounting-only\\b|\\bcounting fraction\\b"
+     }
     ],
     "name": "WALL-NO-CONTINUUM",
     "negative": [
      "\\bcontinuum limit\\b",
-     "\\brecovers (the )?continuum\\b"
+     "\\brecovers (the )?continuum\\b",
+     "\\bgoes over to a (smooth|continuum)\\b",
+     "\\ba smooth field equation\\b"
     ],
     "policed": [
-     "\\b(recovers?|approaches|converges|yields)\\b"
+     "\\b(recovers?|approaches|converges|yields|goes over to)\\b"
     ],
     "positive": [
      "\\bevery census here is finite and no continuum claim is made\\b"
     ],
     "subject": [
-     "\\b(continuum|limit of large|asymptotic)\\b"
+     "\\b(continuum|limit of large|asymptotic|smooth)\\b"
     ]
    },
    "unlicensed": [],
@@ -10594,10 +13024,14 @@
    "spec": {
     "independent_controls": 6,
     "licences": [
-     "\\bcounting-only\\b",
-     "\\bdimensionless\\b",
-     "\\bexact rational\\b",
-     "\\bcounting fraction\\b"
+     {
+      "id": "L-COUNTING-ONLY",
+      "pattern": "\\bcounting-only\\b|\\bcounting fraction\\b"
+     },
+     {
+      "id": "L-EXACT-RATIONAL",
+      "pattern": "\\bexact rational\\b"
+     }
     ],
     "name": "WALL-NO-SI",
     "negative": [
@@ -10619,22 +13053,40 @@
    "wall": "WALL-NO-SI"
   },
   {
-   "controls": 6,
-   "controls_dead": 6,
+   "controls": 8,
+   "controls_dead": 8,
    "missing_positive": [],
    "spec": {
-    "independent_controls": 6,
+    "independent_controls": 8,
     "licences": [
-     "\\breading\\b",
-     "\\bdeclared\\b",
-     "\\bunderdetermined\\b",
-     "\\bstamp\\w*\\b",
-     "\\bcandidate\\b"
+     {
+      "id": "L-READING-DECLARED",
+      "pattern": "\\breading this unit declares\\b|\\ba declared reading\\b|\\ba reading and not\\b|\\breading and not a measurement\\b"
+     },
+     {
+      "id": "L-DECLARED-STRUCT",
+      "pattern": "\\bdeclared (reading|fork|predicates?|domain audit|probe family|rows?|choices?|window|and counted|fit member|kept member|arm)\\b|\\bthis unit declares\\b|\\bis a declaration\\b|\\bunit declares and measures\\b"
+     },
+     {
+      "id": "L-UNDERDETERMINED-AT",
+      "pattern": "\\bunderdetermined verdict\\b|\\bcomes back underdetermined\\b|\\bunderdetermined at\\b|\\bthe underdetermined word\\b"
+     },
+     {
+      "id": "L-STAMPED-ROW",
+      "pattern": "\\bstamped with it\\b|\\bis stamped\\b|\\bstamped rows?\\b|\\brow is stamped\\b|\\bdownstream row is stamped\\b|\\bstamped in the verdict\\b"
+     },
+     {
+      "id": "L-CANDIDATE-READING",
+      "pattern": "\\bcandidate reading\\b"
+     }
     ],
     "name": "WALL-SEAM-READING",
     "negative": [
      "\\bpersistence is a measured fact\\b",
-     "\\bthe corpus (measures|shows) the seam to persist\\b"
+     "\\bthe corpus (measures|shows) the seam to persist\\b",
+     "\\bsettles? the seam (question|decision)\\b",
+     "\\bcompletions? persist between events\\b",
+     "\\bmeasures? which reading the seam obeys\\b"
     ],
     "policed": [
      "\\b(measured fact|settled|proves?|shows?)\\b"
@@ -10657,12 +13109,26 @@
    "spec": {
     "independent_controls": 6,
     "licences": [
-     "\\breading-relative\\b",
-     "\\bcommitted windows\\b",
-     "\\bconditional\\b",
-     "\\bdeclared\\b",
-     "\\bscope\\b",
-     "\\bat one arena\\b"
+     {
+      "id": "L-READING-RELATIVE",
+      "pattern": "\\breading-relative\\b"
+     },
+     {
+      "id": "L-COMMITTED-WINDOWS",
+      "pattern": "\\bcommitted windows\\b"
+     },
+     {
+      "id": "L-DECLARED-STRUCT",
+      "pattern": "\\bdeclared (reading|fork|predicates?|domain audit|probe family|rows?|choices?|window|and counted|fit member|kept member|arm)\\b|\\bthis unit declares\\b|\\bis a declaration\\b|\\bunit declares and measures\\b"
+     },
+     {
+      "id": "L-SCOPED-TO",
+      "pattern": "\\bscoped to\\b|\\bscope is stamped\\b"
+     },
+     {
+      "id": "L-ONE-ARENA",
+      "pattern": "\\bat (this|one) arena\\b|\\bone arena\\b"
+     }
     ],
     "name": "WALL-STATE-PROCESS",
     "negative": [

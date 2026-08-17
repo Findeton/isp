@@ -165,7 +165,10 @@ DECL = {
 NEEDLE_FLOOR = 40
 
 # the head's five segments, the spine of the #299 pre-registration: one
-# outcome PAIR per segment, each word built on a stem of the pin's own bytes
+# outcome pair per segment, each reached word built on a STEM of the
+# pin's own bytes with delivery-time slot fills (the pin registered
+# stems and slots, not whole words -- disclosed in the paper's own
+# choice-inventory section)
 SEGMENT_NAMES = ("the interface table and the state contract",
                  "the seam decision",
                  "the psi-status trilemma",
@@ -720,6 +723,7 @@ class Anchors:
             report.append({"anchor": name, "source": src, "hits": hits,
                            "chars": len(n), "paper_hits": phits,
                            "consumer": consumer, "mode": mode,
+                           "needle": n,
                            "floor_ok": len(n) >= NEEDLE_FLOOR,
                            "ok": hits == 1 and len(n) >= NEEDLE_FLOOR
                            and (mode != "QUOTED" or phits >= 1)})
@@ -754,8 +758,13 @@ class Wall:
     canonicalised paper, with a POSITIVE leg (the paper must carry its own
     standing sentence), a LICENCE leg (any sentence naming the wall's
     subject and carrying a policed form must carry a licence), the NEG
-    guard with re-assertion and other-clause exclusions, and independent
-    controls, at least one of which is a negated twin."""
+    guard with re-assertion, doubt-consumption and other-clause
+    exclusions, and independent controls, at least one of which is a
+    negated twin.  Licences are STRUCTURAL: each is a registered
+    (licence-id, phrase-pattern) pair from LICENCE_REGISTRY, and the
+    constructor refuses a bare single-keyword licence outright -- a
+    stapled token like ", being gated," matches no registered structure
+    (the licence-token-laundering species, K2 E-5)."""
 
     BARE = ("not", "never", "no", "nor", "neither", "if", "then", "would",
             "could", "might", "whether", "nothing", "cannot", "without",
@@ -771,17 +780,28 @@ class Wall:
                           r"\b|\bcannot be (?:denied|doubted|disputed)\b"
                           r"|\bnot (?:merely|only|just|simply)\b")
 
+    # a negation whose scope is consumed by a doubt/denial verb before the
+    # violation asserts the complement rather than negating it ("No reader
+    # will doubt that X" asserts X) -- the NEG-guard bypass, K2 E-4
+    DOUBT = re.compile(r"\b(?:doubts?|doubted|doubting|"
+                       r"den(?:y|ies|ied|ying)|disput\w+|question\w*)\b")
+
     CLAUSE = re.compile(r"[;:]|,\s*(?:and|but|so|which|while|yet)\b")
 
     def __init__(self, name, negative, positive, controls,
-                 subject=(), policed=(), licences=()):
+                 subject=(), policed=(), licence_ids=()):
         self.name = name
         self.negative = list(negative)
         self.positive = list(positive)
         self.controls = list(controls)
         self.subject = list(subject)
         self.policed = list(policed)
-        self.licences = list(licences)
+        self.licence_ids = list(licence_ids)
+        for lid in self.licence_ids:
+            if lid not in LICENCE_REGISTRY:
+                raise GateFail("G-WALLS", "unregistered licence id %s in "
+                               "%s" % (lid, name))
+        self.licences = [LICENCE_REGISTRY[lid] for lid in self.licence_ids]
         for pat in (self.negative + self.positive + self.subject
                     + self.policed + self.licences):
             re.compile(pat)
@@ -795,6 +815,14 @@ class Wall:
         if bare:
             raise GateFail("G-WALLS", "bare-negation or hedge licence in "
                            "%s: %s" % (self.name, bare))
+        keyword = [l for l in self.licences
+                   if re.fullmatch(r"[A-Za-z']+",
+                                   re.sub(r"\\b", "", l).strip())]
+        if keyword:
+            raise GateFail("G-WALLS", "bare-keyword licence in %s: %s -- "
+                           "a licence is a structural phrase or a "
+                           "hyphenated scope term, never a floating "
+                           "keyword" % (self.name, keyword))
         if not self.subject or not self.policed:
             raise GateFail("G-WALLS", "%s has no licence leg" % self.name)
         if not any(self.NEG.search(c.casefold()) for c in self.controls):
@@ -804,7 +832,9 @@ class Wall:
     def seal_value(self):
         return {"name": self.name, "negative": self.negative,
                 "positive": self.positive, "subject": self.subject,
-                "policed": self.policed, "licences": self.licences,
+                "policed": self.policed,
+                "licences": [{"id": lid, "pattern": LICENCE_REGISTRY[lid]}
+                             for lid in self.licence_ids],
                 "independent_controls": len(self.controls)}
 
     def licence_leg(self, text):
@@ -838,7 +868,13 @@ class Wall:
                     tail = lead[nm.start():]
                     if self.REASSERT.match(tail):
                         continue
-                    if self.CLAUSE.search(lead[nm.end():]):
+                    between = lead[nm.end():]
+                    if self.DOUBT.search(between):
+                        # the negation is consumed by a doubt/denial verb
+                        # standing between it and the violation: a negated
+                        # doubt asserts its complement (K2 E-4)
+                        continue
+                    if self.CLAUSE.search(between):
                         continue
                     excused = True
                     break
@@ -942,6 +978,38 @@ class Claims:
 # numeral followed by a decimal digit, so a trailing sentence period is
 # scanned; commas group thousands.
 NUM_RE = re.compile(r"(?<![\w.])(\d{1,3}(?:,\d{3})*|\d+)(?!\.\d)(?!\w)")
+
+# SLASH-RATIONAL-IN-PROSE, CLOSED (K3 F-1, the compound-token-split
+# species): the numeral scanner splits a/b into separately-backed
+# integers, so G-PAPER-RATIONAL scans the paper for ATOMIC slash
+# rationals and requires each to equal a rational string the sealed
+# receipt carries.  The 5/9 forge of the committed Born weight is the
+# permanent control (MUT-RATIONAL).
+RAT_RE = re.compile(r"(?<![\w.])(\d+/\d+)(?![\w./])")
+
+
+def collect_rationals(obj, out):
+    if isinstance(obj, bool):
+        return
+    if isinstance(obj, Fraction):
+        if obj.denominator != 1:
+            out.add("%d/%d" % (obj.numerator, obj.denominator))
+    elif isinstance(obj, dict):
+        for k, v in obj.items():
+            collect_rationals(k, out)
+            collect_rationals(v, out)
+    elif isinstance(obj, (list, tuple)):
+        for v in obj:
+            collect_rationals(v, out)
+    elif isinstance(obj, str):
+        for t in RAT_RE.findall(obj):
+            out.add(t)
+
+
+# the one declared tie-break that is ALREADY a row of CONTRACT's free
+# census; every other declared tie-break is a NEW declaration of this
+# unit and lands in the first-class inventory (K2 E-14 / Z6)
+TIE_PARENT = {"the committed coin order": "the coin order"}
 GATEROW_RE = re.compile(r"\[(?:PASS|FAIL)\] \S+ +[0-9a-f]{16}")
 DECOR_RE = re.compile(r"^(=+|-+|v15 ECC|instrument for |-- M\d|"
                       r"-- VERDICT |ECC-|SEAM-|PSI-)")
@@ -2118,12 +2186,18 @@ def measure_obs_sweep(prep):
     if mut("MUT-OBS"):
         obs_rows[0]["value_set_size"] = len(probes)
     rel_vals = set()
+    relation_rows = []
     for (i0, i1, i2) in probes:
-        rel_vals.add(masks[0][i0] & masks[1][i1] & masks[2][i2])
+        mask = masks[0][i0] & masks[1][i1] & masks[2][i2]
+        rel_vals.add(mask)
+        relation_rows.append({"probe": [i0, i1, i2],
+                              "mask": str(mask)})
     # the record and geometry are SHARED across the probe family by
     # construction; MUT-PAIRS breaks that parity and the gate must see it
     same_rel = pick("MUT-PAIRS", True, False)
     return {"probes": len(probes),
+            "probe_list": [list(p) for p in probes],
+            "relation_rows": relation_rows,
             "obs_rows": obs_rows,
             "blind": sum(1 for r in obs_rows if r["value_set_size"] == 1),
             "menu_size": len(obs_rows),
@@ -2491,6 +2565,7 @@ def born_target(psi, n, order):
     q = tuple(Fraction(x, tot) for x in w)
     if mut("MUT-BORN"):
         q = tuple(Fraction(x, 1) for x in w)
+    q = pick("MUT-ACCESSOR", q, tuple(reversed(q)))
     return q
 
 
@@ -2579,14 +2654,22 @@ def measure_psi(round_flds):
                     qi_block = psi_instrument_q(psi, n, order, full=False)
                     committed_checked = qi == qi_block
                 qr = psi_repr_q(psi, n, order)
+                # the one Born accessor every downstream consumer reads
+                # is bound to face one ROW BY ROW (K2 E-6 / K1 minor 4):
+                # its output must be byte-equal to the ontic functional
+                # at every delivered row, gated at G-PSI-EQUAL
+                bt = born_target(psi, n, order)
                 rows.append({"amplitude": aname, "record": rname,
                              "order": order,
                              "agree": qo == qi == qr,
+                             "accessor_agrees": bt == qo,
                              "defined": qo is not None})
     return {"rows": rows, "faces": 3,
             "agreements": sum(1 for r in rows if r["agree"]),
             "row_count": len(rows),
             "separating_rows": sum(1 for r in rows if not r["agree"]),
+            "accessor_agreements": sum(1 for r in rows
+                                       if r["accessor_agrees"]),
             "full_matrix_route_agrees": committed_checked}
 
 
@@ -2649,12 +2732,14 @@ def measure_normalization(classes):
           for j in range(nevb)] for i in range(DIM)]
     routeB = [[Fraction(scale) * W[i][j] for j in range(nevb)]
               for i in range(DIM)]
-    covered = sum(1 for i in range(DIM)
-                  if any(Mb[i][j] != 0 for j in range(nevb)))
+    cell_cover = [sum(1 for j in range(nevb) if Mb[i][j] != 0)
+                  for i in range(DIM)]
+    covered = sum(1 for c in cell_cover if c > 0)
     if mut("MUT-NORM"):
         per_class[0]["identity_holds"] = False
     return {"scale": scale, "arity": a, "per_class": per_class,
             "two_routes_equal": routeB == Mb,
+            "cell_cover": cell_cover,
             "free_two_stage_covered_cells": covered,
             "free_two_stage_vacuous": covered == DIM}
 
@@ -2716,9 +2801,13 @@ def measure_lp(classes, targets):
         ceiling_exceptions += 1
     many_dims = sorted({r["dim"] for r in rows
                         if r["word"] == "MANY" and r["dim"] is not None})
+    target_table = [{"amplitude": t["amplitude"], "record": t["record"],
+                     "order": t["order"], "defined": t["q"] is not None}
+                    for t in targets]
     return {"rows": rows, "branch_rows": branch_rows,
             "distinct_targets": len(distinct),
             "target_rows": len(targets),
+            "target_table": target_table,
             "undefined_targets": undefined,
             "words": tuple(sorted(words.items())),
             "committed_rows": committed,
@@ -2812,34 +2901,68 @@ def measure_carrier(lp_committed_q):
 
 def measure_debt(usub, targets):
     """the coupled walk's menu against the creation relation's refused
-    classes, at both arms of the fork."""
+    classes, at both arms of the fork.  The frozen-creation zero is
+    measured LIVE (K1 minor 2): the set of events the frozen NONE rule
+    admits and the set of seam-spanning events are both built in full,
+    non-empty each, and their intersection is counted -- and the same
+    number is recomputed from the profile-census rows, flagged per row."""
     chart_menu = DIM
     grain_mismatch = all(len(p) == 2 for p in CELL_PAIR) and all(
         len(t) == 3 for t in TRIPLES)
     union_menu = tuple(sorted(UREL, key=ekey))
-    in_cross = sum(1 for p in union_menu if p in set(CROSS_PAIRS))
+    cross_rows = [{"pair": list(ekey(p)), "in_menu": p in UREL}
+                  for p in CROSS_PAIRS]
+    in_cross = sum(1 for r in cross_rows if r["in_menu"])
     if mut("MUT-DEBT"):
         in_cross += 1
     frozen_admits = usub["frozen_alive"]
-    frozen_seam_admits = sum(
-        v for k, v in usub["profile_census"]
-        if tuple(k)[0] > 0 and tuple(k) == (0, 0, 3))
+    # route A, live sets: every group classified once, both parent sets
+    # kept whole, the intersection counted as a set intersection
+    frozen_set, spanning_set = set(), set()
+    for g in UGROUPS:
+        prof = profile(footprint(g, UREL))
+        if prof == (0, 0, 3):
+            frozen_set.add(g)
+        if prof[0] > 0:
+            spanning_set.add(g)
+    frozen_seam_live = len(frozen_set & spanning_set)
+    # route B, the census rows, each flagged for both predicates
+    profile_rows = [{"profile": list(k), "count": v,
+                     "frozen_admitted": tuple(k) == (0, 0, 3),
+                     "seam_spanning": tuple(k)[0] > 0}
+                    for k, v in usub["profile_census"]]
+    frozen_seam_admits = sum(r["count"] for r in profile_rows
+                             if r["frozen_admitted"]
+                             and r["seam_spanning"])
     mass_one = 0
     nonzero = 0
+    amplitude_rows = []
     for t in targets:
         if t["record"] == "R0" and t["order"] == "G.D":
-            if t["q"] is not None:
+            nz = t["q"] is not None
+            um = nz and sum(t["q"]) == 1
+            amplitude_rows.append({"amplitude": t["amplitude"],
+                                   "nonzero": nz, "unit_mass": um})
+            if nz:
                 nonzero += 1
-                if sum(t["q"]) == 1:
+                if um:
                     mass_one += 1
     return {"chart_menu_cells": chart_menu,
             "grain_mismatch": grain_mismatch,
             "union_menu_pairs": len(union_menu),
             "menu_cross_overlap": in_cross,
+            "cross_rows": cross_rows,
             "cross_pairs": len(CROSS_PAIRS),
             "frozen_creation_admits_doubling": frozen_admits,
             "frozen_creation_admits_seam": frozen_seam_admits,
+            "frozen_seam_live": frozen_seam_live,
+            "frozen_admitted_events": len(frozen_set),
+            "seam_spanning_events": len(spanning_set),
+            "frozen_live_route_agrees":
+                frozen_seam_live == frozen_seam_admits,
+            "profile_rows": profile_rows,
             "seam_spanning": usub["seam_spanning"],
+            "amplitude_rows": amplitude_rows,
             "amplitudes_with_unit_mass": mass_one,
             "nonzero_amplitudes": nonzero}
 
@@ -2889,57 +3012,86 @@ def measure_tiebreaks(round_flds):
 # ---- W3 instrumentation: every headline auto-labelled --------------------
 
 def w3_labels(lp, seam2, obs):
-    """member-specific against family-level, computed from the varied
-    fibre data and never typed: a claim is FAMILY-LEVEL only when it held
-    at one hundred percent of the swept rows AND carries a derivation leg;
-    everything else is member-specific with its fibres disclosed."""
-    ceiling_family = (lp["ceiling_exceptions"] == 0)
-    labels = [
-        {"segment": SEGMENT_NAMES[0], "label": "MEMBER-SPECIFIC",
-         "fibres": "one arena; the committed corpus; the declared seam "
-                   "reading"},
-        {"segment": SEGMENT_NAMES[1], "label": "MEMBER-SPECIFIC",
-         "fibres": "one arena; the declared probe family; the "
-                   "three-member reading family; every first crossing"},
-        {"segment": SEGMENT_NAMES[2], "label": "MEMBER-SPECIFIC",
-         "fibres": "the delivered row family: five amplitudes, three "
-                   "records, both coin orders"},
-        {"segment": SEGMENT_NAMES[3],
-         "label": ("FAMILY-LEVEL-ACROSS-THE-TARGET-FAMILY"
-                   if ceiling_family else "MEMBER-SPECIFIC"),
-         "fibres": "the ceiling leg is an arithmetic theorem checked at "
-                   "every row; the verdict row is member-specific to the "
-                   "committed amplitude, record, order and class"},
-        {"segment": SEGMENT_NAMES[4], "label": "MEMBER-SPECIFIC",
-         "fibres": "one arena; both fork arms censused; the four-member "
-                   "candidate family"},
-    ]
+    """member-specific against family-level, COMPUTED for every segment
+    by one rule and never typed (K2 E-8): a segment earns the family
+    label exactly when a varied-fibre sweep object exists for it, the
+    sweep is non-empty, and it closed with zero exceptions; a segment
+    with no sweep object is member-specific by that same rule.  The
+    run's one family-sweep object is the LP ceiling census over the
+    target family; the other four segments map to none."""
+    sweeps = {
+        SEGMENT_NAMES[3]: {"swept_rows": lp["ceiling_checked"],
+                           "exceptions": lp["ceiling_exceptions"],
+                           "family": "ACROSS-THE-TARGET-FAMILY"},
+    }
+    fibres = {
+        SEGMENT_NAMES[0]: "one arena; the committed corpus; the "
+                          "declared seam reading",
+        SEGMENT_NAMES[1]: "one arena; the declared probe family; the "
+                          "three-member reading family; every first "
+                          "crossing",
+        SEGMENT_NAMES[2]: "the delivered row family: five amplitudes, "
+                          "three records, both coin orders",
+        SEGMENT_NAMES[3]: "the ceiling leg is an arithmetic theorem "
+                          "checked at every row of the swept target "
+                          "family; the verdict row is member-specific "
+                          "to the committed amplitude, record, order "
+                          "and class",
+        SEGMENT_NAMES[4]: "one arena; both fork arms censused; the "
+                          "four-member candidate family",
+    }
+    labels = []
+    for name in SEGMENT_NAMES:
+        sw = sweeps.get(name)
+        if sw and sw["swept_rows"] > 0 and sw["exceptions"] == 0:
+            lab = "FAMILY-LEVEL-" + sw["family"]
+        else:
+            lab = "MEMBER-SPECIFIC"
+        labels.append({"segment": name, "label": lab,
+                       "sweep": sw, "fibres": fibres[name]})
     if mut("MUT-W3"):
         labels[3]["label"] = "MEMBER-SPECIFIC"
     member = sum(1 for l in labels if l["label"] == "MEMBER-SPECIFIC")
     family = len(labels) - member
+    family_label = next((l["label"] for l in labels
+                         if l["label"] != "MEMBER-SPECIFIC"), "NONE")
     return {"labels": labels, "member_specific": member,
             "family_level": family,
-            "ceiling_family_level": ceiling_family}
+            "family_label": family_label,
+            "ceiling_family_level": lp["ceiling_exceptions"] == 0}
 
 
 # ---- the downstream stamp table (#119 totality over the rows) ------------
 
 def stamp_table(lp, psi, carrier, debt):
-    rows = []
+    """the downstream stamp table, honest per row (K2 E-6): the seam
+    stamp is the reach audit at every row; the psi stamp is BYTE
+    EQUALITY only at the measured psi rows and the REACH AUDIT at every
+    other stamped row -- byte equality was measured nowhere else."""
+    names = []
     for i, _r in enumerate(lp["rows"]):
-        rows.append("lp.row." + str(i))
+        names.append("lp.row." + str(i))
     for i, _r in enumerate(lp["branch_rows"]):
-        rows.append("lp.branch." + str(i))
+        names.append("lp.branch." + str(i))
     for i, _r in enumerate(psi["rows"]):
-        rows.append("psi.row." + str(i))
-    rows.append("carrier.family")
-    rows.append("debt.census")
+        names.append("psi.row." + str(i))
+    names.append("carrier.family")
+    names.append("debt.census")
     if mut("MUT-STAMP"):
-        rows = rows[:-1]
+        names = names[:-1]
+    rows = []
+    for nm in names:
+        by_byte = nm.startswith("psi.row.")
+        rows.append({"row": nm,
+                     "seam": "READING-INDEPENDENT-BY-REACH-AUDIT",
+                     "psi": ("FACE-INDEPENDENT-BY-BYTE-EQUALITY"
+                             if by_byte else
+                             "FACE-INDEPENDENT-BY-REACH-AUDIT")})
+    by_byte_n = sum(1 for r in rows
+                    if r["psi"] == "FACE-INDEPENDENT-BY-BYTE-EQUALITY")
     return {"rows": rows,
-            "stamp": {"seam": "READING-INDEPENDENT-BY-REACH-AUDIT",
-                      "psi": "FACE-INDEPENDENT-BY-BYTE-EQUALITY"},
+            "psi_by_byte": by_byte_n,
+            "psi_by_reach": len(rows) - by_byte_n,
             "count": len(rows)}
 
 
@@ -3026,15 +3178,19 @@ def measure_circularity():
     return {"actor_cycle": shortest_cycle_through("ACTOR"),
             "dynamical_cycle": shortest_cycle_through("COUNT-FIELD"),
             "edges": len(edges),
+            "edge_list": [[u, v] for (u, v) in edges],
             "full_dynamics_fixed_point": "OPEN-ROUTED-TO-DC"}
 
 
 # ---- the #299 pre-registration --------------------------------------------
 
 def outcome_prereg(iface, obs, seam2, psi, lp, carrier, debt):
-    """one pre-registered outcome pair per head segment, every word on a
-    stem of the pin's own bytes, both arms' witnesses measured by this
-    run."""
+    """one outcome pair per head segment, every reached word built on a
+    stem of the pin's own bytes with its slots filled at delivery time,
+    both arms' witnesses measured by this run.  The not-reached arms
+    are registered words with refusal semantics: G-OUTCOME-EMITABILITY
+    measures that each has no emission path beyond its registration
+    here."""
     untyped = sum(1 for r in iface["rows"]
                   if r["class"] not in ("DECLARED", "GENERATED",
                                         "RECONSTRUCTED", "LAW-SELECTED"))
@@ -3111,7 +3267,7 @@ def build_verdict(M):
         "{fdc}-WITH-{tc}-TYPE-CATEGORIES; EVENT-FORK=DECLARED-{fa}-ARMS-"
         "NO-COMPROMISE; COSET-PRINCIPLE=DECLARED-THE-SELECTION-LAW; "
         "MAPS={mp}-TYPED-COMPOSED-NOWHERE; STATE-COMPONENTS={sc}-PLUS-"
-        "BOOKKEEPING={bk}; SEAM-COMPONENT=READING-CONDITIONAL; "
+        "BOOKKEEPING={bk}; SEAM-COMPONENT=READING-RELATIVE; "
         "ACTOR-RECORD-CYCLE={cy}-EDGES-CARRIED-OPEN-AT-FULL-DYNAMICS>",
         o="iface.object_rows", c="iface.computed", ci="iface.cited_rows",
         sw="iface.senses", fd="decl.count", fdc="decl.cited_free",
@@ -3147,7 +3303,7 @@ def build_verdict(M):
         "DISTINCT-TARGETS={tg}; ROWS={rw}; INFEASIBLE={inf}; "
         "UNIQUE={un}; MANY={mn}-MAX-DIM-{md}; FIBER-FEASIBLE={fb}; "
         "BRANCH-DEGENERATE-IDENTITY={dg}-OF-{dgx}; TARGET-UNDEFINED-"
-        "AMPLITUDES={tu}; COMMITTED-ROW=SINGLE-CELL-AMPLITUDE-AT-THE-"
+        "ROWS={tu}; COMMITTED-ROW=SINGLE-CELL-AMPLITUDE-AT-THE-"
         "INITIAL-RECORD-AT-THE-DELIVERED-ORDER-QMAX-{qm}-ABOVE-THE-"
         "CEILING-INFEASIBLE-AT-ALL-{ac}-COMMITTED-CLASSES; CEILING="
         "FEASIBILITY-FORCES-QMAX-AT-MOST-ONE-THIRD-CHECKED-AT-{cr}-ROWS-"
@@ -3173,13 +3329,13 @@ def build_verdict(M):
         "OF-{fzx}-SEAM-SPANNING; UNIT-MASS-AMPLITUDES={um}-OF-{umx}; "
         "CLASS=COMPATIBILITY-NO-GO; SCOPE=ONE-ARENA-COMMITTED-WINDOWS-"
         "COUNTING-ONLY; W-THREE-LABELS={ml}-MEMBER-SPECIFIC-PLUS-{fl}-"
-        "FAMILY-LEVEL-FIBRES-DISCLOSED>",
+        "{fq}-FIBRES-DISCLOSED>",
         cd="car.count", h="car.hosts", cdx="car.count",
         ex="car.expresses", cdy="car.count", ev="car.evolves",
         cdz="car.count", cp="debt.cross_overlap", cpx="debt.cross_pairs",
         fz="debt.frozen_seam", fzx="debt.seam_spanning",
         um="debt.mass_one", umx="debt.nonzero",
-        ml="w3.member", fl="w3.family")
+        ml="w3.member", fl="w3.family", fq="w3.family_label")
     return (s1, s2, s3, s4, s5)
 
 
@@ -3188,7 +3344,8 @@ def reconstruct(R):
     serialisable receipt payload, re-derives every head number by its own
     arithmetic, types its own templates, and returns the five segments.
     No summary scalar is read: every count below is recomputed from a row
-    list."""
+    list, an anchor's own bytes, or a per-cell table (the K2 E-2
+    repair)."""
     P = R
     iface_rows = P["interface"]["rows"]
     n_obj = len(iface_rows)
@@ -3198,29 +3355,57 @@ def reconstruct(R):
     n_sense = len(P["interface"]["senses"])
     fd_rows = P["free_declarations"]["rows"]
     n_fd = len(fd_rows)
-    fd_cited = P["free_declarations"]["cited_free"]
+    # CONTRACT's cited free count, re-parsed out of the anchor's own
+    # serialised bytes rather than read from a stored scalar
+    q58 = [r for r in P["anchors"] if r["anchor"] == "N-CON-Q58"][0]
+    q58_ints = [int(x) for x in re.findall(
+        r"(?<![A-Za-z0-9_.])(\d[\d,]*)(?![\w.])",
+        q58["needle"].replace(",", ""))]
+    fd_cited = q58_ints[1]
     n_cat = len({r["type"] for r in fd_rows})
     n_arms = len(P["fork"]["arms"])
     n_maps = len(P["maps"]["typed"])
     sc = len([r for r in iface_rows
               if r["object"] in ("COUNT-FIELD", "QUANTUM-STATE")])
     bk = len([r for r in iface_rows if r["object"] == "BRANCH-WEIGHT"])
-    cyc = P["circularity"]["actor_cycle"]
+    # the actor-record cycle, re-walked over the serialised edge list by
+    # this comparator's own breadth-first search
+    adj2 = {}
+    for (u2, v2) in P["circularity"]["edge_list"]:
+        adj2.setdefault(u2, []).append(v2)
+    cyc = None
+    layer = ["ACTOR"]
+    seen2 = {"ACTOR"}
+    depth = 0
+    while layer and cyc is None:
+        depth += 1
+        nxt_layer = []
+        for cur2 in layer:
+            for nxt2 in adj2.get(cur2, ()):
+                if nxt2 == "ACTOR":
+                    cyc = depth
+                    break
+                if nxt2 not in seen2:
+                    seen2.add(nxt2)
+                    nxt_layer.append(nxt2)
+            if cyc is not None:
+                break
+        layer = nxt_layer
     c1 = ("ECC-STATE-CONTRACT-CLOSED-AT-THE-COMMITTED-WINDOWS-UNDER-THE-"
           "DECLARED-SEAM-READING<OBJECTS=%d; COMPUTED-HERE=%d; CITED=%d; "
           "SENSE-WORDS=%d; FREE-DECLARATIONS-CARRIED=%d-OF-%d-WITH-%d-"
           "TYPE-CATEGORIES; EVENT-FORK=DECLARED-%d-ARMS-NO-COMPROMISE; "
           "COSET-PRINCIPLE=DECLARED-THE-SELECTION-LAW; MAPS=%d-TYPED-"
           "COMPOSED-NOWHERE; STATE-COMPONENTS=%d-PLUS-BOOKKEEPING=%d; "
-          "SEAM-COMPONENT=READING-CONDITIONAL; ACTOR-RECORD-CYCLE=%d-"
+          "SEAM-COMPONENT=READING-RELATIVE; ACTOR-RECORD-CYCLE=%d-"
           "EDGES-CARRIED-OPEN-AT-FULL-DYNAMICS>"
           % (n_obj, n_comp, n_cit, n_sense, n_fd, fd_cited, n_cat,
              n_arms, n_maps, sc, bk, cyc))
     ob_rows = P["seam"]["obs_rows"]
     n_ob = len(ob_rows)
     n_bl = sum(1 for r in ob_rows if r["value_set_size"] == 1)
-    pr = P["seam"]["probes"]
-    rv = P["seam"]["relation_values"]
+    pr = len(P["seam"]["probe_list"])
+    rv = len({r["mask"] for r in P["seam"]["relation_rows"]})
     srows = P["seam"]["step2_rows"]
     fc = len(srows)
     counts = [r["re_solved"] for r in srows]
@@ -3243,16 +3428,20 @@ def reconstruct(R):
     n_pr = len(prow)
     n_ag = sum(1 for r in prow if r["agree"])
     n_sep = sum(1 for r in prow if not r["agree"])
+    # the face count, derived from the psi region table's own names
+    n_face = len({nm.split("_")[1] for nm in P["psi_regions"]})
     c3 = ("PSI-STATUS-INDEPENDENT-AT-EVERY-DELIVERED-ROW<FACES=%d; "
           "ROWS=%d; FUNCTIONAL-AGREEMENTS=%d-OF-%d; SEPARATING-ROWS=%d; "
           "THE-CONSUMERS-REACH-THE-BORN-FUNCTIONAL-ALONE=AUDITED; "
           "THE-TRILEMMA-IS-UNRESOLVED-AND-EVERY-DELIVERED-RESULT-IS-"
           "PROVEN-BLIND-TO-IT>"
-          % (P["psi"]["faces"], n_pr, n_ag, n_pr, n_sep))
+          % (n_face, n_pr, n_ag, n_pr, n_sep))
     lrows = P["lp"]["rows"]
     words = Counter(r["word"] for r in lrows)
     n_cl = len({r["class"] for r in lrows})
-    n_tg = P["lp"]["distinct_targets"]
+    # distinct targets, re-counted from the rows' own member multisets
+    n_tg = len({json.dumps(r["members"], sort_keys=True, default=str)
+                for r in lrows})
     dims = [r["dim"] for r in lrows
             if r["word"] == "MANY" and r["dim"] is not None]
     maxdim = max(dims) if dims else 0
@@ -3273,15 +3462,22 @@ def reconstruct(R):
     n_dg = sum(1 for r in brows
                if r["word"] == "DEGENERATE-IDENTITY"
                and r["identity_feasible"])
-    n_tu = P["lp"]["undefined_targets"]
+    # undefined target rows, re-counted from the serialised target table
+    n_tu = sum(1 for r in P["lp"]["target_table"] if not r["defined"])
     ncls = P["normalization"]
-    scale = ncls["scale"]
-    cov = ncls["free_two_stage_covered_cells"]
+    # the scale, re-derived from the writer censuses of the classes
+    # where the marginal-sum identity holds
+    id_sizes = {int(k) for row in ncls["per_class"]
+                if row["identity_holds"]
+                for (k, _v) in row["writer_census"]}
+    scale = min(id_sizes) if len(id_sizes) == 1 else -1
+    # covered cells, re-counted from the per-cell cover table
+    cov = sum(1 for c in ncls["cell_cover"] if c > 0)
     c4 = ("ECC-LP-INFEASIBLE-AT-THE-COMMITTED-ROW-AND-THE-CEILING-IS-A-"
           "THEOREM<CLASSES=%d-PLUS-THE-PAIR-EVENT-BRANCH; "
           "DISTINCT-TARGETS=%d; ROWS=%d; INFEASIBLE=%d; UNIQUE=%d; "
           "MANY=%d-MAX-DIM-%d; FIBER-FEASIBLE=%d; BRANCH-DEGENERATE-"
-          "IDENTITY=%d-OF-%d; TARGET-UNDEFINED-AMPLITUDES=%d; "
+          "IDENTITY=%d-OF-%d; TARGET-UNDEFINED-ROWS=%d; "
           "COMMITTED-ROW=SINGLE-CELL-AMPLITUDE-AT-THE-INITIAL-RECORD-AT-"
           "THE-DELIVERED-ORDER-QMAX-%s-ABOVE-THE-CEILING-INFEASIBLE-AT-"
           "ALL-%d-COMMITTED-CLASSES; CEILING=FEASIBILITY-FORCES-QMAX-AT-"
@@ -3301,9 +3497,25 @@ def reconstruct(R):
     n_ex = sum(1 for c in cands if c["expresses_the_branching"])
     n_ev = sum(1 for c in cands if c["evolves_across_creation"])
     D = P["debt"]
+    # every debt count re-derived from the serialised row tables: the
+    # cross-pair table, the flagged profile-census rows, and the
+    # per-amplitude table
+    d_cp = len(D["cross_rows"])
+    d_ov = sum(1 for r in D["cross_rows"] if r["in_menu"])
+    d_fz = sum(r["count"] for r in D["profile_rows"]
+               if r["frozen_admitted"] and r["seam_spanning"])
+    d_sp = sum(r["count"] for r in D["profile_rows"]
+               if r["seam_spanning"])
+    d_um = sum(1 for r in D["amplitude_rows"] if r["unit_mass"])
+    d_nz = sum(1 for r in D["amplitude_rows"] if r["nonzero"])
     lab = P["w3"]["labels"]
     n_ml = sum(1 for l in lab if l["label"] == "MEMBER-SPECIFIC")
     n_fl = len(lab) - n_ml
+    fq2 = "NONE"
+    for l in lab:
+        if l["label"] != "MEMBER-SPECIFIC":
+            fq2 = l["label"]
+            break
     c5 = ("ECC-CARRIER-FAMILY-UNSELECTED-AND-THE-DEBT-DECIDED<"
           "CANDIDATES=%d; HOST-THE-STATE=%d-OF-%d; EXPRESS-THE-"
           "COMMITTED-BRANCHING=%d-OF-%d; EVOLVE-ACROSS-CREATION=%d-OF-"
@@ -3313,12 +3525,10 @@ def reconstruct(R):
           "SEAM-SPANNING; UNIT-MASS-AMPLITUDES=%d-OF-%d; CLASS="
           "COMPATIBILITY-NO-GO; SCOPE=ONE-ARENA-COMMITTED-WINDOWS-"
           "COUNTING-ONLY; W-THREE-LABELS=%d-MEMBER-SPECIFIC-PLUS-%d-"
-          "FAMILY-LEVEL-FIBRES-DISCLOSED>"
+          "%s-FIBRES-DISCLOSED>"
           % (n_cd, n_h, n_cd, n_ex, n_cd, n_ev, n_cd,
-             D["menu_cross_overlap"], D["cross_pairs"],
-             D["frozen_creation_admits_seam"], D["seam_spanning"],
-             D["amplitudes_with_unit_mass"], D["nonzero_amplitudes"],
-             n_ml, n_fl))
+             d_ov, d_cp, d_fz, d_sp, d_um, d_nz,
+             n_ml, n_fl, fq2))
     return (c1, c2, c3, c4, c5)
 
 
@@ -3343,15 +3553,87 @@ def head_positional_check(built, recon):
 # SECTION 9.  THE WALLS
 # ===========================================================================
 # Every licence is a positive commitment to scope; the NEG guard carries
-# the re-assertion and other-clause exclusions; every wall carries a
-# negated control twin; controls are written from the violation, not from
-# the pattern list.
+# the re-assertion, doubt-consumption and other-clause exclusions; every
+# wall carries a negated control twin; controls are written from the
+# violation, not from the pattern list.  The panel's found survivors --
+# the bare derivation claim (K3 F-2), the NEG-guard bypass (K2 E-4), the
+# licence-token laundering (K2 E-5) and K2's eight fresh paraphrases --
+# stand below as permanent controls and must die on every run.  The
+# GENERAL fresh-paraphrase condition remains REGISTERED programme-wide
+# (#10/#25/#30): these kills close the found instances, not the class.
+
+# the registered licence structures: every wall licence is one of these
+# (id, phrase-pattern) rows; a bare floating keyword is refused by the
+# Wall constructor, so a stapled token cannot launder a violation.
+LICENCE_REGISTRY = {
+    "L-CANDIDATE-READING": r"\bcandidate reading\b",
+    "L-GATED-REPRODUCTION": r"\bgated as a reproduction\b|\ba gated "
+                            r"reproduction\b|\bgated against the sealed "
+                            r"parent\b",
+    "L-CITED-SEAL": r"\bcited to (its|the) seal\b",
+    "L-CONSUMER-GATE": r"\bconsumer gate\b",
+    "L-REPORTED-AS": r"\breported as (a reproduction|one|agreement)\b",
+    "L-IDENT-WITHIN": r"\bidentifiab\w+ within\b",
+    "L-ONE-ARENA": r"\bat (this|one) arena\b|\bone arena\b",
+    "L-DECLARED-STRUCT": r"\bdeclared (reading|fork|predicates?|domain "
+                         r"audit|probe family|rows?|choices?|window|and "
+                         r"counted|fit member|kept member|arm)\b|\bthis "
+                         r"unit declares\b|\bis a declaration\b|\bunit "
+                         r"declares and measures\b",
+    "L-SCOPED-TO": r"\bscoped to\b|\bscope is stamped\b",
+    "L-WITHHELD-UNTIL": r"\bwithheld until\b|\bis withheld\b",
+    "L-OPERATIONAL-OBS": r"\boperational observables\b",
+    "L-EVERY-OBS-EXP": r"\bevery observable and every experiment\b",
+    "L-INVARIANCE-STMT": r"\binvariance statement\b",
+    "L-CARRIED-PARENT": r"\bcarried at its parent\b",
+    "L-MEMBER-SPECIFIC": r"\bmember-specific\b",
+    "L-FAMILY-LEVEL": r"\bfamily-level\b",
+    "L-FIBRES-DISCLOSED": r"\bfibres? disclosed\b",
+    "L-THEOREM-STRUCT": r"\b(arithmetic|ceiling) theorem\b|\bis a "
+                        r"theorem\b",
+    "L-SWEPT-ROWS": r"\bchecked at every row\b|\bswept rows\b",
+    "L-DECLARED-FORK": r"\bdeclared fork\b",
+    "L-COMMITTED-ARM": r"\bcommitted arm\b",
+    "L-EXTENSION-BRANCH": r"\bextension (branch|family)\b",
+    "L-KEPT-APART": r"\bkept apart\b",
+    "L-TWO-ARMS": r"\btwo arms\b",
+    "L-BRANCH-ARM": r"\bbranch arm\b|\bthe branch\b|\bthe (declared )?"
+                    r"fork\b",
+    "L-LP-ROW": r"\blp row\b|\bthe lp\b",
+    "L-FEASIBILITY-STRUCT": r"\bfeasibility (lp|question|row)\b|\bborn-"
+                            r"marginal feasibility\b|\bmarginal "
+                            r"constraint\b|\binclusion marginals?\b",
+    "L-INFEASIBLE-AT": r"\binfeasible at\b|\breads? infeasible\b",
+    "L-EMISSION-FUNCTIONAL": r"\bemission functional\b",
+    "L-FINITE-CENSUS": r"\bcensus here is finite\b",
+    "L-COMMITTED-WINDOWS": r"\bcommitted windows\b",
+    "L-COUNTING-ONLY": r"\bcounting-only\b|\bcounting fraction\b",
+    "L-EXACT-RATIONAL": r"\bexact rational\b",
+    "L-READING-DECLARED": r"\breading this unit declares\b|\ba declared "
+                          r"reading\b|\ba reading and not\b|\breading "
+                          r"and not a measurement\b",
+    "L-UNDERDETERMINED-AT": r"\bunderdetermined verdict\b|\bcomes back "
+                            r"underdetermined\b|\bunderdetermined at\b|"
+                            r"\bthe underdetermined word\b",
+    "L-STAMPED-ROW": r"\bstamped with it\b|\bis stamped\b|\bstamped "
+                     r"rows?\b|\brow is stamped\b|\bdownstream row is "
+                     r"stamped\b|\bstamped in the verdict\b",
+    "L-READING-RELATIVE": r"\breading-relative\b",
+}
 
 WALLS = [
     Wall("WALL-W1-RECONSTRUCTION",
          [r"\bthe (cast|state|born rule|seam|carrier) is derived from the "
           r"record\b",
-          r"\breproduction establishes the derivation\b"],
+          r"\breproduction establishes the derivation\b",
+          # subject-based policing of the bare derivation claim (K3 F-2):
+          # a policed noun as subject of "derived" needs no "from the
+          # record" tail and no reproduction subject to be an offence
+          r"\bthe (cast|state|born rule|born weights?|seam|carrier) "
+          r"(is|are|was|were) (thereby )?derived\b",
+          r"\bthe born rule follows from\b",
+          r"\bproves? the born (rule|weights?)\b",
+          r"\bfrom first principles\b"],
          [r"\breconstruction is never promoted to derivation\b"],
          ["The cast is derived from the record, and the derivation is "
           "complete.",
@@ -3362,20 +3644,28 @@ WALLS = [
           "There is no doubt that the reproduction establishes the "
           "derivation.",
           "The carrier is derived from the record, which is not in "
-          "doubt."],
+          "doubt.",
+          # the found survivors, permanent (K3-12; K2 X2 and its twin;
+          # K2 F1 and F2)
+          "The Born rule is derived here.",
+          "The reproduction, being gated, derives the Born rule "
+          "outright.",
+          "The reproduction derives the Born rule outright.",
+          "The Born rule follows from the event grammar at this row.",
+          "This unit proves the Born weights from first principles."],
          subject=[r"\b(reproduc\w+|reconstruct\w+|identifiab\w+)\b",
                   r"\btwo routes agree\b",
                   r"\bagreement of (the )?two routes\b"],
          policed=[r"\b(derives?|derived|derivation|establish\w+|"
                   r"proves?|proven)\b"],
-         licences=[r"\bcandidate\b", r"\bgated\b", r"\bscope\b",
-                   r"\breported as (a reproduction|one)\b",
-                   r"\bconsumer gate\b", r"\bidentifiab\w+ within\b",
-                   r"\bat (this|one) arena\b", r"\bdeclared\b",
-                   r"\bcited\b", r"\bfidelity\b"]),
+         licence_ids=["L-CANDIDATE-READING", "L-GATED-REPRODUCTION",
+                      "L-CITED-SEAL", "L-CONSUMER-GATE", "L-REPORTED-AS",
+                      "L-IDENT-WITHIN", "L-ONE-ARENA", "L-SCOPED-TO"]),
     Wall("WALL-W2-GAUGE",
          [r"\bgauge (redundancy|quotient) (is|stands) established\b",
-          r"\brelabelling is physically meaningless\b"],
+          r"\brelabelling is physically meaningless\b",
+          r"\bare one physical situation\b",
+          r"\bthe quotient is the arena\b"],
          [r"\binvariance is never promoted to gauge\b"],
          ["The gauge redundancy is established by the stabilizer count.",
           "The relabelling is physically meaningless, so the quotient is "
@@ -3384,14 +3674,20 @@ WALLS = [
           "The stabilizer proves the relabelling unobservable.",
           "It cannot be denied that the gauge redundancy is established.",
           "The gauge quotient stands established, and not merely "
-          "suggested."],
-         subject=[r"\b(invarian\w+|stabilizer|relabelling|automorphism)\b"],
+          "suggested.",
+          # the found survivors, permanent (K2 X1 and its twin; K2 F7)
+          "No reader will doubt that the gauge redundancy is "
+          "established here.",
+          "The gauge redundancy is established here.",
+          "Two namings of the cells are one physical situation, and the "
+          "quotient is the arena."],
+         subject=[r"\b(invarian\w+|stabilizer|relabelling|automorphism|"
+                  r"namings?)\b"],
          policed=[r"\b(gauge|redundan\w+|physically meaningless|"
-                  r"unobservable)\b"],
-         licences=[r"\bwithheld\b", r"\boperational observables\b",
-                   r"\bevery observable and every experiment\b",
-                   r"\bcandidate\b", r"\binvariance statement\b",
-                   r"\bcarried at its parent\b"]),
+                  r"unobservable|physical situation)\b"],
+         licence_ids=["L-WITHHELD-UNTIL", "L-OPERATIONAL-OBS",
+                      "L-EVERY-OBS-EXP", "L-CANDIDATE-READING",
+                      "L-INVARIANCE-STMT", "L-CARRIED-PARENT"]),
     Wall("WALL-W3-FAMILY",
          [r"\bisp(-family)? predict(s|ion)\b",
           r"\bholds at every member of the family\b"],
@@ -3407,10 +3703,10 @@ WALLS = [
           "not in question."],
          subject=[r"\b(family|fibres?|fibers?|member)\b"],
          policed=[r"\b(predicts?|prediction|every member|every arena)\b"],
-         licences=[r"\blabel\w+\b", r"\bmember-specific\b",
-                   r"\bfamily-level\b", r"\bfibres? disclosed\b",
-                   r"\btheorem\b", r"\bswept\b", r"\bdeclared\b",
-                   r"\bone arena\b"]),
+         licence_ids=["L-MEMBER-SPECIFIC", "L-FAMILY-LEVEL",
+                      "L-FIBRES-DISCLOSED", "L-THEOREM-STRUCT",
+                      "L-SWEPT-ROWS", "L-DECLARED-STRUCT",
+                      "L-ONE-ARENA"]),
     Wall("WALL-EVENT-FORK",
          [r"\ba (merged|compromise) event class\b",
           r"\bevents of mixed arity\b"],
@@ -3426,9 +3722,9 @@ WALLS = [
           "sketched."],
          subject=[r"\bevent class\b"],
          policed=[r"\b(merged?|compromise|blend\w*|mixed|combined?)\b"],
-         licences=[r"\bdeclared fork\b", r"\bcommitted arm\b",
-                   r"\bextension branch\b", r"\bkept apart\b",
-                   r"\btwo arms\b", r"\bbranch\b", r"\bfork\b"]),
+         licence_ids=["L-DECLARED-FORK", "L-COMMITTED-ARM",
+                      "L-EXTENSION-BRANCH", "L-KEPT-APART",
+                      "L-TWO-ARMS", "L-BRANCH-ARM"]),
     Wall("WALL-BORN-DOWNSTREAM",
          [r"\bborn weights? select the events\b",
           r"\bthe born rule is the event law\b"],
@@ -3445,12 +3741,14 @@ WALLS = [
          subject=[r"\bborn\b"],
          policed=[r"\b(event law|selects? the events?|chooses? which|"
                   r"law of events)\b"],
-         licences=[r"\blp row\b", r"\bfeasibility\b", r"\binfeasible\b",
-                   r"\bmarginal\b", r"\bemission functional\b",
-                   r"\breading a\b", r"\bdeclared\b", r"\bthe lp\b"]),
+         licence_ids=["L-LP-ROW", "L-FEASIBILITY-STRUCT",
+                      "L-INFEASIBLE-AT", "L-EMISSION-FUNCTIONAL",
+                      "L-DECLARED-STRUCT"]),
     Wall("WALL-NO-CONTINUUM",
          [r"\bcontinuum limit\b",
-          r"\brecovers (the )?continuum\b"],
+          r"\brecovers (the )?continuum\b",
+          r"\bgoes over to a (smooth|continuum)\b",
+          r"\ba smooth field equation\b"],
          [r"\bevery census here is finite and no continuum claim is "
           r"made\b"],
          ["In the continuum limit the walk recovers the wave equation.",
@@ -3459,11 +3757,15 @@ WALLS = [
           "At large depth the census approaches its continuum form.",
           "No one doubts the continuum limit recovers the field "
           "theory.",
-          "The continuum limit exists here, and not merely formally."],
-         subject=[r"\b(continuum|limit of large|asymptotic)\b"],
-         policed=[r"\b(recovers?|approaches|converges|yields)\b"],
-         licences=[r"\bfinite\b", r"\bone arena\b",
-                   r"\bcommitted windows\b", r"\bcounting-only\b"]),
+          "The continuum limit exists here, and not merely formally.",
+          # the found survivor, permanent (K2 F8)
+          "As the depth grows the record law goes over to a smooth "
+          "field equation."],
+         subject=[r"\b(continuum|limit of large|asymptotic|smooth)\b"],
+         policed=[r"\b(recovers?|approaches|converges|yields|goes over "
+                  r"to)\b"],
+         licence_ids=["L-FINITE-CENSUS", "L-ONE-ARENA",
+                      "L-COMMITTED-WINDOWS", "L-COUNTING-ONLY"]),
     Wall("WALL-NO-SI",
          [r"\b\d+(\.\d+)? ?(seconds?|metres?|meters?|joules?|kelvin|"
           r"kilograms?|hertz)\b",
@@ -3479,11 +3781,13 @@ WALLS = [
          subject=[r"\b(units?|scale|laboratory)\b"],
          policed=[r"\b(si|seconds?|meters?|metres?|joules?|hertz|"
                   r"planck)\b"],
-         licences=[r"\bcounting-only\b", r"\bdimensionless\b",
-                   r"\bexact rational\b", r"\bcounting fraction\b"]),
+         licence_ids=["L-COUNTING-ONLY", "L-EXACT-RATIONAL"]),
     Wall("WALL-SEAM-READING",
          [r"\bpersistence is a measured fact\b",
-          r"\bthe corpus (measures|shows) the seam to persist\b"],
+          r"\bthe corpus (measures|shows) the seam to persist\b",
+          r"\bsettles? the seam (question|decision)\b",
+          r"\bcompletions? persist between events\b",
+          r"\bmeasures? which reading the seam obeys\b"],
          [r"\bpersistence is a declared reading here and every "
           r"downstream row is stamped with it\b"],
          ["Persistence is a measured fact of the committed corpus.",
@@ -3492,12 +3796,17 @@ WALLS = [
           "That the completion persists is settled by the record.",
           "There is no doubt that persistence is a measured fact.",
           "The corpus measures the seam to persist, and not merely to "
-          "be readable so."],
+          "be readable so.",
+          # the found survivors, permanent (K2 F3 and F4)
+          "The census settles the seam question: completions persist "
+          "between events.",
+          "Leg two measures which reading the seam obeys, and the "
+          "answer is re-solved."],
          subject=[r"\b(persist\w*|re-solved|seam data|completion)\b"],
          policed=[r"\b(measured fact|settled|proves?|shows?)\b"],
-         licences=[r"\breading\b", r"\bdeclared\b",
-                   r"\bunderdetermined\b", r"\bstamp\w*\b",
-                   r"\bcandidate\b"]),
+         licence_ids=["L-READING-DECLARED", "L-DECLARED-STRUCT",
+                      "L-UNDERDETERMINED-AT", "L-STAMPED-ROW",
+                      "L-CANDIDATE-READING"]),
     Wall("WALL-STATE-PROCESS",
          [r"\bthe whole of what the process carries\b",
           r"\bis the (final|complete) state of the process\b"],
@@ -3515,9 +3824,9 @@ WALLS = [
          subject=[r"\b(state|contract|interface table)\b"],
          policed=[r"\b(the whole of|complete state|final state|closes? "
                   r"the state question|entire)\b"],
-         licences=[r"\breading-relative\b", r"\bcommitted windows\b",
-                   r"\bconditional\b", r"\bdeclared\b", r"\bscope\b",
-                   r"\bat one arena\b"]),
+         licence_ids=["L-READING-RELATIVE", "L-COMMITTED-WINDOWS",
+                      "L-DECLARED-STRUCT", "L-SCOPED-TO",
+                      "L-ONE-ARENA"]),
 ]
 # ===========================================================================
 # SECTION 10.  THE RUN
@@ -3885,6 +4194,8 @@ def full_run(paper_text, paper_rel=PAPER_REL):
         "reading_family": ("RE-SOLVED", "PERSIST-FIT", "PERSIST-KEPT"),
         "obs_rows": obs["obs_rows"],
         "probes": obs["probes"],
+        "probe_list": obs["probe_list"],
+        "relation_rows": obs["relation_rows"],
         "relation_values": obs["relation_value_set"],
         "step2_rows": pick("MUT-VERDICT", seam2["rows"],
                            [dict(r, re_solved=r["re_solved"] + 1)
@@ -4050,11 +4361,15 @@ def full_run(paper_text, paper_rel=PAPER_REL):
     LD.gate("G-PSI-EQUAL",
             psi["agreements"] == psi["row_count"]
             and psi["separating_rows"] == 0
+            and psi["accessor_agreements"] == psi["row_count"]
             and psi["full_matrix_route_agrees"],
             "the three faces emit byte-identical functionals at every "
-            "delivered row, and the full-matrix channel route agrees "
-            "with the block route at the committed row",
-            {"rows": psi["row_count"]})
+            "delivered row, the one downstream Born accessor is "
+            "byte-equal to the ontic face at every one of those rows, "
+            "and the full-matrix channel route agrees with the block "
+            "route at the committed row",
+            {"rows": psi["row_count"],
+             "accessor": psi["accessor_agreements"]})
     P["psi"] = SL.seal("psi", to_json(
         {"rows": psi["rows"], "faces": psi["faces"]}), "G-PSI-EQUAL")
     P["psi_regions"] = SL.seal("psi_regions", to_json(psi_fns),
@@ -4164,6 +4479,7 @@ def full_run(paper_text, paper_rel=PAPER_REL):
         {"rows": lp["rows"], "branch_rows": lp["branch_rows"],
          "distinct_targets": lp["distinct_targets"],
          "target_rows": lp["target_rows"],
+         "target_table": lp["target_table"],
          "undefined_targets": lp["undefined_targets"],
          "words": lp["words"], "many_dims": lp["many_dims"],
          "ceiling_checked": lp["ceiling_checked"],
@@ -4196,14 +4512,22 @@ def full_run(paper_text, paper_rel=PAPER_REL):
             debt["menu_cross_overlap"] == 0
             and debt["cross_pairs"] == a2parse[0]
             and debt["frozen_creation_admits_seam"] == 0
+            and debt["frozen_live_route_agrees"]
+            and debt["frozen_admitted_events"] == usub["frozen_alive"]
+            and debt["seam_spanning_events"] == usub["seam_spanning"]
+            and debt["frozen_admitted_events"] > 0
+            and debt["seam_spanning_events"] > 0
             and debt["grain_mismatch"]
             and debt["amplitudes_with_unit_mass"]
             == debt["nonzero_amplitudes"] == 4,
             "the walk's menu meets the refused classes nowhere and "
             "cannot express the crossing at either arity, yet carries "
             "unit mass wherever the amplitude is non-zero: the debt is "
-            "decided, the two grains never conflict",
-            {"overlap": debt["menu_cross_overlap"]})
+            "decided, the two grains never conflict; the frozen-creation "
+            "zero is a live set intersection of two non-empty event "
+            "sets, agreeing with the flagged census rows",
+            {"overlap": debt["menu_cross_overlap"],
+             "frozen_live": debt["frozen_seam_live"]})
     P["debt"] = SL.seal("debt", to_json(debt), "G-DEBT")
 
     # ---- tie-breaks, labels, stamps, circularity, prereg ----------------
@@ -4217,6 +4541,38 @@ def full_run(paper_text, paper_rel=PAPER_REL):
             "under a generator", {"rows": len(tie["rows"])})
     P["tiebreaks"] = SL.seal("tiebreaks", to_json(tie),
                              "G-EQUIV-DECLARED")
+    # ---- the first-class declaration inventory (Z6 / K2 E-14):
+    # EQUIVARIANT-OR-DECLARED as the pin words it -- the unit's own
+    # declared choices published beside CONTRACT's carried fifteen and
+    # consumed by this gate
+    parent_names = [r["declaration"] for r in fdecl["rows"]]
+    inv_unit_rows = [r["choice"] for r in tie["rows"]
+                     if r["class"] == "DECLARED"
+                     and r["choice"] not in TIE_PARENT]
+    inv_unit_rows = pick("MUT-INVENTORY", inv_unit_rows,
+                         inv_unit_rows[:-1])
+    inv = {"parent_rows": parent_names,
+           "unit_rows": inv_unit_rows,
+           "already_parent": sorted(TIE_PARENT),
+           "parent_free": len(parent_names),
+           "unit_new": len(inv_unit_rows),
+           "combined": len(parent_names) + len(inv_unit_rows)}
+    LD.gate("G-DECLARATION-INVENTORY",
+            inv["unit_new"] == tie["declared"] - len(TIE_PARENT)
+            and all(TIE_PARENT[k] in parent_names for k in TIE_PARENT)
+            and all(c not in parent_names for c in inv_unit_rows)
+            and inv["combined"]
+            == inv["parent_free"] + inv["unit_new"]
+            and inv["unit_new"] > 0,
+            "every declared non-parent tie-break is a NEW declaration "
+            "of this unit, published in a first-class inventory beside "
+            "the carried parent census and added to the combined count "
+            "in-paper",
+            {"parent_free": inv["parent_free"],
+             "unit_new": inv["unit_new"],
+             "combined": inv["combined"]})
+    P["decl_inventory"] = SL.seal("decl_inventory", to_json(inv),
+                                  "G-DECLARATION-INVENTORY")
     w3 = w3_labels(lp, seam2, obs)
     recheck = "FAMILY-LEVEL-ACROSS-THE-TARGET-FAMILY" \
         if lp["ceiling_exceptions"] == 0 else "MEMBER-SPECIFIC"
@@ -4224,9 +4580,16 @@ def full_run(paper_text, paper_rel=PAPER_REL):
             w3["labels"][3]["label"] == recheck
             and all(l["label"] == "MEMBER-SPECIFIC"
                     for i, l in enumerate(w3["labels"]) if i != 3)
+            and all((l["label"] == "MEMBER-SPECIFIC")
+                    == (l["sweep"] is None
+                        or l["sweep"]["swept_rows"] == 0
+                        or l["sweep"]["exceptions"] != 0)
+                    for l in w3["labels"])
+            and w3["family_label"] == recheck
             and all(l["fibres"] for l in w3["labels"]),
-            "every headline is auto-labelled member-specific or "
-            "family-level from the varied-fibre data, with the fibres "
+            "every headline label is computed by the one rule from its "
+            "own sweep object -- family-level exactly at a non-empty "
+            "zero-exception varied-fibre sweep -- with the fibres "
             "disclosed", {"member": w3["member_specific"],
                           "family": w3["family_level"]})
     P["w3"] = SL.seal("w3", to_json(w3), "G-W3-LABELS")
@@ -4235,13 +4598,27 @@ def full_run(paper_text, paper_rel=PAPER_REL):
     want_rows = (len(lp["rows"]) + len(lp["branch_rows"])
                  + len(psi["rows"]) + 2)
     LD.gate("G-STAMPS",
-            stamps["count"] == want_rows and not saudit["offences"],
-            "every downstream row is stamped reading-independent and "
-            "face-independent, and the reach audit proves no consumer "
-            "touches the seam machinery or a face region",
-            {"stamped": stamps["count"]})
+            stamps["count"] == want_rows and not saudit["offences"]
+            and stamps["psi_by_byte"] == len(psi["rows"])
+            and stamps["psi_by_reach"]
+            == stamps["count"] - len(psi["rows"])
+            and all((r["psi"] == "FACE-INDEPENDENT-BY-BYTE-EQUALITY")
+                    == r["row"].startswith("psi.row.")
+                    for r in stamps["rows"])
+            and all(r["seam"] == "READING-INDEPENDENT-BY-REACH-AUDIT"
+                    for r in stamps["rows"]),
+            "every downstream row is stamped reading-independent by the "
+            "reach audit, and face-independent BY BYTE EQUALITY exactly "
+            "at the measured psi rows and BY THE REACH AUDIT at every "
+            "other row; the audit proves no consumer touches the seam "
+            "machinery or a face region",
+            {"stamped": stamps["count"],
+             "psi_by_byte": stamps["psi_by_byte"],
+             "psi_by_reach": stamps["psi_by_reach"]})
     P["stamps"] = SL.seal("stamps", to_json(
-        {"rows": stamps["rows"], "stamp": stamps["stamp"],
+        {"rows": stamps["rows"],
+         "psi_by_byte": stamps["psi_by_byte"],
+         "psi_by_reach": stamps["psi_by_reach"],
          "audit": saudit}), "G-STAMPS")
     circ = measure_circularity()
     cyc_want = use_decl("con.cycle_actor", "con.cycle_dynamical")
@@ -4282,10 +4659,11 @@ def full_run(paper_text, paper_rel=PAPER_REL):
             and prereg["pairs"][4]["witness"] == car["count"] * 3
             and len(prereg["pairs"]) == len(SEGMENT_NAMES)
             and all(fired.values()),
-            "every head segment carries a pre-registered outcome pair "
-            "on the pin's own stems, with both arms' witnesses "
-            "measured, and every feasibility word fires through the "
-            "real predicates",
+            "every head segment carries an outcome pair whose reached "
+            "word is built on the pin's pre-registered stems and slots "
+            "-- the pin registered stems, not whole words -- with both "
+            "arms' witnesses measured, and every feasibility word "
+            "fires through the real predicates",
             {"pairs": len(prereg["pairs"])})
     P["outcome_prereg"] = SL.seal("outcome_prereg", to_json(prereg),
                                   "G-OUTCOME-FEASIBILITY")
@@ -4360,6 +4738,12 @@ def full_run(paper_text, paper_rel=PAPER_REL):
         "non-zero amplitudes")
     M.m("w3.member", w3["member_specific"], "member-specific headlines")
     M.m("w3.family", w3["family_level"], "family-level headlines")
+    M.m("w3.family_label", w3["family_label"],
+        "the computed family-level label, qualifier and all")
+    M.m("lp.fiber_infeasible",
+        sum(1 for r in lp["rows"]
+            if r["word"] == "INFEASIBLE" and not r["primary"]),
+        "infeasible rows on the record fiber")
     M.m("chart.rounds", chart["rounds"], "admissible rounds")
     M.m("chart.cells", chart["cells"], "chart cells")
     M.m("union.groups", usub["groups"], "conflict groups")
@@ -4402,6 +4786,15 @@ def full_run(paper_text, paper_rel=PAPER_REL):
     if mut("MUT-FRACTION"):
         paper_probe = paper_probe + "\n\nMost of the corpus rows were " \
             "swept here.\n"
+    if mut("MUT-RATIONAL"):
+        # the K3 F-1 escalation, permanent: a false committed Born
+        # weight whose numerator and denominator are separately covered
+        paper_probe = paper_probe + "\n\nThe committed row carries a " \
+            "post-coin weight of 5/9 on each of two cells.\n"
+    if mut("MUT-POLARITY-UNIFY"):
+        # the K2 F5 central-verdict inversion, permanent
+        paper_probe = paper_probe + "\n\nThe parents unify as written " \
+            "at the committed row.\n"
 
     # G-SENSES: the six sense sentences stand in the paper verbatim
     probe_senses = pick("MUT-SENSE", list(iface["senses"]),
@@ -4415,6 +4808,55 @@ def full_run(paper_text, paper_rel=PAPER_REL):
             {"senses": len(sense_hits)})
     P["senses_check"] = SL.seal("senses_check", to_json(sense_hits),
                                 "G-SENSES")
+
+    # ---- G-OUTCOME-EMITABILITY (Z1): the corrected sentence, measured.
+    # The not-reached arms are REGISTERED WORDS WITH REFUSAL SEMANTICS:
+    # each occurs in this instrument's source exactly once -- its
+    # registration in the prereg table -- so it has no emission path;
+    # the delivery gates hard-require the reached arm, measured here as
+    # the reached stem standing in the head and no unreached word doing
+    # so; and only the four LP words fire through the real predicates.
+    # The paper must carry the corrected sentence, bound by this gate.
+    emit_probe = src
+    if mut("MUT-EMIT"):
+        emit_probe = src + ('\nPHANTOM_EMIT = "'
+                            + prereg["pairs"][1]["not_reached"] + '"\n')
+    emit_rows = []
+    for pr2 in prereg["pairs"]:
+        w2 = pr2["not_reached"]
+        occ = emit_probe.count('"' + w2 + '"')
+        emit_rows.append({"unreached": w2, "source_occurrences": occ,
+                          "registration_only": occ == 1,
+                          "in_head": any(w2 in seg for seg in verdict)})
+    reach_rows = []
+    for pr2 in prereg["pairs"]:
+        w3r = pr2["reached"]
+        reach_rows.append({"reached": w3r,
+                           "in_head": any(seg.startswith(w3r)
+                                          or w3r in seg
+                                          for seg in verdict)})
+    emit_needle = ("the delivery gates hard-require the reached arm, so "
+                   "a run measuring any other arm ends as a refusal and "
+                   "never as the other verdict word")
+    emit_sentence_hits = locate(paper_text, emit_needle)
+    fired2 = dict(prereg["lp_words_fired"])
+    LD.gate("G-OUTCOME-EMITABILITY",
+            all(r["registration_only"] and not r["in_head"]
+                for r in emit_rows)
+            and all(r["in_head"] for r in reach_rows)
+            and all(fired2.values())
+            and emit_sentence_hits >= 1,
+            "every not-reached word is a registered word with refusal "
+            "semantics -- one source occurrence, its registration, and "
+            "no emission path -- the reached arm is hard-required in "
+            "the head, only the LP words fire through the real "
+            "predicates, and the paper carries the corrected sentence",
+            {"unreached": len(emit_rows),
+             "sentence_hits": emit_sentence_hits})
+    P["emitability"] = SL.seal("emitability", to_json(
+        {"unreached_rows": emit_rows, "reached_rows": reach_rows,
+         "sentence_hits": emit_sentence_hits}),
+        "G-OUTCOME-EMITABILITY")
 
     # G-WALLS
     wall_report = []
@@ -4512,6 +4954,11 @@ def full_run(paper_text, paper_rel=PAPER_REL):
               for c in car["candidates"]])
     CL.table("T-TIEBREAK", ("choice", "class"),
              [(r["choice"], r["class"]) for r in tie["rows"]])
+    CL.table("T-INVENTORY", ("inventory row", "count"),
+             [("free declarations carried from the parent census",
+               inv["parent_free"]),
+              ("this unit's new declared choices", inv["unit_new"]),
+              ("the combined declaration count", inv["combined"])])
     CL.table("T-W3", ("head segment", "label"),
              [(l["segment"], l["label"]) for l in w3["labels"]])
     CL.table("T-PREREG", ("segment", "reached", "not reached",
@@ -4562,12 +5009,34 @@ def full_run(paper_text, paper_rel=PAPER_REL):
          "distinct": len(set(paper_nums)),
          "exempt": sorted(EXEMPT_NUMERALS)}), "G-PAPER-COVERAGE")
 
+    # ---- G-PAPER-RATIONAL (Z3): atomic slash rationals ------------------
+    rats = set()
+    collect_rationals(P, rats)
+    collect_rationals(M.vals, rats)
+    paper_rats = RAT_RE.findall(paper_probe)
+    rat_uncovered = sorted({t for t in paper_rats if t not in rats})
+    LD.gate("G-PAPER-RATIONAL", not rat_uncovered,
+            "every slash rational the paper carries, fenced blocks "
+            "included, is backed as an atomic value by a rational "
+            "string the receipt carries -- the compound-token split "
+            "cannot launder a false committed weight",
+            {"paper_rationals": len(paper_rats),
+             "uncovered": rat_uncovered[:6]})
+    P["rational_scan"] = SL.seal("rational_scan", to_json(
+        {"paper_rationals": len(paper_rats),
+         "distinct": sorted(set(paper_rats)),
+         "receipt_rationals": len(rats)}), "G-PAPER-RATIONAL")
+
     forbidden = [
         "the committed row is feasible",
         "the lp is feasible after all",
         "an observable separates the completion",
         "the persist members allow the same second crossings",
         "the faces emit different functionals",
+        "the parents unify as written",
+        "the parents can be unified as written",
+        "a single probability assignment carries both the born "
+        "weights and the grammar",
     ]
     pc = canon(paper_probe)
     pol_hits = [f for f in forbidden if canon(f) in pc]
@@ -4601,6 +5070,8 @@ def full_run(paper_text, paper_rel=PAPER_REL):
          debt["nonzero_amplitudes"]): "amplitude",
         (lp["branch_degenerate"], lp["branch_count"]): "branch",
         (words.get("INFEASIBLE", 0), len(lp["rows"])): "row",
+        (M.get("lp.fiber_infeasible"),
+         words.get("INFEASIBLE", 0)): "row",
     }
     pair_rows = []
     ok_pairs = True
@@ -5112,6 +5583,10 @@ FALSIFIERS = [
     Falsifier("MUT-PSI", "G-PSI-EQUAL", "the instrument face",
               "the channel face's functional is reversed, so the three "
               "faces stop agreeing"),
+    Falsifier("MUT-ACCESSOR", "G-PSI-EQUAL", "the Born accessor",
+              "the downstream accessor's output is permuted while still "
+              "summing to one, so its row-by-row byte identity with the "
+              "ontic face fails"),
     Falsifier("MUT-INCIDENCE", "G-LP-BUILD", "the incidence matrix",
               "one entry of the block incidence is inflated, so the "
               "structural row sums fail"),
@@ -5145,6 +5620,11 @@ FALSIFIERS = [
     Falsifier("MUT-TIEBREAK", "G-EQUIV-DECLARED", "the registry",
               "a declared tie-break row is dropped, the silent-choice "
               "shape the wall forbids"),
+    Falsifier("MUT-INVENTORY", "G-DECLARATION-INVENTORY",
+              "the declaration inventory",
+              "one of the unit's new declared choices is dropped from "
+              "the first-class inventory, so the combined count parts "
+              "from the tie-break registry"),
     Falsifier("MUT-W3", "G-W3-LABELS", "a headline label",
               "the family-level label is flipped against the "
               "varied-fibre data it is computed from"),
@@ -5158,6 +5638,10 @@ FALSIFIERS = [
               "one pre-registered word is rewritten off its pin stem"),
     Falsifier("MUT-FEASIBILITY", "G-OUTCOME-FEASIBILITY", "a witness",
               "one outcome pair's witness is detached from the run"),
+    Falsifier("MUT-EMIT", "G-OUTCOME-EMITABILITY", "the emission census",
+              "a phantom emission path for a not-reached word is added "
+              "to the scanned source, so the registration-only census "
+              "fails"),
     Falsifier("MUT-SENSE", "G-SENSES", "the sense list",
               "one of the six sense sentences is dropped, so the count "
               "and the paper part company"),
@@ -5172,9 +5656,18 @@ FALSIFIERS = [
               "the paper rightly does not carry"),
     Falsifier("MUT-NUMERAL", "G-PAPER-COVERAGE", "the paper under test",
               "a numeral no measurement backs is planted in the prose"),
+    Falsifier("MUT-RATIONAL", "G-PAPER-RATIONAL", "the paper under test",
+              "a false committed Born weight is planted in prose as a "
+              "slash rational whose parts are separately covered -- the "
+              "permanent five-ninths control"),
     Falsifier("MUT-POLARITY", "G-PAPER-POLARITY", "the paper under test",
               "a declared inversion of the committed verdict is planted "
               "in the paper's own voice"),
+    Falsifier("MUT-POLARITY-UNIFY", "G-PAPER-POLARITY",
+              "the paper under test",
+              "the central no-go inverted -- the parents unify as "
+              "written -- is planted in the paper's own voice, the "
+              "permanent unification-family control"),
     Falsifier("MUT-REFERENT", "G-PAPER-REFERENT", "the paper under test",
               "a cross-universe pair is planted, both numerals true and "
               "the relation false"),

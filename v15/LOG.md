@@ -2702,3 +2702,30 @@ its verifier seat running; ECC's repair is uncommitted
 pending its last replay leg + the user's hold; the rest
 as stated.
 
+## 2026-08-17 — ECC REPAIR VERIFIED AND COMMITTED; THE UNIT PARKS UNSEALED PER THE USER'S STANDING HOLD (v15 LEDGER #69)
+
+Continuation 3 verified the inherited blob against every
+Z-order, found ONE missing clause (Z7/E-12d: §10's
+taxonomy did not cover the LP gaps — fixed, mirroring the
+SCOPE wording), and ran the entire battery FRESH:
+regeneration byte-identical x4 (two git-less mirrors,
+deleted artifacts, four alien CWDs, four hash seeds);
+--selftest 78/78 with moves proved; out-of-harness sweep
+78/78 at declared gates tree-intact; argv 12/12 rc 2; the
+56-row injection replay — EVERY previously-surviving
+injection and plant now dies at its proper gate (the
+slash-rational escalations at G-PAPER-RATIONAL; the eight
+paraphrases + X1/X2 at G-WALLS with structural licences
+and the DOUBT-consumption clause; the central-verdict
+inversion at G-PAPER-POLARITY), twins and controls
+exactly as the reviews measured.  ZERO PHYSICS LEAVES
+MOVED (202 moved leaves audited: the three Z-named head
+tokens, instrument counts, and mechanical insertion
+shifts only; head diff = exactly the two E-11 renames +
+the E-9 qualification).  Committed as paper 96a3475e9f40
+/ code 307091cfcc06 / output c13c1b2fc17b / receipt
+279e541757d7.  Orchestrator battery next as the formal
+acceptance.  THE UNIT THEN PARKS VERIFIED-UNSEALED: no
+seal, no registry updates, no DC consumption, per the
+user's hold.
+

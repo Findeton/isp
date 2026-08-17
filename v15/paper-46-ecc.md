@@ -21,8 +21,9 @@ row is an exact arithmetic ceiling.
 CONTRACT's machine and the aligned two-sector union of AUTOGLUE's -- at the
 committed windows only. Every census here is finite and no continuum claim
 is made. No number here carries a laboratory unit. Every fraction is a
-counting fraction or an exact rational Born weight, and no fraction is read
-as how often anything happens. Exact arithmetic throughout: Python integers
+counting fraction, an exact rational Born weight, or an exact rational LP
+gap or bound named as one, and no fraction is read as how often anything
+happens. Exact arithmetic throughout: Python integers
 and `fractions.Fraction`; an abstract-syntax scan of the instrument bans
 floats, typed numerals in statements, orderings keyed on a bare repr, and
 every call to the builtin hash.
@@ -30,7 +31,7 @@ every call to the builtin hash.
 **Verdict**, in five segments, quoted exactly as the instrument emits them.
 
 ```
-ECC-STATE-CONTRACT-CLOSED-AT-THE-COMMITTED-WINDOWS-UNDER-THE-DECLARED-SEAM-READING<OBJECTS=23; COMPUTED-HERE=18; CITED=5; SENSE-WORDS=6; FREE-DECLARATIONS-CARRIED=15-OF-15-WITH-6-TYPE-CATEGORIES; EVENT-FORK=DECLARED-2-ARMS-NO-COMPROMISE; COSET-PRINCIPLE=DECLARED-THE-SELECTION-LAW; MAPS=3-TYPED-COMPOSED-NOWHERE; STATE-COMPONENTS=2-PLUS-BOOKKEEPING=1; SEAM-COMPONENT=READING-CONDITIONAL; ACTOR-RECORD-CYCLE=4-EDGES-CARRIED-OPEN-AT-FULL-DYNAMICS>
+ECC-STATE-CONTRACT-CLOSED-AT-THE-COMMITTED-WINDOWS-UNDER-THE-DECLARED-SEAM-READING<OBJECTS=23; COMPUTED-HERE=18; CITED=5; SENSE-WORDS=6; FREE-DECLARATIONS-CARRIED=15-OF-15-WITH-6-TYPE-CATEGORIES; EVENT-FORK=DECLARED-2-ARMS-NO-COMPROMISE; COSET-PRINCIPLE=DECLARED-THE-SELECTION-LAW; MAPS=3-TYPED-COMPOSED-NOWHERE; STATE-COMPONENTS=2-PLUS-BOOKKEEPING=1; SEAM-COMPONENT=READING-RELATIVE; ACTOR-RECORD-CYCLE=4-EDGES-CARRIED-OPEN-AT-FULL-DYNAMICS>
 ```
 
 ```
@@ -42,11 +43,11 @@ PSI-STATUS-INDEPENDENT-AT-EVERY-DELIVERED-ROW<FACES=3; ROWS=18; FUNCTIONAL-AGREE
 ```
 
 ```
-ECC-LP-INFEASIBLE-AT-THE-COMMITTED-ROW-AND-THE-CEILING-IS-A-THEOREM<CLASSES=4-PLUS-THE-PAIR-EVENT-BRANCH; DISTINCT-TARGETS=39; ROWS=156; INFEASIBLE=136; UNIQUE=8; MANY=6-MAX-DIM-8; FIBER-FEASIBLE=6; BRANCH-DEGENERATE-IDENTITY=39-OF-39; TARGET-UNDEFINED-AMPLITUDES=2; COMMITTED-ROW=SINGLE-CELL-AMPLITUDE-AT-THE-INITIAL-RECORD-AT-THE-DELIVERED-ORDER-QMAX-4/9-ABOVE-THE-CEILING-INFEASIBLE-AT-ALL-4-COMMITTED-CLASSES; CEILING=FEASIBILITY-FORCES-QMAX-AT-MOST-ONE-THIRD-CHECKED-AT-156-ROWS-EXCEPTIONS-0; CONTROLS=FORCED-BOTH-WAYS-THROUGH-THE-REAL-PREDICATES; NORMALIZATION=PRE-REGISTERED-PAIR-CELL-FORM-INCLUSION-EQUALS-UNIFORM-TWO-STAGE-WHERE-EVERY-EVENT-WRITES-3-CELLS; FREE-TWO-STAGE=VACUOUS-AT-27-OF-27-CELLS-COVERED>
+ECC-LP-INFEASIBLE-AT-THE-COMMITTED-ROW-AND-THE-CEILING-IS-A-THEOREM<CLASSES=4-PLUS-THE-PAIR-EVENT-BRANCH; DISTINCT-TARGETS=39; ROWS=156; INFEASIBLE=136; UNIQUE=8; MANY=6-MAX-DIM-8; FIBER-FEASIBLE=6; BRANCH-DEGENERATE-IDENTITY=39-OF-39; TARGET-UNDEFINED-ROWS=2; COMMITTED-ROW=SINGLE-CELL-AMPLITUDE-AT-THE-INITIAL-RECORD-AT-THE-DELIVERED-ORDER-QMAX-4/9-ABOVE-THE-CEILING-INFEASIBLE-AT-ALL-4-COMMITTED-CLASSES; CEILING=FEASIBILITY-FORCES-QMAX-AT-MOST-ONE-THIRD-CHECKED-AT-156-ROWS-EXCEPTIONS-0; CONTROLS=FORCED-BOTH-WAYS-THROUGH-THE-REAL-PREDICATES; NORMALIZATION=PRE-REGISTERED-PAIR-CELL-FORM-INCLUSION-EQUALS-UNIFORM-TWO-STAGE-WHERE-EVERY-EVENT-WRITES-3-CELLS; FREE-TWO-STAGE=VACUOUS-AT-27-OF-27-CELLS-COVERED>
 ```
 
 ```
-ECC-CARRIER-FAMILY-UNSELECTED-AND-THE-DEBT-DECIDED<CANDIDATES=4; HOST-THE-STATE=4-OF-4; EXPRESS-THE-COMMITTED-BRANCHING=2-OF-4; EVOLVE-ACROSS-CREATION=0-OF-4; NOTHING-SELECTED-THE-FAMILY-PUBLISHED; DEBT=THE-WALK-CONTINUES-ON-ITS-OWN-MENU-WHERE-CREATION-REFUSES: MENU-CELLS-IN-THE-CROSS-CLASS=0-OF-36; FROZEN-CREATION-ADMITS=0-OF-288-SEAM-SPANNING; UNIT-MASS-AMPLITUDES=4-OF-4; CLASS=COMPATIBILITY-NO-GO; SCOPE=ONE-ARENA-COMMITTED-WINDOWS-COUNTING-ONLY; W-THREE-LABELS=4-MEMBER-SPECIFIC-PLUS-1-FAMILY-LEVEL-FIBRES-DISCLOSED>
+ECC-CARRIER-FAMILY-UNSELECTED-AND-THE-DEBT-DECIDED<CANDIDATES=4; HOST-THE-STATE=4-OF-4; EXPRESS-THE-COMMITTED-BRANCHING=2-OF-4; EVOLVE-ACROSS-CREATION=0-OF-4; NOTHING-SELECTED-THE-FAMILY-PUBLISHED; DEBT=THE-WALK-CONTINUES-ON-ITS-OWN-MENU-WHERE-CREATION-REFUSES: MENU-CELLS-IN-THE-CROSS-CLASS=0-OF-36; FROZEN-CREATION-ADMITS=0-OF-288-SEAM-SPANNING; UNIT-MASS-AMPLITUDES=4-OF-4; CLASS=COMPATIBILITY-NO-GO; SCOPE=ONE-ARENA-COMMITTED-WINDOWS-COUNTING-ONLY; W-THREE-LABELS=4-MEMBER-SPECIFIC-PLUS-1-FAMILY-LEVEL-ACROSS-THE-TARGET-FAMILY-FIBRES-DISCLOSED>
 ```
 
 Between delivery and adjudication every headline reading here is a
@@ -119,7 +120,7 @@ The table below is this unit's own: one row per object the four parents
 jointly put in play, each classed by the four words, each carrying its
 extent, its backing, its carrier kind and the sense word it binds to. It is
 not CONTRACT's census re-typed -- CONTRACT named its own object list at its
-own unit, and the two lists differ; every extent marked COMPUTED-HERE is
+own unit, at its own grain; every extent marked COMPUTED-HERE is
 rebuilt from constructors in this instrument and gated against the sealed
 parent by a consumer gate, and every extent marked SEALED-CITATION is
 parsed out of the parent's own located sentence, never typed.
@@ -273,7 +274,7 @@ those numbers is bound to its sealed source by a consumer gate, so this
 rebuild is a gated reproduction, reported as one.
 
 **Leg one: the committed observable menu is completion-blind.** Eight
-observables -- every record functional the committed corpus defines at the
+observables -- the committed observable menu this unit declares at the
 union window, from the count field itself down to the total-mass residue --
 are implemented as functions whose whole domain is the geometry and the
 record; the declared domain audit, an abstract-syntax gate, proves none can
@@ -300,9 +301,10 @@ have read otherwise -- which is exactly the certificate the verdict word
 needs, established by the domain audit and exhibited by the sweep. What is
 NOT structural is the other half: the modal allowed-event relation -- which
 crossings a state's own predictions fit -- takes 2 distinct values over the
-same probe family. The one completion-sensitive quantity the corpus carries
-at this window is a lawfulness relation, and the corpus defines no
-observable that reads a lawfulness relation.
+same probe family. Among the quantities this unit's menu and relation
+census expose at this window, the one completion-sensitive quantity is a
+lawfulness relation, and no member of the committed menu reads a
+lawfulness relation.
 
 **Leg two: the readings separate the two-step record census.** Three
 readings of the seam datum are declared as exact predicates and run from
@@ -352,7 +354,9 @@ matching the relation's own definition -- and it is a declaration, not a
 measurement; the stamp is discharged by a reach audit proving that no
 downstream consumer touches the completion machinery at all, so every LP,
 psi, carrier and debt row below is reading-independent by construction,
-215 stamped rows in all.
+215 stamped rows in all. The receipt stamps the mechanism row by row:
+face-independence is by byte equality at the 18 measured psi rows and by
+the reach audit at the 197 other stamped rows.
 
 ---
 
@@ -401,10 +405,11 @@ every one of the 18, separating rows none. No committed row separates the
 faces, so the trilemma is UNRESOLVED at this corpus's one-step windows,
 and every result this unit delivers is proven independent of it: the reach
 audit shows every downstream consumer takes the Born functional through
-one accessor and touches no face region. That is the pin's second arm --
-independence proven row by row -- and it is the honest one, because a
-measurement that separates the faces would need more than the one-step
-windows the corpus commits.
+one accessor -- an accessor the instrument binds byte-for-byte to the
+ontic face at every delivered row -- and touches no face region. That is
+the pin's second arm -- independence proven row by row -- and it is the
+honest one: no committed row separates the faces, and whether any window
+beyond the committed ones could is not measured here.
 
 ---
 
@@ -423,8 +428,9 @@ at the full triple class 54 events write 2 -- so the identity is a
 property of the class, not of the notation. Three readings of the
 normalization were on the pin's table and the choice is explicit:
 INCLUSION MARGINALS is the registered primary; the uniform two-stage
-reading builds the SAME constraint system wherever every event writes 3
-cells, measured as matrix equality; and the free two-stage reading -- a
+reading builds the SAME constraint system at the block class -- where
+every event writes 3 cells -- measured as matrix equality there; and the
+free two-stage reading -- a
 per-event cell-selection weight chosen freely -- constrains nothing, since
 every one of the 27 cells is covered and any target becomes expressible,
 so it is disclosed as vacuous and carries no verdict.
@@ -488,8 +494,11 @@ and can never exceed the total, so feasibility forces every Born weight to
 one third or below -- and the committed start concentrates a post-coin
 weight of 4/9 on each of two cells at its own site. The ceiling leg is the
 one family-level statement of this paper: it is arithmetic about the
-pre-registered normalization, checked at every row and carried by no
-fibre.
+pre-registered normalization, checked at every row of the swept target
+family; what no fibre carries is the theorem's form -- feasibility forces
+every Born weight to the reciprocal of the writer scale or below wherever
+the incidence is zero-or-one -- while the value one third is the
+committed arity's own, the scale being three.
 
 **Away from the committed row every outcome word is substantive and every
 word fires on a real row.** At the declared-line and coset-line classes,
@@ -504,8 +513,9 @@ dimension 8: the marginal-sum identity forces every event that writes
 fewer than 3 cells to probability zero, so the free class buys no freedom.
 The record fiber is where feasibility dies wholesale: at 2 round fields
 the uniform amplitude stays feasible under the delivered order, and at
-every other member of the window it does not -- which is why 136 of the
-156 rows read infeasible. The zero amplitude defines no target and its 2
+every other member of the window it does not -- the fiber carries 132 of
+the 136 infeasible rows, and the committed row's own class-rows carry the
+other 4. The zero amplitude defines no target and its 2
 target rows -- one per coin order -- are stamped TARGET-UNDEFINED. At the branch, all 39
 targets degenerate to the identity -- the pair-event marginal map IS the
 Born functional -- and the branch word DEGENERATE-IDENTITY is kept apart
@@ -542,8 +552,9 @@ exact isometry, so the growing carriers host the created cell and the
 fixed carriers host the fixed-background state. Expressing is the
 committed branching: one step of the walk leaves 3 branches with 3
 distinct records, so a carrier without a classical register cannot express
-the committed ensemble -- measured at 2 of the 4 candidates -- and the
-corpus never exercises a coherence between branches, so the census does
+the committed ensemble -- measured at 2 of the 4 candidates -- and no
+coherence between branches is exercised at the delivered one-step window
+with its 3 distinct branch records, so the census does
 not separate the cq-instrument from the direct sum: the family is
 published, nothing is selected. Evolving is the sharp gap, at 0 of the 4
 candidates: every cross pair the union admits is hosted by neither chart
@@ -592,7 +603,8 @@ from its bytes:
 
 -- the crossing configuration is every pair-event's whole footprint there,
 and still no crossing pair is in the walk's menu, because an unrealised
-pair carries no amplitude. So the debt is decided: the two grains never
+pair carries no amplitude; the unit-mass count itself is taken at the
+initial record under the delivered order. So the debt is decided: the two grains never
 conflict, and the walk cannot express the crossing at either arity. The
 compatibility is bought by confinement -- the walk is a dynamics of the
 standing carrier, and growth is a transition the walk cannot phrase --
@@ -633,8 +645,9 @@ table.
 
 No measure is declared on events, states, completions, targets or rows.
 Every fraction in this paper is a count over an exhaustive enumeration
-with its denominator beside it, or an exact rational Born weight named as
-one, and nothing here may be read as how often anything happens.
+with its denominator beside it, an exact rational Born weight named as
+one, or an exact rational LP gap or bound named as one, and nothing here
+may be read as how often anything happens.
 
 ## 11. Choice inventory, labels, and the pre-registered outcomes
 
@@ -652,7 +665,18 @@ The record window is the whole round-generated family and a translation
 generator permutes it onto itself, measured; the probe-family extras, the
 canonical container order and the committed coin order are declarations,
 carried as three declared rows, with the alternative coin order run beside
-the committed one at every target.
+the committed one at every target. The committed coin order is already a
+row of CONTRACT's carried census -- the coin order -- so it adds nothing
+new; the probe-family extras and the canonical container order are NEW
+declarations this unit makes, and they are published as a first-class
+declaration inventory beside the carried fifteen, consumed by its own
+gate:
+
+| inventory row | count |
+|---|---|
+| free declarations carried from the parent census | 15 |
+| this unit's new declared choices | 2 |
+| the combined declaration count | 17 |
 
 | head segment | label |
 |---|---|
@@ -662,10 +686,13 @@ the committed one at every target.
 | the born-marginal feasibility lp | FAMILY-LEVEL-ACROSS-THE-TARGET-FAMILY |
 | the carrier and the admissible-class debt | MEMBER-SPECIFIC |
 
-The labels are rendered from the receipt: four segments are
-member-specific and one carries the family label, which its ceiling
-theorem earns by holding at every row with a derivation leg. Nothing else
-in this paper is licensed beyond its arena.
+The labels are rendered from the receipt and computed by one rule -- a
+segment earns the family label exactly when a non-empty varied-fibre
+sweep object exists for it and closed with zero exceptions: four segments
+map to no sweep object and are member-specific by that rule, and one
+carries the family label its ceiling theorem earns by holding at every
+swept row, the derivation itself standing in section 6 with its premises
+gated. Nothing else in this paper is licensed beyond its arena.
 
 | segment | reached | not reached | witness | other arm's witness |
 |---|---|---|---|---|
@@ -676,11 +703,21 @@ in this paper is licensed beyond its arena.
 | the carrier and the admissible-class debt | ECC-CARRIER-FAMILY-UNSELECTED-AND-THE-DEBT-DECIDED | ECC-BLOCKED-AT-THE-CARRIER | 12 | 0 |
 
 Every reached word is built on a stem of the pin's own bytes, located in
-the frozen pin by the outcome gate; every unreached word carries the
-predicate that would have reached it and the measured witness of the arm
-that fired; and all four LP words -- infeasible, unique, many, degenerate
--- fire through the real predicates on real or control rows, so no outcome
-of the pre-registration is a word this instrument cannot emit.
+the frozen pin by the outcome gate; the pin pre-registered stems and
+slots, not whole words. The fifth segment's reached word is a
+delivery-time construction on the pin's step-four verb -- the pin's
+outcomes section carries no carrier or debt reached-arm vocabulary -- and
+the row-quantifier suffix of segment three and the ceiling suffix of
+segment four fill the pin's slots at delivery time. Every unreached word
+carries the predicate that would have reached it and the measured witness
+of the arm that fired, and every unreached word is a registered word with
+refusal semantics: the delivery gates hard-require the reached arm, so a
+run measuring any other arm ends as a refusal and never as the other
+verdict word. Among the pre-registered outcome vocabulary only the four
+LP words -- infeasible, unique, many, degenerate -- fire through the real
+predicates on real or control rows; each unreached word has no emission
+path in the instrument beyond its registration, and the emitability gate
+measures both facts.
 
 ## 12. The instrument
 
@@ -704,10 +741,20 @@ path of each numeral; and the object under test -- this paper -- is
 digested into both artifacts, so a reader holding the committed pair can
 tell which text they certify.
 
-The head is a positional field list rebuilt by a comparator that shares no
-code and no literal with the builder and reads no summary scalar: every
-count in every segment is re-derived from the receipt's primitive row
-tables, and the two renderings are compared whole and numeral by numeral.
+The head is a positional field list rebuilt by a comparator that shares
+no code and no constant object with the builder -- the fixed verdict
+wording of the two templates coincides by necessity -- and reads no
+summary scalar: every count in every segment is re-derived from the
+receipt's primitive row tables, from an anchor's own serialised bytes, or
+from a per-cell or per-probe table serialised for exactly that purpose,
+and the two renderings are compared whole and numeral by numeral. The
+determinism gate's declared scope is the repr-key and builtin-hash
+ordering species, proved absent by an abstract-syntax scan of this file;
+hash-seed invariance is demonstrated separately, and every promoted
+ordering routes through the one canonical key. The paper-surface scans
+back every numeral by a receipt value, every atomic slash rational by a
+receipt rational string, and every spelled cardinal, fraction and
+of-pair by the same discipline.
 Every falsifier recipe names the measured object it corrupts and the gate
 it must die at; the self-test sweep runs every recipe out of the builder's
 control flow, requires the death at the declared gate, proves the move by
