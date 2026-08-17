@@ -3001,3 +3001,40 @@ moves; the seat's confirmations become the repair's
 expected values, re-derived by the unit's own
 instrument.
 
+## 2026-08-17 — SECOND ERRATUM, THE ORCHESTRATOR'S OWN: THE #68 ADDENDA WERE NEVER ROUTED BY MESSAGE — SCOUT-PSI'S WORKER NEVER SAW ITS ADDENDUM; THE BREACH CHAIN OWNED; THE ROUTING DISCIPLINE ENGRAVED; THE SCOUT-PSI REPAIR LAUNCHED (v15 LEDGER #77)
+
+Byte-verification of the #76 findings: the addendum
+digest e717d3bbc1df appears NOWHERE in the unit; the
+frozen secondary and the quotient rows are absent; the
+note ran its own ensembles.  TRUE as found.  But the
+fault chain, traced: the SCOUT-PSI worker launched at
+#65; the addendum was frozen at #68, MID-BUILD; and the
+#68 entry's sentence "routed to the in-flight workers
+with a REQUIRED DISCLOSURE" WAS NEVER EXECUTED — the
+orchestrator sent no message to either scout worker at
+#68 (the #64-stage messages went to SCOUT-K and the
+scout repair on OTHER content).  SCOUT-K found its
+addendum in the tree by its own diligence and complied;
+SCOUT-PSI's worker was never told, never looked, and
+built to its pin as launched.  A pin addendum
+uncommunicated to a running worker does not bind the
+worker; THE BREACH IS THE ORCHESTRATOR'S.  #70's
+compliance engraving compounded it (erratum at #76).
+
+THE ROUTING DISCIPLINE, engraved forward: (a) a frozen
+addendum binds a running worker ONLY once delivered by
+message (send confirmed) or once the worker acknowledges
+the in-tree file; the ledger records WHICH; (b) "routed"
+is written in the ledger only after the sends are made,
+never before; (c) at every delivery, the orchestrator
+verifies addendum citation IN THE ARTIFACTS before
+engraving any compliance sentence (the #76 rule (a)
+applied at the delivery step).  The
+PREREG-BREACH-WITH-TRUE-RESULT registry entry gains this
+sub-species: BREACH-BY-UNROUTED-ADDENDUM.
+
+The Z1-Z8 repair worker launched this entry, carrying
+the addendum text IN ITS PROMPT (no routing dependency),
+the verifier's measured expected values, and the
+in-note disclosure duty for the whole chain.
+
