@@ -2791,3 +2791,18 @@ genuinely linear and BLIND, audit the pre-registration
 compliance (the frozen preparations run exactly as the
 #68 addendum fixed them) and the ontology wall, attack
 the numeral bindings and the new gates.
+
+## 2026-08-17 — ECC BATTERY GREEN AT THE ORCHESTRATOR; THE UNIT IS PARKED VERIFIED-UNSEALED PER THE USER HOLD (v15 LEDGER #72)
+
+The formal acceptance on the committed repaired blob:
+byte-identical from deleted artifacts incl. receipt;
+byte x2; seed-invariant; argv rc 2; selftest 78/78 with
+moves proved; MUT-RATIONAL dead at G-PAPER-RATIONAL (the
+5/9 forge named in its refusal); artifacts untouched.
+ECC IS NOW: delivered (#44) -> panel-complete (#46/#48/
+#49) -> adjudicated (#50) -> repaired -> verified fresh
+(#69) -> battery-accepted (this entry).  IT PARKS HERE:
+no seal, no STATUS row, no registry updates, no DC
+consumption, until the user lifts the hold.  The full
+repair evidence sits in #69; the sealing decision and
+the optional type-error erratum are the user's.
