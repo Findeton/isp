@@ -2777,3 +2777,17 @@ has its candidate answer; the steering successor
 question (the EPR/no-signalling gun) stays HELD until
 this seals and the user rules.
 
+
+## 2026-08-17 — SCOUT-PSI BATTERY GREEN AT THE ORCHESTRATOR; ITS VERIFIER SEAT LAUNCHED (v15 LEDGER #71)
+
+Byte-identical from deleted artifacts incl. the receipt;
+byte x2; seed-invariant; argv rc 2; selftest 14/14 with
+move proofs; MUT-MASS dead at G-MASS; artifacts
+untouched.  The single hostile verifier seat launched
+(review file v15/review-scoutpsi-verifier.md): rebuild
+the window-1/2 distributions and the 16/729-vs-32/729
+witness from scratch, verify the null instrument is
+genuinely linear and BLIND, audit the pre-registration
+compliance (the frozen preparations run exactly as the
+#68 addendum fixed them) and the ontology wall, attack
+the numeral bindings and the new gates.
