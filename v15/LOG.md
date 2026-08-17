@@ -2600,3 +2600,19 @@ only (gates 35→37, falsifiers 27→29); every measured
 number byte-identical.  Orchestrator battery next; the
 pin's single hostile verifier seat on green.
 
+## 2026-08-17 — SCOUT BATTERY GREEN AT THE ORCHESTRATOR (THE PREVIOUSLY-RED LEGS NOW PASS); THE SINGLE HOSTILE VERIFIER SEAT LAUNCHED (v15 LEDGER #67)
+
+The re-run on the committed repaired blob: plain
+regeneration from DELETED artifacts BYTE-IDENTICAL
+including the receipt (the leg that was red at #59);
+byte x2; PYTHONHASHSEED-INVARIANT including the receipt;
+argv rc 2; selftest 29/29 with move proofs (MUT-ENV dead
+at G-ENV-EXCLUSION); MUT-NUMBIND dead at
+G-NUMERAL-FIELD; artifacts untouched.  The
+ledger-self-reference defect is closed at both ends.
+The pin's promised single hostile verifier seat launched
+this entry (review file v15/review-scout-verifier.md):
+rebuild the load-bearing numbers, audit the repaired
+language for downgrade/candidate-marking compliance, and
+attack the two new gates.
+
