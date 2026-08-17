@@ -2374,3 +2374,86 @@ refusals at every point of use, prereg seal order
 verified, 635 numerals / 0 uncovered.  K3's continuation
 is the last seat; adjudication on its freeze.
 
+## 2026-08-17 — ARITY-16 K3 (INSTRUMENT) FROZEN: ACCEPT-WITH-FIXES; THE HARNESS PROVEN HONEST BY RE-RUN; TWO NEW DISEASES (LICENCE-LEAK-ACROSS-HEADING; ITERATION-ORDER DETERMINISM WITH A PROVEN SEED-VARIANT MUTANT) (v15 LEDGER #62)
+
+Review frozen v15/review-arity16-instrument.md
+(77ace2d1ba10).  The predecessor's 31-injection campaign
+ADOPTED ONLY AFTER VERIFICATION: every log matched its
+gate line; three claimed kills RE-RUN from the injected
+mirrors and reproduced exactly; the five results the
+predecessor never saw scored fresh.  Totals: 31
+injections + 10 CLI forms + 6 registry mutants (each at
+its exact declared gate, tree intact) + TAMPER (on-disk
+receipt forgery erased by regeneration BYTE-IDENTICAL to
+committed, twice) + three determinism proofs.  The core
+is SOUND and measurably harder than the parent (ARITY's
+three structural findings closed; ECC's two laundering
+escapes cured).
+
+Nine survivors, four findings: F-1 MEDIUM
+(recurrence + ECC-registered) — unregistered SYNTHESIS
+PROSE promotes: a forged tally 4/2 against the fence's
+3/3, an inverted capped-to-empty stamp, a slash-rational
+6/35, a bare derivation claim — each yields a paper
+contradicting its own receipt.  F-2 MEDIUM NEW —
+LICENCE-LEAK-ACROSS-HEADING: the wall splitter fuses
+period-less headings into the next sentence, so §9's
+heading licence launders a reading-merge — defeating
+W-NO-READING-MERGE at its most natural site (isolated
+caught / heading-fused escapes, proven in-process).
+F-3 LOW self-detecting — the promote-window integrity
+summary forgeable by three routes, every one exposed by
+recomputation.  F-4 LOW-MEDIUM NEW — ITERATION-ORDER
+DETERMINISM: G-HASH-BAN is call-level only; set-iteration
+and raw os.listdir INTO SEALED TOTALS promote, and the
+set-iteration mutant is GENUINELY SEED-VARIANT (two
+seeds, two receipts, two ledger heads) while the clean
+unit is seed-invariant.  K2's HYPHEN-EVASION
+cross-confirmed at the wall object.  No false theorem,
+no committed number moved, no verdict token flippable.
+
+
+## 2026-08-17 — ARITY-16 ADJUDICATED: ACCEPT-WITH-FIXES ACROSS THE PANEL — THE PHYSICS STANDS TO THE LAST CELL (996+ RECOMPUTATIONS, ZERO DISCREPANCIES, ZERO FALSE NUMBERS); REPAIR ORDERED Z1-Z11 (v15 LEDGER #63)
+
+Joint reading of #57/#61/#62.  UNANIMOUS on the physics:
+the reading-dependent conditional, the modulus theorem
+with its iff at a-not-L rows, the substrate quadruple,
+the floors, the SEC-2 obstruction column, the survivor
+census — every number exact at every seat.  ALL TEN HEAD
+SEGMENTS STAND.  K1's beyond-scope closures (full-pool
+covers EXIST at a=3|5|7, every rung 4=L; the
+window-hopelessness explanation) are ADOPTED AS ORDERED
+STRENGTHENINGS with seat attribution; a=6 stays open.
+
+THE REPAIR (Z-order): Z1 the a=8 refusal and
+fork-blindness claims aligned with their searched depth
+OR extended citing K1's exhaustive results
+(seat-attributed).  Z2 the offsets referent corrected
+(K1-F3 = K2-E-2: the head's "the parent's constant one"
+contradicts the parent's sealed non-constant 0|1|1|0 —
+the true referent is the NDEP-line committed-arity
+constant; one order) + the closed-form fence
+decompressed.  Z3 the §8 "achievable budgets: none"
+cells restamped NOT-FOUND-WITHIN-CAP + K1's existence
+results folded as the strengthening.  Z4 the seven
+parent attributions ANCHORED.  Z5 the pin-promised W3
+auto-labelling BUILT AS A GATE.  Z6 REFUSED-COMPLETE/
+FOUND into the declared/emitted reconciliation.  Z7
+SYNTHESIS-PROSE PROMOTION closed (tally words, stamps,
+atomic slash-rationals, W1 subject policing — the ECC
+fixes ported).  Z8 LICENCE-LEAK-ACROSS-HEADING closed
+(heading-aware splitter; K3-17b becomes a control).  Z9
+the promote-window integrity summary SEALED (three
+routes).  Z10 ITERATION-ORDER DETERMINISM closed (AST
+legs for set-iteration and listdir into sealed values;
+sorted() discipline; the seed-variant mutant registered).
+Z11 the walls made HYPHEN-ROBUST + K2's E-5..E-9 minors
+(E-34 term double-bindings, segment-name suffixes
+disclosed, the joiner mechanism receipted, the window
+value stamped).  TPL-2 gains four registrations
+(hyphen-evasion, licence-leak-across-heading,
+iteration-order determinism, synthesis-prose variants).
+NO measured value moves anywhere.  Repair worker
+launches on this entry; seal on its green battery — the
+ARITY-16 cycle is NOT under the ECC hold.
+
