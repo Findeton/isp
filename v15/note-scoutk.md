@@ -4,11 +4,18 @@ Status: CANDIDATE READINGS until the single hostile verifier seat and the
 user read it.  Unit pinned at v15 ledger #60 (pin v15/note-scoutk-pin.md,
 FROZEN sha256-12 a1a6ccc61bd4), with the #64 binding addendum folded
 (trigger = candidate bridge; the first-event boundary; the
-event-selection-only scope sentence).  Scout class: this note +
+event-selection-only scope sentence), and with the #68 pin addendum
+(v15/note-scoutk-pin-addendum.md, FROZEN sha256-12 3a1e5a649537) cited
+by digest and CONSUMED by gate [LIC:G-ADDENDUM-68]: the CONDITIONAL
+consistency mode named in the D3 verdict words, the pre-registered
+proximity predicates, the separate step-1 census, the gated G-fixed
+scope wall and the numeral totality are all checked in-run against what
+ran.  Scout class: this note +
 v15/code/scoutk_exact.py + v15/code/scoutk_output.txt +
 v15/code/scoutk_receipt.json.  Exact arithmetic throughout; every
-emptiness carries a Farkas certificate; no caps were needed anywhere in
-the chain (no capped rows exist).
+emptiness carries a Farkas certificate; the caps register records zero
+engaged caps anywhere in the chain: every constraint row is typed at
+its construction site and no capped row exists [LIC:G-CAPS-REGISTER].
 
 ## 0. The question and the honest parent scope
 
@@ -31,6 +38,8 @@ question was open, verbatim from the ledger:
 > written record without privileging labels.
 
 THE ANSWER THIS CENSUS DELIVERS: this census answers the general question the ninth review left open: the emptiness GENERALIZES -- no local, record-dependent, truly covariant kernel K(e|c,G,R) preserves the delivered walk statistics at the three-step window, at any declared proximity arm, at any first-step line weight, and not even at the global record reading [SS:TRIPLE-EVENTS]
+
+THE PRECISE ESTABLISHED FORMULATION (#82, the thirteenth review's words, gated): at this arena, no normalized covariant conditional kernel K(e|c,G,R) with fixed geometry, the trigger factorization P(c,e) = q(c) K(e|c,G,R), and exact preservation of the delivered cell-walk's conditional statistics, works through window 3 -- even with the entire record; it does NOT kill the triple ontology, covariance, locality generally, kernels with additional state or history, changing geometry, non-trigger-factorized bridges, history-level indivisible processes, or agreement at the observable-history level only [SS:TRIPLE-EVENTS]
 
 ## 1. The terminology box (W4 term-binding table, E-34)
 
@@ -73,6 +82,10 @@ THE SCOPE SENTENCE (#64, binding, gated): even a SCOUTK-NONVACUOUS or
 SCOUTK-UNIQUE outcome would have closed EVENT SELECTION ONLY: quantum
 transport onto created cells remains an independent missing law.
 
+THE G-FIXED SCOPE WALL (#68 item 4, binding, gated): G is FIXED
+throughout — this unit tests RECORD backreaction only; transport across
+created cells and any G-to-G-prime remain independent missing laws.
+
 ## 2. Sources, parent binding, and disclosed deviations
 
 The parent apparatus is v15/code/scout_exact.py at its DELIVERED digest
@@ -95,7 +108,10 @@ file beyond the pin's four deliverables — an input snapshot, not a
 deliverable, forced by the live repair and disclosed here; (2) LOG.md
 is anchor-only and no unpinned file's digest enters the receipt (the
 receipt hazard: the parent's double_build_digest defect is the named
-precedent; an append-only file's digest is an environment/time value);
+precedent; an append-only file's digest is an environment/time value),
+now machine-checked in-run by [LIC:G-ENV-EXCLUSION] — the serialized
+receipt provably carries no unpinned live-read digest, so it is
+LOG-append-independent by construction;
 (3) the pin names the scout's ECC snapshots for any LP reads — this
 unit consumes no ECC LP values, so they are unread, and that is said
 rather than silently true; (4) the SA and RD arms, and the MC and
@@ -129,19 +145,22 @@ without a second-step correction factor.
 ## 4. The proximity fork (declared, run, and closed by measurement)
 
 Each arm is a declared neighborhood map N(c,R), measured
-relabelling-covariant at all 108 elements [LIC:G-ARMS-COVARIANT].
+relabelling-covariant at all 108 group elements x all 8 reached
+records — the unwritten start record and the 7 written first-triple
+records, the M6 strengthening re-measured by this instrument
+[LIC:G-ARMS-COVARIANT].
 The kernel reads R restricted to N(c,R); record-dependence enters
 through orbit structure only.
 
 | arm | declaration | N size at a cell | depth-3 orbit variables | verdict at depth 3 |
 |---|---|---|---|---|
-| SHARED-ACTOR (SA) | cells sharing an actor with the trigger | 11 | 16 | SCOUTK-COVARIANT-EMPTY-AT-3-SA |
-| RECORD-DISTANCE (RD) | the recorded cluster reachable through actor-sharing recorded cells | 1 at the zero record, 3 at a written triangle | 16 | SCOUTK-COVARIANT-EMPTY-AT-3-RD |
-| METRIC-COUNT (MC) | cells with an actor within declared-direction distance one | 27 | 25 | SCOUTK-COVARIANT-EMPTY-AT-3-MC |
-| CAUSAL-NEIGHBORHOOD (CN) | cells whose actors or one-step shift images meet the trigger's actors | 15 | 19 | SCOUTK-COVARIANT-EMPTY-AT-3-CN |
+| SHARED-ACTOR (SA) | cells sharing an actor with the trigger | 11 | 16 | SCOUTK-COVARIANT-EMPTY-AT-3-SA-AT-CONDITIONAL-CONSISTENCY |
+| RECORD-DISTANCE (RD) | the recorded cluster reachable through actor-sharing recorded cells | 1 at the zero record, 3 at a written triangle | 16 | SCOUTK-COVARIANT-EMPTY-AT-3-RD-AT-CONDITIONAL-CONSISTENCY |
+| METRIC-COUNT (MC) | cells with an actor within declared-direction distance one | 27 | 25 | SCOUTK-COVARIANT-EMPTY-AT-3-MC-AT-CONDITIONAL-CONSISTENCY |
+| CAUSAL-NEIGHBORHOOD (CN) | cells whose actors or one-step shift images meet the trigger's actors | 15 | 19 | SCOUTK-COVARIANT-EMPTY-AT-3-CN-AT-CONDITIONAL-CONSISTENCY |
 | GLOBAL-REFERENCE | the whole record, no locality leg | 27 | 25 | EMPTY (reference) |
 
-The fork's cost accounting and its closure, measured: proximity was a declared fork, and the fork closed by measurement: shared-actor and record-distance induce the same orbit partition, metric-count coincides with the global reading at this arena, causal-neighborhood sits strictly between, and all three distinct systems are empty.  And the reference row is the sharp point: locality is not the obstruction: the global reference family (25 orbit variables, no locality leg) is empty by the same certificates.
+The fork's cost accounting and its closure, measured: proximity was a declared fork, and the fork closed by measurement: shared-actor and record-distance induce the same orbit partition, metric-count coincides with the global reading at this arena, and the three distinct partitions stand in the measured refinement order -- the global partition refines the causal-neighborhood partition, which refines the shared-actor partition, both refinements strict -- so causal-neighborhood sits strictly between, and all three distinct systems are empty.  And the reference row is the sharp point: locality is not the obstruction: the global reference family (25 orbit variables, no locality leg) is empty by the same certificates.
 
 ## 5. The reach census (depths 2 and 3; step 1 separately, per #64)
 
@@ -192,6 +211,8 @@ are vacuous and the covariant family is the one-parameter line-weight
 segment — SCOUTK-NONVACUOUS-1-AT-2 at every arm, dimension 1, arms
 coinciding at the zero record.
 
+THE CONSISTENCY MODE (#68 item 1, gated): the consistency mode is the #68 addendum's frozen PRIMARY -- CONDITIONAL transition agreement at every reached state: at fixed first-step weight each depth-3 constraint is linear in exactly one kernel factor (the second-invocation orbit variable), the first factor is swept exactly and closed by the uniform certificate, no bilinear system is solved, and the only relaxation used runs in the conservative emptiness direction with pinned confirmations -- and the D3 verdict names the mode in its words [LIC:G-ADDENDUM-68]
+
 Depth 3: the walk statistics to be preserved are the delivered
 conditional third-trigger profiles over [SS:CELLS], branch by branch
 across the 3 first triggers and 9 second triggers; the kernel's two
@@ -231,9 +252,13 @@ distinct systems (SA-RD, CN, MC-GLOBAL) were each refused four ways:
    386831585/30236004, 2924765939/217475280, 101215751/7459128)
    [LIC:G-D3-IDENT].
 
-THE MECHANISM, measured, not narrated [LIC:G-CLASH]: the mechanism witness: at a = 0 the branch rows (0,5,14) and (1,11,21) carry identical covariant coefficient vectors while the delivered walk assigns 16/729 against 64/729 -- covariance identifies what the anchored start state distinguishes.  This is the same death mode the
+THE MECHANISM, measured, not narrated [LIC:G-CLASH]: the mechanism witness: at a = 0 the branch rows (0,5,14) and (1,11,21) carry identical covariant coefficient vectors while the delivered walk assigns 16/729 against 64/729 -- covariance identifies what the anchored start state distinguishes; the witness is the FIRST clash in canonical row order -- canonical, not curated.  This is the same death mode the
 parent met on the fixed-alpha line — overdetermination by symmetry —
 now closing over the full record-dependent family.
+
+THE TRIGGER-ERASURE MECHANISM (#82, the thirteenth review, verified at the bytes): the kernel construction builds the available record from the whole triple footprint while the target walk depends on the individual cell-trigger history -- the bridge lets one cell trigger a three-cell event, the triple record forgets which cell was the trigger, and the walk remembers and uses it; global access cannot recover information the bridge erased at write-time.  That is why the
+global-reference family fails with everything visible: the missing
+datum was never written.
 
 ## 7. The binding consistency check and the priced pure kernels
 
@@ -268,7 +293,7 @@ SCOUTK-REACH-CENSUS-PUBLISHED<63-CONTEXTS-189-TUPLES-7-FIRST-EVENTS; ORBIT-VARIA
 
 SCOUTK-NONVACUOUS-1-AT-2-ALL-ARMS<BLINDNESS-11-VARIANTS; ARMS-COINCIDE-AT-THE-ZERO-RECORD>
 
-SCOUTK-COVARIANT-EMPTY-AT-3-SA; SCOUTK-COVARIANT-EMPTY-AT-3-RD; SCOUTK-COVARIANT-EMPTY-AT-3-MC; SCOUTK-COVARIANT-EMPTY-AT-3-CN<GLOBAL-REFERENCE-ALSO-EMPTY-SO-LOCALITY-IS-NOT-THE-OBSTRUCTION; UNIFORM-IN-THE-FIRST-STEP-LINE-WEIGHT; BRANCHWISE-ALSO-EMPTY; CERTIFICATES-PUBLISHED-AND-VERIFIED>
+SCOUTK-COVARIANT-EMPTY-AT-3-SA-AT-CONDITIONAL-CONSISTENCY; SCOUTK-COVARIANT-EMPTY-AT-3-RD-AT-CONDITIONAL-CONSISTENCY; SCOUTK-COVARIANT-EMPTY-AT-3-MC-AT-CONDITIONAL-CONSISTENCY; SCOUTK-COVARIANT-EMPTY-AT-3-CN-AT-CONDITIONAL-CONSISTENCY<GLOBAL-REFERENCE-ALSO-EMPTY-SO-LOCALITY-IS-NOT-THE-OBSTRUCTION; UNIFORM-IN-THE-FIRST-STEP-LINE-WEIGHT; BRANCHWISE-ALSO-EMPTY; CERTIFICATES-PUBLISHED-AND-VERIFIED>
 
 SCOUTK-FIXED-ALPHA-SUBFAMILY-REPRODUCES-58<729-ROWS-25-POLYS-LINEAR-ROOTS-MINUS1-0-PLUS1; PURE-CENSUS-8-TO-288-REPRODUCED>
 
@@ -286,7 +311,12 @@ per-trigger normalization leg; kernels with an additional tie-breaking
 state slot (trilemma arm c); declared-asymmetry non-equivariant
 kernels (trilemma arm b, a priced exit from covariance); and the
 quantum transport law rho'_e onto created cells — open regardless of
-any kernel outcome.
+any kernel outcome.  The trace fork now has its named successor:
+SCOUT-T (v15/note-scoutt-pin.md, FROZEN sha256-12 3f35573d88d8,
+pinned at v15 ledger #82) tests fork
+arm 1 (kernels carrying the ordered trigger trace) and fork arm 2 (the
+marginal-history secondary mode — the #68 addendum's frozen SECONDARY)
+on this unit's committed apparatus.
 
 ## 11. The numeral-binding registry (every load-bearing numeral bound)
 
@@ -315,19 +345,34 @@ any kernel outcome.
 | 7 | d3/MC-GLOBAL/uniform_certificate/certificate_support |
 | 16/729 | clash/witness/rhs_a |
 | 64/729 | clash/witness/rhs_b |
+| 30 | regime/gates_in_ledger |
+| 29 | regime/falsifiers_registered |
 
 ## 12. Verification regime
 
-The instrument carries 24 gates and 23 registered falsifiers, each
+The instrument carries 30 gates and 29 registered falsifiers, each
 falsifier required to die at its declared gate with a digest move
 proof; the selftest writes nothing; hostile argv exits 2; every
 failure path writes nothing; the note's kit sentences, anchors,
 sample-space tags, licence tokens, subject tags, slash rationals and
-integer numerals are machine-verified against the receipt; the note's
-digest is the object under test in both artifacts.  The out-of-harness
-battery (falsifier sweep at the declared gates tree-intact, the
-write-nothing selftest, byte-identical regeneration of BOTH artifacts
-from deleted artifacts in a git-less mirror at alien working
-directories under PYTHONHASHSEED 0, 1 and 424242) is run before
+integer numerals are machine-verified against the receipt; every
+integer numeral occurrence in this note is classified BOUND (a
+specific receipt field) or NON-CLAIM (a declared reason class), the
+classification total and serialized in the receipt — the former
+blanket whitelist is retired; the kernel-scope wall
+[LIC:G-KERNEL-WALL] refuses the retired overclaim family subject-based
+(hyphen and spacing normalized) with permanent dead plants and
+licensed record-blind alive twins; bare set-iteration and unsorted
+directory listing are refused syntactically [LIC:G-AST-DETERMINISM];
+the note's digest is the object under test in both artifacts.  The
+hostile verifier's independent rebuild is archived at
+v15/verify/scoutk-verifier-rebuild.py with its regenerated check
+ledger v15/verify/scoutk-verifier-rebuild-output.txt, both read at
+their pinned digests [LIC:G-PIN-DIGESTS].  The out-of-harness battery
+(falsifier sweep at the declared gates tree-intact, the write-nothing
+selftest, byte-identical regeneration of BOTH artifacts from deleted
+artifacts in a git-less mirror at alien working directories under
+PYTHONHASHSEED 0, 1 and 424242, and the LOG-append regeneration probe
+— the receipt byte-identical after a ledger append) is run before
 reporting and its results are reported to the orchestrator with this
 note.

@@ -3742,3 +3742,29 @@ token classified pinned/declared/self, gated; registry
 mutant); M2 the tautology replaced by the real
 comparison; M3 the duplicate sentence cut.  On green:
 SCOUT-PAIR SEALS.
+
+## 2026-08-17 — SCOUT-K MICRO-REPAIR DELIVERED AND COMMITTED: M1-M6 COMPLETE; THE CONTINUATION CAUGHT ITS OWN TOTALITY SELF-WHITELIST HOLE; ZERO MEASURED VALUES MOVED (v15 LEDGER #93)
+
+Committed as delivered (note cc4d31ce7740 / code
+723ebc41cc0f / output 78391a8c6ef0 / receipt
+18330562d6bc).  M1 the #68 addendum digest-gated
+(G-ADDENDUM-68, 8/8) + the mode suffix on all four D3
+verdicts + the G-fixed wall gated; M2 G-KERNEL-WALL
+ported (6 dead plants / 3 licensed twins alive); M3
+G-ENV-EXCLUSION (leaks: []) + G-AST-DETERMINISM with
+deterministic mutant deaths; M4 per-occurrence totality
+(173 = 157 BOUND + 16 NON-CLAIM, 0 unclassified, table
+serialized) — AND THE CONTINUATION FOUND ITS OWN HOLE:
+the dead control invented numeral was serialized inside
+the receipt totality subtree, self-whitelisting any note
+that planted it; fixed by excluding the mechanism own
+subtrees from the inventory, both plants now die; M5 the
+caps register receipt-backed (engaged_caps: 0); M6 all
+three verifier strengthenings re-derived by the unit own
+instrument (108x8 covariance per arm; the strict
+refinement order; canonical-first clash) + the archived
+rebuild anchored + SCOUT-T cited with digest.  All
+measured groups byte-identical to committed (the 18
+gaps, 3 branchwise, 3 uniform certificates, clash,
+step-1, everything).  Worker battery 26/26 fresh.
+Orchestrator battery next; CLOSES-SEALED on green.

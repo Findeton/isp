@@ -31,6 +31,18 @@
 # CLI: delivery (no args) | --no-write | --numbers | --kit | --selftest |
 #      --mutant NAME | --verify-paper PATH | --list-gates | --list-mutants
 # Exit codes: 0 pass, 2 usage, 3 gate failure / verification failure.
+#
+# MICRO-REPAIR (v15 ledger #81 orders M1-M5 + the #82 routed M6): the #68
+# pin addendum is digest-pinned and CONSUMED by G-ADDENDUM-68; the D3
+# verdict names its consistency mode; the G-fixed scope wall is a gated
+# kit sentence; the #78 G-KERNEL-WALL is ported (subject-based, with the
+# hyphen-fused replants as permanent dead plants); G-ENV-EXCLUSION and
+# G-AST-DETERMINISM close the I8/I9 species in-run; the numeral sweep is
+# per-occurrence total (BOUND / NON-CLAIM), the blanket whitelist
+# retired; the no-caps sentence is receipt-backed by G-CAPS-REGISTER;
+# the verifier's three strengthenings are re-derived by THIS instrument
+# (108x8 arm covariance, the partition refinement order, the
+# canonical-first clash).  No measured value moved.
 # ===========================================================================
 import os
 import sys
@@ -53,12 +65,34 @@ REC_REL = "v15/code/scoutk_receipt.json"
 # environment/time-dependent value in the receipt -- the named hazard).
 PINNED = {
     "v15/note-scoutk-pin.md": "a1a6ccc61bd4",
+    "v15/note-scoutk-pin-addendum.md": "3a1e5a649537",
     "v15/code/scoutk_parent_delivered.py": "edb60bccd22e",
     "v14/paper-20-coupling.md": "4824d190af73",
+    "v15/verify/scoutk-verifier-rebuild.py": "1188fe424d00",
+    "v15/verify/scoutk-verifier-rebuild-output.txt": "084dd5e01336",
 }
+
+# The #68 pin addendum (v15 ledger #68, the eleventh external review's
+# freezes), cited by digest and CONSUMED by gate G-ADDENDUM-68 below.
+ADDENDUM_REL = "v15/note-scoutk-pin-addendum.md"
+ADDENDUM_DIG = "3a1e5a649537"
+# The hostile verifier's independent rebuild, archived at #82: the
+# verification record this unit's addendum gate anchors by pinned digest.
+VERIFY_REBUILD_REL = "v15/verify/scoutk-verifier-rebuild.py"
+VERIFY_LEDGER_REL = "v15/verify/scoutk-verifier-rebuild-output.txt"
 
 F = Fraction
 ARMED = {"name": None}
+
+# The caps register (M5, verifier finding F6): every constraint row this
+# instrument constructs is typed at its construction site; the register
+# proves the note's no-caps sentence at G-CAPS-REGISTER.
+CAPS = {"counter": None}
+
+
+def caps_note(kind, n=1):
+    if CAPS["counter"] is not None:
+        CAPS["counter"][kind] += n
 
 
 class GateFail(Exception):
@@ -459,11 +493,13 @@ def measure_reads(LD, P):
                                    "values; the pin's ECC snapshots are "
                                    "therefore unread)"}
     LD.gate("G-PIN-DIGESTS", not bad,
-            "the frozen pin, the delivered-parent snapshot and paper-20 "
-            "are read at their pinned digests; the parent is read ONLY "
-            "through the byte-verified snapshot (the live scout file is "
-            "mid-repair); LOG.md is anchor-only and its digest is never "
-            "recorded (the receipt hazard)",
+            "the frozen pin, the #68 pin addendum, the delivered-parent "
+            "snapshot, paper-20 and the archived verifier rebuild (with "
+            "its check ledger) are read at their pinned digests; the "
+            "parent is read ONLY through the byte-verified snapshot "
+            "(the live scout file was mid-repair); LOG.md is "
+            "anchor-only and its digest is never recorded (the receipt "
+            "hazard, now machine-checked by G-ENV-EXCLUSION)",
             P["pin_check"])
     anch = []
     for (aid, rel, quote) in ANCHORS:
@@ -712,41 +748,57 @@ ARM_DECL = {
 
 
 def measure_arms(LD, P, GCELL, GTRI, E1S):
+    # M6(a): FULL arm covariance, re-derived by this instrument -- all
+    # 108 group elements x all 8 reached records (the unwritten start
+    # record and the 7 written first-triple records; the delivered unit
+    # sampled one written record, the verifier proved all, and this
+    # gate now proves all in-run).
     Rsample = nfield(BLOCK_OF[E1S[0]])
+    records = [("R0", R0)] + [("TRI-%d" % k, nfield(BLOCK_OF[e1]))
+                              for k, e1 in enumerate(E1S)]
     rows = {}
     allok = True
     for an in ARM_ORDER:
         NF = ARM_FN[an]
         ok = True
-        for gi in range(len(GCELL)):
-            gc = GCELL[gi]
-            gR = [0] * DIM
-            for c in range(DIM):
-                gR[gc[c]] = Rsample[c]
-            gR = tuple(gR)
-            for c in range(DIM):
-                if frozenset(gc[x] for x in NF(c, Rsample)) != NF(gc[c], gR):
-                    ok = False
+        for (_rn, R) in records:
+            NFC = {c: NF(c, R) for c in range(DIM)}
+            for gi in range(len(GCELL)):
+                gc = GCELL[gi]
+                gR = [0] * DIM
+                for c in range(DIM):
+                    gR[gc[c]] = R[c]
+                gR = tuple(gR)
+                for c in range(DIM):
+                    if frozenset(gc[x] for x in NFC[c]) != NF(gc[c], gR):
+                        ok = False
+                        break
+                if not ok:
                     break
             if not ok:
                 break
         rows[an] = {"name": ARM_NAME[an], "declaration": ARM_DECL[an],
                     "covariant": ok,
+                    "records_checked": len(records),
+                    "group_elements": len(GCELL),
                     "size_at_cell0_r0": len(NF(0, R0)),
                     "size_at_cell0_sample": len(NF(0, Rsample))}
         allok = allok and ok
     P["arms"] = rows
     LD.gate("G-ARMS-COVARIANT",
-            allok and rows["SA"]["size_at_cell0_r0"] == 11
+            allok and len(records) == 8
+            and all(rows[an]["records_checked"] == 8 for an in ARM_ORDER)
+            and rows["SA"]["size_at_cell0_r0"] == 11
             and rows["RD"]["size_at_cell0_r0"] == 1
             and rows["RD"]["size_at_cell0_sample"] == 3
             and rows["MC"]["size_at_cell0_r0"] == 27
             and rows["CN"]["size_at_cell0_r0"] == 15
             and rows["GLOBAL"]["size_at_cell0_r0"] == 27,
             "all four declared proximity arms and the global reference "
-            "are measured relabelling-covariant (N(gc,gR) = g N(c,R) for "
-            "all 108 elements); neighborhood sizes 11 / record-cluster / "
-            "27 / 15 / 27",
+            "are measured relabelling-covariant (N(gc,gR) = g N(c,R)) "
+            "at ALL 108 group elements x ALL 8 reached records -- the "
+            "M6 strengthening re-derived in-run; neighborhood sizes 11 "
+            "/ record-cluster / 27 / 15 / 27",
             {an: rows[an]["size_at_cell0_r0"] for an in ARM_ORDER})
 
 
@@ -833,11 +885,24 @@ def reach_census(LD, P, canon_tuple, canon_ctx, sup1, sup2, BOC, E1S):
                  "raw_members": len(cmap[ck]),
                  "descriptor": sorted([list(x) for x in desc[ck]])}
                 for ci, ck in enumerate(sorted(cmap))]}
+    # M6(b): the refinement order, re-derived by this instrument -- the
+    # flat coincidence statement is replaced by the measured fact that
+    # the three distinct partitions form a chain in the refinement
+    # order: GLOBAL refines CN refines SA (= RD), both strictly.
+    def refines(A, B):
+        return all(any(blk <= b2 for b2 in B) for blk in A)
+
     coinc = {"SA_eq_RD": partitions["SA"] == partitions["RD"],
              "MC_eq_GLOBAL": partitions["MC"] == partitions["GLOBAL"],
              "SA_eq_CN": partitions["SA"] == partitions["CN"],
              "CN_eq_GLOBAL": partitions["CN"] == partitions["GLOBAL"],
-             "SA_eq_GLOBAL": partitions["SA"] == partitions["GLOBAL"]}
+             "SA_eq_GLOBAL": partitions["SA"] == partitions["GLOBAL"],
+             "GLOBAL_refines_CN": refines(partitions["GLOBAL"],
+                                          partitions["CN"]),
+             "CN_refines_SA": refines(partitions["CN"],
+                                      partitions["SA"]),
+             "refinement_order": "GLOBAL refines CN refines SA (= RD), "
+                                 "both refinements strict; MC = GLOBAL"}
     if mut("MUT-COINC"):
         coinc["SA_eq_RD"] = not coinc["SA_eq_RD"]
     P["reach"] = {
@@ -869,12 +934,16 @@ def reach_census(LD, P, canon_tuple, canon_ctx, sup1, sup2, BOC, E1S):
     LD.gate("G-COINCIDE",
             coinc["SA_eq_RD"] and coinc["MC_eq_GLOBAL"]
             and not coinc["SA_eq_CN"] and not coinc["CN_eq_GLOBAL"]
-            and not coinc["SA_eq_GLOBAL"],
-            "proximity coincidences measured, not assumed: SA and RD "
+            and not coinc["SA_eq_GLOBAL"]
+            and coinc["GLOBAL_refines_CN"] and coinc["CN_refines_SA"],
+            "proximity coincidences measured, not assumed, and "
+            "sharpened to the refinement-order fact (M6): SA and RD "
             "induce the same orbit partition; MC coincides with the "
-            "global reading (its neighborhood is the whole chart at this "
-            "arena); CN sits strictly between; three distinct constraint "
-            "systems remain", coinc)
+            "global reading (its neighborhood is the whole chart at "
+            "this arena); and the three distinct partitions form a "
+            "chain -- GLOBAL refines CN refines SA, both refinements "
+            "strict -- so CN sits strictly between and three distinct "
+            "constraint systems remain", coinc)
     return RAW
 
 
@@ -940,6 +1009,7 @@ def depth2_system(LD, P, psi1, q2, sup1, BOC):
                 rows_vac = False
     nvars = 2
     norm = [[F(1), F(2)]]
+    caps_note("D2-NORM")
     dim = pick("MUT-D2", len(null_of(norm)), 2)
     P["d2"] = {
         "kernel_variables": nvars,
@@ -1066,6 +1136,7 @@ def system_at(S, a, extra_pins=None):
         A.append(list(row))
         b.append(rhs)
         meta.append(list(m))
+        caps_note("MIX")
     for r in S["normrows"]:
         key = (r, F(1))
         if key not in seen:
@@ -1073,6 +1144,7 @@ def system_at(S, a, extra_pins=None):
             A.append(list(r))
             b.append(F(1))
             meta.append(["NORM"])
+            caps_note("NORM")
     if extra_pins:
         for (j, val) in extra_pins:
             row = [F(0)] * nv
@@ -1080,6 +1152,7 @@ def system_at(S, a, extra_pins=None):
             A.append(row)
             b.append(val)
             meta.append(["PIN", j])
+            caps_note("PIN")
     return A, b, meta
 
 
@@ -1125,10 +1198,12 @@ def depth3_systems(LD, P, canon_tuple, canon_ctx, q3_of, sup1, sup2, BOC,
                             seenbw[key] = True
                             Abw.append(list(row))
                             bbw.append(rhs[c3])
+                            caps_note("BRANCHWISE-MIX")
         for r in S["normrows"]:
             if (r, F(1)) not in seenbw:
                 Abw.append(list(r))
                 bbw.append(F(1))
+                caps_note("BRANCHWISE-NORM")
         stb, gapb, xb, yb = simplex(Abw, bbw)
         if mut("MUT-BW"):
             stb = "FEASIBLE"
@@ -1180,6 +1255,7 @@ def depth3_systems(LD, P, canon_tuple, canon_ctx, q3_of, sup1, sup2, BOC,
             r[m + i] = -bb[i]
         rows.append(r)
         rhsv.append(F(1))
+        caps_note("UNIFORM-CERT-SEARCH", len(rows))
         stu, _gu, xu, _yu = simplex(rows, rhsv)
         uni = {"system_rows": m, "search_status": stu,
                "sample_space": "CELLS"}
@@ -1314,24 +1390,39 @@ def clash_witness(LD, P, out3):
     # the minimal mechanism witness: at a = 0 two mixture rows of the
     # MC-GLOBAL system have IDENTICAL covariant coefficient vectors while
     # the delivered walk assigns them different values.
+    # M6(c): the witness is gated as the FIRST clash in canonical
+    # (c1,c2,c3) row order, re-derived by this instrument -- the row
+    # metas are verified sorted, every clash is counted, and the
+    # published pair is the first one, so the witness is canonical,
+    # not curated.
     S = out3["MC-GLOBAL"]["_S"]
+    metas = [m for (_r0, _r1, _rhs, m) in S["mixrows"]]
+    canon_order_ok = all(metas[i] <= metas[i + 1]
+                         for i in range(len(metas) - 1))
     seen = {}
     wit = None
+    clashes = 0
     for (r0, r1, rhs, m) in S["mixrows"]:
         row = r0  # a = 0
         if all(v == 0 for v in row) and rhs == 0:
             continue
-        if row in seen and seen[row][0] != rhs and wit is None:
-            wit = {"row_a": list(seen[row][1]), "rhs_a": seen[row][0],
-                   "row_b": list(m), "rhs_b": rhs,
-                   "delta": rhs - seen[row][0],
-                   "sample_space": "CELLS"}
+        if row in seen and seen[row][0] != rhs:
+            clashes += 1
+            if wit is None:
+                wit = {"row_a": list(seen[row][1]), "rhs_a": seen[row][0],
+                       "row_b": list(m), "rhs_b": rhs,
+                       "delta": rhs - seen[row][0],
+                       "sample_space": "CELLS"}
         if row not in seen:
             seen[row] = (rhs, m)
     if mut("MUT-CLASH"):
         wit = None
     P["clash"] = {
         "witness": wit,
+        "clashes_at_a0": clashes,
+        "canonical_row_order_verified": canon_order_ok,
+        "witness_is_first_clash_in_canonical_order":
+            wit is not None and canon_order_ok,
         "mechanism": "covariance identifies second-invocation tuples "
                      "across branches that the anchored start state "
                      "distinguishes: the two branches' kernel-weighted "
@@ -1343,11 +1434,14 @@ def clash_witness(LD, P, out3):
             wit is not None and wit["row_a"] == [0, 5, 14]
             and wit["row_b"] == [1, 11, 21]
             and str(wit["rhs_a"]) == "16/729"
-            and str(wit["rhs_b"]) == "64/729",
+            and str(wit["rhs_b"]) == "64/729"
+            and canon_order_ok and clashes >= 1,
             "the minimal mechanism witness stands: at a = 0 the branch "
             "rows (c1,c2,c3) = (0,5,14) and (1,11,21) carry identical "
             "covariant coefficient vectors with delivered values 16/729 "
-            "against 64/729",
+            "against 64/729; the witness is the FIRST clash in "
+            "canonical row order (metas verified sorted; M6) -- "
+            "canonical, not curated",
             wit)
 
 
@@ -1556,6 +1650,37 @@ def controls(LD, P, canon_tuple, canon_ctx, q3_of, sup1, sup2, BOC, E1S,
             "a verified certificate", None)
 
 
+def caps_register_gate(LD, P):
+    # M5 (verifier finding F6): the note's no-caps sentence was an
+    # unbound negative claim; this register binds it.  Every constraint
+    # row constructed anywhere in the chain is typed at its
+    # construction site; no CAP kind exists and no cap machinery is
+    # present, so the register shows zero engaged caps.
+    counts = {k: CAPS["counter"][k] for k in sorted(CAPS["counter"])}
+    if mut("MUT-CAPS"):
+        counts["CAP"] = 1
+    engaged = counts.get("CAP", 0)
+    allowed = {"MIX", "NORM", "PIN", "BRANCHWISE-MIX", "BRANCHWISE-NORM",
+               "UNIFORM-CERT-SEARCH", "D2-NORM"}
+    P["caps_register"] = {
+        "row_kinds": counts,
+        "engaged_caps": engaged,
+        "policy": "every constraint row is typed at its construction "
+                  "site (mixture / normalization / pin / branchwise / "
+                  "uniform-certificate-search / depth-two "
+                  "normalization); no CAP kind exists in this "
+                  "instrument and no cap machinery is present, so zero "
+                  "caps were engaged anywhere in the chain -- the "
+                  "note's no-caps sentence is receipt-backed here"}
+    LD.gate("G-CAPS-REGISTER",
+            engaged == 0 and set(counts) <= allowed
+            and sum(counts.values()) > 0,
+            "the caps register: every constraint row this instrument "
+            "constructed carries a declared kind, the kind set is the "
+            "declared cap-free family, and zero engaged caps exist",
+            {"engaged_caps": engaged, "kinds": sorted(counts)})
+
+
 # ===========================================================================
 # SECTION 11.  SAMPLE SPACES, NUMERAL BINDING, VERDICTS, KIT
 # ===========================================================================
@@ -1611,6 +1736,8 @@ NUM_BINDINGS = (
     ("7", "d3/MC-GLOBAL/uniform_certificate/certificate_support"),
     ("16/729", "clash/witness/rhs_a"),
     ("64/729", "clash/witness/rhs_b"),
+    ("30", "regime/gates_in_ledger"),
+    ("29", "regime/falsifiers_registered"),
 )
 
 
@@ -1663,10 +1790,16 @@ def build_verdicts(P):
                 for r in P["d3"][lbl]["samples"])
         for lbl in P["d3"])
     if d3ok:
-        V["D3"] = ("SCOUTK-COVARIANT-EMPTY-AT-3-SA; "
-                   "SCOUTK-COVARIANT-EMPTY-AT-3-RD; "
-                   "SCOUTK-COVARIANT-EMPTY-AT-3-MC; "
+        # M1 (the #68 addendum, item 1): every verdict names its
+        # consistency mode -- the frozen PRIMARY, CONDITIONAL.
+        V["D3"] = ("SCOUTK-COVARIANT-EMPTY-AT-3-SA"
+                   "-AT-CONDITIONAL-CONSISTENCY; "
+                   "SCOUTK-COVARIANT-EMPTY-AT-3-RD"
+                   "-AT-CONDITIONAL-CONSISTENCY; "
+                   "SCOUTK-COVARIANT-EMPTY-AT-3-MC"
+                   "-AT-CONDITIONAL-CONSISTENCY; "
                    "SCOUTK-COVARIANT-EMPTY-AT-3-CN"
+                   "-AT-CONDITIONAL-CONSISTENCY"
                    "<GLOBAL-REFERENCE-ALSO-EMPTY-SO-LOCALITY-IS-NOT-THE-"
                    "OBSTRUCTION; UNIFORM-IN-THE-FIRST-STEP-LINE-WEIGHT; "
                    "BRANCHWISE-ALSO-EMPTY; "
@@ -1689,6 +1822,10 @@ def build_verdicts(P):
         "(c,G,R) -- trilemma arm (c)",
         "declared-asymmetry (non-equivariant) kernels -- trilemma arm "
         "(b), a priced exit from covariance",
+        "the ordered trigger trace and the marginal-history mode -- "
+        "SCOUT-T (v15/note-scoutt-pin.md, FROZEN sha256-12 "
+        "3f35573d88d8, pinned at v15 ledger #82), the named successor "
+        "for the trace fork",
         "the quantum transport law rho'_e onto created cells (open "
         "regardless of any kernel outcome)"]
 
@@ -1717,6 +1854,43 @@ TERM_TABLE = (
      "localized (record, trigger, candidate event) tuples -- "
      "record-dependence through orbit structure only"),
 )
+
+
+# ---- the gated kit sentences added by the micro-repair (M1/M5/M6) ------
+KIT_GFIXED = ("G is FIXED throughout — this unit tests RECORD "
+              "backreaction only; transport across created cells and "
+              "any G-to-G-prime remain independent missing laws")
+KIT_MODE = ("the consistency mode is the #68 addendum's frozen PRIMARY "
+            "-- CONDITIONAL transition agreement at every reached "
+            "state: at fixed first-step weight each depth-3 constraint "
+            "is linear in exactly one kernel factor (the "
+            "second-invocation orbit variable), the first factor is "
+            "swept exactly and closed by the uniform certificate, no "
+            "bilinear system is solved, and the only relaxation used "
+            "runs in the conservative emptiness direction with pinned "
+            "confirmations -- and the D3 verdict names the mode in its "
+            "words")
+KIT_PRECISE = ("at this arena, no normalized covariant conditional "
+               "kernel K(e|c,G,R) with fixed geometry, the trigger "
+               "factorization P(c,e) = q(c) K(e|c,G,R), and exact "
+               "preservation of the delivered cell-walk's conditional "
+               "statistics, works through window 3 -- even with the "
+               "entire record; it does NOT kill the triple ontology, "
+               "covariance, locality generally, kernels with "
+               "additional state or history, changing geometry, "
+               "non-trigger-factorized bridges, history-level "
+               "indivisible processes, or agreement at the "
+               "observable-history level only")
+KIT_ERASURE = ("the kernel construction builds the available record "
+               "from the whole triple footprint while the target walk "
+               "depends on the individual cell-trigger history -- the "
+               "bridge lets one cell trigger a three-cell event, the "
+               "triple record forgets which cell was the trigger, and "
+               "the walk remembers and uses it; global access cannot "
+               "recover information the bridge erased at write-time")
+KIT_CAPS = ("the caps register records zero engaged caps anywhere in "
+            "the chain: every constraint row is typed at its "
+            "construction site and no capped row exists")
 
 
 def build_kit(P):
@@ -1758,7 +1932,8 @@ def build_kit(P):
                "and (1,11,21) carry identical covariant coefficient "
                "vectors while the delivered walk assigns 16/729 against "
                "64/729 -- covariance identifies what the anchored start "
-               "state distinguishes")
+               "state distinguishes; the witness is the FIRST clash in "
+               "canonical row order -- canonical, not curated")
     kit.append("the branchwise lemma is stronger than the mixture "
                "refusal: even conditioning on each written first triple "
                "separately, no covariant second-invocation kernel "
@@ -1770,12 +1945,21 @@ def build_kit(P):
     kit.append("proximity was a declared fork, and the fork closed by "
                "measurement: shared-actor and record-distance induce the "
                "same orbit partition, metric-count coincides with the "
-               "global reading at this arena, causal-neighborhood sits "
+               "global reading at this arena, and the three distinct "
+               "partitions stand in the measured refinement order -- "
+               "the global partition refines the causal-neighborhood "
+               "partition, which refines the shared-actor partition, "
+               "both refinements strict -- so causal-neighborhood sits "
                "strictly between, and all three distinct systems are "
                "empty")
     kit.append("locality is not the obstruction: the global reference "
                "family (25 orbit variables, no locality leg) is empty by "
                "the same certificates")
+    kit.append(KIT_GFIXED)
+    kit.append(KIT_MODE)
+    kit.append(KIT_PRECISE)
+    kit.append(KIT_ERASURE)
+    kit.append(KIT_CAPS)
     for (t, d) in TERM_TABLE:
         kit.append("| " + t + " | " + d + " |")
     P["kit"] = kit
@@ -1819,13 +2003,50 @@ FALSIFIERS = (
      "strips a sample-space declaration"),
     ("MUT-NUMBIND", "G-NUM-BIND", "numeral_bindings",
      "corrupts a numeral binding resolution"),
+    ("MUT-SETITER", "G-AST-DETERMINISM", "source_hygiene",
+     "injects a bare set-iteration and a raw os.listdir into the "
+     "scanned source (the registered iteration-order species, I9); "
+     "must die deterministically at every hash seed, never vary "
+     "silently"),
+    ("MUT-CAPS", "G-CAPS-REGISTER", "caps_register",
+     "injects an engaged CAP row kind into the caps register (the "
+     "no-caps sentence's falsifier, F6)"),
+    ("MUT-KWALL", "G-KERNEL-WALL", "kernel_wall",
+     "blanks the kernel-scope wall's pattern family so the retired "
+     "overclaim's permanent dead plants stop dying (the verifier's "
+     "hyphen-fused replants, finding F2)"),
+    ("MUT-NUMTOT", "G-NUM-TOTALITY", "numeral_totality_controls",
+     "disables the NON-CLAIM reason classes so the alive control's "
+     "classified numerals go unclassified (the per-occurrence "
+     "totality's falsifier, F3)"),
+    ("MUT-ADDENDUM", "G-ADDENDUM-68", "addendum_68",
+     "corrupts the required consistency-mode suffix so the verdict "
+     "words no longer name the #68 addendum's frozen mode (F1)"),
+    ("MUT-ENV", "G-ENV-EXCLUSION", "env_exclusion",
+     "injects an unpinned live-read digest into the receipt payload "
+     "(the #59 disease species, I8)"),
 )
+
+
+# The MUT-SETITER falsifier's injection: appended to the SCANNED source
+# only (never executed, never written) so the determinism leg below has
+# a registered mutant that must die at G-AST-DETERMINISM at every hash
+# seed rather than varying silently.
+MUT_SETITER_SNIPPET = (
+    "\n\ndef _mutant_set_iteration_and_listdir():\n"
+    "    acc = []\n"
+    "    for cell in {3, 1, 2}:\n"
+    "        acc.append(cell)\n"
+    "    for name in os.listdir(HERE):\n"
+    "        acc.append(name)\n"
+    "    return acc\n")
 
 
 def source_scan(LD, P):
     with open(os.path.abspath(__file__), "r", encoding="utf-8") as f:
         src = f.read()
-    tree = ast.parse(src)
+    scan_src = pick("MUT-SETITER", src, src + MUT_SETITER_SNIPPET)
+    tree = ast.parse(scan_src)
     floats = [n.lineno for n in ast.walk(tree)
               if isinstance(n, ast.Constant) and isinstance(n.value, float)]
     hashes = [n.lineno for n in ast.walk(tree)
@@ -1839,9 +2060,57 @@ def source_scan(LD, P):
             imports.add(n.module)
     allowed = {"os", "sys", "json", "hashlib", "ast", "fractions",
                "itertools", "collections"}
+    # ---- the determinism leg (M3; the scout #78 / ARITY-16 Z10 port;
+    # the I9 seed-variance species) ----------------------------------
+    # Iteration order must never depend on the process hash seed: every
+    # collection this instrument iterates can reach the sealed
+    # artifacts through the double build, so bare iteration over a set
+    # display, a set comprehension or a set()/frozenset() call, and any
+    # os.listdir call not wrapped directly in sorted(), are refused at
+    # the source.  The scan is syntactic (AST), so the refusal is
+    # deterministic -- the same verdict at every PYTHONHASHSEED --
+    # complementing the battery's cross-seed regeneration leg in-run.
+    sorted_args = set()
+    for n in ast.walk(tree):
+        if isinstance(n, ast.Call) and isinstance(n.func, ast.Name) \
+                and n.func.id == "sorted":
+            for a in n.args:
+                sorted_args.add(id(a))
+
+    def set_like(node):
+        return isinstance(node, (ast.Set, ast.SetComp)) or (
+            isinstance(node, ast.Call)
+            and isinstance(node.func, ast.Name)
+            and node.func.id in ("set", "frozenset"))
+
+    def is_listdir(node):
+        return isinstance(node, ast.Call) and (
+            (isinstance(node.func, ast.Attribute)
+             and node.func.attr == "listdir")
+            or (isinstance(node.func, ast.Name)
+                and node.func.id == "listdir"))
+    set_iter = []
+    raw_listdir = []
+    for n in ast.walk(tree):
+        if isinstance(n, ast.For) and set_like(n.iter):
+            set_iter.append(n.iter.lineno)
+        if isinstance(n, (ast.ListComp, ast.SetComp, ast.GeneratorExp,
+                          ast.DictComp)):
+            for g in n.generators:
+                if set_like(g.iter):
+                    set_iter.append(g.iter.lineno)
+        if is_listdir(n) and id(n) not in sorted_args:
+            raw_listdir.append(n.lineno)
     P["source_hygiene"] = {"float_literals": floats,
                            "hash_calls": hashes,
                            "imports": sorted(imports),
+                           "set_iteration_lines": sorted(set_iter),
+                           "raw_listdir_lines": sorted(raw_listdir),
+                           "determinism_policy":
+                               "bare set-iteration and raw os.listdir "
+                               "are refused at the source by AST scan, "
+                               "in-run and seed-independent; sorted() "
+                               "is the one licensed wrapper",
                            "digest": sha12(src.encode("utf-8"))}
     LD.gate("G-SRC-CLEAN",
             not floats and not hashes and imports <= allowed,
@@ -1849,6 +2118,367 @@ def source_scan(LD, P):
             "no builtin hash call, and no import outside the declared "
             "whitelist",
             {"imports": sorted(imports)})
+    LD.gate("G-AST-DETERMINISM",
+            not set_iter and not raw_listdir,
+            "the determinism leg: the instrument's own syntax tree "
+            "carries no bare iteration over a set display, set "
+            "comprehension or set()/frozenset() call and no os.listdir "
+            "call outside a direct sorted() wrapper -- every collection "
+            "iterated here feeds the sealed artifacts through the "
+            "double build, so unsorted iteration is refused at the "
+            "source, deterministically at every hash seed",
+            {"set_iteration_lines": sorted(set_iter),
+             "raw_listdir_lines": sorted(raw_listdir)})
+
+
+# ===========================================================================
+# SECTION 12b.  THE MICRO-REPAIR GATES (M1-M5)
+# ===========================================================================
+# ---- the kernel-scope wall (M2; the scout #78 port; verifier finding
+# F2) --------------------------------------------------------------------
+# The RETIRED overclaim -- the general "no equivariant record-consistent
+# kernel" verdict, downgraded at #59 to the record-blind fixed-alpha
+# scope -- survived replanting in hyphen-fused and fresh-worded forms
+# (verifier plants P5 and P1).  This wall is SUBJECT-BASED: hyphens and
+# spacing are normalized away, the note is split into segments, and any
+# segment whose subject is the equivariant / record-consistent kernel
+# family carrying a nonexistence or emptiness predicate is refused --
+# UNLESS the segment carries the licensed record-blind scope qualifier,
+# so the honest downgraded verdict (the twin) stays alive.  This unit's
+# own covariant verdict names a DIFFERENT subject (the local,
+# record-dependent, truly covariant kernel class) and stays alive
+# untouched.
+KERNEL_WALL_TOKENS = (
+    "scout kernel empty at equivariant record consistent",
+)
+KERNEL_WALL_SUBJECTS = (
+    "equivariant record consistent kernel",
+    "record consistent kernel",
+    "equivariant kernel",
+)
+KERNEL_WALL_NEG_EXISTENTIALS = tuple(
+    "no " + s for s in KERNEL_WALL_SUBJECTS)
+KERNEL_WALL_PREDICATES = (
+    "does not exist", "do not exist", "cannot exist", "never exists",
+    "none exists", "none exist", "is empty", "are empty",
+    "is impossible", "are impossible", "is ruled out", "are ruled out",
+)
+KERNEL_WALL_LICENCE = "record blind"
+# Permanent controls, exercised on every build by G-KERNEL-WALL: the
+# verbatim retired sentence, two paraphrase variants, the retired
+# verdict token, the verifier's surviving hyphen-fused replant (P5) and
+# the fresh-worded family nonexistence (P1) must DIE at this wall; the
+# licensed record-blind forms and this unit's own covariant verdict
+# sentence are the twins and must SURVIVE.
+KERNEL_WALL_DEAD_CONTROLS = (
+    "So no equivariant record-consistent kernel exists at the "
+    "committed arena.",
+    "every equivariant kernel is empty at the committed arena",
+    "record consistent kernels do not exist at this arena",
+    "SCOUT-KERNEL-EMPTY-AT-EQUIVARIANT-RECORD-CONSISTENT",
+    "no-equivariant-record-consistent-kernel-exists",
+    "no equivariant kernel of any kind survives",
+)
+KERNEL_WALL_ALIVE_CONTROLS = (
+    "no record-blind, fixed-alpha, affine-equivariant kernel preserves "
+    "the delivered three-step walk statistics",
+    "at the three-step window only the 288 pure non-line kernels among "
+    "the censused deterministic kernels preserve it and no "
+    "record-blind fixed-alpha equivariant kernel does",
+    "no local, record-dependent, truly covariant kernel K(e|c,G,R) "
+    "preserves the delivered walk statistics at the three-step window",
+)
+
+
+def kernel_norm(seg):
+    return " ".join(seg.lower().replace("-", " ").split())
+
+
+def kernel_wall_hits(text):
+    tokens = pick("MUT-KWALL", KERNEL_WALL_TOKENS, ())
+    negs = pick("MUT-KWALL", KERNEL_WALL_NEG_EXISTENTIALS, ())
+    subjects = pick("MUT-KWALL", KERNEL_WALL_SUBJECTS, ())
+    hits = []
+    for ln in text.splitlines():
+        cut = ln.replace(";", ".").replace("|", ".").replace(":", ".")
+        for seg in cut.split("."):
+            s = kernel_norm(seg)
+            if not s:
+                continue
+            if any(t in s for t in tokens):
+                hits.append("retired verdict token present: "
+                            + seg.strip()[:60])
+                continue
+            if KERNEL_WALL_LICENCE in s:
+                continue
+            if any(p in s for p in negs) \
+                    or (any(p in s for p in subjects)
+                        and any(p in s for p in KERNEL_WALL_PREDICATES)):
+                hits.append("retired kernel-scope claim: "
+                            + seg.strip()[:60])
+    return hits
+
+
+def kernel_wall_gate(LD, P):
+    rows = []
+    ok = True
+    for s in KERNEL_WALL_DEAD_CONTROLS:
+        flagged = bool(kernel_wall_hits(s))
+        rows.append({"control": s, "expected": "DEAD",
+                     "flagged": flagged})
+        ok = ok and flagged
+    for s in KERNEL_WALL_ALIVE_CONTROLS:
+        flagged = bool(kernel_wall_hits(s))
+        rows.append({"control": s, "expected": "ALIVE",
+                     "flagged": flagged})
+        ok = ok and not flagged
+    P["kernel_wall"] = {
+        "controls": rows,
+        "policy": "the retired kernel-scope overclaim family is "
+                  "refused subject-based (normalized against hyphen "
+                  "and spacing evasion) wherever the licensed "
+                  "record-blind scope qualifier is absent; the "
+                  "verbatim retired sentence, the paraphrases, the "
+                  "retired verdict token and the hyphen-fused replant "
+                  "are permanent dead plants, and the licensed "
+                  "downgraded forms plus this unit's own covariant "
+                  "verdict are permanent alive twins"}
+    LD.gate("G-KERNEL-WALL", ok,
+            "the kernel-scope wall fires on the retired overclaim "
+            "family (verbatim, hyphen-fused, paraphrase variants, and "
+            "the retired verdict token) and stays silent on the "
+            "licensed record-blind forms and on this unit's own "
+            "covariant verdict; all permanent controls behave as "
+            "declared on this build",
+            {"dead_controls": len(KERNEL_WALL_DEAD_CONTROLS),
+             "alive_controls": len(KERNEL_WALL_ALIVE_CONTROLS),
+             "misbehaving": [r["control"][:50] for r in rows
+                             if (r["expected"] == "DEAD")
+                             != r["flagged"]]})
+
+
+# ---- the per-occurrence numeral totality (M4; the #68 addendum item 5;
+# verifier finding F3) ---------------------------------------------------
+# Every integer numeral occurrence in the note is classified BOUND (a
+# specific receipt field) or NON-CLAIM (a declared reason class); the
+# blanket whitelist (range 0..sixty plus hard-coded constants) is
+# RETIRED.  Totality is enforced at note verification (any unclassified
+# occurrence refuses delivery) and the full per-occurrence table is
+# serialized in the receipt; the in-run controls below keep a registry
+# falsifier on the mechanism itself.
+NONCLAIM_SEEDS = (0, 1, 424242)
+
+
+def numeral_paths(P):
+    paths = {}
+
+    def note_tok(s, path):
+        for tok in s.replace("/", " ").replace(",", " ").split():
+            neg = tok.lstrip("-")
+            if neg.isascii() and neg.isdigit():
+                paths.setdefault(int(neg), path)
+
+    def walk(obj, path):
+        if isinstance(obj, bool):
+            return
+        if isinstance(obj, int):
+            paths.setdefault(obj, path)
+            return
+        if isinstance(obj, str):
+            note_tok(obj, path)
+            return
+        if isinstance(obj, dict):
+            for k in sorted(obj):
+                np = (path + "/" + str(k)) if path else str(k)
+                note_tok(str(k), np)
+                walk(obj[k], np)
+            return
+        if isinstance(obj, (list, tuple)):
+            for i, v in enumerate(obj):
+                walk(v, path + "[%d]" % i)
+    walk(fser(P), "")
+    return paths
+
+
+def classify_numeral(line, raw, v, nums, table_map, num_paths,
+                     nonclaim_on):
+    if raw.startswith("#"):
+        if nonclaim_on:
+            return ("NON-CLAIM", "LEDGER-REFERENCE")
+        return (None, None)
+    if str(v) in table_map:
+        return ("BOUND", table_map[str(v)])
+    if v in nums:
+        return ("BOUND", num_paths.get(v, "receipt-inventory"))
+    if nonclaim_on and "PYTHONHASHSEED" in line and v in NONCLAIM_SEEDS:
+        return ("NON-CLAIM", "DECLARED-BATTERY-SEED")
+    return (None, None)
+
+
+def numeral_sweep(text, nums, table_map, num_paths, nonclaim_on):
+    rows = []
+    for lni, ln in enumerate(text.splitlines(), 1):
+        for tok in ln.replace("(", " ").replace(")", " ").split():
+            raw = tok.strip(".,;:|%")
+            t = raw.lstrip("#")
+            if not (t.isascii() and t.isdigit()):
+                continue
+            cls, detail = classify_numeral(ln, raw, int(t), nums,
+                                           table_map, num_paths,
+                                           nonclaim_on)
+            rows.append({"line": lni, "token": t,
+                         "class": cls if cls else "UNCLASSIFIED",
+                         "binding": detail if detail else "NONE"})
+    return rows
+
+
+NUMTOT_DEAD_CONTROL = ("the census would have found 4242424271 kernels "
+                       "had the arena been larger")
+NUMTOT_ALIVE_CONTROL = ("unit pinned at v15 ledger #60, regenerated "
+                        "under PYTHONHASHSEED 424242")
+
+
+def table_map_of(P):
+    tm = {}
+    for r in P["numeral_bindings"]:
+        tm.setdefault(r["numeral"], r["receipt_field"])
+    return tm
+
+
+def numeral_totality_controls(LD, P):
+    nonclaim_on = pick("MUT-NUMTOT", True, False)
+    nums, num_paths = totality_inventory(P)
+    tm = table_map_of(P)
+    dead = numeral_sweep(NUMTOT_DEAD_CONTROL, nums, tm, num_paths,
+                         nonclaim_on)
+    alive = numeral_sweep(NUMTOT_ALIVE_CONTROL, nums, tm, num_paths,
+                          nonclaim_on)
+    dead_flagged = any(r["class"] == "UNCLASSIFIED" for r in dead)
+    alive_clean = bool(alive) and all(r["class"] != "UNCLASSIFIED"
+                                      for r in alive)
+    P["numeral_totality_controls"] = {
+        "dead_control": dead, "alive_control": alive,
+        "policy": "every numeral occurrence in the note is classified "
+                  "BOUND (a specific receipt field) or NON-CLAIM (a "
+                  "declared reason class: LEDGER-REFERENCE, "
+                  "DECLARED-BATTERY-SEED); the blanket whitelist is "
+                  "retired; totality is enforced at note verification "
+                  "and the full per-occurrence table is serialized in "
+                  "the receipt; the mechanism's own control subtrees "
+                  "are excluded from the inventory, so the dead "
+                  "control's invented numeral cannot self-whitelist"}
+    LD.gate("G-NUM-TOTALITY", dead_flagged and alive_clean,
+            "the numeral-totality mechanism behaves as declared on its "
+            "permanent controls: an unbacked invented numeral goes "
+            "UNCLASSIFIED (and would refuse delivery at note "
+            "verification), while ledger references and the declared "
+            "battery seed classify NON-CLAIM with their reason classes",
+            {"dead_flagged": dead_flagged, "alive_clean": alive_clean})
+
+
+# ---- the #68 addendum consumption gate (M1; verifier finding F1) -------
+def addendum_gate(LD, P):
+    gates_so_far = [r["gate"] for r in LD.rows]
+    dig_ok = (P["read_set"].get(ADDENDUM_REL) == ADDENDUM_DIG
+              and PINNED[ADDENDUM_REL] == ADDENDUM_DIG)
+    suffix = pick("MUT-ADDENDUM", "-AT-CONDITIONAL-CONSISTENCY",
+                  "-AT-CONDITIONAL-CONSISTENCY-CORRUPTED")
+    head = P["verdicts"]["D3"].split("<")[0]
+    toks = [t.strip() for t in head.split(";")]
+    mode_named = (len(toks) == 4
+                  and all(t.endswith(suffix) for t in toks))
+    affine_ok = all(P["d3"][lbl]["uniform_certificate"]
+                    .get("affine_midpoint_ok") for lbl in P["d3"])
+    relax_ok = "adds pin rows" in P["d3_identified"]["relaxation_lemma"]
+    item1 = mode_named and affine_ok and relax_ok
+    arms = P["arms"]
+    d3_idx = [i for i, g in enumerate(gates_so_far)
+              if g.startswith("G-D3")]
+    item2 = (all(arms[an]["covariant"] and arms[an]["declaration"]
+                 for an in ARM_ORDER)
+             and "G-ARMS-COVARIANT" in gates_so_far and bool(d3_idx)
+             and gates_so_far.index("G-ARMS-COVARIANT") < min(d3_idx))
+    tri = P["step1"]["tie_break_trilemma"]
+    item3 = (P["step1"]["orbit_variables"] == 2
+             and "G-STEP1" in gates_so_far
+             and set(tri) == {"a_symmetric_stochastic_initial_kernel",
+                              "b_declared_initial_asymmetry",
+                              "c_another_tie_breaking_state_variable"}
+             and "depth3" in P["reach"])
+    item4 = (KIT_GFIXED in P["kit"]
+             and any("EVENT SELECTION ONLY" in s for s in P["kit"]))
+    item5 = "G-NUM-TOTALITY" in gates_so_far
+    P["addendum_68"] = {
+        "addendum": ADDENDUM_REL,
+        "digest": ADDENDUM_DIG,
+        "consistency_mode":
+            "CONDITIONAL (the frozen PRIMARY): transition agreement at "
+            "every reached state; each constraint linear in exactly "
+            "one kernel factor; LP/Farkas valid; no bilinear system "
+            "solved; no outcome-bearing history-flow relaxation (the "
+            "one relaxation used runs in the conservative emptiness "
+            "direction with pinned confirmations); the SECONDARY "
+            "(marginal-history agreement) was not attempted here -- it "
+            "is SCOUT-T's fork arm",
+        "verification_record": {
+            "rebuild": VERIFY_REBUILD_REL,
+            "check_ledger": VERIFY_LEDGER_REL,
+            "binding": "the hostile verifier's independent rebuild, "
+                       "archived at v15 ledger #82 and read at its "
+                       "pinned digests (G-PIN-DIGESTS)"},
+        "checks": {
+            "digest_pinned": dig_ok,
+            "item1_mode_named_in_verdict_words": mode_named,
+            "item1_linear_in_one_factor_evidence": affine_ok,
+            "item1_relaxation_conservative_direction": relax_ok,
+            "item2_predicates_preregistered_and_covariant": item2,
+            "item3_first_event_requirements": item3,
+            "item4_scope_wall_gated_kit_sentence": item4,
+            "item5_numeral_totality_gated": item5}}
+    LD.gate("G-ADDENDUM-68",
+            dig_ok and item1 and item2 and item3 and item4 and item5,
+            "the #68 pin addendum is cited by digest and CONSUMED: the "
+            "frozen CONDITIONAL mode is what ran (each constraint "
+            "linear in one kernel factor, the relaxation "
+            "emptiness-direction only) and the D3 verdict names it in "
+            "its words; the proximity predicates are pre-registered, "
+            "declared in committed objects, and gated covariant BEFORE "
+            "any feasibility gate; the step-1 census is published "
+            "separately with the tie-break trilemma; the G-fixed scope "
+            "wall is a gated kit sentence; the numeral totality is "
+            "gated",
+            P["addendum_68"]["checks"])
+
+
+# ---- the environment-exclusion gate (M3; the I8 species) ---------------
+def env_exclusion(LD, P):
+    """no environment-dependent value may enter the serialized receipt:
+    the sha256-12 of every unpinned live read is computed in-run and
+    must not occur anywhere in the receipt payload (the parent's
+    delivered receipt's defect: it serialized the live LOG digest, so a
+    one-line LOG append moved the receipt)."""
+    unp = sorted({rel for (_i, rel, _q) in ANCHORS} - set(PINNED))
+    digs = {}
+    for rel in unp:
+        digs[rel] = sha12(read_rel(rel))
+    P["env_exclusion"] = {
+        "unpinned_reads_scanned": unp,
+        "probe": pick("MUT-ENV", None, digs[unp[-1]]),
+        "policy": "unpinned live-read digests (the append-only LOG and "
+                  "the anchor-only paper sources) are computed in-run "
+                  "for this exclusion check only and are never "
+                  "serialized into either artifact; the receipt is "
+                  "therefore LOG-append-independent by construction"}
+    blob = to_json(P) + to_json(LD.rows)
+    leaks = sorted(rel for rel, d in digs.items() if d in blob)
+    P["env_exclusion"]["leaks"] = leaks
+    LD.gate("G-ENV-EXCLUSION", not leaks,
+            "the serialized receipt payload carries no digest of any "
+            "unpinned live read: environment-dependent bytes are "
+            "excluded from the artifacts and checked in-run only, so "
+            "the LOG-append regeneration probe is provably closed at "
+            "the receipt",
+            {"scanned": len(unp), "leaks": leaks})
 
 
 # ===========================================================================
@@ -1858,7 +2488,14 @@ def build_all(P=None):
     LD = Ledger()
     if P is None:
         P = {}
+    CAPS["counter"] = Counter()
     source_scan(LD, P)
+    P["regime"] = {
+        "gates_in_ledger": 30,
+        "falsifiers_registered": len(FALSIFIERS),
+        "policy": "declared up front; note verification refuses "
+                  "delivery if these counts drift from the live ledger "
+                  "and registry"}
     measure_reads(LD, P)
     measure_arena(LD, P)
     GCELL, GTRI = build_gamma(LD, P)
@@ -1876,10 +2513,15 @@ def build_all(P=None):
     subfamily(LD, P, out3, q3_of, sup1, sup2, BOC)
     controls(LD, P, canon_tuple, canon_ctx, q3_of, sup1, sup2, BOC, E1S,
              RAW)
+    caps_register_gate(LD, P)
     build_verdicts(P)
     sample_space_audit(LD, P)
     numeral_bindings(LD, P)
     build_kit(P)
+    kernel_wall_gate(LD, P)
+    numeral_totality_controls(LD, P)
+    addendum_gate(LD, P)
+    env_exclusion(LD, P)
     P["ledger"] = LD.rows
     return P
 
@@ -1900,6 +2542,20 @@ REQUIRED_SENTENCES = (
     "no record-blind, fixed-alpha, affine-equivariant kernel preserves "
     "the delivered three-step walk statistics.",
 )
+
+
+def totality_inventory(P):
+    """The numeral inventory the note sweep classifies against.  The
+    totality mechanism's OWN subtrees are excluded: the permanent dead
+    control's invented numeral is serialized inside
+    numeral_totality_controls, and leaving it in the inventory would
+    self-whitelist exactly the numeral the control exists to refuse
+    (found by this unit's own battery; the F3 residual class)."""
+    Pv = {k: v for k, v in P.items()
+          if k not in ("numeral_totality_controls", "numeral_totality")}
+    nums = set()
+    collect_numerals(fser(Pv), nums)
+    return nums, numeral_paths(Pv)
 
 
 def collect_numerals(obj, out):
@@ -1967,6 +2623,13 @@ def verify_note(P, note_bytes, problems):
     for pat in FORBIDDEN_GLOBAL:
         if pat in low:
             problems.append("forbidden pattern present: " + pat)
+    for h in kernel_wall_hits(text):
+        problems.append("kernel-scope wall: " + h)
+    if P.get("regime", {}).get("gates_in_ledger") != len(P["ledger"]) \
+            or P.get("regime", {}).get("falsifiers_registered") \
+            != len(FALSIFIERS):
+        problems.append("regime counts stale against the live ledger "
+                        "and falsifier registry")
     for name in SS_NAMES:
         if "[SS:" + name + "]" not in text:
             problems.append("sample-space tag [SS:%s] absent" % name)
@@ -2008,18 +2671,32 @@ def verify_note(P, note_bytes, problems):
             if t not in inv:
                 problems.append("slash rational not in receipt "
                                 "inventory: " + t)
-    nums = set()
-    collect_numerals(fser(P), nums)
-    layout = set(range(0, 61)) | {64, 84, 108, 156, 189, 217, 277, 288,
-                                  289, 297, 320, 633, 729, 1371, 1404,
-                                  2026, 424242}
-    for ln in text.splitlines():
-        for tok in ln.replace("(", " ").replace(")", " ").split():
-            t = tok.strip(".,;:|%").lstrip("#")
-            if t.isascii() and t.isdigit():
-                v = int(t)
-                if v not in nums and v not in layout:
-                    problems.append("numeral not receipt-backed: " + t)
+    # M4: the per-occurrence numeral totality (the #68 addendum item 5).
+    # The former blanket whitelist is RETIRED: every integer numeral
+    # occurrence is classified BOUND (a specific receipt field) or
+    # NON-CLAIM (a declared reason class), any unclassified occurrence
+    # refuses delivery, and the full table is serialized in the receipt.
+    nums, num_paths = totality_inventory(P)
+    tm = table_map_of(P)
+    tot_rows = numeral_sweep(text, nums, tm, num_paths, True)
+    for r in tot_rows:
+        if r["class"] == "UNCLASSIFIED":
+            problems.append("numeral unclassified (neither BOUND to a "
+                            "receipt field nor NON-CLAIM): " + r["token"]
+                            + " at note line %d" % r["line"])
+    P["numeral_totality"] = {
+        "occurrences": len(tot_rows),
+        "bound": sum(1 for r in tot_rows if r["class"] == "BOUND"),
+        "non_claim": sum(1 for r in tot_rows
+                         if r["class"] == "NON-CLAIM"),
+        "unclassified": sum(1 for r in tot_rows
+                            if r["class"] == "UNCLASSIFIED"),
+        "reason_classes": sorted({r["binding"] for r in tot_rows
+                                  if r["class"] == "NON-CLAIM"}),
+        "rows": tot_rows,
+        "policy": "per-occurrence total classification; the binding "
+                  "table is the BOUND core; the blanket whitelist is "
+                  "retired"}
     return problems
 
 
@@ -2029,8 +2706,9 @@ def verify_note(P, note_bytes, problems):
 def render_output(P, note_digest):
     lines = []
     lines.append("SCOUT-K delivery transcript")
-    lines.append("pin a1a6ccc61bd4 (v15 ledger #60) + the #64 addendum; "
-                 "unit note " + NOTE_REL)
+    lines.append("pin a1a6ccc61bd4 (v15 ledger #60) + the #64 addendum "
+                 "+ the #68 addendum 3a1e5a649537 (consumed at "
+                 "G-ADDENDUM-68); unit note " + NOTE_REL)
     lines.append("object under test (the note): sha256-12 " + note_digest)
     lines.append("instrument source: sha256-12 "
                  + P["source_hygiene"]["digest"])
@@ -2065,6 +2743,11 @@ def render_output(P, note_digest):
     lines.append("  fixed-alpha subfamily: 729 rows, 25 polys, linear "
                  "roots -1, 0, +1 (reproduces #58); pure census 8 -> 288 "
                  "reproduced and priced")
+    lines.append("  consistency mode: CONDITIONAL (the #68 addendum's "
+                 "frozen PRIMARY), named in the D3 verdict words")
+    lines.append("  M6 strengthenings re-derived in-run: arm covariance "
+                 "at 108 x 8, refinement order GLOBAL -> CN -> SA(=RD), "
+                 "canonical-first clash")
     lines.append("  falsifiers: %d registered; gates: %d"
                  % (len(FALSIFIERS), len(P["ledger"])))
     lines.append("")

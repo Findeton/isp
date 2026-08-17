@@ -1,19 +1,20 @@
 SCOUT-K delivery transcript
-pin a1a6ccc61bd4 (v15 ledger #60) + the #64 addendum; unit note v15/note-scoutk.md
-object under test (the note): sha256-12 573cb2c55e5c
-instrument source: sha256-12 38c3f6cb288e
+pin a1a6ccc61bd4 (v15 ledger #60) + the #64 addendum + the #68 addendum 3a1e5a649537 (consumed at G-ADDENDUM-68); unit note v15/note-scoutk.md
+object under test (the note): sha256-12 cc4d31ce7740
+instrument source: sha256-12 723ebc41cc0f
 parent apparatus: delivered scout_exact.py edb60bccd22e via byte-verified snapshot (live file mid-repair)
 
 GATE G-SRC-CLEAN        PASS  the instrument's own syntax tree carries no float literal, no builtin hash call, and no import outside the declared whitelist
-GATE G-PIN-DIGESTS      PASS  the frozen pin, the delivered-parent snapshot and paper-20 are read at their pinned digests; the parent is read ONLY through the byte-verified snapshot (the live scout file is mid-repair); LOG.md is anchor-only and its digest is never recorded (the receipt hazard)
+GATE G-AST-DETERMINISM  PASS  the determinism leg: the instrument's own syntax tree carries no bare iteration over a set display, set comprehension or set()/frozenset() call and no os.listdir call outside a direct sorted() wrapper -- every collection iterated here feeds the sealed artifacts through the double build, so unsorted iteration is refused at the source, deterministically at every hash seed
+GATE G-PIN-DIGESTS      PASS  the frozen pin, the #68 pin addendum, the delivered-parent snapshot, paper-20 and the archived verifier rebuild (with its check ledger) are read at their pinned digests; the parent is read ONLY through the byte-verified snapshot (the live scout file was mid-repair); LOG.md is anchor-only and its digest is never recorded (the receipt hazard, now machine-checked by G-ENV-EXCLUSION)
 GATE G-ANCHORS          PASS  every declared source anchor is located verbatim (whitespace-collapsed) in its file, the parent-reuse anchors in the delivered snapshot included
 GATE G-ARENA            PASS  the committed chart rebuilt from constructors: 27 cells in bijection with the linked pairs, 27 triangles among 84 triples, 9 declared lines of 12, every cell in exactly 3 blocks
 GATE G-GAMMA            PASS  the relabelling group is rebuilt at order 108 (12 linear x 9 translations), closed on the block class; the cell stabilizer (order 4) swaps the two non-line incident blocks -- the measured fact behind the first-event boundary
 GATE G-WALK             PASS  the delivered walk rebuilt: first-trigger weights (1/9, 4/9, 4/9) on cells 0,1,2; second-trigger support the 9 cells of the three shifted sites, unit mass
 GATE G-BLIND            PASS  the depth-2 blindness licence re-measured: 11 record variants, one Born vector; mechanism single-link site support
-GATE G-ARMS-COVARIANT   PASS  all four declared proximity arms and the global reference are measured relabelling-covariant (N(gc,gR) = g N(c,R) for all 108 elements); neighborhood sizes 11 / record-cluster / 27 / 15 / 27
+GATE G-ARMS-COVARIANT   PASS  all four declared proximity arms and the global reference are measured relabelling-covariant (N(gc,gR) = g N(c,R)) at ALL 108 group elements x ALL 8 reached records -- the M6 strengthening re-derived in-run; neighborhood sizes 11 / record-cluster / 27 / 15 / 27
 GATE G-REACH            PASS  the reach census: 63 raw contexts / 189 raw tuples over 7 distinct first events; per-arm depth-3 orbit variables 16/16/25/19/25 against context classes 6/6/9/7/9; the shared-actor, record-distance and causal arms each carry 2 empty-pattern orbits identified with the depth-1 classes
-GATE G-COINCIDE         PASS  proximity coincidences measured, not assumed: SA and RD induce the same orbit partition; MC coincides with the global reading (its neighborhood is the whole chart at this arena); CN sits strictly between; three distinct constraint systems remain
+GATE G-COINCIDE         PASS  proximity coincidences measured, not assumed, and sharpened to the refinement-order fact (M6): SA and RD induce the same orbit partition; MC coincides with the global reading (its neighborhood is the whole chart at this arena); and the three distinct partitions form a chain -- GLOBAL refines CN refines SA, both refinements strict -- so CN sits strictly between and three distinct constraint systems remain
 GATE G-STEP1            PASS  the step-1 orbit census is published separately (#64): the symmetric start collapses the kernel family to 2 orbit variables (line / non-line), dim 1 after normalization; the tie-break trilemma is recorded as measured constraints -- the family realizes arm (a) only
 GATE G-D2               PASS  the depth-2 window: consistency is vacuous under the measured blindness, the covariant family is the one-parameter line-weight segment a in [0,1] -- SCOUTK-NONVACUOUS-1-AT-2 at every arm, arms coinciding at the zero record
 GATE G-WELLDEF          PASS  orbit bookkeeping is self-consistent: line-ness is constant on every orbit and relabelling-equivalent contexts carry identical candidate variable multisets, at all three distinct systems
@@ -22,17 +23,22 @@ GATE G-D3-FARKAS        PASS  every sampled emptiness carries a verified exact F
 GATE G-D3-BW            PASS  the branchwise (per-first-event) lemma: even conditioning on each written first triple separately, no covariant second-invocation kernel matches the delivered third-step profiles -- INFEASIBLE with verified certificates at all three systems
 GATE G-D3-UNIFORM       PASS  one uniform Farkas certificate per system closes the whole segment: emptiness holds at EVERY first-step line weight a in [0,1], not only at the samples; supports 6, 6 and 7 rows, all mixture rows
 GATE G-D3-IDENT         PASS  the identified systems (empty-pattern orbits pinned to the step-1 kernel values) are INFEASIBLE at both confirmation samples for both affected systems, certificates verified
-GATE G-CLASH            PASS  the minimal mechanism witness stands: at a = 0 the branch rows (c1,c2,c3) = (0,5,14) and (1,11,21) carry identical covariant coefficient vectors with delivered values 16/729 against 64/729
+GATE G-CLASH            PASS  the minimal mechanism witness stands: at a = 0 the branch rows (c1,c2,c3) = (0,5,14) and (1,11,21) carry identical covariant coefficient vectors with delivered values 16/729 against 64/729; the witness is the FIRST clash in canonical row order (metas verified sorted; M6) -- canonical, not curated
 GATE G-SUBFAM           PASS  the binding consistency check: the fixed-alpha subfamily re-derived inside the orbit family gives 729 rows reducing to 25 distinct polynomials whose linear members force alpha = -1, 0 and +1 simultaneously (empty over the reals), byte-equal to the direct parent-style construction
 GATE G-PURE             PASS  the parent's pure-kernel census reproduced: 8 all-non-line first-step selections extending to 288 pure kernels on the reached cells
 GATE G-CONTROLS         PASS  both synthetic controls fire through the real builder and solver: the kernel-generated target is FEASIBLE with a nonnegative witness, the shifted target is INFEASIBLE with a verified certificate
+GATE G-CAPS-REGISTER    PASS  the caps register: every constraint row this instrument constructed carries a declared kind, the kind set is the declared cap-free family, and zero engaged caps exist
 GATE G-SAMPLE-SPACE     PASS  every probability-typed measurement row in this receipt declares its sample space from the three declared names, 38 declarations; no claim changes sample space silently
 GATE G-NUM-BIND         PASS  numeral-field binding from birth: every load-bearing prose numeral is bound to its SPECIFIC receipt field and each binding resolves to the claimed value
+GATE G-KERNEL-WALL      PASS  the kernel-scope wall fires on the retired overclaim family (verbatim, hyphen-fused, paraphrase variants, and the retired verdict token) and stays silent on the licensed record-blind forms and on this unit's own covariant verdict; all permanent controls behave as declared on this build
+GATE G-NUM-TOTALITY     PASS  the numeral-totality mechanism behaves as declared on its permanent controls: an unbacked invented numeral goes UNCLASSIFIED (and would refuse delivery at note verification), while ledger references and the declared battery seed classify NON-CLAIM with their reason classes
+GATE G-ADDENDUM-68      PASS  the #68 pin addendum is cited by digest and CONSUMED: the frozen CONDITIONAL mode is what ran (each constraint linear in one kernel factor, the relaxation emptiness-direction only) and the D3 verdict names it in its words; the proximity predicates are pre-registered, declared in committed objects, and gated covariant BEFORE any feasibility gate; the step-1 census is published separately with the tie-break trilemma; the G-fixed scope wall is a gated kit sentence; the numeral totality is gated
+GATE G-ENV-EXCLUSION    PASS  the serialized receipt payload carries no digest of any unpinned live read: environment-dependent bytes are excluded from the artifacts and checked in-run only, so the LOG-append regeneration probe is provably closed at the receipt
 
 VERDICTS
   SCOUTK-REACH-CENSUS-PUBLISHED<63-CONTEXTS-189-TUPLES-7-FIRST-EVENTS; ORBIT-VARIABLES-16-16-25-19-25-PER-ARM; STEP-1-COLLAPSES-TO-2-VARIABLES-DIM-1>
   SCOUTK-NONVACUOUS-1-AT-2-ALL-ARMS<BLINDNESS-11-VARIANTS; ARMS-COINCIDE-AT-THE-ZERO-RECORD>
-  SCOUTK-COVARIANT-EMPTY-AT-3-SA; SCOUTK-COVARIANT-EMPTY-AT-3-RD; SCOUTK-COVARIANT-EMPTY-AT-3-MC; SCOUTK-COVARIANT-EMPTY-AT-3-CN<GLOBAL-REFERENCE-ALSO-EMPTY-SO-LOCALITY-IS-NOT-THE-OBSTRUCTION; UNIFORM-IN-THE-FIRST-STEP-LINE-WEIGHT; BRANCHWISE-ALSO-EMPTY; CERTIFICATES-PUBLISHED-AND-VERIFIED>
+  SCOUTK-COVARIANT-EMPTY-AT-3-SA-AT-CONDITIONAL-CONSISTENCY; SCOUTK-COVARIANT-EMPTY-AT-3-RD-AT-CONDITIONAL-CONSISTENCY; SCOUTK-COVARIANT-EMPTY-AT-3-MC-AT-CONDITIONAL-CONSISTENCY; SCOUTK-COVARIANT-EMPTY-AT-3-CN-AT-CONDITIONAL-CONSISTENCY<GLOBAL-REFERENCE-ALSO-EMPTY-SO-LOCALITY-IS-NOT-THE-OBSTRUCTION; UNIFORM-IN-THE-FIRST-STEP-LINE-WEIGHT; BRANCHWISE-ALSO-EMPTY; CERTIFICATES-PUBLISHED-AND-VERIFIED>
   SCOUTK-FIXED-ALPHA-SUBFAMILY-REPRODUCES-58<729-ROWS-25-POLYS-LINEAR-ROOTS-MINUS1-0-PLUS1; PURE-CENSUS-8-TO-288-REPRODUCED>
   SCOUTK-CANDIDATE-BRIDGE-REJECTED-IN-ITS-COVARIANT-CLASS<THE-TRIGGER-SEMANTICS-REMAINS-A-CANDIDATE-NEVER-A-THEOREM; EVENT-SELECTION-ONLY-TRANSPORT-STILL-OPEN>
 
@@ -43,5 +49,7 @@ KEY CLAIMS
   depth 3: EMPTY at all arms and at the global reference, at all 6 sampled line weights, branchwise, and uniformly in a by one small Farkas certificate per system (supports 6, 6, 7)
   mechanism: branch rows (0,5,14) and (1,11,21) are the same covariant combination; the walk gives 16/729 vs 64/729
   fixed-alpha subfamily: 729 rows, 25 polys, linear roots -1, 0, +1 (reproduces #58); pure census 8 -> 288 reproduced and priced
-  falsifiers: 23 registered; gates: 24
+  consistency mode: CONDITIONAL (the #68 addendum's frozen PRIMARY), named in the D3 verdict words
+  M6 strengthenings re-derived in-run: arm covariance at 108 x 8, refinement order GLOBAL -> CN -> SA(=RD), canonical-first clash
+  falsifiers: 29 registered; gates: 30
 
