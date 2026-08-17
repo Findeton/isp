@@ -131,3 +131,13 @@ The report is frozen verbatim before joint adjudication.  Its grade is
 `ACCEPT-WITH-FIXES`; that grade is the reviewer's finding, not yet the
 orchestrator's terminal verdict.  No candidate artifact moved, and no v15
 SCOUT-T path was touched.
+
+## 2026-08-17 — JRH OPERATOR HOSTILE REPORT FROZEN VERBATIM (v16 LEDGER #7)
+
+The independent OPERATOR / EXACT DEMOLITION seat delivered
+`v16/review-jrh-operator.md` with SHA-256
+`7d4b852527d92424b5cd1e970c002a46ef29f140e459fe895888631a07687daa`.
+The report is frozen verbatim before joint adjudication.  Its grade is
+`REJECT`; that grade is the reviewer's finding, not yet the orchestrator's
+terminal verdict.  No candidate artifact moved, and no v15 SCOUT-T path was
+touched.
