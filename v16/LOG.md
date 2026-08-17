@@ -225,3 +225,13 @@ and QFT/GR deviations.  A coherent framework is not a selected law.  False
 exact claims, surviving dynamic-geometry overclaim, an untyped cross-carrier
 trace, or any promoted particle/constant/deviation result are pre-registered
 kill conditions.  Reports will be frozen verbatim before adjudication.
+
+## 2026-08-17 — JRH OPERATOR HOSTILE DELTA REPORT FROZEN VERBATIM (v16 LEDGER #11)
+
+The independent OPERATOR / EXACT DEMOLITION delta seat delivered
+`v16/review-jrh-operator-delta.md` with SHA-256
+`66c0569c1935e3cab41eed31e2fcc776ab0130d06e6db86c1fd2bf2048ebfc06`.
+The report is frozen verbatim before either remaining delta report is read or
+joint adjudication begins.  Its grade is `ACCEPT-WITH-FIXES`; that grade is the
+reviewer's finding, not yet a terminal verdict.  No candidate artifact moved,
+no other report was staged, and no v15 SCOUT-T path was touched.
