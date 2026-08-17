@@ -121,3 +121,13 @@ The report is frozen verbatim before joint adjudication.  Its grade is
 `REJECT`; that grade is the reviewer's finding, not yet the orchestrator's
 terminal verdict.  No candidate artifact moved, and no v15 SCOUT-T path was
 touched.
+
+## 2026-08-17 — JRH QUANTUM HOSTILE REPORT FROZEN VERBATIM (v16 LEDGER #6)
+
+The independent QUANTUM / EPR / QFT seat delivered
+`v16/review-jrh-quantum.md` with SHA-256
+`64a1ebdecfb2d6d53e1482ee05ba3055c2772477f63aed0f6b3183d8f29c9f20`.
+The report is frozen verbatim before joint adjudication.  Its grade is
+`ACCEPT-WITH-FIXES`; that grade is the reviewer's finding, not yet the
+orchestrator's terminal verdict.  No candidate artifact moved, and no v15
+SCOUT-T path was touched.
