@@ -1330,3 +1330,74 @@ Concurrency held at two constructions + orchestration.
 Both construction workers launched in background this
 entry.  Commits remain UNSIGNED (GPG non-interactive).
 
+## 2026-08-16 — ECC (PAPER-46) DELIVERED, COMMITTED AS-IS: THE BORN-MARGINAL LP IS INFEASIBLE AT THE COMMITTED ROW AND THE CEILING IS A THEOREM; THE SEAM DECISION UNDERDETERMINED-WITH-TEETH; PSI-STATUS-INDEPENDENT AT EVERY DELIVERED ROW (v15 LEDGER #44)
+
+Construction complete under pin 04874b01e241; the four
+artifacts committed exactly as the worker left them
+(paper 61d330d13fe0 / code 4d2034429d21 / output
+3034f0028bb3 / receipt ea24c1fc2340; 65 gates, 73
+recipes, 9 walls / 54 controls, 32 anchors all consumed).
+CANDIDATE READINGS UNTIL ADJUDICATION.  Five-segment
+head:
+
+(0) STATE-CONTRACT-CLOSED at the committed windows under
+the declared seam reading: 23 objects typed, none
+primitive; the 15 free declarations carried with 6
+heterogeneous type categories; the event fork DECLARED at
+2 arms, no compromise; the coset principle labelled THE
+SELECTION LAW; the three maps typed and composed nowhere;
+the actor-record cycle carried at length 4, open at full
+dynamics.  (0b) SEAM-DECISION-UNDERDETERMINED-AT-THE-
+COMMITTED-OBSERVABLE-MENU, with teeth: all 8 committed
+observables completion-blind (structurally, by AST domain
+audit) over 11 probe states while the modal allowed-set
+relation separates the same probes; the reading family
+separates the two-step census at ALL 108 first crossings;
+the RE-SOLVED fiber reproduces AUTOGLUE's sealed table
+EXACTLY; chosen reading RE-SOLVED, DECLARED NOT MEASURED,
+stamped on all 215 downstream rows.  (1)
+PSI-STATUS-INDEPENDENT: three genuinely distinct carriers
+(amplitude vector / density operator with channel
+cross-check / configuration-level process law) byte-agree
+at 18 of 18 rows; the trilemma stays UNRESOLVED and every
+delivered result is proven blind to it.  (2) **THE
+CENTERPIECE: ECC-LP-INFEASIBLE-AT-THE-COMMITTED-ROW — the
+walk's own start state at the initial record under the
+delivered order is infeasible at ALL FOUR committed
+normalization classes (qmax 4/9, exact gaps 4|4|3|7/3);
+THE CEILING IS A THEOREM: feasibility forces every Born
+weight <= 1/3, checked exceptionless at all 156 rows —
+the paper's one family-level statement.  The full
+census: 136/156 infeasible, UNIQUE 8 (line classes), MANY
+6 at dim 8 (a new free declaration, family published,
+nothing selected), the deficient-writer theorem
+collapsing E-TRIPLE onto E-BLOCK; the a=2 branch
+DEGENERATE-IDENTITY 39/39, never merged; controls forced
+both ways through the real solver; the normalization
+pre-registered in C(a,2) form and sealed before any
+row.**  (3) CARRIER-FAMILY-UNSELECTED: 4/4 host the
+state, 2/4 express the committed branching (cq-instrument
+and direct-sum, unseparated by the corpus), 0/4 EVOLVE
+ACROSS CREATION — all 36 cross cells are directionless
+and the covariant coin family is typed on 3-direction
+blocks.  (4) THE DEBT DECIDED: no conflict — the walk's
+menu and the creation class are DISJOINT (menu∩cross 0/36
+at both fork arms; frozen creation admits 0/288; unit
+mass 4/4): consistency bought by carrier confinement.
+
+Worker's authorship disclosure (report-level): its FIRST
+selftest sweep caught 12 harness defects (2 surviving
+recipes, 4 wrong-gate deaths, 6 unproved door-window
+moves), all repaired BEFORE delivery; the repaired blob's
+output/receipt are byte-identical to the pre-repair
+delivery — no physics number moved at any point.  Four
+pin deviations DISCLOSED in-paper (§13 + §3/§11),
+including the round-generated record window standing in
+for CONTRACT's 36-field driver corpus (closure under a
+translation generator proved).  Self-battery green (byte
+x2 deleted-artifact off-tree alien-CWD two seeds; 73/73
+out-of-harness at declared gates, tree hash unchanged;
+--selftest 73/73 with digest-proved moves; argv 14 forms
+rc 2; --verify-paper PASS).  Orchestrator battery next;
+panel on green.
+
