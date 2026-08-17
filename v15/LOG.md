@@ -3647,3 +3647,46 @@ The verifier seat launched
 defect census and the S3/S4 nine-cut measurement from
 scratch, audit the four-addenda compliance and the
 premise gate, attack the instrument.
+
+## 2026-08-17 — SCOUT-PSI REPAIR DELIVERED AND COMMITTED: ALL Z1-Z8 + THE #80 SHARPENING; THE GRAIN-INDEXED HEAD WITH THE FULL FOUR-GRAIN TABLE AND NAMED GROUPS; PER-OCCURRENCE TOTALITY 616/616; ZERO VALUES MOVED; ONE STRENGTHENING — THE COARSE BLINDNESS IS A RHO1-FAMILY PROPERTY (v15 LEDGER #90)
+
+Committed as delivered (note 5c46b34a4de9 / code
+25adcd54a1ea / output 2cbef1d9ceea / receipt
+681a9cccfa75).  The continuation audited the
+predecessor's near-complete instrument end-to-end,
+cross-checked every number against an independent
+prototype engine, corrected the DC-addendum citation to
+v2 at 8 sites, and delivered.  Z1: the frozen secondary
+(I/27, both frozen decompositions proven equal
+entry-by-entry) run through the unit's own engine —
+blind at 1, SENSITIVE at 2, 378 diverging records, the
+verifier's expectation embedded as a GATE and re-derived.
+Z2: all four comparison rows at named groups (T9 = the
+Z3xZ3 translations; S27 = full Sym(27)); the head
+grain-indexed; the verdict table complete and gated —
+AND THE HONEST CAVEAT PUBLISHED AS A STRENGTHENING: the
+coarsest-quotient blindness-at-2 holds ONLY on the
+RHO1 witness family; RHO2 and the secondary stay
+SENSITIVE-AT-2 even at S27 (the sensitivity survives
+full relabelling quotient on those preparations).  Z3 +
+#80: the HJW sentence gated with an IN-RUN mutual-
+unbiasedness check at exact ratio 1/2; the compatibility
+gate cites the causality addendum v2; the three banned
+framings countered by gated sentences.  Z4: the addendum
+digest-gated field-by-field against what ran; the
+fault-chain disclosure in both artifacts.  Z5:
+per-occurrence totality — 616 occurrences, 443 BOUND /
+173 NON-CLAIM / 0 unclassified, the table serialized.
+Z6: deviation 4 corrected with in-run witnesses both
+directions (Bloch balance; the four-member Z[omega]
+mixture {1/3,1/3,1/6,1/6} = RHO1 exact).  Z7: the wall
+scoped honestly; the verifier's paraphrases permanent
+in-run plants.  Z8: the honest breach-chain paragraph.
+ZERO committed values moved (gated in-run + external
+diff; 14 receipt sections purely added).  Worker battery
+47/47 incl. two LOG-append probes.  Orchestrator battery
+next; on green, a LIGHT SECOND VERIFIER pass over the
+NEW rows only (the four-grain table and the secondary
+are new measured values the #76 seat never saw), then
+seal.
+
