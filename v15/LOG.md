@@ -4026,3 +4026,119 @@ Zero false physics numbers REMAIN in any terminal paper;
 zero false computed-output numbers ever.  SCOUT-T is the
 last thread; on its seal, the decision package goes to
 the user.
+
+## 2026-08-17 — THE NINETEENTH REVIEW ADOPTED WITH THREE ORCHESTRATOR CAVEATS: THE JOINT-SUCCESSOR PROGRAM — THE ATOMIC TRANSACTION ON REALITY, THE PREDICTIVE-EQUIVALENCE STATE, LAW-SELECTED LOCAL ARITY, THE 13 RESTRICTIONS; THE PLAN'S THREE-MAPS INSTRUCTION SUPERSEDED; THE JS UNIT PINNED AND LAUNCHED (v15 LEDGER #101)
+
+ADOPTED (verified against the sealed corpus):
+(1) THE DIAGNOSIS: the delivered design is three services
+independently mutating shared state (the walk selects a
+cell and updates psi; the writer expands to a triple
+footprint; AUTOGLUE changes geometry) — no event-
+probability kernel can reconcile mechanisms that advance
+DIFFERENT STATE MACHINES.  The right object is ONE
+covariant boundary-to-boundary law making one complete
+commitment: (R,G,S) -> {p_alpha; R',G',S',record}_alpha
+over mutually exclusive COMPLETE SUCCESSORS — an atomic
+transaction on reality.
+(2) THE STEP = a finite causally complete relational
+region between genuine division boundaries — never a
+universe-wide tick (which would recreate external time).
+Three cases: real intermediate boundary -> laws COMPOSE;
+relationally separated rewrites -> construction order is
+GAUGE after transport (correlations allowed — Bell
+forbids demanding classical factorization); unsplittable
+overlap -> ONE indivisible process event.  Consistent
+with the w5 Barandes recast (indivisibility between
+genuine division events; composition valid exactly
+there); Barandes supplies the template, not the
+backreaction law.
+(3) THE CANONICAL PROCESS STATE — the era's best single
+move: S = the PREDICTIVE EQUIVALENCE CLASS of the past
+(h ~ h' iff every allowed future intervention gives the
+same distribution over every future record-and-geometry
+observation).  The ontology fork becomes a COMPRESSION
+MEASUREMENT: R,G-sufficient / finite-memory / rho-labels
+(CP-affine branch) / decomposition-splitting (ontic-psi
+branch, owing the steering theorem) / no finite
+compression (genuinely history-dependent).  The full
+history is vacuously sufficient — a real theory demands
+the local state stabilize rather than grow with the
+window.
+(4) LAW-SELECTED LOCAL ARITY: process arity = the number
+of distinct actors in the smallest support whose
+successor law cannot factor through any genuine
+intermediate division boundary — LOCAL and
+state-dependent, dissolving the global-a question; the
+five-case table engraved; the four-model fork's
+n-adaptive frame becomes the general case with the
+others as factorization outcomes.  ARITY-16's
+reading-dependence supports; three is not presently a
+law of ISP.
+(5) TWO-FUNDAMENTAL / THREE-CONTEXT (the connection-vs-
+curvature analogy) as the candidate interpretation —
+consistent with sealed SCOUT-PAIR's third-actor
+requirement.
+(6) THE 13 RESTRICTIONS adopted as the JS charter's
+requirement set (complete-outcome normalization = E-34.4;
+relabeling covariance; ARENA NATURALITY; input-relative
+locality; construction-order gauge; PHYSICAL
+factorization — a Kraus decomposition or inserted clock
+slice is NOT a physical subdivision; predictive-state
+minimality; operational CP + no-signalling per the
+causality addendum; record permanence w/ isometric
+dilation; GEOMETRY CONSISTENCY G_order/count =
+G_composition — the Double Weld's strongest target, v13
+gravity prospectus cited; transport per the v13 HA
+lesson; UNIVERSAL BACKREACTION as the regional law's
+response to geometric deformation, species-independent;
+empirical regression — the 27-cell walk recoverable as a
+fixed-background representation, its incompatible record
+update NOT frozen in).  The scholarly precedents
+(Quantum Causal Histories' acknowledged fixed-causal-set
+gap = exactly this problem; Rideout-Sorkin's lessons —
+birth order as gauge, a measure on histories, Bell
+causality NOT importable; Oeckl's general boundaries;
+dynamic-graph unitarity without the global clock) enter
+the pin as context anchors.
+
+THE THREE ORCHESTRATOR CAVEATS (frozen into the pin):
+(C1) ISP has NO intervention semantics (SCOUT-PAIR:
+INTERVENTION-SEMANTICS-UNBUILT) — the predictive
+equivalence runs PASSIVE-FIRST (future observations at
+declared preparations) with the intervention extension
+REGISTERED, never smuggled.  (C2) "stabilizes" is frozen
+before measurement: the class count at window k over a
+declared k-range, with the stabilization predicate exact
+and pre-registered.  (C3) THE NATURALITY TENSION, named:
+the delivered walk is ANCHORED to its start state
+(SCOUT-K sealed) and therefore VIOLATES arena naturality
+— consistent with restriction 13's demand that the walk
+be recovered as a representation, not imported as law;
+the tension is a result to exhibit, not a defect to
+hide.
+
+THE PLAN CHANGE (executed): the ECC three-maps
+decomposition (event selection / seam completion /
+quantum evolution) is DEMOTED TO DIAGNOSTICS — the
+frozen instruction now reads: solve for one joint
+complete-successor law; a decomposition is admissible
+only if DERIVED from that law, produces the same
+complete successor in every allowed ordering, and
+introduces no intermediate boundary that is not a
+genuine division event.
+
+THE JS UNIT (JOINT-SUCCESSOR) PINNED
+(v15/note-js-pin.md, digest in commit) covering the
+review's steps 1-5 (boundary/state definitions +
+predictive-equivalence compression at the committed
+arena; the pair seed on UNLABELED 2/3/4-actor motifs —
+not the nine-actor chart first; the variable carrier
+with direct-sum outputs; the disjoint diamond AB/CD
+order-gauge test; THE OVERLAP-FACTORIZATION TEST AB/BC —
+the first honest experiment deciding pair-native vs
+triple-native vs adaptive arity); steps 6-8 (geometry
+weld, quantum/composite gate incl. the HJW protocol,
+scaling gate) REGISTERED as phase two.  Launched this
+entry.  DC proper remains parked; JS is its foundational
+precursor.
+
