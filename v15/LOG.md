@@ -1758,3 +1758,112 @@ seal-window probes, CLI hostility.
 ECC repair runs in parallel; adjudication of ARITY-16 on
 its third seat.
 
+## 2026-08-16 — USER RULING ON THE ECC AFTERMATH (BINDING): BRIDGE-AS-STANDALONE-UNIT DENIED; A SMALL PRE-REGISTERED SCOUT ORDERED BEFORE ANY DC PIN; THE ORCHESTRATOR'S FOUR INTERPRETIVE FRAMINGS CORRECTED ON THE RECORD (v15 LEDGER #52)
+
+The user reviewed the orchestrator's interpretive answer
+on the ECC no-go and ruled: the central diagnosis
+(a BRIDGE died, not either parent layer; Mp=3q cannot
+hold at the committed state because qmax=4/9>1/3) is
+exact — but the Delta-B, conditioning, Barandes and
+Einstein framings moved too fast from interesting-route
+to probable-explanation.  THE CORRECTIONS, engraved:
+
+(1) THE 1/3 CEILING IS NOT A GENERIC CLASSICAL BOUND —
+(4/9,4/9,1/9) is a perfectly classical distribution; the
+ceiling exists only because outcomes are three-cell
+hyperedges whose normalized inclusion marginals must
+reproduce q.  Delta-B depends on a temporal
+factorization/cut; ECC's obstruction depends only on the
+final q and the incidence matrix; the same q written as
+I*U has Delta-B=0 with the obstruction unchanged.
+COUNTERCONTROLS: a basis-state permutation gives qmax=1
+(gross ceiling violation, zero interference); F3,F3
+carries nonzero Delta-B with uniform intermediate Born
+vector at the cap.  v12's own note
+(note-w1p-three-class.md:344) warns Delta-B is NOT a
+divisibility measure.  And 1/9 is the normalized
+threshold excess, not the LP/Farkas gaps 4|4|3|7/3.  The
+identification is a KILLABLE CONJECTURE, nothing more.
+(2) CONDITIONING DOES NOT AUTOMATICALLY EVADE THE
+THEOREM: any sector-conditional mixed back into one
+global p(e) whose occupancy marginal must equal 3q
+restores the ceiling unchanged.  Escape requires
+CHANGING THE BRIDGE (e.g. trigger-cell semantics
+P(c,e)=q(c)K(e|c)) — and then the other two written
+cells' statistics must be faced, not waved at.  An
+arbitrary K is ECC's already-disclosed vacuous free
+two-stage; physics requires locality, equivariance,
+record-update consistency, ideally uniqueness.  D44/D45's
+sector conditional is precedent for a DIFFERENT OBJECT
+(horizon-stable conditional between completion sectors at
+a fixture), not for lifting cell weights to triple
+events.
+(3) A HISTORY LAW ALONE DOES NOT EVADE ECC: any ordinary
+positive history law pushes forward to an event
+distribution p(e) and the ceiling returns.  Escape
+requires one of four SUBSTANTIVE alterations: no
+instantaneous triple-event variable; Born weights as
+endpoints not occupancy; a non-additive history measure;
+record-writing only at selected division events.  AND THE
+ORCHESTRATOR'S BARANDES DESCRIPTION WAS INACCURATE: his
+framework retains ordinary probability, trajectories
+through definite configurations and single-time
+distributions — what is sparse is the set of allowed
+CONDITIONING TIMES (see arXiv:2507.21192 and
+v12/note-w5-barandes-recast.md:120).  ECC tests a
+CROSS-GRAIN marginal (cells vs actor-events), not a
+Chapman-Kolmogorov temporal factorization, so
+"wrong-intermediate-marginal" is NOT demonstrated.  The
+genuinely Barandes-inspired construction would be a
+universal configuration space (G,R,F,event data,...) with
+ordinary transition probabilities from division events —
+a NEW construction, not a reading.
+(4) EVIDENTIAL DEFLATIONS: the 18-row psi agreement is
+CONSISTENT WITH the representational view, not
+establishing it (the three faces share one Born accessor
+over a one-step window by construction); seam blindness
+does not imply bookkeeping (an unobserved persistent
+variable could be ontic; multi-step must decide); and
+"EPR measured Einstein's hope true" is too strong — the
+unit's primary verdict was criterion-inapplicability at
+the record's own localization, with record-completeness
+true BY CONSTRUCTION for the censused catalogue
+(v14/paper-38-epr.md:275), not completeness of physical
+reality simpliciter.
+
+THE ORDERS: (a) NO standalone BRIDGE unit.  (b) A SMALL
+PRE-REGISTERED SCOUT before any DC pin — three charges:
+S1 prove the pushforward-ceiling theorem or exhibit the
+exact breaking assumption; S2 formulate K(e|c,G,R) under
+locality/equivariance/full record-update consistency and
+test for non-vacuous/unique survivors; S3 attempt the
+Delta-B identification ONLY under four gate conditions
+(full dual certificate mapped; cut-invariance;
+permutation+Fourier controls; 156-row feasibility
+prediction) — else KILLED on the record.  (c) Fold
+whichever route survives into DYNAMICS-CLOSURE.  (d) DC'S
+FIRST QUESTION, engraved: WHAT IS THE PROBABILITY SAMPLE
+SPACE — cells, triple-events, or complete successor
+configurations?  Until fixed, conditioning/history/
+interference can each evade the no-go by quietly changing
+what the probabilities refer to.  The ECC seal HOLD
+(#user, this date) REMAINS: repair+battery finish, then
+the unit parks unsealed.
+
+
+## 2026-08-16 — SCOUT-BRIDGE PINNED AND LAUNCHED (v15 LEDGER #53)
+
+Pin frozen v15/note-scout-pin.md (c57a0afffd58) per the #52 orders:
+S0 the sample-space spine (every claim declares CELLS /
+TRIPLE-EVENTS / COMPLETE-SUCCESSOR-CONFIGURATIONS); S1
+the pushforward-ceiling theorem + the four-escape formal
+menu; S2 the kernel K(e|c,G,R) under equivariance/
+locality/record-update-consistency with the three-arm
+declared fork, tested against the vacuous-free-two-stage
+null; S3 the Delta-B identification behind its four gate
+conditions with both countercontrols, else KILLED on the
+record.  Review plan: orchestrator battery + ONE hostile
+verifier seat (the smallness is the user's order).
+Construction worker launched this entry.  ECC seal HOLD
+unchanged; DC pin remains parked on this scout + the
+user's fold ruling.
