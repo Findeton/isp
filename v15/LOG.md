@@ -3907,3 +3907,67 @@ the operational qualification gated.  Zero false numbers
 remain.  FOUR SCOUTS SEALED (BRIDGE #79, K #94, PAIR
 #96, PSI here); SCOUT-T in battery; ARITY-16 at its core
 battery.
+
+## 2026-08-17 — THE EIGHTEENTH REVIEW ADOPTED: THE CLOCKED-REFUSAL CLAIM NARROWED ON THE RECORD; THE FOUR-MODEL FORK ENGRAVED AS THE LIVE SUCCESSOR SPACE; THREE SEALED-PAIR ERRATUM-CANDIDATES REGISTERED; SCOUT-T CORRECTIONS ROUTED MID-BATTERY (v15 LEDGER #98)
+
+THE STANDING SYNTHESIS (adopted): the evidence favors
+pair-relations as the elementary recorded facts; it does
+NOT establish three-actor events as fundamental; the
+missing object is the JOINT SUCCESSOR LAW (relations,
+geometry, process state) -> (new relations, new
+geometry, new process state).  SCOUT-T diagnostic
+adopted: the walk evolves on cell-hit history, the event
+layer on triple footprints — the kernel was asked to
+reconcile two INCOMPATIBLE state-update rules, which no
+probability kernel should be expected to do.
+
+THE NARROWING, on the record (a clarification of a
+sealed unit prose, seal NOT reopened — the verdict words
+were family-scoped per #87 and every number stands):
+SCOUT-PAIR clocked test replaced one triple transition
+with THREE COMPLETE COPIES OF THE EXISTING WALK STEP —
+its refusal establishes ONLY that three full old
+transitions are not one old transition.  The sentence
+the process clock refuses pair-sequencing OVERSTATES:
+pair-native laws with different substep generators,
+fractional evolution, simultaneous compatible pair
+changes, or continuous local generation were NOT tested.
+All future citations (the orchestrator own summaries
+included) carry the narrow form.
+
+THE FOUR-MODEL FORK, the live successor space (compared
+by the SAME complete-successor observable, never by one
+model event kernel compensating another model state
+evolution): (1) PAIR-NATIVE (one pair changes;
+geometry/state backreact locally); (2) JOINT REWRITE
+over compatible collections (the field analogue); (3)
+TRIPLE-NATIVE; (4) N-ADAPTIVE (effective arity a
+function of the local relational situation).
+
+REGISTERED ERRATUM-CANDIDATES on sealed SCOUT-PAIR (a
+user-optional erratum pass; binding on citations now):
+(a) the transport values 1/9 and 4/9 are SQUARED
+FROBENIUS NORMS of operator defects, not scalar defect
+values — the qualification carried everywhere; (b) the
+causal-layer/concurrency reading of the disjoint
+both-zero class is PREMATURE (both products simply
+vanish at the fixed-G component reading; causal
+separation undefined); (c) the simplex helper returns
+feasible:false on underdetermined systems without
+solving the remaining nonnegative feasibility problem
+(scoutpair_exact.py:1297 region) — THE SEVEN PUBLISHED
+CASES UNAFFECTED (each carries a verifier-verified
+linear-inconsistency certificate) but successors could
+be misclassified; the helper hazard registered
+(UNKNOWN/BLOCKED or complete the LP + a feasible
+underdetermined control).
+
+SCOUT-T: the three P1 fixes (receipt-wide hex inventory;
+the numeral self-whitelist — the #93 class; totality),
+the two claim narrowings, and the four-model successor
+section ROUTED BY CONFIRMED SEND mid-battery; it folds
+and re-runs.  The no-signalling obligation reaffirmed
+(sensitivity alone does not make psi ontic; the
+causality addendum v2 stands).  Status corrections to
+the review snapshot: PAIR sealed #96 and PSI sealed #97
+after its reading.
