@@ -4198,3 +4198,42 @@ engraved: the right research object is found; the state
 and the subdivisions get their meaning FROM the law, and
 the machinery must not pretend otherwise.
 
+## 2026-08-17 — THE TWENTY-FIRST REVIEW ADOPTED: THE PAIR-SEED BIAS REPAIRED (INDEPENDENT L2/L3/L4 FAMILIES — TRIPLE IRREDUCIBILITY MUST BE A POSITIVE RESULT); PHASE-ONE MINIMAL GEOMETRY; THE FIXED-POINT LOOP MADE EXACT; S AND RHO KEPT DISTINCT; THE PLAN ORDER SET (ECC → JS → DC → EXCITATION); SCOUT-T'S FILESYSTEM STATE FLAGGED (v15 LEDGER #103)
+
+JS ADDENDUM 2 frozen (note-js-pin-addendum-2.md, digest
+in commit; routed): (1) the S5 pair-seed bias repaired —
+L2/L3/L4 constructed independently, L3 tested for
+closure-of-L2 membership / compatible simultaneous pair
+representation / genuinely-outside, so triple
+irreducibility is a POSITIVE certificate-backed result,
+never the residue of pair failure; (2) phase-one minimal
+geometry (finite structural grammar, G'-validity gates,
+a minimal order/composition consistency gate,
+input-relative causal support) — without it every arity
+verdict is LABELLED KINEMATIC-AND-PROVISIONAL; (3) the
+fixed-point loop specified exactly (family, operator,
+enumerate-vs-select, cycle/non-convergence words,
+relabelling identification, termination in the ansatz;
+compression does not select truth — gated); (4) the
+S-rho bridge declared explicitly with redundancy tests
+(E-34 applied to the framework's own central symbol);
+(5) naturality = isomorphism class of (R,G,S) boundary
+data; S4 separation defined causally, instruments
+compared up to boundary isomorphism + transport.  THE
+PLAN ORDER fixed: ECC (types/compat/no-gos) → JS (local
+laws) → DC (multi-region closure) → EXCITATION.
+
+SCOUT-T: the reviewer confirms the four audit repairs
+correct (mutants rewired to solved grains; sample gates
+validate against the solver) and all 35 falsifiers die
+on rerun — but the OUTPUT AND RECEIPT ARE ABSENT from
+the working tree (they disappeared during concurrent
+battery runs) while the note claims a rerun battery: NOT
+SEALABLE in this state.  Routed to the worker: the final
+state must leave all four artifacts present; the note's
+battery claims must match the final filesystem; one
+ISOLATED final delivery after all competing legs stop,
+then the hostile verifier.  The numerical verdict stays
+plausible-and-unchanged; the unit stays
+candidate-uncommitted.
+
