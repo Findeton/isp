@@ -1,0 +1,58 @@
+SCOUT-BRIDGE delivery transcript
+pin c57a0afffd58 + addendum 2aa72e566cba; unit note v15/note-scout-bridge.md
+object under test (the note): sha256-12 34f10a6fd494
+instrument source: sha256-12 edb60bccd22e
+
+GATE G-SRC-CLEAN        PASS  the instrument's own syntax tree carries no float literal, no builtin hash call, and no import outside the declared whitelist
+GATE G-PIN-DIGESTS      PASS  the two frozen pins and the two delivered ECC artifacts are read at their pinned digests and no other bytes; pinned reads that the live tree no longer carries resolve through the byte-verified delivered snapshots
+GATE G-ANCHORS          PASS  every declared source anchor is located verbatim (whitespace-collapsed) in its file
+GATE G-ECC-CONSUME      PASS  the delivered-candidate ECC values consumed by this scout are parsed from the sealed-digest receipt, not typed
+GATE G-ARENA            PASS  the committed chart rebuilt from constructors: 27 cells in bijection with the linked pairs, 27 triangles, 84 triples, writer census (0,3)(2,54)(3,27), 36 admissible rounds
+GATE G-CENSUS-REPRO     PASS  the complete 156-row feasibility census is recomputed by an independent solver and every row's word equals the delivered receipt's word, 156 of 156
+GATE G-CEILING          PASS  the ceiling theorem's premises hold (0/1 incidence, no event writes more than 3 cells, unit-mass targets) and no feasible row exceeds one third, at 156 of 156 rows exceptions 0
+GATE G-COMMITTED-Q      PASS  the committed target is recomputed from the walk: weights (1/9, 4/9, 4/9) on the three cells of the start site, qmax 4/9 above the ceiling
+GATE G-COMMITTED-ROW    PASS  the committed row is infeasible at all four committed classes with exact phase-one gaps 4, 4, 3, 7/3 equal to the delivered receipt's gaps
+GATE G-FARKAS           PASS  each committed-class infeasibility carries a verified exact Farkas certificate: y.A <= 0 columnwise, y <= 1, and y.b equals the gap
+GATE G-LP-CONTROLS      PASS  both control arms fire through the real solver: the known mixture is feasible, the single-cell target is infeasible with the ceiling witness, matching the delivered controls
+GATE G-PUSHFORWARD      PASS  the pushforward of the constructed history law is a probability over triple events with inclusion marginals bounded by total mass; the theorem instance verifies
+GATE G-ESCAPE-A         PASS  escape (a) exhibited by construction: a normalized law over complete successors carries the committed q as its trigger readout while its event-law inclusion marginal is NOT 3q -- the bridge is abandoned, nothing is violated
+GATE G-ESCAPE-B         PASS  escape (b) exhibited by construction: endpoint Born statistics have unit column sums and express the committed target exactly
+GATE G-ESCAPE-C         PASS  escape (c) is class-split: the committed target is outside the affine span at the block and both line classes (signed measures do not help), and inside it at the full triple class with a verified signed witness
+GATE G-ESCAPE-D         PASS  escape (d) in its minimal form is refused by scale invariance: the selected sub-ensemble system is infeasible at every tested selection mass; cell-selective writing is escape (b) under another name
+GATE G-GAMMA            PASS  the relabelling group is the affine stabilizer of the declared direction set: order 108 (12 linear x 9 translations), and the block class is closed under it
+GATE G-EQUIVARIANCE     PASS  equivariance is measured, not assumed: cells transitive, blocks split 9 lines + 18 non-lines, incident pairs split 27 + 54, the cell stabilizer (order 4) swaps the two non-line blocks, and the equivariant kernel family has dimension exactly 1 (the line weight alpha)
+GATE G-LOCALITY         PASS  locality holds structurally at the block class: every cell an incident event writes shares an actor with the trigger cell, so the kernel's support lies inside the declared neighborhood
+GATE G-ARM-A            PASS  arm one (trigger-cell-only): normalization alone leaves the 54-dimensional vacuous null (ECC's disclosed free two-stage); equivariance cuts it to the one-parameter line family -- strictly stronger than vacuous, shown by dimension
+GATE G-ARM-B            PASS  arm two (all-write-one-measured) is EMPTY at the committed row with exact gap 6 and a verified Farkas certificate: demanding the written-cell marginal reproduce 3q re-imports the pushforward bridge, and S1's theorem kills it
+GATE G-ARM-C-WINDOW2    PASS  arm three at the two-step window is VACUOUS: the step-two Born vector is byte-identical across the initial record, all 3 cell-hit increments and all 7 incident triple-writes (11 variants); the mechanism is single-link site support
+GATE G-ARM-C-WINDOW3    PASS  arm three first bites at the three-step window: 729 agreement rows reduce to 25 distinct polynomials in the line weight; linear rows force alpha = -1, alpha = 0 and alpha = 1 simultaneously, so the equivariant family is EMPTY over the reals; 8 pure non-line first-step selections survive, extending to 288 pure kernels on the reached cells
+GATE G-OVERLAP          PASS  overlapping triples are compatible with exclusivity: the 27 block successors are pairwise distinct records, 351 pairs, 0 collisions
+GATE G-S3-SILENCE       PASS  the silence lemma verifies at 4 probed records both sides: B(G.D) = B(G) = B(D.G) entrywise, so the one-step Delta-B datum is identically zero across all 156 census rows
+GATE G-S3-COND1         PASS  S3 pre-condition (1) fails to build: identical zero datum, different certificate targets -- the identification map is not a function of the Delta-B datum
+GATE G-S3-COND2         PASS  S3 pre-condition (2): the cut sweep is built and the invariant value is zero at every member including the degenerate cut, while the obstruction stands
+GATE G-S3-COND3         PASS  both countercontrols run and both kill: the basis permutation violates the ceiling grossly (qmax 1) with Delta-B exactly zero at every cut, and F3,F3 carries 81 nonzero Delta-B entries with a uniform intermediate at the cap (its rows even fail structurally, without any ceiling witness)
+GATE G-S3-COND4         PASS  S3 pre-condition (4) is built and scored: the declared predictor scores 20 of 156 (it misses all 136 infeasible rows, because the datum is identically zero while feasibility varies) -- the prediction carries no signal
+GATE G-S3-EXEMPLAR      PASS  the two-step step-cut sweep at three probed records carries Delta-B zero everywhere on the committed walk family
+GATE G-S4-LINEARITY     PASS  the delivered record-a-cell-leave-the-state-uncollapsed rule fails linearity on mixtures with an exact witness, and the deviation obeys the closed form -(1/4)(w_c(rho0)-w_c(rho1))(P0-P1) entry by entry
+GATE G-S4-JOINT         PASS  the joint-successor requirement is formalized and measured against the delivered rule: record leg per outcome, state leg byte-identical across the three outcomes, weights summing to one
+GATE G-S4-RHO           PASS  the rho'_e successor constraints are stated as constraints with the delivered measurements consumed: 0 of 4 candidates evolve across creation and all 36 cross pairs are directionless
+GATE G-PRIMITIVE        PASS  the primitive-selection criteria are measured, and the selection answer is rendered from them
+GATE G-SAMPLE-SPACE     PASS  every probability-typed measurement row in this receipt declares its sample space from the three declared names, 182 declarations; no claim changes sample space silently
+
+VERDICTS
+  SCOUT-PUSHFORWARD-ESCAPE-EXHIBITED-AT-NO-INSTANTANEOUS-TRIPLE-EVENT-VARIABLE<CEILING-THEOREM-PROVED-AT-THE-INCLUSION-BRIDGE-156-OF-156-EXCEPTIONS-0; ESCAPE-A-EXHIBITED; ESCAPE-B-EXHIBITED; ESCAPE-C-CLASS-SPLIT-E-TRIPLE-ONLY; ESCAPE-D-INHERITED-BY-SCALE-INVARIANCE>
+  SCOUT-KERNEL-EMPTY-AT-EQUIVARIANT-RECORD-CONSISTENT<TRIGGER-ONLY-DIM-54-EQUIVARIANT-DIM-1; ALL-WRITE-ONE-MEASURED-EMPTY-GAP-6; RECORD-CONSISTENCY-VACUOUS-AT-TWO-STEPS-FIRST-BITES-AT-THREE-STEPS; PURE-NON-LINE-SURVIVORS-8-EXTENDING-TO-288; EQUIVARIANT-LINE-EMPTY>
+  SCOUT-DELTA-B-IDENTIFICATION-KILLED-AT-CONDITION-1-THE-DATUM-DOES-NOT-DETERMINE-THE-CERTIFICATE<DATUM-ZERO-AT-ALL-156-ROWS; CUTS-INCLUDE-THE-DEGENERATE-I.U; BOTH-COUNTERCONTROLS-KILL; PREDICTION-SCORES-20-OF-156>
+  SCOUT-RECORD-UPDATE-NOT-A-LINEAR-MAP-ON-MIXTURES<CLOSED-FORM-WITNESS-EXACT; JOINT-SUCCESSOR-FORM-SATISFIED-WITH-AN-OUTCOME-INDEPENDENT-STATE-LEG; RHO-TRANSPORT-CONSTRAINTS-STATED-DELIVERED-CANDIDATES-0-OF-4>
+  SCOUT-PRIMITIVE-SELECTION-TRIPLE-SURVIVES-THE-TYPE-TESTS-AND-COSTS-THE-KERNEL-CELL-HIT-SURVIVES-AS-THE-DELIVERED-WALK
+
+KEY CLAIMS
+  committed q: (1/9, 4/9, 4/9) on cells 0,1,2; qmax 4/9
+  committed gaps: E-BLOCK 4, E-LINE-DECLARED 4, E-LINE-COSET 3, E-TRIPLE 7/3 (receipt-equal, Farkas-verified)
+  census reproduction: 156 of 156 row words equal the delivered receipt
+  arm two gap: 6; arm three: vacuous at two steps, first bites at three steps
+  equivariant kernel family: dim 1; empty under record consistency; pure survivors 8 -> 288
+  Delta-B datum: zero at every cut of every row; prediction scores 20 of 156
+  S4: nonlinear on mixtures, exact witness; state leg outcome-independent
+  falsifiers: 27 registered; gates: 35
+

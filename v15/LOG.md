@@ -2087,3 +2087,117 @@ declared 4000-round windows.  These enter the repair as
 ordered strengthenings (cite-the-seat) or stay
 seat-carried — adjudication's call.
 
+## 2026-08-17 — SCOUT-BRIDGE DELIVERED, COMMITTED AS-IS: THE Delta-B CONJECTURE KILLED AT CONDITION 1 (BOTH COUNTERCONTROLS FIRING); NO EQUIVARIANT RECORD-CONSISTENT KERNEL EXISTS — THE TRIGGER-CELL BRIDGE DIES BY OVERDETERMINATION; THE COMPLETE-SUCCESSOR ESCAPE EXHIBITED; PAPER-20'S RECORD UPDATE IS NOT LINEAR ON MIXTURES (v15 LEDGER #58)
+
+Construction complete under pin c57a0afffd58 + addendum
+2aa72e566cba.  Six files committed as delivered: the four
+deliverables (note 34f10a6fd494 / code edb60bccd22e /
+output 269834ffe87f / receipt 12bdb7a58909) plus two
+DISCLOSED input snapshots (scout_ecc_paper46_delivered.md
+61d330d13fe0, scout_ecc_receipt_delivered.json
+ea24c1fc2340 — byte-equal to ECC's committed-as-is
+digests; taken because the ECC repair worker holds the
+live tree mid-flight; the receipt records LIVE/SNAPSHOT
+per read; nothing of the repair's flight was read).
+CANDIDATE READINGS until the single verifier seat + the
+user read it.  35 gates, 27 falsifiers, battery green
+(byte x2 deleted-artifact alien-CWD at 4 seeds; 27/27
+selftest deaths with digest move proofs; argv rc 2; the
+8 note-corruption probes incl. all four newest species
+die).
+
+THE ROUTE x SAMPLE-SPACE x VERDICT TABLE (8 routes, each
+with its purchased assumption — the S0 spine at 182
+gated per-row declarations):
+R1 Mp=3q DEAD-BY-TYPE-ERROR (inclusion probability 4/3).
+R2 CELL-HIT primitive SOUND-AS-BOOKKEEPING (q sums to 1;
+cannot phrase the grammar object or growth, menu-cross
+0/36).  R3 TRIPLE-EVENT + kernel
+SOUND-IF-A-KERNEL-IS-DECLARED — but see S2.  R4
+COMPLETE-SUCCESSOR LAW (escape a, the Omega form)
+EXHIBITED: sum 1, trigger readout = q byte-exact,
+inclusion marginal != 3q, bridge ABANDONED not repaired.
+R5 endpoint semantics EXHIBITED (ceiling vacuous).  R6
+non-additive measure CLASS-SPLIT (signed witness at
+E-TRIPLE only, min entry -2/3; refused at the affine
+level at the other three classes).  R7 selective writing
+INHERITED (scale invariance returns the same LP — buys
+nothing in minimal form).  R8 Delta-B KILLED (below).
+
+S1: SCOUT-PUSHFORWARD-ESCAPE-EXHIBITED-AT-NO-
+INSTANTANEOUS-TRIPLE-EVENT-VARIABLE.  The theorem proved
+exactly; the committed row re-verified with EXACT FARKAS
+CERTIFICATES (gaps 4|4|3|7/3, y.A<=0, y<=1, y.b=gap);
+ECC'S FULL 156-ROW CENSUS INDEPENDENTLY RECOMPUTED
+156/156 WORD-IDENTICAL — the LP now has a FOURTH
+independent derivation route.
+
+S2: SCOUT-KERNEL-EMPTY-AT-EQUIVARIANT-RECORD-CONSISTENT.
+Relabelling group order 108 measured; arm 1
+(trigger-only) equivariance cuts dim 54 to DIM 1 (the
+line weight alpha) — strictly stronger than the vacuous
+null; arm 2 (all-write-one-measured) EMPTY at GAP 6,
+Farkas-verified — THE KERNEL BRIDGE CANNOT RESCUE Mp=3q;
+arm 3 (full-statistics) vacuous at two steps (mechanism
+exact: single-link site supports make count phases
+global) and FIRST BITES AT THREE: 729 rows, 25 distinct
+polynomials, the linear rows force alpha = -1, 0 and +1
+SIMULTANEOUSLY — the equivariant line is EMPTY over R;
+the exhaustive pure-kernel census leaves 288 all-non-line
+survivors, NONE equivariant.  THE FOUR CRITERIA JOINTLY
+OVERDETERMINE K TO DEATH: locality + equivariance +
+record consistency + walk preservation admit NO kernel at
+this arena.  The user's suspicion ("an arbitrary K merely
+hides a new free law") lands as a theorem-grade refusal.
+
+S3: THE Delta-B IDENTIFICATION ATTEMPTED AND
+KILLED-AT-CONDITION-1, overdetermined kill: the one-step
+Delta-B datum is IDENTICALLY ZERO at every allowed cut of
+every census row (the silence lemma: diagonal factors
+never move entrywise squared moduli) while the
+certificates vary — no function of the datum can target
+them; cut-invariance holds only because zero (I.U
+included); BOTH COUNTERCONTROLS FIRE (basis permutation:
+excess without Delta-B; F3,F3: 81 nonzero Delta-B entries
+with the uniform intermediate at the cap, failing
+structurally without any ceiling witness); the declared
+predictor scores 20/156.  The orchestrator's #52
+conjecture is DEAD, killed by the user's own four gate
+conditions.  The language wall held (no
+probably/likely/explains; machine-scanned).
+
+S4: SCOUT-RECORD-UPDATE-NOT-A-LINEAR-MAP-ON-MIXTURES.
+Paper-20's record-Born-selected-cell-while-uncollapsed
+rule (:633 anchored): linearity FAILS on mixtures with an
+exact witness obeying the closed form
+-(1/4)(w_c(rho0)-w_c(rho1))(P0-P1), verified entry by
+entry over Q(omega).  What it IS: a branch-indexed family
+of linear weight functionals x one outcome-independent
+unitary conjugation — QUADRATIC in the state, NOT a CPTP
+instrument; per pure branch consistent bookkeeping; the
+linear completion is exactly the selective reading
+paper-20 declared not-run.  The joint-successor
+requirement: SATISFIES-THE-FORM-WITH-AN-OUTCOME-
+INDEPENDENT-STATE-LEG.  rho'_e constraints C1-C5 stated;
+0/4 delivered candidates evolve across creation
+(consumed from the pinned receipt).
+
+THE PRIMITIVE-SELECTION ANSWER (the deliverable
+question): TRIPLE-EVENT survives the type tests and
+costs the kernel declaration plus the owed transport law;
+CELL-HIT survives as the delivered walk but cannot phrase
+growth.  THE PRICED SURPRISE: the triple primitive is NOT
+a re-description — walk preservation at three steps
+holds for exactly 288 pure non-line kernels and for NO
+equivariant kernel, so record consistency and relabelling
+symmetry cannot both be kept by ANY kernel bridge at this
+arena.  Consistent with the user's recommendation, and it
+prices it.  One falsifier repaired mid-battery with the
+mechanism owned (MUT-BLIND survived because the blindness
+mechanism ATE the corruption — the gate's own claim;
+repaired to corrupt the state; 27/27).  Six deviations
+disclosed in-note.  Orchestrator battery next; the single
+verifier seat on green; DC remains PARKED on the user's
+rulings (fold decision + sample-space selection + the ECC
+hold).
+
