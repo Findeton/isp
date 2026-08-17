@@ -37,7 +37,23 @@
    "status": "MISSING"
   },
   {
+   "item": "common boundary types and geometry-sector pairings",
+   "status": "MISSING"
+  },
+  {
+   "item": "operator completeness at reusable divisions",
+   "status": "MISSING"
+  },
+  {
    "item": "genuine division boundaries",
+   "status": "MISSING"
+  },
+  {
+   "item": "compatible record-partition actualization",
+   "status": "MISSING"
+  },
+  {
+   "item": "nonfactorizing calibrated backreaction",
    "status": "MISSING"
   },
   {
@@ -66,7 +82,8 @@
   }
  ],
  "claims": {
-  "ARITY": "A two-actor projective instrument is viable; cycle ranks 0, 0, 1 make three actors the first simple-graph cycle, not the first event.",
+  "ARITY": "A two-actor projective instrument is viable; cycle ranks 0, 0, 1 make three actors the first simple-graph cycle but do not select minimum event support.",
+  "BRIDGE": "One exact partition has state-relative probabilities 9/25 and 16/25 with zero cross term, yet its operator sum is diag(1,4); one-state decoherence does not imply a reusable instrument.",
   "DEVIATION": "No QFT or GR comparison observable is typed in this unit; deviations remain open rather than absent.",
   "EXISTENCE": "A fixed-factor boundary instrument passes exact CP, trace, affinity, HJW and no-signalling checks across 6 branch maps, but its geometry labels are feed-forward equivalent.",
   "HAMILTONIAN": "The frozen transfer has 5 tested generator lifts with one image, while the unconditioned boundary output changes purity from 1 to 1/2.",
@@ -101,8 +118,13 @@
   },
   {
    "classification": "REFUSED",
-   "reason": "The L2 instrument is a counterexample and no universal arity law is derived.",
-   "topic": "three actors as minimum event arity"
+   "reason": "The L2 instrument is a counterexample at its typed scope; a future selected law's minimum support remains open.",
+   "topic": "minimum-three claim from the present boundary architecture"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "Pair and triple instruments show expressibility only; no coherent arbitrary-support extension theorem exists.",
+   "topic": "all-n interaction law"
   },
   {
    "classification": "FORCED",
@@ -133,6 +155,16 @@
    "classification": "PERMITTED",
    "reason": "The exact interference witness requires coherent alternatives before a record boundary, but does not select their amplitudes.",
    "topic": "complex whole-history representation"
+  },
+  {
+   "classification": "REFUSED",
+   "reason": "The exact bridge counterexample normalizes on one state while its operator sum is diag(1,4).",
+   "topic": "state-relative decoherence automatically yields an instrument"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "Selection of one successor is postulated; compatible stable record partitions and refinement consistency are missing.",
+   "topic": "objective actualization"
   },
   {
    "classification": "REFUSED",
@@ -203,6 +235,11 @@
    "classification": "OPEN",
    "reason": "There is no momentum, energy, continuum clock, or dispersion observable.",
    "topic": "modified dispersion"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "Discreteness alone supplies no preferred-frame theorem or comparison observable.",
+   "topic": "Lorentz violation"
   },
   {
    "classification": "OPEN",
@@ -321,199 +358,207 @@
    "row_digest": "ba63068bc5126e5a"
   },
   {
-   "evidence": "the output collar label and durable record copy the outcome on all 2 nominal branches",
-   "gate": "G-C1-BRANCH-MEMORY",
+   "evidence": "one state has exact 9/25 plus 16/25 decoherent normalization while the operator sum is diag(1,4), not identity",
+   "gate": "G-B9-STATE-DECOHERENCE-NOT-INSTRUMENT",
    "index": 14,
    "passed": true,
    "previous": "1437b6aff4ec14d3",
-   "row_digest": "cf830449d83ab14e"
+   "row_digest": "14dc85555dad1334"
+  },
+  {
+   "evidence": "the output collar label and durable record copy the outcome on all 2 nominal branches",
+   "gate": "G-C1-BRANCH-MEMORY",
+   "index": 15,
+   "passed": true,
+   "previous": "9df4915f39eeee5a",
+   "row_digest": "21273039884cf366"
   },
   {
    "evidence": "input bit plus retained record reconstruct every published geometry/collar label and its only later readout",
    "gate": "G-C2-FEEDFORWARD-EQUIVALENCE",
-   "index": 15,
+   "index": 16,
    "passed": true,
-   "previous": "273016ac38ea04fd",
-   "row_digest": "12a2a2cc8893796f"
+   "previous": "b91b956e67d3daaf",
+   "row_digest": "84482b8107413639"
   },
   {
    "evidence": "in this binary pointer alphabet the mean 1/2 is not a label, and the registered threshold rule violates affinity at 1 versus 1/2",
    "gate": "G-C3-BINARY-MEAN-CONTROL",
-   "index": 16,
+   "index": 17,
    "passed": true,
-   "previous": "6f71bcef771436c3",
-   "row_digest": "964d4f911e310f0e"
+   "previous": "544520b044864988",
+   "row_digest": "f7be8442a6a22c97"
   },
   {
    "evidence": "changing the input collar leaves the delivered successor exactly unchanged; no collar dynamics is instantiated",
    "gate": "G-C4-COLLAR-UNINSTANTIATED",
-   "index": 17,
+   "index": 18,
    "passed": true,
-   "previous": "5ce07c2b87cd4c9b",
-   "row_digest": "3b782c96c4acc64f"
+   "previous": "9924d976c84991ae",
+   "row_digest": "5327c378d20fd030"
   },
   {
    "evidence": "the two-actor projective instrument writes a pair-keyed nominal branch and durable outcome record",
    "gate": "G-D1-L2-INSTRUMENT",
-   "index": 18,
+   "index": 19,
    "passed": true,
-   "previous": "3b970ccf8f4fff52",
-   "row_digest": "65595a9c71ee7881"
+   "previous": "3eb12cc735ea325a",
+   "row_digest": "27d8eb4341d4e8c4"
   },
   {
    "evidence": "tensoring an irrelevant third actor and tracing it back reproduces every local branch exactly",
    "gate": "G-D2-IDLE-SPECTATOR",
-   "index": 19,
+   "index": 20,
    "passed": true,
-   "previous": "497314ce865cfeac",
-   "row_digest": "797066435fc1763b"
+   "previous": "5785db3fa0a4e297",
+   "row_digest": "5fc4180e6a9356dd"
   },
   {
    "evidence": "both orders agree on quantum blocks and every nominal payload field for all 4 disjoint branches",
    "gate": "G-D3-DISJOINT-DIAMOND",
-   "index": 20,
+   "index": 21,
    "passed": true,
-   "previous": "fb7384661f49dc3c",
-   "row_digest": "c7f5494bc908d6a9"
+   "previous": "38f3f257169c61a3",
+   "row_digest": "352e1b42e3da70b6"
   },
   {
    "evidence": "cycle ranks are 0, 0, 1; a three-edge oriented loop has gauge-invariant trace 0 and determinant 1",
    "gate": "G-D4-FIRST-LOOP",
-   "index": 21,
+   "index": 22,
    "passed": true,
-   "previous": "28f87a0eda709d58",
-   "row_digest": "fd2764badaeb6f14"
+   "previous": "2613ff74f457d5de",
+   "row_digest": "357a768313eea411"
   },
   {
    "evidence": "a valid L2 instrument and a valid joint three-support parity instrument coexist; no robust irreducibility claim is made",
    "gate": "G-D5-ARITY-NONSEQUITUR",
-   "index": 22,
+   "index": 23,
    "passed": true,
-   "previous": "9b3b01802664cf2e",
-   "row_digest": "55c2d1aa72a201c0"
+   "previous": "cfa32f7bad59e3c2",
+   "row_digest": "d4282eb420bf768a"
   },
   {
    "evidence": "with a declared unit clock, the frozen-sector integer phase generator reconstructs diag(1,i) exactly",
    "gate": "G-E1-FROZEN-RECOVERY",
-   "index": 23,
+   "index": 24,
    "passed": true,
-   "previous": "5e884613ef071b53",
-   "row_digest": "60020bb13a6bb4ae"
+   "previous": "e3b6e85650cd782b",
+   "row_digest": "e8aa0d6913cb8019"
   },
   {
    "evidence": "5 distinct registered generator lifts yield the identical one-step transfer operator",
    "gate": "G-E2-BRANCH-AMBIGUITY",
-   "index": 24,
+   "index": 25,
    "passed": true,
-   "previous": "9d94492361436e15",
-   "row_digest": "a12ac7f53c2935fa"
+   "previous": "d23a97d0c99510ee",
+   "row_digest": "e397d8c4c8414ca1"
   },
   {
    "evidence": "pure matter input has purity 1 while the unconditioned enlarged classical-quantum output has purity 1/2; a unitary dilation is possible but not selected",
    "gate": "G-E3-UNCONDITIONED-CHANNEL-NONUNITARY",
-   "index": 25,
+   "index": 26,
    "passed": true,
-   "previous": "829e1f5888579ea5",
-   "row_digest": "2c5b1ab392ec9d50"
+   "previous": "d469ac5eeb417368",
+   "row_digest": "283416413310fe3c"
   },
   {
    "evidence": "one four-site carrier admits an identity degeneracy and a shift with 4 exact one-dimensional phase modes; neither is a particle census",
    "gate": "G-F1-MODE-LAW-DEPENDENCE",
-   "index": 26,
+   "index": 27,
    "passed": true,
-   "previous": "3943480cc99f2581",
-   "row_digest": "06d0d01b4d1f15c4"
+   "previous": "3bf38d814376336e",
+   "row_digest": "d4e3a118e201d7ea"
   },
   {
    "evidence": "CPTP dephasing has channel translation ['0', '0', '0'] while CPTP reset has ['0', '0', '1']",
    "gate": "G-F2-AFFINE-SPLIT",
-   "index": 27,
+   "index": 28,
    "passed": true,
-   "previous": "ccab4531382b7a76",
-   "row_digest": "d162f4a5803a28ca"
+   "previous": "b9aa52402e7350fc",
+   "row_digest": "6a3a82dd9184d5a2"
   },
   {
    "evidence": "rival passes 9 of 9 boundary-instrument checks and yields record statistics {'0': '1', '1': '0'} versus {'0': '1/2', '1': '1/2'}",
    "gate": "G-F3-RIVAL-LAW",
-   "index": 28,
-   "passed": true,
-   "previous": "d3bb64aafe2fda13",
-   "row_digest": "6f45cf1437a75565"
-  },
-  {
-   "evidence": "all 28 consequence rows use exactly one of the five registered classification words",
-   "gate": "G-F4-CONSEQUENCE-VOCABULARY",
    "index": 29,
    "passed": true,
-   "previous": "dd151e6baad68e50",
-   "row_digest": "af0941ea453e67bf"
+   "previous": "6c8e37e1e1aa0e9b",
+   "row_digest": "4feb661a61227b6f"
+  },
+  {
+   "evidence": "all 32 consequence rows use exactly one of the five registered classification words",
+   "gate": "G-F4-CONSEQUENCE-VOCABULARY",
+   "index": 30,
+   "passed": true,
+   "previous": "07910ec14cc8486c",
+   "row_digest": "2a55781251524ee2"
   },
   {
    "evidence": "two independent exact core builds are byte-identical before rendering",
    "gate": "G-G2-DETERMINISM",
-   "index": 30,
+   "index": 31,
    "passed": true,
-   "previous": "4acca8e5082f9ace",
-   "row_digest": "91014deca7b08999"
+   "previous": "fa6bab468765af33",
+   "row_digest": "2ea6cc1e865f1a0f"
   },
   {
    "evidence": "plain and selftest parse; unknown syntax is rejected before construction",
    "gate": "G-G1-CLI",
-   "index": 31,
+   "index": 32,
    "passed": true,
-   "previous": "0a00f0e7e0446913",
-   "row_digest": "e88a48c34d9c3085"
+   "previous": "2a80d791d2eaf47a",
+   "row_digest": "ee04de2a89d14ae3"
   },
   {
    "evidence": "observed source-anchor corruption dies at its named gate and changes no artifact bytes",
    "gate": "G-G3-SELFTEST",
-   "index": 32,
-   "passed": true,
-   "previous": "1ed473410c5ead7d",
-   "row_digest": "21cd6180012361b4"
-  },
-  {
-   "evidence": "all 13 registered mutants move measured objects and die at their named gates",
-   "gate": "G-G4-MUTANTS-MOVE",
    "index": 33,
    "passed": true,
-   "previous": "5a6ce8db7d2a448b",
-   "row_digest": "3d667a42efb78401"
+   "previous": "c1cd0beab95f6ec9",
+   "row_digest": "c5bbb693269e957a"
+  },
+  {
+   "evidence": "all 17 registered mutants move measured objects and die at their named gates",
+   "gate": "G-G4-MUTANTS-MOVE",
+   "index": 34,
+   "passed": true,
+   "previous": "b35ef56b32da5e47",
+   "row_digest": "cfc3714531d54b0b"
   },
   {
    "evidence": "sole accessor read set equals all 13 frozen path/digest anchors",
    "gate": "G-G7-READ-SET",
-   "index": 34,
+   "index": 35,
    "passed": true,
-   "previous": "9377170682d90a48",
-   "row_digest": "367f1aca6558d0f4"
+   "previous": "c8fe4ea2d621efa8",
+   "row_digest": "95f705d290d3c9e3"
   },
   {
    "evidence": "foreign-CWD exact rebuild matches and all reads remain explicit; git is unused",
    "gate": "G-G8-PORTABILITY",
-   "index": 35,
-   "passed": true,
-   "previous": "8754038ae9b2d417",
-   "row_digest": "a306ed9307df3906"
-  },
-  {
-   "evidence": "two-way claim keys and exact strings agree; all 184 paper numeral occurrences carry line-level referent classes",
-   "gate": "G-G6-CLAIM-EQUALITY",
    "index": 36,
    "passed": true,
-   "previous": "38c002e0ffdee162",
-   "row_digest": "85ce03c054c9a6ff"
+   "previous": "9d392a135c387597",
+   "row_digest": "9afa2a9aece34102"
+  },
+  {
+   "evidence": "two-way claim keys and exact strings agree; all 202 paper numeral occurrences are receipt-sourced or explicitly typed non-data",
+   "gate": "G-G6-CLAIM-EQUALITY",
+   "index": 37,
+   "passed": true,
+   "previous": "626ef0fd7ea7d01b",
+   "row_digest": "ae216dbb83568520"
   },
   {
    "evidence": "clean seal passes; post-seal add and edit controls both die before promotion",
    "gate": "G-G5-TOTAL-SEAL",
-   "index": 37,
+   "index": 38,
    "passed": true,
-   "previous": "3a98da266dceb8fa",
-   "row_digest": "a6df1e895fc0b69d"
+   "previous": "8ed5dce167a9956e",
+   "row_digest": "0cc6cbb2aa64bb14"
   }
  ],
- "ledger_head": "0fa34c09d2105cf9",
+ "ledger_head": "ac6986b48c7ed0a8",
  "measurements": {
   "bell_after_division": [
    [
@@ -541,6 +586,23 @@
     "1/2"
    ]
   ],
+  "bell_classical_weight": "1/2",
+  "bridge_cross_term": "0",
+  "bridge_operator_sum": [
+   [
+    "1",
+    "0"
+   ],
+   [
+    "0",
+    "4"
+   ]
+  ],
+  "bridge_probabilities": [
+   "9/25",
+   "16/25"
+  ],
+  "bridge_total_probability": "1",
   "coherent_probability": "49/625",
   "complete_row_total": 4,
   "complete_rows": 4,
@@ -593,6 +655,10 @@
   "mixture_weight": "1/3",
   "nonlinear_control_x": "0",
   "nonlinear_control_z": "1",
+  "path_amplitudes": [
+   "9/25",
+   "-16/25"
+  ],
   "reachable_geometries": [
    0,
    1
@@ -619,6 +685,16 @@
    "0": "1/2",
    "1": "1/2"
   },
+  "rotation_matrix": [
+   [
+    "3/5",
+    "4/5"
+   ],
+   [
+    "-4/5",
+    "3/5"
+   ]
+  ],
   "shift_modes": [
    "1",
    "1i",
@@ -741,6 +817,48 @@
    "passed": true
   },
   {
+   "expected_gate": "G-B7-ENTANGLEMENT-BREAKING",
+   "move_proofs": [
+    {
+     "after": "0629b975beb2ccf4",
+     "before": "5f38dab018ea1e40",
+     "target": "EB_FALSE_SEPARABLE"
+    }
+   ],
+   "moved": true,
+   "mutant": "EB_FALSE_SEPARABLE",
+   "observed_gate": "G-B7-ENTANGLEMENT-BREAKING",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-B8-DIVISION-BOUNDARY",
+   "move_proofs": [
+    {
+     "after": "e3df55a45dd19ebc",
+     "before": "cbf416be1b166d3e",
+     "target": "DIVISION_CLASSICALIZE"
+    }
+   ],
+   "moved": true,
+   "mutant": "DIVISION_CLASSICALIZE",
+   "observed_gate": "G-B8-DIVISION-BOUNDARY",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-B9-STATE-DECOHERENCE-NOT-INSTRUMENT",
+   "move_proofs": [
+    {
+     "after": "4cab747021c2d4aa",
+     "before": "cc40d270f1fe3e66",
+     "target": "BRIDGE_COMPLETENESS_FAKE"
+    }
+   ],
+   "moved": true,
+   "mutant": "BRIDGE_COMPLETENESS_FAKE",
+   "observed_gate": "G-B9-STATE-DECOHERENCE-NOT-INSTRUMENT",
+   "passed": true
+  },
+  {
    "expected_gate": "G-C2-FEEDFORWARD-EQUIVALENCE",
    "move_proofs": [
     {
@@ -780,6 +898,20 @@
    "moved": true,
    "mutant": "SPECTATOR_COUPLE",
    "observed_gate": "G-D2-IDLE-SPECTATOR",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-D3-DISJOINT-DIAMOND",
+   "move_proofs": [
+    {
+     "after": "25640772d07a935e",
+     "before": "7cf139ad7b11c1ee",
+     "target": "DIAMOND_PAYLOAD_BREAK"
+    }
+   ],
+   "moved": true,
+   "mutant": "DIAMOND_PAYLOAD_BREAK",
+   "observed_gate": "G-D3-DISJOINT-DIAMOND",
    "passed": true
   },
   {
@@ -825,1298 +957,3216 @@
    "passed": true
   }
  ],
- "output_sha256": "396f931ade115a2c6cf644bcb670fa2160c6696dc2925426451bf3d8b05901ff",
+ "output_sha256": "1d54adebf950e3486669f2dedb770737e260048f74ebf1c41e8fe55e63af575d",
  "paper_numeral_inventory": [
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "category": "RECEIPT-SOURCED-NUMERIC",
    "line": 28,
    "occurrence": 1,
    "referent": "`49/625` before an intermediate record",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.coherent_probability"
+   ],
    "token": "49/625"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "category": "RECEIPT-SOURCED-NUMERIC",
    "line": 29,
    "occurrence": 2,
    "referent": "and `337/625` after one is inserted.  If",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.divided_probability"
+   ],
    "token": "337/625"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 111,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 121,
    "occurrence": 3,
    "referent": "The exact battery checks 6 branch maps by 90 Choi",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.cp_branch_maps"
+   ],
    "token": "6"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 111,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 121,
    "occurrence": 4,
    "referent": "The exact battery checks 6 branch maps by 90 Choi",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.cp_principal_minors_checked"
+   ],
    "token": "90"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 113,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 123,
    "occurrence": 5,
-   "referent": "37 passing gates and authenticates 13 frozen source",
-   "token": "37"
+   "referent": "38 passing gates and authenticates 13 frozen source",
+   "source_bound": true,
+   "source_keys": [
+    "render_metadata.gate_count"
+   ],
+   "token": "38"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 113,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 123,
    "occurrence": 6,
-   "referent": "37 passing gates and authenticates 13 frozen source",
+   "referent": "38 passing gates and authenticates 13 frozen source",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.source_paths",
+    "render_metadata.source_count"
+   ],
    "token": "13"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 122,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 132,
    "occurrence": 7,
    "referent": "`1` to",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
    "token": "1"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 123,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 133,
    "occurrence": 8,
    "referent": "`0` and is non-affine.  This proves a",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
    "token": "0"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 149,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 159,
    "occurrence": 9,
    "referent": "`(1/2)|00><00| + (1/2)|11><11|`,",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][0]",
+    "measurements.bell_after_division[3][3]",
+    "measurements.bell_classical_weight",
+    "measurements.cq_output_purity",
+    "measurements.mean_geometry",
+    "measurements.rival_stats_on_zero.0",
+    "measurements.rival_stats_on_zero.1"
+   ],
    "token": "1/2"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 149,
+   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
+   "line": 159,
    "occurrence": 10,
    "referent": "`(1/2)|00><00| + (1/2)|11><11|`,",
+   "source_bound": true,
+   "source_keys": [
+    "FORMAL-OR-CORPUS-IDENTIFIER"
+   ],
    "token": "00"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 149,
+   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
+   "line": 159,
    "occurrence": 11,
    "referent": "`(1/2)|00><00| + (1/2)|11><11|`,",
+   "source_bound": true,
+   "source_keys": [
+    "FORMAL-OR-CORPUS-IDENTIFIER"
+   ],
    "token": "00"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 149,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 159,
    "occurrence": 12,
    "referent": "`(1/2)|00><00| + (1/2)|11><11|`,",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][0]",
+    "measurements.bell_after_division[3][3]",
+    "measurements.bell_classical_weight",
+    "measurements.cq_output_purity",
+    "measurements.mean_geometry",
+    "measurements.rival_stats_on_zero.0",
+    "measurements.rival_stats_on_zero.1"
+   ],
    "token": "1/2"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 149,
+   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
+   "line": 159,
    "occurrence": 13,
    "referent": "`(1/2)|00><00| + (1/2)|11><11|`,",
+   "source_bound": true,
+   "source_keys": [
+    "FORMAL-OR-CORPUS-IDENTIFIER"
+   ],
    "token": "11"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 149,
+   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
+   "line": 159,
    "occurrence": 14,
    "referent": "`(1/2)|00><00| + (1/2)|11><11|`,",
+   "source_bound": true,
+   "source_keys": [
+    "FORMAL-OR-CORPUS-IDENTIFIER"
+   ],
    "token": "11"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 151,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 161,
    "occurrence": 15,
    "referent": "a separable state of purity `1/2`.  The",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][0]",
+    "measurements.bell_after_division[3][3]",
+    "measurements.bell_classical_weight",
+    "measurements.cq_output_purity",
+    "measurements.mean_geometry",
+    "measurements.rival_stats_on_zero.0",
+    "measurements.rival_stats_on_zero.1"
+   ],
    "token": "1/2"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 158,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 168,
    "occurrence": 16,
-   "referent": "R = [[3/5, 4/5], [-4/5, 3/5]].",
+   "referent": "R = [[3/5, 4/5],",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.rotation_matrix[0][0]",
+    "measurements.rotation_matrix[1][1]"
+   ],
    "token": "3/5"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 158,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 168,
    "occurrence": 17,
-   "referent": "R = [[3/5, 4/5], [-4/5, 3/5]].",
+   "referent": "R = [[3/5, 4/5],",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.rotation_matrix[0][1]",
+    "measurements.rotation_matrix[1][0]"
+   ],
    "token": "4/5"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 158,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 169,
    "occurrence": 18,
-   "referent": "R = [[3/5, 4/5], [-4/5, 3/5]].",
+   "referent": "[-4/5, 3/5]].",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.rotation_matrix[0][1]",
+    "measurements.rotation_matrix[1][0]"
+   ],
    "token": "4/5"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 158,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 169,
    "occurrence": 19,
-   "referent": "R = [[3/5, 4/5], [-4/5, 3/5]].",
+   "referent": "[-4/5, 3/5]].",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.rotation_matrix[0][0]",
+    "measurements.rotation_matrix[1][1]"
+   ],
    "token": "3/5"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 162,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 173,
    "occurrence": 20,
-   "referent": "amplitudes are `9/25` and `-16/25`.  Summing them before squaring gives",
+   "referent": "amplitudes are `9/25` and",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_probabilities[0]",
+    "measurements.path_amplitudes[0]"
+   ],
    "token": "9/25"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 162,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 174,
    "occurrence": 21,
-   "referent": "amplitudes are `9/25` and `-16/25`.  Summing them before squaring gives",
+   "referent": "`-16/25`.  Summing them before squaring gives",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_probabilities[1]",
+    "measurements.path_amplitudes[1]"
+   ],
    "token": "16/25"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 163,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 175,
    "occurrence": 22,
    "referent": "`49/625`.  Inserting an intermediate",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.coherent_probability"
+   ],
    "token": "49/625"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 165,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 177,
    "occurrence": 23,
    "referent": "`337/625`.  The difference is exact.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.divided_probability"
+   ],
    "token": "337/625"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 179,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 191,
    "occurrence": 24,
    "referent": "respectively `0`,",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
    "token": "0"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 180,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 192,
    "occurrence": 25,
    "referent": "`0`, and",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
    "token": "0"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 181,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 193,
    "occurrence": 26,
    "referent": "`1`.  The repaired loop uses three",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
    "token": "1"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 183,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 195,
    "occurrence": 27,
    "referent": "transformation.  Its trace `0`",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
    "token": "0"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 184,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 196,
    "occurrence": 28,
    "referent": "and determinant `1` are",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
    "token": "1"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 199,
+   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
+   "line": 202,
    "occurrence": 29,
-   "referent": "`{'0': '1', '1': '0'}` and",
-   "token": "0"
+   "referent": "interaction arity: its typed L2 instrument is a counterexample at that scope.",
+   "source_bound": true,
+   "source_keys": [
+    "FORMAL-OR-CORPUS-IDENTIFIER"
+   ],
+   "token": "2"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 199,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 212,
    "occurrence": 30,
    "referent": "`{'0': '1', '1': '0'}` and",
-   "token": "1"
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
+   "token": "0"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 199,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 212,
    "occurrence": 31,
    "referent": "`{'0': '1', '1': '0'}` and",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
    "token": "1"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 199,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 212,
    "occurrence": 32,
    "referent": "`{'0': '1', '1': '0'}` and",
-   "token": "0"
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
+   "token": "1"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 200,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 212,
    "occurrence": 33,
-   "referent": "`{'0': '1/2', '1': '1/2'}`.  Hence CP, normalization,",
+   "referent": "`{'0': '1', '1': '0'}` and",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
    "token": "0"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 200,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 213,
    "occurrence": 34,
    "referent": "`{'0': '1/2', '1': '1/2'}`.  Hence CP, normalization,",
-   "token": "1/2"
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
+   "token": "0"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 200,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 213,
    "occurrence": 35,
    "referent": "`{'0': '1/2', '1': '1/2'}`.  Hence CP, normalization,",
-   "token": "1"
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][0]",
+    "measurements.bell_after_division[3][3]",
+    "measurements.bell_classical_weight",
+    "measurements.cq_output_purity",
+    "measurements.mean_geometry",
+    "measurements.rival_stats_on_zero.0",
+    "measurements.rival_stats_on_zero.1"
+   ],
+   "token": "1/2"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 200,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 213,
    "occurrence": 36,
    "referent": "`{'0': '1/2', '1': '1/2'}`.  Hence CP, normalization,",
-   "token": "1/2"
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
+   "token": "1"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 235,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 213,
    "occurrence": 37,
-   "referent": "1. **regional gluing:** shared unrecorded boundaries are summed/contracted and",
-   "token": "1"
+   "referent": "`{'0': '1/2', '1': '1/2'}`.  Hence CP, normalization,",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][0]",
+    "measurements.bell_after_division[3][3]",
+    "measurements.bell_classical_weight",
+    "measurements.cq_output_purity",
+    "measurements.mean_geometry",
+    "measurements.rival_stats_on_zero.0",
+    "measurements.rival_stats_on_zero.1"
+   ],
+   "token": "1/2"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 237,
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 261,
    "occurrence": 38,
-   "referent": "2. **refinement consistency:** two descriptions of one region push forward to",
-   "token": "2"
+   "referent": "1. **regional gluing:** shared unrecorded boundaries are summed/contracted and",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
+   "token": "1"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 239,
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 263,
    "occurrence": 39,
-   "referent": "3. **relational locality:** a remote pre-contact intervention cannot alter a",
-   "token": "3"
+   "referent": "2. **refinement consistency:** two descriptions of one region push forward to",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
+   "token": "2"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 241,
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 265,
    "occurrence": 40,
-   "referent": "4. **branchwise constraints:** invalid relation, flux, gauge, or geometric",
-   "token": "4"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 244,
-   "occurrence": 41,
-   "referent": "5. **record permanence:** a durable record defines a stable orthogonal sector",
-   "token": "5"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 246,
-   "occurrence": 42,
-   "referent": "6. **nontrivial coherence:** at least one unrecorded refinement retains an",
-   "token": "6"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 252,
-   "occurrence": 43,
-   "referent": "`D(A_alpha,A_beta) = 0` for distinct recorded alternatives.",
-   "token": "0"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 277,
-   "occurrence": 44,
-   "referent": "`a[h] = product_v exp(-I_v[h]/2 + i Theta_v[h])`,",
-   "token": "2"
-  },
-  {
-   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
-   "line": 348,
-   "occurrence": 45,
-   "referent": "In the frozen two-level fixture, one boundary transfer is `diag(1,i)`.  The",
-   "token": "1"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 349,
-   "occurrence": 46,
-   "referent": "receipt displays 5 exact witnesses, while the full integer family is",
-   "token": "5"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 350,
-   "occurrence": 47,
-   "referent": "`(4m,1+4n)`.  After choosing a duration `Delta t`, units, and sign convention,",
-   "token": "4"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 350,
-   "occurrence": 48,
-   "referent": "`(4m,1+4n)`.  After choosing a duration `Delta t`, units, and sign convention,",
-   "token": "1"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 350,
-   "occurrence": 49,
-   "referent": "`(4m,1+4n)`.  After choosing a duration `Delta t`, units, and sign convention,",
-   "token": "4"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 351,
-   "occurrence": 50,
-   "referent": "the energy branches differ by integer multiples of `2 pi hbar / Delta t`.",
-   "token": "2"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 414,
-   "occurrence": 51,
-   "referent": "| three actors as first simple-graph cycle | FORCED | The exact connected simple-graph cycle ranks are 0, 0, and 1. |",
-   "token": "0"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 414,
-   "occurrence": 52,
-   "referent": "| three actors as first simple-graph cycle | FORCED | The exact connected simple-graph cycle ranks are 0, 0, and 1. |",
-   "token": "0"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 414,
-   "occurrence": 53,
-   "referent": "| three actors as first simple-graph cycle | FORCED | The exact connected simple-graph cycle ranks are 0, 0, and 1. |",
-   "token": "1"
-  },
-  {
-   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
-   "line": 415,
-   "occurrence": 54,
-   "referent": "| three actors as minimum event arity | REFUSED | The L2 instrument is a counterexample and no universal arity law is derived. |",
-   "token": "2"
-  },
-  {
-   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
-   "line": 482,
-   "occurrence": 55,
-   "referent": "- `L2-INSTRUMENT-VIABLE`",
-   "token": "2"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 495,
-   "occurrence": 56,
-   "referent": "EXISTENCE: A fixed-factor boundary instrument passes exact CP, trace, affinity, HJW and no-signalling checks across 6 branch maps, but its geometry labels are feed-forward equivalent.",
-   "token": "6"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 496,
-   "occurrence": 57,
-   "referent": "ARITY: A two-actor projective instrument is viable; cycle ranks 0, 0, 1 make three actors the first simple-graph cycle, not the first event.",
-   "token": "0"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 496,
-   "occurrence": 58,
-   "referent": "ARITY: A two-actor projective instrument is viable; cycle ranks 0, 0, 1 make three actors the first simple-graph cycle, not the first event.",
-   "token": "0"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 496,
-   "occurrence": 59,
-   "referent": "ARITY: A two-actor projective instrument is viable; cycle ranks 0, 0, 1 make three actors the first simple-graph cycle, not the first event.",
-   "token": "1"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 497,
-   "occurrence": 60,
-   "referent": "HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the unconditioned boundary output changes purity from 1 to 1/2.",
-   "token": "5"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 497,
-   "occurrence": 61,
-   "referent": "HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the unconditioned boundary output changes purity from 1 to 1/2.",
-   "token": "1"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 497,
-   "occurrence": 62,
-   "referent": "HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the unconditioned boundary output changes purity from 1 to 1/2.",
-   "token": "1/2"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 498,
-   "occurrence": 63,
-   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
-   "token": "0"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 498,
-   "occurrence": 64,
-   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
-   "token": "1"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 498,
-   "occurrence": 65,
-   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
-   "token": "1"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 498,
-   "occurrence": 66,
-   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
-   "token": "0"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 498,
-   "occurrence": 67,
-   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
-   "token": "0"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 498,
-   "occurrence": 68,
-   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
-   "token": "1/2"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 498,
-   "occurrence": 69,
-   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
-   "token": "1"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 498,
-   "occurrence": 70,
-   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
-   "token": "1/2"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 507,
-   "occurrence": 71,
-   "referent": "1. two refinements/cuts of the same regional history;",
-   "token": "1"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 508,
-   "occurrence": 72,
-   "referent": "2. an actual relation or transport rewrite, not a copied label;",
-   "token": "2"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 509,
-   "occurrence": 73,
-   "referent": "3. a downstream interaction whose availability is computed from the output",
+   "referent": "3. **relational locality:** a remote pre-contact intervention cannot alter a",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
    "token": "3"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 511,
-   "occurrence": 74,
-   "referent": "4. equality of the complete boundary decoherence functional under both cuts;",
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 267,
+   "occurrence": 41,
+   "referent": "4. **branchwise constraints:** invalid relation, flux, gauge, or geometric",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
    "token": "4"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 512,
-   "occurrence": 75,
-   "referent": "5. closure of overlapping deformations into independently defined boundary",
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 270,
+   "occurrence": 42,
+   "referent": "5. **record permanence:** a durable record defines a stable orthogonal sector",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
    "token": "5"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 514,
-   "occurrence": 76,
-   "referent": "6. branchwise flux conservation and a geometry-validity constraint;",
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 272,
+   "occurrence": 43,
+   "referent": "6. **nontrivial coherence:** at least one unrecorded refinement retains an",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
    "token": "6"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 515,
-   "occurrence": 77,
-   "referent": "7. a fixed-factor and changing-factorization no-signalling census; and",
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 275,
+   "occurrence": 44,
+   "referent": "7. **typed output pairing:** fine geometry alternatives interfere only through",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
    "token": "7"
   },
   {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 516,
-   "occurrence": 78,
-   "referent": "8. an interference witness that an entanglement-breaking placeholder cannot",
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 278,
+   "occurrence": 45,
+   "referent": "8. **operational completeness:** whenever a partition is advertised as a",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
    "token": "8"
   },
   {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 546,
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 284,
+   "occurrence": 46,
+   "referent": "`D(A_alpha,A_beta) = 0` for distinct recorded alternatives.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
+   "token": "0"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 306,
+   "occurrence": 47,
+   "referent": "`9/25` and",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_probabilities[0]",
+    "measurements.path_amplitudes[0]"
+   ],
+   "token": "9/25"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 307,
+   "occurrence": 48,
+   "referent": "`16/25`, zero cross term, and total",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_probabilities[1]",
+    "measurements.path_amplitudes[1]"
+   ],
+   "token": "16/25"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 308,
+   "occurrence": 49,
+   "referent": "probability `1` on its declared",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
+   "token": "1"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 311,
+   "occurrence": 50,
+   "referent": "`sum_alpha K_alpha^dagger K_alpha = diag(1,4)`.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
+   "token": "1"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 311,
+   "occurrence": 51,
+   "referent": "`sum_alpha K_alpha^dagger K_alpha = diag(1,4)`.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[1][1]",
+    "measurements.complete_row_total",
+    "measurements.complete_rows",
+    "measurements.diamond_branches"
+   ],
+   "token": "4"
+  },
+  {
+   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
+   "line": 328,
+   "occurrence": 52,
+   "referent": "`a[h] = product_v exp(-I_v[h]/2 + i Theta_v[h])`,",
+   "source_bound": true,
+   "source_keys": [
+    "FORMAL-OR-CORPUS-IDENTIFIER"
+   ],
+   "token": "2"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 407,
+   "occurrence": 53,
+   "referent": "In the frozen two-level fixture, one boundary transfer is `diag(1,i)`.  The",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
+   "token": "1"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 408,
+   "occurrence": 54,
+   "referent": "receipt displays 5 exact witnesses, while the full integer family is",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.hamiltonian_lifts[3][1]"
+   ],
+   "token": "5"
+  },
+  {
+   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
+   "line": 409,
+   "occurrence": 55,
+   "referent": "`(4m,1+4n)`.  After choosing a duration `Delta t`, units, and sign convention,",
+   "source_bound": true,
+   "source_keys": [
+    "FORMAL-OR-CORPUS-IDENTIFIER"
+   ],
+   "token": "4"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 409,
+   "occurrence": 56,
+   "referent": "`(4m,1+4n)`.  After choosing a duration `Delta t`, units, and sign convention,",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
+   "token": "1"
+  },
+  {
+   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
+   "line": 409,
+   "occurrence": 57,
+   "referent": "`(4m,1+4n)`.  After choosing a duration `Delta t`, units, and sign convention,",
+   "source_bound": true,
+   "source_keys": [
+    "FORMAL-OR-CORPUS-IDENTIFIER"
+   ],
+   "token": "4"
+  },
+  {
+   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
+   "line": 410,
+   "occurrence": 58,
+   "referent": "the energy branches differ by integer multiples of `2 pi hbar / Delta t`.",
+   "source_bound": true,
+   "source_keys": [
+    "FORMAL-OR-CORPUS-IDENTIFIER"
+   ],
+   "token": "2"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 478,
+   "occurrence": 59,
+   "referent": "| three actors as first simple-graph cycle | FORCED | The exact connected simple-graph cycle ranks are 0, 0, and 1. |",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
+   "token": "0"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 478,
+   "occurrence": 60,
+   "referent": "| three actors as first simple-graph cycle | FORCED | The exact connected simple-graph cycle ranks are 0, 0, and 1. |",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
+   "token": "0"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 478,
+   "occurrence": 61,
+   "referent": "| three actors as first simple-graph cycle | FORCED | The exact connected simple-graph cycle ranks are 0, 0, and 1. |",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
+   "token": "1"
+  },
+  {
+   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
+   "line": 479,
+   "occurrence": 62,
+   "referent": "| minimum-three claim from the present boundary architecture | REFUSED | The L2 instrument is a counterexample at its typed scope; a future selected law's minimum support remains open. |",
+   "source_bound": true,
+   "source_keys": [
+    "FORMAL-OR-CORPUS-IDENTIFIER"
+   ],
+   "token": "2"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 487,
+   "occurrence": 63,
+   "referent": "| state-relative decoherence automatically yields an instrument | REFUSED | The exact bridge counterexample normalizes on one state while its operator sum is diag(1,4). |",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
+   "token": "1"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 487,
+   "occurrence": 64,
+   "referent": "| state-relative decoherence automatically yields an instrument | REFUSED | The exact bridge counterexample normalizes on one state while its operator sum is diag(1,4). |",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[1][1]",
+    "measurements.complete_row_total",
+    "measurements.complete_rows",
+    "measurements.diamond_branches"
+   ],
+   "token": "4"
+  },
+  {
+   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
+   "line": 554,
+   "occurrence": 65,
+   "referent": "- `L2-INSTRUMENT-VIABLE`",
+   "source_bound": true,
+   "source_keys": [
+    "FORMAL-OR-CORPUS-IDENTIFIER"
+   ],
+   "token": "2"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 571,
+   "occurrence": 66,
+   "referent": "EXISTENCE: A fixed-factor boundary instrument passes exact CP, trace, affinity, HJW and no-signalling checks across 6 branch maps, but its geometry labels are feed-forward equivalent.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.cp_branch_maps"
+   ],
+   "token": "6"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 572,
+   "occurrence": 67,
+   "referent": "ARITY: A two-actor projective instrument is viable; cycle ranks 0, 0, 1 make three actors the first simple-graph cycle but do not select minimum event support.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
+   "token": "0"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 572,
+   "occurrence": 68,
+   "referent": "ARITY: A two-actor projective instrument is viable; cycle ranks 0, 0, 1 make three actors the first simple-graph cycle but do not select minimum event support.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
+   "token": "0"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 572,
+   "occurrence": 69,
+   "referent": "ARITY: A two-actor projective instrument is viable; cycle ranks 0, 0, 1 make three actors the first simple-graph cycle but do not select minimum event support.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
+   "token": "1"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 573,
+   "occurrence": 70,
+   "referent": "BRIDGE: One exact partition has state-relative probabilities 9/25 and 16/25 with zero cross term, yet its operator sum is diag(1,4); one-state decoherence does not imply a reusable instrument.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_probabilities[0]",
+    "measurements.path_amplitudes[0]"
+   ],
+   "token": "9/25"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 573,
+   "occurrence": 71,
+   "referent": "BRIDGE: One exact partition has state-relative probabilities 9/25 and 16/25 with zero cross term, yet its operator sum is diag(1,4); one-state decoherence does not imply a reusable instrument.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_probabilities[1]",
+    "measurements.path_amplitudes[1]"
+   ],
+   "token": "16/25"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 573,
+   "occurrence": 72,
+   "referent": "BRIDGE: One exact partition has state-relative probabilities 9/25 and 16/25 with zero cross term, yet its operator sum is diag(1,4); one-state decoherence does not imply a reusable instrument.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
+   "token": "1"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 573,
+   "occurrence": 73,
+   "referent": "BRIDGE: One exact partition has state-relative probabilities 9/25 and 16/25 with zero cross term, yet its operator sum is diag(1,4); one-state decoherence does not imply a reusable instrument.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[1][1]",
+    "measurements.complete_row_total",
+    "measurements.complete_rows",
+    "measurements.diamond_branches"
+   ],
+   "token": "4"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 574,
+   "occurrence": 74,
+   "referent": "HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the unconditioned boundary output changes purity from 1 to 1/2.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.hamiltonian_lifts[3][1]"
+   ],
+   "token": "5"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 574,
+   "occurrence": 75,
+   "referent": "HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the unconditioned boundary output changes purity from 1 to 1/2.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
+   "token": "1"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 574,
+   "occurrence": 76,
+   "referent": "HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the unconditioned boundary output changes purity from 1 to 1/2.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][0]",
+    "measurements.bell_after_division[3][3]",
+    "measurements.bell_classical_weight",
+    "measurements.cq_output_purity",
+    "measurements.mean_geometry",
+    "measurements.rival_stats_on_zero.0",
+    "measurements.rival_stats_on_zero.1"
+   ],
+   "token": "1/2"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 575,
+   "occurrence": 77,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
+   "token": "0"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 575,
+   "occurrence": 78,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
+   "token": "1"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 575,
    "occurrence": 79,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
+   "token": "1"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 575,
+   "occurrence": 80,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
+   "token": "0"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 575,
+   "occurrence": 81,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][1]",
+    "measurements.bell_after_division[0][2]",
+    "measurements.bell_after_division[0][3]",
+    "measurements.bell_after_division[1][0]",
+    "measurements.bell_after_division[1][1]",
+    "measurements.bell_after_division[1][2]",
+    "measurements.bell_after_division[1][3]",
+    "measurements.bell_after_division[2][0]",
+    "measurements.bell_after_division[2][1]",
+    "measurements.bell_after_division[2][2]",
+    "measurements.bell_after_division[2][3]",
+    "measurements.bell_after_division[3][0]",
+    "measurements.bell_after_division[3][1]",
+    "measurements.bell_after_division[3][2]",
+    "measurements.bridge_cross_term",
+    "measurements.bridge_operator_sum[0][1]",
+    "measurements.bridge_operator_sum[1][0]",
+    "measurements.cycle_ranks.K2",
+    "measurements.cycle_ranks.path3",
+    "measurements.dephasing_translation[0]",
+    "measurements.dephasing_translation[1]",
+    "measurements.dephasing_translation[2]",
+    "measurements.hamiltonian_lifts[0][0]",
+    "measurements.hamiltonian_lifts[1][0]",
+    "measurements.hamiltonian_lifts[2][0]",
+    "measurements.hamiltonian_lifts[3][0]",
+    "measurements.hamiltonian_lifts[4][0]",
+    "measurements.main_stats_on_zero.1",
+    "measurements.nonlinear_control_x",
+    "measurements.reachable_geometries[0]",
+    "measurements.reset_translation[0]",
+    "measurements.reset_translation[1]",
+    "measurements.triangle_holonomy[0][1]",
+    "measurements.triangle_holonomy[1][0]",
+    "measurements.triangle_holonomy_trace"
+   ],
+   "token": "0"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 575,
+   "occurrence": 82,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][0]",
+    "measurements.bell_after_division[3][3]",
+    "measurements.bell_classical_weight",
+    "measurements.cq_output_purity",
+    "measurements.mean_geometry",
+    "measurements.rival_stats_on_zero.0",
+    "measurements.rival_stats_on_zero.1"
+   ],
+   "token": "1/2"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 575,
+   "occurrence": 83,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bridge_operator_sum[0][0]",
+    "measurements.bridge_total_probability",
+    "measurements.cycle_ranks.triangle",
+    "measurements.hamiltonian_lifts[2][1]",
+    "measurements.input_purity",
+    "measurements.main_stats_on_zero.0",
+    "measurements.nonlinear_control_z",
+    "measurements.reachable_geometries[1]",
+    "measurements.reset_translation[2]",
+    "measurements.shift_modes[0]",
+    "measurements.shift_modes[1]",
+    "measurements.shift_modes[2]",
+    "measurements.shift_modes[3]",
+    "measurements.triangle_holonomy[0][0]",
+    "measurements.triangle_holonomy[1][1]",
+    "measurements.triangle_holonomy_determinant"
+   ],
+   "token": "1"
+  },
+  {
+   "category": "RECEIPT-SOURCED-NUMERIC",
+   "line": 575,
+   "occurrence": 84,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "source_bound": true,
+   "source_keys": [
+    "measurements.bell_after_division[0][0]",
+    "measurements.bell_after_division[3][3]",
+    "measurements.bell_classical_weight",
+    "measurements.cq_output_purity",
+    "measurements.mean_geometry",
+    "measurements.rival_stats_on_zero.0",
+    "measurements.rival_stats_on_zero.1"
+   ],
+   "token": "1/2"
+  },
+  {
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 584,
+   "occurrence": 85,
+   "referent": "1. two refinements/cuts of the same regional history;",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
+   "token": "1"
+  },
+  {
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 585,
+   "occurrence": 86,
+   "referent": "2. an actual relation or transport rewrite, not a copied label;",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
+   "token": "2"
+  },
+  {
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 586,
+   "occurrence": 87,
+   "referent": "3. a downstream interaction whose availability is computed from the output",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
+   "token": "3"
+  },
+  {
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 588,
+   "occurrence": 88,
+   "referent": "4. equality of the complete boundary decoherence functional under both cuts;",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
+   "token": "4"
+  },
+  {
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 589,
+   "occurrence": 89,
+   "referent": "5. closure of overlapping deformations into independently defined boundary",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
+   "token": "5"
+  },
+  {
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 591,
+   "occurrence": 90,
+   "referent": "6. branchwise flux conservation and a geometry-validity constraint;",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
+   "token": "6"
+  },
+  {
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 592,
+   "occurrence": 91,
+   "referent": "7. a fixed-factor and changing-factorization no-signalling census; and",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
+   "token": "7"
+  },
+  {
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 593,
+   "occurrence": 92,
+   "referent": "8. an interference witness that an entanglement-breaking placeholder cannot",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
+   "token": "8"
+  },
+  {
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 595,
+   "occurrence": 93,
+   "referent": "9. predeclared common-boundary/refinement maps distinguishing coherent",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
+   "token": "9"
+  },
+  {
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 597,
+   "occurrence": 94,
+   "referent": "10. all-input operator completeness at every advertised reusable division;",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
+   "token": "10"
+  },
+  {
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 598,
+   "occurrence": 95,
+   "referent": "11. a nonfactorization discriminator plus calibrated matter-to-geometry-to-",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
+   "token": "11"
+  },
+  {
+   "category": "STRUCTURAL-ENUMERATOR",
+   "line": 600,
+   "occurrence": 96,
+   "referent": "12. compatible nested record partitions for the actualization postulate.",
+   "source_bound": true,
+   "source_keys": [
+    "STRUCTURAL-ENUMERATOR"
+   ],
+   "token": "12"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 629,
+   "occurrence": 97,
    "referent": "arXiv:2507.21192.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "2507"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 546,
-   "occurrence": 80,
+   "line": 629,
+   "occurrence": 98,
    "referent": "arXiv:2507.21192.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "21192"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 548,
-   "occurrence": 81,
+   "line": 631,
+   "occurrence": 99,
    "referent": "Mechanics*, J. Stat. Phys. 36 (1984) 219–272; M. Gell-Mann and J. B. Hartle,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "36"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 548,
-   "occurrence": 82,
+   "line": 631,
+   "occurrence": 100,
    "referent": "Mechanics*, J. Stat. Phys. 36 (1984) 219–272; M. Gell-Mann and J. B. Hartle,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1984"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 548,
-   "occurrence": 83,
+   "line": 631,
+   "occurrence": 101,
    "referent": "Mechanics*, J. Stat. Phys. 36 (1984) 219–272; M. Gell-Mann and J. B. Hartle,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "219"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 548,
-   "occurrence": 84,
+   "line": 631,
+   "occurrence": 102,
    "referent": "Mechanics*, J. Stat. Phys. 36 (1984) 219–272; M. Gell-Mann and J. B. Hartle,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "272"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 549,
-   "occurrence": 85,
+   "line": 632,
+   "occurrence": 103,
    "referent": "*Classical Equations for Quantum Systems*, Phys. Rev. D 47 (1993) 3345–3382.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "47"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 549,
-   "occurrence": 86,
+   "line": 632,
+   "occurrence": 104,
    "referent": "*Classical Equations for Quantum Systems*, Phys. Rev. D 47 (1993) 3345–3382.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1993"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 549,
-   "occurrence": 87,
+   "line": 632,
+   "occurrence": 105,
    "referent": "*Classical Equations for Quantum Systems*, Phys. Rev. D 47 (1993) 3345–3382.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "3345"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 549,
-   "occurrence": 88,
+   "line": 632,
+   "occurrence": 106,
    "referent": "*Classical Equations for Quantum Systems*, Phys. Rev. D 47 (1993) 3345–3382.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "3382"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 551,
-   "occurrence": 89,
+   "line": 634,
+   "occurrence": 107,
    "referent": "A 9 (1994) 3119–3127, arXiv:gr-qc/9401003.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "9"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 551,
-   "occurrence": 90,
+   "line": 634,
+   "occurrence": 108,
    "referent": "A 9 (1994) 3119–3127, arXiv:gr-qc/9401003.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1994"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 551,
-   "occurrence": 91,
+   "line": 634,
+   "occurrence": 109,
    "referent": "A 9 (1994) 3119–3127, arXiv:gr-qc/9401003.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "3119"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 551,
-   "occurrence": 92,
+   "line": 634,
+   "occurrence": 110,
    "referent": "A 9 (1994) 3119–3127, arXiv:gr-qc/9401003.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "3127"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 551,
-   "occurrence": 93,
+   "line": 634,
+   "occurrence": 111,
    "referent": "A 9 (1994) 3119–3127, arXiv:gr-qc/9401003.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "9401003"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 553,
-   "occurrence": 94,
+   "line": 636,
+   "occurrence": 112,
    "referent": "Probability Interpretation*, Adv. Theor. Math. Phys. 12 (2008) 319–352,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "12"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 553,
-   "occurrence": 95,
+   "line": 636,
+   "occurrence": 113,
    "referent": "Probability Interpretation*, Adv. Theor. Math. Phys. 12 (2008) 319–352,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "2008"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 553,
-   "occurrence": 96,
+   "line": 636,
+   "occurrence": 114,
    "referent": "Probability Interpretation*, Adv. Theor. Math. Phys. 12 (2008) 319–352,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "319"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 553,
-   "occurrence": 97,
+   "line": 636,
+   "occurrence": 115,
    "referent": "Probability Interpretation*, Adv. Theor. Math. Phys. 12 (2008) 319–352,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "352"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 554,
-   "occurrence": 98,
+   "line": 637,
+   "occurrence": 116,
    "referent": "arXiv:hep-th/0509122.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "0509122"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 556,
-   "occurrence": 99,
+   "line": 639,
+   "occurrence": 117,
    "referent": "Histories*, Class. Quantum Grav. 20 (2003) 3839–3854,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "20"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 556,
-   "occurrence": 100,
+   "line": 639,
+   "occurrence": 118,
    "referent": "Histories*, Class. Quantum Grav. 20 (2003) 3839–3854,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "2003"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 556,
-   "occurrence": 101,
+   "line": 639,
+   "occurrence": 119,
    "referent": "Histories*, Class. Quantum Grav. 20 (2003) 3839–3854,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "3839"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 556,
-   "occurrence": 102,
+   "line": 639,
+   "occurrence": 120,
    "referent": "Histories*, Class. Quantum Grav. 20 (2003) 3839–3854,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "3854"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 557,
-   "occurrence": 103,
+   "line": 640,
+   "occurrence": 121,
    "referent": "arXiv:hep-th/0302111.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "0302111"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 559,
-   "occurrence": 104,
+   "line": 642,
+   "occurrence": 122,
    "referent": "Quantum Ensembles Having a Given Density Matrix*, Phys. Lett. A 183 (1993)",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "183"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 559,
-   "occurrence": 105,
+   "line": 642,
+   "occurrence": 123,
    "referent": "Quantum Ensembles Having a Given Density Matrix*, Phys. Lett. A 183 (1993)",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1993"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 560,
-   "occurrence": 106,
+   "line": 643,
+   "occurrence": 124,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "14"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 560,
-   "occurrence": 107,
+   "line": 643,
+   "occurrence": 125,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "18"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 560,
-   "occurrence": 108,
+   "line": 643,
+   "occurrence": 126,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "10"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 560,
-   "occurrence": 109,
+   "line": 643,
+   "occurrence": 127,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1016/0375"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 560,
-   "occurrence": 110,
+   "line": 643,
+   "occurrence": 128,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "9601"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 560,
-   "occurrence": 111,
+   "line": 643,
+   "occurrence": 129,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "93"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 560,
-   "occurrence": 112,
+   "line": 643,
+   "occurrence": 130,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "90880"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 560,
-   "occurrence": 113,
+   "line": 643,
+   "occurrence": 131,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "9"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 562,
-   "occurrence": 114,
+   "line": 645,
+   "occurrence": 132,
    "referent": "Dynamics*, Phys. Rev. Lett. 87 (2001) 170405,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "87"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 562,
-   "occurrence": 115,
+   "line": 645,
+   "occurrence": 133,
    "referent": "Dynamics*, Phys. Rev. Lett. 87 (2001) 170405,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "2001"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 562,
-   "occurrence": 116,
+   "line": 645,
+   "occurrence": 134,
    "referent": "Dynamics*, Phys. Rev. Lett. 87 (2001) 170405,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "170405"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 563,
-   "occurrence": 117,
+   "line": 646,
+   "occurrence": 135,
    "referent": "arXiv:quant-ph/0102125.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "0102125"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 565,
-   "occurrence": 118,
+   "line": 648,
+   "occurrence": 136,
    "referent": "Channels*, Rev. Math. Phys. 15 (2003) 629–641,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "15"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 565,
-   "occurrence": 119,
+   "line": 648,
+   "occurrence": 137,
    "referent": "Channels*, Rev. Math. Phys. 15 (2003) 629–641,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "2003"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 565,
-   "occurrence": 120,
+   "line": 648,
+   "occurrence": 138,
    "referent": "Channels*, Rev. Math. Phys. 15 (2003) 629–641,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "629"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 565,
-   "occurrence": 121,
+   "line": 648,
+   "occurrence": 139,
    "referent": "Channels*, Rev. Math. Phys. 15 (2003) 629–641,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "641"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 566,
-   "occurrence": 122,
+   "line": 649,
+   "occurrence": 140,
    "referent": "arXiv:quant-ph/0302031.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "0302031"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 568,
-   "occurrence": 123,
+   "line": 651,
+   "occurrence": 141,
    "referent": "Quantum Networks*, Phys. Rev. A 80 (2009) 022339, arXiv:0904.4483.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "80"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 568,
-   "occurrence": 124,
+   "line": 651,
+   "occurrence": 142,
    "referent": "Quantum Networks*, Phys. Rev. A 80 (2009) 022339, arXiv:0904.4483.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "2009"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 568,
-   "occurrence": 125,
+   "line": 651,
+   "occurrence": 143,
    "referent": "Quantum Networks*, Phys. Rev. A 80 (2009) 022339, arXiv:0904.4483.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "022339"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 568,
-   "occurrence": 126,
+   "line": 651,
+   "occurrence": 144,
    "referent": "Quantum Networks*, Phys. Rev. A 80 (2009) 022339, arXiv:0904.4483.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "0904"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 568,
-   "occurrence": 127,
+   "line": 651,
+   "occurrence": 145,
    "referent": "Quantum Networks*, Phys. Rev. A 80 (2009) 022339, arXiv:0904.4483.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "4483"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 570,
-   "occurrence": 128,
+   "line": 653,
+   "occurrence": 146,
    "referent": "and Efficient Characterization*, Phys. Rev. A 97 (2018) 012127,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "97"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 570,
-   "occurrence": 129,
+   "line": 653,
+   "occurrence": 147,
    "referent": "and Efficient Characterization*, Phys. Rev. A 97 (2018) 012127,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "2018"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 570,
-   "occurrence": 130,
+   "line": 653,
+   "occurrence": 148,
    "referent": "and Efficient Characterization*, Phys. Rev. A 97 (2018) 012127,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "012127"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 571,
-   "occurrence": 131,
+   "line": 654,
+   "occurrence": 149,
    "referent": "arXiv:1512.00589.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1512"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 571,
-   "occurrence": 132,
+   "line": 654,
+   "occurrence": 150,
    "referent": "arXiv:1512.00589.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "00589"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 573,
-   "occurrence": 133,
+   "line": 656,
+   "occurrence": 151,
    "referent": "Causal Sets*, Phys. Rev. D 61 (2000) 024002, arXiv:gr-qc/9904062.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "61"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 573,
-   "occurrence": 134,
+   "line": 656,
+   "occurrence": 152,
    "referent": "Causal Sets*, Phys. Rev. D 61 (2000) 024002, arXiv:gr-qc/9904062.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "2000"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 573,
-   "occurrence": 135,
+   "line": 656,
+   "occurrence": 153,
    "referent": "Causal Sets*, Phys. Rev. D 61 (2000) 024002, arXiv:gr-qc/9904062.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "024002"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 573,
-   "occurrence": 136,
+   "line": 656,
+   "occurrence": 154,
    "referent": "Causal Sets*, Phys. Rev. D 61 (2000) 024002, arXiv:gr-qc/9904062.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "9904062"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 574,
-   "occurrence": 137,
+   "line": 657,
+   "occurrence": 155,
    "referent": "- T. Regge, *General Relativity Without Coordinates*, Nuovo Cimento 19 (1961)",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "19"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 574,
-   "occurrence": 138,
+   "line": 657,
+   "occurrence": 156,
    "referent": "- T. Regge, *General Relativity Without Coordinates*, Nuovo Cimento 19 (1961)",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1961"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 575,
-   "occurrence": 139,
+   "line": 658,
+   "occurrence": 157,
    "referent": "558–571, doi:10.1007/BF02733251.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "558"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 575,
-   "occurrence": 140,
+   "line": 658,
+   "occurrence": 158,
    "referent": "558–571, doi:10.1007/BF02733251.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "571"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 575,
-   "occurrence": 141,
+   "line": 658,
+   "occurrence": 159,
    "referent": "558–571, doi:10.1007/BF02733251.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "10"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 575,
-   "occurrence": 142,
+   "line": 658,
+   "occurrence": 160,
    "referent": "558–571, doi:10.1007/BF02733251.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1007"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 575,
-   "occurrence": 143,
+   "line": 658,
+   "occurrence": 161,
    "referent": "558–571, doi:10.1007/BF02733251.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "02733251"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 577,
-   "occurrence": 144,
+   "line": 660,
+   "occurrence": 162,
    "referent": "Phys. Rev. Lett. 104 (2010) 181301, arXiv:1001.2725.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "104"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 577,
-   "occurrence": 145,
+   "line": 660,
+   "occurrence": 163,
    "referent": "Phys. Rev. Lett. 104 (2010) 181301, arXiv:1001.2725.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "2010"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 577,
-   "occurrence": 146,
+   "line": 660,
+   "occurrence": 164,
    "referent": "Phys. Rev. Lett. 104 (2010) 181301, arXiv:1001.2725.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "181301"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 577,
-   "occurrence": 147,
+   "line": 660,
+   "occurrence": 165,
    "referent": "Phys. Rev. Lett. 104 (2010) 181301, arXiv:1001.2725.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1001"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 577,
-   "occurrence": 148,
+   "line": 660,
+   "occurrence": 166,
    "referent": "Phys. Rev. Lett. 104 (2010) 181301, arXiv:1001.2725.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "2725"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 579,
-   "occurrence": 149,
+   "line": 662,
+   "occurrence": 167,
    "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "96"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 579,
-   "occurrence": 150,
+   "line": 662,
+   "occurrence": 168,
    "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1976"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 579,
-   "occurrence": 151,
+   "line": 662,
+   "occurrence": 169,
    "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "88"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 579,
-   "occurrence": 152,
+   "line": 662,
+   "occurrence": 170,
    "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "135"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 579,
-   "occurrence": 153,
+   "line": 662,
+   "occurrence": 171,
    "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "10"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 579,
-   "occurrence": 154,
+   "line": 662,
+   "occurrence": 172,
    "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1016/0003"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 579,
-   "occurrence": 155,
+   "line": 662,
+   "occurrence": 173,
    "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "4916"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 579,
-   "occurrence": 156,
+   "line": 662,
+   "occurrence": 174,
    "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "76"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 579,
-   "occurrence": 157,
+   "line": 662,
+   "occurrence": 175,
    "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "90112"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 579,
-   "occurrence": 158,
+   "line": 662,
+   "occurrence": 176,
    "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "3"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 581,
-   "occurrence": 159,
+   "line": 664,
+   "occurrence": 177,
    "referent": "12 (1971) 498–501, doi:10.1063/1.1665613.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "12"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 581,
-   "occurrence": 160,
+   "line": 664,
+   "occurrence": 178,
    "referent": "12 (1971) 498–501, doi:10.1063/1.1665613.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1971"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 581,
-   "occurrence": 161,
+   "line": 664,
+   "occurrence": 179,
    "referent": "12 (1971) 498–501, doi:10.1063/1.1665613.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "498"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 581,
-   "occurrence": 162,
+   "line": 664,
+   "occurrence": 180,
    "referent": "12 (1971) 498–501, doi:10.1063/1.1665613.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "501"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 581,
-   "occurrence": 163,
+   "line": 664,
+   "occurrence": 181,
    "referent": "12 (1971) 498–501, doi:10.1063/1.1665613.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "10"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 581,
-   "occurrence": 164,
+   "line": 664,
+   "occurrence": 182,
    "referent": "12 (1971) 498–501, doi:10.1063/1.1665613.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1063/1"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 581,
-   "occurrence": 165,
+   "line": 664,
+   "occurrence": 183,
    "referent": "12 (1971) 498–501, doi:10.1063/1.1665613.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1665613"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 582,
-   "occurrence": 166,
+   "line": 665,
+   "occurrence": 184,
    "referent": "- J. Oppenheim, *A Postquantum Theory of Classical Gravity?*, Phys. Rev. X 13",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "13"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 583,
-   "occurrence": 167,
+   "line": 666,
+   "occurrence": 185,
    "referent": "(2023) 041040, arXiv:1811.03116; A. Tilloy and L. Diosi, *Sourcing",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "2023"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 583,
-   "occurrence": 168,
+   "line": 666,
+   "occurrence": 186,
    "referent": "(2023) 041040, arXiv:1811.03116; A. Tilloy and L. Diosi, *Sourcing",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "041040"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 583,
-   "occurrence": 169,
+   "line": 666,
+   "occurrence": 187,
    "referent": "(2023) 041040, arXiv:1811.03116; A. Tilloy and L. Diosi, *Sourcing",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1811"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 583,
-   "occurrence": 170,
+   "line": 666,
+   "occurrence": 188,
    "referent": "(2023) 041040, arXiv:1811.03116; A. Tilloy and L. Diosi, *Sourcing",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "03116"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 585,
-   "occurrence": 171,
+   "line": 668,
+   "occurrence": 189,
    "referent": "Rev. D 93 (2016) 024026, arXiv:1509.08705.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "93"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 585,
-   "occurrence": 172,
+   "line": 668,
+   "occurrence": 190,
    "referent": "Rev. D 93 (2016) 024026, arXiv:1509.08705.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "2016"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 585,
-   "occurrence": 173,
+   "line": 668,
+   "occurrence": 191,
    "referent": "Rev. D 93 (2016) 024026, arXiv:1509.08705.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "024026"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 585,
-   "occurrence": 174,
+   "line": 668,
+   "occurrence": 192,
    "referent": "Rev. D 93 (2016) 024026, arXiv:1509.08705.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1509"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 585,
-   "occurrence": 175,
+   "line": 668,
+   "occurrence": 193,
    "referent": "Rev. D 93 (2016) 024026, arXiv:1509.08705.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "08705"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 587,
-   "occurrence": 176,
+   "line": 670,
+   "occurrence": 194,
    "referent": "Math. Phys. 5 (1964) 848–861; S. Doplicher, R. Haag, and J. E. Roberts,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "5"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 587,
-   "occurrence": 177,
+   "line": 670,
+   "occurrence": 195,
    "referent": "Math. Phys. 5 (1964) 848–861; S. Doplicher, R. Haag, and J. E. Roberts,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1964"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 587,
-   "occurrence": 178,
+   "line": 670,
+   "occurrence": 196,
    "referent": "Math. Phys. 5 (1964) 848–861; S. Doplicher, R. Haag, and J. E. Roberts,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "848"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 587,
-   "occurrence": 179,
+   "line": 670,
+   "occurrence": 197,
    "referent": "Math. Phys. 5 (1964) 848–861; S. Doplicher, R. Haag, and J. E. Roberts,",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "861"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 588,
-   "occurrence": 180,
+   "line": 671,
+   "occurrence": 198,
    "referent": "*Fields, Observables and Gauge Transformations I*, Commun. Math. Phys. 13",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "13"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 589,
-   "occurrence": 181,
+   "line": 672,
+   "occurrence": 199,
    "referent": "(1969) 1–23.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1969"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 589,
-   "occurrence": 182,
+   "line": 672,
+   "occurrence": 200,
    "referent": "(1969) 1–23.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "1"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 589,
-   "occurrence": 183,
+   "line": 672,
+   "occurrence": 201,
    "referent": "(1969) 1–23.",
+   "source_bound": true,
+   "source_keys": [
+    "BIBLIOGRAPHIC-COORDINATE"
+   ],
    "token": "23"
   },
   {
    "category": "FORMAL-OR-CORPUS-IDENTIFIER",
-   "line": 594,
-   "occurrence": 184,
+   "line": 677,
+   "occurrence": 202,
    "referent": "`v16/code/jrh_exact.py` into the paired transcript and JSON receipt using exact",
+   "source_bound": true,
+   "source_keys": [
+    "FORMAL-OR-CORPUS-IDENTIFIER"
+   ],
    "token": "16"
   }
  ],
- "paper_sha256": "2f5d79266231d036fab180855a8b2ba80d652544e5b3ff55f8a0bee60e228a78",
+ "paper_numeral_sources": {
+  "0": [
+   "measurements.bell_after_division[0][1]",
+   "measurements.bell_after_division[0][2]",
+   "measurements.bell_after_division[0][3]",
+   "measurements.bell_after_division[1][0]",
+   "measurements.bell_after_division[1][1]",
+   "measurements.bell_after_division[1][2]",
+   "measurements.bell_after_division[1][3]",
+   "measurements.bell_after_division[2][0]",
+   "measurements.bell_after_division[2][1]",
+   "measurements.bell_after_division[2][2]",
+   "measurements.bell_after_division[2][3]",
+   "measurements.bell_after_division[3][0]",
+   "measurements.bell_after_division[3][1]",
+   "measurements.bell_after_division[3][2]",
+   "measurements.bridge_cross_term",
+   "measurements.bridge_operator_sum[0][1]",
+   "measurements.bridge_operator_sum[1][0]",
+   "measurements.cycle_ranks.K2",
+   "measurements.cycle_ranks.path3",
+   "measurements.dephasing_translation[0]",
+   "measurements.dephasing_translation[1]",
+   "measurements.dephasing_translation[2]",
+   "measurements.hamiltonian_lifts[0][0]",
+   "measurements.hamiltonian_lifts[1][0]",
+   "measurements.hamiltonian_lifts[2][0]",
+   "measurements.hamiltonian_lifts[3][0]",
+   "measurements.hamiltonian_lifts[4][0]",
+   "measurements.main_stats_on_zero.1",
+   "measurements.nonlinear_control_x",
+   "measurements.reachable_geometries[0]",
+   "measurements.reset_translation[0]",
+   "measurements.reset_translation[1]",
+   "measurements.triangle_holonomy[0][1]",
+   "measurements.triangle_holonomy[1][0]",
+   "measurements.triangle_holonomy_trace"
+  ],
+  "1": [
+   "measurements.bridge_operator_sum[0][0]",
+   "measurements.bridge_total_probability",
+   "measurements.cycle_ranks.triangle",
+   "measurements.hamiltonian_lifts[2][1]",
+   "measurements.input_purity",
+   "measurements.main_stats_on_zero.0",
+   "measurements.nonlinear_control_z",
+   "measurements.reachable_geometries[1]",
+   "measurements.reset_translation[2]",
+   "measurements.shift_modes[0]",
+   "measurements.shift_modes[1]",
+   "measurements.shift_modes[2]",
+   "measurements.shift_modes[3]",
+   "measurements.triangle_holonomy[0][0]",
+   "measurements.triangle_holonomy[1][1]",
+   "measurements.triangle_holonomy_determinant"
+  ],
+  "1/2": [
+   "measurements.bell_after_division[0][0]",
+   "measurements.bell_after_division[3][3]",
+   "measurements.bell_classical_weight",
+   "measurements.cq_output_purity",
+   "measurements.mean_geometry",
+   "measurements.rival_stats_on_zero.0",
+   "measurements.rival_stats_on_zero.1"
+  ],
+  "1/3": [
+   "measurements.mixture_weight"
+  ],
+  "13": [
+   "measurements.source_paths",
+   "render_metadata.source_count"
+  ],
+  "16/25": [
+   "measurements.bridge_probabilities[1]",
+   "measurements.path_amplitudes[1]"
+  ],
+  "17": [
+   "render_metadata.mutant_count"
+  ],
+  "20": [
+   "render_metadata.choice_count"
+  ],
+  "3": [
+   "measurements.hamiltonian_lifts[1][1]",
+   "measurements.tp_families",
+   "measurements.tp_family_total"
+  ],
+  "3/5": [
+   "measurements.rotation_matrix[0][0]",
+   "measurements.rotation_matrix[1][1]"
+  ],
+  "32": [
+   "render_metadata.consequence_count"
+  ],
+  "337/625": [
+   "measurements.divided_probability"
+  ],
+  "38": [
+   "render_metadata.gate_count"
+  ],
+  "4": [
+   "measurements.bridge_operator_sum[1][1]",
+   "measurements.complete_row_total",
+   "measurements.complete_rows",
+   "measurements.diamond_branches"
+  ],
+  "4/5": [
+   "measurements.rotation_matrix[0][1]",
+   "measurements.rotation_matrix[1][0]"
+  ],
+  "49/625": [
+   "measurements.coherent_probability"
+  ],
+  "5": [
+   "measurements.hamiltonian_lifts[3][1]"
+  ],
+  "6": [
+   "measurements.cp_branch_maps"
+  ],
+  "7": [
+   "measurements.hamiltonian_lifts[0][1]",
+   "render_metadata.claim_count"
+  ],
+  "9": [
+   "measurements.hamiltonian_lifts[4][1]",
+   "measurements.rival_safety_passes",
+   "measurements.rival_safety_total"
+  ],
+  "9/25": [
+   "measurements.bridge_probabilities[0]",
+   "measurements.path_amplitudes[0]"
+  ],
+  "90": [
+   "measurements.cp_principal_minors_checked"
+  ]
+ },
+ "paper_sha256": "98489edb6a83919199c11b14b92c423965d1a08ad7652a1c1915d5402f9e6003",
  "primary_verdict": "BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED",
  "read_set": [
   {
@@ -2185,26 +4235,27 @@
  "seal_manifest": {
   "algorithm": "sha256-canonical-json",
   "sealed_keys": {
-   "choice_inventory": "d146b7a8e96dfd0137fdfca6f15ed73a8172f88019e702d91db4df2ad38170e0",
-   "claims": "a8c55608bbec85125dd4efe1762deb2f1690a7a9804407577bc60aed24da7d92",
-   "consequences": "bc2f1332f5575f02ff74fd20a690ddfa913675c71208d0ac8ea77d22af5e58c0",
-   "gates": "3f0be07703557c7ceee3da9598fb7e3385cdda01f81f3cbfadbf3f46efc1f776",
-   "ledger_head": "0246f2f6cbfaeba45096b29a20add782317a0cca5896c303802e5de42f9c528d",
-   "measurements": "db3e31d9afa94964c8fd01b23806238adaf4324a2a1e77792f08ea2758f087af",
-   "mutant_survey": "5f5d85c6b5c8d90dc27e11e977e98005c916af6437ed7784e6a40c0c1d69f25c",
-   "output_sha256": "1da7f15c7c9947af42c16bd9a87fe023729f960c281ebc35fde9f1754c5dc296",
-   "paper_numeral_inventory": "791ab4139073a41a08a190940948e6f78617d1cacf240639fe35e8c8bf12a103",
-   "paper_sha256": "99c396d4d2a391341f2dafaece1d2903732d454a98a29b3f1ea8d72846db450e",
+   "choice_inventory": "1cbed59403042043162ef4383e6d3ac51b6e766f56ba2c20c402e86432fd9bb5",
+   "claims": "06ae2dd91f570d337a4b15178a0b91a29d1e2d1630413dda3bad635a5279dd5f",
+   "consequences": "917d1fe63be48d5533668c56d923518d7ca3364bae36248b41de9ec4f7fa8c52",
+   "gates": "02f25464bcca2c728a0fcf7fc3b0b4d9bdf07e5dfbb98d254fc0f78a0d3227f7",
+   "ledger_head": "35c19551b9dccd1ddc95cc2133ece0e8fdf6d719ddb38b7cd0e4db6b38b17b5f",
+   "measurements": "4686f8b013163b374196f2d3689ebdf006065a07cae30cbd21c4cb858f5f50a9",
+   "mutant_survey": "496577fab6be9ec4796155436b4879f2d99e5481ad51fcaecf4b2c22b5f75abc",
+   "output_sha256": "191beaa2b86991759f36f914a37a43a34e8f311e1673308da7dbfa4a422992a0",
+   "paper_numeral_inventory": "980950cc6274563e31a1e73f7a47487fd2e4fc32a9a04c00a3f9e0466878a7d0",
+   "paper_numeral_sources": "a3afa1d953dd3f0fab9b53e01b8ab4cc50c81a7484bfc2a2ccef4fc8ee99badf",
+   "paper_sha256": "b642600b13810638e6b9e13f11d55be50331d61c49436e696309a7a7da21a3ac",
    "primary_verdict": "f64ae45e4c1a50a3efc9f418996c5e2977ac99cef95edb7357d41fdf1a84a7e3",
    "read_set": "407936a10a0c12285ebacbd449b2e6bad59aba50d475c7a126a019dce83ec7b3",
    "schema": "a5196abf79e891397af797cd1f1ac3354af30445b0f5f2d2be0edca7a0da895a",
    "scope": "282c0106ffceb4dcf78ce9bb788ead445eddf0dd6d3186af22ccc0a32406f860",
-   "secondary_verdicts": "42cddff7ffba7afe4fb8a33aea3c103081c170b57f51bb4a4ffd0e749d10e7e2",
+   "secondary_verdicts": "64567a9c9a15d92ac65b1a4fcbdc82d961b74072a962a2f4d33bee695aa00486",
    "source_anchors": "7a4fcd272d43c17c788222fcfce087b7c9bb0f6a94a1c5aae872c4c62890ac39",
-   "status": "f27ac8b0a3ae18a8fa4b38f622cce2d9bb53280dd461910715baf5efc30a13b9",
+   "status": "d75b71458f843e6c14189cde4c1b6b110e716625d94410eeacd994398a907c46",
    "unit": "e496d1be638f54071d96e5dd07ab9852302d9441eb1d7af6011ebfb5c95ab08c"
   },
-  "total_keys_excluding_manifest": 18
+  "total_keys_excluding_manifest": 19
  },
  "secondary_verdicts": [
   "DYNAMIC-GEOMETRY-NOT-INSTANTIATED",
@@ -2213,6 +4264,10 @@
   "L2-INSTRUMENT-VIABLE",
   "TRIANGLE-FIRST-CYCLE-NOT-FIRST-EVENT",
   "FIXED-FACTOR-PREPARATION-BLIND",
+  "HISTORY-TO-INSTRUMENT-REQUIRES-OPERATOR-COMPLETENESS",
+  "GEOMETRY-SECTOR-PAIRING-OPEN",
+  "BACKREACTION-NONFACTORISATION-UNTESTED",
+  "OBJECTIVE-ACTUALIZATION-POSTULATED-UNSELECTED",
   "HAMILTONIAN-ONE-STEP-NONUNIQUE",
   "SPECIES-UNSELECTED",
   "AFFINE-CHANNEL-TERM-UNSELECTED",
@@ -2234,6 +4289,6 @@
   "v15/paper-50-arity16.md": "3e01a1ce1b39e478482c485a15b6e5847a427310bafcb3370f04fe2ae963a9eb",
   "v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md": "173143f9ffb91673fe13f8b3a741dd29baaadf542b29720104af49f14f617578"
  },
- "status": "REPAIRED-PENDING-DELTA-VERIFICATION",
+ "status": "FINAL-REPAIR-PENDING-POSTCOMMIT-VERIFICATION",
  "unit": "v16-paper-01-jrh"
 }

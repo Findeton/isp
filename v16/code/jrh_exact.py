@@ -516,9 +516,13 @@ MUTANT_GATES = {
     "CP_BREAK": "G-B1-CP",
     "NONLINEAR": "G-B3-AFFINITY",
     "EPR_SIGNAL": "G-B5-NO-SIGNALLING",
+    "EB_FALSE_SEPARABLE": "G-B7-ENTANGLEMENT-BREAKING",
+    "DIVISION_CLASSICALIZE": "G-B8-DIVISION-BOUNDARY",
+    "BRIDGE_COMPLETENESS_FAKE": "G-B9-STATE-DECOHERENCE-NOT-INSTRUMENT",
     "FEEDFORWARD_BREAK": "G-C2-FEEDFORWARD-EQUIVALENCE",
     "COLLAR_SMUGGLE": "G-C4-COLLAR-UNINSTANTIATED",
     "SPECTATOR_COUPLE": "G-D2-IDLE-SPECTATOR",
+    "DIAMOND_PAYLOAD_BREAK": "G-D3-DISJOINT-DIAMOND",
     "LOOP_FAKE": "G-D4-FIRST-LOOP",
     "HAMILTONIAN_CANONICAL": "G-E2-BRANCH-AMBIGUITY",
     "RIVAL_IDENTICAL": "G-F3-RIVAL-LAW",
@@ -707,6 +711,8 @@ def run_core(root: Path, mutant_name: str | None = None) -> dict[str, Any]:
     bell_classical_rows[0][0] = gi(Q(1, 2))
     bell_classical_rows[3][3] = gi(Q(1, 2))
     bell_classical = tuple(tuple(row) for row in bell_classical_rows)
+    if mutant_name == "EB_FALSE_SEPARABLE":
+        bell_after = mut.change("EB_FALSE_SEPARABLE", bell_after, bell)
     entanglement_breaking = bell_after == bell_classical and purity(bell_after) == Q(1, 2)
     ledger.gate(
         "G-B7-ENTANGLEMENT-BREAKING",
@@ -723,6 +729,8 @@ def run_core(root: Path, mutant_name: str | None = None) -> dict[str, Any]:
     rotation_unitary = mmul(mdag(rot), rot) == I2
     amp_via_0 = gm(rot[0][0], rot[0][0])
     amp_via_1 = gm(rot[0][1], rot[1][0])
+    if mutant_name == "DIVISION_CLASSICALIZE":
+        amp_via_1 = mut.change("DIVISION_CLASSICALIZE", amp_via_1, gn(amp_via_1))
     coherent_probability = gabs2(ga(amp_via_0, amp_via_1))
     divided_probability = gabs2(amp_via_0) + gabs2(amp_via_1)
     interference_survives = (
@@ -735,6 +743,33 @@ def run_core(root: Path, mutant_name: str | None = None) -> dict[str, Any]:
         "G-B8-DIVISION-BOUNDARY",
         interference_survives,
         f"unresolved rational paths give {qstr(coherent_probability)} while an inserted intermediate record gives {qstr(divided_probability)}",
+        mut.moves,
+    )
+
+    # State-relative decoherence and normalization do not imply that the
+    # class operators form an instrument on every allowed input.
+    bridge_rho = P0
+    bridge_k0 = matrix([[Q(3, 5), 0], [0, 2]])
+    bridge_k1 = matrix([[0, 0], [Q(4, 5), 0]])
+    bridge_p0 = mtrace(apply_k(bridge_k0, bridge_rho))[0]
+    bridge_p1 = mtrace(apply_k(bridge_k1, bridge_rho))[0]
+    bridge_cross = mtrace(mmul(bridge_k0, mmul(bridge_rho, mdag(bridge_k1))))
+    bridge_total = mtrace(apply_k(madd(bridge_k0, bridge_k1), bridge_rho))[0]
+    bridge_completeness = madd(mmul(mdag(bridge_k0), bridge_k0), mmul(mdag(bridge_k1), bridge_k1))
+    if mutant_name == "BRIDGE_COMPLETENESS_FAKE":
+        bridge_completeness = mut.change("BRIDGE_COMPLETENESS_FAKE", bridge_completeness, I2)
+    bridge_no_go = (
+        bridge_p0 == Q(9, 25)
+        and bridge_p1 == Q(16, 25)
+        and bridge_cross == Z0
+        and bridge_total == 1
+        and bridge_completeness == matrix([[1, 0], [0, 4]])
+        and bridge_completeness != I2
+    )
+    ledger.gate(
+        "G-B9-STATE-DECOHERENCE-NOT-INSTRUMENT",
+        bridge_no_go,
+        "one state has exact 9/25 plus 16/25 decoherent normalization while the operator sum is diag(1,4), not identity",
         mut.moves,
     )
 
@@ -848,7 +883,14 @@ def run_core(root: Path, mutant_name: str | None = None) -> dict[str, Any]:
             "records", (("AB", a), ("CD", c)),
         )
         complete_left[payload] = left
-        complete_right[payload] = right
+        right_payload = payload
+        if mutant_name == "DIAMOND_PAYLOAD_BREAK" and (a, c) == (0, 0):
+            right_payload = mut.change(
+                "DIAMOND_PAYLOAD_BREAK",
+                right_payload,
+                right_payload + ("composition_order", "right"),
+            )
+        complete_right[right_payload] = right
     correlated = diamond_probs[(0, 0)] == Q(1, 2) and diamond_probs[(1, 1)] == Q(1, 2) and diamond_probs[(0, 1)] == 0
     ledger.gate(
         "G-D3-DISJOINT-DIAMOND",
@@ -1044,9 +1086,16 @@ def run_core(root: Path, mutant_name: str | None = None) -> dict[str, Any]:
         "nonlinear_control_z": nonlinear_z,
         "nonlinear_control_x": nonlinear_x,
         "bell_after_division": bell_after,
+        "bell_classical_weight": Q(1, 2),
         "entanglement_breaking": entanglement_breaking,
+        "rotation_matrix": rot,
+        "path_amplitudes": [amp_via_0, amp_via_1],
         "coherent_probability": coherent_probability,
         "divided_probability": divided_probability,
+        "bridge_probabilities": [bridge_p0, bridge_p1],
+        "bridge_cross_term": bridge_cross,
+        "bridge_total_probability": bridge_total,
+        "bridge_operator_sum": bridge_completeness,
         "mean_geometry": mean_geometry,
         "reachable_geometries": sorted(reachable_geometry),
         "feedforward_equivalent": feedforward_equivalent,
@@ -1088,13 +1137,16 @@ CONSEQUENCES = [
     ("two-actor projective occurrence", "FORCED", "A typed pair-supported instrument exists and has an exact idle-spectator extension."),
     ("two-actor gravitational backreaction", "OPEN", "No calibrated source, relation rewrite, constraint, or geometric response is constructed."),
     ("three actors as first simple-graph cycle", "FORCED", "The exact connected simple-graph cycle ranks are 0, 0, and 1."),
-    ("three actors as minimum event arity", "REFUSED", "The L2 instrument is a counterexample and no universal arity law is derived."),
+    ("minimum-three claim from the present boundary architecture", "REFUSED", "The L2 instrument is a counterexample at its typed scope; a future selected law's minimum support remains open."),
+    ("all-n interaction law", "OPEN", "Pair and triple instruments show expressibility only; no coherent arbitrary-support extension theorem exists."),
     ("fixed-factor preparation blindness", "FORCED", "Blockwise linearity makes all decompositions of one density operator operationally equal."),
     ("growing-geometry no-signalling", "OPEN", "Relational subsystem algebras and their output-sector embeddings are not defined."),
     ("registered decomposition-reading control", "REFUSED", "It violates affinity and produces the registered steering signal."),
     ("every ontic pure-state dynamics", "OPEN", "One bad ensemble functional does not classify the full ontic branch."),
     ("coherent propagation through the displayed division map", "REFUSED", "The unconditioned projective map is entanglement breaking."),
     ("complex whole-history representation", "PERMITTED", "The exact interference witness requires coherent alternatives before a record boundary, but does not select their amplitudes."),
+    ("state-relative decoherence automatically yields an instrument", "REFUSED", "The exact bridge counterexample normalizes on one state while its operator sum is diag(1,4)."),
+    ("objective actualization", "OPEN", "Selection of one successor is postulated; compatible stable record partitions and refinement consistency are missing."),
     ("one-step Hamiltonian uniqueness", "REFUSED", "Infinitely many logarithm lifts share the registered transfer once a clock is chosen."),
     ("global Hamiltonian representation", "OPEN", "No canonical one is supplied, while larger-space dilations remain possible."),
     ("particle species", "OPEN", "No selected law, vacuum, statistics, stability criterion, or scattering map exists."),
@@ -1109,6 +1161,7 @@ CONSEQUENCES = [
     ("metric noise", "OPEN", "No metric or macroscopic coarse-graining is typed."),
     ("higher-curvature correction", "OPEN", "A loop transport exists, but no gravitational curvature action or coefficient is selected."),
     ("modified dispersion", "OPEN", "There is no momentum, energy, continuum clock, or dispersion observable."),
+    ("Lorentz violation", "OPEN", "Discreteness alone supplies no preferred-frame theorem or comparison observable."),
     ("forced QFT/GR deviation", "OPEN", "No comparison observable or exhaustive surviving law family is defined."),
     ("existing ISP walk reconstruction", "OPEN", "The qubit fixture is not a map from the committed walk."),
 ]
@@ -1124,7 +1177,11 @@ CHOICES = [
     ("X-projective rival law", "FREE-CONTROL"),
     ("complex whole-history functional", "MISSING"),
     ("local matter-geometry amplitudes/action", "MISSING"),
+    ("common boundary types and geometry-sector pairings", "MISSING"),
+    ("operator completeness at reusable divisions", "MISSING"),
     ("genuine division boundaries", "MISSING"),
+    ("compatible record-partition actualization", "MISSING"),
+    ("nonfactorizing calibrated backreaction", "MISSING"),
     ("all-n extension law", "MISSING"),
     ("vacuum", "MISSING"),
     ("clock/logarithm branch", "FREE-IN-REPRESENTATION"),
@@ -1146,6 +1203,10 @@ def secondary_verdicts() -> list[str]:
         "L2-INSTRUMENT-VIABLE",
         "TRIANGLE-FIRST-CYCLE-NOT-FIRST-EVENT",
         "FIXED-FACTOR-PREPARATION-BLIND",
+        "HISTORY-TO-INSTRUMENT-REQUIRES-OPERATOR-COMPLETENESS",
+        "GEOMETRY-SECTOR-PAIRING-OPEN",
+        "BACKREACTION-NONFACTORISATION-UNTESTED",
+        "OBJECTIVE-ACTUALIZATION-POSTULATED-UNSELECTED",
         "HAMILTONIAN-ONE-STEP-NONUNIQUE",
         "SPECIES-UNSELECTED",
         "AFFINE-CHANNEL-TERM-UNSELECTED",
@@ -1164,7 +1225,12 @@ def claims_for(measurements: dict[str, Any]) -> dict[str, str]:
         "ARITY": (
             "A two-actor projective instrument is viable; cycle ranks "
             f"{measurements['cycle_ranks']['K2']}, {measurements['cycle_ranks']['path3']}, "
-            f"{measurements['cycle_ranks']['triangle']} make three actors the first simple-graph cycle, not the first event."
+            f"{measurements['cycle_ranks']['triangle']} make three actors the first simple-graph cycle but do not select minimum event support."
+        ),
+        "BRIDGE": (
+            "One exact partition has state-relative probabilities "
+            f"{qstr(measurements['bridge_probabilities'][0])} and {qstr(measurements['bridge_probabilities'][1])} "
+            f"with zero cross term, yet its operator sum is diag(1,4); one-state decoherence does not imply a reusable instrument."
         ),
         "HAMILTONIAN": (
             f"The frozen transfer has {len(measurements['hamiltonian_lifts'])} tested generator lifts with one image, "
@@ -1192,8 +1258,8 @@ def render_paper(measurements: dict[str, Any], claims: dict[str, str], gate_coun
 
 ## Complete relational histories, division boundaries, and the dynamics still missing
 
-**Status:** final finite result plus a serious unproved candidate for the
-fundamental law.
+**Status:** bounded final repair pending post-commit verification: an exact
+finite negative/boundary result plus a serious unproved dynamical candidate.
 
 ### Abstract
 
@@ -1222,14 +1288,16 @@ interference the theory is meant to explain.
 
 The refined bet is consequently a strongly positive complex decoherence
 functional over complete finite relational histories of matter and geometry.
-Coherent alternatives are summed between genuine division boundaries.  A CP
-instrument and one actual durable successor emerge only at a partition where
-the functional decoheres.  Geometry back-reacts history by history because
-each alternative contains its own relation and transport data; no expectation
-value is fed nonlinearly into a classical metric.  This proposal has genuine
-dynamical form, but its local complex weights, division criterion, refinement
-fixed point, vacuum, scales, and continuum phase remain unselected.  The exact
-primary verdict is `{primary_verdict()}`.
+Coherent alternatives are summed between genuine division boundaries.
+Decoherence for one prepared boundary state licenses state-relative
+probabilities; a reusable CP instrument additionally requires all-input
+operator completeness, and one actual successor is postulated rather than
+derived.  Including matter and geometry in the same history only makes
+backreaction expressible: real coupling still requires nonfactorizing weights
+and a calibrated relational response.  The local complex weights, division
+criterion, boundary pairings, refinement fixed point, vacuum, scales, and
+continuum phase remain unselected.  The exact primary verdict is
+`{primary_verdict()}`.
 
 ### The idea without technical language
 
@@ -1263,6 +1331,14 @@ bit named `geometry`; it must be a rule-governed property of the realized
 relation and transport structure that controls later reachability,
 composition, or measured interval data.  A boundary collar is geometric only
 if it carries typed continuation data constrained by that structure.
+
+Between durable divisions, only the recorded prefix and relational facts
+invariant across its still-coherent refinements are licensed as settled.  A
+fine internal slicing is not separately sampled into a classical microhistory.
+At the next compatible stable record, objective stochastic actualization
+extends the one realized history by one complete recorded successor.  This is
+an ontological postulate about the world, not a consequence of writing a class
+operator.
 
 **Law.**  The law concerns the complete possible histories between genuine
 division boundaries.  It need not factor into a sequence of physically real
@@ -1336,7 +1412,7 @@ controller bit is insufficient.
 
 On one half of a Bell pair, the unconditioned Z instrument produces exactly
 
-`(1/2)|00><00| + (1/2)|11><11|`,
+`({qstr(measurements['bell_classical_weight'])})|00><00| + ({qstr(measurements['bell_classical_weight'])})|11><11|`,
 
 a separable state of purity `{qstr(measurements['cq_output_purity'])}`.  The
 map is entanglement breaking.
@@ -1345,11 +1421,13 @@ The independent rational interference fixture uses the exact orthogonal
 rotation
 
 ```text
-R = [[3/5, 4/5], [-4/5, 3/5]].
+R = [[{gstr(measurements['rotation_matrix'][0][0])}, {gstr(measurements['rotation_matrix'][0][1])}],
+     [{gstr(measurements['rotation_matrix'][1][0])}, {gstr(measurements['rotation_matrix'][1][1])}]].
 ```
 
 For return to the first output after two rotations, the two intermediate path
-amplitudes are `9/25` and `-16/25`.  Summing them before squaring gives
+amplitudes are `{gstr(measurements['path_amplitudes'][0])}` and
+`{gstr(measurements['path_amplitudes'][1])}`.  Summing them before squaring gives
 `{qstr(measurements['coherent_probability'])}`.  Inserting an intermediate
 record makes the path probabilities add and gives
 `{qstr(measurements['divided_probability'])}`.  The difference is exact.
@@ -1376,10 +1454,11 @@ unchanged.  This licenses a finite transport-loop statement, not Regge or
 spacetime curvature.
 
 Three actors are therefore the first cycle context in this simple-graph
-family.  They are not the minimum interaction arity.  A regional law may
-contain pair, triple, and arbitrary finite support in parallel, just as a field
-theory packages simultaneous local degrees of freedom rather than enforcing
-one universal collision size.
+family.  The present boundary architecture does not make three a minimum
+interaction arity: its typed L2 instrument is a counterexample at that scope.
+A future selected fundamental law could still impose a minimum support.  Pair,
+triple, and arbitrary finite support may coexist only if one coherent all-n
+regional extension is actually constructed.
 
 #### Underdetermination
 
@@ -1408,19 +1487,32 @@ boundary records.  A history `h` contains at least:
 - every durable record actually formed; and
 - typed maps identifying the same boundary fact across refinements.
 
-For a coarse history question `A`, define a class operator by coherent
-summation,
+Each physical boundary type `B` carries a declared state space `H_B` or local
+observable algebra.  A history `h:B_- -> B_+` carries a typed map
+`V[h]:H_(B_-) -> H_(B_+)`.  Only histories with common physical boundary types
+may be added directly.  If several durable output records define types
+`B_+^alpha`, their output is the orthogonal direct sum of those record sectors.
+Fine histories with different unrecorded internal geometries may interfere
+only when predeclared refinement maps place them at the same unread coarse
+boundary.  Boundary embeddings, pairings, gauge quotients, and refinement maps
+must be fixed before amplitudes or held-out predictions are inspected.
+
+For a coarse history question `A` with common typed boundaries, define a class
+operator by coherent summation,
 
 `K_A = sum_(h in A) a[h] V[h]`,
 
 where `V[h]` transports the process state along the geometry of that same
-history and `a[h]` is its complex scalar weight.  Define
+history and `a[h]` is its complex scalar weight.  The trace below is on the
+declared common output space.  Define
 
 `D(A,B) = Tr(K_A rho_boundary K_B^dagger)`.
 
-The candidate law is the compatible family of these functionals, not one
-instantaneous wave function.  It must be Hermitian, normalized, additive under
-coarse graining, and strongly positive.  It must also satisfy:
+For common types and positive `rho_boundary`, this formula is Hermitian,
+additive, and strongly positive because its finite event matrix is a Gram
+matrix.  Those properties do not select `a[h]` or `V[h]`.  The candidate law is
+the compatible family of such functionals, not one instantaneous wave
+function.  It must also satisfy:
 
 1. **regional gluing:** shared unrecorded boundaries are summed/contracted and
    disjoint regions compose;
@@ -1435,13 +1527,20 @@ coarse graining, and strongly positive.  It must also satisfy:
    under every licensed future continuation; and
 6. **nontrivial coherence:** at least one unrecorded refinement retains an
    off-diagonal term, so the theory is not a classical stochastic growth law
-   in disguise.
+   in disguise;
+7. **typed output pairing:** fine geometry alternatives interfere only through
+   an independently declared common unread boundary, while distinguishable
+   durable records occupy orthogonal sectors; and
+8. **operational completeness:** whenever a partition is advertised as a
+   reusable instrument, its full CP branch family is trace nonincreasing and
+   sums to a trace-preserving map for every allowed input and ancilla.
 
 A partition `{{A_alpha}}` is a genuine division boundary only when
 
 `D(A_alpha,A_beta) = 0` for distinct recorded alternatives.
 
-Then, and only then, ordinary probabilities are licensed:
+For the declared prepared boundary state, ordinary probabilities are then
+licensed:
 
 `p(alpha) = D(A_alpha,A_alpha)`.
 
@@ -1450,10 +1549,28 @@ successor has
 
 `p(alpha | H) = D(H alpha,H alpha) / D(H,H)`
 
-when the denominator is nonzero and the successor partition decoheres.  One
-`alpha` becomes actual by an objective stochastic postulate.  The normalized
-conditional state on that branch may be nonlinear because of conditioning;
-the unconditioned complete law remains preparation-independent.
+when the denominator is nonzero and `{{H alpha}}` is an exhaustive decoherent
+refinement of `H`.  One `alpha` becomes actual only by an objective stochastic
+postulate on a preferred compatible algebra of stable record partitions.  The
+postulate must be consistent under nesting, refinement, and every licensed
+future extension.  The normalized conditional state on that branch may be
+nonlinear because of conditioning; the unconditioned complete law remains
+preparation-independent.
+
+State-relative decoherence is not by itself an instrument theorem.  The exact
+counterexample in the receipt has probabilities
+`{qstr(measurements['bridge_probabilities'][0])}` and
+`{qstr(measurements['bridge_probabilities'][1])}`, zero cross term, and total
+probability `{qstr(measurements['bridge_total_probability'])}` on its declared
+state, while
+
+`sum_alpha K_alpha^dagger K_alpha = diag(1,4)`.
+
+Thus a reusable single-Kraus fixed-space instrument additionally requires
+`K_alpha^dagger K_alpha <= I` and
+`sum_alpha K_alpha^dagger K_alpha = I`; general branches require the analogous
+condition for their full Kraus maps, and changing algebras require the typed
+ancilla-stable version.
 
 The finite result uses exact zero off-diagonal terms.  A macroscopic theory
 would need a quantitative and refinement-stable error theorem for approximate
@@ -1462,16 +1579,19 @@ threshold is declared here.
 
 #### A concrete local-weight ansatz
 
-The least empty dynamical ansatz is
+One explicit but deliberately unselected coordinate ansatz is
 
 `a[h] = product_v exp(-I_v[h]/2 + i Theta_v[h])`,
 
 with the product over local relational vertices/regions.  `I_v` is an
 information or record-distinguishability cost and `Theta_v` is an oriented
-phase/transport functional.  They are evaluated on the same local
-matter-geometry history, so backreaction is not appended afterward.  They must
-remain distinct: a positive probability shadow does not determine the phase
-data responsible for interference.
+phase/transport functional.  Evaluating both on one matter–geometry history
+does not prove coupling: the complete local class operator might still factor
+into independent matter and geometry parts.  A backreaction claim requires an
+invariant nonfactorization discriminator and a held-out test in which a
+calibrated matter-load change moves a relational/transport response that then
+changes later matter propagation.  Positive probability data alone still do
+not determine the phase data responsible for interference.
 
 This ansatz is concrete but not selected.  Its serious selector is a
 universality problem rather than a slogan:
@@ -1498,19 +1618,21 @@ overlapping region must induce the same boundary functional.
 
 The candidate differs from expectation-sourced semiclassical gravity.  It
 does not calculate an average stress tensor and feed that average back into one
-classical branch.  Matter and geometry are varied/summed jointly as parts of
-each complete history.  The actual geometry is the geometry of the selected
-recorded history.
+classical branch.  It allows matter and geometry to be varied/summed jointly
+inside each complete history, but that is only a container until the weights
+pass the nonfactorization and calibrated-response tests.  The actual geometry,
+if the candidate succeeds, is the geometry of the selected recorded history.
 
 There are then two empirical forks.
 
 - If distinct geometry histories remain coherent until a genuine record forms,
   gravity need not cause universal microscopic decoherence.
 - If geometry is classical and distinguishing at every microscopic step, it
-  continually records the matter alternatives.  Decoherence and stochastic
-  geometric noise then become unavoidable conditional consequences, with a
-  quantitative tradeoff fixed only after the coupling and division rate are
-  selected.
+  records the matter alternatives whenever nontrivial branches are
+  distinguishable.  Their interference is then lost.  Stochastic geometric
+  noise follows only with nontrivial branching, a selected actualization rate,
+  a metric readout, and a scale; deterministic or zero-response sectors need
+  not fluctuate.
 
 The present finite model realizes neither gravitational branch; it realizes
 ordinary detector feed-forward.
@@ -1531,7 +1653,10 @@ trace on one frozen tensor product is not enough.
 An ontic pure-state variable is not ruled out in general.  It is viable only if
 its complete composite law is preparation-independent wherever remote steering
 is operationally phrasable, or if the extra structure cannot be remotely
-selected.  The registered decomposition-reading functional fails this test.
+selected.  It must also reproduce conditional steering and Bell correlations
+and prove parameter independence for its complete composite law; merely making
+decomposition data inaccessible is not a finished theory.  The registered
+decomposition-reading functional fails the safety test.
 
 ### Hamiltonian reconstruction
 
@@ -1545,15 +1670,18 @@ A Hamiltonian can emerge when a selected phase contains:
 
 - a stable background or relational clock;
 - repeated thin boundaries on one identifiable state space;
-- continuity or a semigroup/group law;
+- a strongly continuous one-parameter unitary group;
 - locality and spectral conditions; and
 - a chosen logarithm branch and units.
 
-Then `H` is the generator of that effective transfer representation.  On a
-changing carrier the more natural objects may be class operators, regional
-amplitudes, combs, or process tensors.  A larger fixed-space unitary dilation
-can always repackage many channels, but its environment, clock, and embedding
-are additional representation choices.  None becomes ontology by notation.
+Then `H` is the self-adjoint generator of that effective unitary
+representation.  A strongly continuous CPTP semigroup instead has a general
+Lindblad/GKSL generator; a non-Markovian process need not have a homogeneous
+generator at all.  On a changing carrier the more natural objects may be class
+operators, regional amplitudes, combs, or process tensors.  A selected larger
+fixed-space unitary dilation can repackage many channels with a Hamiltonian,
+but its environment, clock, and embedding are additional representation
+choices.  None becomes ontology by notation.
 
 ### Particles, species, and interactions
 
@@ -1567,9 +1695,11 @@ fermions.
 
 Interactions are the multilinear/fusion terms among those stable sectors, or
 equivalently the local vertices in the coarse history functional.  Pair,
-triple, and higher effective vertices can coexist.  The number three has no
-universal particle or interaction status merely because a triangle is the
-first loop.
+triple, and higher effective vertices can coexist only after the refinement
+law shows that their regional amplitudes are compatible.  Irreducible support
+means nonfactorization through every licensed internal boundary, not merely a
+large number of simultaneous labels.  The number three has no universal
+particle or interaction status merely because a triangle is the first loop.
 
 The exact identity-versus-shift example proves only that different unspecified
 transfer laws on one finite carrier have different spectral partitions.  It
@@ -1647,7 +1777,13 @@ and `BC`, plus one external probe actor.  It must include:
 6. branchwise flux conservation and a geometry-validity constraint;
 7. a fixed-factor and changing-factorization no-signalling census; and
 8. an interference witness that an entanglement-breaking placeholder cannot
-   pass.
+   pass;
+9. predeclared common-boundary/refinement maps distinguishing coherent
+   unrecorded geometries from orthogonal durable record sectors;
+10. all-input operator completeness at every advertised reusable division;
+11. a nonfactorization discriminator plus calibrated matter-to-geometry-to-
+   held-out response; and
+12. compatible nested record partitions for the actualization postulate.
 
 A neighboring-loop four-actor closure test should follow.  Only after these
 survive is it meaningful to search for an all-arity law, a vacuum, species, or
@@ -1729,7 +1865,8 @@ rational or Gaussian-rational arithmetic.  The dynamical functional and its
 continuum fixed point are explicitly conjectural and have no generated
 coefficient.  This paper proves a boundary-instrument result, an eliminability
 no-go, an entanglement-breaking consequence, an interference placement
-constraint, and weak-surface nonselection.  It does not prove quantum gravity.
+constraint, a state-relative-decoherence-to-instrument no-go, and weak-surface
+nonselection.  It does not prove quantum gravity.
 """
 
 
@@ -1762,21 +1899,38 @@ def validate_claims(paper: str, output: str, claims: dict[str, str]) -> tuple[bo
         ocount = output.count(f"{key}: {value}")
         if pcount != 1 or ocount != 1:
             failures.append(f"{key}:paper={pcount},output={ocount}")
-    extra_paper = set(re.findall(r"^(PRIMARY|EXISTENCE|ARITY|HAMILTONIAN|SELECTION|DEVIATION): .+$", paper, re.M))
+    extra_paper = set(re.findall(r"^(PRIMARY|EXISTENCE|ARITY|BRIDGE|HAMILTONIAN|SELECTION|DEVIATION): .+$", paper, re.M))
     return (not failures and extra_paper == set(claims), ";".join(failures) or "two-way claim keys and exact strings agree")
 
 
-def paper_numeral_inventory(paper: str) -> tuple[list[dict[str, Any]], int]:
-    """Bind every decimal numeral occurrence to a referent class and line.
+def numeric_source_map(measurements: dict[str, Any], metadata: dict[str, Any]) -> dict[str, list[str]]:
+    """Map every exact numeric token to the receipt paths that generate it."""
+    found: dict[str, set[str]] = {}
 
-    Scientific counts in the generated prose are interpolated from the exact
-    measurement object.  Formal identifiers (v15, L2, I/2, and the displayed
-    transfer) and bibliographic coordinates are not measurements, so they are
-    split rather than silently admitted as receipt values.
-    """
+    def walk(obj: Any, path: str) -> None:
+        if isinstance(obj, dict):
+            for key, value in obj.items():
+                walk(value, f"{path}.{key}")
+            return
+        if isinstance(obj, list):
+            for index, value in enumerate(obj):
+                walk(value, f"{path}[{index}]")
+            return
+        if isinstance(obj, bool) or obj is None:
+            return
+        cooked = str(obj)
+        for token in re.findall(r"\d+(?:/\d+)?", cooked):
+            found.setdefault(token, set()).add(path)
+
+    walk(serial(measurements), "measurements")
+    walk(serial(metadata), "render_metadata")
+    return {token: sorted(paths) for token, paths in sorted(found.items())}
+
+
+def paper_numeral_inventory(paper: str, sources: dict[str, list[str]]) -> tuple[list[dict[str, Any]], int]:
+    """Bind every decimal numeral to an explicit source or a typed non-data class."""
     rows: list[dict[str, Any]] = []
     in_bibliography = False
-    formal = re.compile(r"(?:\bv\d+\b|\bL\d+\b|\bK\d+\b|\bI/\d+\b|diag\([^)]*\d|J_[A-Za-z0-9]+|P_[A-Za-z0-9]+)")
     total = 0
     for line_no, line in enumerate(paper.splitlines(), 1):
         if line == "### Primary literature anchors":
@@ -1785,17 +1939,36 @@ def paper_numeral_inventory(paper: str) -> tuple[list[dict[str, Any]], int]:
             in_bibliography = False
         for match in re.finditer(r"\d+(?:/\d+)?", line):
             total += 1
+            token = match.group(0)
+            before = line[:match.start()]
+            after = line[match.end():]
+            enumerator = bool(re.match(r"^\s*\d+[.)]\s", line)) and not before.strip()
+            immediate_formal = (
+                (bool(before) and before[-1].isalpha())
+                or (bool(after) and after[0].isalpha())
+                or before.endswith("I/")
+                or (before.endswith("|") and after.startswith(">"))
+                or (before.endswith("<") and after.startswith("|"))
+                or before.endswith("paper-")
+                or "exp(" in line
+                or "pi hbar" in line
+            )
             if in_bibliography:
                 category = "BIBLIOGRAPHIC-COORDINATE"
-            elif formal.search(line):
+            elif enumerator:
+                category = "STRUCTURAL-ENUMERATOR"
+            elif immediate_formal:
                 category = "FORMAL-OR-CORPUS-IDENTIFIER"
             else:
-                category = "GENERATED-FIXTURE-OR-MEASUREMENT"
+                category = "RECEIPT-SOURCED-NUMERIC"
+            source_keys = sources.get(token, []) if category == "RECEIPT-SOURCED-NUMERIC" else [category]
             rows.append({
                 "occurrence": total,
                 "line": line_no,
-                "token": match.group(0),
+                "token": token,
                 "category": category,
+                "source_keys": source_keys,
+                "source_bound": bool(source_keys),
                 "referent": line.strip(),
             })
     return rows, total
@@ -1900,17 +2073,33 @@ def build(root: Path, artifact_paths: list[Path]) -> tuple[str, str, dict[str, A
     paper = render_paper(measurements, claims, future_gate_count)
     provisional_output = render_output(ledger, claims, measurements, mutant_rows, read_set)
     claim_ok, claim_evidence = validate_claims(paper, provisional_output, claims)
-    numeral_inventory, numeral_total = paper_numeral_inventory(paper)
+    numeral_sources = numeric_source_map(
+        measurements,
+        {
+            "gate_count": future_gate_count,
+            "source_count": len(SOURCE_ANCHORS),
+            "mutant_count": len(MUTANT_GATES),
+            "consequence_count": len(CONSEQUENCES),
+            "choice_count": len(CHOICES),
+            "claim_count": len(claims),
+        },
+    )
+    numeral_inventory, numeral_total = paper_numeral_inventory(paper, numeral_sources)
     numeral_scan_total = len(re.findall(r"\d+(?:/\d+)?", paper))
     numeral_ok = (
         numeral_total == numeral_scan_total
         and len(numeral_inventory) == numeral_total
-        and all(row["occurrence"] == i + 1 and row["referent"] for i, row in enumerate(numeral_inventory))
+        and all(
+            row["occurrence"] == i + 1
+            and row["referent"]
+            and row["source_bound"]
+            for i, row in enumerate(numeral_inventory)
+        )
     )
     ledger.gate(
         "G-G6-CLAIM-EQUALITY",
         claim_ok and numeral_ok,
-        f"{claim_evidence}; all {numeral_total} paper numeral occurrences carry line-level referent classes",
+        f"{claim_evidence}; all {numeral_total} paper numeral occurrences are receipt-sourced or explicitly typed non-data",
     )
 
     # Seal positive controls are run before the real seal.  The real seal is
@@ -1937,7 +2126,7 @@ def build(root: Path, artifact_paths: list[Path]) -> tuple[str, str, dict[str, A
     payload: dict[str, Any] = {
         "schema": "JRH-RECEIPT-v1",
         "unit": "v16-paper-01-jrh",
-        "status": "REPAIRED-PENDING-DELTA-VERIFICATION",
+        "status": "FINAL-REPAIR-PENDING-POSTCOMMIT-VERIFICATION",
         "primary_verdict": primary_verdict(),
         "secondary_verdicts": secondary_verdicts(),
         "measurements": measurements,
@@ -1945,6 +2134,7 @@ def build(root: Path, artifact_paths: list[Path]) -> tuple[str, str, dict[str, A
         "consequences": [{"topic": a, "classification": b, "reason": c} for a, b, c in CONSEQUENCES],
         "choice_inventory": [{"item": a, "status": b} for a, b in CHOICES],
         "paper_numeral_inventory": numeral_inventory,
+        "paper_numeral_sources": numeral_sources,
         "gates": ledger.rows,
         "ledger_head": ledger.head,
         "mutant_survey": mutant_rows,

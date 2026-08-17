@@ -18,8 +18,9 @@ theory-selection result.
 
 ## Live state
 
-- `JRH`: hostile panel adjudicated at v16 ledger #8; repaired candidate is
-  **PENDING INDEPENDENT DELTA VERIFICATION**.
+- `JRH`: the original hostile panel and the independent delta panel are both
+  adjudicated through v16 ledger #14.  The bounded final repair is built and
+  **PENDING POST-COMMIT VERIFICATION**.
 - The first toy's dynamic-geometry reading is rejected: its alleged geometry
   is eliminable classical feed-forward.  Its exact CP boundary-instrument core
   survives.
@@ -27,6 +28,13 @@ theory-selection result.
   strongly positive complex functional over complete matter–geometry
   histories.  That law is specified as a research target, not derived or
   selected.
+- The delta panel found a further exact bridge debt: decoherence and normalized
+  probabilities for one chosen state do not by themselves define a reusable
+  trace-preserving instrument.  Operator completeness for every input is an
+  additional condition.
+- Matter and geometry merely appearing in the same history is not yet
+  backreaction.  A surviving law must exhibit nonfactorizing weights and a
+  calibrated matter-to-geometry-to-held-out-response chain.
 - No v16 terminal physical result is yet citable.
 - The v15 worktree's untracked SCOUT-T files are outside v16 and are not read,
   edited, staged, or cited by this unit.

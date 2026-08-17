@@ -284,3 +284,40 @@ One bounded paper/instrument repair and one post-commit verifier are authorized.
 No actual overlapping successor, continuum, species, or phenomenology unit is
 authorized.  `STATUS.md` is updated in this adjudication commit as required by
 RUNBOOK §13.
+
+## 2026-08-17 — JRH FINAL BOUNDED REPAIR BUILT: THE HISTORY TYPE SURVIVES, THE LAW AND ITS BACKREACTION DO NOT YET FOLLOW (v16 LEDGER #15)
+
+The adjudicated delta findings are incorporated in the paper and exact
+instrument.  The repaired primary remains
+`BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.  The
+original dynamic-geometry toy remains rejected as classical feed-forward.
+
+The exact battery now has 38 gates, 17 named mutants, 13 bibliography anchors,
+32 consequence rows, 202 bound paper-numeral occurrences, and a 19-key sealed
+payload.  All gates pass and every mutant is killed.  At the delivered bytes:
+
+- paper SHA-256: `98489edb6a83919199c11b14b92c423965d1a08ad7652a1c1915d5402f9e6003`;
+- source SHA-256: `5b76a1f230c5bcea2cbebd6883b9d1db7debe0d99bea8e82602f421a7294aeb9`;
+- transcript SHA-256: `1d54adebf950e3486669f2dedb770737e260048f74ebf1c41e8fe55e63af575d`;
+- receipt SHA-256: `1da2e12dbb6f94a8b93c356e31cb8e00593dbcb083cdbba5d57fc7d49af572a9`.
+
+Four restrictions are now first-class rather than prose debts.  First,
+state-relative decoherence and normalization do not imply operator/all-input
+completeness; an exact two-dimensional rational counterexample is carried in
+the receipt.  Second, distinct durable geometry records are orthogonal output
+sectors, while coherent unrecorded fine geometries require declared refinement
+maps into one common boundary type.  Third, co-presence of matter and geometry
+is not backreaction: nonfactorizing weights and a calibrated
+matter-to-geometry-to-held-out-response test are required.  Fourth, one actual
+record is still a postulate until compatible refinement-stable record
+partitions and an actualization law are selected.
+
+The consequence table also separates binary event viability from the first
+three-actor loop, demands an all-n composition law, distinguishes Hamiltonian,
+Lindbladian, dilation, and non-Markovian generator cases, and leaves Lorentz,
+species, affine/cosmological constants, QFT/GR deviations, and objective
+actualization OPEN or conditional at their honest scope.
+
+The only authorized next action is to commit these bytes and run one
+post-commit verifier, including true off-tree/no-git execution and the complete
+mutant/CLI battery.  No successor physics unit is authorized.

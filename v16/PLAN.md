@@ -2,7 +2,7 @@
 
 ## Paper 01 — JRH: a joint relational-history law
 
-Status: **REPAIRED AFTER HOSTILE ADJUDICATION; DELTA VERIFICATION PENDING**.
+Status: **FINAL BOUNDED REPAIR BUILT; POST-COMMIT VERIFICATION PENDING**.
 
 The paper tests the strongest serious version of the current conjecture:
 
@@ -40,9 +40,18 @@ The work is split into five locked stages.
    three mutually independent hostile reports: mathematical/operator,
    gravity/covariance, and quantum/operational.  Adjudicate every finding before
    repair or terminalization.  **Completed:** two `REJECT`, one
-   `ACCEPT-WITH-FIXES`; adjudication #8 issued twelve binding repairs.  A
-   focused independent delta round must now test those repairs and the refined
-   whole-history candidate.
+   `ACCEPT-WITH-FIXES` in the original panel; adjudication #8 issued twelve
+   binding repairs.  The independent delta round returned three
+   `ACCEPT-WITH-FIXES` and was adjudicated at #14.  Its exact bridge,
+   geometry-sector, backreaction, actualization, all-arity, and Hamiltonian
+   findings are incorporated in the bounded final repair.  Only post-commit
+   verification remains authorized.
+
+The resulting scope is deliberately asymmetric.  A fixed-boundary quantum
+instrument and several no-go/refusal results are exact.  A changing-carrier
+joint history architecture is consistently typed but its weights, actualization
+rule, genuine nonfactorizing backreaction, continuum limit, and selection
+principle remain unconstructed or unselected.
 
 ## Successor register
 

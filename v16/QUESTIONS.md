@@ -12,8 +12,11 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
    geometry react to the realized local outcome while the ensemble map remains
    linear/affine and no-signalling?  Fixed-factor affinity is demonstrated;
    changing-factorization locality is still open.
-3. **OPEN — What are the genuine division boundaries?**  Which cuts license
+3. **PARTIAL — What are the genuine division boundaries?**  Which cuts license
    probabilities and conditioning, and which are representational slicings?
+   The repaired candidate requires exact decoherence, all-input operator
+   completeness, and a preferred compatible stable record partition; it does
+   not derive where those conditions hold.
 4. **PARTIAL — Is two-actor dynamics viable?**  Can a binary relational fact be
    created or changed with backreaction and a coherent idle-spectator
    extension?  A pair-supported CP instrument with an idle spectator exists;
@@ -21,7 +24,8 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
 5. **PARTIAL — What, exactly, begins at three actors?**  Is it merely the first
    closed loop/curvature probe, or is any robustly irreducible three-support
    process forced?  The first-loop statement is exact; minimum event arity is
-   refuted at the present typed scope.
+   not forced by the present boundary architecture.  A future selected law
+   could still impose a minimum, but this paper does not.
 6. **OPEN — Does one local rule extend coherently to all finite arities?**  L2,
    L3, and L4 consistency is not an L_n theorem.
 7. **OPEN — What selects the complete-successor probabilities/amplitudes?**  Do
@@ -34,7 +38,10 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
    fixed-geometry sector and a clock/logarithm branch are selected?  What data
    make two Hamiltonian packets empirically or ontologically equivalent?  One
    transfer has an exact infinite generator ambiguity; emergence from a
-   selected repeated phase remains open.
+   selected repeated phase remains open.  A generic continuous CP semigroup
+   instead has a Lindblad generator; a Hamiltonian may belong only to a unitary
+   sector or a chosen dilation, while a non-Markovian law may admit neither as
+   a fundamental generator.
 10. **OPEN — Are particle species derived?**  Do stable excitations follow from
     a selected vacuum and law, or can the same relational ontology host
     inequivalent spectra and species inventories?
@@ -50,7 +57,10 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     all operationally equivalent decompositions and compositional
     no-signalling while allowing one actual relational history?  The repaired
     CP instrument is preparation-blind at fixed factorization; relational
-    subsystem algebras and growing-factorization no-signalling remain open.
+    subsystem algebras and growing-factorization no-signalling remain open.  A
+    completed history ontology must also reproduce operational steering and
+    Bell correlations without making remote ensemble decompositions locally
+    detectable.
 14. **PARTIAL — What happens to the v6 scale wall?**  Can the dynamics generate a
     dimensionless coupling while still failing to fix an absolute unit, or
     does it merely re-declare the missing scale?  This unit generates no
@@ -61,3 +71,20 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     repaired paper treats an action as representation and identifies
     refinement/gluing fixed points as selectors, but no unique fixed point is
     known.
+16. **PARTIAL — How are different geometries paired quantum mechanically?**
+    Durable, distinguishable geometry records belong to orthogonal sectors.
+    Unrecorded fine geometries may interfere only after declared refinement
+    maps place them in one common coarse boundary type.  No physical principle
+    yet selects those maps or the allowed coherent pairings.
+17. **PARTIAL — When does a history law induce a valid instrument?**  The exact
+    counterexample shows that state-relative decoherence and normalized branch
+    weights are insufficient.  The necessary all-input condition is
+    `sum K†K = I` (or the corresponding trace-nonincreasing condition for a
+    partial operation); derivation from the proposed history law remains open.
+18. **OPEN — Where is genuine backreaction?**  A matter label and a geometry
+    label coexisting in each history can still be eliminable feed-forward.
+    Which invariant nonfactorizing weights produce a calibrated change in a
+    held-out geometric response when matter is varied?
+19. **OPEN — What makes one record actual?**  The proposal postulates one actual
+    history.  It still owes a preferred, refinement-stable family of compatible
+    record partitions and an actualization rule consistent across them.
