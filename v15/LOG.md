@@ -2457,3 +2457,104 @@ NO measured value moves anywhere.  Repair worker
 launches on this entry; seal on its green battery — the
 ARITY-16 cycle is NOT under the ECC hold.
 
+## 2026-08-17 — THE TENTH EXTERNAL REVIEW ADOPTED: FOUR TIGHTENINGS ON THE SETTLING ONTOLOGY — TRIGGER IS A BRIDGE CANDIDATE, THE PSI-FORK SHARPENED TO ITS LINEAR FORM, TRIPLE-PRIMITIVITY IS ADOPTED-NOT-DERIVED, THE FIRST-EVENT BOUNDARY NAMED; THE TWO DECISIVE COMPUTATIONS DECLARED (v15 LEDGER #64)
+
+Evaluated critically; all four tightenings VERIFIED
+against what is actually proven, and adopted:
+
+(1) "CELL TRIGGER" IS AN ADOPTED INTERPRETATION, NOT A
+THEOREM.  Proven: q(c) is the probability of paper-20's
+mutually exclusive CELL-HIT alternatives and cannot be
+one third of triple-inclusion frequencies.  Calling c
+the triple-event's physical trigger — P(c,e|X) =
+q(c|X) K(e|c,G,R) — is a CANDIDATE NEW BRIDGE whose
+establishment or rejection is SCOUT-K's charge.  All
+conclusion language candidate-marks it (addendum routed
+to the SCOUT-K and scout-repair runners this entry).
+
+(2) THE PSI-FORK SHARPENED — the "nonlinear ontic
+dynamics" label was imprecise: if pure psi is ontic, the
+fundamental process (psi,R) -> (U psi, R + event record)
+with outcome probabilities q_c(psi) is an ORDINARY
+stochastic process; distributions over ontic psi evolve
+LINEARLY; what becomes nonlinear/preparation-dependent
+is only the COMPRESSED density-matrix description — two
+ensembles with the same rho may produce different future
+records.  THE DICHOTOMY, engraved: either rho is
+complete and the delivered rule must be REPLACED, or rho
+is INCOMPLETE because the ontic decomposition matters.
+This is the most Barandes-compatible route (ontic
+configuration (G,R,psi,...) in the universal
+configuration space; rho = compressed statistics).  THE
+OPERATIONAL TEST — two preparations, one rho, compare
+future record distributions — is SCOUT-PSI, pinned #65.
+Until it runs, the fork has mathematical content and no
+demonstrated operational distinction.
+
+(3) TRIPLE-PRIMITIVITY: ADOPTED-BY-PROGRAM-DECISION, NOT
+THEORY-SELECTED.  The type tests showed CELL-HIT
+preserves the walk but cannot express growth, and
+TRIPLE-EVENT expresses the intended grammar and
+backreaction but requires new laws — they did NOT
+uniquely derive the choice.  The engraved sentence: "the
+triple-event primitive has been adopted because it
+matches the intended local, backreacting ontology; it
+was not selected uniquely by an existing ISP law."
+Declared-vs-derived is the era's own discipline applied
+to the era's own decision.
+
+(4) THE FIRST-EVENT BOUNDARY: the completely symmetric
+initial state cannot use an unwritten record to select
+the first event.  The tie-break trilemma — a symmetric
+stochastic initial kernel / a physically meaningful
+declared initial asymmetry / another tie-breaking state
+variable — is engraved as a constraint SCOUT-K must
+measure (its step-1 orbit census published separately
+from step-2+).  And even a successful SCOUT-K closes
+EVENT SELECTION ONLY: quantum transport onto created
+cells remains an independent missing law.
+
+THE TWO DECISIVE COMPUTATIONS (the review's, adopted as
+the decision program): (i) full K(e|c,G,R) feasibility
+over reached record-dependent local-state orbits —
+empty, unique, or many (SCOUT-K, running); (ii) the
+equal-density/different-preparation test on the
+delivered update (SCOUT-PSI, #65).  Those two results
+decide ontology rather than renaming it.
+
+
+## 2026-08-17 — SCOUT-PSI PINNED AND LAUNCHED: THE EQUAL-DENSITY / DIFFERENT-PREPARATION TEST (v15 LEDGER #65)
+
+Pin frozen v15/note-scoutpsi-pin.md (digest in commit).
+THE QUESTION: does paper-20's delivered update rule (as
+formalized and witnessed at scout S4, anchors binding)
+produce DIFFERENT future record distributions for two
+different pure-state preparations of the SAME density
+matrix?  Sensitive = rho is operationally incomplete
+under the delivered dynamics (the ontic-psi branch gains
+its experiment); blind-at-window = the fork stays
+mathematical there.  THE METHOD: at least two distinct
+pure decompositions of one committed-arena rho (the S4
+witness family the natural start; a second rho for
+robustness); the delivered update propagated exactly at
+declared windows (1..3 steps); record distributions
+compared EXACTLY over Q(omega).  CONTROLS, both through
+the real machinery: a genuinely linear CPTP completion
+run on the same decompositions must be BLIND (the null);
+a synthetic decomposition-sensitive map must read
+SENSITIVE (the positive).  OUTCOMES:
+SCOUTPSI-DECOMPOSITION-SENSITIVE-AT-<window> (with the
+exact witness pair and the distributions' first
+divergence) / SCOUTPSI-DECOMPOSITION-BLIND-AT-<window> /
+SCOUTPSI-BLOCKED-AT-<object>.  WALLS: this unit MEASURES
+A PROPERTY OF THE DELIVERED RULE and DECIDES NO ONTOLOGY
+— the fork's resolution is a program decision informed
+by this measurement (candidate language gated); W4
+term-binding; the sample-space spine; numeral-field
+binding from birth; the receipt hazard (no
+environment-dependent bytes); the newest disease species
+incl. iteration-order determinism (sorted() discipline);
+era standards; battery + one verifier seat, scout class.
+Deliverables: v15/note-scoutpsi.md,
+v15/code/scoutpsi_exact.py + output + receipt.
+
