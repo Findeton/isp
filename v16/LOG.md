@@ -255,3 +255,32 @@ The report is frozen verbatim before joint delta adjudication.  Its grade is
 `ACCEPT-WITH-FIXES`; that grade is the reviewer's finding, not yet a terminal
 verdict.  No candidate artifact moved, no other report was staged, and no v15
 SCOUT-T path was touched.  All three delta reports are now frozen.
+
+## 2026-08-17 — JRH DELTA PANEL ADJUDICATED: EXACT PRIMARY STANDS; HISTORY-TO-INSTRUMENT AND GEOMETRY-SECTOR BRIDGES SHARPENED (v16 LEDGER #14)
+
+`v16/note-jrh-delta-adjudication.md` jointly adjudicates three independently
+frozen `ACCEPT-WITH-FIXES` reports.  Every load-bearing repaired finite number
+and matrix result independently reproduces, and the scoped primary
+`BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED` stands.
+The original dynamic-geometry toy remains rejected.
+
+The panel supplies one exact new counterexample: a partition may decohere and
+normalize for one boundary state while its class operators sum to
+`diag(1,4)` rather than the identity.  State-relative probabilities therefore
+do not automatically furnish a reusable CP instrument; operator/all-input
+completeness is required.  The panel also isolates the geometry-sector overlap
+dilemma and the adjudication adopts a typed rule: unrecorded fine geometries
+interfere only through predeclared refinement maps into the same coarse boundary
+type; distinct durable geometry records occupy orthogonal output sectors.
+
+The gravity finding that co-presence is not coupling is adopted.  Backreaction
+will require invariant nonfactorization plus a calibrated matter-to-geometry-to-
+held-out-response test.  Objective actualization remains a postulate requiring
+compatible stable record partitions.  Hamiltonian, Lindbladian, dilation, and
+non-Markovian cases are separated.  All-n extension, Lorentz status, and
+actualization receive explicit OPEN rows in the ordered repair.
+
+One bounded paper/instrument repair and one post-commit verifier are authorized.
+No actual overlapping successor, continuum, species, or phenomenology unit is
+authorized.  `STATUS.md` is updated in this adjudication commit as required by
+RUNBOOK §13.
