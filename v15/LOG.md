@@ -1437,3 +1437,51 @@ gate with artifacts unchanged.
 ARITY-16 construction continues in parallel.  Candidate
 readings stand until the joint adjudication.
 
+## 2026-08-16 — ECC K2 (EFFECTUS) FROZEN: ACCEPT-WITH-FIXES; HEAD NUMERICALLY EXACT 65/65; TWO MAJORS ARE FALSE SENTENCES ABOUT THE INSTRUMENT, NOT PHYSICS; THE FRESH-PARAPHRASE CONDITION AT FULL STRENGTH PLUS TWO NEW BYPASS SPECIES (v15 LEDGER #46)
+
+Review frozen v15/review-ecc-effectus.md (6415fd129285,
+385 lines).  NO FALSE MEASURED NUMBER: every numeral and
+hyphenated token in all five head segments re-derived
+exactly from receipt primitives by the seat's own
+arithmetic (65/65 tokens).  The order disciplines HOLD:
+seam-before-Born in the ledger and the call order; the
+normalization sealed before every feasibility row; the
+215-row stamp totality gated (MUT-STAMP dies at 214);
+W3 exists as a GATE with fibres disclosed; all five
+deviations disclosed at point of use; walls carry no
+bare-negation tokens; declared/consumed 49/49.
+
+E-1 MAJOR: §11's "no outcome of the pre-registration is
+a word this instrument cannot emit" is FALSE — the
+unreached arms (SEAM-PERSISTENT-SUPPORTED, PSI-ONTIC,
+ECC-CIRCULARITY-UNTYPABLE) exist only as prereg-table
+strings; the gates hard-require the reached arm, so any
+other measured world ends as a REFUSAL, not the other
+verdict word.  E-2 MAJOR: §12's "reads no summary
+scalar" comparator claim false at NINE head positions
+(several with no receipt primitive to re-derive from —
+de-twinning provides no independence there); the pin
+engraved the same standard.  Minors E-6..E-14 include the
+blanket psi stamp on 197 rows whose honest mechanism is
+the reach audit, prose universals outrunning gates, the
+one-verb pin stem under segment five, and
+EQUIVARIANT-OR-DECLARED satisfied in a side inventory
+rather than the family count.
+
+THE PLANTS: all 8 fresh paraphrases of the five
+forbidden claims SURVIVE — the REGISTERED programme-wide
+condition (#10/#25/#30) measured at full strength,
+including the central no-go INVERTED ("the parents unify
+as written at the committed row" passes; the polarity
+gate scans only 5 canned inversions).  TWO NEW SPECIES:
+E-4 NEG-GUARD BYPASS (prefix "No reader will doubt
+that..." launders a forbidden claim through the excuse
+loop) and E-5 LICENCE-TOKEN LAUNDERING (inserting
+", being gated," licenses an outright W1 violation; the
+token 'declared' licenses 5 of 9 walls).  Both → TPL-2
+and the repair orders.  Twin-without-trigger controls
+REFUSED at G-WALLS — the mechanism proven, not guessed.
+
+K1 (operator) and K3 (instrument) still in flight;
+adjudication after the third seat.
+
