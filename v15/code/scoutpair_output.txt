@@ -1,0 +1,50 @@
+SCOUT-PAIR delivery transcript
+pin 67e6082b445a (v15 ledger #84) + the #85 routed addendum + the FROZEN #86 addendum b3aa0f973ae1; unit note v15/note-scoutpair.md
+object under test (the note): sha256-12 0fdebdfb99a8
+instrument source: sha256-12 2004930898ed
+sources: the #86 frozen table, bound at pinned digests or disclosed byte-verified snapshots; 6 ARITY-16/SCOUT-K legs declared, not read
+
+GATE G-SRC-CLEAN        PASS  the instrument's own syntax tree carries no float literal, no builtin hash call, and no import outside the declared whitelist
+GATE G-AST-DETERMINISM  PASS  the determinism leg: no bare iteration over a set display, set comprehension or set()/frozenset() call, and no os.listdir outside a direct sorted() wrapper, anywhere in this instrument's syntax tree
+GATE G-PIN-DIGESTS      PASS  all 17 pinned reads verify at their frozen digests; the 6 declared-not-read ARITY-16/SCOUT-K legs are bound by declaration and never opened
+GATE G-ANCHORS          PASS  all 21 verbatim anchors are located in their pinned sources and consumed by the gates that cite them
+GATE G-ARENA            PASS  the committed chart rebuilt: 27 cells, every cell exactly 2 actors, every actor in exactly 6 cells, 27 triangles among 84 triples, every triangle footprint exactly 3 pair atoms
+GATE G-WALK             PASS  the delivered walk rebuilt: first-trigger weights (1/9, 4/9, 4/9) on cells 0,1,2; second-trigger support the 9 cells of the three shifted sites, unit mass
+GATE G-RECORD-ARITY     PASS  RECORD-ARITY = 2 verified at the committed cell structure: all 27 record atoms are 2-actor pair relations; the triple event is a joint write of 3 pair atoms (G-ARENA footprint census)
+GATE G-FIXED-POINT      PASS  the homonym's carrier measured: a = a(a-1)/2 has the unique solution a = 3 on 2..9, so only at the committed arity do process-arity and footprint-size coincide numerically
+GATE G-S1-SWEEP         PASS  the sweep is TOTAL: 234 occurrences across 11 files, every one classified (222 process-dial, 9 process-carrier, 2 footprint sites inside the diagnosed arc, 1 correct-split sentence); the dial-file breaker scan is empty
+GATE G-S1-CONFLATION    PASS  no conflation site beyond the already-diagnosed type-error arc: the only footprint-sense sites live in the scout-bridge note (the diagnosed arc's own unit), and the record atom's own arity of 2 is never called an arity anywhere in the swept corpus
+GATE G-S2-REC-FLAT      PASS  the record-write algebra is FLAT: pair-atom increments commute at 729 of 729 ordered cell pairs (arena-general by the abelian-monoid theorem; checked here exactly)
+GATE G-S2-DECOMP        PASS  the transport decomposition is the walk's own: sum over cells of B_c equals the committed one-step operator at 3 declared record/state probes, exactly
+GATE G-S2-TRANSPORT     PASS  the transport-composition census: 81 forward-composable ordered pairs and their 81 reverses carry every nonzero defect; 108 shared-actor and 432 disjoint ordered pairs have both compositions nil; defect Frobenius-squared values exactly 1/9 (54 straight) and 4/9 (108 turning)
+GATE G-S2-THIRD-ACTOR   PASS  every nonzero transport-composition defect requires a third actor: 162 of 162 nonzero ordered defects sit at exactly-3-actor pairs, 0 at disjoint pairs, 0 on the diagonal
+GATE G-S2-PHASE         PASS  the record-phase probe: defect magnitude invariant at all 1620 variant-pair checks; the defect matrix moves at 450 of them -- the written record enters the defect as phase only, at this window
+GATE G-S2-FULLSTEP      PASS  the full-step branch census: defect-squared values 0 (552), 1/3 (48), 4/3 (96), 5/3 (4), 8/3 (2) over the 702 off-diagonal ordered pairs; 90 disjoint-actor ordered pairs are non-commuting at this reading -- the criterion is amplitude support, not actor-sharing
+GATE G-S2-CONTROLS      PASS  both synthetic controls behave through the real census kernel: commuting control 0 defects, order-recording control 702 of 702 non-commuting including every disjoint pair
+GATE G-S3-W3            PASS  W3 divisibility: 0 ambiguous two-step record cuts (step supports disjoint), and the explicit record-conditioned witness law reproduces the delivered joint law at all 486 positive histories exactly -- feasible, support-carried, at these cuts only
+GATE G-S3-W4            PASS  W4 operational divisibility REFUSED for the declared-state cut-valid family: of 477 reachable record cuts, 9 are order-ambiguous and every one of the 9 violates cut-validity with an exact two-row certificate (first witness gap 224/729)
+GATE G-S3-NULL          PASS  the vacuous null is exhibited: the unrestricted chain-rule law (ordered history as hidden state) reproduces the delivered joint law at every positive history with unit total mass -- so the physical content of S3 lives entirely in the declared-state and cut-validity constraints
+GATE G-S3-CONTROLS      PASS  S3 controls forced both ways through the same cut census: the synthetic record-function law shows 0 cut-validity violations; planting agreement at one ambiguous cut lowers the count 9 to 8
+GATE G-S3-TOMOGRAPHY    PASS  tomographic sufficiency FAILS and the deficiency is published: one supplied preparation, 27 of 378 two-write and 477 of 3654 three-write records reached; the verdicts are cut-scoped because the 3177 unreached records are untested
+GATE G-S3-GRAINS        PASS  the state-grain fork is measured: at record+geometry the W4 cuts refuse; psi separates all 9 collision classes; the trigger-trace grain coincides with the full-history grain at these windows; grain-independence FAILS and every verdict names its grain
+GATE G-S3-CLOCKED       PASS  the expansion dichotomy at the 7 reached first events: UNCLOCKED pair-sequencing is feasible trivially (count field, all 6 orders one profile, the committed one) and CLOCKED pair-sequencing is refused at every event over the whole order-policy simplex with exact certificates (gaps 16/81 at 5 events, 592/2187 at 2)
+GATE G-S4-PREMISE       PASS  the S4 premise gate: all 9 collision classes are proved raw-record-identical (count fields byte-equal, geometry the same fixed chart, no quotient invoked) before any future comparison is made
+GATE G-S4-SUFFICIENCY   PASS  pair-sufficiency at W4: all 9 premise-gated record-collision classes are INSUFFICIENT -- equal raw pair record and geometry, different next-write distributions, first witness gap 224/729; through W3 no insufficiency witness exists
+GATE G-KERNEL-WALL      PASS  all four walls fire on their dead controls and stay silent on their licensed alive twins on this build
+GATE G-SAMPLE-SPACE     PASS  every probability-typed receipt block declares its sample space: 7 declarations over the three declared names
+GATE G-NUMERAL-FIELD    PASS  every load-bearing prose numeral is bound to a specific receipt field and each bound token equals that field's value exactly
+GATE G-ENV-EXCLUSION    PASS  the serialized receipt payload carries no environment-dependent digest: every recorded digest is a frozen pin, and the canary scan is clean
+
+VERDICTS
+  SPAIR-RETYPING-CONSISTENT<RECORD-ARITY-2-AT-27-OF-27-ATOMS; PROCESS-ARITY-3-COMMITTED-THE-DIAL; FOOTPRINT-FIXED-POINT-a-EQUALS-3; SWEEP-234-OCCURRENCES-TOTAL; NEW-CONFLATION-SITES-0-BEYOND-THE-DIAGNOSED-ARC>
+  SPAIR-ORDER-DEFECT-NONZERO+GEOMETRIC-INTERPRETATION-UNTESTED-FIXED-G<RECORD-WRITE-FLAT-729-OF-729; TRANSPORT-81-NONCOMMUTING-UNORDERED-PAIRS-ALL-THIRD-ACTOR-VALUES-1/9-AND-4/9; FULL-STEP-SUPPORT-CRITERION-90-DISJOINT-ORDERED-NONCOMMUTING; FOUR-READINGS-LISTED-NONE-CHOSEN; THREE-ACTOR-CURVATURE-READING-CANDIDATE-ONLY>
+  SPAIR-CK-DIVISIBLE-AT-TESTED-CUTS-W3-GRAIN-RECORD+GEOMETRY-SUPPORT-CARRIED; SPAIR-SEQUENTIAL-REFUSED-AT-W4-DECLARED-STATE-CUT-VALID-GRAIN-RECORD+GEOMETRY<9-OF-9-AMBIGUOUS-CUTS-VIOLATE; CLOCKED-EXPANSION-REFUSED-AT-ALL-7-EVENTS; UNCLOCKED-EXPANSION-FREE; VACUOUS-NULL-EXHIBITED; TOMOGRAPHY-DEFICIENT-1-PREPARATION; GRAIN-INDEPENDENCE-FAILS>; SPAIR-INTERVENTION-SEMANTICS-UNBUILT
+  SPAIR-PAIR-RECORD-INSUFFICIENT-AT-W4<9-OF-9-PREMISE-GATED-COLLISION-CLASSES; FIRST-WITNESS-GAP-224/729; NO-INSUFFICIENCY-WITNESS-THROUGH-W3; GEOMETRY-LEG-BLOCKED-AT-FIXED-G; MISSING-DATUM-NAMED-NOT-CHOSEN>
+
+KEY CLAIMS
+  S1: sweep total 234; classes 222/9/2/1; new conflation sites 0; fixed point a=3
+  S2: record write flat 729/729; transport 81 non-commuting unordered pairs, all third-actor, values 1/9 and 4/9; full step support-criterion with 90 disjoint ordered non-commuting; phase-only record dependence 1620/450
+  S3: CK-divisible at the W3 cuts (support-carried, 486 histories, grain record+geometry); refused at 9 of 9 ambiguous W4 cuts of 477, first gap 224/729; clocked expansion refused 7/7; unclocked free; vacuous null exhibited; tomography deficient (1 preparation); grains fork; intervention semantics unbuilt
+  S4: pair record insufficient at W4, 9 of 9 premise-gated collision classes; no insufficiency witness through W3; geometry leg blocked at fixed G
+  falsifiers: 27 registered; gates: 30
+

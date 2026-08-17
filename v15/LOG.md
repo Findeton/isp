@@ -3560,3 +3560,78 @@ digests in commit).  The reviewer's execution-state
 observations concur with the board (no scout verdicts
 yet; three repairs in battery).
 
+## 2026-08-17 — SCOUT-PAIR DELIVERED, COMMITTED AS-IS: RETYPING-CONSISTENT (0 NEW CONFLATIONS; THE a(a-1)/2=a FIXED POINT AT a=3 IS WHY THE HOMONYM SURVIVED); ORDER-DEFECT-NONZERO WITH THE THIRD-ACTOR PRECONDITION MEASURED TRUE 162/162; THE PROCESS CLOCK — NOT THE RECORD — REFUSES PAIR-SEQUENCING; PAIR-RECORD INSUFFICIENT AT W4 WITH THE PREMISE GATE HONEST (v15 LEDGER #88)
+
+Construction complete under the pin + ALL THREE frozen
+addenda (#85 routed, #86 b3aa0f973ae1, #87 1d17712118b3),
+with the receipt disclosures honest (at #86: sources +
+scratch prototype only; at #87: instrument mid-debug,
+note unstarted; all verdict machinery rebuilt under #87
+before any artifact).  Committed as delivered: note
+0fdebdfb99a8 / code 2004930898ed / output ecbf670f5899 /
+receipt 265389e7f820 + three disclosed bound snapshots
+(the frozen source table verified exact; the ARITY-16
+and SCOUT-K repairs NOT adopted).  CANDIDATE READINGS
+until the verifier seat.
+
+S1 SPAIR-RETYPING-CONSISTENT: record-arity 2 verified at
+27/27 atoms; the sweep TOTAL (234 occurrences, 11 files,
+every one classified; ZERO new conflation sites); the
+E-34 table delivered (12 rows).  TWO SHARPENINGS: a
+THIRD sense exists (FOOTPRINT-SIZE), and a(a-1)/2 = a
+UNIQUELY AT a=3 — the numerical fixed point where
+process-arity and footprint-size coincide is exactly
+what camouflaged the homonym for an era; and the
+homonym was ONE-SIDED (the record's own 2 is never
+called an arity anywhere).
+
+S2 SPAIR-ORDER-DEFECT-NONZERO +
+GEOMETRIC-INTERPRETATION-UNTESTED-FIXED-G: the record
+write is FLAT (729/729 commute — an arena-general
+theorem); the walk's transport composition carries 81
+non-commuting unordered pairs with EVERY nonzero defect
+requiring exactly a third actor (162/162; disjoint pairs
+432/432 both-nil = the causal-layer structure) — THE
+CURVATURE-CANDIDATE PRECONDITION MEASURED TRUE; defect
+values exactly 1/9 (straight) and 4/9 (turning); the
+written record moves the defect AS PHASE ONLY (1620
+magnitude checks invariant).  Four readings listed, none
+chosen; the geometry-coupled census the registered
+successor.
+
+S3 (three verdicts, the #87 split):
+SPAIR-CK-DIVISIBLE-AT-TESTED-CUTS-W3 at the
+record+geometry grain;
+SPAIR-SEQUENTIAL-REFUSED-AT-W4-DECLARED-STATE-CUT-VALID
+(9 of 9 ambiguous cuts of 477 violate; two-row
+certificates); SPAIR-INTERVENTION-SEMANTICS-UNBUILT.
+The vacuous null exhibited (the chain rule reproduces
+everything — the constraints' content visible);
+tomography DEFICIENT BY MEASUREMENT (published, 3177
+cuts untested); GRAIN-INDEPENDENCE FAILS (psi separates
+all 9 collision classes; trace = history here).  THE
+DICHOTOMY, the unit's sharpest sentence: UNCLOCKED
+pair-sequencing is free (the count field composes, 6
+orders one profile) while CLOCKED pair-sequencing is
+refused 7/7 over the whole policy simplex — THE PROCESS
+CLOCK, NOT THE RECORD, REFUSES PAIR-SEQUENCING.
+
+S4 SPAIR-PAIR-RECORD-INSUFFICIENT-AT-W4 (9/9 collision
+classes) — the premise gate passed FIRST (raw
+count-field byte-equality 9/9, quotient NONE; SCOUT-K's
+clash rows properly REJECTED as seeds; paper-41's
+non-injectivity anchored).  The positive direction only
+NO-INSUFFICIENCY-WITNESS-THROUGH-W3; geometry
+BLOCKED-AT-FIXED-G; the interpretation wall gated
+(history / trace / psi / n-body named, none chosen).
+S3's refusal and S4's insufficiency are THE SAME NINE
+CUTS — one measurement, two predicates.
+
+30 gates, 27 falsifiers with move proofs; four
+subject-based walls; per-field numeral binding total;
+one stale transcript numeral caught pre-battery and
+fixed by re-delivery.  Worker battery green (byte x2 at
+three CWDs incl. a spaced path, three seeds, LOG-append
+probe).  Orchestrator battery next; verifier seat on
+green.
+
