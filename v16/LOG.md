@@ -111,3 +111,13 @@ Each seat may write only its named report, may not read either other report, and
 may not import or mechanically translate the candidate implementation.  All
 headlines remain candidate readings.  Reports must be frozen verbatim before
 joint adjudication.
+
+## 2026-08-17 — JRH GRAVITY HOSTILE REPORT FROZEN VERBATIM (v16 LEDGER #5)
+
+The independent GRAVITY / COVARIANCE / ONTOLOGY seat delivered
+`v16/review-jrh-gravity.md` with SHA-256
+`2509ff9bf2852aa85adaf0e5a68093e0b1af0c13baf57550094eb0dde7ef5ec4`.
+The report is frozen verbatim before joint adjudication.  Its grade is
+`REJECT`; that grade is the reviewer's finding, not yet the orchestrator's
+terminal verdict.  No candidate artifact moved, and no v15 SCOUT-T path was
+touched.
