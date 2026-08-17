@@ -2806,3 +2806,47 @@ no seal, no STATUS row, no registry updates, no DC
 consumption, until the user lifts the hold.  The full
 repair evidence sits in #69; the sealing decision and
 the optional type-error erratum are the user's.
+
+## 2026-08-17 — SCOUT VERIFIER SEAT FROZEN: ACCEPT-WITH-FIXES; ~280 RECOMPUTATIONS ZERO DISCREPANCIES (THE FULL 156-ROW CENSUS REBUILT); THE LEDGER-SELF-REFERENCE ROOT CAUSE PROVEN CLOSED; ONE NEW WALL GAP; MICRO-REPAIR ORDERED (v15 LEDGER #73)
+
+Review frozen v15/review-scout-verifier.md.  OPERATOR:
+~280 quantities rebuilt in the seat own exact code with
+its own simplex — the four Farkas certificates (stored
+duals verified entrywise AND re-derived), the COMPLETE
+156-row census 156/156 (E-TRIPLE solved without the
+deficient-writer shortcut, confirming it), S2 (54 to 1;
+gap 6; 729/25/roots {-1,0,1}; the 288 pure kernels
+rebuilt independently), S3 (silence lemma, both
+countercontrols, 20/156), S4 (the closed form at all
+27x27x27 branches; the 1/36 witness by hand), the
+scaffold 7 successors.  ZERO discrepancies.  EFFECTUS:
+downgrade fully compliant everywhere; candidate-marking,
+adoption sentence, sharpened fork all verified; 182
+sample-space declarations type-correct.  INSTRUMENT: 17
+injections + 16 plants all dead at declared gates;
+REGENERATION AFTER AN IN-MIRROR LOG APPEND BYTE-IDENTICAL
+(the #59 root cause provably closed); numeral-field kills
+both directions.
+
+FINDINGS: F1 MODERATE NEW — the RETIRED OVERCLAIM (no
+equivariant record-consistent kernel exists) REPLANTS
+VERBATIM and no wall fires (FORBIDDEN_GLOBAL carries no
+kernel-scope pattern) — the downgrade is honest in the
+delivered text but UNDEFENDED against reintroduction.
+F2 minor (registered #62 species) — set-iteration
+seed-variance caught only by the battery cross-seed leg,
+no in-run gate.  F3 minor — one CRIT-C cell quantifies
+wider than the pure census (the right scope lives two
+paragraphs away).  F4 the registered fresh-paraphrase
+condition (8 survivors).  F5 resolved against the seat.
+
+MICRO-REPAIR ORDERED (worker this entry): M1 the
+kernel-scope pattern family added to FORBIDDEN_GLOBAL
+(F1 verbatim + hyphen/paraphrase variants as plants +
+registry mutant); M2 the CRIT-C cell rescoped to the
+pure census; M3 (port of ARITY-16 Z10) an in-run AST leg
+against bare set-iteration/listdir into serialized
+values.  No measured value moves.  On its green battery
+the scout CLOSES AS A SEALED SCOUT NOTE (note-class; no
+registry questions of its own; its results feed DC and
+the held decisions).
