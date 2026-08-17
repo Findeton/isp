@@ -4237,3 +4237,41 @@ then the hostile verifier.  The numerical verdict stays
 plausible-and-unchanged; the unit stays
 candidate-uncommitted.
 
+## 2026-08-17 — THE TWENTY-SECOND REVIEW ADOPTED: JS PIN v2 CONSOLIDATED (SUPERSEDING THE PIN + TWO ADDENDA); CROSS-ARITY COHERENCE — THE FIVE CONDITIONS THAT MAKE L2/L3/L4 ONE LAW; THE FOUR-NOTION SUPPORT TAXONOMY; ROBUST IRREDUCIBILITY (THREE TESTS, ONLY THE NORM-SEPARATED ONE EXPERIMENTALLY STABLE); S-RHO MIXTURE CONSISTENCY MEETING THE SEALED PSI FORK; ECC POSES, JS CONSTRUCTS; SCOUT-T'S ATOMIC-STAGING PROTOCOL ROUTED (v15 LEDGER #104)
+
+Adopted in full.  JS PIN v2 frozen
+(v15/note-js-pin-v2.md, digest in commit) — one document
+governing, the three predecessors history: the #104
+additions are (1) THE COHERENCE CONDITIONS
+(idle-spectator embedding; restriction L4->L3; disjoint
+union with common-past correlations; overlap gluing;
+relabelling naturality of all embedding/restriction
+maps) — independent families are necessary for
+unbiasedness but are three separate models until
+coherence makes them ONE SCALABLE LAW (the ISP analogue
+of fields permitting many local interactions); the
+L_n extension question (theorem or measured minimum-n
+obstruction) registered to phase two; (2) THE SUPPORT
+TAXONOMY, non-circular: dependency support / write
+support / geometry halo / process arity (a law property,
+measured last) — the AB-touching-C-geometry question
+FIXED before enumeration; (3) ROBUST IRREDUCIBILITY:
+not-exactly-factorable / not-in-closure /
+POSITIVELY-SEPARATED-IN-AN-OPERATIONAL-NORM — only the
+third is experimentally stable; closure, norm,
+certificate form, and distance-certifiability all
+defined in-pin; METHOD-INCONCLUSIVE replaces
+undecidable-within-method; (4) THE S-RHO BRIDGE gains
+MIXTURE CONSISTENCY (affinity-or-declared-departure;
+preparation-independence; the steering gate wherever
+hidden S affects evolution — the sealed PSI fork is
+where JS meets it; no double-counting).  THE PLAN: ECC
+POSES AND CONSTRAINS, JS CONSTRUCTS (the contradiction
+removed).  SCOUT-T: still procedurally unsealed (the
+artifacts vanish under concurrent legs); the
+ATOMIC-STAGING protocol routed — stop all competing
+processes, one immutable source snapshot, private
+staging delivery + selftest, ATOMIC publish of the four
+artifacts, then the verifier.  Both routings by
+confirmed send.
+
