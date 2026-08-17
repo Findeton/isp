@@ -2911,3 +2911,17 @@ trilemma arms (b)/(c), and the rho-prime transport law
 (open regardless — the scope sentence gated).
 Orchestrator battery next; verifier seat on green.
 
+
+## 2026-08-17 — SCOUT-K BATTERY GREEN AT THE ORCHESTRATOR; ITS VERIFIER SEAT LAUNCHED (v15 LEDGER #75)
+
+Byte-identical from deleted artifacts incl. receipt;
+byte x2; seed-invariant; argv rc 2; selftest 23/23 with
+move proofs; MUT-CERT dead at G-D3-FARKAS; artifacts
+untouched.  The verifier seat launched (review file
+v15/review-scoutk-verifier.md): rebuild the orbit
+censuses and the depth-3 systems from scratch, verify
+every Farkas certificate and the uniform affine-endpoint
+argument, re-derive the mechanism witness, audit the
+addendum compliance (conditional mode, pre-registered
+predicates, step-1 census, scope wall) and attack the
+instrument.
