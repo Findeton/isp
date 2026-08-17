@@ -3863,3 +3863,47 @@ history/trace/psi/n-body unchosen.  Zero false numbers
 remain in the sealed note.  THREE SCOUTS SEALED (BRIDGE
 #79, K #94, PAIR here); PSI at its delta-verifier; T
 constructing.
+
+## 2026-08-17 — SCOUT-PSI DELTA-VERIFIER FROZEN (ACCEPT; ~1,500 EXACT EQUALITIES, ZERO MISMATCHES) AND SCOUT-PSI CLOSED-SEALED: THE FOURTH SCOUT THROUGH ITS FULL CYCLE (v15 LEDGER #97)
+
+Review frozen v15/review-scoutpsi-verifier2.md
+(07a0413f9438).  The seat rebuilt every new row in its
+own code with a different propagation layout: the frozen
+secondary (I/27 proven from both decompositions; blind-1
+/ sensitive-2 / 378 records / {26:2} at 0 vs 1/729 +
+five spot masses); THE FULL 30-ROW TABLE re-derived
+verdict-by-verdict and count-by-count — the pattern
+exact, THE CAVEAT CONFIRMED (RHO2 and the secondary stay
+sensitive-at-2 at full Sym(27)); the T9 class at 40/729
+vs 8/729; HJW cross-ratios exactly 1/2; the Z6 witnesses
+both directions; the addendum consumption verified
+field-by-field; all 6 injections dead.  ONE MINOR
+(V2-F1): the table verdict words are not individually
+kit-matched (a count-preserving swap survives delivery)
+— MITIGATED (measured verdicts gated in-run; the table
+rendered from measurement; the committed table verified
+30/30 by the seat; no published sentence false, no
+number moves); REGISTERED for TPL-2 as
+TABLE-ROW-KIT-MATCHING rather than another repair cycle.
+The disclosed paraphrase residual stays registered.
+
+SCOUT-PSI SEALED at note 5c46b34a4de9 / code
+25adcd54a1ea / output 2cbef1d9ceea / receipt
+681a9cccfa75.  THE CYCLE: pinned #65 -> the unrouted-
+addendum breach (#76/#77, owned) -> repair #90 ->
+battery #91 -> delta-verifier here.  WHAT IT SEALS: the
+delivered rule is DECOMPOSITION-SENSITIVE, grain-indexed
+— sensitive-at-2 at the fine grains on every preparation,
+sensitive even at the full relabelling quotient on all
+but the RHO1 witness family (which goes blind-at-2 /
+sensitive-at-3 there); the tested primary pair IS the
+canonical HJW-steerable pair (mutual unbiasedness gated
+in-run), making the result a hard compatibility gate on
+any future composite dynamics (the causality addendum
+v2); the null instrument provably linear and blind; rho
+is not a sufficient state descriptor for the delivered
+rule — with the ontology fork explicitly UNDECIDED and
+the operational qualification gated.  Zero false numbers
+remain.  FOUR SCOUTS SEALED (BRIDGE #79, K #94, PAIR
+#96, PSI here); SCOUT-T in battery; ARITY-16 at its core
+battery.
