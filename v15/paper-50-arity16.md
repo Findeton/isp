@@ -20,7 +20,7 @@ A16-MODULUS-THEOREM-HOLDS<THE PARENT'S IDENTITY nL/gcd(nL,n)=L IS TESTED AT THE 
 ```
 
 ```
-A16-TRANSPORT-READING-RELATIVE<TWO LEVELS AND TWO READINGS, ALL DECLARED: 6 STATEMENTS AND 7 NUMERALS ARE SCORED UNDER EACH PRE-REGISTERED READING; THE PRIMARY F4-LINEAR STATEMENT TALLY READS 3 LAW-IN-A AND 3 BREAKS WHILE THE ABSTRACT TALLY READS 2 AND 4 AND THE PARENT'S OWN, ANCHORED, READ 4 AND 2: THE DIVISION-FORCING STATEMENT IS THE ROW THAT MOVES WITH THE READING | AT THE NUMERAL LEVEL THE DECLARED a-ONLY RULE RETURNS 0 LAW-IN-A, 0 NEEDS-3 AND 7 BREAKS UNDER BOTH READINGS -- THE PARENT'S 2 STANDING-STILL NUMERALS, ANCHORED, BOTH MOVE ONCE n MOVES, AND 2 OF 7 ROWS CHANGE THEIR WORD BETWEEN THE ARENAS | UNDER THE PARENT'S CLOSED-FORM RULE THE OBSTRUCTION ROW ALONE TRANSPORTS: 2 LAW-IN-A, 0 NEEDS-3 AND 5 BREAKS, AT BOTH ARENAS | EVERY WORD IS SCORED WITHIN THE DECLARED EXTENSION FAMILY AND CARRIES ITS READING>
+A16-TRANSPORT-READING-RELATIVE<TWO LEVELS AND TWO READINGS, ALL DECLARED: 6 STATEMENTS AND 7 NUMERALS ARE SCORED UNDER EACH PRE-REGISTERED READING; THE PRIMARY F4-LINEAR STATEMENT TALLY READS 3 LAW-IN-A AND 3 BREAKS WHILE THE ABSTRACT TALLY READS 2 AND 4 AND THE PARENT'S OWN, ANCHORED, READ 4 AND 2: THE DIVISION-FORCING STATEMENT IS THE ROW THAT MOVES WITH THE READING | AT THE NUMERAL LEVEL THE DECLARED a-ONLY RULE RETURNS 0 LAW-IN-A, 0 NEEDS-3 AND 7 BREAKS UNDER BOTH READINGS -- THE PARENT'S 2 STANDING-STILL NUMERALS, ANCHORED, BOTH MOVE ONCE n MOVES, AND 2 OF 7 ROWS CHANGE THEIR WORD BETWEEN THE ARENAS | UNDER THE PARENT'S CLOSED-FORM RULE THIS ARENA'S LINEAR TALLY READS 2 LAW-IN-A, 0 NEEDS-3 AND 5 BREAKS -- THE OBSTRUCTION AND NAMING ROWS, THE NAMING ROW A SINGLE-FEASIBLE-ROW ARTIFACT -- WHILE THE PARENT'S OWN CLOSED-FORM TALLY, ANCHORED, READ 1 LAW-IN-A: THE OBSTRUCTION ROW ALONE TRANSPORTS AT BOTH ARENAS | EVERY WORD IS SCORED WITHIN THE DECLARED EXTENSION FAMILY AND CARRIES ITS READING>
 ```
 
 ```
@@ -32,7 +32,7 @@ A16-NAMING-LAW-IN-A<1872400 ROUTE COMPARISONS OVER EVERY PREFIX OF EVERY WINDOW 
 ```
 
 ```
-A16-CRYSTALLIZATION-BREAKS-AND-THE-SHARPENED-FLOOR-TRANSPORTS<CERTIFIED FLOORS 10|8|6|5 AT a=2|3|4|5, EACH WITH AN EXHIBITED SIGNATURE WITNESS AND NAMED REFUSALS BELOW IT; NDEP'S SHARPENED FLOOR, READ WITH THE EVENT SIZE IN THE PLACE ITS QUOTATION NAMES, REPRODUCES ALL 4 OF THEM AT THE SECOND ARENA, WHILE THE COUNTING BOUND READS 4 AND ITS CLOSED FORM AGREES ONLY ON ITS OWN DIAGONAL a=q | THE SCHEDULE TIME IS 14 EVENTS AT TWO ACTORS -- COMPLETE OVER THE 256-MATCHING SATURATING POOL, EVERY ORDERED PAIR OF ROUNDS SWEPT -- AND 7 ON NDEP'S OWN 24-TUPLE WINDOW AT THE COMMITTED ARITY | THE OFFSETS READ 4|1 AT a=2|4 AGAINST THE PARENT'S CONSTANT ONE: THE PAIR SURVIVES AS A STRUCTURE AND EVERY ONE OF ITS NUMBERS MOVES>
+A16-CRYSTALLIZATION-BREAKS-AND-THE-SHARPENED-FLOOR-TRANSPORTS<CERTIFIED FLOORS 10|8|6|5 AT a=2|3|4|5, EACH WITH AN EXHIBITED SIGNATURE WITNESS AND NAMED REFUSALS BELOW IT; NDEP'S SHARPENED FLOOR, READ WITH THE EVENT SIZE IN THE PLACE ITS QUOTATION NAMES, REPRODUCES ALL 4 OF THEM AT THE SECOND ARENA, WHILE THE COUNTING BOUND READS 4 AND ITS CLOSED FORM AGREES ONLY ON ITS OWN DIAGONAL a=q | THE SCHEDULE TIME IS 14 EVENTS AT TWO ACTORS -- COMPLETE OVER THE 256-MATCHING SATURATING POOL, EVERY ORDERED PAIR OF ROUNDS SWEPT -- AND 7 ON NDEP'S OWN 24-TUPLE WINDOW AT THE COMMITTED ARITY | THE OFFSETS READ 4|1 AT a=2|4 AGAINST THE COMMITTED-ARITY CONSTANT ONE OF THE PARENT'S ARENA LINE, WHOSE OWN ALONG-a OFFSET COLUMN, ANCHORED, READS 0|1|1|0 AND IS NOT CONSTANT: THE PAIR SURVIVES AS A STRUCTURE AND EVERY ONE OF ITS NUMBERS MOVES>
 ```
 
 ```
@@ -116,11 +116,13 @@ happening.
 
 ## 2. What is built, and what is only cited
 
-Five files are authenticated against this unit's frozen declaration before
+Six files are authenticated against this unit's frozen declaration before
 their bytes are used, and no subprocess of any kind is invoked. The run
-opens seven files in all: those five, the paper under test, and the module's
+opens eight files in all: those six, the paper under test, and the module's
 own source, which the AST scans read under an exemption registered where the
-read happens.
+read happens. The sixth pinned source is the operator seat's frozen review,
+consumed by the adjudicated repair's strengthening and alignment gates and
+by nothing that measures.
 
 | id | path | sha256-12 |
 |---|---|---|
@@ -129,6 +131,7 @@ read happens.
 | A-PARENTREC | v15/code/arity_receipt.json | e90a41eed544 |
 | A-NDEP | v14/paper-39-ndep.md | e2293b8c3858 |
 | A-NDEPREC | v14/code/ndep_receipt.json | 29216cea946f |
+| A-K1R | v15/review-arity16-operator.md | c642507572c7 |
 
 No parent value is recomputed as a finding and none is typed: every number
 of the parent's that this unit consumes -- the seven numerals of its
@@ -149,7 +152,7 @@ computed from the objects it describes.
 | law | the naming theorem, the crystallization pair, the coset menu, the ladder modulus and its theorem, the division-forcing thesis, SEC-2's counting theorem, and the a = q conditional |
 | state | the participation-signature partition, the record n_l(x), and the coupled walk's one-step operator at both coin orders under the declared modulus fork 2, 3, 4 |
 | arena axes | the arity a and the reading of the word subgroup (F4-LINEAR primary, ABSTRACT disclosed); both are swept and both are published |
-| provenance | 5 sources read at pinned shas; 54 path-value anchors; 13 verbatim-text anchors, each consumed by a named gate |
+| provenance | 6 sources read at pinned shas; 75 path-value anchors; 23 verbatim-text anchors, each consumed by a named gate |
 
 The packing rule is the parent's own, its declaration quoted with the site
 count its own arena gave it and transported here unchanged:
@@ -211,7 +214,8 @@ mechanism is the characteristic: in characteristic 2 the translation by a
 declared link is an involution, its orbits are eight disjoint pairs, and the
 matching along any declared link saturates the budget outright -- at the
 parent arena a pair could see one declared link at most, and its maximal
-matchings stalled at less than half the budget. Every grouping weight at
+matchings stalled at less than half the budget, the anchored maximal mass
+reading 4 against the parent budget of 9. Every grouping weight at
 this arena is even for the same reason. Second, the maximum round incidence
 at the committed arity is 48, which reproduces NDEP's anchored witness as
 the true maximum over the whole pool, attained by exactly one grouping.
@@ -301,7 +305,12 @@ floor beneath it. The schedule time is 14 events at two actors, complete
 over the 256-matching pool, and 7 at the committed arity on NDEP's 24-tuple
 window, within the declared corpus rule.
 
-The offsets read 4 and 1 against the parent's constant 1. The parent had
+The offsets read 4 and 1 against the committed-arity constant 1 of the
+parent's arena line. That constant is the anchored parent value at its own
+committed arity -- the value that stands still along the arena line -- and
+it was never a constant of the parent's own event-size sweep: the parent's
+own along-a offset column is not constant: it reads 0, 1, 1 and 0, every
+value anchored here from the parent's committed receipt. The parent had
 already measured the offset to be a property of the arity rather than of
 the pair; this arena adds that its value set grows -- an offset of 4 exists
 nowhere in the parent's table -- and the two-actor value is exact, because
@@ -372,9 +381,9 @@ declared windows.
 | a | saturating rounds | witness window | witness status | achievable budgets within the bound |
 |---|---|---|---|---|
 | 2 | 256 | COMPLETE-POOL | FOUND | 4, 8 |
-| 3 | 436992 | CANONICAL-SAMPLE | NOT-FOUND-WITHIN-CAP | none |
+| 3 | 436992 | CANONICAL-SAMPLE | NOT-FOUND-WITHIN-CAP | NOT-FOUND-WITHIN-CAP |
 | 4 | 334761 | COSET-SEED-PLUS-CANONICAL-SAMPLE | FOUND | 4, 8 |
-| 5 | 374784 | CANONICAL-SAMPLE | NOT-FOUND-WITHIN-CAP | none |
+| 5 | 374784 | CANONICAL-SAMPLE | NOT-FOUND-WITHIN-CAP | NOT-FOUND-WITHIN-CAP |
 | 9 | 1824 | COMPLETE-POOL | FOUND | 4, 8 |
 | 8 | 18 | COMPLETE-POOL | REFUSED-COMPLETE | none |
 
@@ -388,9 +397,59 @@ and the declared link count differ -- the mod-a-iff-a=L half of the
 theorem, instanced. At eight actors per event the ladder's pool of 18 saturating
 rounds is complete and the exact-cover search refuses outright, so that row
 is a complete refusal rather than a cap; the rows at 3 and 5 ended at their
-declared windows and are published as capped, never as empty. The verdict
+declared windows and are published as capped, never as empty. The doubled
+half of that refusal no longer leans on the doubled witness alone. The
+ladder's row
+at eight actors per event is searched at R = 8 in its own right: the
+exhaustive multiplicity-2 search over the complete pool of 18 saturating
+rounds, repetition included, finds 0 records. The operator seat ran the
+same search independently and exhaustively, and its frozen sentence is
+anchored here:
+
+> I ran the exhaustive multiplicity-2 search over the complete 18-round
+> pool: NO R=8 record exists.
+
+The verdict
 is A16-MODULUS-THEOREM-HOLDS, and it is the theorem's verdict, not a new
 derivation.
+
+### The ordered strengthening: the capped rows at the full pool
+
+Three of the four capped ladder questions are now closed -- not by this
+unit's instrument, whose windows stand exactly as delivered, but by the
+operator seat's exhaustive full-pool search, frozen in its review and
+adopted at adjudication as an ordered strengthening with seat attribution.
+The operator seat's full-pool search closes 3 of the register's four
+undecided ladder rows as achievable, at 3, 5 and 7 actors per event, with
+first rung 4 at every closed row, and the ladder row at 6 actors per event
+remains open with the successor. This unit's capped rows keep their
+NOT-FOUND-WITHIN-CAP stamps: the closures are the seat's measurements,
+cross-checked here only at the pool counts, which equal this unit's own
+census at every closed arity.
+
+> So budgets {4, 8} exist at a = 3, 5 and 7: three of the successor
+> register's four undecided ladder rows close as ACHIEVABLE, and the first
+> rung at every closed row is 4 = L at rows with a != L
+
+> | 3 | 436,992 | 83,664 | EXISTS | exhibited, re-verified |
+
+> | 5 | 374,784 | 96,336 | EXISTS | exhibited, re-verified |
+
+> | 7 | 15,552 | 8,928 | EXISTS | exhibited, re-verified |
+
+> The a = 6 decision was still computing when this review froze and
+> remains with the successor.
+
+| a | full saturating pool | distinct cell masks | full-pool R = L cover | first rung | seat |
+|---|---|---|---|---|---|
+| 3 | 436992 | 83664 | EXISTS | 4 | K1/OPERATOR |
+| 5 | 374784 | 96336 | EXISTS | 4 | K1/OPERATOR |
+| 7 | 15552 | 8928 | EXISTS | 4 | K1/OPERATOR |
+| 6 | 180264 | -- | OPEN-WITH-THE-SUCCESSOR | -- | K1/OPERATOR (still computing at freeze) |
+
+Every closed row's rung is again 4 = L at a row where the event size and
+the link count differ: three fresh confirmations of the mod-a-iff-a=L half
+at rows this unit's declared windows could not decide.
 
 ## 9. Law 5 -- the division-forcing thesis, which splits on the reading
 
@@ -400,6 +459,14 @@ checked admissible at every history separately, the coin's phase leg swept
 across the declared modulus fork because at this arena the corpus has never
 declared which modulus the coupled walk's coin should read -- and the
 census is blind across the fork, so nothing below depends on that choice.
+The blindness is measured at both legs: the fork is swept at every
+single-round window and now at every covering tuple as well, and at both
+coset arities every covering tuple's admissible set is identical under
+every declared modulus. The operator seat swept the same tuple histories
+exhaustively and independently, and its frozen sentence is anchored here:
+
+> I swept the 48 tuple histories at m = 2, 3, 4 against the full survivor
+> set: the admissible sets are identical at every history
 
 | a | window | rounds | non-unique | of them parallel classes | thesis per object |
 |---|---|---|---|---|---|
@@ -422,7 +489,8 @@ partitions of the non-linear order-4 subgroups -- objects a prime arena
 cannot have, because at prime q every order-q subgroup is a line. Their
 joiner structure is itself measured: 7 of the abstract rounds carry 24
 joiners each and 28 carry 6, split by whether the subgroup lies inside the
-span of the declared links. At two actors every one of the 15 abstract rounds is
+span of the declared links -- the split measured exact at the receipt's
+own mechanism leg. At two actors every one of the 15 abstract rounds is
 non-unique and none is a parallel class, on the same mechanism. Every
 covering tuple at both arities is unique -- the discrete partition stands
 alone there -- and no numeral above is converted into a measure; the
@@ -460,7 +528,9 @@ measurement and are not recomputed here.
 One characterisation does not survive the crossing of arenas, and it is
 published as a disclosure. At the parent arena the declared-link graph was
 the complete tripartite graph on the lines of the undeclared class --
-joined exactly when the difference avoids the undeclared span. Here the
+joined exactly when the difference avoids the undeclared span; the
+parent's own receipt names that graph, and the name is anchored here at
+its committed path. Here the
 two descriptions part company: 32 link edges against 96 off-span pairs.
 At prime q every direction carries exactly two nonzero vectors, one of
 each sign, so declaring one vector per direction captures the direction
@@ -513,7 +583,18 @@ branches are published, never merged.
 
 The census also breaks a tie the parent arena could not see. At nine
 actors three principles admitted the parent's arity and no other
-nontrivial size, and all three pointed at the same number. Here two of
+nontrivial size, and all three pointed at the same number. Those parent
+attributions are no longer bare: the parent's admit-lists are anchored
+from its committed receipt -- each of the three admits its q alone among
+nontrivial sizes -- and the parent's own sentences are quoted:
+
+> 3 of the 5 candidate principles admit the parent's arity and no other
+> nontrivial one.
+
+> The third principle, that the budget is the maximum attainable
+> incidence, admits the parent's arity alone.
+
+Here two of
 the six candidate principles admit a single nontrivial event size, and
 they admit different sizes: the linear subgroup row admits 4 alone and
 tracks the field, while saturation-is-maximality admits 2 alone -- the
@@ -529,7 +610,16 @@ event size remains an independent free declaration: nothing measured here
 selects an event size without the arena and a reading, none of the candidate
 principles was ever registered anywhere in the corpus, and each is a
 commitment implicit in a constructor, measured for what it would admit if
-it were declared.
+it were declared. The corpus-wide half of that negative is inherited, not
+asserted: no gate of this unit can license a claim about the whole corpus
+from its declared read set, so the head's clause stands on the parent's
+sealed sentence, quoted --
+
+> nothing pre-registered anywhere in the corpus selects it, and nothing
+> measured here selects it either
+
+-- with this unit's own census adding only what is measured at this arena,
+under its readings.
 
 ## 12. The transport table, two-levelled and two-read
 
@@ -557,6 +647,10 @@ gate:
 | crystallization | the offset between them | 1 | 4|1 | 4|1 | BREAKS | BREAKS |
 | naming | the non-unique single rounds | 4 | 5 | 15|35 | BREAKS | BREAKS |
 | sec2-counting | the pairs forced inside a sector | 1 | 0|1|2|4 | 0|1|2|4 | BREAKS | BREAKS |
+
+The committed-arity schedule value 7 and its offset 1 in the rows above
+are window values on NDEP's committed covering tuples, exactly as the
+scope segment says.
 
 | uniform a-only rule | reading | LAW-IN-A | NEEDS-3 | BREAKS |
 |---|---|---|---|---|
@@ -592,7 +686,7 @@ disclosed as such, since a lone row at the committed arity cannot
 discriminate between rules that all send the parent's value to the same
 place. Five of the seven numeral rows keep their parent word at the second
 arena, and both that keep and the two moves are anchored comparisons, not
-readings of this unit's own table.
+values read off this unit's own table.
 
 Synthetic control laws are pushed through the same decision procedure --
 one forcing each word, one all-infeasible so the procedure must refuse
@@ -634,6 +728,47 @@ promoted to selection anywhere in this paper, and nothing here
 discriminates a carrier for the numerals that moved beyond what the two
 anchored arenas separate.
 
+The adjudicated repair (v15 ledger #63) added its own instruments, each
+with registry falsifiers dying at its declared gate and each rehearsed on
+planted samples. The pin-promised W3 instrument is built as a gate: every
+head segment is auto-labelled from a declared member-token inventory,
+family-level tokens are refused in the head, and the labeller's inventory
+and labels are published in the receipt. Synthesis prose is covered:
+qualified tally sentences are bound per reading to the receipt's own word
+counts with the merged-tally frame refused outright, the
+capped/empty honesty stamp is required in its true direction and refused
+inverted, and every atomic slash-rational in the paper must be a rational
+string the receipt carries. The wall splitter is heading-aware, so a
+period-less heading is its own sentence and cannot lend a licence token to
+the section's first body sentence; the wall patterns are hyphen-robust, so
+a hyphenated subject is caught wherever the spaced spelling is; and the
+selection wall now polices the derivation verb at its subjects. An
+iteration-order leg extends the determinism discipline past call sites:
+bare set-iteration and raw directory listing are refused anywhere in the
+module, with sorting the discipline at every such site. The promotion
+window is sealed by recomputation: the ledger head is re-derived from the
+published rows, every row digest is re-verified, and the transcript's
+self-identification lines are required present before anything is
+replaced. And the declared/emitted reconciliation now scans the whole
+witness-status column, its remaining stamps declared by the repair's
+register addendum, which carries its own digest and provenance and is
+never retro-dated into the frozen registers.
+
+Two segment names carry delivery-time suffixes beyond their registered
+outcome words -- the crystallization segment's sharpened-floor suffix and
+the menu segment's failed-hypothesis suffix. Both state receipt-backed
+content; the construction is disclosed here, and the crystallization
+suffix uses the n-axis sense of the term table below. Four terms carry
+more than one sense in this unit's neighbourhood, and the binding table
+fixes each:
+
+| term | binding in this paper | the other sense, disclosed |
+|---|---|---|
+| pre-registered | the protocol sense: the two readings of the word subgroup, sealed in the frozen pin before any row ran | the corpus sense: a selection law registered anywhere in the corpus -- the parent's sealed negative, quoted beside the principle census |
+| transport(s) | the a-axis sense: the word a published law earns along the event-size axis under a declared rule and reading | the n-axis sense: a parent result reproduced at this arena -- the naming law's reproduction leg, and the crystallization segment name's sharpened-floor suffix |
+| reading | one of the two pre-registered senses of the word subgroup, and nothing else in this paper's prose | none: the colloquial sense is not used |
+| the parent | the arity parent, whose paper and committed receipt are pinned sources; NDEP is always named NDEP | the parent's ARENA LINE names the n-axis through the committed arity, where the offset constant lives; the parent's own along-a offset column is not constant |
+
 ## 14. Scope, and what is not claimed
 
 Everything stamped complete is complete: the substrate census at every
@@ -674,10 +809,11 @@ numeral, the statement aggregate -- becomes single-valued the moment the
 corpus declares which subgroup notion its coset commitment means, and
 until then both columns stand.
 
-The ladder's four undecided rows should be closed: whether budgets exist
-at 3, 5, 6 and 7 actors per event is a finite question its declared
-search windows could not decide, and the eight-actor refusal shows a
-complete answer is sometimes reachable.
+The ladder's undecided rows have narrowed to one: the operator seat's
+full-pool closures, adopted as an ordered strengthening with seat
+attribution, decide the rows at 3, 5 and 7 actors per event, and the
+ladder row at 6 is the register's remaining finite question -- still
+computing at the seat's freeze, and named for the successor.
 
 The abstract covering corpus at the committed arity -- the covering
 tuples over all 19 budget-saturating abstract coset rounds -- is built

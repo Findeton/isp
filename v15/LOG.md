@@ -3971,3 +3971,35 @@ and re-runs.  The no-signalling obligation reaffirmed
 causality addendum v2 stands).  Status corrections to
 the review snapshot: PAIR sealed #96 and PSI sealed #97
 after its reading.
+
+## 2026-08-17 — ARITY-16 REPAIR DELIVERED AND COMMITTED: ALL Z1-Z11; EXACTLY THREE ORDERED TOKEN MOVES; THE FULL PANEL CAMPAIGN REPLAYED (49 JOBS, EVERY CLOSED SURVIVOR DEAD, EVERY CONTROL EXACT); 56/56 MUTANTS AT DECLARED GATES (v15 LEDGER #99)
+
+Committed as delivered (paper 3e01a1ce1b39 / code
+a09eabeac341 / output 1c67be82b990 / receipt
+92a3e11b34a0).  The continuation verified the
+predecessor edits order-by-order, diagnosed its one
+replay anomaly as the predecessor own harness
+transcription error (the paraphrased plant lacked the
+policed verb; verbatim texts recovered from the seat
+scratches), and ran everything fresh.  Highlights: Z1
+the a=8 exhaustive R=8 leg and the fork sweep now run
+IN-UNIT with K1 sentences anchored; Z2 the offsets
+referent corrected with the parent column anchored; Z3
+the cells restamped + K1 closures folded seat-attributed
+(a=6 open-with-successor); Z4 all seven attributions
+anchored (paths 54 to 75, verbatim 13 to 23); Z5
+G-W3-AUTOLABEL built; Z6 the declared-addendum register
+(own digest, never retro-dated); Z7 G-PAPER-SYNTHESIS
+with the four K3 variants as permanent registry
+controls; Z8 the heading-aware splitter (K3-17b dies);
+Z9 T-PROMOTE-INTEGRITY (all three routes die pre-write);
+Z10 G-ITERATION-ORDER (K3-27 deterministic at three
+seeds); Z11 hyphen-robust walls everywhere + the E-34
+term table.  Registered fresh-paraphrase survivors stay
+registered as ordered.  Structural diff: zero removed
+paths; gates 43 to 47, falsifiers 43 to 56; the receipt
+environment-independent.  One incident disclosed: a
+monitor stop collaterally killed the worker own sweep at
+48/56; resumed in the same mirror, closing tree hash
+equal.  Orchestrator battery next; TERMINAL FIVE on
+green.

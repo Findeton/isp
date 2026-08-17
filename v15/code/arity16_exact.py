@@ -25,6 +25,16 @@ unit therefore PRE-REGISTERS WHICH notion of subgroup it means:
 Both readings run at every reading-sensitive row, and their DISAGREEMENT is
 a result of this unit, never an average.
 
+REPAIRED under the adjudicated orders Z1-Z11 (v15 ledger #63): the R = 8
+multiplicity-2 leg and the covering-tuple fork sweep run in-unit and agree
+with the operator seat's exhaustive results (seat-attributed); the offsets
+referent is corrected and anchored; K1's full-pool closures are folded as
+an ordered strengthening; the seven parent attributions are anchored; the
+W3 auto-labelling gate is built; the witness-status column is reconciled
+via a repair-declared register addendum; synthesis prose, heading-laundered
+licences, hyphenated subjects, iteration order and the promotion window
+are gated, each with registry falsifiers.  NO measured value moved.
+
 THE FOUR LEGS, per the pin:
   (1) the a = q conditional at q = 4: the parent's five-principle census at
       all sixteen candidate event sizes, under both readings;
@@ -126,6 +136,14 @@ SOURCES = [
      "counts and the out-of-scope grouping census constant -- read by PATH "
      "and consumed by the fidelity gate that must pass before any new row "
      "runs."),
+    ("A-K1R", "v15/review-arity16-operator.md", "c642507572c7",
+     "THE OPERATOR SEAT'S FROZEN REVIEW (K1, v15 ledger #57), adopted at "
+     "adjudication (#63, order Z3) as ORDERED STRENGTHENINGS with seat "
+     "attribution: the full-pool R = 4 cover closures at three capped "
+     "arities, the exhaustive R = 8 multiplicity-2 refusal at eight actors "
+     "per event, and the covering-tuple fork sweep.  Every number consumed "
+     "from this review is seat-attributed and none is republished as this "
+     "unit's own measurement."),
 ]
 
 # PATH-VALUE ANCHORS (#20).  (id, source, json path, expected value,
@@ -244,6 +262,50 @@ PATH_ANCHORS = [
      "G-LAW6-SEC2-16"),
     ("P-SEC2-F5", "A-PARENTREC", "law6_sec2/rows/3/forced_inside_bound", 4,
      "G-LAW6-SEC2-16"),
+    # ---- repair Z4 (v15 ledger #63): the parent attributions ANCHORED ----
+    ("P-PAR-Q", "A-PARENTREC", "arena/q", 3, "G-PRINCIPLE-CENSUS16"),
+    ("P-PAR-SATMAX", "A-PARENTREC",
+     "principles/admits/saturation_is_maximality", [3],
+     "G-PRINCIPLE-CENSUS16"),
+    ("P-PAR-RC", "A-PARENTREC", "principles/admits/round_completeness",
+     [1, 3, 9], "G-PRINCIPLE-CENSUS16"),
+    ("P-PAR-SUB", "A-PARENTREC", "principles/admits/subgroup_order_available",
+     [1, 3, 9], "G-PRINCIPLE-CENSUS16"),
+    ("P-PAR-SH2", "A-PARENTREC", "law2_crystallization/rows/0/sharpened_floor",
+     6, "G-LAW2-SHARPENED16"),
+    ("P-PAR-SH3", "A-PARENTREC", "law2_crystallization/rows/1/sharpened_floor",
+     4, "G-LAW2-SHARPENED16"),
+    ("P-PAR-SH4", "A-PARENTREC", "law2_crystallization/rows/2/sharpened_floor",
+     4, "G-LAW2-SHARPENED16"),
+    ("P-PAR-SH5", "A-PARENTREC", "law2_crystallization/rows/3/sharpened_floor",
+     4, "G-LAW2-SHARPENED16"),
+    ("P-PAR-AF2", "A-PARENTREC", "law2_crystallization/rows/0/attained_floor",
+     6, "G-LAW2-SHARPENED16"),
+    ("P-PAR-AF3", "A-PARENTREC", "law2_crystallization/rows/1/attained_floor",
+     4, "G-LAW2-SHARPENED16"),
+    ("P-PAR-AF4", "A-PARENTREC", "law2_crystallization/rows/2/attained_floor",
+     4, "G-LAW2-SHARPENED16"),
+    ("P-PAR-AF5", "A-PARENTREC", "law2_crystallization/rows/3/attained_floor",
+     4, "G-LAW2-SHARPENED16"),
+    ("P-PAR-OFF2", "A-PARENTREC", "law2_crystallization/rows/0/offset", 0,
+     "G-LAW2-SCHEDULE16"),
+    ("P-PAR-OFF3", "A-PARENTREC", "law2_crystallization/rows/1/offset", 1,
+     "G-LAW2-SCHEDULE16"),
+    ("P-PAR-OFF4", "A-PARENTREC", "law2_crystallization/rows/2/offset", 1,
+     "G-LAW2-SCHEDULE16"),
+    ("P-PAR-OFF5", "A-PARENTREC", "law2_crystallization/rows/3/offset", 0,
+     "G-LAW2-SCHEDULE16"),
+    ("P-PAR-TRI", "A-PARENTREC", "law6_sec2/arrangement_closed_form/"
+     "link_graph",
+     "the complete tripartite graph on the lines of the undeclared "
+     "parallel class", "G-LAW6-SEC2-16"),
+    ("P-PAR-A2MASS", "A-PARENTREC", "law4_ladder/rows/1/mass_per_round", 4,
+     "G-SUBSTRATE-CENSUS"),
+    ("P-PAR-N9", "A-PARENTREC", "arena/n", 9, "G-SUBSTRATE-CENSUS"),
+    ("P-PAR-A2SAT", "A-PARENTREC", "law4_ladder/rows/0/saturating", 0,
+     "G-MODULUS-THEOREM"),
+    ("P-PAR-ARITIES", "A-PARENTREC", "arena/arities", [2, 3, 4, 5],
+     "G-MODULUS-THEOREM"),
 ]
 
 # VERBATIM-TEXT ANCHORS (#62 as amended): each binds QUOTE FIDELITY and each
@@ -355,6 +417,77 @@ VERBATIM = [
      "NDEP's committed crystallization row at this arena.  The consumer "
      "parses the counting bound, the floor and the tuple count and requires "
      "all three to equal this unit's re-derivations."),
+    # ---- repair Z4 (g)/(a)/(b): the parent's sealed sentences ----
+    ("V-SATMAX-PARENT", "A-PARENT",
+     "The third principle, that the budget is the maximum attainable "
+     "incidence, admits the parent's arity alone.",
+     "G-PRINCIPLE-CENSUS16",
+     "The parent's own sentence for saturation-is-maximality at its arena. "
+     "The consumer requires the anchored parent admit-list to be exactly "
+     "the parent's arity, which is what SELECTED a = q there."),
+    ("V-THREEOFFIVE", "A-PARENT",
+     "3 of the 5 candidate principles admit the parent's arity and no "
+     "other nontrivial one.",
+     "G-PRINCIPLE-CENSUS16",
+     "The parent's own tally of its selecting principles.  The consumer "
+     "parses the 3 and the 5 and requires the anchored parent admit-lists "
+     "to reproduce both: exactly three of its five principles admit the "
+     "parent's arity alone among nontrivial sizes, all three at a = q."),
+    ("V-NOTPREREG", "A-PARENT",
+     "nothing pre-registered anywhere in the corpus selects it, and "
+     "nothing measured here selects it either",
+     "G-PRINCIPLE-CENSUS16",
+     "The parent's sealed corpus-wide negative.  The head's 'none of them "
+     "pre-registered anywhere in the corpus' INHERITS this sentence rather "
+     "than asserting a negative no gate could license from the declared "
+     "read set; the consumer requires the phrase and the inheritance is "
+     "disclosed in section 11."),
+    # ---- repair Z1/Z3: K1's exhaustive results, SEAT-ATTRIBUTED ----
+    ("V-K1-R8", "A-K1R",
+     "I ran the exhaustive multiplicity-2 search over the complete "
+     "18-round pool: NO R=8 record exists.",
+     "G-LAW4-LADDER16",
+     "The operator seat's exhaustive R = 8 leg at eight actors per event. "
+     "This unit now runs the same search itself; the consumer requires "
+     "both results to agree that no record exists."),
+    ("V-K1-FORK", "A-K1R",
+     "I swept the 48 tuple histories at m = 2, 3, 4 against the full "
+     "survivor set: the admissible sets are identical at every history",
+     "G-LAW5-FORCING16",
+     "The operator seat's exhaustive covering-tuple fork sweep.  This unit "
+     "now sweeps the fork at the tuple leg itself; the consumer requires "
+     "both results to agree that the census is blind there."),
+    ("V-K1-LADDER", "A-K1R",
+     "So budgets {4, 8} exist at a = 3, 5 and 7: three of the successor "
+     "register's four undecided ladder rows close as ACHIEVABLE, and the "
+     "first rung at every closed row is 4 = L at rows with a != L",
+     "G-STRENGTHENING-K1",
+     "The operator seat's full-pool closure sentence, adopted at "
+     "adjudication as an ordered strengthening.  The consumer parses the "
+     "budgets, the three arities and the rung, requires the rung to equal "
+     "the declared link count, and publishes the closures SEAT-ATTRIBUTED."),
+    ("V-K1-A3", "A-K1R",
+     "| 3 | 436,992 | 83,664 | EXISTS | exhibited, re-verified |",
+     "G-STRENGTHENING-K1",
+     "K1's full-pool row at three actors per event.  The consumer requires "
+     "the pool count to equal this unit's own census at that arity."),
+    ("V-K1-A5", "A-K1R",
+     "| 5 | 374,784 | 96,336 | EXISTS | exhibited, re-verified |",
+     "G-STRENGTHENING-K1",
+     "K1's full-pool row at five actors per event, pool count matched "
+     "against this unit's own census."),
+    ("V-K1-A7", "A-K1R",
+     "| 7 | 15,552 | 8,928 | EXISTS | exhibited, re-verified |",
+     "G-STRENGTHENING-K1",
+     "K1's full-pool row at seven actors per event, pool count matched "
+     "against this unit's own census."),
+    ("V-K1-A6", "A-K1R",
+     "The a = 6 decision was still computing when this review froze and "
+     "remains with the successor.",
+     "G-STRENGTHENING-K1",
+     "The one ladder row the strengthening leaves OPEN, named for the "
+     "successor register; the consumer requires the openness to be "
+     "published beside the three closures, never merged into them."),
 ]
 
 # THE ARITY WINDOW AND THE DECLARED CAPS, before anything is measured.
@@ -542,6 +675,23 @@ SEGMENT_PREREG = [
 
 PREREG_DIGEST = "11b1643b69886a97"
 SEGMENT_PREREG_DIGEST = "31d6122d8c31a82e"
+
+# THE REGISTER ADDENDUM (repair Z6, v15 ledger #63).  The witness-status
+# column's two remaining stamps, folded into the declared/emitted
+# reconciliation.  DECLARED AT THE ADJUDICATED REPAIR, not retro-dated into
+# the #43 pre-registration: the frozen registers above keep their sealed
+# digests, and the addendum carries its own digest and its own provenance.
+REGISTER_ADDENDUM = [
+    ("FOUND",
+     "a witness search exhibited a witness inside its declared window, so "
+     "the row's achievable set is non-empty as published"),
+    ("REFUSED-COMPLETE",
+     "a complete-pool search exhausted every candidate without a witness, "
+     "so the refusal is a statement about the pool and not a cap"),
+]
+REGISTER_ADDENDUM_ORIGIN = ("declared at the adjudicated repair (v15 "
+                            "ledger #63, order Z6); the #43 registers are "
+                            "untouched and their digests still bind")
 
 # THE DECLARED UNIFORM a-ONLY RULE -- the parent's own, unchanged: the
 # corpus's a-only quantity C(a, 2) offset by the constant that reproduces
@@ -733,6 +883,22 @@ def canon(s):
     t = t.replace("‘", "'").replace("’", "'")
     t = t.replace("“", '"').replace("”", '"')
     return re.sub(r"\s+", " ", t).strip()
+
+
+def heading_terminate(s):
+    """LICENCE-LEAK-ACROSS-HEADING, CLOSED (repair Z8, K3 F-2).  A markdown
+    heading has no terminal punctuation, so after canonicalisation it fuses
+    with the first sentence of its section body and a licence token inside
+    the heading launders a policed claim placed there.  Every heading line
+    is therefore terminated with its own period BEFORE the whitespace fold,
+    so the wall splitter sees the heading as its own sentence."""
+    out = []
+    for ln in s.split("\n"):
+        t = ln.rstrip()
+        if re.match(r"^#{1,6}\s", t) and not t.endswith((".", "!", "?")):
+            t = t + "."
+        out.append(t)
+    return "\n".join(out)
 
 
 class Ledger:
@@ -942,15 +1108,45 @@ class SemanticWall:
             r"would", r"could", r"might", r"whether", r"nothing", r"cannot",
             r"without", r"any", r"some")
 
+    # HYPHEN-ROBUST PATTERNS (repair Z11, K2's P17 / hyphen-evasion): a
+    # multiword pattern written with a space must catch the hyphenated
+    # spelling of the same phrase ("event-size" wherever "event size" is),
+    # so every literal space in every wall pattern is widened to [ -] --
+    # OUTSIDE character classes, whose own spaces (as in "q[- ]carried")
+    # are already alternations and are left alone.
+    @staticmethod
+    def hyphen_robust(pat):
+        out = []
+        i = 0
+        in_class = False
+        while i < len(pat):
+            c = pat[i]
+            if c == "\\" and i + 1 < len(pat):
+                out.append(pat[i:i + 2])
+                i += 2
+                continue
+            if not in_class and c == "[":
+                in_class = True
+                out.append(c)
+            elif in_class and c == "]":
+                in_class = False
+                out.append(c)
+            elif c == " " and not in_class:
+                out.append("[ -]")
+            else:
+                out.append(c)
+            i += 1
+        return "".join(out)
+
     def __init__(self, name, negative, positive, controls,
                  subject=(), policed=(), licences=()):
         self.name = name
-        self.negative = list(negative)
-        self.positive = list(positive)
+        self.negative = [self.hyphen_robust(p) for p in negative]
+        self.positive = [self.hyphen_robust(p) for p in positive]
         self.controls = list(controls)
-        self.subject = list(subject)
-        self.policed = list(policed)
-        self.licences = list(licences)
+        self.subject = [self.hyphen_robust(p) for p in subject]
+        self.policed = [self.hyphen_robust(p) for p in policed]
+        self.licences = [self.hyphen_robust(p) for p in licences]
         for pat in (self.negative + self.positive + self.subject
                     + self.policed + self.licences):
             re.compile(pat)
@@ -2522,6 +2718,55 @@ def _ladder_row(a):
     return row
 
 
+def r8_multiplicity2():
+    return memo(("r8mult2", mut("MUT-PACKING")), _r8_multiplicity2)
+
+
+def _r8_multiplicity2():
+    """THE R = 8 LEG AT EIGHT ACTORS PER EVENT (repair Z1, K1-F1).  The
+    delivered unit searched R = 4 exact covers only and doubled a found
+    witness to R = 8, so the R = 8 half of the a = 8 refusal was asserted
+    without its own search: an R = 8 homogeneous record -- every cell
+    covered exactly TWICE -- need not split into two R = 4 covers.  This
+    leg runs the exhaustive multiplicity-2 search over the COMPLETE pool,
+    repetition included, and agrees with the operator seat's independent
+    exhaustive search: no record exists."""
+    a = 8
+    seed = [tuple(tuple(x for x in b) for b in P)
+            for P in coset_rounds(a, "ABSTRACT")
+            if sum(A.round_vec(P)) == A.n]
+    tail = sat_round_sample(a, SAT_SAMPLE_CAP)
+    seen_keys = {tuple(sorted(P)) for P in seed}
+    sample = seed + [P for P in tail if tuple(sorted(P)) not in seen_keys]
+    masks = [round_cell_mask(P) for P in sample]
+    cells = [[(mk >> k) & 1 for k in range(NC)] for mk in masks]
+    budget = 2 * A.L
+    found = []
+    nodes = [0]
+
+    def dfs(start, cov, acc):
+        nodes[0] += 1
+        if found:
+            return
+        if len(acc) == budget:
+            if all(c == 2 for c in cov):
+                found.append(list(acc))
+            return
+        for i in range(start, len(masks)):
+            nc = [cov[k] + cells[i][k] for k in range(NC)]
+            if any(c > 2 for c in nc):
+                continue
+            dfs(i, nc, acc + [i])
+            if found:
+                return
+
+    dfs(0, [0] * NC, [])
+    return {"a": a, "budget": budget, "pool": len(sample),
+            "records_found": len(found), "nodes": nodes[0],
+            "search": "EXHAUSTIVE-MULTIPLICITY-2, REPETITION INCLUDED, "
+                      "OVER THE COMPLETE POOL"}
+
+
 # ---- LAW 5: THE FORCING CENSUS ON THE DECLARED WINDOWS -------------------
 
 def record_vector(H):
@@ -2648,12 +2893,20 @@ def _forcing_census():
                     raise GateFail("G-LAW5-FORCING16 :: the discrete "
                                    "partition is not admissible at a round")
                 key = tuple(sorted(tuple(sorted(b)) for b in P))
+                # THE JOINER MECHANISM, RECEIPTED (repair Z11, K2 E-7):
+                # the round is a coset partition, its subgroup is the
+                # block through the origin, and span membership is
+                # measured per round and paired with the joiner count.
+                block0 = [b for b in P if (0, 0) in b][0]
                 rows.append({
                     "admissible": len(adm),
                     "non_unique": len(adm) > 1,
                     "joiners": len(adm) - 1,
                     "is_parallel_class": key in class_set,
-                    "is_linear_coset_round": key in lin_set})
+                    "is_linear_coset_round": key in lin_set,
+                    "subgroup_in_link_span": set(block0) <= set(G8)})
+            in_span = [r for r in rows if r["subgroup_in_link_span"]]
+            off_span = [r for r in rows if not r["subgroup_in_link_span"]]
             entry[tag] = {
                 "rounds": len(rows),
                 "non_unique": sum(1 for r in rows if r["non_unique"]),
@@ -2665,19 +2918,44 @@ def _forcing_census():
                 "thesis_holds_per_object": all(
                     r["non_unique"] == r["is_parallel_class"]
                     for r in rows),
-                "m_blind_across_the_fork": m_blind}
+                "m_blind_across_the_fork": m_blind,
+                "joiner_mechanism": {
+                    "in_span_rounds": len(in_span),
+                    "in_span_joiner_counts": {
+                        str(k): v for k, v in sorted(Counter(
+                            r["joiners"] for r in in_span).items())},
+                    "off_span_rounds": len(off_span),
+                    "off_span_joiner_counts": {
+                        str(k): v for k, v in sorted(Counter(
+                            r["joiners"] for r in off_span).items())},
+                    "split_is_exact": (
+                        len({r["joiners"] for r in in_span}) <= 1
+                        and len({r["joiners"] for r in off_span}) <= 1
+                        and ({r["joiners"] for r in in_span}
+                             != {r["joiners"] for r in off_span}
+                             if rows else True))}}
+        # THE FORK AT THE TUPLE LEG (repair Z1, K1-F2): the delivered unit
+        # swept the modulus fork at the single-round windows only; the
+        # covering-tuple leg now sweeps it too, agreeing with the operator
+        # seat's independent exhaustive sweep of the same histories.
         multi = tuple_histories(c["covering_tuples"])
         nu = 0
+        tuple_blind = True
         for H in multi:
             rec = record_vector(H)
             adm = [p for p in surv if admissible(p, H, rec, M_FORK[1])]
+            for m in (M_FORK[0], M_FORK[2]):
+                if [p for p in surv
+                        if admissible(p, H, rec, m)] != adm:
+                    tuple_blind = False
             if disc not in [tuple(sorted(p)) for p in adm]:
                 raise GateFail("G-LAW5-FORCING16 :: the discrete partition "
                                "is not admissible at a covering tuple")
             if len(adm) > 1:
                 nu += 1
         entry["covering_tuples"] = {"histories": len(multi),
-                                    "non_unique": nu}
+                                    "non_unique": nu,
+                                    "m_blind_across_the_fork": tuple_blind}
         out[a] = entry
     return out
 
@@ -3263,7 +3541,11 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
             and a2row["saturating_budget"] > 0
             and PV["P-SUB2-SAT"] == 0
             and all(r["odd_weight_groupings"] == 0 for r in subrows)
-            and len(subrows) == len(ARITIES),
+            and len(subrows) == len(ARITIES)
+            # repair Z4 (e): the parent's stalled-matchings sentence is
+            # ANCHORED -- its a = 2 maximal mass per round against its own
+            # budget, both read from the parent's committed receipt.
+            and PV["P-PAR-A2MASS"] * 2 < PV["P-PAR-N9"],
             CR.stmt("the substrate is censused at every declared arity by "
                     "an exact dynamic programme over the actor-subset "
                     "lattice, every total agreeing with its multinomial "
@@ -3279,7 +3561,9 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
                     c4="census_total_a4", mw="witness_max_a4",
                     a2="a2_saturating", p2="a2_parent_saturating"),
             {"rows": subrows, "both_arena_rows": both_n,
-             "ndep_out_of_scope_constant_parsed": ndep_constant})
+             "ndep_out_of_scope_constant_parsed": ndep_constant,
+             "parent_a2_maximal_mass_anchored": PV["P-PAR-A2MASS"],
+             "parent_budget_anchored": PV["P-PAR-N9"]})
     R["substrate"] = SEAL.seal(
         "substrate", {"rows": subrows, "both_arena_rows": both_n},
         "G-SUBSTRATE-CENSUS")
@@ -3466,6 +3750,11 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
                   [pool2w[sched2["witness_pair"][0]],
                    pool2w[sched2["witness_pair"][1]]])
               == sched2["min_events"])
+    # repair Z2 (K1-F3 = K2-E-2): the offsets' referent, ANCHORED.  The
+    # constant 1 is the parent's COMMITTED-ARITY offset -- the value that
+    # is constant along the parent's arena line -- while the parent's own
+    # along-a offset column, anchored here in full, is NOT constant.
+    parent_off_col = [PV["P-PAR-OFF%d" % a] for a in ARITIES]
     LD.gate("G-LAW2-SCHEDULE16",
             sched2["min_events"] is not None
             and sched2["min_events"] >= flo[2]
@@ -3474,7 +3763,8 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
             and sched2["ordered_pairs"] == sched2["pool"] ** 2
             and sched4["min_events"] == 2 * A.q - 1
             and sched4["min_events"] >= flo[4]
-            and sched4["window_histories"] == PV["P-N16-COV"],
+            and sched4["window_histories"] == PV["P-N16-COV"]
+            and {v for v in parent_off_col} != {PV["P-PV-OFF"]},
             CR.stmt("the schedule time is measured on two grounds and each "
                     "names its own completeness: at the smallest arity the "
                     "budget-saturating pool is COMPLETE at {p} matchings, "
@@ -3489,7 +3779,9 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
                     p="a2_pool", pr="a2_pairs", s2="a2_schedule",
                     s4="a4_schedule", wh="a4_window_histories"),
             {"a2": sched2, "a4": sched4,
-             "offsets": {str(k): v for k, v in sorted(off.items())}})
+             "offsets": {str(k): v for k, v in sorted(off.items())},
+             "parent_offset_column_anchored": parent_off_col,
+             "parent_committed_arity_offset_anchored": PV["P-PV-OFF"]})
 
     nq = AN.read("V-N16WINDOW", "G-LAW2-SHARPENED16")
     n16_ints = quote_ints(nq)
@@ -3511,7 +3803,12 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
             and n16_ints[:3] == [counting_floor(A.n), flo[COMMITTED_ARITY],
                                  PV["P-N16-COV"]]
             and closed_hits == [A.q]
-            and counting_floor(A.n) != flo[COMMITTED_ARITY],
+            and counting_floor(A.n) != flo[COMMITTED_ARITY]
+            # repair Z4 (c): "the parent found the same at every arity of
+            # its own arena" is ANCHORED -- sharpened equals attained at
+            # every parent row, read from the parent's committed receipt.
+            and all(PV["P-PAR-SH%d" % a] == PV["P-PAR-AF%d" % a]
+                    for a in ARITIES),
             CR.stmt("NDEP's sharpened floor, read with the EVENT SIZE in "
                     "the place its quotation names, reproduces the "
                     "certified floor at {sh} of {k} arities AT THE SECOND "
@@ -3527,12 +3824,15 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
              "closed_form_in_a": {str(a): closed_in_a[a] for a in ARITIES},
              "sharpened_agrees_at": sharp_hits,
              "closed_form_agrees_at": closed_hits,
-             "quotation_parsed": n16_ints[:3]})
+             "quotation_parsed": n16_ints[:3],
+             "parent_sharpened_equals_attained_at_every_parent_arity": True})
     R["law2_crystallization"] = SEAL.seal(
         "law2_crystallization",
         {"floors": {str(a): flo[a] for a in ARITIES},
          "schedule": {"a2": sched2, "a4": sched4},
          "offsets": {str(k): v for k, v in sorted(off.items())},
+         "parent_offset_column": parent_off_col,
+         "parent_committed_arity_offset": PV["P-PV-OFF"],
          "sharpened_floors": {str(a): sharp[a] for a in ARITIES},
          "closed_form_in_a": {str(a): closed_in_a[a] for a in ARITIES},
          "counting_bound": counting_floor(A.n),
@@ -3614,6 +3914,8 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
     ladrows = [ladder_row(a) for a in ARITIES]
     lad9 = ladder_row(9)
     lad8 = ladder_row(8)
+    lad8_r8 = r8_multiplicity2()
+    k8q = AN.read("V-K1-R8", "G-LAW4-LADDER16")
     found_rows = [r for r in ladrows + [lad9] if r["achievable_budgets"]]
     CR.measured("ladder_rows", len(ladrows + [lad9, lad8]),
                 "arity rows searched, the census legs included")
@@ -3625,6 +3927,10 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
     CR.measured("rung_a9", (min(lad9["achievable_budgets"])
                             if lad9["achievable_budgets"] else 0),
                 "the first rung at nine actors per event")
+    CR.measured("r8_budget", lad8_r8["budget"],
+                "the doubled budget the multiplicity-2 leg searches")
+    CR.measured("r8_records", lad8_r8["records_found"],
+                "multiplicity-2 records found by exhaustive search")
     LD.gate("G-LAW4-LADDER16",
             all(r["impossible_budgets_derived"] ==
                 [x for x in range(1, LADDER_RMAX + 1) if x % A.L]
@@ -3634,6 +3940,14 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
                     for r in found_rows)
             and [r["a"] for r in found_rows] == [2, 4, 9]
             and lad8["witness_status"] == "REFUSED-COMPLETE"
+            # repair Z1 (K1-F1): the R = 8 half of the a = 8 refusal is now
+            # SEARCHED IN ITS OWN RIGHT -- the exhaustive multiplicity-2
+            # leg over the complete pool -- and agrees with the operator
+            # seat's independent exhaustive search, whose sentence is
+            # anchored and required to say no record exists.
+            and lad8_r8["records_found"] == 0
+            and lad8_r8["pool"] == lad8["saturating"]
+            and "NO R=8 record exists" in k8q
             and PV["P-N16-LAD4"] is True and PV["P-N16-LAD8"] is True
             and PV["P-N16-LAD5"] is False,
             CR.stmt("the budget-reading ladder is measured directly at "
@@ -3645,23 +3959,31 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
                     "is witness exhibition, found at {f} rows including "
                     "two where the event size and the link count are "
                     "DIFFERENT numbers, refused by complete search at "
-                    "eight actors per event, and published as capped at "
-                    "{cp} rows the declared windows could not decide. "
-                    "Every found set matches NDEP's anchored rungs",
+                    "eight actors per event -- the exact covers at the "
+                    "first rung AND, at the doubled budget {rb}, the "
+                    "exhaustive double-cover search, repetition included, "
+                    "finding {rr} records over the complete pool and "
+                    "agreeing with the operator seat's independent "
+                    "exhaustive search -- and published as capped at {cp} "
+                    "rows the declared windows could not decide. Every "
+                    "found set matches NDEP's anchored rungs",
                     n="n_actors", c="n_cells", L="n_links",
-                    f="ladder_found", cp="ladder_capped"),
+                    f="ladder_found", cp="ladder_capped",
+                    rr="r8_records", rb="r8_budget"),
             {"rows": [{k: v for k, v in r.items()
                        if k != "witness_rounds"} for r in ladrows],
              "census_leg_a9": {k: v for k, v in lad9.items()
                               if k != "witness_rounds"},
              "census_leg_a8": {k: v for k, v in lad8.items()
                               if k != "witness_rounds"},
+             "r8_multiplicity2": lad8_r8,
              "witness_rounds_kept": sorted(
                  r["a"] for r in ladrows + [lad9]
                  if r.get("witness_rounds"))})
     R["law4_ladder"] = SEAL.seal(
         "law4_ladder",
         {"rows": ladrows, "census_leg_a9": lad9, "census_leg_a8": lad8,
+         "r8_multiplicity2": lad8_r8,
          "reading": "LITERAL-BUDGET: the parent's primary reading; the "
                     "round mass is the budget by definition"},
         "G-LAW4-LADDER16")
@@ -3695,7 +4017,12 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
             and all(min(r["achievable_budgets"]) == A.L
                     for r in found_rows)
             and all(r["a"] == A.L for r in mod_a_rows)
-            and len(diff_rows) > 0,
+            and len(diff_rows) > 0
+            # repair Z4 (f): "rows the parent arena could not supply" is
+            # ANCHORED -- the parent's a = 2 literal row saturates at zero
+            # and its declared arity window has no nine-actor row.
+            and PV["P-PAR-A2SAT"] == 0
+            and lad9["a"] not in PV["P-PAR-ARITIES"],
             CR.stmt("the parent's modulus theorem is TESTED at the second "
                     "arena rather than re-derived: the identity is "
                     "re-verified at the parent's own {p} declared arena "
@@ -3716,7 +4043,9 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
              "found_rungs": [[r["a"], min(r["achievable_budgets"])]
                              for r in found_rows],
              "mod_a_appears_at": [r["a"] for r in mod_a_rows],
-             "differing_rows": [r["a"] for r in diff_rows]})
+             "differing_rows": [r["a"] for r in diff_rows],
+             "parent_a2_literal_saturating_anchored": PV["P-PAR-A2SAT"],
+             "parent_arity_window_anchored": PV["P-PAR-ARITIES"]})
     R["modulus_theorem"] = SEAL.seal(
         "modulus_theorem",
         {"pairs_checked": len(sweep), "pairs_holding": sum(sweep),
@@ -3725,6 +4054,82 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
                          for r in found_rows],
          "mod_a_appears_at": [r["a"] for r in mod_a_rows],
          "verdict": "A16-MODULUS-THEOREM-HOLDS"}, "G-MODULUS-THEOREM")
+
+    # ---- THE ORDERED STRENGTHENING (repair Z3, v15 ledger #63) -------
+    # K1's full-pool closures at the capped arities, adopted at
+    # adjudication as ORDERED STRENGTHENINGS with SEAT ATTRIBUTION.  The
+    # pool count at every quoted row must equal this unit's OWN census at
+    # that arity -- the one cross-check this unit can run -- and nothing
+    # here is republished as this unit's own measurement.
+    kq = AN.read("V-K1-LADDER", "G-STRENGTHENING-K1")
+    k_ints = quote_ints(kq)
+    open_q = AN.read("V-K1-A6", "G-STRENGTHENING-K1")
+    closed_arities = sorted(k_ints[2:5])
+    parsed_rows = {}
+    for a in closed_arities:
+        rq = AN.read("V-K1-A%d" % a, "G-STRENGTHENING-K1")
+        parsed_rows[a] = quote_ints(rq)
+    own_pools = {a: packing_distribution(a).get(A.n, 0)
+                 for a in closed_arities + [6]}
+    if mut("MUT-STRENGTH"):
+        own_pools[closed_arities[0]] += 1
+    st_rows = [{"a": a, "full_pool": parsed_rows[a][1],
+                "distinct_cell_masks": parsed_rows[a][2],
+                "full_pool_r4_cover": "EXISTS",
+                "first_rung": k_ints[-1],
+                "seat": "K1/OPERATOR"} for a in closed_arities]
+    open_a = quote_ints(open_q)[0]
+    st_open = {"a": open_a, "full_pool": own_pools[open_a],
+               "full_pool_r4_cover": "OPEN-WITH-THE-SUCCESSOR",
+               "seat": "K1/OPERATOR (still computing at freeze)"}
+    CR.measured("st_rows", len(st_rows),
+                "capped rows the strengthening closes, seat-attributed")
+    CR.measured("st_rung", k_ints[-1],
+                "the first rung at every closed row, parsed from K1")
+    CR.measured("st_open_a", open_a, "the ladder row left open")
+    LD.gate("G-STRENGTHENING-K1",
+            all(parsed_rows[a][0] == a
+                and parsed_rows[a][1] == own_pools[a]
+                and parsed_rows[a][2] < parsed_rows[a][1]
+                for a in closed_arities)
+            and k_ints[-1] == A.L
+            and sorted(k_ints[:2]) == [x for x in
+                                       range(1, LADDER_RMAX + 1)
+                                       if x % A.L == 0]
+            and closed_arities == [3, 5, 7]
+            and all(a != A.L for a in closed_arities)
+            and "ACHIEVABLE" in kq
+            and "still computing" in open_q
+            and open_a not in closed_arities,
+            CR.stmt("the operator seat's FULL-POOL closures are folded as "
+                    "an ORDERED STRENGTHENING with seat attribution: {k} "
+                    "of the register's four undecided ladder rows close as "
+                    "achievable by K1's exhaustive full-pool cover search, "
+                    "the first rung at every closed row is {r} = L at rows "
+                    "where a and L differ -- three fresh confirmations of "
+                    "the mod-a-iff-a=L half at rows this unit's windows "
+                    "could not decide -- and the row at {o} remains OPEN "
+                    "with the successor.  Each quoted pool count is "
+                    "matched against this unit's own census at that arity; "
+                    "the distinct-mask counts and the covers themselves "
+                    "are the seat's, never republished as this unit's",
+                    k="st_rows", r="st_rung", o="st_open_a"),
+            {"rows": st_rows, "open_row": st_open,
+             "own_pool_census": {str(a): own_pools[a]
+                                 for a in sorted(own_pools)},
+             "budgets_parsed": sorted(k_ints[:2])})
+    R["review_strengthenings"] = SEAL.seal(
+        "review_strengthenings",
+        {"seat": "K1/OPERATOR", "review": "v15/review-arity16-operator.md",
+         "adjudicated": "adopted as ORDERED STRENGTHENINGS at v15 ledger "
+                        "#63 (order Z3), with seat attribution",
+         "rows": st_rows, "open_row": st_open,
+         "stamp": "SEAT-ATTRIBUTED: these closures are the operator "
+                  "seat's exhaustive full-pool results, not this unit's "
+                  "measurements; this unit's capped rows keep their "
+                  "NOT-FOUND-WITHIN-CAP stamps and no delivered number "
+                  "moves"},
+        "G-STRENGTHENING-K1")
 
     # ---- LAW 5: THE FORCING CENSUS -----------------------------------
     frc = forcing_census()
@@ -3743,6 +4148,8 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
                 f4["ABSTRACT"]["non_unique_that_are_parallel_classes"],
                 "of the abstract non-unique rounds, those that are "
                 "parallel classes")
+    kfq = AN.read("V-K1-FORK", "G-LAW5-FORCING16")
+    mech4 = f4["ABSTRACT"]["joiner_mechanism"]
     LD.gate("G-LAW5-FORCING16",
             f4["F4-LINEAR"]["thesis_holds_per_object"]
             and not f4["ABSTRACT"]["thesis_holds_per_object"]
@@ -3751,6 +4158,16 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
             and f4["F4-LINEAR"]["non_unique"] == f4["F4-LINEAR"]["rounds"]
             and f2["ABSTRACT"]["m_blind_across_the_fork"]
             and f4["ABSTRACT"]["m_blind_across_the_fork"]
+            # repair Z1 (K1-F2): the fork sweep now covers the
+            # covering-tuple leg too, and the operator seat's independent
+            # exhaustive sweep of the same histories is anchored beside it.
+            and f2["covering_tuples"]["m_blind_across_the_fork"]
+            and f4["covering_tuples"]["m_blind_across_the_fork"]
+            and "identical at every history" in kfq
+            # repair Z11 (K2 E-7): the joiner mechanism is receipted --
+            # span membership paired with the joiner count, split exact.
+            and mech4["split_is_exact"]
+            and f2["ABSTRACT"]["joiner_mechanism"]["split_is_exact"]
             and f4["covering_tuples"]["non_unique"] == 0
             and f2["covering_tuples"]["non_unique"] == 0
             and frc[3].get("refusal") is not None
@@ -3764,9 +4181,15 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
                     "are non-unique while only {ac} are parallel classes, "
                     "so the thesis is false as stated -- the non-linear "
                     "coset rounds are the new joiners, objects a prime "
-                    "arena cannot have. The census is blind across the "
-                    "declared modulus fork, every covering tuple is "
-                    "unique, and the idle arities refuse",
+                    "arena cannot have, and the joiner mechanism is "
+                    "receipted: span membership paired with the joiner "
+                    "count, the split exact at both coset arities. The "
+                    "census is blind across the declared modulus fork at "
+                    "the singles AND at the covering tuples -- the tuple "
+                    "leg swept at every declared modulus, agreeing with "
+                    "the operator seat's independent exhaustive sweep -- "
+                    "every covering tuple is unique, and the idle arities "
+                    "refuse",
                     lr="forcing_lin_rounds_a4", ar="forcing_abs_rounds_a4",
                     ac="forcing_abs_classes_a4"),
             {"rows": frc, "measure": "COUNTING-ONLY"})
@@ -3804,7 +4227,10 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
                     for a in ARITIES if a != 2)
             and sec["union_doubled_pairs"] == 0
             and sec["seam_pairs_that_are_declared_links"] == 0
-            and not sec["tripartite_characterisation_holds"],
+            and not sec["tripartite_characterisation_holds"]
+            # repair Z4 (d): the parent-arena tripartite attribution is
+            # ANCHORED -- the parent's own receipt names its link graph.
+            and "tripartite" in PV["P-PAR-TRI"],
             CR.stmt("the union of two sectors of THIS arena is built from "
                     "the arrangement alone -- {uc} carriers, {up} realised "
                     "pairs, the seam a line of the undeclared class "
@@ -3824,7 +4250,8 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
                     sp="sec2_a2_span", le="link_edges",
                     os="off_span_pairs"),
             {"rows": sec["rows"], "quotation_values": ob_vals,
-             "union": {k: v for k, v in sec.items() if k != "rows"}})
+             "union": {k: v for k, v in sec.items() if k != "rows"},
+             "parent_link_graph_anchored": PV["P-PAR-TRI"]})
     R["law6_sec2"] = SEAL.seal(
         "law6_sec2", sec, "G-LAW6-SEC2-16")
 
@@ -3856,6 +4283,19 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
     CR.measured("linear_selects",
                 selectors["subgroup_order_available_linear"] or 0,
                 "the size the linear subgroup row uniquely admits")
+    # repair Z4 (a)/(b)/(g): the parent attributions ANCHORED.  The
+    # parent's three selecting principles each admitted the parent's arity
+    # alone among nontrivial sizes -- read from its committed receipt --
+    # and its corpus-wide negative is its own sealed sentence, quoted.
+    smq = AN.read("V-SATMAX-PARENT", "G-PRINCIPLE-CENSUS16")
+    tfq = AN.read("V-THREEOFFIVE", "G-PRINCIPLE-CENSUS16")
+    npq = AN.read("V-NOTPREREG", "G-PRINCIPLE-CENSUS16")
+    tf_ints = quote_ints(tfq)
+    parent_admits = {"round_completeness": PV["P-PAR-RC"],
+                     "saturation_is_maximality": PV["P-PAR-SATMAX"],
+                     "subgroup_order_available": PV["P-PAR-SUB"]}
+    parent_sel = {k: [x for x in v if 1 < x < PV["P-PAR-N9"]]
+                  for k, v in parent_admits.items()}
     LD.gate("G-PRINCIPLE-CENSUS16",
             len(prows) == A.n
             and padmits["round_completeness"] == [x for x in range(1, 17)
@@ -3868,7 +4308,11 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
             and selectors["subgroup_order_available_abstract"] is None
             and selectors["round_completeness"] is None
             and selectors["saturation_is_maximality"] == A.characteristic
-            and cover_capped == [x for x in (3, 5, 6, 7)],
+            and cover_capped == [x for x in (3, 5, 6, 7)]
+            and all(v == [PV["P-PAR-Q"]] for v in parent_sel.values())
+            and tf_ints[:2] == [len(parent_sel), len(parent_sel) + 2]
+            and "admits the parent's arity alone" in smq
+            and "pre-registered anywhere in the corpus" in npq,
             CR.stmt("the parent's five-principle census is re-run at all "
                     "{c} candidate event sizes with the subgroup row split "
                     "into BOTH pre-registered readings: divisibility and "
@@ -3886,7 +4330,14 @@ def full_run(paper_text, paper_rel=PAPER_PATH, write=True, break_anchor=None):
             {"rows": prows, "admits": padmits,
              "unique_nontrivial_selections": {k: v for k, v in
                                               sorted(selectors.items())},
-             "cover_capped_at": cover_capped})
+             "cover_capped_at": cover_capped,
+             "parent_admits_anchored": parent_admits,
+             "parent_unique_nontrivial_selections": parent_sel,
+             "parent_q_anchored": PV["P-PAR-Q"],
+             "parent_tally_parsed": tf_ints[:2],
+             "corpus_negative": "inherited from the parent's sealed "
+                                "sentence, quoted in section 11, not "
+                                "asserted from the declared read set"})
     R["principles"] = SEAL.seal(
         "principles",
         {"rows": prows, "admits": {k: v for k, v in sorted(padmits.items())},
@@ -4369,11 +4820,16 @@ def verdict_segments(rec, with_fields=False):
          ("moved_across_n", len(tr["moved_across_n"])),
          " OF ", ("n_numerals", len(lin_t["numerals"])),
          " ROWS CHANGE THEIR WORD BETWEEN THE ARENAS | UNDER THE PARENT'S "
-         "CLOSED-FORM RULE THE OBSTRUCTION ROW ALONE TRANSPORTS: ",
+         "CLOSED-FORM RULE THIS ARENA'S LINEAR TALLY READS ",
          ("cf_lawin", cf_agg["LAW-IN-A"]), " LAW-IN-A, ",
          ("cf_needs", cf_agg["NEEDS-3"]), " NEEDS-3 AND ",
          ("cf_breaks", cf_agg["BREAKS"]),
-         " BREAKS, AT BOTH ARENAS | EVERY WORD IS SCORED ",
+         " BREAKS -- THE OBSTRUCTION AND NAMING ROWS, THE NAMING ROW A "
+         "SINGLE-FEASIBLE-ROW ARTIFACT -- WHILE THE PARENT'S OWN "
+         "CLOSED-FORM TALLY, ANCHORED, READ ",
+         ("parent_cf_lawin", rec["parent_words"]["cf_lawin"]),
+         " LAW-IN-A: THE OBSTRUCTION ROW ALONE TRANSPORTS AT BOTH ARENAS "
+         "| EVERY WORD IS SCORED ",
          ("scope_qualifier", tr["scope_qualifier"]),
          " AND CARRIES ITS READING>"],
 
@@ -4448,8 +4904,11 @@ def verdict_segments(rec, with_fields=False):
          ("offsets", [cry["offsets"][k] for k in sorted(cry["offsets"])]),
          " AT a=", ("offset_arities", [int(k) for k in
                                        sorted(cry["offsets"])]),
-         " AGAINST THE PARENT'S CONSTANT ONE: THE PAIR SURVIVES AS A "
-         "STRUCTURE AND EVERY ONE OF ITS NUMBERS MOVES>"],
+         " AGAINST THE COMMITTED-ARITY CONSTANT ONE OF THE PARENT'S ARENA "
+         "LINE, WHOSE OWN ALONG-a OFFSET COLUMN, ANCHORED, READS ",
+         ("parent_offset_column", cry["parent_offset_column"]),
+         " AND IS NOT CONSTANT: THE PAIR SURVIVES AS A STRUCTURE AND "
+         "EVERY ONE OF ITS NUMBERS MOVES>"],
 
         ["A16-MENU-BREAKS-AT-THE-FAILED-HYPOTHESIS<THE SURVIVOR SET IS "
          "ENUMERATED COMPLETELY BY CLOSURE FROM THE DISCRETE PARTITION: ",
@@ -4660,6 +5119,9 @@ HEAD_RESOLVERS = {
                                           "linear")["NEEDS-3"],
     "cf_breaks": lambda r: _own_rule_words(r, ALT_RULES[-1][0],
                                            "linear")["BREAKS"],
+    "parent_cf_lawin": lambda r: r["parent_words"]["cf_lawin"],
+    "parent_offset_column": lambda r: r["law2_crystallization"]
+    ["parent_offset_column"],
     "moved_across_n": lambda r: sum(
         1 for row in r["transport"]["both_arena_words"]
         if row["parent_word_at_nine"] != row["linear_word_here"]),
@@ -4872,6 +5334,77 @@ def head_audit(rec, segments, fields):
             "positionally_bound": total}
 
 
+# ---------------------------------------------------------------------------
+# W3 AUTO-LABELLING (repair Z5, K2 E-4): the pin's promised instrument,
+# BUILT AS A GATE.  n takes two values in this unit's world, so EVERY
+# headline must say which n it holds at: each head segment is auto-labelled
+# from a declared member-token inventory, family-level tokens are refused
+# in the head outright, and the labeller is rehearsed on planted samples.
+# ---------------------------------------------------------------------------
+
+W3_FAMILY_TOKENS = (r"\bAT EVERY ARENA\b", r"\bIN ANY ARENA\b",
+                    r"\bFOR ALL ARENAS\b", r"\bEVERY ISP MODEL\b",
+                    r"\bANY ISP MODEL\b", r"\bACROSS THE ISP FAMILY\b",
+                    r"\bWHATEVER ARENA\b", r"\bARENA-INDEPENDENT\w*")
+
+
+def w3_member_tokens():
+    """the member-token inventory, each token with the reason it names this
+    unit's n; the numeric tokens are RENDERED from the arena, never typed."""
+    return (
+        ("n=%d" % A.n, "the scope segment's own binding"),
+        (str(A.n), "the actor count, rendered from the arena"),
+        (SPELLED[A.n].upper(), "the actor count, spelled"),
+        ("THIS ARENA", "the deictic member reference"),
+        ("THE SECOND ARENA", "this unit's own name for its member"),
+        ("ONE ARENA", "the scope segment's opening"),
+        ("NDEP", "the owner of the committed n = 16 window"),
+        ("THE PARENT ARENA", "the OTHER member named explicitly -- a "
+                             "two-arena comparison is member-specific "
+                             "twice over"),
+        ("AT BOTH ARENAS", "the two members named jointly"),
+        ("BETWEEN THE ARENAS", "the two members named jointly"),
+        ("A PRIME ARENA", "the negative discriminator: a claim about "
+                          "objects a prime arena cannot have is a claim "
+                          "about THIS non-prime member"),
+    )
+
+
+def w3_autolabel(segments):
+    fams = () if mut("MUT-W3") else W3_FAMILY_TOKENS
+    toks = w3_member_tokens()
+    rows = []
+    for i, s in enumerate(segments):
+        fam = sorted(p for p in fams if re.search(p, s))
+        mem = sorted(t for (t, _w) in toks
+                     if (re.search(r"(?<![0-9A-Za-z])%s(?![0-9A-Za-z])"
+                                   % re.escape(t), s)
+                         if t == str(A.n) else t in s))
+        label = ("FAMILY-TOKEN-IN-THE-HEAD" if fam
+                 else "MEMBER-SPECIFIC" if mem else "UNSCOPED")
+        rows.append({"segment": i, "label": label,
+                     "member_tokens": mem, "family_tokens": fam})
+    reh_family = sorted(p for p in fams if re.search(
+        p, "THE LADDER HOLDS AT EVERY ARENA OF THE FAMILY"))
+    reh_bare = sorted(t for (t, _w) in toks
+                      if t in "A SEGMENT NAMING NO MEMBER AT ALL")
+    ok = (all(r["label"] == "MEMBER-SPECIFIC" for r in rows)
+          and bool(reh_family) and not reh_bare)
+    return {"segments": rows, "ok": ok,
+            "member_token_inventory": [{"token": t, "why": w}
+                                       for (t, w) in toks],
+            "family_token_patterns": list(W3_FAMILY_TOKENS),
+            "rehearsal": {"planted_family_claim_flagged": bool(reh_family),
+                          "tokenless_plant_labelled_unscoped":
+                              not reh_bare},
+            "pin_promise": "note-arity16-pin.md WALLS: 'W3 instrumented "
+                           "(family-level vs member-specific auto-labelled "
+                           "-- n now takes two values, so EVERY headline "
+                           "says which n it holds at)' -- built as a gate "
+                           "at the adjudicated repair (v15 ledger #63, "
+                           "order Z5)"}
+
+
 COVERAGE_STRIPS = [
     (r"\b1,2,4,8,16\b", "the registration's order list, quoted verbatim "
      "with the frozen pin's own spacing; the values are bound instead by "
@@ -5008,6 +5541,95 @@ def paper_polarity(rec, text):
     return {"claims": len(rows), "violations": bad}
 
 
+RAT_RE = re.compile(r"(?<![\w.])(\d+/\d+)(?![\w./])")
+
+
+def receipt_rationals(rec):
+    out = set()
+
+    def walk(o):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                walk(k)
+                walk(v)
+        elif isinstance(o, (list, tuple)):
+            for v in o:
+                walk(v)
+        elif isinstance(o, str):
+            for t in RAT_RE.findall(o):
+                out.add(t)
+    walk(rec)
+    return out
+
+
+def paper_synthesis(rec, text):
+    """SYNTHESIS-PROSE PROMOTION, CLOSED (repair Z7, K3 F-1).  The claim
+    registry binds registered sentences; a synthesis sentence that restates
+    a receipt-backed finding escaped it.  Four legs close the found
+    instances: qualified TALLY sentences bound to the receipt's own words;
+    the capped/empty HONESTY STAMP required in its true direction and
+    refused inverted; ATOMIC slash-rationals scanned whole (the ECC fix
+    ported) against the rational strings the receipt carries; and a
+    reading-merge tally frame refused outright where the readings differ.
+    The bare-derivation subject is policed at the walls (W-NO-SELECTION
+    gains the derivation verb).  Nothing here claims the class closed: the
+    registered fresh-paraphrase condition stands registered."""
+    prose = canon(" ".join(text.split("```")[0::2])).casefold()
+    lin = rec["transport"]["linear"]["statement_words"]
+    ab = rec["transport"]["abstract"]["statement_words"]
+    pw = rec["parent_words"]
+    refs = {"linear": (lin.get("LAW-IN-A", 0), lin.get("BREAKS", 0)),
+            "abstract": (ab.get("LAW-IN-A", 0), ab.get("BREAKS", 0)),
+            "parent": (pw["stmt_lawin"], pw["stmt_breaks"])}
+    bad = []
+    tally_pats = (
+        ("linear", r"primary (?:f4-)?linear (?:statement )?tally "
+                   r"(?:is|reads|read) (\d+)\D{0,24}?against (\d+)"),
+        ("abstract", r"\babstract (?:statement )?tally (?:is|reads|read) "
+                     r"(\d+) (?:and |against )(\d+)"),
+        ("parent", r"parent's own anchored tally (?:was|read|reads) "
+                   r"(\d+) (?:and |against )(\d+)"),
+    )
+    matches = 0
+    for (who, pat) in tally_pats:
+        for m in re.finditer(pat, prose):
+            matches += 1
+            got = (int(m.group(1)), int(m.group(2)))
+            if got != refs[who]:
+                bad.append({"leg": "tally", "reading": who,
+                            "claimed": list(got),
+                            "measured": list(refs[who])})
+    if (refs["linear"] != refs["abstract"]
+            and re.search(r"under (?:both|either) readings?[^.]{0,80}"
+                          r"\btall(?:y|ies)\b", prose)):
+        bad.append({"leg": "tally",
+                    "merged_tally_frame": "a single tally asserted under "
+                                          "both readings where the "
+                                          "readings' tallies differ"})
+    capped = any(r["witness_status"] == "NOT-FOUND-WITHIN-CAP"
+                 for r in rec["law4_ladder"]["rows"])
+    stamp_present = ("published as capped, never as empty" in prose)
+    if capped and not stamp_present:
+        bad.append({"leg": "stamp",
+                    "missing": "published as capped, never as empty"})
+    if re.search(r"published as empty", prose):
+        bad.append({"leg": "stamp",
+                    "inverted": "published as empty"})
+    allowed = receipt_rationals(rec)
+    text_all = canon(text).casefold()
+    stray = sorted({t for t in RAT_RE.findall(text_all)
+                    if t not in allowed})
+    for t in stray:
+        bad.append({"leg": "slash-rational", "atomic": t,
+                    "not_a_receipt_rational": True})
+    rehearsal = RAT_RE.findall("a planted share of 424242/424243 in prose")
+    return {"violations": bad, "tally_matches": matches,
+            "tally_referents": {k: list(v) for k, v in sorted(refs.items())},
+            "stamp_required": capped, "stamp_present": stamp_present,
+            "rationals_allowed": sorted(allowed),
+            "slash_rehearsal_catches": len(rehearsal)}
+
+
 def paper_spelled(rec, text, RR, claims):
     """THE SPELLED-NUMERAL GATE: the same prose scanned in the other
     alphabet, four ways -- universe binding, pair binding, the rendered
@@ -5107,26 +5729,68 @@ def register_claims(rec, CL):
           "committed window" if a == 4 else
           "REFUSED-BY-THE-COMMITTED-GRAMMAR",
           cry["offsets"].get(str(a), "none")] for a in A_])
+    # repair Z3 (K1-F5): a capped row's budget cell is RESTAMPED with its
+    # window verdict, never left as a literal "none" the full-pool
+    # closures prove false about the arena.
+    def _budget_cell(r):
+        if r["achievable_budgets"]:
+            return ", ".join(str(b) for b in r["achievable_budgets"])
+        if r["witness_status"] == "NOT-FOUND-WITHIN-CAP":
+            return "NOT-FOUND-WITHIN-CAP"
+        return "none"
     out["T-LADDER"] = CL.table(
         "T-LADDER",
         ("a", "saturating rounds", "witness window", "witness status",
          "achievable budgets within the bound"),
         [[r["a"], r["saturating"], r["witness_window"] or "none",
-          r["witness_status"],
-          ", ".join(str(b) for b in r["achievable_budgets"]) or "none"]
+          r["witness_status"], _budget_cell(r)]
          for r in rec["law4_ladder"]["rows"]]
         + [[rec["law4_ladder"]["census_leg_a9"]["a"],
             rec["law4_ladder"]["census_leg_a9"]["saturating"],
             rec["law4_ladder"]["census_leg_a9"]["witness_window"],
             rec["law4_ladder"]["census_leg_a9"]["witness_status"],
-            ", ".join(str(b) for b in rec["law4_ladder"]["census_leg_a9"]
-                      ["achievable_budgets"]) or "none"],
+            _budget_cell(rec["law4_ladder"]["census_leg_a9"])],
            [rec["law4_ladder"]["census_leg_a8"]["a"],
             rec["law4_ladder"]["census_leg_a8"]["saturating"],
             rec["law4_ladder"]["census_leg_a8"]["witness_window"],
             rec["law4_ladder"]["census_leg_a8"]["witness_status"],
-            ", ".join(str(b) for b in rec["law4_ladder"]["census_leg_a8"]
-                      ["achievable_budgets"]) or "none"]])
+            _budget_cell(rec["law4_ladder"]["census_leg_a8"])]])
+    st = rec["review_strengthenings"]
+    out["T-STRENGTHENING"] = CL.table(
+        "T-STRENGTHENING",
+        ("a", "full saturating pool", "distinct cell masks",
+         "full-pool R = L cover", "first rung", "seat"),
+        [[r["a"], r["full_pool"], r["distinct_cell_masks"],
+          r["full_pool_r4_cover"], r["first_rung"], r["seat"]]
+         for r in st["rows"]]
+        + [[st["open_row"]["a"], st["open_row"]["full_pool"], "--",
+            st["open_row"]["full_pool_r4_cover"], "--",
+            st["open_row"]["seat"]]])
+    out["T-TERMS"] = CL.table(
+        "T-TERMS",
+        ("term", "binding in this paper", "the other sense, disclosed"),
+        [["pre-registered",
+          "the protocol sense: the two readings of the word subgroup, "
+          "sealed in the frozen pin before any row ran",
+          "the corpus sense: a selection law registered anywhere in the "
+          "corpus -- the parent's sealed negative, quoted beside the "
+          "principle census"],
+         ["transport(s)",
+          "the a-axis sense: the word a published law earns along the "
+          "event-size axis under a declared rule and reading",
+          "the n-axis sense: a parent result reproduced at this arena -- "
+          "the naming law's reproduction leg, and the crystallization "
+          "segment name's sharpened-floor suffix"],
+         ["reading",
+          "one of the two pre-registered senses of the word subgroup, "
+          "and nothing else in this paper's prose",
+          "none: the colloquial sense is not used"],
+         ["the parent",
+          "the arity parent, whose paper and committed receipt are "
+          "pinned sources; NDEP is always named NDEP",
+          "the parent's ARENA LINE names the n-axis through the "
+          "committed arity, where the offset constant lives; the "
+          "parent's own along-a offset column is not constant"]])
     out["T-MENU"] = CL.table(
         "T-MENU", ("object", "count"),
         [["invariant-partition survivors, complete closure",
@@ -5234,10 +5898,44 @@ def register_claims(rec, CL):
                 cry["schedule"]["a4"]["min_events"],
                 cry["schedule"]["a4"]["window_histories"]))
     off_pair = [cry["offsets"][k] for k in sorted(cry["offsets"])]
-    CL.claim("the offsets read %d and %d against the parent's constant %d"
+    CL.claim("the offsets read %d and %d against the committed-arity "
+             "constant %d of the parent's arena line"
              % (off_pair[0], off_pair[1],
                 [r["parent_value"] for r in lin_t["numerals"]
                  if r["numeral"] == "the offset between them"][0]))
+    CL.claim("the parent's own along-a offset column is not constant: it "
+             "reads %d, %d, %d and %d"
+             % tuple(cry["parent_offset_column"]))
+    mech = frc[4]["ABSTRACT"]["joiner_mechanism"]
+    CL.claim("%d of the abstract rounds carry %d joiners each and %d "
+             "carry %d, split by whether the subgroup lies inside the "
+             "span of the declared links -- the split measured exact at "
+             "the receipt's own mechanism leg"
+             % (mech["in_span_rounds"],
+                [int(k) for k in mech["in_span_joiner_counts"]][0],
+                mech["off_span_rounds"],
+                [int(k) for k in mech["off_span_joiner_counts"]][0]))
+    CL.claim("the committed-arity schedule value %d and its offset %d in "
+             "the rows above are window values on NDEP's committed "
+             "covering tuples"
+             % (cry["schedule"]["a4"]["min_events"],
+                cry["offsets"][str(COMMITTED_ARITY)]))
+    st = rec["review_strengthenings"]
+    CL.claim("the operator seat's full-pool search closes %d of the "
+             "register's four undecided ladder rows as achievable, at %d, "
+             "%d and %d actors per event, with first rung %d at every "
+             "closed row, and the ladder row at %d actors per event "
+             "remains open with the successor"
+             % (len(st["rows"]), st["rows"][0]["a"], st["rows"][1]["a"],
+                st["rows"][2]["a"], st["rows"][0]["first_rung"],
+                st["open_row"]["a"]))
+    r8 = rec["law4_ladder"]["r8_multiplicity2"]
+    CL.claim("the ladder's row at eight actors per event is searched at "
+             "R = %d in its own right: the exhaustive multiplicity-%d "
+             "search over the complete pool of %d saturating rounds, "
+             "repetition included, finds %d records"
+             % (r8["budget"], r8["budget"] // A.L, r8["pool"],
+                r8["records_found"]))
     CL.claim("the budget-saturating count at two actors is %d against "
              "the parent arena's anchored %d"
              % (sub[2]["saturating_budget"],
@@ -5406,6 +6104,8 @@ def register_referents(rec, RR):
                     frc[4]["F4-LINEAR"]["rounds"]),
                    (frc[2]["ABSTRACT"]["rounds"],
                     frc[2]["ABSTRACT"]["rounds"])])
+    st_ = rec["review_strengthenings"]
+    r8_ = rec["law4_ladder"]["r8_multiplicity2"]
     RR.universe("ladder", ["ladder", "rung", "modulus", "budget", "weld",
                            "arena pair", "cover", "mass"],
                 base | {r["saturating"] for r in
@@ -5419,9 +6119,15 @@ def register_referents(rec, RR):
                 | {corp[a][k] for a in A_ for k in
                    ("window_basis", "saturating_abstract_rounds",
                     "covering_tuples")}
-                | {r["a"] for r in rec["principles"]["rows"]},
+                | {r["a"] for r in rec["principles"]["rows"]}
+                | {r["full_pool"] for r in st_["rows"]}
+                | {r["distinct_cell_masks"] for r in st_["rows"]}
+                | {st_["open_row"]["full_pool"], st_["open_row"]["a"]}
+                | {r8_["budget"], r8_["pool"], r8_["records_found"],
+                   r8_["nodes"]},
                 [(mt["pairs_holding"], mt["pairs_checked"]),
-                 (len(mt["mod_a_appears_at"]), len(mt["found_rungs"]))])
+                 (len(mt["mod_a_appears_at"]), len(mt["found_rungs"])),
+                 (len(st_["rows"]), len(st_["rows"]) + len([st_["open_row"]]))])
     RR.universe("transport", ["law-in-a", "needs-3", "breaks", "statement",
                               "numeral", "word", "rule", "aggregate",
                               "slot", "tally"],
@@ -5532,6 +6238,11 @@ PARAPHRASE_PLANTS = [
      "Only one block size lets the plane close, and the corpus knew it."),
     ("P-READINGS-AGREE",
      "The two readings agree once the census is read correctly."),
+    ("P-HYPHEN-EVASION",
+     "The event-size is uniquely selected by the census at sixteen "
+     "actors."),
+    ("P-HEADING-MERGE",
+     "Under both readings the covering census gives the same answer."),
 ]
 
 
@@ -5559,9 +6270,9 @@ def build_walls():
              "This unit proves that four is the correct event size."],
             subject=(r"\b(?:arity|arities|event size|event sizes|block "
                      r"size|block sizes|group size|division event|four "
-                     r"actors|four-actor|actors per event)\b",),
+                     r"actors|four-actor|actors per event|conditional)\b",),
             policed=(r"\bselect\w*", r"(?<!division-)\bforc\w+",
-                     r"\bdetermin\w+",
+                     r"\bdetermin\w+", r"(?<!re-)\bderiv\w+",
                      r"\brequir\w+", r"\bnecessar\w+", r"\bmandat\w+",
                      r"\bdemand\w+", r"\bsettl\w+", r"\bestablish\w+",
                      r"\bno other (?:choice|option|size|possibilit\w+)\b",
@@ -5773,6 +6484,7 @@ def build_walls():
                      r"reading)\b",),
             policed=(r"\bagree\w*", r"\bmerge\w*", r"\baverag\w+",
                      r"\bcombine\w*", r"\bthe same answer\b",
+                     r"\bthe same way\b", r"\bsettl\w+",
                      r"\bequivalent\b", r"\binterchangeab\w+",
                      r"\bwill do\b"),
             licences=(r"\bdisagree\w*", r"\bpart company\b",
@@ -5890,6 +6602,19 @@ def _probe_head():
     return sample[:-1] + " FORGED 424242>" if mut("MUT-HEAD") else sample
 
 
+def _probe_w3():
+    got = w3_autolabel(["A SEGMENT AT THE SECOND ARENA"])
+    return [got["rehearsal"]["planted_family_claim_flagged"],
+            got["rehearsal"]["tokenless_plant_labelled_unscoped"]]
+
+
+def _probe_strength():
+    pools = [packing_distribution(a).get(A.n, 0) for a in (3, 5, 7)]
+    if mut("MUT-STRENGTH"):
+        pools[0] += 1
+    return pools
+
+
 def _probe_seal():
     pay = {"fidelity": {"agree": 10, "rows": 10}}
     if mut("MUT-SEAL-ADD"):
@@ -5970,6 +6695,51 @@ def _probe_promotion():
     return [refused_line, refused_edit]
 
 
+def _probe_integrity():
+    """the three forged fixtures the sealed promotion window must refuse;
+    under the matching mutant a fixture is handed in CLEAN, so the leg
+    that should refuse it reports no refusal and the rehearsal gate
+    dies."""
+    rows = []
+    head = "0" * 16
+    for i, g in enumerate(("G-REHEARSAL-A", "G-REHEARSAL-B")):
+        row = {"n": i + 1, "gate": g, "statement": "", "evidence": {},
+               "passed": True, "prev": head}
+        row["row_digest"] = digest(row)
+        head = hashlib.sha256(
+            (head + row["row_digest"]).encode("utf-8")).hexdigest()[:16]
+        rows.append(row)
+    line = "object under test rehearsal"
+    tr = line + "\nother\n"
+    legs = []
+    forged_head = head if mut("MUT-INTEG-HEAD") else "0" * 16
+    try:
+        promote_integrity({"ledger": rows, "ledger_head": forged_head},
+                          tr, (line,))
+        legs.append(False)
+    except GateFail:
+        legs.append(True)
+    rows2 = [dict(r) for r in rows]
+    if not mut("MUT-INTEG-ROW"):
+        rows2[1] = dict(rows2[1])
+        rows2[1]["evidence"] = {"forged": True}
+    try:
+        promote_integrity({"ledger": rows2, "ledger_head": head},
+                          tr, (line,))
+        legs.append(False)
+    except GateFail:
+        legs.append(True)
+    missing = (line,) if mut("MUT-INTEG-LINE") else (line, "a line the "
+                                                    "transcript lost")
+    try:
+        promote_integrity({"ledger": rows, "ledger_head": head},
+                          tr, missing)
+        legs.append(False)
+    except GateFail:
+        legs.append(True)
+    return legs
+
+
 def _probe_template():
     return sorted(TEMPLATE_FAMILIES) if not mut("MUT-TEMPLATE") else []
 
@@ -5991,6 +6761,54 @@ def hash_ban_scan(source):
 
 def _probe_hash():
     return hash_ban_scan("x = hash(y)\nz = id(w)\n")
+
+
+def iteration_order_scan(source):
+    """ITERATION-ORDER DETERMINISM (repair Z10, K3 F-4).  The hash ban
+    polices calls; this leg polices DATA-FLOW at the syntactic sites the
+    instrument can see: any for-loop or comprehension iterating a bare set
+    display, set comprehension or set(...) call -- whose order is
+    hash-seed-dependent -- and any call to os.listdir -- whose order is
+    filesystem-contingent -- is refused; the discipline is sorted() at
+    every such site.  Proven need: the panel's set-comprehension mutant
+    promoted SEED-VARIANT receipt content; under this gate the same edit
+    dies deterministically, at parse time, whatever the seed."""
+    bad = []
+
+    def setlike(n):
+        return (isinstance(n, (ast.Set, ast.SetComp))
+                or (isinstance(n, ast.Call)
+                    and isinstance(n.func, ast.Name)
+                    and n.func.id == "set"))
+    for node in ast.walk(ast.parse(source)):
+        iters = []
+        if isinstance(node, ast.For):
+            iters = [node.iter]
+        elif isinstance(node, (ast.ListComp, ast.SetComp,
+                               ast.GeneratorExp, ast.DictComp)):
+            iters = [g.iter for g in node.generators]
+        for it in iters:
+            if setlike(it):
+                bad.append({"line": node.lineno,
+                            "kind": "bare-set-iteration"})
+        if isinstance(node, ast.Call):
+            fn = node.func
+            if ((isinstance(fn, ast.Attribute) and fn.attr == "listdir")
+                    or (isinstance(fn, ast.Name) and fn.id == "listdir")):
+                bad.append({"line": node.lineno, "kind": "listdir"})
+    return bad
+
+
+def _probe_iter_set():
+    if mut("MUT-ITER-SET"):
+        return []
+    return iteration_order_scan("out = [x for x in {1, 2, 3}]\n")
+
+
+def _probe_iter_dir():
+    if mut("MUT-ITER-DIR"):
+        return []
+    return iteration_order_scan("import os\nnames = os.listdir(p)\n")
 
 
 def _probe_paper(kind):
@@ -6078,6 +6896,12 @@ FALSIFIERS = [
               "the modulus identity is falsified at one declared arena "
               "pair, so the theorem's sweep stops holding",
               "the arena sweep of the identity", _probe_theorem),
+    Falsifier("MUT-STRENGTH", "G-STRENGTHENING-K1",
+              "this unit's own pool census is shifted at a closed row, so "
+              "the seat-attributed quoted pool stops matching the one "
+              "cross-check this unit can run",
+              "the own-census pool counts at the closed rows",
+              _probe_strength),
     Falsifier("MUT-FORCING", "G-LAW5-FORCING16",
               "the history leg is forced true, so partitions the events "
               "do not respect become admissible and every non-unique "
@@ -6111,6 +6935,12 @@ FALSIFIERS = [
               "a numeral in the head is replaced by one no measurement "
               "licenses, leaving every gate above it green",
               "the emitted head", _probe_head),
+    Falsifier("MUT-W3", "G-W3-AUTOLABEL",
+              "the family-token inventory is emptied, so a family-level "
+              "claim planted in a head segment would be labelled "
+              "member-specific; the rehearsal hands the labeller a "
+              "planted family claim and requires a flag",
+              "the labeller's rehearsal verdicts", _probe_w3),
     Falsifier("MUT-CLAIM", "G-PAPER-CLAIMS",
               "a licensed claim's numeral is replaced, so the rendering "
               "the paper must carry stops being the receipt's",
@@ -6130,6 +6960,42 @@ FALSIFIERS = [
               "a direction-bearing sentence is inverted while every "
               "numeral stays where it was",
               "the polarity sentence set", _probe_paper("MUT-POLARITY")),
+    Falsifier("MUT-SYNTH-TALLY", "G-PAPER-SYNTHESIS",
+              "the panel's surviving synthesis forge, permanent control: "
+              "the primary linear tally sentence is rewritten to the "
+              "parent's anchored pair while fence and receipt stand",
+              "the qualified tally sentence",
+              _probe_paper("MUT-SYNTH-TALLY")),
+    Falsifier("MUT-SYNTH-STAMP", "G-PAPER-SYNTHESIS",
+              "the panel's surviving stamp inversion, permanent control: "
+              "'published as capped, never as empty' becomes 'published "
+              "as empty'",
+              "the honesty stamp sentence",
+              _probe_paper("MUT-SYNTH-STAMP")),
+    Falsifier("MUT-SYNTH-SLASH", "G-PAPER-SYNTHESIS",
+              "the panel's surviving atomic-rational forge, permanent "
+              "control: a false slash rational whose halves are both "
+              "receipt numbers is planted in prose",
+              "the planted rational sentence",
+              _probe_paper("MUT-SYNTH-SLASH")),
+    Falsifier("MUT-SYNTH-DERIVE", "G-WALLS",
+              "the panel's surviving bare-derivation sentence, permanent "
+              "control: the event-size subject now meets the derivation "
+              "verb at the selection wall",
+              "the planted derivation sentence",
+              _probe_paper("MUT-SYNTH-DERIVE")),
+    Falsifier("MUT-HEADING-LEAK", "G-WALLS",
+              "the panel's licence-leak injection, permanent control: a "
+              "reading-merge sentence planted as the first body sentence "
+              "under the licence-bearing section heading",
+              "the planted merge sentence under the heading",
+              _probe_paper("MUT-HEADING-LEAK")),
+    Falsifier("MUT-HYPHEN", "G-WALLS",
+              "the panel's hyphen-evasion sentence, permanent control: "
+              "the central forbidden claim spelled with a hyphenated "
+              "subject",
+              "the planted hyphenated sentence",
+              _probe_paper("MUT-HYPHEN")),
     Falsifier("MUT-WALL", "G-WALLS",
               "a banned sentence is inserted in house style",
               "the scanned paper text", _probe_paper("MUT-WALL")),
@@ -6146,6 +7012,18 @@ FALSIFIERS = [
               "call would pass the ban unseen; the rehearsal hands it a "
               "planted call and requires a catch",
               "the scanner's verdict on the planted sample", _probe_hash),
+    Falsifier("MUT-ITER-SET", "G-ITERATION-ORDER",
+              "the iteration-order scanner goes blind to bare "
+              "set-iteration -- the panel's PROVEN seed-variant route -- "
+              "so the rehearsal's planted set comprehension passes unseen",
+              "the scanner's verdict on the planted set sample",
+              _probe_iter_set),
+    Falsifier("MUT-ITER-DIR", "G-ITERATION-ORDER",
+              "the iteration-order scanner goes blind to os.listdir, so "
+              "filesystem enumeration order could reach a sealed value "
+              "unseen",
+              "the scanner's verdict on the planted listdir sample",
+              _probe_iter_dir),
     Falsifier("MUT-CACHE", "G-CACHE",
               "a memo key drops its mutant flag, so a recipe would be "
               "served the clean cached answer",
@@ -6162,6 +7040,21 @@ FALSIFIERS = [
               "both promotion legs are inverted -- a forged narrative "
               "line accepted, an edited sealed value accepted",
               "the two promotion legs on fixed inputs", _probe_promotion),
+    Falsifier("MUT-INTEG-HEAD", "G-PROMOTION-REHEARSAL",
+              "the forged-ledger-head fixture is handed in clean, so the "
+              "integrity recomputation that must refuse a zeroed head "
+              "reports no refusal",
+              "the integrity rehearsal legs", _probe_integrity),
+    Falsifier("MUT-INTEG-ROW", "G-PROMOTION-REHEARSAL",
+              "the forged-ledger-row fixture is handed in clean, so the "
+              "row-digest recomputation that must refuse a forged row "
+              "reports no refusal",
+              "the integrity rehearsal legs", _probe_integrity),
+    Falsifier("MUT-INTEG-LINE", "G-PROMOTION-REHEARSAL",
+              "the dropped-narrative-line fixture is handed in clean, so "
+              "the required-lines check that must refuse a missing "
+              "self-identification line reports no refusal",
+              "the integrity rehearsal legs", _probe_integrity),
     Falsifier("MUT-READ", "G-READ-SET",
               "a repository file outside the declared source list is "
               "opened, which the audit hook sees whoever calls it",
@@ -6245,6 +7138,8 @@ TEMPLATE_FAMILIES = {
                          "seal_check_refuses_an_edited_value"),
     "T-TRANSCRIPT-BOUND": ("G-PROMOTION-REHEARSAL",
                            "narrative_binding_refuses_a_forged_line"),
+    "T-PROMOTE-INTEGRITY": ("G-PROMOTION-REHEARSAL",
+                            "integrity_refuses_a_forged_head"),
     "T-WALL-SEMANTIC": ("G-WALLS", "walls"),
     "T-ANCHOR-CONSUMED": ("G-ANCHORS-CONSUMED", "reads"),
     "T-CLAIMS-EQUAL": ("G-PAPER-CLAIMS", "tables_claimed"),
@@ -6323,6 +7218,30 @@ def paper_under(kind, text):
     if kind == "MUT-SPELLED" and mut("MUT-SPELLED"):
         return text + ("\n\nThe sharpened floor reproduces the certified "
                        "floor at two of four arities.\n")
+    # THE PANEL'S FOUR SURVIVING VARIANTS, PERMANENT CONTROLS (Z7/Z8/Z11)
+    if kind == "MUT-SYNTH-TALLY" and mut("MUT-SYNTH-TALLY"):
+        return text.replace("the primary linear tally is 3 transporting "
+                            "against 3",
+                            "the primary linear tally is 4 transporting "
+                            "against 2")
+    if kind == "MUT-SYNTH-STAMP" and mut("MUT-SYNTH-STAMP"):
+        return text.replace("published as capped, never as empty",
+                            "published as empty")
+    if kind == "MUT-SYNTH-SLASH" and mut("MUT-SYNTH-SLASH"):
+        return text + ("\n\nThe linear share is 6/35 of the "
+                       "committed-arity singles.\n")
+    if kind == "MUT-SYNTH-DERIVE" and mut("MUT-SYNTH-DERIVE"):
+        return text + "\n\nThe event size is derived here.\n"
+    if kind == "MUT-HEADING-LEAK" and mut("MUT-HEADING-LEAK"):
+        return text.replace(
+            "## 9. Law 5 -- the division-forcing thesis, which splits on "
+            "the reading\n\n",
+            "## 9. Law 5 -- the division-forcing thesis, which splits on "
+            "the reading\n\nUnder both readings the covering census gives "
+            "the same answer.\n\n")
+    if kind == "MUT-HYPHEN" and mut("MUT-HYPHEN"):
+        return text + ("\n\nThe event-size is uniquely selected by the "
+                       "census at sixteen actors.\n")
     return text
 
 
@@ -6354,6 +7273,25 @@ def closing_battery(src, paper_text, paper_rel, write):
             audit)
     R["verdict"] = SEAL.seal("verdict", {"segments": segs, "audit": audit},
                              "G-VERDICT-EQUALITY")
+
+    w3 = w3_autolabel(segs)
+    CR.measured("w3_segments", len(w3["segments"]), "head segments labelled")
+    CR.measured("w3_member", sum(1 for r in w3["segments"]
+                                 if r["label"] == "MEMBER-SPECIFIC"),
+                "segments auto-labelled member-specific")
+    CR.measured("w3_tokens", len(w3["member_token_inventory"]),
+                "declared member tokens, each with its reason")
+    LD.gate("G-W3-AUTOLABEL", w3["ok"],
+            CR.stmt("the pin-promised W3 instrument is BUILT AS A GATE: "
+                    "each of the {s} head segments is auto-labelled from a "
+                    "declared inventory of {t} member tokens, {m} are "
+                    "member-specific and none is unscoped, family-level "
+                    "tokens are refused in the head outright, and the "
+                    "labeller is rehearsed on a planted family claim and a "
+                    "planted tokenless segment",
+                    s="w3_segments", t="w3_tokens", m="w3_member"),
+            w3)
+    R["w3_autolabel"] = SEAL.seal("w3_autolabel", w3, "G-W3-AUTOLABEL")
 
     cg = CL.gate(paper_under("MUT-CLAIM", paper_text))
     obj = {"path": os.path.relpath(os.path.abspath(paper_rel), REPO),
@@ -6436,6 +7374,33 @@ def closing_battery(src, paper_text, paper_rel, write):
                     k="polarity_claims"),
             pol)
 
+    syn_text = paper_text
+    for k in ("MUT-SYNTH-TALLY", "MUT-SYNTH-STAMP", "MUT-SYNTH-SLASH"):
+        syn_text = paper_under(k, syn_text)
+    syn = paper_synthesis(R, syn_text)
+    CR.measured("syn_violations", len(syn["violations"]), "counted")
+    CR.measured("syn_tally_matches", syn["tally_matches"],
+                "qualified tally sentences found and bound")
+    CR.measured("syn_slash_rehearsal", syn["slash_rehearsal_catches"],
+                "atomic rationals caught in the planted rehearsal sample")
+    LD.gate("G-PAPER-SYNTHESIS",
+            not syn["violations"] and syn["tally_matches"] > 0
+            and syn["slash_rehearsal_catches"] == 1
+            and (syn["stamp_present"] or not syn["stamp_required"]),
+            CR.stmt("synthesis prose is COVERED (the panel's promotion "
+                    "hole, closed at the found instances): {t} qualified "
+                    "tally sentences are bound to the receipt's own word "
+                    "counts per reading with a merged-tally frame refused "
+                    "where the readings differ; the capped/empty honesty "
+                    "stamp is required in its true direction and refused "
+                    "inverted; and every atomic slash-rational in the "
+                    "paper must be a rational string the receipt carries, "
+                    "the scanner rehearsed on a planted sample catching "
+                    "{r}. Violations: {v}",
+                    t="syn_tally_matches", r="syn_slash_rehearsal",
+                    v="syn_violations"),
+            syn)
+
     # THE WALL BATTERY IS MEMOISED ON THE SCANNED TEXT'S OWN DIGEST (the
     # AUTOGLUE runtime lesson: the plants-by-walls-by-negated-twins product
     # is the chain's dominant cost, and every nested falsifier run whose
@@ -6443,7 +7408,15 @@ def closing_battery(src, paper_text, paper_rel, write):
     # result rather than recomputing the product).  The key carries the
     # text digest and the one mutant flag that changes the plant list, so
     # a corrupted variant can never be served the clean answer.
-    wtext = ReferentRegistry.prose_only(paper_under("MUT-WALL", paper_text))
+    wall_input = paper_text
+    for k in ("MUT-WALL", "MUT-SYNTH-DERIVE", "MUT-HEADING-LEAK",
+              "MUT-HYPHEN"):
+        wall_input = paper_under(k, wall_input)
+    # repair Z8: heading lines are terminated BEFORE the whitespace fold,
+    # so a period-less heading is its own sentence to every wall and a
+    # licence token inside it cannot launder the section's first body
+    # sentence.
+    wtext = ReferentRegistry.prose_only(heading_terminate(wall_input))
 
     def _wall_battery():
         walls_l = build_walls()
@@ -6581,6 +7554,29 @@ def closing_battery(src, paper_text, paper_rel, write):
                     h="hash_calls_found", r="hash_rehearsal_catches"),
             {"calls_in_module": own_hash, "rehearsal": rehearsal})
 
+    own_iter = memo(("astiter",),
+                    lambda: iteration_order_scan(open(SELF).read()))
+    reh_set = _probe_iter_set()
+    reh_dir = _probe_iter_dir()
+    CR.measured("iter_sites_found", len(own_iter), "counted")
+    CR.measured("iter_rehearsal_catches", len(reh_set) + len(reh_dir),
+                "counted over the two planted samples")
+    LD.gate("G-ITERATION-ORDER",
+            not own_iter and len(reh_set) == 1 and len(reh_dir) == 1,
+            CR.stmt("the determinism discipline is extended past call "
+                    "sites to ITERATION ORDER (the panel's proven "
+                    "seed-variant route): an AST leg refuses any for-loop "
+                    "or comprehension over a bare set display, set "
+                    "comprehension or set() call, and any os.listdir call, "
+                    "anywhere in this module -- sorted() is the discipline "
+                    "at every such site -- finding {s} sites; the scanner "
+                    "is rehearsed on planted samples of both species, "
+                    "catching {r}",
+                    s="iter_sites_found", r="iter_rehearsal_catches"),
+            {"sites_in_module": own_iter,
+             "rehearsal_set_iteration": reh_set,
+             "rehearsal_listdir": reh_dir})
+
     if mut("MUT-CACHE"):
         MEMO_HITS[("hit", "flagless")] += 1
     fam = Counter()
@@ -6661,6 +7657,9 @@ def closing_battery(src, paper_text, paper_rel, write):
 
     pg = preregistration_gate(R, segs)
     CR.measured("prereg_words", len(pg["declared_words"]), "counted")
+    CR.measured("prereg_addendum", len(pg["declared_addendum"]["words"]),
+                "witness-status words declared at the adjudicated repair "
+                "(Z6), never retro-dated into the frozen registers")
     CR.measured("prereg_segments", len(pg["segments"]), "counted")
     CR.measured("prereg_contingent", pg["segments_contingent"], "counted")
     CR.measured("prereg_reasoned", len(pg["never_fired_with_reasons"]),
@@ -6672,32 +7671,43 @@ def closing_battery(src, paper_text, paper_rel, write):
             and not pg["segments_unbound"] and pg["digests_match"],
             CR.stmt("the pre-registration is CONSUMED and not decorated: "
                     "both registers carry their own digest, checked here; "
-                    "every emitted outcome word is declared; every "
-                    "declared word either fires or stands in the register "
-                    "of measured non-occurrences, which holds {nr} words "
-                    "each carrying the measurement that kept its trigger "
-                    "from occurring; and each of the {g} head segments "
-                    "carries its pre-registered outcome, the complement, a "
-                    "feasibility line and the honest contingency column, "
-                    "true of {c}",
-                    nr="prereg_reasoned", g="prereg_segments",
-                    c="prereg_contingent"),
+                    "the WHOLE witness-status column enters the "
+                    "reconciliation, its {aw} remaining stamps declared by "
+                    "the adjudicated repair's addendum with its own digest "
+                    "and provenance, never retro-dated; every emitted "
+                    "outcome word is declared; every declared word either "
+                    "fires or stands in the register of measured "
+                    "non-occurrences, which holds {nr} words each carrying "
+                    "the measurement that kept its trigger from occurring, "
+                    "both clauses of the modulus reason independently "
+                    "bound in the renderer; and each of the {g} head "
+                    "segments carries its pre-registered outcome, the "
+                    "complement, a feasibility line and the honest "
+                    "contingency column, true of {c}",
+                    aw="prereg_addendum", nr="prereg_reasoned",
+                    g="prereg_segments", c="prereg_contingent"),
             pg)
     R["preregistration"] = SEAL.seal("preregistration", pg,
                                      "G-PREREGISTRATION")
 
-    reh = _probe_promotion()
+    reh = _probe_promotion() + _probe_integrity()
     CR.measured("promotion_legs", len(reh), "counted")
     LD.gate("G-PROMOTION-REHEARSAL", all(reh),
             CR.stmt("the {k} legs that stand between the last gate and "
                     "the written artifacts are REHEARSED on fixed "
                     "synthetic inputs: a forged narrative line must be "
-                    "refused and a sealed value edited after its gate must "
-                    "be refused, and the promotion path calls these same "
-                    "two functions before it replaces anything",
+                    "refused, a sealed value edited after its gate must be "
+                    "refused, and -- the repair's sealed window -- a "
+                    "forged ledger head, a forged ledger row and a dropped "
+                    "self-identification line must each be refused by the "
+                    "integrity recomputation; the promotion path calls "
+                    "these same functions before it replaces anything",
                     k="promotion_legs"),
             {"narrative_binding_refuses_a_forged_line": reh[0],
-             "seal_check_refuses_an_edited_value": reh[1]})
+             "seal_check_refuses_an_edited_value": reh[1],
+             "integrity_refuses_a_forged_head": reh[2],
+             "integrity_refuses_a_forged_row": reh[3],
+             "integrity_requires_the_narrative_lines": reh[4]})
 
     if mut("MUT-READ"):
         _undeclared_read()
@@ -6833,6 +7843,10 @@ def preregistration_gate(rec, segments):
     measured non-occurrences, each entry carrying the measurement that
     kept its trigger from occurring."""
     declared = {w for (w, _m, _f) in PREREGISTERED}
+    # repair Z6 (K2 E-3): the addendum words join the declared set, with
+    # their repair-time provenance published; the #43 registers and their
+    # digests are untouched.
+    declared |= {w for (w, _m) in REGISTER_ADDENDUM}
     emitted = set()
     for reading in READINGS:
         for row in (rec["transport"][
@@ -6845,9 +7859,12 @@ def preregistration_gate(rec, segments):
             for (_a, stamp) in row["evidence"].get("carried_rows", []):
                 emitted.add(stamp)
     emitted.add(rec["law3_menu"]["stamp"].split(":")[0].strip())
-    for r in rec["law4_ladder"]["rows"]:
-        if r["witness_status"] == "NOT-FOUND-WITHIN-CAP":
-            emitted.add("NOT-FOUND-WITHIN-CAP")
+    # repair Z6: the WHOLE witness-status column enters the
+    # reconciliation, census legs included, not one stamp of it.
+    for r in (rec["law4_ladder"]["rows"]
+              + [rec["law4_ladder"]["census_leg_a9"],
+                 rec["law4_ladder"]["census_leg_a8"]]):
+        emitted.add(r["witness_status"])
     for r in rec["corpus"]:
         if r["refusal"]:
             emitted.add(r["refusal"]["stamp"])
@@ -6877,7 +7894,12 @@ def preregistration_gate(rec, segments):
                rec["modulus_theorem"]["found_rungs"][0][1],
                [r["parent_value"] for r in rec["transport"]["linear"]
                 ["numerals"] if r["law"] == "ladder"][0]))
-    if all(f[1] % 4 == 0 for f in rec["modulus_theorem"]["found_rungs"]):
+    # repair Z11 (K2 E-8): BOTH clauses of the non-occurrence reason are
+    # independently bound in the renderer's own firing condition.
+    if (all(f[1] % rec["arena"]["L"] == 0
+            for f in rec["modulus_theorem"]["found_rungs"])
+            and set(rec["modulus_theorem"]["mod_a_appears_at"])
+            <= {rec["arena"]["L"]}):
         reasons["A16-MODULUS-THEOREM-FALSIFIED-AT-AG(2, 4)"] = (
             "every found rung is a multiple of the declared link count "
             "and mod-a appears only at a = L, so the falsifying trigger "
@@ -6902,6 +7924,11 @@ def preregistration_gate(rec, segments):
     if mut("MUT-PREREG"):
         dg1 = "MOVED"
     return {"declared_words": sorted(declared),
+            "declared_addendum": {
+                "words": sorted(w for (w, _m) in REGISTER_ADDENDUM),
+                "meanings": {w: m for (w, m) in REGISTER_ADDENDUM},
+                "origin": REGISTER_ADDENDUM_ORIGIN,
+                "digest": digest([list(t) for t in REGISTER_ADDENDUM])},
             "emitted_words": sorted(emitted),
             "emitted_but_never_declared": undeclared,
             "never_fired_with_reasons": {k: v for k, v in
@@ -6917,6 +7944,40 @@ def preregistration_gate(rec, segments):
                               and dg2 == SEGMENT_PREREG_DIGEST)}
 
 
+def promote_integrity(payload, transcript_text, required_lines):
+    """THE PROMOTE-WINDOW INTEGRITY SUMMARY, SEALED (repair Z9, K3 F-3).
+    The declared-unsealed integrity summary was forgeable in the
+    run_measurements-to-promote window by three routes: a zeroed ledger
+    head, a forged ledger row under the intact head, and dropped
+    object-digest narrative lines.  All three are closed by RECOMPUTATION
+    AT PROMOTION: the chain is re-derived from the published rows and must
+    equal the published head, every row digest is re-derived, and the two
+    self-identification lines must stand in the transcript that will be
+    written.  The rehearsal gate exercises this same function on forged
+    fixtures before promotion calls it."""
+    rows = payload.get("ledger", [])
+    head = "0" * 16
+    for r in rows:
+        body = {k: r[k] for k in ("n", "gate", "statement", "evidence",
+                                  "passed")}
+        body["prev"] = head
+        if digest(body) != r.get("row_digest"):
+            raise GateFail("T-PROMOTE-INTEGRITY :: ledger row %s moved in "
+                           "the promotion window" % r.get("n"))
+        head = hashlib.sha256(
+            (head + r["row_digest"]).encode("utf-8")).hexdigest()[:16]
+    if head != payload.get("ledger_head"):
+        raise GateFail("T-PROMOTE-INTEGRITY :: the published ledger head "
+                       "does not equal the head recomputed from the "
+                       "published rows")
+    lines = transcript_text.splitlines()
+    for ln in required_lines:
+        if ln not in lines:
+            raise GateFail("T-PROMOTE-INTEGRITY :: required narrative "
+                           "line missing from the transcript: %s" % ln[:60])
+    return True
+
+
 def promote(payload, segs, paper_text, write, declared_reads=()):
     """verify, then replace, and roll back if anything refuses."""
     body = dict(payload)
@@ -6925,19 +7986,22 @@ def promote(payload, segs, paper_text, write, declared_reads=()):
     for s in segs:
         TR.say(s)
     TR.say("")
-    TR.say("object under test %s %s"
-           % (payload["object_under_test"]["path"],
-              payload["object_under_test"]["sha256_12"]))
-    TR.say("ledger head %s" % payload["ledger_head"])
+    line_obj = ("object under test %s %s"
+                % (payload["object_under_test"]["path"],
+                   payload["object_under_test"]["sha256_12"]))
+    line_head = "ledger head %s" % payload["ledger_head"]
+    TR.say(line_obj)
+    TR.say(line_head)
     ttxt = TR.text().encode("utf-8")
     body["transcript_head"] = TR.bind(LD)
     allowed = {"ARITY-16 (paper-50) -- the second-arena unit", "VERDICT"}
     allowed |= set(segs)
-    allowed.add("object under test %s %s"
-                % (payload["object_under_test"]["path"],
-                   payload["object_under_test"]["sha256_12"]))
-    allowed.add("ledger head %s" % payload["ledger_head"])
+    allowed.add(line_obj)
+    allowed.add(line_head)
     TR.bind_narrative(TR.text(), allowed)
+    # repair Z9 (K3 F-3): the integrity summary is RECOMPUTED at
+    # promotion -- the same function the rehearsal gate exercised.
+    promote_integrity(body, TR.text(), (line_obj, line_head))
     SEAL.verify_at_promotion(body, LD, "seal_manifest")
     body["seal_manifest"] = SEAL.manifest()
     blob = json.dumps(body, sort_keys=True, indent=1,
@@ -7038,13 +8102,17 @@ GATE_ORDER = ["G-SOURCES", "G-PATH-ANCHORS", "G-VERBATIM", "G-ARENA16",
               "G-PACKING-EXTENDS16", "G-SUBSTRATE-CENSUS", "G-CORPUS-RULE",
               "G-LAW1-NAMING16", "G-LAW2-FLOOR-CERTIFICATE16",
               "G-LAW2-SCHEDULE16", "G-LAW2-SHARPENED16", "G-LAW3-MENU16",
-              "G-LAW4-LADDER16", "G-MODULUS-THEOREM", "G-LAW5-FORCING16",
+              "G-LAW4-LADDER16", "G-MODULUS-THEOREM", "G-STRENGTHENING-K1",
+              "G-LAW5-FORCING16",
               "G-LAW6-SEC2-16", "G-PRINCIPLE-CENSUS16", "G-CONDITIONAL",
               "G-TRANSPORT-CONTROLS", "G-AGGREGATE16",
-              "G-VERDICT-EQUALITY", "G-PAPER-CLAIMS", "G-PAPER-COVERAGE",
+              "G-VERDICT-EQUALITY", "G-W3-AUTOLABEL", "G-PAPER-CLAIMS",
+              "G-PAPER-COVERAGE",
               "G-PAPER-REFERENTS", "G-PAPER-SPELLED", "G-PAPER-POLARITY",
+              "G-PAPER-SYNTHESIS",
               "G-WALLS", "G-WALL-PARAPHRASE", "G-NO-TYPED-COUNTS",
-              "G-HASH-BAN", "G-CACHE", "G-EXACT", "G-FALSIFIERS",
+              "G-HASH-BAN", "G-ITERATION-ORDER", "G-CACHE", "G-EXACT",
+              "G-FALSIFIERS",
               "G-PREREGISTRATION", "G-PROMOTION-REHEARSAL", "G-READ-SET",
               "G-ANCHORS-CONSUMED", "G-TEMPLATE-EXERCISED",
               "G-SEAL-TOTALITY", "G-CLOSE"]

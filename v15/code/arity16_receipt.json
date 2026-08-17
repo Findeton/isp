@@ -90,6 +90,76 @@
    "id": "V-N16WINDOW",
    "source": "A-NDEP",
    "why": "NDEP's committed crystallization row at this arena.  The consumer parses the counting bound, the floor and the tuple count and requires all three to equal this unit's re-derivations."
+  },
+  {
+   "chars": 106,
+   "consumer": "G-PRINCIPLE-CENSUS16",
+   "id": "V-SATMAX-PARENT",
+   "source": "A-PARENT",
+   "why": "The parent's own sentence for saturation-is-maximality at its arena. The consumer requires the anchored parent admit-list to be exactly the parent's arity, which is what SELECTED a = q there."
+  },
+  {
+   "chars": 85,
+   "consumer": "G-PRINCIPLE-CENSUS16",
+   "id": "V-THREEOFFIVE",
+   "source": "A-PARENT",
+   "why": "The parent's own tally of its selecting principles.  The consumer parses the 3 and the 5 and requires the anchored parent admit-lists to reproduce both: exactly three of its five principles admit the parent's arity alone among nontrivial sizes, all three at a = q."
+  },
+  {
+   "chars": 101,
+   "consumer": "G-PRINCIPLE-CENSUS16",
+   "id": "V-NOTPREREG",
+   "source": "A-PARENT",
+   "why": "The parent's sealed corpus-wide negative.  The head's 'none of them pre-registered anywhere in the corpus' INHERITS this sentence rather than asserting a negative no gate could license from the declared read set; the consumer requires the phrase and the inheritance is disclosed in section 11."
+  },
+  {
+   "chars": 97,
+   "consumer": "G-LAW4-LADDER16",
+   "id": "V-K1-R8",
+   "source": "A-K1R",
+   "why": "The operator seat's exhaustive R = 8 leg at eight actors per event. This unit now runs the same search itself; the consumer requires both results to agree that no record exists."
+  },
+  {
+   "chars": 127,
+   "consumer": "G-LAW5-FORCING16",
+   "id": "V-K1-FORK",
+   "source": "A-K1R",
+   "why": "The operator seat's exhaustive covering-tuple fork sweep.  This unit now sweeps the fork at the tuple leg itself; the consumer requires both results to agree that the census is blind there."
+  },
+  {
+   "chars": 192,
+   "consumer": "G-STRENGTHENING-K1",
+   "id": "V-K1-LADDER",
+   "source": "A-K1R",
+   "why": "The operator seat's full-pool closure sentence, adopted at adjudication as an ordered strengthening.  The consumer parses the budgets, the three arities and the rung, requires the rung to equal the declared link count, and publishes the closures SEAT-ATTRIBUTED."
+  },
+  {
+   "chars": 58,
+   "consumer": "G-STRENGTHENING-K1",
+   "id": "V-K1-A3",
+   "source": "A-K1R",
+   "why": "K1's full-pool row at three actors per event.  The consumer requires the pool count to equal this unit's own census at that arity."
+  },
+  {
+   "chars": 58,
+   "consumer": "G-STRENGTHENING-K1",
+   "id": "V-K1-A5",
+   "source": "A-K1R",
+   "why": "K1's full-pool row at five actors per event, pool count matched against this unit's own census."
+  },
+  {
+   "chars": 56,
+   "consumer": "G-STRENGTHENING-K1",
+   "id": "V-K1-A7",
+   "source": "A-K1R",
+   "why": "K1's full-pool row at seven actors per event, pool count matched against this unit's own census."
+  },
+  {
+   "chars": 93,
+   "consumer": "G-STRENGTHENING-K1",
+   "id": "V-K1-A6",
+   "source": "A-K1R",
+   "why": "The one ladder row the strengthening leaves OPEN, named for the successor register; the consumer requires the openness to be published beside the three closures, never merged into them."
   }
  ],
  "arena": {
@@ -152,7 +222,7 @@
    ],
    [
     "provenance",
-    "5 sources read at pinned shas; 54 path-value anchors; 13 verbatim-text anchors, each consumed by a named gate"
+    "6 sources read at pinned shas; 75 path-value anchors; 23 verbatim-text anchors, each consumed by a named gate"
    ]
   ],
   "idle_arities": [
@@ -169,11 +239,12 @@
   "sat_sample_cap": 4000
  },
  "cache": {
-  "entries": 53,
+  "entries": 55,
   "families": [
    "astaudit",
    "astfloat",
    "asthash",
+   "astiter",
    "certfloor",
    "clstuples",
    "corpora",
@@ -183,6 +254,7 @@
    "packdist",
    "permwin",
    "principles",
+   "r8mult2",
    "satmatch",
    "satsample",
    "scan_a2",
@@ -195,8 +267,8 @@
    "wtab"
   ],
   "families_never_missed": [],
-  "hits": 48,
-  "misses": 53
+  "hits": 53,
+  "misses": 55
  },
  "conditional": {
   "abstract_proper_sizes": [
@@ -400,6 +472,14 @@
    "target_moved": true
   },
   {
+   "declared_gate": "G-STRENGTHENING-K1",
+   "description": "this unit's own pool census is shifted at a closed row, so the seat-attributed quoted pool stops matching the one cross-check this unit can run",
+   "died_at": "G-STRENGTHENING-K1",
+   "falsifier": "MUT-STRENGTH",
+   "target": "the own-census pool counts at the closed rows",
+   "target_moved": true
+  },
+  {
    "declared_gate": "G-LAW5-FORCING16",
    "description": "the history leg is forced true, so partitions the events do not respect become admissible and every non-unique count moves",
    "died_at": "G-LAW5-FORCING16",
@@ -456,6 +536,14 @@
    "target_moved": true
   },
   {
+   "declared_gate": "G-W3-AUTOLABEL",
+   "description": "the family-token inventory is emptied, so a family-level claim planted in a head segment would be labelled member-specific; the rehearsal hands the labeller a planted family claim and requires a flag",
+   "died_at": "G-W3-AUTOLABEL",
+   "falsifier": "MUT-W3",
+   "target": "the labeller's rehearsal verdicts",
+   "target_moved": true
+  },
+  {
    "declared_gate": "G-PAPER-CLAIMS",
    "description": "a licensed claim's numeral is replaced, so the rendering the paper must carry stops being the receipt's",
    "died_at": "G-PAPER-CLAIMS",
@@ -496,6 +584,54 @@
    "target_moved": true
   },
   {
+   "declared_gate": "G-PAPER-SYNTHESIS",
+   "description": "the panel's surviving synthesis forge, permanent control: the primary linear tally sentence is rewritten to the parent's anchored pair while fence and receipt stand",
+   "died_at": "G-PAPER-SYNTHESIS",
+   "falsifier": "MUT-SYNTH-TALLY",
+   "target": "the qualified tally sentence",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-PAPER-SYNTHESIS",
+   "description": "the panel's surviving stamp inversion, permanent control: 'published as capped, never as empty' becomes 'published as empty'",
+   "died_at": "G-PAPER-SYNTHESIS",
+   "falsifier": "MUT-SYNTH-STAMP",
+   "target": "the honesty stamp sentence",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-PAPER-SYNTHESIS",
+   "description": "the panel's surviving atomic-rational forge, permanent control: a false slash rational whose halves are both receipt numbers is planted in prose",
+   "died_at": "G-PAPER-SYNTHESIS",
+   "falsifier": "MUT-SYNTH-SLASH",
+   "target": "the planted rational sentence",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-WALLS",
+   "description": "the panel's surviving bare-derivation sentence, permanent control: the event-size subject now meets the derivation verb at the selection wall",
+   "died_at": "G-WALLS",
+   "falsifier": "MUT-SYNTH-DERIVE",
+   "target": "the planted derivation sentence",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-WALLS",
+   "description": "the panel's licence-leak injection, permanent control: a reading-merge sentence planted as the first body sentence under the licence-bearing section heading",
+   "died_at": "G-WALLS",
+   "falsifier": "MUT-HEADING-LEAK",
+   "target": "the planted merge sentence under the heading",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-WALLS",
+   "description": "the panel's hyphen-evasion sentence, permanent control: the central forbidden claim spelled with a hyphenated subject",
+   "died_at": "G-WALLS",
+   "falsifier": "MUT-HYPHEN",
+   "target": "the planted hyphenated sentence",
+   "target_moved": true
+  },
+  {
    "declared_gate": "G-WALLS",
    "description": "a banned sentence is inserted in house style",
    "died_at": "G-WALLS",
@@ -528,6 +664,22 @@
    "target_moved": true
   },
   {
+   "declared_gate": "G-ITERATION-ORDER",
+   "description": "the iteration-order scanner goes blind to bare set-iteration -- the panel's PROVEN seed-variant route -- so the rehearsal's planted set comprehension passes unseen",
+   "died_at": "G-ITERATION-ORDER",
+   "falsifier": "MUT-ITER-SET",
+   "target": "the scanner's verdict on the planted set sample",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-ITERATION-ORDER",
+   "description": "the iteration-order scanner goes blind to os.listdir, so filesystem enumeration order could reach a sealed value unseen",
+   "died_at": "G-ITERATION-ORDER",
+   "falsifier": "MUT-ITER-DIR",
+   "target": "the scanner's verdict on the planted listdir sample",
+   "target_moved": true
+  },
+  {
    "declared_gate": "G-CACHE",
    "description": "a memo key drops its mutant flag, so a recipe would be served the clean cached answer",
    "died_at": "G-CACHE",
@@ -557,6 +709,30 @@
    "died_at": "G-PROMOTION-REHEARSAL",
    "falsifier": "MUT-PROMOTION",
    "target": "the two promotion legs on fixed inputs",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-PROMOTION-REHEARSAL",
+   "description": "the forged-ledger-head fixture is handed in clean, so the integrity recomputation that must refuse a zeroed head reports no refusal",
+   "died_at": "G-PROMOTION-REHEARSAL",
+   "falsifier": "MUT-INTEG-HEAD",
+   "target": "the integrity rehearsal legs",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-PROMOTION-REHEARSAL",
+   "description": "the forged-ledger-row fixture is handed in clean, so the row-digest recomputation that must refuse a forged row reports no refusal",
+   "died_at": "G-PROMOTION-REHEARSAL",
+   "falsifier": "MUT-INTEG-ROW",
+   "target": "the integrity rehearsal legs",
+   "target_moved": true
+  },
+  {
+   "declared_gate": "G-PROMOTION-REHEARSAL",
+   "description": "the dropped-narrative-line fixture is handed in clean, so the required-lines check that must refuse a missing self-identification line reports no refusal",
+   "died_at": "G-PROMOTION-REHEARSAL",
+   "falsifier": "MUT-INTEG-LINE",
+   "target": "the integrity rehearsal legs",
    "target_moved": true
   },
   {
@@ -1485,6 +1661,13 @@
    "2": 4,
    "4": 1
   },
+  "parent_committed_arity_offset": 1,
+  "parent_offset_column": [
+   0,
+   1,
+   1,
+   0
+  ],
   "schedule": {
    "a2": {
     "min_events": 14,
@@ -1754,6 +1937,14 @@
    ],
    "witness_status": "FOUND",
    "witness_window": "COMPLETE-POOL"
+  },
+  "r8_multiplicity2": {
+   "a": 8,
+   "budget": 8,
+   "nodes": 6886,
+   "pool": 18,
+   "records_found": 0,
+   "search": "EXHAUSTIVE-MULTIPLICITY-2, REPETITION INCLUDED, OVER THE COMPLETE POOL"
   },
   "reading": "LITERAL-BUDGET: the parent's primary reading; the round mass is the budget by definition",
   "rows": [
@@ -2480,6 +2671,17 @@
       "1": 8,
       "3": 7
      },
+     "joiner_mechanism": {
+      "in_span_joiner_counts": {
+       "3": 7
+      },
+      "in_span_rounds": 7,
+      "off_span_joiner_counts": {
+       "1": 8
+      },
+      "off_span_rounds": 8,
+      "split_is_exact": true
+     },
      "m_blind_across_the_fork": true,
      "non_unique": 15,
      "non_unique_that_are_parallel_classes": 0,
@@ -2488,6 +2690,13 @@
     },
     "F4-LINEAR": {
      "joiner_counts": {},
+     "joiner_mechanism": {
+      "in_span_joiner_counts": {},
+      "in_span_rounds": 0,
+      "off_span_joiner_counts": {},
+      "off_span_rounds": 0,
+      "split_is_exact": true
+     },
      "m_blind_across_the_fork": true,
      "non_unique": 0,
      "non_unique_that_are_parallel_classes": 0,
@@ -2497,6 +2706,7 @@
     "a": 2,
     "covering_tuples": {
      "histories": 24,
+     "m_blind_across_the_fork": true,
      "non_unique": 0
     }
    },
@@ -2516,6 +2726,17 @@
       "24": 7,
       "6": 28
      },
+     "joiner_mechanism": {
+      "in_span_joiner_counts": {
+       "24": 7
+      },
+      "in_span_rounds": 7,
+      "off_span_joiner_counts": {
+       "6": 28
+      },
+      "off_span_rounds": 28,
+      "split_is_exact": true
+     },
      "m_blind_across_the_fork": true,
      "non_unique": 35,
      "non_unique_that_are_parallel_classes": 5,
@@ -2527,6 +2748,17 @@
       "24": 1,
       "6": 4
      },
+     "joiner_mechanism": {
+      "in_span_joiner_counts": {
+       "24": 1
+      },
+      "in_span_rounds": 1,
+      "off_span_joiner_counts": {
+       "6": 4
+      },
+      "off_span_rounds": 4,
+      "split_is_exact": true
+     },
      "m_blind_across_the_fork": true,
      "non_unique": 5,
      "non_unique_that_are_parallel_classes": 5,
@@ -2536,6 +2768,7 @@
     "a": 4,
     "covering_tuples": {
      "histories": 24,
+     "m_blind_across_the_fork": true,
      "non_unique": 0
     }
    },
@@ -2640,6 +2873,12 @@
       "path": "v14/code/ndep_receipt.json",
       "sha256_12": "29216cea946f",
       "why": "NDEP's COMMITTED RECEIPT: every n = 16 substrate count this unit consumes -- the class tuples, the covering tuples, the route-window census, the crystallization and floor rows, the ladder, the subgroup counts and the out-of-scope grouping census constant -- read by PATH and consumed by the fidelity gate that must pass before any new row runs."
+     },
+     {
+      "id": "A-K1R",
+      "path": "v15/review-arity16-operator.md",
+      "sha256_12": "c642507572c7",
+      "why": "THE OPERATOR SEAT'S FROZEN REVIEW (K1, v15 ledger #57), adopted at adjudication (#63, order Z3) as ORDERED STRENGTHENINGS with seat attribution: the full-pool R = 4 cover closures at three capped arities, the exhaustive R = 8 multiplicity-2 refusal at eight actors per event, and the covering-tuple fork sweep.  Every number consumed from this review is seat-attributed and none is republished as this unit's own measurement."
      }
     ]
    },
@@ -2647,8 +2886,8 @@
    "n": 1,
    "passed": true,
    "prev": "0000000000000000",
-   "row_digest": "788c5d1de683f65f",
-   "statement": "every runtime input is a hash-pinned artifact of this unit's frozen declaration; 5 sources are read and each one's sha256 prefix is compared with the declaration before its bytes are used; the mutable programme ledger is not among them"
+   "row_digest": "dbabbb1069b0d5ca",
+   "statement": "every runtime input is a hash-pinned artifact of this unit's frozen declaration; 6 sources are read and each one's sha256 prefix is compared with the declaration before its bytes are used; the mutable programme ledger is not among them"
   },
   {
    "evidence": {
@@ -3030,15 +3269,177 @@
       "path": "law6_sec2/rows/3/forced_inside_bound",
       "source": "A-PARENTREC",
       "value": 4
+     },
+     {
+      "consumer": "G-PRINCIPLE-CENSUS16",
+      "id": "P-PAR-Q",
+      "path": "arena/q",
+      "source": "A-PARENTREC",
+      "value": 3
+     },
+     {
+      "consumer": "G-PRINCIPLE-CENSUS16",
+      "id": "P-PAR-SATMAX",
+      "path": "principles/admits/saturation_is_maximality",
+      "source": "A-PARENTREC",
+      "value": [
+       3
+      ]
+     },
+     {
+      "consumer": "G-PRINCIPLE-CENSUS16",
+      "id": "P-PAR-RC",
+      "path": "principles/admits/round_completeness",
+      "source": "A-PARENTREC",
+      "value": [
+       1,
+       3,
+       9
+      ]
+     },
+     {
+      "consumer": "G-PRINCIPLE-CENSUS16",
+      "id": "P-PAR-SUB",
+      "path": "principles/admits/subgroup_order_available",
+      "source": "A-PARENTREC",
+      "value": [
+       1,
+       3,
+       9
+      ]
+     },
+     {
+      "consumer": "G-LAW2-SHARPENED16",
+      "id": "P-PAR-SH2",
+      "path": "law2_crystallization/rows/0/sharpened_floor",
+      "source": "A-PARENTREC",
+      "value": 6
+     },
+     {
+      "consumer": "G-LAW2-SHARPENED16",
+      "id": "P-PAR-SH3",
+      "path": "law2_crystallization/rows/1/sharpened_floor",
+      "source": "A-PARENTREC",
+      "value": 4
+     },
+     {
+      "consumer": "G-LAW2-SHARPENED16",
+      "id": "P-PAR-SH4",
+      "path": "law2_crystallization/rows/2/sharpened_floor",
+      "source": "A-PARENTREC",
+      "value": 4
+     },
+     {
+      "consumer": "G-LAW2-SHARPENED16",
+      "id": "P-PAR-SH5",
+      "path": "law2_crystallization/rows/3/sharpened_floor",
+      "source": "A-PARENTREC",
+      "value": 4
+     },
+     {
+      "consumer": "G-LAW2-SHARPENED16",
+      "id": "P-PAR-AF2",
+      "path": "law2_crystallization/rows/0/attained_floor",
+      "source": "A-PARENTREC",
+      "value": 6
+     },
+     {
+      "consumer": "G-LAW2-SHARPENED16",
+      "id": "P-PAR-AF3",
+      "path": "law2_crystallization/rows/1/attained_floor",
+      "source": "A-PARENTREC",
+      "value": 4
+     },
+     {
+      "consumer": "G-LAW2-SHARPENED16",
+      "id": "P-PAR-AF4",
+      "path": "law2_crystallization/rows/2/attained_floor",
+      "source": "A-PARENTREC",
+      "value": 4
+     },
+     {
+      "consumer": "G-LAW2-SHARPENED16",
+      "id": "P-PAR-AF5",
+      "path": "law2_crystallization/rows/3/attained_floor",
+      "source": "A-PARENTREC",
+      "value": 4
+     },
+     {
+      "consumer": "G-LAW2-SCHEDULE16",
+      "id": "P-PAR-OFF2",
+      "path": "law2_crystallization/rows/0/offset",
+      "source": "A-PARENTREC",
+      "value": 0
+     },
+     {
+      "consumer": "G-LAW2-SCHEDULE16",
+      "id": "P-PAR-OFF3",
+      "path": "law2_crystallization/rows/1/offset",
+      "source": "A-PARENTREC",
+      "value": 1
+     },
+     {
+      "consumer": "G-LAW2-SCHEDULE16",
+      "id": "P-PAR-OFF4",
+      "path": "law2_crystallization/rows/2/offset",
+      "source": "A-PARENTREC",
+      "value": 1
+     },
+     {
+      "consumer": "G-LAW2-SCHEDULE16",
+      "id": "P-PAR-OFF5",
+      "path": "law2_crystallization/rows/3/offset",
+      "source": "A-PARENTREC",
+      "value": 0
+     },
+     {
+      "consumer": "G-LAW6-SEC2-16",
+      "id": "P-PAR-TRI",
+      "path": "law6_sec2/arrangement_closed_form/link_graph",
+      "source": "A-PARENTREC",
+      "value": "the complete tripartite graph on the lines of the undeclared parallel class"
+     },
+     {
+      "consumer": "G-SUBSTRATE-CENSUS",
+      "id": "P-PAR-A2MASS",
+      "path": "law4_ladder/rows/1/mass_per_round",
+      "source": "A-PARENTREC",
+      "value": 4
+     },
+     {
+      "consumer": "G-SUBSTRATE-CENSUS",
+      "id": "P-PAR-N9",
+      "path": "arena/n",
+      "source": "A-PARENTREC",
+      "value": 9
+     },
+     {
+      "consumer": "G-MODULUS-THEOREM",
+      "id": "P-PAR-A2SAT",
+      "path": "law4_ladder/rows/0/saturating",
+      "source": "A-PARENTREC",
+      "value": 0
+     },
+     {
+      "consumer": "G-MODULUS-THEOREM",
+      "id": "P-PAR-ARITIES",
+      "path": "arena/arities",
+      "source": "A-PARENTREC",
+      "value": [
+       2,
+       3,
+       4,
+       5
+      ]
      }
     ]
    },
    "gate": "G-PATH-ANCHORS",
    "n": 2,
    "passed": true,
-   "prev": "f8c610696c1b2182",
-   "row_digest": "6ef08c3010d4b961",
-   "statement": "54 path-value anchors bind the (path, value) pair into TWO committed receipts -- the parent's and NDEP's -- so a path drift that silently substituted another sealed number dies here even though no number would move"
+   "prev": "598a56065e8c3d2c",
+   "row_digest": "ac3f5271b5342c9a",
+   "statement": "75 path-value anchors bind the (path, value) pair into TWO committed receipts -- the parent's and NDEP's -- so a path drift that silently substituted another sealed number dies here even though no number would move"
   },
   {
    "evidence": {
@@ -3120,15 +3521,75 @@
       "consumer": "G-LAW2-SHARPENED16",
       "id": "V-N16WINDOW",
       "source": "A-NDEP"
+     },
+     {
+      "chars": 106,
+      "consumer": "G-PRINCIPLE-CENSUS16",
+      "id": "V-SATMAX-PARENT",
+      "source": "A-PARENT"
+     },
+     {
+      "chars": 85,
+      "consumer": "G-PRINCIPLE-CENSUS16",
+      "id": "V-THREEOFFIVE",
+      "source": "A-PARENT"
+     },
+     {
+      "chars": 101,
+      "consumer": "G-PRINCIPLE-CENSUS16",
+      "id": "V-NOTPREREG",
+      "source": "A-PARENT"
+     },
+     {
+      "chars": 97,
+      "consumer": "G-LAW4-LADDER16",
+      "id": "V-K1-R8",
+      "source": "A-K1R"
+     },
+     {
+      "chars": 127,
+      "consumer": "G-LAW5-FORCING16",
+      "id": "V-K1-FORK",
+      "source": "A-K1R"
+     },
+     {
+      "chars": 192,
+      "consumer": "G-STRENGTHENING-K1",
+      "id": "V-K1-LADDER",
+      "source": "A-K1R"
+     },
+     {
+      "chars": 58,
+      "consumer": "G-STRENGTHENING-K1",
+      "id": "V-K1-A3",
+      "source": "A-K1R"
+     },
+     {
+      "chars": 58,
+      "consumer": "G-STRENGTHENING-K1",
+      "id": "V-K1-A5",
+      "source": "A-K1R"
+     },
+     {
+      "chars": 56,
+      "consumer": "G-STRENGTHENING-K1",
+      "id": "V-K1-A7",
+      "source": "A-K1R"
+     },
+     {
+      "chars": 93,
+      "consumer": "G-STRENGTHENING-K1",
+      "id": "V-K1-A6",
+      "source": "A-K1R"
      }
     ]
    },
    "gate": "G-VERBATIM",
    "n": 3,
    "passed": true,
-   "prev": "9ee66df15471d70b",
-   "row_digest": "81923eddf745fdc4",
-   "statement": "13 verbatim-text anchors bind QUOTE FIDELITY: each needle occurs exactly once in the pinned source and at least once in this paper's own rendering under the normalisation the era's text gates use, and each is readable only through an accessor that records the read"
+   "prev": "8fd18c978b181419",
+   "row_digest": "17af14ae5293f746",
+   "statement": "23 verbatim-text anchors bind QUOTE FIDELITY: each needle occurs exactly once in the pinned source and at least once in this paper's own rendering under the normalisation the era's text gates use, and each is readable only through an accessor that records the read"
   },
   {
    "evidence": {
@@ -3169,8 +3630,8 @@
    "gate": "G-ARENA16",
    "n": 4,
    "passed": true,
-   "prev": "1a788eca94a9f2da",
-   "row_digest": "516f2f1102fb7e8a",
+   "prev": "dda36fda850cc723",
+   "row_digest": "dc94c2a738dc1f4f",
    "statement": "the arena is AG(2, 4) and it does not move: 16 actors, 64 cells, 5 parallel classes -- and the characteristic is 2, computed from the field's own addition and DIFFERENT from the field order for the first time in the corpus, which is the separation NDEP's own sentence names. The declared links span a subgroup of order 8, re-measuring the failed hypothesis NDEP's quotation records, with both of the quotation's orders parsed and matched"
   },
   {
@@ -3249,8 +3710,8 @@
    "gate": "G-READINGS",
    "n": 5,
    "passed": true,
-   "prev": "a1eaa2b152181f65",
-   "row_digest": "5f035ca1bf3a8ae9",
+   "prev": "8fb39ce90058dd6d",
+   "row_digest": "a20f7adc60599c72",
    "statement": "the word subgroup is PRE-REGISTERED in two readings before any measurement row runs, exactly as the sharpened registration orders and the parent's own successor register requires: the ABSTRACT lattice of C2^4 has 67 subgroups whose 5 distinct orders are measured to equal the divisors of the actor count -- the registration's coincidence, its five orders parsed from the frozen pin and matched -- while the F4-LINEAR lattice has 7 subspaces with 3 distinct orders, the quotation's three sizes parsed and matched. The linear reading is the pre-registered PRIMARY; the abstract reading is reported beside it and the two are never merged"
   },
   {
@@ -3339,8 +3800,8 @@
    "gate": "G-CONSTRUCTOR-FIDELITY",
    "n": 6,
    "passed": true,
-   "prev": "480434cf6cf2dec3",
-   "row_digest": "b2d1fb0e2308a5de",
+   "prev": "873309f782c9a212",
+   "row_digest": "38d2fc9a56fc32a1",
    "statement": "this unit's constructor is run at the COMMITTED WINDOW AT n = 16 first -- NDEP's own covering class tuples, its permutation window, its crystallization and floor rows -- and its substrate is compared row by row against the committed counts read at declared JSON paths: 10 of 10 agree, the row set a SEALED pre-registration carrying its own digest. This gate is a FIDELITY LEG and not a finding, and no measurement at any other row is taken before it passes"
   },
   {
@@ -3350,8 +3811,8 @@
    "gate": "G-FIDELITY-FIRST",
    "n": 7,
    "passed": true,
-   "prev": "0751b5dd2bc03566",
-   "row_digest": "47e1039cc5bb0d5e",
+   "prev": "30983ef71601ae3e",
+   "row_digest": "eb1b5981ed337162",
    "statement": "the fidelity gate fired at ledger row 6, before any substrate, corpus or law measurement row; the ordering predicate is evaluated on the ledger's own indices rather than asserted"
   },
   {
@@ -3368,8 +3829,8 @@
    "gate": "G-PACKING-EXTENDS16",
    "n": 8,
    "passed": true,
-   "prev": "ec648277e2aa24af",
-   "row_digest": "9dbf127a01c997e7",
+   "prev": "073d8c627e69cfb7",
+   "row_digest": "814b63600250ba33",
    "statement": "the packing rule is the PARENT'S OWN, its quotation parsed to confirm it was written at nine sites and transported here unchanged: where the event size divides the actor count the maximal-packing route and the partition route return the same objects. DISCLOSED DEVIATION, driven by scale: the parent compared its routes over whole pools of hundreds, while this arena's pools are millions, so the object-level comparison runs on a declared prefix window of 2000 objects in the recursion's own order and the whole-pool identity is carried at the COUNT level, the census total 2627625 against the multinomial closed form 2627625"
   },
   {
@@ -3405,6 +3866,8 @@
      }
     ],
     "ndep_out_of_scope_constant_parsed": 2627625,
+    "parent_a2_maximal_mass_anchored": 4,
+    "parent_budget_anchored": 9,
     "rows": [
      {
       "a": 2,
@@ -3463,8 +3926,8 @@
    "gate": "G-SUBSTRATE-CENSUS",
    "n": 9,
    "passed": true,
-   "prev": "5859d986598d0075",
-   "row_digest": "3360156eba1e4246",
+   "prev": "b054c96fc74c5383",
+   "row_digest": "ad752ade427f0cee",
    "statement": "the substrate is censused at every declared arity by an exact dynamic programme over the actor-subset lattice, every total agreeing with its multinomial closed form -- including the 2627625 groupings NDEP declared out of scope, whose constant is parsed from its own receipt and matched, and whose maximum round incidence 48 equals NDEP's anchored witness. Every grouping weight is even, the characteristic's own fingerprint; and the budget-saturating count at the smallest arity is 256 against the parent arena's anchored 0, so the class the parent measured EMPTY at two actors is non-empty at this arena"
   },
   {
@@ -3523,8 +3986,8 @@
    "gate": "G-CORPUS-RULE",
    "n": 10,
    "passed": true,
-   "prev": "0159630202075bd1",
-   "row_digest": "005c69414aca4f44",
+   "prev": "f0275e7db3018a70",
+   "row_digest": "a2b599dba98a8f36",
    "statement": "one corpus rule is applied at every arity: the single-round window is the COSET WINDOW each reading admits -- complete within its declared class -- and the multi-round window is the covering R = L tuples over the budget-saturating coset rounds, NDEP's own covering-class rule; at the committed arity it returns exactly NDEP's 24 covering tuples and at the smallest arity 24 more. At 2 arities the committed grammar REFUSES under both readings -- the event size divides neither the actor count nor any measured coset order -- and the refusal is published as the measurement, never patched"
   },
   {
@@ -3560,8 +4023,8 @@
    "gate": "G-LAW1-NAMING16",
    "n": 11,
    "passed": true,
-   "prev": "e691afb725da737d",
-   "row_digest": "f2010b87fde3e847",
+   "prev": "c32cb31bb18e0028",
+   "row_digest": "c6281eace373dc0c",
    "statement": "two routes are compared AS SETS OF PERMUTATIONS on the declared window at every prefix of every window history at both coset arities: route A applies the definition through event masks and route B reads the participation-signature table and nothing else. 1872400 comparisons, 0 mismatches, 242200 inside the stabilizer and 1630200 outside it, so both directions are live; the linear windows contribute 31000 comparisons of their own and the two readings disagree nowhere on this leg"
   },
   {
@@ -3783,8 +4246,8 @@
    "gate": "G-LAW2-FLOOR-CERTIFICATE16",
    "n": 12,
    "passed": true,
-   "prev": "0ddffe2edd8d0326",
-   "row_digest": "0c74c1c68978842f",
+   "prev": "8894b6cbf914efc0",
+   "row_digest": "a5917122921710f3",
    "statement": "the information floor is decided at every arity by certificate over the COMPLETE event universe: the least k admitting 16 distinct k-bit signatures whose every column sums to the event size, with an exhibited witness at the value returned and 25 named refusals below the four values"
   },
   {
@@ -3812,13 +4275,20 @@
     "offsets": {
      "2": 4,
      "4": 1
-    }
+    },
+    "parent_committed_arity_offset_anchored": 1,
+    "parent_offset_column_anchored": [
+     0,
+     1,
+     1,
+     0
+    ]
    },
    "gate": "G-LAW2-SCHEDULE16",
    "n": 13,
    "passed": true,
-   "prev": "daea01324839a8ba",
-   "row_digest": "da4bff254f655977",
+   "prev": "1ff208e6b08e57cc",
+   "row_digest": "b216a6b9cc06f764",
    "statement": "the schedule time is measured on two grounds and each names its own completeness: at the smallest arity the budget-saturating pool is COMPLETE at 256 matchings, no round-one history is discrete, and every ordered pair of pool rounds -- 65536, repetition included -- is swept, so the minimum 14 is the minimum over EVERY history the pool admits with no cap; at the committed arity the value 7 is a WINDOW value on NDEP's own 24 covering tuples, with the certified floor beneath it and the full pool's sweep out of declared scope"
   },
   {
@@ -3838,6 +4308,7 @@
      "4": 6,
      "5": 8
     },
+    "parent_sharpened_equals_attained_at_every_parent_arity": true,
     "quotation_parsed": [
      4,
      6,
@@ -3859,8 +4330,8 @@
    "gate": "G-LAW2-SHARPENED16",
    "n": 14,
    "passed": true,
-   "prev": "1a068586c9b191fa",
-   "row_digest": "957d4652f09296e3",
+   "prev": "25e7d7ad133ac34c",
+   "row_digest": "67d41bfdd5138550",
    "statement": "NDEP's sharpened floor, read with the EVENT SIZE in the place its quotation names, reproduces the certified floor at 4 of 4 arities AT THE SECOND ARENA -- the parent's own vindication transported -- while its closed form in that variable agrees at 1 arity only, its own diagonal a = q, exactly as at the parent arena. The quotation's counting bound, floor and tuple count are parsed and matched against this unit's re-derivations"
   },
   {
@@ -4002,8 +4473,8 @@
    "gate": "G-LAW3-MENU16",
    "n": 15,
    "passed": true,
-   "prev": "4b20bcd93eb4efa9",
-   "row_digest": "58a8a0bf4ca7dc01",
+   "prev": "1763b3acc838a814",
+   "row_digest": "114d41dd712d9f15",
    "statement": "the geometry leg's survivor set is enumerated COMPLETELY by closure from the discrete partition -- Bell(n) at sixteen is out of every window, the survivor lattice is not -- and it has 307 members, every one re-verified against the parent's leg-1 predicate. The parent's closed form fails at this arena under BOTH readings: the 67 abstract coset partitions and the 7 linear ones are all survivors, and neither reading's set is the survivor set; 156 survivors have mixed block sizes, an object no coset partition can be. NDEP's own precedent -- the row carried unscored at the failed hypothesis -- is quoted, and what NDEP could not reach is here MEASURED"
   },
   {
@@ -4049,6 +4520,14 @@
      "witness_nodes": 500,
      "witness_status": "FOUND",
      "witness_window": "COMPLETE-POOL"
+    },
+    "r8_multiplicity2": {
+     "a": 8,
+     "budget": 8,
+     "nodes": 6886,
+     "pool": 18,
+     "records_found": 0,
+     "search": "EXHAUSTIVE-MULTIPLICITY-2, REPETITION INCLUDED, OVER THE COMPLETE POOL"
     },
     "rows": [
      {
@@ -4145,9 +4624,9 @@
    "gate": "G-LAW4-LADDER16",
    "n": 16,
    "passed": true,
-   "prev": "f8a0be552fc4783e",
-   "row_digest": "fba1f4f2b94b2c1a",
-   "statement": "the budget-reading ladder is measured directly at every declared arity and at the census legs beside them: the impossibility half is the measured mass's own arithmetic -- a saturating round has mass 16 over 64 cells, so a homogeneous record needs the budget divisible by 4 -- and the achievability half is witness exhibition, found at 3 rows including two where the event size and the link count are DIFFERENT numbers, refused by complete search at eight actors per event, and published as capped at 2 rows the declared windows could not decide. Every found set matches NDEP's anchored rungs"
+   "prev": "644fcfd2b8c931b5",
+   "row_digest": "0fa0217ea5b380d4",
+   "statement": "the budget-reading ladder is measured directly at every declared arity and at the census legs beside them: the impossibility half is the measured mass's own arithmetic -- a saturating round has mass 16 over 64 cells, so a homogeneous record needs the budget divisible by 4 -- and the achievability half is witness exhibition, found at 3 rows including two where the event size and the link count are DIFFERENT numbers, refused by complete search at eight actors per event -- the exact covers at the first rung AND, at the doubled budget 8, the exhaustive double-cover search, repetition included, finding 0 records over the complete pool and agreeing with the operator seat's independent exhaustive search -- and published as capped at 2 rows the declared windows could not decide. Every found set matches NDEP's anchored rungs"
   },
   {
    "evidence": {
@@ -4180,14 +4659,73 @@
     ],
     "pairs_checked": 320,
     "pairs_holding": 320,
+    "parent_a2_literal_saturating_anchored": 0,
+    "parent_arity_window_anchored": [
+     2,
+     3,
+     4,
+     5
+    ],
     "quotation_pair_count": 320
    },
    "gate": "G-MODULUS-THEOREM",
    "n": 17,
    "passed": true,
-   "prev": "cebb60b2d5a4f695",
-   "row_digest": "9e69070acbd629f9",
+   "prev": "d4f02d0d702f19ee",
+   "row_digest": "c74ba724b2bb939b",
    "statement": "the parent's modulus theorem is TESTED at the second arena rather than re-derived: the identity is re-verified at the parent's own 320 declared arena pairs -- the quotation's count parsed and matched -- its instance here reads 4, every found rung is the declared link count, and mod-a appears at 1 of the 2 found rows where the event size and the link count are different numbers: the first rung is the event size ONLY where the event size IS the link count, which is the mod-a-iff-a-equals-L half instanced at rows the parent arena could not supply"
+  },
+  {
+   "evidence": {
+    "budgets_parsed": [
+     4,
+     8
+    ],
+    "open_row": {
+     "a": 6,
+     "full_pool": 180264,
+     "full_pool_r4_cover": "OPEN-WITH-THE-SUCCESSOR",
+     "seat": "K1/OPERATOR (still computing at freeze)"
+    },
+    "own_pool_census": {
+     "3": 436992,
+     "5": 374784,
+     "6": 180264,
+     "7": 15552
+    },
+    "rows": [
+     {
+      "a": 3,
+      "distinct_cell_masks": 83664,
+      "first_rung": 4,
+      "full_pool": 436992,
+      "full_pool_r4_cover": "EXISTS",
+      "seat": "K1/OPERATOR"
+     },
+     {
+      "a": 5,
+      "distinct_cell_masks": 96336,
+      "first_rung": 4,
+      "full_pool": 374784,
+      "full_pool_r4_cover": "EXISTS",
+      "seat": "K1/OPERATOR"
+     },
+     {
+      "a": 7,
+      "distinct_cell_masks": 8928,
+      "first_rung": 4,
+      "full_pool": 15552,
+      "full_pool_r4_cover": "EXISTS",
+      "seat": "K1/OPERATOR"
+     }
+    ]
+   },
+   "gate": "G-STRENGTHENING-K1",
+   "n": 18,
+   "passed": true,
+   "prev": "70b591b78618325c",
+   "row_digest": "7b04986f473cefc0",
+   "statement": "the operator seat's FULL-POOL closures are folded as an ORDERED STRENGTHENING with seat attribution: 3 of the register's four undecided ladder rows close as achievable by K1's exhaustive full-pool cover search, the first rung at every closed row is 4 = L at rows where a and L differ -- three fresh confirmations of the mod-a-iff-a=L half at rows this unit's windows could not decide -- and the row at 6 remains OPEN with the successor.  Each quoted pool count is matched against this unit's own census at that arity; the distinct-mask counts and the covers themselves are the seat's, never republished as this unit's"
   },
   {
    "evidence": {
@@ -4199,6 +4737,17 @@
         "1": 8,
         "3": 7
        },
+       "joiner_mechanism": {
+        "in_span_joiner_counts": {
+         "3": 7
+        },
+        "in_span_rounds": 7,
+        "off_span_joiner_counts": {
+         "1": 8
+        },
+        "off_span_rounds": 8,
+        "split_is_exact": true
+       },
        "m_blind_across_the_fork": true,
        "non_unique": 15,
        "non_unique_that_are_parallel_classes": 0,
@@ -4207,6 +4756,13 @@
       },
       "F4-LINEAR": {
        "joiner_counts": {},
+       "joiner_mechanism": {
+        "in_span_joiner_counts": {},
+        "in_span_rounds": 0,
+        "off_span_joiner_counts": {},
+        "off_span_rounds": 0,
+        "split_is_exact": true
+       },
        "m_blind_across_the_fork": true,
        "non_unique": 0,
        "non_unique_that_are_parallel_classes": 0,
@@ -4216,6 +4772,7 @@
       "a": 2,
       "covering_tuples": {
        "histories": 24,
+       "m_blind_across_the_fork": true,
        "non_unique": 0
       }
      },
@@ -4235,6 +4792,17 @@
         "24": 7,
         "6": 28
        },
+       "joiner_mechanism": {
+        "in_span_joiner_counts": {
+         "24": 7
+        },
+        "in_span_rounds": 7,
+        "off_span_joiner_counts": {
+         "6": 28
+        },
+        "off_span_rounds": 28,
+        "split_is_exact": true
+       },
        "m_blind_across_the_fork": true,
        "non_unique": 35,
        "non_unique_that_are_parallel_classes": 5,
@@ -4246,6 +4814,17 @@
         "24": 1,
         "6": 4
        },
+       "joiner_mechanism": {
+        "in_span_joiner_counts": {
+         "24": 1
+        },
+        "in_span_rounds": 1,
+        "off_span_joiner_counts": {
+         "6": 4
+        },
+        "off_span_rounds": 4,
+        "split_is_exact": true
+       },
        "m_blind_across_the_fork": true,
        "non_unique": 5,
        "non_unique_that_are_parallel_classes": 5,
@@ -4255,6 +4834,7 @@
       "a": 4,
       "covering_tuples": {
        "histories": 24,
+       "m_blind_across_the_fork": true,
        "non_unique": 0
       }
      },
@@ -4271,14 +4851,15 @@
     }
    },
    "gate": "G-LAW5-FORCING16",
-   "n": 18,
+   "n": 19,
    "passed": true,
-   "prev": "a3331d2da47a6035",
-   "row_digest": "c22538909d890e6b",
-   "statement": "the division-forcing thesis is tested per object over the complete survivor set at every window history, and IT SPLITS ON THE READING: under the linear window every one of the 5 rounds is non-unique and every one is a parallel class, so the parent's thesis holds verbatim; under the abstract window all 35 rounds are non-unique while only 5 are parallel classes, so the thesis is false as stated -- the non-linear coset rounds are the new joiners, objects a prime arena cannot have. The census is blind across the declared modulus fork, every covering tuple is unique, and the idle arities refuse"
+   "prev": "468d888be91654e4",
+   "row_digest": "c73449d633317a0a",
+   "statement": "the division-forcing thesis is tested per object over the complete survivor set at every window history, and IT SPLITS ON THE READING: under the linear window every one of the 5 rounds is non-unique and every one is a parallel class, so the parent's thesis holds verbatim; under the abstract window all 35 rounds are non-unique while only 5 are parallel classes, so the thesis is false as stated -- the non-linear coset rounds are the new joiners, objects a prime arena cannot have, and the joiner mechanism is receipted: span membership paired with the joiner count, the split exact at both coset arities. The census is blind across the declared modulus fork at the singles AND at the covering tuples -- the tuple leg swept at every declared modulus, agreeing with the operator seat's independent exhaustive sweep -- every covering tuple is unique, and the idle arities refuse"
   },
   {
    "evidence": {
+    "parent_link_graph_anchored": "the complete tripartite graph on the lines of the undeclared parallel class",
     "quotation_values": [
      0,
      1,
@@ -4343,10 +4924,10 @@
     }
    },
    "gate": "G-LAW6-SEC2-16",
-   "n": 19,
+   "n": 20,
    "passed": true,
-   "prev": "d5fb055dfbf8db03",
-   "row_digest": "79f0d1a6212bf9bb",
+   "prev": "254b7c6dc95e9ed2",
+   "row_digest": "39e57ce8bdbffb05",
    "statement": "the union of two sectors of THIS arena is built from the arrangement alone -- 28 carriers, 64 realised pairs, the seam a line of the undeclared class carrying no declared link, nothing doubled -- and the parent's obstruction form is VERIFIED at the realised census, not re-derived: the quotation's four values are parsed and each equals both the closed form and the MEASURED minimum of within-sector pairs over the seam-spanning groups of that arity. At two actors every one of the 144 seam-spanning events opens nothing and doubles nothing, the parent's vanishing reproduced; and the parent arena's tripartite characterisation of the link graph FAILS here -- 32 link edges against 96 off-span pairs -- a coincidence of the prime field, measured as one"
   },
   {
@@ -4390,12 +4971,44 @@
       16
      ]
     },
+    "corpus_negative": "inherited from the parent's sealed sentence, quoted in section 11, not asserted from the declared read set",
     "cover_capped_at": [
      3,
      5,
      6,
      7
     ],
+    "parent_admits_anchored": {
+     "round_completeness": [
+      1,
+      3,
+      9
+     ],
+     "saturation_is_maximality": [
+      3
+     ],
+     "subgroup_order_available": [
+      1,
+      3,
+      9
+     ]
+    },
+    "parent_q_anchored": 3,
+    "parent_tally_parsed": [
+     3,
+     5
+    ],
+    "parent_unique_nontrivial_selections": {
+     "round_completeness": [
+      3
+     ],
+     "saturation_is_maximality": [
+      3
+     ],
+     "subgroup_order_available": [
+      3
+     ]
+    },
     "rows": [
      {
       "a": 1,
@@ -4568,10 +5181,10 @@
     }
    },
    "gate": "G-PRINCIPLE-CENSUS16",
-   "n": 20,
+   "n": 21,
    "passed": true,
-   "prev": "e6df4bf76d5aed13",
-   "row_digest": "c8bd98ab2253e8fc",
+   "prev": "de4ca7498c8581c2",
+   "row_digest": "ad580ef2ab4fe1a2",
    "statement": "the parent's five-principle census is re-run at all 16 candidate event sizes with the subgroup row split into BOTH pre-registered readings: divisibility and abstract-subgroup availability admit the same sizes -- the registration's coincidence, measured -- and neither selects; the LINEAR row admits 4 alone among nontrivial sizes and tracks the field; and saturation-is-maximality, the principle that selected the field order at the parent arena, here admits 2 alone -- THE CHARACTERISTIC, not the field order -- so the parent's three selecting principles no longer agree on what they select"
   },
   {
@@ -4590,10 +5203,10 @@
     "verdict": "A16-CONDITIONAL-READING-DEPENDENT"
    },
    "gate": "G-CONDITIONAL",
-   "n": 21,
+   "n": 22,
    "passed": true,
-   "prev": "dc373e45eb6c83c7",
-   "row_digest": "d990dbf41ee40c9b",
+   "prev": "99065f2963e811e0",
+   "row_digest": "e5b40352391ae369",
    "statement": "the parent's conditional is evaluated at this arena under BOTH readings of its coset clause, the quotation's antecedent parsed for its two clauses: under the F4-LINEAR reading the proper nontrivial coset sizes number 1 and the antecedent selects 4 = q, so the conditional TRACKS THE FIELD; under the ABSTRACT reading they number 3 and the antecedent selects a SET, not a size. The two readings disagree, the disagreement is the verdict, and nothing here merges them"
   },
   {
@@ -4632,10 +5245,10 @@
     ]
    },
    "gate": "G-TRANSPORT-CONTROLS",
-   "n": 22,
+   "n": 23,
    "passed": true,
-   "prev": "e10083360cd257ed",
-   "row_digest": "197e7e38d4911315",
+   "prev": "0a73888acd16e066",
+   "row_digest": "867a3d289b18c098",
    "statement": "6 synthetic laws are pushed through the REAL decision procedure -- one built to force each word, one whose rows are all infeasible so the procedure must refuse rather than default, and two at the statement slot -- and 6 of them come out as forced; the procedure is a pure function of its rows, so the words the real laws receive are emitted by this same code and nothing else"
   },
   {
@@ -4766,27 +5379,194 @@
     ]
    },
    "gate": "G-AGGREGATE16",
-   "n": 23,
+   "n": 24,
    "passed": true,
-   "prev": "295879ff09f59255",
-   "row_digest": "882f09a719a4e8cc",
+   "prev": "a68e560613aa2e79",
+   "row_digest": "f881c7048ae990be",
    "statement": "the aggregate is TWO-LEVELLED in the slot name parsed from the parent's own engraving, and at this arena it is READING-RELATIVE besides: 6 statements and 7 numerals are scored under EACH pre-registered reading, 1 statement words and 1 numeral rows move with the reading, and the primary linear statement tally reads 3 transporting against 3 breaking where the abstract tally reads 2 against 4 and the parent's own anchored tally read 4. At the numeral level NO row returns NEEDS-3 under either reading -- every one of the parent's 2 standing-still numerals moves once n moves -- and 2 of 7 rows change their word between the arenas"
   },
   {
    "evidence": {
-    "fields_declared": 103,
+    "fields_declared": 105,
     "findings": [],
-    "numerals_in_the_head": 157,
-    "positionally_bound": 157,
+    "numerals_in_the_head": 162,
+    "positionally_bound": 162,
     "required_fields": 12,
-    "resolvers": 93
+    "resolvers": 95
    },
    "gate": "G-VERDICT-EQUALITY",
-   "n": 24,
+   "n": 25,
    "passed": true,
-   "prev": "08fa47b27bd9ebef",
-   "row_digest": "ee870ea452115060",
-   "statement": "the head's 10 segments carry 157 numerals in 103 declared positional fields, and a comparator that shares no code and no typed literal with the builder matches every numeral against the field standing at THAT position, re-derives each field's value from the receipt's own row lists, and re-decides the word tallies under both readings without calling the decision procedure; the disagreements number 0"
+   "prev": "f7c21255b54c4b9a",
+   "row_digest": "a11da959dc66ea9c",
+   "statement": "the head's 10 segments carry 162 numerals in 105 declared positional fields, and a comparator that shares no code and no typed literal with the builder matches every numeral against the field standing at THAT position, re-derives each field's value from the receipt's own row lists, and re-decides the word tallies under both readings without calling the decision procedure; the disagreements number 0"
+  },
+  {
+   "evidence": {
+    "family_token_patterns": [
+     "\\bAT EVERY ARENA\\b",
+     "\\bIN ANY ARENA\\b",
+     "\\bFOR ALL ARENAS\\b",
+     "\\bEVERY ISP MODEL\\b",
+     "\\bANY ISP MODEL\\b",
+     "\\bACROSS THE ISP FAMILY\\b",
+     "\\bWHATEVER ARENA\\b",
+     "\\bARENA-INDEPENDENT\\w*"
+    ],
+    "member_token_inventory": [
+     {
+      "token": "n=16",
+      "why": "the scope segment's own binding"
+     },
+     {
+      "token": "16",
+      "why": "the actor count, rendered from the arena"
+     },
+     {
+      "token": "SIXTEEN",
+      "why": "the actor count, spelled"
+     },
+     {
+      "token": "THIS ARENA",
+      "why": "the deictic member reference"
+     },
+     {
+      "token": "THE SECOND ARENA",
+      "why": "this unit's own name for its member"
+     },
+     {
+      "token": "ONE ARENA",
+      "why": "the scope segment's opening"
+     },
+     {
+      "token": "NDEP",
+      "why": "the owner of the committed n = 16 window"
+     },
+     {
+      "token": "THE PARENT ARENA",
+      "why": "the OTHER member named explicitly -- a two-arena comparison is member-specific twice over"
+     },
+     {
+      "token": "AT BOTH ARENAS",
+      "why": "the two members named jointly"
+     },
+     {
+      "token": "BETWEEN THE ARENAS",
+      "why": "the two members named jointly"
+     },
+     {
+      "token": "A PRIME ARENA",
+      "why": "the negative discriminator: a claim about objects a prime arena cannot have is a claim about THIS non-prime member"
+     }
+    ],
+    "ok": true,
+    "pin_promise": "note-arity16-pin.md WALLS: 'W3 instrumented (family-level vs member-specific auto-labelled -- n now takes two values, so EVERY headline says which n it holds at)' -- built as a gate at the adjudicated repair (v15 ledger #63, order Z5)",
+    "rehearsal": {
+     "planted_family_claim_flagged": true,
+     "tokenless_plant_labelled_unscoped": true
+    },
+    "segments": [
+     {
+      "family_tokens": [],
+      "label": "MEMBER-SPECIFIC",
+      "member_tokens": [
+       "16",
+       "THE PARENT ARENA"
+      ],
+      "segment": 0
+     },
+     {
+      "family_tokens": [],
+      "label": "MEMBER-SPECIFIC",
+      "member_tokens": [
+       "THE PARENT ARENA",
+       "THE SECOND ARENA"
+      ],
+      "segment": 1
+     },
+     {
+      "family_tokens": [],
+      "label": "MEMBER-SPECIFIC",
+      "member_tokens": [
+       "AT BOTH ARENAS",
+       "BETWEEN THE ARENAS",
+       "THIS ARENA"
+      ],
+      "segment": 2
+     },
+     {
+      "family_tokens": [],
+      "label": "MEMBER-SPECIFIC",
+      "member_tokens": [
+       "16",
+       "NDEP",
+       "THE PARENT ARENA"
+      ],
+      "segment": 3
+     },
+     {
+      "family_tokens": [],
+      "label": "MEMBER-SPECIFIC",
+      "member_tokens": [
+       "NDEP"
+      ],
+      "segment": 4
+     },
+     {
+      "family_tokens": [],
+      "label": "MEMBER-SPECIFIC",
+      "member_tokens": [
+       "NDEP",
+       "THE SECOND ARENA"
+      ],
+      "segment": 5
+     },
+     {
+      "family_tokens": [],
+      "label": "MEMBER-SPECIFIC",
+      "member_tokens": [
+       "16",
+       "NDEP"
+      ],
+      "segment": 6
+     },
+     {
+      "family_tokens": [],
+      "label": "MEMBER-SPECIFIC",
+      "member_tokens": [
+       "A PRIME ARENA"
+      ],
+      "segment": 7
+     },
+     {
+      "family_tokens": [],
+      "label": "MEMBER-SPECIFIC",
+      "member_tokens": [
+       "THE SECOND ARENA",
+       "THIS ARENA"
+      ],
+      "segment": 8
+     },
+     {
+      "family_tokens": [],
+      "label": "MEMBER-SPECIFIC",
+      "member_tokens": [
+       "16",
+       "NDEP",
+       "ONE ARENA",
+       "THIS ARENA",
+       "n=16"
+      ],
+      "segment": 9
+     }
+    ]
+   },
+   "gate": "G-W3-AUTOLABEL",
+   "n": 26,
+   "passed": true,
+   "prev": "d5577a4d89b4e17b",
+   "row_digest": "5e2ba83f69c2ab73",
+   "statement": "the pin-promised W3 instrument is BUILT AS A GATE: each of the 10 head segments is auto-labelled from a declared inventory of 11 member tokens, 10 are member-specific and none is unscoped, family-level tokens are refused in the head outright, and the labeller is rehearsed on a planted family claim and a planted tokenless segment"
   },
   {
    "evidence": {
@@ -4795,28 +5575,28 @@
     "fences_claimed": 10,
     "fences_in_paper": 10,
     "object_under_test": {
-     "characters": 44718,
+     "characters": 53069,
      "path": "v15/paper-50-arity16.md",
-     "sha256_12": "c86ea5edcfec"
+     "sha256_12": "3e01a1ce1b39"
     },
     "prose_bad": [],
-    "prose_claims": 16,
-    "tables_claimed": 15,
-    "tables_in_paper": 15,
+    "prose_claims": 21,
+    "tables_claimed": 17,
+    "tables_in_paper": 17,
     "tables_missing": [],
     "tables_unclaimed": []
    },
    "gate": "G-PAPER-CLAIMS",
-   "n": 25,
+   "n": 27,
    "passed": true,
-   "prev": "c980c010e073f70f",
-   "row_digest": "28cf20ff529caa27",
-   "statement": "15 tables are rendered from the receipt and matched against the 15 the paper carries, keyed by table and in BOTH directions; the verdict fences are compared by multiset equality; and 16 prose claims are required at exact occurrence counts"
+   "prev": "2136b0e50430edf6",
+   "row_digest": "5c2d6b761b5a919e",
+   "statement": "17 tables are rendered from the receipt and matched against the 17 the paper carries, keyed by table and in BOTH directions; the verdict fences are compared by multiset equality; and 21 prose claims are required at exact occurrence counts"
   },
   {
    "evidence": {
-    "distinct": 65,
-    "numerals_scanned": 635,
+    "distinct": 71,
+    "numerals_scanned": 698,
     "strips_declared": 10,
     "strips_never_used": [],
     "strips_used": [
@@ -4841,12 +5621,12 @@
       "reason": "a paper id"
      },
      {
-      "hits": 11,
+      "hits": 13,
       "pattern": "\\bv1[0-9]\\b",
       "reason": "a programme version"
      },
      {
-      "hits": 1,
+      "hits": 2,
       "pattern": "#\\d+",
       "reason": "a ledger entry id"
      },
@@ -4866,7 +5646,7 @@
       "reason": "a numbered section heading"
      },
      {
-      "hits": 6,
+      "hits": 7,
       "pattern": "\\b[0-9a-f]{12}\\b",
       "reason": "a digest prefix"
      }
@@ -4874,25 +5654,25 @@
     "uncovered": []
    },
    "gate": "G-PAPER-COVERAGE",
-   "n": 26,
+   "n": 28,
    "passed": true,
-   "prev": "71bfca5d9edd9495",
-   "row_digest": "4081c684a92c3ef5",
-   "statement": "every numeral in the paper is scanned -- fenced blocks, table cells and verdict blocks included -- and each must appear in the receipt or fall under a declared structural exemption that is required to be used: 635 numerals scanned, 0 uncovered"
+   "prev": "566b39b5b059d257",
+   "row_digest": "048382becba4fd23",
+   "statement": "every numeral in the paper is scanned -- fenced blocks, table cells and verdict blocks included -- and each must appear in the receipt or fall under a declared structural exemption that is required to be used: 698 numerals scanned, 0 uncovered"
   },
   {
    "evidence": {
     "pairs_checked": 1,
-    "sentences_checked": 58,
+    "sentences_checked": 63,
     "spelled_normalised": false,
     "violations": []
    },
    "gate": "G-PAPER-REFERENTS",
-   "n": 27,
+   "n": 29,
    "passed": true,
-   "prev": "d5dbc36eb6889994",
-   "row_digest": "722c08fcef5a5cfc",
-   "statement": "58 prose sentences select a declared universe by their subject noun and every numeral in each is resolved against THAT universe only, per occurrence, fenced blocks stripped first; an A-of-B fraction must be a pair the run measured, reflexive pairs refused without a totality qualifier. Violations: 0"
+   "prev": "b5cfe9c19635f650",
+   "row_digest": "8ce263ad1d9be59d",
+   "statement": "63 prose sentences select a declared universe by their subject noun and every numeral in each is resolved against THAT universe only, per occurrence, fenced blocks stripped first; an A-of-B fraction must be a pair the run measured, reflexive pairs refused without a totality qualifier. Violations: 0"
   },
   {
    "evidence": {
@@ -4915,15 +5695,15 @@
     ],
     "spelled_claims": 5,
     "spelled_pairs_checked": 2,
-    "spelled_sentences_checked": 78,
+    "spelled_sentences_checked": 83,
     "universe_violations": []
    },
    "gate": "G-PAPER-SPELLED",
-   "n": 28,
+   "n": 30,
    "passed": true,
-   "prev": "6887a07ff590663c",
-   "row_digest": "1432f5d0eb42f220",
-   "statement": "the same prose is scanned again in the OTHER ALPHABET: every spelled cardinal is rewritten to its digits and bound exactly as a written numeral is -- 78 sentences resolved against their own universes -- and the 5 sentences this run renders with a spelled numeral are required verbatim with the form their own inversion would take required to be absent"
+   "prev": "625349a8b0d19789",
+   "row_digest": "6bb66acc15579395",
+   "statement": "the same prose is scanned again in the OTHER ALPHABET: every spelled cardinal is rewritten to its digits and bound exactly as a written numeral is -- 83 sentences resolved against their own universes -- and the 5 sentences this run renders with a spelled numeral are required verbatim with the form their own inversion would take required to be absent"
   },
   {
    "evidence": {
@@ -4931,11 +5711,41 @@
     "violations": []
    },
    "gate": "G-PAPER-POLARITY",
-   "n": 29,
+   "n": 31,
    "passed": true,
-   "prev": "36755a2012261c6a",
-   "row_digest": "7f90b80b603ee074",
+   "prev": "4ae71ed3c78c5b4d",
+   "row_digest": "dc6f7c2b2449740a",
    "statement": "10 direction-bearing claims are bound to measured booleans rather than to numerals, both halves at once: the true direction present and the false direction absent"
+  },
+  {
+   "evidence": {
+    "rationals_allowed": [],
+    "slash_rehearsal_catches": 1,
+    "stamp_present": true,
+    "stamp_required": true,
+    "tally_matches": 3,
+    "tally_referents": {
+     "abstract": [
+      2,
+      4
+     ],
+     "linear": [
+      3,
+      3
+     ],
+     "parent": [
+      4,
+      2
+     ]
+    },
+    "violations": []
+   },
+   "gate": "G-PAPER-SYNTHESIS",
+   "n": 32,
+   "passed": true,
+   "prev": "ecae2f949bf0c54f",
+   "row_digest": "afac953cb3ffbeef",
+   "statement": "synthesis prose is COVERED (the panel's promotion hole, closed at the found instances): 3 qualified tally sentences are bound to the receipt's own word counts per reading with a merged-tally frame refused where the readings differ; the capped/empty honesty stamp is required in its true direction and refused inverted; and every atomic slash-rational in the paper must be a rational string the receipt carries, the scanner rehearsed on a planted sample catching 1. Violations: 0"
   },
   {
    "evidence": {
@@ -4950,62 +5760,63 @@
        "independent_controls": 3,
        "licences": [
         "\\bassumptions\\b",
-        "\\bimplicit in a constructor\\b",
+        "\\bimplicit[ -]in[ -]a[ -]constructor\\b",
         "\\bif\\b[^.]{0,200}\\bthen\\b",
         "\\bidentifiability\\b",
         "\\bdiscriminat\\w+",
-        "\\bnothing measured here\\b",
-        "\\bwithout the arena\\b",
+        "\\bnothing[ -]measured[ -]here\\b",
+        "\\bwithout[ -]the[ -]arena\\b",
         "\\bcandidate\\b",
         "\\bextension\\b",
         "\\bcounting-only\\b",
-        "\\bnever registered\\b",
-        "\\bnever pre-registered\\b",
-        "\\bat this arena\\b",
-        "\\bfree declaration\\b",
-        "\\bthe pin asks\\b",
-        "\\bwithin the declared\\b",
+        "\\bnever[ -]registered\\b",
+        "\\bnever[ -]pre-registered\\b",
+        "\\bat[ -]this[ -]arena\\b",
+        "\\bfree[ -]declaration\\b",
+        "\\bthe[ -]pin[ -]asks\\b",
+        "\\bwithin[ -]the[ -]declared\\b",
         "\\bantecedent\\b"
        ],
        "name": "W-NO-SELECTION",
        "negative": [
-        "(?:the )?(?:event size|arity|a)\\b[^.]{0,40}\\bis (?:uniquely )?selected\\b",
-        "(?:the )?(?:event size|arity)[^.]{0,40}\\b(?:is|are) (?:therefore )?(?:forced|determined|fixed) by (?:a|the) law",
-        "(?:this|the) unit (?:shows|proves|establishes)[^.]{0,30}(?:four|4) is (?:the |a )?(?:right|correct|necessary)",
-        "nothing (?:else )?could have been the event size"
+        "(?:the[ -])?(?:event[ -]size|arity|a)\\b[^.]{0,40}\\bis[ -](?:uniquely[ -])?selected\\b",
+        "(?:the[ -])?(?:event[ -]size|arity)[^.]{0,40}\\b(?:is|are)[ -](?:therefore[ -])?(?:forced|determined|fixed)[ -]by[ -](?:a|the)[ -]law",
+        "(?:this|the)[ -]unit[ -](?:shows|proves|establishes)[^.]{0,30}(?:four|4)[ -]is[ -](?:the[ -]|a[ -])?(?:right|correct|necessary)",
+        "nothing[ -](?:else[ -])?could[ -]have[ -]been[ -]the[ -]event[ -]size"
        ],
        "policed": [
         "\\bselect\\w*",
         "(?<!division-)\\bforc\\w+",
         "\\bdetermin\\w+",
+        "(?<!re-)\\bderiv\\w+",
         "\\brequir\\w+",
         "\\bnecessar\\w+",
         "\\bmandat\\w+",
         "\\bdemand\\w+",
         "\\bsettl\\w+",
         "\\bestablish\\w+",
-        "\\bno other (?:choice|option|size|possibilit\\w+)\\b",
-        "\\bmust be\\b",
-        "\\bfixed by\\b",
+        "\\bno[ -]other[ -](?:choice|option|size|possibilit\\w+)\\b",
+        "\\bmust[ -]be\\b",
+        "\\bfixed[ -]by\\b",
         "\\bcompel\\w+",
         "\\bdictat\\w+",
-        "\\bleaves no\\b",
+        "\\bleaves[ -]no\\b",
         "\\bobliged\\b",
-        "\\bonly one\\b",
-        "\\bthe only (?:size|choice|option)\\b",
-        "\\badmits no rival\\b",
-        "\\bno rival\\b",
-        "\\bcloses on\\b",
-        "\\bhad to be\\b",
-        "\\bno freedom\\b",
-        "\\bknew it\\b"
+        "\\bonly[ -]one\\b",
+        "\\bthe[ -]only[ -](?:size|choice|option)\\b",
+        "\\badmits[ -]no[ -]rival\\b",
+        "\\bno[ -]rival\\b",
+        "\\bcloses[ -]on\\b",
+        "\\bhad[ -]to[ -]be\\b",
+        "\\bno[ -]freedom\\b",
+        "\\bknew[ -]it\\b"
        ],
        "positive": [
-        "nothing measured here selects",
-        "implicit in a constructor"
+        "nothing[ -]measured[ -]here[ -]selects",
+        "implicit[ -]in[ -]a[ -]constructor"
        ],
        "subject": [
-        "\\b(?:arity|arities|event size|event sizes|block size|block sizes|group size|division event|four actors|four-actor|actors per event)\\b"
+        "\\b(?:arity|arities|event[ -]size|event[ -]sizes|block[ -]size|block[ -]sizes|group[ -]size|division[ -]event|four[ -]actors|four-actor|actors[ -]per[ -]event|conditional)\\b"
        ]
       },
       "unlicensed_sentences": [],
@@ -5022,19 +5833,19 @@
        "independent_controls": 3,
        "licences": [
         "\\bcounting-only\\b",
-        "\\bno measure\\b",
-        "\\bno distribution\\b",
-        "\\ba count of\\b",
-        "\\bcomplete census\\b",
-        "\\bevery grouping\\b",
-        "\\bnothing sampled\\b",
-        "\\bdeclared window\\b"
+        "\\bno[ -]measure\\b",
+        "\\bno[ -]distribution\\b",
+        "\\ba[ -]count[ -]of\\b",
+        "\\bcomplete[ -]census\\b",
+        "\\bevery[ -]grouping\\b",
+        "\\bnothing[ -]sampled\\b",
+        "\\bdeclared[ -]window\\b"
        ],
        "name": "W-NO-PROBABILITY",
        "negative": [
         "\\b(?:probabilit|likelihood|likely|chance)\\w*\\b[^.]{0,40}\\barit(?:y|ies)\\b",
-        "most (?:arities|event sizes) (?:are|admit)",
-        "\\btypical(?:ly)? (?:arity|event size|grouping)\\b"
+        "most[ -](?:arities|event[ -]sizes)[ -](?:are|admit)",
+        "\\btypical(?:ly)?[ -](?:arity|event[ -]size|grouping)\\b"
        ],
        "policed": [
         "\\bprobabilit\\w*",
@@ -5042,18 +5853,18 @@
         "\\blikely\\b",
         "\\bchance\\b",
         "\\btypical\\w*",
-        "\\bon average\\b",
-        "\\bexpected value\\b",
-        "\\bat random\\b",
+        "\\bon[ -]average\\b",
+        "\\bexpected[ -]value\\b",
+        "\\bat[ -]random\\b",
         "\\brandomly\\b",
-        "\\bmost (?:arities|event sizes)\\b",
-        "\\balmost surely\\b"
+        "\\bmost[ -](?:arities|event[ -]sizes)\\b",
+        "\\balmost[ -]surely\\b"
        ],
        "positive": [
         "counting-only"
        ],
        "subject": [
-        "\\b(?:arity|arities|event size|event sizes|groupings?|histor(?:y|ies)|fraction|round)\\b"
+        "\\b(?:arity|arities|event[ -]size|event[ -]sizes|groupings?|histor(?:y|ies)|fraction|round)\\b"
        ]
       },
       "unlicensed_sentences": [],
@@ -5069,38 +5880,38 @@
       "seal": {
        "independent_controls": 3,
        "licences": [
-        "\\bnames no other carrier\\b",
-        "\\bsurviving candidate\\b",
+        "\\bnames[ -]no[ -]other[ -]carrier\\b",
+        "\\bsurviving[ -]candidate\\b",
         "\\brefut\\w+",
         "\\bnot-carried-by-a\\b",
-        "\\bat fixed n\\b",
-        "\\bthe constant reading\\b",
-        "\\bwhich of the standing coordinates\\b",
-        "\\bcannot separate\\b",
+        "\\bat[ -]fixed[ -]n\\b",
+        "\\bthe[ -]constant[ -]reading\\b",
+        "\\bwhich[ -]of[ -]the[ -]standing[ -]coordinates\\b",
+        "\\bcannot[ -]separate\\b",
         "\\bcoincide\\b",
-        "\\bcandidate reading\\b"
+        "\\bcandidate[ -]reading\\b"
        ],
        "name": "W-NO-CARRIER-OVERREACH",
        "negative": [
-        "\\b(?:the (?:numeral|value|count)s?|it) (?:is|are) (?:therefore )?carried by (?:the )?(?:field order|q|characteristic)\\b",
-        "\\bthis unit (?:shows|proves)[^.]{0,40}\\bq[- ]carried\\b",
-        "\\bstanding still (?:here )?(?:shows|proves|means) (?:it is )?q[- ]carried"
+        "\\b(?:the[ -](?:numeral|value|count)s?|it)[ -](?:is|are)[ -](?:therefore[ -])?carried[ -]by[ -](?:the[ -])?(?:field[ -]order|q|characteristic)\\b",
+        "\\bthis[ -]unit[ -](?:shows|proves)[^.]{0,40}\\bq[- ]carried\\b",
+        "\\bstanding[ -]still[ -](?:here[ -])?(?:shows|proves|means)[ -](?:it[ -]is[ -])?q[- ]carried"
        ],
        "policed": [
-        "\\bis (?:therefore )?carried by\\b",
-        "\\bare (?:therefore )?carried by\\b",
+        "\\bis[ -](?:therefore[ -])?carried[ -]by\\b",
+        "\\bare[ -](?:therefore[ -])?carried[ -]by\\b",
         "\\bq[- ]carried\\b",
         "\\bn[- ]carried\\b",
-        "\\bbelongs? to the field order\\b",
-        "\\bthe field order carries\\b",
-        "\\bthe characteristic carries\\b",
-        "\\bwhat carries\\b"
+        "\\bbelongs?[ -]to[ -]the[ -]field[ -]order\\b",
+        "\\bthe[ -]field[ -]order[ -]carries\\b",
+        "\\bthe[ -]characteristic[ -]carries\\b",
+        "\\bwhat[ -]carries\\b"
        ],
        "positive": [
-        "names no other carrier|surviving candidate"
+        "names[ -]no[ -]other[ -]carrier|surviving[ -]candidate"
        ],
        "subject": [
-        "\\b(?:numerals?|values?|counts?|menu|modulus|first rung|stands? still|standing still|does not move|saturation-is-maximality|selector)\\b"
+        "\\b(?:numerals?|values?|counts?|menu|modulus|first[ -]rung|stands?[ -]still|standing[ -]still|does[ -]not[ -]move|saturation-is-maximality|selector)\\b"
        ]
       },
       "unlicensed_sentences": [],
@@ -5118,16 +5929,16 @@
        "licences": [
         "\\bidentifiability\\b",
         "\\bdiscriminat\\w+",
-        "\\bdifferent property\\b",
-        "\\bnever promoted to\\b",
-        "\\bis a weaker\\b",
-        "\\bwhich is a different\\b"
+        "\\bdifferent[ -]property\\b",
+        "\\bnever[ -]promoted[ -]to\\b",
+        "\\bis[ -]a[ -]weaker\\b",
+        "\\bwhich[ -]is[ -]a[ -]different\\b"
        ],
        "name": "W-NO-RECONSTRUCTION-AS-DERIVATION",
        "negative": [
         "\\b(?:recover(?:able|ed|s)?|reconstruct\\w*|self-consistent)\\b[^.]{0,60}\\b(?:therefore|hence|so)\\b[^.]{0,40}\\b(?:selected|derived|forced)\\b",
-        "\\bbecause (?:the|its) structure is recoverable\\b",
-        "\\bthat the (?:parent's|committed) arity works\\b[^.]{0,60}\\b(?:selects|derives|proves)\\b"
+        "\\bbecause[ -](?:the|its)[ -]structure[ -]is[ -]recoverable\\b",
+        "\\bthat[ -]the[ -](?:parent's|committed)[ -]arity[ -]works\\b[^.]{0,60}\\b(?:selects|derives|proves)\\b"
        ],
        "policed": [
         "\\bselect\\w*",
@@ -5137,7 +5948,7 @@
         "\\bestablish\\w+",
         "\\bsettl\\w+",
         "\\bshow\\w*\\b",
-        "\\bhad to be\\b",
+        "\\bhad[ -]to[ -]be\\b",
         "\\bsuffice\\w*\\b"
        ],
        "positive": [
@@ -5145,7 +5956,7 @@
         "discriminat"
        ],
        "subject": [
-        "\\b(?:recover\\w*|reconstruct\\w*|reconstructible|self-consistent|identifiab\\w+|records generated)\\b"
+        "\\b(?:recover\\w*|reconstruct\\w*|reconstructible|self-consistent|identifiab\\w+|records[ -]generated)\\b"
        ]
       },
       "unlicensed_sentences": [],
@@ -5161,44 +5972,44 @@
       "seal": {
        "independent_controls": 3,
        "licences": [
-        "\\bbefore an operational\\b",
+        "\\bbefore[ -]an[ -]operational\\b",
         "\\bforbidden\\b",
-        "\\binvariance and nothing more\\b",
+        "\\binvariance[ -]and[ -]nothing[ -]more\\b",
         "\\bdisclosure\\b",
-        "\\ba-inert by construction\\b",
+        "\\ba-inert[ -]by[ -]construction\\b",
         "\\bcounting-only\\b",
-        "\\bno sentence here promotes\\b",
-        "\\bthat promotion is\\b"
+        "\\bno[ -]sentence[ -]here[ -]promotes\\b",
+        "\\bthat[ -]promotion[ -]is\\b"
        ],
        "name": "W-NO-INVARIANCE-AS-GAUGE",
        "negative": [
-        "\\b(?:a-inert|invarian\\w*|unchanged)\\b[^.]{0,50}\\b(?:is|are) (?:therefore )?(?:a )?gauge\\b",
-        "\\bstanding still\\b[^.]{0,40}\\b(?:physical|observable)\\b",
-        "\\bthe menu('s value)? is (?:therefore )?(?:physically )?meaningless\\b"
+        "\\b(?:a-inert|invarian\\w*|unchanged)\\b[^.]{0,50}\\b(?:is|are)[ -](?:therefore[ -])?(?:a[ -])?gauge\\b",
+        "\\bstanding[ -]still\\b[^.]{0,40}\\b(?:physical|observable)\\b",
+        "\\bthe[ -]menu('s[ -]value)?[ -]is[ -](?:therefore[ -])?(?:physically[ -])?meaningless\\b"
        ],
        "policed": [
         "\\bgauge\\b",
         "\\bphysic\\w*",
         "\\bobservable\\b",
         "\\bmeaningless\\b",
-        "\\breal content\\b",
+        "\\breal[ -]content\\b",
         "\\bontolog\\w+",
         "\\bredundan\\w+",
-        "\\bpart of the theory\\b",
+        "\\bpart[ -]of[ -]the[ -]theory\\b",
         "\\bdescriptive\\b",
         "\\bbookkeep\\w+",
-        "\\bbelongs to the description\\b",
-        "\\bno content\\b",
-        "\\bcontent an experiment\\b",
-        "\\bto the world\\b",
+        "\\bbelongs[ -]to[ -]the[ -]description\\b",
+        "\\bno[ -]content\\b",
+        "\\bcontent[ -]an[ -]experiment\\b",
+        "\\bto[ -]the[ -]world\\b",
         "\\bpresentation\\b",
         "\\bnotation\\b"
        ],
        "positive": [
-        "before an operational observable exists"
+        "before[ -]an[ -]operational[ -]observable[ -]exists"
        ],
        "subject": [
-        "\\b(?:menu|invarian\\w*|a-inert|inert|unchanged|stands? still|standing still|does not move|reads the same|survive the whole sweep|constant across)\\b"
+        "\\b(?:menu|invarian\\w*|a-inert|inert|unchanged|stands?[ -]still|standing[ -]still|does[ -]not[ -]move|reads[ -]the[ -]same|survive[ -]the[ -]whole[ -]sweep|constant[ -]across)\\b"
        ]
       },
       "unlicensed_sentences": [],
@@ -5215,35 +6026,35 @@
        "independent_controls": 3,
        "licences": [
         "\\bextension\\b",
-        "\\bpacking rule\\b",
-        "\\bthis unit\\b",
-        "\\bwithin the declared\\b",
-        "\\bdeclared extension family\\b",
-        "\\bidle remainder\\b",
+        "\\bpacking[ -]rule\\b",
+        "\\bthis[ -]unit\\b",
+        "\\bwithin[ -]the[ -]declared\\b",
+        "\\bdeclared[ -]extension[ -]family\\b",
+        "\\bidle[ -]remainder\\b",
         "\\bdeclaration\\b",
         "\\brefus\\w+",
-        "\\bcoset window\\b"
+        "\\bcoset[ -]window\\b"
        ],
        "name": "W-EXTENSION-SCOPE",
        "negative": [
-        "\\bin isp at (?:two|three|five) actors\\b",
-        "\\bthe theory at (?:two|three|five) actors\\b"
+        "\\bin[ -]isp[ -]at[ -](?:two|three|five)[ -]actors\\b",
+        "\\bthe[ -]theory[ -]at[ -](?:two|three|five)[ -]actors\\b"
        ],
        "policed": [
         "\\bisp\\b",
-        "\\bthe theory\\b",
-        "\\bthe corpus\\b",
-        "\\bthe committed\\b",
+        "\\bthe[ -]theory\\b",
+        "\\bthe[ -]corpus\\b",
+        "\\bthe[ -]committed\\b",
         "\\bkeeps\\b",
         "\\bloses\\b",
         "\\bparks\\b"
        ],
        "positive": [
-        "the refusal is the measurement"
+        "the[ -]refusal[ -]is[ -]the[ -]measurement"
        ],
        "subject": [
-        "\\bat (?:two|three|five) actors\\b",
-        "\\b(?:two|three|five)-actor world\\b"
+        "\\bat[ -](?:two|three|five)[ -]actors\\b",
+        "\\b(?:two|three|five)-actor[ -]world\\b"
        ]
       },
       "unlicensed_sentences": [],
@@ -5259,36 +6070,36 @@
       "seal": {
        "independent_controls": 3,
        "licences": [
-        "that unit's measurement",
-        "\\brequires the price\\b",
-        "\\bthe unit that owns the update rule\\b",
-        "\\bis not decided here\\b",
-        "\\bare not recomputed\\b",
-        "\\bquestion for the unit\\b",
-        "\\bthe price the unit\\b",
+        "that[ -]unit's[ -]measurement",
+        "\\brequires[ -]the[ -]price\\b",
+        "\\bthe[ -]unit[ -]that[ -]owns[ -]the[ -]update[ -]rule\\b",
+        "\\bis[ -]not[ -]decided[ -]here\\b",
+        "\\bare[ -]not[ -]recomputed\\b",
+        "\\bquestion[ -]for[ -]the[ -]unit\\b",
+        "\\bthe[ -]price[ -]the[ -]unit\\b",
         "\\bcounting-only\\b",
-        "\\bpair combinatorics\\b"
+        "\\bpair[ -]combinatorics\\b"
        ],
        "name": "W-NO-MOTIVATION-CLAIM",
        "negative": [
-        "\\bgluing is (?:therefore )?(?:a )?free\\b",
-        "\\bmotivated\\b[^.]{0,30}\\bat (?:two|2) actors\\b",
-        "\\bthis unit (?:measures|shows|proves)[^.]{0,30}\\bfree items?\\b"
+        "\\bgluing[ -]is[ -](?:therefore[ -])?(?:a[ -])?free\\b",
+        "\\bmotivated\\b[^.]{0,30}\\bat[ -](?:two|2)[ -]actors\\b",
+        "\\bthis[ -]unit[ -](?:measures|shows|proves)[^.]{0,30}\\bfree[ -]items?\\b"
        ],
        "policed": [
         "\\bfree\\b",
         "\\bmotivated\\b",
-        "\\bpriced at\\b",
-        "\\bcosts nothing\\b",
+        "\\bpriced[ -]at\\b",
+        "\\bcosts[ -]nothing\\b",
         "\\blawful\\b",
         "\\bautonomous\\b",
-        "\\bfree of charge\\b"
+        "\\bfree[ -]of[ -]charge\\b"
        ],
        "positive": [
-        "(?:is|are) that unit's measurement and (?:is|are) not recomputed"
+        "(?:is|are)[ -]that[ -]unit's[ -]measurement[ -]and[ -](?:is|are)[ -]not[ -]recomputed"
        ],
        "subject": [
-        "\\b(?:gluing|crossing|crossings|seam-spanning|free items?|motivat\\w+)\\b"
+        "\\b(?:gluing|crossing|crossings|seam-spanning|free[ -]items?|motivat\\w+)\\b"
        ]
       },
       "unlicensed_sentences": [],
@@ -5304,45 +6115,45 @@
       "seal": {
        "independent_controls": 3,
        "licences": [
-        "\\bat this arena\\b",
-        "\\bat the declared arena\\b",
-        "\\bone point of a\\b",
-        "\\btwo points of a\\b",
+        "\\bat[ -]this[ -]arena\\b",
+        "\\bat[ -]the[ -]declared[ -]arena\\b",
+        "\\bone[ -]point[ -]of[ -]a\\b",
+        "\\btwo[ -]points[ -]of[ -]a\\b",
         "\\bfibre\\b",
         "\\bstill-free\\b",
         "\\bmember-specific\\b",
-        "\\bthe declared arena\\b",
-        "\\bis a theorem\\b",
-        "\\bdeclared arena pairs\\b",
-        "\\bwithin the declared\\b",
-        "\\bthis unit measures\\b",
-        "\\bat both arenas\\b",
-        "\\bboth arenas measured\\b"
+        "\\bthe[ -]declared[ -]arena\\b",
+        "\\bis[ -]a[ -]theorem\\b",
+        "\\bdeclared[ -]arena[ -]pairs\\b",
+        "\\bwithin[ -]the[ -]declared\\b",
+        "\\bthis[ -]unit[ -]measures\\b",
+        "\\bat[ -]both[ -]arenas\\b",
+        "\\bboth[ -]arenas[ -]measured\\b"
        ],
        "name": "W-NO-FAMILY-PREDICTION",
        "negative": [
-        "\\bacross the isp family\\b",
-        "\\bany isp model\\b[^.]{0,60}\\b(?:gives|predicts|returns)\\b",
-        "\\bat every arena\\b[^.]{0,40}\\b(?:the|this) (?:corpus|theory)\\b[^.]{0,20}\\bpredicts\\b",
-        "\\bthe ladder predicts the same modulus for every\\b"
+        "\\bacross[ -]the[ -]isp[ -]family\\b",
+        "\\bany[ -]isp[ -]model\\b[^.]{0,60}\\b(?:gives|predicts|returns)\\b",
+        "\\bat[ -]every[ -]arena\\b[^.]{0,40}\\b(?:the|this)[ -](?:corpus|theory)\\b[^.]{0,20}\\bpredicts\\b",
+        "\\bthe[ -]ladder[ -]predicts[ -]the[ -]same[ -]modulus[ -]for[ -]every\\b"
        ],
        "policed": [
         "\\bpredicts?\\b",
         "\\balways\\b",
-        "\\bat every arena\\b",
-        "\\bin any arena\\b",
-        "\\bin general\\b",
+        "\\bat[ -]every[ -]arena\\b",
+        "\\bin[ -]any[ -]arena\\b",
+        "\\bin[ -]general\\b",
         "\\bwhatever\\b",
-        "\\bprecisely when\\b",
-        "\\bfor all arenas\\b",
+        "\\bprecisely[ -]when\\b",
+        "\\bfor[ -]all[ -]arenas\\b",
         "\\buniversally\\b",
-        "\\bevery still-free\\b"
+        "\\bevery[ -]still-free\\b"
        ],
        "positive": [
-        "one point of a|two points of a"
+        "one[ -]point[ -]of[ -]a|two[ -]points[ -]of[ -]a"
        ],
        "subject": [
-        "\\b(?:the isp family|across the isp|any isp model|every isp model|every arena|any arena|in general|this theory|the theory|every model|whatever arena)\\b"
+        "\\b(?:the[ -]isp[ -]family|across[ -]the[ -]isp|any[ -]isp[ -]model|every[ -]isp[ -]model|every[ -]arena|any[ -]arena|in[ -]general|this[ -]theory|the[ -]theory|every[ -]model|whatever[ -]arena)\\b"
        ]
       },
       "unlicensed_sentences": [],
@@ -5359,36 +6170,38 @@
        "independent_controls": 3,
        "licences": [
         "\\bdisagree\\w*",
-        "\\bpart company\\b",
-        "\\breported beside\\b",
+        "\\bpart[ -]company\\b",
+        "\\breported[ -]beside\\b",
         "\\badjudication\\b",
         "\\bdistinct\\b",
-        "\\bsplits? on the reading\\b",
+        "\\bsplits?[ -]on[ -]the[ -]reading\\b",
         "\\breading-relative\\b",
         "\\bpre-registered\\b"
        ],
        "name": "W-NO-READING-MERGE",
        "negative": [
-        "\\bthe two readings agree\\b",
-        "\\bthe readings (?:can|may) be merged\\b",
-        "\\b(?:merge|averag)\\w*[^.]{0,30}\\bthe (?:two )?readings\\b",
-        "\\beither reading (?:will do|gives the same)\\b"
+        "\\bthe[ -]two[ -]readings[ -]agree\\b",
+        "\\bthe[ -]readings[ -](?:can|may)[ -]be[ -]merged\\b",
+        "\\b(?:merge|averag)\\w*[^.]{0,30}\\bthe[ -](?:two[ -])?readings\\b",
+        "\\beither[ -]reading[ -](?:will[ -]do|gives[ -]the[ -]same)\\b"
        ],
        "policed": [
         "\\bagree\\w*",
         "\\bmerge\\w*",
         "\\baverag\\w+",
         "\\bcombine\\w*",
-        "\\bthe same answer\\b",
+        "\\bthe[ -]same[ -]answer\\b",
+        "\\bthe[ -]same[ -]way\\b",
+        "\\bsettl\\w+",
         "\\bequivalent\\b",
         "\\binterchangeab\\w+",
-        "\\bwill do\\b"
+        "\\bwill[ -]do\\b"
        ],
        "positive": [
-        "never merged"
+        "never[ -]merged"
        ],
        "subject": [
-        "\\b(?:the two readings|both readings|either reading|reading-dependent|the abstract reading|the linear reading)\\b"
+        "\\b(?:the[ -]two[ -]readings|both[ -]readings|either[ -]reading|reading-dependent|the[ -]abstract[ -]reading|the[ -]linear[ -]reading)\\b"
        ]
       },
       "unlicensed_sentences": [],
@@ -5399,10 +6212,10 @@
     "walls_passing_on_empty_text": []
    },
    "gate": "G-WALLS",
-   "n": 30,
+   "n": 33,
    "passed": true,
-   "prev": "b7d4c5e943c528ce",
-   "row_digest": "56ad1beb22806225",
+   "prev": "eca302137f6ebd52",
+   "row_digest": "0e14a2cdf0ac58c8",
    "statement": "9 reading walls -- the parent's eight and this unit's own ninth, which polices the reading-merge -- scan the paper as voice-normalised regexes, each with a POSITIVE leg, a live licence leg and a NEG guard with re-assertion and other-clause exclusions, each non-vacuous on empty text; 27 controls are injected twice each, negated twins included, and 54 are caught"
   },
   {
@@ -5589,15 +6402,35 @@
       ],
       "plant": "P-READINGS-AGREE",
       "sentence": "The two readings agree once the census is read correctly."
+     },
+     {
+      "caught_by": [
+       "W-NO-SELECTION"
+      ],
+      "caught_by_when_negated": [
+       "W-NO-SELECTION"
+      ],
+      "plant": "P-HYPHEN-EVASION",
+      "sentence": "The event-size is uniquely selected by the census at sixteen actors."
+     },
+     {
+      "caught_by": [
+       "W-NO-READING-MERGE"
+      ],
+      "caught_by_when_negated": [
+       "W-NO-READING-MERGE"
+      ],
+      "plant": "P-HEADING-MERGE",
+      "sentence": "Under both readings the covering census gives the same answer."
      }
     ]
    },
    "gate": "G-WALL-PARAPHRASE",
-   "n": 31,
+   "n": 34,
    "passed": true,
-   "prev": "210c008d7eb5badf",
-   "row_digest": "0fd14a3c9437f2e1",
-   "statement": "18 paraphrases of the banned claims, each written against the disease rather than against a pattern, are planted in the paper and run through the whole wall set twice each, negated twins included: 18 are caught. A wall that only matches the sentences its own patterns were written from is not a wall"
+   "prev": "6319aa940cf2a591",
+   "row_digest": "14e40b498855f929",
+   "statement": "20 paraphrases of the banned claims, each written against the disease rather than against a pattern, are planted in the paper and run through the whole wall set twice each, negated twins included: 20 are caught. A wall that only matches the sentences its own patterns were written from is not a wall"
   },
   {
    "evidence": {
@@ -5615,11 +6448,11 @@
     "offenders": []
    },
    "gate": "G-NO-TYPED-COUNTS",
-   "n": 32,
+   "n": 35,
    "passed": true,
-   "prev": "94a804eea074abdc",
-   "row_digest": "34ab9ca1777df41c",
-   "statement": "110 values enter the published statements by NAME from the live registry, and an AST leg scans this module for numerals typed into a vouching call -- the %-format and integer-offset subspecies included -- finding 0; the same scan finds no float constant anywhere in the source"
+   "prev": "9a0ddf1cfa4bbd2d",
+   "row_digest": "427a0a808705bb01",
+   "statement": "121 values enter the published statements by NAME from the live registry, and an AST leg scans this module for numerals typed into a vouching call -- the %-format and integer-offset subspecies included -- finding 0; the same scan finds no float constant anywhere in the source"
   },
   {
    "evidence": {
@@ -5630,19 +6463,43 @@
     ]
    },
    "gate": "G-HASH-BAN",
-   "n": 33,
+   "n": 36,
    "passed": true,
-   "prev": "4662ec4601be79ed",
-   "row_digest": "bcaa2eecd0efd645",
+   "prev": "267e17b4dc5f02db",
+   "row_digest": "930a27b35b51677a",
    "statement": "the builtin hash and the builtin id are BANNED by an AST leg -- both are per-process accidents under PYTHONHASHSEED and the allocator, and a receipt that consumed either would be seed-dependent: 0 calls found in this module, and the scanner is rehearsed on a planted sample carrying both, catching 2"
   },
   {
    "evidence": {
-    "entries": 53,
+    "rehearsal_listdir": [
+     {
+      "kind": "listdir",
+      "line": 2
+     }
+    ],
+    "rehearsal_set_iteration": [
+     {
+      "kind": "bare-set-iteration",
+      "line": 1
+     }
+    ],
+    "sites_in_module": []
+   },
+   "gate": "G-ITERATION-ORDER",
+   "n": 37,
+   "passed": true,
+   "prev": "6987eb5b7f6883aa",
+   "row_digest": "9f8e3f0c154d5810",
+   "statement": "the determinism discipline is extended past call sites to ITERATION ORDER (the panel's proven seed-variant route): an AST leg refuses any for-loop or comprehension over a bare set display, set comprehension or set() call, and any os.listdir call, anywhere in this module -- sorted() is the discipline at every such site -- finding 0 sites; the scanner is rehearsed on planted samples of both species, catching 2"
+  },
+  {
+   "evidence": {
+    "entries": 55,
     "families": [
      "astaudit",
      "astfloat",
      "asthash",
+     "astiter",
      "certfloor",
      "clstuples",
      "corpora",
@@ -5652,6 +6509,7 @@
      "packdist",
      "permwin",
      "principles",
+     "r8mult2",
      "satmatch",
      "satsample",
      "scan_a2",
@@ -5664,31 +6522,31 @@
      "wtab"
     ],
     "families_never_missed": [],
-    "hits": 48,
-    "misses": 53
+    "hits": 53,
+    "misses": 55
    },
    "gate": "G-CACHE",
-   "n": 34,
+   "n": 38,
    "passed": true,
-   "prev": "4cf51d67d91a5565",
-   "row_digest": "e1e170b5b5588a97",
-   "statement": "the run memoises 53 deterministic computations, every key carrying the mutant flags its value depends on, so a recipe is never served a clean cached answer; the lookup path is exercised 48 times and the compute path 53, and no family is served only from the cache"
+   "prev": "27a0e9fa7490eeb6",
+   "row_digest": "ca724fdcab8e4be7",
+   "statement": "the run memoises 55 deterministic computations, every key carrying the mutant flags its value depends on, so a recipe is never served a clean cached answer; the lookup path is exercised 53 times and the compute path 55, and no family is served only from the cache"
   },
   {
    "evidence": {
     "float_paths": []
    },
    "gate": "G-EXACT",
-   "n": 35,
+   "n": 39,
    "passed": true,
-   "prev": "16c3e39433da159c",
-   "row_digest": "b82252aa87e4e08f",
+   "prev": "b9964664cf5fa13e",
+   "row_digest": "0e957aaab23598c9",
    "statement": "a recursive type walk of the whole receipt finds no float anywhere: every quantity this unit publishes is an integer, a string or a boolean"
   },
   {
    "evidence": {
     "coverage_rule_forced": true,
-    "declared_gates": 43,
+    "declared_gates": 47,
     "falsifiers_dying_elsewhere": [],
     "falsifiers_moving_nothing": [],
     "gates_with_no_falsifier": [],
@@ -5830,6 +6688,14 @@
       "target_moved": true
      },
      {
+      "declared_gate": "G-STRENGTHENING-K1",
+      "description": "this unit's own pool census is shifted at a closed row, so the seat-attributed quoted pool stops matching the one cross-check this unit can run",
+      "died_at": "G-STRENGTHENING-K1",
+      "falsifier": "MUT-STRENGTH",
+      "target": "the own-census pool counts at the closed rows",
+      "target_moved": true
+     },
+     {
       "declared_gate": "G-LAW5-FORCING16",
       "description": "the history leg is forced true, so partitions the events do not respect become admissible and every non-unique count moves",
       "died_at": "G-LAW5-FORCING16",
@@ -5886,6 +6752,14 @@
       "target_moved": true
      },
      {
+      "declared_gate": "G-W3-AUTOLABEL",
+      "description": "the family-token inventory is emptied, so a family-level claim planted in a head segment would be labelled member-specific; the rehearsal hands the labeller a planted family claim and requires a flag",
+      "died_at": "G-W3-AUTOLABEL",
+      "falsifier": "MUT-W3",
+      "target": "the labeller's rehearsal verdicts",
+      "target_moved": true
+     },
+     {
       "declared_gate": "G-PAPER-CLAIMS",
       "description": "a licensed claim's numeral is replaced, so the rendering the paper must carry stops being the receipt's",
       "died_at": "G-PAPER-CLAIMS",
@@ -5926,6 +6800,54 @@
       "target_moved": true
      },
      {
+      "declared_gate": "G-PAPER-SYNTHESIS",
+      "description": "the panel's surviving synthesis forge, permanent control: the primary linear tally sentence is rewritten to the parent's anchored pair while fence and receipt stand",
+      "died_at": "G-PAPER-SYNTHESIS",
+      "falsifier": "MUT-SYNTH-TALLY",
+      "target": "the qualified tally sentence",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-PAPER-SYNTHESIS",
+      "description": "the panel's surviving stamp inversion, permanent control: 'published as capped, never as empty' becomes 'published as empty'",
+      "died_at": "G-PAPER-SYNTHESIS",
+      "falsifier": "MUT-SYNTH-STAMP",
+      "target": "the honesty stamp sentence",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-PAPER-SYNTHESIS",
+      "description": "the panel's surviving atomic-rational forge, permanent control: a false slash rational whose halves are both receipt numbers is planted in prose",
+      "died_at": "G-PAPER-SYNTHESIS",
+      "falsifier": "MUT-SYNTH-SLASH",
+      "target": "the planted rational sentence",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-WALLS",
+      "description": "the panel's surviving bare-derivation sentence, permanent control: the event-size subject now meets the derivation verb at the selection wall",
+      "died_at": "G-WALLS",
+      "falsifier": "MUT-SYNTH-DERIVE",
+      "target": "the planted derivation sentence",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-WALLS",
+      "description": "the panel's licence-leak injection, permanent control: a reading-merge sentence planted as the first body sentence under the licence-bearing section heading",
+      "died_at": "G-WALLS",
+      "falsifier": "MUT-HEADING-LEAK",
+      "target": "the planted merge sentence under the heading",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-WALLS",
+      "description": "the panel's hyphen-evasion sentence, permanent control: the central forbidden claim spelled with a hyphenated subject",
+      "died_at": "G-WALLS",
+      "falsifier": "MUT-HYPHEN",
+      "target": "the planted hyphenated sentence",
+      "target_moved": true
+     },
+     {
       "declared_gate": "G-WALLS",
       "description": "a banned sentence is inserted in house style",
       "died_at": "G-WALLS",
@@ -5958,6 +6880,22 @@
       "target_moved": true
      },
      {
+      "declared_gate": "G-ITERATION-ORDER",
+      "description": "the iteration-order scanner goes blind to bare set-iteration -- the panel's PROVEN seed-variant route -- so the rehearsal's planted set comprehension passes unseen",
+      "died_at": "G-ITERATION-ORDER",
+      "falsifier": "MUT-ITER-SET",
+      "target": "the scanner's verdict on the planted set sample",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-ITERATION-ORDER",
+      "description": "the iteration-order scanner goes blind to os.listdir, so filesystem enumeration order could reach a sealed value unseen",
+      "died_at": "G-ITERATION-ORDER",
+      "falsifier": "MUT-ITER-DIR",
+      "target": "the scanner's verdict on the planted listdir sample",
+      "target_moved": true
+     },
+     {
       "declared_gate": "G-CACHE",
       "description": "a memo key drops its mutant flag, so a recipe would be served the clean cached answer",
       "died_at": "G-CACHE",
@@ -5987,6 +6925,30 @@
       "died_at": "G-PROMOTION-REHEARSAL",
       "falsifier": "MUT-PROMOTION",
       "target": "the two promotion legs on fixed inputs",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-PROMOTION-REHEARSAL",
+      "description": "the forged-ledger-head fixture is handed in clean, so the integrity recomputation that must refuse a zeroed head reports no refusal",
+      "died_at": "G-PROMOTION-REHEARSAL",
+      "falsifier": "MUT-INTEG-HEAD",
+      "target": "the integrity rehearsal legs",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-PROMOTION-REHEARSAL",
+      "description": "the forged-ledger-row fixture is handed in clean, so the row-digest recomputation that must refuse a forged row reports no refusal",
+      "died_at": "G-PROMOTION-REHEARSAL",
+      "falsifier": "MUT-INTEG-ROW",
+      "target": "the integrity rehearsal legs",
+      "target_moved": true
+     },
+     {
+      "declared_gate": "G-PROMOTION-REHEARSAL",
+      "description": "the dropped-narrative-line fixture is handed in clean, so the required-lines check that must refuse a missing self-identification line reports no refusal",
+      "died_at": "G-PROMOTION-REHEARSAL",
+      "falsifier": "MUT-INTEG-LINE",
+      "target": "the integrity rehearsal legs",
       "target_moved": true
      },
      {
@@ -6043,14 +7005,26 @@
     }
    },
    "gate": "G-FALSIFIERS",
-   "n": 36,
+   "n": 40,
    "passed": true,
-   "prev": "4d1dae7a42c78c40",
-   "row_digest": "bd207b551db3eb60",
-   "statement": "43 falsifiers each name the measured object their recipe must MOVE, and the harness digests that object before and after: sentinels 0, wrong-gate deaths 0, gates with no recipe and no waiver 0 -- IN the predicate -- with 1 waivers written down and the coverage rule forced on a gate no recipe names"
+   "prev": "2d1de944b0fd6e26",
+   "row_digest": "ba676ea0b8125237",
+   "statement": "56 falsifiers each name the measured object their recipe must MOVE, and the harness digests that object before and after: sentinels 0, wrong-gate deaths 0, gates with no recipe and no waiver 0 -- IN the predicate -- with 1 waivers written down and the coverage rule forced on a gate no recipe names"
   },
   {
    "evidence": {
+    "declared_addendum": {
+     "digest": "762211ba80b2579f",
+     "meanings": {
+      "FOUND": "a witness search exhibited a witness inside its declared window, so the row's achievable set is non-empty as published",
+      "REFUSED-COMPLETE": "a complete-pool search exhausted every candidate without a witness, so the refusal is a statement about the pool and not a cap"
+     },
+     "origin": "declared at the adjudicated repair (v15 ledger #63, order Z6); the #43 registers are untouched and their digests still bind",
+     "words": [
+      "FOUND",
+      "REFUSED-COMPLETE"
+     ]
+    },
     "declared_words": [
      "A-INERT-BY-CONSTRUCTION",
      "A16-CONDITIONAL-READING-DEPENDENT",
@@ -6059,11 +7033,13 @@
      "A16-MODULUS-THEOREM-HOLDS",
      "A16-TRANSPORT-READING-RELATIVE",
      "BREAKS",
+     "FOUND",
      "INFEASIBLE-CARRIED",
      "LAW-IN-A",
      "NEEDS-3",
      "NOT-FOUND-WITHIN-CAP",
-     "REFUSED-BY-THE-COMMITTED-GRAMMAR"
+     "REFUSED-BY-THE-COMMITTED-GRAMMAR",
+     "REFUSED-COMPLETE"
     ],
     "digests_match": true,
     "emitted_but_never_declared": [],
@@ -6074,10 +7050,12 @@
      "A16-MODULUS-THEOREM-HOLDS",
      "A16-TRANSPORT-READING-RELATIVE",
      "BREAKS",
+     "FOUND",
      "INFEASIBLE-CARRIED",
      "LAW-IN-A",
      "NOT-FOUND-WITHIN-CAP",
-     "REFUSED-BY-THE-COMMITTED-GRAMMAR"
+     "REFUSED-BY-THE-COMMITTED-GRAMMAR",
+     "REFUSED-COMPLETE"
     ],
     "never_fired_with_reasons": {
      "A16-MODULUS-THEOREM-FALSIFIED-AT-AG(2, 4)": "every found rung is a multiple of the declared link count and mod-a appears only at a = L, so the falsifying trigger did not occur at any of the 3 found rows",
@@ -6192,28 +7170,31 @@
     "unreasoned_never_fired": []
    },
    "gate": "G-PREREGISTRATION",
-   "n": 37,
+   "n": 41,
    "passed": true,
-   "prev": "e3d3fb8c5c49b243",
-   "row_digest": "cb662a3df17c7947",
-   "statement": "the pre-registration is CONSUMED and not decorated: both registers carry their own digest, checked here; every emitted outcome word is declared; every declared word either fires or stands in the register of measured non-occurrences, which holds 2 words each carrying the measurement that kept its trigger from occurring; and each of the 10 head segments carries its pre-registered outcome, the complement, a feasibility line and the honest contingency column, true of 9"
+   "prev": "f7f651ba7a57035b",
+   "row_digest": "b8a975e83bd1ac2a",
+   "statement": "the pre-registration is CONSUMED and not decorated: both registers carry their own digest, checked here; the WHOLE witness-status column enters the reconciliation, its 2 remaining stamps declared by the adjudicated repair's addendum with its own digest and provenance, never retro-dated; every emitted outcome word is declared; every declared word either fires or stands in the register of measured non-occurrences, which holds 2 words each carrying the measurement that kept its trigger from occurring, both clauses of the modulus reason independently bound in the renderer; and each of the 10 head segments carries its pre-registered outcome, the complement, a feasibility line and the honest contingency column, true of 9"
   },
   {
    "evidence": {
+    "integrity_refuses_a_forged_head": true,
+    "integrity_refuses_a_forged_row": true,
+    "integrity_requires_the_narrative_lines": true,
     "narrative_binding_refuses_a_forged_line": true,
     "seal_check_refuses_an_edited_value": true
    },
    "gate": "G-PROMOTION-REHEARSAL",
-   "n": 38,
+   "n": 42,
    "passed": true,
-   "prev": "43b8f66e11a954ed",
-   "row_digest": "39c7b12e7f4bc162",
-   "statement": "the 2 legs that stand between the last gate and the written artifacts are REHEARSED on fixed synthetic inputs: a forged narrative line must be refused and a sealed value edited after its gate must be refused, and the promotion path calls these same two functions before it replaces anything"
+   "prev": "a87744065c10f164",
+   "row_digest": "9fc9ac844466e206",
+   "statement": "the 5 legs that stand between the last gate and the written artifacts are REHEARSED on fixed synthetic inputs: a forged narrative line must be refused, a sealed value edited after its gate must be refused, and -- the repair's sealed window -- a forged ledger head, a forged ledger row and a dropped self-identification line must each be refused by the integrity recomputation; the promotion path calls these same functions before it replaces anything"
   },
   {
    "evidence": {
     "declared_never_read": [],
-    "distinct_reads": 7,
+    "distinct_reads": 8,
     "exemptions": {
      "v15/code/arity16_exact.py": "this module's own source, read by the AST scans"
     },
@@ -6225,17 +7206,18 @@
      "v15/code/arity_receipt.json",
      "v15/note-arity16-pin.md",
      "v15/paper-44-arity.md",
-     "v15/paper-50-arity16.md"
+     "v15/paper-50-arity16.md",
+     "v15/review-arity16-operator.md"
     ],
     "undeclared": [],
     "unused_exemptions": []
    },
    "gate": "G-READ-SET",
-   "n": 39,
+   "n": 43,
    "passed": true,
-   "prev": "e9d0e433c22900e2",
-   "row_digest": "face58a8fe8d0bd7",
-   "statement": "every open this process performed is recorded at the I/O accessor by an audit hook, wherever the path lies -- reads outside the repository go to their own bucket, which must be empty -- and the multiset of paths is compared against the 6 declared inputs plus exemptions that must be used; the same comparison is made AGAIN inside the promotion path"
+   "prev": "df3f13a6ce29513b",
+   "row_digest": "446139eb949a72e7",
+   "statement": "every open this process performed is recorded at the I/O accessor by an audit hook, wherever the path lies -- reads outside the repository go to their own bucket, which must be empty -- and the multiset of paths is compared against the 7 declared inputs plus exemptions that must be used; the same comparison is made AGAIN inside the promotion path"
   },
   {
    "evidence": {
@@ -6249,6 +7231,34 @@
       "G-ARENA16"
      ],
      [
+      "V-K1-A3",
+      "G-STRENGTHENING-K1"
+     ],
+     [
+      "V-K1-A5",
+      "G-STRENGTHENING-K1"
+     ],
+     [
+      "V-K1-A6",
+      "G-STRENGTHENING-K1"
+     ],
+     [
+      "V-K1-A7",
+      "G-STRENGTHENING-K1"
+     ],
+     [
+      "V-K1-FORK",
+      "G-LAW5-FORCING16"
+     ],
+     [
+      "V-K1-LADDER",
+      "G-STRENGTHENING-K1"
+     ],
+     [
+      "V-K1-R8",
+      "G-LAW4-LADDER16"
+     ],
+     [
       "V-LINEAR",
       "G-READINGS"
      ],
@@ -6259,6 +7269,10 @@
      [
       "V-N16WINDOW",
       "G-LAW2-SHARPENED16"
+     ],
+     [
+      "V-NOTPREREG",
+      "G-PRINCIPLE-CENSUS16"
      ],
      [
       "V-OBSTRUCTION",
@@ -6277,12 +7291,20 @@
       "G-READINGS"
      ],
      [
+      "V-SATMAX-PARENT",
+      "G-PRINCIPLE-CENSUS16"
+     ],
+     [
       "V-SQRT16",
       "G-ARENA16"
      ],
      [
       "V-SUCCESSOR",
       "G-READINGS"
+     ],
+     [
+      "V-THREEOFFIVE",
+      "G-PRINCIPLE-CENSUS16"
      ],
      [
       "V-TWOLEVEL",
@@ -6296,11 +7318,11 @@
     "unconsumed": []
    },
    "gate": "G-ANCHORS-CONSUMED",
-   "n": 40,
+   "n": 44,
    "passed": true,
-   "prev": "5153ac36a2d65533",
-   "row_digest": "7282774f56885cb6",
-   "statement": "anchor text is readable only through an accessor that records the read, and every anchor's declared consumer must be a gate that RAN and that actually read it: 13 reads were recorded"
+   "prev": "09deff3b4d4e2465",
+   "row_digest": "65bd41a250fcdaa6",
+   "statement": "anchor text is readable only through an accessor that records the read, and every anchor's declared consumer must be a gate that RAN and that actually read it: 23 reads were recorded"
   },
   {
    "evidence": {
@@ -6323,6 +7345,11 @@
      "T-NO-TYPED-COUNTS": {
       "evidence_key_present": true,
       "gate": "G-NO-TYPED-COUNTS",
+      "ran": true
+     },
+     "T-PROMOTE-INTEGRITY": {
+      "evidence_key_present": true,
+      "gate": "G-PROMOTION-REHEARSAL",
       "ran": true
      },
      "T-READ-SET": {
@@ -6351,44 +7378,44 @@
       "ran": true
      }
     },
-    "families_expected": 9
+    "families_expected": 10
    },
    "gate": "G-TEMPLATE-EXERCISED",
-   "n": 41,
+   "n": 45,
    "passed": true,
-   "prev": "9f8fcfa31622662e",
-   "row_digest": "17d2821221af6623",
-   "statement": "each of the 9 template families names the gate that EXERCISES it on this unit's own objects, and every one of those gates must have run and carried its family's own evidence"
+   "prev": "3ed8a0a4af0cb15d",
+   "row_digest": "b291a6ca95f56424",
+   "statement": "each of the 10 template families names the gate that EXERCISES it on this unit's own objects, and every one of those gates must have run and carried its family's own evidence"
   },
   {
    "evidence": {
     "declared_unsealed": 3,
     "detail": "ok",
-    "sealed": 33
+    "sealed": 35
    },
    "gate": "G-SEAL-TOTALITY",
-   "n": 42,
+   "n": 46,
    "passed": true,
-   "prev": "737a1b392e5407a6",
-   "row_digest": "65042fcb6a29ba2f",
+   "prev": "e59bd87f5282e2da",
+   "row_digest": "20b9feb8ba5f0860",
    "statement": "every sealed value is compared at the door against the digest taken WHEN ITS GATE PASSED; totality is recomputed from the payload's LIVE key set; every seal's declared gate must be a gate that ran; and no key is both sealed and declared unsealed"
   },
   {
    "evidence": {
-    "declared": 43,
-    "fired": 43,
+    "declared": 47,
+    "fired": 47,
     "missing": [],
     "stray": []
    },
    "gate": "G-CLOSE",
-   "n": 43,
+   "n": 47,
    "passed": true,
-   "prev": "cd3619bf2c9269a7",
-   "row_digest": "0dfe216c4dc8a740",
+   "prev": "49956afe91c81a6f",
+   "row_digest": "7f1b2cd33b72a6d6",
    "statement": "the gates this run fired are exactly the gates it declares, counted with this gate inside its own denominator; the ledger, its chain and the transcript digest are all built after this row"
   }
  ],
- "ledger_head": "630f7508679f5550",
+ "ledger_head": "b10b1e9cbdc00a33",
  "modulus_theorem": {
   "arena_modulus": 4,
   "found_rungs": [
@@ -6413,9 +7440,9 @@
   "verdict": "A16-MODULUS-THEOREM-HOLDS"
  },
  "object_under_test": {
-  "characters": 44718,
+  "characters": 53069,
   "path": "v15/paper-50-arity16.md",
-  "sha256_12": "c86ea5edcfec"
+  "sha256_12": "3e01a1ce1b39"
  },
  "paraphrase_plants": [
   {
@@ -6599,6 +7626,26 @@
    ],
    "plant": "P-READINGS-AGREE",
    "sentence": "The two readings agree once the census is read correctly."
+  },
+  {
+   "caught_by": [
+    "W-NO-SELECTION"
+   ],
+   "caught_by_when_negated": [
+    "W-NO-SELECTION"
+   ],
+   "plant": "P-HYPHEN-EVASION",
+   "sentence": "The event-size is uniquely selected by the census at sixteen actors."
+  },
+  {
+   "caught_by": [
+    "W-NO-READING-MERGE"
+   ],
+   "caught_by_when_negated": [
+    "W-NO-READING-MERGE"
+   ],
+   "plant": "P-HEADING-MERGE",
+   "sentence": "Under both readings the covering census gives the same answer."
   }
  ],
  "parent_words": {
@@ -6995,6 +8042,168 @@
    "path": "law6_sec2/rows/3/forced_inside_bound",
    "source": "A-PARENTREC",
    "value": 4
+  },
+  {
+   "consumer": "G-PRINCIPLE-CENSUS16",
+   "id": "P-PAR-Q",
+   "path": "arena/q",
+   "source": "A-PARENTREC",
+   "value": 3
+  },
+  {
+   "consumer": "G-PRINCIPLE-CENSUS16",
+   "id": "P-PAR-SATMAX",
+   "path": "principles/admits/saturation_is_maximality",
+   "source": "A-PARENTREC",
+   "value": [
+    3
+   ]
+  },
+  {
+   "consumer": "G-PRINCIPLE-CENSUS16",
+   "id": "P-PAR-RC",
+   "path": "principles/admits/round_completeness",
+   "source": "A-PARENTREC",
+   "value": [
+    1,
+    3,
+    9
+   ]
+  },
+  {
+   "consumer": "G-PRINCIPLE-CENSUS16",
+   "id": "P-PAR-SUB",
+   "path": "principles/admits/subgroup_order_available",
+   "source": "A-PARENTREC",
+   "value": [
+    1,
+    3,
+    9
+   ]
+  },
+  {
+   "consumer": "G-LAW2-SHARPENED16",
+   "id": "P-PAR-SH2",
+   "path": "law2_crystallization/rows/0/sharpened_floor",
+   "source": "A-PARENTREC",
+   "value": 6
+  },
+  {
+   "consumer": "G-LAW2-SHARPENED16",
+   "id": "P-PAR-SH3",
+   "path": "law2_crystallization/rows/1/sharpened_floor",
+   "source": "A-PARENTREC",
+   "value": 4
+  },
+  {
+   "consumer": "G-LAW2-SHARPENED16",
+   "id": "P-PAR-SH4",
+   "path": "law2_crystallization/rows/2/sharpened_floor",
+   "source": "A-PARENTREC",
+   "value": 4
+  },
+  {
+   "consumer": "G-LAW2-SHARPENED16",
+   "id": "P-PAR-SH5",
+   "path": "law2_crystallization/rows/3/sharpened_floor",
+   "source": "A-PARENTREC",
+   "value": 4
+  },
+  {
+   "consumer": "G-LAW2-SHARPENED16",
+   "id": "P-PAR-AF2",
+   "path": "law2_crystallization/rows/0/attained_floor",
+   "source": "A-PARENTREC",
+   "value": 6
+  },
+  {
+   "consumer": "G-LAW2-SHARPENED16",
+   "id": "P-PAR-AF3",
+   "path": "law2_crystallization/rows/1/attained_floor",
+   "source": "A-PARENTREC",
+   "value": 4
+  },
+  {
+   "consumer": "G-LAW2-SHARPENED16",
+   "id": "P-PAR-AF4",
+   "path": "law2_crystallization/rows/2/attained_floor",
+   "source": "A-PARENTREC",
+   "value": 4
+  },
+  {
+   "consumer": "G-LAW2-SHARPENED16",
+   "id": "P-PAR-AF5",
+   "path": "law2_crystallization/rows/3/attained_floor",
+   "source": "A-PARENTREC",
+   "value": 4
+  },
+  {
+   "consumer": "G-LAW2-SCHEDULE16",
+   "id": "P-PAR-OFF2",
+   "path": "law2_crystallization/rows/0/offset",
+   "source": "A-PARENTREC",
+   "value": 0
+  },
+  {
+   "consumer": "G-LAW2-SCHEDULE16",
+   "id": "P-PAR-OFF3",
+   "path": "law2_crystallization/rows/1/offset",
+   "source": "A-PARENTREC",
+   "value": 1
+  },
+  {
+   "consumer": "G-LAW2-SCHEDULE16",
+   "id": "P-PAR-OFF4",
+   "path": "law2_crystallization/rows/2/offset",
+   "source": "A-PARENTREC",
+   "value": 1
+  },
+  {
+   "consumer": "G-LAW2-SCHEDULE16",
+   "id": "P-PAR-OFF5",
+   "path": "law2_crystallization/rows/3/offset",
+   "source": "A-PARENTREC",
+   "value": 0
+  },
+  {
+   "consumer": "G-LAW6-SEC2-16",
+   "id": "P-PAR-TRI",
+   "path": "law6_sec2/arrangement_closed_form/link_graph",
+   "source": "A-PARENTREC",
+   "value": "the complete tripartite graph on the lines of the undeclared parallel class"
+  },
+  {
+   "consumer": "G-SUBSTRATE-CENSUS",
+   "id": "P-PAR-A2MASS",
+   "path": "law4_ladder/rows/1/mass_per_round",
+   "source": "A-PARENTREC",
+   "value": 4
+  },
+  {
+   "consumer": "G-SUBSTRATE-CENSUS",
+   "id": "P-PAR-N9",
+   "path": "arena/n",
+   "source": "A-PARENTREC",
+   "value": 9
+  },
+  {
+   "consumer": "G-MODULUS-THEOREM",
+   "id": "P-PAR-A2SAT",
+   "path": "law4_ladder/rows/0/saturating",
+   "source": "A-PARENTREC",
+   "value": 0
+  },
+  {
+   "consumer": "G-MODULUS-THEOREM",
+   "id": "P-PAR-ARITIES",
+   "path": "arena/arities",
+   "source": "A-PARENTREC",
+   "value": [
+    2,
+    3,
+    4,
+    5
+   ]
   }
  ],
  "preregistered_outcomes": [
@@ -7060,6 +8269,18 @@
   }
  ],
  "preregistration": {
+  "declared_addendum": {
+   "digest": "762211ba80b2579f",
+   "meanings": {
+    "FOUND": "a witness search exhibited a witness inside its declared window, so the row's achievable set is non-empty as published",
+    "REFUSED-COMPLETE": "a complete-pool search exhausted every candidate without a witness, so the refusal is a statement about the pool and not a cap"
+   },
+   "origin": "declared at the adjudicated repair (v15 ledger #63, order Z6); the #43 registers are untouched and their digests still bind",
+   "words": [
+    "FOUND",
+    "REFUSED-COMPLETE"
+   ]
+  },
   "declared_words": [
    "A-INERT-BY-CONSTRUCTION",
    "A16-CONDITIONAL-READING-DEPENDENT",
@@ -7068,11 +8289,13 @@
    "A16-MODULUS-THEOREM-HOLDS",
    "A16-TRANSPORT-READING-RELATIVE",
    "BREAKS",
+   "FOUND",
    "INFEASIBLE-CARRIED",
    "LAW-IN-A",
    "NEEDS-3",
    "NOT-FOUND-WITHIN-CAP",
-   "REFUSED-BY-THE-COMMITTED-GRAMMAR"
+   "REFUSED-BY-THE-COMMITTED-GRAMMAR",
+   "REFUSED-COMPLETE"
   ],
   "digests_match": true,
   "emitted_but_never_declared": [],
@@ -7083,10 +8306,12 @@
    "A16-MODULUS-THEOREM-HOLDS",
    "A16-TRANSPORT-READING-RELATIVE",
    "BREAKS",
+   "FOUND",
    "INFEASIBLE-CARRIED",
    "LAW-IN-A",
    "NOT-FOUND-WITHIN-CAP",
-   "REFUSED-BY-THE-COMMITTED-GRAMMAR"
+   "REFUSED-BY-THE-COMMITTED-GRAMMAR",
+   "REFUSED-COMPLETE"
   ],
   "never_fired_with_reasons": {
    "A16-MODULUS-THEOREM-FALSIFIED-AT-AG(2, 4)": "every found rung is a multiple of the declared link count and mod-a appears only at a = L, so the falsifying trigger did not occur at any of the 3 found rows",
@@ -7448,11 +8673,17 @@
    "path": "v14/code/ndep_receipt.json",
    "sha256_12": "29216cea946f",
    "why": "NDEP's COMMITTED RECEIPT: every n = 16 substrate count this unit consumes -- the class tuples, the covering tuples, the route-window census, the crystallization and floor rows, the ladder, the subgroup counts and the out-of-scope grouping census constant -- read by PATH and consumed by the fidelity gate that must pass before any new row runs."
+  },
+  {
+   "id": "A-K1R",
+   "path": "v15/review-arity16-operator.md",
+   "sha256_12": "c642507572c7",
+   "why": "THE OPERATOR SEAT'S FROZEN REVIEW (K1, v15 ledger #57), adopted at adjudication (#63, order Z3) as ORDERED STRENGTHENINGS with seat attribution: the full-pool R = 4 cover closures at three capped arities, the exhaustive R = 8 multiplicity-2 refusal at eight actors per event, and the covering-tuple fork sweep.  Every number consumed from this review is seat-attributed and none is republished as this unit's own measurement."
   }
  ],
  "read_set": {
   "declared_never_read": [],
-  "distinct_reads": 7,
+  "distinct_reads": 8,
   "exemptions": {
    "v15/code/arity16_exact.py": "this module's own source, read by the AST scans"
   },
@@ -7464,7 +8695,8 @@
    "v15/code/arity_receipt.json",
    "v15/note-arity16-pin.md",
    "v15/paper-44-arity.md",
-   "v15/paper-50-arity16.md"
+   "v15/paper-50-arity16.md",
+   "v15/review-arity16-operator.md"
   ],
   "undeclared": [],
   "unused_exemptions": []
@@ -7734,6 +8966,10 @@
     [
      1,
      3
+    ],
+    [
+     3,
+     4
     ]
    ],
    "values": [
@@ -7761,6 +8997,12 @@
     256,
     320,
     1824,
+    6886,
+    8928,
+    15552,
+    83664,
+    96336,
+    180264,
     334761,
     374784,
     436992
@@ -8037,6 +9279,44 @@
    ]
   }
  },
+ "review_strengthenings": {
+  "adjudicated": "adopted as ORDERED STRENGTHENINGS at v15 ledger #63 (order Z3), with seat attribution",
+  "open_row": {
+   "a": 6,
+   "full_pool": 180264,
+   "full_pool_r4_cover": "OPEN-WITH-THE-SUCCESSOR",
+   "seat": "K1/OPERATOR (still computing at freeze)"
+  },
+  "review": "v15/review-arity16-operator.md",
+  "rows": [
+   {
+    "a": 3,
+    "distinct_cell_masks": 83664,
+    "first_rung": 4,
+    "full_pool": 436992,
+    "full_pool_r4_cover": "EXISTS",
+    "seat": "K1/OPERATOR"
+   },
+   {
+    "a": 5,
+    "distinct_cell_masks": 96336,
+    "first_rung": 4,
+    "full_pool": 374784,
+    "full_pool_r4_cover": "EXISTS",
+    "seat": "K1/OPERATOR"
+   },
+   {
+    "a": 7,
+    "distinct_cell_masks": 8928,
+    "first_rung": 4,
+    "full_pool": 15552,
+    "full_pool_r4_cover": "EXISTS",
+    "seat": "K1/OPERATOR"
+   }
+  ],
+  "seat": "K1/OPERATOR",
+  "stamp": "SEAT-ATTRIBUTED: these closures are the operator seat's exhaustive full-pool results, not this unit's measurements; this unit's capped rows keep their NOT-FOUND-WITHIN-CAP stamps and no delivered number moves"
+ },
  "schema": "isp/v15/arity16-second-arena/1",
  "seal_manifest": {
   "declared_unsealed": {
@@ -8045,39 +9325,41 @@
    "transcript_head": "the digest of the FINAL transcript bytes, taken in the promotion path after the last gate row and the verdict are written"
   },
   "sealed": {
-   "anchors": "c104138eeaa99396",
-   "arena": "84b4105a97b4b0a9",
-   "cache": "71b83fde1d9c141d",
+   "anchors": "a3acdf9b848581b0",
+   "arena": "7d66a68f4f1936b6",
+   "cache": "c1e1f54c078ff837",
    "conditional": "3be078e9c2e40acb",
    "corpus": "e6cae6ebba27f6ed",
-   "falsifiers": "df2879ada1ed5c9b",
+   "falsifiers": "f44037d003274c47",
    "fidelity": "f5359d6f30edc5b2",
    "law1_naming": "cb30e7c85812d5e5",
    "law2_certificates": "f7e3184a66cb0d4d",
-   "law2_crystallization": "fec1ede32ce2a19f",
+   "law2_crystallization": "1db81fecf6d7ab8e",
    "law3_menu": "fa6227df10ed2945",
-   "law4_ladder": "a80929fae26aaf8c",
-   "law5_forcing": "5c4e4aeab02c90be",
+   "law4_ladder": "4acf9362be913ec3",
+   "law5_forcing": "d25ab88fb58b737f",
    "law6_sec2": "b100a1c14a3d168f",
    "modulus_theorem": "be565ccb86698360",
-   "object_under_test": "99d321aaa3d145d0",
-   "paraphrase_plants": "bc71983c75a9614f",
+   "object_under_test": "33761e0533df98f5",
+   "paraphrase_plants": "27e7a8fd86aadf6b",
    "parent_words": "7a1396d97b9f91f6",
-   "path_anchors": "4229526d2611f6d0",
+   "path_anchors": "ba6ccef3e8418c35",
    "preregistered_outcomes": "3dc8bbc9a74602b6",
-   "preregistration": "58fbf1be4678a7bf",
+   "preregistration": "832b22ec22c5842f",
    "principles": "6e0b2881413116e6",
-   "provenance": "ed3ce03a83b4fd57",
-   "read_set": "96f34860a07c4b7a",
+   "provenance": "a992fd6798924331",
+   "read_set": "83c8ff35bf32a5cf",
    "readings": "c88166b1fc53b2c7",
-   "referents": "67929e1a1654f897",
+   "referents": "5aa31b184db5cb15",
+   "review_strengthenings": "ed5679312a5b4061",
    "schema": "17046888dcb2c4b7",
    "substrate": "0d59c07021e86f19",
-   "totals": "88c321dc36d408f0",
+   "totals": "5d960caf3c96a84e",
    "transport": "d8d203ec0c1240f7",
    "transport_controls": "e5b5437428a79db7",
-   "verdict": "cfa9fd61aa76c8eb",
-   "walls": "4a4c357407b6b53f"
+   "verdict": "0281c2526ad583b3",
+   "w3_autolabel": "c29adf2ebd1174d2",
+   "walls": "c49fb1273c44ffb2"
   },
   "sealed_at_gate": {
    "anchors": "G-ANCHORS-CONSUMED",
@@ -8106,12 +9388,14 @@
    "read_set": "G-READ-SET",
    "readings": "G-READINGS",
    "referents": "G-PAPER-REFERENTS",
+   "review_strengthenings": "G-STRENGTHENING-K1",
    "schema": "G-ARENA16",
    "substrate": "G-SUBSTRATE-CENSUS",
    "totals": "G-READ-SET",
    "transport": "G-AGGREGATE16",
    "transport_controls": "G-TRANSPORT-CONTROLS",
    "verdict": "G-VERDICT-EQUALITY",
+   "w3_autolabel": "G-W3-AUTOLABEL",
    "walls": "G-WALLS"
   }
  },
@@ -8203,13 +9487,13 @@
  },
  "totals": {
   "arities": 4,
-  "falsifiers": 43,
-  "gates": 43,
-  "path_anchors": 54,
-  "sources": 5,
-  "verbatim_anchors": 13
+  "falsifiers": 56,
+  "gates": 47,
+  "path_anchors": 75,
+  "sources": 6,
+  "verbatim_anchors": 23
  },
- "transcript_head": "837333a85fcbd1b1",
+ "transcript_head": "1c67be82b9903f40",
  "transport": {
   "abstract": {
    "aggregate_under_each_rule": {
@@ -9499,24 +10783,183 @@
  ],
  "verdict": {
   "audit": {
-   "fields_declared": 103,
+   "fields_declared": 105,
    "findings": [],
-   "numerals_in_the_head": 157,
-   "positionally_bound": 157,
+   "numerals_in_the_head": 162,
+   "positionally_bound": 162,
    "required_fields": 12,
-   "resolvers": 93
+   "resolvers": 95
   },
   "segments": [
    "A16-CONDITIONAL-READING-DEPENDENT<THE WORD SUBGROUP WAS PRE-REGISTERED IN TWO READINGS BEFORE ANY ROW RAN, AND THEY PART COMPANY: THE F4-LINEAR LATTICE HAS 7 SUBSPACES WITH ORDERS 1|4|16, SO THE PROPER NONTRIVIAL COSET SIZE IS 4 ALONE AND THE PARENT'S CONDITIONAL SELECTS a=4=q -- A16-CONDITIONAL-TRACKS-THE-FIELD ON THAT BRANCH; THE ABSTRACT LATTICE HAS 67 SUBGROUPS WITH ORDERS 1|2|4|8|16 = THE DIVISORS OF 16 EXACTLY AS THE SHARPENED REGISTRATION SAYS, SO ITS ANTECEDENT ADMITS 2|4|8 AND SELECTS A SET, NOT A SIZE | THE CENSUS SPLITS FURTHER: SATURATION-IS-MAXIMALITY, WHICH SELECTED a=q AT THE PARENT ARENA, HERE ADMITS 2 ALONE -- THE CHARACTERISTIC, NOT THE FIELD ORDER -- SO THE PARENT'S SELECTING PRINCIPLES NO LONGER AGREE ON WHAT THEY SELECT | 6 CANDIDATE PRINCIPLES ARE MEASURED AT 16 CANDIDATE EVENT SIZES UNDER BOTH READINGS, NONE OF THEM PRE-REGISTERED ANYWHERE IN THE CORPUS, AND NOTHING MEASURED HERE SELECTS AN EVENT SIZE WITHOUT THE ARENA AND A READING>",
    "A16-MODULUS-THEOREM-HOLDS<THE PARENT'S IDENTITY nL/gcd(nL,n)=L IS TESTED AT THE SECOND ARENA, NOT RE-DERIVED: ITS INSTANCE HERE READS 4 AND THE IDENTITY IS RE-VERIFIED AT THE PARENT'S 320 DECLARED ARENA PAIRS, THE COUNT PARSED FROM ITS OWN SENTENCE | RUNGS WERE FOUND AT a=2|4|9 AND EVERY FOUND SET IS EXACTLY THE MULTIPLES OF L=4 WITHIN R<=8; MOD-a APPEARS AT 1 OF THE 3 FOUND ROWS -- THE ONE WHERE THE EVENT SIZE IS THE LINK COUNT -- AND AT NONE OF THE 2 ROWS WHERE THEY DIFFER, WHICH IS THE mod-a-IFF-a=L HALF INSTANCED AT ROWS THE PARENT ARENA COULD NOT SUPPLY | AT EIGHT ACTORS PER EVENT THE COMPLETE POOL OF 18 SATURATING ROUNDS REFUSES EVERY COVER; CAPPED ROWS ARE PUBLISHED AS CAPPED AND NEVER AS EMPTY>",
-   "A16-TRANSPORT-READING-RELATIVE<TWO LEVELS AND TWO READINGS, ALL DECLARED: 6 STATEMENTS AND 7 NUMERALS ARE SCORED UNDER EACH PRE-REGISTERED READING; THE PRIMARY F4-LINEAR STATEMENT TALLY READS 3 LAW-IN-A AND 3 BREAKS WHILE THE ABSTRACT TALLY READS 2 AND 4 AND THE PARENT'S OWN, ANCHORED, READ 4 AND 2: THE DIVISION-FORCING STATEMENT IS THE ROW THAT MOVES WITH THE READING | AT THE NUMERAL LEVEL THE DECLARED a-ONLY RULE RETURNS 0 LAW-IN-A, 0 NEEDS-3 AND 7 BREAKS UNDER BOTH READINGS -- THE PARENT'S 2 STANDING-STILL NUMERALS, ANCHORED, BOTH MOVE ONCE n MOVES, AND 2 OF 7 ROWS CHANGE THEIR WORD BETWEEN THE ARENAS | UNDER THE PARENT'S CLOSED-FORM RULE THE OBSTRUCTION ROW ALONE TRANSPORTS: 2 LAW-IN-A, 0 NEEDS-3 AND 5 BREAKS, AT BOTH ARENAS | EVERY WORD IS SCORED WITHIN THE DECLARED EXTENSION FAMILY AND CARRIES ITS READING>",
+   "A16-TRANSPORT-READING-RELATIVE<TWO LEVELS AND TWO READINGS, ALL DECLARED: 6 STATEMENTS AND 7 NUMERALS ARE SCORED UNDER EACH PRE-REGISTERED READING; THE PRIMARY F4-LINEAR STATEMENT TALLY READS 3 LAW-IN-A AND 3 BREAKS WHILE THE ABSTRACT TALLY READS 2 AND 4 AND THE PARENT'S OWN, ANCHORED, READ 4 AND 2: THE DIVISION-FORCING STATEMENT IS THE ROW THAT MOVES WITH THE READING | AT THE NUMERAL LEVEL THE DECLARED a-ONLY RULE RETURNS 0 LAW-IN-A, 0 NEEDS-3 AND 7 BREAKS UNDER BOTH READINGS -- THE PARENT'S 2 STANDING-STILL NUMERALS, ANCHORED, BOTH MOVE ONCE n MOVES, AND 2 OF 7 ROWS CHANGE THEIR WORD BETWEEN THE ARENAS | UNDER THE PARENT'S CLOSED-FORM RULE THIS ARENA'S LINEAR TALLY READS 2 LAW-IN-A, 0 NEEDS-3 AND 5 BREAKS -- THE OBSTRUCTION AND NAMING ROWS, THE NAMING ROW A SINGLE-FEASIBLE-ROW ARTIFACT -- WHILE THE PARENT'S OWN CLOSED-FORM TALLY, ANCHORED, READ 1 LAW-IN-A: THE OBSTRUCTION ROW ALONE TRANSPORTS AT BOTH ARENAS | EVERY WORD IS SCORED WITHIN THE DECLARED EXTENSION FAMILY AND CARRIES ITS READING>",
    "A16-SUBSTRATE-THE-BUDGET-RETURNS-AT-TWO<THE 2627625 GROUPINGS NDEP DECLARED OUT OF SCOPE ARE CENSUSED ENTIRE BY AN EXACT DYNAMIC PROGRAMME OVER THE ACTOR-SUBSET LATTICE, EVERY TOTAL AGREEING WITH ITS CLOSED FORM: GROUPINGS 2027025|22422400|2627625|2018016 AND IDLE ACTORS 0|1|0|1 AT a=2|3|4|5 | BUDGET-SATURATING 256|436992|334761|374784 AGAINST THE PARENT ARENA'S ANCHORED 0|36|81|0: THE CLASS THE PARENT MEASURED EMPTY AT TWO ACTORS IS NON-EMPTY HERE -- THE CHARACTERISTIC'S OWN REVERSAL -- AND EVERY GROUPING WEIGHT IS EVEN | THE MAXIMUM ROUND INCIDENCE IS 16|26|48|38 AGAINST A BUDGET OF 16, NDEP'S ANCHORED WITNESS AMONG THEM | THE IDLE ARITIES 3|5 ARE THE COMMITTED GRAMMAR'S REFUSALS UNDER BOTH READINGS, AND THE REFUSAL IS THE MEASUREMENT>",
    "A16-NAMING-LAW-IN-A<1872400 ROUTE COMPARISONS OVER EVERY PREFIX OF EVERY WINDOW HISTORY AT BOTH COSET ARITIES ON THE DECLARED 1240-PERMUTATION WINDOW, 0 MISMATCHES, 242200 INSIDE THE STABILIZER AND 1630200 OUTSIDE IT, SO BOTH DIRECTIONS ARE LIVE; NDEP'S COMMITTED CENSUS -- 505920 COMPARISONS, 49536 POSITIVE, 29760 AT THE EMPTY PREFIX -- IS REPRODUCED EXACTLY AS THE FIDELITY LEG | THE STATEMENT CARRIES NO NUMERAL AND THE LEG IS A REPRODUCTION | ITS NUMERAL SPLITS ON THE READING: THE NON-UNIQUE SINGLE ROUNDS ARE 5 OF 5 ON THE LINEAR WINDOW AND 35 OF 35 ON THE ABSTRACT ONE AT THE COMMITTED ARITY>",
-   "A16-CRYSTALLIZATION-BREAKS-AND-THE-SHARPENED-FLOOR-TRANSPORTS<CERTIFIED FLOORS 10|8|6|5 AT a=2|3|4|5, EACH WITH AN EXHIBITED SIGNATURE WITNESS AND NAMED REFUSALS BELOW IT; NDEP'S SHARPENED FLOOR, READ WITH THE EVENT SIZE IN THE PLACE ITS QUOTATION NAMES, REPRODUCES ALL 4 OF THEM AT THE SECOND ARENA, WHILE THE COUNTING BOUND READS 4 AND ITS CLOSED FORM AGREES ONLY ON ITS OWN DIAGONAL a=q | THE SCHEDULE TIME IS 14 EVENTS AT TWO ACTORS -- COMPLETE OVER THE 256-MATCHING SATURATING POOL, EVERY ORDERED PAIR OF ROUNDS SWEPT -- AND 7 ON NDEP'S OWN 24-TUPLE WINDOW AT THE COMMITTED ARITY | THE OFFSETS READ 4|1 AT a=2|4 AGAINST THE PARENT'S CONSTANT ONE: THE PAIR SURVIVES AS A STRUCTURE AND EVERY ONE OF ITS NUMBERS MOVES>",
+   "A16-CRYSTALLIZATION-BREAKS-AND-THE-SHARPENED-FLOOR-TRANSPORTS<CERTIFIED FLOORS 10|8|6|5 AT a=2|3|4|5, EACH WITH AN EXHIBITED SIGNATURE WITNESS AND NAMED REFUSALS BELOW IT; NDEP'S SHARPENED FLOOR, READ WITH THE EVENT SIZE IN THE PLACE ITS QUOTATION NAMES, REPRODUCES ALL 4 OF THEM AT THE SECOND ARENA, WHILE THE COUNTING BOUND READS 4 AND ITS CLOSED FORM AGREES ONLY ON ITS OWN DIAGONAL a=q | THE SCHEDULE TIME IS 14 EVENTS AT TWO ACTORS -- COMPLETE OVER THE 256-MATCHING SATURATING POOL, EVERY ORDERED PAIR OF ROUNDS SWEPT -- AND 7 ON NDEP'S OWN 24-TUPLE WINDOW AT THE COMMITTED ARITY | THE OFFSETS READ 4|1 AT a=2|4 AGAINST THE COMMITTED-ARITY CONSTANT ONE OF THE PARENT'S ARENA LINE, WHOSE OWN ALONG-a OFFSET COLUMN, ANCHORED, READS 0|1|1|0 AND IS NOT CONSTANT: THE PAIR SURVIVES AS A STRUCTURE AND EVERY ONE OF ITS NUMBERS MOVES>",
    "A16-MENU-BREAKS-AT-THE-FAILED-HYPOTHESIS<THE SURVIVOR SET IS ENUMERATED COMPLETELY BY CLOSURE FROM THE DISCRETE PARTITION: 307 INVARIANT PARTITIONS, EVERY ONE RE-VERIFIED AGAINST THE PARENT'S LEG-1 PREDICATE; THE 67 ABSTRACT COSET PARTITIONS AND THE 7 LINEAR ONES ARE ALL AMONG THEM AND NEITHER READING'S SET IS THE SURVIVOR SET, SO THE PARENT'S CLOSED FORM BREAKS UNDER BOTH READINGS -- AT THE HYPOTHESIS NDEP MEASURED FAILED, THE DECLARED LINKS SPANNING 8 OF 16 | 156 SURVIVORS HAVE MIXED BLOCK SIZES, AN OBJECT NO COSET PARTITION CAN BE | THE VALUE IS A-INERT BY CONSTRUCTION AND ITS ROW IS A DISCLOSURE, NOT A TRANSPORT MEASUREMENT>",
    "A16-FORCING-READING-SPLIT<THE THESIS IS TESTED PER OBJECT OVER THE COMPLETE SURVIVOR SET AT EVERY WINDOW HISTORY AND IT SPLITS ON THE READING: ON THE LINEAR WINDOW ALL 5 ROUNDS AT THE COMMITTED ARITY ARE NON-UNIQUE AND ALL 5 ARE PARALLEL CLASSES -- THE PARENT'S THESIS VERBATIM -- WHILE ON THE ABSTRACT WINDOW ALL 35 ARE NON-UNIQUE AND ONLY 5 ARE PARALLEL CLASSES, SO THE THESIS AS STATED IS FALSE THERE: THE NON-LINEAR COSET ROUNDS ARE JOINERS A PRIME ARENA CANNOT HAVE | AT TWO ACTORS 15 OF 15 ABSTRACT ROUNDS ARE NON-UNIQUE AND NONE IS A PARALLEL CLASS | EVERY COVERING TUPLE AT BOTH ARITIES IS UNIQUE; THE CENSUS IS BLIND ACROSS THE DECLARED MODULUS FORK 2|3|4; THE IDLE ARITIES REFUSE UNDER BOTH READINGS | COUNTING-ONLY>",
    "A16-SEC2-OBSTRUCTION-FORM-VERIFIED<THE UNION IS REBUILT AT THIS ARENA FROM THE ARRANGEMENT ALONE -- 28 CARRIERS, 64 REALISED PAIRS, 0 DOUBLED, THE SEAM A LINE OF THE UNDECLARED CLASS CARRYING 0 DECLARED LINKS -- AND THE PARENT'S OBSTRUCTION FORM IS VERIFIED AT THE REALISED CENSUS: THE MEASURED MINIMUM OF WITHIN-SECTOR PAIRS READS 0|1|2|4 AT a=2|3|4|5, EQUAL TO THE PARENT'S ANCHORED COLUMN AND TO ITS CLOSED FORM AT EVERY ARITY | SEAM-SPANNING 144|2160|16836|89544, OPENING NO PAIR INSIDE A SECTOR 144|448|448|196, AND OPENING NO PAIR AND DOUBLING NOTHING 144|0|0|0: AT TWO ACTORS EVERY SPANNING EVENT IS EXACTLY ONE CROSS PAIR, THE PARENT'S VANISHING REPRODUCED AT THE SECOND ARENA | THE PRIME ARENA'S TRIPARTITE READING OF THE LINK GRAPH FAILS HERE: 32 LINK EDGES AGAINST 96 OFF-SPAN PAIRS, A COINCIDENCE OF THE PRIME FIELD MEASURED AS ONE>",
    "SCOPE=ONE ARENA, HELD FIXED: n=16, q=4, L=4, 64 CELLS, CHARACTERISTIC 2 | THE SUBSTRATE CENSUS, THE SURVIVOR ENUMERATION, THE FLOOR CERTIFICATES, THE UNION CENSUS AND THE TWO-ACTOR SCHEDULE SWEEP ARE COMPLETE; THE NAMING AND FORCING WINDOWS ARE THE DECLARED COSET WINDOWS OF EACH READING; THE COMMITTED-ARITY SCHEDULE IS A WINDOW VALUE ON NDEP'S 24 COVERING TUPLES | THE LADDER IS SEARCHED TO R<=8 WITH WITNESS WINDOWS OF 4000 CANONICAL ROUNDS AND 400000 SEARCH NODES, AND EVERY CAPPED ROW SAYS SO | THE IDLE ARITIES 3|5 REFUSE UNDER BOTH READINGS AND THE REFUSAL IS THE MEASUREMENT | NO PARENT VALUE IS RECOMPUTED AS A FINDING: EVERY PARENT NUMBER ENTERS AS AN ANCHORED READ OF A COMMITTED RECEIPT | MEASURE=COUNTING-ONLY (E-24) | LANGUAGE=LAW-IN-A, NEEDS-3 AND BREAKS NAME THE TRANSPORT OF A PUBLISHED LAW ALONG THE EVENT-SIZE AXIS AT THIS ARENA, UNDER THE NAMED READING, AND NOTHING ELSE"
+  ]
+ },
+ "w3_autolabel": {
+  "family_token_patterns": [
+   "\\bAT EVERY ARENA\\b",
+   "\\bIN ANY ARENA\\b",
+   "\\bFOR ALL ARENAS\\b",
+   "\\bEVERY ISP MODEL\\b",
+   "\\bANY ISP MODEL\\b",
+   "\\bACROSS THE ISP FAMILY\\b",
+   "\\bWHATEVER ARENA\\b",
+   "\\bARENA-INDEPENDENT\\w*"
+  ],
+  "member_token_inventory": [
+   {
+    "token": "n=16",
+    "why": "the scope segment's own binding"
+   },
+   {
+    "token": "16",
+    "why": "the actor count, rendered from the arena"
+   },
+   {
+    "token": "SIXTEEN",
+    "why": "the actor count, spelled"
+   },
+   {
+    "token": "THIS ARENA",
+    "why": "the deictic member reference"
+   },
+   {
+    "token": "THE SECOND ARENA",
+    "why": "this unit's own name for its member"
+   },
+   {
+    "token": "ONE ARENA",
+    "why": "the scope segment's opening"
+   },
+   {
+    "token": "NDEP",
+    "why": "the owner of the committed n = 16 window"
+   },
+   {
+    "token": "THE PARENT ARENA",
+    "why": "the OTHER member named explicitly -- a two-arena comparison is member-specific twice over"
+   },
+   {
+    "token": "AT BOTH ARENAS",
+    "why": "the two members named jointly"
+   },
+   {
+    "token": "BETWEEN THE ARENAS",
+    "why": "the two members named jointly"
+   },
+   {
+    "token": "A PRIME ARENA",
+    "why": "the negative discriminator: a claim about objects a prime arena cannot have is a claim about THIS non-prime member"
+   }
+  ],
+  "ok": true,
+  "pin_promise": "note-arity16-pin.md WALLS: 'W3 instrumented (family-level vs member-specific auto-labelled -- n now takes two values, so EVERY headline says which n it holds at)' -- built as a gate at the adjudicated repair (v15 ledger #63, order Z5)",
+  "rehearsal": {
+   "planted_family_claim_flagged": true,
+   "tokenless_plant_labelled_unscoped": true
+  },
+  "segments": [
+   {
+    "family_tokens": [],
+    "label": "MEMBER-SPECIFIC",
+    "member_tokens": [
+     "16",
+     "THE PARENT ARENA"
+    ],
+    "segment": 0
+   },
+   {
+    "family_tokens": [],
+    "label": "MEMBER-SPECIFIC",
+    "member_tokens": [
+     "THE PARENT ARENA",
+     "THE SECOND ARENA"
+    ],
+    "segment": 1
+   },
+   {
+    "family_tokens": [],
+    "label": "MEMBER-SPECIFIC",
+    "member_tokens": [
+     "AT BOTH ARENAS",
+     "BETWEEN THE ARENAS",
+     "THIS ARENA"
+    ],
+    "segment": 2
+   },
+   {
+    "family_tokens": [],
+    "label": "MEMBER-SPECIFIC",
+    "member_tokens": [
+     "16",
+     "NDEP",
+     "THE PARENT ARENA"
+    ],
+    "segment": 3
+   },
+   {
+    "family_tokens": [],
+    "label": "MEMBER-SPECIFIC",
+    "member_tokens": [
+     "NDEP"
+    ],
+    "segment": 4
+   },
+   {
+    "family_tokens": [],
+    "label": "MEMBER-SPECIFIC",
+    "member_tokens": [
+     "NDEP",
+     "THE SECOND ARENA"
+    ],
+    "segment": 5
+   },
+   {
+    "family_tokens": [],
+    "label": "MEMBER-SPECIFIC",
+    "member_tokens": [
+     "16",
+     "NDEP"
+    ],
+    "segment": 6
+   },
+   {
+    "family_tokens": [],
+    "label": "MEMBER-SPECIFIC",
+    "member_tokens": [
+     "A PRIME ARENA"
+    ],
+    "segment": 7
+   },
+   {
+    "family_tokens": [],
+    "label": "MEMBER-SPECIFIC",
+    "member_tokens": [
+     "THE SECOND ARENA",
+     "THIS ARENA"
+    ],
+    "segment": 8
+   },
+   {
+    "family_tokens": [],
+    "label": "MEMBER-SPECIFIC",
+    "member_tokens": [
+     "16",
+     "NDEP",
+     "ONE ARENA",
+     "THIS ARENA",
+     "n=16"
+    ],
+    "segment": 9
+   }
   ]
  },
  "walls": [
@@ -9530,62 +10973,63 @@
     "independent_controls": 3,
     "licences": [
      "\\bassumptions\\b",
-     "\\bimplicit in a constructor\\b",
+     "\\bimplicit[ -]in[ -]a[ -]constructor\\b",
      "\\bif\\b[^.]{0,200}\\bthen\\b",
      "\\bidentifiability\\b",
      "\\bdiscriminat\\w+",
-     "\\bnothing measured here\\b",
-     "\\bwithout the arena\\b",
+     "\\bnothing[ -]measured[ -]here\\b",
+     "\\bwithout[ -]the[ -]arena\\b",
      "\\bcandidate\\b",
      "\\bextension\\b",
      "\\bcounting-only\\b",
-     "\\bnever registered\\b",
-     "\\bnever pre-registered\\b",
-     "\\bat this arena\\b",
-     "\\bfree declaration\\b",
-     "\\bthe pin asks\\b",
-     "\\bwithin the declared\\b",
+     "\\bnever[ -]registered\\b",
+     "\\bnever[ -]pre-registered\\b",
+     "\\bat[ -]this[ -]arena\\b",
+     "\\bfree[ -]declaration\\b",
+     "\\bthe[ -]pin[ -]asks\\b",
+     "\\bwithin[ -]the[ -]declared\\b",
      "\\bantecedent\\b"
     ],
     "name": "W-NO-SELECTION",
     "negative": [
-     "(?:the )?(?:event size|arity|a)\\b[^.]{0,40}\\bis (?:uniquely )?selected\\b",
-     "(?:the )?(?:event size|arity)[^.]{0,40}\\b(?:is|are) (?:therefore )?(?:forced|determined|fixed) by (?:a|the) law",
-     "(?:this|the) unit (?:shows|proves|establishes)[^.]{0,30}(?:four|4) is (?:the |a )?(?:right|correct|necessary)",
-     "nothing (?:else )?could have been the event size"
+     "(?:the[ -])?(?:event[ -]size|arity|a)\\b[^.]{0,40}\\bis[ -](?:uniquely[ -])?selected\\b",
+     "(?:the[ -])?(?:event[ -]size|arity)[^.]{0,40}\\b(?:is|are)[ -](?:therefore[ -])?(?:forced|determined|fixed)[ -]by[ -](?:a|the)[ -]law",
+     "(?:this|the)[ -]unit[ -](?:shows|proves|establishes)[^.]{0,30}(?:four|4)[ -]is[ -](?:the[ -]|a[ -])?(?:right|correct|necessary)",
+     "nothing[ -](?:else[ -])?could[ -]have[ -]been[ -]the[ -]event[ -]size"
     ],
     "policed": [
      "\\bselect\\w*",
      "(?<!division-)\\bforc\\w+",
      "\\bdetermin\\w+",
+     "(?<!re-)\\bderiv\\w+",
      "\\brequir\\w+",
      "\\bnecessar\\w+",
      "\\bmandat\\w+",
      "\\bdemand\\w+",
      "\\bsettl\\w+",
      "\\bestablish\\w+",
-     "\\bno other (?:choice|option|size|possibilit\\w+)\\b",
-     "\\bmust be\\b",
-     "\\bfixed by\\b",
+     "\\bno[ -]other[ -](?:choice|option|size|possibilit\\w+)\\b",
+     "\\bmust[ -]be\\b",
+     "\\bfixed[ -]by\\b",
      "\\bcompel\\w+",
      "\\bdictat\\w+",
-     "\\bleaves no\\b",
+     "\\bleaves[ -]no\\b",
      "\\bobliged\\b",
-     "\\bonly one\\b",
-     "\\bthe only (?:size|choice|option)\\b",
-     "\\badmits no rival\\b",
-     "\\bno rival\\b",
-     "\\bcloses on\\b",
-     "\\bhad to be\\b",
-     "\\bno freedom\\b",
-     "\\bknew it\\b"
+     "\\bonly[ -]one\\b",
+     "\\bthe[ -]only[ -](?:size|choice|option)\\b",
+     "\\badmits[ -]no[ -]rival\\b",
+     "\\bno[ -]rival\\b",
+     "\\bcloses[ -]on\\b",
+     "\\bhad[ -]to[ -]be\\b",
+     "\\bno[ -]freedom\\b",
+     "\\bknew[ -]it\\b"
     ],
     "positive": [
-     "nothing measured here selects",
-     "implicit in a constructor"
+     "nothing[ -]measured[ -]here[ -]selects",
+     "implicit[ -]in[ -]a[ -]constructor"
     ],
     "subject": [
-     "\\b(?:arity|arities|event size|event sizes|block size|block sizes|group size|division event|four actors|four-actor|actors per event)\\b"
+     "\\b(?:arity|arities|event[ -]size|event[ -]sizes|block[ -]size|block[ -]sizes|group[ -]size|division[ -]event|four[ -]actors|four-actor|actors[ -]per[ -]event|conditional)\\b"
     ]
    },
    "unlicensed_sentences": [],
@@ -9602,19 +11046,19 @@
     "independent_controls": 3,
     "licences": [
      "\\bcounting-only\\b",
-     "\\bno measure\\b",
-     "\\bno distribution\\b",
-     "\\ba count of\\b",
-     "\\bcomplete census\\b",
-     "\\bevery grouping\\b",
-     "\\bnothing sampled\\b",
-     "\\bdeclared window\\b"
+     "\\bno[ -]measure\\b",
+     "\\bno[ -]distribution\\b",
+     "\\ba[ -]count[ -]of\\b",
+     "\\bcomplete[ -]census\\b",
+     "\\bevery[ -]grouping\\b",
+     "\\bnothing[ -]sampled\\b",
+     "\\bdeclared[ -]window\\b"
     ],
     "name": "W-NO-PROBABILITY",
     "negative": [
      "\\b(?:probabilit|likelihood|likely|chance)\\w*\\b[^.]{0,40}\\barit(?:y|ies)\\b",
-     "most (?:arities|event sizes) (?:are|admit)",
-     "\\btypical(?:ly)? (?:arity|event size|grouping)\\b"
+     "most[ -](?:arities|event[ -]sizes)[ -](?:are|admit)",
+     "\\btypical(?:ly)?[ -](?:arity|event[ -]size|grouping)\\b"
     ],
     "policed": [
      "\\bprobabilit\\w*",
@@ -9622,18 +11066,18 @@
      "\\blikely\\b",
      "\\bchance\\b",
      "\\btypical\\w*",
-     "\\bon average\\b",
-     "\\bexpected value\\b",
-     "\\bat random\\b",
+     "\\bon[ -]average\\b",
+     "\\bexpected[ -]value\\b",
+     "\\bat[ -]random\\b",
      "\\brandomly\\b",
-     "\\bmost (?:arities|event sizes)\\b",
-     "\\balmost surely\\b"
+     "\\bmost[ -](?:arities|event[ -]sizes)\\b",
+     "\\balmost[ -]surely\\b"
     ],
     "positive": [
      "counting-only"
     ],
     "subject": [
-     "\\b(?:arity|arities|event size|event sizes|groupings?|histor(?:y|ies)|fraction|round)\\b"
+     "\\b(?:arity|arities|event[ -]size|event[ -]sizes|groupings?|histor(?:y|ies)|fraction|round)\\b"
     ]
    },
    "unlicensed_sentences": [],
@@ -9649,38 +11093,38 @@
    "seal": {
     "independent_controls": 3,
     "licences": [
-     "\\bnames no other carrier\\b",
-     "\\bsurviving candidate\\b",
+     "\\bnames[ -]no[ -]other[ -]carrier\\b",
+     "\\bsurviving[ -]candidate\\b",
      "\\brefut\\w+",
      "\\bnot-carried-by-a\\b",
-     "\\bat fixed n\\b",
-     "\\bthe constant reading\\b",
-     "\\bwhich of the standing coordinates\\b",
-     "\\bcannot separate\\b",
+     "\\bat[ -]fixed[ -]n\\b",
+     "\\bthe[ -]constant[ -]reading\\b",
+     "\\bwhich[ -]of[ -]the[ -]standing[ -]coordinates\\b",
+     "\\bcannot[ -]separate\\b",
      "\\bcoincide\\b",
-     "\\bcandidate reading\\b"
+     "\\bcandidate[ -]reading\\b"
     ],
     "name": "W-NO-CARRIER-OVERREACH",
     "negative": [
-     "\\b(?:the (?:numeral|value|count)s?|it) (?:is|are) (?:therefore )?carried by (?:the )?(?:field order|q|characteristic)\\b",
-     "\\bthis unit (?:shows|proves)[^.]{0,40}\\bq[- ]carried\\b",
-     "\\bstanding still (?:here )?(?:shows|proves|means) (?:it is )?q[- ]carried"
+     "\\b(?:the[ -](?:numeral|value|count)s?|it)[ -](?:is|are)[ -](?:therefore[ -])?carried[ -]by[ -](?:the[ -])?(?:field[ -]order|q|characteristic)\\b",
+     "\\bthis[ -]unit[ -](?:shows|proves)[^.]{0,40}\\bq[- ]carried\\b",
+     "\\bstanding[ -]still[ -](?:here[ -])?(?:shows|proves|means)[ -](?:it[ -]is[ -])?q[- ]carried"
     ],
     "policed": [
-     "\\bis (?:therefore )?carried by\\b",
-     "\\bare (?:therefore )?carried by\\b",
+     "\\bis[ -](?:therefore[ -])?carried[ -]by\\b",
+     "\\bare[ -](?:therefore[ -])?carried[ -]by\\b",
      "\\bq[- ]carried\\b",
      "\\bn[- ]carried\\b",
-     "\\bbelongs? to the field order\\b",
-     "\\bthe field order carries\\b",
-     "\\bthe characteristic carries\\b",
-     "\\bwhat carries\\b"
+     "\\bbelongs?[ -]to[ -]the[ -]field[ -]order\\b",
+     "\\bthe[ -]field[ -]order[ -]carries\\b",
+     "\\bthe[ -]characteristic[ -]carries\\b",
+     "\\bwhat[ -]carries\\b"
     ],
     "positive": [
-     "names no other carrier|surviving candidate"
+     "names[ -]no[ -]other[ -]carrier|surviving[ -]candidate"
     ],
     "subject": [
-     "\\b(?:numerals?|values?|counts?|menu|modulus|first rung|stands? still|standing still|does not move|saturation-is-maximality|selector)\\b"
+     "\\b(?:numerals?|values?|counts?|menu|modulus|first[ -]rung|stands?[ -]still|standing[ -]still|does[ -]not[ -]move|saturation-is-maximality|selector)\\b"
     ]
    },
    "unlicensed_sentences": [],
@@ -9698,16 +11142,16 @@
     "licences": [
      "\\bidentifiability\\b",
      "\\bdiscriminat\\w+",
-     "\\bdifferent property\\b",
-     "\\bnever promoted to\\b",
-     "\\bis a weaker\\b",
-     "\\bwhich is a different\\b"
+     "\\bdifferent[ -]property\\b",
+     "\\bnever[ -]promoted[ -]to\\b",
+     "\\bis[ -]a[ -]weaker\\b",
+     "\\bwhich[ -]is[ -]a[ -]different\\b"
     ],
     "name": "W-NO-RECONSTRUCTION-AS-DERIVATION",
     "negative": [
      "\\b(?:recover(?:able|ed|s)?|reconstruct\\w*|self-consistent)\\b[^.]{0,60}\\b(?:therefore|hence|so)\\b[^.]{0,40}\\b(?:selected|derived|forced)\\b",
-     "\\bbecause (?:the|its) structure is recoverable\\b",
-     "\\bthat the (?:parent's|committed) arity works\\b[^.]{0,60}\\b(?:selects|derives|proves)\\b"
+     "\\bbecause[ -](?:the|its)[ -]structure[ -]is[ -]recoverable\\b",
+     "\\bthat[ -]the[ -](?:parent's|committed)[ -]arity[ -]works\\b[^.]{0,60}\\b(?:selects|derives|proves)\\b"
     ],
     "policed": [
      "\\bselect\\w*",
@@ -9717,7 +11161,7 @@
      "\\bestablish\\w+",
      "\\bsettl\\w+",
      "\\bshow\\w*\\b",
-     "\\bhad to be\\b",
+     "\\bhad[ -]to[ -]be\\b",
      "\\bsuffice\\w*\\b"
     ],
     "positive": [
@@ -9725,7 +11169,7 @@
      "discriminat"
     ],
     "subject": [
-     "\\b(?:recover\\w*|reconstruct\\w*|reconstructible|self-consistent|identifiab\\w+|records generated)\\b"
+     "\\b(?:recover\\w*|reconstruct\\w*|reconstructible|self-consistent|identifiab\\w+|records[ -]generated)\\b"
     ]
    },
    "unlicensed_sentences": [],
@@ -9741,44 +11185,44 @@
    "seal": {
     "independent_controls": 3,
     "licences": [
-     "\\bbefore an operational\\b",
+     "\\bbefore[ -]an[ -]operational\\b",
      "\\bforbidden\\b",
-     "\\binvariance and nothing more\\b",
+     "\\binvariance[ -]and[ -]nothing[ -]more\\b",
      "\\bdisclosure\\b",
-     "\\ba-inert by construction\\b",
+     "\\ba-inert[ -]by[ -]construction\\b",
      "\\bcounting-only\\b",
-     "\\bno sentence here promotes\\b",
-     "\\bthat promotion is\\b"
+     "\\bno[ -]sentence[ -]here[ -]promotes\\b",
+     "\\bthat[ -]promotion[ -]is\\b"
     ],
     "name": "W-NO-INVARIANCE-AS-GAUGE",
     "negative": [
-     "\\b(?:a-inert|invarian\\w*|unchanged)\\b[^.]{0,50}\\b(?:is|are) (?:therefore )?(?:a )?gauge\\b",
-     "\\bstanding still\\b[^.]{0,40}\\b(?:physical|observable)\\b",
-     "\\bthe menu('s value)? is (?:therefore )?(?:physically )?meaningless\\b"
+     "\\b(?:a-inert|invarian\\w*|unchanged)\\b[^.]{0,50}\\b(?:is|are)[ -](?:therefore[ -])?(?:a[ -])?gauge\\b",
+     "\\bstanding[ -]still\\b[^.]{0,40}\\b(?:physical|observable)\\b",
+     "\\bthe[ -]menu('s[ -]value)?[ -]is[ -](?:therefore[ -])?(?:physically[ -])?meaningless\\b"
     ],
     "policed": [
      "\\bgauge\\b",
      "\\bphysic\\w*",
      "\\bobservable\\b",
      "\\bmeaningless\\b",
-     "\\breal content\\b",
+     "\\breal[ -]content\\b",
      "\\bontolog\\w+",
      "\\bredundan\\w+",
-     "\\bpart of the theory\\b",
+     "\\bpart[ -]of[ -]the[ -]theory\\b",
      "\\bdescriptive\\b",
      "\\bbookkeep\\w+",
-     "\\bbelongs to the description\\b",
-     "\\bno content\\b",
-     "\\bcontent an experiment\\b",
-     "\\bto the world\\b",
+     "\\bbelongs[ -]to[ -]the[ -]description\\b",
+     "\\bno[ -]content\\b",
+     "\\bcontent[ -]an[ -]experiment\\b",
+     "\\bto[ -]the[ -]world\\b",
      "\\bpresentation\\b",
      "\\bnotation\\b"
     ],
     "positive": [
-     "before an operational observable exists"
+     "before[ -]an[ -]operational[ -]observable[ -]exists"
     ],
     "subject": [
-     "\\b(?:menu|invarian\\w*|a-inert|inert|unchanged|stands? still|standing still|does not move|reads the same|survive the whole sweep|constant across)\\b"
+     "\\b(?:menu|invarian\\w*|a-inert|inert|unchanged|stands?[ -]still|standing[ -]still|does[ -]not[ -]move|reads[ -]the[ -]same|survive[ -]the[ -]whole[ -]sweep|constant[ -]across)\\b"
     ]
    },
    "unlicensed_sentences": [],
@@ -9795,35 +11239,35 @@
     "independent_controls": 3,
     "licences": [
      "\\bextension\\b",
-     "\\bpacking rule\\b",
-     "\\bthis unit\\b",
-     "\\bwithin the declared\\b",
-     "\\bdeclared extension family\\b",
-     "\\bidle remainder\\b",
+     "\\bpacking[ -]rule\\b",
+     "\\bthis[ -]unit\\b",
+     "\\bwithin[ -]the[ -]declared\\b",
+     "\\bdeclared[ -]extension[ -]family\\b",
+     "\\bidle[ -]remainder\\b",
      "\\bdeclaration\\b",
      "\\brefus\\w+",
-     "\\bcoset window\\b"
+     "\\bcoset[ -]window\\b"
     ],
     "name": "W-EXTENSION-SCOPE",
     "negative": [
-     "\\bin isp at (?:two|three|five) actors\\b",
-     "\\bthe theory at (?:two|three|five) actors\\b"
+     "\\bin[ -]isp[ -]at[ -](?:two|three|five)[ -]actors\\b",
+     "\\bthe[ -]theory[ -]at[ -](?:two|three|five)[ -]actors\\b"
     ],
     "policed": [
      "\\bisp\\b",
-     "\\bthe theory\\b",
-     "\\bthe corpus\\b",
-     "\\bthe committed\\b",
+     "\\bthe[ -]theory\\b",
+     "\\bthe[ -]corpus\\b",
+     "\\bthe[ -]committed\\b",
      "\\bkeeps\\b",
      "\\bloses\\b",
      "\\bparks\\b"
     ],
     "positive": [
-     "the refusal is the measurement"
+     "the[ -]refusal[ -]is[ -]the[ -]measurement"
     ],
     "subject": [
-     "\\bat (?:two|three|five) actors\\b",
-     "\\b(?:two|three|five)-actor world\\b"
+     "\\bat[ -](?:two|three|five)[ -]actors\\b",
+     "\\b(?:two|three|five)-actor[ -]world\\b"
     ]
    },
    "unlicensed_sentences": [],
@@ -9839,36 +11283,36 @@
    "seal": {
     "independent_controls": 3,
     "licences": [
-     "that unit's measurement",
-     "\\brequires the price\\b",
-     "\\bthe unit that owns the update rule\\b",
-     "\\bis not decided here\\b",
-     "\\bare not recomputed\\b",
-     "\\bquestion for the unit\\b",
-     "\\bthe price the unit\\b",
+     "that[ -]unit's[ -]measurement",
+     "\\brequires[ -]the[ -]price\\b",
+     "\\bthe[ -]unit[ -]that[ -]owns[ -]the[ -]update[ -]rule\\b",
+     "\\bis[ -]not[ -]decided[ -]here\\b",
+     "\\bare[ -]not[ -]recomputed\\b",
+     "\\bquestion[ -]for[ -]the[ -]unit\\b",
+     "\\bthe[ -]price[ -]the[ -]unit\\b",
      "\\bcounting-only\\b",
-     "\\bpair combinatorics\\b"
+     "\\bpair[ -]combinatorics\\b"
     ],
     "name": "W-NO-MOTIVATION-CLAIM",
     "negative": [
-     "\\bgluing is (?:therefore )?(?:a )?free\\b",
-     "\\bmotivated\\b[^.]{0,30}\\bat (?:two|2) actors\\b",
-     "\\bthis unit (?:measures|shows|proves)[^.]{0,30}\\bfree items?\\b"
+     "\\bgluing[ -]is[ -](?:therefore[ -])?(?:a[ -])?free\\b",
+     "\\bmotivated\\b[^.]{0,30}\\bat[ -](?:two|2)[ -]actors\\b",
+     "\\bthis[ -]unit[ -](?:measures|shows|proves)[^.]{0,30}\\bfree[ -]items?\\b"
     ],
     "policed": [
      "\\bfree\\b",
      "\\bmotivated\\b",
-     "\\bpriced at\\b",
-     "\\bcosts nothing\\b",
+     "\\bpriced[ -]at\\b",
+     "\\bcosts[ -]nothing\\b",
      "\\blawful\\b",
      "\\bautonomous\\b",
-     "\\bfree of charge\\b"
+     "\\bfree[ -]of[ -]charge\\b"
     ],
     "positive": [
-     "(?:is|are) that unit's measurement and (?:is|are) not recomputed"
+     "(?:is|are)[ -]that[ -]unit's[ -]measurement[ -]and[ -](?:is|are)[ -]not[ -]recomputed"
     ],
     "subject": [
-     "\\b(?:gluing|crossing|crossings|seam-spanning|free items?|motivat\\w+)\\b"
+     "\\b(?:gluing|crossing|crossings|seam-spanning|free[ -]items?|motivat\\w+)\\b"
     ]
    },
    "unlicensed_sentences": [],
@@ -9884,45 +11328,45 @@
    "seal": {
     "independent_controls": 3,
     "licences": [
-     "\\bat this arena\\b",
-     "\\bat the declared arena\\b",
-     "\\bone point of a\\b",
-     "\\btwo points of a\\b",
+     "\\bat[ -]this[ -]arena\\b",
+     "\\bat[ -]the[ -]declared[ -]arena\\b",
+     "\\bone[ -]point[ -]of[ -]a\\b",
+     "\\btwo[ -]points[ -]of[ -]a\\b",
      "\\bfibre\\b",
      "\\bstill-free\\b",
      "\\bmember-specific\\b",
-     "\\bthe declared arena\\b",
-     "\\bis a theorem\\b",
-     "\\bdeclared arena pairs\\b",
-     "\\bwithin the declared\\b",
-     "\\bthis unit measures\\b",
-     "\\bat both arenas\\b",
-     "\\bboth arenas measured\\b"
+     "\\bthe[ -]declared[ -]arena\\b",
+     "\\bis[ -]a[ -]theorem\\b",
+     "\\bdeclared[ -]arena[ -]pairs\\b",
+     "\\bwithin[ -]the[ -]declared\\b",
+     "\\bthis[ -]unit[ -]measures\\b",
+     "\\bat[ -]both[ -]arenas\\b",
+     "\\bboth[ -]arenas[ -]measured\\b"
     ],
     "name": "W-NO-FAMILY-PREDICTION",
     "negative": [
-     "\\bacross the isp family\\b",
-     "\\bany isp model\\b[^.]{0,60}\\b(?:gives|predicts|returns)\\b",
-     "\\bat every arena\\b[^.]{0,40}\\b(?:the|this) (?:corpus|theory)\\b[^.]{0,20}\\bpredicts\\b",
-     "\\bthe ladder predicts the same modulus for every\\b"
+     "\\bacross[ -]the[ -]isp[ -]family\\b",
+     "\\bany[ -]isp[ -]model\\b[^.]{0,60}\\b(?:gives|predicts|returns)\\b",
+     "\\bat[ -]every[ -]arena\\b[^.]{0,40}\\b(?:the|this)[ -](?:corpus|theory)\\b[^.]{0,20}\\bpredicts\\b",
+     "\\bthe[ -]ladder[ -]predicts[ -]the[ -]same[ -]modulus[ -]for[ -]every\\b"
     ],
     "policed": [
      "\\bpredicts?\\b",
      "\\balways\\b",
-     "\\bat every arena\\b",
-     "\\bin any arena\\b",
-     "\\bin general\\b",
+     "\\bat[ -]every[ -]arena\\b",
+     "\\bin[ -]any[ -]arena\\b",
+     "\\bin[ -]general\\b",
      "\\bwhatever\\b",
-     "\\bprecisely when\\b",
-     "\\bfor all arenas\\b",
+     "\\bprecisely[ -]when\\b",
+     "\\bfor[ -]all[ -]arenas\\b",
      "\\buniversally\\b",
-     "\\bevery still-free\\b"
+     "\\bevery[ -]still-free\\b"
     ],
     "positive": [
-     "one point of a|two points of a"
+     "one[ -]point[ -]of[ -]a|two[ -]points[ -]of[ -]a"
     ],
     "subject": [
-     "\\b(?:the isp family|across the isp|any isp model|every isp model|every arena|any arena|in general|this theory|the theory|every model|whatever arena)\\b"
+     "\\b(?:the[ -]isp[ -]family|across[ -]the[ -]isp|any[ -]isp[ -]model|every[ -]isp[ -]model|every[ -]arena|any[ -]arena|in[ -]general|this[ -]theory|the[ -]theory|every[ -]model|whatever[ -]arena)\\b"
     ]
    },
    "unlicensed_sentences": [],
@@ -9939,36 +11383,38 @@
     "independent_controls": 3,
     "licences": [
      "\\bdisagree\\w*",
-     "\\bpart company\\b",
-     "\\breported beside\\b",
+     "\\bpart[ -]company\\b",
+     "\\breported[ -]beside\\b",
      "\\badjudication\\b",
      "\\bdistinct\\b",
-     "\\bsplits? on the reading\\b",
+     "\\bsplits?[ -]on[ -]the[ -]reading\\b",
      "\\breading-relative\\b",
      "\\bpre-registered\\b"
     ],
     "name": "W-NO-READING-MERGE",
     "negative": [
-     "\\bthe two readings agree\\b",
-     "\\bthe readings (?:can|may) be merged\\b",
-     "\\b(?:merge|averag)\\w*[^.]{0,30}\\bthe (?:two )?readings\\b",
-     "\\beither reading (?:will do|gives the same)\\b"
+     "\\bthe[ -]two[ -]readings[ -]agree\\b",
+     "\\bthe[ -]readings[ -](?:can|may)[ -]be[ -]merged\\b",
+     "\\b(?:merge|averag)\\w*[^.]{0,30}\\bthe[ -](?:two[ -])?readings\\b",
+     "\\beither[ -]reading[ -](?:will[ -]do|gives[ -]the[ -]same)\\b"
     ],
     "policed": [
      "\\bagree\\w*",
      "\\bmerge\\w*",
      "\\baverag\\w+",
      "\\bcombine\\w*",
-     "\\bthe same answer\\b",
+     "\\bthe[ -]same[ -]answer\\b",
+     "\\bthe[ -]same[ -]way\\b",
+     "\\bsettl\\w+",
      "\\bequivalent\\b",
      "\\binterchangeab\\w+",
-     "\\bwill do\\b"
+     "\\bwill[ -]do\\b"
     ],
     "positive": [
-     "never merged"
+     "never[ -]merged"
     ],
     "subject": [
-     "\\b(?:the two readings|both readings|either reading|reading-dependent|the abstract reading|the linear reading)\\b"
+     "\\b(?:the[ -]two[ -]readings|both[ -]readings|either[ -]reading|reading-dependent|the[ -]abstract[ -]reading|the[ -]linear[ -]reading)\\b"
     ]
    },
    "unlicensed_sentences": [],
