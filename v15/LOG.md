@@ -3193,3 +3193,49 @@ tested pair IS the canonical remotely-steerable pair
 sentence may present non-collapse or unphrasability as
 safety.
 
+
+## 2026-08-17 — SCOUT-K VERIFIER FROZEN: ACCEPT-WITH-FIXES — THE VERDICT HOLDS AT 104/104 CHECKS (~230 RECOMPUTATIONS, ZERO DISCREPANCIES; THE AFFINE-ENDPOINT LOGIC SOUND; A BONUS STRENGTHENING); MICRO-REPAIR ORDERED (v15 LEDGER #81)
+
+Review frozen v15/review-scoutk-verifier.md
+(38d0d85f0a4f).  OPERATOR: everything rebuilt from
+scratch by different methods (all 432 affine maps
+filtered independently; full-orbit-set union instead of
+min-canonicalization; Bland-rule simplex) — the reach
+census, all five orbit counts, all three depth-3 systems
+refused with the seat's own certificates, all 18 gaps
+byte-equal, the three uniform certificates verified
+entrywise WITH THE LOGIC CHECKED (b is a-free; the
+affine-endpoint argument genuinely covers every line
+weight), the relaxation lemma conservative-direction
+sound (not the refused relaxation), the clash witness
+first-in-canonical-order, the fixed-alpha binding, both
+controls.  The coincidences sharpened to a
+refinement-order fact (GLOBAL refines CN refines SA).
+BONUS: arm covariance verified at all 108 group elements
+x all 8 reached records (the unit sampled one).  The
+consistency mode IS the frozen primary.  No false number
+anywhere.
+
+FIXES OWED: F1 MODERATE — the #68 addendum
+(3a1e5a649537) nowhere cited or digest-pinned; no
+verdict names its consistency mode; the G-is-FIXED
+record-backreaction-only wall sentence absent (the
+event-selection-only sentence present).  F2 minor — the
+#78 G-KERNEL-WALL unported (hyphen-fused kernel
+nonexistence replants survive).  F3 minor — the numeral
+sweep blankets integers <=60 (5 of 156 pass only via
+blanket, all true).  I8/I9 registered — the LOG-digest
+and seed-variance species defended only at the battery
+layer (the scout micro-repair ports G-ENV-EXCLUSION and
+G-AST-DETERMINISM close both in-run).  F6 note — one
+receipt-unbacked no-caps sentence.  8 paraphrase plants
+all REGISTERED species, zero NEW.
+
+MICRO-REPAIR ORDERED (worker this entry): M1 the #68
+addendum cited + digest-gated, the consistency mode
+named in the verdict words, the G-fixed scope wall
+sentence added and gated; M2 port G-KERNEL-WALL; M3
+port G-ENV-EXCLUSION + G-AST-DETERMINISM; M4 numeral
+per-occurrence totality replacing the blanket; M5 the
+no-caps sentence receipt-backed or scoped.  No measured
+value moves.  On green: SCOUT-K CLOSES-SEALED.
