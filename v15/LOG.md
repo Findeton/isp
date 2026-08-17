@@ -1401,3 +1401,39 @@ out-of-harness at declared gates, tree hash unchanged;
 rc 2; --verify-paper PASS).  Orchestrator battery next;
 panel on green.
 
+## 2026-08-16 — ECC BATTERY GREEN; ITS THREE-SEAT PANEL LAUNCHED — THE FIRST POST-WAVE-1 HOSTILE REVIEW (v15 LEDGER #45)
+
+Orchestrator battery all green on the committed blob
+(git-less mirror: plain run from DELETED artifacts
+byte-identical to committed, byte x2, PYTHONHASHSEED
+31337 invariant; unknown flag and unknown mutant rc 2;
+--selftest 73/73 deaths at declared gates with 73/73
+moves proved, artifacts unchanged; MUT-CEILING dead at
+G-LP-CEILING with all 156 rows checked; committed
+artifacts untouched by every probe).
+
+Panel launched, three seats in parallel, review files to
+freeze as v15/review-ecc-{operator,effectus,instrument}.md:
+K1 OPERATOR — from-scratch independent rebuild of every
+load-bearing number (the committed-row LP and its exact
+gaps, the ceiling at 156, the 136/156 census with its
+UNIQUE/MANY partition, the seam blindness and modal
+separation, the two-step fiber vs AUTOGLUE's sealed
+table, the psi-independence triple, the carrier and debt
+censuses, the 18 recomputed interface rows, the branch
+identity).  K2 EFFECTUS — licensure of every head word
+and paper sentence against the receipt; the four
+disclosed deviations' scoping; the W3 labels (the ceiling
+is the one family-level claim — the fibres varied must
+license it); the DECLARED-NOT-MEASURED seam reading's 215
+downstream stamps; pre-registration integrity.  K3
+INSTRUMENT — live injections (forged values, flipped
+verdict words, unlicensed sentences, receipt/seal
+tampers, seed-dependence probes incl. the MUT-HASH
+species, fresh wall paraphrases per the programme-wide
+registered condition), every one to die at its declared
+gate with artifacts unchanged.
+
+ARITY-16 construction continues in parallel.  Candidate
+readings stand until the joint adjudication.
+
