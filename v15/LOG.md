@@ -2925,3 +2925,79 @@ argument, re-derive the mechanism witness, audit the
 addendum compliance (conditional mode, pre-registered
 predicates, step-1 census, scope wall) and attack the
 instrument.
+
+## 2026-08-17 — SCOUT-PSI VERIFIER FROZEN + ADJUDICATED: ACCEPT-WITH-MAJOR-REPAIRS — THE PHYSICS SEALS (~120 RECOMPUTATIONS EXACT; THE SEAT RAN THE SKIPPED LEGS ITSELF), THE PRE-REGISTRATION WAS BREACHED IN FOUR MAJORS; THE VERDICT IS GRAIN-INDEXED; ERRATUM TO #70; REPAIR ORDERED (v15 LEDGER #76)
+
+Review frozen v15/review-scoutpsi-verifier.md
+(7590f2c7abc1).  OPERATOR: ~120 recomputations, ZERO
+mismatches — rho-equality proven as matrices; window-1
+blindness with the mechanism re-derived from rho
+directly; the witness 16/729 vs 32/729 and ALL 27
+window-2 divergences confirmed record-by-record; the
+null proven a LINEAR CHANNEL (Kraus form written, sum
+K-dagger-K = I) and blind at 1|2|3; the positive fires;
+the S4 weld exact.
+
+THE BREACHES (the unit was built under the #68 addendum
+and did not comply): F1 the frozen SECONDARY preparation
+(maximally mixed; computational vs F3-character) NEVER
+RUN — replaced undisclosed by unfrozen ensembles; F2
+three of four frozen comparison rows SILENTLY DROPPED —
+and they are NOT redundant: the seat's own run shows the
+coarsest relabelling quotient is BLIND at window 2,
+first diverging at window 3, while the translation
+quotient stays sensitive-at-2 — THE VERDICT IS
+GRAIN-INDEXED; F3 the mandated operational-qualification
+wall sentences ABSENT; F4 the addendum neither cited nor
+gated and the already-inspected disclosure missing.
+Moderates: numeral totality faked by a 0-59 wholesale
+whitelist (233 occurrences, 9 bindings, no per-occurrence
+classification); a deviation sentence FALSE IN BOTH
+DIRECTIONS (unequal-weight two-member decompositions are
+impossible outright by Bloch balance — not a Q(omega)
+limitation — while unequal-weight FOUR-member Z[omega]
+decompositions exist); the "machine-enforced" ontology
+wall is a 7-literal blacklist and the seat's fresh
+ontology paraphrases pass full delivery (F6).
+
+MITIGATION, measured AT THE SEAT: it ran the legs the
+unit skipped — the frozen secondary returns the same row
+verdict (blind at 1, sensitive at 2, 378 diverging
+records) and the headline survives every comparison row
+the seat built.  The breach did not manufacture the
+result.  But that is the seat's measurement; the unit
+must own it.
+
+ERRATUM TO #70: the sentence "the pre-registered
+preparations run exactly as frozen" was the WORKER'S
+COMPLIANCE CLAIM engraved as fact — it is FALSE (F1/F2).
+PROCESS ENGRAVING, forward-binding: (a) delivery ledger
+entries state worker compliance claims AS CLAIMS until a
+verifier confirms them; (b) pin ADDENDA are consumed
+like pins — cited, digest-checked, and gated in the
+instrument (the breach was possible because the addendum
+was paper-only to the worker); (c) the disease
+PREREG-BREACH-WITH-TRUE-RESULT joins the registry — a
+true headline is not a defense.
+
+REPAIR ORDERED (worker this entry): Z1 run the frozen
+secondary through the unit's own instrument, publish.
+Z2 build ALL FOUR frozen comparison rows with per-row
+verdicts and the named relabelling group; the head
+becomes GRAIN-INDEXED (sensitive-at-2 at the fine
+grains; the coarsest quotient blind-at-2/sensitive-at-3
+— the verdict word carries its grain).  Z3 the
+operational-qualification sentences added and gated.
+Z4 the addendum cited + digest-gated + the honest
+already-inspected disclosure.  Z5 numeral totality
+implemented per-occurrence (BOUND with field /
+NON-CLAIM with reason), total over all 233.  Z6 the
+deviation-4 sentence corrected to the truth in both
+directions.  Z7 the ontology wall scoped honestly + the
+seat's paraphrase family added as plants (the general
+condition stays registered).  Z8 the in-note disclosure
+of the breach and this erratum.  NO measured value
+moves; the seat's confirmations become the repair's
+expected values, re-derived by the unit's own
+instrument.
+
