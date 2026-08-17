@@ -3432,3 +3432,35 @@ launched: the computable core of the hybrid — the formal
 re-typing audit, the order-defect/curvature census, the
 pair-sequential factorization test.
 
+
+## 2026-08-17 — THE FIFTEENTH REVIEW (EARLY, ON SCOUT-PAIR) ADOPTED AND ROUTED SEND-FIRST: THE S3 ANTI-TRIVIALITY FREEZE AND THE S2 CURVATURE SCOPE WALL (v15 LEDGER #85)
+
+Two pin-tightenings before results, both correct, routed
+to the in-flight SCOUT-PAIR worker by CONFIRMED SEND
+before this record (the #77 discipline, executed in
+order this time):
+
+(1) S3 ANTI-TRIVIALITY: any finite joint distribution
+chain-rule-factorizes if hidden intermediate state is
+allowed — the bare factorization question is VACUOUS.
+The frozen test: pair-sequential laws with intermediate
+states drawn ONLY from the declared configuration space
+(no auxiliary memory), conditionals PHYSICALLY VALID at
+every admissible cut (Barandes divisibility:
+conditioning meaningful at genuine division points;
+cut-invariance gated; intervention-validity stated where
+formalizable, disclosed where not); the unrestricted
+chain-rule construction built as the VACUOUS NULL
+CONTROL so the constraints' content is visible (the ECC
+free-two-stage pattern).  Outcome words carry
+-AT-DECLARED-STATE-CUT-VALID; a refusal is meaningful
+only in the constrained family.
+
+(2) S2 CURVATURE SCOPE: the order-defect census runs at
+FIXED geometry — a nonzero commutator there is an order
+defect in the update algebra, NOT gravitational
+curvature (the interaction-geometry identity requires
+the relation change to feed back into adjacency, which
+fixed G forbids).  The census is a PRECONDITION PROBE;
+the GEOMETRY-COUPLED census (AUTOGLUE-coupled) is the
+registered successor, named, not run.
