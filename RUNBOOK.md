@@ -1988,3 +1988,18 @@ forward-binding on every new pin and unit:
    duty: any bridge between layers states which of its variables are
    alternatives and which are consequences, gated.
 
+## E-35 — REPRESENTATION IS NOT ONTOLOGY; EQUIVALENCE IS TWO-TIERED (bought at v15 #84, amended #86)
+
+No supplied mathematical object (K, psi, rho, H, field, trigger) is
+promoted to ontology merely because the equations need it; an ontic
+candidate remains admissible if independently declared, operationally
+distinguished, and mapped to the beables (fork-neutral — open
+ontology forks are decided by measurement and user ruling, never by
+wall).  Hamiltonian/generator comparisons require the COMPLETE
+representation packet (state, instruments, clock/cut, observables,
+beable map) and distinguish EMPIRICAL equivalence (same distributions
+for every allowed record-and-geometry experiment) from ONTOLOGICAL
+equivalence (isomorphic measures over the complete ontic history
+space) — the second requires the ontic completeness of the compared
+objects to be established first.
+

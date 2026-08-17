@@ -3464,3 +3464,59 @@ the relation change to feed back into adjacency, which
 fixed G forbids).  The census is a PRECONDITION PROBE;
 the GEOMETRY-COUPLED census (AUTOGLUE-coupled) is the
 registered successor, named, not run.
+
+## 2026-08-17 — THE SIXTEENTH REVIEW ADOPTED: THE #84 OVERCLAIM REFINED (KINEMATIC SHAPE, NOT FULL INSTANTIATION); SCOUT-PAIR AMENDED BY FROZEN ADDENDUM (S3 = OPERATIONAL DIVISIBILITY, S2 = ORDER/COMPOSITION DEFECT, NEW S4 = PAIR-SUFFICIENCY, SOURCES FROZEN EXACTLY); W-REPRESENTATION AMENDED FORK-NEUTRAL (IT HAD CLOSED THE PSI-FORK BY POLICY); E-35 BOUGHT; PLAN'S DC LANGUAGE SUPERSEDED (v15 LEDGER #86)
+
+Adopted point by point: (1) the #84 sentence "the
+committed theory already instantiates" REFINED on the
+record — the committed grammar has the KINEMATIC SHAPE
+of the record/process-arity split; the indivisible
+backreacting dynamics is the missing half; the four-row
+status table (structurally-established / adopted /
+proposed / missing) is the binding framing.  (2)
+SCOUT-PAIR amended by FROZEN ADDENDUM
+(note-scoutpair-pin-addendum.md, digest in commit;
+routed by confirmed send): S3's final form is
+OPERATIONAL DIVISIBILITY — Chapman-Kolmogorov /
+process-tensor compatibility at declared cuts, declared
+state space, interventions where formalizable, the
+chain-rule construction as the vacuous null, verdicts
+scoped TWO-SIDED (a refusal disproves the tested family
+only; a feasibility licenses only the tested cuts).
+S2's object is the ORDER/COMPOSITION DEFECT with the
+four alternative readings listed and unchosen;
+graph-disjointness is not spacelike separation
+(relational separation undefined — said, gated).  NEW
+S4: PAIR-SUFFICIENCY — same pair-record + geometry, same
+future distributions?  SCOUT-K's clash witness is the
+seed; expected INSUFFICIENT under the delivered walk;
+the missing-datum possibilities named, none chosen.
+The SOURCE TABLE frozen to exact digests (ARITY-16 #47,
+SCOUT-K #74, the walk snapshot, papers 19/20/40/41) —
+mid-build repairs are NOT adopted; the movable-object
+freedom is gone.  (3) W-REPRESENTATION AMENDED to the
+fork-neutral form — as written it had silently resolved
+SCOUT-PSI's ontology fork by policy; the wall now
+forbids PROMOTION-BY-CONVENIENCE and explicitly does
+not decide the ontic-psi branch (an ontic candidate is
+admissible if independently declared, operationally
+distinguished, mapped to the beables).  PLAN wall
+updated; DC ontology addendum superseded by v2 (digest
+in commit) which also carries (4) the TWO-TIERED
+equivalence criterion (E-35 bought in the RUNBOOK): the
+complete representation packet; EMPIRICAL vs
+ONTOLOGICAL equivalence, the second gated on established
+ontic completeness.  (5) PLAN's DC section: the one-step
+kernel framing SUPERSEDED — the primary object is the
+boundary-to-boundary history law; K(X'|X) is a special
+case to be earned.  (6) The reviewer's working-tree
+observations noted: the SCOUT-PSI artifact set is
+mid-repair (stale output vs edited source — the
+continuation regenerates before reporting; watched at
+its battery); SCOUT-K/ARITY-16 repairs uncommitted
+pending their continuations' batteries.  The
+"pause-SCOUT-PAIR" recommendation executed as the frozen
+amendment above rather than a kill: the worker rebuilds
+the affected charges under the amended charter and
+DISCLOSES what it had already inspected at receipt.
+
