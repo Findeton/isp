@@ -894,13 +894,54 @@ def run_core(root: Path, mutant_name: str | None = None) -> dict[str, Any]:
     rival_ks = alt_ks
     if mutant_name == "RIVAL_IDENTICAL":
         rival_ks = mut.change("RIVAL_IDENTICAL", rival_ks, main_ks)
+
+    # The rival must survive the same finite safety surface, not merely CP/TP.
+    # These checks deliberately repeat the candidate tests with the X-resolving
+    # law held in the same ontology and output grammar.
+    rival_safety: dict[str, bool] = {}
+    rival_safety["normalization"] = all(
+        sum(outcome_probabilities(successor(rival_ks, rho, ("A", "B"), 0, 0)).values(), Q(0)) == 1
+        for rho in test_states
+    )
+    rival_safety["cp_tp"] = (
+        effects_sum(rival_ks.values()) == I2
+        and all(principal_minors_nonnegative(outer(mvec(k), mvec(k)))[0] for k in rival_ks.values())
+    )
+    rival_lhs = instrument_blocks(rival_ks, rho_mix_test)
+    rival_r0 = instrument_blocks(rival_ks, P0)
+    rival_r1 = instrument_blocks(rival_ks, HPLUS)
+    rival_rhs = {z: madd(mscale(mix_weight, rival_r0[z]), mscale(1 - mix_weight, rival_r1[z])) for z in rival_ks}
+    rival_safety["affinity"] = rival_lhs == rival_rhs
+    rival_safety["hjw"] = weighted_blocks(ens_z, rival_ks) == weighted_blocks(ens_x, rival_ks)
+    rival_safety["no_signalling"] = weighted_blocks(alice_z, rival_ks) == weighted_blocks(alice_x, rival_ks)
+    rival_successor = successor(rival_ks, P0, ("A", "B"), 0, 0)
+    rival_geometries = {key[5] for key, p in outcome_probabilities(rival_successor).items() if p > 0}
+    rival_safety["branch_geometry"] = (
+        len(rival_geometries) > 1
+        and all(key[7] == key[1] and key[9] == key[1] for key in rival_successor)
+    )
+    rival_joint_ks = {z: mtensor(k, I2) for z, k in rival_ks.items()}
+    rival_joint_blocks = instrument_blocks(rival_joint_ks, mtensor(P0, spectator_state))
+    rival_reduced = {z: partial_trace_second(block, 2, 2) for z, block in rival_joint_blocks.items()}
+    rival_safety["idle_spectator"] = rival_reduced == instrument_blocks(rival_ks, P0)
+    rival_diamond = True
+    for a, c in itertools.product((0, 1), repeat=2):
+        ka = mtensor(rival_ks[a], I2)
+        kc = mtensor(I2, rival_ks[c])
+        rival_diamond = rival_diamond and apply_k(kc, apply_k(ka, bell)) == apply_k(ka, apply_k(kc, bell))
+    rival_safety["disjoint_diamond"] = rival_diamond
+    rival_swap = {0: rival_ks[1], 1: rival_ks[0]}
+    rival_safety["collar"] = (
+        {z: mtrace(v)[0] for z, v in instrument_blocks(rival_ks, HPLUS).items()}
+        != {z: mtrace(v)[0] for z, v in instrument_blocks(rival_swap, HPLUS).items()}
+    )
     main_stats = {z: mtrace(v)[0] for z, v in instrument_blocks(main_ks, P0).items()}
     rival_stats = {z: mtrace(v)[0] for z, v in instrument_blocks(rival_ks, P0).items()}
     rival_diff = main_stats != rival_stats
     ledger.gate(
         "G-F3-RIVAL-LAW",
-        rival_diff,
-        f"same ontology and structural gates admit record statistics {serial(main_stats)} versus {serial(rival_stats)} on the same input",
+        rival_diff and all(rival_safety.values()),
+        f"rival passes {sum(rival_safety.values())} of {len(rival_safety)} repeated safety checks and yields record statistics {serial(main_stats)} versus {serial(rival_stats)}",
         mut.moves,
     )
 
@@ -944,6 +985,9 @@ def run_core(root: Path, mutant_name: str | None = None) -> dict[str, Any]:
         "reset_translation": c_reset,
         "main_stats_on_zero": main_stats,
         "rival_stats_on_zero": rival_stats,
+        "rival_safety": rival_safety,
+        "rival_safety_passes": sum(rival_safety.values()),
+        "rival_safety_total": len(rival_safety),
         "dimensionful_inputs": dimensionful_inputs,
     }
 
@@ -1428,6 +1472,41 @@ def validate_claims(paper: str, output: str, claims: dict[str, str]) -> tuple[bo
     return (not failures and extra_paper == set(claims), ";".join(failures) or "two-way claim keys and exact strings agree")
 
 
+def paper_numeral_inventory(paper: str) -> tuple[list[dict[str, Any]], int]:
+    """Bind every decimal numeral occurrence to a referent class and line.
+
+    Scientific counts in the generated prose are interpolated from the exact
+    measurement object.  Formal identifiers (v15, L2, I/2, and the displayed
+    transfer) and bibliographic coordinates are not measurements, so they are
+    split rather than silently admitted as receipt values.
+    """
+    rows: list[dict[str, Any]] = []
+    in_bibliography = False
+    formal = re.compile(r"(?:\bv\d+\b|\bL\d+\b|\bK\d+\b|\bI/\d+\b|diag\([^)]*\d|J_[A-Za-z0-9]+|P_[A-Za-z0-9]+)")
+    total = 0
+    for line_no, line in enumerate(paper.splitlines(), 1):
+        if line == "### Primary literature anchors":
+            in_bibliography = True
+        elif line == "### Exact artifact statement":
+            in_bibliography = False
+        for match in re.finditer(r"\d+(?:/\d+)?", line):
+            total += 1
+            if in_bibliography:
+                category = "BIBLIOGRAPHIC-COORDINATE"
+            elif formal.search(line):
+                category = "FORMAL-OR-CORPUS-IDENTIFIER"
+            else:
+                category = "GENERATED-FIXTURE-OR-MEASUREMENT"
+            rows.append({
+                "occurrence": total,
+                "line": line_no,
+                "token": match.group(0),
+                "category": category,
+                "referent": line.strip(),
+            })
+    return rows, total
+
+
 def verify_seal(payload: dict[str, Any], seals: dict[str, str]) -> tuple[bool, str]:
     expected = set(payload)
     actual = set(seals)
@@ -1527,7 +1606,18 @@ def build(root: Path, artifact_paths: list[Path]) -> tuple[str, str, dict[str, A
     paper = render_paper(measurements, claims, future_gate_count)
     provisional_output = render_output(ledger, claims, measurements, mutant_rows, read_set)
     claim_ok, claim_evidence = validate_claims(paper, provisional_output, claims)
-    ledger.gate("G-G6-CLAIM-EQUALITY", claim_ok, claim_evidence)
+    numeral_inventory, numeral_total = paper_numeral_inventory(paper)
+    numeral_scan_total = len(re.findall(r"\d+(?:/\d+)?", paper))
+    numeral_ok = (
+        numeral_total == numeral_scan_total
+        and len(numeral_inventory) == numeral_total
+        and all(row["occurrence"] == i + 1 and row["referent"] for i, row in enumerate(numeral_inventory))
+    )
+    ledger.gate(
+        "G-G6-CLAIM-EQUALITY",
+        claim_ok and numeral_ok,
+        f"{claim_evidence}; all {numeral_total} paper numeral occurrences carry line-level referent classes",
+    )
 
     # Seal positive controls are run before the real seal.  The real seal is
     # verified again after disk promotion in write_artifacts().
@@ -1560,6 +1650,7 @@ def build(root: Path, artifact_paths: list[Path]) -> tuple[str, str, dict[str, A
         "claims": claims,
         "consequences": [{"topic": a, "classification": b, "reason": c} for a, b, c in CONSEQUENCES],
         "choice_inventory": [{"item": a, "status": b} for a, b in CHOICES],
+        "paper_numeral_inventory": numeral_inventory,
         "gates": ledger.rows,
         "ledger_head": ledger.head,
         "mutant_survey": mutant_rows,

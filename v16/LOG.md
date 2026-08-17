@@ -61,3 +61,35 @@ Every sentence remains a **CANDIDATE READING**.  Per the RUNBOOK, this commit is
 delivery-as-is, not terminalization.  The next event is the orchestrator's
 post-commit battery, followed by a separately frozen three-seat hostile
 protocol.
+
+## 2026-08-17 — JRH ORCHESTRATOR AUDIT CATCHES AND REPAIRS THE LOAD-BEARING RIVAL-LAW COVERAGE GAP (v16 LEDGER #3)
+
+The post-commit verifier reproduced the committed paper, transcript and receipt
+byte for byte; the explicit CLI inspection found no hidden argv path; unknown
+syntax exited 2; selftest exited 0 after killing the observed-anchor mutant;
+the EPR signalling mutant exited 3 at `G-B5-NO-SIGNALLING`; all diagnostic modes
+left artifact hashes unchanged.  An alien-CWD run and a genuinely off-tree copy
+containing only the source plus its 13 frozen inputs (no `.git`) reproduced all
+three generated artifacts byte for byte.
+
+The orchestrator nevertheless found one substantive coverage defect in the
+delivered receipt.  The no-selection theorem depends on the X-resolving rival
+surviving the same admissibility surface as the Z-resolving candidate, but the
+#2 receipt explicitly marched the rival only through CP/trace and the final
+statistics comparison.  Linearity made several missing legs analytic, but that
+was not an adequate receipt.  The forward micro-repair now reruns the rival at
+nine independently named checks: normalization, CP/TP, affinity, HJW blindness,
+remote-steering no-signalling, branch-resolved geometry, idle spectator,
+disjoint diamond, and collar dependence.  It passes 9 of 9 and still yields
+`{0: 1/2, 1: 1/2}` against the main law's `{0: 1, 1: 0}`.  The underdetermination
+counterexample is therefore receipt-complete at the declared finite surface.
+
+The same repair adds a line-level inventory for all 115 decimal numeral
+occurrences in the paper, split into generated fixture/measurement values,
+formal or corpus identifiers, and bibliographic coordinates.  Two-way exact
+claim equality remains green.  The paper's prose and hash did not move.
+
+Repaired hashes: paper `ae737af4b22b` unchanged; source `7db010d1b1c9`;
+transcript `5fe1fb21a55e`; receipt `a7cd7a576a25`.  Candidate primary and all
+scientific measured values remain unchanged.  The hostile protocol may now be
+frozen against these bytes.
